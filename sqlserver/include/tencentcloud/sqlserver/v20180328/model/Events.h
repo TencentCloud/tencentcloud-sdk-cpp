@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取ID
                      * @return Id ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置ID
-                     * @param Id ID
+                     * @param _id ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取扩展事件文件名称
                      * @return FileName 扩展事件文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置扩展事件文件名称
-                     * @param FileName 扩展事件文件名称
+                     * @param _fileName 扩展事件文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取扩展事件文件大小
                      * @return Size 扩展事件文件大小
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置扩展事件文件大小
-                     * @param Size 扩展事件文件大小
+                     * @param _size 扩展事件文件大小
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
                      * @return EventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * 
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
-                     * @param EventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * @param _eventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取事件记录状态，1-成功，2-失败
                      * @return Status 事件记录状态，1-成功，2-失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置事件记录状态，1-成功，2-失败
-                     * @param Status 事件记录状态，1-成功，2-失败
+                     * @param _status 事件记录状态，1-成功，2-失败
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取扩展文件生成开始时间
                      * @return StartTime 扩展文件生成开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置扩展文件生成开始时间
-                     * @param StartTime 扩展文件生成开始时间
+                     * @param _startTime 扩展文件生成开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取扩展文件生成开始时间
                      * @return EndTime 扩展文件生成开始时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置扩展文件生成开始时间
-                     * @param EndTime 扩展文件生成开始时间
+                     * @param _endTime 扩展文件生成开始时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取内网下载地址
                      * @return InternalAddr 内网下载地址
+                     * 
                      */
                     std::string GetInternalAddr() const;
 
                     /**
                      * 设置内网下载地址
-                     * @param InternalAddr 内网下载地址
+                     * @param _internalAddr 内网下载地址
+                     * 
                      */
                     void SetInternalAddr(const std::string& _internalAddr);
 
                     /**
                      * 判断参数 InternalAddr 是否已赋值
                      * @return InternalAddr 是否已赋值
+                     * 
                      */
                     bool InternalAddrHasBeenSet() const;
 
                     /**
                      * 获取外网下载地址
                      * @return ExternalAddr 外网下载地址
+                     * 
                      */
                     std::string GetExternalAddr() const;
 
                     /**
                      * 设置外网下载地址
-                     * @param ExternalAddr 外网下载地址
+                     * @param _externalAddr 外网下载地址
+                     * 
                      */
                     void SetExternalAddr(const std::string& _externalAddr);
 
                     /**
                      * 判断参数 ExternalAddr 是否已赋值
                      * @return ExternalAddr 是否已赋值
+                     * 
                      */
                     bool ExternalAddrHasBeenSet() const;
 

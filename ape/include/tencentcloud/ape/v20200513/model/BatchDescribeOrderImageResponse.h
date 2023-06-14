@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取图片的下载地址
                      * @return ImageUrls 图片的下载地址
+                     * 
                      */
                     std::vector<std::string> GetImageUrls() const;
 
                     /**
                      * 判断参数 ImageUrls 是否已赋值
                      * @return ImageUrls 是否已赋值
+                     * 
                      */
                     bool ImageUrlsHasBeenSet() const;
 

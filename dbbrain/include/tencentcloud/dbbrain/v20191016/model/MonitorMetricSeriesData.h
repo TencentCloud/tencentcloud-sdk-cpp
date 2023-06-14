@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取监控指标。
                      * @return Series 监控指标。
+                     * 
                      */
                     std::vector<MonitorMetric> GetSeries() const;
 
                     /**
                      * 设置监控指标。
-                     * @param Series 监控指标。
+                     * @param _series 监控指标。
+                     * 
                      */
                     void SetSeries(const std::vector<MonitorMetric>& _series);
 
                     /**
                      * 判断参数 Series 是否已赋值
                      * @return Series 是否已赋值
+                     * 
                      */
                     bool SeriesHasBeenSet() const;
 
                     /**
                      * 获取监控指标对应的时间戳。
                      * @return Timestamp 监控指标对应的时间戳。
+                     * 
                      */
                     std::vector<int64_t> GetTimestamp() const;
 
                     /**
                      * 设置监控指标对应的时间戳。
-                     * @param Timestamp 监控指标对应的时间戳。
+                     * @param _timestamp 监控指标对应的时间戳。
+                     * 
                      */
                     void SetTimestamp(const std::vector<int64_t>& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 

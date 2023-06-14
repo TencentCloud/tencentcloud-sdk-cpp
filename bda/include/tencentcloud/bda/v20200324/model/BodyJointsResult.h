@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取图中检测出来的人体框。
                      * @return BoundBox 图中检测出来的人体框。
+                     * 
                      */
                     BoundRect GetBoundBox() const;
 
                     /**
                      * 设置图中检测出来的人体框。
-                     * @param BoundBox 图中检测出来的人体框。
+                     * @param _boundBox 图中检测出来的人体框。
+                     * 
                      */
                     void SetBoundBox(const BoundRect& _boundBox);
 
                     /**
                      * 判断参数 BoundBox 是否已赋值
                      * @return BoundBox 是否已赋值
+                     * 
                      */
                     bool BoundBoxHasBeenSet() const;
 
                     /**
                      * 获取14个人体关键点的坐标，人体关键点详见KeyPointInfo。
                      * @return BodyJoints 14个人体关键点的坐标，人体关键点详见KeyPointInfo。
+                     * 
                      */
                     std::vector<KeyPointInfo> GetBodyJoints() const;
 
                     /**
                      * 设置14个人体关键点的坐标，人体关键点详见KeyPointInfo。
-                     * @param BodyJoints 14个人体关键点的坐标，人体关键点详见KeyPointInfo。
+                     * @param _bodyJoints 14个人体关键点的坐标，人体关键点详见KeyPointInfo。
+                     * 
                      */
                     void SetBodyJoints(const std::vector<KeyPointInfo>& _bodyJoints);
 
                     /**
                      * 判断参数 BodyJoints 是否已赋值
                      * @return BodyJoints 是否已赋值
+                     * 
                      */
                     bool BodyJointsHasBeenSet() const;
 
                     /**
                      * 获取检测出的人体置信度，0-1之间，数值越高越准确。
                      * @return Confidence 检测出的人体置信度，0-1之间，数值越高越准确。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置检测出的人体置信度，0-1之间，数值越高越准确。
-                     * @param Confidence 检测出的人体置信度，0-1之间，数值越高越准确。
+                     * @param _confidence 检测出的人体置信度，0-1之间，数值越高越准确。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待创建文档的服务唯一 ID。
                      * @return ServiceId 待创建文档的服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待创建文档的服务唯一 ID。
-                     * @param ServiceId 待创建文档的服务唯一 ID。
+                     * @param _serviceId 待创建文档的服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待创建 SDK 的服务所在环境。
                      * @return GenEnvironment 待创建 SDK 的服务所在环境。
+                     * 
                      */
                     std::string GetGenEnvironment() const;
 
                     /**
                      * 设置待创建 SDK 的服务所在环境。
-                     * @param GenEnvironment 待创建 SDK 的服务所在环境。
+                     * @param _genEnvironment 待创建 SDK 的服务所在环境。
+                     * 
                      */
                     void SetGenEnvironment(const std::string& _genEnvironment);
 
                     /**
                      * 判断参数 GenEnvironment 是否已赋值
                      * @return GenEnvironment 是否已赋值
+                     * 
                      */
                     bool GenEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取待创建 SDK 的语言。当前只支持 Python 和 JavaScript。
                      * @return GenLanguage 待创建 SDK 的语言。当前只支持 Python 和 JavaScript。
+                     * 
                      */
                     std::string GetGenLanguage() const;
 
                     /**
                      * 设置待创建 SDK 的语言。当前只支持 Python 和 JavaScript。
-                     * @param GenLanguage 待创建 SDK 的语言。当前只支持 Python 和 JavaScript。
+                     * @param _genLanguage 待创建 SDK 的语言。当前只支持 Python 和 JavaScript。
+                     * 
                      */
                     void SetGenLanguage(const std::string& _genLanguage);
 
                     /**
                      * 判断参数 GenLanguage 是否已赋值
                      * @return GenLanguage 是否已赋值
+                     * 
                      */
                     bool GenLanguageHasBeenSet() const;
 

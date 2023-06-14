@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchProductions 返回详情信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BatchProductionInfo> GetBatchProductions() const;
 
                     /**
                      * 判断参数 BatchProductions 是否已赋值
                      * @return BatchProductions 是否已赋值
+                     * 
                      */
                     bool BatchProductionsHasBeenSet() const;
 
                     /**
                      * 获取返回数量。
                      * @return TotalCnt 返回数量。
+                     * 
                      */
                     int64_t GetTotalCnt() const;
 
                     /**
                      * 判断参数 TotalCnt 是否已赋值
                      * @return TotalCnt 是否已赋值
+                     * 
                      */
                     bool TotalCntHasBeenSet() const;
 

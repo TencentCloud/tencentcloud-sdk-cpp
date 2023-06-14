@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileKey 文件存储的key，可以用来创建结构化任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileKey() const;
 
                     /**
                      * 判断参数 FileKey 是否已赋值
                      * @return FileKey 是否已赋值
+                     * 
                      */
                     bool FileKeyHasBeenSet() const;
 

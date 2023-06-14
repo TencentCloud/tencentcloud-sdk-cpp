@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取搜索内容
                      * @return SearchContent 搜索内容
+                     * 
                      */
                     std::string GetSearchContent() const;
 
                     /**
                      * 设置搜索内容
-                     * @param SearchContent 搜索内容
+                     * @param _searchContent 搜索内容
+                     * 
                      */
                     void SetSearchContent(const std::string& _searchContent);
 
                     /**
                      * 判断参数 SearchContent 是否已赋值
                      * @return SearchContent 是否已赋值
+                     * 
                      */
                     bool SearchContentHasBeenSet() const;
 

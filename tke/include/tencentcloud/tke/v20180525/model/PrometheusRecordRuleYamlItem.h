@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例名称
                      * @return Name 实例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例名称
-                     * @param Name 实例名称
+                     * @param _name 实例名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取最近更新时间
                      * @return UpdateTime 最近更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近更新时间
-                     * @param UpdateTime 最近更新时间
+                     * @param _updateTime 最近更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取Yaml内容
                      * @return TemplateId Yaml内容
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置Yaml内容
-                     * @param TemplateId Yaml内容
+                     * @param _templateId Yaml内容
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 如果该聚合规则来至模板，则TemplateId为模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置如果该聚合规则来至模板，则TemplateId为模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 如果该聚合规则来至模板，则TemplateId为模板id
+                     * @param _content 如果该聚合规则来至模板，则TemplateId为模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID
+                     * @param _clusterId 该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

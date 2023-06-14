@@ -58,6 +58,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -66,16 +67,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 远程鉴权配置开关，取值有：
+                     * @param _switch 远程鉴权配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -84,20 +87,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteAuthenticationRules 远程鉴权规则配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RemoteAuthenticationRule> GetRemoteAuthenticationRules() const;
 
                     /**
                      * 设置远程鉴权规则配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemoteAuthenticationRules 远程鉴权规则配置
+                     * @param _remoteAuthenticationRules 远程鉴权规则配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemoteAuthenticationRules(const std::vector<RemoteAuthenticationRule>& _remoteAuthenticationRules);
 
                     /**
                      * 判断参数 RemoteAuthenticationRules 是否已赋值
                      * @return RemoteAuthenticationRules 是否已赋值
+                     * 
                      */
                     bool RemoteAuthenticationRulesHasBeenSet() const;
 
@@ -106,20 +112,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 远程鉴权Server
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置远程鉴权Server
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Server 远程鉴权Server
+                     * @param _server 远程鉴权Server
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 

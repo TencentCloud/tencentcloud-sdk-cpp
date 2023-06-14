@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format ONE_BY_ONE单条输出，MERGE合并输出
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置ONE_BY_ONE单条输出，MERGE合并输出
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Format ONE_BY_ONE单条输出，MERGE合并输出
+                     * @param _format ONE_BY_ONE单条输出，MERGE合并输出
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

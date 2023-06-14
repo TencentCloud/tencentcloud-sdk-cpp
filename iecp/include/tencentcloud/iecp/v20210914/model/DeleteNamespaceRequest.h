@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

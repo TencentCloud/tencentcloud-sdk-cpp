@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId 策略版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVersionId() const;
 
                     /**
                      * 设置策略版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionId 策略版本号
+                     * @param _versionId 策略版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionId(const uint64_t& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 策略版本创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置策略版本创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateDate 策略版本创建时间
+                     * @param _createDate 策略版本创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateDate(const std::string& _createDate);
 
                     /**
                      * 判断参数 CreateDate 是否已赋值
                      * @return CreateDate 是否已赋值
+                     * 
                      */
                     bool CreateDateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultVersion 是否是正在生效的版本。0表示不是，1表示是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsDefaultVersion() const;
 
                     /**
                      * 设置是否是正在生效的版本。0表示不是，1表示是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDefaultVersion 是否是正在生效的版本。0表示不是，1表示是
+                     * @param _isDefaultVersion 是否是正在生效的版本。0表示不是，1表示是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDefaultVersion(const int64_t& _isDefaultVersion);
 
                     /**
                      * 判断参数 IsDefaultVersion 是否已赋值
                      * @return IsDefaultVersion 是否已赋值
+                     * 
                      */
                     bool IsDefaultVersionHasBeenSet() const;
 

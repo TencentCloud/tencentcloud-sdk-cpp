@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulId 漏洞id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulName 漏洞名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 判断参数 VulName 是否已赋值
                      * @return VulName 是否已赋值
+                     * 
                      */
                     bool VulNameHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulLevel 危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulLevel() const;
 
                     /**
                      * 判断参数 VulLevel 是否已赋值
                      * @return VulLevel 是否已赋值
+                     * 
                      */
                     bool VulLevelHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulType 漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulType() const;
 
                     /**
                      * 判断参数 VulType 是否已赋值
                      * @return VulType 是否已赋值
+                     * 
                      */
                     bool VulTypeHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 漏洞描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepairPlan 修复方案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepairPlan() const;
 
                     /**
                      * 判断参数 RepairPlan 是否已赋值
                      * @return RepairPlan 是否已赋值
+                     * 
                      */
                     bool RepairPlanHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId 漏洞CVEID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 判断参数 CveId 是否已赋值
                      * @return CveId 是否已赋值
+                     * 
                      */
                     bool CveIdHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reference 参考链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReference() const;
 
                     /**
                      * 判断参数 Reference 是否已赋值
                      * @return Reference 是否已赋值
+                     * 
                      */
                     bool ReferenceHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVSS CVSS信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCVSS() const;
 
                     /**
                      * 判断参数 CVSS 是否已赋值
                      * @return CVSS 是否已赋值
+                     * 
                      */
                     bool CVSSHasBeenSet() const;
 
@@ -174,12 +192,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDate 发布时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicDate() const;
 
                     /**
                      * 判断参数 PublicDate 是否已赋值
                      * @return PublicDate 是否已赋值
+                     * 
                      */
                     bool PublicDateHasBeenSet() const;
 
@@ -188,12 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore Cvss分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCvssScore() const;
 
                     /**
                      * 判断参数 CvssScore 是否已赋值
                      * @return CvssScore 是否已赋值
+                     * 
                      */
                     bool CvssScoreHasBeenSet() const;
 
@@ -202,12 +224,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveInfo cvss详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCveInfo() const;
 
                     /**
                      * 判断参数 CveInfo 是否已赋值
                      * @return CveInfo 是否已赋值
+                     * 
                      */
                     bool CveInfoHasBeenSet() const;
 
@@ -216,12 +240,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScoreFloat cvss 分数 浮点型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCvssScoreFloat() const;
 
                     /**
                      * 判断参数 CvssScoreFloat 是否已赋值
                      * @return CvssScoreFloat 是否已赋值
+                     * 
                      */
                     bool CvssScoreFloatHasBeenSet() const;
 
@@ -230,12 +256,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 漏洞标签 多个逗号分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -244,12 +272,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseAttackCount 已防御的攻击次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDefenseAttackCount() const;
 
                     /**
                      * 判断参数 DefenseAttackCount 是否已赋值
                      * @return DefenseAttackCount 是否已赋值
+                     * 
                      */
                     bool DefenseAttackCountHasBeenSet() const;
 
@@ -258,12 +288,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessFixCount 全网修复成功次数, 不支持自动修复的漏洞默认返回0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSuccessFixCount() const;
 
                     /**
                      * 判断参数 SuccessFixCount 是否已赋值
                      * @return SuccessFixCount 是否已赋值
+                     * 
                      */
                     bool SuccessFixCountHasBeenSet() const;
 
@@ -272,12 +304,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixSwitch 修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFixSwitch() const;
 
                     /**
                      * 判断参数 FixSwitch 是否已赋值
                      * @return FixSwitch 是否已赋值
+                     * 
                      */
                     bool FixSwitchHasBeenSet() const;
 

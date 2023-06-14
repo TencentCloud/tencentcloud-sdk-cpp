@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签署区列表
                      * @return SignComponents 签署区列表
+                     * 
                      */
                     std::vector<CatalogComponents> GetSignComponents() const;
 
                     /**
                      * 判断参数 SignComponents 是否已赋值
                      * @return SignComponents 是否已赋值
+                     * 
                      */
                     bool SignComponentsHasBeenSet() const;
 

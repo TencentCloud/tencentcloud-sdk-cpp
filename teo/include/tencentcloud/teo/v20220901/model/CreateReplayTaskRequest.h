@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取重放任务的 ID 列表。
                      * @return Ids 重放任务的 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
                      * 设置重放任务的 ID 列表。
-                     * @param Ids 重放任务的 ID 列表。
+                     * @param _ids 重放任务的 ID 列表。
+                     * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

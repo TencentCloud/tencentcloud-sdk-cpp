@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID, 如果不填，则获取用户所有资源的IP
                      * @return IdList 资源ID, 如果不填，则获取用户所有资源的IP
+                     * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
                      * 设置资源ID, 如果不填，则获取用户所有资源的IP
-                     * @param IdList 资源ID, 如果不填，则获取用户所有资源的IP
+                     * @param _idList 资源ID, 如果不填，则获取用户所有资源的IP
+                     * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
 
                     /**
                      * 判断参数 IdList 是否已赋值
                      * @return IdList 是否已赋值
+                     * 
                      */
                     bool IdListHasBeenSet() const;
 

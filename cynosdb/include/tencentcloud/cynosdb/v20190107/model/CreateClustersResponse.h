@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranId 冻结流水ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranId() const;
 
                     /**
                      * 判断参数 TranId 是否已赋值
                      * @return TranId 是否已赋值
+                     * 
                      */
                     bool TranIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealNames 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIds 集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealIds 大订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBigDealIds() const;
 
                     /**
                      * 判断参数 BigDealIds 是否已赋值
                      * @return BigDealIds 是否已赋值
+                     * 
                      */
                     bool BigDealIdsHasBeenSet() const;
 

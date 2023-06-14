@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取未消费消息过期时间，单位：秒。
                      * @return MsgTTL 未消费消息过期时间，单位：秒。
+                     * 
                      */
                     uint64_t GetMsgTTL() const;
 
                     /**
                      * 判断参数 MsgTTL 是否已赋值
                      * @return MsgTTL 是否已赋值
+                     * 
                      */
                     bool MsgTTLHasBeenSet() const;
 
@@ -72,24 +76,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明，128个字符以内。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 

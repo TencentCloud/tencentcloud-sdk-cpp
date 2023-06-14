@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息; 必选
                      * @return Caller 调用方信息; 必选
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息; 必选
-                     * @param Caller 调用方信息; 必选
+                     * @param _caller 调用方信息; 必选
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取除api_ticket之外的其它要参与签名的参数值,包括UserId
                      * @return Values 除api_ticket之外的其它要参与签名的参数值,包括UserId
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置除api_ticket之外的其它要参与签名的参数值,包括UserId
-                     * @param Values 除api_ticket之外的其它要参与签名的参数值,包括UserId
+                     * @param _values 除api_ticket之外的其它要参与签名的参数值,包括UserId
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

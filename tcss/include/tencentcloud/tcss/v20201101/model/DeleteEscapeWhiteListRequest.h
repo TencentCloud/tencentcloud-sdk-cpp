@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取白名单记录ID数组
                      * @return IDSet 白名单记录ID数组
+                     * 
                      */
                     std::vector<int64_t> GetIDSet() const;
 
                     /**
                      * 设置白名单记录ID数组
-                     * @param IDSet 白名单记录ID数组
+                     * @param _iDSet 白名单记录ID数组
+                     * 
                      */
                     void SetIDSet(const std::vector<int64_t>& _iDSet);
 
                     /**
                      * 判断参数 IDSet 是否已赋值
                      * @return IDSet 是否已赋值
+                     * 
                      */
                     bool IDSetHasBeenSet() const;
 

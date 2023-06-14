@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例唯一ID
                      * @return InstanceId 实例唯一ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例唯一ID
-                     * @param InstanceId 实例唯一ID
+                     * @param _instanceId 实例唯一ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
                      * @return Type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
-                     * @param Type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * @param _type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取调整clickhouse节点数量
                      * @return NodeCount 调整clickhouse节点数量
+                     * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
                      * 设置调整clickhouse节点数量
-                     * @param NodeCount 调整clickhouse节点数量
+                     * @param _nodeCount 调整clickhouse节点数量
+                     * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
@@ -101,74 +110,86 @@ namespace TencentCloud
 新增扩容节点将加入到已选择的v_cluster分组中，提交同步VIP生效.
                      * @return ScaleOutCluster v_cluster分组，	
 新增扩容节点将加入到已选择的v_cluster分组中，提交同步VIP生效.
+                     * 
                      */
                     std::string GetScaleOutCluster() const;
 
                     /**
                      * 设置v_cluster分组，	
 新增扩容节点将加入到已选择的v_cluster分组中，提交同步VIP生效.
-                     * @param ScaleOutCluster v_cluster分组，	
+                     * @param _scaleOutCluster v_cluster分组，	
 新增扩容节点将加入到已选择的v_cluster分组中，提交同步VIP生效.
+                     * 
                      */
                     void SetScaleOutCluster(const std::string& _scaleOutCluster);
 
                     /**
                      * 判断参数 ScaleOutCluster 是否已赋值
                      * @return ScaleOutCluster 是否已赋值
+                     * 
                      */
                     bool ScaleOutClusterHasBeenSet() const;
 
                     /**
                      * 获取子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写
                      * @return UserSubnetIPNum 子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写
+                     * 
                      */
                     int64_t GetUserSubnetIPNum() const;
 
                     /**
                      * 设置子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写
-                     * @param UserSubnetIPNum 子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写
+                     * @param _userSubnetIPNum 子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写
+                     * 
                      */
                     void SetUserSubnetIPNum(const int64_t& _userSubnetIPNum);
 
                     /**
                      * 判断参数 UserSubnetIPNum 是否已赋值
                      * @return UserSubnetIPNum 是否已赋值
+                     * 
                      */
                     bool UserSubnetIPNumHasBeenSet() const;
 
                     /**
                      * 获取同步元数据节点IP （uip），扩容的时候必填
                      * @return ScaleOutNodeIp 同步元数据节点IP （uip），扩容的时候必填
+                     * 
                      */
                     std::string GetScaleOutNodeIp() const;
 
                     /**
                      * 设置同步元数据节点IP （uip），扩容的时候必填
-                     * @param ScaleOutNodeIp 同步元数据节点IP （uip），扩容的时候必填
+                     * @param _scaleOutNodeIp 同步元数据节点IP （uip），扩容的时候必填
+                     * 
                      */
                     void SetScaleOutNodeIp(const std::string& _scaleOutNodeIp);
 
                     /**
                      * 判断参数 ScaleOutNodeIp 是否已赋值
                      * @return ScaleOutNodeIp 是否已赋值
+                     * 
                      */
                     bool ScaleOutNodeIpHasBeenSet() const;
 
                     /**
                      * 获取缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
                      * @return ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
+                     * 
                      */
                     std::vector<std::string> GetReduceShardInfo() const;
 
                     /**
                      * 设置缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
-                     * @param ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
+                     * @param _reduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
+                     * 
                      */
                     void SetReduceShardInfo(const std::vector<std::string>& _reduceShardInfo);
 
                     /**
                      * 判断参数 ReduceShardInfo 是否已赋值
                      * @return ReduceShardInfo 是否已赋值
+                     * 
                      */
                     bool ReduceShardInfoHasBeenSet() const;
 

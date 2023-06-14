@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmConfig 用户所有的告警策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlarmPolicy> GetAlarmConfig() const;
 
                     /**
                      * 判断参数 AlarmConfig 是否已赋值
                      * @return AlarmConfig 是否已赋值
+                     * 
                      */
                     bool AlarmConfigHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DCN同步详情
                      * @return DcnDetails DCN同步详情
+                     * 
                      */
                     std::vector<DcnDetailItem> GetDcnDetails() const;
 
                     /**
                      * 判断参数 DcnDetails 是否已赋值
                      * @return DcnDetails 是否已赋值
+                     * 
                      */
                     bool DcnDetailsHasBeenSet() const;
 

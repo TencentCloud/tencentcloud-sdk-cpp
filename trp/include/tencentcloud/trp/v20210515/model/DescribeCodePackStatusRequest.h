@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取码包ID
                      * @return PackId 码包ID
+                     * 
                      */
                     std::string GetPackId() const;
 
                     /**
                      * 设置码包ID
-                     * @param PackId 码包ID
+                     * @param _packId 码包ID
+                     * 
                      */
                     void SetPackId(const std::string& _packId);
 
                     /**
                      * 判断参数 PackId 是否已赋值
                      * @return PackId 是否已赋值
+                     * 
                      */
                     bool PackIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

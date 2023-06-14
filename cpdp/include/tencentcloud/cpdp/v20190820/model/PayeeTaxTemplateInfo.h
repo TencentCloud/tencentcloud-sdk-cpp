@@ -53,6 +53,7 @@ OCCASION: 偶然所得
                      * @return IncomeType 收入类型
 LABOR: 劳务所得
 OCCASION: 偶然所得
+                     * 
                      */
                     std::string GetIncomeType() const;
 
@@ -60,33 +61,38 @@ OCCASION: 偶然所得
                      * 设置收入类型
 LABOR: 劳务所得
 OCCASION: 偶然所得
-                     * @param IncomeType 收入类型
+                     * @param _incomeType 收入类型
 LABOR: 劳务所得
 OCCASION: 偶然所得
+                     * 
                      */
                     void SetIncomeType(const std::string& _incomeType);
 
                     /**
                      * 判断参数 IncomeType 是否已赋值
                      * @return IncomeType 是否已赋值
+                     * 
                      */
                     bool IncomeTypeHasBeenSet() const;
 
                     /**
                      * 获取计税模板ID
                      * @return TaxTemplateId 计税模板ID
+                     * 
                      */
                     std::string GetTaxTemplateId() const;
 
                     /**
                      * 设置计税模板ID
-                     * @param TaxTemplateId 计税模板ID
+                     * @param _taxTemplateId 计税模板ID
+                     * 
                      */
                     void SetTaxTemplateId(const std::string& _taxTemplateId);
 
                     /**
                      * 判断参数 TaxTemplateId 是否已赋值
                      * @return TaxTemplateId 是否已赋值
+                     * 
                      */
                     bool TaxTemplateIdHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取路由信息ID。
                      * @return RouteId 路由信息ID。
+                     * 
                      */
                     std::string GetRouteId() const;
 
                     /**
                      * 设置路由信息ID。
-                     * @param RouteId 路由信息ID。
+                     * @param _routeId 路由信息ID。
+                     * 
                      */
                     void SetRouteId(const std::string& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ DISABLE：不启用该路由
                      * @return Status 路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -78,33 +82,38 @@ DISABLE：不启用该路由
                      * 设置路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
-                     * @param Status 路由信息是否启用。
+                     * @param _status 路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取路由CIDR。
                      * @return DestinationCidrBlock 路由CIDR。
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置路由CIDR。
-                     * @param DestinationCidrBlock 路由CIDR。
+                     * @param _destinationCidrBlock 路由CIDR。
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 

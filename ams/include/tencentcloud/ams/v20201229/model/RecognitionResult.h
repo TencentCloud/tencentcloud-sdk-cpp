@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 可能的取值有：Teenager 、Gender
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置可能的取值有：Teenager 、Gender
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 可能的取值有：Teenager 、Gender
+                     * @param _label 可能的取值有：Teenager 、Gender
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 识别标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置识别标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 识别标签列表
+                     * @param _tags 识别标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCostTime() const;
 
                     /**
                      * 设置耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CostTime 耗费时间
+                     * @param _costTime 耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCostTime(const std::string& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurRunDate 数据时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurRunDate 数据时间
+                     * @param _curRunDate 数据时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleType 周期类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCycleType() const;
 
                     /**
                      * 设置周期类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CycleType 周期类型
+                     * @param _cycleType 周期类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCycleType(const std::string& _cycleType);
 
                     /**
                      * 判断参数 CycleType 是否已赋值
                      * @return CycleType 是否已赋值
+                     * 
                      */
                     bool CycleTypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DoFlag 是否补录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDoFlag() const;
 
                     /**
                      * 设置是否补录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DoFlag 是否补录
+                     * @param _doFlag 是否补录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDoFlag(const int64_t& _doFlag);
 
                     /**
                      * 判断参数 DoFlag 是否已赋值
                      * @return DoFlag 是否已赋值
+                     * 
                      */
                     bool DoFlagHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InCharge 责任人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInCharge() const;
 
                     /**
                      * 设置责任人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InCharge 责任人
+                     * @param _inCharge 责任人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInCharge(const std::string& _inCharge);
 
                     /**
                      * 判断参数 InCharge 是否已赋值
                      * @return InCharge 是否已赋值
+                     * 
                      */
                     bool InChargeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastLog 日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastLog() const;
 
                     /**
                      * 设置日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastLog 日志
+                     * @param _lastLog 日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastLog(const std::string& _lastLog);
 
                     /**
                      * 判断参数 LastLog 是否已赋值
                      * @return LastLog 是否已赋值
+                     * 
                      */
                     bool LastLogHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerDesc 调度计划
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchedulerDesc() const;
 
                     /**
                      * 设置调度计划
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchedulerDesc 调度计划
+                     * @param _schedulerDesc 调度计划
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchedulerDesc(const std::string& _schedulerDesc);
 
                     /**
                      * 判断参数 SchedulerDesc 是否已赋值
                      * @return SchedulerDesc 是否已赋值
+                     * 
                      */
                     bool SchedulerDescHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始启动时间
+                     * @param _startTime 开始启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 实例状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置实例状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 实例状态
+                     * @param _state 实例状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryLimit 尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTryLimit() const;
 
                     /**
                      * 设置尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TryLimit 尝试运行次数
+                     * @param _tryLimit 尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTryLimit(const int64_t& _tryLimit);
 
                     /**
                      * 判断参数 TryLimit 是否已赋值
                      * @return TryLimit 是否已赋值
+                     * 
                      */
                     bool TryLimitHasBeenSet() const;
 

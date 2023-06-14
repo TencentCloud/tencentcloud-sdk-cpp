@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取执行活动ID。
                      * @return InvocationId 执行活动ID。
+                     * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 判断参数 InvocationId 是否已赋值
                      * @return InvocationId 是否已赋值
+                     * 
                      */
                     bool InvocationIdHasBeenSet() const;
 

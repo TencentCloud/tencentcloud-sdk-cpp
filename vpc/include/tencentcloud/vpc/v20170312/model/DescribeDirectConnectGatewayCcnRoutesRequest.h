@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取专线网关ID，形如：`dcg-prpqlmg1`。
                      * @return DirectConnectGatewayId 专线网关ID，形如：`dcg-prpqlmg1`。
+                     * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
                      * 设置专线网关ID，形如：`dcg-prpqlmg1`。
-                     * @param DirectConnectGatewayId 专线网关ID，形如：`dcg-prpqlmg1`。
+                     * @param _directConnectGatewayId 专线网关ID，形如：`dcg-prpqlmg1`。
+                     * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
 
                     /**
                      * 判断参数 DirectConnectGatewayId 是否已赋值
                      * @return DirectConnectGatewayId 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return CcnRouteType 云联网路由学习类型，可选值：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置，默认值。</li>
+                     * 
                      */
                     std::string GetCcnRouteType() const;
 
@@ -74,51 +78,59 @@ namespace TencentCloud
                      * 设置云联网路由学习类型，可选值：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置，默认值。</li>
-                     * @param CcnRouteType 云联网路由学习类型，可选值：
+                     * @param _ccnRouteType 云联网路由学习类型，可选值：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置，默认值。</li>
+                     * 
                      */
                     void SetCcnRouteType(const std::string& _ccnRouteType);
 
                     /**
                      * 判断参数 CcnRouteType 是否已赋值
                      * @return CcnRouteType 是否已赋值
+                     * 
                      */
                     bool CcnRouteTypeHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量。
                      * @return Limit 返回数量。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量。
-                     * @param Limit 返回数量。
+                     * @param _limit 返回数量。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

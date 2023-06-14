@@ -49,288 +49,336 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return RouteID 无
+                     * 
                      */
                     int64_t GetRouteID() const;
 
                     /**
                      * 设置无
-                     * @param RouteID 无
+                     * @param _routeID 无
+                     * 
                      */
                     void SetRouteID(const int64_t& _routeID);
 
                     /**
                      * 判断参数 RouteID 是否已赋值
                      * @return RouteID 是否已赋值
+                     * 
                      */
                     bool RouteIDHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return RouteName 无
+                     * 
                      */
                     std::string GetRouteName() const;
 
                     /**
                      * 设置无
-                     * @param RouteName 无
+                     * @param _routeName 无
+                     * 
                      */
                     void SetRouteName(const std::string& _routeName);
 
                     /**
                      * 判断参数 RouteName 是否已赋值
                      * @return RouteName 是否已赋值
+                     * 
                      */
                     bool RouteNameHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SourceProductID 无
+                     * 
                      */
                     std::string GetSourceProductID() const;
 
                     /**
                      * 设置无
-                     * @param SourceProductID 无
+                     * @param _sourceProductID 无
+                     * 
                      */
                     void SetSourceProductID(const std::string& _sourceProductID);
 
                     /**
                      * 判断参数 SourceProductID 是否已赋值
                      * @return SourceProductID 是否已赋值
+                     * 
                      */
                     bool SourceProductIDHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return TopicFilter 无
+                     * 
                      */
                     std::string GetTopicFilter() const;
 
                     /**
                      * 设置无
-                     * @param TopicFilter 无
+                     * @param _topicFilter 无
+                     * 
                      */
                     void SetTopicFilter(const std::string& _topicFilter);
 
                     /**
                      * 判断参数 TopicFilter 是否已赋值
                      * @return TopicFilter 是否已赋值
+                     * 
                      */
                     bool TopicFilterHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Mode 无
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置无
-                     * @param Mode 无
+                     * @param _mode 无
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return TargetOptions 无
+                     * 
                      */
                     std::string GetTargetOptions() const;
 
                     /**
                      * 设置无
-                     * @param TargetOptions 无
+                     * @param _targetOptions 无
+                     * 
                      */
                     void SetTargetOptions(const std::string& _targetOptions);
 
                     /**
                      * 判断参数 TargetOptions 是否已赋值
                      * @return TargetOptions 是否已赋值
+                     * 
                      */
                     bool TargetOptionsHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return CreateTime 无
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置无
-                     * @param CreateTime 无
+                     * @param _createTime 无
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Descript 无
+                     * 
                      */
                     std::string GetDescript() const;
 
                     /**
                      * 设置无
-                     * @param Descript 无
+                     * @param _descript 无
+                     * 
                      */
                     void SetDescript(const std::string& _descript);
 
                     /**
                      * 判断参数 Descript 是否已赋值
                      * @return Descript 是否已赋值
+                     * 
                      */
                     bool DescriptHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Healthy 无
+                     * 
                      */
                     std::string GetHealthy() const;
 
                     /**
                      * 设置无
-                     * @param Healthy 无
+                     * @param _healthy 无
+                     * 
                      */
                     void SetHealthy(const std::string& _healthy);
 
                     /**
                      * 判断参数 Healthy 是否已赋值
                      * @return Healthy 是否已赋值
+                     * 
                      */
                     bool HealthyHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Status 无
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置无
-                     * @param Status 无
+                     * @param _status 无
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return MessageCount 无
+                     * 
                      */
                     int64_t GetMessageCount() const;
 
                     /**
                      * 设置无
-                     * @param MessageCount 无
+                     * @param _messageCount 无
+                     * 
                      */
                     void SetMessageCount(const int64_t& _messageCount);
 
                     /**
                      * 判断参数 MessageCount 是否已赋值
                      * @return MessageCount 是否已赋值
+                     * 
                      */
                     bool MessageCountHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return MessageLastTime 无
+                     * 
                      */
                     std::string GetMessageLastTime() const;
 
                     /**
                      * 设置无
-                     * @param MessageLastTime 无
+                     * @param _messageLastTime 无
+                     * 
                      */
                     void SetMessageLastTime(const std::string& _messageLastTime);
 
                     /**
                      * 判断参数 MessageLastTime 是否已赋值
                      * @return MessageLastTime 是否已赋值
+                     * 
                      */
                     bool MessageLastTimeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SourceProductName 无
+                     * 
                      */
                     std::string GetSourceProductName() const;
 
                     /**
                      * 设置无
-                     * @param SourceProductName 无
+                     * @param _sourceProductName 无
+                     * 
                      */
                     void SetSourceProductName(const std::string& _sourceProductName);
 
                     /**
                      * 判断参数 SourceProductName 是否已赋值
                      * @return SourceProductName 是否已赋值
+                     * 
                      */
                     bool SourceProductNameHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SourceUnitIDList 无
+                     * 
                      */
                     std::vector<std::string> GetSourceUnitIDList() const;
 
                     /**
                      * 设置无
-                     * @param SourceUnitIDList 无
+                     * @param _sourceUnitIDList 无
+                     * 
                      */
                     void SetSourceUnitIDList(const std::vector<std::string>& _sourceUnitIDList);
 
                     /**
                      * 判断参数 SourceUnitIDList 是否已赋值
                      * @return SourceUnitIDList 是否已赋值
+                     * 
                      */
                     bool SourceUnitIDListHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SourceUnitNameList 无
+                     * 
                      */
                     std::vector<std::string> GetSourceUnitNameList() const;
 
                     /**
                      * 设置无
-                     * @param SourceUnitNameList 无
+                     * @param _sourceUnitNameList 无
+                     * 
                      */
                     void SetSourceUnitNameList(const std::vector<std::string>& _sourceUnitNameList);
 
                     /**
                      * 判断参数 SourceUnitNameList 是否已赋值
                      * @return SourceUnitNameList 是否已赋值
+                     * 
                      */
                     bool SourceUnitNameListHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SourceDeviceNameList 无
+                     * 
                      */
                     std::vector<std::string> GetSourceDeviceNameList() const;
 
                     /**
                      * 设置无
-                     * @param SourceDeviceNameList 无
+                     * @param _sourceDeviceNameList 无
+                     * 
                      */
                     void SetSourceDeviceNameList(const std::vector<std::string>& _sourceDeviceNameList);
 
                     /**
                      * 判断参数 SourceDeviceNameList 是否已赋值
                      * @return SourceDeviceNameList 是否已赋值
+                     * 
                      */
                     bool SourceDeviceNameListHasBeenSet() const;
 

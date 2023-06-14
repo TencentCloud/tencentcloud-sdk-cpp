@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取去毛刺方式：weak,,strong
                      * @return Type 去毛刺方式：weak,,strong
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置去毛刺方式：weak,,strong
-                     * @param Type 去毛刺方式：weak,,strong
+                     * @param _type 去毛刺方式：weak,,strong
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -75,6 +78,7 @@ edaf,
 wdaf，
 默认edaf。
 注意：此参数已经弃用
+                     * 
                      */
                     std::string GetAlgorithm() const;
 
@@ -84,17 +88,19 @@ edaf,
 wdaf，
 默认edaf。
 注意：此参数已经弃用
-                     * @param Algorithm 去毛刺算法，可选项：
+                     * @param _algorithm 去毛刺算法，可选项：
 edaf,
 wdaf，
 默认edaf。
 注意：此参数已经弃用
+                     * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
                     /**
                      * 判断参数 Algorithm 是否已赋值
                      * @return Algorithm 是否已赋值
+                     * 
                      */
                     bool AlgorithmHasBeenSet() const;
 

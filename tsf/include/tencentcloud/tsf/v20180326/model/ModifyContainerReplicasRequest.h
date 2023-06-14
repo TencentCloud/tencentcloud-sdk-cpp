@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取部署组ID，部署组唯一标识
                      * @return GroupId 部署组ID，部署组唯一标识
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID，部署组唯一标识
-                     * @param GroupId 部署组ID，部署组唯一标识
+                     * @param _groupId 部署组ID，部署组唯一标识
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例数量
                      * @return InstanceNum 实例数量
+                     * 
                      */
                     int64_t GetInstanceNum() const;
 
                     /**
                      * 设置实例数量
-                     * @param InstanceNum 实例数量
+                     * @param _instanceNum 实例数量
+                     * 
                      */
                     void SetInstanceNum(const int64_t& _instanceNum);
 
                     /**
                      * 判断参数 InstanceNum 是否已赋值
                      * @return InstanceNum 是否已赋值
+                     * 
                      */
                     bool InstanceNumHasBeenSet() const;
 

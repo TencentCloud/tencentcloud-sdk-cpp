@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取核身结果
                      * @return Result 核身结果
+                     * 
                      */
                     PayRollAuthResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

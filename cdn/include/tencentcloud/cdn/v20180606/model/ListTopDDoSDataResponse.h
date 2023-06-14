@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空
                      * @return Data DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空
+                     * 
                      */
                     std::vector<DDoSTopData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空
                      * @return IPData ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空
+                     * 
                      */
                     std::vector<DDoSAttackIPTopData> GetIPData() const;
 
                     /**
                      * 判断参数 IPData 是否已赋值
                      * @return IPData 是否已赋值
+                     * 
                      */
                     bool IPDataHasBeenSet() const;
 

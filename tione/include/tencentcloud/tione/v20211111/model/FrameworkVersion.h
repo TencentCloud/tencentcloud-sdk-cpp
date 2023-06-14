@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取框架版本
                      * @return Version 框架版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置框架版本
-                     * @param Version 框架版本
+                     * @param _version 框架版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取训练模式
                      * @return TrainingModes 训练模式
+                     * 
                      */
                     std::vector<std::string> GetTrainingModes() const;
 
                     /**
                      * 设置训练模式
-                     * @param TrainingModes 训练模式
+                     * @param _trainingModes 训练模式
+                     * 
                      */
                     void SetTrainingModes(const std::vector<std::string>& _trainingModes);
 
                     /**
                      * 判断参数 TrainingModes 是否已赋值
                      * @return TrainingModes 是否已赋值
+                     * 
                      */
                     bool TrainingModesHasBeenSet() const;
 
                     /**
                      * 获取框架运行环境
                      * @return Environment 框架运行环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置框架运行环境
-                     * @param Environment 框架运行环境
+                     * @param _environment 框架运行环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

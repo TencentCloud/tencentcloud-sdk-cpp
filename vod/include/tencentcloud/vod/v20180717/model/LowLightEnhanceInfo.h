@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 低光照增强控制开关，可选值：
 <li>ON：开启低光照增强；</li>
 <li>OFF：关闭低光照增强。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置低光照增强控制开关，可选值：
 <li>ON：开启低光照增强；</li>
 <li>OFF：关闭低光照增强。</li>
-                     * @param Switch 低光照增强控制开关，可选值：
+                     * @param _switch 低光照增强控制开关，可选值：
 <li>ON：开启低光照增强；</li>
 <li>OFF：关闭低光照增强。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return Type 低光照增强类型，仅当低光照增强控制开关为 ON 时有效，可选值：
 <li>normal：正常低光照增强；</li>
 默认值：normal。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置低光照增强类型，仅当低光照增强控制开关为 ON 时有效，可选值：
 <li>normal：正常低光照增强；</li>
 默认值：normal。
-                     * @param Type 低光照增强类型，仅当低光照增强控制开关为 ON 时有效，可选值：
+                     * @param _type 低光照增强类型，仅当低光照增强控制开关为 ON 时有效，可选值：
 <li>normal：正常低光照增强；</li>
 默认值：normal。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

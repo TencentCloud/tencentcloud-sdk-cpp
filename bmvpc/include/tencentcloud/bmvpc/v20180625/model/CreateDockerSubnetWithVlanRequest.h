@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取系统分配的私有网络ID，例如：vpc-kd7d06of
                      * @return VpcId 系统分配的私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置系统分配的私有网络ID，例如：vpc-kd7d06of
-                     * @param VpcId 系统分配的私有网络ID，例如：vpc-kd7d06of
+                     * @param _vpcId 系统分配的私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网信息
                      * @return SubnetSet 子网信息
+                     * 
                      */
                     std::vector<SubnetCreateInputInfo> GetSubnetSet() const;
 
                     /**
                      * 设置子网信息
-                     * @param SubnetSet 子网信息
+                     * @param _subnetSet 子网信息
+                     * 
                      */
                     void SetSubnetSet(const std::vector<SubnetCreateInputInfo>& _subnetSet);
 
                     /**
                      * 判断参数 SubnetSet 是否已赋值
                      * @return SubnetSet 是否已赋值
+                     * 
                      */
                     bool SubnetSetHasBeenSet() const;
 

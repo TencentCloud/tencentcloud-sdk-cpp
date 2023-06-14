@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取私有网络的唯一ID。
                      * @return VpcId 私有网络的唯一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络的唯一ID。
-                     * @param VpcId 私有网络的唯一ID。
+                     * @param _vpcId 私有网络的唯一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取VPC的名称。
                      * @return VpcName VPC的名称。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置VPC的名称。
-                     * @param VpcName VPC的名称。
+                     * @param _vpcName VPC的名称。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取VPC的CIDR。
                      * @return CidrBlock VPC的CIDR。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置VPC的CIDR。
-                     * @param CidrBlock VPC的CIDR。
+                     * @param _cidrBlock VPC的CIDR。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取VPC状态
                      * @return State VPC状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置VPC状态
-                     * @param State VPC状态
+                     * @param _state VPC状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取整型私有网络ID。
                      * @return IntVpcId 整型私有网络ID。
+                     * 
                      */
                     uint64_t GetIntVpcId() const;
 
                     /**
                      * 设置整型私有网络ID。
-                     * @param IntVpcId 整型私有网络ID。
+                     * @param _intVpcId 整型私有网络ID。
+                     * 
                      */
                     void SetIntVpcId(const uint64_t& _intVpcId);
 
                     /**
                      * 判断参数 IntVpcId 是否已赋值
                      * @return IntVpcId 是否已赋值
+                     * 
                      */
                     bool IntVpcIdHasBeenSet() const;
 

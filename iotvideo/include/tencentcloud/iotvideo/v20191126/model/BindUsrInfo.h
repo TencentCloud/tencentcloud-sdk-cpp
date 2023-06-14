@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取IotVideo平台分配给终端用户的用户id
                      * @return AccessId IotVideo平台分配给终端用户的用户id
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置IotVideo平台分配给终端用户的用户id
-                     * @param AccessId IotVideo平台分配给终端用户的用户id
+                     * @param _accessId IotVideo平台分配给终端用户的用户id
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取用户角色，owner：主人，guest：访客
                      * @return Role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置用户角色，owner：主人，guest：访客
-                     * @param Role 用户角色，owner：主人，guest：访客
+                     * @param _role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

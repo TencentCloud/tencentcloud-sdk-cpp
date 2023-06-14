@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取接口返回信息
                      * @return Msg 接口返回信息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

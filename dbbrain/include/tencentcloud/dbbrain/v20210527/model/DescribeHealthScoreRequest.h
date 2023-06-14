@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取需要获取健康得分的实例ID。
                      * @return InstanceId 需要获取健康得分的实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置需要获取健康得分的实例ID。
-                     * @param InstanceId 需要获取健康得分的实例ID。
+                     * @param _instanceId 需要获取健康得分的实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
                      * @return Time 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
-                     * @param Time 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
+                     * @param _time 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
                      * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @param Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

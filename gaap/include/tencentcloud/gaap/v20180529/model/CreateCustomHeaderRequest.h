@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取规则id
                      * @return RuleId 规则id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则id
-                     * @param RuleId 规则id
+                     * @param _ruleId 规则id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。
                      * @return Headers 新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。
+                     * 
                      */
                     std::vector<HttpHeaderParam> GetHeaders() const;
 
                     /**
                      * 设置新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。
-                     * @param Headers 新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。
+                     * @param _headers 新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。
+                     * 
                      */
                     void SetHeaders(const std::vector<HttpHeaderParam>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
+                     * 
                      */
                     bool HeadersHasBeenSet() const;
 

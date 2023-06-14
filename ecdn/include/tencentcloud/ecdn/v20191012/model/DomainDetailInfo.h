@@ -59,54 +59,63 @@ namespace TencentCloud
                     /**
                      * 获取域名ID。
                      * @return ResourceId 域名ID。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置域名ID。
-                     * @param ResourceId 域名ID。
+                     * @param _resourceId 域名ID。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取腾讯云账号ID。
                      * @return AppId 腾讯云账号ID。
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置腾讯云账号ID。
-                     * @param AppId 腾讯云账号ID。
+                     * @param _appId 腾讯云账号ID。
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取加速域名。
                      * @return Domain 加速域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置加速域名。
-                     * @param Domain 加速域名。
+                     * @param _domain 加速域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -115,110 +124,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cname 域名CName。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCname() const;
 
                     /**
                      * 设置域名CName。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cname 域名CName。
+                     * @param _cname 域名CName。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCname(const std::string& _cname);
 
                     /**
                      * 判断参数 Cname 是否已赋值
                      * @return Cname 是否已赋值
+                     * 
                      */
                     bool CnameHasBeenSet() const;
 
                     /**
                      * 获取域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
                      * @return Status 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
-                     * @param Status 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * @param _status 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取项目ID。
                      * @return ProjectId 项目ID。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * @param _projectId 项目ID。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取域名创建时间。
                      * @return CreateTime 域名创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置域名创建时间。
-                     * @param CreateTime 域名创建时间。
+                     * @param _createTime 域名创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取域名更新时间。
                      * @return UpdateTime 域名更新时间。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置域名更新时间。
-                     * @param UpdateTime 域名更新时间。
+                     * @param _updateTime 域名更新时间。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取源站配置。
                      * @return Origin 源站配置。
+                     * 
                      */
                     Origin GetOrigin() const;
 
                     /**
                      * 设置源站配置。
-                     * @param Origin 源站配置。
+                     * @param _origin 源站配置。
+                     * 
                      */
                     void SetOrigin(const Origin& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 
@@ -227,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpFilter IP黑白名单配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IpFilter GetIpFilter() const;
 
                     /**
                      * 设置IP黑白名单配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpFilter IP黑白名单配置。
+                     * @param _ipFilter IP黑白名单配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpFilter(const IpFilter& _ipFilter);
 
                     /**
                      * 判断参数 IpFilter 是否已赋值
                      * @return IpFilter 是否已赋值
+                     * 
                      */
                     bool IpFilterHasBeenSet() const;
 
@@ -249,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpFreqLimit IP限频配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IpFreqLimit GetIpFreqLimit() const;
 
                     /**
                      * 设置IP限频配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpFreqLimit IP限频配置。
+                     * @param _ipFreqLimit IP限频配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpFreqLimit(const IpFreqLimit& _ipFreqLimit);
 
                     /**
                      * 判断参数 IpFreqLimit 是否已赋值
                      * @return IpFreqLimit 是否已赋值
+                     * 
                      */
                     bool IpFreqLimitHasBeenSet() const;
 
@@ -271,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseHeader 源站响应头部配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ResponseHeader GetResponseHeader() const;
 
                     /**
                      * 设置源站响应头部配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseHeader 源站响应头部配置。
+                     * @param _responseHeader 源站响应头部配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseHeader(const ResponseHeader& _responseHeader);
 
                     /**
                      * 判断参数 ResponseHeader 是否已赋值
                      * @return ResponseHeader 是否已赋值
+                     * 
                      */
                     bool ResponseHeaderHasBeenSet() const;
 
@@ -293,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheKey 节点缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheKey GetCacheKey() const;
 
                     /**
                      * 设置节点缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheKey 节点缓存配置。
+                     * @param _cacheKey 节点缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheKey(const CacheKey& _cacheKey);
 
                     /**
                      * 判断参数 CacheKey 是否已赋值
                      * @return CacheKey 是否已赋值
+                     * 
                      */
                     bool CacheKeyHasBeenSet() const;
 
@@ -315,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cache 缓存规则配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Cache GetCache() const;
 
                     /**
                      * 设置缓存规则配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cache 缓存规则配置。
+                     * @param _cache 缓存规则配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCache(const Cache& _cache);
 
                     /**
                      * 判断参数 Cache 是否已赋值
                      * @return Cache 是否已赋值
+                     * 
                      */
                     bool CacheHasBeenSet() const;
 
@@ -337,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Https Https配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Https GetHttps() const;
 
                     /**
                      * 设置Https配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Https Https配置。
+                     * @param _https Https配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttps(const Https& _https);
 
                     /**
                      * 判断参数 Https 是否已赋值
                      * @return Https 是否已赋值
+                     * 
                      */
                     bool HttpsHasBeenSet() const;
 
@@ -359,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disable 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示 正常，欠费停服，试用客户流量包耗尽，恶意用户，ddos攻击，无流量域名，未备案，带宽封顶，只读。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisable() const;
 
                     /**
                      * 设置域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示 正常，欠费停服，试用客户流量包耗尽，恶意用户，ddos攻击，无流量域名，未备案，带宽封顶，只读。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Disable 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示 正常，欠费停服，试用客户流量包耗尽，恶意用户，ddos攻击，无流量域名，未备案，带宽封顶，只读。
+                     * @param _disable 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示 正常，欠费停服，试用客户流量包耗尽，恶意用户，ddos攻击，无流量域名，未备案，带宽封顶，只读。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisable(const std::string& _disable);
 
                     /**
                      * 判断参数 Disable 是否已赋值
                      * @return Disable 是否已赋值
+                     * 
                      */
                     bool DisableHasBeenSet() const;
 
@@ -381,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForceRedirect 访问协议强制跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ForceRedirect GetForceRedirect() const;
 
                     /**
                      * 设置访问协议强制跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ForceRedirect 访问协议强制跳转配置。
+                     * @param _forceRedirect 访问协议强制跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetForceRedirect(const ForceRedirect& _forceRedirect);
 
                     /**
                      * 判断参数 ForceRedirect 是否已赋值
                      * @return ForceRedirect 是否已赋值
+                     * 
                      */
                     bool ForceRedirectHasBeenSet() const;
 
@@ -403,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Area 加速区域，mainland，overseas或global。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置加速区域，mainland，overseas或global。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Area 加速区域，mainland，overseas或global。
+                     * @param _area 加速区域，mainland，overseas或global。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -425,20 +479,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Readonly 域名锁定状态，normal、global 分别表示未被锁定，全球锁定。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReadonly() const;
 
                     /**
                      * 设置域名锁定状态，normal、global 分别表示未被锁定，全球锁定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Readonly 域名锁定状态，normal、global 分别表示未被锁定，全球锁定。
+                     * @param _readonly 域名锁定状态，normal、global 分别表示未被锁定，全球锁定。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadonly(const std::string& _readonly);
 
                     /**
                      * 判断参数 Readonly 是否已赋值
                      * @return Readonly 是否已赋值
+                     * 
                      */
                     bool ReadonlyHasBeenSet() const;
 
@@ -447,20 +504,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 域名标签。
+                     * @param _tag 域名标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
@@ -469,20 +529,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebSocket WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WebSocket GetWebSocket() const;
 
                     /**
                      * 设置WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebSocket WebSocket配置。
+                     * @param _webSocket WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebSocket(const WebSocket& _webSocket);
 
                     /**
                      * 判断参数 WebSocket 是否已赋值
                      * @return WebSocket 是否已赋值
+                     * 
                      */
                     bool WebSocketHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘单价。
                      * @return OriginalDiskPrice 云硬盘单价。
+                     * 
                      */
                     double GetOriginalDiskPrice() const;
 
                     /**
                      * 设置云硬盘单价。
-                     * @param OriginalDiskPrice 云硬盘单价。
+                     * @param _originalDiskPrice 云硬盘单价。
+                     * 
                      */
                     void SetOriginalDiskPrice(const double& _originalDiskPrice);
 
                     /**
                      * 判断参数 OriginalDiskPrice 是否已赋值
                      * @return OriginalDiskPrice 是否已赋值
+                     * 
                      */
                     bool OriginalDiskPriceHasBeenSet() const;
 
                     /**
                      * 获取云硬盘总价。
                      * @return OriginalPrice 云硬盘总价。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置云硬盘总价。
-                     * @param OriginalPrice 云硬盘总价。
+                     * @param _originalPrice 云硬盘总价。
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取折扣。
                      * @return Discount 折扣。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置折扣。
-                     * @param Discount 折扣。
+                     * @param _discount 折扣。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
                     /**
                      * 获取折后总价。
                      * @return DiscountPrice 折后总价。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置折后总价。
-                     * @param DiscountPrice 折后总价。
+                     * @param _discountPrice 折后总价。
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
                      * 获取计费项目明细列表。
                      * @return DetailPrices 计费项目明细列表。
+                     * 
                      */
                     std::vector<DetailPrice> GetDetailPrices() const;
 
                     /**
                      * 设置计费项目明细列表。
-                     * @param DetailPrices 计费项目明细列表。
+                     * @param _detailPrices 计费项目明细列表。
+                     * 
                      */
                     void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
 
                     /**
                      * 判断参数 DetailPrices 是否已赋值
                      * @return DetailPrices 是否已赋值
+                     * 
                      */
                     bool DetailPricesHasBeenSet() const;
 

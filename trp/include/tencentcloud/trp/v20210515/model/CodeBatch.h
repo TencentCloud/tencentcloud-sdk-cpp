@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchId 批次号
+                     * @param _batchId 批次号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorpId(const int64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchCode 批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchCode() const;
 
                     /**
                      * 设置批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchCode 批次编码(未使用)
+                     * @param _batchCode 批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchCode(const std::string& _batchCode);
 
                     /**
                      * 判断参数 BatchCode 是否已赋值
                      * @return BatchCode 是否已赋值
+                     * 
                      */
                     bool BatchCodeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeCnt 码数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCodeCnt() const;
 
                     /**
                      * 设置码数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeCnt 码数量
+                     * @param _codeCnt 码数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeCnt(const int64_t& _codeCnt);
 
                     /**
                      * 判断参数 CodeCnt 是否已赋值
                      * @return CodeCnt 是否已赋值
+                     * 
                      */
                     bool CodeCntHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 所属商户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置所属商户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantId 所属商户ID
+                     * @param _merchantId 所属商户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchType 批次类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBatchType() const;
 
                     /**
                      * 设置批次类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchType 批次类型
+                     * @param _batchType 批次类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchType(const int64_t& _batchType);
 
                     /**
                      * 判断参数 BatchType 是否已赋值
                      * @return BatchType 是否已赋值
+                     * 
                      */
                     bool BatchTypeHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MpTpl 微信模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMpTpl() const;
 
                     /**
                      * 设置微信模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MpTpl 微信模板
+                     * @param _mpTpl 微信模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMpTpl(const std::string& _mpTpl);
 
                     /**
                      * 判断参数 MpTpl 是否已赋值
                      * @return MpTpl 是否已赋值
+                     * 
                      */
                     bool MpTplHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
+                     * @param _status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -273,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -295,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -317,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantName 所属商户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置所属商户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantName 所属商户名称
+                     * @param _merchantName 所属商户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 
@@ -339,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -361,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 未使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Ext GetExt() const;
 
                     /**
                      * 设置未使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ext 未使用
+                     * @param _ext 未使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExt(const Ext& _ext);
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 
@@ -383,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TplName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTplName() const;
 
                     /**
                      * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TplName 模板名称
+                     * @param _tplName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTplName(const std::string& _tplName);
 
                     /**
                      * 判断参数 TplName 是否已赋值
                      * @return TplName 是否已赋值
+                     * 
                      */
                     bool TplNameHasBeenSet() const;
 
@@ -405,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 调度任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 设置调度任务
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Job 调度任务
+                     * @param _job 调度任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJob(const Job& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 

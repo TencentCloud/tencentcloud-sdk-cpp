@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取每页输出备份列表大小，默认大小20。
                      * @return Limit 每页输出备份列表大小，默认大小20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页输出备份列表大小，默认大小20。
-                     * @param Limit 每页输出备份列表大小，默认大小20。
+                     * @param _limit 每页输出备份列表大小，默认大小20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，取Limit整数倍。
                      * @return Offset 分页偏移量，取Limit整数倍。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，取Limit整数倍。
-                     * @param Offset 分页偏移量，取Limit整数倍。
+                     * @param _offset 分页偏移量，取Limit整数倍。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
                      * @return BeginTime 开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
-                     * @param BeginTime 开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * @param _beginTime 开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
                      * @return EndTime 结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
-                     * @param EndTime 结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * @param _endTime 结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

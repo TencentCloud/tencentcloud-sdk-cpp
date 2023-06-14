@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取意向评级
                      * @return RatingData 意向评级
+                     * 
                      */
                     RatingData GetRatingData() const;
 
                     /**
                      * 判断参数 RatingData 是否已赋值
                      * @return RatingData 是否已赋值
+                     * 
                      */
                     bool RatingDataHasBeenSet() const;
 

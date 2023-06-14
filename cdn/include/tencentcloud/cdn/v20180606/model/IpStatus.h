@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取节点 IP
                      * @return Ip 节点 IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置节点 IP
-                     * @param Ip 节点 IP
+                     * @param _ip 节点 IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取节点所属区域
                      * @return District 节点所属区域
+                     * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置节点所属区域
-                     * @param District 节点所属区域
+                     * @param _district 节点所属区域
+                     * 
                      */
                     void SetDistrict(const std::string& _district);
 
                     /**
                      * 判断参数 District 是否已赋值
                      * @return District 是否已赋值
+                     * 
                      */
                     bool DistrictHasBeenSet() const;
 
                     /**
                      * 获取节点所属运营商
                      * @return Isp 节点所属运营商
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置节点所属运营商
-                     * @param Isp 节点所属运营商
+                     * @param _isp 节点所属运营商
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
                     /**
                      * 获取节点所在城市
                      * @return City 节点所在城市
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置节点所在城市
-                     * @param City 节点所在城市
+                     * @param _city 节点所在城市
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -125,6 +137,7 @@ offline：下线状态
                      * @return Status 节点状态
 online：上线状态，正常调度服务中
 offline：下线状态
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -132,15 +145,17 @@ offline：下线状态
                      * 设置节点状态
 online：上线状态，正常调度服务中
 offline：下线状态
-                     * @param Status 节点状态
+                     * @param _status 节点状态
 online：上线状态，正常调度服务中
 offline：下线状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -149,20 +164,23 @@ offline：下线状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6 节点 IPV6
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpv6() const;
 
                     /**
                      * 设置节点 IPV6
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv6 节点 IPV6
+                     * @param _ipv6 节点 IPV6
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpv6(const std::string& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 

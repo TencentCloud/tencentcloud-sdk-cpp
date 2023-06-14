@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 可用区Id
+                     * @param _zoneId 可用区Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取不同节点的价格详情
                      * @return NodeDetailPrice 不同节点的价格详情
+                     * 
                      */
                     std::vector<NodeDetailPriceResult> GetNodeDetailPrice() const;
 
                     /**
                      * 设置不同节点的价格详情
-                     * @param NodeDetailPrice 不同节点的价格详情
+                     * @param _nodeDetailPrice 不同节点的价格详情
+                     * 
                      */
                     void SetNodeDetailPrice(const std::vector<NodeDetailPriceResult>& _nodeDetailPrice);
 
                     /**
                      * 判断参数 NodeDetailPrice 是否已赋值
                      * @return NodeDetailPrice 是否已赋值
+                     * 
                      */
                     bool NodeDetailPriceHasBeenSet() const;
 

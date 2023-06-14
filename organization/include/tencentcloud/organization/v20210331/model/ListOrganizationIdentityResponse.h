@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 条目详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OrgIdentity> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

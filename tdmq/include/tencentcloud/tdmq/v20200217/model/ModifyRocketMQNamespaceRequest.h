@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return NamespaceId 命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param NamespaceId 命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _namespaceId 命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取已废弃
                      * @return Ttl 已废弃
+                     * 
                      */
                     uint64_t GetTtl() const;
 
                     /**
                      * 设置已废弃
-                     * @param Ttl 已废弃
+                     * @param _ttl 已废弃
+                     * 
                      */
                     void SetTtl(const uint64_t& _ttl);
 
                     /**
                      * 判断参数 Ttl 是否已赋值
                      * @return Ttl 是否已赋值
+                     * 
                      */
                     bool TtlHasBeenSet() const;
 
                     /**
                      * 获取已废弃
                      * @return RetentionTime 已废弃
+                     * 
                      */
                     uint64_t GetRetentionTime() const;
 
                     /**
                      * 设置已废弃
-                     * @param RetentionTime 已废弃
+                     * @param _retentionTime 已废弃
+                     * 
                      */
                     void SetRetentionTime(const uint64_t& _retentionTime);
 
                     /**
                      * 判断参数 RetentionTime 是否已赋值
                      * @return RetentionTime 是否已赋值
+                     * 
                      */
                     bool RetentionTimeHasBeenSet() const;
 
                     /**
                      * 获取说明，最大128个字符
                      * @return Remark 说明，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明，最大128个字符
-                     * @param Remark 说明，最大128个字符
+                     * @param _remark 说明，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

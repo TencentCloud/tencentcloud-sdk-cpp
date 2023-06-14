@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取渠道名
                      * @return ChannelName 渠道名
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名
-                     * @param ChannelName 渠道名
+                     * @param _channelName 渠道名
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取渠道透传字段，由各个渠道自行定义
                      * @return AttachmentData 渠道透传字段，由各个渠道自行定义
+                     * 
                      */
                     std::string GetAttachmentData() const;
 
                     /**
                      * 设置渠道透传字段，由各个渠道自行定义
-                     * @param AttachmentData 渠道透传字段，由各个渠道自行定义
+                     * @param _attachmentData 渠道透传字段，由各个渠道自行定义
+                     * 
                      */
                     void SetAttachmentData(const std::string& _attachmentData);
 
                     /**
                      * 判断参数 AttachmentData 是否已赋值
                      * @return AttachmentData 是否已赋值
+                     * 
                      */
                     bool AttachmentDataHasBeenSet() const;
 

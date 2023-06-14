@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence logo图标置信度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置logo图标置信度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Confidence logo图标置信度
+                     * @param _confidence logo图标置信度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RrectF logo图标坐标信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RrectF GetRrectF() const;
 
                     /**
                      * 设置logo图标坐标信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RrectF logo图标坐标信息
+                     * @param _rrectF logo图标坐标信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRrectF(const RrectF& _rrectF);
 
                     /**
                      * 判断参数 RrectF 是否已赋值
                      * @return RrectF 是否已赋值
+                     * 
                      */
                     bool RrectFHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name logo图标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置logo图标名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name logo图标名称
+                     * @param _name logo图标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

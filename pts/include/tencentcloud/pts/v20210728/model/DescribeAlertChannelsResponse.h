@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertChannelSet 告警通知接收组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlertChannelRecord> GetAlertChannelSet() const;
 
                     /**
                      * 判断参数 AlertChannelSet 是否已赋值
                      * @return AlertChannelSet 是否已赋值
+                     * 
                      */
                     bool AlertChannelSetHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 告警通知接收组数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

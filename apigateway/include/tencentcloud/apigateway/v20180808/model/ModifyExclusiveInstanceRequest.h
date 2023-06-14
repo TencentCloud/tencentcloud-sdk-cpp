@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取独享实例唯一id
                      * @return InstanceId 独享实例唯一id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享实例唯一id
-                     * @param InstanceId 独享实例唯一id
+                     * @param _instanceId 独享实例唯一id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取独享实例name
                      * @return InstanceName 独享实例name
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置独享实例name
-                     * @param InstanceName 独享实例name
+                     * @param _instanceName 独享实例name
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取独享实例描述
                      * @return InstanceDescription 独享实例描述
+                     * 
                      */
                     std::string GetInstanceDescription() const;
 
                     /**
                      * 设置独享实例描述
-                     * @param InstanceDescription 独享实例描述
+                     * @param _instanceDescription 独享实例描述
+                     * 
                      */
                     void SetInstanceDescription(const std::string& _instanceDescription);
 
                     /**
                      * 判断参数 InstanceDescription 是否已赋值
                      * @return InstanceDescription 是否已赋值
+                     * 
                      */
                     bool InstanceDescriptionHasBeenSet() const;
 
                     /**
                      * 获取独享实例参数配置
                      * @return Parameters 独享实例参数配置
+                     * 
                      */
                     std::vector<InstanceParameterInput> GetParameters() const;
 
                     /**
                      * 设置独享实例参数配置
-                     * @param Parameters 独享实例参数配置
+                     * @param _parameters 独享实例参数配置
+                     * 
                      */
                     void SetParameters(const std::vector<InstanceParameterInput>& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 

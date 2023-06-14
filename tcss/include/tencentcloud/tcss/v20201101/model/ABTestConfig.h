@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取灰度项目名称
                      * @return ProjectName 灰度项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置灰度项目名称
-                     * @param ProjectName 灰度项目名称
+                     * @param _projectName 灰度项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取true：正在灰度，false：不在灰度
                      * @return Status true：正在灰度，false：不在灰度
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置true：正在灰度，false：不在灰度
-                     * @param Status true：正在灰度，false：不在灰度
+                     * @param _status true：正在灰度，false：不在灰度
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

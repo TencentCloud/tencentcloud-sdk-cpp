@@ -46,180 +46,210 @@ namespace TencentCloud
                     /**
                      * 获取文件系统名称
                      * @return FileSystemName 文件系统名称
+                     * 
                      */
                     std::string GetFileSystemName() const;
 
                     /**
                      * 设置文件系统名称
-                     * @param FileSystemName 文件系统名称
+                     * @param _fileSystemName 文件系统名称
+                     * 
                      */
                     void SetFileSystemName(const std::string& _fileSystemName);
 
                     /**
                      * 判断参数 FileSystemName 是否已赋值
                      * @return FileSystemName 是否已赋值
+                     * 
                      */
                     bool FileSystemNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
                      * @return CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * 
                      */
                     uint64_t GetCapacityQuota() const;
 
                     /**
                      * 设置文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
-                     * @param CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * @param _capacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * 
                      */
                     void SetCapacityQuota(const uint64_t& _capacityQuota);
 
                     /**
                      * 判断参数 CapacityQuota 是否已赋值
                      * @return CapacityQuota 是否已赋值
+                     * 
                      */
                     bool CapacityQuotaHasBeenSet() const;
 
                     /**
                      * 获取是否校验POSIX ACL
                      * @return PosixAcl 是否校验POSIX ACL
+                     * 
                      */
                     bool GetPosixAcl() const;
 
                     /**
                      * 设置是否校验POSIX ACL
-                     * @param PosixAcl 是否校验POSIX ACL
+                     * @param _posixAcl 是否校验POSIX ACL
+                     * 
                      */
                     void SetPosixAcl(const bool& _posixAcl);
 
                     /**
                      * 判断参数 PosixAcl 是否已赋值
                      * @return PosixAcl 是否已赋值
+                     * 
                      */
                     bool PosixAclHasBeenSet() const;
 
                     /**
                      * 获取文件系统描述，默认为空字符串
                      * @return Description 文件系统描述，默认为空字符串
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置文件系统描述，默认为空字符串
-                     * @param Description 文件系统描述，默认为空字符串
+                     * @param _description 文件系统描述，默认为空字符串
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取超级用户名列表，默认为空数组
                      * @return SuperUsers 超级用户名列表，默认为空数组
+                     * 
                      */
                     std::vector<std::string> GetSuperUsers() const;
 
                     /**
                      * 设置超级用户名列表，默认为空数组
-                     * @param SuperUsers 超级用户名列表，默认为空数组
+                     * @param _superUsers 超级用户名列表，默认为空数组
+                     * 
                      */
                     void SetSuperUsers(const std::vector<std::string>& _superUsers);
 
                     /**
                      * 判断参数 SuperUsers 是否已赋值
                      * @return SuperUsers 是否已赋值
+                     * 
                      */
                     bool SuperUsersHasBeenSet() const;
 
                     /**
                      * 获取根目录Inode用户名，默认为hadoop
                      * @return RootInodeUser 根目录Inode用户名，默认为hadoop
+                     * 
                      */
                     std::string GetRootInodeUser() const;
 
                     /**
                      * 设置根目录Inode用户名，默认为hadoop
-                     * @param RootInodeUser 根目录Inode用户名，默认为hadoop
+                     * @param _rootInodeUser 根目录Inode用户名，默认为hadoop
+                     * 
                      */
                     void SetRootInodeUser(const std::string& _rootInodeUser);
 
                     /**
                      * 判断参数 RootInodeUser 是否已赋值
                      * @return RootInodeUser 是否已赋值
+                     * 
                      */
                     bool RootInodeUserHasBeenSet() const;
 
                     /**
                      * 获取根目录Inode组名，默认为supergroup
                      * @return RootInodeGroup 根目录Inode组名，默认为supergroup
+                     * 
                      */
                     std::string GetRootInodeGroup() const;
 
                     /**
                      * 设置根目录Inode组名，默认为supergroup
-                     * @param RootInodeGroup 根目录Inode组名，默认为supergroup
+                     * @param _rootInodeGroup 根目录Inode组名，默认为supergroup
+                     * 
                      */
                     void SetRootInodeGroup(const std::string& _rootInodeGroup);
 
                     /**
                      * 判断参数 RootInodeGroup 是否已赋值
                      * @return RootInodeGroup 是否已赋值
+                     * 
                      */
                     bool RootInodeGroupHasBeenSet() const;
 
                     /**
                      * 获取是否打开Ranger地址校验
                      * @return EnableRanger 是否打开Ranger地址校验
+                     * 
                      */
                     bool GetEnableRanger() const;
 
                     /**
                      * 设置是否打开Ranger地址校验
-                     * @param EnableRanger 是否打开Ranger地址校验
+                     * @param _enableRanger 是否打开Ranger地址校验
+                     * 
                      */
                     void SetEnableRanger(const bool& _enableRanger);
 
                     /**
                      * 判断参数 EnableRanger 是否已赋值
                      * @return EnableRanger 是否已赋值
+                     * 
                      */
                     bool EnableRangerHasBeenSet() const;
 
                     /**
                      * 获取Ranger地址列表，默认为空数组
                      * @return RangerServiceAddresses Ranger地址列表，默认为空数组
+                     * 
                      */
                     std::vector<std::string> GetRangerServiceAddresses() const;
 
                     /**
                      * 设置Ranger地址列表，默认为空数组
-                     * @param RangerServiceAddresses Ranger地址列表，默认为空数组
+                     * @param _rangerServiceAddresses Ranger地址列表，默认为空数组
+                     * 
                      */
                     void SetRangerServiceAddresses(const std::vector<std::string>& _rangerServiceAddresses);
 
                     /**
                      * 判断参数 RangerServiceAddresses 是否已赋值
                      * @return RangerServiceAddresses 是否已赋值
+                     * 
                      */
                     bool RangerServiceAddressesHasBeenSet() const;
 
                     /**
                      * 获取多个资源标签，可以为空数组
                      * @return Tags 多个资源标签，可以为空数组
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置多个资源标签，可以为空数组
-                     * @param Tags 多个资源标签，可以为空数组
+                     * @param _tags 多个资源标签，可以为空数组
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

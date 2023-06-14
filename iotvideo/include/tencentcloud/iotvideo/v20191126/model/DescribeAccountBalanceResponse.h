@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountType 账户类型 1=设备接入;2=云存。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Balance 余额, 单位 : 分(人民币)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBalance() const;
 
                     /**
                      * 判断参数 Balance 是否已赋值
                      * @return Balance 是否已赋值
+                     * 
                      */
                     bool BalanceHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 账户状态，1=正常；8=冻结；9=销户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后修改时间，UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 

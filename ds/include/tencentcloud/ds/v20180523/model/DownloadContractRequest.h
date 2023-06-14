@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取模块名ContractMng
                      * @return Module 模块名ContractMng
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名ContractMng
-                     * @param Module 模块名ContractMng
+                     * @param _module 模块名ContractMng
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取操作名DownloadContract
                      * @return Operation 操作名DownloadContract
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名DownloadContract
-                     * @param Operation 操作名DownloadContract
+                     * @param _operation 操作名DownloadContract
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取合同ID
                      * @return ContractResId 合同ID
+                     * 
                      */
                     std::string GetContractResId() const;
 
                     /**
                      * 设置合同ID
-                     * @param ContractResId 合同ID
+                     * @param _contractResId 合同ID
+                     * 
                      */
                     void SetContractResId(const std::string& _contractResId);
 
                     /**
                      * 判断参数 ContractResId 是否已赋值
                      * @return ContractResId 是否已赋值
+                     * 
                      */
                     bool ContractResIdHasBeenSet() const;
 

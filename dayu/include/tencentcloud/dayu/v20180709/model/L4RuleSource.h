@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取回源IP或域名
                      * @return Source 回源IP或域名
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置回源IP或域名
-                     * @param Source 回源IP或域名
+                     * @param _source 回源IP或域名
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取权重值，取值[0,100]
                      * @return Weight 权重值，取值[0,100]
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置权重值，取值[0,100]
-                     * @param Weight 权重值，取值[0,100]
+                     * @param _weight 权重值，取值[0,100]
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

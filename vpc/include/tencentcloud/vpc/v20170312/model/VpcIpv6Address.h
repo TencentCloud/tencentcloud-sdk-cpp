@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`内`IPv6`地址。
                      * @return Ipv6Address `VPC`内`IPv6`地址。
+                     * 
                      */
                     std::string GetIpv6Address() const;
 
                     /**
                      * 设置`VPC`内`IPv6`地址。
-                     * @param Ipv6Address `VPC`内`IPv6`地址。
+                     * @param _ipv6Address `VPC`内`IPv6`地址。
+                     * 
                      */
                     void SetIpv6Address(const std::string& _ipv6Address);
 
                     /**
                      * 判断参数 Ipv6Address 是否已赋值
                      * @return Ipv6Address 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressHasBeenSet() const;
 
                     /**
                      * 获取所属子网 `IPv6` `CIDR`。
                      * @return CidrBlock 所属子网 `IPv6` `CIDR`。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置所属子网 `IPv6` `CIDR`。
-                     * @param CidrBlock 所属子网 `IPv6` `CIDR`。
+                     * @param _cidrBlock 所属子网 `IPv6` `CIDR`。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取`IPv6`类型。
                      * @return Ipv6AddressType `IPv6`类型。
+                     * 
                      */
                     std::string GetIpv6AddressType() const;
 
                     /**
                      * 设置`IPv6`类型。
-                     * @param Ipv6AddressType `IPv6`类型。
+                     * @param _ipv6AddressType `IPv6`类型。
+                     * 
                      */
                     void SetIpv6AddressType(const std::string& _ipv6AddressType);
 
                     /**
                      * 判断参数 Ipv6AddressType 是否已赋值
                      * @return Ipv6AddressType 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressTypeHasBeenSet() const;
 
                     /**
                      * 获取`IPv6`申请时间。
                      * @return CreatedTime `IPv6`申请时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置`IPv6`申请时间。
-                     * @param CreatedTime `IPv6`申请时间。
+                     * @param _createdTime `IPv6`申请时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 

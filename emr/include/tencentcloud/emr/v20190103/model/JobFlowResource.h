@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取机器类型描述。
                      * @return Spec 机器类型描述。
+                     * 
                      */
                     std::string GetSpec() const;
 
                     /**
                      * 设置机器类型描述。
-                     * @param Spec 机器类型描述。
+                     * @param _spec 机器类型描述。
+                     * 
                      */
                     void SetSpec(const std::string& _spec);
 
                     /**
                      * 判断参数 Spec 是否已赋值
                      * @return Spec 是否已赋值
+                     * 
                      */
                     bool SpecHasBeenSet() const;
 
                     /**
                      * 获取机器类型描述，可参考CVM的该含义。
                      * @return InstanceType 机器类型描述，可参考CVM的该含义。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置机器类型描述，可参考CVM的该含义。
-                     * @param InstanceType 机器类型描述，可参考CVM的该含义。
+                     * @param _instanceType 机器类型描述，可参考CVM的该含义。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取标签KV对。
                      * @return Tags 标签KV对。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签KV对。
-                     * @param Tags 标签KV对。
+                     * @param _tags 标签KV对。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取磁盘描述列表。
                      * @return DiskGroups 磁盘描述列表。
+                     * 
                      */
                     std::vector<DiskGroup> GetDiskGroups() const;
 
                     /**
                      * 设置磁盘描述列表。
-                     * @param DiskGroups 磁盘描述列表。
+                     * @param _diskGroups 磁盘描述列表。
+                     * 
                      */
                     void SetDiskGroups(const std::vector<DiskGroup>& _diskGroups);
 
                     /**
                      * 判断参数 DiskGroups 是否已赋值
                      * @return DiskGroups 是否已赋值
+                     * 
                      */
                     bool DiskGroupsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取输出文件名，最长 64 个字符。缺省由系统指定生成文件名。
                      * @return MediaName 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * 
                      */
                     std::string GetMediaName() const;
 
                     /**
                      * 设置输出文件名，最长 64 个字符。缺省由系统指定生成文件名。
-                     * @param MediaName 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * @param _mediaName 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * 
                      */
                     void SetMediaName(const std::string& _mediaName);
 
                     /**
                      * 判断参数 MediaName 是否已赋值
                      * @return MediaName 是否已赋值
+                     * 
                      */
                     bool MediaNameHasBeenSet() const;
 
                     /**
                      * 获取输出文件格式，可选值：mp4、hls。默认是 mp4。
                      * @return Type 输出文件格式，可选值：mp4、hls。默认是 mp4。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置输出文件格式，可选值：mp4、hls。默认是 mp4。
-                     * @param Type 输出文件格式，可选值：mp4、hls。默认是 mp4。
+                     * @param _type 输出文件格式，可选值：mp4、hls。默认是 mp4。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 <li>默认值：0，表示其他分类。</li>
                      * @return ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
 <li>默认值：0，表示其他分类。</li>
+                     * 
                      */
                     int64_t GetClassId() const;
 
                     /**
                      * 设置分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
 <li>默认值：0，表示其他分类。</li>
-                     * @param ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+                     * @param _classId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
 <li>默认值：0，表示其他分类。</li>
+                     * 
                      */
                     void SetClassId(const int64_t& _classId);
 
                     /**
                      * 判断参数 ClassId 是否已赋值
                      * @return ClassId 是否已赋值
+                     * 
                      */
                     bool ClassIdHasBeenSet() const;
 
                     /**
                      * 获取输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return ExpireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param ExpireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _expireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeList 分类结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
 
                     /**
                      * 判断参数 TextTypeList 是否已赋值
                      * @return TextTypeList 是否已赋值
+                     * 
                      */
                     bool TextTypeListHasBeenSet() const;
 

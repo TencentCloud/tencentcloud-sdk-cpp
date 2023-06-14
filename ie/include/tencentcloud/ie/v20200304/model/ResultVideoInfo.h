@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamId 流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStreamId() const;
 
                     /**
                      * 设置流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamId 流在媒体文件中的流ID
+                     * @param _streamId 流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamId(const int64_t& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 流的时长，单位：毫秒
+                     * @param _duration 流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 画面宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置画面宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 画面宽度
+                     * @param _width 画面宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 画面高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置画面高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 画面高度
+                     * @param _height 画面高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fps 视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fps 视频帧率，如果高于原始帧率，部分服务将无效。
+                     * @param _fps 视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 

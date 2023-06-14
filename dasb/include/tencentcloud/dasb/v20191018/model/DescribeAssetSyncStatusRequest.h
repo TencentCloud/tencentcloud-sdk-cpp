@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询的资产同步类型。1 -主机资产， 2 - 数据库资产
                      * @return Category 查询的资产同步类型。1 -主机资产， 2 - 数据库资产
+                     * 
                      */
                     uint64_t GetCategory() const;
 
                     /**
                      * 设置查询的资产同步类型。1 -主机资产， 2 - 数据库资产
-                     * @param Category 查询的资产同步类型。1 -主机资产， 2 - 数据库资产
+                     * @param _category 查询的资产同步类型。1 -主机资产， 2 - 数据库资产
+                     * 
                      */
                     void SetCategory(const uint64_t& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 

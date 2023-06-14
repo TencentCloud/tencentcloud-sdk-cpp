@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取导入的媒体信息列表。
                      * @return MediaInfoSet 导入的媒体信息列表。
+                     * 
                      */
                     std::vector<ImportMediaInfo> GetMediaInfoSet() const;
 
                     /**
                      * 设置导入的媒体信息列表。
-                     * @param MediaInfoSet 导入的媒体信息列表。
+                     * @param _mediaInfoSet 导入的媒体信息列表。
+                     * 
                      */
                     void SetMediaInfoSet(const std::vector<ImportMediaInfo>& _mediaInfoSet);
 
                     /**
                      * 判断参数 MediaInfoSet 是否已赋值
                      * @return MediaInfoSet 是否已赋值
+                     * 
                      */
                     bool MediaInfoSetHasBeenSet() const;
 
                     /**
                      * 获取媒体归属。
                      * @return Owner 媒体归属。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置媒体归属。
-                     * @param Owner 媒体归属。
+                     * @param _owner 媒体归属。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取媒体分类路径。
                      * @return ClassPath 媒体分类路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置媒体分类路径。
-                     * @param ClassPath 媒体分类路径。
+                     * @param _classPath 媒体分类路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 

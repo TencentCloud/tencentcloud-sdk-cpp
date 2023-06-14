@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 带毫秒的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置带毫秒的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 带毫秒的时间戳
+                     * @param _time 带毫秒的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Speed 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetSpeed() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Speed 无
+                     * @param _speed 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpeed(const double& _speed);
 
                     /**
                      * 判断参数 Speed 是否已赋值
                      * @return Speed 是否已赋值
+                     * 
                      */
                     bool SpeedHasBeenSet() const;
 

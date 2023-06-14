@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取配置项名称
                      * @return ConfigName 配置项名称
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置项名称
-                     * @param ConfigName 配置项名称
+                     * @param _configName 配置项名称
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
                     /**
                      * 获取配置项版本
                      * @return ConfigVersion 配置项版本
+                     * 
                      */
                     std::string GetConfigVersion() const;
 
                     /**
                      * 设置配置项版本
-                     * @param ConfigVersion 配置项版本
+                     * @param _configVersion 配置项版本
+                     * 
                      */
                     void SetConfigVersion(const std::string& _configVersion);
 
                     /**
                      * 判断参数 ConfigVersion 是否已赋值
                      * @return ConfigVersion 是否已赋值
+                     * 
                      */
                     bool ConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取配置项值
                      * @return ConfigValue 配置项值
+                     * 
                      */
                     std::string GetConfigValue() const;
 
                     /**
                      * 设置配置项值
-                     * @param ConfigValue 配置项值
+                     * @param _configValue 配置项值
+                     * 
                      */
                     void SetConfigValue(const std::string& _configValue);
 
                     /**
                      * 判断参数 ConfigValue 是否已赋值
                      * @return ConfigValue 是否已赋值
+                     * 
                      */
                     bool ConfigValueHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取配置项版本描述
                      * @return ConfigVersionDesc 配置项版本描述
+                     * 
                      */
                     std::string GetConfigVersionDesc() const;
 
                     /**
                      * 设置配置项版本描述
-                     * @param ConfigVersionDesc 配置项版本描述
+                     * @param _configVersionDesc 配置项版本描述
+                     * 
                      */
                     void SetConfigVersionDesc(const std::string& _configVersionDesc);
 
                     /**
                      * 判断参数 ConfigVersionDesc 是否已赋值
                      * @return ConfigVersionDesc 是否已赋值
+                     * 
                      */
                     bool ConfigVersionDescHasBeenSet() const;
 
                     /**
                      * 获取配置项值类型
                      * @return ConfigType 配置项值类型
+                     * 
                      */
                     std::string GetConfigType() const;
 
                     /**
                      * 设置配置项值类型
-                     * @param ConfigType 配置项值类型
+                     * @param _configType 配置项值类型
+                     * 
                      */
                     void SetConfigType(const std::string& _configType);
 
                     /**
                      * 判断参数 ConfigType 是否已赋值
                      * @return ConfigType 是否已赋值
+                     * 
                      */
                     bool ConfigTypeHasBeenSet() const;
 
                     /**
                      * 获取Base64编码的配置项
                      * @return EncodeWithBase64 Base64编码的配置项
+                     * 
                      */
                     bool GetEncodeWithBase64() const;
 
                     /**
                      * 设置Base64编码的配置项
-                     * @param EncodeWithBase64 Base64编码的配置项
+                     * @param _encodeWithBase64 Base64编码的配置项
+                     * 
                      */
                     void SetEncodeWithBase64(const bool& _encodeWithBase64);
 
                     /**
                      * 判断参数 EncodeWithBase64 是否已赋值
                      * @return EncodeWithBase64 是否已赋值
+                     * 
                      */
                     bool EncodeWithBase64HasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProgramIdList 无
+                     * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
                      * 设置无
-                     * @param ProgramIdList 无
+                     * @param _programIdList 无
+                     * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
 
                     /**
                      * 判断参数 ProgramIdList 是否已赋值
                      * @return ProgramIdList 是否已赋值
+                     * 
                      */
                     bool ProgramIdListHasBeenSet() const;
 

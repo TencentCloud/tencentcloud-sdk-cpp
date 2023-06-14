@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取白盒密钥ID
                      * @return KeyId 白盒密钥ID
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置白盒密钥ID
-                     * @param KeyId 白盒密钥ID
+                     * @param _keyId 白盒密钥ID
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。
                      * @return DeviceFingerprints 设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。
+                     * 
                      */
                     std::vector<DeviceFingerprint> GetDeviceFingerprints() const;
 
                     /**
                      * 设置设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。
-                     * @param DeviceFingerprints 设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。
+                     * @param _deviceFingerprints 设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。
+                     * 
                      */
                     void SetDeviceFingerprints(const std::vector<DeviceFingerprint>& _deviceFingerprints);
 
                     /**
                      * 判断参数 DeviceFingerprints 是否已赋值
                      * @return DeviceFingerprints 是否已赋值
+                     * 
                      */
                     bool DeviceFingerprintsHasBeenSet() const;
 

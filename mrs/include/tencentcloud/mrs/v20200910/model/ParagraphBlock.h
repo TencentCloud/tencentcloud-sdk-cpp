@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncisionHealingText 切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIncisionHealingText() const;
 
                     /**
                      * 设置切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncisionHealingText 切口愈合情况
+                     * @param _incisionHealingText 切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncisionHealingText(const std::string& _incisionHealingText);
 
                     /**
                      * 判断参数 IncisionHealingText 是否已赋值
                      * @return IncisionHealingText 是否已赋值
+                     * 
                      */
                     bool IncisionHealingTextHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuxiliaryExaminationText 辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuxiliaryExaminationText() const;
 
                     /**
                      * 设置辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuxiliaryExaminationText 辅助检查
+                     * @param _auxiliaryExaminationText 辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuxiliaryExaminationText(const std::string& _auxiliaryExaminationText);
 
                     /**
                      * 判断参数 AuxiliaryExaminationText 是否已赋值
                      * @return AuxiliaryExaminationText 是否已赋值
+                     * 
                      */
                     bool AuxiliaryExaminationTextHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecialExamText 特殊检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecialExamText() const;
 
                     /**
                      * 设置特殊检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecialExamText 特殊检查
+                     * @param _specialExamText 特殊检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecialExamText(const std::string& _specialExamText);
 
                     /**
                      * 判断参数 SpecialExamText 是否已赋值
                      * @return SpecialExamText 是否已赋值
+                     * 
                      */
                     bool SpecialExamTextHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutpatientDiagnosisText 门诊诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutpatientDiagnosisText() const;
 
                     /**
                      * 设置门诊诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutpatientDiagnosisText 门诊诊断
+                     * @param _outpatientDiagnosisText 门诊诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutpatientDiagnosisText(const std::string& _outpatientDiagnosisText);
 
                     /**
                      * 判断参数 OutpatientDiagnosisText 是否已赋值
                      * @return OutpatientDiagnosisText 是否已赋值
+                     * 
                      */
                     bool OutpatientDiagnosisTextHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionConditionText 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionConditionText() const;
 
                     /**
                      * 设置入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionConditionText 入院情况
+                     * @param _admissionConditionText 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionConditionText(const std::string& _admissionConditionText);
 
                     /**
                      * 判断参数 AdmissionConditionText 是否已赋值
                      * @return AdmissionConditionText 是否已赋值
+                     * 
                      */
                     bool AdmissionConditionTextHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckAndTreatmentProcessText 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckAndTreatmentProcessText() const;
 
                     /**
                      * 设置诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckAndTreatmentProcessText 诊疗经过
+                     * @param _checkAndTreatmentProcessText 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckAndTreatmentProcessText(const std::string& _checkAndTreatmentProcessText);
 
                     /**
                      * 判断参数 CheckAndTreatmentProcessText 是否已赋值
                      * @return CheckAndTreatmentProcessText 是否已赋值
+                     * 
                      */
                     bool CheckAndTreatmentProcessTextHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymptomsAndSignsText 体征
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSymptomsAndSignsText() const;
 
                     /**
                      * 设置体征
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SymptomsAndSignsText 体征
+                     * @param _symptomsAndSignsText 体征
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSymptomsAndSignsText(const std::string& _symptomsAndSignsText);
 
                     /**
                      * 判断参数 SymptomsAndSignsText 是否已赋值
                      * @return SymptomsAndSignsText 是否已赋值
+                     * 
                      */
                     bool SymptomsAndSignsTextHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeInstructionsText 出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeInstructionsText() const;
 
                     /**
                      * 设置出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeInstructionsText 出院医嘱
+                     * @param _dischargeInstructionsText 出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeInstructionsText(const std::string& _dischargeInstructionsText);
 
                     /**
                      * 判断参数 DischargeInstructionsText 是否已赋值
                      * @return DischargeInstructionsText 是否已赋值
+                     * 
                      */
                     bool DischargeInstructionsTextHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDiagnosisText 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionDiagnosisText() const;
 
                     /**
                      * 设置入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionDiagnosisText 入院诊断
+                     * @param _admissionDiagnosisText 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionDiagnosisText(const std::string& _admissionDiagnosisText);
 
                     /**
                      * 判断参数 AdmissionDiagnosisText 是否已赋值
                      * @return AdmissionDiagnosisText 是否已赋值
+                     * 
                      */
                     bool AdmissionDiagnosisTextHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryConditionText 手术情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSurgeryConditionText() const;
 
                     /**
                      * 设置手术情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurgeryConditionText 手术情况
+                     * @param _surgeryConditionText 手术情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSurgeryConditionText(const std::string& _surgeryConditionText);
 
                     /**
                      * 判断参数 SurgeryConditionText 是否已赋值
                      * @return SurgeryConditionText 是否已赋值
+                     * 
                      */
                     bool SurgeryConditionTextHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalDiagnosisText 病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPathologicalDiagnosisText() const;
 
                     /**
                      * 设置病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathologicalDiagnosisText 病理诊断
+                     * @param _pathologicalDiagnosisText 病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPathologicalDiagnosisText(const std::string& _pathologicalDiagnosisText);
 
                     /**
                      * 判断参数 PathologicalDiagnosisText 是否已赋值
                      * @return PathologicalDiagnosisText 是否已赋值
+                     * 
                      */
                     bool PathologicalDiagnosisTextHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeConditionText 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeConditionText() const;
 
                     /**
                      * 设置出院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeConditionText 出院情况
+                     * @param _dischargeConditionText 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeConditionText(const std::string& _dischargeConditionText);
 
                     /**
                      * 判断参数 DischargeConditionText 是否已赋值
                      * @return DischargeConditionText 是否已赋值
+                     * 
                      */
                     bool DischargeConditionTextHasBeenSet() const;
 
@@ -317,6 +353,7 @@ namespace TencentCloud
                      * @return CheckRecordText 检查记录
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckRecordText() const;
 
@@ -324,15 +361,17 @@ namespace TencentCloud
                      * 设置检查记录
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckRecordText 检查记录
+                     * @param _checkRecordText 检查记录
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckRecordText(const std::string& _checkRecordText);
 
                     /**
                      * 判断参数 CheckRecordText 是否已赋值
                      * @return CheckRecordText 是否已赋值
+                     * 
                      */
                     bool CheckRecordTextHasBeenSet() const;
 
@@ -341,20 +380,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChiefComplaintText 主诉
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChiefComplaintText() const;
 
                     /**
                      * 设置主诉
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChiefComplaintText 主诉
+                     * @param _chiefComplaintText 主诉
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChiefComplaintText(const std::string& _chiefComplaintText);
 
                     /**
                      * 判断参数 ChiefComplaintText 是否已赋值
                      * @return ChiefComplaintText 是否已赋值
+                     * 
                      */
                     bool ChiefComplaintTextHasBeenSet() const;
 
@@ -363,20 +405,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosisText 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeDiagnosisText() const;
 
                     /**
                      * 设置出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeDiagnosisText 出院诊断
+                     * @param _dischargeDiagnosisText 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeDiagnosisText(const std::string& _dischargeDiagnosisText);
 
                     /**
                      * 判断参数 DischargeDiagnosisText 是否已赋值
                      * @return DischargeDiagnosisText 是否已赋值
+                     * 
                      */
                     bool DischargeDiagnosisTextHasBeenSet() const;
 
@@ -385,20 +430,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDiseaseHistoryText 既往史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainDiseaseHistoryText() const;
 
                     /**
                      * 设置既往史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainDiseaseHistoryText 既往史
+                     * @param _mainDiseaseHistoryText 既往史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainDiseaseHistoryText(const std::string& _mainDiseaseHistoryText);
 
                     /**
                      * 判断参数 MainDiseaseHistoryText 是否已赋值
                      * @return MainDiseaseHistoryText 是否已赋值
+                     * 
                      */
                     bool MainDiseaseHistoryTextHasBeenSet() const;
 
@@ -407,20 +455,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseasePresentText 现病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiseasePresentText() const;
 
                     /**
                      * 设置现病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseasePresentText 现病史
+                     * @param _diseasePresentText 现病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiseasePresentText(const std::string& _diseasePresentText);
 
                     /**
                      * 判断参数 DiseasePresentText 是否已赋值
                      * @return DiseasePresentText 是否已赋值
+                     * 
                      */
                     bool DiseasePresentTextHasBeenSet() const;
 
@@ -429,20 +480,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonalHistoryText 个人史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPersonalHistoryText() const;
 
                     /**
                      * 设置个人史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PersonalHistoryText 个人史
+                     * @param _personalHistoryText 个人史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPersonalHistoryText(const std::string& _personalHistoryText);
 
                     /**
                      * 判断参数 PersonalHistoryText 是否已赋值
                      * @return PersonalHistoryText 是否已赋值
+                     * 
                      */
                     bool PersonalHistoryTextHasBeenSet() const;
 
@@ -451,20 +505,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstruallHistoryText 月经史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenstruallHistoryText() const;
 
                     /**
                      * 设置月经史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstruallHistoryText 月经史
+                     * @param _menstruallHistoryText 月经史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstruallHistoryText(const std::string& _menstruallHistoryText);
 
                     /**
                      * 判断参数 MenstruallHistoryText 是否已赋值
                      * @return MenstruallHistoryText 是否已赋值
+                     * 
                      */
                     bool MenstruallHistoryTextHasBeenSet() const;
 
@@ -473,20 +530,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObstericalHistoryText 婚育史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetObstericalHistoryText() const;
 
                     /**
                      * 设置婚育史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObstericalHistoryText 婚育史
+                     * @param _obstericalHistoryText 婚育史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObstericalHistoryText(const std::string& _obstericalHistoryText);
 
                     /**
                      * 判断参数 ObstericalHistoryText 是否已赋值
                      * @return ObstericalHistoryText 是否已赋值
+                     * 
                      */
                     bool ObstericalHistoryTextHasBeenSet() const;
 
@@ -495,20 +555,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyHistoryText 家族史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFamilyHistoryText() const;
 
                     /**
                      * 设置家族史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FamilyHistoryText 家族史
+                     * @param _familyHistoryText 家族史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFamilyHistoryText(const std::string& _familyHistoryText);
 
                     /**
                      * 判断参数 FamilyHistoryText 是否已赋值
                      * @return FamilyHistoryText 是否已赋值
+                     * 
                      */
                     bool FamilyHistoryTextHasBeenSet() const;
 
@@ -517,20 +580,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllergyHistoryText 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAllergyHistoryText() const;
 
                     /**
                      * 设置过敏史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllergyHistoryText 过敏史
+                     * @param _allergyHistoryText 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllergyHistoryText(const std::string& _allergyHistoryText);
 
                     /**
                      * 判断参数 AllergyHistoryText 是否已赋值
                      * @return AllergyHistoryText 是否已赋值
+                     * 
                      */
                     bool AllergyHistoryTextHasBeenSet() const;
 
@@ -539,20 +605,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseHistoryText 病史信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiseaseHistoryText() const;
 
                     /**
                      * 设置病史信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseaseHistoryText 病史信息
+                     * @param _diseaseHistoryText 病史信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiseaseHistoryText(const std::string& _diseaseHistoryText);
 
                     /**
                      * 判断参数 DiseaseHistoryText 是否已赋值
                      * @return DiseaseHistoryText 是否已赋值
+                     * 
                      */
                     bool DiseaseHistoryTextHasBeenSet() const;
 
@@ -561,20 +630,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherDiagnosisText 其它诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOtherDiagnosisText() const;
 
                     /**
                      * 设置其它诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtherDiagnosisText 其它诊断
+                     * @param _otherDiagnosisText 其它诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOtherDiagnosisText(const std::string& _otherDiagnosisText);
 
                     /**
                      * 判断参数 OtherDiagnosisText 是否已赋值
                      * @return OtherDiagnosisText 是否已赋值
+                     * 
                      */
                     bool OtherDiagnosisTextHasBeenSet() const;
 
@@ -583,20 +655,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyExaminationText 体格检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBodyExaminationText() const;
 
                     /**
                      * 设置体格检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BodyExaminationText 体格检查
+                     * @param _bodyExaminationText 体格检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBodyExaminationText(const std::string& _bodyExaminationText);
 
                     /**
                      * 判断参数 BodyExaminationText 是否已赋值
                      * @return BodyExaminationText 是否已赋值
+                     * 
                      */
                     bool BodyExaminationTextHasBeenSet() const;
 
@@ -605,20 +680,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecialistExaminationText 专科检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecialistExaminationText() const;
 
                     /**
                      * 设置专科检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecialistExaminationText 专科检查
+                     * @param _specialistExaminationText 专科检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecialistExaminationText(const std::string& _specialistExaminationText);
 
                     /**
                      * 判断参数 SpecialistExaminationText 是否已赋值
                      * @return SpecialistExaminationText 是否已赋值
+                     * 
                      */
                     bool SpecialistExaminationTextHasBeenSet() const;
 
@@ -627,20 +705,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreatmentResultText 治疗结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTreatmentResultText() const;
 
                     /**
                      * 设置治疗结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TreatmentResultText 治疗结果
+                     * @param _treatmentResultText 治疗结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTreatmentResultText(const std::string& _treatmentResultText);
 
                     /**
                      * 判断参数 TreatmentResultText 是否已赋值
                      * @return TreatmentResultText 是否已赋值
+                     * 
                      */
                     bool TreatmentResultTextHasBeenSet() const;
 

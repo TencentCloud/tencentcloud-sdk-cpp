@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -121,6 +127,7 @@ lye1m30d：低功耗事件30天月套餐。
 lye1y3d：低功耗事件3天年套餐。
 lye1y7d：低功耗事件7天年套餐。
 lye1y30d：低功耗事件30天年套餐。
+                     * 
                      */
                     std::string GetPackageId() const;
 
@@ -146,7 +153,7 @@ lye1m30d：低功耗事件30天月套餐。
 lye1y3d：低功耗事件3天年套餐。
 lye1y7d：低功耗事件7天年套餐。
 lye1y30d：低功耗事件30天年套餐。
-                     * @param PackageId 云存套餐ID：
+                     * @param _packageId 云存套餐ID：
 yc1m3d ： 全时3天存储月套餐。
 yc1m7d ： 全时7天存储月套餐。
 yc1m30d ：全时30天存储月套餐。
@@ -167,48 +174,56 @@ lye1m30d：低功耗事件30天月套餐。
 lye1y3d：低功耗事件3天年套餐。
 lye1y7d：低功耗事件7天年套餐。
 lye1y30d：低功耗事件30天年套餐。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
                      * @return Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * 
                      */
                     uint64_t GetOverride() const;
 
                     /**
                      * 设置如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
-                     * @param Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * @param _override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * 
                      */
                     void SetOverride(const uint64_t& _override);
 
                     /**
                      * 判断参数 Override 是否已赋值
                      * @return Override 是否已赋值
+                     * 
                      */
                     bool OverrideHasBeenSet() const;
 
                     /**
                      * 获取套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
                      * @return PackageQueue 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     * 
                      */
                     std::string GetPackageQueue() const;
 
                     /**
                      * 设置套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
-                     * @param PackageQueue 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     * @param _packageQueue 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     * 
                      */
                     void SetPackageQueue(const std::string& _packageQueue);
 
                     /**
                      * 判断参数 PackageQueue 是否已赋值
                      * @return PackageQueue 是否已赋值
+                     * 
                      */
                     bool PackageQueueHasBeenSet() const;
 

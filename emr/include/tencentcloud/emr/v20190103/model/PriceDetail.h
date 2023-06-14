@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取节点ID
                      * @return ResourceId 节点ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置节点ID
-                     * @param ResourceId 节点ID
+                     * @param _resourceId 节点ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取价格计算公式
                      * @return Formula 价格计算公式
+                     * 
                      */
                     std::string GetFormula() const;
 
                     /**
                      * 设置价格计算公式
-                     * @param Formula 价格计算公式
+                     * @param _formula 价格计算公式
+                     * 
                      */
                     void SetFormula(const std::string& _formula);
 
                     /**
                      * 判断参数 Formula 是否已赋值
                      * @return Formula 是否已赋值
+                     * 
                      */
                     bool FormulaHasBeenSet() const;
 
                     /**
                      * 获取原价
                      * @return OriginalCost 原价
+                     * 
                      */
                     double GetOriginalCost() const;
 
                     /**
                      * 设置原价
-                     * @param OriginalCost 原价
+                     * @param _originalCost 原价
+                     * 
                      */
                     void SetOriginalCost(const double& _originalCost);
 
                     /**
                      * 判断参数 OriginalCost 是否已赋值
                      * @return OriginalCost 是否已赋值
+                     * 
                      */
                     bool OriginalCostHasBeenSet() const;
 
                     /**
                      * 获取折扣价
                      * @return DiscountCost 折扣价
+                     * 
                      */
                     double GetDiscountCost() const;
 
                     /**
                      * 设置折扣价
-                     * @param DiscountCost 折扣价
+                     * @param _discountCost 折扣价
+                     * 
                      */
                     void SetDiscountCost(const double& _discountCost);
 
                     /**
                      * 判断参数 DiscountCost 是否已赋值
                      * @return DiscountCost 是否已赋值
+                     * 
                      */
                     bool DiscountCostHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceIds 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceIds 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceIds 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取项目ID，用户已创建项目的唯一ID,非自定义
                      * @return ProjectId 项目ID，用户已创建项目的唯一ID,非自定义
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID，用户已创建项目的唯一ID,非自定义
-                     * @param ProjectId 项目ID，用户已创建项目的唯一ID,非自定义
+                     * @param _projectId 项目ID，用户已创建项目的唯一ID,非自定义
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

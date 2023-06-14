@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取有效时段结束时间
                      * @return EndTime 有效时段结束时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置有效时段结束时间
-                     * @param EndTime 有效时段结束时间
+                     * @param _endTime 有效时段结束时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取是否需要发送通知
                      * @return NeedSendNotice 是否需要发送通知
+                     * 
                      */
                     int64_t GetNeedSendNotice() const;
 
                     /**
                      * 设置是否需要发送通知
-                     * @param NeedSendNotice 是否需要发送通知
+                     * @param _needSendNotice 是否需要发送通知
+                     * 
                      */
                     void SetNeedSendNotice(const int64_t& _needSendNotice);
 
                     /**
                      * 判断参数 NeedSendNotice 是否已赋值
                      * @return NeedSendNotice 是否已赋值
+                     * 
                      */
                     bool NeedSendNoticeHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotifyWay 告警接收渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNotifyWay() const;
 
                     /**
                      * 设置告警接收渠道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotifyWay 告警接收渠道
+                     * @param _notifyWay 告警接收渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotifyWay(const std::vector<std::string>& _notifyWay);
 
                     /**
                      * 判断参数 NotifyWay 是否已赋值
                      * @return NotifyWay 是否已赋值
+                     * 
                      */
                     bool NotifyWayHasBeenSet() const;
 
                     /**
                      * 获取电话告警对个人间隔（秒）
                      * @return PersonInterval 电话告警对个人间隔（秒）
+                     * 
                      */
                     int64_t GetPersonInterval() const;
 
                     /**
                      * 设置电话告警对个人间隔（秒）
-                     * @param PersonInterval 电话告警对个人间隔（秒）
+                     * @param _personInterval 电话告警对个人间隔（秒）
+                     * 
                      */
                     void SetPersonInterval(const int64_t& _personInterval);
 
                     /**
                      * 判断参数 PersonInterval 是否已赋值
                      * @return PersonInterval 是否已赋值
+                     * 
                      */
                     bool PersonIntervalHasBeenSet() const;
 
@@ -127,38 +139,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverGroupList 消息接收组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetReceiverGroupList() const;
 
                     /**
                      * 设置消息接收组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverGroupList 消息接收组列表
+                     * @param _receiverGroupList 消息接收组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverGroupList(const std::vector<int64_t>& _receiverGroupList);
 
                     /**
                      * 判断参数 ReceiverGroupList 是否已赋值
                      * @return ReceiverGroupList 是否已赋值
+                     * 
                      */
                     bool ReceiverGroupListHasBeenSet() const;
 
                     /**
                      * 获取接受者类型
                      * @return ReceiverType 接受者类型
+                     * 
                      */
                     std::string GetReceiverType() const;
 
                     /**
                      * 设置接受者类型
-                     * @param ReceiverType 接受者类型
+                     * @param _receiverType 接受者类型
+                     * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
 
                     /**
                      * 判断参数 ReceiverType 是否已赋值
                      * @return ReceiverType 是否已赋值
+                     * 
                      */
                     bool ReceiverTypeHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverUserList 接收人列表。通过平台接口查询到的接收人id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetReceiverUserList() const;
 
                     /**
                      * 设置接收人列表。通过平台接口查询到的接收人id列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverUserList 接收人列表。通过平台接口查询到的接收人id列表
+                     * @param _receiverUserList 接收人列表。通过平台接口查询到的接收人id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverUserList(const std::vector<int64_t>& _receiverUserList);
 
                     /**
                      * 判断参数 ReceiverUserList 是否已赋值
                      * @return ReceiverUserList 是否已赋值
+                     * 
                      */
                     bool ReceiverUserListHasBeenSet() const;
 
@@ -189,56 +210,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecoverNotify 告警恢复通知方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRecoverNotify() const;
 
                     /**
                      * 设置告警恢复通知方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecoverNotify 告警恢复通知方式
+                     * @param _recoverNotify 告警恢复通知方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecoverNotify(const std::vector<std::string>& _recoverNotify);
 
                     /**
                      * 判断参数 RecoverNotify 是否已赋值
                      * @return RecoverNotify 是否已赋值
+                     * 
                      */
                     bool RecoverNotifyHasBeenSet() const;
 
                     /**
                      * 获取电话告警每轮间隔（秒）
                      * @return RoundInterval 电话告警每轮间隔（秒）
+                     * 
                      */
                     int64_t GetRoundInterval() const;
 
                     /**
                      * 设置电话告警每轮间隔（秒）
-                     * @param RoundInterval 电话告警每轮间隔（秒）
+                     * @param _roundInterval 电话告警每轮间隔（秒）
+                     * 
                      */
                     void SetRoundInterval(const int64_t& _roundInterval);
 
                     /**
                      * 判断参数 RoundInterval 是否已赋值
                      * @return RoundInterval 是否已赋值
+                     * 
                      */
                     bool RoundIntervalHasBeenSet() const;
 
                     /**
                      * 获取电话告警轮数
                      * @return RoundNumber 电话告警轮数
+                     * 
                      */
                     int64_t GetRoundNumber() const;
 
                     /**
                      * 设置电话告警轮数
-                     * @param RoundNumber 电话告警轮数
+                     * @param _roundNumber 电话告警轮数
+                     * 
                      */
                     void SetRoundNumber(const int64_t& _roundNumber);
 
                     /**
                      * 判断参数 RoundNumber 是否已赋值
                      * @return RoundNumber 是否已赋值
+                     * 
                      */
                     bool RoundNumberHasBeenSet() const;
 
@@ -247,38 +277,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendFor 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSendFor() const;
 
                     /**
                      * 设置电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SendFor 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
+                     * @param _sendFor 电话告警通知时机。可选"OCCUR"(告警时通知),"RECOVER"(恢复时通知)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSendFor(const std::vector<std::string>& _sendFor);
 
                     /**
                      * 判断参数 SendFor 是否已赋值
                      * @return SendFor 是否已赋值
+                     * 
                      */
                     bool SendForHasBeenSet() const;
 
                     /**
                      * 获取有效时段开始时间
                      * @return StartTime 有效时段开始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置有效时段开始时间
-                     * @param StartTime 有效时段开始时间
+                     * @param _startTime 有效时段开始时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -287,20 +323,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UIDList 电话告警接收者uid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetUIDList() const;
 
                     /**
                      * 设置电话告警接收者uid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UIDList 电话告警接收者uid
+                     * @param _uIDList 电话告警接收者uid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUIDList(const std::vector<int64_t>& _uIDList);
 
                     /**
                      * 判断参数 UIDList 是否已赋值
                      * @return UIDList 是否已赋值
+                     * 
                      */
                     bool UIDListHasBeenSet() const;
 

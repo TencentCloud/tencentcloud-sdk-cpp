@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取云存日期，例如"2020-01-05"
                      * @return Date 云存日期，例如"2020-01-05"
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置云存日期，例如"2020-01-05"
-                     * @param Date 云存日期，例如"2020-01-05"
+                     * @param _date 云存日期，例如"2020-01-05"
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取开始时间，unix时间
                      * @return StartTime 开始时间，unix时间
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间，unix时间
-                     * @param StartTime 开始时间，unix时间
+                     * @param _startTime 开始时间，unix时间
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，unix时间
                      * @return EndTime 结束时间，unix时间
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间，unix时间
-                     * @param EndTime 结束时间，unix时间
+                     * @param _endTime 结束时间，unix时间
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

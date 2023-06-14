@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Length 0：光头，1：短发，2：中发，3：长发，4：绑发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLength() const;
 
                     /**
                      * 设置0：光头，1：短发，2：中发，3：长发，4：绑发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Length 0：光头，1：短发，2：中发，3：长发，4：绑发
+                     * @param _length 0：光头，1：短发，2：中发，3：长发，4：绑发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLength(const int64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bang 0：有刘海，1：无刘海
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBang() const;
 
                     /**
                      * 设置0：有刘海，1：无刘海
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bang 0：有刘海，1：无刘海
+                     * @param _bang 0：有刘海，1：无刘海
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBang(const int64_t& _bang);
 
                     /**
                      * 判断参数 Bang 是否已赋值
                      * @return Bang 是否已赋值
+                     * 
                      */
                     bool BangHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Color 0：黑色，1：金色，2：棕色，3：灰白色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetColor() const;
 
                     /**
                      * 设置0：黑色，1：金色，2：棕色，3：灰白色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Color 0：黑色，1：金色，2：棕色，3：灰白色
+                     * @param _color 0：黑色，1：金色，2：棕色，3：灰白色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColor(const int64_t& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 

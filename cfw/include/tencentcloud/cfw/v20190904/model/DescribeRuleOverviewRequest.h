@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取方向，0：出站，1：入站
                      * @return Direction 方向，0：出站，1：入站
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置方向，0：出站，1：入站
-                     * @param Direction 方向，0：出站，1：入站
+                     * @param _direction 方向，0：出站，1：入站
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

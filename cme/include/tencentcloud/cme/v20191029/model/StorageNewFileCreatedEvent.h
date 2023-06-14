@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取云点播文件  Id。
                      * @return FileId 云点播文件  Id。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置云点播文件  Id。
-                     * @param FileId 云点播文件  Id。
+                     * @param _fileId 云点播文件  Id。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取媒体 Id。
                      * @return MaterialId 媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置媒体 Id。
-                     * @param MaterialId 媒体 Id。
+                     * @param _materialId 媒体 Id。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取操作者 Id。（废弃，请勿使用）
                      * @return Operator 操作者 Id。（废弃，请勿使用）
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者 Id。（废弃，请勿使用）
-                     * @param Operator 操作者 Id。（废弃，请勿使用）
+                     * @param _operator 操作者 Id。（废弃，请勿使用）
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -114,6 +123,7 @@ namespace TencentCloud
 <li>VideoEdit：视频剪辑；</li>
 <li>LiveStreamClip：直播流剪辑；</li>
 <li>LiveStreamRecord：直播流录制。</li>
+                     * 
                      */
                     std::string GetOperationType() const;
 
@@ -124,90 +134,104 @@ namespace TencentCloud
 <li>VideoEdit：视频剪辑；</li>
 <li>LiveStreamClip：直播流剪辑；</li>
 <li>LiveStreamRecord：直播流录制。</li>
-                     * @param OperationType 操作类型，可取值有：
+                     * @param _operationType 操作类型，可取值有：
 <li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
 <li>VideoEdit：视频剪辑；</li>
 <li>LiveStreamClip：直播流剪辑；</li>
 <li>LiveStreamRecord：直播流录制。</li>
+                     * 
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
+                     * 
                      */
                     bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取媒体归属。
                      * @return Owner 媒体归属。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置媒体归属。
-                     * @param Owner 媒体归属。
+                     * @param _owner 媒体归属。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取媒体分类路径。
                      * @return ClassPath 媒体分类路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置媒体分类路径。
-                     * @param ClassPath 媒体分类路径。
+                     * @param _classPath 媒体分类路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
                      * @return TaskId 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
-                     * @param TaskId 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     * @param _taskId 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
                      * @return SourceContext 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     * 
                      */
                     std::string GetSourceContext() const;
 
                     /**
                      * 设置来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
-                     * @param SourceContext 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     * @param _sourceContext 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     * 
                      */
                     void SetSourceContext(const std::string& _sourceContext);
 
                     /**
                      * 判断参数 SourceContext 是否已赋值
                      * @return SourceContext 是否已赋值
+                     * 
                      */
                     bool SourceContextHasBeenSet() const;
 

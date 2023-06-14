@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云兔ID
                      * @return LinkID 云兔ID
+                     * 
                      */
                     int64_t GetLinkID() const;
 
                     /**
                      * 设置云兔ID
-                     * @param LinkID 云兔ID
+                     * @param _linkID 云兔ID
+                     * 
                      */
                     void SetLinkID(const int64_t& _linkID);
 
                     /**
                      * 判断参数 LinkID 是否已赋值
                      * @return LinkID 是否已赋值
+                     * 
                      */
                     bool LinkIDHasBeenSet() const;
 
                     /**
                      * 获取运营商 1 移动 2 联通 3 电信
                      * @return TeleOperator 运营商 1 移动 2 联通 3 电信
+                     * 
                      */
                     int64_t GetTeleOperator() const;
 
                     /**
                      * 设置运营商 1 移动 2 联通 3 电信
-                     * @param TeleOperator 运营商 1 移动 2 联通 3 电信
+                     * @param _teleOperator 运营商 1 移动 2 联通 3 电信
+                     * 
                      */
                     void SetTeleOperator(const int64_t& _teleOperator);
 
                     /**
                      * 判断参数 TeleOperator 是否已赋值
                      * @return TeleOperator 是否已赋值
+                     * 
                      */
                     bool TeleOperatorHasBeenSet() const;
 

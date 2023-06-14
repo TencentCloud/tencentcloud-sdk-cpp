@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取文件MD5值
                      * @return MD5 文件MD5值
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置文件MD5值
-                     * @param MD5 文件MD5值
+                     * @param _mD5 文件MD5值
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
                     /**
                      * 获取病毒名
                      * @return VirusName 病毒名
+                     * 
                      */
                     std::string GetVirusName() const;
 
                     /**
                      * 设置病毒名
-                     * @param VirusName 病毒名
+                     * @param _virusName 病毒名
+                     * 
                      */
                     void SetVirusName(const std::string& _virusName);
 
                     /**
                      * 判断参数 VirusName 是否已赋值
                      * @return VirusName 是否已赋值
+                     * 
                      */
                     bool VirusNameHasBeenSet() const;
 
                     /**
                      * 获取最近编辑时间
                      * @return ModifyTime 最近编辑时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置最近编辑时间
-                     * @param ModifyTime 最近编辑时间
+                     * @param _modifyTime 最近编辑时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取自动隔离开关(true:开 false:关)
                      * @return AutoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * 
                      */
                     bool GetAutoIsolateSwitch() const;
 
                     /**
                      * 设置自动隔离开关(true:开 false:关)
-                     * @param AutoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * @param _autoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * 
                      */
                     void SetAutoIsolateSwitch(const bool& _autoIsolateSwitch);
 
                     /**
                      * 判断参数 AutoIsolateSwitch 是否已赋值
                      * @return AutoIsolateSwitch 是否已赋值
+                     * 
                      */
                     bool AutoIsolateSwitchHasBeenSet() const;
 

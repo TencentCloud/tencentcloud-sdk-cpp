@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取人员数量
                      * @return PersonNum 人员数量
+                     * 
                      */
                     uint64_t GetPersonNum() const;
 
                     /**
                      * 判断参数 PersonNum 是否已赋值
                      * @return PersonNum 是否已赋值
+                     * 
                      */
                     bool PersonNumHasBeenSet() const;
 
                     /**
                      * 获取人脸数量
                      * @return FaceNum 人脸数量
+                     * 
                      */
                     uint64_t GetFaceNum() const;
 
                     /**
                      * 判断参数 FaceNum 是否已赋值
                      * @return FaceNum 是否已赋值
+                     * 
                      */
                     bool FaceNumHasBeenSet() const;
 

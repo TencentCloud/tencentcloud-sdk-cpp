@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取私有域解析总数
                      * @return ZoneTotal 私有域解析总数
+                     * 
                      */
                     int64_t GetZoneTotal() const;
 
                     /**
                      * 判断参数 ZoneTotal 是否已赋值
                      * @return ZoneTotal 是否已赋值
+                     * 
                      */
                     bool ZoneTotalHasBeenSet() const;
 
                     /**
                      * 获取私有域关联VPC数量
                      * @return ZoneVpcCount 私有域关联VPC数量
+                     * 
                      */
                     int64_t GetZoneVpcCount() const;
 
                     /**
                      * 判断参数 ZoneVpcCount 是否已赋值
                      * @return ZoneVpcCount 是否已赋值
+                     * 
                      */
                     bool ZoneVpcCountHasBeenSet() const;
 
                     /**
                      * 获取历史请求量总数
                      * @return RequestTotalCount 历史请求量总数
+                     * 
                      */
                     int64_t GetRequestTotalCount() const;
 
                     /**
                      * 判断参数 RequestTotalCount 是否已赋值
                      * @return RequestTotalCount 是否已赋值
+                     * 
                      */
                     bool RequestTotalCountHasBeenSet() const;
 
                     /**
                      * 获取流量包用量
                      * @return FlowUsage 流量包用量
+                     * 
                      */
                     std::vector<FlowUsage> GetFlowUsage() const;
 
                     /**
                      * 判断参数 FlowUsage 是否已赋值
                      * @return FlowUsage 是否已赋值
+                     * 
                      */
                     bool FlowUsageHasBeenSet() const;
 

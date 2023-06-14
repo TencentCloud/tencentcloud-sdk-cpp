@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则组执行Id
                      * @return RuleGroupExecId 规则组执行Id
+                     * 
                      */
                     uint64_t GetRuleGroupExecId() const;
 
                     /**
                      * 设置规则组执行Id
-                     * @param RuleGroupExecId 规则组执行Id
+                     * @param _ruleGroupExecId 规则组执行Id
+                     * 
                      */
                     void SetRuleGroupExecId(const uint64_t& _ruleGroupExecId);
 
                     /**
                      * 判断参数 RuleGroupExecId 是否已赋值
                      * @return RuleGroupExecId 是否已赋值
+                     * 
                      */
                     bool RuleGroupExecIdHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

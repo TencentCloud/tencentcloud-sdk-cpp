@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取位置信息
                      * @return ResourceLoc 位置信息
+                     * 
                      */
                     ResourceLoc GetResourceLoc() const;
 
                     /**
                      * 设置位置信息
-                     * @param ResourceLoc 位置信息
+                     * @param _resourceLoc 位置信息
+                     * 
                      */
                     void SetResourceLoc(const ResourceLoc& _resourceLoc);
 
                     /**
                      * 判断参数 ResourceLoc 是否已赋值
                      * @return ResourceLoc 是否已赋值
+                     * 
                      */
                     bool ResourceLocHasBeenSet() const;
 
                     /**
                      * 获取资源描述信息
                      * @return Remark 资源描述信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置资源描述信息
-                     * @param Remark 资源描述信息
+                     * @param _remark 资源描述信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取1： 资源版本达到上限，自动删除最早可删除的版本
                      * @return AutoDelete 1： 资源版本达到上限，自动删除最早可删除的版本
+                     * 
                      */
                     int64_t GetAutoDelete() const;
 
                     /**
                      * 设置1： 资源版本达到上限，自动删除最早可删除的版本
-                     * @param AutoDelete 1： 资源版本达到上限，自动删除最早可删除的版本
+                     * @param _autoDelete 1： 资源版本达到上限，自动删除最早可删除的版本
+                     * 
                      */
                     void SetAutoDelete(const int64_t& _autoDelete);
 
                     /**
                      * 判断参数 AutoDelete 是否已赋值
                      * @return AutoDelete 是否已赋值
+                     * 
                      */
                     bool AutoDeleteHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

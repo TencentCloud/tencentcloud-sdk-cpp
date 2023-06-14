@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取集团id
                      * @return CompanyId 集团id
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺id
                      * @return ShopId 店铺id
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取顾客face id
                      * @return PersonId 顾客face id
+                     * 
                      */
                     int64_t GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取顾客底图url
                      * @return PictureUrl 顾客底图url
+                     * 
                      */
                     std::string GetPictureUrl() const;
 
                     /**
                      * 判断参数 PictureUrl 是否已赋值
                      * @return PictureUrl 是否已赋值
+                     * 
                      */
                     bool PictureUrlHasBeenSet() const;
 
                     /**
                      * 获取顾客类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
                      * @return PersonType 顾客类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
+                     * 
                      */
                     int64_t GetPersonType() const;
 
                     /**
                      * 判断参数 PersonType 是否已赋值
                      * @return PersonType 是否已赋值
+                     * 
                      */
                     bool PersonTypeHasBeenSet() const;
 
                     /**
                      * 获取顾客首次进店时间
                      * @return FirstVisitTime 顾客首次进店时间
+                     * 
                      */
                     std::string GetFirstVisitTime() const;
 
                     /**
                      * 判断参数 FirstVisitTime 是否已赋值
                      * @return FirstVisitTime 是否已赋值
+                     * 
                      */
                     bool FirstVisitTimeHasBeenSet() const;
 
                     /**
                      * 获取顾客历史到访次数
                      * @return VisitTimes 顾客历史到访次数
+                     * 
                      */
                     int64_t GetVisitTimes() const;
 
                     /**
                      * 判断参数 VisitTimes 是否已赋值
                      * @return VisitTimes 是否已赋值
+                     * 
                      */
                     bool VisitTimesHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。
                      * @return InstanceIds 一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。
-                     * @param InstanceIds 一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。
+                     * @param _instanceIds 一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Filters <li><strong>status</strong></li>
 <p style="padding-left: 30px;">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL、UNAVAILABLE。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -75,15 +79,17 @@ namespace TencentCloud
                      * 设置<li><strong>status</strong></li>
 <p style="padding-left: 30px;">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL、UNAVAILABLE。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。
-                     * @param Filters <li><strong>status</strong></li>
+                     * @param _filters <li><strong>status</strong></li>
 <p style="padding-left: 30px;">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL、UNAVAILABLE。</p><p style="padding-left: 30px;">类型：String</p><p style="padding-left: 30px;">必选：否</p>
 每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

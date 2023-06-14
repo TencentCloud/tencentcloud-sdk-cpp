@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。
                      * @return VpcId 子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。
-                     * @param VpcId 子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。
+                     * @param _vpcId 子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取分配 `IPv6` 子网段列表。
                      * @return Ipv6SubnetCidrBlocks 分配 `IPv6` 子网段列表。
+                     * 
                      */
                     std::vector<Ipv6SubnetCidrBlock> GetIpv6SubnetCidrBlocks() const;
 
                     /**
                      * 设置分配 `IPv6` 子网段列表。
-                     * @param Ipv6SubnetCidrBlocks 分配 `IPv6` 子网段列表。
+                     * @param _ipv6SubnetCidrBlocks 分配 `IPv6` 子网段列表。
+                     * 
                      */
                     void SetIpv6SubnetCidrBlocks(const std::vector<Ipv6SubnetCidrBlock>& _ipv6SubnetCidrBlocks);
 
                     /**
                      * 判断参数 Ipv6SubnetCidrBlocks 是否已赋值
                      * @return Ipv6SubnetCidrBlocks 是否已赋值
+                     * 
                      */
                     bool Ipv6SubnetCidrBlocksHasBeenSet() const;
 

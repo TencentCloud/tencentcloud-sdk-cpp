@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取过滤字段名称
                      * @return Key 过滤字段名称
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤字段名称
-                     * @param Key 过滤字段名称
+                     * @param _key 过滤字段名称
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
                      * @return Operator 运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
-                     * @param Operator 运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * @param _operator 运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -88,56 +94,65 @@ namespace TencentCloud
 
                      * @return Value 过滤值,范围运算需要同时输入两个值，以英文逗号分隔
 
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤值,范围运算需要同时输入两个值，以英文逗号分隔
 
-                     * @param Value 过滤值,范围运算需要同时输入两个值，以英文逗号分隔
+                     * @param _value 过滤值,范围运算需要同时输入两个值，以英文逗号分隔
 
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取该层级filters逻辑关系，取值 "AND" 或 "OR"
                      * @return Type 该层级filters逻辑关系，取值 "AND" 或 "OR"
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置该层级filters逻辑关系，取值 "AND" 或 "OR"
-                     * @param Type 该层级filters逻辑关系，取值 "AND" 或 "OR"
+                     * @param _type 该层级filters逻辑关系，取值 "AND" 或 "OR"
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取LogFilters数组
                      * @return Filters LogFilters数组
+                     * 
                      */
                     std::vector<LogFilters> GetFilters() const;
 
                     /**
                      * 设置LogFilters数组
-                     * @param Filters LogFilters数组
+                     * @param _filters LogFilters数组
+                     * 
                      */
                     void SetFilters(const std::vector<LogFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

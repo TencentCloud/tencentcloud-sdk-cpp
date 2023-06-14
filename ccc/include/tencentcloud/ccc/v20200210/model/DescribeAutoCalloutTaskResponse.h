@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取任务名
                      * @return Name 任务名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取任务描述
                      * @return Description 任务描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取任务起始时间戳
                      * @return NotBefore 任务起始时间戳
+                     * 
                      */
                     int64_t GetNotBefore() const;
 
                     /**
                      * 判断参数 NotBefore 是否已赋值
                      * @return NotBefore 是否已赋值
+                     * 
                      */
                     bool NotBeforeHasBeenSet() const;
 
@@ -85,60 +91,70 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotAfter 任务结束时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNotAfter() const;
 
                     /**
                      * 判断参数 NotAfter 是否已赋值
                      * @return NotAfter 是否已赋值
+                     * 
                      */
                     bool NotAfterHasBeenSet() const;
 
                     /**
                      * 获取主叫列表
                      * @return Callers 主叫列表
+                     * 
                      */
                     std::vector<std::string> GetCallers() const;
 
                     /**
                      * 判断参数 Callers 是否已赋值
                      * @return Callers 是否已赋值
+                     * 
                      */
                     bool CallersHasBeenSet() const;
 
                     /**
                      * 获取被叫信息列表
                      * @return Callees 被叫信息列表
+                     * 
                      */
                     std::vector<AutoCalloutTaskCalleeInfo> GetCallees() const;
 
                     /**
                      * 判断参数 Callees 是否已赋值
                      * @return Callees 是否已赋值
+                     * 
                      */
                     bool CalleesHasBeenSet() const;
 
                     /**
                      * 获取任务使用的IvrId
                      * @return IvrId 任务使用的IvrId
+                     * 
                      */
                     uint64_t GetIvrId() const;
 
                     /**
                      * 判断参数 IvrId 是否已赋值
                      * @return IvrId 是否已赋值
+                     * 
                      */
                     bool IvrIdHasBeenSet() const;
 
                     /**
                      * 获取任务状态 0初始 1运行中 2已完成 3结束中 4已终止
                      * @return State 任务状态 0初始 1运行中 2已完成 3结束中 4已终止
+                     * 
                      */
                     uint64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

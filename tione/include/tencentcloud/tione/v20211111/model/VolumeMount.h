@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取cfs的配置信息
                      * @return CFSConfig cfs的配置信息
+                     * 
                      */
                     CFSConfig GetCFSConfig() const;
 
                     /**
                      * 设置cfs的配置信息
-                     * @param CFSConfig cfs的配置信息
+                     * @param _cFSConfig cfs的配置信息
+                     * 
                      */
                     void SetCFSConfig(const CFSConfig& _cFSConfig);
 
                     /**
                      * 判断参数 CFSConfig 是否已赋值
                      * @return CFSConfig 是否已赋值
+                     * 
                      */
                     bool CFSConfigHasBeenSet() const;
 
                     /**
                      * 获取挂载源类型
                      * @return VolumeSourceType 挂载源类型
+                     * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
                      * 设置挂载源类型
-                     * @param VolumeSourceType 挂载源类型
+                     * @param _volumeSourceType 挂载源类型
+                     * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
 
                     /**
                      * 判断参数 VolumeSourceType 是否已赋值
                      * @return VolumeSourceType 是否已赋值
+                     * 
                      */
                     bool VolumeSourceTypeHasBeenSet() const;
 

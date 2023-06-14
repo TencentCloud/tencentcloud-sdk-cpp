@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID 列表。每次请求批量实例的上限为 100。
                      * @return InstanceIds 实例 ID 列表。每次请求批量实例的上限为 100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID 列表。每次请求批量实例的上限为 100。
-                     * @param InstanceIds 实例 ID 列表。每次请求批量实例的上限为 100。
+                     * @param _instanceIds 实例 ID 列表。每次请求批量实例的上限为 100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录
                      * @return PermitLogin 是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录
+                     * 
                      */
                     std::string GetPermitLogin() const;
 
                     /**
                      * 设置是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录
-                     * @param PermitLogin 是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录
+                     * @param _permitLogin 是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录
+                     * 
                      */
                     void SetPermitLogin(const std::string& _permitLogin);
 
                     /**
                      * 判断参数 PermitLogin 是否已赋值
                      * @return PermitLogin 是否已赋值
+                     * 
                      */
                     bool PermitLoginHasBeenSet() const;
 

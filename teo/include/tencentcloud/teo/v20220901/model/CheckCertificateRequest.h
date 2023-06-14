@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书内容。
                      * @return Certificate 证书内容。
+                     * 
                      */
                     std::string GetCertificate() const;
 
                     /**
                      * 设置证书内容。
-                     * @param Certificate 证书内容。
+                     * @param _certificate 证书内容。
+                     * 
                      */
                     void SetCertificate(const std::string& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
                     /**
                      * 获取私钥内容。
                      * @return PrivateKey 私钥内容。
+                     * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
                      * 设置私钥内容。
-                     * @param PrivateKey 私钥内容。
+                     * @param _privateKey 私钥内容。
+                     * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
                     /**
                      * 判断参数 PrivateKey 是否已赋值
                      * @return PrivateKey 是否已赋值
+                     * 
                      */
                     bool PrivateKeyHasBeenSet() const;
 

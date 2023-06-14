@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符
                      * @return SN 设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符
+                     * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符
-                     * @param SN 设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符
+                     * @param _sN 设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符
+                     * 
                      */
                     void SetSN(const std::string& _sN);
 
                     /**
                      * 判断参数 SN 是否已赋值
                      * @return SN 是否已赋值
+                     * 
                      */
                     bool SNHasBeenSet() const;
 
                     /**
                      * 获取节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号
                      * @return Name 节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号
-                     * @param Name 节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号
+                     * @param _name 节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取节点备注
                      * @return Remark 节点备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置节点备注
-                     * @param Remark 节点备注
+                     * @param _remark 节点备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

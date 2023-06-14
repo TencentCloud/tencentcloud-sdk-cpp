@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 默认周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDefault() const;
 
                     /**
                      * 设置默认周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Default 默认周期，单位：秒
+                     * @param _default 默认周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefault(const int64_t& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
@@ -73,38 +76,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 可选周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetKeys() const;
 
                     /**
                      * 设置可选周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keys 可选周期，单位：秒
+                     * @param _keys 可选周期，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeys(const std::vector<int64_t>& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
                     /**
                      * 获取是否必须
                      * @return Need 是否必须
+                     * 
                      */
                     bool GetNeed() const;
 
                     /**
                      * 设置是否必须
-                     * @param Need 是否必须
+                     * @param _need 是否必须
+                     * 
                      */
                     void SetNeed(const bool& _need);
 
                     /**
                      * 判断参数 Need 是否已赋值
                      * @return Need 是否已赋值
+                     * 
                      */
                     bool NeedHasBeenSet() const;
 

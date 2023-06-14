@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取人脸尺寸的占比
                      * @return FaceRatio 人脸尺寸的占比
+                     * 
                      */
                     double GetFaceRatio() const;
 
                     /**
                      * 设置人脸尺寸的占比
-                     * @param FaceRatio 人脸尺寸的占比
+                     * @param _faceRatio 人脸尺寸的占比
+                     * 
                      */
                     void SetFaceRatio(const double& _faceRatio);
 
                     /**
                      * 判断参数 FaceRatio 是否已赋值
                      * @return FaceRatio 是否已赋值
+                     * 
                      */
                     bool FaceRatioHasBeenSet() const;
 
                     /**
                      * 获取帧高度
                      * @return FrameHeight 帧高度
+                     * 
                      */
                     int64_t GetFrameHeight() const;
 
                     /**
                      * 设置帧高度
-                     * @param FrameHeight 帧高度
+                     * @param _frameHeight 帧高度
+                     * 
                      */
                     void SetFrameHeight(const int64_t& _frameHeight);
 
                     /**
                      * 判断参数 FrameHeight 是否已赋值
                      * @return FrameHeight 是否已赋值
+                     * 
                      */
                     bool FrameHeightHasBeenSet() const;
 
                     /**
                      * 获取帧宽度
                      * @return FrameWidth 帧宽度
+                     * 
                      */
                     int64_t GetFrameWidth() const;
 
                     /**
                      * 设置帧宽度
-                     * @param FrameWidth 帧宽度
+                     * @param _frameWidth 帧宽度
+                     * 
                      */
                     void SetFrameWidth(const int64_t& _frameWidth);
 
                     /**
                      * 判断参数 FrameWidth 是否已赋值
                      * @return FrameWidth 是否已赋值
+                     * 
                      */
                     bool FrameWidthHasBeenSet() const;
 
                     /**
                      * 获取人脸高度
                      * @return Height 人脸高度
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置人脸高度
-                     * @param Height 人脸高度
+                     * @param _height 人脸高度
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取人脸左坐标
                      * @return Left 人脸左坐标
+                     * 
                      */
                     int64_t GetLeft() const;
 
                     /**
                      * 设置人脸左坐标
-                     * @param Left 人脸左坐标
+                     * @param _left 人脸左坐标
+                     * 
                      */
                     void SetLeft(const int64_t& _left);
 
                     /**
                      * 判断参数 Left 是否已赋值
                      * @return Left 是否已赋值
+                     * 
                      */
                     bool LeftHasBeenSet() const;
 
                     /**
                      * 获取人脸顶坐标
                      * @return Top 人脸顶坐标
+                     * 
                      */
                     int64_t GetTop() const;
 
                     /**
                      * 设置人脸顶坐标
-                     * @param Top 人脸顶坐标
+                     * @param _top 人脸顶坐标
+                     * 
                      */
                     void SetTop(const int64_t& _top);
 
                     /**
                      * 判断参数 Top 是否已赋值
                      * @return Top 是否已赋值
+                     * 
                      */
                     bool TopHasBeenSet() const;
 
                     /**
                      * 获取人脸宽度
                      * @return Width 人脸宽度
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置人脸宽度
-                     * @param Width 人脸宽度
+                     * @param _width 人脸宽度
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 

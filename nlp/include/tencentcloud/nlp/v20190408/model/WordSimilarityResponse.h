@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取两个词语的相似度
                      * @return Similarity 两个词语的相似度
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 

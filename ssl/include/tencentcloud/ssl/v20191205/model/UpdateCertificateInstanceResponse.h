@@ -48,24 +48,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployRecordId 云资源部署任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDeployRecordId() const;
 
                     /**
                      * 判断参数 DeployRecordId 是否已赋值
                      * @return DeployRecordId 是否已赋值
+                     * 
                      */
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
                      * 获取部署状态，1表示部署成功，0表示部署失败
                      * @return DeployStatus 部署状态，1表示部署成功，0表示部署失败
+                     * 
                      */
                     int64_t GetDeployStatus() const;
 
                     /**
                      * 判断参数 DeployStatus 是否已赋值
                      * @return DeployStatus 是否已赋值
+                     * 
                      */
                     bool DeployStatusHasBeenSet() const;
 

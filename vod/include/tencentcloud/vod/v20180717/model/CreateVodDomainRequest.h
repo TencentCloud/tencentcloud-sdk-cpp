@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要接入点播的加速域名。注意：不支持填写泛域名。
                      * @return Domain 需要接入点播的加速域名。注意：不支持填写泛域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要接入点播的加速域名。注意：不支持填写泛域名。
-                     * @param Domain 需要接入点播的加速域名。注意：不支持填写泛域名。
+                     * @param _domain 需要接入点播的加速域名。注意：不支持填写泛域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
 <li>Outside Chinese Mainland: 中国境外。</li>
 <li>Global: 全球范围。</li>
 如果没有设置 AccelerateArea， 点播会根据用户在腾讯云设置的地域信息自动开通中国境内或者中国境外的 CDN 加速。开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * 
                      */
                     std::string GetAccelerateArea() const;
 
@@ -98,17 +105,19 @@ namespace TencentCloud
 <li>Outside Chinese Mainland: 中国境外。</li>
 <li>Global: 全球范围。</li>
 如果没有设置 AccelerateArea， 点播会根据用户在腾讯云设置的地域信息自动开通中国境内或者中国境外的 CDN 加速。开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
-                     * @param AccelerateArea 需要开启 CDN 加速的区域：
+                     * @param _accelerateArea 需要开启 CDN 加速的区域：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland: 中国境外。</li>
 <li>Global: 全球范围。</li>
 如果没有设置 AccelerateArea， 点播会根据用户在腾讯云设置的地域信息自动开通中国境内或者中国境外的 CDN 加速。开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。
+                     * 
                      */
                     void SetAccelerateArea(const std::string& _accelerateArea);
 
                     /**
                      * 判断参数 AccelerateArea 是否已赋值
                      * @return AccelerateArea 是否已赋值
+                     * 
                      */
                     bool AccelerateAreaHasBeenSet() const;
 

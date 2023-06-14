@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备状态列表
                      * @return DeviceStatuses 设备状态列表
+                     * 
                      */
                     std::vector<DeviceStatus> GetDeviceStatuses() const;
 
                     /**
                      * 判断参数 DeviceStatuses 是否已赋值
                      * @return DeviceStatuses 是否已赋值
+                     * 
                      */
                     bool DeviceStatusesHasBeenSet() const;
 

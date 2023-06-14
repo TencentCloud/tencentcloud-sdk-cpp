@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回数量，默认为 20，最大值为 100
                      * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100
-                     * @param Limit 返回数量，默认为 20，最大值为 100
+                     * @param _limit 返回数量，默认为 20，最大值为 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取记录偏移量，默认值为0
                      * @return Offset 记录偏移量，默认值为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置记录偏移量，默认值为0
-                     * @param Offset 记录偏移量，默认值为0
+                     * @param _offset 记录偏移量，默认值为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return OrderBy 排序字段，取值范围：
 <li> CREATETIME：创建时间</li>
 <li> PERIODENDTIME：过期时间</li>
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置排序字段，取值范围：
 <li> CREATETIME：创建时间</li>
 <li> PERIODENDTIME：过期时间</li>
-                     * @param OrderBy 排序字段，取值范围：
+                     * @param _orderBy 排序字段，取值范围：
 <li> CREATETIME：创建时间</li>
 <li> PERIODENDTIME：过期时间</li>
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
@@ -112,6 +121,7 @@ namespace TencentCloud
                      * @return OrderByType 排序类型，取值范围：
 <li> ASC：升序排序 </li>
 <li> DESC：降序排序 </li>
+                     * 
                      */
                     std::string GetOrderByType() const;
 
@@ -119,51 +129,59 @@ namespace TencentCloud
                      * 设置排序类型，取值范围：
 <li> ASC：升序排序 </li>
 <li> DESC：降序排序 </li>
-                     * @param OrderByType 排序类型，取值范围：
+                     * @param _orderByType 排序类型，取值范围：
 <li> ASC：升序排序 </li>
 <li> DESC：降序排序 </li>
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
                      * 获取搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
                      * @return Filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 
                      */
                     std::vector<QueryFilter> GetFilters() const;
 
                     /**
                      * 设置搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @param Filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * @param _filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 
                      */
                     void SetFilters(const std::vector<QueryFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取引擎类型：目前支持“MYSQL”， “POSTGRESQL”
                      * @return DbType 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * 
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置引擎类型：目前支持“MYSQL”， “POSTGRESQL”
-                     * @param DbType 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * @param _dbType 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * 
                      */
                     void SetDbType(const std::string& _dbType);
 
                     /**
                      * 判断参数 DbType 是否已赋值
                      * @return DbType 是否已赋值
+                     * 
                      */
                     bool DbTypeHasBeenSet() const;
 
@@ -184,6 +202,7 @@ isolated 已隔离
 activating 恢复中
 offlining 下线中
 offlined 已下线
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -196,7 +215,7 @@ isolated 已隔离
 activating 恢复中
 offlining 下线中
 offlined 已下线
-                     * @param Status 实例状态, 可选值:
+                     * @param _status 实例状态, 可选值:
 creating 创建中
 running 运行中
 isolating 隔离中
@@ -204,30 +223,35 @@ isolated 已隔离
 activating 恢复中
 offlining 下线中
 offlined 已下线
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实例id列表
                      * @return InstanceIds 实例id列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例id列表
-                     * @param InstanceIds 实例id列表
+                     * @param _instanceIds 实例id列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

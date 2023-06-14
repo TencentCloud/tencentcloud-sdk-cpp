@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取是否启用
                      * @return Enabled 是否启用
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enabled 是否启用
+                     * @param _enabled 是否启用
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取域名，只有开启外网访问才有效果
                      * @return Domain 域名，只有开启外网访问才有效果
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名，只有开启外网访问才有效果
-                     * @param Domain 域名，只有开启外网访问才有效果
+                     * @param _domain 域名，只有开启外网访问才有效果
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取内网地址，或者外网地址
                      * @return Address 内网地址，或者外网地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置内网地址，或者外网地址
-                     * @param Address 内网地址，或者外网地址
+                     * @param _address 内网地址，或者外网地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -109,6 +118,7 @@ open  = 已开启外网访问
 close = 未开启外网访问
 opening = 正在开启外网访问
 open  = 已开启外网访问
+                     * 
                      */
                     std::string GetInternet() const;
 
@@ -117,34 +127,39 @@ open  = 已开启外网访问
 close = 未开启外网访问
 opening = 正在开启外网访问
 open  = 已开启外网访问
-                     * @param Internet 是否开启了外网访问
+                     * @param _internet 是否开启了外网访问
 close = 未开启外网访问
 opening = 正在开启外网访问
 open  = 已开启外网访问
+                     * 
                      */
                     void SetInternet(const std::string& _internet);
 
                     /**
                      * 判断参数 Internet 是否已赋值
                      * @return Internet 是否已赋值
+                     * 
                      */
                     bool InternetHasBeenSet() const;
 
                     /**
                      * 获取grafana管理员用户名
                      * @return AdminUser grafana管理员用户名
+                     * 
                      */
                     std::string GetAdminUser() const;
 
                     /**
                      * 设置grafana管理员用户名
-                     * @param AdminUser grafana管理员用户名
+                     * @param _adminUser grafana管理员用户名
+                     * 
                      */
                     void SetAdminUser(const std::string& _adminUser);
 
                     /**
                      * 判断参数 AdminUser 是否已赋值
                      * @return AdminUser 是否已赋值
+                     * 
                      */
                     bool AdminUserHasBeenSet() const;
 

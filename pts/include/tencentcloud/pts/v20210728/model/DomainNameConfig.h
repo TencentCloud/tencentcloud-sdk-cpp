@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostAliases 域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HostAlias> GetHostAliases() const;
 
                     /**
                      * 设置域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostAliases 域名绑定配置
+                     * @param _hostAliases 域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostAliases(const std::vector<HostAlias>& _hostAliases);
 
                     /**
                      * 判断参数 HostAliases 是否已赋值
                      * @return HostAliases 是否已赋值
+                     * 
                      */
                     bool HostAliasesHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DNSConfig DNS 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DNSConfig GetDNSConfig() const;
 
                     /**
                      * 设置DNS 配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DNSConfig DNS 配置
+                     * @param _dNSConfig DNS 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDNSConfig(const DNSConfig& _dNSConfig);
 
                     /**
                      * 判断参数 DNSConfig 是否已赋值
                      * @return DNSConfig 是否已赋值
+                     * 
                      */
                     bool DNSConfigHasBeenSet() const;
 

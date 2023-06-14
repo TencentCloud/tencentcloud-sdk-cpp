@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAppId 子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelSubMerchantId 渠道子商户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 层级，从0开始
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelAppId 渠道应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelAppId() const;
 
                     /**
                      * 判断参数 ChannelAppId 是否已赋值
                      * @return ChannelAppId 是否已赋值
+                     * 
                      */
                     bool ChannelAppIdHasBeenSet() const;
 

@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 用户信息
+                     * @param _userId 用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return Error 失败原因
+                     * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置失败原因
-                     * @param Error 失败原因
+                     * @param _error 失败原因
+                     * 
                      */
                     void SetError(const std::string& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

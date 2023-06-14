@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOver 是否是全量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetListOver() const;
 
                     /**
                      * 判断参数 ListOver 是否已赋值
                      * @return ListOver 是否已赋值
+                     * 
                      */
                     bool ListOverHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogContentList 日志集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LogContentInfo> GetLogContentList() const;
 
                     /**
                      * 判断参数 LogContentList 是否已赋值
                      * @return LogContentList 是否已赋值
+                     * 
                      */
                     bool LogContentListHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取开始时间（支持到天 2021-4-23）
                      * @return StartTime 开始时间（支持到天 2021-4-23）
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间（支持到天 2021-4-23）
-                     * @param StartTime 开始时间（支持到天 2021-4-23）
+                     * @param _startTime 开始时间（支持到天 2021-4-23）
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间（支持到天 2021-4-23）
                      * @return EndTime 结束时间（支持到天 2021-4-23）
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间（支持到天 2021-4-23）
-                     * @param EndTime 结束时间（支持到天 2021-4-23）
+                     * @param _endTime 结束时间（支持到天 2021-4-23）
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

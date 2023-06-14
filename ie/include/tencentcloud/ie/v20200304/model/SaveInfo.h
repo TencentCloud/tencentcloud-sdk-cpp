@@ -52,38 +52,44 @@ namespace TencentCloud
 1：CosInfo。
                      * @return Type 存储类型，可选值： 
 1：CosInfo。
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置存储类型，可选值： 
 1：CosInfo。
-                     * @param Type 存储类型，可选值： 
+                     * @param _type 存储类型，可选值： 
 1：CosInfo。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Cos形式存储信息，当Type等于1时必选。
                      * @return CosInfo Cos形式存储信息，当Type等于1时必选。
+                     * 
                      */
                     CosInfo GetCosInfo() const;
 
                     /**
                      * 设置Cos形式存储信息，当Type等于1时必选。
-                     * @param CosInfo Cos形式存储信息，当Type等于1时必选。
+                     * @param _cosInfo Cos形式存储信息，当Type等于1时必选。
+                     * 
                      */
                     void SetCosInfo(const CosInfo& _cosInfo);
 
                     /**
                      * 判断参数 CosInfo 是否已赋值
                      * @return CosInfo 是否已赋值
+                     * 
                      */
                     bool CosInfoHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
                      * @return Id 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
-                     * @param Id 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+                     * @param _id 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

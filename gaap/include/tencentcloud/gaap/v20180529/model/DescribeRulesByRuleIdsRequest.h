@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取规则ID列表。最多支持10个规则。
                      * @return RuleIds 规则ID列表。最多支持10个规则。
+                     * 
                      */
                     std::vector<std::string> GetRuleIds() const;
 
                     /**
                      * 设置规则ID列表。最多支持10个规则。
-                     * @param RuleIds 规则ID列表。最多支持10个规则。
+                     * @param _ruleIds 规则ID列表。最多支持10个规则。
+                     * 
                      */
                     void SetRuleIds(const std::vector<std::string>& _ruleIds);
 
                     /**
                      * 判断参数 RuleIds 是否已赋值
                      * @return RuleIds 是否已赋值
+                     * 
                      */
                     bool RuleIdsHasBeenSet() const;
 

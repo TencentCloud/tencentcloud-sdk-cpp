@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 设置权限组 ID
-                     * @param PGroupId 权限组 ID
+                     * @param _pGroupId 权限组 ID
+                     * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取规则 ID
                      * @return RuleId 规则 ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则 ID
-                     * @param RuleId 规则 ID
+                     * @param _ruleId 规则 ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。
                      * @return AuthClientIp 可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。
+                     * 
                      */
                     std::string GetAuthClientIp() const;
 
                     /**
                      * 设置可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。
-                     * @param AuthClientIp 可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。
+                     * @param _authClientIp 可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。
+                     * 
                      */
                     void SetAuthClientIp(const std::string& _authClientIp);
 
                     /**
                      * 判断参数 AuthClientIp 是否已赋值
                      * @return AuthClientIp 是否已赋值
+                     * 
                      */
                     bool AuthClientIpHasBeenSet() const;
 
                     /**
                      * 获取读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读
                      * @return RWPermission 读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读
+                     * 
                      */
                     std::string GetRWPermission() const;
 
                     /**
                      * 设置读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读
-                     * @param RWPermission 读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读
+                     * @param _rWPermission 读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读
+                     * 
                      */
                     void SetRWPermission(const std::string& _rWPermission);
 
                     /**
                      * 判断参数 RWPermission 是否已赋值
                      * @return RWPermission 是否已赋值
+                     * 
                      */
                     bool RWPermissionHasBeenSet() const;
 
                     /**
                      * 获取用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。
                      * @return UserPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。
+                     * 
                      */
                     std::string GetUserPermission() const;
 
                     /**
                      * 设置用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。
-                     * @param UserPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。
+                     * @param _userPermission 用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。
+                     * 
                      */
                     void SetUserPermission(const std::string& _userPermission);
 
                     /**
                      * 判断参数 UserPermission 是否已赋值
                      * @return UserPermission 是否已赋值
+                     * 
                      */
                     bool UserPermissionHasBeenSet() const;
 
                     /**
                      * 获取规则优先级，参数范围1-100。 其中 1 为最高，100为最低
                      * @return Priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置规则优先级，参数范围1-100。 其中 1 为最高，100为最低
-                     * @param Priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * @param _priority 规则优先级，参数范围1-100。 其中 1 为最高，100为最低
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

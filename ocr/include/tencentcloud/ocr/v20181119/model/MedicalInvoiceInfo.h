@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取医疗发票识别结果条目
                      * @return MedicalInvoiceItems 医疗发票识别结果条目
+                     * 
                      */
                     std::vector<MedicalInvoiceItem> GetMedicalInvoiceItems() const;
 
                     /**
                      * 设置医疗发票识别结果条目
-                     * @param MedicalInvoiceItems 医疗发票识别结果条目
+                     * @param _medicalInvoiceItems 医疗发票识别结果条目
+                     * 
                      */
                     void SetMedicalInvoiceItems(const std::vector<MedicalInvoiceItem>& _medicalInvoiceItems);
 
                     /**
                      * 判断参数 MedicalInvoiceItems 是否已赋值
                      * @return MedicalInvoiceItems 是否已赋值
+                     * 
                      */
                     bool MedicalInvoiceItemsHasBeenSet() const;
 

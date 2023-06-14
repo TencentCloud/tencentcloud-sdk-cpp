@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlotName 槽位名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSlotName() const;
 
                     /**
                      * 设置槽位名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlotName 槽位名称
+                     * @param _slotName 槽位名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlotName(const std::string& _slotName);
 
                     /**
                      * 判断参数 SlotName 是否已赋值
                      * @return SlotName 是否已赋值
+                     * 
                      */
                     bool SlotNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlotValue 槽位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSlotValue() const;
 
                     /**
                      * 设置槽位值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlotValue 槽位值
+                     * @param _slotValue 槽位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlotValue(const std::string& _slotValue);
 
                     /**
                      * 判断参数 SlotValue 是否已赋值
                      * @return SlotValue 是否已赋值
+                     * 
                      */
                     bool SlotValueHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取类型名，例如“标准型SA1”
                      * @return TypeName 类型名，例如“标准型SA1”
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置类型名，例如“标准型SA1”
-                     * @param TypeName 类型名，例如“标准型SA1”
+                     * @param _typeName 类型名，例如“标准型SA1”
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取类型，例如"SA1.SMALL1"
                      * @return InstanceType 类型，例如"SA1.SMALL1"
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置类型，例如"SA1.SMALL1"
-                     * @param InstanceType 类型，例如"SA1.SMALL1"
+                     * @param _instanceType 类型，例如"SA1.SMALL1"
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取CPU，例如1核就是1
                      * @return Cpu CPU，例如1核就是1
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU，例如1核就是1
-                     * @param Cpu CPU，例如1核就是1
+                     * @param _cpu CPU，例如1核就是1
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存，例如2G就是2
                      * @return Memory 内存，例如2G就是2
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存，例如2G就是2
-                     * @param Memory 内存，例如2G就是2
+                     * @param _memory 内存，例如2G就是2
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取网络收到包,例如25万PPS就是25
                      * @return NetworkCard 网络收到包,例如25万PPS就是25
+                     * 
                      */
                     uint64_t GetNetworkCard() const;
 
                     /**
                      * 设置网络收到包,例如25万PPS就是25
-                     * @param NetworkCard 网络收到包,例如25万PPS就是25
+                     * @param _networkCard 网络收到包,例如25万PPS就是25
+                     * 
                      */
                     void SetNetworkCard(const uint64_t& _networkCard);
 
                     /**
                      * 判断参数 NetworkCard 是否已赋值
                      * @return NetworkCard 是否已赋值
+                     * 
                      */
                     bool NetworkCardHasBeenSet() const;
 

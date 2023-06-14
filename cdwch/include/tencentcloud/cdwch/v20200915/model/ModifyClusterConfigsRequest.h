@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID，例如cdwch-xxxx
                      * @return InstanceId 集群ID，例如cdwch-xxxx
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群ID，例如cdwch-xxxx
-                     * @param InstanceId 集群ID，例如cdwch-xxxx
+                     * @param _instanceId 集群ID，例如cdwch-xxxx
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取配置文件修改信息
                      * @return ModifyConfContext 配置文件修改信息
+                     * 
                      */
                     std::vector<ConfigSubmitContext> GetModifyConfContext() const;
 
                     /**
                      * 设置配置文件修改信息
-                     * @param ModifyConfContext 配置文件修改信息
+                     * @param _modifyConfContext 配置文件修改信息
+                     * 
                      */
                     void SetModifyConfContext(const std::vector<ConfigSubmitContext>& _modifyConfContext);
 
                     /**
                      * 判断参数 ModifyConfContext 是否已赋值
                      * @return ModifyConfContext 是否已赋值
+                     * 
                      */
                     bool ModifyConfContextHasBeenSet() const;
 
                     /**
                      * 获取修改原因
                      * @return Remark 修改原因
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置修改原因
-                     * @param Remark 修改原因
+                     * @param _remark 修改原因
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

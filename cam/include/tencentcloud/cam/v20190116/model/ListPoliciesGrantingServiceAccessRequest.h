@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取子账号uin，与RoleId、GroupId三选一必传
                      * @return TargetUin 子账号uin，与RoleId、GroupId三选一必传
+                     * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 设置子账号uin，与RoleId、GroupId三选一必传
-                     * @param TargetUin 子账号uin，与RoleId、GroupId三选一必传
+                     * @param _targetUin 子账号uin，与RoleId、GroupId三选一必传
+                     * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 
                     /**
                      * 获取角色ID，与TargetUin、GroupId三选一必传
                      * @return RoleId 角色ID，与TargetUin、GroupId三选一必传
+                     * 
                      */
                     uint64_t GetRoleId() const;
 
                     /**
                      * 设置角色ID，与TargetUin、GroupId三选一必传
-                     * @param RoleId 角色ID，与TargetUin、GroupId三选一必传
+                     * @param _roleId 角色ID，与TargetUin、GroupId三选一必传
+                     * 
                      */
                     void SetRoleId(const uint64_t& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 
                     /**
                      * 获取用户组ID，与TargetUin、RoleId三选一必传
                      * @return GroupId 用户组ID，与TargetUin、RoleId三选一必传
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置用户组ID，与TargetUin、RoleId三选一必传
-                     * @param GroupId 用户组ID，与TargetUin、RoleId三选一必传
+                     * @param _groupId 用户组ID，与TargetUin、RoleId三选一必传
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取服务名，查看服务授权接口详情时需传该字段
                      * @return ServiceType 服务名，查看服务授权接口详情时需传该字段
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置服务名，查看服务授权接口详情时需传该字段
-                     * @param ServiceType 服务名，查看服务授权接口详情时需传该字段
+                     * @param _serviceType 服务名，查看服务授权接口详情时需传该字段
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 

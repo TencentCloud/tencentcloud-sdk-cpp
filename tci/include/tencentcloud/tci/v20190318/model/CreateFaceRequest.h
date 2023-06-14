@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取人员唯一标识符
                      * @return PersonId 人员唯一标识符
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员唯一标识符
-                     * @param PersonId 人员唯一标识符
+                     * @param _personId 人员唯一标识符
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取图片数据 base64 字符串，与 Urls 参数选择一个输入
                      * @return Images 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     * 
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
                      * 设置图片数据 base64 字符串，与 Urls 参数选择一个输入
-                     * @param Images 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     * @param _images 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     * 
                      */
                     void SetImages(const std::vector<std::string>& _images);
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 
                     /**
                      * 获取人员库唯一标识符
                      * @return LibraryId 人员库唯一标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 设置人员库唯一标识符
-                     * @param LibraryId 人员库唯一标识符
+                     * @param _libraryId 人员库唯一标识符
+                     * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取图片下载地址，与 Images 参数选择一个输入
                      * @return Urls 图片下载地址，与 Images 参数选择一个输入
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置图片下载地址，与 Images 参数选择一个输入
-                     * @param Urls 图片下载地址，与 Images 参数选择一个输入
+                     * @param _urls 图片下载地址，与 Images 参数选择一个输入
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 

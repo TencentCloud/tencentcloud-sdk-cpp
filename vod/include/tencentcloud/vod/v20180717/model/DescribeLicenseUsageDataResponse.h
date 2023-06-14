@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取License 查询次数统计数据，展示所查询 License 次数的明细数据。
                      * @return LicenseUsageDataSet License 查询次数统计数据，展示所查询 License 次数的明细数据。
+                     * 
                      */
                     std::vector<LicenseUsageDataItem> GetLicenseUsageDataSet() const;
 
                     /**
                      * 判断参数 LicenseUsageDataSet 是否已赋值
                      * @return LicenseUsageDataSet 是否已赋值
+                     * 
                      */
                     bool LicenseUsageDataSetHasBeenSet() const;
 

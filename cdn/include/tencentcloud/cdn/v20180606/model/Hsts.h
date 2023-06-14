@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch HSTS 配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置HSTS 配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch HSTS 配置开关，取值有：
+                     * @param _switch HSTS 配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxAge MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxAge() const;
 
                     /**
                      * 设置MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAge MaxAge数值。
+                     * @param _maxAge MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxAge(const int64_t& _maxAge);
 
                     /**
                      * 判断参数 MaxAge 是否已赋值
                      * @return MaxAge 是否已赋值
+                     * 
                      */
                     bool MaxAgeHasBeenSet() const;
 
@@ -99,20 +105,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeSubDomains 是否包含子域名，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIncludeSubDomains() const;
 
                     /**
                      * 设置是否包含子域名，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncludeSubDomains 是否包含子域名，on或off。
+                     * @param _includeSubDomains 是否包含子域名，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncludeSubDomains(const std::string& _includeSubDomains);
 
                     /**
                      * 判断参数 IncludeSubDomains 是否已赋值
                      * @return IncludeSubDomains 是否已赋值
+                     * 
                      */
                     bool IncludeSubDomainsHasBeenSet() const;
 

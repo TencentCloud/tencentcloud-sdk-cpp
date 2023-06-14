@@ -51,38 +51,44 @@ namespace TencentCloud
 在用于离线迁移任务时可不填。
                      * @return OldName 库的名字，如果oldName不存在则返回失败。
 在用于离线迁移任务时可不填。
+                     * 
                      */
                     std::string GetOldName() const;
 
                     /**
                      * 设置库的名字，如果oldName不存在则返回失败。
 在用于离线迁移任务时可不填。
-                     * @param OldName 库的名字，如果oldName不存在则返回失败。
+                     * @param _oldName 库的名字，如果oldName不存在则返回失败。
 在用于离线迁移任务时可不填。
+                     * 
                      */
                     void SetOldName(const std::string& _oldName);
 
                     /**
                      * 判断参数 OldName 是否已赋值
                      * @return OldName 是否已赋值
+                     * 
                      */
                     bool OldNameHasBeenSet() const;
 
                     /**
                      * 获取库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
                      * @return NewName 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
+                     * 
                      */
                     std::string GetNewName() const;
 
                     /**
                      * 设置库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
-                     * @param NewName 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
+                     * @param _newName 库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复
+                     * 
                      */
                     void SetNewName(const std::string& _newName);
 
                     /**
                      * 判断参数 NewName 是否已赋值
                      * @return NewName 是否已赋值
+                     * 
                      */
                     bool NewNameHasBeenSet() const;
 

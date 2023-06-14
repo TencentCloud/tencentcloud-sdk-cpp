@@ -50,36 +50,42 @@ namespace TencentCloud
 为 0；顺时针为正，逆时针为负
                      * @return Angle 图片旋转角度(角度制)，文本的水平方向
 为 0；顺时针为正，逆时针为负
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 
                     /**
                      * 获取配置结构化文本信息
                      * @return StructuralList 配置结构化文本信息
+                     * 
                      */
                     std::vector<GroupInfo> GetStructuralList() const;
 
                     /**
                      * 判断参数 StructuralList 是否已赋值
                      * @return StructuralList 是否已赋值
+                     * 
                      */
                     bool StructuralListHasBeenSet() const;
 
                     /**
                      * 获取还原文本信息
                      * @return WordList 还原文本信息
+                     * 
                      */
                     std::vector<WordItem> GetWordList() const;
 
                     /**
                      * 判断参数 WordList 是否已赋值
                      * @return WordList 是否已赋值
+                     * 
                      */
                     bool WordListHasBeenSet() const;
 

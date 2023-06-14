@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormHtml 网银页面提交html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormHtml() const;
 
                     /**
                      * 设置网银页面提交html
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FormHtml 网银页面提交html
+                     * @param _formHtml 网银页面提交html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormHtml(const std::string& _formHtml);
 
                     /**
                      * 判断参数 FormHtml 是否已赋值
                      * @return FormHtml 是否已赋值
+                     * 
                      */
                     bool FormHtmlHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormEncoding 网银提交页面字符集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormEncoding() const;
 
                     /**
                      * 设置网银提交页面字符集
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FormEncoding 网银提交页面字符集
+                     * @param _formEncoding 网银提交页面字符集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormEncoding(const std::string& _formEncoding);
 
                     /**
                      * 判断参数 FormEncoding 是否已赋值
                      * @return FormEncoding 是否已赋值
+                     * 
                      */
                     bool FormEncodingHasBeenSet() const;
 

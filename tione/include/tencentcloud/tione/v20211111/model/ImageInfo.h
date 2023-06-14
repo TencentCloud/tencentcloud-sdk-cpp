@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
                      * @return ImageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * 
                      */
                     std::string GetImageType() const;
 
                     /**
                      * 设置镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
-                     * @param ImageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * @param _imageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像地址
                      * @return ImageUrl 镜像地址
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置镜像地址
-                     * @param ImageUrl 镜像地址
+                     * @param _imageUrl 镜像地址
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryRegion TCR镜像对应的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryRegion() const;
 
                     /**
                      * 设置TCR镜像对应的地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistryRegion TCR镜像对应的地域
+                     * @param _registryRegion TCR镜像对应的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistryRegion(const std::string& _registryRegion);
 
                     /**
                      * 判断参数 RegistryRegion 是否已赋值
                      * @return RegistryRegion 是否已赋值
+                     * 
                      */
                     bool RegistryRegionHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryId TCR镜像对应的实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置TCR镜像对应的实例id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistryId TCR镜像对应的实例id
+                     * @param _registryId TCR镜像对应的实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 

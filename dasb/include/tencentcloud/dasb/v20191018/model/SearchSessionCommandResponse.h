@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数
                      * @return TotalCount 记录总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取命令和所属会话
                      * @return CommandSessionSet 命令和所属会话
+                     * 
                      */
                     std::vector<SessionCommand> GetCommandSessionSet() const;
 
                     /**
                      * 判断参数 CommandSessionSet 是否已赋值
                      * @return CommandSessionSet 是否已赋值
+                     * 
                      */
                     bool CommandSessionSetHasBeenSet() const;
 

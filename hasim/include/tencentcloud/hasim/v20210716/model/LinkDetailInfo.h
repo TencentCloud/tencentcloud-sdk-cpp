@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 云兔连接ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置云兔连接ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 云兔连接ID
+                     * @param _iD 云兔连接ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 卡片状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置卡片状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 卡片状态
+                     * @param _status 卡片状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveTime 激活时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActiveTime() const;
 
                     /**
                      * 设置激活时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveTime 激活时间
+                     * @param _activeTime 激活时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveTime(const std::string& _activeTime);
 
                     /**
                      * 判断参数 ActiveTime 是否已赋值
                      * @return ActiveTime 是否已赋值
+                     * 
                      */
                     bool ActiveTimeHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间
+                     * @param _expireTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataUse 数据用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDataUse() const;
 
                     /**
                      * 设置数据用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataUse 数据用量
+                     * @param _dataUse 数据用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataUse(const double& _dataUse);
 
                     /**
                      * 判断参数 DataUse 是否已赋值
                      * @return DataUse 是否已赋值
+                     * 
                      */
                     bool DataUseHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioUse 语音用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAudioUse() const;
 
                     /**
                      * 设置语音用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioUse 语音用量
+                     * @param _audioUse 语音用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioUse(const int64_t& _audioUse);
 
                     /**
                      * 判断参数 AudioUse 是否已赋值
                      * @return AudioUse 是否已赋值
+                     * 
                      */
                     bool AudioUseHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmsUse 短信用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSmsUse() const;
 
                     /**
                      * 设置短信用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmsUse 短信用量
+                     * @param _smsUse 短信用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmsUse(const int64_t& _smsUse);
 
                     /**
                      * 判断参数 SmsUse 是否已赋值
                      * @return SmsUse 是否已赋值
+                     * 
                      */
                     bool SmsUseHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkedState 在线状态 0 未激活 1 在线 2 离线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLinkedState() const;
 
                     /**
                      * 设置在线状态 0 未激活 1 在线 2 离线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LinkedState 在线状态 0 未激活 1 在线 2 离线
+                     * @param _linkedState 在线状态 0 未激活 1 在线 2 离线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLinkedState(const int64_t& _linkedState);
 
                     /**
                      * 判断参数 LinkedState 是否已赋值
                      * @return LinkedState 是否已赋值
+                     * 
                      */
                     bool LinkedStateHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TacticID 预期策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTacticID() const;
 
                     /**
                      * 设置预期策略ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TacticID 预期策略ID
+                     * @param _tacticID 预期策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTacticID(const int64_t& _tacticID);
 
                     /**
                      * 判断参数 TacticID 是否已赋值
                      * @return TacticID 是否已赋值
+                     * 
                      */
                     bool TacticIDHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TacticStatus 策略下发状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTacticStatus() const;
 
                     /**
                      * 设置策略下发状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TacticStatus 策略下发状态
+                     * @param _tacticStatus 策略下发状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTacticStatus(const int64_t& _tacticStatus);
 
                     /**
                      * 判断参数 TacticStatus 是否已赋值
                      * @return TacticStatus 是否已赋值
+                     * 
                      */
                     bool TacticStatusHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TacticExpireTime 策略下发成功过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTacticExpireTime() const;
 
                     /**
                      * 设置策略下发成功过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TacticExpireTime 策略下发成功过期时间
+                     * @param _tacticExpireTime 策略下发成功过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTacticExpireTime(const std::string& _tacticExpireTime);
 
                     /**
                      * 判断参数 TacticExpireTime 是否已赋值
                      * @return TacticExpireTime 是否已赋值
+                     * 
                      */
                     bool TacticExpireTimeHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsActiveLog 高级日志预期状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsActiveLog() const;
 
                     /**
                      * 设置高级日志预期状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsActiveLog 高级日志预期状态
+                     * @param _isActiveLog 高级日志预期状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsActiveLog(const bool& _isActiveLog);
 
                     /**
                      * 判断参数 IsActiveLog 是否已赋值
                      * @return IsActiveLog 是否已赋值
+                     * 
                      */
                     bool IsActiveLogHasBeenSet() const;
 
@@ -318,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeleOperator 运营商 1移动 2联通 3电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTeleOperator() const;
 
                     /**
                      * 设置运营商 1移动 2联通 3电信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TeleOperator 运营商 1移动 2联通 3电信
+                     * @param _teleOperator 运营商 1移动 2联通 3电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTeleOperator(const int64_t& _teleOperator);
 
                     /**
                      * 判断参数 TeleOperator 是否已赋值
                      * @return TeleOperator 是否已赋值
+                     * 
                      */
                     bool TeleOperatorHasBeenSet() const;
 
@@ -340,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Report 设备最新上报信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DeviceReport GetReport() const;
 
                     /**
                      * 设置设备最新上报信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Report 设备最新上报信息
+                     * @param _report 设备最新上报信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReport(const DeviceReport& _report);
 
                     /**
                      * 判断参数 Report 是否已赋值
                      * @return Report 是否已赋值
+                     * 
                      */
                     bool ReportHasBeenSet() const;
 
@@ -362,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -384,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cards 运营商ICCID信息集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TeleOperatorCard> GetCards() const;
 
                     /**
                      * 设置运营商ICCID信息集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cards 运营商ICCID信息集合
+                     * @param _cards 运营商ICCID信息集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCards(const std::vector<TeleOperatorCard>& _cards);
 
                     /**
                      * 判断参数 Cards 是否已赋值
                      * @return Cards 是否已赋值
+                     * 
                      */
                     bool CardsHasBeenSet() const;
 
@@ -406,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CardID 云兔实际卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCardID() const;
 
                     /**
                      * 设置云兔实际卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CardID 云兔实际卡片ID
+                     * @param _cardID 云兔实际卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCardID(const std::string& _cardID);
 
                     /**
                      * 判断参数 CardID 是否已赋值
                      * @return CardID 是否已赋值
+                     * 
                      */
                     bool CardIDHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取CVM实例类型
                      * @return InstanceType CVM实例类型
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置CVM实例类型
-                     * @param InstanceType CVM实例类型
+                     * @param _instanceType CVM实例类型
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取数据盘挂载信息
                      * @return DataDisks 数据盘挂载信息
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置数据盘挂载信息
-                     * @param DataDisks 数据盘挂载信息
+                     * @param _dataDisks 数据盘挂载信息
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 
                     /**
                      * 获取CVM实例所属可用区
                      * @return Zone CVM实例所属可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置CVM实例所属可用区
-                     * @param Zone CVM实例所属可用区
+                     * @param _zone CVM实例所属可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

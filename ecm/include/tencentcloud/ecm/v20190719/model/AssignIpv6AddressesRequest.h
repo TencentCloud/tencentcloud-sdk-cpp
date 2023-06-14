@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。
                      * @return NetworkInterfaceId 弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。
+                     * @param _networkInterfaceId 弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。
                      * @return Ipv6Addresses 指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。
+                     * 
                      */
                     std::vector<Ipv6Address> GetIpv6Addresses() const;
 
                     /**
                      * 设置指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。
-                     * @param Ipv6Addresses 指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。
+                     * @param _ipv6Addresses 指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。
+                     * 
                      */
                     void SetIpv6Addresses(const std::vector<Ipv6Address>& _ipv6Addresses);
 
                     /**
                      * 判断参数 Ipv6Addresses 是否已赋值
                      * @return Ipv6Addresses 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressesHasBeenSet() const;
 
                     /**
                      * 获取自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。
                      * @return Ipv6AddressCount 自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。
+                     * 
                      */
                     int64_t GetIpv6AddressCount() const;
 
                     /**
                      * 设置自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。
-                     * @param Ipv6AddressCount 自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。
+                     * @param _ipv6AddressCount 自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。
+                     * 
                      */
                     void SetIpv6AddressCount(const int64_t& _ipv6AddressCount);
 
                     /**
                      * 判断参数 Ipv6AddressCount 是否已赋值
                      * @return Ipv6AddressCount 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressCountHasBeenSet() const;
 
@@ -124,6 +136,7 @@ CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
+                     * 
                      */
                     std::string GetIpv6ISP() const;
 
@@ -132,16 +145,18 @@ CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-                     * @param Ipv6ISP ipv6运营商如下：
+                     * @param _ipv6ISP ipv6运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
+                     * 
                      */
                     void SetIpv6ISP(const std::string& _ipv6ISP);
 
                     /**
                      * 判断参数 Ipv6ISP 是否已赋值
                      * @return Ipv6ISP 是否已赋值
+                     * 
                      */
                     bool Ipv6ISPHasBeenSet() const;
 

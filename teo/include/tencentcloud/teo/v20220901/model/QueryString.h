@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch CacheKey是否由QueryString组成，取值有：
 <li>on：是；</li>
 <li>off：否。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置CacheKey是否由QueryString组成，取值有：
 <li>on：是；</li>
 <li>off：否。</li>
-                     * @param Switch CacheKey是否由QueryString组成，取值有：
+                     * @param _switch CacheKey是否由QueryString组成，取值有：
 <li>on：是；</li>
 <li>off：否。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action CacheKey使用QueryString的方式，取值有：
+                     * @param _action CacheKey使用QueryString的方式，取值有：
 <li>includeCustom：使用部分url参数；</li>
 <li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -107,20 +113,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 使用/排除的url参数数组。
+                     * @param _value 使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

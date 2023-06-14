@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取策略id
                      * @return PlanId 策略id
+                     * 
                      */
                     uint64_t GetPlanId() const;
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时
                      * @return Progress 任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时
+                     * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

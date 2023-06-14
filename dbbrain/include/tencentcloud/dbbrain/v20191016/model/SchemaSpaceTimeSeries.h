@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取库名
                      * @return TableSchema 库名
+                     * 
                      */
                     std::string GetTableSchema() const;
 
                     /**
                      * 设置库名
-                     * @param TableSchema 库名
+                     * @param _tableSchema 库名
+                     * 
                      */
                     void SetTableSchema(const std::string& _tableSchema);
 
                     /**
                      * 判断参数 TableSchema 是否已赋值
                      * @return TableSchema 是否已赋值
+                     * 
                      */
                     bool TableSchemaHasBeenSet() const;
 
                     /**
                      * 获取单位时间间隔内的空间指标数据。
                      * @return SeriesData 单位时间间隔内的空间指标数据。
+                     * 
                      */
                     MonitorMetricSeriesData GetSeriesData() const;
 
                     /**
                      * 设置单位时间间隔内的空间指标数据。
-                     * @param SeriesData 单位时间间隔内的空间指标数据。
+                     * @param _seriesData 单位时间间隔内的空间指标数据。
+                     * 
                      */
                     void SetSeriesData(const MonitorMetricSeriesData& _seriesData);
 
                     /**
                      * 判断参数 SeriesData 是否已赋值
                      * @return SeriesData 是否已赋值
+                     * 
                      */
                     bool SeriesDataHasBeenSet() const;
 

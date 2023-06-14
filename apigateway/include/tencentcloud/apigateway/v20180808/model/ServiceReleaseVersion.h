@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 发布版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置发布版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 发布版本总数量。
+                     * @param _totalCount 发布版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionList 发布版本列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeServiceReleaseVersionResultVersionListInfo> GetVersionList() const;
 
                     /**
                      * 设置发布版本列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionList 发布版本列表。
+                     * @param _versionList 发布版本列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionList(const std::vector<DescribeServiceReleaseVersionResultVersionListInfo>& _versionList);
 
                     /**
                      * 判断参数 VersionList 是否已赋值
                      * @return VersionList 是否已赋值
+                     * 
                      */
                     bool VersionListHasBeenSet() const;
 

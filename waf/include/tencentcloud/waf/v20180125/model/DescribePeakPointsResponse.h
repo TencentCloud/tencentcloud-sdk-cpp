@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据点
                      * @return Points 数据点
+                     * 
                      */
                     std::vector<PeakPointsItem> GetPoints() const;
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 

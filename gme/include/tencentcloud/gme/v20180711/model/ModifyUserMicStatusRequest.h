@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
                      * @return BizId 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
+                     * 
                      */
                     int64_t GetBizId() const;
 
                     /**
                      * 设置来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
-                     * @param BizId 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
+                     * @param _bizId 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
+                     * 
                      */
                     void SetBizId(const int64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取实时语音房间号。
                      * @return RoomId 实时语音房间号。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置实时语音房间号。
-                     * @param RoomId 实时语音房间号。
+                     * @param _roomId 实时语音房间号。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取需要操作的房间内用户以及该用户的目标麦克风状态。
                      * @return Users 需要操作的房间内用户以及该用户的目标麦克风状态。
+                     * 
                      */
                     std::vector<UserMicStatus> GetUsers() const;
 
                     /**
                      * 设置需要操作的房间内用户以及该用户的目标麦克风状态。
-                     * @param Users 需要操作的房间内用户以及该用户的目标麦克风状态。
+                     * @param _users 需要操作的房间内用户以及该用户的目标麦克风状态。
+                     * 
                      */
                     void SetUsers(const std::vector<UserMicStatus>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 

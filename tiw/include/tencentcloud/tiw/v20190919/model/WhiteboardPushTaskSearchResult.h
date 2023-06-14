@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务唯一ID
                      * @return TaskId 任务唯一ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务唯一ID
-                     * @param TaskId 任务唯一ID
+                     * @param _taskId 任务唯一ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 - PREPARED: 推流在准备阶段
 - PUSHING: 正在推流
 - STOPPED：推流已停止
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -82,106 +86,123 @@ namespace TencentCloud
 - PREPARED: 推流在准备阶段
 - PUSHING: 正在推流
 - STOPPED：推流已停止
-                     * @param Status 白板推流任务状态
+                     * @param _status 白板推流任务状态
 - PREPARED: 推流在准备阶段
 - PUSHING: 正在推流
 - STOPPED：推流已停止
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取白板推流房间号
                      * @return RoomId 白板推流房间号
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 设置白板推流房间号
-                     * @param RoomId 白板推流房间号
+                     * @param _roomId 白板推流房间号
+                     * 
                      */
                     void SetRoomId(const int64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreateTime 任务创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取用户应用SdkAppId
                      * @return SdkAppId 用户应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置用户应用SdkAppId
-                     * @param SdkAppId 用户应用SdkAppId
+                     * @param _sdkAppId 用户应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取白板推流结果
                      * @return Result 白板推流结果
+                     * 
                      */
                     WhiteboardPushResult GetResult() const;
 
                     /**
                      * 设置白板推流结果
-                     * @param Result 白板推流结果
+                     * @param _result 白板推流结果
+                     * 
                      */
                     void SetResult(const WhiteboardPushResult& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取白板推流用户ID
                      * @return PushUserId 白板推流用户ID
+                     * 
                      */
                     std::string GetPushUserId() const;
 
                     /**
                      * 设置白板推流用户ID
-                     * @param PushUserId 白板推流用户ID
+                     * @param _pushUserId 白板推流用户ID
+                     * 
                      */
                     void SetPushUserId(const std::string& _pushUserId);
 
                     /**
                      * 判断参数 PushUserId 是否已赋值
                      * @return PushUserId 是否已赋值
+                     * 
                      */
                     bool PushUserIdHasBeenSet() const;
 

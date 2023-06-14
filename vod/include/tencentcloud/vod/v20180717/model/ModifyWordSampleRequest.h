@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取关键词，长度限制：128 个字符。
                      * @return Keyword 关键词，长度限制：128 个字符。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置关键词，长度限制：128 个字符。
-                     * @param Keyword 关键词，长度限制：128 个字符。
+                     * @param _keyword 关键词，长度限制：128 个字符。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
 5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；
 6. Review：通过光学字符识别技术、音频识别技术，进行不适宜的内容识别，等价于 3+4；
 7. All：包含以上全部，等价于 1+2+3+4。
+                     * 
                      */
                     std::vector<std::string> GetUsages() const;
 
@@ -111,7 +118,7 @@ namespace TencentCloud
 5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；
 6. Review：通过光学字符识别技术、音频识别技术，进行不适宜的内容识别，等价于 3+4；
 7. All：包含以上全部，等价于 1+2+3+4。
-                     * @param Usages <b>关键词应用场景，可选值：</b>
+                     * @param _usages <b>关键词应用场景，可选值：</b>
 1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；
 2. Recognition.Asr：通过音频识别技术，进行内容识别；
 3. Review.Ocr：通过光学字符识别技术，进行不适宜的内容识别；
@@ -120,30 +127,35 @@ namespace TencentCloud
 5. Recognition：通过光学字符识别技术、音频识别技术，进行内容识别，等价于 1+2；
 6. Review：通过光学字符识别技术、音频识别技术，进行不适宜的内容识别，等价于 3+4；
 7. All：包含以上全部，等价于 1+2+3+4。
+                     * 
                      */
                     void SetUsages(const std::vector<std::string>& _usages);
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 
                     /**
                      * 获取标签操作信息。
                      * @return TagOperationInfo 标签操作信息。
+                     * 
                      */
                     AiSampleTagOperation GetTagOperationInfo() const;
 
                     /**
                      * 设置标签操作信息。
-                     * @param TagOperationInfo 标签操作信息。
+                     * @param _tagOperationInfo 标签操作信息。
+                     * 
                      */
                     void SetTagOperationInfo(const AiSampleTagOperation& _tagOperationInfo);
 
                     /**
                      * 判断参数 TagOperationInfo 是否已赋值
                      * @return TagOperationInfo 是否已赋值
+                     * 
                      */
                     bool TagOperationInfoHasBeenSet() const;
 

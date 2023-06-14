@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
                      * @return RegisterType 动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
+                     * 
                      */
                     uint64_t GetRegisterType() const;
 
                     /**
                      * 判断参数 RegisterType 是否已赋值
                      * @return RegisterType 是否已赋值
+                     * 
                      */
                     bool RegisterTypeHasBeenSet() const;
 
                     /**
                      * 获取动态注册产品密钥
                      * @return ProductSecret 动态注册产品密钥
+                     * 
                      */
                     std::string GetProductSecret() const;
 
                     /**
                      * 判断参数 ProductSecret 是否已赋值
                      * @return ProductSecret 是否已赋值
+                     * 
                      */
                     bool ProductSecretHasBeenSet() const;
 
                     /**
                      * 获取动态注册设备上限
                      * @return RegisterLimit 动态注册设备上限
+                     * 
                      */
                     uint64_t GetRegisterLimit() const;
 
                     /**
                      * 判断参数 RegisterLimit 是否已赋值
                      * @return RegisterLimit 是否已赋值
+                     * 
                      */
                     bool RegisterLimitHasBeenSet() const;
 

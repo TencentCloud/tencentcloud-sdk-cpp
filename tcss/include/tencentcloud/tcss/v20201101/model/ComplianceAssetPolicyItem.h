@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取为客户分配的唯一的检测项的ID。
                      * @return CustomerPolicyItemId 为客户分配的唯一的检测项的ID。
+                     * 
                      */
                     uint64_t GetCustomerPolicyItemId() const;
 
                     /**
                      * 设置为客户分配的唯一的检测项的ID。
-                     * @param CustomerPolicyItemId 为客户分配的唯一的检测项的ID。
+                     * @param _customerPolicyItemId 为客户分配的唯一的检测项的ID。
+                     * 
                      */
                     void SetCustomerPolicyItemId(const uint64_t& _customerPolicyItemId);
 
                     /**
                      * 判断参数 CustomerPolicyItemId 是否已赋值
                      * @return CustomerPolicyItemId 是否已赋值
+                     * 
                      */
                     bool CustomerPolicyItemIdHasBeenSet() const;
 
                     /**
                      * 获取检测项的原始ID
                      * @return BasePolicyItemId 检测项的原始ID
+                     * 
                      */
                     uint64_t GetBasePolicyItemId() const;
 
                     /**
                      * 设置检测项的原始ID
-                     * @param BasePolicyItemId 检测项的原始ID
+                     * @param _basePolicyItemId 检测项的原始ID
+                     * 
                      */
                     void SetBasePolicyItemId(const uint64_t& _basePolicyItemId);
 
                     /**
                      * 判断参数 BasePolicyItemId 是否已赋值
                      * @return BasePolicyItemId 是否已赋值
+                     * 
                      */
                     bool BasePolicyItemIdHasBeenSet() const;
 
                     /**
                      * 获取检测项的名称。
                      * @return Name 检测项的名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检测项的名称。
-                     * @param Name 检测项的名称。
+                     * @param _name 检测项的名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取检测项所属的类型的名称
                      * @return Category 检测项所属的类型的名称
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置检测项所属的类型的名称
-                     * @param Category 检测项所属的类型的名称
+                     * @param _category 检测项所属的类型的名称
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
                     /**
                      * 获取所属的合规标准的ID
                      * @return BenchmarkStandardId 所属的合规标准的ID
+                     * 
                      */
                     uint64_t GetBenchmarkStandardId() const;
 
                     /**
                      * 设置所属的合规标准的ID
-                     * @param BenchmarkStandardId 所属的合规标准的ID
+                     * @param _benchmarkStandardId 所属的合规标准的ID
+                     * 
                      */
                     void SetBenchmarkStandardId(const uint64_t& _benchmarkStandardId);
 
                     /**
                      * 判断参数 BenchmarkStandardId 是否已赋值
                      * @return BenchmarkStandardId 是否已赋值
+                     * 
                      */
                     bool BenchmarkStandardIdHasBeenSet() const;
 
                     /**
                      * 获取所属的合规标准的名称
                      * @return BenchmarkStandardName 所属的合规标准的名称
+                     * 
                      */
                     std::string GetBenchmarkStandardName() const;
 
                     /**
                      * 设置所属的合规标准的名称
-                     * @param BenchmarkStandardName 所属的合规标准的名称
+                     * @param _benchmarkStandardName 所属的合规标准的名称
+                     * 
                      */
                     void SetBenchmarkStandardName(const std::string& _benchmarkStandardName);
 
                     /**
                      * 判断参数 BenchmarkStandardName 是否已赋值
                      * @return BenchmarkStandardName 是否已赋值
+                     * 
                      */
                     bool BenchmarkStandardNameHasBeenSet() const;
 
                     /**
                      * 获取威胁等级
                      * @return RiskLevel 威胁等级
+                     * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置威胁等级
-                     * @param RiskLevel 威胁等级
+                     * @param _riskLevel 威胁等级
+                     * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
@@ -183,6 +204,7 @@ CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
+                     * 
                      */
                     std::string GetCheckStatus() const;
 
@@ -192,17 +214,19 @@ CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
-                     * @param CheckStatus 检测状态
+                     * @param _checkStatus 检测状态
 CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
+                     * 
                      */
                     void SetCheckStatus(const std::string& _checkStatus);
 
                     /**
                      * 判断参数 CheckStatus 是否已赋值
                      * @return CheckStatus 是否已赋值
+                     * 
                      */
                     bool CheckStatusHasBeenSet() const;
 
@@ -215,6 +239,7 @@ RESULT_FAILED: 未通过
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckResult() const;
 
@@ -223,16 +248,18 @@ RESULT_FAILED: 未通过
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckResult 检测结果
+                     * @param _checkResult 检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
 
                     /**
                      * 判断参数 CheckResult 是否已赋值
                      * @return CheckResult 是否已赋值
+                     * 
                      */
                     bool CheckResultHasBeenSet() const;
 
@@ -241,38 +268,44 @@ RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetWhitelistId() const;
 
                     /**
                      * 设置检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
+                     * @param _whitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhitelistId(const uint64_t& _whitelistId);
 
                     /**
                      * 判断参数 WhitelistId 是否已赋值
                      * @return WhitelistId 是否已赋值
+                     * 
                      */
                     bool WhitelistIdHasBeenSet() const;
 
                     /**
                      * 获取处理建议。
                      * @return FixSuggestion 处理建议。
+                     * 
                      */
                     std::string GetFixSuggestion() const;
 
                     /**
                      * 设置处理建议。
-                     * @param FixSuggestion 处理建议。
+                     * @param _fixSuggestion 处理建议。
+                     * 
                      */
                     void SetFixSuggestion(const std::string& _fixSuggestion);
 
                     /**
                      * 判断参数 FixSuggestion 是否已赋值
                      * @return FixSuggestion 是否已赋值
+                     * 
                      */
                     bool FixSuggestionHasBeenSet() const;
 
@@ -281,20 +314,23 @@ RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 最近检测的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置最近检测的时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastCheckTime 最近检测的时间。
+                     * @param _lastCheckTime 最近检测的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
 
                     /**
                      * 判断参数 LastCheckTime 是否已赋值
                      * @return LastCheckTime 是否已赋值
+                     * 
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
@@ -303,20 +339,23 @@ RESULT_FAILED: 未通过
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyInfo 验证信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyInfo() const;
 
                     /**
                      * 设置验证信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifyInfo 验证信息
+                     * @param _verifyInfo 验证信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVerifyInfo(const std::string& _verifyInfo);
 
                     /**
                      * 判断参数 VerifyInfo 是否已赋值
                      * @return VerifyInfo 是否已赋值
+                     * 
                      */
                     bool VerifyInfoHasBeenSet() const;
 

@@ -53,6 +53,7 @@ __CZ__：充值文件
 __TX__：提现文件
 __JY__：交易文件
 __YE__：余额文件
+                     * 
                      */
                     std::string GetApplyFileType() const;
 
@@ -62,35 +63,40 @@ __CZ__：充值文件
 __TX__：提现文件
 __JY__：交易文件
 __YE__：余额文件
-                     * @param ApplyFileType 申请的文件类型。
+                     * @param _applyFileType 申请的文件类型。
 __CZ__：充值文件
 __TX__：提现文件
 __JY__：交易文件
 __YE__：余额文件
+                     * 
                      */
                     void SetApplyFileType(const std::string& _applyFileType);
 
                     /**
                      * 判断参数 ApplyFileType 是否已赋值
                      * @return ApplyFileType 是否已赋值
+                     * 
                      */
                     bool ApplyFileTypeHasBeenSet() const;
 
                     /**
                      * 获取申请的对账文件日期，格式：yyyyMMdd。
                      * @return ApplyFileDate 申请的对账文件日期，格式：yyyyMMdd。
+                     * 
                      */
                     std::string GetApplyFileDate() const;
 
                     /**
                      * 设置申请的对账文件日期，格式：yyyyMMdd。
-                     * @param ApplyFileDate 申请的对账文件日期，格式：yyyyMMdd。
+                     * @param _applyFileDate 申请的对账文件日期，格式：yyyyMMdd。
+                     * 
                      */
                     void SetApplyFileDate(const std::string& _applyFileDate);
 
                     /**
                      * 判断参数 ApplyFileDate 是否已赋值
                      * @return ApplyFileDate 是否已赋值
+                     * 
                      */
                     bool ApplyFileDateHasBeenSet() const;
 
@@ -99,20 +105,23 @@ __YE__：余额文件
 _平安渠道为资金汇总账号_
                      * @return BankAccountNumber 父账户账号。
 _平安渠道为资金汇总账号_
+                     * 
                      */
                     std::string GetBankAccountNumber() const;
 
                     /**
                      * 设置父账户账号。
 _平安渠道为资金汇总账号_
-                     * @param BankAccountNumber 父账户账号。
+                     * @param _bankAccountNumber 父账户账号。
 _平安渠道为资金汇总账号_
+                     * 
                      */
                     void SetBankAccountNumber(const std::string& _bankAccountNumber);
 
                     /**
                      * 判断参数 BankAccountNumber 是否已赋值
                      * @return BankAccountNumber 是否已赋值
+                     * 
                      */
                     bool BankAccountNumberHasBeenSet() const;
 
@@ -127,6 +136,7 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -136,17 +146,19 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
-                     * @param MidasEnvironment 环境名。
+                     * @param _midasEnvironment 环境名。
 __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

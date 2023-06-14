@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取漏洞扫描任务id（不同于出参的导出检测报告的任务Id）
                      * @return TaskId 漏洞扫描任务id（不同于出参的导出检测报告的任务Id）
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置漏洞扫描任务id（不同于出参的导出检测报告的任务Id）
-                     * @param TaskId 漏洞扫描任务id（不同于出参的导出检测报告的任务Id）
+                     * @param _taskId 漏洞扫描任务id（不同于出参的导出检测报告的任务Id）
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取过滤参数
                      * @return Filters 过滤参数
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

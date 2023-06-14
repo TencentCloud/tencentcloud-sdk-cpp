@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取冲突资源信息数组。
                      * @return ConflictSourceSet 冲突资源信息数组。
+                     * 
                      */
                     std::vector<ConflictSource> GetConflictSourceSet() const;
 
                     /**
                      * 判断参数 ConflictSourceSet 是否已赋值
                      * @return ConflictSourceSet 是否已赋值
+                     * 
                      */
                     bool ConflictSourceSetHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectMode 迁移对象类型 all(全实例)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetObjectMode() const;
 
                     /**
                      * 设置迁移对象类型 all(全实例)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectMode 迁移对象类型 all(全实例)，partial(部分对象)
+                     * @param _objectMode 迁移对象类型 all(全实例)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjectMode(const std::string& _objectMode);
 
                     /**
                      * 判断参数 ObjectMode 是否已赋值
                      * @return ObjectMode 是否已赋值
+                     * 
                      */
                     bool ObjectModeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 迁移对象，当 ObjectMode 为 partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DBItem> GetDatabases() const;
 
                     /**
                      * 设置迁移对象，当 ObjectMode 为 partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Databases 迁移对象，当 ObjectMode 为 partial 时，不为空
+                     * @param _databases 迁移对象，当 ObjectMode 为 partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabases(const std::vector<DBItem>& _databases);
 
                     /**
                      * 判断参数 Databases 是否已赋值
                      * @return Databases 是否已赋值
+                     * 
                      */
                     bool DatabasesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedObjects 高级对象类型，如trigger、function、procedure、event
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
                      * 设置高级对象类型，如trigger、function、procedure、event
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedObjects 高级对象类型，如trigger、function、procedure、event
+                     * @param _advancedObjects 高级对象类型，如trigger、function、procedure、event
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
 
                     /**
                      * 判断参数 AdvancedObjects 是否已赋值
                      * @return AdvancedObjects 是否已赋值
+                     * 
                      */
                     bool AdvancedObjectsHasBeenSet() const;
 

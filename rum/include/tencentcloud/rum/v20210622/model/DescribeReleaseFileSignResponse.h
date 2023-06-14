@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取临时密钥key
                      * @return SecretKey 临时密钥key
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取临时密钥 id
                      * @return SecretID 临时密钥 id
+                     * 
                      */
                     std::string GetSecretID() const;
 
                     /**
                      * 判断参数 SecretID 是否已赋值
                      * @return SecretID 是否已赋值
+                     * 
                      */
                     bool SecretIDHasBeenSet() const;
 
                     /**
                      * 获取临时密钥临时 token
                      * @return SessionToken 临时密钥临时 token
+                     * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 判断参数 SessionToken 是否已赋值
                      * @return SessionToken 是否已赋值
+                     * 
                      */
                     bool SessionTokenHasBeenSet() const;
 
                     /**
                      * 获取开始时间戳
                      * @return StartTime 开始时间戳
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取过期时间戳
                      * @return ExpiredTime 过期时间戳
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

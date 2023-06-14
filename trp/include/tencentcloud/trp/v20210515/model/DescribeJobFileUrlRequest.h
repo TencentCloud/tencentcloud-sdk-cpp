@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取调度ID
                      * @return JobId 调度ID
+                     * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 设置调度ID
-                     * @param JobId 调度ID
+                     * @param _jobId 调度ID
+                     * 
                      */
                     void SetJobId(const uint64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

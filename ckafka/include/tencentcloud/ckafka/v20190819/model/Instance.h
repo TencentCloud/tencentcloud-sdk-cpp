@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
                      * @return Status 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
-                     * @param Status 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * @param _status 实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfCommunity 是否开源实例。开源：true，不开源：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIfCommunity() const;
 
                     /**
                      * 设置是否开源实例。开源：true，不开源：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IfCommunity 是否开源实例。开源：true，不开源：false
+                     * @param _ifCommunity 是否开源实例。开源：true，不开源：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIfCommunity(const bool& _ifCommunity);
 
                     /**
                      * 判断参数 IfCommunity 是否已赋值
                      * @return IfCommunity 是否已赋值
+                     * 
                      */
                     bool IfCommunityHasBeenSet() const;
 

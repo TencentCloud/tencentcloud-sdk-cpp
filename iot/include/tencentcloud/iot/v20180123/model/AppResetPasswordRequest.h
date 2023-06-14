@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取访问Token
                      * @return AccessToken 访问Token
+                     * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 设置访问Token
-                     * @param AccessToken 访问Token
+                     * @param _accessToken 访问Token
+                     * 
                      */
                     void SetAccessToken(const std::string& _accessToken);
 
                     /**
                      * 判断参数 AccessToken 是否已赋值
                      * @return AccessToken 是否已赋值
+                     * 
                      */
                     bool AccessTokenHasBeenSet() const;
 
                     /**
                      * 获取旧密码
                      * @return OldPassword 旧密码
+                     * 
                      */
                     std::string GetOldPassword() const;
 
                     /**
                      * 设置旧密码
-                     * @param OldPassword 旧密码
+                     * @param _oldPassword 旧密码
+                     * 
                      */
                     void SetOldPassword(const std::string& _oldPassword);
 
                     /**
                      * 判断参数 OldPassword 是否已赋值
                      * @return OldPassword 是否已赋值
+                     * 
                      */
                     bool OldPasswordHasBeenSet() const;
 
                     /**
                      * 获取新密码
                      * @return NewPassword 新密码
+                     * 
                      */
                     std::string GetNewPassword() const;
 
                     /**
                      * 设置新密码
-                     * @param NewPassword 新密码
+                     * @param _newPassword 新密码
+                     * 
                      */
                     void SetNewPassword(const std::string& _newPassword);
 
                     /**
                      * 判断参数 NewPassword 是否已赋值
                      * @return NewPassword 是否已赋值
+                     * 
                      */
                     bool NewPasswordHasBeenSet() const;
 

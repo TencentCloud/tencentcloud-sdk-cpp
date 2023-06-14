@@ -76,6 +76,7 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
+                     * 
                      */
                     std::string GetCommand() const;
 
@@ -91,7 +92,7 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-                     * @param Command 可同时传入多个指令，顺序执行。取值有：
+                     * @param _command 可同时传入多个指令，顺序执行。取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
@@ -102,138 +103,161 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取播放参数。
                      * @return PlayCommandInput 播放参数。
+                     * 
                      */
                     PlayCommandInput GetPlayCommandInput() const;
 
                     /**
                      * 设置播放参数。
-                     * @param PlayCommandInput 播放参数。
+                     * @param _playCommandInput 播放参数。
+                     * 
                      */
                     void SetPlayCommandInput(const PlayCommandInput& _playCommandInput);
 
                     /**
                      * 判断参数 PlayCommandInput 是否已赋值
                      * @return PlayCommandInput 是否已赋值
+                     * 
                      */
                     bool PlayCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放列表变更信息，当Command取SetPlaylist时，必填。
                      * @return SetPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * 
                      */
                     SetPlaylistCommandInput GetSetPlaylistCommandInput() const;
 
                     /**
                      * 设置播放列表变更信息，当Command取SetPlaylist时，必填。
-                     * @param SetPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * @param _setPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * 
                      */
                     void SetSetPlaylistCommandInput(const SetPlaylistCommandInput& _setPlaylistCommandInput);
 
                     /**
                      * 判断参数 SetPlaylistCommandInput 是否已赋值
                      * @return SetPlaylistCommandInput 是否已赋值
+                     * 
                      */
                     bool SetPlaylistCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放进度，当Command取Seek时，必填。
                      * @return SeekCommandInput 播放进度，当Command取Seek时，必填。
+                     * 
                      */
                     SeekCommandInput GetSeekCommandInput() const;
 
                     /**
                      * 设置播放进度，当Command取Seek时，必填。
-                     * @param SeekCommandInput 播放进度，当Command取Seek时，必填。
+                     * @param _seekCommandInput 播放进度，当Command取Seek时，必填。
+                     * 
                      */
                     void SetSeekCommandInput(const SeekCommandInput& _seekCommandInput);
 
                     /**
                      * 判断参数 SeekCommandInput 是否已赋值
                      * @return SeekCommandInput 是否已赋值
+                     * 
                      */
                     bool SeekCommandInputHasBeenSet() const;
 
                     /**
                      * 获取音频参数，当Command取SetAudioParam时，必填。
                      * @return SetAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * 
                      */
                     SetAudioParamCommandInput GetSetAudioParamCommandInput() const;
 
                     /**
                      * 设置音频参数，当Command取SetAudioParam时，必填。
-                     * @param SetAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * @param _setAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * 
                      */
                     void SetSetAudioParamCommandInput(const SetAudioParamCommandInput& _setAudioParamCommandInput);
 
                     /**
                      * 判断参数 SetAudioParamCommandInput 是否已赋值
                      * @return SetAudioParamCommandInput 是否已赋值
+                     * 
                      */
                     bool SetAudioParamCommandInputHasBeenSet() const;
 
                     /**
                      * 获取自定义消息，当Command取SendMessage时，必填。
                      * @return SendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * 
                      */
                     SendMessageCommandInput GetSendMessageCommandInput() const;
 
                     /**
                      * 设置自定义消息，当Command取SendMessage时，必填。
-                     * @param SendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * @param _sendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * 
                      */
                     void SetSendMessageCommandInput(const SendMessageCommandInput& _sendMessageCommandInput);
 
                     /**
                      * 判断参数 SendMessageCommandInput 是否已赋值
                      * @return SendMessageCommandInput 是否已赋值
+                     * 
                      */
                     bool SendMessageCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放模式，当Command取SetPlayMode时，必填。
                      * @return SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * 
                      */
                     SetPlayModeCommandInput GetSetPlayModeCommandInput() const;
 
                     /**
                      * 设置播放模式，当Command取SetPlayMode时，必填。
-                     * @param SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * @param _setPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * 
                      */
                     void SetSetPlayModeCommandInput(const SetPlayModeCommandInput& _setPlayModeCommandInput);
 
                     /**
                      * 判断参数 SetPlayModeCommandInput 是否已赋值
                      * @return SetPlayModeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetPlayModeCommandInputHasBeenSet() const;
 
                     /**
                      * 获取销毁模式，当Command取SetDestroyMode时，必填。
                      * @return SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * 
                      */
                     SetDestroyModeCommandInput GetSetDestroyModeCommandInput() const;
 
                     /**
                      * 设置销毁模式，当Command取SetDestroyMode时，必填。
-                     * @param SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * @param _setDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * 
                      */
                     void SetSetDestroyModeCommandInput(const SetDestroyModeCommandInput& _setDestroyModeCommandInput);
 
                     /**
                      * 判断参数 SetDestroyModeCommandInput 是否已赋值
                      * @return SetDestroyModeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetDestroyModeCommandInputHasBeenSet() const;
 

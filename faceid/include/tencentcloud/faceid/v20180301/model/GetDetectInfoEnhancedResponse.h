@@ -55,12 +55,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本类信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoText GetText() const;
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -69,12 +71,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardData 身份证照片信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoIdCardData GetIdCardData() const;
 
                     /**
                      * 判断参数 IdCardData 是否已赋值
                      * @return IdCardData 是否已赋值
+                     * 
                      */
                     bool IdCardDataHasBeenSet() const;
 
@@ -83,12 +87,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BestFrame 最佳帧信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoBestFrame GetBestFrame() const;
 
                     /**
                      * 判断参数 BestFrame 是否已赋值
                      * @return BestFrame 是否已赋值
+                     * 
                      */
                     bool BestFrameHasBeenSet() const;
 
@@ -97,12 +103,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoData 视频信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoVideoData GetVideoData() const;
 
                     /**
                      * 判断参数 VideoData 是否已赋值
                      * @return VideoData 是否已赋值
+                     * 
                      */
                     bool VideoDataHasBeenSet() const;
 
@@ -111,12 +119,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encryption 敏感数据加密信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 
@@ -125,12 +135,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntentionVerifyData 意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntentionVerifyData GetIntentionVerifyData() const;
 
                     /**
                      * 判断参数 IntentionVerifyData 是否已赋值
                      * @return IntentionVerifyData 是否已赋值
+                     * 
                      */
                     bool IntentionVerifyDataHasBeenSet() const;
 
@@ -139,12 +151,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntentionQuestionResult 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntentionQuestionResult GetIntentionQuestionResult() const;
 
                     /**
                      * 判断参数 IntentionQuestionResult 是否已赋值
                      * @return IntentionQuestionResult 是否已赋值
+                     * 
                      */
                     bool IntentionQuestionResultHasBeenSet() const;
 

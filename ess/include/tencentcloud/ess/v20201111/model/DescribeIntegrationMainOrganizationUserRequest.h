@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，userId必填
                      * @return Operator 操作人信息，userId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，userId必填
-                     * @param Operator 操作人信息，userId必填
+                     * @param _operator 操作人信息，userId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return ProductName 产品名称
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取产品描述
                      * @return ProductDescription 产品描述
+                     * 
                      */
                     std::string GetProductDescription() const;
 
                     /**
                      * 设置产品描述
-                     * @param ProductDescription 产品描述
+                     * @param _productDescription 产品描述
+                     * 
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
                     /**
                      * 判断参数 ProductDescription 是否已赋值
                      * @return ProductDescription 是否已赋值
+                     * 
                      */
                     bool ProductDescriptionHasBeenSet() const;
 
                     /**
                      * 获取主芯片产商ID
                      * @return ChipManufactureId 主芯片产商ID
+                     * 
                      */
                     std::string GetChipManufactureId() const;
 
                     /**
                      * 设置主芯片产商ID
-                     * @param ChipManufactureId 主芯片产商ID
+                     * @param _chipManufactureId 主芯片产商ID
+                     * 
                      */
                     void SetChipManufactureId(const std::string& _chipManufactureId);
 
                     /**
                      * 判断参数 ChipManufactureId 是否已赋值
                      * @return ChipManufactureId 是否已赋值
+                     * 
                      */
                     bool ChipManufactureIdHasBeenSet() const;
 
                     /**
                      * 获取主芯片ID
                      * @return ChipId 主芯片ID
+                     * 
                      */
                     std::string GetChipId() const;
 
                     /**
                      * 设置主芯片ID
-                     * @param ChipId 主芯片ID
+                     * @param _chipId 主芯片ID
+                     * 
                      */
                     void SetChipId(const std::string& _chipId);
 
                     /**
                      * 判断参数 ChipId 是否已赋值
                      * @return ChipId 是否已赋值
+                     * 
                      */
                     bool ChipIdHasBeenSet() const;
 

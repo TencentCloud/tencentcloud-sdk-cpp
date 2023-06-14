@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取cpt数据集合
                      * @return CptDataList cpt数据集合
+                     * 
                      */
                     std::vector<CptListData> GetCptDataList() const;
 
                     /**
                      * 判断参数 CptDataList 是否已赋值
                      * @return CptDataList 是否已赋值
+                     * 
                      */
                     bool CptDataListHasBeenSet() const;
 
                     /**
                      * 获取凭证模板总数
                      * @return AllCount 凭证模板总数
+                     * 
                      */
                     uint64_t GetAllCount() const;
 
                     /**
                      * 判断参数 AllCount 是否已赋值
                      * @return AllCount 是否已赋值
+                     * 
                      */
                     bool AllCountHasBeenSet() const;
 

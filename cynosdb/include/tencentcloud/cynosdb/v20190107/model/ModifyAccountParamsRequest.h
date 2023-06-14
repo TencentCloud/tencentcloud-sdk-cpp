@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id，不超过32个字符
                      * @return ClusterId 集群id，不超过32个字符
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id，不超过32个字符
-                     * @param ClusterId 集群id，不超过32个字符
+                     * @param _clusterId 集群id，不超过32个字符
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取账号信息
                      * @return Account 账号信息
+                     * 
                      */
                     InputAccount GetAccount() const;
 
                     /**
                      * 设置账号信息
-                     * @param Account 账号信息
+                     * @param _account 账号信息
+                     * 
                      */
                     void SetAccount(const InputAccount& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
                     /**
                      * 获取数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
                      * @return AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
+                     * 
                      */
                     std::vector<AccountParam> GetAccountParams() const;
 
                     /**
                      * 设置数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
-                     * @param AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
+                     * @param _accountParams 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
+                     * 
                      */
                     void SetAccountParams(const std::vector<AccountParam>& _accountParams);
 
                     /**
                      * 判断参数 AccountParams 是否已赋值
                      * @return AccountParams 是否已赋值
+                     * 
                      */
                     bool AccountParamsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return StartTime 起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param StartTime 起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _startTime 起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return EndTime 结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime 结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _endTime 结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return DataType CDN 统计数据类型，有效值：
 <li>Flux：流量，单位为 byte。</li>
 <li>Bandwidth：带宽，单位为 bps。</li>
+                     * 
                      */
                     std::string GetDataType() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置CDN 统计数据类型，有效值：
 <li>Flux：流量，单位为 byte。</li>
 <li>Bandwidth：带宽，单位为 bps。</li>
-                     * @param DataType CDN 统计数据类型，有效值：
+                     * @param _dataType CDN 统计数据类型，有效值：
 <li>Flux：流量，单位为 byte。</li>
 <li>Bandwidth：带宽，单位为 bps。</li>
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>
                      * @return SubAppId <b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
 当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
 当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>
-                     * @param SubAppId <b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @param _subAppId <b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
 当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -137,6 +149,7 @@ namespace TencentCloud
 <li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
 <li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
 默认值为1440，返回天粒度的数据。
+                     * 
                      */
                     uint64_t GetDataInterval() const;
 
@@ -146,35 +159,40 @@ namespace TencentCloud
 <li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
 <li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
 默认值为1440，返回天粒度的数据。
-                     * @param DataInterval 用量数据的时间粒度，单位：分钟，取值有：
+                     * @param _dataInterval 用量数据的时间粒度，单位：分钟，取值有：
 <li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
 <li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
 <li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
 默认值为1440，返回天粒度的数据。
+                     * 
                      */
                     void SetDataInterval(const uint64_t& _dataInterval);
 
                     /**
                      * 判断参数 DataInterval 是否已赋值
                      * @return DataInterval 是否已赋值
+                     * 
                      */
                     bool DataIntervalHasBeenSet() const;
 
                     /**
                      * 获取域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
                      * @return DomainNames 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     * 
                      */
                     std::vector<std::string> GetDomainNames() const;
 
                     /**
                      * 设置域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
-                     * @param DomainNames 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     * @param _domainNames 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     * 
                      */
                     void SetDomainNames(const std::vector<std::string>& _domainNames);
 
                     /**
                      * 判断参数 DomainNames 是否已赋值
                      * @return DomainNames 是否已赋值
+                     * 
                      */
                     bool DomainNamesHasBeenSet() const;
 

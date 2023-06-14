@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务锁状态信息
                      * @return TaskLockStatus 任务锁状态信息
+                     * 
                      */
                     TaskLockStatus GetTaskLockStatus() const;
 
                     /**
                      * 判断参数 TaskLockStatus 是否已赋值
                      * @return TaskLockStatus 是否已赋值
+                     * 
                      */
                     bool TaskLockStatusHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取地域信息
                      * @return RegionInfoSet 地域信息
+                     * 
                      */
                     std::vector<RegionInfo> GetRegionInfoSet() const;
 
                     /**
                      * 判断参数 RegionInfoSet 是否已赋值
                      * @return RegionInfoSet 是否已赋值
+                     * 
                      */
                     bool RegionInfoSetHasBeenSet() const;
 

@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取作业ID
                      * @return JobId 作业ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业ID
-                     * @param JobId 作业ID
+                     * @param _jobId 作业ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取作业名称
                      * @return JobName 作业名称
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置作业名称
-                     * @param JobName 作业名称
+                     * @param _jobName 作业名称
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 
                     /**
                      * 获取作业状态
                      * @return JobState 作业状态
+                     * 
                      */
                     std::string GetJobState() const;
 
                     /**
                      * 设置作业状态
-                     * @param JobState 作业状态
+                     * @param _jobState 作业状态
+                     * 
                      */
                     void SetJobState(const std::string& _jobState);
 
                     /**
                      * 判断参数 JobState 是否已赋值
                      * @return JobState 是否已赋值
+                     * 
                      */
                     bool JobStateHasBeenSet() const;
 
                     /**
                      * 获取作业优先级
                      * @return Priority 作业优先级
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置作业优先级
-                     * @param Priority 作业优先级
+                     * @param _priority 作业优先级
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -126,38 +138,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Placement 位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置位置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Placement 位置信息
+                     * @param _placement 位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -166,38 +184,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务统计指标
                      * @return TaskMetrics 任务统计指标
+                     * 
                      */
                     TaskMetrics GetTaskMetrics() const;
 
                     /**
                      * 设置任务统计指标
-                     * @param TaskMetrics 任务统计指标
+                     * @param _taskMetrics 任务统计指标
+                     * 
                      */
                     void SetTaskMetrics(const TaskMetrics& _taskMetrics);
 
                     /**
                      * 判断参数 TaskMetrics 是否已赋值
                      * @return TaskMetrics 是否已赋值
+                     * 
                      */
                     bool TaskMetricsHasBeenSet() const;
 
@@ -206,20 +230,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 作业绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置作业绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 作业绑定的标签列表。
+                     * @param _tags 作业绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

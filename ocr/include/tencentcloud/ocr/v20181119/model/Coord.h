@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取横坐标
                      * @return X 横坐标
+                     * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置横坐标
-                     * @param X 横坐标
+                     * @param _x 横坐标
+                     * 
                      */
                     void SetX(const int64_t& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取纵坐标
                      * @return Y 纵坐标
+                     * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置纵坐标
-                     * @param Y 纵坐标
+                     * @param _y 纵坐标
+                     * 
                      */
                     void SetY(const int64_t& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 

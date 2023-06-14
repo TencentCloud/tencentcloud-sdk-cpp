@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取开关的状态，1是开启、0是关闭
                      * @return Status 开关的状态，1是开启、0是关闭
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置开关的状态，1是开启、0是关闭
-                     * @param Status 开关的状态，1是开启、0是关闭
+                     * @param _status 开关的状态，1是开启、0是关闭
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。
                      * @return Edition WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。
+                     * 
                      */
                     std::string GetEdition() const;
 
                     /**
                      * 设置WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。
-                     * @param Edition WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。
+                     * @param _edition WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。
+                     * 
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
+                     * 
                      */
                     bool EditionHasBeenSet() const;
 

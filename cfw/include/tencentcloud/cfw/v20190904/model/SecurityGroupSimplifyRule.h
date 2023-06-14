@@ -63,6 +63,7 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceContent() const;
 
@@ -75,7 +76,7 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceContent 访问源示例：
+                     * @param _sourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
 instance：资产实例(ins-123456)
@@ -83,12 +84,14 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
 
                     /**
                      * 判断参数 SourceContent 是否已赋值
                      * @return SourceContent 是否已赋值
+                     * 
                      */
                     bool SourceContentHasBeenSet() const;
 
@@ -109,6 +112,7 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDestContent() const;
 
@@ -121,7 +125,7 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DestContent 访问目的示例：
+                     * @param _destContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
 instance：资产实例(ins-123456)
@@ -129,12 +133,14 @@ resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestContent(const std::string& _destContent);
 
                     /**
                      * 判断参数 DestContent 是否已赋值
                      * @return DestContent 是否已赋值
+                     * 
                      */
                     bool DestContentHasBeenSet() const;
 
@@ -143,20 +149,23 @@ region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 协议；TCP/UDP/ICMP/ANY
+                     * @param _protocol 协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -165,20 +174,23 @@ region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -187,20 +199,23 @@ region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleUuid 规则对应的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 设置规则对应的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleUuid 规则对应的唯一id
+                     * @param _ruleUuid 规则对应的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
@@ -209,20 +224,23 @@ region：地域(ap-gaungzhou)
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sequence 规则序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSequence() const;
 
                     /**
                      * 设置规则序号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sequence 规则序号
+                     * @param _sequence 规则序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSequence(const int64_t& _sequence);
 
                     /**
                      * 判断参数 Sequence 是否已赋值
                      * @return Sequence 是否已赋值
+                     * 
                      */
                     bool SequenceHasBeenSet() const;
 

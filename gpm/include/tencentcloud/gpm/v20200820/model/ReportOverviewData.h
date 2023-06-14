@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取总次数
                      * @return TotalTimes 总次数
+                     * 
                      */
                     std::string GetTotalTimes() const;
 
                     /**
                      * 设置总次数
-                     * @param TotalTimes 总次数
+                     * @param _totalTimes 总次数
+                     * 
                      */
                     void SetTotalTimes(const std::string& _totalTimes);
 
                     /**
                      * 判断参数 TotalTimes 是否已赋值
                      * @return TotalTimes 是否已赋值
+                     * 
                      */
                     bool TotalTimesHasBeenSet() const;
 
                     /**
                      * 获取成功率
                      * @return SuccessPercent 成功率
+                     * 
                      */
                     double GetSuccessPercent() const;
 
                     /**
                      * 设置成功率
-                     * @param SuccessPercent 成功率
+                     * @param _successPercent 成功率
+                     * 
                      */
                     void SetSuccessPercent(const double& _successPercent);
 
                     /**
                      * 判断参数 SuccessPercent 是否已赋值
                      * @return SuccessPercent 是否已赋值
+                     * 
                      */
                     bool SuccessPercentHasBeenSet() const;
 
                     /**
                      * 获取超时率
                      * @return TimeoutPercent 超时率
+                     * 
                      */
                     double GetTimeoutPercent() const;
 
                     /**
                      * 设置超时率
-                     * @param TimeoutPercent 超时率
+                     * @param _timeoutPercent 超时率
+                     * 
                      */
                     void SetTimeoutPercent(const double& _timeoutPercent);
 
                     /**
                      * 判断参数 TimeoutPercent 是否已赋值
                      * @return TimeoutPercent 是否已赋值
+                     * 
                      */
                     bool TimeoutPercentHasBeenSet() const;
 
                     /**
                      * 获取失败率
                      * @return FailPercent 失败率
+                     * 
                      */
                     double GetFailPercent() const;
 
                     /**
                      * 设置失败率
-                     * @param FailPercent 失败率
+                     * @param _failPercent 失败率
+                     * 
                      */
                     void SetFailPercent(const double& _failPercent);
 
                     /**
                      * 判断参数 FailPercent 是否已赋值
                      * @return FailPercent 是否已赋值
+                     * 
                      */
                     bool FailPercentHasBeenSet() const;
 
                     /**
                      * 获取平均匹配时间
                      * @return AverageSec 平均匹配时间
+                     * 
                      */
                     double GetAverageSec() const;
 
                     /**
                      * 设置平均匹配时间
-                     * @param AverageSec 平均匹配时间
+                     * @param _averageSec 平均匹配时间
+                     * 
                      */
                     void SetAverageSec(const double& _averageSec);
 
                     /**
                      * 判断参数 AverageSec 是否已赋值
                      * @return AverageSec 是否已赋值
+                     * 
                      */
                     bool AverageSecHasBeenSet() const;
 

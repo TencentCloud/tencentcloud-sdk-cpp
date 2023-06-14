@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取退款详情。
                      * @return InstanceRefundsSet 退款详情。
+                     * 
                      */
                     std::vector<InstanceRefund> GetInstanceRefundsSet() const;
 
                     /**
                      * 判断参数 InstanceRefundsSet 是否已赋值
                      * @return InstanceRefundsSet 是否已赋值
+                     * 
                      */
                     bool InstanceRefundsSetHasBeenSet() const;
 

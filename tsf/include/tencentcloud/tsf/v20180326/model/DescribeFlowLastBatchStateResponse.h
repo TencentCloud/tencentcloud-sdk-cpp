@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取工作流批次最新状态
                      * @return Result 工作流批次最新状态
+                     * 
                      */
                     TaskFlowLastBatchState GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

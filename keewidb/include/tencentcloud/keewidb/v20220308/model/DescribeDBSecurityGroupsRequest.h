@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称：keewidb。
                      * @return Product 数据库引擎名称：keewidb。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称：keewidb。
-                     * @param Product 数据库引擎名称：keewidb。
+                     * @param _product 数据库引擎名称：keewidb。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取实例ID，格式如：kee-c1nl9***。
                      * @return InstanceId 实例ID，格式如：kee-c1nl9***。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：kee-c1nl9***。
-                     * @param InstanceId 实例ID，格式如：kee-c1nl9***。
+                     * @param _instanceId 实例ID，格式如：kee-c1nl9***。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

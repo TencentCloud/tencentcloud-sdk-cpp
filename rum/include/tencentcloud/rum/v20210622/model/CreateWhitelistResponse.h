@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取消息
                      * @return Msg 消息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
                     /**
                      * 获取白名单ID
                      * @return ID 白名单ID
+                     * 
                      */
                     uint64_t GetID() const;
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

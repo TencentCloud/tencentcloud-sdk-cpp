@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取任务的名称
                      * @return JobName 任务的名称
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置任务的名称
-                     * @param JobName 任务的名称
+                     * @param _jobName 任务的名称
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 
                     /**
                      * 获取任务所在集群的名称
                      * @return Cluster 任务所在集群的名称
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置任务所在集群的名称
-                     * @param Cluster 任务所在集群的名称
+                     * @param _cluster 任务所在集群的名称
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取查询日志的开始时间，格式：2019-01-01 00:00:00
                      * @return StartTime 查询日志的开始时间，格式：2019-01-01 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询日志的开始时间，格式：2019-01-01 00:00:00
-                     * @param StartTime 查询日志的开始时间，格式：2019-01-01 00:00:00
+                     * @param _startTime 查询日志的开始时间，格式：2019-01-01 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询日志的结束时间，格式：2019-01-01 00:00:00
                      * @return EndTime 查询日志的结束时间，格式：2019-01-01 00:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询日志的结束时间，格式：2019-01-01 00:00:00
-                     * @param EndTime 查询日志的结束时间，格式：2019-01-01 00:00:00
+                     * @param _endTime 查询日志的结束时间，格式：2019-01-01 00:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取单次要返回的日志条数上限
                      * @return Limit 单次要返回的日志条数上限
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次要返回的日志条数上限
-                     * @param Limit 单次要返回的日志条数上限
+                     * @param _limit 单次要返回的日志条数上限
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志
                      * @return Context 加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志
-                     * @param Context 加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志
+                     * @param _context 加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 

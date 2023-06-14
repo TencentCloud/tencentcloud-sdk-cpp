@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云直播BizId。
                      * @return BizId 腾讯云直播BizId。
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置腾讯云直播BizId。
-                     * @param BizId 腾讯云直播BizId。
+                     * @param _bizId 腾讯云直播BizId。
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。
                      * @return PublishCdnUrls 第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。
+                     * 
                      */
                     std::vector<std::string> GetPublishCdnUrls() const;
 
                     /**
                      * 设置第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。
-                     * @param PublishCdnUrls 第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。
+                     * @param _publishCdnUrls 第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。
+                     * 
                      */
                     void SetPublishCdnUrls(const std::vector<std::string>& _publishCdnUrls);
 
                     /**
                      * 判断参数 PublishCdnUrls 是否已赋值
                      * @return PublishCdnUrls 是否已赋值
+                     * 
                      */
                     bool PublishCdnUrlsHasBeenSet() const;
 

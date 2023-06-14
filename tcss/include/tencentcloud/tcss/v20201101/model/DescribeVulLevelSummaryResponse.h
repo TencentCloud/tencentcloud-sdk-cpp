@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取高危漏洞数
                      * @return HighLevelVulCount 高危漏洞数
+                     * 
                      */
                     int64_t GetHighLevelVulCount() const;
 
                     /**
                      * 判断参数 HighLevelVulCount 是否已赋值
                      * @return HighLevelVulCount 是否已赋值
+                     * 
                      */
                     bool HighLevelVulCountHasBeenSet() const;
 
                     /**
                      * 获取中危漏洞数
                      * @return MediumLevelVulCount 中危漏洞数
+                     * 
                      */
                     int64_t GetMediumLevelVulCount() const;
 
                     /**
                      * 判断参数 MediumLevelVulCount 是否已赋值
                      * @return MediumLevelVulCount 是否已赋值
+                     * 
                      */
                     bool MediumLevelVulCountHasBeenSet() const;
 
                     /**
                      * 获取低危漏洞数
                      * @return LowLevelVulCount 低危漏洞数
+                     * 
                      */
                     int64_t GetLowLevelVulCount() const;
 
                     /**
                      * 判断参数 LowLevelVulCount 是否已赋值
                      * @return LowLevelVulCount 是否已赋值
+                     * 
                      */
                     bool LowLevelVulCountHasBeenSet() const;
 
                     /**
                      * 获取严重漏洞数
                      * @return CriticalLevelVulCount 严重漏洞数
+                     * 
                      */
                     int64_t GetCriticalLevelVulCount() const;
 
                     /**
                      * 判断参数 CriticalLevelVulCount 是否已赋值
                      * @return CriticalLevelVulCount 是否已赋值
+                     * 
                      */
                     bool CriticalLevelVulCountHasBeenSet() const;
 

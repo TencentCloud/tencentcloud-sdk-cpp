@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取类型（二维码、条形码）
                      * @return TypeName 类型（二维码、条形码）
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置类型（二维码、条形码）
-                     * @param TypeName 类型（二维码、条形码）
+                     * @param _typeName 类型（二维码、条形码）
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取二维码/条形码包含的地址
                      * @return Url 二维码/条形码包含的地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置二维码/条形码包含的地址
-                     * @param Url 二维码/条形码包含的地址
+                     * @param _url 二维码/条形码包含的地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取二维码/条形码坐标
                      * @return Position 二维码/条形码坐标
+                     * 
                      */
                     QrcodePositionObj GetPosition() const;
 
                     /**
                      * 设置二维码/条形码坐标
-                     * @param Position 二维码/条形码坐标
+                     * @param _position 二维码/条形码坐标
+                     * 
                      */
                     void SetPosition(const QrcodePositionObj& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 

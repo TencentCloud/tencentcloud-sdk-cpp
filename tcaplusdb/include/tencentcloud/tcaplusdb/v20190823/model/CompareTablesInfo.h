@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取源表格的集群id
                      * @return SrcTableClusterId 源表格的集群id
+                     * 
                      */
                     std::string GetSrcTableClusterId() const;
 
                     /**
                      * 设置源表格的集群id
-                     * @param SrcTableClusterId 源表格的集群id
+                     * @param _srcTableClusterId 源表格的集群id
+                     * 
                      */
                     void SetSrcTableClusterId(const std::string& _srcTableClusterId);
 
                     /**
                      * 判断参数 SrcTableClusterId 是否已赋值
                      * @return SrcTableClusterId 是否已赋值
+                     * 
                      */
                     bool SrcTableClusterIdHasBeenSet() const;
 
                     /**
                      * 获取源表格的表格组id
                      * @return SrcTableGroupId 源表格的表格组id
+                     * 
                      */
                     std::string GetSrcTableGroupId() const;
 
                     /**
                      * 设置源表格的表格组id
-                     * @param SrcTableGroupId 源表格的表格组id
+                     * @param _srcTableGroupId 源表格的表格组id
+                     * 
                      */
                     void SetSrcTableGroupId(const std::string& _srcTableGroupId);
 
                     /**
                      * 判断参数 SrcTableGroupId 是否已赋值
                      * @return SrcTableGroupId 是否已赋值
+                     * 
                      */
                     bool SrcTableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取源表格的表名
                      * @return SrcTableName 源表格的表名
+                     * 
                      */
                     std::string GetSrcTableName() const;
 
                     /**
                      * 设置源表格的表名
-                     * @param SrcTableName 源表格的表名
+                     * @param _srcTableName 源表格的表名
+                     * 
                      */
                     void SetSrcTableName(const std::string& _srcTableName);
 
                     /**
                      * 判断参数 SrcTableName 是否已赋值
                      * @return SrcTableName 是否已赋值
+                     * 
                      */
                     bool SrcTableNameHasBeenSet() const;
 
                     /**
                      * 获取目标表格的集群id
                      * @return DstTableClusterId 目标表格的集群id
+                     * 
                      */
                     std::string GetDstTableClusterId() const;
 
                     /**
                      * 设置目标表格的集群id
-                     * @param DstTableClusterId 目标表格的集群id
+                     * @param _dstTableClusterId 目标表格的集群id
+                     * 
                      */
                     void SetDstTableClusterId(const std::string& _dstTableClusterId);
 
                     /**
                      * 判断参数 DstTableClusterId 是否已赋值
                      * @return DstTableClusterId 是否已赋值
+                     * 
                      */
                     bool DstTableClusterIdHasBeenSet() const;
 
                     /**
                      * 获取目标表格的表格组id
                      * @return DstTableGroupId 目标表格的表格组id
+                     * 
                      */
                     std::string GetDstTableGroupId() const;
 
                     /**
                      * 设置目标表格的表格组id
-                     * @param DstTableGroupId 目标表格的表格组id
+                     * @param _dstTableGroupId 目标表格的表格组id
+                     * 
                      */
                     void SetDstTableGroupId(const std::string& _dstTableGroupId);
 
                     /**
                      * 判断参数 DstTableGroupId 是否已赋值
                      * @return DstTableGroupId 是否已赋值
+                     * 
                      */
                     bool DstTableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取目标表格的表名
                      * @return DstTableName 目标表格的表名
+                     * 
                      */
                     std::string GetDstTableName() const;
 
                     /**
                      * 设置目标表格的表名
-                     * @param DstTableName 目标表格的表名
+                     * @param _dstTableName 目标表格的表名
+                     * 
                      */
                     void SetDstTableName(const std::string& _dstTableName);
 
                     /**
                      * 判断参数 DstTableName 是否已赋值
                      * @return DstTableName 是否已赋值
+                     * 
                      */
                     bool DstTableNameHasBeenSet() const;
 
                     /**
                      * 获取源表格的实例id
                      * @return SrcTableInstanceId 源表格的实例id
+                     * 
                      */
                     std::string GetSrcTableInstanceId() const;
 
                     /**
                      * 设置源表格的实例id
-                     * @param SrcTableInstanceId 源表格的实例id
+                     * @param _srcTableInstanceId 源表格的实例id
+                     * 
                      */
                     void SetSrcTableInstanceId(const std::string& _srcTableInstanceId);
 
                     /**
                      * 判断参数 SrcTableInstanceId 是否已赋值
                      * @return SrcTableInstanceId 是否已赋值
+                     * 
                      */
                     bool SrcTableInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取目标表格的实例id
                      * @return DstTableInstanceId 目标表格的实例id
+                     * 
                      */
                     std::string GetDstTableInstanceId() const;
 
                     /**
                      * 设置目标表格的实例id
-                     * @param DstTableInstanceId 目标表格的实例id
+                     * @param _dstTableInstanceId 目标表格的实例id
+                     * 
                      */
                     void SetDstTableInstanceId(const std::string& _dstTableInstanceId);
 
                     /**
                      * 判断参数 DstTableInstanceId 是否已赋值
                      * @return DstTableInstanceId 是否已赋值
+                     * 
                      */
                     bool DstTableInstanceIdHasBeenSet() const;
 

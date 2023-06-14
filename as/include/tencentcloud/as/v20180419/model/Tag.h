@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签键
                      * @return Key 标签键
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签键
-                     * @param Key 标签键
+                     * @param _key 标签键
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取标签值
                      * @return Value 标签值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值
-                     * @param Value 标签值
+                     * @param _value 标签值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置标签绑定的资源类型，当前支持类型："auto-scaling-group
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * @param _resourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

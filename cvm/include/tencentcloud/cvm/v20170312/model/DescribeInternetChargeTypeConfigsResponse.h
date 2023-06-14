@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网络计费类型配置。
                      * @return InternetChargeTypeConfigSet 网络计费类型配置。
+                     * 
                      */
                     std::vector<InternetChargeTypeConfig> GetInternetChargeTypeConfigSet() const;
 
                     /**
                      * 判断参数 InternetChargeTypeConfigSet 是否已赋值
                      * @return InternetChargeTypeConfigSet 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeConfigSetHasBeenSet() const;
 

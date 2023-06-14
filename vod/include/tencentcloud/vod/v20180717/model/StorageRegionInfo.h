@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取存储地域。
                      * @return Region 存储地域。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置存储地域。
-                     * @param Region 存储地域。
+                     * @param _region 存储地域。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取存储地域描述信息。
                      * @return Description 存储地域描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置存储地域描述信息。
-                     * @param Description 存储地域描述信息。
+                     * @param _description 存储地域描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Status 状态，是否开通，取值有：
 <li>opened：已经开通。</li>
 <li>unopened：未开通。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -96,33 +103,38 @@ namespace TencentCloud
                      * 设置状态，是否开通，取值有：
 <li>opened：已经开通。</li>
 <li>unopened：未开通。</li>
-                     * @param Status 状态，是否开通，取值有：
+                     * @param _status 状态，是否开通，取值有：
 <li>opened：已经开通。</li>
 <li>unopened：未开通。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否默认的存储地域，true：是；false：否。
                      * @return IsDefault 是否默认的存储地域，true：是；false：否。
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否默认的存储地域，true：是；false：否。
-                     * @param IsDefault 是否默认的存储地域，true：是；false：否。
+                     * @param _isDefault 是否默认的存储地域，true：是；false：否。
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
                      * @return Area 存储区域，取值有：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -140,15 +153,17 @@ namespace TencentCloud
                      * 设置存储区域，取值有：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
-                     * @param Area 存储区域，取值有：
+                     * @param _area 存储区域，取值有：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

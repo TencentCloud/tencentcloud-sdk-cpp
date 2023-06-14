@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：tdsql-ow728lmc。
                      * @return InstanceId 实例 ID，形如：tdsql-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取参数修改结果
                      * @return Result 参数修改结果
+                     * 
                      */
                     std::vector<ParamModifyResult> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

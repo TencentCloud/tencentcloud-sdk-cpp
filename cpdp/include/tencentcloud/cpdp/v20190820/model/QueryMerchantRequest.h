@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取进件成功后返给商户方的 AppId
                      * @return MerchantAppId 进件成功后返给商户方的 AppId
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 设置进件成功后返给商户方的 AppId
-                     * @param MerchantAppId 进件成功后返给商户方的 AppId
+                     * @param _merchantAppId 进件成功后返给商户方的 AppId
+                     * 
                      */
                     void SetMerchantAppId(const std::string& _merchantAppId);
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 

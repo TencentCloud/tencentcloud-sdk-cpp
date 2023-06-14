@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      * @return GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * 
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
                      * 设置游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
-                     * @param GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @param _gameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * 
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
                     /**
                      * 判断参数 GameServerSessionId 是否已赋值
                      * @return GameServerSessionId 是否已赋值
+                     * 
                      */
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
                      * 获取最大玩家数量，最小值不小于0
                      * @return MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * 
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
                      * 设置最大玩家数量，最小值不小于0
-                     * @param MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * @param _maximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * 
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
                     /**
                      * 判断参数 MaximumPlayerSessionCount 是否已赋值
                      * @return MaximumPlayerSessionCount 是否已赋值
+                     * 
                      */
                     bool MaximumPlayerSessionCountHasBeenSet() const;
 
                     /**
                      * 获取游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      * @return Name 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
-                     * @param Name 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @param _name 游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
                      * @return PlayerSessionCreationPolicy 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
+                     * 
                      */
                     std::string GetPlayerSessionCreationPolicy() const;
 
                     /**
                      * 设置玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
-                     * @param PlayerSessionCreationPolicy 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
+                     * @param _playerSessionCreationPolicy 玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）
+                     * 
                      */
                     void SetPlayerSessionCreationPolicy(const std::string& _playerSessionCreationPolicy);
 
                     /**
                      * 判断参数 PlayerSessionCreationPolicy 是否已赋值
                      * @return PlayerSessionCreationPolicy 是否已赋值
+                     * 
                      */
                     bool PlayerSessionCreationPolicyHasBeenSet() const;
 
                     /**
                      * 获取保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
                      * @return ProtectionPolicy 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
+                     * 
                      */
                     std::string GetProtectionPolicy() const;
 
                     /**
                      * 设置保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
-                     * @param ProtectionPolicy 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
+                     * @param _protectionPolicy 保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)
+                     * 
                      */
                     void SetProtectionPolicy(const std::string& _protectionPolicy);
 
                     /**
                      * 判断参数 ProtectionPolicy 是否已赋值
                      * @return ProtectionPolicy 是否已赋值
+                     * 
                      */
                     bool ProtectionPolicyHasBeenSet() const;
 

@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取大陆地区DAU
                      * @return MainLandDau 大陆地区DAU
+                     * 
                      */
                     uint64_t GetMainLandDau() const;
 
                     /**
                      * 设置大陆地区DAU
-                     * @param MainLandDau 大陆地区DAU
+                     * @param _mainLandDau 大陆地区DAU
+                     * 
                      */
                     void SetMainLandDau(const uint64_t& _mainLandDau);
 
                     /**
                      * 判断参数 MainLandDau 是否已赋值
                      * @return MainLandDau 是否已赋值
+                     * 
                      */
                     bool MainLandDauHasBeenSet() const;
 
                     /**
                      * 获取大陆地区PCU
                      * @return MainLandPcu 大陆地区PCU
+                     * 
                      */
                     uint64_t GetMainLandPcu() const;
 
                     /**
                      * 设置大陆地区PCU
-                     * @param MainLandPcu 大陆地区PCU
+                     * @param _mainLandPcu 大陆地区PCU
+                     * 
                      */
                     void SetMainLandPcu(const uint64_t& _mainLandPcu);
 
                     /**
                      * 判断参数 MainLandPcu 是否已赋值
                      * @return MainLandPcu 是否已赋值
+                     * 
                      */
                     bool MainLandPcuHasBeenSet() const;
 
                     /**
                      * 获取大陆地区总使用时长，单位为min
                      * @return MainLandDuration 大陆地区总使用时长，单位为min
+                     * 
                      */
                     uint64_t GetMainLandDuration() const;
 
                     /**
                      * 设置大陆地区总使用时长，单位为min
-                     * @param MainLandDuration 大陆地区总使用时长，单位为min
+                     * @param _mainLandDuration 大陆地区总使用时长，单位为min
+                     * 
                      */
                     void SetMainLandDuration(const uint64_t& _mainLandDuration);
 
                     /**
                      * 判断参数 MainLandDuration 是否已赋值
                      * @return MainLandDuration 是否已赋值
+                     * 
                      */
                     bool MainLandDurationHasBeenSet() const;
 
                     /**
                      * 获取海外地区DAU
                      * @return OverseaDau 海外地区DAU
+                     * 
                      */
                     uint64_t GetOverseaDau() const;
 
                     /**
                      * 设置海外地区DAU
-                     * @param OverseaDau 海外地区DAU
+                     * @param _overseaDau 海外地区DAU
+                     * 
                      */
                     void SetOverseaDau(const uint64_t& _overseaDau);
 
                     /**
                      * 判断参数 OverseaDau 是否已赋值
                      * @return OverseaDau 是否已赋值
+                     * 
                      */
                     bool OverseaDauHasBeenSet() const;
 
                     /**
                      * 获取海外地区PCU
                      * @return OverseaPcu 海外地区PCU
+                     * 
                      */
                     uint64_t GetOverseaPcu() const;
 
                     /**
                      * 设置海外地区PCU
-                     * @param OverseaPcu 海外地区PCU
+                     * @param _overseaPcu 海外地区PCU
+                     * 
                      */
                     void SetOverseaPcu(const uint64_t& _overseaPcu);
 
                     /**
                      * 判断参数 OverseaPcu 是否已赋值
                      * @return OverseaPcu 是否已赋值
+                     * 
                      */
                     bool OverseaPcuHasBeenSet() const;
 
                     /**
                      * 获取海外地区总使用时长，单位为min
                      * @return OverseaDuration 海外地区总使用时长，单位为min
+                     * 
                      */
                     uint64_t GetOverseaDuration() const;
 
                     /**
                      * 设置海外地区总使用时长，单位为min
-                     * @param OverseaDuration 海外地区总使用时长，单位为min
+                     * @param _overseaDuration 海外地区总使用时长，单位为min
+                     * 
                      */
                     void SetOverseaDuration(const uint64_t& _overseaDuration);
 
                     /**
                      * 判断参数 OverseaDuration 是否已赋值
                      * @return OverseaDuration 是否已赋值
+                     * 
                      */
                     bool OverseaDurationHasBeenSet() const;
 

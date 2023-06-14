@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的云硬盘ID列表。
                      * @return DiskIdSet 创建的云硬盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIdSet() const;
 
                     /**
                      * 判断参数 DiskIdSet 是否已赋值
                      * @return DiskIdSet 是否已赋值
+                     * 
                      */
                     bool DiskIdSetHasBeenSet() const;
 

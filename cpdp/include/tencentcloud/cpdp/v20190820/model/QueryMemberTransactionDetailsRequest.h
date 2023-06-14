@@ -49,6 +49,7 @@ __2__：历史
                      * @return QueryDateType 查询的交易发生时间类型。
 __1__：当日
 __2__：历史
+                     * 
                      */
                     std::string GetQueryDateType() const;
 
@@ -56,15 +57,17 @@ __2__：历史
                      * 设置查询的交易发生时间类型。
 __1__：当日
 __2__：历史
-                     * @param QueryDateType 查询的交易发生时间类型。
+                     * @param _queryDateType 查询的交易发生时间类型。
 __1__：当日
 __2__：历史
+                     * 
                      */
                     void SetQueryDateType(const std::string& _queryDateType);
 
                     /**
                      * 判断参数 QueryDateType 是否已赋值
                      * @return QueryDateType 是否已赋值
+                     * 
                      */
                     bool QueryDateTypeHasBeenSet() const;
 
@@ -77,6 +80,7 @@ __3__：转入
 __1__：全部
 __2__：转出
 __3__：转入
+                     * 
                      */
                     std::string GetQueryTranType() const;
 
@@ -85,16 +89,18 @@ __3__：转入
 __1__：全部
 __2__：转出
 __3__：转入
-                     * @param QueryTranType 查询的交易类型。
+                     * @param _queryTranType 查询的交易类型。
 __1__：全部
 __2__：转出
 __3__：转入
+                     * 
                      */
                     void SetQueryTranType(const std::string& _queryTranType);
 
                     /**
                      * 判断参数 QueryTranType 是否已赋值
                      * @return QueryTranType 是否已赋值
+                     * 
                      */
                     bool QueryTranTypeHasBeenSet() const;
 
@@ -103,20 +109,23 @@ __3__：转入
 _平安渠道为资金汇总账号_
                      * @return BankAccountNumber 父账户账号。
 _平安渠道为资金汇总账号_
+                     * 
                      */
                     std::string GetBankAccountNumber() const;
 
                     /**
                      * 设置父账户账号。
 _平安渠道为资金汇总账号_
-                     * @param BankAccountNumber 父账户账号。
+                     * @param _bankAccountNumber 父账户账号。
 _平安渠道为资金汇总账号_
+                     * 
                      */
                     void SetBankAccountNumber(const std::string& _bankAccountNumber);
 
                     /**
                      * 判断参数 BankAccountNumber 是否已赋值
                      * @return BankAccountNumber 是否已赋值
+                     * 
                      */
                     bool BankAccountNumberHasBeenSet() const;
 
@@ -125,38 +134,44 @@ _平安渠道为资金汇总账号_
 _平安渠道为见证子账户的账号_
                      * @return SubAccountNumber 子账户账号。
 _平安渠道为见证子账户的账号_
+                     * 
                      */
                     std::string GetSubAccountNumber() const;
 
                     /**
                      * 设置子账户账号。
 _平安渠道为见证子账户的账号_
-                     * @param SubAccountNumber 子账户账号。
+                     * @param _subAccountNumber 子账户账号。
 _平安渠道为见证子账户的账号_
+                     * 
                      */
                     void SetSubAccountNumber(const std::string& _subAccountNumber);
 
                     /**
                      * 判断参数 SubAccountNumber 是否已赋值
                      * @return SubAccountNumber 是否已赋值
+                     * 
                      */
                     bool SubAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取分页号, 起始值为1。
                      * @return PageOffSet 分页号, 起始值为1。
+                     * 
                      */
                     std::string GetPageOffSet() const;
 
                     /**
                      * 设置分页号, 起始值为1。
-                     * @param PageOffSet 分页号, 起始值为1。
+                     * @param _pageOffSet 分页号, 起始值为1。
+                     * 
                      */
                     void SetPageOffSet(const std::string& _pageOffSet);
 
                     /**
                      * 判断参数 PageOffSet 是否已赋值
                      * @return PageOffSet 是否已赋值
+                     * 
                      */
                     bool PageOffSetHasBeenSet() const;
 
@@ -165,20 +180,23 @@ _平安渠道为见证子账户的账号_
 __若是历史查询，则必输，当日查询时，不起作用；开始日期不能超过当前日期__
                      * @return QueryStartDate 查询开始日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；开始日期不能超过当前日期__
+                     * 
                      */
                     std::string GetQueryStartDate() const;
 
                     /**
                      * 设置查询开始日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；开始日期不能超过当前日期__
-                     * @param QueryStartDate 查询开始日期，格式：yyyyMMdd。
+                     * @param _queryStartDate 查询开始日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；开始日期不能超过当前日期__
+                     * 
                      */
                     void SetQueryStartDate(const std::string& _queryStartDate);
 
                     /**
                      * 判断参数 QueryStartDate 是否已赋值
                      * @return QueryStartDate 是否已赋值
+                     * 
                      */
                     bool QueryStartDateHasBeenSet() const;
 
@@ -187,20 +205,23 @@ __若是历史查询，则必输，当日查询时，不起作用；开始日期
 __若是历史查询，则必输，当日查询时，不起作用；终止日期不能超过当前日期__
                      * @return QueryEndDate 查询终止日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；终止日期不能超过当前日期__
+                     * 
                      */
                     std::string GetQueryEndDate() const;
 
                     /**
                      * 设置查询终止日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；终止日期不能超过当前日期__
-                     * @param QueryEndDate 查询终止日期，格式：yyyyMMdd。
+                     * @param _queryEndDate 查询终止日期，格式：yyyyMMdd。
 __若是历史查询，则必输，当日查询时，不起作用；终止日期不能超过当前日期__
+                     * 
                      */
                     void SetQueryEndDate(const std::string& _queryEndDate);
 
                     /**
                      * 判断参数 QueryEndDate 是否已赋值
                      * @return QueryEndDate 是否已赋值
+                     * 
                      */
                     bool QueryEndDateHasBeenSet() const;
 
@@ -215,6 +236,7 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -224,17 +246,19 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
-                     * @param MidasEnvironment 环境名。
+                     * @param _midasEnvironment 环境名。
 __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

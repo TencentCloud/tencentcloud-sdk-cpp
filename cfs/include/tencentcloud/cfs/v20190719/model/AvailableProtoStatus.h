@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售
                      * @return SaleStatus 售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售
+                     * 
                      */
                     std::string GetSaleStatus() const;
 
                     /**
                      * 设置售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售
-                     * @param SaleStatus 售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售
+                     * @param _saleStatus 售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售
+                     * 
                      */
                     void SetSaleStatus(const std::string& _saleStatus);
 
                     /**
                      * 判断参数 SaleStatus 是否已赋值
                      * @return SaleStatus 是否已赋值
+                     * 
                      */
                     bool SaleStatusHasBeenSet() const;
 
                     /**
                      * 获取协议类型。可选值有 NFS、CIFS
                      * @return Protocol 协议类型。可选值有 NFS、CIFS
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型。可选值有 NFS、CIFS
-                     * @param Protocol 协议类型。可选值有 NFS、CIFS
+                     * @param _protocol 协议类型。可选值有 NFS、CIFS
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

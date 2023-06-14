@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，userId必填
                      * @return Operator 操作人信息，userId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，userId必填
-                     * @param Operator 操作人信息，userId必填
+                     * @param _operator 操作人信息，userId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取单次查询成员企业最大返回数量
                      * @return Limit 单次查询成员企业最大返回数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次查询成员企业最大返回数量
-                     * @param Limit 单次查询成员企业最大返回数量
+                     * @param _limit 单次查询成员企业最大返回数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页面偏移量
                      * @return Offset 页面偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页面偏移量
-                     * @param Offset 页面偏移量
+                     * @param _offset 页面偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询成员企业的企业名，模糊匹配
                      * @return Name 查询成员企业的企业名，模糊匹配
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置查询成员企业的企业名，模糊匹配
-                     * @param Name 查询成员企业的企业名，模糊匹配
+                     * @param _name 查询成员企业的企业名，模糊匹配
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
                      * @return Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
-                     * @param Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * @param _status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否导出当前成员企业数据
                      * @return Export 是否导出当前成员企业数据
+                     * 
                      */
                     bool GetExport() const;
 
                     /**
                      * 设置是否导出当前成员企业数据
-                     * @param Export 是否导出当前成员企业数据
+                     * @param _export 是否导出当前成员企业数据
+                     * 
                      */
                     void SetExport(const bool& _export);
 
                     /**
                      * 判断参数 Export 是否已赋值
                      * @return Export 是否已赋值
+                     * 
                      */
                     bool ExportHasBeenSet() const;
 
                     /**
                      * 获取成员企业id
                      * @return Id 成员企业id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置成员企业id
-                     * @param Id 成员企业id
+                     * @param _id 成员企业id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

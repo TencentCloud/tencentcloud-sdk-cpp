@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取批量任务状态集
                      * @return StatusSet 批量任务状态集
+                     * 
                      */
                     std::vector<BatchStatus> GetStatusSet() const;
 
                     /**
                      * 判断参数 StatusSet 是否已赋值
                      * @return StatusSet 是否已赋值
+                     * 
                      */
                     bool StatusSetHasBeenSet() const;
 

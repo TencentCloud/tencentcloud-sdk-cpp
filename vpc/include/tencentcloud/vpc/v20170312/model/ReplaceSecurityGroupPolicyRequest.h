@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
                      * @return SecurityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @param SecurityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * @param _securityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取安全组规则集合对象。
                      * @return SecurityGroupPolicySet 安全组规则集合对象。
+                     * 
                      */
                     SecurityGroupPolicySet GetSecurityGroupPolicySet() const;
 
                     /**
                      * 设置安全组规则集合对象。
-                     * @param SecurityGroupPolicySet 安全组规则集合对象。
+                     * @param _securityGroupPolicySet 安全组规则集合对象。
+                     * 
                      */
                     void SetSecurityGroupPolicySet(const SecurityGroupPolicySet& _securityGroupPolicySet);
 
                     /**
                      * 判断参数 SecurityGroupPolicySet 是否已赋值
                      * @return SecurityGroupPolicySet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupPolicySetHasBeenSet() const;
 
                     /**
                      * 获取旧的安全组规则集合对象，可选，日志记录用。
                      * @return OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     * 
                      */
                     SecurityGroupPolicySet GetOriginalSecurityGroupPolicySet() const;
 
                     /**
                      * 设置旧的安全组规则集合对象，可选，日志记录用。
-                     * @param OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     * @param _originalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     * 
                      */
                     void SetOriginalSecurityGroupPolicySet(const SecurityGroupPolicySet& _originalSecurityGroupPolicySet);
 
                     /**
                      * 判断参数 OriginalSecurityGroupPolicySet 是否已赋值
                      * @return OriginalSecurityGroupPolicySet 是否已赋值
+                     * 
                      */
                     bool OriginalSecurityGroupPolicySetHasBeenSet() const;
 

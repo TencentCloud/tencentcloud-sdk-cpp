@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取操作系统信息列表
                      * @return OsInfoSet 操作系统信息列表
+                     * 
                      */
                     std::vector<OsInfo> GetOsInfoSet() const;
 
                     /**
                      * 判断参数 OsInfoSet 是否已赋值
                      * @return OsInfoSet 是否已赋值
+                     * 
                      */
                     bool OsInfoSetHasBeenSet() const;
 

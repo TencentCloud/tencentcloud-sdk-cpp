@@ -48,312 +48,364 @@ namespace TencentCloud
                     /**
                      * 获取容器安全uuid
                      * @return UUID 容器安全uuid
+                     * 
                      */
                     std::string GetUUID() const;
 
                     /**
                      * 判断参数 UUID 是否已赋值
                      * @return UUID 是否已赋值
+                     * 
                      */
                     bool UUIDHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取主机名
                      * @return HostName 主机名
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取主机分组
                      * @return Group 主机分组
+                     * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 判断参数 Group 是否已赋值
                      * @return Group 是否已赋值
+                     * 
                      */
                     bool GroupHasBeenSet() const;
 
                     /**
                      * 获取主机IP
                      * @return HostIP 主机IP
+                     * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 判断参数 HostIP 是否已赋值
                      * @return HostIP 是否已赋值
+                     * 
                      */
                     bool HostIPHasBeenSet() const;
 
                     /**
                      * 获取操作系统
                      * @return OsName 操作系统
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取agent版本
                      * @return AgentVersion agent版本
+                     * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
                      * 判断参数 AgentVersion 是否已赋值
                      * @return AgentVersion 是否已赋值
+                     * 
                      */
                     bool AgentVersionHasBeenSet() const;
 
                     /**
                      * 获取内核版本
                      * @return KernelVersion 内核版本
+                     * 
                      */
                     std::string GetKernelVersion() const;
 
                     /**
                      * 判断参数 KernelVersion 是否已赋值
                      * @return KernelVersion 是否已赋值
+                     * 
                      */
                     bool KernelVersionHasBeenSet() const;
 
                     /**
                      * 获取docker版本
                      * @return DockerVersion docker版本
+                     * 
                      */
                     std::string GetDockerVersion() const;
 
                     /**
                      * 判断参数 DockerVersion 是否已赋值
                      * @return DockerVersion 是否已赋值
+                     * 
                      */
                     bool DockerVersionHasBeenSet() const;
 
                     /**
                      * 获取docker api版本
                      * @return DockerAPIVersion docker api版本
+                     * 
                      */
                     std::string GetDockerAPIVersion() const;
 
                     /**
                      * 判断参数 DockerAPIVersion 是否已赋值
                      * @return DockerAPIVersion 是否已赋值
+                     * 
                      */
                     bool DockerAPIVersionHasBeenSet() const;
 
                     /**
                      * 获取docker go 版本
                      * @return DockerGoVersion docker go 版本
+                     * 
                      */
                     std::string GetDockerGoVersion() const;
 
                     /**
                      * 判断参数 DockerGoVersion 是否已赋值
                      * @return DockerGoVersion 是否已赋值
+                     * 
                      */
                     bool DockerGoVersionHasBeenSet() const;
 
                     /**
                      * 获取docker 文件系统类型
                      * @return DockerFileSystemDriver docker 文件系统类型
+                     * 
                      */
                     std::string GetDockerFileSystemDriver() const;
 
                     /**
                      * 判断参数 DockerFileSystemDriver 是否已赋值
                      * @return DockerFileSystemDriver 是否已赋值
+                     * 
                      */
                     bool DockerFileSystemDriverHasBeenSet() const;
 
                     /**
                      * 获取docker root 目录
                      * @return DockerRootDir docker root 目录
+                     * 
                      */
                     std::string GetDockerRootDir() const;
 
                     /**
                      * 判断参数 DockerRootDir 是否已赋值
                      * @return DockerRootDir 是否已赋值
+                     * 
                      */
                     bool DockerRootDirHasBeenSet() const;
 
                     /**
                      * 获取镜像数
                      * @return ImageCnt 镜像数
+                     * 
                      */
                     uint64_t GetImageCnt() const;
 
                     /**
                      * 判断参数 ImageCnt 是否已赋值
                      * @return ImageCnt 是否已赋值
+                     * 
                      */
                     bool ImageCntHasBeenSet() const;
 
                     /**
                      * 获取容器数
                      * @return ContainerCnt 容器数
+                     * 
                      */
                     uint64_t GetContainerCnt() const;
 
                     /**
                      * 判断参数 ContainerCnt 是否已赋值
                      * @return ContainerCnt 是否已赋值
+                     * 
                      */
                     bool ContainerCntHasBeenSet() const;
 
                     /**
                      * 获取k8s IP
                      * @return K8sMasterIP k8s IP
+                     * 
                      */
                     std::string GetK8sMasterIP() const;
 
                     /**
                      * 判断参数 K8sMasterIP 是否已赋值
                      * @return K8sMasterIP 是否已赋值
+                     * 
                      */
                     bool K8sMasterIPHasBeenSet() const;
 
                     /**
                      * 获取k8s version
                      * @return K8sVersion k8s version
+                     * 
                      */
                     std::string GetK8sVersion() const;
 
                     /**
                      * 判断参数 K8sVersion 是否已赋值
                      * @return K8sVersion 是否已赋值
+                     * 
                      */
                     bool K8sVersionHasBeenSet() const;
 
                     /**
                      * 获取kube proxy
                      * @return KubeProxyVersion kube proxy
+                     * 
                      */
                     std::string GetKubeProxyVersion() const;
 
                     /**
                      * 判断参数 KubeProxyVersion 是否已赋值
                      * @return KubeProxyVersion 是否已赋值
+                     * 
                      */
                     bool KubeProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中
                      * @return Status "UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否Containerd
                      * @return IsContainerd 是否Containerd
+                     * 
                      */
                     bool GetIsContainerd() const;
 
                     /**
                      * 判断参数 IsContainerd 是否已赋值
                      * @return IsContainerd 是否已赋值
+                     * 
                      */
                     bool IsContainerdHasBeenSet() const;
 
                     /**
                      * 获取主机来源;"TENCENTCLOUD":"腾讯云服务器","OTHERCLOUD":"非腾讯云服务器"
                      * @return MachineType 主机来源;"TENCENTCLOUD":"腾讯云服务器","OTHERCLOUD":"非腾讯云服务器"
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
                     /**
                      * 获取外网ip
                      * @return PublicIp 外网ip
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
                     /**
                      * 获取主机实例ID
                      * @return InstanceID 主机实例ID
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionID 地域ID
+                     * 
                      */
                     int64_t GetRegionID() const;
 
                     /**
                      * 判断参数 RegionID 是否已赋值
                      * @return RegionID 是否已赋值
+                     * 
                      */
                     bool RegionIDHasBeenSet() const;
 
                     /**
                      * 获取所属项目
                      * @return Project 所属项目
+                     * 
                      */
                     ProjectInfo GetProject() const;
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
+                     * 
                      */
                     bool ProjectHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

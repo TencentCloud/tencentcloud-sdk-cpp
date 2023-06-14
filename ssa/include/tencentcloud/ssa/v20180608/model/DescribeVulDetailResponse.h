@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulType 漏洞类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVulType() const;
 
                     /**
                      * 判断参数 VulType 是否已赋值
                      * @return VulType 是否已赋值
+                     * 
                      */
                     bool VulTypeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubVulType 漏洞子类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubVulType() const;
 
                     /**
                      * 判断参数 SubVulType 是否已赋值
                      * @return SubVulType 是否已赋值
+                     * 
                      */
                     bool SubVulTypeHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore cvss分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCvssScore() const;
 
                     /**
                      * 判断参数 CvssScore 是否已赋值
                      * @return CvssScore 是否已赋值
+                     * 
                      */
                     bool CvssScoreHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cvss cvss值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCvss() const;
 
                     /**
                      * 判断参数 Cvss 是否已赋值
                      * @return Cvss 是否已赋值
+                     * 
                      */
                     bool CvssHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cve cve编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCve() const;
 
                     /**
                      * 判断参数 Cve 是否已赋值
                      * @return Cve 是否已赋值
+                     * 
                      */
                     bool CveHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cnvd cnvd编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCnvd() const;
 
                     /**
                      * 判断参数 Cnvd 是否已赋值
                      * @return Cnvd 是否已赋值
+                     * 
                      */
                     bool CnvdHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cnnvd cnnvd编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCnnvd() const;
 
                     /**
                      * 判断参数 Cnnvd 是否已赋值
                      * @return Cnnvd 是否已赋值
+                     * 
                      */
                     bool CnnvdHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reference 参考
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReference() const;
 
                     /**
                      * 判断参数 Reference 是否已赋值
                      * @return Reference 是否已赋值
+                     * 
                      */
                     bool ReferenceHasBeenSet() const;
 
@@ -174,12 +192,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repair 修复意见
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepair() const;
 
                     /**
                      * 判断参数 Repair 是否已赋值
                      * @return Repair 是否已赋值
+                     * 
                      */
                     bool RepairHasBeenSet() const;
 
@@ -188,12 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseTime 披露时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReleaseTime() const;
 
                     /**
                      * 判断参数 ReleaseTime 是否已赋值
                      * @return ReleaseTime 是否已赋值
+                     * 
                      */
                     bool ReleaseTimeHasBeenSet() const;
 
@@ -202,12 +224,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -216,12 +240,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 漏洞名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -230,12 +256,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -244,12 +272,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -258,12 +288,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImpactAsset 受影响资产唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImpactAsset() const;
 
                     /**
                      * 判断参数 ImpactAsset 是否已赋值
                      * @return ImpactAsset 是否已赋值
+                     * 
                      */
                     bool ImpactAssetHasBeenSet() const;
 
@@ -272,12 +304,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImpactAssetName 受影响资产名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImpactAssetName() const;
 
                     /**
                      * 判断参数 ImpactAssetName 是否已赋值
                      * @return ImpactAssetName 是否已赋值
+                     * 
                      */
                     bool ImpactAssetNameHasBeenSet() const;
 
@@ -286,12 +320,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAssetDeleted 受影响资产是否已删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsAssetDeleted() const;
 
                     /**
                      * 判断参数 IsAssetDeleted 是否已赋值
                      * @return IsAssetDeleted 是否已赋值
+                     * 
                      */
                     bool IsAssetDeletedHasBeenSet() const;
 
@@ -300,12 +336,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 漏洞来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -314,12 +352,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulUrl 漏洞URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVulUrl() const;
 
                     /**
                      * 判断参数 VulUrl 是否已赋值
                      * @return VulUrl 是否已赋值
+                     * 
                      */
                     bool VulUrlHasBeenSet() const;
 
@@ -328,12 +368,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaAssetCategory 资产归属
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSsaAssetCategory() const;
 
                     /**
                      * 判断参数 SsaAssetCategory 是否已赋值
                      * @return SsaAssetCategory 是否已赋值
+                     * 
                      */
                     bool SsaAssetCategoryHasBeenSet() const;
 
@@ -342,12 +384,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulPath 资产文件路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVulPath() const;
 
                     /**
                      * 判断参数 VulPath 是否已赋值
                      * @return VulPath 是否已赋值
+                     * 
                      */
                     bool VulPathHasBeenSet() const;
 

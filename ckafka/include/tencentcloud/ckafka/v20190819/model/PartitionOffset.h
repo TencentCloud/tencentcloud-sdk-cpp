@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partition Partition,例如"0"或"1"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPartition() const;
 
                     /**
                      * 设置Partition,例如"0"或"1"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partition Partition,例如"0"或"1"
+                     * @param _partition Partition,例如"0"或"1"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartition(const std::string& _partition);
 
                     /**
                      * 判断参数 Partition 是否已赋值
                      * @return Partition 是否已赋值
+                     * 
                      */
                     bool PartitionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset Offset,例如100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置Offset,例如100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Offset Offset,例如100
+                     * @param _offset Offset,例如100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

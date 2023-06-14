@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取购车用途code
                      * @return VehiclePurposeCode 购车用途code
+                     * 
                      */
                     std::string GetVehiclePurposeCode() const;
 
                     /**
                      * 设置购车用途code
-                     * @param VehiclePurposeCode 购车用途code
+                     * @param _vehiclePurposeCode 购车用途code
+                     * 
                      */
                     void SetVehiclePurposeCode(const std::string& _vehiclePurposeCode);
 
                     /**
                      * 判断参数 VehiclePurposeCode 是否已赋值
                      * @return VehiclePurposeCode 是否已赋值
+                     * 
                      */
                     bool VehiclePurposeCodeHasBeenSet() const;
 
                     /**
                      * 获取购车用途名称
                      * @return VehiclePurposeName 购车用途名称
+                     * 
                      */
                     std::string GetVehiclePurposeName() const;
 
                     /**
                      * 设置购车用途名称
-                     * @param VehiclePurposeName 购车用途名称
+                     * @param _vehiclePurposeName 购车用途名称
+                     * 
                      */
                     void SetVehiclePurposeName(const std::string& _vehiclePurposeName);
 
                     /**
                      * 判断参数 VehiclePurposeName 是否已赋值
                      * @return VehiclePurposeName 是否已赋值
+                     * 
                      */
                     bool VehiclePurposeNameHasBeenSet() const;
 

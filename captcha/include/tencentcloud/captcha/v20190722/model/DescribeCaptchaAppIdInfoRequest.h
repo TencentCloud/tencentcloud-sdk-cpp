@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取验证码应用注册APPID
                      * @return CaptchaAppId 验证码应用注册APPID
+                     * 
                      */
                     uint64_t GetCaptchaAppId() const;
 
                     /**
                      * 设置验证码应用注册APPID
-                     * @param CaptchaAppId 验证码应用注册APPID
+                     * @param _captchaAppId 验证码应用注册APPID
+                     * 
                      */
                     void SetCaptchaAppId(const uint64_t& _captchaAppId);
 
                     /**
                      * 判断参数 CaptchaAppId 是否已赋值
                      * @return CaptchaAppId 是否已赋值
+                     * 
                      */
                     bool CaptchaAppIdHasBeenSet() const;
 

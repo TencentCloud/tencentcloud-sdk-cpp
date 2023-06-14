@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取配置ID
                      * @return ConfigId 配置ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置ID
-                     * @param ConfigId 配置ID
+                     * @param _configId 配置ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取发布描述
                      * @return ReleaseDesc 发布描述
+                     * 
                      */
                     std::string GetReleaseDesc() const;
 
                     /**
                      * 设置发布描述
-                     * @param ReleaseDesc 发布描述
+                     * @param _releaseDesc 发布描述
+                     * 
                      */
                     void SetReleaseDesc(const std::string& _releaseDesc);
 
                     /**
                      * 判断参数 ReleaseDesc 是否已赋值
                      * @return ReleaseDesc 是否已赋值
+                     * 
                      */
                     bool ReleaseDescHasBeenSet() const;
 

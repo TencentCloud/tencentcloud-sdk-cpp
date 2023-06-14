@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取贸易材料流水号
                      * @return TradeFileId 贸易材料流水号
+                     * 
                      */
                     std::string GetTradeFileId() const;
 
                     /**
                      * 设置贸易材料流水号
-                     * @param TradeFileId 贸易材料流水号
+                     * @param _tradeFileId 贸易材料流水号
+                     * 
                      */
                     void SetTradeFileId(const std::string& _tradeFileId);
 
                     /**
                      * 判断参数 TradeFileId 是否已赋值
                      * @return TradeFileId 是否已赋值
+                     * 
                      */
                     bool TradeFileIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

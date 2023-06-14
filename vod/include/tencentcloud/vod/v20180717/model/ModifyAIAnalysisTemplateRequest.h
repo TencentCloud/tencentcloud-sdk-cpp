@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取音视频内容分析模板唯一标识。
                      * @return Definition 音视频内容分析模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置音视频内容分析模板唯一标识。
-                     * @param Definition 音视频内容分析模板唯一标识。
+                     * @param _definition 音视频内容分析模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取音视频内容分析模板名称，长度限制：64 个字符。
                      * @return Name 音视频内容分析模板名称，长度限制：64 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置音视频内容分析模板名称，长度限制：64 个字符。
-                     * @param Name 音视频内容分析模板名称，长度限制：64 个字符。
+                     * @param _name 音视频内容分析模板名称，长度限制：64 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取音视频内容分析模板描述信息，长度限制：256 个字符。
                      * @return Comment 音视频内容分析模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置音视频内容分析模板描述信息，长度限制：256 个字符。
-                     * @param Comment 音视频内容分析模板描述信息，长度限制：256 个字符。
+                     * @param _comment 音视频内容分析模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取智能分类任务控制参数。
                      * @return ClassificationConfigure 智能分类任务控制参数。
+                     * 
                      */
                     ClassificationConfigureInfoForUpdate GetClassificationConfigure() const;
 
                     /**
                      * 设置智能分类任务控制参数。
-                     * @param ClassificationConfigure 智能分类任务控制参数。
+                     * @param _classificationConfigure 智能分类任务控制参数。
+                     * 
                      */
                     void SetClassificationConfigure(const ClassificationConfigureInfoForUpdate& _classificationConfigure);
 
                     /**
                      * 判断参数 ClassificationConfigure 是否已赋值
                      * @return ClassificationConfigure 是否已赋值
+                     * 
                      */
                     bool ClassificationConfigureHasBeenSet() const;
 
                     /**
                      * 获取智能标签任务控制参数。
                      * @return TagConfigure 智能标签任务控制参数。
+                     * 
                      */
                     TagConfigureInfoForUpdate GetTagConfigure() const;
 
                     /**
                      * 设置智能标签任务控制参数。
-                     * @param TagConfigure 智能标签任务控制参数。
+                     * @param _tagConfigure 智能标签任务控制参数。
+                     * 
                      */
                     void SetTagConfigure(const TagConfigureInfoForUpdate& _tagConfigure);
 
                     /**
                      * 判断参数 TagConfigure 是否已赋值
                      * @return TagConfigure 是否已赋值
+                     * 
                      */
                     bool TagConfigureHasBeenSet() const;
 
                     /**
                      * 获取智能封面任务控制参数。
                      * @return CoverConfigure 智能封面任务控制参数。
+                     * 
                      */
                     CoverConfigureInfoForUpdate GetCoverConfigure() const;
 
                     /**
                      * 设置智能封面任务控制参数。
-                     * @param CoverConfigure 智能封面任务控制参数。
+                     * @param _coverConfigure 智能封面任务控制参数。
+                     * 
                      */
                     void SetCoverConfigure(const CoverConfigureInfoForUpdate& _coverConfigure);
 
                     /**
                      * 判断参数 CoverConfigure 是否已赋值
                      * @return CoverConfigure 是否已赋值
+                     * 
                      */
                     bool CoverConfigureHasBeenSet() const;
 
                     /**
                      * 获取智能按帧标签任务控制参数。
                      * @return FrameTagConfigure 智能按帧标签任务控制参数。
+                     * 
                      */
                     FrameTagConfigureInfoForUpdate GetFrameTagConfigure() const;
 
                     /**
                      * 设置智能按帧标签任务控制参数。
-                     * @param FrameTagConfigure 智能按帧标签任务控制参数。
+                     * @param _frameTagConfigure 智能按帧标签任务控制参数。
+                     * 
                      */
                     void SetFrameTagConfigure(const FrameTagConfigureInfoForUpdate& _frameTagConfigure);
 
                     /**
                      * 判断参数 FrameTagConfigure 是否已赋值
                      * @return FrameTagConfigure 是否已赋值
+                     * 
                      */
                     bool FrameTagConfigureHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦任务控制参数。
                      * @return HighlightConfigure 智能精彩集锦任务控制参数。
+                     * 
                      */
                     HighlightsConfigureInfoForUpdate GetHighlightConfigure() const;
 
                     /**
                      * 设置智能精彩集锦任务控制参数。
-                     * @param HighlightConfigure 智能精彩集锦任务控制参数。
+                     * @param _highlightConfigure 智能精彩集锦任务控制参数。
+                     * 
                      */
                     void SetHighlightConfigure(const HighlightsConfigureInfoForUpdate& _highlightConfigure);
 
                     /**
                      * 判断参数 HighlightConfigure 是否已赋值
                      * @return HighlightConfigure 是否已赋值
+                     * 
                      */
                     bool HighlightConfigureHasBeenSet() const;
 

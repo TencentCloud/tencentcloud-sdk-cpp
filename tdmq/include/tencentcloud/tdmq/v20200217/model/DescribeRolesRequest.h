@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取角色名称，模糊查询
                      * @return RoleName 角色名称，模糊查询
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名称，模糊查询
-                     * @param RoleName 角色名称，模糊查询
+                     * @param _roleName 角色名称，模糊查询
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取起始下标，不填默认为0。
                      * @return Offset 起始下标，不填默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置起始下标，不填默认为0。
-                     * @param Offset 起始下标，不填默认为0。
+                     * @param _offset 起始下标，不填默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，不填则默认为10，最大值为20。
                      * @return Limit 返回数量，不填则默认为10，最大值为20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，不填则默认为10，最大值为20。
-                     * @param Limit 返回数量，不填则默认为10，最大值为20。
+                     * @param _limit 返回数量，不填则默认为10，最大值为20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取必填字段，集群Id
                      * @return ClusterId 必填字段，集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置必填字段，集群Id
-                     * @param ClusterId 必填字段，集群Id
+                     * @param _clusterId 必填字段，集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -124,6 +136,7 @@ namespace TencentCloud
 按照角色名进行过滤，精确查询。
 类型：String
 必选：否
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -132,16 +145,18 @@ namespace TencentCloud
 按照角色名进行过滤，精确查询。
 类型：String
 必选：否
-                     * @param Filters * RoleName
+                     * @param _filters * RoleName
 按照角色名进行过滤，精确查询。
 类型：String
 必选：否
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

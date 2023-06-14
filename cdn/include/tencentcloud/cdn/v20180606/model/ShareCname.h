@@ -56,6 +56,7 @@ off：关闭，使用默认CNAME
 on：开启，使用共享CNAME
 off：关闭，使用默认CNAME
 
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ off：关闭，使用默认CNAME
 on：开启，使用共享CNAME
 off：关闭，使用默认CNAME
 
-                     * @param Switch ShareCname 配置开关, 取值有：
+                     * @param _switch ShareCname 配置开关, 取值有：
 on：开启，使用共享CNAME
 off：关闭，使用默认CNAME
 
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ off：关闭，使用默认CNAME
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cname 设置共享CNAME.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCname() const;
 
                     /**
                      * 设置设置共享CNAME.
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cname 设置共享CNAME.
+                     * @param _cname 设置共享CNAME.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCname(const std::string& _cname);
 
                     /**
                      * 判断参数 Cname 是否已赋值
                      * @return Cname 是否已赋值
+                     * 
                      */
                     bool CnameHasBeenSet() const;
 

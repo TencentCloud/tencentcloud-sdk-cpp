@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Ret 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetRet() const;
 
                     /**
                      * 判断参数 Ret 是否已赋值
                      * @return Ret 是否已赋值
+                     * 
                      */
                     bool RetHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 诊断任务数据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FlySecMiniAppTaskData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 诊断任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Ocr 文字鉴别结果的评分，分值为0到100。
                      * @return Confidence Ocr 文字鉴别结果的评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置Ocr 文字鉴别结果的评分，分值为0到100。
-                     * @param Confidence Ocr 文字鉴别结果的评分，分值为0到100。
+                     * @param _confidence Ocr 文字鉴别结果的评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -81,52 +85,60 @@ namespace TencentCloud
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
-                     * @param Suggestion Ocr 文字鉴别的结果建议，取值范围：
+                     * @param _suggestion Ocr 文字鉴别的结果建议，取值范围：
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取Ocr 文字鉴别的嫌疑关键词列表。
                      * @return KeywordSet Ocr 文字鉴别的嫌疑关键词列表。
+                     * 
                      */
                     std::vector<std::string> GetKeywordSet() const;
 
                     /**
                      * 设置Ocr 文字鉴别的嫌疑关键词列表。
-                     * @param KeywordSet Ocr 文字鉴别的嫌疑关键词列表。
+                     * @param _keywordSet Ocr 文字鉴别的嫌疑关键词列表。
+                     * 
                      */
                     void SetKeywordSet(const std::vector<std::string>& _keywordSet);
 
                     /**
                      * 判断参数 KeywordSet 是否已赋值
                      * @return KeywordSet 是否已赋值
+                     * 
                      */
                     bool KeywordSetHasBeenSet() const;
 
                     /**
                      * 获取Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      * @return AreaCoordSet Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param AreaCoordSet Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @param _areaCoordSet Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 

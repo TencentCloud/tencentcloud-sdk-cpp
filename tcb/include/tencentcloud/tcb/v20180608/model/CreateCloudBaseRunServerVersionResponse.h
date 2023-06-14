@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 状态(creating/succ)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称（只有Result为succ的时候，才会返回VersionName)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunId 操作记录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRunId() const;
 
                     /**
                      * 判断参数 RunId 是否已赋值
                      * @return RunId 是否已赋值
+                     * 
                      */
                     bool RunIdHasBeenSet() const;
 

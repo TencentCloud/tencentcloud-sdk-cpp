@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取交易结果json字符串
                      * @return TransactionRsp 交易结果json字符串
+                     * 
                      */
                     std::string GetTransactionRsp() const;
 
                     /**
                      * 判断参数 TransactionRsp 是否已赋值
                      * @return TransactionRsp 是否已赋值
+                     * 
                      */
                     bool TransactionRspHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取题号
                      * @return QuestionTextNo 题号
+                     * 
                      */
                     std::string GetQuestionTextNo() const;
 
                     /**
                      * 设置题号
-                     * @param QuestionTextNo 题号
+                     * @param _questionTextNo 题号
+                     * 
                      */
                     void SetQuestionTextNo(const std::string& _questionTextNo);
 
                     /**
                      * 判断参数 QuestionTextNo 是否已赋值
                      * @return QuestionTextNo 是否已赋值
+                     * 
                      */
                     bool QuestionTextNoHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 1: "选择题"
 2: "填空题"
 3: "解答题"
+                     * 
                      */
                     int64_t GetQuestionTextType() const;
 
@@ -82,88 +86,102 @@ namespace TencentCloud
 1: "选择题"
 2: "填空题"
 3: "解答题"
-                     * @param QuestionTextType 题型：
+                     * @param _questionTextType 题型：
 1: "选择题"
 2: "填空题"
 3: "解答题"
+                     * 
                      */
                     void SetQuestionTextType(const int64_t& _questionTextType);
 
                     /**
                      * 判断参数 QuestionTextType 是否已赋值
                      * @return QuestionTextType 是否已赋值
+                     * 
                      */
                     bool QuestionTextTypeHasBeenSet() const;
 
                     /**
                      * 获取题干
                      * @return QuestionText 题干
+                     * 
                      */
                     std::string GetQuestionText() const;
 
                     /**
                      * 设置题干
-                     * @param QuestionText 题干
+                     * @param _questionText 题干
+                     * 
                      */
                     void SetQuestionText(const std::string& _questionText);
 
                     /**
                      * 判断参数 QuestionText 是否已赋值
                      * @return QuestionText 是否已赋值
+                     * 
                      */
                     bool QuestionTextHasBeenSet() const;
 
                     /**
                      * 获取选择题选项，包含1个或多个option
                      * @return QuestionOptions 选择题选项，包含1个或多个option
+                     * 
                      */
                     std::string GetQuestionOptions() const;
 
                     /**
                      * 设置选择题选项，包含1个或多个option
-                     * @param QuestionOptions 选择题选项，包含1个或多个option
+                     * @param _questionOptions 选择题选项，包含1个或多个option
+                     * 
                      */
                     void SetQuestionOptions(const std::string& _questionOptions);
 
                     /**
                      * 判断参数 QuestionOptions 是否已赋值
                      * @return QuestionOptions 是否已赋值
+                     * 
                      */
                     bool QuestionOptionsHasBeenSet() const;
 
                     /**
                      * 获取所有子题的question属性
                      * @return QuestionSubquestion 所有子题的question属性
+                     * 
                      */
                     std::string GetQuestionSubquestion() const;
 
                     /**
                      * 设置所有子题的question属性
-                     * @param QuestionSubquestion 所有子题的question属性
+                     * @param _questionSubquestion 所有子题的question属性
+                     * 
                      */
                     void SetQuestionSubquestion(const std::string& _questionSubquestion);
 
                     /**
                      * 判断参数 QuestionSubquestion 是否已赋值
                      * @return QuestionSubquestion 是否已赋值
+                     * 
                      */
                     bool QuestionSubquestionHasBeenSet() const;
 
                     /**
                      * 获取示意图检测框在的图片中的像素坐标
                      * @return QuestionImageCoords 示意图检测框在的图片中的像素坐标
+                     * 
                      */
                     std::vector<Rect> GetQuestionImageCoords() const;
 
                     /**
                      * 设置示意图检测框在的图片中的像素坐标
-                     * @param QuestionImageCoords 示意图检测框在的图片中的像素坐标
+                     * @param _questionImageCoords 示意图检测框在的图片中的像素坐标
+                     * 
                      */
                     void SetQuestionImageCoords(const std::vector<Rect>& _questionImageCoords);
 
                     /**
                      * 判断参数 QuestionImageCoords 是否已赋值
                      * @return QuestionImageCoords 是否已赋值
+                     * 
                      */
                     bool QuestionImageCoordsHasBeenSet() const;
 

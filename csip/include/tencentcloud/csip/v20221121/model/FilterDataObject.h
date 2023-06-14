@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取英文翻译
                      * @return Value 英文翻译
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置英文翻译
-                     * @param Value 英文翻译
+                     * @param _value 英文翻译
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取中文翻译
                      * @return Text 中文翻译
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置中文翻译
-                     * @param Text 中文翻译
+                     * @param _text 中文翻译
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

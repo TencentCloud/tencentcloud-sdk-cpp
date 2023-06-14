@@ -60,6 +60,7 @@ namespace TencentCloud
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
 <li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
+                     * 
                      */
                     std::string GetSourceType() const;
 
@@ -70,36 +71,41 @@ namespace TencentCloud
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
 <li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
-                     * @param SourceType 媒体文件的来源类别：
+                     * @param _sourceType 媒体文件的来源类别：
 <li>Record：来自录制。如直播录制、直播时移录制等。</li>
 <li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>
 <li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>
 <li>WebPageRecord：来自全景录制。</li>
 <li>Unknown：未知来源。</li>
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取用户创建文件时透传的字段
                      * @return SourceContext 用户创建文件时透传的字段
+                     * 
                      */
                     std::string GetSourceContext() const;
 
                     /**
                      * 设置用户创建文件时透传的字段
-                     * @param SourceContext 用户创建文件时透传的字段
+                     * @param _sourceContext 用户创建文件时透传的字段
+                     * 
                      */
                     void SetSourceContext(const std::string& _sourceContext);
 
                     /**
                      * 判断参数 SourceContext 是否已赋值
                      * @return SourceContext 是否已赋值
+                     * 
                      */
                     bool SourceContextHasBeenSet() const;
 
@@ -108,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrtcRecordInfo TRTC 伴生录制信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TrtcRecordInfo GetTrtcRecordInfo() const;
 
                     /**
                      * 设置TRTC 伴生录制信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrtcRecordInfo TRTC 伴生录制信息。
+                     * @param _trtcRecordInfo TRTC 伴生录制信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrtcRecordInfo(const TrtcRecordInfo& _trtcRecordInfo);
 
                     /**
                      * 判断参数 TrtcRecordInfo 是否已赋值
                      * @return TrtcRecordInfo 是否已赋值
+                     * 
                      */
                     bool TrtcRecordInfoHasBeenSet() const;
 

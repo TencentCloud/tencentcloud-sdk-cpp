@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取组织成员UIN
                      * @return Uin 组织成员UIN
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取组织成员名称
                      * @return Name 组织成员名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取加入时间
                      * @return JoinTime 加入时间
+                     * 
                      */
                     std::string GetJoinTime() const;
 
                     /**
                      * 判断参数 JoinTime 是否已赋值
                      * @return JoinTime 是否已赋值
+                     * 
                      */
                     bool JoinTimeHasBeenSet() const;
 
                     /**
                      * 获取组织单元ID
                      * @return NodeId 组织单元ID
+                     * 
                      */
                     uint64_t GetNodeId() const;
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取组织单元名称
                      * @return NodeName 组织单元名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取父组织单元ID
                      * @return ParentNodeId 父组织单元ID
+                     * 
                      */
                     uint64_t GetParentNodeId() const;
 
                     /**
                      * 判断参数 ParentNodeId 是否已赋值
                      * @return ParentNodeId 是否已赋值
+                     * 
                      */
                     bool ParentNodeIdHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskIds 任务id
+                     * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskIds 任务id
+                     * @param _taskIds 任务id
+                     * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
                     /**
                      * 判断参数 TaskIds 是否已赋值
                      * @return TaskIds 是否已赋值
+                     * 
                      */
                     bool TaskIdsHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取补数据开始时间
                      * @return StartTime 补数据开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置补数据开始时间
-                     * @param StartTime 补数据开始时间
+                     * @param _startTime 补数据开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取补数据结束时间
                      * @return EndTime 补数据结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置补数据结束时间
-                     * @param EndTime 补数据结束时间
+                     * @param _endTime 补数据结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

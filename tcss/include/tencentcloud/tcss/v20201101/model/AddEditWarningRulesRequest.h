@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取告警开关策略
                      * @return WarningRules 告警开关策略
+                     * 
                      */
                     std::vector<WarningRule> GetWarningRules() const;
 
                     /**
                      * 设置告警开关策略
-                     * @param WarningRules 告警开关策略
+                     * @param _warningRules 告警开关策略
+                     * 
                      */
                     void SetWarningRules(const std::vector<WarningRule>& _warningRules);
 
                     /**
                      * 判断参数 WarningRules 是否已赋值
                      * @return WarningRules 是否已赋值
+                     * 
                      */
                     bool WarningRulesHasBeenSet() const;
 

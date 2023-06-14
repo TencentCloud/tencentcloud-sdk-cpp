@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 该字段用于返回当前查询的任务总量，格式为int字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageToken 该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPageToken() const;
 
                     /**
                      * 判断参数 PageToken 是否已赋值
                      * @return PageToken 是否已赋值
+                     * 
                      */
                     bool PageTokenHasBeenSet() const;
 

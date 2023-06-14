@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取网络探测实例ID。形如：netd-12345678。
                      * @return NetDetectId 网络探测实例ID。形如：netd-12345678。
+                     * 
                      */
                     std::string GetNetDetectId() const;
 
                     /**
                      * 设置网络探测实例ID。形如：netd-12345678。
-                     * @param NetDetectId 网络探测实例ID。形如：netd-12345678。
+                     * @param _netDetectId 网络探测实例ID。形如：netd-12345678。
+                     * 
                      */
                     void SetNetDetectId(const std::string& _netDetectId);
 
                     /**
                      * 判断参数 NetDetectId 是否已赋值
                      * @return NetDetectId 是否已赋值
+                     * 
                      */
                     bool NetDetectIdHasBeenSet() const;
 
                     /**
                      * 获取网络探测目的IP验证结果对象数组。
                      * @return NetDetectIpStateSet 网络探测目的IP验证结果对象数组。
+                     * 
                      */
                     std::vector<NetDetectIpState> GetNetDetectIpStateSet() const;
 
                     /**
                      * 设置网络探测目的IP验证结果对象数组。
-                     * @param NetDetectIpStateSet 网络探测目的IP验证结果对象数组。
+                     * @param _netDetectIpStateSet 网络探测目的IP验证结果对象数组。
+                     * 
                      */
                     void SetNetDetectIpStateSet(const std::vector<NetDetectIpState>& _netDetectIpStateSet);
 
                     /**
                      * 判断参数 NetDetectIpStateSet 是否已赋值
                      * @return NetDetectIpStateSet 是否已赋值
+                     * 
                      */
                     bool NetDetectIpStateSetHasBeenSet() const;
 

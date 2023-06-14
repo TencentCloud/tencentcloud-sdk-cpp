@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取eks service 名
                      * @return ServiceName eks service 名
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置eks service 名
-                     * @param ServiceName eks service 名
+                     * @param _serviceName eks service 名
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取eks service 端口
                      * @return ServicePort eks service 端口
+                     * 
                      */
                     int64_t GetServicePort() const;
 
                     /**
                      * 设置eks service 端口
-                     * @param ServicePort eks service 端口
+                     * @param _servicePort eks service 端口
+                     * 
                      */
                     void SetServicePort(const int64_t& _servicePort);
 
                     /**
                      * 判断参数 ServicePort 是否已赋值
                      * @return ServicePort 是否已赋值
+                     * 
                      */
                     bool ServicePortHasBeenSet() const;
 

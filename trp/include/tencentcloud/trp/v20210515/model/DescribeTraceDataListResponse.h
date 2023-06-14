@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取数量
                      * @return TotalCount 数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return TraceDataList 无
+                     * 
                      */
                     std::vector<TraceData> GetTraceDataList() const;
 
                     /**
                      * 判断参数 TraceDataList 是否已赋值
                      * @return TraceDataList 是否已赋值
+                     * 
                      */
                     bool TraceDataListHasBeenSet() const;
 

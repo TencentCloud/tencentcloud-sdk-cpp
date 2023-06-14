@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayerSession 玩家会话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PlayerSession GetPlayerSession() const;
 
                     /**
                      * 判断参数 PlayerSession 是否已赋值
                      * @return PlayerSession 是否已赋值
+                     * 
                      */
                     bool PlayerSessionHasBeenSet() const;
 

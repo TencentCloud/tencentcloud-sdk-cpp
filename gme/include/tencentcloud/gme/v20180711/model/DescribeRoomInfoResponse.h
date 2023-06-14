@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 操作结果, 0成功, 非0失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomUsers 房间用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RoomUser> GetRoomUsers() const;
 
                     /**
                      * 判断参数 RoomUsers 是否已赋值
                      * @return RoomUsers 是否已赋值
+                     * 
                      */
                     bool RoomUsersHasBeenSet() const;
 

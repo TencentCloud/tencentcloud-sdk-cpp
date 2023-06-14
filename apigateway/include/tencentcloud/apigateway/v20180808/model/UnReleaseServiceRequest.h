@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待下线服务的唯一 ID。
                      * @return ServiceId 待下线服务的唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待下线服务的唯一 ID。
-                     * @param ServiceId 待下线服务的唯一 ID。
+                     * @param _serviceId 待下线服务的唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
                      * @return EnvironmentName 待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
-                     * @param EnvironmentName 待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * @param _environmentName 待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取保留字段，待下线的API列表。
                      * @return ApiIds 保留字段，待下线的API列表。
+                     * 
                      */
                     std::vector<std::string> GetApiIds() const;
 
                     /**
                      * 设置保留字段，待下线的API列表。
-                     * @param ApiIds 保留字段，待下线的API列表。
+                     * @param _apiIds 保留字段，待下线的API列表。
+                     * 
                      */
                     void SetApiIds(const std::vector<std::string>& _apiIds);
 
                     /**
                      * 判断参数 ApiIds 是否已赋值
                      * @return ApiIds 是否已赋值
+                     * 
                      */
                     bool ApiIdsHasBeenSet() const;
 

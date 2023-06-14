@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取规则组ID
                      * @return RuleGroupId 规则组ID
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组ID
-                     * @param RuleGroupId 规则组ID
+                     * @param _ruleGroupId 规则组ID
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
                      * 获取数据来源ID
                      * @return DatasourceId 数据来源ID
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据来源ID
-                     * @param DatasourceId 数据来源ID
+                     * @param _datasourceId 数据来源ID
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
                      * 获取数据表Id
                      * @return TableId 数据表Id
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置数据表Id
-                     * @param TableId 数据表Id
+                     * @param _tableId 数据表Id
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据库ID
                      * @return DatabaseId 数据库ID
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库ID
-                     * @param DatabaseId 数据库ID
+                     * @param _databaseId 数据库ID
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 

@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncRequestId 审计日志文件生成异步任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAsyncRequestId() const;
 
                     /**
                      * 设置审计日志文件生成异步任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AsyncRequestId 审计日志文件生成异步任务ID。
+                     * @param _asyncRequestId 审计日志文件生成异步任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAsyncRequestId(const int64_t& _asyncRequestId);
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
                     /**
                      * 获取审计日志文件名称。
                      * @return FileName 审计日志文件名称。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置审计日志文件名称。
-                     * @param FileName 审计日志文件名称。
+                     * @param _fileName 审计日志文件名称。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * @param _createTime 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -119,6 +128,7 @@ namespace TencentCloud
 "failed" - 创建失败;
 "success" - 已生成;
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -128,107 +138,124 @@ namespace TencentCloud
 "failed" - 创建失败;
 "success" - 已生成;
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 文件状态值。可能返回的值为：
+                     * @param _status 文件状态值。可能返回的值为：
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取文件大小，单位为 KB。
                      * @return FileSize 文件大小，单位为 KB。
+                     * 
                      */
                     double GetFileSize() const;
 
                     /**
                      * 设置文件大小，单位为 KB。
-                     * @param FileSize 文件大小，单位为 KB。
+                     * @param _fileSize 文件大小，单位为 KB。
+                     * 
                      */
                     void SetFileSize(const double& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取审计日志下载地址。
                      * @return DownloadUrl 审计日志下载地址。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置审计日志下载地址。
-                     * @param DownloadUrl 审计日志下载地址。
+                     * @param _downloadUrl 审计日志下载地址。
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return ErrMsg 错误信息。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置错误信息。
-                     * @param ErrMsg 错误信息。
+                     * @param _errMsg 错误信息。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
                     /**
                      * 获取文件生成进度。
                      * @return Progress 文件生成进度。
+                     * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置文件生成进度。
-                     * @param Progress 文件生成进度。
+                     * @param _progress 文件生成进度。
+                     * 
                      */
                     void SetProgress(const double& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取文件生成成功时间。
                      * @return FinishTime 文件生成成功时间。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置文件生成成功时间。
-                     * @param FinishTime 文件生成成功时间。
+                     * @param _finishTime 文件生成成功时间。
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 

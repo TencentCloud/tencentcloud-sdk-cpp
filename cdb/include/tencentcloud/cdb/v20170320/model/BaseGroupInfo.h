@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroupId 代理组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置代理组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyGroupId 代理组ID
+                     * @param _proxyGroupId 代理组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeCount 代理节点数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置代理节点数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeCount 代理节点数
+                     * @param _nodeCount 代理节点数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态：发货中（init）运行中（online）下线中（offline）销毁中（destroy）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态：发货中（init）运行中（online）下线中（offline）销毁中（destroy）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态：发货中（init）运行中（online）下线中（offline）销毁中（destroy）
+                     * @param _status 状态：发货中（init）运行中（online）下线中（offline）销毁中（destroy）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenRW 是否开启读写分离
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetOpenRW() const;
 
                     /**
                      * 设置是否开启读写分离
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenRW 是否开启读写分离
+                     * @param _openRW 是否开启读写分离
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenRW(const bool& _openRW);
 
                     /**
                      * 判断参数 OpenRW 是否已赋值
                      * @return OpenRW 是否已赋值
+                     * 
                      */
                     bool OpenRWHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentProxyVersion 当前代理版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurrentProxyVersion() const;
 
                     /**
                      * 设置当前代理版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentProxyVersion 当前代理版本
+                     * @param _currentProxyVersion 当前代理版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentProxyVersion(const std::string& _currentProxyVersion);
 
                     /**
                      * 判断参数 CurrentProxyVersion 是否已赋值
                      * @return CurrentProxyVersion 是否已赋值
+                     * 
                      */
                     bool CurrentProxyVersionHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportUpgradeProxyVersion 支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSupportUpgradeProxyVersion() const;
 
                     /**
                      * 设置支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportUpgradeProxyVersion 支持升级版本
+                     * @param _supportUpgradeProxyVersion 支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportUpgradeProxyVersion(const std::string& _supportUpgradeProxyVersion);
 
                     /**
                      * 判断参数 SupportUpgradeProxyVersion 是否已赋值
                      * @return SupportUpgradeProxyVersion 是否已赋值
+                     * 
                      */
                     bool SupportUpgradeProxyVersionHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取待加固的应用信息
                      * @return AppInfo 待加固的应用信息
+                     * 
                      */
                     AppInfo GetAppInfo() const;
 
                     /**
                      * 设置待加固的应用信息
-                     * @param AppInfo 待加固的应用信息
+                     * @param _appInfo 待加固的应用信息
+                     * 
                      */
                     void SetAppInfo(const AppInfo& _appInfo);
 
                     /**
                      * 判断参数 AppInfo 是否已赋值
                      * @return AppInfo 是否已赋值
+                     * 
                      */
                     bool AppInfoHasBeenSet() const;
 
                     /**
                      * 获取加固服务信息
                      * @return ServiceInfo 加固服务信息
+                     * 
                      */
                     ServiceInfo GetServiceInfo() const;
 
                     /**
                      * 设置加固服务信息
-                     * @param ServiceInfo 加固服务信息
+                     * @param _serviceInfo 加固服务信息
+                     * 
                      */
                     void SetServiceInfo(const ServiceInfo& _serviceInfo);
 
                     /**
                      * 判断参数 ServiceInfo 是否已赋值
                      * @return ServiceInfo 是否已赋值
+                     * 
                      */
                     bool ServiceInfoHasBeenSet() const;
 

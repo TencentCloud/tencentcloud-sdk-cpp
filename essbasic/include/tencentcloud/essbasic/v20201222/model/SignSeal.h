@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取签署控件ID
                      * @return ComponentId 签署控件ID
+                     * 
                      */
                     std::string GetComponentId() const;
 
                     /**
                      * 设置签署控件ID
-                     * @param ComponentId 签署控件ID
+                     * @param _componentId 签署控件ID
+                     * 
                      */
                     void SetComponentId(const std::string& _componentId);
 
                     /**
                      * 判断参数 ComponentId 是否已赋值
                      * @return ComponentId 是否已赋值
+                     * 
                      */
                     bool ComponentIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ SIGN_SIGNATURE - 签名
 SIGN_SEAL - 印章
 SIGN_DATE - 日期
 SIGN_IMAGE - 图片
+                     * 
                      */
                     std::string GetSignType() const;
 
@@ -84,71 +88,82 @@ SIGN_SIGNATURE - 签名
 SIGN_SEAL - 印章
 SIGN_DATE - 日期
 SIGN_IMAGE - 图片
-                     * @param SignType 签署印章类型:
+                     * @param _signType 签署印章类型:
 SIGN_SIGNATURE - 签名
 SIGN_SEAL - 印章
 SIGN_DATE - 日期
 SIGN_IMAGE - 图片
+                     * 
                      */
                     void SetSignType(const std::string& _signType);
 
                     /**
                      * 判断参数 SignType 是否已赋值
                      * @return SignType 是否已赋值
+                     * 
                      */
                     bool SignTypeHasBeenSet() const;
 
                     /**
                      * 获取合同文件ID
                      * @return FileIndex 合同文件ID
+                     * 
                      */
                     int64_t GetFileIndex() const;
 
                     /**
                      * 设置合同文件ID
-                     * @param FileIndex 合同文件ID
+                     * @param _fileIndex 合同文件ID
+                     * 
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
                     /**
                      * 判断参数 FileIndex 是否已赋值
                      * @return FileIndex 是否已赋值
+                     * 
                      */
                     bool FileIndexHasBeenSet() const;
 
                     /**
                      * 获取印章ID，仅当 SignType 为 SIGN_SEAL 时必填
                      * @return SealId 印章ID，仅当 SignType 为 SIGN_SEAL 时必填
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章ID，仅当 SignType 为 SIGN_SEAL 时必填
-                     * @param SealId 印章ID，仅当 SignType 为 SIGN_SEAL 时必填
+                     * @param _sealId 印章ID，仅当 SignType 为 SIGN_SEAL 时必填
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码
                      * @return SealContent 签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码
+                     * 
                      */
                     std::string GetSealContent() const;
 
                     /**
                      * 设置签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码
-                     * @param SealContent 签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码
+                     * @param _sealContent 签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码
+                     * 
                      */
                     void SetSealContent(const std::string& _sealContent);
 
                     /**
                      * 判断参数 SealContent 是否已赋值
                      * @return SealContent 是否已赋值
+                     * 
                      */
                     bool SealContentHasBeenSet() const;
 

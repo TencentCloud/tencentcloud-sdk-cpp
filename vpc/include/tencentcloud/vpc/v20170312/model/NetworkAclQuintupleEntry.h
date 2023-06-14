@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取协议, 取值: TCP,UDP, ICMP, ALL。
                      * @return Protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议, 取值: TCP,UDP, ICMP, ALL。
-                     * @param Protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * @param _protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取描述。
                      * @return Description 描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
-                     * @param Description 描述。
+                     * @param _description 描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
                      * @return SourcePort 源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     std::string GetSourcePort() const;
 
                     /**
                      * 设置源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
-                     * @param SourcePort 源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * @param _sourcePort 源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     void SetSourcePort(const std::string& _sourcePort);
 
                     /**
                      * 判断参数 SourcePort 是否已赋值
                      * @return SourcePort 是否已赋值
+                     * 
                      */
                     bool SourcePortHasBeenSet() const;
 
                     /**
                      * 获取源CIDR。
                      * @return SourceCidr 源CIDR。
+                     * 
                      */
                     std::string GetSourceCidr() const;
 
                     /**
                      * 设置源CIDR。
-                     * @param SourceCidr 源CIDR。
+                     * @param _sourceCidr 源CIDR。
+                     * 
                      */
                     void SetSourceCidr(const std::string& _sourceCidr);
 
                     /**
                      * 判断参数 SourceCidr 是否已赋值
                      * @return SourceCidr 是否已赋值
+                     * 
                      */
                     bool SourceCidrHasBeenSet() const;
 
                     /**
                      * 获取目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
                      * @return DestinationPort 目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     std::string GetDestinationPort() const;
 
                     /**
                      * 设置目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
-                     * @param DestinationPort 目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * @param _destinationPort 目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     void SetDestinationPort(const std::string& _destinationPort);
 
                     /**
                      * 判断参数 DestinationPort 是否已赋值
                      * @return DestinationPort 是否已赋值
+                     * 
                      */
                     bool DestinationPortHasBeenSet() const;
 
                     /**
                      * 获取目的CIDR。
                      * @return DestinationCidr 目的CIDR。
+                     * 
                      */
                     std::string GetDestinationCidr() const;
 
                     /**
                      * 设置目的CIDR。
-                     * @param DestinationCidr 目的CIDR。
+                     * @param _destinationCidr 目的CIDR。
+                     * 
                      */
                     void SetDestinationCidr(const std::string& _destinationCidr);
 
                     /**
                      * 判断参数 DestinationCidr 是否已赋值
                      * @return DestinationCidr 是否已赋值
+                     * 
                      */
                     bool DestinationCidrHasBeenSet() const;
 
                     /**
                      * 获取动作，ACCEPT 或 DROP。
                      * @return Action 动作，ACCEPT 或 DROP。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作，ACCEPT 或 DROP。
-                     * @param Action 动作，ACCEPT 或 DROP。
+                     * @param _action 动作，ACCEPT 或 DROP。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取网络ACL条目唯一ID。
                      * @return NetworkAclQuintupleEntryId 网络ACL条目唯一ID。
+                     * 
                      */
                     std::string GetNetworkAclQuintupleEntryId() const;
 
                     /**
                      * 设置网络ACL条目唯一ID。
-                     * @param NetworkAclQuintupleEntryId 网络ACL条目唯一ID。
+                     * @param _networkAclQuintupleEntryId 网络ACL条目唯一ID。
+                     * 
                      */
                     void SetNetworkAclQuintupleEntryId(const std::string& _networkAclQuintupleEntryId);
 
                     /**
                      * 判断参数 NetworkAclQuintupleEntryId 是否已赋值
                      * @return NetworkAclQuintupleEntryId 是否已赋值
+                     * 
                      */
                     bool NetworkAclQuintupleEntryIdHasBeenSet() const;
 
                     /**
                      * 获取优先级，从1开始。
                      * @return Priority 优先级，从1开始。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级，从1开始。
-                     * @param Priority 优先级，从1开始。
+                     * @param _priority 优先级，从1开始。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
                     /**
                      * 获取创建时间，用于DescribeNetworkAclQuintupleEntries的出参。
                      * @return CreateTime 创建时间，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，用于DescribeNetworkAclQuintupleEntries的出参。
-                     * @param CreateTime 创建时间，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * @param _createTime 创建时间，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。
                      * @return NetworkAclDirection 方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * 
                      */
                     std::string GetNetworkAclDirection() const;
 
                     /**
                      * 设置方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。
-                     * @param NetworkAclDirection 方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * @param _networkAclDirection 方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。
+                     * 
                      */
                     void SetNetworkAclDirection(const std::string& _networkAclDirection);
 
                     /**
                      * 判断参数 NetworkAclDirection 是否已赋值
                      * @return NetworkAclDirection 是否已赋值
+                     * 
                      */
                     bool NetworkAclDirectionHasBeenSet() const;
 

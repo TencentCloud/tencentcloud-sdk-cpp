@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取临时访问凭证获取时刻的时间戳（单位秒）
                      * @return StartTime 临时访问凭证获取时刻的时间戳（单位秒）
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取临时访问凭证超时 时刻的时间戳（单位秒）
                      * @return ExpiredTime 临时访问凭证超时 时刻的时间戳（单位秒）
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取临时访问凭证
                      * @return Credentials 临时访问凭证
+                     * 
                      */
                     Credentials GetCredentials() const;
 
                     /**
                      * 判断参数 Credentials 是否已赋值
                      * @return Credentials 是否已赋值
+                     * 
                      */
                     bool CredentialsHasBeenSet() const;
 

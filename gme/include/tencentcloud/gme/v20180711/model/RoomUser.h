@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取房间id
                      * @return RoomId 房间id
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间id
-                     * @param RoomId 房间id
+                     * @param _roomId 房间id
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uins 房间里用户uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetUins() const;
 
                     /**
                      * 设置房间里用户uin列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uins 房间里用户uin列表
+                     * @param _uins 房间里用户uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUins(const std::vector<uint64_t>& _uins);
 
                     /**
                      * 判断参数 Uins 是否已赋值
                      * @return Uins 是否已赋值
+                     * 
                      */
                     bool UinsHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrRoomId 字符串房间id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStrRoomId() const;
 
                     /**
                      * 设置字符串房间id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrRoomId 字符串房间id
+                     * @param _strRoomId 字符串房间id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrRoomId(const std::string& _strRoomId);
 
                     /**
                      * 判断参数 StrRoomId 是否已赋值
                      * @return StrRoomId 是否已赋值
+                     * 
                      */
                     bool StrRoomIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrUins 房间里用户字符串uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetStrUins() const;
 
                     /**
                      * 设置房间里用户字符串uin列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrUins 房间里用户字符串uin列表
+                     * @param _strUins 房间里用户字符串uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrUins(const std::vector<std::string>& _strUins);
 
                     /**
                      * 判断参数 StrUins 是否已赋值
                      * @return StrUins 是否已赋值
+                     * 
                      */
                     bool StrUinsHasBeenSet() const;
 

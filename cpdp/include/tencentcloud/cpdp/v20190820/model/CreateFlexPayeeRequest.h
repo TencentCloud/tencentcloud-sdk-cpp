@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取用户外部业务ID
                      * @return OutUserId 用户外部业务ID
+                     * 
                      */
                     std::string GetOutUserId() const;
 
                     /**
                      * 设置用户外部业务ID
-                     * @param OutUserId 用户外部业务ID
+                     * @param _outUserId 用户外部业务ID
+                     * 
                      */
                     void SetOutUserId(const std::string& _outUserId);
 
                     /**
                      * 判断参数 OutUserId 是否已赋值
                      * @return OutUserId 是否已赋值
+                     * 
                      */
                     bool OutUserIdHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取证件号
                      * @return IdNo 证件号
+                     * 
                      */
                     std::string GetIdNo() const;
 
                     /**
                      * 设置证件号
-                     * @param IdNo 证件号
+                     * @param _idNo 证件号
+                     * 
                      */
                     void SetIdNo(const std::string& _idNo);
 
                     /**
                      * 判断参数 IdNo 是否已赋值
                      * @return IdNo 是否已赋值
+                     * 
                      */
                     bool IdNoHasBeenSet() const;
 
                     /**
                      * 获取账户名称
                      * @return AccountName 账户名称
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账户名称
-                     * @param AccountName 账户名称
+                     * @param _accountName 账户名称
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取服务商ID
                      * @return ServiceProviderId 服务商ID
+                     * 
                      */
                     std::string GetServiceProviderId() const;
 
                     /**
                      * 设置服务商ID
-                     * @param ServiceProviderId 服务商ID
+                     * @param _serviceProviderId 服务商ID
+                     * 
                      */
                     void SetServiceProviderId(const std::string& _serviceProviderId);
 
                     /**
                      * 判断参数 ServiceProviderId 是否已赋值
                      * @return ServiceProviderId 是否已赋值
+                     * 
                      */
                     bool ServiceProviderIdHasBeenSet() const;
 
                     /**
                      * 获取计税信息
                      * @return TaxInfo 计税信息
+                     * 
                      */
                     PayeeTaxInfo GetTaxInfo() const;
 
                     /**
                      * 设置计税信息
-                     * @param TaxInfo 计税信息
+                     * @param _taxInfo 计税信息
+                     * 
                      */
                     void SetTaxInfo(const PayeeTaxInfo& _taxInfo);
 
                     /**
                      * 判断参数 TaxInfo 是否已赋值
                      * @return TaxInfo 是否已赋值
+                     * 
                      */
                     bool TaxInfoHasBeenSet() const;
 
@@ -158,6 +176,7 @@ namespace TencentCloud
                      * @return IdType 证件类型
 0:身份证
 1:社会信用代码
+                     * 
                      */
                     int64_t GetIdType() const;
 
@@ -165,51 +184,59 @@ namespace TencentCloud
                      * 设置证件类型
 0:身份证
 1:社会信用代码
-                     * @param IdType 证件类型
+                     * @param _idType 证件类型
 0:身份证
 1:社会信用代码
+                     * 
                      */
                     void SetIdType(const int64_t& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取手机号码
                      * @return PhoneNo 手机号码
+                     * 
                      */
                     std::string GetPhoneNo() const;
 
                     /**
                      * 设置手机号码
-                     * @param PhoneNo 手机号码
+                     * @param _phoneNo 手机号码
+                     * 
                      */
                     void SetPhoneNo(const std::string& _phoneNo);
 
                     /**
                      * 判断参数 PhoneNo 是否已赋值
                      * @return PhoneNo 是否已赋值
+                     * 
                      */
                     bool PhoneNoHasBeenSet() const;
 
@@ -224,6 +251,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -233,17 +261,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

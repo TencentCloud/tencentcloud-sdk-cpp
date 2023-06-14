@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文件ID
                      * @return FileId 文件ID
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 

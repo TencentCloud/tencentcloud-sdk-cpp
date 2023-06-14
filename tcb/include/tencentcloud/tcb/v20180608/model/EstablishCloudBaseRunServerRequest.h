@@ -47,252 +47,294 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名称
                      * @return ServiceName 服务名称
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名称
-                     * @param ServiceName 服务名称
+                     * @param _serviceName 服务名称
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取是否开通外网访问
                      * @return IsPublic 是否开通外网访问
+                     * 
                      */
                     bool GetIsPublic() const;
 
                     /**
                      * 设置是否开通外网访问
-                     * @param IsPublic 是否开通外网访问
+                     * @param _isPublic 是否开通外网访问
+                     * 
                      */
                     void SetIsPublic(const bool& _isPublic);
 
                     /**
                      * 判断参数 IsPublic 是否已赋值
                      * @return IsPublic 是否已赋值
+                     * 
                      */
                     bool IsPublicHasBeenSet() const;
 
                     /**
                      * 获取镜像仓库
                      * @return ImageRepo 镜像仓库
+                     * 
                      */
                     std::string GetImageRepo() const;
 
                     /**
                      * 设置镜像仓库
-                     * @param ImageRepo 镜像仓库
+                     * @param _imageRepo 镜像仓库
+                     * 
                      */
                     void SetImageRepo(const std::string& _imageRepo);
 
                     /**
                      * 判断参数 ImageRepo 是否已赋值
                      * @return ImageRepo 是否已赋值
+                     * 
                      */
                     bool ImageRepoHasBeenSet() const;
 
                     /**
                      * 获取服务描述
                      * @return Remark 服务描述
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置服务描述
-                     * @param Remark 服务描述
+                     * @param _remark 服务描述
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取es信息
                      * @return EsInfo es信息
+                     * 
                      */
                     CloudBaseEsInfo GetEsInfo() const;
 
                     /**
                      * 设置es信息
-                     * @param EsInfo es信息
+                     * @param _esInfo es信息
+                     * 
                      */
                     void SetEsInfo(const CloudBaseEsInfo& _esInfo);
 
                     /**
                      * 判断参数 EsInfo 是否已赋值
                      * @return EsInfo 是否已赋值
+                     * 
                      */
                     bool EsInfoHasBeenSet() const;
 
                     /**
                      * 获取日志类型; es/cls
                      * @return LogType 日志类型; es/cls
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型; es/cls
-                     * @param LogType 日志类型; es/cls
+                     * @param _logType 日志类型; es/cls
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取操作备注
                      * @return OperatorRemark 操作备注
+                     * 
                      */
                     std::string GetOperatorRemark() const;
 
                     /**
                      * 设置操作备注
-                     * @param OperatorRemark 操作备注
+                     * @param _operatorRemark 操作备注
+                     * 
                      */
                     void SetOperatorRemark(const std::string& _operatorRemark);
 
                     /**
                      * 判断参数 OperatorRemark 是否已赋值
                      * @return OperatorRemark 是否已赋值
+                     * 
                      */
                     bool OperatorRemarkHasBeenSet() const;
 
                     /**
                      * 获取来源方（默认值：qcloud，微信侧来源miniapp)
                      * @return Source 来源方（默认值：qcloud，微信侧来源miniapp)
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源方（默认值：qcloud，微信侧来源miniapp)
-                     * @param Source 来源方（默认值：qcloud，微信侧来源miniapp)
+                     * @param _source 来源方（默认值：qcloud，微信侧来源miniapp)
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取vpc信息
                      * @return VpcInfo vpc信息
+                     * 
                      */
                     CloudBaseRunVpcInfo GetVpcInfo() const;
 
                     /**
                      * 设置vpc信息
-                     * @param VpcInfo vpc信息
+                     * @param _vpcInfo vpc信息
+                     * 
                      */
                     void SetVpcInfo(const CloudBaseRunVpcInfo& _vpcInfo);
 
                     /**
                      * 判断参数 VpcInfo 是否已赋值
                      * @return VpcInfo 是否已赋值
+                     * 
                      */
                     bool VpcInfoHasBeenSet() const;
 
                     /**
                      * 获取0/1=允许公网访问;2=关闭公网访问
                      * @return PublicAccess 0/1=允许公网访问;2=关闭公网访问
+                     * 
                      */
                     int64_t GetPublicAccess() const;
 
                     /**
                      * 设置0/1=允许公网访问;2=关闭公网访问
-                     * @param PublicAccess 0/1=允许公网访问;2=关闭公网访问
+                     * @param _publicAccess 0/1=允许公网访问;2=关闭公网访问
+                     * 
                      */
                     void SetPublicAccess(const int64_t& _publicAccess);
 
                     /**
                      * 判断参数 PublicAccess 是否已赋值
                      * @return PublicAccess 是否已赋值
+                     * 
                      */
                     bool PublicAccessHasBeenSet() const;
 
                     /**
                      * 获取OA PUBLIC MINIAPP VPC
                      * @return OpenAccessTypes OA PUBLIC MINIAPP VPC
+                     * 
                      */
                     std::vector<std::string> GetOpenAccessTypes() const;
 
                     /**
                      * 设置OA PUBLIC MINIAPP VPC
-                     * @param OpenAccessTypes OA PUBLIC MINIAPP VPC
+                     * @param _openAccessTypes OA PUBLIC MINIAPP VPC
+                     * 
                      */
                     void SetOpenAccessTypes(const std::vector<std::string>& _openAccessTypes);
 
                     /**
                      * 判断参数 OpenAccessTypes 是否已赋值
                      * @return OpenAccessTypes 是否已赋值
+                     * 
                      */
                     bool OpenAccessTypesHasBeenSet() const;
 
                     /**
                      * 获取是否创建Path 0未传默认创建 1创建 2不创建
                      * @return IsCreatePath 是否创建Path 0未传默认创建 1创建 2不创建
+                     * 
                      */
                     int64_t GetIsCreatePath() const;
 
                     /**
                      * 设置是否创建Path 0未传默认创建 1创建 2不创建
-                     * @param IsCreatePath 是否创建Path 0未传默认创建 1创建 2不创建
+                     * @param _isCreatePath 是否创建Path 0未传默认创建 1创建 2不创建
+                     * 
                      */
                     void SetIsCreatePath(const int64_t& _isCreatePath);
 
                     /**
                      * 判断参数 IsCreatePath 是否已赋值
                      * @return IsCreatePath 是否已赋值
+                     * 
                      */
                     bool IsCreatePathHasBeenSet() const;
 
                     /**
                      * 获取指定创建路径（如不存在，则创建。存在，则忽略）
                      * @return ServerPath 指定创建路径（如不存在，则创建。存在，则忽略）
+                     * 
                      */
                     std::string GetServerPath() const;
 
                     /**
                      * 设置指定创建路径（如不存在，则创建。存在，则忽略）
-                     * @param ServerPath 指定创建路径（如不存在，则创建。存在，则忽略）
+                     * @param _serverPath 指定创建路径（如不存在，则创建。存在，则忽略）
+                     * 
                      */
                     void SetServerPath(const std::string& _serverPath);
 
                     /**
                      * 判断参数 ServerPath 是否已赋值
                      * @return ServerPath 是否已赋值
+                     * 
                      */
                     bool ServerPathHasBeenSet() const;
 

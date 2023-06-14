@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskResult 任务处理结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskResult GetTaskResult() const;
 
                     /**
                      * 判断参数 TaskResult 是否已赋值
                      * @return TaskResult 是否已赋值
+                     * 
                      */
                     bool TaskResultHasBeenSet() const;
 

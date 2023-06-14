@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取历史位置列表
                      * @return Positions 历史位置列表
+                     * 
                      */
                     std::vector<PositionItem> GetPositions() const;
 
                     /**
                      * 判断参数 Positions 是否已赋值
                      * @return Positions 是否已赋值
+                     * 
                      */
                     bool PositionsHasBeenSet() const;
 

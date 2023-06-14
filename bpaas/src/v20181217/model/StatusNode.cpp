@@ -41,7 +41,9 @@ StatusNode::StatusNode() :
     m_taskNameHasBeenSet(false),
     m_cKafkaRegionHasBeenSet(false),
     m_externalUrlHasBeenSet(false),
-    m_parallelNodesHasBeenSet(false)
+    m_parallelNodesHasBeenSet(false),
+    m_rejectedCloudFunctionMsgHasBeenSet(false),
+    m_prevNodeHasBeenSet(false)
 {
 }
 
@@ -277,6 +279,26 @@ CoreInternalOutcome StatusNode::Deserialize(const rapidjson::Value &value)
         m_parallelNodesHasBeenSet = true;
     }
 
+    if (value.HasMember("RejectedCloudFunctionMsg") && !value["RejectedCloudFunctionMsg"].IsNull())
+    {
+        if (!value["RejectedCloudFunctionMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.RejectedCloudFunctionMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rejectedCloudFunctionMsg = string(value["RejectedCloudFunctionMsg"].GetString());
+        m_rejectedCloudFunctionMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrevNode") && !value["PrevNode"].IsNull())
+    {
+        if (!value["PrevNode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.PrevNode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_prevNode = string(value["PrevNode"].GetString());
+        m_prevNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -457,6 +479,22 @@ void StatusNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ParallelNodes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parallelNodes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rejectedCloudFunctionMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RejectedCloudFunctionMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rejectedCloudFunctionMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prevNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrevNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prevNode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -796,5 +834,37 @@ void StatusNode::SetParallelNodes(const string& _parallelNodes)
 bool StatusNode::ParallelNodesHasBeenSet() const
 {
     return m_parallelNodesHasBeenSet;
+}
+
+string StatusNode::GetRejectedCloudFunctionMsg() const
+{
+    return m_rejectedCloudFunctionMsg;
+}
+
+void StatusNode::SetRejectedCloudFunctionMsg(const string& _rejectedCloudFunctionMsg)
+{
+    m_rejectedCloudFunctionMsg = _rejectedCloudFunctionMsg;
+    m_rejectedCloudFunctionMsgHasBeenSet = true;
+}
+
+bool StatusNode::RejectedCloudFunctionMsgHasBeenSet() const
+{
+    return m_rejectedCloudFunctionMsgHasBeenSet;
+}
+
+string StatusNode::GetPrevNode() const
+{
+    return m_prevNode;
+}
+
+void StatusNode::SetPrevNode(const string& _prevNode)
+{
+    m_prevNode = _prevNode;
+    m_prevNodeHasBeenSet = true;
+}
+
+bool StatusNode::PrevNodeHasBeenSet() const
+{
+    return m_prevNodeHasBeenSet;
 }
 

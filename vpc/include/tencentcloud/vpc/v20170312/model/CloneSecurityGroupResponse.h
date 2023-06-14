@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 安全组对象。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SecurityGroup GetSecurityGroup() const;
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

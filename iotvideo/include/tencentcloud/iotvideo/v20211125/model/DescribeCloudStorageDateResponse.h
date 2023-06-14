@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取云存日期数组，["2021-01-05","2021-01-06"]
                      * @return Data 云存日期数组，["2021-01-05","2021-01-06"]
+                     * 
                      */
                     std::vector<std::string> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

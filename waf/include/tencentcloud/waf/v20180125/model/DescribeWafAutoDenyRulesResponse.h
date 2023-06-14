@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取攻击次数阈值
                      * @return AttackThreshold 攻击次数阈值
+                     * 
                      */
                     int64_t GetAttackThreshold() const;
 
                     /**
                      * 判断参数 AttackThreshold 是否已赋值
                      * @return AttackThreshold 是否已赋值
+                     * 
                      */
                     bool AttackThresholdHasBeenSet() const;
 
                     /**
                      * 获取攻击时间阈值
                      * @return TimeThreshold 攻击时间阈值
+                     * 
                      */
                     int64_t GetTimeThreshold() const;
 
                     /**
                      * 判断参数 TimeThreshold 是否已赋值
                      * @return TimeThreshold 是否已赋值
+                     * 
                      */
                     bool TimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取自动封禁时间
                      * @return DenyTimeThreshold 自动封禁时间
+                     * 
                      */
                     int64_t GetDenyTimeThreshold() const;
 
                     /**
                      * 判断参数 DenyTimeThreshold 是否已赋值
                      * @return DenyTimeThreshold 是否已赋值
+                     * 
                      */
                     bool DenyTimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取自动封禁状态
                      * @return DefenseStatus 自动封禁状态
+                     * 
                      */
                     int64_t GetDefenseStatus() const;
 
                     /**
                      * 判断参数 DefenseStatus 是否已赋值
                      * @return DefenseStatus 是否已赋值
+                     * 
                      */
                     bool DefenseStatusHasBeenSet() const;
 

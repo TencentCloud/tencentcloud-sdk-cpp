@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CityId 城市编码cityid，数字与字母的结合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCityId() const;
 
                     /**
                      * 设置城市编码cityid，数字与字母的结合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CityId 城市编码cityid，数字与字母的结合
+                     * @param _cityId 城市编码cityid，数字与字母的结合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCityId(const std::string& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Province 省份
+                     * @param _province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return District 县区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置县区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param District 县区
+                     * @param _district 县区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDistrict(const std::string& _district);
 
                     /**
                      * 判断参数 District 是否已赋值
                      * @return District 是否已赋值
+                     * 
                      */
                     bool DistrictHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param City 城市
+                     * @param _city 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 

@@ -58,6 +58,7 @@ namespace TencentCloud
 <li>VodPull ： 点播拉流；</li>
 <li>LivePull ：直播拉流；</li>
 <li>RtmpPush ： 直播推流。</li>
+                     * 
                      */
                     std::string GetInputType() const;
 
@@ -66,16 +67,18 @@ namespace TencentCloud
 <li>VodPull ： 点播拉流；</li>
 <li>LivePull ：直播拉流；</li>
 <li>RtmpPush ： 直播推流。</li>
-                     * @param InputType 流输入类型，取值：
+                     * @param _inputType 流输入类型，取值：
 <li>VodPull ： 点播拉流；</li>
 <li>LivePull ：直播拉流；</li>
 <li>RtmpPush ： 直播推流。</li>
+                     * 
                      */
                     void SetInputType(const std::string& _inputType);
 
                     /**
                      * 判断参数 InputType 是否已赋值
                      * @return InputType 是否已赋值
+                     * 
                      */
                     bool InputTypeHasBeenSet() const;
 
@@ -84,20 +87,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VodPullInputInfo 点播拉流信息，当 InputType = VodPull 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VodPullInputInfo GetVodPullInputInfo() const;
 
                     /**
                      * 设置点播拉流信息，当 InputType = VodPull 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VodPullInputInfo 点播拉流信息，当 InputType = VodPull 时必填。
+                     * @param _vodPullInputInfo 点播拉流信息，当 InputType = VodPull 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVodPullInputInfo(const VodPullInputInfo& _vodPullInputInfo);
 
                     /**
                      * 判断参数 VodPullInputInfo 是否已赋值
                      * @return VodPullInputInfo 是否已赋值
+                     * 
                      */
                     bool VodPullInputInfoHasBeenSet() const;
 
@@ -106,20 +112,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePullInputInfo 直播拉流信息，当 InputType = LivePull  时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LivePullInputInfo GetLivePullInputInfo() const;
 
                     /**
                      * 设置直播拉流信息，当 InputType = LivePull  时必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LivePullInputInfo 直播拉流信息，当 InputType = LivePull  时必填。
+                     * @param _livePullInputInfo 直播拉流信息，当 InputType = LivePull  时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLivePullInputInfo(const LivePullInputInfo& _livePullInputInfo);
 
                     /**
                      * 判断参数 LivePullInputInfo 是否已赋值
                      * @return LivePullInputInfo 是否已赋值
+                     * 
                      */
                     bool LivePullInputInfoHasBeenSet() const;
 
@@ -128,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RtmpPushInputInfo 直播推流信息，当 InputType = RtmpPush 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RtmpPushInputInfo GetRtmpPushInputInfo() const;
 
                     /**
                      * 设置直播推流信息，当 InputType = RtmpPush 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RtmpPushInputInfo 直播推流信息，当 InputType = RtmpPush 时必填。
+                     * @param _rtmpPushInputInfo 直播推流信息，当 InputType = RtmpPush 时必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRtmpPushInputInfo(const RtmpPushInputInfo& _rtmpPushInputInfo);
 
                     /**
                      * 判断参数 RtmpPushInputInfo 是否已赋值
                      * @return RtmpPushInputInfo 是否已赋值
+                     * 
                      */
                     bool RtmpPushInputInfoHasBeenSet() const;
 

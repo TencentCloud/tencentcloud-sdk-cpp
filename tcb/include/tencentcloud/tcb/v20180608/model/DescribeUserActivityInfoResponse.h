@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取自定义标记，1元钱裂变需求中即代指`团id`
                      * @return Tag 自定义标记，1元钱裂变需求中即代指`团id`
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取自定义备注，1元钱裂变需求中返回`团列表`，uin列表通过","拼接
                      * @return Notes 自定义备注，1元钱裂变需求中返回`团列表`，uin列表通过","拼接
+                     * 
                      */
                     std::string GetNotes() const;
 
                     /**
                      * 判断参数 Notes 是否已赋值
                      * @return Notes 是否已赋值
+                     * 
                      */
                     bool NotesHasBeenSet() const;
 
                     /**
                      * 获取活动剩余时间，单位为s.1元钱裂变需求中即为 time(活动过期时间)-Now()), 过期后为0，即返回必为自然数
                      * @return ActivityTimeLeft 活动剩余时间，单位为s.1元钱裂变需求中即为 time(活动过期时间)-Now()), 过期后为0，即返回必为自然数
+                     * 
                      */
                     int64_t GetActivityTimeLeft() const;
 
                     /**
                      * 判断参数 ActivityTimeLeft 是否已赋值
                      * @return ActivityTimeLeft 是否已赋值
+                     * 
                      */
                     bool ActivityTimeLeftHasBeenSet() const;
 
                     /**
                      * 获取拼团剩余时间，单位为s.1元钱裂变需求中即为time(成团时间)+24H-Now()，过期后为0，即返回必为自然数
                      * @return GroupTimeLeft 拼团剩余时间，单位为s.1元钱裂变需求中即为time(成团时间)+24H-Now()，过期后为0，即返回必为自然数
+                     * 
                      */
                     int64_t GetGroupTimeLeft() const;
 
                     /**
                      * 判断参数 GroupTimeLeft 是否已赋值
                      * @return GroupTimeLeft 是否已赋值
+                     * 
                      */
                     bool GroupTimeLeftHasBeenSet() const;
 
@@ -96,12 +104,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickNameList 昵称列表,通过","拼接， 1元钱裂变活动中与Notes中uin一一对应
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNickNameList() const;
 
                     /**
                      * 判断参数 NickNameList 是否已赋值
                      * @return NickNameList 是否已赋值
+                     * 
                      */
                     bool NickNameListHasBeenSet() const;
 

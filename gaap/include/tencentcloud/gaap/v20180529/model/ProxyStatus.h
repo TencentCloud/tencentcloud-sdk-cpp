@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取通道实例ID。
                      * @return InstanceId 通道实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置通道实例ID。
-                     * @param InstanceId 通道实例ID。
+                     * @param _instanceId 通道实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -89,6 +92,7 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 MOVING表示迁移中。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -105,7 +109,7 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 MOVING表示迁移中。
-                     * @param Status 通道状态。
+                     * @param _status 通道状态。
 其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -117,12 +121,14 @@ ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
 MOVING表示迁移中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

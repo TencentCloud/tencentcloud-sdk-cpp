@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关ID。
                      * @return NatGatewayId NAT网关ID。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关ID。
-                     * @param NatGatewayId NAT网关ID。
+                     * @param _natGatewayId NAT网关ID。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关并发连接上限，形如：1000000、3000000、10000000。
                      * @return MaxConcurrentConnection NAT网关并发连接上限，形如：1000000、3000000、10000000。
+                     * 
                      */
                     uint64_t GetMaxConcurrentConnection() const;
 
                     /**
                      * 设置NAT网关并发连接上限，形如：1000000、3000000、10000000。
-                     * @param MaxConcurrentConnection NAT网关并发连接上限，形如：1000000、3000000、10000000。
+                     * @param _maxConcurrentConnection NAT网关并发连接上限，形如：1000000、3000000、10000000。
+                     * 
                      */
                     void SetMaxConcurrentConnection(const uint64_t& _maxConcurrentConnection);
 
                     /**
                      * 判断参数 MaxConcurrentConnection 是否已赋值
                      * @return MaxConcurrentConnection 是否已赋值
+                     * 
                      */
                     bool MaxConcurrentConnectionHasBeenSet() const;
 

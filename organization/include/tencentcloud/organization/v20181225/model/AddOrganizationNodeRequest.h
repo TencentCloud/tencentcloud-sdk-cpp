@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取父组织单元ID
                      * @return ParentNodeId 父组织单元ID
+                     * 
                      */
                     uint64_t GetParentNodeId() const;
 
                     /**
                      * 设置父组织单元ID
-                     * @param ParentNodeId 父组织单元ID
+                     * @param _parentNodeId 父组织单元ID
+                     * 
                      */
                     void SetParentNodeId(const uint64_t& _parentNodeId);
 
                     /**
                      * 判断参数 ParentNodeId 是否已赋值
                      * @return ParentNodeId 是否已赋值
+                     * 
                      */
                     bool ParentNodeIdHasBeenSet() const;
 
                     /**
                      * 获取组织单元名字
                      * @return Name 组织单元名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组织单元名字
-                     * @param Name 组织单元名字
+                     * @param _name 组织单元名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

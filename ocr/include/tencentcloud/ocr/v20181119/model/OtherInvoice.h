@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取发票名称
                      * @return Title 发票名称
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置发票名称
-                     * @param Title 发票名称
+                     * @param _title 发票名称
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Total 金额
+                     * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 设置金额
-                     * @param Total 金额
+                     * @param _total 金额
+                     * 
                      */
                     void SetTotal(const std::string& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取列表
                      * @return OtherInvoiceListItems 列表
+                     * 
                      */
                     std::vector<OtherInvoiceItem> GetOtherInvoiceListItems() const;
 
                     /**
                      * 设置列表
-                     * @param OtherInvoiceListItems 列表
+                     * @param _otherInvoiceListItems 列表
+                     * 
                      */
                     void SetOtherInvoiceListItems(const std::vector<OtherInvoiceItem>& _otherInvoiceListItems);
 
                     /**
                      * 判断参数 OtherInvoiceListItems 是否已赋值
                      * @return OtherInvoiceListItems 是否已赋值
+                     * 
                      */
                     bool OtherInvoiceListItemsHasBeenSet() const;
 
                     /**
                      * 获取表格
                      * @return OtherInvoiceTableItems 表格
+                     * 
                      */
                     std::vector<OtherInvoiceList> GetOtherInvoiceTableItems() const;
 
                     /**
                      * 设置表格
-                     * @param OtherInvoiceTableItems 表格
+                     * @param _otherInvoiceTableItems 表格
+                     * 
                      */
                     void SetOtherInvoiceTableItems(const std::vector<OtherInvoiceList>& _otherInvoiceTableItems);
 
                     /**
                      * 判断参数 OtherInvoiceTableItems 是否已赋值
                      * @return OtherInvoiceTableItems 是否已赋值
+                     * 
                      */
                     bool OtherInvoiceTableItemsHasBeenSet() const;
 

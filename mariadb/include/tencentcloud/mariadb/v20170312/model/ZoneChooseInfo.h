@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取主可用区
                      * @return MasterZone 主可用区
+                     * 
                      */
                     ZonesInfo GetMasterZone() const;
 
                     /**
                      * 设置主可用区
-                     * @param MasterZone 主可用区
+                     * @param _masterZone 主可用区
+                     * 
                      */
                     void SetMasterZone(const ZonesInfo& _masterZone);
 
                     /**
                      * 判断参数 MasterZone 是否已赋值
                      * @return MasterZone 是否已赋值
+                     * 
                      */
                     bool MasterZoneHasBeenSet() const;
 
                     /**
                      * 获取可选的从可用区
                      * @return SlaveZones 可选的从可用区
+                     * 
                      */
                     std::vector<ZonesInfo> GetSlaveZones() const;
 
                     /**
                      * 设置可选的从可用区
-                     * @param SlaveZones 可选的从可用区
+                     * @param _slaveZones 可选的从可用区
+                     * 
                      */
                     void SetSlaveZones(const std::vector<ZonesInfo>& _slaveZones);
 
                     /**
                      * 判断参数 SlaveZones 是否已赋值
                      * @return SlaveZones 是否已赋值
+                     * 
                      */
                     bool SlaveZonesHasBeenSet() const;
 

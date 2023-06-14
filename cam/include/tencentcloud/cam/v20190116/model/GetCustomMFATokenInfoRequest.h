@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自定义多因子验证Token
                      * @return MFAToken 自定义多因子验证Token
+                     * 
                      */
                     std::string GetMFAToken() const;
 
                     /**
                      * 设置自定义多因子验证Token
-                     * @param MFAToken 自定义多因子验证Token
+                     * @param _mFAToken 自定义多因子验证Token
+                     * 
                      */
                     void SetMFAToken(const std::string& _mFAToken);
 
                     /**
                      * 判断参数 MFAToken 是否已赋值
                      * @return MFAToken 是否已赋值
+                     * 
                      */
                     bool MFATokenHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取API文档基本信息
                      * @return Result API文档基本信息
+                     * 
                      */
                     APIDoc GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

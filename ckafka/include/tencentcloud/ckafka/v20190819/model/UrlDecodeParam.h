@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CharsetName 编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCharsetName() const;
 
                     /**
                      * 设置编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CharsetName 编码
+                     * @param _charsetName 编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCharsetName(const std::string& _charsetName);
 
                     /**
                      * 判断参数 CharsetName 是否已赋值
                      * @return CharsetName 是否已赋值
+                     * 
                      */
                     bool CharsetNameHasBeenSet() const;
 

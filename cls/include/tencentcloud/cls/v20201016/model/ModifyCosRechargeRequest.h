@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取COS导入配置ID
                      * @return Id COS导入配置ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置COS导入配置ID
-                     * @param Id COS导入配置ID
+                     * @param _id COS导入配置ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取日志主题Id
                      * @return TopicId 日志主题Id
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题Id
-                     * @param TopicId 日志主题Id
+                     * @param _topicId 日志主题Id
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取COS导入任务名称
                      * @return Name COS导入任务名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置COS导入任务名称
-                     * @param Name COS导入任务名称
+                     * @param _name COS导入任务名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否启用:   0： 未启用  ， 1：启用
                      * @return Enable 是否启用:   0： 未启用  ， 1：启用
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置是否启用:   0： 未启用  ， 1：启用
-                     * @param Enable 是否启用:   0： 未启用  ， 1：启用
+                     * @param _enable 是否启用:   0： 未启用  ， 1：启用
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

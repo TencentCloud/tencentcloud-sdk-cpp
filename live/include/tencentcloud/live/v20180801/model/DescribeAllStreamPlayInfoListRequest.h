@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:00。（只精确至分钟，秒数填00）。
                      * @return QueryTime 查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:00。（只精确至分钟，秒数填00）。
+                     * 
                      */
                     std::string GetQueryTime() const;
 
                     /**
                      * 设置查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:00。（只精确至分钟，秒数填00）。
-                     * @param QueryTime 查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:00。（只精确至分钟，秒数填00）。
+                     * @param _queryTime 查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:00。（只精确至分钟，秒数填00）。
+                     * 
                      */
                     void SetQueryTime(const std::string& _queryTime);
 
                     /**
                      * 判断参数 QueryTime 是否已赋值
                      * @return QueryTime 是否已赋值
+                     * 
                      */
                     bool QueryTimeHasBeenSet() const;
 
                     /**
                      * 获取播放域名列表，若不填，表示总体数据。
                      * @return PlayDomains 播放域名列表，若不填，表示总体数据。
+                     * 
                      */
                     std::vector<std::string> GetPlayDomains() const;
 
                     /**
                      * 设置播放域名列表，若不填，表示总体数据。
-                     * @param PlayDomains 播放域名列表，若不填，表示总体数据。
+                     * @param _playDomains 播放域名列表，若不填，表示总体数据。
+                     * 
                      */
                     void SetPlayDomains(const std::vector<std::string>& _playDomains);
 
                     /**
                      * 判断参数 PlayDomains 是否已赋值
                      * @return PlayDomains 是否已赋值
+                     * 
                      */
                     bool PlayDomainsHasBeenSet() const;
 

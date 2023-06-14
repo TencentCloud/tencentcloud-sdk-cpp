@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取表的列名
                      * @return ColumnName 表的列名
+                     * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置表的列名
-                     * @param ColumnName 表的列名
+                     * @param _columnName 表的列名
+                     * 
                      */
                     void SetColumnName(const std::string& _columnName);
 
                     /**
                      * 判断参数 ColumnName 是否已赋值
                      * @return ColumnName 是否已赋值
+                     * 
                      */
                     bool ColumnNameHasBeenSet() const;
 
                     /**
                      * 获取该列对应的jsonKey名
                      * @return JsonKey 该列对应的jsonKey名
+                     * 
                      */
                     std::string GetJsonKey() const;
 
                     /**
                      * 设置该列对应的jsonKey名
-                     * @param JsonKey 该列对应的jsonKey名
+                     * @param _jsonKey 该列对应的jsonKey名
+                     * 
                      */
                     void SetJsonKey(const std::string& _jsonKey);
 
                     /**
                      * 判断参数 JsonKey 是否已赋值
                      * @return JsonKey 是否已赋值
+                     * 
                      */
                     bool JsonKeyHasBeenSet() const;
 
                     /**
                      * 获取表列项的类型
                      * @return Type 表列项的类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置表列项的类型
-                     * @param Type 表列项的类型
+                     * @param _type 表列项的类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取列项是否允许为空
                      * @return AllowNull 列项是否允许为空
+                     * 
                      */
                     bool GetAllowNull() const;
 
                     /**
                      * 设置列项是否允许为空
-                     * @param AllowNull 列项是否允许为空
+                     * @param _allowNull 列项是否允许为空
+                     * 
                      */
                     void SetAllowNull(const bool& _allowNull);
 
                     /**
                      * 判断参数 AllowNull 是否已赋值
                      * @return AllowNull 是否已赋值
+                     * 
                      */
                     bool AllowNullHasBeenSet() const;
 

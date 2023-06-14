@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取人脸信息
                      * @return FaceInfoSet 人脸信息
+                     * 
                      */
                     std::vector<FaceInfo> GetFaceInfoSet() const;
 
                     /**
                      * 判断参数 FaceInfoSet 是否已赋值
                      * @return FaceInfoSet 是否已赋值
+                     * 
                      */
                     bool FaceInfoSetHasBeenSet() const;
 
                     /**
                      * 获取人员所属人员库标识符
                      * @return LibraryId 人员所属人员库标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员唯一标识符
                      * @return PersonId 人员唯一标识符
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取人员名称
                      * @return PersonName 人员名称
+                     * 
                      */
                     std::string GetPersonName() const;
 
                     /**
                      * 判断参数 PersonName 是否已赋值
                      * @return PersonName 是否已赋值
+                     * 
                      */
                     bool PersonNameHasBeenSet() const;
 

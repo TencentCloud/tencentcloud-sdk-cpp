@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取策略视图名称
                      * @return PolicyViewName 策略视图名称
+                     * 
                      */
                     std::string GetPolicyViewName() const;
 
                     /**
                      * 设置策略视图名称
-                     * @param PolicyViewName 策略视图名称
+                     * @param _policyViewName 策略视图名称
+                     * 
                      */
                     void SetPolicyViewName(const std::string& _policyViewName);
 
                     /**
                      * 判断参数 PolicyViewName 是否已赋值
                      * @return PolicyViewName 是否已赋值
+                     * 
                      */
                     bool PolicyViewNameHasBeenSet() const;
 
@@ -72,38 +75,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventMetrics 事件告警条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribePolicyConditionListEventMetric> GetEventMetrics() const;
 
                     /**
                      * 设置事件告警条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventMetrics 事件告警条件
+                     * @param _eventMetrics 事件告警条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventMetrics(const std::vector<DescribePolicyConditionListEventMetric>& _eventMetrics);
 
                     /**
                      * 判断参数 EventMetrics 是否已赋值
                      * @return EventMetrics 是否已赋值
+                     * 
                      */
                     bool EventMetricsHasBeenSet() const;
 
                     /**
                      * 获取是否支持多地域
                      * @return IsSupportMultiRegion 是否支持多地域
+                     * 
                      */
                     bool GetIsSupportMultiRegion() const;
 
                     /**
                      * 设置是否支持多地域
-                     * @param IsSupportMultiRegion 是否支持多地域
+                     * @param _isSupportMultiRegion 是否支持多地域
+                     * 
                      */
                     void SetIsSupportMultiRegion(const bool& _isSupportMultiRegion);
 
                     /**
                      * 判断参数 IsSupportMultiRegion 是否已赋值
                      * @return IsSupportMultiRegion 是否已赋值
+                     * 
                      */
                     bool IsSupportMultiRegionHasBeenSet() const;
 
@@ -112,74 +121,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metrics 指标告警条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribePolicyConditionListMetric> GetMetrics() const;
 
                     /**
                      * 设置指标告警条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metrics 指标告警条件
+                     * @param _metrics 指标告警条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetrics(const std::vector<DescribePolicyConditionListMetric>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取策略类型名称
                      * @return Name 策略类型名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略类型名称
-                     * @param Name 策略类型名称
+                     * @param _name 策略类型名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取排序id
                      * @return SortId 排序id
+                     * 
                      */
                     int64_t GetSortId() const;
 
                     /**
                      * 设置排序id
-                     * @param SortId 排序id
+                     * @param _sortId 排序id
+                     * 
                      */
                     void SetSortId(const int64_t& _sortId);
 
                     /**
                      * 判断参数 SortId 是否已赋值
                      * @return SortId 是否已赋值
+                     * 
                      */
                     bool SortIdHasBeenSet() const;
 
                     /**
                      * 获取是否支持默认策略
                      * @return SupportDefault 是否支持默认策略
+                     * 
                      */
                     bool GetSupportDefault() const;
 
                     /**
                      * 设置是否支持默认策略
-                     * @param SupportDefault 是否支持默认策略
+                     * @param _supportDefault 是否支持默认策略
+                     * 
                      */
                     void SetSupportDefault(const bool& _supportDefault);
 
                     /**
                      * 判断参数 SupportDefault 是否已赋值
                      * @return SupportDefault 是否已赋值
+                     * 
                      */
                     bool SupportDefaultHasBeenSet() const;
 
@@ -188,20 +209,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportRegions 支持该策略类型的地域列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSupportRegions() const;
 
                     /**
                      * 设置支持该策略类型的地域列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportRegions 支持该策略类型的地域列表
+                     * @param _supportRegions 支持该策略类型的地域列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportRegions(const std::vector<std::string>& _supportRegions);
 
                     /**
                      * 判断参数 SupportRegions 是否已赋值
                      * @return SupportRegions 是否已赋值
+                     * 
                      */
                     bool SupportRegionsHasBeenSet() const;
 
@@ -210,20 +234,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeprecatingInfo 弃用信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListResponseDeprecatingInfo GetDeprecatingInfo() const;
 
                     /**
                      * 设置弃用信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeprecatingInfo 弃用信息
+                     * @param _deprecatingInfo 弃用信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeprecatingInfo(const DescribePolicyConditionListResponseDeprecatingInfo& _deprecatingInfo);
 
                     /**
                      * 判断参数 DeprecatingInfo 是否已赋值
                      * @return DeprecatingInfo 是否已赋值
+                     * 
                      */
                     bool DeprecatingInfoHasBeenSet() const;
 

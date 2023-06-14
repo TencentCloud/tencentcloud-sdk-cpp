@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取是否支持数据库审计功能。
                      * @return IsSupportAudit 是否支持数据库审计功能。
+                     * 
                      */
                     bool GetIsSupportAudit() const;
 
                     /**
                      * 判断参数 IsSupportAudit 是否已赋值
                      * @return IsSupportAudit 是否已赋值
+                     * 
                      */
                     bool IsSupportAuditHasBeenSet() const;
 
                     /**
                      * 获取开启审计是否需要升级内核版本。
                      * @return AuditNeedUpgrade 开启审计是否需要升级内核版本。
+                     * 
                      */
                     bool GetAuditNeedUpgrade() const;
 
                     /**
                      * 判断参数 AuditNeedUpgrade 是否已赋值
                      * @return AuditNeedUpgrade 是否已赋值
+                     * 
                      */
                     bool AuditNeedUpgradeHasBeenSet() const;
 
                     /**
                      * 获取是否支持数据库加密功能。
                      * @return IsSupportEncryption 是否支持数据库加密功能。
+                     * 
                      */
                     bool GetIsSupportEncryption() const;
 
                     /**
                      * 判断参数 IsSupportEncryption 是否已赋值
                      * @return IsSupportEncryption 是否已赋值
+                     * 
                      */
                     bool IsSupportEncryptionHasBeenSet() const;
 
                     /**
                      * 获取开启加密是否需要升级内核版本。
                      * @return EncryptionNeedUpgrade 开启加密是否需要升级内核版本。
+                     * 
                      */
                     bool GetEncryptionNeedUpgrade() const;
 
                     /**
                      * 判断参数 EncryptionNeedUpgrade 是否已赋值
                      * @return EncryptionNeedUpgrade 是否已赋值
+                     * 
                      */
                     bool EncryptionNeedUpgradeHasBeenSet() const;
 
                     /**
                      * 获取是否为异地只读实例。
                      * @return IsRemoteRo 是否为异地只读实例。
+                     * 
                      */
                     bool GetIsRemoteRo() const;
 
                     /**
                      * 判断参数 IsRemoteRo 是否已赋值
                      * @return IsRemoteRo 是否已赋值
+                     * 
                      */
                     bool IsRemoteRoHasBeenSet() const;
 
                     /**
                      * 获取主实例所在地域。
                      * @return MasterRegion 主实例所在地域。
+                     * 
                      */
                     std::string GetMasterRegion() const;
 
                     /**
                      * 判断参数 MasterRegion 是否已赋值
                      * @return MasterRegion 是否已赋值
+                     * 
                      */
                     bool MasterRegionHasBeenSet() const;
 
                     /**
                      * 获取是否支持小版本升级。
                      * @return IsSupportUpdateSubVersion 是否支持小版本升级。
+                     * 
                      */
                     bool GetIsSupportUpdateSubVersion() const;
 
                     /**
                      * 判断参数 IsSupportUpdateSubVersion 是否已赋值
                      * @return IsSupportUpdateSubVersion 是否已赋值
+                     * 
                      */
                     bool IsSupportUpdateSubVersionHasBeenSet() const;
 
                     /**
                      * 获取当前内核版本。
                      * @return CurrentSubVersion 当前内核版本。
+                     * 
                      */
                     std::string GetCurrentSubVersion() const;
 
                     /**
                      * 判断参数 CurrentSubVersion 是否已赋值
                      * @return CurrentSubVersion 是否已赋值
+                     * 
                      */
                     bool CurrentSubVersionHasBeenSet() const;
 
                     /**
                      * 获取可供升级的内核版本。
                      * @return TargetSubVersion 可供升级的内核版本。
+                     * 
                      */
                     std::string GetTargetSubVersion() const;
 
                     /**
                      * 判断参数 TargetSubVersion 是否已赋值
                      * @return TargetSubVersion 是否已赋值
+                     * 
                      */
                     bool TargetSubVersionHasBeenSet() const;
 

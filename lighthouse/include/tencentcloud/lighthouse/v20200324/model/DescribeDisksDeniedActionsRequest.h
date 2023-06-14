@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘ID列表。
                      * @return DiskIds 云硬盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置云硬盘ID列表。
-                     * @param DiskIds 云硬盘ID列表。
+                     * @param _diskIds 云硬盘ID列表。
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取服务唯一ID。
                      * @return ServiceId 服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一ID。
-                     * @param ServiceId 服务唯一ID。
+                     * @param _serviceId 服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取过滤条件。支持StrategyName。
                      * @return Filters 过滤条件。支持StrategyName。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。支持StrategyName。
-                     * @param Filters 过滤条件。支持StrategyName。
+                     * @param _filters 过滤条件。支持StrategyName。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

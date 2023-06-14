@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取单次加速唯一 Id
                      * @return SessionId 单次加速唯一 Id
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取当前加速剩余时长（单位秒）
                      * @return Duration 当前加速剩余时长（单位秒）
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

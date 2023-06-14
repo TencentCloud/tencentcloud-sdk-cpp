@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageId 程序包ID
+                     * @param _packageId 程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 程序包名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置程序包名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageName 程序包名
+                     * @param _packageName 程序包名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageVersion 程序包版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置程序包版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageVersion 程序包版本
+                     * @param _packageVersion 程序包版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoName 镜像名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置镜像名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepoName 镜像名
+                     * @param _repoName 镜像名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName 镜像版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置镜像版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagName 镜像版本
+                     * @param _tagName 镜像版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicConfigReleaseList 已发布的全局配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConfigRelease> GetPublicConfigReleaseList() const;
 
                     /**
                      * 设置已发布的全局配置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicConfigReleaseList 已发布的全局配置列表
+                     * @param _publicConfigReleaseList 已发布的全局配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicConfigReleaseList(const std::vector<ConfigRelease>& _publicConfigReleaseList);
 
                     /**
                      * 判断参数 PublicConfigReleaseList 是否已赋值
                      * @return PublicConfigReleaseList 是否已赋值
+                     * 
                      */
                     bool PublicConfigReleaseListHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigReleaseList 已发布的应用配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConfigRelease> GetConfigReleaseList() const;
 
                     /**
                      * 设置已发布的应用配置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigReleaseList 已发布的应用配置列表
+                     * @param _configReleaseList 已发布的应用配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigReleaseList(const std::vector<ConfigRelease>& _configReleaseList);
 
                     /**
                      * 判断参数 ConfigReleaseList 是否已赋值
                      * @return ConfigReleaseList 是否已赋值
+                     * 
                      */
                     bool ConfigReleaseListHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileConfigReleaseList 已发布的文件配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FileConfigRelease> GetFileConfigReleaseList() const;
 
                     /**
                      * 设置已发布的文件配置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileConfigReleaseList 已发布的文件配置列表
+                     * @param _fileConfigReleaseList 已发布的文件配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileConfigReleaseList(const std::vector<FileConfigRelease>& _fileConfigReleaseList);
 
                     /**
                      * 判断参数 FileConfigReleaseList 是否已赋值
                      * @return FileConfigReleaseList 是否已赋值
+                     * 
                      */
                     bool FileConfigReleaseListHasBeenSet() const;
 

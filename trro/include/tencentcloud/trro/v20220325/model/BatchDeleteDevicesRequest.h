@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取目标删除设备所属项目ID
                      * @return ProjectId 目标删除设备所属项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置目标删除设备所属项目ID
-                     * @param ProjectId 目标删除设备所属项目ID
+                     * @param _projectId 目标删除设备所属项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取目标删除设备的设备ID数组
                      * @return DeviceIds 目标删除设备的设备ID数组
+                     * 
                      */
                     std::vector<std::string> GetDeviceIds() const;
 
                     /**
                      * 设置目标删除设备的设备ID数组
-                     * @param DeviceIds 目标删除设备的设备ID数组
+                     * @param _deviceIds 目标删除设备的设备ID数组
+                     * 
                      */
                     void SetDeviceIds(const std::vector<std::string>& _deviceIds);
 
                     /**
                      * 判断参数 DeviceIds 是否已赋值
                      * @return DeviceIds 是否已赋值
+                     * 
                      */
                     bool DeviceIdsHasBeenSet() const;
 

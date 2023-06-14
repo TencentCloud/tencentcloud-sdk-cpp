@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取数据偏移
                      * @return Offset 数据偏移
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移
-                     * @param Offset 数据偏移
+                     * @param _offset 数据偏移
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回的数据条数，最大 25
                      * @return Limit 返回的数据条数，最大 25
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回的数据条数，最大 25
-                     * @param Limit 返回的数据条数，最大 25
+                     * @param _limit 返回的数据条数，最大 25
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

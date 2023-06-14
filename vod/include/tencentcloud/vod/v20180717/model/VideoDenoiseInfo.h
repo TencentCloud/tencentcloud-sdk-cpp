@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 视频降噪控制开关，可选值：
 <li>ON：开启视频降噪；</li>
 <li>OFF：关闭视频降噪。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置视频降噪控制开关，可选值：
 <li>ON：开启视频降噪；</li>
 <li>OFF：关闭视频降噪。</li>
-                     * @param Switch 视频降噪控制开关，可选值：
+                     * @param _switch 视频降噪控制开关，可选值：
 <li>ON：开启视频降噪；</li>
 <li>OFF：关闭视频降噪。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>weak：轻视频降噪；</li>
 <li>strong：强视频降噪。</li>
 默认值：weak。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li>weak：轻视频降噪；</li>
 <li>strong：强视频降噪。</li>
 默认值：weak。
-                     * @param Type 视频降噪类型，仅当视频降噪控制开关为 ON 时有效，可选值：
+                     * @param _type 视频降噪类型，仅当视频降噪控制开关为 ON 时有效，可选值：
 <li>weak：轻视频降噪；</li>
 <li>strong：强视频降噪。</li>
 默认值：weak。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

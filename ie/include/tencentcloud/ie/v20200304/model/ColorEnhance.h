@@ -59,6 +59,7 @@ namespace TencentCloud
 3.  normal;
 4.  strong;
 注意：tra不支持自适应调整，处理速度更快；weak,normal,strong支持基于画面颜色自适应，处理速度更慢。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -69,18 +70,20 @@ namespace TencentCloud
 3.  normal;
 4.  strong;
 注意：tra不支持自适应调整，处理速度更快；weak,normal,strong支持基于画面颜色自适应，处理速度更慢。
-                     * @param Type 颜色增强类型，可选项：
+                     * @param _type 颜色增强类型，可选项：
 1.  tra；
 2.  weak；
 3.  normal;
 4.  strong;
 注意：tra不支持自适应调整，处理速度更快；weak,normal,strong支持基于画面颜色自适应，处理速度更慢。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取最多获取多少个节点的进度
                      * @return Limit 最多获取多少个节点的进度
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最多获取多少个节点的进度
-                     * @param Limit 最多获取多少个节点的进度
+                     * @param _limit 最多获取多少个节点的进度
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取从第几个节点开始获取进度
                      * @return Offset 从第几个节点开始获取进度
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置从第几个节点开始获取进度
-                     * @param Offset 从第几个节点开始获取进度
+                     * @param _offset 从第几个节点开始获取进度
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目所属机构
                      * @return ProjectOrg 项目所属机构
+                     * 
                      */
                     std::string GetProjectOrg() const;
 
                     /**
                      * 设置项目所属机构
-                     * @param ProjectOrg 项目所属机构
+                     * @param _projectOrg 项目所属机构
+                     * 
                      */
                     void SetProjectOrg(const std::string& _projectOrg);
 
                     /**
                      * 判断参数 ProjectOrg 是否已赋值
                      * @return ProjectOrg 是否已赋值
+                     * 
                      */
                     bool ProjectOrgHasBeenSet() const;
 
                     /**
                      * 获取项目预算
                      * @return ProjectBudget 项目预算
+                     * 
                      */
                     double GetProjectBudget() const;
 
                     /**
                      * 设置项目预算
-                     * @param ProjectBudget 项目预算
+                     * @param _projectBudget 项目预算
+                     * 
                      */
                     void SetProjectBudget(const double& _projectBudget);
 
                     /**
                      * 判断参数 ProjectBudget 是否已赋值
                      * @return ProjectBudget 是否已赋值
+                     * 
                      */
                     bool ProjectBudgetHasBeenSet() const;
 
                     /**
                      * 获取项目状态
                      * @return ProjectStatus 项目状态
+                     * 
                      */
                     std::string GetProjectStatus() const;
 
                     /**
                      * 设置项目状态
-                     * @param ProjectStatus 项目状态
+                     * @param _projectStatus 项目状态
+                     * 
                      */
                     void SetProjectStatus(const std::string& _projectStatus);
 
                     /**
                      * 判断参数 ProjectStatus 是否已赋值
                      * @return ProjectStatus 是否已赋值
+                     * 
                      */
                     bool ProjectStatusHasBeenSet() const;
 
                     /**
                      * 获取项目创建时间
                      * @return CreateTime 项目创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置项目创建时间
-                     * @param CreateTime 项目创建时间
+                     * @param _createTime 项目创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取项目简介
                      * @return ProjectIntroduction 项目简介
+                     * 
                      */
                     std::string GetProjectIntroduction() const;
 
                     /**
                      * 设置项目简介
-                     * @param ProjectIntroduction 项目简介
+                     * @param _projectIntroduction 项目简介
+                     * 
                      */
                     void SetProjectIntroduction(const std::string& _projectIntroduction);
 
                     /**
                      * 判断参数 ProjectIntroduction 是否已赋值
                      * @return ProjectIntroduction 是否已赋值
+                     * 
                      */
                     bool ProjectIntroductionHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectOrgId 项目所属机构Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectOrgId() const;
 
                     /**
                      * 设置项目所属机构Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectOrgId 项目所属机构Id
+                     * @param _projectOrgId 项目所属机构Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectOrgId(const std::string& _projectOrgId);
 
                     /**
                      * 判断参数 ProjectOrgId 是否已赋值
                      * @return ProjectOrgId 是否已赋值
+                     * 
                      */
                     bool ProjectOrgIdHasBeenSet() const;
 

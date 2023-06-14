@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否移动
                      * @return Move 是否移动
+                     * 
                      */
                     bool GetMove() const;
 
                     /**
                      * 设置是否移动
-                     * @param Move 是否移动
+                     * @param _move 是否移动
+                     * 
                      */
                     void SetMove(const bool& _move);
 
                     /**
                      * 判断参数 Move 是否已赋值
                      * @return Move 是否已赋值
+                     * 
                      */
                     bool MoveHasBeenSet() const;
 
                     /**
                      * 获取是否移动置信度
                      * @return MoveConfidence 是否移动置信度
+                     * 
                      */
                     double GetMoveConfidence() const;
 
                     /**
                      * 设置是否移动置信度
-                     * @param MoveConfidence 是否移动置信度
+                     * @param _moveConfidence 是否移动置信度
+                     * 
                      */
                     void SetMoveConfidence(const double& _moveConfidence);
 
                     /**
                      * 判断参数 MoveConfidence 是否已赋值
                      * @return MoveConfidence 是否已赋值
+                     * 
                      */
                     bool MoveConfidenceHasBeenSet() const;
 

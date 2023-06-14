@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取男性平均停留时间
                      * @return MaleAvrStayTime 男性平均停留时间
+                     * 
                      */
                     double GetMaleAvrStayTime() const;
 
                     /**
                      * 设置男性平均停留时间
-                     * @param MaleAvrStayTime 男性平均停留时间
+                     * @param _maleAvrStayTime 男性平均停留时间
+                     * 
                      */
                     void SetMaleAvrStayTime(const double& _maleAvrStayTime);
 
                     /**
                      * 判断参数 MaleAvrStayTime 是否已赋值
                      * @return MaleAvrStayTime 是否已赋值
+                     * 
                      */
                     bool MaleAvrStayTimeHasBeenSet() const;
 
                     /**
                      * 获取女性平均停留时间
                      * @return FemaleAvrStayTime 女性平均停留时间
+                     * 
                      */
                     double GetFemaleAvrStayTime() const;
 
                     /**
                      * 设置女性平均停留时间
-                     * @param FemaleAvrStayTime 女性平均停留时间
+                     * @param _femaleAvrStayTime 女性平均停留时间
+                     * 
                      */
                     void SetFemaleAvrStayTime(const double& _femaleAvrStayTime);
 
                     /**
                      * 判断参数 FemaleAvrStayTime 是否已赋值
                      * @return FemaleAvrStayTime 是否已赋值
+                     * 
                      */
                     bool FemaleAvrStayTimeHasBeenSet() const;
 

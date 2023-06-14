@@ -52,12 +52,14 @@ namespace TencentCloud
                      * @return RegionDetected 检测到的图片中的商品位置和品类预测。 
 当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 
 最多可以输出__3组__检测结果。
+                     * 
                      */
                     std::vector<RegionDetected> GetRegionDetected() const;
 
                     /**
                      * 判断参数 RegionDetected 是否已赋值
                      * @return RegionDetected 是否已赋值
+                     * 
                      */
                     bool RegionDetectedHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
 当图像中检测到多个物品时，会对显著性最高的进行识别。
                      * @return ProductInfo 图像识别出的商品的详细信息。 
 当图像中检测到多个物品时，会对显著性最高的进行识别。
+                     * 
                      */
                     ProductInfo GetProductInfo() const;
 
                     /**
                      * 判断参数 ProductInfo 是否已赋值
                      * @return ProductInfo 是否已赋值
+                     * 
                      */
                     bool ProductInfoHasBeenSet() const;
 
@@ -80,12 +84,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductInfoList 相似商品信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProductInfo> GetProductInfoList() const;
 
                     /**
                      * 判断参数 ProductInfoList 是否已赋值
                      * @return ProductInfoList 是否已赋值
+                     * 
                      */
                     bool ProductInfoListHasBeenSet() const;
 

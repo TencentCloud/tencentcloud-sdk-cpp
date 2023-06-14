@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取本端VPC唯一ID
                      * @return VpcId 本端VPC唯一ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置本端VPC唯一ID
-                     * @param VpcId 本端VPC唯一ID
+                     * @param _vpcId 本端VPC唯一ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取对端VPC唯一ID
                      * @return PeerVpcId 对端VPC唯一ID
+                     * 
                      */
                     std::string GetPeerVpcId() const;
 
                     /**
                      * 设置对端VPC唯一ID
-                     * @param PeerVpcId 对端VPC唯一ID
+                     * @param _peerVpcId 对端VPC唯一ID
+                     * 
                      */
                     void SetPeerVpcId(const std::string& _peerVpcId);
 
                     /**
                      * 判断参数 PeerVpcId 是否已赋值
                      * @return PeerVpcId 是否已赋值
+                     * 
                      */
                     bool PeerVpcIdHasBeenSet() const;
 
                     /**
                      * 获取本端APPID
                      * @return AppId 本端APPID
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置本端APPID
-                     * @param AppId 本端APPID
+                     * @param _appId 本端APPID
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取对端APPID
                      * @return PeerAppId 对端APPID
+                     * 
                      */
                     std::string GetPeerAppId() const;
 
                     /**
                      * 设置对端APPID
-                     * @param PeerAppId 对端APPID
+                     * @param _peerAppId 对端APPID
+                     * 
                      */
                     void SetPeerAppId(const std::string& _peerAppId);
 
                     /**
                      * 判断参数 PeerAppId 是否已赋值
                      * @return PeerAppId 是否已赋值
+                     * 
                      */
                     bool PeerAppIdHasBeenSet() const;
 
                     /**
                      * 获取对等连接唯一ID
                      * @return VpcPeerConnectionId 对等连接唯一ID
+                     * 
                      */
                     std::string GetVpcPeerConnectionId() const;
 
                     /**
                      * 设置对等连接唯一ID
-                     * @param VpcPeerConnectionId 对等连接唯一ID
+                     * @param _vpcPeerConnectionId 对等连接唯一ID
+                     * 
                      */
                     void SetVpcPeerConnectionId(const std::string& _vpcPeerConnectionId);
 
                     /**
                      * 判断参数 VpcPeerConnectionId 是否已赋值
                      * @return VpcPeerConnectionId 是否已赋值
+                     * 
                      */
                     bool VpcPeerConnectionIdHasBeenSet() const;
 
                     /**
                      * 获取对等连接名称
                      * @return VpcPeerConnectionName 对等连接名称
+                     * 
                      */
                     std::string GetVpcPeerConnectionName() const;
 
                     /**
                      * 设置对等连接名称
-                     * @param VpcPeerConnectionName 对等连接名称
+                     * @param _vpcPeerConnectionName 对等连接名称
+                     * 
                      */
                     void SetVpcPeerConnectionName(const std::string& _vpcPeerConnectionName);
 
                     /**
                      * 判断参数 VpcPeerConnectionName 是否已赋值
                      * @return VpcPeerConnectionName 是否已赋值
+                     * 
                      */
                     bool VpcPeerConnectionNameHasBeenSet() const;
 
                     /**
                      * 获取对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
                      * @return State 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
-                     * @param State 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
+                     * @param _state 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcZone 本端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcZone() const;
 
                     /**
                      * 设置本端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcZone 本端VPC所属可用区
+                     * @param _vpcZone 本端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcZone(const std::string& _vpcZone);
 
                     /**
                      * 判断参数 VpcZone 是否已赋值
                      * @return VpcZone 是否已赋值
+                     * 
                      */
                     bool VpcZoneHasBeenSet() const;
 
@@ -199,128 +223,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerVpcZone 对端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPeerVpcZone() const;
 
                     /**
                      * 设置对端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeerVpcZone 对端VPC所属可用区
+                     * @param _peerVpcZone 对端VPC所属可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeerVpcZone(const std::string& _peerVpcZone);
 
                     /**
                      * 判断参数 PeerVpcZone 是否已赋值
                      * @return PeerVpcZone 是否已赋值
+                     * 
                      */
                     bool PeerVpcZoneHasBeenSet() const;
 
                     /**
                      * 获取本端Uin
                      * @return Uin 本端Uin
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置本端Uin
-                     * @param Uin 本端Uin
+                     * @param _uin 本端Uin
+                     * 
                      */
                     void SetUin(const uint64_t& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取对端Uin
                      * @return PeerUin 对端Uin
+                     * 
                      */
                     uint64_t GetPeerUin() const;
 
                     /**
                      * 设置对端Uin
-                     * @param PeerUin 对端Uin
+                     * @param _peerUin 对端Uin
+                     * 
                      */
                     void SetPeerUin(const uint64_t& _peerUin);
 
                     /**
                      * 判断参数 PeerUin 是否已赋值
                      * @return PeerUin 是否已赋值
+                     * 
                      */
                     bool PeerUinHasBeenSet() const;
 
                     /**
                      * 获取对等连接类型
                      * @return PeerType 对等连接类型
+                     * 
                      */
                     uint64_t GetPeerType() const;
 
                     /**
                      * 设置对等连接类型
-                     * @param PeerType 对等连接类型
+                     * @param _peerType 对等连接类型
+                     * 
                      */
                     void SetPeerType(const uint64_t& _peerType);
 
                     /**
                      * 判断参数 PeerType 是否已赋值
                      * @return PeerType 是否已赋值
+                     * 
                      */
                     bool PeerTypeHasBeenSet() const;
 
                     /**
                      * 获取对等连接带宽
                      * @return Bandwidth 对等连接带宽
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置对等连接带宽
-                     * @param Bandwidth 对等连接带宽
+                     * @param _bandwidth 对等连接带宽
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取本端VPC地域
                      * @return Region 本端VPC地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置本端VPC地域
-                     * @param Region 本端VPC地域
+                     * @param _region 本端VPC地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取对端VPC地域
                      * @return PeerRegion 对端VPC地域
+                     * 
                      */
                     std::string GetPeerRegion() const;
 
                     /**
                      * 设置对端VPC地域
-                     * @param PeerRegion 对端VPC地域
+                     * @param _peerRegion 对端VPC地域
+                     * 
                      */
                     void SetPeerRegion(const std::string& _peerRegion);
 
                     /**
                      * 判断参数 PeerRegion 是否已赋值
                      * @return PeerRegion 是否已赋值
+                     * 
                      */
                     bool PeerRegionHasBeenSet() const;
 
@@ -329,38 +374,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlag 是否允许删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDeleteFlag() const;
 
                     /**
                      * 设置是否允许删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteFlag 是否允许删除
+                     * @param _deleteFlag 是否允许删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleteFlag(const uint64_t& _deleteFlag);
 
                     /**
                      * 判断参数 DeleteFlag 是否已赋值
                      * @return DeleteFlag 是否已赋值
+                     * 
                      */
                     bool DeleteFlagHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

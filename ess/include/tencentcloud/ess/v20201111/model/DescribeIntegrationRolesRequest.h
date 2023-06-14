@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息
                      * @return Operator 操作人信息
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息
-                     * @param Operator 操作人信息
+                     * @param _operator 操作人信息
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取返回最大数量，最大为200
                      * @return Limit 返回最大数量，最大为200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回最大数量，最大为200
-                     * @param Limit 返回最大数量，最大为200
+                     * @param _limit 返回最大数量，最大为200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -108,6 +117,7 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
 Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
 Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
 Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查询集团角色
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -116,34 +126,39 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
 Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
 Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
 Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查询集团角色
-                     * @param Filters 查询的关键字段:
+                     * @param _filters 查询的关键字段:
 Key:"RoleType",Values:["1"]查询系统角色，Values:["2"]查询自定义角色
 Key:"RoleStatus",Values:["1"]查询启用角色，Values:["2"]查询禁用角色
 Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查询集团角色
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0，最大为2000
                      * @return Offset 偏移量，默认为0，最大为2000
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0，最大为2000
-                     * @param Offset 偏移量，默认为0，最大为2000
+                     * @param _offset 偏移量，默认为0，最大为2000
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

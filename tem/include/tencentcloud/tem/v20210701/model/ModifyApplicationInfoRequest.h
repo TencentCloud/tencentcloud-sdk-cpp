@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取是否开启调用链,（此参数已弃用）
                      * @return EnableTracing 是否开启调用链,（此参数已弃用）
+                     * 
                      */
                     uint64_t GetEnableTracing() const;
 
                     /**
                      * 设置是否开启调用链,（此参数已弃用）
-                     * @param EnableTracing 是否开启调用链,（此参数已弃用）
+                     * @param _enableTracing 是否开启调用链,（此参数已弃用）
+                     * 
                      */
                     void SetEnableTracing(const uint64_t& _enableTracing);
 
                     /**
                      * 判断参数 EnableTracing 是否已赋值
                      * @return EnableTracing 是否已赋值
+                     * 
                      */
                     bool EnableTracingHasBeenSet() const;
 

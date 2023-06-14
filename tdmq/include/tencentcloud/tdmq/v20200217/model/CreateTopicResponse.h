@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题名。
                      * @return TopicName 主题名。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取0或1：非分区topic，无分区；大于1：具体分区topic的分区数。（存量非分区主题返回0，增量非分区主题返回1）
                      * @return Partitions 0或1：非分区topic，无分区；大于1：具体分区topic的分区数。（存量非分区主题返回0，增量非分区主题返回1）
+                     * 
                      */
                     uint64_t GetPartitions() const;
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注，128字符以内。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
 3 ：重试队列；
 4 ：死信队列；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTopicType() const;
 
                     /**
                      * 判断参数 TopicType 是否已赋值
                      * @return TopicType 是否已赋值
+                     * 
                      */
                     bool TopicTypeHasBeenSet() const;
 

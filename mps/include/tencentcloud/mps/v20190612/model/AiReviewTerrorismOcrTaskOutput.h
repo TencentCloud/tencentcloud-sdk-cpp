@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取Ocr 文字涉敏评分，分值为0到100。
                      * @return Confidence Ocr 文字涉敏评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置Ocr 文字涉敏评分，分值为0到100。
-                     * @param Confidence Ocr 文字涉敏评分，分值为0到100。
+                     * @param _confidence Ocr 文字涉敏评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -82,34 +86,39 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion Ocr 文字涉敏结果建议，取值范围：
+                     * @param _suggestion Ocr 文字涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取Ocr 文字有涉敏嫌疑的视频片段列表。
                      * @return SegmentSet Ocr 文字有涉敏嫌疑的视频片段列表。
+                     * 
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置Ocr 文字有涉敏嫌疑的视频片段列表。
-                     * @param SegmentSet Ocr 文字有涉敏嫌疑的视频片段列表。
+                     * @param _segmentSet Ocr 文字有涉敏嫌疑的视频片段列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

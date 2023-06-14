@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取数据订阅实例的ID
                      * @return SubscribeId 数据订阅实例的ID
+                     * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
                      * 设置数据订阅实例的ID
-                     * @param SubscribeId 数据订阅实例的ID
+                     * @param _subscribeId 数据订阅实例的ID
+                     * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
 
                     /**
                      * 判断参数 SubscribeId 是否已赋值
                      * @return SubscribeId 是否已赋值
+                     * 
                      */
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅
                      * @return SubscribeObjectType 数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅
+                     * 
                      */
                     int64_t GetSubscribeObjectType() const;
 
                     /**
                      * 设置数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅
-                     * @param SubscribeObjectType 数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅
+                     * @param _subscribeObjectType 数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅
+                     * 
                      */
                     void SetSubscribeObjectType(const int64_t& _subscribeObjectType);
 
                     /**
                      * 判断参数 SubscribeObjectType 是否已赋值
                      * @return SubscribeObjectType 是否已赋值
+                     * 
                      */
                     bool SubscribeObjectTypeHasBeenSet() const;
 
                     /**
                      * 获取订阅的数据库表信息
                      * @return Objects 订阅的数据库表信息
+                     * 
                      */
                     std::vector<SubscribeObject> GetObjects() const;
 
                     /**
                      * 设置订阅的数据库表信息
-                     * @param Objects 订阅的数据库表信息
+                     * @param _objects 订阅的数据库表信息
+                     * 
                      */
                     void SetObjects(const std::vector<SubscribeObject>& _objects);
 
                     /**
                      * 判断参数 Objects 是否已赋值
                      * @return Objects 是否已赋值
+                     * 
                      */
                     bool ObjectsHasBeenSet() const;
 

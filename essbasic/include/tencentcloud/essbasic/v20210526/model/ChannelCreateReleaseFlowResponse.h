@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取解除协议流程编号
                      * @return FlowId 解除协议流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

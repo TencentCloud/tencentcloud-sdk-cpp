@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
                      * @return RestrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 
                      */
                     std::string GetRestrictionType() const;
 
                     /**
                      * 判断参数 RestrictionType 是否已赋值
                      * @return RestrictionType 是否已赋值
+                     * 
                      */
                     bool RestrictionTypeHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcRestrictionEffect vpc限制效力，ALLOW 允许；DENY 拒绝。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcRestrictionEffect() const;
 
                     /**
                      * 判断参数 VpcRestrictionEffect 是否已赋值
                      * @return VpcRestrictionEffect 是否已赋值
+                     * 
                      */
                     bool VpcRestrictionEffectHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetVpcIdSet() const;
 
                     /**
                      * 判断参数 VpcIdSet 是否已赋值
                      * @return VpcIdSet 是否已赋值
+                     * 
                      */
                     bool VpcIdSetHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpRestrictionEffect ip限制效力，ALLOW 允许；DENY 拒绝。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpRestrictionEffect() const;
 
                     /**
                      * 判断参数 IpRestrictionEffect 是否已赋值
                      * @return IpRestrictionEffect 是否已赋值
+                     * 
                      */
                     bool IpRestrictionEffectHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpSet 允许或拒绝下载备份文件的ip列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
                      * 判断参数 IpSet 是否已赋值
                      * @return IpSet 是否已赋值
+                     * 
                      */
                     bool IpSetHasBeenSet() const;
 

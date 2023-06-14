@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取申请单Id
                      * @return ApplicantId 申请单Id
+                     * 
                      */
                     uint64_t GetApplicantId() const;
 
                     /**
                      * 判断参数 ApplicantId 是否已赋值
                      * @return ApplicantId 是否已赋值
+                     * 
                      */
                     bool ApplicantIdHasBeenSet() const;
 

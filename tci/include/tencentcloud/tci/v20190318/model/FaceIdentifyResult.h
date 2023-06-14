@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取人脸标识符
                      * @return FaceId 人脸标识符
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 设置人脸标识符
-                     * @param FaceId 人脸标识符
+                     * @param _faceId 人脸标识符
+                     * 
                      */
                     void SetFaceId(const std::string& _faceId);
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取人员库标识符
                      * @return LibraryId 人员库标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 设置人员库标识符
-                     * @param LibraryId 人员库标识符
+                     * @param _libraryId 人员库标识符
+                     * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员标识符
                      * @return PersonId 人员标识符
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员标识符
-                     * @param PersonId 人员标识符
+                     * @param _personId 人员标识符
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取相似度
                      * @return Similarity 相似度
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 设置相似度
-                     * @param Similarity 相似度
+                     * @param _similarity 相似度
+                     * 
                      */
                     void SetSimilarity(const double& _similarity);
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 

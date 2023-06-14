@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取预发起的合同链接
                      * @return PrepareFlowUrl 预发起的合同链接
+                     * 
                      */
                     std::string GetPrepareFlowUrl() const;
 
                     /**
                      * 判断参数 PrepareFlowUrl 是否已赋值
                      * @return PrepareFlowUrl 是否已赋值
+                     * 
                      */
                     bool PrepareFlowUrlHasBeenSet() const;
 
                     /**
                      * 获取合同发起后预览链接
                      * @return PreviewFlowUrl 合同发起后预览链接
+                     * 
                      */
                     std::string GetPreviewFlowUrl() const;
 
                     /**
                      * 判断参数 PreviewFlowUrl 是否已赋值
                      * @return PreviewFlowUrl 是否已赋值
+                     * 
                      */
                     bool PreviewFlowUrlHasBeenSet() const;
 

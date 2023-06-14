@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取临时证书密钥ID
                      * @return TmpSecretId 临时证书密钥ID
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时证书密钥ID
-                     * @param TmpSecretId 临时证书密钥ID
+                     * @param _tmpSecretId 临时证书密钥ID
+                     * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时证书密钥Key
                      * @return TmpSecretKey 临时证书密钥Key
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时证书密钥Key
-                     * @param TmpSecretKey 临时证书密钥Key
+                     * @param _tmpSecretKey 临时证书密钥Key
+                     * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取临时证书Token
                      * @return Token 临时证书Token
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置临时证书Token
-                     * @param Token 临时证书Token
+                     * @param _token 临时证书Token
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 

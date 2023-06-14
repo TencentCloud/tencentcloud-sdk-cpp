@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPage() const;
 
                     /**
                      * 设置异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Page 异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等
+                     * @param _page 异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPage(const std::string& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errs 错误元素列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PPTErr> GetErrs() const;
 
                     /**
                      * 设置错误元素列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Errs 错误元素列表
+                     * @param _errs 错误元素列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrs(const std::vector<PPTErr>& _errs);
 
                     /**
                      * 判断参数 Errs 是否已赋值
                      * @return Errs 是否已赋值
+                     * 
                      */
                     bool ErrsHasBeenSet() const;
 

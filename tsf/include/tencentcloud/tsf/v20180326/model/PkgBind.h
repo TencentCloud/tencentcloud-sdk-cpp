@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationId 应用id
+                     * @param _applicationId 应用id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 部署组id
+                     * @param _groupId 部署组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

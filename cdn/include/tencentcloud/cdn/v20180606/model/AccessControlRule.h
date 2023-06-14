@@ -53,6 +53,7 @@ url ： 对访问url进行访问控制
                      * @return RuleType requestHeader ：对请求头部进行访问控制
 url ： 对访问url进行访问控制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -60,15 +61,17 @@ url ： 对访问url进行访问控制
                      * 设置requestHeader ：对请求头部进行访问控制
 url ： 对访问url进行访问控制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType requestHeader ：对请求头部进行访问控制
+                     * @param _ruleType requestHeader ：对请求头部进行访问控制
 url ： 对访问url进行访问控制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ url ： 对访问url进行访问控制
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleContent 封禁内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleContent() const;
 
                     /**
                      * 设置封禁内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleContent 封禁内容
+                     * @param _ruleContent 封禁内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleContent(const std::string& _ruleContent);
 
                     /**
                      * 判断参数 RuleContent 是否已赋值
                      * @return RuleContent 是否已赋值
+                     * 
                      */
                     bool RuleContentHasBeenSet() const;
 
@@ -101,6 +107,7 @@ off ：字面匹配
                      * @return Regex on ：正则匹配
 off ：字面匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegex() const;
 
@@ -108,15 +115,17 @@ off ：字面匹配
                      * 设置on ：正则匹配
 off ：字面匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Regex on ：正则匹配
+                     * @param _regex on ：正则匹配
 off ：字面匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
@@ -125,20 +134,23 @@ off ：字面匹配
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleHeader RuleType为requestHeader时必填，否则不需要填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleHeader() const;
 
                     /**
                      * 设置RuleType为requestHeader时必填，否则不需要填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleHeader RuleType为requestHeader时必填，否则不需要填
+                     * @param _ruleHeader RuleType为requestHeader时必填，否则不需要填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleHeader(const std::string& _ruleHeader);
 
                     /**
                      * 判断参数 RuleHeader 是否已赋值
                      * @return RuleHeader 是否已赋值
+                     * 
                      */
                     bool RuleHeaderHasBeenSet() const;
 

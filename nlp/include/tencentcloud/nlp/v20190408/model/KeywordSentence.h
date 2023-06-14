@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取通过关键词生成的句子。
                      * @return TargetText 通过关键词生成的句子。
+                     * 
                      */
                     std::string GetTargetText() const;
 
                     /**
                      * 设置通过关键词生成的句子。
-                     * @param TargetText 通过关键词生成的句子。
+                     * @param _targetText 通过关键词生成的句子。
+                     * 
                      */
                     void SetTargetText(const std::string& _targetText);
 
                     /**
                      * 判断参数 TargetText 是否已赋值
                      * @return TargetText 是否已赋值
+                     * 
                      */
                     bool TargetTextHasBeenSet() const;
 

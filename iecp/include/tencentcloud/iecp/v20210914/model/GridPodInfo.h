@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取Pod名称
                      * @return Name Pod名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Pod名称
-                     * @param Name Pod名称
+                     * @param _name Pod名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return NameSpace 命名空间
+                     * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置命名空间
-                     * @param NameSpace 命名空间
+                     * @param _nameSpace 命名空间
+                     * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
 
                     /**
                      * 判断参数 NameSpace 是否已赋值
                      * @return NameSpace 是否已赋值
+                     * 
                      */
                     bool NameSpaceHasBeenSet() const;
 
                     /**
                      * 获取状态(Pending｜Running｜Succeeded｜Failed｜Unknown)
                      * @return Status 状态(Pending｜Running｜Succeeded｜Failed｜Unknown)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态(Pending｜Running｜Succeeded｜Failed｜Unknown)
-                     * @param Status 状态(Pending｜Running｜Succeeded｜Failed｜Unknown)
+                     * @param _status 状态(Pending｜Running｜Succeeded｜Failed｜Unknown)
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取节点名
                      * @return NodeName 节点名
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名
-                     * @param NodeName 节点名
+                     * @param _nodeName 节点名
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取节点IP
                      * @return NodeIP 节点IP
+                     * 
                      */
                     std::string GetNodeIP() const;
 
                     /**
                      * 设置节点IP
-                     * @param NodeIP 节点IP
+                     * @param _nodeIP 节点IP
+                     * 
                      */
                     void SetNodeIP(const std::string& _nodeIP);
 
                     /**
                      * 判断参数 NodeIP 是否已赋值
                      * @return NodeIP 是否已赋值
+                     * 
                      */
                     bool NodeIPHasBeenSet() const;
 
                     /**
                      * 获取Pod的IP
                      * @return PodIP Pod的IP
+                     * 
                      */
                     std::string GetPodIP() const;
 
                     /**
                      * 设置Pod的IP
-                     * @param PodIP Pod的IP
+                     * @param _podIP Pod的IP
+                     * 
                      */
                     void SetPodIP(const std::string& _podIP);
 
                     /**
                      * 判断参数 PodIP 是否已赋值
                      * @return PodIP 是否已赋值
+                     * 
                      */
                     bool PodIPHasBeenSet() const;
 
@@ -159,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 启动时间
+                     * @param _startTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -181,38 +202,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunSec 运行时长（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunSec() const;
 
                     /**
                      * 设置运行时长（秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunSec 运行时长（秒）
+                     * @param _runSec 运行时长（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunSec(const int64_t& _runSec);
 
                     /**
                      * 判断参数 RunSec 是否已赋值
                      * @return RunSec 是否已赋值
+                     * 
                      */
                     bool RunSecHasBeenSet() const;
 
                     /**
                      * 获取重启次数
                      * @return RestartCount 重启次数
+                     * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
-                     * @param RestartCount 重启次数
+                     * @param _restartCount 重启次数
+                     * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterID 集群名称ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群名称ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterID 集群名称ID
+                     * @param _clusterID 集群名称ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 

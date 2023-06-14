@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取网格Id
                      * @return MeshId 网格Id
+                     * 
                      */
                     std::string GetMeshId() const;
 
                     /**
                      * 设置网格Id
-                     * @param MeshId 网格Id
+                     * @param _meshId 网格Id
+                     * 
                      */
                     void SetMeshId(const std::string& _meshId);
 
                     /**
                      * 判断参数 MeshId 是否已赋值
                      * @return MeshId 是否已赋值
+                     * 
                      */
                     bool MeshIdHasBeenSet() const;
 
                     /**
                      * 获取取消关联的集群Id
                      * @return ClusterId 取消关联的集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置取消关联的集群Id
-                     * @param ClusterId 取消关联的集群Id
+                     * @param _clusterId 取消关联的集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取触发规则类型, Cron/Repeat
                      * @return RuleType 触发规则类型, Cron/Repeat
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置触发规则类型, Cron/Repeat
-                     * @param RuleType 触发规则类型, Cron/Repeat
+                     * @param _ruleType 触发规则类型, Cron/Repeat
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expression Cron类型规则，cron表达式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpression() const;
 
                     /**
                      * 设置Cron类型规则，cron表达式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Expression Cron类型规则，cron表达式。
+                     * @param _expression Cron类型规则，cron表达式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpression(const std::string& _expression);
 
                     /**
                      * 判断参数 Expression 是否已赋值
                      * @return Expression 是否已赋值
+                     * 
                      */
                     bool ExpressionHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepeatInterval 时间间隔， 单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRepeatInterval() const;
 
                     /**
                      * 设置时间间隔， 单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepeatInterval 时间间隔， 单位毫秒
+                     * @param _repeatInterval 时间间隔， 单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepeatInterval(const uint64_t& _repeatInterval);
 
                     /**
                      * 判断参数 RepeatInterval 是否已赋值
                      * @return RepeatInterval 是否已赋值
+                     * 
                      */
                     bool RepeatIntervalHasBeenSet() const;
 

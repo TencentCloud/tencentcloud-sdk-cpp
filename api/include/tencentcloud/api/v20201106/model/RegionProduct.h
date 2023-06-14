@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取产品名称，如cvm
                      * @return Name 产品名称，如cvm
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置产品名称，如cvm
-                     * @param Name 产品名称，如cvm
+                     * @param _name 产品名称，如cvm
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取专用通道扩展信息
                      * @return DirectConnectTunnelExtra 专用通道扩展信息
+                     * 
                      */
                     DirectConnectTunnelExtra GetDirectConnectTunnelExtra() const;
 
                     /**
                      * 判断参数 DirectConnectTunnelExtra 是否已赋值
                      * @return DirectConnectTunnelExtra 是否已赋值
+                     * 
                      */
                     bool DirectConnectTunnelExtraHasBeenSet() const;
 

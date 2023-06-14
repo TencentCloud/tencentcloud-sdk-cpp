@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ServiceStatisticsResult> GetContent() const;
 
                     /**
                      * 设置返回结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 返回结果
+                     * @param _content 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::vector<ServiceStatisticsResult>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 条数
+                     * @param _totalCount 条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

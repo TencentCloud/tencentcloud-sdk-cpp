@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerId 监听器 ID
+                     * @param _listenerId 监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 监听器的协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器的协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 监听器的协议
+                     * @param _protocol 监听器的协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 监听器的端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听器的端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 监听器的端口
+                     * @param _port 监听器的端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Targets 监听器上绑定的后端服务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
                      * 设置监听器上绑定的后端服务列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 监听器上绑定的后端服务列表
+                     * @param _targets 监听器上绑定的后端服务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

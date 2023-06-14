@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>
                      * @return Filters <li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>
-                     * @param Filters <li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>
+                     * @param _filters <li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

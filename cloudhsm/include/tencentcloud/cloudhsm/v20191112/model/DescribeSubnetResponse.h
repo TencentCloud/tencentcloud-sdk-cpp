@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的子网数量。
                      * @return TotalCount 返回的子网数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetList 返回的子网实例列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Subnet> GetSubnetList() const;
 
                     /**
                      * 判断参数 SubnetList 是否已赋值
                      * @return SubnetList 是否已赋值
+                     * 
                      */
                     bool SubnetListHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -104,6 +113,7 @@ Value=up, down, unknown
                      * @return Filters 过滤条件，当前支持
 Name=state
 Value=up, down, unknown
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,15 +121,17 @@ Value=up, down, unknown
                      * 设置过滤条件，当前支持
 Name=state
 Value=up, down, unknown
-                     * @param Filters 过滤条件，当前支持
+                     * @param _filters 过滤条件，当前支持
 Name=state
 Value=up, down, unknown
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

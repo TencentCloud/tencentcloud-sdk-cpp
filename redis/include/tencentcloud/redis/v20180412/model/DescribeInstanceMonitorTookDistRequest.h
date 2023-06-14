@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取时间；例如："20190219"
                      * @return Date 时间；例如："20190219"
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置时间；例如："20190219"
-                     * @param Date 时间；例如："20190219"
+                     * @param _date 时间；例如："20190219"
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
                      * @return SpanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * 
                      */
                     int64_t GetSpanType() const;
 
                     /**
                      * 设置时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
-                     * @param SpanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * @param _spanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * 
                      */
                     void SetSpanType(const int64_t& _spanType);
 
                     /**
                      * 判断参数 SpanType 是否已赋值
                      * @return SpanType 是否已赋值
+                     * 
                      */
                     bool SpanTypeHasBeenSet() const;
 

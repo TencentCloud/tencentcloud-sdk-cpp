@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
                      * @return Url 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
-                     * @param Url 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
+                     * @param _url 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取音频文件大小
                      * @return FileSize 音频文件大小
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置音频文件大小
-                     * @param FileSize 音频文件大小
+                     * @param _fileSize 音频文件大小
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取音频文件类型
                      * @return FileExtension 音频文件类型
+                     * 
                      */
                     std::string GetFileExtension() const;
 
                     /**
                      * 设置音频文件类型
-                     * @param FileExtension 音频文件类型
+                     * @param _fileExtension 音频文件类型
+                     * 
                      */
                     void SetFileExtension(const std::string& _fileExtension);
 
                     /**
                      * 判断参数 FileExtension 是否已赋值
                      * @return FileExtension 是否已赋值
+                     * 
                      */
                     bool FileExtensionHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 Unit :ms
                      * @return AuditionBegin Song fragment start.试听片段开始时间，试听时长为auditionEnd-auditionBegin
 Unit :ms
+                     * 
                      */
                     uint64_t GetAuditionBegin() const;
 
                     /**
                      * 设置Song fragment start.试听片段开始时间，试听时长为auditionEnd-auditionBegin
 Unit :ms
-                     * @param AuditionBegin Song fragment start.试听片段开始时间，试听时长为auditionEnd-auditionBegin
+                     * @param _auditionBegin Song fragment start.试听片段开始时间，试听时长为auditionEnd-auditionBegin
 Unit :ms
+                     * 
                      */
                     void SetAuditionBegin(const uint64_t& _auditionBegin);
 
                     /**
                      * 判断参数 AuditionBegin 是否已赋值
                      * @return AuditionBegin 是否已赋值
+                     * 
                      */
                     bool AuditionBeginHasBeenSet() const;
 
@@ -127,20 +139,23 @@ Unit :ms
 Unit :ms
                      * @return AuditionEnd Song fragment end.试听片段结束时间, 试听时长为auditionEnd-auditionBegin
 Unit :ms
+                     * 
                      */
                     uint64_t GetAuditionEnd() const;
 
                     /**
                      * 设置Song fragment end.试听片段结束时间, 试听时长为auditionEnd-auditionBegin
 Unit :ms
-                     * @param AuditionEnd Song fragment end.试听片段结束时间, 试听时长为auditionEnd-auditionBegin
+                     * @param _auditionEnd Song fragment end.试听片段结束时间, 试听时长为auditionEnd-auditionBegin
 Unit :ms
+                     * 
                      */
                     void SetAuditionEnd(const uint64_t& _auditionEnd);
 
                     /**
                      * 判断参数 AuditionEnd 是否已赋值
                      * @return AuditionEnd 是否已赋值
+                     * 
                      */
                     bool AuditionEndHasBeenSet() const;
 
@@ -149,20 +164,23 @@ Unit :ms
 如果添加过多个域名只返回第一个添加域名的播放全路径。
                      * @return FullUrl 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
 如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     * 
                      */
                     std::string GetFullUrl() const;
 
                     /**
                      * 设置音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
 如果添加过多个域名只返回第一个添加域名的播放全路径。
-                     * @param FullUrl 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+                     * @param _fullUrl 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
 如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     * 
                      */
                     void SetFullUrl(const std::string& _fullUrl);
 
                     /**
                      * 判断参数 FullUrl 是否已赋值
                      * @return FullUrl 是否已赋值
+                     * 
                      */
                     bool FullUrlHasBeenSet() const;
 

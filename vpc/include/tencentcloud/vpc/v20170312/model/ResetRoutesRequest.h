@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param _routeTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
                      * 获取路由表名称，最大长度不能超过60个字节。
                      * @return RouteTableName 路由表名称，最大长度不能超过60个字节。
+                     * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
                      * 设置路由表名称，最大长度不能超过60个字节。
-                     * @param RouteTableName 路由表名称，最大长度不能超过60个字节。
+                     * @param _routeTableName 路由表名称，最大长度不能超过60个字节。
+                     * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
 
                     /**
                      * 判断参数 RouteTableName 是否已赋值
                      * @return RouteTableName 是否已赋值
+                     * 
                      */
                     bool RouteTableNameHasBeenSet() const;
 
                     /**
                      * 获取路由策略。
                      * @return Routes 路由策略。
+                     * 
                      */
                     std::vector<Route> GetRoutes() const;
 
                     /**
                      * 设置路由策略。
-                     * @param Routes 路由策略。
+                     * @param _routes 路由策略。
+                     * 
                      */
                     void SetRoutes(const std::vector<Route>& _routes);
 
                     /**
                      * 判断参数 Routes 是否已赋值
                      * @return Routes 是否已赋值
+                     * 
                      */
                     bool RoutesHasBeenSet() const;
 

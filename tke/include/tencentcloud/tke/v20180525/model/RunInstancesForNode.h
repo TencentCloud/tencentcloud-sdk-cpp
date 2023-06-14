@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。
                      * @return NodeRole 节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。
+                     * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
                      * 设置节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。
-                     * @param NodeRole 节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。
+                     * @param _nodeRole 节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。
+                     * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
 
                     /**
                      * 判断参数 NodeRole 是否已赋值
                      * @return NodeRole 是否已赋值
+                     * 
                      */
                     bool NodeRoleHasBeenSet() const;
 
                     /**
                      * 获取CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。
                      * @return RunInstancesPara CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。
+                     * 
                      */
                     std::vector<std::string> GetRunInstancesPara() const;
 
                     /**
                      * 设置CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。
-                     * @param RunInstancesPara CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。
+                     * @param _runInstancesPara CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。
+                     * 
                      */
                     void SetRunInstancesPara(const std::vector<std::string>& _runInstancesPara);
 
                     /**
                      * 判断参数 RunInstancesPara 是否已赋值
                      * @return RunInstancesPara 是否已赋值
+                     * 
                      */
                     bool RunInstancesParaHasBeenSet() const;
 
                     /**
                      * 获取节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
                      * @return InstanceAdvancedSettingsOverrides 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     * 
                      */
                     std::vector<InstanceAdvancedSettings> GetInstanceAdvancedSettingsOverrides() const;
 
                     /**
                      * 设置节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
-                     * @param InstanceAdvancedSettingsOverrides 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     * @param _instanceAdvancedSettingsOverrides 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     * 
                      */
                     void SetInstanceAdvancedSettingsOverrides(const std::vector<InstanceAdvancedSettings>& _instanceAdvancedSettingsOverrides);
 
                     /**
                      * 判断参数 InstanceAdvancedSettingsOverrides 是否已赋值
                      * @return InstanceAdvancedSettingsOverrides 是否已赋值
+                     * 
                      */
                     bool InstanceAdvancedSettingsOverridesHasBeenSet() const;
 

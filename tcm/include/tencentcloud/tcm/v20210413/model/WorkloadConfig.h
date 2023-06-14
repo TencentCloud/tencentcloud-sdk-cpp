@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取工作副本数
                      * @return Replicas 工作副本数
+                     * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
                      * 设置工作副本数
-                     * @param Replicas 工作副本数
+                     * @param _replicas 工作副本数
+                     * 
                      */
                     void SetReplicas(const int64_t& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
                     /**
                      * 获取资源配置
                      * @return Resources 资源配置
+                     * 
                      */
                     ResourceRequirements GetResources() const;
 
                     /**
                      * 设置资源配置
-                     * @param Resources 资源配置
+                     * @param _resources 资源配置
+                     * 
                      */
                     void SetResources(const ResourceRequirements& _resources);
 
                     /**
                      * 判断参数 Resources 是否已赋值
                      * @return Resources 是否已赋值
+                     * 
                      */
                     bool ResourcesHasBeenSet() const;
 
                     /**
                      * 获取HPA策略
                      * @return HorizontalPodAutoscaler HPA策略
+                     * 
                      */
                     HorizontalPodAutoscalerSpec GetHorizontalPodAutoscaler() const;
 
                     /**
                      * 设置HPA策略
-                     * @param HorizontalPodAutoscaler HPA策略
+                     * @param _horizontalPodAutoscaler HPA策略
+                     * 
                      */
                     void SetHorizontalPodAutoscaler(const HorizontalPodAutoscalerSpec& _horizontalPodAutoscaler);
 
                     /**
                      * 判断参数 HorizontalPodAutoscaler 是否已赋值
                      * @return HorizontalPodAutoscaler 是否已赋值
+                     * 
                      */
                     bool HorizontalPodAutoscalerHasBeenSet() const;
 
                     /**
                      * 获取部署到指定节点
                      * @return SelectedNodeList 部署到指定节点
+                     * 
                      */
                     std::vector<std::string> GetSelectedNodeList() const;
 
                     /**
                      * 设置部署到指定节点
-                     * @param SelectedNodeList 部署到指定节点
+                     * @param _selectedNodeList 部署到指定节点
+                     * 
                      */
                     void SetSelectedNodeList(const std::vector<std::string>& _selectedNodeList);
 
                     /**
                      * 判断参数 SelectedNodeList 是否已赋值
                      * @return SelectedNodeList 是否已赋值
+                     * 
                      */
                     bool SelectedNodeListHasBeenSet() const;
 
@@ -131,6 +143,7 @@ IN_GENERAL_NODE：常规节点
 IN_EKLET：eklet 节点
 IN_SHARED_NODE_POOL：共享节电池
 IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     * 
                      */
                     std::string GetDeployMode() const;
 
@@ -140,17 +153,19 @@ IN_GENERAL_NODE：常规节点
 IN_EKLET：eklet 节点
 IN_SHARED_NODE_POOL：共享节电池
 IN_EXCLUSIVE_NODE_POOL：独占节点池
-                     * @param DeployMode 组件的部署模式，取值说明：
+                     * @param _deployMode 组件的部署模式，取值说明：
 IN_GENERAL_NODE：常规节点
 IN_EKLET：eklet 节点
 IN_SHARED_NODE_POOL：共享节电池
 IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     * 
                      */
                     void SetDeployMode(const std::string& _deployMode);
 
                     /**
                      * 判断参数 DeployMode 是否已赋值
                      * @return DeployMode 是否已赋值
+                     * 
                      */
                     bool DeployModeHasBeenSet() const;
 

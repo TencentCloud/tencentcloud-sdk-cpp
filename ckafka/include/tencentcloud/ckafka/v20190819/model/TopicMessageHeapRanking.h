@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 主题ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId 主题ID
+                     * @param _topicId 主题ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicName 主题名称
+                     * @param _topicName 主题名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNum 分区数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionNum 分区数
+                     * @param _partitionNum 分区数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionNum(const uint64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaNum 副本数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReplicaNum() const;
 
                     /**
                      * 设置副本数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplicaNum 副本数
+                     * @param _replicaNum 副本数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicaNum(const uint64_t& _replicaNum);
 
                     /**
                      * 判断参数 ReplicaNum 是否已赋值
                      * @return ReplicaNum 是否已赋值
+                     * 
                      */
                     bool ReplicaNumHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicTraffic Topic 流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicTraffic() const;
 
                     /**
                      * 设置Topic 流量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicTraffic Topic 流量
+                     * @param _topicTraffic Topic 流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicTraffic(const std::string& _topicTraffic);
 
                     /**
                      * 判断参数 TopicTraffic 是否已赋值
                      * @return TopicTraffic 是否已赋值
+                     * 
                      */
                     bool TopicTrafficHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageHeap topic消息堆积/占用磁盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMessageHeap() const;
 
                     /**
                      * 设置topic消息堆积/占用磁盘
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MessageHeap topic消息堆积/占用磁盘
+                     * @param _messageHeap topic消息堆积/占用磁盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessageHeap(const uint64_t& _messageHeap);
 
                     /**
                      * 判断参数 MessageHeap 是否已赋值
                      * @return MessageHeap 是否已赋值
+                     * 
                      */
                     bool MessageHeapHasBeenSet() const;
 

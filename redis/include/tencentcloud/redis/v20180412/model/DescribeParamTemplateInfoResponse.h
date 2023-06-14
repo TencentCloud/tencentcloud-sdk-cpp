@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取参数模板的参数数量。
                      * @return TotalCount 参数模板的参数数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取参数模板 ID。
                      * @return TemplateId 参数模板 ID。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取参数模板名称。
                      * @return Name 参数模板名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -103,36 +109,42 @@ namespace TencentCloud
 - 9：Redis 5.0内存版（集群架构）。
 - 15：Redis 6.2内存版（标准架构）。
 - 16：Redis 6.2内存版（集群架构）。
+                     * 
                      */
                     uint64_t GetProductType() const;
 
                     /**
                      * 判断参数 ProductType 是否已赋值
                      * @return ProductType 是否已赋值
+                     * 
                      */
                     bool ProductTypeHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述。
                      * @return Description 参数模板描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。
                      * @return Items 参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。
+                     * 
                      */
                     std::vector<ParameterDetail> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

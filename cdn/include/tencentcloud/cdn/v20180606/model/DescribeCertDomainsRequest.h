@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取PEM格式证书Base64编码后的字符串
                      * @return Cert PEM格式证书Base64编码后的字符串
+                     * 
                      */
                     std::string GetCert() const;
 
                     /**
                      * 设置PEM格式证书Base64编码后的字符串
-                     * @param Cert PEM格式证书Base64编码后的字符串
+                     * @param _cert PEM格式证书Base64编码后的字符串
+                     * 
                      */
                     void SetCert(const std::string& _cert);
 
                     /**
                      * 判断参数 Cert 是否已赋值
                      * @return Cert 是否已赋值
+                     * 
                      */
                     bool CertHasBeenSet() const;
 
                     /**
                      * 获取托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
                      * @return CertId 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
-                     * @param CertId 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     * @param _certId 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取域名所属产品，cdn或ecdn，默认cdn。
                      * @return Product 域名所属产品，cdn或ecdn，默认cdn。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置域名所属产品，cdn或ecdn，默认cdn。
-                     * @param Product 域名所属产品，cdn或ecdn，默认cdn。
+                     * @param _product 域名所属产品，cdn或ecdn，默认cdn。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

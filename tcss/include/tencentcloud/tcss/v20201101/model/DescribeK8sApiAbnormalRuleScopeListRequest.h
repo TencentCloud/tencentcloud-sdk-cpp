@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取规则ID
                      * @return RuleID 规则ID
+                     * 
                      */
                     std::string GetRuleID() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleID 规则ID
+                     * @param _ruleID 规则ID
+                     * 
                      */
                     void SetRuleID(const std::string& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>Action - string -是否必填: 否 - 执行动作</li>
 <li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
+                     * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
@@ -111,15 +121,17 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>Action - string -是否必填: 否 - 执行动作</li>
 <li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Action - string -是否必填: 否 - 执行动作</li>
 <li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
+                     * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
                      * @return DBInstanceName DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * 
                      */
                     std::string GetDBInstanceName() const;
 
                     /**
                      * 设置DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
-                     * @param DBInstanceName DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * @param _dBInstanceName DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * 
                      */
                     void SetDBInstanceName(const std::string& _dBInstanceName);
 
                     /**
                      * 判断参数 DBInstanceName 是否已赋值
                      * @return DBInstanceName 是否已赋值
+                     * 
                      */
                     bool DBInstanceNameHasBeenSet() const;
 
                     /**
                      * 获取DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
                      * @return DBInstanceId DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
-                     * @param DBInstanceId DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * @param _dBInstanceId DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取起始位置
                      * @return DisplayStart 起始位置
+                     * 
                      */
                     uint64_t GetDisplayStart() const;
 
                     /**
                      * 设置起始位置
-                     * @param DisplayStart 起始位置
+                     * @param _displayStart 起始位置
+                     * 
                      */
                     void SetDisplayStart(const uint64_t& _displayStart);
 
                     /**
                      * 判断参数 DisplayStart 是否已赋值
                      * @return DisplayStart 是否已赋值
+                     * 
                      */
                     bool DisplayStartHasBeenSet() const;
 
                     /**
                      * 获取长度
                      * @return DisplayLength 长度
+                     * 
                      */
                     uint64_t GetDisplayLength() const;
 
                     /**
                      * 设置长度
-                     * @param DisplayLength 长度
+                     * @param _displayLength 长度
+                     * 
                      */
                     void SetDisplayLength(const uint64_t& _displayLength);
 
                     /**
                      * 判断参数 DisplayLength 是否已赋值
                      * @return DisplayLength 是否已赋值
+                     * 
                      */
                     bool DisplayLengthHasBeenSet() const;
 

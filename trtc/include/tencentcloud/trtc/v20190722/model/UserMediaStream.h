@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取TRTC用户参数。
                      * @return UserInfo TRTC用户参数。
+                     * 
                      */
                     MixUserInfo GetUserInfo() const;
 
                     /**
                      * 设置TRTC用户参数。
-                     * @param UserInfo TRTC用户参数。
+                     * @param _userInfo TRTC用户参数。
+                     * 
                      */
                     void SetUserInfo(const MixUserInfo& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 
                     /**
                      * 获取主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。
                      * @return StreamType 主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。
+                     * 
                      */
                     uint64_t GetStreamType() const;
 
                     /**
                      * 设置主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。
-                     * @param StreamType 主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。
+                     * @param _streamType 主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。
+                     * 
                      */
                     void SetStreamType(const uint64_t& _streamType);
 
                     /**
                      * 判断参数 StreamType 是否已赋值
                      * @return StreamType 是否已赋值
+                     * 
                      */
                     bool StreamTypeHasBeenSet() const;
 

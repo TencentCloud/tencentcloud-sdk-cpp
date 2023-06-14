@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取码包ID
                      * @return PackId 码包ID
+                     * 
                      */
                     std::string GetPackId() const;
 
                     /**
                      * 判断参数 PackId 是否已赋值
                      * @return PackId 是否已赋值
+                     * 
                      */
                     bool PackIdHasBeenSet() const;
 

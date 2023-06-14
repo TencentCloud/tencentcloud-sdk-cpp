@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取语音关键词。
                      * @return Word 语音关键词。
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置语音关键词。
-                     * @param Word 语音关键词。
+                     * @param _word 语音关键词。
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取语音关键词出现的时间片段列表。
                      * @return SegmentSet 语音关键词出现的时间片段列表。
+                     * 
                      */
                     std::vector<AiRecognitionTaskAsrWordsSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置语音关键词出现的时间片段列表。
-                     * @param SegmentSet 语音关键词出现的时间片段列表。
+                     * @param _segmentSet 语音关键词出现的时间片段列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskAsrWordsSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取日志导出任务Id。
                      * @return AsyncRequestId 日志导出任务Id。
+                     * 
                      */
                     uint64_t GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

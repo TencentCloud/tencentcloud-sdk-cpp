@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcHttpAddr 内网http调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcHttpAddr() const;
 
                     /**
                      * 设置内网http调用地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcHttpAddr 内网http调用地址
+                     * @param _vpcHttpAddr 内网http调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcHttpAddr(const std::string& _vpcHttpAddr);
 
                     /**
                      * 判断参数 VpcHttpAddr 是否已赋值
                      * @return VpcHttpAddr 是否已赋值
+                     * 
                      */
                     bool VpcHttpAddrHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcHttpsAddr 内网https调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcHttpsAddr() const;
 
                     /**
                      * 设置内网https调用地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcHttpsAddr 内网https调用地址
+                     * @param _vpcHttpsAddr 内网https调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcHttpsAddr(const std::string& _vpcHttpsAddr);
 
                     /**
                      * 判断参数 VpcHttpsAddr 是否已赋值
                      * @return VpcHttpsAddr 是否已赋值
+                     * 
                      */
                     bool VpcHttpsAddrHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcGrpcTlsAddr 内网grpc调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcGrpcTlsAddr() const;
 
                     /**
                      * 设置内网grpc调用地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcGrpcTlsAddr 内网grpc调用地址
+                     * @param _vpcGrpcTlsAddr 内网grpc调用地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcGrpcTlsAddr(const std::string& _vpcGrpcTlsAddr);
 
                     /**
                      * 判断参数 VpcGrpcTlsAddr 是否已赋值
                      * @return VpcGrpcTlsAddr 是否已赋值
+                     * 
                      */
                     bool VpcGrpcTlsAddrHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 可访问的vpcid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置可访问的vpcid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 可访问的vpcid
+                     * @param _vpcId 可访问的vpcid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 后端ip对应的子网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置后端ip对应的子网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 后端ip对应的子网
+                     * @param _subnetId 后端ip对应的子网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

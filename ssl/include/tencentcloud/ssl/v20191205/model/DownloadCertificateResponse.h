@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentType MIME 类型：application/zip = ZIP 压缩文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 

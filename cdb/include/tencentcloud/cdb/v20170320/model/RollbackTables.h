@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Database 数据库名
+                     * @param _database 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 数据库表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RollbackTableName> GetTable() const;
 
                     /**
                      * 设置数据库表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Table 数据库表详情
+                     * @param _table 数据库表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTable(const std::vector<RollbackTableName>& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 

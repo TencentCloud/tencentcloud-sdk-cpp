@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取bind 或 unbind
                      * @return Command bind 或 unbind
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置bind 或 unbind
-                     * @param Command bind 或 unbind
+                     * @param _command bind 或 unbind
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取应用id
                      * @return ApplicationId 应用id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id
-                     * @param ApplicationId 应用id
+                     * @param _applicationId 应用id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取TcrRepoInfo值
                      * @return TcrRepoInfo TcrRepoInfo值
+                     * 
                      */
                     TcrRepoInfo GetTcrRepoInfo() const;
 
                     /**
                      * 设置TcrRepoInfo值
-                     * @param TcrRepoInfo TcrRepoInfo值
+                     * @param _tcrRepoInfo TcrRepoInfo值
+                     * 
                      */
                     void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
 
                     /**
                      * 判断参数 TcrRepoInfo 是否已赋值
                      * @return TcrRepoInfo 是否已赋值
+                     * 
                      */
                     bool TcrRepoInfoHasBeenSet() const;
 

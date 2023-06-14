@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取刊例价，单位为分。如24650表示246.5元
                      * @return OriginalPrice 刊例价，单位为分。如24650表示246.5元
+                     * 
                      */
                     int64_t GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取折后实际付款金额，单位为分。如24650表示246.5元
                      * @return Price 折后实际付款金额，单位为分。如24650表示246.5元
+                     * 
                      */
                     int64_t GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
                     /**
                      * 获取币种。例如，CNY：人民币。
                      * @return Currency 币种。例如，CNY：人民币。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

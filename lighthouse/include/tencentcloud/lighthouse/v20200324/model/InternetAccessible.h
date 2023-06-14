@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return InternetChargeType 网络计费类型，取值范围：
 <li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
 <li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置网络计费类型，取值范围：
 <li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
 <li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
-                     * @param InternetChargeType 网络计费类型，取值范围：
+                     * @param _internetChargeType 网络计费类型，取值范围：
 <li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
 <li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取公网出带宽上限，单位：Mbps。
                      * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。
+                     * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置公网出带宽上限，单位：Mbps。
-                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。
+                     * @param _internetMaxBandwidthOut 公网出带宽上限，单位：Mbps。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取是否分配公网 IP。
                      * @return PublicIpAssigned 是否分配公网 IP。
+                     * 
                      */
                     bool GetPublicIpAssigned() const;
 
                     /**
                      * 设置是否分配公网 IP。
-                     * @param PublicIpAssigned 是否分配公网 IP。
+                     * @param _publicIpAssigned 是否分配公网 IP。
+                     * 
                      */
                     void SetPublicIpAssigned(const bool& _publicIpAssigned);
 
                     /**
                      * 判断参数 PublicIpAssigned 是否已赋值
                      * @return PublicIpAssigned 是否已赋值
+                     * 
                      */
                     bool PublicIpAssignedHasBeenSet() const;
 

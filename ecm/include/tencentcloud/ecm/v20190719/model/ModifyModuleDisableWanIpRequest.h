@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取模块ID
                      * @return ModuleId 模块ID
+                     * 
                      */
                     std::string GetModuleId() const;
 
                     /**
                      * 设置模块ID
-                     * @param ModuleId 模块ID
+                     * @param _moduleId 模块ID
+                     * 
                      */
                     void SetModuleId(const std::string& _moduleId);
 
                     /**
                      * 判断参数 ModuleId 是否已赋值
                      * @return ModuleId 是否已赋值
+                     * 
                      */
                     bool ModuleIdHasBeenSet() const;
 
                     /**
                      * 获取是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
                      * @return DisableWanIp 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
+                     * 
                      */
                     bool GetDisableWanIp() const;
 
                     /**
                      * 设置是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
-                     * @param DisableWanIp 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
+                     * @param _disableWanIp 是否禁止分配外网ip,true：统一分配外网ip，false：禁止分配外网ip.
+                     * 
                      */
                     void SetDisableWanIp(const bool& _disableWanIp);
 
                     /**
                      * 判断参数 DisableWanIp 是否已赋值
                      * @return DisableWanIp 是否已赋值
+                     * 
                      */
                     bool DisableWanIpHasBeenSet() const;
 

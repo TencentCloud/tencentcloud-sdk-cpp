@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取插件id
                      * @return PluginId 插件id
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置插件id
-                     * @param PluginId 插件id
+                     * @param _pluginId 插件id
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 
                     /**
                      * 获取插件绑定到的对象类型:group/api
                      * @return ScopeType 插件绑定到的对象类型:group/api
+                     * 
                      */
                     std::string GetScopeType() const;
 
                     /**
                      * 设置插件绑定到的对象类型:group/api
-                     * @param ScopeType 插件绑定到的对象类型:group/api
+                     * @param _scopeType 插件绑定到的对象类型:group/api
+                     * 
                      */
                     void SetScopeType(const std::string& _scopeType);
 
                     /**
                      * 判断参数 ScopeType 是否已赋值
                      * @return ScopeType 是否已赋值
+                     * 
                      */
                     bool ScopeTypeHasBeenSet() const;
 
                     /**
                      * 获取插件绑定到的对象主键值，例如分组的ID/API的ID
                      * @return ScopeValue 插件绑定到的对象主键值，例如分组的ID/API的ID
+                     * 
                      */
                     std::string GetScopeValue() const;
 
                     /**
                      * 设置插件绑定到的对象主键值，例如分组的ID/API的ID
-                     * @param ScopeValue 插件绑定到的对象主键值，例如分组的ID/API的ID
+                     * @param _scopeValue 插件绑定到的对象主键值，例如分组的ID/API的ID
+                     * 
                      */
                     void SetScopeValue(const std::string& _scopeValue);
 
                     /**
                      * 判断参数 ScopeValue 是否已赋值
                      * @return ScopeValue 是否已赋值
+                     * 
                      */
                     bool ScopeValueHasBeenSet() const;
 

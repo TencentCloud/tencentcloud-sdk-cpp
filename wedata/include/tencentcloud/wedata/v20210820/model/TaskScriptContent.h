@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptContent 脚本内容 base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScriptContent() const;
 
                     /**
                      * 设置脚本内容 base64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScriptContent 脚本内容 base64编码
+                     * @param _scriptContent 脚本内容 base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScriptContent(const std::string& _scriptContent);
 
                     /**
                      * 判断参数 ScriptContent 是否已赋值
                      * @return ScriptContent 是否已赋值
+                     * 
                      */
                     bool ScriptContentHasBeenSet() const;
 

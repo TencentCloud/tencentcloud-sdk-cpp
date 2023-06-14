@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取流的配置信息列表。
                      * @return Infos 流的配置信息列表。
+                     * 
                      */
                     std::vector<DescribeFlow> GetInfos() const;
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 
                     /**
                      * 获取总数量。
                      * @return TotalNum 总数量。
+                     * 
                      */
                     int64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 

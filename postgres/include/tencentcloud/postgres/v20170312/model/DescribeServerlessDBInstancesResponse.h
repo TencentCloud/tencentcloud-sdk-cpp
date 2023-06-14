@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询结果数
                      * @return TotalCount 查询结果数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceSet 查询结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ServerlessDBInstance> GetDBInstanceSet() const;
 
                     /**
                      * 判断参数 DBInstanceSet 是否已赋值
                      * @return DBInstanceSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceSetHasBeenSet() const;
 

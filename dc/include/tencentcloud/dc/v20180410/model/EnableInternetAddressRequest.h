@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取互联网公网地址ID
                      * @return InstanceId 互联网公网地址ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置互联网公网地址ID
-                     * @param InstanceId 互联网公网地址ID
+                     * @param _instanceId 互联网公网地址ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

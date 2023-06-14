@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的流量包唯一ID数组
                      * @return TrafficPackageIds 待删除的流量包唯一ID数组
+                     * 
                      */
                     std::vector<std::string> GetTrafficPackageIds() const;
 
                     /**
                      * 设置待删除的流量包唯一ID数组
-                     * @param TrafficPackageIds 待删除的流量包唯一ID数组
+                     * @param _trafficPackageIds 待删除的流量包唯一ID数组
+                     * 
                      */
                     void SetTrafficPackageIds(const std::vector<std::string>& _trafficPackageIds);
 
                     /**
                      * 判断参数 TrafficPackageIds 是否已赋值
                      * @return TrafficPackageIds 是否已赋值
+                     * 
                      */
                     bool TrafficPackageIdsHasBeenSet() const;
 

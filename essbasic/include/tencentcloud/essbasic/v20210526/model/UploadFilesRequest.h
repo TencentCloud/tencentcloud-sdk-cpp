@@ -48,18 +48,21 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
                      * @return Agent 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
-                     * @param Agent 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * @param _agent 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -70,6 +73,7 @@ namespace TencentCloud
                      * @return BusinessType 文件对应业务类型
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
+                     * 
                      */
                     std::string GetBusinessType() const;
 
@@ -77,51 +81,59 @@ namespace TencentCloud
                      * 设置文件对应业务类型
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
-                     * @param BusinessType 文件对应业务类型
+                     * @param _businessType 文件对应业务类型
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
+                     * 
                      */
                     void SetBusinessType(const std::string& _businessType);
 
                     /**
                      * 判断参数 BusinessType 是否已赋值
                      * @return BusinessType 是否已赋值
+                     * 
                      */
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取上传文件内容数组，最多支持20个文件
                      * @return FileInfos 上传文件内容数组，最多支持20个文件
+                     * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
                      * 设置上传文件内容数组，最多支持20个文件
-                     * @param FileInfos 上传文件内容数组，最多支持20个文件
+                     * @param _fileInfos 上传文件内容数组，最多支持20个文件
+                     * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
 
                     /**
                      * 判断参数 FileInfos 是否已赋值
                      * @return FileInfos 是否已赋值
+                     * 
                      */
                     bool FileInfosHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * @param _operator 操作者的信息
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

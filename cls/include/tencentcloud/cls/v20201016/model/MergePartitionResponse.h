@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取合并结果集
                      * @return Partitions 合并结果集
+                     * 
                      */
                     std::vector<PartitionInfo> GetPartitions() const;
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 

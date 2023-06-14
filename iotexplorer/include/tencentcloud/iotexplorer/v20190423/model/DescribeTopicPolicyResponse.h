@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取Topic权限
                      * @return Privilege Topic权限
+                     * 
                      */
                     uint64_t GetPrivilege() const;
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 

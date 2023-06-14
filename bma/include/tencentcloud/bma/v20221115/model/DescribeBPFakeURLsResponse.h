@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取仿冒网址列表
                      * @return FakeURLs 仿冒网址列表
+                     * 
                      */
                     std::vector<FakeURLData> GetFakeURLs() const;
 
                     /**
                      * 判断参数 FakeURLs 是否已赋值
                      * @return FakeURLs 是否已赋值
+                     * 
                      */
                     bool FakeURLsHasBeenSet() const;
 
                     /**
                      * 获取仿冒网址总数
                      * @return TotalCount 仿冒网址总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

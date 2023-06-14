@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取策略Id
                      * @return PolicyId 策略Id
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置策略Id
-                     * @param PolicyId 策略Id
+                     * @param _policyId 策略Id
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

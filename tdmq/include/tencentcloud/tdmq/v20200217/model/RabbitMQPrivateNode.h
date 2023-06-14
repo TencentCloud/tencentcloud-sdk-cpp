@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 节点名字
+                     * @param _nodeName 节点名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeStatus 节点状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeStatus() const;
 
                     /**
                      * 设置节点状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeStatus 节点状态
+                     * @param _nodeStatus 节点状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeStatus(const std::string& _nodeStatus);
 
                     /**
                      * 判断参数 NodeStatus 是否已赋值
                      * @return NodeStatus 是否已赋值
+                     * 
                      */
                     bool NodeStatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPUUsage CPU使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCPUUsage() const;
 
                     /**
                      * 设置CPU使用率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CPUUsage CPU使用率
+                     * @param _cPUUsage CPU使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCPUUsage(const std::string& _cPUUsage);
 
                     /**
                      * 判断参数 CPUUsage 是否已赋值
                      * @return CPUUsage 是否已赋值
+                     * 
                      */
                     bool CPUUsageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存使用情况，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存使用情况，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Memory 内存使用情况，单位MB
+                     * @param _memory 内存使用情况，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskUsage 磁盘使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
                      * 设置磁盘使用率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskUsage 磁盘使用率
+                     * @param _diskUsage 磁盘使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
 
                     /**
                      * 判断参数 DiskUsage 是否已赋值
                      * @return DiskUsage 是否已赋值
+                     * 
                      */
                     bool DiskUsageHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessNumber Rabbitmq的Erlang进程数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProcessNumber() const;
 
                     /**
                      * 设置Rabbitmq的Erlang进程数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessNumber Rabbitmq的Erlang进程数
+                     * @param _processNumber Rabbitmq的Erlang进程数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessNumber(const uint64_t& _processNumber);
 
                     /**
                      * 判断参数 ProcessNumber 是否已赋值
                      * @return ProcessNumber 是否已赋值
+                     * 
                      */
                     bool ProcessNumberHasBeenSet() const;
 

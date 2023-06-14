@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取角色名称
                      * @return RoleName 角色名称
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取备注说明
                      * @return Remark 备注说明
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

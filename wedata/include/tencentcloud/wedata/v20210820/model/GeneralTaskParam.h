@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取通用任务参数类型,例：SPARK_SQL
                      * @return Type 通用任务参数类型,例：SPARK_SQL
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置通用任务参数类型,例：SPARK_SQL
-                     * @param Type 通用任务参数类型,例：SPARK_SQL
+                     * @param _type 通用任务参数类型,例：SPARK_SQL
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 分割
                      * @return Value 通用任务参数内容,直接作用于任务的参数。不同参数用;
 分割
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置通用任务参数内容,直接作用于任务的参数。不同参数用;
 分割
-                     * @param Value 通用任务参数内容,直接作用于任务的参数。不同参数用;
+                     * @param _value 通用任务参数内容,直接作用于任务的参数。不同参数用;
 分割
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

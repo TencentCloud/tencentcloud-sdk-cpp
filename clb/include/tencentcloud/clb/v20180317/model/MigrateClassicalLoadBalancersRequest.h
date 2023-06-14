@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取传统型负载均衡ID数组
                      * @return LoadBalancerIds 传统型负载均衡ID数组
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置传统型负载均衡ID数组
-                     * @param LoadBalancerIds 传统型负载均衡ID数组
+                     * @param _loadBalancerIds 传统型负载均衡ID数组
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取独占集群信息
                      * @return ExclusiveCluster 独占集群信息
+                     * 
                      */
                     ExclusiveCluster GetExclusiveCluster() const;
 
                     /**
                      * 设置独占集群信息
-                     * @param ExclusiveCluster 独占集群信息
+                     * @param _exclusiveCluster 独占集群信息
+                     * 
                      */
                     void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
 
                     /**
                      * 判断参数 ExclusiveCluster 是否已赋值
                      * @return ExclusiveCluster 是否已赋值
+                     * 
                      */
                     bool ExclusiveClusterHasBeenSet() const;
 

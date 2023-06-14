@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 文字码包地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgUrl 图片码包地址，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImgUrl() const;
 
                     /**
                      * 判断参数 ImgUrl 是否已赋值
                      * @return ImgUrl 是否已赋值
+                     * 
                      */
                     bool ImgUrlHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileKey 文字码包Key，用于上传导入
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileKey() const;
 
                     /**
                      * 判断参数 FileKey 是否已赋值
                      * @return FileKey 是否已赋值
+                     * 
                      */
                     bool FileKeyHasBeenSet() const;
 

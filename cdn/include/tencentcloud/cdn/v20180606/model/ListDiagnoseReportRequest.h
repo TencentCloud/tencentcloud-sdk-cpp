@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。
                      * @return KeyWords 用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。
+                     * 
                      */
                     std::string GetKeyWords() const;
 
                     /**
                      * 设置用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。
-                     * @param KeyWords 用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。
+                     * @param _keyWords 用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。
+                     * 
                      */
                     void SetKeyWords(const std::string& _keyWords);
 
                     /**
                      * 判断参数 KeyWords 是否已赋值
                      * @return KeyWords 是否已赋值
+                     * 
                      */
                     bool KeyWordsHasBeenSet() const;
 
                     /**
                      * 获取用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
                      * @return DiagnoseLink 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     * 
                      */
                     std::string GetDiagnoseLink() const;
 
                     /**
                      * 设置用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
-                     * @param DiagnoseLink 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     * @param _diagnoseLink 用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx
+                     * 
                      */
                     void SetDiagnoseLink(const std::string& _diagnoseLink);
 
                     /**
                      * 判断参数 DiagnoseLink 是否已赋值
                      * @return DiagnoseLink 是否已赋值
+                     * 
                      */
                     bool DiagnoseLinkHasBeenSet() const;
 
                     /**
                      * 获取请求源带协议头，形如：https://console.cloud.tencent.com
                      * @return Origin 请求源带协议头，形如：https://console.cloud.tencent.com
+                     * 
                      */
                     std::string GetOrigin() const;
 
                     /**
                      * 设置请求源带协议头，形如：https://console.cloud.tencent.com
-                     * @param Origin 请求源带协议头，形如：https://console.cloud.tencent.com
+                     * @param _origin 请求源带协议头，形如：https://console.cloud.tencent.com
+                     * 
                      */
                     void SetOrigin(const std::string& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 

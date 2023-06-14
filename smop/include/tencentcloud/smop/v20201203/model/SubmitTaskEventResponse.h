@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 信息码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message success
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 任务处理结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskEventData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

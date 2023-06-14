@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMonthResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Partners::V20180321::Model;
+using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-DescribeClientBalanceResponse::DescribeClientBalanceResponse() :
-    m_balanceHasBeenSet(false),
-    m_cashHasBeenSet(false)
+DescribeOrganizationFinancialByMonthResponse::DescribeOrganizationFinancialByMonthResponse() :
+    m_itemsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClientBalanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeOrganizationFinancialByMonthResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,49 @@ CoreInternalOutcome DescribeClientBalanceResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Balance") && !rsp["Balance"].IsNull())
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
-        if (!rsp["Balance"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Balance` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_balance = rsp["Balance"].GetUint64();
-        m_balanceHasBeenSet = true;
-    }
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
 
-    if (rsp.HasMember("Cash") && !rsp["Cash"].IsNull())
-    {
-        if (!rsp["Cash"].IsInt64())
+        const rapidjson::Value &tmpValue = rsp["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Cash` IsInt64=false incorrectly").SetRequestId(requestId));
+            OrgFinancialByMonth item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
         }
-        m_cash = rsp["Cash"].GetInt64();
-        m_cashHasBeenSet = true;
+        m_itemsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeClientBalanceResponse::ToJsonString() const
+string DescribeOrganizationFinancialByMonthResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_balanceHasBeenSet)
+    if (m_itemsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Balance";
+        string key = "Items";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_balance, allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_cashHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cash";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cash, allocator);
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +119,14 @@ string DescribeClientBalanceResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeClientBalanceResponse::GetBalance() const
+vector<OrgFinancialByMonth> DescribeOrganizationFinancialByMonthResponse::GetItems() const
 {
-    return m_balance;
+    return m_items;
 }
 
-bool DescribeClientBalanceResponse::BalanceHasBeenSet() const
+bool DescribeOrganizationFinancialByMonthResponse::ItemsHasBeenSet() const
 {
-    return m_balanceHasBeenSet;
-}
-
-int64_t DescribeClientBalanceResponse::GetCash() const
-{
-    return m_cash;
-}
-
-bool DescribeClientBalanceResponse::CashHasBeenSet() const
-{
-    return m_cashHasBeenSet;
+    return m_itemsHasBeenSet;
 }
 
 

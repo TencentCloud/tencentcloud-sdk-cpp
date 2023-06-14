@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取快照所属域名
                      * @return Domain 快照所属域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取快照 ID
                      * @return SnapshotId 快照 ID
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取回滚状态
                      * @return Status 回滚状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取快照回滚任务 ID
                      * @return TaskId 快照回滚任务 ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return RecordCount 总数量
+                     * 
                      */
                     uint64_t GetRecordCount() const;
 
                     /**
                      * 判断参数 RecordCount 是否已赋值
                      * @return RecordCount 是否已赋值
+                     * 
                      */
                     bool RecordCountHasBeenSet() const;
 
                     /**
                      * 获取开始回滚时间
                      * @return CreatedOn 开始回滚时间
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 

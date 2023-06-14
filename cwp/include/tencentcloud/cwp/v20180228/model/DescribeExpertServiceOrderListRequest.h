@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取<li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>
                      * @return Filters <li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置<li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>
-                     * @param Filters <li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>
+                     * @param _filters <li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取分页条数 最大100条
                      * @return Limit 分页条数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页条数 最大100条
-                     * @param Limit 分页条数 最大100条
+                     * @param _limit 分页条数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页步长
                      * @return Offset 分页步长
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页步长
-                     * @param Offset 分页步长
+                     * @param _offset 分页步长
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberOfShards 索引主分片数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNumberOfShards() const;
 
                     /**
                      * 设置索引主分片数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NumberOfShards 索引主分片数
+                     * @param _numberOfShards 索引主分片数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNumberOfShards(const std::string& _numberOfShards);
 
                     /**
                      * 判断参数 NumberOfShards 是否已赋值
                      * @return NumberOfShards 是否已赋值
+                     * 
                      */
                     bool NumberOfShardsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberOfReplicas 索引副本分片数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNumberOfReplicas() const;
 
                     /**
                      * 设置索引副本分片数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NumberOfReplicas 索引副本分片数
+                     * @param _numberOfReplicas 索引副本分片数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNumberOfReplicas(const std::string& _numberOfReplicas);
 
                     /**
                      * 判断参数 NumberOfReplicas 是否已赋值
                      * @return NumberOfReplicas 是否已赋值
+                     * 
                      */
                     bool NumberOfReplicasHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefreshInterval 索引刷新频率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefreshInterval() const;
 
                     /**
                      * 设置索引刷新频率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefreshInterval 索引刷新频率
+                     * @param _refreshInterval 索引刷新频率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefreshInterval(const std::string& _refreshInterval);
 
                     /**
                      * 判断参数 RefreshInterval 是否已赋值
                      * @return RefreshInterval 是否已赋值
+                     * 
                      */
                     bool RefreshIntervalHasBeenSet() const;
 

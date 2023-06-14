@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的SDKAppId。
                      * @return SdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的SDKAppId。
-                     * @param SdkAppId TRTC的SDKAppId。
+                     * @param _sdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取房间号。
                      * @return RoomId 房间号。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间号。
-                     * @param RoomId 房间号。
+                     * @param _roomId 房间号。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取混流输出控制参数。
                      * @return OutputParams 混流输出控制参数。
+                     * 
                      */
                     OutputParams GetOutputParams() const;
 
                     /**
                      * 设置混流输出控制参数。
-                     * @param OutputParams 混流输出控制参数。
+                     * @param _outputParams 混流输出控制参数。
+                     * 
                      */
                     void SetOutputParams(const OutputParams& _outputParams);
 
                     /**
                      * 判断参数 OutputParams 是否已赋值
                      * @return OutputParams 是否已赋值
+                     * 
                      */
                     bool OutputParamsHasBeenSet() const;
 
                     /**
                      * 获取混流输出编码参数。
                      * @return EncodeParams 混流输出编码参数。
+                     * 
                      */
                     EncodeParams GetEncodeParams() const;
 
                     /**
                      * 设置混流输出编码参数。
-                     * @param EncodeParams 混流输出编码参数。
+                     * @param _encodeParams 混流输出编码参数。
+                     * 
                      */
                     void SetEncodeParams(const EncodeParams& _encodeParams);
 
                     /**
                      * 判断参数 EncodeParams 是否已赋值
                      * @return EncodeParams 是否已赋值
+                     * 
                      */
                     bool EncodeParamsHasBeenSet() const;
 
                     /**
                      * 获取混流输出布局参数。
                      * @return LayoutParams 混流输出布局参数。
+                     * 
                      */
                     LayoutParams GetLayoutParams() const;
 
                     /**
                      * 设置混流输出布局参数。
-                     * @param LayoutParams 混流输出布局参数。
+                     * @param _layoutParams 混流输出布局参数。
+                     * 
                      */
                     void SetLayoutParams(const LayoutParams& _layoutParams);
 
                     /**
                      * 判断参数 LayoutParams 是否已赋值
                      * @return LayoutParams 是否已赋值
+                     * 
                      */
                     bool LayoutParamsHasBeenSet() const;
 
                     /**
                      * 获取第三方CDN转推参数。
                      * @return PublishCdnParams 第三方CDN转推参数。
+                     * 
                      */
                     PublishCdnParams GetPublishCdnParams() const;
 
                     /**
                      * 设置第三方CDN转推参数。
-                     * @param PublishCdnParams 第三方CDN转推参数。
+                     * @param _publishCdnParams 第三方CDN转推参数。
+                     * 
                      */
                     void SetPublishCdnParams(const PublishCdnParams& _publishCdnParams);
 
                     /**
                      * 判断参数 PublishCdnParams 是否已赋值
                      * @return PublishCdnParams 是否已赋值
+                     * 
                      */
                     bool PublishCdnParamsHasBeenSet() const;
 

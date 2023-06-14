@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 索引
+                     * @param _index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name ihc归一化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置ihc归一化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name ihc归一化
+                     * @param _name ihc归一化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value ihc详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Value GetValue() const;
 
                     /**
                      * 设置ihc详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value ihc详情
+                     * @param _value ihc详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const Value& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 原文对应坐标
+                     * @param _coords 原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

@@ -48,90 +48,105 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
                      * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
-                     * @param Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * @param _operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取签署流程编号,由CreateFlow接口返回
                      * @return FlowId 签署流程编号,由CreateFlow接口返回
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程编号,由CreateFlow接口返回
-                     * @param FlowId 签署流程编号,由CreateFlow接口返回
+                     * @param _flowId 签署流程编号,由CreateFlow接口返回
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取用户上传的模板ID
                      * @return TemplateId 用户上传的模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置用户上传的模板ID
-                     * @param TemplateId 用户上传的模板ID
+                     * @param _templateId 用户上传的模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
                      * @return FileNames 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
+                     * 
                      */
                     std::vector<std::string> GetFileNames() const;
 
                     /**
                      * 设置文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
-                     * @param FileNames 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
+                     * @param _fileNames 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
+                     * 
                      */
                     void SetFileNames(const std::vector<std::string>& _fileNames);
 
                     /**
                      * 判断参数 FileNames 是否已赋值
                      * @return FileNames 是否已赋值
+                     * 
                      */
                     bool FileNamesHasBeenSet() const;
 
                     /**
                      * 获取内容控件信息数组
                      * @return FormFields 内容控件信息数组
+                     * 
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
                      * 设置内容控件信息数组
-                     * @param FormFields 内容控件信息数组
+                     * @param _formFields 内容控件信息数组
+                     * 
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
 
                     /**
                      * 判断参数 FormFields 是否已赋值
                      * @return FormFields 是否已赋值
+                     * 
                      */
                     bool FormFieldsHasBeenSet() const;
 
@@ -140,74 +155,86 @@ namespace TencentCloud
 预览链接有效期300秒；
                      * @return NeedPreview 是否需要生成预览文件 默认不生成；
 预览链接有效期300秒；
+                     * 
                      */
                     bool GetNeedPreview() const;
 
                     /**
                      * 设置是否需要生成预览文件 默认不生成；
 预览链接有效期300秒；
-                     * @param NeedPreview 是否需要生成预览文件 默认不生成；
+                     * @param _needPreview 是否需要生成预览文件 默认不生成；
 预览链接有效期300秒；
+                     * 
                      */
                     void SetNeedPreview(const bool& _needPreview);
 
                     /**
                      * 判断参数 NeedPreview 是否已赋值
                      * @return NeedPreview 是否已赋值
+                     * 
                      */
                     bool NeedPreviewHasBeenSet() const;
 
                     /**
                      * 获取预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      * @return PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * 
                      */
                     int64_t GetPreviewType() const;
 
                     /**
                      * 设置预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
-                     * @param PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * @param _previewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * 
                      */
                     void SetPreviewType(const int64_t& _previewType);
 
                     /**
                      * 判断参数 PreviewType 是否已赋值
                      * @return PreviewType 是否已赋值
+                     * 
                      */
                     bool PreviewTypeHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取客户端Token，保持接口幂等性,最大长度64个字符
                      * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 设置客户端Token，保持接口幂等性,最大长度64个字符
-                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param _clientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 
                      */
                     void SetClientToken(const std::string& _clientToken);
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 

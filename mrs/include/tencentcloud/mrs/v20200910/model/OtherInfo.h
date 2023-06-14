@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Anesthesia 麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetAnesthesia() const;
 
                     /**
                      * 设置麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Anesthesia 麻醉方法
+                     * @param _anesthesia 麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnesthesia(const SurgeryAttr& _anesthesia);
 
                     /**
                      * 判断参数 Anesthesia 是否已赋值
                      * @return Anesthesia 是否已赋值
+                     * 
                      */
                     bool AnesthesiaHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodLoss 术中出血
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetBloodLoss() const;
 
                     /**
                      * 设置术中出血
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BloodLoss 术中出血
+                     * @param _bloodLoss 术中出血
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBloodLoss(const SurgeryAttr& _bloodLoss);
 
                     /**
                      * 判断参数 BloodLoss 是否已赋值
                      * @return BloodLoss 是否已赋值
+                     * 
                      */
                     bool BloodLossHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodTransfusion 输血
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetBloodTransfusion() const;
 
                     /**
                      * 设置输血
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BloodTransfusion 输血
+                     * @param _bloodTransfusion 输血
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBloodTransfusion(const SurgeryAttr& _bloodTransfusion);
 
                     /**
                      * 判断参数 BloodTransfusion 是否已赋值
                      * @return BloodTransfusion 是否已赋值
+                     * 
                      */
                     bool BloodTransfusionHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 手术用时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetDuration() const;
 
                     /**
                      * 设置手术用时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 手术用时
+                     * @param _duration 手术用时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const SurgeryAttr& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetEndTime() const;
 
                     /**
                      * 设置手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 手术开始时间
+                     * @param _endTime 手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const SurgeryAttr& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryAttr GetStartTime() const;
 
                     /**
                      * 设置手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 手术结束时间
+                     * @param _startTime 手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const SurgeryAttr& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 

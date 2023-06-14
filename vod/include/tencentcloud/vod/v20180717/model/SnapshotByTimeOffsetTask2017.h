@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取截图任务 ID。
                      * @return TaskId 截图任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置截图任务 ID。
-                     * @param TaskId 截图任务 ID。
+                     * @param _taskId 截图任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取截图文件 ID。
                      * @return FileId 截图文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置截图文件 ID。
-                     * @param FileId 截图文件 ID。
+                     * @param _fileId 截图文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
                      * @return Definition 截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-                     * @param Definition 截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * @param _definition 截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取截图结果信息。
                      * @return SnapshotInfoSet 截图结果信息。
+                     * 
                      */
                     std::vector<SnapshotByTimeOffset2017> GetSnapshotInfoSet() const;
 
                     /**
                      * 设置截图结果信息。
-                     * @param SnapshotInfoSet 截图结果信息。
+                     * @param _snapshotInfoSet 截图结果信息。
+                     * 
                      */
                     void SetSnapshotInfoSet(const std::vector<SnapshotByTimeOffset2017>& _snapshotInfoSet);
 
                     /**
                      * 判断参数 SnapshotInfoSet 是否已赋值
                      * @return SnapshotInfoSet 是否已赋值
+                     * 
                      */
                     bool SnapshotInfoSetHasBeenSet() const;
 

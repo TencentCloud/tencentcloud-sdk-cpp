@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取该地域对应的英文名称
                      * @return Region 该地域对应的英文名称
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置该地域对应的英文名称
-                     * @param Region 该地域对应的英文名称
+                     * @param _region 该地域对应的英文名称
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取该地域对应的中文名称
                      * @return RegionName 该地域对应的中文名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置该地域对应的中文名称
-                     * @param RegionName 该地域对应的中文名称
+                     * @param _regionName 该地域对应的中文名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取该地域对应的数字编号
                      * @return RegionId 该地域对应的数字编号
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置该地域对应的数字编号
-                     * @param RegionId 该地域对应的数字编号
+                     * @param _regionId 该地域对应的数字编号
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
                      * @return RegionState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * 
                      */
                     std::string GetRegionState() const;
 
                     /**
                      * 设置可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
-                     * @param RegionState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * @param _regionState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+                     * 
                      */
                     void SetRegionState(const std::string& _regionState);
 
                     /**
                      * 判断参数 RegionState 是否已赋值
                      * @return RegionState 是否已赋值
+                     * 
                      */
                     bool RegionStateHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSupportInternational() const;
 
                     /**
                      * 设置该地域是否支持国际站售卖，0：不支持，1：支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
+                     * @param _supportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportInternational(const uint64_t& _supportInternational);
 
                     /**
                      * 判断参数 SupportInternational 是否已赋值
                      * @return SupportInternational 是否已赋值
+                     * 
                      */
                     bool SupportInternationalHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return FollowOrigin 是否遵循源站，取值有：
 <li>on：遵循源站，忽略MaxAge 时间设置；</li>
 <li>off：不遵循源站，使用MaxAge 时间设置。</li>
+                     * 
                      */
                     std::string GetFollowOrigin() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置是否遵循源站，取值有：
 <li>on：遵循源站，忽略MaxAge 时间设置；</li>
 <li>off：不遵循源站，使用MaxAge 时间设置。</li>
-                     * @param FollowOrigin 是否遵循源站，取值有：
+                     * @param _followOrigin 是否遵循源站，取值有：
 <li>on：遵循源站，忽略MaxAge 时间设置；</li>
 <li>off：不遵循源站，使用MaxAge 时间设置。</li>
+                     * 
                      */
                     void SetFollowOrigin(const std::string& _followOrigin);
 
                     /**
                      * 判断参数 FollowOrigin 是否已赋值
                      * @return FollowOrigin 是否已赋值
+                     * 
                      */
                     bool FollowOriginHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：时间为0，即不缓存。
                      * @return MaxAgeTime MaxAge 时间设置，单位秒，最大365天。
 注意：时间为0，即不缓存。
+                     * 
                      */
                     int64_t GetMaxAgeTime() const;
 
                     /**
                      * 设置MaxAge 时间设置，单位秒，最大365天。
 注意：时间为0，即不缓存。
-                     * @param MaxAgeTime MaxAge 时间设置，单位秒，最大365天。
+                     * @param _maxAgeTime MaxAge 时间设置，单位秒，最大365天。
 注意：时间为0，即不缓存。
+                     * 
                      */
                     void SetMaxAgeTime(const int64_t& _maxAgeTime);
 
                     /**
                      * 判断参数 MaxAgeTime 是否已赋值
                      * @return MaxAgeTime 是否已赋值
+                     * 
                      */
                     bool MaxAgeTimeHasBeenSet() const;
 

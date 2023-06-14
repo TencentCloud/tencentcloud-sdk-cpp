@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 专属域名。如果实例无专属域名，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置专属域名。如果实例无专属域名，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 专属域名。如果实例无专属域名，则该属性为 null。
+                     * @param _domain 专属域名。如果实例无专属域名，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取生效时间
                      * @return EffectiveTime 生效时间
+                     * 
                      */
                     std::string GetEffectiveTime() const;
 
                     /**
                      * 设置生效时间
-                     * @param EffectiveTime 生效时间
+                     * @param _effectiveTime 生效时间
+                     * 
                      */
                     void SetEffectiveTime(const std::string& _effectiveTime);
 
                     /**
                      * 判断参数 EffectiveTime 是否已赋值
                      * @return EffectiveTime 是否已赋值
+                     * 
                      */
                     bool EffectiveTimeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间。如果为按量计费或永久有效实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间。如果为按量计费或永久有效实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间。如果为按量计费或永久有效实例，该属性为 null。
+                     * @param _expireTime 过期时间。如果为按量计费或永久有效实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserLimit 用户数量。如果为按量计费或不限制用户数量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUserLimit() const;
 
                     /**
                      * 设置用户数量。如果为按量计费或不限制用户数量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserLimit 用户数量。如果为按量计费或不限制用户数量实例，该属性为 null。
+                     * @param _userLimit 用户数量。如果为按量计费或不限制用户数量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserLimit(const uint64_t& _userLimit);
 
                     /**
                      * 判断参数 UserLimit 是否已赋值
                      * @return UserLimit 是否已赋值
+                     * 
                      */
                     bool UserLimitHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageLimit 存储容量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStorageLimit() const;
 
                     /**
                      * 设置存储容量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageLimit 存储容量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。如果为按量计费或不限制存储容量实例，该属性为 null。
+                     * @param _storageLimit 存储容量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorageLimit(const std::string& _storageLimit);
 
                     /**
                      * 判断参数 StorageLimit 是否已赋值
                      * @return StorageLimit 是否已赋值
+                     * 
                      */
                     bool StorageLimitHasBeenSet() const;
 
@@ -175,56 +193,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageLimitGB 存储容量，单位为 GB。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStorageLimitGB() const;
 
                     /**
                      * 设置存储容量，单位为 GB。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageLimitGB 存储容量，单位为 GB。如果为按量计费或不限制存储容量实例，该属性为 null。
+                     * @param _storageLimitGB 存储容量，单位为 GB。如果为按量计费或不限制存储容量实例，该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorageLimitGB(const uint64_t& _storageLimitGB);
 
                     /**
                      * 判断参数 StorageLimitGB 是否已赋值
                      * @return StorageLimitGB 是否已赋值
+                     * 
                      */
                     bool StorageLimitGBHasBeenSet() const;
 
                     /**
                      * 获取是否过期隔离
                      * @return Isolated 是否过期隔离
+                     * 
                      */
                     bool GetIsolated() const;
 
                     /**
                      * 设置是否过期隔离
-                     * @param Isolated 是否过期隔离
+                     * @param _isolated 是否过期隔离
+                     * 
                      */
                     void SetIsolated(const bool& _isolated);
 
                     /**
                      * 判断参数 Isolated 是否已赋值
                      * @return Isolated 是否已赋值
+                     * 
                      */
                     bool IsolatedHasBeenSet() const;
 
                     /**
                      * 获取续费标识。0：手动续费；1：自动续费；2：到期不续。
                      * @return AutoRenew 续费标识。0：手动续费；1：自动续费；2：到期不续。
+                     * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
                      * 设置续费标识。0：手动续费；1：自动续费；2：到期不续。
-                     * @param AutoRenew 续费标识。0：手动续费；1：自动续费；2：到期不续。
+                     * @param _autoRenew 续费标识。0：手动续费；1：自动续费；2：到期不续。
+                     * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
+                     * 
                      */
                     bool AutoRenewHasBeenSet() const;
 
@@ -233,20 +260,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperAdminAccount 超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuperAdminAccount() const;
 
                     /**
                      * 设置超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuperAdminAccount 超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。
+                     * @param _superAdminAccount 超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuperAdminAccount(const std::string& _superAdminAccount);
 
                     /**
                      * 判断参数 SuperAdminAccount 是否已赋值
                      * @return SuperAdminAccount 是否已赋值
+                     * 
                      */
                     bool SuperAdminAccountHasBeenSet() const;
 

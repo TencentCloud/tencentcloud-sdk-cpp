@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取命令输入的时间
                      * @return Time 命令输入的时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置命令输入的时间
-                     * @param Time 命令输入的时间
+                     * @param _time 命令输入的时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return RealName 姓名
+                     * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置姓名
-                     * @param RealName 姓名
+                     * @param _realName 姓名
+                     * 
                      */
                     void SetRealName(const std::string& _realName);
 
                     /**
                      * 判断参数 RealName 是否已赋值
                      * @return RealName 是否已赋值
+                     * 
                      */
                     bool RealNameHasBeenSet() const;
 
                     /**
                      * 获取资产ID
                      * @return InstanceId 资产ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资产ID
-                     * @param InstanceId 资产ID
+                     * @param _instanceId 资产ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取资产名称
                      * @return DeviceName 资产名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置资产名称
-                     * @param DeviceName 资产名称
+                     * @param _deviceName 资产名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取资产公网IP
                      * @return PublicIp 资产公网IP
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置资产公网IP
-                     * @param PublicIp 资产公网IP
+                     * @param _publicIp 资产公网IP
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
                     /**
                      * 获取资产内网IP
                      * @return PrivateIp 资产内网IP
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置资产内网IP
-                     * @param PrivateIp 资产内网IP
+                     * @param _privateIp 资产内网IP
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 
                     /**
                      * 获取命令
                      * @return Cmd 命令
+                     * 
                      */
                     std::string GetCmd() const;
 
                     /**
                      * 设置命令
-                     * @param Cmd 命令
+                     * @param _cmd 命令
+                     * 
                      */
                     void SetCmd(const std::string& _cmd);
 
                     /**
                      * 判断参数 Cmd 是否已赋值
                      * @return Cmd 是否已赋值
+                     * 
                      */
                     bool CmdHasBeenSet() const;
 
                     /**
                      * 获取命令执行情况，1--允许，2--拒绝
                      * @return Action 命令执行情况，1--允许，2--拒绝
+                     * 
                      */
                     uint64_t GetAction() const;
 
                     /**
                      * 设置命令执行情况，1--允许，2--拒绝
-                     * @param Action 命令执行情况，1--允许，2--拒绝
+                     * @param _action 命令执行情况，1--允许，2--拒绝
+                     * 
                      */
                     void SetAction(const uint64_t& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取命令所属的会话ID
                      * @return Sid 命令所属的会话ID
+                     * 
                      */
                     std::string GetSid() const;
 
                     /**
                      * 设置命令所属的会话ID
-                     * @param Sid 命令所属的会话ID
+                     * @param _sid 命令所属的会话ID
+                     * 
                      */
                     void SetSid(const std::string& _sid);
 
                     /**
                      * 判断参数 Sid 是否已赋值
                      * @return Sid 是否已赋值
+                     * 
                      */
                     bool SidHasBeenSet() const;
 
                     /**
                      * 获取命令执行时间相对于所属会话开始时间的偏移量，单位ms
                      * @return TimeOffset 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * 
                      */
                     uint64_t GetTimeOffset() const;
 
                     /**
                      * 设置命令执行时间相对于所属会话开始时间的偏移量，单位ms
-                     * @param TimeOffset 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * @param _timeOffset 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * 
                      */
                     void SetTimeOffset(const uint64_t& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Account 账号
+                     * @param _account 账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccount(const std::string& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
@@ -271,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FromIp source ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFromIp() const;
 
                     /**
                      * 设置source ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FromIp source ip
+                     * @param _fromIp source ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFromIp(const std::string& _fromIp);
 
                     /**
                      * 判断参数 FromIp 是否已赋值
                      * @return FromIp 是否已赋值
+                     * 
                      */
                     bool FromIpHasBeenSet() const;
 
@@ -293,20 +332,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessTime 该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessTime() const;
 
                     /**
                      * 设置该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessTime 该命令所属会话的会话开始时间
+                     * @param _sessTime 该命令所属会话的会话开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessTime(const std::string& _sessTime);
 
                     /**
                      * 判断参数 SessTime 是否已赋值
                      * @return SessTime 是否已赋值
+                     * 
                      */
                     bool SessTimeHasBeenSet() const;
 
@@ -315,20 +357,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfirmTime 复核时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfirmTime() const;
 
                     /**
                      * 设置复核时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfirmTime 复核时间
+                     * @param _confirmTime 复核时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfirmTime(const std::string& _confirmTime);
 
                     /**
                      * 判断参数 ConfirmTime 是否已赋值
                      * @return ConfirmTime 是否已赋值
+                     * 
                      */
                     bool ConfirmTimeHasBeenSet() const;
 
@@ -337,20 +382,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDepartmentId 部门id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserDepartmentId() const;
 
                     /**
                      * 设置部门id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserDepartmentId 部门id
+                     * @param _userDepartmentId 部门id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserDepartmentId(const std::string& _userDepartmentId);
 
                     /**
                      * 判断参数 UserDepartmentId 是否已赋值
                      * @return UserDepartmentId 是否已赋值
+                     * 
                      */
                     bool UserDepartmentIdHasBeenSet() const;
 
@@ -359,20 +407,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDepartmentName 用户部门名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserDepartmentName() const;
 
                     /**
                      * 设置用户部门名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserDepartmentName 用户部门名称
+                     * @param _userDepartmentName 用户部门名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserDepartmentName(const std::string& _userDepartmentName);
 
                     /**
                      * 判断参数 UserDepartmentName 是否已赋值
                      * @return UserDepartmentName 是否已赋值
+                     * 
                      */
                     bool UserDepartmentNameHasBeenSet() const;
 
@@ -381,20 +432,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceDepartmentId 设备部门id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceDepartmentId() const;
 
                     /**
                      * 设置设备部门id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceDepartmentId 设备部门id
+                     * @param _deviceDepartmentId 设备部门id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceDepartmentId(const std::string& _deviceDepartmentId);
 
                     /**
                      * 判断参数 DeviceDepartmentId 是否已赋值
                      * @return DeviceDepartmentId 是否已赋值
+                     * 
                      */
                     bool DeviceDepartmentIdHasBeenSet() const;
 
@@ -403,20 +457,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceDepartmentName 设备部门名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceDepartmentName() const;
 
                     /**
                      * 设置设备部门名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceDepartmentName 设备部门名称
+                     * @param _deviceDepartmentName 设备部门名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceDepartmentName(const std::string& _deviceDepartmentName);
 
                     /**
                      * 判断参数 DeviceDepartmentName 是否已赋值
                      * @return DeviceDepartmentName 是否已赋值
+                     * 
                      */
                     bool DeviceDepartmentNameHasBeenSet() const;
 

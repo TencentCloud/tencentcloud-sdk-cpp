@@ -56,12 +56,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BasicInfo 基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApplicationBasicInfo GetBasicInfo() const;
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 
@@ -70,12 +72,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BasicConfig 基本配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApplicationBasicConfig GetBasicConfig() const;
 
                     /**
                      * 判断参数 BasicConfig 是否已赋值
                      * @return BasicConfig 是否已赋值
+                     * 
                      */
                     bool BasicConfigHasBeenSet() const;
 
@@ -84,12 +88,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volumes 卷配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Volume> GetVolumes() const;
 
                     /**
                      * 判断参数 Volumes 是否已赋值
                      * @return Volumes 是否已赋值
+                     * 
                      */
                     bool VolumesHasBeenSet() const;
 
@@ -98,12 +104,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitContainers 初始化容器配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Container> GetInitContainers() const;
 
                     /**
                      * 判断参数 InitContainers 是否已赋值
                      * @return InitContainers 是否已赋值
+                     * 
                      */
                     bool InitContainersHasBeenSet() const;
 
@@ -112,12 +120,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Containers 容器配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Container> GetContainers() const;
 
                     /**
                      * 判断参数 Containers 是否已赋值
                      * @return Containers 是否已赋值
+                     * 
                      */
                     bool ContainersHasBeenSet() const;
 
@@ -126,12 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 服务配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Service GetService() const;
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
@@ -140,12 +152,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job Job配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
@@ -154,12 +168,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronJob CronJob配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CronJob GetCronJob() const;
 
                     /**
                      * 判断参数 CronJob 是否已赋值
                      * @return CronJob 是否已赋值
+                     * 
                      */
                     bool CronJobHasBeenSet() const;
 
@@ -168,12 +184,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartPolicy 重启策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRestartPolicy() const;
 
                     /**
                      * 判断参数 RestartPolicy 是否已赋值
                      * @return RestartPolicy 是否已赋值
+                     * 
                      */
                     bool RestartPolicyHasBeenSet() const;
 
@@ -182,12 +200,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HorizontalPodAutoscaler HPA
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
 
                     /**
                      * 判断参数 HorizontalPodAutoscaler 是否已赋值
                      * @return HorizontalPodAutoscaler 是否已赋值
+                     * 
                      */
                     bool HorizontalPodAutoscalerHasBeenSet() const;
 
@@ -196,12 +216,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImagePullSecrets 镜像拉取Secret
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetImagePullSecrets() const;
 
                     /**
                      * 判断参数 ImagePullSecrets 是否已赋值
                      * @return ImagePullSecrets 是否已赋值
+                     * 
                      */
                     bool ImagePullSecretsHasBeenSet() const;
 

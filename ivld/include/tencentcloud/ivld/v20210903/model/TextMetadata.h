@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 媒资文本文件大小，单位为字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置媒资文本文件大小，单位为字节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 媒资文本文件大小，单位为字节
+                     * @param _fileSize 媒资文本文件大小，单位为字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 媒资文本文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置媒资文本文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MD5 媒资文本文件MD5
+                     * @param _mD5 媒资文本文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Length 媒资文本文件字符数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLength() const;
 
                     /**
                      * 设置媒资文本文件字符数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Length 媒资文本文件字符数
+                     * @param _length 媒资文本文件字符数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLength(const int64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 媒资文本文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置媒资文本文件格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Format 媒资文本文件格式
+                     * @param _format 媒资文本文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

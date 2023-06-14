@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置任务状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务状态
+                     * @param _status 任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 统计总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置统计总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 统计总数
+                     * @param _total 统计总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

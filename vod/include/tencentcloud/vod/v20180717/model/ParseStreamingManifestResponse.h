@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取分片文件列表。
                      * @return MediaSegmentSet 分片文件列表。
+                     * 
                      */
                     std::vector<std::string> GetMediaSegmentSet() const;
 
                     /**
                      * 判断参数 MediaSegmentSet 是否已赋值
                      * @return MediaSegmentSet 是否已赋值
+                     * 
                      */
                     bool MediaSegmentSetHasBeenSet() const;
 

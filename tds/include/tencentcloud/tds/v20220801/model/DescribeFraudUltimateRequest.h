@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取客户端通过SDK获取的设备Token
                      * @return DeviceToken 客户端通过SDK获取的设备Token
+                     * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
                      * 设置客户端通过SDK获取的设备Token
-                     * @param DeviceToken 客户端通过SDK获取的设备Token
+                     * @param _deviceToken 客户端通过SDK获取的设备Token
+                     * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
 
                     /**
                      * 判断参数 DeviceToken 是否已赋值
                      * @return DeviceToken 是否已赋值
+                     * 
                      */
                     bool DeviceTokenHasBeenSet() const;
 
                     /**
                      * 获取使用场景。目前仅支持login-登录场景、register-注册场景
                      * @return SceneCode 使用场景。目前仅支持login-登录场景、register-注册场景
+                     * 
                      */
                     std::string GetSceneCode() const;
 
                     /**
                      * 设置使用场景。目前仅支持login-登录场景、register-注册场景
-                     * @param SceneCode 使用场景。目前仅支持login-登录场景、register-注册场景
+                     * @param _sceneCode 使用场景。目前仅支持login-登录场景、register-注册场景
+                     * 
                      */
                     void SetSceneCode(const std::string& _sceneCode);
 
                     /**
                      * 判断参数 SceneCode 是否已赋值
                      * @return SceneCode 是否已赋值
+                     * 
                      */
                     bool SceneCodeHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识
                      * @return UserId 用户唯一标识
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户唯一标识
-                     * @param UserId 用户唯一标识
+                     * @param _userId 用户唯一标识
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取事件时间戳（毫秒）
                      * @return EventTime 事件时间戳（毫秒）
+                     * 
                      */
                     uint64_t GetEventTime() const;
 
                     /**
                      * 设置事件时间戳（毫秒）
-                     * @param EventTime 事件时间戳（毫秒）
+                     * @param _eventTime 事件时间戳（毫秒）
+                     * 
                      */
                     void SetEventTime(const uint64_t& _eventTime);
 
                     /**
                      * 判断参数 EventTime 是否已赋值
                      * @return EventTime 是否已赋值
+                     * 
                      */
                     bool EventTimeHasBeenSet() const;
 
                     /**
                      * 获取事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时
                      * @return ElapsedTime 事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时
+                     * 
                      */
                     uint64_t GetElapsedTime() const;
 
                     /**
                      * 设置事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时
-                     * @param ElapsedTime 事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时
+                     * @param _elapsedTime 事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时
+                     * 
                      */
                     void SetElapsedTime(const uint64_t& _elapsedTime);
 
                     /**
                      * 判断参数 ElapsedTime 是否已赋值
                      * @return ElapsedTime 是否已赋值
+                     * 
                      */
                     bool ElapsedTimeHasBeenSet() const;
 
                     /**
                      * 获取微信的OpenId
                      * @return WeChatOpenId 微信的OpenId
+                     * 
                      */
                     std::string GetWeChatOpenId() const;
 
                     /**
                      * 设置微信的OpenId
-                     * @param WeChatOpenId 微信的OpenId
+                     * @param _weChatOpenId 微信的OpenId
+                     * 
                      */
                     void SetWeChatOpenId(const std::string& _weChatOpenId);
 
                     /**
                      * 判断参数 WeChatOpenId 是否已赋值
                      * @return WeChatOpenId 是否已赋值
+                     * 
                      */
                     bool WeChatOpenIdHasBeenSet() const;
 
                     /**
                      * 获取手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5
                      * @return PhoneNumber 手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5
-                     * @param PhoneNumber 手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5
+                     * @param _phoneNumber 手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取客户端IP
                      * @return ClientIP 客户端IP
+                     * 
                      */
                     std::string GetClientIP() const;
 
                     /**
                      * 设置客户端IP
-                     * @param ClientIP 客户端IP
+                     * @param _clientIP 客户端IP
+                     * 
                      */
                     void SetClientIP(const std::string& _clientIP);
 
                     /**
                      * 判断参数 ClientIP 是否已赋值
                      * @return ClientIP 是否已赋值
+                     * 
                      */
                     bool ClientIPHasBeenSet() const;
 
                     /**
                      * 获取QQ的OpenId
                      * @return QQOpenId QQ的OpenId
+                     * 
                      */
                     std::string GetQQOpenId() const;
 
                     /**
                      * 设置QQ的OpenId
-                     * @param QQOpenId QQ的OpenId
+                     * @param _qQOpenId QQ的OpenId
+                     * 
                      */
                     void SetQQOpenId(const std::string& _qQOpenId);
 
                     /**
                      * 判断参数 QQOpenId 是否已赋值
                      * @return QQOpenId 是否已赋值
+                     * 
                      */
                     bool QQOpenIdHasBeenSet() const;
 

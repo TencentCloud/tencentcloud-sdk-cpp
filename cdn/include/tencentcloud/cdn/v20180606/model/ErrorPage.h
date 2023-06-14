@@ -56,6 +56,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 状态码重定向配置开关，取值有：
+                     * @param _switch 状态码重定向配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageRules 状态码重定向规则配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ErrorPageRule> GetPageRules() const;
 
                     /**
                      * 设置状态码重定向规则配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageRules 状态码重定向规则配置
+                     * @param _pageRules 状态码重定向规则配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPageRules(const std::vector<ErrorPageRule>& _pageRules);
 
                     /**
                      * 判断参数 PageRules 是否已赋值
                      * @return PageRules 是否已赋值
+                     * 
                      */
                     bool PageRulesHasBeenSet() const;
 

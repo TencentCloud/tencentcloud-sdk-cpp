@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取连接源的Id
                      * @return ResourceId 连接源的Id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置连接源的Id
-                     * @param ResourceId 连接源的Id
+                     * @param _resourceId 连接源的Id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

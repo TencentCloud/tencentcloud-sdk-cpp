@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取镜像仓库名称
                      * @return RepositoryName 镜像仓库名称
+                     * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置镜像仓库名称
-                     * @param RepositoryName 镜像仓库名称
+                     * @param _repositoryName 镜像仓库名称
+                     * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
                     /**
                      * 判断参数 RepositoryName 是否已赋值
                      * @return RepositoryName 是否已赋值
+                     * 
                      */
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取指定镜像版本进行查找，当前为模糊搜索
                      * @return ImageVersion 指定镜像版本进行查找，当前为模糊搜索
+                     * 
                      */
                     std::string GetImageVersion() const;
 
                     /**
                      * 设置指定镜像版本进行查找，当前为模糊搜索
-                     * @param ImageVersion 指定镜像版本进行查找，当前为模糊搜索
+                     * @param _imageVersion 指定镜像版本进行查找，当前为模糊搜索
+                     * 
                      */
                     void SetImageVersion(const std::string& _imageVersion);
 
                     /**
                      * 判断参数 ImageVersion 是否已赋值
                      * @return ImageVersion 是否已赋值
+                     * 
                      */
                     bool ImageVersionHasBeenSet() const;
 
                     /**
                      * 获取每页个数，用于分页，默认20
                      * @return Limit 每页个数，用于分页，默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页个数，用于分页，默认20
-                     * @param Limit 每页个数，用于分页，默认20
+                     * @param _limit 每页个数，用于分页，默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页数，默认值为1
                      * @return Offset 页数，默认值为1
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页数，默认值为1
-                     * @param Offset 页数，默认值为1
+                     * @param _offset 页数，默认值为1
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取指定镜像 Digest 进行查找
                      * @return Digest 指定镜像 Digest 进行查找
+                     * 
                      */
                     std::string GetDigest() const;
 
                     /**
                      * 设置指定镜像 Digest 进行查找
-                     * @param Digest 指定镜像 Digest 进行查找
+                     * @param _digest 指定镜像 Digest 进行查找
+                     * 
                      */
                     void SetDigest(const std::string& _digest);
 
                     /**
                      * 判断参数 Digest 是否已赋值
                      * @return Digest 是否已赋值
+                     * 
                      */
                     bool DigestHasBeenSet() const;
 
                     /**
                      * 获取指定是否为精准匹配，true为精准匹配，不填为模糊匹配
                      * @return ExactMatch 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     * 
                      */
                     bool GetExactMatch() const;
 
                     /**
                      * 设置指定是否为精准匹配，true为精准匹配，不填为模糊匹配
-                     * @param ExactMatch 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     * @param _exactMatch 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
 
                     /**
                      * 判断参数 ExactMatch 是否已赋值
                      * @return ExactMatch 是否已赋值
+                     * 
                      */
                     bool ExactMatchHasBeenSet() const;
 

@@ -48,60 +48,70 @@ namespace TencentCloud
                     /**
                      * 获取任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时
                      * @return TaskStatus 任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时
+                     * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
                     /**
                      * 获取app加固前的详细信息
                      * @return AppDetailInfo app加固前的详细信息
+                     * 
                      */
                     AppDetailInfo GetAppDetailInfo() const;
 
                     /**
                      * 判断参数 AppDetailInfo 是否已赋值
                      * @return AppDetailInfo 是否已赋值
+                     * 
                      */
                     bool AppDetailInfoHasBeenSet() const;
 
                     /**
                      * 获取app加固后的详细信息
                      * @return ShieldInfo app加固后的详细信息
+                     * 
                      */
                     ShieldInfo GetShieldInfo() const;
 
                     /**
                      * 判断参数 ShieldInfo 是否已赋值
                      * @return ShieldInfo 是否已赋值
+                     * 
                      */
                     bool ShieldInfoHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return StatusDesc 状态描述
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
                     /**
                      * 获取状态指引
                      * @return StatusRef 状态指引
+                     * 
                      */
                     std::string GetStatusRef() const;
 
                     /**
                      * 判断参数 StatusRef 是否已赋值
                      * @return StatusRef 是否已赋值
+                     * 
                      */
                     bool StatusRefHasBeenSet() const;
 

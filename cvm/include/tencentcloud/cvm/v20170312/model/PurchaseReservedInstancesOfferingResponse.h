@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取已购买预留实例计费ID
                      * @return ReservedInstanceId 已购买预留实例计费ID
+                     * 
                      */
                     std::string GetReservedInstanceId() const;
 
                     /**
                      * 判断参数 ReservedInstanceId 是否已赋值
                      * @return ReservedInstanceId 是否已赋值
+                     * 
                      */
                     bool ReservedInstanceIdHasBeenSet() const;
 

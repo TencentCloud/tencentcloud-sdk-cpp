@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取集团编码
                      * @return GroupCode 集团编码
+                     * 
                      */
                     std::string GetGroupCode() const;
 
                     /**
                      * 设置集团编码
-                     * @param GroupCode 集团编码
+                     * @param _groupCode 集团编码
+                     * 
                      */
                     void SetGroupCode(const std::string& _groupCode);
 
                     /**
                      * 判断参数 GroupCode 是否已赋值
                      * @return GroupCode 是否已赋值
+                     * 
                      */
                     bool GroupCodeHasBeenSet() const;
 
                     /**
                      * 获取广场ID
                      * @return MallId 广场ID
+                     * 
                      */
                     uint64_t GetMallId() const;
 
                     /**
                      * 设置广场ID
-                     * @param MallId 广场ID
+                     * @param _mallId 广场ID
+                     * 
                      */
                     void SetMallId(const uint64_t& _mallId);
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取任务内容
                      * @return TaskContent 任务内容
+                     * 
                      */
                     TaskContent GetTaskContent() const;
 
                     /**
                      * 设置任务内容
-                     * @param TaskContent 任务内容
+                     * @param _taskContent 任务内容
+                     * 
                      */
                     void SetTaskContent(const TaskContent& _taskContent);
 
                     /**
                      * 判断参数 TaskContent 是否已赋值
                      * @return TaskContent 是否已赋值
+                     * 
                      */
                     bool TaskContentHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 1: 底图拉取
                      * @return TaskType 任务类型:
 1: 底图拉取
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型:
 1: 底图拉取
-                     * @param TaskType 任务类型:
+                     * @param _taskType 任务类型:
 1: 底图拉取
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
                      * 设置连接池类型：SessionConnectionPool（会话级别连接池
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池
+                     * @param _connectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
 
                     /**
                      * 判断参数 ConnectionPoolType 是否已赋值
                      * @return ConnectionPoolType 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPoolConnectionTimeOut 最大可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxPoolConnectionTimeOut() const;
 
                     /**
                      * 设置最大可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxPoolConnectionTimeOut 最大可保持连接阈值：单位（秒）
+                     * @param _maxPoolConnectionTimeOut 最大可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxPoolConnectionTimeOut(const int64_t& _maxPoolConnectionTimeOut);
 
                     /**
                      * 判断参数 MaxPoolConnectionTimeOut 是否已赋值
                      * @return MaxPoolConnectionTimeOut 是否已赋值
+                     * 
                      */
                     bool MaxPoolConnectionTimeOutHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinPoolConnectionTimeOut 最小可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinPoolConnectionTimeOut() const;
 
                     /**
                      * 设置最小可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinPoolConnectionTimeOut 最小可保持连接阈值：单位（秒）
+                     * @param _minPoolConnectionTimeOut 最小可保持连接阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinPoolConnectionTimeOut(const int64_t& _minPoolConnectionTimeOut);
 
                     /**
                      * 判断参数 MinPoolConnectionTimeOut 是否已赋值
                      * @return MinPoolConnectionTimeOut 是否已赋值
+                     * 
                      */
                     bool MinPoolConnectionTimeOutHasBeenSet() const;
 

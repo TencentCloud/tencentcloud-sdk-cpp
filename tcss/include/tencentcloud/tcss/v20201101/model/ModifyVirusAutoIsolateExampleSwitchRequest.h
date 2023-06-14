@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取文件Md5值
                      * @return MD5 文件Md5值
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置文件Md5值
-                     * @param MD5 文件Md5值
+                     * @param _mD5 文件Md5值
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
                     /**
                      * 获取开关(开:true 关: false)
                      * @return Status 开关(开:true 关: false)
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置开关(开:true 关: false)
-                     * @param Status 开关(开:true 关: false)
+                     * @param _status 开关(开:true 关: false)
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

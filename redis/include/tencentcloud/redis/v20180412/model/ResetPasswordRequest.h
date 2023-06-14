@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Redis实例ID
                      * @return InstanceId Redis实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Redis实例ID
-                     * @param InstanceId Redis实例ID
+                     * @param _instanceId Redis实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取重置的密码（切换为免密实例时，可不传；其他情况必传）
                      * @return Password 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置重置的密码（切换为免密实例时，可不传；其他情况必传）
-                     * @param Password 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * @param _password 重置的密码（切换为免密实例时，可不传；其他情况必传）
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
                      * @return NoAuth 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * 
                      */
                     bool GetNoAuth() const;
 
                     /**
                      * 设置是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
-                     * @param NoAuth 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * @param _noAuth 是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false
+                     * 
                      */
                     void SetNoAuth(const bool& _noAuth);
 
                     /**
                      * 判断参数 NoAuth 是否已赋值
                      * @return NoAuth 是否已赋值
+                     * 
                      */
                     bool NoAuthHasBeenSet() const;
 

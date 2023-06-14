@@ -52,20 +52,23 @@ namespace TencentCloud
 1：执行中；2：成功；3：失败。
                      * @return Status 编辑任务状态。 
 1：执行中；2：成功；3：失败。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置编辑任务状态。 
 1：执行中；2：成功；3：失败。
-                     * @param Status 编辑任务状态。 
+                     * @param _status 编辑任务状态。 
 1：执行中；2：成功；3：失败。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -74,38 +77,44 @@ namespace TencentCloud
 0：成功；其他值：失败。
                      * @return ErrCode 编辑任务失败错误码。 
 0：成功；其他值：失败。
+                     * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置编辑任务失败错误码。 
 0：成功；其他值：失败。
-                     * @param ErrCode 编辑任务失败错误码。 
+                     * @param _errCode 编辑任务失败错误码。 
 0：成功；其他值：失败。
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取编辑任务失败错误描述。
                      * @return ErrMsg 编辑任务失败错误描述。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置编辑任务失败错误描述。
-                     * @param ErrMsg 编辑任务失败错误描述。
+                     * @param _errMsg 编辑任务失败错误描述。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemSet 智能拆条结果集。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StripTaskResultItem> GetItemSet() const;
 
                     /**
                      * 设置智能拆条结果集。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemSet 智能拆条结果集。
+                     * @param _itemSet 智能拆条结果集。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemSet(const std::vector<StripTaskResultItem>& _itemSet);
 
                     /**
                      * 判断参数 ItemSet 是否已赋值
                      * @return ItemSet 是否已赋值
+                     * 
                      */
                     bool ItemSetHasBeenSet() const;
 

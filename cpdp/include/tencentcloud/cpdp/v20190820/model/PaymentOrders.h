@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取列表
                      * @return List 列表
+                     * 
                      */
                     std::vector<PaymentOrderResult> GetList() const;
 
                     /**
                      * 设置列表
-                     * @param List 列表
+                     * @param _list 列表
+                     * 
                      */
                     void SetList(const std::vector<PaymentOrderResult>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Count 总数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置总数
-                     * @param Count 总数
+                     * @param _count 总数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

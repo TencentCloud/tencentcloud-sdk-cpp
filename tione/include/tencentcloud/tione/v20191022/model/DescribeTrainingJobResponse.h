@@ -54,24 +54,28 @@ namespace TencentCloud
                     /**
                      * 获取算法镜像配置
                      * @return AlgorithmSpecification 算法镜像配置
+                     * 
                      */
                     AlgorithmSpecification GetAlgorithmSpecification() const;
 
                     /**
                      * 判断参数 AlgorithmSpecification 是否已赋值
                      * @return AlgorithmSpecification 是否已赋值
+                     * 
                      */
                     bool AlgorithmSpecificationHasBeenSet() const;
 
                     /**
                      * 获取任务名称
                      * @return TrainingJobName 任务名称
+                     * 
                      */
                     std::string GetTrainingJobName() const;
 
                     /**
                      * 判断参数 TrainingJobName 是否已赋值
                      * @return TrainingJobName 是否已赋值
+                     * 
                      */
                     bool TrainingJobNameHasBeenSet() const;
 
@@ -80,36 +84,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HyperParameters 算法超级参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHyperParameters() const;
 
                     /**
                      * 判断参数 HyperParameters 是否已赋值
                      * @return HyperParameters 是否已赋值
+                     * 
                      */
                     bool HyperParametersHasBeenSet() const;
 
                     /**
                      * 获取输入数据配置
                      * @return InputDataConfig 输入数据配置
+                     * 
                      */
                     std::vector<InputDataConfig> GetInputDataConfig() const;
 
                     /**
                      * 判断参数 InputDataConfig 是否已赋值
                      * @return InputDataConfig 是否已赋值
+                     * 
                      */
                     bool InputDataConfigHasBeenSet() const;
 
                     /**
                      * 获取输出数据配置
                      * @return OutputDataConfig 输出数据配置
+                     * 
                      */
                     OutputDataConfig GetOutputDataConfig() const;
 
                     /**
                      * 判断参数 OutputDataConfig 是否已赋值
                      * @return OutputDataConfig 是否已赋值
+                     * 
                      */
                     bool OutputDataConfigHasBeenSet() const;
 
@@ -118,24 +128,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppingCondition 中止条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StoppingCondition GetStoppingCondition() const;
 
                     /**
                      * 判断参数 StoppingCondition 是否已赋值
                      * @return StoppingCondition 是否已赋值
+                     * 
                      */
                     bool StoppingConditionHasBeenSet() const;
 
                     /**
                      * 获取计算实例配置
                      * @return ResourceConfig 计算实例配置
+                     * 
                      */
                     ResourceConfig GetResourceConfig() const;
 
                     /**
                      * 判断参数 ResourceConfig 是否已赋值
                      * @return ResourceConfig 是否已赋值
+                     * 
                      */
                     bool ResourceConfigHasBeenSet() const;
 
@@ -144,12 +158,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcConfig 私有网络配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VpcConfig GetVpcConfig() const;
 
                     /**
                      * 判断参数 VpcConfig 是否已赋值
                      * @return VpcConfig 是否已赋值
+                     * 
                      */
                     bool VpcConfigHasBeenSet() const;
 
@@ -158,24 +174,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailureReason() const;
 
                     /**
                      * 判断参数 FailureReason 是否已赋值
                      * @return FailureReason 是否已赋值
+                     * 
                      */
                     bool FailureReasonHasBeenSet() const;
 
                     /**
                      * 获取最近修改时间
                      * @return LastModifiedTime 最近修改时间
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 
@@ -184,12 +204,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingStartTime 任务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingStartTime() const;
 
                     /**
                      * 判断参数 TrainingStartTime 是否已赋值
                      * @return TrainingStartTime 是否已赋值
+                     * 
                      */
                     bool TrainingStartTimeHasBeenSet() const;
 
@@ -198,12 +220,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingEndTime 任务完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingEndTime() const;
 
                     /**
                      * 判断参数 TrainingEndTime 是否已赋值
                      * @return TrainingEndTime 是否已赋值
+                     * 
                      */
                     bool TrainingEndTimeHasBeenSet() const;
 
@@ -212,12 +236,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelArtifacts 模型输出配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ModelArtifacts GetModelArtifacts() const;
 
                     /**
                      * 判断参数 ModelArtifacts 是否已赋值
                      * @return ModelArtifacts 是否已赋值
+                     * 
                      */
                     bool ModelArtifactsHasBeenSet() const;
 
@@ -242,12 +268,14 @@ Failed: 失败
 MaxRuntimeExceeded: 任务超过最大运行时间
 Stopping: 停止中
 Stopped：已停止
+                     * 
                      */
                     std::string GetSecondaryStatus() const;
 
                     /**
                      * 判断参数 SecondaryStatus 是否已赋值
                      * @return SecondaryStatus 是否已赋值
+                     * 
                      */
                     bool SecondaryStatusHasBeenSet() const;
 
@@ -256,12 +284,14 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryStatusTransitions 详细状态事件记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecondaryStatusTransition> GetSecondaryStatusTransitions() const;
 
                     /**
                      * 判断参数 SecondaryStatusTransitions 是否已赋值
                      * @return SecondaryStatusTransitions 是否已赋值
+                     * 
                      */
                     bool SecondaryStatusTransitionsHasBeenSet() const;
 
@@ -270,12 +300,14 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
@@ -292,12 +324,14 @@ Completed: 已完成
 Failed: 失败
 Stopping: 停止中
 Stopped：已停止
+                     * 
                      */
                     std::string GetTrainingJobStatus() const;
 
                     /**
                      * 判断参数 TrainingJobStatus 是否已赋值
                      * @return TrainingJobStatus 是否已赋值
+                     * 
                      */
                     bool TrainingJobStatusHasBeenSet() const;
 
@@ -306,24 +340,28 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogUrl 训练任务日志链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogUrl() const;
 
                     /**
                      * 判断参数 LogUrl 是否已赋值
                      * @return LogUrl 是否已赋值
+                     * 
                      */
                     bool LogUrlHasBeenSet() const;
 
                     /**
                      * 获取训练任务实例ID
                      * @return InstanceId 训练任务实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

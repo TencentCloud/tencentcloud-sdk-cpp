@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取带宽包唯一标识Id
                      * @return BandwidthPackageId 带宽包唯一标识Id
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置带宽包唯一标识Id
-                     * @param BandwidthPackageId 带宽包唯一标识Id
+                     * @param _bandwidthPackageId 带宽包唯一标识Id
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
                      * 获取带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
                      * @return NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
+                     * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
                      * 设置带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
-                     * @param NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
+                     * @param _networkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'
                      * @return ChargeType 带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'
-                     * @param ChargeType 带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'
+                     * @param _chargeType 带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽包名称
                      * @return BandwidthPackageName 带宽包名称
+                     * 
                      */
                     std::string GetBandwidthPackageName() const;
 
                     /**
                      * 设置带宽包名称
-                     * @param BandwidthPackageName 带宽包名称
+                     * @param _bandwidthPackageName 带宽包名称
+                     * 
                      */
                     void SetBandwidthPackageName(const std::string& _bandwidthPackageName);
 
                     /**
                      * 判断参数 BandwidthPackageName 是否已赋值
                      * @return BandwidthPackageName 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
                      * 获取带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * @return CreatedTime 带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param CreatedTime 带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _createdTime 带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'
                      * @return Status 带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'
-                     * @param Status 带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'
+                     * @param _status 带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取带宽包资源信息
                      * @return ResourceSet 带宽包资源信息
+                     * 
                      */
                     std::vector<Resource> GetResourceSet() const;
 
                     /**
                      * 设置带宽包资源信息
-                     * @param ResourceSet 带宽包资源信息
+                     * @param _resourceSet 带宽包资源信息
+                     * 
                      */
                     void SetResourceSet(const std::vector<Resource>& _resourceSet);
 
                     /**
                      * 判断参数 ResourceSet 是否已赋值
                      * @return ResourceSet 是否已赋值
+                     * 
                      */
                     bool ResourceSetHasBeenSet() const;
 
                     /**
                      * 获取带宽包限速大小。单位：Mbps，-1表示不限速。
                      * @return Bandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽包限速大小。单位：Mbps，-1表示不限速。
-                     * @param Bandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * @param _bandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 

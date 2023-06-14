@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取是否生效，true表示生效，false表示未生效
                      * @return Status 是否生效，true表示生效，false表示未生效
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
                      * @return Rule 索引配置信息
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessRuleInfo GetRule() const;
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 
                     /**
                      * 获取索引修改时间，初始值为索引创建时间。
                      * @return ModifyTime 索引修改时间，初始值为索引创建时间。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

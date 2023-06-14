@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取人物唯一标识 ID。
                      * @return Id 人物唯一标识 ID。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置人物唯一标识 ID。
-                     * @param Id 人物唯一标识 ID。
+                     * @param _id 人物唯一标识 ID。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -79,51 +83,59 @@ namespace TencentCloud
                      * 设置人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
-                     * @param Type 人物库类型，表示识别出的人物来自哪个人物库：
+                     * @param _type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取人物名称。
                      * @return Name 人物名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置人物名称。
-                     * @param Name 人物名称。
+                     * @param _name 人物名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取人物出现的片段结果集。
                      * @return SegmentSet 人物出现的片段结果集。
+                     * 
                      */
                     std::vector<AiRecognitionTaskFaceSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置人物出现的片段结果集。
-                     * @param SegmentSet 人物出现的片段结果集。
+                     * @param _segmentSet 人物出现的片段结果集。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskFaceSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 
@@ -136,6 +148,7 @@ namespace TencentCloud
 <li>Male：男性；</li>
 <li>Female：女性。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGender() const;
 
@@ -144,16 +157,18 @@ namespace TencentCloud
 <li>Male：男性；</li>
 <li>Female：女性。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gender 人物性别：
+                     * @param _gender 人物性别：
 <li>Male：男性；</li>
 <li>Female：女性。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGender(const std::string& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Birthday 人物出生日期。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthday() const;
 
                     /**
                      * 设置人物出生日期。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Birthday 人物出生日期。
+                     * @param _birthday 人物出生日期。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthday(const std::string& _birthday);
 
                     /**
                      * 判断参数 Birthday 是否已赋值
                      * @return Birthday 是否已赋值
+                     * 
                      */
                     bool BirthdayHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Profession 人物职业或者职务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProfession() const;
 
                     /**
                      * 设置人物职业或者职务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Profession 人物职业或者职务。
+                     * @param _profession 人物职业或者职务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProfession(const std::string& _profession);
 
                     /**
                      * 判断参数 Profession 是否已赋值
                      * @return Profession 是否已赋值
+                     * 
                      */
                     bool ProfessionHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchoolOfGraduation 人物毕业院校。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchoolOfGraduation() const;
 
                     /**
                      * 设置人物毕业院校。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchoolOfGraduation 人物毕业院校。
+                     * @param _schoolOfGraduation 人物毕业院校。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchoolOfGraduation(const std::string& _schoolOfGraduation);
 
                     /**
                      * 判断参数 SchoolOfGraduation 是否已赋值
                      * @return SchoolOfGraduation 是否已赋值
+                     * 
                      */
                     bool SchoolOfGraduationHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abstract 人物简介。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAbstract() const;
 
                     /**
                      * 设置人物简介。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Abstract 人物简介。
+                     * @param _abstract 人物简介。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAbstract(const std::string& _abstract);
 
                     /**
                      * 判断参数 Abstract 是否已赋值
                      * @return Abstract 是否已赋值
+                     * 
                      */
                     bool AbstractHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlaceOfBirth 人物出生地或者籍贯。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlaceOfBirth() const;
 
                     /**
                      * 设置人物出生地或者籍贯。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlaceOfBirth 人物出生地或者籍贯。
+                     * @param _placeOfBirth 人物出生地或者籍贯。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlaceOfBirth(const std::string& _placeOfBirth);
 
                     /**
                      * 判断参数 PlaceOfBirth 是否已赋值
                      * @return PlaceOfBirth 是否已赋值
+                     * 
                      */
                     bool PlaceOfBirthHasBeenSet() const;
 
@@ -276,6 +306,7 @@ namespace TencentCloud
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPersonType() const;
 
@@ -284,16 +315,18 @@ namespace TencentCloud
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PersonType 人物类型：
+                     * @param _personType 人物类型：
 <li>Politician：官员；</li>
 <li>Artist：艺人。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPersonType(const std::string& _personType);
 
                     /**
                      * 判断参数 PersonType 是否已赋值
                      * @return PersonType 是否已赋值
+                     * 
                      */
                     bool PersonTypeHasBeenSet() const;
 
@@ -306,6 +339,7 @@ namespace TencentCloud
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
@@ -314,16 +348,18 @@ namespace TencentCloud
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 敏感度标注：
+                     * @param _remark 敏感度标注：
 <li>Normal：正常；</li>
 <li>Sensitive：敏感。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -332,20 +368,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 截图链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置截图链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 截图链接
+                     * @param _url 截图链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

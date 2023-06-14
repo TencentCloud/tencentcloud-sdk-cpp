@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP"。
                      * @return Type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP"。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP"。
-                     * @param Type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP"。
+                     * @param _type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP"。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取资源可用性，"Available"：可用，"Unavailable"：不可用
                      * @return Availability 资源可用性，"Available"：可用，"Unavailable"：不可用
+                     * 
                      */
                     std::string GetAvailability() const;
 
                     /**
                      * 设置资源可用性，"Available"：可用，"Unavailable"：不可用
-                     * @param Availability 资源可用性，"Available"：可用，"Unavailable"：不可用
+                     * @param _availability 资源可用性，"Available"：可用，"Unavailable"：不可用
+                     * 
                      */
                     void SetAvailability(const std::string& _availability);
 
                     /**
                      * 判断参数 Availability 是否已赋值
                      * @return Availability 是否已赋值
+                     * 
                      */
                     bool AvailabilityHasBeenSet() const;
 

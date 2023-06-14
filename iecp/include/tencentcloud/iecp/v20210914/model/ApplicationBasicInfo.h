@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取管理URL地址
                      * @return ManageUrl 管理URL地址
+                     * 
                      */
                     std::string GetManageUrl() const;
 
                     /**
                      * 设置管理URL地址
-                     * @param ManageUrl 管理URL地址
+                     * @param _manageUrl 管理URL地址
+                     * 
                      */
                     void SetManageUrl(const std::string& _manageUrl);
 
                     /**
                      * 判断参数 ManageUrl 是否已赋值
                      * @return ManageUrl 是否已赋值
+                     * 
                      */
                     bool ManageUrlHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowVisualModify 是否允许可视化修改
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAllowVisualModify() const;
 
                     /**
                      * 设置是否允许可视化修改
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllowVisualModify 是否允许可视化修改
+                     * @param _allowVisualModify 是否允许可视化修改
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllowVisualModify(const bool& _allowVisualModify);
 
                     /**
                      * 判断参数 AllowVisualModify 是否已赋值
                      * @return AllowVisualModify 是否已赋值
+                     * 
                      */
                     bool AllowVisualModifyHasBeenSet() const;
 

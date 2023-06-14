@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取导入目标实例ID
                      * @return InstanceId 导入目标实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置导入目标实例ID
-                     * @param InstanceId 导入目标实例ID
+                     * @param _instanceId 导入目标实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复
                      * @return RecoveryType 迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复
+                     * 
                      */
                     std::string GetRecoveryType() const;
 
                     /**
                      * 设置迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复
-                     * @param RecoveryType 迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复
+                     * @param _recoveryType 迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复
+                     * 
                      */
                     void SetRecoveryType(const std::string& _recoveryType);
 
                     /**
                      * 判断参数 RecoveryType 是否已赋值
                      * @return RecoveryType 是否已赋值
+                     * 
                      */
                     bool RecoveryTypeHasBeenSet() const;
 
                     /**
                      * 获取备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。
                      * @return UploadType 备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。
+                     * 
                      */
                     std::string GetUploadType() const;
 
                     /**
                      * 设置备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。
-                     * @param UploadType 备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。
+                     * @param _uploadType 备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。
+                     * 
                      */
                     void SetUploadType(const std::string& _uploadType);
 
                     /**
                      * 判断参数 UploadType 是否已赋值
                      * @return UploadType 是否已赋值
+                     * 
                      */
                     bool UploadTypeHasBeenSet() const;
 
                     /**
                      * 获取任务名称
                      * @return MigrationName 任务名称
+                     * 
                      */
                     std::string GetMigrationName() const;
 
                     /**
                      * 设置任务名称
-                     * @param MigrationName 任务名称
+                     * @param _migrationName 任务名称
+                     * 
                      */
                     void SetMigrationName(const std::string& _migrationName);
 
                     /**
                      * 判断参数 MigrationName 是否已赋值
                      * @return MigrationName 是否已赋值
+                     * 
                      */
                     bool MigrationNameHasBeenSet() const;
 
                     /**
                      * 获取UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库
                      * @return BackupFiles UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库
+                     * 
                      */
                     std::vector<std::string> GetBackupFiles() const;
 
                     /**
                      * 设置UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库
-                     * @param BackupFiles UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库
+                     * @param _backupFiles UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库
+                     * 
                      */
                     void SetBackupFiles(const std::vector<std::string>& _backupFiles);
 
                     /**
                      * 判断参数 BackupFiles 是否已赋值
                      * @return BackupFiles 是否已赋值
+                     * 
                      */
                     bool BackupFilesHasBeenSet() const;
 

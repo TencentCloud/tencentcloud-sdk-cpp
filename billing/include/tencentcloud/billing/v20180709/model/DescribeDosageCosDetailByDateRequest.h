@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询用量开始时间，例如：2020-09-01
                      * @return StartDate 查询用量开始时间，例如：2020-09-01
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置查询用量开始时间，例如：2020-09-01
-                     * @param StartDate 查询用量开始时间，例如：2020-09-01
+                     * @param _startDate 查询用量开始时间，例如：2020-09-01
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
                      * @return EndDate 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
-                     * @param EndDate 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
+                     * @param _endDate 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291
                      * @return BucketName COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291
+                     * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291
-                     * @param BucketName COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291
+                     * @param _bucketName COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291
+                     * 
                      */
                     void SetBucketName(const std::string& _bucketName);
 
                     /**
                      * 判断参数 BucketName 是否已赋值
                      * @return BucketName 是否已赋值
+                     * 
                      */
                     bool BucketNameHasBeenSet() const;
 

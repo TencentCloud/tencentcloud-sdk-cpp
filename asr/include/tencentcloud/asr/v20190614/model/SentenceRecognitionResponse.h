@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取识别结果。
                      * @return Result 识别结果。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取请求的音频时长，单位为ms
                      * @return AudioDuration 请求的音频时长，单位为ms
+                     * 
                      */
                     int64_t GetAudioDuration() const;
 
                     /**
                      * 判断参数 AudioDuration 是否已赋值
                      * @return AudioDuration 是否已赋值
+                     * 
                      */
                     bool AudioDurationHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordSize 词时间戳列表的长度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWordSize() const;
 
                     /**
                      * 判断参数 WordSize 是否已赋值
                      * @return WordSize 是否已赋值
+                     * 
                      */
                     bool WordSizeHasBeenSet() const;
 
@@ -87,12 +93,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordList 词时间戳列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SentenceWord> GetWordList() const;
 
                     /**
                      * 判断参数 WordList 是否已赋值
                      * @return WordList 是否已赋值
+                     * 
                      */
                     bool WordListHasBeenSet() const;
 

@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取项目ID数组
                      * @return ProjectIds 项目ID数组
+                     * 
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
                      * 设置项目ID数组
-                     * @param ProjectIds 项目ID数组
+                     * @param _projectIds 项目ID数组
+                     * 
                      */
                     void SetProjectIds(const std::vector<std::string>& _projectIds);
 
                     /**
                      * 判断参数 ProjectIds 是否已赋值
                      * @return ProjectIds 是否已赋值
+                     * 
                      */
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取定时任务ID数组
                      * @return CronJobIds 定时任务ID数组
+                     * 
                      */
                     std::vector<std::string> GetCronJobIds() const;
 
                     /**
                      * 设置定时任务ID数组
-                     * @param CronJobIds 定时任务ID数组
+                     * @param _cronJobIds 定时任务ID数组
+                     * 
                      */
                     void SetCronJobIds(const std::vector<std::string>& _cronJobIds);
 
                     /**
                      * 判断参数 CronJobIds 是否已赋值
                      * @return CronJobIds 是否已赋值
+                     * 
                      */
                     bool CronJobIdsHasBeenSet() const;
 
                     /**
                      * 获取定时任务名字，模糊查询
                      * @return CronJobName 定时任务名字，模糊查询
+                     * 
                      */
                     std::string GetCronJobName() const;
 
                     /**
                      * 设置定时任务名字，模糊查询
-                     * @param CronJobName 定时任务名字，模糊查询
+                     * @param _cronJobName 定时任务名字，模糊查询
+                     * 
                      */
                     void SetCronJobName(const std::string& _cronJobName);
 
                     /**
                      * 判断参数 CronJobName 是否已赋值
                      * @return CronJobName 是否已赋值
+                     * 
                      */
                     bool CronJobNameHasBeenSet() const;
 
                     /**
                      * 获取定时任务状态数组
                      * @return CronJobStatus 定时任务状态数组
+                     * 
                      */
                     std::vector<int64_t> GetCronJobStatus() const;
 
                     /**
                      * 设置定时任务状态数组
-                     * @param CronJobStatus 定时任务状态数组
+                     * @param _cronJobStatus 定时任务状态数组
+                     * 
                      */
                     void SetCronJobStatus(const std::vector<int64_t>& _cronJobStatus);
 
                     /**
                      * 判断参数 CronJobStatus 是否已赋值
                      * @return CronJobStatus 是否已赋值
+                     * 
                      */
                     bool CronJobStatusHasBeenSet() const;
 
                     /**
                      * 获取排序的列
                      * @return OrderBy 排序的列
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序的列
-                     * @param OrderBy 排序的列
+                     * @param _orderBy 排序的列
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取是否正序
                      * @return Ascend 是否正序
+                     * 
                      */
                     bool GetAscend() const;
 
                     /**
                      * 设置是否正序
-                     * @param Ascend 是否正序
+                     * @param _ascend 是否正序
+                     * 
                      */
                     void SetAscend(const bool& _ascend);
 
                     /**
                      * 判断参数 Ascend 是否已赋值
                      * @return Ascend 是否已赋值
+                     * 
                      */
                     bool AscendHasBeenSet() const;
 

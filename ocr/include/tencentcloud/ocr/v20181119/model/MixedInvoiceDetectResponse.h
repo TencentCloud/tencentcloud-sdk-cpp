@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取检测出的票据类型列表，具体内容请点击左侧链接。
                      * @return InvoiceDetectInfos 检测出的票据类型列表，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<InvoiceDetectInfo> GetInvoiceDetectInfos() const;
 
                     /**
                      * 判断参数 InvoiceDetectInfos 是否已赋值
                      * @return InvoiceDetectInfos 是否已赋值
+                     * 
                      */
                     bool InvoiceDetectInfosHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     uint64_t GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const uint64_t& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 

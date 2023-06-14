@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 总数
+                     * @param _total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Up 在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUp() const;
 
                     /**
                      * 设置在线数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Up 在线数
+                     * @param _up 在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUp(const uint64_t& _up);
 
                     /**
                      * 判断参数 Up 是否已赋值
                      * @return Up 是否已赋值
+                     * 
                      */
                     bool UpHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Down 不在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDown() const;
 
                     /**
                      * 设置不在线数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Down 不在线数
+                     * @param _down 不在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDown(const uint64_t& _down);
 
                     /**
                      * 判断参数 Down 是否已赋值
                      * @return Down 是否已赋值
+                     * 
                      */
                     bool DownHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unknown 未知状态数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUnknown() const;
 
                     /**
                      * 设置未知状态数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unknown 未知状态数
+                     * @param _unknown 未知状态数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnknown(const uint64_t& _unknown);
 
                     /**
                      * 判断参数 Unknown 是否已赋值
                      * @return Unknown 是否已赋值
+                     * 
                      */
                     bool UnknownHasBeenSet() const;
 

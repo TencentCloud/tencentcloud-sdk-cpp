@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
                      * @return TemplateName 模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
-                     * @param TemplateName 模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * @param _templateName 模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取数据库大版本号，例如：11，12，13
                      * @return DBMajorVersion 数据库大版本号，例如：11，12，13
+                     * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
                      * 设置数据库大版本号，例如：11，12，13
-                     * @param DBMajorVersion 数据库大版本号，例如：11，12，13
+                     * @param _dBMajorVersion 数据库大版本号，例如：11，12，13
+                     * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
 
                     /**
                      * 判断参数 DBMajorVersion 是否已赋值
                      * @return DBMajorVersion 是否已赋值
+                     * 
                      */
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
                      * 获取数据库引擎，例如：postgresql，mssql_compatible
                      * @return DBEngine 数据库引擎，例如：postgresql，mssql_compatible
+                     * 
                      */
                     std::string GetDBEngine() const;
 
                     /**
                      * 设置数据库引擎，例如：postgresql，mssql_compatible
-                     * @param DBEngine 数据库引擎，例如：postgresql，mssql_compatible
+                     * @param _dBEngine 数据库引擎，例如：postgresql，mssql_compatible
+                     * 
                      */
                     void SetDBEngine(const std::string& _dBEngine);
 
                     /**
                      * 判断参数 DBEngine 是否已赋值
                      * @return DBEngine 是否已赋值
+                     * 
                      */
                     bool DBEngineHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
                      * @return TemplateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
-                     * @param TemplateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * @param _templateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 

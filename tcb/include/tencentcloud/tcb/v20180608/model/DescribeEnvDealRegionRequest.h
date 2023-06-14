@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ ENV_PREPAY_CLOUD= 预付费环境(腾讯云)
 ENV_POSTPAY = 后付费环境
 HOSTING_PREPAY = 预付费静态托管
 PACKAGE=套餐包
+                     * 
                      */
                     std::string GetDealType() const;
 
@@ -83,18 +87,20 @@ ENV_PREPAY_CLOUD= 预付费环境(腾讯云)
 ENV_POSTPAY = 后付费环境
 HOSTING_PREPAY = 预付费静态托管
 PACKAGE=套餐包
-                     * @param DealType 订单类型：
+                     * @param _dealType 订单类型：
 ENV_PREPAY_MINIAPP= 预付费环境(微信小程序)
 ENV_PREPAY_CLOUD= 预付费环境(腾讯云)
 ENV_POSTPAY = 后付费环境
 HOSTING_PREPAY = 预付费静态托管
 PACKAGE=套餐包
+                     * 
                      */
                     void SetDealType(const std::string& _dealType);
 
                     /**
                      * 判断参数 DealType 是否已赋值
                      * @return DealType 是否已赋值
+                     * 
                      */
                     bool DealTypeHasBeenSet() const;
 
@@ -109,6 +115,7 @@ CREATE = 新购
 RENEW = 续费
 MODIFY = 套餐调整(升级/降级)
 REFUND = 退费
+                     * 
                      */
                     std::string GetDealAction() const;
 
@@ -118,17 +125,19 @@ CREATE = 新购
 RENEW = 续费
 MODIFY = 套餐调整(升级/降级)
 REFUND = 退费
-                     * @param DealAction 下单类型：
+                     * @param _dealAction 下单类型：
 CREATE = 新购
 RENEW = 续费
 MODIFY = 套餐调整(升级/降级)
 REFUND = 退费
+                     * 
                      */
                     void SetDealAction(const std::string& _dealAction);
 
                     /**
                      * 判断参数 DealAction 是否已赋值
                      * @return DealAction 是否已赋值
+                     * 
                      */
                     bool DealActionHasBeenSet() const;
 
@@ -141,6 +150,7 @@ ap-beijing = 北京地域
 ap-guangzhou = 广州地域
 ap-shanghai = 上海地域
 ap-beijing = 北京地域
+                     * 
                      */
                     std::string GetDealRegion() const;
 
@@ -149,16 +159,18 @@ ap-beijing = 北京地域
 ap-guangzhou = 广州地域
 ap-shanghai = 上海地域
 ap-beijing = 北京地域
-                     * @param DealRegion 下单地域：
+                     * @param _dealRegion 下单地域：
 ap-guangzhou = 广州地域
 ap-shanghai = 上海地域
 ap-beijing = 北京地域
+                     * 
                      */
                     void SetDealRegion(const std::string& _dealRegion);
 
                     /**
                      * 判断参数 DealRegion 是否已赋值
                      * @return DealRegion 是否已赋值
+                     * 
                      */
                     bool DealRegionHasBeenSet() const;
 

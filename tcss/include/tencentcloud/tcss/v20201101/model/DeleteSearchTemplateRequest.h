@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取模板ID
                      * @return Id 模板ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置模板ID
-                     * @param Id 模板ID
+                     * @param _id 模板ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

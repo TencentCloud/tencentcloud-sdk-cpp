@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取签名ID。
                      * @return SignId 签名ID。
+                     * 
                      */
                     uint64_t GetSignId() const;
 
                     /**
                      * 设置签名ID。
-                     * @param SignId 签名ID。
+                     * @param _signId 签名ID。
+                     * 
                      */
                     void SetSignId(const uint64_t& _signId);
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 

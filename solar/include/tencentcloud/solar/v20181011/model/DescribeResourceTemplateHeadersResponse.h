@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取记录条数
                      * @return TotalCount 记录条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmplList 模板列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceTemplateHeader> GetTmplList() const;
 
                     /**
                      * 判断参数 TmplList 是否已赋值
                      * @return TmplList 是否已赋值
+                     * 
                      */
                     bool TmplListHasBeenSet() const;
 

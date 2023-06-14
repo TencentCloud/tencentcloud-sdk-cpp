@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNNZ 最大nnz数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMaxNNZ() const;
 
                     /**
                      * 设置最大nnz数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxNNZ 最大nnz数
+                     * @param _maxNNZ 最大nnz数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxNNZ(const std::string& _maxNNZ);
 
                     /**
                      * 判断参数 MaxNNZ 是否已赋值
                      * @return MaxNNZ 是否已赋值
+                     * 
                      */
                     bool MaxNNZHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlotNum slot数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSlotNum() const;
 
                     /**
                      * 设置slot数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlotNum slot数
+                     * @param _slotNum slot数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlotNum(const std::string& _slotNum);
 
                     /**
                      * 判断参数 SlotNum 是否已赋值
                      * @return SlotNum 是否已赋值
+                     * 
                      */
                     bool SlotNumHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuCachePercentage gpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCpuCachePercentage() const;
 
                     /**
                      * 设置gpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuCachePercentage gpu cache 使用率
+                     * @param _cpuCachePercentage gpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuCachePercentage(const std::string& _cpuCachePercentage);
 
                     /**
                      * 判断参数 CpuCachePercentage 是否已赋值
                      * @return CpuCachePercentage 是否已赋值
+                     * 
                      */
                     bool CpuCachePercentageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GpuCachePercentage cpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGpuCachePercentage() const;
 
                     /**
                      * 设置cpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GpuCachePercentage cpu cache 使用率
+                     * @param _gpuCachePercentage cpu cache 使用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpuCachePercentage(const std::string& _gpuCachePercentage);
 
                     /**
                      * 判断参数 GpuCachePercentage 是否已赋值
                      * @return GpuCachePercentage 是否已赋值
+                     * 
                      */
                     bool GpuCachePercentageHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableDistributed 是否开启分布式模式(true/false)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnableDistributed() const;
 
                     /**
                      * 设置是否开启分布式模式(true/false)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableDistributed 是否开启分布式模式(true/false)
+                     * @param _enableDistributed 是否开启分布式模式(true/false)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableDistributed(const std::string& _enableDistributed);
 
                     /**
                      * 判断参数 EnableDistributed 是否已赋值
                      * @return EnableDistributed 是否已赋值
+                     * 
                      */
                     bool EnableDistributedHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinBlockSizePt TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMinBlockSizePt() const;
 
                     /**
                      * 设置TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinBlockSizePt TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3
+                     * @param _minBlockSizePt TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinBlockSizePt(const std::string& _minBlockSizePt);
 
                     /**
                      * 判断参数 MinBlockSizePt 是否已赋值
                      * @return MinBlockSizePt 是否已赋值
+                     * 
                      */
                     bool MinBlockSizePtHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinBlockSizeTf FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMinBlockSizeTf() const;
 
                     /**
                      * 设置FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinBlockSizeTf FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10
+                     * @param _minBlockSizeTf FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinBlockSizeTf(const std::string& _minBlockSizeTf);
 
                     /**
                      * 判断参数 MinBlockSizeTf 是否已赋值
                      * @return MinBlockSizeTf 是否已赋值
+                     * 
                      */
                     bool MinBlockSizeTfHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PipelineArgs Stable Diffusion 模型优化参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPipelineArgs() const;
 
                     /**
                      * 设置Stable Diffusion 模型优化参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PipelineArgs Stable Diffusion 模型优化参数
+                     * @param _pipelineArgs Stable Diffusion 模型优化参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPipelineArgs(const std::string& _pipelineArgs);
 
                     /**
                      * 判断参数 PipelineArgs 是否已赋值
                      * @return PipelineArgs 是否已赋值
+                     * 
                      */
                     bool PipelineArgsHasBeenSet() const;
 

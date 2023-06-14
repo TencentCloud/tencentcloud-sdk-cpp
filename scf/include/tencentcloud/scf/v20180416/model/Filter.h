@@ -57,6 +57,7 @@ Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, 
 Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
 Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
 当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
+                     * 
                      */
                     std::string GetName() const;
 
@@ -65,34 +66,39 @@ Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, 
 Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
 Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
 当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
-                     * @param Name 需要过滤的字段。过滤条件数量限制为10。
+                     * @param _name 需要过滤的字段。过滤条件数量限制为10。
 Name可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。
 Name可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。
 当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字段的过滤值。
                      * @return Values 字段的过滤值。
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置字段的过滤值。
-                     * @param Values 字段的过滤值。
+                     * @param _values 字段的过滤值。
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

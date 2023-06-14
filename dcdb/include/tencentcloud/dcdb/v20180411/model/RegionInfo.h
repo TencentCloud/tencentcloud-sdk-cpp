@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取地域英文ID
                      * @return Region 地域英文ID
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域英文ID
-                     * @param Region 地域英文ID
+                     * @param _region 地域英文ID
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域数字ID
                      * @return RegionId 地域数字ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域数字ID
-                     * @param RegionId 地域数字ID
+                     * @param _regionId 地域数字ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域中文名
                      * @return RegionName 地域中文名
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域中文名
-                     * @param RegionName 地域中文名
+                     * @param _regionName 地域中文名
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取可用区列表
                      * @return ZoneList 可用区列表
+                     * 
                      */
                     std::vector<ZonesInfo> GetZoneList() const;
 
                     /**
                      * 设置可用区列表
-                     * @param ZoneList 可用区列表
+                     * @param _zoneList 可用区列表
+                     * 
                      */
                     void SetZoneList(const std::vector<ZonesInfo>& _zoneList);
 
                     /**
                      * 判断参数 ZoneList 是否已赋值
                      * @return ZoneList 是否已赋值
+                     * 
                      */
                     bool ZoneListHasBeenSet() const;
 
                     /**
                      * 获取可选择的主可用区和从可用区
                      * @return AvailableChoice 可选择的主可用区和从可用区
+                     * 
                      */
                     std::vector<ShardZoneChooseInfo> GetAvailableChoice() const;
 
                     /**
                      * 设置可选择的主可用区和从可用区
-                     * @param AvailableChoice 可选择的主可用区和从可用区
+                     * @param _availableChoice 可选择的主可用区和从可用区
+                     * 
                      */
                     void SetAvailableChoice(const std::vector<ShardZoneChooseInfo>& _availableChoice);
 
                     /**
                      * 判断参数 AvailableChoice 是否已赋值
                      * @return AvailableChoice 是否已赋值
+                     * 
                      */
                     bool AvailableChoiceHasBeenSet() const;
 

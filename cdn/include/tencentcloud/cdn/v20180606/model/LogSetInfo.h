@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取开发者ID
                      * @return AppId 开发者ID
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置开发者ID
-                     * @param AppId 开发者ID
+                     * @param _appId 开发者ID
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -69,128 +72,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置渠道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Channel 渠道
+                     * @param _channel 渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取日志集ID
                      * @return LogsetId 日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
-                     * @param LogsetId 日志集ID
+                     * @param _logsetId 日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取日志集名字
                      * @return LogsetName 日志集名字
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集名字
-                     * @param LogsetName 日志集名字
+                     * @param _logsetName 日志集名字
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取是否默认日志集
                      * @return IsDefault 是否默认日志集
+                     * 
                      */
                     uint64_t GetIsDefault() const;
 
                     /**
                      * 设置是否默认日志集
-                     * @param IsDefault 是否默认日志集
+                     * @param _isDefault 是否默认日志集
+                     * 
                      */
                     void SetIsDefault(const uint64_t& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取日志保存时间，单位为天
                      * @return LogsetSavePeriod 日志保存时间，单位为天
+                     * 
                      */
                     uint64_t GetLogsetSavePeriod() const;
 
                     /**
                      * 设置日志保存时间，单位为天
-                     * @param LogsetSavePeriod 日志保存时间，单位为天
+                     * @param _logsetSavePeriod 日志保存时间，单位为天
+                     * 
                      */
                     void SetLogsetSavePeriod(const uint64_t& _logsetSavePeriod);
 
                     /**
                      * 判断参数 LogsetSavePeriod 是否已赋值
                      * @return LogsetSavePeriod 是否已赋值
+                     * 
                      */
                     bool LogsetSavePeriodHasBeenSet() const;
 
                     /**
                      * 获取创建日期
                      * @return CreateTime 创建日期
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建日期
-                     * @param CreateTime 创建日期
+                     * @param _createTime 创建日期
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return Region 区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置区域
-                     * @param Region 区域
+                     * @param _region 区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deleted cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeleted() const;
 
                     /**
                      * 设置cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deleted cls侧是否已经被删除
+                     * @param _deleted cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleted(const std::string& _deleted);
 
                     /**
                      * 判断参数 Deleted 是否已赋值
                      * @return Deleted 是否已赋值
+                     * 
                      */
                     bool DeletedHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionEn 英文区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionEn() const;
 
                     /**
                      * 设置英文区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionEn 英文区域
+                     * @param _regionEn 英文区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionEn(const std::string& _regionEn);
 
                     /**
                      * 判断参数 RegionEn 是否已赋值
                      * @return RegionEn 是否已赋值
+                     * 
                      */
                     bool RegionEnHasBeenSet() const;
 

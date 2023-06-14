@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取合服的表格信息
                      * @return MergeTables 合服的表格信息
+                     * 
                      */
                     CompareTablesInfo GetMergeTables() const;
 
                     /**
                      * 设置合服的表格信息
-                     * @param MergeTables 合服的表格信息
+                     * @param _mergeTables 合服的表格信息
+                     * 
                      */
                     void SetMergeTables(const CompareTablesInfo& _mergeTables);
 
                     /**
                      * 判断参数 MergeTables 是否已赋值
                      * @return MergeTables 是否已赋值
+                     * 
                      */
                     bool MergeTablesHasBeenSet() const;
 
                     /**
                      * 获取是否检查索引
                      * @return CheckIndex 是否检查索引
+                     * 
                      */
                     bool GetCheckIndex() const;
 
                     /**
                      * 设置是否检查索引
-                     * @param CheckIndex 是否检查索引
+                     * @param _checkIndex 是否检查索引
+                     * 
                      */
                     void SetCheckIndex(const bool& _checkIndex);
 
                     /**
                      * 判断参数 CheckIndex 是否已赋值
                      * @return CheckIndex 是否已赋值
+                     * 
                      */
                     bool CheckIndexHasBeenSet() const;
 

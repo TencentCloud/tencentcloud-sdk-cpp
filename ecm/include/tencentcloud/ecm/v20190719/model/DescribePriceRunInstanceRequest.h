@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取实例的机型信息
                      * @return InstanceType 实例的机型信息
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例的机型信息
-                     * @param InstanceType 实例的机型信息
+                     * @param _instanceType 实例的机型信息
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取系统盘信息
                      * @return SystemDisk 系统盘信息
+                     * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
                      * 设置系统盘信息
-                     * @param SystemDisk 系统盘信息
+                     * @param _systemDisk 系统盘信息
+                     * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
                     /**
                      * 获取实例个数
                      * @return InstanceCount 实例个数
+                     * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置实例个数
-                     * @param InstanceCount 实例个数
+                     * @param _instanceCount 实例个数
+                     * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取数据盘信息
                      * @return DataDisk 数据盘信息
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisk() const;
 
                     /**
                      * 设置数据盘信息
-                     * @param DataDisk 数据盘信息
+                     * @param _dataDisk 数据盘信息
+                     * 
                      */
                     void SetDataDisk(const std::vector<DataDisk>& _dataDisk);
 
                     /**
                      * 判断参数 DataDisk 是否已赋值
                      * @return DataDisk 是否已赋值
+                     * 
                      */
                     bool DataDiskHasBeenSet() const;
 
@@ -127,6 +139,7 @@ namespace TencentCloud
 1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；
 2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；
 该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。
+                     * 
                      */
                     int64_t GetInstanceChargeType() const;
 
@@ -136,17 +149,19 @@ namespace TencentCloud
 1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；
 2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；
 该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。
-                     * @param InstanceChargeType 实例计费类型。其中：
+                     * @param _instanceChargeType 实例计费类型。其中：
 0，按资源维度后付费，计算当日用量峰值，例如CPU，内存，硬盘等，仅适用于非GNR系列机型；
 1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；
 2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；
 该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。
+                     * 
                      */
                     void SetInstanceChargeType(const int64_t& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 

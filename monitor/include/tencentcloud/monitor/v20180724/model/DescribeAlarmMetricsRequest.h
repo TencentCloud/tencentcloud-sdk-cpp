@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取固定值，为"monitor"
                      * @return Module 固定值，为"monitor"
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置固定值，为"monitor"
-                     * @param Module 固定值，为"monitor"
+                     * @param _module 固定值，为"monitor"
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取监控类型过滤 "MT_QCE"=云产品监控
                      * @return MonitorType 监控类型过滤 "MT_QCE"=云产品监控
+                     * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
                      * 设置监控类型过滤 "MT_QCE"=云产品监控
-                     * @param MonitorType 监控类型过滤 "MT_QCE"=云产品监控
+                     * @param _monitorType 监控类型过滤 "MT_QCE"=云产品监控
+                     * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
 
                     /**
                      * 判断参数 MonitorType 是否已赋值
                      * @return MonitorType 是否已赋值
+                     * 
                      */
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
                      * 获取告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
                      * @return Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
-                     * @param Namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * @param _namespace 告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

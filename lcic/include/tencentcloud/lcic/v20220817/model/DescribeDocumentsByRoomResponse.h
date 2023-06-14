@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Documents 文档信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DocumentInfo> GetDocuments() const;
 
                     /**
                      * 判断参数 Documents 是否已赋值
                      * @return Documents 是否已赋值
+                     * 
                      */
                     bool DocumentsHasBeenSet() const;
 
                     /**
                      * 获取符合查询条件文档总数
                      * @return Total 符合查询条件文档总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

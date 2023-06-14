@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取活动ID
                      * @return ActivityId 活动ID
+                     * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动ID
-                     * @param ActivityId 活动ID
+                     * @param _activityId 活动ID
+                     * 
                      */
                     void SetActivityId(const std::string& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取计算节点ID
                      * @return ComputeNodeId 计算节点ID
+                     * 
                      */
                     std::string GetComputeNodeId() const;
 
                     /**
                      * 设置计算节点ID
-                     * @param ComputeNodeId 计算节点ID
+                     * @param _computeNodeId 计算节点ID
+                     * 
                      */
                     void SetComputeNodeId(const std::string& _computeNodeId);
 
                     /**
                      * 判断参数 ComputeNodeId 是否已赋值
                      * @return ComputeNodeId 是否已赋值
+                     * 
                      */
                     bool ComputeNodeIdHasBeenSet() const;
 
                     /**
                      * 获取计算节点活动类型，创建或者销毁
                      * @return ComputeNodeActivityType 计算节点活动类型，创建或者销毁
+                     * 
                      */
                     std::string GetComputeNodeActivityType() const;
 
                     /**
                      * 设置计算节点活动类型，创建或者销毁
-                     * @param ComputeNodeActivityType 计算节点活动类型，创建或者销毁
+                     * @param _computeNodeActivityType 计算节点活动类型，创建或者销毁
+                     * 
                      */
                     void SetComputeNodeActivityType(const std::string& _computeNodeActivityType);
 
                     /**
                      * 判断参数 ComputeNodeActivityType 是否已赋值
                      * @return ComputeNodeActivityType 是否已赋值
+                     * 
                      */
                     bool ComputeNodeActivityTypeHasBeenSet() const;
 
                     /**
                      * 获取计算环境ID
                      * @return EnvId 计算环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置计算环境ID
-                     * @param EnvId 计算环境ID
+                     * @param _envId 计算环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取起因
                      * @return Cause 起因
+                     * 
                      */
                     std::string GetCause() const;
 
                     /**
                      * 设置起因
-                     * @param Cause 起因
+                     * @param _cause 起因
+                     * 
                      */
                     void SetCause(const std::string& _cause);
 
                     /**
                      * 判断参数 Cause 是否已赋值
                      * @return Cause 是否已赋值
+                     * 
                      */
                     bool CauseHasBeenSet() const;
 
                     /**
                      * 获取活动状态
                      * @return ActivityState 活动状态
+                     * 
                      */
                     std::string GetActivityState() const;
 
                     /**
                      * 设置活动状态
-                     * @param ActivityState 活动状态
+                     * @param _activityState 活动状态
+                     * 
                      */
                     void SetActivityState(const std::string& _activityState);
 
                     /**
                      * 判断参数 ActivityState 是否已赋值
                      * @return ActivityState 是否已赋值
+                     * 
                      */
                     bool ActivityStateHasBeenSet() const;
 
                     /**
                      * 获取状态原因
                      * @return StateReason 状态原因
+                     * 
                      */
                     std::string GetStateReason() const;
 
                     /**
                      * 设置状态原因
-                     * @param StateReason 状态原因
+                     * @param _stateReason 状态原因
+                     * 
                      */
                     void SetStateReason(const std::string& _stateReason);
 
                     /**
                      * 判断参数 StateReason 是否已赋值
                      * @return StateReason 是否已赋值
+                     * 
                      */
                     bool StateReasonHasBeenSet() const;
 
                     /**
                      * 获取活动开始时间
                      * @return StartTime 活动开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置活动开始时间
-                     * @param StartTime 活动开始时间
+                     * @param _startTime 活动开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 活动结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置活动结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 活动结束时间
+                     * @param _endTime 活动结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云服务器实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云服务器实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 云服务器实例ID
+                     * @param _instanceId 云服务器实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

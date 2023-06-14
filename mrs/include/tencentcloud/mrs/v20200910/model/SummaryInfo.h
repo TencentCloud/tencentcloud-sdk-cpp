@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 诊断结论文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseInfo GetText() const;
 
                     /**
                      * 设置诊断结论文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 诊断结论文本
+                     * @param _text 诊断结论文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const BaseInfo& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Infos 诊断结论详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetailInformation> GetInfos() const;
 
                     /**
                      * 设置诊断结论详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Infos 诊断结论详情
+                     * @param _infos 诊断结论详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfos(const std::vector<DetailInformation>& _infos);
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 

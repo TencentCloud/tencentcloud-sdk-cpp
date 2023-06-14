@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
                      * @return GameServerSessionId 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
+                     * 
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
                      * 设置游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
-                     * @param GameServerSessionId 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
+                     * @param _gameServerSessionId 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
+                     * 
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
                     /**
                      * 判断参数 GameServerSessionId 是否已赋值
                      * @return GameServerSessionId 是否已赋值
+                     * 
                      */
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
                      * 获取CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
                      * @return IpAddress CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
-                     * @param IpAddress CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
+                     * @param _ipAddress CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
                     /**
                      * 获取端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
                      * @return Port 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
-                     * @param Port 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
+                     * @param _port 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

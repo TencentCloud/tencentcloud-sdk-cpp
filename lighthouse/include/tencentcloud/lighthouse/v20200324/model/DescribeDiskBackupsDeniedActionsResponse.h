@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘备份点操作限制列表详细信息。
                      * @return DiskBackupDeniedActionSet 云硬盘备份点操作限制列表详细信息。
+                     * 
                      */
                     std::vector<DiskBackupDeniedActions> GetDiskBackupDeniedActionSet() const;
 
                     /**
                      * 判断参数 DiskBackupDeniedActionSet 是否已赋值
                      * @return DiskBackupDeniedActionSet 是否已赋值
+                     * 
                      */
                     bool DiskBackupDeniedActionSetHasBeenSet() const;
 

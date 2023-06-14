@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取绑定角色的角色id列表
                      * @return RoleIds 绑定角色的角色id列表
+                     * 
                      */
                     std::vector<std::string> GetRoleIds() const;
 
                     /**
                      * 设置绑定角色的角色id列表
-                     * @param RoleIds 绑定角色的角色id列表
+                     * @param _roleIds 绑定角色的角色id列表
+                     * 
                      */
                     void SetRoleIds(const std::vector<std::string>& _roleIds);
 
                     /**
                      * 判断参数 RoleIds 是否已赋值
                      * @return RoleIds 是否已赋值
+                     * 
                      */
                     bool RoleIdsHasBeenSet() const;
 
                     /**
                      * 获取电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
                      * @return UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
-                     * @param UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * @param _userIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 
                     /**
                      * 获取客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
                      * @return OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * 
                      */
                     std::vector<std::string> GetOpenIds() const;
 
                     /**
                      * 设置客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
-                     * @param OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * @param _openIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * 
                      */
                     void SetOpenIds(const std::vector<std::string>& _openIds);
 
                     /**
                      * 判断参数 OpenIds 是否已赋值
                      * @return OpenIds 是否已赋值
+                     * 
                      */
                     bool OpenIdsHasBeenSet() const;
 
                     /**
                      * 获取操作者信息
                      * @return Operator 操作者信息
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者信息
-                     * @param Operator 操作者信息
+                     * @param _operator 操作者信息
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

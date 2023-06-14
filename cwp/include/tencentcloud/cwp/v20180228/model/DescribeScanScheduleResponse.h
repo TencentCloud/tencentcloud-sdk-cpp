@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Schedule 检测进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSchedule() const;
 
                     /**
                      * 判断参数 Schedule 是否已赋值
                      * @return Schedule 是否已赋值
+                     * 
                      */
                     bool ScheduleHasBeenSet() const;
 

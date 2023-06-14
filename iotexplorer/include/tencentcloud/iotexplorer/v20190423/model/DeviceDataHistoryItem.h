@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间点，毫秒时间戳
                      * @return Time 时间点，毫秒时间戳
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间点，毫秒时间戳
-                     * @param Time 时间点，毫秒时间戳
+                     * @param _time 时间点，毫秒时间戳
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取字段取值
                      * @return Value 字段取值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段取值
-                     * @param Value 字段取值
+                     * @param _value 字段取值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

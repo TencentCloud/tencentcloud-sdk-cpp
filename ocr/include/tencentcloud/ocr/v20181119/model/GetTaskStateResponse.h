@@ -56,12 +56,14 @@ namespace TencentCloud
 4:任务识别中
 5:超时：任务超过了可操作的24H时限
 6:任务识别失败
+                     * 
                      */
                     uint64_t GetTaskState() const;
 
                     /**
                      * 判断参数 TaskState 是否已赋值
                      * @return TaskState 是否已赋值
+                     * 
                      */
                     bool TaskStateHasBeenSet() const;
 

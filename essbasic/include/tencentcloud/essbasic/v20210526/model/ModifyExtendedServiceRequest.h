@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
+                     * 
                      */
                     Agent GetAgent() const;
 
@@ -57,15 +58,17 @@ namespace TencentCloud
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -82,6 +85,7 @@ namespace TencentCloud
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权渠道下载合同 
+                     * 
                      */
                     std::string GetServiceType() const;
 
@@ -92,18 +96,20 @@ namespace TencentCloud
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权渠道下载合同 
-                     * @param ServiceType   扩展服务类型
+                     * @param _serviceType   扩展服务类型
   AUTO_SIGN             企业静默签（自动签署）
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权渠道下载合同 
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
@@ -114,6 +120,7 @@ CLOSE:关闭
                      * @return Operate 操作类型 
 OPEN:开通 
 CLOSE:关闭
+                     * 
                      */
                     std::string GetOperate() const;
 
@@ -121,15 +128,17 @@ CLOSE:关闭
                      * 设置操作类型 
 OPEN:开通 
 CLOSE:关闭
-                     * @param Operate 操作类型 
+                     * @param _operate 操作类型 
 OPEN:开通 
 CLOSE:关闭
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 

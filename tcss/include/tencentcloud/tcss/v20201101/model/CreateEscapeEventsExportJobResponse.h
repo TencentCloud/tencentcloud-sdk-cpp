@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取导出任务ID，前端拿着任务ID查询任务进度
                      * @return JobId 导出任务ID，前端拿着任务ID查询任务进度
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

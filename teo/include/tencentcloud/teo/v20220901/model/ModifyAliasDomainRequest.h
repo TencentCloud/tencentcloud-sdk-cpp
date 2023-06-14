@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取别称域名名称。
                      * @return AliasName 别称域名名称。
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置别称域名名称。
-                     * @param AliasName 别称域名名称。
+                     * @param _aliasName 别称域名名称。
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
                     /**
                      * 获取目标域名名称。
                      * @return TargetName 目标域名名称。
+                     * 
                      */
                     std::string GetTargetName() const;
 
                     /**
                      * 设置目标域名名称。
-                     * @param TargetName 目标域名名称。
+                     * @param _targetName 目标域名名称。
+                     * 
                      */
                     void SetTargetName(const std::string& _targetName);
 
                     /**
                      * 判断参数 TargetName 是否已赋值
                      * @return TargetName 是否已赋值
+                     * 
                      */
                     bool TargetNameHasBeenSet() const;
 
@@ -105,6 +114,7 @@ namespace TencentCloud
 <li> none：不配置；</li>
 <li> hosting：SSL托管证书；</li>
 <li> apply：申请免费证书。</li>不填写保持原有配置。
+                     * 
                      */
                     std::string GetCertType() const;
 
@@ -113,34 +123,39 @@ namespace TencentCloud
 <li> none：不配置；</li>
 <li> hosting：SSL托管证书；</li>
 <li> apply：申请免费证书。</li>不填写保持原有配置。
-                     * @param CertType 证书配置，取值有：
+                     * @param _certType 证书配置，取值有：
 <li> none：不配置；</li>
 <li> hosting：SSL托管证书；</li>
 <li> apply：申请免费证书。</li>不填写保持原有配置。
+                     * 
                      */
                     void SetCertType(const std::string& _certType);
 
                     /**
                      * 判断参数 CertType 是否已赋值
                      * @return CertType 是否已赋值
+                     * 
                      */
                     bool CertTypeHasBeenSet() const;
 
                     /**
                      * 获取当 CertType 取值为 hosting 时填入相应证书 ID。
                      * @return CertId 当 CertType 取值为 hosting 时填入相应证书 ID。
+                     * 
                      */
                     std::vector<std::string> GetCertId() const;
 
                     /**
                      * 设置当 CertType 取值为 hosting 时填入相应证书 ID。
-                     * @param CertId 当 CertType 取值为 hosting 时填入相应证书 ID。
+                     * @param _certId 当 CertType 取值为 hosting 时填入相应证书 ID。
+                     * 
                      */
                     void SetCertId(const std::vector<std::string>& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 

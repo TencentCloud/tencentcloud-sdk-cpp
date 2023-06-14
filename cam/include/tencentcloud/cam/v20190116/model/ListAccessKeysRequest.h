@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定用户Uin，不填默认列出当前用户访问密钥
                      * @return TargetUin 指定用户Uin，不填默认列出当前用户访问密钥
+                     * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 设置指定用户Uin，不填默认列出当前用户访问密钥
-                     * @param TargetUin 指定用户Uin，不填默认列出当前用户访问密钥
+                     * @param _targetUin 指定用户Uin，不填默认列出当前用户访问密钥
+                     * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 

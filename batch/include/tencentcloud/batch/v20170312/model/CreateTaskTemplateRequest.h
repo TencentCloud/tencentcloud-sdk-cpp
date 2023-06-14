@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取任务模板名称
                      * @return TaskTemplateName 任务模板名称
+                     * 
                      */
                     std::string GetTaskTemplateName() const;
 
                     /**
                      * 设置任务模板名称
-                     * @param TaskTemplateName 任务模板名称
+                     * @param _taskTemplateName 任务模板名称
+                     * 
                      */
                     void SetTaskTemplateName(const std::string& _taskTemplateName);
 
                     /**
                      * 判断参数 TaskTemplateName 是否已赋值
                      * @return TaskTemplateName 是否已赋值
+                     * 
                      */
                     bool TaskTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取任务模板内容，参数要求与任务一致
                      * @return TaskTemplateInfo 任务模板内容，参数要求与任务一致
+                     * 
                      */
                     Task GetTaskTemplateInfo() const;
 
                     /**
                      * 设置任务模板内容，参数要求与任务一致
-                     * @param TaskTemplateInfo 任务模板内容，参数要求与任务一致
+                     * @param _taskTemplateInfo 任务模板内容，参数要求与任务一致
+                     * 
                      */
                     void SetTaskTemplateInfo(const Task& _taskTemplateInfo);
 
                     /**
                      * 判断参数 TaskTemplateInfo 是否已赋值
                      * @return TaskTemplateInfo 是否已赋值
+                     * 
                      */
                     bool TaskTemplateInfoHasBeenSet() const;
 
                     /**
                      * 获取任务模板描述
                      * @return TaskTemplateDescription 任务模板描述
+                     * 
                      */
                     std::string GetTaskTemplateDescription() const;
 
                     /**
                      * 设置任务模板描述
-                     * @param TaskTemplateDescription 任务模板描述
+                     * @param _taskTemplateDescription 任务模板描述
+                     * 
                      */
                     void SetTaskTemplateDescription(const std::string& _taskTemplateDescription);
 
                     /**
                      * 判断参数 TaskTemplateDescription 是否已赋值
                      * @return TaskTemplateDescription 是否已赋值
+                     * 
                      */
                     bool TaskTemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。
                      * @return Tags 标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。
-                     * @param Tags 标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。
+                     * @param _tags 标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

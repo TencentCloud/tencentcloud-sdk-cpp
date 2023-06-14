@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取作品ID
                      * @return WorkId 作品ID
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 设置作品ID
-                     * @param WorkId 作品ID
+                     * @param _workId 作品ID
+                     * 
                      */
                     void SetWorkId(const int64_t& _workId);
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 
                     /**
                      * 获取监测状态：1-开启监测 2-关闭监测
                      * @return MonitorStatus 监测状态：1-开启监测 2-关闭监测
+                     * 
                      */
                     std::string GetMonitorStatus() const;
 
                     /**
                      * 设置监测状态：1-开启监测 2-关闭监测
-                     * @param MonitorStatus 监测状态：1-开启监测 2-关闭监测
+                     * @param _monitorStatus 监测状态：1-开启监测 2-关闭监测
+                     * 
                      */
                     void SetMonitorStatus(const std::string& _monitorStatus);
 
                     /**
                      * 判断参数 MonitorStatus 是否已赋值
                      * @return MonitorStatus 是否已赋值
+                     * 
                      */
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
                      * 获取监测截止时间
                      * @return MonitorEnd 监测截止时间
+                     * 
                      */
                     std::string GetMonitorEnd() const;
 
                     /**
                      * 设置监测截止时间
-                     * @param MonitorEnd 监测截止时间
+                     * @param _monitorEnd 监测截止时间
+                     * 
                      */
                     void SetMonitorEnd(const std::string& _monitorEnd);
 
                     /**
                      * 判断参数 MonitorEnd 是否已赋值
                      * @return MonitorEnd 是否已赋值
+                     * 
                      */
                     bool MonitorEndHasBeenSet() const;
 

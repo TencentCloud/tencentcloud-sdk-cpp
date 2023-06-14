@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取业务id
                      * @return Bid 业务id
+                     * 
                      */
                     std::string GetBid() const;
 
                     /**
                      * 设置业务id
-                     * @param Bid 业务id
+                     * @param _bid 业务id
+                     * 
                      */
                     void SetBid(const std::string& _bid);
 
                     /**
                      * 判断参数 Bid 是否已赋值
                      * @return Bid 是否已赋值
+                     * 
                      */
                     bool BidHasBeenSet() const;
 
                     /**
                      * 获取上报的信息流数组，一次数量不超过50
                      * @return DocItemList 上报的信息流数组，一次数量不超过50
+                     * 
                      */
                     std::vector<DocItem> GetDocItemList() const;
 
                     /**
                      * 设置上报的信息流数组，一次数量不超过50
-                     * @param DocItemList 上报的信息流数组，一次数量不超过50
+                     * @param _docItemList 上报的信息流数组，一次数量不超过50
+                     * 
                      */
                     void SetDocItemList(const std::vector<DocItem>& _docItemList);
 
                     /**
                      * 判断参数 DocItemList 是否已赋值
                      * @return DocItemList 是否已赋值
+                     * 
                      */
                     bool DocItemListHasBeenSet() const;
 

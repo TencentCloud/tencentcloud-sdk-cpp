@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID数组
                      * @return InstanceIdList 实例ID数组
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
                      * 设置实例ID数组
-                     * @param InstanceIdList 实例ID数组
+                     * @param _instanceIdList 实例ID数组
+                     * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
 
                     /**
                      * 判断参数 InstanceIdList 是否已赋值
                      * @return InstanceIdList 是否已赋值
+                     * 
                      */
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃
                      * @return DbType 该参数已废弃
+                     * 
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置该参数已废弃
-                     * @param DbType 该参数已废弃
+                     * @param _dbType 该参数已废弃
+                     * 
                      */
                     void SetDbType(const std::string& _dbType);
 
                     /**
                      * 判断参数 DbType 是否已赋值
                      * @return DbType 是否已赋值
+                     * 
                      */
                     bool DbTypeHasBeenSet() const;
 

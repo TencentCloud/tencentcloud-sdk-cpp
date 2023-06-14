@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主实例iD
                      * @return RegistryId 主实例iD
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例iD
-                     * @param RegistryId 主实例iD
+                     * @param _registryId 主实例iD
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取自定义域名
                      * @return DomainName 自定义域名
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置自定义域名
-                     * @param DomainName 自定义域名
+                     * @param _domainName 自定义域名
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取证书ID
                      * @return CertificateId 证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertificateId 证书ID
+                     * @param _certificateId 证书ID
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 

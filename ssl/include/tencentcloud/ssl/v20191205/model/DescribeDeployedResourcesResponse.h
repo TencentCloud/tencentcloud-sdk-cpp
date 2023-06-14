@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源详情
                      * @return DeployedResources 资源详情
+                     * 
                      */
                     std::vector<DeployedResources> GetDeployedResources() const;
 
                     /**
                      * 判断参数 DeployedResources 是否已赋值
                      * @return DeployedResources 是否已赋值
+                     * 
                      */
                     bool DeployedResourcesHasBeenSet() const;
 

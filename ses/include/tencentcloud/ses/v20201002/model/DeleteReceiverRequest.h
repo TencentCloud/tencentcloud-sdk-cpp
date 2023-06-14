@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取收件人列表id，创建收件人列表时会返回
                      * @return ReceiverId 收件人列表id，创建收件人列表时会返回
+                     * 
                      */
                     uint64_t GetReceiverId() const;
 
                     /**
                      * 设置收件人列表id，创建收件人列表时会返回
-                     * @param ReceiverId 收件人列表id，创建收件人列表时会返回
+                     * @param _receiverId 收件人列表id，创建收件人列表时会返回
+                     * 
                      */
                     void SetReceiverId(const uint64_t& _receiverId);
 
                     /**
                      * 判断参数 ReceiverId 是否已赋值
                      * @return ReceiverId 是否已赋值
+                     * 
                      */
                     bool ReceiverIdHasBeenSet() const;
 

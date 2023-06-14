@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取有效授权
                      * @return Valid 有效授权
+                     * 
                      */
                     int64_t GetValid() const;
 
                     /**
                      * 判断参数 Valid 是否已赋值
                      * @return Valid 是否已赋值
+                     * 
                      */
                     bool ValidHasBeenSet() const;
 
                     /**
                      * 获取已绑定授权
                      * @return Bound 已绑定授权
+                     * 
                      */
                     int64_t GetBound() const;
 
                     /**
                      * 判断参数 Bound 是否已赋值
                      * @return Bound 是否已赋值
+                     * 
                      */
                     bool BoundHasBeenSet() const;
 
                     /**
                      * 获取未绑定授权
                      * @return UnBound 未绑定授权
+                     * 
                      */
                     int64_t GetUnBound() const;
 
                     /**
                      * 判断参数 UnBound 是否已赋值
                      * @return UnBound 是否已赋值
+                     * 
                      */
                     bool UnBoundHasBeenSet() const;
 
                     /**
                      * 获取过期授权
                      * @return Expire 过期授权
+                     * 
                      */
                     int64_t GetExpire() const;
 
                     /**
                      * 判断参数 Expire 是否已赋值
                      * @return Expire 是否已赋值
+                     * 
                      */
                     bool ExpireHasBeenSet() const;
 

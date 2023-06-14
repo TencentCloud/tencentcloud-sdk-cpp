@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的节点 ID
                      * @return InstanceId 要删除的节点 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置要删除的节点 ID
-                     * @param InstanceId 要删除的节点 ID
+                     * @param _instanceId 要删除的节点 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

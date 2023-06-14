@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID，用于获取指定集群的单据
                      * @return ClusterId 集群ID，用于获取指定集群的单据
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID，用于获取指定集群的单据
-                     * @param ClusterId 集群ID，用于获取指定集群的单据
+                     * @param _clusterId 集群ID，用于获取指定集群的单据
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return Limit 分页
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页
-                     * @param Limit 分页
+                     * @param _limit 分页
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return Offset 分页
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页
-                     * @param Offset 分页
+                     * @param _offset 分页
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取表格组id，用于过滤
                      * @return TableGroupId 表格组id，用于过滤
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组id，用于过滤
-                     * @param TableGroupId 表格组id，用于过滤
+                     * @param _tableGroupId 表格组id，用于过滤
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表格名，用于过滤
                      * @return TableName 表格名，用于过滤
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表格名，用于过滤
-                     * @param TableName 表格名，用于过滤
+                     * @param _tableName 表格名，用于过滤
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取智能标签视频分析任务ID
                      * @return TaskId 智能标签视频分析任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取策略Id数组
                      * @return Id 策略Id数组
+                     * 
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
                      * 设置策略Id数组
-                     * @param Id 策略Id数组
+                     * @param _id 策略Id数组
+                     * 
                      */
                     void SetId(const std::vector<uint64_t>& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

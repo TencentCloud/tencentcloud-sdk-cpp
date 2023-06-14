@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取主题ID
                      * @return TopicId 主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题ID
-                     * @param TopicId 主题ID
+                     * @param _topicId 主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取主题名字
                      * @return TopicName 主题名字
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名字
-                     * @param TopicName 主题名字
+                     * @param _topicName 主题名字
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取日志时间
                      * @return Timestamp 日志时间
+                     * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置日志时间
-                     * @param Timestamp 日志时间
+                     * @param _timestamp 日志时间
+                     * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return Content 日志内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-                     * @param Content 日志内容
+                     * @param _content 日志内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取采集路径
                      * @return Filename 采集路径
+                     * 
                      */
                     std::string GetFilename() const;
 
                     /**
                      * 设置采集路径
-                     * @param Filename 采集路径
+                     * @param _filename 采集路径
+                     * 
                      */
                     void SetFilename(const std::string& _filename);
 
                     /**
                      * 判断参数 Filename 是否已赋值
                      * @return Filename 是否已赋值
+                     * 
                      */
                     bool FilenameHasBeenSet() const;
 
                     /**
                      * 获取日志来源设备
                      * @return Source 日志来源设备
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置日志来源设备
-                     * @param Source 日志来源设备
+                     * @param _source 日志来源设备
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 

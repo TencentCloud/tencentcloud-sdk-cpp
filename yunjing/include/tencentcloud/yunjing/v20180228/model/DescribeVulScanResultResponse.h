@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取漏洞数量。
                      * @return VulNum 漏洞数量。
+                     * 
                      */
                     uint64_t GetVulNum() const;
 
                     /**
                      * 判断参数 VulNum 是否已赋值
                      * @return VulNum 是否已赋值
+                     * 
                      */
                     bool VulNumHasBeenSet() const;
 
                     /**
                      * 获取专业版机器数。
                      * @return ProVersionNum 专业版机器数。
+                     * 
                      */
                     uint64_t GetProVersionNum() const;
 
                     /**
                      * 判断参数 ProVersionNum 是否已赋值
                      * @return ProVersionNum 是否已赋值
+                     * 
                      */
                     bool ProVersionNumHasBeenSet() const;
 
                     /**
                      * 获取受影响的专业版主机数。
                      * @return ImpactedHostNum 受影响的专业版主机数。
+                     * 
                      */
                     uint64_t GetImpactedHostNum() const;
 
                     /**
                      * 判断参数 ImpactedHostNum 是否已赋值
                      * @return ImpactedHostNum 是否已赋值
+                     * 
                      */
                     bool ImpactedHostNumHasBeenSet() const;
 
                     /**
                      * 获取主机总数。
                      * @return HostNum 主机总数。
+                     * 
                      */
                     uint64_t GetHostNum() const;
 
                     /**
                      * 判断参数 HostNum 是否已赋值
                      * @return HostNum 是否已赋值
+                     * 
                      */
                     bool HostNumHasBeenSet() const;
 
                     /**
                      * 获取基础版机器数。
                      * @return BasicVersionNum 基础版机器数。
+                     * 
                      */
                     uint64_t GetBasicVersionNum() const;
 
                     /**
                      * 判断参数 BasicVersionNum 是否已赋值
                      * @return BasicVersionNum 是否已赋值
+                     * 
                      */
                     bool BasicVersionNumHasBeenSet() const;
 

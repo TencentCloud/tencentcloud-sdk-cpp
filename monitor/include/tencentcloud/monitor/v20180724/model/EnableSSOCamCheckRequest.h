@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-abcdefgh
                      * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启 cam 鉴权，true为开启，false 为不开启
                      * @return EnableSSOCamCheck 是否开启 cam 鉴权，true为开启，false 为不开启
+                     * 
                      */
                     bool GetEnableSSOCamCheck() const;
 
                     /**
                      * 设置是否开启 cam 鉴权，true为开启，false 为不开启
-                     * @param EnableSSOCamCheck 是否开启 cam 鉴权，true为开启，false 为不开启
+                     * @param _enableSSOCamCheck 是否开启 cam 鉴权，true为开启，false 为不开启
+                     * 
                      */
                     void SetEnableSSOCamCheck(const bool& _enableSSOCamCheck);
 
                     /**
                      * 判断参数 EnableSSOCamCheck 是否已赋值
                      * @return EnableSSOCamCheck 是否已赋值
+                     * 
                      */
                     bool EnableSSOCamCheckHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取围栏告警时间
                      * @return AlarmTime 围栏告警时间
+                     * 
                      */
                     int64_t GetAlarmTime() const;
 
                     /**
                      * 设置围栏告警时间
-                     * @param AlarmTime 围栏告警时间
+                     * @param _alarmTime 围栏告警时间
+                     * 
                      */
                     void SetAlarmTime(const int64_t& _alarmTime);
 
                     /**
                      * 判断参数 AlarmTime 是否已赋值
                      * @return AlarmTime 是否已赋值
+                     * 
                      */
                     bool AlarmTimeHasBeenSet() const;
 
                     /**
                      * 获取围栏告警位置的经度
                      * @return Longitude 围栏告警位置的经度
+                     * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置围栏告警位置的经度
-                     * @param Longitude 围栏告警位置的经度
+                     * @param _longitude 围栏告警位置的经度
+                     * 
                      */
                     void SetLongitude(const double& _longitude);
 
                     /**
                      * 判断参数 Longitude 是否已赋值
                      * @return Longitude 是否已赋值
+                     * 
                      */
                     bool LongitudeHasBeenSet() const;
 
                     /**
                      * 获取围栏告警位置的纬度
                      * @return Latitude 围栏告警位置的纬度
+                     * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置围栏告警位置的纬度
-                     * @param Latitude 围栏告警位置的纬度
+                     * @param _latitude 围栏告警位置的纬度
+                     * 
                      */
                     void SetLatitude(const double& _latitude);
 
                     /**
                      * 判断参数 Latitude 是否已赋值
                      * @return Latitude 是否已赋值
+                     * 
                      */
                     bool LatitudeHasBeenSet() const;
 

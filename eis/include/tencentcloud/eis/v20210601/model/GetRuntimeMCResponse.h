@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取运行时详情
                      * @return Runtime 运行时详情
+                     * 
                      */
                     RuntimeMC GetRuntime() const;
 
                     /**
                      * 判断参数 Runtime 是否已赋值
                      * @return Runtime 是否已赋值
+                     * 
                      */
                     bool RuntimeHasBeenSet() const;
 

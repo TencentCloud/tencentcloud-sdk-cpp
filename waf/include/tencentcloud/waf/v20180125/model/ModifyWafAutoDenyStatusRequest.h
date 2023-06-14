@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取WAF 自动封禁配置项
                      * @return WafAutoDenyDetails WAF 自动封禁配置项
+                     * 
                      */
                     AutoDenyDetail GetWafAutoDenyDetails() const;
 
                     /**
                      * 设置WAF 自动封禁配置项
-                     * @param WafAutoDenyDetails WAF 自动封禁配置项
+                     * @param _wafAutoDenyDetails WAF 自动封禁配置项
+                     * 
                      */
                     void SetWafAutoDenyDetails(const AutoDenyDetail& _wafAutoDenyDetails);
 
                     /**
                      * 判断参数 WafAutoDenyDetails 是否已赋值
                      * @return WafAutoDenyDetails 是否已赋值
+                     * 
                      */
                     bool WafAutoDenyDetailsHasBeenSet() const;
 

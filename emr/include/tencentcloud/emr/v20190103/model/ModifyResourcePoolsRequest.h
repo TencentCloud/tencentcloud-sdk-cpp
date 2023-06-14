@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取emr集群id
                      * @return InstanceId emr集群id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置emr集群id
-                     * @param InstanceId emr集群id
+                     * @param _instanceId emr集群id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return Key 取值范围：
 <li>fair:代表公平调度标识</li>
 <li>capacity:代表容量调度标识</li>
+                     * 
                      */
                     std::string GetKey() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置取值范围：
 <li>fair:代表公平调度标识</li>
 <li>capacity:代表容量调度标识</li>
-                     * @param Key 取值范围：
+                     * @param _key 取值范围：
 <li>fair:代表公平调度标识</li>
 <li>capacity:代表容量调度标识</li>
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 

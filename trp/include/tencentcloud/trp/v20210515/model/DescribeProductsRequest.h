@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取商品名称
                      * @return Name 商品名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商品名称
-                     * @param Name 商品名称
+                     * @param _name 商品名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取条数
                      * @return PageSize 条数
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置条数
-                     * @param PageSize 条数
+                     * @param _pageSize 条数
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return PageNumber 页数
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页数
-                     * @param PageNumber 页数
+                     * @param _pageNumber 页数
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取商品ID
                      * @return MerchantId 商品ID
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商品ID
-                     * @param MerchantId 商品ID
+                     * @param _merchantId 商品ID
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的脚本ID
                      * @return CmdIds 需要删除的脚本ID
+                     * 
                      */
                     std::vector<std::string> GetCmdIds() const;
 
                     /**
                      * 设置需要删除的脚本ID
-                     * @param CmdIds 需要删除的脚本ID
+                     * @param _cmdIds 需要删除的脚本ID
+                     * 
                      */
                     void SetCmdIds(const std::vector<std::string>& _cmdIds);
 
                     /**
                      * 判断参数 CmdIds 是否已赋值
                      * @return CmdIds 是否已赋值
+                     * 
                      */
                     bool CmdIdsHasBeenSet() const;
 

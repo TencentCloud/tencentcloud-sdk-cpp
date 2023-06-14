@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取公司名称
                      * @return CompanyName 公司名称
+                     * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
                      * 设置公司名称
-                     * @param CompanyName 公司名称
+                     * @param _companyName 公司名称
+                     * 
                      */
                     void SetCompanyName(const std::string& _companyName);
 
                     /**
                      * 判断参数 CompanyName 是否已赋值
                      * @return CompanyName 是否已赋值
+                     * 
                      */
                     bool CompanyNameHasBeenSet() const;
 
                     /**
                      * 获取公司ID
                      * @return CompanyId 公司ID
+                     * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
                      * 设置公司ID
-                     * @param CompanyId 公司ID
+                     * @param _companyId 公司ID
+                     * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取公司所在国家
                      * @return CompanyCountry 公司所在国家
+                     * 
                      */
                     std::string GetCompanyCountry() const;
 
                     /**
                      * 设置公司所在国家
-                     * @param CompanyCountry 公司所在国家
+                     * @param _companyCountry 公司所在国家
+                     * 
                      */
                     void SetCompanyCountry(const std::string& _companyCountry);
 
                     /**
                      * 判断参数 CompanyCountry 是否已赋值
                      * @return CompanyCountry 是否已赋值
+                     * 
                      */
                     bool CompanyCountryHasBeenSet() const;
 
                     /**
                      * 获取公司所在省份
                      * @return CompanyProvince 公司所在省份
+                     * 
                      */
                     std::string GetCompanyProvince() const;
 
                     /**
                      * 设置公司所在省份
-                     * @param CompanyProvince 公司所在省份
+                     * @param _companyProvince 公司所在省份
+                     * 
                      */
                     void SetCompanyProvince(const std::string& _companyProvince);
 
                     /**
                      * 判断参数 CompanyProvince 是否已赋值
                      * @return CompanyProvince 是否已赋值
+                     * 
                      */
                     bool CompanyProvinceHasBeenSet() const;
 
                     /**
                      * 获取公司所在城市
                      * @return CompanyCity 公司所在城市
+                     * 
                      */
                     std::string GetCompanyCity() const;
 
                     /**
                      * 设置公司所在城市
-                     * @param CompanyCity 公司所在城市
+                     * @param _companyCity 公司所在城市
+                     * 
                      */
                     void SetCompanyCity(const std::string& _companyCity);
 
                     /**
                      * 判断参数 CompanyCity 是否已赋值
                      * @return CompanyCity 是否已赋值
+                     * 
                      */
                     bool CompanyCityHasBeenSet() const;
 
                     /**
                      * 获取公司所在详细地址
                      * @return CompanyAddress 公司所在详细地址
+                     * 
                      */
                     std::string GetCompanyAddress() const;
 
                     /**
                      * 设置公司所在详细地址
-                     * @param CompanyAddress 公司所在详细地址
+                     * @param _companyAddress 公司所在详细地址
+                     * 
                      */
                     void SetCompanyAddress(const std::string& _companyAddress);
 
                     /**
                      * 判断参数 CompanyAddress 是否已赋值
                      * @return CompanyAddress 是否已赋值
+                     * 
                      */
                     bool CompanyAddressHasBeenSet() const;
 
                     /**
                      * 获取公司电话
                      * @return CompanyPhone 公司电话
+                     * 
                      */
                     std::string GetCompanyPhone() const;
 
                     /**
                      * 设置公司电话
-                     * @param CompanyPhone 公司电话
+                     * @param _companyPhone 公司电话
+                     * 
                      */
                     void SetCompanyPhone(const std::string& _companyPhone);
 
                     /**
                      * 判断参数 CompanyPhone 是否已赋值
                      * @return CompanyPhone 是否已赋值
+                     * 
                      */
                     bool CompanyPhoneHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdType 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdType 类型
+                     * @param _idType 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdType(const std::string& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdNumber ID号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdNumber() const;
 
                     /**
                      * 设置ID号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdNumber ID号
+                     * @param _idNumber ID号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdNumber(const std::string& _idNumber);
 
                     /**
                      * 判断参数 IdNumber 是否已赋值
                      * @return IdNumber 是否已赋值
+                     * 
                      */
                     bool IdNumberHasBeenSet() const;
 

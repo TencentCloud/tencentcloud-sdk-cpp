@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
                      * @return InstanceIds 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
-                     * @param InstanceIds 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * @param _instanceIds 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
                      * @return InstanceChargePrepaid 预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
-                     * @param InstanceChargePrepaid 预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
+                     * @param _instanceChargePrepaid 预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 

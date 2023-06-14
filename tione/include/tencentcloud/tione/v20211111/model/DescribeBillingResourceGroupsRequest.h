@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
                      * @return Type 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
-                     * @param Type 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * @param _type 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -71,6 +74,7 @@ Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1�
                     ResourceGroupName (资源组名称列表)
 Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -79,52 +83,60 @@ Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1�
                     ResourceGroupName (资源组名称列表)
 Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为5，Filter.Values的上限为100
-                     * @param Filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
+                     * @param _filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)
                     ResourceGroupName (资源组名称列表)
 Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为5，Filter.Values的上限为100
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取标签过滤
                      * @return TagFilters 标签过滤
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤
-                     * @param TagFilters 标签过滤
+                     * @param _tagFilters 标签过滤
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间
                      * @return Offset 偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间
-                     * @param Offset 偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间
+                     * @param _offset 偏移量，默认为0；分页查询起始位置，如：Limit为100，第一页Offset为0，第二页OffSet为100....即每页左边为闭区间
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -133,38 +145,44 @@ Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1�
 注意：小于0则默认为20；大于30则默认为30
                      * @return Limit 返回数量，默认为20，最大值为30;
 注意：小于0则默认为20；大于30则默认为30
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为30;
 注意：小于0则默认为20；大于30则默认为30
-                     * @param Limit 返回数量，默认为20，最大值为30;
+                     * @param _limit 返回数量，默认为20，最大值为30;
 注意：小于0则默认为20；大于30则默认为30
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取支持模糊查找资源组id和资源组名
                      * @return SearchWord 支持模糊查找资源组id和资源组名
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置支持模糊查找资源组id和资源组名
-                     * @param SearchWord 支持模糊查找资源组id和资源组名
+                     * @param _searchWord 支持模糊查找资源组id和资源组名
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
@@ -175,6 +193,7 @@ true: 不展示，false 展示；
                      * @return DontShowInstanceSet 是否不展示节点列表; 
 true: 不展示，false 展示；
 默认为false
+                     * 
                      */
                     bool GetDontShowInstanceSet() const;
 
@@ -182,15 +201,17 @@ true: 不展示，false 展示；
                      * 设置是否不展示节点列表; 
 true: 不展示，false 展示；
 默认为false
-                     * @param DontShowInstanceSet 是否不展示节点列表; 
+                     * @param _dontShowInstanceSet 是否不展示节点列表; 
 true: 不展示，false 展示；
 默认为false
+                     * 
                      */
                     void SetDontShowInstanceSet(const bool& _dontShowInstanceSet);
 
                     /**
                      * 判断参数 DontShowInstanceSet 是否已赋值
                      * @return DontShowInstanceSet 是否已赋值
+                     * 
                      */
                     bool DontShowInstanceSetHasBeenSet() const;
 

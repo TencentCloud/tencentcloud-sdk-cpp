@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 输入源 Id，由系统分配。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置输入源 Id，由系统分配。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 输入源 Id，由系统分配。
+                     * @param _id 输入源 Id，由系统分配。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
                      * @return Type 输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -82,51 +86,59 @@ namespace TencentCloud
                      * 设置输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
-                     * @param Type 输入源的媒体类型，取值有：
+                     * @param _type 输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取云点播媒体文件 ID。当 Type = VOD 时必填。
                      * @return FileId 云点播媒体文件 ID。当 Type = VOD 时必填。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置云点播媒体文件 ID。当 Type = VOD 时必填。
-                     * @param FileId 云点播媒体文件 ID。当 Type = VOD 时必填。
+                     * @param _fileId 云点播媒体文件 ID。当 Type = VOD 时必填。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
                      * @return MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     * @param MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
+                     * @param _materialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 

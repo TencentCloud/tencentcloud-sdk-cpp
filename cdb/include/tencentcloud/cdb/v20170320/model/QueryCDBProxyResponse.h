@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 代理数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroup 代理信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyGroups> GetProxyGroup() const;
 
                     /**
                      * 判断参数 ProxyGroup 是否已赋值
                      * @return ProxyGroup 是否已赋值
+                     * 
                      */
                     bool ProxyGroupHasBeenSet() const;
 

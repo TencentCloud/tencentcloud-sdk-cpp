@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取客户端地址。
                      * @return Host 客户端地址。
+                     * 
                      */
                     std::vector<std::string> GetHost() const;
 
                     /**
                      * 设置客户端地址。
-                     * @param Host 客户端地址。
+                     * @param _host 客户端地址。
+                     * 
                      */
                     void SetHost(const std::vector<std::string>& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取数据库名称。
                      * @return DBName 数据库名称。
+                     * 
                      */
                     std::vector<std::string> GetDBName() const;
 
                     /**
                      * 设置数据库名称。
-                     * @param DBName 数据库名称。
+                     * @param _dBName 数据库名称。
+                     * 
                      */
                     void SetDBName(const std::vector<std::string>& _dBName);
 
                     /**
                      * 判断参数 DBName 是否已赋值
                      * @return DBName 是否已赋值
+                     * 
                      */
                     bool DBNameHasBeenSet() const;
 
                     /**
                      * 获取用户名。
                      * @return User 用户名。
+                     * 
                      */
                     std::vector<std::string> GetUser() const;
 
                     /**
                      * 设置用户名。
-                     * @param User 用户名。
+                     * @param _user 用户名。
+                     * 
                      */
                     void SetUser(const std::vector<std::string>& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取返回行数。表示筛选返回行数大于该值的审计日志。
                      * @return SentRows 返回行数。表示筛选返回行数大于该值的审计日志。
+                     * 
                      */
                     int64_t GetSentRows() const;
 
                     /**
                      * 设置返回行数。表示筛选返回行数大于该值的审计日志。
-                     * @param SentRows 返回行数。表示筛选返回行数大于该值的审计日志。
+                     * @param _sentRows 返回行数。表示筛选返回行数大于该值的审计日志。
+                     * 
                      */
                     void SetSentRows(const int64_t& _sentRows);
 
                     /**
                      * 判断参数 SentRows 是否已赋值
                      * @return SentRows 是否已赋值
+                     * 
                      */
                     bool SentRowsHasBeenSet() const;
 
                     /**
                      * 获取影响行数。表示筛选影响行数大于该值的审计日志。
                      * @return AffectRows 影响行数。表示筛选影响行数大于该值的审计日志。
+                     * 
                      */
                     int64_t GetAffectRows() const;
 
                     /**
                      * 设置影响行数。表示筛选影响行数大于该值的审计日志。
-                     * @param AffectRows 影响行数。表示筛选影响行数大于该值的审计日志。
+                     * @param _affectRows 影响行数。表示筛选影响行数大于该值的审计日志。
+                     * 
                      */
                     void SetAffectRows(const int64_t& _affectRows);
 
                     /**
                      * 判断参数 AffectRows 是否已赋值
                      * @return AffectRows 是否已赋值
+                     * 
                      */
                     bool AffectRowsHasBeenSet() const;
 
                     /**
                      * 获取执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。
                      * @return ExecTime 执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。
+                     * 
                      */
                     int64_t GetExecTime() const;
 
                     /**
                      * 设置执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。
-                     * @param ExecTime 执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。
+                     * @param _execTime 执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。
+                     * 
                      */
                     void SetExecTime(const int64_t& _execTime);
 
                     /**
                      * 判断参数 ExecTime 是否已赋值
                      * @return ExecTime 是否已赋值
+                     * 
                      */
                     bool ExecTimeHasBeenSet() const;
 

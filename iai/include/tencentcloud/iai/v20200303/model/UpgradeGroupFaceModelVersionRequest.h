@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要升级的人员库ID。
                      * @return GroupId 需要升级的人员库ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置需要升级的人员库ID。
-                     * @param GroupId 需要升级的人员库ID。
+                     * @param _groupId 需要升级的人员库ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取需要升级至的算法模型版本。默认为最新版本。不可逆向升级
                      * @return FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 设置需要升级至的算法模型版本。默认为最新版本。不可逆向升级
-                     * @param FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
+                     * @param _faceModelVersion 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
+                     * 
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

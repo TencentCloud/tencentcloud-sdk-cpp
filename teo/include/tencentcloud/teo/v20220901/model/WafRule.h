@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 托管规则开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置托管规则开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
-                     * @param Switch 托管规则开关，取值有：
+                     * @param _switch 托管规则开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。
                      * @return BlockRuleIDs 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。
+                     * 
                      */
                     std::vector<int64_t> GetBlockRuleIDs() const;
 
                     /**
                      * 设置黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。
-                     * @param BlockRuleIDs 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。
+                     * @param _blockRuleIDs 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。
+                     * 
                      */
                     void SetBlockRuleIDs(const std::vector<int64_t>& _blockRuleIDs);
 
                     /**
                      * 判断参数 BlockRuleIDs 是否已赋值
                      * @return BlockRuleIDs 是否已赋值
+                     * 
                      */
                     bool BlockRuleIDsHasBeenSet() const;
 
                     /**
                      * 获取观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。
                      * @return ObserveRuleIDs 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。
+                     * 
                      */
                     std::vector<int64_t> GetObserveRuleIDs() const;
 
                     /**
                      * 设置观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。
-                     * @param ObserveRuleIDs 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。
+                     * @param _observeRuleIDs 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。
+                     * 
                      */
                     void SetObserveRuleIDs(const std::vector<int64_t>& _observeRuleIDs);
 
                     /**
                      * 判断参数 ObserveRuleIDs 是否已赋值
                      * @return ObserveRuleIDs 是否已赋值
+                     * 
                      */
                     bool ObserveRuleIDsHasBeenSet() const;
 

@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Type 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
 <li>complete：完全跳过模式；</li>
 <li>partial：部分跳过模式。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
 <li>complete：完全跳过模式；</li>
 <li>partial：部分跳过模式。</li>
-                     * @param Type 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+                     * @param _type 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
 <li>complete：完全跳过模式；</li>
 <li>partial：部分跳过模式。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -89,6 +92,7 @@ namespace TencentCloud
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetModules() const;
 
@@ -100,19 +104,21 @@ namespace TencentCloud
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Modules 生效的模块，该字段取值有：
+                     * @param _modules 生效的模块，该字段取值有：
 <li>waf：托管规则；</li>
 <li>rate：速率限制；</li>
 <li>acl：自定义规则；</li>
 <li>cc：cc攻击防护；</li>
 <li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModules(const std::vector<std::string>& _modules);
 
                     /**
                      * 判断参数 Modules 是否已赋值
                      * @return Modules 是否已赋值
+                     * 
                      */
                     bool ModulesHasBeenSet() const;
 
@@ -121,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PartialModule> GetPartialModules() const;
 
                     /**
                      * 设置跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+                     * @param _partialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartialModules(const std::vector<PartialModule>& _partialModules);
 
                     /**
                      * 判断参数 PartialModules 是否已赋值
                      * @return PartialModules 是否已赋值
+                     * 
                      */
                     bool PartialModulesHasBeenSet() const;
 
@@ -143,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SkipCondition> GetSkipConditions() const;
 
                     /**
                      * 设置跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+                     * @param _skipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipConditions(const std::vector<SkipCondition>& _skipConditions);
 
                     /**
                      * 判断参数 SkipConditions 是否已赋值
                      * @return SkipConditions 是否已赋值
+                     * 
                      */
                     bool SkipConditionsHasBeenSet() const;
 

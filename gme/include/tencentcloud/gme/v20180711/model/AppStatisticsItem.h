@@ -58,20 +58,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealtimeSpeechStatisticsItem 实时语音统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RealTimeSpeechStatisticsItem GetRealtimeSpeechStatisticsItem() const;
 
                     /**
                      * 设置实时语音统计数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealtimeSpeechStatisticsItem 实时语音统计数据
+                     * @param _realtimeSpeechStatisticsItem 实时语音统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealtimeSpeechStatisticsItem(const RealTimeSpeechStatisticsItem& _realtimeSpeechStatisticsItem);
 
                     /**
                      * 判断参数 RealtimeSpeechStatisticsItem 是否已赋值
                      * @return RealtimeSpeechStatisticsItem 是否已赋值
+                     * 
                      */
                     bool RealtimeSpeechStatisticsItemHasBeenSet() const;
 
@@ -80,20 +83,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceMessageStatisticsItem 语音消息统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VoiceMessageStatisticsItem GetVoiceMessageStatisticsItem() const;
 
                     /**
                      * 设置语音消息统计数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VoiceMessageStatisticsItem 语音消息统计数据
+                     * @param _voiceMessageStatisticsItem 语音消息统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVoiceMessageStatisticsItem(const VoiceMessageStatisticsItem& _voiceMessageStatisticsItem);
 
                     /**
                      * 判断参数 VoiceMessageStatisticsItem 是否已赋值
                      * @return VoiceMessageStatisticsItem 是否已赋值
+                     * 
                      */
                     bool VoiceMessageStatisticsItemHasBeenSet() const;
 
@@ -102,38 +108,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceFilterStatisticsItem 语音过滤统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VoiceFilterStatisticsItem GetVoiceFilterStatisticsItem() const;
 
                     /**
                      * 设置语音过滤统计数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VoiceFilterStatisticsItem 语音过滤统计数据
+                     * @param _voiceFilterStatisticsItem 语音过滤统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVoiceFilterStatisticsItem(const VoiceFilterStatisticsItem& _voiceFilterStatisticsItem);
 
                     /**
                      * 判断参数 VoiceFilterStatisticsItem 是否已赋值
                      * @return VoiceFilterStatisticsItem 是否已赋值
+                     * 
                      */
                     bool VoiceFilterStatisticsItemHasBeenSet() const;
 
                     /**
                      * 获取统计时间
                      * @return Date 统计时间
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置统计时间
-                     * @param Date 统计时间
+                     * @param _date 统计时间
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioTextStatisticsItem 录音转文本用量统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioTextStatisticsItem GetAudioTextStatisticsItem() const;
 
                     /**
                      * 设置录音转文本用量统计数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioTextStatisticsItem 录音转文本用量统计数据
+                     * @param _audioTextStatisticsItem 录音转文本用量统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioTextStatisticsItem(const AudioTextStatisticsItem& _audioTextStatisticsItem);
 
                     /**
                      * 判断参数 AudioTextStatisticsItem 是否已赋值
                      * @return AudioTextStatisticsItem 是否已赋值
+                     * 
                      */
                     bool AudioTextStatisticsItemHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamTextStatisticsItem 流式转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamTextStatisticsItem GetStreamTextStatisticsItem() const;
 
                     /**
                      * 设置流式转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamTextStatisticsItem 流式转文本用量数据
+                     * @param _streamTextStatisticsItem 流式转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamTextStatisticsItem(const StreamTextStatisticsItem& _streamTextStatisticsItem);
 
                     /**
                      * 判断参数 StreamTextStatisticsItem 是否已赋值
                      * @return StreamTextStatisticsItem 是否已赋值
+                     * 
                      */
                     bool StreamTextStatisticsItemHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverseaTextStatisticsItem 海外转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OverseaTextStatisticsItem GetOverseaTextStatisticsItem() const;
 
                     /**
                      * 设置海外转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OverseaTextStatisticsItem 海外转文本用量数据
+                     * @param _overseaTextStatisticsItem 海外转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOverseaTextStatisticsItem(const OverseaTextStatisticsItem& _overseaTextStatisticsItem);
 
                     /**
                      * 判断参数 OverseaTextStatisticsItem 是否已赋值
                      * @return OverseaTextStatisticsItem 是否已赋值
+                     * 
                      */
                     bool OverseaTextStatisticsItemHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealtimeTextStatisticsItem 实时语音转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RealtimeTextStatisticsItem GetRealtimeTextStatisticsItem() const;
 
                     /**
                      * 设置实时语音转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealtimeTextStatisticsItem 实时语音转文本用量数据
+                     * @param _realtimeTextStatisticsItem 实时语音转文本用量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealtimeTextStatisticsItem(const RealtimeTextStatisticsItem& _realtimeTextStatisticsItem);
 
                     /**
                      * 判断参数 RealtimeTextStatisticsItem 是否已赋值
                      * @return RealtimeTextStatisticsItem 是否已赋值
+                     * 
                      */
                     bool RealtimeTextStatisticsItemHasBeenSet() const;
 

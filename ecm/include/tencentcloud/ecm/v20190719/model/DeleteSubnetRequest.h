@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
                      * @return SubnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
-                     * @param SubnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * @param _subnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

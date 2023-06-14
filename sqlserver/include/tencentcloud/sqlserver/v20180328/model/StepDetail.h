@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取具体步骤返回信息
                      * @return Msg 具体步骤返回信息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置具体步骤返回信息
-                     * @param Msg 具体步骤返回信息
+                     * @param _msg 具体步骤返回信息
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
                     /**
                      * 获取当前步骤状态，0成功，-2未开始
                      * @return Status 当前步骤状态，0成功，-2未开始
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置当前步骤状态，0成功，-2未开始
-                     * @param Status 当前步骤状态，0成功，-2未开始
+                     * @param _status 当前步骤状态，0成功，-2未开始
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取步骤名称
                      * @return Name 步骤名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置步骤名称
-                     * @param Name 步骤名称
+                     * @param _name 步骤名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

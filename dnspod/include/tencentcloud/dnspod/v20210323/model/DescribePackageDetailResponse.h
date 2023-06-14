@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取套餐配置详情
                      * @return Info 套餐配置详情
+                     * 
                      */
                     std::vector<PackageDetailItem> GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取套餐代码列表
                      * @return LevelMap 套餐代码列表
+                     * 
                      */
                     std::vector<std::string> GetLevelMap() const;
 
                     /**
                      * 判断参数 LevelMap 是否已赋值
                      * @return LevelMap 是否已赋值
+                     * 
                      */
                     bool LevelMapHasBeenSet() const;
 

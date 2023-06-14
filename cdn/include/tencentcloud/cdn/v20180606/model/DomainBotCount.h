@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取BOT次数
                      * @return Count BOT次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置BOT次数
-                     * @param Count BOT次数
+                     * @param _count BOT次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value Top指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置Top指标值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value Top指标值
+                     * @param _value Top指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 国家/地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置国家/地区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Country 国家/地区
+                     * @param _country 国家/地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCountry(const std::string& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Province 省份
+                     * @param _province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Isp 运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置运营商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Isp 运营商
+                     * @param _isp 运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 

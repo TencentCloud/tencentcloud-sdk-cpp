@@ -46,120 +46,140 @@ namespace TencentCloud
                     /**
                      * 获取设备匿名标识
                      * @return Openid 设备匿名标识
+                     * 
                      */
                     std::string GetOpenid() const;
 
                     /**
                      * 判断参数 Openid 是否已赋值
                      * @return Openid 是否已赋值
+                     * 
                      */
                     bool OpenidHasBeenSet() const;
 
                     /**
                      * 获取App版本信息
                      * @return AppVersion App版本信息
+                     * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
                      * 判断参数 AppVersion 是否已赋值
                      * @return AppVersion 是否已赋值
+                     * 
                      */
                     bool AppVersionHasBeenSet() const;
 
                     /**
                      * 获取品牌
                      * @return Brand 品牌
+                     * 
                      */
                     std::string GetBrand() const;
 
                     /**
                      * 判断参数 Brand 是否已赋值
                      * @return Brand 是否已赋值
+                     * 
                      */
                     bool BrandHasBeenSet() const;
 
                     /**
                      * 获取客户端IP
                      * @return ClientIp 客户端IP
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取机型
                      * @return Model 机型
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
                     /**
                      * 获取网络类型
                      * @return NetworkType 网络类型
+                     * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
                      * 获取应用包名
                      * @return PackageName 应用包名
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 
                     /**
                      * 获取平台（2-Android，3-iOS，4-H5，5-微信小程序）
                      * @return Platform 平台（2-Android，3-iOS，4-H5，5-微信小程序）
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取系统版本
                      * @return SystemVersion 系统版本
+                     * 
                      */
                     std::string GetSystemVersion() const;
 
                     /**
                      * 判断参数 SystemVersion 是否已赋值
                      * @return SystemVersion 是否已赋值
+                     * 
                      */
                     bool SystemVersionHasBeenSet() const;
 
                     /**
                      * 获取SDK版本号
                      * @return SdkBuildNo SDK版本号
+                     * 
                      */
                     std::string GetSdkBuildNo() const;
 
                     /**
                      * 判断参数 SdkBuildNo 是否已赋值
                      * @return SdkBuildNo 是否已赋值
+                     * 
                      */
                     bool SdkBuildNoHasBeenSet() const;
 

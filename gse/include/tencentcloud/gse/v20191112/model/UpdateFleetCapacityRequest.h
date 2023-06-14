@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队ID
                      * @return FleetId 服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队ID
-                     * @param FleetId 服务器舰队ID
+                     * @param _fleetId 服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取期望的服务器实例数
                      * @return DesiredInstances 期望的服务器实例数
+                     * 
                      */
                     uint64_t GetDesiredInstances() const;
 
                     /**
                      * 设置期望的服务器实例数
-                     * @param DesiredInstances 期望的服务器实例数
+                     * @param _desiredInstances 期望的服务器实例数
+                     * 
                      */
                     void SetDesiredInstances(const uint64_t& _desiredInstances);
 
                     /**
                      * 判断参数 DesiredInstances 是否已赋值
                      * @return DesiredInstances 是否已赋值
+                     * 
                      */
                     bool DesiredInstancesHasBeenSet() const;
 
                     /**
                      * 获取服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
                      * @return MinSize 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
+                     * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
                      * 设置服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
-                     * @param MinSize 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
+                     * @param _minSize 服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1
+                     * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
                     /**
                      * 获取服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
                      * @return MaxSize 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
+                     * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
                      * 设置服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
-                     * @param MaxSize 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
+                     * @param _maxSize 服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额
+                     * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
                      * @return ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * 
                      */
                     uint64_t GetScalingInterval() const;
 
                     /**
                      * 设置服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
-                     * @param ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * @param _scalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * 
                      */
                     void SetScalingInterval(const uint64_t& _scalingInterval);
 
                     /**
                      * 判断参数 ScalingInterval 是否已赋值
                      * @return ScalingInterval 是否已赋值
+                     * 
                      */
                     bool ScalingIntervalHasBeenSet() const;
 

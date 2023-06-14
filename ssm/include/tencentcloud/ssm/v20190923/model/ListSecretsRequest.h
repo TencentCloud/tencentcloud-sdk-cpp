@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取查询列表的起始位置，以0开始，不设置默认为0。
                      * @return Offset 查询列表的起始位置，以0开始，不设置默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询列表的起始位置，以0开始，不设置默认为0。
-                     * @param Offset 查询列表的起始位置，以0开始，不设置默认为0。
+                     * @param _offset 查询列表的起始位置，以0开始，不设置默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单次查询返回的最大数量，0或不设置则使用默认值 20。
                      * @return Limit 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次查询返回的最大数量，0或不设置则使用默认值 20。
-                     * @param Limit 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * @param _limit 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
                      * @return OrderType 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * 
                      */
                     uint64_t GetOrderType() const;
 
                     /**
                      * 设置根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
-                     * @param OrderType 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * @param _orderType 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * 
                      */
                     void SetOrderType(const uint64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
@@ -114,6 +123,7 @@ namespace TencentCloud
 4 --  表示PendingCreate。
 5 --  表示CreateFailed。
 其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * 
                      */
                     uint64_t GetState() const;
 
@@ -126,7 +136,7 @@ namespace TencentCloud
 4 --  表示PendingCreate。
 5 --  表示CreateFailed。
 其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
-                     * @param State 根据凭据状态进行过滤。
+                     * @param _state 根据凭据状态进行过滤。
 默认为0表示查询全部。
 1 --  表示查询Enabled 凭据列表。
 2 --  表示查询Disabled 凭据列表。
@@ -134,48 +144,56 @@ namespace TencentCloud
 4 --  表示PendingCreate。
 5 --  表示CreateFailed。
 其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * 
                      */
                     void SetState(const uint64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取根据凭据名称进行过滤，为空表示不过滤。
                      * @return SearchSecretName 根据凭据名称进行过滤，为空表示不过滤。
+                     * 
                      */
                     std::string GetSearchSecretName() const;
 
                     /**
                      * 设置根据凭据名称进行过滤，为空表示不过滤。
-                     * @param SearchSecretName 根据凭据名称进行过滤，为空表示不过滤。
+                     * @param _searchSecretName 根据凭据名称进行过滤，为空表示不过滤。
+                     * 
                      */
                     void SetSearchSecretName(const std::string& _searchSecretName);
 
                     /**
                      * 判断参数 SearchSecretName 是否已赋值
                      * @return SearchSecretName 是否已赋值
+                     * 
                      */
                     bool SearchSecretNameHasBeenSet() const;
 
                     /**
                      * 获取标签过滤条件。
                      * @return TagFilters 标签过滤条件。
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤条件。
-                     * @param TagFilters 标签过滤条件。
+                     * @param _tagFilters 标签过滤条件。
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
@@ -188,6 +206,7 @@ namespace TencentCloud
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
 3 -- 表示云API密钥对凭据。
+                     * 
                      */
                     uint64_t GetSecretType() const;
 
@@ -196,16 +215,18 @@ namespace TencentCloud
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
 3 -- 表示云API密钥对凭据。
-                     * @param SecretType 0  -- 表示用户自定义凭据，默认为0。
+                     * @param _secretType 0  -- 表示用户自定义凭据，默认为0。
 1  -- 表示用户云产品凭据。
 2 -- 表示SSH密钥对凭据。
 3 -- 表示云API密钥对凭据。
+                     * 
                      */
                     void SetSecretType(const uint64_t& _secretType);
 
                     /**
                      * 判断参数 SecretType 是否已赋值
                      * @return SecretType 是否已赋值
+                     * 
                      */
                     bool SecretTypeHasBeenSet() const;
 
@@ -220,6 +241,7 @@ namespace TencentCloud
 如果ProductName值为空，则表示查询所有类型的云产品凭据
 如果ProductName值为Mysql，则表示查询Mysql数据库凭据
 如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     * 
                      */
                     std::string GetProductName() const;
 
@@ -229,17 +251,19 @@ namespace TencentCloud
 如果ProductName值为空，则表示查询所有类型的云产品凭据
 如果ProductName值为Mysql，则表示查询Mysql数据库凭据
 如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
-                     * @param ProductName 此参数仅在SecretType参数值为1时生效，
+                     * @param _productName 此参数仅在SecretType参数值为1时生效，
 当SecretType值为1时：
 如果ProductName值为空，则表示查询所有类型的云产品凭据
 如果ProductName值为Mysql，则表示查询Mysql数据库凭据
 如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTimeSpeech 实时语音服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatusInfo GetRealTimeSpeech() const;
 
                     /**
                      * 设置实时语音服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealTimeSpeech 实时语音服务开关状态
+                     * @param _realTimeSpeech 实时语音服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealTimeSpeech(const StatusInfo& _realTimeSpeech);
 
                     /**
                      * 判断参数 RealTimeSpeech 是否已赋值
                      * @return RealTimeSpeech 是否已赋值
+                     * 
                      */
                     bool RealTimeSpeechHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceMessage 语音消息服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatusInfo GetVoiceMessage() const;
 
                     /**
                      * 设置语音消息服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VoiceMessage 语音消息服务开关状态
+                     * @param _voiceMessage 语音消息服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVoiceMessage(const StatusInfo& _voiceMessage);
 
                     /**
                      * 判断参数 VoiceMessage 是否已赋值
                      * @return VoiceMessage 是否已赋值
+                     * 
                      */
                     bool VoiceMessageHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Porn 语音内容安全服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatusInfo GetPorn() const;
 
                     /**
                      * 设置语音内容安全服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Porn 语音内容安全服务开关状态
+                     * @param _porn 语音内容安全服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPorn(const StatusInfo& _porn);
 
                     /**
                      * 判断参数 Porn 是否已赋值
                      * @return Porn 是否已赋值
+                     * 
                      */
                     bool PornHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Live 语音录制服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatusInfo GetLive() const;
 
                     /**
                      * 设置语音录制服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Live 语音录制服务开关状态
+                     * @param _live 语音录制服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLive(const StatusInfo& _live);
 
                     /**
                      * 判断参数 Live 是否已赋值
                      * @return Live 是否已赋值
+                     * 
                      */
                     bool LiveHasBeenSet() const;
 
@@ -140,22 +152,50 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTimeAsr 语音转文本服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatusInfo GetRealTimeAsr() const;
 
                     /**
                      * 设置语音转文本服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealTimeAsr 语音转文本服务开关状态
+                     * @param _realTimeAsr 语音转文本服务开关状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealTimeAsr(const StatusInfo& _realTimeAsr);
 
                     /**
                      * 判断参数 RealTimeAsr 是否已赋值
                      * @return RealTimeAsr 是否已赋值
+                     * 
                      */
                     bool RealTimeAsrHasBeenSet() const;
+
+                    /**
+                     * 获取文本翻译服务开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TextTranslate 文本翻译服务开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    StatusInfo GetTextTranslate() const;
+
+                    /**
+                     * 设置文本翻译服务开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _textTranslate 文本翻译服务开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTextTranslate(const StatusInfo& _textTranslate);
+
+                    /**
+                     * 判断参数 TextTranslate 是否已赋值
+                     * @return TextTranslate 是否已赋值
+                     * 
+                     */
+                    bool TextTranslateHasBeenSet() const;
 
                 private:
 
@@ -193,6 +233,13 @@ namespace TencentCloud
                      */
                     StatusInfo m_realTimeAsr;
                     bool m_realTimeAsrHasBeenSet;
+
+                    /**
+                     * 文本翻译服务开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StatusInfo m_textTranslate;
+                    bool m_textTranslateHasBeenSet;
 
                 };
             }

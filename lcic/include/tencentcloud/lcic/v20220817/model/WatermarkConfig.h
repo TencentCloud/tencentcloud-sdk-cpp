@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 水印图片的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置水印图片的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 水印图片的url
+                     * @param _url 水印图片的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 水印宽。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWidth() const;
 
                     /**
                      * 设置水印宽。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 水印宽。为比例值
+                     * @param _width 水印宽。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const double& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 水印高。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetHeight() const;
 
                     /**
                      * 设置水印高。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 水印高。为比例值
+                     * @param _height 水印高。为比例值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const double& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationX 水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLocationX() const;
 
                     /**
                      * 设置水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationX 水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。
+                     * @param _locationX 水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationX(const double& _locationX);
 
                     /**
                      * 判断参数 LocationX 是否已赋值
                      * @return LocationX 是否已赋值
+                     * 
                      */
                     bool LocationXHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationY 水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLocationY() const;
 
                     /**
                      * 设置水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationY 水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。
+                     * @param _locationY 水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationY(const double& _locationY);
 
                     /**
                      * 判断参数 LocationY 是否已赋值
                      * @return LocationY 是否已赋值
+                     * 
                      */
                     bool LocationYHasBeenSet() const;
 

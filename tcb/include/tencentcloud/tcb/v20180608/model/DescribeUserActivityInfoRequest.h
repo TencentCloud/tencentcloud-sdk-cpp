@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取活动id
                      * @return ActivityId 活动id
+                     * 
                      */
                     int64_t GetActivityId() const;
 
                     /**
                      * 设置活动id
-                     * @param ActivityId 活动id
+                     * @param _activityId 活动id
+                     * 
                      */
                     void SetActivityId(const int64_t& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取渠道加密token
                      * @return ChannelToken 渠道加密token
+                     * 
                      */
                     std::string GetChannelToken() const;
 
                     /**
                      * 设置渠道加密token
-                     * @param ChannelToken 渠道加密token
+                     * @param _channelToken 渠道加密token
+                     * 
                      */
                     void SetChannelToken(const std::string& _channelToken);
 
                     /**
                      * 判断参数 ChannelToken 是否已赋值
                      * @return ChannelToken 是否已赋值
+                     * 
                      */
                     bool ChannelTokenHasBeenSet() const;
 
                     /**
                      * 获取渠道来源，每个来源对应不同secretKey
                      * @return Channel 渠道来源，每个来源对应不同secretKey
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置渠道来源，每个来源对应不同secretKey
-                     * @param Channel 渠道来源，每个来源对应不同secretKey
+                     * @param _channel 渠道来源，每个来源对应不同secretKey
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录
                      * @return GroupId 团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录
-                     * @param GroupId 团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录
+                     * @param _groupId 团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

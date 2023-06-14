@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取表示游戏资源唯一 ID, 由后台自动分配, 无法修改。
                      * @return GameId 表示游戏资源唯一 ID, 由后台自动分配, 无法修改。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置表示游戏资源唯一 ID, 由后台自动分配, 无法修改。
-                     * @param GameId 表示游戏资源唯一 ID, 由后台自动分配, 无法修改。
+                     * @param _gameId 表示游戏资源唯一 ID, 由后台自动分配, 无法修改。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取表示游戏房间唯一ID。
                      * @return RoomId 表示游戏房间唯一ID。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置表示游戏房间唯一ID。
-                     * @param RoomId 表示游戏房间唯一ID。
+                     * @param _roomId 表示游戏房间唯一ID。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

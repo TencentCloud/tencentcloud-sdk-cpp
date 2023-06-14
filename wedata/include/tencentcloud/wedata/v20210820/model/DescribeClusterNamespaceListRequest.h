@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取WeData项目ID
                      * @return ProjectId WeData项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置WeData项目ID
-                     * @param ProjectId WeData项目ID
+                     * @param _projectId WeData项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

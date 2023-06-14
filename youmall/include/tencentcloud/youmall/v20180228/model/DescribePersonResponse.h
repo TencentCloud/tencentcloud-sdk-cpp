@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总计客户数量
                      * @return TotalCount 总计客户数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取客户信息
                      * @return PersonSet 客户信息
+                     * 
                      */
                     std::vector<PersonProfile> GetPersonSet() const;
 
                     /**
                      * 判断参数 PersonSet 是否已赋值
                      * @return PersonSet 是否已赋值
+                     * 
                      */
                     bool PersonSetHasBeenSet() const;
 

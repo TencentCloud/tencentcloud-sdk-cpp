@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-12345678
                      * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-12345678
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
                      * @return IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
                      * 设置集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
-                     * @param IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * @param _integrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * 
                      */
                     void SetIntegrationId(const std::string& _integrationId);
 
                     /**
                      * 判断参数 IntegrationId 是否已赋值
                      * @return IntegrationId 是否已赋值
+                     * 
                      */
                     bool IntegrationIdHasBeenSet() const;
 

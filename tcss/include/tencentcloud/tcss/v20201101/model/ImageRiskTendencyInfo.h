@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取趋势列表
                      * @return ImageRiskSet 趋势列表
+                     * 
                      */
                     std::vector<RunTimeTendencyInfo> GetImageRiskSet() const;
 
                     /**
                      * 设置趋势列表
-                     * @param ImageRiskSet 趋势列表
+                     * @param _imageRiskSet 趋势列表
+                     * 
                      */
                     void SetImageRiskSet(const std::vector<RunTimeTendencyInfo>& _imageRiskSet);
 
                     /**
                      * 判断参数 ImageRiskSet 是否已赋值
                      * @return ImageRiskSet 是否已赋值
+                     * 
                      */
                     bool ImageRiskSetHasBeenSet() const;
 
@@ -74,6 +77,7 @@ IRT_RISK:敏感信息
 IRT_VULNERABILITY : 安全漏洞
 IRT_MALWARE_VIRUS: 木马病毒
 IRT_RISK:敏感信息
+                     * 
                      */
                     std::string GetImageRiskType() const;
 
@@ -82,16 +86,18 @@ IRT_RISK:敏感信息
 IRT_VULNERABILITY : 安全漏洞
 IRT_MALWARE_VIRUS: 木马病毒
 IRT_RISK:敏感信息
-                     * @param ImageRiskType 风险类型：
+                     * @param _imageRiskType 风险类型：
 IRT_VULNERABILITY : 安全漏洞
 IRT_MALWARE_VIRUS: 木马病毒
 IRT_RISK:敏感信息
+                     * 
                      */
                     void SetImageRiskType(const std::string& _imageRiskType);
 
                     /**
                      * 判断参数 ImageRiskType 是否已赋值
                      * @return ImageRiskType 是否已赋值
+                     * 
                      */
                     bool ImageRiskTypeHasBeenSet() const;
 

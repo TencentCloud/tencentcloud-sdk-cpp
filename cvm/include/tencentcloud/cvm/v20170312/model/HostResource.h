@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取专用宿主机实例总CPU核数
                      * @return CpuTotal 专用宿主机实例总CPU核数
+                     * 
                      */
                     uint64_t GetCpuTotal() const;
 
                     /**
                      * 设置专用宿主机实例总CPU核数
-                     * @param CpuTotal 专用宿主机实例总CPU核数
+                     * @param _cpuTotal 专用宿主机实例总CPU核数
+                     * 
                      */
                     void SetCpuTotal(const uint64_t& _cpuTotal);
 
                     /**
                      * 判断参数 CpuTotal 是否已赋值
                      * @return CpuTotal 是否已赋值
+                     * 
                      */
                     bool CpuTotalHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例可用CPU核数
                      * @return CpuAvailable 专用宿主机实例可用CPU核数
+                     * 
                      */
                     uint64_t GetCpuAvailable() const;
 
                     /**
                      * 设置专用宿主机实例可用CPU核数
-                     * @param CpuAvailable 专用宿主机实例可用CPU核数
+                     * @param _cpuAvailable 专用宿主机实例可用CPU核数
+                     * 
                      */
                     void SetCpuAvailable(const uint64_t& _cpuAvailable);
 
                     /**
                      * 判断参数 CpuAvailable 是否已赋值
                      * @return CpuAvailable 是否已赋值
+                     * 
                      */
                     bool CpuAvailableHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例总内存大小（单位为:GiB）
                      * @return MemTotal 专用宿主机实例总内存大小（单位为:GiB）
+                     * 
                      */
                     double GetMemTotal() const;
 
                     /**
                      * 设置专用宿主机实例总内存大小（单位为:GiB）
-                     * @param MemTotal 专用宿主机实例总内存大小（单位为:GiB）
+                     * @param _memTotal 专用宿主机实例总内存大小（单位为:GiB）
+                     * 
                      */
                     void SetMemTotal(const double& _memTotal);
 
                     /**
                      * 判断参数 MemTotal 是否已赋值
                      * @return MemTotal 是否已赋值
+                     * 
                      */
                     bool MemTotalHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例可用内存大小（单位为:GiB）
                      * @return MemAvailable 专用宿主机实例可用内存大小（单位为:GiB）
+                     * 
                      */
                     double GetMemAvailable() const;
 
                     /**
                      * 设置专用宿主机实例可用内存大小（单位为:GiB）
-                     * @param MemAvailable 专用宿主机实例可用内存大小（单位为:GiB）
+                     * @param _memAvailable 专用宿主机实例可用内存大小（单位为:GiB）
+                     * 
                      */
                     void SetMemAvailable(const double& _memAvailable);
 
                     /**
                      * 判断参数 MemAvailable 是否已赋值
                      * @return MemAvailable 是否已赋值
+                     * 
                      */
                     bool MemAvailableHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例总磁盘大小（单位为:GiB）
                      * @return DiskTotal 专用宿主机实例总磁盘大小（单位为:GiB）
+                     * 
                      */
                     uint64_t GetDiskTotal() const;
 
                     /**
                      * 设置专用宿主机实例总磁盘大小（单位为:GiB）
-                     * @param DiskTotal 专用宿主机实例总磁盘大小（单位为:GiB）
+                     * @param _diskTotal 专用宿主机实例总磁盘大小（单位为:GiB）
+                     * 
                      */
                     void SetDiskTotal(const uint64_t& _diskTotal);
 
                     /**
                      * 判断参数 DiskTotal 是否已赋值
                      * @return DiskTotal 是否已赋值
+                     * 
                      */
                     bool DiskTotalHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例可用磁盘大小（单位为:GiB）
                      * @return DiskAvailable 专用宿主机实例可用磁盘大小（单位为:GiB）
+                     * 
                      */
                     uint64_t GetDiskAvailable() const;
 
                     /**
                      * 设置专用宿主机实例可用磁盘大小（单位为:GiB）
-                     * @param DiskAvailable 专用宿主机实例可用磁盘大小（单位为:GiB）
+                     * @param _diskAvailable 专用宿主机实例可用磁盘大小（单位为:GiB）
+                     * 
                      */
                     void SetDiskAvailable(const uint64_t& _diskAvailable);
 
                     /**
                      * 判断参数 DiskAvailable 是否已赋值
                      * @return DiskAvailable 是否已赋值
+                     * 
                      */
                     bool DiskAvailableHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例磁盘类型
                      * @return DiskType 专用宿主机实例磁盘类型
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置专用宿主机实例磁盘类型
-                     * @param DiskType 专用宿主机实例磁盘类型
+                     * @param _diskType 专用宿主机实例磁盘类型
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例总GPU卡数
                      * @return GpuTotal 专用宿主机实例总GPU卡数
+                     * 
                      */
                     uint64_t GetGpuTotal() const;
 
                     /**
                      * 设置专用宿主机实例总GPU卡数
-                     * @param GpuTotal 专用宿主机实例总GPU卡数
+                     * @param _gpuTotal 专用宿主机实例总GPU卡数
+                     * 
                      */
                     void SetGpuTotal(const uint64_t& _gpuTotal);
 
                     /**
                      * 判断参数 GpuTotal 是否已赋值
                      * @return GpuTotal 是否已赋值
+                     * 
                      */
                     bool GpuTotalHasBeenSet() const;
 
                     /**
                      * 获取专用宿主机实例可用GPU卡数
                      * @return GpuAvailable 专用宿主机实例可用GPU卡数
+                     * 
                      */
                     uint64_t GetGpuAvailable() const;
 
                     /**
                      * 设置专用宿主机实例可用GPU卡数
-                     * @param GpuAvailable 专用宿主机实例可用GPU卡数
+                     * @param _gpuAvailable 专用宿主机实例可用GPU卡数
+                     * 
                      */
                     void SetGpuAvailable(const uint64_t& _gpuAvailable);
 
                     /**
                      * 判断参数 GpuAvailable 是否已赋值
                      * @return GpuAvailable 是否已赋值
+                     * 
                      */
                     bool GpuAvailableHasBeenSet() const;
 

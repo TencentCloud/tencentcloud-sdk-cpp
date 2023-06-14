@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Zipkin调用地址
                      * @return Address Zipkin调用地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置Zipkin调用地址
-                     * @param Address Zipkin调用地址
+                     * @param _address Zipkin调用地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 

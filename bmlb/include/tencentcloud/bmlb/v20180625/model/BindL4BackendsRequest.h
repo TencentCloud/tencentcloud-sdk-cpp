@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取四层监听器实例ID，可通过接口DescribeL4Listeners查询。
                      * @return ListenerId 四层监听器实例ID，可通过接口DescribeL4Listeners查询。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置四层监听器实例ID，可通过接口DescribeL4Listeners查询。
-                     * @param ListenerId 四层监听器实例ID，可通过接口DescribeL4Listeners查询。
+                     * @param _listenerId 四层监听器实例ID，可通过接口DescribeL4Listeners查询。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。
                      * @return BackendSet 待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。
+                     * 
                      */
                     std::vector<BindL4Backend> GetBackendSet() const;
 
                     /**
                      * 设置待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。
-                     * @param BackendSet 待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。
+                     * @param _backendSet 待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。
+                     * 
                      */
                     void SetBackendSet(const std::vector<BindL4Backend>& _backendSet);
 
                     /**
                      * 判断参数 BackendSet 是否已赋值
                      * @return BackendSet 是否已赋值
+                     * 
                      */
                     bool BackendSetHasBeenSet() const;
 
                     /**
                      * 获取绑定类型。0：物理机 1：虚拟机 2：半托管机器
                      * @return BindType 绑定类型。0：物理机 1：虚拟机 2：半托管机器
+                     * 
                      */
                     int64_t GetBindType() const;
 
                     /**
                      * 设置绑定类型。0：物理机 1：虚拟机 2：半托管机器
-                     * @param BindType 绑定类型。0：物理机 1：虚拟机 2：半托管机器
+                     * @param _bindType 绑定类型。0：物理机 1：虚拟机 2：半托管机器
+                     * 
                      */
                     void SetBindType(const int64_t& _bindType);
 
                     /**
                      * 判断参数 BindType 是否已赋值
                      * @return BindType 是否已赋值
+                     * 
                      */
                     bool BindTypeHasBeenSet() const;
 

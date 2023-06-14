@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取硬件唯一标识码
                      * @return CodeSet 硬件唯一标识码
+                     * 
                      */
                     std::vector<std::string> GetCodeSet() const;
 
                     /**
                      * 设置硬件唯一标识码
-                     * @param CodeSet 硬件唯一标识码
+                     * @param _codeSet 硬件唯一标识码
+                     * 
                      */
                     void SetCodeSet(const std::vector<std::string>& _codeSet);
 
                     /**
                      * 判断参数 CodeSet 是否已赋值
                      * @return CodeSet 是否已赋值
+                     * 
                      */
                     bool CodeSetHasBeenSet() const;
 
                     /**
                      * 获取硬件标识码绑定的申请编号
                      * @return OrderId 硬件标识码绑定的申请编号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置硬件标识码绑定的申请编号
-                     * @param OrderId 硬件标识码绑定的申请编号
+                     * @param _orderId 硬件标识码绑定的申请编号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

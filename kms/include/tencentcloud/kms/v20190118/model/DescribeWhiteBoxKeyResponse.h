@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取白盒密钥信息
                      * @return KeyInfo 白盒密钥信息
+                     * 
                      */
                     WhiteboxKeyInfo GetKeyInfo() const;
 
                     /**
                      * 判断参数 KeyInfo 是否已赋值
                      * @return KeyInfo 是否已赋值
+                     * 
                      */
                     bool KeyInfoHasBeenSet() const;
 

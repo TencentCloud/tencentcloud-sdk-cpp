@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取本次调用接口共返回了多少条数据。
                      * @return TotalCount 本次调用接口共返回了多少条数据。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取帐号列表详细信息。
                      * @return Details 帐号列表详细信息。
+                     * 
                      */
                     std::vector<AccountInfo> GetDetails() const;
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

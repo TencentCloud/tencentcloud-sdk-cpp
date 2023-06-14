@@ -49,24 +49,28 @@ namespace TencentCloud
 为 0；顺时针为正，逆时针为负
                      * @return Angle 图片旋转角度(角度制)，文本的水平方向
 为 0；顺时针为正，逆时针为负
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 
                     /**
                      * 获取识别信息
                      * @return StructuralItems 识别信息
+                     * 
                      */
                     std::vector<StructuralItem> GetStructuralItems() const;
 
                     /**
                      * 判断参数 StructuralItems 是否已赋值
                      * @return StructuralItems 是否已赋值
+                     * 
                      */
                     bool StructuralItemsHasBeenSet() const;
 

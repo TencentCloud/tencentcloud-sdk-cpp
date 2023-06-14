@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备份名称
                      * @return FileName 备份名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置备份名称
-                     * @param FileName 备份名称
+                     * @param _fileName 备份名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取备份大小
                      * @return Size 备份大小
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置备份大小
-                     * @param Size 备份大小
+                     * @param _size 备份大小
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

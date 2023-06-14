@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的密钥对数量。
                      * @return TotalCount 符合条件的密钥对数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取密钥对详细信息列表。
                      * @return KeyPairSet 密钥对详细信息列表。
+                     * 
                      */
                     std::vector<KeyPair> GetKeyPairSet() const;
 
                     /**
                      * 判断参数 KeyPairSet 是否已赋值
                      * @return KeyPairSet 是否已赋值
+                     * 
                      */
                     bool KeyPairSetHasBeenSet() const;
 

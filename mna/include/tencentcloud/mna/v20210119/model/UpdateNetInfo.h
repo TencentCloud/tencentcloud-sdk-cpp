@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 网络类型：
 0:数据
 1:Wi-Fi
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -60,87 +61,101 @@ namespace TencentCloud
                      * 设置网络类型：
 0:数据
 1:Wi-Fi
-                     * @param Type 网络类型：
+                     * @param _type 网络类型：
 0:数据
 1:Wi-Fi
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取启用/禁用
                      * @return DataEnable 启用/禁用
+                     * 
                      */
                     bool GetDataEnable() const;
 
                     /**
                      * 设置启用/禁用
-                     * @param DataEnable 启用/禁用
+                     * @param _dataEnable 启用/禁用
+                     * 
                      */
                     void SetDataEnable(const bool& _dataEnable);
 
                     /**
                      * 判断参数 DataEnable 是否已赋值
                      * @return DataEnable 是否已赋值
+                     * 
                      */
                     bool DataEnableHasBeenSet() const;
 
                     /**
                      * 获取上行限速：bit
                      * @return UploadLimit 上行限速：bit
+                     * 
                      */
                     uint64_t GetUploadLimit() const;
 
                     /**
                      * 设置上行限速：bit
-                     * @param UploadLimit 上行限速：bit
+                     * @param _uploadLimit 上行限速：bit
+                     * 
                      */
                     void SetUploadLimit(const uint64_t& _uploadLimit);
 
                     /**
                      * 判断参数 UploadLimit 是否已赋值
                      * @return UploadLimit 是否已赋值
+                     * 
                      */
                     bool UploadLimitHasBeenSet() const;
 
                     /**
                      * 获取下行限速：bit
                      * @return DownloadLimit 下行限速：bit
+                     * 
                      */
                     uint64_t GetDownloadLimit() const;
 
                     /**
                      * 设置下行限速：bit
-                     * @param DownloadLimit 下行限速：bit
+                     * @param _downloadLimit 下行限速：bit
+                     * 
                      */
                     void SetDownloadLimit(const uint64_t& _downloadLimit);
 
                     /**
                      * 判断参数 DownloadLimit 是否已赋值
                      * @return DownloadLimit 是否已赋值
+                     * 
                      */
                     bool DownloadLimitHasBeenSet() const;
 
                     /**
                      * 获取网卡名
                      * @return NetInfoName 网卡名
+                     * 
                      */
                     std::string GetNetInfoName() const;
 
                     /**
                      * 设置网卡名
-                     * @param NetInfoName 网卡名
+                     * @param _netInfoName 网卡名
+                     * 
                      */
                     void SetNetInfoName(const std::string& _netInfoName);
 
                     /**
                      * 判断参数 NetInfoName 是否已赋值
                      * @return NetInfoName 是否已赋值
+                     * 
                      */
                     bool NetInfoNameHasBeenSet() const;
 

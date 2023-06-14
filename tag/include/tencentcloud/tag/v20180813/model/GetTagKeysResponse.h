@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取获取的下一页的Token值
                      * @return PaginationToken 获取的下一页的Token值
+                     * 
                      */
                     std::string GetPaginationToken() const;
 
                     /**
                      * 判断参数 PaginationToken 是否已赋值
                      * @return PaginationToken 是否已赋值
+                     * 
                      */
                     bool PaginationTokenHasBeenSet() const;
 
                     /**
                      * 获取标签键信息。
                      * @return TagKeys 标签键信息。
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 

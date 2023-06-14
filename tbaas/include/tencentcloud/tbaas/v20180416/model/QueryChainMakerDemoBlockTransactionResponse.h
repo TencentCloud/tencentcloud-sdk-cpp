@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 区块交易
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ChainMakerTransactionResult> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取区块高度
                      * @return BlockHeight 区块高度
+                     * 
                      */
                     int64_t GetBlockHeight() const;
 
                     /**
                      * 判断参数 BlockHeight 是否已赋值
                      * @return BlockHeight 是否已赋值
+                     * 
                      */
                     bool BlockHeightHasBeenSet() const;
 
@@ -75,24 +79,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxCount 交易数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTxCount() const;
 
                     /**
                      * 判断参数 TxCount 是否已赋值
                      * @return TxCount 是否已赋值
+                     * 
                      */
                     bool TxCountHasBeenSet() const;
 
                     /**
                      * 获取区块时间戳，单位是秒
                      * @return BlockTimestamp 区块时间戳，单位是秒
+                     * 
                      */
                     int64_t GetBlockTimestamp() const;
 
                     /**
                      * 判断参数 BlockTimestamp 是否已赋值
                      * @return BlockTimestamp 是否已赋值
+                     * 
                      */
                     bool BlockTimestampHasBeenSet() const;
 

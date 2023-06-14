@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取可执行操作
                      * @return Action 可执行操作
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置可执行操作
-                     * @param Action 可执行操作
+                     * @param _action 可执行操作
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 编码Code
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置编码Code
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 编码Code
+                     * @param _code 编码Code
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 具体信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置具体信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 具体信息
+                     * @param _message 具体信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

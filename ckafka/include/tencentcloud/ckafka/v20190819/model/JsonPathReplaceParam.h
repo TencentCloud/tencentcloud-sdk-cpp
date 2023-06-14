@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取被替换值，Jsonpath表达式
                      * @return OldValue 被替换值，Jsonpath表达式
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置被替换值，Jsonpath表达式
-                     * @param OldValue 被替换值，Jsonpath表达式
+                     * @param _oldValue 被替换值，Jsonpath表达式
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 
                     /**
                      * 获取替换值，Jsonpath表达式或字符串
                      * @return NewValue 替换值，Jsonpath表达式或字符串
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置替换值，Jsonpath表达式或字符串
-                     * @param NewValue 替换值，Jsonpath表达式或字符串
+                     * @param _newValue 替换值，Jsonpath表达式或字符串
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 

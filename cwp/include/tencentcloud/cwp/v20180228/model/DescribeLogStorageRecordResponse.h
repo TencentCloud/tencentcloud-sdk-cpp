@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Records 存储量记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LogStorageRecord> GetRecords() const;
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 

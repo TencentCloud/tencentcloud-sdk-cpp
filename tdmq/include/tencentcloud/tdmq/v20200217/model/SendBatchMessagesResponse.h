@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageId 消息的唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessageId() const;
 
                     /**
                      * 判断参数 MessageId 是否已赋值
                      * @return MessageId 是否已赋值
+                     * 
                      */
                     bool MessageIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误消息，返回为 ""，代表没有错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

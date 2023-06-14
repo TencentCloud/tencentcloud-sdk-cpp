@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取定时扫描周期
                      * @return ScanPeriod 定时扫描周期
+                     * 
                      */
                     uint64_t GetScanPeriod() const;
 
                     /**
                      * 设置定时扫描周期
-                     * @param ScanPeriod 定时扫描周期
+                     * @param _scanPeriod 定时扫描周期
+                     * 
                      */
                     void SetScanPeriod(const uint64_t& _scanPeriod);
 
                     /**
                      * 判断参数 ScanPeriod 是否已赋值
                      * @return ScanPeriod 是否已赋值
+                     * 
                      */
                     bool ScanPeriodHasBeenSet() const;
 
                     /**
                      * 获取定时扫描开关
                      * @return Enable 定时扫描开关
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置定时扫描开关
-                     * @param Enable 定时扫描开关
+                     * @param _enable 定时扫描开关
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取定时扫描的时间
                      * @return ScanTime 定时扫描的时间
+                     * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 设置定时扫描的时间
-                     * @param ScanTime 定时扫描的时间
+                     * @param _scanTime 定时扫描的时间
+                     * 
                      */
                     void SetScanTime(const std::string& _scanTime);
 
                     /**
                      * 判断参数 ScanTime 是否已赋值
                      * @return ScanTime 是否已赋值
+                     * 
                      */
                     bool ScanTimeHasBeenSet() const;
 
                     /**
                      * 获取扫描木马类型数组
                      * @return ScanType 扫描木马类型数组
+                     * 
                      */
                     std::vector<std::string> GetScanType() const;
 
                     /**
                      * 设置扫描木马类型数组
-                     * @param ScanType 扫描木马类型数组
+                     * @param _scanType 扫描木马类型数组
+                     * 
                      */
                     void SetScanType(const std::vector<std::string>& _scanType);
 
                     /**
                      * 判断参数 ScanType 是否已赋值
                      * @return ScanType 是否已赋值
+                     * 
                      */
                     bool ScanTypeHasBeenSet() const;
 
                     /**
                      * 获取扫描镜像
                      * @return Images 扫描镜像
+                     * 
                      */
                     std::vector<ImageInfo> GetImages() const;
 
                     /**
                      * 设置扫描镜像
-                     * @param Images 扫描镜像
+                     * @param _images 扫描镜像
+                     * 
                      */
                     void SetImages(const std::vector<ImageInfo>& _images);
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 
                     /**
                      * 获取是否扫描所有
                      * @return All 是否扫描所有
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置是否扫描所有
-                     * @param All 是否扫描所有
+                     * @param _all 是否扫描所有
+                     * 
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
                     /**
                      * 获取扫描镜像Id
                      * @return Id 扫描镜像Id
+                     * 
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
                      * 设置扫描镜像Id
-                     * @param Id 扫描镜像Id
+                     * @param _id 扫描镜像Id
+                     * 
                      */
                     void SetId(const std::vector<uint64_t>& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取是否扫描最新版本
                      * @return Latest 是否扫描最新版本
+                     * 
                      */
                     bool GetLatest() const;
 
                     /**
                      * 设置是否扫描最新版本
-                     * @param Latest 是否扫描最新版本
+                     * @param _latest 是否扫描最新版本
+                     * 
                      */
                     void SetLatest(const bool& _latest);
 
                     /**
                      * 判断参数 Latest 是否已赋值
                      * @return Latest 是否已赋值
+                     * 
                      */
                     bool LatestHasBeenSet() const;
 

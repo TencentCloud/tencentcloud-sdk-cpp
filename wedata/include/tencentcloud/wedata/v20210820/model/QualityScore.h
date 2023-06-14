@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompositeScore 综合分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCompositeScore() const;
 
                     /**
                      * 设置综合分数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompositeScore 综合分数
+                     * @param _compositeScore 综合分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompositeScore(const double& _compositeScore);
 
                     /**
                      * 判断参数 CompositeScore 是否已赋值
                      * @return CompositeScore 是否已赋值
+                     * 
                      */
                     bool CompositeScoreHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScoringDistribution 评分分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableScoreStatisticsInfo> GetScoringDistribution() const;
 
                     /**
                      * 设置评分分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScoringDistribution 评分分布
+                     * @param _scoringDistribution 评分分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScoringDistribution(const std::vector<TableScoreStatisticsInfo>& _scoringDistribution);
 
                     /**
                      * 判断参数 ScoringDistribution 是否已赋值
                      * @return ScoringDistribution 是否已赋值
+                     * 
                      */
                     bool ScoringDistributionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTableNumber 总表数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalTableNumber() const;
 
                     /**
                      * 设置总表数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalTableNumber 总表数
+                     * @param _totalTableNumber 总表数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalTableNumber(const int64_t& _totalTableNumber);
 
                     /**
                      * 判断参数 TotalTableNumber 是否已赋值
                      * @return TotalTableNumber 是否已赋值
+                     * 
                      */
                     bool TotalTableNumberHasBeenSet() const;
 

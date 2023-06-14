@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取去划痕方式，取值：normal。
                      * @return Type 去划痕方式，取值：normal。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置去划痕方式，取值：normal。
-                     * @param Type 去划痕方式，取值：normal。
+                     * @param _type 去划痕方式，取值：normal。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
                      * @return Ratio 去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
-                     * @param Ratio 去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * @param _ratio 去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 

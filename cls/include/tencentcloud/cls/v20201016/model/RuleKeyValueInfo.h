@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取是否大小写敏感
                      * @return CaseSensitive 是否大小写敏感
+                     * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置是否大小写敏感
-                     * @param CaseSensitive 是否大小写敏感
+                     * @param _caseSensitive 是否大小写敏感
+                     * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
 
                     /**
                      * 判断参数 CaseSensitive 是否已赋值
                      * @return CaseSensitive 是否已赋值
+                     * 
                      */
                     bool CaseSensitiveHasBeenSet() const;
 
                     /**
                      * 获取需要建立索引的键值对信息
                      * @return KeyValues 需要建立索引的键值对信息
+                     * 
                      */
                     std::vector<KeyValueInfo> GetKeyValues() const;
 
                     /**
                      * 设置需要建立索引的键值对信息
-                     * @param KeyValues 需要建立索引的键值对信息
+                     * @param _keyValues 需要建立索引的键值对信息
+                     * 
                      */
                     void SetKeyValues(const std::vector<KeyValueInfo>& _keyValues);
 
                     /**
                      * 判断参数 KeyValues 是否已赋值
                      * @return KeyValues 是否已赋值
+                     * 
                      */
                     bool KeyValuesHasBeenSet() const;
 

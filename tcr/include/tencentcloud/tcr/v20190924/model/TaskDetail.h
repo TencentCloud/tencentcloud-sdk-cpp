@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取任务
                      * @return TaskName 任务
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务
-                     * @param TaskName 任务
+                     * @param _taskName 任务
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取任务UUID
                      * @return TaskUUID 任务UUID
+                     * 
                      */
                     std::string GetTaskUUID() const;
 
                     /**
                      * 设置任务UUID
-                     * @param TaskUUID 任务UUID
+                     * @param _taskUUID 任务UUID
+                     * 
                      */
                     void SetTaskUUID(const std::string& _taskUUID);
 
                     /**
                      * 判断参数 TaskUUID 是否已赋值
                      * @return TaskUUID 是否已赋值
+                     * 
                      */
                     bool TaskUUIDHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return TaskStatus 任务状态
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置任务状态
-                     * @param TaskStatus 任务状态
+                     * @param _taskStatus 任务状态
+                     * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskMessage 任务的状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskMessage() const;
 
                     /**
                      * 设置任务的状态信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskMessage 任务的状态信息
+                     * @param _taskMessage 任务的状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskMessage(const std::string& _taskMessage);
 
                     /**
                      * 判断参数 TaskMessage 是否已赋值
                      * @return TaskMessage 是否已赋值
+                     * 
                      */
                     bool TaskMessageHasBeenSet() const;
 
                     /**
                      * 获取任务开始时间
                      * @return CreatedTime 任务开始时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置任务开始时间
-                     * @param CreatedTime 任务开始时间
+                     * @param _createdTime 任务开始时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishedTime() const;
 
                     /**
                      * 设置任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishedTime 任务结束时间
+                     * @param _finishedTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishedTime(const std::string& _finishedTime);
 
                     /**
                      * 判断参数 FinishedTime 是否已赋值
                      * @return FinishedTime 是否已赋值
+                     * 
                      */
                     bool FinishedTimeHasBeenSet() const;
 

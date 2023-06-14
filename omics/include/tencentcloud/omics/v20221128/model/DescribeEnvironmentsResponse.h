@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的数量。
                      * @return TotalCount 符合条件的数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取环境详情列表。
                      * @return Environments 环境详情列表。
+                     * 
                      */
                     std::vector<Environment> GetEnvironments() const;
 
                     /**
                      * 判断参数 Environments 是否已赋值
                      * @return Environments 是否已赋值
+                     * 
                      */
                     bool EnvironmentsHasBeenSet() const;
 

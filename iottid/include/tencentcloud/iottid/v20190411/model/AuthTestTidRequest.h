@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备端SDK填入测试TID参数后生成的加密数据串
                      * @return Data 设备端SDK填入测试TID参数后生成的加密数据串
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置设备端SDK填入测试TID参数后生成的加密数据串
-                     * @param Data 设备端SDK填入测试TID参数后生成的加密数据串
+                     * @param _data 设备端SDK填入测试TID参数后生成的加密数据串
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

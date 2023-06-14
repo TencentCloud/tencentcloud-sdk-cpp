@@ -53,90 +53,105 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-f1xjkw1b。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-f1xjkw1b。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-f1xjkw1b。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取弹性网卡名称。
                      * @return NetworkInterfaceName 弹性网卡名称。
+                     * 
                      */
                     std::string GetNetworkInterfaceName() const;
 
                     /**
                      * 设置弹性网卡名称。
-                     * @param NetworkInterfaceName 弹性网卡名称。
+                     * @param _networkInterfaceName 弹性网卡名称。
+                     * 
                      */
                     void SetNetworkInterfaceName(const std::string& _networkInterfaceName);
 
                     /**
                      * 判断参数 NetworkInterfaceName 是否已赋值
                      * @return NetworkInterfaceName 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceNameHasBeenSet() const;
 
                     /**
                      * 获取弹性网卡描述。
                      * @return NetworkInterfaceDescription 弹性网卡描述。
+                     * 
                      */
                     std::string GetNetworkInterfaceDescription() const;
 
                     /**
                      * 设置弹性网卡描述。
-                     * @param NetworkInterfaceDescription 弹性网卡描述。
+                     * @param _networkInterfaceDescription 弹性网卡描述。
+                     * 
                      */
                     void SetNetworkInterfaceDescription(const std::string& _networkInterfaceDescription);
 
                     /**
                      * 判断参数 NetworkInterfaceDescription 是否已赋值
                      * @return NetworkInterfaceDescription 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceDescriptionHasBeenSet() const;
 
                     /**
                      * 获取子网实例ID。
                      * @return SubnetId 子网实例ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。
-                     * @param SubnetId 子网实例ID。
+                     * @param _subnetId 子网实例ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -145,56 +160,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupSet 绑定的安全组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetGroupSet() const;
 
                     /**
                      * 设置绑定的安全组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupSet 绑定的安全组。
+                     * @param _groupSet 绑定的安全组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupSet(const std::vector<std::string>& _groupSet);
 
                     /**
                      * 判断参数 GroupSet 是否已赋值
                      * @return GroupSet 是否已赋值
+                     * 
                      */
                     bool GroupSetHasBeenSet() const;
 
                     /**
                      * 获取是否是主网卡。
                      * @return Primary 是否是主网卡。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否是主网卡。
-                     * @param Primary 是否是主网卡。
+                     * @param _primary 是否是主网卡。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 
                     /**
                      * 获取MAC地址。
                      * @return MacAddress MAC地址。
+                     * 
                      */
                     std::string GetMacAddress() const;
 
                     /**
                      * 设置MAC地址。
-                     * @param MacAddress MAC地址。
+                     * @param _macAddress MAC地址。
+                     * 
                      */
                     void SetMacAddress(const std::string& _macAddress);
 
                     /**
                      * 判断参数 MacAddress 是否已赋值
                      * @return MacAddress 是否已赋值
+                     * 
                      */
                     bool MacAddressHasBeenSet() const;
 
@@ -211,6 +235,7 @@ AVAILABLE：可用的
 ATTACHING：绑定中
 DETACHING：解绑中
 DELETING：删除中
+                     * 
                      */
                     std::string GetState() const;
 
@@ -221,18 +246,20 @@ AVAILABLE：可用的
 ATTACHING：绑定中
 DETACHING：解绑中
 DELETING：删除中
-                     * @param State 弹性网卡状态：
+                     * @param _state 弹性网卡状态：
 PENDING：创建中
 AVAILABLE：可用的
 ATTACHING：绑定中
 DETACHING：解绑中
 DELETING：删除中
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -241,20 +268,23 @@ DELETING：删除中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddressSet 内网IP信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddressSet() const;
 
                     /**
                      * 设置内网IP信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIpAddressSet 内网IP信息。
+                     * @param _privateIpAddressSet 内网IP信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIpAddressSet(const std::vector<PrivateIpAddressSpecification>& _privateIpAddressSet);
 
                     /**
                      * 判断参数 PrivateIpAddressSet 是否已赋值
                      * @return PrivateIpAddressSet 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressSetHasBeenSet() const;
 
@@ -265,6 +295,7 @@ DELETING：删除中
                      * @return Attachment 绑定的云服务器对象。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NetworkInterfaceAttachment GetAttachment() const;
 
@@ -272,51 +303,59 @@ DELETING：删除中
                      * 设置绑定的云服务器对象。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attachment 绑定的云服务器对象。
+                     * @param _attachment 绑定的云服务器对象。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachment(const NetworkInterfaceAttachment& _attachment);
 
                     /**
                      * 判断参数 Attachment 是否已赋值
                      * @return Attachment 是否已赋值
+                     * 
                      */
                     bool AttachmentHasBeenSet() const;
 
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -325,20 +364,23 @@ DELETING：删除中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6AddressSet IPv6地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Ipv6Address> GetIpv6AddressSet() const;
 
                     /**
                      * 设置IPv6地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv6AddressSet IPv6地址列表。
+                     * @param _ipv6AddressSet IPv6地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpv6AddressSet(const std::vector<Ipv6Address>& _ipv6AddressSet);
 
                     /**
                      * 判断参数 Ipv6AddressSet 是否已赋值
                      * @return Ipv6AddressSet 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressSetHasBeenSet() const;
 
@@ -347,56 +389,65 @@ DELETING：删除中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 标签键值对。
+                     * @param _tagSet 标签键值对。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
                      * @return EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 
                      */
                     uint64_t GetEniType() const;
 
                     /**
                      * 设置网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
-                     * @param EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * @param _eniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 
                      */
                     void SetEniType(const uint64_t& _eniType);
 
                     /**
                      * 判断参数 EniType 是否已赋值
                      * @return EniType 是否已赋值
+                     * 
                      */
                     bool EniTypeHasBeenSet() const;
 
                     /**
                      * 获取EcmRegion ecm区域
                      * @return EcmRegion EcmRegion ecm区域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置EcmRegion ecm区域
-                     * @param EcmRegion EcmRegion ecm区域
+                     * @param _ecmRegion EcmRegion ecm区域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
@@ -405,20 +456,23 @@ DELETING：删除中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 网卡绑定的子机类型：cvm，eks。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置网卡绑定的子机类型：cvm，eks。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Business 网卡绑定的子机类型：cvm，eks。
+                     * @param _business 网卡绑定的子机类型：cvm，eks。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 

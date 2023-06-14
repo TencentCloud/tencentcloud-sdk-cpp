@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取全部已授权的本地镜像数
                      * @return AllAuthorizedImageCount 全部已授权的本地镜像数
+                     * 
                      */
                     int64_t GetAllAuthorizedImageCount() const;
 
                     /**
                      * 判断参数 AllAuthorizedImageCount 是否已赋值
                      * @return AllAuthorizedImageCount 是否已赋值
+                     * 
                      */
                     bool AllAuthorizedImageCountHasBeenSet() const;
 
                     /**
                      * 获取已授权未扫描的本地镜像数
                      * @return UnScanAuthorizedImageCount 已授权未扫描的本地镜像数
+                     * 
                      */
                     int64_t GetUnScanAuthorizedImageCount() const;
 
                     /**
                      * 判断参数 UnScanAuthorizedImageCount 是否已赋值
                      * @return UnScanAuthorizedImageCount 是否已赋值
+                     * 
                      */
                     bool UnScanAuthorizedImageCountHasBeenSet() const;
 

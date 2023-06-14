@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取devid
                      * @return OpenId devid
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置devid
-                     * @param OpenId devid
+                     * @param _openId devid
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取风险值
                      * @return RiskScore 风险值
+                     * 
                      */
                     int64_t GetRiskScore() const;
 
                     /**
                      * 设置风险值
-                     * @param RiskScore 风险值
+                     * @param _riskScore 风险值
+                     * 
                      */
                     void SetRiskScore(const int64_t& _riskScore);
 
                     /**
                      * 判断参数 RiskScore 是否已赋值
                      * @return RiskScore 是否已赋值
+                     * 
                      */
                     bool RiskScoreHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskInfo 风险详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RiskDetail> GetRiskInfo() const;
 
                     /**
                      * 设置风险详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskInfo 风险详情
+                     * @param _riskInfo 风险详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskInfo(const std::vector<RiskDetail>& _riskInfo);
 
                     /**
                      * 判断参数 RiskInfo 是否已赋值
                      * @return RiskInfo 是否已赋值
+                     * 
                      */
                     bool RiskInfoHasBeenSet() const;
 
                     /**
                      * 获取概率值
                      * @return Probability 概率值
+                     * 
                      */
                     double GetProbability() const;
 
                     /**
                      * 设置概率值
-                     * @param Probability 概率值
+                     * @param _probability 概率值
+                     * 
                      */
                     void SetProbability(const double& _probability);
 
                     /**
                      * 判断参数 Probability 是否已赋值
                      * @return Probability 是否已赋值
+                     * 
                      */
                     bool ProbabilityHasBeenSet() const;
 

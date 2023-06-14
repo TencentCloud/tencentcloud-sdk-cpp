@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取导出的媒资名称。
                      * @return Name 导出的媒资名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置导出的媒资名称。
-                     * @param Name 导出的媒资名称。
+                     * @param _name 导出的媒资名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取导出的媒资分类 Id。
                      * @return ClassId 导出的媒资分类 Id。
+                     * 
                      */
                     uint64_t GetClassId() const;
 
                     /**
                      * 设置导出的媒资分类 Id。
-                     * @param ClassId 导出的媒资分类 Id。
+                     * @param _classId 导出的媒资分类 Id。
+                     * 
                      */
                     void SetClassId(const uint64_t& _classId);
 
                     /**
                      * 判断参数 ClassId 是否已赋值
                      * @return ClassId 是否已赋值
+                     * 
                      */
                     bool ClassIdHasBeenSet() const;
 
                     /**
                      * 获取第三方平台发布信息列表。暂未正式对外，请勿使用。
                      * @return ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * 
                      */
                     std::vector<ThirdPartyPublishInfo> GetThirdPartyPublishInfos() const;
 
                     /**
                      * 设置第三方平台发布信息列表。暂未正式对外，请勿使用。
-                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @param _thirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * 
                      */
                     void SetThirdPartyPublishInfos(const std::vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos);
 
                     /**
                      * 判断参数 ThirdPartyPublishInfos 是否已赋值
                      * @return ThirdPartyPublishInfos 是否已赋值
+                     * 
                      */
                     bool ThirdPartyPublishInfosHasBeenSet() const;
 

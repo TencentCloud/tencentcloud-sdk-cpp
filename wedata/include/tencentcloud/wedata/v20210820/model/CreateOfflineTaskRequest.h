@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取项目/工作
                      * @return ProjectId 项目/工作
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目/工作
-                     * @param ProjectId 项目/工作
+                     * @param _projectId 项目/工作
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取1
                      * @return CycleStep 1
+                     * 
                      */
                     int64_t GetCycleStep() const;
 
                     /**
                      * 设置1
-                     * @param CycleStep 1
+                     * @param _cycleStep 1
+                     * 
                      */
                     void SetCycleStep(const int64_t& _cycleStep);
 
                     /**
                      * 判断参数 CycleStep 是否已赋值
                      * @return CycleStep 是否已赋值
+                     * 
                      */
                     bool CycleStepHasBeenSet() const;
 
                     /**
                      * 获取0
                      * @return DelayTime 0
+                     * 
                      */
                     int64_t GetDelayTime() const;
 
                     /**
                      * 设置0
-                     * @param DelayTime 0
+                     * @param _delayTime 0
+                     * 
                      */
                     void SetDelayTime(const int64_t& _delayTime);
 
                     /**
                      * 判断参数 DelayTime 是否已赋值
                      * @return DelayTime 是否已赋值
+                     * 
                      */
                     bool DelayTimeHasBeenSet() const;
 
                     /**
                      * 获取2099-12-31 00:00:00
                      * @return EndTime 2099-12-31 00:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置2099-12-31 00:00:00
-                     * @param EndTime 2099-12-31 00:00:00
+                     * @param _endTime 2099-12-31 00:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Notes 备注
+                     * 
                      */
                     std::string GetNotes() const;
 
                     /**
                      * 设置备注
-                     * @param Notes 备注
+                     * @param _notes 备注
+                     * 
                      */
                     void SetNotes(const std::string& _notes);
 
                     /**
                      * 判断参数 Notes 是否已赋值
                      * @return Notes 是否已赋值
+                     * 
                      */
                     bool NotesHasBeenSet() const;
 
                     /**
                      * 获取当前日期
                      * @return StartTime 当前日期
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置当前日期
-                     * @param StartTime 当前日期
+                     * @param _startTime 当前日期
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取跟之前调用调度接口保持一致27
                      * @return TypeId 跟之前调用调度接口保持一致27
+                     * 
                      */
                     int64_t GetTypeId() const;
 
                     /**
                      * 设置跟之前调用调度接口保持一致27
-                     * @param TypeId 跟之前调用调度接口保持一致27
+                     * @param _typeId 跟之前调用调度接口保持一致27
+                     * 
                      */
                     void SetTypeId(const int64_t& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 
                     /**
                      * 获取默认 ""
                      * @return TaskAction 默认 ""
+                     * 
                      */
                     std::string GetTaskAction() const;
 
                     /**
                      * 设置默认 ""
-                     * @param TaskAction 默认 ""
+                     * @param _taskAction 默认 ""
+                     * 
                      */
                     void SetTaskAction(const std::string& _taskAction);
 
                     /**
                      * 判断参数 TaskAction 是否已赋值
                      * @return TaskAction 是否已赋值
+                     * 
                      */
                     bool TaskActionHasBeenSet() const;
 
                     /**
                      * 获取区分画布和表单
                      * @return TaskMode 区分画布和表单
+                     * 
                      */
                     std::string GetTaskMode() const;
 
                     /**
                      * 设置区分画布和表单
-                     * @param TaskMode 区分画布和表单
+                     * @param _taskMode 区分画布和表单
+                     * 
                      */
                     void SetTaskMode(const std::string& _taskMode);
 
                     /**
                      * 判断参数 TaskMode 是否已赋值
                      * @return TaskMode 是否已赋值
+                     * 
                      */
                     bool TaskModeHasBeenSet() const;
 

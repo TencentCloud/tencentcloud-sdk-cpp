@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取防护目录地址
                      * @return ProtectDir 防护目录地址
+                     * 
                      */
                     std::string GetProtectDir() const;
 
                     /**
                      * 设置防护目录地址
-                     * @param ProtectDir 防护目录地址
+                     * @param _protectDir 防护目录地址
+                     * 
                      */
                     void SetProtectDir(const std::string& _protectDir);
 
                     /**
                      * 判断参数 ProtectDir 是否已赋值
                      * @return ProtectDir 是否已赋值
+                     * 
                      */
                     bool ProtectDirHasBeenSet() const;
 
                     /**
                      * 获取防护机器 信息
                      * @return ProtectHostConfig 防护机器 信息
+                     * 
                      */
                     std::vector<ProtectHostConfig> GetProtectHostConfig() const;
 
                     /**
                      * 设置防护机器 信息
-                     * @param ProtectHostConfig 防护机器 信息
+                     * @param _protectHostConfig 防护机器 信息
+                     * 
                      */
                     void SetProtectHostConfig(const std::vector<ProtectHostConfig>& _protectHostConfig);
 
                     /**
                      * 判断参数 ProtectHostConfig 是否已赋值
                      * @return ProtectHostConfig 是否已赋值
+                     * 
                      */
                     bool ProtectHostConfigHasBeenSet() const;
 

@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取运行时id
                      * @return RuntimeId 运行时id
+                     * 
                      */
                     int64_t GetRuntimeId() const;
 
                     /**
                      * 设置运行时id
-                     * @param RuntimeId 运行时id
+                     * @param _runtimeId 运行时id
+                     * 
                      */
                     void SetRuntimeId(const int64_t& _runtimeId);
 
                     /**
                      * 判断参数 RuntimeId 是否已赋值
                      * @return RuntimeId 是否已赋值
+                     * 
                      */
                     bool RuntimeIdHasBeenSet() const;
 
                     /**
                      * 获取最大请求数量
                      * @return Limit 最大请求数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大请求数量
-                     * @param Limit 最大请求数量
+                     * @param _limit 最大请求数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取请求偏移量
                      * @return Offset 请求偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置请求偏移量
-                     * @param Offset 请求偏移量
+                     * @param _offset 请求偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序类型：1:创建时间排序, 2:更新时间排序（默认）
                      * @return SortType 排序类型：1:创建时间排序, 2:更新时间排序（默认）
+                     * 
                      */
                     int64_t GetSortType() const;
 
                     /**
                      * 设置排序类型：1:创建时间排序, 2:更新时间排序（默认）
-                     * @param SortType 排序类型：1:创建时间排序, 2:更新时间排序（默认）
+                     * @param _sortType 排序类型：1:创建时间排序, 2:更新时间排序（默认）
+                     * 
                      */
                     void SetSortType(const int64_t& _sortType);
 
                     /**
                      * 判断参数 SortType 是否已赋值
                      * @return SortType 是否已赋值
+                     * 
                      */
                     bool SortTypeHasBeenSet() const;
 
                     /**
                      * 获取排序方式：asc，desc（默认）
                      * @return Sort 排序方式：asc，desc（默认）
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置排序方式：asc，desc（默认）
-                     * @param Sort 排序方式：asc，desc（默认）
+                     * @param _sort 排序方式：asc，desc（默认）
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取运行时地域
                      * @return Zone 运行时地域
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置运行时地域
-                     * @param Zone 运行时地域
+                     * @param _zone 运行时地域
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取1:3.0版本新控制台传1；否则传0
                      * @return ApiVersion 1:3.0版本新控制台传1；否则传0
+                     * 
                      */
                     int64_t GetApiVersion() const;
 
                     /**
                      * 设置1:3.0版本新控制台传1；否则传0
-                     * @param ApiVersion 1:3.0版本新控制台传1；否则传0
+                     * @param _apiVersion 1:3.0版本新控制台传1；否则传0
+                     * 
                      */
                     void SetApiVersion(const int64_t& _apiVersion);
 
                     /**
                      * 判断参数 ApiVersion 是否已赋值
                      * @return ApiVersion 是否已赋值
+                     * 
                      */
                     bool ApiVersionHasBeenSet() const;
 
@@ -173,20 +194,23 @@ namespace TencentCloud
 >=0: 按项目id筛选
                      * @return GroupId -1:不按项目筛选，获取所有
 >=0: 按项目id筛选
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置-1:不按项目筛选，获取所有
 >=0: 按项目id筛选
-                     * @param GroupId -1:不按项目筛选，获取所有
+                     * @param _groupId -1:不按项目筛选，获取所有
 >=0: 按项目id筛选
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -197,6 +221,7 @@ namespace TencentCloud
                      * @return Status -2: 不按状态筛选，获取所有
 0: 运行中
 2: 已停止
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -204,15 +229,17 @@ namespace TencentCloud
                      * 设置-2: 不按状态筛选，获取所有
 0: 运行中
 2: 已停止
-                     * @param Status -2: 不按状态筛选，获取所有
+                     * @param _status -2: 不按状态筛选，获取所有
 0: 运行中
 2: 已停止
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

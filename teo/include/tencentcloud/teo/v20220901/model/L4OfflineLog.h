@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取日志打包开始时间。
                      * @return LogTime 日志打包开始时间。
+                     * 
                      */
                     int64_t GetLogTime() const;
 
                     /**
                      * 设置日志打包开始时间。
-                     * @param LogTime 日志打包开始时间。
+                     * @param _logTime 日志打包开始时间。
+                     * 
                      */
                     void SetLogTime(const int64_t& _logTime);
 
                     /**
                      * 判断参数 LogTime 是否已赋值
                      * @return LogTime 是否已赋值
+                     * 
                      */
                     bool LogTimeHasBeenSet() const;
 
@@ -69,74 +72,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 四层实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置四层实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyId 四层实例ID。
+                     * @param _proxyId 四层实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取原始大小 单位byte。
                      * @return Size 原始大小 单位byte。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置原始大小 单位byte。
-                     * @param Size 原始大小 单位byte。
+                     * @param _size 原始大小 单位byte。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取下载地址。
                      * @return Url 下载地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载地址。
-                     * @param Url 下载地址。
+                     * @param _url 下载地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取日志数据包名。
                      * @return LogPacketName 日志数据包名。
+                     * 
                      */
                     std::string GetLogPacketName() const;
 
                     /**
                      * 设置日志数据包名。
-                     * @param LogPacketName 日志数据包名。
+                     * @param _logPacketName 日志数据包名。
+                     * 
                      */
                     void SetLogPacketName(const std::string& _logPacketName);
 
                     /**
                      * 判断参数 LogPacketName 是否已赋值
                      * @return LogPacketName 是否已赋值
+                     * 
                      */
                     bool LogPacketNameHasBeenSet() const;
 
@@ -147,6 +162,7 @@ namespace TencentCloud
                      * @return Area 加速区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -154,15 +170,17 @@ namespace TencentCloud
                      * 设置加速区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
-                     * @param Area 加速区域，取值有：
+                     * @param _area 加速区域，取值有：
 <li>mainland：中国大陆境内;</li>
 <li>overseas：全球（不含中国大陆）。</li>
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

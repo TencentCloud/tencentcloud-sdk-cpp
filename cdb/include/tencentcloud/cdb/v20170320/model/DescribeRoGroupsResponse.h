@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取RO组信息数组，一个实例可关联多个RO组。
                      * @return RoGroups RO组信息数组，一个实例可关联多个RO组。
+                     * 
                      */
                     std::vector<RoGroup> GetRoGroups() const;
 
                     /**
                      * 判断参数 RoGroups 是否已赋值
                      * @return RoGroups 是否已赋值
+                     * 
                      */
                     bool RoGroupsHasBeenSet() const;
 

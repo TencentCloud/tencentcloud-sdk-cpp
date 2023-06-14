@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取微服务ID
                      * @return MicroserviceId 微服务ID
+                     * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
                      * 设置微服务ID
-                     * @param MicroserviceId 微服务ID
+                     * @param _microserviceId 微服务ID
+                     * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
 
                     /**
                      * 判断参数 MicroserviceId 是否已赋值
                      * @return MicroserviceId 是否已赋值
+                     * 
                      */
                     bool MicroserviceIdHasBeenSet() const;
 

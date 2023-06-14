@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取文件夹名称
                      * @return FileName 文件夹名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件夹名称
-                     * @param FileName 文件夹名称
+                     * @param _fileName 文件夹名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取签署流程的标识数组
                      * @return FlowIdList 签署流程的标识数组
+                     * 
                      */
                     std::vector<std::string> GetFlowIdList() const;
 
                     /**
                      * 设置签署流程的标识数组
-                     * @param FlowIdList 签署流程的标识数组
+                     * @param _flowIdList 签署流程的标识数组
+                     * 
                      */
                     void SetFlowIdList(const std::vector<std::string>& _flowIdList);
 
                     /**
                      * 判断参数 FlowIdList 是否已赋值
                      * @return FlowIdList 是否已赋值
+                     * 
                      */
                     bool FlowIdListHasBeenSet() const;
 

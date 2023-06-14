@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取发票名称
                      * @return Title 发票名称
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置发票名称
-                     * @param Title 发票名称
+                     * @param _title 发票名称
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取发票代码
                      * @return Code 发票代码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置发票代码
-                     * @param Code 发票代码
+                     * @param _code 发票代码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取发票号码
                      * @return Number 发票号码
+                     * 
                      */
                     std::string GetNumber() const;
 
                     /**
                      * 设置发票号码
-                     * @param Number 发票号码
+                     * @param _number 发票号码
+                     * 
                      */
                     void SetNumber(const std::string& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取价税合计（小写）
                      * @return Total 价税合计（小写）
+                     * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 设置价税合计（小写）
-                     * @param Total 价税合计（小写）
+                     * @param _total 价税合计（小写）
+                     * 
                      */
                     void SetTotal(const std::string& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取价税合计（大写）
                      * @return TotalCn 价税合计（大写）
+                     * 
                      */
                     std::string GetTotalCn() const;
 
                     /**
                      * 设置价税合计（大写）
-                     * @param TotalCn 价税合计（大写）
+                     * @param _totalCn 价税合计（大写）
+                     * 
                      */
                     void SetTotalCn(const std::string& _totalCn);
 
                     /**
                      * 判断参数 TotalCn 是否已赋值
                      * @return TotalCn 是否已赋值
+                     * 
                      */
                     bool TotalCnHasBeenSet() const;
 
                     /**
                      * 获取开票日期
                      * @return Date 开票日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置开票日期
-                     * @param Date 开票日期
+                     * @param _date 开票日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取校验码
                      * @return CheckCode 校验码
+                     * 
                      */
                     std::string GetCheckCode() const;
 
                     /**
                      * 设置校验码
-                     * @param CheckCode 校验码
+                     * @param _checkCode 校验码
+                     * 
                      */
                     void SetCheckCode(const std::string& _checkCode);
 
                     /**
                      * 判断参数 CheckCode 是否已赋值
                      * @return CheckCode 是否已赋值
+                     * 
                      */
                     bool CheckCodeHasBeenSet() const;
 
                     /**
                      * 获取发票属地
                      * @return Place 发票属地
+                     * 
                      */
                     std::string GetPlace() const;
 
                     /**
                      * 设置发票属地
-                     * @param Place 发票属地
+                     * @param _place 发票属地
+                     * 
                      */
                     void SetPlace(const std::string& _place);
 
                     /**
                      * 判断参数 Place 是否已赋值
                      * @return Place 是否已赋值
+                     * 
                      */
                     bool PlaceHasBeenSet() const;
 
                     /**
                      * 获取复核人
                      * @return Reviewer 复核人
+                     * 
                      */
                     std::string GetReviewer() const;
 
                     /**
                      * 设置复核人
-                     * @param Reviewer 复核人
+                     * @param _reviewer 复核人
+                     * 
                      */
                     void SetReviewer(const std::string& _reviewer);
 
                     /**
                      * 判断参数 Reviewer 是否已赋值
                      * @return Reviewer 是否已赋值
+                     * 
                      */
                     bool ReviewerHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取主题名称，3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return Topic 主题名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置主题名称，3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param Topic 主题名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _topic 主题名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取主题所在的命名空间，目前支持在单个命名空间下创建主题
                      * @return Namespaces 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * 
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
                      * 设置主题所在的命名空间，目前支持在单个命名空间下创建主题
-                     * @param Namespaces 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * @param _namespaces 主题所在的命名空间，目前支持在单个命名空间下创建主题
+                     * 
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
 
                     /**
                      * 判断参数 Namespaces 是否已赋值
                      * @return Namespaces 是否已赋值
+                     * 
                      */
                     bool NamespacesHasBeenSet() const;
 
                     /**
                      * 获取主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
                      * @return Type 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
-                     * @param Type 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * @param _type 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取主题说明，最大128个字符
                      * @return Remark 主题说明，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置主题说明，最大128个字符
-                     * @param Remark 主题说明，最大128个字符
+                     * @param _remark 主题说明，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取分区数，全局顺序无效
                      * @return PartitionNum 分区数，全局顺序无效
+                     * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数，全局顺序无效
-                     * @param PartitionNum 分区数，全局顺序无效
+                     * @param _partitionNum 分区数，全局顺序无效
+                     * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 

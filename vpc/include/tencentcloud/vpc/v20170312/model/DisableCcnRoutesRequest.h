@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取CCN实例ID。形如：ccn-f49l6u0z。
                      * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置CCN实例ID。形如：ccn-f49l6u0z。
-                     * @param CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
                      * @return RouteIds CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * 
                      */
                     std::vector<std::string> GetRouteIds() const;
 
                     /**
                      * 设置CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
-                     * @param RouteIds CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * @param _routeIds CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * 
                      */
                     void SetRouteIds(const std::vector<std::string>& _routeIds);
 
                     /**
                      * 判断参数 RouteIds 是否已赋值
                      * @return RouteIds 是否已赋值
+                     * 
                      */
                     bool RouteIdsHasBeenSet() const;
 

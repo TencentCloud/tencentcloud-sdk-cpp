@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取人群包信息列表
                      * @return Data 人群包信息列表
+                     * 
                      */
                     SmsGetCrowdPackListResponse GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

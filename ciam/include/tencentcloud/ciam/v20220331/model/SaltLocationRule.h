@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取表达式
                      * @return Regex 表达式
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置表达式
-                     * @param Regex 表达式
+                     * @param _regex 表达式
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 

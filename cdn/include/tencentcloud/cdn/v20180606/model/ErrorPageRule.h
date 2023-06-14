@@ -51,20 +51,23 @@ namespace TencentCloud
 支持 400、403、404、500
                      * @return StatusCode 状态码
 支持 400、403、404、500
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
                      * 设置状态码
 支持 400、403、404、500
-                     * @param StatusCode 状态码
+                     * @param _statusCode 状态码
 支持 400、403、404、500
+                     * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 支持 301 或 302
                      * @return RedirectCode 重定向状态码设置
 支持 301 或 302
+                     * 
                      */
                     int64_t GetRedirectCode() const;
 
                     /**
                      * 设置重定向状态码设置
 支持 301 或 302
-                     * @param RedirectCode 重定向状态码设置
+                     * @param _redirectCode 重定向状态码设置
 支持 301 或 302
+                     * 
                      */
                     void SetRedirectCode(const int64_t& _redirectCode);
 
                     /**
                      * 判断参数 RedirectCode 是否已赋值
                      * @return RedirectCode 是否已赋值
+                     * 
                      */
                     bool RedirectCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 需要为完整跳转路径，如 https://www.test.com/error.html
                      * @return RedirectUrl 重定向 URL
 需要为完整跳转路径，如 https://www.test.com/error.html
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置重定向 URL
 需要为完整跳转路径，如 https://www.test.com/error.html
-                     * @param RedirectUrl 重定向 URL
+                     * @param _redirectUrl 重定向 URL
 需要为完整跳转路径，如 https://www.test.com/error.html
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 

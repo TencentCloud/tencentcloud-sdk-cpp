@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取删除的NodeUnit模板ID列表
                      * @return NodeUnitTemplateIDs 删除的NodeUnit模板ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetNodeUnitTemplateIDs() const;
 
                     /**
                      * 设置删除的NodeUnit模板ID列表
-                     * @param NodeUnitTemplateIDs 删除的NodeUnit模板ID列表
+                     * @param _nodeUnitTemplateIDs 删除的NodeUnit模板ID列表
+                     * 
                      */
                     void SetNodeUnitTemplateIDs(const std::vector<uint64_t>& _nodeUnitTemplateIDs);
 
                     /**
                      * 判断参数 NodeUnitTemplateIDs 是否已赋值
                      * @return NodeUnitTemplateIDs 是否已赋值
+                     * 
                      */
                     bool NodeUnitTemplateIDsHasBeenSet() const;
 

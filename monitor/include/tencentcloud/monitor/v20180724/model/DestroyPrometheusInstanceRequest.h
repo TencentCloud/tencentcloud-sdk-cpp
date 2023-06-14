@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，该实例必须先被 terminate
                      * @return InstanceId 实例 ID，该实例必须先被 terminate
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，该实例必须先被 terminate
-                     * @param InstanceId 实例 ID，该实例必须先被 terminate
+                     * @param _instanceId 实例 ID，该实例必须先被 terminate
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

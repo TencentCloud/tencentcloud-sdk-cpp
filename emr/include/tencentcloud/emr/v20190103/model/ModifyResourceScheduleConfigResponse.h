@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取true为草稿，表示还没有刷新资源池
                      * @return IsDraft true为草稿，表示还没有刷新资源池
+                     * 
                      */
                     bool GetIsDraft() const;
 
                     /**
                      * 判断参数 IsDraft 是否已赋值
                      * @return IsDraft 是否已赋值
+                     * 
                      */
                     bool IsDraftHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 校验错误信息，如果不为空，则说明校验失败，配置没有成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 返回数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取回单文件下载链接
                      * @return DownloadUrl 回单文件下载链接
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置回单文件下载链接
-                     * @param DownloadUrl 回单文件下载链接
+                     * @param _downloadUrl 回单文件下载链接
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ExpireTime 过期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * @param _expireTime 过期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -89,6 +95,7 @@ READY: 可以下载
                      * @return ReceiptStatus 回单状态
 PENDING: 处理中
 READY: 可以下载
+                     * 
                      */
                     std::string GetReceiptStatus() const;
 
@@ -96,15 +103,17 @@ READY: 可以下载
                      * 设置回单状态
 PENDING: 处理中
 READY: 可以下载
-                     * @param ReceiptStatus 回单状态
+                     * @param _receiptStatus 回单状态
 PENDING: 处理中
 READY: 可以下载
+                     * 
                      */
                     void SetReceiptStatus(const std::string& _receiptStatus);
 
                     /**
                      * 判断参数 ReceiptStatus 是否已赋值
                      * @return ReceiptStatus 是否已赋值
+                     * 
                      */
                     bool ReceiptStatusHasBeenSet() const;
 

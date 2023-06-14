@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待停用的直播域名。
                      * @return DomainName 待停用的直播域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置待停用的直播域名。
-                     * @param DomainName 待停用的直播域名。
+                     * @param _domainName 待停用的直播域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取下载地址
                      * @return DownloadUrl 下载地址
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
@@ -60,24 +62,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HashType hash类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHashType() const;
 
                     /**
                      * 判断参数 HashType 是否已赋值
                      * @return HashType 是否已赋值
+                     * 
                      */
                     bool HashTypeHasBeenSet() const;
 
                     /**
                      * 获取hash值
                      * @return HashValue hash值
+                     * 
                      */
                     std::string GetHashValue() const;
 
                     /**
                      * 判断参数 HashValue 是否已赋值
                      * @return HashValue 是否已赋值
+                     * 
                      */
                     bool HashValueHasBeenSet() const;
 

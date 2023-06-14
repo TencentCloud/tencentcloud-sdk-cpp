@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取用户 Id。
                      * @return UserId 用户 Id。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户 Id。
-                     * @param UserId 用户 Id。
+                     * @param _userId 用户 Id。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return Status 用户登录状态。
 <li>Online：在线；</li>
 <li>Offline：离线。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置用户登录状态。
 <li>Online：在线；</li>
 <li>Offline：离线。</li>
-                     * @param Status 用户登录状态。
+                     * @param _status 用户登录状态。
 <li>Online：在线；</li>
 <li>Offline：离线。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

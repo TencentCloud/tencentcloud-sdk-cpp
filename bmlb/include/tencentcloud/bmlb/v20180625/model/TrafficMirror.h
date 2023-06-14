@@ -49,252 +49,294 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像ID。
                      * @return TrafficMirrorId 流量镜像ID。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置流量镜像ID。
-                     * @param TrafficMirrorId 流量镜像ID。
+                     * @param _trafficMirrorId 流量镜像ID。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取流量镜像名称。
                      * @return Alias 流量镜像名称。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置流量镜像名称。
-                     * @param Alias 流量镜像名称。
+                     * @param _alias 流量镜像名称。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取流量镜像所在的私有网络ID。
                      * @return VpcId 流量镜像所在的私有网络ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置流量镜像所在的私有网络ID。
-                     * @param VpcId 流量镜像所在的私有网络ID。
+                     * @param _vpcId 流量镜像所在的私有网络ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取接收机负载均衡方式。wrr，ip_hash，wlc。
                      * @return LoadBalancerType 接收机负载均衡方式。wrr，ip_hash，wlc。
+                     * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置接收机负载均衡方式。wrr，ip_hash，wlc。
-                     * @param LoadBalancerType 接收机负载均衡方式。wrr，ip_hash，wlc。
+                     * @param _loadBalancerType 接收机负载均衡方式。wrr，ip_hash，wlc。
+                     * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
 
                     /**
                      * 判断参数 LoadBalancerType 是否已赋值
                      * @return LoadBalancerType 是否已赋值
+                     * 
                      */
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
                      * 获取是否开始对接收机的健康检查。0：关闭，非0：开启。
                      * @return HealthSwitch 是否开始对接收机的健康检查。0：关闭，非0：开启。
+                     * 
                      */
                     int64_t GetHealthSwitch() const;
 
                     /**
                      * 设置是否开始对接收机的健康检查。0：关闭，非0：开启。
-                     * @param HealthSwitch 是否开始对接收机的健康检查。0：关闭，非0：开启。
+                     * @param _healthSwitch 是否开始对接收机的健康检查。0：关闭，非0：开启。
+                     * 
                      */
                     void SetHealthSwitch(const int64_t& _healthSwitch);
 
                     /**
                      * 判断参数 HealthSwitch 是否已赋值
                      * @return HealthSwitch 是否已赋值
+                     * 
                      */
                     bool HealthSwitchHasBeenSet() const;
 
                     /**
                      * 获取健康阈值。
                      * @return HealthNum 健康阈值。
+                     * 
                      */
                     int64_t GetHealthNum() const;
 
                     /**
                      * 设置健康阈值。
-                     * @param HealthNum 健康阈值。
+                     * @param _healthNum 健康阈值。
+                     * 
                      */
                     void SetHealthNum(const int64_t& _healthNum);
 
                     /**
                      * 判断参数 HealthNum 是否已赋值
                      * @return HealthNum 是否已赋值
+                     * 
                      */
                     bool HealthNumHasBeenSet() const;
 
                     /**
                      * 获取不健康阈值。
                      * @return UnhealthNum 不健康阈值。
+                     * 
                      */
                     int64_t GetUnhealthNum() const;
 
                     /**
                      * 设置不健康阈值。
-                     * @param UnhealthNum 不健康阈值。
+                     * @param _unhealthNum 不健康阈值。
+                     * 
                      */
                     void SetUnhealthNum(const int64_t& _unhealthNum);
 
                     /**
                      * 判断参数 UnhealthNum 是否已赋值
                      * @return UnhealthNum 是否已赋值
+                     * 
                      */
                     bool UnhealthNumHasBeenSet() const;
 
                     /**
                      * 获取检查间隔。
                      * @return IntervalTime 检查间隔。
+                     * 
                      */
                     int64_t GetIntervalTime() const;
 
                     /**
                      * 设置检查间隔。
-                     * @param IntervalTime 检查间隔。
+                     * @param _intervalTime 检查间隔。
+                     * 
                      */
                     void SetIntervalTime(const int64_t& _intervalTime);
 
                     /**
                      * 判断参数 IntervalTime 是否已赋值
                      * @return IntervalTime 是否已赋值
+                     * 
                      */
                     bool IntervalTimeHasBeenSet() const;
 
                     /**
                      * 获取检查域名。
                      * @return HttpCheckDomain 检查域名。
+                     * 
                      */
                     std::string GetHttpCheckDomain() const;
 
                     /**
                      * 设置检查域名。
-                     * @param HttpCheckDomain 检查域名。
+                     * @param _httpCheckDomain 检查域名。
+                     * 
                      */
                     void SetHttpCheckDomain(const std::string& _httpCheckDomain);
 
                     /**
                      * 判断参数 HttpCheckDomain 是否已赋值
                      * @return HttpCheckDomain 是否已赋值
+                     * 
                      */
                     bool HttpCheckDomainHasBeenSet() const;
 
                     /**
                      * 获取检查目录。
                      * @return HttpCheckPath 检查目录。
+                     * 
                      */
                     std::string GetHttpCheckPath() const;
 
                     /**
                      * 设置检查目录。
-                     * @param HttpCheckPath 检查目录。
+                     * @param _httpCheckPath 检查目录。
+                     * 
                      */
                     void SetHttpCheckPath(const std::string& _httpCheckPath);
 
                     /**
                      * 判断参数 HttpCheckPath 是否已赋值
                      * @return HttpCheckPath 是否已赋值
+                     * 
                      */
                     bool HttpCheckPathHasBeenSet() const;
 
                     /**
                      * 获取健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。
                      * @return HttpCodes 健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。
+                     * 
                      */
                     std::vector<int64_t> GetHttpCodes() const;
 
                     /**
                      * 设置健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。
-                     * @param HttpCodes 健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。
+                     * @param _httpCodes 健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。
+                     * 
                      */
                     void SetHttpCodes(const std::vector<int64_t>& _httpCodes);
 
                     /**
                      * 判断参数 HttpCodes 是否已赋值
                      * @return HttpCodes 是否已赋值
+                     * 
                      */
                     bool HttpCodesHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreateTime 创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取流量镜像所在私有网络的Cidr。
                      * @return VpcCidrBlock 流量镜像所在私有网络的Cidr。
+                     * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
                      * 设置流量镜像所在私有网络的Cidr。
-                     * @param VpcCidrBlock 流量镜像所在私有网络的Cidr。
+                     * @param _vpcCidrBlock 流量镜像所在私有网络的Cidr。
+                     * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
 
                     /**
                      * 判断参数 VpcCidrBlock 是否已赋值
                      * @return VpcCidrBlock 是否已赋值
+                     * 
                      */
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取流量镜像所在私有网络的名称。
                      * @return VpcName 流量镜像所在私有网络的名称。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置流量镜像所在私有网络的名称。
-                     * @param VpcName 流量镜像所在私有网络的名称。
+                     * @param _vpcName 流量镜像所在私有网络的名称。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 

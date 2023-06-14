@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取七层监听器实例ID，可通过接口DescribeL7Listeners查询。
                      * @return ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置七层监听器实例ID，可通过接口DescribeL7Listeners查询。
-                     * @param ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * @param _listenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发域名实例ID，可通过接口DescribeL7Rules查询。
                      * @return DomainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置转发域名实例ID，可通过接口DescribeL7Rules查询。
-                     * @param DomainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * @param _domainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取转发路径实例ID列表，可通过接口DescribeL7Rules查询。
                      * @return LocationIds 转发路径实例ID列表，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     std::vector<std::string> GetLocationIds() const;
 
                     /**
                      * 设置转发路径实例ID列表，可通过接口DescribeL7Rules查询。
-                     * @param LocationIds 转发路径实例ID列表，可通过接口DescribeL7Rules查询。
+                     * @param _locationIds 转发路径实例ID列表，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     void SetLocationIds(const std::vector<std::string>& _locationIds);
 
                     /**
                      * 判断参数 LocationIds 是否已赋值
                      * @return LocationIds 是否已赋值
+                     * 
                      */
                     bool LocationIdsHasBeenSet() const;
 

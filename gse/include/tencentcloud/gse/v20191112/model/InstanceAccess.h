@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取访问实例所需要的凭据
                      * @return Credentials 访问实例所需要的凭据
+                     * 
                      */
                     Credentials GetCredentials() const;
 
                     /**
                      * 设置访问实例所需要的凭据
-                     * @param Credentials 访问实例所需要的凭据
+                     * @param _credentials 访问实例所需要的凭据
+                     * 
                      */
                     void SetCredentials(const Credentials& _credentials);
 
                     /**
                      * 判断参数 Credentials 是否已赋值
                      * @return Credentials 是否已赋值
+                     * 
                      */
                     bool CredentialsHasBeenSet() const;
 
                     /**
                      * 获取服务部署Id
                      * @return FleetId 服务部署Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务部署Id
-                     * @param FleetId 服务部署Id
+                     * @param _fleetId 服务部署Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例公网IP
                      * @return IpAddress 实例公网IP
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置实例公网IP
-                     * @param IpAddress 实例公网IP
+                     * @param _ipAddress 实例公网IP
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
                     /**
                      * 获取操作系统
                      * @return OperatingSystem 操作系统
+                     * 
                      */
                     std::string GetOperatingSystem() const;
 
                     /**
                      * 设置操作系统
-                     * @param OperatingSystem 操作系统
+                     * @param _operatingSystem 操作系统
+                     * 
                      */
                     void SetOperatingSystem(const std::string& _operatingSystem);
 
                     /**
                      * 判断参数 OperatingSystem 是否已赋值
                      * @return OperatingSystem 是否已赋值
+                     * 
                      */
                     bool OperatingSystemHasBeenSet() const;
 

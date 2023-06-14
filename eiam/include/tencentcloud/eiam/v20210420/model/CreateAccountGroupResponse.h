@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupId 账号组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 判断参数 AccountGroupId 是否已赋值
                      * @return AccountGroupId 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
 

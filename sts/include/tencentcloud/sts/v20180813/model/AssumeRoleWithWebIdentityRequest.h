@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取身份提供商名称
                      * @return ProviderId 身份提供商名称
+                     * 
                      */
                     std::string GetProviderId() const;
 
                     /**
                      * 设置身份提供商名称
-                     * @param ProviderId 身份提供商名称
+                     * @param _providerId 身份提供商名称
+                     * 
                      */
                     void SetProviderId(const std::string& _providerId);
 
                     /**
                      * 判断参数 ProviderId 是否已赋值
                      * @return ProviderId 是否已赋值
+                     * 
                      */
                     bool ProviderIdHasBeenSet() const;
 
                     /**
                      * 获取IdP签发的OIDC令牌
                      * @return WebIdentityToken IdP签发的OIDC令牌
+                     * 
                      */
                     std::string GetWebIdentityToken() const;
 
                     /**
                      * 设置IdP签发的OIDC令牌
-                     * @param WebIdentityToken IdP签发的OIDC令牌
+                     * @param _webIdentityToken IdP签发的OIDC令牌
+                     * 
                      */
                     void SetWebIdentityToken(const std::string& _webIdentityToken);
 
                     /**
                      * 判断参数 WebIdentityToken 是否已赋值
                      * @return WebIdentityToken 是否已赋值
+                     * 
                      */
                     bool WebIdentityTokenHasBeenSet() const;
 
                     /**
                      * 获取角色访问描述名
                      * @return RoleArn 角色访问描述名
+                     * 
                      */
                     std::string GetRoleArn() const;
 
                     /**
                      * 设置角色访问描述名
-                     * @param RoleArn 角色访问描述名
+                     * @param _roleArn 角色访问描述名
+                     * 
                      */
                     void SetRoleArn(const std::string& _roleArn);
 
                     /**
                      * 判断参数 RoleArn 是否已赋值
                      * @return RoleArn 是否已赋值
+                     * 
                      */
                     bool RoleArnHasBeenSet() const;
 
                     /**
                      * 获取会话名称
                      * @return RoleSessionName 会话名称
+                     * 
                      */
                     std::string GetRoleSessionName() const;
 
                     /**
                      * 设置会话名称
-                     * @param RoleSessionName 会话名称
+                     * @param _roleSessionName 会话名称
+                     * 
                      */
                     void SetRoleSessionName(const std::string& _roleSessionName);
 
                     /**
                      * 判断参数 RoleSessionName 是否已赋值
                      * @return RoleSessionName 是否已赋值
+                     * 
                      */
                     bool RoleSessionNameHasBeenSet() const;
 
                     /**
                      * 获取指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
                      * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * 
                      */
                     int64_t GetDurationSeconds() const;
 
                     /**
                      * 设置指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
-                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * @param _durationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * 
                      */
                     void SetDurationSeconds(const int64_t& _durationSeconds);
 
                     /**
                      * 判断参数 DurationSeconds 是否已赋值
                      * @return DurationSeconds 是否已赋值
+                     * 
                      */
                     bool DurationSecondsHasBeenSet() const;
 

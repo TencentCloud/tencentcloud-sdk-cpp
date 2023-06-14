@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待创建的实例名称
                      * @return RegistryName 待创建的实例名称
+                     * 
                      */
                     std::string GetRegistryName() const;
 
                     /**
                      * 设置待创建的实例名称
-                     * @param RegistryName 待创建的实例名称
+                     * @param _registryName 待创建的实例名称
+                     * 
                      */
                     void SetRegistryName(const std::string& _registryName);
 
                     /**
                      * 判断参数 RegistryName 是否已赋值
                      * @return RegistryName 是否已赋值
+                     * 
                      */
                     bool RegistryNameHasBeenSet() const;
 

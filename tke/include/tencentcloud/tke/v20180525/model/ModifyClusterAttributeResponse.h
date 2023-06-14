@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 集群所属项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDesc 集群描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
                      * 判断参数 ClusterDesc 是否已赋值
                      * @return ClusterDesc 是否已赋值
+                     * 
                      */
                     bool ClusterDescHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterLevel 集群等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
                      * 判断参数 ClusterLevel 是否已赋值
                      * @return ClusterLevel 是否已赋值
+                     * 
                      */
                     bool ClusterLevelHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgradeClusterLevel 自动变配集群等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
 
                     /**
                      * 判断参数 AutoUpgradeClusterLevel 是否已赋值
                      * @return AutoUpgradeClusterLevel 是否已赋值
+                     * 
                      */
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QGPUShareEnable 是否开启QGPU共享
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetQGPUShareEnable() const;
 
                     /**
                      * 判断参数 QGPUShareEnable 是否已赋值
                      * @return QGPUShareEnable 是否已赋值
+                     * 
                      */
                     bool QGPUShareEnableHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取配置ID
                      * @return UconfigId 配置ID
+                     * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
                      * 设置配置ID
-                     * @param UconfigId 配置ID
+                     * @param _uconfigId 配置ID
+                     * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
 
                     /**
                      * 判断参数 UconfigId 是否已赋值
                      * @return UconfigId 是否已赋值
+                     * 
                      */
                     bool UconfigIdHasBeenSet() const;
 
                     /**
                      * 获取配置类型
                      * @return ConfigType 配置类型
+                     * 
                      */
                     std::string GetConfigType() const;
 
                     /**
                      * 设置配置类型
-                     * @param ConfigType 配置类型
+                     * @param _configType 配置类型
+                     * 
                      */
                     void SetConfigType(const std::string& _configType);
 
                     /**
                      * 判断参数 ConfigType 是否已赋值
                      * @return ConfigType 是否已赋值
+                     * 
                      */
                     bool ConfigTypeHasBeenSet() const;
 
@@ -87,74 +93,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigName 配置名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigName 配置名字
+                     * @param _configName 配置名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
                     /**
                      * 获取配置内容
                      * @return ConfigContent 配置内容
+                     * 
                      */
                     std::string GetConfigContent() const;
 
                     /**
                      * 设置配置内容
-                     * @param ConfigContent 配置内容
+                     * @param _configContent 配置内容
+                     * 
                      */
                     void SetConfigContent(const std::string& _configContent);
 
                     /**
                      * 判断参数 ConfigContent 是否已赋值
                      * @return ConfigContent 是否已赋值
+                     * 
                      */
                     bool ConfigContentHasBeenSet() const;
 
                     /**
                      * 获取增加配置时间
                      * @return CreateTimestamp 增加配置时间
+                     * 
                      */
                     std::string GetCreateTimestamp() const;
 
                     /**
                      * 设置增加配置时间
-                     * @param CreateTimestamp 增加配置时间
+                     * @param _createTimestamp 增加配置时间
+                     * 
                      */
                     void SetCreateTimestamp(const std::string& _createTimestamp);
 
                     /**
                      * 判断参数 CreateTimestamp 是否已赋值
                      * @return CreateTimestamp 是否已赋值
+                     * 
                      */
                     bool CreateTimestampHasBeenSet() const;
 
                     /**
                      * 获取修改配置时间
                      * @return UpdateTimestamp 修改配置时间
+                     * 
                      */
                     std::string GetUpdateTimestamp() const;
 
                     /**
                      * 设置修改配置时间
-                     * @param UpdateTimestamp 修改配置时间
+                     * @param _updateTimestamp 修改配置时间
+                     * 
                      */
                     void SetUpdateTimestamp(const std::string& _updateTimestamp);
 
                     /**
                      * 判断参数 UpdateTimestamp 是否已赋值
                      * @return UpdateTimestamp 是否已赋值
+                     * 
                      */
                     bool UpdateTimestampHasBeenSet() const;
 

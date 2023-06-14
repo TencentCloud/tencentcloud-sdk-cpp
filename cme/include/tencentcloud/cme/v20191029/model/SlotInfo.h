@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取卡槽 Id。
                      * @return Id 卡槽 Id。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置卡槽 Id。
-                     * @param Id 卡槽 Id。
+                     * @param _id 卡槽 Id。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
 <li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
 <li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
 <li> TEXT：文本卡槽，可替换文本内容。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -85,35 +89,40 @@ namespace TencentCloud
 <li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
 <li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
 <li> TEXT：文本卡槽，可替换文本内容。</li>
-                     * @param Type 卡槽类型，可取值有：
+                     * @param _type 卡槽类型，可取值有：
 <li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>
 <li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>
 <li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>
 <li> TEXT：文本卡槽，可替换文本内容。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
                      * @return DefaultMaterialId 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
+                     * 
                      */
                     std::string GetDefaultMaterialId() const;
 
                     /**
                      * 设置默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
-                     * @param DefaultMaterialId 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
+                     * @param _defaultMaterialId 默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。
+                     * 
                      */
                     void SetDefaultMaterialId(const std::string& _defaultMaterialId);
 
                     /**
                      * 判断参数 DefaultMaterialId 是否已赋值
                      * @return DefaultMaterialId 是否已赋值
+                     * 
                      */
                     bool DefaultMaterialIdHasBeenSet() const;
 
@@ -122,38 +131,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultTextSlotInfo 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextSlotInfo GetDefaultTextSlotInfo() const;
 
                     /**
                      * 设置默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultTextSlotInfo 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
+                     * @param _defaultTextSlotInfo 默认文本卡槽信息。当卡槽类型为 TEXT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultTextSlotInfo(const TextSlotInfo& _defaultTextSlotInfo);
 
                     /**
                      * 判断参数 DefaultTextSlotInfo 是否已赋值
                      * @return DefaultTextSlotInfo 是否已赋值
+                     * 
                      */
                     bool DefaultTextSlotInfoHasBeenSet() const;
 
                     /**
                      * 获取素材时长，单位秒。
                      * @return Duration 素材时长，单位秒。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置素材时长，单位秒。
-                     * @param Duration 素材时长，单位秒。
+                     * @param _duration 素材时长，单位秒。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

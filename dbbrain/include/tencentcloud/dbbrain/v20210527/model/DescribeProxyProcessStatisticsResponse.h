@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实时会话统计详情。
                      * @return ProcessStatistics 实时会话统计详情。
+                     * 
                      */
                     ProcessStatistic GetProcessStatistics() const;
 
                     /**
                      * 判断参数 ProcessStatistics 是否已赋值
                      * @return ProcessStatistics 是否已赋值
+                     * 
                      */
                     bool ProcessStatisticsHasBeenSet() const;
 

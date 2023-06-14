@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取原始用户ID
                      * @return UserId 原始用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置原始用户ID
-                     * @param UserId 原始用户ID
+                     * @param _userId 原始用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取目标用户ID
                      * @return ToUserId 目标用户ID
+                     * 
                      */
                     std::string GetToUserId() const;
 
                     /**
                      * 设置目标用户ID
-                     * @param ToUserId 目标用户ID
+                     * @param _toUserId 目标用户ID
+                     * 
                      */
                     void SetToUserId(const std::string& _toUserId);
 
                     /**
                      * 判断参数 ToUserId 是否已赋值
                      * @return ToUserId 是否已赋值
+                     * 
                      */
                     bool ToUserIdHasBeenSet() const;
 

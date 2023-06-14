@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取通话ID（唯一标识一次通话）
                      * @return CommId 通话ID（唯一标识一次通话）
+                     * 
                      */
                     std::string GetCommId() const;
 
                     /**
                      * 设置通话ID（唯一标识一次通话）
-                     * @param CommId 通话ID（唯一标识一次通话）
+                     * @param _commId 通话ID（唯一标识一次通话）
+                     * 
                      */
                     void SetCommId(const std::string& _commId);
 
                     /**
                      * 判断参数 CommId 是否已赋值
                      * @return CommId 是否已赋值
+                     * 
                      */
                     bool CommIdHasBeenSet() const;
 
                     /**
                      * 获取房间号
                      * @return RoomString 房间号
+                     * 
                      */
                     std::string GetRoomString() const;
 
                     /**
                      * 设置房间号
-                     * @param RoomString 房间号
+                     * @param _roomString 房间号
+                     * 
                      */
                     void SetRoomString(const std::string& _roomString);
 
                     /**
                      * 判断参数 RoomString 是否已赋值
                      * @return RoomString 是否已赋值
+                     * 
                      */
                     bool RoomStringHasBeenSet() const;
 
                     /**
                      * 获取房间创建时间
                      * @return CreateTime 房间创建时间
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置房间创建时间
-                     * @param CreateTime 房间创建时间
+                     * @param _createTime 房间创建时间
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取房间销毁时间
                      * @return DestroyTime 房间销毁时间
+                     * 
                      */
                     uint64_t GetDestroyTime() const;
 
                     /**
                      * 设置房间销毁时间
-                     * @param DestroyTime 房间销毁时间
+                     * @param _destroyTime 房间销毁时间
+                     * 
                      */
                     void SetDestroyTime(const uint64_t& _destroyTime);
 
                     /**
                      * 判断参数 DestroyTime 是否已赋值
                      * @return DestroyTime 是否已赋值
+                     * 
                      */
                     bool DestroyTimeHasBeenSet() const;
 
                     /**
                      * 获取房间是否已经结束
                      * @return IsFinished 房间是否已经结束
+                     * 
                      */
                     bool GetIsFinished() const;
 
                     /**
                      * 设置房间是否已经结束
-                     * @param IsFinished 房间是否已经结束
+                     * @param _isFinished 房间是否已经结束
+                     * 
                      */
                     void SetIsFinished(const bool& _isFinished);
 
                     /**
                      * 判断参数 IsFinished 是否已赋值
                      * @return IsFinished 是否已赋值
+                     * 
                      */
                     bool IsFinishedHasBeenSet() const;
 
                     /**
                      * 获取房间创建者Id
                      * @return UserId 房间创建者Id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置房间创建者Id
-                     * @param UserId 房间创建者Id
+                     * @param _userId 房间创建者Id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，在控制台获取
                      * @return InstanceId 实例ID，在控制台获取
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，在控制台获取
-                     * @param InstanceId 实例ID，在控制台获取
+                     * @param _instanceId 实例ID，在控制台获取
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取上报的商品对应的用户行为数据数组，数量不超过50
                      * @return GoodsBehaviorList 上报的商品对应的用户行为数据数组，数量不超过50
+                     * 
                      */
                     std::vector<GoodsBehaviorInfo> GetGoodsBehaviorList() const;
 
                     /**
                      * 设置上报的商品对应的用户行为数据数组，数量不超过50
-                     * @param GoodsBehaviorList 上报的商品对应的用户行为数据数组，数量不超过50
+                     * @param _goodsBehaviorList 上报的商品对应的用户行为数据数组，数量不超过50
+                     * 
                      */
                     void SetGoodsBehaviorList(const std::vector<GoodsBehaviorInfo>& _goodsBehaviorList);
 
                     /**
                      * 判断参数 GoodsBehaviorList 是否已赋值
                      * @return GoodsBehaviorList 是否已赋值
+                     * 
                      */
                     bool GoodsBehaviorListHasBeenSet() const;
 

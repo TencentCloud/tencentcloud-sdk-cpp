@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务状态，可能为：Task_Running,Task_Succ,Task_Error,Task_NoExist
                      * @return TaskStatus 任务状态，可能为：Task_Running,Task_Succ,Task_Error,Task_NoExist
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskResult NameRepeat,K8sRuleIngressPortError等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTaskResult() const;
 
                     /**
                      * 判断参数 TaskResult 是否已赋值
                      * @return TaskResult 是否已赋值
+                     * 
                      */
                     bool TaskResultHasBeenSet() const;
 

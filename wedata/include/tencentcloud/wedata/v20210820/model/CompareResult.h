@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 对比结果项列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CompareResultItem> GetItems() const;
 
                     /**
                      * 设置对比结果项列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 对比结果项列表
+                     * @param _items 对比结果项列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<CompareResultItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalRows 检测总行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalRows() const;
 
                     /**
                      * 设置检测总行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalRows 检测总行数
+                     * @param _totalRows 检测总行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalRows(const uint64_t& _totalRows);
 
                     /**
                      * 判断参数 TotalRows 是否已赋值
                      * @return TotalRows 是否已赋值
+                     * 
                      */
                     bool TotalRowsHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassRows 检测通过行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPassRows() const;
 
                     /**
                      * 设置检测通过行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PassRows 检测通过行数
+                     * @param _passRows 检测通过行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassRows(const uint64_t& _passRows);
 
                     /**
                      * 判断参数 PassRows 是否已赋值
                      * @return PassRows 是否已赋值
+                     * 
                      */
                     bool PassRowsHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerRows 检测不通过行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTriggerRows() const;
 
                     /**
                      * 设置检测不通过行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerRows 检测不通过行数
+                     * @param _triggerRows 检测不通过行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerRows(const uint64_t& _triggerRows);
 
                     /**
                      * 判断参数 TriggerRows 是否已赋值
                      * @return TriggerRows 是否已赋值
+                     * 
                      */
                     bool TriggerRowsHasBeenSet() const;
 

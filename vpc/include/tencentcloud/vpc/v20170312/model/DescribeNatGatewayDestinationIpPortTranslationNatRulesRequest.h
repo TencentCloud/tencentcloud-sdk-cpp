@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关ID。
                      * @return NatGatewayIds NAT网关ID。
+                     * 
                      */
                     std::vector<std::string> GetNatGatewayIds() const;
 
                     /**
                      * 设置NAT网关ID。
-                     * @param NatGatewayIds NAT网关ID。
+                     * @param _natGatewayIds NAT网关ID。
+                     * 
                      */
                     void SetNatGatewayIds(const std::vector<std::string>& _natGatewayIds);
 
                     /**
                      * 判断参数 NatGatewayIds 是否已赋值
                      * @return NatGatewayIds 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdsHasBeenSet() const;
 
@@ -80,6 +83,7 @@ namespace TencentCloud
 <li>private-ip-address， 内网IP，如`10.0.0.1`。</li>
 <li>private-port， 内网端口。</li>
 <li>description，规则描述。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 <li>private-ip-address， 内网IP，如`10.0.0.1`。</li>
 <li>private-port， 内网端口。</li>
 <li>description，规则描述。</li>
-                     * @param Filters 过滤条件:
+                     * @param _filters 过滤条件:
 参数不支持同时指定NatGatewayIds和Filters。
 <li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>
 <li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>
@@ -102,48 +106,56 @@ namespace TencentCloud
 <li>private-ip-address， 内网IP，如`10.0.0.1`。</li>
 <li>private-port， 内网端口。</li>
 <li>description，规则描述。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadInfos 成功核销后可以获取图片基本信息和原图地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DownloadInfo> GetDownloadInfos() const;
 
                     /**
                      * 判断参数 DownloadInfos 是否已赋值
                      * @return DownloadInfos 是否已赋值
+                     * 
                      */
                     bool DownloadInfosHasBeenSet() const;
 
                     /**
                      * 获取可下载图片数量
                      * @return TotalCount 可下载图片数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

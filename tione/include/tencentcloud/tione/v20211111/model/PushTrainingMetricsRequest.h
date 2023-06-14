@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取指标数据
                      * @return Data 指标数据
+                     * 
                      */
                     std::vector<MetricData> GetData() const;
 
                     /**
                      * 设置指标数据
-                     * @param Data 指标数据
+                     * @param _data 指标数据
+                     * 
                      */
                     void SetData(const std::vector<MetricData>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

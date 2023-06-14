@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Result 核身结果：
 0 - 通过；
 1 - 未通过
+                     * 
                      */
                     int64_t GetResult() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置核身结果：
 0 - 通过；
 1 - 未通过
-                     * @param Result 核身结果：
+                     * @param _result 核身结果：
 0 - 通过；
 1 - 未通过
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取核身失败描述
                      * @return Description 核身失败描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置核身失败描述
-                     * @param Description 核身失败描述
+                     * @param _description 核身失败描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取订单号 (orderNo)
                      * @return OrderNumber 订单号 (orderNo)
+                     * 
                      */
                     std::string GetOrderNumber() const;
 
                     /**
                      * 设置订单号 (orderNo)
-                     * @param OrderNumber 订单号 (orderNo)
+                     * @param _orderNumber 订单号 (orderNo)
+                     * 
                      */
                     void SetOrderNumber(const std::string& _orderNumber);
 
                     /**
                      * 判断参数 OrderNumber 是否已赋值
                      * @return OrderNumber 是否已赋值
+                     * 
                      */
                     bool OrderNumberHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 姓名
+                     * @param _name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -137,6 +149,7 @@ ID_CARD - 居民身份证
                      * @return IdCardType 身份证件类型： 
 ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdCardType() const;
 
@@ -144,15 +157,17 @@ ID_CARD - 居民身份证
                      * 设置身份证件类型： 
 ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdCardType 身份证件类型： 
+                     * @param _idCardType 身份证件类型： 
 ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardNumber 身份证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置身份证件号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdCardNumber 身份证件号码
+                     * @param _idCardNumber 身份证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 
@@ -183,20 +201,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveRate 活体检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLiveRate() const;
 
                     /**
                      * 设置活体检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveRate 活体检测得分 (百分制)
+                     * @param _liveRate 活体检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveRate(const int64_t& _liveRate);
 
                     /**
                      * 判断参数 LiveRate 是否已赋值
                      * @return LiveRate 是否已赋值
+                     * 
                      */
                     bool LiveRateHasBeenSet() const;
 
@@ -205,20 +226,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Similarity 人脸检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 设置人脸检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Similarity 人脸检测得分 (百分制)
+                     * @param _similarity 人脸检测得分 (百分制)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSimilarity(const double& _similarity);
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 
@@ -227,20 +251,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OccurredTime 刷脸时间 (UNIX时间戳)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOccurredTime() const;
 
                     /**
                      * 设置刷脸时间 (UNIX时间戳)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OccurredTime 刷脸时间 (UNIX时间戳)
+                     * @param _occurredTime 刷脸时间 (UNIX时间戳)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOccurredTime(const int64_t& _occurredTime);
 
                     /**
                      * 判断参数 OccurredTime 是否已赋值
                      * @return OccurredTime 是否已赋值
+                     * 
                      */
                     bool OccurredTimeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Photo 照片数据 (base64编码, 一般为JPG或PNG)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhoto() const;
 
                     /**
                      * 设置照片数据 (base64编码, 一般为JPG或PNG)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Photo 照片数据 (base64编码, 一般为JPG或PNG)
+                     * @param _photo 照片数据 (base64编码, 一般为JPG或PNG)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoto(const std::string& _photo);
 
                     /**
                      * 判断参数 Photo 是否已赋值
                      * @return Photo 是否已赋值
+                     * 
                      */
                     bool PhotoHasBeenSet() const;
 
@@ -271,20 +301,23 @@ ID_CARD - 居民身份证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Video 视频数据 (base64编码, 一般为MP4)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVideo() const;
 
                     /**
                      * 设置视频数据 (base64编码, 一般为MP4)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Video 视频数据 (base64编码, 一般为MP4)
+                     * @param _video 视频数据 (base64编码, 一般为MP4)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideo(const std::string& _video);
 
                     /**
                      * 判断参数 Video 是否已赋值
                      * @return Video 是否已赋值
+                     * 
                      */
                     bool VideoHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取备份文件ID
                      * @return BackupId 备份文件ID
+                     * 
                      */
                     int64_t GetBackupId() const;
 
                     /**
                      * 设置备份文件ID
-                     * @param BackupId 备份文件ID
+                     * @param _backupId 备份文件ID
+                     * 
                      */
                     void SetBackupId(const int64_t& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 
                     /**
                      * 获取备注名，长度不能超过60个字符
                      * @return BackupName 备注名，长度不能超过60个字符
+                     * 
                      */
                     std::string GetBackupName() const;
 
                     /**
                      * 设置备注名，长度不能超过60个字符
-                     * @param BackupName 备注名，长度不能超过60个字符
+                     * @param _backupName 备注名，长度不能超过60个字符
+                     * 
                      */
                     void SetBackupName(const std::string& _backupName);
 
                     /**
                      * 判断参数 BackupName 是否已赋值
                      * @return BackupName 是否已赋值
+                     * 
                      */
                     bool BackupNameHasBeenSet() const;
 

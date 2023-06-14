@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式
                      * @return VpcCniType 开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式
+                     * 
                      */
                     std::string GetVpcCniType() const;
 
                     /**
                      * 设置开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式
-                     * @param VpcCniType 开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式
+                     * @param _vpcCniType 开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式
+                     * 
                      */
                     void SetVpcCniType(const std::string& _vpcCniType);
 
                     /**
                      * 判断参数 VpcCniType 是否已赋值
                      * @return VpcCniType 是否已赋值
+                     * 
                      */
                     bool VpcCniTypeHasBeenSet() const;
 
                     /**
                      * 获取是否开启固定IP模式
                      * @return EnableStaticIp 是否开启固定IP模式
+                     * 
                      */
                     bool GetEnableStaticIp() const;
 
                     /**
                      * 设置是否开启固定IP模式
-                     * @param EnableStaticIp 是否开启固定IP模式
+                     * @param _enableStaticIp 是否开启固定IP模式
+                     * 
                      */
                     void SetEnableStaticIp(const bool& _enableStaticIp);
 
                     /**
                      * 判断参数 EnableStaticIp 是否已赋值
                      * @return EnableStaticIp 是否已赋值
+                     * 
                      */
                     bool EnableStaticIpHasBeenSet() const;
 
                     /**
                      * 获取使用的容器子网
                      * @return Subnets 使用的容器子网
+                     * 
                      */
                     std::vector<std::string> GetSubnets() const;
 
                     /**
                      * 设置使用的容器子网
-                     * @param Subnets 使用的容器子网
+                     * @param _subnets 使用的容器子网
+                     * 
                      */
                     void SetSubnets(const std::vector<std::string>& _subnets);
 
                     /**
                      * 判断参数 Subnets 是否已赋值
                      * @return Subnets 是否已赋值
+                     * 
                      */
                     bool SubnetsHasBeenSet() const;
 
                     /**
                      * 获取在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
                      * @return ExpiredSeconds 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     * 
                      */
                     uint64_t GetExpiredSeconds() const;
 
                     /**
                      * 设置在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
-                     * @param ExpiredSeconds 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     * @param _expiredSeconds 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     * 
                      */
                     void SetExpiredSeconds(const uint64_t& _expiredSeconds);
 
                     /**
                      * 判断参数 ExpiredSeconds 是否已赋值
                      * @return ExpiredSeconds 是否已赋值
+                     * 
                      */
                     bool ExpiredSecondsHasBeenSet() const;
 
                     /**
                      * 获取是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
                      * @return SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * 
                      */
                     bool GetSkipAddingNonMasqueradeCIDRs() const;
 
                     /**
                      * 设置是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
-                     * @param SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * @param _skipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * 
                      */
                     void SetSkipAddingNonMasqueradeCIDRs(const bool& _skipAddingNonMasqueradeCIDRs);
 
                     /**
                      * 判断参数 SkipAddingNonMasqueradeCIDRs 是否已赋值
                      * @return SkipAddingNonMasqueradeCIDRs 是否已赋值
+                     * 
                      */
                     bool SkipAddingNonMasqueradeCIDRsHasBeenSet() const;
 

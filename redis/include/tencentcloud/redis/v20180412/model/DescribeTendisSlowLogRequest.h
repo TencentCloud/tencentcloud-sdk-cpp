@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例Id：crs-ngvou0i1
                      * @return InstanceId 实例Id：crs-ngvou0i1
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id：crs-ngvou0i1
-                     * @param InstanceId 实例Id：crs-ngvou0i1
+                     * @param _instanceId 实例Id：crs-ngvou0i1
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间：2019-09-08 12:12:41
                      * @return BeginTime 开始时间：2019-09-08 12:12:41
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间：2019-09-08 12:12:41
-                     * @param BeginTime 开始时间：2019-09-08 12:12:41
+                     * @param _beginTime 开始时间：2019-09-08 12:12:41
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间：2019-09-09 12:12:41
                      * @return EndTime 结束时间：2019-09-09 12:12:41
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间：2019-09-09 12:12:41
-                     * @param EndTime 结束时间：2019-09-09 12:12:41
+                     * @param _endTime 结束时间：2019-09-09 12:12:41
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取慢查询阈值（毫秒）
                      * @return MinQueryTime 慢查询阈值（毫秒）
+                     * 
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
                      * 设置慢查询阈值（毫秒）
-                     * @param MinQueryTime 慢查询阈值（毫秒）
+                     * @param _minQueryTime 慢查询阈值（毫秒）
+                     * 
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
                     /**
                      * 判断参数 MinQueryTime 是否已赋值
                      * @return MinQueryTime 是否已赋值
+                     * 
                      */
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
                      * 获取页面大小：默认20
                      * @return Limit 页面大小：默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置页面大小：默认20
-                     * @param Limit 页面大小：默认20
+                     * @param _limit 页面大小：默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取Limit整数倍
                      * @return Offset 偏移量，取Limit整数倍
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取Limit整数倍
-                     * @param Offset 偏移量，取Limit整数倍
+                     * @param _offset 偏移量，取Limit整数倍
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
                      * @return SubnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
-                     * @param SubnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * @param _subnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
@@ -90,6 +93,7 @@ namespace TencentCloud
 <li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>
 <li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
 <li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -108,7 +112,7 @@ namespace TencentCloud
 <li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>
 <li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
 <li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
 <li>subnet-id - String - （过滤条件）Subnet实例名称。</li>
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
 <li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>
@@ -122,48 +126,56 @@ namespace TencentCloud
 <li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>
 <li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>
 <li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

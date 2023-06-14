@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID
                      * @return SdkAppId 应用 ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID
-                     * @param SdkAppId 应用 ID
+                     * @param _sdkAppId 应用 ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取客服用户 ID，一般为客服邮箱
                      * @return UserId 客服用户 ID，一般为客服邮箱
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置客服用户 ID，一般为客服邮箱
-                     * @param UserId 客服用户 ID，一般为客服邮箱
+                     * @param _userId 客服用户 ID，一般为客服邮箱
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取被叫号码，须带 0086 前缀
                      * @return Callee 被叫号码，须带 0086 前缀
+                     * 
                      */
                     std::string GetCallee() const;
 
                     /**
                      * 设置被叫号码，须带 0086 前缀
-                     * @param Callee 被叫号码，须带 0086 前缀
+                     * @param _callee 被叫号码，须带 0086 前缀
+                     * 
                      */
                     void SetCallee(const std::string& _callee);
 
                     /**
                      * 判断参数 Callee 是否已赋值
                      * @return Callee 是否已赋值
+                     * 
                      */
                     bool CalleeHasBeenSet() const;
 
                     /**
                      * 获取主叫号码（废弃，使用Callers），须带 0086 前缀
                      * @return Caller 主叫号码（废弃，使用Callers），须带 0086 前缀
+                     * 
                      */
                     std::string GetCaller() const;
 
                     /**
                      * 设置主叫号码（废弃，使用Callers），须带 0086 前缀
-                     * @param Caller 主叫号码（废弃，使用Callers），须带 0086 前缀
+                     * @param _caller 主叫号码（废弃，使用Callers），须带 0086 前缀
+                     * 
                      */
                     void SetCaller(const std::string& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
                      * @return Callers 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     * 
                      */
                     std::vector<std::string> GetCallers() const;
 
                     /**
                      * 设置指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
-                     * @param Callers 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     * @param _callers 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     * 
                      */
                     void SetCallers(const std::vector<std::string>& _callers);
 
                     /**
                      * 判断参数 Callers 是否已赋值
                      * @return Callers 是否已赋值
+                     * 
                      */
                     bool CallersHasBeenSet() const;
 
                     /**
                      * 获取是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
                      * @return IsForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * 
                      */
                     bool GetIsForceUseMobile() const;
 
                     /**
                      * 设置是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
-                     * @param IsForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * @param _isForceUseMobile 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
+                     * 
                      */
                     void SetIsForceUseMobile(const bool& _isForceUseMobile);
 
                     /**
                      * 判断参数 IsForceUseMobile 是否已赋值
                      * @return IsForceUseMobile 是否已赋值
+                     * 
                      */
                     bool IsForceUseMobileHasBeenSet() const;
 
                     /**
                      * 获取自定义数据，长度限制 1024 字节
                      * @return Uui 自定义数据，长度限制 1024 字节
+                     * 
                      */
                     std::string GetUui() const;
 
                     /**
                      * 设置自定义数据，长度限制 1024 字节
-                     * @param Uui 自定义数据，长度限制 1024 字节
+                     * @param _uui 自定义数据，长度限制 1024 字节
+                     * 
                      */
                     void SetUui(const std::string& _uui);
 
                     /**
                      * 判断参数 Uui 是否已赋值
                      * @return Uui 是否已赋值
+                     * 
                      */
                     bool UuiHasBeenSet() const;
 

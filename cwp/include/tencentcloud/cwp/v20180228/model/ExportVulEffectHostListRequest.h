@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞id
                      * @return VulId 漏洞id
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞id
-                     * @param VulId 漏洞id
+                     * @param _vulId 漏洞id
+                     * 
                      */
                     void SetVulId(const uint64_t& _vulId);
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 
@@ -66,20 +69,23 @@ namespace TencentCloud
 <li>AliasName - String - 主机名筛选</li>
                      * @return Filters 过滤条件。
 <li>AliasName - String - 主机名筛选</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
 <li>AliasName - String - 主机名筛选</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>AliasName - String - 主机名筛选</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

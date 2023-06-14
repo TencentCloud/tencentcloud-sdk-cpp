@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取更新时间
                      * @return ModTime 更新时间
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 
                     /**
                      * 获取事件集描述
                      * @return Description 事件集描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取日志主题ID
                      * @return ClsTopicId 日志主题ID
+                     * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
                      * 判断参数 ClsTopicId 是否已赋值
                      * @return ClsTopicId 是否已赋值
+                     * 
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return AddTime 创建时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取日志集ID
                      * @return ClsLogsetId 日志集ID
+                     * 
                      */
                     std::string GetClsLogsetId() const;
 
                     /**
                      * 判断参数 ClsLogsetId 是否已赋值
                      * @return ClsLogsetId 是否已赋值
+                     * 
                      */
                     bool ClsLogsetIdHasBeenSet() const;
 
                     /**
                      * 获取事件集名称
                      * @return EventBusName 事件集名称
+                     * 
                      */
                     std::string GetEventBusName() const;
 
                     /**
                      * 判断参数 EventBusName 是否已赋值
                      * @return EventBusName 是否已赋值
+                     * 
                      */
                     bool EventBusNameHasBeenSet() const;
 
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取（已废弃）事件集类型
                      * @return Type （已废弃）事件集类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取计费模式
                      * @return PayMode 计费模式
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
@@ -156,12 +174,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaveDays EB日志存储时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSaveDays() const;
 
                     /**
                      * 判断参数 SaveDays 是否已赋值
                      * @return SaveDays 是否已赋值
+                     * 
                      */
                     bool SaveDaysHasBeenSet() const;
 
@@ -170,12 +190,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTopicId EB日志主题ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogTopicId() const;
 
                     /**
                      * 判断参数 LogTopicId 是否已赋值
                      * @return LogTopicId 是否已赋值
+                     * 
                      */
                     bool LogTopicIdHasBeenSet() const;
 
@@ -184,12 +206,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableStore 是否开启存储
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableStore() const;
 
                     /**
                      * 判断参数 EnableStore 是否已赋值
                      * @return EnableStore 是否已赋值
+                     * 
                      */
                     bool EnableStoreHasBeenSet() const;
 
@@ -198,12 +222,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkMode 消息序列，是否有序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLinkMode() const;
 
                     /**
                      * 判断参数 LinkMode 是否已赋值
                      * @return LinkMode 是否已赋值
+                     * 
                      */
                     bool LinkModeHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集成节点信息
                      * @return NodeInfo 集成节点信息
+                     * 
                      */
                     IntegrationNodeInfo GetNodeInfo() const;
 
                     /**
                      * 设置集成节点信息
-                     * @param NodeInfo 集成节点信息
+                     * @param _nodeInfo 集成节点信息
+                     * 
                      */
                     void SetNodeInfo(const IntegrationNodeInfo& _nodeInfo);
 
                     /**
                      * 判断参数 NodeInfo 是否已赋值
                      * @return NodeInfo 是否已赋值
+                     * 
                      */
                     bool NodeInfoHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
+                     * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

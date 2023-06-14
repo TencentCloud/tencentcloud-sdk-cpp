@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户父账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateNodeLimit 允许创建的节点数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateNodeLimit() const;
 
                     /**
                      * 判断参数 CreateNodeLimit 是否已赋值
                      * @return CreateNodeLimit 是否已赋值
+                     * 
                      */
                     bool CreateNodeLimitHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateClusterLimit 允许创建的集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateClusterLimit() const;
 
                     /**
                      * 判断参数 CreateClusterLimit 是否已赋值
                      * @return CreateClusterLimit 是否已赋值
+                     * 
                      */
                     bool CreateClusterLimitHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnablePermMonitor 是否有监控开启权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnablePermMonitor() const;
 
                     /**
                      * 判断参数 EnablePermMonitor 是否已赋值
                      * @return EnablePermMonitor 是否已赋值
+                     * 
                      */
                     bool EnablePermMonitorHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnablePermAdminNode 节点是否有admin的所有权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnablePermAdminNode() const;
 
                     /**
                      * 判断参数 EnablePermAdminNode 是否已赋值
                      * @return EnablePermAdminNode 是否已赋值
+                     * 
                      */
                     bool EnablePermAdminNodeHasBeenSet() const;
 

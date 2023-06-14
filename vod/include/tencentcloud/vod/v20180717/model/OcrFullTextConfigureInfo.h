@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 文本全文识别任务开关，可选值：
 <li>ON：开启智能文本全文识别任务；</li>
 <li>OFF：关闭智能文本全文识别任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置文本全文识别任务开关，可选值：
 <li>ON：开启智能文本全文识别任务；</li>
 <li>OFF：关闭智能文本全文识别任务。</li>
-                     * @param Switch 文本全文识别任务开关，可选值：
+                     * @param _switch 文本全文识别任务开关，可选值：
 <li>ON：开启智能文本全文识别任务；</li>
 <li>OFF：关闭智能文本全文识别任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

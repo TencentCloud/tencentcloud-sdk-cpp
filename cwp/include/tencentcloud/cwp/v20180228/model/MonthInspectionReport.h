@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取巡检报告名称
                      * @return ReportName 巡检报告名称
+                     * 
                      */
                     std::string GetReportName() const;
 
                     /**
                      * 设置巡检报告名称
-                     * @param ReportName 巡检报告名称
+                     * @param _reportName 巡检报告名称
+                     * 
                      */
                     void SetReportName(const std::string& _reportName);
 
                     /**
                      * 判断参数 ReportName 是否已赋值
                      * @return ReportName 是否已赋值
+                     * 
                      */
                     bool ReportNameHasBeenSet() const;
 
                     /**
                      * 获取巡检报告下载地址
                      * @return ReportPath 巡检报告下载地址
+                     * 
                      */
                     std::string GetReportPath() const;
 
                     /**
                      * 设置巡检报告下载地址
-                     * @param ReportPath 巡检报告下载地址
+                     * @param _reportPath 巡检报告下载地址
+                     * 
                      */
                     void SetReportPath(const std::string& _reportPath);
 
                     /**
                      * 判断参数 ReportPath 是否已赋值
                      * @return ReportPath 是否已赋值
+                     * 
                      */
                     bool ReportPathHasBeenSet() const;
 
                     /**
                      * 获取巡检报告更新时间
                      * @return ModifyTime 巡检报告更新时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置巡检报告更新时间
-                     * @param ModifyTime 巡检报告更新时间
+                     * @param _modifyTime 巡检报告更新时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

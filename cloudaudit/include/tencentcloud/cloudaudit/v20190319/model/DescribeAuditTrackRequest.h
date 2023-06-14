@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取跟踪集 ID
                      * @return TrackId 跟踪集 ID
+                     * 
                      */
                     uint64_t GetTrackId() const;
 
                     /**
                      * 设置跟踪集 ID
-                     * @param TrackId 跟踪集 ID
+                     * @param _trackId 跟踪集 ID
+                     * 
                      */
                     void SetTrackId(const uint64_t& _trackId);
 
                     /**
                      * 判断参数 TrackId 是否已赋值
                      * @return TrackId 是否已赋值
+                     * 
                      */
                     bool TrackIdHasBeenSet() const;
 

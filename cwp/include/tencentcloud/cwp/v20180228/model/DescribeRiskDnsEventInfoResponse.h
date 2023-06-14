@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 恶意请求事件详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RiskDnsEvent GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

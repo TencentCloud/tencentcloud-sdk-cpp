@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return Name 节点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称
-                     * @param Name 节点名称
+                     * @param _name 节点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

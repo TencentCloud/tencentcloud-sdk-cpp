@@ -251,7 +251,7 @@ namespace TencentCloud
                 DescribeConfigListOutcomeCallable DescribeConfigListCallable(const Model::DescribeConfigListRequest& request);
 
                 /**
-                 *域名列表信息啊
+                 *域名列表信息
                  * @param req DescribeDomainListRequest
                  * @return DescribeDomainListOutcome
                  */

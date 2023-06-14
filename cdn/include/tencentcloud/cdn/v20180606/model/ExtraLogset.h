@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Logset 日志集信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LogSetInfo GetLogset() const;
 
                     /**
                      * 设置日志集信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Logset 日志集信息
+                     * @param _logset 日志集信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogset(const LogSetInfo& _logset);
 
                     /**
                      * 判断参数 Logset 是否已赋值
                      * @return Logset 是否已赋值
+                     * 
                      */
                     bool LogsetHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topics 日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TopicInfo> GetTopics() const;
 
                     /**
                      * 设置日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Topics 日志主题信息列表
+                     * @param _topics 日志主题信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopics(const std::vector<TopicInfo>& _topics);
 
                     /**
                      * 判断参数 Topics 是否已赋值
                      * @return Topics 是否已赋值
+                     * 
                      */
                     bool TopicsHasBeenSet() const;
 

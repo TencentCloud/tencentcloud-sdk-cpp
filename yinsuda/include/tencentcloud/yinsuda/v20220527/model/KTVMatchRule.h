@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取AME 曲库 Id。
                      * @return AMEMusicId AME 曲库 Id。
+                     * 
                      */
                     std::string GetAMEMusicId() const;
 
                     /**
                      * 设置AME 曲库 Id。
-                     * @param AMEMusicId AME 曲库 Id。
+                     * @param _aMEMusicId AME 曲库 Id。
+                     * 
                      */
                     void SetAMEMusicId(const std::string& _aMEMusicId);
 
                     /**
                      * 判断参数 AMEMusicId 是否已赋值
                      * @return AMEMusicId 是否已赋值
+                     * 
                      */
                     bool AMEMusicIdHasBeenSet() const;
 
@@ -70,38 +73,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MusicInfo 歌曲匹配信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     KTVMatchRuleMusicInfo GetMusicInfo() const;
 
                     /**
                      * 设置歌曲匹配信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MusicInfo 歌曲匹配信息。
+                     * @param _musicInfo 歌曲匹配信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMusicInfo(const KTVMatchRuleMusicInfo& _musicInfo);
 
                     /**
                      * 判断参数 MusicInfo 是否已赋值
                      * @return MusicInfo 是否已赋值
+                     * 
                      */
                     bool MusicInfoHasBeenSet() const;
 
                     /**
                      * 获取音速达歌曲 Id，用于匹配 AME 曲库歌曲。
                      * @return MusicIdToMatchAME 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     * 
                      */
                     std::string GetMusicIdToMatchAME() const;
 
                     /**
                      * 设置音速达歌曲 Id，用于匹配 AME 曲库歌曲。
-                     * @param MusicIdToMatchAME 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     * @param _musicIdToMatchAME 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     * 
                      */
                     void SetMusicIdToMatchAME(const std::string& _musicIdToMatchAME);
 
                     /**
                      * 判断参数 MusicIdToMatchAME 是否已赋值
                      * @return MusicIdToMatchAME 是否已赋值
+                     * 
                      */
                     bool MusicIdToMatchAMEHasBeenSet() const;
 

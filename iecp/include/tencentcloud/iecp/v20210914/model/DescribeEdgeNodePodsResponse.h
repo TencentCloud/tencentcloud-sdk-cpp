@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodSet Pod列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EdgeNodePodInfo> GetPodSet() const;
 
                     /**
                      * 判断参数 PodSet 是否已赋值
                      * @return PodSet 是否已赋值
+                     * 
                      */
                     bool PodSetHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取闲聊回复
                      * @return Reply 闲聊回复
+                     * 
                      */
                     std::string GetReply() const;
 
                     /**
                      * 判断参数 Reply 是否已赋值
                      * @return Reply 是否已赋值
+                     * 
                      */
                     bool ReplyHasBeenSet() const;
 
                     /**
                      * 获取对于当前输出回复的自信度
                      * @return Confidence 对于当前输出回复的自信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

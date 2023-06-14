@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取所有语句锁时间总和
                      * @return LockTimeSum 所有语句锁时间总和
+                     * 
                      */
                     double GetLockTimeSum() const;
 
                     /**
                      * 判断参数 LockTimeSum 是否已赋值
                      * @return LockTimeSum 是否已赋值
+                     * 
                      */
                     bool LockTimeSumHasBeenSet() const;
 
                     /**
                      * 获取所有语句查询总次数
                      * @return QueryCount 所有语句查询总次数
+                     * 
                      */
                     int64_t GetQueryCount() const;
 
                     /**
                      * 判断参数 QueryCount 是否已赋值
                      * @return QueryCount 是否已赋值
+                     * 
                      */
                     bool QueryCountHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return Total 总记录数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取所有语句查询时间总和
                      * @return QueryTimeSum 所有语句查询时间总和
+                     * 
                      */
                     double GetQueryTimeSum() const;
 
                     /**
                      * 判断参数 QueryTimeSum 是否已赋值
                      * @return QueryTimeSum 是否已赋值
+                     * 
                      */
                     bool QueryTimeSumHasBeenSet() const;
 
                     /**
                      * 获取慢查询日志数据
                      * @return Data 慢查询日志数据
+                     * 
                      */
                     std::vector<SlowLogData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

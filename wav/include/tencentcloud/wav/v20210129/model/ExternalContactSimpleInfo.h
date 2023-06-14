@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取外部联系人的userId
                      * @return ExternalUserId 外部联系人的userId
+                     * 
                      */
                     std::string GetExternalUserId() const;
 
                     /**
                      * 设置外部联系人的userId
-                     * @param ExternalUserId 外部联系人的userId
+                     * @param _externalUserId 外部联系人的userId
+                     * 
                      */
                     void SetExternalUserId(const std::string& _externalUserId);
 
                     /**
                      * 判断参数 ExternalUserId 是否已赋值
                      * @return ExternalUserId 是否已赋值
+                     * 
                      */
                     bool ExternalUserIdHasBeenSet() const;
 
                     /**
                      * 获取添加了此外部联系人的企业成员userId
                      * @return UserId 添加了此外部联系人的企业成员userId
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员userId
-                     * @param UserId 添加了此外部联系人的企业成员userId
+                     * @param _userId 添加了此外部联系人的企业成员userId
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesName 添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SalesName 添加了此外部联系人的企业成员的姓名
+                     * @param _salesName 添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSalesName(const std::string& _salesName);
 
                     /**
                      * 判断参数 SalesName 是否已赋值
                      * @return SalesName 是否已赋值
+                     * 
                      */
                     bool SalesNameHasBeenSet() const;
 
                     /**
                      * 获取添加了此外部联系人的企业成员的归属部门id列表
                      * @return DepartmentIdList 添加了此外部联系人的企业成员的归属部门id列表
+                     * 
                      */
                     std::vector<int64_t> GetDepartmentIdList() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员的归属部门id列表
-                     * @param DepartmentIdList 添加了此外部联系人的企业成员的归属部门id列表
+                     * @param _departmentIdList 添加了此外部联系人的企业成员的归属部门id列表
+                     * 
                      */
                     void SetDepartmentIdList(const std::vector<int64_t>& _departmentIdList);
 
                     /**
                      * 判断参数 DepartmentIdList 是否已赋值
                      * @return DepartmentIdList 是否已赋值
+                     * 
                      */
                     bool DepartmentIdListHasBeenSet() const;
 

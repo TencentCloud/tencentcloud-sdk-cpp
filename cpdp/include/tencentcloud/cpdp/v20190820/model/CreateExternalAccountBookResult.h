@@ -55,6 +55,7 @@ __PROCESSING__: 进行中。
 __SUCCESS__: 成功
 __FAILED__: 失败
 __PROCESSING__: 进行中。
+                     * 
                      */
                     std::string GetDealStatus() const;
 
@@ -63,16 +64,18 @@ __PROCESSING__: 进行中。
 __SUCCESS__: 成功
 __FAILED__: 失败
 __PROCESSING__: 进行中。
-                     * @param DealStatus 处理状态。
+                     * @param _dealStatus 处理状态。
 __SUCCESS__: 成功
 __FAILED__: 失败
 __PROCESSING__: 进行中。
+                     * 
                      */
                     void SetDealStatus(const std::string& _dealStatus);
 
                     /**
                      * 判断参数 DealStatus 是否已赋值
                      * @return DealStatus 是否已赋值
+                     * 
                      */
                     bool DealStatusHasBeenSet() const;
 
@@ -81,20 +84,23 @@ __PROCESSING__: 进行中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealMessage 处理返回描述，例如失败原因等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealMessage() const;
 
                     /**
                      * 设置处理返回描述，例如失败原因等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealMessage 处理返回描述，例如失败原因等
+                     * @param _dealMessage 处理返回描述，例如失败原因等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealMessage(const std::string& _dealMessage);
 
                     /**
                      * 判断参数 DealMessage 是否已赋值
                      * @return DealMessage 是否已赋值
+                     * 
                      */
                     bool DealMessageHasBeenSet() const;
 
@@ -103,20 +109,23 @@ __PROCESSING__: 进行中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelAccountBookId 渠道电子记账本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelAccountBookId() const;
 
                     /**
                      * 设置渠道电子记账本ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelAccountBookId 渠道电子记账本ID
+                     * @param _channelAccountBookId 渠道电子记账本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelAccountBookId(const std::string& _channelAccountBookId);
 
                     /**
                      * 判断参数 ChannelAccountBookId 是否已赋值
                      * @return ChannelAccountBookId 是否已赋值
+                     * 
                      */
                     bool ChannelAccountBookIdHasBeenSet() const;
 
@@ -125,20 +134,23 @@ __PROCESSING__: 进行中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCollectMoneyAccountInfo() const;
 
                     /**
                      * 设置电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CollectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
+                     * @param _collectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCollectMoneyAccountInfo(const std::string& _collectMoneyAccountInfo);
 
                     /**
                      * 判断参数 CollectMoneyAccountInfo 是否已赋值
                      * @return CollectMoneyAccountInfo 是否已赋值
+                     * 
                      */
                     bool CollectMoneyAccountInfoHasBeenSet() const;
 

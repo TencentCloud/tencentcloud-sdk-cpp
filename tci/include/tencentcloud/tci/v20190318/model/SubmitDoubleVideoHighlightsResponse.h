@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取视频拆条任务ID，用来唯一标识视频拆条任务。
                      * @return JobId 视频拆条任务ID，用来唯一标识视频拆条任务。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取未注册的人员ID列表。若出现此项，代表评估出现了问题，输入的PersonId中有不在库中的人员ID。
                      * @return NotRegistered 未注册的人员ID列表。若出现此项，代表评估出现了问题，输入的PersonId中有不在库中的人员ID。
+                     * 
                      */
                     std::vector<std::string> GetNotRegistered() const;
 
                     /**
                      * 判断参数 NotRegistered 是否已赋值
                      * @return NotRegistered 是否已赋值
+                     * 
                      */
                     bool NotRegisteredHasBeenSet() const;
 

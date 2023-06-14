@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFullUrlCache() const;
 
@@ -64,16 +65,18 @@ namespace TencentCloud
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullUrlCache 是否开启全路径缓存，取值有：
+                     * @param _fullUrlCache 是否开启全路径缓存，取值有：
 <li>on：开启全路径缓存（即关闭参数忽略）；</li>
 <li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
 
                     /**
                      * 判断参数 FullUrlCache 是否已赋值
                      * @return FullUrlCache 是否已赋值
+                     * 
                      */
                     bool FullUrlCacheHasBeenSet() const;
 
@@ -86,6 +89,7 @@ namespace TencentCloud
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIgnoreCase() const;
 
@@ -94,16 +98,18 @@ namespace TencentCloud
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCase 是否忽略大小写缓存，取值有：
+                     * @param _ignoreCase 是否忽略大小写缓存，取值有：
 <li>on：忽略；</li>
 <li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreCase(const std::string& _ignoreCase);
 
                     /**
                      * 判断参数 IgnoreCase 是否已赋值
                      * @return IgnoreCase 是否已赋值
+                     * 
                      */
                     bool IgnoreCaseHasBeenSet() const;
 
@@ -112,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryString CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     QueryString GetQueryString() const;
 
                     /**
                      * 设置CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryString CacheKey 中包含请求参数。
+                     * @param _queryString CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueryString(const QueryString& _queryString);
 
                     /**
                      * 判断参数 QueryString 是否已赋值
                      * @return QueryString 是否已赋值
+                     * 
                      */
                     bool QueryStringHasBeenSet() const;
 

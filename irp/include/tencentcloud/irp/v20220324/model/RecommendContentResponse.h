@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取推荐追踪id，用于行为上报。每次接口调用返回的traceId不同
                      * @return RecTraceId 推荐追踪id，用于行为上报。每次接口调用返回的traceId不同
+                     * 
                      */
                     std::string GetRecTraceId() const;
 
                     /**
                      * 判断参数 RecTraceId 是否已赋值
                      * @return RecTraceId 是否已赋值
+                     * 
                      */
                     bool RecTraceIdHasBeenSet() const;
 
                     /**
                      * 获取标识具体的物料信息
                      * @return DataList 标识具体的物料信息
+                     * 
                      */
                     std::vector<RecItemData> GetDataList() const;
 
                     /**
                      * 判断参数 DataList 是否已赋值
                      * @return DataList 是否已赋值
+                     * 
                      */
                     bool DataListHasBeenSet() const;
 

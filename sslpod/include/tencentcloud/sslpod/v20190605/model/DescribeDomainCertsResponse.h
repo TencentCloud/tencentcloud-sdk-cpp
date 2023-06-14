@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取证书信息
                      * @return Data 证书信息
+                     * 
                      */
                     std::vector<CertInfo> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

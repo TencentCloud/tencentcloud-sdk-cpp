@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取指定条件查询得到的数据明细
                      * @return Data 指定条件查询得到的数据明细
+                     * 
                      */
                     std::vector<ResourceData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

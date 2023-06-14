@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取词汇库中的单词出现在该音频中的那个句子的时间戳，出现了几次，就返回对应次数的起始和结束时间戳
                      * @return VocabDetailInfo 词汇库中的单词出现在该音频中的那个句子的时间戳，出现了几次，就返回对应次数的起始和结束时间戳
+                     * 
                      */
                     std::vector<DetailInfo> GetVocabDetailInfo() const;
 
                     /**
                      * 设置词汇库中的单词出现在该音频中的那个句子的时间戳，出现了几次，就返回对应次数的起始和结束时间戳
-                     * @param VocabDetailInfo 词汇库中的单词出现在该音频中的那个句子的时间戳，出现了几次，就返回对应次数的起始和结束时间戳
+                     * @param _vocabDetailInfo 词汇库中的单词出现在该音频中的那个句子的时间戳，出现了几次，就返回对应次数的起始和结束时间戳
+                     * 
                      */
                     void SetVocabDetailInfo(const std::vector<DetailInfo>& _vocabDetailInfo);
 
                     /**
                      * 判断参数 VocabDetailInfo 是否已赋值
                      * @return VocabDetailInfo 是否已赋值
+                     * 
                      */
                     bool VocabDetailInfoHasBeenSet() const;
 
                     /**
                      * 获取词汇库名
                      * @return VocabLibName 词汇库名
+                     * 
                      */
                     std::string GetVocabLibName() const;
 
                     /**
                      * 设置词汇库名
-                     * @param VocabLibName 词汇库名
+                     * @param _vocabLibName 词汇库名
+                     * 
                      */
                     void SetVocabLibName(const std::string& _vocabLibName);
 
                     /**
                      * 判断参数 VocabLibName 是否已赋值
                      * @return VocabLibName 是否已赋值
+                     * 
                      */
                     bool VocabLibNameHasBeenSet() const;
 

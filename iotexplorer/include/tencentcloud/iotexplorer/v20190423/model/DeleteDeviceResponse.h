@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultCode 删除的结果代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultCode() const;
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultMessage 删除的结果信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultMessage() const;
 
                     /**
                      * 判断参数 ResultMessage 是否已赋值
                      * @return ResultMessage 是否已赋值
+                     * 
                      */
                     bool ResultMessageHasBeenSet() const;
 

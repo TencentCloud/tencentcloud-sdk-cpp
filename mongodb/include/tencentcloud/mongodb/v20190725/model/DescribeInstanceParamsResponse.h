@@ -50,60 +50,70 @@ namespace TencentCloud
                     /**
                      * 获取参数值为枚举类型参数集合。
                      * @return InstanceEnumParam 参数值为枚举类型参数集合。
+                     * 
                      */
                     std::vector<InstanceEnumParam> GetInstanceEnumParam() const;
 
                     /**
                      * 判断参数 InstanceEnumParam 是否已赋值
                      * @return InstanceEnumParam 是否已赋值
+                     * 
                      */
                     bool InstanceEnumParamHasBeenSet() const;
 
                     /**
                      * 获取参数值为 Integer 类型参数集合。
                      * @return InstanceIntegerParam 参数值为 Integer 类型参数集合。
+                     * 
                      */
                     std::vector<InstanceIntegerParam> GetInstanceIntegerParam() const;
 
                     /**
                      * 判断参数 InstanceIntegerParam 是否已赋值
                      * @return InstanceIntegerParam 是否已赋值
+                     * 
                      */
                     bool InstanceIntegerParamHasBeenSet() const;
 
                     /**
                      * 获取参数值为 Text 类型的参数集合。
                      * @return InstanceTextParam 参数值为 Text 类型的参数集合。
+                     * 
                      */
                     std::vector<InstanceTextParam> GetInstanceTextParam() const;
 
                     /**
                      * 判断参数 InstanceTextParam 是否已赋值
                      * @return InstanceTextParam 是否已赋值
+                     * 
                      */
                     bool InstanceTextParamHasBeenSet() const;
 
                     /**
                      * 获取参数值为混合类型的参数集合。
                      * @return InstanceMultiParam 参数值为混合类型的参数集合。
+                     * 
                      */
                     std::vector<InstanceMultiParam> GetInstanceMultiParam() const;
 
                     /**
                      * 判断参数 InstanceMultiParam 是否已赋值
                      * @return InstanceMultiParam 是否已赋值
+                     * 
                      */
                     bool InstanceMultiParamHasBeenSet() const;
 
                     /**
                      * 获取当前实例支持修改的参数个数统计 如0
                      * @return TotalCount 当前实例支持修改的参数个数统计 如0
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

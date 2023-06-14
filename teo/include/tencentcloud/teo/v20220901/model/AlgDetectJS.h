@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取操作名称。
                      * @return Name 操作名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置操作名称。
-                     * @param Name 操作名称。
+                     * @param _name 操作名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>low：低；</li>
 <li>middle：中；</li>
 <li>high：高。</li>
+                     * 
                      */
                     std::string GetWorkLevel() const;
 
@@ -82,88 +86,102 @@ namespace TencentCloud
 <li>low：低；</li>
 <li>middle：中；</li>
 <li>high：高。</li>
-                     * @param WorkLevel 工作量证明 (proof_Of-Work)校验强度，默认low，取值有：
+                     * @param _workLevel 工作量证明 (proof_Of-Work)校验强度，默认low，取值有：
 <li>low：低；</li>
 <li>middle：中；</li>
 <li>high：高。</li>
+                     * 
                      */
                     void SetWorkLevel(const std::string& _workLevel);
 
                     /**
                      * 判断参数 WorkLevel 是否已赋值
                      * @return WorkLevel 是否已赋值
+                     * 
                      */
                     bool WorkLevelHasBeenSet() const;
 
                     /**
                      * 获取执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。
                      * @return ExecuteMode 执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。
+                     * 
                      */
                     int64_t GetExecuteMode() const;
 
                     /**
                      * 设置执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。
-                     * @param ExecuteMode 执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。
+                     * @param _executeMode 执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。
+                     * 
                      */
                     void SetExecuteMode(const int64_t& _executeMode);
 
                     /**
                      * 判断参数 ExecuteMode 是否已赋值
                      * @return ExecuteMode 是否已赋值
+                     * 
                      */
                     bool ExecuteModeHasBeenSet() const;
 
                     /**
                      * 获取客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。
                      * @return InvalidStatTime 客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。
+                     * 
                      */
                     int64_t GetInvalidStatTime() const;
 
                     /**
                      * 设置客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。
-                     * @param InvalidStatTime 客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。
+                     * @param _invalidStatTime 客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。
+                     * 
                      */
                     void SetInvalidStatTime(const int64_t& _invalidStatTime);
 
                     /**
                      * 判断参数 InvalidStatTime 是否已赋值
                      * @return InvalidStatTime 是否已赋值
+                     * 
                      */
                     bool InvalidStatTimeHasBeenSet() const;
 
                     /**
                      * 获取客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。
                      * @return InvalidThreshold 客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。
+                     * 
                      */
                     int64_t GetInvalidThreshold() const;
 
                     /**
                      * 设置客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。
-                     * @param InvalidThreshold 客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。
+                     * @param _invalidThreshold 客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。
+                     * 
                      */
                     void SetInvalidThreshold(const int64_t& _invalidThreshold);
 
                     /**
                      * 判断参数 InvalidThreshold 是否已赋值
                      * @return InvalidThreshold 是否已赋值
+                     * 
                      */
                     bool InvalidThresholdHasBeenSet() const;
 
                     /**
                      * 获取Bot主动特征识别客户端行为校验结果。
                      * @return AlgDetectResults Bot主动特征识别客户端行为校验结果。
+                     * 
                      */
                     std::vector<AlgDetectResult> GetAlgDetectResults() const;
 
                     /**
                      * 设置Bot主动特征识别客户端行为校验结果。
-                     * @param AlgDetectResults Bot主动特征识别客户端行为校验结果。
+                     * @param _algDetectResults Bot主动特征识别客户端行为校验结果。
+                     * 
                      */
                     void SetAlgDetectResults(const std::vector<AlgDetectResult>& _algDetectResults);
 
                     /**
                      * 判断参数 AlgDetectResults 是否已赋值
                      * @return AlgDetectResults 是否已赋值
+                     * 
                      */
                     bool AlgDetectResultsHasBeenSet() const;
 

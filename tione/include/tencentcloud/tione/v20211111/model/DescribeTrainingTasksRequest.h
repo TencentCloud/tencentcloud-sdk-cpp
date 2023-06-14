@@ -61,6 +61,7 @@ Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
 ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -73,7 +74,7 @@ Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
 ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
-                     * @param Filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+                     * @param _filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
 
 取值范围：
 Name（名称）：task1
@@ -81,102 +82,119 @@ Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
 ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
                      * @return TagFilters 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
-                     * @param TagFilters 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * @param _tagFilters 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为10，最大为50
                      * @return Limit 返回数量，默认为10，最大为50
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大为50
-                     * @param Limit 返回数量，默认为10，最大为50
+                     * @param _limit 返回数量，默认为10，最大为50
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC
                      * @return Order 输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC
-                     * @param Order 输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC
+                     * @param _order 输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
                      * @return OrderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
-                     * @param OrderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * @param _orderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 

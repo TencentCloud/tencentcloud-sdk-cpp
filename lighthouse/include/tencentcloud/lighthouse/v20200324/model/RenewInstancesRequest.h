@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。
                      * @return InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。
-                     * @param InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。
+                     * @param _instanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
@@ -88,6 +94,7 @@ FALSE：表示续费实例同时不再续费其挂载的数据盘
 TRUE：表示续费实例同时续费其挂载的数据盘
 FALSE：表示续费实例同时不再续费其挂载的数据盘
 默认取值：TRUE。
+                     * 
                      */
                     bool GetRenewDataDisk() const;
 
@@ -96,16 +103,18 @@ FALSE：表示续费实例同时不再续费其挂载的数据盘
 TRUE：表示续费实例同时续费其挂载的数据盘
 FALSE：表示续费实例同时不再续费其挂载的数据盘
 默认取值：TRUE。
-                     * @param RenewDataDisk 是否续费弹性数据盘。取值范围：
+                     * @param _renewDataDisk 是否续费弹性数据盘。取值范围：
 TRUE：表示续费实例同时续费其挂载的数据盘
 FALSE：表示续费实例同时不再续费其挂载的数据盘
 默认取值：TRUE。
+                     * 
                      */
                     void SetRenewDataDisk(const bool& _renewDataDisk);
 
                     /**
                      * 判断参数 RenewDataDisk 是否已赋值
                      * @return RenewDataDisk 是否已赋值
+                     * 
                      */
                     bool RenewDataDiskHasBeenSet() const;
 
@@ -118,6 +127,7 @@ FALSE：表示不自动抵扣代金券
 TRUE：表示自动抵扣代金券
 FALSE：表示不自动抵扣代金券
 默认取值：FALSE。
+                     * 
                      */
                     bool GetAutoVoucher() const;
 
@@ -126,16 +136,18 @@ FALSE：表示不自动抵扣代金券
 TRUE：表示自动抵扣代金券
 FALSE：表示不自动抵扣代金券
 默认取值：FALSE。
-                     * @param AutoVoucher 是否自动抵扣代金券。取值范围：
+                     * @param _autoVoucher 是否自动抵扣代金券。取值范围：
 TRUE：表示自动抵扣代金券
 FALSE：表示不自动抵扣代金券
 默认取值：FALSE。
+                     * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 

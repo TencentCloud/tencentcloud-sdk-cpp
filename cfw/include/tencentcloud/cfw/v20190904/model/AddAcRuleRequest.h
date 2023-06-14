@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取-1表示优先级最低，1表示优先级最高
                      * @return OrderIndex -1表示优先级最低，1表示优先级最高
+                     * 
                      */
                     std::string GetOrderIndex() const;
 
                     /**
                      * 设置-1表示优先级最低，1表示优先级最高
-                     * @param OrderIndex -1表示优先级最低，1表示优先级最高
+                     * @param _orderIndex -1表示优先级最低，1表示优先级最高
+                     * 
                      */
                     void SetOrderIndex(const std::string& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
@@ -69,6 +72,7 @@ log：观察
 accept：放行
 drop：拒绝
 log：观察
+                     * 
                      */
                     std::string GetRuleAction() const;
 
@@ -77,16 +81,18 @@ log：观察
 accept：放行
 drop：拒绝
 log：观察
-                     * @param RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值：
+                     * @param _ruleAction 访问控制策略中设置的流量通过云防火墙的方式。取值：
 accept：放行
 drop：拒绝
 log：观察
+                     * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
 
                     /**
                      * 判断参数 RuleAction 是否已赋值
                      * @return RuleAction 是否已赋值
+                     * 
                      */
                     bool RuleActionHasBeenSet() const;
 
@@ -97,6 +103,7 @@ out：内对外流量访问控制
                      * @return Direction 访问控制策略的流量方向。取值：
 in：外对内流量访问控制
 out：内对外流量访问控制
+                     * 
                      */
                     std::string GetDirection() const;
 
@@ -104,33 +111,38 @@ out：内对外流量访问控制
                      * 设置访问控制策略的流量方向。取值：
 in：外对内流量访问控制
 out：内对外流量访问控制
-                     * @param Direction 访问控制策略的流量方向。取值：
+                     * @param _direction 访问控制策略的流量方向。取值：
 in：外对内流量访问控制
 out：内对外流量访问控制
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略的描述信息
                      * @return Description 访问控制策略的描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置访问控制策略的描述信息
-                     * @param Description 访问控制策略的描述信息
+                     * @param _description 访问控制策略的描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -147,6 +159,7 @@ location：源区域
 template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
+                     * 
                      */
                     std::string GetSourceType() const;
 
@@ -157,18 +170,20 @@ location：源区域
 template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
-                     * @param SourceType 访问控制策略中的源地址类型。取值：
+                     * @param _sourceType 访问控制策略中的源地址类型。取值：
 net：源IP或网段（IP或者CIDR）
 location：源区域
 template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -201,6 +216,7 @@ vendor：云厂商
 
 当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
+                     * 
                      */
                     std::string GetSourceContent() const;
 
@@ -219,7 +235,7 @@ vendor：云厂商
 
 当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
-                     * @param SourceContent 访问控制策略中的源地址。取值：
+                     * @param _sourceContent 访问控制策略中的源地址。取值：
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
@@ -233,12 +249,14 @@ vendor：云厂商
 
 当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
+                     * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
 
                     /**
                      * 判断参数 SourceContent 是否已赋值
                      * @return SourceContent 是否已赋值
+                     * 
                      */
                     bool SourceContentHasBeenSet() const;
 
@@ -257,6 +275,7 @@ template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
 domain: 域名或者ip
+                     * 
                      */
                     std::string GetDestType() const;
 
@@ -268,19 +287,21 @@ template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
 domain: 域名或者ip
-                     * @param DestType 访问控制策略中的目的地址类型。取值：
+                     * @param _destType 访问控制策略中的目的地址类型。取值：
 net：目的IP或者网段（IP或者CIDR）
 location：源区域
 template：云防火墙地址模板
 instance：实例id
 vendor：云厂商
 domain: 域名或者ip
+                     * 
                      */
                     void SetDestType(const std::string& _destType);
 
                     /**
                      * 判断参数 DestType 是否已赋值
                      * @return DestType 是否已赋值
+                     * 
                      */
                     bool DestTypeHasBeenSet() const;
 
@@ -319,6 +340,7 @@ domain: 域名或者ip
 
 当DestType为vendor时，DestContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
+                     * 
                      */
                     std::string GetDestContent() const;
 
@@ -340,7 +362,7 @@ domain: 域名或者ip
 
 当DestType为vendor时，DestContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
-                     * @param DestContent 访问控制策略中的目的地址。取值：
+                     * @param _destContent 访问控制策略中的目的地址。取值：
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
@@ -357,12 +379,14 @@ domain: 域名或者ip
 
 当DestType为vendor时，DestContent为所选择厂商的公网ip列表。
 例如：aws,huawei,tencent,aliyun,azure,all代表以上五个
+                     * 
                      */
                     void SetDestContent(const std::string& _destContent);
 
                     /**
                      * 判断参数 DestContent 是否已赋值
                      * @return DestContent 是否已赋值
+                     * 
                      */
                     bool DestContentHasBeenSet() const;
 
@@ -373,6 +397,7 @@ domain: 域名或者ip
                      * @return Port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80,443：80或者443
+                     * 
                      */
                     std::string GetPort() const;
 
@@ -380,33 +405,38 @@ domain: 域名或者ip
                      * 设置访问控制策略的端口。取值：
 -1/-1：全部端口
 80,443：80或者443
-                     * @param Port 访问控制策略的端口。取值：
+                     * @param _port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80,443：80或者443
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP
                      * @return Protocol 访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP
-                     * @param Protocol 访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP
+                     * @param _protocol 访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -417,6 +447,7 @@ TLS/SSL
                      * @return ApplicationName 七层协议，取值：
 HTTP/HTTPS
 TLS/SSL
+                     * 
                      */
                     std::string GetApplicationName() const;
 
@@ -424,15 +455,17 @@ TLS/SSL
                      * 设置七层协议，取值：
 HTTP/HTTPS
 TLS/SSL
-                     * @param ApplicationName 七层协议，取值：
+                     * @param _applicationName 七层协议，取值：
 HTTP/HTTPS
 TLS/SSL
+                     * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
 
                     /**
                      * 判断参数 ApplicationName 是否已赋值
                      * @return ApplicationName 是否已赋值
+                     * 
                      */
                     bool ApplicationNameHasBeenSet() const;
 
@@ -441,20 +474,23 @@ TLS/SSL
 true为启用，false为不启用
                      * @return Enable 是否启用规则，默认为启用，取值：
 true为启用，false为不启用
+                     * 
                      */
                     std::string GetEnable() const;
 
                     /**
                      * 设置是否启用规则，默认为启用，取值：
 true为启用，false为不启用
-                     * @param Enable 是否启用规则，默认为启用，取值：
+                     * @param _enable 是否启用规则，默认为启用，取值：
 true为启用，false为不启用
+                     * 
                      */
                     void SetEnable(const std::string& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

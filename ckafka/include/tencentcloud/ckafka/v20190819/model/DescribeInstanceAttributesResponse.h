@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例属性返回结果对象。
                      * @return Result 实例属性返回结果对象。
+                     * 
                      */
                     InstanceAttributesResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

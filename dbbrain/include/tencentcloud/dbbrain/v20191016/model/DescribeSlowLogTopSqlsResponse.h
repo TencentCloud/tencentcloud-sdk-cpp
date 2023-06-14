@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的记录总数。
                      * @return TotalCount 符合条件的记录总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取慢日志 top sql 列表
                      * @return Rows 慢日志 top sql 列表
+                     * 
                      */
                     std::vector<SlowLogTopSqlItem> GetRows() const;
 
                     /**
                      * 判断参数 Rows 是否已赋值
                      * @return Rows 是否已赋值
+                     * 
                      */
                     bool RowsHasBeenSet() const;
 

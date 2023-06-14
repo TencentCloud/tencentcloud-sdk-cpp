@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取集群详细信息
                      * @return Detail 集群详细信息
+                     * 
                      */
                     CynosdbClusterDetail GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

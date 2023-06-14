@@ -57,6 +57,7 @@ set：设置。变更指定头部参数的取值为设置后的值；若设置�
 del：删除。删除指定的头部参数
 add：增加。增加指定的头部参数，默认允许重复添加，即重复添加相同的头部（注：重复添加可能会影响浏览器响应，请优先使用set操作）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderMode() const;
 
@@ -66,17 +67,19 @@ set：设置。变更指定头部参数的取值为设置后的值；若设置�
 del：删除。删除指定的头部参数
 add：增加。增加指定的头部参数，默认允许重复添加，即重复添加相同的头部（注：重复添加可能会影响浏览器响应，请优先使用set操作）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderMode http 头部设置方式
+                     * @param _headerMode http 头部设置方式
 set：设置。变更指定头部参数的取值为设置后的值；若设置的头部不存在，则会增加该头部；若存在多个重复的头部参数，则会全部变更，同时合并为一个头部。
 del：删除。删除指定的头部参数
 add：增加。增加指定的头部参数，默认允许重复添加，即重复添加相同的头部（注：重复添加可能会影响浏览器响应，请优先使用set操作）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderMode(const std::string& _headerMode);
 
                     /**
                      * 判断参数 HeaderMode 是否已赋值
                      * @return HeaderMode 是否已赋值
+                     * 
                      */
                     bool HeaderModeHasBeenSet() const;
 
@@ -85,20 +88,23 @@ add：增加。增加指定的头部参数，默认允许重复添加，即重�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderName http 头部名称，最多可设置 100 个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderName() const;
 
                     /**
                      * 设置http 头部名称，最多可设置 100 个字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderName http 头部名称，最多可设置 100 个字符
+                     * @param _headerName http 头部名称，最多可设置 100 个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderName(const std::string& _headerName);
 
                     /**
                      * 判断参数 HeaderName 是否已赋值
                      * @return HeaderName 是否已赋值
+                     * 
                      */
                     bool HeaderNameHasBeenSet() const;
 
@@ -111,6 +117,7 @@ Mode 为 add/set 时必填
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderValue() const;
 
@@ -119,16 +126,18 @@ Mode 为 add/set 时必填
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderValue http 头部值，最多可设置 1000 个字符
+                     * @param _headerValue http 头部值，最多可设置 1000 个字符
 Mode 为 del 时非必填
 Mode 为 add/set 时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderValue(const std::string& _headerValue);
 
                     /**
                      * 判断参数 HeaderValue 是否已赋值
                      * @return HeaderValue 是否已赋值
+                     * 
                      */
                     bool HeaderValueHasBeenSet() const;
 
@@ -145,6 +154,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -155,18 +165,20 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -183,6 +195,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -193,18 +206,20 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RulePaths RuleType 对应类型下的匹配内容：
+                     * @param _rulePaths RuleType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 

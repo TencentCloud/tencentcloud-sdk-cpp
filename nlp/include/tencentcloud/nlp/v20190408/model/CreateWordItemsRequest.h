@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库ID。
                      * @return DictId 自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置自定义词库ID。
-                     * @param DictId 自定义词库ID。
+                     * @param _dictId 自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 
                     /**
                      * 获取待添加的词条集合。
                      * @return WordItems 待添加的词条集合。
+                     * 
                      */
                     std::vector<WordItem> GetWordItems() const;
 
                     /**
                      * 设置待添加的词条集合。
-                     * @param WordItems 待添加的词条集合。
+                     * @param _wordItems 待添加的词条集合。
+                     * 
                      */
                     void SetWordItems(const std::vector<WordItem>& _wordItems);
 
                     /**
                      * 判断参数 WordItems 是否已赋值
                      * @return WordItems 是否已赋值
+                     * 
                      */
                     bool WordItemsHasBeenSet() const;
 

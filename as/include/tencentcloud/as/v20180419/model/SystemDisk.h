@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
+                     * @param _diskType 系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskSize 系统盘大小，单位：GB。默认值为 50
+                     * @param _diskSize 系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 

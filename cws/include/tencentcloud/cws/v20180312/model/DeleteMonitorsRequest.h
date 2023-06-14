@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取监控任务ID列表
                      * @return MonitorIds 监控任务ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetMonitorIds() const;
 
                     /**
                      * 设置监控任务ID列表
-                     * @param MonitorIds 监控任务ID列表
+                     * @param _monitorIds 监控任务ID列表
+                     * 
                      */
                     void SetMonitorIds(const std::vector<uint64_t>& _monitorIds);
 
                     /**
                      * 判断参数 MonitorIds 是否已赋值
                      * @return MonitorIds 是否已赋值
+                     * 
                      */
                     bool MonitorIdsHasBeenSet() const;
 

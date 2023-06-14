@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取号码
                      * @return Number 号码
+                     * 
                      */
                     std::string GetNumber() const;
 
                     /**
                      * 设置号码
-                     * @param Number 号码
+                     * @param _number 号码
+                     * 
                      */
                     void SetNumber(const std::string& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取绑定的外呼技能组
                      * @return CallOutSkillGroupIds 绑定的外呼技能组
+                     * 
                      */
                     std::vector<uint64_t> GetCallOutSkillGroupIds() const;
 
                     /**
                      * 设置绑定的外呼技能组
-                     * @param CallOutSkillGroupIds 绑定的外呼技能组
+                     * @param _callOutSkillGroupIds 绑定的外呼技能组
+                     * 
                      */
                     void SetCallOutSkillGroupIds(const std::vector<uint64_t>& _callOutSkillGroupIds);
 
                     /**
                      * 判断参数 CallOutSkillGroupIds 是否已赋值
                      * @return CallOutSkillGroupIds 是否已赋值
+                     * 
                      */
                     bool CallOutSkillGroupIdsHasBeenSet() const;
 

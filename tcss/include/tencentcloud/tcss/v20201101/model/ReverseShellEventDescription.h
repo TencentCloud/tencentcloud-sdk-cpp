@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取解决方案
                      * @return Solution 解决方案
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
-                     * @param Solution 解决方案
+                     * @param _solution 解决方案
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 事件备注信息
+                     * @param _remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取目标地址
                      * @return DstAddress 目标地址
+                     * 
                      */
                     std::string GetDstAddress() const;
 
                     /**
                      * 设置目标地址
-                     * @param DstAddress 目标地址
+                     * @param _dstAddress 目标地址
+                     * 
                      */
                     void SetDstAddress(const std::string& _dstAddress);
 
                     /**
                      * 判断参数 DstAddress 是否已赋值
                      * @return DstAddress 是否已赋值
+                     * 
                      */
                     bool DstAddressHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperationTime 事件最后一次处理的时间
+                     * @param _operationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
 
                     /**
                      * 判断参数 OperationTime 是否已赋值
                      * @return OperationTime 是否已赋值
+                     * 
                      */
                     bool OperationTimeHasBeenSet() const;
 

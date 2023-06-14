@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取特定规格的采样截图信息集合，每个元素代表一套相同规格的采样截图。
                      * @return SampleSnapshotSet 特定规格的采样截图信息集合，每个元素代表一套相同规格的采样截图。
+                     * 
                      */
                     std::vector<MediaSampleSnapshotItem> GetSampleSnapshotSet() const;
 
                     /**
                      * 设置特定规格的采样截图信息集合，每个元素代表一套相同规格的采样截图。
-                     * @param SampleSnapshotSet 特定规格的采样截图信息集合，每个元素代表一套相同规格的采样截图。
+                     * @param _sampleSnapshotSet 特定规格的采样截图信息集合，每个元素代表一套相同规格的采样截图。
+                     * 
                      */
                     void SetSampleSnapshotSet(const std::vector<MediaSampleSnapshotItem>& _sampleSnapshotSet);
 
                     /**
                      * 判断参数 SampleSnapshotSet 是否已赋值
                      * @return SampleSnapshotSet 是否已赋值
+                     * 
                      */
                     bool SampleSnapshotSetHasBeenSet() const;
 

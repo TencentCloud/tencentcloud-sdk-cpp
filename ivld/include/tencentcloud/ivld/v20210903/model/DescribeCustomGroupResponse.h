@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取自定义人物库所包含的人物个数
                      * @return GroupSize 自定义人物库所包含的人物个数
+                     * 
                      */
                     int64_t GetGroupSize() const;
 
                     /**
                      * 判断参数 GroupSize 是否已赋值
                      * @return GroupSize 是否已赋值
+                     * 
                      */
                     bool GroupSizeHasBeenSet() const;
 
                     /**
                      * 获取自定义人物库图片后续所在的存储桶
                      * @return Bucket 自定义人物库图片后续所在的存储桶
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

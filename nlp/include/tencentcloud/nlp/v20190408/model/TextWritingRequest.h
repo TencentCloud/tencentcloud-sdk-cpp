@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。
                      * @return Text 待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。
-                     * @param Text 待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。
+                     * @param _text 待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -67,6 +70,7 @@ en：英文
                      * @return SourceLang 待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
+                     * 
                      */
                     std::string GetSourceLang() const;
 
@@ -74,15 +78,17 @@ en：英文
                      * 设置待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @param SourceLang 待续写文本的语言类型，支持语言如下：
+                     * @param _sourceLang 待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
+                     * 
                      */
                     void SetSourceLang(const std::string& _sourceLang);
 
                     /**
                      * 判断参数 SourceLang 是否已赋值
                      * @return SourceLang 是否已赋值
+                     * 
                      */
                     bool SourceLangHasBeenSet() const;
 
@@ -91,20 +97,23 @@ en：英文
 （注意实际结果可能小于指定个数）
                      * @return Number 返回续写结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
+                     * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置返回续写结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
-                     * @param Number 返回续写结果的个数。数量需>=1且<=5。
+                     * @param _number 返回续写结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
+                     * 
                      */
                     void SetNumber(const int64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
@@ -117,6 +126,7 @@ academic：学术领域，仅支持英文补全
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
+                     * 
                      */
                     std::string GetDomain() const;
 
@@ -125,16 +135,18 @@ academic：学术领域，仅支持英文补全
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
-                     * @param Domain 指定续写领域，支持领域如下：
+                     * @param _domain 指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -151,6 +163,7 @@ military_history：军事
 xuanhuan_wuxia：武侠
 urban_officialdom：职场
 默认为xuanhuan_wuxia（武侠）。
+                     * 
                      */
                     std::string GetStyle() const;
 
@@ -161,18 +174,20 @@ military_history：军事
 xuanhuan_wuxia：武侠
 urban_officialdom：职场
 默认为xuanhuan_wuxia（武侠）。
-                     * @param Style 指定续写风格，支持风格如下：
+                     * @param _style 指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠
 urban_officialdom：职场
 默认为xuanhuan_wuxia（武侠）。
+                     * 
                      */
                     void SetStyle(const std::string& _style);
 
                     /**
                      * 判断参数 Style 是否已赋值
                      * @return Style 是否已赋值
+                     * 
                      */
                     bool StyleHasBeenSet() const;
 

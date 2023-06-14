@@ -63,6 +63,7 @@ CLIENT_TYPE_IOS ios系统;
 CLIENT_TYPE_ANDROID 安卓系统;
 CLIENT_TYPE_WAP WAP场景;
 CLIENT_TYPE_H5 H5场景;
+                     * 
                      */
                     std::string GetClientType() const;
 
@@ -75,7 +76,7 @@ CLIENT_TYPE_IOS ios系统;
 CLIENT_TYPE_ANDROID 安卓系统;
 CLIENT_TYPE_WAP WAP场景;
 CLIENT_TYPE_H5 H5场景;
-                     * @param ClientType 场景类型。
+                     * @param _clientType 场景类型。
 wechat_ecommerce渠道 - h5支付方式，此字段必填；
 枚举值：
 CLIENT_TYPE_UNKNOWN 未知;
@@ -83,84 +84,98 @@ CLIENT_TYPE_IOS ios系统;
 CLIENT_TYPE_ANDROID 安卓系统;
 CLIENT_TYPE_WAP WAP场景;
 CLIENT_TYPE_H5 H5场景;
+                     * 
                      */
                     void SetClientType(const std::string& _clientType);
 
                     /**
                      * 判断参数 ClientType 是否已赋值
                      * @return ClientType 是否已赋值
+                     * 
                      */
                     bool ClientTypeHasBeenSet() const;
 
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取网站URL。
                      * @return AppUrl 网站URL。
+                     * 
                      */
                     std::string GetAppUrl() const;
 
                     /**
                      * 设置网站URL。
-                     * @param AppUrl 网站URL。
+                     * @param _appUrl 网站URL。
+                     * 
                      */
                     void SetAppUrl(const std::string& _appUrl);
 
                     /**
                      * 判断参数 AppUrl 是否已赋值
                      * @return AppUrl 是否已赋值
+                     * 
                      */
                     bool AppUrlHasBeenSet() const;
 
                     /**
                      * 获取IOS平台BundleID。
                      * @return BundleId IOS平台BundleID。
+                     * 
                      */
                     std::string GetBundleId() const;
 
                     /**
                      * 设置IOS平台BundleID。
-                     * @param BundleId IOS平台BundleID。
+                     * @param _bundleId IOS平台BundleID。
+                     * 
                      */
                     void SetBundleId(const std::string& _bundleId);
 
                     /**
                      * 判断参数 BundleId 是否已赋值
                      * @return BundleId 是否已赋值
+                     * 
                      */
                     bool BundleIdHasBeenSet() const;
 
                     /**
                      * 获取Android平台PackageName
                      * @return PackageName Android平台PackageName
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置Android平台PackageName
-                     * @param PackageName Android平台PackageName
+                     * @param _packageName Android平台PackageName
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 

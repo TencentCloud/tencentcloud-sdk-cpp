@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回创建成功的数量
                      * @return Data 返回创建成功的数量
+                     * 
                      */
                     int64_t GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

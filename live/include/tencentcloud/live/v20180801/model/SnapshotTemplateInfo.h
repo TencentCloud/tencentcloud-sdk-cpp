@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取模板 ID。
                      * @return TemplateId 模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板 ID。
-                     * @param TemplateId 模板 ID。
+                     * @param _templateId 模板 ID。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板名称。
                      * @return TemplateName 模板名称。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称。
-                     * @param TemplateName 模板名称。
+                     * @param _templateName 模板名称。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取截图时间间隔，5-300秒。
                      * @return SnapshotInterval 截图时间间隔，5-300秒。
+                     * 
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
                      * 设置截图时间间隔，5-300秒。
-                     * @param SnapshotInterval 截图时间间隔，5-300秒。
+                     * @param _snapshotInterval 截图时间间隔，5-300秒。
+                     * 
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
 
                     /**
                      * 判断参数 SnapshotInterval 是否已赋值
                      * @return SnapshotInterval 是否已赋值
+                     * 
                      */
                     bool SnapshotIntervalHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 0：原始宽度并适配原始比例。
                      * @return Width 截图宽度，范围：0-3000。 
 0：原始宽度并适配原始比例。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置截图宽度，范围：0-3000。 
 0：原始宽度并适配原始比例。
-                     * @param Width 截图宽度，范围：0-3000。 
+                     * @param _width 截图宽度，范围：0-3000。 
 0：原始宽度并适配原始比例。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -127,110 +139,128 @@ namespace TencentCloud
 0：原始高度并适配原始比例。
                      * @return Height 截图高度，范围：0-2000。
 0：原始高度并适配原始比例。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置截图高度，范围：0-2000。
 0：原始高度并适配原始比例。
-                     * @param Height 截图高度，范围：0-2000。
+                     * @param _height 截图高度，范围：0-2000。
 0：原始高度并适配原始比例。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取是否开启鉴黄，0：不开启，1：开启。
                      * @return PornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 
                      */
                     int64_t GetPornFlag() const;
 
                     /**
                      * 设置是否开启鉴黄，0：不开启，1：开启。
-                     * @param PornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * @param _pornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 
                      */
                     void SetPornFlag(const int64_t& _pornFlag);
 
                     /**
                      * 判断参数 PornFlag 是否已赋值
                      * @return PornFlag 是否已赋值
+                     * 
                      */
                     bool PornFlagHasBeenSet() const;
 
                     /**
                      * 获取Cos 应用 ID。
                      * @return CosAppId Cos 应用 ID。
+                     * 
                      */
                     int64_t GetCosAppId() const;
 
                     /**
                      * 设置Cos 应用 ID。
-                     * @param CosAppId Cos 应用 ID。
+                     * @param _cosAppId Cos 应用 ID。
+                     * 
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
 
                     /**
                      * 判断参数 CosAppId 是否已赋值
                      * @return CosAppId 是否已赋值
+                     * 
                      */
                     bool CosAppIdHasBeenSet() const;
 
                     /**
                      * 获取Cos Bucket名称。
                      * @return CosBucket Cos Bucket名称。
+                     * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置Cos Bucket名称。
-                     * @param CosBucket Cos Bucket名称。
+                     * @param _cosBucket Cos Bucket名称。
+                     * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
 
                     /**
                      * 判断参数 CosBucket 是否已赋值
                      * @return CosBucket 是否已赋值
+                     * 
                      */
                     bool CosBucketHasBeenSet() const;
 
                     /**
                      * 获取Cos 地域。
                      * @return CosRegion Cos 地域。
+                     * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
                      * 设置Cos 地域。
-                     * @param CosRegion Cos 地域。
+                     * @param _cosRegion Cos 地域。
+                     * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
 
                     /**
                      * 判断参数 CosRegion 是否已赋值
                      * @return CosRegion 是否已赋值
+                     * 
                      */
                     bool CosRegionHasBeenSet() const;
 
                     /**
                      * 获取模板描述。
                      * @return Description 模板描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置模板描述。
-                     * @param Description 模板描述。
+                     * @param _description 模板描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosPrefix Cos Bucket文件夹前缀。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosPrefix() const;
 
                     /**
                      * 设置Cos Bucket文件夹前缀。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosPrefix Cos Bucket文件夹前缀。
+                     * @param _cosPrefix Cos Bucket文件夹前缀。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosPrefix(const std::string& _cosPrefix);
 
                     /**
                      * 判断参数 CosPrefix 是否已赋值
                      * @return CosPrefix 是否已赋值
+                     * 
                      */
                     bool CosPrefixHasBeenSet() const;
 
@@ -261,20 +294,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosFileName Cos 文件名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosFileName() const;
 
                     /**
                      * 设置Cos 文件名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosFileName Cos 文件名称。
+                     * @param _cosFileName Cos 文件名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosFileName(const std::string& _cosFileName);
 
                     /**
                      * 判断参数 CosFileName 是否已赋值
                      * @return CosFileName 是否已赋值
+                     * 
                      */
                     bool CosFileNameHasBeenSet() const;
 

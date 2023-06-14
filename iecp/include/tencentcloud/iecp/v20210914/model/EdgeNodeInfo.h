@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘节点ID
                      * @return Id IECP边缘节点ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置IECP边缘节点ID
-                     * @param Id IECP边缘节点ID
+                     * @param _id IECP边缘节点ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return Name 节点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称
-                     * @param Name 节点名称
+                     * @param _name 节点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取节点状态 （1健康｜2异常｜3离线｜4未激活）
                      * @return Status 节点状态 （1健康｜2异常｜3离线｜4未激活）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置节点状态 （1健康｜2异常｜3离线｜4未激活）
-                     * @param Status 节点状态 （1健康｜2异常｜3离线｜4未激活）
+                     * @param _status 节点状态 （1健康｜2异常｜3离线｜4未激活）
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -125,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 节点资源信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeNodeResourceInfo GetResource() const;
 
                     /**
                      * 设置节点资源信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource 节点资源信息
+                     * @param _resource 节点资源信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const EdgeNodeResourceInfo& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -147,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuArchitecture CPU体系结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCpuArchitecture() const;
 
                     /**
                      * 设置CPU体系结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuArchitecture CPU体系结构
+                     * @param _cpuArchitecture CPU体系结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuArchitecture(const std::string& _cpuArchitecture);
 
                     /**
                      * 判断参数 CpuArchitecture 是否已赋值
                      * @return CpuArchitecture 是否已赋值
+                     * 
                      */
                     bool CpuArchitectureHasBeenSet() const;
 
@@ -169,20 +187,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ip IP地址
+                     * @param _ip IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -191,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatingSystem 操作系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperatingSystem() const;
 
                     /**
                      * 设置操作系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatingSystem 操作系统
+                     * @param _operatingSystem 操作系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatingSystem(const std::string& _operatingSystem);
 
                     /**
                      * 判断参数 OperatingSystem 是否已赋值
                      * @return OperatingSystem 是否已赋值
+                     * 
                      */
                     bool OperatingSystemHasBeenSet() const;
 
@@ -215,6 +239,7 @@ key：NodeUnit模版ID，Value：NodeUnit模版名称
                      * @return NodeUnits 节点所属的NodeUnit
 key：NodeUnit模版ID，Value：NodeUnit模版名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     KeyValueObj GetNodeUnits() const;
 
@@ -222,15 +247,17 @@ key：NodeUnit模版ID，Value：NodeUnit模版名称
                      * 设置节点所属的NodeUnit
 key：NodeUnit模版ID，Value：NodeUnit模版名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeUnits 节点所属的NodeUnit
+                     * @param _nodeUnits 节点所属的NodeUnit
 key：NodeUnit模版ID，Value：NodeUnit模版名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeUnits(const KeyValueObj& _nodeUnits);
 
                     /**
                      * 判断参数 NodeUnits 是否已赋值
                      * @return NodeUnits 是否已赋值
+                     * 
                      */
                     bool NodeUnitsHasBeenSet() const;
 

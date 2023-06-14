@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回创建成功的部署组ID，返回null表示失败
                      * @return Result 返回创建成功的部署组ID，返回null表示失败
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

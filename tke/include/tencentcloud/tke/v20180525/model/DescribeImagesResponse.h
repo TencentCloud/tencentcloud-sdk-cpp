@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 镜像数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageInstanceSet 镜像信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageInstance> GetImageInstanceSet() const;
 
                     /**
                      * 判断参数 ImageInstanceSet 是否已赋值
                      * @return ImageInstanceSet 是否已赋值
+                     * 
                      */
                     bool ImageInstanceSetHasBeenSet() const;
 

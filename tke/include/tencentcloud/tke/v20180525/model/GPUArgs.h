@@ -54,38 +54,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MIGEnable 是否启用MIG特性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetMIGEnable() const;
 
                     /**
                      * 设置是否启用MIG特性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MIGEnable 是否启用MIG特性
+                     * @param _mIGEnable 是否启用MIG特性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMIGEnable(const bool& _mIGEnable);
 
                     /**
                      * 判断参数 MIGEnable 是否已赋值
                      * @return MIGEnable 是否已赋值
+                     * 
                      */
                     bool MIGEnableHasBeenSet() const;
 
                     /**
                      * 获取GPU驱动版本信息
                      * @return Driver GPU驱动版本信息
+                     * 
                      */
                     DriverVersion GetDriver() const;
 
                     /**
                      * 设置GPU驱动版本信息
-                     * @param Driver GPU驱动版本信息
+                     * @param _driver GPU驱动版本信息
+                     * 
                      */
                     void SetDriver(const DriverVersion& _driver);
 
                     /**
                      * 判断参数 Driver 是否已赋值
                      * @return Driver 是否已赋值
+                     * 
                      */
                     bool DriverHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CUDA CUDA版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DriverVersion GetCUDA() const;
 
                     /**
                      * 设置CUDA版本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CUDA CUDA版本信息
+                     * @param _cUDA CUDA版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCUDA(const DriverVersion& _cUDA);
 
                     /**
                      * 判断参数 CUDA 是否已赋值
                      * @return CUDA 是否已赋值
+                     * 
                      */
                     bool CUDAHasBeenSet() const;
 
@@ -116,20 +125,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CUDNN cuDNN版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CUDNN GetCUDNN() const;
 
                     /**
                      * 设置cuDNN版本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CUDNN cuDNN版本信息
+                     * @param _cUDNN cuDNN版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCUDNN(const CUDNN& _cUDNN);
 
                     /**
                      * 判断参数 CUDNN 是否已赋值
                      * @return CUDNN 是否已赋值
+                     * 
                      */
                     bool CUDNNHasBeenSet() const;
 
@@ -138,20 +150,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomDriver 自定义GPU驱动信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CustomDriver GetCustomDriver() const;
 
                     /**
                      * 设置自定义GPU驱动信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomDriver 自定义GPU驱动信息
+                     * @param _customDriver 自定义GPU驱动信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomDriver(const CustomDriver& _customDriver);
 
                     /**
                      * 判断参数 CustomDriver 是否已赋值
                      * @return CustomDriver 是否已赋值
+                     * 
                      */
                     bool CustomDriverHasBeenSet() const;
 

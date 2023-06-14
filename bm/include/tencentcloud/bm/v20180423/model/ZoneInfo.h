@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区ID
                      * @return Zone 可用区ID
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区ID
-                     * @param Zone 可用区ID
+                     * @param _zone 可用区ID
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区整型ID
                      * @return ZoneId 可用区整型ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置可用区整型ID
-                     * @param ZoneId 可用区整型ID
+                     * @param _zoneId 可用区整型ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区描述
                      * @return ZoneDescription 可用区描述
+                     * 
                      */
                     std::string GetZoneDescription() const;
 
                     /**
                      * 设置可用区描述
-                     * @param ZoneDescription 可用区描述
+                     * @param _zoneDescription 可用区描述
+                     * 
                      */
                     void SetZoneDescription(const std::string& _zoneDescription);
 
                     /**
                      * 判断参数 ZoneDescription 是否已赋值
                      * @return ZoneDescription 是否已赋值
+                     * 
                      */
                     bool ZoneDescriptionHasBeenSet() const;
 

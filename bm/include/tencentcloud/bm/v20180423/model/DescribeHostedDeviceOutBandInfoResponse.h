@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取托管设备带外信息
                      * @return HostedDeviceOutBandInfoSet 托管设备带外信息
+                     * 
                      */
                     std::vector<HostedDeviceOutBandInfo> GetHostedDeviceOutBandInfoSet() const;
 
                     /**
                      * 判断参数 HostedDeviceOutBandInfoSet 是否已赋值
                      * @return HostedDeviceOutBandInfoSet 是否已赋值
+                     * 
                      */
                     bool HostedDeviceOutBandInfoSetHasBeenSet() const;
 

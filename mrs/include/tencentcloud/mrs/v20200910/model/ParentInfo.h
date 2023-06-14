@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名字
+                     * @param _name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Age 年龄
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAge() const;
 
                     /**
                      * 设置年龄
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Age 年龄
+                     * @param _age 年龄
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAge(const std::string& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCard 证件号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置证件号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdCard 证件号
+                     * @param _idCard 证件号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ethnicity 民族
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEthnicity() const;
 
                     /**
                      * 设置民族
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ethnicity 民族
+                     * @param _ethnicity 民族
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEthnicity(const std::string& _ethnicity);
 
                     /**
                      * 判断参数 Ethnicity 是否已赋值
                      * @return Ethnicity 是否已赋值
+                     * 
                      */
                     bool EthnicityHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nationality 国籍
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 设置国籍
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nationality 国籍
+                     * @param _nationality 国籍
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNationality(const std::string& _nationality);
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 地址
+                     * @param _address 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 

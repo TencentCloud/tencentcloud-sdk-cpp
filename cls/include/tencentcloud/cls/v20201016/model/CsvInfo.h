@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取csv首行是否打印key
                      * @return PrintKey csv首行是否打印key
+                     * 
                      */
                     bool GetPrintKey() const;
 
                     /**
                      * 设置csv首行是否打印key
-                     * @param PrintKey csv首行是否打印key
+                     * @param _printKey csv首行是否打印key
+                     * 
                      */
                     void SetPrintKey(const bool& _printKey);
 
                     /**
                      * 判断参数 PrintKey 是否已赋值
                      * @return PrintKey 是否已赋值
+                     * 
                      */
                     bool PrintKeyHasBeenSet() const;
 
@@ -69,74 +72,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 每列key的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeys() const;
 
                     /**
                      * 设置每列key的名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keys 每列key的名字
+                     * @param _keys 每列key的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeys(const std::vector<std::string>& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
                     /**
                      * 获取各字段间的分隔符
                      * @return Delimiter 各字段间的分隔符
+                     * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
                      * 设置各字段间的分隔符
-                     * @param Delimiter 各字段间的分隔符
+                     * @param _delimiter 各字段间的分隔符
+                     * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
 
                     /**
                      * 判断参数 Delimiter 是否已赋值
                      * @return Delimiter 是否已赋值
+                     * 
                      */
                     bool DelimiterHasBeenSet() const;
 
                     /**
                      * 获取若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串
                      * @return EscapeChar 若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串
+                     * 
                      */
                     std::string GetEscapeChar() const;
 
                     /**
                      * 设置若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串
-                     * @param EscapeChar 若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串
+                     * @param _escapeChar 若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串
+                     * 
                      */
                     void SetEscapeChar(const std::string& _escapeChar);
 
                     /**
                      * 判断参数 EscapeChar 是否已赋值
                      * @return EscapeChar 是否已赋值
+                     * 
                      */
                     bool EscapeCharHasBeenSet() const;
 
                     /**
                      * 获取对于上面指定的不存在字段使用该内容填充
                      * @return NonExistingField 对于上面指定的不存在字段使用该内容填充
+                     * 
                      */
                     std::string GetNonExistingField() const;
 
                     /**
                      * 设置对于上面指定的不存在字段使用该内容填充
-                     * @param NonExistingField 对于上面指定的不存在字段使用该内容填充
+                     * @param _nonExistingField 对于上面指定的不存在字段使用该内容填充
+                     * 
                      */
                     void SetNonExistingField(const std::string& _nonExistingField);
 
                     /**
                      * 判断参数 NonExistingField 是否已赋值
                      * @return NonExistingField 是否已赋值
+                     * 
                      */
                     bool NonExistingFieldHasBeenSet() const;
 

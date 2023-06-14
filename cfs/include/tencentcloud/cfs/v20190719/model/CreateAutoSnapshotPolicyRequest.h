@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取快照重复时间点
                      * @return Hour 快照重复时间点
+                     * 
                      */
                     std::string GetHour() const;
 
                     /**
                      * 设置快照重复时间点
-                     * @param Hour 快照重复时间点
+                     * @param _hour 快照重复时间点
+                     * 
                      */
                     void SetHour(const std::string& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PolicyName 策略名称
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PolicyName 策略名称
+                     * @param _policyName 策略名称
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取快照重复日期，星期一到星期日
                      * @return DayOfWeek 快照重复日期，星期一到星期日
+                     * 
                      */
                     std::string GetDayOfWeek() const;
 
                     /**
                      * 设置快照重复日期，星期一到星期日
-                     * @param DayOfWeek 快照重复日期，星期一到星期日
+                     * @param _dayOfWeek 快照重复日期，星期一到星期日
+                     * 
                      */
                     void SetDayOfWeek(const std::string& _dayOfWeek);
 
                     /**
                      * 判断参数 DayOfWeek 是否已赋值
                      * @return DayOfWeek 是否已赋值
+                     * 
                      */
                     bool DayOfWeekHasBeenSet() const;
 
                     /**
                      * 获取快照保留时长
                      * @return AliveDays 快照保留时长
+                     * 
                      */
                     uint64_t GetAliveDays() const;
 
                     /**
                      * 设置快照保留时长
-                     * @param AliveDays 快照保留时长
+                     * @param _aliveDays 快照保留时长
+                     * 
                      */
                     void SetAliveDays(const uint64_t& _aliveDays);
 
                     /**
                      * 判断参数 AliveDays 是否已赋值
                      * @return AliveDays 是否已赋值
+                     * 
                      */
                     bool AliveDaysHasBeenSet() const;
 
                     /**
                      * 获取快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
                      * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
+                     * 
                      */
                     std::string GetDayOfMonth() const;
 
                     /**
                      * 设置快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
-                     * @param DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
+                     * @param _dayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
+                     * 
                      */
                     void SetDayOfMonth(const std::string& _dayOfMonth);
 
                     /**
                      * 判断参数 DayOfMonth 是否已赋值
                      * @return DayOfMonth 是否已赋值
+                     * 
                      */
                     bool DayOfMonthHasBeenSet() const;
 
                     /**
                      * 获取间隔天数
                      * @return IntervalDays 间隔天数
+                     * 
                      */
                     uint64_t GetIntervalDays() const;
 
                     /**
                      * 设置间隔天数
-                     * @param IntervalDays 间隔天数
+                     * @param _intervalDays 间隔天数
+                     * 
                      */
                     void SetIntervalDays(const uint64_t& _intervalDays);
 
                     /**
                      * 判断参数 IntervalDays 是否已赋值
                      * @return IntervalDays 是否已赋值
+                     * 
                      */
                     bool IntervalDaysHasBeenSet() const;
 

@@ -57,6 +57,7 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 • 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过3840 x 2160 pixel。
 建议：
 • 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -68,19 +69,21 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 • 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过3840 x 2160 pixel。
 建议：
 • 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
-                     * @param ImageUrl 图片的 Url 。
+                     * @param _imageUrl 图片的 Url 。
 ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl字段。
 图片限制：
 • 图片格式：支持PNG、JPG、JPEG、不支持 GIF 图片。
 • 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过3840 x 2160 pixel。
 建议：
 • 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -95,6 +98,7 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 注意：图片需要base64编码，并且要去掉编码头部。
 支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。
 支持的图片大小：所下载图片经Base64编码后不超过5M。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -104,17 +108,19 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 注意：图片需要base64编码，并且要去掉编码头部。
 支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。
 支持的图片大小：所下载图片经Base64编码后不超过5M。
-                     * @param ImageBase64 图片经过base64编码的内容。
+                     * @param _imageBase64 图片经过base64编码的内容。
 最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 注意：图片需要base64编码，并且要去掉编码头部。
 支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。
 支持的图片大小：所下载图片经Base64编码后不超过5M。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -123,20 +129,23 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启
                      * @return EnableDetect 人体检测模型开关，“true”为开启，“false”为关闭
 开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启
+                     * 
                      */
                     bool GetEnableDetect() const;
 
                     /**
                      * 设置人体检测模型开关，“true”为开启，“false”为关闭
 开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启
-                     * @param EnableDetect 人体检测模型开关，“true”为开启，“false”为关闭
+                     * @param _enableDetect 人体检测模型开关，“true”为开启，“false”为关闭
 开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启
+                     * 
                      */
                     void SetEnableDetect(const bool& _enableDetect);
 
                     /**
                      * 判断参数 EnableDetect 是否已赋值
                      * @return EnableDetect 是否已赋值
+                     * 
                      */
                     bool EnableDetectHasBeenSet() const;
 
@@ -149,6 +158,7 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。
 默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭
 如开启人体优选，检测到的人体分辨率需不大于1920*1080 pixel
+                     * 
                      */
                     bool GetEnablePreferred() const;
 
@@ -157,16 +167,18 @@ ImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl�
 开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。
 默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭
 如开启人体优选，检测到的人体分辨率需不大于1920*1080 pixel
-                     * @param EnablePreferred 人体优选开关，“true”为开启，“false”为关闭
+                     * @param _enablePreferred 人体优选开关，“true”为开启，“false”为关闭
 开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。
 默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭
 如开启人体优选，检测到的人体分辨率需不大于1920*1080 pixel
+                     * 
                      */
                     void SetEnablePreferred(const bool& _enablePreferred);
 
                     /**
                      * 判断参数 EnablePreferred 是否已赋值
                      * @return EnablePreferred 是否已赋值
+                     * 
                      */
                     bool EnablePreferredHasBeenSet() const;
 

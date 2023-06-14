@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取引擎实例ID
                      * @return InstanceId 引擎实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置引擎实例ID
-                     * @param InstanceId 引擎实例ID
+                     * @param _instanceId 引擎实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取副本列表Limit
                      * @return Limit 副本列表Limit
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置副本列表Limit
-                     * @param Limit 副本列表Limit
+                     * @param _limit 副本列表Limit
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取副本列表Offset
                      * @return Offset 副本列表Offset
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置副本列表Offset
-                     * @param Offset 副本列表Offset
+                     * @param _offset 副本列表Offset
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

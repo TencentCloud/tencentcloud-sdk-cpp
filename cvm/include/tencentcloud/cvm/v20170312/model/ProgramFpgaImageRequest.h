@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例的ID信息。
                      * @return InstanceId 实例的ID信息。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例的ID信息。
-                     * @param InstanceId 实例的ID信息。
+                     * @param _instanceId 实例的ID信息。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取FPGA镜像文件的COS URL地址。
                      * @return FPGAUrl FPGA镜像文件的COS URL地址。
+                     * 
                      */
                     std::string GetFPGAUrl() const;
 
                     /**
                      * 设置FPGA镜像文件的COS URL地址。
-                     * @param FPGAUrl FPGA镜像文件的COS URL地址。
+                     * @param _fPGAUrl FPGA镜像文件的COS URL地址。
+                     * 
                      */
                     void SetFPGAUrl(const std::string& _fPGAUrl);
 
                     /**
                      * 判断参数 FPGAUrl 是否已赋值
                      * @return FPGAUrl 是否已赋值
+                     * 
                      */
                     bool FPGAUrlHasBeenSet() const;
 
                     /**
                      * 获取实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。
                      * @return DBDFs 实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。
+                     * 
                      */
                     std::vector<std::string> GetDBDFs() const;
 
                     /**
                      * 设置实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。
-                     * @param DBDFs 实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。
+                     * @param _dBDFs 实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。
+                     * 
                      */
                     void SetDBDFs(const std::vector<std::string>& _dBDFs);
 
                     /**
                      * 判断参数 DBDFs 是否已赋值
                      * @return DBDFs 是否已赋值
+                     * 
                      */
                     bool DBDFsHasBeenSet() const;
 
                     /**
                      * 获取试运行，不会执行实际的烧录动作，默认为False。
                      * @return DryRun 试运行，不会执行实际的烧录动作，默认为False。
+                     * 
                      */
                     bool GetDryRun() const;
 
                     /**
                      * 设置试运行，不会执行实际的烧录动作，默认为False。
-                     * @param DryRun 试运行，不会执行实际的烧录动作，默认为False。
+                     * @param _dryRun 试运行，不会执行实际的烧录动作，默认为False。
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 

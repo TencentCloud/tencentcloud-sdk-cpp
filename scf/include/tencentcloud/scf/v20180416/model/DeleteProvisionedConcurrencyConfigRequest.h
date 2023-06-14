@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取需要删除预置并发的函数的名称
                      * @return FunctionName 需要删除预置并发的函数的名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置需要删除预置并发的函数的名称
-                     * @param FunctionName 需要删除预置并发的函数的名称
+                     * @param _functionName 需要删除预置并发的函数的名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取函数的版本号
                      * @return Qualifier 函数的版本号
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数的版本号
-                     * @param Qualifier 函数的版本号
+                     * @param _qualifier 函数的版本号
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 
                     /**
                      * 获取函数所属命名空间，默认为default
                      * @return Namespace 函数所属命名空间，默认为default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数所属命名空间，默认为default
-                     * @param Namespace 函数所属命名空间，默认为default
+                     * @param _namespace 函数所属命名空间，默认为default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

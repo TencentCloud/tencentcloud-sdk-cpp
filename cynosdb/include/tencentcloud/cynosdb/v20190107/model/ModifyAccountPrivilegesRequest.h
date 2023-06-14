@@ -48,90 +48,105 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取账号信息
                      * @return Account 账号信息
+                     * 
                      */
                     InputAccount GetAccount() const;
 
                     /**
                      * 设置账号信息
-                     * @param Account 账号信息
+                     * @param _account 账号信息
+                     * 
                      */
                     void SetAccount(const InputAccount& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
                     /**
                      * 获取全局权限数组
                      * @return GlobalPrivileges 全局权限数组
+                     * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
 
                     /**
                      * 设置全局权限数组
-                     * @param GlobalPrivileges 全局权限数组
+                     * @param _globalPrivileges 全局权限数组
+                     * 
                      */
                     void SetGlobalPrivileges(const std::vector<std::string>& _globalPrivileges);
 
                     /**
                      * 判断参数 GlobalPrivileges 是否已赋值
                      * @return GlobalPrivileges 是否已赋值
+                     * 
                      */
                     bool GlobalPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库权限数组
                      * @return DatabasePrivileges 数据库权限数组
+                     * 
                      */
                     std::vector<DatabasePrivileges> GetDatabasePrivileges() const;
 
                     /**
                      * 设置数据库权限数组
-                     * @param DatabasePrivileges 数据库权限数组
+                     * @param _databasePrivileges 数据库权限数组
+                     * 
                      */
                     void SetDatabasePrivileges(const std::vector<DatabasePrivileges>& _databasePrivileges);
 
                     /**
                      * 判断参数 DatabasePrivileges 是否已赋值
                      * @return DatabasePrivileges 是否已赋值
+                     * 
                      */
                     bool DatabasePrivilegesHasBeenSet() const;
 
                     /**
                      * 获取表权限数组
                      * @return TablePrivileges 表权限数组
+                     * 
                      */
                     std::vector<TablePrivileges> GetTablePrivileges() const;
 
                     /**
                      * 设置表权限数组
-                     * @param TablePrivileges 表权限数组
+                     * @param _tablePrivileges 表权限数组
+                     * 
                      */
                     void SetTablePrivileges(const std::vector<TablePrivileges>& _tablePrivileges);
 
                     /**
                      * 判断参数 TablePrivileges 是否已赋值
                      * @return TablePrivileges 是否已赋值
+                     * 
                      */
                     bool TablePrivilegesHasBeenSet() const;
 

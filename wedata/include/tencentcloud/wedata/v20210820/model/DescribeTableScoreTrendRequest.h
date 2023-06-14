@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间 秒级时间戳
                      * @return StatisticsStartDate 开始时间 秒级时间戳
+                     * 
                      */
                     int64_t GetStatisticsStartDate() const;
 
                     /**
                      * 设置开始时间 秒级时间戳
-                     * @param StatisticsStartDate 开始时间 秒级时间戳
+                     * @param _statisticsStartDate 开始时间 秒级时间戳
+                     * 
                      */
                     void SetStatisticsStartDate(const int64_t& _statisticsStartDate);
 
                     /**
                      * 判断参数 StatisticsStartDate 是否已赋值
                      * @return StatisticsStartDate 是否已赋值
+                     * 
                      */
                     bool StatisticsStartDateHasBeenSet() const;
 
                     /**
                      * 获取结束时间 秒级时间戳
                      * @return StatisticsEndDate 结束时间 秒级时间戳
+                     * 
                      */
                     int64_t GetStatisticsEndDate() const;
 
                     /**
                      * 设置结束时间 秒级时间戳
-                     * @param StatisticsEndDate 结束时间 秒级时间戳
+                     * @param _statisticsEndDate 结束时间 秒级时间戳
+                     * 
                      */
                     void SetStatisticsEndDate(const int64_t& _statisticsEndDate);
 
                     /**
                      * 判断参数 StatisticsEndDate 是否已赋值
                      * @return StatisticsEndDate 是否已赋值
+                     * 
                      */
                     bool StatisticsEndDateHasBeenSet() const;
 
                     /**
                      * 获取表id
                      * @return TableId 表id
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表id
-                     * @param TableId 表id
+                     * @param _tableId 表id
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名资源ID。
                      * @return DomainId 域名资源ID。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名资源ID。
-                     * @param DomainId 域名资源ID。
+                     * @param _domainId 域名资源ID。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取域名名称。
                      * @return DomainName 域名名称。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名名称。
-                     * @param DomainName 域名名称。
+                     * @param _domainName 域名名称。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -95,6 +101,7 @@ InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
 NoAudit: 无需实名认证
+                     * 
                      */
                     std::string GetRealNameAuditStatus() const;
 
@@ -105,18 +112,20 @@ InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
 NoAudit: 无需实名认证
-                     * @param RealNameAuditStatus 域名实名认证状态。
+                     * @param _realNameAuditStatus 域名实名认证状态。
 NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
 NoAudit: 无需实名认证
+                     * 
                      */
                     void SetRealNameAuditStatus(const std::string& _realNameAuditStatus);
 
                     /**
                      * 判断参数 RealNameAuditStatus 是否已赋值
                      * @return RealNameAuditStatus 是否已赋值
+                     * 
                      */
                     bool RealNameAuditStatusHasBeenSet() const;
 
@@ -125,20 +134,23 @@ NoAudit: 无需实名认证
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealNameAuditUnpassReason 域名实名认证不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名实名认证不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealNameAuditUnpassReason 域名实名认证不通过原因。
+                     * @param _realNameAuditUnpassReason 域名实名认证不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealNameAuditUnpassReason(const std::string& _realNameAuditUnpassReason);
 
                     /**
                      * 判断参数 RealNameAuditUnpassReason 是否已赋值
                      * @return RealNameAuditUnpassReason 是否已赋值
+                     * 
                      */
                     bool RealNameAuditUnpassReasonHasBeenSet() const;
 
@@ -155,6 +167,7 @@ Pending：命名审核待上传
 Auditing：域名命名审核中
 Approved：域名命名审核通过
 Rejected：域名命名审核拒绝
+                     * 
                      */
                     std::string GetDomainNameAuditStatus() const;
 
@@ -165,18 +178,20 @@ Pending：命名审核待上传
 Auditing：域名命名审核中
 Approved：域名命名审核通过
 Rejected：域名命名审核拒绝
-                     * @param DomainNameAuditStatus 域名命名审核状态。
+                     * @param _domainNameAuditStatus 域名命名审核状态。
 NotAudit：命名审核未上传
 Pending：命名审核待上传
 Auditing：域名命名审核中
 Approved：域名命名审核通过
 Rejected：域名命名审核拒绝
+                     * 
                      */
                     void SetDomainNameAuditStatus(const std::string& _domainNameAuditStatus);
 
                     /**
                      * 判断参数 DomainNameAuditStatus 是否已赋值
                      * @return DomainNameAuditStatus 是否已赋值
+                     * 
                      */
                     bool DomainNameAuditStatusHasBeenSet() const;
 
@@ -185,56 +200,65 @@ Rejected：域名命名审核拒绝
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomainNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名命名审核不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainNameAuditUnpassReason 域名命名审核不通过原因。
+                     * @param _domainNameAuditUnpassReason 域名命名审核不通过原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainNameAuditUnpassReason(const std::string& _domainNameAuditUnpassReason);
 
                     /**
                      * 判断参数 DomainNameAuditUnpassReason 是否已赋值
                      * @return DomainNameAuditUnpassReason 是否已赋值
+                     * 
                      */
                     bool DomainNameAuditUnpassReasonHasBeenSet() const;
 
                     /**
                      * 获取注册时间。
                      * @return CreationDate 注册时间。
+                     * 
                      */
                     std::string GetCreationDate() const;
 
                     /**
                      * 设置注册时间。
-                     * @param CreationDate 注册时间。
+                     * @param _creationDate 注册时间。
+                     * 
                      */
                     void SetCreationDate(const std::string& _creationDate);
 
                     /**
                      * 判断参数 CreationDate 是否已赋值
                      * @return CreationDate 是否已赋值
+                     * 
                      */
                     bool CreationDateHasBeenSet() const;
 
                     /**
                      * 获取到期时间
                      * @return ExpirationDate 到期时间
+                     * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置到期时间
-                     * @param ExpirationDate 到期时间
+                     * @param _expirationDate 到期时间
+                     * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
 
                     /**
                      * 判断参数 ExpirationDate 是否已赋值
                      * @return ExpirationDate 是否已赋值
+                     * 
                      */
                     bool ExpirationDateHasBeenSet() const;
 
@@ -271,6 +295,7 @@ clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
 clientRenewProhobited: 注册商禁止续费
+                     * 
                      */
                     std::vector<std::string> GetDomainStatus() const;
 
@@ -291,7 +316,7 @@ clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
 clientRenewProhobited: 注册商禁止续费
-                     * @param DomainStatus 域名状态。
+                     * @param _domainStatus 域名状态。
 ok：正常
 serverHold：注册局暂停解析 
 clientHold：注册商暂停解析
@@ -307,12 +332,14 @@ clientUpdateProhibited：注册商禁止更新
 clientDeleteProhibited：注册商禁止删除
 serverRenewProhibited: 注册局禁止续费
 clientRenewProhobited: 注册商禁止续费
+                     * 
                      */
                     void SetDomainStatus(const std::vector<std::string>& _domainStatus);
 
                     /**
                      * 判断参数 DomainStatus 是否已赋值
                      * @return DomainStatus 是否已赋值
+                     * 
                      */
                     bool DomainStatusHasBeenSet() const;
 
@@ -343,6 +370,7 @@ RedemptionDoing：赎回中
 TransferPending：待转入中
 TransferTransing：转入中
 TransferFailed：转入失败
+                     * 
                      */
                     std::string GetBuyStatus() const;
 
@@ -360,7 +388,7 @@ RedemptionDoing：赎回中
 TransferPending：待转入中
 TransferTransing：转入中
 TransferFailed：转入失败
-                     * @param BuyStatus 域名购买状态。
+                     * @param _buyStatus 域名购买状态。
 ok：正常
 RegisterPending：待注册
 RegisterDoing：注册中
@@ -373,12 +401,14 @@ RedemptionDoing：赎回中
 TransferPending：待转入中
 TransferTransing：转入中
 TransferFailed：转入失败
+                     * 
                      */
                     void SetBuyStatus(const std::string& _buyStatus);
 
                     /**
                      * 判断参数 BuyStatus 是否已赋值
                      * @return BuyStatus 是否已赋值
+                     * 
                      */
                     bool BuyStatusHasBeenSet() const;
 
@@ -393,6 +423,7 @@ epp: DNSPod, Inc.（烟台帝思普网络科技有限公司）
 qcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）
 yunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）
 xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）
+                     * 
                      */
                     std::string GetRegistrarType() const;
 
@@ -402,35 +433,40 @@ epp: DNSPod, Inc.（烟台帝思普网络科技有限公司）
 qcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）
 yunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）
 xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）
-                     * @param RegistrarType 注册商类型
+                     * @param _registrarType 注册商类型
 epp: DNSPod, Inc.（烟台帝思普网络科技有限公司）
 qcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）
 yunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）
 xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）
+                     * 
                      */
                     void SetRegistrarType(const std::string& _registrarType);
 
                     /**
                      * 判断参数 RegistrarType 是否已赋值
                      * @return RegistrarType 是否已赋值
+                     * 
                      */
                     bool RegistrarTypeHasBeenSet() const;
 
                     /**
                      * 获取域名绑定的ns
                      * @return NameServer 域名绑定的ns
+                     * 
                      */
                     std::vector<std::string> GetNameServer() const;
 
                     /**
                      * 设置域名绑定的ns
-                     * @param NameServer 域名绑定的ns
+                     * @param _nameServer 域名绑定的ns
+                     * 
                      */
                     void SetNameServer(const std::vector<std::string>& _nameServer);
 
                     /**
                      * 判断参数 NameServer 是否已赋值
                      * @return NameServer 是否已赋值
+                     * 
                      */
                     bool NameServerHasBeenSet() const;
 
@@ -439,38 +475,44 @@ xinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公
 false：关闭锁定
                      * @return LockTransfer true：开启锁定
 false：关闭锁定
+                     * 
                      */
                     bool GetLockTransfer() const;
 
                     /**
                      * 设置true：开启锁定
 false：关闭锁定
-                     * @param LockTransfer true：开启锁定
+                     * @param _lockTransfer true：开启锁定
 false：关闭锁定
+                     * 
                      */
                     void SetLockTransfer(const bool& _lockTransfer);
 
                     /**
                      * 判断参数 LockTransfer 是否已赋值
                      * @return LockTransfer 是否已赋值
+                     * 
                      */
                     bool LockTransferHasBeenSet() const;
 
                     /**
                      * 获取锁定结束时间
                      * @return LockEndTime 锁定结束时间
+                     * 
                      */
                     std::string GetLockEndTime() const;
 
                     /**
                      * 设置锁定结束时间
-                     * @param LockEndTime 锁定结束时间
+                     * @param _lockEndTime 锁定结束时间
+                     * 
                      */
                     void SetLockEndTime(const std::string& _lockEndTime);
 
                     /**
                      * 判断参数 LockEndTime 是否已赋值
                      * @return LockEndTime 是否已赋值
+                     * 
                      */
                     bool LockEndTimeHasBeenSet() const;
 

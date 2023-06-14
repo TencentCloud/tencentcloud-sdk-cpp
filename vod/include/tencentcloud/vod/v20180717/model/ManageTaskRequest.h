@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取视频处理的任务 ID。
                      * @return TaskId 视频处理的任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置视频处理的任务 ID。
-                     * @param TaskId 视频处理的任务 ID。
+                     * @param _taskId 视频处理的任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -65,38 +68,44 @@ namespace TencentCloud
 <li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>
                      * @return OperationType 操作类型，取值范围：
 <li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>
+                     * 
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置操作类型，取值范围：
 <li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>
-                     * @param OperationType 操作类型，取值范围：
+                     * @param _operationType 操作类型，取值范围：
 <li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>
+                     * 
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
+                     * 
                      */
                     bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

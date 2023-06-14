@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境 ID
                      * @return EnvironmentId 环境 ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境 ID
-                     * @param EnvironmentId 环境 ID
+                     * @param _environmentId 环境 ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取配置名
                      * @return Name 配置名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置名
-                     * @param Name 配置名
+                     * @param _name 配置名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取应用 ID
                      * @return ApplicationId 应用 ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用 ID
-                     * @param ApplicationId 应用 ID
+                     * @param _applicationId 应用 ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取应用的SdkAppID
                      * @return SdkAppID 应用的SdkAppID
+                     * 
                      */
                     int64_t GetSdkAppID() const;
 
                     /**
                      * 设置应用的SdkAppID
-                     * @param SdkAppID 应用的SdkAppID
+                     * @param _sdkAppID 应用的SdkAppID
+                     * 
                      */
                     void SetSdkAppID(const int64_t& _sdkAppID);
 
                     /**
                      * 判断参数 SdkAppID 是否已赋值
                      * @return SdkAppID 是否已赋值
+                     * 
                      */
                     bool SdkAppIDHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -83,36 +87,41 @@ namespace TencentCloud
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
-                     * @param TaskType 指定需要获取的任务类型。
+                     * @param _taskType 指定需要获取的任务类型。
 有效取值如下：
 - TranscodeH5: 动态转码任务，文档转HTML5页面
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取分页获取时的任务偏移量，默认为0。
                      * @return Offset 分页获取时的任务偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页获取时的任务偏移量，默认为0。
-                     * @param Offset 分页获取时的任务偏移量，默认为0。
+                     * @param _offset 分页获取时的任务偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 有效取值范围：[1, 500]
                      * @return Limit 每次获取任务列表时最大获取任务数，默认值为100。
 有效取值范围：[1, 500]
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每次获取任务列表时最大获取任务数，默认值为100。
 有效取值范围：[1, 500]
-                     * @param Limit 每次获取任务列表时最大获取任务数，默认值为100。
+                     * @param _limit 每次获取任务列表时最大获取任务数，默认值为100。
 有效取值范围：[1, 500]
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

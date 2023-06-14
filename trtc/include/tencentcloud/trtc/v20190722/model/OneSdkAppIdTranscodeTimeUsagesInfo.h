@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取旁路转码时长查询结果数组
                      * @return SdkAppIdTranscodeTimeUsages 旁路转码时长查询结果数组
+                     * 
                      */
                     std::vector<SdkAppIdTrtcMcuTranscodeTimeUsage> GetSdkAppIdTranscodeTimeUsages() const;
 
                     /**
                      * 设置旁路转码时长查询结果数组
-                     * @param SdkAppIdTranscodeTimeUsages 旁路转码时长查询结果数组
+                     * @param _sdkAppIdTranscodeTimeUsages 旁路转码时长查询结果数组
+                     * 
                      */
                     void SetSdkAppIdTranscodeTimeUsages(const std::vector<SdkAppIdTrtcMcuTranscodeTimeUsage>& _sdkAppIdTranscodeTimeUsages);
 
                     /**
                      * 判断参数 SdkAppIdTranscodeTimeUsages 是否已赋值
                      * @return SdkAppIdTranscodeTimeUsages 是否已赋值
+                     * 
                      */
                     bool SdkAppIdTranscodeTimeUsagesHasBeenSet() const;
 
                     /**
                      * 获取查询记录数量
                      * @return TotalNum 查询记录数量
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 设置查询记录数量
-                     * @param TotalNum 查询记录数量
+                     * @param _totalNum 查询记录数量
+                     * 
                      */
                     void SetTotalNum(const uint64_t& _totalNum);
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。
                      * @return SdkAppId 所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。
-                     * @param SdkAppId 所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。
+                     * @param _sdkAppId 所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

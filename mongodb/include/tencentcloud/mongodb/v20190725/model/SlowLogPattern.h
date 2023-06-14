@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取慢日志模式
                      * @return Pattern 慢日志模式
+                     * 
                      */
                     std::string GetPattern() const;
 
                     /**
                      * 设置慢日志模式
-                     * @param Pattern 慢日志模式
+                     * @param _pattern 慢日志模式
+                     * 
                      */
                     void SetPattern(const std::string& _pattern);
 
                     /**
                      * 判断参数 Pattern 是否已赋值
                      * @return Pattern 是否已赋值
+                     * 
                      */
                     bool PatternHasBeenSet() const;
 
                     /**
                      * 获取最大执行时间
                      * @return MaxTime 最大执行时间
+                     * 
                      */
                     uint64_t GetMaxTime() const;
 
                     /**
                      * 设置最大执行时间
-                     * @param MaxTime 最大执行时间
+                     * @param _maxTime 最大执行时间
+                     * 
                      */
                     void SetMaxTime(const uint64_t& _maxTime);
 
                     /**
                      * 判断参数 MaxTime 是否已赋值
                      * @return MaxTime 是否已赋值
+                     * 
                      */
                     bool MaxTimeHasBeenSet() const;
 
                     /**
                      * 获取平均执行时间
                      * @return AverageTime 平均执行时间
+                     * 
                      */
                     uint64_t GetAverageTime() const;
 
                     /**
                      * 设置平均执行时间
-                     * @param AverageTime 平均执行时间
+                     * @param _averageTime 平均执行时间
+                     * 
                      */
                     void SetAverageTime(const uint64_t& _averageTime);
 
                     /**
                      * 判断参数 AverageTime 是否已赋值
                      * @return AverageTime 是否已赋值
+                     * 
                      */
                     bool AverageTimeHasBeenSet() const;
 
                     /**
                      * 获取该模式慢日志条数
                      * @return Total 该模式慢日志条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置该模式慢日志条数
-                     * @param Total 该模式慢日志条数
+                     * @param _total 该模式慢日志条数
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

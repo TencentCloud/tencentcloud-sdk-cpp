@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 已绑定的证书ID
+                     * @param _certId 已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
                      * @return Status -1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -100,15 +107,17 @@ namespace TencentCloud
                      * 设置-1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
-                     * @param Status -1：域名未关联证书。
+                     * @param _status -1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

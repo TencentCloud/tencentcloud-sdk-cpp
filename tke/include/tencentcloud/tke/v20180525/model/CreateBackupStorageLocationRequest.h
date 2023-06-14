@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取存储仓库所属地域，比如COS广州(ap-guangzhou)
                      * @return StorageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置存储仓库所属地域，比如COS广州(ap-guangzhou)
-                     * @param StorageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)
+                     * @param _storageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)
+                     * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取对象存储桶名称，如果是COS必须是tke-backup前缀开头
                      * @return Bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置对象存储桶名称，如果是COS必须是tke-backup前缀开头
-                     * @param Bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * @param _bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取备份仓库名称
                      * @return Name 备份仓库名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置备份仓库名称
-                     * @param Name 备份仓库名称
+                     * @param _name 备份仓库名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取存储服务提供方，默认腾讯云
                      * @return Provider 存储服务提供方，默认腾讯云
+                     * 
                      */
                     std::string GetProvider() const;
 
                     /**
                      * 设置存储服务提供方，默认腾讯云
-                     * @param Provider 存储服务提供方，默认腾讯云
+                     * @param _provider 存储服务提供方，默认腾讯云
+                     * 
                      */
                     void SetProvider(const std::string& _provider);
 
                     /**
                      * 判断参数 Provider 是否已赋值
                      * @return Provider 是否已赋值
+                     * 
                      */
                     bool ProviderHasBeenSet() const;
 
                     /**
                      * 获取对象存储桶路径
                      * @return Path 对象存储桶路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置对象存储桶路径
-                     * @param Path 对象存储桶路径
+                     * @param _path 对象存储桶路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

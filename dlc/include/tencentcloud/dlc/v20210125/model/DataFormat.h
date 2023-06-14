@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextFile 文本格式，TextFile。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextFile GetTextFile() const;
 
                     /**
                      * 设置文本格式，TextFile。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextFile 文本格式，TextFile。
+                     * @param _textFile 文本格式，TextFile。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextFile(const TextFile& _textFile);
 
                     /**
                      * 判断参数 TextFile 是否已赋值
                      * @return TextFile 是否已赋值
+                     * 
                      */
                     bool TextFileHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CSV 文本格式，CSV。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CSV GetCSV() const;
 
                     /**
                      * 设置文本格式，CSV。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CSV 文本格式，CSV。
+                     * @param _cSV 文本格式，CSV。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCSV(const CSV& _cSV);
 
                     /**
                      * 判断参数 CSV 是否已赋值
                      * @return CSV 是否已赋值
+                     * 
                      */
                     bool CSVHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Json 文本格式，Json。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Other GetJson() const;
 
                     /**
                      * 设置文本格式，Json。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Json 文本格式，Json。
+                     * @param _json 文本格式，Json。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJson(const Other& _json);
 
                     /**
                      * 判断参数 Json 是否已赋值
                      * @return Json 是否已赋值
+                     * 
                      */
                     bool JsonHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Parquet Parquet格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Other GetParquet() const;
 
                     /**
                      * 设置Parquet格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Parquet Parquet格式
+                     * @param _parquet Parquet格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParquet(const Other& _parquet);
 
                     /**
                      * 判断参数 Parquet 是否已赋值
                      * @return Parquet 是否已赋值
+                     * 
                      */
                     bool ParquetHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ORC ORC格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Other GetORC() const;
 
                     /**
                      * 设置ORC格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ORC ORC格式
+                     * @param _oRC ORC格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetORC(const Other& _oRC);
 
                     /**
                      * 判断参数 ORC 是否已赋值
                      * @return ORC 是否已赋值
+                     * 
                      */
                     bool ORCHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AVRO AVRO格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Other GetAVRO() const;
 
                     /**
                      * 设置AVRO格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AVRO AVRO格式
+                     * @param _aVRO AVRO格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAVRO(const Other& _aVRO);
 
                     /**
                      * 判断参数 AVRO 是否已赋值
                      * @return AVRO 是否已赋值
+                     * 
                      */
                     bool AVROHasBeenSet() const;
 

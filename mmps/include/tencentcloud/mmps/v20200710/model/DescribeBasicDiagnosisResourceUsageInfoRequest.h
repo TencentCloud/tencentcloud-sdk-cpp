@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取诊断模式 1:基础诊断，2:深度诊断
                      * @return Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置诊断模式 1:基础诊断，2:深度诊断
-                     * @param Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * @param _mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

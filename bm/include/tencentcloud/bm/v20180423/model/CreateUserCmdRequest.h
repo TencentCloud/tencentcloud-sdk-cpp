@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义脚本的名称
                      * @return Alias 用户自定义脚本的名称
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置用户自定义脚本的名称
-                     * @param Alias 用户自定义脚本的名称
+                     * @param _alias 用户自定义脚本的名称
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取命令适用的操作系统类型，取值linux或xserver
                      * @return OsType 命令适用的操作系统类型，取值linux或xserver
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置命令适用的操作系统类型，取值linux或xserver
-                     * @param OsType 命令适用的操作系统类型，取值linux或xserver
+                     * @param _osType 命令适用的操作系统类型，取值linux或xserver
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取脚本内容，必须经过base64编码
                      * @return Content 脚本内容，必须经过base64编码
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置脚本内容，必须经过base64编码
-                     * @param Content 脚本内容，必须经过base64编码
+                     * @param _content 脚本内容，必须经过base64编码
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

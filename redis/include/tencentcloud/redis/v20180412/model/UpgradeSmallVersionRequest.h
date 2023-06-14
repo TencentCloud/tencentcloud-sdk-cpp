@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取当前redis版本
                      * @return CurrentRedisVersion 当前redis版本
+                     * 
                      */
                     std::string GetCurrentRedisVersion() const;
 
                     /**
                      * 设置当前redis版本
-                     * @param CurrentRedisVersion 当前redis版本
+                     * @param _currentRedisVersion 当前redis版本
+                     * 
                      */
                     void SetCurrentRedisVersion(const std::string& _currentRedisVersion);
 
                     /**
                      * 判断参数 CurrentRedisVersion 是否已赋值
                      * @return CurrentRedisVersion 是否已赋值
+                     * 
                      */
                     bool CurrentRedisVersionHasBeenSet() const;
 
                     /**
                      * 获取可升级的redis版本
                      * @return UpgradeRedisVersion 可升级的redis版本
+                     * 
                      */
                     std::string GetUpgradeRedisVersion() const;
 
                     /**
                      * 设置可升级的redis版本
-                     * @param UpgradeRedisVersion 可升级的redis版本
+                     * @param _upgradeRedisVersion 可升级的redis版本
+                     * 
                      */
                     void SetUpgradeRedisVersion(const std::string& _upgradeRedisVersion);
 
                     /**
                      * 判断参数 UpgradeRedisVersion 是否已赋值
                      * @return UpgradeRedisVersion 是否已赋值
+                     * 
                      */
                     bool UpgradeRedisVersionHasBeenSet() const;
 
                     /**
                      * 获取1-立即升级   0-维护时间窗口升级
                      * @return InstanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 
                      */
                     int64_t GetInstanceTypeUpgradeNow() const;
 
                     /**
                      * 设置1-立即升级   0-维护时间窗口升级
-                     * @param InstanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * @param _instanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 
                      */
                     void SetInstanceTypeUpgradeNow(const int64_t& _instanceTypeUpgradeNow);
 
                     /**
                      * 判断参数 InstanceTypeUpgradeNow 是否已赋值
                      * @return InstanceTypeUpgradeNow 是否已赋值
+                     * 
                      */
                     bool InstanceTypeUpgradeNowHasBeenSet() const;
 

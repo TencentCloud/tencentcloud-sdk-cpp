@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取凭证id
                      * @return CredentialId 凭证id
+                     * 
                      */
                     std::string GetCredentialId() const;
 
                     /**
                      * 设置凭证id
-                     * @param CredentialId 凭证id
+                     * @param _credentialId 凭证id
+                     * 
                      */
                     void SetCredentialId(const std::string& _credentialId);
 
                     /**
                      * 判断参数 CredentialId 是否已赋值
                      * @return CredentialId 是否已赋值
+                     * 
                      */
                     bool CredentialIdHasBeenSet() const;
 

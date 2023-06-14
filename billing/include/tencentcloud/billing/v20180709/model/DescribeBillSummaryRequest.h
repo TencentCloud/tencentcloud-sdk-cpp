@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取账单月份，格式为2023-04
                      * @return Month 账单月份，格式为2023-04
+                     * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置账单月份，格式为2023-04
-                     * @param Month 账单月份，格式为2023-04
+                     * @param _month 账单月份，格式为2023-04
+                     * 
                      */
                     void SetMonth(const std::string& _month);
 
                     /**
                      * 判断参数 Month 是否已赋值
                      * @return Month 是否已赋值
+                     * 
                      */
                     bool MonthHasBeenSet() const;
 
                     /**
                      * 获取账单维度类型，枚举值如下：business、project、region、payMode、tag
                      * @return GroupType 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * 
                      */
                     std::string GetGroupType() const;
 
                     /**
                      * 设置账单维度类型，枚举值如下：business、project、region、payMode、tag
-                     * @param GroupType 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * @param _groupType 账单维度类型，枚举值如下：business、project、region、payMode、tag
+                     * 
                      */
                     void SetGroupType(const std::string& _groupType);
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
                     /**
                      * 获取标签键，GroupType=tag获取标签维度账单时传
                      * @return TagKey 标签键，GroupType=tag获取标签维度账单时传
+                     * 
                      */
                     std::vector<std::string> GetTagKey() const;
 
                     /**
                      * 设置标签键，GroupType=tag获取标签维度账单时传
-                     * @param TagKey 标签键，GroupType=tag获取标签维度账单时传
+                     * @param _tagKey 标签键，GroupType=tag获取标签维度账单时传
+                     * 
                      */
                     void SetTagKey(const std::vector<std::string>& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 

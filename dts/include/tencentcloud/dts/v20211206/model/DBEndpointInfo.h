@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 实例所在地域
+                     * @param _region 实例所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccessType() const;
 
                     /**
                      * 设置实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
+                     * @param _accessType 实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessType(const std::string& _accessType);
 
                     /**
                      * 判断参数 AccessType 是否已赋值
                      * @return AccessType 是否已赋值
+                     * 
                      */
                     bool AccessTypeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseType 实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseType() const;
 
                     /**
                      * 设置实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseType 实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等
+                     * @param _databaseType 实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseType(const std::string& _databaseType);
 
                     /**
                      * 判断参数 DatabaseType 是否已赋值
                      * @return DatabaseType 是否已赋值
+                     * 
                      */
                     bool DatabaseTypeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeType 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
+                     * @param _nodeType 节点类型，为空或者"simple":表示普通节点，"cluster": 集群节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 数据库信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DBInfo> GetInfo() const;
 
                     /**
                      * 设置数据库信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Info 数据库信息
+                     * @param _info 数据库信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfo(const std::vector<DBInfo>& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Supplier 实例服务提供商，如:"aliyun","others"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSupplier() const;
 
                     /**
                      * 设置实例服务提供商，如:"aliyun","others"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Supplier 实例服务提供商，如:"aliyun","others"
+                     * @param _supplier 实例服务提供商，如:"aliyun","others"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupplier(const std::string& _supplier);
 
                     /**
                      * 判断参数 Supplier 是否已赋值
                      * @return Supplier 是否已赋值
+                     * 
                      */
                     bool SupplierHasBeenSet() const;
 
@@ -187,6 +205,7 @@ namespace TencentCloud
                      * @return ExtraAttr MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
 'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KeyValuePairOption> GetExtraAttr() const;
 
@@ -194,15 +213,17 @@ namespace TencentCloud
                      * 设置MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
 'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraAttr MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
+                     * @param _extraAttr MongoDB可定义如下的参数: 	['AuthDatabase':'admin', 
 'AuthFlag': "1",	'AuthMechanism':"SCRAM-SHA-1"]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraAttr(const std::vector<KeyValuePairOption>& _extraAttr);
 
                     /**
                      * 判断参数 ExtraAttr 是否已赋值
                      * @return ExtraAttr 是否已赋值
+                     * 
                      */
                     bool ExtraAttrHasBeenSet() const;
 
@@ -211,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseNetEnv() const;
 
                     /**
                      * 设置数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+                     * @param _databaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseNetEnv(const std::string& _databaseNetEnv);
 
                     /**
                      * 判断参数 DatabaseNetEnv 是否已赋值
                      * @return DatabaseNetEnv 是否已赋值
+                     * 
                      */
                     bool DatabaseNetEnvHasBeenSet() const;
 

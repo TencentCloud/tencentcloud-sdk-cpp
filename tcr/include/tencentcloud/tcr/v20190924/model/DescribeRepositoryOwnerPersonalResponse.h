@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取仓库信息
                      * @return Data 仓库信息
+                     * 
                      */
                     RepoInfoResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

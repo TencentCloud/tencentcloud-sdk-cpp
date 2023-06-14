@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取操作系统类型
                      * @return OsName 操作系统类型
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统类型
-                     * @param OsName 操作系统类型
+                     * @param _osName 操作系统类型
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取支持的操作系统版本
                      * @return OsVersions 支持的操作系统版本
+                     * 
                      */
                     std::vector<std::string> GetOsVersions() const;
 
                     /**
                      * 设置支持的操作系统版本
-                     * @param OsVersions 支持的操作系统版本
+                     * @param _osVersions 支持的操作系统版本
+                     * 
                      */
                     void SetOsVersions(const std::vector<std::string>& _osVersions);
 
                     /**
                      * 判断参数 OsVersions 是否已赋值
                      * @return OsVersions 是否已赋值
+                     * 
                      */
                     bool OsVersionsHasBeenSet() const;
 
                     /**
                      * 获取支持的操作系统架构
                      * @return Architecture 支持的操作系统架构
+                     * 
                      */
                     std::vector<std::string> GetArchitecture() const;
 
                     /**
                      * 设置支持的操作系统架构
-                     * @param Architecture 支持的操作系统架构
+                     * @param _architecture 支持的操作系统架构
+                     * 
                      */
                     void SetArchitecture(const std::vector<std::string>& _architecture);
 
                     /**
                      * 判断参数 Architecture 是否已赋值
                      * @return Architecture 是否已赋值
+                     * 
                      */
                     bool ArchitectureHasBeenSet() const;
 

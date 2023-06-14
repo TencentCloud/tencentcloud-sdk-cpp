@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取日志ID数组，最大100条。
                      * @return Ids 日志ID数组，最大100条。
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置日志ID数组，最大100条。
-                     * @param Ids 日志ID数组，最大100条。
+                     * @param _ids 日志ID数组，最大100条。
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取是否全部删除
                      * @return IsAll 是否全部删除
+                     * 
                      */
                     bool GetIsAll() const;
 
                     /**
                      * 设置是否全部删除
-                     * @param IsAll 是否全部删除
+                     * @param _isAll 是否全部删除
+                     * 
                      */
                     void SetIsAll(const bool& _isAll);
 
                     /**
                      * 判断参数 IsAll 是否已赋值
                      * @return IsAll 是否已赋值
+                     * 
                      */
                     bool IsAllHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取批量撤回签署流程链接
                      * @return BatchCancelFlowUrl 批量撤回签署流程链接
+                     * 
                      */
                     std::string GetBatchCancelFlowUrl() const;
 
                     /**
                      * 判断参数 BatchCancelFlowUrl 是否已赋值
                      * @return BatchCancelFlowUrl 是否已赋值
+                     * 
                      */
                     bool BatchCancelFlowUrlHasBeenSet() const;
 
                     /**
                      * 获取签署流程撤回失败信息
                      * @return FailMessages 签署流程撤回失败信息
+                     * 
                      */
                     std::vector<std::string> GetFailMessages() const;
 
                     /**
                      * 判断参数 FailMessages 是否已赋值
                      * @return FailMessages 是否已赋值
+                     * 
                      */
                     bool FailMessagesHasBeenSet() const;
 
                     /**
                      * 获取签署连接过期时间字符串：年月日-时分秒
                      * @return UrlExpireOn 签署连接过期时间字符串：年月日-时分秒
+                     * 
                      */
                     std::string GetUrlExpireOn() const;
 
                     /**
                      * 判断参数 UrlExpireOn 是否已赋值
                      * @return UrlExpireOn 是否已赋值
+                     * 
                      */
                     bool UrlExpireOnHasBeenSet() const;
 

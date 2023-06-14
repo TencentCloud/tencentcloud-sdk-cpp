@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询过滤参数
                      * @return Params 查询过滤参数
+                     * 
                      */
                     std::string GetParams() const;
 
                     /**
                      * 设置查询过滤参数
-                     * @param Params 查询过滤参数
+                     * @param _params 查询过滤参数
+                     * 
                      */
                     void SetParams(const std::string& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置子网id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 子网id
+                     * @param _id 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr 子网的ipv4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置子网的ipv4
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cidr 子网的ipv4
+                     * @param _cidr 子网的ipv4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCidr(const std::string& _cidr);
 
                     /**
                      * 判断参数 Cidr 是否已赋值
                      * @return Cidr 是否已赋值
+                     * 
                      */
                     bool CidrHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Target subnet类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTarget() const;
 
                     /**
                      * 设置subnet类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Target subnet类型
+                     * @param _target subnet类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTarget(const std::string& _target);
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名字
+                     * @param _name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

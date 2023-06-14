@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 智能压缩配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置智能压缩配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 智能压缩配置开关，取值有：
+                     * @param _switch 智能压缩配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionRules 压缩规则数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CompressionRule> GetCompressionRules() const;
 
                     /**
                      * 设置压缩规则数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompressionRules 压缩规则数组
+                     * @param _compressionRules 压缩规则数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompressionRules(const std::vector<CompressionRule>& _compressionRules);
 
                     /**
                      * 判断参数 CompressionRules 是否已赋值
                      * @return CompressionRules 是否已赋值
+                     * 
                      */
                     bool CompressionRulesHasBeenSet() const;
 

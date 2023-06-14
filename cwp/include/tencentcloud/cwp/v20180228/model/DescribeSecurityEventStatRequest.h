@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取该接口无过滤条件
                      * @return Filters 该接口无过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置该接口无过滤条件
-                     * @param Filters 该接口无过滤条件
+                     * @param _filters 该接口无过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

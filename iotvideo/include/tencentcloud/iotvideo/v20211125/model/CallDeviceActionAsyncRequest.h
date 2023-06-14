@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品Id
                      * @return ProductId 产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品Id
-                     * @param ProductId 产品Id
+                     * @param _productId 产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
                      * @return ActionId 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
+                     * 
                      */
                     std::string GetActionId() const;
 
                     /**
                      * 设置产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
-                     * @param ActionId 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
+                     * @param _actionId 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
+                     * 
                      */
                     void SetActionId(const std::string& _actionId);
 
                     /**
                      * 判断参数 ActionId 是否已赋值
                      * @return ActionId 是否已赋值
+                     * 
                      */
                     bool ActionIdHasBeenSet() const;
 
                     /**
                      * 获取输入参数
                      * @return InputParams 输入参数
+                     * 
                      */
                     std::string GetInputParams() const;
 
                     /**
                      * 设置输入参数
-                     * @param InputParams 输入参数
+                     * @param _inputParams 输入参数
+                     * 
                      */
                     void SetInputParams(const std::string& _inputParams);
 
                     /**
                      * 判断参数 InputParams 是否已赋值
                      * @return InputParams 是否已赋值
+                     * 
                      */
                     bool InputParamsHasBeenSet() const;
 

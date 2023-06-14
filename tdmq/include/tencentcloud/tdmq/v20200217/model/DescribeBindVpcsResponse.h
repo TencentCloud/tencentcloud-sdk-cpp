@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录数。
                      * @return TotalCount 记录数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取Vpc集合。
                      * @return VpcSets Vpc集合。
+                     * 
                      */
                     std::vector<VpcBindRecord> GetVpcSets() const;
 
                     /**
                      * 判断参数 VpcSets 是否已赋值
                      * @return VpcSets 是否已赋值
+                     * 
                      */
                     bool VpcSetsHasBeenSet() const;
 

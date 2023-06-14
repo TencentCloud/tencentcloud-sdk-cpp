@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取主题详情
                      * @return TopicDescribe 主题详情
+                     * 
                      */
                     CmqTopic GetTopicDescribe() const;
 
                     /**
                      * 判断参数 TopicDescribe 是否已赋值
                      * @return TopicDescribe 是否已赋值
+                     * 
                      */
                     bool TopicDescribeHasBeenSet() const;
 

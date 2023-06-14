@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量，从0开始
                      * @return Offset 分页偏移量，从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始
-                     * @param Offset 分页偏移量，从0开始
+                     * @param _offset 分页偏移量，从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页限制数目， 最大100，默认20
                      * @return Limit 分页限制数目， 最大100，默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页限制数目， 最大100，默认20
-                     * @param Limit 分页限制数目， 最大100，默认20
+                     * @param _limit 分页限制数目， 最大100，默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤参数
                      * @return Filters 过滤参数
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取帐号ID
                      * @return AccountResId 帐号ID
+                     * 
                      */
                     std::string GetAccountResId() const;
 
                     /**
                      * 判断参数 AccountResId 是否已赋值
                      * @return AccountResId 是否已赋值
+                     * 
                      */
                     bool AccountResIdHasBeenSet() const;
 

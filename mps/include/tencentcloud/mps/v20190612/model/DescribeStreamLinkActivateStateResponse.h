@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户已激活为0，否则为非0。
                      * @return Status 用户已激活为0，否则为非0。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

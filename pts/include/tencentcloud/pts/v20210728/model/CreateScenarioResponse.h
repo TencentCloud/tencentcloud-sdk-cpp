@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取场景ID
                      * @return ScenarioId 场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 

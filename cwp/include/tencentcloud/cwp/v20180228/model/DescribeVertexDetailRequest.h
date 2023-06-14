@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取点id列表
                      * @return VertexIds 点id列表
+                     * 
                      */
                     std::vector<std::string> GetVertexIds() const;
 
                     /**
                      * 设置点id列表
-                     * @param VertexIds 点id列表
+                     * @param _vertexIds 点id列表
+                     * 
                      */
                     void SetVertexIds(const std::vector<std::string>& _vertexIds);
 
                     /**
                      * 判断参数 VertexIds 是否已赋值
                      * @return VertexIds 是否已赋值
+                     * 
                      */
                     bool VertexIdsHasBeenSet() const;
 
                     /**
                      * 获取事件id
                      * @return IncidentId 事件id
+                     * 
                      */
                     std::string GetIncidentId() const;
 
                     /**
                      * 设置事件id
-                     * @param IncidentId 事件id
+                     * @param _incidentId 事件id
+                     * 
                      */
                     void SetIncidentId(const std::string& _incidentId);
 
                     /**
                      * 判断参数 IncidentId 是否已赋值
                      * @return IncidentId 是否已赋值
+                     * 
                      */
                     bool IncidentIdHasBeenSet() const;
 
                     /**
                      * 获取事件所在表名
                      * @return TableName 事件所在表名
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置事件所在表名
-                     * @param TableName 事件所在表名
+                     * @param _tableName 事件所在表名
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 

@@ -44,7 +44,8 @@ DeviceInfo::DeviceInfo() :
     m_enableStateHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_clientIPHasBeenSet(false),
-    m_firmwareUpdateTimeHasBeenSet(false)
+    m_firmwareUpdateTimeHasBeenSet(false),
+    m_createUserIdHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,16 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
         m_firmwareUpdateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUserId") && !value["CreateUserId"].IsNull())
+    {
+        if (!value["CreateUserId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfo.CreateUserId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserId = value["CreateUserId"].GetUint64();
+        m_createUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -524,6 +535,14 @@ void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "FirmwareUpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firmwareUpdateTime, allocator);
+    }
+
+    if (m_createUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createUserId, allocator);
     }
 
 }
@@ -911,5 +930,21 @@ void DeviceInfo::SetFirmwareUpdateTime(const uint64_t& _firmwareUpdateTime)
 bool DeviceInfo::FirmwareUpdateTimeHasBeenSet() const
 {
     return m_firmwareUpdateTimeHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetCreateUserId() const
+{
+    return m_createUserId;
+}
+
+void DeviceInfo::SetCreateUserId(const uint64_t& _createUserId)
+{
+    m_createUserId = _createUserId;
+    m_createUserIdHasBeenSet = true;
+}
+
+bool DeviceInfo::CreateUserIdHasBeenSet() const
+{
+    return m_createUserIdHasBeenSet;
 }
 

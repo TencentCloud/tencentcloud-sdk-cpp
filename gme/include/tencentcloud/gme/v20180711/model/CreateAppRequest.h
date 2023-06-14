@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取应用名称
                      * @return AppName 应用名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-                     * @param AppName 应用名称
+                     * @param _appName 应用名称
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取腾讯云项目ID，默认为0，表示默认项目
                      * @return ProjectId 腾讯云项目ID，默认为0，表示默认项目
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置腾讯云项目ID，默认为0，表示默认项目
-                     * @param ProjectId 腾讯云项目ID，默认为0，表示默认项目
+                     * @param _projectId 腾讯云项目ID，默认为0，表示默认项目
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 取值：android/ios/unity/cocos/unreal/windows
                      * @return EngineList 需要支持的引擎列表，默认全选。
 取值：android/ios/unity/cocos/unreal/windows
+                     * 
                      */
                     std::vector<std::string> GetEngineList() const;
 
                     /**
                      * 设置需要支持的引擎列表，默认全选。
 取值：android/ios/unity/cocos/unreal/windows
-                     * @param EngineList 需要支持的引擎列表，默认全选。
+                     * @param _engineList 需要支持的引擎列表，默认全选。
 取值：android/ios/unity/cocos/unreal/windows
+                     * 
                      */
                     void SetEngineList(const std::vector<std::string>& _engineList);
 
                     /**
                      * 判断参数 EngineList 是否已赋值
                      * @return EngineList 是否已赋值
+                     * 
                      */
                     bool EngineListHasBeenSet() const;
 
@@ -110,110 +119,128 @@ namespace TencentCloud
 取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      * @return RegionList 服务区域列表，默认全选。
 取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
+                     * 
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
                      * 设置服务区域列表，默认全选。
 取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
-                     * @param RegionList 服务区域列表，默认全选。
+                     * @param _regionList 服务区域列表，默认全选。
 取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
+                     * 
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 
                     /**
                      * 获取实时语音服务配置数据
                      * @return RealtimeSpeechConf 实时语音服务配置数据
+                     * 
                      */
                     RealtimeSpeechConf GetRealtimeSpeechConf() const;
 
                     /**
                      * 设置实时语音服务配置数据
-                     * @param RealtimeSpeechConf 实时语音服务配置数据
+                     * @param _realtimeSpeechConf 实时语音服务配置数据
+                     * 
                      */
                     void SetRealtimeSpeechConf(const RealtimeSpeechConf& _realtimeSpeechConf);
 
                     /**
                      * 判断参数 RealtimeSpeechConf 是否已赋值
                      * @return RealtimeSpeechConf 是否已赋值
+                     * 
                      */
                     bool RealtimeSpeechConfHasBeenSet() const;
 
                     /**
                      * 获取语音消息服务配置数据
                      * @return VoiceMessageConf 语音消息服务配置数据
+                     * 
                      */
                     VoiceMessageConf GetVoiceMessageConf() const;
 
                     /**
                      * 设置语音消息服务配置数据
-                     * @param VoiceMessageConf 语音消息服务配置数据
+                     * @param _voiceMessageConf 语音消息服务配置数据
+                     * 
                      */
                     void SetVoiceMessageConf(const VoiceMessageConf& _voiceMessageConf);
 
                     /**
                      * 判断参数 VoiceMessageConf 是否已赋值
                      * @return VoiceMessageConf 是否已赋值
+                     * 
                      */
                     bool VoiceMessageConfHasBeenSet() const;
 
                     /**
                      * 获取语音分析服务配置数据
                      * @return VoiceFilterConf 语音分析服务配置数据
+                     * 
                      */
                     VoiceFilterConf GetVoiceFilterConf() const;
 
                     /**
                      * 设置语音分析服务配置数据
-                     * @param VoiceFilterConf 语音分析服务配置数据
+                     * @param _voiceFilterConf 语音分析服务配置数据
+                     * 
                      */
                     void SetVoiceFilterConf(const VoiceFilterConf& _voiceFilterConf);
 
                     /**
                      * 判断参数 VoiceFilterConf 是否已赋值
                      * @return VoiceFilterConf 是否已赋值
+                     * 
                      */
                     bool VoiceFilterConfHasBeenSet() const;
 
                     /**
                      * 获取语音转文本配置数据
                      * @return AsrConf 语音转文本配置数据
+                     * 
                      */
                     AsrConf GetAsrConf() const;
 
                     /**
                      * 设置语音转文本配置数据
-                     * @param AsrConf 语音转文本配置数据
+                     * @param _asrConf 语音转文本配置数据
+                     * 
                      */
                     void SetAsrConf(const AsrConf& _asrConf);
 
                     /**
                      * 判断参数 AsrConf 是否已赋值
                      * @return AsrConf 是否已赋值
+                     * 
                      */
                     bool AsrConfHasBeenSet() const;
 
                     /**
                      * 获取需要添加的标签列表
                      * @return Tags 需要添加的标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置需要添加的标签列表
-                     * @param Tags 需要添加的标签列表
+                     * @param _tags 需要添加的标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

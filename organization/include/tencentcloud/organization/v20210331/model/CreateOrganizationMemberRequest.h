@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
                      * @return Name 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @param Name 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * @param _name 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取关系策略。取值：Financial
                      * @return PolicyType 关系策略。取值：Financial
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置关系策略。取值：Financial
-                     * @param PolicyType 关系策略。取值：Financial
+                     * @param _policyType 关系策略。取值：Financial
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须
                      * @return PermissionIds 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须
+                     * 
                      */
                     std::vector<uint64_t> GetPermissionIds() const;
 
                     /**
                      * 设置成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须
-                     * @param PermissionIds 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须
+                     * @param _permissionIds 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须
+                     * 
                      */
                     void SetPermissionIds(const std::vector<uint64_t>& _permissionIds);
 
                     /**
                      * 判断参数 PermissionIds 是否已赋值
                      * @return PermissionIds 是否已赋值
+                     * 
                      */
                     bool PermissionIdsHasBeenSet() const;
 
                     /**
                      * 获取成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
                      * @return NodeId 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
-                     * @param NodeId 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * @param _nodeId 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
                      * @return AccountName 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @param AccountName 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * @param _accountName 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取备注。
                      * @return Remark 备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注。
-                     * @param Remark 备注。
+                     * @param _remark 备注。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取成员创建记录ID。创建异常重试时需要
                      * @return RecordId 成员创建记录ID。创建异常重试时需要
+                     * 
                      */
                     int64_t GetRecordId() const;
 
                     /**
                      * 设置成员创建记录ID。创建异常重试时需要
-                     * @param RecordId 成员创建记录ID。创建异常重试时需要
+                     * @param _recordId 成员创建记录ID。创建异常重试时需要
+                     * 
                      */
                     void SetRecordId(const int64_t& _recordId);
 
                     /**
                      * 判断参数 RecordId 是否已赋值
                      * @return RecordId 是否已赋值
+                     * 
                      */
                     bool RecordIdHasBeenSet() const;
 
                     /**
                      * 获取代付者Uin。成员代付费时需要
                      * @return PayUin 代付者Uin。成员代付费时需要
+                     * 
                      */
                     std::string GetPayUin() const;
 
                     /**
                      * 设置代付者Uin。成员代付费时需要
-                     * @param PayUin 代付者Uin。成员代付费时需要
+                     * @param _payUin 代付者Uin。成员代付费时需要
+                     * 
                      */
                     void SetPayUin(const std::string& _payUin);
 
                     /**
                      * 判断参数 PayUin 是否已赋值
                      * @return PayUin 是否已赋值
+                     * 
                      */
                     bool PayUinHasBeenSet() const;
 
                     /**
                      * 获取成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
                      * @return IdentityRoleID 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * 
                      */
                     std::vector<uint64_t> GetIdentityRoleID() const;
 
                     /**
                      * 设置成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
-                     * @param IdentityRoleID 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * @param _identityRoleID 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * 
                      */
                     void SetIdentityRoleID(const std::vector<uint64_t>& _identityRoleID);
 
                     /**
                      * 判断参数 IdentityRoleID 是否已赋值
                      * @return IdentityRoleID 是否已赋值
+                     * 
                      */
                     bool IdentityRoleIDHasBeenSet() const;
 
                     /**
                      * 获取认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
                      * @return AuthRelationId 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * 
                      */
                     int64_t GetAuthRelationId() const;
 
                     /**
                      * 设置认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
-                     * @param AuthRelationId 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * @param _authRelationId 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * 
                      */
                     void SetAuthRelationId(const int64_t& _authRelationId);
 
                     /**
                      * 判断参数 AuthRelationId 是否已赋值
                      * @return AuthRelationId 是否已赋值
+                     * 
                      */
                     bool AuthRelationIdHasBeenSet() const;
 

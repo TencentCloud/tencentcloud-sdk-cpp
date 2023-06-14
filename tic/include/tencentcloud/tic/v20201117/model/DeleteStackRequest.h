@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的资源栈ID
                      * @return StackId 待删除的资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置待删除的资源栈ID
-                     * @param StackId 待删除的资源栈ID
+                     * @param _stackId 待删除的资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 

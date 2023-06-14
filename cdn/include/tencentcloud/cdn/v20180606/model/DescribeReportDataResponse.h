@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取域名维度数据详情
                      * @return DomainReport 域名维度数据详情
+                     * 
                      */
                     std::vector<ReportData> GetDomainReport() const;
 
                     /**
                      * 判断参数 DomainReport 是否已赋值
                      * @return DomainReport 是否已赋值
+                     * 
                      */
                     bool DomainReportHasBeenSet() const;
 
                     /**
                      * 获取项目维度数据详情
                      * @return ProjectReport 项目维度数据详情
+                     * 
                      */
                     std::vector<ReportData> GetProjectReport() const;
 
                     /**
                      * 判断参数 ProjectReport 是否已赋值
                      * @return ProjectReport 是否已赋值
+                     * 
                      */
                     bool ProjectReportHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取设备ID
                      * @return DeviceId 设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取通道ID
                      * @return ChannelId 通道ID
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道ID
-                     * @param ChannelId 通道ID
+                     * @param _channelId 通道ID
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 

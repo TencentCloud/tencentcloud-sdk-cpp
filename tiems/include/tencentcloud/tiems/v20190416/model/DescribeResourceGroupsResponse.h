@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源组总数
                      * @return TotalCount 资源组总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroups 资源组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceGroup> GetResourceGroups() const;
 
                     /**
                      * 判断参数 ResourceGroups 是否已赋值
                      * @return ResourceGroups 是否已赋值
+                     * 
                      */
                     bool ResourceGroupsHasBeenSet() const;
 

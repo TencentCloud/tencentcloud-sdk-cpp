@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的执行器ID。
                      * @return InvokerId 待删除的执行器ID。
+                     * 
                      */
                     std::string GetInvokerId() const;
 
                     /**
                      * 设置待删除的执行器ID。
-                     * @param InvokerId 待删除的执行器ID。
+                     * @param _invokerId 待删除的执行器ID。
+                     * 
                      */
                     void SetInvokerId(const std::string& _invokerId);
 
                     /**
                      * 判断参数 InvokerId 是否已赋值
                      * @return InvokerId 是否已赋值
+                     * 
                      */
                     bool InvokerIdHasBeenSet() const;
 

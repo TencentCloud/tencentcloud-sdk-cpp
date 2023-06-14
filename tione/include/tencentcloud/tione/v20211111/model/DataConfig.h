@@ -55,18 +55,21 @@ namespace TencentCloud
                     /**
                      * 获取映射路径
                      * @return MappingPath 映射路径
+                     * 
                      */
                     std::string GetMappingPath() const;
 
                     /**
                      * 设置映射路径
-                     * @param MappingPath 映射路径
+                     * @param _mappingPath 映射路径
+                     * 
                      */
                     void SetMappingPath(const std::string& _mappingPath);
 
                     /**
                      * 判断参数 MappingPath 是否已赋值
                      * @return MappingPath 是否已赋值
+                     * 
                      */
                     bool MappingPathHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceType DATASET、COS、CFS、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
                      * 设置DATASET、COS、CFS、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSourceType DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * @param _dataSourceType DATASET、COS、CFS、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSourceType(const std::string& _dataSourceType);
 
                     /**
                      * 判断参数 DataSourceType 是否已赋值
                      * @return DataSourceType 是否已赋值
+                     * 
                      */
                     bool DataSourceTypeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSetSource 来自数据集的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DataSetConfig GetDataSetSource() const;
 
                     /**
                      * 设置来自数据集的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSetSource 来自数据集的数据
+                     * @param _dataSetSource 来自数据集的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSetSource(const DataSetConfig& _dataSetSource);
 
                     /**
                      * 判断参数 DataSetSource 是否已赋值
                      * @return DataSetSource 是否已赋值
+                     * 
                      */
                     bool DataSetSourceHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return COSSource 来自cos的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosPathInfo GetCOSSource() const;
 
                     /**
                      * 设置来自cos的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param COSSource 来自cos的数据
+                     * @param _cOSSource 来自cos的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCOSSource(const CosPathInfo& _cOSSource);
 
                     /**
                      * 判断参数 COSSource 是否已赋值
                      * @return COSSource 是否已赋值
+                     * 
                      */
                     bool COSSourceHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSSource 来自CFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CFSConfig GetCFSSource() const;
 
                     /**
                      * 设置来自CFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CFSSource 来自CFS的数据
+                     * @param _cFSSource 来自CFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCFSSource(const CFSConfig& _cFSSource);
 
                     /**
                      * 判断参数 CFSSource 是否已赋值
                      * @return CFSSource 是否已赋值
+                     * 
                      */
                     bool CFSSourceHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HDFSSource 来自HDFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HDFSConfig GetHDFSSource() const;
 
                     /**
                      * 设置来自HDFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HDFSSource 来自HDFS的数据
+                     * @param _hDFSSource 来自HDFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHDFSSource(const HDFSConfig& _hDFSSource);
 
                     /**
                      * 判断参数 HDFSSource 是否已赋值
                      * @return HDFSSource 是否已赋值
+                     * 
                      */
                     bool HDFSSourceHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GooseFSSource 配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GooseFS GetGooseFSSource() const;
 
                     /**
                      * 设置配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GooseFSSource 配置GooseFS的数据
+                     * @param _gooseFSSource 配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGooseFSSource(const GooseFS& _gooseFSSource);
 
                     /**
                      * 判断参数 GooseFSSource 是否已赋值
                      * @return GooseFSSource 是否已赋值
+                     * 
                      */
                     bool GooseFSSourceHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSTurboSource 配置TurboFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CFSTurbo GetCFSTurboSource() const;
 
                     /**
                      * 设置配置TurboFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CFSTurboSource 配置TurboFS的数据
+                     * @param _cFSTurboSource 配置TurboFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCFSTurboSource(const CFSTurbo& _cFSTurboSource);
 
                     /**
                      * 判断参数 CFSTurboSource 是否已赋值
                      * @return CFSTurboSource 是否已赋值
+                     * 
                      */
                     bool CFSTurboSourceHasBeenSet() const;
 

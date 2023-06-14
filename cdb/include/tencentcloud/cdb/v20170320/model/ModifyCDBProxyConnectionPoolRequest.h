@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库代理ID
                      * @return ProxyGroupId 数据库代理ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置数据库代理ID
-                     * @param ProxyGroupId 数据库代理ID
+                     * @param _proxyGroupId 数据库代理ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
                              false：关闭连接池。
                      * @return OpenConnectionPool 是否开启连接池，true：开启连接池；
                              false：关闭连接池。
+                     * 
                      */
                     bool GetOpenConnectionPool() const;
 
                     /**
                      * 设置是否开启连接池，true：开启连接池；
                              false：关闭连接池。
-                     * @param OpenConnectionPool 是否开启连接池，true：开启连接池；
+                     * @param _openConnectionPool 是否开启连接池，true：开启连接池；
                              false：关闭连接池。
+                     * 
                      */
                     void SetOpenConnectionPool(const bool& _openConnectionPool);
 
                     /**
                      * 判断参数 OpenConnectionPool 是否已赋值
                      * @return OpenConnectionPool 是否已赋值
+                     * 
                      */
                     bool OpenConnectionPoolHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 通过DescribeProxyConnectionPoolConf获取连接池类型值
                      * @return ConnectionPoolType 连接池类型，
 通过DescribeProxyConnectionPoolConf获取连接池类型值
+                     * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
                      * 设置连接池类型，
 通过DescribeProxyConnectionPoolConf获取连接池类型值
-                     * @param ConnectionPoolType 连接池类型，
+                     * @param _connectionPoolType 连接池类型，
 通过DescribeProxyConnectionPoolConf获取连接池类型值
+                     * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
 
                     /**
                      * 判断参数 ConnectionPoolType 是否已赋值
                      * @return ConnectionPoolType 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolTypeHasBeenSet() const;
 
                     /**
                      * 获取连接保留阈值：单位（秒）
                      * @return PoolConnectionTimeOut 连接保留阈值：单位（秒）
+                     * 
                      */
                     int64_t GetPoolConnectionTimeOut() const;
 
                     /**
                      * 设置连接保留阈值：单位（秒）
-                     * @param PoolConnectionTimeOut 连接保留阈值：单位（秒）
+                     * @param _poolConnectionTimeOut 连接保留阈值：单位（秒）
+                     * 
                      */
                     void SetPoolConnectionTimeOut(const int64_t& _poolConnectionTimeOut);
 
                     /**
                      * 判断参数 PoolConnectionTimeOut 是否已赋值
                      * @return PoolConnectionTimeOut 是否已赋值
+                     * 
                      */
                     bool PoolConnectionTimeOutHasBeenSet() const;
 

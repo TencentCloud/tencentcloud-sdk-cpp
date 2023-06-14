@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取开票平台ID
                      * @return InvoicePlatformId 开票平台ID
+                     * 
                      */
                     int64_t GetInvoicePlatformId() const;
 
                     /**
                      * 设置开票平台ID
-                     * @param InvoicePlatformId 开票平台ID
+                     * @param _invoicePlatformId 开票平台ID
+                     * 
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
                     /**
                      * 判断参数 InvoicePlatformId 是否已赋值
                      * @return InvoicePlatformId 是否已赋值
+                     * 
                      */
                     bool InvoicePlatformIdHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return Offset 页码
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页码
-                     * @param Offset 页码
+                     * @param _offset 页码
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return Limit 页大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置页大小
-                     * @param Limit 页大小
+                     * @param _limit 页大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox。
                      * @return Profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox。
-                     * @param Profile 接入环境。沙箱环境填sandbox。
+                     * @param _profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

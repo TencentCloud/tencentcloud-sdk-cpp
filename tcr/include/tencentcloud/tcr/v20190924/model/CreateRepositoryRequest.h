@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取仓库名称
                      * @return RepositoryName 仓库名称
+                     * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param RepositoryName 仓库名称
+                     * @param _repositoryName 仓库名称
+                     * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
                     /**
                      * 判断参数 RepositoryName 是否已赋值
                      * @return RepositoryName 是否已赋值
+                     * 
                      */
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取仓库简短描述
                      * @return BriefDescription 仓库简短描述
+                     * 
                      */
                     std::string GetBriefDescription() const;
 
                     /**
                      * 设置仓库简短描述
-                     * @param BriefDescription 仓库简短描述
+                     * @param _briefDescription 仓库简短描述
+                     * 
                      */
                     void SetBriefDescription(const std::string& _briefDescription);
 
                     /**
                      * 判断参数 BriefDescription 是否已赋值
                      * @return BriefDescription 是否已赋值
+                     * 
                      */
                     bool BriefDescriptionHasBeenSet() const;
 
                     /**
                      * 获取仓库详细描述
                      * @return Description 仓库详细描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置仓库详细描述
-                     * @param Description 仓库详细描述
+                     * @param _description 仓库详细描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

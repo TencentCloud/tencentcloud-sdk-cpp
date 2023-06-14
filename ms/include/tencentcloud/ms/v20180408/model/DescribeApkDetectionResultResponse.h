@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取响应结果，ok表示正常，error表示错误
                      * @return Result 响应结果，ok表示正常，error表示错误
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取Result为error错误时的原因说明
                      * @return Reason Result为error错误时的原因说明
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取APK检测结果数组
                      * @return ResultList APK检测结果数组
+                     * 
                      */
                     std::vector<ResultListItem> GetResultList() const;
 
                     /**
                      * 判断参数 ResultList 是否已赋值
                      * @return ResultList 是否已赋值
+                     * 
                      */
                     bool ResultListHasBeenSet() const;
 

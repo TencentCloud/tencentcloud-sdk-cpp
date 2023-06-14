@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Job id
                      * @return JobId Job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置Job id
-                     * @param JobId Job id
+                     * @param _jobId Job id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取Job配置版本
                      * @return JobConfigVersion Job配置版本
+                     * 
                      */
                     int64_t GetJobConfigVersion() const;
 
                     /**
                      * 设置Job配置版本
-                     * @param JobConfigVersion Job配置版本
+                     * @param _jobConfigVersion Job配置版本
+                     * 
                      */
                     void SetJobConfigVersion(const int64_t& _jobConfigVersion);
 
                     /**
                      * 判断参数 JobConfigVersion 是否已赋值
                      * @return JobConfigVersion 是否已赋值
+                     * 
                      */
                     bool JobConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取资源版本
                      * @return ResourceVersion 资源版本
+                     * 
                      */
                     int64_t GetResourceVersion() const;
 
                     /**
                      * 设置资源版本
-                     * @param ResourceVersion 资源版本
+                     * @param _resourceVersion 资源版本
+                     * 
                      */
                     void SetResourceVersion(const int64_t& _resourceVersion);
 
                     /**
                      * 判断参数 ResourceVersion 是否已赋值
                      * @return ResourceVersion 是否已赋值
+                     * 
                      */
                     bool ResourceVersionHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户userId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 用户userId
+                     * @param _userId 用户userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleIds 角色id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRoleIds() const;
 
                     /**
                      * 设置角色id列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleIds 角色id列表
+                     * @param _roleIds 角色id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleIds(const std::vector<std::string>& _roleIds);
 
                     /**
                      * 判断参数 RoleIds 是否已赋值
                      * @return RoleIds 是否已赋值
+                     * 
                      */
                     bool RoleIdsHasBeenSet() const;
 

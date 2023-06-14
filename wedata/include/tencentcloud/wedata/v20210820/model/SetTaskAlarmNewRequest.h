@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取设置任务超时告警和失败告警信息
                      * @return AlarmInfoList 设置任务超时告警和失败告警信息
+                     * 
                      */
                     std::vector<AlarmInfo> GetAlarmInfoList() const;
 
                     /**
                      * 设置设置任务超时告警和失败告警信息
-                     * @param AlarmInfoList 设置任务超时告警和失败告警信息
+                     * @param _alarmInfoList 设置任务超时告警和失败告警信息
+                     * 
                      */
                     void SetAlarmInfoList(const std::vector<AlarmInfo>& _alarmInfoList);
 
                     /**
                      * 判断参数 AlarmInfoList 是否已赋值
                      * @return AlarmInfoList 是否已赋值
+                     * 
                      */
                     bool AlarmInfoListHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

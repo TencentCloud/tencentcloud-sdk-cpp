@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 已绑定的证书ID
+                     * @param _certId 已绑定的证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 DISABLED:域名下线状态
                      * @return Status ENABLED: 域名上线状态
 DISABLED:域名下线状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ENABLED: 域名上线状态
 DISABLED:域名下线状态
-                     * @param Status ENABLED: 域名上线状态
+                     * @param _status ENABLED: 域名上线状态
 DISABLED:域名下线状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -113,20 +122,23 @@ DISABLED:域名下线状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 存储桶名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置存储桶名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket 存储桶名称
+                     * @param _bucket 存储桶名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -135,20 +147,23 @@ DISABLED:域名下线状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 存储桶地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置存储桶地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 存储桶地域
+                     * @param _region 存储桶地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

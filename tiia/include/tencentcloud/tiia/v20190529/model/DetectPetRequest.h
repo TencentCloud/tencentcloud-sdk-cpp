@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return ImageUrl 图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 图片大小的限制为4M，图片像素的限制为4k。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 图片大小的限制为4M，图片像素的限制为4k。
-                     * @param ImageUrl 图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
+                     * @param _imageUrl 图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 图片大小的限制为4M，图片像素的限制为4k。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
                      * @return ImageBase64 图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 
 图片大小的限制为4M，图片像素的限制为4k。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -82,15 +86,17 @@ namespace TencentCloud
                      * 设置图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 
 图片大小的限制为4M，图片像素的限制为4k。
 **注意：图片需要base64编码，并且要去掉编码头部。**
-                     * @param ImageBase64 图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 
+                     * @param _imageBase64 图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 
 图片大小的限制为4M，图片像素的限制为4k。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 

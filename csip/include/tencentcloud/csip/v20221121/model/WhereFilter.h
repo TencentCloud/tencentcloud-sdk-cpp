@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤的项
                      * @return Name 过滤的项
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤的项
-                     * @param Name 过滤的项
+                     * @param _name 过滤的项
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤的值
                      * @return Values 过滤的值
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤的值
-                     * @param Values 过滤的值
+                     * @param _values 过滤的值
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
                      * @return OperatorType 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * 
                      */
                     int64_t GetOperatorType() const;
 
                     /**
                      * 设置精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
-                     * @param OperatorType 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * @param _operatorType 精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构
+                     * 
                      */
                     void SetOperatorType(const int64_t& _operatorType);
 
                     /**
                      * 判断参数 OperatorType 是否已赋值
                      * @return OperatorType 是否已赋值
+                     * 
                      */
                     bool OperatorTypeHasBeenSet() const;
 

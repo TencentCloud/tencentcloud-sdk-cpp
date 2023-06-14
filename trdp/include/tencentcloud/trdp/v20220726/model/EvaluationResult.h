@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取SSID值
                      * @return SSID SSID值
+                     * 
                      */
                     std::string GetSSID() const;
 
                     /**
                      * 设置SSID值
-                     * @param SSID SSID值
+                     * @param _sSID SSID值
+                     * 
                      */
                     void SetSSID(const std::string& _sSID);
 
                     /**
                      * 判断参数 SSID 是否已赋值
                      * @return SSID 是否已赋值
+                     * 
                      */
                     bool SSIDHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 风险价值分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置风险价值分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 风险价值分
+                     * @param _score 风险价值分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -247,6 +253,7 @@ namespace TencentCloud
 40002 疑似被调试 来源于小程序
 40003 疑似模拟器 来源于小程序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetRiskLabels() const;
 
@@ -331,7 +338,7 @@ namespace TencentCloud
 40002 疑似被调试 来源于小程序
 40003 疑似模拟器 来源于小程序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskLabels 风险标签，请参考官网风险类型
+                     * @param _riskLabels 风险标签，请参考官网风险类型
 账号风险
 1 账号信用低 账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 11 疑似低活跃账号 账号活跃度与正常用户有差异
@@ -411,12 +418,14 @@ namespace TencentCloud
 40002 疑似被调试 来源于小程序
 40003 疑似模拟器 来源于小程序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskLabels(const std::vector<int64_t>& _riskLabels);
 
                     /**
                      * 判断参数 RiskLabels 是否已赋值
                      * @return RiskLabels 是否已赋值
+                     * 
                      */
                     bool RiskLabelsHasBeenSet() const;
 

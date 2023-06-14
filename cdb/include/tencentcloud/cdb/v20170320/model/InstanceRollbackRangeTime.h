@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取查询数据库错误码
                      * @return Code 查询数据库错误码
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置查询数据库错误码
-                     * @param Code 查询数据库错误码
+                     * @param _code 查询数据库错误码
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取查询数据库错误信息
                      * @return Message 查询数据库错误信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置查询数据库错误信息
-                     * @param Message 查询数据库错误信息
+                     * @param _message 查询数据库错误信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取可回档时间范围
                      * @return Times 可回档时间范围
+                     * 
                      */
                     std::vector<RollbackTimeRange> GetTimes() const;
 
                     /**
                      * 设置可回档时间范围
-                     * @param Times 可回档时间范围
+                     * @param _times 可回档时间范围
+                     * 
                      */
                     void SetTimes(const std::vector<RollbackTimeRange>& _times);
 
                     /**
                      * 判断参数 Times 是否已赋值
                      * @return Times 是否已赋值
+                     * 
                      */
                     bool TimesHasBeenSet() const;
 

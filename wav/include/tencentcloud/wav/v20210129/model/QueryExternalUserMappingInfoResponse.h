@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalUserIdMapping 外部联系人映射信息, 只返回映射成功的记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExternalUserMappingInfo> GetExternalUserIdMapping() const;
 
                     /**
                      * 判断参数 ExternalUserIdMapping 是否已赋值
                      * @return ExternalUserIdMapping 是否已赋值
+                     * 
                      */
                     bool ExternalUserIdMappingHasBeenSet() const;
 

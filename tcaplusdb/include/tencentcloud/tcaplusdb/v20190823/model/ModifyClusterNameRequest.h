@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要修改名称的集群ID
                      * @return ClusterId 需要修改名称的集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置需要修改名称的集群ID
-                     * @param ClusterId 需要修改名称的集群ID
+                     * @param _clusterId 需要修改名称的集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的集群名称，可使用中文或英文字符，最大长度32个字符
                      * @return ClusterName 需要修改的集群名称，可使用中文或英文字符，最大长度32个字符
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置需要修改的集群名称，可使用中文或英文字符，最大长度32个字符
-                     * @param ClusterName 需要修改的集群名称，可使用中文或英文字符，最大长度32个字符
+                     * @param _clusterName 需要修改的集群名称，可使用中文或英文字符，最大长度32个字符
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 

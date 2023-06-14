@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取实例的规格
                      * @return RegistryType 实例的规格
+                     * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 设置实例的规格
-                     * @param RegistryType 实例的规格
+                     * @param _registryType 实例的规格
+                     * 
                      */
                     void SetRegistryType(const std::string& _registryType);
 
                     /**
                      * 判断参数 RegistryType 是否已赋值
                      * @return RegistryType 是否已赋值
+                     * 
                      */
                     bool RegistryTypeHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取密钥ID列表。
                      * @return KeyIds 密钥ID列表。
+                     * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
                      * 设置密钥ID列表。
-                     * @param KeyIds 密钥ID列表。
+                     * @param _keyIds 密钥ID列表。
+                     * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
 
                     /**
                      * 判断参数 KeyIds 是否已赋值
                      * @return KeyIds 是否已赋值
+                     * 
                      */
                     bool KeyIdsHasBeenSet() const;
 

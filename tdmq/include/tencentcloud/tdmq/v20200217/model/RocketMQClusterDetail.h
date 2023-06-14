@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取集群基本信息
                      * @return Info 集群基本信息
+                     * 
                      */
                     RocketMQClusterInfo GetInfo() const;
 
                     /**
                      * 设置集群基本信息
-                     * @param Info 集群基本信息
+                     * @param _info 集群基本信息
+                     * 
                      */
                     void SetInfo(const RocketMQClusterInfo& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取集群配置信息
                      * @return Config 集群配置信息
+                     * 
                      */
                     RocketMQClusterConfig GetConfig() const;
 
                     /**
                      * 设置集群配置信息
-                     * @param Config 集群配置信息
+                     * @param _config 集群配置信息
+                     * 
                      */
                     void SetConfig(const RocketMQClusterConfig& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+                     * @param _status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

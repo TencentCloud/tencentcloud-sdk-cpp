@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取本次交易返回查询结果记录数
                      * @return ResultCount 本次交易返回查询结果记录数
+                     * 
                      */
                     std::string GetResultCount() const;
 
                     /**
                      * 判断参数 ResultCount 是否已赋值
                      * @return ResultCount 是否已赋值
+                     * 
                      */
                     bool ResultCountHasBeenSet() const;
 
                     /**
                      * 获取起始记录号
                      * @return StartRecordOffset 起始记录号
+                     * 
                      */
                     std::string GetStartRecordOffset() const;
 
                     /**
                      * 判断参数 StartRecordOffset 是否已赋值
                      * @return StartRecordOffset 是否已赋值
+                     * 
                      */
                     bool StartRecordOffsetHasBeenSet() const;
 
                     /**
                      * 获取结束标志
                      * @return EndFlag 结束标志
+                     * 
                      */
                     std::string GetEndFlag() const;
 
                     /**
                      * 判断参数 EndFlag 是否已赋值
                      * @return EndFlag 是否已赋值
+                     * 
                      */
                     bool EndFlagHasBeenSet() const;
 
                     /**
                      * 获取符合业务查询条件的记录总数
                      * @return TotalCount 符合业务查询条件的记录总数
+                     * 
                      */
                     std::string GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取查询结果项
                      * @return QueryItems 查询结果项
+                     * 
                      */
                     std::vector<QueryItem> GetQueryItems() const;
 
                     /**
                      * 判断参数 QueryItems 是否已赋值
                      * @return QueryItems 是否已赋值
+                     * 
                      */
                     bool QueryItemsHasBeenSet() const;
 

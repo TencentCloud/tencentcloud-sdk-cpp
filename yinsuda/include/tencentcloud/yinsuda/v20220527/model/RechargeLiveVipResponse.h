@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取直播会员信息。
                      * @return LiveVipUserInfo 直播会员信息。
+                     * 
                      */
                     LiveVipUserInfo GetLiveVipUserInfo() const;
 
                     /**
                      * 判断参数 LiveVipUserInfo 是否已赋值
                      * @return LiveVipUserInfo 是否已赋值
+                     * 
                      */
                     bool LiveVipUserInfoHasBeenSet() const;
 

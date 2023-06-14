@@ -83,6 +83,7 @@ referer：请求头Referer
 cookie：请求头Cookie
 userAgent：请求头User-Agent
 head：自定义请求头
+                     * 
                      */
                     std::string GetMatchKey() const;
 
@@ -105,7 +106,7 @@ referer：请求头Referer
 cookie：请求头Cookie
 userAgent：请求头User-Agent
 head：自定义请求头
-                     * @param MatchKey 匹配关键字：
+                     * @param _matchKey 匹配关键字：
 protocol：HTTP协议
 httpVersion：HTTP版本
 method：请求方法
@@ -123,12 +124,14 @@ referer：请求头Referer
 cookie：请求头Cookie
 userAgent：请求头User-Agent
 head：自定义请求头
+                     * 
                      */
                     void SetMatchKey(const std::string& _matchKey);
 
                     /**
                      * 判断参数 MatchKey 是否已赋值
                      * @return MatchKey 是否已赋值
+                     * 
                      */
                     bool MatchKeyHasBeenSet() const;
 
@@ -147,6 +150,7 @@ head：自定义请求头
 等于：equal
 前缀匹配：matching
 内容为空或不存在：null
+                     * 
                      */
                     std::string GetLogicOperator() const;
 
@@ -158,19 +162,21 @@ head：自定义请求头
 等于：equal
 前缀匹配：matching
 内容为空或不存在：null
-                     * @param LogicOperator 逻辑操作符，取值如下：
+                     * @param _logicOperator 逻辑操作符，取值如下：
 不包含：exclude
 包含：include
 不等于：notequal
 等于：equal
 前缀匹配：matching
 内容为空或不存在：null
+                     * 
                      */
                     void SetLogicOperator(const std::string& _logicOperator);
 
                     /**
                      * 判断参数 LogicOperator 是否已赋值
                      * @return LogicOperator 是否已赋值
+                     * 
                      */
                     bool LogicOperatorHasBeenSet() const;
 
@@ -605,6 +611,7 @@ head：自定义请求头
 
 当MatchKey为index时
 取值为：/;/index.html
+                     * 
                      */
                     std::vector<std::string> GetMatchValue() const;
 
@@ -824,7 +831,7 @@ head：自定义请求头
 
 当MatchKey为index时
 取值为：/;/index.html
-                     * @param MatchValue 匹配值。
+                     * @param _matchValue 匹配值。
 当MatchKey为protocol时
 取值：HTTP、HTTPS
 
@@ -1039,48 +1046,56 @@ head：自定义请求头
 
 当MatchKey为index时
 取值为：/;/index.html
+                     * 
                      */
                     void SetMatchValue(const std::vector<std::string>& _matchValue);
 
                     /**
                      * 判断参数 MatchValue 是否已赋值
                      * @return MatchValue 是否已赋值
+                     * 
                      */
                     bool MatchValueHasBeenSet() const;
 
                     /**
                      * 获取是否区分大小写 true：区分 false：不区分
                      * @return CaseSensitive 是否区分大小写 true：区分 false：不区分
+                     * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置是否区分大小写 true：区分 false：不区分
-                     * @param CaseSensitive 是否区分大小写 true：区分 false：不区分
+                     * @param _caseSensitive 是否区分大小写 true：区分 false：不区分
+                     * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
 
                     /**
                      * 判断参数 CaseSensitive 是否已赋值
                      * @return CaseSensitive 是否已赋值
+                     * 
                      */
                     bool CaseSensitiveHasBeenSet() const;
 
                     /**
                      * 获取当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的
                      * @return MatchKeyParam 当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的
+                     * 
                      */
                     std::string GetMatchKeyParam() const;
 
                     /**
                      * 设置当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的
-                     * @param MatchKeyParam 当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的
+                     * @param _matchKeyParam 当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的
+                     * 
                      */
                     void SetMatchKeyParam(const std::string& _matchKeyParam);
 
                     /**
                      * 判断参数 MatchKeyParam 是否已赋值
                      * @return MatchKeyParam 是否已赋值
+                     * 
                      */
                     bool MatchKeyParamHasBeenSet() const;
 

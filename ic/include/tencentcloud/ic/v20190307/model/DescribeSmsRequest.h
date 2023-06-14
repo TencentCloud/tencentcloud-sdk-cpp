@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return Sdkappid 应用ID
+                     * 
                      */
                     int64_t GetSdkappid() const;
 
                     /**
                      * 设置应用ID
-                     * @param Sdkappid 应用ID
+                     * @param _sdkappid 应用ID
+                     * 
                      */
                     void SetSdkappid(const int64_t& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 
                     /**
                      * 获取卡片ID
                      * @return Iccid 卡片ID
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置卡片ID
-                     * @param Iccid 卡片ID
+                     * @param _iccid 卡片ID
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
                     /**
                      * 获取卡片号码
                      * @return Msisdn 卡片号码
+                     * 
                      */
                     std::string GetMsisdn() const;
 
                     /**
                      * 设置卡片号码
-                     * @param Msisdn 卡片号码
+                     * @param _msisdn 卡片号码
+                     * 
                      */
                     void SetMsisdn(const std::string& _msisdn);
 
                     /**
                      * 判断参数 Msisdn 是否已赋值
                      * @return Msisdn 是否已赋值
+                     * 
                      */
                     bool MsisdnHasBeenSet() const;
 
                     /**
                      * 获取短信类型
                      * @return SmsType 短信类型
+                     * 
                      */
                     int64_t GetSmsType() const;
 
                     /**
                      * 设置短信类型
-                     * @param SmsType 短信类型
+                     * @param _smsType 短信类型
+                     * 
                      */
                     void SetSmsType(const int64_t& _smsType);
 
                     /**
                      * 判断参数 SmsType 是否已赋值
                      * @return SmsType 是否已赋值
+                     * 
                      */
                     bool SmsTypeHasBeenSet() const;
 
                     /**
                      * 获取开始时间  YYYY-MM-DD HH:mm:ss
                      * @return BeginTime 开始时间  YYYY-MM-DD HH:mm:ss
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间  YYYY-MM-DD HH:mm:ss
-                     * @param BeginTime 开始时间  YYYY-MM-DD HH:mm:ss
+                     * @param _beginTime 开始时间  YYYY-MM-DD HH:mm:ss
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间  YYYY-MM-DD HH:mm:ss
                      * @return EndTime 结束时间  YYYY-MM-DD HH:mm:ss
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间  YYYY-MM-DD HH:mm:ss
-                     * @param EndTime 结束时间  YYYY-MM-DD HH:mm:ss
+                     * @param _endTime 结束时间  YYYY-MM-DD HH:mm:ss
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取小于200
                      * @return Limit 小于200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置小于200
-                     * @param Limit 小于200
+                     * @param _limit 小于200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return RegistryId 实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例Id
-                     * @param RegistryId 实例Id
+                     * @param _registryId 实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取访问级别，True为公开，False为私有
                      * @return IsPublic 访问级别，True为公开，False为私有
+                     * 
                      */
                     bool GetIsPublic() const;
 
                     /**
                      * 设置访问级别，True为公开，False为私有
-                     * @param IsPublic 访问级别，True为公开，False为私有
+                     * @param _isPublic 访问级别，True为公开，False为私有
+                     * 
                      */
                     void SetIsPublic(const bool& _isPublic);
 
                     /**
                      * 判断参数 IsPublic 是否已赋值
                      * @return IsPublic 是否已赋值
+                     * 
                      */
                     bool IsPublicHasBeenSet() const;
 
                     /**
                      * 获取扫描级别，True为自动，False为手动
                      * @return IsAutoScan 扫描级别，True为自动，False为手动
+                     * 
                      */
                     bool GetIsAutoScan() const;
 
                     /**
                      * 设置扫描级别，True为自动，False为手动
-                     * @param IsAutoScan 扫描级别，True为自动，False为手动
+                     * @param _isAutoScan 扫描级别，True为自动，False为手动
+                     * 
                      */
                     void SetIsAutoScan(const bool& _isAutoScan);
 
                     /**
                      * 判断参数 IsAutoScan 是否已赋值
                      * @return IsAutoScan 是否已赋值
+                     * 
                      */
                     bool IsAutoScanHasBeenSet() const;
 
                     /**
                      * 获取阻断开关，True为开放，False为关闭
                      * @return IsPreventVUL 阻断开关，True为开放，False为关闭
+                     * 
                      */
                     bool GetIsPreventVUL() const;
 
                     /**
                      * 设置阻断开关，True为开放，False为关闭
-                     * @param IsPreventVUL 阻断开关，True为开放，False为关闭
+                     * @param _isPreventVUL 阻断开关，True为开放，False为关闭
+                     * 
                      */
                     void SetIsPreventVUL(const bool& _isPreventVUL);
 
                     /**
                      * 判断参数 IsPreventVUL 是否已赋值
                      * @return IsPreventVUL 是否已赋值
+                     * 
                      */
                     bool IsPreventVULHasBeenSet() const;
 
                     /**
                      * 获取阻断漏洞等级，目前仅支持 low、medium、high
                      * @return Severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     * 
                      */
                     std::string GetSeverity() const;
 
                     /**
                      * 设置阻断漏洞等级，目前仅支持 low、medium、high
-                     * @param Severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     * @param _severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     * 
                      */
                     void SetSeverity(const std::string& _severity);
 
                     /**
                      * 判断参数 Severity 是否已赋值
                      * @return Severity 是否已赋值
+                     * 
                      */
                     bool SeverityHasBeenSet() const;
 
                     /**
                      * 获取漏洞白名单列表
                      * @return CVEWhitelistItems 漏洞白名单列表
+                     * 
                      */
                     std::vector<CVEWhitelistItem> GetCVEWhitelistItems() const;
 
                     /**
                      * 设置漏洞白名单列表
-                     * @param CVEWhitelistItems 漏洞白名单列表
+                     * @param _cVEWhitelistItems 漏洞白名单列表
+                     * 
                      */
                     void SetCVEWhitelistItems(const std::vector<CVEWhitelistItem>& _cVEWhitelistItems);
 
                     /**
                      * 判断参数 CVEWhitelistItems 是否已赋值
                      * @return CVEWhitelistItems 是否已赋值
+                     * 
                      */
                     bool CVEWhitelistItemsHasBeenSet() const;
 

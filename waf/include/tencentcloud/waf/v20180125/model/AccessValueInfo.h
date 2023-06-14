@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 字段类型，目前支持的类型有：long、text、double
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置字段类型，目前支持的类型有：long、text、double
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 字段类型，目前支持的类型有：long、text、double
+                     * @param _type 字段类型，目前支持的类型有：long、text、double
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tokenizer 字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTokenizer() const;
 
                     /**
                      * 设置字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tokenizer 字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符
+                     * @param _tokenizer 字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTokenizer(const std::string& _tokenizer);
 
                     /**
                      * 判断参数 Tokenizer 是否已赋值
                      * @return Tokenizer 是否已赋值
+                     * 
                      */
                     bool TokenizerHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlFlag 字段是否开启分析功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSqlFlag() const;
 
                     /**
                      * 设置字段是否开启分析功能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SqlFlag 字段是否开启分析功能
+                     * @param _sqlFlag 字段是否开启分析功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSqlFlag(const bool& _sqlFlag);
 
                     /**
                      * 判断参数 SqlFlag 是否已赋值
                      * @return SqlFlag 是否已赋值
+                     * 
                      */
                     bool SqlFlagHasBeenSet() const;
 
@@ -119,6 +128,7 @@ namespace TencentCloud
                      * @return ContainZH 是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetContainZH() const;
 
@@ -126,15 +136,17 @@ namespace TencentCloud
                      * 设置是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainZH 是否包含中文
+                     * @param _containZH 是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainZH(const bool& _containZH);
 
                     /**
                      * 判断参数 ContainZH 是否已赋值
                      * @return ContainZH 是否已赋值
+                     * 
                      */
                     bool ContainZHHasBeenSet() const;
 

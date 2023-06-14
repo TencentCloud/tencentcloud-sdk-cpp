@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 超管名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置超管名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 超管名
+                     * @param _name 超管名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile 超管手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置超管手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mobile 超管手机号
+                     * @param _mobile 超管手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 

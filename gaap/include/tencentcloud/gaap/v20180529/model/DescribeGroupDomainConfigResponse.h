@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取域名解析就近接入配置列表。
                      * @return AccessRegionList 域名解析就近接入配置列表。
+                     * 
                      */
                     std::vector<DomainAccessRegionDict> GetAccessRegionList() const;
 
                     /**
                      * 判断参数 AccessRegionList 是否已赋值
                      * @return AccessRegionList 是否已赋值
+                     * 
                      */
                     bool AccessRegionListHasBeenSet() const;
 
                     /**
                      * 获取默认访问Ip。
                      * @return DefaultDnsIp 默认访问Ip。
+                     * 
                      */
                     std::string GetDefaultDnsIp() const;
 
                     /**
                      * 判断参数 DefaultDnsIp 是否已赋值
                      * @return DefaultDnsIp 是否已赋值
+                     * 
                      */
                     bool DefaultDnsIpHasBeenSet() const;
 
                     /**
                      * 获取通道组ID。
                      * @return GroupId 通道组ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取接入地域的配置的总数。
                      * @return AccessRegionCount 接入地域的配置的总数。
+                     * 
                      */
                     int64_t GetAccessRegionCount() const;
 
                     /**
                      * 判断参数 AccessRegionCount 是否已赋值
                      * @return AccessRegionCount 是否已赋值
+                     * 
                      */
                     bool AccessRegionCountHasBeenSet() const;
 

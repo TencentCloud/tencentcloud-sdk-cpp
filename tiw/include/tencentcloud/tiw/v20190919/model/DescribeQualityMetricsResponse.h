@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取输入的查询指标
                      * @return Metric 输入的查询指标
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取时间序列
                      * @return Content 时间序列
+                     * 
                      */
                     std::vector<TimeValue> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

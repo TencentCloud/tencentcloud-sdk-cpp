@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取DATE:按天维度统计 HOUR:按小时维度统计
                      * @return DnsFormat DATE:按天维度统计 HOUR:按小时维度统计
+                     * 
                      */
                     std::string GetDnsFormat() const;
 
                     /**
                      * 设置DATE:按天维度统计 HOUR:按小时维度统计
-                     * @param DnsFormat DATE:按天维度统计 HOUR:按小时维度统计
+                     * @param _dnsFormat DATE:按天维度统计 HOUR:按小时维度统计
+                     * 
                      */
                     void SetDnsFormat(const std::string& _dnsFormat);
 
                     /**
                      * 判断参数 DnsFormat 是否已赋值
                      * @return DnsFormat 是否已赋值
+                     * 
                      */
                     bool DnsFormatHasBeenSet() const;
 
                     /**
                      * 获取当前统计周期解析量总计
                      * @return DnsTotal 当前统计周期解析量总计
+                     * 
                      */
                     uint64_t GetDnsTotal() const;
 
                     /**
                      * 设置当前统计周期解析量总计
-                     * @param DnsTotal 当前统计周期解析量总计
+                     * @param _dnsTotal 当前统计周期解析量总计
+                     * 
                      */
                     void SetDnsTotal(const uint64_t& _dnsTotal);
 
                     /**
                      * 判断参数 DnsTotal 是否已赋值
                      * @return DnsTotal 是否已赋值
+                     * 
                      */
                     bool DnsTotalHasBeenSet() const;
 
                     /**
                      * 获取当前查询的域名
                      * @return Domain 当前查询的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置当前查询的域名
-                     * @param Domain 当前查询的域名
+                     * @param _domain 当前查询的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取当前统计周期开始时间
                      * @return StartDate 当前统计周期开始时间
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置当前统计周期开始时间
-                     * @param StartDate 当前统计周期开始时间
+                     * @param _startDate 当前统计周期开始时间
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取当前统计周期结束时间
                      * @return EndDate 当前统计周期结束时间
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置当前统计周期结束时间
-                     * @param EndDate 当前统计周期结束时间
+                     * @param _endDate 当前统计周期结束时间
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取网络总数量
                      * @return TotalCount 网络总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取网络列表
                      * @return ClusterList 网络列表
+                     * 
                      */
                     std::vector<ClusterDetailForUser> GetClusterList() const;
 
                     /**
                      * 判断参数 ClusterList 是否已赋值
                      * @return ClusterList 是否已赋值
+                     * 
                      */
                     bool ClusterListHasBeenSet() const;
 

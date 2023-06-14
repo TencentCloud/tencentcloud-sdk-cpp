@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取base64之后的Html代码
                      * @return Html base64之后的Html代码
+                     * 
                      */
                     std::string GetHtml() const;
 
                     /**
                      * 设置base64之后的Html代码
-                     * @param Html base64之后的Html代码
+                     * @param _html base64之后的Html代码
+                     * 
                      */
                     void SetHtml(const std::string& _html);
 
                     /**
                      * 判断参数 Html 是否已赋值
                      * @return Html 是否已赋值
+                     * 
                      */
                     bool HtmlHasBeenSet() const;
 
                     /**
                      * 获取base64之后的文本内容
                      * @return Text base64之后的文本内容
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置base64之后的文本内容
-                     * @param Text base64之后的文本内容
+                     * @param _text base64之后的文本内容
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

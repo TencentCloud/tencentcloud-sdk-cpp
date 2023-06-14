@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取存证编号
                      * @return EvidenceId 存证编号
+                     * 
                      */
                     std::string GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 
                     /**
                      * 获取上链时间
                      * @return EvidenceTime 上链时间
+                     * 
                      */
                     std::string GetEvidenceTime() const;
 
                     /**
                      * 判断参数 EvidenceTime 是否已赋值
                      * @return EvidenceTime 是否已赋值
+                     * 
                      */
                     bool EvidenceTimeHasBeenSet() const;
 
                     /**
                      * 获取区块链交易哈希
                      * @return EvidenceTxHash 区块链交易哈希
+                     * 
                      */
                     std::string GetEvidenceTxHash() const;
 
                     /**
                      * 判断参数 EvidenceTxHash 是否已赋值
                      * @return EvidenceTxHash 是否已赋值
+                     * 
                      */
                     bool EvidenceTxHashHasBeenSet() const;
 

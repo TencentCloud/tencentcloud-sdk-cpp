@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
                      * @return CustomerGatewayIds 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetCustomerGatewayIds() const;
 
                     /**
                      * 设置对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
-                     * @param CustomerGatewayIds 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * @param _customerGatewayIds 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 
                      */
                     void SetCustomerGatewayIds(const std::vector<std::string>& _customerGatewayIds);
 
                     /**
                      * 判断参数 CustomerGatewayIds 是否已赋值
                      * @return CustomerGatewayIds 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayIdsHasBeenSet() const;
 
@@ -70,6 +73,7 @@ namespace TencentCloud
 <li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
 <li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
 <li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -78,52 +82,60 @@ namespace TencentCloud
 <li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
 <li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
 <li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
-                     * @param Filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * @param _filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
 <li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>
 <li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>
 <li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
                      * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

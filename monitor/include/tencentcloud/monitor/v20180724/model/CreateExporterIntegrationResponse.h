@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回创建成功的集成名称列表
                      * @return Names 返回创建成功的集成名称列表
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 

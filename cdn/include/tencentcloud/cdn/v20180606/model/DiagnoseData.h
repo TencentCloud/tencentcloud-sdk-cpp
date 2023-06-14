@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 诊断报告内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiagnoseUnit> GetData() const;
 
                     /**
                      * 设置诊断报告内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 诊断报告内容
+                     * @param _data 诊断报告内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const std::vector<DiagnoseUnit>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -80,6 +83,7 @@ namespace TencentCloud
 "error"：异常
 "warning"："警告"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -89,17 +93,19 @@ namespace TencentCloud
 "error"：异常
 "warning"："警告"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 当前诊断项是否正常。
+                     * @param _status 当前诊断项是否正常。
 "ok"：正常
 "error"：异常
 "warning"："警告"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

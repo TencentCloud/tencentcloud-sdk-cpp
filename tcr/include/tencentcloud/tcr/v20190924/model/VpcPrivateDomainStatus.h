@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId unique vpc id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置unique vpc id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId unique vpc id
+                     * @param _vpcId unique vpc id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
+                     * @param _status ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      * @return ResourceIds 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
-                     * @param ResourceIds 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * @param _resourceIds 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 

@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取操作类型：1-新增，2-删除
                      * @return OperateType 操作类型：1-新增，2-删除
+                     * 
                      */
                     int64_t GetOperateType() const;
 
                     /**
                      * 设置操作类型：1-新增，2-删除
-                     * @param OperateType 操作类型：1-新增，2-删除
+                     * @param _operateType 操作类型：1-新增，2-删除
+                     * 
                      */
                     void SetOperateType(const int64_t& _operateType);
 
                     /**
                      * 判断参数 OperateType 是否已赋值
                      * @return OperateType 是否已赋值
+                     * 
                      */
                     bool OperateTypeHasBeenSet() const;
 
                     /**
                      * 获取回调信息
                      * @return CallbackInfo 回调信息
+                     * 
                      */
                     CallbackInfo GetCallbackInfo() const;
 
                     /**
                      * 设置回调信息
-                     * @param CallbackInfo 回调信息
+                     * @param _callbackInfo 回调信息
+                     * 
                      */
                     void SetCallbackInfo(const CallbackInfo& _callbackInfo);
 
                     /**
                      * 判断参数 CallbackInfo 是否已赋值
                      * @return CallbackInfo 是否已赋值
+                     * 
                      */
                     bool CallbackInfoHasBeenSet() const;
 

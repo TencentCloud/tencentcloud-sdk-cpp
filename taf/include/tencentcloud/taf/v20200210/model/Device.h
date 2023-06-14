@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取业务入参id
                      * @return DeviceId 业务入参id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置业务入参id
-                     * @param DeviceId 业务入参id
+                     * @param _deviceId 业务入参id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取业务入参类型
                      * @return DeviceType 业务入参类型
+                     * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
                      * 设置业务入参类型
-                     * @param DeviceType 业务入参类型
+                     * @param _deviceType 业务入参类型
+                     * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 

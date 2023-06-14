@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EditTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEditTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EditTime 修改时间
+                     * @param _editTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEditTime(const int64_t& _editTime);
 
                     /**
                      * 判断参数 EditTime 是否已赋值
                      * @return EditTime 是否已赋值
+                     * 
                      */
                     bool EditTimeHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureList 功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GetIndustryV1HomeMembersRespFeature GetFeatureList() const;
 
                     /**
                      * 设置功能列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeatureList 功能列表
+                     * @param _featureList 功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatureList(const GetIndustryV1HomeMembersRespFeature& _featureList);
 
                     /**
                      * 判断参数 FeatureList 是否已赋值
                      * @return FeatureList 是否已赋值
+                     * 
                      */
                     bool FeatureListHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 用户ID
+                     * @param _iD 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetID(const std::string& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndustryType 用户行业分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndustryType() const;
 
                     /**
                      * 设置用户行业分类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndustryType 用户行业分类
+                     * @param _industryType 用户行业分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndustryType(const std::string& _industryType);
 
                     /**
                      * 判断参数 IndustryType 是否已赋值
                      * @return IndustryType 是否已赋值
+                     * 
                      */
                     bool IndustryTypeHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberNum 子用户数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMemberNum() const;
 
                     /**
                      * 设置子用户数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberNum 子用户数量
+                     * @param _memberNum 子用户数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberNum(const int64_t& _memberNum);
 
                     /**
                      * 判断参数 MemberNum 是否已赋值
                      * @return MemberNum 是否已赋值
+                     * 
                      */
                     bool MemberNumHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductList 机器人列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GetIndustryV1HomeMembersRespProduct GetProductList() const;
 
                     /**
                      * 设置机器人列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductList 机器人列表
+                     * @param _productList 机器人列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductList(const GetIndustryV1HomeMembersRespProduct& _productList);
 
                     /**
                      * 判断参数 ProductList 是否已赋值
                      * @return ProductList 是否已赋值
+                     * 
                      */
                     bool ProductListHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 是否有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置是否有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 是否有效
+                     * @param _status 是否有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeList 功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GetIndustryV1HomeMembersRespType GetTypeList() const;
 
                     /**
                      * 设置功能列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeList 功能列表
+                     * @param _typeList 功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeList(const GetIndustryV1HomeMembersRespType& _typeList);
 
                     /**
                      * 判断参数 TypeList 是否已赋值
                      * @return TypeList 是否已赋值
+                     * 
                      */
                     bool TypeListHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAccount 用户账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAccount() const;
 
                     /**
                      * 设置用户账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAccount 用户账号
+                     * @param _userAccount 用户账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAccount(const std::string& _userAccount);
 
                     /**
                      * 判断参数 UserAccount 是否已赋值
                      * @return UserAccount 是否已赋值
+                     * 
                      */
                     bool UserAccountHasBeenSet() const;
 

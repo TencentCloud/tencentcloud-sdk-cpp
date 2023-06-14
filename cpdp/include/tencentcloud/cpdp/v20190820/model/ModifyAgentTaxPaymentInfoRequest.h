@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取批次号
                      * @return BatchNum 批次号
+                     * 
                      */
                     int64_t GetBatchNum() const;
 
                     /**
                      * 设置批次号
-                     * @param BatchNum 批次号
+                     * @param _batchNum 批次号
+                     * 
                      */
                     void SetBatchNum(const int64_t& _batchNum);
 
                     /**
                      * 判断参数 BatchNum 是否已赋值
                      * @return BatchNum 是否已赋值
+                     * 
                      */
                     bool BatchNumHasBeenSet() const;
 
                     /**
                      * 获取新源电子凭证地址
                      * @return RawElectronicCertUrl 新源电子凭证地址
+                     * 
                      */
                     std::string GetRawElectronicCertUrl() const;
 
                     /**
                      * 设置新源电子凭证地址
-                     * @param RawElectronicCertUrl 新源电子凭证地址
+                     * @param _rawElectronicCertUrl 新源电子凭证地址
+                     * 
                      */
                     void SetRawElectronicCertUrl(const std::string& _rawElectronicCertUrl);
 
                     /**
                      * 判断参数 RawElectronicCertUrl 是否已赋值
                      * @return RawElectronicCertUrl 是否已赋值
+                     * 
                      */
                     bool RawElectronicCertUrlHasBeenSet() const;
 
                     /**
                      * 获取新的文件名
                      * @return FileName 新的文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置新的文件名
-                     * @param FileName 新的文件名
+                     * @param _fileName 新的文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

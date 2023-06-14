@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Topic名称
-                     * @param TopicName Topic名称
+                     * @param _topicName Topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId TopicId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置TopicId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId TopicId
+                     * @param _topicId TopicId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

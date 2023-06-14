@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实时语音服务开关，取值：open/close
                      * @return Status 实时语音服务开关，取值：open/close
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置实时语音服务开关，取值：open/close
-                     * @param Status 实时语音服务开关，取值：open/close
+                     * @param _status 实时语音服务开关，取值：open/close
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实时语音音质类型，取值：high-高音质 ordinary-普通音质
                      * @return Quality 实时语音音质类型，取值：high-高音质 ordinary-普通音质
+                     * 
                      */
                     std::string GetQuality() const;
 
                     /**
                      * 设置实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     * @param Quality 实时语音音质类型，取值：high-高音质 ordinary-普通音质
+                     * @param _quality 实时语音音质类型，取值：high-高音质 ordinary-普通音质
+                     * 
                      */
                     void SetQuality(const std::string& _quality);
 
                     /**
                      * 判断参数 Quality 是否已赋值
                      * @return Quality 是否已赋值
+                     * 
                      */
                     bool QualityHasBeenSet() const;
 

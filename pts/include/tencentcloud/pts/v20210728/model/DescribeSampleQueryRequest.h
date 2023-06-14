@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取job id
                      * @return JobId job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置job id
-                     * @param JobId job id
+                     * @param _jobId job id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取场景Id
                      * @return ScenarioId 场景Id
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景Id
-                     * @param ScenarioId 场景Id
+                     * @param _scenarioId 场景Id
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取指标名
                      * @return Metric 指标名
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名
-                     * @param Metric 指标名
+                     * @param _metric 指标名
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合条件
                      * @return Aggregation 聚合条件
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置聚合条件
-                     * @param Aggregation 聚合条件
+                     * @param _aggregation 聚合条件
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Labels 过滤条件
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Labels 过滤条件
+                     * @param _labels 过滤条件
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取规则执行Id
                      * @return RuleExecId 规则执行Id
+                     * 
                      */
                     uint64_t GetRuleExecId() const;
 
                     /**
                      * 设置规则执行Id
-                     * @param RuleExecId 规则执行Id
+                     * @param _ruleExecId 规则执行Id
+                     * 
                      */
                     void SetRuleExecId(const uint64_t& _ruleExecId);
 
                     /**
                      * 判断参数 RuleExecId 是否已赋值
                      * @return RuleExecId 是否已赋值
+                     * 
                      */
                     bool RuleExecIdHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取规则组执行id
                      * @return RuleGroupExecId 规则组执行id
+                     * 
                      */
                     uint64_t GetRuleGroupExecId() const;
 
                     /**
                      * 设置规则组执行id
-                     * @param RuleGroupExecId 规则组执行id
+                     * @param _ruleGroupExecId 规则组执行id
+                     * 
                      */
                     void SetRuleGroupExecId(const uint64_t& _ruleGroupExecId);
 
                     /**
                      * 判断参数 RuleGroupExecId 是否已赋值
                      * @return RuleGroupExecId 是否已赋值
+                     * 
                      */
                     bool RuleGroupExecIdHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取业务id
                      * @return Bid 业务id
+                     * 
                      */
                     std::string GetBid() const;
 
                     /**
                      * 设置业务id
-                     * @param Bid 业务id
+                     * @param _bid 业务id
+                     * 
                      */
                     void SetBid(const std::string& _bid);
 
                     /**
                      * 判断参数 Bid 是否已赋值
                      * @return Bid 是否已赋值
+                     * 
                      */
                     bool BidHasBeenSet() const;
 
                     /**
                      * 获取上报的行为对象数组，数量不超过50
                      * @return DocBehaviorList 上报的行为对象数组，数量不超过50
+                     * 
                      */
                     std::vector<DocBehavior> GetDocBehaviorList() const;
 
                     /**
                      * 设置上报的行为对象数组，数量不超过50
-                     * @param DocBehaviorList 上报的行为对象数组，数量不超过50
+                     * @param _docBehaviorList 上报的行为对象数组，数量不超过50
+                     * 
                      */
                     void SetDocBehaviorList(const std::vector<DocBehavior>& _docBehaviorList);
 
                     /**
                      * 判断参数 DocBehaviorList 是否已赋值
                      * @return DocBehaviorList 是否已赋值
+                     * 
                      */
                     bool DocBehaviorListHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取反欺诈评分接口结果
                      * @return Data 反欺诈评分接口结果
+                     * 
                      */
                     AntiFraudRecord GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

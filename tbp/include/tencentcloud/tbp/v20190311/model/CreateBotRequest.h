@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取机器人名称
                      * @return BotName 机器人名称
+                     * 
                      */
                     std::string GetBotName() const;
 
                     /**
                      * 设置机器人名称
-                     * @param BotName 机器人名称
+                     * @param _botName 机器人名称
+                     * 
                      */
                     void SetBotName(const std::string& _botName);
 
                     /**
                      * 判断参数 BotName 是否已赋值
                      * @return BotName 是否已赋值
+                     * 
                      */
                     bool BotNameHasBeenSet() const;
 
                     /**
                      * 获取机器人中文名称
                      * @return BotCnName 机器人中文名称
+                     * 
                      */
                     std::string GetBotCnName() const;
 
                     /**
                      * 设置机器人中文名称
-                     * @param BotCnName 机器人中文名称
+                     * @param _botCnName 机器人中文名称
+                     * 
                      */
                     void SetBotCnName(const std::string& _botCnName);
 
                     /**
                      * 判断参数 BotCnName 是否已赋值
                      * @return BotCnName 是否已赋值
+                     * 
                      */
                     bool BotCnNameHasBeenSet() const;
 

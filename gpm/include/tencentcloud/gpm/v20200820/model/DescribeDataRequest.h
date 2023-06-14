@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取起始时间，单位：秒
                      * @return StartTime 起始时间，单位：秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间，单位：秒
-                     * @param StartTime 起始时间，单位：秒
+                     * @param _startTime 起始时间，单位：秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取截止时间，单位：秒
                      * @return EndTime 截止时间，单位：秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置截止时间，单位：秒
-                     * @param EndTime 截止时间，单位：秒
+                     * @param _endTime 截止时间，单位：秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟
                      * @return TimeType 时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟
+                     * 
                      */
                     int64_t GetTimeType() const;
 
                     /**
                      * 设置时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟
-                     * @param TimeType 时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟
+                     * @param _timeType 时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟
+                     * 
                      */
                     void SetTimeType(const int64_t& _timeType);
 
                     /**
                      * 判断参数 TimeType 是否已赋值
                      * @return TimeType 是否已赋值
+                     * 
                      */
                     bool TimeTypeHasBeenSet() const;
 
                     /**
                      * 获取匹配code
                      * @return MatchCode 匹配code
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配code
-                     * @param MatchCode 匹配code
+                     * @param _matchCode 匹配code
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 

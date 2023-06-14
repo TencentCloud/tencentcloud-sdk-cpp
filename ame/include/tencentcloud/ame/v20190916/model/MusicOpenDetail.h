@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MusicId 音乐Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 设置音乐Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MusicId 音乐Id
+                     * @param _musicId 音乐Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMusicId(const std::string& _musicId);
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbumName 专辑名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlbumName() const;
 
                     /**
                      * 设置专辑名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlbumName 专辑名称
+                     * @param _albumName 专辑名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlbumName(const std::string& _albumName);
 
                     /**
                      * 判断参数 AlbumName 是否已赋值
                      * @return AlbumName 是否已赋值
+                     * 
                      */
                     bool AlbumNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbumImageUrl 专辑图片路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlbumImageUrl() const;
 
                     /**
                      * 设置专辑图片路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlbumImageUrl 专辑图片路径
+                     * @param _albumImageUrl 专辑图片路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlbumImageUrl(const std::string& _albumImageUrl);
 
                     /**
                      * 判断参数 AlbumImageUrl 是否已赋值
                      * @return AlbumImageUrl 是否已赋值
+                     * 
                      */
                     bool AlbumImageUrlHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MusicName 音乐名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMusicName() const;
 
                     /**
                      * 设置音乐名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MusicName 音乐名称
+                     * @param _musicName 音乐名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMusicName(const std::string& _musicName);
 
                     /**
                      * 判断参数 MusicName 是否已赋值
                      * @return MusicName 是否已赋值
+                     * 
                      */
                     bool MusicNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MusicImageUrl 音乐图片路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMusicImageUrl() const;
 
                     /**
                      * 设置音乐图片路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MusicImageUrl 音乐图片路径
+                     * @param _musicImageUrl 音乐图片路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMusicImageUrl(const std::string& _musicImageUrl);
 
                     /**
                      * 判断参数 MusicImageUrl 是否已赋值
                      * @return MusicImageUrl 是否已赋值
+                     * 
                      */
                     bool MusicImageUrlHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Singers 歌手
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSingers() const;
 
                     /**
                      * 设置歌手
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Singers 歌手
+                     * @param _singers 歌手
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSingers(const std::vector<std::string>& _singers);
 
                     /**
                      * 判断参数 Singers 是否已赋值
                      * @return Singers 是否已赋值
+                     * 
                      */
                     bool SingersHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 播放时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置播放时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 播放时长
+                     * @param _duration 播放时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签
+                     * @param _tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LyricUrl 歌词url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLyricUrl() const;
 
                     /**
                      * 设置歌词url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LyricUrl 歌词url
+                     * @param _lyricUrl 歌词url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLyricUrl(const std::string& _lyricUrl);
 
                     /**
                      * 判断参数 LyricUrl 是否已赋值
                      * @return LyricUrl 是否已赋值
+                     * 
                      */
                     bool LyricUrlHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaveformUrl 波形图url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWaveformUrl() const;
 
                     /**
                      * 设置波形图url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WaveformUrl 波形图url
+                     * @param _waveformUrl 波形图url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWaveformUrl(const std::string& _waveformUrl);
 
                     /**
                      * 判断参数 WaveformUrl 是否已赋值
                      * @return WaveformUrl 是否已赋值
+                     * 
                      */
                     bool WaveformUrlHasBeenSet() const;
 

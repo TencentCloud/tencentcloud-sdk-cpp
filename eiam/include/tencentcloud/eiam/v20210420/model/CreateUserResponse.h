@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 返回的新创建的用户ID，是该用户的全局唯一标识。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

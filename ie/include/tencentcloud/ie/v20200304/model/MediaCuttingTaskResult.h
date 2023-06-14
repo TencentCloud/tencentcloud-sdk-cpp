@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListFile 如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskResultFile GetListFile() const;
 
                     /**
                      * 设置如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListFile 如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。
+                     * @param _listFile 如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListFile(const TaskResultFile& _listFile);
 
                     /**
                      * 判断参数 ListFile 是否已赋值
                      * @return ListFile 是否已赋值
+                     * 
                      */
                     bool ListFileHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultCount 结果个数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResultCount() const;
 
                     /**
                      * 设置结果个数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultCount 结果个数。
+                     * @param _resultCount 结果个数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultCount(const int64_t& _resultCount);
 
                     /**
                      * 判断参数 ResultCount 是否已赋值
                      * @return ResultCount 是否已赋值
+                     * 
                      */
                     bool ResultCountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstFile 第一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskResultFile GetFirstFile() const;
 
                     /**
                      * 设置第一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstFile 第一个结果文件。
+                     * @param _firstFile 第一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstFile(const TaskResultFile& _firstFile);
 
                     /**
                      * 判断参数 FirstFile 是否已赋值
                      * @return FirstFile 是否已赋值
+                     * 
                      */
                     bool FirstFileHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastFile 最后一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskResultFile GetLastFile() const;
 
                     /**
                      * 设置最后一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastFile 最后一个结果文件。
+                     * @param _lastFile 最后一个结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastFile(const TaskResultFile& _lastFile);
 
                     /**
                      * 判断参数 LastFile 是否已赋值
                      * @return LastFile 是否已赋值
+                     * 
                      */
                     bool LastFileHasBeenSet() const;
 
@@ -146,6 +158,7 @@ namespace TencentCloud
 雪碧图：所有小图总数；
 动图、视频：不计算图片数，为 0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetImageCount() const;
 
@@ -155,17 +168,19 @@ namespace TencentCloud
 雪碧图：所有小图总数；
 动图、视频：不计算图片数，为 0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageCount 任务结果包含的图片总数。
+                     * @param _imageCount 任务结果包含的图片总数。
 静态图：总数即为文件数；
 雪碧图：所有小图总数；
 动图、视频：不计算图片数，为 0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageCount(const int64_t& _imageCount);
 
                     /**
                      * 判断参数 ImageCount 是否已赋值
                      * @return ImageCount 是否已赋值
+                     * 
                      */
                     bool ImageCountHasBeenSet() const;
 

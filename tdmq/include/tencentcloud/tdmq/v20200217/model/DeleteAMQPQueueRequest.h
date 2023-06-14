@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Vhost名称
                      * @return VHostId Vhost名称
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置Vhost名称
-                     * @param VHostId Vhost名称
+                     * @param _vHostId Vhost名称
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取队列名称
                      * @return Queue 队列名称
+                     * 
                      */
                     std::string GetQueue() const;
 
                     /**
                      * 设置队列名称
-                     * @param Queue 队列名称
+                     * @param _queue 队列名称
+                     * 
                      */
                     void SetQueue(const std::string& _queue);
 
                     /**
                      * 判断参数 Queue 是否已赋值
                      * @return Queue 是否已赋值
+                     * 
                      */
                     bool QueueHasBeenSet() const;
 

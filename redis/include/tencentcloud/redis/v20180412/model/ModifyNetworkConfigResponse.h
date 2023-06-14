@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取执行状态，请忽略该参数。
                      * @return Status 执行状态，请忽略该参数。
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取指实例新私有网络所属子网 ID。
                      * @return SubnetId 指实例新私有网络所属子网 ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取指实例新的私有网络ID。
                      * @return VpcId 指实例新的私有网络ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取指实例新的内网 IPv4 地址。
                      * @return Vip 指实例新的内网 IPv4 地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。
                      * @return TaskId 任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

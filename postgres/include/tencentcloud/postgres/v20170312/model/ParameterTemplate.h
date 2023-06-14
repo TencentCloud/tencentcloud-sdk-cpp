@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID
                      * @return TemplateId 参数模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置参数模板ID
-                     * @param TemplateId 参数模板ID
+                     * @param _templateId 参数模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取参数模板名称
                      * @return TemplateName 参数模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置参数模板名称
-                     * @param TemplateName 参数模板名称
+                     * @param _templateName 参数模板名称
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取参数模板适用的数据库版本
                      * @return DBMajorVersion 参数模板适用的数据库版本
+                     * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
                      * 设置参数模板适用的数据库版本
-                     * @param DBMajorVersion 参数模板适用的数据库版本
+                     * @param _dBMajorVersion 参数模板适用的数据库版本
+                     * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
 
                     /**
                      * 判断参数 DBMajorVersion 是否已赋值
                      * @return DBMajorVersion 是否已赋值
+                     * 
                      */
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
                      * 获取参数模板适用的数据库引擎
                      * @return DBEngine 参数模板适用的数据库引擎
+                     * 
                      */
                     std::string GetDBEngine() const;
 
                     /**
                      * 设置参数模板适用的数据库引擎
-                     * @param DBEngine 参数模板适用的数据库引擎
+                     * @param _dBEngine 参数模板适用的数据库引擎
+                     * 
                      */
                     void SetDBEngine(const std::string& _dBEngine);
 
                     /**
                      * 判断参数 DBEngine 是否已赋值
                      * @return DBEngine 是否已赋值
+                     * 
                      */
                     bool DBEngineHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述
                      * @return TemplateDescription 参数模板描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置参数模板描述
-                     * @param TemplateDescription 参数模板描述
+                     * @param _templateDescription 参数模板描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网约车行程单识别结果，具体内容请点击左侧链接。
                      * @return OnlineTaxiItineraryInfos 网约车行程单识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<OnlineTaxiItineraryInfo> GetOnlineTaxiItineraryInfos() const;
 
                     /**
                      * 判断参数 OnlineTaxiItineraryInfos 是否已赋值
                      * @return OnlineTaxiItineraryInfos 是否已赋值
+                     * 
                      */
                     bool OnlineTaxiItineraryInfosHasBeenSet() const;
 

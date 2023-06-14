@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取消费分组状态数量信息
                      * @return StatusCountInfo 消费分组状态数量信息
+                     * 
                      */
                     std::string GetStatusCountInfo() const;
 
                     /**
                      * 设置消费分组状态数量信息
-                     * @param StatusCountInfo 消费分组状态数量信息
+                     * @param _statusCountInfo 消费分组状态数量信息
+                     * 
                      */
                     void SetStatusCountInfo(const std::string& _statusCountInfo);
 
                     /**
                      * 判断参数 StatusCountInfo 是否已赋值
                      * @return StatusCountInfo 是否已赋值
+                     * 
                      */
                     bool StatusCountInfoHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupsInfo 消费分组信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GroupInfoResponse> GetGroupsInfo() const;
 
                     /**
                      * 设置消费分组信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupsInfo 消费分组信息
+                     * @param _groupsInfo 消费分组信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupsInfo(const std::vector<GroupInfoResponse>& _groupsInfo);
 
                     /**
                      * 判断参数 GroupsInfo 是否已赋值
                      * @return GroupsInfo 是否已赋值
+                     * 
                      */
                     bool GroupsInfoHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
+                     * @param _status 此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

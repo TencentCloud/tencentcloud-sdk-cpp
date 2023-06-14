@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队ID
                      * @return FleetId 服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队ID
-                     * @param FleetId 服务器舰队ID
+                     * @param _fleetId 服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取权重，最小值0，最大值10，默认值5
                      * @return Weight 权重，最小值0，最大值10，默认值5
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重，最小值0，最大值10，默认值5
-                     * @param Weight 权重，最小值0，最大值10，默认值5
+                     * @param _weight 权重，最小值0，最大值10，默认值5
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

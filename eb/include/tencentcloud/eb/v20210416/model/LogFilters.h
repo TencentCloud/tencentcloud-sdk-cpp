@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取过滤字段名称
                      * @return Key 过滤字段名称
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤字段名称
-                     * @param Key 过滤字段名称
+                     * @param _key 过滤字段名称
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
                      * @return Operator 运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
-                     * @param Operator 运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * @param _operator 运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 
                      * @return Value 过滤值，范围运算需要同时输入两个值，以英文逗号分隔
 
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤值，范围运算需要同时输入两个值，以英文逗号分隔
 
-                     * @param Value 过滤值，范围运算需要同时输入两个值，以英文逗号分隔
+                     * @param _value 过滤值，范围运算需要同时输入两个值，以英文逗号分隔
 
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

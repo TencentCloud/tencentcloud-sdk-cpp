@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的主任务号，用于查询结果
                      * @return MainTaskId 创建的主任务号，用于查询结果
+                     * 
                      */
                     std::string GetMainTaskId() const;
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
                      * @return MainTaskId 是否已赋值
+                     * 
                      */
                     bool MainTaskIdHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstUIN 目标UIN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDstUIN() const;
 
                     /**
                      * 判断参数 DstUIN 是否已赋值
                      * @return DstUIN 是否已赋值
+                     * 
                      */
                     bool DstUINHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 授权状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

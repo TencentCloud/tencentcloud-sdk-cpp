@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取节点个数
                      * @return NodeCount 节点个数
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点个数
-                     * @param NodeCount 节点个数
+                     * @param _nodeCount 节点个数
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取CPU核数
                      * @return Cpu CPU核数
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数
-                     * @param Cpu CPU核数
+                     * @param _cpu CPU核数
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存大小
                      * @return Mem 内存大小
+                     * 
                      */
                     uint64_t GetMem() const;
 
                     /**
                      * 设置内存大小
-                     * @param Mem 内存大小
+                     * @param _mem 内存大小
+                     * 
                      */
                     void SetMem(const uint64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

@@ -47,38 +47,44 @@ namespace TencentCloud
 <li> MYSQL </li>
                      * @return DbType 数据库类型，取值范围: 
 <li> MYSQL </li>
+                     * 
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置数据库类型，取值范围: 
 <li> MYSQL </li>
-                     * @param DbType 数据库类型，取值范围: 
+                     * @param _dbType 数据库类型，取值范围: 
 <li> MYSQL </li>
+                     * 
                      */
                     void SetDbType(const std::string& _dbType);
 
                     /**
                      * 判断参数 DbType 是否已赋值
                      * @return DbType 是否已赋值
+                     * 
                      */
                     bool DbTypeHasBeenSet() const;
 
                     /**
                      * 获取是否需要返回可用区信息
                      * @return IncludeZoneStocks 是否需要返回可用区信息
+                     * 
                      */
                     bool GetIncludeZoneStocks() const;
 
                     /**
                      * 设置是否需要返回可用区信息
-                     * @param IncludeZoneStocks 是否需要返回可用区信息
+                     * @param _includeZoneStocks 是否需要返回可用区信息
+                     * 
                      */
                     void SetIncludeZoneStocks(const bool& _includeZoneStocks);
 
                     /**
                      * 判断参数 IncludeZoneStocks 是否已赋值
                      * @return IncludeZoneStocks 是否已赋值
+                     * 
                      */
                     bool IncludeZoneStocksHasBeenSet() const;
 

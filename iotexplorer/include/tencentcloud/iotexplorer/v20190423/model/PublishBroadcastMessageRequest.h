@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取消息内容
                      * @return Payload 消息内容
+                     * 
                      */
                     std::string GetPayload() const;
 
                     /**
                      * 设置消息内容
-                     * @param Payload 消息内容
+                     * @param _payload 消息内容
+                     * 
                      */
                     void SetPayload(const std::string& _payload);
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 
                     /**
                      * 获取消息质量等级
                      * @return Qos 消息质量等级
+                     * 
                      */
                     int64_t GetQos() const;
 
                     /**
                      * 设置消息质量等级
-                     * @param Qos 消息质量等级
+                     * @param _qos 消息质量等级
+                     * 
                      */
                     void SetQos(const int64_t& _qos);
 
                     /**
                      * 判断参数 Qos 是否已赋值
                      * @return Qos 是否已赋值
+                     * 
                      */
                     bool QosHasBeenSet() const;
 
                     /**
                      * 获取ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
                      * @return PayloadEncoding ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     * 
                      */
                     std::string GetPayloadEncoding() const;
 
                     /**
                      * 设置ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
-                     * @param PayloadEncoding ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     * @param _payloadEncoding ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备
+                     * 
                      */
                     void SetPayloadEncoding(const std::string& _payloadEncoding);
 
                     /**
                      * 判断参数 PayloadEncoding 是否已赋值
                      * @return PayloadEncoding 是否已赋值
+                     * 
                      */
                     bool PayloadEncodingHasBeenSet() const;
 

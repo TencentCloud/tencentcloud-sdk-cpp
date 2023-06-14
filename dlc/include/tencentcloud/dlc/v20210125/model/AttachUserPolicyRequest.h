@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
                      * @return UserId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
-                     * @param UserId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * @param _userId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取鉴权策略集合
                      * @return PolicySet 鉴权策略集合
+                     * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
                      * 设置鉴权策略集合
-                     * @param PolicySet 鉴权策略集合
+                     * @param _policySet 鉴权策略集合
+                     * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
 
                     /**
                      * 判断参数 PolicySet 是否已赋值
                      * @return PolicySet 是否已赋值
+                     * 
                      */
                     bool PolicySetHasBeenSet() const;
 

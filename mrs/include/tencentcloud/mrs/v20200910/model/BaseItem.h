@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 类型名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置类型名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 类型名称
+                     * @param _name 类型名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原始文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原始文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原始文本
+                     * @param _src 原始文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 归一化后值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置归一化后值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 归一化后值
+                     * @param _value 归一化后值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 别名
+                     * @param _alias 别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 四点坐标
+                     * @param _coords 四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

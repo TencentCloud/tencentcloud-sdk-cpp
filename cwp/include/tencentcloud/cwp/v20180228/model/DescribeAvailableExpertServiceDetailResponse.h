@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取安全管家订单
                      * @return ExpertService 安全管家订单
+                     * 
                      */
                     std::vector<ExpertServiceOrderInfo> GetExpertService() const;
 
                     /**
                      * 判断参数 ExpertService 是否已赋值
                      * @return ExpertService 是否已赋值
+                     * 
                      */
                     bool ExpertServiceHasBeenSet() const;
 
                     /**
                      * 获取应急响应可用次数
                      * @return EmergencyResponse 应急响应可用次数
+                     * 
                      */
                     uint64_t GetEmergencyResponse() const;
 
                     /**
                      * 判断参数 EmergencyResponse 是否已赋值
                      * @return EmergencyResponse 是否已赋值
+                     * 
                      */
                     bool EmergencyResponseHasBeenSet() const;
 
                     /**
                      * 获取旗舰护网可用次数
                      * @return ProtectNet 旗舰护网可用次数
+                     * 
                      */
                     uint64_t GetProtectNet() const;
 
                     /**
                      * 判断参数 ProtectNet 是否已赋值
                      * @return ProtectNet 是否已赋值
+                     * 
                      */
                     bool ProtectNetHasBeenSet() const;
 
                     /**
                      * 获取是否购买过安全管家
                      * @return ExpertServiceBuy 是否购买过安全管家
+                     * 
                      */
                     bool GetExpertServiceBuy() const;
 
                     /**
                      * 判断参数 ExpertServiceBuy 是否已赋值
                      * @return ExpertServiceBuy 是否已赋值
+                     * 
                      */
                     bool ExpertServiceBuyHasBeenSet() const;
 
                     /**
                      * 获取是否购买过应急响应
                      * @return EmergencyResponseBuy 是否购买过应急响应
+                     * 
                      */
                     bool GetEmergencyResponseBuy() const;
 
                     /**
                      * 判断参数 EmergencyResponseBuy 是否已赋值
                      * @return EmergencyResponseBuy 是否已赋值
+                     * 
                      */
                     bool EmergencyResponseBuyHasBeenSet() const;
 
                     /**
                      * 获取是否购买过旗舰护网
                      * @return ProtectNetBuy 是否购买过旗舰护网
+                     * 
                      */
                     bool GetProtectNetBuy() const;
 
                     /**
                      * 判断参数 ProtectNetBuy 是否已赋值
                      * @return ProtectNetBuy 是否已赋值
+                     * 
                      */
                     bool ProtectNetBuyHasBeenSet() const;
 

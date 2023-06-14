@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取1 可购买 2 只能升降配 3 只能跳到续费管理页
                      * @return BuyStatus 1 可购买 2 只能升降配 3 只能跳到续费管理页
+                     * 
                      */
                     uint64_t GetBuyStatus() const;
 
                     /**
                      * 判断参数 BuyStatus 是否已赋值
                      * @return BuyStatus 是否已赋值
+                     * 
                      */
                     bool BuyStatusHasBeenSet() const;
 
                     /**
                      * 获取用户已购容量 单位 G
                      * @return InquireNum 用户已购容量 单位 G
+                     * 
                      */
                     uint64_t GetInquireNum() const;
 
                     /**
                      * 判断参数 InquireNum 是否已赋值
                      * @return InquireNum 是否已赋值
+                     * 
                      */
                     bool InquireNumHasBeenSet() const;
 
                     /**
                      * 获取到期时间
                      * @return EndTime 到期时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取是否自动续费,0 初始值, 1 开通 2 没开通
                      * @return IsAutoOpenRenew 是否自动续费,0 初始值, 1 开通 2 没开通
+                     * 
                      */
                     uint64_t GetIsAutoOpenRenew() const;
 
                     /**
                      * 判断参数 IsAutoOpenRenew 是否已赋值
                      * @return IsAutoOpenRenew 是否已赋值
+                     * 
                      */
                     bool IsAutoOpenRenewHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取0 没开通 1 正常 2隔离 3销毁
                      * @return Status 0 没开通 1 正常 2隔离 3销毁
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 

@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取要修改的定时任务的ID，由DescribeCompliancePeriodTaskList接口返回。
                      * @return PeriodTaskId 要修改的定时任务的ID，由DescribeCompliancePeriodTaskList接口返回。
+                     * 
                      */
                     uint64_t GetPeriodTaskId() const;
 
                     /**
                      * 设置要修改的定时任务的ID，由DescribeCompliancePeriodTaskList接口返回。
-                     * @param PeriodTaskId 要修改的定时任务的ID，由DescribeCompliancePeriodTaskList接口返回。
+                     * @param _periodTaskId 要修改的定时任务的ID，由DescribeCompliancePeriodTaskList接口返回。
+                     * 
                      */
                     void SetPeriodTaskId(const uint64_t& _periodTaskId);
 
                     /**
                      * 判断参数 PeriodTaskId 是否已赋值
                      * @return PeriodTaskId 是否已赋值
+                     * 
                      */
                     bool PeriodTaskIdHasBeenSet() const;
 
                     /**
                      * 获取定时任务的周期规则。不填时，不修改。
                      * @return PeriodRule 定时任务的周期规则。不填时，不修改。
+                     * 
                      */
                     CompliancePeriodTaskRule GetPeriodRule() const;
 
                     /**
                      * 设置定时任务的周期规则。不填时，不修改。
-                     * @param PeriodRule 定时任务的周期规则。不填时，不修改。
+                     * @param _periodRule 定时任务的周期规则。不填时，不修改。
+                     * 
                      */
                     void SetPeriodRule(const CompliancePeriodTaskRule& _periodRule);
 
                     /**
                      * 判断参数 PeriodRule 是否已赋值
                      * @return PeriodRule 是否已赋值
+                     * 
                      */
                     bool PeriodRuleHasBeenSet() const;
 
                     /**
                      * 获取设置合规标准。不填时，不修改。
                      * @return StandardSettings 设置合规标准。不填时，不修改。
+                     * 
                      */
                     std::vector<ComplianceBenchmarkStandardEnable> GetStandardSettings() const;
 
                     /**
                      * 设置设置合规标准。不填时，不修改。
-                     * @param StandardSettings 设置合规标准。不填时，不修改。
+                     * @param _standardSettings 设置合规标准。不填时，不修改。
+                     * 
                      */
                     void SetStandardSettings(const std::vector<ComplianceBenchmarkStandardEnable>& _standardSettings);
 
                     /**
                      * 判断参数 StandardSettings 是否已赋值
                      * @return StandardSettings 是否已赋值
+                     * 
                      */
                     bool StandardSettingsHasBeenSet() const;
 

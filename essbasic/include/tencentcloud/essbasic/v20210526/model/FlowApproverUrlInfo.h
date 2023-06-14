@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
                      * @return SignUrl 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 
                      */
                     std::string GetSignUrl() const;
 
                     /**
                      * 设置签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
-                     * @param SignUrl 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @param _signUrl 签署短链接，不支持小程序嵌入，只支持移动端浏览器打开。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 
                      */
                     void SetSignUrl(const std::string& _signUrl);
 
                     /**
                      * 判断参数 SignUrl 是否已赋值
                      * @return SignUrl 是否已赋值
+                     * 
                      */
                     bool SignUrlHasBeenSet() const;
 
                     /**
                      * 获取签署人类型 PERSON-个人
                      * @return ApproverType 签署人类型 PERSON-个人
+                     * 
                      */
                     std::string GetApproverType() const;
 
                     /**
                      * 设置签署人类型 PERSON-个人
-                     * @param ApproverType 签署人类型 PERSON-个人
+                     * @param _approverType 签署人类型 PERSON-个人
+                     * 
                      */
                     void SetApproverType(const std::string& _approverType);
 
                     /**
                      * 判断参数 ApproverType 是否已赋值
                      * @return ApproverType 是否已赋值
+                     * 
                      */
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
                      * 获取签署人姓名
                      * @return Name 签署人姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置签署人姓名
-                     * @param Name 签署人姓名
+                     * @param _name 签署人姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取签署人手机号
                      * @return Mobile 签署人手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置签署人手机号
-                     * @param Mobile 签署人手机号
+                     * @param _mobile 签署人手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LongUrl 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLongUrl() const;
 
                     /**
                      * 设置签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LongUrl 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @param _longUrl 签署长链接，支持小程序嵌入。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLongUrl(const std::string& _longUrl);
 
                     /**
                      * 判断参数 LongUrl 是否已赋值
                      * @return LongUrl 是否已赋值
+                     * 
                      */
                     bool LongUrlHasBeenSet() const;
 

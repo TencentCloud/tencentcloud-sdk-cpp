@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取客户要查询的日志主题ID，每个客户都有对应的一个主题
                      * @return TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * @param TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * @param _topicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取要查询的日志的起始时间，Unix时间戳，单位ms
                      * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 
                      */
                     int64_t GetFrom() const;
 
                     /**
                      * 设置要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @param From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * @param _from 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 
                      */
                     void SetFrom(const int64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取要查询的日志的结束时间，Unix时间戳，单位ms
                      * @return To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 
                      */
                     int64_t GetTo() const;
 
                     /**
                      * 设置要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @param To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * @param _to 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 
                      */
                     void SetTo(const int64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取日志导出检索语句
                      * @return Query 日志导出检索语句
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置日志导出检索语句
-                     * @param Query 日志导出检索语句
+                     * @param _query 日志导出检索语句
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取日志导出数量，最大值100w
                      * @return Count 日志导出数量，最大值100w
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置日志导出数量，最大值100w
-                     * @param Count 日志导出数量，最大值100w
+                     * @param _count 日志导出数量，最大值100w
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取日志导出数据格式。json，csv，默认为json
                      * @return Format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志导出数据格式。json，csv，默认为json
-                     * @param Format 日志导出数据格式。json，csv，默认为json
+                     * @param _format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取日志导出时间排序。desc，asc，默认为desc
                      * @return Order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置日志导出时间排序。desc，asc，默认为desc
-                     * @param Order 日志导出时间排序。desc，asc，默认为desc
+                     * @param _order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取应用SdkAppID
                      * @return SdkAppID 应用SdkAppID
+                     * 
                      */
                     int64_t GetSdkAppID() const;
 
                     /**
                      * 设置应用SdkAppID
-                     * @param SdkAppID 应用SdkAppID
+                     * @param _sdkAppID 应用SdkAppID
+                     * 
                      */
                     void SetSdkAppID(const int64_t& _sdkAppID);
 
                     /**
                      * 判断参数 SdkAppID 是否已赋值
                      * @return SdkAppID 是否已赋值
+                     * 
                      */
                     bool SdkAppIDHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskID 任务ID
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskID 任务ID
+                     * @param _taskID 任务ID
+                     * 
                      */
                     void SetTaskID(const std::string& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -102,35 +109,40 @@ namespace TencentCloud
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
 - TranscodeH5: 动态转码任务，文档转HTML5页面
 - TranscodeJPG: 静态转码任务，文档转图片
 - WhiteboardPush: 白板推流任务
 - OnlineRecord: 实时录制任务
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreateTime 任务创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CancelTime 任务取消时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCancelTime() const;
 
                     /**
                      * 设置任务取消时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CancelTime 任务取消时间
+                     * @param _cancelTime 任务取消时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCancelTime(const std::string& _cancelTime);
 
                     /**
                      * 判断参数 CancelTime 是否已赋值
                      * @return CancelTime 是否已赋值
+                     * 
                      */
                     bool CancelTimeHasBeenSet() const;
 
@@ -165,6 +180,7 @@ namespace TencentCloud
 - QUEUED: 任务正在排队等待执行中
 - PROCESSING: 任务正在执行中 
 - FINISHED: 任务已完成
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -173,34 +189,39 @@ namespace TencentCloud
 - QUEUED: 任务正在排队等待执行中
 - PROCESSING: 任务正在执行中 
 - FINISHED: 任务已完成
-                     * @param Status 任务状态
+                     * @param _status 任务状态
 - QUEUED: 任务正在排队等待执行中
 - PROCESSING: 任务正在执行中 
 - FINISHED: 任务已完成
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务当前进度
                      * @return Progress 任务当前进度
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置任务当前进度
-                     * @param Progress 任务当前进度
+                     * @param _progress 任务当前进度
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -211,6 +232,7 @@ namespace TencentCloud
                      * @return FileURL 转码任务中转码文件的原始URL
 此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileURL() const;
 
@@ -218,15 +240,17 @@ namespace TencentCloud
                      * 设置转码任务中转码文件的原始URL
 此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileURL 转码任务中转码文件的原始URL
+                     * @param _fileURL 转码任务中转码文件的原始URL
 此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileURL(const std::string& _fileURL);
 
                     /**
                      * 判断参数 FileURL 是否已赋值
                      * @return FileURL 是否已赋值
+                     * 
                      */
                     bool FileURLHasBeenSet() const;
 
@@ -239,6 +263,7 @@ namespace TencentCloud
 
 当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRoomID() const;
 
@@ -247,16 +272,18 @@ namespace TencentCloud
 
 当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomID 房间号
+                     * @param _roomID 房间号
 
 当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoomID(const int64_t& _roomID);
 
                     /**
                      * 判断参数 RoomID 是否已赋值
                      * @return RoomID 是否已赋值
+                     * 
                      */
                     bool RoomIDHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数，默认为20，最大100
                      * @return Limit 分页个数，默认为20，最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页个数，默认为20，最大100
-                     * @param Limit 分页个数，默认为20，最大100
+                     * @param _limit 分页个数，默认为20，最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

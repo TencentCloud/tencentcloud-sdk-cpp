@@ -48,132 +48,154 @@ namespace TencentCloud
                     /**
                      * 获取资源Id
                      * @return ResourceId 资源Id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源名称
                      * @return ResourceName 资源名称
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取资源状态，1表示资源为正常，2表示资源处于隔离状态
                      * @return Status 资源状态，1表示资源为正常，2表示资源处于隔离状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取资源IP
                      * @return Vip 资源IP
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取资源所属Vpc
                      * @return VpcId 资源所属Vpc
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取资源所属子网
                      * @return SubnetId 资源所属子网
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取资源所属HSM的规格
                      * @return Model 资源所属HSM的规格
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
                     /**
                      * 获取资源类型，17表示EVSM，33表示GVSM，49表示SVSM
                      * @return VsmType 资源类型，17表示EVSM，33表示GVSM，49表示SVSM
+                     * 
                      */
                     int64_t GetVsmType() const;
 
                     /**
                      * 判断参数 VsmType 是否已赋值
                      * @return VsmType 是否已赋值
+                     * 
                      */
                     bool VsmTypeHasBeenSet() const;
 
                     /**
                      * 获取地域Id，返回腾讯云地域代码，如广州为1，北京为8
                      * @return RegionId 地域Id，返回腾讯云地域代码，如广州为1，北京为8
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取区域Id，返回腾讯云每个地域的可用区代码
                      * @return ZoneId 区域Id，返回腾讯云每个地域的可用区代码
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取资源过期时间，以时间戳形式展示。
                      * @return ExpireTime 资源过期时间，以时间戳形式展示。
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -182,12 +204,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgList 安全组详情信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsgRuleDetail> GetSgList() const;
 
                     /**
                      * 判断参数 SgList 是否已赋值
                      * @return SgList 是否已赋值
+                     * 
                      */
                     bool SgListHasBeenSet() const;
 
@@ -196,12 +220,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
@@ -210,12 +236,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
@@ -224,12 +252,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 区域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -238,12 +268,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expired 实例是否已经过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetExpired() const;
 
                     /**
                      * 判断参数 Expired 是否已赋值
                      * @return Expired 是否已赋值
+                     * 
                      */
                     bool ExpiredHasBeenSet() const;
 
@@ -252,12 +284,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainSeconds 为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainSeconds() const;
 
                     /**
                      * 判断参数 RemainSeconds 是否已赋值
                      * @return RemainSeconds 是否已赋值
+                     * 
                      */
                     bool RemainSecondsHasBeenSet() const;
 
@@ -266,12 +300,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName 私有虚拟网络名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
@@ -280,12 +316,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcCidrBlock VPC的IPv4 CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
                      * 判断参数 VpcCidrBlock 是否已赋值
                      * @return VpcCidrBlock 是否已赋值
+                     * 
                      */
                     bool VpcCidrBlockHasBeenSet() const;
 
@@ -294,12 +332,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetCidrBlock 子网的CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetCidrBlock() const;
 
                     /**
                      * 判断参数 SubnetCidrBlock 是否已赋值
                      * @return SubnetCidrBlock 是否已赋值
+                     * 
                      */
                     bool SubnetCidrBlockHasBeenSet() const;
 
@@ -308,12 +348,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 资源所关联的Tag
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -322,12 +364,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -336,12 +380,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 厂商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
                      * 判断参数 Manufacturer 是否已赋值
                      * @return Manufacturer 是否已赋值
+                     * 
                      */
                     bool ManufacturerHasBeenSet() const;
 

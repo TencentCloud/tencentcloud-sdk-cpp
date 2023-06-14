@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Base64编码后的文件内容
                      * @return FileBody Base64编码后的文件内容
+                     * 
                      */
                     std::string GetFileBody() const;
 
                     /**
                      * 设置Base64编码后的文件内容
-                     * @param FileBody Base64编码后的文件内容
+                     * @param _fileBody Base64编码后的文件内容
+                     * 
                      */
                     void SetFileBody(const std::string& _fileBody);
 
                     /**
                      * 判断参数 FileBody 是否已赋值
                      * @return FileBody 是否已赋值
+                     * 
                      */
                     bool FileBodyHasBeenSet() const;
 
                     /**
                      * 获取文件名
                      * @return FileName 文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名
-                     * @param FileName 文件名
+                     * @param _fileName 文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 

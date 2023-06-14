@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取7层监听器ID
                      * @return ListenerId 7层监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置7层监听器ID
-                     * @param ListenerId 7层监听器ID
+                     * @param _listenerId 7层监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则ID
                      * @return RuleId 转发规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置转发规则ID
-                     * @param RuleId 转发规则ID
+                     * @param _ruleId 转发规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取是否可以强制删除已绑定源站的转发规则，0非强制，1强制
                      * @return Force 是否可以强制删除已绑定源站的转发规则，0非强制，1强制
+                     * 
                      */
                     uint64_t GetForce() const;
 
                     /**
                      * 设置是否可以强制删除已绑定源站的转发规则，0非强制，1强制
-                     * @param Force 是否可以强制删除已绑定源站的转发规则，0非强制，1强制
+                     * @param _force 是否可以强制删除已绑定源站的转发规则，0非强制，1强制
+                     * 
                      */
                     void SetForce(const uint64_t& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

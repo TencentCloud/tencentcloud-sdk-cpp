@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID列表
                      * @return ClusterIdSet 集群ID列表
+                     * 
                      */
                     std::vector<std::string> GetClusterIdSet() const;
 
                     /**
                      * 设置集群ID列表
-                     * @param ClusterIdSet 集群ID列表
+                     * @param _clusterIdSet 集群ID列表
+                     * 
                      */
                     void SetClusterIdSet(const std::vector<std::string>& _clusterIdSet);
 
                     /**
                      * 判断参数 ClusterIdSet 是否已赋值
                      * @return ClusterIdSet 是否已赋值
+                     * 
                      */
                     bool ClusterIdSetHasBeenSet() const;
 
                     /**
                      * 获取是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。
                      * @return AutoRenewFlag 是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。
-                     * @param AutoRenewFlag 是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。
+                     * @param _autoRenewFlag 是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 

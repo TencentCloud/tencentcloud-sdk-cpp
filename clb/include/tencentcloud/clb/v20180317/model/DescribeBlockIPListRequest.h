@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为 0。
                      * @return Offset 数据偏移量，默认为 0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为 0。
-                     * @param Offset 数据偏移量，默认为 0。
+                     * @param _offset 数据偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回IP的最大个数，默认为 100000。
                      * @return Limit 返回IP的最大个数，默认为 100000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回IP的最大个数，默认为 100000。
-                     * @param Limit 返回IP的最大个数，默认为 100000。
+                     * @param _limit 返回IP的最大个数，默认为 100000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取消息id
                      * @return MsgId 消息id
+                     * 
                      */
                     std::string GetMsgId() const;
 
                     /**
                      * 设置消息id
-                     * @param MsgId 消息id
+                     * @param _msgId 消息id
+                     * 
                      */
                     void SetMsgId(const std::string& _msgId);
 
                     /**
                      * 判断参数 MsgId 是否已赋值
                      * @return MsgId 是否已赋值
+                     * 
                      */
                     bool MsgIdHasBeenSet() const;
 
                     /**
                      * 获取动作名称，switch表示切换企微账号，send表示企微普通消息
                      * @return Action 动作名称，switch表示切换企微账号，send表示企微普通消息
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作名称，switch表示切换企微账号，send表示企微普通消息
-                     * @param Action 动作名称，switch表示切换企微账号，send表示企微普通消息
+                     * @param _action 动作名称，switch表示切换企微账号，send表示企微普通消息
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -90,6 +96,7 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
                      * @return MsgType 消息类型，当Action != "switch"时存在，例如video, text, voice 等，和企微开放文档一一对应
 https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsgType() const;
 
@@ -97,15 +104,17 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
                      * 设置消息类型，当Action != "switch"时存在，例如video, text, voice 等，和企微开放文档一一对应
 https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgType 消息类型，当Action != "switch"时存在，例如video, text, voice 等，和企微开放文档一一对应
+                     * @param _msgType 消息类型，当Action != "switch"时存在，例如video, text, voice 等，和企微开放文档一一对应
 https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgType(const std::string& _msgType);
 
                     /**
                      * 判断参数 MsgType 是否已赋值
                      * @return MsgType 是否已赋值
+                     * 
                      */
                     bool MsgTypeHasBeenSet() const;
 
@@ -114,20 +123,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return From 消息发送人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置消息发送人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param From 消息发送人
+                     * @param _from 消息发送人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
@@ -136,20 +148,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ToList 消息接收人列表，注意接收人可能只有一个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetToList() const;
 
                     /**
                      * 设置消息接收人列表，注意接收人可能只有一个
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ToList 消息接收人列表，注意接收人可能只有一个
+                     * @param _toList 消息接收人列表，注意接收人可能只有一个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetToList(const std::vector<std::string>& _toList);
 
                     /**
                      * 判断参数 ToList 是否已赋值
                      * @return ToList 是否已赋值
+                     * 
                      */
                     bool ToListHasBeenSet() const;
 
@@ -158,20 +173,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 如果是群消息，则不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置如果是群消息，则不为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomId 如果是群消息，则不为空
+                     * @param _roomId 如果是群消息，则不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -180,20 +198,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgTime 消息发送的时间戳，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMsgTime() const;
 
                     /**
                      * 设置消息发送的时间戳，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgTime 消息发送的时间戳，单位为秒
+                     * @param _msgTime 消息发送的时间戳，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgTime(const uint64_t& _msgTime);
 
                     /**
                      * 判断参数 MsgTime 是否已赋值
                      * @return MsgTime 是否已赋值
+                     * 
                      */
                     bool MsgTimeHasBeenSet() const;
 
@@ -202,20 +223,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Video MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ChatArchivingMsgTypeVideo GetVideo() const;
 
                     /**
                      * 设置MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Video MsgType=video时的消息体，忽略此字段，见BodyJson字段
+                     * @param _video MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideo(const ChatArchivingMsgTypeVideo& _video);
 
                     /**
                      * 判断参数 Video 是否已赋值
                      * @return Video 是否已赋值
+                     * 
                      */
                     bool VideoHasBeenSet() const;
 
@@ -224,20 +248,23 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyJson 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBodyJson() const;
 
                     /**
                      * 设置根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BodyJson 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+                     * @param _bodyJson 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBodyJson(const std::string& _bodyJson);
 
                     /**
                      * 判断参数 BodyJson 是否已赋值
                      * @return BodyJson 是否已赋值
+                     * 
                      */
                     bool BodyJsonHasBeenSet() const;
 

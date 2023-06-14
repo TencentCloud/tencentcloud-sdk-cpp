@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorPageSet 定制错误响应配置集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DomainErrorPageInfo> GetErrorPageSet() const;
 
                     /**
                      * 判断参数 ErrorPageSet 是否已赋值
                      * @return ErrorPageSet 是否已赋值
+                     * 
                      */
                     bool ErrorPageSetHasBeenSet() const;
 

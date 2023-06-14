@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取米大师分配的支付主MidasAppId
                      * @return MidasAppId 米大师分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置米大师分配的支付主MidasAppId
-                     * @param MidasAppId 米大师分配的支付主MidasAppId
+                     * @param _midasAppId 米大师分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户Id，长度不小于5位，仅支持字母和数字的组合
                      * @return UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，长度不小于5位，仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * @param _userId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 by_order:根据订单号查订单
                      * @return Type 查询类型
 by_order:根据订单号查订单
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置查询类型
 by_order:根据订单号查订单
-                     * @param Type 查询类型
+                     * @param _type 查询类型
 by_order:根据订单号查订单
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -109,6 +118,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -117,34 +127,39 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param MidasEnvironment 环境类型
+                     * @param _midasEnvironment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取开发者的主订单号
                      * @return OutTradeNo 开发者的主订单号
+                     * 
                      */
                     std::string GetOutTradeNo() const;
 
                     /**
                      * 设置开发者的主订单号
-                     * @param OutTradeNo 开发者的主订单号
+                     * @param _outTradeNo 开发者的主订单号
+                     * 
                      */
                     void SetOutTradeNo(const std::string& _outTradeNo);
 
                     /**
                      * 判断参数 OutTradeNo 是否已赋值
                      * @return OutTradeNo 是否已赋值
+                     * 
                      */
                     bool OutTradeNoHasBeenSet() const;
 

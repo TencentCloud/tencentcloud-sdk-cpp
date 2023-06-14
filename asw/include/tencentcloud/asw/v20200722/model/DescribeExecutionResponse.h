@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取执行资源名
                      * @return ExecutionResourceName 执行资源名
+                     * 
                      */
                     std::string GetExecutionResourceName() const;
 
                     /**
                      * 判断参数 ExecutionResourceName 是否已赋值
                      * @return ExecutionResourceName 是否已赋值
+                     * 
                      */
                     bool ExecutionResourceNameHasBeenSet() const;
 
                     /**
                      * 获取资源名称
                      * @return Name 资源名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取执行开始时间，毫秒
                      * @return StartDate 执行开始时间，毫秒
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取执行结束时间，毫秒
                      * @return StopDate 执行结束时间，毫秒
+                     * 
                      */
                     std::string GetStopDate() const;
 
                     /**
                      * 判断参数 StopDate 是否已赋值
                      * @return StopDate 是否已赋值
+                     * 
                      */
                     bool StopDateHasBeenSet() const;
 
                     /**
                      * 获取状态机资源名
                      * @return StateMachineResourceName 状态机资源名
+                     * 
                      */
                     std::string GetStateMachineResourceName() const;
 
                     /**
                      * 判断参数 StateMachineResourceName 是否已赋值
                      * @return StateMachineResourceName 是否已赋值
+                     * 
                      */
                     bool StateMachineResourceNameHasBeenSet() const;
 
                     /**
                      * 获取执行状态。INIT，RUNNING，SUCCEED，FAILED，TERMINATED
                      * @return Status 执行状态。INIT，RUNNING，SUCCEED，FAILED，TERMINATED
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -120,12 +132,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 执行的输入
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInput() const;
 
                     /**
                      * 判断参数 Input 是否已赋值
                      * @return Input 是否已赋值
+                     * 
                      */
                     bool InputHasBeenSet() const;
 
@@ -134,24 +148,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 执行的输出
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 
                     /**
                      * 获取启动执行时，状态机的定义
                      * @return ExecutionDefinition 启动执行时，状态机的定义
+                     * 
                      */
                     std::string GetExecutionDefinition() const;
 
                     /**
                      * 判断参数 ExecutionDefinition 是否已赋值
                      * @return ExecutionDefinition 是否已赋值
+                     * 
                      */
                     bool ExecutionDefinitionHasBeenSet() const;
 

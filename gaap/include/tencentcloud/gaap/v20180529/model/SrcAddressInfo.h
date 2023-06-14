@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取内网Ip4地址
                      * @return SrcIpv4 内网Ip4地址
+                     * 
                      */
                     std::string GetSrcIpv4() const;
 
                     /**
                      * 设置内网Ip4地址
-                     * @param SrcIpv4 内网Ip4地址
+                     * @param _srcIpv4 内网Ip4地址
+                     * 
                      */
                     void SetSrcIpv4(const std::string& _srcIpv4);
 
                     /**
                      * 判断参数 SrcIpv4 是否已赋值
                      * @return SrcIpv4 是否已赋值
+                     * 
                      */
                     bool SrcIpv4HasBeenSet() const;
 
                     /**
                      * 获取公网Ip4地址
                      * @return SrcPublicIpv4 公网Ip4地址
+                     * 
                      */
                     std::string GetSrcPublicIpv4() const;
 
                     /**
                      * 设置公网Ip4地址
-                     * @param SrcPublicIpv4 公网Ip4地址
+                     * @param _srcPublicIpv4 公网Ip4地址
+                     * 
                      */
                     void SetSrcPublicIpv4(const std::string& _srcPublicIpv4);
 
                     /**
                      * 判断参数 SrcPublicIpv4 是否已赋值
                      * @return SrcPublicIpv4 是否已赋值
+                     * 
                      */
                     bool SrcPublicIpv4HasBeenSet() const;
 

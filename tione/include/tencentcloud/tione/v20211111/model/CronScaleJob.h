@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Cron表达式，标识任务的执行时间，精确到分钟级
                      * @return Schedule Cron表达式，标识任务的执行时间，精确到分钟级
+                     * 
                      */
                     std::string GetSchedule() const;
 
                     /**
                      * 设置Cron表达式，标识任务的执行时间，精确到分钟级
-                     * @param Schedule Cron表达式，标识任务的执行时间，精确到分钟级
+                     * @param _schedule Cron表达式，标识任务的执行时间，精确到分钟级
+                     * 
                      */
                     void SetSchedule(const std::string& _schedule);
 
                     /**
                      * 判断参数 Schedule 是否已赋值
                      * @return Schedule 是否已赋值
+                     * 
                      */
                     bool ScheduleHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 定时任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置定时任务名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 定时任务名
+                     * @param _name 定时任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetReplicas 目标实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
                      * 设置目标实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetReplicas 目标实例数
+                     * @param _targetReplicas 目标实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetReplicas(const int64_t& _targetReplicas);
 
                     /**
                      * 判断参数 TargetReplicas 是否已赋值
                      * @return TargetReplicas 是否已赋值
+                     * 
                      */
                     bool TargetReplicasHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicas 目标min
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置目标min
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinReplicas 目标min
+                     * @param _minReplicas 目标min
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicas 目标max
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置目标max
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxReplicas 目标max
+                     * @param _maxReplicas 目标max
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeDates 例外时间，Cron表达式，在对应时间内不执行任务。最多支持3条。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetExcludeDates() const;
 
                     /**
                      * 设置例外时间，Cron表达式，在对应时间内不执行任务。最多支持3条。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExcludeDates 例外时间，Cron表达式，在对应时间内不执行任务。最多支持3条。
+                     * @param _excludeDates 例外时间，Cron表达式，在对应时间内不执行任务。最多支持3条。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExcludeDates(const std::vector<std::string>& _excludeDates);
 
                     /**
                      * 判断参数 ExcludeDates 是否已赋值
                      * @return ExcludeDates 是否已赋值
+                     * 
                      */
                     bool ExcludeDatesHasBeenSet() const;
 

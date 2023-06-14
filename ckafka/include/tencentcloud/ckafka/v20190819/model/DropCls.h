@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropInvalidMessageToCls 是否投递到cls
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDropInvalidMessageToCls() const;
 
                     /**
                      * 设置是否投递到cls
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropInvalidMessageToCls 是否投递到cls
+                     * @param _dropInvalidMessageToCls 是否投递到cls
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropInvalidMessageToCls(const bool& _dropInvalidMessageToCls);
 
                     /**
                      * 判断参数 DropInvalidMessageToCls 是否已赋值
                      * @return DropInvalidMessageToCls 是否已赋值
+                     * 
                      */
                     bool DropInvalidMessageToClsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropClsRegion 投递cls的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDropClsRegion() const;
 
                     /**
                      * 设置投递cls的地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropClsRegion 投递cls的地域
+                     * @param _dropClsRegion 投递cls的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropClsRegion(const std::string& _dropClsRegion);
 
                     /**
                      * 判断参数 DropClsRegion 是否已赋值
                      * @return DropClsRegion 是否已赋值
+                     * 
                      */
                     bool DropClsRegionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropClsOwneruin 投递cls的账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDropClsOwneruin() const;
 
                     /**
                      * 设置投递cls的账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropClsOwneruin 投递cls的账号
+                     * @param _dropClsOwneruin 投递cls的账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropClsOwneruin(const std::string& _dropClsOwneruin);
 
                     /**
                      * 判断参数 DropClsOwneruin 是否已赋值
                      * @return DropClsOwneruin 是否已赋值
+                     * 
                      */
                     bool DropClsOwneruinHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropClsTopicId 投递cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDropClsTopicId() const;
 
                     /**
                      * 设置投递cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropClsTopicId 投递cls的主题
+                     * @param _dropClsTopicId 投递cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropClsTopicId(const std::string& _dropClsTopicId);
 
                     /**
                      * 判断参数 DropClsTopicId 是否已赋值
                      * @return DropClsTopicId 是否已赋值
+                     * 
                      */
                     bool DropClsTopicIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropClsLogSet 投递cls的日志集id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDropClsLogSet() const;
 
                     /**
                      * 设置投递cls的日志集id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropClsLogSet 投递cls的日志集id
+                     * @param _dropClsLogSet 投递cls的日志集id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropClsLogSet(const std::string& _dropClsLogSet);
 
                     /**
                      * 判断参数 DropClsLogSet 是否已赋值
                      * @return DropClsLogSet 是否已赋值
+                     * 
                      */
                     bool DropClsLogSetHasBeenSet() const;
 

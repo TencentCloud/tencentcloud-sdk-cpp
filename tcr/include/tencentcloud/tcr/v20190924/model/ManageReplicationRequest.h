@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取复制源实例ID
                      * @return SourceRegistryId 复制源实例ID
+                     * 
                      */
                     std::string GetSourceRegistryId() const;
 
                     /**
                      * 设置复制源实例ID
-                     * @param SourceRegistryId 复制源实例ID
+                     * @param _sourceRegistryId 复制源实例ID
+                     * 
                      */
                     void SetSourceRegistryId(const std::string& _sourceRegistryId);
 
                     /**
                      * 判断参数 SourceRegistryId 是否已赋值
                      * @return SourceRegistryId 是否已赋值
+                     * 
                      */
                     bool SourceRegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制目标实例ID
                      * @return DestinationRegistryId 复制目标实例ID
+                     * 
                      */
                     std::string GetDestinationRegistryId() const;
 
                     /**
                      * 设置复制目标实例ID
-                     * @param DestinationRegistryId 复制目标实例ID
+                     * @param _destinationRegistryId 复制目标实例ID
+                     * 
                      */
                     void SetDestinationRegistryId(const std::string& _destinationRegistryId);
 
                     /**
                      * 判断参数 DestinationRegistryId 是否已赋值
                      * @return DestinationRegistryId 是否已赋值
+                     * 
                      */
                     bool DestinationRegistryIdHasBeenSet() const;
 
                     /**
                      * 获取同步规则
                      * @return Rule 同步规则
+                     * 
                      */
                     ReplicationRule GetRule() const;
 
                     /**
                      * 设置同步规则
-                     * @param Rule 同步规则
+                     * @param _rule 同步规则
+                     * 
                      */
                     void SetRule(const ReplicationRule& _rule);
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 
                     /**
                      * 获取规则描述
                      * @return Description 规则描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-                     * @param Description 规则描述
+                     * @param _description 规则描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取目标实例的地域ID，如广州是1
                      * @return DestinationRegionId 目标实例的地域ID，如广州是1
+                     * 
                      */
                     uint64_t GetDestinationRegionId() const;
 
                     /**
                      * 设置目标实例的地域ID，如广州是1
-                     * @param DestinationRegionId 目标实例的地域ID，如广州是1
+                     * @param _destinationRegionId 目标实例的地域ID，如广州是1
+                     * 
                      */
                     void SetDestinationRegionId(const uint64_t& _destinationRegionId);
 
                     /**
                      * 判断参数 DestinationRegionId 是否已赋值
                      * @return DestinationRegionId 是否已赋值
+                     * 
                      */
                     bool DestinationRegionIdHasBeenSet() const;
 
                     /**
                      * 获取开启跨主账号实例同步配置项
                      * @return PeerReplicationOption 开启跨主账号实例同步配置项
+                     * 
                      */
                     PeerReplicationOption GetPeerReplicationOption() const;
 
                     /**
                      * 设置开启跨主账号实例同步配置项
-                     * @param PeerReplicationOption 开启跨主账号实例同步配置项
+                     * @param _peerReplicationOption 开启跨主账号实例同步配置项
+                     * 
                      */
                     void SetPeerReplicationOption(const PeerReplicationOption& _peerReplicationOption);
 
                     /**
                      * 判断参数 PeerReplicationOption 是否已赋值
                      * @return PeerReplicationOption 是否已赋值
+                     * 
                      */
                     bool PeerReplicationOptionHasBeenSet() const;
 

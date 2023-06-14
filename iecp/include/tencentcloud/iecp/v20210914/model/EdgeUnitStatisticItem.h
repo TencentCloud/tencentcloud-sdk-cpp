@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 总数
+                     * @param _total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Online 在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置在线数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Online 在线数
+                     * @param _online 在线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abnormal 异常数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAbnormal() const;
 
                     /**
                      * 设置异常数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Abnormal 异常数
+                     * @param _abnormal 异常数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAbnormal(const uint64_t& _abnormal);
 
                     /**
                      * 判断参数 Abnormal 是否已赋值
                      * @return Abnormal 是否已赋值
+                     * 
                      */
                     bool AbnormalHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offline 离线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOffline() const;
 
                     /**
                      * 设置离线数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Offline 离线数
+                     * @param _offline 离线数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffline(const uint64_t& _offline);
 
                     /**
                      * 判断参数 Offline 是否已赋值
                      * @return Offline 是否已赋值
+                     * 
                      */
                     bool OfflineHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotActive 未激活
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNotActive() const;
 
                     /**
                      * 设置未激活
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotActive 未激活
+                     * @param _notActive 未激活
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotActive(const uint64_t& _notActive);
 
                     /**
                      * 判断参数 NotActive 是否已赋值
                      * @return NotActive 是否已赋值
+                     * 
                      */
                     bool NotActiveHasBeenSet() const;
 

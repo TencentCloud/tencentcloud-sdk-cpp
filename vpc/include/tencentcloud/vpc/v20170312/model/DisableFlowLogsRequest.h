@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取流日志Id。
                      * @return FlowLogIds 流日志Id。
+                     * 
                      */
                     std::vector<std::string> GetFlowLogIds() const;
 
                     /**
                      * 设置流日志Id。
-                     * @param FlowLogIds 流日志Id。
+                     * @param _flowLogIds 流日志Id。
+                     * 
                      */
                     void SetFlowLogIds(const std::vector<std::string>& _flowLogIds);
 
                     /**
                      * 判断参数 FlowLogIds 是否已赋值
                      * @return FlowLogIds 是否已赋值
+                     * 
                      */
                     bool FlowLogIdsHasBeenSet() const;
 

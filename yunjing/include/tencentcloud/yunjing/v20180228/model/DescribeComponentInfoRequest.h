@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取组件ID。
                      * @return ComponentId 组件ID。
+                     * 
                      */
                     uint64_t GetComponentId() const;
 
                     /**
                      * 设置组件ID。
-                     * @param ComponentId 组件ID。
+                     * @param _componentId 组件ID。
+                     * 
                      */
                     void SetComponentId(const uint64_t& _componentId);
 
                     /**
                      * 判断参数 ComponentId 是否已赋值
                      * @return ComponentId 是否已赋值
+                     * 
                      */
                     bool ComponentIdHasBeenSet() const;
 

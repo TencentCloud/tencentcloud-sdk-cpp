@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取子网对象。
                      * @return Subnet 子网对象。
+                     * 
                      */
                     Subnet GetSubnet() const;
 
                     /**
                      * 判断参数 Subnet 是否已赋值
                      * @return Subnet 是否已赋值
+                     * 
                      */
                     bool SubnetHasBeenSet() const;
 

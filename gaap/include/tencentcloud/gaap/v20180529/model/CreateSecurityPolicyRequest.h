@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取默认策略：ACCEPT或DROP
                      * @return DefaultAction 默认策略：ACCEPT或DROP
+                     * 
                      */
                     std::string GetDefaultAction() const;
 
                     /**
                      * 设置默认策略：ACCEPT或DROP
-                     * @param DefaultAction 默认策略：ACCEPT或DROP
+                     * @param _defaultAction 默认策略：ACCEPT或DROP
+                     * 
                      */
                     void SetDefaultAction(const std::string& _defaultAction);
 
                     /**
                      * 判断参数 DefaultAction 是否已赋值
                      * @return DefaultAction 是否已赋值
+                     * 
                      */
                     bool DefaultActionHasBeenSet() const;
 
                     /**
                      * 获取加速通道ID
                      * @return ProxyId 加速通道ID
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置加速通道ID
-                     * @param ProxyId 加速通道ID
+                     * @param _proxyId 加速通道ID
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取通道组ID
                      * @return GroupId 通道组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置通道组ID
-                     * @param GroupId 通道组ID
+                     * @param _groupId 通道组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

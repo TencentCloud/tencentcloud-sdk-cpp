@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID
                      * @return InstanceId 集群实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID
-                     * @param InstanceId 集群实例ID
+                     * @param _instanceId 集群实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取是否是open api查询
                      * @return IsOpenApi 是否是open api查询
+                     * 
                      */
                     bool GetIsOpenApi() const;
 
                     /**
                      * 设置是否是open api查询
-                     * @param IsOpenApi 是否是open api查询
+                     * @param _isOpenApi 是否是open api查询
+                     * 
                      */
                     void SetIsOpenApi(const bool& _isOpenApi);
 
                     /**
                      * 判断参数 IsOpenApi 是否已赋值
                      * @return IsOpenApi 是否已赋值
+                     * 
                      */
                     bool IsOpenApiHasBeenSet() const;
 

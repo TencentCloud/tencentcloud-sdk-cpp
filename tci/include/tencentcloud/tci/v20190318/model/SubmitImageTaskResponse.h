@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取识别结果
                      * @return ResultSet 识别结果
+                     * 
                      */
                     std::vector<ImageTaskResult> GetResultSet() const;
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取任务标识符
                      * @return JobId 任务标识符
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取任务进度
                      * @return Progress 任务进度
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取结果总数目
                      * @return TotalCount 结果总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

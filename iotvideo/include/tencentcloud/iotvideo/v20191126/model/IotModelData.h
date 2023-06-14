@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取版本号
                      * @return Revision 版本号
+                     * 
                      */
                     int64_t GetRevision() const;
 
                     /**
                      * 设置版本号
-                     * @param Revision 版本号
+                     * @param _revision 版本号
+                     * 
                      */
                     void SetRevision(const int64_t& _revision);
 
                     /**
                      * 判断参数 Revision 是否已赋值
                      * @return Revision 是否已赋值
+                     * 
                      */
                     bool RevisionHasBeenSet() const;
 
                     /**
                      * 获取发布时间
                      * @return ReleaseTime 发布时间
+                     * 
                      */
                     int64_t GetReleaseTime() const;
 
                     /**
                      * 设置发布时间
-                     * @param ReleaseTime 发布时间
+                     * @param _releaseTime 发布时间
+                     * 
                      */
                     void SetReleaseTime(const int64_t& _releaseTime);
 
                     /**
                      * 判断参数 ReleaseTime 是否已赋值
                      * @return ReleaseTime 是否已赋值
+                     * 
                      */
                     bool ReleaseTimeHasBeenSet() const;
 

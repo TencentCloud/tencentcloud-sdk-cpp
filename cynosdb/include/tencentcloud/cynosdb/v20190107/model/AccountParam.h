@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取参数名称，当前仅支持参数：max_user_connections
                      * @return ParamName 参数名称，当前仅支持参数：max_user_connections
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称，当前仅支持参数：max_user_connections
-                     * @param ParamName 参数名称，当前仅支持参数：max_user_connections
+                     * @param _paramName 参数名称，当前仅支持参数：max_user_connections
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取参数值
                      * @return ParamValue 参数值
+                     * 
                      */
                     std::string GetParamValue() const;
 
                     /**
                      * 设置参数值
-                     * @param ParamValue 参数值
+                     * @param _paramValue 参数值
+                     * 
                      */
                     void SetParamValue(const std::string& _paramValue);
 
                     /**
                      * 判断参数 ParamValue 是否已赋值
                      * @return ParamValue 是否已赋值
+                     * 
                      */
                     bool ParamValueHasBeenSet() const;
 

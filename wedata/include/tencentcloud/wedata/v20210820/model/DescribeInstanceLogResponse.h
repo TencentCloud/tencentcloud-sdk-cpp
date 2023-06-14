@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回结果
                      * @return Data 返回结果
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceLogInfo 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntegrationInstanceLog GetInstanceLogInfo() const;
 
                     /**
                      * 判断参数 InstanceLogInfo 是否已赋值
                      * @return InstanceLogInfo 是否已赋值
+                     * 
                      */
                     bool InstanceLogInfoHasBeenSet() const;
 

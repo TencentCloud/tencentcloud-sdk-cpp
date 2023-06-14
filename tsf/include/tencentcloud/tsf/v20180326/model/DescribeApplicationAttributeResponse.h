@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用列表其它字段返回参数
                      * @return Result 应用列表其它字段返回参数
+                     * 
                      */
                     ApplicationAttribute GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

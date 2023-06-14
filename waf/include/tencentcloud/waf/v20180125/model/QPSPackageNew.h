@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceIds 资源ID
+                     * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceIds 资源ID
+                     * @param _resourceIds 资源ID
+                     * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ValidTime 过期时间
+                     * 
                      */
                     std::string GetValidTime() const;
 
                     /**
                      * 设置过期时间
-                     * @param ValidTime 过期时间
+                     * @param _validTime 过期时间
+                     * 
                      */
                     void SetValidTime(const std::string& _validTime);
 
                     /**
                      * 判断参数 ValidTime 是否已赋值
                      * @return ValidTime 是否已赋值
+                     * 
                      */
                     bool ValidTimeHasBeenSet() const;
 
                     /**
                      * 获取是否自动续费，1：自动续费，0：不自动续费
                      * @return RenewFlag 是否自动续费，1：自动续费，0：不自动续费
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置是否自动续费，1：自动续费，0：不自动续费
-                     * @param RenewFlag 是否自动续费，1：自动续费，0：不自动续费
+                     * @param _renewFlag 是否自动续费，1：自动续费，0：不自动续费
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取套餐购买个数
                      * @return Count 套餐购买个数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置套餐购买个数
-                     * @param Count 套餐购买个数
+                     * @param _count 套餐购买个数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取套餐购买地域，clb-waf暂时没有用到
                      * @return Region 套餐购买地域，clb-waf暂时没有用到
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置套餐购买地域，clb-waf暂时没有用到
-                     * @param Region 套餐购买地域，clb-waf暂时没有用到
+                     * @param _region 套餐购买地域，clb-waf暂时没有用到
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取计费项
                      * @return BillingItem 计费项
+                     * 
                      */
                     std::string GetBillingItem() const;
 
                     /**
                      * 设置计费项
-                     * @param BillingItem 计费项
+                     * @param _billingItem 计费项
+                     * 
                      */
                     void SetBillingItem(const std::string& _billingItem);
 
                     /**
                      * 判断参数 BillingItem 是否已赋值
                      * @return BillingItem 是否已赋值
+                     * 
                      */
                     bool BillingItemHasBeenSet() const;
 

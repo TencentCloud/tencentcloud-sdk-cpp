@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取执行空间 "DRY_RUN"
                      * @return ExecutionSpace 执行空间 "DRY_RUN"
+                     * 
                      */
                     std::string GetExecutionSpace() const;
 
                     /**
                      * 设置执行空间 "DRY_RUN"
-                     * @param ExecutionSpace 执行空间 "DRY_RUN"
+                     * @param _executionSpace 执行空间 "DRY_RUN"
+                     * 
                      */
                     void SetExecutionSpace(const std::string& _executionSpace);
 
                     /**
                      * 判断参数 ExecutionSpace 是否已赋值
                      * @return ExecutionSpace 是否已赋值
+                     * 
                      */
                     bool ExecutionSpaceHasBeenSet() const;
 
                     /**
                      * 获取产品名称，可选
                      * @return ProductName 产品名称，可选
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称，可选
-                     * @param ProductName 产品名称，可选
+                     * @param _productName 产品名称，可选
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取资源组
                      * @return ResourceGroup 资源组
+                     * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
                      * 设置资源组
-                     * @param ResourceGroup 资源组
+                     * @param _resourceGroup 资源组
+                     * 
                      */
                     void SetResourceGroup(const std::string& _resourceGroup);
 
                     /**
                      * 判断参数 ResourceGroup 是否已赋值
                      * @return ResourceGroup 是否已赋值
+                     * 
                      */
                     bool ResourceGroupHasBeenSet() const;
 

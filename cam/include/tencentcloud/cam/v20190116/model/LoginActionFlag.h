@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取手机
                      * @return Phone 手机
+                     * 
                      */
                     uint64_t GetPhone() const;
 
                     /**
                      * 设置手机
-                     * @param Phone 手机
+                     * @param _phone 手机
+                     * 
                      */
                     void SetPhone(const uint64_t& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取硬token
                      * @return Token 硬token
+                     * 
                      */
                     uint64_t GetToken() const;
 
                     /**
                      * 设置硬token
-                     * @param Token 硬token
+                     * @param _token 硬token
+                     * 
                      */
                     void SetToken(const uint64_t& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取软token
                      * @return Stoken 软token
+                     * 
                      */
                     uint64_t GetStoken() const;
 
                     /**
                      * 设置软token
-                     * @param Stoken 软token
+                     * @param _stoken 软token
+                     * 
                      */
                     void SetStoken(const uint64_t& _stoken);
 
                     /**
                      * 判断参数 Stoken 是否已赋值
                      * @return Stoken 是否已赋值
+                     * 
                      */
                     bool StokenHasBeenSet() const;
 
                     /**
                      * 获取微信
                      * @return Wechat 微信
+                     * 
                      */
                     uint64_t GetWechat() const;
 
                     /**
                      * 设置微信
-                     * @param Wechat 微信
+                     * @param _wechat 微信
+                     * 
                      */
                     void SetWechat(const uint64_t& _wechat);
 
                     /**
                      * 判断参数 Wechat 是否已赋值
                      * @return Wechat 是否已赋值
+                     * 
                      */
                     bool WechatHasBeenSet() const;
 
                     /**
                      * 获取自定义
                      * @return Custom 自定义
+                     * 
                      */
                     uint64_t GetCustom() const;
 
                     /**
                      * 设置自定义
-                     * @param Custom 自定义
+                     * @param _custom 自定义
+                     * 
                      */
                     void SetCustom(const uint64_t& _custom);
 
                     /**
                      * 判断参数 Custom 是否已赋值
                      * @return Custom 是否已赋值
+                     * 
                      */
                     bool CustomHasBeenSet() const;
 

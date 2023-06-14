@@ -55,6 +55,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 路径缓存不缓存配置配置开关，取值有：
+                     * @param _switch 路径缓存不缓存配置配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -87,6 +90,7 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRevalidate() const;
 
@@ -96,17 +100,19 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Revalidate 总是回源站校验
+                     * @param _revalidate 总是回源站校验
 on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRevalidate(const std::string& _revalidate);
 
                     /**
                      * 判断参数 Revalidate 是否已赋值
                      * @return Revalidate 是否已赋值
+                     * 
                      */
                     bool RevalidateHasBeenSet() const;
 

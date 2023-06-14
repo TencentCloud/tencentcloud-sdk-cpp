@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取人员ID，取值为创建人员接口中的PersonId
                      * @return PersonId 人员ID，取值为创建人员接口中的PersonId
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员ID，取值为创建人员接口中的PersonId
-                     * @param PersonId 人员ID，取值为创建人员接口中的PersonId
+                     * @param _personId 人员ID，取值为创建人员接口中的PersonId
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

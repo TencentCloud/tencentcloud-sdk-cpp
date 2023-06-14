@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取按月/按小时计费。
                      * @return BzPayMode 按月/按小时计费。
+                     * 
                      */
                     std::string GetBzPayMode() const;
 
                     /**
                      * 设置按月/按小时计费。
-                     * @param BzPayMode 按月/按小时计费。
+                     * @param _bzPayMode 按月/按小时计费。
+                     * 
                      */
                     void SetBzPayMode(const std::string& _bzPayMode);
 
                     /**
                      * 判断参数 BzPayMode 是否已赋值
                      * @return BzPayMode 是否已赋值
+                     * 
                      */
                     bool BzPayModeHasBeenSet() const;
 
                     /**
                      * 获取四层可选按带宽，连接数衡量。
                      * @return BzL4Metrics 四层可选按带宽，连接数衡量。
+                     * 
                      */
                     std::string GetBzL4Metrics() const;
 
                     /**
                      * 设置四层可选按带宽，连接数衡量。
-                     * @param BzL4Metrics 四层可选按带宽，连接数衡量。
+                     * @param _bzL4Metrics 四层可选按带宽，连接数衡量。
+                     * 
                      */
                     void SetBzL4Metrics(const std::string& _bzL4Metrics);
 
                     /**
                      * 判断参数 BzL4Metrics 是否已赋值
                      * @return BzL4Metrics 是否已赋值
+                     * 
                      */
                     bool BzL4MetricsHasBeenSet() const;
 
                     /**
                      * 获取七层可选按qps衡量。
                      * @return BzL7Metrics 七层可选按qps衡量。
+                     * 
                      */
                     std::string GetBzL7Metrics() const;
 
                     /**
                      * 设置七层可选按qps衡量。
-                     * @param BzL7Metrics 七层可选按qps衡量。
+                     * @param _bzL7Metrics 七层可选按qps衡量。
+                     * 
                      */
                     void SetBzL7Metrics(const std::string& _bzL7Metrics);
 
                     /**
                      * 判断参数 BzL7Metrics 是否已赋值
                      * @return BzL7Metrics 是否已赋值
+                     * 
                      */
                     bool BzL7MetricsHasBeenSet() const;
 

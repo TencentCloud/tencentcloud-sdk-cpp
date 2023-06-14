@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Relation 关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置关系
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Relation 关系
+                     * @param _relation 关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelation(const std::string& _relation);
 
                     /**
                      * 判断参数 Relation 是否已赋值
                      * @return Relation 是否已赋值
+                     * 
                      */
                     bool RelationHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeOfDeath 死亡时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeOfDeath() const;
 
                     /**
                      * 设置死亡时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeOfDeath 死亡时间
+                     * @param _timeOfDeath 死亡时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeOfDeath(const std::string& _timeOfDeath);
 
                     /**
                      * 判断参数 TimeOfDeath 是否已赋值
                      * @return TimeOfDeath 是否已赋值
+                     * 
                      */
                     bool TimeOfDeathHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeType 时间类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeType() const;
 
                     /**
                      * 设置时间类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeType 时间类型
+                     * @param _timeType 时间类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeType(const std::string& _timeType);
 
                     /**
                      * 判断参数 TimeType 是否已赋值
                      * @return TimeType 是否已赋值
+                     * 
                      */
                     bool TimeTypeHasBeenSet() const;
 

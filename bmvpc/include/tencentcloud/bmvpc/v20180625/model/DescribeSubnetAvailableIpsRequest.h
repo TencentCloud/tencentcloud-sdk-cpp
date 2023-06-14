@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取私有网络子网ID
                      * @return SubnetId 私有网络子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置私有网络子网ID
-                     * @param SubnetId 私有网络子网ID
+                     * @param _subnetId 私有网络子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取CIDR前缀，例如10.0.1
                      * @return Cidr CIDR前缀，例如10.0.1
+                     * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置CIDR前缀，例如10.0.1
-                     * @param Cidr CIDR前缀，例如10.0.1
+                     * @param _cidr CIDR前缀，例如10.0.1
+                     * 
                      */
                     void SetCidr(const std::string& _cidr);
 
                     /**
                      * 判断参数 Cidr 是否已赋值
                      * @return Cidr 是否已赋值
+                     * 
                      */
                     bool CidrHasBeenSet() const;
 

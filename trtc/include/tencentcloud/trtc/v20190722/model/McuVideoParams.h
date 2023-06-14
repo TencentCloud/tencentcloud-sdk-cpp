@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取输出流视频编码参数。
                      * @return VideoEncode 输出流视频编码参数。
+                     * 
                      */
                     VideoEncode GetVideoEncode() const;
 
                     /**
                      * 设置输出流视频编码参数。
-                     * @param VideoEncode 输出流视频编码参数。
+                     * @param _videoEncode 输出流视频编码参数。
+                     * 
                      */
                     void SetVideoEncode(const VideoEncode& _videoEncode);
 
                     /**
                      * 判断参数 VideoEncode 是否已赋值
                      * @return VideoEncode 是否已赋值
+                     * 
                      */
                     bool VideoEncodeHasBeenSet() const;
 
                     /**
                      * 获取混流布局参数。
                      * @return LayoutParams 混流布局参数。
+                     * 
                      */
                     McuLayoutParams GetLayoutParams() const;
 
                     /**
                      * 设置混流布局参数。
-                     * @param LayoutParams 混流布局参数。
+                     * @param _layoutParams 混流布局参数。
+                     * 
                      */
                     void SetLayoutParams(const McuLayoutParams& _layoutParams);
 
                     /**
                      * 判断参数 LayoutParams 是否已赋值
                      * @return LayoutParams 是否已赋值
+                     * 
                      */
                     bool LayoutParamsHasBeenSet() const;
 
@@ -102,6 +108,7 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
+                     * 
                      */
                     std::string GetBackGroundColor() const;
 
@@ -114,7 +121,7 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
-                     * @param BackGroundColor 整个画布背景颜色，常用的颜色有：
+                     * @param _backGroundColor 整个画布背景颜色，常用的颜色有：
 红色：0xcc0033。
 黄色：0xcc9900。
 绿色：0xcccc33。
@@ -122,48 +129,56 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
+                     * 
                      */
                     void SetBackGroundColor(const std::string& _backGroundColor);
 
                     /**
                      * 判断参数 BackGroundColor 是否已赋值
                      * @return BackGroundColor 是否已赋值
+                     * 
                      */
                     bool BackGroundColorHasBeenSet() const;
 
                     /**
                      * 获取整个画布的背景图url，优先级高于BackGroundColor。
                      * @return BackgroundImageUrl 整个画布的背景图url，优先级高于BackGroundColor。
+                     * 
                      */
                     std::string GetBackgroundImageUrl() const;
 
                     /**
                      * 设置整个画布的背景图url，优先级高于BackGroundColor。
-                     * @param BackgroundImageUrl 整个画布的背景图url，优先级高于BackGroundColor。
+                     * @param _backgroundImageUrl 整个画布的背景图url，优先级高于BackGroundColor。
+                     * 
                      */
                     void SetBackgroundImageUrl(const std::string& _backgroundImageUrl);
 
                     /**
                      * 判断参数 BackgroundImageUrl 是否已赋值
                      * @return BackgroundImageUrl 是否已赋值
+                     * 
                      */
                     bool BackgroundImageUrlHasBeenSet() const;
 
                     /**
                      * 获取混流布局的水印参数。
                      * @return WaterMarkList 混流布局的水印参数。
+                     * 
                      */
                     std::vector<McuWaterMarkParams> GetWaterMarkList() const;
 
                     /**
                      * 设置混流布局的水印参数。
-                     * @param WaterMarkList 混流布局的水印参数。
+                     * @param _waterMarkList 混流布局的水印参数。
+                     * 
                      */
                     void SetWaterMarkList(const std::vector<McuWaterMarkParams>& _waterMarkList);
 
                     /**
                      * 判断参数 WaterMarkList 是否已赋值
                      * @return WaterMarkList 是否已赋值
+                     * 
                      */
                     bool WaterMarkListHasBeenSet() const;
 

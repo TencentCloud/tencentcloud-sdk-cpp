@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取新的external_labels
                      * @return ExternalLabels 新的external_labels
+                     * 
                      */
                     std::vector<Label> GetExternalLabels() const;
 
                     /**
                      * 设置新的external_labels
-                     * @param ExternalLabels 新的external_labels
+                     * @param _externalLabels 新的external_labels
+                     * 
                      */
                     void SetExternalLabels(const std::vector<Label>& _externalLabels);
 
                     /**
                      * 判断参数 ExternalLabels 是否已赋值
                      * @return ExternalLabels 是否已赋值
+                     * 
                      */
                     bool ExternalLabelsHasBeenSet() const;
 

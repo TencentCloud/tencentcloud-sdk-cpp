@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取自定义 id 列表，最多同时查询 10 个自定义 id
                      * @return CustomIds 自定义 id 列表，最多同时查询 10 个自定义 id
+                     * 
                      */
                     std::vector<std::string> GetCustomIds() const;
 
                     /**
                      * 设置自定义 id 列表，最多同时查询 10 个自定义 id
-                     * @param CustomIds 自定义 id 列表，最多同时查询 10 个自定义 id
+                     * @param _customIds 自定义 id 列表，最多同时查询 10 个自定义 id
+                     * 
                      */
                     void SetCustomIds(const std::vector<std::string>& _customIds);
 
                     /**
                      * 判断参数 CustomIds 是否已赋值
                      * @return CustomIds 是否已赋值
+                     * 
                      */
                     bool CustomIdsHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取管道ID
                      * @return PipelineId 管道ID
+                     * 
                      */
                     std::string GetPipelineId() const;
 
                     /**
                      * 设置管道ID
-                     * @param PipelineId 管道ID
+                     * @param _pipelineId 管道ID
+                     * 
                      */
                     void SetPipelineId(const std::string& _pipelineId);
 
                     /**
                      * 判断参数 PipelineId 是否已赋值
                      * @return PipelineId 是否已赋值
+                     * 
                      */
                     bool PipelineIdHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PipelineDesc 管道描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPipelineDesc() const;
 
                     /**
                      * 设置管道描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PipelineDesc 管道描述信息
+                     * @param _pipelineDesc 管道描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPipelineDesc(const std::string& _pipelineDesc);
 
                     /**
                      * 判断参数 PipelineDesc 是否已赋值
                      * @return PipelineDesc 是否已赋值
+                     * 
                      */
                     bool PipelineDescHasBeenSet() const;
 
                     /**
                      * 获取管道配置内容
                      * @return Config 管道配置内容
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置管道配置内容
-                     * @param Config 管道配置内容
+                     * @param _config 管道配置内容
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 管道状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置管道状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 管道状态
+                     * @param _status 管道状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Workers 管道的Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetWorkers() const;
 
                     /**
                      * 设置管道的Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Workers 管道的Worker数量
+                     * @param _workers 管道的Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkers(const uint64_t& _workers);
 
                     /**
                      * 判断参数 Workers 是否已赋值
                      * @return Workers 是否已赋值
+                     * 
                      */
                     bool WorkersHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchSize 管道批处理大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBatchSize() const;
 
                     /**
                      * 设置管道批处理大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchSize 管道批处理大小
+                     * @param _batchSize 管道批处理大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchSize(const uint64_t& _batchSize);
 
                     /**
                      * 判断参数 BatchSize 是否已赋值
                      * @return BatchSize 是否已赋值
+                     * 
                      */
                     bool BatchSizeHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchDelay 管道批处理延迟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBatchDelay() const;
 
                     /**
                      * 设置管道批处理延迟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchDelay 管道批处理延迟
+                     * @param _batchDelay 管道批处理延迟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchDelay(const uint64_t& _batchDelay);
 
                     /**
                      * 判断参数 BatchDelay 是否已赋值
                      * @return BatchDelay 是否已赋值
+                     * 
                      */
                     bool BatchDelayHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueType 管道缓冲队列类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQueueType() const;
 
                     /**
                      * 设置管道缓冲队列类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueType 管道缓冲队列类型
+                     * @param _queueType 管道缓冲队列类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueType(const std::string& _queueType);
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueMaxBytes 管道缓冲队列大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQueueMaxBytes() const;
 
                     /**
                      * 设置管道缓冲队列大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueMaxBytes 管道缓冲队列大小
+                     * @param _queueMaxBytes 管道缓冲队列大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueMaxBytes(const std::string& _queueMaxBytes);
 
                     /**
                      * 判断参数 QueueMaxBytes 是否已赋值
                      * @return QueueMaxBytes 是否已赋值
+                     * 
                      */
                     bool QueueMaxBytesHasBeenSet() const;
 
@@ -241,20 +268,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueCheckPointWrites 管道缓冲队列检查点写入数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetQueueCheckPointWrites() const;
 
                     /**
                      * 设置管道缓冲队列检查点写入数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueCheckPointWrites 管道缓冲队列检查点写入数
+                     * @param _queueCheckPointWrites 管道缓冲队列检查点写入数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueCheckPointWrites(const uint64_t& _queueCheckPointWrites);
 
                     /**
                      * 判断参数 QueueCheckPointWrites 是否已赋值
                      * @return QueueCheckPointWrites 是否已赋值
+                     * 
                      */
                     bool QueueCheckPointWritesHasBeenSet() const;
 

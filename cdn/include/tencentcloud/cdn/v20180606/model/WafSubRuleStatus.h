@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch Waf子规则开关状态配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,33 +61,38 @@ off：关闭
                      * 设置Waf子规则开关状态配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch Waf子规则开关状态配置开关，取值有：
+                     * @param _switch Waf子规则开关状态配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取规则id列表
                      * @return SubIds 规则id列表
+                     * 
                      */
                     std::vector<int64_t> GetSubIds() const;
 
                     /**
                      * 设置规则id列表
-                     * @param SubIds 规则id列表
+                     * @param _subIds 规则id列表
+                     * 
                      */
                     void SetSubIds(const std::vector<int64_t>& _subIds);
 
                     /**
                      * 判断参数 SubIds 是否已赋值
                      * @return SubIds 是否已赋值
+                     * 
                      */
                     bool SubIdsHasBeenSet() const;
 

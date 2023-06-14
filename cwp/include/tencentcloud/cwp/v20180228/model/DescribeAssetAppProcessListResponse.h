@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 进程列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetAppProcessInfo> GetProcess() const;
 
                     /**
                      * 判断参数 Process 是否已赋值
                      * @return Process 是否已赋值
+                     * 
                      */
                     bool ProcessHasBeenSet() const;
 
                     /**
                      * 获取分区总数
                      * @return Total 分区总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

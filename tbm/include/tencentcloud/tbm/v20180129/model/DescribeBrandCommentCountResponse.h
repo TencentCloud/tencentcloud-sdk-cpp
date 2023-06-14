@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取按天统计好评/差评数
                      * @return CommentSet 按天统计好评/差评数
+                     * 
                      */
                     std::vector<Comment> GetCommentSet() const;
 
                     /**
                      * 判断参数 CommentSet 是否已赋值
                      * @return CommentSet 是否已赋值
+                     * 
                      */
                     bool CommentSetHasBeenSet() const;
 

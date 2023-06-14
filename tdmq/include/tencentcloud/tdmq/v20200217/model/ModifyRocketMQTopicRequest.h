@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceId 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceId 命名空间名称
+                     * @param _namespaceId 命名空间名称
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称
                      * @return Topic 主题名称
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置主题名称
-                     * @param Topic 主题名称
+                     * @param _topic 主题名称
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取说明信息，最大128个字符
                      * @return Remark 说明信息，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息，最大128个字符
-                     * @param Remark 说明信息，最大128个字符
+                     * @param _remark 说明信息，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取分区数，全局类型无效，不可小于当前分区数
                      * @return PartitionNum 分区数，全局类型无效，不可小于当前分区数
+                     * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数，全局类型无效，不可小于当前分区数
-                     * @param PartitionNum 分区数，全局类型无效，不可小于当前分区数
+                     * @param _partitionNum 分区数，全局类型无效，不可小于当前分区数
+                     * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 

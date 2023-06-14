@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取源站名称
                      * @return RealServerName 源站名称
+                     * 
                      */
                     std::string GetRealServerName() const;
 
                     /**
                      * 设置源站名称
-                     * @param RealServerName 源站名称
+                     * @param _realServerName 源站名称
+                     * 
                      */
                     void SetRealServerName(const std::string& _realServerName);
 
                     /**
                      * 判断参数 RealServerName 是否已赋值
                      * @return RealServerName 是否已赋值
+                     * 
                      */
                     bool RealServerNameHasBeenSet() const;
 
                     /**
                      * 获取源站ID
                      * @return RealServerId 源站ID
+                     * 
                      */
                     std::string GetRealServerId() const;
 
                     /**
                      * 设置源站ID
-                     * @param RealServerId 源站ID
+                     * @param _realServerId 源站ID
+                     * 
                      */
                     void SetRealServerId(const std::string& _realServerId);
 
                     /**
                      * 判断参数 RealServerId 是否已赋值
                      * @return RealServerId 是否已赋值
+                     * 
                      */
                     bool RealServerIdHasBeenSet() const;
 

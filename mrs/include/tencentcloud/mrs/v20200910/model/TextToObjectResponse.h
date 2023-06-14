@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取报告结构化结果
                      * @return Template 报告结构化结果
+                     * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 

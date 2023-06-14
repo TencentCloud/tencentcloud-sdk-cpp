@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件夹名称，如 aaa
                      * @return Name 文件夹名称，如 aaa
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置文件夹名称，如 aaa
-                     * @param Name 文件夹名称，如 aaa
+                     * @param _name 文件夹名称，如 aaa
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取文件夹所属父目录，请注意，根目录为 /datastudio/resource
                      * @return FilePath 文件夹所属父目录，请注意，根目录为 /datastudio/resource
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件夹所属父目录，请注意，根目录为 /datastudio/resource
-                     * @param FilePath 文件夹所属父目录，请注意，根目录为 /datastudio/resource
+                     * @param _filePath 文件夹所属父目录，请注意，根目录为 /datastudio/resource
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

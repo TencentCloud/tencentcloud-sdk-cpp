@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUCount 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetGPUCount() const;
 
                     /**
                      * 设置实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GPUCount 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
+                     * @param _gPUCount 实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGPUCount(const double& _gPUCount);
 
                     /**
                      * 判断参数 GPUCount 是否已赋值
                      * @return GPUCount 是否已赋值
+                     * 
                      */
                     bool GPUCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUId 实例GPU地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetGPUId() const;
 
                     /**
                      * 设置实例GPU地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GPUId 实例GPU地址。
+                     * @param _gPUId 实例GPU地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGPUId(const std::vector<std::string>& _gPUId);
 
                     /**
                      * 判断参数 GPUId 是否已赋值
                      * @return GPUId 是否已赋值
+                     * 
                      */
                     bool GPUIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUType 实例GPU类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGPUType() const;
 
                     /**
                      * 设置实例GPU类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GPUType 实例GPU类型。
+                     * @param _gPUType 实例GPU类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGPUType(const std::string& _gPUType);
 
                     /**
                      * 判断参数 GPUType 是否已赋值
                      * @return GPUType 是否已赋值
+                     * 
                      */
                     bool GPUTypeHasBeenSet() const;
 

@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云主账号ID
                      * @return Uin 腾讯云主账号ID
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取操作人子账户ID
                      * @return SubAccountUin 操作人子账户ID
+                     * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 判断参数 SubAccountUin 是否已赋值
                      * @return SubAccountUin 是否已赋值
+                     * 
                      */
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
                      * 获取保单ID
                      * @return PolicyId 保单ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取主任务ID
                      * @return MainTaskId 主任务ID
+                     * 
                      */
                     std::string GetMainTaskId() const;
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
                      * @return MainTaskId 是否已赋值
+                     * 
                      */
                     bool MainTaskIdHasBeenSet() const;
 
                     /**
                      * 获取核保任务ID
                      * @return UnderwriteTaskId 核保任务ID
+                     * 
                      */
                     std::string GetUnderwriteTaskId() const;
 
                     /**
                      * 判断参数 UnderwriteTaskId 是否已赋值
                      * @return UnderwriteTaskId 是否已赋值
+                     * 
                      */
                     bool UnderwriteTaskIdHasBeenSet() const;
 
@@ -113,24 +123,28 @@ namespace TencentCloud
 0：返回成功
 1：结果未生成
 2：结果生成失败
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取机器核保结果
                      * @return UnderwriteResults 机器核保结果
+                     * 
                      */
                     std::vector<MachineUnderwriteOutput> GetUnderwriteResults() const;
 
                     /**
                      * 判断参数 UnderwriteResults 是否已赋值
                      * @return UnderwriteResults 是否已赋值
+                     * 
                      */
                     bool UnderwriteResultsHasBeenSet() const;
 

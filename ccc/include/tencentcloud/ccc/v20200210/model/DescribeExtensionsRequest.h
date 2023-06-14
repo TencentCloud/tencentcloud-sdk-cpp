@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取TCCC 实例应用 ID
                      * @return SdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TCCC 实例应用 ID
-                     * @param SdkAppId TCCC 实例应用 ID
+                     * @param _sdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页页号（从0开始）
                      * @return PageNumber 分页页号（从0开始）
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页页号（从0开始）
-                     * @param PageNumber 分页页号（从0开始）
+                     * @param _pageNumber 分页页号（从0开始）
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取筛选分机号列表
                      * @return ExtensionIds 筛选分机号列表
+                     * 
                      */
                     std::vector<std::string> GetExtensionIds() const;
 
                     /**
                      * 设置筛选分机号列表
-                     * @param ExtensionIds 筛选分机号列表
+                     * @param _extensionIds 筛选分机号列表
+                     * 
                      */
                     void SetExtensionIds(const std::vector<std::string>& _extensionIds);
 
                     /**
                      * 判断参数 ExtensionIds 是否已赋值
                      * @return ExtensionIds 是否已赋值
+                     * 
                      */
                     bool ExtensionIdsHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）
                      * @return FuzzingKeyWord 模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）
+                     * 
                      */
                     std::string GetFuzzingKeyWord() const;
 
                     /**
                      * 设置模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）
-                     * @param FuzzingKeyWord 模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）
+                     * @param _fuzzingKeyWord 模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）
+                     * 
                      */
                     void SetFuzzingKeyWord(const std::string& _fuzzingKeyWord);
 
                     /**
                      * 判断参数 FuzzingKeyWord 是否已赋值
                      * @return FuzzingKeyWord 是否已赋值
+                     * 
                      */
                     bool FuzzingKeyWordHasBeenSet() const;
 
                     /**
                      * 获取是否需要返回话机当前状态
                      * @return IsNeedStatus 是否需要返回话机当前状态
+                     * 
                      */
                     bool GetIsNeedStatus() const;
 
                     /**
                      * 设置是否需要返回话机当前状态
-                     * @param IsNeedStatus 是否需要返回话机当前状态
+                     * @param _isNeedStatus 是否需要返回话机当前状态
+                     * 
                      */
                     void SetIsNeedStatus(const bool& _isNeedStatus);
 
                     /**
                      * 判断参数 IsNeedStatus 是否已赋值
                      * @return IsNeedStatus 是否已赋值
+                     * 
                      */
                     bool IsNeedStatusHasBeenSet() const;
 

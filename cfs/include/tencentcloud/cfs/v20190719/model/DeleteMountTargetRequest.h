@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统 ID
                      * @return FileSystemId 文件系统 ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统 ID
-                     * @param FileSystemId 文件系统 ID
+                     * @param _fileSystemId 文件系统 ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取挂载点 ID
                      * @return MountTargetId 挂载点 ID
+                     * 
                      */
                     std::string GetMountTargetId() const;
 
                     /**
                      * 设置挂载点 ID
-                     * @param MountTargetId 挂载点 ID
+                     * @param _mountTargetId 挂载点 ID
+                     * 
                      */
                     void SetMountTargetId(const std::string& _mountTargetId);
 
                     /**
                      * 判断参数 MountTargetId 是否已赋值
                      * @return MountTargetId 是否已赋值
+                     * 
                      */
                     bool MountTargetIdHasBeenSet() const;
 

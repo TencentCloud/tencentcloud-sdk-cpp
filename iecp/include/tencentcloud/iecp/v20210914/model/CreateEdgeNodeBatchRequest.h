@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取节点信息
                      * @return Nodes 节点信息
+                     * 
                      */
                     std::vector<DracoNodeInfo> GetNodes() const;
 
                     /**
                      * 设置节点信息
-                     * @param Nodes 节点信息
+                     * @param _nodes 节点信息
+                     * 
                      */
                     void SetNodes(const std::vector<DracoNodeInfo>& _nodes);
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 

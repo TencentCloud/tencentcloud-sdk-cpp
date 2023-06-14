@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频打点信息数组。
                      * @return KeyFrameDescSet 视频打点信息数组。
+                     * 
                      */
                     std::vector<MediaKeyFrameDescItem> GetKeyFrameDescSet() const;
 
                     /**
                      * 设置视频打点信息数组。
-                     * @param KeyFrameDescSet 视频打点信息数组。
+                     * @param _keyFrameDescSet 视频打点信息数组。
+                     * 
                      */
                     void SetKeyFrameDescSet(const std::vector<MediaKeyFrameDescItem>& _keyFrameDescSet);
 
                     /**
                      * 判断参数 KeyFrameDescSet 是否已赋值
                      * @return KeyFrameDescSet 是否已赋值
+                     * 
                      */
                     bool KeyFrameDescSetHasBeenSet() const;
 

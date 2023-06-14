@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取计划名称
                      * @return Name 计划名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
-                     * @param Name 计划名称
+                     * @param _name 计划名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取时间模板ID
                      * @return TimeTemplateId 时间模板ID
+                     * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-                     * @param TimeTemplateId 时间模板ID
+                     * @param _timeTemplateId 时间模板ID
+                     * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
 
                     /**
                      * 判断参数 TimeTemplateId 是否已赋值
                      * @return TimeTemplateId 是否已赋值
+                     * 
                      */
                     bool TimeTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取该录制计划绑定的通道列表
                      * @return Channels 该录制计划绑定的通道列表
+                     * 
                      */
                     std::vector<ChannelItem> GetChannels() const;
 
                     /**
                      * 设置该录制计划绑定的通道列表
-                     * @param Channels 该录制计划绑定的通道列表
+                     * @param _channels 该录制计划绑定的通道列表
+                     * 
                      */
                     void SetChannels(const std::vector<ChannelItem>& _channels);
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 
                     /**
                      * 获取存储周期(天)；默认存储30天
                      * @return RecordStorageTime 存储周期(天)；默认存储30天
+                     * 
                      */
                     int64_t GetRecordStorageTime() const;
 
                     /**
                      * 设置存储周期(天)；默认存储30天
-                     * @param RecordStorageTime 存储周期(天)；默认存储30天
+                     * @param _recordStorageTime 存储周期(天)；默认存储30天
+                     * 
                      */
                     void SetRecordStorageTime(const int64_t& _recordStorageTime);
 
                     /**
                      * 判断参数 RecordStorageTime 是否已赋值
                      * @return RecordStorageTime 是否已赋值
+                     * 
                      */
                     bool RecordStorageTimeHasBeenSet() const;
 

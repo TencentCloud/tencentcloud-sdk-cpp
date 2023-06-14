@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取使能开关
                      * @return Enable 使能开关
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置使能开关
-                     * @param Enable 使能开关
+                     * @param _enable 使能开关
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取函数版本或别名
                      * @return Qualifier 函数版本或别名
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数版本或别名
-                     * @param Qualifier 函数版本或别名
+                     * @param _qualifier 函数版本或别名
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 
                     /**
                      * 获取触发器名称
                      * @return TriggerName 触发器名称
+                     * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
                      * 设置触发器名称
-                     * @param TriggerName 触发器名称
+                     * @param _triggerName 触发器名称
+                     * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
 
                     /**
                      * 判断参数 TriggerName 是否已赋值
                      * @return TriggerName 是否已赋值
+                     * 
                      */
                     bool TriggerNameHasBeenSet() const;
 
                     /**
                      * 获取触发器类型
                      * @return Type 触发器类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置触发器类型
-                     * @param Type 触发器类型
+                     * @param _type 触发器类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取触发器详细配置
                      * @return TriggerDesc 触发器详细配置
+                     * 
                      */
                     std::string GetTriggerDesc() const;
 
                     /**
                      * 设置触发器详细配置
-                     * @param TriggerDesc 触发器详细配置
+                     * @param _triggerDesc 触发器详细配置
+                     * 
                      */
                     void SetTriggerDesc(const std::string& _triggerDesc);
 
                     /**
                      * 判断参数 TriggerDesc 是否已赋值
                      * @return TriggerDesc 是否已赋值
+                     * 
                      */
                     bool TriggerDescHasBeenSet() const;
 
                     /**
                      * 获取触发器是否可用
                      * @return AvailableStatus 触发器是否可用
+                     * 
                      */
                     std::string GetAvailableStatus() const;
 
                     /**
                      * 设置触发器是否可用
-                     * @param AvailableStatus 触发器是否可用
+                     * @param _availableStatus 触发器是否可用
+                     * 
                      */
                     void SetAvailableStatus(const std::string& _availableStatus);
 
                     /**
                      * 判断参数 AvailableStatus 是否已赋值
                      * @return AvailableStatus 是否已赋值
+                     * 
                      */
                     bool AvailableStatusHasBeenSet() const;
 
@@ -159,110 +177,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomArgument 客户自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomArgument() const;
 
                     /**
                      * 设置客户自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomArgument 客户自定义参数
+                     * @param _customArgument 客户自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomArgument(const std::string& _customArgument);
 
                     /**
                      * 判断参数 CustomArgument 是否已赋值
                      * @return CustomArgument 是否已赋值
+                     * 
                      */
                     bool CustomArgumentHasBeenSet() const;
 
                     /**
                      * 获取触发器创建时间
                      * @return AddTime 触发器创建时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置触发器创建时间
-                     * @param AddTime 触发器创建时间
+                     * @param _addTime 触发器创建时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取触发器最后修改时间
                      * @return ModTime 触发器最后修改时间
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 设置触发器最后修改时间
-                     * @param ModTime 触发器最后修改时间
+                     * @param _modTime 触发器最后修改时间
+                     * 
                      */
                     void SetModTime(const std::string& _modTime);
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 
                     /**
                      * 获取触发器最小资源ID
                      * @return ResourceId 触发器最小资源ID
+                     * @deprecated
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置触发器最小资源ID
-                     * @param ResourceId 触发器最小资源ID
+                     * @param _resourceId 触发器最小资源ID
+                     * @deprecated
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * @deprecated
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取触发器和云函数绑定状态
                      * @return BindStatus 触发器和云函数绑定状态
+                     * @deprecated
                      */
                     std::string GetBindStatus() const;
 
                     /**
                      * 设置触发器和云函数绑定状态
-                     * @param BindStatus 触发器和云函数绑定状态
+                     * @param _bindStatus 触发器和云函数绑定状态
+                     * @deprecated
                      */
                     void SetBindStatus(const std::string& _bindStatus);
 
                     /**
                      * 判断参数 BindStatus 是否已赋值
                      * @return BindStatus 是否已赋值
+                     * @deprecated
                      */
                     bool BindStatusHasBeenSet() const;
 
                     /**
                      * 获取触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
                      * @return TriggerAttribute 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     * @deprecated
                      */
                     std::string GetTriggerAttribute() const;
 
                     /**
                      * 设置触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
-                     * @param TriggerAttribute 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     * @param _triggerAttribute 触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建
+                     * @deprecated
                      */
                     void SetTriggerAttribute(const std::string& _triggerAttribute);
 
                     /**
                      * 判断参数 TriggerAttribute 是否已赋值
                      * @return TriggerAttribute 是否已赋值
+                     * @deprecated
                      */
                     bool TriggerAttributeHasBeenSet() const;
 
@@ -271,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 客户自定义触发器描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置客户自定义触发器描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 客户自定义触发器描述
+                     * @param _description 客户自定义触发器描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

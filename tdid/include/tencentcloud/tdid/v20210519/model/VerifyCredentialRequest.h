@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取参数集合
                      * @return FunctionArg 参数集合
+                     * 
                      */
                     VerifyFunctionArg GetFunctionArg() const;
 
                     /**
                      * 设置参数集合
-                     * @param FunctionArg 参数集合
+                     * @param _functionArg 参数集合
+                     * 
                      */
                     void SetFunctionArg(const VerifyFunctionArg& _functionArg);
 
                     /**
                      * 判断参数 FunctionArg 是否已赋值
                      * @return FunctionArg 是否已赋值
+                     * 
                      */
                     bool FunctionArgHasBeenSet() const;
 

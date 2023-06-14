@@ -49,48 +49,56 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 漏洞信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulStoreListInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取今日剩余搜索此时
                      * @return Remaining 今日剩余搜索此时
+                     * 
                      */
                     uint64_t GetRemaining() const;
 
                     /**
                      * 判断参数 Remaining 是否已赋值
                      * @return Remaining 是否已赋值
+                     * 
                      */
                     bool RemainingHasBeenSet() const;
 
                     /**
                      * 获取免费搜索次数
                      * @return FreeSearchTimes 免费搜索次数
+                     * 
                      */
                     uint64_t GetFreeSearchTimes() const;
 
                     /**
                      * 判断参数 FreeSearchTimes 是否已赋值
                      * @return FreeSearchTimes 是否已赋值
+                     * 
                      */
                     bool FreeSearchTimesHasBeenSet() const;
 

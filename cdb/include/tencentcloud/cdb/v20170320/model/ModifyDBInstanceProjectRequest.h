@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
                      * @return InstanceIds 实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
-                     * @param InstanceIds 实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * @param _instanceIds 实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取项目的 ID。
                      * @return NewProjectId 项目的 ID。
+                     * 
                      */
                     int64_t GetNewProjectId() const;
 
                     /**
                      * 设置项目的 ID。
-                     * @param NewProjectId 项目的 ID。
+                     * @param _newProjectId 项目的 ID。
+                     * 
                      */
                     void SetNewProjectId(const int64_t& _newProjectId);
 
                     /**
                      * 判断参数 NewProjectId 是否已赋值
                      * @return NewProjectId 是否已赋值
+                     * 
                      */
                     bool NewProjectIdHasBeenSet() const;
 

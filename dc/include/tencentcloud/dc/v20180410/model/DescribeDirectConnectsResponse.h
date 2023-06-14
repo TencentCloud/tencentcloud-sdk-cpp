@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取物理专线列表。
                      * @return DirectConnectSet 物理专线列表。
+                     * 
                      */
                     std::vector<DirectConnect> GetDirectConnectSet() const;
 
                     /**
                      * 判断参数 DirectConnectSet 是否已赋值
                      * @return DirectConnectSet 是否已赋值
+                     * 
                      */
                     bool DirectConnectSetHasBeenSet() const;
 
                     /**
                      * 获取符合物理专线列表数量。
                      * @return TotalCount 符合物理专线列表数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllSignLaw 用户名下物理专线是否都签署了用户协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAllSignLaw() const;
 
                     /**
                      * 判断参数 AllSignLaw 是否已赋值
                      * @return AllSignLaw 是否已赋值
+                     * 
                      */
                     bool AllSignLawHasBeenSet() const;
 

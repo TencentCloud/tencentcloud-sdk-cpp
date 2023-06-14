@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remarks 边缘单元内的备注列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRemarks() const;
 
                     /**
                      * 判断参数 Remarks 是否已赋值
                      * @return Remarks 是否已赋值
+                     * 
                      */
                     bool RemarksHasBeenSet() const;
 

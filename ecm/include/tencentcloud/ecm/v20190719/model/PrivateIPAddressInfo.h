@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIPAddress 实例的内网ip。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateIPAddress() const;
 
                     /**
                      * 设置实例的内网ip。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIPAddress 实例的内网ip。
+                     * @param _privateIPAddress 实例的内网ip。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIPAddress(const std::string& _privateIPAddress);
 
                     /**
                      * 判断参数 PrivateIPAddress 是否已赋值
                      * @return PrivateIPAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIPAddressHasBeenSet() const;
 

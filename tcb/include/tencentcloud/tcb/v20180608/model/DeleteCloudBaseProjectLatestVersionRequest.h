@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取项目名
                      * @return ProjectName 项目名
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名
-                     * @param ProjectName 项目名
+                     * @param _projectName 项目名
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取是否保留资源
                      * @return KeepResource 是否保留资源
+                     * 
                      */
                     bool GetKeepResource() const;
 
                     /**
                      * 设置是否保留资源
-                     * @param KeepResource 是否保留资源
+                     * @param _keepResource 是否保留资源
+                     * 
                      */
                     void SetKeepResource(const bool& _keepResource);
 
                     /**
                      * 判断参数 KeepResource 是否已赋值
                      * @return KeepResource 是否已赋值
+                     * 
                      */
                     bool KeepResourceHasBeenSet() const;
 

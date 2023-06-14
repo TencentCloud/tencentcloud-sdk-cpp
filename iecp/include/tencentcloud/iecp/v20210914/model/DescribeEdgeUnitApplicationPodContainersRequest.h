@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitId 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitId 单元ID
+                     * @param _edgeUnitId 单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取Pod名
                      * @return PodName Pod名
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置Pod名
-                     * @param PodName Pod名
+                     * @param _podName Pod名
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 

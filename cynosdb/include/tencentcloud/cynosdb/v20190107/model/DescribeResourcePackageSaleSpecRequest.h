@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例类型
                      * @return InstanceType 实例类型
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型
-                     * @param InstanceType 实例类型
+                     * @param _instanceType 实例类型
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 china-中国内地通用，overseas-港澳台及海外通用
                      * @return PackageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
+                     * 
                      */
                     std::string GetPackageRegion() const;
 
                     /**
                      * 设置资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-                     * @param PackageRegion 资源包使用地域
+                     * @param _packageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
+                     * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
 
                     /**
                      * 判断参数 PackageRegion 是否已赋值
                      * @return PackageRegion 是否已赋值
+                     * 
                      */
                     bool PackageRegionHasBeenSet() const;
 
@@ -89,6 +95,7 @@ DISK-存储资源包
                      * @return PackageType 资源包类型
 CCU-计算资源包
 DISK-存储资源包
+                     * 
                      */
                     std::string GetPackageType() const;
 
@@ -96,51 +103,59 @@ DISK-存储资源包
                      * 设置资源包类型
 CCU-计算资源包
 DISK-存储资源包
-                     * @param PackageType 资源包类型
+                     * @param _packageType 资源包类型
 CCU-计算资源包
 DISK-存储资源包
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制
                      * @return Limit 限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制
-                     * @param Limit 限制
+                     * @param _limit 限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

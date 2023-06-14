@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取监控类型
                      * @return MonitorType 监控类型
+                     * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
                      * 设置监控类型
-                     * @param MonitorType 监控类型
+                     * @param _monitorType 监控类型
+                     * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
 
                     /**
                      * 判断参数 MonitorType 是否已赋值
                      * @return MonitorType 是否已赋值
+                     * 
                      */
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
                      * 获取策略类型值
                      * @return Namespace 策略类型值
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置策略类型值
-                     * @param Namespace 策略类型值
+                     * @param _namespace 策略类型值
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

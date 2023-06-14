@@ -51,7 +51,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_kMSKeyIdHasBeenSet(false),
     m_kMSRegionHasBeenSet(false),
     m_dBEngineHasBeenSet(false),
-    m_dBEngineConfigHasBeenSet(false)
+    m_dBEngineConfigHasBeenSet(false),
+    m_syncModeHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "DBEngineConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBEngineConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -788,6 +797,22 @@ void CreateInstancesRequest::SetDBEngineConfig(const string& _dBEngineConfig)
 bool CreateInstancesRequest::DBEngineConfigHasBeenSet() const
 {
     return m_dBEngineConfigHasBeenSet;
+}
+
+string CreateInstancesRequest::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void CreateInstancesRequest::SetSyncMode(const string& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
 }
 
 

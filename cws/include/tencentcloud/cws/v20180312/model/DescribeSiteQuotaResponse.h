@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取已购买的扫描次数。
                      * @return Total 已购买的扫描次数。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已使用的扫描次数。
                      * @return Used 已使用的扫描次数。
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取剩余可用的扫描次数。
                      * @return Available 剩余可用的扫描次数。
+                     * 
                      */
                     uint64_t GetAvailable() const;
 
                     /**
                      * 判断参数 Available 是否已赋值
                      * @return Available 是否已赋值
+                     * 
                      */
                     bool AvailableHasBeenSet() const;
 

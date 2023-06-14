@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Mobile 手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置手机号
-                     * @param Mobile 手机号
+                     * @param _mobile 手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取验证码
                      * @return VerifyCode 验证码
+                     * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
                      * 设置验证码
-                     * @param VerifyCode 验证码
+                     * @param _verifyCode 验证码
+                     * 
                      */
                     void SetVerifyCode(const std::string& _verifyCode);
 
                     /**
                      * 判断参数 VerifyCode 是否已赋值
                      * @return VerifyCode 是否已赋值
+                     * 
                      */
                     bool VerifyCodeHasBeenSet() const;
 
                     /**
                      * 获取流程(目录) id
                      * @return FlowId 流程(目录) id
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程(目录) id
-                     * @param FlowId 流程(目录) id
+                     * @param _flowId 流程(目录) id
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

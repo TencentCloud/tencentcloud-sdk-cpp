@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源名称
                      * @return ResourceName 资源名称
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
-                     * @param ResourceName 资源名称
+                     * @param _resourceName 资源名称
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取折后总价
                      * @return RealTotalCost 折后总价
+                     * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置折后总价
-                     * @param RealTotalCost 折后总价
+                     * @param _realTotalCost 折后总价
+                     * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
                      * 获取现金花费
                      * @return CashPayAmount 现金花费
+                     * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
                      * 设置现金花费
-                     * @param CashPayAmount 现金花费
+                     * @param _cashPayAmount 现金花费
+                     * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
 
                     /**
                      * 判断参数 CashPayAmount 是否已赋值
                      * @return CashPayAmount 是否已赋值
+                     * 
                      */
                     bool CashPayAmountHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return RegionName 地域名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取付费模式
                      * @return PayMode 付费模式
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付费模式
-                     * @param PayMode 付费模式
+                     * @param _payMode 付费模式
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取付费模式名称
                      * @return PayModeName 付费模式名称
+                     * 
                      */
                     std::string GetPayModeName() const;
 
                     /**
                      * 设置付费模式名称
-                     * @param PayModeName 付费模式名称
+                     * @param _payModeName 付费模式名称
+                     * 
                      */
                     void SetPayModeName(const std::string& _payModeName);
 
                     /**
                      * 判断参数 PayModeName 是否已赋值
                      * @return PayModeName 是否已赋值
+                     * 
                      */
                     bool PayModeNameHasBeenSet() const;
 
                     /**
                      * 获取产品名称代码
                      * @return BusinessCode 产品名称代码
+                     * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品名称代码
-                     * @param BusinessCode 产品名称代码
+                     * @param _businessCode 产品名称代码
+                     * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
 
                     /**
                      * 判断参数 BusinessCode 是否已赋值
                      * @return BusinessCode 是否已赋值
+                     * 
                      */
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return BusinessCodeName 产品名称
+                     * 
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
                      * 设置产品名称
-                     * @param BusinessCodeName 产品名称
+                     * @param _businessCodeName 产品名称
+                     * 
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
                     /**
                      * 判断参数 BusinessCodeName 是否已赋值
                      * @return BusinessCodeName 是否已赋值
+                     * 
                      */
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
                      * 获取消耗类型
                      * @return ConsumptionTypeName 消耗类型
+                     * 
                      */
                     std::string GetConsumptionTypeName() const;
 
                     /**
                      * 设置消耗类型
-                     * @param ConsumptionTypeName 消耗类型
+                     * @param _consumptionTypeName 消耗类型
+                     * 
                      */
                     void SetConsumptionTypeName(const std::string& _consumptionTypeName);
 
                     /**
                      * 判断参数 ConsumptionTypeName 是否已赋值
                      * @return ConsumptionTypeName 是否已赋值
+                     * 
                      */
                     bool ConsumptionTypeNameHasBeenSet() const;
 
@@ -285,20 +324,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealCost 折前价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealCost() const;
 
                     /**
                      * 设置折前价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealCost 折前价
+                     * @param _realCost 折前价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealCost(const std::string& _realCost);
 
                     /**
                      * 判断参数 RealCost 是否已赋值
                      * @return RealCost 是否已赋值
+                     * 
                      */
                     bool RealCostHasBeenSet() const;
 
@@ -307,20 +349,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeBeginTime 费用起始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFeeBeginTime() const;
 
                     /**
                      * 设置费用起始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeeBeginTime 费用起始时间
+                     * @param _feeBeginTime 费用起始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeeBeginTime(const std::string& _feeBeginTime);
 
                     /**
                      * 判断参数 FeeBeginTime 是否已赋值
                      * @return FeeBeginTime 是否已赋值
+                     * 
                      */
                     bool FeeBeginTimeHasBeenSet() const;
 
@@ -329,20 +374,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeEndTime 费用结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFeeEndTime() const;
 
                     /**
                      * 设置费用结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeeEndTime 费用结束时间
+                     * @param _feeEndTime 费用结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeeEndTime(const std::string& _feeEndTime);
 
                     /**
                      * 判断参数 FeeEndTime 是否已赋值
                      * @return FeeEndTime 是否已赋值
+                     * 
                      */
                     bool FeeEndTimeHasBeenSet() const;
 
@@ -351,20 +399,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DayDiff 天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDayDiff() const;
 
                     /**
                      * 设置天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DayDiff 天数
+                     * @param _dayDiff 天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDayDiff(const std::string& _dayDiff);
 
                     /**
                      * 判断参数 DayDiff 是否已赋值
                      * @return DayDiff 是否已赋值
+                     * 
                      */
                     bool DayDiffHasBeenSet() const;
 
@@ -373,20 +424,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DailyTotalCost 每日消耗
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDailyTotalCost() const;
 
                     /**
                      * 设置每日消耗
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DailyTotalCost 每日消耗
+                     * @param _dailyTotalCost 每日消耗
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDailyTotalCost(const std::string& _dailyTotalCost);
 
                     /**
                      * 判断参数 DailyTotalCost 是否已赋值
                      * @return DailyTotalCost 是否已赋值
+                     * 
                      */
                     bool DailyTotalCostHasBeenSet() const;
 
@@ -395,20 +449,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -417,20 +474,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherPayAmount 代金券
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
                      * 设置代金券
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VoucherPayAmount 代金券
+                     * @param _voucherPayAmount 代金券
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
 
                     /**
                      * 判断参数 VoucherPayAmount 是否已赋值
                      * @return VoucherPayAmount 是否已赋值
+                     * 
                      */
                     bool VoucherPayAmountHasBeenSet() const;
 
@@ -439,20 +499,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncentivePayAmount 赠送金
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
                      * 设置赠送金
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncentivePayAmount 赠送金
+                     * @param _incentivePayAmount 赠送金
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
 
                     /**
                      * 判断参数 IncentivePayAmount 是否已赋值
                      * @return IncentivePayAmount 是否已赋值
+                     * 
                      */
                     bool IncentivePayAmountHasBeenSet() const;
 
@@ -461,20 +524,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransferPayAmount 分成金
+                     * @param _transferPayAmount 分成金
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
 
                     /**
                      * 判断参数 TransferPayAmount 是否已赋值
                      * @return TransferPayAmount 是否已赋值
+                     * 
                      */
                     bool TransferPayAmountHasBeenSet() const;
 

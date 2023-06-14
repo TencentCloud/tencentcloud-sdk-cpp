@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取购买的预付费商品实例列表。
                      * @return ProductInstanceSet 购买的预付费商品实例列表。
+                     * 
                      */
                     std::vector<ProductInstance> GetProductInstanceSet() const;
 
                     /**
                      * 判断参数 ProductInstanceSet 是否已赋值
                      * @return ProductInstanceSet 是否已赋值
+                     * 
                      */
                     bool ProductInstanceSetHasBeenSet() const;
 

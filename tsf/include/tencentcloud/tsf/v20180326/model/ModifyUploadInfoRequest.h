@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取调用DescribeUploadInfo接口时返回的软件包ID
                      * @return PkgId 调用DescribeUploadInfo接口时返回的软件包ID
+                     * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置调用DescribeUploadInfo接口时返回的软件包ID
-                     * @param PkgId 调用DescribeUploadInfo接口时返回的软件包ID
+                     * @param _pkgId 调用DescribeUploadInfo接口时返回的软件包ID
+                     * 
                      */
                     void SetPkgId(const std::string& _pkgId);
 
                     /**
                      * 判断参数 PkgId 是否已赋值
                      * @return PkgId 是否已赋值
+                     * 
                      */
                     bool PkgIdHasBeenSet() const;
 
                     /**
                      * 获取COS返回上传结果（默认为0：成功，其他值表示失败）
                      * @return Result COS返回上传结果（默认为0：成功，其他值表示失败）
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 设置COS返回上传结果（默认为0：成功，其他值表示失败）
-                     * @param Result COS返回上传结果（默认为0：成功，其他值表示失败）
+                     * @param _result COS返回上传结果（默认为0：成功，其他值表示失败）
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取程序包MD5
                      * @return Md5 程序包MD5
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置程序包MD5
-                     * @param Md5 程序包MD5
+                     * @param _md5 程序包MD5
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 
                     /**
                      * 获取程序包大小（单位字节）
                      * @return Size 程序包大小（单位字节）
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置程序包大小（单位字节）
-                     * @param Size 程序包大小（单位字节）
+                     * @param _size 程序包大小（单位字节）
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取程序包仓库类型
                      * @return RepositoryType 程序包仓库类型
+                     * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置程序包仓库类型
-                     * @param RepositoryType 程序包仓库类型
+                     * @param _repositoryType 程序包仓库类型
+                     * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
 
                     /**
                      * 判断参数 RepositoryType 是否已赋值
                      * @return RepositoryType 是否已赋值
+                     * 
                      */
                     bool RepositoryTypeHasBeenSet() const;
 
                     /**
                      * 获取程序包仓库id
                      * @return RepositoryId 程序包仓库id
+                     * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置程序包仓库id
-                     * @param RepositoryId 程序包仓库id
+                     * @param _repositoryId 程序包仓库id
+                     * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
 
                     /**
                      * 判断参数 RepositoryId 是否已赋值
                      * @return RepositoryId 是否已赋值
+                     * 
                      */
                     bool RepositoryIdHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取目标组ID，与Filters互斥。
                      * @return TargetGroupIds 目标组ID，与Filters互斥。
+                     * 
                      */
                     std::vector<std::string> GetTargetGroupIds() const;
 
                     /**
                      * 设置目标组ID，与Filters互斥。
-                     * @param TargetGroupIds 目标组ID，与Filters互斥。
+                     * @param _targetGroupIds 目标组ID，与Filters互斥。
+                     * 
                      */
                     void SetTargetGroupIds(const std::vector<std::string>& _targetGroupIds);
 
                     /**
                      * 判断参数 TargetGroupIds 是否已赋值
                      * @return TargetGroupIds 是否已赋值
+                     * 
                      */
                     bool TargetGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取显示条数限制，默认为20。
                      * @return Limit 显示条数限制，默认为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置显示条数限制，默认为20。
-                     * @param Limit 显示条数限制，默认为20。
+                     * @param _limit 显示条数限制，默认为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取显示的偏移起始量。
                      * @return Offset 显示的偏移起始量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置显示的偏移起始量。
-                     * @param Offset 显示的偏移起始量。
+                     * @param _offset 显示的偏移起始量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
                      * @return Filters 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
-                     * @param Filters 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * @param _filters 过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

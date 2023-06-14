@@ -57,20 +57,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 节点机型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置节点机型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 节点机型。
+                     * @param _instanceType 节点机型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -79,20 +82,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Placement 扩容实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置扩容实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Placement 扩容实例所在的位置。
+                     * @param _placement 扩容实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
@@ -101,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。
+                     * @param _instanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
@@ -123,20 +132,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
@@ -145,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualPrivateCloud 私有网络相关信息配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
                      * 设置私有网络相关信息配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualPrivateCloud 私有网络相关信息配置。
+                     * @param _virtualPrivateCloud 私有网络相关信息配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
 
                     /**
                      * 判断参数 VirtualPrivateCloud 是否已赋值
                      * @return VirtualPrivateCloud 是否已赋值
+                     * 
                      */
                     bool VirtualPrivateCloudHasBeenSet() const;
 
@@ -167,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。
+                     * @param _imageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -189,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetAccessible 公网带宽相关信息设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置公网带宽相关信息设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetAccessible 公网带宽相关信息设置。
+                     * @param _internetAccessible 公网带宽相关信息设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
                     /**
                      * 判断参数 InternetAccessible 是否已赋值
                      * @return InternetAccessible 是否已赋值
+                     * 
                      */
                     bool InternetAccessibleHasBeenSet() const;
 
@@ -211,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemDisk 节点系统盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
                      * 设置节点系统盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SystemDisk 节点系统盘配置信息。
+                     * @param _systemDisk 节点系统盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
@@ -233,20 +257,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisks 节点数据盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置节点数据盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataDisks 节点数据盘配置信息。
+                     * @param _dataDisks 节点数据盘配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 

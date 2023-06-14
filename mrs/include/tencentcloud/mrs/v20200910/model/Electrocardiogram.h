@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EcgDescription 心电图详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EcgDescription GetEcgDescription() const;
 
                     /**
                      * 设置心电图详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EcgDescription 心电图详情
+                     * @param _ecgDescription 心电图详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEcgDescription(const EcgDescription& _ecgDescription);
 
                     /**
                      * 判断参数 EcgDescription 是否已赋值
                      * @return EcgDescription 是否已赋值
+                     * 
                      */
                     bool EcgDescriptionHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EcgDiagnosis 心电图诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EcgDiagnosis GetEcgDiagnosis() const;
 
                     /**
                      * 设置心电图诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EcgDiagnosis 心电图诊断
+                     * @param _ecgDiagnosis 心电图诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEcgDiagnosis(const EcgDiagnosis& _ecgDiagnosis);
 
                     /**
                      * 判断参数 EcgDiagnosis 是否已赋值
                      * @return EcgDiagnosis 是否已赋值
+                     * 
                      */
                     bool EcgDiagnosisHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡器ID
                      * @return LoadBalancerId 负载均衡器ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡器ID
-                     * @param LoadBalancerId 负载均衡器ID
+                     * @param _loadBalancerId 负载均衡器ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取应用型负载均衡监听器 ID
                      * @return ListenerId 应用型负载均衡监听器 ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置应用型负载均衡监听器 ID
-                     * @param ListenerId 应用型负载均衡监听器 ID
+                     * @param _listenerId 应用型负载均衡监听器 ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取目标规则属性列表
                      * @return TargetAttributes 目标规则属性列表
+                     * 
                      */
                     std::vector<TargetAttribute> GetTargetAttributes() const;
 
                     /**
                      * 设置目标规则属性列表
-                     * @param TargetAttributes 目标规则属性列表
+                     * @param _targetAttributes 目标规则属性列表
+                     * 
                      */
                     void SetTargetAttributes(const std::vector<TargetAttribute>& _targetAttributes);
 
                     /**
                      * 判断参数 TargetAttributes 是否已赋值
                      * @return TargetAttributes 是否已赋值
+                     * 
                      */
                     bool TargetAttributesHasBeenSet() const;
 
                     /**
                      * 获取转发规则ID，注意：针对七层监听器此参数必填
                      * @return LocationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发规则ID，注意：针对七层监听器此参数必填
-                     * @param LocationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * @param _locationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
                      * @return Region 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
-                     * @param Region 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     * @param _region 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

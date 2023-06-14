@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回总数
                      * @return Total 返回总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gateways 返回详情项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoRaGatewayItem> GetGateways() const;
 
                     /**
                      * 判断参数 Gateways 是否已赋值
                      * @return Gateways 是否已赋值
+                     * 
                      */
                     bool GatewaysHasBeenSet() const;
 

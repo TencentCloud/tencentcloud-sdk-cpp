@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取TcaplusDB表字段名称
                      * @return SourceName TcaplusDB表字段名称
+                     * 
                      */
                     std::string GetSourceName() const;
 
                     /**
                      * 设置TcaplusDB表字段名称
-                     * @param SourceName TcaplusDB表字段名称
+                     * @param _sourceName TcaplusDB表字段名称
+                     * 
                      */
                     void SetSourceName(const std::string& _sourceName);
 
                     /**
                      * 判断参数 SourceName 是否已赋值
                      * @return SourceName 是否已赋值
+                     * 
                      */
                     bool SourceNameHasBeenSet() const;
 
                     /**
                      * 获取目标缓写表的字段名称
                      * @return TargetName 目标缓写表的字段名称
+                     * 
                      */
                     std::string GetTargetName() const;
 
                     /**
                      * 设置目标缓写表的字段名称
-                     * @param TargetName 目标缓写表的字段名称
+                     * @param _targetName 目标缓写表的字段名称
+                     * 
                      */
                     void SetTargetName(const std::string& _targetName);
 
                     /**
                      * 判断参数 TargetName 是否已赋值
                      * @return TargetName 是否已赋值
+                     * 
                      */
                     bool TargetNameHasBeenSet() const;
 

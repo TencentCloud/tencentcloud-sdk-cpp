@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取namespace可以多个，用分隔号分割,例如A,B
                      * @return Namespace namespace可以多个，用分隔号分割,例如A,B
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置namespace可以多个，用分隔号分割,例如A,B
-                     * @param Namespace namespace可以多个，用分隔号分割,例如A,B
+                     * @param _namespace namespace可以多个，用分隔号分割,例如A,B
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取容器名称
                      * @return Container 容器名称
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置容器名称
-                     * @param Container 容器名称
+                     * @param _container 容器名称
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
                     /**
                      * 获取日志文件夹
                      * @return LogPath 日志文件夹
+                     * 
                      */
                     std::string GetLogPath() const;
 
                     /**
                      * 设置日志文件夹
-                     * @param LogPath 日志文件夹
+                     * @param _logPath 日志文件夹
+                     * 
                      */
                     void SetLogPath(const std::string& _logPath);
 
                     /**
                      * 判断参数 LogPath 是否已赋值
                      * @return LogPath 是否已赋值
+                     * 
                      */
                     bool LogPathHasBeenSet() const;
 
                     /**
                      * 获取日志名称
                      * @return FilePattern 日志名称
+                     * 
                      */
                     std::string GetFilePattern() const;
 
                     /**
                      * 设置日志名称
-                     * @param FilePattern 日志名称
+                     * @param _filePattern 日志名称
+                     * 
                      */
                     void SetFilePattern(const std::string& _filePattern);
 
                     /**
                      * 判断参数 FilePattern 是否已赋值
                      * @return FilePattern 是否已赋值
+                     * 
                      */
                     bool FilePatternHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeLabels pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetIncludeLabels() const;
 
                     /**
                      * 设置pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncludeLabels pod标签信息
+                     * @param _includeLabels pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncludeLabels(const std::vector<std::string>& _includeLabels);
 
                     /**
                      * 判断参数 IncludeLabels 是否已赋值
                      * @return IncludeLabels 是否已赋值
+                     * 
                      */
                     bool IncludeLabelsHasBeenSet() const;
 
@@ -146,20 +161,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkLoad 工作负载信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ContainerWorkLoadInfo GetWorkLoad() const;
 
                     /**
                      * 设置工作负载信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkLoad 工作负载信息
+                     * @param _workLoad 工作负载信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkLoad(const ContainerWorkLoadInfo& _workLoad);
 
                     /**
                      * 判断参数 WorkLoad 是否已赋值
                      * @return WorkLoad 是否已赋值
+                     * 
                      */
                     bool WorkLoadHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExcludeNamespace() const;
 
                     /**
                      * 设置需要排除的namespace可以多个，用分隔号分割,例如A,B
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExcludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
+                     * @param _excludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExcludeNamespace(const std::string& _excludeNamespace);
 
                     /**
                      * 判断参数 ExcludeNamespace 是否已赋值
                      * @return ExcludeNamespace 是否已赋值
+                     * 
                      */
                     bool ExcludeNamespaceHasBeenSet() const;
 
@@ -190,20 +211,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeLabels 需要排除的pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetExcludeLabels() const;
 
                     /**
                      * 设置需要排除的pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExcludeLabels 需要排除的pod标签信息
+                     * @param _excludeLabels 需要排除的pod标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExcludeLabels(const std::vector<std::string>& _excludeLabels);
 
                     /**
                      * 判断参数 ExcludeLabels 是否已赋值
                      * @return ExcludeLabels 是否已赋值
+                     * 
                      */
                     bool ExcludeLabelsHasBeenSet() const;
 

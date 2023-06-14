@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取获取云原生API网关节点列表响应结果。
                      * @return TotalCount 获取云原生API网关节点列表响应结果。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置获取云原生API网关节点列表响应结果。
-                     * @param TotalCount 获取云原生API网关节点列表响应结果。
+                     * @param _totalCount 获取云原生API网关节点列表响应结果。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取云原生API网关节点列表。
                      * @return NodeList 云原生API网关节点列表。
+                     * 
                      */
                     std::vector<CloudNativeAPIGatewayNode> GetNodeList() const;
 
                     /**
                      * 设置云原生API网关节点列表。
-                     * @param NodeList 云原生API网关节点列表。
+                     * @param _nodeList 云原生API网关节点列表。
+                     * 
                      */
                     void SetNodeList(const std::vector<CloudNativeAPIGatewayNode>& _nodeList);
 
                     /**
                      * 判断参数 NodeList 是否已赋值
                      * @return NodeList 是否已赋值
+                     * 
                      */
                     bool NodeListHasBeenSet() const;
 

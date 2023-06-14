@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号
                      * @return RuleChangeItems 规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号
+                     * 
                      */
                     std::vector<RuleChangeItem> GetRuleChangeItems() const;
 
                     /**
                      * 设置规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号
-                     * @param RuleChangeItems 规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号
+                     * @param _ruleChangeItems 规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号
+                     * 
                      */
                     void SetRuleChangeItems(const std::vector<RuleChangeItem>& _ruleChangeItems);
 
                     /**
                      * 判断参数 RuleChangeItems 是否已赋值
                      * @return RuleChangeItems 是否已赋值
+                     * 
                      */
                     bool RuleChangeItemsHasBeenSet() const;
 
                     /**
                      * 获取规则方向：1，入站；0，出站
                      * @return Direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置规则方向：1，入站；0，出站
-                     * @param Direction 规则方向：1，入站；0，出站
+                     * @param _direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

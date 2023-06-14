@@ -47,20 +47,23 @@ namespace TencentCloud
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
+                     * @param _imageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -69,56 +72,65 @@ namespace TencentCloud
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @param ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
+                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
                     /**
                      * 获取是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
                      * @return IsPdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * 
                      */
                     bool GetIsPdf() const;
 
                     /**
                      * 设置是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
-                     * @param IsPdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * @param _isPdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * 
                      */
                     void SetIsPdf(const bool& _isPdf);
 
                     /**
                      * 判断参数 IsPdf 是否已赋值
                      * @return IsPdf 是否已赋值
+                     * 
                      */
                     bool IsPdfHasBeenSet() const;
 
                     /**
                      * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
                      * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 
                      */
                     int64_t GetPdfPageNumber() const;
 
                     /**
                      * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
-                     * @param PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 
                      */
                     void SetPdfPageNumber(const int64_t& _pdfPageNumber);
 
                     /**
                      * 判断参数 PdfPageNumber 是否已赋值
                      * @return PdfPageNumber 是否已赋值
+                     * 
                      */
                     bool PdfPageNumberHasBeenSet() const;
 

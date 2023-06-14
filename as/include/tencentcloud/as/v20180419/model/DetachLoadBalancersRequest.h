@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个
                      * @return LoadBalancerIds 传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个
-                     * @param LoadBalancerIds 传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个
+                     * @param _loadBalancerIds 传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
                      * @return ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * 
                      */
                     std::vector<ForwardLoadBalancerIdentification> GetForwardLoadBalancerIdentifications() const;
 
                     /**
                      * 设置应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
-                     * @param ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * @param _forwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * 
                      */
                     void SetForwardLoadBalancerIdentifications(const std::vector<ForwardLoadBalancerIdentification>& _forwardLoadBalancerIdentifications);
 
                     /**
                      * 判断参数 ForwardLoadBalancerIdentifications 是否已赋值
                      * @return ForwardLoadBalancerIdentifications 是否已赋值
+                     * 
                      */
                     bool ForwardLoadBalancerIdentificationsHasBeenSet() const;
 

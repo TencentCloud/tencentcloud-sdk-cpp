@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取无主键表总数。
                      * @return NoPrimaryKeyTableCount 无主键表总数。
+                     * 
                      */
                     int64_t GetNoPrimaryKeyTableCount() const;
 
                     /**
                      * 判断参数 NoPrimaryKeyTableCount 是否已赋值
                      * @return NoPrimaryKeyTableCount 是否已赋值
+                     * 
                      */
                     bool NoPrimaryKeyTableCountHasBeenSet() const;
 
                     /**
                      * 获取与昨日扫描无主键表的差值，正数为增加，负数为减少，0为无变化。
                      * @return NoPrimaryKeyTableCountDiff 与昨日扫描无主键表的差值，正数为增加，负数为减少，0为无变化。
+                     * 
                      */
                     int64_t GetNoPrimaryKeyTableCountDiff() const;
 
                     /**
                      * 判断参数 NoPrimaryKeyTableCountDiff 是否已赋值
                      * @return NoPrimaryKeyTableCountDiff 是否已赋值
+                     * 
                      */
                     bool NoPrimaryKeyTableCountDiffHasBeenSet() const;
 
                     /**
                      * 获取记录的无主键表总数（不超过无主键表总数），可用于分页查询。
                      * @return NoPrimaryKeyTableRecordCount 记录的无主键表总数（不超过无主键表总数），可用于分页查询。
+                     * 
                      */
                     int64_t GetNoPrimaryKeyTableRecordCount() const;
 
                     /**
                      * 判断参数 NoPrimaryKeyTableRecordCount 是否已赋值
                      * @return NoPrimaryKeyTableRecordCount 是否已赋值
+                     * 
                      */
                     bool NoPrimaryKeyTableRecordCountHasBeenSet() const;
 
                     /**
                      * 获取无主键表列表。
                      * @return NoPrimaryKeyTables 无主键表列表。
+                     * 
                      */
                     std::vector<Table> GetNoPrimaryKeyTables() const;
 
                     /**
                      * 判断参数 NoPrimaryKeyTables 是否已赋值
                      * @return NoPrimaryKeyTables 是否已赋值
+                     * 
                      */
                     bool NoPrimaryKeyTablesHasBeenSet() const;
 
                     /**
                      * 获取采集时间戳（秒）。
                      * @return Timestamp 采集时间戳（秒）。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 

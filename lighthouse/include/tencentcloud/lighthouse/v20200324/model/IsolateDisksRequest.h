@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。
                      * @return DiskIds 云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。
-                     * @param DiskIds 云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。
+                     * @param _diskIds 云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 

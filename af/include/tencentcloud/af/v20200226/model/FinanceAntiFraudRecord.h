@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Found 表示该条记录能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFound() const;
 
                     /**
                      * 设置表示该条记录能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Found 表示该条记录能否查到：1为能查到，-1为查不到
+                     * @param _found 表示该条记录能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFound(const std::string& _found);
 
                     /**
                      * 判断参数 Found 是否已赋值
                      * @return Found 是否已赋值
+                     * 
                      */
                     bool FoundHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdFound 表示该条Id能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdFound() const;
 
                     /**
                      * 设置表示该条Id能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdFound 表示该条Id能否查到：1为能查到，-1为查不到
+                     * @param _idFound 表示该条Id能否查到：1为能查到，-1为查不到
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdFound(const std::string& _idFound);
 
                     /**
                      * 判断参数 IdFound 是否已赋值
                      * @return IdFound 是否已赋值
+                     * 
                      */
                     bool IdFoundHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskScore 评分0~100;值越高 欺诈可能性越大
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskScore() const;
 
                     /**
                      * 设置评分0~100;值越高 欺诈可能性越大
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskScore 评分0~100;值越高 欺诈可能性越大
+                     * @param _riskScore 评分0~100;值越高 欺诈可能性越大
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskScore(const std::string& _riskScore);
 
                     /**
                      * 判断参数 RiskScore 是否已赋值
                      * @return RiskScore 是否已赋值
+                     * 
                      */
                     bool RiskScoreHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskInfo 扩展字段，对风险类型的说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RiskDetailInfo> GetRiskInfo() const;
 
                     /**
                      * 设置扩展字段，对风险类型的说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskInfo 扩展字段，对风险类型的说明
+                     * @param _riskInfo 扩展字段，对风险类型的说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskInfo(const std::vector<RiskDetailInfo>& _riskInfo);
 
                     /**
                      * 判断参数 RiskInfo 是否已赋值
                      * @return RiskInfo 是否已赋值
+                     * 
                      */
                     bool RiskInfoHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherModelScores 多模型返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FinanceOtherModelScores> GetOtherModelScores() const;
 
                     /**
                      * 设置多模型返回结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtherModelScores 多模型返回结果
+                     * @param _otherModelScores 多模型返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOtherModelScores(const std::vector<FinanceOtherModelScores>& _otherModelScores);
 
                     /**
                      * 判断参数 OtherModelScores 是否已赋值
                      * @return OtherModelScores 是否已赋值
+                     * 
                      */
                     bool OtherModelScoresHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 业务侧错误码。成功时返回0，错误时返回非0值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置业务侧错误码。成功时返回0，错误时返回非0值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 业务侧错误码。成功时返回0，错误时返回非0值
+                     * @param _code 业务侧错误码。成功时返回0，错误时返回非0值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -187,6 +205,7 @@ namespace TencentCloud
                      * @return Message 业务侧错误信息。成功时返回Success，错误时返回具体业务错误原因。
 注意：此字段可能返回 null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
@@ -194,15 +213,17 @@ namespace TencentCloud
                      * 设置业务侧错误信息。成功时返回Success，错误时返回具体业务错误原因。
 注意：此字段可能返回 null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 业务侧错误信息。成功时返回Success，错误时返回具体业务错误原因。
+                     * @param _message 业务侧错误信息。成功时返回Success，错误时返回具体业务错误原因。
 注意：此字段可能返回 null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

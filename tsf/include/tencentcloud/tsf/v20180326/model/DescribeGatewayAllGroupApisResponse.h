@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网关分组和API列表信息
                      * @return Result 网关分组和API列表信息
+                     * 
                      */
                     GatewayVo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

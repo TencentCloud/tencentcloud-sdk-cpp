@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取存储poolID
                      * @return PoolId 存储poolID
+                     * 
                      */
                     uint64_t GetPoolId() const;
 
                     /**
                      * 判断参数 PoolId 是否已赋值
                      * @return PoolId 是否已赋值
+                     * 
                      */
                     bool PoolIdHasBeenSet() const;
 
                     /**
                      * 获取回滚任务ID，后续按该时间点回滚时，需要传入
                      * @return QueryId 回滚任务ID，后续按该时间点回滚时，需要传入
+                     * 
                      */
                     uint64_t GetQueryId() const;
 
                     /**
                      * 判断参数 QueryId 是否已赋值
                      * @return QueryId 是否已赋值
+                     * 
                      */
                     bool QueryIdHasBeenSet() const;
 
                     /**
                      * 获取时间点是否有效：pass，检测通过；fail，检测失败
                      * @return Status 时间点是否有效：pass，检测通过；fail，检测失败
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取建议时间点，在Status为fail时，该值才有效
                      * @return SuggestTime 建议时间点，在Status为fail时，该值才有效
+                     * 
                      */
                     std::string GetSuggestTime() const;
 
                     /**
                      * 判断参数 SuggestTime 是否已赋值
                      * @return SuggestTime 是否已赋值
+                     * 
                      */
                     bool SuggestTimeHasBeenSet() const;
 

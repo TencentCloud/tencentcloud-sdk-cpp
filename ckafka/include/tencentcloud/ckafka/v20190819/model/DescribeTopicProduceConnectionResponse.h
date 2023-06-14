@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取链接信息返回结果集
                      * @return Result 链接信息返回结果集
+                     * 
                      */
                     std::vector<DescribeConnectInfoResultDTO> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

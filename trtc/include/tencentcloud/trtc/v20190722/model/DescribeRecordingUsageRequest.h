@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询开始时间，格式为YYYY-MM-DD。
                      * @return StartTime 查询开始时间，格式为YYYY-MM-DD。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，格式为YYYY-MM-DD。
-                     * @param StartTime 查询开始时间，格式为YYYY-MM-DD。
+                     * @param _startTime 查询开始时间，格式为YYYY-MM-DD。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -65,56 +68,65 @@ namespace TencentCloud
 单次查询统计区间最多不能超过31天。
                      * @return EndTime 查询结束时间，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
-                     * @param EndTime 查询结束时间，格式为YYYY-MM-DD。
+                     * @param _endTime 查询结束时间，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取查询单流录制或合流录制，值为"single"或"multi"。
                      * @return MixType 查询单流录制或合流录制，值为"single"或"multi"。
+                     * 
                      */
                     std::string GetMixType() const;
 
                     /**
                      * 设置查询单流录制或合流录制，值为"single"或"multi"。
-                     * @param MixType 查询单流录制或合流录制，值为"single"或"multi"。
+                     * @param _mixType 查询单流录制或合流录制，值为"single"或"multi"。
+                     * 
                      */
                     void SetMixType(const std::string& _mixType);
 
                     /**
                      * 判断参数 MixType 是否已赋值
                      * @return MixType 是否已赋值
+                     * 
                      */
                     bool MixTypeHasBeenSet() const;
 
                     /**
                      * 获取TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。
                      * @return SdkAppId TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。
-                     * @param SdkAppId TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。
+                     * @param _sdkAppId TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

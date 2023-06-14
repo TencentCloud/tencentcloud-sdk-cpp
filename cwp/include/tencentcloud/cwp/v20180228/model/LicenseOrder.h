@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取授权ID
                      * @return LicenseId 授权ID
+                     * 
                      */
                     uint64_t GetLicenseId() const;
 
                     /**
                      * 设置授权ID
-                     * @param LicenseId 授权ID
+                     * @param _licenseId 授权ID
+                     * 
                      */
                     void SetLicenseId(const uint64_t& _licenseId);
 
                     /**
                      * 判断参数 LicenseId 是否已赋值
                      * @return LicenseId 是否已赋值
+                     * 
                      */
                     bool LicenseIdHasBeenSet() const;
 
                     /**
                      * 获取授权类型
                      * @return LicenseType 授权类型
+                     * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
                      * 设置授权类型
-                     * @param LicenseType 授权类型
+                     * @param _licenseType 授权类型
+                     * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取授权订单资源状态
                      * @return Status 授权订单资源状态
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置授权订单资源状态
-                     * @param Status 授权订单资源状态
+                     * @param _status 授权订单资源状态
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取订单类型
                      * @return SourceType 订单类型
+                     * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
                      * 设置订单类型
-                     * @param SourceType 订单类型
+                     * @param _sourceType 订单类型
+                     * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

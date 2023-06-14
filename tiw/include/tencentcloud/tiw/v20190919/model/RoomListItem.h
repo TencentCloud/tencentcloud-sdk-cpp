@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取房间ID
                      * @return RoomId 房间ID
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间ID
-                     * @param RoomId 房间ID
+                     * @param _roomId 房间ID
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
                      * @return StartTime 房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
-                     * @param StartTime 房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * @param _startTime 房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
                      * @return EndTime 房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
-                     * @param EndTime 房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * @param _endTime 房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取房间里成员数
                      * @return UserNumber 房间里成员数
+                     * 
                      */
                     int64_t GetUserNumber() const;
 
                     /**
                      * 设置房间里成员数
-                     * @param UserNumber 房间里成员数
+                     * @param _userNumber 房间里成员数
+                     * 
                      */
                     void SetUserNumber(const int64_t& _userNumber);
 
                     /**
                      * 判断参数 UserNumber 是否已赋值
                      * @return UserNumber 是否已赋值
+                     * 
                      */
                     bool UserNumberHasBeenSet() const;
 

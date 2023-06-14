@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 连接器类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置连接器类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 连接器类型
+                     * @param _type 连接器类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 连接器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置连接器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 连接器状态
+                     * @param _status 连接器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

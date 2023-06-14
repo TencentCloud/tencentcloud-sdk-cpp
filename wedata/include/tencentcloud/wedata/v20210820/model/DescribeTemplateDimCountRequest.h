@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取模版类型
                      * @return Type 模版类型
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置模版类型
-                     * @param Type 模版类型
+                     * @param _type 模版类型
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

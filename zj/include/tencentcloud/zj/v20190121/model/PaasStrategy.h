@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取人群包id
                      * @return CrowdID 人群包id
+                     * 
                      */
                     int64_t GetCrowdID() const;
 
                     /**
                      * 设置人群包id
-                     * @param CrowdID 人群包id
+                     * @param _crowdID 人群包id
+                     * 
                      */
                     void SetCrowdID(const int64_t& _crowdID);
 
                     /**
                      * 判断参数 CrowdID 是否已赋值
                      * @return CrowdID 是否已赋值
+                     * 
                      */
                     bool CrowdIDHasBeenSet() const;
 
                     /**
                      * 获取待选素材数组
                      * @return Items 待选素材数组
+                     * 
                      */
                     std::vector<PaasStrategyItem> GetItems() const;
 
                     /**
                      * 设置待选素材数组
-                     * @param Items 待选素材数组
+                     * @param _items 待选素材数组
+                     * 
                      */
                     void SetItems(const std::vector<PaasStrategyItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

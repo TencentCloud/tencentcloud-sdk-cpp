@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取实体ID
                      * @return Id 实体ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置实体ID
-                     * @param Id 实体ID
+                     * @param _id 实体ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取分类字段
                      * @return CategoryKey 分类字段
+                     * 
                      */
                     std::string GetCategoryKey() const;
 
                     /**
                      * 设置分类字段
-                     * @param CategoryKey 分类字段
+                     * @param _categoryKey 分类字段
+                     * 
                      */
                     void SetCategoryKey(const std::string& _categoryKey);
 
                     /**
                      * 判断参数 CategoryKey 是否已赋值
                      * @return CategoryKey 是否已赋值
+                     * 
                      */
                     bool CategoryKeyHasBeenSet() const;
 
                     /**
                      * 获取分类名称
                      * @return CategoryName 分类名称
+                     * 
                      */
                     std::string GetCategoryName() const;
 
                     /**
                      * 设置分类名称
-                     * @param CategoryName 分类名称
+                     * @param _categoryName 分类名称
+                     * 
                      */
                     void SetCategoryName(const std::string& _categoryName);
 
                     /**
                      * 判断参数 CategoryName 是否已赋值
                      * @return CategoryName 是否已赋值
+                     * 
                      */
                     bool CategoryNameHasBeenSet() const;
 
                     /**
                      * 获取上层实体ID
                      * @return ParentId 上层实体ID
+                     * 
                      */
                     int64_t GetParentId() const;
 
                     /**
                      * 设置上层实体ID
-                     * @param ParentId 上层实体ID
+                     * @param _parentId 上层实体ID
+                     * 
                      */
                     void SetParentId(const int64_t& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
                     /**
                      * 获取物模型
                      * @return ModelTemplate 物模型
+                     * 
                      */
                     std::string GetModelTemplate() const;
 
                     /**
                      * 设置物模型
-                     * @param ModelTemplate 物模型
+                     * @param _modelTemplate 物模型
+                     * 
                      */
                     void SetModelTemplate(const std::string& _modelTemplate);
 
                     /**
                      * 判断参数 ModelTemplate 是否已赋值
                      * @return ModelTemplate 是否已赋值
+                     * 
                      */
                     bool ModelTemplateHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOrder 排列顺序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetListOrder() const;
 
                     /**
                      * 设置排列顺序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListOrder 排列顺序
+                     * @param _listOrder 排列顺序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListOrder(const int64_t& _listOrder);
 
                     /**
                      * 判断参数 ListOrder 是否已赋值
                      * @return ListOrder 是否已赋值
+                     * 
                      */
                     bool ListOrderHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IconUrl 分类图标地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
                      * 设置分类图标地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IconUrl 分类图标地址
+                     * @param _iconUrl 分类图标地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
 
                     /**
                      * 判断参数 IconUrl 是否已赋值
                      * @return IconUrl 是否已赋值
+                     * 
                      */
                     bool IconUrlHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IconUrlGrid 九宫格图片地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIconUrlGrid() const;
 
                     /**
                      * 设置九宫格图片地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IconUrlGrid 九宫格图片地址
+                     * @param _iconUrlGrid 九宫格图片地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIconUrlGrid(const std::string& _iconUrlGrid);
 
                     /**
                      * 判断参数 IconUrlGrid 是否已赋值
                      * @return IconUrlGrid 是否已赋值
+                     * 
                      */
                     bool IconUrlGridHasBeenSet() const;
 

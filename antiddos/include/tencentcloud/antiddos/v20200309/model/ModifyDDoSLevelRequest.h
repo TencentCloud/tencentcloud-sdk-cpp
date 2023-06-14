@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取=get表示读取防护等级；=set表示修改防护等级
                      * @return Method =get表示读取防护等级；=set表示修改防护等级
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置=get表示读取防护等级；=set表示修改防护等级
-                     * @param Method =get表示读取防护等级；=set表示修改防护等级
+                     * @param _method =get表示读取防护等级；=set表示修改防护等级
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取防护等级，取值[low,middle,high]；当Method=set时必填
                      * @return DDoSLevel 防护等级，取值[low,middle,high]；当Method=set时必填
+                     * 
                      */
                     std::string GetDDoSLevel() const;
 
                     /**
                      * 设置防护等级，取值[low,middle,high]；当Method=set时必填
-                     * @param DDoSLevel 防护等级，取值[low,middle,high]；当Method=set时必填
+                     * @param _dDoSLevel 防护等级，取值[low,middle,high]；当Method=set时必填
+                     * 
                      */
                     void SetDDoSLevel(const std::string& _dDoSLevel);
 
                     /**
                      * 判断参数 DDoSLevel 是否已赋值
                      * @return DDoSLevel 是否已赋值
+                     * 
                      */
                     bool DDoSLevelHasBeenSet() const;
 

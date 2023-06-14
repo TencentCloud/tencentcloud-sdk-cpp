@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取选取的表格
                      * @return SelectedTables 选取的表格
+                     * 
                      */
                     std::vector<MergeTablesInfo> GetSelectedTables() const;
 
                     /**
                      * 设置选取的表格
-                     * @param SelectedTables 选取的表格
+                     * @param _selectedTables 选取的表格
+                     * 
                      */
                     void SetSelectedTables(const std::vector<MergeTablesInfo>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 
                     /**
                      * 获取true只做对比，false既对比又执行
                      * @return IsOnlyCompare true只做对比，false既对比又执行
+                     * 
                      */
                     bool GetIsOnlyCompare() const;
 
                     /**
                      * 设置true只做对比，false既对比又执行
-                     * @param IsOnlyCompare true只做对比，false既对比又执行
+                     * @param _isOnlyCompare true只做对比，false既对比又执行
+                     * 
                      */
                     void SetIsOnlyCompare(const bool& _isOnlyCompare);
 
                     /**
                      * 判断参数 IsOnlyCompare 是否已赋值
                      * @return IsOnlyCompare 是否已赋值
+                     * 
                      */
                     bool IsOnlyCompareHasBeenSet() const;
 

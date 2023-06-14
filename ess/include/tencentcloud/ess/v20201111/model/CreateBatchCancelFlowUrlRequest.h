@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取需要执行撤回的签署流程id数组，最多100个
                      * @return FlowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置需要执行撤回的签署流程id数组，最多100个
-                     * @param FlowIds 需要执行撤回的签署流程id数组，最多100个
+                     * @param _flowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
                     /**
                      * 判断参数 FlowIds 是否已赋值
                      * @return FlowIds 是否已赋值
+                     * 
                      */
                     bool FlowIdsHasBeenSet() const;
 

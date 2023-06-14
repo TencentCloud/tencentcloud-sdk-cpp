@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Strategies 评估项列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeStrategie> GetStrategies() const;
 
                     /**
                      * 判断参数 Strategies 是否已赋值
                      * @return Strategies 是否已赋值
+                     * 
                      */
                     bool StrategiesHasBeenSet() const;
 

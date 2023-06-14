@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取模板ID。
                      * @return TemplateId 模板ID。
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置模板ID。
-                     * @param TemplateId 模板ID。
+                     * @param _templateId 模板ID。
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

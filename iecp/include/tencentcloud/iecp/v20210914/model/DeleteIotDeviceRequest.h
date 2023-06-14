@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备id
                      * @return DeviceId 设备id
+                     * 
                      */
                     int64_t GetDeviceId() const;
 
                     /**
                      * 设置设备id
-                     * @param DeviceId 设备id
+                     * @param _deviceId 设备id
+                     * 
                      */
                     void SetDeviceId(const int64_t& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

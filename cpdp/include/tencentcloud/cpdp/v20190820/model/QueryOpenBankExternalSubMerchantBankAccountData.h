@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取开户银行。
                      * @return AccountBank 开户银行。
+                     * 
                      */
                     std::string GetAccountBank() const;
 
                     /**
                      * 设置开户银行。
-                     * @param AccountBank 开户银行。
+                     * @param _accountBank 开户银行。
+                     * 
                      */
                     void SetAccountBank(const std::string& _accountBank);
 
                     /**
                      * 判断参数 AccountBank 是否已赋值
                      * @return AccountBank 是否已赋值
+                     * 
                      */
                     bool AccountBankHasBeenSet() const;
 
                     /**
                      * 获取绑卡序列号。
                      * @return BindSerialNo 绑卡序列号。
+                     * 
                      */
                     std::string GetBindSerialNo() const;
 
                     /**
                      * 设置绑卡序列号。
-                     * @param BindSerialNo 绑卡序列号。
+                     * @param _bindSerialNo 绑卡序列号。
+                     * 
                      */
                     void SetBindSerialNo(const std::string& _bindSerialNo);
 
                     /**
                      * 判断参数 BindSerialNo 是否已赋值
                      * @return BindSerialNo 是否已赋值
+                     * 
                      */
                     bool BindSerialNoHasBeenSet() const;
 
@@ -89,6 +95,7 @@ __PAYMENT__: 付款卡
                      * @return AccountType 账号类型。
 __COLLECT_MONEY__: 收款卡
 __PAYMENT__: 付款卡
+                     * 
                      */
                     std::string GetAccountType() const;
 
@@ -96,15 +103,17 @@ __PAYMENT__: 付款卡
                      * 设置账号类型。
 __COLLECT_MONEY__: 收款卡
 __PAYMENT__: 付款卡
-                     * @param AccountType 账号类型。
+                     * @param _accountType 账号类型。
 __COLLECT_MONEY__: 收款卡
 __PAYMENT__: 付款卡
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ __PAYMENT__: 付款卡
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BankBranchId 支行号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBankBranchId() const;
 
                     /**
                      * 设置支行号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BankBranchId 支行号。
+                     * @param _bankBranchId 支行号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBankBranchId(const std::string& _bankBranchId);
 
                     /**
                      * 判断参数 BankBranchId 是否已赋值
                      * @return BankBranchId 是否已赋值
+                     * 
                      */
                     bool BankBranchIdHasBeenSet() const;
 
@@ -135,20 +147,23 @@ __PAYMENT__: 付款卡
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountNumberLastFour 银行卡卡后四位。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountNumberLastFour() const;
 
                     /**
                      * 设置银行卡卡后四位。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountNumberLastFour 银行卡卡后四位。
+                     * @param _accountNumberLastFour 银行卡卡后四位。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountNumberLastFour(const std::string& _accountNumberLastFour);
 
                     /**
                      * 判断参数 AccountNumberLastFour 是否已赋值
                      * @return AccountNumberLastFour 是否已赋值
+                     * 
                      */
                     bool AccountNumberLastFourHasBeenSet() const;
 

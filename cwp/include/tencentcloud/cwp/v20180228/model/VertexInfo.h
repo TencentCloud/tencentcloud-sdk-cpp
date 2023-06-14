@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取该结点类型，进程:1；网络:2；文件:3；ssh:4；
                      * @return Type 该结点类型，进程:1；网络:2；文件:3；ssh:4；
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置该结点类型，进程:1；网络:2；文件:3；ssh:4；
-                     * @param Type 该结点类型，进程:1；网络:2；文件:3；ssh:4；
+                     * @param _type 该结点类型，进程:1；网络:2；文件:3；ssh:4；
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取该节点包含的vid
                      * @return Vid 该节点包含的vid
+                     * 
                      */
                     std::string GetVid() const;
 
                     /**
                      * 设置该节点包含的vid
-                     * @param Vid 该节点包含的vid
+                     * @param _vid 该节点包含的vid
+                     * 
                      */
                     void SetVid(const std::string& _vid);
 
                     /**
                      * 判断参数 Vid 是否已赋值
                      * @return Vid 是否已赋值
+                     * 
                      */
                     bool VidHasBeenSet() const;
 
                     /**
                      * 获取该节点的父节点vid
                      * @return ParentVid 该节点的父节点vid
+                     * 
                      */
                     std::string GetParentVid() const;
 
                     /**
                      * 设置该节点的父节点vid
-                     * @param ParentVid 该节点的父节点vid
+                     * @param _parentVid 该节点的父节点vid
+                     * 
                      */
                     void SetParentVid(const std::string& _parentVid);
 
                     /**
                      * 判断参数 ParentVid 是否已赋值
                      * @return ParentVid 是否已赋值
+                     * 
                      */
                     bool ParentVidHasBeenSet() const;
 
                     /**
                      * 获取是否叶子
                      * @return IsLeaf 是否叶子
+                     * 
                      */
                     bool GetIsLeaf() const;
 
                     /**
                      * 设置是否叶子
-                     * @param IsLeaf 是否叶子
+                     * @param _isLeaf 是否叶子
+                     * 
                      */
                     void SetIsLeaf(const bool& _isLeaf);
 
                     /**
                      * 判断参数 IsLeaf 是否已赋值
                      * @return IsLeaf 是否已赋值
+                     * 
                      */
                     bool IsLeafHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcNamePrefix 进程名，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcNamePrefix() const;
 
                     /**
                      * 设置进程名，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcNamePrefix 进程名，当Type=1时使用
+                     * @param _procNamePrefix 进程名，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcNamePrefix(const std::string& _procNamePrefix);
 
                     /**
                      * 判断参数 ProcNamePrefix 是否已赋值
                      * @return ProcNamePrefix 是否已赋值
+                     * 
                      */
                     bool ProcNamePrefixHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcNameMd5 进程名md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcNameMd5() const;
 
                     /**
                      * 设置进程名md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcNameMd5 进程名md5，当Type=1时使用
+                     * @param _procNameMd5 进程名md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcNameMd5(const std::string& _procNameMd5);
 
                     /**
                      * 判断参数 ProcNameMd5 是否已赋值
                      * @return ProcNameMd5 是否已赋值
+                     * 
                      */
                     bool ProcNameMd5HasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdLinePrefix 命令行，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCmdLinePrefix() const;
 
                     /**
                      * 设置命令行，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CmdLinePrefix 命令行，当Type=1时使用
+                     * @param _cmdLinePrefix 命令行，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCmdLinePrefix(const std::string& _cmdLinePrefix);
 
                     /**
                      * 判断参数 CmdLinePrefix 是否已赋值
                      * @return CmdLinePrefix 是否已赋值
+                     * 
                      */
                     bool CmdLinePrefixHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdLineMd5 命令行md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCmdLineMd5() const;
 
                     /**
                      * 设置命令行md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CmdLineMd5 命令行md5，当Type=1时使用
+                     * @param _cmdLineMd5 命令行md5，当Type=1时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCmdLineMd5(const std::string& _cmdLineMd5);
 
                     /**
                      * 判断参数 CmdLineMd5 是否已赋值
                      * @return CmdLineMd5 是否已赋值
+                     * 
                      */
                     bool CmdLineMd5HasBeenSet() const;
 
@@ -211,20 +235,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePathPrefix 文件路径，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePathPrefix() const;
 
                     /**
                      * 设置文件路径，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePathPrefix 文件路径，当Type=3时使用
+                     * @param _filePathPrefix 文件路径，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePathPrefix(const std::string& _filePathPrefix);
 
                     /**
                      * 判断参数 FilePathPrefix 是否已赋值
                      * @return FilePathPrefix 是否已赋值
+                     * 
                      */
                     bool FilePathPrefixHasBeenSet() const;
 
@@ -233,56 +260,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressPrefix 请求目的地址，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddressPrefix() const;
 
                     /**
                      * 设置请求目的地址，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddressPrefix 请求目的地址，当Type=2时使用
+                     * @param _addressPrefix 请求目的地址，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddressPrefix(const std::string& _addressPrefix);
 
                     /**
                      * 判断参数 AddressPrefix 是否已赋值
                      * @return AddressPrefix 是否已赋值
+                     * 
                      */
                     bool AddressPrefixHasBeenSet() const;
 
                     /**
                      * 获取是否漏洞节点
                      * @return IsWeDetect 是否漏洞节点
+                     * 
                      */
                     bool GetIsWeDetect() const;
 
                     /**
                      * 设置是否漏洞节点
-                     * @param IsWeDetect 是否漏洞节点
+                     * @param _isWeDetect 是否漏洞节点
+                     * 
                      */
                     void SetIsWeDetect(const bool& _isWeDetect);
 
                     /**
                      * 判断参数 IsWeDetect 是否已赋值
                      * @return IsWeDetect 是否已赋值
+                     * 
                      */
                     bool IsWeDetectHasBeenSet() const;
 
                     /**
                      * 获取是否告警节点
                      * @return IsAlarm 是否告警节点
+                     * 
                      */
                     bool GetIsAlarm() const;
 
                     /**
                      * 设置是否告警节点
-                     * @param IsAlarm 是否告警节点
+                     * @param _isAlarm 是否告警节点
+                     * 
                      */
                     void SetIsAlarm(const bool& _isAlarm);
 
                     /**
                      * 判断参数 IsAlarm 是否已赋值
                      * @return IsAlarm 是否已赋值
+                     * 
                      */
                     bool IsAlarmHasBeenSet() const;
 
@@ -291,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePathMd5 文件路径md5，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePathMd5() const;
 
                     /**
                      * 设置文件路径md5，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePathMd5 文件路径md5，当Type=3时使用
+                     * @param _filePathMd5 文件路径md5，当Type=3时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePathMd5(const std::string& _filePathMd5);
 
                     /**
                      * 判断参数 FilePathMd5 是否已赋值
                      * @return FilePathMd5 是否已赋值
+                     * 
                      */
                     bool FilePathMd5HasBeenSet() const;
 
@@ -313,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressMd5 请求目的地址md5，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddressMd5() const;
 
                     /**
                      * 设置请求目的地址md5，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddressMd5 请求目的地址md5，当Type=2时使用
+                     * @param _addressMd5 请求目的地址md5，当Type=2时使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddressMd5(const std::string& _addressMd5);
 
                     /**
                      * 判断参数 AddressMd5 是否已赋值
                      * @return AddressMd5 是否已赋值
+                     * 
                      */
                     bool AddressMd5HasBeenSet() const;
 

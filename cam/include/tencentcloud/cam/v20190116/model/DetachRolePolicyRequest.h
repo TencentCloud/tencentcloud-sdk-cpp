@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取策略ID，入参PolicyId与PolicyName二选一
                      * @return PolicyId 策略ID，入参PolicyId与PolicyName二选一
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID，入参PolicyId与PolicyName二选一
-                     * @param PolicyId 策略ID，入参PolicyId与PolicyName二选一
+                     * @param _policyId 策略ID，入参PolicyId与PolicyName二选一
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      * @return DetachRoleId 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * 
                      */
                     std::string GetDetachRoleId() const;
 
                     /**
                      * 设置角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
-                     * @param DetachRoleId 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @param _detachRoleId 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * 
                      */
                     void SetDetachRoleId(const std::string& _detachRoleId);
 
                     /**
                      * 判断参数 DetachRoleId 是否已赋值
                      * @return DetachRoleId 是否已赋值
+                     * 
                      */
                     bool DetachRoleIdHasBeenSet() const;
 
                     /**
                      * 获取角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      * @return DetachRoleName 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * 
                      */
                     std::string GetDetachRoleName() const;
 
                     /**
                      * 设置角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
-                     * @param DetachRoleName 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @param _detachRoleName 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * 
                      */
                     void SetDetachRoleName(const std::string& _detachRoleName);
 
                     /**
                      * 判断参数 DetachRoleName 是否已赋值
                      * @return DetachRoleName 是否已赋值
+                     * 
                      */
                     bool DetachRoleNameHasBeenSet() const;
 
                     /**
                      * 获取策略名，入参PolicyId与PolicyName二选一
                      * @return PolicyName 策略名，入参PolicyId与PolicyName二选一
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名，入参PolicyId与PolicyName二选一
-                     * @param PolicyName 策略名，入参PolicyId与PolicyName二选一
+                     * @param _policyName 策略名，入参PolicyId与PolicyName二选一
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 

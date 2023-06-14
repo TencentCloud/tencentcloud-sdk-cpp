@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取元数据类型。
                      * @return MetaType 元数据类型。
+                     * 
                      */
                     std::string GetMetaType() const;
 
                     /**
                      * 设置元数据类型。
-                     * @param MetaType 元数据类型。
+                     * @param _metaType 元数据类型。
+                     * 
                      */
                     void SetMetaType(const std::string& _metaType);
 
                     /**
                      * 判断参数 MetaType 是否已赋值
                      * @return MetaType 是否已赋值
+                     * 
                      */
                     bool MetaTypeHasBeenSet() const;
 
                     /**
                      * 获取统一元数据库实例ID。
                      * @return UnifyMetaInstanceId 统一元数据库实例ID。
+                     * 
                      */
                     std::string GetUnifyMetaInstanceId() const;
 
                     /**
                      * 设置统一元数据库实例ID。
-                     * @param UnifyMetaInstanceId 统一元数据库实例ID。
+                     * @param _unifyMetaInstanceId 统一元数据库实例ID。
+                     * 
                      */
                     void SetUnifyMetaInstanceId(const std::string& _unifyMetaInstanceId);
 
                     /**
                      * 判断参数 UnifyMetaInstanceId 是否已赋值
                      * @return UnifyMetaInstanceId 是否已赋值
+                     * 
                      */
                     bool UnifyMetaInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取自建元数据库信息。
                      * @return MetaDBInfo 自建元数据库信息。
+                     * 
                      */
                     CustomMetaInfo GetMetaDBInfo() const;
 
                     /**
                      * 设置自建元数据库信息。
-                     * @param MetaDBInfo 自建元数据库信息。
+                     * @param _metaDBInfo 自建元数据库信息。
+                     * 
                      */
                     void SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo);
 
                     /**
                      * 判断参数 MetaDBInfo 是否已赋值
                      * @return MetaDBInfo 是否已赋值
+                     * 
                      */
                     bool MetaDBInfoHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志需要投递到cls的日志集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志需要投递到cls的日志集
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogsetId 日志需要投递到cls的日志集
+                     * @param _logsetId 日志需要投递到cls的日志集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志需要投递到cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志需要投递到cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId 日志需要投递到cls的主题
+                     * @param _topicId 日志需要投递到cls的主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

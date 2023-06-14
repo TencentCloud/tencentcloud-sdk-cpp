@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取告警通道数组
                      * @return NotificationChannelSet 告警通道数组
+                     * 
                      */
                     std::vector<GrafanaChannel> GetNotificationChannelSet() const;
 
                     /**
                      * 判断参数 NotificationChannelSet 是否已赋值
                      * @return NotificationChannelSet 是否已赋值
+                     * 
                      */
                     bool NotificationChannelSetHasBeenSet() const;
 

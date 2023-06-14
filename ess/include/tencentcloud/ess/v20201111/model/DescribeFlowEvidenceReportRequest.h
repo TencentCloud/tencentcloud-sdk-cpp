@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取出证报告编号
                      * @return ReportId 出证报告编号
+                     * 
                      */
                     std::string GetReportId() const;
 
                     /**
                      * 设置出证报告编号
-                     * @param ReportId 出证报告编号
+                     * @param _reportId 出证报告编号
+                     * 
                      */
                     void SetReportId(const std::string& _reportId);
 
                     /**
                      * 判断参数 ReportId 是否已赋值
                      * @return ReportId 是否已赋值
+                     * 
                      */
                     bool ReportIdHasBeenSet() const;
 

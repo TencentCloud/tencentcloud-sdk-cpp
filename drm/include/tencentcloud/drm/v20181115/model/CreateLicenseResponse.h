@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取Base64 编码的许可证二进制数据。
                      * @return License Base64 编码的许可证二进制数据。
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取加密内容的内容ID
                      * @return ContentId 加密内容的内容ID
+                     * 
                      */
                     std::string GetContentId() const;
 
                     /**
                      * 判断参数 ContentId 是否已赋值
                      * @return ContentId 是否已赋值
+                     * 
                      */
                     bool ContentIdHasBeenSet() const;
 

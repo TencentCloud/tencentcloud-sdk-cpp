@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取歌曲名称。
                      * @return MusicName 歌曲名称。
+                     * 
                      */
                     std::string GetMusicName() const;
 
                     /**
                      * 设置歌曲名称。
-                     * @param MusicName 歌曲名称。
+                     * @param _musicName 歌曲名称。
+                     * 
                      */
                     void SetMusicName(const std::string& _musicName);
 
                     /**
                      * 判断参数 MusicName 是否已赋值
                      * @return MusicName 是否已赋值
+                     * 
                      */
                     bool MusicNameHasBeenSet() const;
 
                     /**
                      * 获取歌手列表。
                      * @return SingerSet 歌手列表。
+                     * 
                      */
                     std::vector<std::string> GetSingerSet() const;
 
                     /**
                      * 设置歌手列表。
-                     * @param SingerSet 歌手列表。
+                     * @param _singerSet 歌手列表。
+                     * 
                      */
                     void SetSingerSet(const std::vector<std::string>& _singerSet);
 
                     /**
                      * 判断参数 SingerSet 是否已赋值
                      * @return SingerSet 是否已赋值
+                     * 
                      */
                     bool SingerSetHasBeenSet() const;
 

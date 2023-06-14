@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取独立网关名称
                      * @return GatewayName 独立网关名称
+                     * 
                      */
                     std::string GetGatewayName() const;
 
                     /**
                      * 设置独立网关名称
-                     * @param GatewayName 独立网关名称
+                     * @param _gatewayName 独立网关名称
+                     * 
                      */
                     void SetGatewayName(const std::string& _gatewayName);
 
                     /**
                      * 判断参数 GatewayName 是否已赋值
                      * @return GatewayName 是否已赋值
+                     * 
                      */
                     bool GatewayNameHasBeenSet() const;
 
                     /**
                      * 获取CPU核心数
                      * @return CPU CPU核心数
+                     * 
                      */
                     double GetCPU() const;
 
                     /**
                      * 设置CPU核心数
-                     * @param CPU CPU核心数
+                     * @param _cPU CPU核心数
+                     * 
                      */
                     void SetCPU(const double& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位MB
                      * @return Mem 内存大小，单位MB
+                     * 
                      */
                     uint64_t GetMem() const;
 
                     /**
                      * 设置内存大小，单位MB
-                     * @param Mem 内存大小，单位MB
+                     * @param _mem 内存大小，单位MB
+                     * 
                      */
                     void SetMem(const uint64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
                     /**
                      * 获取套餐包版本名称
                      * @return PackageVersion 套餐包版本名称
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置套餐包版本名称
-                     * @param PackageVersion 套餐包版本名称
+                     * @param _packageVersion 套餐包版本名称
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 
                     /**
                      * 获取网关别名
                      * @return GatewayAlias 网关别名
+                     * 
                      */
                     std::string GetGatewayAlias() const;
 
                     /**
                      * 设置网关别名
-                     * @param GatewayAlias 网关别名
+                     * @param _gatewayAlias 网关别名
+                     * 
                      */
                     void SetGatewayAlias(const std::string& _gatewayAlias);
 
                     /**
                      * 判断参数 GatewayAlias 是否已赋值
                      * @return GatewayAlias 是否已赋值
+                     * 
                      */
                     bool GatewayAliasHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID列表
                      * @return SubnetIds 子网ID列表
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网ID列表
-                     * @param SubnetIds 子网ID列表
+                     * @param _subnetIds 子网ID列表
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取网关描述
                      * @return GatewayDesc 网关描述
+                     * 
                      */
                     std::string GetGatewayDesc() const;
 
                     /**
                      * 设置网关描述
-                     * @param GatewayDesc 网关描述
+                     * @param _gatewayDesc 网关描述
+                     * 
                      */
                     void SetGatewayDesc(const std::string& _gatewayDesc);
 
                     /**
                      * 判断参数 GatewayDesc 是否已赋值
                      * @return GatewayDesc 是否已赋值
+                     * 
                      */
                     bool GatewayDescHasBeenSet() const;
 
                     /**
                      * 获取网关状态
                      * @return GateWayStatus 网关状态
+                     * 
                      */
                     std::string GetGateWayStatus() const;
 
                     /**
                      * 设置网关状态
-                     * @param GateWayStatus 网关状态
+                     * @param _gateWayStatus 网关状态
+                     * 
                      */
                     void SetGateWayStatus(const std::string& _gateWayStatus);
 
                     /**
                      * 判断参数 GateWayStatus 是否已赋值
                      * @return GateWayStatus 是否已赋值
+                     * 
                      */
                     bool GateWayStatusHasBeenSet() const;
 
                     /**
                      * 获取服务信息
                      * @return ServiceInfo 服务信息
+                     * 
                      */
                     BackendServiceInfo GetServiceInfo() const;
 
                     /**
                      * 设置服务信息
-                     * @param ServiceInfo 服务信息
+                     * @param _serviceInfo 服务信息
+                     * 
                      */
                     void SetServiceInfo(const BackendServiceInfo& _serviceInfo);
 
                     /**
                      * 判断参数 ServiceInfo 是否已赋值
                      * @return ServiceInfo 是否已赋值
+                     * 
                      */
                     bool ServiceInfoHasBeenSet() const;
 
                     /**
                      * 获取公网CLBIP
                      * @return PublicClbIp 公网CLBIP
+                     * 
                      */
                     std::string GetPublicClbIp() const;
 
                     /**
                      * 设置公网CLBIP
-                     * @param PublicClbIp 公网CLBIP
+                     * @param _publicClbIp 公网CLBIP
+                     * 
                      */
                     void SetPublicClbIp(const std::string& _publicClbIp);
 
                     /**
                      * 判断参数 PublicClbIp 是否已赋值
                      * @return PublicClbIp 是否已赋值
+                     * 
                      */
                     bool PublicClbIpHasBeenSet() const;
 
                     /**
                      * 获取内网CLBIP
                      * @return InternalClbIp 内网CLBIP
+                     * 
                      */
                     std::string GetInternalClbIp() const;
 
                     /**
                      * 设置内网CLBIP
-                     * @param InternalClbIp 内网CLBIP
+                     * @param _internalClbIp 内网CLBIP
+                     * 
                      */
                     void SetInternalClbIp(const std::string& _internalClbIp);
 
                     /**
                      * 判断参数 InternalClbIp 是否已赋值
                      * @return InternalClbIp 是否已赋值
+                     * 
                      */
                     bool InternalClbIpHasBeenSet() const;
 

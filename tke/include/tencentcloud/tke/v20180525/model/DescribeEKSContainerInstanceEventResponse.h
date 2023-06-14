@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件集合
                      * @return Events 事件集合
+                     * 
                      */
                     std::vector<Event> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
                     /**
                      * 获取容器实例id
                      * @return EksCiId 容器实例id
+                     * 
                      */
                     std::string GetEksCiId() const;
 
                     /**
                      * 判断参数 EksCiId 是否已赋值
                      * @return EksCiId 是否已赋值
+                     * 
                      */
                     bool EksCiIdHasBeenSet() const;
 

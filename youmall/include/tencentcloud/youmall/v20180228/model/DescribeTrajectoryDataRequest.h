@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集团ID
                      * @return CompanyId 集团ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置集团ID
-                     * @param CompanyId 集团ID
+                     * @param _companyId 集团ID
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺ID
                      * @return ShopId 店铺ID
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 设置店铺ID
-                     * @param ShopId 店铺ID
+                     * @param _shopId 店铺ID
+                     * 
                      */
                     void SetShopId(const int64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取开始日期，格式yyyy-MM-dd
                      * @return StartDate 开始日期，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期，格式yyyy-MM-dd
-                     * @param StartDate 开始日期，格式yyyy-MM-dd
+                     * @param _startDate 开始日期，格式yyyy-MM-dd
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期，格式yyyy-MM-dd
                      * @return EndDate 结束日期，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期，格式yyyy-MM-dd
-                     * @param EndDate 结束日期，格式yyyy-MM-dd
+                     * @param _endDate 结束日期，格式yyyy-MM-dd
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取限制返回数据的最大条数，最大 400（负数代为 400）
                      * @return Limit 限制返回数据的最大条数，最大 400（负数代为 400）
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制返回数据的最大条数，最大 400（负数代为 400）
-                     * @param Limit 限制返回数据的最大条数，最大 400（负数代为 400）
+                     * @param _limit 限制返回数据的最大条数，最大 400（负数代为 400）
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取顾客性别顾虑，0是男，1是女，其它代表不分性别
                      * @return Gender 顾客性别顾虑，0是男，1是女，其它代表不分性别
+                     * 
                      */
                     int64_t GetGender() const;
 
                     /**
                      * 设置顾客性别顾虑，0是男，1是女，其它代表不分性别
-                     * @param Gender 顾客性别顾虑，0是男，1是女，其它代表不分性别
+                     * @param _gender 顾客性别顾虑，0是男，1是女，其它代表不分性别
+                     * 
                      */
                     void SetGender(const int64_t& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 

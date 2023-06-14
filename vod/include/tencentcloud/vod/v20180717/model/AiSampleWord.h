@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取关键词。
                      * @return Keyword 关键词。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置关键词。
-                     * @param Keyword 关键词。
+                     * @param _keyword 关键词。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取关键词标签。
                      * @return TagSet 关键词标签。
+                     * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置关键词标签。
-                     * @param TagSet 关键词标签。
+                     * @param _tagSet 关键词标签。
+                     * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取关键词应用场景。
                      * @return UsageSet 关键词应用场景。
+                     * 
                      */
                     std::vector<std::string> GetUsageSet() const;
 
                     /**
                      * 设置关键词应用场景。
-                     * @param UsageSet 关键词应用场景。
+                     * @param _usageSet 关键词应用场景。
+                     * 
                      */
                     void SetUsageSet(const std::vector<std::string>& _usageSet);
 
                     /**
                      * 判断参数 UsageSet 是否已赋值
                      * @return UsageSet 是否已赋值
+                     * 
                      */
                     bool UsageSetHasBeenSet() const;
 
                     /**
                      * 获取创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _createTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return UpdateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param UpdateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _updateTime 最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

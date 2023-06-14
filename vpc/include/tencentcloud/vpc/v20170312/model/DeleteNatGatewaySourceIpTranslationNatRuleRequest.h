@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关的ID，形如：`nat-df45454`。
                      * @return NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID，形如：`nat-df45454`。
-                     * @param NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * @param _natGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关的SNAT ID列表，形如：`snat-df43254`。
                      * @return NatGatewaySnatIds NAT网关的SNAT ID列表，形如：`snat-df43254`。
+                     * 
                      */
                     std::vector<std::string> GetNatGatewaySnatIds() const;
 
                     /**
                      * 设置NAT网关的SNAT ID列表，形如：`snat-df43254`。
-                     * @param NatGatewaySnatIds NAT网关的SNAT ID列表，形如：`snat-df43254`。
+                     * @param _natGatewaySnatIds NAT网关的SNAT ID列表，形如：`snat-df43254`。
+                     * 
                      */
                     void SetNatGatewaySnatIds(const std::vector<std::string>& _natGatewaySnatIds);
 
                     /**
                      * 判断参数 NatGatewaySnatIds 是否已赋值
                      * @return NatGatewaySnatIds 是否已赋值
+                     * 
                      */
                     bool NatGatewaySnatIdsHasBeenSet() const;
 

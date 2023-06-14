@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID。
                      * @return TaskId 任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID。
-                     * @param TaskId 任务 ID。
+                     * @param _taskId 任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ FINISH：已完成。
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -81,16 +85,18 @@ FINISH：已完成。
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
-                     * @param Status 任务状态，取值：
+                     * @param _status 任务状态，取值：
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -101,6 +107,7 @@ FINISH：已完成。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -108,87 +115,101 @@ FINISH：已完成。
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码
+                     * @param _errCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取发布视频文件 ID。
                      * @return FileId 发布视频文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置发布视频文件 ID。
-                     * @param FileId 发布视频文件 ID。
+                     * @param _fileId 发布视频文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取微信发布模板 ID。
                      * @return Definition 微信发布模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置微信发布模板 ID。
-                     * @param Definition 微信发布模板 ID。
+                     * @param _definition 微信发布模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取发布视频所对应的转码模板 ID，为 0 代表原始视频。
                      * @return SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
                      * 设置发布视频所对应的转码模板 ID，为 0 代表原始视频。
-                     * @param SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * @param _sourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
 
                     /**
                      * 判断参数 SourceDefinition 是否已赋值
                      * @return SourceDefinition 是否已赋值
+                     * 
                      */
                     bool SourceDefinitionHasBeenSet() const;
 
@@ -203,6 +224,7 @@ FINISH：已完成。
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
+                     * 
                      */
                     std::string GetWechatStatus() const;
 
@@ -212,53 +234,61 @@ FINISH：已完成。
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-                     * @param WechatStatus 微信发布状态，取值：
+                     * @param _wechatStatus 微信发布状态，取值：
 <li>FAIL：失败；</li>
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
+                     * 
                      */
                     void SetWechatStatus(const std::string& _wechatStatus);
 
                     /**
                      * 判断参数 WechatStatus 是否已赋值
                      * @return WechatStatus 是否已赋值
+                     * 
                      */
                     bool WechatStatusHasBeenSet() const;
 
                     /**
                      * 获取微信 Vid。
                      * @return WechatVid 微信 Vid。
+                     * 
                      */
                     std::string GetWechatVid() const;
 
                     /**
                      * 设置微信 Vid。
-                     * @param WechatVid 微信 Vid。
+                     * @param _wechatVid 微信 Vid。
+                     * 
                      */
                     void SetWechatVid(const std::string& _wechatVid);
 
                     /**
                      * 判断参数 WechatVid 是否已赋值
                      * @return WechatVid 是否已赋值
+                     * 
                      */
                     bool WechatVidHasBeenSet() const;
 
                     /**
                      * 获取微信地址。
                      * @return WechatUrl 微信地址。
+                     * 
                      */
                     std::string GetWechatUrl() const;
 
                     /**
                      * 设置微信地址。
-                     * @param WechatUrl 微信地址。
+                     * @param _wechatUrl 微信地址。
+                     * 
                      */
                     void SetWechatUrl(const std::string& _wechatUrl);
 
                     /**
                      * 判断参数 WechatUrl 是否已赋值
                      * @return WechatUrl 是否已赋值
+                     * 
                      */
                     bool WechatUrlHasBeenSet() const;
 

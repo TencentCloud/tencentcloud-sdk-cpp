@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取业务加密入参。
                      * @return BusinessSecurityData 业务加密入参。
+                     * 
                      */
                     InputEncryptData GetBusinessSecurityData() const;
 
                     /**
                      * 设置业务加密入参。
-                     * @param BusinessSecurityData 业务加密入参。
+                     * @param _businessSecurityData 业务加密入参。
+                     * 
                      */
                     void SetBusinessSecurityData(const InputEncryptData& _businessSecurityData);
 
                     /**
                      * 判断参数 BusinessSecurityData 是否已赋值
                      * @return BusinessSecurityData 是否已赋值
+                     * 
                      */
                     bool BusinessSecurityDataHasBeenSet() const;
 

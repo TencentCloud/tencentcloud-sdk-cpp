@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取备份文件ID，旧版本使用的字段，不推荐使用
                      * @return SnapshotIdList 备份文件ID，旧版本使用的字段，不推荐使用
+                     * 
                      */
                     std::vector<int64_t> GetSnapshotIdList() const;
 
                     /**
                      * 设置备份文件ID，旧版本使用的字段，不推荐使用
-                     * @param SnapshotIdList 备份文件ID，旧版本使用的字段，不推荐使用
+                     * @param _snapshotIdList 备份文件ID，旧版本使用的字段，不推荐使用
+                     * 
                      */
                     void SetSnapshotIdList(const std::vector<int64_t>& _snapshotIdList);
 
                     /**
                      * 判断参数 SnapshotIdList 是否已赋值
                      * @return SnapshotIdList 是否已赋值
+                     * 
                      */
                     bool SnapshotIdListHasBeenSet() const;
 
                     /**
                      * 获取备份文件ID，推荐使用
                      * @return BackupIds 备份文件ID，推荐使用
+                     * 
                      */
                     std::vector<int64_t> GetBackupIds() const;
 
                     /**
                      * 设置备份文件ID，推荐使用
-                     * @param BackupIds 备份文件ID，推荐使用
+                     * @param _backupIds 备份文件ID，推荐使用
+                     * 
                      */
                     void SetBackupIds(const std::vector<int64_t>& _backupIds);
 
                     /**
                      * 判断参数 BackupIds 是否已赋值
                      * @return BackupIds 是否已赋值
+                     * 
                      */
                     bool BackupIdsHasBeenSet() const;
 

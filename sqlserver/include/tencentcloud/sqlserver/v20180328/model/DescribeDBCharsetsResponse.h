@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取数据库字符集列表
                      * @return DatabaseCharsets 数据库字符集列表
+                     * 
                      */
                     std::vector<std::string> GetDatabaseCharsets() const;
 
                     /**
                      * 判断参数 DatabaseCharsets 是否已赋值
                      * @return DatabaseCharsets 是否已赋值
+                     * 
                      */
                     bool DatabaseCharsetsHasBeenSet() const;
 

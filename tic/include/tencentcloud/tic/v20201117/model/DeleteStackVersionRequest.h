@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的版本ID
                      * @return VersionId 待删除的版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置待删除的版本ID
-                     * @param VersionId 待删除的版本ID
+                     * @param _versionId 待删除的版本ID
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

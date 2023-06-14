@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivilegeStatements 权限语句
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPrivilegeStatements() const;
 
                     /**
                      * 判断参数 PrivilegeStatements 是否已赋值
                      * @return PrivilegeStatements 是否已赋值
+                     * 
                      */
                     bool PrivilegeStatementsHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalPrivileges 全局权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
 
                     /**
                      * 判断参数 GlobalPrivileges 是否已赋值
                      * @return GlobalPrivileges 是否已赋值
+                     * 
                      */
                     bool GlobalPrivilegesHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabasePrivileges 数据库权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DatabasePrivileges> GetDatabasePrivileges() const;
 
                     /**
                      * 判断参数 DatabasePrivileges 是否已赋值
                      * @return DatabasePrivileges 是否已赋值
+                     * 
                      */
                     bool DatabasePrivilegesHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TablePrivileges 数据库表权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TablePrivileges> GetTablePrivileges() const;
 
                     /**
                      * 判断参数 TablePrivileges 是否已赋值
                      * @return TablePrivileges 是否已赋值
+                     * 
                      */
                     bool TablePrivilegesHasBeenSet() const;
 

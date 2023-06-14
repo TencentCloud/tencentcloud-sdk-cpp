@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区 ID
                      * @return ZoneId 可用区 ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区 ID
-                     * @param ZoneId 可用区 ID
+                     * @param _zoneId 可用区 ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区状态( 0: 不可用；1: 可用)
                      * @return ZoneState 可用区状态( 0: 不可用；1: 可用)
+                     * 
                      */
                     int64_t GetZoneState() const;
 
                     /**
                      * 设置可用区状态( 0: 不可用；1: 可用)
-                     * @param ZoneState 可用区状态( 0: 不可用；1: 可用)
+                     * @param _zoneState 可用区状态( 0: 不可用；1: 可用)
+                     * 
                      */
                     void SetZoneState(const int64_t& _zoneState);
 
                     /**
                      * 判断参数 ZoneState 是否已赋值
                      * @return ZoneState 是否已赋值
+                     * 
                      */
                     bool ZoneStateHasBeenSet() const;
 
                     /**
                      * 获取地域 ID
                      * @return RegionId 地域 ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域 ID
-                     * @param RegionId 地域 ID
+                     * @param _regionId 地域 ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取可用区名（目前为中文）
                      * @return ZoneName 可用区名（目前为中文）
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区名（目前为中文）
-                     * @param ZoneName 可用区名（目前为中文）
+                     * @param _zoneName 可用区名（目前为中文）
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 

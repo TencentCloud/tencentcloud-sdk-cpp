@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VPCId 私有网络ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVPCId() const;
 
                     /**
                      * 设置私有网络ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VPCId 私有网络ID。
+                     * @param _vPCId 私有网络ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVPCId(const std::string& _vPCId);
 
                     /**
                      * 判断参数 VPCId 是否已赋值
                      * @return VPCId 是否已赋值
+                     * 
                      */
                     bool VPCIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID。
+                     * @param _subnetId 子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupId 安全组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityGroupId 安全组ID。
+                     * @param _securityGroupId 安全组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TDSQLCId TDSQL-C Mysql版数据库ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTDSQLCId() const;
 
                     /**
                      * 设置TDSQL-C Mysql版数据库ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TDSQLCId TDSQL-C Mysql版数据库ID。
+                     * @param _tDSQLCId TDSQL-C Mysql版数据库ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTDSQLCId(const std::string& _tDSQLCId);
 
                     /**
                      * 判断参数 TDSQLCId 是否已赋值
                      * @return TDSQLCId 是否已赋值
+                     * 
                      */
                     bool TDSQLCIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFSId 文件存储ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCFSId() const;
 
                     /**
                      * 设置文件存储ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CFSId 文件存储ID。
+                     * @param _cFSId 文件存储ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCFSId(const std::string& _cFSId);
 
                     /**
                      * 判断参数 CFSId 是否已赋值
                      * @return CFSId 是否已赋值
+                     * 
                      */
                     bool CFSIdHasBeenSet() const;
 
@@ -169,6 +184,7 @@ namespace TencentCloud
 - TB：turbo标准型
 - TP：turbo性能型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCFSStorageType() const;
 
@@ -179,18 +195,20 @@ namespace TencentCloud
 - TB：turbo标准型
 - TP：turbo性能型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CFSStorageType 文件存储类型：取值范围：
+                     * @param _cFSStorageType 文件存储类型：取值范围：
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCFSStorageType(const std::string& _cFSStorageType);
 
                     /**
                      * 判断参数 CFSStorageType 是否已赋值
                      * @return CFSStorageType 是否已赋值
+                     * 
                      */
                     bool CFSStorageTypeHasBeenSet() const;
 
@@ -199,20 +217,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVMId 云服务器ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCVMId() const;
 
                     /**
                      * 设置云服务器ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CVMId 云服务器ID。
+                     * @param _cVMId 云服务器ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCVMId(const std::string& _cVMId);
 
                     /**
                      * 判断参数 CVMId 是否已赋值
                      * @return CVMId 是否已赋值
+                     * 
                      */
                     bool CVMIdHasBeenSet() const;
 
@@ -221,20 +242,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EKSId 弹性容器集群ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEKSId() const;
 
                     /**
                      * 设置弹性容器集群ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EKSId 弹性容器集群ID。
+                     * @param _eKSId 弹性容器集群ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEKSId(const std::string& _eKSId);
 
                     /**
                      * 判断参数 EKSId 是否已赋值
                      * @return EKSId 是否已赋值
+                     * 
                      */
                     bool EKSIdHasBeenSet() const;
 

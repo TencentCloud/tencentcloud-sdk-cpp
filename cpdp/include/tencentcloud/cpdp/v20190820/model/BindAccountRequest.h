@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取主播Id
                      * @return AnchorId 主播Id
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播Id
-                     * @param AnchorId 主播Id
+                     * @param _anchorId 主播Id
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return TransferType 1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
+                     * 
                      */
                     int64_t GetTransferType() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
-                     * @param TransferType 1 微信企业付款 
+                     * @param _transferType 1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
 微信为open_id；
 支付宝为会员alipay_user_id;
 平安为收款方银行账号;
+                     * 
                      */
                     std::string GetAccountNo() const;
 
@@ -103,34 +110,39 @@ namespace TencentCloud
 微信为open_id；
 支付宝为会员alipay_user_id;
 平安为收款方银行账号;
-                     * @param AccountNo 收款方标识。
+                     * @param _accountNo 收款方标识。
 微信为open_id；
 支付宝为会员alipay_user_id;
 平安为收款方银行账号;
+                     * 
                      */
                     void SetAccountNo(const std::string& _accountNo);
 
                     /**
                      * 判断参数 AccountNo 是否已赋值
                      * @return AccountNo 是否已赋值
+                     * 
                      */
                     bool AccountNoHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return PhoneNum 手机号
+                     * 
                      */
                     std::string GetPhoneNum() const;
 
                     /**
                      * 设置手机号
-                     * @param PhoneNum 手机号
+                     * @param _phoneNum 手机号
+                     * 
                      */
                     void SetPhoneNum(const std::string& _phoneNum);
 
                     /**
                      * 判断参数 PhoneNum 是否已赋值
                      * @return PhoneNum 是否已赋值
+                     * 
                      */
                     bool PhoneNumHasBeenSet() const;
 

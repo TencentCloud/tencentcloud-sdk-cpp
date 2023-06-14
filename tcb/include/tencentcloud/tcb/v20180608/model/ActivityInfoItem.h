@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取活动id
                      * @return ActivityId 活动id
+                     * 
                      */
                     int64_t GetActivityId() const;
 
                     /**
                      * 设置活动id
-                     * @param ActivityId 活动id
+                     * @param _activityId 活动id
+                     * 
                      */
                     void SetActivityId(const int64_t& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取记录插入时间
                      * @return CreateTime 记录插入时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置记录插入时间
-                     * @param CreateTime 记录插入时间
+                     * @param _createTime 记录插入时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取记录最后一次变更时间
                      * @return UpdateTime 记录最后一次变更时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置记录最后一次变更时间
-                     * @param UpdateTime 记录最后一次变更时间
+                     * @param _updateTime 记录最后一次变更时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取活动开始时间
                      * @return StartTime 活动开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置活动开始时间
-                     * @param StartTime 活动开始时间
+                     * @param _startTime 活动开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取活动结束时间
                      * @return ExpireTime 活动结束时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置活动结束时间
-                     * @param ExpireTime 活动结束时间
+                     * @param _expireTime 活动结束时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取自定义备注信息
                      * @return Tag 自定义备注信息
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置自定义备注信息
-                     * @param Tag 自定义备注信息
+                     * @param _tag 自定义备注信息
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

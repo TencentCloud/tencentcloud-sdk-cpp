@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取标签键。
                      * @return TagKey 标签键。
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置标签键。
-                     * @param TagKey 标签键。
+                     * @param _tagKey 标签键。
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取标签值。
                      * @return TagValue 标签值。
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置标签值。
-                     * @param TagValue 标签值。
+                     * @param _tagValue 标签值。
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 
@@ -89,6 +95,7 @@ Proxy表示通道；
 ProxyGroup表示通道组；
 RealServer表示源站。
 不指定该字段则查询该标签下所有资源。
+                     * 
                      */
                     std::string GetResourceType() const;
 
@@ -98,17 +105,19 @@ Proxy表示通道；
 ProxyGroup表示通道组；
 RealServer表示源站。
 不指定该字段则查询该标签下所有资源。
-                     * @param ResourceType 资源类型，其中：
+                     * @param _resourceType 资源类型，其中：
 Proxy表示通道；
 ProxyGroup表示通道组；
 RealServer表示源站。
 不指定该字段则查询该标签下所有资源。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

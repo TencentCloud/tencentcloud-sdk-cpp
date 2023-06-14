@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取分页查询偏移量。默认值：0。
                      * @return Offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量。默认值：0。
-                     * @param Offset 分页查询偏移量。默认值：0。
+                     * @param _offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目。默认值：20，最大值：1000。
                      * @return Limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目。默认值：20，最大值：1000。
-                     * @param Limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * @param _limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -84,20 +90,23 @@ namespace TencentCloud
 <li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为zone-name。
                      * @return Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为zone-name。
+                     * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为zone-name。
-                     * @param Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
+                     * @param _filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为zone-name。
+                     * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -116,6 +125,7 @@ namespace TencentCloud
 <li> zone-name：站点名称；</li>
 <li> use-time：最近使用时间；</li>
 <li> active-status：生效状态。</li>不填写使用默认值create-time。
+                     * 
                      */
                     std::string GetOrder() const;
 
@@ -127,19 +137,21 @@ namespace TencentCloud
 <li> zone-name：站点名称；</li>
 <li> use-time：最近使用时间；</li>
 <li> active-status：生效状态。</li>不填写使用默认值create-time。
-                     * @param Order 排序字段，取值有：
+                     * @param _order 排序字段，取值有：
 <li> type：接入类型；</li>
 <li> area：加速区域；</li>
 <li> create-time：创建时间；</li>
 <li> zone-name：站点名称；</li>
 <li> use-time：最近使用时间；</li>
 <li> active-status：生效状态。</li>不填写使用默认值create-time。
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
@@ -150,6 +162,7 @@ namespace TencentCloud
                      * @return Direction 排序方向，取值有：
 <li> asc：从小到大排序；</li>
 <li> desc：从大到小排序。</li>不填写使用默认值desc。
+                     * 
                      */
                     std::string GetDirection() const;
 
@@ -157,15 +170,17 @@ namespace TencentCloud
                      * 设置排序方向，取值有：
 <li> asc：从小到大排序；</li>
 <li> desc：从大到小排序。</li>不填写使用默认值desc。
-                     * @param Direction 排序方向，取值有：
+                     * @param _direction 排序方向，取值有：
 <li> asc：从小到大排序；</li>
 <li> desc：从大到小排序。</li>不填写使用默认值desc。
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

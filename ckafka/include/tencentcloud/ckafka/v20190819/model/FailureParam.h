@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
                      * @return Type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
-                     * @param Type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * @param _type 类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Ckafka类型死信队列
                      * @return KafkaParam Ckafka类型死信队列
+                     * 
                      */
                     KafkaParam GetKafkaParam() const;
 
                     /**
                      * 设置Ckafka类型死信队列
-                     * @param KafkaParam Ckafka类型死信队列
+                     * @param _kafkaParam Ckafka类型死信队列
+                     * 
                      */
                     void SetKafkaParam(const KafkaParam& _kafkaParam);
 
                     /**
                      * 判断参数 KafkaParam 是否已赋值
                      * @return KafkaParam 是否已赋值
+                     * 
                      */
                     bool KafkaParamHasBeenSet() const;
 
                     /**
                      * 获取重试间隔
                      * @return RetryInterval 重试间隔
+                     * 
                      */
                     uint64_t GetRetryInterval() const;
 
                     /**
                      * 设置重试间隔
-                     * @param RetryInterval 重试间隔
+                     * @param _retryInterval 重试间隔
+                     * 
                      */
                     void SetRetryInterval(const uint64_t& _retryInterval);
 
                     /**
                      * 判断参数 RetryInterval 是否已赋值
                      * @return RetryInterval 是否已赋值
+                     * 
                      */
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
                      * 获取重试次数
                      * @return MaxRetryAttempts 重试次数
+                     * 
                      */
                     uint64_t GetMaxRetryAttempts() const;
 
                     /**
                      * 设置重试次数
-                     * @param MaxRetryAttempts 重试次数
+                     * @param _maxRetryAttempts 重试次数
+                     * 
                      */
                     void SetMaxRetryAttempts(const uint64_t& _maxRetryAttempts);
 
                     /**
                      * 判断参数 MaxRetryAttempts 是否已赋值
                      * @return MaxRetryAttempts 是否已赋值
+                     * 
                      */
                     bool MaxRetryAttemptsHasBeenSet() const;
 
@@ -125,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicParam DIP Topic类型死信队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TopicParam GetTopicParam() const;
 
                     /**
                      * 设置DIP Topic类型死信队列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicParam DIP Topic类型死信队列
+                     * @param _topicParam DIP Topic类型死信队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicParam(const TopicParam& _topicParam);
 
                     /**
                      * 判断参数 TopicParam 是否已赋值
                      * @return TopicParam 是否已赋值
+                     * 
                      */
                     bool TopicParamHasBeenSet() const;
 
@@ -147,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DlqType 死信队列类型，CKAFKA，TOPIC
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDlqType() const;
 
                     /**
                      * 设置死信队列类型，CKAFKA，TOPIC
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DlqType 死信队列类型，CKAFKA，TOPIC
+                     * @param _dlqType 死信队列类型，CKAFKA，TOPIC
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDlqType(const std::string& _dlqType);
 
                     /**
                      * 判断参数 DlqType 是否已赋值
                      * @return DlqType 是否已赋值
+                     * 
                      */
                     bool DlqTypeHasBeenSet() const;
 

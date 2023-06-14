@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取事件时间
                      * @return EventTime 事件时间
+                     * 
                      */
                     std::string GetEventTime() const;
 
                     /**
                      * 设置事件时间
-                     * @param EventTime 事件时间
+                     * @param _eventTime 事件时间
+                     * 
                      */
                     void SetEventTime(const std::string& _eventTime);
 
                     /**
                      * 判断参数 EventTime 是否已赋值
                      * @return EventTime 是否已赋值
+                     * 
                      */
                     bool EventTimeHasBeenSet() const;
 
                     /**
                      * 获取事件类型
                      * @return EventType 事件类型
+                     * 
                      */
                     uint64_t GetEventType() const;
 
                     /**
                      * 设置事件类型
-                     * @param EventType 事件类型
+                     * @param _eventType 事件类型
+                     * 
                      */
                     void SetEventType(const uint64_t& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取回调请求
                      * @return Request 回调请求
+                     * 
                      */
                     std::string GetRequest() const;
 
                     /**
                      * 设置回调请求
-                     * @param Request 回调请求
+                     * @param _request 回调请求
+                     * 
                      */
                     void SetRequest(const std::string& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
                     /**
                      * 获取回调响应
                      * @return Response 回调响应
+                     * 
                      */
                     std::string GetResponse() const;
 
                     /**
                      * 设置回调响应
-                     * @param Response 回调响应
+                     * @param _response 回调响应
+                     * 
                      */
                     void SetResponse(const std::string& _response);
 
                     /**
                      * 判断参数 Response 是否已赋值
                      * @return Response 是否已赋值
+                     * 
                      */
                     bool ResponseHasBeenSet() const;
 
                     /**
                      * 获取客户接口响应时间
                      * @return ResponseTime 客户接口响应时间
+                     * 
                      */
                     std::string GetResponseTime() const;
 
                     /**
                      * 设置客户接口响应时间
-                     * @param ResponseTime 客户接口响应时间
+                     * @param _responseTime 客户接口响应时间
+                     * 
                      */
                     void SetResponseTime(const std::string& _responseTime);
 
                     /**
                      * 判断参数 ResponseTime 是否已赋值
                      * @return ResponseTime 是否已赋值
+                     * 
                      */
                     bool ResponseTimeHasBeenSet() const;
 
                     /**
                      * 获取回调结果
                      * @return ResultCode 回调结果
+                     * 
                      */
                     uint64_t GetResultCode() const;
 
                     /**
                      * 设置回调结果
-                     * @param ResultCode 回调结果
+                     * @param _resultCode 回调结果
+                     * 
                      */
                     void SetResultCode(const uint64_t& _resultCode);
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
                     /**
                      * 获取流名称
                      * @return StreamId 流名称
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置流名称
-                     * @param StreamId 流名称
+                     * @param _streamId 流名称
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 

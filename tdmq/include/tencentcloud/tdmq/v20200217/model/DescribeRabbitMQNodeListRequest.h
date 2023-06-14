@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取rabbitmq集群ID
                      * @return InstanceId rabbitmq集群ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置rabbitmq集群ID
-                     * @param InstanceId rabbitmq集群ID
+                     * @param _instanceId rabbitmq集群ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取一页限制
                      * @return Limit 一页限制
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页限制
-                     * @param Limit 一页限制
+                     * @param _limit 一页限制
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取模糊搜索节点名字
                      * @return NodeName 模糊搜索节点名字
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置模糊搜索节点名字
-                     * @param NodeName 模糊搜索节点名字
+                     * @param _nodeName 模糊搜索节点名字
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -126,6 +138,7 @@ running/down
 running/down
 数组类型，兼容后续添加过滤参数
 
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -135,17 +148,19 @@ running/down
 running/down
 数组类型，兼容后续添加过滤参数
 
-                     * @param Filters 过滤参数的名字和数值
+                     * @param _filters 过滤参数的名字和数值
 现在只有一个nodeStatus
 running/down
 数组类型，兼容后续添加过滤参数
 
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -154,20 +169,23 @@ running/down
 cpuUsage/diskUsage
                      * @return SortElement 按指定元素排序，现在只有2个
 cpuUsage/diskUsage
+                     * 
                      */
                     std::string GetSortElement() const;
 
                     /**
                      * 设置按指定元素排序，现在只有2个
 cpuUsage/diskUsage
-                     * @param SortElement 按指定元素排序，现在只有2个
+                     * @param _sortElement 按指定元素排序，现在只有2个
 cpuUsage/diskUsage
+                     * 
                      */
                     void SetSortElement(const std::string& _sortElement);
 
                     /**
                      * 判断参数 SortElement 是否已赋值
                      * @return SortElement 是否已赋值
+                     * 
                      */
                     bool SortElementHasBeenSet() const;
 
@@ -176,20 +194,23 @@ cpuUsage/diskUsage
 ascend/descend
                      * @return SortOrder 升序/降序
 ascend/descend
+                     * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
                      * 设置升序/降序
 ascend/descend
-                     * @param SortOrder 升序/降序
+                     * @param _sortOrder 升序/降序
 ascend/descend
+                     * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
 
                     /**
                      * 判断参数 SortOrder 是否已赋值
                      * @return SortOrder 是否已赋值
+                     * 
                      */
                     bool SortOrderHasBeenSet() const;
 

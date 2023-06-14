@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取模型名称
                      * @return Name 模型名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模型名称
-                     * @param Name 模型名称
+                     * @param _name 模型名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取要部署的模型文件路径名
                      * @return Model 要部署的模型文件路径名
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 设置要部署的模型文件路径名
-                     * @param Model 要部署的模型文件路径名
+                     * @param _model 要部署的模型文件路径名
+                     * 
                      */
                     void SetModel(const std::string& _model);
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
                     /**
                      * 获取关于模型的描述
                      * @return Description 关于模型的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置关于模型的描述
-                     * @param Description 关于模型的描述
+                     * @param _description 关于模型的描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取部署目标集群的名称，`集群模式` 必填
                      * @return Cluster 部署目标集群的名称，`集群模式` 必填
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置部署目标集群的名称，`集群模式` 必填
-                     * @param Cluster 部署目标集群的名称，`集群模式` 必填
+                     * @param _cluster 部署目标集群的名称，`集群模式` 必填
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)
                      * @return RuntimeVersion 运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)
+                     * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
                      * 设置运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)
-                     * @param RuntimeVersion 运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)
+                     * @param _runtimeVersion 运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)
+                     * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
 
                     /**
                      * 判断参数 RuntimeVersion 是否已赋值
                      * @return RuntimeVersion 是否已赋值
+                     * 
                      */
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
                      * 获取要部署的模型副本数目，`集群模式` 选填
                      * @return Replicas 要部署的模型副本数目，`集群模式` 选填
+                     * 
                      */
                     uint64_t GetReplicas() const;
 
                     /**
                      * 设置要部署的模型副本数目，`集群模式` 选填
-                     * @param Replicas 要部署的模型副本数目，`集群模式` 选填
+                     * @param _replicas 要部署的模型副本数目，`集群模式` 选填
+                     * 
                      */
                     void SetReplicas(const uint64_t& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
                     /**
                      * 获取暴露外网或内网，默认暴露外网，`集群模式` 选填
                      * @return Expose 暴露外网或内网，默认暴露外网，`集群模式` 选填
+                     * 
                      */
                     std::string GetExpose() const;
 
                     /**
                      * 设置暴露外网或内网，默认暴露外网，`集群模式` 选填
-                     * @param Expose 暴露外网或内网，默认暴露外网，`集群模式` 选填
+                     * @param _expose 暴露外网或内网，默认暴露外网，`集群模式` 选填
+                     * 
                      */
                     void SetExpose(const std::string& _expose);
 
                     /**
                      * 判断参数 Expose 是否已赋值
                      * @return Expose 是否已赋值
+                     * 
                      */
                     bool ExposeHasBeenSet() const;
 
                     /**
                      * 获取部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)
                      * @return ServType 部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)
+                     * 
                      */
                     std::string GetServType() const;
 
                     /**
                      * 设置部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)
-                     * @param ServType 部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)
+                     * @param _servType 部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)
+                     * 
                      */
                     void SetServType(const std::string& _servType);
 
                     /**
                      * 判断参数 ServType 是否已赋值
                      * @return ServType 是否已赋值
+                     * 
                      */
                     bool ServTypeHasBeenSet() const;
 
                     /**
                      * 获取`无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)
                      * @return RuntimeConf `无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)
+                     * 
                      */
                     std::vector<std::string> GetRuntimeConf() const;
 
                     /**
                      * 设置`无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)
-                     * @param RuntimeConf `无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)
+                     * @param _runtimeConf `无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)
+                     * 
                      */
                     void SetRuntimeConf(const std::vector<std::string>& _runtimeConf);
 
                     /**
                      * 判断参数 RuntimeConf 是否已赋值
                      * @return RuntimeConf 是否已赋值
+                     * 
                      */
                     bool RuntimeConfHasBeenSet() const;
 

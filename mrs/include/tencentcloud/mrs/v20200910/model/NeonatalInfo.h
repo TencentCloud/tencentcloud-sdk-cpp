@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalName 新生儿名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNeonatalName() const;
 
                     /**
                      * 设置新生儿名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NeonatalName 新生儿名字
+                     * @param _neonatalName 新生儿名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNeonatalName(const std::string& _neonatalName);
 
                     /**
                      * 判断参数 NeonatalName 是否已赋值
                      * @return NeonatalName 是否已赋值
+                     * 
                      */
                     bool NeonatalNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalGender 新生儿性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNeonatalGender() const;
 
                     /**
                      * 设置新生儿性别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NeonatalGender 新生儿性别
+                     * @param _neonatalGender 新生儿性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNeonatalGender(const std::string& _neonatalGender);
 
                     /**
                      * 判断参数 NeonatalGender 是否已赋值
                      * @return NeonatalGender 是否已赋值
+                     * 
                      */
                     bool NeonatalGenderHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthLength 出生身长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthLength() const;
 
                     /**
                      * 设置出生身长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthLength 出生身长
+                     * @param _birthLength 出生身长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthLength(const std::string& _birthLength);
 
                     /**
                      * 判断参数 BirthLength 是否已赋值
                      * @return BirthLength 是否已赋值
+                     * 
                      */
                     bool BirthLengthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthWeight 出生体重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthWeight() const;
 
                     /**
                      * 设置出生体重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthWeight 出生体重
+                     * @param _birthWeight 出生体重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthWeight(const std::string& _birthWeight);
 
                     /**
                      * 判断参数 BirthWeight 是否已赋值
                      * @return BirthWeight 是否已赋值
+                     * 
                      */
                     bool BirthWeightHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GestationalAge 出生孕周
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGestationalAge() const;
 
                     /**
                      * 设置出生孕周
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GestationalAge 出生孕周
+                     * @param _gestationalAge 出生孕周
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGestationalAge(const std::string& _gestationalAge);
 
                     /**
                      * 判断参数 GestationalAge 是否已赋值
                      * @return GestationalAge 是否已赋值
+                     * 
                      */
                     bool GestationalAgeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthTime 出生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthTime() const;
 
                     /**
                      * 设置出生时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthTime 出生时间
+                     * @param _birthTime 出生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthTime(const std::string& _birthTime);
 
                     /**
                      * 判断参数 BirthTime 是否已赋值
                      * @return BirthTime 是否已赋值
+                     * 
                      */
                     bool BirthTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthPlace 出生地点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthPlace() const;
 
                     /**
                      * 设置出生地点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthPlace 出生地点
+                     * @param _birthPlace 出生地点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthPlace(const std::string& _birthPlace);
 
                     /**
                      * 判断参数 BirthPlace 是否已赋值
                      * @return BirthPlace 是否已赋值
+                     * 
                      */
                     bool BirthPlaceHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicalInstitutions 医疗机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMedicalInstitutions() const;
 
                     /**
                      * 设置医疗机构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MedicalInstitutions 医疗机构
+                     * @param _medicalInstitutions 医疗机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMedicalInstitutions(const std::string& _medicalInstitutions);
 
                     /**
                      * 判断参数 MedicalInstitutions 是否已赋值
                      * @return MedicalInstitutions 是否已赋值
+                     * 
                      */
                     bool MedicalInstitutionsHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取固件版本号
                      * @return OtaVersion 固件版本号
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置固件版本号
-                     * @param OtaVersion 固件版本号
+                     * @param _otaVersion 固件版本号
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
                     /**
                      * 获取是否立即升级
                      * @return UpgradeNow 是否立即升级
+                     * 
                      */
                     bool GetUpgradeNow() const;
 
                     /**
                      * 设置是否立即升级
-                     * @param UpgradeNow 是否立即升级
+                     * @param _upgradeNow 是否立即升级
+                     * 
                      */
                     void SetUpgradeNow(const bool& _upgradeNow);
 
                     /**
                      * 判断参数 UpgradeNow 是否已赋值
                      * @return UpgradeNow 是否已赋值
+                     * 
                      */
                     bool UpgradeNowHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取组织列表
                      * @return GroupList 组织列表
+                     * 
                      */
                     std::vector<GroupDetailForUser> GetGroupList() const;
 
                     /**
                      * 设置组织列表
-                     * @param GroupList 组织列表
+                     * @param _groupList 组织列表
+                     * 
                      */
                     void SetGroupList(const std::vector<GroupDetailForUser>& _groupList);
 
                     /**
                      * 判断参数 GroupList 是否已赋值
                      * @return GroupList 是否已赋值
+                     * 
                      */
                     bool GroupListHasBeenSet() const;
 
                     /**
                      * 获取网络名称
                      * @return ClusterName 网络名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置网络名称
-                     * @param ClusterName 网络名称
+                     * @param _clusterName 网络名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 

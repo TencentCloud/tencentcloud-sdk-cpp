@@ -55,6 +55,7 @@ namespace TencentCloud
 <li> add：添加 HTTP 头部；</li>
 <li> set：重写 HTTP 头部；</li>
 <li> del：删除 HTTP 头部。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -63,52 +64,60 @@ namespace TencentCloud
 <li> add：添加 HTTP 头部；</li>
 <li> set：重写 HTTP 头部；</li>
 <li> del：删除 HTTP 头部。</li>
-                     * @param Action 功能参数名称，参数填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。现在只有三种取值：
+                     * @param _action 功能参数名称，参数填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。现在只有三种取值：
 <li> add：添加 HTTP 头部；</li>
 <li> set：重写 HTTP 头部；</li>
 <li> del：删除 HTTP 头部。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取参数名称。
                      * @return Name 参数名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名称。
-                     * @param Name 参数名称。
+                     * @param _name 参数名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取参数值。
                      * @return Values 参数值。
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置参数值。
-                     * @param Values 参数值。
+                     * @param _values 参数值。
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

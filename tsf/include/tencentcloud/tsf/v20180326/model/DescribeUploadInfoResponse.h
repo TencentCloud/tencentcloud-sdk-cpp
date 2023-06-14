@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取COS上传信息
                      * @return Result COS上传信息
+                     * 
                      */
                     CosUploadInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

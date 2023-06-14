@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件的 Md5 值。
                      * @return Md5 媒体文件的 Md5 值。
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置媒体文件的 Md5 值。
-                     * @param Md5 媒体文件的 Md5 值。
+                     * @param _md5 媒体文件的 Md5 值。
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 
                     /**
                      * 获取媒体文件的 Sha1 值。
                      * @return Sha1 媒体文件的 Sha1 值。
+                     * 
                      */
                     std::string GetSha1() const;
 
                     /**
                      * 设置媒体文件的 Sha1 值。
-                     * @param Sha1 媒体文件的 Sha1 值。
+                     * @param _sha1 媒体文件的 Sha1 值。
+                     * 
                      */
                     void SetSha1(const std::string& _sha1);
 
                     /**
                      * 判断参数 Sha1 是否已赋值
                      * @return Sha1 是否已赋值
+                     * 
                      */
                     bool Sha1HasBeenSet() const;
 

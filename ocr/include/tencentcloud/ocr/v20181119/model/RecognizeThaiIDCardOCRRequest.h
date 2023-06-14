@@ -47,20 +47,23 @@ namespace TencentCloud
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+                     * @param _imageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @param ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
                      * @return CropPortrait 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
 设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     * 
                      */
                     bool GetCropPortrait() const;
 
                     /**
                      * 设置图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
 设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
-                     * @param CropPortrait 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+                     * @param _cropPortrait 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
 设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     * 
                      */
                     void SetCropPortrait(const bool& _cropPortrait);
 
                     /**
                      * 判断参数 CropPortrait 是否已赋值
                      * @return CropPortrait 是否已赋值
+                     * 
                      */
                     bool CropPortraitHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询的机型所在可用区，如：ap-guangzhou-3，默认为空，即不按可用区过滤信息
                      * @return Zone 查询的机型所在可用区，如：ap-guangzhou-3，默认为空，即不按可用区过滤信息
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置查询的机型所在可用区，如：ap-guangzhou-3，默认为空，即不按可用区过滤信息
-                     * @param Zone 查询的机型所在可用区，如：ap-guangzhou-3，默认为空，即不按可用区过滤信息
+                     * @param _zone 查询的机型所在可用区，如：ap-guangzhou-3，默认为空，即不按可用区过滤信息
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取查询的实例机型系列信息，如：S5，默认为空，即不按机型系列过滤信息
                      * @return InstanceFamily 查询的实例机型系列信息，如：S5，默认为空，即不按机型系列过滤信息
+                     * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
                      * 设置查询的实例机型系列信息，如：S5，默认为空，即不按机型系列过滤信息
-                     * @param InstanceFamily 查询的实例机型系列信息，如：S5，默认为空，即不按机型系列过滤信息
+                     * @param _instanceFamily 查询的实例机型系列信息，如：S5，默认为空，即不按机型系列过滤信息
+                     * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
 
                     /**
                      * 判断参数 InstanceFamily 是否已赋值
                      * @return InstanceFamily 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取查询的实例机型信息，如：S5.LARGE8，默认为空，即不按机型过滤信息
                      * @return InstanceType 查询的实例机型信息，如：S5.LARGE8，默认为空，即不按机型过滤信息
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置查询的实例机型信息，如：S5.LARGE8，默认为空，即不按机型过滤信息
-                     * @param InstanceType 查询的实例机型信息，如：S5.LARGE8，默认为空，即不按机型过滤信息
+                     * @param _instanceType 查询的实例机型信息，如：S5.LARGE8，默认为空，即不按机型过滤信息
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取列表
                      * @return OtherInvoiceItemList 列表
+                     * 
                      */
                     std::vector<OtherInvoiceItem> GetOtherInvoiceItemList() const;
 
                     /**
                      * 设置列表
-                     * @param OtherInvoiceItemList 列表
+                     * @param _otherInvoiceItemList 列表
+                     * 
                      */
                     void SetOtherInvoiceItemList(const std::vector<OtherInvoiceItem>& _otherInvoiceItemList);
 
                     /**
                      * 判断参数 OtherInvoiceItemList 是否已赋值
                      * @return OtherInvoiceItemList 是否已赋值
+                     * 
                      */
                     bool OtherInvoiceItemListHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableIdlType 表格描述语言类型：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableIdlType() const;
 
                     /**
                      * 设置表格描述语言类型：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableIdlType 表格描述语言类型：`PROTO`或`TDR`
+                     * @param _tableIdlType 表格描述语言类型：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableIdlType(const std::string& _tableIdlType);
 
                     /**
                      * 判断参数 TableIdlType 是否已赋值
                      * @return TableIdlType 是否已赋值
+                     * 
                      */
                     bool TableIdlTypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableInstanceId 表格实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableInstanceId() const;
 
                     /**
                      * 设置表格实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableInstanceId 表格实例ID
+                     * @param _tableInstanceId 表格实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableInstanceId(const std::string& _tableInstanceId);
 
                     /**
                      * 判断参数 TableInstanceId 是否已赋值
                      * @return TableInstanceId 是否已赋值
+                     * 
                      */
                     bool TableInstanceIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表格名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表格名称
+                     * @param _tableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableType 表格数据结构类型：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableType() const;
 
                     /**
                      * 设置表格数据结构类型：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableType 表格数据结构类型：`GENERIC`或`LIST`
+                     * @param _tableType 表格数据结构类型：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableType(const std::string& _tableType);
 
                     /**
                      * 判断参数 TableType 是否已赋值
                      * @return TableType 是否已赋值
+                     * 
                      */
                     bool TableTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyFields 主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyFields() const;
 
                     /**
                      * 设置主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyFields 主键字段信息
+                     * @param _keyFields 主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyFields(const std::string& _keyFields);
 
                     /**
                      * 判断参数 KeyFields 是否已赋值
                      * @return KeyFields 是否已赋值
+                     * 
                      */
                     bool KeyFieldsHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldKeyFields 原主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldKeyFields() const;
 
                     /**
                      * 设置原主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldKeyFields 原主键字段信息，改表校验时有效
+                     * @param _oldKeyFields 原主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldKeyFields(const std::string& _oldKeyFields);
 
                     /**
                      * 判断参数 OldKeyFields 是否已赋值
                      * @return OldKeyFields 是否已赋值
+                     * 
                      */
                     bool OldKeyFieldsHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueFields 非主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValueFields() const;
 
                     /**
                      * 设置非主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueFields 非主键字段信息
+                     * @param _valueFields 非主键字段信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueFields(const std::string& _valueFields);
 
                     /**
                      * 判断参数 ValueFields 是否已赋值
                      * @return ValueFields 是否已赋值
+                     * 
                      */
                     bool ValueFieldsHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValueFields 原非主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldValueFields() const;
 
                     /**
                      * 设置原非主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldValueFields 原非主键字段信息，改表校验时有效
+                     * @param _oldValueFields 原非主键字段信息，改表校验时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldValueFields(const std::string& _oldValueFields);
 
                     /**
                      * 判断参数 OldValueFields 是否已赋值
                      * @return OldValueFields 是否已赋值
+                     * 
                      */
                     bool OldValueFieldsHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupId 所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableGroupId 所属表格组ID
+                     * @param _tableGroupId 所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SumKeyFieldSize 主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSumKeyFieldSize() const;
 
                     /**
                      * 设置主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SumKeyFieldSize 主键字段总大小
+                     * @param _sumKeyFieldSize 主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSumKeyFieldSize(const int64_t& _sumKeyFieldSize);
 
                     /**
                      * 判断参数 SumKeyFieldSize 是否已赋值
                      * @return SumKeyFieldSize 是否已赋值
+                     * 
                      */
                     bool SumKeyFieldSizeHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SumValueFieldSize 非主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSumValueFieldSize() const;
 
                     /**
                      * 设置非主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SumValueFieldSize 非主键字段总大小
+                     * @param _sumValueFieldSize 非主键字段总大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSumValueFieldSize(const int64_t& _sumValueFieldSize);
 
                     /**
                      * 判断参数 SumValueFieldSize 是否已赋值
                      * @return SumValueFieldSize 是否已赋值
+                     * 
                      */
                     bool SumValueFieldSizeHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexKeySet 索引键集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexKeySet() const;
 
                     /**
                      * 设置索引键集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexKeySet 索引键集合
+                     * @param _indexKeySet 索引键集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexKeySet(const std::string& _indexKeySet);
 
                     /**
                      * 判断参数 IndexKeySet 是否已赋值
                      * @return IndexKeySet 是否已赋值
+                     * 
                      */
                     bool IndexKeySetHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardingKeySet 分表因子集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShardingKeySet() const;
 
                     /**
                      * 设置分表因子集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShardingKeySet 分表因子集合
+                     * @param _shardingKeySet 分表因子集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShardingKeySet(const std::string& _shardingKeySet);
 
                     /**
                      * 判断参数 ShardingKeySet 是否已赋值
                      * @return ShardingKeySet 是否已赋值
+                     * 
                      */
                     bool ShardingKeySetHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TdrVersion TDR版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTdrVersion() const;
 
                     /**
                      * 设置TDR版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TdrVersion TDR版本号
+                     * @param _tdrVersion TDR版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTdrVersion(const int64_t& _tdrVersion);
 
                     /**
                      * 判断参数 TdrVersion 是否已赋值
                      * @return TdrVersion 是否已赋值
+                     * 
                      */
                     bool TdrVersionHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListElementNum LIST类型表格元素个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetListElementNum() const;
 
                     /**
                      * 设置LIST类型表格元素个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListElementNum LIST类型表格元素个数
+                     * @param _listElementNum LIST类型表格元素个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListElementNum(const int64_t& _listElementNum);
 
                     /**
                      * 判断参数 ListElementNum 是否已赋值
                      * @return ListElementNum 是否已赋值
+                     * 
                      */
                     bool ListElementNumHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SortFieldNum SORTLIST类型表格排序字段个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSortFieldNum() const;
 
                     /**
                      * 设置SORTLIST类型表格排序字段个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SortFieldNum SORTLIST类型表格排序字段个数
+                     * @param _sortFieldNum SORTLIST类型表格排序字段个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSortFieldNum(const int64_t& _sortFieldNum);
 
                     /**
                      * 判断参数 SortFieldNum 是否已赋值
                      * @return SortFieldNum 是否已赋值
+                     * 
                      */
                     bool SortFieldNumHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SortRule SORTLIST类型表格排序顺序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSortRule() const;
 
                     /**
                      * 设置SORTLIST类型表格排序顺序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SortRule SORTLIST类型表格排序顺序
+                     * @param _sortRule SORTLIST类型表格排序顺序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSortRule(const int64_t& _sortRule);
 
                     /**
                      * 判断参数 SortRule 是否已赋值
                      * @return SortRule 是否已赋值
+                     * 
                      */
                     bool SortRuleHasBeenSet() const;
 

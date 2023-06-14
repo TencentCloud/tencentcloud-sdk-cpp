@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取topic类型
                      * @return TopicType topic类型
+                     * 
                      */
                     std::string GetTopicType() const;
 
                     /**
                      * 设置topic类型
-                     * @param TopicType topic类型
+                     * @param _topicType topic类型
+                     * 
                      */
                     void SetTopicType(const std::string& _topicType);
 
                     /**
                      * 判断参数 TopicType 是否已赋值
                      * @return TopicType 是否已赋值
+                     * 
                      */
                     bool TopicTypeHasBeenSet() const;
 
                     /**
                      * 获取topic数量
                      * @return Count topic数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置topic数量
-                     * @param Count topic数量
+                     * @param _count topic数量
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

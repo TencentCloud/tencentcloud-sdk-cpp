@@ -54,6 +54,7 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
 服务角色：
 qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
+                     * 
                      */
                     std::string GetRoleArn() const;
 
@@ -63,17 +64,19 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
 服务角色：
 qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
-                     * @param RoleArn 角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+                     * @param _roleArn 角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
 普通角色：
 qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName
 服务角色：
 qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName
+                     * 
                      */
                     void SetRoleArn(const std::string& _roleArn);
 
                     /**
                      * 判断参数 RoleArn 是否已赋值
                      * @return RoleArn 是否已赋值
+                     * 
                      */
                     bool RoleArnHasBeenSet() const;
 
@@ -82,38 +85,44 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
                      * @return RoleSessionName 临时会话名称，由用户自定义名称。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
+                     * 
                      */
                     std::string GetRoleSessionName() const;
 
                     /**
                      * 设置临时会话名称，由用户自定义名称。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
-                     * @param RoleSessionName 临时会话名称，由用户自定义名称。
+                     * @param _roleSessionName 临时会话名称，由用户自定义名称。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\w+=,.@_-]*
+                     * 
                      */
                     void SetRoleSessionName(const std::string& _roleSessionName);
 
                     /**
                      * 判断参数 RoleSessionName 是否已赋值
                      * @return RoleSessionName 是否已赋值
+                     * 
                      */
                     bool RoleSessionNameHasBeenSet() const;
 
                     /**
                      * 获取指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
                      * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * 
                      */
                     uint64_t GetDurationSeconds() const;
 
                     /**
                      * 设置指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
-                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * @param _durationSeconds 指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒
+                     * 
                      */
                     void SetDurationSeconds(const uint64_t& _durationSeconds);
 
                     /**
                      * 判断参数 DurationSeconds 是否已赋值
                      * @return DurationSeconds 是否已赋值
+                     * 
                      */
                     bool DurationSecondsHasBeenSet() const;
 
@@ -128,6 +137,7 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。
 2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 3、策略中不能包含 principal 元素。
+                     * 
                      */
                     std::string GetPolicy() const;
 
@@ -137,17 +147,19 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。
 2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 3、策略中不能包含 principal 元素。
-                     * @param Policy 策略描述
+                     * @param _policy 策略描述
 注意：
 1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。
 2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 3、策略中不能包含 principal 元素。
+                     * 
                      */
                     void SetPolicy(const std::string& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 
@@ -156,56 +168,65 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
                      * @return ExternalId 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     * 
                      */
                     std::string GetExternalId() const;
 
                     /**
                      * 设置角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
-                     * @param ExternalId 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
+                     * @param _externalId 角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。
 长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\w+=,.@:\/-]*
+                     * 
                      */
                     void SetExternalId(const std::string& _externalId);
 
                     /**
                      * 判断参数 ExternalId 是否已赋值
                      * @return ExternalId 是否已赋值
+                     * 
                      */
                     bool ExternalIdHasBeenSet() const;
 
                     /**
                      * 获取会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
                      * @return Tags 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
-                     * @param Tags 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     * @param _tags 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取调用者身份uin
                      * @return SourceIdentity 调用者身份uin
+                     * 
                      */
                     std::string GetSourceIdentity() const;
 
                     /**
                      * 设置调用者身份uin
-                     * @param SourceIdentity 调用者身份uin
+                     * @param _sourceIdentity 调用者身份uin
+                     * 
                      */
                     void SetSourceIdentity(const std::string& _sourceIdentity);
 
                     /**
                      * 判断参数 SourceIdentity 是否已赋值
                      * @return SourceIdentity 是否已赋值
+                     * 
                      */
                     bool SourceIdentityHasBeenSet() const;
 

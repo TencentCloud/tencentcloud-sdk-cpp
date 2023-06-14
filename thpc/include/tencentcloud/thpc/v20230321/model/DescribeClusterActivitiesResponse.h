@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取集群活动历史记录列表。
                      * @return ClusterActivitySet 集群活动历史记录列表。
+                     * 
                      */
                     std::vector<ClusterActivity> GetClusterActivitySet() const;
 
                     /**
                      * 判断参数 ClusterActivitySet 是否已赋值
                      * @return ClusterActivitySet 是否已赋值
+                     * 
                      */
                     bool ClusterActivitySetHasBeenSet() const;
 
                     /**
                      * 获取集群活动历史记录数量。
                      * @return TotalCount 集群活动历史记录数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的记录总数。
                      * @return TotalCount 符合条件的记录总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取该分类路径下及其子分类下的所有媒体基础信息列表。
                      * @return MaterialInfoSet 该分类路径下及其子分类下的所有媒体基础信息列表。
+                     * 
                      */
                     std::vector<MaterialInfo> GetMaterialInfoSet() const;
 
                     /**
                      * 判断参数 MaterialInfoSet 是否已赋值
                      * @return MaterialInfoSet 是否已赋值
+                     * 
                      */
                     bool MaterialInfoSetHasBeenSet() const;
 

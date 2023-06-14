@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrFront OCR正面照片的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcrFront() const;
 
                     /**
                      * 设置OCR正面照片的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrFront OCR正面照片的base64编码。
+                     * @param _ocrFront OCR正面照片的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcrFront(const std::string& _ocrFront);
 
                     /**
                      * 判断参数 OcrFront 是否已赋值
                      * @return OcrFront 是否已赋值
+                     * 
                      */
                     bool OcrFrontHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrBack OCR反面照片的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcrBack() const;
 
                     /**
                      * 设置OCR反面照片的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrBack OCR反面照片的base64编码
+                     * @param _ocrBack OCR反面照片的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcrBack(const std::string& _ocrBack);
 
                     /**
                      * 判断参数 OcrBack 是否已赋值
                      * @return OcrBack 是否已赋值
+                     * 
                      */
                     bool OcrBackHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessedFrontImage 旋转裁边后的正面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessedFrontImage() const;
 
                     /**
                      * 设置旋转裁边后的正面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessedFrontImage 旋转裁边后的正面照片base64编码。
+                     * @param _processedFrontImage 旋转裁边后的正面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessedFrontImage(const std::string& _processedFrontImage);
 
                     /**
                      * 判断参数 ProcessedFrontImage 是否已赋值
                      * @return ProcessedFrontImage 是否已赋值
+                     * 
                      */
                     bool ProcessedFrontImageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessedBackImage 旋转裁边后的背面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessedBackImage() const;
 
                     /**
                      * 设置旋转裁边后的背面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessedBackImage 旋转裁边后的背面照片base64编码。
+                     * @param _processedBackImage 旋转裁边后的背面照片base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessedBackImage(const std::string& _processedBackImage);
 
                     /**
                      * 判断参数 ProcessedBackImage 是否已赋值
                      * @return ProcessedBackImage 是否已赋值
+                     * 
                      */
                     bool ProcessedBackImageHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Avatar 身份证正面人像图base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置身份证正面人像图base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Avatar 身份证正面人像图base64编码。
+                     * @param _avatar 身份证正面人像图base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvatar(const std::string& _avatar);
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 
@@ -177,6 +192,7 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetWarnInfos() const;
 
@@ -191,7 +207,7 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarnInfos 身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：
+                     * @param _warnInfos 身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：
 -9100 身份证有效日期不合法告警，
 -9101 身份证边框不完整告警，
 -9102 身份证复印件告警，
@@ -201,12 +217,14 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWarnInfos(const std::vector<int64_t>& _warnInfos);
 
                     /**
                      * 判断参数 WarnInfos 是否已赋值
                      * @return WarnInfos 是否已赋值
+                     * 
                      */
                     bool WarnInfosHasBeenSet() const;
 
@@ -231,6 +249,7 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetBackWarnInfos() const;
 
@@ -245,7 +264,7 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackWarnInfos 身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：
+                     * @param _backWarnInfos 身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：
 -9100 身份证有效日期不合法告警，
 -9101 身份证边框不完整告警，
 -9102 身份证复印件告警，
@@ -255,12 +274,14 @@ namespace TencentCloud
 -9106 身份证 PS 告警，
 -9107 身份证反光告警。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackWarnInfos(const std::vector<int64_t>& _backWarnInfos);
 
                     /**
                      * 判断参数 BackWarnInfos 是否已赋值
                      * @return BackWarnInfos 是否已赋值
+                     * 
                      */
                     bool BackWarnInfosHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 维度名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置维度名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 维度名称
+                     * @param _name 维度名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWeight() const;
 
                     /**
                      * 设置权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 权重
+                     * @param _weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const double& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 设置人id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUserId() const;
 
                     /**
                      * 设置设置人id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 设置人id
+                     * @param _userId 设置人id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const int64_t& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 设置人名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置设置人名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 设置人名
+                     * @param _userName 设置人名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -139,56 +151,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间 时间戳
+                     * @param _updateTime 更新时间 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取参与评估表数量
                      * @return JoinTableNumber 参与评估表数量
+                     * 
                      */
                     int64_t GetJoinTableNumber() const;
 
                     /**
                      * 设置参与评估表数量
-                     * @param JoinTableNumber 参与评估表数量
+                     * @param _joinTableNumber 参与评估表数量
+                     * 
                      */
                     void SetJoinTableNumber(const int64_t& _joinTableNumber);
 
                     /**
                      * 判断参数 JoinTableNumber 是否已赋值
                      * @return JoinTableNumber 是否已赋值
+                     * 
                      */
                     bool JoinTableNumberHasBeenSet() const;
 
                     /**
                      * 获取评分
                      * @return Score 评分
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置评分
-                     * @param Score 评分
+                     * @param _score 评分
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

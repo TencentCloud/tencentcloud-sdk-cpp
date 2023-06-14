@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取存证名称(长度最大30)
                      * @return EvidenceName 存证名称(长度最大30)
+                     * 
                      */
                     std::string GetEvidenceName() const;
 
                     /**
                      * 设置存证名称(长度最大30)
-                     * @param EvidenceName 存证名称(长度最大30)
+                     * @param _evidenceName 存证名称(长度最大30)
+                     * 
                      */
                     void SetEvidenceName(const std::string& _evidenceName);
 
                     /**
                      * 判断参数 EvidenceName 是否已赋值
                      * @return EvidenceName 是否已赋值
+                     * 
                      */
                     bool EvidenceNameHasBeenSet() const;
 
                     /**
                      * 获取数据hash
                      * @return EvidenceHash 数据hash
+                     * 
                      */
                     std::string GetEvidenceHash() const;
 
                     /**
                      * 设置数据hash
-                     * @param EvidenceHash 数据hash
+                     * @param _evidenceHash 数据hash
+                     * 
                      */
                     void SetEvidenceHash(const std::string& _evidenceHash);
 
                     /**
                      * 判断参数 EvidenceHash 是否已赋值
                      * @return EvidenceHash 是否已赋值
+                     * 
                      */
                     bool EvidenceHashHasBeenSet() const;
 
                     /**
                      * 获取该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
                      * @return BusinessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
-                     * @param BusinessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * @param _businessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * 
                      */
                     void SetBusinessId(const std::string& _businessId);
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取存证描述
                      * @return EvidenceDescription 存证描述
+                     * 
                      */
                     std::string GetEvidenceDescription() const;
 
                     /**
                      * 设置存证描述
-                     * @param EvidenceDescription 存证描述
+                     * @param _evidenceDescription 存证描述
+                     * 
                      */
                     void SetEvidenceDescription(const std::string& _evidenceDescription);
 
                     /**
                      * 判断参数 EvidenceDescription 是否已赋值
                      * @return EvidenceDescription 是否已赋值
+                     * 
                      */
                     bool EvidenceDescriptionHasBeenSet() const;
 

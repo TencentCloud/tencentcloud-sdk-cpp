@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationInfoList 返回的应用授权信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthorizationInfo> GetAuthorizationInfoList() const;
 
                     /**
                      * 判断参数 AuthorizationInfoList 是否已赋值
                      * @return AuthorizationInfoList 是否已赋值
+                     * 
                      */
                     bool AuthorizationInfoListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 返回的应用信息总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

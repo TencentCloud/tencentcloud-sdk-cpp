@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取短信模板id数组
                      * @return TemplateIdSet 短信模板id数组
+                     * 
                      */
                     std::vector<uint64_t> GetTemplateIdSet() const;
 
                     /**
                      * 设置短信模板id数组
-                     * @param TemplateIdSet 短信模板id数组
+                     * @param _templateIdSet 短信模板id数组
+                     * 
                      */
                     void SetTemplateIdSet(const std::vector<uint64_t>& _templateIdSet);
 
                     /**
                      * 判断参数 TemplateIdSet 是否已赋值
                      * @return TemplateIdSet 是否已赋值
+                     * 
                      */
                     bool TemplateIdSetHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return International 是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
+                     * 
                      */
                     uint64_t GetInternational() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
-                     * @param International 是否国际/港澳台短信：
+                     * @param _international 是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
+                     * 
                      */
                     void SetInternational(const uint64_t& _international);
 
                     /**
                      * 判断参数 International 是否已赋值
                      * @return International 是否已赋值
+                     * 
                      */
                     bool InternationalHasBeenSet() const;
 

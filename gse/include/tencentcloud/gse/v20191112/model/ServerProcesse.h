@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取并发执行数量，所有进程并发执行总数最小值1，最大值50
                      * @return ConcurrentExecutions 并发执行数量，所有进程并发执行总数最小值1，最大值50
+                     * 
                      */
                     uint64_t GetConcurrentExecutions() const;
 
                     /**
                      * 设置并发执行数量，所有进程并发执行总数最小值1，最大值50
-                     * @param ConcurrentExecutions 并发执行数量，所有进程并发执行总数最小值1，最大值50
+                     * @param _concurrentExecutions 并发执行数量，所有进程并发执行总数最小值1，最大值50
+                     * 
                      */
                     void SetConcurrentExecutions(const uint64_t& _concurrentExecutions);
 
                     /**
                      * 判断参数 ConcurrentExecutions 是否已赋值
                      * @return ConcurrentExecutions 是否已赋值
+                     * 
                      */
                     bool ConcurrentExecutionsHasBeenSet() const;
 
                     /**
                      * 获取启动路径：Linux路径/local/game/ 或WIndows路径C:\game\，最小长度1，最大长度1024
                      * @return LaunchPath 启动路径：Linux路径/local/game/ 或WIndows路径C:\game\，最小长度1，最大长度1024
+                     * 
                      */
                     std::string GetLaunchPath() const;
 
                     /**
                      * 设置启动路径：Linux路径/local/game/ 或WIndows路径C:\game\，最小长度1，最大长度1024
-                     * @param LaunchPath 启动路径：Linux路径/local/game/ 或WIndows路径C:\game\，最小长度1，最大长度1024
+                     * @param _launchPath 启动路径：Linux路径/local/game/ 或WIndows路径C:\game\，最小长度1，最大长度1024
+                     * 
                      */
                     void SetLaunchPath(const std::string& _launchPath);
 
                     /**
                      * 判断参数 LaunchPath 是否已赋值
                      * @return LaunchPath 是否已赋值
+                     * 
                      */
                     bool LaunchPathHasBeenSet() const;
 
                     /**
                      * 获取启动参数，最小长度0，最大长度1024
                      * @return Parameters 启动参数，最小长度0，最大长度1024
+                     * 
                      */
                     std::string GetParameters() const;
 
                     /**
                      * 设置启动参数，最小长度0，最大长度1024
-                     * @param Parameters 启动参数，最小长度0，最大长度1024
+                     * @param _parameters 启动参数，最小长度0，最大长度1024
+                     * 
                      */
                     void SetParameters(const std::string& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取备份周期
                      * @return BackupPeriod 备份周期
+                     * 
                      */
                     std::string GetBackupPeriod() const;
 
                     /**
                      * 设置备份周期
-                     * @param BackupPeriod 备份周期
+                     * @param _backupPeriod 备份周期
+                     * 
                      */
                     void SetBackupPeriod(const std::string& _backupPeriod);
 
                     /**
                      * 判断参数 BackupPeriod 是否已赋值
                      * @return BackupPeriod 是否已赋值
+                     * 
                      */
                     bool BackupPeriodHasBeenSet() const;
 
                     /**
                      * 获取基础备份保留时长
                      * @return BaseBackupRetentionPeriod 基础备份保留时长
+                     * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
                      * 设置基础备份保留时长
-                     * @param BaseBackupRetentionPeriod 基础备份保留时长
+                     * @param _baseBackupRetentionPeriod 基础备份保留时长
+                     * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
 
                     /**
                      * 判断参数 BaseBackupRetentionPeriod 是否已赋值
                      * @return BaseBackupRetentionPeriod 是否已赋值
+                     * 
                      */
                     bool BaseBackupRetentionPeriodHasBeenSet() const;
 
                     /**
                      * 获取开始备份的最早时间
                      * @return MinBackupStartTime 开始备份的最早时间
+                     * 
                      */
                     std::string GetMinBackupStartTime() const;
 
                     /**
                      * 设置开始备份的最早时间
-                     * @param MinBackupStartTime 开始备份的最早时间
+                     * @param _minBackupStartTime 开始备份的最早时间
+                     * 
                      */
                     void SetMinBackupStartTime(const std::string& _minBackupStartTime);
 
                     /**
                      * 判断参数 MinBackupStartTime 是否已赋值
                      * @return MinBackupStartTime 是否已赋值
+                     * 
                      */
                     bool MinBackupStartTimeHasBeenSet() const;
 
                     /**
                      * 获取开始备份的最晚时间
                      * @return MaxBackupStartTime 开始备份的最晚时间
+                     * 
                      */
                     std::string GetMaxBackupStartTime() const;
 
                     /**
                      * 设置开始备份的最晚时间
-                     * @param MaxBackupStartTime 开始备份的最晚时间
+                     * @param _maxBackupStartTime 开始备份的最晚时间
+                     * 
                      */
                     void SetMaxBackupStartTime(const std::string& _maxBackupStartTime);
 
                     /**
                      * 判断参数 MaxBackupStartTime 是否已赋值
                      * @return MaxBackupStartTime 是否已赋值
+                     * 
                      */
                     bool MaxBackupStartTimeHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取加入成功的人脸数量
                      * @return SucFaceNum 加入成功的人脸数量
+                     * 
                      */
                     uint64_t GetSucFaceNum() const;
 
                     /**
                      * 判断参数 SucFaceNum 是否已赋值
                      * @return SucFaceNum 是否已赋值
+                     * 
                      */
                     bool SucFaceNumHasBeenSet() const;
 
                     /**
                      * 获取加入成功的人脸ID列表
                      * @return SucFaceIds 加入成功的人脸ID列表
+                     * 
                      */
                     std::vector<std::string> GetSucFaceIds() const;
 
                     /**
                      * 判断参数 SucFaceIds 是否已赋值
                      * @return SucFaceIds 是否已赋值
+                     * 
                      */
                     bool SucFaceIdsHasBeenSet() const;
 
@@ -77,12 +81,14 @@ RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
 -1601代表不符合图片质量控制要求, -1604 代表人脸相似度没有超过FaceMatchThreshold。 
 其他非 0 值代表算法服务异常。 
 RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
+                     * 
                      */
                     std::vector<int64_t> GetRetCode() const;
 
                     /**
                      * 判断参数 RetCode 是否已赋值
                      * @return RetCode 是否已赋值
+                     * 
                      */
                     bool RetCodeHasBeenSet() const;
 
@@ -91,36 +97,42 @@ RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
 例， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
                      * @return SucIndexes 加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 
 例， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
+                     * 
                      */
                     std::vector<uint64_t> GetSucIndexes() const;
 
                     /**
                      * 判断参数 SucIndexes 是否已赋值
                      * @return SucIndexes 是否已赋值
+                     * 
                      */
                     bool SucIndexesHasBeenSet() const;
 
                     /**
                      * 获取加入成功的人脸框位置。顺序和入参中 Images 或 Urls 的顺序一致。
                      * @return SucFaceRects 加入成功的人脸框位置。顺序和入参中 Images 或 Urls 的顺序一致。
+                     * 
                      */
                     std::vector<FaceRect> GetSucFaceRects() const;
 
                     /**
                      * 判断参数 SucFaceRects 是否已赋值
                      * @return SucFaceRects 是否已赋值
+                     * 
                      */
                     bool SucFaceRectsHasBeenSet() const;
 
                     /**
                      * 获取人脸识别所用的算法模型版本。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

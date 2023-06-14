@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取准备删除的镜像ID列表
                      * @return ImageIds 准备删除的镜像ID列表
+                     * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置准备删除的镜像ID列表
-                     * @param ImageIds 准备删除的镜像ID列表
+                     * @param _imageIds 准备删除的镜像ID列表
+                     * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
                     /**
                      * 判断参数 ImageIds 是否已赋值
                      * @return ImageIds 是否已赋值
+                     * 
                      */
                     bool ImageIdsHasBeenSet() const;
 

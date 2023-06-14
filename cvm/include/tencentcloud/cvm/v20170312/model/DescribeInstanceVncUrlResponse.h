@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例的管理终端地址。
                      * @return InstanceVncUrl 实例的管理终端地址。
+                     * 
                      */
                     std::string GetInstanceVncUrl() const;
 
                     /**
                      * 判断参数 InstanceVncUrl 是否已赋值
                      * @return InstanceVncUrl 是否已赋值
+                     * 
                      */
                     bool InstanceVncUrlHasBeenSet() const;
 

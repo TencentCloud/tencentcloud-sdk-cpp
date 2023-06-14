@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return TimeUnit 购买实例的时间单位。取值范围：
 <li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
 <li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置购买实例的时间单位。取值范围：
 <li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
 <li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
-                     * @param TimeUnit 购买实例的时间单位。取值范围：
+                     * @param _timeUnit 购买实例的时间单位。取值范围：
 <li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
 <li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
                      * @return TimeSpan 购买实例的时长。结合TimeUnit一起使用。
 <li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
 <li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * 
                      */
                     uint64_t GetTimeSpan() const;
 
@@ -88,15 +92,17 @@ namespace TencentCloud
                      * 设置购买实例的时长。结合TimeUnit一起使用。
 <li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
 <li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
-                     * @param TimeSpan 购买实例的时长。结合TimeUnit一起使用。
+                     * @param _timeSpan 购买实例的时长。结合TimeUnit一起使用。
 <li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
 <li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
@@ -105,20 +111,23 @@ namespace TencentCloud
 <li>CNY：表示人民币。</li>
                      * @return Currency 货币种类。取值范围：
 <li>CNY：表示人民币。</li>
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置货币种类。取值范围：
 <li>CNY：表示人民币。</li>
-                     * @param Currency 货币种类。取值范围：
+                     * @param _currency 货币种类。取值范围：
 <li>CNY：表示人民币。</li>
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 
@@ -129,6 +138,7 @@ namespace TencentCloud
                      * @return PayMode 实例计费模式。取值范围：
 <li>0：表示按量计费。</li>
 <li>1：表示包年包月。</li>
+                     * 
                      */
                     uint64_t GetPayMode() const;
 
@@ -136,15 +146,17 @@ namespace TencentCloud
                      * 设置实例计费模式。取值范围：
 <li>0：表示按量计费。</li>
 <li>1：表示包年包月。</li>
-                     * @param PayMode 实例计费模式。取值范围：
+                     * @param _payMode 实例计费模式。取值范围：
 <li>0：表示按量计费。</li>
 <li>1：表示包年包月。</li>
+                     * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
@@ -155,6 +167,7 @@ namespace TencentCloud
                      * @return SupportHA 是否开启节点高可用。取值范围：
 <li>0：表示不开启节点高可用。</li>
 <li>1：表示开启节点高可用。</li>
+                     * 
                      */
                     uint64_t GetSupportHA() const;
 
@@ -162,15 +175,17 @@ namespace TencentCloud
                      * 设置是否开启节点高可用。取值范围：
 <li>0：表示不开启节点高可用。</li>
 <li>1：表示开启节点高可用。</li>
-                     * @param SupportHA 是否开启节点高可用。取值范围：
+                     * @param _supportHA 是否开启节点高可用。取值范围：
 <li>0：表示不开启节点高可用。</li>
 <li>1：表示开启节点高可用。</li>
+                     * 
                      */
                     void SetSupportHA(const uint64_t& _supportHA);
 
                     /**
                      * 判断参数 SupportHA 是否已赋值
                      * @return SupportHA 是否已赋值
+                     * 
                      */
                     bool SupportHAHasBeenSet() const;
 
@@ -185,6 +200,7 @@ namespace TencentCloud
 <li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
+                     * 
                      */
                     std::vector<std::string> GetSoftware() const;
 
@@ -194,71 +210,82 @@ namespace TencentCloud
 <li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
-                     * @param Software 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+                     * @param _software 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
 <li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
 <li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
+                     * 
                      */
                     void SetSoftware(const std::vector<std::string>& _software);
 
                     /**
                      * 判断参数 Software 是否已赋值
                      * @return Software 是否已赋值
+                     * 
                      */
                     bool SoftwareHasBeenSet() const;
 
                     /**
                      * 获取询价的节点规格。
                      * @return ResourceSpec 询价的节点规格。
+                     * 
                      */
                     NewResourceSpec GetResourceSpec() const;
 
                     /**
                      * 设置询价的节点规格。
-                     * @param ResourceSpec 询价的节点规格。
+                     * @param _resourceSpec 询价的节点规格。
+                     * 
                      */
                     void SetResourceSpec(const NewResourceSpec& _resourceSpec);
 
                     /**
                      * 判断参数 ResourceSpec 是否已赋值
                      * @return ResourceSpec 是否已赋值
+                     * 
                      */
                     bool ResourceSpecHasBeenSet() const;
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param _placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
                      * @return VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * 
                      */
                     VPCSettings GetVPCSettings() const;
 
                     /**
                      * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     * @param VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @param _vPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * 
                      */
                     void SetVPCSettings(const VPCSettings& _vPCSettings);
 
                     /**
                      * 判断参数 VPCSettings 是否已赋值
                      * @return VPCSettings 是否已赋值
+                     * 
                      */
                     bool VPCSettingsHasBeenSet() const;
 
@@ -271,6 +298,7 @@ namespace TencentCloud
 <li>EMR_NEW_META：表示集群默认创建</li>
 <li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 
                      */
                     std::string GetMetaType() const;
 
@@ -279,52 +307,60 @@ namespace TencentCloud
 <li>EMR_NEW_META：表示集群默认创建</li>
 <li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
-                     * @param MetaType hive共享元数据库类型。取值范围：
+                     * @param _metaType hive共享元数据库类型。取值范围：
 <li>EMR_NEW_META：表示集群默认创建</li>
 <li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 
                      */
                     void SetMetaType(const std::string& _metaType);
 
                     /**
                      * 判断参数 MetaType 是否已赋值
                      * @return MetaType 是否已赋值
+                     * 
                      */
                     bool MetaTypeHasBeenSet() const;
 
                     /**
                      * 获取EMR-MetaDB实例
                      * @return UnifyMetaInstanceId EMR-MetaDB实例
+                     * 
                      */
                     std::string GetUnifyMetaInstanceId() const;
 
                     /**
                      * 设置EMR-MetaDB实例
-                     * @param UnifyMetaInstanceId EMR-MetaDB实例
+                     * @param _unifyMetaInstanceId EMR-MetaDB实例
+                     * 
                      */
                     void SetUnifyMetaInstanceId(const std::string& _unifyMetaInstanceId);
 
                     /**
                      * 判断参数 UnifyMetaInstanceId 是否已赋值
                      * @return UnifyMetaInstanceId 是否已赋值
+                     * 
                      */
                     bool UnifyMetaInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取自定义MetaDB信息
                      * @return MetaDBInfo 自定义MetaDB信息
+                     * 
                      */
                     CustomMetaInfo GetMetaDBInfo() const;
 
                     /**
                      * 设置自定义MetaDB信息
-                     * @param MetaDBInfo 自定义MetaDB信息
+                     * @param _metaDBInfo 自定义MetaDB信息
+                     * 
                      */
                     void SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo);
 
                     /**
                      * 判断参数 MetaDBInfo 是否已赋值
                      * @return MetaDBInfo 是否已赋值
+                     * 
                      */
                     bool MetaDBInfoHasBeenSet() const;
 
@@ -339,6 +375,7 @@ namespace TencentCloud
 <li>2：表示EMR-V2.0.1。</li>
 <li>4：表示EMR-V2.1.0。</li>
 <li>7：表示EMR-V3.0.0。</li>
+                     * 
                      */
                     uint64_t GetProductId() const;
 
@@ -348,17 +385,19 @@ namespace TencentCloud
 <li>2：表示EMR-V2.0.1。</li>
 <li>4：表示EMR-V2.1.0。</li>
 <li>7：表示EMR-V3.0.0。</li>
-                     * @param ProductId 产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+                     * @param _productId 产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
 <li>1：表示EMR-V1.3.1。</li>
 <li>2：表示EMR-V2.0.1。</li>
 <li>4：表示EMR-V2.1.0。</li>
 <li>7：表示EMR-V3.0.0。</li>
+                     * 
                      */
                     void SetProductId(const uint64_t& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -373,6 +412,7 @@ Hadoop-Kudu
 Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
+                     * 
                      */
                     std::string GetSceneName() const;
 
@@ -382,71 +422,82 @@ Hadoop-Kudu
 Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
-                     * @param SceneName 场景化取值：
+                     * @param _sceneName 场景化取值：
 Hadoop-Kudu
 Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
+                     * 
                      */
                     void SetSceneName(const std::string& _sceneName);
 
                     /**
                      * 判断参数 SceneName 是否已赋值
                      * @return SceneName 是否已赋值
+                     * 
                      */
                     bool SceneNameHasBeenSet() const;
 
                     /**
                      * 获取共用组件信息
                      * @return ExternalService 共用组件信息
+                     * 
                      */
                     std::vector<ExternalService> GetExternalService() const;
 
                     /**
                      * 设置共用组件信息
-                     * @param ExternalService 共用组件信息
+                     * @param _externalService 共用组件信息
+                     * 
                      */
                     void SetExternalService(const std::vector<ExternalService>& _externalService);
 
                     /**
                      * 判断参数 ExternalService 是否已赋值
                      * @return ExternalService 是否已赋值
+                     * 
                      */
                     bool ExternalServiceHasBeenSet() const;
 
                     /**
                      * 获取当前默认值为0，跨AZ特性支持后为1
                      * @return VersionID 当前默认值为0，跨AZ特性支持后为1
+                     * 
                      */
                     uint64_t GetVersionID() const;
 
                     /**
                      * 设置当前默认值为0，跨AZ特性支持后为1
-                     * @param VersionID 当前默认值为0，跨AZ特性支持后为1
+                     * @param _versionID 当前默认值为0，跨AZ特性支持后为1
+                     * 
                      */
                     void SetVersionID(const uint64_t& _versionID);
 
                     /**
                      * 判断参数 VersionID 是否已赋值
                      * @return VersionID 是否已赋值
+                     * 
                      */
                     bool VersionIDHasBeenSet() const;
 
                     /**
                      * 获取可用区的规格信息
                      * @return MultiZoneSettings 可用区的规格信息
+                     * 
                      */
                     std::vector<MultiZoneSetting> GetMultiZoneSettings() const;
 
                     /**
                      * 设置可用区的规格信息
-                     * @param MultiZoneSettings 可用区的规格信息
+                     * @param _multiZoneSettings 可用区的规格信息
+                     * 
                      */
                     void SetMultiZoneSettings(const std::vector<MultiZoneSetting>& _multiZoneSettings);
 
                     /**
                      * 判断参数 MultiZoneSettings 是否已赋值
                      * @return MultiZoneSettings 是否已赋值
+                     * 
                      */
                     bool MultiZoneSettingsHasBeenSet() const;
 

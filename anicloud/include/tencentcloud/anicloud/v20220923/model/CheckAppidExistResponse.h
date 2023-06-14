@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取appid是否存在
                      * @return Exist appid是否存在
+                     * 
                      */
                     bool GetExist() const;
 
                     /**
                      * 判断参数 Exist 是否已赋值
                      * @return Exist 是否已赋值
+                     * 
                      */
                     bool ExistHasBeenSet() const;
 
                     /**
                      * 获取请求是否成功
                      * @return HasError 请求是否成功
+                     * 
                      */
                     bool GetHasError() const;
 
                     /**
                      * 判断参数 HasError 是否已赋值
                      * @return HasError 是否已赋值
+                     * 
                      */
                     bool HasErrorHasBeenSet() const;
 
                     /**
                      * 获取出错消息
                      * @return Msg 出错消息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

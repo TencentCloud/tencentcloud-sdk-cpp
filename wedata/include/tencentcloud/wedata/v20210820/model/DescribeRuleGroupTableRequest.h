@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取表ID
                      * @return TableId 表ID
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表ID
-                     * @param TableId 表ID
+                     * @param _tableId 表ID
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实付金额（单位：分）
                      * @return RealTotalCost 实付金额（单位：分）
+                     * 
                      */
                     int64_t GetRealTotalCost() const;
 
                     /**
                      * 设置实付金额（单位：分）
-                     * @param RealTotalCost 实付金额（单位：分）
+                     * @param _realTotalCost 实付金额（单位：分）
+                     * 
                      */
                     void SetRealTotalCost(const int64_t& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
                      * 获取原始金额（不含折扣，单位：分）
                      * @return OriginalTotalCost 原始金额（不含折扣，单位：分）
+                     * 
                      */
                     int64_t GetOriginalTotalCost() const;
 
                     /**
                      * 设置原始金额（不含折扣，单位：分）
-                     * @param OriginalTotalCost 原始金额（不含折扣，单位：分）
+                     * @param _originalTotalCost 原始金额（不含折扣，单位：分）
+                     * 
                      */
                     void SetOriginalTotalCost(const int64_t& _originalTotalCost);
 
                     /**
                      * 判断参数 OriginalTotalCost 是否已赋值
                      * @return OriginalTotalCost 是否已赋值
+                     * 
                      */
                     bool OriginalTotalCostHasBeenSet() const;
 

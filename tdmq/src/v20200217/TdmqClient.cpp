@@ -3953,49 +3953,6 @@ TdmqClient::ModifyAMQPQueueOutcomeCallable TdmqClient::ModifyAMQPQueueCallable(c
     return task->get_future();
 }
 
-TdmqClient::ModifyAMQPVHostOutcome TdmqClient::ModifyAMQPVHost(const ModifyAMQPVHostRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAMQPVHost");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAMQPVHostResponse rsp = ModifyAMQPVHostResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAMQPVHostOutcome(rsp);
-        else
-            return ModifyAMQPVHostOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAMQPVHostOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::ModifyAMQPVHostAsync(const ModifyAMQPVHostRequest& request, const ModifyAMQPVHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAMQPVHost(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::ModifyAMQPVHostOutcomeCallable TdmqClient::ModifyAMQPVHostCallable(const ModifyAMQPVHostRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAMQPVHostOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAMQPVHost(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::ModifyClusterOutcome TdmqClient::ModifyCluster(const ModifyClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCluster");

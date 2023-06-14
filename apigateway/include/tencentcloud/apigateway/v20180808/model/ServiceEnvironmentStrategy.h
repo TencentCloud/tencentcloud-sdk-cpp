@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取环境名。
                      * @return EnvironmentName 环境名。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名。
-                     * @param EnvironmentName 环境名。
+                     * @param _environmentName 环境名。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取访问服务对应环境的url。
                      * @return Url 访问服务对应环境的url。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置访问服务对应环境的url。
-                     * @param Url 访问服务对应环境的url。
+                     * @param _url 访问服务对应环境的url。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取发布状态。
                      * @return Status 发布状态。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置发布状态。
-                     * @param Status 发布状态。
+                     * @param _status 发布状态。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 发布的版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置发布的版本号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionName 发布的版本号。
+                     * @param _versionName 发布的版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
                     /**
                      * 获取限流值。
                      * @return Strategy 限流值。
+                     * 
                      */
                     int64_t GetStrategy() const;
 
                     /**
                      * 设置限流值。
-                     * @param Strategy 限流值。
+                     * @param _strategy 限流值。
+                     * 
                      */
                     void SetStrategy(const int64_t& _strategy);
 
                     /**
                      * 判断参数 Strategy 是否已赋值
                      * @return Strategy 是否已赋值
+                     * 
                      */
                     bool StrategyHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStrategy 最大限流值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxStrategy() const;
 
                     /**
                      * 设置最大限流值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxStrategy 最大限流值
+                     * @param _maxStrategy 最大限流值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxStrategy(const int64_t& _maxStrategy);
 
                     /**
                      * 判断参数 MaxStrategy 是否已赋值
                      * @return MaxStrategy 是否已赋值
+                     * 
                      */
                     bool MaxStrategyHasBeenSet() const;
 

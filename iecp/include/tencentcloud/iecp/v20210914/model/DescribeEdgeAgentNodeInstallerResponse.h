@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Online 节点在线安装信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeNodeInstallerOnline GetOnline() const;
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 

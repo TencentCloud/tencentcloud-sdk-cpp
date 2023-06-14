@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务标题
                      * @return TaskTitle 任务标题
+                     * 
                      */
                     std::string GetTaskTitle() const;
 
                     /**
                      * 设置任务标题
-                     * @param TaskTitle 任务标题
+                     * @param _taskTitle 任务标题
+                     * 
                      */
                     void SetTaskTitle(const std::string& _taskTitle);
 
                     /**
                      * 判断参数 TaskTitle 是否已赋值
                      * @return TaskTitle 是否已赋值
+                     * 
                      */
                     bool TaskTitleHasBeenSet() const;
 
                     /**
                      * 获取任务描述
                      * @return TaskDescription 任务描述
+                     * 
                      */
                     std::string GetTaskDescription() const;
 
                     /**
                      * 设置任务描述
-                     * @param TaskDescription 任务描述
+                     * @param _taskDescription 任务描述
+                     * 
                      */
                     void SetTaskDescription(const std::string& _taskDescription);
 
                     /**
                      * 判断参数 TaskDescription 是否已赋值
                      * @return TaskDescription 是否已赋值
+                     * 
                      */
                     bool TaskDescriptionHasBeenSet() const;
 
@@ -105,74 +114,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTag 任务标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskTag() const;
 
                     /**
                      * 设置任务标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskTag 任务标签
+                     * @param _taskTag 任务标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskTag(const std::string& _taskTag);
 
                     /**
                      * 判断参数 TaskTag 是否已赋值
                      * @return TaskTag 是否已赋值
+                     * 
                      */
                     bool TaskTagHasBeenSet() const;
 
                     /**
                      * 获取任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)
                      * @return TaskStatus 任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)
+                     * 
                      */
                     int64_t GetTaskStatus() const;
 
                     /**
                      * 设置任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)
-                     * @param TaskStatus 任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)
+                     * @param _taskStatus 任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)
+                     * 
                      */
                     void SetTaskStatus(const int64_t& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return TaskCreateTime 任务创建时间
+                     * 
                      */
                     std::string GetTaskCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param TaskCreateTime 任务创建时间
+                     * @param _taskCreateTime 任务创建时间
+                     * 
                      */
                     void SetTaskCreateTime(const std::string& _taskCreateTime);
 
                     /**
                      * 判断参数 TaskCreateTime 是否已赋值
                      * @return TaskCreateTime 是否已赋值
+                     * 
                      */
                     bool TaskCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务更新时间
                      * @return TaskUpdateTime 任务更新时间
+                     * 
                      */
                     std::string GetTaskUpdateTime() const;
 
                     /**
                      * 设置任务更新时间
-                     * @param TaskUpdateTime 任务更新时间
+                     * @param _taskUpdateTime 任务更新时间
+                     * 
                      */
                     void SetTaskUpdateTime(const std::string& _taskUpdateTime);
 
                     /**
                      * 判断参数 TaskUpdateTime 是否已赋值
                      * @return TaskUpdateTime 是否已赋值
+                     * 
                      */
                     bool TaskUpdateTimeHasBeenSet() const;
 
@@ -181,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPreCheckStatus 0--未开始，1--进行中，2--已完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskPreCheckStatus() const;
 
                     /**
                      * 设置0--未开始，1--进行中，2--已完成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskPreCheckStatus 0--未开始，1--进行中，2--已完成
+                     * @param _taskPreCheckStatus 0--未开始，1--进行中，2--已完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskPreCheckStatus(const int64_t& _taskPreCheckStatus);
 
                     /**
                      * 判断参数 TaskPreCheckStatus 是否已赋值
                      * @return TaskPreCheckStatus 是否已赋值
+                     * 
                      */
                     bool TaskPreCheckStatusHasBeenSet() const;
 
@@ -203,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPreCheckSuccess 环境检查是否通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetTaskPreCheckSuccess() const;
 
                     /**
                      * 设置环境检查是否通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskPreCheckSuccess 环境检查是否通过
+                     * @param _taskPreCheckSuccess 环境检查是否通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskPreCheckSuccess(const bool& _taskPreCheckSuccess);
 
                     /**
                      * 判断参数 TaskPreCheckSuccess 是否已赋值
                      * @return TaskPreCheckSuccess 是否已赋值
+                     * 
                      */
                     bool TaskPreCheckSuccessHasBeenSet() const;
 

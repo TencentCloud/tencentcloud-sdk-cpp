@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取仓库ID
                      * @return RepositoryId 仓库ID
+                     * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置仓库ID
-                     * @param RepositoryId 仓库ID
+                     * @param _repositoryId 仓库ID
+                     * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
 
                     /**
                      * 判断参数 RepositoryId 是否已赋值
                      * @return RepositoryId 是否已赋值
+                     * 
                      */
                     bool RepositoryIdHasBeenSet() const;
 
                     /**
                      * 获取仓库描述
                      * @return RepositoryDesc 仓库描述
+                     * 
                      */
                     std::string GetRepositoryDesc() const;
 
                     /**
                      * 设置仓库描述
-                     * @param RepositoryDesc 仓库描述
+                     * @param _repositoryDesc 仓库描述
+                     * 
                      */
                     void SetRepositoryDesc(const std::string& _repositoryDesc);
 
                     /**
                      * 判断参数 RepositoryDesc 是否已赋值
                      * @return RepositoryDesc 是否已赋值
+                     * 
                      */
                     bool RepositoryDescHasBeenSet() const;
 

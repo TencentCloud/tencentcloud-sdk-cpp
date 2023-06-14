@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取私有网络`ID`。
                      * @return VpcId 私有网络`ID`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络`ID`。
-                     * @param VpcId 私有网络`ID`。
+                     * @param _vpcId 私有网络`ID`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网`ID`。
                      * @return SubnetId 子网`ID`。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网`ID`。
-                     * @param SubnetId 子网`ID`。
+                     * @param _subnetId 子网`ID`。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取`DhcpIp`名称。
                      * @return DhcpIpName `DhcpIp`名称。
+                     * 
                      */
                     std::string GetDhcpIpName() const;
 
                     /**
                      * 设置`DhcpIp`名称。
-                     * @param DhcpIpName `DhcpIp`名称。
+                     * @param _dhcpIpName `DhcpIp`名称。
+                     * 
                      */
                     void SetDhcpIpName(const std::string& _dhcpIpName);
 
                     /**
                      * 判断参数 DhcpIpName 是否已赋值
                      * @return DhcpIpName 是否已赋值
+                     * 
                      */
                     bool DhcpIpNameHasBeenSet() const;
 
                     /**
                      * 获取新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
                      * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
+                     * 
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
                      * 设置新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
+                     * @param _secondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
+                     * 
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
                     /**
                      * 判断参数 SecondaryPrivateIpAddressCount 是否已赋值
                      * @return SecondaryPrivateIpAddressCount 是否已赋值
+                     * 
                      */
                     bool SecondaryPrivateIpAddressCountHasBeenSet() const;
 

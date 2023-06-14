@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取购买服务后获得的授权信息，用于保证请求有效性
                      * @return Key 购买服务后获得的授权信息，用于保证请求有效性
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置购买服务后获得的授权信息，用于保证请求有效性
-                     * @param Key 购买服务后获得的授权信息，用于保证请求有效性
+                     * @param _key 购买服务后获得的授权信息，用于保证请求有效性
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取API所在的服务唯一ID。
                      * @return ServiceId API所在的服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置API所在的服务唯一ID。
-                     * @param ServiceId API所在的服务唯一ID。
+                     * @param _serviceId API所在的服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取openAPI正文内容。
                      * @return Content openAPI正文内容。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置openAPI正文内容。
-                     * @param Content openAPI正文内容。
+                     * @param _content openAPI正文内容。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取Content格式，只能是YAML或者JSON，默认是YAML。
                      * @return EncodeType Content格式，只能是YAML或者JSON，默认是YAML。
+                     * 
                      */
                     std::string GetEncodeType() const;
 
                     /**
                      * 设置Content格式，只能是YAML或者JSON，默认是YAML。
-                     * @param EncodeType Content格式，只能是YAML或者JSON，默认是YAML。
+                     * @param _encodeType Content格式，只能是YAML或者JSON，默认是YAML。
+                     * 
                      */
                     void SetEncodeType(const std::string& _encodeType);
 
                     /**
                      * 判断参数 EncodeType 是否已赋值
                      * @return EncodeType 是否已赋值
+                     * 
                      */
                     bool EncodeTypeHasBeenSet() const;
 
                     /**
                      * 获取Content版本，默认是openAPI，目前只支持openAPI。
                      * @return ContentVersion Content版本，默认是openAPI，目前只支持openAPI。
+                     * 
                      */
                     std::string GetContentVersion() const;
 
                     /**
                      * 设置Content版本，默认是openAPI，目前只支持openAPI。
-                     * @param ContentVersion Content版本，默认是openAPI，目前只支持openAPI。
+                     * @param _contentVersion Content版本，默认是openAPI，目前只支持openAPI。
+                     * 
                      */
                     void SetContentVersion(const std::string& _contentVersion);
 
                     /**
                      * 判断参数 ContentVersion 是否已赋值
                      * @return ContentVersion 是否已赋值
+                     * 
                      */
                     bool ContentVersionHasBeenSet() const;
 

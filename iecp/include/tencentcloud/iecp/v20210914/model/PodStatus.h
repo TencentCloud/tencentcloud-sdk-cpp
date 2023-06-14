@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameSpace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NameSpace 命名空间
+                     * @param _nameSpace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
 
                     /**
                      * 判断参数 NameSpace 是否已赋值
                      * @return NameSpace 是否已赋值
+                     * 
                      */
                     bool NameSpaceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP IP地址
+                     * @param _iP IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 启动时间
+                     * @param _startTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunSec 运行时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunSec() const;
 
                     /**
                      * 设置运行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunSec 运行时间
+                     * @param _runSec 运行时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunSec(const int64_t& _runSec);
 
                     /**
                      * 判断参数 RunSec 是否已赋值
                      * @return RunSec 是否已赋值
+                     * 
                      */
                     bool RunSecHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestartCount 重启次数
+                     * @param _restartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取流量值（bit）
                      * @return Current 流量值（bit）
+                     * 
                      */
                     double GetCurrent() const;
 
                     /**
                      * 设置流量值（bit）
-                     * @param Current 流量值（bit）
+                     * @param _current 流量值（bit）
+                     * 
                      */
                     void SetCurrent(const double& _current);
 
                     /**
                      * 判断参数 Current 是否已赋值
                      * @return Current 是否已赋值
+                     * 
                      */
                     bool CurrentHasBeenSet() const;
 
                     /**
                      * 获取时间点，单位：s
                      * @return Time 时间点，单位：s
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间点，单位：s
-                     * @param Time 时间点，单位：s
+                     * @param _time 时间点，单位：s
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

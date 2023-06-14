@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取实例总数
                      * @return AllInstanceCnt 实例总数
+                     * 
                      */
                     int64_t GetAllInstanceCnt() const;
 
                     /**
                      * 判断参数 AllInstanceCnt 是否已赋值
                      * @return AllInstanceCnt 是否已赋值
+                     * 
                      */
                     bool AllInstanceCntHasBeenSet() const;
 
                     /**
                      * 获取计费实例总数
                      * @return BillingInstanceCnt 计费实例总数
+                     * 
                      */
                     int64_t GetBillingInstanceCnt() const;
 
                     /**
                      * 判断参数 BillingInstanceCnt 是否已赋值
                      * @return BillingInstanceCnt 是否已赋值
+                     * 
                      */
                     bool BillingInstanceCntHasBeenSet() const;
 
                     /**
                      * 获取仅存储计费的实例总数
                      * @return StorageOnlyBillingInstanceCnt 仅存储计费的实例总数
+                     * 
                      */
                     int64_t GetStorageOnlyBillingInstanceCnt() const;
 
                     /**
                      * 判断参数 StorageOnlyBillingInstanceCnt 是否已赋值
                      * @return StorageOnlyBillingInstanceCnt 是否已赋值
+                     * 
                      */
                     bool StorageOnlyBillingInstanceCntHasBeenSet() const;
 
                     /**
                      * 获取计算和存储都计费的实例总数
                      * @return ComputingBillingInstanceCnt 计算和存储都计费的实例总数
+                     * 
                      */
                     int64_t GetComputingBillingInstanceCnt() const;
 
                     /**
                      * 判断参数 ComputingBillingInstanceCnt 是否已赋值
                      * @return ComputingBillingInstanceCnt 是否已赋值
+                     * 
                      */
                     bool ComputingBillingInstanceCntHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Format 字幕文件格式，取值范围：
 <li>vtt：WebVTT 字幕文件；</li>
 <li>srt：SRT 字幕文件。</li>
+                     * 
                      */
                     std::string GetFormat() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置字幕文件格式，取值范围：
 <li>vtt：WebVTT 字幕文件；</li>
 <li>srt：SRT 字幕文件。</li>
-                     * @param Format 字幕文件格式，取值范围：
+                     * @param _format 字幕文件格式，取值范围：
 <li>vtt：WebVTT 字幕文件；</li>
 <li>srt：SRT 字幕文件。</li>
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取字幕文件 Url。
                      * @return Url 字幕文件 Url。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置字幕文件 Url。
-                     * @param Url 字幕文件 Url。
+                     * @param _url 字幕文件 Url。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取恢复表结果数量
                      * @return TotalCount 恢复表结果数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取恢复表信息列表
                      * @return TableResults 恢复表信息列表
+                     * 
                      */
                     std::vector<TableResultNew> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
                      * @return TableResults 是否已赋值
+                     * 
                      */
                     bool TableResultsHasBeenSet() const;
 

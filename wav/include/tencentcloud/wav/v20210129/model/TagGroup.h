@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取企微标签组id
                      * @return GroupId 企微标签组id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置企微标签组id
-                     * @param GroupId 企微标签组id
+                     * @param _groupId 企微标签组id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取标签组业务id
                      * @return BizGroupId 标签组业务id
+                     * 
                      */
                     std::string GetBizGroupId() const;
 
                     /**
                      * 设置标签组业务id
-                     * @param BizGroupId 标签组业务id
+                     * @param _bizGroupId 标签组业务id
+                     * 
                      */
                     void SetBizGroupId(const std::string& _bizGroupId);
 
                     /**
                      * 判断参数 BizGroupId 是否已赋值
                      * @return BizGroupId 是否已赋值
+                     * 
                      */
                     bool BizGroupIdHasBeenSet() const;
 
                     /**
                      * 获取企微标签组名称，不能超过15个字符
                      * @return GroupName 企微标签组名称，不能超过15个字符
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置企微标签组名称，不能超过15个字符
-                     * @param GroupName 企微标签组名称，不能超过15个字符
+                     * @param _groupName 企微标签组名称，不能超过15个字符
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)
                      * @return Sort 标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)
+                     * 
                      */
                     uint64_t GetSort() const;
 
                     /**
                      * 设置标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)
-                     * @param Sort 标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)
+                     * @param _sort 标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)
+                     * 
                      */
                     void SetSort(const uint64_t& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取标签组创建时间,单位为秒
                      * @return CreateTime 标签组创建时间,单位为秒
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置标签组创建时间,单位为秒
-                     * @param CreateTime 标签组创建时间,单位为秒
+                     * @param _createTime 标签组创建时间,单位为秒
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取标签组内的标签列表, 上限为20
                      * @return Tags 标签组内的标签列表, 上限为20
+                     * 
                      */
                     std::vector<TagDetailInfo> GetTags() const;
 
                     /**
                      * 设置标签组内的标签列表, 上限为20
-                     * @param Tags 标签组内的标签列表, 上限为20
+                     * @param _tags 标签组内的标签列表, 上限为20
+                     * 
                      */
                     void SetTags(const std::vector<TagDetailInfo>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

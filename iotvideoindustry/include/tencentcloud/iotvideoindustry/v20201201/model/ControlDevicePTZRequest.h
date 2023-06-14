@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一标识
                      * @return DeviceId 设备唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -93,6 +96,7 @@ irisIn - 光圈缩小
 irisOut - 光圈放大
 focusIn - 焦距变近
 focusOut - 焦距变远
+                     * 
                      */
                     std::string GetCommand() const;
 
@@ -113,7 +117,7 @@ irisIn - 光圈缩小
 irisOut - 光圈放大
 focusIn - 焦距变近
 focusOut - 焦距变远
-                     * @param Command PTZ控制命令类型：
+                     * @param _command PTZ控制命令类型：
 stop - 停止当前PTZ信令
 left - 向左移动
 right - 向右移动
@@ -129,30 +133,35 @@ irisIn - 光圈缩小
 irisOut - 光圈放大
 focusIn - 焦距变近
 focusOut - 焦距变远
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
                      * @return ChannelId 通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * @param _channelId 通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 

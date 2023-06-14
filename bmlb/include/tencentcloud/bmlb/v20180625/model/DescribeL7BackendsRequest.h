@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取七层监听器实例ID，可通过接口DescribeL7Listeners查询。
                      * @return ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置七层监听器实例ID，可通过接口DescribeL7Listeners查询。
-                     * @param ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * @param _listenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发域名实例ID，可通过接口DescribeL7Rules查询。
                      * @return DomainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置转发域名实例ID，可通过接口DescribeL7Rules查询。
-                     * @param DomainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * @param _domainId 转发域名实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取转发路径实例ID，可通过接口DescribeL7Rules查询。
                      * @return LocationId 转发路径实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发路径实例ID，可通过接口DescribeL7Rules查询。
-                     * @param LocationId 转发路径实例ID，可通过接口DescribeL7Rules查询。
+                     * @param _locationId 转发路径实例ID，可通过接口DescribeL7Rules查询。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。
                      * @return QueryType 查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。
+                     * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。
-                     * @param QueryType 查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。
+                     * @param _queryType 查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。
+                     * 
                      */
                     void SetQueryType(const std::string& _queryType);
 
                     /**
                      * 判断参数 QueryType 是否已赋值
                      * @return QueryType 是否已赋值
+                     * 
                      */
                     bool QueryTypeHasBeenSet() const;
 

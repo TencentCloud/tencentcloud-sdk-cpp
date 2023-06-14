@@ -51,6 +51,7 @@ namespace TencentCloud
 <li>ZONE：依据可用区排序。
 <li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。
 默认按可用区排序。
+                     * 
                      */
                     std::string GetOrderField() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 <li>ZONE：依据可用区排序。
 <li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。
 默认按可用区排序。
-                     * @param OrderField 可用区列表排序的依据字段。取值范围：
+                     * @param _orderField 可用区列表排序的依据字段。取值范围：
 <li>ZONE：依据可用区排序。
 <li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。
 默认按可用区排序。
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>ASC：升序排列。 
 <li>DESC：降序排列。
 默认按升序排列。
+                     * 
                      */
                     std::string GetOrder() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li>ASC：升序排列。 
 <li>DESC：降序排列。
 默认按升序排列。
-                     * @param Order 输出可用区列表的排列顺序。取值范围：
+                     * @param _order 输出可用区列表的排列顺序。取值范围：
 <li>ASC：升序排列。 
 <li>DESC：降序排列。
 默认按升序排列。
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

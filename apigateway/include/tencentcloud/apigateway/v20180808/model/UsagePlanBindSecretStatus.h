@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 使用计划绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置使用计划绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 使用计划绑定密钥的数量。
+                     * @param _totalCount 使用计划绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessKeyList 密钥详情列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsagePlanBindSecret> GetAccessKeyList() const;
 
                     /**
                      * 设置密钥详情列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessKeyList 密钥详情列表。
+                     * @param _accessKeyList 密钥详情列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessKeyList(const std::vector<UsagePlanBindSecret>& _accessKeyList);
 
                     /**
                      * 判断参数 AccessKeyList 是否已赋值
                      * @return AccessKeyList 是否已赋值
+                     * 
                      */
                     bool AccessKeyListHasBeenSet() const;
 

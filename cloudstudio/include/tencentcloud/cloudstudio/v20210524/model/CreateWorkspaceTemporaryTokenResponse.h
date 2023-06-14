@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取工作空间临时访问 token 信息
                      * @return Data 工作空间临时访问 token 信息
+                     * 
                      */
                     WorkspaceTokenInfoV0 GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Name 私有鉴权参数名称，取值有：
 <li>AccessKeyId：鉴权参数Access Key ID；</li>
 <li>SecretAccessKey：鉴权参数Secret Access Key。</li>
+                     * 
                      */
                     std::string GetName() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置私有鉴权参数名称，取值有：
 <li>AccessKeyId：鉴权参数Access Key ID；</li>
 <li>SecretAccessKey：鉴权参数Secret Access Key。</li>
-                     * @param Name 私有鉴权参数名称，取值有：
+                     * @param _name 私有鉴权参数名称，取值有：
 <li>AccessKeyId：鉴权参数Access Key ID；</li>
 <li>SecretAccessKey：鉴权参数Secret Access Key。</li>
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取私有鉴权参数值。
                      * @return Value 私有鉴权参数值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置私有鉴权参数值。
-                     * @param Value 私有鉴权参数值。
+                     * @param _value 私有鉴权参数值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

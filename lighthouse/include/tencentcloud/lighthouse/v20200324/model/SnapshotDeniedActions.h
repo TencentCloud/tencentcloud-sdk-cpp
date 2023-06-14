@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取快照 ID。
                      * @return SnapshotId 快照 ID。
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照 ID。
-                     * @param SnapshotId 快照 ID。
+                     * @param _snapshotId 快照 ID。
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取操作限制列表。
                      * @return DeniedActions 操作限制列表。
+                     * 
                      */
                     std::vector<DeniedAction> GetDeniedActions() const;
 
                     /**
                      * 设置操作限制列表。
-                     * @param DeniedActions 操作限制列表。
+                     * @param _deniedActions 操作限制列表。
+                     * 
                      */
                     void SetDeniedActions(const std::vector<DeniedAction>& _deniedActions);
 
                     /**
                      * 判断参数 DeniedActions 是否已赋值
                      * @return DeniedActions 是否已赋值
+                     * 
                      */
                     bool DeniedActionsHasBeenSet() const;
 

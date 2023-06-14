@@ -51,6 +51,7 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
+                     * @param _imageUrl 图片的 Url 地址。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -111,38 +117,44 @@ namespace TencentCloud
 可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
                      * @return Scene 场景字段，默认不用填写。
 可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景字段，默认不用填写。
 可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
-                     * @param Scene 场景字段，默认不用填写。
+                     * @param _scene 场景字段，默认不用填写。
 可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取是否开启单字的四点定位坐标输出，默认值为false。
                      * @return EnableWordPolygon 是否开启单字的四点定位坐标输出，默认值为false。
+                     * 
                      */
                     bool GetEnableWordPolygon() const;
 
                     /**
                      * 设置是否开启单字的四点定位坐标输出，默认值为false。
-                     * @param EnableWordPolygon 是否开启单字的四点定位坐标输出，默认值为false。
+                     * @param _enableWordPolygon 是否开启单字的四点定位坐标输出，默认值为false。
+                     * 
                      */
                     void SetEnableWordPolygon(const bool& _enableWordPolygon);
 
                     /**
                      * 判断参数 EnableWordPolygon 是否已赋值
                      * @return EnableWordPolygon 是否已赋值
+                     * 
                      */
                     bool EnableWordPolygonHasBeenSet() const;
 
@@ -151,20 +163,23 @@ namespace TencentCloud
 设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
                      * @return EnableDetectText 文本检测开关，默认值为true。
 设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     * 
                      */
                     bool GetEnableDetectText() const;
 
                     /**
                      * 设置文本检测开关，默认值为true。
 设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
-                     * @param EnableDetectText 文本检测开关，默认值为true。
+                     * @param _enableDetectText 文本检测开关，默认值为true。
 设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。
+                     * 
                      */
                     void SetEnableDetectText(const bool& _enableDetectText);
 
                     /**
                      * 判断参数 EnableDetectText 是否已赋值
                      * @return EnableDetectText 是否已赋值
+                     * 
                      */
                     bool EnableDetectTextHasBeenSet() const;
 

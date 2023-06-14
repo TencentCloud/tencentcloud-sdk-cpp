@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取订阅关系集合，每次最多删除20个。
                      * @return SubscriptionTopicSets 订阅关系集合，每次最多删除20个。
+                     * 
                      */
                     std::vector<SubscriptionTopic> GetSubscriptionTopicSets() const;
 
                     /**
                      * 设置订阅关系集合，每次最多删除20个。
-                     * @param SubscriptionTopicSets 订阅关系集合，每次最多删除20个。
+                     * @param _subscriptionTopicSets 订阅关系集合，每次最多删除20个。
+                     * 
                      */
                     void SetSubscriptionTopicSets(const std::vector<SubscriptionTopic>& _subscriptionTopicSets);
 
                     /**
                      * 判断参数 SubscriptionTopicSets 是否已赋值
                      * @return SubscriptionTopicSets 是否已赋值
+                     * 
                      */
                     bool SubscriptionTopicSetsHasBeenSet() const;
 
                     /**
                      * 获取pulsar集群Id。
                      * @return ClusterId pulsar集群Id。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置pulsar集群Id。
-                     * @param ClusterId pulsar集群Id。
+                     * @param _clusterId pulsar集群Id。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取是否强制删除，默认为false
                      * @return Force 是否强制删除，默认为false
+                     * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否强制删除，默认为false
-                     * @param Force 是否强制删除，默认为false
+                     * @param _force 是否强制删除，默认为false
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

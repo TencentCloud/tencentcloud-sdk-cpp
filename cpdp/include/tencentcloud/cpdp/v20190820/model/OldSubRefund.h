@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelExternalRefundId 支付机构退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelExternalRefundId() const;
 
                     /**
                      * 设置支付机构退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelExternalRefundId 支付机构退款流水号
+                     * @param _channelExternalRefundId 支付机构退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelExternalRefundId(const std::string& _channelExternalRefundId);
 
                     /**
                      * 判断参数 ChannelExternalRefundId 是否已赋值
                      * @return ChannelExternalRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalRefundIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelExternalOrderId 支付机构支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelExternalOrderId() const;
 
                     /**
                      * 设置支付机构支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelExternalOrderId 支付机构支付订单号
+                     * @param _channelExternalOrderId 支付机构支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelExternalOrderId(const std::string& _channelExternalOrderId);
 
                     /**
                      * 判断参数 ChannelExternalOrderId 是否已赋值
                      * @return ChannelExternalOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalOrderIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelRefundId 渠道退款订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelRefundId() const;
 
                     /**
                      * 设置渠道退款订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelRefundId 渠道退款订单号
+                     * @param _channelRefundId 渠道退款订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelRefundId(const std::string& _channelRefundId);
 
                     /**
                      * 判断参数 ChannelRefundId 是否已赋值
                      * @return ChannelRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelRefundIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubOutTradeNo 子订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubOutTradeNo() const;
 
                     /**
                      * 设置子订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubOutTradeNo 子订单号
+                     * @param _subOutTradeNo 子订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubOutTradeNo(const std::string& _subOutTradeNo);
 
                     /**
                      * 判断参数 SubOutTradeNo 是否已赋值
                      * @return SubOutTradeNo 是否已赋值
+                     * 
                      */
                     bool SubOutTradeNoHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundAmt 子单退款金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefundAmt() const;
 
                     /**
                      * 设置子单退款金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundAmt 子单退款金额
+                     * @param _refundAmt 子单退款金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundAmt(const std::string& _refundAmt);
 
                     /**
                      * 判断参数 RefundAmt 是否已赋值
                      * @return RefundAmt 是否已赋值
+                     * 
                      */
                     bool RefundAmtHasBeenSet() const;
 

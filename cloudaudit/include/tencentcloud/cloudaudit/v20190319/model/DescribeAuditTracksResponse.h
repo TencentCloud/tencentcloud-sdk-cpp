@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取跟踪集列表
                      * @return Tracks 跟踪集列表
+                     * 
                      */
                     std::vector<Tracks> GetTracks() const;
 
                     /**
                      * 判断参数 Tracks 是否已赋值
                      * @return Tracks 是否已赋值
+                     * 
                      */
                     bool TracksHasBeenSet() const;
 
                     /**
                      * 获取总数目
                      * @return TotalCount 总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

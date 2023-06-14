@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取是否存在
                      * @return IsExist 是否存在
+                     * 
                      */
                     bool GetIsExist() const;
 
                     /**
                      * 判断参数 IsExist 是否已赋值
                      * @return IsExist 是否已赋值
+                     * 
                      */
                     bool IsExistHasBeenSet() const;
 
                     /**
                      * 获取任务信息
                      * @return Task 任务信息
+                     * 
                      */
                     ServerManageTaskInfo GetTask() const;
 
                     /**
                      * 判断参数 Task 是否已赋值
                      * @return Task 是否已赋值
+                     * 
                      */
                     bool TaskHasBeenSet() const;
 

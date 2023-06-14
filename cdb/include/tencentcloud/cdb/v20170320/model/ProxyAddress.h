@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取代理组地址ID
                      * @return ProxyAddressId 代理组地址ID
+                     * 
                      */
                     std::string GetProxyAddressId() const;
 
                     /**
                      * 设置代理组地址ID
-                     * @param ProxyAddressId 代理组地址ID
+                     * @param _proxyAddressId 代理组地址ID
+                     * 
                      */
                     void SetProxyAddressId(const std::string& _proxyAddressId);
 
                     /**
                      * 判断参数 ProxyAddressId 是否已赋值
                      * @return ProxyAddressId 是否已赋值
+                     * 
                      */
                     bool ProxyAddressIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return UniqVpcId 私有网络ID
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param UniqVpcId 私有网络ID
+                     * @param _uniqVpcId 私有网络ID
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
                      * 获取私有子网ID
                      * @return UniqSubnetId 私有子网ID
+                     * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置私有子网ID
-                     * @param UniqSubnetId 私有子网ID
+                     * @param _uniqSubnetId 私有子网ID
+                     * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
                      * 判断参数 UniqSubnetId 是否已赋值
                      * @return UniqSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取IP地址
                      * @return Vip IP地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IP地址
-                     * @param Vip IP地址
+                     * @param _vip IP地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return VPort 端口
+                     * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
                      * 设置端口
-                     * @param VPort 端口
+                     * @param _vPort 端口
+                     * 
                      */
                     void SetVPort(const uint64_t& _vPort);
 
                     /**
                      * 判断参数 VPort 是否已赋值
                      * @return VPort 是否已赋值
+                     * 
                      */
                     bool VPortHasBeenSet() const;
 
@@ -144,6 +159,7 @@ namespace TencentCloud
                      * @return WeightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWeightMode() const;
 
@@ -151,15 +167,17 @@ namespace TencentCloud
                      * 设置权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeightMode 权重分配模式；
+                     * @param _weightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
 
                     /**
                      * 判断参数 WeightMode 是否已赋值
                      * @return WeightMode 是否已赋值
+                     * 
                      */
                     bool WeightModeHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsKickOut 是否开启延迟剔除，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsKickOut() const;
 
                     /**
                      * 设置是否开启延迟剔除，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsKickOut 是否开启延迟剔除，取值："true" | "false"
+                     * @param _isKickOut 是否开启延迟剔除，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsKickOut(const bool& _isKickOut);
 
                     /**
                      * 判断参数 IsKickOut 是否已赋值
                      * @return IsKickOut 是否已赋值
+                     * 
                      */
                     bool IsKickOutHasBeenSet() const;
 
@@ -190,20 +211,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinCount 最小保留数量，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMinCount() const;
 
                     /**
                      * 设置最小保留数量，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinCount 最小保留数量，最小取值：0
+                     * @param _minCount 最小保留数量，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinCount(const uint64_t& _minCount);
 
                     /**
                      * 判断参数 MinCount 是否已赋值
                      * @return MinCount 是否已赋值
+                     * 
                      */
                     bool MinCountHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDelay 延迟剔除阈值，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxDelay() const;
 
                     /**
                      * 设置延迟剔除阈值，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxDelay 延迟剔除阈值，最小取值：0
+                     * @param _maxDelay 延迟剔除阈值，最小取值：0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxDelay(const uint64_t& _maxDelay);
 
                     /**
                      * 判断参数 MaxDelay 是否已赋值
                      * @return MaxDelay 是否已赋值
+                     * 
                      */
                     bool MaxDelayHasBeenSet() const;
 
@@ -234,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoAddRo 是否自动添加RO，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoAddRo() const;
 
                     /**
                      * 设置是否自动添加RO，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoAddRo 是否自动添加RO，取值："true" | "false"
+                     * @param _autoAddRo 是否自动添加RO，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoAddRo(const bool& _autoAddRo);
 
                     /**
                      * 判断参数 AutoAddRo 是否已赋值
                      * @return AutoAddRo 是否已赋值
+                     * 
                      */
                     bool AutoAddRoHasBeenSet() const;
 
@@ -256,20 +286,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否是只读，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否是只读，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadOnly 是否是只读，取值："true" | "false"
+                     * @param _readOnly 是否是只读，取值："true" | "false"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
@@ -278,20 +311,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransSplit 是否开启事务分离
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetTransSplit() const;
 
                     /**
                      * 设置是否开启事务分离
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransSplit 是否开启事务分离
+                     * @param _transSplit 是否开启事务分离
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransSplit(const bool& _transSplit);
 
                     /**
                      * 判断参数 TransSplit 是否已赋值
                      * @return TransSplit 是否已赋值
+                     * 
                      */
                     bool TransSplitHasBeenSet() const;
 
@@ -300,20 +336,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailOver 是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetFailOver() const;
 
                     /**
                      * 设置是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailOver 是否开启故障转移
+                     * @param _failOver 是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailOver(const bool& _failOver);
 
                     /**
                      * 判断参数 FailOver 是否已赋值
                      * @return FailOver 是否已赋值
+                     * 
                      */
                     bool FailOverHasBeenSet() const;
 
@@ -322,20 +361,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPool 是否开启连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
                      * 设置是否开启连接池
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPool 是否开启连接池
+                     * @param _connectionPool 是否开启连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPool(const bool& _connectionPool);
 
                     /**
                      * 判断参数 ConnectionPool 是否已赋值
                      * @return ConnectionPool 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolHasBeenSet() const;
 
@@ -344,20 +386,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 描述
+                     * @param _desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -366,20 +411,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAllocation 实例读权重分配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyAllocation> GetProxyAllocation() const;
 
                     /**
                      * 设置实例读权重分配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyAllocation 实例读权重分配
+                     * @param _proxyAllocation 实例读权重分配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyAllocation(const std::vector<ProxyAllocation>& _proxyAllocation);
 
                     /**
                      * 判断参数 ProxyAllocation 是否已赋值
                      * @return ProxyAllocation 是否已赋值
+                     * 
                      */
                     bool ProxyAllocationHasBeenSet() const;
 

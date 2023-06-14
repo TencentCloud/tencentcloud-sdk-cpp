@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取银行名称。
                      * @return BankName 银行名称。
+                     * 
                      */
                     std::string GetBankName() const;
 
                     /**
                      * 设置银行名称。
-                     * @param BankName 银行名称。
+                     * @param _bankName 银行名称。
+                     * 
                      */
                     void SetBankName(const std::string& _bankName);
 
                     /**
                      * 判断参数 BankName 是否已赋值
                      * @return BankName 是否已赋值
+                     * 
                      */
                     bool BankNameHasBeenSet() const;
 
                     /**
                      * 获取银行简称。
                      * @return BankAbbreviation 银行简称。
+                     * 
                      */
                     std::string GetBankAbbreviation() const;
 
                     /**
                      * 设置银行简称。
-                     * @param BankAbbreviation 银行简称。
+                     * @param _bankAbbreviation 银行简称。
+                     * 
                      */
                     void SetBankAbbreviation(const std::string& _bankAbbreviation);
 
                     /**
                      * 判断参数 BankAbbreviation 是否已赋值
                      * @return BankAbbreviation 是否已赋值
+                     * 
                      */
                     bool BankAbbreviationHasBeenSet() const;
 
                     /**
                      * 获取支行名。
                      * @return BankBranchName 支行名。
+                     * 
                      */
                     std::string GetBankBranchName() const;
 
                     /**
                      * 设置支行名。
-                     * @param BankBranchName 支行名。
+                     * @param _bankBranchName 支行名。
+                     * 
                      */
                     void SetBankBranchName(const std::string& _bankBranchName);
 
                     /**
                      * 判断参数 BankBranchName 是否已赋值
                      * @return BankBranchName 是否已赋值
+                     * 
                      */
                     bool BankBranchNameHasBeenSet() const;
 
                     /**
                      * 获取联行号。
                      * @return BankBranchId 联行号。
+                     * 
                      */
                     std::string GetBankBranchId() const;
 
                     /**
                      * 设置联行号。
-                     * @param BankBranchId 联行号。
+                     * @param _bankBranchId 联行号。
+                     * 
                      */
                     void SetBankBranchId(const std::string& _bankBranchId);
 
                     /**
                      * 判断参数 BankBranchId 是否已赋值
                      * @return BankBranchId 是否已赋值
+                     * 
                      */
                     bool BankBranchIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取错误码。上报成功返回 ok。
                      * @return Code 错误码。上报成功返回 ok。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码。上报成功返回 ok。
-                     * @param Code 错误码。上报成功返回 ok。
+                     * @param _code 错误码。上报成功返回 ok。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取错误码描述。
                      * @return Message 错误码描述。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误码描述。
-                     * @param Message 错误码描述。
+                     * @param _message 错误码描述。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

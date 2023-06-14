@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取日期，格式为YYYY-MM-DD
                      * @return Time 日期，格式为YYYY-MM-DD
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日期，格式为YYYY-MM-DD
-                     * @param Time 日期，格式为YYYY-MM-DD
+                     * @param _time 日期，格式为YYYY-MM-DD
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取白板应用SDKAppID
                      * @return SdkAppId 白板应用SDKAppID
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置白板应用SDKAppID
-                     * @param SdkAppId 白板应用SDKAppID
+                     * @param _sdkAppId 白板应用SDKAppID
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 - sp_tiw_dt: 动态转码页数
 - sp_tiw_st: 静态转码页数
 - sp_tiw_ric: 实时录制时长
+                     * 
                      */
                     std::string GetSubProduct() const;
 
@@ -102,17 +109,19 @@ namespace TencentCloud
 - sp_tiw_dt: 动态转码页数
 - sp_tiw_st: 静态转码页数
 - sp_tiw_ric: 实时录制时长
-                     * @param SubProduct 互动白板子产品，请求参数传入的一致
+                     * @param _subProduct 互动白板子产品，请求参数传入的一致
 - sp_tiw_board: 互动白板时长
 - sp_tiw_dt: 动态转码页数
 - sp_tiw_st: 静态转码页数
 - sp_tiw_ric: 实时录制时长
+                     * 
                      */
                     void SetSubProduct(const std::string& _subProduct);
 
                     /**
                      * 判断参数 SubProduct 是否已赋值
                      * @return SubProduct 是否已赋值
+                     * 
                      */
                     bool SubProductHasBeenSet() const;
 
@@ -123,6 +132,7 @@ namespace TencentCloud
                      * @return Value 用量值
 - 静态转码、动态转码单位为页
 - 白板时长、实时录制时长单位为分钟
+                     * 
                      */
                     double GetValue() const;
 
@@ -130,15 +140,17 @@ namespace TencentCloud
                      * 设置用量值
 - 静态转码、动态转码单位为页
 - 白板时长、实时录制时长单位为分钟
-                     * @param Value 用量值
+                     * @param _value 用量值
 - 静态转码、动态转码单位为页
 - 白板时长、实时录制时长单位为分钟
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

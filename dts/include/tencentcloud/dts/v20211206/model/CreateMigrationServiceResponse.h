@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobIds 下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 

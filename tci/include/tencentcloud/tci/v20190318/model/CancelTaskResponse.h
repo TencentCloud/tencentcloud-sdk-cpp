@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取取消任务标志符。
                      * @return JobId 取消任务标志符。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

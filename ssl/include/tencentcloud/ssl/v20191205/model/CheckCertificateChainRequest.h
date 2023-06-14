@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待检查的证书链
                      * @return CertificateChain 待检查的证书链
+                     * 
                      */
                     std::string GetCertificateChain() const;
 
                     /**
                      * 设置待检查的证书链
-                     * @param CertificateChain 待检查的证书链
+                     * @param _certificateChain 待检查的证书链
+                     * 
                      */
                     void SetCertificateChain(const std::string& _certificateChain);
 
                     /**
                      * 判断参数 CertificateChain 是否已赋值
                      * @return CertificateChain 是否已赋值
+                     * 
                      */
                     bool CertificateChainHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取队列概览信息列表。
                      * @return QueueSet 队列概览信息列表。
+                     * 
                      */
                     std::vector<QueueOverview> GetQueueSet() const;
 
                     /**
                      * 判断参数 QueueSet 是否已赋值
                      * @return QueueSet 是否已赋值
+                     * 
                      */
                     bool QueueSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的节点数量。
                      * @return TotalCount 符合条件的节点数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

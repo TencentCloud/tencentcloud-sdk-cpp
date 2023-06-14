@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
                     /**
                      * 获取漏洞名称
                      * @return Name 漏洞名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置漏洞名称
-                     * @param Name 漏洞名称
+                     * @param _name 漏洞名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取漏洞标签
                      * @return Tags 漏洞标签
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置漏洞标签
-                     * @param Tags 漏洞标签
+                     * @param _tags 漏洞标签
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取漏洞CVSS
                      * @return CVSSV3Score 漏洞CVSS
+                     * 
                      */
                     double GetCVSSV3Score() const;
 
                     /**
                      * 设置漏洞CVSS
-                     * @param CVSSV3Score 漏洞CVSS
+                     * @param _cVSSV3Score 漏洞CVSS
+                     * 
                      */
                     void SetCVSSV3Score(const double& _cVSSV3Score);
 
                     /**
                      * 判断参数 CVSSV3Score 是否已赋值
                      * @return CVSSV3Score 是否已赋值
+                     * 
                      */
                     bool CVSSV3ScoreHasBeenSet() const;
 
                     /**
                      * 获取漏洞威胁等级
                      * @return Level 漏洞威胁等级
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置漏洞威胁等级
-                     * @param Level 漏洞威胁等级
+                     * @param _level 漏洞威胁等级
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取漏洞CVEID
                      * @return CVEID 漏洞CVEID
+                     * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 设置漏洞CVEID
-                     * @param CVEID 漏洞CVEID
+                     * @param _cVEID 漏洞CVEID
+                     * 
                      */
                     void SetCVEID(const std::string& _cVEID);
 
                     /**
                      * 判断参数 CVEID 是否已赋值
                      * @return CVEID 是否已赋值
+                     * 
                      */
                     bool CVEIDHasBeenSet() const;
 
                     /**
                      * 获取漏洞披露时间
                      * @return SubmitTime 漏洞披露时间
+                     * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置漏洞披露时间
-                     * @param SubmitTime 漏洞披露时间
+                     * @param _submitTime 漏洞披露时间
+                     * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
 
                     /**
                      * 判断参数 SubmitTime 是否已赋值
                      * @return SubmitTime 是否已赋值
+                     * 
                      */
                     bool SubmitTimeHasBeenSet() const;
 

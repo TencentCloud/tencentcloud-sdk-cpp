@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取终端节点ID。
                      * @return EndPointId 终端节点ID。
+                     * 
                      */
                     std::string GetEndPointId() const;
 
                     /**
                      * 设置终端节点ID。
-                     * @param EndPointId 终端节点ID。
+                     * @param _endPointId 终端节点ID。
+                     * 
                      */
                     void SetEndPointId(const std::string& _endPointId);
 
                     /**
                      * 判断参数 EndPointId 是否已赋值
                      * @return EndPointId 是否已赋值
+                     * 
                      */
                     bool EndPointIdHasBeenSet() const;
 

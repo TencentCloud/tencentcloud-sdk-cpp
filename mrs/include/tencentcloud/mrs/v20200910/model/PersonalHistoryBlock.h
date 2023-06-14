@@ -56,20 +56,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthPlace 出生地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BirthPlaceBlock GetBirthPlace() const;
 
                     /**
                      * 设置出生地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthPlace 出生地
+                     * @param _birthPlace 出生地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthPlace(const BirthPlaceBlock& _birthPlace);
 
                     /**
                      * 判断参数 BirthPlace 是否已赋值
                      * @return BirthPlace 是否已赋值
+                     * 
                      */
                     bool BirthPlaceHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePlace 居住地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BirthPlaceBlock GetLivePlace() const;
 
                     /**
                      * 设置居住地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LivePlace 居住地
+                     * @param _livePlace 居住地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLivePlace(const BirthPlaceBlock& _livePlace);
 
                     /**
                      * 判断参数 LivePlace 是否已赋值
                      * @return LivePlace 是否已赋值
+                     * 
                      */
                     bool LivePlaceHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 职业
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BirthPlaceBlock GetJob() const;
 
                     /**
                      * 设置职业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Job 职业
+                     * @param _job 职业
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJob(const BirthPlaceBlock& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
@@ -122,20 +131,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmokeHistory 吸烟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SmokeHistoryBlock GetSmokeHistory() const;
 
                     /**
                      * 设置吸烟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmokeHistory 吸烟
+                     * @param _smokeHistory 吸烟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmokeHistory(const SmokeHistoryBlock& _smokeHistory);
 
                     /**
                      * 判断参数 SmokeHistory 是否已赋值
                      * @return SmokeHistory 是否已赋值
+                     * 
                      */
                     bool SmokeHistoryHasBeenSet() const;
 
@@ -144,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlcoholicHistory 喝酒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SmokeHistoryBlock GetAlcoholicHistory() const;
 
                     /**
                      * 设置喝酒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlcoholicHistory 喝酒
+                     * @param _alcoholicHistory 喝酒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlcoholicHistory(const SmokeHistoryBlock& _alcoholicHistory);
 
                     /**
                      * 判断参数 AlcoholicHistory 是否已赋值
                      * @return AlcoholicHistory 是否已赋值
+                     * 
                      */
                     bool AlcoholicHistoryHasBeenSet() const;
 
@@ -166,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualHistory 月经史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MenstrualHistoryBlock GetMenstrualHistory() const;
 
                     /**
                      * 设置月经史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstrualHistory 月经史
+                     * @param _menstrualHistory 月经史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstrualHistory(const MenstrualHistoryBlock& _menstrualHistory);
 
                     /**
                      * 判断参数 MenstrualHistory 是否已赋值
                      * @return MenstrualHistory 是否已赋值
+                     * 
                      */
                     bool MenstrualHistoryHasBeenSet() const;
 
@@ -188,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObstericalHistory 婚姻-生育史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ObstetricalHistoryBlock GetObstericalHistory() const;
 
                     /**
                      * 设置婚姻-生育史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObstericalHistory 婚姻-生育史
+                     * @param _obstericalHistory 婚姻-生育史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObstericalHistory(const ObstetricalHistoryBlock& _obstericalHistory);
 
                     /**
                      * 判断参数 ObstericalHistory 是否已赋值
                      * @return ObstericalHistory 是否已赋值
+                     * 
                      */
                     bool ObstericalHistoryHasBeenSet() const;
 
@@ -210,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyHistory 家族史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FamilyHistoryBlock GetFamilyHistory() const;
 
                     /**
                      * 设置家族史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FamilyHistory 家族史
+                     * @param _familyHistory 家族史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFamilyHistory(const FamilyHistoryBlock& _familyHistory);
 
                     /**
                      * 判断参数 FamilyHistory 是否已赋值
                      * @return FamilyHistory 是否已赋值
+                     * 
                      */
                     bool FamilyHistoryHasBeenSet() const;
 

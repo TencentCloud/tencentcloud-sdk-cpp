@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取点播转直播项目 Id 。
                      * @return ProjectId 点播转直播项目 Id 。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置点播转直播项目 Id 。
-                     * @param ProjectId 点播转直播项目 Id 。
+                     * @param _projectId 点播转直播项目 Id 。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取请参考 [操作类型](#Operation)。
                      * @return Operation 请参考 [操作类型](#Operation)。
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置请参考 [操作类型](#Operation)。
-                     * @param Operation 请参考 [操作类型](#Operation)。
+                     * @param _operation 请参考 [操作类型](#Operation)。
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。
                      * @return SourceInfos 输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。
+                     * 
                      */
                     std::vector<MediaCastSourceInfo> GetSourceInfos() const;
 
                     /**
                      * 设置输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。
-                     * @param SourceInfos 输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _sourceInfos 输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。
+                     * 
                      */
                     void SetSourceInfos(const std::vector<MediaCastSourceInfo>& _sourceInfos);
 
                     /**
                      * 判断参数 SourceInfos 是否已赋值
                      * @return SourceInfos 是否已赋值
+                     * 
                      */
                     bool SourceInfosHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。
                      * @return DestinationInfos 输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。
+                     * 
                      */
                     std::vector<MediaCastDestinationInfo> GetDestinationInfos() const;
 
                     /**
                      * 设置输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。
-                     * @param DestinationInfos 输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _destinationInfos 输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。
+                     * 
                      */
                     void SetDestinationInfos(const std::vector<MediaCastDestinationInfo>& _destinationInfos);
 
                     /**
                      * 判断参数 DestinationInfos 是否已赋值
                      * @return DestinationInfos 是否已赋值
+                     * 
                      */
                     bool DestinationInfosHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 当 Operation 为 ModfiyOutputSetting 时必填。
                      * @return OutputMediaSetting 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModfiyOutputSetting 时必填。
+                     * 
                      */
                     MediaCastOutputMediaSetting GetOutputMediaSetting() const;
 
                     /**
                      * 设置输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModfiyOutputSetting 时必填。
-                     * @param OutputMediaSetting 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _outputMediaSetting 输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModfiyOutputSetting 时必填。
+                     * 
                      */
                     void SetOutputMediaSetting(const MediaCastOutputMediaSetting& _outputMediaSetting);
 
                     /**
                      * 判断参数 OutputMediaSetting 是否已赋值
                      * @return OutputMediaSetting 是否已赋值
+                     * 
                      */
                     bool OutputMediaSettingHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 当 Operation 为 ModifyPlaySetting 时必填。
                      * @return PlaySetting 播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModifyPlaySetting 时必填。
+                     * 
                      */
                     MediaCastPlaySetting GetPlaySetting() const;
 
                     /**
                      * 设置播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModifyPlaySetting 时必填。
-                     * @param PlaySetting 播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _playSetting 播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 ModifyPlaySetting 时必填。
+                     * 
                      */
                     void SetPlaySetting(const MediaCastPlaySetting& _playSetting);
 
                     /**
                      * 判断参数 PlaySetting 是否已赋值
                      * @return PlaySetting 是否已赋值
+                     * 
                      */
                     bool PlaySettingHasBeenSet() const;
 
@@ -193,38 +214,44 @@ namespace TencentCloud
 当 Operation 为 AddSource 时必填。
                      * @return Position 新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource 时必填。
+                     * 
                      */
                     int64_t GetPosition() const;
 
                     /**
                      * 设置新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource 时必填。
-                     * @param Position 新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _position 新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。
 当 Operation 为 AddSource 时必填。
+                     * 
                      */
                     void SetPosition(const int64_t& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

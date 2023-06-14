@@ -46,198 +46,231 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义的服务名称。
                      * @return ServiceName 用户自定义的服务名称。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置用户自定义的服务名称。
-                     * @param ServiceName 用户自定义的服务名称。
+                     * @param _serviceName 用户自定义的服务名称。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取服务的前端请求类型。如 http、https、http&https。
                      * @return Protocol 服务的前端请求类型。如 http、https、http&https。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置服务的前端请求类型。如 http、https、http&https。
-                     * @param Protocol 服务的前端请求类型。如 http、https、http&https。
+                     * @param _protocol 服务的前端请求类型。如 http、https、http&https。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取用户自定义的服务描述。
                      * @return ServiceDesc 用户自定义的服务描述。
+                     * 
                      */
                     std::string GetServiceDesc() const;
 
                     /**
                      * 设置用户自定义的服务描述。
-                     * @param ServiceDesc 用户自定义的服务描述。
+                     * @param _serviceDesc 用户自定义的服务描述。
+                     * 
                      */
                     void SetServiceDesc(const std::string& _serviceDesc);
 
                     /**
                      * 判断参数 ServiceDesc 是否已赋值
                      * @return ServiceDesc 是否已赋值
+                     * 
                      */
                     bool ServiceDescHasBeenSet() const;
 
                     /**
                      * 获取独立集群名称，用于指定创建服务所在的独立集群。
                      * @return ExclusiveSetName 独立集群名称，用于指定创建服务所在的独立集群。
+                     * 
                      */
                     std::string GetExclusiveSetName() const;
 
                     /**
                      * 设置独立集群名称，用于指定创建服务所在的独立集群。
-                     * @param ExclusiveSetName 独立集群名称，用于指定创建服务所在的独立集群。
+                     * @param _exclusiveSetName 独立集群名称，用于指定创建服务所在的独立集群。
+                     * 
                      */
                     void SetExclusiveSetName(const std::string& _exclusiveSetName);
 
                     /**
                      * 判断参数 ExclusiveSetName 是否已赋值
                      * @return ExclusiveSetName 是否已赋值
+                     * 
                      */
                     bool ExclusiveSetNameHasBeenSet() const;
 
                     /**
                      * 获取网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
                      * @return NetTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * 
                      */
                     std::vector<std::string> GetNetTypes() const;
 
                     /**
                      * 设置网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
-                     * @param NetTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * @param _netTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * 
                      */
                     void SetNetTypes(const std::vector<std::string>& _netTypes);
 
                     /**
                      * 判断参数 NetTypes 是否已赋值
                      * @return NetTypes 是否已赋值
+                     * 
                      */
                     bool NetTypesHasBeenSet() const;
 
                     /**
                      * 获取IP版本号，支持IPv4和IPv6，默认为IPv4。
                      * @return IpVersion IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
                      * 设置IP版本号，支持IPv4和IPv6，默认为IPv4。
-                     * @param IpVersion IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * @param _ipVersion IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
 
                     /**
                      * 判断参数 IpVersion 是否已赋值
                      * @return IpVersion 是否已赋值
+                     * 
                      */
                     bool IpVersionHasBeenSet() const;
 
                     /**
                      * 获取集群名称。保留字段，tsf serverlss类型使用。
                      * @return SetServerName 集群名称。保留字段，tsf serverlss类型使用。
+                     * 
                      */
                     std::string GetSetServerName() const;
 
                     /**
                      * 设置集群名称。保留字段，tsf serverlss类型使用。
-                     * @param SetServerName 集群名称。保留字段，tsf serverlss类型使用。
+                     * @param _setServerName 集群名称。保留字段，tsf serverlss类型使用。
+                     * 
                      */
                     void SetSetServerName(const std::string& _setServerName);
 
                     /**
                      * 判断参数 SetServerName 是否已赋值
                      * @return SetServerName 是否已赋值
+                     * 
                      */
                     bool SetServerNameHasBeenSet() const;
 
                     /**
                      * 获取用户类型。保留类型，serverless用户使用。
                      * @return AppIdType 用户类型。保留类型，serverless用户使用。
+                     * 
                      */
                     std::string GetAppIdType() const;
 
                     /**
                      * 设置用户类型。保留类型，serverless用户使用。
-                     * @param AppIdType 用户类型。保留类型，serverless用户使用。
+                     * @param _appIdType 用户类型。保留类型，serverless用户使用。
+                     * 
                      */
                     void SetAppIdType(const std::string& _appIdType);
 
                     /**
                      * 判断参数 AppIdType 是否已赋值
                      * @return AppIdType 是否已赋值
+                     * 
                      */
                     bool AppIdTypeHasBeenSet() const;
 
                     /**
                      * 获取标签。
                      * @return Tags 标签。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签。
-                     * @param Tags 标签。
+                     * @param _tags 标签。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取独享实例id
                      * @return InstanceId 独享实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享实例id
-                     * @param InstanceId 独享实例id
+                     * @param _instanceId 独享实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取vpc属性
                      * @return UniqVpcId vpc属性
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置vpc属性
-                     * @param UniqVpcId vpc属性
+                     * @param _uniqVpcId vpc属性
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 

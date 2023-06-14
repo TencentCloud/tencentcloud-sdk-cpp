@@ -48,108 +48,126 @@ namespace TencentCloud
                     /**
                      * 获取模板名。仅支持中文、英文、数字、_、-。
                      * @return TemplateName 模板名。仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名。仅支持中文、英文、数字、_、-。
-                     * @param TemplateName 模板名。仅支持中文、英文、数字、_、-。
+                     * @param _templateName 模板名。仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取描述信息。
                      * @return Description 描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取Flv录制参数，开启Flv录制时设置。
                      * @return FlvParam Flv录制参数，开启Flv录制时设置。
+                     * 
                      */
                     RecordParam GetFlvParam() const;
 
                     /**
                      * 设置Flv录制参数，开启Flv录制时设置。
-                     * @param FlvParam Flv录制参数，开启Flv录制时设置。
+                     * @param _flvParam Flv录制参数，开启Flv录制时设置。
+                     * 
                      */
                     void SetFlvParam(const RecordParam& _flvParam);
 
                     /**
                      * 判断参数 FlvParam 是否已赋值
                      * @return FlvParam 是否已赋值
+                     * 
                      */
                     bool FlvParamHasBeenSet() const;
 
                     /**
                      * 获取Hls录制参数，开启hls录制时设置。
                      * @return HlsParam Hls录制参数，开启hls录制时设置。
+                     * 
                      */
                     RecordParam GetHlsParam() const;
 
                     /**
                      * 设置Hls录制参数，开启hls录制时设置。
-                     * @param HlsParam Hls录制参数，开启hls录制时设置。
+                     * @param _hlsParam Hls录制参数，开启hls录制时设置。
+                     * 
                      */
                     void SetHlsParam(const RecordParam& _hlsParam);
 
                     /**
                      * 判断参数 HlsParam 是否已赋值
                      * @return HlsParam 是否已赋值
+                     * 
                      */
                     bool HlsParamHasBeenSet() const;
 
                     /**
                      * 获取Mp4录制参数，开启Mp4录制时设置。
                      * @return Mp4Param Mp4录制参数，开启Mp4录制时设置。
+                     * 
                      */
                     RecordParam GetMp4Param() const;
 
                     /**
                      * 设置Mp4录制参数，开启Mp4录制时设置。
-                     * @param Mp4Param Mp4录制参数，开启Mp4录制时设置。
+                     * @param _mp4Param Mp4录制参数，开启Mp4录制时设置。
+                     * 
                      */
                     void SetMp4Param(const RecordParam& _mp4Param);
 
                     /**
                      * 判断参数 Mp4Param 是否已赋值
                      * @return Mp4Param 是否已赋值
+                     * 
                      */
                     bool Mp4ParamHasBeenSet() const;
 
                     /**
                      * 获取Aac录制参数，开启Aac录制时设置。
                      * @return AacParam Aac录制参数，开启Aac录制时设置。
+                     * 
                      */
                     RecordParam GetAacParam() const;
 
                     /**
                      * 设置Aac录制参数，开启Aac录制时设置。
-                     * @param AacParam Aac录制参数，开启Aac录制时设置。
+                     * @param _aacParam Aac录制参数，开启Aac录制时设置。
+                     * 
                      */
                     void SetAacParam(const RecordParam& _aacParam);
 
                     /**
                      * 判断参数 AacParam 是否已赋值
                      * @return AacParam 是否已赋值
+                     * 
                      */
                     bool AacParamHasBeenSet() const;
 
@@ -160,6 +178,7 @@ namespace TencentCloud
                      * @return IsDelayLive 直播类型，默认 0。
 0：普通直播，
 1：慢直播。
+                     * 
                      */
                     int64_t GetIsDelayLive() const;
 
@@ -167,87 +186,101 @@ namespace TencentCloud
                      * 设置直播类型，默认 0。
 0：普通直播，
 1：慢直播。
-                     * @param IsDelayLive 直播类型，默认 0。
+                     * @param _isDelayLive 直播类型，默认 0。
 0：普通直播，
 1：慢直播。
+                     * 
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
 
                     /**
                      * 判断参数 IsDelayLive 是否已赋值
                      * @return IsDelayLive 是否已赋值
+                     * 
                      */
                     bool IsDelayLiveHasBeenSet() const;
 
                     /**
                      * 获取HLS专属录制参数。
                      * @return HlsSpecialParam HLS专属录制参数。
+                     * 
                      */
                     HlsSpecialParam GetHlsSpecialParam() const;
 
                     /**
                      * 设置HLS专属录制参数。
-                     * @param HlsSpecialParam HLS专属录制参数。
+                     * @param _hlsSpecialParam HLS专属录制参数。
+                     * 
                      */
                     void SetHlsSpecialParam(const HlsSpecialParam& _hlsSpecialParam);
 
                     /**
                      * 判断参数 HlsSpecialParam 是否已赋值
                      * @return HlsSpecialParam 是否已赋值
+                     * 
                      */
                     bool HlsSpecialParamHasBeenSet() const;
 
                     /**
                      * 获取Mp3录制参数，开启Mp3录制时设置。
                      * @return Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     * 
                      */
                     RecordParam GetMp3Param() const;
 
                     /**
                      * 设置Mp3录制参数，开启Mp3录制时设置。
-                     * @param Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     * @param _mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     * 
                      */
                     void SetMp3Param(const RecordParam& _mp3Param);
 
                     /**
                      * 判断参数 Mp3Param 是否已赋值
                      * @return Mp3Param 是否已赋值
+                     * 
                      */
                     bool Mp3ParamHasBeenSet() const;
 
                     /**
                      * 获取是否去除水印，类型为慢直播时此参数无效。
                      * @return RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
+                     * 
                      */
                     bool GetRemoveWatermark() const;
 
                     /**
                      * 设置是否去除水印，类型为慢直播时此参数无效。
-                     * @param RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
+                     * @param _removeWatermark 是否去除水印，类型为慢直播时此参数无效。
+                     * 
                      */
                     void SetRemoveWatermark(const bool& _removeWatermark);
 
                     /**
                      * 判断参数 RemoveWatermark 是否已赋值
                      * @return RemoveWatermark 是否已赋值
+                     * 
                      */
                     bool RemoveWatermarkHasBeenSet() const;
 
                     /**
                      * 获取FLV 录制特殊参数。
                      * @return FlvSpecialParam FLV 录制特殊参数。
+                     * 
                      */
                     FlvSpecialParam GetFlvSpecialParam() const;
 
                     /**
                      * 设置FLV 录制特殊参数。
-                     * @param FlvSpecialParam FLV 录制特殊参数。
+                     * @param _flvSpecialParam FLV 录制特殊参数。
+                     * 
                      */
                     void SetFlvSpecialParam(const FlvSpecialParam& _flvSpecialParam);
 
                     /**
                      * 判断参数 FlvSpecialParam 是否已赋值
                      * @return FlvSpecialParam 是否已赋值
+                     * 
                      */
                     bool FlvSpecialParamHasBeenSet() const;
 

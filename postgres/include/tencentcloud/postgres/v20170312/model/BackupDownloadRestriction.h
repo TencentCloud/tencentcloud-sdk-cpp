@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
                      * @return RestrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 
                      */
                     std::string GetRestrictionType() const;
 
                     /**
                      * 设置备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
-                     * @param RestrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * @param _restrictionType 备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。
+                     * 
                      */
                     void SetRestrictionType(const std::string& _restrictionType);
 
                     /**
                      * 判断参数 RestrictionType 是否已赋值
                      * @return RestrictionType 是否已赋值
+                     * 
                      */
                     bool RestrictionTypeHasBeenSet() const;
 
                     /**
                      * 获取vpc限制效力，ALLOW 允许；DENY 拒绝。
                      * @return VpcRestrictionEffect vpc限制效力，ALLOW 允许；DENY 拒绝。
+                     * 
                      */
                     std::string GetVpcRestrictionEffect() const;
 
                     /**
                      * 设置vpc限制效力，ALLOW 允许；DENY 拒绝。
-                     * @param VpcRestrictionEffect vpc限制效力，ALLOW 允许；DENY 拒绝。
+                     * @param _vpcRestrictionEffect vpc限制效力，ALLOW 允许；DENY 拒绝。
+                     * 
                      */
                     void SetVpcRestrictionEffect(const std::string& _vpcRestrictionEffect);
 
                     /**
                      * 判断参数 VpcRestrictionEffect 是否已赋值
                      * @return VpcRestrictionEffect 是否已赋值
+                     * 
                      */
                     bool VpcRestrictionEffectHasBeenSet() const;
 
                     /**
                      * 获取允许或拒绝下载备份文件的vpcId列表。
                      * @return VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+                     * 
                      */
                     std::vector<std::string> GetVpcIdSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的vpcId列表。
-                     * @param VpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+                     * @param _vpcIdSet 允许或拒绝下载备份文件的vpcId列表。
+                     * 
                      */
                     void SetVpcIdSet(const std::vector<std::string>& _vpcIdSet);
 
                     /**
                      * 判断参数 VpcIdSet 是否已赋值
                      * @return VpcIdSet 是否已赋值
+                     * 
                      */
                     bool VpcIdSetHasBeenSet() const;
 
                     /**
                      * 获取ip限制效力，ALLOW 允许；DENY 拒绝。
                      * @return IpRestrictionEffect ip限制效力，ALLOW 允许；DENY 拒绝。
+                     * 
                      */
                     std::string GetIpRestrictionEffect() const;
 
                     /**
                      * 设置ip限制效力，ALLOW 允许；DENY 拒绝。
-                     * @param IpRestrictionEffect ip限制效力，ALLOW 允许；DENY 拒绝。
+                     * @param _ipRestrictionEffect ip限制效力，ALLOW 允许；DENY 拒绝。
+                     * 
                      */
                     void SetIpRestrictionEffect(const std::string& _ipRestrictionEffect);
 
                     /**
                      * 判断参数 IpRestrictionEffect 是否已赋值
                      * @return IpRestrictionEffect 是否已赋值
+                     * 
                      */
                     bool IpRestrictionEffectHasBeenSet() const;
 
                     /**
                      * 获取允许或拒绝下载备份文件的ip列表。
                      * @return IpSet 允许或拒绝下载备份文件的ip列表。
+                     * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
                      * 设置允许或拒绝下载备份文件的ip列表。
-                     * @param IpSet 允许或拒绝下载备份文件的ip列表。
+                     * @param _ipSet 允许或拒绝下载备份文件的ip列表。
+                     * 
                      */
                     void SetIpSet(const std::vector<std::string>& _ipSet);
 
                     /**
                      * 判断参数 IpSet 是否已赋值
                      * @return IpSet 是否已赋值
+                     * 
                      */
                     bool IpSetHasBeenSet() const;
 

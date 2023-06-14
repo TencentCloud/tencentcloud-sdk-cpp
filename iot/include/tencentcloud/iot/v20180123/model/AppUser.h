@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取应用Id
                      * @return ApplicationId 应用Id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用Id
-                     * @param ApplicationId 应用Id
+                     * @param _applicationId 应用Id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取昵称
                      * @return NickName 昵称
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置昵称
-                     * @param NickName 昵称
+                     * @param _nickName 昵称
+                     * 
                      */
                     void SetNickName(const std::string& _nickName);
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdateTime 修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

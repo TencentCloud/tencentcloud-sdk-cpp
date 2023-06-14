@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取卡片ICCID
                      * @return Iccid 卡片ICCID
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置卡片ICCID
-                     * @param Iccid 卡片ICCID
+                     * @param _iccid 卡片ICCID
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
                     /**
                      * 获取套外流量,单位MB
                      * @return ExtentData 套外流量,单位MB
+                     * 
                      */
                     uint64_t GetExtentData() const;
 
                     /**
                      * 设置套外流量,单位MB
-                     * @param ExtentData 套外流量,单位MB
+                     * @param _extentData 套外流量,单位MB
+                     * 
                      */
                     void SetExtentData(const uint64_t& _extentData);
 
                     /**
                      * 判断参数 ExtentData 是否已赋值
                      * @return ExtentData 是否已赋值
+                     * 
                      */
                     bool ExtentDataHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return Sdkappid 应用ID
+                     * 
                      */
                     uint64_t GetSdkappid() const;
 
                     /**
                      * 设置应用ID
-                     * @param Sdkappid 应用ID
+                     * @param _sdkappid 应用ID
+                     * 
                      */
                     void SetSdkappid(const uint64_t& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 

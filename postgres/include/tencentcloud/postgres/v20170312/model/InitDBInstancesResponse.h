@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例ID集合。
                      * @return DBInstanceIdSet 实例ID集合。
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 

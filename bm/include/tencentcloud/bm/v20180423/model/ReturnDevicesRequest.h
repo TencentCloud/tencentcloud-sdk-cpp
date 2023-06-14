@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要退还的物理机ID列表
                      * @return InstanceIds 需要退还的物理机ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置需要退还的物理机ID列表
-                     * @param InstanceIds 需要退还的物理机ID列表
+                     * @param _instanceIds 需要退还的物理机ID列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

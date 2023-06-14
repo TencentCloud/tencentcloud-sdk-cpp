@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
                      * @return UserName 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
-                     * @param UserName 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * @param _userName 用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取用户姓名， 最大20个字符，不能包含空白字符
                      * @return RealName 用户姓名， 最大20个字符，不能包含空白字符
+                     * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置用户姓名， 最大20个字符，不能包含空白字符
-                     * @param RealName 用户姓名， 最大20个字符，不能包含空白字符
+                     * @param _realName 用户姓名， 最大20个字符，不能包含空白字符
+                     * 
                      */
                     void SetRealName(const std::string& _realName);
 
                     /**
                      * 判断参数 RealName 是否已赋值
                      * @return RealName 是否已赋值
+                     * 
                      */
                     bool RealNameHasBeenSet() const;
 
                     /**
                      * 获取手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      * @return Phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @param Phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @param _phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return Id 用户ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置用户ID
-                     * @param Id 用户ID
+                     * @param _id 用户ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取电子邮件
                      * @return Email 电子邮件
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置电子邮件
-                     * @param Email 电子邮件
+                     * @param _email 电子邮件
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -143,20 +158,23 @@ namespace TencentCloud
 生效、失效时间不填则用户长期有效
                      * @return ValidateFrom 用户生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
+                     * 
                      */
                     std::string GetValidateFrom() const;
 
                     /**
                      * 设置用户生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
-                     * @param ValidateFrom 用户生效时间，如:"2021-09-22T00:00:00+00:00"
+                     * @param _validateFrom 用户生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
+                     * 
                      */
                     void SetValidateFrom(const std::string& _validateFrom);
 
                     /**
                      * 判断参数 ValidateFrom 是否已赋值
                      * @return ValidateFrom 是否已赋值
+                     * 
                      */
                     bool ValidateFromHasBeenSet() const;
 
@@ -165,74 +183,86 @@ namespace TencentCloud
 生效、失效时间不填则用户长期有效
                      * @return ValidateTo 用户失效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
+                     * 
                      */
                     std::string GetValidateTo() const;
 
                     /**
                      * 设置用户失效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
-                     * @param ValidateTo 用户失效时间，如:"2021-09-22T00:00:00+00:00"
+                     * @param _validateTo 用户失效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则用户长期有效
+                     * 
                      */
                     void SetValidateTo(const std::string& _validateTo);
 
                     /**
                      * 判断参数 ValidateTo 是否已赋值
                      * @return ValidateTo 是否已赋值
+                     * 
                      */
                     bool ValidateToHasBeenSet() const;
 
                     /**
                      * 获取所属用户组列表
                      * @return GroupSet 所属用户组列表
+                     * 
                      */
                     std::vector<Group> GetGroupSet() const;
 
                     /**
                      * 设置所属用户组列表
-                     * @param GroupSet 所属用户组列表
+                     * @param _groupSet 所属用户组列表
+                     * 
                      */
                     void SetGroupSet(const std::vector<Group>& _groupSet);
 
                     /**
                      * 判断参数 GroupSet 是否已赋值
                      * @return GroupSet 是否已赋值
+                     * 
                      */
                     bool GroupSetHasBeenSet() const;
 
                     /**
                      * 获取认证方式，0 - 本地，1 - LDAP，2 - OAuth
                      * @return AuthType 认证方式，0 - 本地，1 - LDAP，2 - OAuth
+                     * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
                      * 设置认证方式，0 - 本地，1 - LDAP，2 - OAuth
-                     * @param AuthType 认证方式，0 - 本地，1 - LDAP，2 - OAuth
+                     * @param _authType 认证方式，0 - 本地，1 - LDAP，2 - OAuth
+                     * 
                      */
                     void SetAuthType(const uint64_t& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
                      * @return ValidateTime 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
+                     * 
                      */
                     std::string GetValidateTime() const;
 
                     /**
                      * 设置访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
-                     * @param ValidateTime 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
+                     * @param _validateTime 访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问
+                     * 
                      */
                     void SetValidateTime(const std::string& _validateTime);
 
                     /**
                      * 判断参数 ValidateTime 是否已赋值
                      * @return ValidateTime 是否已赋值
+                     * 
                      */
                     bool ValidateTimeHasBeenSet() const;
 
@@ -241,20 +271,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 用户所属部门（用于出参）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置用户所属部门（用于出参）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 用户所属部门（用于出参）
+                     * @param _department 用户所属部门（用于出参）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartment(const Department& _department);
 
                     /**
                      * 判断参数 Department 是否已赋值
                      * @return Department 是否已赋值
+                     * 
                      */
                     bool DepartmentHasBeenSet() const;
 
@@ -263,20 +296,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentId 用户所属部门（用于入参）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置用户所属部门（用于入参）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DepartmentId 用户所属部门（用于入参）
+                     * @param _departmentId 用户所属部门（用于入参）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

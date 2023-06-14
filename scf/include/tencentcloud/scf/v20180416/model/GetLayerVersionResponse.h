@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取适配的运行时
                      * @return CompatibleRuntimes 适配的运行时
+                     * 
                      */
                     std::vector<std::string> GetCompatibleRuntimes() const;
 
                     /**
                      * 判断参数 CompatibleRuntimes 是否已赋值
                      * @return CompatibleRuntimes 是否已赋值
+                     * 
                      */
                     bool CompatibleRuntimesHasBeenSet() const;
 
                     /**
                      * 获取层中版本文件的SHA256编码
                      * @return CodeSha256 层中版本文件的SHA256编码
+                     * 
                      */
                     std::string GetCodeSha256() const;
 
                     /**
                      * 判断参数 CodeSha256 是否已赋值
                      * @return CodeSha256 是否已赋值
+                     * 
                      */
                     bool CodeSha256HasBeenSet() const;
 
                     /**
                      * 获取层中版本文件的下载地址
                      * @return Location 层中版本文件的下载地址
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取版本的创建时间
                      * @return AddTime 版本的创建时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取版本的描述
                      * @return Description 版本的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取许可证信息
                      * @return LicenseInfo 许可证信息
+                     * 
                      */
                     std::string GetLicenseInfo() const;
 
                     /**
                      * 判断参数 LicenseInfo 是否已赋值
                      * @return LicenseInfo 是否已赋值
+                     * 
                      */
                     bool LicenseInfoHasBeenSet() const;
 
                     /**
                      * 获取版本号
                      * @return LayerVersion 版本号
+                     * 
                      */
                     int64_t GetLayerVersion() const;
 
                     /**
                      * 判断参数 LayerVersion 是否已赋值
                      * @return LayerVersion 是否已赋值
+                     * 
                      */
                     bool LayerVersionHasBeenSet() const;
 
                     /**
                      * 获取层名称
                      * @return LayerName 层名称
+                     * 
                      */
                     std::string GetLayerName() const;
 
                     /**
                      * 判断参数 LayerName 是否已赋值
                      * @return LayerName 是否已赋值
+                     * 
                      */
                     bool LayerNameHasBeenSet() const;
 
                     /**
                      * 获取层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
                      * @return Status 层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

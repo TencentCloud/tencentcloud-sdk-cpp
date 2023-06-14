@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
                      * @return MaterialId 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
-                     * @param MaterialId 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
+                     * @param _materialId 导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取云点播媒资 FileId。
                      * @return VodFileId 云点播媒资 FileId。
+                     * 
                      */
                     std::string GetVodFileId() const;
 
                     /**
                      * 设置云点播媒资 FileId。
-                     * @param VodFileId 云点播媒资 FileId。
+                     * @param _vodFileId 云点播媒资 FileId。
+                     * 
                      */
                     void SetVodFileId(const std::string& _vodFileId);
 
                     /**
                      * 判断参数 VodFileId 是否已赋值
                      * @return VodFileId 是否已赋值
+                     * 
                      */
                     bool VodFileIdHasBeenSet() const;
 
                     /**
                      * 获取导出的媒资 URL。
                      * @return URL 导出的媒资 URL。
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置导出的媒资 URL。
-                     * @param URL 导出的媒资 URL。
+                     * @param _uRL 导出的媒资 URL。
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 
@@ -106,38 +115,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 元信息。
+                     * @param _metaData 元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取导出视频的封面图片 URL。
                      * @return CoverURL 导出视频的封面图片 URL。
+                     * 
                      */
                     std::string GetCoverURL() const;
 
                     /**
                      * 设置导出视频的封面图片 URL。
-                     * @param CoverURL 导出视频的封面图片 URL。
+                     * @param _coverURL 导出视频的封面图片 URL。
+                     * 
                      */
                     void SetCoverURL(const std::string& _coverURL);
 
                     /**
                      * 判断参数 CoverURL 是否已赋值
                      * @return CoverURL 是否已赋值
+                     * 
                      */
                     bool CoverURLHasBeenSet() const;
 

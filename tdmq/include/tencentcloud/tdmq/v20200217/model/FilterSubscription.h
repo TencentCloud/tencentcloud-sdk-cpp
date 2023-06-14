@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取是否仅展示包含真实消费者的订阅。
                      * @return ConsumerHasCount 是否仅展示包含真实消费者的订阅。
+                     * 
                      */
                     bool GetConsumerHasCount() const;
 
                     /**
                      * 设置是否仅展示包含真实消费者的订阅。
-                     * @param ConsumerHasCount 是否仅展示包含真实消费者的订阅。
+                     * @param _consumerHasCount 是否仅展示包含真实消费者的订阅。
+                     * 
                      */
                     void SetConsumerHasCount(const bool& _consumerHasCount);
 
                     /**
                      * 判断参数 ConsumerHasCount 是否已赋值
                      * @return ConsumerHasCount 是否已赋值
+                     * 
                      */
                     bool ConsumerHasCountHasBeenSet() const;
 
                     /**
                      * 获取是否仅展示消息堆积的订阅。
                      * @return ConsumerHasBacklog 是否仅展示消息堆积的订阅。
+                     * 
                      */
                     bool GetConsumerHasBacklog() const;
 
                     /**
                      * 设置是否仅展示消息堆积的订阅。
-                     * @param ConsumerHasBacklog 是否仅展示消息堆积的订阅。
+                     * @param _consumerHasBacklog 是否仅展示消息堆积的订阅。
+                     * 
                      */
                     void SetConsumerHasBacklog(const bool& _consumerHasBacklog);
 
                     /**
                      * 判断参数 ConsumerHasBacklog 是否已赋值
                      * @return ConsumerHasBacklog 是否已赋值
+                     * 
                      */
                     bool ConsumerHasBacklogHasBeenSet() const;
 
                     /**
                      * 获取是否仅展示存在消息超期丢弃的订阅。
                      * @return ConsumerHasExpired 是否仅展示存在消息超期丢弃的订阅。
+                     * 
                      */
                     bool GetConsumerHasExpired() const;
 
                     /**
                      * 设置是否仅展示存在消息超期丢弃的订阅。
-                     * @param ConsumerHasExpired 是否仅展示存在消息超期丢弃的订阅。
+                     * @param _consumerHasExpired 是否仅展示存在消息超期丢弃的订阅。
+                     * 
                      */
                     void SetConsumerHasExpired(const bool& _consumerHasExpired);
 
                     /**
                      * 判断参数 ConsumerHasExpired 是否已赋值
                      * @return ConsumerHasExpired 是否已赋值
+                     * 
                      */
                     bool ConsumerHasExpiredHasBeenSet() const;
 
                     /**
                      * 获取按照订阅名过滤，精确查询。
                      * @return SubscriptionNames 按照订阅名过滤，精确查询。
+                     * 
                      */
                     std::vector<std::string> GetSubscriptionNames() const;
 
                     /**
                      * 设置按照订阅名过滤，精确查询。
-                     * @param SubscriptionNames 按照订阅名过滤，精确查询。
+                     * @param _subscriptionNames 按照订阅名过滤，精确查询。
+                     * 
                      */
                     void SetSubscriptionNames(const std::vector<std::string>& _subscriptionNames);
 
                     /**
                      * 判断参数 SubscriptionNames 是否已赋值
                      * @return SubscriptionNames 是否已赋值
+                     * 
                      */
                     bool SubscriptionNamesHasBeenSet() const;
 

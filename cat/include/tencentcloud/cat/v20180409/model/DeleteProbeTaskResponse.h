@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务总量
                      * @return Total 任务总量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 任务成功量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 任务执行结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

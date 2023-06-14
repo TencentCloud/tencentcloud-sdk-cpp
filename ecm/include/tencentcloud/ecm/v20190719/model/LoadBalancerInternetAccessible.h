@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取最大出带宽，单位Mbps。默认值10
                      * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps。默认值10
+                     * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置最大出带宽，单位Mbps。默认值10
-                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps。默认值10
+                     * @param _internetMaxBandwidthOut 最大出带宽，单位Mbps。默认值10
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 

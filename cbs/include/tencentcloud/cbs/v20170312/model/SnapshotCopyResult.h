@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取复制到目标地域的新快照ID。
                      * @return SnapshotId 复制到目标地域的新快照ID。
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置复制到目标地域的新快照ID。
-                     * @param SnapshotId 复制到目标地域的新快照ID。
+                     * @param _snapshotId 复制到目标地域的新快照ID。
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取指示具体错误信息，成功时为空字符串。
                      * @return Message 指示具体错误信息，成功时为空字符串。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置指示具体错误信息，成功时为空字符串。
-                     * @param Message 指示具体错误信息，成功时为空字符串。
+                     * @param _message 指示具体错误信息，成功时为空字符串。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取错误码，成功时取值为“Success”。
                      * @return Code 错误码，成功时取值为“Success”。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码，成功时取值为“Success”。
-                     * @param Code 错误码，成功时取值为“Success”。
+                     * @param _code 错误码，成功时取值为“Success”。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取跨地复制的目标地域。
                      * @return DestinationRegion 跨地复制的目标地域。
+                     * 
                      */
                     std::string GetDestinationRegion() const;
 
                     /**
                      * 设置跨地复制的目标地域。
-                     * @param DestinationRegion 跨地复制的目标地域。
+                     * @param _destinationRegion 跨地复制的目标地域。
+                     * 
                      */
                     void SetDestinationRegion(const std::string& _destinationRegion);
 
                     /**
                      * 判断参数 DestinationRegion 是否已赋值
                      * @return DestinationRegion 是否已赋值
+                     * 
                      */
                     bool DestinationRegionHasBeenSet() const;
 

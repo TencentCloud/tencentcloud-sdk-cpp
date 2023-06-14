@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取间隔周期，单位ms
                      * @return Interval 间隔周期，单位ms
+                     * 
                      */
                     int64_t GetInterval() const;
 
                     /**
                      * 设置间隔周期，单位ms
-                     * @param Interval 间隔周期，单位ms
+                     * @param _interval 间隔周期，单位ms
+                     * 
                      */
                     void SetInterval(const int64_t& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取开始时间点，单位ms
                      * @return StartTime 开始时间点，单位ms
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间点，单位ms
-                     * @param StartTime 开始时间点，单位ms
+                     * @param _startTime 开始时间点，单位ms
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询任务Id
                      * @return DownloadId 查询任务Id
+                     * 
                      */
                     std::string GetDownloadId() const;
 
                     /**
                      * 设置查询任务Id
-                     * @param DownloadId 查询任务Id
+                     * @param _downloadId 查询任务Id
+                     * 
                      */
                     void SetDownloadId(const std::string& _downloadId);
 
                     /**
                      * 判断参数 DownloadId 是否已赋值
                      * @return DownloadId 是否已赋值
+                     * 
                      */
                     bool DownloadIdHasBeenSet() const;
 

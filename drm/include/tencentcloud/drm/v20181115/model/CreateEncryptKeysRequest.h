@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。
                      * @return DrmType 使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。
+                     * 
                      */
                     std::string GetDrmType() const;
 
                     /**
                      * 设置使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。
-                     * @param DrmType 使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。
+                     * @param _drmType 使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。
+                     * 
                      */
                     void SetDrmType(const std::string& _drmType);
 
                     /**
                      * 判断参数 DrmType 是否已赋值
                      * @return DrmType 是否已赋值
+                     * 
                      */
                     bool DrmTypeHasBeenSet() const;
 
                     /**
                      * 获取设置的加密密钥列表。
                      * @return Keys 设置的加密密钥列表。
+                     * 
                      */
                     std::vector<KeyParam> GetKeys() const;
 
                     /**
                      * 设置设置的加密密钥列表。
-                     * @param Keys 设置的加密密钥列表。
+                     * @param _keys 设置的加密密钥列表。
+                     * 
                      */
                     void SetKeys(const std::vector<KeyParam>& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
                     /**
                      * 获取一个加密内容的唯一标识。
                      * @return ContentId 一个加密内容的唯一标识。
+                     * 
                      */
                     std::string GetContentId() const;
 
                     /**
                      * 设置一个加密内容的唯一标识。
-                     * @param ContentId 一个加密内容的唯一标识。
+                     * @param _contentId 一个加密内容的唯一标识。
+                     * 
                      */
                     void SetContentId(const std::string& _contentId);
 
                     /**
                      * 判断参数 ContentId 是否已赋值
                      * @return ContentId 是否已赋值
+                     * 
                      */
                     bool ContentIdHasBeenSet() const;
 
                     /**
                      * 获取内容类型。接口取值VodVideo,LiveVideo。
                      * @return ContentType 内容类型。接口取值VodVideo,LiveVideo。
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置内容类型。接口取值VodVideo,LiveVideo。
-                     * @param ContentType 内容类型。接口取值VodVideo,LiveVideo。
+                     * @param _contentType 内容类型。接口取值VodVideo,LiveVideo。
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BestFrame 活体比对最佳帧Base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBestFrame() const;
 
                     /**
                      * 设置活体比对最佳帧Base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BestFrame 活体比对最佳帧Base64编码。
+                     * @param _bestFrame 活体比对最佳帧Base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBestFrame(const std::string& _bestFrame);
 
                     /**
                      * 判断参数 BestFrame 是否已赋值
                      * @return BestFrame 是否已赋值
+                     * 
                      */
                     bool BestFrameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BestFrames 自截帧Base64编码数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBestFrames() const;
 
                     /**
                      * 设置自截帧Base64编码数组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BestFrames 自截帧Base64编码数组。
+                     * @param _bestFrames 自截帧Base64编码数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBestFrames(const std::vector<std::string>& _bestFrames);
 
                     /**
                      * 判断参数 BestFrames 是否已赋值
                      * @return BestFrames 是否已赋值
+                     * 
                      */
                     bool BestFramesHasBeenSet() const;
 

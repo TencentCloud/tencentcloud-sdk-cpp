@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取尝试次数
                      * @return TryCount 尝试次数
+                     * 
                      */
                     int64_t GetTryCount() const;
 
                     /**
                      * 设置尝试次数
-                     * @param TryCount 尝试次数
+                     * @param _tryCount 尝试次数
+                     * 
                      */
                     void SetTryCount(const int64_t& _tryCount);
 
                     /**
                      * 判断参数 TryCount 是否已赋值
                      * @return TryCount 是否已赋值
+                     * 
                      */
                     bool TryCountHasBeenSet() const;
 
                     /**
                      * 获取用户请求数量
                      * @return UserCount 用户请求数量
+                     * 
                      */
                     int64_t GetUserCount() const;
 
                     /**
                      * 设置用户请求数量
-                     * @param UserCount 用户请求数量
+                     * @param _userCount 用户请求数量
+                     * 
                      */
                     void SetUserCount(const int64_t& _userCount);
 
                     /**
                      * 判断参数 UserCount 是否已赋值
                      * @return UserCount 是否已赋值
+                     * 
                      */
                     bool UserCountHasBeenSet() const;
 

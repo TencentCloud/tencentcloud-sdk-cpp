@@ -51,144 +51,168 @@ namespace TencentCloud
                     /**
                      * 获取异步任务请求 ID。
                      * @return AsyncRequestId 异步任务请求 ID。
+                     * 
                      */
                     int64_t GetAsyncRequestId() const;
 
                     /**
                      * 设置异步任务请求 ID。
-                     * @param AsyncRequestId 异步任务请求 ID。
+                     * @param _asyncRequestId 异步任务请求 ID。
+                     * 
                      */
                     void SetAsyncRequestId(const int64_t& _asyncRequestId);
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
                     /**
                      * 获取任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
                      * @return Source 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
-                     * @param Source 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * @param _source 任务的触发来源，支持的取值包括："DAILY_INSPECTION" - 实例巡检；"SCHEDULED" - 定时生成；"MANUAL" - 手动触发。
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取任务完成进度，单位%。
                      * @return Progress 任务完成进度，单位%。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置任务完成进度，单位%。
-                     * @param Progress 任务完成进度，单位%。
+                     * @param _progress 任务完成进度，单位%。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间。
                      * @return CreateTime 任务创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间。
-                     * @param CreateTime 任务创建时间。
+                     * @param _createTime 任务创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行时间。
                      * @return StartTime 任务开始执行时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始执行时间。
-                     * @param StartTime 任务开始执行时间。
+                     * @param _startTime 任务开始执行时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取任务完成执行时间。
                      * @return EndTime 任务完成执行时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务完成执行时间。
-                     * @param EndTime 任务完成执行时间。
+                     * @param _endTime 任务完成执行时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务所属实例的基础信息。
                      * @return InstanceInfo 任务所属实例的基础信息。
+                     * 
                      */
                     InstanceBasicInfo GetInstanceInfo() const;
 
                     /**
                      * 设置任务所属实例的基础信息。
-                     * @param InstanceInfo 任务所属实例的基础信息。
+                     * @param _instanceInfo 任务所属实例的基础信息。
+                     * 
                      */
                     void SetInstanceInfo(const InstanceBasicInfo& _instanceInfo);
 
                     /**
                      * 判断参数 InstanceInfo 是否已赋值
                      * @return InstanceInfo 是否已赋值
+                     * 
                      */
                     bool InstanceInfoHasBeenSet() const;
 
                     /**
                      * 获取健康报告中的健康信息。
                      * @return HealthStatus 健康报告中的健康信息。
+                     * 
                      */
                     HealthStatus GetHealthStatus() const;
 
                     /**
                      * 设置健康报告中的健康信息。
-                     * @param HealthStatus 健康报告中的健康信息。
+                     * @param _healthStatus 健康报告中的健康信息。
+                     * 
                      */
                     void SetHealthStatus(const HealthStatus& _healthStatus);
 
                     /**
                      * 判断参数 HealthStatus 是否已赋值
                      * @return HealthStatus 是否已赋值
+                     * 
                      */
                     bool HealthStatusHasBeenSet() const;
 

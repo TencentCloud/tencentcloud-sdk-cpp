@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取限制下载来源的地域。目前仅支持当前地域。
                      * @return Region 限制下载来源的地域。目前仅支持当前地域。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置限制下载来源的地域。目前仅支持当前地域。
-                     * @param Region 限制下载来源的地域。目前仅支持当前地域。
+                     * @param _region 限制下载来源的地域。目前仅支持当前地域。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取限制下载的vpc列表。
                      * @return VpcList 限制下载的vpc列表。
+                     * 
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
                      * 设置限制下载的vpc列表。
-                     * @param VpcList 限制下载的vpc列表。
+                     * @param _vpcList 限制下载的vpc列表。
+                     * 
                      */
                     void SetVpcList(const std::vector<std::string>& _vpcList);
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 

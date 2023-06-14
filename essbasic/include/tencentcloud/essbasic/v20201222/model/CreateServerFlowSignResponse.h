@@ -50,12 +50,14 @@ namespace TencentCloud
                      * @return SignStatus 任务状态：
 0：失败
 1：成功
+                     * 
                      */
                     int64_t GetSignStatus() const;
 
                     /**
                      * 判断参数 SignStatus 是否已赋值
                      * @return SignStatus 是否已赋值
+                     * 
                      */
                     bool SignStatusHasBeenSet() const;
 

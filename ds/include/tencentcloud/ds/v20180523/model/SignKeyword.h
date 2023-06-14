@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取关键字
                      * @return Keyword 关键字
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置关键字
-                     * @param Keyword 关键字
+                     * @param _keyword 关键字
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取X轴偏移坐标
                      * @return OffsetCoordX X轴偏移坐标
+                     * 
                      */
                     std::string GetOffsetCoordX() const;
 
                     /**
                      * 设置X轴偏移坐标
-                     * @param OffsetCoordX X轴偏移坐标
+                     * @param _offsetCoordX X轴偏移坐标
+                     * 
                      */
                     void SetOffsetCoordX(const std::string& _offsetCoordX);
 
                     /**
                      * 判断参数 OffsetCoordX 是否已赋值
                      * @return OffsetCoordX 是否已赋值
+                     * 
                      */
                     bool OffsetCoordXHasBeenSet() const;
 
                     /**
                      * 获取Y轴偏移坐标
                      * @return OffsetCoordY Y轴偏移坐标
+                     * 
                      */
                     std::string GetOffsetCoordY() const;
 
                     /**
                      * 设置Y轴偏移坐标
-                     * @param OffsetCoordY Y轴偏移坐标
+                     * @param _offsetCoordY Y轴偏移坐标
+                     * 
                      */
                     void SetOffsetCoordY(const std::string& _offsetCoordY);
 
                     /**
                      * 判断参数 OffsetCoordY 是否已赋值
                      * @return OffsetCoordY 是否已赋值
+                     * 
                      */
                     bool OffsetCoordYHasBeenSet() const;
 
                     /**
                      * 获取签章图片宽度
                      * @return ImageWidth 签章图片宽度
+                     * 
                      */
                     std::string GetImageWidth() const;
 
                     /**
                      * 设置签章图片宽度
-                     * @param ImageWidth 签章图片宽度
+                     * @param _imageWidth 签章图片宽度
+                     * 
                      */
                     void SetImageWidth(const std::string& _imageWidth);
 
                     /**
                      * 判断参数 ImageWidth 是否已赋值
                      * @return ImageWidth 是否已赋值
+                     * 
                      */
                     bool ImageWidthHasBeenSet() const;
 
                     /**
                      * 获取签章图片高度
                      * @return ImageHeight 签章图片高度
+                     * 
                      */
                     std::string GetImageHeight() const;
 
                     /**
                      * 设置签章图片高度
-                     * @param ImageHeight 签章图片高度
+                     * @param _imageHeight 签章图片高度
+                     * 
                      */
                     void SetImageHeight(const std::string& _imageHeight);
 
                     /**
                      * 判断参数 ImageHeight 是否已赋值
                      * @return ImageHeight 是否已赋值
+                     * 
                      */
                     bool ImageHeightHasBeenSet() const;
 

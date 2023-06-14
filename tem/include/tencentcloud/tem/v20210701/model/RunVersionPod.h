@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取shell地址
                      * @return Webshell shell地址
+                     * 
                      */
                     std::string GetWebshell() const;
 
                     /**
                      * 设置shell地址
-                     * @param Webshell shell地址
+                     * @param _webshell shell地址
+                     * 
                      */
                     void SetWebshell(const std::string& _webshell);
 
                     /**
                      * 判断参数 Webshell 是否已赋值
                      * @return Webshell 是否已赋值
+                     * 
                      */
                     bool WebshellHasBeenSet() const;
 
                     /**
                      * 获取pod的id
                      * @return PodId pod的id
+                     * 
                      */
                     std::string GetPodId() const;
 
                     /**
                      * 设置pod的id
-                     * @param PodId pod的id
+                     * @param _podId pod的id
+                     * 
                      */
                     void SetPodId(const std::string& _podId);
 
                     /**
                      * 判断参数 PodId 是否已赋值
                      * @return PodId 是否已赋值
+                     * 
                      */
                     bool PodIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取实例的ip
                      * @return PodIp 实例的ip
+                     * 
                      */
                     std::string GetPodIp() const;
 
                     /**
                      * 设置实例的ip
-                     * @param PodIp 实例的ip
+                     * @param _podIp 实例的ip
+                     * 
                      */
                     void SetPodIp(const std::string& _podIp);
 
                     /**
                      * 判断参数 PodIp 是否已赋值
                      * @return PodIp 是否已赋值
+                     * 
                      */
                     bool PodIpHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -164,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployVersion 部署版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeployVersion() const;
 
                     /**
                      * 设置部署版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployVersion 部署版本
+                     * @param _deployVersion 部署版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeployVersion(const std::string& _deployVersion);
 
                     /**
                      * 判断参数 DeployVersion 是否已赋值
                      * @return DeployVersion 是否已赋值
+                     * 
                      */
                     bool DeployVersionHasBeenSet() const;
 
@@ -186,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestartCount 重启次数
+                     * @param _restartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 
@@ -208,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ready pod是否就绪
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetReady() const;
 
                     /**
                      * 设置pod是否就绪
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ready pod是否就绪
+                     * @param _ready pod是否就绪
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReady(const bool& _ready);
 
                     /**
                      * 判断参数 Ready 是否已赋值
                      * @return Ready 是否已赋值
+                     * 
                      */
                     bool ReadyHasBeenSet() const;
 
@@ -230,20 +257,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerState 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerState() const;
 
                     /**
                      * 设置容器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerState 容器状态
+                     * @param _containerState 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerState(const std::string& _containerState);
 
                     /**
                      * 判断参数 ContainerState 是否已赋值
                      * @return ContainerState 是否已赋值
+                     * 
                      */
                     bool ContainerStateHasBeenSet() const;
 
@@ -252,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfo 实例所在节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NodeInfo GetNodeInfo() const;
 
                     /**
                      * 设置实例所在节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeInfo 实例所在节点信息
+                     * @param _nodeInfo 实例所在节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeInfo(const NodeInfo& _nodeInfo);
 
                     /**
                      * 判断参数 NodeInfo 是否已赋值
                      * @return NodeInfo 是否已赋值
+                     * 
                      */
                     bool NodeInfoHasBeenSet() const;
 
@@ -274,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 启动时间
+                     * @param _startTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -296,20 +332,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unhealthy 是否健康
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUnhealthy() const;
 
                     /**
                      * 设置是否健康
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unhealthy 是否健康
+                     * @param _unhealthy 是否健康
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnhealthy(const bool& _unhealthy);
 
                     /**
                      * 判断参数 Unhealthy 是否已赋值
                      * @return Unhealthy 是否已赋值
+                     * 
                      */
                     bool UnhealthyHasBeenSet() const;
 
@@ -318,20 +357,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhealthyWarningMsg 不健康时的提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnhealthyWarningMsg() const;
 
                     /**
                      * 设置不健康时的提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnhealthyWarningMsg 不健康时的提示信息
+                     * @param _unhealthyWarningMsg 不健康时的提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnhealthyWarningMsg(const std::string& _unhealthyWarningMsg);
 
                     /**
                      * 判断参数 UnhealthyWarningMsg 是否已赋值
                      * @return UnhealthyWarningMsg 是否已赋值
+                     * 
                      */
                     bool UnhealthyWarningMsgHasBeenSet() const;
 
@@ -340,20 +382,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId 版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionId 版本ID
+                     * @param _versionId 版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
@@ -362,20 +407,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationName 应用名称
+                     * @param _applicationName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
 
                     /**
                      * 判断参数 ApplicationName 是否已赋值
                      * @return ApplicationName 是否已赋值
+                     * 
                      */
                     bool ApplicationNameHasBeenSet() const;
 

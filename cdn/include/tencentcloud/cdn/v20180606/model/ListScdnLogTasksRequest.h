@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品来源 cdn/ecdn
                      * @return Source 产品来源 cdn/ecdn
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置产品来源 cdn/ecdn
-                     * @param Source 产品来源 cdn/ecdn
+                     * @param _source 产品来源 cdn/ecdn
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取地域：mainland 或 overseas 为空表示查询所有地域
                      * @return Area 地域：mainland 或 overseas 为空表示查询所有地域
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域：mainland 或 overseas 为空表示查询所有地域
-                     * @param Area 地域：mainland 或 overseas 为空表示查询所有地域
+                     * @param _area 地域：mainland 或 overseas 为空表示查询所有地域
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取是否为自建集群
                      * @return SelfBuilt 是否为自建集群
+                     * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
-                     * @param SelfBuilt 是否为自建集群
+                     * @param _selfBuilt 是否为自建集群
+                     * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
 
                     /**
                      * 判断参数 SelfBuilt 是否已赋值
                      * @return SelfBuilt 是否已赋值
+                     * 
                      */
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
                      * 获取实例资源
                      * @return Resource 实例资源
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置实例资源
-                     * @param Resource 实例资源
+                     * @param _resource 实例资源
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取Topic名称，多个以“,”分隔
                      * @return Topic Topic名称，多个以“,”分隔
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Topic名称，多个以“,”分隔
-                     * @param Topic Topic名称，多个以“,”分隔
+                     * @param _topic Topic名称，多个以“,”分隔
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOffsetType() const;
 
                     /**
                      * 设置Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OffsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * @param _offsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffsetType(const std::string& _offsetType);
 
                     /**
                      * 判断参数 OffsetType 是否已赋值
                      * @return OffsetType 是否已赋值
+                     * 
                      */
                     bool OffsetTypeHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * @param _startTime Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -150,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 实例资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置实例资源名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceName 实例资源名称
+                     * @param _resourceName 实例资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
@@ -172,20 +190,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId Zone ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置Zone ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId Zone ID
+                     * @param _zoneId Zone ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -194,20 +215,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId Topic的Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic的Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId Topic的Id
+                     * @param _topicId Topic的Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
@@ -216,20 +240,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNum Topic的分区数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
                      * 设置Topic的分区数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionNum Topic的分区数
+                     * @param _partitionNum Topic的分区数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 
@@ -238,20 +265,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableToleration 启用容错实例/开启死信队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableToleration() const;
 
                     /**
                      * 设置启用容错实例/开启死信队列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableToleration 启用容错实例/开启死信队列
+                     * @param _enableToleration 启用容错实例/开启死信队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableToleration(const bool& _enableToleration);
 
                     /**
                      * 判断参数 EnableToleration 是否已赋值
                      * @return EnableToleration 是否已赋值
+                     * 
                      */
                     bool EnableTolerationHasBeenSet() const;
 
@@ -260,20 +290,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QpsLimit Qps 限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetQpsLimit() const;
 
                     /**
                      * 设置Qps 限制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QpsLimit Qps 限制
+                     * @param _qpsLimit Qps 限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQpsLimit(const uint64_t& _qpsLimit);
 
                     /**
                      * 判断参数 QpsLimit 是否已赋值
                      * @return QpsLimit 是否已赋值
+                     * 
                      */
                     bool QpsLimitHasBeenSet() const;
 
@@ -282,20 +315,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableMappings Table到Topic的路由，「分发到多个topic」开关打开时必传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableMapping> GetTableMappings() const;
 
                     /**
                      * 设置Table到Topic的路由，「分发到多个topic」开关打开时必传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableMappings Table到Topic的路由，「分发到多个topic」开关打开时必传
+                     * @param _tableMappings Table到Topic的路由，「分发到多个topic」开关打开时必传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableMappings(const std::vector<TableMapping>& _tableMappings);
 
                     /**
                      * 判断参数 TableMappings 是否已赋值
                      * @return TableMappings 是否已赋值
+                     * 
                      */
                     bool TableMappingsHasBeenSet() const;
 
@@ -304,20 +340,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseTableMapping 「分发到多个topic」开关，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseTableMapping() const;
 
                     /**
                      * 设置「分发到多个topic」开关，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseTableMapping 「分发到多个topic」开关，默认为false
+                     * @param _useTableMapping 「分发到多个topic」开关，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseTableMapping(const bool& _useTableMapping);
 
                     /**
                      * 判断参数 UseTableMapping 是否已赋值
                      * @return UseTableMapping 是否已赋值
+                     * 
                      */
                     bool UseTableMappingHasBeenSet() const;
 
@@ -326,20 +365,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseAutoCreateTopic() const;
 
                     /**
                      * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+                     * @param _useAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
 
                     /**
                      * 判断参数 UseAutoCreateTopic 是否已赋值
                      * @return UseAutoCreateTopic 是否已赋值
+                     * 
                      */
                     bool UseAutoCreateTopicHasBeenSet() const;
 
@@ -348,20 +390,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompressionType() const;
 
                     /**
                      * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
+                     * @param _compressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，填写"open"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompressionType(const std::string& _compressionType);
 
                     /**
                      * 判断参数 CompressionType 是否已赋值
                      * @return CompressionType 是否已赋值
+                     * 
                      */
                     bool CompressionTypeHasBeenSet() const;
 
@@ -370,20 +415,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMsgMultiple() const;
 
                     /**
                      * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+                     * @param _msgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgMultiple(const int64_t& _msgMultiple);
 
                     /**
                      * 判断参数 MsgMultiple 是否已赋值
                      * @return MsgMultiple 是否已赋值
+                     * 
                      */
                     bool MsgMultipleHasBeenSet() const;
 
@@ -392,20 +440,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectorSyncType 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectorSyncType() const;
 
                     /**
                      * 设置数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectorSyncType 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
+                     * @param _connectorSyncType 数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写"META_SYNC_INSTANCE_TYPE", 同步元数据及全部topic内消息的填写"META_AND_DATA_SYNC_INSTANCE_TYPE"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写"DATA_SYNC_TYPE"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectorSyncType(const std::string& _connectorSyncType);
 
                     /**
                      * 判断参数 ConnectorSyncType 是否已赋值
                      * @return ConnectorSyncType 是否已赋值
+                     * 
                      */
                     bool ConnectorSyncTypeHasBeenSet() const;
 
@@ -414,20 +465,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepPartition 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetKeepPartition() const;
 
                     /**
                      * 设置数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeepPartition 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
+                     * @param _keepPartition 数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeepPartition(const bool& _keepPartition);
 
                     /**
                      * 判断参数 KeepPartition 是否已赋值
                      * @return KeepPartition 是否已赋值
+                     * 
                      */
                     bool KeepPartitionHasBeenSet() const;
 

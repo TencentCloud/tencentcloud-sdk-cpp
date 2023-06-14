@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取权限列表。
                      * @return Privileges 权限列表。
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库账号用户名
                      * @return UserName 数据库账号用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取数据库账号Host
                      * @return Host 数据库账号Host
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 

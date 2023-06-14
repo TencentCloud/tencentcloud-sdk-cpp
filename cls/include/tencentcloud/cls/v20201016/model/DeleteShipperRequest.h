@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取投递规则ID
                      * @return ShipperId 投递规则ID
+                     * 
                      */
                     std::string GetShipperId() const;
 
                     /**
                      * 设置投递规则ID
-                     * @param ShipperId 投递规则ID
+                     * @param _shipperId 投递规则ID
+                     * 
                      */
                     void SetShipperId(const std::string& _shipperId);
 
                     /**
                      * 判断参数 ShipperId 是否已赋值
                      * @return ShipperId 是否已赋值
+                     * 
                      */
                     bool ShipperIdHasBeenSet() const;
 

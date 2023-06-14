@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 访问地址
                      * @return Url Prometheus 访问地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Prometheus 访问地址
-                     * @param Url Prometheus 访问地址
+                     * @param _url Prometheus 访问地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取认证方式
                      * @return AuthType 认证方式
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置认证方式
-                     * @param AuthType 认证方式
+                     * @param _authType 认证方式
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取是否公网地址，缺省为 false
                      * @return IsPublicAddr 是否公网地址，缺省为 false
+                     * 
                      */
                     bool GetIsPublicAddr() const;
 
                     /**
                      * 设置是否公网地址，缺省为 false
-                     * @param IsPublicAddr 是否公网地址，缺省为 false
+                     * @param _isPublicAddr 是否公网地址，缺省为 false
+                     * 
                      */
                     void SetIsPublicAddr(const bool& _isPublicAddr);
 
                     /**
                      * 判断参数 IsPublicAddr 是否已赋值
                      * @return IsPublicAddr 是否已赋值
+                     * 
                      */
                     bool IsPublicAddrHasBeenSet() const;
 
                     /**
                      * 获取虚拟网络id
                      * @return VpcId 虚拟网络id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置虚拟网络id
-                     * @param VpcId 虚拟网络id
+                     * @param _vpcId 虚拟网络id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取Prometheus 用户名（用于 basic 认证方式）
                      * @return Username Prometheus 用户名（用于 basic 认证方式）
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置Prometheus 用户名（用于 basic 认证方式）
-                     * @param Username Prometheus 用户名（用于 basic 认证方式）
+                     * @param _username Prometheus 用户名（用于 basic 认证方式）
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取Prometheus 密码（用于 basic 认证方式）
                      * @return Password Prometheus 密码（用于 basic 认证方式）
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Prometheus 密码（用于 basic 认证方式）
-                     * @param Password Prometheus 密码（用于 basic 认证方式）
+                     * @param _password Prometheus 密码（用于 basic 认证方式）
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

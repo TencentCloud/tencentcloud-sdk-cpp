@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群状态
                      * @return ClusterState 集群状态
+                     * 
                      */
                     std::string GetClusterState() const;
 
                     /**
                      * 设置集群状态
-                     * @param ClusterState 集群状态
+                     * @param _clusterState 集群状态
+                     * 
                      */
                     void SetClusterState(const std::string& _clusterState);
 
                     /**
                      * 判断参数 ClusterState 是否已赋值
                      * @return ClusterState 是否已赋值
+                     * 
                      */
                     bool ClusterStateHasBeenSet() const;
 
                     /**
                      * 获取集群下机器实例的状态
                      * @return ClusterInstanceState 集群下机器实例的状态
+                     * 
                      */
                     std::string GetClusterInstanceState() const;
 
                     /**
                      * 设置集群下机器实例的状态
-                     * @param ClusterInstanceState 集群下机器实例的状态
+                     * @param _clusterInstanceState 集群下机器实例的状态
+                     * 
                      */
                     void SetClusterInstanceState(const std::string& _clusterInstanceState);
 
                     /**
                      * 判断参数 ClusterInstanceState 是否已赋值
                      * @return ClusterInstanceState 是否已赋值
+                     * 
                      */
                     bool ClusterInstanceStateHasBeenSet() const;
 
                     /**
                      * 获取集群是否开启监控
                      * @return ClusterBMonitor 集群是否开启监控
+                     * 
                      */
                     bool GetClusterBMonitor() const;
 
                     /**
                      * 设置集群是否开启监控
-                     * @param ClusterBMonitor 集群是否开启监控
+                     * @param _clusterBMonitor 集群是否开启监控
+                     * 
                      */
                     void SetClusterBMonitor(const bool& _clusterBMonitor);
 
                     /**
                      * 判断参数 ClusterBMonitor 是否已赋值
                      * @return ClusterBMonitor 是否已赋值
+                     * 
                      */
                     bool ClusterBMonitorHasBeenSet() const;
 
                     /**
                      * 获取集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
                      * @return ClusterInitNodeNum 集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     int64_t GetClusterInitNodeNum() const;
 
                     /**
                      * 设置集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-                     * @param ClusterInitNodeNum 集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * @param _clusterInitNodeNum 集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     void SetClusterInitNodeNum(const int64_t& _clusterInitNodeNum);
 
                     /**
                      * 判断参数 ClusterInitNodeNum 是否已赋值
                      * @return ClusterInitNodeNum 是否已赋值
+                     * 
                      */
                     bool ClusterInitNodeNumHasBeenSet() const;
 
                     /**
                      * 获取集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
                      * @return ClusterRunningNodeNum 集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     int64_t GetClusterRunningNodeNum() const;
 
                     /**
                      * 设置集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-                     * @param ClusterRunningNodeNum 集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * @param _clusterRunningNodeNum 集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     void SetClusterRunningNodeNum(const int64_t& _clusterRunningNodeNum);
 
                     /**
                      * 判断参数 ClusterRunningNodeNum 是否已赋值
                      * @return ClusterRunningNodeNum 是否已赋值
+                     * 
                      */
                     bool ClusterRunningNodeNumHasBeenSet() const;
 
                     /**
                      * 获取集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
                      * @return ClusterFailedNodeNum 集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     int64_t GetClusterFailedNodeNum() const;
 
                     /**
                      * 设置集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
-                     * @param ClusterFailedNodeNum 集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * @param _clusterFailedNodeNum 集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * 
                      */
                     void SetClusterFailedNodeNum(const int64_t& _clusterFailedNodeNum);
 
                     /**
                      * 判断参数 ClusterFailedNodeNum 是否已赋值
                      * @return ClusterFailedNodeNum 是否已赋值
+                     * 
                      */
                     bool ClusterFailedNodeNumHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClosedNodeNum 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetClusterClosedNodeNum() const;
 
                     /**
                      * 设置集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterClosedNodeNum 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * @param _clusterClosedNodeNum 集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterClosedNodeNum(const int64_t& _clusterClosedNodeNum);
 
                     /**
                      * 判断参数 ClusterClosedNodeNum 是否已赋值
                      * @return ClusterClosedNodeNum 是否已赋值
+                     * 
                      */
                     bool ClusterClosedNodeNumHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClosingNodeNum 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetClusterClosingNodeNum() const;
 
                     /**
                      * 设置集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterClosingNodeNum 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
+                     * @param _clusterClosingNodeNum 集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterClosingNodeNum(const int64_t& _clusterClosingNodeNum);
 
                     /**
                      * 判断参数 ClusterClosingNodeNum 是否已赋值
                      * @return ClusterClosingNodeNum 是否已赋值
+                     * 
                      */
                     bool ClusterClosingNodeNumHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDeletionProtection 集群是否开启删除保护
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetClusterDeletionProtection() const;
 
                     /**
                      * 设置集群是否开启删除保护
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterDeletionProtection 集群是否开启删除保护
+                     * @param _clusterDeletionProtection 集群是否开启删除保护
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterDeletionProtection(const bool& _clusterDeletionProtection);
 
                     /**
                      * 判断参数 ClusterDeletionProtection 是否已赋值
                      * @return ClusterDeletionProtection 是否已赋值
+                     * 
                      */
                     bool ClusterDeletionProtectionHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterAuditEnabled 集群是否可审计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetClusterAuditEnabled() const;
 
                     /**
                      * 设置集群是否可审计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterAuditEnabled 集群是否可审计
+                     * @param _clusterAuditEnabled 集群是否可审计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterAuditEnabled(const bool& _clusterAuditEnabled);
 
                     /**
                      * 判断参数 ClusterAuditEnabled 是否已赋值
                      * @return ClusterAuditEnabled 是否已赋值
+                     * 
                      */
                     bool ClusterAuditEnabledHasBeenSet() const;
 

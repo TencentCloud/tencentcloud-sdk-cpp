@@ -75,6 +75,7 @@ namespace TencentCloud
 <li> AddTraceWatermark: 添加水印</li>
 <li> RebuildMedia: 音画质重生</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -92,7 +93,7 @@ namespace TencentCloud
 <li> AddTraceWatermark: 添加水印</li>
 <li> RebuildMedia: 音画质重生</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
-                     * @param TaskType 任务类型。
+                     * @param _taskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
@@ -105,30 +106,35 @@ namespace TencentCloud
 <li> AddTraceWatermark: 添加水印</li>
 <li> RebuildMedia: 音画质重生</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取任务数统计数据概览，用量单位为秒。
                      * @return Summary 任务数统计数据概览，用量单位为秒。
+                     * 
                      */
                     std::vector<TaskStatDataItem> GetSummary() const;
 
                     /**
                      * 设置任务数统计数据概览，用量单位为秒。
-                     * @param Summary 任务数统计数据概览，用量单位为秒。
+                     * @param _summary 任务数统计数据概览，用量单位为秒。
+                     * 
                      */
                     void SetSummary(const std::vector<TaskStatDataItem>& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
@@ -239,6 +245,7 @@ namespace TencentCloud
 <li>4K: 短边 ≤ 2160px</li>
 <li>8K: 短边 ≤ 4320px</li>
 <li>Audio: 音频</li>
+                     * 
                      */
                     std::vector<SpecificationDataItem> GetDetails() const;
 
@@ -296,7 +303,7 @@ namespace TencentCloud
 <li>4K: 短边 ≤ 2160px</li>
 <li>8K: 短边 ≤ 4320px</li>
 <li>Audio: 音频</li>
-                     * @param Details 不同规格任务统计数据详情。
+                     * @param _details 不同规格任务统计数据详情。
 转码规格：
 <li>Remuxing: 转封装</li>
 <li>Audio: 音频转码</li>
@@ -349,12 +356,14 @@ namespace TencentCloud
 <li>4K: 短边 ≤ 2160px</li>
 <li>8K: 短边 ≤ 4320px</li>
 <li>Audio: 音频</li>
+                     * 
                      */
                     void SetDetails(const std::vector<SpecificationDataItem>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

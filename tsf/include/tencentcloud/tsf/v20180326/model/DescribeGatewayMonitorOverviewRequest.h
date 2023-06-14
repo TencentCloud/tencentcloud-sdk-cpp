@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取网关部署组ID
                      * @return GatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
                      * 设置网关部署组ID
-                     * @param GatewayDeployGroupId 网关部署组ID
+                     * @param _gatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
 
                     /**
                      * 判断参数 GatewayDeployGroupId 是否已赋值
                      * @return GatewayDeployGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 

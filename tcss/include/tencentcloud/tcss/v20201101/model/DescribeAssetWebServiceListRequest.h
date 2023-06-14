@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -94,6 +100,7 @@ namespace TencentCloud
 "lighttpd"
 "Nginx"
 "Tomcat"</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -105,19 +112,21 @@ namespace TencentCloud
 "lighttpd"
 "Nginx"
 "Tomcat"</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Keywords- String - 是否必填：否 - 模糊查询可选字段</li>
 <li>Type- String - 是否必填：否 - 主机运行状态筛选，"Apache"
 "Jboss"
 "lighttpd"
 "Nginx"
 "Tomcat"</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

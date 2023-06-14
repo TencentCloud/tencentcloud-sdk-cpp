@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要开通独有访问的只读实例ID
                      * @return InstanceId 需要开通独有访问的只读实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置需要开通独有访问的只读实例ID
-                     * @param InstanceId 需要开通独有访问的只读实例ID
+                     * @param _instanceId 需要开通独有访问的只读实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取指定的vpc ID
                      * @return VpcId 指定的vpc ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置指定的vpc ID
-                     * @param VpcId 指定的vpc ID
+                     * @param _vpcId 指定的vpc ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取指定的子网ID
                      * @return SubnetId 指定的子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置指定的子网ID
-                     * @param SubnetId 指定的子网ID
+                     * @param _subnetId 指定的子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return Port 端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-                     * @param Port 端口
+                     * @param _port 端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取安全组
                      * @return SecurityGroupIds 安全组
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组
-                     * @param SecurityGroupIds 安全组
+                     * @param _securityGroupIds 安全组
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

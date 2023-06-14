@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Agent类型
                      * @return AgentType Agent类型
+                     * 
                      */
                     std::string GetAgentType() const;
 
                     /**
                      * 设置Agent类型
-                     * @param AgentType Agent类型
+                     * @param _agentType Agent类型
+                     * 
                      */
                     void SetAgentType(const std::string& _agentType);
 
                     /**
                      * 判断参数 AgentType 是否已赋值
                      * @return AgentType 是否已赋值
+                     * 
                      */
                     bool AgentTypeHasBeenSet() const;
 
                     /**
                      * 获取Agent版本号
                      * @return AgentVersion Agent版本号
+                     * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
                      * 设置Agent版本号
-                     * @param AgentVersion Agent版本号
+                     * @param _agentVersion Agent版本号
+                     * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
 
                     /**
                      * 判断参数 AgentVersion 是否已赋值
                      * @return AgentVersion 是否已赋值
+                     * 
                      */
                     bool AgentVersionHasBeenSet() const;
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_MODIFYAMQPVHOSTRESPONSE_H_
-#define TENCENTCLOUD_TDMQ_V20200217_MODEL_MODIFYAMQPVHOSTRESPONSE_H_
+#ifndef TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTRESPONSE_H_
+#define TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tdmq
+    namespace Privatedns
     {
-        namespace V20200217
+        namespace V20201028
         {
             namespace Model
             {
                 /**
-                * ModifyAMQPVHost返回参数结构体
+                * DeleteEndPoint返回参数结构体
                 */
-                class ModifyAMQPVHostResponse : public AbstractModel
+                class DeleteEndPointResponse : public AbstractModel
                 {
                 public:
-                    ModifyAMQPVHostResponse();
-                    ~ModifyAMQPVHostResponse() = default;
+                    DeleteEndPointResponse();
+                    ~DeleteEndPointResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_MODIFYAMQPVHOSTRESPONSE_H_
+#endif // !TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTRESPONSE_H_

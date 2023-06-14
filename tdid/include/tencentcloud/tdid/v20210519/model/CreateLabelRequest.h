@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取标签名称
                      * @return LabelName 标签名称
+                     * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置标签名称
-                     * @param LabelName 标签名称
+                     * @param _labelName 标签名称
+                     * 
                      */
                     void SetLabelName(const std::string& _labelName);
 
                     /**
                      * 判断参数 LabelName 是否已赋值
                      * @return LabelName 是否已赋值
+                     * 
                      */
                     bool LabelNameHasBeenSet() const;
 
                     /**
                      * 获取网络Id
                      * @return ClusterId 网络Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络Id
-                     * @param ClusterId 网络Id
+                     * @param _clusterId 网络Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

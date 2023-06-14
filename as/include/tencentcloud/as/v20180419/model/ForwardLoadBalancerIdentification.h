@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡器ID
                      * @return LoadBalancerId 负载均衡器ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡器ID
-                     * @param LoadBalancerId 负载均衡器ID
+                     * @param _loadBalancerId 负载均衡器ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取应用型负载均衡监听器 ID
                      * @return ListenerId 应用型负载均衡监听器 ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置应用型负载均衡监听器 ID
-                     * @param ListenerId 应用型负载均衡监听器 ID
+                     * @param _listenerId 应用型负载均衡监听器 ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则ID，注意：针对七层监听器此参数必填
                      * @return LocationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发规则ID，注意：针对七层监听器此参数必填
-                     * @param LocationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * @param _locationId 转发规则ID，注意：针对七层监听器此参数必填
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 

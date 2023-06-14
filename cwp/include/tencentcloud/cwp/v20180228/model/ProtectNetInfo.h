@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取护网天数
                      * @return ProtectDays 护网天数
+                     * 
                      */
                     uint64_t GetProtectDays() const;
 
                     /**
                      * 设置护网天数
-                     * @param ProtectDays 护网天数
+                     * @param _protectDays 护网天数
+                     * 
                      */
                     void SetProtectDays(const uint64_t& _protectDays);
 
                     /**
                      * 判断参数 ProtectDays 是否已赋值
                      * @return ProtectDays 是否已赋值
+                     * 
                      */
                     bool ProtectDaysHasBeenSet() const;
 
                     /**
                      * 获取护网状态 0未启动，1护网中，2已完成
                      * @return Status 护网状态 0未启动，1护网中，2已完成
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置护网状态 0未启动，1护网中，2已完成
-                     * @param Status 护网状态 0未启动，1护网中，2已完成
+                     * @param _status 护网状态 0未启动，1护网中，2已完成
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取护网启动时间
                      * @return StartTime 护网启动时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置护网启动时间
-                     * @param StartTime 护网启动时间
+                     * @param _startTime 护网启动时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取护网完成时间
                      * @return EndTime 护网完成时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置护网完成时间
-                     * @param EndTime 护网完成时间
+                     * @param _endTime 护网完成时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取报告下载地址
                      * @return ReportPath 报告下载地址
+                     * 
                      */
                     std::string GetReportPath() const;
 
                     /**
                      * 设置报告下载地址
-                     * @param ReportPath 报告下载地址
+                     * @param _reportPath 报告下载地址
+                     * 
                      */
                     void SetReportPath(const std::string& _reportPath);
 
                     /**
                      * 判断参数 ReportPath 是否已赋值
                      * @return ReportPath 是否已赋值
+                     * 
                      */
                     bool ReportPathHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancers 与证书关联的负载均衡实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancers() const;
 
                     /**
                      * 设置与证书关联的负载均衡实例列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalancers 与证书关联的负载均衡实例列表
+                     * @param _loadBalancers 与证书关联的负载均衡实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalancers(const std::vector<LoadBalancer>& _loadBalancers);
 
                     /**
                      * 判断参数 LoadBalancers 是否已赋值
                      * @return LoadBalancers 是否已赋值
+                     * 
                      */
                     bool LoadBalancersHasBeenSet() const;
 

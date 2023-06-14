@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取待删除别称域名名称。如果为空，则不执行删除操作。
                      * @return AliasNames 待删除别称域名名称。如果为空，则不执行删除操作。
+                     * 
                      */
                     std::vector<std::string> GetAliasNames() const;
 
                     /**
                      * 设置待删除别称域名名称。如果为空，则不执行删除操作。
-                     * @param AliasNames 待删除别称域名名称。如果为空，则不执行删除操作。
+                     * @param _aliasNames 待删除别称域名名称。如果为空，则不执行删除操作。
+                     * 
                      */
                     void SetAliasNames(const std::vector<std::string>& _aliasNames);
 
                     /**
                      * 判断参数 AliasNames 是否已赋值
                      * @return AliasNames 是否已赋值
+                     * 
                      */
                     bool AliasNamesHasBeenSet() const;
 

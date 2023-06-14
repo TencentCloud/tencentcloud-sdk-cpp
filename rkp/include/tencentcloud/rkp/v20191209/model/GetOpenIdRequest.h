@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取dev临时token，通过sdk接口获取
                      * @return DeviceToken dev临时token，通过sdk接口获取
+                     * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
                      * 设置dev临时token，通过sdk接口获取
-                     * @param DeviceToken dev临时token，通过sdk接口获取
+                     * @param _deviceToken dev临时token，通过sdk接口获取
+                     * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
 
                     /**
                      * 判断参数 DeviceToken 是否已赋值
                      * @return DeviceToken 是否已赋值
+                     * 
                      */
                     bool DeviceTokenHasBeenSet() const;
 
                     /**
                      * 获取业务ID
                      * @return BusinessId 业务ID
+                     * 
                      */
                     int64_t GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-                     * @param BusinessId 业务ID
+                     * @param _businessId 业务ID
+                     * 
                      */
                     void SetBusinessId(const int64_t& _businessId);
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取业务侧账号体系下的用户ID
                      * @return BusinessUserId 业务侧账号体系下的用户ID
+                     * 
                      */
                     std::string GetBusinessUserId() const;
 
                     /**
                      * 设置业务侧账号体系下的用户ID
-                     * @param BusinessUserId 业务侧账号体系下的用户ID
+                     * @param _businessUserId 业务侧账号体系下的用户ID
+                     * 
                      */
                     void SetBusinessUserId(const std::string& _businessUserId);
 
                     /**
                      * 判断参数 BusinessUserId 是否已赋值
                      * @return BusinessUserId 是否已赋值
+                     * 
                      */
                     bool BusinessUserIdHasBeenSet() const;
 
                     /**
                      * 获取平台：0-Android， 1-iOS， 2-web
                      * @return Platform 平台：0-Android， 1-iOS， 2-web
+                     * 
                      */
                     int64_t GetPlatform() const;
 
                     /**
                      * 设置平台：0-Android， 1-iOS， 2-web
-                     * @param Platform 平台：0-Android， 1-iOS， 2-web
+                     * @param _platform 平台：0-Android， 1-iOS， 2-web
+                     * 
                      */
                     void SetPlatform(const int64_t& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取选项
                      * @return Option 选项
+                     * 
                      */
                     std::string GetOption() const;
 
                     /**
                      * 设置选项
-                     * @param Option 选项
+                     * @param _option 选项
+                     * 
                      */
                     void SetOption(const std::string& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
+                     * 
                      */
                     bool OptionHasBeenSet() const;
 

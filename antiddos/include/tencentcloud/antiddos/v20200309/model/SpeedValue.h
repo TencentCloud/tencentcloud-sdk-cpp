@@ -55,6 +55,7 @@ namespace TencentCloud
 1(包速率pps)
 2(带宽bps)
 ]
+                     * 
                      */
                     uint64_t GetType() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 1(包速率pps)
 2(带宽bps)
 ]
-                     * @param Type 限速值类型，取值[
+                     * @param _type 限速值类型，取值[
 1(包速率pps)
 2(带宽bps)
 ]
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取值大小
                      * @return Value 值大小
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置值大小
-                     * @param Value 值大小
+                     * @param _value 值大小
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

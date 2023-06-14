@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取正在加入中的节点数量
                      * @return Joining 正在加入中的节点数量
+                     * 
                      */
                     int64_t GetJoining() const;
 
                     /**
                      * 设置正在加入中的节点数量
-                     * @param Joining 正在加入中的节点数量
+                     * @param _joining 正在加入中的节点数量
+                     * 
                      */
                     void SetJoining(const int64_t& _joining);
 
                     /**
                      * 判断参数 Joining 是否已赋值
                      * @return Joining 是否已赋值
+                     * 
                      */
                     bool JoiningHasBeenSet() const;
 
                     /**
                      * 获取初始化中的节点数量
                      * @return Initializing 初始化中的节点数量
+                     * 
                      */
                     int64_t GetInitializing() const;
 
                     /**
                      * 设置初始化中的节点数量
-                     * @param Initializing 初始化中的节点数量
+                     * @param _initializing 初始化中的节点数量
+                     * 
                      */
                     void SetInitializing(const int64_t& _initializing);
 
                     /**
                      * 判断参数 Initializing 是否已赋值
                      * @return Initializing 是否已赋值
+                     * 
                      */
                     bool InitializingHasBeenSet() const;
 
                     /**
                      * 获取正常的节点数量
                      * @return Normal 正常的节点数量
+                     * 
                      */
                     int64_t GetNormal() const;
 
                     /**
                      * 设置正常的节点数量
-                     * @param Normal 正常的节点数量
+                     * @param _normal 正常的节点数量
+                     * 
                      */
                     void SetNormal(const int64_t& _normal);
 
                     /**
                      * 判断参数 Normal 是否已赋值
                      * @return Normal 是否已赋值
+                     * 
                      */
                     bool NormalHasBeenSet() const;
 
                     /**
                      * 获取节点总数
                      * @return Total 节点总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置节点总数
-                     * @param Total 节点总数
+                     * @param _total 节点总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

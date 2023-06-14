@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取证书绑定的域名
                      * @return DnsNames 证书绑定的域名
+                     * 
                      */
                     std::vector<std::string> GetDnsNames() const;
 
                     /**
                      * 设置证书绑定的域名
-                     * @param DnsNames 证书绑定的域名
+                     * @param _dnsNames 证书绑定的域名
+                     * 
                      */
                     void SetDnsNames(const std::vector<std::string>& _dnsNames);
 
                     /**
                      * 判断参数 DnsNames 是否已赋值
                      * @return DnsNames 是否已赋值
+                     * 
                      */
                     bool DnsNamesHasBeenSet() const;
 

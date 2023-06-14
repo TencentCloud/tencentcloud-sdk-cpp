@@ -71,6 +71,7 @@ namespace TencentCloud
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
 - tagKey：标签键。
+                     * 
                      */
                     std::string GetName() const;
 
@@ -87,7 +88,7 @@ namespace TencentCloud
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
 - tagKey：标签键。
-                     * @param Name 过滤字段名，支持的列表如下：
+                     * @param _name 过滤字段名，支持的列表如下：
 - origin：主源站。
 - domain：域名。
 - resourceId：域名id。
@@ -99,48 +100,56 @@ namespace TencentCloud
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
 - tagKey：标签键。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤字段值。
                      * @return Value 过滤字段值。
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置过滤字段值。
-                     * @param Value 过滤字段值。
+                     * @param _value 过滤字段值。
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取是否启用模糊查询，仅支持过滤字段名为origin，domain。
                      * @return Fuzzy 是否启用模糊查询，仅支持过滤字段名为origin，domain。
+                     * 
                      */
                     bool GetFuzzy() const;
 
                     /**
                      * 设置是否启用模糊查询，仅支持过滤字段名为origin，domain。
-                     * @param Fuzzy 是否启用模糊查询，仅支持过滤字段名为origin，domain。
+                     * @param _fuzzy 是否启用模糊查询，仅支持过滤字段名为origin，domain。
+                     * 
                      */
                     void SetFuzzy(const bool& _fuzzy);
 
                     /**
                      * 判断参数 Fuzzy 是否已赋值
                      * @return Fuzzy 是否已赋值
+                     * 
                      */
                     bool FuzzyHasBeenSet() const;
 

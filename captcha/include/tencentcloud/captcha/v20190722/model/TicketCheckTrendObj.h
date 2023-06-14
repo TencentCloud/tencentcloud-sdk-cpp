@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取时间参数
                      * @return Ftime 时间参数
+                     * 
                      */
                     std::string GetFtime() const;
 
                     /**
                      * 设置时间参数
-                     * @param Ftime 时间参数
+                     * @param _ftime 时间参数
+                     * 
                      */
                     void SetFtime(const std::string& _ftime);
 
                     /**
                      * 判断参数 Ftime 是否已赋值
                      * @return Ftime 是否已赋值
+                     * 
                      */
                     bool FtimeHasBeenSet() const;
 
                     /**
                      * 获取票据校验量
                      * @return TicketCount 票据校验量
+                     * 
                      */
                     int64_t GetTicketCount() const;
 
                     /**
                      * 设置票据校验量
-                     * @param TicketCount 票据校验量
+                     * @param _ticketCount 票据校验量
+                     * 
                      */
                     void SetTicketCount(const int64_t& _ticketCount);
 
                     /**
                      * 判断参数 TicketCount 是否已赋值
                      * @return TicketCount 是否已赋值
+                     * 
                      */
                     bool TicketCountHasBeenSet() const;
 
                     /**
                      * 获取票据通过量
                      * @return TicketThroughput 票据通过量
+                     * 
                      */
                     int64_t GetTicketThroughput() const;
 
                     /**
                      * 设置票据通过量
-                     * @param TicketThroughput 票据通过量
+                     * @param _ticketThroughput 票据通过量
+                     * 
                      */
                     void SetTicketThroughput(const int64_t& _ticketThroughput);
 
                     /**
                      * 判断参数 TicketThroughput 是否已赋值
                      * @return TicketThroughput 是否已赋值
+                     * 
                      */
                     bool TicketThroughputHasBeenSet() const;
 
                     /**
                      * 获取票据拦截量
                      * @return TicketIntercept 票据拦截量
+                     * 
                      */
                     int64_t GetTicketIntercept() const;
 
                     /**
                      * 设置票据拦截量
-                     * @param TicketIntercept 票据拦截量
+                     * @param _ticketIntercept 票据拦截量
+                     * 
                      */
                     void SetTicketIntercept(const int64_t& _ticketIntercept);
 
                     /**
                      * 判断参数 TicketIntercept 是否已赋值
                      * @return TicketIntercept 是否已赋值
+                     * 
                      */
                     bool TicketInterceptHasBeenSet() const;
 

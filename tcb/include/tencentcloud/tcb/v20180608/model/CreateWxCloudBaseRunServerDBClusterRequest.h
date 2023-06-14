@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取账户密码
                      * @return AccountPassword 账户密码
+                     * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
                      * 设置账户密码
-                     * @param AccountPassword 账户密码
+                     * @param _accountPassword 账户密码
+                     * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
                     /**
                      * 判断参数 AccountPassword 是否已赋值
                      * @return AccountPassword 是否已赋值
+                     * 
                      */
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取微信appid
                      * @return WxAppId 微信appid
+                     * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
                      * 设置微信appid
-                     * @param WxAppId 微信appid
+                     * @param _wxAppId 微信appid
+                     * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
 
                     /**
                      * 判断参数 WxAppId 是否已赋值
                      * @return WxAppId 是否已赋值
+                     * 
                      */
                     bool WxAppIdHasBeenSet() const;
 
                     /**
                      * 获取mysql内核版本，支持5.7,8.0
                      * @return DbVersion mysql内核版本，支持5.7,8.0
+                     * 
                      */
                     std::string GetDbVersion() const;
 
                     /**
                      * 设置mysql内核版本，支持5.7,8.0
-                     * @param DbVersion mysql内核版本，支持5.7,8.0
+                     * @param _dbVersion mysql内核版本，支持5.7,8.0
+                     * 
                      */
                     void SetDbVersion(const std::string& _dbVersion);
 
                     /**
                      * 判断参数 DbVersion 是否已赋值
                      * @return DbVersion 是否已赋值
+                     * 
                      */
                     bool DbVersionHasBeenSet() const;
 
@@ -121,6 +133,7 @@ namespace TencentCloud
                      * @return LowerCaseTableName 0: 非大小写敏感
 1: 大小写敏感
 默认 0
+                     * 
                      */
                     std::string GetLowerCaseTableName() const;
 
@@ -128,15 +141,17 @@ namespace TencentCloud
                      * 设置0: 非大小写敏感
 1: 大小写敏感
 默认 0
-                     * @param LowerCaseTableName 0: 非大小写敏感
+                     * @param _lowerCaseTableName 0: 非大小写敏感
 1: 大小写敏感
 默认 0
+                     * 
                      */
                     void SetLowerCaseTableName(const std::string& _lowerCaseTableName);
 
                     /**
                      * 判断参数 LowerCaseTableName 是否已赋值
                      * @return LowerCaseTableName 是否已赋值
+                     * 
                      */
                     bool LowerCaseTableNameHasBeenSet() const;
 

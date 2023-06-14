@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据库列表
                      * @return DatabaseInfo 数据库列表
+                     * 
                      */
                     std::vector<DatabaseInfo> GetDatabaseInfo() const;
 
                     /**
                      * 判断参数 DatabaseInfo 是否已赋值
                      * @return DatabaseInfo 是否已赋值
+                     * 
                      */
                     bool DatabaseInfoHasBeenSet() const;
 

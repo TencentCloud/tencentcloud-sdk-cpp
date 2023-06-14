@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取异地登录事件Id数组。
                      * @return Ids 异地登录事件Id数组。
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置异地登录事件Id数组。
-                     * @param Ids 异地登录事件Id数组。
+                     * @param _ids 异地登录事件Id数组。
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：头盔，3：保安帽。
                      * @return Style 帽子佩戴状态信息。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：头盔，3：保安帽。
+                     * 
                      */
                     AttributeItem GetStyle() const;
 
                     /**
                      * 设置帽子佩戴状态信息。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：头盔，3：保安帽。
-                     * @param Style 帽子佩戴状态信息。
+                     * @param _style 帽子佩戴状态信息。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：头盔，3：保安帽。
+                     * 
                      */
                     void SetStyle(const AttributeItem& _style);
 
                     /**
                      * 判断参数 Style 是否已赋值
                      * @return Style 是否已赋值
+                     * 
                      */
                     bool StyleHasBeenSet() const;
 
@@ -74,20 +77,23 @@ AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：�
 AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
                      * @return Color 帽子颜色。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+                     * 
                      */
                     AttributeItem GetColor() const;
 
                     /**
                      * 设置帽子颜色。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
-                     * @param Color 帽子颜色。
+                     * @param _color 帽子颜色。
 AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+                     * 
                      */
                     void SetColor(const AttributeItem& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 

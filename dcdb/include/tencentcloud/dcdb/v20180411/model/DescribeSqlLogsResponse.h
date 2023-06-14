@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取当前消息队列中的sql日志条目数。
                      * @return TotalCount 当前消息队列中的sql日志条目数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取消息队列中的sql日志起始偏移。
                      * @return StartOffset 消息队列中的sql日志起始偏移。
+                     * 
                      */
                     uint64_t GetStartOffset() const;
 
                     /**
                      * 判断参数 StartOffset 是否已赋值
                      * @return StartOffset 是否已赋值
+                     * 
                      */
                     bool StartOffsetHasBeenSet() const;
 
                     /**
                      * 获取消息队列中的sql日志结束偏移。
                      * @return EndOffset 消息队列中的sql日志结束偏移。
+                     * 
                      */
                     uint64_t GetEndOffset() const;
 
                     /**
                      * 判断参数 EndOffset 是否已赋值
                      * @return EndOffset 是否已赋值
+                     * 
                      */
                     bool EndOffsetHasBeenSet() const;
 
                     /**
                      * 获取返回的第一条sql日志的偏移。
                      * @return Offset 返回的第一条sql日志的偏移。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回的sql日志数量。
                      * @return Count 返回的sql日志数量。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取Sql日志列表。
                      * @return SqlItems Sql日志列表。
+                     * 
                      */
                     std::vector<SqlLogItem> GetSqlItems() const;
 
                     /**
                      * 判断参数 SqlItems 是否已赋值
                      * @return SqlItems 是否已赋值
+                     * 
                      */
                     bool SqlItemsHasBeenSet() const;
 

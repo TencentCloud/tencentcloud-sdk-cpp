@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取堡垒机资源列表
                      * @return ResourceSet 堡垒机资源列表
+                     * 
                      */
                     std::vector<Resource> GetResourceSet() const;
 
                     /**
                      * 判断参数 ResourceSet 是否已赋值
                      * @return ResourceSet 是否已赋值
+                     * 
                      */
                     bool ResourceSetHasBeenSet() const;
 

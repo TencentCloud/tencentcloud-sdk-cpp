@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取具体检查项详情
                      * @return List 具体检查项详情
+                     * 
                      */
                     std::vector<SocCheckResult> GetList() const;
 
                     /**
                      * 设置具体检查项详情
-                     * @param List 具体检查项详情
+                     * @param _list 具体检查项详情
+                     * 
                      */
                     void SetList(const std::vector<SocCheckResult>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取检查结果总数
                      * @return Total 检查结果总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置检查结果总数
-                     * @param Total 检查结果总数
+                     * @param _total 检查结果总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取低危个数
                      * @return LowTotal 低危个数
+                     * 
                      */
                     int64_t GetLowTotal() const;
 
                     /**
                      * 设置低危个数
-                     * @param LowTotal 低危个数
+                     * @param _lowTotal 低危个数
+                     * 
                      */
                     void SetLowTotal(const int64_t& _lowTotal);
 
                     /**
                      * 判断参数 LowTotal 是否已赋值
                      * @return LowTotal 是否已赋值
+                     * 
                      */
                     bool LowTotalHasBeenSet() const;
 
                     /**
                      * 获取中危个数
                      * @return MiddleTotal 中危个数
+                     * 
                      */
                     int64_t GetMiddleTotal() const;
 
                     /**
                      * 设置中危个数
-                     * @param MiddleTotal 中危个数
+                     * @param _middleTotal 中危个数
+                     * 
                      */
                     void SetMiddleTotal(const int64_t& _middleTotal);
 
                     /**
                      * 判断参数 MiddleTotal 是否已赋值
                      * @return MiddleTotal 是否已赋值
+                     * 
                      */
                     bool MiddleTotalHasBeenSet() const;
 
                     /**
                      * 获取高危个数
                      * @return HighTotal 高危个数
+                     * 
                      */
                     int64_t GetHighTotal() const;
 
                     /**
                      * 设置高危个数
-                     * @param HighTotal 高危个数
+                     * @param _highTotal 高危个数
+                     * 
                      */
                     void SetHighTotal(const int64_t& _highTotal);
 
                     /**
                      * 判断参数 HighTotal 是否已赋值
                      * @return HighTotal 是否已赋值
+                     * 
                      */
                     bool HighTotalHasBeenSet() const;
 
                     /**
                      * 获取正常个数
                      * @return NormalTotal 正常个数
+                     * 
                      */
                     int64_t GetNormalTotal() const;
 
                     /**
                      * 设置正常个数
-                     * @param NormalTotal 正常个数
+                     * @param _normalTotal 正常个数
+                     * 
                      */
                     void SetNormalTotal(const int64_t& _normalTotal);
 
                     /**
                      * 判断参数 NormalTotal 是否已赋值
                      * @return NormalTotal 是否已赋值
+                     * 
                      */
                     bool NormalTotalHasBeenSet() const;
 

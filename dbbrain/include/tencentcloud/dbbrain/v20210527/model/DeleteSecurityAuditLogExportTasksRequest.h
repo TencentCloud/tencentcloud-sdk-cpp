@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取安全审计组Id。
                      * @return SecAuditGroupId 安全审计组Id。
+                     * 
                      */
                     std::string GetSecAuditGroupId() const;
 
                     /**
                      * 设置安全审计组Id。
-                     * @param SecAuditGroupId 安全审计组Id。
+                     * @param _secAuditGroupId 安全审计组Id。
+                     * 
                      */
                     void SetSecAuditGroupId(const std::string& _secAuditGroupId);
 
                     /**
                      * 判断参数 SecAuditGroupId 是否已赋值
                      * @return SecAuditGroupId 是否已赋值
+                     * 
                      */
                     bool SecAuditGroupIdHasBeenSet() const;
 
                     /**
                      * 获取日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。
                      * @return AsyncRequestIds 日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。
+                     * 
                      */
                     std::vector<uint64_t> GetAsyncRequestIds() const;
 
                     /**
                      * 设置日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。
-                     * @param AsyncRequestIds 日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。
+                     * @param _asyncRequestIds 日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。
+                     * 
                      */
                     void SetAsyncRequestIds(const std::vector<uint64_t>& _asyncRequestIds);
 
                     /**
                      * 判断参数 AsyncRequestIds 是否已赋值
                      * @return AsyncRequestIds 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdsHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值： "mysql" - 云数据库 MySQL。
                      * @return Product 服务产品类型，支持值： "mysql" - 云数据库 MySQL。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值： "mysql" - 云数据库 MySQL。
-                     * @param Product 服务产品类型，支持值： "mysql" - 云数据库 MySQL。
+                     * @param _product 服务产品类型，支持值： "mysql" - 云数据库 MySQL。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

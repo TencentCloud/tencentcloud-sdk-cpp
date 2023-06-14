@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取唇色素材总数量。
                      * @return ModelIdNum 唇色素材总数量。
+                     * 
                      */
                     int64_t GetModelIdNum() const;
 
                     /**
                      * 判断参数 ModelIdNum 是否已赋值
                      * @return ModelIdNum 是否已赋值
+                     * 
                      */
                     bool ModelIdNumHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelInfos 素材数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ModelInfo> GetModelInfos() const;
 
                     /**
                      * 判断参数 ModelInfos 是否已赋值
                      * @return ModelInfos 是否已赋值
+                     * 
                      */
                     bool ModelInfosHasBeenSet() const;
 

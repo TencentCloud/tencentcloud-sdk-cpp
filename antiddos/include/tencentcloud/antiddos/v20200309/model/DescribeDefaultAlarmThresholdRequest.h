@@ -51,6 +51,7 @@ bgpip(表示高防IP产品)
 bgp(表示高防包产品)
 bgpip(表示高防IP产品)
 ]
+                     * 
                      */
                     std::string GetInstanceType() const;
 
@@ -59,16 +60,18 @@ bgpip(表示高防IP产品)
 bgp(表示高防包产品)
 bgpip(表示高防IP产品)
 ]
-                     * @param InstanceType 产品类型，取值[
+                     * @param _instanceType 产品类型，取值[
 bgp(表示高防包产品)
 bgpip(表示高防IP产品)
 ]
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -81,6 +84,7 @@ bgpip(表示高防IP产品)
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     int64_t GetFilterAlarmType() const;
 
@@ -89,16 +93,18 @@ bgpip(表示高防IP产品)
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
-                     * @param FilterAlarmType 告警阈值类型搜索，取值[
+                     * @param _filterAlarmType 告警阈值类型搜索，取值[
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     void SetFilterAlarmType(const int64_t& _filterAlarmType);
 
                     /**
                      * 判断参数 FilterAlarmType 是否已赋值
                      * @return FilterAlarmType 是否已赋值
+                     * 
                      */
                     bool FilterAlarmTypeHasBeenSet() const;
 

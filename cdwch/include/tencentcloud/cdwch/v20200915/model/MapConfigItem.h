@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取key
                      * @return ConfKey key
+                     * 
                      */
                     std::string GetConfKey() const;
 
                     /**
                      * 设置key
-                     * @param ConfKey key
+                     * @param _confKey key
+                     * 
                      */
                     void SetConfKey(const std::string& _confKey);
 
                     /**
                      * 判断参数 ConfKey 是否已赋值
                      * @return ConfKey 是否已赋值
+                     * 
                      */
                     bool ConfKeyHasBeenSet() const;
 
                     /**
                      * 获取列表
                      * @return Items 列表
+                     * 
                      */
                     std::vector<InstanceConfigInfo> GetItems() const;
 
                     /**
                      * 设置列表
-                     * @param Items 列表
+                     * @param _items 列表
+                     * 
                      */
                     void SetItems(const std::vector<InstanceConfigInfo>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

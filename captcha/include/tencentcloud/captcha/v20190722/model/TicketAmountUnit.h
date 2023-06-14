@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return DateKey 时间
+                     * 
                      */
                     std::string GetDateKey() const;
 
                     /**
                      * 设置时间
-                     * @param DateKey 时间
+                     * @param _dateKey 时间
+                     * 
                      */
                     void SetDateKey(const std::string& _dateKey);
 
                     /**
                      * 判断参数 DateKey 是否已赋值
                      * @return DateKey 是否已赋值
+                     * 
                      */
                     bool DateKeyHasBeenSet() const;
 
                     /**
                      * 获取票据验证总量
                      * @return Amount 票据验证总量
+                     * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 设置票据验证总量
-                     * @param Amount 票据验证总量
+                     * @param _amount 票据验证总量
+                     * 
                      */
                     void SetAmount(const int64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 

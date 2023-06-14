@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取侵权ID
                      * @return TortId 侵权ID
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 设置侵权ID
-                     * @param TortId 侵权ID
+                     * @param _tortId 侵权ID
+                     * 
                      */
                     void SetTortId(const int64_t& _tortId);
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取发函结果回调地址
                      * @return RightUrl 发函结果回调地址
+                     * 
                      */
                     std::string GetRightUrl() const;
 
                     /**
                      * 设置发函结果回调地址
-                     * @param RightUrl 发函结果回调地址
+                     * @param _rightUrl 发函结果回调地址
+                     * 
                      */
                     void SetRightUrl(const std::string& _rightUrl);
 
                     /**
                      * 判断参数 RightUrl 是否已赋值
                      * @return RightUrl 是否已赋值
+                     * 
                      */
                     bool RightUrlHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取列表支持字段
                      * @return ExportField 列表支持字段
+                     * 
                      */
                     std::vector<std::string> GetExportField() const;
 
                     /**
                      * 设置列表支持字段
-                     * @param ExportField 列表支持字段
+                     * @param _exportField 列表支持字段
+                     * 
                      */
                     void SetExportField(const std::vector<std::string>& _exportField);
 
                     /**
                      * 判断参数 ExportField 是否已赋值
                      * @return ExportField 是否已赋值
+                     * 
                      */
                     bool ExportFieldHasBeenSet() const;
 
                     /**
                      * 获取镜像id
                      * @return ImageID 镜像id
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像id
-                     * @param ImageID 镜像id
+                     * @param _imageID 镜像id
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>Name- String - 是否必填：否 - 镜像名称筛选，</li>
 <li>RiskLevel - String - 是否必填：否 - 风险等级  1,2,3,4</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>Name- String - 是否必填：否 - 镜像名称筛选，</li>
 <li>RiskLevel - String - 是否必填：否 - 风险等级  1,2,3,4</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Name- String - 是否必填：否 - 镜像名称筛选，</li>
 <li>RiskLevel - String - 是否必填：否 - 风险等级  1,2,3,4</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

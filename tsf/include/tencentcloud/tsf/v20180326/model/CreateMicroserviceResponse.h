@@ -50,12 +50,14 @@ false：操作失败。
                      * @return Result 新增微服务是否成功。
 true：操作成功。
 false：操作失败。
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

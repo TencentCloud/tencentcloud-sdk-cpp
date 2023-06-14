@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取直播时移模板信息。
                      * @return Templates 直播时移模板信息。
+                     * 
                      */
                     std::vector<TimeShiftTemplate> GetTemplates() const;
 
                     /**
                      * 判断参数 Templates 是否已赋值
                      * @return Templates 是否已赋值
+                     * 
                      */
                     bool TemplatesHasBeenSet() const;
 

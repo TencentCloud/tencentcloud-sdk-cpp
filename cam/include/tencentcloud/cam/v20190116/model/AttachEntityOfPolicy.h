@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取实体ID
                      * @return Id 实体ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置实体ID
-                     * @param Id 实体ID
+                     * @param _id 实体ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 实体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实体名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 实体名称
+                     * @param _name 实体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -91,38 +97,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 实体Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置实体Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 实体Uin
+                     * @param _uin 实体Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const uint64_t& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取关联类型。1 用户关联 ； 2 用户组关联
                      * @return RelatedType 关联类型。1 用户关联 ； 2 用户组关联
+                     * 
                      */
                     uint64_t GetRelatedType() const;
 
                     /**
                      * 设置关联类型。1 用户关联 ； 2 用户组关联
-                     * @param RelatedType 关联类型。1 用户关联 ； 2 用户组关联
+                     * @param _relatedType 关联类型。1 用户关联 ； 2 用户组关联
+                     * 
                      */
                     void SetRelatedType(const uint64_t& _relatedType);
 
                     /**
                      * 判断参数 RelatedType 是否已赋值
                      * @return RelatedType 是否已赋值
+                     * 
                      */
                     bool RelatedTypeHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentTime 策略关联时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttachmentTime() const;
 
                     /**
                      * 设置策略关联时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachmentTime 策略关联时间
+                     * @param _attachmentTime 策略关联时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachmentTime(const std::string& _attachmentTime);
 
                     /**
                      * 判断参数 AttachmentTime 是否已赋值
                      * @return AttachmentTime 是否已赋值
+                     * 
                      */
                     bool AttachmentTimeHasBeenSet() const;
 

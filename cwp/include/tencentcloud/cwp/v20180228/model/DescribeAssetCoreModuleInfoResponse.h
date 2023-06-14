@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取内核模块详情
                      * @return Module 内核模块详情
+                     * 
                      */
                     AssetCoreModuleDetail GetModule() const;
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 

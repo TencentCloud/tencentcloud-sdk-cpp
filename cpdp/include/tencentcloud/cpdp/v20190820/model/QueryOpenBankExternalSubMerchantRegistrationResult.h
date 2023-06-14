@@ -55,6 +55,7 @@ __PROCESSING__: 进件中
 __SUCCESS__: 进件成功
 __FAILED__: 进件失败
 __PROCESSING__: 进件中
+                     * 
                      */
                     std::string GetRegistrationStatus() const;
 
@@ -63,16 +64,18 @@ __PROCESSING__: 进件中
 __SUCCESS__: 进件成功
 __FAILED__: 进件失败
 __PROCESSING__: 进件中
-                     * @param RegistrationStatus 进件状态。
+                     * @param _registrationStatus 进件状态。
 __SUCCESS__: 进件成功
 __FAILED__: 进件失败
 __PROCESSING__: 进件中
+                     * 
                      */
                     void SetRegistrationStatus(const std::string& _registrationStatus);
 
                     /**
                      * 判断参数 RegistrationStatus 是否已赋值
                      * @return RegistrationStatus 是否已赋值
+                     * 
                      */
                     bool RegistrationStatusHasBeenSet() const;
 
@@ -81,38 +84,44 @@ __PROCESSING__: 进件中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrationMessage 进件返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistrationMessage() const;
 
                     /**
                      * 设置进件返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistrationMessage 进件返回描述, 例如失败原因等。
+                     * @param _registrationMessage 进件返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrationMessage(const std::string& _registrationMessage);
 
                     /**
                      * 判断参数 RegistrationMessage 是否已赋值
                      * @return RegistrationMessage 是否已赋值
+                     * 
                      */
                     bool RegistrationMessageHasBeenSet() const;
 
                     /**
                      * 获取渠道进件号。
                      * @return ChannelRegistrationNo 渠道进件号。
+                     * 
                      */
                     std::string GetChannelRegistrationNo() const;
 
                     /**
                      * 设置渠道进件号。
-                     * @param ChannelRegistrationNo 渠道进件号。
+                     * @param _channelRegistrationNo 渠道进件号。
+                     * 
                      */
                     void SetChannelRegistrationNo(const std::string& _channelRegistrationNo);
 
                     /**
                      * 判断参数 ChannelRegistrationNo 是否已赋值
                      * @return ChannelRegistrationNo 是否已赋值
+                     * 
                      */
                     bool ChannelRegistrationNoHasBeenSet() const;
 
@@ -121,20 +130,23 @@ __PROCESSING__: 进件中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelSubMerchantId 渠道子商户ID（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelSubMerchantId 渠道子商户ID（进件成功返回）。
+                     * @param _channelSubMerchantId 渠道子商户ID（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -143,20 +155,23 @@ __PROCESSING__: 进件中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutSubMerchantName 外部子商户名称（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutSubMerchantName() const;
 
                     /**
                      * 设置外部子商户名称（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutSubMerchantName 外部子商户名称（进件成功返回）。
+                     * @param _outSubMerchantName 外部子商户名称（进件成功返回）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutSubMerchantName(const std::string& _outSubMerchantName);
 
                     /**
                      * 判断参数 OutSubMerchantName 是否已赋值
                      * @return OutSubMerchantName 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantNameHasBeenSet() const;
 
@@ -171,6 +186,7 @@ __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -180,17 +196,19 @@ __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelName 渠道名称（进件成功返回）。
+                     * @param _channelName 渠道名称（进件成功返回）。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -203,6 +221,7 @@ __OPENBANK_PAYMENT__: openbank支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -211,16 +230,18 @@ __OPENBANK_PAYMENT__: openbank支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentMethod 支付方式（进件成功返回）。
+                     * @param _paymentMethod 支付方式（进件成功返回）。
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
@@ -229,20 +250,23 @@ __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessLicenseNumber 社会信用代码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusinessLicenseNumber() const;
 
                     /**
                      * 设置社会信用代码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessLicenseNumber 社会信用代码。
+                     * @param _businessLicenseNumber 社会信用代码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessLicenseNumber(const std::string& _businessLicenseNumber);
 
                     /**
                      * 判断参数 BusinessLicenseNumber 是否已赋值
                      * @return BusinessLicenseNumber 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseNumberHasBeenSet() const;
 
@@ -251,20 +275,23 @@ __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalName 法人姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LegalName 法人姓名
+                     * @param _legalName 法人姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLegalName(const std::string& _legalName);
 
                     /**
                      * 判断参数 LegalName 是否已赋值
                      * @return LegalName 是否已赋值
+                     * 
                      */
                     bool LegalNameHasBeenSet() const;
 
@@ -273,20 +300,23 @@ __OPENBANK_PAYMENT__: openbank支付
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReturnData 第三方渠道查询进件返回数据。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalReturnData() const;
 
                     /**
                      * 设置第三方渠道查询进件返回数据。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalReturnData 第三方渠道查询进件返回数据。详情见附录-复杂类型。
+                     * @param _externalReturnData 第三方渠道查询进件返回数据。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalReturnData(const std::string& _externalReturnData);
 
                     /**
                      * 判断参数 ExternalReturnData 是否已赋值
                      * @return ExternalReturnData 是否已赋值
+                     * 
                      */
                     bool ExternalReturnDataHasBeenSet() const;
 

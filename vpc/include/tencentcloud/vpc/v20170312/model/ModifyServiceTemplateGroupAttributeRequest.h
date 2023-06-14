@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。
                      * @return ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。
+                     * 
                      */
                     std::string GetServiceTemplateGroupId() const;
 
                     /**
                      * 设置协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。
-                     * @param ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。
+                     * @param _serviceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。
+                     * 
                      */
                     void SetServiceTemplateGroupId(const std::string& _serviceTemplateGroupId);
 
                     /**
                      * 判断参数 ServiceTemplateGroupId 是否已赋值
                      * @return ServiceTemplateGroupId 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupIdHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板集合名称。
                      * @return ServiceTemplateGroupName 协议端口模板集合名称。
+                     * 
                      */
                     std::string GetServiceTemplateGroupName() const;
 
                     /**
                      * 设置协议端口模板集合名称。
-                     * @param ServiceTemplateGroupName 协议端口模板集合名称。
+                     * @param _serviceTemplateGroupName 协议端口模板集合名称。
+                     * 
                      */
                     void SetServiceTemplateGroupName(const std::string& _serviceTemplateGroupName);
 
                     /**
                      * 判断参数 ServiceTemplateGroupName 是否已赋值
                      * @return ServiceTemplateGroupName 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupNameHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板实例ID，例如：ppm-4dw6agho。
                      * @return ServiceTemplateIds 协议端口模板实例ID，例如：ppm-4dw6agho。
+                     * 
                      */
                     std::vector<std::string> GetServiceTemplateIds() const;
 
                     /**
                      * 设置协议端口模板实例ID，例如：ppm-4dw6agho。
-                     * @param ServiceTemplateIds 协议端口模板实例ID，例如：ppm-4dw6agho。
+                     * @param _serviceTemplateIds 协议端口模板实例ID，例如：ppm-4dw6agho。
+                     * 
                      */
                     void SetServiceTemplateIds(const std::vector<std::string>& _serviceTemplateIds);
 
                     /**
                      * 判断参数 ServiceTemplateIds 是否已赋值
                      * @return ServiceTemplateIds 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateIdsHasBeenSet() const;
 

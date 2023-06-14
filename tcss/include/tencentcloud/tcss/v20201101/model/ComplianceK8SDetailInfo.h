@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName K8S集群的名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置K8S集群的名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName K8S集群的名称。
+                     * @param _clusterName K8S集群的名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion K8S集群的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置K8S集群的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterVersion K8S集群的版本。
+                     * @param _clusterVersion K8S集群的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 

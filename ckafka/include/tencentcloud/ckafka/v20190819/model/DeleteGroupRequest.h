@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取消费分组
                      * @return Group 消费分组
+                     * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 设置消费分组
-                     * @param Group 消费分组
+                     * @param _group 消费分组
+                     * 
                      */
                     void SetGroup(const std::string& _group);
 
                     /**
                      * 判断参数 Group 是否已赋值
                      * @return Group 是否已赋值
+                     * 
                      */
                     bool GroupHasBeenSet() const;
 

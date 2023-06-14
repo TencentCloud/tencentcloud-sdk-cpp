@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取流程ID，可通过接口DescribeFlowStatus查询立即切换升级任务的状态。
                      * @return FlowId 流程ID，可通过接口DescribeFlowStatus查询立即切换升级任务的状态。
+                     * 
                      */
                     uint64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

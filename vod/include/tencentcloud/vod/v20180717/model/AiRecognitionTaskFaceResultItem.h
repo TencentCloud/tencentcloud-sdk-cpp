@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取人物唯一标识 ID。
                      * @return Id 人物唯一标识 ID。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置人物唯一标识 ID。
-                     * @param Id 人物唯一标识 ID。
+                     * @param _id 人物唯一标识 ID。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -79,51 +83,59 @@ namespace TencentCloud
                      * 设置人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
-                     * @param Type 人物库类型，表示识别出的人物来自哪个人物库：
+                     * @param _type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li>
 <li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取人物名称。
                      * @return Name 人物名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置人物名称。
-                     * @param Name 人物名称。
+                     * @param _name 人物名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取人物出现的片段结果集。
                      * @return SegmentSet 人物出现的片段结果集。
+                     * 
                      */
                     std::vector<AiRecognitionTaskFaceSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置人物出现的片段结果集。
-                     * @param SegmentSet 人物出现的片段结果集。
+                     * @param _segmentSet 人物出现的片段结果集。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskFaceSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取对象 Id
                      * @return Id 对象 Id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置对象 Id
-                     * @param Id 对象 Id
+                     * @param _id 对象 Id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取对象名称
                      * @return Name 对象名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置对象名称
-                     * @param Name 对象名称
+                     * @param _name 对象名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

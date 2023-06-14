@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取经度
                      * @return Longitude 经度
+                     * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 判断参数 Longitude 是否已赋值
                      * @return Longitude 是否已赋值
+                     * 
                      */
                     bool LongitudeHasBeenSet() const;
 
                     /**
                      * 获取纬度
                      * @return Latitude 纬度
+                     * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 判断参数 Latitude 是否已赋值
                      * @return Latitude 是否已赋值
+                     * 
                      */
                     bool LatitudeHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return LocationType 类型
+                     * 
                      */
                     std::string GetLocationType() const;
 
                     /**
                      * 判断参数 LocationType 是否已赋值
                      * @return LocationType 是否已赋值
+                     * 
                      */
                     bool LocationTypeHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Accuracy 误差精度预估，单位为米
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAccuracy() const;
 
                     /**
                      * 判断参数 Accuracy 是否已赋值
                      * @return Accuracy 是否已赋值
+                     * 
                      */
                     bool AccuracyHasBeenSet() const;
 

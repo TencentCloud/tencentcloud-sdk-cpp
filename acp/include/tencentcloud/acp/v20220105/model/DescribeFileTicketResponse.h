@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Result 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)
                      * @return UploadUrl 上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)
+                     * 
                      */
                     std::string GetUploadUrl() const;
 
                     /**
                      * 判断参数 UploadUrl 是否已赋值
                      * @return UploadUrl 是否已赋值
+                     * 
                      */
                     bool UploadUrlHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadSign 上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadSign() const;
 
                     /**
                      * 判断参数 UploadSign 是否已赋值
                      * @return UploadSign 是否已赋值
+                     * 
                      */
                     bool UploadSignHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FildID 上传文件ID(任务来源为1时提交诊断任务需要)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFildID() const;
 
                     /**
                      * 判断参数 FildID 是否已赋值
                      * @return FildID 是否已赋值
+                     * 
                      */
                     bool FildIDHasBeenSet() const;
 

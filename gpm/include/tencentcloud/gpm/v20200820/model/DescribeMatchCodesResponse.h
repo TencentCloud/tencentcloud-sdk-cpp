@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchCodes 匹配Code
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MatchCodeAttr> GetMatchCodes() const;
 
                     /**
                      * 判断参数 MatchCodes 是否已赋值
                      * @return MatchCodes 是否已赋值
+                     * 
                      */
                     bool MatchCodesHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取多个资源标签，可以为空数组
                      * @return Tags 多个资源标签，可以为空数组
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置多个资源标签，可以为空数组
-                     * @param Tags 多个资源标签，可以为空数组
+                     * @param _tags 多个资源标签，可以为空数组
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

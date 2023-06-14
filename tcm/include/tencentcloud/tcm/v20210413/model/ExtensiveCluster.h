@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId Cluster ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Cluster ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId Cluster ID
+                     * @param _clusterId Cluster ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

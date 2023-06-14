@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取节点instanceID
                      * @return InstanceID 节点instanceID
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置节点instanceID
-                     * @param InstanceID 节点instanceID
+                     * @param _instanceID 节点instanceID
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
@@ -83,6 +86,7 @@ done  已完成
 timeout 已超时
 aborted 已取消
 pending 还未开始
+                     * 
                      */
                     std::string GetLifeState() const;
 
@@ -95,7 +99,7 @@ done  已完成
 timeout 已超时
 aborted 已取消
 pending 还未开始
-                     * @param LifeState 任务生命周期
+                     * @param _lifeState 任务生命周期
 process 运行中
 paused 已停止
 pauing 正在停止
@@ -103,12 +107,14 @@ done  已完成
 timeout 已超时
 aborted 已取消
 pending 还未开始
+                     * 
                      */
                     void SetLifeState(const std::string& _lifeState);
 
                     /**
                      * 判断参数 LifeState 是否已赋值
                      * @return LifeState 是否已赋值
+                     * 
                      */
                     bool LifeStateHasBeenSet() const;
 
@@ -117,20 +123,23 @@ pending 还未开始
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 升级开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置升级开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartAt 升级开始时间
+                     * @param _startAt 升级开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartAt(const std::string& _startAt);
 
                     /**
                      * 判断参数 StartAt 是否已赋值
                      * @return StartAt 是否已赋值
+                     * 
                      */
                     bool StartAtHasBeenSet() const;
 
@@ -139,56 +148,65 @@ pending 还未开始
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 升级结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置升级结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndAt 升级结束时间
+                     * @param _endAt 升级结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndAt(const std::string& _endAt);
 
                     /**
                      * 判断参数 EndAt 是否已赋值
                      * @return EndAt 是否已赋值
+                     * 
                      */
                     bool EndAtHasBeenSet() const;
 
                     /**
                      * 获取升级前检查结果
                      * @return CheckResult 升级前检查结果
+                     * 
                      */
                     InstanceUpgradePreCheckResult GetCheckResult() const;
 
                     /**
                      * 设置升级前检查结果
-                     * @param CheckResult 升级前检查结果
+                     * @param _checkResult 升级前检查结果
+                     * 
                      */
                     void SetCheckResult(const InstanceUpgradePreCheckResult& _checkResult);
 
                     /**
                      * 判断参数 CheckResult 是否已赋值
                      * @return CheckResult 是否已赋值
+                     * 
                      */
                     bool CheckResultHasBeenSet() const;
 
                     /**
                      * 获取升级步骤详情
                      * @return Detail 升级步骤详情
+                     * 
                      */
                     std::vector<TaskStepInfo> GetDetail() const;
 
                     /**
                      * 设置升级步骤详情
-                     * @param Detail 升级步骤详情
+                     * @param _detail 升级步骤详情
+                     * 
                      */
                     void SetDetail(const std::vector<TaskStepInfo>& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

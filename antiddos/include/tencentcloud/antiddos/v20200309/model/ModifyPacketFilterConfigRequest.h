@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取特征过滤配置
                      * @return PacketFilterConfig 特征过滤配置
+                     * 
                      */
                     PacketFilterConfig GetPacketFilterConfig() const;
 
                     /**
                      * 设置特征过滤配置
-                     * @param PacketFilterConfig 特征过滤配置
+                     * @param _packetFilterConfig 特征过滤配置
+                     * 
                      */
                     void SetPacketFilterConfig(const PacketFilterConfig& _packetFilterConfig);
 
                     /**
                      * 判断参数 PacketFilterConfig 是否已赋值
                      * @return PacketFilterConfig 是否已赋值
+                     * 
                      */
                     bool PacketFilterConfigHasBeenSet() const;
 

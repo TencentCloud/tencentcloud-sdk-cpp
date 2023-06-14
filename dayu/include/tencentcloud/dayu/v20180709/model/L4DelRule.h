@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取资源Id
                      * @return Id 资源Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源Id
-                     * @param Id 资源Id
+                     * @param _id 资源Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取资源IP
                      * @return Ip 资源IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置资源IP
-                     * @param Ip 资源IP
+                     * @param _ip 资源IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取规则Id
                      * @return RuleIdList 规则Id
+                     * 
                      */
                     std::vector<std::string> GetRuleIdList() const;
 
                     /**
                      * 设置规则Id
-                     * @param RuleIdList 规则Id
+                     * @param _ruleIdList 规则Id
+                     * 
                      */
                     void SetRuleIdList(const std::vector<std::string>& _ruleIdList);
 
                     /**
                      * 判断参数 RuleIdList 是否已赋值
                      * @return RuleIdList 是否已赋值
+                     * 
                      */
                     bool RuleIdListHasBeenSet() const;
 

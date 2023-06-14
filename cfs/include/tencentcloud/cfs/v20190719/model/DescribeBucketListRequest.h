@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS
                      * @return SrcService 数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS
+                     * 
                      */
                     std::string GetSrcService() const;
 
                     /**
                      * 设置数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS
-                     * @param SrcService 数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS
+                     * @param _srcService 数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS
+                     * 
                      */
                     void SetSrcService(const std::string& _srcService);
 
                     /**
                      * 判断参数 SrcService 是否已赋值
                      * @return SrcService 是否已赋值
+                     * 
                      */
                     bool SrcServiceHasBeenSet() const;
 
@@ -65,38 +68,44 @@ namespace TencentCloud
 
                      * @return SrcSecretId 数据源账号的SecretId
 
+                     * 
                      */
                     std::string GetSrcSecretId() const;
 
                     /**
                      * 设置数据源账号的SecretId
 
-                     * @param SrcSecretId 数据源账号的SecretId
+                     * @param _srcSecretId 数据源账号的SecretId
 
+                     * 
                      */
                     void SetSrcSecretId(const std::string& _srcSecretId);
 
                     /**
                      * 判断参数 SrcSecretId 是否已赋值
                      * @return SrcSecretId 是否已赋值
+                     * 
                      */
                     bool SrcSecretIdHasBeenSet() const;
 
                     /**
                      * 获取数据源账号的SecretKey
                      * @return SrcSecretKey 数据源账号的SecretKey
+                     * 
                      */
                     std::string GetSrcSecretKey() const;
 
                     /**
                      * 设置数据源账号的SecretKey
-                     * @param SrcSecretKey 数据源账号的SecretKey
+                     * @param _srcSecretKey 数据源账号的SecretKey
+                     * 
                      */
                     void SetSrcSecretKey(const std::string& _srcSecretKey);
 
                     /**
                      * 判断参数 SrcSecretKey 是否已赋值
                      * @return SrcSecretKey 是否已赋值
+                     * 
                      */
                     bool SrcSecretKeyHasBeenSet() const;
 

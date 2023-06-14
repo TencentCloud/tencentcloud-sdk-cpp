@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取增量子任务id数组
                      * @return SubTaskIds 增量子任务id数组
+                     * 
                      */
                     std::vector<std::string> GetSubTaskIds() const;
 
                     /**
                      * 判断参数 SubTaskIds 是否已赋值
                      * @return SubTaskIds 是否已赋值
+                     * 
                      */
                     bool SubTaskIdsHasBeenSet() const;
 

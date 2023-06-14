@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询偏移量。
                      * @return Offset 查询偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移量。
-                     * @param Offset 查询偏移量。
+                     * @param _offset 查询偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询设备数量。最大支持250个
                      * @return Limit 查询设备数量。最大支持250个
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询设备数量。最大支持250个
-                     * @param Limit 查询设备数量。最大支持250个
+                     * @param _limit 查询设备数量。最大支持250个
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

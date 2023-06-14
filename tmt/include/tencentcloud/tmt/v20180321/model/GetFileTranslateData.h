@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileData 文件数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileData() const;
 
                     /**
                      * 设置文件数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileData 文件数据
+                     * @param _fileData 文件数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileData(const std::string& _fileData);
 
                     /**
                      * 判断参数 FileData 是否已赋值
                      * @return FileData 是否已赋值
+                     * 
                      */
                     bool FileDataHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误提示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误提示
+                     * @param _message 错误提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 翻译进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置翻译进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 翻译进度
+                     * @param _progress 翻译进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取EKS instance ids
                      * @return EksCiIds EKS instance ids
+                     * 
                      */
                     std::vector<std::string> GetEksCiIds() const;
 
                     /**
                      * 设置EKS instance ids
-                     * @param EksCiIds EKS instance ids
+                     * @param _eksCiIds EKS instance ids
+                     * 
                      */
                     void SetEksCiIds(const std::vector<std::string>& _eksCiIds);
 
                     /**
                      * 判断参数 EksCiIds 是否已赋值
                      * @return EksCiIds 是否已赋值
+                     * 
                      */
                     bool EksCiIdsHasBeenSet() const;
 

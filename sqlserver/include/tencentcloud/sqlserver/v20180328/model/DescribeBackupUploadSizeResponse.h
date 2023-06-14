@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取已上传的备份的信息
                      * @return CosUploadBackupFileSet 已上传的备份的信息
+                     * 
                      */
                     std::vector<CosUploadBackupFile> GetCosUploadBackupFileSet() const;
 
                     /**
                      * 判断参数 CosUploadBackupFileSet 是否已赋值
                      * @return CosUploadBackupFileSet 是否已赋值
+                     * 
                      */
                     bool CosUploadBackupFileSetHasBeenSet() const;
 

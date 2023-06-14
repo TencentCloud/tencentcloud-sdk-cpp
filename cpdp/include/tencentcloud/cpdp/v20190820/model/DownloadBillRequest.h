@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取请求下载对账单日期
                      * @return StateDate 请求下载对账单日期
+                     * 
                      */
                     std::string GetStateDate() const;
 
                     /**
                      * 设置请求下载对账单日期
-                     * @param StateDate 请求下载对账单日期
+                     * @param _stateDate 请求下载对账单日期
+                     * 
                      */
                     void SetStateDate(const std::string& _stateDate);
 
                     /**
                      * 判断参数 StateDate 是否已赋值
                      * @return StateDate 是否已赋值
+                     * 
                      */
                     bool StateDateHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的MidasAppId
                      * @return MidasAppId 聚鑫分配的MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的MidasAppId
-                     * @param MidasAppId 聚鑫分配的MidasAppId
+                     * @param _midasAppId 聚鑫分配的MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的SecretId
                      * @return MidasSecretId 聚鑫分配的SecretId
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的SecretId
-                     * @param MidasSecretId 聚鑫分配的SecretId
+                     * @param _midasSecretId 聚鑫分配的SecretId
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取使用聚鑫安全密钥计算的签名
                      * @return MidasSignature 使用聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置使用聚鑫安全密钥计算的签名
-                     * @param MidasSignature 使用聚鑫安全密钥计算的签名
+                     * @param _midasSignature 使用聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
@@ -125,6 +137,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -134,17 +147,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

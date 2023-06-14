@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取连接管理实例资源
                      * @return Resource 连接管理实例资源
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置连接管理实例资源
-                     * @param Resource 连接管理实例资源
+                     * @param _resource 连接管理实例资源
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取Ctsdb的metric
                      * @return CtsdbMetric Ctsdb的metric
+                     * 
                      */
                     std::string GetCtsdbMetric() const;
 
                     /**
                      * 设置Ctsdb的metric
-                     * @param CtsdbMetric Ctsdb的metric
+                     * @param _ctsdbMetric Ctsdb的metric
+                     * 
                      */
                     void SetCtsdbMetric(const std::string& _ctsdbMetric);
 
                     /**
                      * 判断参数 CtsdbMetric 是否已赋值
                      * @return CtsdbMetric 是否已赋值
+                     * 
                      */
                     bool CtsdbMetricHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取项目 Id。
                      * @return ProjectId 项目 Id。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取<li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为2 ，第0个代表主输入源推流信息，第1个代表备输入源推流信息。只有当各自输入源类型为推流时才有有效内容。</li>
                      * @return RtmpPushInputInfoSet <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为2 ，第0个代表主输入源推流信息，第1个代表备输入源推流信息。只有当各自输入源类型为推流时才有有效内容。</li>
+                     * 
                      */
                     std::vector<RtmpPushInputInfo> GetRtmpPushInputInfoSet() const;
 
                     /**
                      * 判断参数 RtmpPushInputInfoSet 是否已赋值
                      * @return RtmpPushInputInfoSet 是否已赋值
+                     * 
                      */
                     bool RtmpPushInputInfoSetHasBeenSet() const;
 

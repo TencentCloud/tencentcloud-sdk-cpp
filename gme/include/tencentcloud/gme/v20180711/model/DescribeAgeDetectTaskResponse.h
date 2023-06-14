@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -67,12 +69,14 @@ DataId： 请求中对应的 DataId。
 Url ：该请求中对应的 Url。
 Status ：子任务状态，0:已创建，1:运行中，2:已完成，3:任务异常，4:任务超时。
 Age ：子任务完成后的结果，0:成年人，1:未成年人，100:未知结果。
+                     * 
                      */
                     std::vector<AgeDetectTaskResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

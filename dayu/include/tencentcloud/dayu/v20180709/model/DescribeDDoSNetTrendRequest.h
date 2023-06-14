@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（net表示高防IP专业版）
                      * @return Business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
                      * @return MetricName 指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
-                     * @param MetricName 指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
+                     * @param _metricName 指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
                      * @return Period 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
-                     * @param Period 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
+                     * @param _period 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取统计开始时间
                      * @return StartTime 统计开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置统计开始时间
-                     * @param StartTime 统计开始时间
+                     * @param _startTime 统计开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取统计结束时间
                      * @return EndTime 统计结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置统计结束时间
-                     * @param EndTime 统计结束时间
+                     * @param _endTime 统计结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

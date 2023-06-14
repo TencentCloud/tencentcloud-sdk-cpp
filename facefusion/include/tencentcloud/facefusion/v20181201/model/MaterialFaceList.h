@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取人脸序号
                      * @return FaceId 人脸序号
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 设置人脸序号
-                     * @param FaceId 人脸序号
+                     * @param _faceId 人脸序号
+                     * 
                      */
                     void SetFaceId(const std::string& _faceId);
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取人脸框信息
                      * @return FaceInfo 人脸框信息
+                     * 
                      */
                     FaceInfo GetFaceInfo() const;
 
                     /**
                      * 设置人脸框信息
-                     * @param FaceInfo 人脸框信息
+                     * @param _faceInfo 人脸框信息
+                     * 
                      */
                     void SetFaceInfo(const FaceInfo& _faceInfo);
 
                     /**
                      * 判断参数 FaceInfo 是否已赋值
                      * @return FaceInfo 是否已赋值
+                     * 
                      */
                     bool FaceInfoHasBeenSet() const;
 

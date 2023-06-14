@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取String(20)，返回码
                      * @return TxnReturnCode String(20)，返回码
+                     * 
                      */
                     std::string GetTxnReturnCode() const;
 
                     /**
                      * 判断参数 TxnReturnCode 是否已赋值
                      * @return TxnReturnCode 是否已赋值
+                     * 
                      */
                     bool TxnReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取String(100)，返回信息
                      * @return TxnReturnMsg String(100)，返回信息
+                     * 
                      */
                     std::string GetTxnReturnMsg() const;
 
                     /**
                      * 判断参数 TxnReturnMsg 是否已赋值
                      * @return TxnReturnMsg 是否已赋值
+                     * 
                      */
                     bool TxnReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取String(22)，交易流水号
                      * @return CnsmrSeqNo String(22)，交易流水号
+                     * 
                      */
                     std::string GetCnsmrSeqNo() const;
 
                     /**
                      * 判断参数 CnsmrSeqNo 是否已赋值
                      * @return CnsmrSeqNo 是否已赋值
+                     * 
                      */
                     bool CnsmrSeqNoHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultNum STRING(10)，本次交易返回查询结果记录数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultNum() const;
 
                     /**
                      * 判断参数 ResultNum 是否已赋值
                      * @return ResultNum 是否已赋值
+                     * 
                      */
                     bool ResultNumHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartRecordNo STRING(30)，起始记录号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartRecordNo() const;
 
                     /**
                      * 判断参数 StartRecordNo 是否已赋值
                      * @return StartRecordNo 是否已赋值
+                     * 
                      */
                     bool StartRecordNoHasBeenSet() const;
 
@@ -113,12 +123,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndFlag STRING(2)，结束标志（0: 否; 1: 是）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndFlag() const;
 
                     /**
                      * 判断参数 EndFlag 是否已赋值
                      * @return EndFlag 是否已赋值
+                     * 
                      */
                     bool EndFlagHasBeenSet() const;
 
@@ -127,12 +139,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalNum STRING(10)，符合业务查询条件的记录总数（重复次数，一次最多返回20条记录）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
@@ -141,12 +155,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AcctArray 账户信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Acct> GetAcctArray() const;
 
                     /**
                      * 判断参数 AcctArray 是否已赋值
                      * @return AcctArray 是否已赋值
+                     * 
                      */
                     bool AcctArrayHasBeenSet() const;
 
@@ -155,12 +171,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMsg STRING(1027)，保留域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReservedMsg() const;
 
                     /**
                      * 判断参数 ReservedMsg 是否已赋值
                      * @return ReservedMsg 是否已赋值
+                     * 
                      */
                     bool ReservedMsgHasBeenSet() const;
 

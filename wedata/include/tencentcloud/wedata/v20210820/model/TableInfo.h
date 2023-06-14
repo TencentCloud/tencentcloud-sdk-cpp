@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableId 表Id
+                     * @param _tableId 表Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginDatabaseName 表databaseName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginDatabaseName() const;
 
                     /**
                      * 设置表databaseName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginDatabaseName 表databaseName
+                     * @param _originDatabaseName 表databaseName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginDatabaseName(const std::string& _originDatabaseName);
 
                     /**
                      * 判断参数 OriginDatabaseName 是否已赋值
                      * @return OriginDatabaseName 是否已赋值
+                     * 
                      */
                     bool OriginDatabaseNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginSchemaName 表schemaName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginSchemaName() const;
 
                     /**
                      * 设置表schemaName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginSchemaName 表schemaName
+                     * @param _originSchemaName 表schemaName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginSchemaName(const std::string& _originSchemaName);
 
                     /**
                      * 判断参数 OriginSchemaName 是否已赋值
                      * @return OriginSchemaName 是否已赋值
+                     * 
                      */
                     bool OriginSchemaNameHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取独占机器资源列表
                      * @return PoolList 独占机器资源列表
+                     * 
                      */
                     std::vector<PoolInfo> GetPoolList() const;
 
                     /**
                      * 判断参数 PoolList 是否已赋值
                      * @return PoolList 是否已赋值
+                     * 
                      */
                     bool PoolListHasBeenSet() const;
 

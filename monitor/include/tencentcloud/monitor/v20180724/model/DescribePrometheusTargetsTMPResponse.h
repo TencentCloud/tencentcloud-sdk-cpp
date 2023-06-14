@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取所有Job的targets信息
                      * @return Jobs 所有Job的targets信息
+                     * 
                      */
                     std::vector<PrometheusJobTargets> GetJobs() const;
 
                     /**
                      * 判断参数 Jobs 是否已赋值
                      * @return Jobs 是否已赋值
+                     * 
                      */
                     bool JobsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationNumNeedToStop 需要停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetApplicationNumNeedToStop() const;
 
                     /**
                      * 设置需要停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationNumNeedToStop 需要停止的应用数量
+                     * @param _applicationNumNeedToStop 需要停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationNumNeedToStop(const int64_t& _applicationNumNeedToStop);
 
                     /**
                      * 判断参数 ApplicationNumNeedToStop 是否已赋值
                      * @return ApplicationNumNeedToStop 是否已赋值
+                     * 
                      */
                     bool ApplicationNumNeedToStopHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppedApplicationNum 已经停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStoppedApplicationNum() const;
 
                     /**
                      * 设置已经停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoppedApplicationNum 已经停止的应用数量
+                     * @param _stoppedApplicationNum 已经停止的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStoppedApplicationNum(const int64_t& _stoppedApplicationNum);
 
                     /**
                      * 判断参数 StoppedApplicationNum 是否已赋值
                      * @return StoppedApplicationNum 是否已赋值
+                     * 
                      */
                     bool StoppedApplicationNumHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopFailedApplicationNum 停止失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStopFailedApplicationNum() const;
 
                     /**
                      * 设置停止失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StopFailedApplicationNum 停止失败的应用数量
+                     * @param _stopFailedApplicationNum 停止失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStopFailedApplicationNum(const int64_t& _stopFailedApplicationNum);
 
                     /**
                      * 判断参数 StopFailedApplicationNum 是否已赋值
                      * @return StopFailedApplicationNum 是否已赋值
+                     * 
                      */
                     bool StopFailedApplicationNumHasBeenSet() const;
 

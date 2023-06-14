@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取结果数据
                      * @return ResultSet 结果数据
+                     * 
                      */
                     std::string GetResultSet() const;
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取schema
                      * @return ResultSchema schema
+                     * 
                      */
                     std::vector<Column> GetResultSchema() const;
 
                     /**
                      * 判断参数 ResultSchema 是否已赋值
                      * @return ResultSchema 是否已赋值
+                     * 
                      */
                     bool ResultSchemaHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 分页信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextToken() const;
 
                     /**
                      * 判断参数 NextToken 是否已赋值
                      * @return NextToken 是否已赋值
+                     * 
                      */
                     bool NextTokenHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputPath 存储结果地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutputPath() const;
 
                     /**
                      * 判断参数 OutputPath 是否已赋值
                      * @return OutputPath 是否已赋值
+                     * 
                      */
                     bool OutputPathHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取回滚任务 ID
                      * @return JobId 回滚任务 ID
+                     * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 设置回滚任务 ID
-                     * @param JobId 回滚任务 ID
+                     * @param _jobId 回滚任务 ID
+                     * 
                      */
                     void SetJobId(const uint64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @param DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

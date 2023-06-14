@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取合同预览URL
                      * @return PreviewSignUrl 合同预览URL
+                     * 
                      */
                     std::string GetPreviewSignUrl() const;
 
                     /**
                      * 判断参数 PreviewSignUrl 是否已赋值
                      * @return PreviewSignUrl 是否已赋值
+                     * 
                      */
                     bool PreviewSignUrlHasBeenSet() const;
 

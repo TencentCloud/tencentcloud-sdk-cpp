@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextCursor 分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextCursor() const;
 
                     /**
                      * 判断参数 NextCursor 是否已赋值
                      * @return NextCursor 是否已赋值
+                     * 
                      */
                     bool NextCursorHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageData 企业成员SaaS使用明细统计响应数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SalesActionEventDetail> GetPageData() const;
 
                     /**
                      * 判断参数 PageData 是否已赋值
                      * @return PageData 是否已赋值
+                     * 
                      */
                     bool PageDataHasBeenSet() const;
 

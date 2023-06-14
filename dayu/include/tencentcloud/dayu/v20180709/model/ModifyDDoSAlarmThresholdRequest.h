@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID,字符串类型
                      * @return RsId 资源ID,字符串类型
+                     * 
                      */
                     std::string GetRsId() const;
 
                     /**
                      * 设置资源ID,字符串类型
-                     * @param RsId 资源ID,字符串类型
+                     * @param _rsId 资源ID,字符串类型
+                     * 
                      */
                     void SetRsId(const std::string& _rsId);
 
                     /**
                      * 判断参数 RsId 是否已赋值
                      * @return RsId 是否已赋值
+                     * 
                      */
                     bool RsIdHasBeenSet() const;
 
                     /**
                      * 获取告警阈值类型，0-未设置，1-入流量，2-清洗流量
                      * @return AlarmType 告警阈值类型，0-未设置，1-入流量，2-清洗流量
+                     * 
                      */
                     uint64_t GetAlarmType() const;
 
                     /**
                      * 设置告警阈值类型，0-未设置，1-入流量，2-清洗流量
-                     * @param AlarmType 告警阈值类型，0-未设置，1-入流量，2-清洗流量
+                     * @param _alarmType 告警阈值类型，0-未设置，1-入流量，2-清洗流量
+                     * 
                      */
                     void SetAlarmType(const uint64_t& _alarmType);
 
                     /**
                      * 判断参数 AlarmType 是否已赋值
                      * @return AlarmType 是否已赋值
+                     * 
                      */
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
                      * 获取告警阈值，大于0（目前暂定的值）
                      * @return AlarmThreshold 告警阈值，大于0（目前暂定的值）
+                     * 
                      */
                     uint64_t GetAlarmThreshold() const;
 
                     /**
                      * 设置告警阈值，大于0（目前暂定的值）
-                     * @param AlarmThreshold 告警阈值，大于0（目前暂定的值）
+                     * @param _alarmThreshold 告警阈值，大于0（目前暂定的值）
+                     * 
                      */
                     void SetAlarmThreshold(const uint64_t& _alarmThreshold);
 
                     /**
                      * 判断参数 AlarmThreshold 是否已赋值
                      * @return AlarmThreshold 是否已赋值
+                     * 
                      */
                     bool AlarmThresholdHasBeenSet() const;
 
                     /**
                      * 获取资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据
                      * @return IpList 资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据
-                     * @param IpList 资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据
+                     * @param _ipList 资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 

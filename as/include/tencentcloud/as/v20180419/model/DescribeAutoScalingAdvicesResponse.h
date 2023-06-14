@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组配置建议集合。
                      * @return AutoScalingAdviceSet 伸缩组配置建议集合。
+                     * 
                      */
                     std::vector<AutoScalingAdvice> GetAutoScalingAdviceSet() const;
 
                     /**
                      * 判断参数 AutoScalingAdviceSet 是否已赋值
                      * @return AutoScalingAdviceSet 是否已赋值
+                     * 
                      */
                     bool AutoScalingAdviceSetHasBeenSet() const;
 

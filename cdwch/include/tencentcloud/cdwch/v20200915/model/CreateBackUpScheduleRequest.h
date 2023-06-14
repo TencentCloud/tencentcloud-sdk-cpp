@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取编辑时需要传
                      * @return ScheduleId 编辑时需要传
+                     * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
                      * 设置编辑时需要传
-                     * @param ScheduleId 编辑时需要传
+                     * @param _scheduleId 编辑时需要传
+                     * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
 
                     /**
                      * 判断参数 ScheduleId 是否已赋值
                      * @return ScheduleId 是否已赋值
+                     * 
                      */
                     bool ScheduleIdHasBeenSet() const;
 
                     /**
                      * 获取选择的星期 逗号分隔，例如 2 代表周二
                      * @return WeekDays 选择的星期 逗号分隔，例如 2 代表周二
+                     * 
                      */
                     std::string GetWeekDays() const;
 
                     /**
                      * 设置选择的星期 逗号分隔，例如 2 代表周二
-                     * @param WeekDays 选择的星期 逗号分隔，例如 2 代表周二
+                     * @param _weekDays 选择的星期 逗号分隔，例如 2 代表周二
+                     * 
                      */
                     void SetWeekDays(const std::string& _weekDays);
 
                     /**
                      * 判断参数 WeekDays 是否已赋值
                      * @return WeekDays 是否已赋值
+                     * 
                      */
                     bool WeekDaysHasBeenSet() const;
 
                     /**
                      * 获取执行小时
                      * @return ExecuteHour 执行小时
+                     * 
                      */
                     int64_t GetExecuteHour() const;
 
                     /**
                      * 设置执行小时
-                     * @param ExecuteHour 执行小时
+                     * @param _executeHour 执行小时
+                     * 
                      */
                     void SetExecuteHour(const int64_t& _executeHour);
 
                     /**
                      * 判断参数 ExecuteHour 是否已赋值
                      * @return ExecuteHour 是否已赋值
+                     * 
                      */
                     bool ExecuteHourHasBeenSet() const;
 
                     /**
                      * 获取备份表列表
                      * @return BackUpTables 备份表列表
+                     * 
                      */
                     std::vector<BackupTableContent> GetBackUpTables() const;
 
                     /**
                      * 设置备份表列表
-                     * @param BackUpTables 备份表列表
+                     * @param _backUpTables 备份表列表
+                     * 
                      */
                     void SetBackUpTables(const std::vector<BackupTableContent>& _backUpTables);
 
                     /**
                      * 判断参数 BackUpTables 是否已赋值
                      * @return BackUpTables 是否已赋值
+                     * 
                      */
                     bool BackUpTablesHasBeenSet() const;
 

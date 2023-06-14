@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备类型，field为现场设备（被控方），remote为远端设备（操控方）
                      * @return DeviceType 设备类型，field为现场设备（被控方），remote为远端设备（操控方）
+                     * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
                      * 获取设备状态，offline为离线，ready为在线准备，connected为会话中
                      * @return DeviceStatus 设备状态，offline为离线，ready为在线准备，connected为会话中
+                     * 
                      */
                     std::string GetDeviceStatus() const;
 
                     /**
                      * 判断参数 DeviceStatus 是否已赋值
                      * @return DeviceStatus 是否已赋值
+                     * 
                      */
                     bool DeviceStatusHasBeenSet() const;
 
                     /**
                      * 获取设备状态最后更新时间
                      * @return LastReportTime 设备状态最后更新时间
+                     * 
                      */
                     std::string GetLastReportTime() const;
 
                     /**
                      * 判断参数 LastReportTime 是否已赋值
                      * @return LastReportTime 是否已赋值
+                     * 
                      */
                     bool LastReportTimeHasBeenSet() const;
 
                     /**
                      * 获取设备信息最后修改时间
                      * @return ModifyTime 设备信息最后修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

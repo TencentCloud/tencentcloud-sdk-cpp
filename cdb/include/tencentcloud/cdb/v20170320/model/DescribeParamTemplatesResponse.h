@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取该用户的参数模板数量。
                      * @return TotalCount 该用户的参数模板数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取参数模板详情。
                      * @return Items 参数模板详情。
+                     * 
                      */
                     std::vector<ParamTemplateInfo> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

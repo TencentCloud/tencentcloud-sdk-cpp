@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。
                      * @return BackupDay 备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。
+                     * 
                      */
                     std::string GetBackupDay() const;
 
                     /**
                      * 设置备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。
-                     * @param BackupDay 备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。
+                     * @param _backupDay 备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。
+                     * 
                      */
                     void SetBackupDay(const std::string& _backupDay);
 
                     /**
                      * 判断参数 BackupDay 是否已赋值
                      * @return BackupDay 是否已赋值
+                     * 
                      */
                     bool BackupDayHasBeenSet() const;
 
                     /**
                      * 获取备份时间点，格式：HH:mm:ss。
                      * @return BackupTime 备份时间点，格式：HH:mm:ss。
+                     * 
                      */
                     std::string GetBackupTime() const;
 
                     /**
                      * 设置备份时间点，格式：HH:mm:ss。
-                     * @param BackupTime 备份时间点，格式：HH:mm:ss。
+                     * @param _backupTime 备份时间点，格式：HH:mm:ss。
+                     * 
                      */
                     void SetBackupTime(const std::string& _backupTime);
 
                     /**
                      * 判断参数 BackupTime 是否已赋值
                      * @return BackupTime 是否已赋值
+                     * 
                      */
                     bool BackupTimeHasBeenSet() const;
 

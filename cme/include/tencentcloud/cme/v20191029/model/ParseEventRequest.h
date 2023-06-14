@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取回调事件内容。
                      * @return EventContent 回调事件内容。
+                     * 
                      */
                     std::string GetEventContent() const;
 
                     /**
                      * 设置回调事件内容。
-                     * @param EventContent 回调事件内容。
+                     * @param _eventContent 回调事件内容。
+                     * 
                      */
                     void SetEventContent(const std::string& _eventContent);
 
                     /**
                      * 判断参数 EventContent 是否已赋值
                      * @return EventContent 是否已赋值
+                     * 
                      */
                     bool EventContentHasBeenSet() const;
 

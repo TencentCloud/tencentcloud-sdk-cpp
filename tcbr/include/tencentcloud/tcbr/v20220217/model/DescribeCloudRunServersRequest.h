@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境Id
-                     * @param EnvId 环境Id
+                     * @param _envId 环境Id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return PageSize 默认为9， 最大为30
 不传或传0时 取默认9
 大于30时取30
+                     * 
                      */
                     int64_t GetPageSize() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置默认为9， 最大为30
 不传或传0时 取默认9
 大于30时取30
-                     * @param PageSize 默认为9， 最大为30
+                     * @param _pageSize 默认为9， 最大为30
 不传或传0时 取默认9
 大于30时取30
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取不传或传0时 会默认为1
                      * @return PageNum 不传或传0时 会默认为1
+                     * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置不传或传0时 会默认为1
-                     * @param PageNum 不传或传0时 会默认为1
+                     * @param _pageNum 不传或传0时 会默认为1
+                     * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 

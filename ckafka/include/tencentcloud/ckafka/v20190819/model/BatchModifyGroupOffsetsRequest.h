@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取消费分组名称
                      * @return GroupName 消费分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置消费分组名称
-                     * @param GroupName 消费分组名称
+                     * @param _groupName 消费分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceId 实例名称
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceId 实例名称
+                     * @param _instanceId 实例名称
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取partition信息
                      * @return Partitions partition信息
+                     * 
                      */
                     std::vector<Partitions> GetPartitions() const;
 
                     /**
                      * 设置partition信息
-                     * @param Partitions partition信息
+                     * @param _partitions partition信息
+                     * 
                      */
                     void SetPartitions(const std::vector<Partitions>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
                     /**
                      * 获取指定topic，默认所有topic
                      * @return TopicName 指定topic，默认所有topic
+                     * 
                      */
                     std::vector<std::string> GetTopicName() const;
 
                     /**
                      * 设置指定topic，默认所有topic
-                     * @param TopicName 指定topic，默认所有topic
+                     * @param _topicName 指定topic，默认所有topic
+                     * 
                      */
                     void SetTopicName(const std::vector<std::string>& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

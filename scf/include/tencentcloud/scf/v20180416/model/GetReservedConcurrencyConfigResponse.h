@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMem 该函数的最大独占配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReservedMem() const;
 
                     /**
                      * 判断参数 ReservedMem 是否已赋值
                      * @return ReservedMem 是否已赋值
+                     * 
                      */
                     bool ReservedMemHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取模块名称，固定字段：cluster_mng
                      * @return Module 模块名称，固定字段：cluster_mng
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名称，固定字段：cluster_mng
-                     * @param Module 模块名称，固定字段：cluster_mng
+                     * @param _module 模块名称，固定字段：cluster_mng
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取操作名称，固定字段：cluster_summary
                      * @return Operation 操作名称，固定字段：cluster_summary
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名称，固定字段：cluster_summary
-                     * @param Operation 操作名称，固定字段：cluster_summary
+                     * @param _operation 操作名称，固定字段：cluster_summary
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取区块链网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置区块链网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取组织ID，固定字段：0
                      * @return GroupId 组织ID，固定字段：0
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置组织ID，固定字段：0
-                     * @param GroupId 组织ID，固定字段：0
+                     * @param _groupId 组织ID，固定字段：0
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取调用接口的组织名称，可以在组织管理列表中获取当前组织的名称
                      * @return GroupName 调用接口的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置调用接口的组织名称，可以在组织管理列表中获取当前组织的名称
-                     * @param GroupName 调用接口的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * @param _groupName 调用接口的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库基础信息
                      * @return DatabaseInfo 数据库基础信息
+                     * 
                      */
                     DatabaseInfo GetDatabaseInfo() const;
 
                     /**
                      * 设置数据库基础信息
-                     * @param DatabaseInfo 数据库基础信息
+                     * @param _databaseInfo 数据库基础信息
+                     * 
                      */
                     void SetDatabaseInfo(const DatabaseInfo& _databaseInfo);
 
                     /**
                      * 判断参数 DatabaseInfo 是否已赋值
                      * @return DatabaseInfo 是否已赋值
+                     * 
                      */
                     bool DatabaseInfoHasBeenSet() const;
 
                     /**
                      * 获取数据源名称，默认为DataLakeCatalog
                      * @return DatasourceConnectionName 数据源名称，默认为DataLakeCatalog
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置数据源名称，默认为DataLakeCatalog
-                     * @param DatasourceConnectionName 数据源名称，默认为DataLakeCatalog
+                     * @param _datasourceConnectionName 数据源名称，默认为DataLakeCatalog
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 

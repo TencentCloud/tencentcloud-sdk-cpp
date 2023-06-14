@@ -46,120 +46,140 @@ namespace TencentCloud
                     /**
                      * 获取高危漏洞最新本地镜像占比
                      * @return HighLevelVulLocalImagePercent 高危漏洞最新本地镜像占比
+                     * 
                      */
                     double GetHighLevelVulLocalImagePercent() const;
 
                     /**
                      * 判断参数 HighLevelVulLocalImagePercent 是否已赋值
                      * @return HighLevelVulLocalImagePercent 是否已赋值
+                     * 
                      */
                     bool HighLevelVulLocalImagePercentHasBeenSet() const;
 
                     /**
                      * 获取中危漏洞最新本地镜像占比
                      * @return MediumLevelVulLocalImagePercent 中危漏洞最新本地镜像占比
+                     * 
                      */
                     double GetMediumLevelVulLocalImagePercent() const;
 
                     /**
                      * 判断参数 MediumLevelVulLocalImagePercent 是否已赋值
                      * @return MediumLevelVulLocalImagePercent 是否已赋值
+                     * 
                      */
                     bool MediumLevelVulLocalImagePercentHasBeenSet() const;
 
                     /**
                      * 获取低危漏洞最新本地镜像占比
                      * @return LowLevelVulLocalImagePercent 低危漏洞最新本地镜像占比
+                     * 
                      */
                     double GetLowLevelVulLocalImagePercent() const;
 
                     /**
                      * 判断参数 LowLevelVulLocalImagePercent 是否已赋值
                      * @return LowLevelVulLocalImagePercent 是否已赋值
+                     * 
                      */
                     bool LowLevelVulLocalImagePercentHasBeenSet() const;
 
                     /**
                      * 获取严重漏洞最新本地镜像占比
                      * @return CriticalLevelVulLocalImagePercent 严重漏洞最新本地镜像占比
+                     * 
                      */
                     double GetCriticalLevelVulLocalImagePercent() const;
 
                     /**
                      * 判断参数 CriticalLevelVulLocalImagePercent 是否已赋值
                      * @return CriticalLevelVulLocalImagePercent 是否已赋值
+                     * 
                      */
                     bool CriticalLevelVulLocalImagePercentHasBeenSet() const;
 
                     /**
                      * 获取影响的最新版本本地镜像数
                      * @return LocalNewestImageCount 影响的最新版本本地镜像数
+                     * 
                      */
                     int64_t GetLocalNewestImageCount() const;
 
                     /**
                      * 判断参数 LocalNewestImageCount 是否已赋值
                      * @return LocalNewestImageCount 是否已赋值
+                     * 
                      */
                     bool LocalNewestImageCountHasBeenSet() const;
 
                     /**
                      * 获取影响的最新版本仓库镜像数
                      * @return RegistryNewestImageCount 影响的最新版本仓库镜像数
+                     * 
                      */
                     int64_t GetRegistryNewestImageCount() const;
 
                     /**
                      * 判断参数 RegistryNewestImageCount 是否已赋值
                      * @return RegistryNewestImageCount 是否已赋值
+                     * 
                      */
                     bool RegistryNewestImageCountHasBeenSet() const;
 
                     /**
                      * 获取高危漏洞最新仓库镜像占比
                      * @return HighLevelVulRegistryImagePercent 高危漏洞最新仓库镜像占比
+                     * 
                      */
                     double GetHighLevelVulRegistryImagePercent() const;
 
                     /**
                      * 判断参数 HighLevelVulRegistryImagePercent 是否已赋值
                      * @return HighLevelVulRegistryImagePercent 是否已赋值
+                     * 
                      */
                     bool HighLevelVulRegistryImagePercentHasBeenSet() const;
 
                     /**
                      * 获取中危漏洞最新仓库镜像占比
                      * @return MediumLevelVulRegistryImagePercent 中危漏洞最新仓库镜像占比
+                     * 
                      */
                     double GetMediumLevelVulRegistryImagePercent() const;
 
                     /**
                      * 判断参数 MediumLevelVulRegistryImagePercent 是否已赋值
                      * @return MediumLevelVulRegistryImagePercent 是否已赋值
+                     * 
                      */
                     bool MediumLevelVulRegistryImagePercentHasBeenSet() const;
 
                     /**
                      * 获取低危漏洞最新仓库镜像占比
                      * @return LowLevelVulRegistryImagePercent 低危漏洞最新仓库镜像占比
+                     * 
                      */
                     double GetLowLevelVulRegistryImagePercent() const;
 
                     /**
                      * 判断参数 LowLevelVulRegistryImagePercent 是否已赋值
                      * @return LowLevelVulRegistryImagePercent 是否已赋值
+                     * 
                      */
                     bool LowLevelVulRegistryImagePercentHasBeenSet() const;
 
                     /**
                      * 获取严重漏洞最新仓库镜像占比
                      * @return CriticalLevelVulRegistryImagePercent 严重漏洞最新仓库镜像占比
+                     * 
                      */
                     double GetCriticalLevelVulRegistryImagePercent() const;
 
                     /**
                      * 判断参数 CriticalLevelVulRegistryImagePercent 是否已赋值
                      * @return CriticalLevelVulRegistryImagePercent 是否已赋值
+                     * 
                      */
                     bool CriticalLevelVulRegistryImagePercentHasBeenSet() const;
 

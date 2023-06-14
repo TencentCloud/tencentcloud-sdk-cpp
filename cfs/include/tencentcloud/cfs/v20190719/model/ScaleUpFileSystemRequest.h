@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统Id
                      * @return FileSystemId 文件系统Id
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统Id
-                     * @param FileSystemId 文件系统Id
+                     * @param _fileSystemId 文件系统Id
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取扩容的目标容量
                      * @return TargetCapacity 扩容的目标容量
+                     * 
                      */
                     uint64_t GetTargetCapacity() const;
 
                     /**
                      * 设置扩容的目标容量
-                     * @param TargetCapacity 扩容的目标容量
+                     * @param _targetCapacity 扩容的目标容量
+                     * 
                      */
                     void SetTargetCapacity(const uint64_t& _targetCapacity);
 
                     /**
                      * 判断参数 TargetCapacity 是否已赋值
                      * @return TargetCapacity 是否已赋值
+                     * 
                      */
                     bool TargetCapacityHasBeenSet() const;
 

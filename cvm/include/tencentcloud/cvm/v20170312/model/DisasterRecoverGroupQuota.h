@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取可创建置放群组数量的上限。
                      * @return GroupQuota 可创建置放群组数量的上限。
+                     * 
                      */
                     int64_t GetGroupQuota() const;
 
                     /**
                      * 设置可创建置放群组数量的上限。
-                     * @param GroupQuota 可创建置放群组数量的上限。
+                     * @param _groupQuota 可创建置放群组数量的上限。
+                     * 
                      */
                     void SetGroupQuota(const int64_t& _groupQuota);
 
                     /**
                      * 判断参数 GroupQuota 是否已赋值
                      * @return GroupQuota 是否已赋值
+                     * 
                      */
                     bool GroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取当前用户已经创建的置放群组数量。
                      * @return CurrentNum 当前用户已经创建的置放群组数量。
+                     * 
                      */
                     int64_t GetCurrentNum() const;
 
                     /**
                      * 设置当前用户已经创建的置放群组数量。
-                     * @param CurrentNum 当前用户已经创建的置放群组数量。
+                     * @param _currentNum 当前用户已经创建的置放群组数量。
+                     * 
                      */
                     void SetCurrentNum(const int64_t& _currentNum);
 
                     /**
                      * 判断参数 CurrentNum 是否已赋值
                      * @return CurrentNum 是否已赋值
+                     * 
                      */
                     bool CurrentNumHasBeenSet() const;
 
                     /**
                      * 获取物理机类型容灾组内实例的配额数。
                      * @return CvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInHostGroupQuota() const;
 
                     /**
                      * 设置物理机类型容灾组内实例的配额数。
-                     * @param CvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+                     * @param _cvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+                     * 
                      */
                     void SetCvmInHostGroupQuota(const int64_t& _cvmInHostGroupQuota);
 
                     /**
                      * 判断参数 CvmInHostGroupQuota 是否已赋值
                      * @return CvmInHostGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInHostGroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取交换机类型容灾组内实例的配额数。
                      * @return CvmInSwitchGroupQuota 交换机类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInSwitchGroupQuota() const;
 
                     /**
                      * 设置交换机类型容灾组内实例的配额数。
-                     * @param CvmInSwitchGroupQuota 交换机类型容灾组内实例的配额数。
+                     * @param _cvmInSwitchGroupQuota 交换机类型容灾组内实例的配额数。
+                     * 
                      */
                     void SetCvmInSwitchGroupQuota(const int64_t& _cvmInSwitchGroupQuota);
 
                     /**
                      * 判断参数 CvmInSwitchGroupQuota 是否已赋值
                      * @return CvmInSwitchGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInSwitchGroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取机架类型容灾组内实例的配额数。
                      * @return CvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInRackGroupQuota() const;
 
                     /**
                      * 设置机架类型容灾组内实例的配额数。
-                     * @param CvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+                     * @param _cvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+                     * 
                      */
                     void SetCvmInRackGroupQuota(const int64_t& _cvmInRackGroupQuota);
 
                     /**
                      * 判断参数 CvmInRackGroupQuota 是否已赋值
                      * @return CvmInRackGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInRackGroupQuotaHasBeenSet() const;
 

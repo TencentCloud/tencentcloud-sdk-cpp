@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取要挂载到的实例ID。
                      * @return InstanceId 要挂载到的实例ID。
+                     * 
                      */
                     std::vector<std::string> GetInstanceId() const;
 
                     /**
                      * 设置要挂载到的实例ID。
-                     * @param InstanceId 要挂载到的实例ID。
+                     * @param _instanceId 要挂载到的实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::vector<std::string>& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取子机内的挂载点。
                      * @return MountPoint 子机内的挂载点。
+                     * 
                      */
                     std::vector<std::string> GetMountPoint() const;
 
                     /**
                      * 设置子机内的挂载点。
-                     * @param MountPoint 子机内的挂载点。
+                     * @param _mountPoint 子机内的挂载点。
+                     * 
                      */
                     void SetMountPoint(const std::vector<std::string>& _mountPoint);
 
                     /**
                      * 判断参数 MountPoint 是否已赋值
                      * @return MountPoint 是否已赋值
+                     * 
                      */
                     bool MountPointHasBeenSet() const;
 
                     /**
                      * 获取文件系统类型，支持的有 ext4、xfs。
                      * @return FileSystemType 文件系统类型，支持的有 ext4、xfs。
+                     * 
                      */
                     std::string GetFileSystemType() const;
 
                     /**
                      * 设置文件系统类型，支持的有 ext4、xfs。
-                     * @param FileSystemType 文件系统类型，支持的有 ext4、xfs。
+                     * @param _fileSystemType 文件系统类型，支持的有 ext4、xfs。
+                     * 
                      */
                     void SetFileSystemType(const std::string& _fileSystemType);
 
                     /**
                      * 判断参数 FileSystemType 是否已赋值
                      * @return FileSystemType 是否已赋值
+                     * 
                      */
                     bool FileSystemTypeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询值
                      * @return SearchWord 查询值
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置查询值
-                     * @param SearchWord 查询值
+                     * @param _searchWord 查询值
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取本次查询的偏移位置，默认为0
                      * @return Offset 本次查询的偏移位置，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置本次查询的偏移位置，默认为0
-                     * @param Offset 本次查询的偏移位置，默认为0
+                     * @param _offset 本次查询的偏移位置，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取本次返回结果的最大个数，默认为50，最大值为50
                      * @return Limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置本次返回结果的最大个数，默认为50，最大值为50
-                     * @param Limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * @param _limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

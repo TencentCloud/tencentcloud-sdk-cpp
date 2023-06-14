@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID。
                      * @return SecurityGroupId 安全组实例ID。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID。
-                     * @param SecurityGroupId 安全组实例ID。
+                     * @param _securityGroupId 安全组实例ID。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取云服务器实例数。
                      * @return CVM 云服务器实例数。
+                     * 
                      */
                     uint64_t GetCVM() const;
 
                     /**
                      * 设置云服务器实例数。
-                     * @param CVM 云服务器实例数。
+                     * @param _cVM 云服务器实例数。
+                     * 
                      */
                     void SetCVM(const uint64_t& _cVM);
 
                     /**
                      * 判断参数 CVM 是否已赋值
                      * @return CVM 是否已赋值
+                     * 
                      */
                     bool CVMHasBeenSet() const;
 
                     /**
                      * 获取MySQL数据库实例数。
                      * @return CDB MySQL数据库实例数。
+                     * 
                      */
                     uint64_t GetCDB() const;
 
                     /**
                      * 设置MySQL数据库实例数。
-                     * @param CDB MySQL数据库实例数。
+                     * @param _cDB MySQL数据库实例数。
+                     * 
                      */
                     void SetCDB(const uint64_t& _cDB);
 
                     /**
                      * 判断参数 CDB 是否已赋值
                      * @return CDB 是否已赋值
+                     * 
                      */
                     bool CDBHasBeenSet() const;
 
                     /**
                      * 获取弹性网卡实例数。
                      * @return ENI 弹性网卡实例数。
+                     * 
                      */
                     uint64_t GetENI() const;
 
                     /**
                      * 设置弹性网卡实例数。
-                     * @param ENI 弹性网卡实例数。
+                     * @param _eNI 弹性网卡实例数。
+                     * 
                      */
                     void SetENI(const uint64_t& _eNI);
 
                     /**
                      * 判断参数 ENI 是否已赋值
                      * @return ENI 是否已赋值
+                     * 
                      */
                     bool ENIHasBeenSet() const;
 
                     /**
                      * 获取被安全组引用数。
                      * @return SG 被安全组引用数。
+                     * 
                      */
                     uint64_t GetSG() const;
 
                     /**
                      * 设置被安全组引用数。
-                     * @param SG 被安全组引用数。
+                     * @param _sG 被安全组引用数。
+                     * 
                      */
                     void SetSG(const uint64_t& _sG);
 
                     /**
                      * 判断参数 SG 是否已赋值
                      * @return SG 是否已赋值
+                     * 
                      */
                     bool SGHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例数。
                      * @return CLB 负载均衡实例数。
+                     * 
                      */
                     uint64_t GetCLB() const;
 
                     /**
                      * 设置负载均衡实例数。
-                     * @param CLB 负载均衡实例数。
+                     * @param _cLB 负载均衡实例数。
+                     * 
                      */
                     void SetCLB(const uint64_t& _cLB);
 
                     /**
                      * 判断参数 CLB 是否已赋值
                      * @return CLB 是否已赋值
+                     * 
                      */
                     bool CLBHasBeenSet() const;
 
                     /**
                      * 获取全量实例的绑定统计。
                      * @return InstanceStatistics 全量实例的绑定统计。
+                     * 
                      */
                     std::vector<InstanceStatistic> GetInstanceStatistics() const;
 
                     /**
                      * 设置全量实例的绑定统计。
-                     * @param InstanceStatistics 全量实例的绑定统计。
+                     * @param _instanceStatistics 全量实例的绑定统计。
+                     * 
                      */
                     void SetInstanceStatistics(const std::vector<InstanceStatistic>& _instanceStatistics);
 
                     /**
                      * 判断参数 InstanceStatistics 是否已赋值
                      * @return InstanceStatistics 是否已赋值
+                     * 
                      */
                     bool InstanceStatisticsHasBeenSet() const;
 
                     /**
                      * 获取所有资源的总计数（不包含被安全组引用数）。
                      * @return TotalCount 所有资源的总计数（不包含被安全组引用数）。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置所有资源的总计数（不包含被安全组引用数）。
-                     * @param TotalCount 所有资源的总计数（不包含被安全组引用数）。
+                     * @param _totalCount 所有资源的总计数（不包含被安全组引用数）。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

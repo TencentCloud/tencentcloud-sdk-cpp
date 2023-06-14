@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 遵循源站配置开关，取值有：
+                     * @param _switch 遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultCacheTime 源站未返回 Cache-Control 头时, 设置默认的缓存时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDefaultCacheTime() const;
 
                     /**
                      * 设置源站未返回 Cache-Control 头时, 设置默认的缓存时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultCacheTime 源站未返回 Cache-Control 头时, 设置默认的缓存时间
+                     * @param _defaultCacheTime 源站未返回 Cache-Control 头时, 设置默认的缓存时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultCacheTime(const int64_t& _defaultCacheTime);
 
                     /**
                      * 判断参数 DefaultCacheTime 是否已赋值
                      * @return DefaultCacheTime 是否已赋值
+                     * 
                      */
                     bool DefaultCacheTimeHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultCache 源站未返回 Cache-Control 头时, 设置缓存/不缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultCache() const;
 
                     /**
                      * 设置源站未返回 Cache-Control 头时, 设置缓存/不缓存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultCache 源站未返回 Cache-Control 头时, 设置缓存/不缓存
+                     * @param _defaultCache 源站未返回 Cache-Control 头时, 设置缓存/不缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultCache(const std::string& _defaultCache);
 
                     /**
                      * 判断参数 DefaultCache 是否已赋值
                      * @return DefaultCache 是否已赋值
+                     * 
                      */
                     bool DefaultCacheHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultCacheStrategy 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultCacheStrategy() const;
 
                     /**
                      * 设置源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultCacheStrategy 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+                     * @param _defaultCacheStrategy 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultCacheStrategy(const std::string& _defaultCacheStrategy);
 
                     /**
                      * 判断参数 DefaultCacheStrategy 是否已赋值
                      * @return DefaultCacheStrategy 是否已赋值
+                     * 
                      */
                     bool DefaultCacheStrategyHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Total 无
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DomainInfoCollection 无
+                     * 
                      */
                     std::vector<DomainInfo> GetDomainInfoCollection() const;
 
                     /**
                      * 判断参数 DomainInfoCollection 是否已赋值
                      * @return DomainInfoCollection 是否已赋值
+                     * 
                      */
                     bool DomainInfoCollectionHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 

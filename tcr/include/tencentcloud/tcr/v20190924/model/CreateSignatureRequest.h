@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取仓库名称
                      * @return RepositoryName 仓库名称
+                     * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param RepositoryName 仓库名称
+                     * @param _repositoryName 仓库名称
+                     * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
                     /**
                      * 判断参数 RepositoryName 是否已赋值
                      * @return RepositoryName 是否已赋值
+                     * 
                      */
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取Tag名称
                      * @return ImageVersion Tag名称
+                     * 
                      */
                     std::string GetImageVersion() const;
 
                     /**
                      * 设置Tag名称
-                     * @param ImageVersion Tag名称
+                     * @param _imageVersion Tag名称
+                     * 
                      */
                     void SetImageVersion(const std::string& _imageVersion);
 
                     /**
                      * 判断参数 ImageVersion 是否已赋值
                      * @return ImageVersion 是否已赋值
+                     * 
                      */
                     bool ImageVersionHasBeenSet() const;
 

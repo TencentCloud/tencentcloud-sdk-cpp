@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取桶的数量
                      * @return TotalCount 桶的数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取桶列表
                      * @return BucketList 桶列表
+                     * 
                      */
                     std::vector<BucketInfo> GetBucketList() const;
 
                     /**
                      * 判断参数 BucketList 是否已赋值
                      * @return BucketList 是否已赋值
+                     * 
                      */
                     bool BucketListHasBeenSet() const;
 

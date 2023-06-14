@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备TID列表，0<元素数量<=100
                      * @return Tids 设备TID列表，0<元素数量<=100
+                     * 
                      */
                     std::vector<std::string> GetTids() const;
 
                     /**
                      * 设置设备TID列表，0<元素数量<=100
-                     * @param Tids 设备TID列表，0<元素数量<=100
+                     * @param _tids 设备TID列表，0<元素数量<=100
+                     * 
                      */
                     void SetTids(const std::vector<std::string>& _tids);
 
                     /**
                      * 判断参数 Tids 是否已赋值
                      * @return Tids 是否已赋值
+                     * 
                      */
                     bool TidsHasBeenSet() const;
 

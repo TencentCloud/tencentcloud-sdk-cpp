@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取自定义人物姓名
                      * @return Name 自定义人物姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义人物姓名
-                     * @param Name 自定义人物姓名
+                     * @param _name 自定义人物姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取自定义人物简要信息(仅用于标记，不支持检索)
                      * @return BasicInfo 自定义人物简要信息(仅用于标记，不支持检索)
+                     * 
                      */
                     std::string GetBasicInfo() const;
 
                     /**
                      * 设置自定义人物简要信息(仅用于标记，不支持检索)
-                     * @param BasicInfo 自定义人物简要信息(仅用于标记，不支持检索)
+                     * @param _basicInfo 自定义人物简要信息(仅用于标记，不支持检索)
+                     * 
                      */
                     void SetBasicInfo(const std::string& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 
                     /**
                      * 获取自定义分类ID，如不存在接口会报错
                      * @return CategoryId 自定义分类ID，如不存在接口会报错
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 设置自定义分类ID，如不存在接口会报错
-                     * @param CategoryId 自定义分类ID，如不存在接口会报错
+                     * @param _categoryId 自定义分类ID，如不存在接口会报错
+                     * 
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取自定义人物图片URL，可支持任意地址，推荐使用COS
                      * @return ImageURL 自定义人物图片URL，可支持任意地址，推荐使用COS
+                     * 
                      */
                     std::string GetImageURL() const;
 
                     /**
                      * 设置自定义人物图片URL，可支持任意地址，推荐使用COS
-                     * @param ImageURL 自定义人物图片URL，可支持任意地址，推荐使用COS
+                     * @param _imageURL 自定义人物图片URL，可支持任意地址，推荐使用COS
+                     * 
                      */
                     void SetImageURL(const std::string& _imageURL);
 
                     /**
                      * 判断参数 ImageURL 是否已赋值
                      * @return ImageURL 是否已赋值
+                     * 
                      */
                     bool ImageURLHasBeenSet() const;
 
                     /**
                      * 获取原始图片base64编码后的数据
                      * @return Image 原始图片base64编码后的数据
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置原始图片base64编码后的数据
-                     * @param Image 原始图片base64编码后的数据
+                     * @param _image 原始图片base64编码后的数据
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 

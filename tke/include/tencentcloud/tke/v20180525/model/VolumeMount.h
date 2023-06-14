@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name volume名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置volume名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name volume名称
+                     * @param _name volume名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPath 挂载路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountPath 挂载路径
+                     * @param _mountPath 挂载路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountPath(const std::string& _mountPath);
 
                     /**
                      * 判断参数 MountPath 是否已赋值
                      * @return MountPath 是否已赋值
+                     * 
                      */
                     bool MountPathHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否只读
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadOnly 是否只读
+                     * @param _readOnly 是否只读
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubPath 子路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubPath() const;
 
                     /**
                      * 设置子路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubPath 子路径
+                     * @param _subPath 子路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubPath(const std::string& _subPath);
 
                     /**
                      * 判断参数 SubPath 是否已赋值
                      * @return SubPath 是否已赋值
+                     * 
                      */
                     bool SubPathHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPropagation 传播挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountPropagation() const;
 
                     /**
                      * 设置传播挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountPropagation 传播挂载方式
+                     * @param _mountPropagation 传播挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountPropagation(const std::string& _mountPropagation);
 
                     /**
                      * 判断参数 MountPropagation 是否已赋值
                      * @return MountPropagation 是否已赋值
+                     * 
                      */
                     bool MountPropagationHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubPathExpr 子路径表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubPathExpr() const;
 
                     /**
                      * 设置子路径表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubPathExpr 子路径表达式
+                     * @param _subPathExpr 子路径表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubPathExpr(const std::string& _subPathExpr);
 
                     /**
                      * 判断参数 SubPathExpr 是否已赋值
                      * @return SubPathExpr 是否已赋值
+                     * 
                      */
                     bool SubPathExprHasBeenSet() const;
 

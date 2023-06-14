@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取授权ID ,可以用授权订单列表获取.
                      * @return LicenseId 授权ID ,可以用授权订单列表获取.
+                     * 
                      */
                     uint64_t GetLicenseId() const;
 
                     /**
                      * 设置授权ID ,可以用授权订单列表获取.
-                     * @param LicenseId 授权ID ,可以用授权订单列表获取.
+                     * @param _licenseId 授权ID ,可以用授权订单列表获取.
+                     * 
                      */
                     void SetLicenseId(const uint64_t& _licenseId);
 
                     /**
                      * 判断参数 LicenseId 是否已赋值
                      * @return LicenseId 是否已赋值
+                     * 
                      */
                     bool LicenseIdHasBeenSet() const;
 
                     /**
                      * 获取授权类型
                      * @return LicenseType 授权类型
+                     * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
                      * 设置授权类型
-                     * @param LicenseType 授权类型
+                     * @param _licenseType 授权类型
+                     * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

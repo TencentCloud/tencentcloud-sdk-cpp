@@ -51,38 +51,44 @@ namespace TencentCloud
 clear：清除 cache-control 头部
                      * @return Action 处理动作
 clear：清除 cache-control 头部
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置处理动作
 clear：清除 cache-control 头部
-                     * @param Action 处理动作
+                     * @param _action 处理动作
 clear：清除 cache-control 头部
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取指定HTTP状态码生效，当前仅支持填写"400-599"
                      * @return StatusCodes 指定HTTP状态码生效，当前仅支持填写"400-599"
+                     * 
                      */
                     std::vector<std::string> GetStatusCodes() const;
 
                     /**
                      * 设置指定HTTP状态码生效，当前仅支持填写"400-599"
-                     * @param StatusCodes 指定HTTP状态码生效，当前仅支持填写"400-599"
+                     * @param _statusCodes 指定HTTP状态码生效，当前仅支持填写"400-599"
+                     * 
                      */
                     void SetStatusCodes(const std::vector<std::string>& _statusCodes);
 
                     /**
                      * 判断参数 StatusCodes 是否已赋值
                      * @return StatusCodes 是否已赋值
+                     * 
                      */
                     bool StatusCodesHasBeenSet() const;
 

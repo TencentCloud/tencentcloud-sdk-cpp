@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取转发规则列表
                      * @return Rules 转发规则列表
+                     * 
                      */
                     std::vector<NewL7RuleEntry> GetRules() const;
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取健康检查配置列表
                      * @return Healths 健康检查配置列表
+                     * 
                      */
                     std::vector<L7RuleHealth> GetHealths() const;
 
                     /**
                      * 判断参数 Healths 是否已赋值
                      * @return Healths 是否已赋值
+                     * 
                      */
                     bool HealthsHasBeenSet() const;
 
                     /**
                      * 获取总规则数
                      * @return Total 总规则数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

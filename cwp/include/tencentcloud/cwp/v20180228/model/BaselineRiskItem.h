@@ -51,74 +51,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemId 检测项Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetItemId() const;
 
                     /**
                      * 设置检测项Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemId 检测项Id
+                     * @param _itemId 检测项Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemId(const int64_t& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
                     /**
                      * 获取检测项名字
                      * @return ItemName 检测项名字
+                     * 
                      */
                     std::string GetItemName() const;
 
                     /**
                      * 设置检测项名字
-                     * @param ItemName 检测项名字
+                     * @param _itemName 检测项名字
+                     * 
                      */
                     void SetItemName(const std::string& _itemName);
 
                     /**
                      * 判断参数 ItemName 是否已赋值
                      * @return ItemName 是否已赋值
+                     * 
                      */
                     bool ItemNameHasBeenSet() const;
 
                     /**
                      * 获取风险等级
                      * @return Level 风险等级
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置风险等级
-                     * @param Level 风险等级
+                     * @param _level 风险等级
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取影响服务器数
                      * @return HostCount 影响服务器数
+                     * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置影响服务器数
-                     * @param HostCount 影响服务器数
+                     * @param _hostCount 影响服务器数
+                     * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 

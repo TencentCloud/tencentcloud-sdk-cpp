@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indicators 检验指标项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IndicatorItem> GetIndicators() const;
 
                     /**
                      * 设置检验指标项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Indicators 检验指标项
+                     * @param _indicators 检验指标项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndicators(const std::vector<IndicatorItem>& _indicators);
 
                     /**
                      * 判断参数 Indicators 是否已赋值
                      * @return Indicators 是否已赋值
+                     * 
                      */
                     bool IndicatorsHasBeenSet() const;
 

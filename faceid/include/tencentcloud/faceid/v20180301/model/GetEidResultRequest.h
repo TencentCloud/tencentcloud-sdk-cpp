@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取E证通流程的唯一标识，调用GetEidToken接口时生成。
                      * @return EidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 
                      */
                     std::string GetEidToken() const;
 
                     /**
                      * 设置E证通流程的唯一标识，调用GetEidToken接口时生成。
-                     * @param EidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * @param _eidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 
                      */
                     void SetEidToken(const std::string& _eidToken);
 
                     /**
                      * 判断参数 EidToken 是否已赋值
                      * @return EidToken 是否已赋值
+                     * 
                      */
                     bool EidTokenHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return InfoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身朗读模式相关结果；6：意愿核身问答模式相关结果）。
 如 13表示拉取文本类、最佳截图信息。
 默认值：0
+                     * 
                      */
                     std::string GetInfoType() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身朗读模式相关结果；6：意愿核身问答模式相关结果）。
 如 13表示拉取文本类、最佳截图信息。
 默认值：0
-                     * @param InfoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身朗读模式相关结果；6：意愿核身问答模式相关结果）。
+                     * @param _infoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身朗读模式相关结果；6：意愿核身问答模式相关结果）。
 如 13表示拉取文本类、最佳截图信息。
 默认值：0
+                     * 
                      */
                     void SetInfoType(const std::string& _infoType);
 
                     /**
                      * 判断参数 InfoType 是否已赋值
                      * @return InfoType 是否已赋值
+                     * 
                      */
                     bool InfoTypeHasBeenSet() const;
 
                     /**
                      * 获取从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）
                      * @return BestFramesCount 从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）
+                     * 
                      */
                     uint64_t GetBestFramesCount() const;
 
                     /**
                      * 设置从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）
-                     * @param BestFramesCount 从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）
+                     * @param _bestFramesCount 从活体视频中截取一定张数的最佳帧。默认为0，最大为3，超出3的最多只给3张。（InfoType需要包含3）
+                     * 
                      */
                     void SetBestFramesCount(const uint64_t& _bestFramesCount);
 
                     /**
                      * 判断参数 BestFramesCount 是否已赋值
                      * @return BestFramesCount 是否已赋值
+                     * 
                      */
                     bool BestFramesCountHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取安全域名列表列表
                      * @return Domains 安全域名列表列表
+                     * 
                      */
                     std::vector<AuthDomain> GetDomains() const;
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

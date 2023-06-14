@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 存储桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置存储桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket 存储桶
+                     * @param _bucket 存储桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 所在地域
+                     * @param _region 所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paths 路径列表，目前只支持单个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
                      * 设置路径列表，目前只支持单个
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Paths 路径列表，目前只支持单个
+                     * @param _paths 路径列表，目前只支持单个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPaths(const std::vector<std::string>& _paths);
 
                     /**
                      * 判断参数 Paths 是否已赋值
                      * @return Paths 是否已赋值
+                     * 
                      */
                     bool PathsHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取TRTC 应用 ID。
                      * @return SdkAppId TRTC 应用 ID。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC 应用 ID。
-                     * @param SdkAppId TRTC 应用 ID。
+                     * @param _sdkAppId TRTC 应用 ID。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取TRTC 房间 ID。
                      * @return RoomId TRTC 房间 ID。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置TRTC 房间 ID。
-                     * @param RoomId TRTC 房间 ID。
+                     * @param _roomId TRTC 房间 ID。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取录制任务 ID。
                      * @return TaskId 录制任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置录制任务 ID。
-                     * @param TaskId 录制任务 ID。
+                     * @param _taskId 录制任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取参与录制的用户 ID 列表。
                      * @return UserIds 参与录制的用户 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置参与录制的用户 ID 列表。
-                     * @param UserIds 参与录制的用户 ID 列表。
+                     * @param _userIds 参与录制的用户 ID 列表。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

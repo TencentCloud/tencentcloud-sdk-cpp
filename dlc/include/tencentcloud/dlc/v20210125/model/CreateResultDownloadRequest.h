@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询结果任务Id
                      * @return TaskId 查询结果任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置查询结果任务Id
-                     * @param TaskId 查询结果任务Id
+                     * @param _taskId 查询结果任务Id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取下载格式
                      * @return Format 下载格式
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置下载格式
-                     * @param Format 下载格式
+                     * @param _format 下载格式
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
                      * @return Force 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
-                     * @param Force 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * @param _force 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

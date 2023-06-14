@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启
                      * @return AutoScalingGroupEnabled 是否开启
+                     * 
                      */
                     bool GetAutoScalingGroupEnabled() const;
 
                     /**
                      * 设置是否开启
-                     * @param AutoScalingGroupEnabled 是否开启
+                     * @param _autoScalingGroupEnabled 是否开启
+                     * 
                      */
                     void SetAutoScalingGroupEnabled(const bool& _autoScalingGroupEnabled);
 
                     /**
                      * 判断参数 AutoScalingGroupEnabled 是否已赋值
                      * @return AutoScalingGroupEnabled 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupEnabledHasBeenSet() const;
 
                     /**
                      * 获取伸缩组最大最小实例数
                      * @return AutoScalingGroupRange 伸缩组最大最小实例数
+                     * 
                      */
                     AutoScalingGroupRange GetAutoScalingGroupRange() const;
 
                     /**
                      * 设置伸缩组最大最小实例数
-                     * @param AutoScalingGroupRange 伸缩组最大最小实例数
+                     * @param _autoScalingGroupRange 伸缩组最大最小实例数
+                     * 
                      */
                     void SetAutoScalingGroupRange(const AutoScalingGroupRange& _autoScalingGroupRange);
 
                     /**
                      * 判断参数 AutoScalingGroupRange 是否已赋值
                      * @return AutoScalingGroupRange 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupRangeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommandId 远程命令ID。若选择执行命令，则此项必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置远程命令ID。若选择执行命令，则此项必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CommandId 远程命令ID。若选择执行命令，则此项必填。
+                     * @param _commandId 远程命令ID。若选择执行命令，则此项必填。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCommandId(const std::string& _commandId);
 
                     /**
                      * 判断参数 CommandId 是否已赋值
                      * @return CommandId 是否已赋值
+                     * 
                      */
                     bool CommandIdHasBeenSet() const;
 
@@ -79,6 +82,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。
 自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParameters() const;
 
@@ -88,17 +92,19 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。
 自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Parameters 自定义参数。字段类型为 json encoded string。如：{"varA": "222"}。
+                     * @param _parameters 自定义参数。字段类型为 json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。
 自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParameters(const std::string& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 

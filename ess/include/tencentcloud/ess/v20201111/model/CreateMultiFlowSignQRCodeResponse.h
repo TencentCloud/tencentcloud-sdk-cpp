@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取签署二维码对象
                      * @return QrCode 签署二维码对象
+                     * 
                      */
                     SignQrCode GetQrCode() const;
 
                     /**
                      * 判断参数 QrCode 是否已赋值
                      * @return QrCode 是否已赋值
+                     * 
                      */
                     bool QrCodeHasBeenSet() const;
 
                     /**
                      * 获取签署链接对象
                      * @return SignUrls 签署链接对象
+                     * 
                      */
                     SignUrl GetSignUrls() const;
 
                     /**
                      * 判断参数 SignUrls 是否已赋值
                      * @return SignUrls 是否已赋值
+                     * 
                      */
                     bool SignUrlsHasBeenSet() const;
 

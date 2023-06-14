@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取经验库详情
                      * @return Template 经验库详情
+                     * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 

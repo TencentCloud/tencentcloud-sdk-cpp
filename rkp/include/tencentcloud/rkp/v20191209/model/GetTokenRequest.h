@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取业务ID
                      * @return BusinessId 业务ID
+                     * 
                      */
                     int64_t GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-                     * @param BusinessId 业务ID
+                     * @param _businessId 业务ID
+                     * 
                      */
                     void SetBusinessId(const int64_t& _businessId);
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取业务子场景
                      * @return Scene 业务子场景
+                     * 
                      */
                     int64_t GetScene() const;
 
                     /**
                      * 设置业务子场景
-                     * @param Scene 业务子场景
+                     * @param _scene 业务子场景
+                     * 
                      */
                     void SetScene(const int64_t& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取业务侧账号体系下的用户ID
                      * @return BusinessUserId 业务侧账号体系下的用户ID
+                     * 
                      */
                     std::string GetBusinessUserId() const;
 
                     /**
                      * 设置业务侧账号体系下的用户ID
-                     * @param BusinessUserId 业务侧账号体系下的用户ID
+                     * @param _businessUserId 业务侧账号体系下的用户ID
+                     * 
                      */
                     void SetBusinessUserId(const std::string& _businessUserId);
 
                     /**
                      * 判断参数 BusinessUserId 是否已赋值
                      * @return BusinessUserId 是否已赋值
+                     * 
                      */
                     bool BusinessUserIdHasBeenSet() const;
 
                     /**
                      * 获取用户侧的IP
                      * @return AppClientIp 用户侧的IP
+                     * 
                      */
                     std::string GetAppClientIp() const;
 
                     /**
                      * 设置用户侧的IP
-                     * @param AppClientIp 用户侧的IP
+                     * @param _appClientIp 用户侧的IP
+                     * 
                      */
                     void SetAppClientIp(const std::string& _appClientIp);
 
                     /**
                      * 判断参数 AppClientIp 是否已赋值
                      * @return AppClientIp 是否已赋值
+                     * 
                      */
                     bool AppClientIpHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ExpireTime 过期时间
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * @param _expireTime 过期时间
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取上一个token
                      * @return OldToken 上一个token
+                     * 
                      */
                     std::string GetOldToken() const;
 
                     /**
                      * 设置上一个token
-                     * @param OldToken 上一个token
+                     * @param _oldToken 上一个token
+                     * 
                      */
                     void SetOldToken(const std::string& _oldToken);
 
                     /**
                      * 判断参数 OldToken 是否已赋值
                      * @return OldToken 是否已赋值
+                     * 
                      */
                     bool OldTokenHasBeenSet() const;
 

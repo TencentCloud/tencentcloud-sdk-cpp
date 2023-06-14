@@ -79,6 +79,7 @@ na-ashburn          美国东部(弗吉尼亚)
 ap-bangkok          亚太地区(曼谷)
 eu-moscow          欧洲地区(莫斯科)
 ap-tokyo          亚太地区(东京)
+                     * 
                      */
                     std::string GetRegion() const;
 
@@ -99,7 +100,7 @@ na-ashburn          美国东部(弗吉尼亚)
 ap-bangkok          亚太地区(曼谷)
 eu-moscow          欧洲地区(莫斯科)
 ap-tokyo          亚太地区(东京)
-                     * @param Region 地域
+                     * @param _region 地域
 ap-beijing          华北地区(北京)
 ap-chengdu          西南地区(成都)
 ap-guangzhou          华南地区(广州)
@@ -115,30 +116,35 @@ na-ashburn          美国东部(弗吉尼亚)
 ap-bangkok          亚太地区(曼谷)
 eu-moscow          欧洲地区(莫斯科)
 ap-tokyo          亚太地区(东京)
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取毫秒延迟 0～999999
                      * @return Latency 毫秒延迟 0～999999
+                     * 
                      */
                     uint64_t GetLatency() const;
 
                     /**
                      * 设置毫秒延迟 0～999999
-                     * @param Latency 毫秒延迟 0～999999
+                     * @param _latency 毫秒延迟 0～999999
+                     * 
                      */
                     void SetLatency(const uint64_t& _latency);
 
                     /**
                      * 判断参数 Latency 是否已赋值
                      * @return Latency 是否已赋值
+                     * 
                      */
                     bool LatencyHasBeenSet() const;
 

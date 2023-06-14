@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取直播流的统计信息列表。
                      * @return DataInfoList 直播流的统计信息列表。
+                     * 
                      */
                     std::vector<PushDataInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 
                     /**
                      * 获取所有在线流的总数量。
                      * @return TotalNum 所有在线流的总数量。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取总页数。
                      * @return TotalPage 总页数。
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 
                     /**
                      * 获取当前数据所在页码。
                      * @return PageNum 当前数据所在页码。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取每页的在线流的个数。
                      * @return PageSize 每页的在线流的个数。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

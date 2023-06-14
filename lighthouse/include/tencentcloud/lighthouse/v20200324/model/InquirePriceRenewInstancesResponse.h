@@ -50,12 +50,14 @@ namespace TencentCloud
                     /**
                      * 获取询价信息。默认为列表中第一个实例的价格信息。
                      * @return Price 询价信息。默认为列表中第一个实例的价格信息。
+                     * 
                      */
                     Price GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDiskPriceSet 数据盘价格信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataDiskPrice> GetDataDiskPriceSet() const;
 
                     /**
                      * 判断参数 DataDiskPriceSet 是否已赋值
                      * @return DataDiskPriceSet 是否已赋值
+                     * 
                      */
                     bool DataDiskPriceSetHasBeenSet() const;
 
@@ -78,24 +82,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePriceDetailSet 待续费实例价格列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstancePriceDetail> GetInstancePriceDetailSet() const;
 
                     /**
                      * 判断参数 InstancePriceDetailSet 是否已赋值
                      * @return InstancePriceDetailSet 是否已赋值
+                     * 
                      */
                     bool InstancePriceDetailSetHasBeenSet() const;
 
                     /**
                      * 获取总计价格。
                      * @return TotalPrice 总计价格。
+                     * 
                      */
                     TotalPrice GetTotalPrice() const;
 
                     /**
                      * 判断参数 TotalPrice 是否已赋值
                      * @return TotalPrice 是否已赋值
+                     * 
                      */
                     bool TotalPriceHasBeenSet() const;
 

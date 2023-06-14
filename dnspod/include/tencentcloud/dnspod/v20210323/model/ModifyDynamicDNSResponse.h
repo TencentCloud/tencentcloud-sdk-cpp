@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取记录ID
                      * @return RecordId 记录ID
+                     * 
                      */
                     uint64_t GetRecordId() const;
 
                     /**
                      * 判断参数 RecordId 是否已赋值
                      * @return RecordId 是否已赋值
+                     * 
                      */
                     bool RecordIdHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取剩余空发数量
                      * @return RemaindCount 剩余空发数量
+                     * 
                      */
                     uint64_t GetRemaindCount() const;
 
                     /**
                      * 判断参数 RemaindCount 是否已赋值
                      * @return RemaindCount 是否已赋值
+                     * 
                      */
                     bool RemaindCountHasBeenSet() const;
 
                     /**
                      * 获取已回执的TID编码
                      * @return Tid 已回执的TID编码
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取产品公钥
                      * @return ProductKey 产品公钥
+                     * 
                      */
                     std::string GetProductKey() const;
 
                     /**
                      * 判断参数 ProductKey 是否已赋值
                      * @return ProductKey 是否已赋值
+                     * 
                      */
                     bool ProductKeyHasBeenSet() const;
 

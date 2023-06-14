@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取node名字
                      * @return Name node名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置node名字
-                     * @param Name node名字
+                     * @param _name node名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone node可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置node可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone node可用区
+                     * @param _zone node可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId node子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置node子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId node子网ID
+                     * @param _subnetId node子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableIpCount 可用IP数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvailableIpCount() const;
 
                     /**
                      * 设置可用IP数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailableIpCount 可用IP数
+                     * @param _availableIpCount 可用IP数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailableIpCount(const std::string& _availableIpCount);
 
                     /**
                      * 判断参数 AvailableIpCount 是否已赋值
                      * @return AvailableIpCount 是否已赋值
+                     * 
                      */
                     bool AvailableIpCountHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr cidr块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置cidr块
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cidr cidr块
+                     * @param _cidr cidr块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCidr(const std::string& _cidr);
 
                     /**
                      * 判断参数 Cidr 是否已赋值
                      * @return Cidr 是否已赋值
+                     * 
                      */
                     bool CidrHasBeenSet() const;
 

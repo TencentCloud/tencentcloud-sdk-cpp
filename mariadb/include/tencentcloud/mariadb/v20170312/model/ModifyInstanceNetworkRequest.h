@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取希望转到的VPC网络的VpcId
                      * @return VpcId 希望转到的VPC网络的VpcId
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置希望转到的VPC网络的VpcId
-                     * @param VpcId 希望转到的VPC网络的VpcId
+                     * @param _vpcId 希望转到的VPC网络的VpcId
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取希望转到的VPC网络的子网ID
                      * @return SubnetId 希望转到的VPC网络的子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置希望转到的VPC网络的子网ID
-                     * @param SubnetId 希望转到的VPC网络的子网ID
+                     * @param _subnetId 希望转到的VPC网络的子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取如果需要指定VIP，填上该字段
                      * @return Vip 如果需要指定VIP，填上该字段
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置如果需要指定VIP，填上该字段
-                     * @param Vip 如果需要指定VIP，填上该字段
+                     * @param _vip 如果需要指定VIP，填上该字段
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取如果需要指定VIPv6，填上该字段
                      * @return Vipv6 如果需要指定VIPv6，填上该字段
+                     * 
                      */
                     std::string GetVipv6() const;
 
                     /**
                      * 设置如果需要指定VIPv6，填上该字段
-                     * @param Vipv6 如果需要指定VIPv6，填上该字段
+                     * @param _vipv6 如果需要指定VIPv6，填上该字段
+                     * 
                      */
                     void SetVipv6(const std::string& _vipv6);
 
                     /**
                      * 判断参数 Vipv6 是否已赋值
                      * @return Vipv6 是否已赋值
+                     * 
                      */
                     bool Vipv6HasBeenSet() const;
 
                     /**
                      * 获取VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。
                      * @return VipReleaseDelay VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。
+                     * 
                      */
                     uint64_t GetVipReleaseDelay() const;
 
                     /**
                      * 设置VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。
-                     * @param VipReleaseDelay VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。
+                     * @param _vipReleaseDelay VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。
+                     * 
                      */
                     void SetVipReleaseDelay(const uint64_t& _vipReleaseDelay);
 
                     /**
                      * 判断参数 VipReleaseDelay 是否已赋值
                      * @return VipReleaseDelay 是否已赋值
+                     * 
                      */
                     bool VipReleaseDelayHasBeenSet() const;
 

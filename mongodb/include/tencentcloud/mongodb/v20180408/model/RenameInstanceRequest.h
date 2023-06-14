@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return NewName 实例名称
+                     * 
                      */
                     std::string GetNewName() const;
 
                     /**
                      * 设置实例名称
-                     * @param NewName 实例名称
+                     * @param _newName 实例名称
+                     * 
                      */
                     void SetNewName(const std::string& _newName);
 
                     /**
                      * 判断参数 NewName 是否已赋值
                      * @return NewName 是否已赋值
+                     * 
                      */
                     bool NewNameHasBeenSet() const;
 

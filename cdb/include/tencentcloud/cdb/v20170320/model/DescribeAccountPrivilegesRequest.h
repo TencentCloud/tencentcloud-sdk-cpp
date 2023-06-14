@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库的账号名称。
                      * @return User 数据库的账号名称。
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置数据库的账号名称。
-                     * @param User 数据库的账号名称。
+                     * @param _user 数据库的账号名称。
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取数据库的账号域名。
                      * @return Host 数据库的账号域名。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置数据库的账号域名。
-                     * @param Host 数据库的账号域名。
+                     * @param _host 数据库的账号域名。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 

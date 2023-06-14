@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取销毁资源列表
                      * @return CvmInstanceIds 销毁资源列表
+                     * 
                      */
                     std::vector<std::string> GetCvmInstanceIds() const;
 
                     /**
                      * 设置销毁资源列表
-                     * @param CvmInstanceIds 销毁资源列表
+                     * @param _cvmInstanceIds 销毁资源列表
+                     * 
                      */
                     void SetCvmInstanceIds(const std::vector<std::string>& _cvmInstanceIds);
 
                     /**
                      * 判断参数 CvmInstanceIds 是否已赋值
                      * @return CvmInstanceIds 是否已赋值
+                     * 
                      */
                     bool CvmInstanceIdsHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
+                     * 
                      */
                     std::string GetNodeFlag() const;
 
@@ -98,17 +105,19 @@ namespace TencentCloud
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
-                     * @param NodeFlag 销毁节点类型取值范围：
+                     * @param _nodeFlag 销毁节点类型取值范围：
   <li>MASTER</li>
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
+                     * 
                      */
                     void SetNodeFlag(const std::string& _nodeFlag);
 
                     /**
                      * 判断参数 NodeFlag 是否已赋值
                      * @return NodeFlag 是否已赋值
+                     * 
                      */
                     bool NodeFlagHasBeenSet() const;
 
@@ -119,6 +128,7 @@ namespace TencentCloud
                      * @return GraceDownFlag 优雅缩容开关
   <li>true:开启</li>
   <li>false:不开启</li>
+                     * 
                      */
                     bool GetGraceDownFlag() const;
 
@@ -126,33 +136,38 @@ namespace TencentCloud
                      * 设置优雅缩容开关
   <li>true:开启</li>
   <li>false:不开启</li>
-                     * @param GraceDownFlag 优雅缩容开关
+                     * @param _graceDownFlag 优雅缩容开关
   <li>true:开启</li>
   <li>false:不开启</li>
+                     * 
                      */
                     void SetGraceDownFlag(const bool& _graceDownFlag);
 
                     /**
                      * 判断参数 GraceDownFlag 是否已赋值
                      * @return GraceDownFlag 是否已赋值
+                     * 
                      */
                     bool GraceDownFlagHasBeenSet() const;
 
                     /**
                      * 获取优雅缩容等待时间,时间范围60到1800  单位秒
                      * @return GraceDownTime 优雅缩容等待时间,时间范围60到1800  单位秒
+                     * 
                      */
                     int64_t GetGraceDownTime() const;
 
                     /**
                      * 设置优雅缩容等待时间,时间范围60到1800  单位秒
-                     * @param GraceDownTime 优雅缩容等待时间,时间范围60到1800  单位秒
+                     * @param _graceDownTime 优雅缩容等待时间,时间范围60到1800  单位秒
+                     * 
                      */
                     void SetGraceDownTime(const int64_t& _graceDownTime);
 
                     /**
                      * 判断参数 GraceDownTime 是否已赋值
                      * @return GraceDownTime 是否已赋值
+                     * 
                      */
                     bool GraceDownTimeHasBeenSet() const;
 

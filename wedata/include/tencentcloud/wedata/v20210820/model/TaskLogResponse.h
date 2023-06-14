@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取详细日志
                      * @return LogContentList 详细日志
+                     * 
                      */
                     std::vector<LogContent> GetLogContentList() const;
 
                     /**
                      * 判断参数 LogContentList 是否已赋值
                      * @return LogContentList 是否已赋值
+                     * 
                      */
                     bool LogContentListHasBeenSet() const;
 

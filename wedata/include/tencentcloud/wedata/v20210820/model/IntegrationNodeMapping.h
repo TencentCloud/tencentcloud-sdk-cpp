@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取源节点id
                      * @return SourceId 源节点id
+                     * 
                      */
                     std::string GetSourceId() const;
 
                     /**
                      * 设置源节点id
-                     * @param SourceId 源节点id
+                     * @param _sourceId 源节点id
+                     * 
                      */
                     void SetSourceId(const std::string& _sourceId);
 
                     /**
                      * 判断参数 SourceId 是否已赋值
                      * @return SourceId 是否已赋值
+                     * 
                      */
                     bool SourceIdHasBeenSet() const;
 
                     /**
                      * 获取目标节点id
                      * @return SinkId 目标节点id
+                     * 
                      */
                     std::string GetSinkId() const;
 
                     /**
                      * 设置目标节点id
-                     * @param SinkId 目标节点id
+                     * @param _sinkId 目标节点id
+                     * 
                      */
                     void SetSinkId(const std::string& _sinkId);
 
                     /**
                      * 判断参数 SinkId 是否已赋值
                      * @return SinkId 是否已赋值
+                     * 
                      */
                     bool SinkIdHasBeenSet() const;
 
@@ -90,20 +96,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceSchema 源节点schema
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntegrationNodeSchema> GetSourceSchema() const;
 
                     /**
                      * 设置源节点schema
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceSchema 源节点schema
+                     * @param _sourceSchema 源节点schema
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceSchema(const std::vector<IntegrationNodeSchema>& _sourceSchema);
 
                     /**
                      * 判断参数 SourceSchema 是否已赋值
                      * @return SourceSchema 是否已赋值
+                     * 
                      */
                     bool SourceSchemaHasBeenSet() const;
 
@@ -112,20 +121,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaMappings 节点schema映射
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntegrationNodeSchemaMapping> GetSchemaMappings() const;
 
                     /**
                      * 设置节点schema映射
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaMappings 节点schema映射
+                     * @param _schemaMappings 节点schema映射
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaMappings(const std::vector<IntegrationNodeSchemaMapping>& _schemaMappings);
 
                     /**
                      * 判断参数 SchemaMappings 是否已赋值
                      * @return SchemaMappings 是否已赋值
+                     * 
                      */
                     bool SchemaMappingsHasBeenSet() const;
 
@@ -134,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtConfig 节点映射扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RecordField> GetExtConfig() const;
 
                     /**
                      * 设置节点映射扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtConfig 节点映射扩展信息
+                     * @param _extConfig 节点映射扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtConfig(const std::vector<RecordField>& _extConfig);
 
                     /**
                      * 判断参数 ExtConfig 是否已赋值
                      * @return ExtConfig 是否已赋值
+                     * 
                      */
                     bool ExtConfigHasBeenSet() const;
 

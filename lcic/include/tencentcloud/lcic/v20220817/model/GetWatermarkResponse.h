@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherLogo 老师视频区域的水印参数配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WatermarkConfig GetTeacherLogo() const;
 
                     /**
                      * 判断参数 TeacherLogo 是否已赋值
                      * @return TeacherLogo 是否已赋值
+                     * 
                      */
                     bool TeacherLogoHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoardLogo 白板区域的水印参数配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WatermarkConfig GetBoardLogo() const;
 
                     /**
                      * 判断参数 BoardLogo 是否已赋值
                      * @return BoardLogo 是否已赋值
+                     * 
                      */
                     bool BoardLogoHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackgroundPicture 背景图片配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BackgroundPictureConfig GetBackgroundPicture() const;
 
                     /**
                      * 判断参数 BackgroundPicture 是否已赋值
                      * @return BackgroundPicture 是否已赋值
+                     * 
                      */
                     bool BackgroundPictureHasBeenSet() const;
 
@@ -93,12 +99,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文字水印配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextMarkConfig GetText() const;
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 细节增强控制开关，可选值：
 <li>ON：开启细节增强；</li>
 <li>OFF：关闭细节增强。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置细节增强控制开关，可选值：
 <li>ON：开启细节增强；</li>
 <li>OFF：关闭细节增强。</li>
-                     * @param Switch 细节增强控制开关，可选值：
+                     * @param _switch 细节增强控制开关，可选值：
 <li>ON：开启细节增强；</li>
 <li>OFF：关闭细节增强。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 默认：0.0。
                      * @return Intensity 细节增强强度，仅当细节增强控制开关为 ON 时有效，取值范围：0.0~1.0。
 默认：0.0。
+                     * 
                      */
                     double GetIntensity() const;
 
                     /**
                      * 设置细节增强强度，仅当细节增强控制开关为 ON 时有效，取值范围：0.0~1.0。
 默认：0.0。
-                     * @param Intensity 细节增强强度，仅当细节增强控制开关为 ON 时有效，取值范围：0.0~1.0。
+                     * @param _intensity 细节增强强度，仅当细节增强控制开关为 ON 时有效，取值范围：0.0~1.0。
 默认：0.0。
+                     * 
                      */
                     void SetIntensity(const double& _intensity);
 
                     /**
                      * 判断参数 Intensity 是否已赋值
                      * @return Intensity 是否已赋值
+                     * 
                      */
                     bool IntensityHasBeenSet() const;
 

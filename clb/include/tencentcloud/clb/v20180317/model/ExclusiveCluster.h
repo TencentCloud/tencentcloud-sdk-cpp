@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return L4Clusters 4层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClusterItem> GetL4Clusters() const;
 
                     /**
                      * 设置4层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param L4Clusters 4层独占集群列表
+                     * @param _l4Clusters 4层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetL4Clusters(const std::vector<ClusterItem>& _l4Clusters);
 
                     /**
                      * 判断参数 L4Clusters 是否已赋值
                      * @return L4Clusters 是否已赋值
+                     * 
                      */
                     bool L4ClustersHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return L7Clusters 7层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClusterItem> GetL7Clusters() const;
 
                     /**
                      * 设置7层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param L7Clusters 7层独占集群列表
+                     * @param _l7Clusters 7层独占集群列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetL7Clusters(const std::vector<ClusterItem>& _l7Clusters);
 
                     /**
                      * 判断参数 L7Clusters 是否已赋值
                      * @return L7Clusters 是否已赋值
+                     * 
                      */
                     bool L7ClustersHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassicalCluster vpcgw集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClusterItem GetClassicalCluster() const;
 
                     /**
                      * 设置vpcgw集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassicalCluster vpcgw集群
+                     * @param _classicalCluster vpcgw集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassicalCluster(const ClusterItem& _classicalCluster);
 
                     /**
                      * 判断参数 ClassicalCluster 是否已赋值
                      * @return ClassicalCluster 是否已赋值
+                     * 
                      */
                     bool ClassicalClusterHasBeenSet() const;
 

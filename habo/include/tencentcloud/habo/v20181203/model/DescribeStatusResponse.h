@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取接口调用状态，1表示成功，非1表示失败
                      * @return Status 接口调用状态，1表示成功，非1表示失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取成功时返回success，失败时返回具体的失败原因，如样本分析未完成
                      * @return Info 成功时返回success，失败时返回具体的失败原因，如样本分析未完成
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取成功时返回样本日志下载地址，该地址10分钟内有效
                      * @return Data 成功时返回样本日志下载地址，该地址10分钟内有效
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

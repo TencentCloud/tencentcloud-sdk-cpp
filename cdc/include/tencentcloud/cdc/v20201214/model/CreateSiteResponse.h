@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建Site生成的id
                      * @return SiteId 创建Site生成的id
+                     * 
                      */
                     std::string GetSiteId() const;
 
                     /**
                      * 判断参数 SiteId 是否已赋值
                      * @return SiteId 是否已赋值
+                     * 
                      */
                     bool SiteIdHasBeenSet() const;
 

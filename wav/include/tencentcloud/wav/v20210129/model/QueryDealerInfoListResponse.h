@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageData 经销商信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DealerInfo> GetPageData() const;
 
                     /**
                      * 判断参数 PageData 是否已赋值
                      * @return PageData 是否已赋值
+                     * 
                      */
                     bool PageDataHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextCursor 分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextCursor() const;
 
                     /**
                      * 判断参数 NextCursor 是否已赋值
                      * @return NextCursor 是否已赋值
+                     * 
                      */
                     bool NextCursorHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasMore 是否还有更多数据。0-否；1-是。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHasMore() const;
 
                     /**
                      * 判断参数 HasMore 是否已赋值
                      * @return HasMore 是否已赋值
+                     * 
                      */
                     bool HasMoreHasBeenSet() const;
 

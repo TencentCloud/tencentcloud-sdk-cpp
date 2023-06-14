@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取运行脚本的设备ID
                      * @return InstanceId 运行脚本的设备ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置运行脚本的设备ID
-                     * @param InstanceId 运行脚本的设备ID
+                     * @param _instanceId 运行脚本的设备ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取黑石异步任务ID
                      * @return TaskId 黑石异步任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置黑石异步任务ID
-                     * @param TaskId 黑石异步任务ID
+                     * @param _taskId 黑石异步任务ID
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取黑石自定义脚本运行任务ID
                      * @return CmdTaskId 黑石自定义脚本运行任务ID
+                     * 
                      */
                     std::string GetCmdTaskId() const;
 
                     /**
                      * 设置黑石自定义脚本运行任务ID
-                     * @param CmdTaskId 黑石自定义脚本运行任务ID
+                     * @param _cmdTaskId 黑石自定义脚本运行任务ID
+                     * 
                      */
                     void SetCmdTaskId(const std::string& _cmdTaskId);
 
                     /**
                      * 判断参数 CmdTaskId 是否已赋值
                      * @return CmdTaskId 是否已赋值
+                     * 
                      */
                     bool CmdTaskIdHasBeenSet() const;
 

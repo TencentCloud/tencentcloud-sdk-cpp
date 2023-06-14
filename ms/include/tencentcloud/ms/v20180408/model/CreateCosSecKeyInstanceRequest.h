@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。
                      * @return CosRegion 地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。
+                     * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
                      * 设置地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。
-                     * @param CosRegion 地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。
+                     * @param _cosRegion 地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。
+                     * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
 
                     /**
                      * 判断参数 CosRegion 是否已赋值
                      * @return CosRegion 是否已赋值
+                     * 
                      */
                     bool CosRegionHasBeenSet() const;
 
                     /**
                      * 获取密钥有效时间，默认为1小时。
                      * @return Duration 密钥有效时间，默认为1小时。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置密钥有效时间，默认为1小时。
-                     * @param Duration 密钥有效时间，默认为1小时。
+                     * @param _duration 密钥有效时间，默认为1小时。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

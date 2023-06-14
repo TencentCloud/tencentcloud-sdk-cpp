@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptInfo 脚本信息响应
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScriptInfoResponse GetScriptInfo() const;
 
                     /**
                      * 判断参数 ScriptInfo 是否已赋值
                      * @return ScriptInfo 是否已赋值
+                     * 
                      */
                     bool ScriptInfoHasBeenSet() const;
 

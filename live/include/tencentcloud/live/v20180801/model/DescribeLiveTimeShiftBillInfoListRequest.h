@@ -53,6 +53,7 @@ namespace TencentCloud
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -62,17 +63,19 @@ namespace TencentCloud
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param StartTime UTC开始时间，支持最近三个月的查询，查询时间最长跨度为一个月。
+                     * @param _startTime UTC开始时间，支持最近三个月的查询，查询时间最长跨度为一个月。
 
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -96,35 +100,40 @@ namespace TencentCloud
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime UTC结束时间，支持最近三个月的查询，查询时间最长跨度为一个月。
+                     * @param _endTime UTC结束时间，支持最近三个月的查询，查询时间最长跨度为一个月。
 
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取推流域名列表，若不传递此参数，则表示查询总体数据。
                      * @return PushDomains 推流域名列表，若不传递此参数，则表示查询总体数据。
+                     * 
                      */
                     std::vector<std::string> GetPushDomains() const;
 
                     /**
                      * 设置推流域名列表，若不传递此参数，则表示查询总体数据。
-                     * @param PushDomains 推流域名列表，若不传递此参数，则表示查询总体数据。
+                     * @param _pushDomains 推流域名列表，若不传递此参数，则表示查询总体数据。
+                     * 
                      */
                     void SetPushDomains(const std::vector<std::string>& _pushDomains);
 
                     /**
                      * 判断参数 PushDomains 是否已赋值
                      * @return PushDomains 是否已赋值
+                     * 
                      */
                     bool PushDomainsHasBeenSet() const;
 

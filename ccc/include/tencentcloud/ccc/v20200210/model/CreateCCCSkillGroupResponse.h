@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取技能组ID
                      * @return SkillGroupId 技能组ID
+                     * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
                      * 判断参数 SkillGroupId 是否已赋值
                      * @return SkillGroupId 是否已赋值
+                     * 
                      */
                     bool SkillGroupIdHasBeenSet() const;
 

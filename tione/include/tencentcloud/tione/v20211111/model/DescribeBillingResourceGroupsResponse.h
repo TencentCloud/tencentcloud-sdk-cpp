@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源组总数； 注意接口是分页拉取的，total是指资源组总数，不是本次返回中ResourceGroupSet数组的大小
                      * @return TotalCount 资源组总数； 注意接口是分页拉取的，total是指资源组总数，不是本次返回中ResourceGroupSet数组的大小
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroupSet 资源组详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceGroup> GetResourceGroupSet() const;
 
                     /**
                      * 判断参数 ResourceGroupSet 是否已赋值
                      * @return ResourceGroupSet 是否已赋值
+                     * 
                      */
                     bool ResourceGroupSetHasBeenSet() const;
 

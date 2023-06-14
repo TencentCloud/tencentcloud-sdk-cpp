@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCallInfo 服务调用信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServiceCallInfo GetServiceCallInfo() const;
 
                     /**
                      * 判断参数 ServiceCallInfo 是否已赋值
                      * @return ServiceCallInfo 是否已赋值
+                     * 
                      */
                     bool ServiceCallInfoHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InferGatewayCallInfo 升级网关调用信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InferGatewayCallInfo GetInferGatewayCallInfo() const;
 
                     /**
                      * 判断参数 InferGatewayCallInfo 是否已赋值
                      * @return InferGatewayCallInfo 是否已赋值
+                     * 
                      */
                     bool InferGatewayCallInfoHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultNginxGatewayCallInfo 默认nginx网关的调用信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DefaultNginxGatewayCallInfo GetDefaultNginxGatewayCallInfo() const;
 
                     /**
                      * 判断参数 DefaultNginxGatewayCallInfo 是否已赋值
                      * @return DefaultNginxGatewayCallInfo 是否已赋值
+                     * 
                      */
                     bool DefaultNginxGatewayCallInfoHasBeenSet() const;
 

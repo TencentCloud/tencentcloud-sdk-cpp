@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态(disable表示封禁，enable表示解封)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态(disable表示封禁，enable表示解封)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态(disable表示封禁，enable表示解封)
+                     * @param _status 状态(disable表示封禁，enable表示解封)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealUrl 对应的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealUrl() const;
 
                     /**
                      * 设置对应的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealUrl 对应的url
+                     * @param _realUrl 对应的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealUrl(const std::string& _realUrl);
 
                     /**
                      * 判断参数 RealUrl 是否已赋值
                      * @return RealUrl 是否已赋值
+                     * 
                      */
                     bool RealUrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

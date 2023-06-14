@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Group 分组信息详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GroupItem GetGroup() const;
 
                     /**
                      * 判断参数 Group 是否已赋值
                      * @return Group 是否已赋值
+                     * 
                      */
                     bool GroupHasBeenSet() const;
 

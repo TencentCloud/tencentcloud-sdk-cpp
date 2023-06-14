@@ -49,24 +49,28 @@ namespace TencentCloud
 范围：[0，20]
                      * @return Total 返回的数据总条数
 范围：[0，20]
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取异常体验列表
                      * @return AbnormalExperienceList 异常体验列表
+                     * 
                      */
                     std::vector<AbnormalExperience> GetAbnormalExperienceList() const;
 
                     /**
                      * 判断参数 AbnormalExperienceList 是否已赋值
                      * @return AbnormalExperienceList 是否已赋值
+                     * 
                      */
                     bool AbnormalExperienceListHasBeenSet() const;
 

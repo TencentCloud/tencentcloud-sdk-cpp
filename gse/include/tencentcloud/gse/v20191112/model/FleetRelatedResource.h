@@ -55,6 +55,7 @@ namespace TencentCloud
 - ALIAS：别名
 - QUEUE：队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 - ALIAS：别名
 - QUEUE：队列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 资源类型。
+                     * @param _type 资源类型。
 - ALIAS：别名
 - QUEUE：队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID，目前仅支持别名ID和队列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID，目前仅支持别名ID和队列名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源ID，目前仅支持别名ID和队列名称
+                     * @param _resourceId 资源ID，目前仅支持别名ID和队列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在区域，如ap-shanghai、na-siliconvalley等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在区域，如ap-shanghai、na-siliconvalley等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceRegion 资源所在区域，如ap-shanghai、na-siliconvalley等
+                     * @param _resourceRegion 资源所在区域，如ap-shanghai、na-siliconvalley等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
 
                     /**
                      * 判断参数 ResourceRegion 是否已赋值
                      * @return ResourceRegion 是否已赋值
+                     * 
                      */
                     bool ResourceRegionHasBeenSet() const;
 

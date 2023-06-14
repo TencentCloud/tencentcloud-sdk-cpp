@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像名称。
                      * @return ImageName 镜像名称。
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称。
-                     * @param ImageName 镜像名称。
+                     * @param _imageName 镜像名称。
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取需要制作镜像的实例ID。
                      * @return InstanceId 需要制作镜像的实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置需要制作镜像的实例ID。
-                     * @param InstanceId 需要制作镜像的实例ID。
+                     * @param _instanceId 需要制作镜像的实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取镜像描述。
                      * @return ImageDescription 镜像描述。
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像描述。
-                     * @param ImageDescription 镜像描述。
+                     * @param _imageDescription 镜像描述。
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
@@ -105,6 +114,7 @@ FALSE：表示开机状态制作，目前不支持，需要先手动关机
 TRUE：表示自动关机后制作镜像
 FALSE：表示开机状态制作，目前不支持，需要先手动关机
 默认取值：FALSE。
+                     * 
                      */
                     std::string GetForcePoweroff() const;
 
@@ -113,16 +123,18 @@ FALSE：表示开机状态制作，目前不支持，需要先手动关机
 TRUE：表示自动关机后制作镜像
 FALSE：表示开机状态制作，目前不支持，需要先手动关机
 默认取值：FALSE。
-                     * @param ForcePoweroff 是否执行强制关机以制作镜像。取值范围：
+                     * @param _forcePoweroff 是否执行强制关机以制作镜像。取值范围：
 TRUE：表示自动关机后制作镜像
 FALSE：表示开机状态制作，目前不支持，需要先手动关机
 默认取值：FALSE。
+                     * 
                      */
                     void SetForcePoweroff(const std::string& _forcePoweroff);
 
                     /**
                      * 判断参数 ForcePoweroff 是否已赋值
                      * @return ForcePoweroff 是否已赋值
+                     * 
                      */
                     bool ForcePoweroffHasBeenSet() const;
 

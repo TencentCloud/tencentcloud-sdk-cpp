@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceIdSet 主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceIdSet 主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceIdSet 主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 

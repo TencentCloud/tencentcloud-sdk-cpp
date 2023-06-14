@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取服务器Uuid
                      * @return Uuid 服务器Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置服务器Uuid
-                     * @param Uuid 服务器Uuid
+                     * @param _uuid 服务器Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取服务器Quuid
                      * @return Quuid 服务器Quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置服务器Quuid
-                     * @param Quuid 服务器Quuid
+                     * @param _quuid 服务器Quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
 3 : Web服务自带库
 4 : 其他依赖包</li>
 <li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -111,7 +118,7 @@ namespace TencentCloud
 3 : Web服务自带库
 4 : 其他依赖包</li>
 <li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Name- string - 是否必填：否 - 包名</li>
 <li>Type- uint - 是否必填：否 - 类型	
@@ -120,84 +127,98 @@ namespace TencentCloud
 3 : Web服务自带库
 4 : 其他依赖包</li>
 <li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc升序 或 desc降序
                      * @return Order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式，asc升序 或 desc降序
-                     * @param Order 排序方式，asc升序 或 desc降序
+                     * @param _order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式：[FirstTime]
                      * @return By 排序方式：[FirstTime]
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序方式：[FirstTime]
-                     * @param By 排序方式：[FirstTime]
+                     * @param _by 排序方式：[FirstTime]
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

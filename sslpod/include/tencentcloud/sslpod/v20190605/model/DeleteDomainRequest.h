@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名ID，可通过<a href="https://cloud.tencent.com/document/api/1084/49339">搜索域名</a>接口获得
                      * @return DomainId 域名ID，可通过<a href="https://cloud.tencent.com/document/api/1084/49339">搜索域名</a>接口获得
+                     * 
                      */
                     int64_t GetDomainId() const;
 
                     /**
                      * 设置域名ID，可通过<a href="https://cloud.tencent.com/document/api/1084/49339">搜索域名</a>接口获得
-                     * @param DomainId 域名ID，可通过<a href="https://cloud.tencent.com/document/api/1084/49339">搜索域名</a>接口获得
+                     * @param _domainId 域名ID，可通过<a href="https://cloud.tencent.com/document/api/1084/49339">搜索域名</a>接口获得
+                     * 
                      */
                     void SetDomainId(const int64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

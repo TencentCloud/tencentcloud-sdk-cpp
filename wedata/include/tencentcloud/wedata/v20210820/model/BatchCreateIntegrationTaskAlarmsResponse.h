@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 操作成功的任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCount 操作失败的任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 判断参数 FailedCount 是否已赋值
                      * @return FailedCount 是否已赋值
+                     * 
                      */
                     bool FailedCountHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

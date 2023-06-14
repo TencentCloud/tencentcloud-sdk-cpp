@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库名
                      * @return Database 数据库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-                     * @param Database 数据库名
+                     * @param _database 数据库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取数据库视图名
                      * @return View 数据库视图名
+                     * 
                      */
                     std::string GetView() const;
 
                     /**
                      * 设置数据库视图名
-                     * @param View 数据库视图名
+                     * @param _view 数据库视图名
+                     * 
                      */
                     void SetView(const std::string& _view);
 
                     /**
                      * 判断参数 View 是否已赋值
                      * @return View 是否已赋值
+                     * 
                      */
                     bool ViewHasBeenSet() const;
 
                     /**
                      * 获取权限信息
                      * @return Privileges 权限信息
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限信息
-                     * @param Privileges 权限信息
+                     * @param _privileges 权限信息
+                     * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 

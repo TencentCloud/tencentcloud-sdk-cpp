@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID集合。
                      * @return DBInstanceIdSet 实例ID集合。
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 设置实例ID集合。
-                     * @param DBInstanceIdSet 实例ID集合。
+                     * @param _dBInstanceIdSet 实例ID集合。
+                     * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取实例根账号用户名。
                      * @return AdminName 实例根账号用户名。
+                     * 
                      */
                     std::string GetAdminName() const;
 
                     /**
                      * 设置实例根账号用户名。
-                     * @param AdminName 实例根账号用户名。
+                     * @param _adminName 实例根账号用户名。
+                     * 
                      */
                     void SetAdminName(const std::string& _adminName);
 
                     /**
                      * 判断参数 AdminName 是否已赋值
                      * @return AdminName 是否已赋值
+                     * 
                      */
                     bool AdminNameHasBeenSet() const;
 
                     /**
                      * 获取实例根账号用户名对应的密码。
                      * @return AdminPassword 实例根账号用户名对应的密码。
+                     * 
                      */
                     std::string GetAdminPassword() const;
 
                     /**
                      * 设置实例根账号用户名对应的密码。
-                     * @param AdminPassword 实例根账号用户名对应的密码。
+                     * @param _adminPassword 实例根账号用户名对应的密码。
+                     * 
                      */
                     void SetAdminPassword(const std::string& _adminPassword);
 
                     /**
                      * 判断参数 AdminPassword 是否已赋值
                      * @return AdminPassword 是否已赋值
+                     * 
                      */
                     bool AdminPasswordHasBeenSet() const;
 
                     /**
                      * 获取实例字符集，目前只支持：UTF8、LATIN1。
                      * @return Charset 实例字符集，目前只支持：UTF8、LATIN1。
+                     * 
                      */
                     std::string GetCharset() const;
 
                     /**
                      * 设置实例字符集，目前只支持：UTF8、LATIN1。
-                     * @param Charset 实例字符集，目前只支持：UTF8、LATIN1。
+                     * @param _charset 实例字符集，目前只支持：UTF8、LATIN1。
+                     * 
                      */
                     void SetCharset(const std::string& _charset);
 
                     /**
                      * 判断参数 Charset 是否已赋值
                      * @return Charset 是否已赋值
+                     * 
                      */
                     bool CharsetHasBeenSet() const;
 

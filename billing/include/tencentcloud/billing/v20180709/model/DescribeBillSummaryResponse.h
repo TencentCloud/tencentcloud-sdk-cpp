@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
                      * @return Ready 数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
+                     * 
                      */
                     uint64_t GetReady() const;
 
                     /**
                      * 判断参数 Ready 是否已赋值
                      * @return Ready 是否已赋值
+                     * 
                      */
                     bool ReadyHasBeenSet() const;
 
                     /**
                      * 获取账单多维度汇总消费详情
                      * @return SummaryDetail 账单多维度汇总消费详情
+                     * 
                      */
                     std::vector<SummaryDetail> GetSummaryDetail() const;
 
                     /**
                      * 判断参数 SummaryDetail 是否已赋值
                      * @return SummaryDetail 是否已赋值
+                     * 
                      */
                     bool SummaryDetailHasBeenSet() const;
 

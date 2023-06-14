@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DimType 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDimType() const;
 
                     /**
                      * 设置维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DimType 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * @param _dimType 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDimType(const uint64_t& _dimType);
 
                     /**
                      * 判断参数 DimType 是否已赋值
                      * @return DimType 是否已赋值
+                     * 
                      */
                     bool DimTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 统计值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置统计值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 统计值
+                     * @param _count 统计值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

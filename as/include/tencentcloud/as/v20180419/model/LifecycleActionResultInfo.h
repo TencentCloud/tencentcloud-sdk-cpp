@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取生命周期挂钩标识。
                      * @return LifecycleHookId 生命周期挂钩标识。
+                     * 
                      */
                     std::string GetLifecycleHookId() const;
 
                     /**
                      * 设置生命周期挂钩标识。
-                     * @param LifecycleHookId 生命周期挂钩标识。
+                     * @param _lifecycleHookId 生命周期挂钩标识。
+                     * 
                      */
                     void SetLifecycleHookId(const std::string& _lifecycleHookId);
 
                     /**
                      * 判断参数 LifecycleHookId 是否已赋值
                      * @return LifecycleHookId 是否已赋值
+                     * 
                      */
                     bool LifecycleHookIdHasBeenSet() const;
 
                     /**
                      * 获取实例标识。
                      * @return InstanceId 实例标识。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例标识。
-                     * @param InstanceId 实例标识。
+                     * @param _instanceId 实例标识。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。
                      * @return InvocationId 执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。
+                     * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 设置执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。
-                     * @param InvocationId 执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。
+                     * @param _invocationId 执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。
+                     * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
 
                     /**
                      * 判断参数 InvocationId 是否已赋值
                      * @return InvocationId 是否已赋值
+                     * 
                      */
                     bool InvocationIdHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 <li>SUCCESSFUL 命令调用成功，不代表命令执行成功，执行的具体情况可根据InvocationId进行查询</li>
 <li>FAILED 命令调用失败</li>
 <li>NONE</li>
+                     * 
                      */
                     std::string GetInvokeCommandResult() const;
 
@@ -117,16 +127,18 @@ namespace TencentCloud
 <li>SUCCESSFUL 命令调用成功，不代表命令执行成功，执行的具体情况可根据InvocationId进行查询</li>
 <li>FAILED 命令调用失败</li>
 <li>NONE</li>
-                     * @param InvokeCommandResult 命令调用的结果，表示执行TAT命令是否成功。<br>
+                     * @param _invokeCommandResult 命令调用的结果，表示执行TAT命令是否成功。<br>
 <li>SUCCESSFUL 命令调用成功，不代表命令执行成功，执行的具体情况可根据InvocationId进行查询</li>
 <li>FAILED 命令调用失败</li>
 <li>NONE</li>
+                     * 
                      */
                     void SetInvokeCommandResult(const std::string& _invokeCommandResult);
 
                     /**
                      * 判断参数 InvokeCommandResult 是否已赋值
                      * @return InvokeCommandResult 是否已赋值
+                     * 
                      */
                     bool InvokeCommandResultHasBeenSet() const;
 
@@ -139,6 +151,7 @@ namespace TencentCloud
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
+                     * 
                      */
                     std::string GetNotificationResult() const;
 
@@ -147,34 +160,39 @@ namespace TencentCloud
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
-                     * @param NotificationResult 通知的结果，表示通知CMQ/TDMQ是否成功。<br>
+                     * @param _notificationResult 通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
+                     * 
                      */
                     void SetNotificationResult(const std::string& _notificationResult);
 
                     /**
                      * 判断参数 NotificationResult 是否已赋值
                      * @return NotificationResult 是否已赋值
+                     * 
                      */
                     bool NotificationResultHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。
                      * @return LifecycleActionResult 生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。
+                     * 
                      */
                     std::string GetLifecycleActionResult() const;
 
                     /**
                      * 设置生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。
-                     * @param LifecycleActionResult 生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。
+                     * @param _lifecycleActionResult 生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。
+                     * 
                      */
                     void SetLifecycleActionResult(const std::string& _lifecycleActionResult);
 
                     /**
                      * 判断参数 LifecycleActionResult 是否已赋值
                      * @return LifecycleActionResult 是否已赋值
+                     * 
                      */
                     bool LifecycleActionResultHasBeenSet() const;
 
@@ -197,6 +215,7 @@ namespace TencentCloud
 <li>COMMAND_EXEC_FINISH  命令执行完成。</li>
 <li>COMMAND_EXEC_FAILURE 由于命令执行失败，结果根据DefaultResult设置。</li>
 <li>COMMAND_EXEC_RESULT_CHECK_FAILURE 由于命令结果检查失败，结果根据DefaultResult设置。</li>
+                     * 
                      */
                     std::string GetResultReason() const;
 
@@ -210,7 +229,7 @@ namespace TencentCloud
 <li>COMMAND_EXEC_FINISH  命令执行完成。</li>
 <li>COMMAND_EXEC_FAILURE 由于命令执行失败，结果根据DefaultResult设置。</li>
 <li>COMMAND_EXEC_RESULT_CHECK_FAILURE 由于命令结果检查失败，结果根据DefaultResult设置。</li>
-                     * @param ResultReason 结果的原因。<br>
+                     * @param _resultReason 结果的原因。<br>
 <li>HEARTBEAT_TIMEOUT 由于心跳超时，结果根据DefaultResult设置。</li>
 <li>NOTIFICATION_FAILURE 由于发送通知失败，结果根据DefaultResult设置。</li>
 <li>CALL_INTERFACE 调用了接口CompleteLifecycleAction设置结果。</li>
@@ -219,12 +238,14 @@ namespace TencentCloud
 <li>COMMAND_EXEC_FINISH  命令执行完成。</li>
 <li>COMMAND_EXEC_FAILURE 由于命令执行失败，结果根据DefaultResult设置。</li>
 <li>COMMAND_EXEC_RESULT_CHECK_FAILURE 由于命令结果检查失败，结果根据DefaultResult设置。</li>
+                     * 
                      */
                     void SetResultReason(const std::string& _resultReason);
 
                     /**
                      * 判断参数 ResultReason 是否已赋值
                      * @return ResultReason 是否已赋值
+                     * 
                      */
                     bool ResultReasonHasBeenSet() const;
 

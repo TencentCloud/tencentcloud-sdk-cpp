@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 磁盘大小，单位为GB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘大小，单位为GB。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskSize 磁盘大小，单位为GB。
+                     * @param _diskSize 磁盘大小，单位为GB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
+                     * @param _diskType 磁盘类型。CLOUD_PREMIUM;CLOUD_SSD
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskNum 磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskNum() const;
 
                     /**
                      * 设置磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskNum 磁盘数量
+                     * @param _diskNum 磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskNum(const int64_t& _diskNum);
 
                     /**
                      * 判断参数 DiskNum 是否已赋值
                      * @return DiskNum 是否已赋值
+                     * 
                      */
                     bool DiskNumHasBeenSet() const;
 

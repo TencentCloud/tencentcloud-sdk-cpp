@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReturnCode 第三方渠道错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalReturnCode() const;
 
                     /**
                      * 设置第三方渠道错误码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalReturnCode 第三方渠道错误码
+                     * @param _externalReturnCode 第三方渠道错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalReturnCode(const std::string& _externalReturnCode);
 
                     /**
                      * 判断参数 ExternalReturnCode 是否已赋值
                      * @return ExternalReturnCode 是否已赋值
+                     * 
                      */
                     bool ExternalReturnCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReturnMessage 第三方渠道错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalReturnMessage() const;
 
                     /**
                      * 设置第三方渠道错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalReturnMessage 第三方渠道错误信息
+                     * @param _externalReturnMessage 第三方渠道错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalReturnMessage(const std::string& _externalReturnMessage);
 
                     /**
                      * 判断参数 ExternalReturnMessage 是否已赋值
                      * @return ExternalReturnMessage 是否已赋值
+                     * 
                      */
                     bool ExternalReturnMessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReturnData 第三方渠道返回的原始数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalReturnData() const;
 
                     /**
                      * 设置第三方渠道返回的原始数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalReturnData 第三方渠道返回的原始数据
+                     * @param _externalReturnData 第三方渠道返回的原始数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalReturnData(const std::string& _externalReturnData);
 
                     /**
                      * 判断参数 ExternalReturnData 是否已赋值
                      * @return ExternalReturnData 是否已赋值
+                     * 
                      */
                     bool ExternalReturnDataHasBeenSet() const;
 

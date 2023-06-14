@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取异步任务ID
                      * @return TaskId 异步任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取黑石托管机器ID
                      * @return ResourceIds 黑石托管机器ID
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取多个设备标识
                      * @return DevicesItems 多个设备标识
+                     * 
                      */
                     std::vector<DevicesItem> GetDevicesItems() const;
 
                     /**
                      * 设置多个设备标识
-                     * @param DevicesItems 多个设备标识
+                     * @param _devicesItems 多个设备标识
+                     * 
                      */
                     void SetDevicesItems(const std::vector<DevicesItem>& _devicesItems);
 
                     /**
                      * 判断参数 DevicesItems 是否已赋值
                      * @return DevicesItems 是否已赋值
+                     * 
                      */
                     bool DevicesItemsHasBeenSet() const;
 

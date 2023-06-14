@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源对象列表。
                      * @return ResourceDashboardSet 资源对象列表。
+                     * 
                      */
                     std::vector<ResourceDashboard> GetResourceDashboardSet() const;
 
                     /**
                      * 判断参数 ResourceDashboardSet 是否已赋值
                      * @return ResourceDashboardSet 是否已赋值
+                     * 
                      */
                     bool ResourceDashboardSetHasBeenSet() const;
 

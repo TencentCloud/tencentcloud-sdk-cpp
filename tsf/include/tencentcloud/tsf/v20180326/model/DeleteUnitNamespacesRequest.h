@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取网关实体ID
                      * @return GatewayInstanceId 网关实体ID
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实体ID
-                     * @param GatewayInstanceId 网关实体ID
+                     * @param _gatewayInstanceId 网关实体ID
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取单元化命名空间ID数组
                      * @return UnitNamespaceList 单元化命名空间ID数组
+                     * 
                      */
                     std::vector<std::string> GetUnitNamespaceList() const;
 
                     /**
                      * 设置单元化命名空间ID数组
-                     * @param UnitNamespaceList 单元化命名空间ID数组
+                     * @param _unitNamespaceList 单元化命名空间ID数组
+                     * 
                      */
                     void SetUnitNamespaceList(const std::vector<std::string>& _unitNamespaceList);
 
                     /**
                      * 判断参数 UnitNamespaceList 是否已赋值
                      * @return UnitNamespaceList 是否已赋值
+                     * 
                      */
                     bool UnitNamespaceListHasBeenSet() const;
 

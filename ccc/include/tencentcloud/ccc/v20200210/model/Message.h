@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取消息类型
                      * @return Type 消息类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置消息类型
-                     * @param Type 消息类型
+                     * @param _type 消息类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取消息内容
                      * @return Content 消息内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置消息内容
-                     * @param Content 消息内容
+                     * @param _content 消息内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

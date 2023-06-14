@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取属性名称
                      * @return Name 属性名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置属性名称
-                     * @param Name 属性名称
+                     * @param _name 属性名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取属性类型
                      * @return Type 属性类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置属性类型
-                     * @param Type 属性类型
+                     * @param _type 属性类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 属性描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置属性描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 属性描述
+                     * @param _description 属性描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

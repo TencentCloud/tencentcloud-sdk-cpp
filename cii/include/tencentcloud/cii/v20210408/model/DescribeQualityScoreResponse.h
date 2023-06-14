@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取质量分
                      * @return QualityScore 质量分
+                     * 
                      */
                     double GetQualityScore() const;
 
                     /**
                      * 判断参数 QualityScore 是否已赋值
                      * @return QualityScore 是否已赋值
+                     * 
                      */
                     bool QualityScoreHasBeenSet() const;
 

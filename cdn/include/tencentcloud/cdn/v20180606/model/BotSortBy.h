@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序
                      * @return Key 排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序
-                     * @param Key 排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序
+                     * @param _key 排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取asc/desc
                      * @return Sequence asc/desc
+                     * 
                      */
                     std::string GetSequence() const;
 
                     /**
                      * 设置asc/desc
-                     * @param Sequence asc/desc
+                     * @param _sequence asc/desc
+                     * 
                      */
                     void SetSequence(const std::string& _sequence);
 
                     /**
                      * 判断参数 Sequence 是否已赋值
                      * @return Sequence 是否已赋值
+                     * 
                      */
                     bool SequenceHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterExtraArgs 集群自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeClusterExtraArgs GetClusterExtraArgs() const;
 
                     /**
                      * 判断参数 ClusterExtraArgs 是否已赋值
                      * @return ClusterExtraArgs 是否已赋值
+                     * 
                      */
                     bool ClusterExtraArgsHasBeenSet() const;
 

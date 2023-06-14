@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyBankAccount 公司银行账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyBankAccount() const;
 
                     /**
                      * 设置公司银行账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyBankAccount 公司银行账号
+                     * @param _companyBankAccount 公司银行账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyBankAccount(const std::string& _companyBankAccount);
 
                     /**
                      * 判断参数 CompanyBankAccount 是否已赋值
                      * @return CompanyBankAccount 是否已赋值
+                     * 
                      */
                     bool CompanyBankAccountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyAddress 公司地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyAddress() const;
 
                     /**
                      * 设置公司地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyAddress 公司地址
+                     * @param _companyAddress 公司地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyAddress(const std::string& _companyAddress);
 
                     /**
                      * 判断参数 CompanyAddress 是否已赋值
                      * @return CompanyAddress 是否已赋值
+                     * 
                      */
                     bool CompanyAddressHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyTaxpayerNum 公司税号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyTaxpayerNum() const;
 
                     /**
                      * 设置公司税号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyTaxpayerNum 公司税号
+                     * @param _companyTaxpayerNum 公司税号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyTaxpayerNum(const std::string& _companyTaxpayerNum);
 
                     /**
                      * 判断参数 CompanyTaxpayerNum 是否已赋值
                      * @return CompanyTaxpayerNum 是否已赋值
+                     * 
                      */
                     bool CompanyTaxpayerNumHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyName 公司名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
                      * 设置公司名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyName 公司名称
+                     * @param _companyName 公司名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyName(const std::string& _companyName);
 
                     /**
                      * 判断参数 CompanyName 是否已赋值
                      * @return CompanyName 是否已赋值
+                     * 
                      */
                     bool CompanyNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyBankName 公司银行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyBankName() const;
 
                     /**
                      * 设置公司银行名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyBankName 公司银行名称
+                     * @param _companyBankName 公司银行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyBankName(const std::string& _companyBankName);
 
                     /**
                      * 判断参数 CompanyBankName 是否已赋值
                      * @return CompanyBankName 是否已赋值
+                     * 
                      */
                     bool CompanyBankNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyPhone 公司电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompanyPhone() const;
 
                     /**
                      * 设置公司电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyPhone 公司电话
+                     * @param _companyPhone 公司电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyPhone(const std::string& _companyPhone);
 
                     /**
                      * 判断参数 CompanyPhone 是否已赋值
                      * @return CompanyPhone 是否已赋值
+                     * 
                      */
                     bool CompanyPhoneHasBeenSet() const;
 

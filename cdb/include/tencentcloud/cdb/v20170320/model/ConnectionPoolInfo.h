@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPool 是否开启了连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
                      * 设置是否开启了连接池
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPool 是否开启了连接池
+                     * @param _connectionPool 是否开启了连接池
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPool(const bool& _connectionPool);
 
                     /**
                      * 判断参数 ConnectionPool 是否已赋值
                      * @return ConnectionPool 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
                      * 设置连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池）
+                     * @param _connectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
 
                     /**
                      * 判断参数 ConnectionPoolType 是否已赋值
                      * @return ConnectionPoolType 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolConnectionTimeOut 连接池保持阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPoolConnectionTimeOut() const;
 
                     /**
                      * 设置连接池保持阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoolConnectionTimeOut 连接池保持阈值：单位（秒）
+                     * @param _poolConnectionTimeOut 连接池保持阈值：单位（秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoolConnectionTimeOut(const int64_t& _poolConnectionTimeOut);
 
                     /**
                      * 判断参数 PoolConnectionTimeOut 是否已赋值
                      * @return PoolConnectionTimeOut 是否已赋值
+                     * 
                      */
                     bool PoolConnectionTimeOutHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取转发监听端口下限，取值1~65535
                      * @return FrontendPort 转发监听端口下限，取值1~65535
+                     * 
                      */
                     int64_t GetFrontendPort() const;
 
                     /**
                      * 设置转发监听端口下限，取值1~65535
-                     * @param FrontendPort 转发监听端口下限，取值1~65535
+                     * @param _frontendPort 转发监听端口下限，取值1~65535
+                     * 
                      */
                     void SetFrontendPort(const int64_t& _frontendPort);
 
                     /**
                      * 判断参数 FrontendPort 是否已赋值
                      * @return FrontendPort 是否已赋值
+                     * 
                      */
                     bool FrontendPortHasBeenSet() const;
 
@@ -73,6 +76,7 @@ UDP
 TCP
 UDP
 ]
+                     * 
                      */
                     std::string GetForwardProtocol() const;
 
@@ -81,34 +85,39 @@ UDP
 TCP
 UDP
 ]
-                     * @param ForwardProtocol 转发协议，取值[
+                     * @param _forwardProtocol 转发协议，取值[
 TCP
 UDP
 ]
+                     * 
                      */
                     void SetForwardProtocol(const std::string& _forwardProtocol);
 
                     /**
                      * 判断参数 ForwardProtocol 是否已赋值
                      * @return ForwardProtocol 是否已赋值
+                     * 
                      */
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
                      * 获取转发监听端口上限，取值1~65535
                      * @return FrontendPortEnd 转发监听端口上限，取值1~65535
+                     * 
                      */
                     int64_t GetFrontendPortEnd() const;
 
                     /**
                      * 设置转发监听端口上限，取值1~65535
-                     * @param FrontendPortEnd 转发监听端口上限，取值1~65535
+                     * @param _frontendPortEnd 转发监听端口上限，取值1~65535
+                     * 
                      */
                     void SetFrontendPortEnd(const int64_t& _frontendPortEnd);
 
                     /**
                      * 判断参数 FrontendPortEnd 是否已赋值
                      * @return FrontendPortEnd 是否已赋值
+                     * 
                      */
                     bool FrontendPortEndHasBeenSet() const;
 

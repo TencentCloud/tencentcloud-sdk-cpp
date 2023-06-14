@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取文件id数组，有效期一个小时；有效期内此文件id可以反复使用
                      * @return FileIds 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取上传成功文件数量
                      * @return TotalCount 上传成功文件数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取文件Url
                      * @return FileUrls 文件Url
+                     * 
                      */
                     std::vector<std::string> GetFileUrls() const;
 
                     /**
                      * 判断参数 FileUrls 是否已赋值
                      * @return FileUrls 是否已赋值
+                     * 
                      */
                     bool FileUrlsHasBeenSet() const;
 

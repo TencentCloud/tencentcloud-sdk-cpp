@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取音频整体响度
                      * @return Loudness 音频整体响度
+                     * 
                      */
                     double GetLoudness() const;
 
                     /**
                      * 设置音频整体响度
-                     * @param Loudness 音频整体响度
+                     * @param _loudness 音频整体响度
+                     * 
                      */
                     void SetLoudness(const double& _loudness);
 
                     /**
                      * 判断参数 Loudness 是否已赋值
                      * @return Loudness 是否已赋值
+                     * 
                      */
                     bool LoudnessHasBeenSet() const;
 
                     /**
                      * 获取音频响度范围
                      * @return LoudnessRange 音频响度范围
+                     * 
                      */
                     double GetLoudnessRange() const;
 
                     /**
                      * 设置音频响度范围
-                     * @param LoudnessRange 音频响度范围
+                     * @param _loudnessRange 音频响度范围
+                     * 
                      */
                     void SetLoudnessRange(const double& _loudnessRange);
 
                     /**
                      * 判断参数 LoudnessRange 是否已赋值
                      * @return LoudnessRange 是否已赋值
+                     * 
                      */
                     bool LoudnessRangeHasBeenSet() const;
 

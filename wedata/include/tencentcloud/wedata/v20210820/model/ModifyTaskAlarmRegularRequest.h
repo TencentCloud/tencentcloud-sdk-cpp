@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取主键ID
                      * @return Id 主键ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置主键ID
-                     * @param Id 主键ID
+                     * @param _id 主键ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取规则信息
                      * @return TaskAlarmInfo 规则信息
+                     * 
                      */
                     TaskAlarmInfo GetTaskAlarmInfo() const;
 
                     /**
                      * 设置规则信息
-                     * @param TaskAlarmInfo 规则信息
+                     * @param _taskAlarmInfo 规则信息
+                     * 
                      */
                     void SetTaskAlarmInfo(const TaskAlarmInfo& _taskAlarmInfo);
 
                     /**
                      * 判断参数 TaskAlarmInfo 是否已赋值
                      * @return TaskAlarmInfo 是否已赋值
+                     * 
                      */
                     bool TaskAlarmInfoHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

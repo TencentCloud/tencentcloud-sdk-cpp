@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取计费项列表
                      * @return Specs 计费项列表
+                     * 
                      */
                     std::vector<Spec> GetSpecs() const;
 
                     /**
                      * 判断参数 Specs 是否已赋值
                      * @return Specs 是否已赋值
+                     * 
                      */
                     bool SpecsHasBeenSet() const;
 

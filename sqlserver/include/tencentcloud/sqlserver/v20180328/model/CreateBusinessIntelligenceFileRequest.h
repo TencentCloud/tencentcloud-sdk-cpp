@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取COS_URL
                      * @return FileURL COS_URL
+                     * 
                      */
                     std::string GetFileURL() const;
 
                     /**
                      * 设置COS_URL
-                     * @param FileURL COS_URL
+                     * @param _fileURL COS_URL
+                     * 
                      */
                     void SetFileURL(const std::string& _fileURL);
 
                     /**
                      * 判断参数 FileURL 是否已赋值
                      * @return FileURL 是否已赋值
+                     * 
                      */
                     bool FileURLHasBeenSet() const;
 
                     /**
                      * 获取文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包
                      * @return FileType 文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包
-                     * @param FileType 文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包
+                     * @param _fileType 文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

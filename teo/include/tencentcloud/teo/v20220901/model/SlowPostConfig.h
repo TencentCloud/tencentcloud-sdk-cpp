@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -79,20 +82,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstPartConfig 首包配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FirstPartConfig GetFirstPartConfig() const;
 
                     /**
                      * 设置首包配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstPartConfig 首包配置。
+                     * @param _firstPartConfig 首包配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstPartConfig(const FirstPartConfig& _firstPartConfig);
 
                     /**
                      * 判断参数 FirstPartConfig 是否已赋值
                      * @return FirstPartConfig 是否已赋值
+                     * 
                      */
                     bool FirstPartConfigHasBeenSet() const;
 
@@ -101,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowRateConfig 基础配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SlowRateConfig GetSlowRateConfig() const;
 
                     /**
                      * 设置基础配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlowRateConfig 基础配置。
+                     * @param _slowRateConfig 基础配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlowRateConfig(const SlowRateConfig& _slowRateConfig);
 
                     /**
                      * 判断参数 SlowRateConfig 是否已赋值
                      * @return SlowRateConfig 是否已赋值
+                     * 
                      */
                     bool SlowRateConfigHasBeenSet() const;
 
@@ -127,6 +136,7 @@ namespace TencentCloud
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -135,16 +145,18 @@ namespace TencentCloud
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 慢速攻击的处置动作，取值有：
+                     * @param _action 慢速攻击的处置动作，取值有：
 <li>monitor：观察；</li>
 <li>drop：拦截。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -153,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 本规则的Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置本规则的Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 本规则的Id。
+                     * @param _ruleId 本规则的Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

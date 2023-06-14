@@ -53,6 +53,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
 
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -62,17 +63,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
 
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
 
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -96,17 +100,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
+                     * @param _imageUrl 图片的 Url 地址。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。像素须介于20-10000px之间。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -115,20 +121,23 @@ namespace TencentCloud
 该参数默认值为false。
                      * @return EnableCoordPoint 单词四点坐标开关，开启可返回图片中单词的四点坐标。
 该参数默认值为false。
+                     * 
                      */
                     bool GetEnableCoordPoint() const;
 
                     /**
                      * 设置单词四点坐标开关，开启可返回图片中单词的四点坐标。
 该参数默认值为false。
-                     * @param EnableCoordPoint 单词四点坐标开关，开启可返回图片中单词的四点坐标。
+                     * @param _enableCoordPoint 单词四点坐标开关，开启可返回图片中单词的四点坐标。
 该参数默认值为false。
+                     * 
                      */
                     void SetEnableCoordPoint(const bool& _enableCoordPoint);
 
                     /**
                      * 判断参数 EnableCoordPoint 是否已赋值
                      * @return EnableCoordPoint 是否已赋值
+                     * 
                      */
                     bool EnableCoordPointHasBeenSet() const;
 
@@ -137,38 +146,44 @@ namespace TencentCloud
 该参数默认值为false。
                      * @return EnableCandWord 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
 该参数默认值为false。
+                     * 
                      */
                     bool GetEnableCandWord() const;
 
                     /**
                      * 设置候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
 该参数默认值为false。
-                     * @param EnableCandWord 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+                     * @param _enableCandWord 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
 该参数默认值为false。
+                     * 
                      */
                     void SetEnableCandWord(const bool& _enableCandWord);
 
                     /**
                      * 判断参数 EnableCandWord 是否已赋值
                      * @return EnableCandWord 是否已赋值
+                     * 
                      */
                     bool EnableCandWordHasBeenSet() const;
 
                     /**
                      * 获取预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
                      * @return Preprocess 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     * 
                      */
                     bool GetPreprocess() const;
 
                     /**
                      * 设置预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
-                     * @param Preprocess 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     * @param _preprocess 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     * 
                      */
                     void SetPreprocess(const bool& _preprocess);
 
                     /**
                      * 判断参数 Preprocess 是否已赋值
                      * @return Preprocess 是否已赋值
+                     * 
                      */
                     bool PreprocessHasBeenSet() const;
 

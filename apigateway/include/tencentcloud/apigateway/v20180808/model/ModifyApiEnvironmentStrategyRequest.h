@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务唯一ID。
                      * @return ServiceId 服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一ID。
-                     * @param ServiceId 服务唯一ID。
+                     * @param _serviceId 服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取限流值。
                      * @return Strategy 限流值。
+                     * 
                      */
                     int64_t GetStrategy() const;
 
                     /**
                      * 设置限流值。
-                     * @param Strategy 限流值。
+                     * @param _strategy 限流值。
+                     * 
                      */
                     void SetStrategy(const int64_t& _strategy);
 
                     /**
                      * 判断参数 Strategy 是否已赋值
                      * @return Strategy 是否已赋值
+                     * 
                      */
                     bool StrategyHasBeenSet() const;
 
                     /**
                      * 获取环境名。
                      * @return EnvironmentName 环境名。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名。
-                     * @param EnvironmentName 环境名。
+                     * @param _environmentName 环境名。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取API列表。
                      * @return ApiIds API列表。
+                     * 
                      */
                     std::vector<std::string> GetApiIds() const;
 
                     /**
                      * 设置API列表。
-                     * @param ApiIds API列表。
+                     * @param _apiIds API列表。
+                     * 
                      */
                     void SetApiIds(const std::vector<std::string>& _apiIds);
 
                     /**
                      * 判断参数 ApiIds 是否已赋值
                      * @return ApiIds 是否已赋值
+                     * 
                      */
                     bool ApiIdsHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchInstances 实例集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BatchTaskInstance> GetBatchInstances() const;
 
                     /**
                      * 判断参数 BatchInstances 是否已赋值
                      * @return BatchInstances 是否已赋值
+                     * 
                      */
                     bool BatchInstancesHasBeenSet() const;
 

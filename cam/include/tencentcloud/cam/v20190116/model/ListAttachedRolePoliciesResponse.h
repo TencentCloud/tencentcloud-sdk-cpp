@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取角色关联的策略列表
                      * @return List 角色关联的策略列表
+                     * 
                      */
                     std::vector<AttachedPolicyOfRole> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取角色关联的策略总数
                      * @return TotalNum 角色关联的策略总数
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 

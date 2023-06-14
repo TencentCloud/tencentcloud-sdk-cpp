@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Quality 画面质量，范围：1~100。
 <li>对于webp格式，默认：75</li>
 <li>对于gif格式，小于10为低质量，大于50为高质量，其它为普通。默认：低质量。</li>
+                     * 
                      */
                     uint64_t GetQuality() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置画面质量，范围：1~100。
 <li>对于webp格式，默认：75</li>
 <li>对于gif格式，小于10为低质量，大于50为高质量，其它为普通。默认：低质量。</li>
-                     * @param Quality 画面质量，范围：1~100。
+                     * @param _quality 画面质量，范围：1~100。
 <li>对于webp格式，默认：75</li>
 <li>对于gif格式，小于10为低质量，大于50为高质量，其它为普通。默认：低质量。</li>
+                     * 
                      */
                     void SetQuality(const uint64_t& _quality);
 
                     /**
                      * 判断参数 Quality 是否已赋值
                      * @return Quality 是否已赋值
+                     * 
                      */
                     bool QualityHasBeenSet() const;
 

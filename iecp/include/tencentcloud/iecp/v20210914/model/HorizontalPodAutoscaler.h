@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取最小实例数
                      * @return MinReplicas 最小实例数
+                     * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置最小实例数
-                     * @param MinReplicas 最小实例数
+                     * @param _minReplicas 最小实例数
+                     * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
                     /**
                      * 获取最大实例数
                      * @return MaxReplicas 最大实例数
+                     * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置最大实例数
-                     * @param MaxReplicas 最大实例数
+                     * @param _maxReplicas 最大实例数
+                     * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
                      * 获取资源目标指标
                      * @return ResourceMetricTarget 资源目标指标
+                     * 
                      */
                     std::vector<ResourceMetricTarget> GetResourceMetricTarget() const;
 
                     /**
                      * 设置资源目标指标
-                     * @param ResourceMetricTarget 资源目标指标
+                     * @param _resourceMetricTarget 资源目标指标
+                     * 
                      */
                     void SetResourceMetricTarget(const std::vector<ResourceMetricTarget>& _resourceMetricTarget);
 
                     /**
                      * 判断参数 ResourceMetricTarget 是否已赋值
                      * @return ResourceMetricTarget 是否已赋值
+                     * 
                      */
                     bool ResourceMetricTargetHasBeenSet() const;
 

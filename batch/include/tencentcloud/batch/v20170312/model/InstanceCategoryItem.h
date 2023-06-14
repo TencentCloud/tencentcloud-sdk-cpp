@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例类型名
                      * @return InstanceCategory 实例类型名
+                     * 
                      */
                     std::string GetInstanceCategory() const;
 
                     /**
                      * 设置实例类型名
-                     * @param InstanceCategory 实例类型名
+                     * @param _instanceCategory 实例类型名
+                     * 
                      */
                     void SetInstanceCategory(const std::string& _instanceCategory);
 
                     /**
                      * 判断参数 InstanceCategory 是否已赋值
                      * @return InstanceCategory 是否已赋值
+                     * 
                      */
                     bool InstanceCategoryHasBeenSet() const;
 
                     /**
                      * 获取实例族列表
                      * @return InstanceFamilySet 实例族列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceFamilySet() const;
 
                     /**
                      * 设置实例族列表
-                     * @param InstanceFamilySet 实例族列表
+                     * @param _instanceFamilySet 实例族列表
+                     * 
                      */
                     void SetInstanceFamilySet(const std::vector<std::string>& _instanceFamilySet);
 
                     /**
                      * 判断参数 InstanceFamilySet 是否已赋值
                      * @return InstanceFamilySet 是否已赋值
+                     * 
                      */
                     bool InstanceFamilySetHasBeenSet() const;
 

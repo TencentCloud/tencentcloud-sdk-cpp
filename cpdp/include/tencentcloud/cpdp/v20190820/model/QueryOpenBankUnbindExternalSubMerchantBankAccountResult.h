@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取渠道申请编号。
                      * @return ChannelApplyId 渠道申请编号。
+                     * 
                      */
                     std::string GetChannelApplyId() const;
 
                     /**
                      * 设置渠道申请编号。
-                     * @param ChannelApplyId 渠道申请编号。
+                     * @param _channelApplyId 渠道申请编号。
+                     * 
                      */
                     void SetChannelApplyId(const std::string& _channelApplyId);
 
                     /**
                      * 判断参数 ChannelApplyId 是否已赋值
                      * @return ChannelApplyId 是否已赋值
+                     * 
                      */
                     bool ChannelApplyIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ __PROCESSING__: 解绑中
 __SUCCESS__: 解绑成功
 __FAILED__: 解绑失败
 __PROCESSING__: 解绑中
+                     * 
                      */
                     std::string GetUnbindStatus() const;
 
@@ -81,16 +85,18 @@ __PROCESSING__: 解绑中
 __SUCCESS__: 解绑成功
 __FAILED__: 解绑失败
 __PROCESSING__: 解绑中
-                     * @param UnbindStatus 解绑状态。
+                     * @param _unbindStatus 解绑状态。
 __SUCCESS__: 解绑成功
 __FAILED__: 解绑失败
 __PROCESSING__: 解绑中
+                     * 
                      */
                     void SetUnbindStatus(const std::string& _unbindStatus);
 
                     /**
                      * 判断参数 UnbindStatus 是否已赋值
                      * @return UnbindStatus 是否已赋值
+                     * 
                      */
                     bool UnbindStatusHasBeenSet() const;
 
@@ -99,20 +105,23 @@ __PROCESSING__: 解绑中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnbindMessage 解绑返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnbindMessage() const;
 
                     /**
                      * 设置解绑返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnbindMessage 解绑返回描述, 例如失败原因等。
+                     * @param _unbindMessage 解绑返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnbindMessage(const std::string& _unbindMessage);
 
                     /**
                      * 判断参数 UnbindMessage 是否已赋值
                      * @return UnbindMessage 是否已赋值
+                     * 
                      */
                     bool UnbindMessageHasBeenSet() const;
 

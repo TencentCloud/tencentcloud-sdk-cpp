@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取动作，取值为以为3个类型中的一个："intercept","permit","monitor"，分别表示： 拦截， 放行，监控
                      * @return Action 动作，取值为以为3个类型中的一个："intercept","permit","monitor"，分别表示： 拦截， 放行，监控
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作，取值为以为3个类型中的一个："intercept","permit","monitor"，分别表示： 拦截， 放行，监控
-                     * @param Action 动作，取值为以为3个类型中的一个："intercept","permit","monitor"，分别表示： 拦截， 放行，监控
+                     * @param _action 动作，取值为以为3个类型中的一个："intercept","permit","monitor"，分别表示： 拦截， 放行，监控
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取会话总次数
                      * @return Nums 会话总次数
+                     * 
                      */
                     int64_t GetNums() const;
 
                     /**
                      * 设置会话总次数
-                     * @param Nums 会话总次数
+                     * @param _nums 会话总次数
+                     * 
                      */
                     void SetNums(const int64_t& _nums);
 
                     /**
                      * 判断参数 Nums 是否已赋值
                      * @return Nums 是否已赋值
+                     * 
                      */
                     bool NumsHasBeenSet() const;
 
@@ -137,6 +143,7 @@ BotType=TCB时，表示Bot分类，取值如下：
                 "Tool",
                 "Marketing"
 BotType=UCB时，为二期接口，暂时未定义内容
+                     * 
                      */
                     std::string GetRuleName() const;
 
@@ -168,7 +175,7 @@ BotType=TCB时，表示Bot分类，取值如下：
                 "Tool",
                 "Marketing"
 BotType=UCB时，为二期接口，暂时未定义内容
-                     * @param RuleName BotType=UB时，表示预测标签，取值如下：
+                     * @param _ruleName BotType=UB时，表示预测标签，取值如下：
                 "crawler_unregular",
                 "crawler_regular",
                 "request_repeat",
@@ -195,120 +202,140 @@ BotType=TCB时，表示Bot分类，取值如下：
                 "Tool",
                 "Marketing"
 BotType=UCB时，为二期接口，暂时未定义内容
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取会话持续时间
                      * @return SessionDuration 会话持续时间
+                     * 
                      */
                     double GetSessionDuration() const;
 
                     /**
                      * 设置会话持续时间
-                     * @param SessionDuration 会话持续时间
+                     * @param _sessionDuration 会话持续时间
+                     * 
                      */
                     void SetSessionDuration(const double& _sessionDuration);
 
                     /**
                      * 判断参数 SessionDuration 是否已赋值
                      * @return SessionDuration 是否已赋值
+                     * 
                      */
                     bool SessionDurationHasBeenSet() const;
 
                     /**
                      * 获取访问源IP
                      * @return SrcIp 访问源IP
+                     * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置访问源IP
-                     * @param SrcIp 访问源IP
+                     * @param _srcIp 访问源IP
+                     * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
 
                     /**
                      * 判断参数 SrcIp 是否已赋值
                      * @return SrcIp 是否已赋值
+                     * 
                      */
                     bool SrcIpHasBeenSet() const;
 
                     /**
                      * 获取异常特征
                      * @return BotFeature 异常特征
+                     * 
                      */
                     std::vector<std::string> GetBotFeature() const;
 
                     /**
                      * 设置异常特征
-                     * @param BotFeature 异常特征
+                     * @param _botFeature 异常特征
+                     * 
                      */
                     void SetBotFeature(const std::vector<std::string>& _botFeature);
 
                     /**
                      * 判断参数 BotFeature 是否已赋值
                      * @return BotFeature 是否已赋值
+                     * 
                      */
                     bool BotFeatureHasBeenSet() const;
 
                     /**
                      * 获取最新检测时间
                      * @return Time 最新检测时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置最新检测时间
-                     * @param Time 最新检测时间
+                     * @param _time 最新检测时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取BOT得分
                      * @return Score BOT得分
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置BOT得分
-                     * @param Score BOT得分
+                     * @param _score BOT得分
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取平均速率
                      * @return AvgSpeed 平均速率
+                     * 
                      */
                     double GetAvgSpeed() const;
 
                     /**
                      * 设置平均速率
-                     * @param AvgSpeed 平均速率
+                     * @param _avgSpeed 平均速率
+                     * 
                      */
                     void SetAvgSpeed(const double& _avgSpeed);
 
                     /**
                      * 判断参数 AvgSpeed 是否已赋值
                      * @return AvgSpeed 是否已赋值
+                     * 
                      */
                     bool AvgSpeedHasBeenSet() const;
 
@@ -317,38 +344,44 @@ BotType=UCB时，为二期接口，暂时未定义内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcbDetail BotType=TCB，表示TCB名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTcbDetail() const;
 
                     /**
                      * 设置BotType=TCB，表示TCB名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TcbDetail BotType=TCB，表示TCB名称
+                     * @param _tcbDetail BotType=TCB，表示TCB名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTcbDetail(const std::string& _tcbDetail);
 
                     /**
                      * 判断参数 TcbDetail 是否已赋值
                      * @return TcbDetail 是否已赋值
+                     * 
                      */
                     bool TcbDetailHasBeenSet() const;
 
                     /**
                      * 获取BOT记录唯一ID，用于查询访问详情
                      * @return Id BOT记录唯一ID，用于查询访问详情
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置BOT记录唯一ID，用于查询访问详情
-                     * @param Id BOT记录唯一ID，用于查询访问详情
+                     * @param _id BOT记录唯一ID，用于查询访问详情
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -357,20 +390,23 @@ BotType=UCB时，为二期接口，暂时未定义内容
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名
+                     * @param _domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

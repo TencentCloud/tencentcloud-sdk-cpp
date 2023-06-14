@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备类型代号。 可以从DescribeDeviceClass查询设备类型列表
                      * @return DeviceClassCode 设备类型代号。 可以从DescribeDeviceClass查询设备类型列表
+                     * 
                      */
                     std::string GetDeviceClassCode() const;
 
                     /**
                      * 设置设备类型代号。 可以从DescribeDeviceClass查询设备类型列表
-                     * @param DeviceClassCode 设备类型代号。 可以从DescribeDeviceClass查询设备类型列表
+                     * @param _deviceClassCode 设备类型代号。 可以从DescribeDeviceClass查询设备类型列表
+                     * 
                      */
                     void SetDeviceClassCode(const std::string& _deviceClassCode);
 
                     /**
                      * 判断参数 DeviceClassCode 是否已赋值
                      * @return DeviceClassCode 是否已赋值
+                     * 
                      */
                     bool DeviceClassCodeHasBeenSet() const;
 

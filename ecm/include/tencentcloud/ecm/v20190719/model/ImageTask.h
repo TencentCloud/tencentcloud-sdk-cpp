@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取镜像导入状态， PENDING, PROCESSING, SUCCESS, FAILED
                      * @return State 镜像导入状态， PENDING, PROCESSING, SUCCESS, FAILED
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置镜像导入状态， PENDING, PROCESSING, SUCCESS, FAILED
-                     * @param State 镜像导入状态， PENDING, PROCESSING, SUCCESS, FAILED
+                     * @param _state 镜像导入状态， PENDING, PROCESSING, SUCCESS, FAILED
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -69,56 +72,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 导入失败(FAILED)时， 说明失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置导入失败(FAILED)时， 说明失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 导入失败(FAILED)时， 说明失败原因
+                     * @param _message 导入失败(FAILED)时， 说明失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

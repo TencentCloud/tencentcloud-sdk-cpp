@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取售卖规格所有集合
                      * @return Configs 售卖规格所有集合
+                     * 
                      */
                     std::vector<CdbSellConfig> GetConfigs() const;
 
                     /**
                      * 设置售卖规格所有集合
-                     * @param Configs 售卖规格所有集合
+                     * @param _configs 售卖规格所有集合
+                     * 
                      */
                     void SetConfigs(const std::vector<CdbSellConfig>& _configs);
 
                     /**
                      * 判断参数 Configs 是否已赋值
                      * @return Configs 是否已赋值
+                     * 
                      */
                     bool ConfigsHasBeenSet() const;
 
                     /**
                      * 获取售卖地域可用区集合
                      * @return Regions 售卖地域可用区集合
+                     * 
                      */
                     std::vector<CdbRegionSellConf> GetRegions() const;
 
                     /**
                      * 设置售卖地域可用区集合
-                     * @param Regions 售卖地域可用区集合
+                     * @param _regions 售卖地域可用区集合
+                     * 
                      */
                     void SetRegions(const std::vector<CdbRegionSellConf>& _regions);
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
+                     * 
                      */
                     bool RegionsHasBeenSet() const;
 

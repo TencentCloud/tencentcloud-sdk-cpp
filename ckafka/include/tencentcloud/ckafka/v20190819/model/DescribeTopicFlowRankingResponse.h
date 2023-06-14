@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取流量排行
                      * @return Result 流量排行
+                     * 
                      */
                     TopicFlowRankingResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

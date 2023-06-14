@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取下载文件的URL，有效期为输入的UrlTtl，默认5分钟
                      * @return Url 下载文件的URL，有效期为输入的UrlTtl，默认5分钟
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载文件的URL，有效期为输入的UrlTtl，默认5分钟
-                     * @param Url 下载文件的URL，有效期为输入的UrlTtl，默认5分钟
+                     * @param _url 下载文件的URL，有效期为输入的UrlTtl，默认5分钟
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Option 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOption() const;
 
                     /**
                      * 设置下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Option 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
+                     * @param _option 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOption(const std::string& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
+                     * 
                      */
                     bool OptionHasBeenSet() const;
 

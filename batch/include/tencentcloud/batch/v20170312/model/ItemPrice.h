@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPrice 后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
+                     * @param _unitPrice 后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
 
                     /**
                      * 判断参数 UnitPrice 是否已赋值
                      * @return UnitPrice 是否已赋值
+                     * 
                      */
                     bool UnitPriceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeUnit 后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeUnit 后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+                     * @param _chargeUnit 后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
 
                     /**
                      * 判断参数 ChargeUnit 是否已赋值
                      * @return ChargeUnit 是否已赋值
+                     * 
                      */
                     bool ChargeUnitHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalPrice 预支合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置预支合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalPrice 预支合计费用的原价，预付费模式使用，单位：元。
+                     * @param _originalPrice 预支合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPrice 预支合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置预支合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountPrice 预支合计费用的折扣价，预付费模式使用，单位：元。
+                     * @param _discountPrice 预支合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Discount 折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Discount 折扣，如20.0代表2折。
+                     * @param _discount 折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscount 后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPriceDiscount() const;
 
                     /**
                      * 设置后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceDiscount 后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
+                     * @param _unitPriceDiscount 后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceDiscount(const double& _unitPriceDiscount);
 
                     /**
                      * 判断参数 UnitPriceDiscount 是否已赋值
                      * @return UnitPriceDiscount 是否已赋值
+                     * 
                      */
                     bool UnitPriceDiscountHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceSecondStep 使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPriceSecondStep() const;
 
                     /**
                      * 设置使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceSecondStep 使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。
+                     * @param _unitPriceSecondStep 使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceSecondStep(const double& _unitPriceSecondStep);
 
                     /**
                      * 判断参数 UnitPriceSecondStep 是否已赋值
                      * @return UnitPriceSecondStep 是否已赋值
+                     * 
                      */
                     bool UnitPriceSecondStepHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscountSecondStep 使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPriceDiscountSecondStep() const;
 
                     /**
                      * 设置使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceDiscountSecondStep 使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元
+                     * @param _unitPriceDiscountSecondStep 使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceDiscountSecondStep(const double& _unitPriceDiscountSecondStep);
 
                     /**
                      * 判断参数 UnitPriceDiscountSecondStep 是否已赋值
                      * @return UnitPriceDiscountSecondStep 是否已赋值
+                     * 
                      */
                     bool UnitPriceDiscountSecondStepHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPriceThirdStep() const;
 
                     /**
                      * 设置使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。
+                     * @param _unitPriceThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceThirdStep(const double& _unitPriceThirdStep);
 
                     /**
                      * 判断参数 UnitPriceThirdStep 是否已赋值
                      * @return UnitPriceThirdStep 是否已赋值
+                     * 
                      */
                     bool UnitPriceThirdStepHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscountThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPriceDiscountThirdStep() const;
 
                     /**
                      * 设置使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceDiscountThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元
+                     * @param _unitPriceDiscountThirdStep 使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceDiscountThirdStep(const double& _unitPriceDiscountThirdStep);
 
                     /**
                      * 判断参数 UnitPriceDiscountThirdStep 是否已赋值
                      * @return UnitPriceDiscountThirdStep 是否已赋值
+                     * 
                      */
                     bool UnitPriceDiscountThirdStepHasBeenSet() const;
 
@@ -273,6 +303,7 @@ namespace TencentCloud
                      * @return OriginalPriceThreeYear 预支三年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalPriceThreeYear() const;
 
@@ -280,15 +311,17 @@ namespace TencentCloud
                      * 设置预支三年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalPriceThreeYear 预支三年合计费用的原价，预付费模式使用，单位：元。
+                     * @param _originalPriceThreeYear 预支三年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalPriceThreeYear(const double& _originalPriceThreeYear);
 
                     /**
                      * 判断参数 OriginalPriceThreeYear 是否已赋值
                      * @return OriginalPriceThreeYear 是否已赋值
+                     * 
                      */
                     bool OriginalPriceThreeYearHasBeenSet() const;
 
@@ -299,6 +332,7 @@ namespace TencentCloud
                      * @return DiscountPriceThreeYear 预支三年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountPriceThreeYear() const;
 
@@ -306,15 +340,17 @@ namespace TencentCloud
                      * 设置预支三年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountPriceThreeYear 预支三年合计费用的折扣价，预付费模式使用，单位：元。
+                     * @param _discountPriceThreeYear 预支三年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountPriceThreeYear(const double& _discountPriceThreeYear);
 
                     /**
                      * 判断参数 DiscountPriceThreeYear 是否已赋值
                      * @return DiscountPriceThreeYear 是否已赋值
+                     * 
                      */
                     bool DiscountPriceThreeYearHasBeenSet() const;
 
@@ -325,6 +361,7 @@ namespace TencentCloud
                      * @return DiscountThreeYear 预支三年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountThreeYear() const;
 
@@ -332,15 +369,17 @@ namespace TencentCloud
                      * 设置预支三年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountThreeYear 预支三年应用的折扣，如20.0代表2折。
+                     * @param _discountThreeYear 预支三年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountThreeYear(const double& _discountThreeYear);
 
                     /**
                      * 判断参数 DiscountThreeYear 是否已赋值
                      * @return DiscountThreeYear 是否已赋值
+                     * 
                      */
                     bool DiscountThreeYearHasBeenSet() const;
 
@@ -351,6 +390,7 @@ namespace TencentCloud
                      * @return OriginalPriceFiveYear 预支五年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalPriceFiveYear() const;
 
@@ -358,15 +398,17 @@ namespace TencentCloud
                      * 设置预支五年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalPriceFiveYear 预支五年合计费用的原价，预付费模式使用，单位：元。
+                     * @param _originalPriceFiveYear 预支五年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalPriceFiveYear(const double& _originalPriceFiveYear);
 
                     /**
                      * 判断参数 OriginalPriceFiveYear 是否已赋值
                      * @return OriginalPriceFiveYear 是否已赋值
+                     * 
                      */
                     bool OriginalPriceFiveYearHasBeenSet() const;
 
@@ -377,6 +419,7 @@ namespace TencentCloud
                      * @return DiscountPriceFiveYear 预支五年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountPriceFiveYear() const;
 
@@ -384,15 +427,17 @@ namespace TencentCloud
                      * 设置预支五年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountPriceFiveYear 预支五年合计费用的折扣价，预付费模式使用，单位：元。
+                     * @param _discountPriceFiveYear 预支五年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountPriceFiveYear(const double& _discountPriceFiveYear);
 
                     /**
                      * 判断参数 DiscountPriceFiveYear 是否已赋值
                      * @return DiscountPriceFiveYear 是否已赋值
+                     * 
                      */
                     bool DiscountPriceFiveYearHasBeenSet() const;
 
@@ -403,6 +448,7 @@ namespace TencentCloud
                      * @return DiscountFiveYear 预支五年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountFiveYear() const;
 
@@ -410,15 +456,17 @@ namespace TencentCloud
                      * 设置预支五年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountFiveYear 预支五年应用的折扣，如20.0代表2折。
+                     * @param _discountFiveYear 预支五年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountFiveYear(const double& _discountFiveYear);
 
                     /**
                      * 判断参数 DiscountFiveYear 是否已赋值
                      * @return DiscountFiveYear 是否已赋值
+                     * 
                      */
                     bool DiscountFiveYearHasBeenSet() const;
 
@@ -429,6 +477,7 @@ namespace TencentCloud
                      * @return OriginalPriceOneYear 预支一年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalPriceOneYear() const;
 
@@ -436,15 +485,17 @@ namespace TencentCloud
                      * 设置预支一年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalPriceOneYear 预支一年合计费用的原价，预付费模式使用，单位：元。
+                     * @param _originalPriceOneYear 预支一年合计费用的原价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalPriceOneYear(const double& _originalPriceOneYear);
 
                     /**
                      * 判断参数 OriginalPriceOneYear 是否已赋值
                      * @return OriginalPriceOneYear 是否已赋值
+                     * 
                      */
                     bool OriginalPriceOneYearHasBeenSet() const;
 
@@ -455,6 +506,7 @@ namespace TencentCloud
                      * @return DiscountPriceOneYear 预支一年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountPriceOneYear() const;
 
@@ -462,15 +514,17 @@ namespace TencentCloud
                      * 设置预支一年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountPriceOneYear 预支一年合计费用的折扣价，预付费模式使用，单位：元。
+                     * @param _discountPriceOneYear 预支一年合计费用的折扣价，预付费模式使用，单位：元。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountPriceOneYear(const double& _discountPriceOneYear);
 
                     /**
                      * 判断参数 DiscountPriceOneYear 是否已赋值
                      * @return DiscountPriceOneYear 是否已赋值
+                     * 
                      */
                     bool DiscountPriceOneYearHasBeenSet() const;
 
@@ -481,6 +535,7 @@ namespace TencentCloud
                      * @return DiscountOneYear 预支一年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountOneYear() const;
 
@@ -488,15 +543,17 @@ namespace TencentCloud
                      * 设置预支一年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountOneYear 预支一年应用的折扣，如20.0代表2折。
+                     * @param _discountOneYear 预支一年应用的折扣，如20.0代表2折。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountOneYear(const double& _discountOneYear);
 
                     /**
                      * 判断参数 DiscountOneYear 是否已赋值
                      * @return DiscountOneYear 是否已赋值
+                     * 
                      */
                     bool DiscountOneYearHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等
                      * @return Type 不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等
-                     * @param Type 不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等
+                     * @param _type 不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取type对应字段名的值，如具体的topic名，作者id等
                      * @return Value type对应字段名的值，如具体的topic名，作者id等
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置type对应字段名的值，如具体的topic名，作者id等
-                     * @param Value type对应字段名的值，如具体的topic名，作者id等
+                     * @param _value type对应字段名的值，如具体的topic名，作者id等
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

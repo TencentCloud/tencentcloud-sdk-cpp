@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略版本号
                      * @return VersionId 策略版本号
+                     * 
                      */
                     std::vector<uint64_t> GetVersionId() const;
 
                     /**
                      * 设置策略版本号
-                     * @param VersionId 策略版本号
+                     * @param _versionId 策略版本号
+                     * 
                      */
                     void SetVersionId(const std::vector<uint64_t>& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

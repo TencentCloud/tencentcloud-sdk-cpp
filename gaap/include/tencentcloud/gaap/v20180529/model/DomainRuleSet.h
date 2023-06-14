@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取转发规则域名。
                      * @return Domain 转发规则域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置转发规则域名。
-                     * @param Domain 转发规则域名。
+                     * @param _domain 转发规则域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取该域名对应的转发规则列表。
                      * @return RuleSet 该域名对应的转发规则列表。
+                     * 
                      */
                     std::vector<RuleInfo> GetRuleSet() const;
 
                     /**
                      * 设置该域名对应的转发规则列表。
-                     * @param RuleSet 该域名对应的转发规则列表。
+                     * @param _ruleSet 该域名对应的转发规则列表。
+                     * 
                      */
                     void SetRuleSet(const std::vector<RuleInfo>& _ruleSet);
 
                     /**
                      * 判断参数 RuleSet 是否已赋值
                      * @return RuleSet 是否已赋值
+                     * 
                      */
                     bool RuleSetHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateId 该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificateId 该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
+                     * @param _certificateId 该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateAlias 该域名对应服务器证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
                      * 设置该域名对应服务器证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificateAlias 该域名对应服务器证书名称。
+                     * @param _certificateAlias 该域名对应服务器证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
 
                     /**
                      * 判断参数 CertificateAlias 是否已赋值
                      * @return CertificateAlias 是否已赋值
+                     * 
                      */
                     bool CertificateAliasHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientCertificateId 该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
                      * 设置该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientCertificateId 该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
+                     * @param _clientCertificateId 该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
                     /**
                      * 判断参数 ClientCertificateId 是否已赋值
                      * @return ClientCertificateId 是否已赋值
+                     * 
                      */
                     bool ClientCertificateIdHasBeenSet() const;
 
@@ -155,20 +170,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientCertificateAlias 该域名对应客户端证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientCertificateAlias() const;
 
                     /**
                      * 设置该域名对应客户端证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientCertificateAlias 该域名对应客户端证书名称。
+                     * @param _clientCertificateAlias 该域名对应客户端证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientCertificateAlias(const std::string& _clientCertificateAlias);
 
                     /**
                      * 判断参数 ClientCertificateAlias 是否已赋值
                      * @return ClientCertificateAlias 是否已赋值
+                     * 
                      */
                     bool ClientCertificateAliasHasBeenSet() const;
 
@@ -177,20 +195,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BasicAuthConfId 该域名对应基础认证配置ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBasicAuthConfId() const;
 
                     /**
                      * 设置该域名对应基础认证配置ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BasicAuthConfId 该域名对应基础认证配置ID。
+                     * @param _basicAuthConfId 该域名对应基础认证配置ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBasicAuthConfId(const std::string& _basicAuthConfId);
 
                     /**
                      * 判断参数 BasicAuthConfId 是否已赋值
                      * @return BasicAuthConfId 是否已赋值
+                     * 
                      */
                     bool BasicAuthConfIdHasBeenSet() const;
 
@@ -203,6 +224,7 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBasicAuth() const;
 
@@ -211,16 +233,18 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BasicAuth 基础认证开关，其中：
+                     * @param _basicAuth 基础认证开关，其中：
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBasicAuth(const int64_t& _basicAuth);
 
                     /**
                      * 判断参数 BasicAuth 是否已赋值
                      * @return BasicAuth 是否已赋值
+                     * 
                      */
                     bool BasicAuthHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BasicAuthConfAlias 该域名对应基础认证配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBasicAuthConfAlias() const;
 
                     /**
                      * 设置该域名对应基础认证配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BasicAuthConfAlias 该域名对应基础认证配置名称。
+                     * @param _basicAuthConfAlias 该域名对应基础认证配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBasicAuthConfAlias(const std::string& _basicAuthConfAlias);
 
                     /**
                      * 判断参数 BasicAuthConfAlias 是否已赋值
                      * @return BasicAuthConfAlias 是否已赋值
+                     * 
                      */
                     bool BasicAuthConfAliasHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerCertificateId 该域名对应源站认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealServerCertificateId() const;
 
                     /**
                      * 设置该域名对应源站认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerCertificateId 该域名对应源站认证证书ID。
+                     * @param _realServerCertificateId 该域名对应源站认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerCertificateId(const std::string& _realServerCertificateId);
 
                     /**
                      * 判断参数 RealServerCertificateId 是否已赋值
                      * @return RealServerCertificateId 是否已赋值
+                     * 
                      */
                     bool RealServerCertificateIdHasBeenSet() const;
 
@@ -277,6 +307,7 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRealServerAuth() const;
 
@@ -285,16 +316,18 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerAuth 源站认证开关，其中：
+                     * @param _realServerAuth 源站认证开关，其中：
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerAuth(const int64_t& _realServerAuth);
 
                     /**
                      * 判断参数 RealServerAuth 是否已赋值
                      * @return RealServerAuth 是否已赋值
+                     * 
                      */
                     bool RealServerAuthHasBeenSet() const;
 
@@ -303,20 +336,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerCertificateAlias 该域名对应源站认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealServerCertificateAlias() const;
 
                     /**
                      * 设置该域名对应源站认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerCertificateAlias 该域名对应源站认证证书名称。
+                     * @param _realServerCertificateAlias 该域名对应源站认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerCertificateAlias(const std::string& _realServerCertificateAlias);
 
                     /**
                      * 判断参数 RealServerCertificateAlias 是否已赋值
                      * @return RealServerCertificateAlias 是否已赋值
+                     * 
                      */
                     bool RealServerCertificateAliasHasBeenSet() const;
 
@@ -325,20 +361,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GaapCertificateId 该域名对应通道认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGaapCertificateId() const;
 
                     /**
                      * 设置该域名对应通道认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GaapCertificateId 该域名对应通道认证证书ID。
+                     * @param _gaapCertificateId 该域名对应通道认证证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGaapCertificateId(const std::string& _gaapCertificateId);
 
                     /**
                      * 判断参数 GaapCertificateId 是否已赋值
                      * @return GaapCertificateId 是否已赋值
+                     * 
                      */
                     bool GaapCertificateIdHasBeenSet() const;
 
@@ -351,6 +390,7 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGaapAuth() const;
 
@@ -359,16 +399,18 @@ namespace TencentCloud
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GaapAuth 通道认证开关，其中：
+                     * @param _gaapAuth 通道认证开关，其中：
 0，表示未开启；
 1，表示已开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGaapAuth(const int64_t& _gaapAuth);
 
                     /**
                      * 判断参数 GaapAuth 是否已赋值
                      * @return GaapAuth 是否已赋值
+                     * 
                      */
                     bool GaapAuthHasBeenSet() const;
 
@@ -377,20 +419,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GaapCertificateAlias 该域名对应通道认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGaapCertificateAlias() const;
 
                     /**
                      * 设置该域名对应通道认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GaapCertificateAlias 该域名对应通道认证证书名称。
+                     * @param _gaapCertificateAlias 该域名对应通道认证证书名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGaapCertificateAlias(const std::string& _gaapCertificateAlias);
 
                     /**
                      * 判断参数 GaapCertificateAlias 是否已赋值
                      * @return GaapCertificateAlias 是否已赋值
+                     * 
                      */
                     bool GaapCertificateAliasHasBeenSet() const;
 
@@ -399,20 +444,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerCertificateDomain 源站认证域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealServerCertificateDomain() const;
 
                     /**
                      * 设置源站认证域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerCertificateDomain 源站认证域名。
+                     * @param _realServerCertificateDomain 源站认证域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerCertificateDomain(const std::string& _realServerCertificateDomain);
 
                     /**
                      * 判断参数 RealServerCertificateDomain 是否已赋值
                      * @return RealServerCertificateDomain 是否已赋值
+                     * 
                      */
                     bool RealServerCertificateDomainHasBeenSet() const;
 
@@ -421,20 +469,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CertificateAliasInfo> GetPolyClientCertificateAliasInfo() const;
 
                     /**
                      * 设置多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和别名
+                     * @param _polyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolyClientCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo);
 
                     /**
                      * 判断参数 PolyClientCertificateAliasInfo 是否已赋值
                      * @return PolyClientCertificateAliasInfo 是否已赋值
+                     * 
                      */
                     bool PolyClientCertificateAliasInfoHasBeenSet() const;
 
@@ -443,20 +494,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolyRealServerCertificateAliasInfo 多源站证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CertificateAliasInfo> GetPolyRealServerCertificateAliasInfo() const;
 
                     /**
                      * 设置多源站证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolyRealServerCertificateAliasInfo 多源站证书时，返回多个证书的id和别名
+                     * @param _polyRealServerCertificateAliasInfo 多源站证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolyRealServerCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyRealServerCertificateAliasInfo);
 
                     /**
                      * 判断参数 PolyRealServerCertificateAliasInfo 是否已赋值
                      * @return PolyRealServerCertificateAliasInfo 是否已赋值
+                     * 
                      */
                     bool PolyRealServerCertificateAliasInfoHasBeenSet() const;
 
@@ -471,6 +525,7 @@ namespace TencentCloud
 1表示变更中，
 2表示删除中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDomainStatus() const;
 
@@ -480,17 +535,19 @@ namespace TencentCloud
 1表示变更中，
 2表示删除中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainStatus 域名的状态。
+                     * @param _domainStatus 域名的状态。
 0表示运行中，
 1表示变更中，
 2表示删除中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainStatus(const uint64_t& _domainStatus);
 
                     /**
                      * 判断参数 DomainStatus 是否已赋值
                      * @return DomainStatus 是否已赋值
+                     * 
                      */
                     bool DomainStatusHasBeenSet() const;
 
@@ -499,20 +556,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBanStatus() const;
 
                     /**
                      * 设置封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BanStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
+                     * @param _banStatus 封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBanStatus(const std::string& _banStatus);
 
                     /**
                      * 判断参数 BanStatus 是否已赋值
                      * @return BanStatus 是否已赋值
+                     * 
                      */
                     bool BanStatusHasBeenSet() const;
 
@@ -525,6 +585,7 @@ namespace TencentCloud
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHttp3Supported() const;
 
@@ -533,16 +594,18 @@ namespace TencentCloud
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http3Supported Http3特性标识，其中：
+                     * @param _http3Supported Http3特性标识，其中：
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
 
                     /**
                      * 判断参数 Http3Supported 是否已赋值
                      * @return Http3Supported 是否已赋值
+                     * 
                      */
                     bool Http3SupportedHasBeenSet() const;
 

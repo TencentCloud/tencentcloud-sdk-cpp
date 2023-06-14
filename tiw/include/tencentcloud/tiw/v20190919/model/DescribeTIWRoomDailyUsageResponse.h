@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取指定区间指定产品的房间用量列表
                      * @return Usages 指定区间指定产品的房间用量列表
+                     * 
                      */
                     std::vector<RoomUsageDataItem> GetUsages() const;
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 
                     /**
                      * 获取用量列表总数
                      * @return Total 用量列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

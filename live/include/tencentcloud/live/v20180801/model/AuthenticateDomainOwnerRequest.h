@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要验证的域名。
                      * @return DomainName 要验证的域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置要验证的域名。
-                     * @param DomainName 要验证的域名。
+                     * @param _domainName 要验证的域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -69,6 +72,7 @@ dbCheck :  检查是否已经验证成功过。
 dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
+                     * 
                      */
                     std::string GetVerifyType() const;
 
@@ -77,16 +81,18 @@ dbCheck :  检查是否已经验证成功过。
 dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
-                     * @param VerifyType 验证类型。可取值：
+                     * @param _verifyType 验证类型。可取值：
 dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
+                     * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
 
                     /**
                      * 判断参数 VerifyType 是否已赋值
                      * @return VerifyType 是否已赋值
+                     * 
                      */
                     bool VerifyTypeHasBeenSet() const;
 

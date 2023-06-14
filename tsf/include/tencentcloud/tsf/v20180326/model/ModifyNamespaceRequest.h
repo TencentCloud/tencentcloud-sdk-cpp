@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取命名空间备注
                      * @return NamespaceDesc 命名空间备注
+                     * 
                      */
                     std::string GetNamespaceDesc() const;
 
                     /**
                      * 设置命名空间备注
-                     * @param NamespaceDesc 命名空间备注
+                     * @param _namespaceDesc 命名空间备注
+                     * 
                      */
                     void SetNamespaceDesc(const std::string& _namespaceDesc);
 
                     /**
                      * 判断参数 NamespaceDesc 是否已赋值
                      * @return NamespaceDesc 是否已赋值
+                     * 
                      */
                     bool NamespaceDescHasBeenSet() const;
 
                     /**
                      * 获取是否开启高可用
                      * @return IsHaEnable 是否开启高可用
+                     * 
                      */
                     std::string GetIsHaEnable() const;
 
                     /**
                      * 设置是否开启高可用
-                     * @param IsHaEnable 是否开启高可用
+                     * @param _isHaEnable 是否开启高可用
+                     * 
                      */
                     void SetIsHaEnable(const std::string& _isHaEnable);
 
                     /**
                      * 判断参数 IsHaEnable 是否已赋值
                      * @return IsHaEnable 是否已赋值
+                     * 
                      */
                     bool IsHaEnableHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
                      * @return NewPassword 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
+                     * 
                      */
                     std::string GetNewPassword() const;
 
                     /**
                      * 设置数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
-                     * @param NewPassword 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
+                     * @param _newPassword 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
+                     * 
                      */
                     void SetNewPassword(const std::string& _newPassword);
 
                     /**
                      * 判断参数 NewPassword 是否已赋值
                      * @return NewPassword 是否已赋值
+                     * 
                      */
                     bool NewPasswordHasBeenSet() const;
 
                     /**
                      * 获取云数据库账号。
                      * @return Accounts 云数据库账号。
+                     * 
                      */
                     std::vector<Account> GetAccounts() const;
 
                     /**
                      * 设置云数据库账号。
-                     * @param Accounts 云数据库账号。
+                     * @param _accounts 云数据库账号。
+                     * 
                      */
                     void SetAccounts(const std::vector<Account>& _accounts);
 
                     /**
                      * 判断参数 Accounts 是否已赋值
                      * @return Accounts 是否已赋值
+                     * 
                      */
                     bool AccountsHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageId 镜像ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageId 镜像ID
+                     * @param _imageId 镜像ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 

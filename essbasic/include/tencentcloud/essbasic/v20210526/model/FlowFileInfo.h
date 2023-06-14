@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取签署文件资源Id列表，目前仅支持单个文件
                      * @return FileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置签署文件资源Id列表，目前仅支持单个文件
-                     * @param FileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * @param _fileIds 签署文件资源Id列表，目前仅支持单个文件
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取签署流程名称，长度不超过200个字符
                      * @return FlowName 签署流程名称，长度不超过200个字符
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置签署流程名称，长度不超过200个字符
-                     * @param FlowName 签署流程名称，长度不超过200个字符
+                     * @param _flowName 签署流程名称，长度不超过200个字符
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
                     /**
                      * 获取签署流程签约方列表，最多不超过5个参与方
                      * @return FlowApprovers 签署流程签约方列表，最多不超过5个参与方
+                     * 
                      */
                     std::vector<FlowApproverInfo> GetFlowApprovers() const;
 
                     /**
                      * 设置签署流程签约方列表，最多不超过5个参与方
-                     * @param FlowApprovers 签署流程签约方列表，最多不超过5个参与方
+                     * @param _flowApprovers 签署流程签约方列表，最多不超过5个参与方
+                     * 
                      */
                     void SetFlowApprovers(const std::vector<FlowApproverInfo>& _flowApprovers);
 
                     /**
                      * 判断参数 FlowApprovers 是否已赋值
                      * @return FlowApprovers 是否已赋值
+                     * 
                      */
                     bool FlowApproversHasBeenSet() const;
 
                     /**
                      * 获取签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
                      * @return Deadline 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
-                     * @param Deadline 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * @param _deadline 签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年
+                     * 
                      */
                     void SetDeadline(const int64_t& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取签署流程的描述，长度不超过1000个字符
                      * @return FlowDescription 签署流程的描述，长度不超过1000个字符
+                     * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置签署流程的描述，长度不超过1000个字符
-                     * @param FlowDescription 签署流程的描述，长度不超过1000个字符
+                     * @param _flowDescription 签署流程的描述，长度不超过1000个字符
+                     * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
                     /**
                      * 判断参数 FlowDescription 是否已赋值
                      * @return FlowDescription 是否已赋值
+                     * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取签署流程的类型，长度不超过255个字符
                      * @return FlowType 签署流程的类型，长度不超过255个字符
+                     * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置签署流程的类型，长度不超过255个字符
-                     * @param FlowType 签署流程的类型，长度不超过255个字符
+                     * @param _flowType 签署流程的类型，长度不超过255个字符
+                     * 
                      */
                     void SetFlowType(const std::string& _flowType);
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取签署流程回调地址，长度不超过255个字符
                      * @return CallbackUrl 签署流程回调地址，长度不超过255个字符
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置签署流程回调地址，长度不超过255个字符
-                     * @param CallbackUrl 签署流程回调地址，长度不超过255个字符
+                     * @param _callbackUrl 签署流程回调地址，长度不超过255个字符
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
                      * @return CustomerData 第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * 
                      */
                     std::string GetCustomerData() const;
 
                     /**
                      * 设置第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-                     * @param CustomerData 第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @param _customerData 第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * 
                      */
                     void SetCustomerData(const std::string& _customerData);
 
                     /**
                      * 判断参数 CustomerData 是否已赋值
                      * @return CustomerData 是否已赋值
+                     * 
                      */
                     bool CustomerDataHasBeenSet() const;
 
                     /**
                      * 获取合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
                      * @return Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * 
                      */
                     bool GetUnordered() const;
 
                     /**
                      * 设置合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
-                     * @param Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * @param _unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * 
                      */
                     void SetUnordered(const bool& _unordered);
 
                     /**
                      * 判断参数 Unordered 是否已赋值
                      * @return Unordered 是否已赋值
+                     * 
                      */
                     bool UnorderedHasBeenSet() const;
 
                     /**
                      * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      * @return CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * 
                      */
                     std::string GetCustomShowMap() const;
 
                     /**
                      * 设置合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
-                     * @param CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * @param _customShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * 
                      */
                     void SetCustomShowMap(const std::string& _customShowMap);
 
                     /**
                      * 判断参数 CustomShowMap 是否已赋值
                      * @return CustomShowMap 是否已赋值
+                     * 
                      */
                     bool CustomShowMapHasBeenSet() const;
 
                     /**
                      * 获取本企业(发起方企业)是否需要签署审批
                      * @return NeedSignReview 本企业(发起方企业)是否需要签署审批
+                     * 
                      */
                     bool GetNeedSignReview() const;
 
                     /**
                      * 设置本企业(发起方企业)是否需要签署审批
-                     * @param NeedSignReview 本企业(发起方企业)是否需要签署审批
+                     * @param _needSignReview 本企业(发起方企业)是否需要签署审批
+                     * 
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
 
                     /**
                      * 判断参数 NeedSignReview 是否已赋值
                      * @return NeedSignReview 是否已赋值
+                     * 
                      */
                     bool NeedSignReviewHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取场景类型，支持WINDOWS
                      * @return Scene 场景类型，支持WINDOWS
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景类型，支持WINDOWS
-                     * @param Scene 场景类型，支持WINDOWS
+                     * @param _scene 场景类型，支持WINDOWS
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取运行Agent的User
                      * @return User 运行Agent的User
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置运行Agent的User
-                     * @param User 运行Agent的User
+                     * @param _user 运行Agent的User
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取运行Agent的Session
                      * @return Session 运行Agent的Session
+                     * 
                      */
                     std::string GetSession() const;
 
                     /**
                      * 设置运行Agent的Session
-                     * @param Session 运行Agent的Session
+                     * @param _session 运行Agent的Session
+                     * 
                      */
                     void SetSession(const std::string& _session);
 
                     /**
                      * 判断参数 Session 是否已赋值
                      * @return Session 是否已赋值
+                     * 
                      */
                     bool SessionHasBeenSet() const;
 

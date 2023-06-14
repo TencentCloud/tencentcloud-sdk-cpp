@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分组触发字段名称
                      * @return Key 分组触发字段名称
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置分组触发字段名称
-                     * @param Key 分组触发字段名称
+                     * @param _key 分组触发字段名称
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取分组触发字段值
                      * @return Value 分组触发字段值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置分组触发字段值
-                     * @param Value 分组触发字段值
+                     * @param _value 分组触发字段值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

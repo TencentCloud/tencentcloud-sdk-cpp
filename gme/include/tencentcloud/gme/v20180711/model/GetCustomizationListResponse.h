@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomizationConfigs 语音消息转文本热句模型配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomizationConfigs> GetCustomizationConfigs() const;
 
                     /**
                      * 判断参数 CustomizationConfigs 是否已赋值
                      * @return CustomizationConfigs 是否已赋值
+                     * 
                      */
                     bool CustomizationConfigsHasBeenSet() const;
 

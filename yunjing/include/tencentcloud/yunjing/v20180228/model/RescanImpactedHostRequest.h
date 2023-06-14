@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞ID。
                      * @return Id 漏洞ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置漏洞ID。
-                     * @param Id 漏洞ID。
+                     * @param _id 漏洞ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

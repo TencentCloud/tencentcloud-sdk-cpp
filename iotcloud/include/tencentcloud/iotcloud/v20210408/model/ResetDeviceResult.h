@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取是否成功
                      * @return Success 是否成功
+                     * 
                      */
                     bool GetSuccess() const;
 
                     /**
                      * 设置是否成功
-                     * @param Success 是否成功
+                     * @param _success 是否成功
+                     * 
                      */
                     void SetSuccess(const bool& _success);
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

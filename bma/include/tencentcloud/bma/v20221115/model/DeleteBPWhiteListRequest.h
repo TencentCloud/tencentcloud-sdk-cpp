@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取白名单id
                      * @return WhiteListId 白名单id
+                     * 
                      */
                     int64_t GetWhiteListId() const;
 
                     /**
                      * 设置白名单id
-                     * @param WhiteListId 白名单id
+                     * @param _whiteListId 白名单id
+                     * 
                      */
                     void SetWhiteListId(const int64_t& _whiteListId);
 
                     /**
                      * 判断参数 WhiteListId 是否已赋值
                      * @return WhiteListId 是否已赋值
+                     * 
                      */
                     bool WhiteListIdHasBeenSet() const;
 

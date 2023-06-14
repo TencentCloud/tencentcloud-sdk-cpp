@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取分配给弹性网卡的IPv6地址列表。
                      * @return Ipv6AddressSet 分配给弹性网卡的IPv6地址列表。
+                     * 
                      */
                     std::vector<Ipv6Address> GetIpv6AddressSet() const;
 
                     /**
                      * 判断参数 Ipv6AddressSet 是否已赋值
                      * @return Ipv6AddressSet 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressSetHasBeenSet() const;
 

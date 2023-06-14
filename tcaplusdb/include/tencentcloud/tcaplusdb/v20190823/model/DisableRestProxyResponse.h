@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中
                      * @return RestProxyStatus RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中
+                     * 
                      */
                     uint64_t GetRestProxyStatus() const;
 
                     /**
                      * 判断参数 RestProxyStatus 是否已赋值
                      * @return RestProxyStatus 是否已赋值
+                     * 
                      */
                     bool RestProxyStatusHasBeenSet() const;
 
                     /**
                      * 获取TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务
                      * @return TaskId TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

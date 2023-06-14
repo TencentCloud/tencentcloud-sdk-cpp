@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。外部平台接入云企付平台下发。必填。
                      * @return ChannelMerchantId 渠道商户号。外部平台接入云企付平台下发。必填。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。外部平台接入云企付平台下发。必填。
-                     * @param ChannelMerchantId 渠道商户号。外部平台接入云企付平台下发。必填。
+                     * @param _channelMerchantId 渠道商户号。外部平台接入云企付平台下发。必填。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道名称。详见附录-枚举类型-ChannelName。
                      * @return ChannelName 渠道名称。详见附录-枚举类型-ChannelName。
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名称。详见附录-枚举类型-ChannelName。
-                     * @param ChannelName 渠道名称。详见附录-枚举类型-ChannelName。
+                     * @param _channelName 渠道名称。详见附录-枚举类型-ChannelName。
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取外部子商户ID。
                      * @return OutSubMerchantId 外部子商户ID。
+                     * 
                      */
                     std::string GetOutSubMerchantId() const;
 
                     /**
                      * 设置外部子商户ID。
-                     * @param OutSubMerchantId 外部子商户ID。
+                     * @param _outSubMerchantId 外部子商户ID。
+                     * 
                      */
                     void SetOutSubMerchantId(const std::string& _outSubMerchantId);
 
                     /**
                      * 判断参数 OutSubMerchantId 是否已赋值
                      * @return OutSubMerchantId 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户ID。
                      * @return ChannelSubMerchantId 渠道子商户ID。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID。
-                     * @param ChannelSubMerchantId 渠道子商户ID。
+                     * @param _channelSubMerchantId 渠道子商户ID。
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 

@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取总读取记录数
                      * @return TotalReadRecords 总读取记录数
+                     * 
                      */
                     uint64_t GetTotalReadRecords() const;
 
                     /**
                      * 设置总读取记录数
-                     * @param TotalReadRecords 总读取记录数
+                     * @param _totalReadRecords 总读取记录数
+                     * 
                      */
                     void SetTotalReadRecords(const uint64_t& _totalReadRecords);
 
                     /**
                      * 判断参数 TotalReadRecords 是否已赋值
                      * @return TotalReadRecords 是否已赋值
+                     * 
                      */
                     bool TotalReadRecordsHasBeenSet() const;
 
                     /**
                      * 获取总读取字节数
                      * @return TotalReadBytes 总读取字节数
+                     * 
                      */
                     uint64_t GetTotalReadBytes() const;
 
                     /**
                      * 设置总读取字节数
-                     * @param TotalReadBytes 总读取字节数
+                     * @param _totalReadBytes 总读取字节数
+                     * 
                      */
                     void SetTotalReadBytes(const uint64_t& _totalReadBytes);
 
                     /**
                      * 判断参数 TotalReadBytes 是否已赋值
                      * @return TotalReadBytes 是否已赋值
+                     * 
                      */
                     bool TotalReadBytesHasBeenSet() const;
 
                     /**
                      * 获取总写入记录数
                      * @return TotalWriteRecords 总写入记录数
+                     * 
                      */
                     uint64_t GetTotalWriteRecords() const;
 
                     /**
                      * 设置总写入记录数
-                     * @param TotalWriteRecords 总写入记录数
+                     * @param _totalWriteRecords 总写入记录数
+                     * 
                      */
                     void SetTotalWriteRecords(const uint64_t& _totalWriteRecords);
 
                     /**
                      * 判断参数 TotalWriteRecords 是否已赋值
                      * @return TotalWriteRecords 是否已赋值
+                     * 
                      */
                     bool TotalWriteRecordsHasBeenSet() const;
 
                     /**
                      * 获取总写入字节数
                      * @return TotalWriteBytes 总写入字节数
+                     * 
                      */
                     uint64_t GetTotalWriteBytes() const;
 
                     /**
                      * 设置总写入字节数
-                     * @param TotalWriteBytes 总写入字节数
+                     * @param _totalWriteBytes 总写入字节数
+                     * 
                      */
                     void SetTotalWriteBytes(const uint64_t& _totalWriteBytes);
 
                     /**
                      * 判断参数 TotalWriteBytes 是否已赋值
                      * @return TotalWriteBytes 是否已赋值
+                     * 
                      */
                     bool TotalWriteBytesHasBeenSet() const;
 
                     /**
                      * 获取速率（条/秒）
                      * @return RecordSpeed 速率（条/秒）
+                     * 
                      */
                     uint64_t GetRecordSpeed() const;
 
                     /**
                      * 设置速率（条/秒）
-                     * @param RecordSpeed 速率（条/秒）
+                     * @param _recordSpeed 速率（条/秒）
+                     * 
                      */
                     void SetRecordSpeed(const uint64_t& _recordSpeed);
 
                     /**
                      * 判断参数 RecordSpeed 是否已赋值
                      * @return RecordSpeed 是否已赋值
+                     * 
                      */
                     bool RecordSpeedHasBeenSet() const;
 
                     /**
                      * 获取流量（Byte/秒）
                      * @return ByteSpeed 流量（Byte/秒）
+                     * 
                      */
                     double GetByteSpeed() const;
 
                     /**
                      * 设置流量（Byte/秒）
-                     * @param ByteSpeed 流量（Byte/秒）
+                     * @param _byteSpeed 流量（Byte/秒）
+                     * 
                      */
                     void SetByteSpeed(const double& _byteSpeed);
 
                     /**
                      * 判断参数 ByteSpeed 是否已赋值
                      * @return ByteSpeed 是否已赋值
+                     * 
                      */
                     bool ByteSpeedHasBeenSet() const;
 
                     /**
                      * 获取脏数据记录数
                      * @return TotalErrorRecords 脏数据记录数
+                     * 
                      */
                     uint64_t GetTotalErrorRecords() const;
 
                     /**
                      * 设置脏数据记录数
-                     * @param TotalErrorRecords 脏数据记录数
+                     * @param _totalErrorRecords 脏数据记录数
+                     * 
                      */
                     void SetTotalErrorRecords(const uint64_t& _totalErrorRecords);
 
                     /**
                      * 判断参数 TotalErrorRecords 是否已赋值
                      * @return TotalErrorRecords 是否已赋值
+                     * 
                      */
                     bool TotalErrorRecordsHasBeenSet() const;
 
                     /**
                      * 获取脏数据字节数
                      * @return TotalErrorBytes 脏数据字节数
+                     * 
                      */
                     uint64_t GetTotalErrorBytes() const;
 
                     /**
                      * 设置脏数据字节数
-                     * @param TotalErrorBytes 脏数据字节数
+                     * @param _totalErrorBytes 脏数据字节数
+                     * 
                      */
                     void SetTotalErrorBytes(const uint64_t& _totalErrorBytes);
 
                     /**
                      * 判断参数 TotalErrorBytes 是否已赋值
                      * @return TotalErrorBytes 是否已赋值
+                     * 
                      */
                     bool TotalErrorBytesHasBeenSet() const;
 
                     /**
                      * 获取任务运行总时长
                      * @return TotalRunDuration 任务运行总时长
+                     * 
                      */
                     uint64_t GetTotalRunDuration() const;
 
                     /**
                      * 设置任务运行总时长
-                     * @param TotalRunDuration 任务运行总时长
+                     * @param _totalRunDuration 任务运行总时长
+                     * 
                      */
                     void SetTotalRunDuration(const uint64_t& _totalRunDuration);
 
                     /**
                      * 判断参数 TotalRunDuration 是否已赋值
                      * @return TotalRunDuration 是否已赋值
+                     * 
                      */
                     bool TotalRunDurationHasBeenSet() const;
 
                     /**
                      * 获取任务开始运行时间
                      * @return BeginRunTime 任务开始运行时间
+                     * 
                      */
                     std::string GetBeginRunTime() const;
 
                     /**
                      * 设置任务开始运行时间
-                     * @param BeginRunTime 任务开始运行时间
+                     * @param _beginRunTime 任务开始运行时间
+                     * 
                      */
                     void SetBeginRunTime(const std::string& _beginRunTime);
 
                     /**
                      * 判断参数 BeginRunTime 是否已赋值
                      * @return BeginRunTime 是否已赋值
+                     * 
                      */
                     bool BeginRunTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结束运行时间
                      * @return EndRunTime 任务结束运行时间
+                     * 
                      */
                     std::string GetEndRunTime() const;
 
                     /**
                      * 设置任务结束运行时间
-                     * @param EndRunTime 任务结束运行时间
+                     * @param _endRunTime 任务结束运行时间
+                     * 
                      */
                     void SetEndRunTime(const std::string& _endRunTime);
 
                     /**
                      * 判断参数 EndRunTime 是否已赋值
                      * @return EndRunTime 是否已赋值
+                     * 
                      */
                     bool EndRunTimeHasBeenSet() const;
 

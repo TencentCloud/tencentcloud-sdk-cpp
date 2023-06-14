@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 通道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置通道ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyId 通道ID
+                     * @param _proxyId 通道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 通道接入ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置通道接入ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip 通道接入ip
+                     * @param _vip 通道接入ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VipList 三网通道VIP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IPDetail> GetVipList() const;
 
                     /**
                      * 设置三网通道VIP列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VipList 三网通道VIP列表
+                     * @param _vipList 三网通道VIP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVipList(const std::vector<IPDetail>& _vipList);
 
                     /**
                      * 判断参数 VipList 是否已赋值
                      * @return VipList 是否已赋值
+                     * 
                      */
                     bool VipListHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceRegionIdcType 接入点IDC类型。ec或dc
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceRegionIdcType() const;
 
                     /**
                      * 设置接入点IDC类型。ec或dc
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceRegionIdcType 接入点IDC类型。ec或dc
+                     * @param _sourceRegionIdcType 接入点IDC类型。ec或dc
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceRegionIdcType(const std::string& _sourceRegionIdcType);
 
                     /**
                      * 判断参数 SourceRegionIdcType 是否已赋值
                      * @return SourceRegionIdcType 是否已赋值
+                     * 
                      */
                     bool SourceRegionIdcTypeHasBeenSet() const;
 

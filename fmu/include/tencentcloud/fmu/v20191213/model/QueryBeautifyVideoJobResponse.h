@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取当前任务状态：排队中、处理中、处理失败或者处理完成
                      * @return JobStatus 当前任务状态：排队中、处理中、处理失败或者处理完成
+                     * 
                      */
                     std::string GetJobStatus() const;
 
                     /**
                      * 判断参数 JobStatus 是否已赋值
                      * @return JobStatus 是否已赋值
+                     * 
                      */
                     bool JobStatusHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeautifyVideoOutput 视频美颜输出的结果信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BeautifyVideoOutput GetBeautifyVideoOutput() const;
 
                     /**
                      * 判断参数 BeautifyVideoOutput 是否已赋值
                      * @return BeautifyVideoOutput 是否已赋值
+                     * 
                      */
                     bool BeautifyVideoOutputHasBeenSet() const;
 

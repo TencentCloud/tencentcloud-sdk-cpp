@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取集群唯一ID
                      * @return ClusterId 集群唯一ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群唯一ID
-                     * @param ClusterId 集群唯一ID
+                     * @param _clusterId 集群唯一ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 集群所在可用区，如ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置集群所在可用区，如ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 集群所在可用区，如ap-guangzhou-1
+                     * @param _zone 集群所在可用区，如ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

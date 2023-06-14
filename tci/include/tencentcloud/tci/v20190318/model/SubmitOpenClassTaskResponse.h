@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取图像任务直接返回结果，包括：FaceAttr、 FaceExpression、 FaceIdentify、 FaceInfo、 FacePose、 StudentBodyMovement、TimeInfo
                      * @return ImageResults 图像任务直接返回结果，包括：FaceAttr、 FaceExpression、 FaceIdentify、 FaceInfo、 FacePose、 StudentBodyMovement、TimeInfo
+                     * 
                      */
                     std::vector<ImageTaskResult> GetImageResults() const;
 
                     /**
                      * 判断参数 ImageResults 是否已赋值
                      * @return ImageResults 是否已赋值
+                     * 
                      */
                     bool ImageResultsHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

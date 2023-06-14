@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取使用场景Id。
                      * @return SceneId 使用场景Id。
+                     * 
                      */
                     std::string GetSceneId() const;
 
                     /**
                      * 设置使用场景Id。
-                     * @param SceneId 使用场景Id。
+                     * @param _sceneId 使用场景Id。
+                     * 
                      */
                     void SetSceneId(const std::string& _sceneId);
 
                     /**
                      * 判断参数 SceneId 是否已赋值
                      * @return SceneId 是否已赋值
+                     * 
                      */
                     bool SceneIdHasBeenSet() const;
 
                     /**
                      * 获取使用场景展示名称。
                      * @return DisplayName 使用场景展示名称。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置使用场景展示名称。
-                     * @param DisplayName 使用场景展示名称。
+                     * @param _displayName 使用场景展示名称。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取使用场景描述信息。
                      * @return Description 使用场景描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置使用场景描述信息。
-                     * @param Description 使用场景描述信息。
+                     * @param _description 使用场景描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

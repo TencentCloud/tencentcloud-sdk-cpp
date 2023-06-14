@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取暴露方式
                      * @return Expose 暴露方式
+                     * 
                      */
                     ExposeInfo GetExpose() const;
 
                     /**
                      * 判断参数 Expose 是否已赋值
                      * @return Expose 是否已赋值
+                     * 
                      */
                     bool ExposeHasBeenSet() const;
 

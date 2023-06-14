@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return LastModifiedTime 更新时间
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param LastModifiedTime 更新时间
+                     * @param _lastModifiedTime 更新时间
+                     * 
                      */
                     void SetLastModifiedTime(const std::string& _lastModifiedTime);
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 
                     /**
                      * 获取存储库名称
                      * @return CodeRepositoryName 存储库名称
+                     * 
                      */
                     std::string GetCodeRepositoryName() const;
 
                     /**
                      * 设置存储库名称
-                     * @param CodeRepositoryName 存储库名称
+                     * @param _codeRepositoryName 存储库名称
+                     * 
                      */
                     void SetCodeRepositoryName(const std::string& _codeRepositoryName);
 
                     /**
                      * 判断参数 CodeRepositoryName 是否已赋值
                      * @return CodeRepositoryName 是否已赋值
+                     * 
                      */
                     bool CodeRepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取Git配置
                      * @return GitConfig Git配置
+                     * 
                      */
                     GitConfig GetGitConfig() const;
 
                     /**
                      * 设置Git配置
-                     * @param GitConfig Git配置
+                     * @param _gitConfig Git配置
+                     * 
                      */
                     void SetGitConfig(const GitConfig& _gitConfig);
 
                     /**
                      * 判断参数 GitConfig 是否已赋值
                      * @return GitConfig 是否已赋值
+                     * 
                      */
                     bool GitConfigHasBeenSet() const;
 
                     /**
                      * 获取是否有Git凭证
                      * @return NoSecret 是否有Git凭证
+                     * 
                      */
                     bool GetNoSecret() const;
 
                     /**
                      * 设置是否有Git凭证
-                     * @param NoSecret 是否有Git凭证
+                     * @param _noSecret 是否有Git凭证
+                     * 
                      */
                     void SetNoSecret(const bool& _noSecret);
 
                     /**
                      * 判断参数 NoSecret 是否已赋值
                      * @return NoSecret 是否已赋值
+                     * 
                      */
                     bool NoSecretHasBeenSet() const;
 

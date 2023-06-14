@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取进程名。
                      * @return ProcessName 进程名。
+                     * 
                      */
                     std::string GetProcessName() const;
 
                     /**
                      * 设置进程名。
-                     * @param ProcessName 进程名。
+                     * @param _processName 进程名。
+                     * 
                      */
                     void SetProcessName(const std::string& _processName);
 
                     /**
                      * 判断参数 ProcessName 是否已赋值
                      * @return ProcessName 是否已赋值
+                     * 
                      */
                     bool ProcessNameHasBeenSet() const;
 
                     /**
                      * 获取主机数量。
                      * @return MachineNum 主机数量。
+                     * 
                      */
                     uint64_t GetMachineNum() const;
 
                     /**
                      * 设置主机数量。
-                     * @param MachineNum 主机数量。
+                     * @param _machineNum 主机数量。
+                     * 
                      */
                     void SetMachineNum(const uint64_t& _machineNum);
 
                     /**
                      * 判断参数 MachineNum 是否已赋值
                      * @return MachineNum 是否已赋值
+                     * 
                      */
                     bool MachineNumHasBeenSet() const;
 

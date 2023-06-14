@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表香港
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEipAddressRegion() const;
 
                     /**
                      * 设置高防弹性公网IP绑定的实例地区，例如hk代表香港
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * @param _eipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表香港
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEipAddressRegion(const std::string& _eipAddressRegion);
 
                     /**
                      * 判断参数 EipAddressRegion 是否已赋值
                      * @return EipAddressRegion 是否已赋值
+                     * 
                      */
                     bool EipAddressRegionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipBoundRscIns 绑定的资源实例ID。可能是一个CVM。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEipBoundRscIns() const;
 
                     /**
                      * 设置绑定的资源实例ID。可能是一个CVM。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EipBoundRscIns 绑定的资源实例ID。可能是一个CVM。
+                     * @param _eipBoundRscIns 绑定的资源实例ID。可能是一个CVM。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEipBoundRscIns(const std::string& _eipBoundRscIns);
 
                     /**
                      * 判断参数 EipBoundRscIns 是否已赋值
                      * @return EipBoundRscIns 是否已赋值
+                     * 
                      */
                     bool EipBoundRscInsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipBoundRscEni 绑定的弹性网卡ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEipBoundRscEni() const;
 
                     /**
                      * 设置绑定的弹性网卡ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EipBoundRscEni 绑定的弹性网卡ID
+                     * @param _eipBoundRscEni 绑定的弹性网卡ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEipBoundRscEni(const std::string& _eipBoundRscEni);
 
                     /**
                      * 判断参数 EipBoundRscEni 是否已赋值
                      * @return EipBoundRscEni 是否已赋值
+                     * 
                      */
                     bool EipBoundRscEniHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipBoundRscVip 绑定的资源内网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEipBoundRscVip() const;
 
                     /**
                      * 设置绑定的资源内网ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EipBoundRscVip 绑定的资源内网ip
+                     * @param _eipBoundRscVip 绑定的资源内网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEipBoundRscVip(const std::string& _eipBoundRscVip);
 
                     /**
                      * 判断参数 EipBoundRscVip 是否已赋值
                      * @return EipBoundRscVip 是否已赋值
+                     * 
                      */
                     bool EipBoundRscVipHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

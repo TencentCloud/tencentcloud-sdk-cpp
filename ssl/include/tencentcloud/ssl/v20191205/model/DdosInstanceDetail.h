@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取协议类型
                      * @return Protocol 协议类型
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型
-                     * @param Protocol 协议类型
+                     * @param _protocol 协议类型
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取转发端口
                      * @return VirtualPort 转发端口
+                     * 
                      */
                     std::string GetVirtualPort() const;
 
                     /**
                      * 设置转发端口
-                     * @param VirtualPort 转发端口
+                     * @param _virtualPort 转发端口
+                     * 
                      */
                     void SetVirtualPort(const std::string& _virtualPort);
 
                     /**
                      * 判断参数 VirtualPort 是否已赋值
                      * @return VirtualPort 是否已赋值
+                     * 
                      */
                     bool VirtualPortHasBeenSet() const;
 

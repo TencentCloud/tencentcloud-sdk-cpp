@@ -45,198 +45,231 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取设备型号
                      * @return DeviceClassCode 设备型号
+                     * 
                      */
                     std::string GetDeviceClassCode() const;
 
                     /**
                      * 设置设备型号
-                     * @param DeviceClassCode 设备型号
+                     * @param _deviceClassCode 设备型号
+                     * 
                      */
                     void SetDeviceClassCode(const std::string& _deviceClassCode);
 
                     /**
                      * 判断参数 DeviceClassCode 是否已赋值
                      * @return DeviceClassCode 是否已赋值
+                     * 
                      */
                     bool DeviceClassCodeHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取CPU型号ID，查询自定义机型时必填
                      * @return CpuId CPU型号ID，查询自定义机型时必填
+                     * 
                      */
                     uint64_t GetCpuId() const;
 
                     /**
                      * 设置CPU型号ID，查询自定义机型时必填
-                     * @param CpuId CPU型号ID，查询自定义机型时必填
+                     * @param _cpuId CPU型号ID，查询自定义机型时必填
+                     * 
                      */
                     void SetCpuId(const uint64_t& _cpuId);
 
                     /**
                      * 判断参数 CpuId 是否已赋值
                      * @return CpuId 是否已赋值
+                     * 
                      */
                     bool CpuIdHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位为G，查询自定义机型时必填
                      * @return MemSize 内存大小，单位为G，查询自定义机型时必填
+                     * 
                      */
                     uint64_t GetMemSize() const;
 
                     /**
                      * 设置内存大小，单位为G，查询自定义机型时必填
-                     * @param MemSize 内存大小，单位为G，查询自定义机型时必填
+                     * @param _memSize 内存大小，单位为G，查询自定义机型时必填
+                     * 
                      */
                     void SetMemSize(const uint64_t& _memSize);
 
                     /**
                      * 判断参数 MemSize 是否已赋值
                      * @return MemSize 是否已赋值
+                     * 
                      */
                     bool MemSizeHasBeenSet() const;
 
                     /**
                      * 获取是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
                      * @return ContainRaidCard 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
+                     * 
                      */
                     uint64_t GetContainRaidCard() const;
 
                     /**
                      * 设置是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
-                     * @param ContainRaidCard 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
+                     * @param _containRaidCard 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
+                     * 
                      */
                     void SetContainRaidCard(const uint64_t& _containRaidCard);
 
                     /**
                      * 判断参数 ContainRaidCard 是否已赋值
                      * @return ContainRaidCard 是否已赋值
+                     * 
                      */
                     bool ContainRaidCardHasBeenSet() const;
 
                     /**
                      * 获取系统盘类型ID，查询自定义机型时必填
                      * @return SystemDiskTypeId 系统盘类型ID，查询自定义机型时必填
+                     * 
                      */
                     uint64_t GetSystemDiskTypeId() const;
 
                     /**
                      * 设置系统盘类型ID，查询自定义机型时必填
-                     * @param SystemDiskTypeId 系统盘类型ID，查询自定义机型时必填
+                     * @param _systemDiskTypeId 系统盘类型ID，查询自定义机型时必填
+                     * 
                      */
                     void SetSystemDiskTypeId(const uint64_t& _systemDiskTypeId);
 
                     /**
                      * 判断参数 SystemDiskTypeId 是否已赋值
                      * @return SystemDiskTypeId 是否已赋值
+                     * 
                      */
                     bool SystemDiskTypeIdHasBeenSet() const;
 
                     /**
                      * 获取系统盘数量，查询自定义机型时必填
                      * @return SystemDiskCount 系统盘数量，查询自定义机型时必填
+                     * 
                      */
                     uint64_t GetSystemDiskCount() const;
 
                     /**
                      * 设置系统盘数量，查询自定义机型时必填
-                     * @param SystemDiskCount 系统盘数量，查询自定义机型时必填
+                     * @param _systemDiskCount 系统盘数量，查询自定义机型时必填
+                     * 
                      */
                     void SetSystemDiskCount(const uint64_t& _systemDiskCount);
 
                     /**
                      * 判断参数 SystemDiskCount 是否已赋值
                      * @return SystemDiskCount 是否已赋值
+                     * 
                      */
                     bool SystemDiskCountHasBeenSet() const;
 
                     /**
                      * 获取数据盘类型ID，查询自定义机型时可填
                      * @return DataDiskTypeId 数据盘类型ID，查询自定义机型时可填
+                     * 
                      */
                     uint64_t GetDataDiskTypeId() const;
 
                     /**
                      * 设置数据盘类型ID，查询自定义机型时可填
-                     * @param DataDiskTypeId 数据盘类型ID，查询自定义机型时可填
+                     * @param _dataDiskTypeId 数据盘类型ID，查询自定义机型时可填
+                     * 
                      */
                     void SetDataDiskTypeId(const uint64_t& _dataDiskTypeId);
 
                     /**
                      * 判断参数 DataDiskTypeId 是否已赋值
                      * @return DataDiskTypeId 是否已赋值
+                     * 
                      */
                     bool DataDiskTypeIdHasBeenSet() const;
 
                     /**
                      * 获取数据盘数量，查询自定义机型时可填
                      * @return DataDiskCount 数据盘数量，查询自定义机型时可填
+                     * 
                      */
                     uint64_t GetDataDiskCount() const;
 
                     /**
                      * 设置数据盘数量，查询自定义机型时可填
-                     * @param DataDiskCount 数据盘数量，查询自定义机型时可填
+                     * @param _dataDiskCount 数据盘数量，查询自定义机型时可填
+                     * 
                      */
                     void SetDataDiskCount(const uint64_t& _dataDiskCount);
 
                     /**
                      * 判断参数 DataDiskCount 是否已赋值
                      * @return DataDiskCount 是否已赋值
+                     * 
                      */
                     bool DataDiskCountHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取公钥值
                      * @return Value 公钥值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置公钥值
-                     * @param Value 公钥值
+                     * @param _value 公钥值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取公钥备注
                      * @return Comment 公钥备注
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置公钥备注
-                     * @param Comment 公钥备注
+                     * @param _comment 公钥备注
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取加密方式
                      * @return EncryptType 加密方式
+                     * 
                      */
                     std::string GetEncryptType() const;
 
                     /**
                      * 设置加密方式
-                     * @param EncryptType 加密方式
+                     * @param _encryptType 加密方式
+                     * 
                      */
                     void SetEncryptType(const std::string& _encryptType);
 
                     /**
                      * 判断参数 EncryptType 是否已赋值
                      * @return EncryptType 是否已赋值
+                     * 
                      */
                     bool EncryptTypeHasBeenSet() const;
 

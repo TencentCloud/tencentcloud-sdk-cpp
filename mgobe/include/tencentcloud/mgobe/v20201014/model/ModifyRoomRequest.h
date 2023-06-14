@@ -45,198 +45,231 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取房间ID。
                      * @return RoomId 房间ID。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间ID。
-                     * @param RoomId 房间ID。
+                     * @param _roomId 房间ID。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取发起者的PlayerId。
                      * @return PlayerId 发起者的PlayerId。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置发起者的PlayerId。
-                     * @param PlayerId 发起者的PlayerId。
+                     * @param _playerId 发起者的PlayerId。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。
                      * @return ChangeRoomOptionList 需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。
+                     * 
                      */
                     std::vector<int64_t> GetChangeRoomOptionList() const;
 
                     /**
                      * 设置需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。
-                     * @param ChangeRoomOptionList 需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。
+                     * @param _changeRoomOptionList 需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。
+                     * 
                      */
                     void SetChangeRoomOptionList(const std::vector<int64_t>& _changeRoomOptionList);
 
                     /**
                      * 判断参数 ChangeRoomOptionList 是否已赋值
                      * @return ChangeRoomOptionList 是否已赋值
+                     * 
                      */
                     bool ChangeRoomOptionListHasBeenSet() const;
 
                     /**
                      * 获取房间名称。
                      * @return RoomName 房间名称。
+                     * 
                      */
                     std::string GetRoomName() const;
 
                     /**
                      * 设置房间名称。
-                     * @param RoomName 房间名称。
+                     * @param _roomName 房间名称。
+                     * 
                      */
                     void SetRoomName(const std::string& _roomName);
 
                     /**
                      * 判断参数 RoomName 是否已赋值
                      * @return RoomName 是否已赋值
+                     * 
                      */
                     bool RoomNameHasBeenSet() const;
 
                     /**
                      * 获取变更房主。
                      * @return Owner 变更房主。
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置变更房主。
-                     * @param Owner 变更房主。
+                     * @param _owner 变更房主。
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取是否支持观战。
                      * @return IsViewed 是否支持观战。
+                     * 
                      */
                     bool GetIsViewed() const;
 
                     /**
                      * 设置是否支持观战。
-                     * @param IsViewed 是否支持观战。
+                     * @param _isViewed 是否支持观战。
+                     * 
                      */
                     void SetIsViewed(const bool& _isViewed);
 
                     /**
                      * 判断参数 IsViewed 是否已赋值
                      * @return IsViewed 是否已赋值
+                     * 
                      */
                     bool IsViewedHasBeenSet() const;
 
                     /**
                      * 获取是否支持邀请码/密码。
                      * @return IsInvited 是否支持邀请码/密码。
+                     * 
                      */
                     bool GetIsInvited() const;
 
                     /**
                      * 设置是否支持邀请码/密码。
-                     * @param IsInvited 是否支持邀请码/密码。
+                     * @param _isInvited 是否支持邀请码/密码。
+                     * 
                      */
                     void SetIsInvited(const bool& _isInvited);
 
                     /**
                      * 判断参数 IsInvited 是否已赋值
                      * @return IsInvited 是否已赋值
+                     * 
                      */
                     bool IsInvitedHasBeenSet() const;
 
                     /**
                      * 获取是否私有。
                      * @return IsPrivate 是否私有。
+                     * 
                      */
                     bool GetIsPrivate() const;
 
                     /**
                      * 设置是否私有。
-                     * @param IsPrivate 是否私有。
+                     * @param _isPrivate 是否私有。
+                     * 
                      */
                     void SetIsPrivate(const bool& _isPrivate);
 
                     /**
                      * 判断参数 IsPrivate 是否已赋值
                      * @return IsPrivate 是否已赋值
+                     * 
                      */
                     bool IsPrivateHasBeenSet() const;
 
                     /**
                      * 获取自定义房间属性。
                      * @return CustomProperties 自定义房间属性。
+                     * 
                      */
                     std::string GetCustomProperties() const;
 
                     /**
                      * 设置自定义房间属性。
-                     * @param CustomProperties 自定义房间属性。
+                     * @param _customProperties 自定义房间属性。
+                     * 
                      */
                     void SetCustomProperties(const std::string& _customProperties);
 
                     /**
                      * 判断参数 CustomProperties 是否已赋值
                      * @return CustomProperties 是否已赋值
+                     * 
                      */
                     bool CustomPropertiesHasBeenSet() const;
 
                     /**
                      * 获取房间是否禁止加人。
                      * @return IsForbidJoin 房间是否禁止加人。
+                     * 
                      */
                     bool GetIsForbidJoin() const;
 
                     /**
                      * 设置房间是否禁止加人。
-                     * @param IsForbidJoin 房间是否禁止加人。
+                     * @param _isForbidJoin 房间是否禁止加人。
+                     * 
                      */
                     void SetIsForbidJoin(const bool& _isForbidJoin);
 
                     /**
                      * 判断参数 IsForbidJoin 是否已赋值
                      * @return IsForbidJoin 是否已赋值
+                     * 
                      */
                     bool IsForbidJoinHasBeenSet() const;
 

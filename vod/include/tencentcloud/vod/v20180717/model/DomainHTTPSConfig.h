@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      * @return CertExpireTime 证书过期时间。
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+                     * 
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
                      * 设置证书过期时间。
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
-                     * @param CertExpireTime 证书过期时间。
+                     * @param _certExpireTime 证书过期时间。
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+                     * 
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
 
                     /**
                      * 判断参数 CertExpireTime 是否已赋值
                      * @return CertExpireTime 是否已赋值
+                     * 
                      */
                     bool CertExpireTimeHasBeenSet() const;
 

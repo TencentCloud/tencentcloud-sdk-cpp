@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义消息，json格式字符串。
                      * @return Message 自定义消息，json格式字符串。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置自定义消息，json格式字符串。
-                     * @param Message 自定义消息，json格式字符串。
+                     * @param _message 自定义消息，json格式字符串。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取消息重复次数，默认为 1。
                      * @return Repeat 消息重复次数，默认为 1。
+                     * 
                      */
                     uint64_t GetRepeat() const;
 
                     /**
                      * 设置消息重复次数，默认为 1。
-                     * @param Repeat 消息重复次数，默认为 1。
+                     * @param _repeat 消息重复次数，默认为 1。
+                     * 
                      */
                     void SetRepeat(const uint64_t& _repeat);
 
                     /**
                      * 判断参数 Repeat 是否已赋值
                      * @return Repeat 是否已赋值
+                     * 
                      */
                     bool RepeatHasBeenSet() const;
 

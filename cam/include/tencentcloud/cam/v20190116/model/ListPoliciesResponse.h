@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取策略总数
                      * @return TotalNum 策略总数
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
@@ -77,12 +79,14 @@ createMode：1 表示按业务权限创建的策略，其他值表示可以查�
 Attachments: 关联的用户数
 ServiceType: 策略关联的产品
 IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+                     * 
                      */
                     std::vector<StrategyInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
@@ -91,12 +95,14 @@ IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTypeList 保留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetServiceTypeList() const;
 
                     /**
                      * 判断参数 ServiceTypeList 是否已赋值
                      * @return ServiceTypeList 是否已赋值
+                     * 
                      */
                     bool ServiceTypeListHasBeenSet() const;
 

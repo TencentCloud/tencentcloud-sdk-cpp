@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备资源详情
                      * @return Result 设备资源详情
+                     * 
                      */
                     DeviceResourceInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

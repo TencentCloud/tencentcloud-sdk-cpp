@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志信息列表。
                      * @return LogInfoList 日志信息列表。
+                     * 
                      */
                     std::vector<LogInfo> GetLogInfoList() const;
 
                     /**
                      * 判断参数 LogInfoList 是否已赋值
                      * @return LogInfoList 是否已赋值
+                     * 
                      */
                     bool LogInfoListHasBeenSet() const;
 
                     /**
                      * 获取总条数。
                      * @return TotalNum 总条数。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 

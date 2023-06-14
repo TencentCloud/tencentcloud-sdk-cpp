@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取原始业务入参(二选一）
                      * @return BusinessSecurityData 原始业务入参(二选一）
+                     * 
                      */
                     FinanceAntiFraudFilter GetBusinessSecurityData() const;
 
                     /**
                      * 设置原始业务入参(二选一）
-                     * @param BusinessSecurityData 原始业务入参(二选一）
+                     * @param _businessSecurityData 原始业务入参(二选一）
+                     * 
                      */
                     void SetBusinessSecurityData(const FinanceAntiFraudFilter& _businessSecurityData);
 
                     /**
                      * 判断参数 BusinessSecurityData 是否已赋值
                      * @return BusinessSecurityData 是否已赋值
+                     * 
                      */
                     bool BusinessSecurityDataHasBeenSet() const;
 
                     /**
                      * 获取密文业务入参(二选一）
                      * @return BusinessCryptoData 密文业务入参(二选一）
+                     * 
                      */
                     FinanceAntiFraudCryptoFilter GetBusinessCryptoData() const;
 
                     /**
                      * 设置密文业务入参(二选一）
-                     * @param BusinessCryptoData 密文业务入参(二选一）
+                     * @param _businessCryptoData 密文业务入参(二选一）
+                     * 
                      */
                     void SetBusinessCryptoData(const FinanceAntiFraudCryptoFilter& _businessCryptoData);
 
                     /**
                      * 判断参数 BusinessCryptoData 是否已赋值
                      * @return BusinessCryptoData 是否已赋值
+                     * 
                      */
                     bool BusinessCryptoDataHasBeenSet() const;
 

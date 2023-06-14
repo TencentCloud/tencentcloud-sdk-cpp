@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境Id
-                     * @param EnvId 环境Id
+                     * @param _envId 环境Id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名
                      * @return ServerName 服务名
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置服务名
-                     * @param ServerName 服务名
+                     * @param _serverName 服务名
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务Id
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取操作标识
                      * @return OperatorRemark 操作标识
+                     * 
                      */
                     std::string GetOperatorRemark() const;
 
                     /**
                      * 设置操作标识
-                     * @param OperatorRemark 操作标识
+                     * @param _operatorRemark 操作标识
+                     * 
                      */
                     void SetOperatorRemark(const std::string& _operatorRemark);
 
                     /**
                      * 判断参数 OperatorRemark 是否已赋值
                      * @return OperatorRemark 是否已赋值
+                     * 
                      */
                     bool OperatorRemarkHasBeenSet() const;
 

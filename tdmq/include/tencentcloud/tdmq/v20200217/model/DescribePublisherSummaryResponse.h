@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgRateIn 生产速率（条/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMsgRateIn() const;
 
                     /**
                      * 判断参数 MsgRateIn 是否已赋值
                      * @return MsgRateIn 是否已赋值
+                     * 
                      */
                     bool MsgRateInHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgThroughputIn 生产速率（字节/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMsgThroughputIn() const;
 
                     /**
                      * 判断参数 MsgThroughputIn 是否已赋值
                      * @return MsgThroughputIn 是否已赋值
+                     * 
                      */
                     bool MsgThroughputInHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublisherCount 生产者数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPublisherCount() const;
 
                     /**
                      * 判断参数 PublisherCount 是否已赋值
                      * @return PublisherCount 是否已赋值
+                     * 
                      */
                     bool PublisherCountHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSize 消息存储大小，以字节为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
                      * 判断参数 StorageSize 是否已赋值
                      * @return StorageSize 是否已赋值
+                     * 
                      */
                     bool StorageSizeHasBeenSet() const;
 

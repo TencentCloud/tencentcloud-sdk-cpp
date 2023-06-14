@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取快速发起预览链接，有效期5分钟
                      * @return Url 快速发起预览链接，有效期5分钟
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

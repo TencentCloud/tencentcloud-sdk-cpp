@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话创建时间
                      * @return CreationTime 游戏服务器会话创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置游戏服务器会话创建时间
-                     * @param CreationTime 游戏服务器会话创建时间
+                     * @param _creationTime 游戏服务器会话创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -70,38 +73,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorId 创建者ID，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatorId() const;
 
                     /**
                      * 设置创建者ID，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatorId 创建者ID，最大长度不超过1024个ASCII字符
+                     * @param _creatorId 创建者ID，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatorId(const std::string& _creatorId);
 
                     /**
                      * 判断参数 CreatorId 是否已赋值
                      * @return CreatorId 是否已赋值
+                     * 
                      */
                     bool CreatorIdHasBeenSet() const;
 
                     /**
                      * 获取当前玩家数量，最小值不小于0
                      * @return CurrentPlayerSessionCount 当前玩家数量，最小值不小于0
+                     * 
                      */
                     uint64_t GetCurrentPlayerSessionCount() const;
 
                     /**
                      * 设置当前玩家数量，最小值不小于0
-                     * @param CurrentPlayerSessionCount 当前玩家数量，最小值不小于0
+                     * @param _currentPlayerSessionCount 当前玩家数量，最小值不小于0
+                     * 
                      */
                     void SetCurrentPlayerSessionCount(const uint64_t& _currentPlayerSessionCount);
 
                     /**
                      * 判断参数 CurrentPlayerSessionCount 是否已赋值
                      * @return CurrentPlayerSessionCount 是否已赋值
+                     * 
                      */
                     bool CurrentPlayerSessionCountHasBeenSet() const;
 
@@ -110,38 +119,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DnsName CVM的DNS标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDnsName() const;
 
                     /**
                      * 设置CVM的DNS标识符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DnsName CVM的DNS标识符
+                     * @param _dnsName CVM的DNS标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDnsName(const std::string& _dnsName);
 
                     /**
                      * 判断参数 DnsName 是否已赋值
                      * @return DnsName 是否已赋值
+                     * 
                      */
                     bool DnsNameHasBeenSet() const;
 
                     /**
                      * 获取舰队ID
                      * @return FleetId 舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置舰队ID
-                     * @param FleetId 舰队ID
+                     * @param _fleetId 舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -150,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GameProperties 游戏属性，最大长度不超过16组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GameProperty> GetGameProperties() const;
 
                     /**
                      * 设置游戏属性，最大长度不超过16组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GameProperties 游戏属性，最大长度不超过16组
+                     * @param _gameProperties 游戏属性，最大长度不超过16组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGameProperties(const std::vector<GameProperty>& _gameProperties);
 
                     /**
                      * 判断参数 GameProperties 是否已赋值
                      * @return GameProperties 是否已赋值
+                     * 
                      */
                     bool GamePropertiesHasBeenSet() const;
 
@@ -172,56 +190,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GameServerSessionData 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGameServerSessionData() const;
 
                     /**
                      * 设置游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GameServerSessionData 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
+                     * @param _gameServerSessionData 游戏服务器会话属性详情，最大长度不超过4096个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGameServerSessionData(const std::string& _gameServerSessionData);
 
                     /**
                      * 判断参数 GameServerSessionData 是否已赋值
                      * @return GameServerSessionData 是否已赋值
+                     * 
                      */
                     bool GameServerSessionDataHasBeenSet() const;
 
                     /**
                      * 获取游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符
                      * @return GameServerSessionId 游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符
+                     * 
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
                      * 设置游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符
-                     * @param GameServerSessionId 游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符
+                     * @param _gameServerSessionId 游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符
+                     * 
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
                     /**
                      * 判断参数 GameServerSessionId 是否已赋值
                      * @return GameServerSessionId 是否已赋值
+                     * 
                      */
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
                      * 获取CVM IP地址
                      * @return IpAddress CVM IP地址
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置CVM IP地址
-                     * @param IpAddress CVM IP地址
+                     * @param _ipAddress CVM IP地址
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
@@ -230,38 +257,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchmakerData 对战进程详情，最大长度不超过400000个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMatchmakerData() const;
 
                     /**
                      * 设置对战进程详情，最大长度不超过400000个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MatchmakerData 对战进程详情，最大长度不超过400000个ASCII字符
+                     * @param _matchmakerData 对战进程详情，最大长度不超过400000个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMatchmakerData(const std::string& _matchmakerData);
 
                     /**
                      * 判断参数 MatchmakerData 是否已赋值
                      * @return MatchmakerData 是否已赋值
+                     * 
                      */
                     bool MatchmakerDataHasBeenSet() const;
 
                     /**
                      * 获取最大玩家数量，最小值不小于0
                      * @return MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * 
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
                      * 设置最大玩家数量，最小值不小于0
-                     * @param MaximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * @param _maximumPlayerSessionCount 最大玩家数量，最小值不小于0
+                     * 
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
                     /**
                      * 判断参数 MaximumPlayerSessionCount 是否已赋值
                      * @return MaximumPlayerSessionCount 是否已赋值
+                     * 
                      */
                     bool MaximumPlayerSessionCountHasBeenSet() const;
 
@@ -270,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 游戏服务器会话名称，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置游戏服务器会话名称，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 游戏服务器会话名称，最大长度不超过1024个ASCII字符
+                     * @param _name 游戏服务器会话名称，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -292,56 +328,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayerSessionCreationPolicy 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlayerSessionCreationPolicy() const;
 
                     /**
                      * 设置玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlayerSessionCreationPolicy 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
+                     * @param _playerSessionCreationPolicy 玩家会话创建策略（ACCEPT_ALL,DENY_ALL）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlayerSessionCreationPolicy(const std::string& _playerSessionCreationPolicy);
 
                     /**
                      * 判断参数 PlayerSessionCreationPolicy 是否已赋值
                      * @return PlayerSessionCreationPolicy 是否已赋值
+                     * 
                      */
                     bool PlayerSessionCreationPolicyHasBeenSet() const;
 
                     /**
                      * 获取端口号，最小值不小于1，最大值不超过60000
                      * @return Port 端口号，最小值不小于1，最大值不超过60000
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口号，最小值不小于1，最大值不超过60000
-                     * @param Port 端口号，最小值不小于1，最大值不超过60000
+                     * @param _port 端口号，最小值不小于1，最大值不超过60000
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）
                      * @return Status 游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）
-                     * @param Status 游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）
+                     * @param _status 游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -350,20 +395,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusReason 游戏服务器会话状态附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusReason() const;
 
                     /**
                      * 设置游戏服务器会话状态附加信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusReason 游戏服务器会话状态附加信息
+                     * @param _statusReason 游戏服务器会话状态附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusReason(const std::string& _statusReason);
 
                     /**
                      * 判断参数 StatusReason 是否已赋值
                      * @return StatusReason 是否已赋值
+                     * 
                      */
                     bool StatusReasonHasBeenSet() const;
 
@@ -372,20 +420,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerminationTime 终止的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTerminationTime() const;
 
                     /**
                      * 设置终止的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerminationTime 终止的时间
+                     * @param _terminationTime 终止的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerminationTime(const std::string& _terminationTime);
 
                     /**
                      * 判断参数 TerminationTime 是否已赋值
                      * @return TerminationTime 是否已赋值
+                     * 
                      */
                     bool TerminationTimeHasBeenSet() const;
 
@@ -394,20 +445,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型，最大长度不超过128个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型，最大长度不超过128个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 实例类型，最大长度不超过128个ASCII字符
+                     * @param _instanceType 实例类型，最大长度不超过128个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -416,20 +470,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentCustomCount 当前自定义数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCurrentCustomCount() const;
 
                     /**
                      * 设置当前自定义数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentCustomCount 当前自定义数
+                     * @param _currentCustomCount 当前自定义数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentCustomCount(const int64_t& _currentCustomCount);
 
                     /**
                      * 判断参数 CurrentCustomCount 是否已赋值
                      * @return CurrentCustomCount 是否已赋值
+                     * 
                      */
                     bool CurrentCustomCountHasBeenSet() const;
 
@@ -438,20 +495,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxCustomCount 最大自定义数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxCustomCount() const;
 
                     /**
                      * 设置最大自定义数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxCustomCount 最大自定义数
+                     * @param _maxCustomCount 最大自定义数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxCustomCount(const int64_t& _maxCustomCount);
 
                     /**
                      * 判断参数 MaxCustomCount 是否已赋值
                      * @return MaxCustomCount 是否已赋值
+                     * 
                      */
                     bool MaxCustomCountHasBeenSet() const;
 
@@ -460,20 +520,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 权重
+                     * @param _weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -482,20 +545,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailabilityStatus 会话可用性状态，是否被屏蔽（Enable,Disable）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvailabilityStatus() const;
 
                     /**
                      * 设置会话可用性状态，是否被屏蔽（Enable,Disable）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailabilityStatus 会话可用性状态，是否被屏蔽（Enable,Disable）
+                     * @param _availabilityStatus 会话可用性状态，是否被屏蔽（Enable,Disable）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailabilityStatus(const std::string& _availabilityStatus);
 
                     /**
                      * 判断参数 AvailabilityStatus 是否已赋值
                      * @return AvailabilityStatus 是否已赋值
+                     * 
                      */
                     bool AvailabilityStatusHasBeenSet() const;
 

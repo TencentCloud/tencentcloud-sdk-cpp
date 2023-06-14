@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取CA机构侧订单号。
                      * @return OrderId CA机构侧订单号。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
                      * @return Status 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取键
                      * @return Key 键
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置键
-                     * @param Key 键
+                     * @param _key 键
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取值
                      * @return Value 值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-                     * @param Value 值
+                     * @param _value 值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
+                     * @param _type 类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置配置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Config 配置名称
+                     * @param _config 配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Secret 加密配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecret() const;
 
                     /**
                      * 设置加密配置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Secret 加密配置名称
+                     * @param _secret 加密配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecret(const std::string& _secret);
 
                     /**
                      * 判断参数 Secret 是否已赋值
                      * @return Secret 是否已赋值
+                     * 
                      */
                     bool SecretHasBeenSet() const;
 

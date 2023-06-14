@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取镜像仓库地址
                      * @return Server 镜像仓库地址
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像仓库地址
-                     * @param Server 镜像仓库地址
+                     * @param _server 镜像仓库地址
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return Username 用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
-                     * @param Username 用户名
+                     * @param _username 用户名
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return Password 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
-                     * @param Password 密码
+                     * @param _password 密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取ImageRegistryCredential的名字
                      * @return Name ImageRegistryCredential的名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置ImageRegistryCredential的名字
-                     * @param Name ImageRegistryCredential的名字
+                     * @param _name ImageRegistryCredential的名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

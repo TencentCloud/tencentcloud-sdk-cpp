@@ -54,54 +54,63 @@ namespace TencentCloud
                     /**
                      * 获取智能分析模板唯一标识。
                      * @return Definition 智能分析模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置智能分析模板唯一标识。
-                     * @param Definition 智能分析模板唯一标识。
+                     * @param _definition 智能分析模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取智能分析模板名称。
                      * @return Name 智能分析模板名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置智能分析模板名称。
-                     * @param Name 智能分析模板名称。
+                     * @param _name 智能分析模板名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取智能分析模板描述信息。
                      * @return Comment 智能分析模板描述信息。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置智能分析模板描述信息。
-                     * @param Comment 智能分析模板描述信息。
+                     * @param _comment 智能分析模板描述信息。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassificationConfigure 智能分类任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClassificationConfigureInfo GetClassificationConfigure() const;
 
                     /**
                      * 设置智能分类任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassificationConfigure 智能分类任务控制参数。
+                     * @param _classificationConfigure 智能分类任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassificationConfigure(const ClassificationConfigureInfo& _classificationConfigure);
 
                     /**
                      * 判断参数 ClassificationConfigure 是否已赋值
                      * @return ClassificationConfigure 是否已赋值
+                     * 
                      */
                     bool ClassificationConfigureHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagConfigure 智能标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TagConfigureInfo GetTagConfigure() const;
 
                     /**
                      * 设置智能标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagConfigure 智能标签任务控制参数。
+                     * @param _tagConfigure 智能标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagConfigure(const TagConfigureInfo& _tagConfigure);
 
                     /**
                      * 判断参数 TagConfigure 是否已赋值
                      * @return TagConfigure 是否已赋值
+                     * 
                      */
                     bool TagConfigureHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverConfigure 智能封面任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CoverConfigureInfo GetCoverConfigure() const;
 
                     /**
                      * 设置智能封面任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverConfigure 智能封面任务控制参数。
+                     * @param _coverConfigure 智能封面任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverConfigure(const CoverConfigureInfo& _coverConfigure);
 
                     /**
                      * 判断参数 CoverConfigure 是否已赋值
                      * @return CoverConfigure 是否已赋值
+                     * 
                      */
                     bool CoverConfigureHasBeenSet() const;
 
@@ -176,74 +194,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameTagConfigure 智能按帧标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FrameTagConfigureInfo GetFrameTagConfigure() const;
 
                     /**
                      * 设置智能按帧标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameTagConfigure 智能按帧标签任务控制参数。
+                     * @param _frameTagConfigure 智能按帧标签任务控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameTagConfigure(const FrameTagConfigureInfo& _frameTagConfigure);
 
                     /**
                      * 判断参数 FrameTagConfigure 是否已赋值
                      * @return FrameTagConfigure 是否已赋值
+                     * 
                      */
                     bool FrameTagConfigureHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦任务控制参数。
                      * @return HighlightConfigure 智能精彩集锦任务控制参数。
+                     * 
                      */
                     HighlightsConfigureInfo GetHighlightConfigure() const;
 
                     /**
                      * 设置智能精彩集锦任务控制参数。
-                     * @param HighlightConfigure 智能精彩集锦任务控制参数。
+                     * @param _highlightConfigure 智能精彩集锦任务控制参数。
+                     * 
                      */
                     void SetHighlightConfigure(const HighlightsConfigureInfo& _highlightConfigure);
 
                     /**
                      * 判断参数 HighlightConfigure 是否已赋值
                      * @return HighlightConfigure 是否已赋值
+                     * 
                      */
                     bool HighlightConfigureHasBeenSet() const;
 
                     /**
                      * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _updateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

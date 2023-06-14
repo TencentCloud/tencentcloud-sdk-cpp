@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置序号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 序号
+                     * @param _id 序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vaccine 疫苗名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVaccine() const;
 
                     /**
                      * 设置疫苗名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vaccine 疫苗名称
+                     * @param _vaccine 疫苗名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVaccine(const std::string& _vaccine);
 
                     /**
                      * 判断参数 Vaccine 是否已赋值
                      * @return Vaccine 是否已赋值
+                     * 
                      */
                     bool VaccineHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dose 剂次
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDose() const;
 
                     /**
                      * 设置剂次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Dose 剂次
+                     * @param _dose 剂次
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDose(const std::string& _dose);
 
                     /**
                      * 判断参数 Dose 是否已赋值
                      * @return Dose 是否已赋值
+                     * 
                      */
                     bool DoseHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 接种日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置接种日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Date 接种日期
+                     * @param _date 接种日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LotNumber 疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLotNumber() const;
 
                     /**
                      * 设置疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LotNumber 疫苗批号
+                     * @param _lotNumber 疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLotNumber(const std::string& _lotNumber);
 
                     /**
                      * 判断参数 LotNumber 是否已赋值
                      * @return LotNumber 是否已赋值
+                     * 
                      */
                     bool LotNumberHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 生产企业
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
                      * 设置生产企业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Manufacturer 生产企业
+                     * @param _manufacturer 生产企业
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManufacturer(const std::string& _manufacturer);
 
                     /**
                      * 判断参数 Manufacturer 是否已赋值
                      * @return Manufacturer 是否已赋值
+                     * 
                      */
                     bool ManufacturerHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clinic 接种单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClinic() const;
 
                     /**
                      * 设置接种单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Clinic 接种单位
+                     * @param _clinic 接种单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClinic(const std::string& _clinic);
 
                     /**
                      * 判断参数 Clinic 是否已赋值
                      * @return Clinic 是否已赋值
+                     * 
                      */
                     bool ClinicHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Site 接种部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSite() const;
 
                     /**
                      * 设置接种部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Site 接种部位
+                     * @param _site 接种部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSite(const std::string& _site);
 
                     /**
                      * 判断参数 Site 是否已赋值
                      * @return Site 是否已赋值
+                     * 
                      */
                     bool SiteHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Provider 接种者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvider() const;
 
                     /**
                      * 设置接种者
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Provider 接种者
+                     * @param _provider 接种者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvider(const std::string& _provider);
 
                     /**
                      * 判断参数 Provider 是否已赋值
                      * @return Provider 是否已赋值
+                     * 
                      */
                     bool ProviderHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lot 疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLot() const;
 
                     /**
                      * 设置疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Lot 疫苗批号
+                     * @param _lot 疫苗批号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLot(const std::string& _lot);
 
                     /**
                      * 判断参数 Lot 是否已赋值
                      * @return Lot 是否已赋值
+                     * 
                      */
                     bool LotHasBeenSet() const;
 

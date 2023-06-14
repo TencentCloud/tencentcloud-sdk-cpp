@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取网络策略方向，分为FROM和TO
                      * @return Direction 网络策略方向，分为FROM和TO
+                     * 
                      */
                     std::string GetDirection() const;
 
                     /**
                      * 设置网络策略方向，分为FROM和TO
-                     * @param Direction 网络策略方向，分为FROM和TO
+                     * @param _direction 网络策略方向，分为FROM和TO
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ports 网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NetworkPorts> GetPorts() const;
 
                     /**
                      * 设置网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ports 网络策略策略端口
+                     * @param _ports 网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPorts(const std::vector<NetworkPorts>& _ports);
 
                     /**
                      * 判断参数 Ports 是否已赋值
                      * @return Ports 是否已赋值
+                     * 
                      */
                     bool PortsHasBeenSet() const;
 
@@ -113,6 +119,7 @@ namespace TencentCloud
 
 待开启：unPublishEdit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NetworkPeer> GetPeer() const;
 
@@ -129,7 +136,7 @@ namespace TencentCloud
 
 待开启：unPublishEdit
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Peer 网络策略策略对象
+                     * @param _peer 网络策略策略对象
 
 开启待确认：PublishedNoConfirm
 
@@ -141,12 +148,14 @@ namespace TencentCloud
 
 待开启：unPublishEdit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeer(const std::vector<NetworkPeer>& _peer);
 
                     /**
                      * 判断参数 Peer 是否已赋值
                      * @return Peer 是否已赋值
+                     * 
                      */
                     bool PeerHasBeenSet() const;
 

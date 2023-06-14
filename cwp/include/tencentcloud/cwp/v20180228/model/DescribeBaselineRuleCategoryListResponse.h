@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return List 无
+                     * 
                      */
                     std::vector<BaselineCategory> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

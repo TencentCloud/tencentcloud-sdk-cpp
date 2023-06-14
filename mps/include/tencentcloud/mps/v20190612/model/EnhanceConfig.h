@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoEnhance 视频增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoEnhanceConfig GetVideoEnhance() const;
 
                     /**
                      * 设置视频增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoEnhance 视频增强配置。
+                     * @param _videoEnhance 视频增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoEnhance(const VideoEnhanceConfig& _videoEnhance);
 
                     /**
                      * 判断参数 VideoEnhance 是否已赋值
                      * @return VideoEnhance 是否已赋值
+                     * 
                      */
                     bool VideoEnhanceHasBeenSet() const;
 

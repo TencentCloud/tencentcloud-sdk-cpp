@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取搜索关键字 码标识，或者批次ID
                      * @return Keyword 搜索关键字 码标识，或者批次ID
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索关键字 码标识，或者批次ID
-                     * @param Keyword 搜索关键字 码标识，或者批次ID
+                     * @param _keyword 搜索关键字 码标识，或者批次ID
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取条数
                      * @return PageNumber 条数
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置条数
-                     * @param PageNumber 条数
+                     * @param _pageNumber 条数
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return PageSize 页码
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置页码
-                     * @param PageSize 页码
+                     * @param _pageSize 页码
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取批次ID，弃用
                      * @return BatchId 批次ID，弃用
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID，弃用
-                     * @param BatchId 批次ID，弃用
+                     * @param _batchId 批次ID，弃用
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

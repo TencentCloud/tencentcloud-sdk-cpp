@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return Name 数据库名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Name 数据库名称
+                     * @param _name 数据库名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字符集
                      * @return Charset 字符集
+                     * 
                      */
                     std::string GetCharset() const;
 
                     /**
                      * 设置字符集
-                     * @param Charset 字符集
+                     * @param _charset 字符集
+                     * 
                      */
                     void SetCharset(const std::string& _charset);
 
                     /**
                      * 判断参数 Charset 是否已赋值
                      * @return Charset 是否已赋值
+                     * 
                      */
                     bool CharsetHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取数据库创建时间
                      * @return CreateTime 数据库创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置数据库创建时间
-                     * @param CreateTime 数据库创建时间
+                     * @param _createTime 数据库创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中
                      * @return Status 数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中
-                     * @param Status 数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中
+                     * @param _status 数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取数据库账号权限信息
                      * @return Accounts 数据库账号权限信息
+                     * 
                      */
                     std::vector<AccountPrivilege> GetAccounts() const;
 
                     /**
                      * 设置数据库账号权限信息
-                     * @param Accounts 数据库账号权限信息
+                     * @param _accounts 数据库账号权限信息
+                     * 
                      */
                     void SetAccounts(const std::vector<AccountPrivilege>& _accounts);
 
                     /**
                      * 判断参数 Accounts 是否已赋值
                      * @return Accounts 是否已赋值
+                     * 
                      */
                     bool AccountsHasBeenSet() const;
 
                     /**
                      * 获取内部状态。ONLINE表示运行中
                      * @return InternalStatus 内部状态。ONLINE表示运行中
+                     * 
                      */
                     std::string GetInternalStatus() const;
 
                     /**
                      * 设置内部状态。ONLINE表示运行中
-                     * @param InternalStatus 内部状态。ONLINE表示运行中
+                     * @param _internalStatus 内部状态。ONLINE表示运行中
+                     * 
                      */
                     void SetInternalStatus(const std::string& _internalStatus);
 
                     /**
                      * 判断参数 InternalStatus 是否已赋值
                      * @return InternalStatus 是否已赋值
+                     * 
                      */
                     bool InternalStatusHasBeenSet() const;
 

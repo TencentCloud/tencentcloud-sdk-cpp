@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目名称，长度不超过24个字符
                      * @return ProjectName 项目名称，长度不超过24个字符
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称，长度不超过24个字符
-                     * @param ProjectName 项目名称，长度不超过24个字符
+                     * @param _projectName 项目名称，长度不超过24个字符
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目描述，长度不超过120个字符，不填默认为空
                      * @return ProjectDescription 项目描述，长度不超过120个字符，不填默认为空
+                     * 
                      */
                     std::string GetProjectDescription() const;
 
                     /**
                      * 设置项目描述，长度不超过120个字符，不填默认为空
-                     * @param ProjectDescription 项目描述，长度不超过120个字符，不填默认为空
+                     * @param _projectDescription 项目描述，长度不超过120个字符，不填默认为空
+                     * 
                      */
                     void SetProjectDescription(const std::string& _projectDescription);
 
                     /**
                      * 判断参数 ProjectDescription 是否已赋值
                      * @return ProjectDescription 是否已赋值
+                     * 
                      */
                     bool ProjectDescriptionHasBeenSet() const;
 
                     /**
                      * 获取权限模式，black为黑名单，white为白名单，不填默认为black
                      * @return PolicyMode 权限模式，black为黑名单，white为白名单，不填默认为black
+                     * 
                      */
                     std::string GetPolicyMode() const;
 
                     /**
                      * 设置权限模式，black为黑名单，white为白名单，不填默认为black
-                     * @param PolicyMode 权限模式，black为黑名单，white为白名单，不填默认为black
+                     * @param _policyMode 权限模式，black为黑名单，white为白名单，不填默认为black
+                     * 
                      */
                     void SetPolicyMode(const std::string& _policyMode);
 
                     /**
                      * 判断参数 PolicyMode 是否已赋值
                      * @return PolicyMode 是否已赋值
+                     * 
                      */
                     bool PolicyModeHasBeenSet() const;
 

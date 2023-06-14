@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页尺寸，上限 100
                      * @return PageSize 分页尺寸，上限 100
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页尺寸，上限 100
-                     * @param PageSize 分页尺寸，上限 100
+                     * @param _pageSize 分页尺寸，上限 100
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取分页页码，从 0 开始
                      * @return PageNumber 分页页码，从 0 开始
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页页码，从 0 开始
-                     * @param PageNumber 分页页码，从 0 开始
+                     * @param _pageNumber 分页页码，从 0 开始
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取技能组ID，查询单个技能组时使用
                      * @return SkillGroupId 技能组ID，查询单个技能组时使用
+                     * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
                      * 设置技能组ID，查询单个技能组时使用
-                     * @param SkillGroupId 技能组ID，查询单个技能组时使用
+                     * @param _skillGroupId 技能组ID，查询单个技能组时使用
+                     * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
 
                     /**
                      * 判断参数 SkillGroupId 是否已赋值
                      * @return SkillGroupId 是否已赋值
+                     * 
                      */
                     bool SkillGroupIdHasBeenSet() const;
 
                     /**
                      * 获取查询修改时间大于等于ModifiedTime的技能组时使用
                      * @return ModifiedTime 查询修改时间大于等于ModifiedTime的技能组时使用
+                     * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
                      * 设置查询修改时间大于等于ModifiedTime的技能组时使用
-                     * @param ModifiedTime 查询修改时间大于等于ModifiedTime的技能组时使用
+                     * @param _modifiedTime 查询修改时间大于等于ModifiedTime的技能组时使用
+                     * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
                     /**
                      * 获取技能组名称
                      * @return SkillGroupName 技能组名称
+                     * 
                      */
                     std::string GetSkillGroupName() const;
 
                     /**
                      * 设置技能组名称
-                     * @param SkillGroupName 技能组名称
+                     * @param _skillGroupName 技能组名称
+                     * 
                      */
                     void SetSkillGroupName(const std::string& _skillGroupName);
 
                     /**
                      * 判断参数 SkillGroupName 是否已赋值
                      * @return SkillGroupName 是否已赋值
+                     * 
                      */
                     bool SkillGroupNameHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Target所属地域，如 ap-guangzhou
                      * @return Region Target所属地域，如 ap-guangzhou
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置Target所属地域，如 ap-guangzhou
-                     * @param Region Target所属地域，如 ap-guangzhou
+                     * @param _region Target所属地域，如 ap-guangzhou
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为"0"
                      * @return VpcId Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为"0"
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为"0"
-                     * @param VpcId Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为"0"
+                     * @param _vpcId Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为"0"
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 

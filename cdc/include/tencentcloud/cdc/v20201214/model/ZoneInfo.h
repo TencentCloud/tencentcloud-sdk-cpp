@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取可用区名称
                      * @return Zone 可用区名称
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称
-                     * @param Zone 可用区名称
+                     * @param _zone 可用区名称
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区描述
                      * @return ZoneName 可用区描述
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区描述
-                     * @param ZoneName 可用区描述
+                     * @param _zoneName 可用区描述
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取可用区ID
                      * @return ZoneId 可用区ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
                      * @return ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     std::string GetZoneState() const;
 
                     /**
                      * 设置可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-                     * @param ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * @param _zoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     void SetZoneState(const std::string& _zoneState);
 
                     /**
                      * 判断参数 ZoneState 是否已赋值
                      * @return ZoneState 是否已赋值
+                     * 
                      */
                     bool ZoneStateHasBeenSet() const;
 

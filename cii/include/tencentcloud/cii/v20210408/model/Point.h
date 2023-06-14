@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取x坐标
                      * @return XCoordinate x坐标
+                     * 
                      */
                     int64_t GetXCoordinate() const;
 
                     /**
                      * 设置x坐标
-                     * @param XCoordinate x坐标
+                     * @param _xCoordinate x坐标
+                     * 
                      */
                     void SetXCoordinate(const int64_t& _xCoordinate);
 
                     /**
                      * 判断参数 XCoordinate 是否已赋值
                      * @return XCoordinate 是否已赋值
+                     * 
                      */
                     bool XCoordinateHasBeenSet() const;
 
                     /**
                      * 获取y坐标
                      * @return YCoordinate y坐标
+                     * 
                      */
                     int64_t GetYCoordinate() const;
 
                     /**
                      * 设置y坐标
-                     * @param YCoordinate y坐标
+                     * @param _yCoordinate y坐标
+                     * 
                      */
                     void SetYCoordinate(const int64_t& _yCoordinate);
 
                     /**
                      * 判断参数 YCoordinate 是否已赋值
                      * @return YCoordinate 是否已赋值
+                     * 
                      */
                     bool YCoordinateHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return Page 页码
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置页码
-                     * @param Page 页码
+                     * @param _page 页码
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)
                      * @return EventCode 事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)
+                     * 
                      */
                     std::string GetEventCode() const;
 
                     /**
                      * 设置事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)
-                     * @param EventCode 事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)
+                     * @param _eventCode 事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)
+                     * 
                      */
                     void SetEventCode(const std::string& _eventCode);
 
                     /**
                      * 判断参数 EventCode 是否已赋值
                      * @return EventCode 是否已赋值
+                     * 
                      */
                     bool EventCodeHasBeenSet() const;
 
                     /**
                      * 获取外部联系人id
                      * @return ExternalUserId 外部联系人id
+                     * 
                      */
                     std::string GetExternalUserId() const;
 
                     /**
                      * 设置外部联系人id
-                     * @param ExternalUserId 外部联系人id
+                     * @param _externalUserId 外部联系人id
+                     * 
                      */
                     void SetExternalUserId(const std::string& _externalUserId);
 
                     /**
                      * 判断参数 ExternalUserId 是否已赋值
                      * @return ExternalUserId 是否已赋值
+                     * 
                      */
                     bool ExternalUserIdHasBeenSet() const;
 
                     /**
                      * 获取企微SaaS的成员id
                      * @return SalesId 企微SaaS的成员id
+                     * 
                      */
                     std::string GetSalesId() const;
 
                     /**
                      * 设置企微SaaS的成员id
-                     * @param SalesId 企微SaaS的成员id
+                     * @param _salesId 企微SaaS的成员id
+                     * 
                      */
                     void SetSalesId(const std::string& _salesId);
 
                     /**
                      * 判断参数 SalesId 是否已赋值
                      * @return SalesId 是否已赋值
+                     * 
                      */
                     bool SalesIdHasBeenSet() const;
 
                     /**
                      * 获取事件上报时间戳，单位：秒
                      * @return EventTime 事件上报时间戳，单位：秒
+                     * 
                      */
                     uint64_t GetEventTime() const;
 
                     /**
                      * 设置事件上报时间戳，单位：秒
-                     * @param EventTime 事件上报时间戳，单位：秒
+                     * @param _eventTime 事件上报时间戳，单位：秒
+                     * 
                      */
                     void SetEventTime(const uint64_t& _eventTime);
 
                     /**
                      * 判断参数 EventTime 是否已赋值
                      * @return EventTime 是否已赋值
+                     * 
                      */
                     bool EventTimeHasBeenSet() const;
 

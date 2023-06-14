@@ -46,168 +46,196 @@ namespace TencentCloud
                     /**
                      * 获取文档Id
                      * @return DocumentId 文档Id
+                     * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
                      * 判断参数 DocumentId 是否已赋值
                      * @return DocumentId 是否已赋值
+                     * 
                      */
                     bool DocumentIdHasBeenSet() const;
 
                     /**
                      * 获取文档原址url
                      * @return DocumentUrl 文档原址url
+                     * 
                      */
                     std::string GetDocumentUrl() const;
 
                     /**
                      * 判断参数 DocumentUrl 是否已赋值
                      * @return DocumentUrl 是否已赋值
+                     * 
                      */
                     bool DocumentUrlHasBeenSet() const;
 
                     /**
                      * 获取文档名称
                      * @return DocumentName 文档名称
+                     * 
                      */
                     std::string GetDocumentName() const;
 
                     /**
                      * 判断参数 DocumentName 是否已赋值
                      * @return DocumentName 是否已赋值
+                     * 
                      */
                     bool DocumentNameHasBeenSet() const;
 
                     /**
                      * 获取文档所有者UserId
                      * @return Owner 文档所有者UserId
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取应用Id
                      * @return SdkAppId 应用Id
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取文档权限
                      * @return Permission 文档权限
+                     * 
                      */
                     uint64_t GetPermission() const;
 
                     /**
                      * 判断参数 Permission 是否已赋值
                      * @return Permission 是否已赋值
+                     * 
                      */
                     bool PermissionHasBeenSet() const;
 
                     /**
                      * 获取转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
                      * @return TranscodeResult 转码结果，无需转码为空，转码成功为结果url，转码失败为错误码
+                     * 
                      */
                     std::string GetTranscodeResult() const;
 
                     /**
                      * 判断参数 TranscodeResult 是否已赋值
                      * @return TranscodeResult 是否已赋值
+                     * 
                      */
                     bool TranscodeResultHasBeenSet() const;
 
                     /**
                      * 获取转码类型
                      * @return TranscodeType 转码类型
+                     * 
                      */
                     uint64_t GetTranscodeType() const;
 
                     /**
                      * 判断参数 TranscodeType 是否已赋值
                      * @return TranscodeType 是否已赋值
+                     * 
                      */
                     bool TranscodeTypeHasBeenSet() const;
 
                     /**
                      * 获取转码进度， 0 - 100 表示（0% - 100%）
                      * @return TranscodeProgress 转码进度， 0 - 100 表示（0% - 100%）
+                     * 
                      */
                     uint64_t GetTranscodeProgress() const;
 
                     /**
                      * 判断参数 TranscodeProgress 是否已赋值
                      * @return TranscodeProgress 是否已赋值
+                     * 
                      */
                     bool TranscodeProgressHasBeenSet() const;
 
                     /**
                      * 获取转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
                      * @return TranscodeState 转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功
+                     * 
                      */
                     uint64_t GetTranscodeState() const;
 
                     /**
                      * 判断参数 TranscodeState 是否已赋值
                      * @return TranscodeState 是否已赋值
+                     * 
                      */
                     bool TranscodeStateHasBeenSet() const;
 
                     /**
                      * 获取转码失败后的错误信息
                      * @return TranscodeInfo 转码失败后的错误信息
+                     * 
                      */
                     std::string GetTranscodeInfo() const;
 
                     /**
                      * 判断参数 TranscodeInfo 是否已赋值
                      * @return TranscodeInfo 是否已赋值
+                     * 
                      */
                     bool TranscodeInfoHasBeenSet() const;
 
                     /**
                      * 获取文档类型
                      * @return DocumentType 文档类型
+                     * 
                      */
                     std::string GetDocumentType() const;
 
                     /**
                      * 判断参数 DocumentType 是否已赋值
                      * @return DocumentType 是否已赋值
+                     * 
                      */
                     bool DocumentTypeHasBeenSet() const;
 
                     /**
                      * 获取文档大小，单位：字节
                      * @return DocumentSize 文档大小，单位：字节
+                     * 
                      */
                     uint64_t GetDocumentSize() const;
 
                     /**
                      * 判断参数 DocumentSize 是否已赋值
                      * @return DocumentSize 是否已赋值
+                     * 
                      */
                     bool DocumentSizeHasBeenSet() const;
 
                     /**
                      * 获取更新的UNIX时间戳
                      * @return UpdateTime 更新的UNIX时间戳
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

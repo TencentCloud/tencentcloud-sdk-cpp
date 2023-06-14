@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称，本接口取值：redis。
                      * @return Product 数据库引擎名称，本接口取值：redis。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称，本接口取值：redis。
-                     * @param Product 数据库引擎名称，本接口取值：redis。
+                     * @param _product 数据库引擎名称，本接口取值：redis。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取项目 ID。
                      * @return ProjectId 项目 ID。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-                     * @param ProjectId 项目 ID。
+                     * @param _projectId 项目 ID。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取值为Limit的整数倍。
                      * @return Offset 偏移量，取值为Limit的整数倍。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取值为Limit的整数倍。
-                     * @param Offset 偏移量，取值为Limit的整数倍。
+                     * @param _offset 偏移量，取值为Limit的整数倍。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取拉取数量限制，默认 20。
                      * @return Limit 拉取数量限制，默认 20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置拉取数量限制，默认 20。
-                     * @param Limit 拉取数量限制，默认 20。
+                     * @param _limit 拉取数量限制，默认 20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索条件，支持安全组 ID 或者安全组名称。
                      * @return SearchKey 搜索条件，支持安全组 ID 或者安全组名称。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索条件，支持安全组 ID 或者安全组名称。
-                     * @param SearchKey 搜索条件，支持安全组 ID 或者安全组名称。
+                     * @param _searchKey 搜索条件，支持安全组 ID 或者安全组名称。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 

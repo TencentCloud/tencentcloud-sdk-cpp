@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取边缘集群名称
                      * @return Name 边缘集群名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -103,12 +111,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveTime 集群最后探活时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLiveTime() const;
 
                     /**
                      * 判断参数 LiveTime 是否已赋值
                      * @return LiveTime 是否已赋值
+                     * 
                      */
                     bool LiveTimeHasBeenSet() const;
 
@@ -117,12 +127,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterStatus 集群状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMasterStatus() const;
 
                     /**
                      * 判断参数 MasterStatus 是否已赋值
                      * @return MasterStatus 是否已赋值
+                     * 
                      */
                     bool MasterStatusHasBeenSet() const;
 
@@ -131,12 +143,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return K8sVersion 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetK8sVersion() const;
 
                     /**
                      * 判断参数 K8sVersion 是否已赋值
                      * @return K8sVersion 是否已赋值
+                     * 
                      */
                     bool K8sVersionHasBeenSet() const;
 
@@ -145,12 +159,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodCIDR pod cidr
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPodCIDR() const;
 
                     /**
                      * 判断参数 PodCIDR 是否已赋值
                      * @return PodCIDR 是否已赋值
+                     * 
                      */
                     bool PodCIDRHasBeenSet() const;
 
@@ -159,12 +175,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCIDR service cidr
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 判断参数 ServiceCIDR 是否已赋值
                      * @return ServiceCIDR 是否已赋值
+                     * 
                      */
                     bool ServiceCIDRHasBeenSet() const;
 
@@ -173,12 +191,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return APIServerAddress 集群内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAPIServerAddress() const;
 
                     /**
                      * 判断参数 APIServerAddress 是否已赋值
                      * @return APIServerAddress 是否已赋值
+                     * 
                      */
                     bool APIServerAddressHasBeenSet() const;
 
@@ -187,12 +207,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return APIServerExposeAddress 集群外网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAPIServerExposeAddress() const;
 
                     /**
                      * 判断参数 APIServerExposeAddress 是否已赋值
                      * @return APIServerExposeAddress 是否已赋值
+                     * 
                      */
                     bool APIServerExposeAddressHasBeenSet() const;
 
@@ -201,12 +223,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UID 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUID() const;
 
                     /**
                      * 判断参数 UID 是否已赋值
                      * @return UID 是否已赋值
+                     * 
                      */
                     bool UIDHasBeenSet() const;
 
@@ -215,12 +239,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitID 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUnitID() const;
 
                     /**
                      * 判断参数 UnitID 是否已赋值
                      * @return UnitID 是否已赋值
+                     * 
                      */
                     bool UnitIDHasBeenSet() const;
 
@@ -229,12 +255,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cluster 集群标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
@@ -243,12 +271,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Node 节点统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeUnitStatisticItem GetNode() const;
 
                     /**
                      * 判断参数 Node 是否已赋值
                      * @return Node 是否已赋值
+                     * 
                      */
                     bool NodeHasBeenSet() const;
 
@@ -257,12 +287,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Workload 工作负载统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeUnitStatisticItem GetWorkload() const;
 
                     /**
                      * 判断参数 Workload 是否已赋值
                      * @return Workload 是否已赋值
+                     * 
                      */
                     bool WorkloadHasBeenSet() const;
 
@@ -271,12 +303,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grid Grid应用统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeUnitStatisticItem GetGrid() const;
 
                     /**
                      * 判断参数 Grid 是否已赋值
                      * @return Grid 是否已赋值
+                     * 
                      */
                     bool GridHasBeenSet() const;
 
@@ -285,12 +319,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubDevice 设备统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeUnitStatisticItem GetSubDevice() const;
 
                     /**
                      * 判断参数 SubDevice 是否已赋值
                      * @return SubDevice 是否已赋值
+                     * 
                      */
                     bool SubDeviceHasBeenSet() const;
 

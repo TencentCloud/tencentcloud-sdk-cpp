@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取删除状态信息。
                      * @return DeleteStatus 删除状态信息。
+                     * 
                      */
                     std::string GetDeleteStatus() const;
 
                     /**
                      * 设置删除状态信息。
-                     * @param DeleteStatus 删除状态信息。
+                     * @param _deleteStatus 删除状态信息。
+                     * 
                      */
                     void SetDeleteStatus(const std::string& _deleteStatus);
 
                     /**
                      * 判断参数 DeleteStatus 是否已赋值
                      * @return DeleteStatus 是否已赋值
+                     * 
                      */
                     bool DeleteStatusHasBeenSet() const;
 
                     /**
                      * 获取删除时间，UNIX 时间戳（单位：秒）。
                      * @return DeleteTime 删除时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetDeleteTime() const;
 
                     /**
                      * 设置删除时间，UNIX 时间戳（单位：秒）。
-                     * @param DeleteTime 删除时间，UNIX 时间戳（单位：秒）。
+                     * @param _deleteTime 删除时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetDeleteTime(const uint64_t& _deleteTime);
 
                     /**
                      * 判断参数 DeleteTime 是否已赋值
                      * @return DeleteTime 是否已赋值
+                     * 
                      */
                     bool DeleteTimeHasBeenSet() const;
 

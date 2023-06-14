@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取活跃现场设备数
                      * @return ActiveFieldDeviceNum 活跃现场设备数
+                     * 
                      */
                     uint64_t GetActiveFieldDeviceNum() const;
 
                     /**
                      * 设置活跃现场设备数
-                     * @param ActiveFieldDeviceNum 活跃现场设备数
+                     * @param _activeFieldDeviceNum 活跃现场设备数
+                     * 
                      */
                     void SetActiveFieldDeviceNum(const uint64_t& _activeFieldDeviceNum);
 
                     /**
                      * 判断参数 ActiveFieldDeviceNum 是否已赋值
                      * @return ActiveFieldDeviceNum 是否已赋值
+                     * 
                      */
                     bool ActiveFieldDeviceNumHasBeenSet() const;
 
                     /**
                      * 获取活跃远端设备数
                      * @return ActiveRemoteDeviceNum 活跃远端设备数
+                     * 
                      */
                     uint64_t GetActiveRemoteDeviceNum() const;
 
                     /**
                      * 设置活跃远端设备数
-                     * @param ActiveRemoteDeviceNum 活跃远端设备数
+                     * @param _activeRemoteDeviceNum 活跃远端设备数
+                     * 
                      */
                     void SetActiveRemoteDeviceNum(const uint64_t& _activeRemoteDeviceNum);
 
                     /**
                      * 判断参数 ActiveRemoteDeviceNum 是否已赋值
                      * @return ActiveRemoteDeviceNum 是否已赋值
+                     * 
                      */
                     bool ActiveRemoteDeviceNumHasBeenSet() const;
 
                     /**
                      * 获取会话数量
                      * @return SessionNum 会话数量
+                     * 
                      */
                     uint64_t GetSessionNum() const;
 
                     /**
                      * 设置会话数量
-                     * @param SessionNum 会话数量
+                     * @param _sessionNum 会话数量
+                     * 
                      */
                     void SetSessionNum(const uint64_t& _sessionNum);
 
                     /**
                      * 判断参数 SessionNum 是否已赋值
                      * @return SessionNum 是否已赋值
+                     * 
                      */
                     bool SessionNumHasBeenSet() const;
 
                     /**
                      * 获取会话时长，单位：分钟
                      * @return TotalDuration 会话时长，单位：分钟
+                     * 
                      */
                     uint64_t GetTotalDuration() const;
 
                     /**
                      * 设置会话时长，单位：分钟
-                     * @param TotalDuration 会话时长，单位：分钟
+                     * @param _totalDuration 会话时长，单位：分钟
+                     * 
                      */
                     void SetTotalDuration(const uint64_t& _totalDuration);
 
                     /**
                      * 判断参数 TotalDuration 是否已赋值
                      * @return TotalDuration 是否已赋值
+                     * 
                      */
                     bool TotalDurationHasBeenSet() const;
 
                     /**
                      * 获取时间戳，单位：秒
                      * @return StartTime 时间戳，单位：秒
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置时间戳，单位：秒
-                     * @param StartTime 时间戳，单位：秒
+                     * @param _startTime 时间戳，单位：秒
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取时间戳，单位：秒
                      * @return EndTime 时间戳，单位：秒
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置时间戳，单位：秒
-                     * @param EndTime 时间戳，单位：秒
+                     * @param _endTime 时间戳，单位：秒
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取优良会话占比，单位：%
                      * @return NotBadSessionRatio 优良会话占比，单位：%
+                     * 
                      */
                     uint64_t GetNotBadSessionRatio() const;
 
                     /**
                      * 设置优良会话占比，单位：%
-                     * @param NotBadSessionRatio 优良会话占比，单位：%
+                     * @param _notBadSessionRatio 优良会话占比，单位：%
+                     * 
                      */
                     void SetNotBadSessionRatio(const uint64_t& _notBadSessionRatio);
 
                     /**
                      * 判断参数 NotBadSessionRatio 是否已赋值
                      * @return NotBadSessionRatio 是否已赋值
+                     * 
                      */
                     bool NotBadSessionRatioHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取告警通知频率
                      * @return AlarmNotifyPeriod 告警通知频率
+                     * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
                      * 设置告警通知频率
-                     * @param AlarmNotifyPeriod 告警通知频率
+                     * @param _alarmNotifyPeriod 告警通知频率
+                     * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
 
                     /**
                      * 判断参数 AlarmNotifyPeriod 是否已赋值
                      * @return AlarmNotifyPeriod 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
                      * 获取重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
                      * @return AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
                      * 设置重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
-                     * @param AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * @param _alarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
 
                     /**
                      * 判断参数 AlarmNotifyType 是否已赋值
                      * @return AlarmNotifyType 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyTypeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcType 检测方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCalcType() const;
 
                     /**
                      * 设置检测方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CalcType 检测方式
+                     * @param _calcType 检测方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcType(const std::string& _calcType);
 
                     /**
                      * 判断参数 CalcType 是否已赋值
                      * @return CalcType 是否已赋值
+                     * 
                      */
                     bool CalcTypeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcValue 检测值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCalcValue() const;
 
                     /**
                      * 设置检测值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CalcValue 检测值
+                     * @param _calcValue 检测值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcValue(const std::string& _calcValue);
 
                     /**
                      * 判断参数 CalcValue 是否已赋值
                      * @return CalcValue 是否已赋值
+                     * 
                      */
                     bool CalcValueHasBeenSet() const;
 
@@ -131,146 +143,170 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueTime 持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContinueTime() const;
 
                     /**
                      * 设置持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinueTime 持续时间，单位秒
+                     * @param _continueTime 持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContinueTime(const std::string& _continueTime);
 
                     /**
                      * 判断参数 ContinueTime 是否已赋值
                      * @return ContinueTime 是否已赋值
+                     * 
                      */
                     bool ContinueTimeHasBeenSet() const;
 
                     /**
                      * 获取指标ID
                      * @return MetricID 指标ID
+                     * 
                      */
                     int64_t GetMetricID() const;
 
                     /**
                      * 设置指标ID
-                     * @param MetricID 指标ID
+                     * @param _metricID 指标ID
+                     * 
                      */
                     void SetMetricID(const int64_t& _metricID);
 
                     /**
                      * 判断参数 MetricID 是否已赋值
                      * @return MetricID 是否已赋值
+                     * 
                      */
                     bool MetricIDHasBeenSet() const;
 
                     /**
                      * 获取指标展示名称（对外）
                      * @return MetricDisplayName 指标展示名称（对外）
+                     * 
                      */
                     std::string GetMetricDisplayName() const;
 
                     /**
                      * 设置指标展示名称（对外）
-                     * @param MetricDisplayName 指标展示名称（对外）
+                     * @param _metricDisplayName 指标展示名称（对外）
+                     * 
                      */
                     void SetMetricDisplayName(const std::string& _metricDisplayName);
 
                     /**
                      * 判断参数 MetricDisplayName 是否已赋值
                      * @return MetricDisplayName 是否已赋值
+                     * 
                      */
                     bool MetricDisplayNameHasBeenSet() const;
 
                     /**
                      * 获取周期
                      * @return Period 周期
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置周期
-                     * @param Period 周期
+                     * @param _period 周期
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleID 规则ID
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleID 规则ID
+                     * @param _ruleID 规则ID
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取指标单位
                      * @return Unit 指标单位
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标单位
-                     * @param Unit 指标单位
+                     * @param _unit 指标单位
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
                     /**
                      * 获取是否为高级指标，0：否；1：是
                      * @return IsAdvanced 是否为高级指标，0：否；1：是
+                     * 
                      */
                     int64_t GetIsAdvanced() const;
 
                     /**
                      * 设置是否为高级指标，0：否；1：是
-                     * @param IsAdvanced 是否为高级指标，0：否；1：是
+                     * @param _isAdvanced 是否为高级指标，0：否；1：是
+                     * 
                      */
                     void SetIsAdvanced(const int64_t& _isAdvanced);
 
                     /**
                      * 判断参数 IsAdvanced 是否已赋值
                      * @return IsAdvanced 是否已赋值
+                     * 
                      */
                     bool IsAdvancedHasBeenSet() const;
 
                     /**
                      * 获取是否开通高级指标，0：否；1：是
                      * @return IsOpen 是否开通高级指标，0：否；1：是
+                     * 
                      */
                     int64_t GetIsOpen() const;
 
                     /**
                      * 设置是否开通高级指标，0：否；1：是
-                     * @param IsOpen 是否开通高级指标，0：否；1：是
+                     * @param _isOpen 是否开通高级指标，0：否；1：是
+                     * 
                      */
                     void SetIsOpen(const int64_t& _isOpen);
 
                     /**
                      * 判断参数 IsOpen 是否已赋值
                      * @return IsOpen 是否已赋值
+                     * 
                      */
                     bool IsOpenHasBeenSet() const;
 
@@ -279,20 +315,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

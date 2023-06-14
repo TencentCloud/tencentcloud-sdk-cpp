@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN-SERVER 实例ID。
                      * @return SslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 
                      */
                     std::string GetSslVpnServerId() const;
 
                     /**
                      * 设置SSL-VPN-SERVER 实例ID。
-                     * @param SslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * @param _sslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 
                      */
                     void SetSslVpnServerId(const std::string& _sslVpnServerId);
 
                     /**
                      * 判断参数 SslVpnServerId 是否已赋值
                      * @return SslVpnServerId 是否已赋值
+                     * 
                      */
                     bool SslVpnServerIdHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
 2:已停用
 3.已过期
 4.创建出错
+                     * 
                      */
                     uint64_t GetCertStatus() const;
 
@@ -105,90 +112,104 @@ namespace TencentCloud
 2:已停用
 3.已过期
 4.创建出错
-                     * @param CertStatus 证书状态。
+                     * @param _certStatus 证书状态。
 0:创建中
 1:正常
 2:已停用
 3.已过期
 4.创建出错
+                     * 
                      */
                     void SetCertStatus(const uint64_t& _certStatus);
 
                     /**
                      * 判断参数 CertStatus 是否已赋值
                      * @return CertStatus 是否已赋值
+                     * 
                      */
                     bool CertStatusHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN-CLIENT 实例ID。
                      * @return SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 
                      */
                     std::string GetSslVpnClientId() const;
 
                     /**
                      * 设置SSL-VPN-CLIENT 实例ID。
-                     * @param SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * @param _sslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 
                      */
                     void SetSslVpnClientId(const std::string& _sslVpnClientId);
 
                     /**
                      * 判断参数 SslVpnClientId 是否已赋值
                      * @return SslVpnClientId 是否已赋值
+                     * 
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 
                     /**
                      * 获取证书开始时间。
                      * @return CertBeginTime 证书开始时间。
+                     * 
                      */
                     std::string GetCertBeginTime() const;
 
                     /**
                      * 设置证书开始时间。
-                     * @param CertBeginTime 证书开始时间。
+                     * @param _certBeginTime 证书开始时间。
+                     * 
                      */
                     void SetCertBeginTime(const std::string& _certBeginTime);
 
                     /**
                      * 判断参数 CertBeginTime 是否已赋值
                      * @return CertBeginTime 是否已赋值
+                     * 
                      */
                     bool CertBeginTimeHasBeenSet() const;
 
                     /**
                      * 获取证书到期时间。
                      * @return CertEndTime 证书到期时间。
+                     * 
                      */
                     std::string GetCertEndTime() const;
 
                     /**
                      * 设置证书到期时间。
-                     * @param CertEndTime 证书到期时间。
+                     * @param _certEndTime 证书到期时间。
+                     * 
                      */
                     void SetCertEndTime(const std::string& _certEndTime);
 
                     /**
                      * 判断参数 CertEndTime 是否已赋值
                      * @return CertEndTime 是否已赋值
+                     * 
                      */
                     bool CertEndTimeHasBeenSet() const;
 
                     /**
                      * 获取CLIENT NAME。
                      * @return Name CLIENT NAME。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置CLIENT NAME。
-                     * @param Name CLIENT NAME。
+                     * @param _name CLIENT NAME。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -211,6 +232,7 @@ namespace TencentCloud
 5 销毁出粗
 6 已连通
 7 未知
+                     * 
                      */
                     std::string GetState() const;
 
@@ -224,7 +246,7 @@ namespace TencentCloud
 5 销毁出粗
 6 已连通
 7 未知
-                     * @param State 创建CLIENT 状态。
+                     * @param _state 创建CLIENT 状态。
 0 创建中
 1 创建出错
 2 更新中
@@ -233,12 +255,14 @@ namespace TencentCloud
 5 销毁出粗
 6 已连通
 7 未知
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

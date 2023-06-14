@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取解析规则类型
                      * @return SchemaType 解析规则类型
+                     * 
                      */
                     int64_t GetSchemaType() const;
 
                     /**
                      * 设置解析规则类型
-                     * @param SchemaType 解析规则类型
+                     * @param _schemaType 解析规则类型
+                     * 
                      */
                     void SetSchemaType(const int64_t& _schemaType);
 
                     /**
                      * 判断参数 SchemaType 是否已赋值
                      * @return SchemaType 是否已赋值
+                     * 
                      */
                     bool SchemaTypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaContent 解析规则内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaContent() const;
 
                     /**
                      * 设置解析规则内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaContent 解析规则内容
+                     * @param _schemaContent 解析规则内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaContent(const std::string& _schemaContent);
 
                     /**
                      * 判断参数 SchemaContent 是否已赋值
                      * @return SchemaContent 是否已赋值
+                     * 
                      */
                     bool SchemaContentHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaDateFormat 解析规则时间格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaDateFormat() const;
 
                     /**
                      * 设置解析规则时间格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaDateFormat 解析规则时间格式
+                     * @param _schemaDateFormat 解析规则时间格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaDateFormat(const std::string& _schemaDateFormat);
 
                     /**
                      * 判断参数 SchemaDateFormat 是否已赋值
                      * @return SchemaDateFormat 是否已赋值
+                     * 
                      */
                     bool SchemaDateFormatHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaMultilinePattern 解析规则对应的多行匹配规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaMultilinePattern() const;
 
                     /**
                      * 设置解析规则对应的多行匹配规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaMultilinePattern 解析规则对应的多行匹配规则
+                     * @param _schemaMultilinePattern 解析规则对应的多行匹配规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaMultilinePattern(const std::string& _schemaMultilinePattern);
 
                     /**
                      * 判断参数 SchemaMultilinePattern 是否已赋值
                      * @return SchemaMultilinePattern 是否已赋值
+                     * 
                      */
                     bool SchemaMultilinePatternHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaCreateTime 解析规则创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaCreateTime() const;
 
                     /**
                      * 设置解析规则创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaCreateTime 解析规则创建时间
+                     * @param _schemaCreateTime 解析规则创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaCreateTime(const std::string& _schemaCreateTime);
 
                     /**
                      * 判断参数 SchemaCreateTime 是否已赋值
                      * @return SchemaCreateTime 是否已赋值
+                     * 
                      */
                     bool SchemaCreateTimeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaPatternLayout 用户填写的解析规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaPatternLayout() const;
 
                     /**
                      * 设置用户填写的解析规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaPatternLayout 用户填写的解析规则
+                     * @param _schemaPatternLayout 用户填写的解析规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaPatternLayout(const std::string& _schemaPatternLayout);
 
                     /**
                      * 判断参数 SchemaPatternLayout 是否已赋值
                      * @return SchemaPatternLayout 是否已赋值
+                     * 
                      */
                     bool SchemaPatternLayoutHasBeenSet() const;
 

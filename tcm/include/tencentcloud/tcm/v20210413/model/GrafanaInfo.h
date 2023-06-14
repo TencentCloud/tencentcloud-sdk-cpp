@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启
                      * @return Enabled 是否开启
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启
-                     * @param Enabled 是否开启
+                     * @param _enabled 是否开启
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取内网地址
                      * @return InternalURL 内网地址
+                     * 
                      */
                     std::string GetInternalURL() const;
 
                     /**
                      * 设置内网地址
-                     * @param InternalURL 内网地址
+                     * @param _internalURL 内网地址
+                     * 
                      */
                     void SetInternalURL(const std::string& _internalURL);
 
                     /**
                      * 判断参数 InternalURL 是否已赋值
                      * @return InternalURL 是否已赋值
+                     * 
                      */
                     bool InternalURLHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicURL 公网地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicURL() const;
 
                     /**
                      * 设置公网地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicURL 公网地址
+                     * @param _publicURL 公网地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicURL(const std::string& _publicURL);
 
                     /**
                      * 判断参数 PublicURL 是否已赋值
                      * @return PublicURL 是否已赋值
+                     * 
                      */
                     bool PublicURLHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicFailedReason 公网失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicFailedReason() const;
 
                     /**
                      * 设置公网失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicFailedReason 公网失败原因
+                     * @param _publicFailedReason 公网失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicFailedReason(const std::string& _publicFailedReason);
 
                     /**
                      * 判断参数 PublicFailedReason 是否已赋值
                      * @return PublicFailedReason 是否已赋值
+                     * 
                      */
                     bool PublicFailedReasonHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicFailedMessage 公网失败详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicFailedMessage() const;
 
                     /**
                      * 设置公网失败详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicFailedMessage 公网失败详细信息
+                     * @param _publicFailedMessage 公网失败详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicFailedMessage(const std::string& _publicFailedMessage);
 
                     /**
                      * 判断参数 PublicFailedMessage 是否已赋值
                      * @return PublicFailedMessage 是否已赋值
+                     * 
                      */
                     bool PublicFailedMessageHasBeenSet() const;
 

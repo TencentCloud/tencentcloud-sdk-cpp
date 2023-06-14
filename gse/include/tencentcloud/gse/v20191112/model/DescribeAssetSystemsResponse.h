@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取生成包支持的操作系统类型列表
                      * @return AssetSupportSys 生成包支持的操作系统类型列表
+                     * 
                      */
                     std::vector<AssetSupportSys> GetAssetSupportSys() const;
 
                     /**
                      * 判断参数 AssetSupportSys 是否已赋值
                      * @return AssetSupportSys 是否已赋值
+                     * 
                      */
                     bool AssetSupportSysHasBeenSet() const;
 

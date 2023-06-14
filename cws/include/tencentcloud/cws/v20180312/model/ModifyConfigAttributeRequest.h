@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
                      * @return NoticeLevel 漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
+                     * 
                      */
                     std::string GetNoticeLevel() const;
 
                     /**
                      * 设置漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
-                     * @param NoticeLevel 漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
+                     * @param _noticeLevel 漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
+                     * 
                      */
                     void SetNoticeLevel(const std::string& _noticeLevel);
 
                     /**
                      * 判断参数 NoticeLevel 是否已赋值
                      * @return NoticeLevel 是否已赋值
+                     * 
                      */
                     bool NoticeLevelHasBeenSet() const;
 

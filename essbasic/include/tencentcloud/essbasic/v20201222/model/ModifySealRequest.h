@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取请求更新印章的客户端IP
                      * @return SourceIp 请求更新印章的客户端IP
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求更新印章的客户端IP
-                     * @param SourceIp 请求更新印章的客户端IP
+                     * @param _sourceIp 请求更新印章的客户端IP
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 
                     /**
                      * 获取电子印章ID。若为空，则修改个人/机构的默认印章。
                      * @return SealId 电子印章ID。若为空，则修改个人/机构的默认印章。
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置电子印章ID。若为空，则修改个人/机构的默认印章。
-                     * @param SealId 电子印章ID。若为空，则修改个人/机构的默认印章。
+                     * @param _sealId 电子印章ID。若为空，则修改个人/机构的默认印章。
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取电子印章名称
                      * @return SealName 电子印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置电子印章名称
-                     * @param SealName 电子印章名称
+                     * @param _sealName 电子印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
                      * @return Image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
-                     * @param Image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * @param _image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）
                      * @return FileId 印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）
-                     * @param FileId 印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * @param _fileId 印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取需要更新印章的用户ID
                      * @return UserId 需要更新印章的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置需要更新印章的用户ID
-                     * @param UserId 需要更新印章的用户ID
+                     * @param _userId 需要更新印章的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

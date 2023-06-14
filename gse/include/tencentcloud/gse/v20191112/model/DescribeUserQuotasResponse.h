@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaResource 配额信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QuotaResource> GetQuotaResource() const;
 
                     /**
                      * 判断参数 QuotaResource 是否已赋值
                      * @return QuotaResource 是否已赋值
+                     * 
                      */
                     bool QuotaResourceHasBeenSet() const;
 
                     /**
                      * 获取配额信息列表总数，最小值0
                      * @return Total 配额信息列表总数，最小值0
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取字段类型列表。
                      * @return TypeInfoSet 字段类型列表。
+                     * 
                      */
                     std::vector<Label> GetTypeInfoSet() const;
 
                     /**
                      * 判断参数 TypeInfoSet 是否已赋值
                      * @return TypeInfoSet 是否已赋值
+                     * 
                      */
                     bool TypeInfoSetHasBeenSet() const;
 

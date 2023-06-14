@@ -65,18 +65,21 @@ namespace TencentCloud
                     /**
                      * 获取资源类型
                      * @return Type 资源类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置资源类型
-                     * @param Type 资源类型
+                     * @param _type 资源类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -85,20 +88,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaParam ckafka配置，Type为KAFKA时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     KafkaParam GetKafkaParam() const;
 
                     /**
                      * 设置ckafka配置，Type为KAFKA时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaParam ckafka配置，Type为KAFKA时必填
+                     * @param _kafkaParam ckafka配置，Type为KAFKA时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaParam(const KafkaParam& _kafkaParam);
 
                     /**
                      * 判断参数 KafkaParam 是否已赋值
                      * @return KafkaParam 是否已赋值
+                     * 
                      */
                     bool KafkaParamHasBeenSet() const;
 
@@ -107,20 +113,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventBusParam EB配置，Type为EB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EventBusParam GetEventBusParam() const;
 
                     /**
                      * 设置EB配置，Type为EB时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventBusParam EB配置，Type为EB时必填
+                     * @param _eventBusParam EB配置，Type为EB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventBusParam(const EventBusParam& _eventBusParam);
 
                     /**
                      * 判断参数 EventBusParam 是否已赋值
                      * @return EventBusParam 是否已赋值
+                     * 
                      */
                     bool EventBusParamHasBeenSet() const;
 
@@ -129,20 +138,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoDBParam MongoDB配置，Type为MONGODB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MongoDBParam GetMongoDBParam() const;
 
                     /**
                      * 设置MongoDB配置，Type为MONGODB时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MongoDBParam MongoDB配置，Type为MONGODB时必填
+                     * @param _mongoDBParam MongoDB配置，Type为MONGODB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMongoDBParam(const MongoDBParam& _mongoDBParam);
 
                     /**
                      * 判断参数 MongoDBParam 是否已赋值
                      * @return MongoDBParam 是否已赋值
+                     * 
                      */
                     bool MongoDBParamHasBeenSet() const;
 
@@ -151,20 +163,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EsParam Es配置，Type为ES时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EsParam GetEsParam() const;
 
                     /**
                      * 设置Es配置，Type为ES时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EsParam Es配置，Type为ES时必填
+                     * @param _esParam Es配置，Type为ES时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEsParam(const EsParam& _esParam);
 
                     /**
                      * 判断参数 EsParam 是否已赋值
                      * @return EsParam 是否已赋值
+                     * 
                      */
                     bool EsParamHasBeenSet() const;
 
@@ -173,20 +188,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TdwParam Tdw配置，Type为TDW时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TdwParam GetTdwParam() const;
 
                     /**
                      * 设置Tdw配置，Type为TDW时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TdwParam Tdw配置，Type为TDW时必填
+                     * @param _tdwParam Tdw配置，Type为TDW时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTdwParam(const TdwParam& _tdwParam);
 
                     /**
                      * 判断参数 TdwParam 是否已赋值
                      * @return TdwParam 是否已赋值
+                     * 
                      */
                     bool TdwParamHasBeenSet() const;
 
@@ -195,20 +213,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DtsParam Dts配置，Type为DTS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DtsParam GetDtsParam() const;
 
                     /**
                      * 设置Dts配置，Type为DTS时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DtsParam Dts配置，Type为DTS时必填
+                     * @param _dtsParam Dts配置，Type为DTS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDtsParam(const DtsParam& _dtsParam);
 
                     /**
                      * 判断参数 DtsParam 是否已赋值
                      * @return DtsParam 是否已赋值
+                     * 
                      */
                     bool DtsParamHasBeenSet() const;
 
@@ -217,20 +238,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClickHouseParam ClickHouse配置，Type为CLICKHOUSE时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClickHouseParam GetClickHouseParam() const;
 
                     /**
                      * 设置ClickHouse配置，Type为CLICKHOUSE时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClickHouseParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * @param _clickHouseParam ClickHouse配置，Type为CLICKHOUSE时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClickHouseParam(const ClickHouseParam& _clickHouseParam);
 
                     /**
                      * 判断参数 ClickHouseParam 是否已赋值
                      * @return ClickHouseParam 是否已赋值
+                     * 
                      */
                     bool ClickHouseParamHasBeenSet() const;
 
@@ -239,20 +263,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsParam Cls配置，Type为CLS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClsParam GetClsParam() const;
 
                     /**
                      * 设置Cls配置，Type为CLS时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClsParam Cls配置，Type为CLS时必填
+                     * @param _clsParam Cls配置，Type为CLS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClsParam(const ClsParam& _clsParam);
 
                     /**
                      * 判断参数 ClsParam 是否已赋值
                      * @return ClsParam 是否已赋值
+                     * 
                      */
                     bool ClsParamHasBeenSet() const;
 
@@ -261,20 +288,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosParam Cos配置，Type为COS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosParam GetCosParam() const;
 
                     /**
                      * 设置Cos配置，Type为COS时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosParam Cos配置，Type为COS时必填
+                     * @param _cosParam Cos配置，Type为COS时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosParam(const CosParam& _cosParam);
 
                     /**
                      * 判断参数 CosParam 是否已赋值
                      * @return CosParam 是否已赋值
+                     * 
                      */
                     bool CosParamHasBeenSet() const;
 
@@ -283,20 +313,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MySQLParam MySQL配置，Type为MYSQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MySQLParam GetMySQLParam() const;
 
                     /**
                      * 设置MySQL配置，Type为MYSQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MySQLParam MySQL配置，Type为MYSQL时必填
+                     * @param _mySQLParam MySQL配置，Type为MYSQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMySQLParam(const MySQLParam& _mySQLParam);
 
                     /**
                      * 判断参数 MySQLParam 是否已赋值
                      * @return MySQLParam 是否已赋值
+                     * 
                      */
                     bool MySQLParamHasBeenSet() const;
 
@@ -305,20 +338,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostgreSQLParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PostgreSQLParam GetPostgreSQLParam() const;
 
                     /**
                      * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PostgreSQLParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @param _postgreSQLParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPostgreSQLParam(const PostgreSQLParam& _postgreSQLParam);
 
                     /**
                      * 判断参数 PostgreSQLParam 是否已赋值
                      * @return PostgreSQLParam 是否已赋值
+                     * 
                      */
                     bool PostgreSQLParamHasBeenSet() const;
 
@@ -327,20 +363,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicParam Topic配置，Type为Topic时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TopicParam GetTopicParam() const;
 
                     /**
                      * 设置Topic配置，Type为Topic时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicParam Topic配置，Type为Topic时必填
+                     * @param _topicParam Topic配置，Type为Topic时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicParam(const TopicParam& _topicParam);
 
                     /**
                      * 判断参数 TopicParam 是否已赋值
                      * @return TopicParam 是否已赋值
+                     * 
                      */
                     bool TopicParamHasBeenSet() const;
 
@@ -349,20 +388,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MariaDBParam MariaDB配置，Type为MARIADB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MariaDBParam GetMariaDBParam() const;
 
                     /**
                      * 设置MariaDB配置，Type为MARIADB时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MariaDBParam MariaDB配置，Type为MARIADB时必填
+                     * @param _mariaDBParam MariaDB配置，Type为MARIADB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMariaDBParam(const MariaDBParam& _mariaDBParam);
 
                     /**
                      * 判断参数 MariaDBParam 是否已赋值
                      * @return MariaDBParam 是否已赋值
+                     * 
                      */
                     bool MariaDBParamHasBeenSet() const;
 
@@ -371,20 +413,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQLServerParam SQLServer配置，Type为SQLSERVER时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SQLServerParam GetSQLServerParam() const;
 
                     /**
                      * 设置SQLServer配置，Type为SQLSERVER时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SQLServerParam SQLServer配置，Type为SQLSERVER时必填
+                     * @param _sQLServerParam SQLServer配置，Type为SQLSERVER时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSQLServerParam(const SQLServerParam& _sQLServerParam);
 
                     /**
                      * 判断参数 SQLServerParam 是否已赋值
                      * @return SQLServerParam 是否已赋值
+                     * 
                      */
                     bool SQLServerParamHasBeenSet() const;
 
@@ -393,20 +438,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CtsdbParam Ctsdb配置，Type为CTSDB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CtsdbParam GetCtsdbParam() const;
 
                     /**
                      * 设置Ctsdb配置，Type为CTSDB时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CtsdbParam Ctsdb配置，Type为CTSDB时必填
+                     * @param _ctsdbParam Ctsdb配置，Type为CTSDB时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCtsdbParam(const CtsdbParam& _ctsdbParam);
 
                     /**
                      * 判断参数 CtsdbParam 是否已赋值
                      * @return CtsdbParam 是否已赋值
+                     * 
                      */
                     bool CtsdbParamHasBeenSet() const;
 
@@ -415,20 +463,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfParam Scf配置，Type为SCF时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScfParam GetScfParam() const;
 
                     /**
                      * 设置Scf配置，Type为SCF时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScfParam Scf配置，Type为SCF时必填
+                     * @param _scfParam Scf配置，Type为SCF时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScfParam(const ScfParam& _scfParam);
 
                     /**
                      * 判断参数 ScfParam 是否已赋值
                      * @return ScfParam 是否已赋值
+                     * 
                      */
                     bool ScfParamHasBeenSet() const;
 

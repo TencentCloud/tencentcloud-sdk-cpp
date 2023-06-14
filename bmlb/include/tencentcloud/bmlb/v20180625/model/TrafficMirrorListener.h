@@ -49,324 +49,378 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID。
                      * @return ListenerId 监听器ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID。
-                     * @param ListenerId 监听器ID。
+                     * @param _listenerId 监听器ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器名称。
                      * @return ListenerName 监听器名称。
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名称。
-                     * @param ListenerName 监听器名称。
+                     * @param _listenerName 监听器名称。
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 
                     /**
                      * 获取七层监听器协议类型，可选值：http,https。
                      * @return Protocol 七层监听器协议类型，可选值：http,https。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置七层监听器协议类型，可选值：http,https。
-                     * @param Protocol 七层监听器协议类型，可选值：http,https。
+                     * @param _protocol 七层监听器协议类型，可选值：http,https。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取监听器的监听端口。
                      * @return LoadBalancerPort 监听器的监听端口。
+                     * 
                      */
                     uint64_t GetLoadBalancerPort() const;
 
                     /**
                      * 设置监听器的监听端口。
-                     * @param LoadBalancerPort 监听器的监听端口。
+                     * @param _loadBalancerPort 监听器的监听端口。
+                     * 
                      */
                     void SetLoadBalancerPort(const uint64_t& _loadBalancerPort);
 
                     /**
                      * 判断参数 LoadBalancerPort 是否已赋值
                      * @return LoadBalancerPort 是否已赋值
+                     * 
                      */
                     bool LoadBalancerPortHasBeenSet() const;
 
                     /**
                      * 获取当前带宽。
                      * @return Bandwidth 当前带宽。
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置当前带宽。
-                     * @param Bandwidth 当前带宽。
+                     * @param _bandwidth 当前带宽。
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取带宽上限。
                      * @return MaxBandwidth 带宽上限。
+                     * 
                      */
                     uint64_t GetMaxBandwidth() const;
 
                     /**
                      * 设置带宽上限。
-                     * @param MaxBandwidth 带宽上限。
+                     * @param _maxBandwidth 带宽上限。
+                     * 
                      */
                     void SetMaxBandwidth(const uint64_t& _maxBandwidth);
 
                     /**
                      * 判断参数 MaxBandwidth 是否已赋值
                      * @return MaxBandwidth 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthHasBeenSet() const;
 
                     /**
                      * 获取监听器类型。
                      * @return ListenerType 监听器类型。
+                     * 
                      */
                     std::string GetListenerType() const;
 
                     /**
                      * 设置监听器类型。
-                     * @param ListenerType 监听器类型。
+                     * @param _listenerType 监听器类型。
+                     * 
                      */
                     void SetListenerType(const std::string& _listenerType);
 
                     /**
                      * 判断参数 ListenerType 是否已赋值
                      * @return ListenerType 是否已赋值
+                     * 
                      */
                     bool ListenerTypeHasBeenSet() const;
 
                     /**
                      * 获取认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。
                      * @return SslMode 认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。
+                     * 
                      */
                     int64_t GetSslMode() const;
 
                     /**
                      * 设置认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。
-                     * @param SslMode 认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。
+                     * @param _sslMode 认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。
+                     * 
                      */
                     void SetSslMode(const int64_t& _sslMode);
 
                     /**
                      * 判断参数 SslMode 是否已赋值
                      * @return SslMode 是否已赋值
+                     * 
                      */
                     bool SslModeHasBeenSet() const;
 
                     /**
                      * 获取服务端证书ID。
                      * @return CertId 服务端证书ID。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置服务端证书ID。
-                     * @param CertId 服务端证书ID。
+                     * @param _certId 服务端证书ID。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取客户端证书ID。
                      * @return CertCaId 客户端证书ID。
+                     * 
                      */
                     std::string GetCertCaId() const;
 
                     /**
                      * 设置客户端证书ID。
-                     * @param CertCaId 客户端证书ID。
+                     * @param _certCaId 客户端证书ID。
+                     * 
                      */
                     void SetCertCaId(const std::string& _certCaId);
 
                     /**
                      * 判断参数 CertCaId 是否已赋值
                      * @return CertCaId 是否已赋值
+                     * 
                      */
                     bool CertCaIdHasBeenSet() const;
 
                     /**
                      * 获取添加时间。
                      * @return AddTimestamp 添加时间。
+                     * 
                      */
                     std::string GetAddTimestamp() const;
 
                     /**
                      * 设置添加时间。
-                     * @param AddTimestamp 添加时间。
+                     * @param _addTimestamp 添加时间。
+                     * 
                      */
                     void SetAddTimestamp(const std::string& _addTimestamp);
 
                     /**
                      * 判断参数 AddTimestamp 是否已赋值
                      * @return AddTimestamp 是否已赋值
+                     * 
                      */
                     bool AddTimestampHasBeenSet() const;
 
                     /**
                      * 获取负载均衡ID。
                      * @return LoadBalancerId 负载均衡ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡ID。
-                     * @param LoadBalancerId 负载均衡ID。
+                     * @param _loadBalancerId 负载均衡ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络名称。
                      * @return VpcName 私有网络名称。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置私有网络名称。
-                     * @param VpcName 私有网络名称。
+                     * @param _vpcName 私有网络名称。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取私有网络Cidr。
                      * @return VpcCidrBlock 私有网络Cidr。
+                     * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
                      * 设置私有网络Cidr。
-                     * @param VpcCidrBlock 私有网络Cidr。
+                     * @param _vpcCidrBlock 私有网络Cidr。
+                     * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
 
                     /**
                      * 判断参数 VpcCidrBlock 是否已赋值
                      * @return VpcCidrBlock 是否已赋值
+                     * 
                      */
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的VIP。
                      * @return LoadBalancerVips 负载均衡的VIP。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
                      * 设置负载均衡的VIP。
-                     * @param LoadBalancerVips 负载均衡的VIP。
+                     * @param _loadBalancerVips 负载均衡的VIP。
+                     * 
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
 
                     /**
                      * 判断参数 LoadBalancerVips 是否已赋值
                      * @return LoadBalancerVips 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡名称。
                      * @return LoadBalancerName 负载均衡名称。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡名称。
-                     * @param LoadBalancerName 负载均衡名称。
+                     * @param _loadBalancerName 负载均衡名称。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的IPV6的VIP。
                      * @return LoadBalancerVipv6s 负载均衡的IPV6的VIP。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerVipv6s() const;
 
                     /**
                      * 设置负载均衡的IPV6的VIP。
-                     * @param LoadBalancerVipv6s 负载均衡的IPV6的VIP。
+                     * @param _loadBalancerVipv6s 负载均衡的IPV6的VIP。
+                     * 
                      */
                     void SetLoadBalancerVipv6s(const std::vector<std::string>& _loadBalancerVipv6s);
 
                     /**
                      * 判断参数 LoadBalancerVipv6s 是否已赋值
                      * @return LoadBalancerVipv6s 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipv6sHasBeenSet() const;
 
                     /**
                      * 获取支持的IP协议类型。ipv4或者是ipv6。
                      * @return IpProtocolType 支持的IP协议类型。ipv4或者是ipv6。
+                     * 
                      */
                     std::string GetIpProtocolType() const;
 
                     /**
                      * 设置支持的IP协议类型。ipv4或者是ipv6。
-                     * @param IpProtocolType 支持的IP协议类型。ipv4或者是ipv6。
+                     * @param _ipProtocolType 支持的IP协议类型。ipv4或者是ipv6。
+                     * 
                      */
                     void SetIpProtocolType(const std::string& _ipProtocolType);
 
                     /**
                      * 判断参数 IpProtocolType 是否已赋值
                      * @return IpProtocolType 是否已赋值
+                     * 
                      */
                     bool IpProtocolTypeHasBeenSet() const;
 

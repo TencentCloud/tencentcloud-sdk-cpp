@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间，时间格式如：2016-01-01 00:00:01。
                      * @return StartTime 开始时间，时间格式如：2016-01-01 00:00:01。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，时间格式如：2016-01-01 00:00:01。
-                     * @param StartTime 开始时间，时间格式如：2016-01-01 00:00:01。
+                     * @param _startTime 开始时间，时间格式如：2016-01-01 00:00:01。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，时间格式如：2016-01-01 23:59:59。
                      * @return EndTime 结束时间，时间格式如：2016-01-01 23:59:59。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，时间格式如：2016-01-01 23:59:59。
-                     * @param EndTime 结束时间，时间格式如：2016-01-01 23:59:59。
+                     * @param _endTime 结束时间，时间格式如：2016-01-01 23:59:59。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页参数，偏移量，默认值为0。
                      * @return Offset 分页参数，偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页参数，偏移量，默认值为0。
-                     * @param Offset 分页参数，偏移量，默认值为0。
+                     * @param _offset 分页参数，偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
                      * @return Limit 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
-                     * @param Limit 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * @param _limit 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数，特定在该接口中总是会返回null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总条数，特定在该接口中总是会返回null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 总条数，特定在该接口中总是会返回null
+                     * @param _totalCount 总条数，特定在该接口中总是会返回null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取主事务分组列表
                      * @return Content 主事务分组列表
+                     * 
                      */
                     std::vector<Transaction> GetContent() const;
 
                     /**
                      * 设置主事务分组列表
-                     * @param Content 主事务分组列表
+                     * @param _content 主事务分组列表
+                     * 
                      */
                     void SetContent(const std::vector<Transaction>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

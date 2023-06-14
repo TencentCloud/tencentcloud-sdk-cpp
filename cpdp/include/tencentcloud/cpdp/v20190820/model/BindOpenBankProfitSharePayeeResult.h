@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取账户ID。受益人ID
                      * @return AccountId 账户ID。受益人ID
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账户ID。受益人ID
-                     * @param AccountId 账户ID。受益人ID
+                     * @param _accountId 账户ID。受益人ID
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取账户号，通联渠道指客户银行账号
                      * @return AccountNo 账户号，通联渠道指客户银行账号
+                     * 
                      */
                     std::string GetAccountNo() const;
 
                     /**
                      * 设置账户号，通联渠道指客户银行账号
-                     * @param AccountNo 账户号，通联渠道指客户银行账号
+                     * @param _accountNo 账户号，通联渠道指客户银行账号
+                     * 
                      */
                     void SetAccountNo(const std::string& _accountNo);
 
                     /**
                      * 判断参数 AccountNo 是否已赋值
                      * @return AccountNo 是否已赋值
+                     * 
                      */
                     bool AccountNoHasBeenSet() const;
 
                     /**
                      * 获取账户货币。参考附录“币种类型”。
                      * @return Currency 账户货币。参考附录“币种类型”。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置账户货币。参考附录“币种类型”。
-                     * @param Currency 账户货币。参考附录“币种类型”。
+                     * @param _currency 账户货币。参考附录“币种类型”。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

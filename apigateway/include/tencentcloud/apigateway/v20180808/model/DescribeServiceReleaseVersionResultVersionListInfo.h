@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionName 版本号。
+                     * @param _versionName 版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionDesc 版本描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionDesc() const;
 
                     /**
                      * 设置版本描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionDesc 版本描述。
+                     * @param _versionDesc 版本描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionDesc(const std::string& _versionDesc);
 
                     /**
                      * 判断参数 VersionDesc 是否已赋值
                      * @return VersionDesc 是否已赋值
+                     * 
                      */
                     bool VersionDescHasBeenSet() const;
 

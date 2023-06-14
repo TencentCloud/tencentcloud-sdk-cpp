@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取翻页标识，当请求未返回所有数据，该字段表示下一条记录的 Token。当该字段为空，说明已无更多数据。
                      * @return ScrollToken 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 Token。当该字段为空，说明已无更多数据。
+                     * 
                      */
                     std::string GetScrollToken() const;
 
                     /**
                      * 判断参数 ScrollToken 是否已赋值
                      * @return ScrollToken 是否已赋值
+                     * 
                      */
                     bool ScrollTokenHasBeenSet() const;
 
                     /**
                      * 获取截图任务列表。当该字段为空，说明已返回所有数据。
                      * @return TaskList 截图任务列表。当该字段为空，说明已返回所有数据。
+                     * 
                      */
                     std::vector<ScreenshotTask> GetTaskList() const;
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 

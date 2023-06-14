@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSignParam() const;
 
                     /**
                      * 设置uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _signParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSignParam(const std::string& _signParam);
 
                     /**
                      * 判断参数 SignParam 是否已赋值
                      * @return SignParam 是否已赋值
+                     * 
                      */
                     bool SignParamHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeParam() const;
 
                     /**
                      * 设置uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _timeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeParam(const std::string& _timeParam);
 
                     /**
                      * 判断参数 TimeParam 是否已赋值
                      * @return TimeParam 是否已赋值
+                     * 
                      */
                     bool TimeParamHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionParam uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransactionParam() const;
 
                     /**
                      * 设置uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionParam uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _transactionParam uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionParam(const std::string& _transactionParam);
 
                     /**
                      * 判断参数 TransactionParam 是否已赋值
                      * @return TransactionParam 是否已赋值
+                     * 
                      */
                     bool TransactionParamHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 用于计算签名的主密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置用于计算签名的主密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 用于计算签名的主密钥，只允许字母和数字，长度6-32字节。
+                     * @param _secretKey 用于计算签名的主密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSecretKey 用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupSecretKey() const;
 
                     /**
                      * 设置用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSecretKey 用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。
+                     * @param _backupSecretKey 用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSecretKey(const std::string& _backupSecretKey);
 
                     /**
                      * 判断参数 BackupSecretKey 是否已赋值
                      * @return BackupSecretKey 是否已赋值
+                     * 
                      */
                     bool BackupSecretKeyHasBeenSet() const;
 

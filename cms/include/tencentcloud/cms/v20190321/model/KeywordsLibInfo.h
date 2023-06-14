@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取关键词库ID
                      * @return ID 关键词库ID
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置关键词库ID
-                     * @param ID 关键词库ID
+                     * @param _iD 关键词库ID
+                     * 
                      */
                     void SetID(const std::string& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 关键词库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置关键词库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 关键词库名称
+                     * @param _libName 关键词库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibName(const std::string& _libName);
 
                     /**
                      * 判断参数 LibName 是否已赋值
                      * @return LibName 是否已赋值
+                     * 
                      */
                     bool LibNameHasBeenSet() const;
 
@@ -91,74 +97,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describe 关键词库描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置关键词库描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Describe 关键词库描述信息
+                     * @param _describe 关键词库描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescribe(const std::string& _describe);
 
                     /**
                      * 判断参数 Describe 是否已赋值
                      * @return Describe 是否已赋值
+                     * 
                      */
                     bool DescribeHasBeenSet() const;
 
                     /**
                      * 获取关键词库创建时间
                      * @return CreateTime 关键词库创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置关键词库创建时间
-                     * @param CreateTime 关键词库创建时间
+                     * @param _createTime 关键词库创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取审核建议(Review/Block)
                      * @return Suggestion 审核建议(Review/Block)
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置审核建议(Review/Block)
-                     * @param Suggestion 审核建议(Review/Block)
+                     * @param _suggestion 审核建议(Review/Block)
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取匹配模式(ExactMatch/FuzzyMatch)
                      * @return MatchType 匹配模式(ExactMatch/FuzzyMatch)
+                     * 
                      */
                     std::string GetMatchType() const;
 
                     /**
                      * 设置匹配模式(ExactMatch/FuzzyMatch)
-                     * @param MatchType 匹配模式(ExactMatch/FuzzyMatch)
+                     * @param _matchType 匹配模式(ExactMatch/FuzzyMatch)
+                     * 
                      */
                     void SetMatchType(const std::string& _matchType);
 
                     /**
                      * 判断参数 MatchType 是否已赋值
                      * @return MatchType 是否已赋值
+                     * 
                      */
                     bool MatchTypeHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizTypes 关联策略BizType列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBizTypes() const;
 
                     /**
                      * 设置关联策略BizType列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizTypes 关联策略BizType列表
+                     * @param _bizTypes 关联策略BizType列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizTypes(const std::vector<std::string>& _bizTypes);
 
                     /**
                      * 判断参数 BizTypes 是否已赋值
                      * @return BizTypes 是否已赋值
+                     * 
                      */
                     bool BizTypesHasBeenSet() const;
 

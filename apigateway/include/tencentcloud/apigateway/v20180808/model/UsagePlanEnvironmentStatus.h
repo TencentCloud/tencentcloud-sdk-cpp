@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 使用计划绑定的服务的环境数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置使用计划绑定的服务的环境数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 使用计划绑定的服务的环境数。
+                     * @param _totalCount 使用计划绑定的服务的环境数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentList 使用计划已经绑定的各个服务的环境状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsagePlanEnvironment> GetEnvironmentList() const;
 
                     /**
                      * 设置使用计划已经绑定的各个服务的环境状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentList 使用计划已经绑定的各个服务的环境状态。
+                     * @param _environmentList 使用计划已经绑定的各个服务的环境状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentList(const std::vector<UsagePlanEnvironment>& _environmentList);
 
                     /**
                      * 判断参数 EnvironmentList 是否已赋值
                      * @return EnvironmentList 是否已赋值
+                     * 
                      */
                     bool EnvironmentListHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频按帧标签列表。
                      * @return SegmentSet 视频按帧标签列表。
+                     * 
                      */
                     std::vector<MediaAiAnalysisFrameTagSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置视频按帧标签列表。
-                     * @param SegmentSet 视频按帧标签列表。
+                     * @param _segmentSet 视频按帧标签列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<MediaAiAnalysisFrameTagSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

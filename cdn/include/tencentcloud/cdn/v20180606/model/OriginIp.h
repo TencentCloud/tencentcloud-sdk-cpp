@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取回源IP段/回源IP，默认返回IP段信息。
                      * @return Ip 回源IP段/回源IP，默认返回IP段信息。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置回源IP段/回源IP，默认返回IP段信息。
-                     * @param Ip 回源IP段/回源IP，默认返回IP段信息。
+                     * @param _ip 回源IP段/回源IP，默认返回IP段信息。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 

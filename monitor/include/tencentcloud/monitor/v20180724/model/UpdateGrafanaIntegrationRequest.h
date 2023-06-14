@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
                      * @return IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
                      * 设置集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
-                     * @param IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * @param _integrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * 
                      */
                     void SetIntegrationId(const std::string& _integrationId);
 
                     /**
                      * 判断参数 IntegrationId 是否已赋值
                      * @return IntegrationId 是否已赋值
+                     * 
                      */
                     bool IntegrationIdHasBeenSet() const;
 
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-12345678
                      * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-12345678
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      * @return Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
-                     * @param Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * @param _kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取集成内容
                      * @return Content 集成内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置集成内容
-                     * @param Content 集成内容
+                     * @param _content 集成内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

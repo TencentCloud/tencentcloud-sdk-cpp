@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取可创建跟踪集的数量
                      * @return AuditAmount 可创建跟踪集的数量
+                     * 
                      */
                     int64_t GetAuditAmount() const;
 
                     /**
                      * 判断参数 AuditAmount 是否已赋值
                      * @return AuditAmount 是否已赋值
+                     * 
                      */
                     bool AuditAmountHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码 </li>
 默认值：libx264。
+                     * 
                      */
                     std::string GetCodec() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置视频流的编码格式，可选值：
 <li>libx264：H.264 编码 </li>
 默认值：libx264。
-                     * @param Codec 视频流的编码格式，可选值：
+                     * @param _codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码 </li>
 默认值：libx264。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 默认值：0，表示和第一个视频轨的第一个视频片段的视频帧率一致。
                      * @return Fps 视频帧率，取值范围：[0, 60]，单位：Hz。
 默认值：0，表示和第一个视频轨的第一个视频片段的视频帧率一致。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置视频帧率，取值范围：[0, 60]，单位：Hz。
 默认值：0，表示和第一个视频轨的第一个视频片段的视频帧率一致。
-                     * @param Fps 视频帧率，取值范围：[0, 60]，单位：Hz。
+                     * @param _fps 视频帧率，取值范围：[0, 60]，单位：Hz。
 默认值：0，表示和第一个视频轨的第一个视频片段的视频帧率一致。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 

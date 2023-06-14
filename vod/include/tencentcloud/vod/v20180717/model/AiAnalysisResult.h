@@ -64,6 +64,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -74,18 +75,20 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-                     * @param Type 任务的类型，可以取的值有：
+                     * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -94,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassificationTask 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AiAnalysisTaskClassificationResult GetClassificationTask() const;
 
                     /**
                      * 设置视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassificationTask 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
+                     * @param _classificationTask 视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassificationTask(const AiAnalysisTaskClassificationResult& _classificationTask);
 
                     /**
                      * 判断参数 ClassificationTask 是否已赋值
                      * @return ClassificationTask 是否已赋值
+                     * 
                      */
                     bool ClassificationTaskHasBeenSet() const;
 
@@ -116,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverTask 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AiAnalysisTaskCoverResult GetCoverTask() const;
 
                     /**
                      * 设置视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverTask 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
+                     * @param _coverTask 视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverTask(const AiAnalysisTaskCoverResult& _coverTask);
 
                     /**
                      * 判断参数 CoverTask 是否已赋值
                      * @return CoverTask 是否已赋值
+                     * 
                      */
                     bool CoverTaskHasBeenSet() const;
 
@@ -138,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagTask 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AiAnalysisTaskTagResult GetTagTask() const;
 
                     /**
                      * 设置视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagTask 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
+                     * @param _tagTask 视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagTask(const AiAnalysisTaskTagResult& _tagTask);
 
                     /**
                      * 判断参数 TagTask 是否已赋值
                      * @return TagTask 是否已赋值
+                     * 
                      */
                     bool TagTaskHasBeenSet() const;
 
@@ -160,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameTagTask 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AiAnalysisTaskFrameTagResult GetFrameTagTask() const;
 
                     /**
                      * 设置视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameTagTask 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
+                     * @param _frameTagTask 视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameTagTask(const AiAnalysisTaskFrameTagResult& _frameTagTask);
 
                     /**
                      * 判断参数 FrameTagTask 是否已赋值
                      * @return FrameTagTask 是否已赋值
+                     * 
                      */
                     bool FrameTagTaskHasBeenSet() const;
 
@@ -182,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighlightTask 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AiAnalysisTaskHighlightResult GetHighlightTask() const;
 
                     /**
                      * 设置视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HighlightTask 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * @param _highlightTask 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHighlightTask(const AiAnalysisTaskHighlightResult& _highlightTask);
 
                     /**
                      * 判断参数 HighlightTask 是否已赋值
                      * @return HighlightTask 是否已赋值
+                     * 
                      */
                     bool HighlightTaskHasBeenSet() const;
 

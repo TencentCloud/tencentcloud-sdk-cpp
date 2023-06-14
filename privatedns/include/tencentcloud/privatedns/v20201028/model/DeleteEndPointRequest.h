@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBALANCEREQUEST_H_
-#define TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBALANCEREQUEST_H_
+#ifndef TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTREQUEST_H_
+#define TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,48 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Partners
+    namespace Privatedns
     {
-        namespace V20180321
+        namespace V20201028
         {
             namespace Model
             {
                 /**
-                * DescribeClientBalance请求参数结构体
+                * DeleteEndPoint请求参数结构体
                 */
-                class DescribeClientBalanceRequest : public AbstractModel
+                class DeleteEndPointRequest : public AbstractModel
                 {
                 public:
-                    DescribeClientBalanceRequest();
-                    ~DescribeClientBalanceRequest() = default;
+                    DeleteEndPointRequest();
+                    ~DeleteEndPointRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取客户(代客)账号ID
-                     * @return ClientUin 客户(代客)账号ID
+                     * 获取终端节点ID
+                     * @return EndPointId 终端节点ID
+                     * 
                      */
-                    std::string GetClientUin() const;
+                    std::string GetEndPointId() const;
 
                     /**
-                     * 设置客户(代客)账号ID
-                     * @param ClientUin 客户(代客)账号ID
+                     * 设置终端节点ID
+                     * @param _endPointId 终端节点ID
+                     * 
                      */
-                    void SetClientUin(const std::string& _clientUin);
+                    void SetEndPointId(const std::string& _endPointId);
 
                     /**
-                     * 判断参数 ClientUin 是否已赋值
-                     * @return ClientUin 是否已赋值
+                     * 判断参数 EndPointId 是否已赋值
+                     * @return EndPointId 是否已赋值
+                     * 
                      */
-                    bool ClientUinHasBeenSet() const;
+                    bool EndPointIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 客户(代客)账号ID
+                     * 终端节点ID
                      */
-                    std::string m_clientUin;
-                    bool m_clientUinHasBeenSet;
+                    std::string m_endPointId;
+                    bool m_endPointIdHasBeenSet;
 
                 };
             }
@@ -74,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTBALANCEREQUEST_H_
+#endif // !TENCENTCLOUD_PRIVATEDNS_V20201028_MODEL_DELETEENDPOINTREQUEST_H_

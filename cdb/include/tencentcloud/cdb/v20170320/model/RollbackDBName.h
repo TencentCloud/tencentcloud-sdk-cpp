@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 回档前的原数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置回档前的原数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 回档前的原数据库名
+                     * @param _databaseName 回档前的原数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewDatabaseName 回档后的新数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewDatabaseName() const;
 
                     /**
                      * 设置回档后的新数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewDatabaseName 回档后的新数据库名
+                     * @param _newDatabaseName 回档后的新数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewDatabaseName(const std::string& _newDatabaseName);
 
                     /**
                      * 判断参数 NewDatabaseName 是否已赋值
                      * @return NewDatabaseName 是否已赋值
+                     * 
                      */
                     bool NewDatabaseNameHasBeenSet() const;
 

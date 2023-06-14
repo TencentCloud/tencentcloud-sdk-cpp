@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，在控制台获取
                      * @return InstanceId 实例ID，在控制台获取
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，在控制台获取
-                     * @param InstanceId 实例ID，在控制台获取
+                     * @param _instanceId 实例ID，在控制台获取
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取上报的商品数组，一次数量不超过50
                      * @return GoodsList 上报的商品数组，一次数量不超过50
+                     * 
                      */
                     std::vector<GoodsInfo> GetGoodsList() const;
 
                     /**
                      * 设置上报的商品数组，一次数量不超过50
-                     * @param GoodsList 上报的商品数组，一次数量不超过50
+                     * @param _goodsList 上报的商品数组，一次数量不超过50
+                     * 
                      */
                     void SetGoodsList(const std::vector<GoodsInfo>& _goodsList);
 
                     /**
                      * 判断参数 GoodsList 是否已赋值
                      * @return GoodsList 是否已赋值
+                     * 
                      */
                     bool GoodsListHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return RegionName 地域名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取区域名称
                      * @return AreaName 区域名称
+                     * 
                      */
                     std::string GetAreaName() const;
 
                     /**
                      * 设置区域名称
-                     * @param AreaName 区域名称
+                     * @param _areaName 区域名称
+                     * 
                      */
                     void SetAreaName(const std::string& _areaName);
 
                     /**
                      * 判断参数 AreaName 是否已赋值
                      * @return AreaName 是否已赋值
+                     * 
                      */
                     bool AreaNameHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCode 地域代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置地域代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionCode 地域代码
+                     * @param _regionCode 地域代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
                     /**
                      * 判断参数 RegionCode 是否已赋值
                      * @return RegionCode 是否已赋值
+                     * 
                      */
                     bool RegionCodeHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCodeV3 地域代码（V3版本）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionCodeV3() const;
 
                     /**
                      * 设置地域代码（V3版本）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionCodeV3 地域代码（V3版本）
+                     * @param _regionCodeV3 地域代码（V3版本）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionCodeV3(const std::string& _regionCodeV3);
 
                     /**
                      * 判断参数 RegionCodeV3 是否已赋值
                      * @return RegionCodeV3 是否已赋值
+                     * 
                      */
                     bool RegionCodeV3HasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSupport() const;
 
                     /**
                      * 设置NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * @param _support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupport(const std::string& _support);
 
                     /**
                      * 判断参数 Support 是否已赋值
                      * @return Support 是否已赋值
+                     * 
                      */
                     bool SupportHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6 是否支持ipv6, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv6() const;
 
                     /**
                      * 设置是否支持ipv6, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv6 是否支持ipv6, 0：表示不支持，1：表示支持
+                     * @param _ipv6 是否支持ipv6, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpv6(const int64_t& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiZone 是否支持跨可用区, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMultiZone() const;
 
                     /**
                      * 设置是否支持跨可用区, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MultiZone 是否支持跨可用区, 0：表示不支持，1：表示支持
+                     * @param _multiZone 是否支持跨可用区, 0：表示不支持，1：表示支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMultiZone(const int64_t& _multiZone);
 
                     /**
                      * 判断参数 MultiZone 是否已赋值
                      * @return MultiZone 是否已赋值
+                     * 
                      */
                     bool MultiZoneHasBeenSet() const;
 

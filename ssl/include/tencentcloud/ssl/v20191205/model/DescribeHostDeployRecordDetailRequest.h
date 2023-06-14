@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待部署的证书ID
                      * @return DeployRecordId 待部署的证书ID
+                     * 
                      */
                     std::string GetDeployRecordId() const;
 
                     /**
                      * 设置待部署的证书ID
-                     * @param DeployRecordId 待部署的证书ID
+                     * @param _deployRecordId 待部署的证书ID
+                     * 
                      */
                     void SetDeployRecordId(const std::string& _deployRecordId);
 
                     /**
                      * 判断参数 DeployRecordId 是否已赋值
                      * @return DeployRecordId 是否已赋值
+                     * 
                      */
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，从0开始。
                      * @return Offset 分页偏移量，从0开始。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始。
-                     * @param Offset 分页偏移量，从0开始。
+                     * @param _offset 分页偏移量，从0开始。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量，默认10。
                      * @return Limit 每页数量，默认10。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数量，默认10。
-                     * @param Limit 每页数量，默认10。
+                     * @param _limit 每页数量，默认10。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

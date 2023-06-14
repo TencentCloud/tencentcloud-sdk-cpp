@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取（旧参数，请切换到ProxyIds）通道ID列表。
                      * @return InstanceIds （旧参数，请切换到ProxyIds）通道ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置（旧参数，请切换到ProxyIds）通道ID列表。
-                     * @param InstanceIds （旧参数，请切换到ProxyIds）通道ID列表。
+                     * @param _instanceIds （旧参数，请切换到ProxyIds）通道ID列表。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取（新参数）通道ID列表。
                      * @return ProxyIds （新参数）通道ID列表。
+                     * 
                      */
                     std::vector<std::string> GetProxyIds() const;
 
                     /**
                      * 设置（新参数）通道ID列表。
-                     * @param ProxyIds （新参数）通道ID列表。
+                     * @param _proxyIds （新参数）通道ID列表。
+                     * 
                      */
                     void SetProxyIds(const std::vector<std::string>& _proxyIds);
 
                     /**
                      * 判断参数 ProxyIds 是否已赋值
                      * @return ProxyIds 是否已赋值
+                     * 
                      */
                     bool ProxyIdsHasBeenSet() const;
 

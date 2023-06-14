@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取定时器ID, 进行encode
                      * @return TimerId 定时器ID, 进行encode
+                     * 
                      */
                     std::string GetTimerId() const;
 
                     /**
                      * 设置定时器ID, 进行encode
-                     * @param TimerId 定时器ID, 进行encode
+                     * @param _timerId 定时器ID, 进行encode
+                     * 
                      */
                     void SetTimerId(const std::string& _timerId);
 
                     /**
                      * 判断参数 TimerId 是否已赋值
                      * @return TimerId 是否已赋值
+                     * 
                      */
                     bool TimerIdHasBeenSet() const;
 
                     /**
                      * 获取扩缩容配置服务器舰队ID
                      * @return FleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置扩缩容配置服务器舰队ID
-                     * @param FleetId 扩缩容配置服务器舰队ID
+                     * @param _fleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取定时器名称
                      * @return TimerName 定时器名称
+                     * 
                      */
                     std::string GetTimerName() const;
 
                     /**
                      * 设置定时器名称
-                     * @param TimerName 定时器名称
+                     * @param _timerName 定时器名称
+                     * 
                      */
                     void SetTimerName(const std::string& _timerName);
 
                     /**
                      * 判断参数 TimerName 是否已赋值
                      * @return TimerName 是否已赋值
+                     * 
                      */
                     bool TimerNameHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取供下一步请求账单文件的下载地址。
                      * @return DownloadUrl 供下一步请求账单文件的下载地址。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置供下一步请求账单文件的下载地址。
-                     * @param DownloadUrl 供下一步请求账单文件的下载地址。
+                     * @param _downloadUrl 供下一步请求账单文件的下载地址。
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取从 download_url 下载的文件的哈希值，用于校验文件的完整性。
                      * @return HashValue 从 download_url 下载的文件的哈希值，用于校验文件的完整性。
+                     * 
                      */
                     std::string GetHashValue() const;
 
                     /**
                      * 设置从 download_url 下载的文件的哈希值，用于校验文件的完整性。
-                     * @param HashValue 从 download_url 下载的文件的哈希值，用于校验文件的完整性。
+                     * @param _hashValue 从 download_url 下载的文件的哈希值，用于校验文件的完整性。
+                     * 
                      */
                     void SetHashValue(const std::string& _hashValue);
 
                     /**
                      * 判断参数 HashValue 是否已赋值
                      * @return HashValue 是否已赋值
+                     * 
                      */
                     bool HashValueHasBeenSet() const;
 
                     /**
                      * 获取从 download_url 下载的文件的哈希类型，用于校验文件的完整性。
                      * @return HashType 从 download_url 下载的文件的哈希类型，用于校验文件的完整性。
+                     * 
                      */
                     std::string GetHashType() const;
 
                     /**
                      * 设置从 download_url 下载的文件的哈希类型，用于校验文件的完整性。
-                     * @param HashType 从 download_url 下载的文件的哈希类型，用于校验文件的完整性。
+                     * @param _hashType 从 download_url 下载的文件的哈希类型，用于校验文件的完整性。
+                     * 
                      */
                     void SetHashType(const std::string& _hashType);
 
                     /**
                      * 判断参数 HashType 是否已赋值
                      * @return HashType 是否已赋值
+                     * 
                      */
                     bool HashTypeHasBeenSet() const;
 

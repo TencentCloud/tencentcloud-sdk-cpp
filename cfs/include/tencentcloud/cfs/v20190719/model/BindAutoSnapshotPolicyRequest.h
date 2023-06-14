@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取快照策略ID
                      * @return AutoSnapshotPolicyId 快照策略ID
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略ID
-                     * @param AutoSnapshotPolicyId 快照策略ID
+                     * @param _autoSnapshotPolicyId 快照策略ID
+                     * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyId 是否已赋值
                      * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统列表
                      * @return FileSystemIds 文件系统列表
+                     * 
                      */
                     std::string GetFileSystemIds() const;
 
                     /**
                      * 设置文件系统列表
-                     * @param FileSystemIds 文件系统列表
+                     * @param _fileSystemIds 文件系统列表
+                     * 
                      */
                     void SetFileSystemIds(const std::string& _fileSystemIds);
 
                     /**
                      * 判断参数 FileSystemIds 是否已赋值
                      * @return FileSystemIds 是否已赋值
+                     * 
                      */
                     bool FileSystemIdsHasBeenSet() const;
 

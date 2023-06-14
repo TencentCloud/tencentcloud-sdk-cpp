@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取页数，从0开始
                      * @return PageNumber 页数，从0开始
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页数，从0开始
-                     * @param PageNumber 页数，从0开始
+                     * @param _pageNumber 页数，从0开始
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认20
                      * @return PageSize 分页大小，默认20
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小，默认20
-                     * @param PageSize 分页大小，默认20
+                     * @param _pageSize 分页大小，默认20
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

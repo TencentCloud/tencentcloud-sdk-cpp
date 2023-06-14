@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取视频内容分析模板 ID。
                      * @return Definition 视频内容分析模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置视频内容分析模板 ID。
-                     * @param Definition 视频内容分析模板 ID。
+                     * @param _definition 视频内容分析模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return ExtendedParameter 扩展参数，其值为序列化的 json字符串。
 注意：此参数为定制需求参数，需要线下对接。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtendedParameter() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置扩展参数，其值为序列化的 json字符串。
 注意：此参数为定制需求参数，需要线下对接。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtendedParameter 扩展参数，其值为序列化的 json字符串。
+                     * @param _extendedParameter 扩展参数，其值为序列化的 json字符串。
 注意：此参数为定制需求参数，需要线下对接。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtendedParameter(const std::string& _extendedParameter);
 
                     /**
                      * 判断参数 ExtendedParameter 是否已赋值
                      * @return ExtendedParameter 是否已赋值
+                     * 
                      */
                     bool ExtendedParameterHasBeenSet() const;
 

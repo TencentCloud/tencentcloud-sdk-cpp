@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，userId必填
                      * @return Operator 操作人信息，userId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，userId必填
-                     * @param Operator 操作人信息，userId必填
+                     * @param _operator 操作人信息，userId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取待移除员工的信息，userId和openId二选一，必填一个
                      * @return Employees 待移除员工的信息，userId和openId二选一，必填一个
+                     * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
                      * 设置待移除员工的信息，userId和openId二选一，必填一个
-                     * @param Employees 待移除员工的信息，userId和openId二选一，必填一个
+                     * @param _employees 待移除员工的信息，userId和openId二选一，必填一个
+                     * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
 
                     /**
                      * 判断参数 Employees 是否已赋值
                      * @return Employees 是否已赋值
+                     * 
                      */
                     bool EmployeesHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

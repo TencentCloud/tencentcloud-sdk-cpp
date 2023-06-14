@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取子解析
                      * @return SubDomain 子解析
+                     * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 判断参数 SubDomain 是否已赋值
                      * @return SubDomain 是否已赋值
+                     * 
                      */
                     bool SubDomainHasBeenSet() const;
 
                     /**
                      * 获取解析值
                      * @return Record 解析值
+                     * 
                      */
                     std::string GetRecord() const;
 
                     /**
                      * 判断参数 Record 是否已赋值
                      * @return Record 是否已赋值
+                     * 
                      */
                     bool RecordHasBeenSet() const;
 
                     /**
                      * 获取解析类型
                      * @return RecordType 解析类型
+                     * 
                      */
                     std::string GetRecordType() const;
 
                     /**
                      * 判断参数 RecordType 是否已赋值
                      * @return RecordType 是否已赋值
+                     * 
                      */
                     bool RecordTypeHasBeenSet() const;
 

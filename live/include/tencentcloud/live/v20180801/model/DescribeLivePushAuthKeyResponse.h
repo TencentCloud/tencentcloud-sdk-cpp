@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取推流鉴权key信息。
                      * @return PushAuthKeyInfo 推流鉴权key信息。
+                     * 
                      */
                     PushAuthKeyInfo GetPushAuthKeyInfo() const;
 
                     /**
                      * 判断参数 PushAuthKeyInfo 是否已赋值
                      * @return PushAuthKeyInfo 是否已赋值
+                     * 
                      */
                     bool PushAuthKeyInfoHasBeenSet() const;
 

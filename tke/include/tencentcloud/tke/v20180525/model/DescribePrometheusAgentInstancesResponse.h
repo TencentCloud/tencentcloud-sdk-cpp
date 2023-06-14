@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instances 关联该集群的实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstances() const;
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 

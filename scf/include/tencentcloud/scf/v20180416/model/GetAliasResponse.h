@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取别名指向的主版本
                      * @return FunctionVersion 别名指向的主版本
+                     * 
                      */
                     std::string GetFunctionVersion() const;
 
                     /**
                      * 判断参数 FunctionVersion 是否已赋值
                      * @return FunctionVersion 是否已赋值
+                     * 
                      */
                     bool FunctionVersionHasBeenSet() const;
 
                     /**
                      * 获取别名的名称
                      * @return Name 别名的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取别名的路由信息
                      * @return RoutingConfig 别名的路由信息
+                     * 
                      */
                     RoutingConfig GetRoutingConfig() const;
 
                     /**
                      * 判断参数 RoutingConfig 是否已赋值
                      * @return RoutingConfig 是否已赋值
+                     * 
                      */
                     bool RoutingConfigHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 别名的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -113,12 +123,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 

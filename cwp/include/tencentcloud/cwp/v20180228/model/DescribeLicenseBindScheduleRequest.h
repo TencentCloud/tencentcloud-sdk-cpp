@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取限制条数,默认10.
                      * @return Limit 限制条数,默认10.
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制条数,默认10.
-                     * @param Limit 限制条数,默认10.
+                     * @param _limit 限制条数,默认10.
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0
                      * @return Offset 偏移量,默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * @param _offset 偏移量,默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -102,20 +111,23 @@ namespace TencentCloud
 Status 绑定进度状态 0 进行中 1 已完成 2 失败
                      * @return Filters 过滤参数
 Status 绑定进度状态 0 进行中 1 已完成 2 失败
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数
 Status 绑定进度状态 0 进行中 1 已完成 2 失败
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
 Status 绑定进度状态 0 进行中 1 已完成 2 失败
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

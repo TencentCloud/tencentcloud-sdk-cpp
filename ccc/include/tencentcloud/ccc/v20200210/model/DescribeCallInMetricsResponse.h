@@ -49,24 +49,28 @@ namespace TencentCloud
                     /**
                      * 获取时间戳
                      * @return Timestamp 时间戳
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取总体指标
                      * @return TotalMetrics 总体指标
+                     * 
                      */
                     CallInMetrics GetTotalMetrics() const;
 
                     /**
                      * 判断参数 TotalMetrics 是否已赋值
                      * @return TotalMetrics 是否已赋值
+                     * 
                      */
                     bool TotalMetricsHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberMetrics 线路维度指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CallInNumberMetrics> GetNumberMetrics() const;
 
                     /**
                      * 判断参数 NumberMetrics 是否已赋值
                      * @return NumberMetrics 是否已赋值
+                     * 
                      */
                     bool NumberMetricsHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupMetrics 技能组维度指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CallInSkillGroupMetrics> GetSkillGroupMetrics() const;
 
                     /**
                      * 判断参数 SkillGroupMetrics 是否已赋值
                      * @return SkillGroupMetrics 是否已赋值
+                     * 
                      */
                     bool SkillGroupMetricsHasBeenSet() const;
 

@@ -56,20 +56,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DiseaseHistoryBlock GetDiseaseHistory() const;
 
                     /**
                      * 设置疾病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseaseHistory 疾病史
+                     * @param _diseaseHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiseaseHistory(const DiseaseHistoryBlock& _diseaseHistory);
 
                     /**
                      * 判断参数 DiseaseHistory 是否已赋值
                      * @return DiseaseHistory 是否已赋值
+                     * 
                      */
                     bool DiseaseHistoryHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonalHistory 个人史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PersonalHistoryBlock GetPersonalHistory() const;
 
                     /**
                      * 设置个人史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PersonalHistory 个人史
+                     * @param _personalHistory 个人史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPersonalHistory(const PersonalHistoryBlock& _personalHistory);
 
                     /**
                      * 判断参数 PersonalHistory 是否已赋值
                      * @return PersonalHistory 是否已赋值
+                     * 
                      */
                     bool PersonalHistoryHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrugHistory 药物史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DrugHistoryBlock GetDrugHistory() const;
 
                     /**
                      * 设置药物史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DrugHistory 药物史
+                     * @param _drugHistory 药物史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDrugHistory(const DrugHistoryBlock& _drugHistory);
 
                     /**
                      * 判断参数 DrugHistory 是否已赋值
                      * @return DrugHistory 是否已赋值
+                     * 
                      */
                     bool DrugHistoryHasBeenSet() const;
 
@@ -122,20 +131,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreatmentRecord 治疗相关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TreatmentRecordBlock GetTreatmentRecord() const;
 
                     /**
                      * 设置治疗相关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TreatmentRecord 治疗相关
+                     * @param _treatmentRecord 治疗相关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTreatmentRecord(const TreatmentRecordBlock& _treatmentRecord);
 
                     /**
                      * 判断参数 TreatmentRecord 是否已赋值
                      * @return TreatmentRecord 是否已赋值
+                     * 
                      */
                     bool TreatmentRecordHasBeenSet() const;
 
@@ -144,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParagraphBlock 文本段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParagraphBlock GetParagraphBlock() const;
 
                     /**
                      * 设置文本段落
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParagraphBlock 文本段落
+                     * @param _paragraphBlock 文本段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParagraphBlock(const ParagraphBlock& _paragraphBlock);
 
                     /**
                      * 判断参数 ParagraphBlock 是否已赋值
                      * @return ParagraphBlock 是否已赋值
+                     * 
                      */
                     bool ParagraphBlockHasBeenSet() const;
 

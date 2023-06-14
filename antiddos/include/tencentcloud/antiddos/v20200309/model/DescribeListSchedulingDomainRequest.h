@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取一页条数，当Limit=0时，默认一页条数为20;最大取值为100
                      * @return Limit 一页条数，当Limit=0时，默认一页条数为20;最大取值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，当Limit=0时，默认一页条数为20;最大取值为100
-                     * @param Limit 一页条数，当Limit=0时，默认一页条数为20;最大取值为100
+                     * @param _limit 一页条数，当Limit=0时，默认一页条数为20;最大取值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取调度域名搜索
                      * @return FilterDomain 调度域名搜索
+                     * 
                      */
                     std::string GetFilterDomain() const;
 
                     /**
                      * 设置调度域名搜索
-                     * @param FilterDomain 调度域名搜索
+                     * @param _filterDomain 调度域名搜索
+                     * 
                      */
                     void SetFilterDomain(const std::string& _filterDomain);
 
                     /**
                      * 判断参数 FilterDomain 是否已赋值
                      * @return FilterDomain 是否已赋值
+                     * 
                      */
                     bool FilterDomainHasBeenSet() const;
 
                     /**
                      * 获取运行状态 0 代表未运行  1 正在运行  2 运行异常 
                      * @return Status 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置运行状态 0 代表未运行  1 正在运行  2 运行异常 
-                     * @param Status 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     * @param _status 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

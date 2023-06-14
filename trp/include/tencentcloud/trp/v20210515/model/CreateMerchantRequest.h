@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取商户名称
                      * @return Name 商户名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商户名称
-                     * @param Name 商户名称
+                     * @param _name 商户名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取码包来源 0:自建, 1:第三发
                      * @return CodeType 码包来源 0:自建, 1:第三发
+                     * 
                      */
                     int64_t GetCodeType() const;
 
                     /**
                      * 设置码包来源 0:自建, 1:第三发
-                     * @param CodeType 码包来源 0:自建, 1:第三发
+                     * @param _codeType 码包来源 0:自建, 1:第三发
+                     * 
                      */
                     void SetCodeType(const int64_t& _codeType);
 
                     /**
                      * 判断参数 CodeType 是否已赋值
                      * @return CodeType 是否已赋值
+                     * 
                      */
                     bool CodeTypeHasBeenSet() const;
 
                     /**
                      * 获取码包前缀地址 第三方码包时必填
                      * @return CodeUrl 码包前缀地址 第三方码包时必填
+                     * 
                      */
                     std::string GetCodeUrl() const;
 
                     /**
                      * 设置码包前缀地址 第三方码包时必填
-                     * @param CodeUrl 码包前缀地址 第三方码包时必填
+                     * @param _codeUrl 码包前缀地址 第三方码包时必填
+                     * 
                      */
                     void SetCodeUrl(const std::string& _codeUrl);
 
                     /**
                      * 判断参数 CodeUrl 是否已赋值
                      * @return CodeUrl 是否已赋值
+                     * 
                      */
                     bool CodeUrlHasBeenSet() const;
 

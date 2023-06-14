@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资源包唯一ID
                      * @return PackageId 资源包唯一ID
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包唯一ID
-                     * @param PackageId 资源包唯一ID
+                     * @param _packageId 资源包唯一ID
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取自定义的资源包名称，最长支持120个字符
                      * @return PackageName 自定义的资源包名称，最长支持120个字符
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置自定义的资源包名称，最长支持120个字符
-                     * @param PackageName 自定义的资源包名称，最长支持120个字符
+                     * @param _packageName 自定义的资源包名称，最长支持120个字符
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 

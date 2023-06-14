@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 信息标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置信息标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 信息标识
+                     * @param _id 信息标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BIToken 令牌
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBIToken() const;
 
                     /**
                      * 设置令牌
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BIToken 令牌
+                     * @param _bIToken 令牌
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBIToken(const std::string& _bIToken);
 
                     /**
                      * 判断参数 BIToken 是否已赋值
                      * @return BIToken 是否已赋值
+                     * 
                      */
                     bool BITokenHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedUser 创建人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedUser() const;
 
                     /**
                      * 设置创建人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedUser 创建人
+                     * @param _createdUser 创建人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedUser(const std::string& _createdUser);
 
                     /**
                      * 判断参数 CreatedUser 是否已赋值
                      * @return CreatedUser 是否已赋值
+                     * 
                      */
                     bool CreatedUserHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedUser 更新人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedUser() const;
 
                     /**
                      * 设置更新人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedUser 更新人
+                     * @param _updatedUser 更新人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedUser(const std::string& _updatedUser);
 
                     /**
                      * 判断参数 UpdatedUser 是否已赋值
                      * @return UpdatedUser 是否已赋值
+                     * 
                      */
                     bool UpdatedUserHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedAt 更新时间
+                     * @param _updatedAt 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageId 页面Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPageId() const;
 
                     /**
                      * 设置页面Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageId 页面Id
+                     * @param _pageId 页面Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPageId(const std::string& _pageId);
 
                     /**
                      * 判断参数 PageId 是否已赋值
                      * @return PageId 是否已赋值
+                     * 
                      */
                     bool PageIdHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraParam 备用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraParam() const;
 
                     /**
                      * 设置备用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraParam 备用
+                     * @param _extraParam 备用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraParam(const std::string& _extraParam);
 
                     /**
                      * 判断参数 ExtraParam 是否已赋值
                      * @return ExtraParam 是否已赋值
+                     * 
                      */
                     bool ExtraParamHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scope 嵌出类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScope() const;
 
                     /**
                      * 设置嵌出类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scope 嵌出类型
+                     * @param _scope 嵌出类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScope(const std::string& _scope);
 
                     /**
                      * 判断参数 Scope 是否已赋值
                      * @return Scope 是否已赋值
+                     * 
                      */
                     bool ScopeHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间，分钟为单位，最大240
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间，分钟为单位，最大240
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间，分钟为单位，最大240
+                     * @param _expireTime 过期时间，分钟为单位，最大240
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

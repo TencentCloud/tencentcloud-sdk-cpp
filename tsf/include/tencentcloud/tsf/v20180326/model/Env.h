@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取环境变量名称
                      * @return Name 环境变量名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置环境变量名称
-                     * @param Name 环境变量名称
+                     * @param _name 环境变量名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取环境变量值
                      * @return Value 环境变量值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置环境变量值
-                     * @param Value 环境变量值
+                     * @param _value 环境变量值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueFrom k8s ValueFrom
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ValueFrom GetValueFrom() const;
 
                     /**
                      * 设置k8s ValueFrom
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueFrom k8s ValueFrom
+                     * @param _valueFrom k8s ValueFrom
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueFrom(const ValueFrom& _valueFrom);
 
                     /**
                      * 判断参数 ValueFrom 是否已赋值
                      * @return ValueFrom 是否已赋值
+                     * 
                      */
                     bool ValueFromHasBeenSet() const;
 

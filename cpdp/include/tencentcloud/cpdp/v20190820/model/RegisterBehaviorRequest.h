@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫分配的支付主MidasAppId
                      * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的支付主MidasAppId
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
+                     * @param _midasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取按照聚鑫安全密钥计算的签名
                      * @return MidasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置按照聚鑫安全密钥计算的签名
-                     * @param MidasSignature 按照聚鑫安全密钥计算的签名
+                     * @param _midasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
@@ -121,6 +133,7 @@ namespace TencentCloud
                      * @return FunctionFlag 功能标志
 1：登记行为记录信息
 2：查询补录信息
+                     * 
                      */
                     int64_t GetFunctionFlag() const;
 
@@ -128,15 +141,17 @@ namespace TencentCloud
                      * 设置功能标志
 1：登记行为记录信息
 2：查询补录信息
-                     * @param FunctionFlag 功能标志
+                     * @param _functionFlag 功能标志
 1：登记行为记录信息
 2：查询补录信息
+                     * 
                      */
                     void SetFunctionFlag(const int64_t& _functionFlag);
 
                     /**
                      * 判断参数 FunctionFlag 是否已赋值
                      * @return FunctionFlag 是否已赋值
+                     * 
                      */
                     bool FunctionFlagHasBeenSet() const;
 
@@ -151,6 +166,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -160,17 +176,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
@@ -181,6 +199,7 @@ yyyyMMddHHmmss
                      * @return OperationClickTime 操作点击时间
 yyyyMMddHHmmss
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     std::string GetOperationClickTime() const;
 
@@ -188,15 +207,17 @@ yyyyMMddHHmmss
                      * 设置操作点击时间
 yyyyMMddHHmmss
 功能标志FunctionFlag=1时必输
-                     * @param OperationClickTime 操作点击时间
+                     * @param _operationClickTime 操作点击时间
 yyyyMMddHHmmss
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     void SetOperationClickTime(const std::string& _operationClickTime);
 
                     /**
                      * 判断参数 OperationClickTime 是否已赋值
                      * @return OperationClickTime 是否已赋值
+                     * 
                      */
                     bool OperationClickTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ yyyyMMddHHmmss
 功能标志FunctionFlag=1时必输
                      * @return IpAddress IP地址
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置IP地址
 功能标志FunctionFlag=1时必输
-                     * @param IpAddress IP地址
+                     * @param _ipAddress IP地址
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
@@ -227,20 +251,23 @@ yyyyMMddHHmmss
 功能标志FunctionFlag=1时必输
                      * @return MacAddress MAC地址
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     std::string GetMacAddress() const;
 
                     /**
                      * 设置MAC地址
 功能标志FunctionFlag=1时必输
-                     * @param MacAddress MAC地址
+                     * @param _macAddress MAC地址
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     void SetMacAddress(const std::string& _macAddress);
 
                     /**
                      * 判断参数 MacAddress 是否已赋值
                      * @return MacAddress 是否已赋值
+                     * 
                      */
                     bool MacAddressHasBeenSet() const;
 
@@ -257,6 +284,7 @@ yyyyMMddHHmmss
 3：公众号
 4：小程序
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     int64_t GetSignChannel() const;
 
@@ -267,18 +295,20 @@ yyyyMMddHHmmss
 3：公众号
 4：小程序
 功能标志FunctionFlag=1时必输
-                     * @param SignChannel 签约渠道
+                     * @param _signChannel 签约渠道
 1:  App
 2:  平台H5网页
 3：公众号
 4：小程序
 功能标志FunctionFlag=1时必输
+                     * 
                      */
                     void SetSignChannel(const int64_t& _signChannel);
 
                     /**
                      * 判断参数 SignChannel 是否已赋值
                      * @return SignChannel 是否已赋值
+                     * 
                      */
                     bool SignChannelHasBeenSet() const;
 

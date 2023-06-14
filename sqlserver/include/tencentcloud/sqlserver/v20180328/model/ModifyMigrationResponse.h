@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务ID
                      * @return MigrateId 迁移任务ID
+                     * 
                      */
                     uint64_t GetMigrateId() const;
 
                     /**
                      * 判断参数 MigrateId 是否已赋值
                      * @return MigrateId 是否已赋值
+                     * 
                      */
                     bool MigrateIdHasBeenSet() const;
 

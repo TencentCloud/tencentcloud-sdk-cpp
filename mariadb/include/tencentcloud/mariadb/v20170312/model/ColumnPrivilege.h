@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取数据库名
                      * @return Database 数据库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-                     * @param Database 数据库名
+                     * @param _database 数据库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取数据库表名
                      * @return Table 数据库表名
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置数据库表名
-                     * @param Table 数据库表名
+                     * @param _table 数据库表名
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
                     /**
                      * 获取数据库列名
                      * @return Column 数据库列名
+                     * 
                      */
                     std::string GetColumn() const;
 
                     /**
                      * 设置数据库列名
-                     * @param Column 数据库列名
+                     * @param _column 数据库列名
+                     * 
                      */
                     void SetColumn(const std::string& _column);
 
                     /**
                      * 判断参数 Column 是否已赋值
                      * @return Column 是否已赋值
+                     * 
                      */
                     bool ColumnHasBeenSet() const;
 
                     /**
                      * 获取权限信息
                      * @return Privileges 权限信息
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限信息
-                     * @param Privileges 权限信息
+                     * @param _privileges 权限信息
+                     * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 

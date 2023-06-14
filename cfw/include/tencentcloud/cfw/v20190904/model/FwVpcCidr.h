@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取vpc的id
                      * @return VpcId vpc的id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id
-                     * @param VpcId vpc的id
+                     * @param _vpcId vpc的id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取防火墙网段，最少/24的网段
                      * @return FwCidr 防火墙网段，最少/24的网段
+                     * 
                      */
                     std::string GetFwCidr() const;
 
                     /**
                      * 设置防火墙网段，最少/24的网段
-                     * @param FwCidr 防火墙网段，最少/24的网段
+                     * @param _fwCidr 防火墙网段，最少/24的网段
+                     * 
                      */
                     void SetFwCidr(const std::string& _fwCidr);
 
                     /**
                      * 判断参数 FwCidr 是否已赋值
                      * @return FwCidr 是否已赋值
+                     * 
                      */
                     bool FwCidrHasBeenSet() const;
 

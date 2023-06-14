@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件路径。该字段应填用户主账号的OwnerUin信息。
                      * @return Path 文件路径。该字段应填用户主账号的OwnerUin信息。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置文件路径。该字段应填用户主账号的OwnerUin信息。
-                     * @param Path 文件路径。该字段应填用户主账号的OwnerUin信息。
+                     * @param _path 文件路径。该字段应填用户主账号的OwnerUin信息。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取记录偏移量，默认值为0。
                      * @return Offset 记录偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置记录偏移量，默认值为0。
-                     * @param Offset 记录偏移量，默认值为0。
+                     * @param _offset 记录偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单次请求返回的数量，默认值为20。
                      * @return Limit 单次请求返回的数量，默认值为20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单次请求返回的数量，默认值为20。
-                     * @param Limit 单次请求返回的数量，默认值为20。
+                     * @param _limit 单次请求返回的数量，默认值为20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

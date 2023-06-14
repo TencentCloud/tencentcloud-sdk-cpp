@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取存储库总数目
                      * @return TotalCount 存储库总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeRepoSet 存储库列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CodeRepoSummary> GetCodeRepoSet() const;
 
                     /**
                      * 判断参数 CodeRepoSet 是否已赋值
                      * @return CodeRepoSet 是否已赋值
+                     * 
                      */
                     bool CodeRepoSetHasBeenSet() const;
 

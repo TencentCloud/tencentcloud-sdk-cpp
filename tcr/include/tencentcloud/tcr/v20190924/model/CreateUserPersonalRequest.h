@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户密码，密码必须为8到16位
                      * @return Password 用户密码，密码必须为8到16位
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置用户密码，密码必须为8到16位
-                     * @param Password 用户密码，密码必须为8到16位
+                     * @param _password 用户密码，密码必须为8到16位
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

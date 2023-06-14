@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取策略组id
                      * @return GroupId 策略组id
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置策略组id
-                     * @param GroupId 策略组id
+                     * @param _groupId 策略组id
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取策略组名称
                      * @return GroupName 策略组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置策略组名称
-                     * @param GroupName 策略组名称
+                     * @param _groupName 策略组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取策略类型
                      * @return ViewName 策略类型
+                     * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置策略类型
-                     * @param ViewName 策略类型
+                     * @param _viewName 策略类型
+                     * 
                      */
                     void SetViewName(const std::string& _viewName);
 
                     /**
                      * 判断参数 ViewName 是否已赋值
                      * @return ViewName 是否已赋值
+                     * 
                      */
                     bool ViewNameHasBeenSet() const;
 
                     /**
                      * 获取策略组说明
                      * @return Remark 策略组说明
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置策略组说明
-                     * @param Remark 策略组说明
+                     * @param _remark 策略组说明
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取最后编辑的用户uin
                      * @return LastEditUin 最后编辑的用户uin
+                     * 
                      */
                     std::string GetLastEditUin() const;
 
                     /**
                      * 设置最后编辑的用户uin
-                     * @param LastEditUin 最后编辑的用户uin
+                     * @param _lastEditUin 最后编辑的用户uin
+                     * 
                      */
                     void SetLastEditUin(const std::string& _lastEditUin);
 
                     /**
                      * 判断参数 LastEditUin 是否已赋值
                      * @return LastEditUin 是否已赋值
+                     * 
                      */
                     bool LastEditUinHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInsertTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InsertTime 创建时间
+                     * @param _insertTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInsertTime(const int64_t& _insertTime);
 
                     /**
                      * 判断参数 InsertTime 是否已赋值
                      * @return InsertTime 是否已赋值
+                     * 
                      */
                     bool InsertTimeHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUnionRule 是否且规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsUnionRule() const;
 
                     /**
                      * 设置是否且规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsUnionRule 是否且规则
+                     * @param _isUnionRule 是否且规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsUnionRule(const int64_t& _isUnionRule);
 
                     /**
                      * 判断参数 IsUnionRule 是否已赋值
                      * @return IsUnionRule 是否已赋值
+                     * 
                      */
                     bool IsUnionRuleHasBeenSet() const;
 

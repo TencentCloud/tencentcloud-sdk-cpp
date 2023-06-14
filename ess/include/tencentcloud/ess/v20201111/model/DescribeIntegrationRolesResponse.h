@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，默认为0，最大为2000
                      * @return Offset 偏移量，默认为0，最大为2000
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回最大数量，最大为200
                      * @return Limit 返回最大数量，最大为200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取符合查询条件的总的角色数
                      * @return TotalCount 符合查询条件的总的角色数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取企业角色信息列表
                      * @return IntegrateRoles 企业角色信息列表
+                     * 
                      */
                     std::vector<IntegrateRole> GetIntegrateRoles() const;
 
                     /**
                      * 判断参数 IntegrateRoles 是否已赋值
                      * @return IntegrateRoles 是否已赋值
+                     * 
                      */
                     bool IntegrateRolesHasBeenSet() const;
 

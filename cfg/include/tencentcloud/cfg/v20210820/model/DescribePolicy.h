@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取保护策略ID列表
                      * @return TaskPolicyIdList 保护策略ID列表
+                     * 
                      */
                     std::vector<std::string> GetTaskPolicyIdList() const;
 
                     /**
                      * 设置保护策略ID列表
-                     * @param TaskPolicyIdList 保护策略ID列表
+                     * @param _taskPolicyIdList 保护策略ID列表
+                     * 
                      */
                     void SetTaskPolicyIdList(const std::vector<std::string>& _taskPolicyIdList);
 
                     /**
                      * 判断参数 TaskPolicyIdList 是否已赋值
                      * @return TaskPolicyIdList 是否已赋值
+                     * 
                      */
                     bool TaskPolicyIdListHasBeenSet() const;
 
                     /**
                      * 获取保护策略状态
                      * @return TaskPolicyStatus 保护策略状态
+                     * 
                      */
                     std::string GetTaskPolicyStatus() const;
 
                     /**
                      * 设置保护策略状态
-                     * @param TaskPolicyStatus 保护策略状态
+                     * @param _taskPolicyStatus 保护策略状态
+                     * 
                      */
                     void SetTaskPolicyStatus(const std::string& _taskPolicyStatus);
 
                     /**
                      * 判断参数 TaskPolicyStatus 是否已赋值
                      * @return TaskPolicyStatus 是否已赋值
+                     * 
                      */
                     bool TaskPolicyStatusHasBeenSet() const;
 
                     /**
                      * 获取策略规则
                      * @return TaskPolicyRule 策略规则
+                     * 
                      */
                     std::string GetTaskPolicyRule() const;
 
                     /**
                      * 设置策略规则
-                     * @param TaskPolicyRule 策略规则
+                     * @param _taskPolicyRule 策略规则
+                     * 
                      */
                     void SetTaskPolicyRule(const std::string& _taskPolicyRule);
 
                     /**
                      * 判断参数 TaskPolicyRule 是否已赋值
                      * @return TaskPolicyRule 是否已赋值
+                     * 
                      */
                     bool TaskPolicyRuleHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskPolicyDealType() const;
 
                     /**
                      * 设置护栏策略生效处理策略 1:顺序执行，2:暂停
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskPolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
+                     * @param _taskPolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskPolicyDealType(const int64_t& _taskPolicyDealType);
 
                     /**
                      * 判断参数 TaskPolicyDealType 是否已赋值
                      * @return TaskPolicyDealType 是否已赋值
+                     * 
                      */
                     bool TaskPolicyDealTypeHasBeenSet() const;
 

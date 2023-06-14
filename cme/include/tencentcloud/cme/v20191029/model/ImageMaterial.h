@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取图片高度，单位：px。
                      * @return Height 图片高度，单位：px。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置图片高度，单位：px。
-                     * @param Height 图片高度，单位：px。
+                     * @param _height 图片高度，单位：px。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取图片宽度，单位：px。
                      * @return Width 图片宽度，单位：px。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置图片宽度，单位：px。
-                     * @param Width 图片宽度，单位：px。
+                     * @param _width 图片宽度，单位：px。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取素材媒体文件的展示 URL 地址。
                      * @return MaterialUrl 素材媒体文件的展示 URL 地址。
+                     * 
                      */
                     std::string GetMaterialUrl() const;
 
                     /**
                      * 设置素材媒体文件的展示 URL 地址。
-                     * @param MaterialUrl 素材媒体文件的展示 URL 地址。
+                     * @param _materialUrl 素材媒体文件的展示 URL 地址。
+                     * 
                      */
                     void SetMaterialUrl(const std::string& _materialUrl);
 
                     /**
                      * 判断参数 MaterialUrl 是否已赋值
                      * @return MaterialUrl 是否已赋值
+                     * 
                      */
                     bool MaterialUrlHasBeenSet() const;
 
                     /**
                      * 获取图片大小，单位：字节。
                      * @return Size 图片大小，单位：字节。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置图片大小，单位：字节。
-                     * @param Size 图片大小，单位：字节。
+                     * @param _size 图片大小，单位：字节。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取素材媒体文件的原始 URL 地址。
                      * @return OriginalUrl 素材媒体文件的原始 URL 地址。
+                     * 
                      */
                     std::string GetOriginalUrl() const;
 
                     /**
                      * 设置素材媒体文件的原始 URL 地址。
-                     * @param OriginalUrl 素材媒体文件的原始 URL 地址。
+                     * @param _originalUrl 素材媒体文件的原始 URL 地址。
+                     * 
                      */
                     void SetOriginalUrl(const std::string& _originalUrl);
 
                     /**
                      * 判断参数 OriginalUrl 是否已赋值
                      * @return OriginalUrl 是否已赋值
+                     * 
                      */
                     bool OriginalUrlHasBeenSet() const;
 
                     /**
                      * 获取云点播媒资 FileId。
                      * @return VodFileId 云点播媒资 FileId。
+                     * 
                      */
                     std::string GetVodFileId() const;
 
                     /**
                      * 设置云点播媒资 FileId。
-                     * @param VodFileId 云点播媒资 FileId。
+                     * @param _vodFileId 云点播媒资 FileId。
+                     * 
                      */
                     void SetVodFileId(const std::string& _vodFileId);
 
                     /**
                      * 判断参数 VodFileId 是否已赋值
                      * @return VodFileId 是否已赋值
+                     * 
                      */
                     bool VodFileIdHasBeenSet() const;
 

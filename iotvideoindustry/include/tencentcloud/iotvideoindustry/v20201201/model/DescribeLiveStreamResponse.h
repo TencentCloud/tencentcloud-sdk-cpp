@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 拉流地址，只有在推流情况下才有
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamAddress GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

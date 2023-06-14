@@ -58,6 +58,7 @@ namespace TencentCloud
                      * @return Switch bot开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -65,51 +66,59 @@ namespace TencentCloud
                      * 设置bot开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch bot开关，取值有：
+                     * @param _switch bot开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取通用详细基础规则。如果为null，默认使用历史配置。
                      * @return BotManagedRule 通用详细基础规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     BotManagedRule GetBotManagedRule() const;
 
                     /**
                      * 设置通用详细基础规则。如果为null，默认使用历史配置。
-                     * @param BotManagedRule 通用详细基础规则。如果为null，默认使用历史配置。
+                     * @param _botManagedRule 通用详细基础规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     void SetBotManagedRule(const BotManagedRule& _botManagedRule);
 
                     /**
                      * 判断参数 BotManagedRule 是否已赋值
                      * @return BotManagedRule 是否已赋值
+                     * 
                      */
                     bool BotManagedRuleHasBeenSet() const;
 
                     /**
                      * 获取用户画像规则。如果为null，默认使用历史配置。
                      * @return BotPortraitRule 用户画像规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     BotPortraitRule GetBotPortraitRule() const;
 
                     /**
                      * 设置用户画像规则。如果为null，默认使用历史配置。
-                     * @param BotPortraitRule 用户画像规则。如果为null，默认使用历史配置。
+                     * @param _botPortraitRule 用户画像规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     void SetBotPortraitRule(const BotPortraitRule& _botPortraitRule);
 
                     /**
                      * 判断参数 BotPortraitRule 是否已赋值
                      * @return BotPortraitRule 是否已赋值
+                     * 
                      */
                     bool BotPortraitRuleHasBeenSet() const;
 
@@ -118,56 +127,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntelligenceRule Bot智能分析。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntelligenceRule GetIntelligenceRule() const;
 
                     /**
                      * 设置Bot智能分析。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntelligenceRule Bot智能分析。如果为null，默认使用历史配置。
+                     * @param _intelligenceRule Bot智能分析。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntelligenceRule(const IntelligenceRule& _intelligenceRule);
 
                     /**
                      * 判断参数 IntelligenceRule 是否已赋值
                      * @return IntelligenceRule 是否已赋值
+                     * 
                      */
                     bool IntelligenceRuleHasBeenSet() const;
 
                     /**
                      * 获取Bot自定义规则。如果为null，默认使用历史配置。
                      * @return BotUserRules Bot自定义规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     std::vector<BotUserRule> GetBotUserRules() const;
 
                     /**
                      * 设置Bot自定义规则。如果为null，默认使用历史配置。
-                     * @param BotUserRules Bot自定义规则。如果为null，默认使用历史配置。
+                     * @param _botUserRules Bot自定义规则。如果为null，默认使用历史配置。
+                     * 
                      */
                     void SetBotUserRules(const std::vector<BotUserRule>& _botUserRules);
 
                     /**
                      * 判断参数 BotUserRules 是否已赋值
                      * @return BotUserRules 是否已赋值
+                     * 
                      */
                     bool BotUserRulesHasBeenSet() const;
 
                     /**
                      * 获取Bot主动特征识别规则。
                      * @return AlgDetectRule Bot主动特征识别规则。
+                     * 
                      */
                     std::vector<AlgDetectRule> GetAlgDetectRule() const;
 
                     /**
                      * 设置Bot主动特征识别规则。
-                     * @param AlgDetectRule Bot主动特征识别规则。
+                     * @param _algDetectRule Bot主动特征识别规则。
+                     * 
                      */
                     void SetAlgDetectRule(const std::vector<AlgDetectRule>& _algDetectRule);
 
                     /**
                      * 判断参数 AlgDetectRule 是否已赋值
                      * @return AlgDetectRule 是否已赋值
+                     * 
                      */
                     bool AlgDetectRuleHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customizes Bot托管定制策略，入参可不填，仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BotUserRule> GetCustomizes() const;
 
                     /**
                      * 设置Bot托管定制策略，入参可不填，仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Customizes Bot托管定制策略，入参可不填，仅出参使用。
+                     * @param _customizes Bot托管定制策略，入参可不填，仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomizes(const std::vector<BotUserRule>& _customizes);
 
                     /**
                      * 判断参数 Customizes 是否已赋值
                      * @return Customizes 是否已赋值
+                     * 
                      */
                     bool CustomizesHasBeenSet() const;
 

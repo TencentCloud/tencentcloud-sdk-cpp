@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。
                      * @return LoadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID。
-                     * @param LoadBalancerId 负载均衡实例ID。
+                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取计费方式。flow或bandwidth。
                      * @return PayMode 计费方式。flow或bandwidth。
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置计费方式。flow或bandwidth。
-                     * @param PayMode 计费方式。flow或bandwidth。
+                     * @param _payMode 计费方式。flow或bandwidth。
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。
                      * @return ListenerSet 监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。
+                     * 
                      */
                     std::vector<ModifyLoadBalancerChargeModeListener> GetListenerSet() const;
 
                     /**
                      * 设置监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。
-                     * @param ListenerSet 监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。
+                     * @param _listenerSet 监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。
+                     * 
                      */
                     void SetListenerSet(const std::vector<ModifyLoadBalancerChargeModeListener>& _listenerSet);
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 

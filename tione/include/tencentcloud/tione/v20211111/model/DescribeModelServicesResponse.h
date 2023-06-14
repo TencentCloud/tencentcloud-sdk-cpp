@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 服务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Services 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Service> GetServices() const;
 
                     /**
                      * 判断参数 Services 是否已赋值
                      * @return Services 是否已赋值
+                     * 
                      */
                     bool ServicesHasBeenSet() const;
 

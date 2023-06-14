@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源组的伸缩组
                      * @return RsgAsGroup 资源组的伸缩组
+                     * 
                      */
                     RsgAsGroup GetRsgAsGroup() const;
 
                     /**
                      * 判断参数 RsgAsGroup 是否已赋值
                      * @return RsgAsGroup 是否已赋值
+                     * 
                      */
                     bool RsgAsGroupHasBeenSet() const;
 

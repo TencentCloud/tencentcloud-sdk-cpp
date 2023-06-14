@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回码 0 成功，其它失败
                      * @return CaptchaCode 返回码 0 成功，其它失败
+                     * 
                      */
                     int64_t GetCaptchaCode() const;
 
                     /**
                      * 判断参数 CaptchaCode 是否已赋值
                      * @return CaptchaCode 是否已赋值
+                     * 
                      */
                     bool CaptchaCodeHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 返回操作信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCaptchaMsg() const;
 
                     /**
                      * 判断参数 CaptchaMsg 是否已赋值
                      * @return CaptchaMsg 是否已赋值
+                     * 
                      */
                     bool CaptchaMsgHasBeenSet() const;
 

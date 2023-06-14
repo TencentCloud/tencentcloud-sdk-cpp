@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParagNo 段落编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetParagNo() const;
 
                     /**
                      * 设置段落编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParagNo 段落编号
+                     * @param _paragNo 段落编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParagNo(const int64_t& _paragNo);
 
                     /**
                      * 判断参数 ParagNo 是否已赋值
                      * @return ParagNo 是否已赋值
+                     * 
                      */
                     bool ParagNoHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordSize 字体大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWordSize() const;
 
                     /**
                      * 设置字体大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WordSize 字体大小
+                     * @param _wordSize 字体大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWordSize(const int64_t& _wordSize);
 
                     /**
                      * 判断参数 WordSize 是否已赋值
                      * @return WordSize 是否已赋值
+                     * 
                      */
                     bool WordSizeHasBeenSet() const;
 

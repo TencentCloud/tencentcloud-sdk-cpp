@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名
                      * @return Name 项目名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名
-                     * @param Name 项目名
+                     * @param _name 项目名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取项目描述
                      * @return Description 项目描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置项目描述
-                     * @param Description 项目描述
+                     * @param _description 项目描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取项目状态，默认传递1
                      * @return Status 项目状态，默认传递1
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置项目状态，默认传递1
-                     * @param Status 项目状态，默认传递1
+                     * @param _status 项目状态，默认传递1
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取标签数组
                      * @return Tags 标签数组
+                     * 
                      */
                     std::vector<TagSpec> GetTags() const;
 
                     /**
                      * 设置标签数组
-                     * @param Tags 标签数组
+                     * @param _tags 标签数组
+                     * 
                      */
                     void SetTags(const std::vector<TagSpec>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

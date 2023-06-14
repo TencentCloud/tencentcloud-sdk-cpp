@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取指定时间点截图模板 ID。
                      * @return Definition 指定时间点截图模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置指定时间点截图模板 ID。
-                     * @param Definition 指定时间点截图模板 ID。
+                     * @param _definition 指定时间点截图模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return ExtTimeOffsetSet 截图时间点列表，时间点支持 s、% 两种格式：
 <li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
 <li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     * 
                      */
                     std::vector<std::string> GetExtTimeOffsetSet() const;
 
@@ -79,51 +83,59 @@ namespace TencentCloud
                      * 设置截图时间点列表，时间点支持 s、% 两种格式：
 <li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
 <li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
-                     * @param ExtTimeOffsetSet 截图时间点列表，时间点支持 s、% 两种格式：
+                     * @param _extTimeOffsetSet 截图时间点列表，时间点支持 s、% 两种格式：
 <li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
 <li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     * 
                      */
                     void SetExtTimeOffsetSet(const std::vector<std::string>& _extTimeOffsetSet);
 
                     /**
                      * 判断参数 ExtTimeOffsetSet 是否已赋值
                      * @return ExtTimeOffsetSet 是否已赋值
+                     * 
                      */
                     bool ExtTimeOffsetSetHasBeenSet() const;
 
                     /**
                      * 获取截图时间点列表，单位为<font color=red>毫秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
                      * @return TimeOffsetSet 截图时间点列表，单位为<font color=red>毫秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
+                     * 
                      */
                     std::vector<double> GetTimeOffsetSet() const;
 
                     /**
                      * 设置截图时间点列表，单位为<font color=red>毫秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
-                     * @param TimeOffsetSet 截图时间点列表，单位为<font color=red>毫秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
+                     * @param _timeOffsetSet 截图时间点列表，单位为<font color=red>毫秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
+                     * 
                      */
                     void SetTimeOffsetSet(const std::vector<double>& _timeOffsetSet);
 
                     /**
                      * 判断参数 TimeOffsetSet 是否已赋值
                      * @return TimeOffsetSet 是否已赋值
+                     * 
                      */
                     bool TimeOffsetSetHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
                     /**
                      * 判断参数 WatermarkSet 是否已赋值
                      * @return WatermarkSet 是否已赋值
+                     * 
                      */
                     bool WatermarkSetHasBeenSet() const;
 

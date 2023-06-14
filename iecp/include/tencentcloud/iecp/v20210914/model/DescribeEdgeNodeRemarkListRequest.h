@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 

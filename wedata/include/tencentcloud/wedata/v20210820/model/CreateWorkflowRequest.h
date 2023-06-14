@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取工作流名称
                      * @return WorkflowName 工作流名称
+                     * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
                      * 设置工作流名称
-                     * @param WorkflowName 工作流名称
+                     * @param _workflowName 工作流名称
+                     * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
 
                     /**
                      * 判断参数 WorkflowName 是否已赋值
                      * @return WorkflowName 是否已赋值
+                     * 
                      */
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
                      * 获取所属文件夹id
                      * @return FolderId 所属文件夹id
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置所属文件夹id
-                     * @param FolderId 所属文件夹id
+                     * @param _folderId 所属文件夹id
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 

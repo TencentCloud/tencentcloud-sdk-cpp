@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取今日调用量
                      * @return TodayAmount 今日调用量
+                     * 
                      */
                     uint64_t GetTodayAmount() const;
 
                     /**
                      * 设置今日调用量
-                     * @param TodayAmount 今日调用量
+                     * @param _todayAmount 今日调用量
+                     * 
                      */
                     void SetTodayAmount(const uint64_t& _todayAmount);
 
                     /**
                      * 判断参数 TodayAmount 是否已赋值
                      * @return TodayAmount 是否已赋值
+                     * 
                      */
                     bool TodayAmountHasBeenSet() const;
 
                     /**
                      * 获取本周调用量
                      * @return WeekAmount 本周调用量
+                     * 
                      */
                     uint64_t GetWeekAmount() const;
 
                     /**
                      * 设置本周调用量
-                     * @param WeekAmount 本周调用量
+                     * @param _weekAmount 本周调用量
+                     * 
                      */
                     void SetWeekAmount(const uint64_t& _weekAmount);
 
                     /**
                      * 判断参数 WeekAmount 是否已赋值
                      * @return WeekAmount 是否已赋值
+                     * 
                      */
                     bool WeekAmountHasBeenSet() const;
 
                     /**
                      * 获取本月调用量
                      * @return MonthAmount 本月调用量
+                     * 
                      */
                     uint64_t GetMonthAmount() const;
 
                     /**
                      * 设置本月调用量
-                     * @param MonthAmount 本月调用量
+                     * @param _monthAmount 本月调用量
+                     * 
                      */
                     void SetMonthAmount(const uint64_t& _monthAmount);
 
                     /**
                      * 判断参数 MonthAmount 是否已赋值
                      * @return MonthAmount 是否已赋值
+                     * 
                      */
                     bool MonthAmountHasBeenSet() const;
 
                     /**
                      * 获取总调用量
                      * @return TotalAmount 总调用量
+                     * 
                      */
                     uint64_t GetTotalAmount() const;
 
                     /**
                      * 设置总调用量
-                     * @param TotalAmount 总调用量
+                     * @param _totalAmount 总调用量
+                     * 
                      */
                     void SetTotalAmount(const uint64_t& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 

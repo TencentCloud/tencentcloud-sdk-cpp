@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取会话 ID
                      * @return SessionId 会话 ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话 ID
-                     * @param SessionId 会话 ID
+                     * @param _sessionId 会话 ID
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

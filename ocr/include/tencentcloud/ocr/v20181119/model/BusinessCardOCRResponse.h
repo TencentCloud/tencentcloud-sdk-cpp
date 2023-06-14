@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取名片识别结果，具体内容请点击左侧链接。
                      * @return BusinessCardInfos 名片识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<BusinessCardInfo> GetBusinessCardInfos() const;
 
                     /**
                      * 判断参数 BusinessCardInfos 是否已赋值
                      * @return BusinessCardInfos 是否已赋值
+                     * 
                      */
                     bool BusinessCardInfosHasBeenSet() const;
 
                     /**
                      * 获取返回图像预处理后的图片，图像预处理未开启时返回内容为空。
                      * @return RetImageBase64 返回图像预处理后的图片，图像预处理未开启时返回内容为空。
+                     * 
                      */
                     std::string GetRetImageBase64() const;
 
                     /**
                      * 判断参数 RetImageBase64 是否已赋值
                      * @return RetImageBase64 是否已赋值
+                     * 
                      */
                     bool RetImageBase64HasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
                      * @return Angle 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 

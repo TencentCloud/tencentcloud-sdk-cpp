@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取数据时间
                      * @return CurrentRunDate 数据时间
+                     * 
                      */
                     std::string GetCurrentRunDate() const;
 
                     /**
                      * 判断参数 CurrentRunDate 是否已赋值
                      * @return CurrentRunDate 是否已赋值
+                     * 
                      */
                     bool CurrentRunDateHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务实例唯一key
                      * @return TaskInstanceKey 任务实例唯一key
+                     * 
                      */
                     std::string GetTaskInstanceKey() const;
 
                     /**
                      * 判断参数 TaskInstanceKey 是否已赋值
                      * @return TaskInstanceKey 是否已赋值
+                     * 
                      */
                     bool TaskInstanceKeyHasBeenSet() const;
 

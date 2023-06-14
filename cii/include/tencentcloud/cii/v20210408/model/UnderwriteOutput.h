@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取客户ID
                      * @return CustomerId 客户ID
+                     * 
                      */
                     std::string GetCustomerId() const;
 
                     /**
                      * 设置客户ID
-                     * @param CustomerId 客户ID
+                     * @param _customerId 客户ID
+                     * 
                      */
                     void SetCustomerId(const std::string& _customerId);
 
                     /**
                      * 判断参数 CustomerId 是否已赋值
                      * @return CustomerId 是否已赋值
+                     * 
                      */
                     bool CustomerIdHasBeenSet() const;
 
                     /**
                      * 获取客户姓名
                      * @return CustomerName 客户姓名
+                     * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
                      * 设置客户姓名
-                     * @param CustomerName 客户姓名
+                     * @param _customerName 客户姓名
+                     * 
                      */
                     void SetCustomerName(const std::string& _customerName);
 
                     /**
                      * 判断参数 CustomerName 是否已赋值
                      * @return CustomerName 是否已赋值
+                     * 
                      */
                     bool CustomerNameHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Results 结果
+                     * 
                      */
                     std::vector<InsuranceResult> GetResults() const;
 
                     /**
                      * 设置结果
-                     * @param Results 结果
+                     * @param _results 结果
+                     * 
                      */
                     void SetResults(const std::vector<InsuranceResult>& _results);
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
                     /**
                      * 获取复核时间
                      * @return ReviewTime 复核时间
+                     * 
                      */
                     std::string GetReviewTime() const;
 
                     /**
                      * 设置复核时间
-                     * @param ReviewTime 复核时间
+                     * @param _reviewTime 复核时间
+                     * 
                      */
                     void SetReviewTime(const std::string& _reviewTime);
 
                     /**
                      * 判断参数 ReviewTime 是否已赋值
                      * @return ReviewTime 是否已赋值
+                     * 
                      */
                     bool ReviewTimeHasBeenSet() const;
 
                     /**
                      * 获取人工复核结果
                      * @return ManualDetail 人工复核结果
+                     * 
                      */
                     std::vector<UnderwriteConclusion> GetManualDetail() const;
 
                     /**
                      * 设置人工复核结果
-                     * @param ManualDetail 人工复核结果
+                     * @param _manualDetail 人工复核结果
+                     * 
                      */
                     void SetManualDetail(const std::vector<UnderwriteConclusion>& _manualDetail);
 
                     /**
                      * 判断参数 ManualDetail 是否已赋值
                      * @return ManualDetail 是否已赋值
+                     * 
                      */
                     bool ManualDetailHasBeenSet() const;
 

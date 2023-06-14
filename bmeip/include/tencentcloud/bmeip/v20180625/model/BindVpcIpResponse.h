@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取EIP绑定VPC网络IP异步任务ID，可以通过查询EIP任务状态查询任务状态
                      * @return TaskId EIP绑定VPC网络IP异步任务ID，可以通过查询EIP任务状态查询任务状态
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

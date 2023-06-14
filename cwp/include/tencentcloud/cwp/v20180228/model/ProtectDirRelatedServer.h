@@ -50,234 +50,273 @@ namespace TencentCloud
                     /**
                      * 获取唯一ID
                      * @return Id 唯一ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置唯一ID
-                     * @param Id 唯一ID
+                     * @param _id 唯一ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取服务器名称
                      * @return HostName 服务器名称
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置服务器名称
-                     * @param HostName 服务器名称
+                     * @param _hostName 服务器名称
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取服务器IP
                      * @return HostIp 服务器IP
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置服务器IP
-                     * @param HostIp 服务器IP
+                     * @param _hostIp 服务器IP
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取服务器系统
                      * @return MachineOs 服务器系统
+                     * 
                      */
                     std::string GetMachineOs() const;
 
                     /**
                      * 设置服务器系统
-                     * @param MachineOs 服务器系统
+                     * @param _machineOs 服务器系统
+                     * 
                      */
                     void SetMachineOs(const std::string& _machineOs);
 
                     /**
                      * 判断参数 MachineOs 是否已赋值
                      * @return MachineOs 是否已赋值
+                     * 
                      */
                     bool MachineOsHasBeenSet() const;
 
                     /**
                      * 获取关联目录数
                      * @return RelateDirNum 关联目录数
+                     * 
                      */
                     uint64_t GetRelateDirNum() const;
 
                     /**
                      * 设置关联目录数
-                     * @param RelateDirNum 关联目录数
+                     * @param _relateDirNum 关联目录数
+                     * 
                      */
                     void SetRelateDirNum(const uint64_t& _relateDirNum);
 
                     /**
                      * 判断参数 RelateDirNum 是否已赋值
                      * @return RelateDirNum 是否已赋值
+                     * 
                      */
                     bool RelateDirNumHasBeenSet() const;
 
                     /**
                      * 获取防护状态
                      * @return ProtectStatus 防护状态
+                     * 
                      */
                     uint64_t GetProtectStatus() const;
 
                     /**
                      * 设置防护状态
-                     * @param ProtectStatus 防护状态
+                     * @param _protectStatus 防护状态
+                     * 
                      */
                     void SetProtectStatus(const uint64_t& _protectStatus);
 
                     /**
                      * 判断参数 ProtectStatus 是否已赋值
                      * @return ProtectStatus 是否已赋值
+                     * 
                      */
                     bool ProtectStatusHasBeenSet() const;
 
                     /**
                      * 获取防护开关
                      * @return ProtectSwitch 防护开关
+                     * 
                      */
                     uint64_t GetProtectSwitch() const;
 
                     /**
                      * 设置防护开关
-                     * @param ProtectSwitch 防护开关
+                     * @param _protectSwitch 防护开关
+                     * 
                      */
                     void SetProtectSwitch(const uint64_t& _protectSwitch);
 
                     /**
                      * 判断参数 ProtectSwitch 是否已赋值
                      * @return ProtectSwitch 是否已赋值
+                     * 
                      */
                     bool ProtectSwitchHasBeenSet() const;
 
                     /**
                      * 获取自动恢复开关
                      * @return AutoRestoreSwitchStatus 自动恢复开关
+                     * 
                      */
                     uint64_t GetAutoRestoreSwitchStatus() const;
 
                     /**
                      * 设置自动恢复开关
-                     * @param AutoRestoreSwitchStatus 自动恢复开关
+                     * @param _autoRestoreSwitchStatus 自动恢复开关
+                     * 
                      */
                     void SetAutoRestoreSwitchStatus(const uint64_t& _autoRestoreSwitchStatus);
 
                     /**
                      * 判断参数 AutoRestoreSwitchStatus 是否已赋值
                      * @return AutoRestoreSwitchStatus 是否已赋值
+                     * 
                      */
                     bool AutoRestoreSwitchStatusHasBeenSet() const;
 
                     /**
                      * 获取服务器唯一ID
                      * @return Quuid 服务器唯一ID
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置服务器唯一ID
-                     * @param Quuid 服务器唯一ID
+                     * @param _quuid 服务器唯一ID
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取是否已经授权
                      * @return Authorization 是否已经授权
+                     * 
                      */
                     bool GetAuthorization() const;
 
                     /**
                      * 设置是否已经授权
-                     * @param Authorization 是否已经授权
+                     * @param _authorization 是否已经授权
+                     * 
                      */
                     void SetAuthorization(const bool& _authorization);
 
                     /**
                      * 判断参数 Authorization 是否已赋值
                      * @return Authorization 是否已赋值
+                     * 
                      */
                     bool AuthorizationHasBeenSet() const;
 
                     /**
                      * 获取异常状态
                      * @return Exception 异常状态
+                     * 
                      */
                     uint64_t GetException() const;
 
                     /**
                      * 设置异常状态
-                     * @param Exception 异常状态
+                     * @param _exception 异常状态
+                     * 
                      */
                     void SetException(const uint64_t& _exception);
 
                     /**
                      * 判断参数 Exception 是否已赋值
                      * @return Exception 是否已赋值
+                     * 
                      */
                     bool ExceptionHasBeenSet() const;
 
                     /**
                      * 获取过渡进度
                      * @return Progress 过渡进度
+                     * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 设置过渡进度
-                     * @param Progress 过渡进度
+                     * @param _progress 过渡进度
+                     * 
                      */
                     void SetProgress(const uint64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取异常信息
                      * @return ExceptionMessage 异常信息
+                     * 
                      */
                     std::string GetExceptionMessage() const;
 
                     /**
                      * 设置异常信息
-                     * @param ExceptionMessage 异常信息
+                     * @param _exceptionMessage 异常信息
+                     * 
                      */
                     void SetExceptionMessage(const std::string& _exceptionMessage);
 
                     /**
                      * 判断参数 ExceptionMessage 是否已赋值
                      * @return ExceptionMessage 是否已赋值
+                     * 
                      */
                     bool ExceptionMessageHasBeenSet() const;
 
@@ -286,20 +325,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 主机额外信息
+                     * @param _machineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

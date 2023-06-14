@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return Time 时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-                     * @param Time 时间
+                     * @param _time 时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取数值
                      * @return Value 数值
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置数值
-                     * @param Value 数值
+                     * @param _value 数值
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取运营商
                      * @return Isp 运营商
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置运营商
-                     * @param Isp 运营商
+                     * @param _isp 运营商
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
                     /**
                      * 获取IP地址
                      * @return Ip IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-                     * @param Ip IP地址
+                     * @param _ip IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return District 区域
+                     * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置区域
-                     * @param District 区域
+                     * @param _district 区域
+                     * 
                      */
                     void SetDistrict(const std::string& _district);
 
                     /**
                      * 判断参数 District 是否已赋值
                      * @return District 是否已赋值
+                     * 
                      */
                     bool DistrictHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取查询参数
                      * @return Filter 查询参数
+                     * 
                      */
                     std::vector<QueryFilter> GetFilter() const;
 
                     /**
                      * 设置查询参数
-                     * @param Filter 查询参数
+                     * @param _filter 查询参数
+                     * 
                      */
                     void SetFilter(const std::vector<QueryFilter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取查询连接符，1 and  ，2 or
                      * @return Logic 查询连接符，1 and  ，2 or
+                     * 
                      */
                     uint64_t GetLogic() const;
 
                     /**
                      * 设置查询连接符，1 and  ，2 or
-                     * @param Logic 查询连接符，1 and  ，2 or
+                     * @param _logic 查询连接符，1 and  ，2 or
+                     * 
                      */
                     void SetLogic(const uint64_t& _logic);
 
                     /**
                      * 判断参数 Logic 是否已赋值
                      * @return Logic 是否已赋值
+                     * 
                      */
                     bool LogicHasBeenSet() const;
 

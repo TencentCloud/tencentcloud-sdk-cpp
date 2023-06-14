@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取文件唯一 ID。
                      * @return FileId 文件唯一 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件唯一 ID。
-                     * @param FileId 文件唯一 ID。
+                     * @param _fileId 文件唯一 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取上传完成后生成的媒体文件基础信息。
                      * @return MediaBasicInfo 上传完成后生成的媒体文件基础信息。
+                     * 
                      */
                     MediaBasicInfo GetMediaBasicInfo() const;
 
                     /**
                      * 设置上传完成后生成的媒体文件基础信息。
-                     * @param MediaBasicInfo 上传完成后生成的媒体文件基础信息。
+                     * @param _mediaBasicInfo 上传完成后生成的媒体文件基础信息。
+                     * 
                      */
                     void SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo);
 
                     /**
                      * 判断参数 MediaBasicInfo 是否已赋值
                      * @return MediaBasicInfo 是否已赋值
+                     * 
                      */
                     bool MediaBasicInfoHasBeenSet() const;
 
                     /**
                      * 获取任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      * @return ProcedureTaskId 任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
                      * 设置任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
-                     * @param ProcedureTaskId 任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @param _procedureTaskId 任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
                     /**
                      * 判断参数 ProcedureTaskId 是否已赋值
                      * @return ProcedureTaskId 是否已赋值
+                     * 
                      */
                     bool ProcedureTaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
                      * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
 
                     /**
                      * 设置任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
-                     * @param ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @param _reviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 
                      */
                     void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
 
                     /**
                      * 判断参数 ReviewAudioVideoTaskId 是否已赋值
                      * @return ReviewAudioVideoTaskId 是否已赋值
+                     * 
                      */
                     bool ReviewAudioVideoTaskIdHasBeenSet() const;
 
@@ -125,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * @param _metaData 元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 

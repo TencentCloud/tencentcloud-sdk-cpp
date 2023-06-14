@@ -55,6 +55,7 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param Time 时间点，
+                     * @param _time 时间点，
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取转码时长，单位：分钟。
                      * @return Duration 转码时长，单位：分钟。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置转码时长，单位：分钟。
-                     * @param Duration 转码时长，单位：分钟。
+                     * @param _duration 转码时长，单位：分钟。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -107,6 +113,7 @@ liveprocessor_H264 =》直播转码-H264，
 liveprocessor_H265 =》 直播转码-H265，
 topspeed_H264 =》极速高清-H264，
 topspeed_H265 =》极速高清-H265。
+                     * 
                      */
                     std::string GetModuleCodec() const;
 
@@ -117,18 +124,20 @@ liveprocessor_H264 =》直播转码-H264，
 liveprocessor_H265 =》 直播转码-H265，
 topspeed_H264 =》极速高清-H264，
 topspeed_H265 =》极速高清-H265。
-                     * @param ModuleCodec 编码方式，带模块，
+                     * @param _moduleCodec 编码方式，带模块，
 示例：
 liveprocessor_H264 =》直播转码-H264，
 liveprocessor_H265 =》 直播转码-H265，
 topspeed_H264 =》极速高清-H264，
 topspeed_H265 =》极速高清-H265。
+                     * 
                      */
                     void SetModuleCodec(const std::string& _moduleCodec);
 
                     /**
                      * 判断参数 ModuleCodec 是否已赋值
                      * @return ModuleCodec 是否已赋值
+                     * 
                      */
                     bool ModuleCodecHasBeenSet() const;
 
@@ -137,20 +146,23 @@ topspeed_H265 =》极速高清-H265。
 示例：540*480。
                      * @return Resolution 分辨率，
 示例：540*480。
+                     * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 设置分辨率，
 示例：540*480。
-                     * @param Resolution 分辨率，
+                     * @param _resolution 分辨率，
 示例：540*480。
+                     * 
                      */
                     void SetResolution(const std::string& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 

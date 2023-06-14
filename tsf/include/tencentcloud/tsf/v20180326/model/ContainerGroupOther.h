@@ -51,126 +51,147 @@ namespace TencentCloud
                     /**
                      * 获取实例总数
                      * @return InstanceNum 实例总数
+                     * 
                      */
                     int64_t GetInstanceNum() const;
 
                     /**
                      * 设置实例总数
-                     * @param InstanceNum 实例总数
+                     * @param _instanceNum 实例总数
+                     * 
                      */
                     void SetInstanceNum(const int64_t& _instanceNum);
 
                     /**
                      * 判断参数 InstanceNum 是否已赋值
                      * @return InstanceNum 是否已赋值
+                     * 
                      */
                     bool InstanceNumHasBeenSet() const;
 
                     /**
                      * 获取已启动实例总数
                      * @return CurrentNum 已启动实例总数
+                     * 
                      */
                     int64_t GetCurrentNum() const;
 
                     /**
                      * 设置已启动实例总数
-                     * @param CurrentNum 已启动实例总数
+                     * @param _currentNum 已启动实例总数
+                     * 
                      */
                     void SetCurrentNum(const int64_t& _currentNum);
 
                     /**
                      * 判断参数 CurrentNum 是否已赋值
                      * @return CurrentNum 是否已赋值
+                     * 
                      */
                     bool CurrentNumHasBeenSet() const;
 
                     /**
                      * 获取负载均衡ip
                      * @return LbIp 负载均衡ip
+                     * 
                      */
                     std::string GetLbIp() const;
 
                     /**
                      * 设置负载均衡ip
-                     * @param LbIp 负载均衡ip
+                     * @param _lbIp 负载均衡ip
+                     * 
                      */
                     void SetLbIp(const std::string& _lbIp);
 
                     /**
                      * 判断参数 LbIp 是否已赋值
                      * @return LbIp 是否已赋值
+                     * 
                      */
                     bool LbIpHasBeenSet() const;
 
                     /**
                      * 获取Service ip
                      * @return ClusterIp Service ip
+                     * 
                      */
                     std::string GetClusterIp() const;
 
                     /**
                      * 设置Service ip
-                     * @param ClusterIp Service ip
+                     * @param _clusterIp Service ip
+                     * 
                      */
                     void SetClusterIp(const std::string& _clusterIp);
 
                     /**
                      * 判断参数 ClusterIp 是否已赋值
                      * @return ClusterIp 是否已赋值
+                     * 
                      */
                     bool ClusterIpHasBeenSet() const;
 
                     /**
                      * 获取服务状态，请参考后面的的状态定义
                      * @return Status 服务状态，请参考后面的的状态定义
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置服务状态，请参考后面的的状态定义
-                     * @param Status 服务状态，请参考后面的的状态定义
+                     * @param _status 服务状态，请参考后面的的状态定义
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取服务状态，请参考后面的的状态定义
                      * @return Message 服务状态，请参考后面的的状态定义
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置服务状态，请参考后面的的状态定义
-                     * @param Message 服务状态，请参考后面的的状态定义
+                     * @param _message 服务状态，请参考后面的的状态定义
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取环境变量
                      * @return Envs 环境变量
+                     * 
                      */
                     std::vector<Env> GetEnvs() const;
 
                     /**
                      * 设置环境变量
-                     * @param Envs 环境变量
+                     * @param _envs 环境变量
+                     * 
                      */
                     void SetEnvs(const std::vector<Env>& _envs);
 
                     /**
                      * 判断参数 Envs 是否已赋值
                      * @return Envs 是否已赋值
+                     * 
                      */
                     bool EnvsHasBeenSet() const;
 
@@ -179,20 +200,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePort Service NodePort
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNodePort() const;
 
                     /**
                      * 设置Service NodePort
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodePort Service NodePort
+                     * @param _nodePort Service NodePort
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodePort(const uint64_t& _nodePort);
 
                     /**
                      * 判断参数 NodePort 是否已赋值
                      * @return NodePort 是否已赋值
+                     * 
                      */
                     bool NodePortHasBeenSet() const;
 
@@ -201,20 +225,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -223,20 +250,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckSettings 健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
                      * 设置健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HealthCheckSettings 健康检查相关字段
+                     * @param _healthCheckSettings 健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
 
                     /**
                      * 判断参数 HealthCheckSettings 是否已赋值
                      * @return HealthCheckSettings 是否已赋值
+                     * 
                      */
                     bool HealthCheckSettingsHasBeenSet() const;
 
@@ -245,20 +275,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNotEqualServiceConfig 服务配置信息是否匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsNotEqualServiceConfig() const;
 
                     /**
                      * 设置服务配置信息是否匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsNotEqualServiceConfig 服务配置信息是否匹配
+                     * @param _isNotEqualServiceConfig 服务配置信息是否匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsNotEqualServiceConfig(const bool& _isNotEqualServiceConfig);
 
                     /**
                      * 判断参数 IsNotEqualServiceConfig 是否已赋值
                      * @return IsNotEqualServiceConfig 是否已赋值
+                     * 
                      */
                     bool IsNotEqualServiceConfigHasBeenSet() const;
 

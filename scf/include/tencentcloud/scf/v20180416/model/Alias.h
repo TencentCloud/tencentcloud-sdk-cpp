@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取别名指向的主版本
                      * @return FunctionVersion 别名指向的主版本
+                     * 
                      */
                     std::string GetFunctionVersion() const;
 
                     /**
                      * 设置别名指向的主版本
-                     * @param FunctionVersion 别名指向的主版本
+                     * @param _functionVersion 别名指向的主版本
+                     * 
                      */
                     void SetFunctionVersion(const std::string& _functionVersion);
 
                     /**
                      * 判断参数 FunctionVersion 是否已赋值
                      * @return FunctionVersion 是否已赋值
+                     * 
                      */
                     bool FunctionVersionHasBeenSet() const;
 
                     /**
                      * 获取别名的名称
                      * @return Name 别名的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置别名的名称
-                     * @param Name 别名的名称
+                     * @param _name 别名的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoutingConfig 别名的路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RoutingConfig GetRoutingConfig() const;
 
                     /**
                      * 设置别名的路由信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoutingConfig 别名的路由信息
+                     * @param _routingConfig 别名的路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoutingConfig(const RoutingConfig& _routingConfig);
 
                     /**
                      * 判断参数 RoutingConfig 是否已赋值
                      * @return RoutingConfig 是否已赋值
+                     * 
                      */
                     bool RoutingConfigHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述信息
+                     * @param _description 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddTime 创建时间
+                     * @param _addTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModTime 更新时间
+                     * @param _modTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModTime(const std::string& _modTime);
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 

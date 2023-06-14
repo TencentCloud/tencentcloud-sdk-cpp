@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取采样截图模板详情列表。
                      * @return SampleSnapshotTemplateSet 采样截图模板详情列表。
+                     * 
                      */
                     std::vector<SampleSnapshotTemplate> GetSampleSnapshotTemplateSet() const;
 
                     /**
                      * 判断参数 SampleSnapshotTemplateSet 是否已赋值
                      * @return SampleSnapshotTemplateSet 是否已赋值
+                     * 
                      */
                     bool SampleSnapshotTemplateSetHasBeenSet() const;
 

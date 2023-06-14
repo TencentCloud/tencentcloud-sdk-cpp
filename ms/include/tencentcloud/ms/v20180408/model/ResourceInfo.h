@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取用户购买的资源id，全局唯一
                      * @return ResourceId 用户购买的资源id，全局唯一
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置用户购买的资源id，全局唯一
-                     * @param ResourceId 用户购买的资源id，全局唯一
+                     * @param _resourceId 用户购买的资源id，全局唯一
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736
                      * @return Pid 资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736
+                     * 
                      */
                     uint64_t GetPid() const;
 
                     /**
                      * 设置资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736
-                     * @param Pid 资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736
+                     * @param _pid 资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736
+                     * 
                      */
                     void SetPid(const uint64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
+                     * 
                      */
                     bool PidHasBeenSet() const;
 
                     /**
                      * 获取购买时间戳
                      * @return CreateTime 购买时间戳
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置购买时间戳
-                     * @param CreateTime 购买时间戳
+                     * @param _createTime 购买时间戳
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取到期时间戳
                      * @return ExpireTime 到期时间戳
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置到期时间戳
-                     * @param ExpireTime 到期时间戳
+                     * @param _expireTime 到期时间戳
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取0-未绑定，1-已绑定
                      * @return IsBind 0-未绑定，1-已绑定
+                     * 
                      */
                     int64_t GetIsBind() const;
 
                     /**
                      * 设置0-未绑定，1-已绑定
-                     * @param IsBind 0-未绑定，1-已绑定
+                     * @param _isBind 0-未绑定，1-已绑定
+                     * 
                      */
                     void SetIsBind(const int64_t& _isBind);
 
                     /**
                      * 判断参数 IsBind 是否已赋值
                      * @return IsBind 是否已赋值
+                     * 
                      */
                     bool IsBindHasBeenSet() const;
 
                     /**
                      * 获取用户绑定app的基本信息
                      * @return BindInfo 用户绑定app的基本信息
+                     * 
                      */
                     BindInfo GetBindInfo() const;
 
                     /**
                      * 设置用户绑定app的基本信息
-                     * @param BindInfo 用户绑定app的基本信息
+                     * @param _bindInfo 用户绑定app的基本信息
+                     * 
                      */
                     void SetBindInfo(const BindInfo& _bindInfo);
 
                     /**
                      * 判断参数 BindInfo 是否已赋值
                      * @return BindInfo 是否已赋值
+                     * 
                      */
                     bool BindInfoHasBeenSet() const;
 
                     /**
                      * 获取资源名称，如应用加固，漏洞扫描
                      * @return ResourceName 资源名称，如应用加固，漏洞扫描
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称，如应用加固，漏洞扫描
-                     * @param ResourceName 资源名称，如应用加固，漏洞扫描
+                     * @param _resourceName 资源名称，如应用加固，漏洞扫描
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 

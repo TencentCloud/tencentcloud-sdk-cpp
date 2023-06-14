@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return DbName 数据库名称
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DbName 数据库名称
+                     * @param _dbName 数据库名称
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return TableName 表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取分区
                      * @return Partition 分区
+                     * 
                      */
                     std::string GetPartition() const;
 
                     /**
                      * 设置分区
-                     * @param Partition 分区
+                     * @param _partition 分区
+                     * 
                      */
                     void SetPartition(const std::string& _partition);
 
                     /**
                      * 判断参数 Partition 是否已赋值
                      * @return Partition 是否已赋值
+                     * 
                      */
                     bool PartitionHasBeenSet() const;
 
                     /**
                      * 获取锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE
                      * @return LockType 锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE
+                     * 
                      */
                     std::string GetLockType() const;
 
                     /**
                      * 设置锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE
-                     * @param LockType 锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE
+                     * @param _lockType 锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE
+                     * 
                      */
                     void SetLockType(const std::string& _lockType);
 
                     /**
                      * 判断参数 LockType 是否已赋值
                      * @return LockType 是否已赋值
+                     * 
                      */
                     bool LockTypeHasBeenSet() const;
 
                     /**
                      * 获取锁级别：DB、TABLE、PARTITION
                      * @return LockLevel 锁级别：DB、TABLE、PARTITION
+                     * 
                      */
                     std::string GetLockLevel() const;
 
                     /**
                      * 设置锁级别：DB、TABLE、PARTITION
-                     * @param LockLevel 锁级别：DB、TABLE、PARTITION
+                     * @param _lockLevel 锁级别：DB、TABLE、PARTITION
+                     * 
                      */
                     void SetLockLevel(const std::string& _lockLevel);
 
                     /**
                      * 判断参数 LockLevel 是否已赋值
                      * @return LockLevel 是否已赋值
+                     * 
                      */
                     bool LockLevelHasBeenSet() const;
 
                     /**
                      * 获取锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN
                      * @return DataOperationType 锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN
+                     * 
                      */
                     std::string GetDataOperationType() const;
 
                     /**
                      * 设置锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN
-                     * @param DataOperationType 锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN
+                     * @param _dataOperationType 锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN
+                     * 
                      */
                     void SetDataOperationType(const std::string& _dataOperationType);
 
                     /**
                      * 判断参数 DataOperationType 是否已赋值
                      * @return DataOperationType 是否已赋值
+                     * 
                      */
                     bool DataOperationTypeHasBeenSet() const;
 
                     /**
                      * 获取是否保持Acid
                      * @return IsAcid 是否保持Acid
+                     * 
                      */
                     bool GetIsAcid() const;
 
                     /**
                      * 设置是否保持Acid
-                     * @param IsAcid 是否保持Acid
+                     * @param _isAcid 是否保持Acid
+                     * 
                      */
                     void SetIsAcid(const bool& _isAcid);
 
                     /**
                      * 判断参数 IsAcid 是否已赋值
                      * @return IsAcid 是否已赋值
+                     * 
                      */
                     bool IsAcidHasBeenSet() const;
 
                     /**
                      * 获取是否动态分区写
                      * @return IsDynamicPartitionWrite 是否动态分区写
+                     * 
                      */
                     bool GetIsDynamicPartitionWrite() const;
 
                     /**
                      * 设置是否动态分区写
-                     * @param IsDynamicPartitionWrite 是否动态分区写
+                     * @param _isDynamicPartitionWrite 是否动态分区写
+                     * 
                      */
                     void SetIsDynamicPartitionWrite(const bool& _isDynamicPartitionWrite);
 
                     /**
                      * 判断参数 IsDynamicPartitionWrite 是否已赋值
                      * @return IsDynamicPartitionWrite 是否已赋值
+                     * 
                      */
                     bool IsDynamicPartitionWriteHasBeenSet() const;
 

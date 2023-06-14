@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInstanceId 节点活动所在的实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeInstanceId() const;
 
                     /**
                      * 设置节点活动所在的实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeInstanceId 节点活动所在的实例ID。
+                     * @param _nodeInstanceId 节点活动所在的实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeInstanceId(const std::string& _nodeInstanceId);
 
                     /**
                      * 判断参数 NodeInstanceId 是否已赋值
                      * @return NodeInstanceId 是否已赋值
+                     * 
                      */
                     bool NodeInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
                      * @return NodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * 
                      */
                     std::string GetNodeActivityStatus() const;
 
                     /**
                      * 设置节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
-                     * @param NodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * @param _nodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * 
                      */
                     void SetNodeActivityStatus(const std::string& _nodeActivityStatus);
 
                     /**
                      * 判断参数 NodeActivityStatus 是否已赋值
                      * @return NodeActivityStatus 是否已赋值
+                     * 
                      */
                     bool NodeActivityStatusHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeActivityStatusCode 节点活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeActivityStatusCode() const;
 
                     /**
                      * 设置节点活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeActivityStatusCode 节点活动状态码。
+                     * @param _nodeActivityStatusCode 节点活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeActivityStatusCode(const std::string& _nodeActivityStatusCode);
 
                     /**
                      * 判断参数 NodeActivityStatusCode 是否已赋值
                      * @return NodeActivityStatusCode 是否已赋值
+                     * 
                      */
                     bool NodeActivityStatusCodeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeActivityStatusReason 节点活动状态原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeActivityStatusReason() const;
 
                     /**
                      * 设置节点活动状态原因。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeActivityStatusReason 节点活动状态原因。
+                     * @param _nodeActivityStatusReason 节点活动状态原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeActivityStatusReason(const std::string& _nodeActivityStatusReason);
 
                     /**
                      * 判断参数 NodeActivityStatusReason 是否已赋值
                      * @return NodeActivityStatusReason 是否已赋值
+                     * 
                      */
                     bool NodeActivityStatusReasonHasBeenSet() const;
 

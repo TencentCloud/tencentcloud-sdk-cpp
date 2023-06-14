@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VertexDetails 指定点列表的属性信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VertexDetail> GetVertexDetails() const;
 
                     /**
                      * 判断参数 VertexDetails 是否已赋值
                      * @return VertexDetails 是否已赋值
+                     * 
                      */
                     bool VertexDetailsHasBeenSet() const;
 

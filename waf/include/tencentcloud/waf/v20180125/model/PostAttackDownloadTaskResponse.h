@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务task id
                      * @return Flow 任务task id
+                     * 
                      */
                     std::string GetFlow() const;
 
                     /**
                      * 判断参数 Flow 是否已赋值
                      * @return Flow 是否已赋值
+                     * 
                      */
                     bool FlowHasBeenSet() const;
 

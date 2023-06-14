@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取编辑处理任务ID。
                      * @return TaskId 编辑处理任务ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置编辑处理任务ID。
-                     * @param TaskId 编辑处理任务ID。
+                     * @param _taskId 编辑处理任务ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

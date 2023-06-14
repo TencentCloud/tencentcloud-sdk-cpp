@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取编排 ID。
                      * @return ScheduleId 编排 ID。
+                     * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
                      * 判断参数 ScheduleId 是否已赋值
                      * @return ScheduleId 是否已赋值
+                     * 
                      */
                     bool ScheduleIdHasBeenSet() const;
 

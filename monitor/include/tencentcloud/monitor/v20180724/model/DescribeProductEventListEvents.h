@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置事件ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventId 事件ID
+                     * @param _eventId 事件ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCName 事件中文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventCName() const;
 
                     /**
                      * 设置事件中文名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventCName 事件中文名
+                     * @param _eventCName 事件中文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventCName(const std::string& _eventCName);
 
                     /**
                      * 判断参数 EventCName 是否已赋值
                      * @return EventCName 是否已赋值
+                     * 
                      */
                     bool EventCNameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventEName 事件英文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventEName() const;
 
                     /**
                      * 设置事件英文名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventEName 事件英文名
+                     * @param _eventEName 事件英文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventEName(const std::string& _eventEName);
 
                     /**
                      * 判断参数 EventEName 是否已赋值
                      * @return EventEName 是否已赋值
+                     * 
                      */
                     bool EventENameHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventName 事件简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置事件简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventName 事件简称
+                     * @param _eventName 事件简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCName 产品中文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductCName() const;
 
                     /**
                      * 设置产品中文名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCName 产品中文名
+                     * @param _productCName 产品中文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductCName(const std::string& _productCName);
 
                     /**
                      * 判断参数 ProductCName 是否已赋值
                      * @return ProductCName 是否已赋值
+                     * 
                      */
                     bool ProductCNameHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductEName 产品英文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductEName() const;
 
                     /**
                      * 设置产品英文名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductEName 产品英文名
+                     * @param _productEName 产品英文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductEName(const std::string& _productEName);
 
                     /**
                      * 判断参数 ProductEName 是否已赋值
                      * @return ProductEName 是否已赋值
+                     * 
                      */
                     bool ProductENameHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 产品简称
+                     * @param _productName 产品简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -273,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -295,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -317,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportAlarm 是否支持告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSupportAlarm() const;
 
                     /**
                      * 设置是否支持告警
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportAlarm 是否支持告警
+                     * @param _supportAlarm 是否支持告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportAlarm(const int64_t& _supportAlarm);
 
                     /**
                      * 判断参数 SupportAlarm 是否已赋值
                      * @return SupportAlarm 是否已赋值
+                     * 
                      */
                     bool SupportAlarmHasBeenSet() const;
 
@@ -339,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 事件类型
+                     * @param _type 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -361,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -383,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -405,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dimensions 实例对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeProductEventListEventsDimensions> GetDimensions() const;
 
                     /**
                      * 设置实例对象信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Dimensions 实例对象信息
+                     * @param _dimensions 实例对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDimensions(const std::vector<DescribeProductEventListEventsDimensions>& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 
@@ -427,20 +478,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionMsg 实例对象附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeProductEventListEventsDimensions> GetAdditionMsg() const;
 
                     /**
                      * 设置实例对象附加信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdditionMsg 实例对象附加信息
+                     * @param _additionMsg 实例对象附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdditionMsg(const std::vector<DescribeProductEventListEventsDimensions>& _additionMsg);
 
                     /**
                      * 判断参数 AdditionMsg 是否已赋值
                      * @return AdditionMsg 是否已赋值
+                     * 
                      */
                     bool AdditionMsgHasBeenSet() const;
 
@@ -449,20 +503,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAlarmConfig 是否配置告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsAlarmConfig() const;
 
                     /**
                      * 设置是否配置告警
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAlarmConfig 是否配置告警
+                     * @param _isAlarmConfig 是否配置告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsAlarmConfig(const int64_t& _isAlarmConfig);
 
                     /**
                      * 判断参数 IsAlarmConfig 是否已赋值
                      * @return IsAlarmConfig 是否已赋值
+                     * 
                      */
                     bool IsAlarmConfigHasBeenSet() const;
 
@@ -471,20 +528,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupInfo 策略信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeProductEventListEventsGroupInfo> GetGroupInfo() const;
 
                     /**
                      * 设置策略信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupInfo 策略信息
+                     * @param _groupInfo 策略信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupInfo(const std::vector<DescribeProductEventListEventsGroupInfo>& _groupInfo);
 
                     /**
                      * 判断参数 GroupInfo 是否已赋值
                      * @return GroupInfo 是否已赋值
+                     * 
                      */
                     bool GroupInfoHasBeenSet() const;
 
@@ -493,20 +553,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewName 显示名称ViewName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置显示名称ViewName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ViewName 显示名称ViewName
+                     * @param _viewName 显示名称ViewName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViewName(const std::string& _viewName);
 
                     /**
                      * 判断参数 ViewName 是否已赋值
                      * @return ViewName 是否已赋值
+                     * 
                      */
                     bool ViewNameHasBeenSet() const;
 

@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取攻击封禁类型标签
                      * @return AttackTags 攻击封禁类型标签
+                     * 
                      */
                     std::vector<std::string> GetAttackTags() const;
 
                     /**
                      * 设置攻击封禁类型标签
-                     * @param AttackTags 攻击封禁类型标签
+                     * @param _attackTags 攻击封禁类型标签
+                     * 
                      */
                     void SetAttackTags(const std::vector<std::string>& _attackTags);
 
                     /**
                      * 判断参数 AttackTags 是否已赋值
                      * @return AttackTags 是否已赋值
+                     * 
                      */
                     bool AttackTagsHasBeenSet() const;
 
                     /**
                      * 获取攻击次数阈值
                      * @return AttackThreshold 攻击次数阈值
+                     * 
                      */
                     int64_t GetAttackThreshold() const;
 
                     /**
                      * 设置攻击次数阈值
-                     * @param AttackThreshold 攻击次数阈值
+                     * @param _attackThreshold 攻击次数阈值
+                     * 
                      */
                     void SetAttackThreshold(const int64_t& _attackThreshold);
 
                     /**
                      * 判断参数 AttackThreshold 是否已赋值
                      * @return AttackThreshold 是否已赋值
+                     * 
                      */
                     bool AttackThresholdHasBeenSet() const;
 
                     /**
                      * 获取自动封禁状态
                      * @return DefenseStatus 自动封禁状态
+                     * 
                      */
                     int64_t GetDefenseStatus() const;
 
                     /**
                      * 设置自动封禁状态
-                     * @param DefenseStatus 自动封禁状态
+                     * @param _defenseStatus 自动封禁状态
+                     * 
                      */
                     void SetDefenseStatus(const int64_t& _defenseStatus);
 
                     /**
                      * 判断参数 DefenseStatus 是否已赋值
                      * @return DefenseStatus 是否已赋值
+                     * 
                      */
                     bool DefenseStatusHasBeenSet() const;
 
                     /**
                      * 获取攻击时间阈值
                      * @return TimeThreshold 攻击时间阈值
+                     * 
                      */
                     int64_t GetTimeThreshold() const;
 
                     /**
                      * 设置攻击时间阈值
-                     * @param TimeThreshold 攻击时间阈值
+                     * @param _timeThreshold 攻击时间阈值
+                     * 
                      */
                     void SetTimeThreshold(const int64_t& _timeThreshold);
 
                     /**
                      * 判断参数 TimeThreshold 是否已赋值
                      * @return TimeThreshold 是否已赋值
+                     * 
                      */
                     bool TimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取自动封禁时间
                      * @return DenyTimeThreshold 自动封禁时间
+                     * 
                      */
                     int64_t GetDenyTimeThreshold() const;
 
                     /**
                      * 设置自动封禁时间
-                     * @param DenyTimeThreshold 自动封禁时间
+                     * @param _denyTimeThreshold 自动封禁时间
+                     * 
                      */
                     void SetDenyTimeThreshold(const int64_t& _denyTimeThreshold);
 
                     /**
                      * 判断参数 DenyTimeThreshold 是否已赋值
                      * @return DenyTimeThreshold 是否已赋值
+                     * 
                      */
                     bool DenyTimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取最后更新时间
                      * @return LastUpdateTime 最后更新时间
+                     * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-                     * @param LastUpdateTime 最后更新时间
+                     * @param _lastUpdateTime 最后更新时间
+                     * 
                      */
                     void SetLastUpdateTime(const std::string& _lastUpdateTime);
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 

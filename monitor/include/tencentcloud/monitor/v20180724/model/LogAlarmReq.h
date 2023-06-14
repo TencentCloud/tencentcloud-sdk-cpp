@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取apm实例id
                      * @return InstanceId apm实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置apm实例id
-                     * @param InstanceId apm实例id
+                     * @param _instanceId apm实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取检索条件信息
                      * @return Filter 检索条件信息
+                     * 
                      */
                     std::vector<LogFilterInfo> GetFilter() const;
 
                     /**
                      * 设置检索条件信息
-                     * @param Filter 检索条件信息
+                     * @param _filter 检索条件信息
+                     * 
                      */
                     void SetFilter(const std::vector<LogFilterInfo>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取告警合并开启/暂停
                      * @return AlarmMerge 告警合并开启/暂停
+                     * 
                      */
                     std::string GetAlarmMerge() const;
 
                     /**
                      * 设置告警合并开启/暂停
-                     * @param AlarmMerge 告警合并开启/暂停
+                     * @param _alarmMerge 告警合并开启/暂停
+                     * 
                      */
                     void SetAlarmMerge(const std::string& _alarmMerge);
 
                     /**
                      * 判断参数 AlarmMerge 是否已赋值
                      * @return AlarmMerge 是否已赋值
+                     * 
                      */
                     bool AlarmMergeHasBeenSet() const;
 
                     /**
                      * 获取告警合并时间
                      * @return AlarmMergeTime 告警合并时间
+                     * 
                      */
                     std::string GetAlarmMergeTime() const;
 
                     /**
                      * 设置告警合并时间
-                     * @param AlarmMergeTime 告警合并时间
+                     * @param _alarmMergeTime 告警合并时间
+                     * 
                      */
                     void SetAlarmMergeTime(const std::string& _alarmMergeTime);
 
                     /**
                      * 判断参数 AlarmMergeTime 是否已赋值
                      * @return AlarmMergeTime 是否已赋值
+                     * 
                      */
                     bool AlarmMergeTimeHasBeenSet() const;
 

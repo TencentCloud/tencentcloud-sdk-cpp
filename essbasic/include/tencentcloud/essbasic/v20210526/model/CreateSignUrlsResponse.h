@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取签署参与者签署H5链接信息数组
                      * @return SignUrlInfos 签署参与者签署H5链接信息数组
+                     * 
                      */
                     std::vector<SignUrlInfo> GetSignUrlInfos() const;
 
                     /**
                      * 判断参数 SignUrlInfos 是否已赋值
                      * @return SignUrlInfos 是否已赋值
+                     * 
                      */
                     bool SignUrlInfosHasBeenSet() const;
 
                     /**
                      * 获取生成失败时的错误信息，成功返回”“，顺序和出参SignUrlInfos保持一致
                      * @return ErrorMessages 生成失败时的错误信息，成功返回”“，顺序和出参SignUrlInfos保持一致
+                     * 
                      */
                     std::vector<std::string> GetErrorMessages() const;
 
                     /**
                      * 判断参数 ErrorMessages 是否已赋值
                      * @return ErrorMessages 是否已赋值
+                     * 
                      */
                     bool ErrorMessagesHasBeenSet() const;
 

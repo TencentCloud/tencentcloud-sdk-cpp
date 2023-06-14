@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取DescribeRecordTemplates接口获取到的模板 ID。
                      * @return TemplateId DescribeRecordTemplates接口获取到的模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置DescribeRecordTemplates接口获取到的模板 ID。
-                     * @param TemplateId DescribeRecordTemplates接口获取到的模板 ID。
+                     * @param _templateId DescribeRecordTemplates接口获取到的模板 ID。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

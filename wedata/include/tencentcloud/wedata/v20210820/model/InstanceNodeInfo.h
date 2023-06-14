@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 读取节点SOURCE 写入节点SINK
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置读取节点SOURCE 写入节点SINK
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeType 读取节点SOURCE 写入节点SINK
+                     * @param _nodeType 读取节点SOURCE 写入节点SINK
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 节点id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeId 节点id
+                     * @param _nodeId 节点id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 

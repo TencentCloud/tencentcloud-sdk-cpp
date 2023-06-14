@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterID 集群id
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterID 集群id
+                     * @param _clusterID 集群id
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
@@ -66,20 +69,23 @@ namespace TencentCloud
 仅支持cvm-id过滤
                      * @return Filters 过滤条件
 仅支持cvm-id过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
 仅支持cvm-id过滤
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
 仅支持cvm-id过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

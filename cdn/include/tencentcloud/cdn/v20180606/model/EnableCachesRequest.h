@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取解封 URL 列表
                      * @return Urls 解封 URL 列表
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置解封 URL 列表
-                     * @param Urls 解封 URL 列表
+                     * @param _urls 解封 URL 列表
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 
                     /**
                      * 获取URL封禁日期
                      * @return Date URL封禁日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置URL封禁日期
-                     * @param Date URL封禁日期
+                     * @param _date URL封禁日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 

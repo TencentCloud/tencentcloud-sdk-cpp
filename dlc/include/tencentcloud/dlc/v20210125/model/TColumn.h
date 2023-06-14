@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取字段名称
                      * @return Name 字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名称
-                     * @param Name 字段名称
+                     * @param _name 字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字段类型
                      * @return Type 字段类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置字段类型
-                     * @param Type 字段类型
+                     * @param _type 字段类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取字段描述
                      * @return Comment 字段描述
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置字段描述
-                     * @param Comment 字段描述
+                     * @param _comment 字段描述
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取字段默认值
                      * @return Default 字段默认值
+                     * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置字段默认值
-                     * @param Default 字段默认值
+                     * @param _default 字段默认值
+                     * 
                      */
                     void SetDefault(const std::string& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
                     /**
                      * 获取字段是否是非空
                      * @return NotNull 字段是否是非空
+                     * 
                      */
                     bool GetNotNull() const;
 
                     /**
                      * 设置字段是否是非空
-                     * @param NotNull 字段是否是非空
+                     * @param _notNull 字段是否是非空
+                     * 
                      */
                     void SetNotNull(const bool& _notNull);
 
                     /**
                      * 判断参数 NotNull 是否已赋值
                      * @return NotNull 是否已赋值
+                     * 
                      */
                     bool NotNullHasBeenSet() const;
 

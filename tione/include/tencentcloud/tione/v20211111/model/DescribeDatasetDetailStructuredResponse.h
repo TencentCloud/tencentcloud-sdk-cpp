@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数据总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnNames 表格头信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetColumnNames() const;
 
                     /**
                      * 判断参数 ColumnNames 是否已赋值
                      * @return ColumnNames 是否已赋值
+                     * 
                      */
                     bool ColumnNamesHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowItems 表格内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RowItem> GetRowItems() const;
 
                     /**
                      * 判断参数 RowItems 是否已赋值
                      * @return RowItems 是否已赋值
+                     * 
                      */
                     bool RowItemsHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowTexts 文本内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRowTexts() const;
 
                     /**
                      * 判断参数 RowTexts 是否已赋值
                      * @return RowTexts 是否已赋值
+                     * 
                      */
                     bool RowTextsHasBeenSet() const;
 

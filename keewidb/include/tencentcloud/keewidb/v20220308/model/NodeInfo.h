@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取节点类型，0 为主节点，1 为副本节点
                      * @return NodeType 节点类型，0 为主节点，1 为副本节点
+                     * 
                      */
                     int64_t GetNodeType() const;
 
                     /**
                      * 设置节点类型，0 为主节点，1 为副本节点
-                     * @param NodeType 节点类型，0 为主节点，1 为副本节点
+                     * @param _nodeType 节点类型，0 为主节点，1 为副本节点
+                     * 
                      */
                     void SetNodeType(const int64_t& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取主节点或者副本节点的ID，创建时不需要传递此参数。
                      * @return NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置主节点或者副本节点的ID，创建时不需要传递此参数。
-                     * @param NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * @param _nodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取主节点或者副本节点的可用区ID
                      * @return ZoneId 主节点或者副本节点的可用区ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置主节点或者副本节点的可用区ID
-                     * @param ZoneId 主节点或者副本节点的可用区ID
+                     * @param _zoneId 主节点或者副本节点的可用区ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取主节点或者副本节点的可用区名称
                      * @return ZoneName 主节点或者副本节点的可用区名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置主节点或者副本节点的可用区名称
-                     * @param ZoneName 主节点或者副本节点的可用区名称
+                     * @param _zoneName 主节点或者副本节点的可用区名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 

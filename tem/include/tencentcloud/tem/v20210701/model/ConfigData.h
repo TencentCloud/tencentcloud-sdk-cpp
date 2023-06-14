@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取配置名称
                      * @return Name 配置名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置名称
-                     * @param Name 配置名称
+                     * @param _name 配置名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取关联的服务列表
                      * @return RelatedApplications 关联的服务列表
+                     * 
                      */
                     std::vector<TemService> GetRelatedApplications() const;
 
                     /**
                      * 设置关联的服务列表
-                     * @param RelatedApplications 关联的服务列表
+                     * @param _relatedApplications 关联的服务列表
+                     * 
                      */
                     void SetRelatedApplications(const std::vector<TemService>& _relatedApplications);
 
                     /**
                      * 判断参数 RelatedApplications 是否已赋值
                      * @return RelatedApplications 是否已赋值
+                     * 
                      */
                     bool RelatedApplicationsHasBeenSet() const;
 
                     /**
                      * 获取配置条目
                      * @return Data 配置条目
+                     * 
                      */
                     std::vector<Pair> GetData() const;
 
                     /**
                      * 设置配置条目
-                     * @param Data 配置条目
+                     * @param _data 配置条目
+                     * 
                      */
                     void SetData(const std::vector<Pair>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

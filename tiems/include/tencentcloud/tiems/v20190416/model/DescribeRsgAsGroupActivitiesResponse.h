@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RsgAsGroupActivitySet 伸缩组活动数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RsgAsGroupActivity> GetRsgAsGroupActivitySet() const;
 
                     /**
                      * 判断参数 RsgAsGroupActivitySet 是否已赋值
                      * @return RsgAsGroupActivitySet 是否已赋值
+                     * 
                      */
                     bool RsgAsGroupActivitySetHasBeenSet() const;
 
                     /**
                      * 获取所查询的伸缩组活动总数目
                      * @return TotalCount 所查询的伸缩组活动总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

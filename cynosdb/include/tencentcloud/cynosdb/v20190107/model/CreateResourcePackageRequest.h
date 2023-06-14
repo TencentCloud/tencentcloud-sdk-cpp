@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例类型
                      * @return InstanceType 实例类型
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型
-                     * @param InstanceType 实例类型
+                     * @param _instanceType 实例类型
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 china-中国内地通用，overseas-港澳台及海外通用
                      * @return PackageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
+                     * 
                      */
                     std::string GetPackageRegion() const;
 
                     /**
                      * 设置资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
-                     * @param PackageRegion 资源包使用地域
+                     * @param _packageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
+                     * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
 
                     /**
                      * 判断参数 PackageRegion 是否已赋值
                      * @return PackageRegion 是否已赋值
+                     * 
                      */
                     bool PackageRegionHasBeenSet() const;
 
@@ -89,6 +95,7 @@ china-中国内地通用，overseas-港澳台及海外通用
                      * @return PackageType 资源包类型
 
 资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * 
                      */
                     std::string GetPackageType() const;
 
@@ -96,15 +103,17 @@ china-中国内地通用，overseas-港澳台及海外通用
                      * 设置资源包类型
 
 资源包类型：CCU-计算资源包，DISK-存储资源包
-                     * @param PackageType 资源包类型
+                     * @param _packageType 资源包类型
 
 资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
@@ -113,92 +122,107 @@ china-中国内地通用，overseas-港澳台及海外通用
 base-基础版本，common-通用版本，enterprise-企业版本
                      * @return PackageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-                     * @param PackageVersion 资源包版本
+                     * @param _packageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 
                     /**
                      * 获取资源包大小，计算资源单位：万个；存储资源：GB
                      * @return PackageSpec 资源包大小，计算资源单位：万个；存储资源：GB
+                     * 
                      */
                     double GetPackageSpec() const;
 
                     /**
                      * 设置资源包大小，计算资源单位：万个；存储资源：GB
-                     * @param PackageSpec 资源包大小，计算资源单位：万个；存储资源：GB
+                     * @param _packageSpec 资源包大小，计算资源单位：万个；存储资源：GB
+                     * 
                      */
                     void SetPackageSpec(const double& _packageSpec);
 
                     /**
                      * 判断参数 PackageSpec 是否已赋值
                      * @return PackageSpec 是否已赋值
+                     * 
                      */
                     bool PackageSpecHasBeenSet() const;
 
                     /**
                      * 获取资源包有效期，单位:天
                      * @return ExpireDay 资源包有效期，单位:天
+                     * 
                      */
                     int64_t GetExpireDay() const;
 
                     /**
                      * 设置资源包有效期，单位:天
-                     * @param ExpireDay 资源包有效期，单位:天
+                     * @param _expireDay 资源包有效期，单位:天
+                     * 
                      */
                     void SetExpireDay(const int64_t& _expireDay);
 
                     /**
                      * 判断参数 ExpireDay 是否已赋值
                      * @return ExpireDay 是否已赋值
+                     * 
                      */
                     bool ExpireDayHasBeenSet() const;
 
                     /**
                      * 获取购买资源包个数
                      * @return PackageCount 购买资源包个数
+                     * 
                      */
                     int64_t GetPackageCount() const;
 
                     /**
                      * 设置购买资源包个数
-                     * @param PackageCount 购买资源包个数
+                     * @param _packageCount 购买资源包个数
+                     * 
                      */
                     void SetPackageCount(const int64_t& _packageCount);
 
                     /**
                      * 判断参数 PackageCount 是否已赋值
                      * @return PackageCount 是否已赋值
+                     * 
                      */
                     bool PackageCountHasBeenSet() const;
 
                     /**
                      * 获取资源包名称
                      * @return PackageName 资源包名称
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置资源包名称
-                     * @param PackageName 资源包名称
+                     * @param _packageName 资源包名称
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 

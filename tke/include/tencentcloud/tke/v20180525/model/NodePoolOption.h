@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取是否加入节点池
                      * @return AddToNodePool 是否加入节点池
+                     * 
                      */
                     bool GetAddToNodePool() const;
 
                     /**
                      * 设置是否加入节点池
-                     * @param AddToNodePool 是否加入节点池
+                     * @param _addToNodePool 是否加入节点池
+                     * 
                      */
                     void SetAddToNodePool(const bool& _addToNodePool);
 
                     /**
                      * 判断参数 AddToNodePool 是否已赋值
                      * @return AddToNodePool 是否已赋值
+                     * 
                      */
                     bool AddToNodePoolHasBeenSet() const;
 
                     /**
                      * 获取节点池id
                      * @return NodePoolId 节点池id
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池id
-                     * @param NodePoolId 节点池id
+                     * @param _nodePoolId 节点池id
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取是否继承节点池相关配置
                      * @return InheritConfigurationFromNodePool 是否继承节点池相关配置
+                     * 
                      */
                     bool GetInheritConfigurationFromNodePool() const;
 
                     /**
                      * 设置是否继承节点池相关配置
-                     * @param InheritConfigurationFromNodePool 是否继承节点池相关配置
+                     * @param _inheritConfigurationFromNodePool 是否继承节点池相关配置
+                     * 
                      */
                     void SetInheritConfigurationFromNodePool(const bool& _inheritConfigurationFromNodePool);
 
                     /**
                      * 判断参数 InheritConfigurationFromNodePool 是否已赋值
                      * @return InheritConfigurationFromNodePool 是否已赋值
+                     * 
                      */
                     bool InheritConfigurationFromNodePoolHasBeenSet() const;
 

@@ -51,180 +51,210 @@ namespace TencentCloud
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板名字
                      * @return TemplateName 模板名字
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名字
-                     * @param TemplateName 模板名字
+                     * @param _templateName 模板名字
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息
                      * @return Description 模板描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置模板描述信息
-                     * @param Description 模板描述信息
+                     * @param _description 模板描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取模板的填充控件信息结构
                      * @return Components 模板的填充控件信息结构
+                     * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
                      * 设置模板的填充控件信息结构
-                     * @param Components 模板的填充控件信息结构
+                     * @param _components 模板的填充控件信息结构
+                     * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
 
                     /**
                      * 判断参数 Components 是否已赋值
                      * @return Components 是否已赋值
+                     * 
                      */
                     bool ComponentsHasBeenSet() const;
 
                     /**
                      * 获取模板中的流程参与人信息
                      * @return Recipients 模板中的流程参与人信息
+                     * 
                      */
                     std::vector<Recipient> GetRecipients() const;
 
                     /**
                      * 设置模板中的流程参与人信息
-                     * @param Recipients 模板中的流程参与人信息
+                     * @param _recipients 模板中的流程参与人信息
+                     * 
                      */
                     void SetRecipients(const std::vector<Recipient>& _recipients);
 
                     /**
                      * 判断参数 Recipients 是否已赋值
                      * @return Recipients 是否已赋值
+                     * 
                      */
                     bool RecipientsHasBeenSet() const;
 
                     /**
                      * 获取模板中的签署控件信息结构
                      * @return SignComponents 模板中的签署控件信息结构
+                     * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
                      * 设置模板中的签署控件信息结构
-                     * @param SignComponents 模板中的签署控件信息结构
+                     * @param _signComponents 模板中的签署控件信息结构
+                     * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
 
                     /**
                      * 判断参数 SignComponents 是否已赋值
                      * @return SignComponents 是否已赋值
+                     * 
                      */
                     bool SignComponentsHasBeenSet() const;
 
                     /**
                      * 获取模板类型：1-静默签；3-普通模板
                      * @return TemplateType 模板类型：1-静默签；3-普通模板
+                     * 
                      */
                     int64_t GetTemplateType() const;
 
                     /**
                      * 设置模板类型：1-静默签；3-普通模板
-                     * @param TemplateType 模板类型：1-静默签；3-普通模板
+                     * @param _templateType 模板类型：1-静默签；3-普通模板
+                     * 
                      */
                     void SetTemplateType(const int64_t& _templateType);
 
                     /**
                      * 判断参数 TemplateType 是否已赋值
                      * @return TemplateType 是否已赋值
+                     * 
                      */
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
                      * 获取是否是发起人 ,已弃用
                      * @return IsPromoter 是否是发起人 ,已弃用
+                     * @deprecated
                      */
                     bool GetIsPromoter() const;
 
                     /**
                      * 设置是否是发起人 ,已弃用
-                     * @param IsPromoter 是否是发起人 ,已弃用
+                     * @param _isPromoter 是否是发起人 ,已弃用
+                     * @deprecated
                      */
                     void SetIsPromoter(const bool& _isPromoter);
 
                     /**
                      * 判断参数 IsPromoter 是否已赋值
                      * @return IsPromoter 是否已赋值
+                     * @deprecated
                      */
                     bool IsPromoterHasBeenSet() const;
 
                     /**
                      * 获取模板的创建者信息，电子签系统用户ID
                      * @return Creator 模板的创建者信息，电子签系统用户ID
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置模板的创建者信息，电子签系统用户ID
-                     * @param Creator 模板的创建者信息，电子签系统用户ID
+                     * @param _creator 模板的创建者信息，电子签系统用户ID
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
                     /**
                      * 获取模板创建的时间戳，单位秒
                      * @return CreatedOn 模板创建的时间戳，单位秒
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置模板创建的时间戳，单位秒
-                     * @param CreatedOn 模板创建的时间戳，单位秒
+                     * @param _createdOn 模板创建的时间戳，单位秒
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
@@ -233,20 +263,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 设置模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
+                     * @param _previewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
 
                     /**
                      * 判断参数 PreviewUrl 是否已赋值
                      * @return PreviewUrl 是否已赋值
+                     * 
                      */
                     bool PreviewUrlHasBeenSet() const;
 
@@ -255,38 +288,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PdfUrl 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPdfUrl() const;
 
                     /**
                      * 设置第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PdfUrl 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
+                     * @param _pdfUrl 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPdfUrl(const std::string& _pdfUrl);
 
                     /**
                      * 判断参数 PdfUrl 是否已赋值
                      * @return PdfUrl 是否已赋值
+                     * 
                      */
                     bool PdfUrlHasBeenSet() const;
 
                     /**
                      * 获取关联的第三方应用平台企业模板ID
                      * @return ChannelTemplateId 关联的第三方应用平台企业模板ID
+                     * 
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
                      * 设置关联的第三方应用平台企业模板ID
-                     * @param ChannelTemplateId 关联的第三方应用平台企业模板ID
+                     * @param _channelTemplateId 关联的第三方应用平台企业模板ID
+                     * 
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
                     /**
                      * 判断参数 ChannelTemplateId 是否已赋值
                      * @return ChannelTemplateId 是否已赋值
+                     * 
                      */
                     bool ChannelTemplateIdHasBeenSet() const;
 
@@ -295,20 +334,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelTemplateName 关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelTemplateName() const;
 
                     /**
                      * 设置关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelTemplateName 关联的三方应用平台平台企业模板名称
+                     * @param _channelTemplateName 关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelTemplateName(const std::string& _channelTemplateName);
 
                     /**
                      * 判断参数 ChannelTemplateName 是否已赋值
                      * @return ChannelTemplateName 是否已赋值
+                     * 
                      */
                     bool ChannelTemplateNameHasBeenSet() const;
 
@@ -317,20 +359,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChannelAutoSave() const;
 
                     /**
                      * 设置0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
+                     * @param _channelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelAutoSave(const int64_t& _channelAutoSave);
 
                     /**
                      * 判断参数 ChannelAutoSave 是否已赋值
                      * @return ChannelAutoSave 是否已赋值
+                     * 
                      */
                     bool ChannelAutoSaveHasBeenSet() const;
 
@@ -339,20 +384,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateVersion 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateVersion() const;
 
                     /**
                      * 设置模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateVersion 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+                     * @param _templateVersion 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateVersion(const std::string& _templateVersion);
 
                     /**
                      * 判断参数 TemplateVersion 是否已赋值
                      * @return TemplateVersion 是否已赋值
+                     * 
                      */
                     bool TemplateVersionHasBeenSet() const;
 
@@ -361,20 +409,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Available 模板可用状态，取值：1启用（默认），2停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
                      * 设置模板可用状态，取值：1启用（默认），2停用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Available 模板可用状态，取值：1启用（默认），2停用
+                     * @param _available 模板可用状态，取值：1启用（默认），2停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailable(const int64_t& _available);
 
                     /**
                      * 判断参数 Available 是否已赋值
                      * @return Available 是否已赋值
+                     * 
                      */
                     bool AvailableHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     int64_t GetLogExpireDay() const;
 
@@ -86,19 +90,21 @@ namespace TencentCloud
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
-                     * @param LogExpireDay 审计日志保存时长。支持值包括：
+                     * @param _logExpireDay 审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     void SetLogExpireDay(const int64_t& _logExpireDay);
 
                     /**
                      * 判断参数 LogExpireDay 是否已赋值
                      * @return LogExpireDay 是否已赋值
+                     * 
                      */
                     bool LogExpireDayHasBeenSet() const;
 
@@ -109,6 +115,7 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
                      * @return CloseAudit 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
 CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
+                     * 
                      */
                     bool GetCloseAudit() const;
 
@@ -116,15 +123,17 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
                      * 设置是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
 CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
-                     * @param CloseAudit 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
+                     * @param _closeAudit 是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。
 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。
 CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。
+                     * 
                      */
                     void SetCloseAudit(const bool& _closeAudit);
 
                     /**
                      * 判断参数 CloseAudit 是否已赋值
                      * @return CloseAudit 是否已赋值
+                     * 
                      */
                     bool CloseAuditHasBeenSet() const;
 
@@ -143,6 +152,7 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     int64_t GetHighLogExpireDay() const;
 
@@ -154,19 +164,21 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
-                     * @param HighLogExpireDay 高频审计日志保存时长。支持值包括：
+                     * @param _highLogExpireDay 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     void SetHighLogExpireDay(const int64_t& _highLogExpireDay);
 
                     /**
                      * 判断参数 HighLogExpireDay 是否已赋值
                      * @return HighLogExpireDay 是否已赋值
+                     * 
                      */
                     bool HighLogExpireDayHasBeenSet() const;
 

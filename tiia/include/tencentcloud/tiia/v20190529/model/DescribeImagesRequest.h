@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取图库名称。
                      * @return GroupId 图库名称。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置图库名称。
-                     * @param GroupId 图库名称。
+                     * @param _groupId 图库名称。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取物品ID。
                      * @return EntityId 物品ID。
+                     * 
                      */
                     std::string GetEntityId() const;
 
                     /**
                      * 设置物品ID。
-                     * @param EntityId 物品ID。
+                     * @param _entityId 物品ID。
+                     * 
                      */
                     void SetEntityId(const std::string& _entityId);
 
                     /**
                      * 判断参数 EntityId 是否已赋值
                      * @return EntityId 是否已赋值
+                     * 
                      */
                     bool EntityIdHasBeenSet() const;
 
                     /**
                      * 获取图片名称。
                      * @return PicName 图片名称。
+                     * 
                      */
                     std::string GetPicName() const;
 
                     /**
                      * 设置图片名称。
-                     * @param PicName 图片名称。
+                     * @param _picName 图片名称。
+                     * 
                      */
                     void SetPicName(const std::string& _picName);
 
                     /**
                      * 判断参数 PicName 是否已赋值
                      * @return PicName 是否已赋值
+                     * 
                      */
                     bool PicNameHasBeenSet() const;
 

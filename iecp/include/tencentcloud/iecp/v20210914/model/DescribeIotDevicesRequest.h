@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取页偏移
                      * @return Offset 页偏移
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页偏移
-                     * @param Offset 页偏移
+                     * @param _offset 页偏移
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return Limit 每页数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数量
-                     * @param Limit 每页数量
+                     * @param _limit 每页数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取产品id
                      * @return ProductId 产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品id
-                     * @param ProductId 产品id
+                     * @param _productId 产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称模糊查找
                      * @return NamePattern 设备名称模糊查找
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置设备名称模糊查找
-                     * @param NamePattern 设备名称模糊查找
+                     * @param _namePattern 设备名称模糊查找
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取版本列表
                      * @return Versions 版本列表
+                     * 
                      */
                     std::vector<std::string> GetVersions() const;
 
                     /**
                      * 设置版本列表
-                     * @param Versions 版本列表
+                     * @param _versions 版本列表
+                     * 
                      */
                     void SetVersions(const std::vector<std::string>& _versions);
 
                     /**
                      * 判断参数 Versions 是否已赋值
                      * @return Versions 是否已赋值
+                     * 
                      */
                     bool VersionsHasBeenSet() const;
 
                     /**
                      * 获取ASC 或 DESC
                      * @return Order ASC 或 DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置ASC 或 DESC
-                     * @param Order ASC 或 DESC
+                     * @param _order ASC 或 DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

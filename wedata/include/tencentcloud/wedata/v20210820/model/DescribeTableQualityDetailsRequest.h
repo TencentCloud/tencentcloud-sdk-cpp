@@ -47,126 +47,147 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return StatisticsDate 统计日期
+                     * 
                      */
                     int64_t GetStatisticsDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param StatisticsDate 统计日期
+                     * @param _statisticsDate 统计日期
+                     * 
                      */
                     void SetStatisticsDate(const int64_t& _statisticsDate);
 
                     /**
                      * 判断参数 StatisticsDate 是否已赋值
                      * @return StatisticsDate 是否已赋值
+                     * 
                      */
                     bool StatisticsDateHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取分页序号
                      * @return PageNumber 分页序号
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页序号
-                     * @param PageNumber 分页序号
+                     * @param _pageNumber 分页序号
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName
                      * @return Filters 过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName
-                     * @param Filters 过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName
+                     * @param _filters 过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore
                      * @return OrderFields 排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore
+                     * 
                      */
                     std::vector<OrderField> GetOrderFields() const;
 
                     /**
                      * 设置排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore
-                     * @param OrderFields 排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore
+                     * @param _orderFields 排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore
+                     * 
                      */
                     void SetOrderFields(const std::vector<OrderField>& _orderFields);
 
                     /**
                      * 判断参数 OrderFields 是否已赋值
                      * @return OrderFields 是否已赋值
+                     * 
                      */
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
                      * 获取数据来源id
                      * @return DatasourceId 数据来源id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据来源id
-                     * @param DatasourceId 数据来源id
+                     * @param _datasourceId 数据来源id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 

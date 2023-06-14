@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取业务appid
                      * @return BizAppId 业务appid
+                     * 
                      */
                     std::string GetBizAppId() const;
 
                     /**
                      * 设置业务appid
-                     * @param BizAppId 业务appid
+                     * @param _bizAppId 业务appid
+                     * 
                      */
                     void SetBizAppId(const std::string& _bizAppId);
 
                     /**
                      * 判断参数 BizAppId 是否已赋值
                      * @return BizAppId 是否已赋值
+                     * 
                      */
                     bool BizAppIdHasBeenSet() const;
 
                     /**
                      * 获取回拨请求响应中返回的 callId
                      * @return CallId 回拨请求响应中返回的 callId
+                     * 
                      */
                     std::string GetCallId() const;
 
                     /**
                      * 设置回拨请求响应中返回的 callId
-                     * @param CallId 回拨请求响应中返回的 callId
+                     * @param _callId 回拨请求响应中返回的 callId
+                     * 
                      */
                     void SetCallId(const std::string& _callId);
 
                     /**
                      * 判断参数 CallId 是否已赋值
                      * @return CallId 是否已赋值
+                     * 
                      */
                     bool CallIdHasBeenSet() const;
 
                     /**
                      * 获取主叫号码
                      * @return Src 主叫号码
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置主叫号码
-                     * @param Src 主叫号码
+                     * @param _src 主叫号码
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
                     /**
                      * 获取被叫号码
                      * @return Dst 被叫号码
+                     * 
                      */
                     std::string GetDst() const;
 
                     /**
                      * 设置被叫号码
-                     * @param Dst 被叫号码
+                     * @param _dst 被叫号码
+                     * 
                      */
                     void SetDst(const std::string& _dst);
 
                     /**
                      * 判断参数 Dst 是否已赋值
                      * @return Dst 是否已赋值
+                     * 
                      */
                     bool DstHasBeenSet() const;
 
                     /**
                      * 获取通话最后状态：0：未知状态 1：主叫响铃中 2：主叫接听 3：被叫响铃中 4：正常通话中 5：通话结束
                      * @return CallStatus 通话最后状态：0：未知状态 1：主叫响铃中 2：主叫接听 3：被叫响铃中 4：正常通话中 5：通话结束
+                     * 
                      */
                     std::string GetCallStatus() const;
 
                     /**
                      * 设置通话最后状态：0：未知状态 1：主叫响铃中 2：主叫接听 3：被叫响铃中 4：正常通话中 5：通话结束
-                     * @param CallStatus 通话最后状态：0：未知状态 1：主叫响铃中 2：主叫接听 3：被叫响铃中 4：正常通话中 5：通话结束
+                     * @param _callStatus 通话最后状态：0：未知状态 1：主叫响铃中 2：主叫接听 3：被叫响铃中 4：正常通话中 5：通话结束
+                     * 
                      */
                     void SetCallStatus(const std::string& _callStatus);
 
                     /**
                      * 判断参数 CallStatus 是否已赋值
                      * @return CallStatus 是否已赋值
+                     * 
                      */
                     bool CallStatusHasBeenSet() const;
 

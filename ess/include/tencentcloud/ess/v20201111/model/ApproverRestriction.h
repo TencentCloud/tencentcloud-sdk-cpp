@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取指定签署人名字
                      * @return Name 指定签署人名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指定签署人名字
-                     * @param Name 指定签署人名字
+                     * @param _name 指定签署人名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取指定签署人手机号，11位数字
                      * @return Mobile 指定签署人手机号，11位数字
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置指定签署人手机号，11位数字
-                     * @param Mobile 指定签署人手机号，11位数字
+                     * @param _mobile 指定签署人手机号，11位数字
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取指定签署人证件类型，ID_CARD-身份证
                      * @return IdCardType 指定签署人证件类型，ID_CARD-身份证
+                     * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
                      * 设置指定签署人证件类型，ID_CARD-身份证
-                     * @param IdCardType 指定签署人证件类型，ID_CARD-身份证
+                     * @param _idCardType 指定签署人证件类型，ID_CARD-身份证
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取指定签署人证件号码，字母大写
                      * @return IdCardNumber 指定签署人证件号码，字母大写
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置指定签署人证件号码，字母大写
-                     * @param IdCardNumber 指定签署人证件号码，字母大写
+                     * @param _idCardNumber 指定签署人证件号码，字母大写
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 

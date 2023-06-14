@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Db 数据库名
+                     * @param _db 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDb(const std::string& _db);
 
                     /**
                      * 判断参数 Db 是否已赋值
                      * @return Db 是否已赋值
+                     * 
                      */
                     bool DbHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Table 表名
+                     * @param _table 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Chunk 分块号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChunk() const;
 
                     /**
                      * 设置分块号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Chunk 分块号
+                     * @param _chunk 分块号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChunk(const int64_t& _chunk);
 
                     /**
                      * 判断参数 Chunk 是否已赋值
                      * @return Chunk 是否已赋值
+                     * 
                      */
                     bool ChunkHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcItem 源库数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrcItem() const;
 
                     /**
                      * 设置源库数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SrcItem 源库数值
+                     * @param _srcItem 源库数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrcItem(const std::string& _srcItem);
 
                     /**
                      * 判断参数 SrcItem 是否已赋值
                      * @return SrcItem 是否已赋值
+                     * 
                      */
                     bool SrcItemHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstItem 目标库数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDstItem() const;
 
                     /**
                      * 设置目标库数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DstItem 目标库数值
+                     * @param _dstItem 目标库数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDstItem(const std::string& _dstItem);
 
                     /**
                      * 判断参数 DstItem 是否已赋值
                      * @return DstItem 是否已赋值
+                     * 
                      */
                     bool DstItemHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexName 索引名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexName() const;
 
                     /**
                      * 设置索引名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexName 索引名称
+                     * @param _indexName 索引名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexName(const std::string& _indexName);
 
                     /**
                      * 判断参数 IndexName 是否已赋值
                      * @return IndexName 是否已赋值
+                     * 
                      */
                     bool IndexNameHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowerBoundary 索引下边界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLowerBoundary() const;
 
                     /**
                      * 设置索引下边界
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LowerBoundary 索引下边界
+                     * @param _lowerBoundary 索引下边界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLowerBoundary(const std::string& _lowerBoundary);
 
                     /**
                      * 判断参数 LowerBoundary 是否已赋值
                      * @return LowerBoundary 是否已赋值
+                     * 
                      */
                     bool LowerBoundaryHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpperBoundary 索引上边界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpperBoundary() const;
 
                     /**
                      * 设置索引上边界
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpperBoundary 索引上边界
+                     * @param _upperBoundary 索引上边界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpperBoundary(const std::string& _upperBoundary);
 
                     /**
                      * 判断参数 UpperBoundary 是否已赋值
                      * @return UpperBoundary 是否已赋值
+                     * 
                      */
                     bool UpperBoundaryHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 对比消耗时间,单位为 ms
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCostTime() const;
 
                     /**
                      * 设置对比消耗时间,单位为 ms
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CostTime 对比消耗时间,单位为 ms
+                     * @param _costTime 对比消耗时间,单位为 ms
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCostTime(const double& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedAt 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
                      * 设置完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishedAt 完成时间
+                     * @param _finishedAt 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
 
                     /**
                      * 判断参数 FinishedAt 是否已赋值
                      * @return FinishedAt 是否已赋值
+                     * 
                      */
                     bool FinishedAtHasBeenSet() const;
 

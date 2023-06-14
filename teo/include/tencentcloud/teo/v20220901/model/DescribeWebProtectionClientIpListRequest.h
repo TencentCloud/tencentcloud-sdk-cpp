@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取站点集合，不填默认选择全部站点。
                      * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点集合，不填默认选择全部站点。
-                     * @param ZoneIds 站点集合，不填默认选择全部站点。
+                     * @param _zoneIds 站点集合，不填默认选择全部站点。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取域名集合，不填默认选择全部子域名。
                      * @return Domains 域名集合，不填默认选择全部子域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置域名集合，不填默认选择全部子域名。
-                     * @param Domains 域名集合，不填默认选择全部子域名。
+                     * @param _domains 域名集合，不填默认选择全部子域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -126,6 +138,7 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -135,17 +148,19 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
-                     * @param Interval 查询的时间粒度，支持的粒度有：
+                     * @param _interval 查询的时间粒度，支持的粒度有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
@@ -154,56 +169,65 @@ namespace TencentCloud
 <li>action：执行动作。</li>
                      * @return QueryCondition 筛选条件，key可选的值有：
 <li>action：执行动作。</li>
+                     * 
                      */
                     std::vector<QueryCondition> GetQueryCondition() const;
 
                     /**
                      * 设置筛选条件，key可选的值有：
 <li>action：执行动作。</li>
-                     * @param QueryCondition 筛选条件，key可选的值有：
+                     * @param _queryCondition 筛选条件，key可选的值有：
 <li>action：执行动作。</li>
+                     * 
                      */
                     void SetQueryCondition(const std::vector<QueryCondition>& _queryCondition);
 
                     /**
                      * 判断参数 QueryCondition 是否已赋值
                      * @return QueryCondition 是否已赋值
+                     * 
                      */
                     bool QueryConditionHasBeenSet() const;
 
                     /**
                      * 获取分页查询的限制数目，默认值为20，最大查询条目为1000。
                      * @return Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页查询的限制数目，默认值为20，最大查询条目为1000。
-                     * @param Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * @param _limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，默认值为0。
                      * @return Offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，默认值为0。
-                     * @param Offset 分页的偏移量，默认值为0。
+                     * @param _offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -214,6 +238,7 @@ namespace TencentCloud
                      * @return Area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -221,15 +246,17 @@ namespace TencentCloud
                      * 设置数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

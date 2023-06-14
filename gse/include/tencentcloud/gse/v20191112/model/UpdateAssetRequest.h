@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取生成包ID
                      * @return AssetId 生成包ID
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置生成包ID
-                     * @param AssetId 生成包ID
+                     * @param _assetId 生成包ID
+                     * 
                      */
                     void SetAssetId(const std::string& _assetId);
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 
                     /**
                      * 获取生成包名字，最小长度为1，最大长度为64
                      * @return AssetName 生成包名字，最小长度为1，最大长度为64
+                     * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置生成包名字，最小长度为1，最大长度为64
-                     * @param AssetName 生成包名字，最小长度为1，最大长度为64
+                     * @param _assetName 生成包名字，最小长度为1，最大长度为64
+                     * 
                      */
                     void SetAssetName(const std::string& _assetName);
 
                     /**
                      * 判断参数 AssetName 是否已赋值
                      * @return AssetName 是否已赋值
+                     * 
                      */
                     bool AssetNameHasBeenSet() const;
 
                     /**
                      * 获取生成包版本，最小长度为1，最大长度为64
                      * @return AssetVersion 生成包版本，最小长度为1，最大长度为64
+                     * 
                      */
                     std::string GetAssetVersion() const;
 
                     /**
                      * 设置生成包版本，最小长度为1，最大长度为64
-                     * @param AssetVersion 生成包版本，最小长度为1，最大长度为64
+                     * @param _assetVersion 生成包版本，最小长度为1，最大长度为64
+                     * 
                      */
                     void SetAssetVersion(const std::string& _assetVersion);
 
                     /**
                      * 判断参数 AssetVersion 是否已赋值
                      * @return AssetVersion 是否已赋值
+                     * 
                      */
                     bool AssetVersionHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取TKE或EKS集群ID
                      * @return ClusterId TKE或EKS集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TKE或EKS集群ID
-                     * @param ClusterId TKE或EKS集群ID
+                     * @param _clusterId TKE或EKS集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -135,6 +138,7 @@ namespace TencentCloud
     }
   ]
 }
+                     * 
                      */
                     std::string GetConfig() const;
 
@@ -174,7 +178,7 @@ namespace TencentCloud
     }
   ]
 }
-                     * @param Config 自定义权限
+                     * @param _config 自定义权限
 如：
 {
   "apiVersion": "v1",
@@ -209,12 +213,14 @@ namespace TencentCloud
     }
   ]
 }
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -369,6 +375,7 @@ namespace TencentCloud
       }
     }
   }
+                     * 
                      */
                     std::string GetParameter() const;
 
@@ -448,7 +455,7 @@ namespace TencentCloud
       }
     }
   }
-                     * @param Parameter 自定义参数
+                     * @param _parameter 自定义参数
 如：
 {
     "apiVersion": "apps/v1",
@@ -523,12 +530,14 @@ namespace TencentCloud
       }
     }
   }
+                     * 
                      */
                     void SetParameter(const std::string& _parameter);
 
                     /**
                      * 判断参数 Parameter 是否已赋值
                      * @return Parameter 是否已赋值
+                     * 
                      */
                     bool ParameterHasBeenSet() const;
 

@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取实例用户名
                      * @return UserName 实例用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置实例用户名
-                     * @param UserName 实例用户名
+                     * @param _userName 实例用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取实例密码
                      * @return Password 实例密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置实例密码
-                     * @param Password 实例密码
+                     * @param _password 实例密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取DB权限列表
                      * @return DBPrivileges DB权限列表
+                     * 
                      */
                     std::vector<DBPrivilege> GetDBPrivileges() const;
 
                     /**
                      * 设置DB权限列表
-                     * @param DBPrivileges DB权限列表
+                     * @param _dBPrivileges DB权限列表
+                     * 
                      */
                     void SetDBPrivileges(const std::vector<DBPrivilege>& _dBPrivileges);
 
                     /**
                      * 判断参数 DBPrivileges 是否已赋值
                      * @return DBPrivileges 是否已赋值
+                     * 
                      */
                     bool DBPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取账号备注信息
                      * @return Remark 账号备注信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置账号备注信息
-                     * @param Remark 账号备注信息
+                     * @param _remark 账号备注信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
                      * @return IsAdmin 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * 
                      */
                     bool GetIsAdmin() const;
 
                     /**
                      * 设置是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
-                     * @param IsAdmin 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * @param _isAdmin 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * 
                      */
                     void SetIsAdmin(const bool& _isAdmin);
 
                     /**
                      * 判断参数 IsAdmin 是否已赋值
                      * @return IsAdmin 是否已赋值
+                     * 
                      */
                     bool IsAdminHasBeenSet() const;
 
                     /**
                      * 获取win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权
                      * @return Authentication win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权
+                     * 
                      */
                     std::string GetAuthentication() const;
 
                     /**
                      * 设置win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权
-                     * @param Authentication win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权
+                     * @param _authentication win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权
+                     * 
                      */
                     void SetAuthentication(const std::string& _authentication);
 
                     /**
                      * 判断参数 Authentication 是否已赋值
                      * @return Authentication 是否已赋值
+                     * 
                      */
                     bool AuthenticationHasBeenSet() const;
 
                     /**
                      * 获取账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
                      * @return AccountType 账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
-                     * @param AccountType 账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * @param _accountType 账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 组织节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置组织节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeId 组织节点ID
+                     * @param _nodeId 组织节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentNodeId 父节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetParentNodeId() const;
 
                     /**
                      * 设置父节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentNodeId 父节点ID
+                     * @param _parentNodeId 父节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentNodeId(const int64_t& _parentNodeId);
 
                     /**
                      * 判断参数 ParentNodeId 是否已赋值
                      * @return ParentNodeId 是否已赋值
+                     * 
                      */
                     bool ParentNodeIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID。
                      * @return TrafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置流量镜像实例ID。
-                     * @param TrafficMirrorId 流量镜像实例ID。
+                     * @param _trafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取接收机黑石物理机实例ID数组。
                      * @return InstanceIds 接收机黑石物理机实例ID数组。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置接收机黑石物理机实例ID数组。
-                     * @param InstanceIds 接收机黑石物理机实例ID数组。
+                     * @param _instanceIds 接收机黑石物理机实例ID数组。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取接收机接收端口数组。
                      * @return Ports 接收机接收端口数组。
+                     * 
                      */
                     std::vector<int64_t> GetPorts() const;
 
                     /**
                      * 设置接收机接收端口数组。
-                     * @param Ports 接收机接收端口数组。
+                     * @param _ports 接收机接收端口数组。
+                     * 
                      */
                     void SetPorts(const std::vector<int64_t>& _ports);
 
                     /**
                      * 判断参数 Ports 是否已赋值
                      * @return Ports 是否已赋值
+                     * 
                      */
                     bool PortsHasBeenSet() const;
 
                     /**
                      * 获取接收机实例权重数组。
                      * @return Weights 接收机实例权重数组。
+                     * 
                      */
                     std::vector<int64_t> GetWeights() const;
 
                     /**
                      * 设置接收机实例权重数组。
-                     * @param Weights 接收机实例权重数组。
+                     * @param _weights 接收机实例权重数组。
+                     * 
                      */
                     void SetWeights(const std::vector<int64_t>& _weights);
 
                     /**
                      * 判断参数 Weights 是否已赋值
                      * @return Weights 是否已赋值
+                     * 
                      */
                     bool WeightsHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，也即从第几条记录开始查询
                      * @return Offset 分页的偏移量，也即从第几条记录开始查询
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，也即从第几条记录开始查询
-                     * @param Offset 分页的偏移量，也即从第几条记录开始查询
+                     * @param _offset 分页的偏移量，也即从第几条记录开始查询
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单次查询返回的条目数，默认值：500。
                      * @return Limit 单次查询返回的条目数，默认值：500。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单次查询返回的条目数，默认值：500。
-                     * @param Limit 单次查询返回的条目数，默认值：500。
+                     * @param _limit 单次查询返回的条目数，默认值：500。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索instance或者alias
                      * @return VagueStr 搜索instance或者alias
+                     * 
                      */
                     std::string GetVagueStr() const;
 
                     /**
                      * 设置搜索instance或者alias
-                     * @param VagueStr 搜索instance或者alias
+                     * @param _vagueStr 搜索instance或者alias
+                     * 
                      */
                     void SetVagueStr(const std::string& _vagueStr);
 
                     /**
                      * 判断参数 VagueStr 是否已赋值
                      * @return VagueStr 是否已赋值
+                     * 
                      */
                     bool VagueStrHasBeenSet() const;
 
                     /**
                      * 获取搜索IP
                      * @return VagueIp 搜索IP
+                     * 
                      */
                     std::string GetVagueIp() const;
 
                     /**
                      * 设置搜索IP
-                     * @param VagueIp 搜索IP
+                     * @param _vagueIp 搜索IP
+                     * 
                      */
                     void SetVagueIp(const std::string& _vagueIp);
 
                     /**
                      * 判断参数 VagueIp 是否已赋值
                      * @return VagueIp 是否已赋值
+                     * 
                      */
                     bool VagueIpHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
                      * @return Answer 选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * 
                      */
                     int64_t GetAnswer() const;
 
                     /**
                      * 设置选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
-                     * @param Answer 选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * @param _answer 选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * 
                      */
                     void SetAnswer(const int64_t& _answer);
 
                     /**
                      * 判断参数 Answer 是否已赋值
                      * @return Answer 是否已赋值
+                     * 
                      */
                     bool AnswerHasBeenSet() const;
 
                     /**
                      * 获取答题人数
                      * @return Count 答题人数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置答题人数
-                     * @param Count 答题人数
+                     * @param _count 答题人数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

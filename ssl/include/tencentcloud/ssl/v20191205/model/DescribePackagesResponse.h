@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取权益包列表。
                      * @return Packages 权益包列表。
+                     * 
                      */
                     std::vector<PackageInfo> GetPackages() const;
 
                     /**
                      * 判断参数 Packages 是否已赋值
                      * @return Packages 是否已赋值
+                     * 
                      */
                     bool PackagesHasBeenSet() const;
 
                     /**
                      * 获取总条数。
                      * @return TotalCount 总条数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取权益点总余额。
                      * @return TotalBalance 权益点总余额。
+                     * 
                      */
                     uint64_t GetTotalBalance() const;
 
                     /**
                      * 判断参数 TotalBalance 是否已赋值
                      * @return TotalBalance 是否已赋值
+                     * 
                      */
                     bool TotalBalanceHasBeenSet() const;
 

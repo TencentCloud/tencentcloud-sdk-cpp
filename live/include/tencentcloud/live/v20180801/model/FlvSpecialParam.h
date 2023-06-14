@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否开启边录边传，仅flv格式有效。
                      * @return UploadInRecording 是否开启边录边传，仅flv格式有效。
+                     * 
                      */
                     bool GetUploadInRecording() const;
 
                     /**
                      * 设置是否开启边录边传，仅flv格式有效。
-                     * @param UploadInRecording 是否开启边录边传，仅flv格式有效。
+                     * @param _uploadInRecording 是否开启边录边传，仅flv格式有效。
+                     * 
                      */
                     void SetUploadInRecording(const bool& _uploadInRecording);
 
                     /**
                      * 判断参数 UploadInRecording 是否已赋值
                      * @return UploadInRecording 是否已赋值
+                     * 
                      */
                     bool UploadInRecordingHasBeenSet() const;
 

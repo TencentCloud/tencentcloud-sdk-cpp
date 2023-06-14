@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取审核模板。
                      * @return Definition 审核模板。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置审核模板。
-                     * @param Definition 审核模板。
+                     * @param _definition 审核模板。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
+                     * 
                      */
                     std::vector<std::string> GetReviewContents() const;
 
@@ -81,16 +85,18 @@ namespace TencentCloud
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
-                     * @param ReviewContents 审核的内容，可选值：
+                     * @param _reviewContents 审核的内容，可选值：
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
+                     * 
                      */
                     void SetReviewContents(const std::vector<std::string>& _reviewContents);
 
                     /**
                      * 判断参数 ReviewContents 是否已赋值
                      * @return ReviewContents 是否已赋值
+                     * 
                      */
                     bool ReviewContentsHasBeenSet() const;
 

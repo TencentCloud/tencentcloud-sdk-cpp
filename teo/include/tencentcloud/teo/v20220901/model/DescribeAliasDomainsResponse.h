@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的别称域名个数。
                      * @return TotalCount 符合条件的别称域名个数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取别称域名详细信息列表。
                      * @return AliasDomains 别称域名详细信息列表。
+                     * 
                      */
                     std::vector<AliasDomain> GetAliasDomains() const;
 
                     /**
                      * 判断参数 AliasDomains 是否已赋值
                      * @return AliasDomains 是否已赋值
+                     * 
                      */
                     bool AliasDomainsHasBeenSet() const;
 

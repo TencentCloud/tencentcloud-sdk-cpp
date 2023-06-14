@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取地区名称。
                      * @return Name 地区名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置地区名称。
-                     * @param Name 地区名称。
+                     * @param _name 地区名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

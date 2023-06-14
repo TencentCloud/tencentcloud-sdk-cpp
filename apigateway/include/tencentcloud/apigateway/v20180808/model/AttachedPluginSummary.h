@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取已绑定的插件总数。
                      * @return TotalCount 已绑定的插件总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置已绑定的插件总数。
-                     * @param TotalCount 已绑定的插件总数。
+                     * @param _totalCount 已绑定的插件总数。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取已绑定的插件信息。
                      * @return PluginSummary 已绑定的插件信息。
+                     * 
                      */
                     std::vector<AttachedPluginInfo> GetPluginSummary() const;
 
                     /**
                      * 设置已绑定的插件信息。
-                     * @param PluginSummary 已绑定的插件信息。
+                     * @param _pluginSummary 已绑定的插件信息。
+                     * 
                      */
                     void SetPluginSummary(const std::vector<AttachedPluginInfo>& _pluginSummary);
 
                     /**
                      * 判断参数 PluginSummary 是否已赋值
                      * @return PluginSummary 是否已赋值
+                     * 
                      */
                     bool PluginSummaryHasBeenSet() const;
 

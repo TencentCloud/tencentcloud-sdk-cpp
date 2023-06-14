@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取匹配 Code。
                      * @return MatchCode 匹配 Code。
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配 Code。
-                     * @param MatchCode 匹配 Code。
+                     * @param _matchCode 匹配 Code。
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 
                     /**
                      * 获取玩家信息 最多 200 条。
                      * @return Players 玩家信息 最多 200 条。
+                     * 
                      */
                     std::vector<Player> GetPlayers() const;
 
                     /**
                      * 设置玩家信息 最多 200 条。
-                     * @param Players 玩家信息 最多 200 条。
+                     * @param _players 玩家信息 最多 200 条。
+                     * 
                      */
                     void SetPlayers(const std::vector<Player>& _players);
 
                     /**
                      * 判断参数 Players 是否已赋值
                      * @return Players 是否已赋值
+                     * 
                      */
                     bool PlayersHasBeenSet() const;
 
                     /**
                      * 获取匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
                      * @return MatchTicketId 匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
+                     * 
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
                      * 设置匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
-                     * @param MatchTicketId 匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
+                     * @param _matchTicketId 匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -
+                     * 
                      */
                     void SetMatchTicketId(const std::string& _matchTicketId);
 
                     /**
                      * 判断参数 MatchTicketId 是否已赋值
                      * @return MatchTicketId 是否已赋值
+                     * 
                      */
                     bool MatchTicketIdHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件
                      * @return SignUserCsrList 证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件
+                     * 
                      */
                     std::vector<SignCertCsr> GetSignUserCsrList() const;
 
                     /**
                      * 设置证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件
-                     * @param SignUserCsrList 证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件
+                     * @param _signUserCsrList 证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件
+                     * 
                      */
                     void SetSignUserCsrList(const std::vector<SignCertCsr>& _signUserCsrList);
 
                     /**
                      * 判断参数 SignUserCsrList 是否已赋值
                      * @return SignUserCsrList 是否已赋值
+                     * 
                      */
                     bool SignUserCsrListHasBeenSet() const;
 

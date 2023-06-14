@@ -77,12 +77,14 @@ jar: jar包
 initservice:启动服务
 env: 环境变量
 coremodule: 内核模块
+                     * 
                      */
                     std::vector<AssetKeyVal> GetTypes() const;
 
                     /**
                      * 判断参数 Types 是否已赋值
                      * @return Types 是否已赋值
+                     * 
                      */
                     bool TypesHasBeenSet() const;
 

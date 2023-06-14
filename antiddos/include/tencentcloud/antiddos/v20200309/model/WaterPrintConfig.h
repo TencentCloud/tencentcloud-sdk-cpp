@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取水印偏移量，取值范围[0, 100)
                      * @return Offset 水印偏移量，取值范围[0, 100)
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置水印偏移量，取值范围[0, 100)
-                     * @param Offset 水印偏移量，取值范围[0, 100)
+                     * @param _offset 水印偏移量，取值范围[0, 100)
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 0（手动开启）
 1（立即运行）
 ]
+                     * 
                      */
                     int64_t GetOpenStatus() const;
 
@@ -83,52 +87,60 @@ namespace TencentCloud
 0（手动开启）
 1（立即运行）
 ]
-                     * @param OpenStatus 是否开启，取值[
+                     * @param _openStatus 是否开启，取值[
 0（手动开启）
 1（立即运行）
 ]
+                     * 
                      */
                     void SetOpenStatus(const int64_t& _openStatus);
 
                     /**
                      * 判断参数 OpenStatus 是否已赋值
                      * @return OpenStatus 是否已赋值
+                     * 
                      */
                     bool OpenStatusHasBeenSet() const;
 
                     /**
                      * 获取水印所属的转发监听器列表
                      * @return Listeners 水印所属的转发监听器列表
+                     * 
                      */
                     std::vector<ForwardListener> GetListeners() const;
 
                     /**
                      * 设置水印所属的转发监听器列表
-                     * @param Listeners 水印所属的转发监听器列表
+                     * @param _listeners 水印所属的转发监听器列表
+                     * 
                      */
                     void SetListeners(const std::vector<ForwardListener>& _listeners);
 
                     /**
                      * 判断参数 Listeners 是否已赋值
                      * @return Listeners 是否已赋值
+                     * 
                      */
                     bool ListenersHasBeenSet() const;
 
                     /**
                      * 获取水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥
                      * @return Keys 水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥
+                     * 
                      */
                     std::vector<WaterPrintKey> GetKeys() const;
 
                     /**
                      * 设置水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥
-                     * @param Keys 水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥
+                     * @param _keys 水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥
+                     * 
                      */
                     void SetKeys(const std::vector<WaterPrintKey>& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
@@ -141,6 +153,7 @@ shortfpcheckall（精简模式）
 checkall（普通模式）
 shortfpcheckall（精简模式）
 ]
+                     * 
                      */
                     std::string GetVerify() const;
 
@@ -149,16 +162,18 @@ shortfpcheckall（精简模式）
 checkall（普通模式）
 shortfpcheckall（精简模式）
 ]
-                     * @param Verify 水印检查模式, 取值[
+                     * @param _verify 水印检查模式, 取值[
 checkall（普通模式）
 shortfpcheckall（精简模式）
 ]
+                     * 
                      */
                     void SetVerify(const std::string& _verify);
 
                     /**
                      * 判断参数 Verify 是否已赋值
                      * @return Verify 是否已赋值
+                     * 
                      */
                     bool VerifyHasBeenSet() const;
 
@@ -167,20 +182,23 @@ shortfpcheckall（精简模式）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudSdkProxy 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCloudSdkProxy() const;
 
                     /**
                      * 设置是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CloudSdkProxy 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
+                     * @param _cloudSdkProxy 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCloudSdkProxy(const int64_t& _cloudSdkProxy);
 
                     /**
                      * 判断参数 CloudSdkProxy 是否已赋值
                      * @return CloudSdkProxy 是否已赋值
+                     * 
                      */
                     bool CloudSdkProxyHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取同步目标详情
                      * @return Targets 同步目标详情
+                     * 
                      */
                     std::vector<PrometheusTemplateSyncTarget> GetTargets() const;
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网络状态数据
                      * @return InstanceSet 网络状态数据
+                     * 
                      */
                     NetworkHistoryInfo GetInstanceSet() const;
 
                     /**
                      * 判断参数 InstanceSet 是否已赋值
                      * @return InstanceSet 是否已赋值
+                     * 
                      */
                     bool InstanceSetHasBeenSet() const;
 

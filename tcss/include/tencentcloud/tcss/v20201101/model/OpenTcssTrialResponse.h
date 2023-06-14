@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取试用开通结束时间
                      * @return EndTime 试用开通结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取试用开通开始时间
                      * @return StartTime 试用开通开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 

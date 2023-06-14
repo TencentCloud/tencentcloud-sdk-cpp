@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取样例id
                      * @return InstanceId 样例id
+                     * 
                      */
                     uint64_t GetInstanceId() const;
 
                     /**
                      * 设置样例id
-                     * @param InstanceId 样例id
+                     * @param _instanceId 样例id
+                     * 
                      */
                     void SetInstanceId(const uint64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

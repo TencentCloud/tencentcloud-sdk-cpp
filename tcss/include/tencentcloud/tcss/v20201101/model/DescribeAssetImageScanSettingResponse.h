@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取开关
                      * @return Enable 开关
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取扫描时刻(完整时间;后端按0时区解析时分秒)
                      * @return ScanTime 扫描时刻(完整时间;后端按0时区解析时分秒)
+                     * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 判断参数 ScanTime 是否已赋值
                      * @return ScanTime 是否已赋值
+                     * 
                      */
                     bool ScanTimeHasBeenSet() const;
 
                     /**
                      * 获取扫描间隔
                      * @return ScanPeriod 扫描间隔
+                     * 
                      */
                     uint64_t GetScanPeriod() const;
 
                     /**
                      * 判断参数 ScanPeriod 是否已赋值
                      * @return ScanPeriod 是否已赋值
+                     * 
                      */
                     bool ScanPeriodHasBeenSet() const;
 
                     /**
                      * 获取扫描木马
                      * @return ScanVirus 扫描木马
+                     * 
                      */
                     bool GetScanVirus() const;
 
                     /**
                      * 判断参数 ScanVirus 是否已赋值
                      * @return ScanVirus 是否已赋值
+                     * 
                      */
                     bool ScanVirusHasBeenSet() const;
 
                     /**
                      * 获取扫描敏感信息
                      * @return ScanRisk 扫描敏感信息
+                     * 
                      */
                     bool GetScanRisk() const;
 
                     /**
                      * 判断参数 ScanRisk 是否已赋值
                      * @return ScanRisk 是否已赋值
+                     * 
                      */
                     bool ScanRiskHasBeenSet() const;
 
                     /**
                      * 获取扫描漏洞
                      * @return ScanVul 扫描漏洞
+                     * 
                      */
                     bool GetScanVul() const;
 
                     /**
                      * 判断参数 ScanVul 是否已赋值
                      * @return ScanVul 是否已赋值
+                     * 
                      */
                     bool ScanVulHasBeenSet() const;
 
                     /**
                      * 获取扫描全部镜像
                      * @return All 扫描全部镜像
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
                     /**
                      * 获取自定义扫描镜像
                      * @return Images 自定义扫描镜像
+                     * 
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 

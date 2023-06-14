@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取托管机器唯一ID 数组
                      * @return InstanceIds 托管机器唯一ID 数组
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置托管机器唯一ID 数组
-                     * @param InstanceIds 托管机器唯一ID 数组
+                     * @param _instanceIds 托管机器唯一ID 数组
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID或者私有网络统一ID，建议使用统一ID
                      * @return VpcId 私有网络ID或者私有网络统一ID，建议使用统一ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID或者私有网络统一ID，建议使用统一ID
-                     * @param VpcId 私有网络ID或者私有网络统一ID，建议使用统一ID
+                     * @param _vpcId 私有网络ID或者私有网络统一ID，建议使用统一ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID或者子网统一ID，建议使用统一ID
                      * @return SubnetId 子网ID或者子网统一ID，建议使用统一ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID或者子网统一ID，建议使用统一ID
-                     * @param SubnetId 子网ID或者子网统一ID，建议使用统一ID
+                     * @param _subnetId 子网ID或者子网统一ID，建议使用统一ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

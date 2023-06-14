@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取用户账号
                      * @return Uin 用户账号
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户账号
-                     * @param Uin 用户账号
+                     * @param _uin 用户账号
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取告警事件
                      * @return Event 告警事件
+                     * 
                      */
                     std::string GetEvent() const;
 
                     /**
                      * 设置告警事件
-                     * @param Event 告警事件
+                     * @param _event 告警事件
+                     * 
                      */
                     void SetEvent(const std::string& _event);
 
                     /**
                      * 判断参数 Event 是否已赋值
                      * @return Event 是否已赋值
+                     * 
                      */
                     bool EventHasBeenSet() const;
 
                     /**
                      * 获取告警阈值
                      * @return Limit 告警阈值
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置告警阈值
-                     * @param Limit 告警阈值
+                     * @param _limit 告警阈值
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取告警策略是否生效，0：停用，1：启用
                      * @return Status 告警策略是否生效，0：停用，1：启用
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置告警策略是否生效，0：停用，1：启用
-                     * @param Status 告警策略是否生效，0：停用，1：启用
+                     * @param _status 告警策略是否生效，0：停用，1：启用
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取在这个时间后才允许发送告警
                      * @return BeginTime 在这个时间后才允许发送告警
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置在这个时间后才允许发送告警
-                     * @param BeginTime 在这个时间后才允许发送告警
+                     * @param _beginTime 在这个时间后才允许发送告警
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取在这个时间前才允许发送告警
                      * @return EndTime 在这个时间前才允许发送告警
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置在这个时间前才允许发送告警
-                     * @param EndTime 在这个时间前才允许发送告警
+                     * @param _endTime 在这个时间前才允许发送告警
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

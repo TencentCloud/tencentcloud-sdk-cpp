@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取发票号码
                      * @return InvoiceNum 发票号码
+                     * 
                      */
                     std::string GetInvoiceNum() const;
 
                     /**
                      * 判断参数 InvoiceNum 是否已赋值
                      * @return InvoiceNum 是否已赋值
+                     * 
                      */
                     bool InvoiceNumHasBeenSet() const;
 
                     /**
                      * 获取发票代码
                      * @return InvoiceCode 发票代码
+                     * 
                      */
                     std::string GetInvoiceCode() const;
 
                     /**
                      * 判断参数 InvoiceCode 是否已赋值
                      * @return InvoiceCode 是否已赋值
+                     * 
                      */
                     bool InvoiceCodeHasBeenSet() const;
 
                     /**
                      * 获取大写金额
                      * @return Rate 大写金额
+                     * 
                      */
                     std::string GetRate() const;
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取小写金额
                      * @return RateNum 小写金额
+                     * 
                      */
                     std::string GetRateNum() const;
 
                     /**
                      * 判断参数 RateNum 是否已赋值
                      * @return RateNum 是否已赋值
+                     * 
                      */
                     bool RateNumHasBeenSet() const;
 
                     /**
                      * 获取发票消费类型
                      * @return InvoiceType 发票消费类型
+                     * 
                      */
                     std::string GetInvoiceType() const;
 
                     /**
                      * 判断参数 InvoiceType 是否已赋值
                      * @return InvoiceType 是否已赋值
+                     * 
                      */
                     bool InvoiceTypeHasBeenSet() const;
 
@@ -108,12 +118,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -122,12 +134,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -136,12 +150,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasStamp 是否有公司印章（1有 0无 空为识别不出）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHasStamp() const;
 
                     /**
                      * 判断参数 HasStamp 是否已赋值
                      * @return HasStamp 是否已赋值
+                     * 
                      */
                     bool HasStampHasBeenSet() const;
 

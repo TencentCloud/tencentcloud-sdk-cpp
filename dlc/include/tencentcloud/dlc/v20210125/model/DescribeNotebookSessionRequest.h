@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Session唯一标识
                      * @return SessionId Session唯一标识
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置Session唯一标识
-                     * @param SessionId Session唯一标识
+                     * @param _sessionId Session唯一标识
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

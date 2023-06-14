@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return DateKey 时间
+                     * 
                      */
                     std::string GetDateKey() const;
 
                     /**
                      * 设置时间
-                     * @param DateKey 时间
+                     * @param _dateKey 时间
+                     * 
                      */
                     void SetDateKey(const std::string& _dateKey);
 
                     /**
                      * 判断参数 DateKey 是否已赋值
                      * @return DateKey 是否已赋值
+                     * 
                      */
                     bool DateKeyHasBeenSet() const;
 
                     /**
                      * 获取平均尝试次数
                      * @return CntPerPass 平均尝试次数
+                     * 
                      */
                     std::vector<double> GetCntPerPass() const;
 
                     /**
                      * 设置平均尝试次数
-                     * @param CntPerPass 平均尝试次数
+                     * @param _cntPerPass 平均尝试次数
+                     * 
                      */
                     void SetCntPerPass(const std::vector<double>& _cntPerPass);
 
                     /**
                      * 判断参数 CntPerPass 是否已赋值
                      * @return CntPerPass 是否已赋值
+                     * 
                      */
                     bool CntPerPassHasBeenSet() const;
 
                     /**
                      * 获取market平均尝试次数
                      * @return MarketCntPerPass market平均尝试次数
+                     * 
                      */
                     double GetMarketCntPerPass() const;
 
                     /**
                      * 设置market平均尝试次数
-                     * @param MarketCntPerPass market平均尝试次数
+                     * @param _marketCntPerPass market平均尝试次数
+                     * 
                      */
                     void SetMarketCntPerPass(const double& _marketCntPerPass);
 
                     /**
                      * 判断参数 MarketCntPerPass 是否已赋值
                      * @return MarketCntPerPass 是否已赋值
+                     * 
                      */
                     bool MarketCntPerPassHasBeenSet() const;
 

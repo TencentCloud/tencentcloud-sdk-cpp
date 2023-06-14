@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置任务Id
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
                      * @return ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     std::string GetModuleType() const;
 
                     /**
                      * 设置模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
-                     * @param ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * @param _moduleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     void SetModuleType(const std::string& _moduleType);
 
                     /**
                      * 判断参数 ModuleType 是否已赋值
                      * @return ModuleType 是否已赋值
+                     * 
                      */
                     bool ModuleTypeHasBeenSet() const;
 
                     /**
                      * 获取自选服务器时生效，主机quuid的string数组
                      * @return QuuidList 自选服务器时生效，主机quuid的string数组
+                     * 
                      */
                     std::vector<std::string> GetQuuidList() const;
 
                     /**
                      * 设置自选服务器时生效，主机quuid的string数组
-                     * @param QuuidList 自选服务器时生效，主机quuid的string数组
+                     * @param _quuidList 自选服务器时生效，主机quuid的string数组
+                     * 
                      */
                     void SetQuuidList(const std::vector<std::string>& _quuidList);
 
                     /**
                      * 判断参数 QuuidList 是否已赋值
                      * @return QuuidList 是否已赋值
+                     * 
                      */
                     bool QuuidListHasBeenSet() const;
 

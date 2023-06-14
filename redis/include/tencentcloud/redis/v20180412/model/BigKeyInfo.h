@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取所属的database
                      * @return DB 所属的database
+                     * 
                      */
                     int64_t GetDB() const;
 
                     /**
                      * 设置所属的database
-                     * @param DB 所属的database
+                     * @param _dB 所属的database
+                     * 
                      */
                     void SetDB(const int64_t& _dB);
 
                     /**
                      * 判断参数 DB 是否已赋值
                      * @return DB 是否已赋值
+                     * 
                      */
                     bool DBHasBeenSet() const;
 
                     /**
                      * 获取大Key
                      * @return Key 大Key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置大Key
-                     * @param Key 大Key
+                     * @param _key 大Key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return Type 类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-                     * @param Type 类型
+                     * @param _type 类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取大小
                      * @return Size 大小
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置大小
-                     * @param Size 大小
+                     * @param _size 大小
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取数据时间戳
                      * @return Updatetime 数据时间戳
+                     * 
                      */
                     int64_t GetUpdatetime() const;
 
                     /**
                      * 设置数据时间戳
-                     * @param Updatetime 数据时间戳
+                     * @param _updatetime 数据时间戳
+                     * 
                      */
                     void SetUpdatetime(const int64_t& _updatetime);
 
                     /**
                      * 判断参数 Updatetime 是否已赋值
                      * @return Updatetime 是否已赋值
+                     * 
                      */
                     bool UpdatetimeHasBeenSet() const;
 

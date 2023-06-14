@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取分页limit 最大100
                      * @return Limit 分页limit 最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页limit 最大100
-                     * @param Limit 分页limit 最大100
+                     * @param _limit 分页limit 最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取漏洞id
                      * @return VulId 漏洞id
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞id
-                     * @param VulId 漏洞id
+                     * @param _vulId 漏洞id
+                     * 
                      */
                     void SetVulId(const uint64_t& _vulId);
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 
@@ -112,6 +121,7 @@ namespace TencentCloud
 <li>Uuid - String数组 - Uuid串数组</li>
 <li>Version - String数组 - 付费版本数组："Flagship"-旗舰版 "PRO_VERSION"-专业版 "BASIC_VERSION"-基础版</li>
 <li>InstanceState - String数组 - 实例状态数组："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-开机中 "STOPPING"-关机中 "REBOOTING"-重启中 "SHUTDOWN"-待销毁 "TERMINATING"-销毁中 "UNKNOWN"-未知（针对非腾讯云机器，且客户端离线的场景） </li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -123,19 +133,21 @@ namespace TencentCloud
 <li>Uuid - String数组 - Uuid串数组</li>
 <li>Version - String数组 - 付费版本数组："Flagship"-旗舰版 "PRO_VERSION"-专业版 "BASIC_VERSION"-基础版</li>
 <li>InstanceState - String数组 - 实例状态数组："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-开机中 "STOPPING"-关机中 "REBOOTING"-重启中 "SHUTDOWN"-待销毁 "TERMINATING"-销毁中 "UNKNOWN"-未知（针对非腾讯云机器，且客户端离线的场景） </li>
-                     * @param Filters 过滤条件：
+                     * @param _filters 过滤条件：
 <li>AliasName - String - 主机名筛选</li>
 <li>TagIds - String - 主机标签id串，多个用英文用逗号分隔</li>
 <li>Status - String - 状态：0-待处理 1-忽略  3-已修复  5-检测中  6-修复中  8-修复失败</li>
 <li>Uuid - String数组 - Uuid串数组</li>
 <li>Version - String数组 - 付费版本数组："Flagship"-旗舰版 "PRO_VERSION"-专业版 "BASIC_VERSION"-基础版</li>
 <li>InstanceState - String数组 - 实例状态数组："PENDING"-创建中 "LAUNCH_FAILED"-创建失败 "RUNNING"-运行中 "STOPPED"-关机 "STARTING"-开机中 "STOPPING"-关机中 "REBOOTING"-重启中 "SHUTDOWN"-待销毁 "TERMINATING"-销毁中 "UNKNOWN"-未知（针对非腾讯云机器，且客户端离线的场景） </li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

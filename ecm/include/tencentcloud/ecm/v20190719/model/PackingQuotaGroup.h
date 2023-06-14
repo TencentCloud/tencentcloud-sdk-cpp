@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区id
                      * @return ZoneId 可用区id
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区id
-                     * @param ZoneId 可用区id
+                     * @param _zoneId 可用区id
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取ISP id
                      * @return ISPId ISP id
+                     * 
                      */
                     std::string GetISPId() const;
 
                     /**
                      * 设置ISP id
-                     * @param ISPId ISP id
+                     * @param _iSPId ISP id
+                     * 
                      */
                     void SetISPId(const std::string& _iSPId);
 
                     /**
                      * 判断参数 ISPId 是否已赋值
                      * @return ISPId 是否已赋值
+                     * 
                      */
                     bool ISPIdHasBeenSet() const;
 
                     /**
                      * 获取一组相互关联的装箱配额
                      * @return PackingQuotaInfos 一组相互关联的装箱配额
+                     * 
                      */
                     std::vector<PackingQuotaInfo> GetPackingQuotaInfos() const;
 
                     /**
                      * 设置一组相互关联的装箱配额
-                     * @param PackingQuotaInfos 一组相互关联的装箱配额
+                     * @param _packingQuotaInfos 一组相互关联的装箱配额
+                     * 
                      */
                     void SetPackingQuotaInfos(const std::vector<PackingQuotaInfo>& _packingQuotaInfos);
 
                     /**
                      * 判断参数 PackingQuotaInfos 是否已赋值
                      * @return PackingQuotaInfos 是否已赋值
+                     * 
                      */
                     bool PackingQuotaInfosHasBeenSet() const;
 

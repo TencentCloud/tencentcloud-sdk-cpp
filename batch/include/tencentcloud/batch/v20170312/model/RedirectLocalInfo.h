@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取标准输出重定向本地路径
                      * @return StdoutLocalPath 标准输出重定向本地路径
+                     * 
                      */
                     std::string GetStdoutLocalPath() const;
 
                     /**
                      * 设置标准输出重定向本地路径
-                     * @param StdoutLocalPath 标准输出重定向本地路径
+                     * @param _stdoutLocalPath 标准输出重定向本地路径
+                     * 
                      */
                     void SetStdoutLocalPath(const std::string& _stdoutLocalPath);
 
                     /**
                      * 判断参数 StdoutLocalPath 是否已赋值
                      * @return StdoutLocalPath 是否已赋值
+                     * 
                      */
                     bool StdoutLocalPathHasBeenSet() const;
 
                     /**
                      * 获取标准错误重定向本地路径
                      * @return StderrLocalPath 标准错误重定向本地路径
+                     * 
                      */
                     std::string GetStderrLocalPath() const;
 
                     /**
                      * 设置标准错误重定向本地路径
-                     * @param StderrLocalPath 标准错误重定向本地路径
+                     * @param _stderrLocalPath 标准错误重定向本地路径
+                     * 
                      */
                     void SetStderrLocalPath(const std::string& _stderrLocalPath);
 
                     /**
                      * 判断参数 StderrLocalPath 是否已赋值
                      * @return StderrLocalPath 是否已赋值
+                     * 
                      */
                     bool StderrLocalPathHasBeenSet() const;
 
                     /**
                      * 获取标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
                      * @return StdoutLocalFileName 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * 
                      */
                     std::string GetStdoutLocalFileName() const;
 
                     /**
                      * 设置标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-                     * @param StdoutLocalFileName 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * @param _stdoutLocalFileName 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * 
                      */
                     void SetStdoutLocalFileName(const std::string& _stdoutLocalFileName);
 
                     /**
                      * 判断参数 StdoutLocalFileName 是否已赋值
                      * @return StdoutLocalFileName 是否已赋值
+                     * 
                      */
                     bool StdoutLocalFileNameHasBeenSet() const;
 
                     /**
                      * 获取标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
                      * @return StderrLocalFileName 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * 
                      */
                     std::string GetStderrLocalFileName() const;
 
                     /**
                      * 设置标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-                     * @param StderrLocalFileName 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * @param _stderrLocalFileName 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+                     * 
                      */
                     void SetStderrLocalFileName(const std::string& _stderrLocalFileName);
 
                     /**
                      * 判断参数 StderrLocalFileName 是否已赋值
                      * @return StderrLocalFileName 是否已赋值
+                     * 
                      */
                     bool StderrLocalFileNameHasBeenSet() const;
 

@@ -56,18 +56,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体基本信息。
                      * @return BasicInfo 媒体基本信息。
+                     * 
                      */
                     MaterialBasicInfo GetBasicInfo() const;
 
                     /**
                      * 设置媒体基本信息。
-                     * @param BasicInfo 媒体基本信息。
+                     * @param _basicInfo 媒体基本信息。
+                     * 
                      */
                     void SetBasicInfo(const MaterialBasicInfo& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoMaterial 视频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoMaterial GetVideoMaterial() const;
 
                     /**
                      * 设置视频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoMaterial 视频媒体信息。
+                     * @param _videoMaterial 视频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoMaterial(const VideoMaterial& _videoMaterial);
 
                     /**
                      * 判断参数 VideoMaterial 是否已赋值
                      * @return VideoMaterial 是否已赋值
+                     * 
                      */
                     bool VideoMaterialHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioMaterial 音频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioMaterial GetAudioMaterial() const;
 
                     /**
                      * 设置音频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioMaterial 音频媒体信息。
+                     * @param _audioMaterial 音频媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioMaterial(const AudioMaterial& _audioMaterial);
 
                     /**
                      * 判断参数 AudioMaterial 是否已赋值
                      * @return AudioMaterial 是否已赋值
+                     * 
                      */
                     bool AudioMaterialHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageMaterial 图片媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageMaterial GetImageMaterial() const;
 
                     /**
                      * 设置图片媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageMaterial 图片媒体信息。
+                     * @param _imageMaterial 图片媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageMaterial(const ImageMaterial& _imageMaterial);
 
                     /**
                      * 判断参数 ImageMaterial 是否已赋值
                      * @return ImageMaterial 是否已赋值
+                     * 
                      */
                     bool ImageMaterialHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkMaterial 链接媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LinkMaterial GetLinkMaterial() const;
 
                     /**
                      * 设置链接媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LinkMaterial 链接媒体信息。
+                     * @param _linkMaterial 链接媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLinkMaterial(const LinkMaterial& _linkMaterial);
 
                     /**
                      * 判断参数 LinkMaterial 是否已赋值
                      * @return LinkMaterial 是否已赋值
+                     * 
                      */
                     bool LinkMaterialHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoEditTemplateMaterial 模板媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoEditTemplateMaterial GetVideoEditTemplateMaterial() const;
 
                     /**
                      * 设置模板媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoEditTemplateMaterial 模板媒体信息。
+                     * @param _videoEditTemplateMaterial 模板媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoEditTemplateMaterial(const VideoEditTemplateMaterial& _videoEditTemplateMaterial);
 
                     /**
                      * 判断参数 VideoEditTemplateMaterial 是否已赋值
                      * @return VideoEditTemplateMaterial 是否已赋值
+                     * 
                      */
                     bool VideoEditTemplateMaterialHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherMaterial 其他类型媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OtherMaterial GetOtherMaterial() const;
 
                     /**
                      * 设置其他类型媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtherMaterial 其他类型媒体信息。
+                     * @param _otherMaterial 其他类型媒体信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOtherMaterial(const OtherMaterial& _otherMaterial);
 
                     /**
                      * 判断参数 OtherMaterial 是否已赋值
                      * @return OtherMaterial 是否已赋值
+                     * 
                      */
                     bool OtherMaterialHasBeenSet() const;
 

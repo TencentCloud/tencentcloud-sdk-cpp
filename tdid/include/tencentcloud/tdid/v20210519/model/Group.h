@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return NodeCount 节点数量
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeCount 节点数量
+                     * @param _nodeCount 节点数量
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取所属机构节点数量
                      * @return NodeCountOfAgency 所属机构节点数量
+                     * 
                      */
                     uint64_t GetNodeCountOfAgency() const;
 
                     /**
                      * 设置所属机构节点数量
-                     * @param NodeCountOfAgency 所属机构节点数量
+                     * @param _nodeCountOfAgency 所属机构节点数量
+                     * 
                      */
                     void SetNodeCountOfAgency(const uint64_t& _nodeCountOfAgency);
 
                     /**
                      * 判断参数 NodeCountOfAgency 是否已赋值
                      * @return NodeCountOfAgency 是否已赋值
+                     * 
                      */
                     bool NodeCountOfAgencyHasBeenSet() const;
 
                     /**
                      * 获取群组描述
                      * @return Description 群组描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置群组描述
-                     * @param Description 群组描述
+                     * @param _description 群组描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取参与角色，盟主或非盟主
                      * @return RoleType 参与角色，盟主或非盟主
+                     * 
                      */
                     uint64_t GetRoleType() const;
 
                     /**
                      * 设置参与角色，盟主或非盟主
-                     * @param RoleType 参与角色，盟主或非盟主
+                     * @param _roleType 参与角色，盟主或非盟主
+                     * 
                      */
                     void SetRoleType(const uint64_t& _roleType);
 
                     /**
                      * 判断参数 RoleType 是否已赋值
                      * @return RoleType 是否已赋值
+                     * 
                      */
                     bool RoleTypeHasBeenSet() const;
 
                     /**
                      * 获取链id
                      * @return ChainId 链id
+                     * 
                      */
                     std::string GetChainId() const;
 
                     /**
                      * 设置链id
-                     * @param ChainId 链id
+                     * @param _chainId 链id
+                     * 
                      */
                     void SetChainId(const std::string& _chainId);
 
                     /**
                      * 判断参数 ChainId 是否已赋值
                      * @return ChainId 是否已赋值
+                     * 
                      */
                     bool ChainIdHasBeenSet() const;
 

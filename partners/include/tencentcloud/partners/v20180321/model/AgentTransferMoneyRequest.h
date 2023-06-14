@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取客户账号ID
                      * @return ClientUin 客户账号ID
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 设置客户账号ID
-                     * @param ClientUin 客户账号ID
+                     * @param _clientUin 客户账号ID
+                     * 
                      */
                     void SetClientUin(const std::string& _clientUin);
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 
                     /**
                      * 获取转账金额，单位分
                      * @return Amount 转账金额，单位分
+                     * 
                      */
                     uint64_t GetAmount() const;
 
                     /**
                      * 设置转账金额，单位分
-                     * @param Amount 转账金额，单位分
+                     * @param _amount 转账金额，单位分
+                     * 
                      */
                     void SetAmount(const uint64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 

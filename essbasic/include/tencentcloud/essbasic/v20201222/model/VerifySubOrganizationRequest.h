@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息，该接口SubOrganizationId必填
                      * @return Caller 调用方信息，该接口SubOrganizationId必填
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息，该接口SubOrganizationId必填
-                     * @param Caller 调用方信息，该接口SubOrganizationId必填
+                     * @param _caller 调用方信息，该接口SubOrganizationId必填
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息
                      * @return OpenId 机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息
-                     * @param OpenId 机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息
+                     * @param _openId 机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRevision() const;
 
                     /**
                      * 设置版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Revision 版本
+                     * @param _revision 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRevision(const std::string& _revision);
 
                     /**
                      * 判断参数 Revision 是否已赋值
                      * @return Revision 是否已赋值
+                     * 
                      */
                     bool RevisionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Image 镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置镜像
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Image 镜像
+                     * @param _image 镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelFile 模型文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelFile() const;
 
                     /**
                      * 设置模型文件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelFile 模型文件
+                     * @param _modelFile 模型文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelFile(const std::string& _modelFile);
 
                     /**
                      * 判断参数 ModelFile 是否已赋值
                      * @return ModelFile 是否已赋值
+                     * 
                      */
                     bool ModelFileHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawData 原始数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRawData() const;
 
                     /**
                      * 设置原始数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RawData 原始数据
+                     * @param _rawData 原始数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRawData(const std::string& _rawData);
 
                     /**
                      * 判断参数 RawData 是否已赋值
                      * @return RawData 是否已赋值
+                     * 
                      */
                     bool RawDataHasBeenSet() const;
 

@@ -61,6 +61,7 @@ off：关闭
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -69,16 +70,18 @@ off：关闭
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
-                     * @param Switch 防盗链配置开关，取值有：
+                     * @param _switch 防盗链配置开关，取值有：
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -87,20 +90,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeA 时间戳防盗链高级版模式A配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeA GetTypeA() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式A配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeA 时间戳防盗链高级版模式A配置。
+                     * @param _typeA 时间戳防盗链高级版模式A配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeA(const AdvancedAuthenticationTypeA& _typeA);
 
                     /**
                      * 判断参数 TypeA 是否已赋值
                      * @return TypeA 是否已赋值
+                     * 
                      */
                     bool TypeAHasBeenSet() const;
 
@@ -109,20 +115,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeB 时间戳防盗链高级版模式B配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeB GetTypeB() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式B配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeB 时间戳防盗链高级版模式B配置。
+                     * @param _typeB 时间戳防盗链高级版模式B配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeB(const AdvancedAuthenticationTypeB& _typeB);
 
                     /**
                      * 判断参数 TypeB 是否已赋值
                      * @return TypeB 是否已赋值
+                     * 
                      */
                     bool TypeBHasBeenSet() const;
 
@@ -131,20 +140,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeC 时间戳防盗链高级版模式C配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeC GetTypeC() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式C配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeC 时间戳防盗链高级版模式C配置。
+                     * @param _typeC 时间戳防盗链高级版模式C配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeC(const AdvancedAuthenticationTypeC& _typeC);
 
                     /**
                      * 判断参数 TypeC 是否已赋值
                      * @return TypeC 是否已赋值
+                     * 
                      */
                     bool TypeCHasBeenSet() const;
 
@@ -153,20 +165,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeD 时间戳防盗链高级版模式D配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeD GetTypeD() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式D配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeD 时间戳防盗链高级版模式D配置。
+                     * @param _typeD 时间戳防盗链高级版模式D配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeD(const AdvancedAuthenticationTypeD& _typeD);
 
                     /**
                      * 判断参数 TypeD 是否已赋值
                      * @return TypeD 是否已赋值
+                     * 
                      */
                     bool TypeDHasBeenSet() const;
 
@@ -175,20 +190,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeE 时间戳防盗链高级版模式E配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeE GetTypeE() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式E配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeE 时间戳防盗链高级版模式E配置。
+                     * @param _typeE 时间戳防盗链高级版模式E配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeE(const AdvancedAuthenticationTypeE& _typeE);
 
                     /**
                      * 判断参数 TypeE 是否已赋值
                      * @return TypeE 是否已赋值
+                     * 
                      */
                     bool TypeEHasBeenSet() const;
 
@@ -197,20 +215,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeF 时间戳防盗链高级版模式F配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedAuthenticationTypeF GetTypeF() const;
 
                     /**
                      * 设置时间戳防盗链高级版模式F配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeF 时间戳防盗链高级版模式F配置。
+                     * @param _typeF 时间戳防盗链高级版模式F配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeF(const AdvancedAuthenticationTypeF& _typeF);
 
                     /**
                      * 判断参数 TypeF 是否已赋值
                      * @return TypeF 是否已赋值
+                     * 
                      */
                     bool TypeFHasBeenSet() const;
 

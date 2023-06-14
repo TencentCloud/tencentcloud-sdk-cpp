@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取超额日期。格式为yyyy-MM-dd。
                      * @return TimeStr 超额日期。格式为yyyy-MM-dd。
+                     * 
                      */
                     std::string GetTimeStr() const;
 
                     /**
                      * 设置超额日期。格式为yyyy-MM-dd。
-                     * @param TimeStr 超额日期。格式为yyyy-MM-dd。
+                     * @param _timeStr 超额日期。格式为yyyy-MM-dd。
+                     * 
                      */
                     void SetTimeStr(const std::string& _timeStr);
 
                     /**
                      * 判断参数 TimeStr 是否已赋值
                      * @return TimeStr 是否已赋值
+                     * 
                      */
                     bool TimeStrHasBeenSet() const;
 
                     /**
                      * 获取维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。
                      * @return Dimension 维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。
+                     * 
                      */
                     std::string GetDimension() const;
 
                     /**
                      * 设置维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。
-                     * @param Dimension 维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。
+                     * @param _dimension 维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 
                     /**
                      * 获取分页信息。不填默认Index为1，Count为100。
                      * @return PageNumber 分页信息。不填默认Index为1，Count为100。
+                     * 
                      */
                     Paging GetPageNumber() const;
 
                     /**
                      * 设置分页信息。不填默认Index为1，Count为100。
-                     * @param PageNumber 分页信息。不填默认Index为1，Count为100。
+                     * @param _pageNumber 分页信息。不填默认Index为1，Count为100。
+                     * 
                      */
                     void SetPageNumber(const Paging& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 

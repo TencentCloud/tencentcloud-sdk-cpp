@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例是否开启了物理备份加密。可能的值有 on, off 。
                      * @return EncryptionStatus 实例是否开启了物理备份加密。可能的值有 on, off 。
+                     * 
                      */
                     std::string GetEncryptionStatus() const;
 
                     /**
                      * 判断参数 EncryptionStatus 是否已赋值
                      * @return EncryptionStatus 是否已赋值
+                     * 
                      */
                     bool EncryptionStatusHasBeenSet() const;
 

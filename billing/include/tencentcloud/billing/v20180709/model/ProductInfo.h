@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取商品详情名称标识
                      * @return Name 商品详情名称标识
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商品详情名称标识
-                     * @param Name 商品详情名称标识
+                     * @param _name 商品详情名称标识
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取商品详情
                      * @return Value 商品详情
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置商品详情
-                     * @param Value 商品详情
+                     * @param _value 商品详情
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

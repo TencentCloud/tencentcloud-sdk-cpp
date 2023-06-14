@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取密码长度
                      * @return ValidatePasswordLength 密码长度
+                     * 
                      */
                     int64_t GetValidatePasswordLength() const;
 
                     /**
                      * 设置密码长度
-                     * @param ValidatePasswordLength 密码长度
+                     * @param _validatePasswordLength 密码长度
+                     * 
                      */
                     void SetValidatePasswordLength(const int64_t& _validatePasswordLength);
 
                     /**
                      * 判断参数 ValidatePasswordLength 是否已赋值
                      * @return ValidatePasswordLength 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordLengthHasBeenSet() const;
 
                     /**
                      * 获取大小写字符个数
                      * @return ValidatePasswordMixedCaseCount 大小写字符个数
+                     * 
                      */
                     int64_t GetValidatePasswordMixedCaseCount() const;
 
                     /**
                      * 设置大小写字符个数
-                     * @param ValidatePasswordMixedCaseCount 大小写字符个数
+                     * @param _validatePasswordMixedCaseCount 大小写字符个数
+                     * 
                      */
                     void SetValidatePasswordMixedCaseCount(const int64_t& _validatePasswordMixedCaseCount);
 
                     /**
                      * 判断参数 ValidatePasswordMixedCaseCount 是否已赋值
                      * @return ValidatePasswordMixedCaseCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordMixedCaseCountHasBeenSet() const;
 
                     /**
                      * 获取特殊字符个数
                      * @return ValidatePasswordSpecialCharCount 特殊字符个数
+                     * 
                      */
                     int64_t GetValidatePasswordSpecialCharCount() const;
 
                     /**
                      * 设置特殊字符个数
-                     * @param ValidatePasswordSpecialCharCount 特殊字符个数
+                     * @param _validatePasswordSpecialCharCount 特殊字符个数
+                     * 
                      */
                     void SetValidatePasswordSpecialCharCount(const int64_t& _validatePasswordSpecialCharCount);
 
                     /**
                      * 判断参数 ValidatePasswordSpecialCharCount 是否已赋值
                      * @return ValidatePasswordSpecialCharCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordSpecialCharCountHasBeenSet() const;
 
                     /**
                      * 获取数字个数
                      * @return ValidatePasswordNumberCount 数字个数
+                     * 
                      */
                     int64_t GetValidatePasswordNumberCount() const;
 
                     /**
                      * 设置数字个数
-                     * @param ValidatePasswordNumberCount 数字个数
+                     * @param _validatePasswordNumberCount 数字个数
+                     * 
                      */
                     void SetValidatePasswordNumberCount(const int64_t& _validatePasswordNumberCount);
 
                     /**
                      * 判断参数 ValidatePasswordNumberCount 是否已赋值
                      * @return ValidatePasswordNumberCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordNumberCountHasBeenSet() const;
 
                     /**
                      * 获取密码强度（"MEDIUM", "STRONG"）
                      * @return ValidatePasswordPolicy 密码强度（"MEDIUM", "STRONG"）
+                     * 
                      */
                     std::string GetValidatePasswordPolicy() const;
 
                     /**
                      * 设置密码强度（"MEDIUM", "STRONG"）
-                     * @param ValidatePasswordPolicy 密码强度（"MEDIUM", "STRONG"）
+                     * @param _validatePasswordPolicy 密码强度（"MEDIUM", "STRONG"）
+                     * 
                      */
                     void SetValidatePasswordPolicy(const std::string& _validatePasswordPolicy);
 
                     /**
                      * 判断参数 ValidatePasswordPolicy 是否已赋值
                      * @return ValidatePasswordPolicy 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordPolicyHasBeenSet() const;
 
                     /**
                      * 获取数据字典
                      * @return ValidatePasswordDictionary 数据字典
+                     * 
                      */
                     std::vector<std::string> GetValidatePasswordDictionary() const;
 
                     /**
                      * 设置数据字典
-                     * @param ValidatePasswordDictionary 数据字典
+                     * @param _validatePasswordDictionary 数据字典
+                     * 
                      */
                     void SetValidatePasswordDictionary(const std::vector<std::string>& _validatePasswordDictionary);
 
                     /**
                      * 判断参数 ValidatePasswordDictionary 是否已赋值
                      * @return ValidatePasswordDictionary 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordDictionaryHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取获取更多检索结果的游标，值为""表示无后续结果
                      * @return ConText 获取更多检索结果的游标，值为""表示无后续结果
+                     * 
                      */
                     std::string GetConText() const;
 
                     /**
                      * 判断参数 ConText 是否已赋值
                      * @return ConText 是否已赋值
+                     * 
                      */
                     bool ConTextHasBeenSet() const;
 
@@ -112,24 +114,28 @@ ups_head_t：后端响应的头部到达时间。
 err_msg： 错误信息。
 tcp_rtt： 客户端 TCP 连接信息，RTT（Round Trip Time）由三部分组成：链路的传播时间（propagation delay）、末端系统的处理时间、路由器缓存中的排队和处理时间（queuing delay）。
 req_id：请求id。
+                     * 
                      */
                     std::vector<std::string> GetLogSet() const;
 
                     /**
                      * 判断参数 LogSet 是否已赋值
                      * @return LogSet 是否已赋值
+                     * 
                      */
                     bool LogSetHasBeenSet() const;
 
                     /**
                      * 获取单次搜索返回的日志条数，TotalCount <= Limit
                      * @return TotalCount 单次搜索返回的日志条数，TotalCount <= Limit
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。
                      * @return KeyId 密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。
-                     * @param KeyId 密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。
+                     * @param _keyId 密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
                      * @return KeyName 修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-                     * @param KeyName 修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * @param _keyName 修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 
                      */
                     void SetKeyName(const std::string& _keyName);
 
                     /**
                      * 判断参数 KeyName 是否已赋值
                      * @return KeyName 是否已赋值
+                     * 
                      */
                     bool KeyNameHasBeenSet() const;
 
                     /**
                      * 获取修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
                      * @return Description 修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
-                     * @param Description 修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
+                     * @param _description 修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

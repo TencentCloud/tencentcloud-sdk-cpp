@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取CSV序列化转义符，默认为"\\"，最长8个字符，如 Escape: "/\"
                      * @return Escape CSV序列化转义符，默认为"\\"，最长8个字符，如 Escape: "/\"
+                     * 
                      */
                     std::string GetEscape() const;
 
                     /**
                      * 设置CSV序列化转义符，默认为"\\"，最长8个字符，如 Escape: "/\"
-                     * @param Escape CSV序列化转义符，默认为"\\"，最长8个字符，如 Escape: "/\"
+                     * @param _escape CSV序列化转义符，默认为"\\"，最长8个字符，如 Escape: "/\"
+                     * 
                      */
                     void SetEscape(const std::string& _escape);
 
                     /**
                      * 判断参数 Escape 是否已赋值
                      * @return Escape 是否已赋值
+                     * 
                      */
                     bool EscapeHasBeenSet() const;
 
                     /**
                      * 获取CSV序列化字段域符，默认为"'"，最长8个字符, 如 Quote: "\""
                      * @return Quote CSV序列化字段域符，默认为"'"，最长8个字符, 如 Quote: "\""
+                     * 
                      */
                     std::string GetQuote() const;
 
                     /**
                      * 设置CSV序列化字段域符，默认为"'"，最长8个字符, 如 Quote: "\""
-                     * @param Quote CSV序列化字段域符，默认为"'"，最长8个字符, 如 Quote: "\""
+                     * @param _quote CSV序列化字段域符，默认为"'"，最长8个字符, 如 Quote: "\""
+                     * 
                      */
                     void SetQuote(const std::string& _quote);
 
                     /**
                      * 判断参数 Quote 是否已赋值
                      * @return Quote 是否已赋值
+                     * 
                      */
                     bool QuoteHasBeenSet() const;
 
                     /**
                      * 获取CSV序列化分隔符，默认为"\t"，最长8个字符, 如 Separator: "\t"
                      * @return Separator CSV序列化分隔符，默认为"\t"，最长8个字符, 如 Separator: "\t"
+                     * 
                      */
                     std::string GetSeparator() const;
 
                     /**
                      * 设置CSV序列化分隔符，默认为"\t"，最长8个字符, 如 Separator: "\t"
-                     * @param Separator CSV序列化分隔符，默认为"\t"，最长8个字符, 如 Separator: "\t"
+                     * @param _separator CSV序列化分隔符，默认为"\t"，最长8个字符, 如 Separator: "\t"
+                     * 
                      */
                     void SetSeparator(const std::string& _separator);
 
                     /**
                      * 判断参数 Separator 是否已赋值
                      * @return Separator 是否已赋值
+                     * 
                      */
                     bool SeparatorHasBeenSet() const;
 

@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取搜索字段
                      * @return SearchWord 搜索字段
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索字段
-                     * @param SearchWord 搜索字段
+                     * @param _searchWord 搜索字段
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return OrderBy 排序字段
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param OrderBy 排序字段
+                     * @param _orderBy 排序字段
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取排序类型
                      * @return OrderType 排序类型
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置排序类型
-                     * @param OrderType 排序类型
+                     * @param _orderType 排序类型
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数
                      * @return Limit 分页个数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页个数
-                     * @param Limit 分页个数
+                     * @param _limit 分页个数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取应用类型
                      * @return ApplicationType 应用类型
+                     * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
                      * 设置应用类型
-                     * @param ApplicationType 应用类型
+                     * @param _applicationType 应用类型
+                     * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
                      * 获取应用的微服务类型
                      * @return MicroserviceType 应用的微服务类型
+                     * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
                      * 设置应用的微服务类型
-                     * @param MicroserviceType 应用的微服务类型
+                     * @param _microserviceType 应用的微服务类型
+                     * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
 
                     /**
                      * 判断参数 MicroserviceType 是否已赋值
                      * @return MicroserviceType 是否已赋值
+                     * 
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
                      * 获取应用资源类型数组
                      * @return ApplicationResourceTypeList 应用资源类型数组
+                     * 
                      */
                     std::vector<std::string> GetApplicationResourceTypeList() const;
 
                     /**
                      * 设置应用资源类型数组
-                     * @param ApplicationResourceTypeList 应用资源类型数组
+                     * @param _applicationResourceTypeList 应用资源类型数组
+                     * 
                      */
                     void SetApplicationResourceTypeList(const std::vector<std::string>& _applicationResourceTypeList);
 
                     /**
                      * 判断参数 ApplicationResourceTypeList 是否已赋值
                      * @return ApplicationResourceTypeList 是否已赋值
+                     * 
                      */
                     bool ApplicationResourceTypeListHasBeenSet() const;
 
                     /**
                      * 获取IdList
                      * @return ApplicationIdList IdList
+                     * 
                      */
                     std::vector<std::string> GetApplicationIdList() const;
 
                     /**
                      * 设置IdList
-                     * @param ApplicationIdList IdList
+                     * @param _applicationIdList IdList
+                     * 
                      */
                     void SetApplicationIdList(const std::vector<std::string>& _applicationIdList);
 
                     /**
                      * 判断参数 ApplicationIdList 是否已赋值
                      * @return ApplicationIdList 是否已赋值
+                     * 
                      */
                     bool ApplicationIdListHasBeenSet() const;
 

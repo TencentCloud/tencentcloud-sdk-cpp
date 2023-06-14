@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Result 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取诊断报告/堆栈信息/报告json结果下载链接
                      * @return ReportUrl 诊断报告/堆栈信息/报告json结果下载链接
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 
                     /**
                      * 获取诊断报告/堆栈/报告json结果的名称
                      * @return ReportTitle 诊断报告/堆栈/报告json结果的名称
+                     * 
                      */
                     std::string GetReportTitle() const;
 
                     /**
                      * 判断参数 ReportTitle 是否已赋值
                      * @return ReportTitle 是否已赋值
+                     * 
                      */
                     bool ReportTitleHasBeenSet() const;
 

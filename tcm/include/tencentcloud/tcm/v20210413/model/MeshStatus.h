@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取服务数量
                      * @return ServiceCount 服务数量
+                     * 
                      */
                     int64_t GetServiceCount() const;
 
                     /**
                      * 设置服务数量
-                     * @param ServiceCount 服务数量
+                     * @param _serviceCount 服务数量
+                     * 
                      */
                     void SetServiceCount(const int64_t& _serviceCount);
 
                     /**
                      * 判断参数 ServiceCount 是否已赋值
                      * @return ServiceCount 是否已赋值
+                     * 
                      */
                     bool ServiceCountHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanaryVersion 灰度升级的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCanaryVersion() const;
 
                     /**
                      * 设置灰度升级的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CanaryVersion 灰度升级的版本
+                     * @param _canaryVersion 灰度升级的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCanaryVersion(const std::string& _canaryVersion);
 
                     /**
                      * 判断参数 CanaryVersion 是否已赋值
                      * @return CanaryVersion 是否已赋值
+                     * 
                      */
                     bool CanaryVersionHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prometheus 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusStatus> GetPrometheus() const;
 
                     /**
                      * 设置已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Prometheus 已废弃
+                     * @param _prometheus 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrometheus(const std::vector<PrometheusStatus>& _prometheus);
 
                     /**
                      * 判断参数 Prometheus 是否已赋值
                      * @return Prometheus 是否已赋值
+                     * 
                      */
                     bool PrometheusHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StateMessage 状态附带信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStateMessage() const;
 
                     /**
                      * 设置状态附带信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StateMessage 状态附带信息
+                     * @param _stateMessage 状态附带信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStateMessage(const std::string& _stateMessage);
 
                     /**
                      * 判断参数 StateMessage 是否已赋值
                      * @return StateMessage 是否已赋值
+                     * 
                      */
                     bool StateMessageHasBeenSet() const;
 
@@ -137,20 +149,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveOperationList 正在执行的异步操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ActiveOperation> GetActiveOperationList() const;
 
                     /**
                      * 设置正在执行的异步操作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveOperationList 正在执行的异步操作
+                     * @param _activeOperationList 正在执行的异步操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveOperationList(const std::vector<ActiveOperation>& _activeOperationList);
 
                     /**
                      * 判断参数 ActiveOperationList 是否已赋值
                      * @return ActiveOperationList 是否已赋值
+                     * 
                      */
                     bool ActiveOperationListHasBeenSet() const;
 
@@ -159,20 +174,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TPS 获取TPS信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PrometheusStatus GetTPS() const;
 
                     /**
                      * 设置获取TPS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TPS 获取TPS信息
+                     * @param _tPS 获取TPS信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTPS(const PrometheusStatus& _tPS);
 
                     /**
                      * 判断参数 TPS 是否已赋值
                      * @return TPS 是否已赋值
+                     * 
                      */
                     bool TPSHasBeenSet() const;
 

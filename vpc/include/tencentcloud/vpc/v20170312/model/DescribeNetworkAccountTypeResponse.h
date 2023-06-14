@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户账号的网络类型，STANDARD为标准用户，LEGACY为传统用户
                      * @return NetworkAccountType 用户账号的网络类型，STANDARD为标准用户，LEGACY为传统用户
+                     * 
                      */
                     std::string GetNetworkAccountType() const;
 
                     /**
                      * 判断参数 NetworkAccountType 是否已赋值
                      * @return NetworkAccountType 是否已赋值
+                     * 
                      */
                     bool NetworkAccountTypeHasBeenSet() const;
 

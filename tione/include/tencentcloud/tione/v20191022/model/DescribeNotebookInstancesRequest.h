@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -86,6 +92,7 @@ Ascending 按更新时间升序
                      * @return SortOrder 排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
+                     * 
                      */
                     std::string GetSortOrder() const;
 
@@ -93,15 +100,17 @@ Ascending 按更新时间升序
                      * 设置排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
-                     * @param SortOrder 排序规则。默认取Descending
+                     * @param _sortOrder 排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
+                     * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
 
                     /**
                      * 判断参数 SortOrder 是否已赋值
                      * @return SortOrder 是否已赋值
+                     * 
                      */
                     bool SortOrderHasBeenSet() const;
 
@@ -124,6 +133,7 @@ additional-code-repo-name - String - 是否必填：否 -（过滤条件）按�
 billing-status - String - 是否必填：否 - （过滤条件）按照计费状态过滤，可取以下值
    StorageOnly：仅存储计费的实例
    Computing：计算和存储都计费的实例
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -137,7 +147,7 @@ additional-code-repo-name - String - 是否必填：否 -（过滤条件）按�
 billing-status - String - 是否必填：否 - （过滤条件）按照计费状态过滤，可取以下值
    StorageOnly：仅存储计费的实例
    Computing：计算和存储都计费的实例
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 instance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。
 search-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。
 lifecycle-name - String - 是否必填：否 -（过滤条件）按照生命周期脚本名称过滤。
@@ -146,30 +156,35 @@ additional-code-repo-name - String - 是否必填：否 -（过滤条件）按�
 billing-status - String - 是否必填：否 - （过滤条件）按照计费状态过滤，可取以下值
    StorageOnly：仅存储计费的实例
    Computing：计算和存储都计费的实例
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取【废弃字段】排序字段
                      * @return SortBy 【废弃字段】排序字段
+                     * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置【废弃字段】排序字段
-                     * @param SortBy 【废弃字段】排序字段
+                     * @param _sortBy 【废弃字段】排序字段
+                     * 
                      */
                     void SetSortBy(const std::string& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 

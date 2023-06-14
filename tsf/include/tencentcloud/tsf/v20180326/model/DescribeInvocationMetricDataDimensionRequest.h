@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取开始index
                      * @return Offset 开始index
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置开始index
-                     * @param Offset 开始index
+                     * @param _offset 开始index
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return Limit 分页大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页大小
-                     * @param Limit 分页大小
+                     * @param _limit 分页大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取聚合维度
                      * @return DimensionName 聚合维度
+                     * 
                      */
                     std::string GetDimensionName() const;
 
                     /**
                      * 设置聚合维度
-                     * @param DimensionName 聚合维度
+                     * @param _dimensionName 聚合维度
+                     * 
                      */
                     void SetDimensionName(const std::string& _dimensionName);
 
                     /**
                      * 判断参数 DimensionName 是否已赋值
                      * @return DimensionName 是否已赋值
+                     * 
                      */
                     bool DimensionNameHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取维度
                      * @return MetricDimensionValues 维度
+                     * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
                      * 设置维度
-                     * @param MetricDimensionValues 维度
+                     * @param _metricDimensionValues 维度
+                     * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
 
                     /**
                      * 判断参数 MetricDimensionValues 是否已赋值
                      * @return MetricDimensionValues 是否已赋值
+                     * 
                      */
                     bool MetricDimensionValuesHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取回调时的Body
                      * @return Body 回调时的Body
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置回调时的Body
-                     * @param Body 回调时的Body
+                     * @param _body 回调时的Body
+                     * 
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 回调时的Headers
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
                      * 设置回调时的Headers
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Headers 回调时的Headers
+                     * @param _headers 回调时的Headers
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
+                     * 
                      */
                     bool HeadersHasBeenSet() const;
 

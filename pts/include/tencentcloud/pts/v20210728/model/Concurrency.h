@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stages 多阶段配置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Stage> GetStages() const;
 
                     /**
                      * 设置多阶段配置数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Stages 多阶段配置数组
+                     * @param _stages 多阶段配置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStages(const std::vector<Stage>& _stages);
 
                     /**
                      * 判断参数 Stages 是否已赋值
                      * @return Stages 是否已赋值
+                     * 
                      */
                     bool StagesHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IterationCount 运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIterationCount() const;
 
                     /**
                      * 设置运行次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IterationCount 运行次数
+                     * @param _iterationCount 运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIterationCount(const int64_t& _iterationCount);
 
                     /**
                      * 判断参数 IterationCount 是否已赋值
                      * @return IterationCount 是否已赋值
+                     * 
                      */
                     bool IterationCountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxRequestsPerSecond 最大RPS
+                     * @param _maxRequestsPerSecond 最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
 
                     /**
                      * 判断参数 MaxRequestsPerSecond 是否已赋值
                      * @return MaxRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool MaxRequestsPerSecondHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GracefulStopSeconds 优雅终止任务的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGracefulStopSeconds() const;
 
                     /**
                      * 设置优雅终止任务的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GracefulStopSeconds 优雅终止任务的等待时间
+                     * @param _gracefulStopSeconds 优雅终止任务的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds);
 
                     /**
                      * 判断参数 GracefulStopSeconds 是否已赋值
                      * @return GracefulStopSeconds 是否已赋值
+                     * 
                      */
                     bool GracefulStopSecondsHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 资源数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResources() const;
 
                     /**
                      * 设置资源数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resources 资源数
+                     * @param _resources 资源数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResources(const int64_t& _resources);
 
                     /**
                      * 判断参数 Resources 是否已赋值
                      * @return Resources 是否已赋值
+                     * 
                      */
                     bool ResourcesHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取查询关键字（按照仓库名称搜索）
                      * @return SearchWord 查询关键字（按照仓库名称搜索）
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置查询关键字（按照仓库名称搜索）
-                     * @param SearchWord 查询关键字（按照仓库名称搜索）
+                     * @param _searchWord 查询关键字（按照仓库名称搜索）
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取查询起始偏移
                      * @return Offset 查询起始偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询起始偏移
-                     * @param Offset 查询起始偏移
+                     * @param _offset 查询起始偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量限制
                      * @return Limit 返回数量限制
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量限制
-                     * @param Limit 返回数量限制
+                     * @param _limit 返回数量限制
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取仓库类型（默认仓库：default，私有仓库：private）
                      * @return RepositoryType 仓库类型（默认仓库：default，私有仓库：private）
+                     * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置仓库类型（默认仓库：default，私有仓库：private）
-                     * @param RepositoryType 仓库类型（默认仓库：default，私有仓库：private）
+                     * @param _repositoryType 仓库类型（默认仓库：default，私有仓库：private）
+                     * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
 
                     /**
                      * 判断参数 RepositoryType 是否已赋值
                      * @return RepositoryType 是否已赋值
+                     * 
                      */
                     bool RepositoryTypeHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
                      * @return Type 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
-                     * @param Type 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * @param _type 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取监控统计数据粒度，可选值：60、3600、86400，分别对应1分钟、1小时、1天
                      * @return Period 监控统计数据粒度，可选值：60、3600、86400，分别对应1分钟、1小时、1天
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置监控统计数据粒度，可选值：60、3600、86400，分别对应1分钟、1小时、1天
-                     * @param Period 监控统计数据粒度，可选值：60、3600、86400，分别对应1分钟、1小时、1天
+                     * @param _period 监控统计数据粒度，可选值：60、3600、86400，分别对应1分钟、1小时、1天
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间，默认为当天的 00:00:00
                      * @return StartTime 查询开始时间，默认为当天的 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，默认为当天的 00:00:00
-                     * @param StartTime 查询开始时间，默认为当天的 00:00:00
+                     * @param _startTime 查询开始时间，默认为当天的 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，默认为当前时间
                      * @return EndTime 查询结束时间，默认为当前时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，默认为当前时间
-                     * @param EndTime 查询结束时间，默认为当前时间
+                     * @param _endTime 查询结束时间，默认为当前时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

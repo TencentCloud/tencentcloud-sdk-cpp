@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取总实例个数
                      * @return TotalCount 总实例个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Registries 实例信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Registry> GetRegistries() const;
 
                     /**
                      * 判断参数 Registries 是否已赋值
                      * @return Registries 是否已赋值
+                     * 
                      */
                     bool RegistriesHasBeenSet() const;
 

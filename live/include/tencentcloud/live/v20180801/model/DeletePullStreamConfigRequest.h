@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return ConfigId 配置 ID。
 1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
 2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
+                     * 
                      */
                     std::string GetConfigId() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置配置 ID。
 1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
 2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
-                     * @param ConfigId 配置 ID。
+                     * @param _configId 配置 ID。
 1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
 2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 

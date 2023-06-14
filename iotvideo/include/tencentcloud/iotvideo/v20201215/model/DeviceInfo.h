@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备是否在线，0不在线，1在线，2获取失败，3未激活
                      * @return Online 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置设备是否在线，0不在线，1在线，2获取失败，3未激活
-                     * @param Online 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     * @param _online 设备是否在线，0不在线，1在线，2获取失败，3未激活
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
                     /**
                      * 获取设备最后上线时间
                      * @return LoginTime 设备最后上线时间
+                     * 
                      */
                     uint64_t GetLoginTime() const;
 
                     /**
                      * 设置设备最后上线时间
-                     * @param LoginTime 设备最后上线时间
+                     * @param _loginTime 设备最后上线时间
+                     * 
                      */
                     void SetLoginTime(const uint64_t& _loginTime);
 
                     /**
                      * 判断参数 LoginTime 是否已赋值
                      * @return LoginTime 是否已赋值
+                     * 
                      */
                     bool LoginTimeHasBeenSet() const;
 
                     /**
                      * 获取设备密钥
                      * @return DevicePsk 设备密钥
+                     * 
                      */
                     std::string GetDevicePsk() const;
 
                     /**
                      * 设置设备密钥
-                     * @param DevicePsk 设备密钥
+                     * @param _devicePsk 设备密钥
+                     * 
                      */
                     void SetDevicePsk(const std::string& _devicePsk);
 
                     /**
                      * 判断参数 DevicePsk 是否已赋值
                      * @return DevicePsk 是否已赋值
+                     * 
                      */
                     bool DevicePskHasBeenSet() const;
 
                     /**
                      * 获取设备启用状态 0为停用 1为可用
                      * @return EnableState 设备启用状态 0为停用 1为可用
+                     * 
                      */
                     uint64_t GetEnableState() const;
 
                     /**
                      * 设置设备启用状态 0为停用 1为可用
-                     * @param EnableState 设备启用状态 0为停用 1为可用
+                     * @param _enableState 设备启用状态 0为停用 1为可用
+                     * 
                      */
                     void SetEnableState(const uint64_t& _enableState);
 
                     /**
                      * 判断参数 EnableState 是否已赋值
                      * @return EnableState 是否已赋值
+                     * 
                      */
                     bool EnableStateHasBeenSet() const;
 
                     /**
                      * 获取设备过期时间
                      * @return ExpireTime 设备过期时间
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置设备过期时间
-                     * @param ExpireTime 设备过期时间
+                     * @param _expireTime 设备过期时间
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -159,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogLevel 设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLogLevel() const;
 
                     /**
                      * 设置设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogLevel 设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
+                     * @param _logLevel 设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogLevel(const uint64_t& _logLevel);
 
                     /**
                      * 判断参数 LogLevel 是否已赋值
                      * @return LogLevel 是否已赋值
+                     * 
                      */
                     bool LogLevelHasBeenSet() const;
 

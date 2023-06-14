@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户ID，按应用号隔离
                      * @return UserId 用户ID，按应用号隔离
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

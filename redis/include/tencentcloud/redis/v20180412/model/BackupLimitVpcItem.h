@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备份文件的下载地址对应VPC 所属的地域。
                      * @return Region 备份文件的下载地址对应VPC 所属的地域。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置备份文件的下载地址对应VPC 所属的地域。
-                     * @param Region 备份文件的下载地址对应VPC 所属的地域。
+                     * @param _region 备份文件的下载地址对应VPC 所属的地域。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取备份文件下载地址的 VPC 列表。
                      * @return VpcList 备份文件下载地址的 VPC 列表。
+                     * 
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
                      * 设置备份文件下载地址的 VPC 列表。
-                     * @param VpcList 备份文件下载地址的 VPC 列表。
+                     * @param _vpcList 备份文件下载地址的 VPC 列表。
+                     * 
                      */
                     void SetVpcList(const std::vector<std::string>& _vpcList);
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 

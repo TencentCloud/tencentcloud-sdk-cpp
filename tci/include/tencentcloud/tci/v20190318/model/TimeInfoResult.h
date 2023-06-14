@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取持续时间，单位毫秒
                      * @return Duration 持续时间，单位毫秒
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置持续时间，单位毫秒
-                     * @param Duration 持续时间，单位毫秒
+                     * @param _duration 持续时间，单位毫秒
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳，单位毫秒
                      * @return EndTs 结束时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetEndTs() const;
 
                     /**
                      * 设置结束时间戳，单位毫秒
-                     * @param EndTs 结束时间戳，单位毫秒
+                     * @param _endTs 结束时间戳，单位毫秒
+                     * 
                      */
                     void SetEndTs(const int64_t& _endTs);
 
                     /**
                      * 判断参数 EndTs 是否已赋值
                      * @return EndTs 是否已赋值
+                     * 
                      */
                     bool EndTsHasBeenSet() const;
 
                     /**
                      * 获取开始时间戳，单位毫秒
                      * @return StartTs 开始时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetStartTs() const;
 
                     /**
                      * 设置开始时间戳，单位毫秒
-                     * @param StartTs 开始时间戳，单位毫秒
+                     * @param _startTs 开始时间戳，单位毫秒
+                     * 
                      */
                     void SetStartTs(const int64_t& _startTs);
 
                     /**
                      * 判断参数 StartTs 是否已赋值
                      * @return StartTs 是否已赋值
+                     * 
                      */
                     bool StartTsHasBeenSet() const;
 

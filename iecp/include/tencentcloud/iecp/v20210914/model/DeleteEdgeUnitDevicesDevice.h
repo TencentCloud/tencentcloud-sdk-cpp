@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return ProductId 无
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置无
-                     * @param ProductId 无
+                     * @param _productId 无
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DeviceName 无
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置无
-                     * @param DeviceName 无
+                     * @param _deviceName 无
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 

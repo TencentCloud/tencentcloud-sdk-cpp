@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNumber 证书可配置域名数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomainNumber() const;
 
                     /**
                      * 设置证书可配置域名数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainNumber 证书可配置域名数量。
+                     * @param _domainNumber 证书可配置域名数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainNumber(const std::string& _domainNumber);
 
                     /**
                      * 判断参数 DomainNumber 是否已赋值
                      * @return DomainNumber 是否已赋值
+                     * 
                      */
                     bool DomainNumberHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginCertificateId 原始证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginCertificateId() const;
 
                     /**
                      * 设置原始证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginCertificateId 原始证书 ID。
+                     * @param _originCertificateId 原始证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginCertificateId(const std::string& _originCertificateId);
 
                     /**
                      * 判断参数 OriginCertificateId 是否已赋值
                      * @return OriginCertificateId 是否已赋值
+                     * 
                      */
                     bool OriginCertificateIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplacedBy 重颁发证书原始 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReplacedBy() const;
 
                     /**
                      * 设置重颁发证书原始 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplacedBy 重颁发证书原始 ID。
+                     * @param _replacedBy 重颁发证书原始 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplacedBy(const std::string& _replacedBy);
 
                     /**
                      * 判断参数 ReplacedBy 是否已赋值
                      * @return ReplacedBy 是否已赋值
+                     * 
                      */
                     bool ReplacedByHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplacedFor 重颁发证书新 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReplacedFor() const;
 
                     /**
                      * 设置重颁发证书新 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplacedFor 重颁发证书新 ID。
+                     * @param _replacedFor 重颁发证书新 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplacedFor(const std::string& _replacedFor);
 
                     /**
                      * 判断参数 ReplacedFor 是否已赋值
                      * @return ReplacedFor 是否已赋值
+                     * 
                      */
                     bool ReplacedForHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewOrder 新订单证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRenewOrder() const;
 
                     /**
                      * 设置新订单证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewOrder 新订单证书 ID。
+                     * @param _renewOrder 新订单证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewOrder(const std::string& _renewOrder);
 
                     /**
                      * 判断参数 RenewOrder 是否已赋值
                      * @return RenewOrder 是否已赋值
+                     * 
                      */
                     bool RenewOrderHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SMCert 是否是国密证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSMCert() const;
 
                     /**
                      * 设置是否是国密证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SMCert 是否是国密证书
+                     * @param _sMCert 是否是国密证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSMCert(const int64_t& _sMCert);
 
                     /**
                      * 判断参数 SMCert 是否已赋值
                      * @return SMCert 是否已赋值
+                     * 
                      */
                     bool SMCertHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomIds 本次操作删除成功的房间ID列表。如果入参列表中某个房间ID的录制文件已经删除，则出参列表中无对应的房间ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetRoomIds() const;
 
                     /**
                      * 判断参数 RoomIds 是否已赋值
                      * @return RoomIds 是否已赋值
+                     * 
                      */
                     bool RoomIdsHasBeenSet() const;
 

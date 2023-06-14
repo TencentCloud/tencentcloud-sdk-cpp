@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取数据库数量
                      * @return Amount 数据库数量
+                     * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigrateDBSet 数据库名称数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMigrateDBSet() const;
 
                     /**
                      * 判断参数 MigrateDBSet 是否已赋值
                      * @return MigrateDBSet 是否已赋值
+                     * 
                      */
                     bool MigrateDBSetHasBeenSet() const;
 

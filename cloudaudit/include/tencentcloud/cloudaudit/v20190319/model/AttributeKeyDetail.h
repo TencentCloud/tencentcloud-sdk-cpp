@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取输入框类型
                      * @return LabelType 输入框类型
+                     * 
                      */
                     std::string GetLabelType() const;
 
                     /**
                      * 设置输入框类型
-                     * @param LabelType 输入框类型
+                     * @param _labelType 输入框类型
+                     * 
                      */
                     void SetLabelType(const std::string& _labelType);
 
                     /**
                      * 判断参数 LabelType 是否已赋值
                      * @return LabelType 是否已赋值
+                     * 
                      */
                     bool LabelTypeHasBeenSet() const;
 
                     /**
                      * 获取初始化展示
                      * @return Starter 初始化展示
+                     * 
                      */
                     std::string GetStarter() const;
 
                     /**
                      * 设置初始化展示
-                     * @param Starter 初始化展示
+                     * @param _starter 初始化展示
+                     * 
                      */
                     void SetStarter(const std::string& _starter);
 
                     /**
                      * 判断参数 Starter 是否已赋值
                      * @return Starter 是否已赋值
+                     * 
                      */
                     bool StarterHasBeenSet() const;
 
                     /**
                      * 获取展示排序
                      * @return Order 展示排序
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置展示排序
-                     * @param Order 展示排序
+                     * @param _order 展示排序
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取AttributeKey值
                      * @return Value AttributeKey值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置AttributeKey值
-                     * @param Value AttributeKey值
+                     * @param _value AttributeKey值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取中文标签
                      * @return Label 中文标签
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置中文标签
-                     * @param Label 中文标签
+                     * @param _label 中文标签
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewCertId 已替换的新证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRenewCertId() const;
 
                     /**
                      * 设置已替换的新证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewCertId 已替换的新证书ID
+                     * @param _renewCertId 已替换的新证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewCertId(const std::string& _renewCertId);
 
                     /**
                      * 判断参数 RenewCertId 是否已赋值
                      * @return RenewCertId 是否已赋值
+                     * 
                      */
                     bool RenewCertIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管
+                     * @param _resourceType 云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务扫描状态列表
                      * @return State 任务扫描状态列表
+                     * 
                      */
                     TaskStatus GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

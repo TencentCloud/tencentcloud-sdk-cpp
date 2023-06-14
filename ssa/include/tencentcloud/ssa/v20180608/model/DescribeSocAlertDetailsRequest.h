@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取告警id
                      * @return AlertId 告警id
+                     * 
                      */
                     std::string GetAlertId() const;
 
                     /**
                      * 设置告警id
-                     * @param AlertId 告警id
+                     * @param _alertId 告警id
+                     * 
                      */
                     void SetAlertId(const std::string& _alertId);
 
                     /**
                      * 判断参数 AlertId 是否已赋值
                      * @return AlertId 是否已赋值
+                     * 
                      */
                     bool AlertIdHasBeenSet() const;
 
                     /**
                      * 获取告警时间，取Timestamp字段
                      * @return AlertTimestamp 告警时间，取Timestamp字段
+                     * 
                      */
                     std::string GetAlertTimestamp() const;
 
                     /**
                      * 设置告警时间，取Timestamp字段
-                     * @param AlertTimestamp 告警时间，取Timestamp字段
+                     * @param _alertTimestamp 告警时间，取Timestamp字段
+                     * 
                      */
                     void SetAlertTimestamp(const std::string& _alertTimestamp);
 
                     /**
                      * 判断参数 AlertTimestamp 是否已赋值
                      * @return AlertTimestamp 是否已赋值
+                     * 
                      */
                     bool AlertTimestampHasBeenSet() const;
 

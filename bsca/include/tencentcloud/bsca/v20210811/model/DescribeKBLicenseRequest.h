@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取License表达式
                      * @return LicenseExpression License表达式
+                     * 
                      */
                     std::string GetLicenseExpression() const;
 
                     /**
                      * 设置License表达式
-                     * @param LicenseExpression License表达式
+                     * @param _licenseExpression License表达式
+                     * 
                      */
                     void SetLicenseExpression(const std::string& _licenseExpression);
 
                     /**
                      * 判断参数 LicenseExpression 是否已赋值
                      * @return LicenseExpression 是否已赋值
+                     * 
                      */
                     bool LicenseExpressionHasBeenSet() const;
 

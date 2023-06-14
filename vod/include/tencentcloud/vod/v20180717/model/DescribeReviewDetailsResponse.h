@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取发起内容智能识别次数。
                      * @return TotalCount 发起内容智能识别次数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取内容智能识别总时长。
                      * @return TotalDuration 内容智能识别总时长。
+                     * 
                      */
                     int64_t GetTotalDuration() const;
 
                     /**
                      * 判断参数 TotalDuration 是否已赋值
                      * @return TotalDuration 是否已赋值
+                     * 
                      */
                     bool TotalDurationHasBeenSet() const;
 
                     /**
                      * 获取内容智能识别时长统计数据，每天一个数据。
                      * @return Data 内容智能识别时长统计数据，每天一个数据。
+                     * 
                      */
                     std::vector<StatDataItem> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
@@ -60,96 +62,112 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取资源的IP
                      * @return Ip 资源的IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
                      * @return MetricName 指标，取值[bps(攻击流量带宽，pps(攻击包速率))]
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
                      * @return Period 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取统计开始时间
                      * @return StartTime 统计开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取统计结束时间
                      * @return EndTime 统计结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取值数组，攻击流量带宽单位为Mbps，包速率单位为pps
                      * @return Data 值数组，攻击流量带宽单位为Mbps，包速率单位为pps
+                     * 
                      */
                     std::vector<uint64_t> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取值个数
                      * @return Count 值个数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

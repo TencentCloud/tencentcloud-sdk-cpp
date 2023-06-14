@@ -53,6 +53,7 @@ namespace TencentCloud
 <li>Malware：发现木马文件</li>
 <li>NonlocalLogin：发现异地登录行为</li>
 <li>CrackSuccess：被暴力破解成功</li>
+                     * 
                      */
                     std::string GetAttribute() const;
 
@@ -62,17 +63,19 @@ namespace TencentCloud
 <li>Malware：发现木马文件</li>
 <li>NonlocalLogin：发现异地登录行为</li>
 <li>CrackSuccess：被暴力破解成功</li>
-                     * @param Attribute 告警项目。
+                     * @param _attribute 告警项目。
 <li>Offline：防护软件离线</li>
 <li>Malware：发现木马文件</li>
 <li>NonlocalLogin：发现异地登录行为</li>
 <li>CrackSuccess：被暴力破解成功</li>
+                     * 
                      */
                     void SetAttribute(const std::string& _attribute);
 
                     /**
                      * 判断参数 Attribute 是否已赋值
                      * @return Attribute 是否已赋值
+                     * 
                      */
                     bool AttributeHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return Value 告警项目属性。
 <li>CLOSE：关闭</li>
 <li>OPEN：打开</li>
+                     * 
                      */
                     std::string GetValue() const;
 
@@ -90,15 +94,17 @@ namespace TencentCloud
                      * 设置告警项目属性。
 <li>CLOSE：关闭</li>
 <li>OPEN：打开</li>
-                     * @param Value 告警项目属性。
+                     * @param _value 告警项目属性。
 <li>CLOSE：关闭</li>
 <li>OPEN：打开</li>
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

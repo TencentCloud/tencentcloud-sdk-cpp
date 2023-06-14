@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取文本全文识别结果集。
                      * @return SegmentSet 文本全文识别结果集。
+                     * 
                      */
                     std::vector<AiRecognitionTaskOcrFullTextSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置文本全文识别结果集。
-                     * @param SegmentSet 文本全文识别结果集。
+                     * @param _segmentSet 文本全文识别结果集。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<AiRecognitionTaskOcrFullTextSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

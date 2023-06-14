@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取歌曲ID
                      * @return ItemId 歌曲ID
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置歌曲ID
-                     * @param ItemId 歌曲ID
+                     * @param _itemId 歌曲ID
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return SubItemType 格式，可选项，可不填写，默认值为：LRC-LRC。
 <li>LRC-LRC：歌词；</li>
 <li>JSON-ST：波形图。</li>
+                     * 
                      */
                     std::string GetSubItemType() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置格式，可选项，可不填写，默认值为：LRC-LRC。
 <li>LRC-LRC：歌词；</li>
 <li>JSON-ST：波形图。</li>
-                     * @param SubItemType 格式，可选项，可不填写，默认值为：LRC-LRC。
+                     * @param _subItemType 格式，可选项，可不填写，默认值为：LRC-LRC。
 <li>LRC-LRC：歌词；</li>
 <li>JSON-ST：波形图。</li>
+                     * 
                      */
                     void SetSubItemType(const std::string& _subItemType);
 
                     /**
                      * 判断参数 SubItemType 是否已赋值
                      * @return SubItemType 是否已赋值
+                     * 
                      */
                     bool SubItemTypeHasBeenSet() const;
 

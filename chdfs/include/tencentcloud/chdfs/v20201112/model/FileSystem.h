@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取资源所属用户AppId
                      * @return AppId 资源所属用户AppId
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置资源所属用户AppId
-                     * @param AppId 资源所属用户AppId
+                     * @param _appId 资源所属用户AppId
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统名称
                      * @return FileSystemName 文件系统名称
+                     * 
                      */
                     std::string GetFileSystemName() const;
 
                     /**
                      * 设置文件系统名称
-                     * @param FileSystemName 文件系统名称
+                     * @param _fileSystemName 文件系统名称
+                     * 
                      */
                     void SetFileSystemName(const std::string& _fileSystemName);
 
                     /**
                      * 判断参数 FileSystemName 是否已赋值
                      * @return FileSystemName 是否已赋值
+                     * 
                      */
                     bool FileSystemNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统描述
                      * @return Description 文件系统描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置文件系统描述
-                     * @param Description 文件系统描述
+                     * @param _description 文件系统描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取文件系统块大小（byte）
                      * @return BlockSize 文件系统块大小（byte）
+                     * 
                      */
                     uint64_t GetBlockSize() const;
 
                     /**
                      * 设置文件系统块大小（byte）
-                     * @param BlockSize 文件系统块大小（byte）
+                     * @param _blockSize 文件系统块大小（byte）
+                     * 
                      */
                     void SetBlockSize(const uint64_t& _blockSize);
 
                     /**
                      * 判断参数 BlockSize 是否已赋值
                      * @return BlockSize 是否已赋值
+                     * 
                      */
                     bool BlockSizeHasBeenSet() const;
 
                     /**
                      * 获取文件系统容量（byte）
                      * @return CapacityQuota 文件系统容量（byte）
+                     * 
                      */
                     uint64_t GetCapacityQuota() const;
 
                     /**
                      * 设置文件系统容量（byte）
-                     * @param CapacityQuota 文件系统容量（byte）
+                     * @param _capacityQuota 文件系统容量（byte）
+                     * 
                      */
                     void SetCapacityQuota(const uint64_t& _capacityQuota);
 
                     /**
                      * 判断参数 CapacityQuota 是否已赋值
                      * @return CapacityQuota 是否已赋值
+                     * 
                      */
                     bool CapacityQuotaHasBeenSet() const;
 
                     /**
                      * 获取文件系统状态（1：创建中；2：创建成功；3：创建失败）
                      * @return Status 文件系统状态（1：创建中；2：创建成功；3：创建失败）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置文件系统状态（1：创建中；2：创建成功；3：创建失败）
-                     * @param Status 文件系统状态（1：创建中；2：创建成功；3：创建失败）
+                     * @param _status 文件系统状态（1：创建中；2：创建成功；3：创建失败）
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取超级用户名列表
                      * @return SuperUsers 超级用户名列表
+                     * 
                      */
                     std::vector<std::string> GetSuperUsers() const;
 
                     /**
                      * 设置超级用户名列表
-                     * @param SuperUsers 超级用户名列表
+                     * @param _superUsers 超级用户名列表
+                     * 
                      */
                     void SetSuperUsers(const std::vector<std::string>& _superUsers);
 
                     /**
                      * 判断参数 SuperUsers 是否已赋值
                      * @return SuperUsers 是否已赋值
+                     * 
                      */
                     bool SuperUsersHasBeenSet() const;
 
                     /**
                      * 获取POSIX权限控制
                      * @return PosixAcl POSIX权限控制
+                     * 
                      */
                     bool GetPosixAcl() const;
 
                     /**
                      * 设置POSIX权限控制
-                     * @param PosixAcl POSIX权限控制
+                     * @param _posixAcl POSIX权限控制
+                     * 
                      */
                     void SetPosixAcl(const bool& _posixAcl);
 
                     /**
                      * 判断参数 PosixAcl 是否已赋值
                      * @return PosixAcl 是否已赋值
+                     * 
                      */
                     bool PosixAclHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableRanger 是否打开Ranger地址校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableRanger() const;
 
                     /**
                      * 设置是否打开Ranger地址校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableRanger 是否打开Ranger地址校验
+                     * @param _enableRanger 是否打开Ranger地址校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableRanger(const bool& _enableRanger);
 
                     /**
                      * 判断参数 EnableRanger 是否已赋值
                      * @return EnableRanger 是否已赋值
+                     * 
                      */
                     bool EnableRangerHasBeenSet() const;
 
@@ -271,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RangerServiceAddresses Ranger地址列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRangerServiceAddresses() const;
 
                     /**
                      * 设置Ranger地址列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RangerServiceAddresses Ranger地址列表
+                     * @param _rangerServiceAddresses Ranger地址列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRangerServiceAddresses(const std::vector<std::string>& _rangerServiceAddresses);
 
                     /**
                      * 判断参数 RangerServiceAddresses 是否已赋值
                      * @return RangerServiceAddresses 是否已赋值
+                     * 
                      */
                     bool RangerServiceAddressesHasBeenSet() const;
 

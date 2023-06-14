@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取异步任务ID。
                      * @return TaskId 异步任务ID。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN client 唯一ID
                      * @return SslVpnClientId SSL-VPN client 唯一ID
+                     * 
                      */
                     std::string GetSslVpnClientId() const;
 
                     /**
                      * 判断参数 SslVpnClientId 是否已赋值
                      * @return SslVpnClientId 是否已赋值
+                     * 
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 

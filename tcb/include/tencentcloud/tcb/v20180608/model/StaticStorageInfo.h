@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaticDomain 静态CDN域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStaticDomain() const;
 
                     /**
                      * 设置静态CDN域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StaticDomain 静态CDN域名
+                     * @param _staticDomain 静态CDN域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStaticDomain(const std::string& _staticDomain);
 
                     /**
                      * 判断参数 StaticDomain 是否已赋值
                      * @return StaticDomain 是否已赋值
+                     * 
                      */
                     bool StaticDomainHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDirName 静态CDN默认文件夹，当前为根目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultDirName() const;
 
                     /**
                      * 设置静态CDN默认文件夹，当前为根目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultDirName 静态CDN默认文件夹，当前为根目录
+                     * @param _defaultDirName 静态CDN默认文件夹，当前为根目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultDirName(const std::string& _defaultDirName);
 
                     /**
                      * 判断参数 DefaultDirName 是否已赋值
                      * @return DefaultDirName 是否已赋值
+                     * 
                      */
                     bool DefaultDirNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源状态(process/online/offline/init)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置资源状态(process/online/offline/init)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源状态(process/online/offline/init)
+                     * @param _status 资源状态(process/online/offline/init)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region cos所属区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置cos所属区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region cos所属区域
+                     * @param _region cos所属区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket bucket信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置bucket信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket bucket信息
+                     * @param _bucket bucket信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取定时伸缩策略名称
                      * @return Name 定时伸缩策略名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置定时伸缩策略名称
-                     * @param Name 定时伸缩策略名称
+                     * @param _name 定时伸缩策略名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 * * * （每天）
 * * 0-3 （每周日到周三）
 1,11,21 * *（每个月1号，11号，21号）
+                     * 
                      */
                     std::string GetPeriod() const;
 
@@ -88,72 +92,83 @@ namespace TencentCloud
 * * * （每天）
 * * 0-3 （每周日到周三）
 1,11,21 * *（每个月1号，11号，21号）
-                     * @param Period 策略周期
+                     * @param _period 策略周期
 * * *，三个范围，第一个是天，第二个是月，第三个是周，中间用空格隔开
 例子：
 * * * （每天）
 * * 0-3 （每周日到周三）
 1,11,21 * *（每个月1号，11号，21号）
+                     * 
                      */
                     void SetPeriod(const std::string& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取定时伸缩策略明细
                      * @return Schedules 定时伸缩策略明细
+                     * 
                      */
                     std::vector<CronHorizontalAutoscalerSchedule> GetSchedules() const;
 
                     /**
                      * 设置定时伸缩策略明细
-                     * @param Schedules 定时伸缩策略明细
+                     * @param _schedules 定时伸缩策略明细
+                     * 
                      */
                     void SetSchedules(const std::vector<CronHorizontalAutoscalerSchedule>& _schedules);
 
                     /**
                      * 判断参数 Schedules 是否已赋值
                      * @return Schedules 是否已赋值
+                     * 
                      */
                     bool SchedulesHasBeenSet() const;
 
                     /**
                      * 获取是否启用
                      * @return Enabled 是否启用
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enabled 是否启用
+                     * @param _enabled 是否启用
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取策略优先级，值越大优先级越高，0为最小值
                      * @return Priority 策略优先级，值越大优先级越高，0为最小值
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置策略优先级，值越大优先级越高，0为最小值
-                     * @param Priority 策略优先级，值越大优先级越高，0为最小值
+                     * @param _priority 策略优先级，值越大优先级越高，0为最小值
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

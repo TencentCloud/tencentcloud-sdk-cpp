@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取namespace名称
                      * @return Name namespace名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置namespace名称
-                     * @param Name namespace名称
+                     * @param _name namespace名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取secret列表
                      * @return SecretList secret列表
+                     * 
                      */
                     std::vector<TkeSecretDetail> GetSecretList() const;
 
                     /**
                      * 设置secret列表
-                     * @param SecretList secret列表
+                     * @param _secretList secret列表
+                     * 
                      */
                     void SetSecretList(const std::vector<TkeSecretDetail>& _secretList);
 
                     /**
                      * 判断参数 SecretList 是否已赋值
                      * @return SecretList 是否已赋值
+                     * 
                      */
                     bool SecretListHasBeenSet() const;
 

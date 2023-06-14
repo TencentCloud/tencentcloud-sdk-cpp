@@ -137,6 +137,7 @@ namespace TencentCloud
 <li> na-ashburn-2 </li>
 <li> ap-nanjing-1 </li>
 <li> ap-nanjing-2 </li>
+                     * 
                      */
                     std::string GetZone() const;
 
@@ -186,7 +187,7 @@ namespace TencentCloud
 <li> na-ashburn-2 </li>
 <li> ap-nanjing-1 </li>
 <li> ap-nanjing-2 </li>
-                     * @param Zone 可用区名称，例如，ap-guangzhou-3
+                     * @param _zone 可用区名称，例如，ap-guangzhou-3
 全网可用区名称如下：
 <li> ap-chongqing-1 </li>
 <li> ap-seoul-1 </li>
@@ -231,66 +232,77 @@ namespace TencentCloud
 <li> na-ashburn-2 </li>
 <li> ap-nanjing-1 </li>
 <li> ap-nanjing-2 </li>
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区描述，例如，广州三区
                      * @return ZoneName 可用区描述，例如，广州三区
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区描述，例如，广州三区
-                     * @param ZoneName 可用区描述，例如，广州三区
+                     * @param _zoneName 可用区描述，例如，广州三区
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取可用区ID
                      * @return ZoneId 可用区ID
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
                      * @return ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     std::string GetZoneState() const;
 
                     /**
                      * 设置可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-                     * @param ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * @param _zoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     void SetZoneState(const std::string& _zoneState);
 
                     /**
                      * 判断参数 ZoneState 是否已赋值
                      * @return ZoneState 是否已赋值
+                     * 
                      */
                     bool ZoneStateHasBeenSet() const;
 
@@ -299,20 +311,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentZone 父级zone
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentZone() const;
 
                     /**
                      * 设置父级zone
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentZone 父级zone
+                     * @param _parentZone 父级zone
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentZone(const std::string& _parentZone);
 
                     /**
                      * 判断参数 ParentZone 是否已赋值
                      * @return ParentZone 是否已赋值
+                     * 
                      */
                     bool ParentZoneHasBeenSet() const;
 
@@ -321,20 +336,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentZoneId 父级可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentZoneId() const;
 
                     /**
                      * 设置父级可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentZoneId 父级可用区ID
+                     * @param _parentZoneId 父级可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentZoneId(const std::string& _parentZoneId);
 
                     /**
                      * 判断参数 ParentZoneId 是否已赋值
                      * @return ParentZoneId 是否已赋值
+                     * 
                      */
                     bool ParentZoneIdHasBeenSet() const;
 
@@ -343,20 +361,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentZoneName 父级可用区描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentZoneName() const;
 
                     /**
                      * 设置父级可用区描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentZoneName 父级可用区描述
+                     * @param _parentZoneName 父级可用区描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentZoneName(const std::string& _parentZoneName);
 
                     /**
                      * 判断参数 ParentZoneName 是否已赋值
                      * @return ParentZoneName 是否已赋值
+                     * 
                      */
                     bool ParentZoneNameHasBeenSet() const;
 
@@ -365,20 +386,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneType zone类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneType() const;
 
                     /**
                      * 设置zone类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneType zone类型
+                     * @param _zoneType zone类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneType(const std::string& _zoneType);
 
                     /**
                      * 判断参数 ZoneType 是否已赋值
                      * @return ZoneType 是否已赋值
+                     * 
                      */
                     bool ZoneTypeHasBeenSet() const;
 
@@ -387,20 +411,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineRoomTypeMC 控制台类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachineRoomTypeMC() const;
 
                     /**
                      * 设置控制台类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineRoomTypeMC 控制台类型
+                     * @param _machineRoomTypeMC 控制台类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineRoomTypeMC(const std::string& _machineRoomTypeMC);
 
                     /**
                      * 判断参数 MachineRoomTypeMC 是否已赋值
                      * @return MachineRoomTypeMC 是否已赋值
+                     * 
                      */
                     bool MachineRoomTypeMCHasBeenSet() const;
 
@@ -409,20 +436,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIdMC 和ZoneId一样，适用于控制台调用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneIdMC() const;
 
                     /**
                      * 设置和ZoneId一样，适用于控制台调用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneIdMC 和ZoneId一样，适用于控制台调用
+                     * @param _zoneIdMC 和ZoneId一样，适用于控制台调用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneIdMC(const std::string& _zoneIdMC);
 
                     /**
                      * 判断参数 ZoneIdMC 是否已赋值
                      * @return ZoneIdMC 是否已赋值
+                     * 
                      */
                     bool ZoneIdMCHasBeenSet() const;
 

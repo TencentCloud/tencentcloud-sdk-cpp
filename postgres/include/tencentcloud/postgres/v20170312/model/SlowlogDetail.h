@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取花费总时间
                      * @return TotalTime 花费总时间
+                     * 
                      */
                     double GetTotalTime() const;
 
                     /**
                      * 设置花费总时间
-                     * @param TotalTime 花费总时间
+                     * @param _totalTime 花费总时间
+                     * 
                      */
                     void SetTotalTime(const double& _totalTime);
 
                     /**
                      * 判断参数 TotalTime 是否已赋值
                      * @return TotalTime 是否已赋值
+                     * 
                      */
                     bool TotalTimeHasBeenSet() const;
 
                     /**
                      * 获取调用总次数
                      * @return TotalCalls 调用总次数
+                     * 
                      */
                     int64_t GetTotalCalls() const;
 
                     /**
                      * 设置调用总次数
-                     * @param TotalCalls 调用总次数
+                     * @param _totalCalls 调用总次数
+                     * 
                      */
                     void SetTotalCalls(const int64_t& _totalCalls);
 
                     /**
                      * 判断参数 TotalCalls 是否已赋值
                      * @return TotalCalls 是否已赋值
+                     * 
                      */
                     bool TotalCallsHasBeenSet() const;
 
                     /**
                      * 获取脱敏后的慢SQL列表
                      * @return NormalQueries 脱敏后的慢SQL列表
+                     * 
                      */
                     std::vector<NormalQueryItem> GetNormalQueries() const;
 
                     /**
                      * 设置脱敏后的慢SQL列表
-                     * @param NormalQueries 脱敏后的慢SQL列表
+                     * @param _normalQueries 脱敏后的慢SQL列表
+                     * 
                      */
                     void SetNormalQueries(const std::vector<NormalQueryItem>& _normalQueries);
 
                     /**
                      * 判断参数 NormalQueries 是否已赋值
                      * @return NormalQueries 是否已赋值
+                     * 
                      */
                     bool NormalQueriesHasBeenSet() const;
 

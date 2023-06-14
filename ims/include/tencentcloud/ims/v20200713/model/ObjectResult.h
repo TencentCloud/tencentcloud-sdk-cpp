@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取场景识别结果
                      * @return Scene 场景识别结果
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景识别结果
-                     * @param Scene 场景识别结果
+                     * @param _scene 场景识别结果
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      * @return Suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-                     * @param Suggestion 建议您拿到判断结果后的执行操作。
+                     * @param _suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 以及令人反感、不安全或不适宜的内容类型。
                      * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
 以及令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
 以及令人反感、不安全或不适宜的内容类型。
-                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
+                     * @param _label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
 以及令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -114,38 +123,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 子标签检测结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置子标签检测结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabel 子标签检测结果
+                     * @param _subLabel 子标签检测结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
 
                     /**
                      * 判断参数 SubLabel 是否已赋值
                      * @return SubLabel 是否已赋值
+                     * 
                      */
                     bool SubLabelHasBeenSet() const;
 
                     /**
                      * 获取该标签模型命中的分值
                      * @return Score 该标签模型命中的分值
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置该标签模型命中的分值
-                     * @param Score 该标签模型命中的分值
+                     * @param _score 该标签模型命中的分值
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Names 实体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置实体名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Names 实体名称
+                     * @param _names 实体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 实体检测结果明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ObjectDetail> GetDetails() const;
 
                     /**
                      * 设置实体检测结果明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Details 实体检测结果明细
+                     * @param _details 实体检测结果明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetails(const std::vector<ObjectDetail>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id CFSTurbo实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置CFSTurbo实例id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id CFSTurbo实例id
+                     * @param _id CFSTurbo实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path CFSTurbo路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置CFSTurbo路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path CFSTurbo路径
+                     * @param _path CFSTurbo路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

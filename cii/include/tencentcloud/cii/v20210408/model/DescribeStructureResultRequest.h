@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取创建任务时返回的主任务ID
                      * @return MainTaskId 创建任务时返回的主任务ID
+                     * 
                      */
                     std::string GetMainTaskId() const;
 
                     /**
                      * 设置创建任务时返回的主任务ID
-                     * @param MainTaskId 创建任务时返回的主任务ID
+                     * @param _mainTaskId 创建任务时返回的主任务ID
+                     * 
                      */
                     void SetMainTaskId(const std::string& _mainTaskId);
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
                      * @return MainTaskId 是否已赋值
+                     * 
                      */
                     bool MainTaskIdHasBeenSet() const;
 

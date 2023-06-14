@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队ID
                      * @return FleetId 服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队ID
-                     * @param FleetId 服务器舰队ID
+                     * @param _fleetId 服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取状态过滤条件，取值：ACTIVE表示活跃
                      * @return StatusFilter 状态过滤条件，取值：ACTIVE表示活跃
+                     * 
                      */
                     std::string GetStatusFilter() const;
 
                     /**
                      * 设置状态过滤条件，取值：ACTIVE表示活跃
-                     * @param StatusFilter 状态过滤条件，取值：ACTIVE表示活跃
+                     * @param _statusFilter 状态过滤条件，取值：ACTIVE表示活跃
+                     * 
                      */
                     void SetStatusFilter(const std::string& _statusFilter);
 
                     /**
                      * 判断参数 StatusFilter 是否已赋值
                      * @return StatusFilter 是否已赋值
+                     * 
                      */
                     bool StatusFilterHasBeenSet() const;
 
                     /**
                      * 获取返回结果偏移，最小值0
                      * @return Offset 返回结果偏移，最小值0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置返回结果偏移，最小值0
-                     * @param Offset 返回结果偏移，最小值0
+                     * @param _offset 返回结果偏移，最小值0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取结果返回最大数量，最小值0，最大值100
                      * @return Limit 结果返回最大数量，最小值0，最大值100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置结果返回最大数量，最小值0，最大值100
-                     * @param Limit 结果返回最大数量，最小值0，最大值100
+                     * @param _limit 结果返回最大数量，最小值0，最大值100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

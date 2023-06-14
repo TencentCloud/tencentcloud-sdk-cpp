@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取列表总条数
                      * @return Total 列表总条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取列表内容
                      * @return Sessions 列表内容
+                     * 
                      */
                     std::vector<PSTNSessionInfo> GetSessions() const;
 
                     /**
                      * 判断参数 Sessions 是否已赋值
                      * @return Sessions 是否已赋值
+                     * 
                      */
                     bool SessionsHasBeenSet() const;
 

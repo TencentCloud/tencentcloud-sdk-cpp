@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取DID的具体信息
                      * @return Did DID的具体信息
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 
                     /**
                      * 获取公钥
                      * @return PublicKey 公钥
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 

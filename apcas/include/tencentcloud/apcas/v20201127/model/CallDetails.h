@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的总条数
                      * @return TotalCount 符合条件的总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的总条数
-                     * @param TotalCount 符合条件的总条数
+                     * @param _totalCount 符合条件的总条数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取调用明细数组
                      * @return CallDetailSet 调用明细数组
+                     * 
                      */
                     std::vector<CallDetailItem> GetCallDetailSet() const;
 
                     /**
                      * 设置调用明细数组
-                     * @param CallDetailSet 调用明细数组
+                     * @param _callDetailSet 调用明细数组
+                     * 
                      */
                     void SetCallDetailSet(const std::vector<CallDetailItem>& _callDetailSet);
 
                     /**
                      * 判断参数 CallDetailSet 是否已赋值
                      * @return CallDetailSet 是否已赋值
+                     * 
                      */
                     bool CallDetailSetHasBeenSet() const;
 

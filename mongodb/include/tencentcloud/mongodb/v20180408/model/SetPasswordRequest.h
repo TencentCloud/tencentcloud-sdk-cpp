@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例账户名称
                      * @return UserName 实例账户名称
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置实例账户名称
-                     * @param UserName 实例账户名称
+                     * @param _userName 实例账户名称
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
                      * @return Password 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
-                     * @param Password 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * @param _password 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

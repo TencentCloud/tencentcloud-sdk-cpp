@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则 ID 列表
                      * @return RuleIds 规则 ID 列表
+                     * 
                      */
                     std::vector<std::string> GetRuleIds() const;
 
                     /**
                      * 设置规则 ID 列表
-                     * @param RuleIds 规则 ID 列表
+                     * @param _ruleIds 规则 ID 列表
+                     * 
                      */
                     void SetRuleIds(const std::vector<std::string>& _ruleIds);
 
                     /**
                      * 判断参数 RuleIds 是否已赋值
                      * @return RuleIds 是否已赋值
+                     * 
                      */
                     bool RuleIdsHasBeenSet() const;
 
                     /**
                      * 获取Prometheus 实例 ID
                      * @return InstanceId Prometheus 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID
-                     * @param InstanceId Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
 默认状态码为 2 启用。
+                     * 
                      */
                     int64_t GetRuleState() const;
 
@@ -95,16 +102,18 @@ namespace TencentCloud
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
 默认状态码为 2 启用。
-                     * @param RuleState 规则状态码，取值如下：
+                     * @param _ruleState 规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
 默认状态码为 2 启用。
+                     * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
 
                     /**
                      * 判断参数 RuleState 是否已赋值
                      * @return RuleState 是否已赋值
+                     * 
                      */
                     bool RuleStateHasBeenSet() const;
 

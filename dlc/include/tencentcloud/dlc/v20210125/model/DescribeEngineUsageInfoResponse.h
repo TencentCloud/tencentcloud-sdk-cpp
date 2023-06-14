@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群总规格
                      * @return Total 集群总规格
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已占用集群规格
                      * @return Used 已占用集群规格
+                     * 
                      */
                     int64_t GetUsed() const;
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取剩余集群规格
                      * @return Available 剩余集群规格
+                     * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
                      * 判断参数 Available 是否已赋值
                      * @return Available 是否已赋值
+                     * 
                      */
                     bool AvailableHasBeenSet() const;
 

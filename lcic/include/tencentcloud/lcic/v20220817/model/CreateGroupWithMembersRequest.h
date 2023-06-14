@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待创建群组名称
                      * @return GroupName 待创建群组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置待创建群组名称
-                     * @param GroupName 待创建群组名称
+                     * @param _groupName 待创建群组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取低代码平台应用ID
                      * @return SdkAppId 低代码平台应用ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台应用ID
-                     * @param SdkAppId 低代码平台应用ID
+                     * @param _sdkAppId 低代码平台应用ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取默认绑定主讲老师ID
                      * @return TeacherId 默认绑定主讲老师ID
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置默认绑定主讲老师ID
-                     * @param TeacherId 默认绑定主讲老师ID
+                     * @param _teacherId 默认绑定主讲老师ID
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
                     /**
                      * 获取群组成员列表,一次性最多200个
                      * @return MemberIds 群组成员列表,一次性最多200个
+                     * 
                      */
                     std::vector<std::string> GetMemberIds() const;
 
                     /**
                      * 设置群组成员列表,一次性最多200个
-                     * @param MemberIds 群组成员列表,一次性最多200个
+                     * @param _memberIds 群组成员列表,一次性最多200个
+                     * 
                      */
                     void SetMemberIds(const std::vector<std::string>& _memberIds);
 
                     /**
                      * 判断参数 MemberIds 是否已赋值
                      * @return MemberIds 是否已赋值
+                     * 
                      */
                     bool MemberIdsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备状态（inactive, online, offline）
                      * @return Status 设备状态（inactive, online, offline）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置设备状态（inactive, online, offline）
-                     * @param Status 设备状态（inactive, online, offline）
+                     * @param _status 设备状态（inactive, online, offline）
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstOnline 首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFirstOnline() const;
 
                     /**
                      * 设置首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstOnline 首次上线时间
+                     * @param _firstOnline 首次上线时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstOnline(const std::string& _firstOnline);
 
                     /**
                      * 判断参数 FirstOnline 是否已赋值
                      * @return FirstOnline 是否已赋值
+                     * 
                      */
                     bool FirstOnlineHasBeenSet() const;
 
@@ -109,38 +118,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOnline 最后上线时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastOnline() const;
 
                     /**
                      * 设置最后上线时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastOnline 最后上线时间
+                     * @param _lastOnline 最后上线时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastOnline(const std::string& _lastOnline);
 
                     /**
                      * 判断参数 LastOnline 是否已赋值
                      * @return LastOnline 是否已赋值
+                     * 
                      */
                     bool LastOnlineHasBeenSet() const;
 
                     /**
                      * 获取上线次数
                      * @return OnlineTimes 上线次数
+                     * 
                      */
                     uint64_t GetOnlineTimes() const;
 
                     /**
                      * 设置上线次数
-                     * @param OnlineTimes 上线次数
+                     * @param _onlineTimes 上线次数
+                     * 
                      */
                     void SetOnlineTimes(const uint64_t& _onlineTimes);
 
                     /**
                      * 判断参数 OnlineTimes 是否已赋值
                      * @return OnlineTimes 是否已赋值
+                     * 
                      */
                     bool OnlineTimesHasBeenSet() const;
 

@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return ImageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -88,35 +92,40 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。( 中国地区之外不支持这个字段 )
+                     * @param _imageUrl 图片的 Url 地址。( 中国地区之外不支持这个字段 )
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
                     /**
                      * 获取是否返回图片，默认false
                      * @return RetImage 是否返回图片，默认false
+                     * 
                      */
                     bool GetRetImage() const;
 
                     /**
                      * 设置是否返回图片，默认false
-                     * @param RetImage 是否返回图片，默认false
+                     * @param _retImage 是否返回图片，默认false
+                     * 
                      */
                     void SetRetImage(const bool& _retImage);
 
                     /**
                      * 判断参数 RetImage 是否已赋值
                      * @return RetImage 是否已赋值
+                     * 
                      */
                     bool RetImageHasBeenSet() const;
 

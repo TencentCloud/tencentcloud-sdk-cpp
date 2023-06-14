@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取默认0;   1： 按照作业版本创建时间降序
                      * @return DESCByJobConfigCreateTime 默认0;   1： 按照作业版本创建时间降序
+                     * 
                      */
                     int64_t GetDESCByJobConfigCreateTime() const;
 
                     /**
                      * 设置默认0;   1： 按照作业版本创建时间降序
-                     * @param DESCByJobConfigCreateTime 默认0;   1： 按照作业版本创建时间降序
+                     * @param _dESCByJobConfigCreateTime 默认0;   1： 按照作业版本创建时间降序
+                     * 
                      */
                     void SetDESCByJobConfigCreateTime(const int64_t& _dESCByJobConfigCreateTime);
 
                     /**
                      * 判断参数 DESCByJobConfigCreateTime 是否已赋值
                      * @return DESCByJobConfigCreateTime 是否已赋值
+                     * 
                      */
                     bool DESCByJobConfigCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认为20，最大值为100
                      * @return Limit 分页大小，默认为20，最大值为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，默认为20，最大值为100
-                     * @param Limit 分页大小，默认为20，最大值为100
+                     * @param _limit 分页大小，默认为20，最大值为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源版本号
                      * @return ResourceConfigVersion 资源版本号
+                     * 
                      */
                     int64_t GetResourceConfigVersion() const;
 
                     /**
                      * 设置资源版本号
-                     * @param ResourceConfigVersion 资源版本号
+                     * @param _resourceConfigVersion 资源版本号
+                     * 
                      */
                     void SetResourceConfigVersion(const int64_t& _resourceConfigVersion);
 
                     /**
                      * 判断参数 ResourceConfigVersion 是否已赋值
                      * @return ResourceConfigVersion 是否已赋值
+                     * 
                      */
                     bool ResourceConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

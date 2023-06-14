@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取导入目标实例ID
                      * @return InstanceId 导入目标实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置导入目标实例ID
-                     * @param InstanceId 导入目标实例ID
+                     * @param _instanceId 导入目标实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取备份导入任务ID，由CreateBackupMigration接口返回
                      * @return BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
+                     * 
                      */
                     std::string GetBackupMigrationId() const;
 
                     /**
                      * 设置备份导入任务ID，由CreateBackupMigration接口返回
-                     * @param BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
+                     * @param _backupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
+                     * 
                      */
                     void SetBackupMigrationId(const std::string& _backupMigrationId);
 
                     /**
                      * 判断参数 BackupMigrationId 是否已赋值
                      * @return BackupMigrationId 是否已赋值
+                     * 
                      */
                     bool BackupMigrationIdHasBeenSet() const;
 
                     /**
                      * 获取增量导入任务ID
                      * @return IncrementalMigrationId 增量导入任务ID
+                     * 
                      */
                     std::string GetIncrementalMigrationId() const;
 
                     /**
                      * 设置增量导入任务ID
-                     * @param IncrementalMigrationId 增量导入任务ID
+                     * @param _incrementalMigrationId 增量导入任务ID
+                     * 
                      */
                     void SetIncrementalMigrationId(const std::string& _incrementalMigrationId);
 
                     /**
                      * 判断参数 IncrementalMigrationId 是否已赋值
                      * @return IncrementalMigrationId 是否已赋值
+                     * 
                      */
                     bool IncrementalMigrationIdHasBeenSet() const;
 

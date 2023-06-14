@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -85,56 +91,65 @@ namespace TencentCloud
 <li>TRTC</li>
                      * @return RTCSystem RTC厂商类型，取值有：
 <li>TRTC</li>
+                     * 
                      */
                     std::string GetRTCSystem() const;
 
                     /**
                      * 设置RTC厂商类型，取值有：
 <li>TRTC</li>
-                     * @param RTCSystem RTC厂商类型，取值有：
+                     * @param _rTCSystem RTC厂商类型，取值有：
 <li>TRTC</li>
+                     * 
                      */
                     void SetRTCSystem(const std::string& _rTCSystem);
 
                     /**
                      * 判断参数 RTCSystem 是否已赋值
                      * @return RTCSystem 是否已赋值
+                     * 
                      */
                     bool RTCSystemHasBeenSet() const;
 
                     /**
                      * 获取进房参数。
                      * @return JoinRoomInput 进房参数。
+                     * 
                      */
                     JoinRoomInput GetJoinRoomInput() const;
 
                     /**
                      * 设置进房参数。
-                     * @param JoinRoomInput 进房参数。
+                     * @param _joinRoomInput 进房参数。
+                     * 
                      */
                     void SetJoinRoomInput(const JoinRoomInput& _joinRoomInput);
 
                     /**
                      * 判断参数 JoinRoomInput 是否已赋值
                      * @return JoinRoomInput 是否已赋值
+                     * 
                      */
                     bool JoinRoomInputHasBeenSet() const;
 
                     /**
                      * 获取创建机器人时初始化参数。
                      * @return SyncRobotCommands 创建机器人时初始化参数。
+                     * 
                      */
                     std::vector<SyncRobotCommand> GetSyncRobotCommands() const;
 
                     /**
                      * 设置创建机器人时初始化参数。
-                     * @param SyncRobotCommands 创建机器人时初始化参数。
+                     * @param _syncRobotCommands 创建机器人时初始化参数。
+                     * 
                      */
                     void SetSyncRobotCommands(const std::vector<SyncRobotCommand>& _syncRobotCommands);
 
                     /**
                      * 判断参数 SyncRobotCommands 是否已赋值
                      * @return SyncRobotCommands 是否已赋值
+                     * 
                      */
                     bool SyncRobotCommandsHasBeenSet() const;
 

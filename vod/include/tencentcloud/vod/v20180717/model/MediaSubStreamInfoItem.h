@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 子流类型，取值范围：
 <li>audio：纯音频；</li>
 <li>video：视频（可能包含音频流）。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置子流类型，取值范围：
 <li>audio：纯音频；</li>
 <li>video：视频（可能包含音频流）。</li>
-                     * @param Type 子流类型，取值范围：
+                     * @param _type 子流类型，取值范围：
 <li>audio：纯音频；</li>
 <li>video：视频（可能包含音频流）。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取当子流为视频流时，视频画面宽度，单位：px。
                      * @return Width 当子流为视频流时，视频画面宽度，单位：px。
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置当子流为视频流时，视频画面宽度，单位：px。
-                     * @param Width 当子流为视频流时，视频画面宽度，单位：px。
+                     * @param _width 当子流为视频流时，视频画面宽度，单位：px。
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取当子流为视频流时，视频画面高度，单位：px。
                      * @return Height 当子流为视频流时，视频画面高度，单位：px。
+                     * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置当子流为视频流时，视频画面高度，单位：px。
-                     * @param Height 当子流为视频流时，视频画面高度，单位：px。
+                     * @param _height 当子流为视频流时，视频画面高度，单位：px。
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 <font color=red>注意：</font>在 2023-02-09T16:00:00Z 前处理生成的自适应码流文件此字段为0。
                      * @return Size 子流媒体文件大小，单位：Byte。
 <font color=red>注意：</font>在 2023-02-09T16:00:00Z 前处理生成的自适应码流文件此字段为0。
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置子流媒体文件大小，单位：Byte。
 <font color=red>注意：</font>在 2023-02-09T16:00:00Z 前处理生成的自适应码流文件此字段为0。
-                     * @param Size 子流媒体文件大小，单位：Byte。
+                     * @param _size 子流媒体文件大小，单位：Byte。
 <font color=red>注意：</font>在 2023-02-09T16:00:00Z 前处理生成的自适应码流文件此字段为0。
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

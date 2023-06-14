@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队 Id
                      * @return FleetId 服务器舰队 Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队 Id
-                     * @param FleetId 服务器舰队 Id
+                     * @param _fleetId 服务器舰队 Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 

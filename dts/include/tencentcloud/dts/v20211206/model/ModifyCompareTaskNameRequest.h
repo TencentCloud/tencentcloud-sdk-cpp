@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务 Id
                      * @return JobId 迁移任务 Id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置迁移任务 Id
-                     * @param JobId 迁移任务 Id
+                     * @param _jobId 迁移任务 Id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
                      * @return CompareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
                      * 设置对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
-                     * @param CompareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * @param _compareTaskId 对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9
+                     * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
 
                     /**
                      * 判断参数 CompareTaskId 是否已赋值
                      * @return CompareTaskId 是否已赋值
+                     * 
                      */
                     bool CompareTaskIdHasBeenSet() const;
 
                     /**
                      * 获取一致性校验任务名称
                      * @return TaskName 一致性校验任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置一致性校验任务名称
-                     * @param TaskName 一致性校验任务名称
+                     * @param _taskName 一致性校验任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取仓库名称
                      * @return RepoName 仓库名称
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param RepoName 仓库名称
+                     * @param _repoName 仓库名称
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取Tag列表
                      * @return Tags Tag列表
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置Tag列表
-                     * @param Tags Tag列表
+                     * @param _tags Tag列表
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

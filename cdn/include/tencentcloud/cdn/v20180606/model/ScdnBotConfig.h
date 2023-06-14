@@ -55,6 +55,7 @@ off：关闭
                      * @return Switch Scdn bot配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -62,15 +63,17 @@ off：关闭
                      * 设置Scdn bot配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch Scdn bot配置开关，取值有：
+                     * @param _switch Scdn bot配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -79,20 +82,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotCookie Bot cookie策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BotCookie> GetBotCookie() const;
 
                     /**
                      * 设置Bot cookie策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BotCookie Bot cookie策略
+                     * @param _botCookie Bot cookie策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBotCookie(const std::vector<BotCookie>& _botCookie);
 
                     /**
                      * 判断参数 BotCookie 是否已赋值
                      * @return BotCookie 是否已赋值
+                     * 
                      */
                     bool BotCookieHasBeenSet() const;
 
@@ -101,20 +107,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotJavaScript Bot Js策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BotJavaScript> GetBotJavaScript() const;
 
                     /**
                      * 设置Bot Js策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BotJavaScript Bot Js策略
+                     * @param _botJavaScript Bot Js策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBotJavaScript(const std::vector<BotJavaScript>& _botJavaScript);
 
                     /**
                      * 判断参数 BotJavaScript 是否已赋值
                      * @return BotJavaScript 是否已赋值
+                     * 
                      */
                     bool BotJavaScriptHasBeenSet() const;
 

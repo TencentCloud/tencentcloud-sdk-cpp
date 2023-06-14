@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取直播频道ID
                      * @return LiveChannelId 直播频道ID
+                     * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 设置直播频道ID
-                     * @param LiveChannelId 直播频道ID
+                     * @param _liveChannelId 直播频道ID
+                     * 
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
 
                     /**
                      * 判断参数 LiveChannelId 是否已赋值
                      * @return LiveChannelId 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdHasBeenSet() const;
 
                     /**
                      * 获取分页值，本地录制时参数无效
                      * @return Offset 分页值，本地录制时参数无效
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页值，本地录制时参数无效
-                     * @param Offset 分页值，本地录制时参数无效
+                     * @param _offset 分页值，本地录制时参数无效
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制值，本地录制时参数无效
                      * @return Limit 限制值，本地录制时参数无效
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制值，本地录制时参数无效
-                     * @param Limit 限制值，本地录制时参数无效
+                     * @param _limit 限制值，本地录制时参数无效
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

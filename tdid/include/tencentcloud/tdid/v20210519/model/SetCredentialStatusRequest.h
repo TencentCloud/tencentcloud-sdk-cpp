@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取凭证状态
                      * @return CredentialStatus 凭证状态
+                     * 
                      */
                     CredentialStatus GetCredentialStatus() const;
 
                     /**
                      * 设置凭证状态
-                     * @param CredentialStatus 凭证状态
+                     * @param _credentialStatus 凭证状态
+                     * 
                      */
                     void SetCredentialStatus(const CredentialStatus& _credentialStatus);
 
                     /**
                      * 判断参数 CredentialStatus 是否已赋值
                      * @return CredentialStatus 是否已赋值
+                     * 
                      */
                     bool CredentialStatusHasBeenSet() const;
 

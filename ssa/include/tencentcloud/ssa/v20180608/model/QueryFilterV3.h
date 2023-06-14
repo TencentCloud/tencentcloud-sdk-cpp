@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件
                      * @return Filter 过滤条件
+                     * 
                      */
                     QueryFilter GetFilter() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filter 过滤条件
+                     * @param _filter 过滤条件
+                     * 
                      */
                     void SetFilter(const QueryFilter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取有无子条件
                      * @return HasSub 有无子条件
+                     * 
                      */
                     bool GetHasSub() const;
 
                     /**
                      * 设置有无子条件
-                     * @param HasSub 有无子条件
+                     * @param _hasSub 有无子条件
+                     * 
                      */
                     void SetHasSub(const bool& _hasSub);
 
                     /**
                      * 判断参数 HasSub 是否已赋值
                      * @return HasSub 是否已赋值
+                     * 
                      */
                     bool HasSubHasBeenSet() const;
 
                     /**
                      * 获取查询条件
                      * @return SubFilters 查询条件
+                     * 
                      */
                     std::vector<QueryFilter> GetSubFilters() const;
 
                     /**
                      * 设置查询条件
-                     * @param SubFilters 查询条件
+                     * @param _subFilters 查询条件
+                     * 
                      */
                     void SetSubFilters(const std::vector<QueryFilter>& _subFilters);
 
                     /**
                      * 判断参数 SubFilters 是否已赋值
                      * @return SubFilters 是否已赋值
+                     * 
                      */
                     bool SubFiltersHasBeenSet() const;
 
                     /**
                      * 获取逻辑操作(只支持32位)
                      * @return Logic 逻辑操作(只支持32位)
+                     * 
                      */
                     uint64_t GetLogic() const;
 
                     /**
                      * 设置逻辑操作(只支持32位)
-                     * @param Logic 逻辑操作(只支持32位)
+                     * @param _logic 逻辑操作(只支持32位)
+                     * 
                      */
                     void SetLogic(const uint64_t& _logic);
 
                     /**
                      * 判断参数 Logic 是否已赋值
                      * @return Logic 是否已赋值
+                     * 
                      */
                     bool LogicHasBeenSet() const;
 

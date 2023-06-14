@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取path 信息
                      * @return Path path 信息
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置path 信息
-                     * @param Path path 信息
+                     * @param _path path 信息
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取backend 配置
                      * @return Backend backend 配置
+                     * 
                      */
                     IngressRuleBackend GetBackend() const;
 
                     /**
                      * 设置backend 配置
-                     * @param Backend backend 配置
+                     * @param _backend backend 配置
+                     * 
                      */
                     void SetBackend(const IngressRuleBackend& _backend);
 
                     /**
                      * 判断参数 Backend 是否已赋值
                      * @return Backend 是否已赋值
+                     * 
                      */
                     bool BackendHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取消息发往的主题。为 Topic 权限中去除 ProductID 和 DeviceName 的部分，如 “event”
                      * @return Topic 消息发往的主题。为 Topic 权限中去除 ProductID 和 DeviceName 的部分，如 “event”
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置消息发往的主题。为 Topic 权限中去除 ProductID 和 DeviceName 的部分，如 “event”
-                     * @param Topic 消息发往的主题。为 Topic 权限中去除 ProductID 和 DeviceName 的部分，如 “event”
+                     * @param _topic 消息发往的主题。为 Topic 权限中去除 ProductID 和 DeviceName 的部分，如 “event”
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取消息内容
                      * @return Payload 消息内容
+                     * 
                      */
                     std::string GetPayload() const;
 
                     /**
                      * 设置消息内容
-                     * @param Payload 消息内容
+                     * @param _payload 消息内容
+                     * 
                      */
                     void SetPayload(const std::string& _payload);
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 

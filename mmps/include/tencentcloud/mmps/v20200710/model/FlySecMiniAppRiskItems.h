@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取代码防护(基础诊断)
                      * @return RiskItem1Score 代码防护(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem1Score() const;
 
                     /**
                      * 设置代码防护(基础诊断)
-                     * @param RiskItem1Score 代码防护(基础诊断)
+                     * @param _riskItem1Score 代码防护(基础诊断)
+                     * 
                      */
                     void SetRiskItem1Score(const int64_t& _riskItem1Score);
 
                     /**
                      * 判断参数 RiskItem1Score 是否已赋值
                      * @return RiskItem1Score 是否已赋值
+                     * 
                      */
                     bool RiskItem1ScoreHasBeenSet() const;
 
                     /**
                      * 获取开发测试信息泄露(基础诊断)
                      * @return RiskItem2Score 开发测试信息泄露(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem2Score() const;
 
                     /**
                      * 设置开发测试信息泄露(基础诊断)
-                     * @param RiskItem2Score 开发测试信息泄露(基础诊断)
+                     * @param _riskItem2Score 开发测试信息泄露(基础诊断)
+                     * 
                      */
                     void SetRiskItem2Score(const int64_t& _riskItem2Score);
 
                     /**
                      * 判断参数 RiskItem2Score 是否已赋值
                      * @return RiskItem2Score 是否已赋值
+                     * 
                      */
                     bool RiskItem2ScoreHasBeenSet() const;
 
                     /**
                      * 获取编码规范(基础诊断)
                      * @return RiskItem3Score 编码规范(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem3Score() const;
 
                     /**
                      * 设置编码规范(基础诊断)
-                     * @param RiskItem3Score 编码规范(基础诊断)
+                     * @param _riskItem3Score 编码规范(基础诊断)
+                     * 
                      */
                     void SetRiskItem3Score(const int64_t& _riskItem3Score);
 
                     /**
                      * 判断参数 RiskItem3Score 是否已赋值
                      * @return RiskItem3Score 是否已赋值
+                     * 
                      */
                     bool RiskItem3ScoreHasBeenSet() const;
 
                     /**
                      * 获取配置风险(基础诊断)
                      * @return RiskItem4Score 配置风险(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem4Score() const;
 
                     /**
                      * 设置配置风险(基础诊断)
-                     * @param RiskItem4Score 配置风险(基础诊断)
+                     * @param _riskItem4Score 配置风险(基础诊断)
+                     * 
                      */
                     void SetRiskItem4Score(const int64_t& _riskItem4Score);
 
                     /**
                      * 判断参数 RiskItem4Score 是否已赋值
                      * @return RiskItem4Score 是否已赋值
+                     * 
                      */
                     bool RiskItem4ScoreHasBeenSet() const;
 
                     /**
                      * 获取账号安全(基础诊断)
                      * @return RiskItem5Score 账号安全(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem5Score() const;
 
                     /**
                      * 设置账号安全(基础诊断)
-                     * @param RiskItem5Score 账号安全(基础诊断)
+                     * @param _riskItem5Score 账号安全(基础诊断)
+                     * 
                      */
                     void SetRiskItem5Score(const int64_t& _riskItem5Score);
 
                     /**
                      * 判断参数 RiskItem5Score 是否已赋值
                      * @return RiskItem5Score 是否已赋值
+                     * 
                      */
                     bool RiskItem5ScoreHasBeenSet() const;
 
                     /**
                      * 获取用户信息安全(基础诊断)
                      * @return RiskItem6Score 用户信息安全(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem6Score() const;
 
                     /**
                      * 设置用户信息安全(基础诊断)
-                     * @param RiskItem6Score 用户信息安全(基础诊断)
+                     * @param _riskItem6Score 用户信息安全(基础诊断)
+                     * 
                      */
                     void SetRiskItem6Score(const int64_t& _riskItem6Score);
 
                     /**
                      * 判断参数 RiskItem6Score 是否已赋值
                      * @return RiskItem6Score 是否已赋值
+                     * 
                      */
                     bool RiskItem6ScoreHasBeenSet() const;
 
                     /**
                      * 获取内部信息泄露(基础诊断)
                      * @return RiskItem7Score 内部信息泄露(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem7Score() const;
 
                     /**
                      * 设置内部信息泄露(基础诊断)
-                     * @param RiskItem7Score 内部信息泄露(基础诊断)
+                     * @param _riskItem7Score 内部信息泄露(基础诊断)
+                     * 
                      */
                     void SetRiskItem7Score(const int64_t& _riskItem7Score);
 
                     /**
                      * 判断参数 RiskItem7Score 是否已赋值
                      * @return RiskItem7Score 是否已赋值
+                     * 
                      */
                     bool RiskItem7ScoreHasBeenSet() const;
 
                     /**
                      * 获取其他安全(基础诊断)
                      * @return RiskItem8Score 其他安全(基础诊断)
+                     * 
                      */
                     int64_t GetRiskItem8Score() const;
 
                     /**
                      * 设置其他安全(基础诊断)
-                     * @param RiskItem8Score 其他安全(基础诊断)
+                     * @param _riskItem8Score 其他安全(基础诊断)
+                     * 
                      */
                     void SetRiskItem8Score(const int64_t& _riskItem8Score);
 
                     /**
                      * 判断参数 RiskItem8Score 是否已赋值
                      * @return RiskItem8Score 是否已赋值
+                     * 
                      */
                     bool RiskItem8ScoreHasBeenSet() const;
 

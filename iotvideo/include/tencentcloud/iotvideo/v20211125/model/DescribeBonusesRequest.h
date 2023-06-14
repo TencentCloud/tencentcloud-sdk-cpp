@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取分页拉取偏移
                      * @return Offset 分页拉取偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页拉取偏移
-                     * @param Offset 分页拉取偏移
+                     * @param _offset 分页拉取偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页拉取数量
                      * @return Limit 分页拉取数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页拉取数量
-                     * @param Limit 分页拉取数量
+                     * @param _limit 分页拉取数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

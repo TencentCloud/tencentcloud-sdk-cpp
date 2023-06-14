@@ -53,6 +53,7 @@ ALIPAY_BUYERID 支付宝支付类型
                      * @return ChannelExternalUserType 渠道方用户类型，枚举值:
 WX_OPENID 微信支付类型
 ALIPAY_BUYERID 支付宝支付类型
+                     * 
                      */
                     std::string GetChannelExternalUserType() const;
 
@@ -60,33 +61,38 @@ ALIPAY_BUYERID 支付宝支付类型
                      * 设置渠道方用户类型，枚举值:
 WX_OPENID 微信支付类型
 ALIPAY_BUYERID 支付宝支付类型
-                     * @param ChannelExternalUserType 渠道方用户类型，枚举值:
+                     * @param _channelExternalUserType 渠道方用户类型，枚举值:
 WX_OPENID 微信支付类型
 ALIPAY_BUYERID 支付宝支付类型
+                     * 
                      */
                     void SetChannelExternalUserType(const std::string& _channelExternalUserType);
 
                     /**
                      * 判断参数 ChannelExternalUserType 是否已赋值
                      * @return ChannelExternalUserType 是否已赋值
+                     * 
                      */
                     bool ChannelExternalUserTypeHasBeenSet() const;
 
                     /**
                      * 获取渠道方用户Id
                      * @return ChannelExternalUserId 渠道方用户Id
+                     * 
                      */
                     std::string GetChannelExternalUserId() const;
 
                     /**
                      * 设置渠道方用户Id
-                     * @param ChannelExternalUserId 渠道方用户Id
+                     * @param _channelExternalUserId 渠道方用户Id
+                     * 
                      */
                     void SetChannelExternalUserId(const std::string& _channelExternalUserId);
 
                     /**
                      * 判断参数 ChannelExternalUserId 是否已赋值
                      * @return ChannelExternalUserId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalUserIdHasBeenSet() const;
 

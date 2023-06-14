@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Top数据的URL
                      * @return Url Top数据的URL
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Top数据的URL
-                     * @param Url Top数据的URL
+                     * @param _url Top数据的URL
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取数值
                      * @return Value 数值
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置数值
-                     * @param Value 数值
+                     * @param _value 数值
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取时间
                      * @return Time 时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-                     * @param Time 时间
+                     * @param _time 时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名
+                     * @param _domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

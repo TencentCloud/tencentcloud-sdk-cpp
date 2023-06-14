@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 消息队列实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 消息队列实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTypeList 日志类型队列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecLogDeliveryKafkaSettingInfo> GetLogTypeList() const;
 
                     /**
                      * 判断参数 LogTypeList 是否已赋值
                      * @return LogTypeList 是否已赋值
+                     * 
                      */
                     bool LogTypeListHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionID 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionID() const;
 
                     /**
                      * 判断参数 RegionID 是否已赋值
                      * @return RegionID 是否已赋值
+                     * 
                      */
                     bool RegionIDHasBeenSet() const;
 

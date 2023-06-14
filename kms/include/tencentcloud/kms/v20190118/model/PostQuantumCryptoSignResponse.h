@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取签名值，Base64编码。可使用 PostQuantumCryptoVerify接口对签名值进行验证。
                      * @return Signature 签名值，Base64编码。可使用 PostQuantumCryptoVerify接口对签名值进行验证。
+                     * 
                      */
                     std::string GetSignature() const;
 
                     /**
                      * 判断参数 Signature 是否已赋值
                      * @return Signature 是否已赋值
+                     * 
                      */
                     bool SignatureHasBeenSet() const;
 

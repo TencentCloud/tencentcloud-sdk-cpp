@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
 <li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
+                     * 
                      */
                     std::vector<FilterObject> GetFilters() const;
 
@@ -57,51 +58,59 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
 <li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
 <li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<FilterObject>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值0。
                      * @return Offset 偏移量，默认值0。
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值0。
-                     * @param Offset 偏移量，默认值0。
+                     * @param _offset 偏移量，默认值0。
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

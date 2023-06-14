@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取资源的IP数组
                      * @return IpList 资源的IP数组
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置资源的IP数组
-                     * @param IpList 资源的IP数组
+                     * @param _ipList 资源的IP数组
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 

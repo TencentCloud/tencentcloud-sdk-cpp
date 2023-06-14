@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
                      * @return TypeName 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
-                     * @param TypeName 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * @param _typeName 售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取引擎版本号
                      * @return EngineVersion 引擎版本号
+                     * 
                      */
                     std::vector<std::string> GetEngineVersion() const;
 
                     /**
                      * 设置引擎版本号
-                     * @param EngineVersion 引擎版本号
+                     * @param _engineVersion 引擎版本号
+                     * 
                      */
                     void SetEngineVersion(const std::vector<std::string>& _engineVersion);
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取售卖规格Id
                      * @return ConfigIds 售卖规格Id
+                     * 
                      */
                     std::vector<int64_t> GetConfigIds() const;
 
                     /**
                      * 设置售卖规格Id
-                     * @param ConfigIds 售卖规格Id
+                     * @param _configIds 售卖规格Id
+                     * 
                      */
                     void SetConfigIds(const std::vector<int64_t>& _configIds);
 
                     /**
                      * 判断参数 ConfigIds 是否已赋值
                      * @return ConfigIds 是否已赋值
+                     * 
                      */
                     bool ConfigIdsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取训练任务信息
                      * @return Job 训练任务信息
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 

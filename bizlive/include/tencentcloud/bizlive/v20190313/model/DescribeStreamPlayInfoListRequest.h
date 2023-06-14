@@ -47,38 +47,44 @@ namespace TencentCloud
 结束时间 和 开始时间  必须在同一天内。
                      * @return EndTime 结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
-                     * @param EndTime 结束时间，北京时间，格式：2019-04-28 10:36:00
+                     * @param _endTime 结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取播放域名。
                      * @return PlayDomain 播放域名。
+                     * 
                      */
                     std::string GetPlayDomain() const;
 
                     /**
                      * 设置播放域名。
-                     * @param PlayDomain 播放域名。
+                     * @param _playDomain 播放域名。
+                     * 
                      */
                     void SetPlayDomain(const std::string& _playDomain);
 
                     /**
                      * 判断参数 PlayDomain 是否已赋值
                      * @return PlayDomain 是否已赋值
+                     * 
                      */
                     bool PlayDomainHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 当前时间 和 开始时间 间隔不超过30天。
                      * @return StartTime 开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
-                     * @param StartTime 开始时间，北京时间，格式：2019-04-28 10:36:00
+                     * @param _startTime 开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 若不填，则为查询总体播放数据。
                      * @return StreamName 流名称，精确匹配。
 若不填，则为查询总体播放数据。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称，精确匹配。
 若不填，则为查询总体播放数据。
-                     * @param StreamName 流名称，精确匹配。
+                     * @param _streamName 流名称，精确匹配。
 若不填，则为查询总体播放数据。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 

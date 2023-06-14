@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
                      * @return Width 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
-                     * @param Width 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @param _width 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取视频高度，单位像素，一般要求是偶数，否则会向下对齐。
                      * @return Height 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频高度，单位像素，一般要求是偶数，否则会向下对齐。
-                     * @param Height 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @param _height 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取视频帧率，范围在1到120之间
                      * @return FrameRate 视频帧率，范围在1到120之间
+                     * 
                      */
                     int64_t GetFrameRate() const;
 
                     /**
                      * 设置视频帧率，范围在1到120之间
-                     * @param FrameRate 视频帧率，范围在1到120之间
+                     * @param _frameRate 视频帧率，范围在1到120之间
+                     * 
                      */
                     void SetFrameRate(const int64_t& _frameRate);
 
                     /**
                      * 判断参数 FrameRate 是否已赋值
                      * @return FrameRate 是否已赋值
+                     * 
                      */
                     bool FrameRateHasBeenSet() const;
 

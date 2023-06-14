@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableList DMS元数据列表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSTableInfo> GetTableList() const;
 
                     /**
                      * 判断参数 TableList 是否已赋值
                      * @return TableList 是否已赋值
+                     * 
                      */
                     bool TableListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 统计值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目唯一上报 key
                      * @return ProjectKey 项目唯一上报 key
+                     * 
                      */
                     std::string GetProjectKey() const;
 
                     /**
                      * 设置项目唯一上报 key
-                     * @param ProjectKey 项目唯一上报 key
+                     * @param _projectKey 项目唯一上报 key
+                     * 
                      */
                     void SetProjectKey(const std::string& _projectKey);
 
                     /**
                      * 判断参数 ProjectKey 是否已赋值
                      * @return ProjectKey 是否已赋值
+                     * 
                      */
                     bool ProjectKeyHasBeenSet() const;
 
                     /**
                      * 获取离线日志文件 id 列表
                      * @return FileIDs 离线日志文件 id 列表
+                     * 
                      */
                     std::vector<std::string> GetFileIDs() const;
 
                     /**
                      * 设置离线日志文件 id 列表
-                     * @param FileIDs 离线日志文件 id 列表
+                     * @param _fileIDs 离线日志文件 id 列表
+                     * 
                      */
                     void SetFileIDs(const std::vector<std::string>& _fileIDs);
 
                     /**
                      * 判断参数 FileIDs 是否已赋值
                      * @return FileIDs 是否已赋值
+                     * 
                      */
                     bool FileIDsHasBeenSet() const;
 

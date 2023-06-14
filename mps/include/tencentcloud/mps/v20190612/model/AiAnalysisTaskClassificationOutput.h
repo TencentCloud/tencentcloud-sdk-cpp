@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频智能分类列表。
                      * @return ClassificationSet 视频智能分类列表。
+                     * 
                      */
                     std::vector<MediaAiAnalysisClassificationItem> GetClassificationSet() const;
 
                     /**
                      * 设置视频智能分类列表。
-                     * @param ClassificationSet 视频智能分类列表。
+                     * @param _classificationSet 视频智能分类列表。
+                     * 
                      */
                     void SetClassificationSet(const std::vector<MediaAiAnalysisClassificationItem>& _classificationSet);
 
                     /**
                      * 判断参数 ClassificationSet 是否已赋值
                      * @return ClassificationSet 是否已赋值
+                     * 
                      */
                     bool ClassificationSetHasBeenSet() const;
 

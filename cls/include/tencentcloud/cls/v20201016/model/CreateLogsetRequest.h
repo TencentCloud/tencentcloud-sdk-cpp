@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取日志集名字，不能重名
                      * @return LogsetName 日志集名字，不能重名
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集名字，不能重名
-                     * @param LogsetName 日志集名字，不能重名
+                     * @param _logsetName 日志集名字，不能重名
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对
                      * @return Tags 标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对
-                     * @param Tags 标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对
+                     * @param _tags 标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

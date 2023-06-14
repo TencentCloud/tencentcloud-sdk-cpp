@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务结果
                      * @return TaskResult 任务结果
+                     * 
                      */
                     std::string GetTaskResult() const;
 
                     /**
                      * 判断参数 TaskResult 是否已赋值
                      * @return TaskResult 是否已赋值
+                     * 
                      */
                     bool TaskResultHasBeenSet() const;
 
                     /**
                      * 获取任务类型，010代表合同上传结果，020代表合同下载结果
                      * @return TaskType 任务类型，010代表合同上传结果，020代表合同下载结果
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

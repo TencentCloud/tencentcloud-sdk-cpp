@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取生成包 Id
                      * @return AssetId 生成包 Id
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置生成包 Id
-                     * @param AssetId 生成包 Id
+                     * @param _assetId 生成包 Id
+                     * 
                      */
                     void SetAssetId(const std::string& _assetId);
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 
                     /**
                      * 获取结果返回最大值，暂未使用
                      * @return Limit 结果返回最大值，暂未使用
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置结果返回最大值，暂未使用
-                     * @param Limit 结果返回最大值，暂未使用
+                     * @param _limit 结果返回最大值，暂未使用
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取结果返回偏移，暂未使用
                      * @return Offset 结果返回偏移，暂未使用
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置结果返回偏移，暂未使用
-                     * @param Offset 结果返回偏移，暂未使用
+                     * @param _offset 结果返回偏移，暂未使用
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 "resource:name"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 "tag:key"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 "tag:key-value"        - Values: 标签键值对数组，例如 ["key1:value1", "key1:value2", "key2:value2"]
                      * @return Filters 资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 "resource:name"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 "tag:key"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 "tag:key-value"        - Values: 标签键值对数组，例如 ["key1:value1", "key1:value2", "key2:value2"]
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 "resource:name"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 "tag:key"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 "tag:key-value"        - Values: 标签键值对数组，例如 ["key1:value1", "key1:value2", "key2:value2"]
-                     * @param Filters 资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 "resource:name"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 "tag:key"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 "tag:key-value"        - Values: 标签键值对数组，例如 ["key1:value1", "key1:value2", "key2:value2"]
+                     * @param _filters 资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 "resource:name"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 "tag:key"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 "tag:key-value"        - Values: 标签键值对数组，例如 ["key1:value1", "key1:value2", "key2:value2"]
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

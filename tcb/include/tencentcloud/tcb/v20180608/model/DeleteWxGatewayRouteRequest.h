@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名称
                      * @return GatewayRouteName 服务名称
+                     * 
                      */
                     std::string GetGatewayRouteName() const;
 
                     /**
                      * 设置服务名称
-                     * @param GatewayRouteName 服务名称
+                     * @param _gatewayRouteName 服务名称
+                     * 
                      */
                     void SetGatewayRouteName(const std::string& _gatewayRouteName);
 
                     /**
                      * 判断参数 GatewayRouteName 是否已赋值
                      * @return GatewayRouteName 是否已赋值
+                     * 
                      */
                     bool GatewayRouteNameHasBeenSet() const;
 

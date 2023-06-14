@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取WAF 威胁情报封禁信息
                      * @return WafThreatenIntelligenceDetails WAF 威胁情报封禁信息
+                     * 
                      */
                     WafThreatenIntelligenceDetails GetWafThreatenIntelligenceDetails() const;
 
                     /**
                      * 判断参数 WafThreatenIntelligenceDetails 是否已赋值
                      * @return WafThreatenIntelligenceDetails 是否已赋值
+                     * 
                      */
                     bool WafThreatenIntelligenceDetailsHasBeenSet() const;
 

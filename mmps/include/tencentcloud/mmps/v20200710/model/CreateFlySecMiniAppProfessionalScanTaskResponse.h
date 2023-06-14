@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Ret 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetRet() const;
 
                     /**
                      * 判断参数 Ret 是否已赋值
                      * @return Ret 是否已赋值
+                     * 
                      */
                     bool RetHasBeenSet() const;
 

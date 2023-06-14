@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 元素名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置元素名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 元素名称
+                     * @param _name 元素名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件
+                     * @param _type 0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 错误详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDetail() const;
 
                     /**
                      * 设置错误详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 错误详情
+                     * @param _detail 错误详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetail(const std::string& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

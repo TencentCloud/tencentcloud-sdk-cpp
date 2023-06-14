@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例的默认字符集，如 "latin1"，"utf8" 等。
                      * @return Charset 实例的默认字符集，如 "latin1"，"utf8" 等。
+                     * 
                      */
                     std::string GetCharset() const;
 
                     /**
                      * 判断参数 Charset 是否已赋值
                      * @return Charset 是否已赋值
+                     * 
                      */
                     bool CharsetHasBeenSet() const;
 

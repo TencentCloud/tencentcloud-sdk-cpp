@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取API唯一ID。
                      * @return ApiId API唯一ID。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API唯一ID。
-                     * @param ApiId API唯一ID。
+                     * @param _apiId API唯一ID。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取用户自定义API名称。
                      * @return ApiName 用户自定义API名称。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置用户自定义API名称。
-                     * @param ApiName 用户自定义API名称。
+                     * @param _apiName 用户自定义API名称。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
                     /**
                      * 获取API的路径。如/path。
                      * @return Path API的路径。如/path。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API的路径。如/path。
-                     * @param Path API的路径。如/path。
+                     * @param _path API的路径。如/path。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取API的方法。如GET。
                      * @return Method API的方法。如GET。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置API的方法。如GET。
-                     * @param Method API的方法。如GET。
+                     * @param _method API的方法。如GET。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取环境的限流信息。
                      * @return EnvironmentStrategySet 环境的限流信息。
+                     * 
                      */
                     std::vector<EnvironmentStrategy> GetEnvironmentStrategySet() const;
 
                     /**
                      * 设置环境的限流信息。
-                     * @param EnvironmentStrategySet 环境的限流信息。
+                     * @param _environmentStrategySet 环境的限流信息。
+                     * 
                      */
                     void SetEnvironmentStrategySet(const std::vector<EnvironmentStrategy>& _environmentStrategySet);
 
                     /**
                      * 判断参数 EnvironmentStrategySet 是否已赋值
                      * @return EnvironmentStrategySet 是否已赋值
+                     * 
                      */
                     bool EnvironmentStrategySetHasBeenSet() const;
 

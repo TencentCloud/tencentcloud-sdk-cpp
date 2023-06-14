@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取音频编码参数。
                      * @return AudioEncode 音频编码参数。
+                     * 
                      */
                     AudioEncode GetAudioEncode() const;
 
                     /**
                      * 设置音频编码参数。
-                     * @param AudioEncode 音频编码参数。
+                     * @param _audioEncode 音频编码参数。
+                     * 
                      */
                     void SetAudioEncode(const AudioEncode& _audioEncode);
 
                     /**
                      * 判断参数 AudioEncode 是否已赋值
                      * @return AudioEncode 是否已赋值
+                     * 
                      */
                     bool AudioEncodeHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
                      * @return SubscribeAudioList 音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
+                     * 
                      */
                     std::vector<McuUserInfoParams> GetSubscribeAudioList() const;
 
                     /**
                      * 设置音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
-                     * @param SubscribeAudioList 音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。
+                     * @param _subscribeAudioList 音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
+                     * 
                      */
                     void SetSubscribeAudioList(const std::vector<McuUserInfoParams>& _subscribeAudioList);
 
                     /**
                      * 判断参数 SubscribeAudioList 是否已赋值
                      * @return SubscribeAudioList 是否已赋值
+                     * 
                      */
                     bool SubscribeAudioListHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
                      * @return UnSubscribeAudioList 音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
+                     * 
                      */
                     std::vector<McuUserInfoParams> GetUnSubscribeAudioList() const;
 
                     /**
                      * 设置音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
-                     * @param UnSubscribeAudioList 音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。
+                     * @param _unSubscribeAudioList 音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。
 使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。
+                     * 
                      */
                     void SetUnSubscribeAudioList(const std::vector<McuUserInfoParams>& _unSubscribeAudioList);
 
                     /**
                      * 判断参数 UnSubscribeAudioList 是否已赋值
                      * @return UnSubscribeAudioList 是否已赋值
+                     * 
                      */
                     bool UnSubscribeAudioListHasBeenSet() const;
 

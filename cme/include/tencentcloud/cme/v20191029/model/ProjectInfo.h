@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取项目 Id。
                      * @return ProjectId 项目 Id。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 Id。
-                     * @param ProjectId 项目 Id。
+                     * @param _projectId 项目 Id。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称。
                      * @return Name 项目名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称。
-                     * @param Name 项目名称。
+                     * @param _name 项目名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取画布宽高比。
                      * @return AspectRatio 画布宽高比。
+                     * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
                      * 设置画布宽高比。
-                     * @param AspectRatio 画布宽高比。
+                     * @param _aspectRatio 画布宽高比。
+                     * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
 
                     /**
                      * 判断参数 AspectRatio 是否已赋值
                      * @return AspectRatio 是否已赋值
+                     * 
                      */
                     bool AspectRatioHasBeenSet() const;
 
@@ -116,6 +125,7 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+                     * 
                      */
                     std::string GetCategory() const;
 
@@ -126,54 +136,62 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-                     * @param Category 项目类别，取值有：
+                     * @param _category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
                     /**
                      * 获取归属者。
                      * @return Owner 归属者。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置归属者。
-                     * @param Owner 归属者。
+                     * @param _owner 归属者。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取项目封面图片地址。
                      * @return CoverUrl 项目封面图片地址。
+                     * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置项目封面图片地址。
-                     * @param CoverUrl 项目封面图片地址。
+                     * @param _coverUrl 项目封面图片地址。
+                     * 
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
                     /**
                      * 判断参数 CoverUrl 是否已赋值
                      * @return CoverUrl 是否已赋值
+                     * 
                      */
                     bool CoverUrlHasBeenSet() const;
 
@@ -182,20 +200,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamConnectProjectInfo 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamConnectProjectInfo GetStreamConnectProjectInfo() const;
 
                     /**
                      * 设置云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamConnectProjectInfo 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
+                     * @param _streamConnectProjectInfo 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamConnectProjectInfo(const StreamConnectProjectInfo& _streamConnectProjectInfo);
 
                     /**
                      * 判断参数 StreamConnectProjectInfo 是否已赋值
                      * @return StreamConnectProjectInfo 是否已赋值
+                     * 
                      */
                     bool StreamConnectProjectInfoHasBeenSet() const;
 
@@ -204,56 +225,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaCastProjectInfo 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaCastProjectInfo GetMediaCastProjectInfo() const;
 
                     /**
                      * 设置点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaCastProjectInfo 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+                     * @param _mediaCastProjectInfo 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaCastProjectInfo(const MediaCastProjectInfo& _mediaCastProjectInfo);
 
                     /**
                      * 判断参数 MediaCastProjectInfo 是否已赋值
                      * @return MediaCastProjectInfo 是否已赋值
+                     * 
                      */
                     bool MediaCastProjectInfoHasBeenSet() const;
 
                     /**
                      * 获取项目更新时间，格式按照 ISO 8601 标准表示。
                      * @return UpdateTime 项目更新时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置项目更新时间，格式按照 ISO 8601 标准表示。
-                     * @param UpdateTime 项目更新时间，格式按照 ISO 8601 标准表示。
+                     * @param _updateTime 项目更新时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取项目创建时间，格式按照 ISO 8601 标准表示。
                      * @return CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置项目创建时间，格式按照 ISO 8601 标准表示。
-                     * @param CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * @param _createTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

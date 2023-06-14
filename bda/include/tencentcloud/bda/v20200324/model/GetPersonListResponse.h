@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取返回的人员信息。
                      * @return PersonInfos 返回的人员信息。
+                     * 
                      */
                     std::vector<PersonInfo> GetPersonInfos() const;
 
                     /**
                      * 判断参数 PersonInfos 是否已赋值
                      * @return PersonInfos 是否已赋值
+                     * 
                      */
                     bool PersonInfosHasBeenSet() const;
 
                     /**
                      * 获取该人体库的人员数量。
                      * @return PersonNum 该人体库的人员数量。
+                     * 
                      */
                     uint64_t GetPersonNum() const;
 
                     /**
                      * 判断参数 PersonNum 是否已赋值
                      * @return PersonNum 是否已赋值
+                     * 
                      */
                     bool PersonNumHasBeenSet() const;
 
                     /**
                      * 获取人体识别所用的算法模型版本。
                      * @return BodyModelVersion 人体识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetBodyModelVersion() const;
 
                     /**
                      * 判断参数 BodyModelVersion 是否已赋值
                      * @return BodyModelVersion 是否已赋值
+                     * 
                      */
                     bool BodyModelVersionHasBeenSet() const;
 

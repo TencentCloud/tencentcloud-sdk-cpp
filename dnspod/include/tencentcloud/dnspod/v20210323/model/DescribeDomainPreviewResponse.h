@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取域名概览信息
                      * @return Domain 域名概览信息
+                     * 
                      */
                     PreviewDetail GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

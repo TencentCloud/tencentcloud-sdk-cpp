@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return DateKey 时间
+                     * 
                      */
                     std::string GetDateKey() const;
 
                     /**
                      * 设置时间
-                     * @param DateKey 时间
+                     * @param _dateKey 时间
+                     * 
                      */
                     void SetDateKey(const std::string& _dateKey);
 
                     /**
                      * 判断参数 DateKey 是否已赋值
                      * @return DateKey 是否已赋值
+                     * 
                      */
                     bool DateKeyHasBeenSet() const;
 
                     /**
                      * 获取票据验证拦截量
                      * @return Intercept 票据验证拦截量
+                     * 
                      */
                     int64_t GetIntercept() const;
 
                     /**
                      * 设置票据验证拦截量
-                     * @param Intercept 票据验证拦截量
+                     * @param _intercept 票据验证拦截量
+                     * 
                      */
                     void SetIntercept(const int64_t& _intercept);
 
                     /**
                      * 判断参数 Intercept 是否已赋值
                      * @return Intercept 是否已赋值
+                     * 
                      */
                     bool InterceptHasBeenSet() const;
 

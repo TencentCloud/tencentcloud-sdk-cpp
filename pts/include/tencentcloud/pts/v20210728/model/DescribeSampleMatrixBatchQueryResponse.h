@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricSampleMatrixSet 批量指标矩阵
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomSampleMatrix> GetMetricSampleMatrixSet() const;
 
                     /**
                      * 判断参数 MetricSampleMatrixSet 是否已赋值
                      * @return MetricSampleMatrixSet 是否已赋值
+                     * 
                      */
                     bool MetricSampleMatrixSetHasBeenSet() const;
 

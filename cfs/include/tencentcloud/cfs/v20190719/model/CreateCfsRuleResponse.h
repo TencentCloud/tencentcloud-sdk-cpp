@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取规则 ID
                      * @return RuleId 规则 ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取客户端 IP
                      * @return AuthClientIp 客户端 IP
+                     * 
                      */
                     std::string GetAuthClientIp() const;
 
                     /**
                      * 判断参数 AuthClientIp 是否已赋值
                      * @return AuthClientIp 是否已赋值
+                     * 
                      */
                     bool AuthClientIpHasBeenSet() const;
 
                     /**
                      * 获取读写权限
                      * @return RWPermission 读写权限
+                     * 
                      */
                     std::string GetRWPermission() const;
 
                     /**
                      * 判断参数 RWPermission 是否已赋值
                      * @return RWPermission 是否已赋值
+                     * 
                      */
                     bool RWPermissionHasBeenSet() const;
 
                     /**
                      * 获取用户权限
                      * @return UserPermission 用户权限
+                     * 
                      */
                     std::string GetUserPermission() const;
 
                     /**
                      * 判断参数 UserPermission 是否已赋值
                      * @return UserPermission 是否已赋值
+                     * 
                      */
                     bool UserPermissionHasBeenSet() const;
 
                     /**
                      * 获取优先级
                      * @return Priority 优先级
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

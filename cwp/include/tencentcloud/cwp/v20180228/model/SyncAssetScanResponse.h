@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取枚举值有(大写)：NOTASK（没有同步任务），SYNCING（同步中），FINISHED（同步完成）
                      * @return State 枚举值有(大写)：NOTASK（没有同步任务），SYNCING（同步中），FINISHED（同步完成）
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取最新开始同步时间
                      * @return LatestStartTime 最新开始同步时间
+                     * 
                      */
                     std::string GetLatestStartTime() const;
 
                     /**
                      * 判断参数 LatestStartTime 是否已赋值
                      * @return LatestStartTime 是否已赋值
+                     * 
                      */
                     bool LatestStartTimeHasBeenSet() const;
 
                     /**
                      * 获取最新结束同步时间
                      * @return LatestEndTime 最新结束同步时间
+                     * 
                      */
                     std::string GetLatestEndTime() const;
 
                     /**
                      * 判断参数 LatestEndTime 是否已赋值
                      * @return LatestEndTime 是否已赋值
+                     * 
                      */
                     bool LatestEndTimeHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

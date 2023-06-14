@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * @return InstanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @param InstanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return BackupMethod 设置备份方式。
 - 0：逻辑备份。
 - 1：物理备份。
+                     * 
                      */
                     int64_t GetBackupMethod() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置设置备份方式。
 - 0：逻辑备份。
 - 1：物理备份。
-                     * @param BackupMethod 设置备份方式。
+                     * @param _backupMethod 设置备份方式。
 - 0：逻辑备份。
 - 1：物理备份。
+                     * 
                      */
                     void SetBackupMethod(const int64_t& _backupMethod);
 
                     /**
                      * 判断参数 BackupMethod 是否已赋值
                      * @return BackupMethod 是否已赋值
+                     * 
                      */
                     bool BackupMethodHasBeenSet() const;
 
                     /**
                      * 获取备份备注信息。
                      * @return BackupRemark 备份备注信息。
+                     * 
                      */
                     std::string GetBackupRemark() const;
 
                     /**
                      * 设置备份备注信息。
-                     * @param BackupRemark 备份备注信息。
+                     * @param _backupRemark 备份备注信息。
+                     * 
                      */
                     void SetBackupRemark(const std::string& _backupRemark);
 
                     /**
                      * 判断参数 BackupRemark 是否已赋值
                      * @return BackupRemark 是否已赋值
+                     * 
                      */
                     bool BackupRemarkHasBeenSet() const;
 

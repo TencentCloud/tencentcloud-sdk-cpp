@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetValue 预留存率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTargetValue() const;
 
                     /**
                      * 设置预留存率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetValue 预留存率
+                     * @param _targetValue 预留存率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetValue(const uint64_t& _targetValue);
 
                     /**
                      * 判断参数 TargetValue 是否已赋值
                      * @return TargetValue 是否已赋值
+                     * 
                      */
                     bool TargetValueHasBeenSet() const;
 

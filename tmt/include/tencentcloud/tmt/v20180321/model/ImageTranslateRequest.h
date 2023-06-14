@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取唯一id，返回时原样返回
                      * @return SessionUuid 唯一id，返回时原样返回
+                     * 
                      */
                     std::string GetSessionUuid() const;
 
                     /**
                      * 设置唯一id，返回时原样返回
-                     * @param SessionUuid 唯一id，返回时原样返回
+                     * @param _sessionUuid 唯一id，返回时原样返回
+                     * 
                      */
                     void SetSessionUuid(const std::string& _sessionUuid);
 
                     /**
                      * 判断参数 SessionUuid 是否已赋值
                      * @return SessionUuid 是否已赋值
+                     * 
                      */
                     bool SessionUuidHasBeenSet() const;
 
                     /**
                      * 获取doc:文档扫描
                      * @return Scene doc:文档扫描
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置doc:文档扫描
-                     * @param Scene doc:文档扫描
+                     * @param _scene doc:文档扫描
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取图片数据的Base64字符串，图片大小上限为4M，建议对源图片进行一定程度压缩
                      * @return Data 图片数据的Base64字符串，图片大小上限为4M，建议对源图片进行一定程度压缩
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置图片数据的Base64字符串，图片大小上限为4M，建议对源图片进行一定程度压缩
-                     * @param Data 图片数据的Base64字符串，图片大小上限为4M，建议对源图片进行一定程度压缩
+                     * @param _data 图片数据的Base64字符串，图片大小上限为4M，建议对源图片进行一定程度压缩
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取源语言，支持语言列表：<li> auto：自动识别（识别为一种语言）</li> <li>zh：简体中文</li> <li>zh-TW：繁体中文</li> <li>en：英语</li> <li>ja：日语</li> <li>ko：韩语</li> <li>ru：俄语</li> <li>fr：法语</li> <li>de：德语</li> <li>it：意大利语</li> <li>es：西班牙语</li> <li>pt：葡萄牙语</li> <li>ms：马来西亚语</li> <li>th：泰语</li><li>vi：越南语</li>
                      * @return Source 源语言，支持语言列表：<li> auto：自动识别（识别为一种语言）</li> <li>zh：简体中文</li> <li>zh-TW：繁体中文</li> <li>en：英语</li> <li>ja：日语</li> <li>ko：韩语</li> <li>ru：俄语</li> <li>fr：法语</li> <li>de：德语</li> <li>it：意大利语</li> <li>es：西班牙语</li> <li>pt：葡萄牙语</li> <li>ms：马来西亚语</li> <li>th：泰语</li><li>vi：越南语</li>
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置源语言，支持语言列表：<li> auto：自动识别（识别为一种语言）</li> <li>zh：简体中文</li> <li>zh-TW：繁体中文</li> <li>en：英语</li> <li>ja：日语</li> <li>ko：韩语</li> <li>ru：俄语</li> <li>fr：法语</li> <li>de：德语</li> <li>it：意大利语</li> <li>es：西班牙语</li> <li>pt：葡萄牙语</li> <li>ms：马来西亚语</li> <li>th：泰语</li><li>vi：越南语</li>
-                     * @param Source 源语言，支持语言列表：<li> auto：自动识别（识别为一种语言）</li> <li>zh：简体中文</li> <li>zh-TW：繁体中文</li> <li>en：英语</li> <li>ja：日语</li> <li>ko：韩语</li> <li>ru：俄语</li> <li>fr：法语</li> <li>de：德语</li> <li>it：意大利语</li> <li>es：西班牙语</li> <li>pt：葡萄牙语</li> <li>ms：马来西亚语</li> <li>th：泰语</li><li>vi：越南语</li>
+                     * @param _source 源语言，支持语言列表：<li> auto：自动识别（识别为一种语言）</li> <li>zh：简体中文</li> <li>zh-TW：繁体中文</li> <li>en：英语</li> <li>ja：日语</li> <li>ko：韩语</li> <li>ru：俄语</li> <li>fr：法语</li> <li>de：德语</li> <li>it：意大利语</li> <li>es：西班牙语</li> <li>pt：葡萄牙语</li> <li>ms：马来西亚语</li> <li>th：泰语</li><li>vi：越南语</li>
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -145,6 +157,7 @@ namespace TencentCloud
 <li>ms：马来西亚语：zh（中文）、en（英语）</li>
 <li>th：泰语：zh（中文）、en（英语）</li>
 <li>vi：越南语：zh（中文）、en（英语）</li>
+                     * 
                      */
                     std::string GetTarget() const;
 
@@ -164,7 +177,7 @@ namespace TencentCloud
 <li>ms：马来西亚语：zh（中文）、en（英语）</li>
 <li>th：泰语：zh（中文）、en（英语）</li>
 <li>vi：越南语：zh（中文）、en（英语）</li>
-                     * @param Target 目标语言，各源语言的目标语言支持列表如下：
+                     * @param _target 目标语言，各源语言的目标语言支持列表如下：
 <li>zh（简体中文）：en（英语）、ja（日语）、ko（韩语）、ru（俄语）、fr（法语）、de（德语）、it（意大利语）、es（西班牙语）、pt（葡萄牙语）、ms（马来语）、th（泰语）、vi（越南语）</li>
 <li>zh-TW（繁体中文）：en（英语）、ja（日语）、ko（韩语）、ru（俄语）、fr（法语）、de（德语）、it（意大利语）、es（西班牙语）、pt（葡萄牙语）、ms（马来语）、th（泰语）、vi（越南语）</li>
 <li>en（英语）：zh（中文）、ja（日语）、ko（韩语）、ru（俄语）、fr（法语）、de（德语）、it（意大利语）、es（西班牙语）、pt（葡萄牙语）、ms（马来语）、th（泰语）、vi（越南语）</li>
@@ -179,30 +192,35 @@ namespace TencentCloud
 <li>ms：马来西亚语：zh（中文）、en（英语）</li>
 <li>th：泰语：zh（中文）、en（英语）</li>
 <li>vi：越南语：zh（中文）、en（英语）</li>
+                     * 
                      */
                     void SetTarget(const std::string& _target);
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
                      * @return ProjectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
-                     * @param ProjectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * @param _projectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

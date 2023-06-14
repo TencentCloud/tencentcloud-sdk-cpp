@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountSet 数据库账号列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Account> GetAccountSet() const;
 
                     /**
                      * 判断参数 AccountSet 是否已赋值
                      * @return AccountSet 是否已赋值
+                     * 
                      */
                     bool AccountSetHasBeenSet() const;
 
                     /**
                      * 获取账号总数量
                      * @return TotalCount 账号总数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

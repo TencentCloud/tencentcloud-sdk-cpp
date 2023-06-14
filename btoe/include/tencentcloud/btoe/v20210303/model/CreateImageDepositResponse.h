@@ -48,24 +48,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 业务ID 透传 长度最大不超过64
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取请求成功，返回存证编码,用于查询存证后续业务数据
                      * @return EvidenceId 请求成功，返回存证编码,用于查询存证后续业务数据
+                     * 
                      */
                     std::string GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 

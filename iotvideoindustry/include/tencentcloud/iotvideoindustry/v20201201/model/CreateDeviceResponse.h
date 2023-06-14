@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCode 设备编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
                      * 判断参数 DeviceCode 是否已赋值
                      * @return DeviceCode 是否已赋值
+                     * 
                      */
                     bool DeviceCodeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualGroupId 设备虚拟组信息，仅在创建NVR时返回该值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirtualGroupId() const;
 
                     /**
                      * 判断参数 VirtualGroupId 是否已赋值
                      * @return VirtualGroupId 是否已赋值
+                     * 
                      */
                     bool VirtualGroupIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取二维码id
                      * @return QrCodeId 二维码id
+                     * 
                      */
                     std::string GetQrCodeId() const;
 
                     /**
                      * 设置二维码id
-                     * @param QrCodeId 二维码id
+                     * @param _qrCodeId 二维码id
+                     * 
                      */
                     void SetQrCodeId(const std::string& _qrCodeId);
 
                     /**
                      * 判断参数 QrCodeId 是否已赋值
                      * @return QrCodeId 是否已赋值
+                     * 
                      */
                     bool QrCodeIdHasBeenSet() const;
 
                     /**
                      * 获取二维码url
                      * @return QrCodeUrl 二维码url
+                     * 
                      */
                     std::string GetQrCodeUrl() const;
 
                     /**
                      * 设置二维码url
-                     * @param QrCodeUrl 二维码url
+                     * @param _qrCodeUrl 二维码url
+                     * 
                      */
                     void SetQrCodeUrl(const std::string& _qrCodeUrl);
 
                     /**
                      * 判断参数 QrCodeUrl 是否已赋值
                      * @return QrCodeUrl 是否已赋值
+                     * 
                      */
                     bool QrCodeUrlHasBeenSet() const;
 
                     /**
                      * 获取二维码过期时间戳，单位秒
                      * @return ExpiredTime 二维码过期时间戳，单位秒
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 设置二维码过期时间戳，单位秒
-                     * @param ExpiredTime 二维码过期时间戳，单位秒
+                     * @param _expiredTime 二维码过期时间戳，单位秒
+                     * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

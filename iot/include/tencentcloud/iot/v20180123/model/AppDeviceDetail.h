@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取设备Id
                      * @return DeviceId 设备Id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备Id
-                     * @param DeviceId 设备Id
+                     * @param _deviceId 设备Id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取所属产品Id
                      * @return ProductId 所属产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置所属产品Id
-                     * @param ProductId 所属产品Id
+                     * @param _productId 所属产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取别名
                      * @return AliasName 别名
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置别名
-                     * @param AliasName 别名
+                     * @param _aliasName 别名
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
                     /**
                      * 获取地区
                      * @return Region 地区
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地区
-                     * @param Region 地区
+                     * @param _region 地区
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取设备信息（json）
                      * @return DeviceInfo 设备信息（json）
+                     * 
                      */
                     std::string GetDeviceInfo() const;
 
                     /**
                      * 设置设备信息（json）
-                     * @param DeviceInfo 设备信息（json）
+                     * @param _deviceInfo 设备信息（json）
+                     * 
                      */
                     void SetDeviceInfo(const std::string& _deviceInfo);
 
                     /**
                      * 判断参数 DeviceInfo 是否已赋值
                      * @return DeviceInfo 是否已赋值
+                     * 
                      */
                     bool DeviceInfoHasBeenSet() const;
 
                     /**
                      * 获取数据模板
                      * @return DataTemplate 数据模板
+                     * 
                      */
                     std::vector<DataTemplate> GetDataTemplate() const;
 
                     /**
                      * 设置数据模板
-                     * @param DataTemplate 数据模板
+                     * @param _dataTemplate 数据模板
+                     * 
                      */
                     void SetDataTemplate(const std::vector<DataTemplate>& _dataTemplate);
 
                     /**
                      * 判断参数 DataTemplate 是否已赋值
                      * @return DataTemplate 是否已赋值
+                     * 
                      */
                     bool DataTemplateHasBeenSet() const;
 

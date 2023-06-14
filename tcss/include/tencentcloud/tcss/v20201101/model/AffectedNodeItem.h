@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名字
                      * @return ClusterName 集群名字
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名字
-                     * @param ClusterName 集群名字
+                     * @param _clusterName 集群名字
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取内网ip地址
                      * @return PrivateIpAddresses 内网ip地址
+                     * 
                      */
                     std::string GetPrivateIpAddresses() const;
 
                     /**
                      * 设置内网ip地址
-                     * @param PrivateIpAddresses 内网ip地址
+                     * @param _privateIpAddresses 内网ip地址
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::string& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取节点的角色，Master、Work等
                      * @return InstanceRole 节点的角色，Master、Work等
+                     * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
                      * 设置节点的角色，Master、Work等
-                     * @param InstanceRole 节点的角色，Master、Work等
+                     * @param _instanceRole 节点的角色，Master、Work等
+                     * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
                     /**
                      * 判断参数 InstanceRole 是否已赋值
                      * @return InstanceRole 是否已赋值
+                     * 
                      */
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
                      * 获取k8s版本
                      * @return ClusterVersion k8s版本
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置k8s版本
-                     * @param ClusterVersion k8s版本
+                     * @param _clusterVersion k8s版本
+                     * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 
                     /**
                      * 获取运行时组件,docker或者containerd
                      * @return ContainerRuntime 运行时组件,docker或者containerd
+                     * 
                      */
                     std::string GetContainerRuntime() const;
 
                     /**
                      * 设置运行时组件,docker或者containerd
-                     * @param ContainerRuntime 运行时组件,docker或者containerd
+                     * @param _containerRuntime 运行时组件,docker或者containerd
+                     * 
                      */
                     void SetContainerRuntime(const std::string& _containerRuntime);
 
                     /**
                      * 判断参数 ContainerRuntime 是否已赋值
                      * @return ContainerRuntime 是否已赋值
+                     * 
                      */
                     bool ContainerRuntimeHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return Region 区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置区域
-                     * @param Region 区域
+                     * @param _region 区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取检查结果的验证信息
                      * @return VerifyInfo 检查结果的验证信息
+                     * 
                      */
                     std::string GetVerifyInfo() const;
 
                     /**
                      * 设置检查结果的验证信息
-                     * @param VerifyInfo 检查结果的验证信息
+                     * @param _verifyInfo 检查结果的验证信息
+                     * 
                      */
                     void SetVerifyInfo(const std::string& _verifyInfo);
 
                     /**
                      * 判断参数 VerifyInfo 是否已赋值
                      * @return VerifyInfo 是否已赋值
+                     * 
                      */
                     bool VerifyInfoHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return NodeName 节点名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 

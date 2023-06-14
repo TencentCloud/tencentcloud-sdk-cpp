@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取返回码：0-成功 其它-失败
                      * @return ReturnCode 返回码：0-成功 其它-失败
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 设置返回码：0-成功 其它-失败
-                     * @param ReturnCode 返回码：0-成功 其它-失败
+                     * @param _returnCode 返回码：0-成功 其它-失败
+                     * 
                      */
                     void SetReturnCode(const int64_t& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取返回信息
                      * @return ReturnMsg 返回信息
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 设置返回信息
-                     * @param ReturnMsg 返回信息
+                     * @param _returnMsg 返回信息
+                     * 
                      */
                     void SetReturnMsg(const std::string& _returnMsg);
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取样例id
                      * @return InstanceId 样例id
+                     * 
                      */
                     int64_t GetInstanceId() const;
 
                     /**
                      * 设置样例id
-                     * @param InstanceId 样例id
+                     * @param _instanceId 样例id
+                     * 
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

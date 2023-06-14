@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主播ID
                      * @return AnchorId 主播ID
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播ID
-                     * @param AnchorId 主播ID
+                     * @param _anchorId 主播ID
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 
                     /**
                      * 获取提现金额，单位为"分"
                      * @return Amount 提现金额，单位为"分"
+                     * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 设置提现金额，单位为"分"
-                     * @param Amount 提现金额，单位为"分"
+                     * @param _amount 提现金额，单位为"分"
+                     * 
                      */
                     void SetAmount(const int64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
                     /**
                      * 获取外部业务订单号
                      * @return OrderId 外部业务订单号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置外部业务订单号
-                     * @param OrderId 外部业务订单号
+                     * @param _orderId 外部业务订单号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

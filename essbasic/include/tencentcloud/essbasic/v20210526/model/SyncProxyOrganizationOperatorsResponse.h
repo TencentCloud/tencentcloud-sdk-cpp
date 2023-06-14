@@ -53,12 +53,14 @@ namespace TencentCloud
 1-成功 
 2-部分成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedList 同步失败经办人及其失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SyncFailReason> GetFailedList() const;
 
                     /**
                      * 判断参数 FailedList 是否已赋值
                      * @return FailedList 是否已赋值
+                     * 
                      */
                     bool FailedListHasBeenSet() const;
 

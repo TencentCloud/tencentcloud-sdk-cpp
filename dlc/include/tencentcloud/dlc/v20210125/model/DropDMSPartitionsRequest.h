@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return DatabaseName 数据库名称
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取数据库Schema名称
                      * @return SchemaName 数据库Schema名称
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置数据库Schema名称
-                     * @param SchemaName 数据库Schema名称
+                     * @param _schemaName 数据库Schema名称
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
                     /**
                      * 获取数据表名称
                      * @return TableName 数据表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置数据表名称
-                     * @param TableName 数据表名称
+                     * @param _tableName 数据表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取分区名称
                      * @return Name 分区名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分区名称
-                     * @param Name 分区名称
+                     * @param _name 分区名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取单个分区名称
                      * @return Values 单个分区名称
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置单个分区名称
-                     * @param Values 单个分区名称
+                     * @param _values 单个分区名称
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否删除分区数据
                      * @return DeleteData 是否删除分区数据
+                     * 
                      */
                     bool GetDeleteData() const;
 
                     /**
                      * 设置是否删除分区数据
-                     * @param DeleteData 是否删除分区数据
+                     * @param _deleteData 是否删除分区数据
+                     * 
                      */
                     void SetDeleteData(const bool& _deleteData);
 
                     /**
                      * 判断参数 DeleteData 是否已赋值
                      * @return DeleteData 是否已赋值
+                     * 
                      */
                     bool DeleteDataHasBeenSet() const;
 

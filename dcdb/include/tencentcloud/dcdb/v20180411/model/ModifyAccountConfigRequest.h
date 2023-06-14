@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取账号的名称
                      * @return UserName 账号的名称
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置账号的名称
-                     * @param UserName 账号的名称
+                     * @param _userName 账号的名称
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取账号的域名
                      * @return Host 账号的域名
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置账号的域名
-                     * @param Host 账号的域名
+                     * @param _host 账号的域名
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取配置列表，每一个元素是Config和Value的组合
                      * @return Configs 配置列表，每一个元素是Config和Value的组合
+                     * 
                      */
                     std::vector<ConfigValue> GetConfigs() const;
 
                     /**
                      * 设置配置列表，每一个元素是Config和Value的组合
-                     * @param Configs 配置列表，每一个元素是Config和Value的组合
+                     * @param _configs 配置列表，每一个元素是Config和Value的组合
+                     * 
                      */
                     void SetConfigs(const std::vector<ConfigValue>& _configs);
 
                     /**
                      * 判断参数 Configs 是否已赋值
                      * @return Configs 是否已赋值
+                     * 
                      */
                     bool ConfigsHasBeenSet() const;
 

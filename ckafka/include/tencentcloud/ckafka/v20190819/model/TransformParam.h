@@ -52,144 +52,168 @@ namespace TencentCloud
                     /**
                      * 获取解析格式，JSON，DELIMITER分隔符，REGULAR正则提取
                      * @return AnalysisFormat 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取
+                     * 
                      */
                     std::string GetAnalysisFormat() const;
 
                     /**
                      * 设置解析格式，JSON，DELIMITER分隔符，REGULAR正则提取
-                     * @param AnalysisFormat 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取
+                     * @param _analysisFormat 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取
+                     * 
                      */
                     void SetAnalysisFormat(const std::string& _analysisFormat);
 
                     /**
                      * 判断参数 AnalysisFormat 是否已赋值
                      * @return AnalysisFormat 是否已赋值
+                     * 
                      */
                     bool AnalysisFormatHasBeenSet() const;
 
                     /**
                      * 获取输出格式
                      * @return OutputFormat 输出格式
+                     * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
                      * 设置输出格式
-                     * @param OutputFormat 输出格式
+                     * @param _outputFormat 输出格式
+                     * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
 
                     /**
                      * 判断参数 OutputFormat 是否已赋值
                      * @return OutputFormat 是否已赋值
+                     * 
                      */
                     bool OutputFormatHasBeenSet() const;
 
                     /**
                      * 获取是否保留解析失败数据
                      * @return FailureParam 是否保留解析失败数据
+                     * 
                      */
                     FailureParam GetFailureParam() const;
 
                     /**
                      * 设置是否保留解析失败数据
-                     * @param FailureParam 是否保留解析失败数据
+                     * @param _failureParam 是否保留解析失败数据
+                     * 
                      */
                     void SetFailureParam(const FailureParam& _failureParam);
 
                     /**
                      * 判断参数 FailureParam 是否已赋值
                      * @return FailureParam 是否已赋值
+                     * 
                      */
                     bool FailureParamHasBeenSet() const;
 
                     /**
                      * 获取原始数据
                      * @return Content 原始数据
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置原始数据
-                     * @param Content 原始数据
+                     * @param _content 原始数据
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义
                      * @return SourceType 数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义
-                     * @param SourceType 数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义
+                     * @param _sourceType 数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取分隔符、正则表达式
                      * @return Regex 分隔符、正则表达式
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置分隔符、正则表达式
-                     * @param Regex 分隔符、正则表达式
+                     * @param _regex 分隔符、正则表达式
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
                     /**
                      * 获取Map
                      * @return MapParam Map
+                     * 
                      */
                     std::vector<MapParam> GetMapParam() const;
 
                     /**
                      * 设置Map
-                     * @param MapParam Map
+                     * @param _mapParam Map
+                     * 
                      */
                     void SetMapParam(const std::vector<MapParam>& _mapParam);
 
                     /**
                      * 判断参数 MapParam 是否已赋值
                      * @return MapParam 是否已赋值
+                     * 
                      */
                     bool MapParamHasBeenSet() const;
 
                     /**
                      * 获取过滤器
                      * @return FilterParam 过滤器
+                     * 
                      */
                     std::vector<FilterMapParam> GetFilterParam() const;
 
                     /**
                      * 设置过滤器
-                     * @param FilterParam 过滤器
+                     * @param _filterParam 过滤器
+                     * 
                      */
                     void SetFilterParam(const std::vector<FilterMapParam>& _filterParam);
 
                     /**
                      * 判断参数 FilterParam 是否已赋值
                      * @return FilterParam 是否已赋值
+                     * 
                      */
                     bool FilterParamHasBeenSet() const;
 
@@ -198,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置测试结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 测试结果
+                     * @param _result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -220,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalyseResult 解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MapParam> GetAnalyseResult() const;
 
                     /**
                      * 设置解析结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnalyseResult 解析结果
+                     * @param _analyseResult 解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnalyseResult(const std::vector<MapParam>& _analyseResult);
 
                     /**
                      * 判断参数 AnalyseResult 是否已赋值
                      * @return AnalyseResult 是否已赋值
+                     * 
                      */
                     bool AnalyseResultHasBeenSet() const;
 
@@ -242,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseEventBus 底层引擎是否使用eb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseEventBus() const;
 
                     /**
                      * 设置底层引擎是否使用eb
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseEventBus 底层引擎是否使用eb
+                     * @param _useEventBus 底层引擎是否使用eb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseEventBus(const bool& _useEventBus);
 
                     /**
                      * 判断参数 UseEventBus 是否已赋值
                      * @return UseEventBus 是否已赋值
+                     * 
                      */
                     bool UseEventBusHasBeenSet() const;
 

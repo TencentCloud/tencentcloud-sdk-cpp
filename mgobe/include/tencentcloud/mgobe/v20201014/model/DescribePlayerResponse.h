@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取玩家信息。
                      * @return Player 玩家信息。
+                     * 
                      */
                     Player GetPlayer() const;
 
                     /**
                      * 判断参数 Player 是否已赋值
                      * @return Player 是否已赋值
+                     * 
                      */
                     bool PlayerHasBeenSet() const;
 

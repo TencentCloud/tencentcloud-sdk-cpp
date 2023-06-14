@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取待绑定的主机端口，可选值1~65535。
                      * @return Port 待绑定的主机端口，可选值1~65535。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置待绑定的主机端口，可选值1~65535。
-                     * @param Port 待绑定的主机端口，可选值1~65535。
+                     * @param _port 待绑定的主机端口，可选值1~65535。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。
                      * @return InstanceId 待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。
-                     * @param InstanceId 待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。
+                     * @param _instanceId 待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的主机权重，可选值0~100。
                      * @return Weight 待绑定的主机权重，可选值0~100。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置待绑定的主机权重，可选值0~100。
-                     * @param Weight 待绑定的主机权重，可选值0~100。
+                     * @param _weight 待绑定的主机权重，可选值0~100。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）
                      * @return ProbePort 自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）
+                     * 
                      */
                     int64_t GetProbePort() const;
 
                     /**
                      * 设置自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）
-                     * @param ProbePort 自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）
+                     * @param _probePort 自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）
+                     * 
                      */
                     void SetProbePort(const int64_t& _probePort);
 
                     /**
                      * 判断参数 ProbePort 是否已赋值
                      * @return ProbePort 是否已赋值
+                     * 
                      */
                     bool ProbePortHasBeenSet() const;
 

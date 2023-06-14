@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
                      * @return Container 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
-                     * @param Container 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+                     * @param _container 封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
                     /**
                      * 获取剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
                      * @return Type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
-                     * @param Type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     * @param _type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回日志总行数，不会超过入参的RowNum
                      * @return TotalCount 返回日志总行数，不会超过入参的RowNum
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取日志列表
                      * @return PeerLogList 日志列表
+                     * 
                      */
                     std::vector<LogDetailForUser> GetPeerLogList() const;
 
                     /**
                      * 判断参数 PeerLogList 是否已赋值
                      * @return PeerLogList 是否已赋值
+                     * 
                      */
                     bool PeerLogListHasBeenSet() const;
 

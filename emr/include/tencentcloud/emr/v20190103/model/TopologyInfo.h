@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区信息
+                     * @param _zone 可用区信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetInfoList 子网信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SubnetInfo> GetSubnetInfoList() const;
 
                     /**
                      * 设置子网信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetInfoList 子网信息
+                     * @param _subnetInfoList 子网信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetInfoList(const std::vector<SubnetInfo>& _subnetInfoList);
 
                     /**
                      * 判断参数 SubnetInfoList 是否已赋值
                      * @return SubnetInfoList 是否已赋值
+                     * 
                      */
                     bool SubnetInfoListHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfoList 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ShortNodeInfo> GetNodeInfoList() const;
 
                     /**
                      * 设置节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeInfoList 节点信息
+                     * @param _nodeInfoList 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeInfoList(const std::vector<ShortNodeInfo>& _nodeInfoList);
 
                     /**
                      * 判断参数 NodeInfoList 是否已赋值
                      * @return NodeInfoList 是否已赋值
+                     * 
                      */
                     bool NodeInfoListHasBeenSet() const;
 

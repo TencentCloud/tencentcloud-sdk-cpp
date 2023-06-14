@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleExecId 规则执行ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleExecId() const;
 
                     /**
                      * 设置规则执行ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleExecId 规则执行ID
+                     * @param _ruleExecId 规则执行ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleExecId(const uint64_t& _ruleExecId);
 
                     /**
                      * 判断参数 RuleExecId 是否已赋值
                      * @return RuleExecId 是否已赋值
+                     * 
                      */
                     bool RuleExecIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleGroupExecId 规则组执行ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleGroupExecId() const;
 
                     /**
                      * 设置规则组执行ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleGroupExecId 规则组执行ID
+                     * @param _ruleGroupExecId 规则组执行ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleGroupExecId(const uint64_t& _ruleGroupExecId);
 
                     /**
                      * 判断参数 RuleGroupExecId 是否已赋值
                      * @return RuleGroupExecId 是否已赋值
+                     * 
                      */
                     bool RuleGroupExecIdHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleGroupId 规则组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleGroupId 规则组ID
+                     * @param _ruleGroupId 规则组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleType() const;
 
                     /**
                      * 设置规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
+                     * @param _ruleType 规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const uint64_t& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceObjectDataTypeName 源字段详细类型，int string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceObjectDataTypeName() const;
 
                     /**
                      * 设置源字段详细类型，int string
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceObjectDataTypeName 源字段详细类型，int string
+                     * @param _sourceObjectDataTypeName 源字段详细类型，int string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceObjectDataTypeName(const std::string& _sourceObjectDataTypeName);
 
                     /**
                      * 判断参数 SourceObjectDataTypeName 是否已赋值
                      * @return SourceObjectDataTypeName 是否已赋值
+                     * 
                      */
                     bool SourceObjectDataTypeNameHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceObjectValue 源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceObjectValue() const;
 
                     /**
                      * 设置源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceObjectValue 源字段名称
+                     * @param _sourceObjectValue 源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceObjectValue(const std::string& _sourceObjectValue);
 
                     /**
                      * 判断参数 SourceObjectValue 是否已赋值
                      * @return SourceObjectValue 是否已赋值
+                     * 
                      */
                     bool SourceObjectValueHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionExpression 条件扫描WHERE条件表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConditionExpression() const;
 
                     /**
                      * 设置条件扫描WHERE条件表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConditionExpression 条件扫描WHERE条件表达式
+                     * @param _conditionExpression 条件扫描WHERE条件表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConditionExpression(const std::string& _conditionExpression);
 
                     /**
                      * 判断参数 ConditionExpression 是否已赋值
                      * @return ConditionExpression 是否已赋值
+                     * 
                      */
                     bool ConditionExpressionHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecResultStatus 检测结果（1:检测通过，2：触发规则，3：检测失败）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExecResultStatus() const;
 
                     /**
                      * 设置检测结果（1:检测通过，2：触发规则，3：检测失败）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecResultStatus 检测结果（1:检测通过，2：触发规则，3：检测失败）
+                     * @param _execResultStatus 检测结果（1:检测通过，2：触发规则，3：检测失败）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecResultStatus(const uint64_t& _execResultStatus);
 
                     /**
                      * 判断参数 ExecResultStatus 是否已赋值
                      * @return ExecResultStatus 是否已赋值
+                     * 
                      */
                     bool ExecResultStatusHasBeenSet() const;
 
@@ -273,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerResult 触发结果，告警发送成功, 阻断任务成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTriggerResult() const;
 
                     /**
                      * 设置触发结果，告警发送成功, 阻断任务成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerResult 触发结果，告警发送成功, 阻断任务成功
+                     * @param _triggerResult 触发结果，告警发送成功, 阻断任务成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerResult(const std::string& _triggerResult);
 
                     /**
                      * 判断参数 TriggerResult 是否已赋值
                      * @return TriggerResult 是否已赋值
+                     * 
                      */
                     bool TriggerResultHasBeenSet() const;
 
@@ -295,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareResult 对比结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareResult GetCompareResult() const;
 
                     /**
                      * 设置对比结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareResult 对比结果
+                     * @param _compareResult 对比结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareResult(const CompareResult& _compareResult);
 
                     /**
                      * 判断参数 CompareResult 是否已赋值
                      * @return CompareResult 是否已赋值
+                     * 
                      */
                     bool CompareResultHasBeenSet() const;
 
@@ -317,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 模版名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模版名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateName 模版名称
+                     * @param _templateName 模版名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
@@ -339,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityDim 质量维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetQualityDim() const;
 
                     /**
                      * 设置质量维度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QualityDim 质量维度
+                     * @param _qualityDim 质量维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQualityDim(const uint64_t& _qualityDim);
 
                     /**
                      * 判断参数 QualityDim 是否已赋值
                      * @return QualityDim 是否已赋值
+                     * 
                      */
                     bool QualityDimHasBeenSet() const;
 
@@ -361,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetDBTableName 目标表-库表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetDBTableName() const;
 
                     /**
                      * 设置目标表-库表名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetDBTableName 目标表-库表名称
+                     * @param _targetDBTableName 目标表-库表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetDBTableName(const std::string& _targetDBTableName);
 
                     /**
                      * 判断参数 TargetDBTableName 是否已赋值
                      * @return TargetDBTableName 是否已赋值
+                     * 
                      */
                     bool TargetDBTableNameHasBeenSet() const;
 
@@ -383,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetObjectValue 目标表-字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetObjectValue() const;
 
                     /**
                      * 设置目标表-字段名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetObjectValue 目标表-字段名称
+                     * @param _targetObjectValue 目标表-字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetObjectValue(const std::string& _targetObjectValue);
 
                     /**
                      * 判断参数 TargetObjectValue 是否已赋值
                      * @return TargetObjectValue 是否已赋值
+                     * 
                      */
                     bool TargetObjectValueHasBeenSet() const;
 
@@ -405,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetObjectDataType 目标表-字段类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetObjectDataType() const;
 
                     /**
                      * 设置目标表-字段类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetObjectDataType 目标表-字段类型
+                     * @param _targetObjectDataType 目标表-字段类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetObjectDataType(const std::string& _targetObjectDataType);
 
                     /**
                      * 判断参数 TargetObjectDataType 是否已赋值
                      * @return TargetObjectDataType 是否已赋值
+                     * 
                      */
                     bool TargetObjectDataTypeHasBeenSet() const;
 
@@ -427,20 +478,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldConfig 自定义模版sql表达式参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleFieldConfig GetFieldConfig() const;
 
                     /**
                      * 设置自定义模版sql表达式参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldConfig 自定义模版sql表达式参数
+                     * @param _fieldConfig 自定义模版sql表达式参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldConfig(const RuleFieldConfig& _fieldConfig);
 
                     /**
                      * 判断参数 FieldConfig 是否已赋值
                      * @return FieldConfig 是否已赋值
+                     * 
                      */
                     bool FieldConfigHasBeenSet() const;
 
@@ -449,20 +503,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelConditionExpr 源字段与目标字段关联条件on表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRelConditionExpr() const;
 
                     /**
                      * 设置源字段与目标字段关联条件on表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelConditionExpr 源字段与目标字段关联条件on表达式
+                     * @param _relConditionExpr 源字段与目标字段关联条件on表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelConditionExpr(const std::string& _relConditionExpr);
 
                     /**
                      * 判断参数 RelConditionExpr 是否已赋值
                      * @return RelConditionExpr 是否已赋值
+                     * 
                      */
                     bool RelConditionExprHasBeenSet() const;
 

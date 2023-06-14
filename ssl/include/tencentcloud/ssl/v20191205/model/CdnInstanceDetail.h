@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取已部署证书ID
                      * @return CertId 已部署证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置已部署证书ID
-                     * @param CertId 已部署证书ID
+                     * @param _certId 已部署证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取域名状态
                      * @return Status 域名状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置域名状态
-                     * @param Status 域名状态
+                     * @param _status 域名状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

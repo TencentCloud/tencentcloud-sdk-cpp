@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取发信统计报告，按天
                      * @return DailyVolumes 发信统计报告，按天
+                     * 
                      */
                     std::vector<Volume> GetDailyVolumes() const;
 
                     /**
                      * 判断参数 DailyVolumes 是否已赋值
                      * @return DailyVolumes 是否已赋值
+                     * 
                      */
                     bool DailyVolumesHasBeenSet() const;
 
                     /**
                      * 获取发信统计报告，总览
                      * @return OverallVolume 发信统计报告，总览
+                     * 
                      */
                     Volume GetOverallVolume() const;
 
                     /**
                      * 判断参数 OverallVolume 是否已赋值
                      * @return OverallVolume 是否已赋值
+                     * 
                      */
                     bool OverallVolumeHasBeenSet() const;
 

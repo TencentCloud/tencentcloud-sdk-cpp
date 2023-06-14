@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取最小响应时间，单位ms
                      * @return Min 最小响应时间，单位ms
+                     * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置最小响应时间，单位ms
-                     * @param Min 最小响应时间，单位ms
+                     * @param _min 最小响应时间，单位ms
+                     * 
                      */
                     void SetMin(const std::string& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取最大响应时间，单位ms
                      * @return Max 最大响应时间，单位ms
+                     * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置最大响应时间，单位ms
-                     * @param Max 最大响应时间，单位ms
+                     * @param _max 最大响应时间，单位ms
+                     * 
                      */
                     void SetMax(const std::string& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 

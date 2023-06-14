@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取二维码id
                      * @return QrCodeId 二维码id
+                     * 
                      */
                     std::string GetQrCodeId() const;
 
                     /**
                      * 设置二维码id
-                     * @param QrCodeId 二维码id
+                     * @param _qrCodeId 二维码id
+                     * 
                      */
                     void SetQrCodeId(const std::string& _qrCodeId);
 
                     /**
                      * 判断参数 QrCodeId 是否已赋值
                      * @return QrCodeId 是否已赋值
+                     * 
                      */
                     bool QrCodeIdHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

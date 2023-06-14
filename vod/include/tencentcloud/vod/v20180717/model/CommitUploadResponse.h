@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件的唯一标识。
                      * @return FileId 媒体文件的唯一标识。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取媒体播放地址。
                      * @return MediaUrl 媒体播放地址。
+                     * 
                      */
                     std::string GetMediaUrl() const;
 
                     /**
                      * 判断参数 MediaUrl 是否已赋值
                      * @return MediaUrl 是否已赋值
+                     * 
                      */
                     bool MediaUrlHasBeenSet() const;
 
                     /**
                      * 获取媒体封面地址。
                      * @return CoverUrl 媒体封面地址。
+                     * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 判断参数 CoverUrl 是否已赋值
                      * @return CoverUrl 是否已赋值
+                     * 
                      */
                     bool CoverUrlHasBeenSet() const;
 

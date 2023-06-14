@@ -65,6 +65,7 @@ namespace TencentCloud
 <li>Porn.Ocr：图片 OCR 文字中的鉴别令人反感的信息结果；</li>
 <li>Terrorism.Ocr：图片 OCR 文字中的鉴别令人不安全的信息结果；</li>
 <li>Political.Ocr：图片 OCR 文字中的鉴别令人不适宜信息结果。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -76,19 +77,21 @@ namespace TencentCloud
 <li>Porn.Ocr：图片 OCR 文字中的鉴别令人反感的信息结果；</li>
 <li>Terrorism.Ocr：图片 OCR 文字中的鉴别令人不安全的信息结果；</li>
 <li>Political.Ocr：图片 OCR 文字中的鉴别令人不适宜信息结果。</li>
-                     * @param Type 结果类型，取值范围：
+                     * @param _type 结果类型，取值范围：
 <li>Porn.Image：图片画面中的鉴别令人反感的信息结果；</li>
 <li>Terrorism.Image：图片画面中的鉴别令人不安全的信息结果；</li>
 <li>Political.Image：图片画面中的鉴别令人不适宜信息结果；</li>
 <li>Porn.Ocr：图片 OCR 文字中的鉴别令人反感的信息结果；</li>
 <li>Terrorism.Ocr：图片 OCR 文字中的鉴别令人不安全的信息结果；</li>
 <li>Political.Ocr：图片 OCR 文字中的鉴别令人不适宜信息结果。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -97,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PornImageResult 图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PornImageResult GetPornImageResult() const;
 
                     /**
                      * 设置图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PornImageResult 图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。
+                     * @param _pornImageResult 图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPornImageResult(const PornImageResult& _pornImageResult);
 
                     /**
                      * 判断参数 PornImageResult 是否已赋值
                      * @return PornImageResult 是否已赋值
+                     * 
                      */
                     bool PornImageResultHasBeenSet() const;
 
@@ -119,20 +125,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerrorismImageResult 图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TerrorismImageResult GetTerrorismImageResult() const;
 
                     /**
                      * 设置图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorismImageResult 图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。
+                     * @param _terrorismImageResult 图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerrorismImageResult(const TerrorismImageResult& _terrorismImageResult);
 
                     /**
                      * 判断参数 TerrorismImageResult 是否已赋值
                      * @return TerrorismImageResult 是否已赋值
+                     * 
                      */
                     bool TerrorismImageResultHasBeenSet() const;
 
@@ -141,20 +150,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoliticalImageResult 图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PoliticalImageResult GetPoliticalImageResult() const;
 
                     /**
                      * 设置图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalImageResult 图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。
+                     * @param _politicalImageResult 图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoliticalImageResult(const PoliticalImageResult& _politicalImageResult);
 
                     /**
                      * 判断参数 PoliticalImageResult 是否已赋值
                      * @return PoliticalImageResult 是否已赋值
+                     * 
                      */
                     bool PoliticalImageResultHasBeenSet() const;
 
@@ -163,20 +175,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PornOcrResult 图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ContentReviewOcrResult GetPornOcrResult() const;
 
                     /**
                      * 设置图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PornOcrResult 图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。
+                     * @param _pornOcrResult 图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPornOcrResult(const ContentReviewOcrResult& _pornOcrResult);
 
                     /**
                      * 判断参数 PornOcrResult 是否已赋值
                      * @return PornOcrResult 是否已赋值
+                     * 
                      */
                     bool PornOcrResultHasBeenSet() const;
 
@@ -185,20 +200,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerrorismOcrResult 图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ContentReviewOcrResult GetTerrorismOcrResult() const;
 
                     /**
                      * 设置图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorismOcrResult 图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。
+                     * @param _terrorismOcrResult 图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerrorismOcrResult(const ContentReviewOcrResult& _terrorismOcrResult);
 
                     /**
                      * 判断参数 TerrorismOcrResult 是否已赋值
                      * @return TerrorismOcrResult 是否已赋值
+                     * 
                      */
                     bool TerrorismOcrResultHasBeenSet() const;
 
@@ -207,20 +225,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoliticalOcrResult 图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ContentReviewOcrResult GetPoliticalOcrResult() const;
 
                     /**
                      * 设置图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoliticalOcrResult 图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。
+                     * @param _politicalOcrResult 图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoliticalOcrResult(const ContentReviewOcrResult& _politicalOcrResult);
 
                     /**
                      * 判断参数 PoliticalOcrResult 是否已赋值
                      * @return PoliticalOcrResult 是否已赋值
+                     * 
                      */
                     bool PoliticalOcrResultHasBeenSet() const;
 

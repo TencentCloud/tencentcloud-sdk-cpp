@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取序号
                      * @return Id 序号
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置序号
-                     * @param Id 序号
+                     * @param _id 序号
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取标签名称
                      * @return Name 标签名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称
-                     * @param Name 标签名称
+                     * @param _name 标签名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -88,74 +94,86 @@ namespace TencentCloud
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
                      * @return Value 标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-                     * @param Value 标签值，
+                     * @param _value 标签值，
 当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取分数
                      * @return Score 分数
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置分数
-                     * @param Score 分数
+                     * @param _score 分数
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取检测框坐标
                      * @return Location 检测框坐标
+                     * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置检测框坐标
-                     * @param Location 检测框坐标
+                     * @param _location 检测框坐标
+                     * 
                      */
                     void SetLocation(const Location& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取二级标签名称
                      * @return SubLabel 二级标签名称
+                     * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置二级标签名称
-                     * @param SubLabel 二级标签名称
+                     * @param _subLabel 二级标签名称
+                     * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
 
                     /**
                      * 判断参数 SubLabel 是否已赋值
                      * @return SubLabel 是否已赋值
+                     * 
                      */
                     bool SubLabelHasBeenSet() const;
 
@@ -164,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 图库或人脸库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置图库或人脸库id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 图库或人脸库id
+                     * @param _groupId 图库或人脸库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -186,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectId 图或人脸id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetObjectId() const;
 
                     /**
                      * 设置图或人脸id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectId 图或人脸id
+                     * @param _objectId 图或人脸id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjectId(const std::string& _objectId);
 
                     /**
                      * 判断参数 ObjectId 是否已赋值
                      * @return ObjectId 是否已赋值
+                     * 
                      */
                     bool ObjectIdHasBeenSet() const;
 

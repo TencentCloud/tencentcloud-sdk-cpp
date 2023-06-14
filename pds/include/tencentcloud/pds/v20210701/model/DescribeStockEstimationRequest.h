@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取用户信息
                      * @return ServiceParams 用户信息
+                     * 
                      */
                     UserInfos GetServiceParams() const;
 
                     /**
                      * 设置用户信息
-                     * @param ServiceParams 用户信息
+                     * @param _serviceParams 用户信息
+                     * 
                      */
                     void SetServiceParams(const UserInfos& _serviceParams);
 
                     /**
                      * 判断参数 ServiceParams 是否已赋值
                      * @return ServiceParams 是否已赋值
+                     * 
                      */
                     bool ServiceParamsHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
                      * @return HasNextPage 是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
+                     * 
                      */
                     bool GetHasNextPage() const;
 
                     /**
                      * 判断参数 HasNextPage 是否已赋值
                      * @return HasNextPage 是否已赋值
+                     * 
                      */
                     bool HasNextPageHasBeenSet() const;
 
                     /**
                      * 获取下一页的游标。用于分页。
                      * @return NextCursor 下一页的游标。用于分页。
+                     * 
                      */
                     uint64_t GetNextCursor() const;
 
                     /**
                      * 判断参数 NextCursor 是否已赋值
                      * @return NextCursor 是否已赋值
+                     * 
                      */
                     bool NextCursorHasBeenSet() const;
 
                     /**
                      * 获取数据
                      * @return WeChatBillDetails 数据
+                     * 
                      */
                     std::vector<WeChatBillDetail> GetWeChatBillDetails() const;
 
                     /**
                      * 判断参数 WeChatBillDetails 是否已赋值
                      * @return WeChatBillDetails 是否已赋值
+                     * 
                      */
                     bool WeChatBillDetailsHasBeenSet() const;
 

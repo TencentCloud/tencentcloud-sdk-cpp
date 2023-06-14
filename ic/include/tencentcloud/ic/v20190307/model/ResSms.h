@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Iccid 卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Iccid 卡片ID
+                     * @param _iccid 卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msisdn 卡片号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsisdn() const;
 
                     /**
                      * 设置卡片号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Msisdn 卡片号码
+                     * @param _msisdn 卡片号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsisdn(const std::string& _msisdn);
 
                     /**
                      * 判断参数 Msisdn 是否已赋值
                      * @return Msisdn 是否已赋值
+                     * 
                      */
                     bool MsisdnHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SdkAppid 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSdkAppid() const;
 
                     /**
                      * 设置应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SdkAppid 应用ID
+                     * @param _sdkAppid 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSdkAppid(const int64_t& _sdkAppid);
 
                     /**
                      * 判断参数 SdkAppid 是否已赋值
                      * @return SdkAppid 是否已赋值
+                     * 
                      */
                     bool SdkAppidHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 短信内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置短信内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 短信内容
+                     * @param _content 短信内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmsType 短信类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSmsType() const;
 
                     /**
                      * 设置短信类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmsType 短信类型
+                     * @param _smsType 短信类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmsType(const int64_t& _smsType);
 
                     /**
                      * 判断参数 SmsType 是否已赋值
                      * @return SmsType 是否已赋值
+                     * 
                      */
                     bool SmsTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendTime 发送时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSendTime() const;
 
                     /**
                      * 设置发送时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SendTime 发送时间
+                     * @param _sendTime 发送时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSendTime(const std::string& _sendTime);
 
                     /**
                      * 判断参数 SendTime 是否已赋值
                      * @return SendTime 是否已赋值
+                     * 
                      */
                     bool SendTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTime 推送时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportTime() const;
 
                     /**
                      * 设置推送时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportTime 推送时间
+                     * @param _reportTime 推送时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportTime(const std::string& _reportTime);
 
                     /**
                      * 判断参数 ReportTime 是否已赋值
                      * @return ReportTime 是否已赋值
+                     * 
                      */
                     bool ReportTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark SUCC：成功  FAIL 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置SUCC：成功  FAIL 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark SUCC：成功  FAIL 失败
+                     * @param _remark SUCC：成功  FAIL 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 回执状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置回执状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 回执状态
+                     * @param _status 回执状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

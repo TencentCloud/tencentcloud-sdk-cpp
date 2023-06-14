@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 容器运行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置容器运行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 容器运行开始时间
+                     * @param _startTime 容器运行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取容器状态：created, running, exited, unknown
                      * @return State 容器状态：created, running, exited, unknown
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置容器状态：created, running, exited, unknown
-                     * @param State 容器状态：created, running, exited, unknown
+                     * @param _state 容器状态：created, running, exited, unknown
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 容器运行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置容器运行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishTime 容器运行结束时间
+                     * @param _finishTime 容器运行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExitCode 容器运行退出码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExitCode() const;
 
                     /**
                      * 设置容器运行退出码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExitCode 容器运行退出码
+                     * @param _exitCode 容器运行退出码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExitCode(const int64_t& _exitCode);
 
                     /**
                      * 判断参数 ExitCode 是否已赋值
                      * @return ExitCode 是否已赋值
+                     * 
                      */
                     bool ExitCodeHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 容器状态 Reason
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置容器状态 Reason
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 容器状态 Reason
+                     * @param _reason 容器状态 Reason
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 容器状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置容器状态信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 容器状态信息
+                     * @param _message 容器状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 容器重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置容器重启次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestartCount 容器重启次数
+                     * @param _restartCount 容器重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 

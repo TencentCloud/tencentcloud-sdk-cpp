@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取漏洞数量。
                      * @return TotalCount 漏洞数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取漏洞列表数组。
                      * @return Vuls 漏洞列表数组。
+                     * 
                      */
                     std::vector<Vul> GetVuls() const;
 
                     /**
                      * 判断参数 Vuls 是否已赋值
                      * @return Vuls 是否已赋值
+                     * 
                      */
                     bool VulsHasBeenSet() const;
 

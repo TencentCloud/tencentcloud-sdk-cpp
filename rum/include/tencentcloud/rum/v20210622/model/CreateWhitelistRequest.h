@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID：taw-123
                      * @return InstanceID 实例ID：taw-123
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID：taw-123
-                     * @param InstanceID 实例ID：taw-123
+                     * @param _instanceID 实例ID：taw-123
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取uin：业务方标识
                      * @return WhitelistUin uin：业务方标识
+                     * 
                      */
                     std::string GetWhitelistUin() const;
 
                     /**
                      * 设置uin：业务方标识
-                     * @param WhitelistUin uin：业务方标识
+                     * @param _whitelistUin uin：业务方标识
+                     * 
                      */
                     void SetWhitelistUin(const std::string& _whitelistUin);
 
                     /**
                      * 判断参数 WhitelistUin 是否已赋值
                      * @return WhitelistUin 是否已赋值
+                     * 
                      */
                     bool WhitelistUinHasBeenSet() const;
 
                     /**
                      * 获取业务方标识
                      * @return Aid 业务方标识
+                     * 
                      */
                     std::string GetAid() const;
 
                     /**
                      * 设置业务方标识
-                     * @param Aid 业务方标识
+                     * @param _aid 业务方标识
+                     * 
                      */
                     void SetAid(const std::string& _aid);
 
                     /**
                      * 判断参数 Aid 是否已赋值
                      * @return Aid 是否已赋值
+                     * 
                      */
                     bool AidHasBeenSet() const;
 

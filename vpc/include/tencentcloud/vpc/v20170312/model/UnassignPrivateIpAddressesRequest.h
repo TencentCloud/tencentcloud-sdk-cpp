@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取指定的内网IP信息，单次最多指定10个。
                      * @return PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。
+                     * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置指定的内网IP信息，单次最多指定10个。
-                     * @param PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。
+                     * @param _privateIpAddresses 指定的内网IP信息，单次最多指定10个。
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<PrivateIpAddressSpecification>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
                      * @return InstanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
-                     * @param InstanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * @param _instanceId 网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

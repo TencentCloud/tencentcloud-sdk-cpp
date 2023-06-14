@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig
                      * @return Service 目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig
-                     * @param Service 目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig
+                     * @param _service 目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取JSON格式的请求参数
                      * @return Data JSON格式的请求参数
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置JSON格式的请求参数
-                     * @param Data JSON格式的请求参数
+                     * @param _data JSON格式的请求参数
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取匹配信息
                      * @return MatchInfo 匹配信息
+                     * 
                      */
                     MatchInfo GetMatchInfo() const;
 
                     /**
                      * 判断参数 MatchInfo 是否已赋值
                      * @return MatchInfo 是否已赋值
+                     * 
                      */
                     bool MatchInfoHasBeenSet() const;
 

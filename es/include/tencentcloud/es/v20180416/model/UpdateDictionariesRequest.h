@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取ES实例ID
                      * @return InstanceId ES实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ES实例ID
-                     * @param InstanceId ES实例ID
+                     * @param _instanceId ES实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取IK分词主词典COS地址
                      * @return IkMainDicts IK分词主词典COS地址
+                     * 
                      */
                     std::vector<std::string> GetIkMainDicts() const;
 
                     /**
                      * 设置IK分词主词典COS地址
-                     * @param IkMainDicts IK分词主词典COS地址
+                     * @param _ikMainDicts IK分词主词典COS地址
+                     * 
                      */
                     void SetIkMainDicts(const std::vector<std::string>& _ikMainDicts);
 
                     /**
                      * 判断参数 IkMainDicts 是否已赋值
                      * @return IkMainDicts 是否已赋值
+                     * 
                      */
                     bool IkMainDictsHasBeenSet() const;
 
                     /**
                      * 获取IK分词停用词词典COS地址
                      * @return IkStopwords IK分词停用词词典COS地址
+                     * 
                      */
                     std::vector<std::string> GetIkStopwords() const;
 
                     /**
                      * 设置IK分词停用词词典COS地址
-                     * @param IkStopwords IK分词停用词词典COS地址
+                     * @param _ikStopwords IK分词停用词词典COS地址
+                     * 
                      */
                     void SetIkStopwords(const std::vector<std::string>& _ikStopwords);
 
                     /**
                      * 判断参数 IkStopwords 是否已赋值
                      * @return IkStopwords 是否已赋值
+                     * 
                      */
                     bool IkStopwordsHasBeenSet() const;
 
                     /**
                      * 获取同义词词典COS地址
                      * @return Synonym 同义词词典COS地址
+                     * 
                      */
                     std::vector<std::string> GetSynonym() const;
 
                     /**
                      * 设置同义词词典COS地址
-                     * @param Synonym 同义词词典COS地址
+                     * @param _synonym 同义词词典COS地址
+                     * 
                      */
                     void SetSynonym(const std::vector<std::string>& _synonym);
 
                     /**
                      * 判断参数 Synonym 是否已赋值
                      * @return Synonym 是否已赋值
+                     * 
                      */
                     bool SynonymHasBeenSet() const;
 
                     /**
                      * 获取QQ分词词典COS地址
                      * @return QQDict QQ分词词典COS地址
+                     * 
                      */
                     std::vector<std::string> GetQQDict() const;
 
                     /**
                      * 设置QQ分词词典COS地址
-                     * @param QQDict QQ分词词典COS地址
+                     * @param _qQDict QQ分词词典COS地址
+                     * 
                      */
                     void SetQQDict(const std::vector<std::string>& _qQDict);
 
                     /**
                      * 判断参数 QQDict 是否已赋值
                      * @return QQDict 是否已赋值
+                     * 
                      */
                     bool QQDictHasBeenSet() const;
 
                     /**
                      * 获取0：安装；1：删除。默认值0
                      * @return UpdateType 0：安装；1：删除。默认值0
+                     * 
                      */
                     int64_t GetUpdateType() const;
 
                     /**
                      * 设置0：安装；1：删除。默认值0
-                     * @param UpdateType 0：安装；1：删除。默认值0
+                     * @param _updateType 0：安装；1：删除。默认值0
+                     * 
                      */
                     void SetUpdateType(const int64_t& _updateType);
 
                     /**
                      * 判断参数 UpdateType 是否已赋值
                      * @return UpdateType 是否已赋值
+                     * 
                      */
                     bool UpdateTypeHasBeenSet() const;
 
                     /**
                      * 获取是否强制重启集群。默认值false
                      * @return ForceRestart 是否强制重启集群。默认值false
+                     * 
                      */
                     bool GetForceRestart() const;
 
                     /**
                      * 设置是否强制重启集群。默认值false
-                     * @param ForceRestart 是否强制重启集群。默认值false
+                     * @param _forceRestart 是否强制重启集群。默认值false
+                     * 
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
                     /**
                      * 判断参数 ForceRestart 是否已赋值
                      * @return ForceRestart 是否已赋值
+                     * 
                      */
                     bool ForceRestartHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取模型ID
                      * @return ModelId 模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 

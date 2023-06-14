@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取当前计费用量，单位为 Mbps
                      * @return BandwidthUsage 当前计费用量，单位为 Mbps
+                     * 
                      */
                     double GetBandwidthUsage() const;
 
                     /**
                      * 设置当前计费用量，单位为 Mbps
-                     * @param BandwidthUsage 当前计费用量，单位为 Mbps
+                     * @param _bandwidthUsage 当前计费用量，单位为 Mbps
+                     * 
                      */
                     void SetBandwidthUsage(const double& _bandwidthUsage);
 
                     /**
                      * 判断参数 BandwidthUsage 是否已赋值
                      * @return BandwidthUsage 是否已赋值
+                     * 
                      */
                     bool BandwidthUsageHasBeenSet() const;
 

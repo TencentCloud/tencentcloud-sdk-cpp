@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取攻击类型，取值ddos， cc
                      * @return Type 攻击类型，取值ddos， cc
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置攻击类型，取值ddos， cc
-                     * @param Type 攻击类型，取值ddos， cc
+                     * @param _type 攻击类型，取值ddos， cc
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取纬度，当前仅支持attackcount
                      * @return Dimension 纬度，当前仅支持attackcount
+                     * 
                      */
                     std::string GetDimension() const;
 
                     /**
                      * 设置纬度，当前仅支持attackcount
-                     * @param Dimension 纬度，当前仅支持attackcount
+                     * @param _dimension 纬度，当前仅支持attackcount
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 
                     /**
                      * 获取周期，当前仅支持86400
                      * @return Period 周期，当前仅支持86400
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置周期，当前仅支持86400
-                     * @param Period 周期，当前仅支持86400
+                     * @param _period 周期，当前仅支持86400
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取防护概览攻击趋势开始时间
                      * @return StartTime 防护概览攻击趋势开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置防护概览攻击趋势开始时间
-                     * @param StartTime 防护概览攻击趋势开始时间
+                     * @param _startTime 防护概览攻击趋势开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取防护概览攻击趋势结束时间
                      * @return EndTime 防护概览攻击趋势结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置防护概览攻击趋势结束时间
-                     * @param EndTime 防护概览攻击趋势结束时间
+                     * @param _endTime 防护概览攻击趋势结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

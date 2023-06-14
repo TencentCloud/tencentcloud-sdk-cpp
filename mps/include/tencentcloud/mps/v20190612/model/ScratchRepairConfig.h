@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
-                     * @param Switch 能力配置开关，可选值：
+                     * @param _switch 能力配置开关，可选值：
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return Intensity 强度，取值范围：0.0~1.0。
 默认：0.0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetIntensity() const;
 
@@ -90,15 +94,17 @@ namespace TencentCloud
                      * 设置强度，取值范围：0.0~1.0。
 默认：0.0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Intensity 强度，取值范围：0.0~1.0。
+                     * @param _intensity 强度，取值范围：0.0~1.0。
 默认：0.0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntensity(const double& _intensity);
 
                     /**
                      * 判断参数 Intensity 是否已赋值
                      * @return Intensity 是否已赋值
+                     * 
                      */
                     bool IntensityHasBeenSet() const;
 

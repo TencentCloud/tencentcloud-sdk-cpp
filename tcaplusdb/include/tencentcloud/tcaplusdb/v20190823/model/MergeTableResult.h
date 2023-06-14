@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -75,38 +78,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 成功时此字段返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置成功时此字段返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 成功时此字段返回 null，表示取不到有效值。
+                     * @param _error 成功时此字段返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 
                     /**
                      * 获取对比的表格信息
                      * @return Table 对比的表格信息
+                     * 
                      */
                     CompareTablesInfo GetTable() const;
 
                     /**
                      * 设置对比的表格信息
-                     * @param Table 对比的表格信息
+                     * @param _table 对比的表格信息
+                     * 
                      */
                     void SetTable(const CompareTablesInfo& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 申请单Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置申请单Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationId 申请单Id
+                     * @param _applicationId 申请单Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名
                      * @return ServiceName 服务名
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名
-                     * @param ServiceName 服务名
+                     * @param _serviceName 服务名
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取build类型,枚举值有: cloudbaserun, framework-ci
                      * @return CIBusiness build类型,枚举值有: cloudbaserun, framework-ci
+                     * 
                      */
                     std::string GetCIBusiness() const;
 
                     /**
                      * 设置build类型,枚举值有: cloudbaserun, framework-ci
-                     * @param CIBusiness build类型,枚举值有: cloudbaserun, framework-ci
+                     * @param _cIBusiness build类型,枚举值有: cloudbaserun, framework-ci
+                     * 
                      */
                     void SetCIBusiness(const std::string& _cIBusiness);
 
                     /**
                      * 判断参数 CIBusiness 是否已赋值
                      * @return CIBusiness 是否已赋值
+                     * 
                      */
                     bool CIBusinessHasBeenSet() const;
 
                     /**
                      * 获取服务版本
                      * @return ServiceVersion 服务版本
+                     * 
                      */
                     std::string GetServiceVersion() const;
 
                     /**
                      * 设置服务版本
-                     * @param ServiceVersion 服务版本
+                     * @param _serviceVersion 服务版本
+                     * 
                      */
                     void SetServiceVersion(const std::string& _serviceVersion);
 
                     /**
                      * 判断参数 ServiceVersion 是否已赋值
                      * @return ServiceVersion 是否已赋值
+                     * 
                      */
                     bool ServiceVersionHasBeenSet() const;
 
                     /**
                      * 获取文件后缀
                      * @return Suffix 文件后缀
+                     * 
                      */
                     std::string GetSuffix() const;
 
                     /**
                      * 设置文件后缀
-                     * @param Suffix 文件后缀
+                     * @param _suffix 文件后缀
+                     * 
                      */
                     void SetSuffix(const std::string& _suffix);
 
                     /**
                      * 判断参数 Suffix 是否已赋值
                      * @return Suffix 是否已赋值
+                     * 
                      */
                     bool SuffixHasBeenSet() const;
 

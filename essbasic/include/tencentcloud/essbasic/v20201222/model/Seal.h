@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取电子印章ID
                      * @return SealId 电子印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置电子印章ID
-                     * @param SealId 电子印章ID
+                     * @param _sealId 电子印章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取电子印章名称
                      * @return SealName 电子印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置电子印章名称
-                     * @param SealName 电子印章名称
+                     * @param _sealName 电子印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取电子印章类型
                      * @return SealType 电子印章类型
+                     * 
                      */
                     std::string GetSealType() const;
 
                     /**
                      * 设置电子印章类型
-                     * @param SealType 电子印章类型
+                     * @param _sealType 电子印章类型
+                     * 
                      */
                     void SetSealType(const std::string& _sealType);
 
                     /**
                      * 判断参数 SealType 是否已赋值
                      * @return SealType 是否已赋值
+                     * 
                      */
                     bool SealTypeHasBeenSet() const;
 
@@ -109,6 +118,7 @@ GENERATE - 通过文字生成
                      * @return SealSource 电子印章来源：
 CREATE - 通过图片上传
 GENERATE - 通过文字生成
+                     * 
                      */
                     std::string GetSealSource() const;
 
@@ -116,105 +126,122 @@ GENERATE - 通过文字生成
                      * 设置电子印章来源：
 CREATE - 通过图片上传
 GENERATE - 通过文字生成
-                     * @param SealSource 电子印章来源：
+                     * @param _sealSource 电子印章来源：
 CREATE - 通过图片上传
 GENERATE - 通过文字生成
+                     * 
                      */
                     void SetSealSource(const std::string& _sealSource);
 
                     /**
                      * 判断参数 SealSource 是否已赋值
                      * @return SealSource 是否已赋值
+                     * 
                      */
                     bool SealSourceHasBeenSet() const;
 
                     /**
                      * 获取电子印章创建者
                      * @return Creator 电子印章创建者
+                     * 
                      */
                     Caller GetCreator() const;
 
                     /**
                      * 设置电子印章创建者
-                     * @param Creator 电子印章创建者
+                     * @param _creator 电子印章创建者
+                     * 
                      */
                     void SetCreator(const Caller& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
                     /**
                      * 获取电子印章创建时间戳
                      * @return CreatedOn 电子印章创建时间戳
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置电子印章创建时间戳
-                     * @param CreatedOn 电子印章创建时间戳
+                     * @param _createdOn 电子印章创建时间戳
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取电子印章所有人
                      * @return UserId 电子印章所有人
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置电子印章所有人
-                     * @param UserId 电子印章所有人
+                     * @param _userId 电子印章所有人
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取电子印章URL
                      * @return FileUrl 电子印章URL
+                     * 
                      */
                     FileUrl GetFileUrl() const;
 
                     /**
                      * 设置电子印章URL
-                     * @param FileUrl 电子印章URL
+                     * @param _fileUrl 电子印章URL
+                     * 
                      */
                     void SetFileUrl(const FileUrl& _fileUrl);
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 
                     /**
                      * 获取是否为默认印章，false-非默认，true-默认
                      * @return DefaultSeal 是否为默认印章，false-非默认，true-默认
+                     * 
                      */
                     bool GetDefaultSeal() const;
 
                     /**
                      * 设置是否为默认印章，false-非默认，true-默认
-                     * @param DefaultSeal 是否为默认印章，false-非默认，true-默认
+                     * @param _defaultSeal 是否为默认印章，false-非默认，true-默认
+                     * 
                      */
                     void SetDefaultSeal(const bool& _defaultSeal);
 
                     /**
                      * 判断参数 DefaultSeal 是否已赋值
                      * @return DefaultSeal 是否已赋值
+                     * 
                      */
                     bool DefaultSealHasBeenSet() const;
 

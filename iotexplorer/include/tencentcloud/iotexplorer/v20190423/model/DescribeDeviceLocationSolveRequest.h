@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取定位解析类型，wifi或GNSSNavigation
                      * @return LocationType 定位解析类型，wifi或GNSSNavigation
+                     * 
                      */
                     std::string GetLocationType() const;
 
                     /**
                      * 设置定位解析类型，wifi或GNSSNavigation
-                     * @param LocationType 定位解析类型，wifi或GNSSNavigation
+                     * @param _locationType 定位解析类型，wifi或GNSSNavigation
+                     * 
                      */
                     void SetLocationType(const std::string& _locationType);
 
                     /**
                      * 判断参数 LocationType 是否已赋值
                      * @return LocationType 是否已赋值
+                     * 
                      */
                     bool LocationTypeHasBeenSet() const;
 
                     /**
                      * 获取LoRaEdge卫星导航电文
                      * @return GNSSNavigation LoRaEdge卫星导航电文
+                     * 
                      */
                     std::string GetGNSSNavigation() const;
 
                     /**
                      * 设置LoRaEdge卫星导航电文
-                     * @param GNSSNavigation LoRaEdge卫星导航电文
+                     * @param _gNSSNavigation LoRaEdge卫星导航电文
+                     * 
                      */
                     void SetGNSSNavigation(const std::string& _gNSSNavigation);
 
                     /**
                      * 判断参数 GNSSNavigation 是否已赋值
                      * @return GNSSNavigation 是否已赋值
+                     * 
                      */
                     bool GNSSNavigationHasBeenSet() const;
 
                     /**
                      * 获取wifi信息
                      * @return WiFiInfo wifi信息
+                     * 
                      */
                     std::vector<WifiInfo> GetWiFiInfo() const;
 
                     /**
                      * 设置wifi信息
-                     * @param WiFiInfo wifi信息
+                     * @param _wiFiInfo wifi信息
+                     * 
                      */
                     void SetWiFiInfo(const std::vector<WifiInfo>& _wiFiInfo);
 
                     /**
                      * 判断参数 WiFiInfo 是否已赋值
                      * @return WiFiInfo 是否已赋值
+                     * 
                      */
                     bool WiFiInfoHasBeenSet() const;
 

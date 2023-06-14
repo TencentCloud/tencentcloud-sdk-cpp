@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取列表
                      * @return Data 列表
+                     * 
                      */
                     std::vector<SubnetAsset> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取地域列表
                      * @return RegionList 地域列表
+                     * 
                      */
                     std::vector<FilterDataObject> GetRegionList() const;
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 
                     /**
                      * 获取vpc列表
                      * @return VpcList vpc列表
+                     * 
                      */
                     std::vector<FilterDataObject> GetVpcList() const;
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 
                     /**
                      * 获取appid列表
                      * @return AppIdList appid列表
+                     * 
                      */
                     std::vector<FilterDataObject> GetAppIdList() const;
 
                     /**
                      * 判断参数 AppIdList 是否已赋值
                      * @return AppIdList 是否已赋值
+                     * 
                      */
                     bool AppIdListHasBeenSet() const;
 
                     /**
                      * 获取可用区列表
                      * @return ZoneList 可用区列表
+                     * 
                      */
                     std::vector<FilterDataObject> GetZoneList() const;
 
                     /**
                      * 判断参数 ZoneList 是否已赋值
                      * @return ZoneList 是否已赋值
+                     * 
                      */
                     bool ZoneListHasBeenSet() const;
 

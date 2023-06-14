@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取资源方对应音乐Id
                      * @return MusicIds 资源方对应音乐Id
+                     * 
                      */
                     std::string GetMusicIds() const;
 
                     /**
                      * 设置资源方对应音乐Id
-                     * @param MusicIds 资源方对应音乐Id
+                     * @param _musicIds 资源方对应音乐Id
+                     * 
                      */
                     void SetMusicIds(const std::string& _musicIds);
 
                     /**
                      * 判断参数 MusicIds 是否已赋值
                      * @return MusicIds 是否已赋值
+                     * 
                      */
                     bool MusicIdsHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 在售状态，0在售，1临时下架，2永久下架
                      * @return SaleStatus 当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架
 在售状态，0在售，1临时下架，2永久下架
+                     * 
                      */
                     std::string GetSaleStatus() const;
 
                     /**
                      * 设置当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架
 在售状态，0在售，1临时下架，2永久下架
-                     * @param SaleStatus 当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架
+                     * @param _saleStatus 当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架
 在售状态，0在售，1临时下架，2永久下架
+                     * 
                      */
                     void SetSaleStatus(const std::string& _saleStatus);
 
                     /**
                      * 判断参数 SaleStatus 是否已赋值
                      * @return SaleStatus 是否已赋值
+                     * 
                      */
                     bool SaleStatusHasBeenSet() const;
 

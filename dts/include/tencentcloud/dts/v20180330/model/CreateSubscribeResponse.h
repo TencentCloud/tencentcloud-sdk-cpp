@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeIds 数据订阅实例的ID数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubscribeIds() const;
 
                     /**
                      * 判断参数 SubscribeIds 是否已赋值
                      * @return SubscribeIds 是否已赋值
+                     * 
                      */
                     bool SubscribeIdsHasBeenSet() const;
 

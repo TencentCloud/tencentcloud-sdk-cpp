@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableIndictors 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableIndicators> GetTableIndictors() const;
 
                     /**
                      * 设置检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableIndictors 检验报告V3结论
+                     * @param _tableIndictors 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableIndictors(const std::vector<TableIndicators>& _tableIndictors);
 
                     /**
                      * 判断参数 TableIndictors 是否已赋值
                      * @return TableIndictors 是否已赋值
+                     * 
                      */
                     bool TableIndictorsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本号
+                     * @param _version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

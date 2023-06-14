@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取代理商账号ID
                      * @return Uin 代理商账号ID
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置代理商账号ID
-                     * @param Uin 代理商账号ID
+                     * @param _uin 代理商账号ID
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取代客账号ID
                      * @return ClientUin 代客账号ID
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 设置代客账号ID
-                     * @param ClientUin 代客账号ID
+                     * @param _clientUin 代客账号ID
+                     * 
                      */
                     void SetClientUin(const std::string& _clientUin);
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 
                     /**
                      * 获取代客申请时间戳
                      * @return ApplyTime 代客申请时间戳
+                     * 
                      */
                     uint64_t GetApplyTime() const;
 
                     /**
                      * 设置代客申请时间戳
-                     * @param ApplyTime 代客申请时间戳
+                     * @param _applyTime 代客申请时间戳
+                     * 
                      */
                     void SetApplyTime(const uint64_t& _applyTime);
 
                     /**
                      * 判断参数 ApplyTime 是否已赋值
                      * @return ApplyTime 是否已赋值
+                     * 
                      */
                     bool ApplyTimeHasBeenSet() const;
 
                     /**
                      * 获取代客类型，可能值为a/b/c
                      * @return ClientFlag 代客类型，可能值为a/b/c
+                     * 
                      */
                     std::string GetClientFlag() const;
 
                     /**
                      * 设置代客类型，可能值为a/b/c
-                     * @param ClientFlag 代客类型，可能值为a/b/c
+                     * @param _clientFlag 代客类型，可能值为a/b/c
+                     * 
                      */
                     void SetClientFlag(const std::string& _clientFlag);
 
                     /**
                      * 判断参数 ClientFlag 是否已赋值
                      * @return ClientFlag 是否已赋值
+                     * 
                      */
                     bool ClientFlagHasBeenSet() const;
 
                     /**
                      * 获取代客邮箱，打码显示
                      * @return Mail 代客邮箱，打码显示
+                     * 
                      */
                     std::string GetMail() const;
 
                     /**
                      * 设置代客邮箱，打码显示
-                     * @param Mail 代客邮箱，打码显示
+                     * @param _mail 代客邮箱，打码显示
+                     * 
                      */
                     void SetMail(const std::string& _mail);
 
                     /**
                      * 判断参数 Mail 是否已赋值
                      * @return Mail 是否已赋值
+                     * 
                      */
                     bool MailHasBeenSet() const;
 
                     /**
                      * 获取代客手机，打码显示
                      * @return Phone 代客手机，打码显示
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置代客手机，打码显示
-                     * @param Phone 代客手机，打码显示
+                     * @param _phone 代客手机，打码显示
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取0表示不欠费，1表示欠费
                      * @return HasOverdueBill 0表示不欠费，1表示欠费
+                     * 
                      */
                     uint64_t GetHasOverdueBill() const;
 
                     /**
                      * 设置0表示不欠费，1表示欠费
-                     * @param HasOverdueBill 0表示不欠费，1表示欠费
+                     * @param _hasOverdueBill 0表示不欠费，1表示欠费
+                     * 
                      */
                     void SetHasOverdueBill(const uint64_t& _hasOverdueBill);
 
                     /**
                      * 判断参数 HasOverdueBill 是否已赋值
                      * @return HasOverdueBill 是否已赋值
+                     * 
                      */
                     bool HasOverdueBillHasBeenSet() const;
 
                     /**
                      * 获取1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
                      * @return Status 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
-                     * @param Status 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
+                     * @param _status 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesUin 业务员ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SalesUin 业务员ID
+                     * @param _salesUin 业务员ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
 
                     /**
                      * 判断参数 SalesUin 是否已赋值
                      * @return SalesUin 是否已赋值
+                     * 
                      */
                     bool SalesUinHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesName 业务员姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置业务员姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SalesName 业务员姓名
+                     * @param _salesName 业务员姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSalesName(const std::string& _salesName);
 
                     /**
                      * 判断参数 SalesName 是否已赋值
                      * @return SalesName 是否已赋值
+                     * 
                      */
                     bool SalesNameHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientName 客户名称，此字段和控制台返回一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientName() const;
 
                     /**
                      * 设置客户名称，此字段和控制台返回一致。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientName 客户名称，此字段和控制台返回一致。
+                     * @param _clientName 客户名称，此字段和控制台返回一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientName(const std::string& _clientName);
 
                     /**
                      * 判断参数 ClientName 是否已赋值
                      * @return ClientName 是否已赋值
+                     * 
                      */
                     bool ClientNameHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户角色 1所有者，0：其他分享者
                      * @return Role 用户角色 1所有者，0：其他分享者
+                     * 
                      */
                     int64_t GetRole() const;
 
                     /**
                      * 设置用户角色 1所有者，0：其他分享者
-                     * @param Role 用户角色 1所有者，0：其他分享者
+                     * @param _role 用户角色 1所有者，0：其他分享者
+                     * 
                      */
                     void SetRole(const int64_t& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyId 家庭ID，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFamilyId() const;
 
                     /**
                      * 设置家庭ID，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FamilyId 家庭ID，所有者带该参数
+                     * @param _familyId 家庭ID，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFamilyId(const std::string& _familyId);
 
                     /**
                      * 判断参数 FamilyId 是否已赋值
                      * @return FamilyId 是否已赋值
+                     * 
                      */
                     bool FamilyIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FamilyName 家庭名称，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFamilyName() const;
 
                     /**
                      * 设置家庭名称，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FamilyName 家庭名称，所有者带该参数
+                     * @param _familyName 家庭名称，所有者带该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFamilyName(const std::string& _familyName);
 
                     /**
                      * 判断参数 FamilyName 是否已赋值
                      * @return FamilyName 是否已赋值
+                     * 
                      */
                     bool FamilyNameHasBeenSet() const;
 

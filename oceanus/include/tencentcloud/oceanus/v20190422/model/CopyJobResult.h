@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 原作业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置原作业id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobId 原作业id
+                     * @param _jobId 原作业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobName 原作业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置原作业名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobName 原作业名称
+                     * @param _jobName 原作业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetJobName 新作业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetJobName() const;
 
                     /**
                      * 设置新作业名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetJobName 新作业名称
+                     * @param _targetJobName 新作业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetJobName(const std::string& _targetJobName);
 
                     /**
                      * 判断参数 TargetJobName 是否已赋值
                      * @return TargetJobName 是否已赋值
+                     * 
                      */
                     bool TargetJobNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetJobId 新作业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetJobId() const;
 
                     /**
                      * 设置新作业id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetJobId 新作业id
+                     * @param _targetJobId 新作业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetJobId(const std::string& _targetJobId);
 
                     /**
                      * 判断参数 TargetJobId 是否已赋值
                      * @return TargetJobId 是否已赋值
+                     * 
                      */
                     bool TargetJobIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 失败时候的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置失败时候的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 失败时候的信息
+                     * @param _message 失败时候的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 0 成功  -1 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 设置0 成功  -1 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 0 成功  -1 失败
+                     * @param _result 0 成功  -1 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 目标集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置目标集群名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 目标集群名称
+                     * @param _clusterName 目标集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 目标集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置目标集群id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 目标集群id
+                     * @param _clusterId 目标集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobType 作业类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetJobType() const;
 
                     /**
                      * 设置作业类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobType 作业类型
+                     * @param _jobType 作业类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobType(const int64_t& _jobType);
 
                     /**
                      * 判断参数 JobType 是否已赋值
                      * @return JobType 是否已赋值
+                     * 
                      */
                     bool JobTypeHasBeenSet() const;
 

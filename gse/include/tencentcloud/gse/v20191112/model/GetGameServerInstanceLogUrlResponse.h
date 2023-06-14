@@ -48,36 +48,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PresignedUrls 日志下载URL的数组，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPresignedUrls() const;
 
                     /**
                      * 判断参数 PresignedUrls 是否已赋值
                      * @return PresignedUrls 是否已赋值
+                     * 
                      */
                     bool PresignedUrlsHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取是否还有没拉取完的
                      * @return HasNext 是否还有没拉取完的
+                     * 
                      */
                     bool GetHasNext() const;
 
                     /**
                      * 判断参数 HasNext 是否已赋值
                      * @return HasNext 是否已赋值
+                     * 
                      */
                     bool HasNextHasBeenSet() const;
 

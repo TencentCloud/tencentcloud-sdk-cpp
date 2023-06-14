@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取当前服务的回调地址
                      * @return CgiUrl 当前服务的回调地址
+                     * 
                      */
                     std::string GetCgiUrl() const;
 
                     /**
                      * 设置当前服务的回调地址
-                     * @param CgiUrl 当前服务的回调地址
+                     * @param _cgiUrl 当前服务的回调地址
+                     * 
                      */
                     void SetCgiUrl(const std::string& _cgiUrl);
 
                     /**
                      * 判断参数 CgiUrl 是否已赋值
                      * @return CgiUrl 是否已赋值
+                     * 
                      */
                     bool CgiUrlHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 1: 多经服务
 2: 相机误报警确认
 3: 底图更新
+                     * 
                      */
                     uint64_t GetServiceType() const;
 
@@ -81,16 +85,18 @@ namespace TencentCloud
 1: 多经服务
 2: 相机误报警确认
 3: 底图更新
-                     * @param ServiceType 当前服务类型:
+                     * @param _serviceType 当前服务类型:
 1: 多经服务
 2: 相机误报警确认
 3: 底图更新
+                     * 
                      */
                     void SetServiceType(const uint64_t& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 

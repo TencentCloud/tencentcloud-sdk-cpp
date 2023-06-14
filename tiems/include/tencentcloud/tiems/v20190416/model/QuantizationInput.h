@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取量化输入路径
                      * @return InputPath 量化输入路径
+                     * 
                      */
                     std::string GetInputPath() const;
 
                     /**
                      * 设置量化输入路径
-                     * @param InputPath 量化输入路径
+                     * @param _inputPath 量化输入路径
+                     * 
                      */
                     void SetInputPath(const std::string& _inputPath);
 
                     /**
                      * 判断参数 InputPath 是否已赋值
                      * @return InputPath 是否已赋值
+                     * 
                      */
                     bool InputPathHasBeenSet() const;
 
                     /**
                      * 获取量化输出路径
                      * @return OutputPath 量化输出路径
+                     * 
                      */
                     std::string GetOutputPath() const;
 
                     /**
                      * 设置量化输出路径
-                     * @param OutputPath 量化输出路径
+                     * @param _outputPath 量化输出路径
+                     * 
                      */
                     void SetOutputPath(const std::string& _outputPath);
 
                     /**
                      * 判断参数 OutputPath 是否已赋值
                      * @return OutputPath 是否已赋值
+                     * 
                      */
                     bool OutputPathHasBeenSet() const;
 
                     /**
                      * 获取量化批大小
                      * @return BatchSize 量化批大小
+                     * 
                      */
                     uint64_t GetBatchSize() const;
 
                     /**
                      * 设置量化批大小
-                     * @param BatchSize 量化批大小
+                     * @param _batchSize 量化批大小
+                     * 
                      */
                     void SetBatchSize(const uint64_t& _batchSize);
 
                     /**
                      * 判断参数 BatchSize 是否已赋值
                      * @return BatchSize 是否已赋值
+                     * 
                      */
                     bool BatchSizeHasBeenSet() const;
 
                     /**
                      * 获取量化精度，支持：FP32，FP16，INT8
                      * @return Precision 量化精度，支持：FP32，FP16，INT8
+                     * 
                      */
                     std::string GetPrecision() const;
 
                     /**
                      * 设置量化精度，支持：FP32，FP16，INT8
-                     * @param Precision 量化精度，支持：FP32，FP16，INT8
+                     * @param _precision 量化精度，支持：FP32，FP16，INT8
+                     * 
                      */
                     void SetPrecision(const std::string& _precision);
 
                     /**
                      * 判断参数 Precision 是否已赋值
                      * @return Precision 是否已赋值
+                     * 
                      */
                     bool PrecisionHasBeenSet() const;
 
                     /**
                      * 获取转换类型
                      * @return ConvertType 转换类型
+                     * 
                      */
                     std::string GetConvertType() const;
 
                     /**
                      * 设置转换类型
-                     * @param ConvertType 转换类型
+                     * @param _convertType 转换类型
+                     * 
                      */
                     void SetConvertType(const std::string& _convertType);
 
                     /**
                      * 判断参数 ConvertType 是否已赋值
                      * @return ConvertType 是否已赋值
+                     * 
                      */
                     bool ConvertTypeHasBeenSet() const;
 

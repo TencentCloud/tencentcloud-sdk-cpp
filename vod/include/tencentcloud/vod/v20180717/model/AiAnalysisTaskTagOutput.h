@@ -52,56 +52,65 @@ namespace TencentCloud
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 TagSetFileUrl 对应的文件中获取。
                      * @return TagSet 视频智能标签列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 TagSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     std::vector<MediaAiAnalysisTagItem> GetTagSet() const;
 
                     /**
                      * 设置视频智能标签列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 TagSetFileUrl 对应的文件中获取。
-                     * @param TagSet 视频智能标签列表。
+                     * @param _tagSet 视频智能标签列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 TagSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     void SetTagSet(const std::vector<MediaAiAnalysisTagItem>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。
                      * @return TagSetFileUrl 视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     std::string GetTagSetFileUrl() const;
 
                     /**
                      * 设置视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。
-                     * @param TagSetFileUrl 视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * @param _tagSetFileUrl 视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     void SetTagSetFileUrl(const std::string& _tagSetFileUrl);
 
                     /**
                      * 判断参数 TagSetFileUrl 是否已赋值
                      * @return TagSetFileUrl 是否已赋值
+                     * 
                      */
                     bool TagSetFileUrlHasBeenSet() const;
 
                     /**
                      * 获取视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return TagSetFileUrlExpireTime 视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetTagSetFileUrlExpireTime() const;
 
                     /**
                      * 设置视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param TagSetFileUrlExpireTime 视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _tagSetFileUrlExpireTime 视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetTagSetFileUrlExpireTime(const std::string& _tagSetFileUrlExpireTime);
 
                     /**
                      * 判断参数 TagSetFileUrlExpireTime 是否已赋值
                      * @return TagSetFileUrlExpireTime 是否已赋值
+                     * 
                      */
                     bool TagSetFileUrlExpireTimeHasBeenSet() const;
 

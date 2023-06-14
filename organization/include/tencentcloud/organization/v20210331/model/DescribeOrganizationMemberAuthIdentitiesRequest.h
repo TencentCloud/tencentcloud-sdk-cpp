@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取偏移量。取值是limit的整数倍，默认值 : 0
                      * @return Offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。取值是limit的整数倍，默认值 : 0
-                     * @param Offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * @param _offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目。取值范围：1~50，默认值：10
                      * @return Limit 限制数目。取值范围：1~50，默认值：10
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制数目。取值范围：1~50，默认值：10
-                     * @param Limit 限制数目。取值范围：1~50，默认值：10
+                     * @param _limit 限制数目。取值范围：1~50，默认值：10
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取组织成员Uin。
                      * @return MemberUin 组织成员Uin。
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置组织成员Uin。
-                     * @param MemberUin 组织成员Uin。
+                     * @param _memberUin 组织成员Uin。
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 

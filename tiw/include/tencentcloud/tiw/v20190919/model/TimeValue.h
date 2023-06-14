@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Unix时间戳，单位秒
                      * @return Time Unix时间戳，单位秒
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置Unix时间戳，单位秒
-                     * @param Time Unix时间戳，单位秒
+                     * @param _time Unix时间戳，单位秒
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取查询指标对应当前时间的值
                      * @return Value 查询指标对应当前时间的值
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置查询指标对应当前时间的值
-                     * @param Value 查询指标对应当前时间的值
+                     * @param _value 查询指标对应当前时间的值
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

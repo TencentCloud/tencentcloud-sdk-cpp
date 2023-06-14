@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Province 省份
+                     * @param _province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CityId 城市编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCityId() const;
 
                     /**
                      * 设置城市编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CityId 城市编码
+                     * @param _cityId 城市编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCityId(const std::string& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopName 门店简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopName() const;
 
                     /**
                      * 设置门店简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopName 门店简称
+                     * @param _shopName 门店简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopName(const std::string& _shopName);
 
                     /**
                      * 判断参数 ShopName 是否已赋值
                      * @return ShopName 是否已赋值
+                     * 
                      */
                     bool ShopNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerminalCount 终端数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTerminalCount() const;
 
                     /**
                      * 设置终端数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerminalCount 终端数量
+                     * @param _terminalCount 终端数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerminalCount(const std::string& _terminalCount);
 
                     /**
                      * 判断参数 TerminalCount 是否已赋值
                      * @return TerminalCount 是否已赋值
+                     * 
                      */
                     bool TerminalCountHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param City 城市
+                     * @param _city 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopStatus 门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopStatus() const;
 
                     /**
                      * 设置门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopStatus 门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）
+                     * @param _shopStatus 门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopStatus(const std::string& _shopStatus);
 
                     /**
                      * 判断参数 ShopStatus 是否已赋值
                      * @return ShopStatus 是否已赋值
+                     * 
                      */
                     bool ShopStatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliPayOnline 若是支付宝合同，支付宝上线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAliPayOnline() const;
 
                     /**
                      * 设置若是支付宝合同，支付宝上线状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AliPayOnline 若是支付宝合同，支付宝上线状态
+                     * @param _aliPayOnline 若是支付宝合同，支付宝上线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAliPayOnline(const std::string& _aliPayOnline);
 
                     /**
                      * 判断参数 AliPayOnline 是否已赋值
                      * @return AliPayOnline 是否已赋值
+                     * 
                      */
                     bool AliPayOnlineHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopNo() const;
 
                     /**
                      * 设置门店编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopNo 门店编号
+                     * @param _shopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopNo(const std::string& _shopNo);
 
                     /**
                      * 判断参数 ShopNo 是否已赋值
                      * @return ShopNo 是否已赋值
+                     * 
                      */
                     bool ShopNoHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 县/区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置县/区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Country 县/区
+                     * @param _country 县/区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCountry(const std::string& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliPayStatus 若是支付宝合同，支付宝审核状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAliPayStatus() const;
 
                     /**
                      * 设置若是支付宝合同，支付宝审核状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AliPayStatus 若是支付宝合同，支付宝审核状态
+                     * @param _aliPayStatus 若是支付宝合同，支付宝审核状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAliPayStatus(const std::string& _aliPayStatus);
 
                     /**
                      * 判断参数 AliPayStatus 是否已赋值
                      * @return AliPayStatus 是否已赋值
+                     * 
                      */
                     bool AliPayStatusHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsChecked 为空或者0表示未关联，大于0表示已关联
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsChecked() const;
 
                     /**
                      * 设置为空或者0表示未关联，大于0表示已关联
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsChecked 为空或者0表示未关联，大于0表示已关联
+                     * @param _isChecked 为空或者0表示未关联，大于0表示已关联
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsChecked(const std::string& _isChecked);
 
                     /**
                      * 判断参数 IsChecked 是否已赋值
                      * @return IsChecked 是否已赋值
+                     * 
                      */
                     bool IsCheckedHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 详细地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置详细地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 详细地址
+                     * @param _address 详细地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliPayDesc 若是支付宝合同，支付宝审核描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAliPayDesc() const;
 
                     /**
                      * 设置若是支付宝合同，支付宝审核描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AliPayDesc 若是支付宝合同，支付宝审核描述
+                     * @param _aliPayDesc 若是支付宝合同，支付宝审核描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAliPayDesc(const std::string& _aliPayDesc);
 
                     /**
                      * 判断参数 AliPayDesc 是否已赋值
                      * @return AliPayDesc 是否已赋值
+                     * 
                      */
                     bool AliPayDescHasBeenSet() const;
 

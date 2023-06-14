@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。形如：vpc-6v2ht8q5
                      * @return VpcId VPC实例ID。形如：vpc-6v2ht8q5
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。形如：vpc-6v2ht8q5
-                     * @param VpcId VPC实例ID。形如：vpc-6v2ht8q5
+                     * @param _vpcId VPC实例ID。形如：vpc-6v2ht8q5
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取辅助CIDR。形如：172.16.0.0/16
                      * @return CidrBlock 辅助CIDR。形如：172.16.0.0/16
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置辅助CIDR。形如：172.16.0.0/16
-                     * @param CidrBlock 辅助CIDR。形如：172.16.0.0/16
+                     * @param _cidrBlock 辅助CIDR。形如：172.16.0.0/16
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。
                      * @return AssistantType 辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。
+                     * 
                      */
                     uint64_t GetAssistantType() const;
 
                     /**
                      * 设置辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。
-                     * @param AssistantType 辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。
+                     * @param _assistantType 辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。
+                     * 
                      */
                     void SetAssistantType(const uint64_t& _assistantType);
 
                     /**
                      * 判断参数 AssistantType 是否已赋值
                      * @return AssistantType 是否已赋值
+                     * 
                      */
                     bool AssistantTypeHasBeenSet() const;
 
@@ -108,6 +117,7 @@ namespace TencentCloud
                      * @return SubnetSet 辅助CIDR拆分的子网。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
 
@@ -115,15 +125,17 @@ namespace TencentCloud
                      * 设置辅助CIDR拆分的子网。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetSet 辅助CIDR拆分的子网。
+                     * @param _subnetSet 辅助CIDR拆分的子网。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetSet(const std::vector<Subnet>& _subnetSet);
 
                     /**
                      * 判断参数 SubnetSet 是否已赋值
                      * @return SubnetSet 是否已赋值
+                     * 
                      */
                     bool SubnetSetHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取limit值
                      * @return Limit limit值
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置limit值
-                     * @param Limit limit值
+                     * @param _limit limit值
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取集群名称模糊匹配
                      * @return NamePattern 集群名称模糊匹配
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置集群名称模糊匹配
-                     * @param NamePattern 集群名称模糊匹配
+                     * @param _namePattern 集群名称模糊匹配
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取排序，ASC/DESC(默认)
                      * @return Order 排序，ASC/DESC(默认)
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序，ASC/DESC(默认)
-                     * @param Order 排序，ASC/DESC(默认)
+                     * @param _order 排序，ASC/DESC(默认)
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

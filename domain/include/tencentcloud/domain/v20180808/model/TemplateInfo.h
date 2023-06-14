@@ -51,216 +51,252 @@ namespace TencentCloud
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
                      * @return AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 
                      */
                     std::string GetAuditStatus() const;
 
                     /**
                      * 设置认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
-                     * @param AuditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * @param _auditStatus 认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject
+                     * 
                      */
                     void SetAuditStatus(const std::string& _auditStatus);
 
                     /**
                      * 判断参数 AuditStatus 是否已赋值
                      * @return AuditStatus 是否已赋值
+                     * 
                      */
                     bool AuditStatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedOn 创建时间
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedOn 创建时间
+                     * @param _createdOn 创建时间
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedOn 更新时间
+                     * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdatedOn 更新时间
+                     * @param _updatedOn 更新时间
+                     * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
 
                     /**
                      * 判断参数 UpdatedOn 是否已赋值
                      * @return UpdatedOn 是否已赋值
+                     * 
                      */
                     bool UpdatedOnHasBeenSet() const;
 
                     /**
                      * 获取用户UIN
                      * @return UserUin 用户UIN
+                     * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 设置用户UIN
-                     * @param UserUin 用户UIN
+                     * @param _userUin 用户UIN
+                     * 
                      */
                     void SetUserUin(const std::string& _userUin);
 
                     /**
                      * 判断参数 UserUin 是否已赋值
                      * @return UserUin 是否已赋值
+                     * 
                      */
                     bool UserUinHasBeenSet() const;
 
                     /**
                      * 获取是否是默认模板: 是:yes，否:no
                      * @return IsDefault 是否是默认模板: 是:yes，否:no
+                     * 
                      */
                     std::string GetIsDefault() const;
 
                     /**
                      * 设置是否是默认模板: 是:yes，否:no
-                     * @param IsDefault 是否是默认模板: 是:yes，否:no
+                     * @param _isDefault 是否是默认模板: 是:yes，否:no
+                     * 
                      */
                     void SetIsDefault(const std::string& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取认证失败原因
                      * @return AuditReason 认证失败原因
+                     * 
                      */
                     std::string GetAuditReason() const;
 
                     /**
                      * 设置认证失败原因
-                     * @param AuditReason 认证失败原因
+                     * @param _auditReason 认证失败原因
+                     * 
                      */
                     void SetAuditReason(const std::string& _auditReason);
 
                     /**
                      * 判断参数 AuditReason 是否已赋值
                      * @return AuditReason 是否已赋值
+                     * 
                      */
                     bool AuditReasonHasBeenSet() const;
 
                     /**
                      * 获取认证信息
                      * @return CertificateInfo 认证信息
+                     * 
                      */
                     CertificateInfo GetCertificateInfo() const;
 
                     /**
                      * 设置认证信息
-                     * @param CertificateInfo 认证信息
+                     * @param _certificateInfo 认证信息
+                     * 
                      */
                     void SetCertificateInfo(const CertificateInfo& _certificateInfo);
 
                     /**
                      * 判断参数 CertificateInfo 是否已赋值
                      * @return CertificateInfo 是否已赋值
+                     * 
                      */
                     bool CertificateInfoHasBeenSet() const;
 
                     /**
                      * 获取联系人信息
                      * @return ContactInfo 联系人信息
+                     * 
                      */
                     ContactInfo GetContactInfo() const;
 
                     /**
                      * 设置联系人信息
-                     * @param ContactInfo 联系人信息
+                     * @param _contactInfo 联系人信息
+                     * 
                      */
                     void SetContactInfo(const ContactInfo& _contactInfo);
 
                     /**
                      * 判断参数 ContactInfo 是否已赋值
                      * @return ContactInfo 是否已赋值
+                     * 
                      */
                     bool ContactInfoHasBeenSet() const;
 
                     /**
                      * 获取模板是否符合规范， 1是 0 否
                      * @return IsValidTemplate 模板是否符合规范， 1是 0 否
+                     * 
                      */
                     int64_t GetIsValidTemplate() const;
 
                     /**
                      * 设置模板是否符合规范， 1是 0 否
-                     * @param IsValidTemplate 模板是否符合规范， 1是 0 否
+                     * @param _isValidTemplate 模板是否符合规范， 1是 0 否
+                     * 
                      */
                     void SetIsValidTemplate(const int64_t& _isValidTemplate);
 
                     /**
                      * 判断参数 IsValidTemplate 是否已赋值
                      * @return IsValidTemplate 是否已赋值
+                     * 
                      */
                     bool IsValidTemplateHasBeenSet() const;
 
                     /**
                      * 获取不符合规范原因
                      * @return InvalidReason 不符合规范原因
+                     * 
                      */
                     std::string GetInvalidReason() const;
 
                     /**
                      * 设置不符合规范原因
-                     * @param InvalidReason 不符合规范原因
+                     * @param _invalidReason 不符合规范原因
+                     * 
                      */
                     void SetInvalidReason(const std::string& _invalidReason);
 
                     /**
                      * 判断参数 InvalidReason 是否已赋值
                      * @return InvalidReason 是否已赋值
+                     * 
                      */
                     bool InvalidReasonHasBeenSet() const;
 
                     /**
                      * 获取是包含黑名单手机或邮箱
                      * @return IsBlack 是包含黑名单手机或邮箱
+                     * 
                      */
                     bool GetIsBlack() const;
 
                     /**
                      * 设置是包含黑名单手机或邮箱
-                     * @param IsBlack 是包含黑名单手机或邮箱
+                     * @param _isBlack 是包含黑名单手机或邮箱
+                     * 
                      */
                     void SetIsBlack(const bool& _isBlack);
 
                     /**
                      * 判断参数 IsBlack 是否已赋值
                      * @return IsBlack 是否已赋值
+                     * 
                      */
                     bool IsBlackHasBeenSet() const;
 

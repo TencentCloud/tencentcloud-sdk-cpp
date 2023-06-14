@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取修改名称
                      * @return Name 修改名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置修改名称
-                     * @param Name 修改名称
+                     * @param _name 修改名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describe 修改描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置修改描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Describe 修改描述
+                     * @param _describe 修改描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescribe(const std::string& _describe);
 
                     /**
                      * 判断参数 Describe 是否已赋值
                      * @return Describe 是否已赋值
+                     * 
                      */
                     bool DescribeHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertRules 修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusAlertRule> GetAlertRules() const;
 
                     /**
                      * 设置修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertRules 修改内容，只有当模板类型是Alert时生效
+                     * @param _alertRules 修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlertRules(const std::vector<PrometheusAlertRule>& _alertRules);
 
                     /**
                      * 判断参数 AlertRules 是否已赋值
                      * @return AlertRules 是否已赋值
+                     * 
                      */
                     bool AlertRulesHasBeenSet() const;
 
@@ -118,6 +127,7 @@ namespace TencentCloud
                      * @return RecordRules 当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRecordRules() const;
 
@@ -125,15 +135,17 @@ namespace TencentCloud
                      * 设置当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordRules 当Level为instance时有效，
+                     * @param _recordRules 当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordRules(const std::vector<PrometheusConfigItem>& _recordRules);
 
                     /**
                      * 判断参数 RecordRules 是否已赋值
                      * @return RecordRules 是否已赋值
+                     * 
                      */
                     bool RecordRulesHasBeenSet() const;
 
@@ -144,6 +156,7 @@ namespace TencentCloud
                      * @return ServiceMonitors 当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetServiceMonitors() const;
 
@@ -151,15 +164,17 @@ namespace TencentCloud
                      * 设置当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceMonitors 当Level为cluster时有效，
+                     * @param _serviceMonitors 当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceMonitors(const std::vector<PrometheusConfigItem>& _serviceMonitors);
 
                     /**
                      * 判断参数 ServiceMonitors 是否已赋值
                      * @return ServiceMonitors 是否已赋值
+                     * 
                      */
                     bool ServiceMonitorsHasBeenSet() const;
 
@@ -170,6 +185,7 @@ namespace TencentCloud
                      * @return PodMonitors 当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetPodMonitors() const;
 
@@ -177,15 +193,17 @@ namespace TencentCloud
                      * 设置当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodMonitors 当Level为cluster时有效，
+                     * @param _podMonitors 当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodMonitors(const std::vector<PrometheusConfigItem>& _podMonitors);
 
                     /**
                      * 判断参数 PodMonitors 是否已赋值
                      * @return PodMonitors 是否已赋值
+                     * 
                      */
                     bool PodMonitorsHasBeenSet() const;
 
@@ -196,6 +214,7 @@ namespace TencentCloud
                      * @return RawJobs 当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRawJobs() const;
 
@@ -203,15 +222,17 @@ namespace TencentCloud
                      * 设置当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RawJobs 当Level为cluster时有效，
+                     * @param _rawJobs 当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRawJobs(const std::vector<PrometheusConfigItem>& _rawJobs);
 
                     /**
                      * 判断参数 RawJobs 是否已赋值
                      * @return RawJobs 是否已赋值
+                     * 
                      */
                     bool RawJobsHasBeenSet() const;
 
@@ -220,20 +241,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertDetailRules 修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusAlertRuleDetail> GetAlertDetailRules() const;
 
                     /**
                      * 设置修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertDetailRules 修改内容，只有当模板类型是Alert时生效
+                     * @param _alertDetailRules 修改内容，只有当模板类型是Alert时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlertDetailRules(const std::vector<PrometheusAlertRuleDetail>& _alertDetailRules);
 
                     /**
                      * 判断参数 AlertDetailRules 是否已赋值
                      * @return AlertDetailRules 是否已赋值
+                     * 
                      */
                     bool AlertDetailRulesHasBeenSet() const;
 

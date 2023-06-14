@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取推流时间列表
                      * @return PublishTimeList 推流时间列表
+                     * 
                      */
                     std::vector<PublishTime> GetPublishTimeList() const;
 
                     /**
                      * 设置推流时间列表
-                     * @param PublishTimeList 推流时间列表
+                     * @param _publishTimeList 推流时间列表
+                     * 
                      */
                     void SetPublishTimeList(const std::vector<PublishTime>& _publishTimeList);
 
                     /**
                      * 判断参数 PublishTimeList 是否已赋值
                      * @return PublishTimeList 是否已赋值
+                     * 
                      */
                     bool PublishTimeListHasBeenSet() const;
 
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return DomainName 推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务id
                      * @return JobId 迁移任务id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置迁移任务id
-                     * @param JobId 迁移任务id
+                     * @param _jobId 迁移任务id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的迁移任务名
                      * @return JobName 修改后的迁移任务名
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置修改后的迁移任务名
-                     * @param JobName 修改后的迁移任务名
+                     * @param _jobName 修改后的迁移任务名
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 

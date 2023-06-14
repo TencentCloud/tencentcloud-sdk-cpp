@@ -48,60 +48,70 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 透传字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取存证编码
                      * @return EvidenceId 存证编码
+                     * 
                      */
                     std::string GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 
                     /**
                      * 获取上链时间
                      * @return EvidenceTime 上链时间
+                     * 
                      */
                     std::string GetEvidenceTime() const;
 
                     /**
                      * 判断参数 EvidenceTime 是否已赋值
                      * @return EvidenceTime 是否已赋值
+                     * 
                      */
                     bool EvidenceTimeHasBeenSet() const;
 
                     /**
                      * 获取区块链交易哈希
                      * @return EvidenceTxHash 区块链交易哈希
+                     * 
                      */
                     std::string GetEvidenceTxHash() const;
 
                     /**
                      * 判断参数 EvidenceTxHash 是否已赋值
                      * @return EvidenceTxHash 是否已赋值
+                     * 
                      */
                     bool EvidenceTxHashHasBeenSet() const;
 
                     /**
                      * 获取区块高度
                      * @return BlockchainHeight 区块高度
+                     * 
                      */
                     uint64_t GetBlockchainHeight() const;
 
                     /**
                      * 判断参数 BlockchainHeight 是否已赋值
                      * @return BlockchainHeight 是否已赋值
+                     * 
                      */
                     bool BlockchainHeightHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型，例如S5.LARGE8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型，例如S5.LARGE8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 实例类型，例如S5.LARGE8
+                     * @param _instanceType 实例类型，例如S5.LARGE8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalInstances 实例限额数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalInstances() const;
 
                     /**
                      * 设置实例限额数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalInstances 实例限额数
+                     * @param _totalInstances 实例限额数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalInstances(const uint64_t& _totalInstances);
 
                     /**
                      * 判断参数 TotalInstances 是否已赋值
                      * @return TotalInstances 是否已赋值
+                     * 
                      */
                     bool TotalInstancesHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总攻击源条数
                      * @return Total 总攻击源条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取攻击源列表
                      * @return AttackSourceList 攻击源列表
+                     * 
                      */
                     std::vector<DDoSAttackSourceRecord> GetAttackSourceList() const;
 
                     /**
                      * 判断参数 AttackSourceList 是否已赋值
                      * @return AttackSourceList 是否已赋值
+                     * 
                      */
                     bool AttackSourceListHasBeenSet() const;
 

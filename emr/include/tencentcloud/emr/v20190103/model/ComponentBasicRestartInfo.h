@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 进程名，必填，如NameNode
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置进程名，必填，如NameNode
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComponentName 进程名，必填，如NameNode
+                     * @param _componentName 进程名，必填，如NameNode
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComponentName(const std::string& _componentName);
 
                     /**
                      * 判断参数 ComponentName 是否已赋值
                      * @return ComponentName 是否已赋值
+                     * 
                      */
                     bool ComponentNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpList 操作的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置操作的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpList 操作的IP列表
+                     * @param _ipList 操作的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 

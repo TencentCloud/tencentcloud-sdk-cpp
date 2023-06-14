@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取执行资源名
                      * @return ExecutionResourceName 执行资源名
+                     * 
                      */
                     std::string GetExecutionResourceName() const;
 
                     /**
                      * 判断参数 ExecutionResourceName 是否已赋值
                      * @return ExecutionResourceName 是否已赋值
+                     * 
                      */
                     bool ExecutionResourceNameHasBeenSet() const;
 
                     /**
                      * 获取执行开始时间
                      * @return StartDate 执行开始时间
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 

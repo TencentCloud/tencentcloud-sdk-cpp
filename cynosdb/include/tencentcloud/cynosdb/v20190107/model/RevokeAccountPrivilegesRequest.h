@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取账号信息
                      * @return Account 账号信息
+                     * 
                      */
                     InputAccount GetAccount() const;
 
                     /**
                      * 设置账号信息
-                     * @param Account 账号信息
+                     * @param _account 账号信息
+                     * 
                      */
                     void SetAccount(const InputAccount& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
                     /**
                      * 获取数据库表权限数组
                      * @return DbTablePrivileges 数据库表权限数组
+                     * 
                      */
                     std::vector<std::string> GetDbTablePrivileges() const;
 
                     /**
                      * 设置数据库表权限数组
-                     * @param DbTablePrivileges 数据库表权限数组
+                     * @param _dbTablePrivileges 数据库表权限数组
+                     * 
                      */
                     void SetDbTablePrivileges(const std::vector<std::string>& _dbTablePrivileges);
 
                     /**
                      * 判断参数 DbTablePrivileges 是否已赋值
                      * @return DbTablePrivileges 是否已赋值
+                     * 
                      */
                     bool DbTablePrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库表信息
                      * @return DbTables 数据库表信息
+                     * 
                      */
                     std::vector<DbTable> GetDbTables() const;
 
                     /**
                      * 设置数据库表信息
-                     * @param DbTables 数据库表信息
+                     * @param _dbTables 数据库表信息
+                     * 
                      */
                     void SetDbTables(const std::vector<DbTable>& _dbTables);
 
                     /**
                      * 判断参数 DbTables 是否已赋值
                      * @return DbTables 是否已赋值
+                     * 
                      */
                     bool DbTablesHasBeenSet() const;
 

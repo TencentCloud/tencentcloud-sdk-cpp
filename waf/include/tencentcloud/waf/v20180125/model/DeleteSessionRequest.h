@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取clb-waf 或者 sprta-waf
                      * @return Edition clb-waf 或者 sprta-waf
+                     * 
                      */
                     std::string GetEdition() const;
 
                     /**
                      * 设置clb-waf 或者 sprta-waf
-                     * @param Edition clb-waf 或者 sprta-waf
+                     * @param _edition clb-waf 或者 sprta-waf
+                     * 
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
+                     * 
                      */
                     bool EditionHasBeenSet() const;
 

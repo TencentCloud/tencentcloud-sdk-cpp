@@ -165,6 +165,7 @@ namespace TencentCloud
 <li> sa-saopaulo-1</li>
 <li> ap-jakarta-1 </li>
 <li> ap-jakarta-2 </li>
+                     * 
                      */
                     std::string GetZone() const;
 
@@ -228,7 +229,7 @@ namespace TencentCloud
 <li> sa-saopaulo-1</li>
 <li> ap-jakarta-1 </li>
 <li> ap-jakarta-2 </li>
-                     * @param Zone 可用区名称，例如，ap-guangzhou-3
+                     * @param _zone 可用区名称，例如，ap-guangzhou-3
 全网可用区名称如下：
 <li> ap-chongqing-1 </li>
 <li> ap-seoul-1 </li>
@@ -287,66 +288,77 @@ namespace TencentCloud
 <li> sa-saopaulo-1</li>
 <li> ap-jakarta-1 </li>
 <li> ap-jakarta-2 </li>
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区描述，例如，广州三区
                      * @return ZoneName 可用区描述，例如，广州三区
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区描述，例如，广州三区
-                     * @param ZoneName 可用区描述，例如，广州三区
+                     * @param _zoneName 可用区描述，例如，广州三区
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取可用区ID
                      * @return ZoneId 可用区ID
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
                      * @return ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     std::string GetZoneState() const;
 
                     /**
                      * 设置可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-                     * @param ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * @param _zoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+                     * 
                      */
                     void SetZoneState(const std::string& _zoneState);
 
                     /**
                      * 判断参数 ZoneState 是否已赋值
                      * @return ZoneState 是否已赋值
+                     * 
                      */
                     bool ZoneStateHasBeenSet() const;
 

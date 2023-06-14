@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取主机记录ID
                      * @return DeviceId 主机记录ID
+                     * 
                      */
                     uint64_t GetDeviceId() const;
 
                     /**
                      * 设置主机记录ID
-                     * @param DeviceId 主机记录ID
+                     * @param _deviceId 主机记录ID
+                     * 
                      */
                     void SetDeviceId(const uint64_t& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取账号名
                      * @return Account 账号名
+                     * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置账号名
-                     * @param Account 账号名
+                     * @param _account 账号名
+                     * 
                      */
                     void SetAccount(const std::string& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 

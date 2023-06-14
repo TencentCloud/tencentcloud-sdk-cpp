@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取引擎版本，缺省则查询所有
                      * @return EngineVersions 引擎版本，缺省则查询所有
+                     * 
                      */
                     std::vector<std::string> GetEngineVersions() const;
 
                     /**
                      * 设置引擎版本，缺省则查询所有
-                     * @param EngineVersions 引擎版本，缺省则查询所有
+                     * @param _engineVersions 引擎版本，缺省则查询所有
+                     * 
                      */
                     void SetEngineVersions(const std::vector<std::string>& _engineVersions);
 
                     /**
                      * 判断参数 EngineVersions 是否已赋值
                      * @return EngineVersions 是否已赋值
+                     * 
                      */
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
                      * 获取引擎类型，缺省则查询所有
                      * @return EngineTypes 引擎类型，缺省则查询所有
+                     * 
                      */
                     std::vector<std::string> GetEngineTypes() const;
 
                     /**
                      * 设置引擎类型，缺省则查询所有
-                     * @param EngineTypes 引擎类型，缺省则查询所有
+                     * @param _engineTypes 引擎类型，缺省则查询所有
+                     * 
                      */
                     void SetEngineTypes(const std::vector<std::string>& _engineTypes);
 
                     /**
                      * 判断参数 EngineTypes 是否已赋值
                      * @return EngineTypes 是否已赋值
+                     * 
                      */
                     bool EngineTypesHasBeenSet() const;
 
                     /**
                      * 获取模板名称，缺省则查询所有
                      * @return TemplateNames 模板名称，缺省则查询所有
+                     * 
                      */
                     std::vector<std::string> GetTemplateNames() const;
 
                     /**
                      * 设置模板名称，缺省则查询所有
-                     * @param TemplateNames 模板名称，缺省则查询所有
+                     * @param _templateNames 模板名称，缺省则查询所有
+                     * 
                      */
                     void SetTemplateNames(const std::vector<std::string>& _templateNames);
 
                     /**
                      * 判断参数 TemplateNames 是否已赋值
                      * @return TemplateNames 是否已赋值
+                     * 
                      */
                     bool TemplateNamesHasBeenSet() const;
 
                     /**
                      * 获取模板id，缺省则查询所有
                      * @return TemplateIds 模板id，缺省则查询所有
+                     * 
                      */
                     std::vector<int64_t> GetTemplateIds() const;
 
                     /**
                      * 设置模板id，缺省则查询所有
-                     * @param TemplateIds 模板id，缺省则查询所有
+                     * @param _templateIds 模板id，缺省则查询所有
+                     * 
                      */
                     void SetTemplateIds(const std::vector<int64_t>& _templateIds);
 
                     /**
                      * 判断参数 TemplateIds 是否已赋值
                      * @return TemplateIds 是否已赋值
+                     * 
                      */
                     bool TemplateIdsHasBeenSet() const;
 

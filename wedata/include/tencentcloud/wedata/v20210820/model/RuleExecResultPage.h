@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 记录数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置记录数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 记录数
+                     * @param _totalCount 记录数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取规则执行结果
                      * @return Items 规则执行结果
+                     * 
                      */
                     std::vector<RuleExecResult> GetItems() const;
 
                     /**
                      * 设置规则执行结果
-                     * @param Items 规则执行结果
+                     * @param _items 规则执行结果
+                     * 
                      */
                     void SetItems(const std::vector<RuleExecResult>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取付费类型，如："All Upfront","Partial Upfront","No Upfront"
                      * @return OfferingType 付费类型，如："All Upfront","Partial Upfront","No Upfront"
+                     * 
                      */
                     std::string GetOfferingType() const;
 
                     /**
                      * 设置付费类型，如："All Upfront","Partial Upfront","No Upfront"
-                     * @param OfferingType 付费类型，如："All Upfront","Partial Upfront","No Upfront"
+                     * @param _offeringType 付费类型，如："All Upfront","Partial Upfront","No Upfront"
+                     * 
                      */
                     void SetOfferingType(const std::string& _offeringType);
 
                     /**
                      * 判断参数 OfferingType 是否已赋值
                      * @return OfferingType 是否已赋值
+                     * 
                      */
                     bool OfferingTypeHasBeenSet() const;
 
                     /**
                      * 获取预支合计费用，单位：元。
                      * @return FixedPrice 预支合计费用，单位：元。
+                     * 
                      */
                     double GetFixedPrice() const;
 
                     /**
                      * 设置预支合计费用，单位：元。
-                     * @param FixedPrice 预支合计费用，单位：元。
+                     * @param _fixedPrice 预支合计费用，单位：元。
+                     * 
                      */
                     void SetFixedPrice(const double& _fixedPrice);
 
                     /**
                      * 判断参数 FixedPrice 是否已赋值
                      * @return FixedPrice 是否已赋值
+                     * 
                      */
                     bool FixedPriceHasBeenSet() const;
 
                     /**
                      * 获取后续合计费用，单位：元/小时
                      * @return UsagePrice 后续合计费用，单位：元/小时
+                     * 
                      */
                     double GetUsagePrice() const;
 
                     /**
                      * 设置后续合计费用，单位：元/小时
-                     * @param UsagePrice 后续合计费用，单位：元/小时
+                     * @param _usagePrice 后续合计费用，单位：元/小时
+                     * 
                      */
                     void SetUsagePrice(const double& _usagePrice);
 
                     /**
                      * 判断参数 UsagePrice 是否已赋值
                      * @return UsagePrice 是否已赋值
+                     * 
                      */
                     bool UsagePriceHasBeenSet() const;
 
                     /**
                      * 获取预留实例配置ID
                      * @return ReservedInstancesOfferingId 预留实例配置ID
+                     * 
                      */
                     std::string GetReservedInstancesOfferingId() const;
 
                     /**
                      * 设置预留实例配置ID
-                     * @param ReservedInstancesOfferingId 预留实例配置ID
+                     * @param _reservedInstancesOfferingId 预留实例配置ID
+                     * 
                      */
                     void SetReservedInstancesOfferingId(const std::string& _reservedInstancesOfferingId);
 
                     /**
                      * 判断参数 ReservedInstancesOfferingId 是否已赋值
                      * @return ReservedInstancesOfferingId 是否已赋值
+                     * 
                      */
                     bool ReservedInstancesOfferingIdHasBeenSet() const;
 
                     /**
                      * 获取预留实例计费可购买的可用区。
                      * @return Zone 预留实例计费可购买的可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置预留实例计费可购买的可用区。
-                     * @param Zone 预留实例计费可购买的可用区。
+                     * @param _zone 预留实例计费可购买的可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 计量单位：秒
                      * @return Duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
-                     * @param Duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
+                     * @param _duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 返回项： Linux 。
                      * @return ProductDescription 预留实例计费的平台描述（即操作系统）。形如：Linux。
 返回项： Linux 。
+                     * 
                      */
                     std::string GetProductDescription() const;
 
                     /**
                      * 设置预留实例计费的平台描述（即操作系统）。形如：Linux。
 返回项： Linux 。
-                     * @param ProductDescription 预留实例计费的平台描述（即操作系统）。形如：Linux。
+                     * @param _productDescription 预留实例计费的平台描述（即操作系统）。形如：Linux。
 返回项： Linux 。
+                     * 
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
                     /**
                      * 判断参数 ProductDescription 是否已赋值
                      * @return ProductDescription 是否已赋值
+                     * 
                      */
                     bool ProductDescriptionHasBeenSet() const;
 

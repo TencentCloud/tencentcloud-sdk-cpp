@@ -55,6 +55,7 @@ off：关闭
                      * @return Switch scdn cc配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -62,15 +63,17 @@ off：关闭
                      * 设置scdn cc配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch scdn cc配置开关，取值有：
+                     * @param _switch scdn cc配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -79,20 +82,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnCCRules> GetRules() const;
 
                     /**
                      * 设置自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rules 自定义 cc 防护规则
+                     * @param _rules 自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRules(const std::vector<ScdnCCRules>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
@@ -101,20 +107,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedRules 增强自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AdvancedCCRules> GetAdvancedRules() const;
 
                     /**
                      * 设置增强自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedRules 增强自定义 cc 防护规则
+                     * @param _advancedRules 增强自定义 cc 防护规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvancedRules(const std::vector<AdvancedCCRules>& _advancedRules);
 
                     /**
                      * 判断参数 AdvancedRules 是否已赋值
                      * @return AdvancedRules 是否已赋值
+                     * 
                      */
                     bool AdvancedRulesHasBeenSet() const;
 
@@ -123,20 +132,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalAdvancedRules 增强自定义 cc 防护规则， 全局
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AdvancedCCRules> GetGlobalAdvancedRules() const;
 
                     /**
                      * 设置增强自定义 cc 防护规则， 全局
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GlobalAdvancedRules 增强自定义 cc 防护规则， 全局
+                     * @param _globalAdvancedRules 增强自定义 cc 防护规则， 全局
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGlobalAdvancedRules(const std::vector<AdvancedCCRules>& _globalAdvancedRules);
 
                     /**
                      * 判断参数 GlobalAdvancedRules 是否已赋值
                      * @return GlobalAdvancedRules 是否已赋值
+                     * 
                      */
                     bool GlobalAdvancedRulesHasBeenSet() const;
 

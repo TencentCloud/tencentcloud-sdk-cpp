@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockHash 区块hash
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBlockHash() const;
 
                     /**
                      * 设置区块hash
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlockHash 区块hash
+                     * @param _blockHash 区块hash
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBlockHash(const std::string& _blockHash);
 
                     /**
                      * 判断参数 BlockHash 是否已赋值
                      * @return BlockHash 是否已赋值
+                     * 
                      */
                     bool BlockHashHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockHeight 区块高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBlockHeight() const;
 
                     /**
                      * 设置区块高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlockHeight 区块高度
+                     * @param _blockHeight 区块高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBlockHeight(const std::string& _blockHeight);
 
                     /**
                      * 判断参数 BlockHeight 是否已赋值
                      * @return BlockHeight 是否已赋值
+                     * 
                      */
                     bool BlockHeightHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockTime 区块时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBlockTime() const;
 
                     /**
                      * 设置区块时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlockTime 区块时间
+                     * @param _blockTime 区块时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBlockTime(const std::string& _blockTime);
 
                     /**
                      * 判断参数 BlockTime 是否已赋值
                      * @return BlockTime 是否已赋值
+                     * 
                      */
                     bool BlockTimeHasBeenSet() const;
 

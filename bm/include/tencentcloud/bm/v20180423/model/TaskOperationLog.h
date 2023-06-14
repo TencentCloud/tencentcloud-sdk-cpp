@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取操作步骤
                      * @return TaskStep 操作步骤
+                     * 
                      */
                     std::string GetTaskStep() const;
 
                     /**
                      * 设置操作步骤
-                     * @param TaskStep 操作步骤
+                     * @param _taskStep 操作步骤
+                     * 
                      */
                     void SetTaskStep(const std::string& _taskStep);
 
                     /**
                      * 判断参数 TaskStep 是否已赋值
                      * @return TaskStep 是否已赋值
+                     * 
                      */
                     bool TaskStepHasBeenSet() const;
 
                     /**
                      * 获取操作人
                      * @return Operator 操作人
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人
-                     * @param Operator 操作人
+                     * @param _operator 操作人
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取操作描述
                      * @return OperationDetail 操作描述
+                     * 
                      */
                     std::string GetOperationDetail() const;
 
                     /**
                      * 设置操作描述
-                     * @param OperationDetail 操作描述
+                     * @param _operationDetail 操作描述
+                     * 
                      */
                     void SetOperationDetail(const std::string& _operationDetail);
 
                     /**
                      * 判断参数 OperationDetail 是否已赋值
                      * @return OperationDetail 是否已赋值
+                     * 
                      */
                     bool OperationDetailHasBeenSet() const;
 
                     /**
                      * 获取操作时间
                      * @return OperationTime 操作时间
+                     * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置操作时间
-                     * @param OperationTime 操作时间
+                     * @param _operationTime 操作时间
+                     * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
 
                     /**
                      * 判断参数 OperationTime 是否已赋值
                      * @return OperationTime 是否已赋值
+                     * 
                      */
                     bool OperationTimeHasBeenSet() const;
 

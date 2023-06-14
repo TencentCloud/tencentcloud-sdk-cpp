@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取用户组名称
                      * @return ConsumerGroupName 用户组名称
+                     * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
                      * 设置用户组名称
-                     * @param ConsumerGroupName 用户组名称
+                     * @param _consumerGroupName 用户组名称
+                     * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
 
                     /**
                      * 判断参数 ConsumerGroupName 是否已赋值
                      * @return ConsumerGroupName 是否已赋值
+                     * 
                      */
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
                      * 获取订阅信息实体
                      * @return SubscribedInfo 订阅信息实体
+                     * 
                      */
                     std::vector<SubscribedInfo> GetSubscribedInfo() const;
 
                     /**
                      * 设置订阅信息实体
-                     * @param SubscribedInfo 订阅信息实体
+                     * @param _subscribedInfo 订阅信息实体
+                     * 
                      */
                     void SetSubscribedInfo(const std::vector<SubscribedInfo>& _subscribedInfo);
 
                     /**
                      * 判断参数 SubscribedInfo 是否已赋值
                      * @return SubscribedInfo 是否已赋值
+                     * 
                      */
                     bool SubscribedInfoHasBeenSet() const;
 

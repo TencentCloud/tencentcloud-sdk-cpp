@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取EmrService中pod状态信息
                      * @return Message EmrService中pod状态信息
+                     * 
                      */
                     PodState GetMessage() const;
 
                     /**
                      * 设置EmrService中pod状态信息
-                     * @param Message EmrService中pod状态信息
+                     * @param _message EmrService中pod状态信息
+                     * 
                      */
                     void SetMessage(const PodState& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务历史ID
                      * @return TaskLogId 任务历史ID
+                     * 
                      */
                     std::string GetTaskLogId() const;
 
                     /**
                      * 设置任务历史ID
-                     * @param TaskLogId 任务历史ID
+                     * @param _taskLogId 任务历史ID
+                     * 
                      */
                     void SetTaskLogId(const std::string& _taskLogId);
 
                     /**
                      * 判断参数 TaskLogId 是否已赋值
                      * @return TaskLogId 是否已赋值
+                     * 
                      */
                     bool TaskLogIdHasBeenSet() const;
 

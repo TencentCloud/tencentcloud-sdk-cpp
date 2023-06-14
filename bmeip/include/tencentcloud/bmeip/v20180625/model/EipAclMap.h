@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取EIP 实例 ID
                      * @return EipId EIP 实例 ID
+                     * 
                      */
                     std::string GetEipId() const;
 
                     /**
                      * 设置EIP 实例 ID
-                     * @param EipId EIP 实例 ID
+                     * @param _eipId EIP 实例 ID
+                     * 
                      */
                     void SetEipId(const std::string& _eipId);
 
                     /**
                      * 判断参数 EipId 是否已赋值
                      * @return EipId 是否已赋值
+                     * 
                      */
                     bool EipIdHasBeenSet() const;
 
                     /**
                      * 获取ACL 实例 ID
                      * @return AclId ACL 实例 ID
+                     * 
                      */
                     std::string GetAclId() const;
 
                     /**
                      * 设置ACL 实例 ID
-                     * @param AclId ACL 实例 ID
+                     * @param _aclId ACL 实例 ID
+                     * 
                      */
                     void SetAclId(const std::string& _aclId);
 
                     /**
                      * 判断参数 AclId 是否已赋值
                      * @return AclId 是否已赋值
+                     * 
                      */
                     bool AclIdHasBeenSet() const;
 

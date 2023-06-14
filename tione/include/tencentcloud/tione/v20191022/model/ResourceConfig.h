@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 计算实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置计算实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCount 计算实例数量
+                     * @param _instanceCount 计算实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 计算实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置计算实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 计算实例类型
+                     * @param _instanceType 计算实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeSizeInGB 挂载CBS大小（GB）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVolumeSizeInGB() const;
 
                     /**
                      * 设置挂载CBS大小（GB）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VolumeSizeInGB 挂载CBS大小（GB）
+                     * @param _volumeSizeInGB 挂载CBS大小（GB）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVolumeSizeInGB(const uint64_t& _volumeSizeInGB);
 
                     /**
                      * 判断参数 VolumeSizeInGB 是否已赋值
                      * @return VolumeSizeInGB 是否已赋值
+                     * 
                      */
                     bool VolumeSizeInGBHasBeenSet() const;
 

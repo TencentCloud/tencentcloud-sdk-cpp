@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationCount 应用总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetApplicationCount() const;
 
                     /**
                      * 设置应用总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationCount 应用总数
+                     * @param _applicationCount 应用总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationCount(const int64_t& _applicationCount);
 
                     /**
                      * 判断参数 ApplicationCount 是否已赋值
                      * @return ApplicationCount 是否已赋值
+                     * 
                      */
                     bool ApplicationCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceCount 命名空间总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNamespaceCount() const;
 
                     /**
                      * 设置命名空间总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceCount 命名空间总数
+                     * @param _namespaceCount 命名空间总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceCount(const int64_t& _namespaceCount);
 
                     /**
                      * 判断参数 NamespaceCount 是否已赋值
                      * @return NamespaceCount 是否已赋值
+                     * 
                      */
                     bool NamespaceCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCount 部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
                      * 设置部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupCount 部署组个数
+                     * @param _groupCount 部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
 
                     /**
                      * 判断参数 GroupCount 是否已赋值
                      * @return GroupCount 是否已赋值
+                     * 
                      */
                     bool GroupCountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageSpaceUsed 程序包存储空间用量，单位字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPackageSpaceUsed() const;
 
                     /**
                      * 设置程序包存储空间用量，单位字节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageSpaceUsed 程序包存储空间用量，单位字节
+                     * @param _packageSpaceUsed 程序包存储空间用量，单位字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageSpaceUsed(const int64_t& _packageSpaceUsed);
 
                     /**
                      * 判断参数 PackageSpaceUsed 是否已赋值
                      * @return PackageSpaceUsed 是否已赋值
+                     * 
                      */
                     bool PackageSpaceUsedHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsulInstanceCount 已注册实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetConsulInstanceCount() const;
 
                     /**
                      * 设置已注册实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConsulInstanceCount 已注册实例数
+                     * @param _consulInstanceCount 已注册实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConsulInstanceCount(const int64_t& _consulInstanceCount);
 
                     /**
                      * 判断参数 ConsulInstanceCount 是否已赋值
                      * @return ConsulInstanceCount 是否已赋值
+                     * 
                      */
                     bool ConsulInstanceCountHasBeenSet() const;
 

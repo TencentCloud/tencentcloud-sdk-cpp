@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取热词表ID
                      * @return VocabId 热词表ID
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobStatus 作业状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetJobStatus() const;
 
                     /**
                      * 设置作业状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobStatus 作业状态
+                     * @param _jobStatus 作业状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobStatus(const int64_t& _jobStatus);
 
                     /**
                      * 判断参数 JobStatus 是否已赋值
                      * @return JobStatus 是否已赋值
+                     * 
                      */
                     bool JobStatusHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 作业数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置作业数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 作业数量
+                     * @param _count 作业数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

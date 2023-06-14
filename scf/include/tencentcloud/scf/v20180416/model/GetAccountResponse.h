@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取命名空间已使用的信息
                      * @return AccountUsage 命名空间已使用的信息
+                     * 
                      */
                     UsageInfo GetAccountUsage() const;
 
                     /**
                      * 判断参数 AccountUsage 是否已赋值
                      * @return AccountUsage 是否已赋值
+                     * 
                      */
                     bool AccountUsageHasBeenSet() const;
 
                     /**
                      * 获取命名空间限制的信息
                      * @return AccountLimit 命名空间限制的信息
+                     * 
                      */
                     LimitsInfo GetAccountLimit() const;
 
                     /**
                      * 判断参数 AccountLimit 是否已赋值
                      * @return AccountLimit 是否已赋值
+                     * 
                      */
                     bool AccountLimitHasBeenSet() const;
 

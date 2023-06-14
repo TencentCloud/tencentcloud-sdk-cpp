@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pod Pod详情信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeNodePodInfo GetPod() const;
 
                     /**
                      * 判断参数 Pod 是否已赋值
                      * @return Pod 是否已赋值
+                     * 
                      */
                     bool PodHasBeenSet() const;
 

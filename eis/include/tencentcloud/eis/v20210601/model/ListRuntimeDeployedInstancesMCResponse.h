@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取运行时所部属的应用实例列表
                      * @return Instances 运行时所部属的应用实例列表
+                     * 
                      */
                     std::vector<RuntimeDeployedInstanceMC> GetInstances() const;
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 
                     /**
                      * 获取满足条件的记录总数，用于分页器
                      * @return TotalCount 满足条件的记录总数，用于分页器
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

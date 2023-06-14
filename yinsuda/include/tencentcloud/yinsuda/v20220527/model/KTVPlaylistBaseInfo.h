@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取歌单Id。
                      * @return PlaylistId 歌单Id。
+                     * 
                      */
                     std::string GetPlaylistId() const;
 
                     /**
                      * 设置歌单Id。
-                     * @param PlaylistId 歌单Id。
+                     * @param _playlistId 歌单Id。
+                     * 
                      */
                     void SetPlaylistId(const std::string& _playlistId);
 
                     /**
                      * 判断参数 PlaylistId 是否已赋值
                      * @return PlaylistId 是否已赋值
+                     * 
                      */
                     bool PlaylistIdHasBeenSet() const;
 
                     /**
                      * 获取歌单标题。
                      * @return Title 歌单标题。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置歌单标题。
-                     * @param Title 歌单标题。
+                     * @param _title 歌单标题。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 

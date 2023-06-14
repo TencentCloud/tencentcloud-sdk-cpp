@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取销毁节点ID。该参数为预留参数，用户无需配置。
                      * @return ResourceIds 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置销毁节点ID。该参数为预留参数，用户无需配置。
-                     * @param ResourceIds 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * @param _resourceIds 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 

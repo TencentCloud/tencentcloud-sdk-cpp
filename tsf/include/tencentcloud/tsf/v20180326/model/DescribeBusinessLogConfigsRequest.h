@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，取值范围大于等于0，默认值为0
                      * @return Offset 偏移量，取值范围大于等于0，默认值为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取值范围大于等于0，默认值为0
-                     * @param Offset 偏移量，取值范围大于等于0，默认值为0
+                     * @param _offset 偏移量，取值范围大于等于0，默认值为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单页请求配置数量，取值范围[1, 50]，默认值为10
                      * @return Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单页请求配置数量，取值范围[1, 50]，默认值为10
-                     * @param Limit 单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * @param _limit 单页请求配置数量，取值范围[1, 50]，默认值为10
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取模糊匹配关键词
                      * @return SearchWord 模糊匹配关键词
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置模糊匹配关键词
-                     * @param SearchWord 模糊匹配关键词
+                     * @param _searchWord 模糊匹配关键词
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DisableProgramAuthCheck 无
+                     * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
                      * 设置无
-                     * @param DisableProgramAuthCheck 无
+                     * @param _disableProgramAuthCheck 无
+                     * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
 
                     /**
                      * 判断参数 DisableProgramAuthCheck 是否已赋值
                      * @return DisableProgramAuthCheck 是否已赋值
+                     * 
                      */
                     bool DisableProgramAuthCheckHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ConfigIdList 无
+                     * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
                      * 设置无
-                     * @param ConfigIdList 无
+                     * @param _configIdList 无
+                     * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
 
                     /**
                      * 判断参数 ConfigIdList 是否已赋值
                      * @return ConfigIdList 是否已赋值
+                     * 
                      */
                     bool ConfigIdListHasBeenSet() const;
 

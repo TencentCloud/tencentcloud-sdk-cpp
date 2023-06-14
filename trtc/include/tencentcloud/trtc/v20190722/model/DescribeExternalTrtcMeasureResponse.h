@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取每个SdkAppId的时长使用信息
                      * @return SdkAppIdTrtrTimeUsages 每个SdkAppId的时长使用信息
+                     * 
                      */
                     std::vector<SdkAppIdNewTrtcTimeUsage> GetSdkAppIdTrtrTimeUsages() const;
 
                     /**
                      * 判断参数 SdkAppIdTrtrTimeUsages 是否已赋值
                      * @return SdkAppIdTrtrTimeUsages 是否已赋值
+                     * 
                      */
                     bool SdkAppIdTrtrTimeUsagesHasBeenSet() const;
 
                     /**
                      * 获取主播的用量统计方式。取值"InRoomTime":房间时长,"SubscribeTime":"订阅时长","Bandwidth":带宽
                      * @return AnchorUsageMode 主播的用量统计方式。取值"InRoomTime":房间时长,"SubscribeTime":"订阅时长","Bandwidth":带宽
+                     * 
                      */
                     std::string GetAnchorUsageMode() const;
 
                     /**
                      * 判断参数 AnchorUsageMode 是否已赋值
                      * @return AnchorUsageMode 是否已赋值
+                     * 
                      */
                     bool AnchorUsageModeHasBeenSet() const;
 
                     /**
                      * 获取观众的用量统计方式。取值"InRoomTime":在房间时长,"SubscribeTime":"订阅时长","Bandwidth":带宽,"MergeWithAnchor":"不区分麦上麦下"
                      * @return AudienceUsageMode 观众的用量统计方式。取值"InRoomTime":在房间时长,"SubscribeTime":"订阅时长","Bandwidth":带宽,"MergeWithAnchor":"不区分麦上麦下"
+                     * 
                      */
                     std::string GetAudienceUsageMode() const;
 
                     /**
                      * 判断参数 AudienceUsageMode 是否已赋值
                      * @return AudienceUsageMode 是否已赋值
+                     * 
                      */
                     bool AudienceUsageModeHasBeenSet() const;
 

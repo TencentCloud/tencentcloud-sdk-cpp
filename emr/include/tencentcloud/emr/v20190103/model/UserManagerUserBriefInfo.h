@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取用户所属的组
                      * @return UserGroup 用户所属的组
+                     * 
                      */
                     std::string GetUserGroup() const;
 
                     /**
                      * 设置用户所属的组
-                     * @param UserGroup 用户所属的组
+                     * @param _userGroup 用户所属的组
+                     * 
                      */
                     void SetUserGroup(const std::string& _userGroup);
 
                     /**
                      * 判断参数 UserGroup 是否已赋值
                      * @return UserGroup 是否已赋值
+                     * 
                      */
                     bool UserGroupHasBeenSet() const;
 
                     /**
                      * 获取Manager表示管理员、NormalUser表示普通用户
                      * @return UserType Manager表示管理员、NormalUser表示普通用户
+                     * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置Manager表示管理员、NormalUser表示普通用户
-                     * @param UserType Manager表示管理员、NormalUser表示普通用户
+                     * @param _userType Manager表示管理员、NormalUser表示普通用户
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 用户创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置用户创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 用户创建时间
+                     * @param _createTime 用户创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义
                      * @return SupportDownLoadKeyTab 是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义
+                     * 
                      */
                     bool GetSupportDownLoadKeyTab() const;
 
                     /**
                      * 设置是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义
-                     * @param SupportDownLoadKeyTab 是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义
+                     * @param _supportDownLoadKeyTab 是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义
+                     * 
                      */
                     void SetSupportDownLoadKeyTab(const bool& _supportDownLoadKeyTab);
 
                     /**
                      * 判断参数 SupportDownLoadKeyTab 是否已赋值
                      * @return SupportDownLoadKeyTab 是否已赋值
+                     * 
                      */
                     bool SupportDownLoadKeyTabHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownLoadKeyTabUrl keytab文件的下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownLoadKeyTabUrl() const;
 
                     /**
                      * 设置keytab文件的下载地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownLoadKeyTabUrl keytab文件的下载地址
+                     * @param _downLoadKeyTabUrl keytab文件的下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownLoadKeyTabUrl(const std::string& _downLoadKeyTabUrl);
 
                     /**
                      * 判断参数 DownLoadKeyTabUrl 是否已赋值
                      * @return DownLoadKeyTabUrl 是否已赋值
+                     * 
                      */
                     bool DownLoadKeyTabUrlHasBeenSet() const;
 

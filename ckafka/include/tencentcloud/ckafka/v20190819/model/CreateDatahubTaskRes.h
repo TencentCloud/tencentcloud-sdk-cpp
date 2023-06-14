@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取转储任务id
                      * @return TaskId 转储任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置转储任务id
-                     * @param TaskId 转储任务id
+                     * @param _taskId 转储任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatahubId 数据转储Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
                      * 设置数据转储Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatahubId 数据转储Id
+                     * @param _datahubId 数据转储Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
 
                     /**
                      * 判断参数 DatahubId 是否已赋值
                      * @return DatahubId 是否已赋值
+                     * 
                      */
                     bool DatahubIdHasBeenSet() const;
 

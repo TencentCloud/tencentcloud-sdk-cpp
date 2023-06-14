@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB
+                     * @param _instanceType 类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 单价（原价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPrice() const;
 
                     /**
                      * 设置单价（原价）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Price 单价（原价）
+                     * @param _price 单价（原价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrice(const double& _price);
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealCost 单价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRealCost() const;
 
                     /**
                      * 设置单价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealCost 单价（折扣价）
+                     * @param _realCost 单价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealCost(const double& _realCost);
 
                     /**
                      * 判断参数 RealCost 是否已赋值
                      * @return RealCost 是否已赋值
+                     * 
                      */
                     bool RealCostHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 总价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRealTotalCost() const;
 
                     /**
                      * 设置总价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealTotalCost 总价（折扣价）
+                     * @param _realTotalCost 总价（折扣价）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealTotalCost(const double& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policy 折扣
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPolicy() const;
 
                     /**
                      * 设置折扣
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Policy 折扣
+                     * @param _policy 折扣
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicy(const double& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsNum 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
                      * 设置数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GoodsNum 数量
+                     * @param _goodsNum 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
 
                     /**
                      * 判断参数 GoodsNum 是否已赋值
                      * @return GoodsNum 是否已赋值
+                     * 
                      */
                     bool GoodsNumHasBeenSet() const;
 

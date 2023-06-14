@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取检查项ID
                      * @return CustomerPolicyItemId 检查项ID
+                     * 
                      */
                     uint64_t GetCustomerPolicyItemId() const;
 
                     /**
                      * 设置检查项ID
-                     * @param CustomerPolicyItemId 检查项ID
+                     * @param _customerPolicyItemId 检查项ID
+                     * 
                      */
                     void SetCustomerPolicyItemId(const uint64_t& _customerPolicyItemId);
 
                     /**
                      * 判断参数 CustomerPolicyItemId 是否已赋值
                      * @return CustomerPolicyItemId 是否已赋值
+                     * 
                      */
                     bool CustomerPolicyItemIdHasBeenSet() const;
 
                     /**
                      * 获取需要忽略指定检查项内的资产ID列表，为空表示所有
                      * @return CustomerAssetItemIdSet 需要忽略指定检查项内的资产ID列表，为空表示所有
+                     * 
                      */
                     std::vector<uint64_t> GetCustomerAssetItemIdSet() const;
 
                     /**
                      * 设置需要忽略指定检查项内的资产ID列表，为空表示所有
-                     * @param CustomerAssetItemIdSet 需要忽略指定检查项内的资产ID列表，为空表示所有
+                     * @param _customerAssetItemIdSet 需要忽略指定检查项内的资产ID列表，为空表示所有
+                     * 
                      */
                     void SetCustomerAssetItemIdSet(const std::vector<uint64_t>& _customerAssetItemIdSet);
 
                     /**
                      * 判断参数 CustomerAssetItemIdSet 是否已赋值
                      * @return CustomerAssetItemIdSet 是否已赋值
+                     * 
                      */
                     bool CustomerAssetItemIdSetHasBeenSet() const;
 

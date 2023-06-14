@@ -59,6 +59,7 @@ off：关闭全路径缓存（即开启参数忽略）
                      * @return FullUrlCache 是否开启全路径缓存
 on：开启全路径缓存（即关闭参数忽略）
 off：关闭全路径缓存（即开启参数忽略）
+                     * 
                      */
                     std::string GetFullUrlCache() const;
 
@@ -66,15 +67,17 @@ off：关闭全路径缓存（即开启参数忽略）
                      * 设置是否开启全路径缓存
 on：开启全路径缓存（即关闭参数忽略）
 off：关闭全路径缓存（即开启参数忽略）
-                     * @param FullUrlCache 是否开启全路径缓存
+                     * @param _fullUrlCache 是否开启全路径缓存
 on：开启全路径缓存（即关闭参数忽略）
 off：关闭全路径缓存（即开启参数忽略）
+                     * 
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
 
                     /**
                      * 判断参数 FullUrlCache 是否已赋值
                      * @return FullUrlCache 是否已赋值
+                     * 
                      */
                     bool FullUrlCacheHasBeenSet() const;
 
@@ -83,20 +86,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreCase 是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIgnoreCase() const;
 
                     /**
                      * 设置是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCase 是否忽略大小写缓存
+                     * @param _ignoreCase 是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreCase(const std::string& _ignoreCase);
 
                     /**
                      * 判断参数 IgnoreCase 是否已赋值
                      * @return IgnoreCase 是否已赋值
+                     * 
                      */
                     bool IgnoreCaseHasBeenSet() const;
 
@@ -105,20 +111,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryString CacheKey中包含请求参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     QueryStringKey GetQueryString() const;
 
                     /**
                      * 设置CacheKey中包含请求参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryString CacheKey中包含请求参数
+                     * @param _queryString CacheKey中包含请求参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueryString(const QueryStringKey& _queryString);
 
                     /**
                      * 判断参数 QueryString 是否已赋值
                      * @return QueryString 是否已赋值
+                     * 
                      */
                     bool QueryStringHasBeenSet() const;
 
@@ -127,20 +136,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cookie CacheKey中包含Cookie
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CookieKey GetCookie() const;
 
                     /**
                      * 设置CacheKey中包含Cookie
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cookie CacheKey中包含Cookie
+                     * @param _cookie CacheKey中包含Cookie
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCookie(const CookieKey& _cookie);
 
                     /**
                      * 判断参数 Cookie 是否已赋值
                      * @return Cookie 是否已赋值
+                     * 
                      */
                     bool CookieHasBeenSet() const;
 
@@ -149,20 +161,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Header CacheKey中包含请求头部
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HeaderKey GetHeader() const;
 
                     /**
                      * 设置CacheKey中包含请求头部
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Header CacheKey中包含请求头部
+                     * @param _header CacheKey中包含请求头部
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeader(const HeaderKey& _header);
 
                     /**
                      * 判断参数 Header 是否已赋值
                      * @return Header 是否已赋值
+                     * 
                      */
                     bool HeaderHasBeenSet() const;
 
@@ -171,20 +186,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheTag CacheKey中包含自定义字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheTagKey GetCacheTag() const;
 
                     /**
                      * 设置CacheKey中包含自定义字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheTag CacheKey中包含自定义字符串
+                     * @param _cacheTag CacheKey中包含自定义字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheTag(const CacheTagKey& _cacheTag);
 
                     /**
                      * 判断参数 CacheTag 是否已赋值
                      * @return CacheTag 是否已赋值
+                     * 
                      */
                     bool CacheTagHasBeenSet() const;
 
@@ -193,20 +211,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheme CacheKey中包含请求协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SchemeKey GetScheme() const;
 
                     /**
                      * 设置CacheKey中包含请求协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheme CacheKey中包含请求协议
+                     * @param _scheme CacheKey中包含请求协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheme(const SchemeKey& _scheme);
 
                     /**
                      * 判断参数 Scheme 是否已赋值
                      * @return Scheme 是否已赋值
+                     * 
                      */
                     bool SchemeHasBeenSet() const;
 
@@ -215,20 +236,23 @@ off：关闭全路径缓存（即开启参数忽略）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyRules 分路径缓存键配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KeyRule> GetKeyRules() const;
 
                     /**
                      * 设置分路径缓存键配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyRules 分路径缓存键配置
+                     * @param _keyRules 分路径缓存键配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyRules(const std::vector<KeyRule>& _keyRules);
 
                     /**
                      * 判断参数 KeyRules 是否已赋值
                      * @return KeyRules 是否已赋值
+                     * 
                      */
                     bool KeyRulesHasBeenSet() const;
 

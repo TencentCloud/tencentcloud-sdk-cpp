@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id。
                      * @return MusicId 歌曲Id。
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 设置歌曲Id。
-                     * @param MusicId 歌曲Id。
+                     * @param _musicId 歌曲Id。
+                     * 
                      */
                     void SetMusicId(const std::string& _musicId);
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 
                     /**
                      * 获取歌曲名称。
                      * @return Name 歌曲名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置歌曲名称。
-                     * @param Name 歌曲名称。
+                     * @param _name 歌曲名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取歌手名称。
                      * @return SingerSet 歌手名称。
+                     * 
                      */
                     std::vector<std::string> GetSingerSet() const;
 
                     /**
                      * 设置歌手名称。
-                     * @param SingerSet 歌手名称。
+                     * @param _singerSet 歌手名称。
+                     * 
                      */
                     void SetSingerSet(const std::vector<std::string>& _singerSet);
 
                     /**
                      * 判断参数 SingerSet 是否已赋值
                      * @return SingerSet 是否已赋值
+                     * 
                      */
                     bool SingerSetHasBeenSet() const;
 
                     /**
                      * 获取播放时长。
                      * @return Duration 播放时长。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置播放时长。
-                     * @param Duration 播放时长。
+                     * @param _duration 播放时长。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取歌手图片链接。
                      * @return SingerImageUrl 歌手图片链接。
+                     * 
                      */
                     std::string GetSingerImageUrl() const;
 
                     /**
                      * 设置歌手图片链接。
-                     * @param SingerImageUrl 歌手图片链接。
+                     * @param _singerImageUrl 歌手图片链接。
+                     * 
                      */
                     void SetSingerImageUrl(const std::string& _singerImageUrl);
 
                     /**
                      * 判断参数 SingerImageUrl 是否已赋值
                      * @return SingerImageUrl 是否已赋值
+                     * 
                      */
                     bool SingerImageUrlHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbumInfo 专辑信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MusicAlbumInfo GetAlbumInfo() const;
 
                     /**
                      * 设置专辑信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlbumInfo 专辑信息。
+                     * @param _albumInfo 专辑信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlbumInfo(const MusicAlbumInfo& _albumInfo);
 
                     /**
                      * 判断参数 AlbumInfo 是否已赋值
                      * @return AlbumInfo 是否已赋值
+                     * 
                      */
                     bool AlbumInfoHasBeenSet() const;
 
@@ -166,6 +184,7 @@ namespace TencentCloud
                      * @return RightSet 权益列表，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
+                     * 
                      */
                     std::vector<std::string> GetRightSet() const;
 
@@ -173,15 +192,17 @@ namespace TencentCloud
                      * 设置权益列表，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
-                     * @param RightSet 权益列表，取值有：
+                     * @param _rightSet 权益列表，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
+                     * 
                      */
                     void SetRightSet(const std::vector<std::string>& _rightSet);
 
                     /**
                      * 判断参数 RightSet 是否已赋值
                      * @return RightSet 是否已赋值
+                     * 
                      */
                     bool RightSetHasBeenSet() const;
 
@@ -192,6 +213,7 @@ namespace TencentCloud
                      * @return RecommendType 推荐类型，取值有：
 <li>Featured：精选；</li>
 <li>Other：其他。</li>
+                     * 
                      */
                     std::string GetRecommendType() const;
 
@@ -199,15 +221,17 @@ namespace TencentCloud
                      * 设置推荐类型，取值有：
 <li>Featured：精选；</li>
 <li>Other：其他。</li>
-                     * @param RecommendType 推荐类型，取值有：
+                     * @param _recommendType 推荐类型，取值有：
 <li>Featured：精选；</li>
 <li>Other：其他。</li>
+                     * 
                      */
                     void SetRecommendType(const std::string& _recommendType);
 
                     /**
                      * 判断参数 RecommendType 是否已赋值
                      * @return RecommendType 是否已赋值
+                     * 
                      */
                     bool RecommendTypeHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取虚拟设备的状态，JSON字符串格式，由desired结构组成
                      * @return State 虚拟设备的状态，JSON字符串格式，由desired结构组成
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置虚拟设备的状态，JSON字符串格式，由desired结构组成
-                     * @param State 虚拟设备的状态，JSON字符串格式，由desired结构组成
+                     * @param _state 虚拟设备的状态，JSON字符串格式，由desired结构组成
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取当前版本号，需要和后台的version保持一致，才能更新成功
                      * @return ShadowVersion 当前版本号，需要和后台的version保持一致，才能更新成功
+                     * 
                      */
                     uint64_t GetShadowVersion() const;
 
                     /**
                      * 设置当前版本号，需要和后台的version保持一致，才能更新成功
-                     * @param ShadowVersion 当前版本号，需要和后台的version保持一致，才能更新成功
+                     * @param _shadowVersion 当前版本号，需要和后台的version保持一致，才能更新成功
+                     * 
                      */
                     void SetShadowVersion(const uint64_t& _shadowVersion);
 
                     /**
                      * 判断参数 ShadowVersion 是否已赋值
                      * @return ShadowVersion 是否已赋值
+                     * 
                      */
                     bool ShadowVersionHasBeenSet() const;
 

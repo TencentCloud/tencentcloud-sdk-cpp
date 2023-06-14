@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取离线语音DAU
                      * @return Dau 离线语音DAU
+                     * 
                      */
                     uint64_t GetDau() const;
 
                     /**
                      * 设置离线语音DAU
-                     * @param Dau 离线语音DAU
+                     * @param _dau 离线语音DAU
+                     * 
                      */
                     void SetDau(const uint64_t& _dau);
 
                     /**
                      * 判断参数 Dau 是否已赋值
                      * @return Dau 是否已赋值
+                     * 
                      */
                     bool DauHasBeenSet() const;
 

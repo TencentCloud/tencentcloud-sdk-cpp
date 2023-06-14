@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取作业详情。
                      * @return Metadata 作业详情。
+                     * 
                      */
                     RunMetadata GetMetadata() const;
 
                     /**
                      * 判断参数 Metadata 是否已赋值
                      * @return Metadata 是否已赋值
+                     * 
                      */
                     bool MetadataHasBeenSet() const;
 

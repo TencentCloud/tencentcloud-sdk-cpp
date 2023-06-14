@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 如果为“”，则说明没有错误返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

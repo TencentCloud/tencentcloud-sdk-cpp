@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件的操作总数
                      * @return TotalCount 符合查询条件的操作总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取当前操作列表
                      * @return CurrentOps 当前操作列表
+                     * 
                      */
                     std::vector<CurrentOp> GetCurrentOps() const;
 
                     /**
                      * 判断参数 CurrentOps 是否已赋值
                      * @return CurrentOps 是否已赋值
+                     * 
                      */
                     bool CurrentOpsHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取数据库用户名
                      * @return UserName 数据库用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置数据库用户名
-                     * @param UserName 数据库用户名
+                     * @param _userName 数据库用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取账号权限变更信息
                      * @return DBPrivileges 账号权限变更信息
+                     * 
                      */
                     std::vector<DBPrivilegeModifyInfo> GetDBPrivileges() const;
 
                     /**
                      * 设置账号权限变更信息
-                     * @param DBPrivileges 账号权限变更信息
+                     * @param _dBPrivileges 账号权限变更信息
+                     * 
                      */
                     void SetDBPrivileges(const std::vector<DBPrivilegeModifyInfo>& _dBPrivileges);
 
                     /**
                      * 判断参数 DBPrivileges 是否已赋值
                      * @return DBPrivileges 是否已赋值
+                     * 
                      */
                     bool DBPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false
                      * @return IsAdmin 是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false
+                     * 
                      */
                     bool GetIsAdmin() const;
 
                     /**
                      * 设置是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false
-                     * @param IsAdmin 是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false
+                     * @param _isAdmin 是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false
+                     * 
                      */
                     void SetIsAdmin(const bool& _isAdmin);
 
                     /**
                      * 判断参数 IsAdmin 是否已赋值
                      * @return IsAdmin 是否已赋值
+                     * 
                      */
                     bool IsAdminHasBeenSet() const;
 
                     /**
                      * 获取账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
                      * @return AccountType 账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
-                     * @param AccountType 账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * @param _accountType 账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 

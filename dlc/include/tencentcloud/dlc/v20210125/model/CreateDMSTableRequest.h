@@ -49,288 +49,336 @@ namespace TencentCloud
                     /**
                      * 获取基础对象
                      * @return Asset 基础对象
+                     * 
                      */
                     Asset GetAsset() const;
 
                     /**
                      * 设置基础对象
-                     * @param Asset 基础对象
+                     * @param _asset 基础对象
+                     * 
                      */
                     void SetAsset(const Asset& _asset);
 
                     /**
                      * 判断参数 Asset 是否已赋值
                      * @return Asset 是否已赋值
+                     * 
                      */
                     bool AssetHasBeenSet() const;
 
                     /**
                      * 获取表类型
                      * @return Type 表类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置表类型
-                     * @param Type 表类型
+                     * @param _type 表类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return DbName 数据库名称
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DbName 数据库名称
+                     * @param _dbName 数据库名称
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取存储大小
                      * @return StorageSize 存储大小
+                     * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
                      * 设置存储大小
-                     * @param StorageSize 存储大小
+                     * @param _storageSize 存储大小
+                     * 
                      */
                     void SetStorageSize(const int64_t& _storageSize);
 
                     /**
                      * 判断参数 StorageSize 是否已赋值
                      * @return StorageSize 是否已赋值
+                     * 
                      */
                     bool StorageSizeHasBeenSet() const;
 
                     /**
                      * 获取记录数量
                      * @return RecordCount 记录数量
+                     * 
                      */
                     int64_t GetRecordCount() const;
 
                     /**
                      * 设置记录数量
-                     * @param RecordCount 记录数量
+                     * @param _recordCount 记录数量
+                     * 
                      */
                     void SetRecordCount(const int64_t& _recordCount);
 
                     /**
                      * 判断参数 RecordCount 是否已赋值
                      * @return RecordCount 是否已赋值
+                     * 
                      */
                     bool RecordCountHasBeenSet() const;
 
                     /**
                      * 获取生命周期
                      * @return LifeTime 生命周期
+                     * 
                      */
                     int64_t GetLifeTime() const;
 
                     /**
                      * 设置生命周期
-                     * @param LifeTime 生命周期
+                     * @param _lifeTime 生命周期
+                     * 
                      */
                     void SetLifeTime(const int64_t& _lifeTime);
 
                     /**
                      * 判断参数 LifeTime 是否已赋值
                      * @return LifeTime 是否已赋值
+                     * 
                      */
                     bool LifeTimeHasBeenSet() const;
 
                     /**
                      * 获取数据更新时间
                      * @return DataUpdateTime 数据更新时间
+                     * 
                      */
                     std::string GetDataUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-                     * @param DataUpdateTime 数据更新时间
+                     * @param _dataUpdateTime 数据更新时间
+                     * 
                      */
                     void SetDataUpdateTime(const std::string& _dataUpdateTime);
 
                     /**
                      * 判断参数 DataUpdateTime 是否已赋值
                      * @return DataUpdateTime 是否已赋值
+                     * 
                      */
                     bool DataUpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取结构更新时间
                      * @return StructUpdateTime 结构更新时间
+                     * 
                      */
                     std::string GetStructUpdateTime() const;
 
                     /**
                      * 设置结构更新时间
-                     * @param StructUpdateTime 结构更新时间
+                     * @param _structUpdateTime 结构更新时间
+                     * 
                      */
                     void SetStructUpdateTime(const std::string& _structUpdateTime);
 
                     /**
                      * 判断参数 StructUpdateTime 是否已赋值
                      * @return StructUpdateTime 是否已赋值
+                     * 
                      */
                     bool StructUpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取最后访问时间
                      * @return LastAccessTime 最后访问时间
+                     * 
                      */
                     std::string GetLastAccessTime() const;
 
                     /**
                      * 设置最后访问时间
-                     * @param LastAccessTime 最后访问时间
+                     * @param _lastAccessTime 最后访问时间
+                     * 
                      */
                     void SetLastAccessTime(const std::string& _lastAccessTime);
 
                     /**
                      * 判断参数 LastAccessTime 是否已赋值
                      * @return LastAccessTime 是否已赋值
+                     * 
                      */
                     bool LastAccessTimeHasBeenSet() const;
 
                     /**
                      * 获取存储对象
                      * @return Sds 存储对象
+                     * 
                      */
                     DMSSds GetSds() const;
 
                     /**
                      * 设置存储对象
-                     * @param Sds 存储对象
+                     * @param _sds 存储对象
+                     * 
                      */
                     void SetSds(const DMSSds& _sds);
 
                     /**
                      * 判断参数 Sds 是否已赋值
                      * @return Sds 是否已赋值
+                     * 
                      */
                     bool SdsHasBeenSet() const;
 
                     /**
                      * 获取列
                      * @return Columns 列
+                     * 
                      */
                     std::vector<DMSColumn> GetColumns() const;
 
                     /**
                      * 设置列
-                     * @param Columns 列
+                     * @param _columns 列
+                     * 
                      */
                     void SetColumns(const std::vector<DMSColumn>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
                     /**
                      * 获取分区键值
                      * @return PartitionKeys 分区键值
+                     * 
                      */
                     std::vector<DMSColumn> GetPartitionKeys() const;
 
                     /**
                      * 设置分区键值
-                     * @param PartitionKeys 分区键值
+                     * @param _partitionKeys 分区键值
+                     * 
                      */
                     void SetPartitionKeys(const std::vector<DMSColumn>& _partitionKeys);
 
                     /**
                      * 判断参数 PartitionKeys 是否已赋值
                      * @return PartitionKeys 是否已赋值
+                     * 
                      */
                     bool PartitionKeysHasBeenSet() const;
 
                     /**
                      * 获取视图文本
                      * @return ViewOriginalText 视图文本
+                     * 
                      */
                     std::string GetViewOriginalText() const;
 
                     /**
                      * 设置视图文本
-                     * @param ViewOriginalText 视图文本
+                     * @param _viewOriginalText 视图文本
+                     * 
                      */
                     void SetViewOriginalText(const std::string& _viewOriginalText);
 
                     /**
                      * 判断参数 ViewOriginalText 是否已赋值
                      * @return ViewOriginalText 是否已赋值
+                     * 
                      */
                     bool ViewOriginalTextHasBeenSet() const;
 
                     /**
                      * 获取视图文本
                      * @return ViewExpandedText 视图文本
+                     * 
                      */
                     std::string GetViewExpandedText() const;
 
                     /**
                      * 设置视图文本
-                     * @param ViewExpandedText 视图文本
+                     * @param _viewExpandedText 视图文本
+                     * 
                      */
                     void SetViewExpandedText(const std::string& _viewExpandedText);
 
                     /**
                      * 判断参数 ViewExpandedText 是否已赋值
                      * @return ViewExpandedText 是否已赋值
+                     * 
                      */
                     bool ViewExpandedTextHasBeenSet() const;
 
                     /**
                      * 获取分区
                      * @return Partitions 分区
+                     * 
                      */
                     std::vector<DMSPartition> GetPartitions() const;
 
                     /**
                      * 设置分区
-                     * @param Partitions 分区
+                     * @param _partitions 分区
+                     * 
                      */
                     void SetPartitions(const std::vector<DMSPartition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return Name 表名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表名称
-                     * @param Name 表名称
+                     * @param _name 表名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

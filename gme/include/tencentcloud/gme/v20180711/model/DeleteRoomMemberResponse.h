@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取剔除房间或成员的操作结果
                      * @return DeleteResult 剔除房间或成员的操作结果
+                     * 
                      */
                     DeleteResult GetDeleteResult() const;
 
                     /**
                      * 判断参数 DeleteResult 是否已赋值
                      * @return DeleteResult 是否已赋值
+                     * 
                      */
                     bool DeleteResultHasBeenSet() const;
 

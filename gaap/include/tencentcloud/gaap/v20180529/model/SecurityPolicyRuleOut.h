@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取策略：允许（ACCEPT）或拒绝（DROP）
                      * @return Action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置策略：允许（ACCEPT）或拒绝（DROP）
-                     * @param Action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * @param _action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取请求来源Ip或Ip段
                      * @return SourceCidr 请求来源Ip或Ip段
+                     * 
                      */
                     std::string GetSourceCidr() const;
 
                     /**
                      * 设置请求来源Ip或Ip段
-                     * @param SourceCidr 请求来源Ip或Ip段
+                     * @param _sourceCidr 请求来源Ip或Ip段
+                     * 
                      */
                     void SetSourceCidr(const std::string& _sourceCidr);
 
                     /**
                      * 判断参数 SourceCidr 是否已赋值
                      * @return SourceCidr 是否已赋值
+                     * 
                      */
                     bool SourceCidrHasBeenSet() const;
 
                     /**
                      * 获取规则别名
                      * @return AliasName 规则别名
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置规则别名
-                     * @param AliasName 规则别名
+                     * @param _aliasName 规则别名
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestPortRange 目标端口范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDestPortRange() const;
 
                     /**
                      * 设置目标端口范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DestPortRange 目标端口范围
+                     * @param _destPortRange 目标端口范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestPortRange(const std::string& _destPortRange);
 
                     /**
                      * 判断参数 DestPortRange 是否已赋值
                      * @return DestPortRange 是否已赋值
+                     * 
                      */
                     bool DestPortRangeHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 要匹配的协议类型（TCP/UDP）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置要匹配的协议类型（TCP/UDP）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 要匹配的协议类型（TCP/UDP）
+                     * @param _protocol 要匹配的协议类型（TCP/UDP）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 安全策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全策略ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyId 安全策略ID
+                     * @param _policyId 安全策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取攻击类型
                      * @return AttackType 攻击类型
+                     * 
                      */
                     std::string GetAttackType() const;
 
                     /**
                      * 设置攻击类型
-                     * @param AttackType 攻击类型
+                     * @param _attackType 攻击类型
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
                     /**
                      * 获取防护措施，observe
                      * @return Operate 防护措施，observe
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置防护措施，observe
-                     * @param Operate 防护措施，observe
+                     * @param _operate 防护措施，observe
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 

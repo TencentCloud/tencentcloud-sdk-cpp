@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 统计值，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetData() const;
 
                     /**
                      * 设置统计值，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 统计值，单位：秒
+                     * @param _data 统计值，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const double& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNodeId 代理节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyNodeId() const;
 
                     /**
                      * 设置代理节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNodeId 代理节点ID
+                     * @param _proxyNodeId 代理节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNodeId(const std::string& _proxyNodeId);
 
                     /**
                      * 判断参数 ProxyNodeId 是否已赋值
                      * @return ProxyNodeId 是否已赋值
+                     * 
                      */
                     bool ProxyNodeIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNodeConnections 节点当前连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProxyNodeConnections() const;
 
                     /**
                      * 设置节点当前连接数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNodeConnections 节点当前连接数
+                     * @param _proxyNodeConnections 节点当前连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNodeConnections(const uint64_t& _proxyNodeConnections);
 
                     /**
                      * 判断参数 ProxyNodeConnections 是否已赋值
                      * @return ProxyNodeConnections 是否已赋值
+                     * 
                      */
                     bool ProxyNodeConnectionsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNodeCpu cup
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProxyNodeCpu() const;
 
                     /**
                      * 设置cup
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNodeCpu cup
+                     * @param _proxyNodeCpu cup
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNodeCpu(const uint64_t& _proxyNodeCpu);
 
                     /**
                      * 判断参数 ProxyNodeCpu 是否已赋值
                      * @return ProxyNodeCpu 是否已赋值
+                     * 
                      */
                     bool ProxyNodeCpuHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNodeMem 内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProxyNodeMem() const;
 
                     /**
                      * 设置内存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNodeMem 内存
+                     * @param _proxyNodeMem 内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNodeMem(const uint64_t& _proxyNodeMem);
 
                     /**
                      * 判断参数 ProxyNodeMem 是否已赋值
                      * @return ProxyNodeMem 是否已赋值
+                     * 
                      */
                     bool ProxyNodeMemHasBeenSet() const;
 
@@ -151,6 +163,7 @@ destroy（已销毁）
 recovering（故障恢复中）
 error（节点故障）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyStatus() const;
 
@@ -163,7 +176,7 @@ destroy（已销毁）
 recovering（故障恢复中）
 error（节点故障）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyStatus 节点状态：
+                     * @param _proxyStatus 节点状态：
 init（申请中）
 online（运行中）
 offline（离线中）
@@ -171,12 +184,14 @@ destroy（已销毁）
 recovering（故障恢复中）
 error（节点故障）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyStatus(const std::string& _proxyStatus);
 
                     /**
                      * 判断参数 ProxyStatus 是否已赋值
                      * @return ProxyStatus 是否已赋值
+                     * 
                      */
                     bool ProxyStatusHasBeenSet() const;
 

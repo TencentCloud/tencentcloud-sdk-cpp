@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取云服务器数量
                      * @return CvmCount 云服务器数量
+                     * 
                      */
                     uint64_t GetCvmCount() const;
 
                     /**
                      * 判断参数 CvmCount 是否已赋值
                      * @return CvmCount 是否已赋值
+                     * 
                      */
                     bool CvmCountHasBeenSet() const;
 
                     /**
                      * 获取宿主机数量
                      * @return HostCount 宿主机数量
+                     * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionState vpn通道状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpnConnectionState() const;
 
                     /**
                      * 判断参数 VpnConnectionState 是否已赋值
                      * @return VpnConnectionState 是否已赋值
+                     * 
                      */
                     bool VpnConnectionStateHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpngwBandwidthData vpn网关监控数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VpngwBandwidthData GetVpngwBandwidthData() const;
 
                     /**
                      * 判断参数 VpngwBandwidthData 是否已赋值
                      * @return VpngwBandwidthData 是否已赋值
+                     * 
                      */
                     bool VpngwBandwidthDataHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalNetInfo 本地网关信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LocalNetInfo GetLocalNetInfo() const;
 
                     /**
                      * 判断参数 LocalNetInfo 是否已赋值
                      * @return LocalNetInfo 是否已赋值
+                     * 
                      */
                     bool LocalNetInfoHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionBandwidthData vpn网关通道监控数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VpngwBandwidthData> GetVpnConnectionBandwidthData() const;
 
                     /**
                      * 判断参数 VpnConnectionBandwidthData 是否已赋值
                      * @return VpnConnectionBandwidthData 是否已赋值
+                     * 
                      */
                     bool VpnConnectionBandwidthDataHasBeenSet() const;
 

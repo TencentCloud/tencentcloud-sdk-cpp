@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞种类ID。
                      * @return VulId 漏洞种类ID。
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞种类ID。
-                     * @param VulId 漏洞种类ID。
+                     * @param _vulId 漏洞种类ID。
+                     * 
                      */
                     void SetVulId(const uint64_t& _vulId);
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 

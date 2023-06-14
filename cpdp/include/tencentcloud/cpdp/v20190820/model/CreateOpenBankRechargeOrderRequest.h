@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取云企付渠道商户号。外部接入平台入驻云企付平台后下发。
                      * @return ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置云企付渠道商户号。外部接入平台入驻云企付平台后下发。
-                     * @param ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * @param _channelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部订单号,只能是数字、大小写字母，且在同一个接入平台下唯一，限定长度40位。
                      * @return OutOrderId 外部订单号,只能是数字、大小写字母，且在同一个接入平台下唯一，限定长度40位。
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部订单号,只能是数字、大小写字母，且在同一个接入平台下唯一，限定长度40位。
-                     * @param OutOrderId 外部订单号,只能是数字、大小写字母，且在同一个接入平台下唯一，限定长度40位。
+                     * @param _outOrderId 外部订单号,只能是数字、大小写字母，且在同一个接入平台下唯一，限定长度40位。
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取付款金额，单位分。
                      * @return TotalAmount 付款金额，单位分。
+                     * 
                      */
                     int64_t GetTotalAmount() const;
 
                     /**
                      * 设置付款金额，单位分。
-                     * @param TotalAmount 付款金额，单位分。
+                     * @param _totalAmount 付款金额，单位分。
+                     * 
                      */
                     void SetTotalAmount(const int64_t& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 
                     /**
                      * 获取固定值CNY。
                      * @return Currency 固定值CNY。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置固定值CNY。
-                     * @param Currency 固定值CNY。
+                     * @param _currency 固定值CNY。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 
                     /**
                      * 获取订单过期时间，yyyy-MM-dd HH:mm:ss格式。
                      * @return ExpireTime 订单过期时间，yyyy-MM-dd HH:mm:ss格式。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置订单过期时间，yyyy-MM-dd HH:mm:ss格式。
-                     * @param ExpireTime 订单过期时间，yyyy-MM-dd HH:mm:ss格式。
+                     * @param _expireTime 订单过期时间，yyyy-MM-dd HH:mm:ss格式。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -142,6 +157,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -150,16 +166,18 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param ChannelName 渠道名称。
+                     * @param _channelName 渠道名称。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -172,6 +190,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -180,88 +199,102 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param PaymentMethod 渠道名称。
+                     * @param _paymentMethod 渠道名称。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
                     /**
                      * 获取收款方信息。
                      * @return PayeeInfo 收款方信息。
+                     * 
                      */
                     OpenBankRechargePayeeInfo GetPayeeInfo() const;
 
                     /**
                      * 设置收款方信息。
-                     * @param PayeeInfo 收款方信息。
+                     * @param _payeeInfo 收款方信息。
+                     * 
                      */
                     void SetPayeeInfo(const OpenBankRechargePayeeInfo& _payeeInfo);
 
                     /**
                      * 判断参数 PayeeInfo 是否已赋值
                      * @return PayeeInfo 是否已赋值
+                     * 
                      */
                     bool PayeeInfoHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户号
                      * @return ChannelSubMerchantId 渠道子商户号
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户号
-                     * @param ChannelSubMerchantId 渠道子商户号
+                     * @param _channelSubMerchantId 渠道子商户号
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取通知地址，如www.test.com。
                      * @return NotifyUrl 通知地址，如www.test.com。
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置通知地址，如www.test.com。
-                     * @param NotifyUrl 通知地址，如www.test.com。
+                     * @param _notifyUrl 通知地址，如www.test.com。
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取备注信息。限制200个字符。
                      * @return Remark 备注信息。限制200个字符。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息。限制200个字符。
-                     * @param Remark 备注信息。限制200个字符。
+                     * @param _remark 备注信息。限制200个字符。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -274,6 +307,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -282,16 +316,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

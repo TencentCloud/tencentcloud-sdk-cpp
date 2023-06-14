@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，userId必填
                      * @return Operator 操作人信息，userId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，userId必填
-                     * @param Operator 操作人信息，userId必填
+                     * @param _operator 操作人信息，userId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取角色id
                      * @return RoleId 角色id
+                     * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色id
-                     * @param RoleId 角色id
+                     * @param _roleId 角色id
+                     * 
                      */
                     void SetRoleId(const std::string& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 
                     /**
                      * 获取用户信息
                      * @return Users 用户信息
+                     * 
                      */
                     std::vector<UserInfo> GetUsers() const;
 
                     /**
                      * 设置用户信息
-                     * @param Users 用户信息
+                     * @param _users 用户信息
+                     * 
                      */
                     void SetUsers(const std::vector<UserInfo>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘备份点的数量。
                      * @return TotalCount 云硬盘备份点的数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取云硬盘备份点信息列表。
                      * @return DiskBackupSet 云硬盘备份点信息列表。
+                     * 
                      */
                     std::vector<DiskBackup> GetDiskBackupSet() const;
 
                     /**
                      * 判断参数 DiskBackupSet 是否已赋值
                      * @return DiskBackupSet 是否已赋值
+                     * 
                      */
                     bool DiskBackupSetHasBeenSet() const;
 

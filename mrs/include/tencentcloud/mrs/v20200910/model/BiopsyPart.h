@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 值
+                     * @param _value 值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 坐标
+                     * @param _coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

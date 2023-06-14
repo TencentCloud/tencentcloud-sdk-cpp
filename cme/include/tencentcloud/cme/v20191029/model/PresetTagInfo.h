@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取标签 Id 。
                      * @return Id 标签 Id 。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置标签 Id 。
-                     * @param Id 标签 Id 。
+                     * @param _id 标签 Id 。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取标签名称。
                      * @return Name 标签名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称。
-                     * @param Name 标签名称。
+                     * @param _name 标签名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取父级预设 Id。
                      * @return ParentTagId 父级预设 Id。
+                     * 
                      */
                     std::string GetParentTagId() const;
 
                     /**
                      * 设置父级预设 Id。
-                     * @param ParentTagId 父级预设 Id。
+                     * @param _parentTagId 父级预设 Id。
+                     * 
                      */
                     void SetParentTagId(const std::string& _parentTagId);
 
                     /**
                      * 判断参数 ParentTagId 是否已赋值
                      * @return ParentTagId 是否已赋值
+                     * 
                      */
                     bool ParentTagIdHasBeenSet() const;
 

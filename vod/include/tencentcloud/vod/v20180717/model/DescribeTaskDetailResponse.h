@@ -90,12 +90,14 @@ namespace TencentCloud
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
 <li>ExtractTraceWatermark：提取溯源水印任务。</li>
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
@@ -108,48 +110,56 @@ namespace TencentCloud
 <li>WAITING：等待中；</li>
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 判断参数 BeginProcessTime 是否已赋值
                      * @return BeginProcessTime 是否已赋值
+                     * 
                      */
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
                      * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
@@ -158,12 +168,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcedureTask 视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProcedureTask GetProcedureTask() const;
 
                     /**
                      * 判断参数 ProcedureTask 是否已赋值
                      * @return ProcedureTask 是否已赋值
+                     * 
                      */
                     bool ProcedureTaskHasBeenSet() const;
 
@@ -172,12 +184,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EditMediaTask 视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EditMediaTask GetEditMediaTask() const;
 
                     /**
                      * 判断参数 EditMediaTask 是否已赋值
                      * @return EditMediaTask 是否已赋值
+                     * 
                      */
                     bool EditMediaTaskHasBeenSet() const;
 
@@ -186,12 +200,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatPublishTask 微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WechatPublishTask GetWechatPublishTask() const;
 
                     /**
                      * 判断参数 WechatPublishTask 是否已赋值
                      * @return WechatPublishTask 是否已赋值
+                     * 
                      */
                     bool WechatPublishTaskHasBeenSet() const;
 
@@ -200,12 +216,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComposeMediaTask 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComposeMediaTask GetComposeMediaTask() const;
 
                     /**
                      * 判断参数 ComposeMediaTask 是否已赋值
                      * @return ComposeMediaTask 是否已赋值
+                     * 
                      */
                     bool ComposeMediaTaskHasBeenSet() const;
 
@@ -214,12 +232,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SplitMediaTask 视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SplitMediaTask GetSplitMediaTask() const;
 
                     /**
                      * 判断参数 SplitMediaTask 是否已赋值
                      * @return SplitMediaTask 是否已赋值
+                     * 
                      */
                     bool SplitMediaTaskHasBeenSet() const;
 
@@ -228,12 +248,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatMiniProgramPublishTask 微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WechatMiniProgramPublishTask GetWechatMiniProgramPublishTask() const;
 
                     /**
                      * 判断参数 WechatMiniProgramPublishTask 是否已赋值
                      * @return WechatMiniProgramPublishTask 是否已赋值
+                     * 
                      */
                     bool WechatMiniProgramPublishTaskHasBeenSet() const;
 
@@ -242,12 +264,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PullUploadTask 拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PullUploadTask GetPullUploadTask() const;
 
                     /**
                      * 判断参数 PullUploadTask 是否已赋值
                      * @return PullUploadTask 是否已赋值
+                     * 
                      */
                     bool PullUploadTaskHasBeenSet() const;
 
@@ -256,12 +280,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TranscodeTask2017 GetTranscodeTask() const;
 
                     /**
                      * 判断参数 TranscodeTask 是否已赋值
                      * @return TranscodeTask 是否已赋值
+                     * 
                      */
                     bool TranscodeTaskHasBeenSet() const;
 
@@ -270,12 +296,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConcatTask 视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ConcatTask2017 GetConcatTask() const;
 
                     /**
                      * 判断参数 ConcatTask 是否已赋值
                      * @return ConcatTask 是否已赋值
+                     * 
                      */
                     bool ConcatTaskHasBeenSet() const;
 
@@ -284,12 +312,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClipTask 视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClipTask2017 GetClipTask() const;
 
                     /**
                      * 判断参数 ClipTask 是否已赋值
                      * @return ClipTask 是否已赋值
+                     * 
                      */
                     bool ClipTaskHasBeenSet() const;
 
@@ -298,12 +328,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateImageSpriteTask 截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CreateImageSpriteTask2017 GetCreateImageSpriteTask() const;
 
                     /**
                      * 判断参数 CreateImageSpriteTask 是否已赋值
                      * @return CreateImageSpriteTask 是否已赋值
+                     * 
                      */
                     bool CreateImageSpriteTaskHasBeenSet() const;
 
@@ -312,12 +344,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotByTimeOffsetTask 视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SnapshotByTimeOffsetTask2017 GetSnapshotByTimeOffsetTask() const;
 
                     /**
                      * 判断参数 SnapshotByTimeOffsetTask 是否已赋值
                      * @return SnapshotByTimeOffsetTask 是否已赋值
+                     * 
                      */
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
@@ -326,12 +360,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveWatermarkTask 智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RemoveWatermarkTask GetRemoveWatermarkTask() const;
 
                     /**
                      * 判断参数 RemoveWatermarkTask 是否已赋值
                      * @return RemoveWatermarkTask 是否已赋值
+                     * 
                      */
                     bool RemoveWatermarkTaskHasBeenSet() const;
 
@@ -340,12 +376,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebuildMediaTask 音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RebuildMediaTask GetRebuildMediaTask() const;
 
                     /**
                      * 判断参数 RebuildMediaTask 是否已赋值
                      * @return RebuildMediaTask 是否已赋值
+                     * 
                      */
                     bool RebuildMediaTaskHasBeenSet() const;
 
@@ -354,12 +392,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractTraceWatermarkTask 提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ExtractTraceWatermarkTask GetExtractTraceWatermarkTask() const;
 
                     /**
                      * 判断参数 ExtractTraceWatermarkTask 是否已赋值
                      * @return ExtractTraceWatermarkTask 是否已赋值
+                     * 
                      */
                     bool ExtractTraceWatermarkTaskHasBeenSet() const;
 
@@ -368,12 +408,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewAudioVideoTask 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReviewAudioVideoTask GetReviewAudioVideoTask() const;
 
                     /**
                      * 判断参数 ReviewAudioVideoTask 是否已赋值
                      * @return ReviewAudioVideoTask 是否已赋值
+                     * 
                      */
                     bool ReviewAudioVideoTaskHasBeenSet() const;
 
@@ -382,12 +424,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReduceMediaBitrateTask 该字段已无效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReduceMediaBitrateTask GetReduceMediaBitrateTask() const;
 
                     /**
                      * 判断参数 ReduceMediaBitrateTask 是否已赋值
                      * @return ReduceMediaBitrateTask 是否已赋值
+                     * 
                      */
                     bool ReduceMediaBitrateTaskHasBeenSet() const;
 
@@ -396,12 +440,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescribeFileAttributesTask 获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeFileAttributesTask GetDescribeFileAttributesTask() const;
 
                     /**
                      * 判断参数 DescribeFileAttributesTask 是否已赋值
                      * @return DescribeFileAttributesTask 是否已赋值
+                     * 
                      */
                     bool DescribeFileAttributesTaskHasBeenSet() const;
 

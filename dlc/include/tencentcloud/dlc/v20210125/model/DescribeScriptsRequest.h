@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取按字段排序，支持如下字段类型，update-time
                      * @return SortBy 按字段排序，支持如下字段类型，update-time
+                     * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置按字段排序，支持如下字段类型，update-time
-                     * @param SortBy 按字段排序，支持如下字段类型，update-time
+                     * @param _sortBy 按字段排序，支持如下字段类型，update-time
+                     * 
                      */
                     void SetSortBy(const std::string& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，desc表示正序，asc表示反序，默认asc
                      * @return Sorting 排序方式，desc表示正序，asc表示反序，默认asc
+                     * 
                      */
                     std::string GetSorting() const;
 
                     /**
                      * 设置排序方式，desc表示正序，asc表示反序，默认asc
-                     * @param Sorting 排序方式，desc表示正序，asc表示反序，默认asc
+                     * @param _sorting 排序方式，desc表示正序，asc表示反序，默认asc
+                     * 
                      */
                     void SetSorting(const std::string& _sorting);
 
                     /**
                      * 判断参数 Sorting 是否已赋值
                      * @return Sorting 是否已赋值
+                     * 
                      */
                     bool SortingHasBeenSet() const;
 
@@ -122,6 +134,7 @@ script-name-keyword - String - （过滤条件）数据表名称,形如：script
                      * @return Filters 过滤条件，如下支持的过滤类型，传参Name应为其一
 script-id - String - （过滤条件）script-id取值形如：157de0d1-26b4-4df2-a2d0-b64afc406c25。
 script-name-keyword - String - （过滤条件）数据表名称,形如：script-test。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -129,15 +142,17 @@ script-name-keyword - String - （过滤条件）数据表名称,形如：script
                      * 设置过滤条件，如下支持的过滤类型，传参Name应为其一
 script-id - String - （过滤条件）script-id取值形如：157de0d1-26b4-4df2-a2d0-b64afc406c25。
 script-name-keyword - String - （过滤条件）数据表名称,形如：script-test。
-                     * @param Filters 过滤条件，如下支持的过滤类型，传参Name应为其一
+                     * @param _filters 过滤条件，如下支持的过滤类型，传参Name应为其一
 script-id - String - （过滤条件）script-id取值形如：157de0d1-26b4-4df2-a2d0-b64afc406c25。
 script-name-keyword - String - （过滤条件）数据表名称,形如：script-test。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

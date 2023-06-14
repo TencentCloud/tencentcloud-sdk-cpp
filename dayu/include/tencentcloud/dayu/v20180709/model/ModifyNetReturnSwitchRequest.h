@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（net表示高防IP专业版）
                      * @return Business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID
                      * @return Id 资源实例ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param Id 资源实例ID
+                     * @param _id 资源实例ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取Status 表示回切开关，0: 关闭， 1:打开
                      * @return Status Status 表示回切开关，0: 关闭， 1:打开
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置Status 表示回切开关，0: 关闭， 1:打开
-                     * @param Status Status 表示回切开关，0: 关闭， 1:打开
+                     * @param _status Status 表示回切开关，0: 关闭， 1:打开
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0
                      * @return Hour 回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0
+                     * 
                      */
                     uint64_t GetHour() const;
 
                     /**
                      * 设置回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0
-                     * @param Hour 回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0
+                     * @param _hour 回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0
+                     * 
                      */
                     void SetHour(const uint64_t& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 

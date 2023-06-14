@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取流程ID
                      * @return FlowId 流程ID
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程ID
-                     * @param FlowId 流程ID
+                     * @param _flowId 流程ID
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

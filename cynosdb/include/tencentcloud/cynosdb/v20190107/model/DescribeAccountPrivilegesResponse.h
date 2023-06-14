@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取权限列表，示例值为：["select","update","delete","create","drop","references","index","alter","show_db","create_tmp_table","lock_tables","execute","create_view","show_view","create_routine","alter_routine","event","trigger"]
                      * @return Privileges 权限列表，示例值为：["select","update","delete","create","drop","references","index","alter","show_db","create_tmp_table","lock_tables","execute","create_view","show_view","create_routine","alter_routine","event","trigger"]
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 

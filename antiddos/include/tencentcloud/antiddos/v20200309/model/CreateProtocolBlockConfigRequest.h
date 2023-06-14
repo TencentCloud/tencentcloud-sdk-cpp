@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取协议封禁配置
                      * @return ProtocolBlockConfig 协议封禁配置
+                     * 
                      */
                     ProtocolBlockConfig GetProtocolBlockConfig() const;
 
                     /**
                      * 设置协议封禁配置
-                     * @param ProtocolBlockConfig 协议封禁配置
+                     * @param _protocolBlockConfig 协议封禁配置
+                     * 
                      */
                     void SetProtocolBlockConfig(const ProtocolBlockConfig& _protocolBlockConfig);
 
                     /**
                      * 判断参数 ProtocolBlockConfig 是否已赋值
                      * @return ProtocolBlockConfig 是否已赋值
+                     * 
                      */
                     bool ProtocolBlockConfigHasBeenSet() const;
 

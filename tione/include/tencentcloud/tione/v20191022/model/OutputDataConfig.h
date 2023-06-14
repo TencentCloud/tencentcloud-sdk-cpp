@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosOutputBucket cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosOutputBucket() const;
 
                     /**
                      * 设置cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosOutputBucket cos输出桶
+                     * @param _cosOutputBucket cos输出桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosOutputBucket(const std::string& _cosOutputBucket);
 
                     /**
                      * 判断参数 CosOutputBucket 是否已赋值
                      * @return CosOutputBucket 是否已赋值
+                     * 
                      */
                     bool CosOutputBucketHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosOutputKeyPrefix cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosOutputKeyPrefix() const;
 
                     /**
                      * 设置cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosOutputKeyPrefix cos输出key前缀
+                     * @param _cosOutputKeyPrefix cos输出key前缀
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosOutputKeyPrefix(const std::string& _cosOutputKeyPrefix);
 
                     /**
                      * 判断参数 CosOutputKeyPrefix 是否已赋值
                      * @return CosOutputKeyPrefix 是否已赋值
+                     * 
                      */
                     bool CosOutputKeyPrefixHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemDataSource 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FileSystemDataSource GetFileSystemDataSource() const;
 
                     /**
                      * 设置文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystemDataSource 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
+                     * @param _fileSystemDataSource 文件系统输出，如果指定了文件系统，那么Cos输出会被忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystemDataSource(const FileSystemDataSource& _fileSystemDataSource);
 
                     /**
                      * 判断参数 FileSystemDataSource 是否已赋值
                      * @return FileSystemDataSource 是否已赋值
+                     * 
                      */
                     bool FileSystemDataSourceHasBeenSet() const;
 

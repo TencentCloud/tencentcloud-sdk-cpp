@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的实例相关信息列表的长度。
                      * @return TotalCount 返回的实例相关信息列表的长度。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceSet 返回的实例相关信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Instance> GetInstanceSet() const;
 
                     /**
                      * 判断参数 InstanceSet 是否已赋值
                      * @return InstanceSet 是否已赋值
+                     * 
                      */
                     bool InstanceSetHasBeenSet() const;
 

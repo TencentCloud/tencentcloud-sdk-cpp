@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据库可回档实例信息
                      * @return Details 数据库可回档实例信息
+                     * 
                      */
                     std::vector<DbRollbackTimeInfo> GetDetails() const;
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

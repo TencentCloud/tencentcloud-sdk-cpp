@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key key信息组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Key GetKey() const;
 
                     /**
                      * 设置key信息组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key key信息组
+                     * @param _key key信息组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const Key& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value Value信息组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Value GetValue() const;
 
                     /**
                      * 设置Value信息组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value Value信息组
+                     * @param _value Value信息组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const Value& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

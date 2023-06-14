@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
                      * @return CustomerGatewayIds 对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetCustomerGatewayIds() const;
 
                     /**
                      * 设置对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
-                     * @param CustomerGatewayIds 对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * @param _customerGatewayIds 对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * 
                      */
                     void SetCustomerGatewayIds(const std::vector<std::string>& _customerGatewayIds);
 
                     /**
                      * 判断参数 CustomerGatewayIds 是否已赋值
                      * @return CustomerGatewayIds 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
 <li>ip-address - String - （过滤条件)对端网关地址。</li>
 <li>customergateway-id - String - （过滤条件）对端网关唯一ID。</li>
 <li>zone - String - （过滤条件）对端所在可用区，形如：ap-guangzhou-2。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,89 +85,103 @@ namespace TencentCloud
 <li>ip-address - String - （过滤条件)对端网关地址。</li>
 <li>customergateway-id - String - （过滤条件）对端网关唯一ID。</li>
 <li>zone - String - （过滤条件）对端所在可用区，形如：ap-guangzhou-2。</li>
-                     * @param Filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
+                     * @param _filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。
 <li>customergateway-name - String - （过滤条件）对端网关名称。</li>
 <li>ip-address - String - （过滤条件)对端网关地址。</li>
 <li>customergateway-id - String - （过滤条件）对端网关唯一ID。</li>
 <li>zone - String - （过滤条件）对端所在可用区，形如：ap-guangzhou-2。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
                      * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序字段, 支持"CreateTime"排序
                      * @return OrderField 排序字段, 支持"CreateTime"排序
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段, 支持"CreateTime"排序
-                     * @param OrderField 排序字段, 支持"CreateTime"排序
+                     * @param _orderField 排序字段, 支持"CreateTime"排序
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方向, “asc”、“desc”
                      * @return OrderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置排序方向, “asc”、“desc”
-                     * @param OrderDirection 排序方向, “asc”、“desc”
+                     * @param _orderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

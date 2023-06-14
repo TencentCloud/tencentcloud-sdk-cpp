@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取队列名
                      * @return QueueName 队列名
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置队列名
-                     * @param QueueName 队列名
+                     * @param _queueName 队列名
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取消息内容
                      * @return MsgContent 消息内容
+                     * 
                      */
                     std::string GetMsgContent() const;
 
                     /**
                      * 设置消息内容
-                     * @param MsgContent 消息内容
+                     * @param _msgContent 消息内容
+                     * 
                      */
                     void SetMsgContent(const std::string& _msgContent);
 
                     /**
                      * 判断参数 MsgContent 是否已赋值
                      * @return MsgContent 是否已赋值
+                     * 
                      */
                     bool MsgContentHasBeenSet() const;
 
                     /**
                      * 获取延迟时间
                      * @return DelaySeconds 延迟时间
+                     * 
                      */
                     int64_t GetDelaySeconds() const;
 
                     /**
                      * 设置延迟时间
-                     * @param DelaySeconds 延迟时间
+                     * @param _delaySeconds 延迟时间
+                     * 
                      */
                     void SetDelaySeconds(const int64_t& _delaySeconds);
 
                     /**
                      * 判断参数 DelaySeconds 是否已赋值
                      * @return DelaySeconds 是否已赋值
+                     * 
                      */
                     bool DelaySecondsHasBeenSet() const;
 

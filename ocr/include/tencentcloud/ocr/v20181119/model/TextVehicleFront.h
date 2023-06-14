@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateNo 号牌号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlateNo() const;
 
                     /**
                      * 设置号牌号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateNo 号牌号码
+                     * @param _plateNo 号牌号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlateNo(const std::string& _plateNo);
 
                     /**
                      * 判断参数 PlateNo 是否已赋值
                      * @return PlateNo 是否已赋值
+                     * 
                      */
                     bool PlateNoHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VehicleType 车辆类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVehicleType() const;
 
                     /**
                      * 设置车辆类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VehicleType 车辆类型
+                     * @param _vehicleType 车辆类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVehicleType(const std::string& _vehicleType);
 
                     /**
                      * 判断参数 VehicleType 是否已赋值
                      * @return VehicleType 是否已赋值
+                     * 
                      */
                     bool VehicleTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Owner 所有人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置所有人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Owner 所有人
+                     * @param _owner 所有人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 住址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置住址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 住址
+                     * @param _address 住址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseCharacter 使用性质
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUseCharacter() const;
 
                     /**
                      * 设置使用性质
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseCharacter 使用性质
+                     * @param _useCharacter 使用性质
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseCharacter(const std::string& _useCharacter);
 
                     /**
                      * 判断参数 UseCharacter 是否已赋值
                      * @return UseCharacter 是否已赋值
+                     * 
                      */
                     bool UseCharacterHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Model 品牌型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 设置品牌型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Model 品牌型号
+                     * @param _model 品牌型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModel(const std::string& _model);
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vin 车辆识别代号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVin() const;
 
                     /**
                      * 设置车辆识别代号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vin 车辆识别代号
+                     * @param _vin 车辆识别代号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVin(const std::string& _vin);
 
                     /**
                      * 判断参数 Vin 是否已赋值
                      * @return Vin 是否已赋值
+                     * 
                      */
                     bool VinHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineNo 发动机号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEngineNo() const;
 
                     /**
                      * 设置发动机号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EngineNo 发动机号码
+                     * @param _engineNo 发动机号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEngineNo(const std::string& _engineNo);
 
                     /**
                      * 判断参数 EngineNo 是否已赋值
                      * @return EngineNo 是否已赋值
+                     * 
                      */
                     bool EngineNoHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisterDate 注册日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegisterDate() const;
 
                     /**
                      * 设置注册日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegisterDate 注册日期
+                     * @param _registerDate 注册日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegisterDate(const std::string& _registerDate);
 
                     /**
                      * 判断参数 RegisterDate 是否已赋值
                      * @return RegisterDate 是否已赋值
+                     * 
                      */
                     bool RegisterDateHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssueDate 发证日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIssueDate() const;
 
                     /**
                      * 设置发证日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IssueDate 发证日期
+                     * @param _issueDate 发证日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssueDate(const std::string& _issueDate);
 
                     /**
                      * 判断参数 IssueDate 是否已赋值
                      * @return IssueDate 是否已赋值
+                     * 
                      */
                     bool IssueDateHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Seal 印章
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSeal() const;
 
                     /**
                      * 设置印章
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Seal 印章
+                     * @param _seal 印章
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSeal(const std::string& _seal);
 
                     /**
                      * 判断参数 Seal 是否已赋值
                      * @return Seal 是否已赋值
+                     * 
                      */
                     bool SealHasBeenSet() const;
 

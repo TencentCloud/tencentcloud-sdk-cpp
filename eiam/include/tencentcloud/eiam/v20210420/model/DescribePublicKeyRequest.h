@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取应用ID，是应用的全局唯一标识。
                      * @return ApplicationId 应用ID，是应用的全局唯一标识。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID，是应用的全局唯一标识。
-                     * @param ApplicationId 应用ID，是应用的全局唯一标识。
+                     * @param _applicationId 应用ID，是应用的全局唯一标识。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 

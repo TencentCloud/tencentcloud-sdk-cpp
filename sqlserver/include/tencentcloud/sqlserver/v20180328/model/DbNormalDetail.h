@@ -49,342 +49,399 @@ namespace TencentCloud
                     /**
                      * 获取是否已订阅 0：否 1：是
                      * @return IsSubscribed 是否已订阅 0：否 1：是
+                     * 
                      */
                     std::string GetIsSubscribed() const;
 
                     /**
                      * 设置是否已订阅 0：否 1：是
-                     * @param IsSubscribed 是否已订阅 0：否 1：是
+                     * @param _isSubscribed 是否已订阅 0：否 1：是
+                     * 
                      */
                     void SetIsSubscribed(const std::string& _isSubscribed);
 
                     /**
                      * 判断参数 IsSubscribed 是否已赋值
                      * @return IsSubscribed 是否已赋值
+                     * 
                      */
                     bool IsSubscribedHasBeenSet() const;
 
                     /**
                      * 获取数据库排序规则
                      * @return CollationName 数据库排序规则
+                     * 
                      */
                     std::string GetCollationName() const;
 
                     /**
                      * 设置数据库排序规则
-                     * @param CollationName 数据库排序规则
+                     * @param _collationName 数据库排序规则
+                     * 
                      */
                     void SetCollationName(const std::string& _collationName);
 
                     /**
                      * 判断参数 CollationName 是否已赋值
                      * @return CollationName 是否已赋值
+                     * 
                      */
                     bool CollationNameHasBeenSet() const;
 
                     /**
                      * 获取开启CT之后是否自动清理 0：否 1：是
                      * @return IsAutoCleanupOn 开启CT之后是否自动清理 0：否 1：是
+                     * 
                      */
                     std::string GetIsAutoCleanupOn() const;
 
                     /**
                      * 设置开启CT之后是否自动清理 0：否 1：是
-                     * @param IsAutoCleanupOn 开启CT之后是否自动清理 0：否 1：是
+                     * @param _isAutoCleanupOn 开启CT之后是否自动清理 0：否 1：是
+                     * 
                      */
                     void SetIsAutoCleanupOn(const std::string& _isAutoCleanupOn);
 
                     /**
                      * 判断参数 IsAutoCleanupOn 是否已赋值
                      * @return IsAutoCleanupOn 是否已赋值
+                     * 
                      */
                     bool IsAutoCleanupOnHasBeenSet() const;
 
                     /**
                      * 获取是否已启用代理  0：否 1：是
                      * @return IsBrokerEnabled 是否已启用代理  0：否 1：是
+                     * 
                      */
                     std::string GetIsBrokerEnabled() const;
 
                     /**
                      * 设置是否已启用代理  0：否 1：是
-                     * @param IsBrokerEnabled 是否已启用代理  0：否 1：是
+                     * @param _isBrokerEnabled 是否已启用代理  0：否 1：是
+                     * 
                      */
                     void SetIsBrokerEnabled(const std::string& _isBrokerEnabled);
 
                     /**
                      * 判断参数 IsBrokerEnabled 是否已赋值
                      * @return IsBrokerEnabled 是否已赋值
+                     * 
                      */
                     bool IsBrokerEnabledHasBeenSet() const;
 
                     /**
                      * 获取是否已开启/关闭CDC 0：关闭 1：开启
                      * @return IsCdcEnabled 是否已开启/关闭CDC 0：关闭 1：开启
+                     * 
                      */
                     std::string GetIsCdcEnabled() const;
 
                     /**
                      * 设置是否已开启/关闭CDC 0：关闭 1：开启
-                     * @param IsCdcEnabled 是否已开启/关闭CDC 0：关闭 1：开启
+                     * @param _isCdcEnabled 是否已开启/关闭CDC 0：关闭 1：开启
+                     * 
                      */
                     void SetIsCdcEnabled(const std::string& _isCdcEnabled);
 
                     /**
                      * 判断参数 IsCdcEnabled 是否已赋值
                      * @return IsCdcEnabled 是否已赋值
+                     * 
                      */
                     bool IsCdcEnabledHasBeenSet() const;
 
                     /**
                      * 获取是否已启用/ 禁用CT 0：禁用 1：启用
                      * @return IsDbChainingOn 是否已启用/ 禁用CT 0：禁用 1：启用
+                     * 
                      */
                     std::string GetIsDbChainingOn() const;
 
                     /**
                      * 设置是否已启用/ 禁用CT 0：禁用 1：启用
-                     * @param IsDbChainingOn 是否已启用/ 禁用CT 0：禁用 1：启用
+                     * @param _isDbChainingOn 是否已启用/ 禁用CT 0：禁用 1：启用
+                     * 
                      */
                     void SetIsDbChainingOn(const std::string& _isDbChainingOn);
 
                     /**
                      * 判断参数 IsDbChainingOn 是否已赋值
                      * @return IsDbChainingOn 是否已赋值
+                     * 
                      */
                     bool IsDbChainingOnHasBeenSet() const;
 
                     /**
                      * 获取是否加密 0：否 1：是
                      * @return IsEncrypted 是否加密 0：否 1：是
+                     * 
                      */
                     std::string GetIsEncrypted() const;
 
                     /**
                      * 设置是否加密 0：否 1：是
-                     * @param IsEncrypted 是否加密 0：否 1：是
+                     * @param _isEncrypted 是否加密 0：否 1：是
+                     * 
                      */
                     void SetIsEncrypted(const std::string& _isEncrypted);
 
                     /**
                      * 判断参数 IsEncrypted 是否已赋值
                      * @return IsEncrypted 是否已赋值
+                     * 
                      */
                     bool IsEncryptedHasBeenSet() const;
 
                     /**
                      * 获取是否全文启用 0：否 1：是
                      * @return IsFulltextEnabled 是否全文启用 0：否 1：是
+                     * 
                      */
                     std::string GetIsFulltextEnabled() const;
 
                     /**
                      * 设置是否全文启用 0：否 1：是
-                     * @param IsFulltextEnabled 是否全文启用 0：否 1：是
+                     * @param _isFulltextEnabled 是否全文启用 0：否 1：是
+                     * 
                      */
                     void SetIsFulltextEnabled(const std::string& _isFulltextEnabled);
 
                     /**
                      * 判断参数 IsFulltextEnabled 是否已赋值
                      * @return IsFulltextEnabled 是否已赋值
+                     * 
                      */
                     bool IsFulltextEnabledHasBeenSet() const;
 
                     /**
                      * 获取是否是镜像 0：否 1：是
                      * @return IsMirroring 是否是镜像 0：否 1：是
+                     * 
                      */
                     std::string GetIsMirroring() const;
 
                     /**
                      * 设置是否是镜像 0：否 1：是
-                     * @param IsMirroring 是否是镜像 0：否 1：是
+                     * @param _isMirroring 是否是镜像 0：否 1：是
+                     * 
                      */
                     void SetIsMirroring(const std::string& _isMirroring);
 
                     /**
                      * 判断参数 IsMirroring 是否已赋值
                      * @return IsMirroring 是否已赋值
+                     * 
                      */
                     bool IsMirroringHasBeenSet() const;
 
                     /**
                      * 获取是否已发布 0：否 1：是
                      * @return IsPublished 是否已发布 0：否 1：是
+                     * 
                      */
                     std::string GetIsPublished() const;
 
                     /**
                      * 设置是否已发布 0：否 1：是
-                     * @param IsPublished 是否已发布 0：否 1：是
+                     * @param _isPublished 是否已发布 0：否 1：是
+                     * 
                      */
                     void SetIsPublished(const std::string& _isPublished);
 
                     /**
                      * 判断参数 IsPublished 是否已赋值
                      * @return IsPublished 是否已赋值
+                     * 
                      */
                     bool IsPublishedHasBeenSet() const;
 
                     /**
                      * 获取是否开启快照 0：否 1：是
                      * @return IsReadCommittedSnapshotOn 是否开启快照 0：否 1：是
+                     * 
                      */
                     std::string GetIsReadCommittedSnapshotOn() const;
 
                     /**
                      * 设置是否开启快照 0：否 1：是
-                     * @param IsReadCommittedSnapshotOn 是否开启快照 0：否 1：是
+                     * @param _isReadCommittedSnapshotOn 是否开启快照 0：否 1：是
+                     * 
                      */
                     void SetIsReadCommittedSnapshotOn(const std::string& _isReadCommittedSnapshotOn);
 
                     /**
                      * 判断参数 IsReadCommittedSnapshotOn 是否已赋值
                      * @return IsReadCommittedSnapshotOn 是否已赋值
+                     * 
                      */
                     bool IsReadCommittedSnapshotOnHasBeenSet() const;
 
                     /**
                      * 获取是否可信任 0：否 1：是
                      * @return IsTrustworthyOn 是否可信任 0：否 1：是
+                     * 
                      */
                     std::string GetIsTrustworthyOn() const;
 
                     /**
                      * 设置是否可信任 0：否 1：是
-                     * @param IsTrustworthyOn 是否可信任 0：否 1：是
+                     * @param _isTrustworthyOn 是否可信任 0：否 1：是
+                     * 
                      */
                     void SetIsTrustworthyOn(const std::string& _isTrustworthyOn);
 
                     /**
                      * 判断参数 IsTrustworthyOn 是否已赋值
                      * @return IsTrustworthyOn 是否已赋值
+                     * 
                      */
                     bool IsTrustworthyOnHasBeenSet() const;
 
                     /**
                      * 获取镜像状态
                      * @return MirroringState 镜像状态
+                     * 
                      */
                     std::string GetMirroringState() const;
 
                     /**
                      * 设置镜像状态
-                     * @param MirroringState 镜像状态
+                     * @param _mirroringState 镜像状态
+                     * 
                      */
                     void SetMirroringState(const std::string& _mirroringState);
 
                     /**
                      * 判断参数 MirroringState 是否已赋值
                      * @return MirroringState 是否已赋值
+                     * 
                      */
                     bool MirroringStateHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return Name 数据库名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Name 数据库名称
+                     * @param _name 数据库名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取恢复模式
                      * @return RecoveryModelDesc 恢复模式
+                     * 
                      */
                     std::string GetRecoveryModelDesc() const;
 
                     /**
                      * 设置恢复模式
-                     * @param RecoveryModelDesc 恢复模式
+                     * @param _recoveryModelDesc 恢复模式
+                     * 
                      */
                     void SetRecoveryModelDesc(const std::string& _recoveryModelDesc);
 
                     /**
                      * 判断参数 RecoveryModelDesc 是否已赋值
                      * @return RecoveryModelDesc 是否已赋值
+                     * 
                      */
                     bool RecoveryModelDescHasBeenSet() const;
 
                     /**
                      * 获取保留天数
                      * @return RetentionPeriod 保留天数
+                     * 
                      */
                     std::string GetRetentionPeriod() const;
 
                     /**
                      * 设置保留天数
-                     * @param RetentionPeriod 保留天数
+                     * @param _retentionPeriod 保留天数
+                     * 
                      */
                     void SetRetentionPeriod(const std::string& _retentionPeriod);
 
                     /**
                      * 判断参数 RetentionPeriod 是否已赋值
                      * @return RetentionPeriod 是否已赋值
+                     * 
                      */
                     bool RetentionPeriodHasBeenSet() const;
 
                     /**
                      * 获取数据库状态
                      * @return StateDesc 数据库状态
+                     * 
                      */
                     std::string GetStateDesc() const;
 
                     /**
                      * 设置数据库状态
-                     * @param StateDesc 数据库状态
+                     * @param _stateDesc 数据库状态
+                     * 
                      */
                     void SetStateDesc(const std::string& _stateDesc);
 
                     /**
                      * 判断参数 StateDesc 是否已赋值
                      * @return StateDesc 是否已赋值
+                     * 
                      */
                     bool StateDescHasBeenSet() const;
 
                     /**
                      * 获取用户类型
                      * @return UserAccessDesc 用户类型
+                     * 
                      */
                     std::string GetUserAccessDesc() const;
 
                     /**
                      * 设置用户类型
-                     * @param UserAccessDesc 用户类型
+                     * @param _userAccessDesc 用户类型
+                     * 
                      */
                     void SetUserAccessDesc(const std::string& _userAccessDesc);
 
                     /**
                      * 判断参数 UserAccessDesc 是否已赋值
                      * @return UserAccessDesc 是否已赋值
+                     * 
                      */
                     bool UserAccessDescHasBeenSet() const;
 
                     /**
                      * 获取数据库创建时间
                      * @return CreateTime 数据库创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置数据库创建时间
-                     * @param CreateTime 数据库创建时间
+                     * @param _createTime 数据库创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

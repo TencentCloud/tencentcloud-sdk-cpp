@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取使用数据明细
                      * @return DetailPoints 使用数据明细
+                     * 
                      */
                     std::vector<DetailPoint> GetDetailPoints() const;
 
                     /**
                      * 设置使用数据明细
-                     * @param DetailPoints 使用数据明细
+                     * @param _detailPoints 使用数据明细
+                     * 
                      */
                     void SetDetailPoints(const std::vector<DetailPoint>& _detailPoints);
 
                     /**
                      * 判断参数 DetailPoints 是否已赋值
                      * @return DetailPoints 是否已赋值
+                     * 
                      */
                     bool DetailPointsHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceID 实例ID
+                     * @param _instanceID 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 

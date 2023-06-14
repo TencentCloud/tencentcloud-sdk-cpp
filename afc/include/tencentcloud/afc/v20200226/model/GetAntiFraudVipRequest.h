@@ -51,6 +51,7 @@ BusinessCryptoData)。
                      * @return BusinessSecurityData 默认不传，约定用原始业务
 入参(二选一BusinessSecurityData 或
 BusinessCryptoData)。
+                     * 
                      */
                     AntiFraudVipFilter GetBusinessSecurityData() const;
 
@@ -58,15 +59,17 @@ BusinessCryptoData)。
                      * 设置默认不传，约定用原始业务
 入参(二选一BusinessSecurityData 或
 BusinessCryptoData)。
-                     * @param BusinessSecurityData 默认不传，约定用原始业务
+                     * @param _businessSecurityData 默认不传，约定用原始业务
 入参(二选一BusinessSecurityData 或
 BusinessCryptoData)。
+                     * 
                      */
                     void SetBusinessSecurityData(const AntiFraudVipFilter& _businessSecurityData);
 
                     /**
                      * 判断参数 BusinessSecurityData 是否已赋值
                      * @return BusinessSecurityData 是否已赋值
+                     * 
                      */
                     bool BusinessSecurityDataHasBeenSet() const;
 
@@ -79,6 +82,7 @@ BusinessCryptoData)。
 入参(二选一
 BusinessSecurityData 或
 BusinessCryptoData)。
+                     * 
                      */
                     AntiFraudVipCryptoFilter GetBusinessCryptoData() const;
 
@@ -87,16 +91,18 @@ BusinessCryptoData)。
 入参(二选一
 BusinessSecurityData 或
 BusinessCryptoData)。
-                     * @param BusinessCryptoData 默认不传，约定用密文业务
+                     * @param _businessCryptoData 默认不传，约定用密文业务
 入参(二选一
 BusinessSecurityData 或
 BusinessCryptoData)。
+                     * 
                      */
                     void SetBusinessCryptoData(const AntiFraudVipCryptoFilter& _businessCryptoData);
 
                     /**
                      * 判断参数 BusinessCryptoData 是否已赋值
                      * @return BusinessCryptoData 是否已赋值
+                     * 
                      */
                     bool BusinessCryptoDataHasBeenSet() const;
 

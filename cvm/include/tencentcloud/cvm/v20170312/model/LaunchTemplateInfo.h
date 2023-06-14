@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestVersionNumber 实例启动模版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLatestVersionNumber() const;
 
                     /**
                      * 设置实例启动模版本号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestVersionNumber 实例启动模版本号。
+                     * @param _latestVersionNumber 实例启动模版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatestVersionNumber(const uint64_t& _latestVersionNumber);
 
                     /**
                      * 判断参数 LatestVersionNumber 是否已赋值
                      * @return LatestVersionNumber 是否已赋值
+                     * 
                      */
                     bool LatestVersionNumberHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateId 实例启动模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置实例启动模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaunchTemplateId 实例启动模板ID。
+                     * @param _launchTemplateId 实例启动模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateName 实例启动模板名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLaunchTemplateName() const;
 
                     /**
                      * 设置实例启动模板名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaunchTemplateName 实例启动模板名。
+                     * @param _launchTemplateName 实例启动模板名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaunchTemplateName(const std::string& _launchTemplateName);
 
                     /**
                      * 判断参数 LaunchTemplateName 是否已赋值
                      * @return LaunchTemplateName 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultVersionNumber 实例启动模板默认版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDefaultVersionNumber() const;
 
                     /**
                      * 设置实例启动模板默认版本号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultVersionNumber 实例启动模板默认版本号。
+                     * @param _defaultVersionNumber 实例启动模板默认版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultVersionNumber(const uint64_t& _defaultVersionNumber);
 
                     /**
                      * 判断参数 DefaultVersionNumber 是否已赋值
                      * @return DefaultVersionNumber 是否已赋值
+                     * 
                      */
                     bool DefaultVersionNumberHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateVersionCount 实例启动模板包含的版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLaunchTemplateVersionCount() const;
 
                     /**
                      * 设置实例启动模板包含的版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaunchTemplateVersionCount 实例启动模板包含的版本总数量。
+                     * @param _launchTemplateVersionCount 实例启动模板包含的版本总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaunchTemplateVersionCount(const uint64_t& _launchTemplateVersionCount);
 
                     /**
                      * 判断参数 LaunchTemplateVersionCount 是否已赋值
                      * @return LaunchTemplateVersionCount 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateVersionCountHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedBy 创建该模板的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
                      * 设置创建该模板的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedBy 创建该模板的用户UIN。
+                     * @param _createdBy 创建该模板的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
 
                     /**
                      * 判断参数 CreatedBy 是否已赋值
                      * @return CreatedBy 是否已赋值
+                     * 
                      */
                     bool CreatedByHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建该模板的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建该模板的时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationTime 创建该模板的时间。
+                     * @param _creationTime 创建该模板的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 

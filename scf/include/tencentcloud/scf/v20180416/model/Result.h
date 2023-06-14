@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取表示执行过程中的日志输出，异步调用返回为空
                      * @return Log 表示执行过程中的日志输出，异步调用返回为空
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置表示执行过程中的日志输出，异步调用返回为空
-                     * @param Log 表示执行过程中的日志输出，异步调用返回为空
+                     * @param _log 表示执行过程中的日志输出，异步调用返回为空
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 
                     /**
                      * 获取表示执行函数的返回，异步调用返回为空
                      * @return RetMsg 表示执行函数的返回，异步调用返回为空
+                     * 
                      */
                     std::string GetRetMsg() const;
 
                     /**
                      * 设置表示执行函数的返回，异步调用返回为空
-                     * @param RetMsg 表示执行函数的返回，异步调用返回为空
+                     * @param _retMsg 表示执行函数的返回，异步调用返回为空
+                     * 
                      */
                     void SetRetMsg(const std::string& _retMsg);
 
                     /**
                      * 判断参数 RetMsg 是否已赋值
                      * @return RetMsg 是否已赋值
+                     * 
                      */
                     bool RetMsgHasBeenSet() const;
 
                     /**
                      * 获取表示执行函数的错误返回信息，异步调用返回为空
                      * @return ErrMsg 表示执行函数的错误返回信息，异步调用返回为空
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置表示执行函数的错误返回信息，异步调用返回为空
-                     * @param ErrMsg 表示执行函数的错误返回信息，异步调用返回为空
+                     * @param _errMsg 表示执行函数的错误返回信息，异步调用返回为空
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
                     /**
                      * 获取执行函数时的内存大小，单位为Byte，异步调用返回为空
                      * @return MemUsage 执行函数时的内存大小，单位为Byte，异步调用返回为空
+                     * 
                      */
                     int64_t GetMemUsage() const;
 
                     /**
                      * 设置执行函数时的内存大小，单位为Byte，异步调用返回为空
-                     * @param MemUsage 执行函数时的内存大小，单位为Byte，异步调用返回为空
+                     * @param _memUsage 执行函数时的内存大小，单位为Byte，异步调用返回为空
+                     * 
                      */
                     void SetMemUsage(const int64_t& _memUsage);
 
                     /**
                      * 判断参数 MemUsage 是否已赋值
                      * @return MemUsage 是否已赋值
+                     * 
                      */
                     bool MemUsageHasBeenSet() const;
 
                     /**
                      * 获取表示执行函数的耗时，单位是毫秒，异步调用返回为空
                      * @return Duration 表示执行函数的耗时，单位是毫秒，异步调用返回为空
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置表示执行函数的耗时，单位是毫秒，异步调用返回为空
-                     * @param Duration 表示执行函数的耗时，单位是毫秒，异步调用返回为空
+                     * @param _duration 表示执行函数的耗时，单位是毫秒，异步调用返回为空
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取表示函数的计费耗时，单位是毫秒，异步调用返回为空
                      * @return BillDuration 表示函数的计费耗时，单位是毫秒，异步调用返回为空
+                     * 
                      */
                     int64_t GetBillDuration() const;
 
                     /**
                      * 设置表示函数的计费耗时，单位是毫秒，异步调用返回为空
-                     * @param BillDuration 表示函数的计费耗时，单位是毫秒，异步调用返回为空
+                     * @param _billDuration 表示函数的计费耗时，单位是毫秒，异步调用返回为空
+                     * 
                      */
                     void SetBillDuration(const int64_t& _billDuration);
 
                     /**
                      * 判断参数 BillDuration 是否已赋值
                      * @return BillDuration 是否已赋值
+                     * 
                      */
                     bool BillDurationHasBeenSet() const;
 
                     /**
                      * 获取此次函数执行的Id
                      * @return FunctionRequestId 此次函数执行的Id
+                     * 
                      */
                     std::string GetFunctionRequestId() const;
 
                     /**
                      * 设置此次函数执行的Id
-                     * @param FunctionRequestId 此次函数执行的Id
+                     * @param _functionRequestId 此次函数执行的Id
+                     * 
                      */
                     void SetFunctionRequestId(const std::string& _functionRequestId);
 
                     /**
                      * 判断参数 FunctionRequestId 是否已赋值
                      * @return FunctionRequestId 是否已赋值
+                     * 
                      */
                     bool FunctionRequestIdHasBeenSet() const;
 
                     /**
                      * 获取请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
                      * @return InvokeResult 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * 
                      */
                     int64_t GetInvokeResult() const;
 
                     /**
                      * 设置请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
-                     * @param InvokeResult 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * @param _invokeResult 请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。
+                     * 
                      */
                     void SetInvokeResult(const int64_t& _invokeResult);
 
                     /**
                      * 判断参数 InvokeResult 是否已赋值
                      * @return InvokeResult 是否已赋值
+                     * 
                      */
                     bool InvokeResultHasBeenSet() const;
 

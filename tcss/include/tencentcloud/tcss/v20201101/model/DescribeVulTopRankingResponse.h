@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取漏洞Top排名信息列表
                      * @return List 漏洞Top排名信息列表
+                     * 
                      */
                     std::vector<VulTopRankingInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

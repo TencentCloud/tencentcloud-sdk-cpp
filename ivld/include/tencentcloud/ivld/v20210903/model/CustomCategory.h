@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取自定义分类ID
                      * @return CategoryId 自定义分类ID
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 设置自定义分类ID
-                     * @param CategoryId 自定义分类ID
+                     * @param _categoryId 自定义分类ID
+                     * 
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取一级自定义类型
                      * @return L1Category 一级自定义类型
+                     * 
                      */
                     std::string GetL1Category() const;
 
                     /**
                      * 设置一级自定义类型
-                     * @param L1Category 一级自定义类型
+                     * @param _l1Category 一级自定义类型
+                     * 
                      */
                     void SetL1Category(const std::string& _l1Category);
 
                     /**
                      * 判断参数 L1Category 是否已赋值
                      * @return L1Category 是否已赋值
+                     * 
                      */
                     bool L1CategoryHasBeenSet() const;
 
                     /**
                      * 获取二级自定义类型
                      * @return L2Category 二级自定义类型
+                     * 
                      */
                     std::string GetL2Category() const;
 
                     /**
                      * 设置二级自定义类型
-                     * @param L2Category 二级自定义类型
+                     * @param _l2Category 二级自定义类型
+                     * 
                      */
                     void SetL2Category(const std::string& _l2Category);
 
                     /**
                      * 判断参数 L2Category 是否已赋值
                      * @return L2Category 是否已赋值
+                     * 
                      */
                     bool L2CategoryHasBeenSet() const;
 

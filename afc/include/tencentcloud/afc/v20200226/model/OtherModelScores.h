@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取模型类型
                      * @return ModelId 模型类型
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型类型
-                     * @param ModelId 模型类型
+                     * @param _modelId 模型类型
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取该模型评分
                      * @return ModelScore 该模型评分
+                     * 
                      */
                     std::string GetModelScore() const;
 
                     /**
                      * 设置该模型评分
-                     * @param ModelScore 该模型评分
+                     * @param _modelScore 该模型评分
+                     * 
                      */
                     void SetModelScore(const std::string& _modelScore);
 
                     /**
                      * 判断参数 ModelScore 是否已赋值
                      * @return ModelScore 是否已赋值
+                     * 
                      */
                     bool ModelScoreHasBeenSet() const;
 

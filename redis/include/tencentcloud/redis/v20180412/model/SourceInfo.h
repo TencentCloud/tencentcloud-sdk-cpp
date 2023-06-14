@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取来源IP
                      * @return Ip 来源IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置来源IP
-                     * @param Ip 来源IP
+                     * @param _ip 来源IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取连接数
                      * @return Conn 连接数
+                     * 
                      */
                     int64_t GetConn() const;
 
                     /**
                      * 设置连接数
-                     * @param Conn 连接数
+                     * @param _conn 连接数
+                     * 
                      */
                     void SetConn(const int64_t& _conn);
 
                     /**
                      * 判断参数 Conn 是否已赋值
                      * @return Conn 是否已赋值
+                     * 
                      */
                     bool ConnHasBeenSet() const;
 
                     /**
                      * 获取命令
                      * @return Cmd 命令
+                     * 
                      */
                     int64_t GetCmd() const;
 
                     /**
                      * 设置命令
-                     * @param Cmd 命令
+                     * @param _cmd 命令
+                     * 
                      */
                     void SetCmd(const int64_t& _cmd);
 
                     /**
                      * 判断参数 Cmd 是否已赋值
                      * @return Cmd 是否已赋值
+                     * 
                      */
                     bool CmdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取日志Key
                      * @return Key 日志Key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置日志Key
-                     * @param Key 日志Key
+                     * @param _key 日志Key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取日志Value
                      * @return Value 日志Value
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置日志Value
-                     * @param Value 日志Value
+                     * @param _value 日志Value
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

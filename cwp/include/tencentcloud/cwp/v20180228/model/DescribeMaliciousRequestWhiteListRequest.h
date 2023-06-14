@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 
 <li>Domain  - String - 基线名称</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置过滤条件。
 
 <li>Domain  - String - 基线名称</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 
 <li>Domain  - String - 基线名称</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

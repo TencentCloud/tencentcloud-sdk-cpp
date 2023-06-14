@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取vpcId
                      * @return VpcId vpcId
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpcId
-                     * @param VpcId vpcId
+                     * @param _vpcId vpcId
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取subnetId
                      * @return SubnetId subnetId
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置subnetId
-                     * @param SubnetId subnetId
+                     * @param _subnetId subnetId
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符
                      * @return InstanceName 容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符
-                     * @param InstanceName 容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符
+                     * @param _instanceName 容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取重启策略（Always,OnFailure,Never）
                      * @return RestartPolicy 重启策略（Always,OnFailure,Never）
+                     * 
                      */
                     std::string GetRestartPolicy() const;
 
                     /**
                      * 设置重启策略（Always,OnFailure,Never）
-                     * @param RestartPolicy 重启策略（Always,OnFailure,Never）
+                     * @param _restartPolicy 重启策略（Always,OnFailure,Never）
+                     * 
                      */
                     void SetRestartPolicy(const std::string& _restartPolicy);
 
                     /**
                      * 判断参数 RestartPolicy 是否已赋值
                      * @return RestartPolicy 是否已赋值
+                     * 
                      */
                     bool RestartPolicyHasBeenSet() const;
 
                     /**
                      * 获取容器列表
                      * @return Containers 容器列表
+                     * 
                      */
                     std::vector<Container> GetContainers() const;
 
                     /**
                      * 设置容器列表
-                     * @param Containers 容器列表
+                     * @param _containers 容器列表
+                     * 
                      */
                     void SetContainers(const std::vector<Container>& _containers);
 
                     /**
                      * 判断参数 Containers 是否已赋值
                      * @return Containers 是否已赋值
+                     * 
                      */
                     bool ContainersHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取生命周期规则列表
                      * @return LifeCycleRules 生命周期规则列表
+                     * 
                      */
                     std::vector<LifeCycleRule> GetLifeCycleRules() const;
 
                     /**
                      * 判断参数 LifeCycleRules 是否已赋值
                      * @return LifeCycleRules 是否已赋值
+                     * 
                      */
                     bool LifeCycleRulesHasBeenSet() const;
 

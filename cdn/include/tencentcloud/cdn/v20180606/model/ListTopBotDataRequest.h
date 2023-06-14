@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取获取Top量，取值范围[1-10]
                      * @return TopCount 获取Top量，取值范围[1-10]
+                     * 
                      */
                     int64_t GetTopCount() const;
 
                     /**
                      * 设置获取Top量，取值范围[1-10]
-                     * @param TopCount 获取Top量，取值范围[1-10]
+                     * @param _topCount 获取Top量，取值范围[1-10]
+                     * 
                      */
                     void SetTopCount(const int64_t& _topCount);
 
                     /**
                      * 判断参数 TopCount 是否已赋值
                      * @return TopCount 是否已赋值
+                     * 
                      */
                     bool TopCountHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -105,6 +114,7 @@ ip表示查询BOT客户端IP的Top信息
 ip表示查询BOT客户端IP的Top信息
 
 不填代表获取会话信息
+                     * 
                      */
                     std::string GetMetric() const;
 
@@ -113,52 +123,60 @@ ip表示查询BOT客户端IP的Top信息
 ip表示查询BOT客户端IP的Top信息
 
 不填代表获取会话信息
-                     * @param Metric session表示查询BOT会话的Top信息
+                     * @param _metric session表示查询BOT会话的Top信息
 ip表示查询BOT客户端IP的Top信息
 
 不填代表获取会话信息
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取域名，仅当Metric=ip时有效，不填写表示使用Domains参数
                      * @return Domain 域名，仅当Metric=ip时有效，不填写表示使用Domains参数
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名，仅当Metric=ip时有效，不填写表示使用Domains参数
-                     * @param Domain 域名，仅当Metric=ip时有效，不填写表示使用Domains参数
+                     * @param _domain 域名，仅当Metric=ip时有效，不填写表示使用Domains参数
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息
                      * @return Domains 域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息
-                     * @param Domains 域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息
+                     * @param _domains 域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

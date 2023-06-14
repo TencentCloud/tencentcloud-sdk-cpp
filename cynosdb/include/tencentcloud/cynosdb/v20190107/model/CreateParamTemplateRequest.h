@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取模版名称
                      * @return TemplateName 模版名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模版名称
-                     * @param TemplateName 模版名称
+                     * @param _templateName 模版名称
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取mysql版本号
                      * @return EngineVersion mysql版本号
+                     * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置mysql版本号
-                     * @param EngineVersion mysql版本号
+                     * @param _engineVersion mysql版本号
+                     * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取模版描述
                      * @return TemplateDescription 模版描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置模版描述
-                     * @param TemplateDescription 模版描述
+                     * @param _templateDescription 模版描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取可选参数，需要复制的模版ID
                      * @return TemplateId 可选参数，需要复制的模版ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置可选参数，需要复制的模版ID
-                     * @param TemplateId 可选参数，需要复制的模版ID
+                     * @param _templateId 可选参数，需要复制的模版ID
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取数据库类型，可选值：NORMAL（默认值），SERVERLESS
                      * @return DbMode 数据库类型，可选值：NORMAL（默认值），SERVERLESS
+                     * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置数据库类型，可选值：NORMAL（默认值），SERVERLESS
-                     * @param DbMode 数据库类型，可选值：NORMAL（默认值），SERVERLESS
+                     * @param _dbMode 数据库类型，可选值：NORMAL（默认值），SERVERLESS
+                     * 
                      */
                     void SetDbMode(const std::string& _dbMode);
 
                     /**
                      * 判断参数 DbMode 是否已赋值
                      * @return DbMode 是否已赋值
+                     * 
                      */
                     bool DbModeHasBeenSet() const;
 
                     /**
                      * 获取参数列表
                      * @return ParamList 参数列表
+                     * 
                      */
                     std::vector<ParamItem> GetParamList() const;
 
                     /**
                      * 设置参数列表
-                     * @param ParamList 参数列表
+                     * @param _paramList 参数列表
+                     * 
                      */
                     void SetParamList(const std::vector<ParamItem>& _paramList);
 
                     /**
                      * 判断参数 ParamList 是否已赋值
                      * @return ParamList 是否已赋值
+                     * 
                      */
                     bool ParamListHasBeenSet() const;
 

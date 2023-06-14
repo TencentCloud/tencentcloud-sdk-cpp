@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassInfoSet 分类信息集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MediaClassInfo> GetClassInfoSet() const;
 
                     /**
                      * 判断参数 ClassInfoSet 是否已赋值
                      * @return ClassInfoSet 是否已赋值
+                     * 
                      */
                     bool ClassInfoSetHasBeenSet() const;
 

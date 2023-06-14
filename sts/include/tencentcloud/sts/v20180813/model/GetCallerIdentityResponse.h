@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取当前调用者ARN。
                      * @return Arn 当前调用者ARN。
+                     * 
                      */
                     std::string GetArn() const;
 
                     /**
                      * 判断参数 Arn 是否已赋值
                      * @return Arn 是否已赋值
+                     * 
                      */
                     bool ArnHasBeenSet() const;
 
                     /**
                      * 获取当前调用者所属主账号Uin。
                      * @return AccountId 当前调用者所属主账号Uin。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 1. 调用者是云账号时，返回的是当前账号Uin
 2. 调用者是角色时，返回的是roleId:roleSessionName
 3. 调用者是联合身份时，返回的是uin:federatedUserName
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -92,24 +98,28 @@ namespace TencentCloud
                      * @return PrincipalId 密钥所属账号Uin。
 1. 调用者是云账号，返回的当前账号Uin
 2, 调用者是角色，返回的申请角色密钥的账号Uin
+                     * 
                      */
                     std::string GetPrincipalId() const;
 
                     /**
                      * 判断参数 PrincipalId 是否已赋值
                      * @return PrincipalId 是否已赋值
+                     * 
                      */
                     bool PrincipalIdHasBeenSet() const;
 
                     /**
                      * 获取身份类型。
                      * @return Type 身份类型。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

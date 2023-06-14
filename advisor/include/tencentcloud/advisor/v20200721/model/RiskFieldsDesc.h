@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取字段ID
                      * @return Field 字段ID
+                     * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置字段ID
-                     * @param Field 字段ID
+                     * @param _field 字段ID
+                     * 
                      */
                     void SetField(const std::string& _field);
 
                     /**
                      * 判断参数 Field 是否已赋值
                      * @return Field 是否已赋值
+                     * 
                      */
                     bool FieldHasBeenSet() const;
 
                     /**
                      * 获取字段名称
                      * @return FieldName 字段名称
+                     * 
                      */
                     std::string GetFieldName() const;
 
                     /**
                      * 设置字段名称
-                     * @param FieldName 字段名称
+                     * @param _fieldName 字段名称
+                     * 
                      */
                     void SetFieldName(const std::string& _fieldName);
 
                     /**
                      * 判断参数 FieldName 是否已赋值
                      * @return FieldName 是否已赋值
+                     * 
                      */
                     bool FieldNameHasBeenSet() const;
 
@@ -94,6 +100,7 @@ string: 字符串类型，例如"aa"
 int: 整形，例如 111
 stringSlice : 字符串数组类型，例如["a", "b"]
 tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"vvv2"}]
+                     * 
                      */
                     std::string GetFieldType() const;
 
@@ -103,17 +110,19 @@ string: 字符串类型，例如"aa"
 int: 整形，例如 111
 stringSlice : 字符串数组类型，例如["a", "b"]
 tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"vvv2"}]
-                     * @param FieldType 字段类型, 
+                     * @param _fieldType 字段类型, 
 string: 字符串类型，例如"aa"
 int: 整形，例如 111
 stringSlice : 字符串数组类型，例如["a", "b"]
 tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"vvv2"}]
+                     * 
                      */
                     void SetFieldType(const std::string& _fieldType);
 
                     /**
                      * 判断参数 FieldType 是否已赋值
                      * @return FieldType 是否已赋值
+                     * 
                      */
                     bool FieldTypeHasBeenSet() const;
 
@@ -122,20 +131,23 @@ tags: 标签类型, 例如: [{"Key":"kkk","Value":"vvv"},{"Key":"kkk2","Value":"
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldDict 字段值对应字典
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KeyValue> GetFieldDict() const;
 
                     /**
                      * 设置字段值对应字典
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldDict 字段值对应字典
+                     * @param _fieldDict 字段值对应字典
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldDict(const std::vector<KeyValue>& _fieldDict);
 
                     /**
                      * 判断参数 FieldDict 是否已赋值
                      * @return FieldDict 是否已赋值
+                     * 
                      */
                     bool FieldDictHasBeenSet() const;
 

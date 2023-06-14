@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启内网访问LB
                      * @return Enabled 是否开启内网访问LB
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启内网访问LB
-                     * @param Enabled 是否开启内网访问LB
+                     * @param _enabled 是否开启内网访问LB
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取内网访问LB关联的子网Id
                      * @return SubnetId 内网访问LB关联的子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置内网访问LB关联的子网Id
-                     * @param SubnetId 内网访问LB关联的子网Id
+                     * @param _subnetId 内网访问LB关联的子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

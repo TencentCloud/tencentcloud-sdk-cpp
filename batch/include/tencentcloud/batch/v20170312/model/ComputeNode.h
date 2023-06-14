@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取计算节点ID
                      * @return ComputeNodeId 计算节点ID
+                     * 
                      */
                     std::string GetComputeNodeId() const;
 
                     /**
                      * 设置计算节点ID
-                     * @param ComputeNodeId 计算节点ID
+                     * @param _computeNodeId 计算节点ID
+                     * 
                      */
                     void SetComputeNodeId(const std::string& _computeNodeId);
 
                     /**
                      * 判断参数 ComputeNodeId 是否已赋值
                      * @return ComputeNodeId 是否已赋值
+                     * 
                      */
                     bool ComputeNodeIdHasBeenSet() const;
 
                     /**
                      * 获取计算节点实例ID，对于CVM场景，即为CVM的InstanceId
                      * @return ComputeNodeInstanceId 计算节点实例ID，对于CVM场景，即为CVM的InstanceId
+                     * 
                      */
                     std::string GetComputeNodeInstanceId() const;
 
                     /**
                      * 设置计算节点实例ID，对于CVM场景，即为CVM的InstanceId
-                     * @param ComputeNodeInstanceId 计算节点实例ID，对于CVM场景，即为CVM的InstanceId
+                     * @param _computeNodeInstanceId 计算节点实例ID，对于CVM场景，即为CVM的InstanceId
+                     * 
                      */
                     void SetComputeNodeInstanceId(const std::string& _computeNodeInstanceId);
 
                     /**
                      * 判断参数 ComputeNodeInstanceId 是否已赋值
                      * @return ComputeNodeInstanceId 是否已赋值
+                     * 
                      */
                     bool ComputeNodeInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取计算节点状态
                      * @return ComputeNodeState 计算节点状态
+                     * 
                      */
                     std::string GetComputeNodeState() const;
 
                     /**
                      * 设置计算节点状态
-                     * @param ComputeNodeState 计算节点状态
+                     * @param _computeNodeState 计算节点状态
+                     * 
                      */
                     void SetComputeNodeState(const std::string& _computeNodeState);
 
                     /**
                      * 判断参数 ComputeNodeState 是否已赋值
                      * @return ComputeNodeState 是否已赋值
+                     * 
                      */
                     bool ComputeNodeStateHasBeenSet() const;
 
                     /**
                      * 获取CPU核数
                      * @return Cpu CPU核数
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数
-                     * @param Cpu CPU核数
+                     * @param _cpu CPU核数
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存容量，单位GiB
                      * @return Mem 内存容量，单位GiB
+                     * 
                      */
                     uint64_t GetMem() const;
 
                     /**
                      * 设置内存容量，单位GiB
-                     * @param Mem 内存容量，单位GiB
+                     * @param _mem 内存容量，单位GiB
+                     * 
                      */
                     void SetMem(const uint64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
                     /**
                      * 获取资源创建完成时间
                      * @return ResourceCreatedTime 资源创建完成时间
+                     * 
                      */
                     std::string GetResourceCreatedTime() const;
 
                     /**
                      * 设置资源创建完成时间
-                     * @param ResourceCreatedTime 资源创建完成时间
+                     * @param _resourceCreatedTime 资源创建完成时间
+                     * 
                      */
                     void SetResourceCreatedTime(const std::string& _resourceCreatedTime);
 
                     /**
                      * 判断参数 ResourceCreatedTime 是否已赋值
                      * @return ResourceCreatedTime 是否已赋值
+                     * 
                      */
                     bool ResourceCreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。
                      * @return TaskInstanceNumAvailable 计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。
+                     * 
                      */
                     uint64_t GetTaskInstanceNumAvailable() const;
 
                     /**
                      * 设置计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。
-                     * @param TaskInstanceNumAvailable 计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。
+                     * @param _taskInstanceNumAvailable 计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。
+                     * 
                      */
                     void SetTaskInstanceNumAvailable(const uint64_t& _taskInstanceNumAvailable);
 
                     /**
                      * 判断参数 TaskInstanceNumAvailable 是否已赋值
                      * @return TaskInstanceNumAvailable 是否已赋值
+                     * 
                      */
                     bool TaskInstanceNumAvailableHasBeenSet() const;
 
                     /**
                      * 获取Batch Agent 版本
                      * @return AgentVersion Batch Agent 版本
+                     * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
                      * 设置Batch Agent 版本
-                     * @param AgentVersion Batch Agent 版本
+                     * @param _agentVersion Batch Agent 版本
+                     * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
 
                     /**
                      * 判断参数 AgentVersion 是否已赋值
                      * @return AgentVersion 是否已赋值
+                     * 
                      */
                     bool AgentVersionHasBeenSet() const;
 
                     /**
                      * 获取实例内网IP
                      * @return PrivateIpAddresses 实例内网IP
+                     * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置实例内网IP
-                     * @param PrivateIpAddresses 实例内网IP
+                     * @param _privateIpAddresses 实例内网IP
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取实例公网IP
                      * @return PublicIpAddresses 实例公网IP
+                     * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置实例公网IP
-                     * @param PublicIpAddresses 实例公网IP
+                     * @param _publicIpAddresses 实例公网IP
+                     * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
                     /**
                      * 判断参数 PublicIpAddresses 是否已赋值
                      * @return PublicIpAddresses 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取计算环境资源类型，当前为CVM和CPM（黑石）
                      * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置计算环境资源类型，当前为CVM和CPM（黑石）
-                     * @param ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @param _resourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 USER_ATTACHED：用户添加到计算环境中的实例资源。
                      * @return ResourceOrigin 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
 USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     * 
                      */
                     std::string GetResourceOrigin() const;
 
                     /**
                      * 设置计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
 USER_ATTACHED：用户添加到计算环境中的实例资源。
-                     * @param ResourceOrigin 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+                     * @param _resourceOrigin 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
 USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     * 
                      */
                     void SetResourceOrigin(const std::string& _resourceOrigin);
 
                     /**
                      * 判断参数 ResourceOrigin 是否已赋值
                      * @return ResourceOrigin 是否已赋值
+                     * 
                      */
                     bool ResourceOriginHasBeenSet() const;
 

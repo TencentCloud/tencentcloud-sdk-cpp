@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取分配给商户的AppId。进件成功后返给商户方的AppId。
                      * @return MerchantAppId 分配给商户的AppId。进件成功后返给商户方的AppId。
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取对账单下载地址。
                      * @return DownloadUrl 对账单下载地址。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 

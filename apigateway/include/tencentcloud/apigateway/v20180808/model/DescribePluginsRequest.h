@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取要查询的插件列表。
                      * @return PluginIds 要查询的插件列表。
+                     * 
                      */
                     std::vector<std::string> GetPluginIds() const;
 
                     /**
                      * 设置要查询的插件列表。
-                     * @param PluginIds 要查询的插件列表。
+                     * @param _pluginIds 要查询的插件列表。
+                     * 
                      */
                     void SetPluginIds(const std::vector<std::string>& _pluginIds);
 
                     /**
                      * 判断参数 PluginIds 是否已赋值
                      * @return PluginIds 是否已赋值
+                     * 
                      */
                     bool PluginIdsHasBeenSet() const;
 
                     /**
                      * 获取要查询的插件名称。
                      * @return PluginName 要查询的插件名称。
+                     * 
                      */
                     std::string GetPluginName() const;
 
                     /**
                      * 设置要查询的插件名称。
-                     * @param PluginName 要查询的插件名称。
+                     * @param _pluginName 要查询的插件名称。
+                     * 
                      */
                     void SetPluginName(const std::string& _pluginName);
 
                     /**
                      * 判断参数 PluginName 是否已赋值
                      * @return PluginName 是否已赋值
+                     * 
                      */
                     bool PluginNameHasBeenSet() const;
 
                     /**
                      * 获取要查询的插件类型。
                      * @return PluginType 要查询的插件类型。
+                     * 
                      */
                     std::string GetPluginType() const;
 
                     /**
                      * 设置要查询的插件类型。
-                     * @param PluginType 要查询的插件类型。
+                     * @param _pluginType 要查询的插件类型。
+                     * 
                      */
                     void SetPluginType(const std::string& _pluginType);
 
                     /**
                      * 判断参数 PluginType 是否已赋值
                      * @return PluginType 是否已赋值
+                     * 
                      */
                     bool PluginTypeHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件。预留字段，目前不支持过滤。
                      * @return Filters 过滤条件。预留字段，目前不支持过滤。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。预留字段，目前不支持过滤。
-                     * @param Filters 过滤条件。预留字段，目前不支持过滤。
+                     * @param _filters 过滤条件。预留字段，目前不支持过滤。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

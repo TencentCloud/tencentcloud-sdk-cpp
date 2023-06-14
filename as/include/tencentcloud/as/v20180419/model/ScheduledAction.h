@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取定时任务ID。
                      * @return ScheduledActionId 定时任务ID。
+                     * 
                      */
                     std::string GetScheduledActionId() const;
 
                     /**
                      * 设置定时任务ID。
-                     * @param ScheduledActionId 定时任务ID。
+                     * @param _scheduledActionId 定时任务ID。
+                     * 
                      */
                     void SetScheduledActionId(const std::string& _scheduledActionId);
 
                     /**
                      * 判断参数 ScheduledActionId 是否已赋值
                      * @return ScheduledActionId 是否已赋值
+                     * 
                      */
                     bool ScheduledActionIdHasBeenSet() const;
 
                     /**
                      * 获取定时任务名称。
                      * @return ScheduledActionName 定时任务名称。
+                     * 
                      */
                     std::string GetScheduledActionName() const;
 
                     /**
                      * 设置定时任务名称。
-                     * @param ScheduledActionName 定时任务名称。
+                     * @param _scheduledActionName 定时任务名称。
+                     * 
                      */
                     void SetScheduledActionName(const std::string& _scheduledActionName);
 
                     /**
                      * 判断参数 ScheduledActionName 是否已赋值
                      * @return ScheduledActionName 是否已赋值
+                     * 
                      */
                     bool ScheduledActionNameHasBeenSet() const;
 
                     /**
                      * 获取定时任务所在伸缩组ID。
                      * @return AutoScalingGroupId 定时任务所在伸缩组ID。
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置定时任务所在伸缩组ID。
-                     * @param AutoScalingGroupId 定时任务所在伸缩组ID。
+                     * @param _autoScalingGroupId 定时任务所在伸缩组ID。
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
                      * @return StartTime 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-                     * @param StartTime 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * @param _startTime 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取定时任务的重复方式。
                      * @return Recurrence 定时任务的重复方式。
+                     * 
                      */
                     std::string GetRecurrence() const;
 
                     /**
                      * 设置定时任务的重复方式。
-                     * @param Recurrence 定时任务的重复方式。
+                     * @param _recurrence 定时任务的重复方式。
+                     * 
                      */
                     void SetRecurrence(const std::string& _recurrence);
 
                     /**
                      * 判断参数 Recurrence 是否已赋值
                      * @return Recurrence 是否已赋值
+                     * 
                      */
                     bool RecurrenceHasBeenSet() const;
 
                     /**
                      * 获取定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
                      * @return EndTime 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-                     * @param EndTime 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * @param _endTime 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取定时任务设置的最大实例数。
                      * @return MaxSize 定时任务设置的最大实例数。
+                     * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
                      * 设置定时任务设置的最大实例数。
-                     * @param MaxSize 定时任务设置的最大实例数。
+                     * @param _maxSize 定时任务设置的最大实例数。
+                     * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取定时任务设置的期望实例数。
                      * @return DesiredCapacity 定时任务设置的期望实例数。
+                     * 
                      */
                     uint64_t GetDesiredCapacity() const;
 
                     /**
                      * 设置定时任务设置的期望实例数。
-                     * @param DesiredCapacity 定时任务设置的期望实例数。
+                     * @param _desiredCapacity 定时任务设置的期望实例数。
+                     * 
                      */
                     void SetDesiredCapacity(const uint64_t& _desiredCapacity);
 
                     /**
                      * 判断参数 DesiredCapacity 是否已赋值
                      * @return DesiredCapacity 是否已赋值
+                     * 
                      */
                     bool DesiredCapacityHasBeenSet() const;
 
                     /**
                      * 获取定时任务设置的最小实例数。
                      * @return MinSize 定时任务设置的最小实例数。
+                     * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
                      * 设置定时任务设置的最小实例数。
-                     * @param MinSize 定时任务设置的最小实例数。
+                     * @param _minSize 定时任务设置的最小实例数。
+                     * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
                     /**
                      * 获取定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
                      * @return CreatedTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param CreatedTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _createdTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
                      * @return ScheduledType 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * 
                      */
                     std::string GetScheduledType() const;
 
                     /**
                      * 设置定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
-                     * @param ScheduledType 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * @param _scheduledType 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * 
                      */
                     void SetScheduledType(const std::string& _scheduledType);
 
                     /**
                      * 判断参数 ScheduledType 是否已赋值
                      * @return ScheduledType 是否已赋值
+                     * 
                      */
                     bool ScheduledTypeHasBeenSet() const;
 

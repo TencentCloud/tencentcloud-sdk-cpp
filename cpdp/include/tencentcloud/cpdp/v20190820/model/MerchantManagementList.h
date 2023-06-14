@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取企业名称。
                      * @return TaxpayerName 企业名称。
+                     * 
                      */
                     std::string GetTaxpayerName() const;
 
                     /**
                      * 设置企业名称。
-                     * @param TaxpayerName 企业名称。
+                     * @param _taxpayerName 企业名称。
+                     * 
                      */
                     void SetTaxpayerName(const std::string& _taxpayerName);
 
                     /**
                      * 判断参数 TaxpayerName 是否已赋值
                      * @return TaxpayerName 是否已赋值
+                     * 
                      */
                     bool TaxpayerNameHasBeenSet() const;
 
                     /**
                      * 获取纳税人识别号(税号)	。
                      * @return TaxpayerNum 纳税人识别号(税号)	。
+                     * 
                      */
                     std::string GetTaxpayerNum() const;
 
                     /**
                      * 设置纳税人识别号(税号)	。
-                     * @param TaxpayerNum 纳税人识别号(税号)	。
+                     * @param _taxpayerNum 纳税人识别号(税号)	。
+                     * 
                      */
                     void SetTaxpayerNum(const std::string& _taxpayerNum);
 
                     /**
                      * 判断参数 TaxpayerNum 是否已赋值
                      * @return TaxpayerNum 是否已赋值
+                     * 
                      */
                     bool TaxpayerNumHasBeenSet() const;
 
                     /**
                      * 获取请求流水号。
                      * @return SerialNo 请求流水号。
+                     * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
                      * 设置请求流水号。
-                     * @param SerialNo 请求流水号。
+                     * @param _serialNo 请求流水号。
+                     * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
 
                     /**
                      * 判断参数 SerialNo 是否已赋值
                      * @return SerialNo 是否已赋值
+                     * 
                      */
                     bool SerialNoHasBeenSet() const;
 
                     /**
                      * 获取开票系统ID
                      * @return InvoicePlatformId 开票系统ID
+                     * 
                      */
                     int64_t GetInvoicePlatformId() const;
 
                     /**
                      * 设置开票系统ID
-                     * @param InvoicePlatformId 开票系统ID
+                     * @param _invoicePlatformId 开票系统ID
+                     * 
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
                     /**
                      * 判断参数 InvoicePlatformId 是否已赋值
                      * @return InvoicePlatformId 是否已赋值
+                     * 
                      */
                     bool InvoicePlatformIdHasBeenSet() const;
 

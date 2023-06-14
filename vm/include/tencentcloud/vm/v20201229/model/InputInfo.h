@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
+                     * @param _type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
+                     * @param _url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucketInfo() const;
 
                     /**
                      * 设置该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * @param _bucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucketInfo(const std::string& _bucketInfo);
 
                     /**
                      * 判断参数 BucketInfo 是否已赋值
                      * @return BucketInfo 是否已赋值
+                     * 
                      */
                     bool BucketInfoHasBeenSet() const;
 

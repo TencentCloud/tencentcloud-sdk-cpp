@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitNodeScriptSet 节点初始化脚本列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeScript> GetInitNodeScriptSet() const;
 
                     /**
                      * 判断参数 InitNodeScriptSet 是否已赋值
                      * @return InitNodeScriptSet 是否已赋值
+                     * 
                      */
                     bool InitNodeScriptSetHasBeenSet() const;
 

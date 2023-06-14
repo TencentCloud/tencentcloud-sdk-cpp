@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境Id
-                     * @param EnvId 环境Id
+                     * @param _envId 环境Id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名
                      * @return ServerName 服务名
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置服务名
-                     * @param ServerName 服务名
+                     * @param _serverName 服务名
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取部署信息
                      * @return DeployInfo 部署信息
+                     * 
                      */
                     DeployParam GetDeployInfo() const;
 
                     /**
                      * 设置部署信息
-                     * @param DeployInfo 部署信息
+                     * @param _deployInfo 部署信息
+                     * 
                      */
                     void SetDeployInfo(const DeployParam& _deployInfo);
 
                     /**
                      * 判断参数 DeployInfo 是否已赋值
                      * @return DeployInfo 是否已赋值
+                     * 
                      */
                     bool DeployInfoHasBeenSet() const;
 
                     /**
                      * 获取服务配置信息
                      * @return ServerConfig 服务配置信息
+                     * 
                      */
                     ServerBaseConfig GetServerConfig() const;
 
                     /**
                      * 设置服务配置信息
-                     * @param ServerConfig 服务配置信息
+                     * @param _serverConfig 服务配置信息
+                     * 
                      */
                     void SetServerConfig(const ServerBaseConfig& _serverConfig);
 
                     /**
                      * 判断参数 ServerConfig 是否已赋值
                      * @return ServerConfig 是否已赋值
+                     * 
                      */
                     bool ServerConfigHasBeenSet() const;
 

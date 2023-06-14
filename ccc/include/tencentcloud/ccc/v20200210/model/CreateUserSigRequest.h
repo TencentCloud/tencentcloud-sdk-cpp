@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户 ID
                      * @return Uid 用户 ID
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 设置用户 ID
-                     * @param Uid 用户 ID
+                     * @param _uid 用户 ID
+                     * 
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
                     /**
                      * 获取有效期，单位秒，不超过 1 小时
                      * @return ExpiredTime 有效期，单位秒，不超过 1 小时
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 设置有效期，单位秒，不超过 1 小时
-                     * @param ExpiredTime 有效期，单位秒，不超过 1 小时
+                     * @param _expiredTime 有效期，单位秒，不超过 1 小时
+                     * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取用户签名数据
                      * @return ClientData 用户签名数据
+                     * 
                      */
                     std::string GetClientData() const;
 
                     /**
                      * 设置用户签名数据
-                     * @param ClientData 用户签名数据
+                     * @param _clientData 用户签名数据
+                     * 
                      */
                     void SetClientData(const std::string& _clientData);
 
                     /**
                      * 判断参数 ClientData 是否已赋值
                      * @return ClientData 是否已赋值
+                     * 
                      */
                     bool ClientDataHasBeenSet() const;
 

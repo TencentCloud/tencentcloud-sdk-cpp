@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取EIP查询任务ID
                      * @return TaskId EIP查询任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置EIP查询任务ID
-                     * @param TaskId EIP查询任务ID
+                     * @param _taskId EIP查询任务ID
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

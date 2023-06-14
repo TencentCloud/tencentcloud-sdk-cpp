@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取购买服务后获得的授权帐号，用于保证请求有效性
                      * @return Pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * 
                      */
                     std::string GetPk() const;
 
                     /**
                      * 设置购买服务后获得的授权帐号，用于保证请求有效性
-                     * @param Pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * @param _pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * 
                      */
                     void SetPk(const std::string& _pk);
 
                     /**
                      * 判断参数 Pk 是否已赋值
                      * @return Pk 是否已赋值
+                     * 
                      */
                     bool PkHasBeenSet() const;
 
                     /**
                      * 获取样本md5，用于对下载获得的样本完整性进行校验
                      * @return Md5 样本md5，用于对下载获得的样本完整性进行校验
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置样本md5，用于对下载获得的样本完整性进行校验
-                     * @param Md5 样本md5，用于对下载获得的样本完整性进行校验
+                     * @param _md5 样本md5，用于对下载获得的样本完整性进行校验
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 
                     /**
                      * 获取待分析样本下载地址
                      * @return DlUrl 待分析样本下载地址
+                     * 
                      */
                     std::string GetDlUrl() const;
 
                     /**
                      * 设置待分析样本下载地址
-                     * @param DlUrl 待分析样本下载地址
+                     * @param _dlUrl 待分析样本下载地址
+                     * 
                      */
                     void SetDlUrl(const std::string& _dlUrl);
 
                     /**
                      * 判断参数 DlUrl 是否已赋值
                      * @return DlUrl 是否已赋值
+                     * 
                      */
                     bool DlUrlHasBeenSet() const;
 

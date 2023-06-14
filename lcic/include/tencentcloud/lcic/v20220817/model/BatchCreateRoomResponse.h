@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建成功课堂ID，与传入课堂信息顺序一致
                      * @return RoomIds 创建成功课堂ID，与传入课堂信息顺序一致
+                     * 
                      */
                     std::vector<uint64_t> GetRoomIds() const;
 
                     /**
                      * 判断参数 RoomIds 是否已赋值
                      * @return RoomIds 是否已赋值
+                     * 
                      */
                     bool RoomIdsHasBeenSet() const;
 

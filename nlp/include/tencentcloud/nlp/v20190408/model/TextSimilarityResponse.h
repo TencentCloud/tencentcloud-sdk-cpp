@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取每个目标句子与源句子的相似度分值，按照分值降序排列
                      * @return Similarity 每个目标句子与源句子的相似度分值，按照分值降序排列
+                     * 
                      */
                     std::vector<Similarity> GetSimilarity() const;
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 

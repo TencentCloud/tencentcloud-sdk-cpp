@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cache 缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheConfigCache GetCache() const;
 
                     /**
                      * 设置缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cache 缓存配置
+                     * @param _cache 缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCache(const CacheConfigCache& _cache);
 
                     /**
                      * 判断参数 Cache 是否已赋值
                      * @return Cache 是否已赋值
+                     * 
                      */
                     bool CacheHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoCache 不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheConfigNoCache GetNoCache() const;
 
                     /**
                      * 设置不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoCache 不缓存配置
+                     * @param _noCache 不缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoCache(const CacheConfigNoCache& _noCache);
 
                     /**
                      * 判断参数 NoCache 是否已赋值
                      * @return NoCache 是否已赋值
+                     * 
                      */
                     bool NoCacheHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowOrigin 遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheConfigFollowOrigin GetFollowOrigin() const;
 
                     /**
                      * 设置遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowOrigin 遵循源站配置
+                     * @param _followOrigin 遵循源站配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFollowOrigin(const CacheConfigFollowOrigin& _followOrigin);
 
                     /**
                      * 判断参数 FollowOrigin 是否已赋值
                      * @return FollowOrigin 是否已赋值
+                     * 
                      */
                     bool FollowOriginHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取镜像id数组，为空代表全部
                      * @return ImageIds 镜像id数组，为空代表全部
+                     * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置镜像id数组，为空代表全部
-                     * @param ImageIds 镜像id数组，为空代表全部
+                     * @param _imageIds 镜像id数组，为空代表全部
+                     * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
                     /**
                      * 判断参数 ImageIds 是否已赋值
                      * @return ImageIds 是否已赋值
+                     * 
                      */
                     bool ImageIdsHasBeenSet() const;
 
                     /**
                      * 获取系统调用名称，通过DescribeRiskSyscallNames接口获取枚举列表
                      * @return SyscallNames 系统调用名称，通过DescribeRiskSyscallNames接口获取枚举列表
+                     * 
                      */
                     std::vector<std::string> GetSyscallNames() const;
 
                     /**
                      * 设置系统调用名称，通过DescribeRiskSyscallNames接口获取枚举列表
-                     * @param SyscallNames 系统调用名称，通过DescribeRiskSyscallNames接口获取枚举列表
+                     * @param _syscallNames 系统调用名称，通过DescribeRiskSyscallNames接口获取枚举列表
+                     * 
                      */
                     void SetSyscallNames(const std::vector<std::string>& _syscallNames);
 
                     /**
                      * 判断参数 SyscallNames 是否已赋值
                      * @return SyscallNames 是否已赋值
+                     * 
                      */
                     bool SyscallNamesHasBeenSet() const;
 
                     /**
                      * 获取目标进程
                      * @return ProcessPath 目标进程
+                     * 
                      */
                     std::string GetProcessPath() const;
 
                     /**
                      * 设置目标进程
-                     * @param ProcessPath 目标进程
+                     * @param _processPath 目标进程
+                     * 
                      */
                     void SetProcessPath(const std::string& _processPath);
 
                     /**
                      * 判断参数 ProcessPath 是否已赋值
                      * @return ProcessPath 是否已赋值
+                     * 
                      */
                     bool ProcessPathHasBeenSet() const;
 
                     /**
                      * 获取白名单id，如果新建则id为空
                      * @return Id 白名单id，如果新建则id为空
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置白名单id，如果新建则id为空
-                     * @param Id 白名单id，如果新建则id为空
+                     * @param _id 白名单id，如果新建则id为空
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

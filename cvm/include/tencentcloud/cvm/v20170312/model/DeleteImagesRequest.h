@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取准备删除的镜像Id列表
                      * @return ImageIds 准备删除的镜像Id列表
+                     * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置准备删除的镜像Id列表
-                     * @param ImageIds 准备删除的镜像Id列表
+                     * @param _imageIds 准备删除的镜像Id列表
+                     * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
                     /**
                      * 判断参数 ImageIds 是否已赋值
                      * @return ImageIds 是否已赋值
+                     * 
                      */
                     bool ImageIdsHasBeenSet() const;
 
                     /**
                      * 获取是否删除镜像关联的快照
                      * @return DeleteBindedSnap 是否删除镜像关联的快照
+                     * 
                      */
                     bool GetDeleteBindedSnap() const;
 
                     /**
                      * 设置是否删除镜像关联的快照
-                     * @param DeleteBindedSnap 是否删除镜像关联的快照
+                     * @param _deleteBindedSnap 是否删除镜像关联的快照
+                     * 
                      */
                     void SetDeleteBindedSnap(const bool& _deleteBindedSnap);
 
                     /**
                      * 判断参数 DeleteBindedSnap 是否已赋值
                      * @return DeleteBindedSnap 是否已赋值
+                     * 
                      */
                     bool DeleteBindedSnapHasBeenSet() const;
 
                     /**
                      * 获取检测是否支持删除镜像
                      * @return DryRun 检测是否支持删除镜像
+                     * 
                      */
                     bool GetDryRun() const;
 
                     /**
                      * 设置检测是否支持删除镜像
-                     * @param DryRun 检测是否支持删除镜像
+                     * @param _dryRun 检测是否支持删除镜像
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 

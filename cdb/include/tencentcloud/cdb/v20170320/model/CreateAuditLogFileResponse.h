@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取审计日志文件名称。
                      * @return FileName 审计日志文件名称。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取SAML身份提供商名称
                      * @return Name SAML身份提供商名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置SAML身份提供商名称
-                     * @param Name SAML身份提供商名称
+                     * @param _name SAML身份提供商名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取SAML身份提供商描述
                      * @return Description SAML身份提供商描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置SAML身份提供商描述
-                     * @param Description SAML身份提供商描述
+                     * @param _description SAML身份提供商描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取SAML身份提供商Base64编码的元数据文档
                      * @return SAMLMetadataDocument SAML身份提供商Base64编码的元数据文档
+                     * 
                      */
                     std::string GetSAMLMetadataDocument() const;
 
                     /**
                      * 设置SAML身份提供商Base64编码的元数据文档
-                     * @param SAMLMetadataDocument SAML身份提供商Base64编码的元数据文档
+                     * @param _sAMLMetadataDocument SAML身份提供商Base64编码的元数据文档
+                     * 
                      */
                     void SetSAMLMetadataDocument(const std::string& _sAMLMetadataDocument);
 
                     /**
                      * 判断参数 SAMLMetadataDocument 是否已赋值
                      * @return SAMLMetadataDocument 是否已赋值
+                     * 
                      */
                     bool SAMLMetadataDocumentHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因
+                     * @param _failReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 

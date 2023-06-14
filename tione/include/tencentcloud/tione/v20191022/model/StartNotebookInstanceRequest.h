@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取Notebook实例名称
                      * @return NotebookInstanceName Notebook实例名称
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 设置Notebook实例名称
-                     * @param NotebookInstanceName Notebook实例名称
+                     * @param _notebookInstanceName Notebook实例名称
+                     * 
                      */
                     void SetNotebookInstanceName(const std::string& _notebookInstanceName);
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return AutoStopping 自动停止，可取值Enabled/Disabled
 取值为Disabled的时候StoppingCondition将被忽略
 取值为Enabled的时候读取StoppingCondition作为自动停止的配置
+                     * 
                      */
                     std::string GetAutoStopping() const;
 
@@ -75,33 +79,38 @@ namespace TencentCloud
                      * 设置自动停止，可取值Enabled/Disabled
 取值为Disabled的时候StoppingCondition将被忽略
 取值为Enabled的时候读取StoppingCondition作为自动停止的配置
-                     * @param AutoStopping 自动停止，可取值Enabled/Disabled
+                     * @param _autoStopping 自动停止，可取值Enabled/Disabled
 取值为Disabled的时候StoppingCondition将被忽略
 取值为Enabled的时候读取StoppingCondition作为自动停止的配置
+                     * 
                      */
                     void SetAutoStopping(const std::string& _autoStopping);
 
                     /**
                      * 判断参数 AutoStopping 是否已赋值
                      * @return AutoStopping 是否已赋值
+                     * 
                      */
                     bool AutoStoppingHasBeenSet() const;
 
                     /**
                      * 获取自动停止配置，只在AutoStopping为Enabled的时候生效
                      * @return StoppingCondition 自动停止配置，只在AutoStopping为Enabled的时候生效
+                     * 
                      */
                     StoppingCondition GetStoppingCondition() const;
 
                     /**
                      * 设置自动停止配置，只在AutoStopping为Enabled的时候生效
-                     * @param StoppingCondition 自动停止配置，只在AutoStopping为Enabled的时候生效
+                     * @param _stoppingCondition 自动停止配置，只在AutoStopping为Enabled的时候生效
+                     * 
                      */
                     void SetStoppingCondition(const StoppingCondition& _stoppingCondition);
 
                     /**
                      * 判断参数 StoppingCondition 是否已赋值
                      * @return StoppingCondition 是否已赋值
+                     * 
                      */
                     bool StoppingConditionHasBeenSet() const;
 

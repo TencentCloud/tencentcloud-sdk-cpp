@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取API分组信息列表
                      * @return Result API分组信息列表
+                     * 
                      */
                     TsfPageApiGroupInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

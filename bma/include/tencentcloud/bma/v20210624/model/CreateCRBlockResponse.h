@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取侵权ID
                      * @return TortId 侵权ID
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取该字段已废弃
                      * @return TortNum 该字段已废弃
+                     * 
                      */
                     std::string GetTortNum() const;
 
                     /**
                      * 判断参数 TortNum 是否已赋值
                      * @return TortNum 是否已赋值
+                     * 
                      */
                     bool TortNumHasBeenSet() const;
 

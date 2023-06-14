@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取地域描述
                      * @return CmqRegionName 地域描述
+                     * 
                      */
                     std::string GetCmqRegionName() const;
 
                     /**
                      * 设置地域描述
-                     * @param CmqRegionName 地域描述
+                     * @param _cmqRegionName 地域描述
+                     * 
                      */
                     void SetCmqRegionName(const std::string& _cmqRegionName);
 
                     /**
                      * 判断参数 CmqRegionName 是否已赋值
                      * @return CmqRegionName 是否已赋值
+                     * 
                      */
                     bool CmqRegionNameHasBeenSet() const;
 
                     /**
                      * 获取cmq地域
                      * @return CmqRegion cmq地域
+                     * 
                      */
                     std::string GetCmqRegion() const;
 
                     /**
                      * 设置cmq地域
-                     * @param CmqRegion cmq地域
+                     * @param _cmqRegion cmq地域
+                     * 
                      */
                     void SetCmqRegion(const std::string& _cmqRegion);
 
                     /**
                      * 判断参数 CmqRegion 是否已赋值
                      * @return CmqRegion 是否已赋值
+                     * 
                      */
                     bool CmqRegionHasBeenSet() const;
 

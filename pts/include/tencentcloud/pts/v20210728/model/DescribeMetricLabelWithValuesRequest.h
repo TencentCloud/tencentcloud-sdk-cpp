@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取job id
                      * @return JobId job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置job id
-                     * @param JobId job id
+                     * @param _jobId job id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取project id
                      * @return ProjectId project id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置project id
-                     * @param ProjectId project id
+                     * @param _projectId project id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取scenario id
                      * @return ScenarioId scenario id
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置scenario id
-                     * @param ScenarioId scenario id
+                     * @param _scenarioId scenario id
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取DDoS统计数据数组
                      * @return Data DDoS统计数据数组
+                     * 
                      */
                     std::vector<DDoSStatsData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -68,24 +70,28 @@ min：1 分钟粒度
 5min：5 分钟粒度
 hour：1 小时粒度
 day：天粒度
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取DDoS统计攻击带宽峰值数组
                      * @return AttackBandwidthData DDoS统计攻击带宽峰值数组
+                     * 
                      */
                     std::vector<DDoSAttackBandwidthData> GetAttackBandwidthData() const;
 
                     /**
                      * 判断参数 AttackBandwidthData 是否已赋值
                      * @return AttackBandwidthData 是否已赋值
+                     * 
                      */
                     bool AttackBandwidthDataHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取宽
                      * @return Wide 宽
+                     * 
                      */
                     int64_t GetWide() const;
 
                     /**
                      * 设置宽
-                     * @param Wide 宽
+                     * @param _wide 宽
+                     * 
                      */
                     void SetWide(const int64_t& _wide);
 
                     /**
                      * 判断参数 Wide 是否已赋值
                      * @return Wide 是否已赋值
+                     * 
                      */
                     bool WideHasBeenSet() const;
 
                     /**
                      * 获取高
                      * @return High 高
+                     * 
                      */
                     int64_t GetHigh() const;
 
                     /**
                      * 设置高
-                     * @param High 高
+                     * @param _high 高
+                     * 
                      */
                     void SetHigh(const int64_t& _high);
 
                     /**
                      * 判断参数 High 是否已赋值
                      * @return High 是否已赋值
+                     * 
                      */
                     bool HighHasBeenSet() const;
 

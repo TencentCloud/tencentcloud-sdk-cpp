@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取音频流的流id。
                      * @return Stream 音频流的流id。
+                     * 
                      */
                     int64_t GetStream() const;
 
                     /**
                      * 设置音频流的流id。
-                     * @param Stream 音频流的流id。
+                     * @param _stream 音频流的流id。
+                     * 
                      */
                     void SetStream(const int64_t& _stream);
 
                     /**
                      * 判断参数 Stream 是否已赋值
                      * @return Stream 是否已赋值
+                     * 
                      */
                     bool StreamHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sample 音频采样率 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSample() const;
 
                     /**
                      * 设置音频采样率 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sample 音频采样率 。
+                     * @param _sample 音频采样率 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSample(const int64_t& _sample);
 
                     /**
                      * 判断参数 Sample 是否已赋值
                      * @return Sample 是否已赋值
+                     * 
                      */
                     bool SampleHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChannel() const;
 
                     /**
                      * 设置音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Channel 音频声道数。
+                     * @param _channel 音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannel(const int64_t& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 编码格式，如aac, mp3等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置编码格式，如aac, mp3等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Codec 编码格式，如aac, mp3等。
+                     * @param _codec 编码格式，如aac, mp3等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bitrate 码率，单位：bps。
+                     * @param _bitrate 码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 音频时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置音频时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 音频时长，单位：ms。
+                     * @param _duration 音频时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

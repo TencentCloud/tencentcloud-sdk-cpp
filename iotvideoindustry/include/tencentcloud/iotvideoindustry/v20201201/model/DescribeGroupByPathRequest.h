@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取分组路径，格式为/aaa(/bbb/ccc)
                      * @return GroupPath 分组路径，格式为/aaa(/bbb/ccc)
+                     * 
                      */
                     std::string GetGroupPath() const;
 
                     /**
                      * 设置分组路径，格式为/aaa(/bbb/ccc)
-                     * @param GroupPath 分组路径，格式为/aaa(/bbb/ccc)
+                     * @param _groupPath 分组路径，格式为/aaa(/bbb/ccc)
+                     * 
                      */
                     void SetGroupPath(const std::string& _groupPath);
 
                     /**
                      * 判断参数 GroupPath 是否已赋值
                      * @return GroupPath 是否已赋值
+                     * 
                      */
                     bool GroupPathHasBeenSet() const;
 

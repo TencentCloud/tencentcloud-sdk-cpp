@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePlanId 使用计划唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsagePlanId() const;
 
                     /**
                      * 设置使用计划唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsagePlanId 使用计划唯一 ID。
+                     * @param _usagePlanId 使用计划唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsagePlanId(const std::string& _usagePlanId);
 
                     /**
                      * 判断参数 UsagePlanId 是否已赋值
                      * @return UsagePlanId 是否已赋值
+                     * 
                      */
                     bool UsagePlanIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePlanName 使用计划名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsagePlanName() const;
 
                     /**
                      * 设置使用计划名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsagePlanName 使用计划名称。
+                     * @param _usagePlanName 使用计划名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsagePlanName(const std::string& _usagePlanName);
 
                     /**
                      * 判断参数 UsagePlanName 是否已赋值
                      * @return UsagePlanName 是否已赋值
+                     * 
                      */
                     bool UsagePlanNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePlanDesc 使用计划描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsagePlanDesc() const;
 
                     /**
                      * 设置使用计划描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsagePlanDesc 使用计划描述。
+                     * @param _usagePlanDesc 使用计划描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsagePlanDesc(const std::string& _usagePlanDesc);
 
                     /**
                      * 判断参数 UsagePlanDesc 是否已赋值
                      * @return UsagePlanDesc 是否已赋值
+                     * 
                      */
                     bool UsagePlanDescHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestNumPreSec 每秒请求限制数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxRequestNumPreSec() const;
 
                     /**
                      * 设置每秒请求限制数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxRequestNumPreSec 每秒请求限制数。
+                     * @param _maxRequestNumPreSec 每秒请求限制数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxRequestNumPreSec(const int64_t& _maxRequestNumPreSec);
 
                     /**
                      * 判断参数 MaxRequestNumPreSec 是否已赋值
                      * @return MaxRequestNumPreSec 是否已赋值
+                     * 
                      */
                     bool MaxRequestNumPreSecHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestNum 最大调用次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxRequestNum() const;
 
                     /**
                      * 设置最大调用次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxRequestNum 最大调用次数。
+                     * @param _maxRequestNum 最大调用次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxRequestNum(const int64_t& _maxRequestNum);
 
                     /**
                      * 判断参数 MaxRequestNum 是否已赋值
                      * @return MaxRequestNum 是否已赋值
+                     * 
                      */
                     bool MaxRequestNumHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _modifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindSecretIdTotalCount 绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBindSecretIdTotalCount() const;
 
                     /**
                      * 设置绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindSecretIdTotalCount 绑定密钥的数量。
+                     * @param _bindSecretIdTotalCount 绑定密钥的数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindSecretIdTotalCount(const int64_t& _bindSecretIdTotalCount);
 
                     /**
                      * 判断参数 BindSecretIdTotalCount 是否已赋值
                      * @return BindSecretIdTotalCount 是否已赋值
+                     * 
                      */
                     bool BindSecretIdTotalCountHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindSecretIds 绑定密钥的详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBindSecretIds() const;
 
                     /**
                      * 设置绑定密钥的详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindSecretIds 绑定密钥的详情。
+                     * @param _bindSecretIds 绑定密钥的详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindSecretIds(const std::vector<std::string>& _bindSecretIds);
 
                     /**
                      * 判断参数 BindSecretIds 是否已赋值
                      * @return BindSecretIds 是否已赋值
+                     * 
                      */
                     bool BindSecretIdsHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindEnvironmentTotalCount 绑定环境数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBindEnvironmentTotalCount() const;
 
                     /**
                      * 设置绑定环境数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindEnvironmentTotalCount 绑定环境数量。
+                     * @param _bindEnvironmentTotalCount 绑定环境数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindEnvironmentTotalCount(const int64_t& _bindEnvironmentTotalCount);
 
                     /**
                      * 判断参数 BindEnvironmentTotalCount 是否已赋值
                      * @return BindEnvironmentTotalCount 是否已赋值
+                     * 
                      */
                     bool BindEnvironmentTotalCountHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindEnvironments 绑定环境详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsagePlanBindEnvironment> GetBindEnvironments() const;
 
                     /**
                      * 设置绑定环境详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindEnvironments 绑定环境详情。
+                     * @param _bindEnvironments 绑定环境详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindEnvironments(const std::vector<UsagePlanBindEnvironment>& _bindEnvironments);
 
                     /**
                      * 判断参数 BindEnvironments 是否已赋值
                      * @return BindEnvironments 是否已赋值
+                     * 
                      */
                     bool BindEnvironmentsHasBeenSet() const;
 

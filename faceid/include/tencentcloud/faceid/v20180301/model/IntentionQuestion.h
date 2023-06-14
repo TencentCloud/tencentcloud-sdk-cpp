@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取系统播报的问题文本，问题最大长度为150个字符。
                      * @return Question 系统播报的问题文本，问题最大长度为150个字符。
+                     * 
                      */
                     std::string GetQuestion() const;
 
                     /**
                      * 设置系统播报的问题文本，问题最大长度为150个字符。
-                     * @param Question 系统播报的问题文本，问题最大长度为150个字符。
+                     * @param _question 系统播报的问题文本，问题最大长度为150个字符。
+                     * 
                      */
                     void SetQuestion(const std::string& _question);
 
                     /**
                      * 判断参数 Question 是否已赋值
                      * @return Question 是否已赋值
+                     * 
                      */
                     bool QuestionHasBeenSet() const;
 
                     /**
                      * 获取用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。
                      * @return Answers 用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。
+                     * 
                      */
                     std::vector<std::string> GetAnswers() const;
 
                     /**
                      * 设置用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。
-                     * @param Answers 用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。
+                     * @param _answers 用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。
+                     * 
                      */
                     void SetAnswers(const std::vector<std::string>& _answers);
 
                     /**
                      * 判断参数 Answers 是否已赋值
                      * @return Answers 是否已赋值
+                     * 
                      */
                     bool AnswersHasBeenSet() const;
 

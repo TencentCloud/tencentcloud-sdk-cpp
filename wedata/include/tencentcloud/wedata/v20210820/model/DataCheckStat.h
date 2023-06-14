@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取表总数
                      * @return TableTotal 表总数
+                     * 
                      */
                     uint64_t GetTableTotal() const;
 
                     /**
                      * 设置表总数
-                     * @param TableTotal 表总数
+                     * @param _tableTotal 表总数
+                     * 
                      */
                     void SetTableTotal(const uint64_t& _tableTotal);
 
                     /**
                      * 判断参数 TableTotal 是否已赋值
                      * @return TableTotal 是否已赋值
+                     * 
                      */
                     bool TableTotalHasBeenSet() const;
 
                     /**
                      * 获取字段总数
                      * @return ColumnTotal 字段总数
+                     * 
                      */
                     uint64_t GetColumnTotal() const;
 
                     /**
                      * 设置字段总数
-                     * @param ColumnTotal 字段总数
+                     * @param _columnTotal 字段总数
+                     * 
                      */
                     void SetColumnTotal(const uint64_t& _columnTotal);
 
                     /**
                      * 判断参数 ColumnTotal 是否已赋值
                      * @return ColumnTotal 是否已赋值
+                     * 
                      */
                     bool ColumnTotalHasBeenSet() const;
 
                     /**
                      * 获取表配置检测数
                      * @return TableConfig 表配置检测数
+                     * 
                      */
                     uint64_t GetTableConfig() const;
 
                     /**
                      * 设置表配置检测数
-                     * @param TableConfig 表配置检测数
+                     * @param _tableConfig 表配置检测数
+                     * 
                      */
                     void SetTableConfig(const uint64_t& _tableConfig);
 
                     /**
                      * 判断参数 TableConfig 是否已赋值
                      * @return TableConfig 是否已赋值
+                     * 
                      */
                     bool TableConfigHasBeenSet() const;
 
                     /**
                      * 获取字段配置检测数
                      * @return ColumnConfig 字段配置检测数
+                     * 
                      */
                     uint64_t GetColumnConfig() const;
 
                     /**
                      * 设置字段配置检测数
-                     * @param ColumnConfig 字段配置检测数
+                     * @param _columnConfig 字段配置检测数
+                     * 
                      */
                     void SetColumnConfig(const uint64_t& _columnConfig);
 
                     /**
                      * 判断参数 ColumnConfig 是否已赋值
                      * @return ColumnConfig 是否已赋值
+                     * 
                      */
                     bool ColumnConfigHasBeenSet() const;
 
                     /**
                      * 获取表实际检测数
                      * @return TableExec 表实际检测数
+                     * 
                      */
                     uint64_t GetTableExec() const;
 
                     /**
                      * 设置表实际检测数
-                     * @param TableExec 表实际检测数
+                     * @param _tableExec 表实际检测数
+                     * 
                      */
                     void SetTableExec(const uint64_t& _tableExec);
 
                     /**
                      * 判断参数 TableExec 是否已赋值
                      * @return TableExec 是否已赋值
+                     * 
                      */
                     bool TableExecHasBeenSet() const;
 
                     /**
                      * 获取字段实际检测数
                      * @return ColumnExec 字段实际检测数
+                     * 
                      */
                     uint64_t GetColumnExec() const;
 
                     /**
                      * 设置字段实际检测数
-                     * @param ColumnExec 字段实际检测数
+                     * @param _columnExec 字段实际检测数
+                     * 
                      */
                     void SetColumnExec(const uint64_t& _columnExec);
 
                     /**
                      * 判断参数 ColumnExec 是否已赋值
                      * @return ColumnExec 是否已赋值
+                     * 
                      */
                     bool ColumnExecHasBeenSet() const;
 

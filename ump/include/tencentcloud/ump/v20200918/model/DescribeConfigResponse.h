@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取会话ID
                      * @return SessionId 会话ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取配置版本号
                      * @return Version 配置版本号
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取摄像头列表
                      * @return Cameras 摄像头列表
+                     * 
                      */
                     std::vector<CameraConfig> GetCameras() const;
 
                     /**
                      * 判断参数 Cameras 是否已赋值
                      * @return Cameras 是否已赋值
+                     * 
                      */
                     bool CamerasHasBeenSet() const;
 

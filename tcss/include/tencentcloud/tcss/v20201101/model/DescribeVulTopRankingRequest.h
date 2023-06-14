@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞分类: SYSTEM:系统漏洞 WEB:web应用漏洞 EMERGENCY:应急漏洞
                      * @return CategoryType 漏洞分类: SYSTEM:系统漏洞 WEB:web应用漏洞 EMERGENCY:应急漏洞
+                     * 
                      */
                     std::string GetCategoryType() const;
 
                     /**
                      * 设置漏洞分类: SYSTEM:系统漏洞 WEB:web应用漏洞 EMERGENCY:应急漏洞
-                     * @param CategoryType 漏洞分类: SYSTEM:系统漏洞 WEB:web应用漏洞 EMERGENCY:应急漏洞
+                     * @param _categoryType 漏洞分类: SYSTEM:系统漏洞 WEB:web应用漏洞 EMERGENCY:应急漏洞
+                     * 
                      */
                     void SetCategoryType(const std::string& _categoryType);
 
                     /**
                      * 判断参数 CategoryType 是否已赋值
                      * @return CategoryType 是否已赋值
+                     * 
                      */
                     bool CategoryTypeHasBeenSet() const;
 

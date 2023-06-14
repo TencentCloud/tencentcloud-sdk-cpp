@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取发信域名列表
                      * @return EmailIdentities 发信域名列表
+                     * 
                      */
                     std::vector<EmailIdentity> GetEmailIdentities() const;
 
                     /**
                      * 判断参数 EmailIdentities 是否已赋值
                      * @return EmailIdentities 是否已赋值
+                     * 
                      */
                     bool EmailIdentitiesHasBeenSet() const;
 
                     /**
                      * 获取最大信誉等级
                      * @return MaxReputationLevel 最大信誉等级
+                     * 
                      */
                     uint64_t GetMaxReputationLevel() const;
 
                     /**
                      * 判断参数 MaxReputationLevel 是否已赋值
                      * @return MaxReputationLevel 是否已赋值
+                     * 
                      */
                     bool MaxReputationLevelHasBeenSet() const;
 
                     /**
                      * 获取单域名最高日发送量
                      * @return MaxDailyQuota 单域名最高日发送量
+                     * 
                      */
                     uint64_t GetMaxDailyQuota() const;
 
                     /**
                      * 判断参数 MaxDailyQuota 是否已赋值
                      * @return MaxDailyQuota 是否已赋值
+                     * 
                      */
                     bool MaxDailyQuotaHasBeenSet() const;
 

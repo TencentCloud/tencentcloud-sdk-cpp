@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待更新的资源栈ID
                      * @return StackId 待更新的资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置待更新的资源栈ID
-                     * @param StackId 待更新的资源栈ID
+                     * @param _stackId 待更新的资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取资源栈名称，不得超过60个字符
                      * @return StackName 资源栈名称，不得超过60个字符
+                     * 
                      */
                     std::string GetStackName() const;
 
                     /**
                      * 设置资源栈名称，不得超过60个字符
-                     * @param StackName 资源栈名称，不得超过60个字符
+                     * @param _stackName 资源栈名称，不得超过60个字符
+                     * 
                      */
                     void SetStackName(const std::string& _stackName);
 
                     /**
                      * 判断参数 StackName 是否已赋值
                      * @return StackName 是否已赋值
+                     * 
                      */
                     bool StackNameHasBeenSet() const;
 
                     /**
                      * 获取资源栈描述，不得超过200个字符
                      * @return Description 资源栈描述，不得超过200个字符
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置资源栈描述，不得超过200个字符
-                     * @param Description 资源栈描述，不得超过200个字符
+                     * @param _description 资源栈描述，不得超过200个字符
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

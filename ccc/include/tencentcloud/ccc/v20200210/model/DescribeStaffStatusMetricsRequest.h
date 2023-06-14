@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取筛选坐席列表，默认不传返回全部坐席信息
                      * @return StaffList 筛选坐席列表，默认不传返回全部坐席信息
+                     * 
                      */
                     std::vector<std::string> GetStaffList() const;
 
                     /**
                      * 设置筛选坐席列表，默认不传返回全部坐席信息
-                     * @param StaffList 筛选坐席列表，默认不传返回全部坐席信息
+                     * @param _staffList 筛选坐席列表，默认不传返回全部坐席信息
+                     * 
                      */
                     void SetStaffList(const std::vector<std::string>& _staffList);
 
                     /**
                      * 判断参数 StaffList 是否已赋值
                      * @return StaffList 是否已赋值
+                     * 
                      */
                     bool StaffListHasBeenSet() const;
 
                     /**
                      * 获取筛选技能组ID列表
                      * @return GroupIdList 筛选技能组ID列表
+                     * 
                      */
                     std::vector<int64_t> GetGroupIdList() const;
 
                     /**
                      * 设置筛选技能组ID列表
-                     * @param GroupIdList 筛选技能组ID列表
+                     * @param _groupIdList 筛选技能组ID列表
+                     * 
                      */
                     void SetGroupIdList(const std::vector<int64_t>& _groupIdList);
 
                     /**
                      * 判断参数 GroupIdList 是否已赋值
                      * @return GroupIdList 是否已赋值
+                     * 
                      */
                     bool GroupIdListHasBeenSet() const;
 
                     /**
                      * 获取筛选坐席状态列表
                      * @return StatusList 筛选坐席状态列表
+                     * 
                      */
                     std::vector<std::string> GetStatusList() const;
 
                     /**
                      * 设置筛选坐席状态列表
-                     * @param StatusList 筛选坐席状态列表
+                     * @param _statusList 筛选坐席状态列表
+                     * 
                      */
                     void SetStatusList(const std::vector<std::string>& _statusList);
 
                     /**
                      * 判断参数 StatusList 是否已赋值
                      * @return StatusList 是否已赋值
+                     * 
                      */
                     bool StatusListHasBeenSet() const;
 

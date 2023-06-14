@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回订单数
                      * @return TotalNum 返回订单数
+                     * 
                      */
                     int64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取查询结果的订单列表
                      * @return OrderList 查询结果的订单列表
+                     * 
                      */
                     std::vector<QueryOrderOutOrderList> GetOrderList() const;
 
                     /**
                      * 判断参数 OrderList 是否已赋值
                      * @return OrderList 是否已赋值
+                     * 
                      */
                     bool OrderListHasBeenSet() const;
 

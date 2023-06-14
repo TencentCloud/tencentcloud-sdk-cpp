@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取UserQuota条目总数
                      * @return TotalCount UserQuota条目总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取UserQuota条目
                      * @return UserQuotaInfo UserQuota条目
+                     * 
                      */
                     std::vector<UserQuota> GetUserQuotaInfo() const;
 
                     /**
                      * 判断参数 UserQuotaInfo 是否已赋值
                      * @return UserQuotaInfo 是否已赋值
+                     * 
                      */
                     bool UserQuotaInfoHasBeenSet() const;
 

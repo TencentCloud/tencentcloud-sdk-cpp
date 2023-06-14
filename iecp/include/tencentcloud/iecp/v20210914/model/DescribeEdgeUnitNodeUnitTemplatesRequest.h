@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间，默认为default
                      * @return Namespace 命名空间，默认为default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，默认为default
-                     * @param Namespace 命名空间，默认为default
+                     * @param _namespace 命名空间，默认为default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取分页查询offset，默认为0
                      * @return Offset 分页查询offset，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页查询offset，默认为0
-                     * @param Offset 分页查询offset，默认为0
+                     * @param _offset 分页查询offset，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询limit，默认为20
                      * @return Limit 分页查询limit，默认为20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页查询limit，默认为20
-                     * @param Limit 分页查询limit，默认为20
+                     * @param _limit 分页查询limit，默认为20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取模糊匹配，精确匹配时失效
                      * @return NameFilter 模糊匹配，精确匹配时失效
+                     * 
                      */
                     std::string GetNameFilter() const;
 
                     /**
                      * 设置模糊匹配，精确匹配时失效
-                     * @param NameFilter 模糊匹配，精确匹配时失效
+                     * @param _nameFilter 模糊匹配，精确匹配时失效
+                     * 
                      */
                     void SetNameFilter(const std::string& _nameFilter);
 
                     /**
                      * 判断参数 NameFilter 是否已赋值
                      * @return NameFilter 是否已赋值
+                     * 
                      */
                     bool NameFilterHasBeenSet() const;
 
                     /**
                      * 获取精确匹配
                      * @return NameMatched 精确匹配
+                     * 
                      */
                     std::string GetNameMatched() const;
 
                     /**
                      * 设置精确匹配
-                     * @param NameMatched 精确匹配
+                     * @param _nameMatched 精确匹配
+                     * 
                      */
                     void SetNameMatched(const std::string& _nameMatched);
 
                     /**
                      * 判断参数 NameMatched 是否已赋值
                      * @return NameMatched 是否已赋值
+                     * 
                      */
                     bool NameMatchedHasBeenSet() const;
 
                     /**
                      * 获取按时间排序顺序，默认为DESC
                      * @return Order 按时间排序顺序，默认为DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置按时间排序顺序，默认为DESC
-                     * @param Order 按时间排序顺序，默认为DESC
+                     * @param _order 按时间排序顺序，默认为DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

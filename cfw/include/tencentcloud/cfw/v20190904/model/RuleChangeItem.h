@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取原始sequence 值
                      * @return OrderIndex 原始sequence 值
+                     * 
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
                      * 设置原始sequence 值
-                     * @param OrderIndex 原始sequence 值
+                     * @param _orderIndex 原始sequence 值
+                     * 
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
                     /**
                      * 获取新的sequence 值
                      * @return NewOrderIndex 新的sequence 值
+                     * 
                      */
                     int64_t GetNewOrderIndex() const;
 
                     /**
                      * 设置新的sequence 值
-                     * @param NewOrderIndex 新的sequence 值
+                     * @param _newOrderIndex 新的sequence 值
+                     * 
                      */
                     void SetNewOrderIndex(const int64_t& _newOrderIndex);
 
                     /**
                      * 判断参数 NewOrderIndex 是否已赋值
                      * @return NewOrderIndex 是否已赋值
+                     * 
                      */
                     bool NewOrderIndexHasBeenSet() const;
 

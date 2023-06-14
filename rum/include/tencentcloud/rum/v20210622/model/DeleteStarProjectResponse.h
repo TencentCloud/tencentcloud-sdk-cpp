@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg 返回消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

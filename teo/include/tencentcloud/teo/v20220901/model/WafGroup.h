@@ -55,6 +55,7 @@ namespace TencentCloud
 <li> block：阻断；</li>
 <li> observe：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li> block：阻断；</li>
 <li> observe：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 执行动作，取值有：
+                     * @param _action 执行动作，取值有：
 <li> block：阻断；</li>
 <li> observe：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -91,6 +94,7 @@ namespace TencentCloud
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevel() const;
 
@@ -102,19 +106,21 @@ namespace TencentCloud
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 防护级别，取值有：
+                     * @param _level 防护级别，取值有：
 <li> loose：宽松；</li>
 <li> normal：正常；</li>
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -123,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeId 规则类型id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTypeId() const;
 
                     /**
                      * 设置规则类型id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeId 规则类型id。
+                     * @param _typeId 规则类型id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeId(const int64_t& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 

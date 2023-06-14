@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取房间Id。
                      * @return RoomId 房间Id。
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 设置房间Id。
-                     * @param RoomId 房间Id。
+                     * @param _roomId 房间Id。
+                     * 
                      */
                     void SetRoomId(const int64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
 
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

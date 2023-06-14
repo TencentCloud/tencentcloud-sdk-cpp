@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取物联卡应用ID
                      * @return Sdkappid 物联卡应用ID
+                     * 
                      */
                     int64_t GetSdkappid() const;
 
                     /**
                      * 设置物联卡应用ID
-                     * @param Sdkappid 物联卡应用ID
+                     * @param _sdkappid 物联卡应用ID
+                     * 
                      */
                     void SetSdkappid(const int64_t& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 

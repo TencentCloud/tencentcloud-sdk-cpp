@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取媒资名称过滤条件
                      * @return MediaNameSet 媒资名称过滤条件
+                     * 
                      */
                     std::vector<std::string> GetMediaNameSet() const;
 
                     /**
                      * 设置媒资名称过滤条件
-                     * @param MediaNameSet 媒资名称过滤条件
+                     * @param _mediaNameSet 媒资名称过滤条件
+                     * 
                      */
                     void SetMediaNameSet(const std::vector<std::string>& _mediaNameSet);
 
                     /**
                      * 判断参数 MediaNameSet 是否已赋值
                      * @return MediaNameSet 是否已赋值
+                     * 
                      */
                     bool MediaNameSetHasBeenSet() const;
 
                     /**
                      * 获取媒资状态数组，媒资状态可选值参见MediaInfo
                      * @return StatusSet 媒资状态数组，媒资状态可选值参见MediaInfo
+                     * 
                      */
                     std::vector<int64_t> GetStatusSet() const;
 
                     /**
                      * 设置媒资状态数组，媒资状态可选值参见MediaInfo
-                     * @param StatusSet 媒资状态数组，媒资状态可选值参见MediaInfo
+                     * @param _statusSet 媒资状态数组，媒资状态可选值参见MediaInfo
+                     * 
                      */
                     void SetStatusSet(const std::vector<int64_t>& _statusSet);
 
                     /**
                      * 判断参数 StatusSet 是否已赋值
                      * @return StatusSet 是否已赋值
+                     * 
                      */
                     bool StatusSetHasBeenSet() const;
 
                     /**
                      * 获取媒资ID数组
                      * @return MediaIdSet 媒资ID数组
+                     * 
                      */
                     std::vector<std::string> GetMediaIdSet() const;
 
                     /**
                      * 设置媒资ID数组
-                     * @param MediaIdSet 媒资ID数组
+                     * @param _mediaIdSet 媒资ID数组
+                     * 
                      */
                     void SetMediaIdSet(const std::vector<std::string>& _mediaIdSet);
 
                     /**
                      * 判断参数 MediaIdSet 是否已赋值
                      * @return MediaIdSet 是否已赋值
+                     * 
                      */
                     bool MediaIdSetHasBeenSet() const;
 
                     /**
                      * 获取媒资自定义标签数组
                      * @return LabelSet 媒资自定义标签数组
+                     * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
                      * 设置媒资自定义标签数组
-                     * @param LabelSet 媒资自定义标签数组
+                     * @param _labelSet 媒资自定义标签数组
+                     * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
 
                     /**
                      * 判断参数 LabelSet 是否已赋值
                      * @return LabelSet 是否已赋值
+                     * 
                      */
                     bool LabelSetHasBeenSet() const;
 
                     /**
                      * 获取媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
                      * @return MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+                     * 
                      */
                     int64_t GetMediaType() const;
 
                     /**
                      * 设置媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-                     * @param MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+                     * @param _mediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+                     * 
                      */
                     void SetMediaType(const int64_t& _mediaType);
 
                     /**
                      * 判断参数 MediaType 是否已赋值
                      * @return MediaType 是否已赋值
+                     * 
                      */
                     bool MediaTypeHasBeenSet() const;
 

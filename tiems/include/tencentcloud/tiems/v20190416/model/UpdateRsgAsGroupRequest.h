@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组 ID
                      * @return Id 伸缩组 ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置伸缩组 ID
-                     * @param Id 伸缩组 ID
+                     * @param _id 伸缩组 ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取重命名名称
                      * @return Name 重命名名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置重命名名称
-                     * @param Name 重命名名称
+                     * @param _name 重命名名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取伸缩组最大节点数
                      * @return MaxSize 伸缩组最大节点数
+                     * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
                      * 设置伸缩组最大节点数
-                     * @param MaxSize 伸缩组最大节点数
+                     * @param _maxSize 伸缩组最大节点数
+                     * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取伸缩组最小节点数
                      * @return MinSize 伸缩组最小节点数
+                     * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
                      * 设置伸缩组最小节点数
-                     * @param MinSize 伸缩组最小节点数
+                     * @param _minSize 伸缩组最小节点数
+                     * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
                     /**
                      * 获取伸缩组期望的节点数
                      * @return DesiredSize 伸缩组期望的节点数
+                     * 
                      */
                     uint64_t GetDesiredSize() const;
 
                     /**
                      * 设置伸缩组期望的节点数
-                     * @param DesiredSize 伸缩组期望的节点数
+                     * @param _desiredSize 伸缩组期望的节点数
+                     * 
                      */
                     void SetDesiredSize(const uint64_t& _desiredSize);
 
                     /**
                      * 判断参数 DesiredSize 是否已赋值
                      * @return DesiredSize 是否已赋值
+                     * 
                      */
                     bool DesiredSizeHasBeenSet() const;
 

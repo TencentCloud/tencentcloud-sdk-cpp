@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取上传文件名称
                      * @return FileName 上传文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置上传文件名称
-                     * @param FileName 上传文件名称
+                     * @param _fileName 上传文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 

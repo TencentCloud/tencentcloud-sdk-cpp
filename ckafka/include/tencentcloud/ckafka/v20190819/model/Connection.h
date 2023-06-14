@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Topic名称
-                     * @param TopicName Topic名称
+                     * @param _topicName Topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取消费组ID
                      * @return GroupId 消费组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置消费组ID
-                     * @param GroupId 消费组ID
+                     * @param _groupId 消费组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取Topic的Id
                      * @return TopicId Topic的Id
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic的Id
-                     * @param TopicId Topic的Id
+                     * @param _topicId Topic的Id
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

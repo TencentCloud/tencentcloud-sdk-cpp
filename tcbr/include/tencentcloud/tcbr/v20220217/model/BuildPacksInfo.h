@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取基础镜像
                      * @return BaseImage 基础镜像
+                     * 
                      */
                     std::string GetBaseImage() const;
 
                     /**
                      * 设置基础镜像
-                     * @param BaseImage 基础镜像
+                     * @param _baseImage 基础镜像
+                     * 
                      */
                     void SetBaseImage(const std::string& _baseImage);
 
                     /**
                      * 判断参数 BaseImage 是否已赋值
                      * @return BaseImage 是否已赋值
+                     * 
                      */
                     bool BaseImageHasBeenSet() const;
 
                     /**
                      * 获取启动命令
                      * @return EntryPoint 启动命令
+                     * 
                      */
                     std::string GetEntryPoint() const;
 
                     /**
                      * 设置启动命令
-                     * @param EntryPoint 启动命令
+                     * @param _entryPoint 启动命令
+                     * 
                      */
                     void SetEntryPoint(const std::string& _entryPoint);
 
                     /**
                      * 判断参数 EntryPoint 是否已赋值
                      * @return EntryPoint 是否已赋值
+                     * 
                      */
                     bool EntryPointHasBeenSet() const;
 
                     /**
                      * 获取语言
                      * @return RepoLanguage 语言
+                     * 
                      */
                     std::string GetRepoLanguage() const;
 
                     /**
                      * 设置语言
-                     * @param RepoLanguage 语言
+                     * @param _repoLanguage 语言
+                     * 
                      */
                     void SetRepoLanguage(const std::string& _repoLanguage);
 
                     /**
                      * 判断参数 RepoLanguage 是否已赋值
                      * @return RepoLanguage 是否已赋值
+                     * 
                      */
                     bool RepoLanguageHasBeenSet() const;
 
                     /**
                      * 获取上传文件名
                      * @return UploadFilename 上传文件名
+                     * 
                      */
                     std::string GetUploadFilename() const;
 
                     /**
                      * 设置上传文件名
-                     * @param UploadFilename 上传文件名
+                     * @param _uploadFilename 上传文件名
+                     * 
                      */
                     void SetUploadFilename(const std::string& _uploadFilename);
 
                     /**
                      * 判断参数 UploadFilename 是否已赋值
                      * @return UploadFilename 是否已赋值
+                     * 
                      */
                     bool UploadFilenameHasBeenSet() const;
 

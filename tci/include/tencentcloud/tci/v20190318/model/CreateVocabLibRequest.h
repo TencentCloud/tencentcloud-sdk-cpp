@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取词汇库名称
                      * @return VocabLibName 词汇库名称
+                     * 
                      */
                     std::string GetVocabLibName() const;
 
                     /**
                      * 设置词汇库名称
-                     * @param VocabLibName 词汇库名称
+                     * @param _vocabLibName 词汇库名称
+                     * 
                      */
                     void SetVocabLibName(const std::string& _vocabLibName);
 
                     /**
                      * 判断参数 VocabLibName 是否已赋值
                      * @return VocabLibName 是否已赋值
+                     * 
                      */
                     bool VocabLibNameHasBeenSet() const;
 

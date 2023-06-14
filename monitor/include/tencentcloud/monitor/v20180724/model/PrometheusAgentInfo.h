@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Describe 备注
+                     * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置备注
-                     * @param Describe 备注
+                     * @param _describe 备注
+                     * 
                      */
                     void SetDescribe(const std::string& _describe);
 
                     /**
                      * 判断参数 Describe 是否已赋值
                      * @return Describe 是否已赋值
+                     * 
                      */
                     bool DescribeHasBeenSet() const;
 

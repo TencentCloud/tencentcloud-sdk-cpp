@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductID 产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取固件版本号
                      * @return FirmwareVersion 固件版本号
+                     * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
                      * 设置固件版本号
-                     * @param FirmwareVersion 固件版本号
+                     * @param _firmwareVersion 固件版本号
+                     * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
 
                     /**
                      * 判断参数 FirmwareVersion 是否已赋值
                      * @return FirmwareVersion 是否已赋值
+                     * 
                      */
                     bool FirmwareVersionHasBeenSet() const;
 
                     /**
                      * 获取固件的MD5值
                      * @return Md5sum 固件的MD5值
+                     * 
                      */
                     std::string GetMd5sum() const;
 
                     /**
                      * 设置固件的MD5值
-                     * @param Md5sum 固件的MD5值
+                     * @param _md5sum 固件的MD5值
+                     * 
                      */
                     void SetMd5sum(const std::string& _md5sum);
 
                     /**
                      * 判断参数 Md5sum 是否已赋值
                      * @return Md5sum 是否已赋值
+                     * 
                      */
                     bool Md5sumHasBeenSet() const;
 
                     /**
                      * 获取固件的大小
                      * @return FileSize 固件的大小
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置固件的大小
-                     * @param FileSize 固件的大小
+                     * @param _fileSize 固件的大小
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取固件名称
                      * @return FirmwareName 固件名称
+                     * 
                      */
                     std::string GetFirmwareName() const;
 
                     /**
                      * 设置固件名称
-                     * @param FirmwareName 固件名称
+                     * @param _firmwareName 固件名称
+                     * 
                      */
                     void SetFirmwareName(const std::string& _firmwareName);
 
                     /**
                      * 判断参数 FirmwareName 是否已赋值
                      * @return FirmwareName 是否已赋值
+                     * 
                      */
                     bool FirmwareNameHasBeenSet() const;
 
                     /**
                      * 获取固件描述
                      * @return FirmwareDescription 固件描述
+                     * 
                      */
                     std::string GetFirmwareDescription() const;
 
                     /**
                      * 设置固件描述
-                     * @param FirmwareDescription 固件描述
+                     * @param _firmwareDescription 固件描述
+                     * 
                      */
                     void SetFirmwareDescription(const std::string& _firmwareDescription);
 
                     /**
                      * 判断参数 FirmwareDescription 是否已赋值
                      * @return FirmwareDescription 是否已赋值
+                     * 
                      */
                     bool FirmwareDescriptionHasBeenSet() const;
 
                     /**
                      * 获取固件升级模块；可选值 mcu|moudule
                      * @return FwType 固件升级模块；可选值 mcu|moudule
+                     * 
                      */
                     std::string GetFwType() const;
 
                     /**
                      * 设置固件升级模块；可选值 mcu|moudule
-                     * @param FwType 固件升级模块；可选值 mcu|moudule
+                     * @param _fwType 固件升级模块；可选值 mcu|moudule
+                     * 
                      */
                     void SetFwType(const std::string& _fwType);
 
                     /**
                      * 判断参数 FwType 是否已赋值
                      * @return FwType 是否已赋值
+                     * 
                      */
                     bool FwTypeHasBeenSet() const;
 

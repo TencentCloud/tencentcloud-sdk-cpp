@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取美颜视频的Job id
                      * @return JobId 美颜视频的Job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置美颜视频的Job id
-                     * @param JobId 美颜视频的Job id
+                     * @param _jobId 美颜视频的Job id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取插件列表
                      * @return PluginSet 插件列表
+                     * 
                      */
                     std::vector<GrafanaPlugin> GetPluginSet() const;
 
                     /**
                      * 判断参数 PluginSet 是否已赋值
                      * @return PluginSet 是否已赋值
+                     * 
                      */
                     bool PluginSetHasBeenSet() const;
 

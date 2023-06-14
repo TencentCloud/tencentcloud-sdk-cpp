@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return RegistryId 实例id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例id
-                     * @param RegistryId 实例id
+                     * @param _registryId 实例id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例ID
                      * @return ReplicationRegistryId 复制实例ID
+                     * 
                      */
                     std::string GetReplicationRegistryId() const;
 
                     /**
                      * 设置复制实例ID
-                     * @param ReplicationRegistryId 复制实例ID
+                     * @param _replicationRegistryId 复制实例ID
+                     * 
                      */
                     void SetReplicationRegistryId(const std::string& _replicationRegistryId);
 
                     /**
                      * 判断参数 ReplicationRegistryId 是否已赋值
                      * @return ReplicationRegistryId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例地域Id
                      * @return ReplicationRegionId 复制实例地域Id
+                     * 
                      */
                     uint64_t GetReplicationRegionId() const;
 
                     /**
                      * 设置复制实例地域Id
-                     * @param ReplicationRegionId 复制实例地域Id
+                     * @param _replicationRegionId 复制实例地域Id
+                     * 
                      */
                     void SetReplicationRegionId(const uint64_t& _replicationRegionId);
 
                     /**
                      * 判断参数 ReplicationRegionId 是否已赋值
                      * @return ReplicationRegionId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 

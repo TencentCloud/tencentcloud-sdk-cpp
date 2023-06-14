@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>NORMAL：正常，可直接用于编辑；</li>
 <li>ABNORMAL : 异常，不可用于编辑；</li>
 <li>PROCESSING：处理中，暂不可用于编辑。</li>
+                     * 
                      */
                     std::string GetEditorUsableStatus() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>NORMAL：正常，可直接用于编辑；</li>
 <li>ABNORMAL : 异常，不可用于编辑；</li>
 <li>PROCESSING：处理中，暂不可用于编辑。</li>
-                     * @param EditorUsableStatus 素材编辑可用状态，取值有：
+                     * @param _editorUsableStatus 素材编辑可用状态，取值有：
 <li>NORMAL：正常，可直接用于编辑；</li>
 <li>ABNORMAL : 异常，不可用于编辑；</li>
 <li>PROCESSING：处理中，暂不可用于编辑。</li>
+                     * 
                      */
                     void SetEditorUsableStatus(const std::string& _editorUsableStatus);
 
                     /**
                      * 判断参数 EditorUsableStatus 是否已赋值
                      * @return EditorUsableStatus 是否已赋值
+                     * 
                      */
                     bool EditorUsableStatusHasBeenSet() const;
 

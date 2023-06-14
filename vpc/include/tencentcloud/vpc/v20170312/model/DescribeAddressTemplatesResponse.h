@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取IP地址模板。
                      * @return AddressTemplateSet IP地址模板。
+                     * 
                      */
                     std::vector<AddressTemplate> GetAddressTemplateSet() const;
 
                     /**
                      * 判断参数 AddressTemplateSet 是否已赋值
                      * @return AddressTemplateSet 是否已赋值
+                     * 
                      */
                     bool AddressTemplateSetHasBeenSet() const;
 

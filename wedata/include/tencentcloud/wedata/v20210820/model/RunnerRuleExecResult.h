@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取rule id
                      * @return RuleId rule id
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置rule id
-                     * @param RuleId rule id
+                     * @param _ruleId rule id
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取rule exec id
                      * @return RuleExecId rule exec id
+                     * 
                      */
                     uint64_t GetRuleExecId() const;
 
                     /**
                      * 设置rule exec id
-                     * @param RuleExecId rule exec id
+                     * @param _ruleExecId rule exec id
+                     * 
                      */
                     void SetRuleExecId(const uint64_t& _ruleExecId);
 
                     /**
                      * 判断参数 RuleExecId 是否已赋值
                      * @return RuleExecId 是否已赋值
+                     * 
                      */
                     bool RuleExecIdHasBeenSet() const;
 
                     /**
                      * 获取exec state
                      * @return State exec state
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置exec state
-                     * @param State exec state
+                     * @param _state exec state
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Data 结果
+                     * 
                      */
                     std::vector<std::string> GetData() const;
 
                     /**
                      * 设置结果
-                     * @param Data 结果
+                     * @param _data 结果
+                     * 
                      */
                     void SetData(const std::vector<std::string>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

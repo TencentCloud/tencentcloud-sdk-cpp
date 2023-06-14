@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询到的节点总数
                      * @return TotalCnt 查询到的节点总数
+                     * 
                      */
                     int64_t GetTotalCnt() const;
 
                     /**
                      * 判断参数 TotalCnt 是否已赋值
                      * @return TotalCnt 是否已赋值
+                     * 
                      */
                     bool TotalCntHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeList 节点详细信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeHardwareInfo> GetNodeList() const;
 
                     /**
                      * 判断参数 NodeList 是否已赋值
                      * @return NodeList 是否已赋值
+                     * 
                      */
                     bool NodeListHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagKeys 用户所有的标签键列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareResourceTypeList 资源类型列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHardwareResourceTypeList() const;
 
                     /**
                      * 判断参数 HardwareResourceTypeList 是否已赋值
                      * @return HardwareResourceTypeList 是否已赋值
+                     * 
                      */
                     bool HardwareResourceTypeListHasBeenSet() const;
 

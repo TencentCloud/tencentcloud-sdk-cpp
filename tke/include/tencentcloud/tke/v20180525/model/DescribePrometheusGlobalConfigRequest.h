@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例级别抓取配置
                      * @return InstanceId 实例级别抓取配置
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例级别抓取配置
-                     * @param InstanceId 实例级别抓取配置
+                     * @param _instanceId 实例级别抓取配置
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取是否禁用统计
                      * @return DisableStatistics 是否禁用统计
+                     * 
                      */
                     bool GetDisableStatistics() const;
 
                     /**
                      * 设置是否禁用统计
-                     * @param DisableStatistics 是否禁用统计
+                     * @param _disableStatistics 是否禁用统计
+                     * 
                      */
                     void SetDisableStatistics(const bool& _disableStatistics);
 
                     /**
                      * 判断参数 DisableStatistics 是否已赋值
                      * @return DisableStatistics 是否已赋值
+                     * 
                      */
                     bool DisableStatisticsHasBeenSet() const;
 

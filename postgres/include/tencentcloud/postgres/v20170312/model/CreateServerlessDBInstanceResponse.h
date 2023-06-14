@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，该ID全局唯一，如：postgres-xxxxx
                      * @return DBInstanceId 实例ID，该ID全局唯一，如：postgres-xxxxx
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 

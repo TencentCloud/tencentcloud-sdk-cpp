@@ -61,6 +61,7 @@ directory：指定路径生效
 path：指定绝对路径生效
 default：源站未返回 max-age 情况下的缓存规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCacheType() const;
 
@@ -72,19 +73,21 @@ directory：指定路径生效
 path：指定绝对路径生效
 default：源站未返回 max-age 情况下的缓存规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheType 规则类型：
+                     * @param _cacheType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 default：源站未返回 max-age 情况下的缓存规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheType(const std::string& _cacheType);
 
                     /**
                      * 判断参数 CacheType 是否已赋值
                      * @return CacheType 是否已赋值
+                     * 
                      */
                     bool CacheTypeHasBeenSet() const;
 
@@ -103,6 +106,7 @@ directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCacheContents() const;
 
@@ -114,19 +118,21 @@ directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheContents 对应类型下的匹配内容：
+                     * @param _cacheContents 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 default 时填充 "no max-age"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheContents(const std::vector<std::string>& _cacheContents);
 
                     /**
                      * 判断参数 CacheContents 是否已赋值
                      * @return CacheContents 是否已赋值
+                     * 
                      */
                     bool CacheContentsHasBeenSet() const;
 
@@ -137,6 +143,7 @@ default 时填充 "no max-age"
                      * @return CacheTime 缓存过期时间
 单位为秒，最大可设置为 365 天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCacheTime() const;
 
@@ -144,15 +151,17 @@ default 时填充 "no max-age"
                      * 设置缓存过期时间
 单位为秒，最大可设置为 365 天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheTime 缓存过期时间
+                     * @param _cacheTime 缓存过期时间
 单位为秒，最大可设置为 365 天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheTime(const int64_t& _cacheTime);
 
                     /**
                      * 判断参数 CacheTime 是否已赋值
                      * @return CacheTime 是否已赋值
+                     * 
                      */
                     bool CacheTimeHasBeenSet() const;
 

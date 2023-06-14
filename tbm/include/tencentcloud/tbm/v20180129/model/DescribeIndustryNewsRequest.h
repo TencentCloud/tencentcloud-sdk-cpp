@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取行业ID
                      * @return IndustryId 行业ID
+                     * 
                      */
                     std::string GetIndustryId() const;
 
                     /**
                      * 设置行业ID
-                     * @param IndustryId 行业ID
+                     * @param _industryId 行业ID
+                     * 
                      */
                     void SetIndustryId(const std::string& _industryId);
 
                     /**
                      * 判断参数 IndustryId 是否已赋值
                      * @return IndustryId 是否已赋值
+                     * 
                      */
                     bool IndustryIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间
                      * @return StartDate 查询开始时间
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置查询开始时间
-                     * @param StartDate 查询开始时间
+                     * @param _startDate 查询开始时间
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return EndDate 查询结束时间
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param EndDate 查询结束时间
+                     * @param _endDate 查询结束时间
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取是否显示列表，若为 true，则返回文章列表
                      * @return ShowList 是否显示列表，若为 true，则返回文章列表
+                     * 
                      */
                     bool GetShowList() const;
 
                     /**
                      * 设置是否显示列表，若为 true，则返回文章列表
-                     * @param ShowList 是否显示列表，若为 true，则返回文章列表
+                     * @param _showList 是否显示列表，若为 true，则返回文章列表
+                     * 
                      */
                     void SetShowList(const bool& _showList);
 
                     /**
                      * 判断参数 ShowList 是否已赋值
                      * @return ShowList 是否已赋值
+                     * 
                      */
                     bool ShowListHasBeenSet() const;
 
                     /**
                      * 获取查询偏移，默认从0开始
                      * @return Offset 查询偏移，默认从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移，默认从0开始
-                     * @param Offset 查询偏移，默认从0开始
+                     * @param _offset 查询偏移，默认从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询条数上限，默认20
                      * @return Limit 查询条数上限，默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询条数上限，默认20
-                     * @param Limit 查询条数上限，默认20
+                     * @param _limit 查询条数上限，默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

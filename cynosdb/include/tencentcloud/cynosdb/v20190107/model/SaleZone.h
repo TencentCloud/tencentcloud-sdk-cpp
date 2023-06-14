@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区英文名
                      * @return Zone 可用区英文名
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区英文名
-                     * @param Zone 可用区英文名
+                     * @param _zone 可用区英文名
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区数字ID
                      * @return ZoneId 可用区数字ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区数字ID
-                     * @param ZoneId 可用区数字ID
+                     * @param _zoneId 可用区数字ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区中文名
                      * @return ZoneZh 可用区中文名
+                     * 
                      */
                     std::string GetZoneZh() const;
 
                     /**
                      * 设置可用区中文名
-                     * @param ZoneZh 可用区中文名
+                     * @param _zoneZh 可用区中文名
+                     * 
                      */
                     void SetZoneZh(const std::string& _zoneZh);
 
                     /**
                      * 判断参数 ZoneZh 是否已赋值
                      * @return ZoneZh 是否已赋值
+                     * 
                      */
                     bool ZoneZhHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return IsSupportServerless 是否支持serverless集群<br>
 0:不支持<br>
 1:支持
+                     * 
                      */
                     int64_t GetIsSupportServerless() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置是否支持serverless集群<br>
 0:不支持<br>
 1:支持
-                     * @param IsSupportServerless 是否支持serverless集群<br>
+                     * @param _isSupportServerless 是否支持serverless集群<br>
 0:不支持<br>
 1:支持
+                     * 
                      */
                     void SetIsSupportServerless(const int64_t& _isSupportServerless);
 
                     /**
                      * 判断参数 IsSupportServerless 是否已赋值
                      * @return IsSupportServerless 是否已赋值
+                     * 
                      */
                     bool IsSupportServerlessHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
                      * @return IsSupportNormal 是否支持普通集群<br>
 0:不支持<br>
 1:支持
+                     * 
                      */
                     int64_t GetIsSupportNormal() const;
 
@@ -140,33 +153,38 @@ namespace TencentCloud
                      * 设置是否支持普通集群<br>
 0:不支持<br>
 1:支持
-                     * @param IsSupportNormal 是否支持普通集群<br>
+                     * @param _isSupportNormal 是否支持普通集群<br>
 0:不支持<br>
 1:支持
+                     * 
                      */
                     void SetIsSupportNormal(const int64_t& _isSupportNormal);
 
                     /**
                      * 判断参数 IsSupportNormal 是否已赋值
                      * @return IsSupportNormal 是否已赋值
+                     * 
                      */
                     bool IsSupportNormalHasBeenSet() const;
 
                     /**
                      * 获取物理区
                      * @return PhysicalZone 物理区
+                     * 
                      */
                     std::string GetPhysicalZone() const;
 
                     /**
                      * 设置物理区
-                     * @param PhysicalZone 物理区
+                     * @param _physicalZone 物理区
+                     * 
                      */
                     void SetPhysicalZone(const std::string& _physicalZone);
 
                     /**
                      * 判断参数 PhysicalZone 是否已赋值
                      * @return PhysicalZone 是否已赋值
+                     * 
                      */
                     bool PhysicalZoneHasBeenSet() const;
 
@@ -175,38 +193,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasPermission 用户是否有可用区权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHasPermission() const;
 
                     /**
                      * 设置用户是否有可用区权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HasPermission 用户是否有可用区权限
+                     * @param _hasPermission 用户是否有可用区权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHasPermission(const bool& _hasPermission);
 
                     /**
                      * 判断参数 HasPermission 是否已赋值
                      * @return HasPermission 是否已赋值
+                     * 
                      */
                     bool HasPermissionHasBeenSet() const;
 
                     /**
                      * 获取是否为全链路RDMA可用区
                      * @return IsWholeRdmaZone 是否为全链路RDMA可用区
+                     * 
                      */
                     std::string GetIsWholeRdmaZone() const;
 
                     /**
                      * 设置是否为全链路RDMA可用区
-                     * @param IsWholeRdmaZone 是否为全链路RDMA可用区
+                     * @param _isWholeRdmaZone 是否为全链路RDMA可用区
+                     * 
                      */
                     void SetIsWholeRdmaZone(const std::string& _isWholeRdmaZone);
 
                     /**
                      * 判断参数 IsWholeRdmaZone 是否已赋值
                      * @return IsWholeRdmaZone 是否已赋值
+                     * 
                      */
                     bool IsWholeRdmaZoneHasBeenSet() const;
 

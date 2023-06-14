@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取新主机
                      * @return NewHost 新主机
+                     * 
                      */
                     std::string GetNewHost() const;
 
                     /**
                      * 设置新主机
-                     * @param NewHost 新主机
+                     * @param _newHost 新主机
+                     * 
                      */
                     void SetNewHost(const std::string& _newHost);
 
                     /**
                      * 判断参数 NewHost 是否已赋值
                      * @return NewHost 是否已赋值
+                     * 
                      */
                     bool NewHostHasBeenSet() const;
 
                     /**
                      * 获取账号信息
                      * @return Account 账号信息
+                     * 
                      */
                     InputAccount GetAccount() const;
 
                     /**
                      * 设置账号信息
-                     * @param Account 账号信息
+                     * @param _account 账号信息
+                     * 
                      */
                     void SetAccount(const InputAccount& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 

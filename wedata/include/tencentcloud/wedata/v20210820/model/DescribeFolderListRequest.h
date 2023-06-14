@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取文件夹ID
                      * @return ParentsFolderId 文件夹ID
+                     * 
                      */
                     std::string GetParentsFolderId() const;
 
                     /**
                      * 设置文件夹ID
-                     * @param ParentsFolderId 文件夹ID
+                     * @param _parentsFolderId 文件夹ID
+                     * 
                      */
                     void SetParentsFolderId(const std::string& _parentsFolderId);
 
                     /**
                      * 判断参数 ParentsFolderId 是否已赋值
                      * @return ParentsFolderId 是否已赋值
+                     * 
                      */
                     bool ParentsFolderIdHasBeenSet() const;
 
                     /**
                      * 获取关键字
                      * @return KeyWords 关键字
+                     * 
                      */
                     std::string GetKeyWords() const;
 
                     /**
                      * 设置关键字
-                     * @param KeyWords 关键字
+                     * @param _keyWords 关键字
+                     * 
                      */
                     void SetKeyWords(const std::string& _keyWords);
 
                     /**
                      * 判断参数 KeyWords 是否已赋值
                      * @return KeyWords 是否已赋值
+                     * 
                      */
                     bool KeyWordsHasBeenSet() const;
 
                     /**
                      * 获取页码，默认1
                      * @return PageNumber 页码，默认1
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置页码，默认1
-                     * @param PageNumber 页码，默认1
+                     * @param _pageNumber 页码，默认1
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取页大小，默认10
                      * @return PageSize 页大小，默认10
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页大小，默认10
-                     * @param PageSize 页大小，默认10
+                     * @param _pageSize 页大小，默认10
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取异步重试配置信息
                      * @return AsyncTriggerConfig 异步重试配置信息
+                     * 
                      */
                     AsyncTriggerConfig GetAsyncTriggerConfig() const;
 
                     /**
                      * 设置异步重试配置信息
-                     * @param AsyncTriggerConfig 异步重试配置信息
+                     * @param _asyncTriggerConfig 异步重试配置信息
+                     * 
                      */
                     void SetAsyncTriggerConfig(const AsyncTriggerConfig& _asyncTriggerConfig);
 
                     /**
                      * 判断参数 AsyncTriggerConfig 是否已赋值
                      * @return AsyncTriggerConfig 是否已赋值
+                     * 
                      */
                     bool AsyncTriggerConfigHasBeenSet() const;
 
                     /**
                      * 获取函数名称
                      * @return FunctionName 函数名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置函数名称
-                     * @param FunctionName 函数名称
+                     * @param _functionName 函数名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取函数所属命名空间，默认为default
                      * @return Namespace 函数所属命名空间，默认为default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数所属命名空间，默认为default
-                     * @param Namespace 函数所属命名空间，默认为default
+                     * @param _namespace 函数所属命名空间，默认为default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

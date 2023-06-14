@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取RGB颜色值（16进制），例如：291A18。
                      * @return Color RGB颜色值（16进制），例如：291A18。
+                     * 
                      */
                     std::string GetColor() const;
 
                     /**
                      * 设置RGB颜色值（16进制），例如：291A18。
-                     * @param Color RGB颜色值（16进制），例如：291A18。
+                     * @param _color RGB颜色值（16进制），例如：291A18。
+                     * 
                      */
                     void SetColor(const std::string& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
                     /**
                      * 获取当前颜色标签所占比例。
                      * @return Percentage 当前颜色标签所占比例。
+                     * 
                      */
                     double GetPercentage() const;
 
                     /**
                      * 设置当前颜色标签所占比例。
-                     * @param Percentage 当前颜色标签所占比例。
+                     * @param _percentage 当前颜色标签所占比例。
+                     * 
                      */
                     void SetPercentage(const double& _percentage);
 
                     /**
                      * 判断参数 Percentage 是否已赋值
                      * @return Percentage 是否已赋值
+                     * 
                      */
                     bool PercentageHasBeenSet() const;
 
                     /**
                      * 获取颜色标签。蜜柚色，米驼色等。
                      * @return Label 颜色标签。蜜柚色，米驼色等。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置颜色标签。蜜柚色，米驼色等。
-                     * @param Label 颜色标签。蜜柚色，米驼色等。
+                     * @param _label 颜色标签。蜜柚色，米驼色等。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 

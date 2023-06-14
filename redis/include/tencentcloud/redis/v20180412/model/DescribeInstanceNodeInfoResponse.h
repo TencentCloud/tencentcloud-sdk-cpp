@@ -49,12 +49,14 @@ namespace TencentCloud
                     /**
                      * 获取Proxy节点数量。
                      * @return ProxyCount Proxy节点数量。
+                     * 
                      */
                     int64_t GetProxyCount() const;
 
                     /**
                      * 判断参数 ProxyCount 是否已赋值
                      * @return ProxyCount 是否已赋值
+                     * 
                      */
                     bool ProxyCountHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy Proxy节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyNodes> GetProxy() const;
 
                     /**
                      * 判断参数 Proxy 是否已赋值
                      * @return Proxy 是否已赋值
+                     * 
                      */
                     bool ProxyHasBeenSet() const;
 
                     /**
                      * 获取Redis节点数量。
                      * @return RedisCount Redis节点数量。
+                     * 
                      */
                     int64_t GetRedisCount() const;
 
                     /**
                      * 判断参数 RedisCount 是否已赋值
                      * @return RedisCount 是否已赋值
+                     * 
                      */
                     bool RedisCountHasBeenSet() const;
 
@@ -89,24 +95,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Redis Redis节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RedisNodes> GetRedis() const;
 
                     /**
                      * 判断参数 Redis 是否已赋值
                      * @return Redis 是否已赋值
+                     * 
                      */
                     bool RedisHasBeenSet() const;
 
                     /**
                      * 获取该参数不再使用，请忽略。
                      * @return TendisCount 该参数不再使用，请忽略。
+                     * 
                      */
                     int64_t GetTendisCount() const;
 
                     /**
                      * 判断参数 TendisCount 是否已赋值
                      * @return TendisCount 是否已赋值
+                     * 
                      */
                     bool TendisCountHasBeenSet() const;
 
@@ -115,12 +125,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tendis 该参数不再使用，请忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TendisNodes> GetTendis() const;
 
                     /**
                      * 判断参数 Tendis 是否已赋值
                      * @return Tendis 是否已赋值
+                     * 
                      */
                     bool TendisHasBeenSet() const;
 

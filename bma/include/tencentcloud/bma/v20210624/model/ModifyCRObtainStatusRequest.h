@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取侵权ID
                      * @return TortId 侵权ID
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 设置侵权ID
-                     * @param TortId 侵权ID
+                     * @param _tortId 侵权ID
+                     * 
                      */
                     void SetTortId(const int64_t& _tortId);
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取取证类型：1-网页取证 2-过程取证(暂不提供)
                      * @return ObtainType 取证类型：1-网页取证 2-过程取证(暂不提供)
+                     * 
                      */
                     int64_t GetObtainType() const;
 
                     /**
                      * 设置取证类型：1-网页取证 2-过程取证(暂不提供)
-                     * @param ObtainType 取证类型：1-网页取证 2-过程取证(暂不提供)
+                     * @param _obtainType 取证类型：1-网页取证 2-过程取证(暂不提供)
+                     * 
                      */
                     void SetObtainType(const int64_t& _obtainType);
 
                     /**
                      * 判断参数 ObtainType 是否已赋值
                      * @return ObtainType 是否已赋值
+                     * 
                      */
                     bool ObtainTypeHasBeenSet() const;
 
                     /**
                      * 获取过程取证的取证时长，单位分钟，范围0-120
                      * @return ObtainDuration 过程取证的取证时长，单位分钟，范围0-120
+                     * 
                      */
                     int64_t GetObtainDuration() const;
 
                     /**
                      * 设置过程取证的取证时长，单位分钟，范围0-120
-                     * @param ObtainDuration 过程取证的取证时长，单位分钟，范围0-120
+                     * @param _obtainDuration 过程取证的取证时长，单位分钟，范围0-120
+                     * 
                      */
                     void SetObtainDuration(const int64_t& _obtainDuration);
 
                     /**
                      * 判断参数 ObtainDuration 是否已赋值
                      * @return ObtainDuration 是否已赋值
+                     * 
                      */
                     bool ObtainDurationHasBeenSet() const;
 
                     /**
                      * 获取取证结果回调地址
                      * @return ObtainUrl 取证结果回调地址
+                     * 
                      */
                     std::string GetObtainUrl() const;
 
                     /**
                      * 设置取证结果回调地址
-                     * @param ObtainUrl 取证结果回调地址
+                     * @param _obtainUrl 取证结果回调地址
+                     * 
                      */
                     void SetObtainUrl(const std::string& _obtainUrl);
 
                     /**
                      * 判断参数 ObtainUrl 是否已赋值
                      * @return ObtainUrl 是否已赋值
+                     * 
                      */
                     bool ObtainUrlHasBeenSet() const;
 

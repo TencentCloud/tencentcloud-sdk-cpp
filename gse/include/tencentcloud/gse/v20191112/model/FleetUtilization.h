@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveGameServerSessionCount 游戏会话数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActiveGameServerSessionCount() const;
 
                     /**
                      * 设置游戏会话数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveGameServerSessionCount 游戏会话数
+                     * @param _activeGameServerSessionCount 游戏会话数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveGameServerSessionCount(const uint64_t& _activeGameServerSessionCount);
 
                     /**
                      * 判断参数 ActiveGameServerSessionCount 是否已赋值
                      * @return ActiveGameServerSessionCount 是否已赋值
+                     * 
                      */
                     bool ActiveGameServerSessionCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveServerProcessCount 活跃进程数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActiveServerProcessCount() const;
 
                     /**
                      * 设置活跃进程数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveServerProcessCount 活跃进程数
+                     * @param _activeServerProcessCount 活跃进程数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveServerProcessCount(const uint64_t& _activeServerProcessCount);
 
                     /**
                      * 判断参数 ActiveServerProcessCount 是否已赋值
                      * @return ActiveServerProcessCount 是否已赋值
+                     * 
                      */
                     bool ActiveServerProcessCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentPlayerSessionCount 当前游戏玩家数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCurrentPlayerSessionCount() const;
 
                     /**
                      * 设置当前游戏玩家数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentPlayerSessionCount 当前游戏玩家数
+                     * @param _currentPlayerSessionCount 当前游戏玩家数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentPlayerSessionCount(const uint64_t& _currentPlayerSessionCount);
 
                     /**
                      * 判断参数 CurrentPlayerSessionCount 是否已赋值
                      * @return CurrentPlayerSessionCount 是否已赋值
+                     * 
                      */
                     bool CurrentPlayerSessionCountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 服务部署 Id
+                     * @param _fleetId 服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaximumPlayerSessionCount 最大玩家会话数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaximumPlayerSessionCount() const;
 
                     /**
                      * 设置最大玩家会话数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaximumPlayerSessionCount 最大玩家会话数
+                     * @param _maximumPlayerSessionCount 最大玩家会话数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaximumPlayerSessionCount(const uint64_t& _maximumPlayerSessionCount);
 
                     /**
                      * 判断参数 MaximumPlayerSessionCount 是否已赋值
                      * @return MaximumPlayerSessionCount 是否已赋值
+                     * 
                      */
                     bool MaximumPlayerSessionCountHasBeenSet() const;
 

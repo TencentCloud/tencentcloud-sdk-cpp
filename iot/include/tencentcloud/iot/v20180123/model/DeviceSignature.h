@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备签名
                      * @return DeviceSignature 设备签名
+                     * 
                      */
                     std::string GetDeviceSignature() const;
 
                     /**
                      * 设置设备签名
-                     * @param DeviceSignature 设备签名
+                     * @param _deviceSignature 设备签名
+                     * 
                      */
                     void SetDeviceSignature(const std::string& _deviceSignature);
 
                     /**
                      * 判断参数 DeviceSignature 是否已赋值
                      * @return DeviceSignature 是否已赋值
+                     * 
                      */
                     bool DeviceSignatureHasBeenSet() const;
 

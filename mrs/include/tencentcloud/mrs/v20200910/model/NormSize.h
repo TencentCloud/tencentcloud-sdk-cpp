@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNumber() const;
 
                     /**
                      * 设置数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Number 数量
+                     * @param _number 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNumber(const std::vector<std::string>& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 单位
+                     * @param _unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Impl 归一化值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImpl() const;
 
                     /**
                      * 设置归一化值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Impl 归一化值
+                     * @param _impl 归一化值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImpl(const std::string& _impl);
 
                     /**
                      * 判断参数 Impl 是否已赋值
                      * @return Impl 是否已赋值
+                     * 
                      */
                     bool ImplHasBeenSet() const;
 

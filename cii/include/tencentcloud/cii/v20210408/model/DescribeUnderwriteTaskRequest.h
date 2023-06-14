@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return UnderwriteTaskId 任务ID
+                     * 
                      */
                     std::string GetUnderwriteTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param UnderwriteTaskId 任务ID
+                     * @param _underwriteTaskId 任务ID
+                     * 
                      */
                     void SetUnderwriteTaskId(const std::string& _underwriteTaskId);
 
                     /**
                      * 判断参数 UnderwriteTaskId 是否已赋值
                      * @return UnderwriteTaskId 是否已赋值
+                     * 
                      */
                     bool UnderwriteTaskIdHasBeenSet() const;
 

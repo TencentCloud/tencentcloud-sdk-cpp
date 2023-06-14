@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量。
                      * @return Offset 分页偏移量。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小。
                      * @return Limit 分页大小。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取实例标签信息。
                      * @return Rows 实例标签信息。
+                     * 
                      */
                     std::vector<TagsInfoOfInstance> GetRows() const;
 
                     /**
                      * 判断参数 Rows 是否已赋值
                      * @return Rows 是否已赋值
+                     * 
                      */
                     bool RowsHasBeenSet() const;
 

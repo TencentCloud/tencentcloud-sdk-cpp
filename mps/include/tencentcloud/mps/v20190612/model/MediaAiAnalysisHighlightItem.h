@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取智能精彩集锦地址。
                      * @return HighlightPath 智能精彩集锦地址。
+                     * 
                      */
                     std::string GetHighlightPath() const;
 
                     /**
                      * 设置智能精彩集锦地址。
-                     * @param HighlightPath 智能精彩集锦地址。
+                     * @param _highlightPath 智能精彩集锦地址。
+                     * 
                      */
                     void SetHighlightPath(const std::string& _highlightPath);
 
                     /**
                      * 判断参数 HighlightPath 是否已赋值
                      * @return HighlightPath 是否已赋值
+                     * 
                      */
                     bool HighlightPathHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦封面地址。
                      * @return CovImgPath 智能精彩集锦封面地址。
+                     * 
                      */
                     std::string GetCovImgPath() const;
 
                     /**
                      * 设置智能精彩集锦封面地址。
-                     * @param CovImgPath 智能精彩集锦封面地址。
+                     * @param _covImgPath 智能精彩集锦封面地址。
+                     * 
                      */
                     void SetCovImgPath(const std::string& _covImgPath);
 
                     /**
                      * 判断参数 CovImgPath 是否已赋值
                      * @return CovImgPath 是否已赋值
+                     * 
                      */
                     bool CovImgPathHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦的可信度，取值范围是 0 到 100。
                      * @return Confidence 智能精彩集锦的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置智能精彩集锦的可信度，取值范围是 0 到 100。
-                     * @param Confidence 智能精彩集锦的可信度，取值范围是 0 到 100。
+                     * @param _confidence 智能精彩集锦的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦持续时间。
                      * @return Duration 智能精彩集锦持续时间。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置智能精彩集锦持续时间。
-                     * @param Duration 智能精彩集锦持续时间。
+                     * @param _duration 智能精彩集锦持续时间。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取智能精彩集锦子片段列表。
                      * @return SegmentSet 智能精彩集锦子片段列表。
+                     * 
                      */
                     std::vector<HighlightSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置智能精彩集锦子片段列表。
-                     * @param SegmentSet 智能精彩集锦子片段列表。
+                     * @param _segmentSet 智能精彩集锦子片段列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<HighlightSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

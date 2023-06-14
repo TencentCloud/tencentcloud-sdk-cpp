@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取快照操作限制列表详细信息。
                      * @return SnapshotDeniedActionSet 快照操作限制列表详细信息。
+                     * 
                      */
                     std::vector<SnapshotDeniedActions> GetSnapshotDeniedActionSet() const;
 
                     /**
                      * 判断参数 SnapshotDeniedActionSet 是否已赋值
                      * @return SnapshotDeniedActionSet 是否已赋值
+                     * 
                      */
                     bool SnapshotDeniedActionSetHasBeenSet() const;
 

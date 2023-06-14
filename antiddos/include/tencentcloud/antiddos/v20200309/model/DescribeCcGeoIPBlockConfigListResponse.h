@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取CC地域封禁策略列表总数
                      * @return Total CC地域封禁策略列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取CC地域封禁策略列表详情
                      * @return CcGeoIpPolicyList CC地域封禁策略列表详情
+                     * 
                      */
                     std::vector<CcGeoIpPolicyNew> GetCcGeoIpPolicyList() const;
 
                     /**
                      * 判断参数 CcGeoIpPolicyList 是否已赋值
                      * @return CcGeoIpPolicyList 是否已赋值
+                     * 
                      */
                     bool CcGeoIpPolicyListHasBeenSet() const;
 

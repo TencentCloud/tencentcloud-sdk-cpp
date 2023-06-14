@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取已开通云存的设备名称
                      * @return DeviceName 已开通云存的设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置已开通云存的设备名称
-                     * @param DeviceName 已开通云存的设备名称
+                     * @param _deviceName 已开通云存的设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取未开通云存的设备名称
                      * @return ToDeviceName 未开通云存的设备名称
+                     * 
                      */
                     std::string GetToDeviceName() const;
 
                     /**
                      * 设置未开通云存的设备名称
-                     * @param ToDeviceName 未开通云存的设备名称
+                     * @param _toDeviceName 未开通云存的设备名称
+                     * 
                      */
                     void SetToDeviceName(const std::string& _toDeviceName);
 
                     /**
                      * 判断参数 ToDeviceName 是否已赋值
                      * @return ToDeviceName 是否已赋值
+                     * 
                      */
                     bool ToDeviceNameHasBeenSet() const;
 
                     /**
                      * 获取未开通云存的设备产品ID
                      * @return ToProductId 未开通云存的设备产品ID
+                     * 
                      */
                     std::string GetToProductId() const;
 
                     /**
                      * 设置未开通云存的设备产品ID
-                     * @param ToProductId 未开通云存的设备产品ID
+                     * @param _toProductId 未开通云存的设备产品ID
+                     * 
                      */
                     void SetToProductId(const std::string& _toProductId);
 
                     /**
                      * 判断参数 ToProductId 是否已赋值
                      * @return ToProductId 是否已赋值
+                     * 
                      */
                     bool ToProductIdHasBeenSet() const;
 

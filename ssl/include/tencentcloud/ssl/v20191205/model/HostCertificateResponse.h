@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取云资源配置详情
                      * @return CertHostingInfo 云资源配置详情
+                     * 
                      */
                     CertHostingInfo GetCertHostingInfo() const;
 
                     /**
                      * 判断参数 CertHostingInfo 是否已赋值
                      * @return CertHostingInfo 是否已赋值
+                     * 
                      */
                     bool CertHostingInfoHasBeenSet() const;
 

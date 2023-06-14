@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取应用号
                      * @return ApplicationId 应用号
+                     * @deprecated
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用号
-                     * @param ApplicationId 应用号
+                     * @param _applicationId 应用号
+                     * @deprecated
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * @deprecated
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取主机构ID
                      * @return OrganizationId 主机构ID
+                     * @deprecated
                      */
                     std::string GetOrganizationId() const;
 
                     /**
                      * 设置主机构ID
-                     * @param OrganizationId 主机构ID
+                     * @param _organizationId 主机构ID
+                     * @deprecated
                      */
                     void SetOrganizationId(const std::string& _organizationId);
 
                     /**
                      * 判断参数 OrganizationId 是否已赋值
                      * @return OrganizationId 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取经办人的用户ID，同UserId
                      * @return OperatorId 经办人的用户ID，同UserId
+                     * 
                      */
                     std::string GetOperatorId() const;
 
                     /**
                      * 设置经办人的用户ID，同UserId
-                     * @param OperatorId 经办人的用户ID，同UserId
+                     * @param _operatorId 经办人的用户ID，同UserId
+                     * 
                      */
                     void SetOperatorId(const std::string& _operatorId);
 
                     /**
                      * 判断参数 OperatorId 是否已赋值
                      * @return OperatorId 是否已赋值
+                     * 
                      */
                     bool OperatorIdHasBeenSet() const;
 
                     /**
                      * 获取下属机构ID
                      * @return SubOrganizationId 下属机构ID
+                     * @deprecated
                      */
                     std::string GetSubOrganizationId() const;
 
                     /**
                      * 设置下属机构ID
-                     * @param SubOrganizationId 下属机构ID
+                     * @param _subOrganizationId 下属机构ID
+                     * @deprecated
                      */
                     void SetSubOrganizationId(const std::string& _subOrganizationId);
 
                     /**
                      * 判断参数 SubOrganizationId 是否已赋值
                      * @return SubOrganizationId 是否已赋值
+                     * @deprecated
                      */
                     bool SubOrganizationIdHasBeenSet() const;
 

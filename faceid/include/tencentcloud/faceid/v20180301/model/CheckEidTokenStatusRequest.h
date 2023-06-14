@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取E证通流程的唯一标识，调用GetEidToken接口时生成。
                      * @return EidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 
                      */
                     std::string GetEidToken() const;
 
                     /**
                      * 设置E证通流程的唯一标识，调用GetEidToken接口时生成。
-                     * @param EidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * @param _eidToken E证通流程的唯一标识，调用GetEidToken接口时生成。
+                     * 
                      */
                     void SetEidToken(const std::string& _eidToken);
 
                     /**
                      * 判断参数 EidToken 是否已赋值
                      * @return EidToken 是否已赋值
+                     * 
                      */
                     bool EidTokenHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      * @return SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
-                     * @param SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * @param _sessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
 句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式RefText可以不填。
 关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
 如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。
+                     * 
                      */
                     std::string GetRefText() const;
 
@@ -77,16 +81,18 @@ namespace TencentCloud
 句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式RefText可以不填。
 关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
 如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。
-                     * @param RefText 被评估语音对应的文本，仅支持中文和英文。
+                     * @param _refText 被评估语音对应的文本，仅支持中文和英文。
 句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式RefText可以不填。
 关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
 如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。
+                     * 
                      */
                     void SetRefText(const std::string& _refText);
 
                     /**
                      * 判断参数 RefText 是否已赋值
                      * @return RefText 是否已赋值
+                     * 
                      */
                     bool RefTextHasBeenSet() const;
 
@@ -99,6 +105,7 @@ namespace TencentCloud
 0：流式分片
 1：非流式一次性评估
 推荐使用流式分片传输。
+                     * 
                      */
                     int64_t GetWorkMode() const;
 
@@ -107,16 +114,18 @@ namespace TencentCloud
 0：流式分片
 1：非流式一次性评估
 推荐使用流式分片传输。
-                     * @param WorkMode 语音输入模式
+                     * @param _workMode 语音输入模式
 0：流式分片
 1：非流式一次性评估
 推荐使用流式分片传输。
+                     * 
                      */
                     void SetWorkMode(const int64_t& _workMode);
 
                     /**
                      * 判断参数 WorkMode 是否已赋值
                      * @return WorkMode 是否已赋值
+                     * 
                      */
                     bool WorkModeHasBeenSet() const;
 
@@ -143,6 +152,7 @@ namespace TencentCloud
 7：单词实时评测模式
 8：拼音评测模式
 关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
+                     * 
                      */
                     int64_t GetEvalMode() const;
 
@@ -158,7 +168,7 @@ namespace TencentCloud
 7：单词实时评测模式
 8：拼音评测模式
 关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
-                     * @param EvalMode 评测模式
+                     * @param _evalMode 评测模式
 0：单词/单字模式（中文评测模式下为单字模式）
 1：句子模式
 2：段落模式
@@ -169,12 +179,14 @@ namespace TencentCloud
 7：单词实时评测模式
 8：拼音评测模式
 关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。
+                     * 
                      */
                     void SetEvalMode(const int64_t& _evalMode);
 
                     /**
                      * 判断参数 EvalMode 是否已赋值
                      * @return EvalMode 是否已赋值
+                     * 
                      */
                     bool EvalModeHasBeenSet() const;
 
@@ -185,6 +197,7 @@ namespace TencentCloud
                      * @return ScoreCoeff 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
 4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
+                     * 
                      */
                     double GetScoreCoeff() const;
 
@@ -192,51 +205,59 @@ namespace TencentCloud
                      * 设置评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
 4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
-                     * @param ScoreCoeff 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
+                     * @param _scoreCoeff 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
 4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
+                     * 
                      */
                     void SetScoreCoeff(const double& _scoreCoeff);
 
                     /**
                      * 判断参数 ScoreCoeff 是否已赋值
                      * @return ScoreCoeff 是否已赋值
+                     * 
                      */
                     bool ScoreCoeffHasBeenSet() const;
 
                     /**
                      * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
                      * @return SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
+                     * 
                      */
                     std::string GetSoeAppId() const;
 
                     /**
                      * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
-                     * @param SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
+                     * @param _soeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
+                     * 
                      */
                     void SetSoeAppId(const std::string& _soeAppId);
 
                     /**
                      * 判断参数 SoeAppId 是否已赋值
                      * @return SoeAppId 是否已赋值
+                     * 
                      */
                     bool SoeAppIdHasBeenSet() const;
 
                     /**
                      * 获取长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。
                      * @return IsLongLifeSession 长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。
+                     * 
                      */
                     int64_t GetIsLongLifeSession() const;
 
                     /**
                      * 设置长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。
-                     * @param IsLongLifeSession 长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。
+                     * @param _isLongLifeSession 长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。
+                     * 
                      */
                     void SetIsLongLifeSession(const int64_t& _isLongLifeSession);
 
                     /**
                      * 判断参数 IsLongLifeSession 是否已赋值
                      * @return IsLongLifeSession 是否已赋值
+                     * 
                      */
                     bool IsLongLifeSessionHasBeenSet() const;
 
@@ -245,20 +266,23 @@ namespace TencentCloud
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      * @return StorageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * 
                      */
                     int64_t GetStorageMode() const;
 
                     /**
                      * 设置音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
-                     * @param StorageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
+                     * @param _storageMode 音频存储模式，此参数已废弃，无需设置，设置与否都默认为0不存储；
 注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * 
                      */
                     void SetStorageMode(const int64_t& _storageMode);
 
                     /**
                      * 判断参数 StorageMode 是否已赋值
                      * @return StorageMode 是否已赋值
+                     * 
                      */
                     bool StorageModeHasBeenSet() const;
 
@@ -271,6 +295,7 @@ namespace TencentCloud
 0：不输出
 1：输出，通过设置该参数
 可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。
+                     * 
                      */
                     int64_t GetSentenceInfoEnabled() const;
 
@@ -279,16 +304,18 @@ namespace TencentCloud
 0：不输出
 1：输出，通过设置该参数
 可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。
-                     * @param SentenceInfoEnabled 输出断句中间结果标识
+                     * @param _sentenceInfoEnabled 输出断句中间结果标识
 0：不输出
 1：输出，通过设置该参数
 可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。
+                     * 
                      */
                     void SetSentenceInfoEnabled(const int64_t& _sentenceInfoEnabled);
 
                     /**
                      * 判断参数 SentenceInfoEnabled 是否已赋值
                      * @return SentenceInfoEnabled 是否已赋值
+                     * 
                      */
                     bool SentenceInfoEnabledHasBeenSet() const;
 
@@ -299,6 +326,7 @@ namespace TencentCloud
                      * @return ServerType 评估语言
 0：英文（默认）
 1：中文
+                     * 
                      */
                     int64_t GetServerType() const;
 
@@ -306,15 +334,17 @@ namespace TencentCloud
                      * 设置评估语言
 0：英文（默认）
 1：中文
-                     * @param ServerType 评估语言
+                     * @param _serverType 评估语言
 0：英文（默认）
 1：中文
+                     * 
                      */
                     void SetServerType(const int64_t& _serverType);
 
                     /**
                      * 判断参数 ServerType 是否已赋值
                      * @return ServerType 是否已赋值
+                     * 
                      */
                     bool ServerTypeHasBeenSet() const;
 
@@ -327,6 +357,7 @@ namespace TencentCloud
 0：同步模式
 1：异步模式（一般情况不建议使用异步模式）
 可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。
+                     * 
                      */
                     int64_t GetIsAsync() const;
 
@@ -335,16 +366,18 @@ namespace TencentCloud
 0：同步模式
 1：异步模式（一般情况不建议使用异步模式）
 可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。
-                     * @param IsAsync 异步模式标识
+                     * @param _isAsync 异步模式标识
 0：同步模式
 1：异步模式（一般情况不建议使用异步模式）
 可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。
+                     * 
                      */
                     void SetIsAsync(const int64_t& _isAsync);
 
                     /**
                      * 判断参数 IsAsync 是否已赋值
                      * @return IsAsync 是否已赋值
+                     * 
                      */
                     bool IsAsyncHasBeenSet() const;
 
@@ -355,6 +388,7 @@ namespace TencentCloud
                      * @return TextMode 输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
+                     * 
                      */
                     int64_t GetTextMode() const;
 
@@ -362,33 +396,38 @@ namespace TencentCloud
                      * 设置输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-                     * @param TextMode 输入文本模式
+                     * @param _textMode 输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
+                     * 
                      */
                     void SetTextMode(const int64_t& _textMode);
 
                     /**
                      * 判断参数 TextMode 是否已赋值
                      * @return TextMode 是否已赋值
+                     * 
                      */
                     bool TextModeHasBeenSet() const;
 
                     /**
                      * 获取主题词和关键词
                      * @return Keyword 主题词和关键词
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置主题词和关键词
-                     * @param Keyword 主题词和关键词
+                     * @param _keyword 主题词和关键词
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

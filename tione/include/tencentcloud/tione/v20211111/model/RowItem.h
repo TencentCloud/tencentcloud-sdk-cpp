@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values rowValue 数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RowValue> GetValues() const;
 
                     /**
                      * 设置rowValue 数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values rowValue 数组
+                     * @param _values rowValue 数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<RowValue>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

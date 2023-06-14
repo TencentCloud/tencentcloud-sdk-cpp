@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取待处理风险容器事件总数
                      * @return RiskContainerEventCount 待处理风险容器事件总数
+                     * 
                      */
                     int64_t GetRiskContainerEventCount() const;
 
                     /**
                      * 设置待处理风险容器事件总数
-                     * @param RiskContainerEventCount 待处理风险容器事件总数
+                     * @param _riskContainerEventCount 待处理风险容器事件总数
+                     * 
                      */
                     void SetRiskContainerEventCount(const int64_t& _riskContainerEventCount);
 
                     /**
                      * 判断参数 RiskContainerEventCount 是否已赋值
                      * @return RiskContainerEventCount 是否已赋值
+                     * 
                      */
                     bool RiskContainerEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理程序特权事件总数
                      * @return ProcessPrivilegeEventCount 待处理程序特权事件总数
+                     * 
                      */
                     int64_t GetProcessPrivilegeEventCount() const;
 
                     /**
                      * 设置待处理程序特权事件总数
-                     * @param ProcessPrivilegeEventCount 待处理程序特权事件总数
+                     * @param _processPrivilegeEventCount 待处理程序特权事件总数
+                     * 
                      */
                     void SetProcessPrivilegeEventCount(const int64_t& _processPrivilegeEventCount);
 
                     /**
                      * 判断参数 ProcessPrivilegeEventCount 是否已赋值
                      * @return ProcessPrivilegeEventCount 是否已赋值
+                     * 
                      */
                     bool ProcessPrivilegeEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理容器逃逸事件总数
                      * @return ContainerEscapeEventCount 待处理容器逃逸事件总数
+                     * 
                      */
                     int64_t GetContainerEscapeEventCount() const;
 
                     /**
                      * 设置待处理容器逃逸事件总数
-                     * @param ContainerEscapeEventCount 待处理容器逃逸事件总数
+                     * @param _containerEscapeEventCount 待处理容器逃逸事件总数
+                     * 
                      */
                     void SetContainerEscapeEventCount(const int64_t& _containerEscapeEventCount);
 
                     /**
                      * 判断参数 ContainerEscapeEventCount 是否已赋值
                      * @return ContainerEscapeEventCount 是否已赋值
+                     * 
                      */
                     bool ContainerEscapeEventCountHasBeenSet() const;
 
                     /**
                      * 获取日期
                      * @return Date 日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期
-                     * @param Date 日期
+                     * @param _date 日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 

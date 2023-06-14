@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取消息类型参考互联网MIME类型标准，当前仅支持"text/plain"。	
                      * @return ContentType 消息类型参考互联网MIME类型标准，当前仅支持"text/plain"。	
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置消息类型参考互联网MIME类型标准，当前仅支持"text/plain"。	
-                     * @param ContentType 消息类型参考互联网MIME类型标准，当前仅支持"text/plain"。	
+                     * @param _contentType 消息类型参考互联网MIME类型标准，当前仅支持"text/plain"。	
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 返回内容以链接形式提供。	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置返回内容以链接形式提供。	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 返回内容以链接形式提供。	
+                     * @param _url 返回内容以链接形式提供。	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 普通文本。	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置普通文本。	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 普通文本。	
+                     * @param _content 普通文本。	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogId 批量日志ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLogId() const;
 
                     /**
                      * 判断参数 LogId 是否已赋值
                      * @return LogId 是否已赋值
+                     * 
                      */
                     bool LogIdHasBeenSet() const;
 

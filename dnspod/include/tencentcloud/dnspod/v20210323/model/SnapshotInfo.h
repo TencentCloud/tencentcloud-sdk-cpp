@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取快照的对象存储地址
                      * @return CosUrl 快照的对象存储地址
+                     * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 设置快照的对象存储地址
-                     * @param CosUrl 快照的对象存储地址
+                     * @param _cosUrl 快照的对象存储地址
+                     * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
 
                     /**
                      * 判断参数 CosUrl 是否已赋值
                      * @return CosUrl 是否已赋值
+                     * 
                      */
                     bool CosUrlHasBeenSet() const;
 
                     /**
                      * 获取添加时间
                      * @return CreatedOn 添加时间
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置添加时间
-                     * @param CreatedOn 添加时间
+                     * @param _createdOn 添加时间
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取所属域名
                      * @return Domain 所属域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置所属域名
-                     * @param Domain 所属域名
+                     * @param _domain 所属域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取快照记录 ID
                      * @return Id 快照记录 ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置快照记录 ID
-                     * @param Id 快照记录 ID
+                     * @param _id 快照记录 ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取域名解析记录数
                      * @return RecordCount 域名解析记录数
+                     * 
                      */
                     std::string GetRecordCount() const;
 
                     /**
                      * 设置域名解析记录数
-                     * @param RecordCount 域名解析记录数
+                     * @param _recordCount 域名解析记录数
+                     * 
                      */
                     void SetRecordCount(const std::string& _recordCount);
 
                     /**
                      * 判断参数 RecordCount 是否已赋值
                      * @return RecordCount 是否已赋值
+                     * 
                      */
                     bool RecordCountHasBeenSet() const;
 
                     /**
                      * 获取状态：normal-正常，create-备份中
                      * @return Status 状态：normal-正常，create-备份中
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态：normal-正常，create-备份中
-                     * @param Status 状态：normal-正常，create-备份中
+                     * @param _status 状态：normal-正常，create-备份中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

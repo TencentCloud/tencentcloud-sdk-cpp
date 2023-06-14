@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取使用门店OpenId
                      * @return OpenId 使用门店OpenId
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置使用门店OpenId
-                     * @param OpenId 使用门店OpenId
+                     * @param _openId 使用门店OpenId
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取使用门店OpenKey
                      * @return OpenKey 使用门店OpenKey
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置使用门店OpenKey
-                     * @param OpenKey 使用门店OpenKey
+                     * @param _openKey 使用门店OpenKey
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取平台交易订单号
                      * @return OrderNo 平台交易订单号
+                     * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
                      * 设置平台交易订单号
-                     * @param OrderNo 平台交易订单号
+                     * @param _orderNo 平台交易订单号
+                     * 
                      */
                     void SetOrderNo(const std::string& _orderNo);
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 
                     /**
                      * 获取商户分账单号，type为2时，和DistributeNo二者传其一
                      * @return OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * 
                      */
                     std::string GetOutDistributeNo() const;
 
                     /**
                      * 设置商户分账单号，type为2时，和DistributeNo二者传其一
-                     * @param OutDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * @param _outDistributeNo 商户分账单号，type为2时，和DistributeNo二者传其一
+                     * 
                      */
                     void SetOutDistributeNo(const std::string& _outDistributeNo);
 
                     /**
                      * 判断参数 OutDistributeNo 是否已赋值
                      * @return OutDistributeNo 是否已赋值
+                     * 
                      */
                     bool OutDistributeNoHasBeenSet() const;
 
                     /**
                      * 获取平台分账单号，type为2时，和OutDistributeNo二者传其一
                      * @return DistributeNo 平台分账单号，type为2时，和OutDistributeNo二者传其一
+                     * 
                      */
                     std::string GetDistributeNo() const;
 
                     /**
                      * 设置平台分账单号，type为2时，和OutDistributeNo二者传其一
-                     * @param DistributeNo 平台分账单号，type为2时，和OutDistributeNo二者传其一
+                     * @param _distributeNo 平台分账单号，type为2时，和OutDistributeNo二者传其一
+                     * 
                      */
                     void SetDistributeNo(const std::string& _distributeNo);
 
                     /**
                      * 判断参数 DistributeNo 是否已赋值
                      * @return DistributeNo 是否已赋值
+                     * 
                      */
                     bool DistributeNoHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

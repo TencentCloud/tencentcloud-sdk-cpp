@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取分配的 topic 名称
                      * @return Topic 分配的 topic 名称
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置分配的 topic 名称
-                     * @param Topic 分配的 topic 名称
+                     * @param _topic 分配的 topic 名称
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 分配的 partition 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetPartitions() const;
 
                     /**
                      * 设置分配的 partition 信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partitions 分配的 partition 信息
+                     * @param _partitions 分配的 partition 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitions(const std::vector<int64_t>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 

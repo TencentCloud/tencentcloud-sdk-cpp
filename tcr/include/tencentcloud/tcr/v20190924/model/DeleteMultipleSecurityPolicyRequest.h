@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return RegistryId 实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例Id
-                     * @param RegistryId 实例Id
+                     * @param _registryId 实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取安全组策略
                      * @return SecurityGroupPolicySet 安全组策略
+                     * 
                      */
                     std::vector<SecurityPolicy> GetSecurityGroupPolicySet() const;
 
                     /**
                      * 设置安全组策略
-                     * @param SecurityGroupPolicySet 安全组策略
+                     * @param _securityGroupPolicySet 安全组策略
+                     * 
                      */
                     void SetSecurityGroupPolicySet(const std::vector<SecurityPolicy>& _securityGroupPolicySet);
 
                     /**
                      * 判断参数 SecurityGroupPolicySet 是否已赋值
                      * @return SecurityGroupPolicySet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupPolicySetHasBeenSet() const;
 

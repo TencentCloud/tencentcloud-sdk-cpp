@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取采集器关联的集成任务列表
                      * @return Items 采集器关联的集成任务列表
+                     * 
                      */
                     std::vector<InLongAgentTask> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

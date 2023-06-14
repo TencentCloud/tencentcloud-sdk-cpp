@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备ID，该字段有值将代替 ProductId/DeviceName
                      * @return DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID，该字段有值将代替 ProductId/DeviceName
-                     * @param DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * @param _deviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

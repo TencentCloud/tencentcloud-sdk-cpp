@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取修复项名称
                      * @return ItemName 修复项名称
+                     * 
                      */
                     std::string GetItemName() const;
 
                     /**
                      * 设置修复项名称
-                     * @param ItemName 修复项名称
+                     * @param _itemName 修复项名称
+                     * 
                      */
                     void SetItemName(const std::string& _itemName);
 
                     /**
                      * 判断参数 ItemName 是否已赋值
                      * @return ItemName 是否已赋值
+                     * 
                      */
                     bool ItemNameHasBeenSet() const;
 
                     /**
                      * 获取主机Ip
                      * @return HostIp 主机Ip
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置主机Ip
-                     * @param HostIp 主机Ip
+                     * @param _hostIp 主机Ip
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取首次检测时间
                      * @return CreateTime 首次检测时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置首次检测时间
-                     * @param CreateTime 首次检测时间
+                     * @param _createTime 首次检测时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取最后检测时间
                      * @return ModifyTime 最后检测时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置最后检测时间
-                     * @param ModifyTime 最后检测时间
+                     * @param _modifyTime 最后检测时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取修复时间
                      * @return FixTime 修复时间
+                     * 
                      */
                     std::string GetFixTime() const;
 
                     /**
                      * 设置修复时间
-                     * @param FixTime 修复时间
+                     * @param _fixTime 修复时间
+                     * 
                      */
                     void SetFixTime(const std::string& _fixTime);
 
                     /**
                      * 判断参数 FixTime 是否已赋值
                      * @return FixTime 是否已赋值
+                     * 
                      */
                     bool FixTimeHasBeenSet() const;
 
                     /**
                      * 获取基线检测项结果ID
                      * @return Id 基线检测项结果ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置基线检测项结果ID
-                     * @param Id 基线检测项结果ID
+                     * @param _id 基线检测项结果ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 主机额外信息
+                     * @param _machineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

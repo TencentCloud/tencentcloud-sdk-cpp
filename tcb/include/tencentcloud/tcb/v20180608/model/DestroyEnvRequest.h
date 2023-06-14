@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境Id
-                     * @param EnvId 环境Id
+                     * @param _envId 环境Id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除
                      * @return IsForce 针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除
+                     * 
                      */
                     bool GetIsForce() const;
 
                     /**
                      * 设置针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除
-                     * @param IsForce 针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除
+                     * @param _isForce 针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除
+                     * 
                      */
                     void SetIsForce(const bool& _isForce);
 
                     /**
                      * 判断参数 IsForce 是否已赋值
                      * @return IsForce 是否已赋值
+                     * 
                      */
                     bool IsForceHasBeenSet() const;
 
                     /**
                      * 获取是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
                      * @return BypassCheck 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     * 
                      */
                     bool GetBypassCheck() const;
 
                     /**
                      * 设置是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
-                     * @param BypassCheck 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     * @param _bypassCheck 是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。
+                     * 
                      */
                     void SetBypassCheck(const bool& _bypassCheck);
 
                     /**
                      * 判断参数 BypassCheck 是否已赋值
                      * @return BypassCheck 是否已赋值
+                     * 
                      */
                     bool BypassCheckHasBeenSet() const;
 

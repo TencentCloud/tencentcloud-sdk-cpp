@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点池id
                      * @return NodePoolId 节点池id
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池id
-                     * @param NodePoolId 节点池id
+                     * @param _nodePoolId 节点池id
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取节点id
                      * @return InstanceIds 节点id
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置节点id
-                     * @param InstanceIds 节点id
+                     * @param _instanceIds 节点id
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

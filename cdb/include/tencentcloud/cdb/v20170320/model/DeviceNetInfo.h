@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取tcp连接数
                      * @return Conn tcp连接数
+                     * 
                      */
                     std::vector<int64_t> GetConn() const;
 
                     /**
                      * 设置tcp连接数
-                     * @param Conn tcp连接数
+                     * @param _conn tcp连接数
+                     * 
                      */
                     void SetConn(const std::vector<int64_t>& _conn);
 
                     /**
                      * 判断参数 Conn 是否已赋值
                      * @return Conn 是否已赋值
+                     * 
                      */
                     bool ConnHasBeenSet() const;
 
                     /**
                      * 获取网卡入包量，单位：个/秒
                      * @return PackageIn 网卡入包量，单位：个/秒
+                     * 
                      */
                     std::vector<int64_t> GetPackageIn() const;
 
                     /**
                      * 设置网卡入包量，单位：个/秒
-                     * @param PackageIn 网卡入包量，单位：个/秒
+                     * @param _packageIn 网卡入包量，单位：个/秒
+                     * 
                      */
                     void SetPackageIn(const std::vector<int64_t>& _packageIn);
 
                     /**
                      * 判断参数 PackageIn 是否已赋值
                      * @return PackageIn 是否已赋值
+                     * 
                      */
                     bool PackageInHasBeenSet() const;
 
                     /**
                      * 获取网卡出包量，单位：个/秒
                      * @return PackageOut 网卡出包量，单位：个/秒
+                     * 
                      */
                     std::vector<int64_t> GetPackageOut() const;
 
                     /**
                      * 设置网卡出包量，单位：个/秒
-                     * @param PackageOut 网卡出包量，单位：个/秒
+                     * @param _packageOut 网卡出包量，单位：个/秒
+                     * 
                      */
                     void SetPackageOut(const std::vector<int64_t>& _packageOut);
 
                     /**
                      * 判断参数 PackageOut 是否已赋值
                      * @return PackageOut 是否已赋值
+                     * 
                      */
                     bool PackageOutHasBeenSet() const;
 
                     /**
                      * 获取入流量，单位：kbps
                      * @return FlowIn 入流量，单位：kbps
+                     * 
                      */
                     std::vector<int64_t> GetFlowIn() const;
 
                     /**
                      * 设置入流量，单位：kbps
-                     * @param FlowIn 入流量，单位：kbps
+                     * @param _flowIn 入流量，单位：kbps
+                     * 
                      */
                     void SetFlowIn(const std::vector<int64_t>& _flowIn);
 
                     /**
                      * 判断参数 FlowIn 是否已赋值
                      * @return FlowIn 是否已赋值
+                     * 
                      */
                     bool FlowInHasBeenSet() const;
 
                     /**
                      * 获取出流量，单位：kbps
                      * @return FlowOut 出流量，单位：kbps
+                     * 
                      */
                     std::vector<int64_t> GetFlowOut() const;
 
                     /**
                      * 设置出流量，单位：kbps
-                     * @param FlowOut 出流量，单位：kbps
+                     * @param _flowOut 出流量，单位：kbps
+                     * 
                      */
                     void SetFlowOut(const std::vector<int64_t>& _flowOut);
 
                     /**
                      * 判断参数 FlowOut 是否已赋值
                      * @return FlowOut 是否已赋值
+                     * 
                      */
                     bool FlowOutHasBeenSet() const;
 

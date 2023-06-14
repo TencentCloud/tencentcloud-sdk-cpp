@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationId 执行活动ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 设置执行活动ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvocationId 执行活动ID。
+                     * @param _invocationId 执行活动ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
 
                     /**
                      * 判断参数 InvocationId 是否已赋值
                      * @return InvocationId 是否已赋值
+                     * 
                      */
                     bool InvocationIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationTaskId 执行任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvocationTaskId() const;
 
                     /**
                      * 设置执行任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvocationTaskId 执行任务ID。
+                     * @param _invocationTaskId 执行任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvocationTaskId(const std::string& _invocationTaskId);
 
                     /**
                      * 判断参数 InvocationTaskId 是否已赋值
                      * @return InvocationTaskId 是否已赋值
+                     * 
                      */
                     bool InvocationTaskIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommandId 命令ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置命令ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CommandId 命令ID。
+                     * @param _commandId 命令ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCommandId(const std::string& _commandId);
 
                     /**
                      * 判断参数 CommandId 是否已赋值
                      * @return CommandId 是否已赋值
+                     * 
                      */
                     bool CommandIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 执行任务状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置执行任务状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskStatus 执行任务状态。
+                     * @param _taskStatus 执行任务状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 执行异常信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置执行异常信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMessage 执行异常信息。
+                     * @param _errorMessage 执行异常信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 

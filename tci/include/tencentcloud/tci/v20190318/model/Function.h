@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取输出全部文本标识，当该值设置为true时，会输出当前音频的全部文本
                      * @return EnableAllText 输出全部文本标识，当该值设置为true时，会输出当前音频的全部文本
+                     * 
                      */
                     bool GetEnableAllText() const;
 
                     /**
                      * 设置输出全部文本标识，当该值设置为true时，会输出当前音频的全部文本
-                     * @param EnableAllText 输出全部文本标识，当该值设置为true时，会输出当前音频的全部文本
+                     * @param _enableAllText 输出全部文本标识，当该值设置为true时，会输出当前音频的全部文本
+                     * 
                      */
                     void SetEnableAllText(const bool& _enableAllText);
 
                     /**
                      * 判断参数 EnableAllText 是否已赋值
                      * @return EnableAllText 是否已赋值
+                     * 
                      */
                     bool EnableAllTextHasBeenSet() const;
 
                     /**
                      * 获取输出关键词信息标识，当该值设置为true时，会输出当前音频的关键词信息。
                      * @return EnableKeyword 输出关键词信息标识，当该值设置为true时，会输出当前音频的关键词信息。
+                     * 
                      */
                     bool GetEnableKeyword() const;
 
                     /**
                      * 设置输出关键词信息标识，当该值设置为true时，会输出当前音频的关键词信息。
-                     * @param EnableKeyword 输出关键词信息标识，当该值设置为true时，会输出当前音频的关键词信息。
+                     * @param _enableKeyword 输出关键词信息标识，当该值设置为true时，会输出当前音频的关键词信息。
+                     * 
                      */
                     void SetEnableKeyword(const bool& _enableKeyword);
 
                     /**
                      * 判断参数 EnableKeyword 是否已赋值
                      * @return EnableKeyword 是否已赋值
+                     * 
                      */
                     bool EnableKeywordHasBeenSet() const;
 
                     /**
                      * 获取静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
                      * @return EnableMuteDetect 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     * 
                      */
                     bool GetEnableMuteDetect() const;
 
                     /**
                      * 设置静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
-                     * @param EnableMuteDetect 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     * @param _enableMuteDetect 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     * 
                      */
                     void SetEnableMuteDetect(const bool& _enableMuteDetect);
 
                     /**
                      * 判断参数 EnableMuteDetect 是否已赋值
                      * @return EnableMuteDetect 是否已赋值
+                     * 
                      */
                     bool EnableMuteDetectHasBeenSet() const;
 
                     /**
                      * 获取输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
                      * @return EnableVadInfo 输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
+                     * 
                      */
                     bool GetEnableVadInfo() const;
 
                     /**
                      * 设置输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
-                     * @param EnableVadInfo 输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
+                     * @param _enableVadInfo 输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
+                     * 
                      */
                     void SetEnableVadInfo(const bool& _enableVadInfo);
 
                     /**
                      * 判断参数 EnableVadInfo 是否已赋值
                      * @return EnableVadInfo 是否已赋值
+                     * 
                      */
                     bool EnableVadInfoHasBeenSet() const;
 
                     /**
                      * 获取输出音频音量信息标识，当设置为 true 时，会输出当前音频音量信息。
                      * @return EnableVolume 输出音频音量信息标识，当设置为 true 时，会输出当前音频音量信息。
+                     * 
                      */
                     bool GetEnableVolume() const;
 
                     /**
                      * 设置输出音频音量信息标识，当设置为 true 时，会输出当前音频音量信息。
-                     * @param EnableVolume 输出音频音量信息标识，当设置为 true 时，会输出当前音频音量信息。
+                     * @param _enableVolume 输出音频音量信息标识，当设置为 true 时，会输出当前音频音量信息。
+                     * 
                      */
                     void SetEnableVolume(const bool& _enableVolume);
 
                     /**
                      * 判断参数 EnableVolume 是否已赋值
                      * @return EnableVolume 是否已赋值
+                     * 
                      */
                     bool EnableVolumeHasBeenSet() const;
 

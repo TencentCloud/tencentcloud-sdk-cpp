@@ -82,6 +82,7 @@ LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
 LowEvaluation：无参考打分低于阈值。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -103,7 +104,7 @@ LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
 LowEvaluation：无参考打分低于阈值。
-                     * @param Type 异常类型，取值范围：
+                     * @param _type 异常类型，取值范围：
 Jitter：抖动，
 Blur：模糊，
 LowLighting：低光照，
@@ -120,30 +121,35 @@ LowVoice：低音，
 HighVoice：爆音，
 NoVoice：静音，
 LowEvaluation：无参考打分低于阈值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取质检结果项。
                      * @return QualityControlItems 质检结果项。
+                     * 
                      */
                     std::vector<QualityControlItem> GetQualityControlItems() const;
 
                     /**
                      * 设置质检结果项。
-                     * @param QualityControlItems 质检结果项。
+                     * @param _qualityControlItems 质检结果项。
+                     * 
                      */
                     void SetQualityControlItems(const std::vector<QualityControlItem>& _qualityControlItems);
 
                     /**
                      * 判断参数 QualityControlItems 是否已赋值
                      * @return QualityControlItems 是否已赋值
+                     * 
                      */
                     bool QualityControlItemsHasBeenSet() const;
 

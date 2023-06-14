@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取作业Id
                      * @return JobId 作业Id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业Id
-                     * @param JobId 作业Id
+                     * @param _jobId 作业Id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取作业配置版本
                      * @return JobConfigVersions 作业配置版本
+                     * 
                      */
                     std::vector<uint64_t> GetJobConfigVersions() const;
 
                     /**
                      * 设置作业配置版本
-                     * @param JobConfigVersions 作业配置版本
+                     * @param _jobConfigVersions 作业配置版本
+                     * 
                      */
                     void SetJobConfigVersions(const std::vector<uint64_t>& _jobConfigVersions);
 
                     /**
                      * 判断参数 JobConfigVersions 是否已赋值
                      * @return JobConfigVersions 是否已赋值
+                     * 
                      */
                     bool JobConfigVersionsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0
                      * @return Offset 偏移量，默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * @param _offset 偏移量，默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认20，最大100
                      * @return Limit 分页大小，默认20，最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，默认20，最大100
-                     * @param Limit 分页大小，默认20，最大100
+                     * @param _limit 分页大小，默认20，最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取true 表示只展示草稿
                      * @return OnlyDraft true 表示只展示草稿
+                     * 
                      */
                     bool GetOnlyDraft() const;
 
                     /**
                      * 设置true 表示只展示草稿
-                     * @param OnlyDraft true 表示只展示草稿
+                     * @param _onlyDraft true 表示只展示草稿
+                     * 
                      */
                     void SetOnlyDraft(const bool& _onlyDraft);
 
                     /**
                      * 判断参数 OnlyDraft 是否已赋值
                      * @return OnlyDraft 是否已赋值
+                     * 
                      */
                     bool OnlyDraftHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

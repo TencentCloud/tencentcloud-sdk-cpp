@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取播放域名列表。
                      * @return PlayDomains 播放域名列表。
+                     * 
                      */
                     std::vector<std::string> GetPlayDomains() const;
 
                     /**
                      * 设置播放域名列表。
-                     * @param PlayDomains 播放域名列表。
+                     * @param _playDomains 播放域名列表。
+                     * 
                      */
                     void SetPlayDomains(const std::vector<std::string>& _playDomains);
 
                     /**
                      * 判断参数 PlayDomains 是否已赋值
                      * @return PlayDomains 是否已赋值
+                     * 
                      */
                     bool PlayDomainsHasBeenSet() const;
 

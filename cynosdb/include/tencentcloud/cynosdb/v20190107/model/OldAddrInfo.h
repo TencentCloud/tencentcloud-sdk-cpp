@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip IP
+                     * @param _vip IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vport 端口
+                     * @param _vport 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnTime 期望执行回收时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReturnTime() const;
 
                     /**
                      * 设置期望执行回收时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReturnTime 期望执行回收时间
+                     * @param _returnTime 期望执行回收时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReturnTime(const std::string& _returnTime);
 
                     /**
                      * 判断参数 ReturnTime 是否已赋值
                      * @return ReturnTime 是否已赋值
+                     * 
                      */
                     bool ReturnTimeHasBeenSet() const;
 

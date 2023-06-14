@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取姓名
                      * @return RealName 姓名
+                     * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置姓名
-                     * @param RealName 姓名
+                     * @param _realName 姓名
+                     * 
                      */
                     void SetRealName(const std::string& _realName);
 
                     /**
                      * 判断参数 RealName 是否已赋值
                      * @return RealName 是否已赋值
+                     * 
                      */
                     bool RealNameHasBeenSet() const;
 
                     /**
                      * 获取证件号码（公司注册证件号）
                      * @return IdCard 证件号码（公司注册证件号）
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置证件号码（公司注册证件号）
-                     * @param IdCard 证件号码（公司注册证件号）
+                     * @param _idCard 证件号码（公司注册证件号）
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
                     /**
                      * 获取企业全称
                      * @return EnterpriseName 企业全称
+                     * 
                      */
                     std::string GetEnterpriseName() const;
 
                     /**
                      * 设置企业全称
-                     * @param EnterpriseName 企业全称
+                     * @param _enterpriseName 企业全称
+                     * 
                      */
                     void SetEnterpriseName(const std::string& _enterpriseName);
 
                     /**
                      * 判断参数 EnterpriseName 是否已赋值
                      * @return EnterpriseName 是否已赋值
+                     * 
                      */
                     bool EnterpriseNameHasBeenSet() const;
 
                     /**
                      * 获取企业标识（注册号，统一社会信用代码）
                      * @return EnterpriseMark 企业标识（注册号，统一社会信用代码）
+                     * 
                      */
                     std::string GetEnterpriseMark() const;
 
                     /**
                      * 设置企业标识（注册号，统一社会信用代码）
-                     * @param EnterpriseMark 企业标识（注册号，统一社会信用代码）
+                     * @param _enterpriseMark 企业标识（注册号，统一社会信用代码）
+                     * 
                      */
                     void SetEnterpriseMark(const std::string& _enterpriseMark);
 
                     /**
                      * 判断参数 EnterpriseMark 是否已赋值
                      * @return EnterpriseMark 是否已赋值
+                     * 
                      */
                     bool EnterpriseMarkHasBeenSet() const;
 

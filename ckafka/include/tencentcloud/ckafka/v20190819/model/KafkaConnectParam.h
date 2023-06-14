@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Kafka连接源的实例资源, 非自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Kafka连接源的实例资源, 非自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource Kafka连接源的实例资源, 非自建时必填
+                     * @param _resource Kafka连接源的实例资源, 非自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SelfBuilt 是否为自建集群
+                     * @param _selfBuilt 是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
 
                     /**
                      * 判断参数 SelfBuilt 是否已赋值
                      * @return SelfBuilt 是否已赋值
+                     * 
                      */
                     bool SelfBuiltHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Dip任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Dip任务
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsUpdate 是否更新到关联的Dip任务
+                     * @param _isUpdate 是否更新到关联的Dip任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
 
                     /**
                      * 判断参数 IsUpdate 是否已赋值
                      * @return IsUpdate 是否已赋值
+                     * 
                      */
                     bool IsUpdateHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerAddress Kafka连接的broker地址, 自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBrokerAddress() const;
 
                     /**
                      * 设置Kafka连接的broker地址, 自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrokerAddress Kafka连接的broker地址, 自建时必填
+                     * @param _brokerAddress Kafka连接的broker地址, 自建时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrokerAddress(const std::string& _brokerAddress);
 
                     /**
                      * 判断参数 BrokerAddress 是否已赋值
                      * @return BrokerAddress 是否已赋值
+                     * 
                      */
                     bool BrokerAddressHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region CKafka连接源的实例资源地域, 跨地域时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置CKafka连接源的实例资源地域, 跨地域时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region CKafka连接源的实例资源地域, 跨地域时必填
+                     * @param _region CKafka连接源的实例资源地域, 跨地域时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

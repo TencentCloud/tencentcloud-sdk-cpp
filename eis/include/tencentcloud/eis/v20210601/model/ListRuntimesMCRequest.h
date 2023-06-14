@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境运行类型：0:运行时类型、1:api类型
                      * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * 
                      */
                     int64_t GetRuntimeClass() const;
 
                     /**
                      * 设置环境运行类型：0:运行时类型、1:api类型
-                     * @param RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * @param _runtimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * 
                      */
                     void SetRuntimeClass(const int64_t& _runtimeClass);
 
                     /**
                      * 判断参数 RuntimeClass 是否已赋值
                      * @return RuntimeClass 是否已赋值
+                     * 
                      */
                     bool RuntimeClassHasBeenSet() const;
 
                     /**
                      * 获取计划类型：0-pro 1-lite
                      * @return PlanType 计划类型：0-pro 1-lite
+                     * 
                      */
                     int64_t GetPlanType() const;
 
                     /**
                      * 设置计划类型：0-pro 1-lite
-                     * @param PlanType 计划类型：0-pro 1-lite
+                     * @param _planType 计划类型：0-pro 1-lite
+                     * 
                      */
                     void SetPlanType(const int64_t& _planType);
 
                     /**
                      * 判断参数 PlanType 是否已赋值
                      * @return PlanType 是否已赋值
+                     * 
                      */
                     bool PlanTypeHasBeenSet() const;
 

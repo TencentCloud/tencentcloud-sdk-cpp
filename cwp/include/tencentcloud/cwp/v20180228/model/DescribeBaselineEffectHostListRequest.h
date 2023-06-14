@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取分页参数 最大100条
                      * @return Limit 分页参数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数 最大100条
-                     * @param Limit 分页参数 最大100条
+                     * @param _limit 分页参数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Offset 分页参数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数
-                     * @param Offset 分页参数
+                     * @param _offset 分页参数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取基线id
                      * @return BaselineId 基线id
+                     * 
                      */
                     uint64_t GetBaselineId() const;
 
                     /**
                      * 设置基线id
-                     * @param BaselineId 基线id
+                     * @param _baselineId 基线id
+                     * 
                      */
                     void SetBaselineId(const uint64_t& _baselineId);
 
                     /**
                      * 判断参数 BaselineId 是否已赋值
                      * @return BaselineId 是否已赋值
+                     * 
                      */
                     bool BaselineIdHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>AliasName- String- 主机别名</li>
 <li>Status- Uint- 1已通过  0未通过 5检测中</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -111,51 +121,59 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>AliasName- String- 主机别名</li>
 <li>Status- Uint- 1已通过  0未通过 5检测中</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>AliasName- String- 主机别名</li>
 <li>Status- Uint- 1已通过  0未通过 5检测中</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取策略id
                      * @return StrategyId 策略id
+                     * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略id
-                     * @param StrategyId 策略id
+                     * @param _strategyId 策略id
+                     * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取主机uuid数组
                      * @return UuidList 主机uuid数组
+                     * 
                      */
                     std::vector<std::string> GetUuidList() const;
 
                     /**
                      * 设置主机uuid数组
-                     * @param UuidList 主机uuid数组
+                     * @param _uuidList 主机uuid数组
+                     * 
                      */
                     void SetUuidList(const std::vector<std::string>& _uuidList);
 
                     /**
                      * 判断参数 UuidList 是否已赋值
                      * @return UuidList 是否已赋值
+                     * 
                      */
                     bool UuidListHasBeenSet() const;
 

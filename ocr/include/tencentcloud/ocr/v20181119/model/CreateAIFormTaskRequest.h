@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取多个文件的URL列表
                      * @return FileList 多个文件的URL列表
+                     * 
                      */
                     std::vector<SmartFormFileUrl> GetFileList() const;
 
                     /**
                      * 设置多个文件的URL列表
-                     * @param FileList 多个文件的URL列表
+                     * @param _fileList 多个文件的URL列表
+                     * 
                      */
                     void SetFileList(const std::vector<SmartFormFileUrl>& _fileList);
 
                     /**
                      * 判断参数 FileList 是否已赋值
                      * @return FileList 是否已赋值
+                     * 
                      */
                     bool FileListHasBeenSet() const;
 
                     /**
                      * 获取备注信息1
                      * @return FirstNotes 备注信息1
+                     * 
                      */
                     std::string GetFirstNotes() const;
 
                     /**
                      * 设置备注信息1
-                     * @param FirstNotes 备注信息1
+                     * @param _firstNotes 备注信息1
+                     * 
                      */
                     void SetFirstNotes(const std::string& _firstNotes);
 
                     /**
                      * 判断参数 FirstNotes 是否已赋值
                      * @return FirstNotes 是否已赋值
+                     * 
                      */
                     bool FirstNotesHasBeenSet() const;
 
                     /**
                      * 获取备注信息2
                      * @return SecondNotes 备注信息2
+                     * 
                      */
                     std::string GetSecondNotes() const;
 
                     /**
                      * 设置备注信息2
-                     * @param SecondNotes 备注信息2
+                     * @param _secondNotes 备注信息2
+                     * 
                      */
                     void SetSecondNotes(const std::string& _secondNotes);
 
                     /**
                      * 判断参数 SecondNotes 是否已赋值
                      * @return SecondNotes 是否已赋值
+                     * 
                      */
                     bool SecondNotesHasBeenSet() const;
 
                     /**
                      * 获取文件类型
                      * @return FileType 文件类型
+                     * 
                      */
                     uint64_t GetFileType() const;
 
                     /**
                      * 设置文件类型
-                     * @param FileType 文件类型
+                     * @param _fileType 文件类型
+                     * 
                      */
                     void SetFileType(const uint64_t& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 

@@ -81,6 +81,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthInfosResponse> DescribeExtendedServiceAuthInfosOutcome;
+                typedef std::future<DescribeExtendedServiceAuthInfosOutcome> DescribeExtendedServiceAuthInfosOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthInfosRequest&, DescribeExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileUrlsResponse> DescribeFileUrlsOutcome;
                 typedef std::future<DescribeFileUrlsOutcome> DescribeFileUrlsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFileUrlsRequest&, DescribeFileUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileUrlsAsyncHandler;
@@ -603,6 +608,15 @@ namespace TencentCloud
                 DeleteSealPoliciesOutcome DeleteSealPolicies(const Model::DeleteSealPoliciesRequest &request);
                 void DeleteSealPoliciesAsync(const Model::DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
+
+                /**
+                 *查询企业扩展服务授权信息，目前支持查询：企业静默签，企业与港澳台居民签署合同，使用手机号验证签署方身份，骑缝章，批量签署能力是否已经开通
+                 * @param req DescribeExtendedServiceAuthInfosRequest
+                 * @return DescribeExtendedServiceAuthInfosOutcome
+                 */
+                DescribeExtendedServiceAuthInfosOutcome DescribeExtendedServiceAuthInfos(const Model::DescribeExtendedServiceAuthInfosRequest &request);
+                void DescribeExtendedServiceAuthInfosAsync(const Model::DescribeExtendedServiceAuthInfosRequest& request, const DescribeExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtendedServiceAuthInfosOutcomeCallable DescribeExtendedServiceAuthInfosCallable(const Model::DescribeExtendedServiceAuthInfosRequest& request);
 
                 /**
                  *查询文件下载URL。

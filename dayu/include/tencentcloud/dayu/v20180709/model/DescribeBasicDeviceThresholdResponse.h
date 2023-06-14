@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回黑洞封堵值
                      * @return Threshold 返回黑洞封堵值
+                     * 
                      */
                     uint64_t GetThreshold() const;
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 

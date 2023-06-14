@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取ip地址。
                      * @return Address ip地址。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置ip地址。
-                     * @param Address ip地址。
+                     * @param _address ip地址。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 备注。
+                     * @param _description 备注。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取视图名称
                      * @return View 视图名称
+                     * 
                      */
                     std::string GetView() const;
 
                     /**
                      * 设置视图名称
-                     * @param View 视图名称
+                     * @param _view 视图名称
+                     * 
                      */
                     void SetView(const std::string& _view);
 
                     /**
                      * 判断参数 View 是否已赋值
                      * @return View 是否已赋值
+                     * 
                      */
                     bool ViewHasBeenSet() const;
 

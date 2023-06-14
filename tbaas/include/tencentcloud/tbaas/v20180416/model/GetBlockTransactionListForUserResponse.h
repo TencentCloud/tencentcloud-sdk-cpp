@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取交易总数量
                      * @return TotalCount 交易总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取交易列表
                      * @return TransactionList 交易列表
+                     * 
                      */
                     std::vector<TransactionItem> GetTransactionList() const;
 
                     /**
                      * 判断参数 TransactionList 是否已赋值
                      * @return TransactionList 是否已赋值
+                     * 
                      */
                     bool TransactionListHasBeenSet() const;
 

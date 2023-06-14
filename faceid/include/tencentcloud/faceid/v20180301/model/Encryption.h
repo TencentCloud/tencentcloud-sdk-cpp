@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
                      * @return EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * 
                      */
                     std::vector<std::string> GetEncryptList() const;
 
                     /**
                      * 设置在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
-                     * @param EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * @param _encryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * 
                      */
                     void SetEncryptList(const std::vector<std::string>& _encryptList);
 
                     /**
                      * 判断参数 EncryptList 是否已赋值
                      * @return EncryptList 是否已赋值
+                     * 
                      */
                     bool EncryptListHasBeenSet() const;
 
                     /**
                      * 获取有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
                      * 设置有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
-                     * @param CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @param _ciphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 
                      */
                     void SetCiphertextBlob(const std::string& _ciphertextBlob);
 
                     /**
                      * 判断参数 CiphertextBlob 是否已赋值
                      * @return CiphertextBlob 是否已赋值
+                     * 
                      */
                     bool CiphertextBlobHasBeenSet() const;
 
                     /**
                      * 获取有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
                      * @return Iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 
                      */
                     std::string GetIv() const;
 
                     /**
                      * 设置有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
-                     * @param Iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * @param _iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 
                      */
                     void SetIv(const std::string& _iv);
 
                     /**
                      * 判断参数 Iv 是否已赋值
                      * @return Iv 是否已赋值
+                     * 
                      */
                     bool IvHasBeenSet() const;
 
                     /**
                      * 获取加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
                      * @return Algorithm 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
                      * 设置加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
-                     * @param Algorithm 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * @param _algorithm 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
                     /**
                      * 判断参数 Algorithm 是否已赋值
                      * @return Algorithm 是否已赋值
+                     * 
                      */
                     bool AlgorithmHasBeenSet() const;
 
                     /**
                      * 获取SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
                      * @return TagList SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * 
                      */
                     std::vector<std::string> GetTagList() const;
 
                     /**
                      * 设置SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
-                     * @param TagList SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * @param _tagList SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * 
                      */
                     void SetTagList(const std::vector<std::string>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 

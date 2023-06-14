@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取主实例Id
                      * @return RegistryId 主实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例Id
-                     * @param RegistryId 主实例Id
+                     * @param _registryId 主实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例Id
                      * @return ReplicationRegistryId 复制实例Id
+                     * 
                      */
                     std::string GetReplicationRegistryId() const;
 
                     /**
                      * 设置复制实例Id
-                     * @param ReplicationRegistryId 复制实例Id
+                     * @param _replicationRegistryId 复制实例Id
+                     * 
                      */
                     void SetReplicationRegistryId(const std::string& _replicationRegistryId);
 
                     /**
                      * 判断参数 ReplicationRegistryId 是否已赋值
                      * @return ReplicationRegistryId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例的地域Id
                      * @return ReplicationRegionId 复制实例的地域Id
+                     * 
                      */
                     uint64_t GetReplicationRegionId() const;
 
                     /**
                      * 设置复制实例的地域Id
-                     * @param ReplicationRegionId 复制实例的地域Id
+                     * @param _replicationRegionId 复制实例的地域Id
+                     * 
                      */
                     void SetReplicationRegionId(const uint64_t& _replicationRegionId);
 
                     /**
                      * 判断参数 ReplicationRegionId 是否已赋值
                      * @return ReplicationRegionId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 
                     /**
                      * 获取是否显示同步日志
                      * @return ShowReplicationLog 是否显示同步日志
+                     * 
                      */
                     bool GetShowReplicationLog() const;
 
                     /**
                      * 设置是否显示同步日志
-                     * @param ShowReplicationLog 是否显示同步日志
+                     * @param _showReplicationLog 是否显示同步日志
+                     * 
                      */
                     void SetShowReplicationLog(const bool& _showReplicationLog);
 
                     /**
                      * 判断参数 ShowReplicationLog 是否已赋值
                      * @return ShowReplicationLog 是否已赋值
+                     * 
                      */
                     bool ShowReplicationLogHasBeenSet() const;
 
                     /**
                      * 获取日志页号, 默认0
                      * @return Offset 日志页号, 默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置日志页号, 默认0
-                     * @param Offset 日志页号, 默认0
+                     * @param _offset 日志页号, 默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取最大输出条数，默认5，最大为20
                      * @return Limit 最大输出条数，默认5，最大为20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大输出条数，默认5，最大为20
-                     * @param Limit 最大输出条数，默认5，最大为20
+                     * @param _limit 最大输出条数，默认5，最大为20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

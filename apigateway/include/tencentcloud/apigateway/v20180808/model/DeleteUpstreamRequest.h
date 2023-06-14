@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的后端通道ID
                      * @return UpstreamId 待删除的后端通道ID
+                     * 
                      */
                     std::string GetUpstreamId() const;
 
                     /**
                      * 设置待删除的后端通道ID
-                     * @param UpstreamId 待删除的后端通道ID
+                     * @param _upstreamId 待删除的后端通道ID
+                     * 
                      */
                     void SetUpstreamId(const std::string& _upstreamId);
 
                     /**
                      * 判断参数 UpstreamId 是否已赋值
                      * @return UpstreamId 是否已赋值
+                     * 
                      */
                     bool UpstreamIdHasBeenSet() const;
 

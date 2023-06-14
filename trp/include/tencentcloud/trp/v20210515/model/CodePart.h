@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 码段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置码段名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 码段名称
+                     * @param _name 码段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 码段类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置码段类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 码段类型
+                     * @param _type 码段类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,38 +101,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 码段内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置码段内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 码段内容
+                     * @param _value 码段内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取码段长度
                      * @return Length 码段长度
+                     * 
                      */
                     uint64_t GetLength() const;
 
                     /**
                      * 设置码段长度
-                     * @param Length 码段长度
+                     * @param _length 码段长度
+                     * 
                      */
                     void SetLength(const uint64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 扩展字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExt() const;
 
                     /**
                      * 设置扩展字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ext 扩展字段
+                     * @param _ext 扩展字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExt(const std::string& _ext);
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 

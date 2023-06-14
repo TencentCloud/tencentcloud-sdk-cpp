@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取健康得分以及异常扣分项。
                      * @return Data 健康得分以及异常扣分项。
+                     * 
                      */
                     HealthScoreInfo GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

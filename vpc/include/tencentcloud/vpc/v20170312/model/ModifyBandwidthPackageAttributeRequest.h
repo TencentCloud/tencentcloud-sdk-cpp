@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取带宽包唯一标识ID
                      * @return BandwidthPackageId 带宽包唯一标识ID
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置带宽包唯一标识ID
-                     * @param BandwidthPackageId 带宽包唯一标识ID
+                     * @param _bandwidthPackageId 带宽包唯一标识ID
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
                      * 获取带宽包名称
                      * @return BandwidthPackageName 带宽包名称
+                     * 
                      */
                     std::string GetBandwidthPackageName() const;
 
                     /**
                      * 设置带宽包名称
-                     * @param BandwidthPackageName 带宽包名称
+                     * @param _bandwidthPackageName 带宽包名称
+                     * 
                      */
                     void SetBandwidthPackageName(const std::string& _bandwidthPackageName);
 
                     /**
                      * 判断参数 BandwidthPackageName 是否已赋值
                      * @return BandwidthPackageName 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageNameHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
                      * @return ChargeType 带宽包计费模式，示例 ：
 'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置带宽包计费模式，示例 ：
 'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
-                     * @param ChargeType 带宽包计费模式，示例 ：
+                     * @param _chargeType 带宽包计费模式，示例 ：
 'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 

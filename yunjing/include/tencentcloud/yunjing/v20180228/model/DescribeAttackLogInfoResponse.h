@@ -46,192 +46,224 @@ namespace TencentCloud
                     /**
                      * 获取日志ID
                      * @return Id 日志ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取主机ID
                      * @return Quuid 主机ID
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取攻击来源端口
                      * @return SrcPort 攻击来源端口
+                     * 
                      */
                     uint64_t GetSrcPort() const;
 
                     /**
                      * 判断参数 SrcPort 是否已赋值
                      * @return SrcPort 是否已赋值
+                     * 
                      */
                     bool SrcPortHasBeenSet() const;
 
                     /**
                      * 获取攻击来源IP
                      * @return SrcIp 攻击来源IP
+                     * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 判断参数 SrcIp 是否已赋值
                      * @return SrcIp 是否已赋值
+                     * 
                      */
                     bool SrcIpHasBeenSet() const;
 
                     /**
                      * 获取攻击目标端口
                      * @return DstPort 攻击目标端口
+                     * 
                      */
                     uint64_t GetDstPort() const;
 
                     /**
                      * 判断参数 DstPort 是否已赋值
                      * @return DstPort 是否已赋值
+                     * 
                      */
                     bool DstPortHasBeenSet() const;
 
                     /**
                      * 获取攻击目标IP
                      * @return DstIp 攻击目标IP
+                     * 
                      */
                     std::string GetDstIp() const;
 
                     /**
                      * 判断参数 DstIp 是否已赋值
                      * @return DstIp 是否已赋值
+                     * 
                      */
                     bool DstIpHasBeenSet() const;
 
                     /**
                      * 获取攻击方法
                      * @return HttpMethod 攻击方法
+                     * 
                      */
                     std::string GetHttpMethod() const;
 
                     /**
                      * 判断参数 HttpMethod 是否已赋值
                      * @return HttpMethod 是否已赋值
+                     * 
                      */
                     bool HttpMethodHasBeenSet() const;
 
                     /**
                      * 获取攻击目标主机
                      * @return HttpHost 攻击目标主机
+                     * 
                      */
                     std::string GetHttpHost() const;
 
                     /**
                      * 判断参数 HttpHost 是否已赋值
                      * @return HttpHost 是否已赋值
+                     * 
                      */
                     bool HttpHostHasBeenSet() const;
 
                     /**
                      * 获取攻击头信息
                      * @return HttpHead 攻击头信息
+                     * 
                      */
                     std::string GetHttpHead() const;
 
                     /**
                      * 判断参数 HttpHead 是否已赋值
                      * @return HttpHead 是否已赋值
+                     * 
                      */
                     bool HttpHeadHasBeenSet() const;
 
                     /**
                      * 获取攻击者浏览器标识
                      * @return HttpUserAgent 攻击者浏览器标识
+                     * 
                      */
                     std::string GetHttpUserAgent() const;
 
                     /**
                      * 判断参数 HttpUserAgent 是否已赋值
                      * @return HttpUserAgent 是否已赋值
+                     * 
                      */
                     bool HttpUserAgentHasBeenSet() const;
 
                     /**
                      * 获取请求源
                      * @return HttpReferer 请求源
+                     * 
                      */
                     std::string GetHttpReferer() const;
 
                     /**
                      * 判断参数 HttpReferer 是否已赋值
                      * @return HttpReferer 是否已赋值
+                     * 
                      */
                     bool HttpRefererHasBeenSet() const;
 
                     /**
                      * 获取威胁类型
                      * @return VulType 威胁类型
+                     * 
                      */
                     std::string GetVulType() const;
 
                     /**
                      * 判断参数 VulType 是否已赋值
                      * @return VulType 是否已赋值
+                     * 
                      */
                     bool VulTypeHasBeenSet() const;
 
                     /**
                      * 获取攻击路径
                      * @return HttpCgi 攻击路径
+                     * 
                      */
                     std::string GetHttpCgi() const;
 
                     /**
                      * 判断参数 HttpCgi 是否已赋值
                      * @return HttpCgi 是否已赋值
+                     * 
                      */
                     bool HttpCgiHasBeenSet() const;
 
                     /**
                      * 获取攻击参数
                      * @return HttpParam 攻击参数
+                     * 
                      */
                     std::string GetHttpParam() const;
 
                     /**
                      * 判断参数 HttpParam 是否已赋值
                      * @return HttpParam 是否已赋值
+                     * 
                      */
                     bool HttpParamHasBeenSet() const;
 
                     /**
                      * 获取攻击时间
                      * @return CreatedAt 攻击时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取攻击内容
                      * @return HttpContent 攻击内容
+                     * 
                      */
                     std::string GetHttpContent() const;
 
                     /**
                      * 判断参数 HttpContent 是否已赋值
                      * @return HttpContent 是否已赋值
+                     * 
                      */
                     bool HttpContentHasBeenSet() const;
 

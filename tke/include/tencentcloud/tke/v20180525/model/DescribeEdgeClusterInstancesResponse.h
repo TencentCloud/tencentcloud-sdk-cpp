@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取该集群总数
                      * @return TotalCount 该集群总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取节点信息集合
                      * @return InstanceInfoSet 节点信息集合
+                     * 
                      */
                     std::string GetInstanceInfoSet() const;
 
                     /**
                      * 判断参数 InstanceInfoSet 是否已赋值
                      * @return InstanceInfoSet 是否已赋值
+                     * 
                      */
                     bool InstanceInfoSetHasBeenSet() const;
 

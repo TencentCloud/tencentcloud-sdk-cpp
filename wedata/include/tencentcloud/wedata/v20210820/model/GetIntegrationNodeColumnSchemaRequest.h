@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取字段示例（json格式）
                      * @return ColumnContent 字段示例（json格式）
+                     * 
                      */
                     std::string GetColumnContent() const;
 
                     /**
                      * 设置字段示例（json格式）
-                     * @param ColumnContent 字段示例（json格式）
+                     * @param _columnContent 字段示例（json格式）
+                     * 
                      */
                     void SetColumnContent(const std::string& _columnContent);
 
                     /**
                      * 判断参数 ColumnContent 是否已赋值
                      * @return ColumnContent 是否已赋值
+                     * 
                      */
                     bool ColumnContentHasBeenSet() const;
 
                     /**
                      * 获取数据源类型
                      * @return DatasourceType 数据源类型
+                     * 
                      */
                     std::string GetDatasourceType() const;
 
                     /**
                      * 设置数据源类型
-                     * @param DatasourceType 数据源类型
+                     * @param _datasourceType 数据源类型
+                     * 
                      */
                     void SetDatasourceType(const std::string& _datasourceType);
 
                     /**
                      * 判断参数 DatasourceType 是否已赋值
                      * @return DatasourceType 是否已赋值
+                     * 
                      */
                     bool DatasourceTypeHasBeenSet() const;
 

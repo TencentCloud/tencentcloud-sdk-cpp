@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取命名空间
                      * @return Namespaces 命名空间
+                     * 
                      */
                     std::vector<Namespace> GetNamespaces() const;
 
                     /**
                      * 判断参数 Namespaces 是否已赋值
                      * @return Namespaces 是否已赋值
+                     * 
                      */
                     bool NamespacesHasBeenSet() const;
 

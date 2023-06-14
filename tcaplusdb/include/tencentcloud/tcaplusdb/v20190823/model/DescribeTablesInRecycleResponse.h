@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取表格数量
                      * @return TotalCount 表格数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取表格详情结果列表
                      * @return TableInfos 表格详情结果列表
+                     * 
                      */
                     std::vector<TableInfoNew> GetTableInfos() const;
 
                     /**
                      * 判断参数 TableInfos 是否已赋值
                      * @return TableInfos 是否已赋值
+                     * 
                      */
                     bool TableInfosHasBeenSet() const;
 

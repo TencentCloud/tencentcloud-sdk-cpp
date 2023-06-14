@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取检验报告
                      * @return ReportType 检验报告
+                     * 
                      */
                     int64_t GetReportType() const;
 
                     /**
                      * 设置检验报告
-                     * @param ReportType 检验报告
+                     * @param _reportType 检验报告
+                     * 
                      */
                     void SetReportType(const int64_t& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 
                     /**
                      * 获取版本2
                      * @return Version 版本2
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置版本2
-                     * @param Version 版本2
+                     * @param _version 版本2
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

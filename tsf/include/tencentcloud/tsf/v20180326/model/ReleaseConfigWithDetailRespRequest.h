@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取配置ID
                      * @return ConfigId 配置ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置ID
-                     * @param ConfigId 配置ID
+                     * @param _configId 配置ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取部署组ID
                      * @return GroupId 部署组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID
-                     * @param GroupId 部署组ID
+                     * @param _groupId 部署组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取发布描述
                      * @return ReleaseDesc 发布描述
+                     * 
                      */
                     std::string GetReleaseDesc() const;
 
                     /**
                      * 设置发布描述
-                     * @param ReleaseDesc 发布描述
+                     * @param _releaseDesc 发布描述
+                     * 
                      */
                     void SetReleaseDesc(const std::string& _releaseDesc);
 
                     /**
                      * 判断参数 ReleaseDesc 是否已赋值
                      * @return ReleaseDesc 是否已赋值
+                     * 
                      */
                     bool ReleaseDescHasBeenSet() const;
 

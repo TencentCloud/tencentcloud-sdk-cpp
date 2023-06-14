@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取撤销回档任务对应的实例Id。
                      * @return InstanceId 撤销回档任务对应的实例Id。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置撤销回档任务对应的实例Id。
-                     * @param InstanceId 撤销回档任务对应的实例Id。
+                     * @param _instanceId 撤销回档任务对应的实例Id。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

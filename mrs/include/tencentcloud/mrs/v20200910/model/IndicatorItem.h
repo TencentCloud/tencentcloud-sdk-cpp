@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 英文缩写
+                     * @param _code 英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scode 标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScode() const;
 
                     /**
                      * 设置标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scode 标准缩写
+                     * @param _scode 标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScode(const std::string& _scode);
 
                     /**
                      * 判断参数 Scode 是否已赋值
                      * @return Scode 是否已赋值
+                     * 
                      */
                     bool ScodeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 项目名称
+                     * @param _name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sname 标准名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSname() const;
 
                     /**
                      * 设置标准名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sname 标准名
+                     * @param _sname 标准名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSname(const std::string& _sname);
 
                     /**
                      * 判断参数 Sname 是否已赋值
                      * @return Sname 是否已赋值
+                     * 
                      */
                     bool SnameHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 结果
+                     * @param _result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 单位
+                     * @param _unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRange() const;
 
                     /**
                      * 设置参考范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range 参考范围
+                     * @param _range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRange(const std::string& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArrow() const;
 
                     /**
                      * 设置上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Arrow 上下箭头
+                     * @param _arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArrow(const std::string& _arrow);
 
                     /**
                      * 判断参数 Arrow 是否已赋值
                      * @return Arrow 是否已赋值
+                     * 
                      */
                     bool ArrowHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Normal 是否正常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetNormal() const;
 
                     /**
                      * 设置是否正常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Normal 是否正常
+                     * @param _normal 是否正常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNormal(const bool& _normal);
 
                     /**
                      * 判断参数 Normal 是否已赋值
                      * @return Normal 是否已赋值
+                     * 
                      */
                     bool NormalHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemString 项目原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetItemString() const;
 
                     /**
                      * 设置项目原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemString 项目原文
+                     * @param _itemString 项目原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemString(const std::string& _itemString);
 
                     /**
                      * 判断参数 ItemString 是否已赋值
                      * @return ItemString 是否已赋值
+                     * 
                      */
                     bool ItemStringHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 指标项ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置指标项ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 指标项ID
+                     * @param _id 指标项ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 指标项坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Coordinate GetCoords() const;
 
                     /**
                      * 设置指标项坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 指标项坐标位置
+                     * @param _coords 指标项坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const Coordinate& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InferNormal 推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInferNormal() const;
 
                     /**
                      * 设置推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InferNormal 推测结果是否异常
+                     * @param _inferNormal 推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInferNormal(const std::string& _inferNormal);
 
                     /**
                      * 判断参数 InferNormal 是否已赋值
                      * @return InferNormal 是否已赋值
+                     * 
                      */
                     bool InferNormalHasBeenSet() const;
 

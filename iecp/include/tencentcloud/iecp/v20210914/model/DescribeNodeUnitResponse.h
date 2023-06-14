@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件的记录总数
                      * @return TotalCount 符合查询条件的记录总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeGridInfo NodeUnit信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeUnitInfo> GetNodeGridInfo() const;
 
                     /**
                      * 判断参数 NodeGridInfo 是否已赋值
                      * @return NodeGridInfo 是否已赋值
+                     * 
                      */
                     bool NodeGridInfoHasBeenSet() const;
 

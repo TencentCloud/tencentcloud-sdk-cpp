@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Templates 时间模板列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimeTemplateItem> GetTemplates() const;
 
                     /**
                      * 判断参数 Templates 是否已赋值
                      * @return Templates 是否已赋值
+                     * 
                      */
                     bool TemplatesHasBeenSet() const;
 
                     /**
                      * 获取时间模板总数
                      * @return TotalCount 时间模板总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

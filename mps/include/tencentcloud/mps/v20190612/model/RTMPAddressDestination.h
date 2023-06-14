@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取转推RTMP的目标Url，格式如'rtmp://domain/live'。
                      * @return Url 转推RTMP的目标Url，格式如'rtmp://domain/live'。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转推RTMP的目标Url，格式如'rtmp://domain/live'。
-                     * @param Url 转推RTMP的目标Url，格式如'rtmp://domain/live'。
+                     * @param _url 转推RTMP的目标Url，格式如'rtmp://domain/live'。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取转推RTMP的目标StreamKey，格式如'steamid?key=value'。
                      * @return StreamKey 转推RTMP的目标StreamKey，格式如'steamid?key=value'。
+                     * 
                      */
                     std::string GetStreamKey() const;
 
                     /**
                      * 设置转推RTMP的目标StreamKey，格式如'steamid?key=value'。
-                     * @param StreamKey 转推RTMP的目标StreamKey，格式如'steamid?key=value'。
+                     * @param _streamKey 转推RTMP的目标StreamKey，格式如'steamid?key=value'。
+                     * 
                      */
                     void SetStreamKey(const std::string& _streamKey);
 
                     /**
                      * 判断参数 StreamKey 是否已赋值
                      * @return StreamKey 是否已赋值
+                     * 
                      */
                     bool StreamKeyHasBeenSet() const;
 

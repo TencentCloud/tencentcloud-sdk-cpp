@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数。
                      * @return Total 总数。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数。
-                     * @param Total 总数。
+                     * @param _total 总数。
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取商户列表。
                      * @return List 商户列表。
+                     * 
                      */
                     std::vector<MerchantManagementList> GetList() const;
 
                     /**
                      * 设置商户列表。
-                     * @param List 商户列表。
+                     * @param _list 商户列表。
+                     * 
                      */
                     void SetList(const std::vector<MerchantManagementList>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取所查询的伸缩组数组
                      * @return RsgAsGroupSet 所查询的伸缩组数组
+                     * 
                      */
                     std::vector<RsgAsGroup> GetRsgAsGroupSet() const;
 
                     /**
                      * 判断参数 RsgAsGroupSet 是否已赋值
                      * @return RsgAsGroupSet 是否已赋值
+                     * 
                      */
                     bool RsgAsGroupSetHasBeenSet() const;
 
                     /**
                      * 获取伸缩组数组总数目
                      * @return TotalCount 伸缩组数组总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

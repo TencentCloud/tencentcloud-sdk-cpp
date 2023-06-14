@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取计划删除执行时间
                      * @return DeletionDate 计划删除执行时间
+                     * 
                      */
                     uint64_t GetDeletionDate() const;
 
                     /**
                      * 判断参数 DeletionDate 是否已赋值
                      * @return DeletionDate 是否已赋值
+                     * 
                      */
                     bool DeletionDateHasBeenSet() const;
 
                     /**
                      * 获取唯一标志被计划删除的CMK
                      * @return KeyId 唯一标志被计划删除的CMK
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

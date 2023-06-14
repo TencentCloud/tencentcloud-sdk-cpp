@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合查找条件的总数量
                      * @return TotalCount 符合查找条件的总数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取设备列表
                      * @return DeviceSet 设备列表
+                     * 
                      */
                     std::vector<IotDevicesInfo> GetDeviceSet() const;
 
                     /**
                      * 判断参数 DeviceSet 是否已赋值
                      * @return DeviceSet 是否已赋值
+                     * 
                      */
                     bool DeviceSetHasBeenSet() const;
 

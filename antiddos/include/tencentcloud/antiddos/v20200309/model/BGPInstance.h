@@ -56,72 +56,84 @@ namespace TencentCloud
                     /**
                      * 获取资产实例的详细信息
                      * @return InstanceDetail 资产实例的详细信息
+                     * 
                      */
                     InstanceRelation GetInstanceDetail() const;
 
                     /**
                      * 设置资产实例的详细信息
-                     * @param InstanceDetail 资产实例的详细信息
+                     * @param _instanceDetail 资产实例的详细信息
+                     * 
                      */
                     void SetInstanceDetail(const InstanceRelation& _instanceDetail);
 
                     /**
                      * 判断参数 InstanceDetail 是否已赋值
                      * @return InstanceDetail 是否已赋值
+                     * 
                      */
                     bool InstanceDetailHasBeenSet() const;
 
                     /**
                      * 获取资产实例的规格信息
                      * @return SpecificationLimit 资产实例的规格信息
+                     * 
                      */
                     BGPInstanceSpecification GetSpecificationLimit() const;
 
                     /**
                      * 设置资产实例的规格信息
-                     * @param SpecificationLimit 资产实例的规格信息
+                     * @param _specificationLimit 资产实例的规格信息
+                     * 
                      */
                     void SetSpecificationLimit(const BGPInstanceSpecification& _specificationLimit);
 
                     /**
                      * 判断参数 SpecificationLimit 是否已赋值
                      * @return SpecificationLimit 是否已赋值
+                     * 
                      */
                     bool SpecificationLimitHasBeenSet() const;
 
                     /**
                      * 获取资产实例的使用统计信息
                      * @return Usage 资产实例的使用统计信息
+                     * 
                      */
                     BGPInstanceUsages GetUsage() const;
 
                     /**
                      * 设置资产实例的使用统计信息
-                     * @param Usage 资产实例的使用统计信息
+                     * @param _usage 资产实例的使用统计信息
+                     * 
                      */
                     void SetUsage(const BGPInstanceUsages& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 
                     /**
                      * 获取资产实例所在的地域
                      * @return Region 资产实例所在的地域
+                     * 
                      */
                     RegionInfo GetRegion() const;
 
                     /**
                      * 设置资产实例所在的地域
-                     * @param Region 资产实例所在的地域
+                     * @param _region 资产实例所在的地域
+                     * 
                      */
                     void SetRegion(const RegionInfo& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -140,6 +152,7 @@ namespace TencentCloud
 "creating"：创建中
 "deblocking"：解封中
 "isolate"：回收隔离中
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -151,73 +164,84 @@ namespace TencentCloud
 "creating"：创建中
 "deblocking"：解封中
 "isolate"：回收隔离中
-                     * @param Status 资产实例的防护状态，状态码如下：
+                     * @param _status 资产实例的防护状态，状态码如下：
 "idle"：正常状态(无攻击)
 "attacking"：攻击中
 "blocking"：封堵中
 "creating"：创建中
 "deblocking"：解封中
 "isolate"：回收隔离中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取购买时间
                      * @return CreatedTime 购买时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置购买时间
-                     * @param CreatedTime 购买时间
+                     * @param _createdTime 购买时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取到期时间
                      * @return ExpiredTime 到期时间
+                     * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
                      * 设置到期时间
-                     * @param ExpiredTime 到期时间
+                     * @param _expiredTime 到期时间
+                     * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取资产实例的名称
                      * @return Name 资产实例的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资产实例的名称
-                     * @param Name 资产实例的名称
+                     * @param _name 资产实例的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -228,6 +252,7 @@ namespace TencentCloud
                      * @return PackInfo 资产实例所属的套餐包信息，
 注意：当资产实例不是套餐包的实例时，此字段为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PackInfo GetPackInfo() const;
 
@@ -235,33 +260,38 @@ namespace TencentCloud
                      * 设置资产实例所属的套餐包信息，
 注意：当资产实例不是套餐包的实例时，此字段为null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackInfo 资产实例所属的套餐包信息，
+                     * @param _packInfo 资产实例所属的套餐包信息，
 注意：当资产实例不是套餐包的实例时，此字段为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackInfo(const PackInfo& _packInfo);
 
                     /**
                      * 判断参数 PackInfo 是否已赋值
                      * @return PackInfo 是否已赋值
+                     * 
                      */
                     bool PackInfoHasBeenSet() const;
 
                     /**
                      * 获取高防包绑定的EIP属于的云产品信息
                      * @return EipProductInfos 高防包绑定的EIP属于的云产品信息
+                     * 
                      */
                     std::vector<EipProductInfo> GetEipProductInfos() const;
 
                     /**
                      * 设置高防包绑定的EIP属于的云产品信息
-                     * @param EipProductInfos 高防包绑定的EIP属于的云产品信息
+                     * @param _eipProductInfos 高防包绑定的EIP属于的云产品信息
+                     * 
                      */
                     void SetEipProductInfos(const std::vector<EipProductInfo>& _eipProductInfos);
 
                     /**
                      * 判断参数 EipProductInfos 是否已赋值
                      * @return EipProductInfos 是否已赋值
+                     * 
                      */
                     bool EipProductInfosHasBeenSet() const;
 
@@ -276,6 +306,7 @@ namespace TencentCloud
  "bounding"：正在绑定中
 "failed"：绑定失败
 ]
+                     * 
                      */
                     std::string GetBoundStatus() const;
 
@@ -285,107 +316,124 @@ namespace TencentCloud
  "bounding"：正在绑定中
 "failed"：绑定失败
 ]
-                     * @param BoundStatus 高防包绑定状态，取值[
+                     * @param _boundStatus 高防包绑定状态，取值[
 "idle"：绑定已完成
  "bounding"：正在绑定中
 "failed"：绑定失败
 ]
+                     * 
                      */
                     void SetBoundStatus(const std::string& _boundStatus);
 
                     /**
                      * 判断参数 BoundStatus 是否已赋值
                      * @return BoundStatus 是否已赋值
+                     * 
                      */
                     bool BoundStatusHasBeenSet() const;
 
                     /**
                      * 获取四层防护严格级别
                      * @return DDoSLevel 四层防护严格级别
+                     * 
                      */
                     std::string GetDDoSLevel() const;
 
                     /**
                      * 设置四层防护严格级别
-                     * @param DDoSLevel 四层防护严格级别
+                     * @param _dDoSLevel 四层防护严格级别
+                     * 
                      */
                     void SetDDoSLevel(const std::string& _dDoSLevel);
 
                     /**
                      * 判断参数 DDoSLevel 是否已赋值
                      * @return DDoSLevel 是否已赋值
+                     * 
                      */
                     bool DDoSLevelHasBeenSet() const;
 
                     /**
                      * 获取CC防护开关
                      * @return CCEnable CC防护开关
+                     * 
                      */
                     int64_t GetCCEnable() const;
 
                     /**
                      * 设置CC防护开关
-                     * @param CCEnable CC防护开关
+                     * @param _cCEnable CC防护开关
+                     * 
                      */
                     void SetCCEnable(const int64_t& _cCEnable);
 
                     /**
                      * 判断参数 CCEnable 是否已赋值
                      * @return CCEnable 是否已赋值
+                     * 
                      */
                     bool CCEnableHasBeenSet() const;
 
                     /**
                      * 获取资源关联标签
                      * @return TagInfoList 资源关联标签
+                     * 
                      */
                     std::vector<TagInfo> GetTagInfoList() const;
 
                     /**
                      * 设置资源关联标签
-                     * @param TagInfoList 资源关联标签
+                     * @param _tagInfoList 资源关联标签
+                     * 
                      */
                     void SetTagInfoList(const std::vector<TagInfo>& _tagInfoList);
 
                     /**
                      * 判断参数 TagInfoList 是否已赋值
                      * @return TagInfoList 是否已赋值
+                     * 
                      */
                     bool TagInfoListHasBeenSet() const;
 
                     /**
                      * 获取新版本1ip高防包
                      * @return IpCountNewFlag 新版本1ip高防包
+                     * 
                      */
                     uint64_t GetIpCountNewFlag() const;
 
                     /**
                      * 设置新版本1ip高防包
-                     * @param IpCountNewFlag 新版本1ip高防包
+                     * @param _ipCountNewFlag 新版本1ip高防包
+                     * 
                      */
                     void SetIpCountNewFlag(const uint64_t& _ipCountNewFlag);
 
                     /**
                      * 判断参数 IpCountNewFlag 是否已赋值
                      * @return IpCountNewFlag 是否已赋值
+                     * 
                      */
                     bool IpCountNewFlagHasBeenSet() const;
 
                     /**
                      * 获取攻击封堵套餐标记
                      * @return VitalityVersion 攻击封堵套餐标记
+                     * 
                      */
                     uint64_t GetVitalityVersion() const;
 
                     /**
                      * 设置攻击封堵套餐标记
-                     * @param VitalityVersion 攻击封堵套餐标记
+                     * @param _vitalityVersion 攻击封堵套餐标记
+                     * 
                      */
                     void SetVitalityVersion(const uint64_t& _vitalityVersion);
 
                     /**
                      * 判断参数 VitalityVersion 是否已赋值
                      * @return VitalityVersion 是否已赋值
+                     * 
                      */
                     bool VitalityVersionHasBeenSet() const;
 
@@ -394,56 +442,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Line 网络线路
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLine() const;
 
                     /**
                      * 设置网络线路
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Line 网络线路
+                     * @param _line 网络线路
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLine(const uint64_t& _line);
 
                     /**
                      * 判断参数 Line 是否已赋值
                      * @return Line 是否已赋值
+                     * 
                      */
                     bool LineHasBeenSet() const;
 
                     /**
                      * 获取弹性业务带宽开关
                      * @return ElasticServiceBandwidth 弹性业务带宽开关
+                     * 
                      */
                     uint64_t GetElasticServiceBandwidth() const;
 
                     /**
                      * 设置弹性业务带宽开关
-                     * @param ElasticServiceBandwidth 弹性业务带宽开关
+                     * @param _elasticServiceBandwidth 弹性业务带宽开关
+                     * 
                      */
                     void SetElasticServiceBandwidth(const uint64_t& _elasticServiceBandwidth);
 
                     /**
                      * 判断参数 ElasticServiceBandwidth 是否已赋值
                      * @return ElasticServiceBandwidth 是否已赋值
+                     * 
                      */
                     bool ElasticServiceBandwidthHasBeenSet() const;
 
                     /**
                      * 获取赠送的业务带宽
                      * @return GiftServiceBandWidth 赠送的业务带宽
+                     * 
                      */
                     int64_t GetGiftServiceBandWidth() const;
 
                     /**
                      * 设置赠送的业务带宽
-                     * @param GiftServiceBandWidth 赠送的业务带宽
+                     * @param _giftServiceBandWidth 赠送的业务带宽
+                     * 
                      */
                     void SetGiftServiceBandWidth(const int64_t& _giftServiceBandWidth);
 
                     /**
                      * 判断参数 GiftServiceBandWidth 是否已赋值
                      * @return GiftServiceBandWidth 是否已赋值
+                     * 
                      */
                     bool GiftServiceBandWidthHasBeenSet() const;
 
@@ -452,20 +509,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

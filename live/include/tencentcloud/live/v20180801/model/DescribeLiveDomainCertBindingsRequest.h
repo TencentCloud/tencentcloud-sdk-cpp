@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要搜索的域名字符串。
                      * @return DomainSearch 要搜索的域名字符串。
+                     * 
                      */
                     std::string GetDomainSearch() const;
 
                     /**
                      * 设置要搜索的域名字符串。
-                     * @param DomainSearch 要搜索的域名字符串。
+                     * @param _domainSearch 要搜索的域名字符串。
+                     * 
                      */
                     void SetDomainSearch(const std::string& _domainSearch);
 
                     /**
                      * 判断参数 DomainSearch 是否已赋值
                      * @return DomainSearch 是否已赋值
+                     * 
                      */
                     bool DomainSearchHasBeenSet() const;
 
                     /**
                      * 获取记录行的位置，从0开始。默认0。
                      * @return Offset 记录行的位置，从0开始。默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置记录行的位置，从0开始。默认0。
-                     * @param Offset 记录行的位置，从0开始。默认0。
+                     * @param _offset 记录行的位置，从0开始。默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -83,38 +89,44 @@ namespace TencentCloud
 若不传，则最多返回50条数据。
                      * @return Length 记录行的最大数目。默认50。
 若不传，则最多返回50条数据。
+                     * 
                      */
                     int64_t GetLength() const;
 
                     /**
                      * 设置记录行的最大数目。默认50。
 若不传，则最多返回50条数据。
-                     * @param Length 记录行的最大数目。默认50。
+                     * @param _length 记录行的最大数目。默认50。
 若不传，则最多返回50条数据。
+                     * 
                      */
                     void SetLength(const int64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
                     /**
                      * 获取要查询的单个域名。
                      * @return DomainName 要查询的单个域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置要查询的单个域名。
-                     * @param DomainName 要查询的单个域名。
+                     * @param _domainName 要查询的单个域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -125,6 +137,7 @@ ExpireTimeDesc：证书过期时间降序。
                      * @return OrderBy 可取值：
 ExpireTimeAsc：证书过期时间升序。
 ExpireTimeDesc：证书过期时间降序。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -132,15 +145,17 @@ ExpireTimeDesc：证书过期时间降序。
                      * 设置可取值：
 ExpireTimeAsc：证书过期时间升序。
 ExpireTimeDesc：证书过期时间降序。
-                     * @param OrderBy 可取值：
+                     * @param _orderBy 可取值：
 ExpireTimeAsc：证书过期时间升序。
 ExpireTimeDesc：证书过期时间降序。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 

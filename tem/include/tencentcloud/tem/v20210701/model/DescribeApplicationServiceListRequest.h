@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取namespace id
                      * @return EnvironmentId namespace id
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置namespace id
-                     * @param EnvironmentId namespace id
+                     * @param _environmentId namespace id
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取服务ID
                      * @return ApplicationId 服务ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务ID
-                     * @param ApplicationId 服务ID
+                     * @param _applicationId 服务ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取xx
                      * @return SourceChannel xx
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置xx
-                     * @param SourceChannel xx
+                     * @param _sourceChannel xx
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 

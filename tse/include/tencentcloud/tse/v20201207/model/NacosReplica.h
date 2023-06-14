@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取角色
                      * @return Role 角色
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置角色
-                     * @param Role 角色
+                     * @param _role 角色
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区ID
+                     * @param _zone 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC ID	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId VPC ID	
+                     * @param _vpcId VPC ID	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 

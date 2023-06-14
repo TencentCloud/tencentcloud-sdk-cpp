@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeId 通知模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
                      * 设置通知模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeId 通知模板ID
+                     * @param _noticeId 通知模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
 
                     /**
                      * 判断参数 NoticeId 是否已赋值
                      * @return NoticeId 是否已赋值
+                     * 
                      */
                     bool NoticeIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Classification 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetClassification() const;
 
                     /**
                      * 设置通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Classification 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
+                     * @param _classification 通知等级列表，["Remind","Serious"]表示该通知模板仅接收提醒和严重类别的告警
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassification(const std::vector<std::string>& _classification);
 
                     /**
                      * 判断参数 Classification 是否已赋值
                      * @return Classification 是否已赋值
+                     * 
                      */
                     bool ClassificationHasBeenSet() const;
 

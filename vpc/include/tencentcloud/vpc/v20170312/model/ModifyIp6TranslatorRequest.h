@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换实例唯一ID，形如ip6-xxxxxxxxx
                      * @return Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxxx
+                     * 
                      */
                     std::string GetIp6TranslatorId() const;
 
                     /**
                      * 设置IPV6转换实例唯一ID，形如ip6-xxxxxxxxx
-                     * @param Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxxx
+                     * @param _ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxxx
+                     * 
                      */
                     void SetIp6TranslatorId(const std::string& _ip6TranslatorId);
 
                     /**
                      * 判断参数 Ip6TranslatorId 是否已赋值
                      * @return Ip6TranslatorId 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorIdHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换实例修改名称
                      * @return Ip6TranslatorName IPV6转换实例修改名称
+                     * 
                      */
                     std::string GetIp6TranslatorName() const;
 
                     /**
                      * 设置IPV6转换实例修改名称
-                     * @param Ip6TranslatorName IPV6转换实例修改名称
+                     * @param _ip6TranslatorName IPV6转换实例修改名称
+                     * 
                      */
                     void SetIp6TranslatorName(const std::string& _ip6TranslatorName);
 
                     /**
                      * 判断参数 Ip6TranslatorName 是否已赋值
                      * @return Ip6TranslatorName 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorNameHasBeenSet() const;
 

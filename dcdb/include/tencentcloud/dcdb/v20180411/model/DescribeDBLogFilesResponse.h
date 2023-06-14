@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：dcdbt-ow728lmc。
                      * @return InstanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取请求日志类型。1-binlog，2-冷备，3-errlog，4-slowlog。
                      * @return Type 请求日志类型。1-binlog，2-冷备，3-errlog，4-slowlog。
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取请求日志总数
                      * @return Total 请求日志总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取日志文件列表
                      * @return Files 日志文件列表
+                     * 
                      */
                     std::vector<LogFileInfo> GetFiles() const;
 
                     /**
                      * 判断参数 Files 是否已赋值
                      * @return Files 是否已赋值
+                     * 
                      */
                     bool FilesHasBeenSet() const;
 
                     /**
                      * 获取如果是VPC网络的实例，做用本前缀加上URI为下载地址
                      * @return VpcPrefix 如果是VPC网络的实例，做用本前缀加上URI为下载地址
+                     * 
                      */
                     std::string GetVpcPrefix() const;
 
                     /**
                      * 判断参数 VpcPrefix 是否已赋值
                      * @return VpcPrefix 是否已赋值
+                     * 
                      */
                     bool VpcPrefixHasBeenSet() const;
 
                     /**
                      * 获取如果是普通网络的实例，做用本前缀加上URI为下载地址
                      * @return NormalPrefix 如果是普通网络的实例，做用本前缀加上URI为下载地址
+                     * 
                      */
                     std::string GetNormalPrefix() const;
 
                     /**
                      * 判断参数 NormalPrefix 是否已赋值
                      * @return NormalPrefix 是否已赋值
+                     * 
                      */
                     bool NormalPrefixHasBeenSet() const;
 
                     /**
                      * 获取分片 ID，形如：shard-7noic7tv
                      * @return ShardId 分片 ID，形如：shard-7noic7tv
+                     * 
                      */
                     std::string GetShardId() const;
 
                     /**
                      * 判断参数 ShardId 是否已赋值
                      * @return ShardId 是否已赋值
+                     * 
                      */
                     bool ShardIdHasBeenSet() const;
 

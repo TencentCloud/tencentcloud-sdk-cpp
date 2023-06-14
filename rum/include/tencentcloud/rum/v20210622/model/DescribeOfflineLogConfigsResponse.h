@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取接口调用信息
                      * @return Msg 接口调用信息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标示数组
                      * @return UniqueIDSet 用户唯一标示数组
+                     * 
                      */
                     std::vector<std::string> GetUniqueIDSet() const;
 
                     /**
                      * 判断参数 UniqueIDSet 是否已赋值
                      * @return UniqueIDSet 是否已赋值
+                     * 
                      */
                     bool UniqueIDSetHasBeenSet() const;
 

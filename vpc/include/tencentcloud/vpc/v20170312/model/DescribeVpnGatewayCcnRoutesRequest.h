@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID。
-                     * @param VpnGatewayId VPN网关实例ID。
+                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量。默认值：0
                      * @return Offset 偏移量。默认值：0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。默认值：0
-                     * @param Offset 偏移量。默认值：0
+                     * @param _offset 偏移量。默认值：0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量。默认值：20
                      * @return Limit 返回数量。默认值：20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量。默认值：20
-                     * @param Limit 返回数量。默认值：20
+                     * @param _limit 返回数量。默认值：20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

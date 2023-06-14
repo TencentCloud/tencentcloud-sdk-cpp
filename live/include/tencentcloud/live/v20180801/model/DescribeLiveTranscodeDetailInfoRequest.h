@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取推流域名。
                      * @return PushDomain 推流域名。
+                     * 
                      */
                     std::string GetPushDomain() const;
 
                     /**
                      * 设置推流域名。
-                     * @param PushDomain 推流域名。
+                     * @param _pushDomain 推流域名。
+                     * 
                      */
                     void SetPushDomain(const std::string& _pushDomain);
 
                     /**
                      * 判断参数 PushDomain 是否已赋值
                      * @return PushDomain 是否已赋值
+                     * 
                      */
                     bool PushDomainHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return DayTime 查询时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内某天的详细数据，截止到昨天。
+                     * 
                      */
                     std::string GetDayTime() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置查询时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内某天的详细数据，截止到昨天。
-                     * @param DayTime 查询时间，北京时间，
+                     * @param _dayTime 查询时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内某天的详细数据，截止到昨天。
+                     * 
                      */
                     void SetDayTime(const std::string& _dayTime);
 
                     /**
                      * 判断参数 DayTime 是否已赋值
                      * @return DayTime 是否已赋值
+                     * 
                      */
                     bool DayTimeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 不超过100页。
                      * @return PageNum 页数，默认1，
 不超过100页。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 设置页数，默认1，
 不超过100页。
-                     * @param PageNum 页数，默认1，
+                     * @param _pageNum 页数，默认1，
 不超过100页。
+                     * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 范围：[10,1000]。
                      * @return PageSize 每页个数，默认20，
 范围：[10,1000]。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页个数，默认20，
 范围：[10,1000]。
-                     * @param PageSize 每页个数，默认20，
+                     * @param _pageSize 每页个数，默认20，
 范围：[10,1000]。
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
@@ -155,6 +170,7 @@ namespace TencentCloud
                      * @return StartDayTime 起始天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据。
+                     * 
                      */
                     std::string GetStartDayTime() const;
 
@@ -162,15 +178,17 @@ namespace TencentCloud
                      * 设置起始天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据。
-                     * @param StartDayTime 起始天时间，北京时间，
+                     * @param _startDayTime 起始天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据。
+                     * 
                      */
                     void SetStartDayTime(const std::string& _startDayTime);
 
                     /**
                      * 判断参数 StartDayTime 是否已赋值
                      * @return StartDayTime 是否已赋值
+                     * 
                      */
                     bool StartDayTimeHasBeenSet() const;
 
@@ -181,6 +199,7 @@ namespace TencentCloud
                      * @return EndDayTime 结束天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据，截止到昨天，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+                     * 
                      */
                     std::string GetEndDayTime() const;
 
@@ -188,15 +207,17 @@ namespace TencentCloud
                      * 设置结束天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据，截止到昨天，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
-                     * @param EndDayTime 结束天时间，北京时间，
+                     * @param _endDayTime 结束天时间，北京时间，
 格式：yyyymmdd。
 注意：支持查询近1个月内的详细数据，截止到昨天，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+                     * 
                      */
                     void SetEndDayTime(const std::string& _endDayTime);
 
                     /**
                      * 判断参数 EndDayTime 是否已赋值
                      * @return EndDayTime 是否已赋值
+                     * 
                      */
                     bool EndDayTimeHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取绑定了待解绑的LoRa产品下的设备的网关设备列表
                      * @return GatewayDeviceNames 绑定了待解绑的LoRa产品下的设备的网关设备列表
+                     * 
                      */
                     std::vector<std::string> GetGatewayDeviceNames() const;
 
                     /**
                      * 判断参数 GatewayDeviceNames 是否已赋值
                      * @return GatewayDeviceNames 是否已赋值
+                     * 
                      */
                     bool GatewayDeviceNamesHasBeenSet() const;
 

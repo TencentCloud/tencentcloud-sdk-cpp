@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 服务器舰队 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 

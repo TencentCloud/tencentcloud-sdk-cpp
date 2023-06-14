@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取子机构信息列表
                      * @return SubOrganizationInfos 子机构信息列表
+                     * 
                      */
                     std::vector<SubOrganizationDetail> GetSubOrganizationInfos() const;
 
                     /**
                      * 判断参数 SubOrganizationInfos 是否已赋值
                      * @return SubOrganizationInfos 是否已赋值
+                     * 
                      */
                     bool SubOrganizationInfosHasBeenSet() const;
 

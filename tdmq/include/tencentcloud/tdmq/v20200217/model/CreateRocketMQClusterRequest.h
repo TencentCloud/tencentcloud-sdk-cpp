@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群名称，3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return Name 集群名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置集群名称，3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param Name 集群名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _name 集群名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取集群描述，128个字符以内
                      * @return Remark 集群描述，128个字符以内
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置集群描述，128个字符以内
-                     * @param Remark 集群描述，128个字符以内
+                     * @param _remark 集群描述，128个字符以内
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

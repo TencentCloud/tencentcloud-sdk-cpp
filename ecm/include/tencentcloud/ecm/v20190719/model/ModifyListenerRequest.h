@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID
                      * @return LoadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * @param _loadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器 ID
                      * @return ListenerId 负载均衡监听器 ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * @param _listenerId 负载均衡监听器 ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取新的监听器名称
                      * @return ListenerName 新的监听器名称
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置新的监听器名称
-                     * @param ListenerName 新的监听器名称
+                     * @param _listenerName 新的监听器名称
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 
                     /**
                      * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
                      * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
                      * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
-                     * @param SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。
+                     * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
 
                     /**
                      * 判断参数 SessionExpireTime 是否已赋值
                      * @return SessionExpireTime 是否已赋值
+                     * 
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取健康检查相关参数
                      * @return HealthCheck 健康检查相关参数
+                     * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
                      * 设置健康检查相关参数
-                     * @param HealthCheck 健康检查相关参数
+                     * @param _healthCheck 健康检查相关参数
+                     * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
                     /**
                      * 判断参数 HealthCheck 是否已赋值
                      * @return HealthCheck 是否已赋值
+                     * 
                      */
                     bool HealthCheckHasBeenSet() const;
 
@@ -138,20 +153,23 @@ namespace TencentCloud
 分别表示按权重轮询、最小连接数， 默认为 WRR。
                      * @return Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+                     * 
                      */
                     std::string GetScheduler() const;
 
                     /**
                      * 设置监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
-                     * @param Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
+                     * @param _scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+                     * 
                      */
                     void SetScheduler(const std::string& _scheduler);
 
                     /**
                      * 判断参数 Scheduler 是否已赋值
                      * @return Scheduler 是否已赋值
+                     * 
                      */
                     bool SchedulerHasBeenSet() const;
 

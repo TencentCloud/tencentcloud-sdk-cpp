@@ -56,6 +56,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 状态码缓存过期配置开关，取值有：
+                     * @param _switch 状态码缓存过期配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheRules 状态码缓存过期规则明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StatusCodeCacheRule> GetCacheRules() const;
 
                     /**
                      * 设置状态码缓存过期规则明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheRules 状态码缓存过期规则明细
+                     * @param _cacheRules 状态码缓存过期规则明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheRules(const std::vector<StatusCodeCacheRule>& _cacheRules);
 
                     /**
                      * 判断参数 CacheRules 是否已赋值
                      * @return CacheRules 是否已赋值
+                     * 
                      */
                     bool CacheRulesHasBeenSet() const;
 

@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取调用链采样率，百分比
                      * @return Sampling 调用链采样率，百分比
+                     * 
                      */
                     double GetSampling() const;
 
                     /**
                      * 设置调用链采样率，百分比
-                     * @param Sampling 调用链采样率，百分比
+                     * @param _sampling 调用链采样率，百分比
+                     * 
                      */
                     void SetSampling(const double& _sampling);
 
                     /**
                      * 判断参数 Sampling 是否已赋值
                      * @return Sampling 是否已赋值
+                     * 
                      */
                     bool SamplingHasBeenSet() const;
 
                     /**
                      * 获取是否启用调用跟踪
                      * @return Enable 是否启用调用跟踪
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否启用调用跟踪
-                     * @param Enable 是否启用调用跟踪
+                     * @param _enable 是否启用调用跟踪
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取腾讯云 APM 服务相关参数
                      * @return APM 腾讯云 APM 服务相关参数
+                     * 
                      */
                     APM GetAPM() const;
 
                     /**
                      * 设置腾讯云 APM 服务相关参数
-                     * @param APM 腾讯云 APM 服务相关参数
+                     * @param _aPM 腾讯云 APM 服务相关参数
+                     * 
                      */
                     void SetAPM(const APM& _aPM);
 
                     /**
                      * 判断参数 APM 是否已赋值
                      * @return APM 是否已赋值
+                     * 
                      */
                     bool APMHasBeenSet() const;
 
                     /**
                      * 获取启动第三方服务器的地址
                      * @return Zipkin 启动第三方服务器的地址
+                     * 
                      */
                     TracingZipkin GetZipkin() const;
 
                     /**
                      * 设置启动第三方服务器的地址
-                     * @param Zipkin 启动第三方服务器的地址
+                     * @param _zipkin 启动第三方服务器的地址
+                     * 
                      */
                     void SetZipkin(const TracingZipkin& _zipkin);
 
                     /**
                      * 判断参数 Zipkin 是否已赋值
                      * @return Zipkin 是否已赋值
+                     * 
                      */
                     bool ZipkinHasBeenSet() const;
 

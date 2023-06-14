@@ -50,12 +50,14 @@ false：停止失败
                      * @return Result 停止操作是否成功。
 true：停止成功
 false：停止失败
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

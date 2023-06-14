@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取状态：NOT_STARTED，IN_PROGRESS，SUCCEEDED，FAILED
                      * @return Status 状态：NOT_STARTED，IN_PROGRESS，SUCCEEDED，FAILED
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return Reason 失败原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceType 服务类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 

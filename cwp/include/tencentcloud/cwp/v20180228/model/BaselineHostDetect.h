@@ -50,180 +50,210 @@ namespace TencentCloud
                     /**
                      * 获取主机Id
                      * @return HostId 主机Id
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置主机Id
-                     * @param HostId 主机Id
+                     * @param _hostId 主机Id
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 
                     /**
                      * 获取内网Ip
                      * @return HostIp 内网Ip
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置内网Ip
-                     * @param HostIp 内网Ip
+                     * @param _hostIp 内网Ip
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取主机名称
                      * @return HostName 主机名称
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
-                     * @param HostName 主机名称
+                     * @param _hostName 主机名称
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取外网Ip
                      * @return WanIp 外网Ip
+                     * 
                      */
                     std::string GetWanIp() const;
 
                     /**
                      * 设置外网Ip
-                     * @param WanIp 外网Ip
+                     * @param _wanIp 外网Ip
+                     * 
                      */
                     void SetWanIp(const std::string& _wanIp);
 
                     /**
                      * 判断参数 WanIp 是否已赋值
                      * @return WanIp 是否已赋值
+                     * 
                      */
                     bool WanIpHasBeenSet() const;
 
                     /**
                      * 获取0:未通过 1:忽略 3:通过 5:检测中
                      * @return DetectStatus 0:未通过 1:忽略 3:通过 5:检测中
+                     * 
                      */
                     int64_t GetDetectStatus() const;
 
                     /**
                      * 设置0:未通过 1:忽略 3:通过 5:检测中
-                     * @param DetectStatus 0:未通过 1:忽略 3:通过 5:检测中
+                     * @param _detectStatus 0:未通过 1:忽略 3:通过 5:检测中
+                     * 
                      */
                     void SetDetectStatus(const int64_t& _detectStatus);
 
                     /**
                      * 判断参数 DetectStatus 是否已赋值
                      * @return DetectStatus 是否已赋值
+                     * 
                      */
                     bool DetectStatusHasBeenSet() const;
 
                     /**
                      * 获取检测通过数
                      * @return PassedItemCount 检测通过数
+                     * 
                      */
                     int64_t GetPassedItemCount() const;
 
                     /**
                      * 设置检测通过数
-                     * @param PassedItemCount 检测通过数
+                     * @param _passedItemCount 检测通过数
+                     * 
                      */
                     void SetPassedItemCount(const int64_t& _passedItemCount);
 
                     /**
                      * 判断参数 PassedItemCount 是否已赋值
                      * @return PassedItemCount 是否已赋值
+                     * 
                      */
                     bool PassedItemCountHasBeenSet() const;
 
                     /**
                      * 获取关联检测项数
                      * @return ItemCount 关联检测项数
+                     * 
                      */
                     int64_t GetItemCount() const;
 
                     /**
                      * 设置关联检测项数
-                     * @param ItemCount 关联检测项数
+                     * @param _itemCount 关联检测项数
+                     * 
                      */
                     void SetItemCount(const int64_t& _itemCount);
 
                     /**
                      * 判断参数 ItemCount 是否已赋值
                      * @return ItemCount 是否已赋值
+                     * 
                      */
                     bool ItemCountHasBeenSet() const;
 
                     /**
                      * 获取检测未通过数
                      * @return NotPassedItemCount 检测未通过数
+                     * 
                      */
                     int64_t GetNotPassedItemCount() const;
 
                     /**
                      * 设置检测未通过数
-                     * @param NotPassedItemCount 检测未通过数
+                     * @param _notPassedItemCount 检测未通过数
+                     * 
                      */
                     void SetNotPassedItemCount(const int64_t& _notPassedItemCount);
 
                     /**
                      * 判断参数 NotPassedItemCount 是否已赋值
                      * @return NotPassedItemCount 是否已赋值
+                     * 
                      */
                     bool NotPassedItemCountHasBeenSet() const;
 
                     /**
                      * 获取首次检测时间
                      * @return FirstTime 首次检测时间
+                     * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置首次检测时间
-                     * @param FirstTime 首次检测时间
+                     * @param _firstTime 首次检测时间
+                     * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
 
                     /**
                      * 判断参数 FirstTime 是否已赋值
                      * @return FirstTime 是否已赋值
+                     * 
                      */
                     bool FirstTimeHasBeenSet() const;
 
                     /**
                      * 获取最后检测时间
                      * @return LastTime 最后检测时间
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置最后检测时间
-                     * @param LastTime 最后检测时间
+                     * @param _lastTime 最后检测时间
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
@@ -232,20 +262,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 主机安全UUID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机安全UUID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uuid 主机安全UUID
+                     * @param _uuid 主机安全UUID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
@@ -254,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 主机额外信息
+                     * @param _machineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 任务名称
+                     * @param _name 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text OCR识别文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置OCR识别文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text OCR识别文本
+                     * @param _text OCR识别文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageResultsResultDetailLocation GetLocation() const;
 
                     /**
                      * 设置位置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location 位置信息
+                     * @param _location 位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const ImageResultsResultDetailLocation& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 标签
+                     * @param _label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibId 库ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibId() const;
 
                     /**
                      * 设置库ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibId 库ID
+                     * @param _libId 库ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibId(const std::string& _libId);
 
                     /**
                      * 判断参数 LibId 是否已赋值
                      * @return LibId 是否已赋值
+                     * 
                      */
                     bool LibIdHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 库名称
+                     * @param _libName 库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibName(const std::string& _libName);
 
                     /**
                      * 判断参数 LibName 是否已赋值
                      * @return LibName 是否已赋值
+                     * 
                      */
                     bool LibNameHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keywords 命中的关键词
+                     * @param _keywords 命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 建议
+                     * @param _suggestion 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分
+                     * @param _score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabelCode 子标签码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
                      * 设置子标签码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabelCode 子标签码
+                     * @param _subLabelCode 子标签码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
 
                     /**
                      * 判断参数 SubLabelCode 是否已赋值
                      * @return SubLabelCode 是否已赋值
+                     * 
                      */
                     bool SubLabelCodeHasBeenSet() const;
 

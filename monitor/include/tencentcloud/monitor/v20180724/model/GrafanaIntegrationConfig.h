@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取集成 ID
                      * @return IntegrationId 集成 ID
+                     * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
                      * 设置集成 ID
-                     * @param IntegrationId 集成 ID
+                     * @param _integrationId 集成 ID
+                     * 
                      */
                     void SetIntegrationId(const std::string& _integrationId);
 
                     /**
                      * 判断参数 IntegrationId 是否已赋值
                      * @return IntegrationId 是否已赋值
+                     * 
                      */
                     bool IntegrationIdHasBeenSet() const;
 
                     /**
                      * 获取集成类型
                      * @return Kind 集成类型
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置集成类型
-                     * @param Kind 集成类型
+                     * @param _kind 集成类型
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取集成内容
                      * @return Content 集成内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置集成内容
-                     * @param Content 集成内容
+                     * @param _content 集成内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取集成描述
                      * @return Description 集成描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置集成描述
-                     * @param Description 集成描述
+                     * @param _description 集成描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrafanaURL Grafana 跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGrafanaURL() const;
 
                     /**
                      * 设置Grafana 跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GrafanaURL Grafana 跳转地址
+                     * @param _grafanaURL Grafana 跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrafanaURL(const std::string& _grafanaURL);
 
                     /**
                      * 判断参数 GrafanaURL 是否已赋值
                      * @return GrafanaURL 是否已赋值
+                     * 
                      */
                     bool GrafanaURLHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FreezeOrderResult> GetList() const;
 
                     /**
                      * 设置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param List 列表
+                     * @param _list 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetList(const std::vector<FreezeOrderResult>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 总数
+                     * @param _count 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

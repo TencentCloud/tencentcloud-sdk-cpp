@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例描述信息
                      * @return InstanceInfo 实例描述信息
+                     * 
                      */
                     InstanceInfo GetInstanceInfo() const;
 
                     /**
                      * 判断参数 InstanceInfo 是否已赋值
                      * @return InstanceInfo 是否已赋值
+                     * 
                      */
                     bool InstanceInfoHasBeenSet() const;
 

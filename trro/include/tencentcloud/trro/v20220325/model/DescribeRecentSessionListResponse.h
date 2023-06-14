@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取总个数
                      * @return Total 总个数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取会话列表
                      * @return RecentSessionList 会话列表
+                     * 
                      */
                     std::vector<RecentSessionInfo> GetRecentSessionList() const;
 
                     /**
                      * 判断参数 RecentSessionList 是否已赋值
                      * @return RecentSessionList 是否已赋值
+                     * 
                      */
                     bool RecentSessionListHasBeenSet() const;
 
                     /**
                      * 获取本页数量
                      * @return Num 本页数量
+                     * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 

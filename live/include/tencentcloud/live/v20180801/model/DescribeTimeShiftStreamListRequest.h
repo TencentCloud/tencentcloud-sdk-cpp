@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取查询范围起始时间，Unix 时间戳。
                      * @return StartTime 查询范围起始时间，Unix 时间戳。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置查询范围起始时间，Unix 时间戳。
-                     * @param StartTime 查询范围起始时间，Unix 时间戳。
+                     * @param _startTime 查询范围起始时间，Unix 时间戳。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询范围结束时间，Unix 时间戳。
                      * @return EndTime 查询范围结束时间，Unix 时间戳。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置查询范围结束时间，Unix 时间戳。
-                     * @param EndTime 查询范围结束时间，Unix 时间戳。
+                     * @param _endTime 查询范围结束时间，Unix 时间戳。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return Domain 推流域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置推流域名。
-                     * @param Domain 推流域名。
+                     * @param _domain 推流域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取推流域名所属域名组。
                      * @return DomainGroup 推流域名所属域名组。
+                     * 
                      */
                     std::string GetDomainGroup() const;
 
                     /**
                      * 设置推流域名所属域名组。
-                     * @param DomainGroup 推流域名所属域名组。
+                     * @param _domainGroup 推流域名所属域名组。
+                     * 
                      */
                     void SetDomainGroup(const std::string& _domainGroup);
 
                     /**
                      * 判断参数 DomainGroup 是否已赋值
                      * @return DomainGroup 是否已赋值
+                     * 
                      */
                     bool DomainGroupHasBeenSet() const;
 
@@ -137,38 +152,44 @@ namespace TencentCloud
 默认值为100。指定超过100时，API 强制使用100。指定值为负数时，接口返回错误。
                      * @return PageSize 用户指定要返回的最大结果数，取值范围[0,100]，不指定或者指定为0时，API 
 默认值为100。指定超过100时，API 强制使用100。指定值为负数时，接口返回错误。
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置用户指定要返回的最大结果数，取值范围[0,100]，不指定或者指定为0时，API 
 默认值为100。指定超过100时，API 强制使用100。指定值为负数时，接口返回错误。
-                     * @param PageSize 用户指定要返回的最大结果数，取值范围[0,100]，不指定或者指定为0时，API 
+                     * @param _pageSize 用户指定要返回的最大结果数，取值范围[0,100]，不指定或者指定为0时，API 
 默认值为100。指定超过100时，API 强制使用100。指定值为负数时，接口返回错误。
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取指定拉取的页码，不传时默认为1。
                      * @return PageNum 指定拉取的页码，不传时默认为1。
+                     * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置指定拉取的页码，不传时默认为1。
-                     * @param PageNum 指定拉取的页码，不传时默认为1。
+                     * @param _pageNum 指定拉取的页码，不传时默认为1。
+                     * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 

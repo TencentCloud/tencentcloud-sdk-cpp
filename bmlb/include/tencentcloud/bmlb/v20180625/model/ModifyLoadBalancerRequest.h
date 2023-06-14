@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。
                      * @return LoadBalancerName 负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。
-                     * @param LoadBalancerName 负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。
+                     * @param _loadBalancerName 负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。
                      * @return DomainPrefix 域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。
+                     * 
                      */
                     std::string GetDomainPrefix() const;
 
                     /**
                      * 设置域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。
-                     * @param DomainPrefix 域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。
+                     * @param _domainPrefix 域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。
+                     * 
                      */
                     void SetDomainPrefix(const std::string& _domainPrefix);
 
                     /**
                      * 判断参数 DomainPrefix 是否已赋值
                      * @return DomainPrefix 是否已赋值
+                     * 
                      */
                     bool DomainPrefixHasBeenSet() const;
 

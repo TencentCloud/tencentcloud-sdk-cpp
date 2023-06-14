@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
                      * @return FaceUsmRatio 人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * 
                      */
                     double GetFaceUsmRatio() const;
 
                     /**
                      * 设置人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
-                     * @param FaceUsmRatio 人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * @param _faceUsmRatio 人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。
+                     * 
                      */
                     void SetFaceUsmRatio(const double& _faceUsmRatio);
 
                     /**
                      * 判断参数 FaceUsmRatio 是否已赋值
                      * @return FaceUsmRatio 是否已赋值
+                     * 
                      */
                     bool FaceUsmRatioHasBeenSet() const;
 

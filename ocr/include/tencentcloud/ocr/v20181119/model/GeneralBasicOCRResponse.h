@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。
                      * @return TextDetections 检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<TextDetection> GetTextDetections() const;
 
                     /**
                      * 判断参数 TextDetections 是否已赋值
                      * @return TextDetections 是否已赋值
+                     * 
                      */
                     bool TextDetectionsHasBeenSet() const;
 
                     /**
                      * 获取检测到的语言类型，目前支持的语言类型参考入参LanguageType说明。
                      * @return Language 检测到的语言类型，目前支持的语言类型参考入参LanguageType说明。
+                     * 
                      */
                     std::string GetLanguage() const;
 
                     /**
                      * 判断参数 Language 是否已赋值
                      * @return Language 是否已赋值
+                     * 
                      */
                     bool LanguageHasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
                      * @return Angel 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     * 
                      */
                     double GetAngel() const;
 
                     /**
                      * 判断参数 Angel 是否已赋值
                      * @return Angel 是否已赋值
+                     * 
                      */
                     bool AngelHasBeenSet() const;
 
                     /**
                      * 获取图片为PDF时，返回PDF的总页数，默认为0
                      * @return PdfPageSize 图片为PDF时，返回PDF的总页数，默认为0
+                     * 
                      */
                     int64_t GetPdfPageSize() const;
 
                     /**
                      * 判断参数 PdfPageSize 是否已赋值
                      * @return PdfPageSize 是否已赋值
+                     * 
                      */
                     bool PdfPageSizeHasBeenSet() const;
 

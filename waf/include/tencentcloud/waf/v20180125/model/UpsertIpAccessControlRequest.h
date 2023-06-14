@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
                      * @return Items ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
+                     * 
                      */
                     std::vector<std::string> GetItems() const;
 
                     /**
                      * 设置ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
-                     * @param Items ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
+                     * @param _items ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
+                     * 
                      */
                     void SetItems(const std::vector<std::string>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * 
                      */
                     std::string GetEdition() const;
 
                     /**
                      * 设置WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
-                     * @param Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @param _edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * 
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
+                     * 
                      */
                     bool EditionHasBeenSet() const;
 
                     /**
                      * 获取是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
                      * @return SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
-                     * @param SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
+                     * @param _sourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 

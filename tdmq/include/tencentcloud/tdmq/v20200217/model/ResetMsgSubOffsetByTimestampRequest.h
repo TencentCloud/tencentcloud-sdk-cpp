@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取命名空间名称。
                      * @return EnvironmentId 命名空间名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置命名空间名称。
-                     * @param EnvironmentId 命名空间名称。
+                     * @param _environmentId 命名空间名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称。
                      * @return TopicName 主题名称。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称。
-                     * @param TopicName 主题名称。
+                     * @param _topicName 主题名称。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取订阅者名称。
                      * @return Subscription 订阅者名称。
+                     * 
                      */
                     std::string GetSubscription() const;
 
                     /**
                      * 设置订阅者名称。
-                     * @param Subscription 订阅者名称。
+                     * @param _subscription 订阅者名称。
+                     * 
                      */
                     void SetSubscription(const std::string& _subscription);
 
                     /**
                      * 判断参数 Subscription 是否已赋值
                      * @return Subscription 是否已赋值
+                     * 
                      */
                     bool SubscriptionHasBeenSet() const;
 
                     /**
                      * 获取时间戳，精确到毫秒。
                      * @return ToTimestamp 时间戳，精确到毫秒。
+                     * 
                      */
                     uint64_t GetToTimestamp() const;
 
                     /**
                      * 设置时间戳，精确到毫秒。
-                     * @param ToTimestamp 时间戳，精确到毫秒。
+                     * @param _toTimestamp 时间戳，精确到毫秒。
+                     * 
                      */
                     void SetToTimestamp(const uint64_t& _toTimestamp);
 
                     /**
                      * 判断参数 ToTimestamp 是否已赋值
                      * @return ToTimestamp 是否已赋值
+                     * 
                      */
                     bool ToTimestampHasBeenSet() const;
 
                     /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

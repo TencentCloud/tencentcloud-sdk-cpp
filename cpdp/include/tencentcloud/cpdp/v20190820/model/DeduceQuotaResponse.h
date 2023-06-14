@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取错误码。响应成功："SUCCESS"，其他为不成功。
                      * @return ErrCode 错误码。响应成功："SUCCESS"，其他为不成功。
+                     * 
                      */
                     std::string GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取响应消息
                      * @return ErrMsg 响应消息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回响应
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AssignmentData GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

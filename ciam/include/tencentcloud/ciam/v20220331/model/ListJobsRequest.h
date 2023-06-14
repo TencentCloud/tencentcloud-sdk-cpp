@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID列表，为空时返回全部任务
                      * @return JobIds 任务ID列表，为空时返回全部任务
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 设置任务ID列表，为空时返回全部任务
-                     * @param JobIds 任务ID列表，为空时返回全部任务
+                     * @param _jobIds 任务ID列表，为空时返回全部任务
+                     * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取重新提现业务订单号
                      * @return WithdrawOrderId 重新提现业务订单号
+                     * 
                      */
                     std::string GetWithdrawOrderId() const;
 
                     /**
                      * 判断参数 WithdrawOrderId 是否已赋值
                      * @return WithdrawOrderId 是否已赋值
+                     * 
                      */
                     bool WithdrawOrderIdHasBeenSet() const;
 

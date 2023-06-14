@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取平均每秒有百分之几的时间用于IO操作
                      * @return IoRatioPerSec 平均每秒有百分之几的时间用于IO操作
+                     * 
                      */
                     std::vector<int64_t> GetIoRatioPerSec() const;
 
                     /**
                      * 设置平均每秒有百分之几的时间用于IO操作
-                     * @param IoRatioPerSec 平均每秒有百分之几的时间用于IO操作
+                     * @param _ioRatioPerSec 平均每秒有百分之几的时间用于IO操作
+                     * 
                      */
                     void SetIoRatioPerSec(const std::vector<int64_t>& _ioRatioPerSec);
 
                     /**
                      * 判断参数 IoRatioPerSec 是否已赋值
                      * @return IoRatioPerSec 是否已赋值
+                     * 
                      */
                     bool IoRatioPerSecHasBeenSet() const;
 
                     /**
                      * 获取平均每次设备I/O操作的等待时间*100，单位为毫秒。例如：该值为201，表示平均每次I/O操作等待时间为：201/100=2.1毫秒
                      * @return IoWaitTime 平均每次设备I/O操作的等待时间*100，单位为毫秒。例如：该值为201，表示平均每次I/O操作等待时间为：201/100=2.1毫秒
+                     * 
                      */
                     std::vector<int64_t> GetIoWaitTime() const;
 
                     /**
                      * 设置平均每次设备I/O操作的等待时间*100，单位为毫秒。例如：该值为201，表示平均每次I/O操作等待时间为：201/100=2.1毫秒
-                     * @param IoWaitTime 平均每次设备I/O操作的等待时间*100，单位为毫秒。例如：该值为201，表示平均每次I/O操作等待时间为：201/100=2.1毫秒
+                     * @param _ioWaitTime 平均每次设备I/O操作的等待时间*100，单位为毫秒。例如：该值为201，表示平均每次I/O操作等待时间为：201/100=2.1毫秒
+                     * 
                      */
                     void SetIoWaitTime(const std::vector<int64_t>& _ioWaitTime);
 
                     /**
                      * 判断参数 IoWaitTime 是否已赋值
                      * @return IoWaitTime 是否已赋值
+                     * 
                      */
                     bool IoWaitTimeHasBeenSet() const;
 
                     /**
                      * 获取磁盘平均每秒完成的读操作次数总和*100。例如：该值为2002，表示磁盘平均每秒完成读操作为：2002/100=20.2次
                      * @return Read 磁盘平均每秒完成的读操作次数总和*100。例如：该值为2002，表示磁盘平均每秒完成读操作为：2002/100=20.2次
+                     * 
                      */
                     std::vector<int64_t> GetRead() const;
 
                     /**
                      * 设置磁盘平均每秒完成的读操作次数总和*100。例如：该值为2002，表示磁盘平均每秒完成读操作为：2002/100=20.2次
-                     * @param Read 磁盘平均每秒完成的读操作次数总和*100。例如：该值为2002，表示磁盘平均每秒完成读操作为：2002/100=20.2次
+                     * @param _read 磁盘平均每秒完成的读操作次数总和*100。例如：该值为2002，表示磁盘平均每秒完成读操作为：2002/100=20.2次
+                     * 
                      */
                     void SetRead(const std::vector<int64_t>& _read);
 
                     /**
                      * 判断参数 Read 是否已赋值
                      * @return Read 是否已赋值
+                     * 
                      */
                     bool ReadHasBeenSet() const;
 
                     /**
                      * 获取磁盘平均每秒完成的写操作次数总和*100。例如：该值为30001，表示磁盘平均每秒完成写操作为：30001/100=300.01次
                      * @return Write 磁盘平均每秒完成的写操作次数总和*100。例如：该值为30001，表示磁盘平均每秒完成写操作为：30001/100=300.01次
+                     * 
                      */
                     std::vector<int64_t> GetWrite() const;
 
                     /**
                      * 设置磁盘平均每秒完成的写操作次数总和*100。例如：该值为30001，表示磁盘平均每秒完成写操作为：30001/100=300.01次
-                     * @param Write 磁盘平均每秒完成的写操作次数总和*100。例如：该值为30001，表示磁盘平均每秒完成写操作为：30001/100=300.01次
+                     * @param _write 磁盘平均每秒完成的写操作次数总和*100。例如：该值为30001，表示磁盘平均每秒完成写操作为：30001/100=300.01次
+                     * 
                      */
                     void SetWrite(const std::vector<int64_t>& _write);
 
                     /**
                      * 判断参数 Write 是否已赋值
                      * @return Write 是否已赋值
+                     * 
                      */
                     bool WriteHasBeenSet() const;
 
                     /**
                      * 获取磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
                      * @return CapacityRatio 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     * 
                      */
                     std::vector<int64_t> GetCapacityRatio() const;
 
                     /**
                      * 设置磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
-                     * @param CapacityRatio 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     * @param _capacityRatio 磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量
+                     * 
                      */
                     void SetCapacityRatio(const std::vector<int64_t>& _capacityRatio);
 
                     /**
                      * 判断参数 CapacityRatio 是否已赋值
                      * @return CapacityRatio 是否已赋值
+                     * 
                      */
                     bool CapacityRatioHasBeenSet() const;
 

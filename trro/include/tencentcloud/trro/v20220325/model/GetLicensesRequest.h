@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取页码
                      * @return PageNum 页码
+                     * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置页码
-                     * @param PageNum 页码
+                     * @param _pageNum 页码
+                     * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取页面数量
                      * @return PageSize 页面数量
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页面数量
-                     * @param PageSize 页面数量
+                     * @param _pageSize 页面数量
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取projectId
                      * @return ProjectId projectId
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置projectId
-                     * @param ProjectId projectId
+                     * @param _projectId projectId
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取DeviceId
                      * @return DeviceId DeviceId
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置DeviceId
-                     * @param DeviceId DeviceId
+                     * @param _deviceId DeviceId
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

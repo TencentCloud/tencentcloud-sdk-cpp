@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取ES实例ID
                      * @return InstanceId ES实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ES实例ID
-                     * @param InstanceId ES实例ID
+                     * @param _instanceId ES实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取0：开启智能运维；-1：关闭智能运维
                      * @return Status 0：开启智能运维；-1：关闭智能运维
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0：开启智能运维；-1：关闭智能运维
-                     * @param Status 0：开启智能运维；-1：关闭智能运维
+                     * @param _status 0：开启智能运维；-1：关闭智能运维
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取智能运维每天定时巡检时间
                      * @return CronTime 智能运维每天定时巡检时间
+                     * 
                      */
                     std::string GetCronTime() const;
 
                     /**
                      * 设置智能运维每天定时巡检时间
-                     * @param CronTime 智能运维每天定时巡检时间
+                     * @param _cronTime 智能运维每天定时巡检时间
+                     * 
                      */
                     void SetCronTime(const std::string& _cronTime);
 
                     /**
                      * 判断参数 CronTime 是否已赋值
                      * @return CronTime 是否已赋值
+                     * 
                      */
                     bool CronTimeHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取额外属性的名称。
                      * @return Key 额外属性的名称。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置额外属性的名称。
-                     * @param Key 额外属性的名称。
+                     * @param _key 额外属性的名称。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取额外属性的值。
                      * @return Value 额外属性的值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置额外属性的值。
-                     * @param Value 额外属性的值。
+                     * @param _value 额外属性的值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

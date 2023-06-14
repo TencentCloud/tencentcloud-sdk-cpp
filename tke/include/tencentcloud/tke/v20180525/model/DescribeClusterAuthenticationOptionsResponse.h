@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceAccounts ServiceAccount认证配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServiceAccountAuthenticationOptions GetServiceAccounts() const;
 
                     /**
                      * 判断参数 ServiceAccounts 是否已赋值
                      * @return ServiceAccounts 是否已赋值
+                     * 
                      */
                     bool ServiceAccountsHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
                      * 判断参数 LatestOperationState 是否已赋值
                      * @return LatestOperationState 是否已赋值
+                     * 
                      */
                     bool LatestOperationStateHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OIDCConfig OIDC认证配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OIDCConfigAuthenticationOptions GetOIDCConfig() const;
 
                     /**
                      * 判断参数 OIDCConfig 是否已赋值
                      * @return OIDCConfig 是否已赋值
+                     * 
                      */
                     bool OIDCConfigHasBeenSet() const;
 

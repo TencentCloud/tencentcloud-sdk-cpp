@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取自动识别的字段名称
                      * @return AutoName 自动识别的字段名称
+                     * 
                      */
                     std::string GetAutoName() const;
 
                     /**
                      * 设置自动识别的字段名称
-                     * @param AutoName 自动识别的字段名称
+                     * @param _autoName 自动识别的字段名称
+                     * 
                      */
                     void SetAutoName(const std::string& _autoName);
 
                     /**
                      * 判断参数 AutoName 是否已赋值
                      * @return AutoName 是否已赋值
+                     * 
                      */
                     bool AutoNameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigName 定义的字段名称（传key的名称）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置定义的字段名称（传key的名称）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigName 定义的字段名称（传key的名称）
+                     * @param _configName 定义的字段名称（传key的名称）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 

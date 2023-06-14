@@ -48,20 +48,23 @@ namespace TencentCloud
 参数不支持同时指定 SnapshotIds 和 Filters。
                      * @return SnapshotIds 要查询快照的 ID 列表。
 参数不支持同时指定 SnapshotIds 和 Filters。
+                     * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
                      * 设置要查询快照的 ID 列表。
 参数不支持同时指定 SnapshotIds 和 Filters。
-                     * @param SnapshotIds 要查询快照的 ID 列表。
+                     * @param _snapshotIds 要查询快照的 ID 列表。
 参数不支持同时指定 SnapshotIds 和 Filters。
+                     * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
 
                     /**
                      * 判断参数 SnapshotIds 是否已赋值
                      * @return SnapshotIds 是否已赋值
+                     * 
                      */
                     bool SnapshotIdsHasBeenSet() const;
 
@@ -94,6 +97,7 @@ namespace TencentCloud
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -112,7 +116,7 @@ namespace TencentCloud
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。
-                     * @param Filters 过滤器列表。
+                     * @param _filters 过滤器列表。
 <li>snapshot-id</li>按照【快照 ID】进行过滤。
 类型：String
 必选：否
@@ -126,48 +130,56 @@ namespace TencentCloud
 类型：String
 必选：否
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

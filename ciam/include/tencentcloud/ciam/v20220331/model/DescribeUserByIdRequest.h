@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 
 <li> **false** </li>	默认，返回信息为脱敏信息
 <li> **true** </li>	返回用户信息原文
+                     * 
                      */
                     bool GetOriginal() const;
 
@@ -95,16 +102,18 @@ namespace TencentCloud
 
 <li> **false** </li>	默认，返回信息为脱敏信息
 <li> **true** </li>	返回用户信息原文
-                     * @param Original 返回信息是否为原文
+                     * @param _original 返回信息是否为原文
 
 <li> **false** </li>	默认，返回信息为脱敏信息
 <li> **true** </li>	返回用户信息原文
+                     * 
                      */
                     void SetOriginal(const bool& _original);
 
                     /**
                      * 判断参数 Original 是否已赋值
                      * @return Original 是否已赋值
+                     * 
                      */
                     bool OriginalHasBeenSet() const;
 

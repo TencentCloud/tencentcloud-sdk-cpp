@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取区块链网络数量
                      * @return BlockNetworkCount 区块链网络数量
+                     * 
                      */
                     int64_t GetBlockNetworkCount() const;
 
                     /**
                      * 判断参数 BlockNetworkCount 是否已赋值
                      * @return BlockNetworkCount 是否已赋值
+                     * 
                      */
                     bool BlockNetworkCountHasBeenSet() const;
 
                     /**
                      * 获取区块链网络名称
                      * @return BlockNetworkName 区块链网络名称
+                     * 
                      */
                     std::string GetBlockNetworkName() const;
 
                     /**
                      * 判断参数 BlockNetworkName 是否已赋值
                      * @return BlockNetworkName 是否已赋值
+                     * 
                      */
                     bool BlockNetworkNameHasBeenSet() const;
 
                     /**
                      * 获取当前区块高度
                      * @return BlockHeight 当前区块高度
+                     * 
                      */
                     int64_t GetBlockHeight() const;
 
                     /**
                      * 判断参数 BlockHeight 是否已赋值
                      * @return BlockHeight 是否已赋值
+                     * 
                      */
                     bool BlockHeightHasBeenSet() const;
 
                     /**
                      * 获取区块链网络类型
                      * @return BlockNetworkType 区块链网络类型
+                     * 
                      */
                     int64_t GetBlockNetworkType() const;
 
                     /**
                      * 判断参数 BlockNetworkType 是否已赋值
                      * @return BlockNetworkType 是否已赋值
+                     * 
                      */
                     bool BlockNetworkTypeHasBeenSet() const;
 
                     /**
                      * 获取did数量
                      * @return DidCount did数量
+                     * 
                      */
                     int64_t GetDidCount() const;
 
                     /**
                      * 判断参数 DidCount 是否已赋值
                      * @return DidCount 是否已赋值
+                     * 
                      */
                     bool DidCountHasBeenSet() const;
 
                     /**
                      * 获取凭证模版数量
                      * @return CptCount 凭证模版数量
+                     * 
                      */
                     int64_t GetCptCount() const;
 
                     /**
                      * 判断参数 CptCount 是否已赋值
                      * @return CptCount 是否已赋值
+                     * 
                      */
                     bool CptCountHasBeenSet() const;
 
                     /**
                      * 获取已认证权威机构数量
                      * @return CertificatedAuthCount 已认证权威机构数量
+                     * 
                      */
                     int64_t GetCertificatedAuthCount() const;
 
                     /**
                      * 判断参数 CertificatedAuthCount 是否已赋值
                      * @return CertificatedAuthCount 是否已赋值
+                     * 
                      */
                     bool CertificatedAuthCountHasBeenSet() const;
 
                     /**
                      * 获取颁发凭证数量
                      * @return IssueCptCount 颁发凭证数量
+                     * 
                      */
                     int64_t GetIssueCptCount() const;
 
                     /**
                      * 判断参数 IssueCptCount 是否已赋值
                      * @return IssueCptCount 是否已赋值
+                     * 
                      */
                     bool IssueCptCountHasBeenSet() const;
 
                     /**
                      * 获取本周新增DID数量
                      * @return NewDidCount 本周新增DID数量
+                     * 
                      */
                     int64_t GetNewDidCount() const;
 
                     /**
                      * 判断参数 NewDidCount 是否已赋值
                      * @return NewDidCount 是否已赋值
+                     * 
                      */
                     bool NewDidCountHasBeenSet() const;
 
                     /**
                      * 获取BCOS网络类型数量
                      * @return BcosCount BCOS网络类型数量
+                     * 
                      */
                     int64_t GetBcosCount() const;
 
                     /**
                      * 判断参数 BcosCount 是否已赋值
                      * @return BcosCount 是否已赋值
+                     * 
                      */
                     bool BcosCountHasBeenSet() const;
 
                     /**
                      * 获取Fabric网络类型数量
                      * @return FabricCount Fabric网络类型数量
+                     * 
                      */
                     int64_t GetFabricCount() const;
 
                     /**
                      * 判断参数 FabricCount 是否已赋值
                      * @return FabricCount 是否已赋值
+                     * 
                      */
                     bool FabricCountHasBeenSet() const;
 
                     /**
                      * 获取长安链网络类型数量
                      * @return ChainMakerCount 长安链网络类型数量
+                     * 
                      */
                     int64_t GetChainMakerCount() const;
 
                     /**
                      * 判断参数 ChainMakerCount 是否已赋值
                      * @return ChainMakerCount 是否已赋值
+                     * 
                      */
                     bool ChainMakerCountHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return TaskName 名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置名称
-                     * @param TaskName 名称
+                     * @param _taskName 名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取id
                      * @return TaskId id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置id
-                     * @param TaskId id
+                     * @param _taskId id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取项目/工作空间id
                      * @return ProjectId 项目/工作空间id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目/工作空间id
-                     * @param ProjectId 项目/工作空间id
+                     * @param _projectId 项目/工作空间id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Notes 备注
+                     * 
                      */
                     std::string GetNotes() const;
 
                     /**
                      * 设置备注
-                     * @param Notes 备注
+                     * @param _notes 备注
+                     * 
                      */
                     void SetNotes(const std::string& _notes);
 
                     /**
                      * 判断参数 Notes 是否已赋值
                      * @return Notes 是否已赋值
+                     * 
                      */
                     bool NotesHasBeenSet() const;
 

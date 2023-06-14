@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取匹配code
                      * @return MatchCode 匹配code
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配code
-                     * @param MatchCode 匹配code
+                     * @param _matchCode 匹配code
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 
                     /**
                      * 获取玩家信息
                      * @return Players 玩家信息
+                     * 
                      */
                     std::vector<Player> GetPlayers() const;
 
                     /**
                      * 设置玩家信息
-                     * @param Players 玩家信息
+                     * @param _players 玩家信息
+                     * 
                      */
                     void SetPlayers(const std::vector<Player>& _players);
 
                     /**
                      * 判断参数 Players 是否已赋值
                      * @return Players 是否已赋值
+                     * 
                      */
                     bool PlayersHasBeenSet() const;
 
                     /**
                      * 获取游戏服务器回话 ID [1-256] 个ASCII 字符
                      * @return GameServerSessionId 游戏服务器回话 ID [1-256] 个ASCII 字符
+                     * 
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
                      * 设置游戏服务器回话 ID [1-256] 个ASCII 字符
-                     * @param GameServerSessionId 游戏服务器回话 ID [1-256] 个ASCII 字符
+                     * @param _gameServerSessionId 游戏服务器回话 ID [1-256] 个ASCII 字符
+                     * 
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
                     /**
                      * 判断参数 GameServerSessionId 是否已赋值
                      * @return GameServerSessionId 是否已赋值
+                     * 
                      */
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
                      * 获取匹配票据 Id 默认 "" 为空则由 GPM 自动生成 长度 [1, 128]
                      * @return MatchTicketId 匹配票据 Id 默认 "" 为空则由 GPM 自动生成 长度 [1, 128]
+                     * 
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
                      * 设置匹配票据 Id 默认 "" 为空则由 GPM 自动生成 长度 [1, 128]
-                     * @param MatchTicketId 匹配票据 Id 默认 "" 为空则由 GPM 自动生成 长度 [1, 128]
+                     * @param _matchTicketId 匹配票据 Id 默认 "" 为空则由 GPM 自动生成 长度 [1, 128]
+                     * 
                      */
                     void SetMatchTicketId(const std::string& _matchTicketId);
 
                     /**
                      * 判断参数 MatchTicketId 是否已赋值
                      * @return MatchTicketId 是否已赋值
+                     * 
                      */
                     bool MatchTicketIdHasBeenSet() const;
 

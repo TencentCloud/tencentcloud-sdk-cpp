@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取首次出现时间
                      * @return FirstTime 首次出现时间
+                     * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置首次出现时间
-                     * @param FirstTime 首次出现时间
+                     * @param _firstTime 首次出现时间
+                     * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
 
                     /**
                      * 判断参数 FirstTime 是否已赋值
                      * @return FirstTime 是否已赋值
+                     * 
                      */
                     bool FirstTimeHasBeenSet() const;
 
                     /**
                      * 获取最后出现时间
                      * @return LastTime 最后出现时间
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置最后出现时间
-                     * @param LastTime 最后出现时间
+                     * @param _lastTime 最后出现时间
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
                     /**
                      * 获取对象类型
                      * @return InvolvedObjectKind 对象类型
+                     * 
                      */
                     std::string GetInvolvedObjectKind() const;
 
                     /**
                      * 设置对象类型
-                     * @param InvolvedObjectKind 对象类型
+                     * @param _involvedObjectKind 对象类型
+                     * 
                      */
                     void SetInvolvedObjectKind(const std::string& _involvedObjectKind);
 
                     /**
                      * 判断参数 InvolvedObjectKind 是否已赋值
                      * @return InvolvedObjectKind 是否已赋值
+                     * 
                      */
                     bool InvolvedObjectKindHasBeenSet() const;
 
                     /**
                      * 获取对象名称
                      * @return InvolvedObjectName 对象名称
+                     * 
                      */
                     std::string GetInvolvedObjectName() const;
 
                     /**
                      * 设置对象名称
-                     * @param InvolvedObjectName 对象名称
+                     * @param _involvedObjectName 对象名称
+                     * 
                      */
                     void SetInvolvedObjectName(const std::string& _involvedObjectName);
 
                     /**
                      * 判断参数 InvolvedObjectName 是否已赋值
                      * @return InvolvedObjectName 是否已赋值
+                     * 
                      */
                     bool InvolvedObjectNameHasBeenSet() const;
 
                     /**
                      * 获取事件类型(Normal,Warning)
                      * @return Type 事件类型(Normal,Warning)
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型(Normal,Warning)
-                     * @param Type 事件类型(Normal,Warning)
+                     * @param _type 事件类型(Normal,Warning)
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取事件原因
                      * @return Reason 事件原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置事件原因
-                     * @param Reason 事件原因
+                     * @param _reason 事件原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取事件内容
                      * @return Message 事件内容
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置事件内容
-                     * @param Message 事件内容
+                     * @param _message 事件内容
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取次数
                      * @return Count 次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置次数
-                     * @param Count 次数
+                     * @param _count 次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取节点名（Pod事件类型时有值）
                      * @return NodeName 节点名（Pod事件类型时有值）
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名（Pod事件类型时有值）
-                     * @param NodeName 节点名（Pod事件类型时有值）
+                     * @param _nodeName 节点名（Pod事件类型时有值）
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -213,20 +240,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 节点内部IP（Pod事件类型时有值）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置节点内部IP（Pod事件类型时有值）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP 节点内部IP（Pod事件类型时有值）
+                     * @param _iP 节点内部IP（Pod事件类型时有值）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 

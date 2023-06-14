@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取词结果
                      * @return Word 词结果
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置词结果
-                     * @param Word 词结果
+                     * @param _word 词结果
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取词在音频中的开始时间
                      * @return StartTime 词在音频中的开始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置词在音频中的开始时间
-                     * @param StartTime 词在音频中的开始时间
+                     * @param _startTime 词在音频中的开始时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取词在音频中的结束时间
                      * @return EndTime 词在音频中的结束时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置词在音频中的结束时间
-                     * @param EndTime 词在音频中的结束时间
+                     * @param _endTime 词在音频中的结束时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

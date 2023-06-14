@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名，长度限制：32个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名，长度限制：32个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 用户名，长度限制：32个字符。
+                     * @param _userName 用户名，长度限制：32个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 用户状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置用户状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 用户状态。
+                     * @param _status 用户状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisplayName 昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisplayName 昵称，长度限制：64个字符。 默认与用户名相同。
+                     * @param _displayName 昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 用户备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 用户备注，长度限制：512个字符。
+                     * @param _description 用户备注，长度限制：512个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 用户上次更新时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
                      * 设置用户上次更新时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastUpdateTime 用户上次更新时间，遵循 ISO 8601 标准。
+                     * @param _lastUpdateTime 用户上次更新时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastUpdateTime(const std::string& _lastUpdateTime);
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 用户创建时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置用户创建时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationTime 用户创建时间，遵循 ISO 8601 标准。
+                     * @param _creationTime 用户创建时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPath 用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgPath() const;
 
                     /**
                      * 设置用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgPath 用户所属主组织机构的路径ID。
+                     * @param _orgPath 用户所属主组织机构的路径ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgPath(const std::string& _orgPath);
 
                     /**
                      * 判断参数 OrgPath 是否已赋值
                      * @return OrgPath 是否已赋值
+                     * 
                      */
                     bool OrgPathHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 带国家号的用户手机号，例如+86-00000000000。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置带国家号的用户手机号，例如+86-00000000000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phone 带国家号的用户手机号，例如+86-00000000000。
+                     * @param _phone 带国家号的用户手机号，例如+86-00000000000。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectGroups 用户所属用户组ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubjectGroups() const;
 
                     /**
                      * 设置用户所属用户组ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubjectGroups 用户所属用户组ID列表。
+                     * @param _subjectGroups 用户所属用户组ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubjectGroups(const std::vector<std::string>& _subjectGroups);
 
                     /**
                      * 判断参数 SubjectGroups 是否已赋值
                      * @return SubjectGroups 是否已赋值
+                     * 
                      */
                     bool SubjectGroupsHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 用户邮箱。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置用户邮箱。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Email 用户邮箱。
+                     * @param _email 用户邮箱。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastLoginTime 用户上次登录时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastLoginTime() const;
 
                     /**
                      * 设置用户上次登录时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastLoginTime 用户上次登录时间，遵循 ISO 8601 标准。
+                     * @param _lastLoginTime 用户上次登录时间，遵循 ISO 8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastLoginTime(const std::string& _lastLoginTime);
 
                     /**
                      * 判断参数 LastLoginTime 是否已赋值
                      * @return LastLoginTime 是否已赋值
+                     * 
                      */
                     bool LastLoginTimeHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID，是用户全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID，是用户全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 用户ID，是用户全局唯一标识，长度限制：64个字符。
+                     * @param _userId 用户ID，是用户全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取插件信息列表
                      * @return Result 插件信息列表
+                     * 
                      */
                     TsfPageGatewayPlugin GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

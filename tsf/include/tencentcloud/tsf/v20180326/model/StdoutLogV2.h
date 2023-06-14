@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 日志内容
+                     * @param _content 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 日志时间戳
+                     * @param _timestamp 日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIp 实例IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceIp() const;
 
                     /**
                      * 设置实例IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIp 实例IP
+                     * @param _instanceIp 实例IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIp(const std::string& _instanceIp);
 
                     /**
                      * 判断参数 InstanceIp 是否已赋值
                      * @return InstanceIp 是否已赋值
+                     * 
                      */
                     bool InstanceIpHasBeenSet() const;
 

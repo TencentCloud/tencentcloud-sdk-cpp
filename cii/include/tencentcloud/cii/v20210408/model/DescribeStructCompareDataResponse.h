@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取保单号
                      * @return PolicyId 保单号
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取主任务号
                      * @return MainTaskId 主任务号
+                     * 
                      */
                     std::string GetMainTaskId() const;
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
                      * @return MainTaskId 是否已赋值
+                     * 
                      */
                     bool MainTaskIdHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerId 客户号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomerId() const;
 
                     /**
                      * 判断参数 CustomerId 是否已赋值
                      * @return CustomerId 是否已赋值
+                     * 
                      */
                     bool CustomerIdHasBeenSet() const;
 
@@ -88,120 +94,140 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerName 客户姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
                      * 判断参数 CustomerName 是否已赋值
                      * @return CustomerName 是否已赋值
+                     * 
                      */
                     bool CustomerNameHasBeenSet() const;
 
                     /**
                      * 获取复核时间
                      * @return ReviewTime 复核时间
+                     * 
                      */
                     std::string GetReviewTime() const;
 
                     /**
                      * 判断参数 ReviewTime 是否已赋值
                      * @return ReviewTime 是否已赋值
+                     * 
                      */
                     bool ReviewTimeHasBeenSet() const;
 
                     /**
                      * 获取算法识别结果
                      * @return MachineResult 算法识别结果
+                     * 
                      */
                     std::string GetMachineResult() const;
 
                     /**
                      * 判断参数 MachineResult 是否已赋值
                      * @return MachineResult 是否已赋值
+                     * 
                      */
                     bool MachineResultHasBeenSet() const;
 
                     /**
                      * 获取人工复核结果
                      * @return ManualResult 人工复核结果
+                     * 
                      */
                     std::string GetManualResult() const;
 
                     /**
                      * 判断参数 ManualResult 是否已赋值
                      * @return ManualResult 是否已赋值
+                     * 
                      */
                     bool ManualResultHasBeenSet() const;
 
                     /**
                      * 获取结构化对比指标数据
                      * @return Metrics 结构化对比指标数据
+                     * 
                      */
                     CompareMetricsData GetMetrics() const;
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取新增项
                      * @return NewItems 新增项
+                     * 
                      */
                     std::string GetNewItems() const;
 
                     /**
                      * 判断参数 NewItems 是否已赋值
                      * @return NewItems 是否已赋值
+                     * 
                      */
                     bool NewItemsHasBeenSet() const;
 
                     /**
                      * 获取修改项
                      * @return ModifyItems 修改项
+                     * 
                      */
                     std::string GetModifyItems() const;
 
                     /**
                      * 判断参数 ModifyItems 是否已赋值
                      * @return ModifyItems 是否已赋值
+                     * 
                      */
                     bool ModifyItemsHasBeenSet() const;
 
                     /**
                      * 获取子任务号
                      * @return SubTaskId 子任务号
+                     * 
                      */
                     std::string GetSubTaskId() const;
 
                     /**
                      * 判断参数 SubTaskId 是否已赋值
                      * @return SubTaskId 是否已赋值
+                     * 
                      */
                     bool SubTaskIdHasBeenSet() const;
 
                     /**
                      * 获取所有的子任务
                      * @return AllTasks 所有的子任务
+                     * 
                      */
                     std::vector<ReviewDataTaskInfo> GetAllTasks() const;
 
                     /**
                      * 判断参数 AllTasks 是否已赋值
                      * @return AllTasks 是否已赋值
+                     * 
                      */
                     bool AllTasksHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

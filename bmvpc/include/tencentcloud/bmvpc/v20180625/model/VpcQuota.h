@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取配额类型ID
                      * @return TypeId 配额类型ID
+                     * 
                      */
                     uint64_t GetTypeId() const;
 
                     /**
                      * 设置配额类型ID
-                     * @param TypeId 配额类型ID
+                     * @param _typeId 配额类型ID
+                     * 
                      */
                     void SetTypeId(const uint64_t& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 
                     /**
                      * 获取配额
                      * @return Quota 配额
+                     * 
                      */
                     uint64_t GetQuota() const;
 
                     /**
                      * 设置配额
-                     * @param Quota 配额
+                     * @param _quota 配额
+                     * 
                      */
                     void SetQuota(const uint64_t& _quota);
 
                     /**
                      * 判断参数 Quota 是否已赋值
                      * @return Quota 是否已赋值
+                     * 
                      */
                     bool QuotaHasBeenSet() const;
 

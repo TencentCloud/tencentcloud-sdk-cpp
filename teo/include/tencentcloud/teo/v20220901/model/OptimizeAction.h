@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>Http2；</li>
 <li>Http3；</li>
 <li>Brotli。</li>
+                     * 
                      */
                     std::string GetName() const;
 
@@ -63,70 +64,81 @@ namespace TencentCloud
 <li>Http2；</li>
 <li>Http3；</li>
 <li>Brotli。</li>
-                     * @param Name 站点性能优化配置项，取值有：
+                     * @param _name 站点性能优化配置项，取值有：
 <li>Http2；</li>
 <li>Http3；</li>
 <li>Brotli。</li>
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取网络环境。
                      * @return Connectivity 网络环境。
+                     * 
                      */
                     std::string GetConnectivity() const;
 
                     /**
                      * 设置网络环境。
-                     * @param Connectivity 网络环境。
+                     * @param _connectivity 网络环境。
+                     * 
                      */
                     void SetConnectivity(const std::string& _connectivity);
 
                     /**
                      * 判断参数 Connectivity 是否已赋值
                      * @return Connectivity 是否已赋值
+                     * 
                      */
                     bool ConnectivityHasBeenSet() const;
 
                     /**
                      * 获取开启配置项后，预估性能优化效果，单位ms。
                      * @return Value 开启配置项后，预估性能优化效果，单位ms。
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置开启配置项后，预估性能优化效果，单位ms。
-                     * @param Value 开启配置项后，预估性能优化效果，单位ms。
+                     * @param _value 开启配置项后，预估性能优化效果，单位ms。
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取开启配置项后，预估性能提升比例，单位%。
                      * @return Ratio 开启配置项后，预估性能提升比例，单位%。
+                     * 
                      */
                     int64_t GetRatio() const;
 
                     /**
                      * 设置开启配置项后，预估性能提升比例，单位%。
-                     * @param Ratio 开启配置项后，预估性能提升比例，单位%。
+                     * @param _ratio 开启配置项后，预估性能提升比例，单位%。
+                     * 
                      */
                     void SetRatio(const int64_t& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 

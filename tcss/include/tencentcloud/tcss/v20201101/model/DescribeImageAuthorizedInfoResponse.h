@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取总共有效的镜像授权数
                      * @return TotalAuthorizedCnt 总共有效的镜像授权数
+                     * 
                      */
                     uint64_t GetTotalAuthorizedCnt() const;
 
                     /**
                      * 判断参数 TotalAuthorizedCnt 是否已赋值
                      * @return TotalAuthorizedCnt 是否已赋值
+                     * 
                      */
                     bool TotalAuthorizedCntHasBeenSet() const;
 
                     /**
                      * 获取已使用镜像授权数
                      * @return UsedAuthorizedCnt 已使用镜像授权数
+                     * 
                      */
                     uint64_t GetUsedAuthorizedCnt() const;
 
                     /**
                      * 判断参数 UsedAuthorizedCnt 是否已赋值
                      * @return UsedAuthorizedCnt 是否已赋值
+                     * 
                      */
                     bool UsedAuthorizedCntHasBeenSet() const;
 
                     /**
                      * 获取已开启扫描镜像数
                      * @return ScannedImageCnt 已开启扫描镜像数
+                     * 
                      */
                     uint64_t GetScannedImageCnt() const;
 
                     /**
                      * 判断参数 ScannedImageCnt 是否已赋值
                      * @return ScannedImageCnt 是否已赋值
+                     * 
                      */
                     bool ScannedImageCntHasBeenSet() const;
 
                     /**
                      * 获取未开启扫描镜像数
                      * @return NotScannedImageCnt 未开启扫描镜像数
+                     * 
                      */
                     uint64_t GetNotScannedImageCnt() const;
 
                     /**
                      * 判断参数 NotScannedImageCnt 是否已赋值
                      * @return NotScannedImageCnt 是否已赋值
+                     * 
                      */
                     bool NotScannedImageCntHasBeenSet() const;
 
                     /**
                      * 获取本地未开启扫描镜像数
                      * @return NotScannedLocalImageCnt 本地未开启扫描镜像数
+                     * 
                      */
                     uint64_t GetNotScannedLocalImageCnt() const;
 
                     /**
                      * 判断参数 NotScannedLocalImageCnt 是否已赋值
                      * @return NotScannedLocalImageCnt 是否已赋值
+                     * 
                      */
                     bool NotScannedLocalImageCntHasBeenSet() const;
 

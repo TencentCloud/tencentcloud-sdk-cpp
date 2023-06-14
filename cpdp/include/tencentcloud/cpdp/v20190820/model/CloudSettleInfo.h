@@ -55,6 +55,7 @@ namespace TencentCloud
 0: 不需要支付确认
 1: 需要支付确认
 传1时，需要在支付完成后成功调用了《支付确认》接口，该笔订单才会被清分出去
+                     * 
                      */
                     int64_t GetNeedToBeConfirmed() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 0: 不需要支付确认
 1: 需要支付确认
 传1时，需要在支付完成后成功调用了《支付确认》接口，该笔订单才会被清分出去
-                     * @param NeedToBeConfirmed 是否需要支付确认。
+                     * @param _needToBeConfirmed 是否需要支付确认。
 0: 不需要支付确认
 1: 需要支付确认
 传1时，需要在支付完成后成功调用了《支付确认》接口，该笔订单才会被清分出去
+                     * 
                      */
                     void SetNeedToBeConfirmed(const int64_t& _needToBeConfirmed);
 
                     /**
                      * 判断参数 NeedToBeConfirmed 是否已赋值
                      * @return NeedToBeConfirmed 是否已赋值
+                     * 
                      */
                     bool NeedToBeConfirmedHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return ProfitSharing 是否指定分账。
 0: 不指定分账
 1: 指定分账
+                     * 
                      */
                     int64_t GetProfitSharing() const;
 
@@ -90,15 +94,17 @@ namespace TencentCloud
                      * 设置是否指定分账。
 0: 不指定分账
 1: 指定分账
-                     * @param ProfitSharing 是否指定分账。
+                     * @param _profitSharing 是否指定分账。
 0: 不指定分账
 1: 指定分账
+                     * 
                      */
                     void SetProfitSharing(const int64_t& _profitSharing);
 
                     /**
                      * 判断参数 ProfitSharing 是否已赋值
                      * @return ProfitSharing 是否已赋值
+                     * 
                      */
                     bool ProfitSharingHasBeenSet() const;
 

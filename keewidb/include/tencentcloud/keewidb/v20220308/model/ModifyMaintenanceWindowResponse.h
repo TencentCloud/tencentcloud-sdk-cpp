@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取执行结果。<ul><li>success：修改成功。 </li> <li>failed：修改失败。</li></ul>
                      * @return Status 执行结果。<ul><li>success：修改成功。 </li> <li>failed：修改失败。</li></ul>
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

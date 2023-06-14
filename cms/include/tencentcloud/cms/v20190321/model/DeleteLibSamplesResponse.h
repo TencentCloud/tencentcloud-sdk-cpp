@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取删除成功的数量
                      * @return Count 删除成功的数量
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取每个关键词删除的结果
                      * @return Details 每个关键词删除的结果
+                     * 
                      */
                     std::vector<DeleteSampleDetails> GetDetails() const;
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

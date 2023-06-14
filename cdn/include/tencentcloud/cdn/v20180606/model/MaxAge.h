@@ -57,6 +57,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -65,16 +66,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 浏览器缓存配置开关，取值有：
+                     * @param _switch 浏览器缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -83,20 +86,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxAgeRules MaxAge 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MaxAgeRule> GetMaxAgeRules() const;
 
                     /**
                      * 设置MaxAge 规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAgeRules MaxAge 规则
+                     * @param _maxAgeRules MaxAge 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxAgeRules(const std::vector<MaxAgeRule>& _maxAgeRules);
 
                     /**
                      * 判断参数 MaxAgeRules 是否已赋值
                      * @return MaxAgeRules 是否已赋值
+                     * 
                      */
                     bool MaxAgeRulesHasBeenSet() const;
 
@@ -105,20 +111,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxAgeCodeRule MaxAge 状态码相关规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MaxAgeCodeRule GetMaxAgeCodeRule() const;
 
                     /**
                      * 设置MaxAge 状态码相关规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAgeCodeRule MaxAge 状态码相关规则
+                     * @param _maxAgeCodeRule MaxAge 状态码相关规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxAgeCodeRule(const MaxAgeCodeRule& _maxAgeCodeRule);
 
                     /**
                      * 判断参数 MaxAgeCodeRule 是否已赋值
                      * @return MaxAgeCodeRule 是否已赋值
+                     * 
                      */
                     bool MaxAgeCodeRuleHasBeenSet() const;
 

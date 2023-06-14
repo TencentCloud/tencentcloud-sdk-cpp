@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取规则名称，不可使用中文。
                      * @return RuleName 规则名称，不可使用中文。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称，不可使用中文。
-                     * @param RuleName 规则名称，不可使用中文。
+                     * @param _ruleName 规则名称，不可使用中文。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则的处置方式，当前仅支持skip：跳过全部托管规则。
                      * @return Action 规则的处置方式，当前仅支持skip：跳过全部托管规则。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置规则的处置方式，当前仅支持skip：跳过全部托管规则。
-                     * @param Action 规则的处置方式，当前仅支持skip：跳过全部托管规则。
+                     * @param _action 规则的处置方式，当前仅支持skip：跳过全部托管规则。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
                      * @return RuleStatus 规则生效状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
+                     * 
                      */
                     std::string GetRuleStatus() const;
 
@@ -98,33 +105,38 @@ namespace TencentCloud
                      * 设置规则生效状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
-                     * @param RuleStatus 规则生效状态，取值有：
+                     * @param _ruleStatus 规则生效状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
+                     * 
                      */
                     void SetRuleStatus(const std::string& _ruleStatus);
 
                     /**
                      * 判断参数 RuleStatus 是否已赋值
                      * @return RuleStatus 是否已赋值
+                     * 
                      */
                     bool RuleStatusHasBeenSet() const;
 
                     /**
                      * 获取规则ID。仅出参使用。默认由底层生成。
                      * @return RuleID 规则ID。仅出参使用。默认由底层生成。
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则ID。仅出参使用。默认由底层生成。
-                     * @param RuleID 规则ID。仅出参使用。默认由底层生成。
+                     * @param _ruleID 规则ID。仅出参使用。默认由底层生成。
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间，如果为null，默认由底层按当前时间生成。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，如果为null，默认由底层按当前时间生成。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间，如果为null，默认由底层按当前时间生成。
+                     * @param _updateTime 更新时间，如果为null，默认由底层按当前时间生成。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -155,20 +170,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptUserRuleConditions 匹配条件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExceptUserRuleCondition> GetExceptUserRuleConditions() const;
 
                     /**
                      * 设置匹配条件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExceptUserRuleConditions 匹配条件。
+                     * @param _exceptUserRuleConditions 匹配条件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExceptUserRuleConditions(const std::vector<ExceptUserRuleCondition>& _exceptUserRuleConditions);
 
                     /**
                      * 判断参数 ExceptUserRuleConditions 是否已赋值
                      * @return ExceptUserRuleConditions 是否已赋值
+                     * 
                      */
                     bool ExceptUserRuleConditionsHasBeenSet() const;
 
@@ -177,38 +195,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptUserRuleScope 规则生效的范围。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ExceptUserRuleScope GetExceptUserRuleScope() const;
 
                     /**
                      * 设置规则生效的范围。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExceptUserRuleScope 规则生效的范围。
+                     * @param _exceptUserRuleScope 规则生效的范围。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExceptUserRuleScope(const ExceptUserRuleScope& _exceptUserRuleScope);
 
                     /**
                      * 判断参数 ExceptUserRuleScope 是否已赋值
                      * @return ExceptUserRuleScope 是否已赋值
+                     * 
                      */
                     bool ExceptUserRuleScopeHasBeenSet() const;
 
                     /**
                      * 获取优先级，取值范围0-100。如果为null，默认由底层设置为0。
                      * @return RulePriority 优先级，取值范围0-100。如果为null，默认由底层设置为0。
+                     * 
                      */
                     int64_t GetRulePriority() const;
 
                     /**
                      * 设置优先级，取值范围0-100。如果为null，默认由底层设置为0。
-                     * @param RulePriority 优先级，取值范围0-100。如果为null，默认由底层设置为0。
+                     * @param _rulePriority 优先级，取值范围0-100。如果为null，默认由底层设置为0。
+                     * 
                      */
                     void SetRulePriority(const int64_t& _rulePriority);
 
                     /**
                      * 判断参数 RulePriority 是否已赋值
                      * @return RulePriority 是否已赋值
+                     * 
                      */
                     bool RulePriorityHasBeenSet() const;
 

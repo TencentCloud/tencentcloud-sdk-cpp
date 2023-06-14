@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取规则详情
                      * @return RuleInfo 规则详情
+                     * 
                      */
                     K8sApiAbnormalRuleInfo GetRuleInfo() const;
 
                     /**
                      * 设置规则详情
-                     * @param RuleInfo 规则详情
+                     * @param _ruleInfo 规则详情
+                     * 
                      */
                     void SetRuleInfo(const K8sApiAbnormalRuleInfo& _ruleInfo);
 
                     /**
                      * 判断参数 RuleInfo 是否已赋值
                      * @return RuleInfo 是否已赋值
+                     * 
                      */
                     bool RuleInfoHasBeenSet() const;
 
                     /**
                      * 获取拷贝规则ID(适用于复制规则场景)
                      * @return CopySrcRuleID 拷贝规则ID(适用于复制规则场景)
+                     * 
                      */
                     std::string GetCopySrcRuleID() const;
 
                     /**
                      * 设置拷贝规则ID(适用于复制规则场景)
-                     * @param CopySrcRuleID 拷贝规则ID(适用于复制规则场景)
+                     * @param _copySrcRuleID 拷贝规则ID(适用于复制规则场景)
+                     * 
                      */
                     void SetCopySrcRuleID(const std::string& _copySrcRuleID);
 
                     /**
                      * 判断参数 CopySrcRuleID 是否已赋值
                      * @return CopySrcRuleID 是否已赋值
+                     * 
                      */
                     bool CopySrcRuleIDHasBeenSet() const;
 
                     /**
                      * 获取事件ID(适用于事件加白场景)
                      * @return EventID 事件ID(适用于事件加白场景)
+                     * 
                      */
                     uint64_t GetEventID() const;
 
                     /**
                      * 设置事件ID(适用于事件加白场景)
-                     * @param EventID 事件ID(适用于事件加白场景)
+                     * @param _eventID 事件ID(适用于事件加白场景)
+                     * 
                      */
                     void SetEventID(const uint64_t& _eventID);
 
                     /**
                      * 判断参数 EventID 是否已赋值
                      * @return EventID 是否已赋值
+                     * 
                      */
                     bool EventIDHasBeenSet() const;
 

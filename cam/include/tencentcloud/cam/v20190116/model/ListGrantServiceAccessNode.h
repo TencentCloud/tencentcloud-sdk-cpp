@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取服务
                      * @return Service 服务
+                     * 
                      */
                     ListGrantServiceAccessService GetService() const;
 
                     /**
                      * 设置服务
-                     * @param Service 服务
+                     * @param _service 服务
+                     * 
                      */
                     void SetService(const ListGrantServiceAccessService& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取接口信息
                      * @return Action 接口信息
+                     * 
                      */
                     std::vector<ListGrantServiceAccessActionNode> GetAction() const;
 
                     /**
                      * 设置接口信息
-                     * @param Action 接口信息
+                     * @param _action 接口信息
+                     * 
                      */
                     void SetAction(const std::vector<ListGrantServiceAccessActionNode>& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取授权的策略
                      * @return Policy 授权的策略
+                     * 
                      */
                     std::vector<ListGrantServiceAccessPolicy> GetPolicy() const;
 
                     /**
                      * 设置授权的策略
-                     * @param Policy 授权的策略
+                     * @param _policy 授权的策略
+                     * 
                      */
                     void SetPolicy(const std::vector<ListGrantServiceAccessPolicy>& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 

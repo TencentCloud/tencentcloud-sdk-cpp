@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取转换器id
                      * @return TransformationId 转换器id
+                     * 
                      */
                     std::string GetTransformationId() const;
 
                     /**
                      * 设置转换器id
-                     * @param TransformationId 转换器id
+                     * @param _transformationId 转换器id
+                     * 
                      */
                     void SetTransformationId(const std::string& _transformationId);
 
                     /**
                      * 判断参数 TransformationId 是否已赋值
                      * @return TransformationId 是否已赋值
+                     * 
                      */
                     bool TransformationIdHasBeenSet() const;
 

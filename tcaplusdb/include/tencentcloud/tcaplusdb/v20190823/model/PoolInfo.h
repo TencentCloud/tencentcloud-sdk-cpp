@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取唯一id
                      * @return PoolUid 唯一id
+                     * 
                      */
                     int64_t GetPoolUid() const;
 
                     /**
                      * 设置唯一id
-                     * @param PoolUid 唯一id
+                     * @param _poolUid 唯一id
+                     * 
                      */
                     void SetPoolUid(const int64_t& _poolUid);
 
                     /**
                      * 判断参数 PoolUid 是否已赋值
                      * @return PoolUid 是否已赋值
+                     * 
                      */
                     bool PoolUidHasBeenSet() const;
 
                     /**
                      * 获取是否支持ipv6
                      * @return Ipv6Enable 是否支持ipv6
+                     * 
                      */
                     int64_t GetIpv6Enable() const;
 
                     /**
                      * 设置是否支持ipv6
-                     * @param Ipv6Enable 是否支持ipv6
+                     * @param _ipv6Enable 是否支持ipv6
+                     * 
                      */
                     void SetIpv6Enable(const int64_t& _ipv6Enable);
 
                     /**
                      * 判断参数 Ipv6Enable 是否已赋值
                      * @return Ipv6Enable 是否已赋值
+                     * 
                      */
                     bool Ipv6EnableHasBeenSet() const;
 
                     /**
                      * 获取剩余可用app
                      * @return AvailableAppCount 剩余可用app
+                     * 
                      */
                     int64_t GetAvailableAppCount() const;
 
                     /**
                      * 设置剩余可用app
-                     * @param AvailableAppCount 剩余可用app
+                     * @param _availableAppCount 剩余可用app
+                     * 
                      */
                     void SetAvailableAppCount(const int64_t& _availableAppCount);
 
                     /**
                      * 判断参数 AvailableAppCount 是否已赋值
                      * @return AvailableAppCount 是否已赋值
+                     * 
                      */
                     bool AvailableAppCountHasBeenSet() const;
 
                     /**
                      * 获取svr机器列表
                      * @return ServerList svr机器列表
+                     * 
                      */
                     std::vector<ServerMachineInfo> GetServerList() const;
 
                     /**
                      * 设置svr机器列表
-                     * @param ServerList svr机器列表
+                     * @param _serverList svr机器列表
+                     * 
                      */
                     void SetServerList(const std::vector<ServerMachineInfo>& _serverList);
 
                     /**
                      * 判断参数 ServerList 是否已赋值
                      * @return ServerList 是否已赋值
+                     * 
                      */
                     bool ServerListHasBeenSet() const;
 
                     /**
                      * 获取proxy机器列表
                      * @return ProxyList proxy机器列表
+                     * 
                      */
                     std::vector<ProxyMachineInfo> GetProxyList() const;
 
                     /**
                      * 设置proxy机器列表
-                     * @param ProxyList proxy机器列表
+                     * @param _proxyList proxy机器列表
+                     * 
                      */
                     void SetProxyList(const std::vector<ProxyMachineInfo>& _proxyList);
 
                     /**
                      * 判断参数 ProxyList 是否已赋值
                      * @return ProxyList 是否已赋值
+                     * 
                      */
                     bool ProxyListHasBeenSet() const;
 

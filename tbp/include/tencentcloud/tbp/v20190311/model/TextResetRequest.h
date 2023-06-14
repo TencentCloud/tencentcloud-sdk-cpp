@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取机器人标识，用于定义抽象机器人。
                      * @return BotId 机器人标识，用于定义抽象机器人。
+                     * 
                      */
                     std::string GetBotId() const;
 
                     /**
                      * 设置机器人标识，用于定义抽象机器人。
-                     * @param BotId 机器人标识，用于定义抽象机器人。
+                     * @param _botId 机器人标识，用于定义抽象机器人。
+                     * 
                      */
                     void SetBotId(const std::string& _botId);
 
                     /**
                      * 判断参数 BotId 是否已赋值
                      * @return BotId 是否已赋值
+                     * 
                      */
                     bool BotIdHasBeenSet() const;
 
                     /**
                      * 获取终端标识，每个终端(或线程)对应一个，区分并发多用户。
                      * @return TerminalId 终端标识，每个终端(或线程)对应一个，区分并发多用户。
+                     * 
                      */
                     std::string GetTerminalId() const;
 
                     /**
                      * 设置终端标识，每个终端(或线程)对应一个，区分并发多用户。
-                     * @param TerminalId 终端标识，每个终端(或线程)对应一个，区分并发多用户。
+                     * @param _terminalId 终端标识，每个终端(或线程)对应一个，区分并发多用户。
+                     * 
                      */
                     void SetTerminalId(const std::string& _terminalId);
 
                     /**
                      * 判断参数 TerminalId 是否已赋值
                      * @return TerminalId 是否已赋值
+                     * 
                      */
                     bool TerminalIdHasBeenSet() const;
 
                     /**
                      * 获取机器人版本，取值"dev"或"release"，{调试版本：dev；线上版本：release}。
                      * @return BotEnv 机器人版本，取值"dev"或"release"，{调试版本：dev；线上版本：release}。
+                     * 
                      */
                     std::string GetBotEnv() const;
 
                     /**
                      * 设置机器人版本，取值"dev"或"release"，{调试版本：dev；线上版本：release}。
-                     * @param BotEnv 机器人版本，取值"dev"或"release"，{调试版本：dev；线上版本：release}。
+                     * @param _botEnv 机器人版本，取值"dev"或"release"，{调试版本：dev；线上版本：release}。
+                     * 
                      */
                     void SetBotEnv(const std::string& _botEnv);
 
                     /**
                      * 判断参数 BotEnv 是否已赋值
                      * @return BotEnv 是否已赋值
+                     * 
                      */
                     bool BotEnvHasBeenSet() const;
 

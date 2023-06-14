@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Host 域名
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置域名
-                     * @param Host 域名
+                     * @param _host 域名
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 区域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置区域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 区域ID
+                     * @param _zoneId 区域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取域名状态
                      * @return Status 域名状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置域名状态
-                     * @param Status 域名状态
+                     * @param _status 域名状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

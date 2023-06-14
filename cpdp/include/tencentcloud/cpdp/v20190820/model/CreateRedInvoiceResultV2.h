@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取红票ID
                      * @return InvoiceId 红票ID
+                     * 
                      */
                     std::string GetInvoiceId() const;
 
                     /**
                      * 设置红票ID
-                     * @param InvoiceId 红票ID
+                     * @param _invoiceId 红票ID
+                     * 
                      */
                     void SetInvoiceId(const std::string& _invoiceId);
 
                     /**
                      * 判断参数 InvoiceId 是否已赋值
                      * @return InvoiceId 是否已赋值
+                     * 
                      */
                     bool InvoiceIdHasBeenSet() const;
 

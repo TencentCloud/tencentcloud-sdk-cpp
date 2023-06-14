@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待处理的文本（仅支持UTF-8格式，不超过10000字符）
                      * @return Text 待处理的文本（仅支持UTF-8格式，不超过10000字符）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待处理的文本（仅支持UTF-8格式，不超过10000字符）
-                     * @param Text 待处理的文本（仅支持UTF-8格式，不超过10000字符）
+                     * @param _text 待处理的文本（仅支持UTF-8格式，不超过10000字符）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取指定关键词个数上限（默认值为5）
                      * @return Num 指定关键词个数上限（默认值为5）
+                     * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置指定关键词个数上限（默认值为5）
-                     * @param Num 指定关键词个数上限（默认值为5）
+                     * @param _num 指定关键词个数上限（默认值为5）
+                     * 
                      */
                     void SetNum(const uint64_t& _num);
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 

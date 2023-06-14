@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取部署组ID字段
                      * @return GroupId 部署组ID字段
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID字段
-                     * @param GroupId 部署组ID字段
+                     * @param _groupId 部署组ID字段
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

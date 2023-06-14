@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取训练任务id
                      * @return TaskId 训练任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置训练任务id
-                     * @param TaskId 训练任务id
+                     * @param _taskId 训练任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 时间戳.unix timestamp,单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳.unix timestamp,单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 时间戳.unix timestamp,单位为秒
+                     * @param _timestamp 时间戳.unix timestamp,单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 用户uin
+                     * @param _uin 用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Epoch 本次上报数据所处的训练周期数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEpoch() const;
 
                     /**
                      * 设置本次上报数据所处的训练周期数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Epoch 本次上报数据所处的训练周期数。
+                     * @param _epoch 本次上报数据所处的训练周期数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEpoch(const int64_t& _epoch);
 
                     /**
                      * 判断参数 Epoch 是否已赋值
                      * @return Epoch 是否已赋值
+                     * 
                      */
                     bool EpochHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 本次上报数据所处的训练迭代次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStep() const;
 
                     /**
                      * 设置本次上报数据所处的训练迭代次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Step 本次上报数据所处的训练迭代次数。
+                     * @param _step 本次上报数据所处的训练迭代次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStep(const int64_t& _step);
 
                     /**
                      * 判断参数 Step 是否已赋值
                      * @return Step 是否已赋值
+                     * 
                      */
                     bool StepHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalSteps 训练停止所需的迭代总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalSteps() const;
 
                     /**
                      * 设置训练停止所需的迭代总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalSteps 训练停止所需的迭代总数。
+                     * @param _totalSteps 训练停止所需的迭代总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalSteps(const int64_t& _totalSteps);
 
                     /**
                      * 判断参数 TotalSteps 是否已赋值
                      * @return TotalSteps 是否已赋值
+                     * 
                      */
                     bool TotalStepsHasBeenSet() const;
 
@@ -180,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 数据点。数组元素为不同指标的数据。数组长度不超过10。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataPoint> GetPoints() const;
 
                     /**
                      * 设置数据点。数组元素为不同指标的数据。数组长度不超过10。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Points 数据点。数组元素为不同指标的数据。数组长度不超过10。
+                     * @param _points 数据点。数组元素为不同指标的数据。数组长度不超过10。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoints(const std::vector<DataPoint>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 

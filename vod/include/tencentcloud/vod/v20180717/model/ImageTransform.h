@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 类型，取值有：
 <li> Rotate：图像旋转。</li>
 <li> Flip：图像翻转。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置类型，取值有：
 <li> Rotate：图像旋转。</li>
 <li> Flip：图像翻转。</li>
-                     * @param Type 类型，取值有：
+                     * @param _type 类型，取值有：
 <li> Rotate：图像旋转。</li>
 <li> Flip：图像翻转。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取图像以中心点为原点进行旋转的角度，取值范围0~360。当 Type = Rotate 时有效。
                      * @return RotateAngle 图像以中心点为原点进行旋转的角度，取值范围0~360。当 Type = Rotate 时有效。
+                     * 
                      */
                     double GetRotateAngle() const;
 
                     /**
                      * 设置图像以中心点为原点进行旋转的角度，取值范围0~360。当 Type = Rotate 时有效。
-                     * @param RotateAngle 图像以中心点为原点进行旋转的角度，取值范围0~360。当 Type = Rotate 时有效。
+                     * @param _rotateAngle 图像以中心点为原点进行旋转的角度，取值范围0~360。当 Type = Rotate 时有效。
+                     * 
                      */
                     void SetRotateAngle(const double& _rotateAngle);
 
                     /**
                      * 判断参数 RotateAngle 是否已赋值
                      * @return RotateAngle 是否已赋值
+                     * 
                      */
                     bool RotateAngleHasBeenSet() const;
 
@@ -99,6 +105,7 @@ namespace TencentCloud
 <li>Horizental：水平翻转，即左右镜像。</li>
 <li>Vertical：垂直翻转，即上下镜像。</li>
 当 Type = Flip 时有效。
+                     * 
                      */
                     std::string GetFlip() const;
 
@@ -107,16 +114,18 @@ namespace TencentCloud
 <li>Horizental：水平翻转，即左右镜像。</li>
 <li>Vertical：垂直翻转，即上下镜像。</li>
 当 Type = Flip 时有效。
-                     * @param Flip 图像翻转动作，取值有：
+                     * @param _flip 图像翻转动作，取值有：
 <li>Horizental：水平翻转，即左右镜像。</li>
 <li>Vertical：垂直翻转，即上下镜像。</li>
 当 Type = Flip 时有效。
+                     * 
                      */
                     void SetFlip(const std::string& _flip);
 
                     /**
                      * 判断参数 Flip 是否已赋值
                      * @return Flip 是否已赋值
+                     * 
                      */
                     bool FlipHasBeenSet() const;
 

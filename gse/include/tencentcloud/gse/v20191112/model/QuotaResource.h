@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型，1生成包、2服务部署、3别名、4游戏服务器队列、5实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型，1生成包、2服务部署、3别名、4游戏服务器队列、5实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源类型，1生成包、2服务部署、3别名、4游戏服务器队列、5实例
+                     * @param _resourceType 资源类型，1生成包、2服务部署、3别名、4游戏服务器队列、5实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const uint64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardLimit 总额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHardLimit() const;
 
                     /**
                      * 设置总额度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HardLimit 总额度
+                     * @param _hardLimit 总额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHardLimit(const uint64_t& _hardLimit);
 
                     /**
                      * 判断参数 HardLimit 是否已赋值
                      * @return HardLimit 是否已赋值
+                     * 
                      */
                     bool HardLimitHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remaining 剩余额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRemaining() const;
 
                     /**
                      * 设置剩余额度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remaining 剩余额度
+                     * @param _remaining 剩余额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemaining(const uint64_t& _remaining);
 
                     /**
                      * 判断参数 Remaining 是否已赋值
                      * @return Remaining 是否已赋值
+                     * 
                      */
                     bool RemainingHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 额外信息，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
                      * 设置额外信息，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraInfo 额外信息，可能为空
+                     * @param _extraInfo 额外信息，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
 
                     /**
                      * 判断参数 ExtraInfo 是否已赋值
                      * @return ExtraInfo 是否已赋值
+                     * 
                      */
                     bool ExtraInfoHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
                      * @return SmsSdkAppId 短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 
                      */
                     std::string GetSmsSdkAppId() const;
 
                     /**
                      * 设置短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
-                     * @param SmsSdkAppId 短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * @param _smsSdkAppId 短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 
                      */
                     void SetSmsSdkAppId(const std::string& _smsSdkAppId);
 
                     /**
                      * 判断参数 SmsSdkAppId 是否已赋值
                      * @return SmsSdkAppId 是否已赋值
+                     * 
                      */
                     bool SmsSdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取发送短信返回的流水号。
                      * @return SerialNo 发送短信返回的流水号。
+                     * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
                      * 设置发送短信返回的流水号。
-                     * @param SerialNo 发送短信返回的流水号。
+                     * @param _serialNo 发送短信返回的流水号。
+                     * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
 
                     /**
                      * 判断参数 SerialNo 是否已赋值
                      * @return SerialNo 是否已赋值
+                     * 
                      */
                     bool SerialNoHasBeenSet() const;
 
                     /**
                      * 获取用户回填时间，UNIX 时间戳（单位：秒）。
                      * @return ConversionTime 用户回填时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetConversionTime() const;
 
                     /**
                      * 设置用户回填时间，UNIX 时间戳（单位：秒）。
-                     * @param ConversionTime 用户回填时间，UNIX 时间戳（单位：秒）。
+                     * @param _conversionTime 用户回填时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetConversionTime(const uint64_t& _conversionTime);
 
                     /**
                      * 判断参数 ConversionTime 是否已赋值
                      * @return ConversionTime 是否已赋值
+                     * 
                      */
                     bool ConversionTimeHasBeenSet() const;
 

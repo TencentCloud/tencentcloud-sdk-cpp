@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取事件基本信息
                      * @return WhiteListDetailInfo 事件基本信息
+                     * 
                      */
                     ReverseShellWhiteListInfo GetWhiteListDetailInfo() const;
 
                     /**
                      * 判断参数 WhiteListDetailInfo 是否已赋值
                      * @return WhiteListDetailInfo 是否已赋值
+                     * 
                      */
                     bool WhiteListDetailInfoHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取事件规则
                      * @return Description 事件规则
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件规则
-                     * @param Description 事件规则
+                     * @param _description 事件规则
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取解决方案
                      * @return Solution 解决方案
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
-                     * @param Solution 解决方案
+                     * @param _solution 解决方案
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -88,74 +94,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 事件备注信息
+                     * @param _remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取命中规则详细信息
                      * @return MatchRule 命中规则详细信息
+                     * 
                      */
                     AccessControlChildRuleInfo GetMatchRule() const;
 
                     /**
                      * 设置命中规则详细信息
-                     * @param MatchRule 命中规则详细信息
+                     * @param _matchRule 命中规则详细信息
+                     * 
                      */
                     void SetMatchRule(const AccessControlChildRuleInfo& _matchRule);
 
                     /**
                      * 判断参数 MatchRule 是否已赋值
                      * @return MatchRule 是否已赋值
+                     * 
                      */
                     bool MatchRuleHasBeenSet() const;
 
                     /**
                      * 获取命中规则名字
                      * @return RuleName 命中规则名字
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置命中规则名字
-                     * @param RuleName 命中规则名字
+                     * @param _ruleName 命中规则名字
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取命中规则id
                      * @return RuleId 命中规则id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置命中规则id
-                     * @param RuleId 命中规则id
+                     * @param _ruleId 命中规则id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -164,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperationTime 事件最后一次处理的时间
+                     * @param _operationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
 
                     /**
                      * 判断参数 OperationTime 是否已赋值
                      * @return OperationTime 是否已赋值
+                     * 
                      */
                     bool OperationTimeHasBeenSet() const;
 

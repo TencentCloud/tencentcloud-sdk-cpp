@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取函数版本名称
                      * @return Version 函数版本名称
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置函数版本名称
-                     * @param Version 函数版本名称
+                     * @param _version 函数版本名称
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -71,6 +74,7 @@ key填写"invoke.headers.User"，并在 invoke 调用函数时传参 RoutingKey�
                      * @return Key 匹配规则的key，调用时通过传key来匹配规则路由到指定版本
 header方式：
 key填写"invoke.headers.User"，并在 invoke 调用函数时传参 RoutingKey：{"User":"value"}规则匹配调用
+                     * 
                      */
                     std::string GetKey() const;
 
@@ -78,15 +82,17 @@ key填写"invoke.headers.User"，并在 invoke 调用函数时传参 RoutingKey�
                      * 设置匹配规则的key，调用时通过传key来匹配规则路由到指定版本
 header方式：
 key填写"invoke.headers.User"，并在 invoke 调用函数时传参 RoutingKey：{"User":"value"}规则匹配调用
-                     * @param Key 匹配规则的key，调用时通过传key来匹配规则路由到指定版本
+                     * @param _key 匹配规则的key，调用时通过传key来匹配规则路由到指定版本
 header方式：
 key填写"invoke.headers.User"，并在 invoke 调用函数时传参 RoutingKey：{"User":"value"}规则匹配调用
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -97,6 +103,7 @@ exact：字符串精确匹配
                      * @return Method 匹配方式。取值范围：
 range：范围匹配
 exact：字符串精确匹配
+                     * 
                      */
                     std::string GetMethod() const;
 
@@ -104,15 +111,17 @@ exact：字符串精确匹配
                      * 设置匹配方式。取值范围：
 range：范围匹配
 exact：字符串精确匹配
-                     * @param Method 匹配方式。取值范围：
+                     * @param _method 匹配方式。取值范围：
 range：范围匹配
 exact：字符串精确匹配
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -125,6 +134,7 @@ exact 匹配规则要求：
 需要为开区间或闭区间描述 (a,b) [a,b]，其中 a、b 均为整数
 exact 匹配规则要求：
 字符串精确匹配
+                     * 
                      */
                     std::string GetExpression() const;
 
@@ -133,16 +143,18 @@ exact 匹配规则要求：
 需要为开区间或闭区间描述 (a,b) [a,b]，其中 a、b 均为整数
 exact 匹配规则要求：
 字符串精确匹配
-                     * @param Expression range 匹配规则要求：
+                     * @param _expression range 匹配规则要求：
 需要为开区间或闭区间描述 (a,b) [a,b]，其中 a、b 均为整数
 exact 匹配规则要求：
 字符串精确匹配
+                     * 
                      */
                     void SetExpression(const std::string& _expression);
 
                     /**
                      * 判断参数 Expression 是否已赋值
                      * @return Expression 是否已赋值
+                     * 
                      */
                     bool ExpressionHasBeenSet() const;
 

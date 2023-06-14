@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的团队 ID。
                      * @return TeamId 创建的团队 ID。
+                     * 
                      */
                     std::string GetTeamId() const;
 
                     /**
                      * 判断参数 TeamId 是否已赋值
                      * @return TeamId 是否已赋值
+                     * 
                      */
                     bool TeamIdHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取服务器价格信息列表
                      * @return DevicePriceInfoSet 服务器价格信息列表
+                     * 
                      */
                     std::vector<DevicePriceInfo> GetDevicePriceInfoSet() const;
 
                     /**
                      * 判断参数 DevicePriceInfoSet 是否已赋值
                      * @return DevicePriceInfoSet 是否已赋值
+                     * 
                      */
                     bool DevicePriceInfoSetHasBeenSet() const;
 

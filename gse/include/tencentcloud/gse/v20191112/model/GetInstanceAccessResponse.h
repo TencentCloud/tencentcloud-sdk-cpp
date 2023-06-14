@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例登录所需要的凭据
                      * @return InstanceAccess 实例登录所需要的凭据
+                     * 
                      */
                     InstanceAccess GetInstanceAccess() const;
 
                     /**
                      * 判断参数 InstanceAccess 是否已赋值
                      * @return InstanceAccess 是否已赋值
+                     * 
                      */
                     bool InstanceAccessHasBeenSet() const;
 

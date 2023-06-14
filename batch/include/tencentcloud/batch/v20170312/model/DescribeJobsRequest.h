@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取作业ID列表，与Filters参数不能同时指定。
                      * @return JobIds 作业ID列表，与Filters参数不能同时指定。
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 设置作业ID列表，与Filters参数不能同时指定。
-                     * @param JobIds 作业ID列表，与Filters参数不能同时指定。
+                     * @param _jobIds 作业ID列表，与Filters参数不能同时指定。
+                     * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 
@@ -80,6 +83,7 @@ namespace TencentCloud
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
 与JobIds参数不能同时指定。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
 与JobIds参数不能同时指定。
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
 <li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
@@ -102,48 +106,56 @@ namespace TencentCloud
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
 与JobIds参数不能同时指定。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

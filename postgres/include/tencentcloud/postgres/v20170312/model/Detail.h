@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）
                      * @return TotalTime 输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）
+                     * 
                      */
                     double GetTotalTime() const;
 
                     /**
                      * 设置输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）
-                     * @param TotalTime 输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）
+                     * @param _totalTime 输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）
+                     * 
                      */
                     void SetTotalTime(const double& _totalTime);
 
                     /**
                      * 判断参数 TotalTime 是否已赋值
                      * @return TotalTime 是否已赋值
+                     * 
                      */
                     bool TotalTimeHasBeenSet() const;
 
                     /**
                      * 获取输入时间范围内所有慢sql总条数
                      * @return TotalCallNum 输入时间范围内所有慢sql总条数
+                     * 
                      */
                     uint64_t GetTotalCallNum() const;
 
                     /**
                      * 设置输入时间范围内所有慢sql总条数
-                     * @param TotalCallNum 输入时间范围内所有慢sql总条数
+                     * @param _totalCallNum 输入时间范围内所有慢sql总条数
+                     * 
                      */
                     void SetTotalCallNum(const uint64_t& _totalCallNum);
 
                     /**
                      * 判断参数 TotalCallNum 是否已赋值
                      * @return TotalCallNum 是否已赋值
+                     * 
                      */
                     bool TotalCallNumHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalysisItems 慢SQL统计分析列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AnalysisItems> GetAnalysisItems() const;
 
                     /**
                      * 设置慢SQL统计分析列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnalysisItems 慢SQL统计分析列表
+                     * @param _analysisItems 慢SQL统计分析列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnalysisItems(const std::vector<AnalysisItems>& _analysisItems);
 
                     /**
                      * 判断参数 AnalysisItems 是否已赋值
                      * @return AnalysisItems 是否已赋值
+                     * 
                      */
                     bool AnalysisItemsHasBeenSet() const;
 

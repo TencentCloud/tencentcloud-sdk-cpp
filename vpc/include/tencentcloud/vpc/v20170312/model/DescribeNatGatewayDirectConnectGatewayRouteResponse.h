@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取路由数据
                      * @return NatDirectConnectGatewayRouteSet 路由数据
+                     * 
                      */
                     std::vector<NatDirectConnectGatewayRoute> GetNatDirectConnectGatewayRouteSet() const;
 
                     /**
                      * 判断参数 NatDirectConnectGatewayRouteSet 是否已赋值
                      * @return NatDirectConnectGatewayRouteSet 是否已赋值
+                     * 
                      */
                     bool NatDirectConnectGatewayRouteSetHasBeenSet() const;
 
                     /**
                      * 获取路由总数
                      * @return Total 路由总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

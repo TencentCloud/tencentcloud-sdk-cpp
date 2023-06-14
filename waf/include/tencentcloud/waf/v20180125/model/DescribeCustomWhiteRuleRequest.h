@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取偏移
                      * @return Offset 偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移
-                     * @param Offset 偏移
+                     * @param _offset 偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取容量
                      * @return Limit 容量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置容量
-                     * @param Limit 容量
+                     * @param _limit 容量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤数组,name可以是如下的值： RuleID,RuleName,Match
                      * @return Filters 过滤数组,name可以是如下的值： RuleID,RuleName,Match
+                     * 
                      */
                     std::vector<FiltersItemNew> GetFilters() const;
 
                     /**
                      * 设置过滤数组,name可以是如下的值： RuleID,RuleName,Match
-                     * @param Filters 过滤数组,name可以是如下的值： RuleID,RuleName,Match
+                     * @param _filters 过滤数组,name可以是如下的值： RuleID,RuleName,Match
+                     * 
                      */
                     void SetFilters(const std::vector<FiltersItemNew>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取asc或者desc
                      * @return Order asc或者desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置asc或者desc
-                     * @param Order asc或者desc
+                     * @param _order asc或者desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取exp_ts或者mod_ts
                      * @return By exp_ts或者mod_ts
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置exp_ts或者mod_ts
-                     * @param By exp_ts或者mod_ts
+                     * @param _by exp_ts或者mod_ts
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

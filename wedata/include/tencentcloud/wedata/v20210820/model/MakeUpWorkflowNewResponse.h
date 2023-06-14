@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回补录成功或失败的任务数
                      * @return Data 返回补录成功或失败的任务数
+                     * 
                      */
                     BatchOperateResult GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

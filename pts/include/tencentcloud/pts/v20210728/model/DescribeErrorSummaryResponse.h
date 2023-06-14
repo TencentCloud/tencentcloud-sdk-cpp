@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorSummarySet 错误汇总信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ErrorSummary> GetErrorSummarySet() const;
 
                     /**
                      * 判断参数 ErrorSummarySet 是否已赋值
                      * @return ErrorSummarySet 是否已赋值
+                     * 
                      */
                     bool ErrorSummarySetHasBeenSet() const;
 

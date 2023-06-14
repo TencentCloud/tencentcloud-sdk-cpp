@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取集群类型Id
                      * @return Id 集群类型Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置集群类型Id
-                     * @param Id 集群类型Id
+                     * @param _id 集群类型Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取集群类型个数
                      * @return Count 集群类型个数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置集群类型个数
-                     * @param Count 集群类型个数
+                     * @param _count 集群类型个数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

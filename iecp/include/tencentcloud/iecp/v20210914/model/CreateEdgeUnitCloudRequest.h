@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群名称，长度小于32
                      * @return Name 集群名称，长度小于32
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置集群名称，长度小于32
-                     * @param Name 集群名称，长度小于32
+                     * @param _name 集群名称，长度小于32
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取k8s版本，仅支持1.16.7 和 1.18.2
                      * @return K8sVersion k8s版本，仅支持1.16.7 和 1.18.2
+                     * 
                      */
                     std::string GetK8sVersion() const;
 
                     /**
                      * 设置k8s版本，仅支持1.16.7 和 1.18.2
-                     * @param K8sVersion k8s版本，仅支持1.16.7 和 1.18.2
+                     * @param _k8sVersion k8s版本，仅支持1.16.7 和 1.18.2
+                     * 
                      */
                     void SetK8sVersion(const std::string& _k8sVersion);
 
                     /**
                      * 判断参数 K8sVersion 是否已赋值
                      * @return K8sVersion 是否已赋值
+                     * 
                      */
                     bool K8sVersionHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取集群描述
                      * @return Description 集群描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置集群描述
-                     * @param Description 集群描述
+                     * @param _description 集群描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取集群pod cidr， 默认  10.1.0.0/16
                      * @return PodCIDR 集群pod cidr， 默认  10.1.0.0/16
+                     * 
                      */
                     std::string GetPodCIDR() const;
 
                     /**
                      * 设置集群pod cidr， 默认  10.1.0.0/16
-                     * @param PodCIDR 集群pod cidr， 默认  10.1.0.0/16
+                     * @param _podCIDR 集群pod cidr， 默认  10.1.0.0/16
+                     * 
                      */
                     void SetPodCIDR(const std::string& _podCIDR);
 
                     /**
                      * 判断参数 PodCIDR 是否已赋值
                      * @return PodCIDR 是否已赋值
+                     * 
                      */
                     bool PodCIDRHasBeenSet() const;
 
                     /**
                      * 获取集群service cidr, 默认 10.2.0.0/16
                      * @return ServiceCIDR 集群service cidr, 默认 10.2.0.0/16
+                     * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 设置集群service cidr, 默认 10.2.0.0/16
-                     * @param ServiceCIDR 集群service cidr, 默认 10.2.0.0/16
+                     * @param _serviceCIDR 集群service cidr, 默认 10.2.0.0/16
+                     * 
                      */
                     void SetServiceCIDR(const std::string& _serviceCIDR);
 
                     /**
                      * 判断参数 ServiceCIDR 是否已赋值
                      * @return ServiceCIDR 是否已赋值
+                     * 
                      */
                     bool ServiceCIDRHasBeenSet() const;
 
                     /**
                      * 获取是否开启监控。目前内存中权限开启联系产品开通白名单
                      * @return OpenCloudMonitor 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     * 
                      */
                     bool GetOpenCloudMonitor() const;
 
                     /**
                      * 设置是否开启监控。目前内存中权限开启联系产品开通白名单
-                     * @param OpenCloudMonitor 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     * @param _openCloudMonitor 是否开启监控。目前内存中权限开启联系产品开通白名单
+                     * 
                      */
                     void SetOpenCloudMonitor(const bool& _openCloudMonitor);
 
                     /**
                      * 判断参数 OpenCloudMonitor 是否已赋值
                      * @return OpenCloudMonitor 是否已赋值
+                     * 
                      */
                     bool OpenCloudMonitorHasBeenSet() const;
 

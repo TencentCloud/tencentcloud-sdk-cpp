@@ -57,6 +57,7 @@ namespace TencentCloud
 <li>suspect_bot：疑似bot；</li>
 <li>good_bot：良好bot；</li>
 <li>normal：正常请求。</li>
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 <li>suspect_bot：疑似bot；</li>
 <li>good_bot：良好bot；</li>
 <li>normal：正常请求。</li>
-                     * @param Label 智能分析标签，取值有：
+                     * @param _label 智能分析标签，取值有：
 <li>evil_bot：恶意bot；</li>
 <li>suspect_bot：疑似bot；</li>
 <li>good_bot：良好bot；</li>
 <li>normal：正常请求。</li>
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -93,6 +96,7 @@ namespace TencentCloud
 <li>alg：Javascript挑战；</li>
 <li>captcha：数字验证码；</li>
 <li>monitor：观察。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -103,18 +107,20 @@ namespace TencentCloud
 <li>alg：Javascript挑战；</li>
 <li>captcha：数字验证码；</li>
 <li>monitor：观察。</li>
-                     * @param Action 触发智能分析标签对应的处置方式，取值有：
+                     * @param _action 触发智能分析标签对应的处置方式，取值有：
 <li>drop：拦截；</li>
 <li>trans：放行；</li>
 <li>alg：Javascript挑战；</li>
 <li>captcha：数字验证码；</li>
 <li>monitor：观察。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 

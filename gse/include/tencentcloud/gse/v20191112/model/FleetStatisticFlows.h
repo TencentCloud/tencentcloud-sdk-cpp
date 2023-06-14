@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedFlowMegaBytes 总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotalUsedFlowMegaBytes() const;
 
                     /**
                      * 设置总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUsedFlowMegaBytes 总流量，单位MB
+                     * @param _totalUsedFlowMegaBytes 总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUsedFlowMegaBytes(const double& _totalUsedFlowMegaBytes);
 
                     /**
                      * 判断参数 TotalUsedFlowMegaBytes 是否已赋值
                      * @return TotalUsedFlowMegaBytes 是否已赋值
+                     * 
                      */
                     bool TotalUsedFlowMegaBytesHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 统计开始时间
+                     * @param _beginTime 统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 

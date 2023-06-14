@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 类别Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置类别Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 类别Id
+                     * @param _id 类别Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 类别层级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置类别层级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 类别层级
+                     * @param _level 类别层级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 类别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置类别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 类别名
+                     * @param _name 类别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

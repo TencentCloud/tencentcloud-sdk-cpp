@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
                      * @return TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
+                     * 
                      */
                     double GetTimeOffset() const;
 
                     /**
                      * 设置该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-                     * @param TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
+                     * @param _timeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
+                     * 
                      */
                     void SetTimeOffset(const double& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取该张截图的 URL 地址。
                      * @return Url 该张截图的 URL 地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置该张截图的 URL 地址。
-                     * @param Url 该张截图的 URL 地址。
+                     * @param _url 该张截图的 URL 地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取截图如果被打上了水印，被打水印的模板 ID 列表。
                      * @return WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * 
                      */
                     std::vector<int64_t> GetWaterMarkDefinition() const;
 
                     /**
                      * 设置截图如果被打上了水印，被打水印的模板 ID 列表。
-                     * @param WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * @param _waterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * 
                      */
                     void SetWaterMarkDefinition(const std::vector<int64_t>& _waterMarkDefinition);
 
                     /**
                      * 判断参数 WaterMarkDefinition 是否已赋值
                      * @return WaterMarkDefinition 是否已赋值
+                     * 
                      */
                     bool WaterMarkDefinitionHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取本集群内cos容量信息，单位：‘GB’
                      * @return CosCapacity 本集群内cos容量信息，单位：‘GB’
+                     * 
                      */
                     CosCapacity GetCosCapacity() const;
 
                     /**
                      * 判断参数 CosCapacity 是否已赋值
                      * @return CosCapacity 是否已赋值
+                     * 
                      */
                     bool CosCapacityHasBeenSet() const;
 

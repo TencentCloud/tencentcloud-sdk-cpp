@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取合同（流程）下载地址
                      * @return DownLoadUrl 合同（流程）下载地址
+                     * 
                      */
                     std::string GetDownLoadUrl() const;
 
                     /**
                      * 判断参数 DownLoadUrl 是否已赋值
                      * @return DownLoadUrl 是否已赋值
+                     * 
                      */
                     bool DownLoadUrlHasBeenSet() const;
 

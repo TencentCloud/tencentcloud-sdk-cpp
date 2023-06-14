@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取旧表名称
                      * @return OldTable 旧表名称
+                     * 
                      */
                     std::string GetOldTable() const;
 
                     /**
                      * 设置旧表名称
-                     * @param OldTable 旧表名称
+                     * @param _oldTable 旧表名称
+                     * 
                      */
                     void SetOldTable(const std::string& _oldTable);
 
                     /**
                      * 判断参数 OldTable 是否已赋值
                      * @return OldTable 是否已赋值
+                     * 
                      */
                     bool OldTableHasBeenSet() const;
 
                     /**
                      * 获取新表名称
                      * @return NewTable 新表名称
+                     * 
                      */
                     std::string GetNewTable() const;
 
                     /**
                      * 设置新表名称
-                     * @param NewTable 新表名称
+                     * @param _newTable 新表名称
+                     * 
                      */
                     void SetNewTable(const std::string& _newTable);
 
                     /**
                      * 判断参数 NewTable 是否已赋值
                      * @return NewTable 是否已赋值
+                     * 
                      */
                     bool NewTableHasBeenSet() const;
 

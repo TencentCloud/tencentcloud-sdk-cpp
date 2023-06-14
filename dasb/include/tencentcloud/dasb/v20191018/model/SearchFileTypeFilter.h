@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ
                      * @return Protocol 需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ
-                     * @param Protocol 需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ
+                     * @param _protocol 需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等
                      * @return Method 在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等
+                     * 
                      */
                     std::vector<int64_t> GetMethod() const;
 
                     /**
                      * 设置在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等
-                     * @param Method 在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等
+                     * @param _method 在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等
+                     * 
                      */
                     void SetMethod(const std::vector<int64_t>& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 

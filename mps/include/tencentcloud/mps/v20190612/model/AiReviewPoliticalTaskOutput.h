@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频涉敏评分，分值为0到100。
                      * @return Confidence 视频涉敏评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置视频涉敏评分，分值为0到100。
-                     * @param Confidence 视频涉敏评分，分值为0到100。
+                     * @param _confidence 视频涉敏评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -82,16 +86,18 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 涉敏结果建议，取值范围：
+                     * @param _suggestion 涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -106,6 +112,7 @@ violation_photo：
 <li>violation_photo：违规图标。</li>
 其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
 <li>politician：涉敏人物。</li>
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -115,35 +122,40 @@ violation_photo：
 <li>violation_photo：违规图标。</li>
 其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
 <li>politician：涉敏人物。</li>
-                     * @param Label 视频涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#AiReviewPoliticalTaskOutput)里 LabelSet 参数与此参数取值范围的对应关系：
+                     * @param _label 视频涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#AiReviewPoliticalTaskOutput)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
 <li>politician：涉敏人物。</li>
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取有涉敏嫌疑的视频片段列表。
                      * @return SegmentSet 有涉敏嫌疑的视频片段列表。
+                     * 
                      */
                     std::vector<MediaContentReviewPoliticalSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置有涉敏嫌疑的视频片段列表。
-                     * @param SegmentSet 有涉敏嫌疑的视频片段列表。
+                     * @param _segmentSet 有涉敏嫌疑的视频片段列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewPoliticalSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

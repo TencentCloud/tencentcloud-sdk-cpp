@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取用户组名，最大长度32字符
                      * @return Name 用户组名，最大长度32字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户组名，最大长度32字符
-                     * @param Name 用户组名，最大长度32字符
+                     * @param _name 用户组名，最大长度32字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户组所属部门的ID，如：1.2.3
                      * @return DepartmentId 用户组所属部门的ID，如：1.2.3
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置用户组所属部门的ID，如：1.2.3
-                     * @param DepartmentId 用户组所属部门的ID，如：1.2.3
+                     * @param _departmentId 用户组所属部门的ID，如：1.2.3
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

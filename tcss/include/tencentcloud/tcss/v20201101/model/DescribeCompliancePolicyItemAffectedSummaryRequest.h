@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取DescribeComplianceTaskPolicyItemSummaryList返回的CustomerPolicyItemId，表示检测项的ID。
                      * @return CustomerPolicyItemId DescribeComplianceTaskPolicyItemSummaryList返回的CustomerPolicyItemId，表示检测项的ID。
+                     * 
                      */
                     uint64_t GetCustomerPolicyItemId() const;
 
                     /**
                      * 设置DescribeComplianceTaskPolicyItemSummaryList返回的CustomerPolicyItemId，表示检测项的ID。
-                     * @param CustomerPolicyItemId DescribeComplianceTaskPolicyItemSummaryList返回的CustomerPolicyItemId，表示检测项的ID。
+                     * @param _customerPolicyItemId DescribeComplianceTaskPolicyItemSummaryList返回的CustomerPolicyItemId，表示检测项的ID。
+                     * 
                      */
                     void SetCustomerPolicyItemId(const uint64_t& _customerPolicyItemId);
 
                     /**
                      * 判断参数 CustomerPolicyItemId 是否已赋值
                      * @return CustomerPolicyItemId 是否已赋值
+                     * 
                      */
                     bool CustomerPolicyItemIdHasBeenSet() const;
 

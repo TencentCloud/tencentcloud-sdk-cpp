@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`
                      * @return DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`
+                     * 
                      */
                     std::string GetDhcpIpId() const;
 
                     /**
                      * 设置`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`
-                     * @param DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`
+                     * @param _dhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`
+                     * 
                      */
                     void SetDhcpIpId(const std::string& _dhcpIpId);
 
                     /**
                      * 判断参数 DhcpIpId 是否已赋值
                      * @return DhcpIpId 是否已赋值
+                     * 
                      */
                     bool DhcpIpIdHasBeenSet() const;
 
                     /**
                      * 获取弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`
                      * @return AddressIp 弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`
+                     * 
                      */
                     std::string GetAddressIp() const;
 
                     /**
                      * 设置弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`
-                     * @param AddressIp 弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`
+                     * @param _addressIp 弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`
+                     * 
                      */
                     void SetAddressIp(const std::string& _addressIp);
 
                     /**
                      * 判断参数 AddressIp 是否已赋值
                      * @return AddressIp 是否已赋值
+                     * 
                      */
                     bool AddressIpHasBeenSet() const;
 

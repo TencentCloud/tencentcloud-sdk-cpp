@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取集合名称
                      * @return CollectionName 集合名称
+                     * 
                      */
                     std::string GetCollectionName() const;
 
                     /**
                      * 设置集合名称
-                     * @param CollectionName 集合名称
+                     * @param _collectionName 集合名称
+                     * 
                      */
                     void SetCollectionName(const std::string& _collectionName);
 
                     /**
                      * 判断参数 CollectionName 是否已赋值
                      * @return CollectionName 是否已赋值
+                     * 
                      */
                     bool CollectionNameHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
+                     * 
                      */
                     std::string GetAclTag() const;
 
@@ -98,17 +105,19 @@ namespace TencentCloud
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
-                     * @param AclTag 权限标签。包含以下取值：
+                     * @param _aclTag 权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
+                     * 
                      */
                     void SetAclTag(const std::string& _aclTag);
 
                     /**
                      * 判断参数 AclTag 是否已赋值
                      * @return AclTag 是否已赋值
+                     * 
                      */
                     bool AclTagHasBeenSet() const;
 

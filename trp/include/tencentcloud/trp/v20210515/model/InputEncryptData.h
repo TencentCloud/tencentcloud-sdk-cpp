@@ -51,38 +51,44 @@ namespace TencentCloud
 
                      * @return EncryptMethod 加密方式，0：AES加密；
 
+                     * 
                      */
                     int64_t GetEncryptMethod() const;
 
                     /**
                      * 设置加密方式，0：AES加密；
 
-                     * @param EncryptMethod 加密方式，0：AES加密；
+                     * @param _encryptMethod 加密方式，0：AES加密；
 
+                     * 
                      */
                     void SetEncryptMethod(const int64_t& _encryptMethod);
 
                     /**
                      * 判断参数 EncryptMethod 是否已赋值
                      * @return EncryptMethod 是否已赋值
+                     * 
                      */
                     bool EncryptMethodHasBeenSet() const;
 
                     /**
                      * 获取加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式
                      * @return EncryptMode 加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式
+                     * 
                      */
                     int64_t GetEncryptMode() const;
 
                     /**
                      * 设置加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式
-                     * @param EncryptMode 加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式
+                     * @param _encryptMode 加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式
+                     * 
                      */
                     void SetEncryptMode(const int64_t& _encryptMode);
 
                     /**
                      * 判断参数 EncryptMode 是否已赋值
                      * @return EncryptMode 是否已赋值
+                     * 
                      */
                     bool EncryptModeHasBeenSet() const;
 
@@ -91,38 +97,44 @@ namespace TencentCloud
 PKCS7Padding。
                      * @return PaddingType 填充模式，0：ZeroPadding；1：PKCS5Padding；2：
 PKCS7Padding。
+                     * 
                      */
                     int64_t GetPaddingType() const;
 
                     /**
                      * 设置填充模式，0：ZeroPadding；1：PKCS5Padding；2：
 PKCS7Padding。
-                     * @param PaddingType 填充模式，0：ZeroPadding；1：PKCS5Padding；2：
+                     * @param _paddingType 填充模式，0：ZeroPadding；1：PKCS5Padding；2：
 PKCS7Padding。
+                     * 
                      */
                     void SetPaddingType(const int64_t& _paddingType);
 
                     /**
                      * 判断参数 PaddingType 是否已赋值
                      * @return PaddingType 是否已赋值
+                     * 
                      */
                     bool PaddingTypeHasBeenSet() const;
 
                     /**
                      * 获取加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。
                      * @return EncryptData 加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。
+                     * 
                      */
                     std::string GetEncryptData() const;
 
                     /**
                      * 设置加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。
-                     * @param EncryptData 加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。
+                     * @param _encryptData 加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。
+                     * 
                      */
                     void SetEncryptData(const std::string& _encryptData);
 
                     /**
                      * 判断参数 EncryptData 是否已赋值
                      * @return EncryptData 是否已赋值
+                     * 
                      */
                     bool EncryptDataHasBeenSet() const;
 
@@ -131,20 +143,23 @@ PKCS7Padding。
 
                      * @return IsAuthorized 用户是否授权，本接口取值：1，已授权。
 
+                     * 
                      */
                     int64_t GetIsAuthorized() const;
 
                     /**
                      * 设置用户是否授权，本接口取值：1，已授权。
 
-                     * @param IsAuthorized 用户是否授权，本接口取值：1，已授权。
+                     * @param _isAuthorized 用户是否授权，本接口取值：1，已授权。
 
+                     * 
                      */
                     void SetIsAuthorized(const int64_t& _isAuthorized);
 
                     /**
                      * 判断参数 IsAuthorized 是否已赋值
                      * @return IsAuthorized 是否已赋值
+                     * 
                      */
                     bool IsAuthorizedHasBeenSet() const;
 

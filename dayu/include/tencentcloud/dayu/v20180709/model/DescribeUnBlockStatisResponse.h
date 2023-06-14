@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取解封总配额数
                      * @return Total 解封总配额数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已使用次数
                      * @return Used 已使用次数
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取统计起始时间
                      * @return BeginTime 统计起始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取统计结束时间
                      * @return EndTime 统计结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

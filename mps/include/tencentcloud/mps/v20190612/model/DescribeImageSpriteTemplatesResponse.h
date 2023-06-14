@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取雪碧图模板详情列表。
                      * @return ImageSpriteTemplateSet 雪碧图模板详情列表。
+                     * 
                      */
                     std::vector<ImageSpriteTemplate> GetImageSpriteTemplateSet() const;
 
                     /**
                      * 判断参数 ImageSpriteTemplateSet 是否已赋值
                      * @return ImageSpriteTemplateSet 是否已赋值
+                     * 
                      */
                     bool ImageSpriteTemplateSetHasBeenSet() const;
 

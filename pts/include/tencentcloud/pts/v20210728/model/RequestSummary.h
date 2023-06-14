@@ -49,216 +49,252 @@ namespace TencentCloud
                     /**
                      * 获取请求URL
                      * @return Service 请求URL
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置请求URL
-                     * @param Service 请求URL
+                     * @param _service 请求URL
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取请求方法
                      * @return Method 请求方法
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法
-                     * @param Method 请求方法
+                     * @param _method 请求方法
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取请求次数
                      * @return Count 请求次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置请求次数
-                     * @param Count 请求次数
+                     * @param _count 请求次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取请求响应平均耗时，单位秒
                      * @return Average 请求响应平均耗时，单位秒
+                     * 
                      */
                     double GetAverage() const;
 
                     /**
                      * 设置请求响应平均耗时，单位秒
-                     * @param Average 请求响应平均耗时，单位秒
+                     * @param _average 请求响应平均耗时，单位秒
+                     * 
                      */
                     void SetAverage(const double& _average);
 
                     /**
                      * 判断参数 Average 是否已赋值
                      * @return Average 是否已赋值
+                     * 
                      */
                     bool AverageHasBeenSet() const;
 
                     /**
                      * 获取请求p90耗时，单位秒
                      * @return P90 请求p90耗时，单位秒
+                     * 
                      */
                     double GetP90() const;
 
                     /**
                      * 设置请求p90耗时，单位秒
-                     * @param P90 请求p90耗时，单位秒
+                     * @param _p90 请求p90耗时，单位秒
+                     * 
                      */
                     void SetP90(const double& _p90);
 
                     /**
                      * 判断参数 P90 是否已赋值
                      * @return P90 是否已赋值
+                     * 
                      */
                     bool P90HasBeenSet() const;
 
                     /**
                      * 获取请求p95耗时，单位秒
                      * @return P95 请求p95耗时，单位秒
+                     * 
                      */
                     double GetP95() const;
 
                     /**
                      * 设置请求p95耗时，单位秒
-                     * @param P95 请求p95耗时，单位秒
+                     * @param _p95 请求p95耗时，单位秒
+                     * 
                      */
                     void SetP95(const double& _p95);
 
                     /**
                      * 判断参数 P95 是否已赋值
                      * @return P95 是否已赋值
+                     * 
                      */
                     bool P95HasBeenSet() const;
 
                     /**
                      * 获取请求最小耗时，单位秒
                      * @return Min 请求最小耗时，单位秒
+                     * 
                      */
                     double GetMin() const;
 
                     /**
                      * 设置请求最小耗时，单位秒
-                     * @param Min 请求最小耗时，单位秒
+                     * @param _min 请求最小耗时，单位秒
+                     * 
                      */
                     void SetMin(const double& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取请求最大耗时，单位秒
                      * @return Max 请求最大耗时，单位秒
+                     * 
                      */
                     double GetMax() const;
 
                     /**
                      * 设置请求最大耗时，单位秒
-                     * @param Max 请求最大耗时，单位秒
+                     * @param _max 请求最大耗时，单位秒
+                     * 
                      */
                     void SetMax(const double& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取请求错误率
                      * @return ErrorPercentage 请求错误率
+                     * 
                      */
                     double GetErrorPercentage() const;
 
                     /**
                      * 设置请求错误率
-                     * @param ErrorPercentage 请求错误率
+                     * @param _errorPercentage 请求错误率
+                     * 
                      */
                     void SetErrorPercentage(const double& _errorPercentage);
 
                     /**
                      * 判断参数 ErrorPercentage 是否已赋值
                      * @return ErrorPercentage 是否已赋值
+                     * 
                      */
                     bool ErrorPercentageHasBeenSet() const;
 
                     /**
                      * 获取请求p99耗时，单位秒
                      * @return P99 请求p99耗时，单位秒
+                     * 
                      */
                     double GetP99() const;
 
                     /**
                      * 设置请求p99耗时，单位秒
-                     * @param P99 请求p99耗时，单位秒
+                     * @param _p99 请求p99耗时，单位秒
+                     * 
                      */
                     void SetP99(const double& _p99);
 
                     /**
                      * 判断参数 P99 是否已赋值
                      * @return P99 是否已赋值
+                     * 
                      */
                     bool P99HasBeenSet() const;
 
                     /**
                      * 获取响应状态码
                      * @return Status 响应状态码
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置响应状态码
-                     * @param Status 响应状态码
+                     * @param _status 响应状态码
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取响应详情
                      * @return Result 响应详情
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置响应详情
-                     * @param Result 响应详情
+                     * @param _result 响应详情
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

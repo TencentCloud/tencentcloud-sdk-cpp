@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取目的CIDR
                      * @return TargetCidr 目的CIDR
+                     * 
                      */
                     std::string GetTargetCidr() const;
 
                     /**
                      * 设置目的CIDR
-                     * @param TargetCidr 目的CIDR
+                     * @param _targetCidr 目的CIDR
+                     * 
                      */
                     void SetTargetCidr(const std::string& _targetCidr);
 
                     /**
                      * 判断参数 TargetCidr 是否已赋值
                      * @return TargetCidr 是否已赋值
+                     * 
                      */
                     bool TargetCidrHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return VpnGatewayIdSslAccessPolicyId 策略ID
+                     * 
                      */
                     std::string GetVpnGatewayIdSslAccessPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param VpnGatewayIdSslAccessPolicyId 策略ID
+                     * @param _vpnGatewayIdSslAccessPolicyId 策略ID
+                     * 
                      */
                     void SetVpnGatewayIdSslAccessPolicyId(const std::string& _vpnGatewayIdSslAccessPolicyId);
 
                     /**
                      * 判断参数 VpnGatewayIdSslAccessPolicyId 是否已赋值
                      * @return VpnGatewayIdSslAccessPolicyId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdSslAccessPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取是否对所有用户都生效。1 生效 0不生效
                      * @return ForAllClient 是否对所有用户都生效。1 生效 0不生效
+                     * 
                      */
                     uint64_t GetForAllClient() const;
 
                     /**
                      * 设置是否对所有用户都生效。1 生效 0不生效
-                     * @param ForAllClient 是否对所有用户都生效。1 生效 0不生效
+                     * @param _forAllClient 是否对所有用户都生效。1 生效 0不生效
+                     * 
                      */
                     void SetForAllClient(const uint64_t& _forAllClient);
 
                     /**
                      * 判断参数 ForAllClient 是否已赋值
                      * @return ForAllClient 是否已赋值
+                     * 
                      */
                     bool ForAllClientHasBeenSet() const;
 
                     /**
                      * 获取用户组ID
                      * @return UserGroupIds 用户组ID
+                     * 
                      */
                     std::vector<std::string> GetUserGroupIds() const;
 
                     /**
                      * 设置用户组ID
-                     * @param UserGroupIds 用户组ID
+                     * @param _userGroupIds 用户组ID
+                     * 
                      */
                     void SetUserGroupIds(const std::vector<std::string>& _userGroupIds);
 
                     /**
                      * 判断参数 UserGroupIds 是否已赋值
                      * @return UserGroupIds 是否已赋值
+                     * 
                      */
                     bool UserGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark Remark
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置Remark
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark Remark
+                     * @param _remark Remark
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

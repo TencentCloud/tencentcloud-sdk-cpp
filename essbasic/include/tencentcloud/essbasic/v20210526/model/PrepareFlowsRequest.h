@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取多个合同（签署流程）信息，最大支持20个签署流程。
                      * @return FlowInfos 多个合同（签署流程）信息，最大支持20个签署流程。
+                     * 
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
                      * 设置多个合同（签署流程）信息，最大支持20个签署流程。
-                     * @param FlowInfos 多个合同（签署流程）信息，最大支持20个签署流程。
+                     * @param _flowInfos 多个合同（签署流程）信息，最大支持20个签署流程。
+                     * 
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
 
                     /**
                      * 判断参数 FlowInfos 是否已赋值
                      * @return FlowInfos 是否已赋值
+                     * 
                      */
                     bool FlowInfosHasBeenSet() const;
 
                     /**
                      * 获取操作完成后的跳转地址，最大长度200
                      * @return JumpUrl 操作完成后的跳转地址，最大长度200
+                     * 
                      */
                     std::string GetJumpUrl() const;
 
                     /**
                      * 设置操作完成后的跳转地址，最大长度200
-                     * @param JumpUrl 操作完成后的跳转地址，最大长度200
+                     * @param _jumpUrl 操作完成后的跳转地址，最大长度200
+                     * 
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
                     /**
                      * 判断参数 JumpUrl 是否已赋值
                      * @return JumpUrl 是否已赋值
+                     * 
                      */
                     bool JumpUrlHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

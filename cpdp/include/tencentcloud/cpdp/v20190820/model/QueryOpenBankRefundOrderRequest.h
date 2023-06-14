@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。
                      * @return ChannelMerchantId 渠道商户号。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。
-                     * @param ChannelMerchantId 渠道商户号。
+                     * @param _channelMerchantId 渠道商户号。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部商户退单号，与渠道退款单号二者选填其一。
                      * @return OutRefundId 外部商户退单号，与渠道退款单号二者选填其一。
+                     * 
                      */
                     std::string GetOutRefundId() const;
 
                     /**
                      * 设置外部商户退单号，与渠道退款单号二者选填其一。
-                     * @param OutRefundId 外部商户退单号，与渠道退款单号二者选填其一。
+                     * @param _outRefundId 外部商户退单号，与渠道退款单号二者选填其一。
+                     * 
                      */
                     void SetOutRefundId(const std::string& _outRefundId);
 
                     /**
                      * 判断参数 OutRefundId 是否已赋值
                      * @return OutRefundId 是否已赋值
+                     * 
                      */
                     bool OutRefundIdHasBeenSet() const;
 
                     /**
                      * 获取渠道退款订单号，与外部商户退款单号二者选填其一。
                      * @return ChannelRefundId 渠道退款订单号，与外部商户退款单号二者选填其一。
+                     * 
                      */
                     std::string GetChannelRefundId() const;
 
                     /**
                      * 设置渠道退款订单号，与外部商户退款单号二者选填其一。
-                     * @param ChannelRefundId 渠道退款订单号，与外部商户退款单号二者选填其一。
+                     * @param _channelRefundId 渠道退款订单号，与外部商户退款单号二者选填其一。
+                     * 
                      */
                     void SetChannelRefundId(const std::string& _channelRefundId);
 
                     /**
                      * 判断参数 ChannelRefundId 是否已赋值
                      * @return ChannelRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelRefundIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -113,16 +123,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

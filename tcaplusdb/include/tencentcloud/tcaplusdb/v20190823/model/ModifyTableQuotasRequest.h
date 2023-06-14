@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取带扩缩容表所属集群ID
                      * @return ClusterId 带扩缩容表所属集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置带扩缩容表所属集群ID
-                     * @param ClusterId 带扩缩容表所属集群ID
+                     * @param _clusterId 带扩缩容表所属集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取已选中待修改的表配额列表
                      * @return TableQuotas 已选中待修改的表配额列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetTableQuotas() const;
 
                     /**
                      * 设置已选中待修改的表配额列表
-                     * @param TableQuotas 已选中待修改的表配额列表
+                     * @param _tableQuotas 已选中待修改的表配额列表
+                     * 
                      */
                     void SetTableQuotas(const std::vector<SelectedTableInfoNew>& _tableQuotas);
 
                     /**
                      * 判断参数 TableQuotas 是否已赋值
                      * @return TableQuotas 是否已赋值
+                     * 
                      */
                     bool TableQuotasHasBeenSet() const;
 

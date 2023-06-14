@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合要求的app数量
                      * @return TotalCount 符合要求的app数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取一个关于app详细信息的结构体，主要包括app的基本信息和加固信息。
                      * @return AppSet 一个关于app详细信息的结构体，主要包括app的基本信息和加固信息。
+                     * 
                      */
                     std::vector<AppSetInfo> GetAppSet() const;
 
                     /**
                      * 判断参数 AppSet 是否已赋值
                      * @return AppSet 是否已赋值
+                     * 
                      */
                     bool AppSetHasBeenSet() const;
 

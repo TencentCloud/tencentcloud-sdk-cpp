@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取逻辑关系：AND/OR
                      * @return Relationship 逻辑关系：AND/OR
+                     * 
                      */
                     std::string GetRelationship() const;
 
                     /**
                      * 设置逻辑关系：AND/OR
-                     * @param Relationship 逻辑关系：AND/OR
+                     * @param _relationship 逻辑关系：AND/OR
+                     * 
                      */
                     void SetRelationship(const std::string& _relationship);
 
                     /**
                      * 判断参数 Relationship 是否已赋值
                      * @return Relationship 是否已赋值
+                     * 
                      */
                     bool RelationshipHasBeenSet() const;
 
                     /**
                      * 获取目的地命名空间ID
                      * @return DestNamespaceId 目的地命名空间ID
+                     * 
                      */
                     std::string GetDestNamespaceId() const;
 
                     /**
                      * 设置目的地命名空间ID
-                     * @param DestNamespaceId 目的地命名空间ID
+                     * @param _destNamespaceId 目的地命名空间ID
+                     * 
                      */
                     void SetDestNamespaceId(const std::string& _destNamespaceId);
 
                     /**
                      * 判断参数 DestNamespaceId 是否已赋值
                      * @return DestNamespaceId 是否已赋值
+                     * 
                      */
                     bool DestNamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取目的地命名空间名称
                      * @return DestNamespaceName 目的地命名空间名称
+                     * 
                      */
                     std::string GetDestNamespaceName() const;
 
                     /**
                      * 设置目的地命名空间名称
-                     * @param DestNamespaceName 目的地命名空间名称
+                     * @param _destNamespaceName 目的地命名空间名称
+                     * 
                      */
                     void SetDestNamespaceName(const std::string& _destNamespaceName);
 
                     /**
                      * 判断参数 DestNamespaceName 是否已赋值
                      * @return DestNamespaceName 是否已赋值
+                     * 
                      */
                     bool DestNamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取规则项名称
                      * @return Name 规则项名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则项名称
-                     * @param Name 规则项名称
+                     * @param _name 规则项名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 规则项ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置规则项ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 规则项ID
+                     * @param _id 规则项ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -146,20 +161,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitRuleId 单元化规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnitRuleId() const;
 
                     /**
                      * 设置单元化规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitRuleId 单元化规则ID
+                     * @param _unitRuleId 单元化规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitRuleId(const std::string& _unitRuleId);
 
                     /**
                      * 判断参数 UnitRuleId 是否已赋值
                      * @return UnitRuleId 是否已赋值
+                     * 
                      */
                     bool UnitRuleIdHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 规则顺序，越小优先级越高：默认为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置规则顺序，越小优先级越高：默认为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 规则顺序，越小优先级越高：默认为0
+                     * @param _priority 规则顺序，越小优先级越高：默认为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -190,20 +211,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 规则描述
+                     * @param _description 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitRuleTagList 规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UnitRuleTag> GetUnitRuleTagList() const;
 
                     /**
                      * 设置规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitRuleTagList 规则标签列表
+                     * @param _unitRuleTagList 规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitRuleTagList(const std::vector<UnitRuleTag>& _unitRuleTagList);
 
                     /**
                      * 判断参数 UnitRuleTagList 是否已赋值
                      * @return UnitRuleTagList 是否已赋值
+                     * 
                      */
                     bool UnitRuleTagListHasBeenSet() const;
 
@@ -234,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemIndex 项目id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetItemIndex() const;
 
                     /**
                      * 设置项目id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemIndex 项目id
+                     * @param _itemIndex 项目id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemIndex(const int64_t& _itemIndex);
 
                     /**
                      * 判断参数 ItemIndex 是否已赋值
                      * @return ItemIndex 是否已赋值
+                     * 
                      */
                     bool ItemIndexHasBeenSet() const;
 
@@ -256,20 +286,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -278,20 +311,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 修改时间
+                     * @param _updatedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 

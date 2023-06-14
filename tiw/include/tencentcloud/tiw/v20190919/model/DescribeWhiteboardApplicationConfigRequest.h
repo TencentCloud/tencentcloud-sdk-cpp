@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取客户的SdkAppId
                      * @return SdkAppId 客户的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置客户的SdkAppId
-                     * @param SdkAppId 客户的SdkAppId
+                     * @param _sdkAppId 客户的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ transcode: 文档转码
                      * @return TaskTypes 需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
+                     * 
                      */
                     std::vector<std::string> GetTaskTypes() const;
 
@@ -74,33 +78,38 @@ transcode: 文档转码
                      * 设置需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
-                     * @param TaskTypes 需要查询的任务类型
+                     * @param _taskTypes 需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
+                     * 
                      */
                     void SetTaskTypes(const std::vector<std::string>& _taskTypes);
 
                     /**
                      * 判断参数 TaskTypes 是否已赋值
                      * @return TaskTypes 是否已赋值
+                     * 
                      */
                     bool TaskTypesHasBeenSet() const;
 
                     /**
                      * 获取需要查询配置的SdkAppId列表
                      * @return SdkAppIds 需要查询配置的SdkAppId列表
+                     * 
                      */
                     std::vector<int64_t> GetSdkAppIds() const;
 
                     /**
                      * 设置需要查询配置的SdkAppId列表
-                     * @param SdkAppIds 需要查询配置的SdkAppId列表
+                     * @param _sdkAppIds 需要查询配置的SdkAppId列表
+                     * 
                      */
                     void SetSdkAppIds(const std::vector<int64_t>& _sdkAppIds);
 
                     /**
                      * 判断参数 SdkAppIds 是否已赋值
                      * @return SdkAppIds 是否已赋值
+                     * 
                      */
                     bool SdkAppIdsHasBeenSet() const;
 

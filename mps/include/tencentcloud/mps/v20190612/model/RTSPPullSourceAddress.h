@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取RTSP源站的Url地址。
                      * @return Url RTSP源站的Url地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置RTSP源站的Url地址。
-                     * @param Url RTSP源站的Url地址。
+                     * @param _url RTSP源站的Url地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

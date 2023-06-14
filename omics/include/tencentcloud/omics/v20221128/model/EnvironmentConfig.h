@@ -54,90 +54,105 @@ namespace TencentCloud
                     /**
                      * 获取私有网络配置。
                      * @return VPCOption 私有网络配置。
+                     * 
                      */
                     VPCOption GetVPCOption() const;
 
                     /**
                      * 设置私有网络配置。
-                     * @param VPCOption 私有网络配置。
+                     * @param _vPCOption 私有网络配置。
+                     * 
                      */
                     void SetVPCOption(const VPCOption& _vPCOption);
 
                     /**
                      * 判断参数 VPCOption 是否已赋值
                      * @return VPCOption 是否已赋值
+                     * 
                      */
                     bool VPCOptionHasBeenSet() const;
 
                     /**
                      * 获取计算集群配置。
                      * @return ClusterOption 计算集群配置。
+                     * 
                      */
                     ClusterOption GetClusterOption() const;
 
                     /**
                      * 设置计算集群配置。
-                     * @param ClusterOption 计算集群配置。
+                     * @param _clusterOption 计算集群配置。
+                     * 
                      */
                     void SetClusterOption(const ClusterOption& _clusterOption);
 
                     /**
                      * 判断参数 ClusterOption 是否已赋值
                      * @return ClusterOption 是否已赋值
+                     * 
                      */
                     bool ClusterOptionHasBeenSet() const;
 
                     /**
                      * 获取数据库配置。
                      * @return DatabaseOption 数据库配置。
+                     * 
                      */
                     DatabaseOption GetDatabaseOption() const;
 
                     /**
                      * 设置数据库配置。
-                     * @param DatabaseOption 数据库配置。
+                     * @param _databaseOption 数据库配置。
+                     * 
                      */
                     void SetDatabaseOption(const DatabaseOption& _databaseOption);
 
                     /**
                      * 判断参数 DatabaseOption 是否已赋值
                      * @return DatabaseOption 是否已赋值
+                     * 
                      */
                     bool DatabaseOptionHasBeenSet() const;
 
                     /**
                      * 获取存储配置。
                      * @return StorageOption 存储配置。
+                     * 
                      */
                     StorageOption GetStorageOption() const;
 
                     /**
                      * 设置存储配置。
-                     * @param StorageOption 存储配置。
+                     * @param _storageOption 存储配置。
+                     * 
                      */
                     void SetStorageOption(const StorageOption& _storageOption);
 
                     /**
                      * 判断参数 StorageOption 是否已赋值
                      * @return StorageOption 是否已赋值
+                     * 
                      */
                     bool StorageOptionHasBeenSet() const;
 
                     /**
                      * 获取云服务器配置。
                      * @return CVMOption 云服务器配置。
+                     * 
                      */
                     CVMOption GetCVMOption() const;
 
                     /**
                      * 设置云服务器配置。
-                     * @param CVMOption 云服务器配置。
+                     * @param _cVMOption 云服务器配置。
+                     * 
                      */
                     void SetCVMOption(const CVMOption& _cVMOption);
 
                     /**
                      * 判断参数 CVMOption 是否已赋值
                      * @return CVMOption 是否已赋值
+                     * 
                      */
                     bool CVMOptionHasBeenSet() const;
 

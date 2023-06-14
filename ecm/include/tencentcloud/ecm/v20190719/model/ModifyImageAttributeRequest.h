@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID，形如img-gvbnzy6f
                      * @return ImageId 镜像ID，形如img-gvbnzy6f
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID，形如img-gvbnzy6f
-                     * @param ImageId 镜像ID，形如img-gvbnzy6f
+                     * @param _imageId 镜像ID，形如img-gvbnzy6f
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return ImageName 设置新的镜像名称；必须满足下列限制：
 不得超过20个字符。
 - 镜像名称不能与已有镜像重复。
+                     * 
                      */
                     std::string GetImageName() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置设置新的镜像名称；必须满足下列限制：
 不得超过20个字符。
 - 镜像名称不能与已有镜像重复。
-                     * @param ImageName 设置新的镜像名称；必须满足下列限制：
+                     * @param _imageName 设置新的镜像名称；必须满足下列限制：
 不得超过20个字符。
 - 镜像名称不能与已有镜像重复。
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 - 不得超过60个字符。
                      * @return ImageDescription 设置新的镜像描述；必须满足下列限制：
 - 不得超过60个字符。
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置设置新的镜像描述；必须满足下列限制：
 - 不得超过60个字符。
-                     * @param ImageDescription 设置新的镜像描述；必须满足下列限制：
+                     * @param _imageDescription 设置新的镜像描述；必须满足下列限制：
 - 不得超过60个字符。
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 

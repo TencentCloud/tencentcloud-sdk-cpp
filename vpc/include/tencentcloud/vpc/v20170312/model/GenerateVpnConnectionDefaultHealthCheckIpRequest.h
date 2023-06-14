@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关id， 例如：vpngw-1w9tue3d
                      * @return VpnGatewayId VPN网关id， 例如：vpngw-1w9tue3d
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关id， 例如：vpngw-1w9tue3d
-                     * @param VpnGatewayId VPN网关id， 例如：vpngw-1w9tue3d
+                     * @param _vpnGatewayId VPN网关id， 例如：vpngw-1w9tue3d
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 

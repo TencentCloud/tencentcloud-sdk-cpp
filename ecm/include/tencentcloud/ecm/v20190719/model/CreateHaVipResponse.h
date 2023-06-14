@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取HAVIP对象。
                      * @return HaVip HAVIP对象。
+                     * 
                      */
                     HaVip GetHaVip() const;
 
                     /**
                      * 判断参数 HaVip 是否已赋值
                      * @return HaVip 是否已赋值
+                     * 
                      */
                     bool HaVipHasBeenSet() const;
 

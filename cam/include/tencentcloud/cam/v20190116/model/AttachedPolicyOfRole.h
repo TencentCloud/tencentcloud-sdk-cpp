@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PolicyName 策略名称
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PolicyName 策略名称
+                     * @param _policyName 策略名称
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取绑定时间
                      * @return AddTime 绑定时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置绑定时间
-                     * @param AddTime 绑定时间
+                     * @param _addTime 绑定时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 策略类型，User表示自定义策略，QCS表示预设策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型，User表示自定义策略，QCS表示预设策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyType 策略类型，User表示自定义策略，QCS表示预设策略
+                     * @param _policyType 策略类型，User表示自定义策略，QCS表示预设策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建
                      * @return CreateMode 策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建
+                     * 
                      */
                     uint64_t GetCreateMode() const;
 
                     /**
                      * 设置策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建
-                     * @param CreateMode 策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建
+                     * @param _createMode 策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建
+                     * 
                      */
                     void SetCreateMode(const uint64_t& _createMode);
 
                     /**
                      * 判断参数 CreateMode 是否已赋值
                      * @return CreateMode 是否已赋值
+                     * 
                      */
                     bool CreateModeHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deactived 是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
                      * 设置是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deactived 是否已下线(0:否 1:是)
+                     * @param _deactived 是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeactived(const uint64_t& _deactived);
 
                     /**
                      * 判断参数 Deactived 是否已赋值
                      * @return Deactived 是否已赋值
+                     * 
                      */
                     bool DeactivedHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeactivedDetail 已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
                      * 设置已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeactivedDetail 已下线的产品列表
+                     * @param _deactivedDetail 已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
 
                     /**
                      * 判断参数 DeactivedDetail 是否已赋值
                      * @return DeactivedDetail 是否已赋值
+                     * 
                      */
                     bool DeactivedDetailHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 策略描述
+                     * @param _description 策略描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

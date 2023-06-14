@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取签名ID。
                      * @return SignId 签名ID。
+                     * 
                      */
                     uint64_t GetSignId() const;
 
                     /**
                      * 设置签名ID。
-                     * @param SignId 签名ID。
+                     * @param _signId 签名ID。
+                     * 
                      */
                     void SetSignId(const uint64_t& _signId);
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 
                     /**
                      * 获取是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
                      * @return International 是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
+                     * 
                      */
                     uint64_t GetInternational() const;
 
                     /**
                      * 设置是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
-                     * @param International 是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
+                     * @param _international 是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
+                     * 
                      */
                     void SetInternational(const uint64_t& _international);
 
                     /**
                      * 判断参数 International 是否已赋值
                      * @return International 是否已赋值
+                     * 
                      */
                     bool InternationalHasBeenSet() const;
 
@@ -87,74 +93,86 @@ namespace TencentCloud
 -1：表示审核未通过或审核失败。
                      * @return StatusCode 申请签名状态，其中0表示审核通过，1表示审核中。
 -1：表示审核未通过或审核失败。
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
                      * 设置申请签名状态，其中0表示审核通过，1表示审核中。
 -1：表示审核未通过或审核失败。
-                     * @param StatusCode 申请签名状态，其中0表示审核通过，1表示审核中。
+                     * @param _statusCode 申请签名状态，其中0表示审核通过，1表示审核中。
 -1：表示审核未通过或审核失败。
+                     * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
                     /**
                      * 获取审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。
                      * @return ReviewReply 审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。
+                     * 
                      */
                     std::string GetReviewReply() const;
 
                     /**
                      * 设置审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。
-                     * @param ReviewReply 审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。
+                     * @param _reviewReply 审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。
+                     * 
                      */
                     void SetReviewReply(const std::string& _reviewReply);
 
                     /**
                      * 判断参数 ReviewReply 是否已赋值
                      * @return ReviewReply 是否已赋值
+                     * 
                      */
                     bool ReviewReplyHasBeenSet() const;
 
                     /**
                      * 获取签名名称。
                      * @return SignName 签名名称。
+                     * 
                      */
                     std::string GetSignName() const;
 
                     /**
                      * 设置签名名称。
-                     * @param SignName 签名名称。
+                     * @param _signName 签名名称。
+                     * 
                      */
                     void SetSignName(const std::string& _signName);
 
                     /**
                      * 判断参数 SignName 是否已赋值
                      * @return SignName 是否已赋值
+                     * 
                      */
                     bool SignNameHasBeenSet() const;
 
                     /**
                      * 获取提交审核时间，UNIX 时间戳（单位：秒）。
                      * @return CreateTime 提交审核时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置提交审核时间，UNIX 时间戳（单位：秒）。
-                     * @param CreateTime 提交审核时间，UNIX 时间戳（单位：秒）。
+                     * @param _createTime 提交审核时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

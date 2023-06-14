@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。
                      * @return AddressId 弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。
-                     * @param AddressId 弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。
+                     * @param _addressId 弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取外网IP地址，形如：`123.121.34.33`。
                      * @return PublicIpAddress 外网IP地址，形如：`123.121.34.33`。
+                     * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
                      * 设置外网IP地址，形如：`123.121.34.33`。
-                     * @param PublicIpAddress 外网IP地址，形如：`123.121.34.33`。
+                     * @param _publicIpAddress 外网IP地址，形如：`123.121.34.33`。
+                     * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
 
                     /**
                      * 判断参数 PublicIpAddress 是否已赋值
                      * @return PublicIpAddress 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
                      * 获取资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。
                      * @return IsBlocked 资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。
+                     * 
                      */
                     bool GetIsBlocked() const;
 
                     /**
                      * 设置资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。
-                     * @param IsBlocked 资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。
+                     * @param _isBlocked 资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。
+                     * 
                      */
                     void SetIsBlocked(const bool& _isBlocked);
 
                     /**
                      * 判断参数 IsBlocked 是否已赋值
                      * @return IsBlocked 是否已赋值
+                     * 
                      */
                     bool IsBlockedHasBeenSet() const;
 

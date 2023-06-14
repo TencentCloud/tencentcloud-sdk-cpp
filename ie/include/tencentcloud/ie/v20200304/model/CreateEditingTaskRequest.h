@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取智能编辑任务参数。
                      * @return EditingInfo 智能编辑任务参数。
+                     * 
                      */
                     EditingInfo GetEditingInfo() const;
 
                     /**
                      * 设置智能编辑任务参数。
-                     * @param EditingInfo 智能编辑任务参数。
+                     * @param _editingInfo 智能编辑任务参数。
+                     * 
                      */
                     void SetEditingInfo(const EditingInfo& _editingInfo);
 
                     /**
                      * 判断参数 EditingInfo 是否已赋值
                      * @return EditingInfo 是否已赋值
+                     * 
                      */
                     bool EditingInfoHasBeenSet() const;
 
                     /**
                      * 获取视频源信息。
                      * @return DownInfo 视频源信息。
+                     * 
                      */
                     DownInfo GetDownInfo() const;
 
                     /**
                      * 设置视频源信息。
-                     * @param DownInfo 视频源信息。
+                     * @param _downInfo 视频源信息。
+                     * 
                      */
                     void SetDownInfo(const DownInfo& _downInfo);
 
                     /**
                      * 判断参数 DownInfo 是否已赋值
                      * @return DownInfo 是否已赋值
+                     * 
                      */
                     bool DownInfoHasBeenSet() const;
 
                     /**
                      * 获取结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。
                      * @return SaveInfo 结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。
+                     * 
                      */
                     SaveInfo GetSaveInfo() const;
 
                     /**
                      * 设置结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。
-                     * @param SaveInfo 结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。
+                     * @param _saveInfo 结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。
+                     * 
                      */
                     void SetSaveInfo(const SaveInfo& _saveInfo);
 
                     /**
                      * 判断参数 SaveInfo 是否已赋值
                      * @return SaveInfo 是否已赋值
+                     * 
                      */
                     bool SaveInfoHasBeenSet() const;
 
                     /**
                      * 获取任务结果回调地址信息。
                      * @return CallbackInfo 任务结果回调地址信息。
+                     * 
                      */
                     CallbackInfo GetCallbackInfo() const;
 
                     /**
                      * 设置任务结果回调地址信息。
-                     * @param CallbackInfo 任务结果回调地址信息。
+                     * @param _callbackInfo 任务结果回调地址信息。
+                     * 
                      */
                     void SetCallbackInfo(const CallbackInfo& _callbackInfo);
 
                     /**
                      * 判断参数 CallbackInfo 是否已赋值
                      * @return CallbackInfo 是否已赋值
+                     * 
                      */
                     bool CallbackInfoHasBeenSet() const;
 

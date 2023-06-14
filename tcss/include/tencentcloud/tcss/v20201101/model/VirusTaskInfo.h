@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取容器名称
                      * @return ContainerName 容器名称
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名称
-                     * @param ContainerName 容器名称
+                     * @param _containerName 容器名称
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取容器id
                      * @return ContainerId 容器id
+                     * 
                      */
                     std::string GetContainerId() const;
 
                     /**
                      * 设置容器id
-                     * @param ContainerId 容器id
+                     * @param _containerId 容器id
+                     * 
                      */
                     void SetContainerId(const std::string& _containerId);
 
                     /**
                      * 判断参数 ContainerId 是否已赋值
                      * @return ContainerId 是否已赋值
+                     * 
                      */
                     bool ContainerIdHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像Id
                      * @return ImageId 镜像Id
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像Id
-                     * @param ImageId 镜像Id
+                     * @param _imageId 镜像Id
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取节点名
                      * @return HostName 节点名
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置节点名
-                     * @param HostName 节点名
+                     * @param _hostName 节点名
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取节点内网ip
                      * @return HostIp 节点内网ip
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置节点内网ip
-                     * @param HostIp 节点内网ip
+                     * @param _hostIp 节点内网ip
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
@@ -171,6 +189,7 @@ FINISHED: 结束
 CANCELING: 取消中
 CANCELED: 已取消
 CANCEL_FAILED： 取消失败
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -183,7 +202,7 @@ FINISHED: 结束
 CANCELING: 取消中
 CANCELED: 已取消
 CANCEL_FAILED： 取消失败
-                     * @param Status 扫描状态：
+                     * @param _status 扫描状态：
 WAIT: 等待扫描
 FAILED: 失败
 SCANNING: 扫描中
@@ -191,84 +210,98 @@ FINISHED: 结束
 CANCELING: 取消中
 CANCELED: 已取消
 CANCEL_FAILED： 取消失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取检测开始时间
                      * @return StartTime 检测开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置检测开始时间
-                     * @param StartTime 检测开始时间
+                     * @param _startTime 检测开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取检测结束时间
                      * @return EndTime 检测结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置检测结束时间
-                     * @param EndTime 检测结束时间
+                     * @param _endTime 检测结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取风险个数
                      * @return RiskCnt 风险个数
+                     * 
                      */
                     uint64_t GetRiskCnt() const;
 
                     /**
                      * 设置风险个数
-                     * @param RiskCnt 风险个数
+                     * @param _riskCnt 风险个数
+                     * 
                      */
                     void SetRiskCnt(const uint64_t& _riskCnt);
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
+                     * 
                      */
                     bool RiskCntHasBeenSet() const;
 
                     /**
                      * 获取事件id
                      * @return Id 事件id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置事件id
-                     * @param Id 事件id
+                     * @param _id 事件id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -301,6 +334,7 @@ INTERNAL: 服务内部错误
 MISC: 其他错误
 UNAUTH: 所在镜像未授权
 SEND_CANCEL_SUCCESSED:下发成功
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
@@ -319,7 +353,7 @@ INTERNAL: 服务内部错误
 MISC: 其他错误
 UNAUTH: 所在镜像未授权
 SEND_CANCEL_SUCCESSED:下发成功
-                     * @param ErrorMsg 错误原因:
+                     * @param _errorMsg 错误原因:
 SEND_SUCCESSED: 下发成功
 SCAN_WAIT: agent排队扫描等待中
 OFFLINE: 离线
@@ -333,66 +367,77 @@ INTERNAL: 服务内部错误
 MISC: 其他错误
 UNAUTH: 所在镜像未授权
 SEND_CANCEL_SUCCESSED:下发成功
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 
                     /**
                      * 获取节点类型：NORMAL普通节点、SUPER超级节点
                      * @return NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型：NORMAL普通节点、SUPER超级节点
-                     * @param NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * @param _nodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取节点外网IP
                      * @return PublicIP 节点外网IP
+                     * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置节点外网IP
-                     * @param PublicIP 节点外网IP
+                     * @param _publicIP 节点外网IP
+                     * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
 
                     /**
                      * 判断参数 PublicIP 是否已赋值
                      * @return PublicIP 是否已赋值
+                     * 
                      */
                     bool PublicIPHasBeenSet() const;
 
                     /**
                      * 获取节点ID
                      * @return NodeID 节点ID
+                     * 
                      */
                     std::string GetNodeID() const;
 
                     /**
                      * 设置节点ID
-                     * @param NodeID 节点ID
+                     * @param _nodeID 节点ID
+                     * 
                      */
                     void SetNodeID(const std::string& _nodeID);
 
                     /**
                      * 判断参数 NodeID 是否已赋值
                      * @return NodeID 是否已赋值
+                     * 
                      */
                     bool NodeIDHasBeenSet() const;
 

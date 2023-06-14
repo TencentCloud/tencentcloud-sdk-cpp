@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取防火墙规则。
                      * @return FirewallRule 防火墙规则。
+                     * 
                      */
                     FirewallRule GetFirewallRule() const;
 
                     /**
                      * 设置防火墙规则。
-                     * @param FirewallRule 防火墙规则。
+                     * @param _firewallRule 防火墙规则。
+                     * 
                      */
                     void SetFirewallRule(const FirewallRule& _firewallRule);
 
                     /**
                      * 判断参数 FirewallRule 是否已赋值
                      * @return FirewallRule 是否已赋值
+                     * 
                      */
                     bool FirewallRuleHasBeenSet() const;
 
                     /**
                      * 获取防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
                      * @return FirewallVersion 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     * 
                      */
                     uint64_t GetFirewallVersion() const;
 
                     /**
                      * 设置防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
-                     * @param FirewallVersion 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     * @param _firewallVersion 防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。
+                     * 
                      */
                     void SetFirewallVersion(const uint64_t& _firewallVersion);
 
                     /**
                      * 判断参数 FirewallVersion 是否已赋值
                      * @return FirewallVersion 是否已赋值
+                     * 
                      */
                     bool FirewallVersionHasBeenSet() const;
 

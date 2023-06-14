@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取API 请求参数
                      * @return Request API 请求参数
+                     * 
                      */
                     std::vector<ApiRequestDescr> GetRequest() const;
 
                     /**
                      * 设置API 请求参数
-                     * @param Request API 请求参数
+                     * @param _request API 请求参数
+                     * 
                      */
                     void SetRequest(const std::vector<ApiRequestDescr>& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
@@ -72,38 +75,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Response API 响应参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApiResponseDescr> GetResponse() const;
 
                     /**
                      * 设置API 响应参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Response API 响应参数
+                     * @param _response API 响应参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponse(const std::vector<ApiResponseDescr>& _response);
 
                     /**
                      * 判断参数 Response 是否已赋值
                      * @return Response 是否已赋值
+                     * 
                      */
                     bool ResponseHasBeenSet() const;
 
                     /**
                      * 获取API 复杂结构定义
                      * @return Definitions API 复杂结构定义
+                     * 
                      */
                     std::vector<ApiDefinitionDescr> GetDefinitions() const;
 
                     /**
                      * 设置API 复杂结构定义
-                     * @param Definitions API 复杂结构定义
+                     * @param _definitions API 复杂结构定义
+                     * 
                      */
                     void SetDefinitions(const std::vector<ApiDefinitionDescr>& _definitions);
 
                     /**
                      * 判断参数 Definitions 是否已赋值
                      * @return Definitions 是否已赋值
+                     * 
                      */
                     bool DefinitionsHasBeenSet() const;
 
@@ -112,20 +121,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestContentType API 的 content type
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRequestContentType() const;
 
                     /**
                      * 设置API 的 content type
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestContentType API 的 content type
+                     * @param _requestContentType API 的 content type
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestContentType(const std::string& _requestContentType);
 
                     /**
                      * 判断参数 RequestContentType 是否已赋值
                      * @return RequestContentType 是否已赋值
+                     * 
                      */
                     bool RequestContentTypeHasBeenSet() const;
 
@@ -134,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanRun API  能否调试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetCanRun() const;
 
                     /**
                      * 设置API  能否调试
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CanRun API  能否调试
+                     * @param _canRun API  能否调试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCanRun(const bool& _canRun);
 
                     /**
                      * 判断参数 CanRun 是否已赋值
                      * @return CanRun 是否已赋值
+                     * 
                      */
                     bool CanRunHasBeenSet() const;
 
@@ -156,20 +171,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status API 状态 0:离线 1:在线，默认0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置API 状态 0:离线 1:在线，默认0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status API 状态 0:离线 1:在线，默认0
+                     * @param _status API 状态 0:离线 1:在线，默认0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -178,20 +196,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description API 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置API 描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description API 描述
+                     * @param _description API 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

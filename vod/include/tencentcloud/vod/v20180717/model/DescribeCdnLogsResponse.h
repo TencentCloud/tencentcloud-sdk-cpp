@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 日志下载链接总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverseaCdnLogs 海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CdnLogInfo> GetOverseaCdnLogs() const;
 
                     /**
                      * 判断参数 OverseaCdnLogs 是否已赋值
                      * @return OverseaCdnLogs 是否已赋值
+                     * 
                      */
                     bool OverseaCdnLogsHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomesticCdnLogs 国内CDN节点的日志下载列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CdnLogInfo> GetDomesticCdnLogs() const;
 
                     /**
                      * 判断参数 DomesticCdnLogs 是否已赋值
                      * @return DomesticCdnLogs 是否已赋值
+                     * 
                      */
                     bool DomesticCdnLogsHasBeenSet() const;
 

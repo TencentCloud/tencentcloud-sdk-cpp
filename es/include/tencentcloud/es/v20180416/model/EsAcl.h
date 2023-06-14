@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取kibana访问黑名单
                      * @return BlackIpList kibana访问黑名单
+                     * 
                      */
                     std::vector<std::string> GetBlackIpList() const;
 
                     /**
                      * 设置kibana访问黑名单
-                     * @param BlackIpList kibana访问黑名单
+                     * @param _blackIpList kibana访问黑名单
+                     * 
                      */
                     void SetBlackIpList(const std::vector<std::string>& _blackIpList);
 
                     /**
                      * 判断参数 BlackIpList 是否已赋值
                      * @return BlackIpList 是否已赋值
+                     * 
                      */
                     bool BlackIpListHasBeenSet() const;
 
                     /**
                      * 获取kibana访问白名单
                      * @return WhiteIpList kibana访问白名单
+                     * 
                      */
                     std::vector<std::string> GetWhiteIpList() const;
 
                     /**
                      * 设置kibana访问白名单
-                     * @param WhiteIpList kibana访问白名单
+                     * @param _whiteIpList kibana访问白名单
+                     * 
                      */
                     void SetWhiteIpList(const std::vector<std::string>& _whiteIpList);
 
                     /**
                      * 判断参数 WhiteIpList 是否已赋值
                      * @return WhiteIpList 是否已赋值
+                     * 
                      */
                     bool WhiteIpListHasBeenSet() const;
 

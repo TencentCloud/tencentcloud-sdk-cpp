@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群实例 ID
                      * @return ClusterIdentifier 集群实例 ID
+                     * 
                      */
                     std::string GetClusterIdentifier() const;
 
                     /**
                      * 设置集群实例 ID
-                     * @param ClusterIdentifier 集群实例 ID
+                     * @param _clusterIdentifier 集群实例 ID
+                     * 
                      */
                     void SetClusterIdentifier(const std::string& _clusterIdentifier);
 
                     /**
                      * 判断参数 ClusterIdentifier 是否已赋值
                      * @return ClusterIdentifier 是否已赋值
+                     * 
                      */
                     bool ClusterIdentifierHasBeenSet() const;
 
                     /**
                      * 获取函数 ID
                      * @return FunctionId 函数 ID
+                     * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
                      * 设置函数 ID
-                     * @param FunctionId 函数 ID
+                     * @param _functionId 函数 ID
+                     * 
                      */
                     void SetFunctionId(const std::string& _functionId);
 
                     /**
                      * 判断参数 FunctionId 是否已赋值
                      * @return FunctionId 是否已赋值
+                     * 
                      */
                     bool FunctionIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID，必须填
                      * @return ProjectId 项目ID，必须填
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID，必须填
-                     * @param ProjectId 项目ID，必须填
+                     * @param _projectId 项目ID，必须填
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

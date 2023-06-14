@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤规则Key
                      * @return Key 过滤规则Key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤规则Key
-                     * @param Key 过滤规则Key
+                     * @param _key 过滤规则Key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取过滤规则
                      * @return Regex 过滤规则
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置过滤规则
-                     * @param Regex 过滤规则
+                     * @param _regex 过滤规则
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
                     /**
                      * 获取过滤规则Value
                      * @return Value 过滤规则Value
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤规则Value
-                     * @param Value 过滤规则Value
+                     * @param _value 过滤规则Value
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

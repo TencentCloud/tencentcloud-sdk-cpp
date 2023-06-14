@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取以升序还是降序的方式返回结果，可选值 ASC 和 DESC
                      * @return Order 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置以升序还是降序的方式返回结果，可选值 ASC 和 DESC
-                     * @param Order 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * @param _order 以升序还是降序的方式返回结果，可选值 ASC 和 DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName
                      * @return Orderby 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName
+                     * 
                      */
                     std::string GetOrderby() const;
 
                     /**
                      * 设置根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName
-                     * @param Orderby 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName
+                     * @param _orderby 根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName
+                     * 
                      */
                     void SetOrderby(const std::string& _orderby);
 
                     /**
                      * 判断参数 Orderby 是否已赋值
                      * @return Orderby 是否已赋值
+                     * 
                      */
                     bool OrderbyHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认值为 0
                      * @return Offset 数据偏移量，默认值为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认值为 0
-                     * @param Offset 数据偏移量，默认值为 0
+                     * @param _offset 数据偏移量，默认值为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据长度，默认值为 20
                      * @return Limit 返回数据长度，默认值为 20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数据长度，默认值为 20
-                     * @param Limit 返回数据长度，默认值为 20
+                     * @param _limit 返回数据长度，默认值为 20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取支持FunctionName模糊匹配
                      * @return SearchKey 支持FunctionName模糊匹配
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置支持FunctionName模糊匹配
-                     * @param SearchKey 支持FunctionName模糊匹配
+                     * @param _searchKey 支持FunctionName模糊匹配
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取函数描述，支持模糊搜索
                      * @return Description 函数描述，支持模糊搜索
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置函数描述，支持模糊搜索
-                     * @param Description 函数描述，支持模糊搜索
+                     * @param _description 函数描述，支持模糊搜索
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -178,6 +199,7 @@ namespace TencentCloud
 - tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -186,16 +208,18 @@ namespace TencentCloud
 - tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 - tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

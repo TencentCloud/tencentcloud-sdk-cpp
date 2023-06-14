@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取所有静音片段。
                      * @return MuteSlice 所有静音片段。
+                     * 
                      */
                     std::vector<MuteSlice> GetMuteSlice() const;
 
                     /**
                      * 设置所有静音片段。
-                     * @param MuteSlice 所有静音片段。
+                     * @param _muteSlice 所有静音片段。
+                     * 
                      */
                     void SetMuteSlice(const std::vector<MuteSlice>& _muteSlice);
 
                     /**
                      * 判断参数 MuteSlice 是否已赋值
                      * @return MuteSlice 是否已赋值
+                     * 
                      */
                     bool MuteSliceHasBeenSet() const;
 
                     /**
                      * 获取静音时长占比。
                      * @return MuteRatio 静音时长占比。
+                     * 
                      */
                     double GetMuteRatio() const;
 
                     /**
                      * 设置静音时长占比。
-                     * @param MuteRatio 静音时长占比。
+                     * @param _muteRatio 静音时长占比。
+                     * 
                      */
                     void SetMuteRatio(const double& _muteRatio);
 
                     /**
                      * 判断参数 MuteRatio 是否已赋值
                      * @return MuteRatio 是否已赋值
+                     * 
                      */
                     bool MuteRatioHasBeenSet() const;
 
                     /**
                      * 获取静音总时长。
                      * @return TotalMuteDuration 静音总时长。
+                     * 
                      */
                     int64_t GetTotalMuteDuration() const;
 
                     /**
                      * 设置静音总时长。
-                     * @param TotalMuteDuration 静音总时长。
+                     * @param _totalMuteDuration 静音总时长。
+                     * 
                      */
                     void SetTotalMuteDuration(const int64_t& _totalMuteDuration);
 
                     /**
                      * 判断参数 TotalMuteDuration 是否已赋值
                      * @return TotalMuteDuration 是否已赋值
+                     * 
                      */
                     bool TotalMuteDurationHasBeenSet() const;
 

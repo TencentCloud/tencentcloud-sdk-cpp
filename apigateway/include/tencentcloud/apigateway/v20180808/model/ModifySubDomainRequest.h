@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取服务唯一 ID。
                      * @return ServiceId 服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一 ID。
-                     * @param ServiceId 服务唯一 ID。
+                     * @param _serviceId 服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待修改路径映射的自定义的域名。
                      * @return SubDomain 待修改路径映射的自定义的域名。
+                     * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 设置待修改路径映射的自定义的域名。
-                     * @param SubDomain 待修改路径映射的自定义的域名。
+                     * @param _subDomain 待修改路径映射的自定义的域名。
+                     * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
 
                     /**
                      * 判断参数 SubDomain 是否已赋值
                      * @return SubDomain 是否已赋值
+                     * 
                      */
                     bool SubDomainHasBeenSet() const;
 
                     /**
                      * 获取是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。
                      * @return IsDefaultMapping 是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。
+                     * 
                      */
                     bool GetIsDefaultMapping() const;
 
                     /**
                      * 设置是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。
-                     * @param IsDefaultMapping 是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。
+                     * @param _isDefaultMapping 是否修改为使用默认路径映射。为 true，表示使用默认路径映射，为 false，表示使用自定义路径映射。
+                     * 
                      */
                     void SetIsDefaultMapping(const bool& _isDefaultMapping);
 
                     /**
                      * 判断参数 IsDefaultMapping 是否已赋值
                      * @return IsDefaultMapping 是否已赋值
+                     * 
                      */
                     bool IsDefaultMappingHasBeenSet() const;
 
                     /**
                      * 获取证书 ID，协议包含 HTTPS 的时候要传该字段。
                      * @return CertificateId 证书 ID，协议包含 HTTPS 的时候要传该字段。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书 ID，协议包含 HTTPS 的时候要传该字段。
-                     * @param CertificateId 证书 ID，协议包含 HTTPS 的时候要传该字段。
+                     * @param _certificateId 证书 ID，协议包含 HTTPS 的时候要传该字段。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的自定义域名协议类型。（http，https 或 http&https)
                      * @return Protocol 修改后的自定义域名协议类型。（http，https 或 http&https)
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置修改后的自定义域名协议类型。（http，https 或 http&https)
-                     * @param Protocol 修改后的自定义域名协议类型。（http，https 或 http&https)
+                     * @param _protocol 修改后的自定义域名协议类型。（http，https 或 http&https)
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取修改后的路径映射列表。
                      * @return PathMappingSet 修改后的路径映射列表。
+                     * 
                      */
                     std::vector<PathMapping> GetPathMappingSet() const;
 
                     /**
                      * 设置修改后的路径映射列表。
-                     * @param PathMappingSet 修改后的路径映射列表。
+                     * @param _pathMappingSet 修改后的路径映射列表。
+                     * 
                      */
                     void SetPathMappingSet(const std::vector<PathMapping>& _pathMappingSet);
 
                     /**
                      * 判断参数 PathMappingSet 是否已赋值
                      * @return PathMappingSet 是否已赋值
+                     * 
                      */
                     bool PathMappingSetHasBeenSet() const;
 
                     /**
                      * 获取网络类型 （'INNER' 或 'OUTER'）
                      * @return NetType 网络类型 （'INNER' 或 'OUTER'）
+                     * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 设置网络类型 （'INNER' 或 'OUTER'）
-                     * @param NetType 网络类型 （'INNER' 或 'OUTER'）
+                     * @param _netType 网络类型 （'INNER' 或 'OUTER'）
+                     * 
                      */
                     void SetNetType(const std::string& _netType);
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
                     /**
                      * 获取是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
                      * @return IsForcedHttps 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     * 
                      */
                     bool GetIsForcedHttps() const;
 
                     /**
                      * 设置是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
-                     * @param IsForcedHttps 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     * @param _isForcedHttps 是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。
+                     * 
                      */
                     void SetIsForcedHttps(const bool& _isForcedHttps);
 
                     /**
                      * 判断参数 IsForcedHttps 是否已赋值
                      * @return IsForcedHttps 是否已赋值
+                     * 
                      */
                     bool IsForcedHttpsHasBeenSet() const;
 

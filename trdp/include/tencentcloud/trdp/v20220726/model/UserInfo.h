@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取用户外网IP地址
                      * @return Ip 用户外网IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置用户外网IP地址
-                     * @param Ip 用户外网IP地址
+                     * @param _ip 用户外网IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取来源渠道编码
                      * @return ChannelSource 来源渠道编码
+                     * 
                      */
                     std::string GetChannelSource() const;
 
                     /**
                      * 设置来源渠道编码
-                     * @param ChannelSource 来源渠道编码
+                     * @param _channelSource 来源渠道编码
+                     * 
                      */
                     void SetChannelSource(const std::string& _channelSource);
 
                     /**
                      * 判断参数 ChannelSource 是否已赋值
                      * @return ChannelSource 是否已赋值
+                     * 
                      */
                     bool ChannelSourceHasBeenSet() const;
 
                     /**
                      * 获取用户登录平台。1：Android 2：iOS 3：H5 4：小程序
                      * @return Platform 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
+                     * 
                      */
                     int64_t GetPlatform() const;
 
                     /**
                      * 设置用户登录平台。1：Android 2：iOS 3：H5 4：小程序
-                     * @param Platform 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
+                     * @param _platform 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
+                     * 
                      */
                     void SetPlatform(const int64_t& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取年龄
                      * @return Age 年龄
+                     * 
                      */
                     int64_t GetAge() const;
 
                     /**
                      * 设置年龄
-                     * @param Age 年龄
+                     * @param _age 年龄
+                     * 
                      */
                     void SetAge(const int64_t& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
@@ -143,6 +158,7 @@ female（女）
                      * @return Gender 性别：
 male（男）
 female（女）
+                     * 
                      */
                     std::string GetGender() const;
 
@@ -150,87 +166,101 @@ female（女）
                      * 设置性别：
 male（男）
 female（女）
-                     * @param Gender 性别：
+                     * @param _gender 性别：
 male（男）
 female（女）
+                     * 
                      */
                     void SetGender(const std::string& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取身份证号
                      * @return ResidentIdentityCard 身份证号
+                     * 
                      */
                     std::string GetResidentIdentityCard() const;
 
                     /**
                      * 设置身份证号
-                     * @param ResidentIdentityCard 身份证号
+                     * @param _residentIdentityCard 身份证号
+                     * 
                      */
                     void SetResidentIdentityCard(const std::string& _residentIdentityCard);
 
                     /**
                      * 判断参数 ResidentIdentityCard 是否已赋值
                      * @return ResidentIdentityCard 是否已赋值
+                     * 
                      */
                     bool ResidentIdentityCardHasBeenSet() const;
 
                     /**
                      * 获取邮箱地址
                      * @return Email 邮箱地址
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱地址
-                     * @param Email 邮箱地址
+                     * @param _email 邮箱地址
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取用户地址
                      * @return Address 用户地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置用户地址
-                     * @param Address 用户地址
+                     * @param _address 用户地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取用户昵称
                      * @return Nickname 用户昵称
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * @param _nickname 用户昵称
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 

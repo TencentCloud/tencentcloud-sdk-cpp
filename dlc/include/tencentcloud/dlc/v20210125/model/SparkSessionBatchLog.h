@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStep() const;
 
                     /**
                      * 设置日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Step 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
+                     * @param _step 日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStep(const std::string& _step);
 
                     /**
                      * 判断参数 Step 是否已赋值
                      * @return Step 是否已赋值
+                     * 
                      */
                     bool StepHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 时间
+                     * @param _time 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 日志提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置日志提示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 日志提示
+                     * @param _message 日志提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operate 日志操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SparkSessionBatchLogOperate> GetOperate() const;
 
                     /**
                      * 设置日志操作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operate 日志操作
+                     * @param _operate 日志操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperate(const std::vector<SparkSessionBatchLogOperate>& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 

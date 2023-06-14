@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取站点名称。
                      * @return ZoneName 站点名称。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置站点名称。
-                     * @param ZoneName 站点名称。
+                     * @param _zoneName 站点名称。
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
+                     * @param _domain 验证子域名。验证站点时，该值为空。验证子域名是为具体子域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
                      * @return Status 验证状态，取值有：
 <li> pending：验证中；</li>
 <li> finished：验证完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -102,33 +109,38 @@ namespace TencentCloud
                      * 设置验证状态，取值有：
 <li> pending：验证中；</li>
 <li> finished：验证完成。</li>
-                     * @param Status 验证状态，取值有：
+                     * @param _status 验证状态，取值有：
 <li> pending：验证中；</li>
 <li> finished：验证完成。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取站点归属权校验：Dns校验信息。
                      * @return Ascription 站点归属权校验：Dns校验信息。
+                     * 
                      */
                     AscriptionInfo GetAscription() const;
 
                     /**
                      * 设置站点归属权校验：Dns校验信息。
-                     * @param Ascription 站点归属权校验：Dns校验信息。
+                     * @param _ascription 站点归属权校验：Dns校验信息。
+                     * 
                      */
                     void SetAscription(const AscriptionInfo& _ascription);
 
                     /**
                      * 判断参数 Ascription 是否已赋值
                      * @return Ascription 是否已赋值
+                     * 
                      */
                     bool AscriptionHasBeenSet() const;
 
@@ -137,38 +149,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalNameServers 域名当前的 NS 记录。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetOriginalNameServers() const;
 
                     /**
                      * 设置域名当前的 NS 记录。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalNameServers 域名当前的 NS 记录。
+                     * @param _originalNameServers 域名当前的 NS 记录。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalNameServers(const std::vector<std::string>& _originalNameServers);
 
                     /**
                      * 判断参数 OriginalNameServers 是否已赋值
                      * @return OriginalNameServers 是否已赋值
+                     * 
                      */
                     bool OriginalNameServersHasBeenSet() const;
 
                     /**
                      * 获取站点归属权校验：文件校验信息。
                      * @return FileAscription 站点归属权校验：文件校验信息。
+                     * 
                      */
                     FileAscriptionInfo GetFileAscription() const;
 
                     /**
                      * 设置站点归属权校验：文件校验信息。
-                     * @param FileAscription 站点归属权校验：文件校验信息。
+                     * @param _fileAscription 站点归属权校验：文件校验信息。
+                     * 
                      */
                     void SetFileAscription(const FileAscriptionInfo& _fileAscription);
 
                     /**
                      * 判断参数 FileAscription 是否已赋值
                      * @return FileAscription 是否已赋值
+                     * 
                      */
                     bool FileAscriptionHasBeenSet() const;
 

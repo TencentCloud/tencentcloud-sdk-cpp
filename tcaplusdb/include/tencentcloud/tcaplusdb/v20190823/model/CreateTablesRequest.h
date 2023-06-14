@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取待创建表格所属集群ID
                      * @return ClusterId 待创建表格所属集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置待创建表格所属集群ID
-                     * @param ClusterId 待创建表格所属集群ID
+                     * @param _clusterId 待创建表格所属集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取用户选定的建表格IDL文件列表
                      * @return IdlFiles 用户选定的建表格IDL文件列表
+                     * 
                      */
                     std::vector<IdlFileInfo> GetIdlFiles() const;
 
                     /**
                      * 设置用户选定的建表格IDL文件列表
-                     * @param IdlFiles 用户选定的建表格IDL文件列表
+                     * @param _idlFiles 用户选定的建表格IDL文件列表
+                     * 
                      */
                     void SetIdlFiles(const std::vector<IdlFileInfo>& _idlFiles);
 
                     /**
                      * 判断参数 IdlFiles 是否已赋值
                      * @return IdlFiles 是否已赋值
+                     * 
                      */
                     bool IdlFilesHasBeenSet() const;
 
                     /**
                      * 获取待创建表格信息列表
                      * @return SelectedTables 待创建表格信息列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置待创建表格信息列表
-                     * @param SelectedTables 待创建表格信息列表
+                     * @param _selectedTables 待创建表格信息列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 
                     /**
                      * 获取表格标签列表
                      * @return ResourceTags 表格标签列表
+                     * 
                      */
                     std::vector<TagInfoUnit> GetResourceTags() const;
 
                     /**
                      * 设置表格标签列表
-                     * @param ResourceTags 表格标签列表
+                     * @param _resourceTags 表格标签列表
+                     * 
                      */
                     void SetResourceTags(const std::vector<TagInfoUnit>& _resourceTags);
 
                     /**
                      * 判断参数 ResourceTags 是否已赋值
                      * @return ResourceTags 是否已赋值
+                     * 
                      */
                     bool ResourceTagsHasBeenSet() const;
 

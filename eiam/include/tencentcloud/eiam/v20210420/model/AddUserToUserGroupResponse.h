@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedItems 未成功加入用户组的用户ID列表信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedItems() const;
 
                     /**
                      * 判断参数 FailedItems 是否已赋值
                      * @return FailedItems 是否已赋值
+                     * 
                      */
                     bool FailedItemsHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取资产测绘列表
                      * @return Data 资产测绘列表
+                     * 
                      */
                     std::vector<DataAssetMapping> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取资产测绘总数
                      * @return TotalCount 资产测绘总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CountByType 类型分类统计数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCountByType() const;
 
                     /**
                      * 判断参数 CountByType 是否已赋值
                      * @return CountByType 是否已赋值
+                     * 
                      */
                     bool CountByTypeHasBeenSet() const;
 

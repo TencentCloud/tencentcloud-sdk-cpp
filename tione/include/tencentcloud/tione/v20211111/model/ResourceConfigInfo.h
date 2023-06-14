@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取角色，eg：PS、WORKER、DRIVER、EXECUTOR
                      * @return Role 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置角色，eg：PS、WORKER、DRIVER、EXECUTOR
-                     * @param Role 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * @param _role 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取cpu核数，1000=1核
                      * @return Cpu cpu核数，1000=1核
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置cpu核数，1000=1核
-                     * @param Cpu cpu核数，1000=1核
+                     * @param _cpu cpu核数，1000=1核
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存，单位为MB
                      * @return Memory 内存，单位为MB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存，单位为MB
-                     * @param Memory 内存，单位为MB
+                     * @param _memory 内存，单位为MB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取gpu卡类型
                      * @return GpuType gpu卡类型
+                     * 
                      */
                     std::string GetGpuType() const;
 
                     /**
                      * 设置gpu卡类型
-                     * @param GpuType gpu卡类型
+                     * @param _gpuType gpu卡类型
+                     * 
                      */
                     void SetGpuType(const std::string& _gpuType);
 
                     /**
                      * 判断参数 GpuType 是否已赋值
                      * @return GpuType 是否已赋值
+                     * 
                      */
                     bool GpuTypeHasBeenSet() const;
 
                     /**
                      * 获取gpu数
                      * @return Gpu gpu数
+                     * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
                      * 设置gpu数
-                     * @param Gpu gpu数
+                     * @param _gpu gpu数
+                     * 
                      */
                     void SetGpu(const uint64_t& _gpu);
 
                     /**
                      * 判断参数 Gpu 是否已赋值
                      * @return Gpu 是否已赋值
+                     * 
                      */
                     bool GpuHasBeenSet() const;
 
@@ -174,6 +189,7 @@ TI.GN10.20XLARGE320.POST :  72C320G V100*8
 TI.GN7.8XLARGE128.POST: 32C128G T4*1 
 TI.GN7.10XLARGE160.POST: 40C160G T4*2 
 TI.GN7.20XLARGE320.POST: 80C32
+                     * 
                      */
                     std::string GetInstanceType() const;
 
@@ -196,7 +212,7 @@ TI.GN10.20XLARGE320.POST :  72C320G V100*8
 TI.GN7.8XLARGE128.POST: 32C128G T4*1 
 TI.GN7.10XLARGE160.POST: 40C160G T4*2 
 TI.GN7.20XLARGE320.POST: 80C32
-                     * @param InstanceType 算力规格ID
+                     * @param _instanceType 算力规格ID
 计算规格 (for后付费)，可选值如下：
 TI.S.LARGE.POST: 4C8G 
 TI.S.2XLARGE16.POST:  8C16G 
@@ -214,30 +230,35 @@ TI.GN10.20XLARGE320.POST :  72C320G V100*8
 TI.GN7.8XLARGE128.POST: 32C128G T4*1 
 TI.GN7.10XLARGE160.POST: 40C160G T4*2 
 TI.GN7.20XLARGE320.POST: 80C32
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取计算节点数
                      * @return InstanceNum 计算节点数
+                     * 
                      */
                     uint64_t GetInstanceNum() const;
 
                     /**
                      * 设置计算节点数
-                     * @param InstanceNum 计算节点数
+                     * @param _instanceNum 计算节点数
+                     * 
                      */
                     void SetInstanceNum(const uint64_t& _instanceNum);
 
                     /**
                      * 判断参数 InstanceNum 是否已赋值
                      * @return InstanceNum 是否已赋值
+                     * 
                      */
                     bool InstanceNumHasBeenSet() const;
 
@@ -278,6 +299,7 @@ TI.GN7.20XLARGE320.POST: 80C32
 32C128G T4*1 
 40C160G T4*2 
 80C32
+                     * 
                      */
                     std::string GetInstanceTypeAlias() const;
 
@@ -300,7 +322,7 @@ TI.GN7.20XLARGE320.POST: 80C32
 32C128G T4*1 
 40C160G T4*2 
 80C32
-                     * @param InstanceTypeAlias 算力规格名称
+                     * @param _instanceTypeAlias 算力规格名称
 计算规格 (for后付费)，可选值如下：
 4C8G 
 8C16G 
@@ -318,12 +340,14 @@ TI.GN7.20XLARGE320.POST: 80C32
 32C128G T4*1 
 40C160G T4*2 
 80C32
+                     * 
                      */
                     void SetInstanceTypeAlias(const std::string& _instanceTypeAlias);
 
                     /**
                      * 判断参数 InstanceTypeAlias 是否已赋值
                      * @return InstanceTypeAlias 是否已赋值
+                     * 
                      */
                     bool InstanceTypeAliasHasBeenSet() const;
 
@@ -332,20 +356,23 @@ TI.GN7.20XLARGE320.POST: 80C32
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RDMAConfig RDMA配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RDMAConfig GetRDMAConfig() const;
 
                     /**
                      * 设置RDMA配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RDMAConfig RDMA配置
+                     * @param _rDMAConfig RDMA配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRDMAConfig(const RDMAConfig& _rDMAConfig);
 
                     /**
                      * 判断参数 RDMAConfig 是否已赋值
                      * @return RDMAConfig 是否已赋值
+                     * 
                      */
                     bool RDMAConfigHasBeenSet() const;
 

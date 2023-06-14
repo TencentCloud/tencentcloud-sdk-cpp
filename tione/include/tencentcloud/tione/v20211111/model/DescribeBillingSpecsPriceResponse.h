@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取计费项价格，支持批量返回
                      * @return SpecsPrice 计费项价格，支持批量返回
+                     * 
                      */
                     std::vector<SpecPrice> GetSpecsPrice() const;
 
                     /**
                      * 判断参数 SpecsPrice 是否已赋值
                      * @return SpecsPrice 是否已赋值
+                     * 
                      */
                     bool SpecsPriceHasBeenSet() const;
 

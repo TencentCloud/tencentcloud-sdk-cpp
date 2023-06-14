@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取查询偏移量
                      * @return Offset 查询偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移量
-                     * @param Offset 查询偏移量
+                     * @param _offset 查询偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询限制数
                      * @return Limit 查询限制数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询限制数
-                     * @param Limit 查询限制数
+                     * @param _limit 查询限制数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Vhost名称
                      * @return VHostId Vhost名称
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置Vhost名称
-                     * @param VHostId Vhost名称
+                     * @param _vHostId Vhost名称
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取按源exchange名称过滤查询结果，支持模糊查询
                      * @return FilterSourceExchange 按源exchange名称过滤查询结果，支持模糊查询
+                     * 
                      */
                     std::string GetFilterSourceExchange() const;
 
                     /**
                      * 设置按源exchange名称过滤查询结果，支持模糊查询
-                     * @param FilterSourceExchange 按源exchange名称过滤查询结果，支持模糊查询
+                     * @param _filterSourceExchange 按源exchange名称过滤查询结果，支持模糊查询
+                     * 
                      */
                     void SetFilterSourceExchange(const std::string& _filterSourceExchange);
 
                     /**
                      * 判断参数 FilterSourceExchange 是否已赋值
                      * @return FilterSourceExchange 是否已赋值
+                     * 
                      */
                     bool FilterSourceExchangeHasBeenSet() const;
 
                     /**
                      * 获取按绑定的目标类型过滤查询结果，可选值:Exchange、Queue
                      * @return FilterDestType 按绑定的目标类型过滤查询结果，可选值:Exchange、Queue
+                     * 
                      */
                     std::string GetFilterDestType() const;
 
                     /**
                      * 设置按绑定的目标类型过滤查询结果，可选值:Exchange、Queue
-                     * @param FilterDestType 按绑定的目标类型过滤查询结果，可选值:Exchange、Queue
+                     * @param _filterDestType 按绑定的目标类型过滤查询结果，可选值:Exchange、Queue
+                     * 
                      */
                     void SetFilterDestType(const std::string& _filterDestType);
 
                     /**
                      * 判断参数 FilterDestType 是否已赋值
                      * @return FilterDestType 是否已赋值
+                     * 
                      */
                     bool FilterDestTypeHasBeenSet() const;
 
                     /**
                      * 获取按目标名称过滤查询结果，支持模糊查询
                      * @return FilterDestValue 按目标名称过滤查询结果，支持模糊查询
+                     * 
                      */
                     std::string GetFilterDestValue() const;
 
                     /**
                      * 设置按目标名称过滤查询结果，支持模糊查询
-                     * @param FilterDestValue 按目标名称过滤查询结果，支持模糊查询
+                     * @param _filterDestValue 按目标名称过滤查询结果，支持模糊查询
+                     * 
                      */
                     void SetFilterDestValue(const std::string& _filterDestValue);
 
                     /**
                      * 判断参数 FilterDestValue 是否已赋值
                      * @return FilterDestValue 是否已赋值
+                     * 
                      */
                     bool FilterDestValueHasBeenSet() const;
 

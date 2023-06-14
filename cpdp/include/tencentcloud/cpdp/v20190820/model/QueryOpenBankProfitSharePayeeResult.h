@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取账户ID（受益ID）
                      * @return AccountId 账户ID（受益ID）
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账户ID（受益ID）
-                     * @param AccountId 账户ID（受益ID）
+                     * @param _accountId 账户ID（受益ID）
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取账户号。通联国际指客户银行账户号
                      * @return AccountNo 账户号。通联国际指客户银行账户号
+                     * 
                      */
                     std::string GetAccountNo() const;
 
                     /**
                      * 设置账户号。通联国际指客户银行账户号
-                     * @param AccountNo 账户号。通联国际指客户银行账户号
+                     * @param _accountNo 账户号。通联国际指客户银行账户号
+                     * 
                      */
                     void SetAccountNo(const std::string& _accountNo);
 
                     /**
                      * 判断参数 AccountNo 是否已赋值
                      * @return AccountNo 是否已赋值
+                     * 
                      */
                     bool AccountNoHasBeenSet() const;
 
                     /**
                      * 获取账户货币。参考附录“币种类型”。
                      * @return Currency 账户货币。参考附录“币种类型”。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置账户货币。参考附录“币种类型”。
-                     * @param Currency 账户货币。参考附录“币种类型”。
+                     * @param _currency 账户货币。参考附录“币种类型”。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 
                     /**
                      * 获取收款人账户名称
                      * @return AccountName 收款人账户名称
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置收款人账户名称
-                     * @param AccountName 收款人账户名称
+                     * @param _accountName 收款人账户名称
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BankName 银行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBankName() const;
 
                     /**
                      * 设置银行名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BankName 银行名称
+                     * @param _bankName 银行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBankName(const std::string& _bankName);
 
                     /**
                      * 判断参数 BankName 是否已赋值
                      * @return BankName 是否已赋值
+                     * 
                      */
                     bool BankNameHasBeenSet() const;
 
@@ -157,6 +172,7 @@ namespace TencentCloud
 04:预付卡费 
 05:境外卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNature() const;
 
@@ -169,7 +185,7 @@ namespace TencentCloud
 04:预付卡费 
 05:境外卡
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nature 账户类型。
+                     * @param _nature 账户类型。
 00:借记卡
 01:存折 
 02:信用卡 
@@ -177,12 +193,14 @@ namespace TencentCloud
 04:预付卡费 
 05:境外卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNature(const std::string& _nature);
 
                     /**
                      * 判断参数 Nature 是否已赋值
                      * @return Nature 是否已赋值
+                     * 
                      */
                     bool NatureHasBeenSet() const;
 
@@ -191,38 +209,44 @@ namespace TencentCloud
 0-待审核；1-审核通过；2-审核不通过 3-关联实体未审核
                      * @return BindState 状态
 0-待审核；1-审核通过；2-审核不通过 3-关联实体未审核
+                     * 
                      */
                     std::string GetBindState() const;
 
                     /**
                      * 设置状态
 0-待审核；1-审核通过；2-审核不通过 3-关联实体未审核
-                     * @param BindState 状态
+                     * @param _bindState 状态
 0-待审核；1-审核通过；2-审核不通过 3-关联实体未审核
+                     * 
                      */
                     void SetBindState(const std::string& _bindState);
 
                     /**
                      * 判断参数 BindState 是否已赋值
                      * @return BindState 是否已赋值
+                     * 
                      */
                     bool BindStateHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return StateExplain 状态描述
+                     * 
                      */
                     std::string GetStateExplain() const;
 
                     /**
                      * 设置状态描述
-                     * @param StateExplain 状态描述
+                     * @param _stateExplain 状态描述
+                     * 
                      */
                     void SetStateExplain(const std::string& _stateExplain);
 
                     /**
                      * 判断参数 StateExplain 是否已赋值
                      * @return StateExplain 是否已赋值
+                     * 
                      */
                     bool StateExplainHasBeenSet() const;
 

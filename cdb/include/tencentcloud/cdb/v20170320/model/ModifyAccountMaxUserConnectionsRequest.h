@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取云数据库账号。
                      * @return Accounts 云数据库账号。
+                     * 
                      */
                     std::vector<Account> GetAccounts() const;
 
                     /**
                      * 设置云数据库账号。
-                     * @param Accounts 云数据库账号。
+                     * @param _accounts 云数据库账号。
+                     * 
                      */
                     void SetAccounts(const std::vector<Account>& _accounts);
 
                     /**
                      * 判断参数 Accounts 是否已赋值
                      * @return Accounts 是否已赋值
+                     * 
                      */
                     bool AccountsHasBeenSet() const;
 
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取设置账户最大可用连接数，最大可设置值为10240。
                      * @return MaxUserConnections 设置账户最大可用连接数，最大可设置值为10240。
+                     * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
                      * 设置设置账户最大可用连接数，最大可设置值为10240。
-                     * @param MaxUserConnections 设置账户最大可用连接数，最大可设置值为10240。
+                     * @param _maxUserConnections 设置账户最大可用连接数，最大可设置值为10240。
+                     * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
 
                     /**
                      * 判断参数 MaxUserConnections 是否已赋值
                      * @return MaxUserConnections 是否已赋值
+                     * 
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 

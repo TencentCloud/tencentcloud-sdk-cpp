@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取设备型号
                      * @return Machine 设备型号
+                     * 
                      */
                     std::string GetMachine() const;
 
                     /**
                      * 设置设备型号
-                     * @param Machine 设备型号
+                     * @param _machine 设备型号
+                     * 
                      */
                     void SetMachine(const std::string& _machine);
 
                     /**
                      * 判断参数 Machine 是否已赋值
                      * @return Machine 是否已赋值
+                     * 
                      */
                     bool MachineHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位 GB
                      * @return Memory 内存大小，单位 GB
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位 GB
-                     * @param Memory 内存大小，单位 GB
+                     * @param _memory 内存大小，单位 GB
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取数据盘规格最小值，单位 GB
                      * @return MinStorage 数据盘规格最小值，单位 GB
+                     * 
                      */
                     int64_t GetMinStorage() const;
 
                     /**
                      * 设置数据盘规格最小值，单位 GB
-                     * @param MinStorage 数据盘规格最小值，单位 GB
+                     * @param _minStorage 数据盘规格最小值，单位 GB
+                     * 
                      */
                     void SetMinStorage(const int64_t& _minStorage);
 
                     /**
                      * 判断参数 MinStorage 是否已赋值
                      * @return MinStorage 是否已赋值
+                     * 
                      */
                     bool MinStorageHasBeenSet() const;
 
                     /**
                      * 获取数据盘规格最大值，单位 GB
                      * @return MaxStorage 数据盘规格最大值，单位 GB
+                     * 
                      */
                     int64_t GetMaxStorage() const;
 
                     /**
                      * 设置数据盘规格最大值，单位 GB
-                     * @param MaxStorage 数据盘规格最大值，单位 GB
+                     * @param _maxStorage 数据盘规格最大值，单位 GB
+                     * 
                      */
                     void SetMaxStorage(const int64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
                     /**
                      * 获取推荐的使用场景
                      * @return SuitInfo 推荐的使用场景
+                     * 
                      */
                     std::string GetSuitInfo() const;
 
                     /**
                      * 设置推荐的使用场景
-                     * @param SuitInfo 推荐的使用场景
+                     * @param _suitInfo 推荐的使用场景
+                     * 
                      */
                     void SetSuitInfo(const std::string& _suitInfo);
 
                     /**
                      * 判断参数 SuitInfo 是否已赋值
                      * @return SuitInfo 是否已赋值
+                     * 
                      */
                     bool SuitInfoHasBeenSet() const;
 
                     /**
                      * 获取最大 Qps 值
                      * @return Qps 最大 Qps 值
+                     * 
                      */
                     int64_t GetQps() const;
 
                     /**
                      * 设置最大 Qps 值
-                     * @param Qps 最大 Qps 值
+                     * @param _qps 最大 Qps 值
+                     * 
                      */
                     void SetQps(const int64_t& _qps);
 
                     /**
                      * 判断参数 Qps 是否已赋值
                      * @return Qps 是否已赋值
+                     * 
                      */
                     bool QpsHasBeenSet() const;
 
                     /**
                      * 获取产品类型 Id
                      * @return Pid 产品类型 Id
+                     * 
                      */
                     int64_t GetPid() const;
 
                     /**
                      * 设置产品类型 Id
-                     * @param Pid 产品类型 Id
+                     * @param _pid 产品类型 Id
+                     * 
                      */
                     void SetPid(const int64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
+                     * 
                      */
                     bool PidHasBeenSet() const;
 
                     /**
                      * 获取节点个数，2 表示一主一从，3 表示一主二从
                      * @return NodeCount 节点个数，2 表示一主一从，3 表示一主二从
+                     * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
                      * 设置节点个数，2 表示一主一从，3 表示一主二从
-                     * @param NodeCount 节点个数，2 表示一主一从，3 表示一主二从
+                     * @param _nodeCount 节点个数，2 表示一主一从，3 表示一主二从
+                     * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取Cpu核数
                      * @return Cpu Cpu核数
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置Cpu核数
-                     * @param Cpu Cpu核数
+                     * @param _cpu Cpu核数
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 

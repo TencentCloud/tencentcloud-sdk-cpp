@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取GTID 是否开通的标记，可能的取值为：0 - 未开通，1 - 已开通。
                      * @return IsGTIDOpen GTID 是否开通的标记，可能的取值为：0 - 未开通，1 - 已开通。
+                     * 
                      */
                     int64_t GetIsGTIDOpen() const;
 
                     /**
                      * 判断参数 IsGTIDOpen 是否已赋值
                      * @return IsGTIDOpen 是否已赋值
+                     * 
                      */
                     bool IsGTIDOpenHasBeenSet() const;
 

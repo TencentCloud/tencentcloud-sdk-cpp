@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取字段名称
                      * @return FieldName 字段名称
+                     * 
                      */
                     std::string GetFieldName() const;
 
                     /**
                      * 设置字段名称
-                     * @param FieldName 字段名称
+                     * @param _fieldName 字段名称
+                     * 
                      */
                     void SetFieldName(const std::string& _fieldName);
 
                     /**
                      * 判断参数 FieldName 是否已赋值
                      * @return FieldName 是否已赋值
+                     * 
                      */
                     bool FieldNameHasBeenSet() const;
 
                     /**
                      * 获取字段值
                      * @return FieldValue 字段值
+                     * 
                      */
                     std::string GetFieldValue() const;
 
                     /**
                      * 设置字段值
-                     * @param FieldValue 字段值
+                     * @param _fieldValue 字段值
+                     * 
                      */
                     void SetFieldValue(const std::string& _fieldValue);
 
                     /**
                      * 判断参数 FieldValue 是否已赋值
                      * @return FieldValue 是否已赋值
+                     * 
                      */
                     bool FieldValueHasBeenSet() const;
 

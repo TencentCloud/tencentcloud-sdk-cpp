@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值
                      * @return AttackType ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值
+                     * 
                      */
                     std::string GetAttackType() const;
 
                     /**
                      * 设置ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值
-                     * @param AttackType ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值
+                     * @param _attackType ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
                     /**
                      * 获取ddos攻击带宽大小
                      * @return Value ddos攻击带宽大小
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置ddos攻击带宽大小
-                     * @param Value ddos攻击带宽大小
+                     * @param _value ddos攻击带宽大小
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取攻击时间点
                      * @return Time 攻击时间点
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置攻击时间点
-                     * @param Time 攻击时间点
+                     * @param _time 攻击时间点
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

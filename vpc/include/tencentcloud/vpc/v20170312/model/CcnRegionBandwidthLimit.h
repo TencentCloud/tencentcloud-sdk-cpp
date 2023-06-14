@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域，例如：ap-guangzhou
                      * @return Region 地域，例如：ap-guangzhou
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域，例如：ap-guangzhou
-                     * @param Region 地域，例如：ap-guangzhou
+                     * @param _region 地域，例如：ap-guangzhou
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取出带宽上限，单位：Mbps
                      * @return BandwidthLimit 出带宽上限，单位：Mbps
+                     * 
                      */
                     uint64_t GetBandwidthLimit() const;
 
                     /**
                      * 设置出带宽上限，单位：Mbps
-                     * @param BandwidthLimit 出带宽上限，单位：Mbps
+                     * @param _bandwidthLimit 出带宽上限，单位：Mbps
+                     * 
                      */
                     void SetBandwidthLimit(const uint64_t& _bandwidthLimit);
 
                     /**
                      * 判断参数 BandwidthLimit 是否已赋值
                      * @return BandwidthLimit 是否已赋值
+                     * 
                      */
                     bool BandwidthLimitHasBeenSet() const;
 
                     /**
                      * 获取是否黑石地域，默认`false`。
                      * @return IsBm 是否黑石地域，默认`false`。
+                     * 
                      */
                     bool GetIsBm() const;
 
                     /**
                      * 设置是否黑石地域，默认`false`。
-                     * @param IsBm 是否黑石地域，默认`false`。
+                     * @param _isBm 是否黑石地域，默认`false`。
+                     * 
                      */
                     void SetIsBm(const bool& _isBm);
 
                     /**
                      * 判断参数 IsBm 是否已赋值
                      * @return IsBm 是否已赋值
+                     * 
                      */
                     bool IsBmHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstRegion 目的地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
                      * 设置目的地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DstRegion 目的地域，例如：ap-shanghai
+                     * @param _dstRegion 目的地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
 
                     /**
                      * 判断参数 DstRegion 是否已赋值
                      * @return DstRegion 是否已赋值
+                     * 
                      */
                     bool DstRegionHasBeenSet() const;
 
                     /**
                      * 获取目的地域是否为黑石地域，默认`false`。
                      * @return DstIsBm 目的地域是否为黑石地域，默认`false`。
+                     * 
                      */
                     bool GetDstIsBm() const;
 
                     /**
                      * 设置目的地域是否为黑石地域，默认`false`。
-                     * @param DstIsBm 目的地域是否为黑石地域，默认`false`。
+                     * @param _dstIsBm 目的地域是否为黑石地域，默认`false`。
+                     * 
                      */
                     void SetDstIsBm(const bool& _dstIsBm);
 
                     /**
                      * 判断参数 DstIsBm 是否已赋值
                      * @return DstIsBm 是否已赋值
+                     * 
                      */
                     bool DstIsBmHasBeenSet() const;
 

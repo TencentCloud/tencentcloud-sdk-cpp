@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取服务配置Id
                      * @return ServiceConfigId 服务配置Id
+                     * 
                      */
                     std::string GetServiceConfigId() const;
 
                     /**
                      * 设置服务配置Id
-                     * @param ServiceConfigId 服务配置Id
+                     * @param _serviceConfigId 服务配置Id
+                     * 
                      */
                     void SetServiceConfigId(const std::string& _serviceConfigId);
 
                     /**
                      * 判断参数 ServiceConfigId 是否已赋值
                      * @return ServiceConfigId 是否已赋值
+                     * 
                      */
                     bool ServiceConfigIdHasBeenSet() const;
 
                     /**
                      * 获取服务配置名称
                      * @return ServiceConfigName 服务配置名称
+                     * 
                      */
                     std::string GetServiceConfigName() const;
 
                     /**
                      * 设置服务配置名称
-                     * @param ServiceConfigName 服务配置名称
+                     * @param _serviceConfigName 服务配置名称
+                     * 
                      */
                     void SetServiceConfigName(const std::string& _serviceConfigName);
 
                     /**
                      * 判断参数 ServiceConfigName 是否已赋值
                      * @return ServiceConfigName 是否已赋值
+                     * 
                      */
                     bool ServiceConfigNameHasBeenSet() const;
 

@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取cos的end point。
                      * @return CosEndPoint cos的end point。
+                     * 
                      */
                     std::string GetCosEndPoint() const;
 
                     /**
                      * 设置cos的end point。
-                     * @param CosEndPoint cos的end point。
+                     * @param _cosEndPoint cos的end point。
+                     * 
                      */
                     void SetCosEndPoint(const std::string& _cosEndPoint);
 
                     /**
                      * 判断参数 CosEndPoint 是否已赋值
                      * @return CosEndPoint 是否已赋值
+                     * 
                      */
                     bool CosEndPointHasBeenSet() const;
 
                     /**
                      * 获取cos api密钥id。
                      * @return CosSecretId cos api密钥id。
+                     * 
                      */
                     std::string GetCosSecretId() const;
 
                     /**
                      * 设置cos api密钥id。
-                     * @param CosSecretId cos api密钥id。
+                     * @param _cosSecretId cos api密钥id。
+                     * 
                      */
                     void SetCosSecretId(const std::string& _cosSecretId);
 
                     /**
                      * 判断参数 CosSecretId 是否已赋值
                      * @return CosSecretId 是否已赋值
+                     * 
                      */
                     bool CosSecretIdHasBeenSet() const;
 
                     /**
                      * 获取cos api密钥。
                      * @return CosSecretKey cos api密钥。
+                     * 
                      */
                     std::string GetCosSecretKey() const;
 
                     /**
                      * 设置cos api密钥。
-                     * @param CosSecretKey cos api密钥。
+                     * @param _cosSecretKey cos api密钥。
+                     * 
                      */
                     void SetCosSecretKey(const std::string& _cosSecretKey);
 
                     /**
                      * 判断参数 CosSecretKey 是否已赋值
                      * @return CosSecretKey 是否已赋值
+                     * 
                      */
                     bool CosSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY
                      * @return DrmType 使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY
+                     * 
                      */
                     std::string GetDrmType() const;
 
                     /**
                      * 设置使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY
-                     * @param DrmType 使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY
+                     * @param _drmType 使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY
+                     * 
                      */
                     void SetDrmType(const std::string& _drmType);
 
                     /**
                      * 判断参数 DrmType 是否已赋值
                      * @return DrmType 是否已赋值
+                     * 
                      */
                     bool DrmTypeHasBeenSet() const;
 
                     /**
                      * 获取存储在COS上的原始内容信息
                      * @return SourceObject 存储在COS上的原始内容信息
+                     * 
                      */
                     DrmSourceObject GetSourceObject() const;
 
                     /**
                      * 设置存储在COS上的原始内容信息
-                     * @param SourceObject 存储在COS上的原始内容信息
+                     * @param _sourceObject 存储在COS上的原始内容信息
+                     * 
                      */
                     void SetSourceObject(const DrmSourceObject& _sourceObject);
 
                     /**
                      * 判断参数 SourceObject 是否已赋值
                      * @return SourceObject 是否已赋值
+                     * 
                      */
                     bool SourceObjectHasBeenSet() const;
 
                     /**
                      * 获取加密后的内容存储到COS的对象
                      * @return OutputObjects 加密后的内容存储到COS的对象
+                     * 
                      */
                     std::vector<DrmOutputObject> GetOutputObjects() const;
 
                     /**
                      * 设置加密后的内容存储到COS的对象
-                     * @param OutputObjects 加密后的内容存储到COS的对象
+                     * @param _outputObjects 加密后的内容存储到COS的对象
+                     * 
                      */
                     void SetOutputObjects(const std::vector<DrmOutputObject>& _outputObjects);
 
                     /**
                      * 判断参数 OutputObjects 是否已赋值
                      * @return OutputObjects 是否已赋值
+                     * 
                      */
                     bool OutputObjectsHasBeenSet() const;
 

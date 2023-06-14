@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取表格所属集群id
                      * @return ClusterId 表格所属集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格所属集群id
-                     * @param ClusterId 表格所属集群id
+                     * @param _clusterId 表格所属集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取所属表格组ID
                      * @return TableGroupId 所属表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置所属表格组ID
-                     * @param TableGroupId 所属表格组ID
+                     * @param _tableGroupId 所属表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return TableName 表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取快照名称
                      * @return SnapshotName 快照名称
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称
-                     * @param SnapshotName 快照名称
+                     * @param _snapshotName 快照名称
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取批量拉取快照的表格列表
                      * @return SelectedTables 批量拉取快照的表格列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置批量拉取快照的表格列表
-                     * @param SelectedTables 批量拉取快照的表格列表
+                     * @param _selectedTables 批量拉取快照的表格列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 

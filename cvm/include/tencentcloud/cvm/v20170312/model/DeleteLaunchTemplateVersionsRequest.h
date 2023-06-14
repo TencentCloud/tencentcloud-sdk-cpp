@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取启动模板ID。
                      * @return LaunchTemplateId 启动模板ID。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置启动模板ID。
-                     * @param LaunchTemplateId 启动模板ID。
+                     * @param _launchTemplateId 启动模板ID。
+                     * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取实例启动模板版本列表。
                      * @return LaunchTemplateVersions 实例启动模板版本列表。
+                     * 
                      */
                     std::vector<int64_t> GetLaunchTemplateVersions() const;
 
                     /**
                      * 设置实例启动模板版本列表。
-                     * @param LaunchTemplateVersions 实例启动模板版本列表。
+                     * @param _launchTemplateVersions 实例启动模板版本列表。
+                     * 
                      */
                     void SetLaunchTemplateVersions(const std::vector<int64_t>& _launchTemplateVersions);
 
                     /**
                      * 判断参数 LaunchTemplateVersions 是否已赋值
                      * @return LaunchTemplateVersions 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateVersionsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取法人姓名
                      * @return LegalName 法人姓名
+                     * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名
-                     * @param LegalName 法人姓名
+                     * @param _legalName 法人姓名
+                     * 
                      */
                     void SetLegalName(const std::string& _legalName);
 
                     /**
                      * 判断参数 LegalName 是否已赋值
                      * @return LegalName 是否已赋值
+                     * 
                      */
                     bool LegalNameHasBeenSet() const;
 
                     /**
                      * 获取社会统一信用代码
                      * @return Uscc 社会统一信用代码
+                     * 
                      */
                     std::string GetUscc() const;
 
                     /**
                      * 设置社会统一信用代码
-                     * @param Uscc 社会统一信用代码
+                     * @param _uscc 社会统一信用代码
+                     * 
                      */
                     void SetUscc(const std::string& _uscc);
 
                     /**
                      * 判断参数 Uscc 是否已赋值
                      * @return Uscc 是否已赋值
+                     * 
                      */
                     bool UsccHasBeenSet() const;
 

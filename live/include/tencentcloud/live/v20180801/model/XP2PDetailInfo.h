@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取CDN流量。
                      * @return CdnBytes CDN流量。
+                     * 
                      */
                     int64_t GetCdnBytes() const;
 
                     /**
                      * 设置CDN流量。
-                     * @param CdnBytes CDN流量。
+                     * @param _cdnBytes CDN流量。
+                     * 
                      */
                     void SetCdnBytes(const int64_t& _cdnBytes);
 
                     /**
                      * 判断参数 CdnBytes 是否已赋值
                      * @return CdnBytes 是否已赋值
+                     * 
                      */
                     bool CdnBytesHasBeenSet() const;
 
                     /**
                      * 获取P2P流量。
                      * @return P2pBytes P2P流量。
+                     * 
                      */
                     int64_t GetP2pBytes() const;
 
                     /**
                      * 设置P2P流量。
-                     * @param P2pBytes P2P流量。
+                     * @param _p2pBytes P2P流量。
+                     * 
                      */
                     void SetP2pBytes(const int64_t& _p2pBytes);
 
                     /**
                      * 判断参数 P2pBytes 是否已赋值
                      * @return P2pBytes 是否已赋值
+                     * 
                      */
                     bool P2pBytesHasBeenSet() const;
 
                     /**
                      * 获取卡播人数。
                      * @return StuckPeople 卡播人数。
+                     * 
                      */
                     int64_t GetStuckPeople() const;
 
                     /**
                      * 设置卡播人数。
-                     * @param StuckPeople 卡播人数。
+                     * @param _stuckPeople 卡播人数。
+                     * 
                      */
                     void SetStuckPeople(const int64_t& _stuckPeople);
 
                     /**
                      * 判断参数 StuckPeople 是否已赋值
                      * @return StuckPeople 是否已赋值
+                     * 
                      */
                     bool StuckPeopleHasBeenSet() const;
 
                     /**
                      * 获取卡播次数。
                      * @return StuckTimes 卡播次数。
+                     * 
                      */
                     int64_t GetStuckTimes() const;
 
                     /**
                      * 设置卡播次数。
-                     * @param StuckTimes 卡播次数。
+                     * @param _stuckTimes 卡播次数。
+                     * 
                      */
                     void SetStuckTimes(const int64_t& _stuckTimes);
 
                     /**
                      * 判断参数 StuckTimes 是否已赋值
                      * @return StuckTimes 是否已赋值
+                     * 
                      */
                     bool StuckTimesHasBeenSet() const;
 
                     /**
                      * 获取在线人数。
                      * @return OnlinePeople 在线人数。
+                     * 
                      */
                     int64_t GetOnlinePeople() const;
 
                     /**
                      * 设置在线人数。
-                     * @param OnlinePeople 在线人数。
+                     * @param _onlinePeople 在线人数。
+                     * 
                      */
                     void SetOnlinePeople(const int64_t& _onlinePeople);
 
                     /**
                      * 判断参数 OnlinePeople 是否已赋值
                      * @return OnlinePeople 是否已赋值
+                     * 
                      */
                     bool OnlinePeopleHasBeenSet() const;
 
                     /**
                      * 获取起播请求次数
                      * @return Request 起播请求次数
+                     * 
                      */
                     int64_t GetRequest() const;
 
                     /**
                      * 设置起播请求次数
-                     * @param Request 起播请求次数
+                     * @param _request 起播请求次数
+                     * 
                      */
                     void SetRequest(const int64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
                     /**
                      * 获取起播成功次数
                      * @return RequestSuccess 起播成功次数
+                     * 
                      */
                     int64_t GetRequestSuccess() const;
 
                     /**
                      * 设置起播成功次数
-                     * @param RequestSuccess 起播成功次数
+                     * @param _requestSuccess 起播成功次数
+                     * 
                      */
                     void SetRequestSuccess(const int64_t& _requestSuccess);
 
                     /**
                      * 判断参数 RequestSuccess 是否已赋值
                      * @return RequestSuccess 是否已赋值
+                     * 
                      */
                     bool RequestSuccessHasBeenSet() const;
 
                     /**
                      * 获取时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。
                      * @return Time 时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。
-                     * @param Time 时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。
+                     * @param _time 时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，分live和vod两种。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，分live和vod两种。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型，分live和vod两种。
+                     * @param _type 类型，分live和vod两种。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamName 流ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamName 流ID。
+                     * @param _streamName 流ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppId。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置AppId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId AppId。
+                     * @param _appId AppId。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 

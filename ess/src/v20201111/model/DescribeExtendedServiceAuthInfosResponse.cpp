@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-ModifyAMQPVHostResponse::ModifyAMQPVHostResponse()
+DescribeExtendedServiceAuthInfosResponse::DescribeExtendedServiceAuthInfosResponse() :
+    m_authInfoListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyAMQPVHostResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeExtendedServiceAuthInfosResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,50 @@ CoreInternalOutcome ModifyAMQPVHostResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("AuthInfoList") && !rsp["AuthInfoList"].IsNull())
+    {
+        if (!rsp["AuthInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuthInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AuthInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExtendAuthInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_authInfoList.push_back(item);
+        }
+        m_authInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyAMQPVHostResponse::ToJsonString() const
+string DescribeExtendedServiceAuthInfosResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_authInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_authInfoList.begin(); itr != m_authInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string ModifyAMQPVHostResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ExtendAuthInfo> DescribeExtendedServiceAuthInfosResponse::GetAuthInfoList() const
+{
+    return m_authInfoList;
+}
+
+bool DescribeExtendedServiceAuthInfosResponse::AuthInfoListHasBeenSet() const
+{
+    return m_authInfoListHasBeenSet;
+}
 
 

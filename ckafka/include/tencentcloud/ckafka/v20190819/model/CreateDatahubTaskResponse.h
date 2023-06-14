@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return Result 任务id
+                     * 
                      */
                     CreateDatahubTaskRes GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

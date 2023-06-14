@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的置放群组 ID 列表。
                      * @return DeployGroupIds 要删除的置放群组 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetDeployGroupIds() const;
 
                     /**
                      * 设置要删除的置放群组 ID 列表。
-                     * @param DeployGroupIds 要删除的置放群组 ID 列表。
+                     * @param _deployGroupIds 要删除的置放群组 ID 列表。
+                     * 
                      */
                     void SetDeployGroupIds(const std::vector<std::string>& _deployGroupIds);
 
                     /**
                      * 判断参数 DeployGroupIds 是否已赋值
                      * @return DeployGroupIds 是否已赋值
+                     * 
                      */
                     bool DeployGroupIdsHasBeenSet() const;
 

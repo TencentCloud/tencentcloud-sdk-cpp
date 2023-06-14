@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardRuleDetailList 返回值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStandardRuleDetailList() const;
 
                     /**
                      * 判断参数 StandardRuleDetailList 是否已赋值
                      * @return StandardRuleDetailList 是否已赋值
+                     * 
                      */
                     bool StandardRuleDetailListHasBeenSet() const;
 

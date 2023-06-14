@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取专注的起始与终止时间信息。
                      * @return Concentration 专注的起始与终止时间信息。
+                     * 
                      */
                     std::vector<TimeType> GetConcentration() const;
 
                     /**
                      * 设置专注的起始与终止时间信息。
-                     * @param Concentration 专注的起始与终止时间信息。
+                     * @param _concentration 专注的起始与终止时间信息。
+                     * 
                      */
                     void SetConcentration(const std::vector<TimeType>& _concentration);
 
                     /**
                      * 判断参数 Concentration 是否已赋值
                      * @return Concentration 是否已赋值
+                     * 
                      */
                     bool ConcentrationHasBeenSet() const;
 
                     /**
                      * 获取微笑的起始与终止时间信息。
                      * @return Smile 微笑的起始与终止时间信息。
+                     * 
                      */
                     std::vector<TimeType> GetSmile() const;
 
                     /**
                      * 设置微笑的起始与终止时间信息。
-                     * @param Smile 微笑的起始与终止时间信息。
+                     * @param _smile 微笑的起始与终止时间信息。
+                     * 
                      */
                     void SetSmile(const std::vector<TimeType>& _smile);
 
                     /**
                      * 判断参数 Smile 是否已赋值
                      * @return Smile 是否已赋值
+                     * 
                      */
                     bool SmileHasBeenSet() const;
 
                     /**
                      * 获取高光集锦视频地址，保存剪辑好的视频地址。
                      * @return HighlightsUrl 高光集锦视频地址，保存剪辑好的视频地址。
+                     * 
                      */
                     std::string GetHighlightsUrl() const;
 
                     /**
                      * 设置高光集锦视频地址，保存剪辑好的视频地址。
-                     * @param HighlightsUrl 高光集锦视频地址，保存剪辑好的视频地址。
+                     * @param _highlightsUrl 高光集锦视频地址，保存剪辑好的视频地址。
+                     * 
                      */
                     void SetHighlightsUrl(const std::string& _highlightsUrl);
 
                     /**
                      * 判断参数 HighlightsUrl 是否已赋值
                      * @return HighlightsUrl 是否已赋值
+                     * 
                      */
                     bool HighlightsUrlHasBeenSet() const;
 
                     /**
                      * 获取片段中识别出来的人脸ID。
                      * @return PersonId 片段中识别出来的人脸ID。
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置片段中识别出来的人脸ID。
-                     * @param PersonId 片段中识别出来的人脸ID。
+                     * @param _personId 片段中识别出来的人脸ID。
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

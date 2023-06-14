@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取参数名称
                      * @return Name 参数名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名称
-                     * @param Name 参数名称
+                     * @param _name 参数名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取参数类型
                      * @return Type 参数类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型
-                     * @param Type 参数类型
+                     * @param _type 参数类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取参数位置
                      * @return In 参数位置
+                     * 
                      */
                     std::string GetIn() const;
 
                     /**
                      * 设置参数位置
-                     * @param In 参数位置
+                     * @param _in 参数位置
+                     * 
                      */
                     void SetIn(const std::string& _in);
 
                     /**
                      * 判断参数 In 是否已赋值
                      * @return In 是否已赋值
+                     * 
                      */
                     bool InHasBeenSet() const;
 
                     /**
                      * 获取参数描述
                      * @return Description 参数描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置参数描述
-                     * @param Description 参数描述
+                     * @param _description 参数描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取参数是否必须
                      * @return Required 参数是否必须
+                     * 
                      */
                     bool GetRequired() const;
 
                     /**
                      * 设置参数是否必须
-                     * @param Required 参数是否必须
+                     * @param _required 参数是否必须
+                     * 
                      */
                     void SetRequired(const bool& _required);
 
                     /**
                      * 判断参数 Required 是否已赋值
                      * @return Required 是否已赋值
+                     * 
                      */
                     bool RequiredHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue 参数的默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置参数的默认值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultValue 参数的默认值
+                     * @param _defaultValue 参数的默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 

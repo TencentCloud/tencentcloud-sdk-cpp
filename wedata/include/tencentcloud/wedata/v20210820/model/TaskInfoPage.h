@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取页号
                      * @return PageNumber 页号
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页号
-                     * @param PageNumber 页号
+                     * @param _pageNumber 页号
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return PageSize 页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置页大小
-                     * @param PageSize 页大小
+                     * @param _pageSize 页大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取工作流列表信息
                      * @return Items 工作流列表信息
+                     * 
                      */
                     std::vector<TaskCanvasInfo> GetItems() const;
 
                     /**
                      * 设置工作流列表信息
-                     * @param Items 工作流列表信息
+                     * @param _items 工作流列表信息
+                     * 
                      */
                     void SetItems(const std::vector<TaskCanvasInfo>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取总页数
                      * @return TotalPage 总页数
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 设置总页数
-                     * @param TotalPage 总页数
+                     * @param _totalPage 总页数
+                     * 
                      */
                     void SetTotalPage(const uint64_t& _totalPage);
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return PageCount 页数
+                     * 
                      */
                     uint64_t GetPageCount() const;
 
                     /**
                      * 设置页数
-                     * @param PageCount 页数
+                     * @param _pageCount 页数
+                     * 
                      */
                     void SetPageCount(const uint64_t& _pageCount);
 
                     /**
                      * 判断参数 PageCount 是否已赋值
                      * @return PageCount 是否已赋值
+                     * 
                      */
                     bool PageCountHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总条数
-                     * @param TotalCount 总条数
+                     * @param _totalCount 总条数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

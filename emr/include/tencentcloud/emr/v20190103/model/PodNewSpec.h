@@ -51,126 +51,147 @@ namespace TencentCloud
                     /**
                      * 获取外部资源提供者的标识符，例如"cls-a1cd23fa"。
                      * @return ResourceProviderIdentifier 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     * 
                      */
                     std::string GetResourceProviderIdentifier() const;
 
                     /**
                      * 设置外部资源提供者的标识符，例如"cls-a1cd23fa"。
-                     * @param ResourceProviderIdentifier 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     * @param _resourceProviderIdentifier 外部资源提供者的标识符，例如"cls-a1cd23fa"。
+                     * 
                      */
                     void SetResourceProviderIdentifier(const std::string& _resourceProviderIdentifier);
 
                     /**
                      * 判断参数 ResourceProviderIdentifier 是否已赋值
                      * @return ResourceProviderIdentifier 是否已赋值
+                     * 
                      */
                     bool ResourceProviderIdentifierHasBeenSet() const;
 
                     /**
                      * 获取外部资源提供者类型，例如"tke",当前仅支持"tke"。
                      * @return ResourceProviderType 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     * 
                      */
                     std::string GetResourceProviderType() const;
 
                     /**
                      * 设置外部资源提供者类型，例如"tke",当前仅支持"tke"。
-                     * @param ResourceProviderType 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     * @param _resourceProviderType 外部资源提供者类型，例如"tke",当前仅支持"tke"。
+                     * 
                      */
                     void SetResourceProviderType(const std::string& _resourceProviderType);
 
                     /**
                      * 判断参数 ResourceProviderType 是否已赋值
                      * @return ResourceProviderType 是否已赋值
+                     * 
                      */
                     bool ResourceProviderTypeHasBeenSet() const;
 
                     /**
                      * 获取资源的用途，即节点类型，当前仅支持"TASK"。
                      * @return NodeFlag 资源的用途，即节点类型，当前仅支持"TASK"。
+                     * 
                      */
                     std::string GetNodeFlag() const;
 
                     /**
                      * 设置资源的用途，即节点类型，当前仅支持"TASK"。
-                     * @param NodeFlag 资源的用途，即节点类型，当前仅支持"TASK"。
+                     * @param _nodeFlag 资源的用途，即节点类型，当前仅支持"TASK"。
+                     * 
                      */
                     void SetNodeFlag(const std::string& _nodeFlag);
 
                     /**
                      * 判断参数 NodeFlag 是否已赋值
                      * @return NodeFlag 是否已赋值
+                     * 
                      */
                     bool NodeFlagHasBeenSet() const;
 
                     /**
                      * 获取CPU核数。
                      * @return Cpu CPU核数。
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数。
-                     * @param Cpu CPU核数。
+                     * @param _cpu CPU核数。
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位为GB。
                      * @return Memory 内存大小，单位为GB。
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位为GB。
-                     * @param Memory 内存大小，单位为GB。
+                     * @param _memory 内存大小，单位为GB。
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取Eks集群-CPU类型，当前支持"intel"和"amd"
                      * @return CpuType Eks集群-CPU类型，当前支持"intel"和"amd"
+                     * 
                      */
                     std::string GetCpuType() const;
 
                     /**
                      * 设置Eks集群-CPU类型，当前支持"intel"和"amd"
-                     * @param CpuType Eks集群-CPU类型，当前支持"intel"和"amd"
+                     * @param _cpuType Eks集群-CPU类型，当前支持"intel"和"amd"
+                     * 
                      */
                     void SetCpuType(const std::string& _cpuType);
 
                     /**
                      * 判断参数 CpuType 是否已赋值
                      * @return CpuType 是否已赋值
+                     * 
                      */
                     bool CpuTypeHasBeenSet() const;
 
                     /**
                      * 获取Pod节点数据目录挂载信息。
                      * @return PodVolumes Pod节点数据目录挂载信息。
+                     * 
                      */
                     std::vector<PodVolume> GetPodVolumes() const;
 
                     /**
                      * 设置Pod节点数据目录挂载信息。
-                     * @param PodVolumes Pod节点数据目录挂载信息。
+                     * @param _podVolumes Pod节点数据目录挂载信息。
+                     * 
                      */
                     void SetPodVolumes(const std::vector<PodVolume>& _podVolumes);
 
                     /**
                      * 判断参数 PodVolumes 是否已赋值
                      * @return PodVolumes 是否已赋值
+                     * 
                      */
                     bool PodVolumesHasBeenSet() const;
 
@@ -181,6 +202,7 @@ namespace TencentCloud
                      * @return EnableDynamicSpecFlag 是否浮动规格，默认否
 <li>true：代表是</li>
 <li>false：代表否</li>
+                     * 
                      */
                     bool GetEnableDynamicSpecFlag() const;
 
@@ -188,15 +210,17 @@ namespace TencentCloud
                      * 设置是否浮动规格，默认否
 <li>true：代表是</li>
 <li>false：代表否</li>
-                     * @param EnableDynamicSpecFlag 是否浮动规格，默认否
+                     * @param _enableDynamicSpecFlag 是否浮动规格，默认否
 <li>true：代表是</li>
 <li>false：代表否</li>
+                     * 
                      */
                     void SetEnableDynamicSpecFlag(const bool& _enableDynamicSpecFlag);
 
                     /**
                      * 判断参数 EnableDynamicSpecFlag 是否已赋值
                      * @return EnableDynamicSpecFlag 是否已赋值
+                     * 
                      */
                     bool EnableDynamicSpecFlagHasBeenSet() const;
 
@@ -205,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicPodSpec 浮动规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DynamicPodSpec GetDynamicPodSpec() const;
 
                     /**
                      * 设置浮动规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DynamicPodSpec 浮动规格
+                     * @param _dynamicPodSpec 浮动规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDynamicPodSpec(const DynamicPodSpec& _dynamicPodSpec);
 
                     /**
                      * 判断参数 DynamicPodSpec 是否已赋值
                      * @return DynamicPodSpec 是否已赋值
+                     * 
                      */
                     bool DynamicPodSpecHasBeenSet() const;
 
@@ -227,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 代表vpc网络唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置代表vpc网络唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 代表vpc网络唯一id
+                     * @param _vpcId 代表vpc网络唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -249,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 代表vpc子网唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置代表vpc子网唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 代表vpc子网唯一id
+                     * @param _subnetId 代表vpc子网唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -271,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName pod name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置pod name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodName pod name
+                     * @param _podName pod name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 

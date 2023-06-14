@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取姓名（人像面）
                      * @return Name 姓名（人像面）
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取性别（人像面）
                      * @return Sex 性别（人像面）
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取民族（人像面）
                      * @return Nation 民族（人像面）
+                     * 
                      */
                     std::string GetNation() const;
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
+                     * 
                      */
                     bool NationHasBeenSet() const;
 
                     /**
                      * 获取出生日期（人像面）
                      * @return Birth 出生日期（人像面）
+                     * 
                      */
                     std::string GetBirth() const;
 
                     /**
                      * 判断参数 Birth 是否已赋值
                      * @return Birth 是否已赋值
+                     * 
                      */
                     bool BirthHasBeenSet() const;
 
                     /**
                      * 获取地址（人像面）
                      * @return Address 地址（人像面）
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取身份证号（人像面）
                      * @return IdNum 身份证号（人像面）
+                     * 
                      */
                     std::string GetIdNum() const;
 
                     /**
                      * 判断参数 IdNum 是否已赋值
                      * @return IdNum 是否已赋值
+                     * 
                      */
                     bool IdNumHasBeenSet() const;
 
                     /**
                      * 获取发证机关（国徽面）
                      * @return Authority 发证机关（国徽面）
+                     * 
                      */
                     std::string GetAuthority() const;
 
                     /**
                      * 判断参数 Authority 是否已赋值
                      * @return Authority 是否已赋值
+                     * 
                      */
                     bool AuthorityHasBeenSet() const;
 
                     /**
                      * 获取证件有效期（国徽面）
                      * @return ValidDate 证件有效期（国徽面）
+                     * 
                      */
                     std::string GetValidDate() const;
 
                     /**
                      * 判断参数 ValidDate 是否已赋值
                      * @return ValidDate 是否已赋值
+                     * 
                      */
                     bool ValidDateHasBeenSet() const;
 
@@ -172,12 +188,14 @@ WarnInfos，告警信息，Code 告警码列表和释义：
 -9104	临时身份证告警，
 -9106	身份证 PS 告警，
 -9107       身份证反光告警。
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 

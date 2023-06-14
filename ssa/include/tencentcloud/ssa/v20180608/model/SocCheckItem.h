@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名字
+                     * @param _name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelId 唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevelId() const;
 
                     /**
                      * 设置唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LevelId 唯一id
+                     * @param _levelId 唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevelId(const std::string& _levelId);
 
                     /**
                      * 判断参数 LevelId 是否已赋值
                      * @return LevelId 是否已赋值
+                     * 
                      */
                     bool LevelIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 成功数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 设置成功数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessCount 成功数
+                     * @param _successCount 成功数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessCount(const int64_t& _successCount);
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCount 失败数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailCount() const;
 
                     /**
                      * 设置失败数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailCount 失败数
+                     * @param _failCount 失败数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailCount(const int64_t& _failCount);
 
                     /**
                      * 判断参数 FailCount 是否已赋值
                      * @return FailCount 是否已赋值
+                     * 
                      */
                     bool FailCountHasBeenSet() const;
 

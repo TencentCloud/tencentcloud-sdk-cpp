@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群实例Id
                      * @return InstanceId 集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例Id
-                     * @param InstanceId 集群实例Id
+                     * @param _instanceId 集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取vhost名,不传则查询全部
                      * @return VirtualHost vhost名,不传则查询全部
+                     * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
                      * 设置vhost名,不传则查询全部
-                     * @param VirtualHost vhost名,不传则查询全部
+                     * @param _virtualHost vhost名,不传则查询全部
+                     * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
 
                     /**
                      * 判断参数 VirtualHost 是否已赋值
                      * @return VirtualHost 是否已赋值
+                     * 
                      */
                     bool VirtualHostHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配
                      * @return Filters search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配
+                     * 
                      */
                     Filter GetFilters() const;
 
                     /**
                      * 设置search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配
-                     * @param Filters search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配
+                     * @param _filters search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配
+                     * 
                      */
                     void SetFilters(const Filter& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

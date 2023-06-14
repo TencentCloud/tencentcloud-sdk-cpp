@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取发生事件
                      * @return Events 发生事件
+                     * 
                      */
                     std::vector<std::string> GetEvents() const;
 
                     /**
                      * 设置发生事件
-                     * @param Events 发生事件
+                     * @param _events 发生事件
+                     * 
                      */
                     void SetEvents(const std::vector<std::string>& _events);
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
                     /**
                      * 获取webhook的网址
                      * @return URL webhook的网址
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置webhook的网址
-                     * @param URL webhook的网址
+                     * @param _uRL webhook的网址
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 

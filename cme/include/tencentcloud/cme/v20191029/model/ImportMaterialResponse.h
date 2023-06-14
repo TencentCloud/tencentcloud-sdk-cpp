@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取媒体 Id。
                      * @return MaterialId 媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取媒体文预处理任务 ID，如果未指定发起预处理任务则为空。
                      * @return PreProcessTaskId 媒体文预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * 
                      */
                     std::string GetPreProcessTaskId() const;
 
                     /**
                      * 判断参数 PreProcessTaskId 是否已赋值
                      * @return PreProcessTaskId 是否已赋值
+                     * 
                      */
                     bool PreProcessTaskIdHasBeenSet() const;
 

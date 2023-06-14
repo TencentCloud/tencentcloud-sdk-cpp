@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 指标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指标名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 指标名称
+                     * @param _name 指标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Function 指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFunction() const;
 
                     /**
                      * 设置指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Function 指标计算方式
+                     * @param _function 指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFunction(const std::string& _function);
 
                     /**
                      * 判断参数 Function 是否已赋值
                      * @return Function 是否已赋值
+                     * 
                      */
                     bool FunctionHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return Name 指标名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指标名
-                     * @param Name 指标名
+                     * @param _name 指标名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取指标值
                      * @return Value 指标值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置指标值
-                     * @param Value 指标值
+                     * @param _value 指标值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

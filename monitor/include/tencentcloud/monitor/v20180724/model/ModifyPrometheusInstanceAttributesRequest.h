@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
                      * @return DataRetentionTime 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
                      * 设置存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
-                     * @param DataRetentionTime 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * @param _dataRetentionTime 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
 
                     /**
                      * 判断参数 DataRetentionTime 是否已赋值
                      * @return DataRetentionTime 是否已赋值
+                     * 
                      */
                     bool DataRetentionTimeHasBeenSet() const;
 

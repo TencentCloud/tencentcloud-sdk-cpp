@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取快照策略修改信息。
                      * @return SnapshotPoliciesInfo 快照策略修改信息。
+                     * 
                      */
                     std::vector<BatchModifySnapshotPolicy> GetSnapshotPoliciesInfo() const;
 
                     /**
                      * 设置快照策略修改信息。
-                     * @param SnapshotPoliciesInfo 快照策略修改信息。
+                     * @param _snapshotPoliciesInfo 快照策略修改信息。
+                     * 
                      */
                     void SetSnapshotPoliciesInfo(const std::vector<BatchModifySnapshotPolicy>& _snapshotPoliciesInfo);
 
                     /**
                      * 判断参数 SnapshotPoliciesInfo 是否已赋值
                      * @return SnapshotPoliciesInfo 是否已赋值
+                     * 
                      */
                     bool SnapshotPoliciesInfoHasBeenSet() const;
 

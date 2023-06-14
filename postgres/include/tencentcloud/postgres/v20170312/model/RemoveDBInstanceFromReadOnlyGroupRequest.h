@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return DBInstanceId 实例ID
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param DBInstanceId 实例ID
+                     * @param _dBInstanceId 实例ID
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读组ID
                      * @return ReadOnlyGroupId 只读组ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组ID
-                     * @param ReadOnlyGroupId 只读组ID
+                     * @param _readOnlyGroupId 只读组ID
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 

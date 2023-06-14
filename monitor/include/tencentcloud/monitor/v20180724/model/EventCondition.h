@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmNotifyPeriod 告警通知频率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmNotifyPeriod() const;
 
                     /**
                      * 设置告警通知频率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmNotifyPeriod 告警通知频率
+                     * @param _alarmNotifyPeriod 告警通知频率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmNotifyPeriod(const std::string& _alarmNotifyPeriod);
 
                     /**
                      * 判断参数 AlarmNotifyPeriod 是否已赋值
                      * @return AlarmNotifyPeriod 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
@@ -73,74 +76,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmNotifyType() const;
 
                     /**
                      * 设置重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
+                     * @param _alarmNotifyType 重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmNotifyType(const std::string& _alarmNotifyType);
 
                     /**
                      * 判断参数 AlarmNotifyType 是否已赋值
                      * @return AlarmNotifyType 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取事件ID
                      * @return EventID 事件ID
+                     * 
                      */
                     std::string GetEventID() const;
 
                     /**
                      * 设置事件ID
-                     * @param EventID 事件ID
+                     * @param _eventID 事件ID
+                     * 
                      */
                     void SetEventID(const std::string& _eventID);
 
                     /**
                      * 判断参数 EventID 是否已赋值
                      * @return EventID 是否已赋值
+                     * 
                      */
                     bool EventIDHasBeenSet() const;
 
                     /**
                      * 获取事件展示名称（对外）
                      * @return EventDisplayName 事件展示名称（对外）
+                     * 
                      */
                     std::string GetEventDisplayName() const;
 
                     /**
                      * 设置事件展示名称（对外）
-                     * @param EventDisplayName 事件展示名称（对外）
+                     * @param _eventDisplayName 事件展示名称（对外）
+                     * 
                      */
                     void SetEventDisplayName(const std::string& _eventDisplayName);
 
                     /**
                      * 判断参数 EventDisplayName 是否已赋值
                      * @return EventDisplayName 是否已赋值
+                     * 
                      */
                     bool EventDisplayNameHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleID 规则ID
+                     * 
                      */
                     std::string GetRuleID() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleID 规则ID
+                     * @param _ruleID 规则ID
+                     * 
                      */
                     void SetRuleID(const std::string& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 

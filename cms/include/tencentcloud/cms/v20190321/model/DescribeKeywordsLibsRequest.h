@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取单页条数，最大为100条
                      * @return Limit 单页条数，最大为100条
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单页条数，最大为100条
-                     * @param Limit 单页条数，最大为100条
+                     * @param _limit 单页条数，最大为100条
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取条数偏移量
                      * @return Offset 条数偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置条数偏移量
-                     * @param Offset 条数偏移量
+                     * @param _offset 条数偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)
                      * @return Filters 过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)
-                     * @param Filters 过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)
+                     * @param _filters 过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取主题信息列表
                      * @return Topics 主题信息列表
+                     * 
                      */
                     std::vector<RocketMQTopic> GetTopics() const;
 
                     /**
                      * 判断参数 Topics 是否已赋值
                      * @return Topics 是否已赋值
+                     * 
                      */
                     bool TopicsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取约束类型为section时的最小值
                      * @return Min 约束类型为section时的最小值
+                     * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置约束类型为section时的最小值
-                     * @param Min 约束类型为section时的最小值
+                     * @param _min 约束类型为section时的最小值
+                     * 
                      */
                     void SetMin(const std::string& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取约束类型为section时的最大值
                      * @return Max 约束类型为section时的最大值
+                     * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置约束类型为section时的最大值
-                     * @param Max 约束类型为section时的最大值
+                     * @param _max 约束类型为section时的最大值
+                     * 
                      */
                     void SetMax(const std::string& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 

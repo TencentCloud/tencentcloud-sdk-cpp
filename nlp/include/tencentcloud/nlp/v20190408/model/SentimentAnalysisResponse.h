@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取正面情感概率
                      * @return Positive 正面情感概率
+                     * 
                      */
                     double GetPositive() const;
 
                     /**
                      * 判断参数 Positive 是否已赋值
                      * @return Positive 是否已赋值
+                     * 
                      */
                     bool PositiveHasBeenSet() const;
 
@@ -60,24 +62,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Neutral 中性情感概率，当输入参数Mode取值为3class时有效，否则值为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetNeutral() const;
 
                     /**
                      * 判断参数 Neutral 是否已赋值
                      * @return Neutral 是否已赋值
+                     * 
                      */
                     bool NeutralHasBeenSet() const;
 
                     /**
                      * 获取负面情感概率
                      * @return Negative 负面情感概率
+                     * 
                      */
                     double GetNegative() const;
 
                     /**
                      * 判断参数 Negative 是否已赋值
                      * @return Negative 是否已赋值
+                     * 
                      */
                     bool NegativeHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 1、positive，表示正面情感
 2、negative，表示负面情感
 3、neutral，表示中性、无情感
+                     * 
                      */
                     std::string GetSentiment() const;
 
                     /**
                      * 判断参数 Sentiment 是否已赋值
                      * @return Sentiment 是否已赋值
+                     * 
                      */
                     bool SentimentHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取实例嵌套集合
                      * @return Instances 实例嵌套集合
+                     * 
                      */
                     std::vector<InstanceInfo> GetInstances() const;
 
                     /**
                      * 设置实例嵌套集合
-                     * @param Instances 实例嵌套集合
+                     * @param _instances 实例嵌套集合
+                     * 
                      */
                     void SetInstances(const std::vector<InstanceInfo>& _instances);
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 

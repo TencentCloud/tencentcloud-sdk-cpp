@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取水印模板唯一标识。
                      * @return Definition 水印模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置水印模板唯一标识。
-                     * @param Definition 水印模板唯一标识。
+                     * @param _definition 水印模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取水印模板名称，长度限制：64 个字符。
                      * @return Name 水印模板名称，长度限制：64 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置水印模板名称，长度限制：64 个字符。
-                     * @param Name 水印模板名称，长度限制：64 个字符。
+                     * @param _name 水印模板名称，长度限制：64 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息，长度限制：256 个字符。
                      * @return Comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息，长度限制：256 个字符。
-                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     * @param _comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -128,6 +140,7 @@ namespace TencentCloud
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
+                     * 
                      */
                     std::string GetCoordinateOrigin() const;
 
@@ -137,17 +150,19 @@ namespace TencentCloud
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-                     * @param CoordinateOrigin 原点位置，可选值：
+                     * @param _coordinateOrigin 原点位置，可选值：
 <li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
+                     * 
                      */
                     void SetCoordinateOrigin(const std::string& _coordinateOrigin);
 
                     /**
                      * 判断参数 CoordinateOrigin 是否已赋值
                      * @return CoordinateOrigin 是否已赋值
+                     * 
                      */
                     bool CoordinateOriginHasBeenSet() const;
 
@@ -158,6 +173,7 @@ namespace TencentCloud
                      * @return XPos 水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
+                     * 
                      */
                     std::string GetXPos() const;
 
@@ -165,15 +181,17 @@ namespace TencentCloud
                      * 设置水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
-                     * @param XPos 水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
+                     * @param _xPos 水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
+                     * 
                      */
                     void SetXPos(const std::string& _xPos);
 
                     /**
                      * 判断参数 XPos 是否已赋值
                      * @return XPos 是否已赋值
+                     * 
                      */
                     bool XPosHasBeenSet() const;
 
@@ -184,6 +202,7 @@ namespace TencentCloud
                      * @return YPos 水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
+                     * 
                      */
                     std::string GetYPos() const;
 
@@ -191,69 +210,80 @@ namespace TencentCloud
                      * 设置水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
-                     * @param YPos 水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
+                     * @param _yPos 水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
+                     * 
                      */
                     void SetYPos(const std::string& _yPos);
 
                     /**
                      * 判断参数 YPos 是否已赋值
                      * @return YPos 是否已赋值
+                     * 
                      */
                     bool YPosHasBeenSet() const;
 
                     /**
                      * 获取图片水印模板，该字段仅对图片水印模板有效。
                      * @return ImageTemplate 图片水印模板，该字段仅对图片水印模板有效。
+                     * 
                      */
                     ImageWatermarkInputForUpdate GetImageTemplate() const;
 
                     /**
                      * 设置图片水印模板，该字段仅对图片水印模板有效。
-                     * @param ImageTemplate 图片水印模板，该字段仅对图片水印模板有效。
+                     * @param _imageTemplate 图片水印模板，该字段仅对图片水印模板有效。
+                     * 
                      */
                     void SetImageTemplate(const ImageWatermarkInputForUpdate& _imageTemplate);
 
                     /**
                      * 判断参数 ImageTemplate 是否已赋值
                      * @return ImageTemplate 是否已赋值
+                     * 
                      */
                     bool ImageTemplateHasBeenSet() const;
 
                     /**
                      * 获取文字水印模板，该字段仅对文字水印模板有效。
                      * @return TextTemplate 文字水印模板，该字段仅对文字水印模板有效。
+                     * 
                      */
                     TextWatermarkTemplateInputForUpdate GetTextTemplate() const;
 
                     /**
                      * 设置文字水印模板，该字段仅对文字水印模板有效。
-                     * @param TextTemplate 文字水印模板，该字段仅对文字水印模板有效。
+                     * @param _textTemplate 文字水印模板，该字段仅对文字水印模板有效。
+                     * 
                      */
                     void SetTextTemplate(const TextWatermarkTemplateInputForUpdate& _textTemplate);
 
                     /**
                      * 判断参数 TextTemplate 是否已赋值
                      * @return TextTemplate 是否已赋值
+                     * 
                      */
                     bool TextTemplateHasBeenSet() const;
 
                     /**
                      * 获取SVG 水印模板，该字段仅对 SVG 水印模板有效。
                      * @return SvgTemplate SVG 水印模板，该字段仅对 SVG 水印模板有效。
+                     * 
                      */
                     SvgWatermarkInputForUpdate GetSvgTemplate() const;
 
                     /**
                      * 设置SVG 水印模板，该字段仅对 SVG 水印模板有效。
-                     * @param SvgTemplate SVG 水印模板，该字段仅对 SVG 水印模板有效。
+                     * @param _svgTemplate SVG 水印模板，该字段仅对 SVG 水印模板有效。
+                     * 
                      */
                     void SetSvgTemplate(const SvgWatermarkInputForUpdate& _svgTemplate);
 
                     /**
                      * 判断参数 SvgTemplate 是否已赋值
                      * @return SvgTemplate 是否已赋值
+                     * 
                      */
                     bool SvgTemplateHasBeenSet() const;
 

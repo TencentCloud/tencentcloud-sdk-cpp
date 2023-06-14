@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要修改的模型ID
                      * @return ModelId 要修改的模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置要修改的模型ID
-                     * @param ModelId 要修改的模型ID
+                     * @param _modelId 要修改的模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取要修改的模型名称，长度需在1-20个字符之间
                      * @return ModelName 要修改的模型名称，长度需在1-20个字符之间
+                     * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置要修改的模型名称，长度需在1-20个字符之间
-                     * @param ModelName 要修改的模型名称，长度需在1-20个字符之间
+                     * @param _modelName 要修改的模型名称，长度需在1-20个字符之间
+                     * 
                      */
                     void SetModelName(const std::string& _modelName);
 
                     /**
                      * 判断参数 ModelName 是否已赋值
                      * @return ModelName 是否已赋值
+                     * 
                      */
                     bool ModelNameHasBeenSet() const;
 
                     /**
                      * 获取要修改的模型类型，为8k或者16k
                      * @return ModelType 要修改的模型类型，为8k或者16k
+                     * 
                      */
                     std::string GetModelType() const;
 
                     /**
                      * 设置要修改的模型类型，为8k或者16k
-                     * @param ModelType 要修改的模型类型，为8k或者16k
+                     * @param _modelType 要修改的模型类型，为8k或者16k
+                     * 
                      */
                     void SetModelType(const std::string& _modelType);
 
                     /**
                      * 判断参数 ModelType 是否已赋值
                      * @return ModelType 是否已赋值
+                     * 
                      */
                     bool ModelTypeHasBeenSet() const;
 
                     /**
                      * 获取要修改的模型语料的下载地址，目前仅支持腾讯云cos
                      * @return TextUrl 要修改的模型语料的下载地址，目前仅支持腾讯云cos
+                     * 
                      */
                     std::string GetTextUrl() const;
 
                     /**
                      * 设置要修改的模型语料的下载地址，目前仅支持腾讯云cos
-                     * @param TextUrl 要修改的模型语料的下载地址，目前仅支持腾讯云cos
+                     * @param _textUrl 要修改的模型语料的下载地址，目前仅支持腾讯云cos
+                     * 
                      */
                     void SetTextUrl(const std::string& _textUrl);
 
                     /**
                      * 判断参数 TextUrl 是否已赋值
                      * @return TextUrl 是否已赋值
+                     * 
                      */
                     bool TextUrlHasBeenSet() const;
 

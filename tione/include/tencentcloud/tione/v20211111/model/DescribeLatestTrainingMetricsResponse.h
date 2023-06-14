@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metrics 最近一次上报的训练指标.每个Metric中只有一个点的数据, 即len(Values) = len(Timestamps) = 1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingMetric> GetMetrics() const;
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 

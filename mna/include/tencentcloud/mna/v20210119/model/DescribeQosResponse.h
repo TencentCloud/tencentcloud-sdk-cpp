@@ -48,12 +48,14 @@ namespace TencentCloud
 1：存在匹配的加速中会话
                      * @return Status 0：无匹配的加速中会话
 1：存在匹配的加速中会话
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcPublicIpv4 手机公网出口IP，仅匹配时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrcPublicIpv4() const;
 
                     /**
                      * 判断参数 SrcPublicIpv4 是否已赋值
                      * @return SrcPublicIpv4 是否已赋值
+                     * 
                      */
                     bool SrcPublicIpv4HasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestIpv4 业务访问目的IP，仅匹配时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDestIpv4() const;
 
                     /**
                      * 判断参数 DestIpv4 是否已赋值
                      * @return DestIpv4 是否已赋值
+                     * 
                      */
                     bool DestIpv4HasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 当前加速剩余时长（单位秒）有，仅匹配时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosMenu 加速套餐类型，仅匹配时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQosMenu() const;
 
                     /**
                      * 判断参数 QosMenu 是否已赋值
                      * @return QosMenu 是否已赋值
+                     * 
                      */
                     bool QosMenuHasBeenSet() const;
 

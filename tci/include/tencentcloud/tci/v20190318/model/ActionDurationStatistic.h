@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时长
                      * @return Duration 时长
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置时长
-                     * @param Duration 时长
+                     * @param _duration 时长
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

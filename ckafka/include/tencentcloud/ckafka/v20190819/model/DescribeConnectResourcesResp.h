@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取连接源个数
                      * @return TotalCount 连接源个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置连接源个数
-                     * @param TotalCount 连接源个数
+                     * @param _totalCount 连接源个数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectResourceList 连接源数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeConnectResource> GetConnectResourceList() const;
 
                     /**
                      * 设置连接源数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectResourceList 连接源数据
+                     * @param _connectResourceList 连接源数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectResourceList(const std::vector<DescribeConnectResource>& _connectResourceList);
 
                     /**
                      * 判断参数 ConnectResourceList 是否已赋值
                      * @return ConnectResourceList 是否已赋值
+                     * 
                      */
                     bool ConnectResourceListHasBeenSet() const;
 

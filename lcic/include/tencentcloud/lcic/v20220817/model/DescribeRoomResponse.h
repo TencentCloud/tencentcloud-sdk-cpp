@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取房间名称。
                      * @return Name 房间名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取预定的房间开始时间，unix时间戳。
                      * @return StartTime 预定的房间开始时间，unix时间戳。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取预定的房间结束时间，unix时间戳。
                      * @return EndTime 预定的房间结束时间，unix时间戳。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取老师的UserId。
                      * @return TeacherId 老师的UserId。
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -112,24 +122,28 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
+                     * 
                      */
                     uint64_t GetResolution() const;
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
                     /**
                      * 获取最大连麦人数（不包括老师）。取值范围[0, 16]
                      * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
                      * 判断参数 MaxMicNumber 是否已赋值
                      * @return MaxMicNumber 是否已赋值
+                     * 
                      */
                     bool MaxMicNumberHasBeenSet() const;
 
@@ -140,12 +154,14 @@ namespace TencentCloud
                      * @return AutoMic 进入课堂时是否自动连麦。可以有以下取值：
 0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
+                     * 
                      */
                     uint64_t GetAutoMic() const;
 
                     /**
                      * 判断参数 AutoMic 是否已赋值
                      * @return AutoMic 是否已赋值
+                     * 
                      */
                     bool AutoMicHasBeenSet() const;
 
@@ -156,12 +172,14 @@ namespace TencentCloud
                      * @return AudioQuality 高音质模式。可以有以下取值：
 0 不开启高音质（默认值）
 1 开启高音质
+                     * 
                      */
                     uint64_t GetAudioQuality() const;
 
                     /**
                      * 判断参数 AudioQuality 是否已赋值
                      * @return AudioQuality 是否已赋值
+                     * 
                      */
                     bool AudioQualityHasBeenSet() const;
 
@@ -172,12 +190,14 @@ video 纯视频
                      * @return SubType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
+                     * 
                      */
                     std::string GetSubType() const;
 
                     /**
                      * 判断参数 SubType 是否已赋值
                      * @return SubType 是否已赋值
+                     * 
                      */
                     bool SubTypeHasBeenSet() const;
 
@@ -190,12 +210,14 @@ video 纯视频
 0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * 
                      */
                     uint64_t GetDisableRecord() const;
 
                     /**
                      * 判断参数 DisableRecord 是否已赋值
                      * @return DisableRecord 是否已赋值
+                     * 
                      */
                     bool DisableRecordHasBeenSet() const;
 
@@ -204,12 +226,14 @@ video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Assistants 助教UserId列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAssistants() const;
 
                     /**
                      * 判断参数 Assistants 是否已赋值
                      * @return Assistants 是否已赋值
+                     * 
                      */
                     bool AssistantsHasBeenSet() const;
 
@@ -218,12 +242,14 @@ video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordUrl 录制地址（协议为https)。仅在房间结束后存在。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
                      * 判断参数 RecordUrl 是否已赋值
                      * @return RecordUrl 是否已赋值
+                     * 
                      */
                     bool RecordUrlHasBeenSet() const;
 
@@ -232,12 +258,14 @@ video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -246,24 +274,28 @@ video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 房间绑定的群组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取打开学生麦克风/摄像头的授权开关
                      * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 
                      */
                     uint64_t GetEnableDirectControl() const;
 
                     /**
                      * 判断参数 EnableDirectControl 是否已赋值
                      * @return EnableDirectControl 是否已赋值
+                     * 
                      */
                     bool EnableDirectControlHasBeenSet() const;
 

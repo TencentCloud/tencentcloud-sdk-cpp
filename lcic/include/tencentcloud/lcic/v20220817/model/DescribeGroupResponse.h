@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取群组名称
                      * @return GroupName 群组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherId 群主主讲人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
                      * @return GroupType 群组类型
 0-基础群组
 1-组合群组，若为1时会返回子群组ID
+                     * 
                      */
                     uint64_t GetGroupType() const;
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGroupIds 子群组ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubGroupIds() const;
 
                     /**
                      * 判断参数 SubGroupIds 是否已赋值
                      * @return SubGroupIds 是否已赋值
+                     * 
                      */
                     bool SubGroupIdsHasBeenSet() const;
 

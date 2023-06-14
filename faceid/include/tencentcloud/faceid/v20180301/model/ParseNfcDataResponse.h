@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultCode 0为首次查询成功，-1为查询失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultCode() const;
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdNum 身份证号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdNum() const;
 
                     /**
                      * 判断参数 IdNum 是否已赋值
                      * @return IdNum 是否已赋值
+                     * 
                      */
                     bool IdNumHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Picture 照片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPicture() const;
 
                     /**
                      * 判断参数 Picture 是否已赋值
                      * @return Picture 是否已赋值
+                     * 
                      */
                     bool PictureHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthDate 出生日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthDate() const;
 
                     /**
                      * 判断参数 BirthDate 是否已赋值
                      * @return BirthDate 是否已赋值
+                     * 
                      */
                     bool BirthDateHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 有效期起始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 有效期结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 住址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nation 民族
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNation() const;
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
+                     * 
                      */
                     bool NationHasBeenSet() const;
 
@@ -174,12 +192,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sex 性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
@@ -188,12 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdType 身份证 01 中国护照 03 军官证 04 武警证 05 港澳通行证 06 台胞证 07 外国护照 08 士兵证 09 临时身份证 10 户口本 11 警官证 12 外国人永久居留证 13 港澳台居民居住证 14 回乡证 15 大陆居民来往台湾通行证 16 其他证件 99
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdType() const;
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
@@ -202,12 +224,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnName 英文姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnName() const;
 
                     /**
                      * 判断参数 EnName 是否已赋值
                      * @return EnName 是否已赋值
+                     * 
                      */
                     bool EnNameHasBeenSet() const;
 
@@ -216,12 +240,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SigningOrganization 签发机关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSigningOrganization() const;
 
                     /**
                      * 判断参数 SigningOrganization 是否已赋值
                      * @return SigningOrganization 是否已赋值
+                     * 
                      */
                     bool SigningOrganizationHasBeenSet() const;
 
@@ -230,12 +256,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherIdNum 港澳台居民居住证，通行证号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOtherIdNum() const;
 
                     /**
                      * 判断参数 OtherIdNum 是否已赋值
                      * @return OtherIdNum 是否已赋值
+                     * 
                      */
                     bool OtherIdNumHasBeenSet() const;
 
@@ -244,12 +272,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nationality 旅行证件国籍
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
@@ -258,12 +288,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonalNumber 旅行证件机读区第二行 29~42 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPersonalNumber() const;
 
                     /**
                      * 判断参数 PersonalNumber 是否已赋值
                      * @return PersonalNumber 是否已赋值
+                     * 
                      */
                     bool PersonalNumberHasBeenSet() const;
 
@@ -276,12 +308,14 @@ namespace TencentCloud
 {"result_issuer ":"签发者证书合法性验证结果 ","result_pape r":"证件安全对象合法性验证 结果 ","result_data" :"防数据篡改验证结果 ","result_chip" :"防证书件芯片被复制验证结果"} 
  0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckMRTD() const;
 
                     /**
                      * 判断参数 CheckMRTD 是否已赋值
                      * @return CheckMRTD 是否已赋值
+                     * 
                      */
                     bool CheckMRTDHasBeenSet() const;
 
@@ -290,12 +324,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageA 身份证照片面合成图片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageA() const;
 
                     /**
                      * 判断参数 ImageA 是否已赋值
                      * @return ImageA 是否已赋值
+                     * 
                      */
                     bool ImageAHasBeenSet() const;
 
@@ -304,12 +340,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageB 身份证国徽面合成图片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageB() const;
 
                     /**
                      * 判断参数 ImageB 是否已赋值
                      * @return ImageB 是否已赋值
+                     * 
                      */
                     bool ImageBHasBeenSet() const;
 
@@ -318,12 +356,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultDescription 对result code的结果描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultDescription() const;
 
                     /**
                      * 判断参数 ResultDescription 是否已赋值
                      * @return ResultDescription 是否已赋值
+                     * 
                      */
                     bool ResultDescriptionHasBeenSet() const;
 

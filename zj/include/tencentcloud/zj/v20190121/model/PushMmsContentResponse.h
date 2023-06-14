@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取推送短信返回信息
                      * @return Data 推送短信返回信息
+                     * 
                      */
                     PushMmsContentResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取功能名称，功能名称填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。
                      * @return Action 功能名称，功能名称填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置功能名称，功能名称填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。
-                     * @param Action 功能名称，功能名称填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。
+                     * @param _action 功能名称，功能名称填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取操作参数。
                      * @return Parameters 操作参数。
+                     * 
                      */
                     std::vector<RuleCodeActionParams> GetParameters() const;
 
                     /**
                      * 设置操作参数。
-                     * @param Parameters 操作参数。
+                     * @param _parameters 操作参数。
+                     * 
                      */
                     void SetParameters(const std::vector<RuleCodeActionParams>& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 

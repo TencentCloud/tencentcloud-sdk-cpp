@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务id
                      * @return ApplicationId 服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
-                     * @param ApplicationId 服务id
+                     * @param _applicationId 服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境id
                      * @return EnvironmentId 环境id
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvironmentId 环境id
+                     * @param _environmentId 环境id
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取版本部署id
                      * @return VersionId 版本部署id
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本部署id
-                     * @param VersionId 版本部署id
+                     * @param _versionId 版本部署id
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取企业四要素核验结果状态码
                      * @return Result 企业四要素核验结果状态码
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 设置企业四要素核验结果状态码
-                     * @param Result 企业四要素核验结果状态码
+                     * @param _result 企业四要素核验结果状态码
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取企业四要素核验结果描述
                      * @return Desc 企业四要素核验结果描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置企业四要素核验结果描述
-                     * @param Desc 企业四要素核验结果描述
+                     * @param _desc 企业四要素核验结果描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 

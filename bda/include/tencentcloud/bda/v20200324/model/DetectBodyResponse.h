@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取图中检测出来的人体框。
                      * @return BodyDetectResults 图中检测出来的人体框。
+                     * 
                      */
                     std::vector<BodyDetectResult> GetBodyDetectResults() const;
 
                     /**
                      * 判断参数 BodyDetectResults 是否已赋值
                      * @return BodyDetectResults 是否已赋值
+                     * 
                      */
                     bool BodyDetectResultsHasBeenSet() const;
 
                     /**
                      * 获取人体识别所用的算法模型版本。
                      * @return BodyModelVersion 人体识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetBodyModelVersion() const;
 
                     /**
                      * 判断参数 BodyModelVersion 是否已赋值
                      * @return BodyModelVersion 是否已赋值
+                     * 
                      */
                     bool BodyModelVersionHasBeenSet() const;
 

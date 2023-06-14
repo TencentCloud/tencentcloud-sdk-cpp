@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return CasbId 实例Id
+                     * 
                      */
                     std::string GetCasbId() const;
 
                     /**
                      * 设置实例Id
-                     * @param CasbId 实例Id
+                     * @param _casbId 实例Id
+                     * 
                      */
                     void SetCasbId(const std::string& _casbId);
 
                     /**
                      * 判断参数 CasbId 是否已赋值
                      * @return CasbId 是否已赋值
+                     * 
                      */
                     bool CasbIdHasBeenSet() const;
 
                     /**
                      * 获取元数据id
                      * @return MetaDataId 元数据id
+                     * 
                      */
                     std::string GetMetaDataId() const;
 
                     /**
                      * 设置元数据id
-                     * @param MetaDataId 元数据id
+                     * @param _metaDataId 元数据id
+                     * 
                      */
                     void SetMetaDataId(const std::string& _metaDataId);
 
                     /**
                      * 判断参数 MetaDataId 是否已赋值
                      * @return MetaDataId 是否已赋值
+                     * 
                      */
                     bool MetaDataIdHasBeenSet() const;
 
                     /**
                      * 获取目标实例Id 如果和实例Id相同则为同CasbId下的策略复制
                      * @return DstCasbId 目标实例Id 如果和实例Id相同则为同CasbId下的策略复制
+                     * 
                      */
                     std::string GetDstCasbId() const;
 
                     /**
                      * 设置目标实例Id 如果和实例Id相同则为同CasbId下的策略复制
-                     * @param DstCasbId 目标实例Id 如果和实例Id相同则为同CasbId下的策略复制
+                     * @param _dstCasbId 目标实例Id 如果和实例Id相同则为同CasbId下的策略复制
+                     * 
                      */
                     void SetDstCasbId(const std::string& _dstCasbId);
 
                     /**
                      * 判断参数 DstCasbId 是否已赋值
                      * @return DstCasbId 是否已赋值
+                     * 
                      */
                     bool DstCasbIdHasBeenSet() const;
 
                     /**
                      * 获取目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制
                      * @return DstMetaDataId 目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制
+                     * 
                      */
                     std::string GetDstMetaDataId() const;
 
                     /**
                      * 设置目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制
-                     * @param DstMetaDataId 目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制
+                     * @param _dstMetaDataId 目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制
+                     * 
                      */
                     void SetDstMetaDataId(const std::string& _dstMetaDataId);
 
                     /**
                      * 判断参数 DstMetaDataId 是否已赋值
                      * @return DstMetaDataId 是否已赋值
+                     * 
                      */
                     bool DstMetaDataIdHasBeenSet() const;
 
                     /**
                      * 获取筛选来源数据库的表
                      * @return SrcTableFilter 筛选来源数据库的表
+                     * 
                      */
                     std::vector<CryptoCopyColumnPolicyTableFilter> GetSrcTableFilter() const;
 
                     /**
                      * 设置筛选来源数据库的表
-                     * @param SrcTableFilter 筛选来源数据库的表
+                     * @param _srcTableFilter 筛选来源数据库的表
+                     * 
                      */
                     void SetSrcTableFilter(const std::vector<CryptoCopyColumnPolicyTableFilter>& _srcTableFilter);
 
                     /**
                      * 判断参数 SrcTableFilter 是否已赋值
                      * @return SrcTableFilter 是否已赋值
+                     * 
                      */
                     bool SrcTableFilterHasBeenSet() const;
 
                     /**
                      * 获取复制同元数据下的策略，需要填写目标数据库名
                      * @return DstDatabaseName 复制同元数据下的策略，需要填写目标数据库名
+                     * 
                      */
                     std::string GetDstDatabaseName() const;
 
                     /**
                      * 设置复制同元数据下的策略，需要填写目标数据库名
-                     * @param DstDatabaseName 复制同元数据下的策略，需要填写目标数据库名
+                     * @param _dstDatabaseName 复制同元数据下的策略，需要填写目标数据库名
+                     * 
                      */
                     void SetDstDatabaseName(const std::string& _dstDatabaseName);
 
                     /**
                      * 判断参数 DstDatabaseName 是否已赋值
                      * @return DstDatabaseName 是否已赋值
+                     * 
                      */
                     bool DstDatabaseNameHasBeenSet() const;
 

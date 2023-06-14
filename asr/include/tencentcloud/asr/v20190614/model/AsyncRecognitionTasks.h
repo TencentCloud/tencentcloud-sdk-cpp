@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tasks 任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AsyncRecognitionTaskInfo> GetTasks() const;
 
                     /**
                      * 设置任务列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tasks 任务列表
+                     * @param _tasks 任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTasks(const std::vector<AsyncRecognitionTaskInfo>& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 

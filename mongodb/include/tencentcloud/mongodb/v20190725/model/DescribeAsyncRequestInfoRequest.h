@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
                      * @return AsyncRequestId 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 设置异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
-                     * @param AsyncRequestId 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * @param _asyncRequestId 异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance
+                     * 
                      */
                     void SetAsyncRequestId(const std::string& _asyncRequestId);
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

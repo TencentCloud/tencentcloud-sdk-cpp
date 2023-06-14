@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 任务结束后生成的文件大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置任务结束后生成的文件大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 任务结束后生成的文件大小。
+                     * @param _fileSize 任务结束后生成的文件大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileType 任务结束后生成的文件格式，例如：mp4,flv等等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置任务结束后生成的文件格式，例如：mp4,flv等等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileType 任务结束后生成的文件格式，例如：mp4,flv等等。
+                     * @param _fileType 任务结束后生成的文件格式，例如：mp4,flv等等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 任务结束后生成的文件整体码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置任务结束后生成的文件整体码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bitrate 任务结束后生成的文件整体码率，单位：bps。
+                     * @param _bitrate 任务结束后生成的文件整体码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 任务结束后生成的文件时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置任务结束后生成的文件时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 任务结束后生成的文件时长，单位：ms。
+                     * @param _duration 任务结束后生成的文件时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoInfoResult 任务结束后生成的文件视频信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VideoInfoResultItem> GetVideoInfoResult() const;
 
                     /**
                      * 设置任务结束后生成的文件视频信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoInfoResult 任务结束后生成的文件视频信息。
+                     * @param _videoInfoResult 任务结束后生成的文件视频信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoInfoResult(const std::vector<VideoInfoResultItem>& _videoInfoResult);
 
                     /**
                      * 判断参数 VideoInfoResult 是否已赋值
                      * @return VideoInfoResult 是否已赋值
+                     * 
                      */
                     bool VideoInfoResultHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioInfoResult 任务结束后生成的文件音频信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AudioInfoResultItem> GetAudioInfoResult() const;
 
                     /**
                      * 设置任务结束后生成的文件音频信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioInfoResult 任务结束后生成的文件音频信息。
+                     * @param _audioInfoResult 任务结束后生成的文件音频信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioInfoResult(const std::vector<AudioInfoResultItem>& _audioInfoResult);
 
                     /**
                      * 判断参数 AudioInfoResult 是否已赋值
                      * @return AudioInfoResult 是否已赋值
+                     * 
                      */
                     bool AudioInfoResultHasBeenSet() const;
 

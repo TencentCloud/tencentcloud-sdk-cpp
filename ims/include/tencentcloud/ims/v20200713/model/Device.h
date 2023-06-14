@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取发表消息设备IP
                      * @return Ip 发表消息设备IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置发表消息设备IP
-                     * @param Ip 发表消息设备IP
+                     * @param _ip 发表消息设备IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取Mac地址
                      * @return Mac Mac地址
+                     * 
                      */
                     std::string GetMac() const;
 
                     /**
                      * 设置Mac地址
-                     * @param Mac Mac地址
+                     * @param _mac Mac地址
+                     * 
                      */
                     void SetMac(const std::string& _mac);
 
                     /**
                      * 判断参数 Mac 是否已赋值
                      * @return Mac 是否已赋值
+                     * 
                      */
                     bool MacHasBeenSet() const;
 
                     /**
                      * 获取设备指纹Token
                      * @return TokenId 设备指纹Token
+                     * 
                      */
                     std::string GetTokenId() const;
 
                     /**
                      * 设置设备指纹Token
-                     * @param TokenId 设备指纹Token
+                     * @param _tokenId 设备指纹Token
+                     * 
                      */
                     void SetTokenId(const std::string& _tokenId);
 
                     /**
                      * 判断参数 TokenId 是否已赋值
                      * @return TokenId 是否已赋值
+                     * 
                      */
                     bool TokenIdHasBeenSet() const;
 
                     /**
                      * 获取设备指纹ID
                      * @return DeviceId 设备指纹ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备指纹ID
-                     * @param DeviceId 设备指纹ID
+                     * @param _deviceId 设备指纹ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取设备序列号
                      * @return IMEI 设备序列号
+                     * 
                      */
                     std::string GetIMEI() const;
 
                     /**
                      * 设置设备序列号
-                     * @param IMEI 设备序列号
+                     * @param _iMEI 设备序列号
+                     * 
                      */
                     void SetIMEI(const std::string& _iMEI);
 
                     /**
                      * 判断参数 IMEI 是否已赋值
                      * @return IMEI 是否已赋值
+                     * 
                      */
                     bool IMEIHasBeenSet() const;
 
                     /**
                      * 获取IOS设备，Identifier For Advertising（广告标识符）
                      * @return IDFA IOS设备，Identifier For Advertising（广告标识符）
+                     * 
                      */
                     std::string GetIDFA() const;
 
                     /**
                      * 设置IOS设备，Identifier For Advertising（广告标识符）
-                     * @param IDFA IOS设备，Identifier For Advertising（广告标识符）
+                     * @param _iDFA IOS设备，Identifier For Advertising（广告标识符）
+                     * 
                      */
                     void SetIDFA(const std::string& _iDFA);
 
                     /**
                      * 判断参数 IDFA 是否已赋值
                      * @return IDFA 是否已赋值
+                     * 
                      */
                     bool IDFAHasBeenSet() const;
 
                     /**
                      * 获取IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
                      * @return IDFV IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
+                     * 
                      */
                     std::string GetIDFV() const;
 
                     /**
                      * 设置IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
-                     * @param IDFV IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
+                     * @param _iDFV IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
+                     * 
                      */
                     void SetIDFV(const std::string& _iDFV);
 
                     /**
                      * 判断参数 IDFV 是否已赋值
                      * @return IDFV 是否已赋值
+                     * 
                      */
                     bool IDFVHasBeenSet() const;
 
                     /**
                      * 获取IP地址类型 0 代表ipv4 1 代表ipv6
                      * @return IpType IP地址类型 0 代表ipv4 1 代表ipv6
+                     * 
                      */
                     uint64_t GetIpType() const;
 
                     /**
                      * 设置IP地址类型 0 代表ipv4 1 代表ipv6
-                     * @param IpType IP地址类型 0 代表ipv4 1 代表ipv6
+                     * @param _ipType IP地址类型 0 代表ipv4 1 代表ipv6
+                     * 
                      */
                     void SetIpType(const uint64_t& _ipType);
 
                     /**
                      * 判断参数 IpType 是否已赋值
                      * @return IpType 是否已赋值
+                     * 
                      */
                     bool IpTypeHasBeenSet() const;
 

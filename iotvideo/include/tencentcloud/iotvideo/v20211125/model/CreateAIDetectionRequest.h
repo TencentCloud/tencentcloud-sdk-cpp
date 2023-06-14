@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取AI模型ID
                      * @return ModelId AI模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置AI模型ID
-                     * @param ModelId AI模型ID
+                     * @param _modelId AI模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取图片上传的开始时间
                      * @return StartTime 图片上传的开始时间
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置图片上传的开始时间
-                     * @param StartTime 图片上传的开始时间
+                     * @param _startTime 图片上传的开始时间
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取图片上传的结束时间
                      * @return EndTime 图片上传的结束时间
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置图片上传的结束时间
-                     * @param EndTime 图片上传的结束时间
+                     * @param _endTime 图片上传的结束时间
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

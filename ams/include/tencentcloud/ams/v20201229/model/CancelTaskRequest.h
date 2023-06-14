@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
                      * @return TaskId 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
-                     * @param TaskId 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
+                     * @param _taskId 该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取镜像仓库名字
                      * @return RepoName 镜像仓库名字
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置镜像仓库名字
-                     * @param RepoName 镜像仓库名字
+                     * @param _repoName 镜像仓库名字
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取镜像仓库类型
                      * @return RepoType 镜像仓库类型
+                     * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置镜像仓库类型
-                     * @param RepoType 镜像仓库类型
+                     * @param _repoType 镜像仓库类型
+                     * 
                      */
                     void SetRepoType(const std::string& _repoType);
 
                     /**
                      * 判断参数 RepoType 是否已赋值
                      * @return RepoType 是否已赋值
+                     * 
                      */
                     bool RepoTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像仓库服务地址
                      * @return Server 镜像仓库服务地址
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像仓库服务地址
-                     * @param Server 镜像仓库服务地址
+                     * @param _server 镜像仓库服务地址
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -123,110 +135,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 镜像仓库描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置镜像仓库描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 镜像仓库描述
+                     * @param _description 镜像仓库描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取是否为公有镜像
                      * @return Public 是否为公有镜像
+                     * 
                      */
                     int64_t GetPublic() const;
 
                     /**
                      * 设置是否为公有镜像
-                     * @param Public 是否为公有镜像
+                     * @param _public 是否为公有镜像
+                     * 
                      */
                     void SetPublic(const int64_t& _public);
 
                     /**
                      * 判断参数 Public 是否已赋值
                      * @return Public 是否已赋值
+                     * 
                      */
                     bool PublicHasBeenSet() const;
 
                     /**
                      * 获取下载次数
                      * @return PullCount 下载次数
+                     * 
                      */
                     int64_t GetPullCount() const;
 
                     /**
                      * 设置下载次数
-                     * @param PullCount 下载次数
+                     * @param _pullCount 下载次数
+                     * 
                      */
                     void SetPullCount(const int64_t& _pullCount);
 
                     /**
                      * 判断参数 PullCount 是否已赋值
                      * @return PullCount 是否已赋值
+                     * 
                      */
                     bool PullCountHasBeenSet() const;
 
                     /**
                      * 获取收藏次数
                      * @return FavorCount 收藏次数
+                     * 
                      */
                     int64_t GetFavorCount() const;
 
                     /**
                      * 设置收藏次数
-                     * @param FavorCount 收藏次数
+                     * @param _favorCount 收藏次数
+                     * 
                      */
                     void SetFavorCount(const int64_t& _favorCount);
 
                     /**
                      * 判断参数 FavorCount 是否已赋值
                      * @return FavorCount 是否已赋值
+                     * 
                      */
                     bool FavorCountHasBeenSet() const;
 
                     /**
                      * 获取是否为用户收藏
                      * @return IsUserFavor 是否为用户收藏
+                     * 
                      */
                     bool GetIsUserFavor() const;
 
                     /**
                      * 设置是否为用户收藏
-                     * @param IsUserFavor 是否为用户收藏
+                     * @param _isUserFavor 是否为用户收藏
+                     * 
                      */
                     void SetIsUserFavor(const bool& _isUserFavor);
 
                     /**
                      * 判断参数 IsUserFavor 是否已赋值
                      * @return IsUserFavor 是否已赋值
+                     * 
                      */
                     bool IsUserFavorHasBeenSet() const;
 
                     /**
                      * 获取是否为腾讯云官方镜像
                      * @return IsQcloudOfficial 是否为腾讯云官方镜像
+                     * 
                      */
                     bool GetIsQcloudOfficial() const;
 
                     /**
                      * 设置是否为腾讯云官方镜像
-                     * @param IsQcloudOfficial 是否为腾讯云官方镜像
+                     * @param _isQcloudOfficial 是否为腾讯云官方镜像
+                     * 
                      */
                     void SetIsQcloudOfficial(const bool& _isQcloudOfficial);
 
                     /**
                      * 判断参数 IsQcloudOfficial 是否已赋值
                      * @return IsQcloudOfficial 是否已赋值
+                     * 
                      */
                     bool IsQcloudOfficialHasBeenSet() const;
 

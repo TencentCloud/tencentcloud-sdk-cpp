@@ -57,6 +57,7 @@ namespace TencentCloud
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 根据粒度会有不同程度的缩减。
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -66,35 +67,40 @@ namespace TencentCloud
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 根据粒度会有不同程度的缩减。
-                     * @param Time 返回格式：
+                     * @param _time 返回格式：
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 根据粒度会有不同程度的缩减。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取带宽。
                      * @return Bandwidth 带宽。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽。
-                     * @param Bandwidth 带宽。
+                     * @param _bandwidth 带宽。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 

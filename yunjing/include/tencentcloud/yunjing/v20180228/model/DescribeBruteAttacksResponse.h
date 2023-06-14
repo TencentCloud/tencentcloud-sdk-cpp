@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件数量
                      * @return TotalCount 事件数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取暴力破解事件列表
                      * @return BruteAttacks 暴力破解事件列表
+                     * 
                      */
                     std::vector<BruteAttack> GetBruteAttacks() const;
 
                     /**
                      * 判断参数 BruteAttacks 是否已赋值
                      * @return BruteAttacks 是否已赋值
+                     * 
                      */
                     bool BruteAttacksHasBeenSet() const;
 

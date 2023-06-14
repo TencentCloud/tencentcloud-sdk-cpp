@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取计费项名称
                      * @return SpecName 计费项名称
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置计费项名称
-                     * @param SpecName 计费项名称
+                     * @param _specName 计费项名称
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
                     /**
                      * 获取计费项数量,建议不超过100万
                      * @return SpecCount 计费项数量,建议不超过100万
+                     * 
                      */
                     uint64_t GetSpecCount() const;
 
                     /**
                      * 设置计费项数量,建议不超过100万
-                     * @param SpecCount 计费项数量,建议不超过100万
+                     * @param _specCount 计费项数量,建议不超过100万
+                     * 
                      */
                     void SetSpecCount(const uint64_t& _specCount);
 
                     /**
                      * 判断参数 SpecCount 是否已赋值
                      * @return SpecCount 是否已赋值
+                     * 
                      */
                     bool SpecCountHasBeenSet() const;
 

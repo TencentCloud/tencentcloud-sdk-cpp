@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取第三方平台应用号Id
                      * @return ApplicationId 第三方平台应用号Id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取第三方平台子客企业OpenId
                      * @return ProxyOrganizationOpenId 第三方平台子客企业OpenId
+                     * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
                      * 判断参数 ProxyOrganizationOpenId 是否已赋值
                      * @return ProxyOrganizationOpenId 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowInfo 合同(签署流程)的具体详细描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FlowDetailInfo> GetFlowInfo() const;
 
                     /**
                      * 判断参数 FlowInfo 是否已赋值
                      * @return FlowInfo 是否已赋值
+                     * 
                      */
                     bool FlowInfoHasBeenSet() const;
 
@@ -87,12 +93,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupId 合同组编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
                      * 判断参数 FlowGroupId 是否已赋值
                      * @return FlowGroupId 是否已赋值
+                     * 
                      */
                     bool FlowGroupIdHasBeenSet() const;
 
@@ -101,12 +109,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowGroupName 合同组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
                      * 判断参数 FlowGroupName 是否已赋值
                      * @return FlowGroupName 是否已赋值
+                     * 
                      */
                     bool FlowGroupNameHasBeenSet() const;
 

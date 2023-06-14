@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreequotaInfoList 免费量资源信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FreequotaInfo> GetFreequotaInfoList() const;
 
                     /**
                      * 判断参数 FreequotaInfoList 是否已赋值
                      * @return FreequotaInfoList 是否已赋值
+                     * 
                      */
                     bool FreequotaInfoListHasBeenSet() const;
 

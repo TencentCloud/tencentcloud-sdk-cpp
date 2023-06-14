@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的套餐数量。
                      * @return TotalCount 符合条件的套餐数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取变更套餐详细信息。
                      * @return ModifyBundleSet 变更套餐详细信息。
+                     * 
                      */
                     std::vector<ModifyBundle> GetModifyBundleSet() const;
 
                     /**
                      * 判断参数 ModifyBundleSet 是否已赋值
                      * @return ModifyBundleSet 是否已赋值
+                     * 
                      */
                     bool ModifyBundleSetHasBeenSet() const;
 

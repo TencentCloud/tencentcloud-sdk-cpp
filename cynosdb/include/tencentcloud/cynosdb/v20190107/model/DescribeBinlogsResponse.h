@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取记录总条数
                      * @return TotalCount 记录总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Binlogs Binlog列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BinlogItem> GetBinlogs() const;
 
                     /**
                      * 判断参数 Binlogs 是否已赋值
                      * @return Binlogs 是否已赋值
+                     * 
                      */
                     bool BinlogsHasBeenSet() const;
 

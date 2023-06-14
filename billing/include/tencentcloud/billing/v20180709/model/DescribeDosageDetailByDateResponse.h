@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 计量单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailSets 用量数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetailSet> GetDetailSets() const;
 
                     /**
                      * 判断参数 DetailSets 是否已赋值
                      * @return DetailSets 是否已赋值
+                     * 
                      */
                     bool DetailSetsHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetCode 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
                      * 判断参数 RetCode 是否已赋值
                      * @return RetCode 是否已赋值
+                     * 
                      */
                     bool RetCodeHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRetMsg() const;
 
                     /**
                      * 判断参数 RetMsg 是否已赋值
                      * @return RetMsg 是否已赋值
+                     * 
                      */
                     bool RetMsgHasBeenSet() const;
 

@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 源站头部缓存配置开关，取值有：
+                     * @param _switch 源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件列表
                      * @return List 事件列表
+                     * 
                      */
                     std::vector<DataEvent> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取事件总条数
                      * @return Total 事件总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

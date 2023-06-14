@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取主机ip
                      * @return HostIP 主机ip
+                     * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置主机ip
-                     * @param HostIP 主机ip
+                     * @param _hostIP 主机ip
+                     * 
                      */
                     void SetHostIP(const std::string& _hostIP);
 
                     /**
                      * 判断参数 HostIP 是否已赋值
                      * @return HostIP 是否已赋值
+                     * 
                      */
                     bool HostIPHasBeenSet() const;
 
                     /**
                      * 获取主机实例id
                      * @return InstanceID 主机实例id
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置主机实例id
-                     * @param InstanceID 主机实例id
+                     * @param _instanceID 主机实例id
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取客户端离线时间
                      * @return OfflineTime 客户端离线时间
+                     * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置客户端离线时间
-                     * @param OfflineTime 客户端离线时间
+                     * @param _offlineTime 客户端离线时间
+                     * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
 
                     /**
                      * 判断参数 OfflineTime 是否已赋值
                      * @return OfflineTime 是否已赋值
+                     * 
                      */
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
                      * 获取客户端卸载时间
                      * @return UninstallTime 客户端卸载时间
+                     * 
                      */
                     std::string GetUninstallTime() const;
 
                     /**
                      * 设置客户端卸载时间
-                     * @param UninstallTime 客户端卸载时间
+                     * @param _uninstallTime 客户端卸载时间
+                     * 
                      */
                     void SetUninstallTime(const std::string& _uninstallTime);
 
                     /**
                      * 判断参数 UninstallTime 是否已赋值
                      * @return UninstallTime 是否已赋值
+                     * 
                      */
                     bool UninstallTimeHasBeenSet() const;
 
                     /**
                      * 获取客户端卸载调用链
                      * @return UninstallCmd 客户端卸载调用链
+                     * 
                      */
                     std::string GetUninstallCmd() const;
 
                     /**
                      * 设置客户端卸载调用链
-                     * @param UninstallCmd 客户端卸载调用链
+                     * @param _uninstallCmd 客户端卸载调用链
+                     * 
                      */
                     void SetUninstallCmd(const std::string& _uninstallCmd);
 
                     /**
                      * 判断参数 UninstallCmd 是否已赋值
                      * @return UninstallCmd 是否已赋值
+                     * 
                      */
                     bool UninstallCmdHasBeenSet() const;
 
                     /**
                      * 获取客户端uuid
                      * @return Uuid 客户端uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置客户端uuid
-                     * @param Uuid 客户端uuid
+                     * @param _uuid 客户端uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 

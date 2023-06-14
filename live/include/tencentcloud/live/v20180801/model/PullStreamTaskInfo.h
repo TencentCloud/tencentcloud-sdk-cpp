@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取拉流任务Id。
                      * @return TaskId 拉流任务Id。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置拉流任务Id。
-                     * @param TaskId 拉流任务Id。
+                     * @param _taskId 拉流任务Id。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ PullPicPushLive -图片。
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
+                     * 
                      */
                     std::string GetSourceType() const;
 
@@ -83,16 +87,18 @@ PullPicPushLive -图片。
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
-                     * @param SourceType 拉流源的类型：
+                     * @param _sourceType 拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -103,6 +109,7 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
                      * @return SourceUrls 拉流源url列表。
 SourceType为直播（PullLiveToLive）只可以填1个，
 SourceType为点播（PullVodToLive）可以填多个，上限10个。
+                     * 
                      */
                     std::vector<std::string> GetSourceUrls() const;
 
@@ -110,15 +117,17 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
                      * 设置拉流源url列表。
 SourceType为直播（PullLiveToLive）只可以填1个，
 SourceType为点播（PullVodToLive）可以填多个，上限10个。
-                     * @param SourceUrls 拉流源url列表。
+                     * @param _sourceUrls 拉流源url列表。
 SourceType为直播（PullLiveToLive）只可以填1个，
 SourceType为点播（PullVodToLive）可以填多个，上限10个。
+                     * 
                      */
                     void SetSourceUrls(const std::vector<std::string>& _sourceUrls);
 
                     /**
                      * 判断参数 SourceUrls 是否已赋值
                      * @return SourceUrls 是否已赋值
+                     * 
                      */
                     bool SourceUrlsHasBeenSet() const;
 
@@ -127,20 +136,23 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 将拉到的源推到该域名。
                      * @return DomainName 推流域名。
 将拉到的源推到该域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
 将拉到的源推到该域名。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
 将拉到的源推到该域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -149,20 +161,23 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 将拉到的源推到该路径。
                      * @return AppName 推流路径。
 将拉到的源推到该路径。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
 将拉到的源推到该路径。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
 将拉到的源推到该路径。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -171,20 +186,23 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 将拉到的源推到该流名称。
                      * @return StreamName 流名称。
 将拉到的源推到该流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
 将拉到的源推到该流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
 将拉到的源推到该流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -193,20 +211,23 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 推流携带的自定义参数。
                      * @return PushArgs 推流参数。
 推流携带的自定义参数。
+                     * 
                      */
                     std::string GetPushArgs() const;
 
                     /**
                      * 设置推流参数。
 推流携带的自定义参数。
-                     * @param PushArgs 推流参数。
+                     * @param _pushArgs 推流参数。
 推流携带的自定义参数。
+                     * 
                      */
                     void SetPushArgs(const std::string& _pushArgs);
 
                     /**
                      * 判断参数 PushArgs 是否已赋值
                      * @return PushArgs 是否已赋值
+                     * 
                      */
                     bool PushArgsHasBeenSet() const;
 
@@ -219,6 +240,7 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -227,16 +249,18 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -255,6 +279,7 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -266,19 +291,21 @@ SourceType为点播（PullVodToLive）可以填多个，上限10个。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime 结束时间，注意：
+                     * @param _endTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -309,6 +336,7 @@ ap-singapore - 新加坡，
 na-siliconvalley - 美西，
 na-ashburn - 美东，
 ap-tokyo - 日本。
+                     * 
                      */
                     std::string GetRegion() const;
 
@@ -326,7 +354,7 @@ ap-singapore - 新加坡，
 na-siliconvalley - 美西，
 na-ashburn - 美东，
 ap-tokyo - 日本。
-                     * @param Region 任务创建所在地域：
+                     * @param _region 任务创建所在地域：
 ap-beijing - 华北地区(北京)，
 ap-shanghai -华东地区(上海)，
 ap-guangzhou -华南地区(广州)，
@@ -339,12 +367,14 @@ ap-singapore - 新加坡，
 na-siliconvalley - 美西，
 na-ashburn - 美东，
 ap-tokyo - 日本。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -359,6 +389,7 @@ ap-tokyo - 日本。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：拉流源为点播，该配置生效。
+                     * 
                      */
                     int64_t GetVodLoopTimes() const;
 
@@ -368,17 +399,19 @@ ap-tokyo - 日本。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：拉流源为点播，该配置生效。
-                     * @param VodLoopTimes 点播拉流转推循环次数。
+                     * @param _vodLoopTimes 点播拉流转推循环次数。
 -1：无限循环，直到任务结束。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：拉流源为点播，该配置生效。
+                     * 
                      */
                     void SetVodLoopTimes(const int64_t& _vodLoopTimes);
 
                     /**
                      * 判断参数 VodLoopTimes 是否已赋值
                      * @return VodLoopTimes 是否已赋值
+                     * 
                      */
                     bool VodLoopTimesHasBeenSet() const;
 
@@ -393,6 +426,7 @@ ImmediateNewSource：立即从更新的拉流源开始播放；
 ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使用新的拉流源。
 
 注意：拉流源为点播，该配置生效。
+                     * 
                      */
                     std::string GetVodRefreshType() const;
 
@@ -402,17 +436,19 @@ ImmediateNewSource：立即从更新的拉流源开始播放；
 ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使用新的拉流源。
 
 注意：拉流源为点播，该配置生效。
-                     * @param VodRefreshType 点播更新SourceUrls后的播放方式：
+                     * @param _vodRefreshType 点播更新SourceUrls后的播放方式：
 ImmediateNewSource：立即从更新的拉流源开始播放；
 ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使用新的拉流源。
 
 注意：拉流源为点播，该配置生效。
+                     * 
                      */
                     void SetVodRefreshType(const std::string& _vodRefreshType);
 
                     /**
                      * 判断参数 VodRefreshType 是否已赋值
                      * @return VodRefreshType 是否已赋值
+                     * 
                      */
                     bool VodRefreshTypeHasBeenSet() const;
 
@@ -425,6 +461,7 @@ ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使�
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
@@ -433,16 +470,18 @@ ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使�
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 任务创建时间。
+                     * @param _createTime 任务创建时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -455,6 +494,7 @@ ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使�
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
@@ -463,70 +503,81 @@ ContinueBreakPoint：从上次断流url源的断点处继续，结束后再使�
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param UpdateTime 任务更新时间。
+                     * @param _updateTime 任务更新时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取创建任务的操作者。
                      * @return CreateBy 创建任务的操作者。
+                     * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
                      * 设置创建任务的操作者。
-                     * @param CreateBy 创建任务的操作者。
+                     * @param _createBy 创建任务的操作者。
+                     * 
                      */
                     void SetCreateBy(const std::string& _createBy);
 
                     /**
                      * 判断参数 CreateBy 是否已赋值
                      * @return CreateBy 是否已赋值
+                     * 
                      */
                     bool CreateByHasBeenSet() const;
 
                     /**
                      * 获取最后更新任务的操作者。
                      * @return UpdateBy 最后更新任务的操作者。
+                     * 
                      */
                     std::string GetUpdateBy() const;
 
                     /**
                      * 设置最后更新任务的操作者。
-                     * @param UpdateBy 最后更新任务的操作者。
+                     * @param _updateBy 最后更新任务的操作者。
+                     * 
                      */
                     void SetUpdateBy(const std::string& _updateBy);
 
                     /**
                      * 判断参数 UpdateBy 是否已赋值
                      * @return UpdateBy 是否已赋值
+                     * 
                      */
                     bool UpdateByHasBeenSet() const;
 
                     /**
                      * 获取回调地址。
                      * @return CallbackUrl 回调地址。
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调地址。
-                     * @param CallbackUrl 回调地址。
+                     * @param _callbackUrl 回调地址。
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -543,6 +594,7 @@ TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+                     * 
                      */
                     std::vector<std::string> GetCallbackEvents() const;
 
@@ -553,18 +605,20 @@ TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
-                     * @param CallbackEvents 选择需要回调的事件：
+                     * @param _callbackEvents 选择需要回调的事件：
 TaskStart：任务启动回调，
 TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
 VodSourceFileFinish：从点播源文件拉流结束回调，
 ResetTaskConfig：任务更新回调。
+                     * 
                      */
                     void SetCallbackEvents(const std::vector<std::string>& _callbackEvents);
 
                     /**
                      * 判断参数 CallbackEvents 是否已赋值
                      * @return CallbackEvents 是否已赋值
+                     * 
                      */
                     bool CallbackEventsHasBeenSet() const;
 
@@ -573,20 +627,23 @@ ResetTaskConfig：任务更新回调。
 最后一次回调信息。
                      * @return CallbackInfo 注意：该信息暂不返回。
 最后一次回调信息。
+                     * 
                      */
                     std::string GetCallbackInfo() const;
 
                     /**
                      * 设置注意：该信息暂不返回。
 最后一次回调信息。
-                     * @param CallbackInfo 注意：该信息暂不返回。
+                     * @param _callbackInfo 注意：该信息暂不返回。
 最后一次回调信息。
+                     * 
                      */
                     void SetCallbackInfo(const std::string& _callbackInfo);
 
                     /**
                      * 判断参数 CallbackInfo 是否已赋值
                      * @return CallbackInfo 是否已赋值
+                     * 
                      */
                     bool CallbackInfoHasBeenSet() const;
 
@@ -595,20 +652,23 @@ ResetTaskConfig：任务更新回调。
 错误信息。
                      * @return ErrorInfo 注意：该信息暂不返回。
 错误信息。
+                     * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
                      * 设置注意：该信息暂不返回。
 错误信息。
-                     * @param ErrorInfo 注意：该信息暂不返回。
+                     * @param _errorInfo 注意：该信息暂不返回。
 错误信息。
+                     * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
 
                     /**
                      * 判断参数 ErrorInfo 是否已赋值
                      * @return ErrorInfo 是否已赋值
+                     * 
                      */
                     bool ErrorInfoHasBeenSet() const;
 
@@ -619,6 +679,7 @@ pause：暂停中。
                      * @return Status 状态。
 enable：生效中。
 pause：暂停中。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -626,15 +687,17 @@ pause：暂停中。
                      * 设置状态。
 enable：生效中。
 pause：暂停中。
-                     * @param Status 状态。
+                     * @param _status 状态。
 enable：生效中。
 pause：暂停中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -645,6 +708,7 @@ pause：暂停中。
                      * @return RecentPullInfo 注意：该信息仅在查询单个任务时返回。
 任务最新拉流信息。
 包含：源 url，偏移时间，上报时间。
+                     * 
                      */
                     RecentPullInfo GetRecentPullInfo() const;
 
@@ -652,33 +716,38 @@ pause：暂停中。
                      * 设置注意：该信息仅在查询单个任务时返回。
 任务最新拉流信息。
 包含：源 url，偏移时间，上报时间。
-                     * @param RecentPullInfo 注意：该信息仅在查询单个任务时返回。
+                     * @param _recentPullInfo 注意：该信息仅在查询单个任务时返回。
 任务最新拉流信息。
 包含：源 url，偏移时间，上报时间。
+                     * 
                      */
                     void SetRecentPullInfo(const RecentPullInfo& _recentPullInfo);
 
                     /**
                      * 判断参数 RecentPullInfo 是否已赋值
                      * @return RecentPullInfo 是否已赋值
+                     * 
                      */
                     bool RecentPullInfoHasBeenSet() const;
 
                     /**
                      * 获取任务备注信息。
                      * @return Comment 任务备注信息。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置任务备注信息。
-                     * @param Comment 任务备注信息。
+                     * @param _comment 任务备注信息。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -691,6 +760,7 @@ PullVodPushLive -点播。
 PullLivePushLive -直播，
 PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupSourceType() const;
 
@@ -699,16 +769,18 @@ PullVodPushLive -点播。
 PullLivePushLive -直播，
 PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSourceType 备源类型：
+                     * @param _backupSourceType 备源类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSourceType(const std::string& _backupSourceType);
 
                     /**
                      * 判断参数 BackupSourceType 是否已赋值
                      * @return BackupSourceType 是否已赋值
+                     * 
                      */
                     bool BackupSourceTypeHasBeenSet() const;
 
@@ -717,20 +789,23 @@ PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSourceUrl 备源URL。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupSourceUrl() const;
 
                     /**
                      * 设置备源URL。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSourceUrl 备源URL。
+                     * @param _backupSourceUrl 备源URL。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSourceUrl(const std::string& _backupSourceUrl);
 
                     /**
                      * 判断参数 BackupSourceUrl 是否已赋值
                      * @return BackupSourceUrl 是否已赋值
+                     * 
                      */
                     bool BackupSourceUrlHasBeenSet() const;
 
@@ -739,20 +814,23 @@ PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkList 水印信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
 
                     /**
                      * 设置水印信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WatermarkList 水印信息列表。
+                     * @param _watermarkList 水印信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
 
                     /**
                      * 判断参数 WatermarkList 是否已赋值
                      * @return WatermarkList 是否已赋值
+                     * 
                      */
                     bool WatermarkListHasBeenSet() const;
 
@@ -765,6 +843,7 @@ PullVodPushLive -点播。
 0 - 不启用。
 1 - 启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVodLocalMode() const;
 
@@ -773,16 +852,18 @@ PullVodPushLive -点播。
 0 - 不启用。
 1 - 启用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
+                     * @param _vodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVodLocalMode(const int64_t& _vodLocalMode);
 
                     /**
                      * 判断参数 VodLocalMode 是否已赋值
                      * @return VodLocalMode 是否已赋值
+                     * 
                      */
                     bool VodLocalModeHasBeenSet() const;
 
@@ -791,20 +872,23 @@ PullVodPushLive -点播。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordTemplateId 录制模板 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecordTemplateId() const;
 
                     /**
                      * 设置录制模板 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordTemplateId 录制模板 ID。
+                     * @param _recordTemplateId 录制模板 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordTemplateId(const std::string& _recordTemplateId);
 
                     /**
                      * 判断参数 RecordTemplateId 是否已赋值
                      * @return RecordTemplateId 是否已赋值
+                     * 
                      */
                     bool RecordTemplateIdHasBeenSet() const;
 

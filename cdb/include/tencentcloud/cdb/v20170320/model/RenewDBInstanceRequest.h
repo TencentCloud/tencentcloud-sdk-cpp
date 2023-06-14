@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待续费的实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
                      * @return InstanceId 待续费的实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待续费的实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
-                     * @param InstanceId 待续费的实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
+                     * @param _instanceId 待续费的实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
                      * @return TimeSpan 续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
-                     * @param TimeSpan 续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * @param _timeSpan 续费时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
                     /**
                      * 获取如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
                      * @return ModifyPayType 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     * 
                      */
                     std::string GetModifyPayType() const;
 
                     /**
                      * 设置如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
-                     * @param ModifyPayType 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     * @param _modifyPayType 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     * 
                      */
                     void SetModifyPayType(const std::string& _modifyPayType);
 
                     /**
                      * 判断参数 ModifyPayType 是否已赋值
                      * @return ModifyPayType 是否已赋值
+                     * 
                      */
                     bool ModifyPayTypeHasBeenSet() const;
 

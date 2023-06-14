@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerIds 创建的监听器的唯一标识数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 

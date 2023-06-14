@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取预留实例静态配置信息列表。
                      * @return ReservedInstanceConfigInfos 预留实例静态配置信息列表。
+                     * 
                      */
                     std::vector<ReservedInstanceConfigInfoItem> GetReservedInstanceConfigInfos() const;
 
                     /**
                      * 判断参数 ReservedInstanceConfigInfos 是否已赋值
                      * @return ReservedInstanceConfigInfos 是否已赋值
+                     * 
                      */
                     bool ReservedInstanceConfigInfosHasBeenSet() const;
 

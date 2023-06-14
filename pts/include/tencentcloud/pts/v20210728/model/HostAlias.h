@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostNames 需绑定的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHostNames() const;
 
                     /**
                      * 设置需绑定的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostNames 需绑定的域名列表
+                     * @param _hostNames 需绑定的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostNames(const std::vector<std::string>& _hostNames);
 
                     /**
                      * 判断参数 HostNames 是否已赋值
                      * @return HostNames 是否已赋值
+                     * 
                      */
                     bool HostNamesHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 需绑定的 IP 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置需绑定的 IP 地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP 需绑定的 IP 地址
+                     * @param _iP 需绑定的 IP 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 日志时间戳，毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置日志时间戳，毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 日志时间戳，毫秒
+                     * @param _time 日志时间戳，毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const int64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志topic id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志topic id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId 日志topic id
+                     * @param _topicId 日志topic id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 日志topic name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志topic name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicName 日志topic name
+                     * @param _topicName 日志topic name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogJson 日志内容，json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogJson() const;
 
                     /**
                      * 设置日志内容，json字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogJson 日志内容，json字符串
+                     * @param _logJson 日志内容，json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogJson(const std::string& _logJson);
 
                     /**
                      * 判断参数 LogJson 是否已赋值
                      * @return LogJson 是否已赋值
+                     * 
                      */
                     bool LogJsonHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgLogId 日志ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPkgLogId() const;
 
                     /**
                      * 设置日志ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PkgLogId 日志ID
+                     * @param _pkgLogId 日志ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPkgLogId(const std::string& _pkgLogId);
 
                     /**
                      * 判断参数 PkgLogId 是否已赋值
                      * @return PkgLogId 是否已赋值
+                     * 
                      */
                     bool PkgLogIdHasBeenSet() const;
 

@@ -58,6 +58,7 @@ namespace TencentCloud
 <li>ImageUrl：替换的媒体类型为图片 URL；</li>
 
 注：默认为 CMEMaterialId 。
+                     * 
                      */
                     std::string GetMediaType() const;
 
@@ -67,17 +68,19 @@ namespace TencentCloud
 <li>ImageUrl：替换的媒体类型为图片 URL；</li>
 
 注：默认为 CMEMaterialId 。
-                     * @param MediaType 替换的媒体类型，取值有：
+                     * @param _mediaType 替换的媒体类型，取值有：
 <li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
 <li>ImageUrl：替换的媒体类型为图片 URL；</li>
 
 注：默认为 CMEMaterialId 。
+                     * 
                      */
                     void SetMediaType(const std::string& _mediaType);
 
                     /**
                      * 判断参数 MediaType 是否已赋值
                      * @return MediaType 是否已赋值
+                     * 
                      */
                     bool MediaTypeHasBeenSet() const;
 
@@ -86,20 +89,23 @@ namespace TencentCloud
 当媒体类型取值为 CMEMaterialId 时有效。
                      * @return MaterialId 媒体 ID。
 当媒体类型取值为 CMEMaterialId 时有效。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置媒体 ID。
 当媒体类型取值为 CMEMaterialId 时有效。
-                     * @param MaterialId 媒体 ID。
+                     * @param _materialId 媒体 ID。
 当媒体类型取值为 CMEMaterialId 时有效。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
@@ -110,6 +116,7 @@ namespace TencentCloud
                      * @return MediaUrl 媒体 URL。
 当媒体类型取值为 ImageUrl 时有效，
 图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     * 
                      */
                     std::string GetMediaUrl() const;
 
@@ -117,33 +124,38 @@ namespace TencentCloud
                      * 设置媒体 URL。
 当媒体类型取值为 ImageUrl 时有效，
 图片仅支持 jpg、png 格式，且大小不超过 2M 。
-                     * @param MediaUrl 媒体 URL。
+                     * @param _mediaUrl 媒体 URL。
 当媒体类型取值为 ImageUrl 时有效，
 图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     * 
                      */
                     void SetMediaUrl(const std::string& _mediaUrl);
 
                     /**
                      * 判断参数 MediaUrl 是否已赋值
                      * @return MediaUrl 是否已赋值
+                     * 
                      */
                     bool MediaUrlHasBeenSet() const;
 
                     /**
                      * 获取替换媒体选取的开始时间，单位为秒，默认为 0。
                      * @return StartTimeOffset 替换媒体选取的开始时间，单位为秒，默认为 0。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置替换媒体选取的开始时间，单位为秒，默认为 0。
-                     * @param StartTimeOffset 替换媒体选取的开始时间，单位为秒，默认为 0。
+                     * @param _startTimeOffset 替换媒体选取的开始时间，单位为秒，默认为 0。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
@@ -152,20 +164,23 @@ namespace TencentCloud
 注：目前该功能暂不支持，请勿使用。
                      * @return PreprocessOperation 预处理操作。
 注：目前该功能暂不支持，请勿使用。
+                     * 
                      */
                     MediaPreprocessOperation GetPreprocessOperation() const;
 
                     /**
                      * 设置预处理操作。
 注：目前该功能暂不支持，请勿使用。
-                     * @param PreprocessOperation 预处理操作。
+                     * @param _preprocessOperation 预处理操作。
 注：目前该功能暂不支持，请勿使用。
+                     * 
                      */
                     void SetPreprocessOperation(const MediaPreprocessOperation& _preprocessOperation);
 
                     /**
                      * 判断参数 PreprocessOperation 是否已赋值
                      * @return PreprocessOperation 是否已赋值
+                     * 
                      */
                     bool PreprocessOperationHasBeenSet() const;
 

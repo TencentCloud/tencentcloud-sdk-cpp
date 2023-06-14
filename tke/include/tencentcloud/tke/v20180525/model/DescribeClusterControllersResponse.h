@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取描述集群中各个控制器的状态
                      * @return ControllerStatusSet 描述集群中各个控制器的状态
+                     * 
                      */
                     std::vector<ControllerStatus> GetControllerStatusSet() const;
 
                     /**
                      * 判断参数 ControllerStatusSet 是否已赋值
                      * @return ControllerStatusSet 是否已赋值
+                     * 
                      */
                     bool ControllerStatusSetHasBeenSet() const;
 

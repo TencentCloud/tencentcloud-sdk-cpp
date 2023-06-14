@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 加密密钥列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Key> GetKeys() const;
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。
 如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionKey() const;
 
                     /**
                      * 判断参数 SessionKey 是否已赋值
                      * @return SessionKey 是否已赋值
+                     * 
                      */
                     bool SessionKeyHasBeenSet() const;
 
@@ -81,12 +85,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentId 内容ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContentId() const;
 
                     /**
                      * 判断参数 ContentId 是否已赋值
                      * @return ContentId 是否已赋值
+                     * 
                      */
                     bool ContentIdHasBeenSet() const;
 

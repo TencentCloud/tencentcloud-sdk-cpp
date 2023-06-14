@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取Base64 编码后的执行命令。
                      * @return Content Base64 编码后的执行命令。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置Base64 编码后的执行命令。
-                     * @param Content Base64 编码后的执行命令。
+                     * @param _content Base64 编码后的执行命令。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取命令类型。
                      * @return CommandType 命令类型。
+                     * 
                      */
                     std::string GetCommandType() const;
 
                     /**
                      * 设置命令类型。
-                     * @param CommandType 命令类型。
+                     * @param _commandType 命令类型。
+                     * 
                      */
                     void SetCommandType(const std::string& _commandType);
 
                     /**
                      * 判断参数 CommandType 是否已赋值
                      * @return CommandType 是否已赋值
+                     * 
                      */
                     bool CommandTypeHasBeenSet() const;
 
                     /**
                      * 获取超时时间。
                      * @return Timeout 超时时间。
+                     * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 设置超时时间。
-                     * @param Timeout 超时时间。
+                     * @param _timeout 超时时间。
+                     * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
                     /**
                      * 获取执行路径。
                      * @return WorkingDirectory 执行路径。
+                     * 
                      */
                     std::string GetWorkingDirectory() const;
 
                     /**
                      * 设置执行路径。
-                     * @param WorkingDirectory 执行路径。
+                     * @param _workingDirectory 执行路径。
+                     * 
                      */
                     void SetWorkingDirectory(const std::string& _workingDirectory);
 
                     /**
                      * 判断参数 WorkingDirectory 是否已赋值
                      * @return WorkingDirectory 是否已赋值
+                     * 
                      */
                     bool WorkingDirectoryHasBeenSet() const;
 
                     /**
                      * 获取执行用户。
                      * @return Username 执行用户。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置执行用户。
-                     * @param Username 执行用户。
+                     * @param _username 执行用户。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取保存输出的 COS Bucket 链接。
                      * @return OutputCOSBucketUrl 保存输出的 COS Bucket 链接。
+                     * 
                      */
                     std::string GetOutputCOSBucketUrl() const;
 
                     /**
                      * 设置保存输出的 COS Bucket 链接。
-                     * @param OutputCOSBucketUrl 保存输出的 COS Bucket 链接。
+                     * @param _outputCOSBucketUrl 保存输出的 COS Bucket 链接。
+                     * 
                      */
                     void SetOutputCOSBucketUrl(const std::string& _outputCOSBucketUrl);
 
                     /**
                      * 判断参数 OutputCOSBucketUrl 是否已赋值
                      * @return OutputCOSBucketUrl 是否已赋值
+                     * 
                      */
                     bool OutputCOSBucketUrlHasBeenSet() const;
 
                     /**
                      * 获取保存输出的文件名称前缀。
                      * @return OutputCOSKeyPrefix 保存输出的文件名称前缀。
+                     * 
                      */
                     std::string GetOutputCOSKeyPrefix() const;
 
                     /**
                      * 设置保存输出的文件名称前缀。
-                     * @param OutputCOSKeyPrefix 保存输出的文件名称前缀。
+                     * @param _outputCOSKeyPrefix 保存输出的文件名称前缀。
+                     * 
                      */
                     void SetOutputCOSKeyPrefix(const std::string& _outputCOSKeyPrefix);
 
                     /**
                      * 判断参数 OutputCOSKeyPrefix 是否已赋值
                      * @return OutputCOSKeyPrefix 是否已赋值
+                     * 
                      */
                     bool OutputCOSKeyPrefixHasBeenSet() const;
 

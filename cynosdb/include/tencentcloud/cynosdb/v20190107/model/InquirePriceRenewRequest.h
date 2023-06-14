@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取购买时长,与TimeUnit组合才能生效
                      * @return TimeSpan 购买时长,与TimeUnit组合才能生效
+                     * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买时长,与TimeUnit组合才能生效
-                     * @param TimeSpan 购买时长,与TimeUnit组合才能生效
+                     * @param _timeSpan 购买时长,与TimeUnit组合才能生效
+                     * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
                     /**
                      * 获取购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m
                      * @return TimeUnit 购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m
-                     * @param TimeUnit 购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m
+                     * @param _timeUnit 购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 

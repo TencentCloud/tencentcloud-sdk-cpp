@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取异步事件状态
                      * @return Result 异步事件状态
+                     * 
                      */
                     AsyncEventStatus GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取wx应用Id
                      * @return WxAppId wx应用Id
+                     * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
                      * 设置wx应用Id
-                     * @param WxAppId wx应用Id
+                     * @param _wxAppId wx应用Id
+                     * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
 
                     /**
                      * 判断参数 WxAppId 是否已赋值
                      * @return WxAppId 是否已赋值
+                     * 
                      */
                     bool WxAppIdHasBeenSet() const;
 
                     /**
                      * 获取环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符
                      * @return Alias 环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符
-                     * @param Alias 环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符
+                     * @param _alias 环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
                      * @return FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * 
                      */
                     std::string GetFreeQuota() const;
 
                     /**
                      * 设置用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
-                     * @param FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * @param _freeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * 
                      */
                     void SetFreeQuota(const std::string& _freeQuota);
 
                     /**
                      * 判断参数 FreeQuota 是否已赋值
                      * @return FreeQuota 是否已赋值
+                     * 
                      */
                     bool FreeQuotaHasBeenSet() const;
 
@@ -103,6 +112,7 @@ Activity：活动来源
                      * @return Flag 订单标记。建议使用方统一转大小写之后再判断。
 QuickStart：快速启动来源
 Activity：活动来源
+                     * 
                      */
                     std::string GetFlag() const;
 
@@ -110,105 +120,122 @@ Activity：活动来源
                      * 设置订单标记。建议使用方统一转大小写之后再判断。
 QuickStart：快速启动来源
 Activity：活动来源
-                     * @param Flag 订单标记。建议使用方统一转大小写之后再判断。
+                     * @param _flag 订单标记。建议使用方统一转大小写之后再判断。
 QuickStart：快速启动来源
 Activity：活动来源
+                     * 
                      */
                     void SetFlag(const std::string& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取私有网络Id
                      * @return VpcId 私有网络Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络Id
-                     * @param VpcId 私有网络Id
+                     * @param _vpcId 私有网络Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网列表
                      * @return SubNetIds 子网列表
+                     * 
                      */
                     std::vector<std::string> GetSubNetIds() const;
 
                     /**
                      * 设置子网列表
-                     * @param SubNetIds 子网列表
+                     * @param _subNetIds 子网列表
+                     * 
                      */
                     void SetSubNetIds(const std::vector<std::string>& _subNetIds);
 
                     /**
                      * 判断参数 SubNetIds 是否已赋值
                      * @return SubNetIds 是否已赋值
+                     * 
                      */
                     bool SubNetIdsHasBeenSet() const;
 
                     /**
                      * 获取是否打开云调用
                      * @return IsOpenCloudInvoke 是否打开云调用
+                     * 
                      */
                     bool GetIsOpenCloudInvoke() const;
 
                     /**
                      * 设置是否打开云调用
-                     * @param IsOpenCloudInvoke 是否打开云调用
+                     * @param _isOpenCloudInvoke 是否打开云调用
+                     * 
                      */
                     void SetIsOpenCloudInvoke(const bool& _isOpenCloudInvoke);
 
                     /**
                      * 判断参数 IsOpenCloudInvoke 是否已赋值
                      * @return IsOpenCloudInvoke 是否已赋值
+                     * 
                      */
                     bool IsOpenCloudInvokeHasBeenSet() const;
 
                     /**
                      * 获取创建来源：wechat | cloud
                      * @return Source 创建来源：wechat | cloud
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置创建来源：wechat | cloud
-                     * @param Source 创建来源：wechat | cloud
+                     * @param _source 创建来源：wechat | cloud
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取渠道：wechat | cloud
                      * @return Channel 渠道：wechat | cloud
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置渠道：wechat | cloud
-                     * @param Channel 渠道：wechat | cloud
+                     * @param _channel 渠道：wechat | cloud
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 

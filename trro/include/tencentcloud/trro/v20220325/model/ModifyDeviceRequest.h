@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要修改设备归属项目的项目ID
                      * @return ProjectId 要修改设备归属项目的项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置要修改设备归属项目的项目ID
-                     * @param ProjectId 要修改设备归属项目的项目ID
+                     * @param _projectId 要修改设备归属项目的项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取要修改设备的设备ID
                      * @return DeviceId 要修改设备的设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置要修改设备的设备ID
-                     * @param DeviceId 要修改设备的设备ID
+                     * @param _deviceId 要修改设备的设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的设备名称，不填则不修改
                      * @return DeviceName 修改后的设备名称，不填则不修改
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置修改后的设备名称，不填则不修改
-                     * @param DeviceName 修改后的设备名称，不填则不修改
+                     * @param _deviceName 修改后的设备名称，不填则不修改
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取修改后的设备认证口令，不填则不修改
                      * @return DeviceToken 修改后的设备认证口令，不填则不修改
+                     * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
                      * 设置修改后的设备认证口令，不填则不修改
-                     * @param DeviceToken 修改后的设备认证口令，不填则不修改
+                     * @param _deviceToken 修改后的设备认证口令，不填则不修改
+                     * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
 
                     /**
                      * 判断参数 DeviceToken 是否已赋值
                      * @return DeviceToken 是否已赋值
+                     * 
                      */
                     bool DeviceTokenHasBeenSet() const;
 

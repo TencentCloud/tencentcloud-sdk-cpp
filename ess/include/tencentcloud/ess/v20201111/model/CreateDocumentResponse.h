@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取签署流程电子文档ID
                      * @return DocumentId 签署流程电子文档ID
+                     * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
                      * 判断参数 DocumentId 是否已赋值
                      * @return DocumentId 是否已赋值
+                     * 
                      */
                     bool DocumentIdHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewFileUrl 签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPreviewFileUrl() const;
 
                     /**
                      * 判断参数 PreviewFileUrl 是否已赋值
                      * @return PreviewFileUrl 是否已赋值
+                     * 
                      */
                     bool PreviewFileUrlHasBeenSet() const;
 

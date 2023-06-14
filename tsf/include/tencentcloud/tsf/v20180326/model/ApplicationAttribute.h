@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 总实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置总实例个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCount 总实例个数
+                     * @param _instanceCount 总实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunInstanceCount 运行实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
                      * 设置运行实例个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunInstanceCount 运行实例个数
+                     * @param _runInstanceCount 运行实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
 
                     /**
                      * 判断参数 RunInstanceCount 是否已赋值
                      * @return RunInstanceCount 是否已赋值
+                     * 
                      */
                     bool RunInstanceCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCount 应用下部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
                      * 设置应用下部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupCount 应用下部署组个数
+                     * @param _groupCount 应用下部署组个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
 
                     /**
                      * 判断参数 GroupCount 是否已赋值
                      * @return GroupCount 是否已赋值
+                     * 
                      */
                     bool GroupCountHasBeenSet() const;
 

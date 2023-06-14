@@ -55,18 +55,21 @@ namespace TencentCloud
                     /**
                      * 获取编辑任务 ID。
                      * @return TaskId 编辑任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置编辑任务 ID。
-                     * @param TaskId 编辑任务 ID。
+                     * @param _taskId 编辑任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 1：执行中；2：已完成。
                      * @return Status 编辑任务状态。 
 1：执行中；2：已完成。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置编辑任务状态。 
 1：执行中；2：已完成。
-                     * @param Status 编辑任务状态。 
+                     * @param _status 编辑任务状态。 
 1：执行中；2：已完成。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagTaskResult 视频标签识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TagTaskResult GetTagTaskResult() const;
 
                     /**
                      * 设置视频标签识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagTaskResult 视频标签识别结果。
+                     * @param _tagTaskResult 视频标签识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagTaskResult(const TagTaskResult& _tagTaskResult);
 
                     /**
                      * 判断参数 TagTaskResult 是否已赋值
                      * @return TagTaskResult 是否已赋值
+                     * 
                      */
                     bool TagTaskResultHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassificationTaskResult 视频分类识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClassificationTaskResult GetClassificationTaskResult() const;
 
                     /**
                      * 设置视频分类识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassificationTaskResult 视频分类识别结果。
+                     * @param _classificationTaskResult 视频分类识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassificationTaskResult(const ClassificationTaskResult& _classificationTaskResult);
 
                     /**
                      * 判断参数 ClassificationTaskResult 是否已赋值
                      * @return ClassificationTaskResult 是否已赋值
+                     * 
                      */
                     bool ClassificationTaskResultHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StripTaskResult 智能拆条结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StripTaskResult GetStripTaskResult() const;
 
                     /**
                      * 设置智能拆条结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StripTaskResult 智能拆条结果。
+                     * @param _stripTaskResult 智能拆条结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStripTaskResult(const StripTaskResult& _stripTaskResult);
 
                     /**
                      * 判断参数 StripTaskResult 是否已赋值
                      * @return StripTaskResult 是否已赋值
+                     * 
                      */
                     bool StripTaskResultHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighlightsTaskResult 智能集锦结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HighlightsTaskResult GetHighlightsTaskResult() const;
 
                     /**
                      * 设置智能集锦结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HighlightsTaskResult 智能集锦结果。
+                     * @param _highlightsTaskResult 智能集锦结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHighlightsTaskResult(const HighlightsTaskResult& _highlightsTaskResult);
 
                     /**
                      * 判断参数 HighlightsTaskResult 是否已赋值
                      * @return HighlightsTaskResult 是否已赋值
+                     * 
                      */
                     bool HighlightsTaskResultHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverTaskResult 智能封面结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CoverTaskResult GetCoverTaskResult() const;
 
                     /**
                      * 设置智能封面结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverTaskResult 智能封面结果。
+                     * @param _coverTaskResult 智能封面结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverTaskResult(const CoverTaskResult& _coverTaskResult);
 
                     /**
                      * 判断参数 CoverTaskResult 是否已赋值
                      * @return CoverTaskResult 是否已赋值
+                     * 
                      */
                     bool CoverTaskResultHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpeningEndingTaskResult 片头片尾识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OpeningEndingTaskResult GetOpeningEndingTaskResult() const;
 
                     /**
                      * 设置片头片尾识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpeningEndingTaskResult 片头片尾识别结果。
+                     * @param _openingEndingTaskResult 片头片尾识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpeningEndingTaskResult(const OpeningEndingTaskResult& _openingEndingTaskResult);
 
                     /**
                      * 判断参数 OpeningEndingTaskResult 是否已赋值
                      * @return OpeningEndingTaskResult 是否已赋值
+                     * 
                      */
                     bool OpeningEndingTaskResultHasBeenSet() const;
 

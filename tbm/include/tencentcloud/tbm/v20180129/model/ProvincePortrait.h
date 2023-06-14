@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取省份名称
                      * @return Province 省份名称
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份名称
-                     * @param Province 省份名称
+                     * @param _province 省份名称
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percent 百分比
+                     * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置百分比
-                     * @param Percent 百分比
+                     * @param _percent 百分比
+                     * 
                      */
                     void SetPercent(const double& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取分页游标，对应结果返回的NextCursor,首次请求保持为空
                      * @return Cursor 分页游标，对应结果返回的NextCursor,首次请求保持为空
+                     * 
                      */
                     std::string GetCursor() const;
 
                     /**
                      * 设置分页游标，对应结果返回的NextCursor,首次请求保持为空
-                     * @param Cursor 分页游标，对应结果返回的NextCursor,首次请求保持为空
+                     * @param _cursor 分页游标，对应结果返回的NextCursor,首次请求保持为空
+                     * 
                      */
                     void SetCursor(const std::string& _cursor);
 
                     /**
                      * 判断参数 Cursor 是否已赋值
                      * @return Cursor 是否已赋值
+                     * 
                      */
                     bool CursorHasBeenSet() const;
 
                     /**
                      * 获取单页数据限制
                      * @return Limit 单页数据限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单页数据限制
-                     * @param Limit 单页数据限制
+                     * @param _limit 单页数据限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取读写模式
                      * @return Mode 读写模式
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置读写模式
-                     * @param Mode 读写模式
+                     * @param _mode 读写模式
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取长度范围
                      * @return Range 长度范围
+                     * 
                      */
                     std::vector<uint64_t> GetRange() const;
 
                     /**
                      * 设置长度范围
-                     * @param Range 长度范围
+                     * @param _range 长度范围
+                     * 
                      */
                     void SetRange(const std::vector<uint64_t>& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 

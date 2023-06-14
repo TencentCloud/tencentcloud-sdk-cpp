@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取Cos触发器数量
                      * @return Cos Cos触发器数量
+                     * 
                      */
                     int64_t GetCos() const;
 
                     /**
                      * 设置Cos触发器数量
-                     * @param Cos Cos触发器数量
+                     * @param _cos Cos触发器数量
+                     * 
                      */
                     void SetCos(const int64_t& _cos);
 
                     /**
                      * 判断参数 Cos 是否已赋值
                      * @return Cos 是否已赋值
+                     * 
                      */
                     bool CosHasBeenSet() const;
 
                     /**
                      * 获取Timer触发器数量
                      * @return Timer Timer触发器数量
+                     * 
                      */
                     int64_t GetTimer() const;
 
                     /**
                      * 设置Timer触发器数量
-                     * @param Timer Timer触发器数量
+                     * @param _timer Timer触发器数量
+                     * 
                      */
                     void SetTimer(const int64_t& _timer);
 
                     /**
                      * 判断参数 Timer 是否已赋值
                      * @return Timer 是否已赋值
+                     * 
                      */
                     bool TimerHasBeenSet() const;
 
                     /**
                      * 获取Cmq触发器数量
                      * @return Cmq Cmq触发器数量
+                     * 
                      */
                     int64_t GetCmq() const;
 
                     /**
                      * 设置Cmq触发器数量
-                     * @param Cmq Cmq触发器数量
+                     * @param _cmq Cmq触发器数量
+                     * 
                      */
                     void SetCmq(const int64_t& _cmq);
 
                     /**
                      * 判断参数 Cmq 是否已赋值
                      * @return Cmq 是否已赋值
+                     * 
                      */
                     bool CmqHasBeenSet() const;
 
                     /**
                      * 获取触发器总数
                      * @return Total 触发器总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置触发器总数
-                     * @param Total 触发器总数
+                     * @param _total 触发器总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取Ckafka触发器数量
                      * @return Ckafka Ckafka触发器数量
+                     * 
                      */
                     int64_t GetCkafka() const;
 
                     /**
                      * 设置Ckafka触发器数量
-                     * @param Ckafka Ckafka触发器数量
+                     * @param _ckafka Ckafka触发器数量
+                     * 
                      */
                     void SetCkafka(const int64_t& _ckafka);
 
                     /**
                      * 判断参数 Ckafka 是否已赋值
                      * @return Ckafka 是否已赋值
+                     * 
                      */
                     bool CkafkaHasBeenSet() const;
 
                     /**
                      * 获取Apigw触发器数量
                      * @return Apigw Apigw触发器数量
+                     * 
                      */
                     int64_t GetApigw() const;
 
                     /**
                      * 设置Apigw触发器数量
-                     * @param Apigw Apigw触发器数量
+                     * @param _apigw Apigw触发器数量
+                     * 
                      */
                     void SetApigw(const int64_t& _apigw);
 
                     /**
                      * 判断参数 Apigw 是否已赋值
                      * @return Apigw 是否已赋值
+                     * 
                      */
                     bool ApigwHasBeenSet() const;
 
                     /**
                      * 获取Cls触发器数量
                      * @return Cls Cls触发器数量
+                     * 
                      */
                     int64_t GetCls() const;
 
                     /**
                      * 设置Cls触发器数量
-                     * @param Cls Cls触发器数量
+                     * @param _cls Cls触发器数量
+                     * 
                      */
                     void SetCls(const int64_t& _cls);
 
                     /**
                      * 判断参数 Cls 是否已赋值
                      * @return Cls 是否已赋值
+                     * 
                      */
                     bool ClsHasBeenSet() const;
 
                     /**
                      * 获取Clb触发器数量
                      * @return Clb Clb触发器数量
+                     * 
                      */
                     int64_t GetClb() const;
 
                     /**
                      * 设置Clb触发器数量
-                     * @param Clb Clb触发器数量
+                     * @param _clb Clb触发器数量
+                     * 
                      */
                     void SetClb(const int64_t& _clb);
 
                     /**
                      * 判断参数 Clb 是否已赋值
                      * @return Clb 是否已赋值
+                     * 
                      */
                     bool ClbHasBeenSet() const;
 
                     /**
                      * 获取Mps触发器数量
                      * @return Mps Mps触发器数量
+                     * 
                      */
                     int64_t GetMps() const;
 
                     /**
                      * 设置Mps触发器数量
-                     * @param Mps Mps触发器数量
+                     * @param _mps Mps触发器数量
+                     * 
                      */
                     void SetMps(const int64_t& _mps);
 
                     /**
                      * 判断参数 Mps 是否已赋值
                      * @return Mps 是否已赋值
+                     * 
                      */
                     bool MpsHasBeenSet() const;
 
                     /**
                      * 获取Cm触发器数量
                      * @return Cm Cm触发器数量
+                     * 
                      */
                     int64_t GetCm() const;
 
                     /**
                      * 设置Cm触发器数量
-                     * @param Cm Cm触发器数量
+                     * @param _cm Cm触发器数量
+                     * 
                      */
                     void SetCm(const int64_t& _cm);
 
                     /**
                      * 判断参数 Cm 是否已赋值
                      * @return Cm 是否已赋值
+                     * 
                      */
                     bool CmHasBeenSet() const;
 
                     /**
                      * 获取Vod触发器数量
                      * @return Vod Vod触发器数量
+                     * 
                      */
                     int64_t GetVod() const;
 
                     /**
                      * 设置Vod触发器数量
-                     * @param Vod Vod触发器数量
+                     * @param _vod Vod触发器数量
+                     * 
                      */
                     void SetVod(const int64_t& _vod);
 
                     /**
                      * 判断参数 Vod 是否已赋值
                      * @return Vod 是否已赋值
+                     * 
                      */
                     bool VodHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eb Eb触发器数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEb() const;
 
                     /**
                      * 设置Eb触发器数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Eb Eb触发器数量
+                     * @param _eb Eb触发器数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEb(const int64_t& _eb);
 
                     /**
                      * 判断参数 Eb 是否已赋值
                      * @return Eb 是否已赋值
+                     * 
                      */
                     bool EbHasBeenSet() const;
 

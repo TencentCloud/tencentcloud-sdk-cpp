@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Ret 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetRet() const;
 
                     /**
                      * 判断参数 Ret 是否已赋值
                      * @return Ret 是否已赋值
+                     * 
                      */
                     bool RetHasBeenSet() const;
 
                     /**
                      * 获取资源类型
                      * @return ResourceName 资源类型
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取资源总数
                      * @return Total 资源总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取资源未使用次数
                      * @return UnusedCount 资源未使用次数
+                     * 
                      */
                     int64_t GetUnusedCount() const;
 
                     /**
                      * 判断参数 UnusedCount 是否已赋值
                      * @return UnusedCount 是否已赋值
+                     * 
                      */
                     bool UnusedCountHasBeenSet() const;
 

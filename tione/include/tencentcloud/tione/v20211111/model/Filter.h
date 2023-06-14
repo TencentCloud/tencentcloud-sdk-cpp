@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取过滤字段名称
                      * @return Name 过滤字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤字段名称
-                     * @param Name 过滤字段名称
+                     * @param _name 过滤字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤字段取值
                      * @return Values 过滤字段取值
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤字段取值
-                     * @param Values 过滤字段取值
+                     * @param _values 过滤字段取值
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否开启反向查询
                      * @return Negative 是否开启反向查询
+                     * 
                      */
                     bool GetNegative() const;
 
                     /**
                      * 设置是否开启反向查询
-                     * @param Negative 是否开启反向查询
+                     * @param _negative 是否开启反向查询
+                     * 
                      */
                     void SetNegative(const bool& _negative);
 
                     /**
                      * 判断参数 Negative 是否已赋值
                      * @return Negative 是否已赋值
+                     * 
                      */
                     bool NegativeHasBeenSet() const;
 
                     /**
                      * 获取是否开启模糊匹配
                      * @return Fuzzy 是否开启模糊匹配
+                     * 
                      */
                     bool GetFuzzy() const;
 
                     /**
                      * 设置是否开启模糊匹配
-                     * @param Fuzzy 是否开启模糊匹配
+                     * @param _fuzzy 是否开启模糊匹配
+                     * 
                      */
                     void SetFuzzy(const bool& _fuzzy);
 
                     /**
                      * 判断参数 Fuzzy 是否已赋值
                      * @return Fuzzy 是否已赋值
+                     * 
                      */
                     bool FuzzyHasBeenSet() const;
 

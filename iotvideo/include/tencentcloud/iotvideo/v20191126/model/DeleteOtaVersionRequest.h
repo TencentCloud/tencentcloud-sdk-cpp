@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288
                      * @return OtaVersion 固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288
-                     * @param OtaVersion 固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288
+                     * @param _otaVersion 固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
                     /**
                      * 获取操作人
                      * @return Operator 操作人
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人
-                     * @param Operator 操作人
+                     * @param _operator 操作人
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

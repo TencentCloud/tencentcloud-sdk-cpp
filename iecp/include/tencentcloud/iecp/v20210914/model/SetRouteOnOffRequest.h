@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return RouteID 无
+                     * 
                      */
                     int64_t GetRouteID() const;
 
                     /**
                      * 设置无
-                     * @param RouteID 无
+                     * @param _routeID 无
+                     * 
                      */
                     void SetRouteID(const int64_t& _routeID);
 
                     /**
                      * 判断参数 RouteID 是否已赋值
                      * @return RouteID 是否已赋值
+                     * 
                      */
                     bool RouteIDHasBeenSet() const;
 
                     /**
                      * 获取on 或 off
                      * @return Status on 或 off
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置on 或 off
-                     * @param Status on 或 off
+                     * @param _status on 或 off
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

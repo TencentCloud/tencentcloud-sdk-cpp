@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
                      * @return AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @param AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * @param _addressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的 EIP 名称。长度上限为20个字符。
                      * @return AddressName 修改后的 EIP 名称。长度上限为20个字符。
+                     * 
                      */
                     std::string GetAddressName() const;
 
                     /**
                      * 设置修改后的 EIP 名称。长度上限为20个字符。
-                     * @param AddressName 修改后的 EIP 名称。长度上限为20个字符。
+                     * @param _addressName 修改后的 EIP 名称。长度上限为20个字符。
+                     * 
                      */
                     void SetAddressName(const std::string& _addressName);
 
                     /**
                      * 判断参数 AddressName 是否已赋值
                      * @return AddressName 是否已赋值
+                     * 
                      */
                     bool AddressNameHasBeenSet() const;
 
                     /**
                      * 获取设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
                      * @return EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * 
                      */
                     std::string GetEipDirectConnection() const;
 
                     /**
                      * 设置设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
-                     * @param EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * @param _eipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * 
                      */
                     void SetEipDirectConnection(const std::string& _eipDirectConnection);
 
                     /**
                      * 判断参数 EipDirectConnection 是否已赋值
                      * @return EipDirectConnection 是否已赋值
+                     * 
                      */
                     bool EipDirectConnectionHasBeenSet() const;
 

@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取创建规则数据
                      * @return Data 创建规则数据
+                     * 
                      */
                     std::vector<RuleInfoData> GetData() const;
 
                     /**
                      * 设置创建规则数据
-                     * @param Data 创建规则数据
+                     * @param _data 创建规则数据
+                     * 
                      */
                     void SetData(const std::vector<RuleInfoData>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取0：添加（默认），1：插入
                      * @return Type 0：添加（默认），1：插入
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置0：添加（默认），1：插入
-                     * @param Type 0：添加（默认），1：插入
+                     * @param _type 0：添加（默认），1：插入
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取边id
                      * @return EdgeId 边id
+                     * 
                      */
                     std::string GetEdgeId() const;
 
                     /**
                      * 设置边id
-                     * @param EdgeId 边id
+                     * @param _edgeId 边id
+                     * 
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
                     /**
                      * 判断参数 EdgeId 是否已赋值
                      * @return EdgeId 是否已赋值
+                     * 
                      */
                     bool EdgeIdHasBeenSet() const;
 
                     /**
                      * 获取访问控制规则状态
                      * @return Enable 访问控制规则状态
+                     * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置访问控制规则状态
-                     * @param Enable 访问控制规则状态
+                     * @param _enable 访问控制规则状态
+                     * 
                      */
                     void SetEnable(const int64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取0：添加，1：覆盖
                      * @return Overwrite 0：添加，1：覆盖
+                     * 
                      */
                     uint64_t GetOverwrite() const;
 
                     /**
                      * 设置0：添加，1：覆盖
-                     * @param Overwrite 0：添加，1：覆盖
+                     * @param _overwrite 0：添加，1：覆盖
+                     * 
                      */
                     void SetOverwrite(const uint64_t& _overwrite);
 
                     /**
                      * 判断参数 Overwrite 是否已赋值
                      * @return Overwrite 是否已赋值
+                     * 
                      */
                     bool OverwriteHasBeenSet() const;
 
                     /**
                      * 获取NAT实例ID, 参数Area存在的时候这个必传
                      * @return InstanceId NAT实例ID, 参数Area存在的时候这个必传
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置NAT实例ID, 参数Area存在的时候这个必传
-                     * @param InstanceId NAT实例ID, 参数Area存在的时候这个必传
+                     * @param _instanceId NAT实例ID, 参数Area存在的时候这个必传
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取portScan: 来自于端口扫描, patchImport: 来自于批量导入
                      * @return From portScan: 来自于端口扫描, patchImport: 来自于批量导入
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置portScan: 来自于端口扫描, patchImport: 来自于批量导入
-                     * @param From portScan: 来自于端口扫描, patchImport: 来自于批量导入
+                     * @param _from portScan: 来自于端口扫描, patchImport: 来自于批量导入
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取NAT地域
                      * @return Area NAT地域
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置NAT地域
-                     * @param Area NAT地域
+                     * @param _area NAT地域
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

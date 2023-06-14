@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取申请单状态
                      * @return ApplyStatus 申请单状态
+                     * 
                      */
                     std::vector<ApplyStatus> GetApplyStatus() const;
 
                     /**
                      * 设置申请单状态
-                     * @param ApplyStatus 申请单状态
+                     * @param _applyStatus 申请单状态
+                     * 
                      */
                     void SetApplyStatus(const std::vector<ApplyStatus>& _applyStatus);
 
                     /**
                      * 判断参数 ApplyStatus 是否已赋值
                      * @return ApplyStatus 是否已赋值
+                     * 
                      */
                     bool ApplyStatusHasBeenSet() const;
 

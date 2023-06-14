@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskIds 任务id
+                     * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskIds 任务id
+                     * @param _taskIds 任务id
+                     * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
                     /**
                      * 判断参数 TaskIds 是否已赋值
                      * @return TaskIds 是否已赋值
+                     * 
                      */
                     bool TaskIdsHasBeenSet() const;
 
                     /**
                      * 获取责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）
                      * @return Incharge 责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）
+                     * 
                      */
                     std::string GetIncharge() const;
 
                     /**
                      * 设置责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）
-                     * @param Incharge 责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）
+                     * @param _incharge 责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）
+                     * 
                      */
                     void SetIncharge(const std::string& _incharge);
 
                     /**
                      * 判断参数 Incharge 是否已赋值
                      * @return Incharge 是否已赋值
+                     * 
                      */
                     bool InchargeHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

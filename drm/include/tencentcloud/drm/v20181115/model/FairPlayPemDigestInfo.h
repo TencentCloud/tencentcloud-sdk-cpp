@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FairPlayPemId fairplay 私钥pem id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFairPlayPemId() const;
 
                     /**
                      * 设置fairplay 私钥pem id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FairPlayPemId fairplay 私钥pem id。
+                     * @param _fairPlayPemId fairplay 私钥pem id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFairPlayPemId(const uint64_t& _fairPlayPemId);
 
                     /**
                      * 判断参数 FairPlayPemId 是否已赋值
                      * @return FairPlayPemId 是否已赋值
+                     * 
                      */
                     bool FairPlayPemIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 私钥的优先级。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置私钥的优先级。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 私钥的优先级。
+                     * @param _priority 私钥的优先级。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const uint64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5Pem 私钥的md5 信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5Pem() const;
 
                     /**
                      * 设置私钥的md5 信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5Pem 私钥的md5 信息。
+                     * @param _md5Pem 私钥的md5 信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5Pem(const std::string& _md5Pem);
 
                     /**
                      * 判断参数 Md5Pem 是否已赋值
                      * @return Md5Pem 是否已赋值
+                     * 
                      */
                     bool Md5PemHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5Ask ASK的md5信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5Ask() const;
 
                     /**
                      * 设置ASK的md5信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5Ask ASK的md5信息。
+                     * @param _md5Ask ASK的md5信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5Ask(const std::string& _md5Ask);
 
                     /**
                      * 判断参数 Md5Ask 是否已赋值
                      * @return Md5Ask 是否已赋值
+                     * 
                      */
                     bool Md5AskHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5PemDecryptKey 私钥解密密钥的md5值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5PemDecryptKey() const;
 
                     /**
                      * 设置私钥解密密钥的md5值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5PemDecryptKey 私钥解密密钥的md5值。
+                     * @param _md5PemDecryptKey 私钥解密密钥的md5值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5PemDecryptKey(const std::string& _md5PemDecryptKey);
 
                     /**
                      * 判断参数 Md5PemDecryptKey 是否已赋值
                      * @return Md5PemDecryptKey 是否已赋值
+                     * 
                      */
                     bool Md5PemDecryptKeyHasBeenSet() const;
 

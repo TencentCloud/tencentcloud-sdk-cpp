@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取操作类型
                      * @return Action 操作类型
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置操作类型
-                     * @param Action 操作类型
+                     * @param _action 操作类型
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取操作时间
                      * @return ActionTime 操作时间
+                     * 
                      */
                     std::string GetActionTime() const;
 
                     /**
                      * 设置操作时间
-                     * @param ActionTime 操作时间
+                     * @param _actionTime 操作时间
+                     * 
                      */
                     void SetActionTime(const std::string& _actionTime);
 
                     /**
                      * 判断参数 ActionTime 是否已赋值
                      * @return ActionTime 是否已赋值
+                     * 
                      */
                     bool ActionTimeHasBeenSet() const;
 
                     /**
                      * 获取操作名称
                      * @return ActionName 操作名称
+                     * 
                      */
                     std::string GetActionName() const;
 
                     /**
                      * 设置操作名称
-                     * @param ActionName 操作名称
+                     * @param _actionName 操作名称
+                     * 
                      */
                     void SetActionName(const std::string& _actionName);
 
                     /**
                      * 判断参数 ActionName 是否已赋值
                      * @return ActionName 是否已赋值
+                     * 
                      */
                     bool ActionNameHasBeenSet() const;
 
                     /**
                      * 获取操作者
                      * @return Operator 操作者
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者
-                     * @param Operator 操作者
+                     * @param _operator 操作者
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     uint64_t GetResult() const;
 
                     /**
                      * 设置结果
-                     * @param Result 结果
+                     * @param _result 结果
+                     * 
                      */
                     void SetResult(const uint64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

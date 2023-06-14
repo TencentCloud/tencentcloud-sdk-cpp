@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取素材样例id
                      * @return InstanceId 素材样例id
+                     * 
                      */
                     int64_t GetInstanceId() const;
 
                     /**
                      * 设置素材样例id
-                     * @param InstanceId 素材样例id
+                     * @param _instanceId 素材样例id
+                     * 
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Tel 手机号
+                     * 
                      */
                     std::string GetTel() const;
 
                     /**
                      * 设置手机号
-                     * @param Tel 手机号
+                     * @param _tel 手机号
+                     * 
                      */
                     void SetTel(const std::string& _tel);
 
                     /**
                      * 判断参数 Tel 是否已赋值
                      * @return Tel 是否已赋值
+                     * 
                      */
                     bool TelHasBeenSet() const;
 
                     /**
                      * 获取附带数据字段
                      * @return Session 附带数据字段
+                     * 
                      */
                     std::string GetSession() const;
 
                     /**
                      * 设置附带数据字段
-                     * @param Session 附带数据字段
+                     * @param _session 附带数据字段
+                     * 
                      */
                     void SetSession(const std::string& _session);
 
                     /**
                      * 判断参数 Session 是否已赋值
                      * @return Session 是否已赋值
+                     * 
                      */
                     bool SessionHasBeenSet() const;
 
                     /**
                      * 获取动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)
                      * @return DynamicParaKey 动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)
+                     * 
                      */
                     std::vector<std::string> GetDynamicParaKey() const;
 
                     /**
                      * 设置动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)
-                     * @param DynamicParaKey 动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)
+                     * @param _dynamicParaKey 动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)
+                     * 
                      */
                     void SetDynamicParaKey(const std::vector<std::string>& _dynamicParaKey);
 
                     /**
                      * 判断参数 DynamicParaKey 是否已赋值
                      * @return DynamicParaKey 是否已赋值
+                     * 
                      */
                     bool DynamicParaKeyHasBeenSet() const;
 
                     /**
                      * 获取动态参数值,和DynamicParaKey对应
                      * @return DynamicParaValue 动态参数值,和DynamicParaKey对应
+                     * 
                      */
                     std::vector<std::string> GetDynamicParaValue() const;
 
                     /**
                      * 设置动态参数值,和DynamicParaKey对应
-                     * @param DynamicParaValue 动态参数值,和DynamicParaKey对应
+                     * @param _dynamicParaValue 动态参数值,和DynamicParaKey对应
+                     * 
                      */
                     void SetDynamicParaValue(const std::vector<std::string>& _dynamicParaValue);
 
                     /**
                      * 判断参数 DynamicParaValue 是否已赋值
                      * @return DynamicParaValue 是否已赋值
+                     * 
                      */
                     bool DynamicParaValueHasBeenSet() const;
 

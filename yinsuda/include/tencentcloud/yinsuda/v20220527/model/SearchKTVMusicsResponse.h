@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取歌曲信息列表。
                      * @return KTVMusicInfoSet 歌曲信息列表。
+                     * 
                      */
                     std::vector<KTVMusicBaseInfo> GetKTVMusicInfoSet() const;
 
                     /**
                      * 判断参数 KTVMusicInfoSet 是否已赋值
                      * @return KTVMusicInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVMusicInfoSetHasBeenSet() const;
 
                     /**
                      * 获取滚动标记，用于设置下次请求的 ScrollToken 参数。
                      * @return ScrollToken 滚动标记，用于设置下次请求的 ScrollToken 参数。
+                     * 
                      */
                     std::string GetScrollToken() const;
 
                     /**
                      * 判断参数 ScrollToken 是否已赋值
                      * @return ScrollToken 是否已赋值
+                     * 
                      */
                     bool ScrollTokenHasBeenSet() const;
 

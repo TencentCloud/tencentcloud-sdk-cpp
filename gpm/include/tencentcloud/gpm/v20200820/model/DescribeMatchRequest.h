@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取匹配code
                      * @return MatchCode 匹配code
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配code
-                     * @param MatchCode 匹配code
+                     * @param _matchCode 匹配code
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 

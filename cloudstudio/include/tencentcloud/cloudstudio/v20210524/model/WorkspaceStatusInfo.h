@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取空间ID
                      * @return Id 空间ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置空间ID
-                     * @param Id 空间ID
+                     * @param _id 空间ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取空间名称
                      * @return Name 空间名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置空间名称
-                     * @param Name 空间名称
+                     * @param _name 空间名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取所属人
                      * @return Owner 所属人
+                     * 
                      */
                     UserInfoRsp GetOwner() const;
 
                     /**
                      * 设置所属人
-                     * @param Owner 所属人
+                     * @param _owner 所属人
+                     * 
                      */
                     void SetOwner(const UserInfoRsp& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取空间标识
                      * @return SpaceKey 空间标识
+                     * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置空间标识
-                     * @param SpaceKey 空间标识
+                     * @param _spaceKey 空间标识
+                     * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
                     /**
                      * 判断参数 SpaceKey 是否已赋值
                      * @return SpaceKey 是否已赋值
+                     * 
                      */
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -143,20 +158,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOpsDate 最后操作时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastOpsDate() const;
 
                     /**
                      * 设置最后操作时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastOpsDate 最后操作时间
+                     * @param _lastOpsDate 最后操作时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastOpsDate(const std::string& _lastOpsDate);
 
                     /**
                      * 判断参数 LastOpsDate 是否已赋值
                      * @return LastOpsDate 是否已赋值
+                     * 
                      */
                     bool LastOpsDateHasBeenSet() const;
 
@@ -165,56 +183,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取共享状态
                      * @return Share 共享状态
+                     * 
                      */
                     WorkspaceShareInfo GetShare() const;
 
                     /**
                      * 设置共享状态
-                     * @param Share 共享状态
+                     * @param _share 共享状态
+                     * 
                      */
                     void SetShare(const WorkspaceShareInfo& _share);
 
                     /**
                      * 判断参数 Share 是否已赋值
                      * @return Share 是否已赋值
+                     * 
                      */
                     bool ShareHasBeenSet() const;
 
                     /**
                      * 获取空间类型
                      * @return WorkspaceType 空间类型
+                     * 
                      */
                     std::string GetWorkspaceType() const;
 
                     /**
                      * 设置空间类型
-                     * @param WorkspaceType 空间类型
+                     * @param _workspaceType 空间类型
+                     * 
                      */
                     void SetWorkspaceType(const std::string& _workspaceType);
 
                     /**
                      * 判断参数 WorkspaceType 是否已赋值
                      * @return WorkspaceType 是否已赋值
+                     * 
                      */
                     bool WorkspaceTypeHasBeenSet() const;
 
@@ -223,56 +250,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 标签
+                     * @param _label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取空间版本
                      * @return WorkspaceVersion 空间版本
+                     * 
                      */
                     int64_t GetWorkspaceVersion() const;
 
                     /**
                      * 设置空间版本
-                     * @param WorkspaceVersion 空间版本
+                     * @param _workspaceVersion 空间版本
+                     * 
                      */
                     void SetWorkspaceVersion(const int64_t& _workspaceVersion);
 
                     /**
                      * 判断参数 WorkspaceVersion 是否已赋值
                      * @return WorkspaceVersion 是否已赋值
+                     * 
                      */
                     bool WorkspaceVersionHasBeenSet() const;
 
                     /**
                      * 获取图标地址
                      * @return ImageIcon 图标地址
+                     * 
                      */
                     std::string GetImageIcon() const;
 
                     /**
                      * 设置图标地址
-                     * @param ImageIcon 图标地址
+                     * @param _imageIcon 图标地址
+                     * 
                      */
                     void SetImageIcon(const std::string& _imageIcon);
 
                     /**
                      * 判断参数 ImageIcon 是否已赋值
                      * @return ImageIcon 是否已赋值
+                     * 
                      */
                     bool ImageIconHasBeenSet() const;
 
@@ -281,20 +317,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateDate 创建时间
+                     * @param _createDate 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateDate(const std::string& _createDate);
 
                     /**
                      * 判断参数 CreateDate 是否已赋值
                      * @return CreateDate 是否已赋值
+                     * 
                      */
                     bool CreateDateHasBeenSet() const;
 
@@ -303,20 +342,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlUrl 版本控制地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionControlUrl() const;
 
                     /**
                      * 设置版本控制地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionControlUrl 版本控制地址
+                     * @param _versionControlUrl 版本控制地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionControlUrl(const std::string& _versionControlUrl);
 
                     /**
                      * 判断参数 VersionControlUrl 是否已赋值
                      * @return VersionControlUrl 是否已赋值
+                     * 
                      */
                     bool VersionControlUrlHasBeenSet() const;
 
@@ -325,20 +367,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlDesc 版本控制描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionControlDesc() const;
 
                     /**
                      * 设置版本控制描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionControlDesc 版本控制描述
+                     * @param _versionControlDesc 版本控制描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionControlDesc(const std::string& _versionControlDesc);
 
                     /**
                      * 判断参数 VersionControlDesc 是否已赋值
                      * @return VersionControlDesc 是否已赋值
+                     * 
                      */
                     bool VersionControlDescHasBeenSet() const;
 
@@ -347,20 +392,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlRef 版本控制引用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionControlRef() const;
 
                     /**
                      * 设置版本控制引用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionControlRef 版本控制引用
+                     * @param _versionControlRef 版本控制引用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionControlRef(const std::string& _versionControlRef);
 
                     /**
                      * 判断参数 VersionControlRef 是否已赋值
                      * @return VersionControlRef 是否已赋值
+                     * 
                      */
                     bool VersionControlRefHasBeenSet() const;
 
@@ -369,38 +417,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlRefType 版本控制引用类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionControlRefType() const;
 
                     /**
                      * 设置版本控制引用类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionControlRefType 版本控制引用类型
+                     * @param _versionControlRefType 版本控制引用类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionControlRefType(const std::string& _versionControlRefType);
 
                     /**
                      * 判断参数 VersionControlRefType 是否已赋值
                      * @return VersionControlRefType 是否已赋值
+                     * 
                      */
                     bool VersionControlRefTypeHasBeenSet() const;
 
                     /**
                      * 获取版本控制类型
                      * @return VersionControlType 版本控制类型
+                     * 
                      */
                     std::string GetVersionControlType() const;
 
                     /**
                      * 设置版本控制类型
-                     * @param VersionControlType 版本控制类型
+                     * @param _versionControlType 版本控制类型
+                     * 
                      */
                     void SetVersionControlType(const std::string& _versionControlType);
 
                     /**
                      * 判断参数 VersionControlType 是否已赋值
                      * @return VersionControlType 是否已赋值
+                     * 
                      */
                     bool VersionControlTypeHasBeenSet() const;
 
@@ -409,20 +463,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -431,20 +488,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotUid 快照ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotUid() const;
 
                     /**
                      * 设置快照ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotUid 快照ID
+                     * @param _snapshotUid 快照ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotUid(const std::string& _snapshotUid);
 
                     /**
                      * 判断参数 SnapshotUid 是否已赋值
                      * @return SnapshotUid 是否已赋值
+                     * 
                      */
                     bool SnapshotUidHasBeenSet() const;
 
@@ -453,20 +513,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecDesc 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecDesc() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecDesc 类型
+                     * @param _specDesc 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecDesc(const std::string& _specDesc);
 
                     /**
                      * 判断参数 SpecDesc 是否已赋值
                      * @return SpecDesc 是否已赋值
+                     * 
                      */
                     bool SpecDescHasBeenSet() const;
 
@@ -475,20 +538,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu CPU数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置CPU数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cpu CPU数量
+                     * @param _cpu CPU数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
@@ -497,20 +563,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Memory 内存
+                     * @param _memory 内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 

@@ -53,54 +53,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤键的名称。
                      * @return Name 过滤键的名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤键的名称。
-                     * @param Name 过滤键的名称。
+                     * @param _name 过滤键的名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取一个或者多个过滤值。
                      * @return Values 一个或者多个过滤值。
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置一个或者多个过滤值。
-                     * @param Values 一个或者多个过滤值。
+                     * @param _values 一个或者多个过滤值。
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否模糊查询
                      * @return ExactMatch 是否模糊查询
+                     * 
                      */
                     bool GetExactMatch() const;
 
                     /**
                      * 设置是否模糊查询
-                     * @param ExactMatch 是否模糊查询
+                     * @param _exactMatch 是否模糊查询
+                     * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
 
                     /**
                      * 判断参数 ExactMatch 是否已赋值
                      * @return ExactMatch 是否已赋值
+                     * 
                      */
                     bool ExactMatchHasBeenSet() const;
 

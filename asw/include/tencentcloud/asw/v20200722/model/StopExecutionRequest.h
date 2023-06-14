@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取执行名称
                      * @return ExecutionQrn 执行名称
+                     * 
                      */
                     std::string GetExecutionQrn() const;
 
                     /**
                      * 设置执行名称
-                     * @param ExecutionQrn 执行名称
+                     * @param _executionQrn 执行名称
+                     * 
                      */
                     void SetExecutionQrn(const std::string& _executionQrn);
 
                     /**
                      * 判断参数 ExecutionQrn 是否已赋值
                      * @return ExecutionQrn 是否已赋值
+                     * 
                      */
                     bool ExecutionQrnHasBeenSet() const;
 

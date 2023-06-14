@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取微服务ID
                      * @return MicroserviceId 微服务ID
+                     * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
                      * 设置微服务ID
-                     * @param MicroserviceId 微服务ID
+                     * @param _microserviceId 微服务ID
+                     * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
 
                     /**
                      * 判断参数 MicroserviceId 是否已赋值
                      * @return MicroserviceId 是否已赋值
+                     * 
                      */
                     bool MicroserviceIdHasBeenSet() const;
 
                     /**
                      * 获取API 请求路径
                      * @return Path API 请求路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API 请求路径
-                     * @param Path API 请求路径
+                     * @param _path API 请求路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取请求方法
                      * @return Method 请求方法
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法
-                     * @param Method 请求方法
+                     * @param _method 请求方法
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 

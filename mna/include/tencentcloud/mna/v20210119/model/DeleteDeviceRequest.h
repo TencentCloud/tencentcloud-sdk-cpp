@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取删除设备的唯一ID
                      * @return DeviceId 删除设备的唯一ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置删除设备的唯一ID
-                     * @param DeviceId 删除设备的唯一ID
+                     * @param _deviceId 删除设备的唯一ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取记录id
                      * @return Flow 记录id
+                     * 
                      */
                     std::string GetFlow() const;
 
                     /**
                      * 设置记录id
-                     * @param Flow 记录id
+                     * @param _flow 记录id
+                     * 
                      */
                     void SetFlow(const std::string& _flow);
 
                     /**
                      * 判断参数 Flow 是否已赋值
                      * @return Flow 是否已赋值
+                     * 
                      */
                     bool FlowHasBeenSet() const;
 

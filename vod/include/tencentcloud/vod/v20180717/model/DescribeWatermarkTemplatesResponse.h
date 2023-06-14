@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkTemplateSet 水印模板详情列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<WatermarkTemplate> GetWatermarkTemplateSet() const;
 
                     /**
                      * 判断参数 WatermarkTemplateSet 是否已赋值
                      * @return WatermarkTemplateSet 是否已赋值
+                     * 
                      */
                     bool WatermarkTemplateSetHasBeenSet() const;
 

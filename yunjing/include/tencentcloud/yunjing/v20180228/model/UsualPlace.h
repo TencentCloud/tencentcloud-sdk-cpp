@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取ID。
                      * @return Id ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置ID。
-                     * @param Id ID。
+                     * @param _id ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取云镜客户端唯一标识UUID。
                      * @return Uuid 云镜客户端唯一标识UUID。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜客户端唯一标识UUID。
-                     * @param Uuid 云镜客户端唯一标识UUID。
+                     * @param _uuid 云镜客户端唯一标识UUID。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取国家 ID。
                      * @return CountryId 国家 ID。
+                     * 
                      */
                     uint64_t GetCountryId() const;
 
                     /**
                      * 设置国家 ID。
-                     * @param CountryId 国家 ID。
+                     * @param _countryId 国家 ID。
+                     * 
                      */
                     void SetCountryId(const uint64_t& _countryId);
 
                     /**
                      * 判断参数 CountryId 是否已赋值
                      * @return CountryId 是否已赋值
+                     * 
                      */
                     bool CountryIdHasBeenSet() const;
 
                     /**
                      * 获取省份 ID。
                      * @return ProvinceId 省份 ID。
+                     * 
                      */
                     uint64_t GetProvinceId() const;
 
                     /**
                      * 设置省份 ID。
-                     * @param ProvinceId 省份 ID。
+                     * @param _provinceId 省份 ID。
+                     * 
                      */
                     void SetProvinceId(const uint64_t& _provinceId);
 
                     /**
                      * 判断参数 ProvinceId 是否已赋值
                      * @return ProvinceId 是否已赋值
+                     * 
                      */
                     bool ProvinceIdHasBeenSet() const;
 
                     /**
                      * 获取城市 ID。
                      * @return CityId 城市 ID。
+                     * 
                      */
                     uint64_t GetCityId() const;
 
                     /**
                      * 设置城市 ID。
-                     * @param CityId 城市 ID。
+                     * @param _cityId 城市 ID。
+                     * 
                      */
                     void SetCityId(const uint64_t& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取IP或域名
                      * @return Host IP或域名
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置IP或域名
-                     * @param Host IP或域名
+                     * @param _host IP或域名
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取端口[0, 65535]
                      * @return Port 端口[0, 65535]
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口[0, 65535]
-                     * @param Port 端口[0, 65535]
+                     * @param _port 端口[0, 65535]
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取权重[0, 100], 0为禁用
                      * @return Weight 权重[0, 100], 0为禁用
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置权重[0, 100], 0为禁用
-                     * @param Weight 权重[0, 100], 0为禁用
+                     * @param _weight 权重[0, 100], 0为禁用
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VmInstanceId CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVmInstanceId() const;
 
                     /**
                      * 设置CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VmInstanceId CVM实例ID
+                     * @param _vmInstanceId CVM实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVmInstanceId(const std::string& _vmInstanceId);
 
                     /**
                      * 判断参数 VmInstanceId 是否已赋值
                      * @return VmInstanceId 是否已赋值
+                     * 
                      */
                     bool VmInstanceIdHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 染色标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置染色标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 染色标签
+                     * @param _tags 染色标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHealthy() const;
 
                     /**
                      * 设置节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
+                     * @param _healthy 节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthy(const std::string& _healthy);
 
                     /**
                      * 判断参数 Healthy 是否已赋值
                      * @return Healthy 是否已赋值
+                     * 
                      */
                     bool HealthyHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName K8S容器服务名字
+                     * @param _serviceName K8S容器服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameSpace K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NameSpace K8S命名空间
+                     * @param _nameSpace K8S命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
 
                     /**
                      * 判断参数 NameSpace 是否已赋值
                      * @return NameSpace 是否已赋值
+                     * 
                      */
                     bool NameSpaceHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId TKE集群的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TKE集群的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId TKE集群的ID
+                     * @param _clusterId TKE集群的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source Node的来源，取值范围：K8S
+                     * @param _source Node的来源，取值范围：K8S
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -259,20 +289,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqueServiceName API网关内部记录唯一的服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqueServiceName() const;
 
                     /**
                      * 设置API网关内部记录唯一的服务名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqueServiceName API网关内部记录唯一的服务名字
+                     * @param _uniqueServiceName API网关内部记录唯一的服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqueServiceName(const std::string& _uniqueServiceName);
 
                     /**
                      * 判断参数 UniqueServiceName 是否已赋值
                      * @return UniqueServiceName 是否已赋值
+                     * 
                      */
                     bool UniqueServiceNameHasBeenSet() const;
 

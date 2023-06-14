@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待发布服务的唯一 ID。
                      * @return ServiceId 待发布服务的唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待发布服务的唯一 ID。
-                     * @param ServiceId 待发布服务的唯一 ID。
+                     * @param _serviceId 待发布服务的唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
                      * @return EnvironmentName 待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
-                     * @param EnvironmentName 待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * @param _environmentName 待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取本次的发布描述。
                      * @return ReleaseDesc 本次的发布描述。
+                     * 
                      */
                     std::string GetReleaseDesc() const;
 
                     /**
                      * 设置本次的发布描述。
-                     * @param ReleaseDesc 本次的发布描述。
+                     * @param _releaseDesc 本次的发布描述。
+                     * 
                      */
                     void SetReleaseDesc(const std::string& _releaseDesc);
 
                     /**
                      * 判断参数 ReleaseDesc 是否已赋值
                      * @return ReleaseDesc 是否已赋值
+                     * 
                      */
                     bool ReleaseDescHasBeenSet() const;
 
                     /**
                      * 获取apiId列表，预留字段，默认全量api发布。
                      * @return ApiIds apiId列表，预留字段，默认全量api发布。
+                     * 
                      */
                     std::vector<std::string> GetApiIds() const;
 
                     /**
                      * 设置apiId列表，预留字段，默认全量api发布。
-                     * @param ApiIds apiId列表，预留字段，默认全量api发布。
+                     * @param _apiIds apiId列表，预留字段，默认全量api发布。
+                     * 
                      */
                     void SetApiIds(const std::vector<std::string>& _apiIds);
 
                     /**
                      * 判断参数 ApiIds 是否已赋值
                      * @return ApiIds 是否已赋值
+                     * 
                      */
                     bool ApiIdsHasBeenSet() const;
 

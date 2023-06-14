@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例`ID`，形如：`eni-m6dyj72l`。
                      * @return NetworkInterfaceId 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例`ID`，形如：`eni-m6dyj72l`。
-                     * @param NetworkInterfaceId 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。
+                     * @param _networkInterfaceId 弹性网卡实例`ID`，形如：`eni-m6dyj72l`。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取指定的内网IPv6地址信息。
                      * @return Ipv6Addresses 指定的内网IPv6地址信息。
+                     * 
                      */
                     std::vector<Ipv6Address> GetIpv6Addresses() const;
 
                     /**
                      * 设置指定的内网IPv6地址信息。
-                     * @param Ipv6Addresses 指定的内网IPv6地址信息。
+                     * @param _ipv6Addresses 指定的内网IPv6地址信息。
+                     * 
                      */
                     void SetIpv6Addresses(const std::vector<Ipv6Address>& _ipv6Addresses);
 
                     /**
                      * 判断参数 Ipv6Addresses 是否已赋值
                      * @return Ipv6Addresses 是否已赋值
+                     * 
                      */
                     bool Ipv6AddressesHasBeenSet() const;
 

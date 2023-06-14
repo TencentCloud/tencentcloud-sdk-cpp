@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名
                      * @return Database 数据库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-                     * @param Database 数据库名
+                     * @param _database 数据库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return MatchType 是否精确搜索。
 0: 模糊搜索 1:精确搜索 
 默认为0
+                     * 
                      */
                     int64_t GetMatchType() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置是否精确搜索。
 0: 模糊搜索 1:精确搜索 
 默认为0
-                     * @param MatchType 是否精确搜索。
+                     * @param _matchType 是否精确搜索。
 0: 模糊搜索 1:精确搜索 
 默认为0
+                     * 
                      */
                     void SetMatchType(const int64_t& _matchType);
 
                     /**
                      * 判断参数 MatchType 是否已赋值
                      * @return MatchType 是否已赋值
+                     * 
                      */
                     bool MatchTypeHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的内网ip列表
                      * @return Backends 需要查询的内网ip列表
+                     * 
                      */
                     std::vector<LbRsItem> GetBackends() const;
 
                     /**
                      * 设置需要查询的内网ip列表
-                     * @param Backends 需要查询的内网ip列表
+                     * @param _backends 需要查询的内网ip列表
+                     * 
                      */
                     void SetBackends(const std::vector<LbRsItem>& _backends);
 
                     /**
                      * 判断参数 Backends 是否已赋值
                      * @return Backends 是否已赋值
+                     * 
                      */
                     bool BackendsHasBeenSet() const;
 

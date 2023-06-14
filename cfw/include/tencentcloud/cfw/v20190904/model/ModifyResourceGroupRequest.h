@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取组id
                      * @return GroupId 组id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置组id
-                     * @param GroupId 组id
+                     * @param _groupId 组id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取组名称
                      * @return GroupName 组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置组名称
-                     * @param GroupName 组名称
+                     * @param _groupName 组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取上级组id
                      * @return ParentId 上级组id
+                     * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置上级组id
-                     * @param ParentId 上级组id
+                     * @param _parentId 上级组id
+                     * 
                      */
                     void SetParentId(const std::string& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 

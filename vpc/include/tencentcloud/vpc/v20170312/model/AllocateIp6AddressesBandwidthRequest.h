@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取需要开通公网访问能力的IPV6地址
                      * @return Ip6Addresses 需要开通公网访问能力的IPV6地址
+                     * 
                      */
                     std::vector<std::string> GetIp6Addresses() const;
 
                     /**
                      * 设置需要开通公网访问能力的IPV6地址
-                     * @param Ip6Addresses 需要开通公网访问能力的IPV6地址
+                     * @param _ip6Addresses 需要开通公网访问能力的IPV6地址
+                     * 
                      */
                     void SetIp6Addresses(const std::vector<std::string>& _ip6Addresses);
 
                     /**
                      * 判断参数 Ip6Addresses 是否已赋值
                      * @return Ip6Addresses 是否已赋值
+                     * 
                      */
                     bool Ip6AddressesHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位Mbps。默认是1Mbps
                      * @return InternetMaxBandwidthOut 带宽，单位Mbps。默认是1Mbps
+                     * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置带宽，单位Mbps。默认是1Mbps
-                     * @param InternetMaxBandwidthOut 带宽，单位Mbps。默认是1Mbps
+                     * @param _internetMaxBandwidthOut 带宽，单位Mbps。默认是1Mbps
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取网络计费模式。IPV6当前对标准账户类型支持"TRAFFIC_POSTPAID_BY_HOUR"，对传统账户类型支持"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
                      * @return InternetChargeType 网络计费模式。IPV6当前对标准账户类型支持"TRAFFIC_POSTPAID_BY_HOUR"，对传统账户类型支持"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置网络计费模式。IPV6当前对标准账户类型支持"TRAFFIC_POSTPAID_BY_HOUR"，对传统账户类型支持"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
-                     * @param InternetChargeType 网络计费模式。IPV6当前对标准账户类型支持"TRAFFIC_POSTPAID_BY_HOUR"，对传统账户类型支持"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * @param _internetChargeType 网络计费模式。IPV6当前对标准账户类型支持"TRAFFIC_POSTPAID_BY_HOUR"，对传统账户类型支持"BANDWIDTH_PACKAGE"。默认网络计费模式是"TRAFFIC_POSTPAID_BY_HOUR"。
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
                      * @return BandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
-                     * @param BandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * @param _bandwidthPackageId 带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 

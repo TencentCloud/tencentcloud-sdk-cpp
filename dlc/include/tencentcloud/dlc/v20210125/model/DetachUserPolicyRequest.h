@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取用户Id，和CAM侧Uin匹配
                      * @return UserId 用户Id，和CAM侧Uin匹配
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，和CAM侧Uin匹配
-                     * @param UserId 用户Id，和CAM侧Uin匹配
+                     * @param _userId 用户Id，和CAM侧Uin匹配
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取解绑的权限集合
                      * @return PolicySet 解绑的权限集合
+                     * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
                      * 设置解绑的权限集合
-                     * @param PolicySet 解绑的权限集合
+                     * @param _policySet 解绑的权限集合
+                     * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
 
                     /**
                      * 判断参数 PolicySet 是否已赋值
                      * @return PolicySet 是否已赋值
+                     * 
                      */
                     bool PolicySetHasBeenSet() const;
 

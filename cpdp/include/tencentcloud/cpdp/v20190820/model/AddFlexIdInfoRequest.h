@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return IdType 证件类型
 0:身份证
 1:社会信用代码
+                     * 
                      */
                     int64_t GetIdType() const;
 
@@ -56,51 +57,59 @@ namespace TencentCloud
                      * 设置证件类型
 0:身份证
 1:社会信用代码
-                     * @param IdType 证件类型
+                     * @param _idType 证件类型
 0:身份证
 1:社会信用代码
+                     * 
                      */
                     void SetIdType(const int64_t& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
                     /**
                      * 获取证件号
                      * @return IdNo 证件号
+                     * 
                      */
                     std::string GetIdNo() const;
 
                     /**
                      * 设置证件号
-                     * @param IdNo 证件号
+                     * @param _idNo 证件号
+                     * 
                      */
                     void SetIdNo(const std::string& _idNo);
 
                     /**
                      * 判断参数 IdNo 是否已赋值
                      * @return IdNo 是否已赋值
+                     * 
                      */
                     bool IdNoHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -115,6 +124,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -124,35 +134,40 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

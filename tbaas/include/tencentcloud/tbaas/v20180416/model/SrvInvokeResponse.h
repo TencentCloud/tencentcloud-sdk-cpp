@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回码
                      * @return RetCode 返回码
+                     * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
                      * 判断参数 RetCode 是否已赋值
                      * @return RetCode 是否已赋值
+                     * 
                      */
                     bool RetCodeHasBeenSet() const;
 
                     /**
                      * 获取返回消息
                      * @return RetMsg 返回消息
+                     * 
                      */
                     std::string GetRetMsg() const;
 
                     /**
                      * 判断参数 RetMsg 是否已赋值
                      * @return RetMsg 是否已赋值
+                     * 
                      */
                     bool RetMsgHasBeenSet() const;
 
                     /**
                      * 获取返回数据
                      * @return Data 返回数据
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

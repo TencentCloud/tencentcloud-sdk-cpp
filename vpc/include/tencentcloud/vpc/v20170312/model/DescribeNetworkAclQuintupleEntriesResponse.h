@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取网络ACL条目列表（NetworkAclTuple5Entry）
                      * @return NetworkAclQuintupleSet 网络ACL条目列表（NetworkAclTuple5Entry）
+                     * 
                      */
                     std::vector<NetworkAclQuintupleEntry> GetNetworkAclQuintupleSet() const;
 
                     /**
                      * 判断参数 NetworkAclQuintupleSet 是否已赋值
                      * @return NetworkAclQuintupleSet 是否已赋值
+                     * 
                      */
                     bool NetworkAclQuintupleSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

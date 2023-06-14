@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取支持的实例规格列表
                      * @return DedicatedClusterInstanceTypeSet 支持的实例规格列表
+                     * 
                      */
                     std::vector<DedicatedClusterInstanceType> GetDedicatedClusterInstanceTypeSet() const;
 
                     /**
                      * 判断参数 DedicatedClusterInstanceTypeSet 是否已赋值
                      * @return DedicatedClusterInstanceTypeSet 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterInstanceTypeSetHasBeenSet() const;
 

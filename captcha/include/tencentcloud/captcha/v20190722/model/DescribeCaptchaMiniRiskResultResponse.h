@@ -65,12 +65,14 @@ namespace TencentCloud
 25 bad visitor 策略拦截
 26 system internal error 系统内部错误
 100 param err 参数校验错误
+                     * 
                      */
                     int64_t GetCaptchaCode() const;
 
                     /**
                      * 判断参数 CaptchaCode 是否已赋值
                      * @return CaptchaCode 是否已赋值
+                     * 
                      */
                     bool CaptchaCodeHasBeenSet() const;
 
@@ -81,12 +83,14 @@ namespace TencentCloud
                      * @return CaptchaMsg 状态描述及验证错误信息
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCaptchaMsg() const;
 
                     /**
                      * 判断参数 CaptchaMsg 是否已赋值
                      * @return CaptchaMsg 是否已赋值
+                     * 
                      */
                     bool CaptchaMsgHasBeenSet() const;
 
@@ -97,12 +101,14 @@ namespace TencentCloud
                      * @return ManageMarketingRiskValue 拦截策略返回信息
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutputManageMarketingRiskValue GetManageMarketingRiskValue() const;
 
                     /**
                      * 判断参数 ManageMarketingRiskValue 是否已赋值
                      * @return ManageMarketingRiskValue 是否已赋值
+                     * 
                      */
                     bool ManageMarketingRiskValueHasBeenSet() const;
 

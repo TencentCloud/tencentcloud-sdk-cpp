@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取绑定设备列表
                      * @return Devices 绑定设备列表
+                     * 
                      */
                     std::vector<AppDevice> GetDevices() const;
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 

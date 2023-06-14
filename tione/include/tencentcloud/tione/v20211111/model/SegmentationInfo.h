@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 点坐标数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PointInfo> GetPoints() const;
 
                     /**
                      * 设置点坐标数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Points 点坐标数组
+                     * @param _points 点坐标数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoints(const std::vector<PointInfo>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 分割标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置分割标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 分割标签
+                     * @param _label 分割标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gray 灰度值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGray() const;
 
                     /**
                      * 设置灰度值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gray 灰度值
+                     * @param _gray 灰度值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGray(const uint64_t& _gray);
 
                     /**
                      * 判断参数 Gray 是否已赋值
                      * @return Gray 是否已赋值
+                     * 
                      */
                     bool GrayHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Color 颜色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColor() const;
 
                     /**
                      * 设置颜色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Color 颜色
+                     * @param _color 颜色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColor(const std::string& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 

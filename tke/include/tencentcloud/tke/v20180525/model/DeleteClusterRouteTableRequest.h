@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取路由表名称
                      * @return RouteTableName 路由表名称
+                     * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
                      * 设置路由表名称
-                     * @param RouteTableName 路由表名称
+                     * @param _routeTableName 路由表名称
+                     * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
 
                     /**
                      * 判断参数 RouteTableName 是否已赋值
                      * @return RouteTableName 是否已赋值
+                     * 
                      */
                     bool RouteTableNameHasBeenSet() const;
 

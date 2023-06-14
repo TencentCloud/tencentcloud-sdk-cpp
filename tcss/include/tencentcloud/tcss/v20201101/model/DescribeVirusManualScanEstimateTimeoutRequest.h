@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取扫描范围0容器1主机节点
                      * @return ScanRangeType 扫描范围0容器1主机节点
+                     * 
                      */
                     uint64_t GetScanRangeType() const;
 
                     /**
                      * 设置扫描范围0容器1主机节点
-                     * @param ScanRangeType 扫描范围0容器1主机节点
+                     * @param _scanRangeType 扫描范围0容器1主机节点
+                     * 
                      */
                     void SetScanRangeType(const uint64_t& _scanRangeType);
 
                     /**
                      * 判断参数 ScanRangeType 是否已赋值
                      * @return ScanRangeType 是否已赋值
+                     * 
                      */
                     bool ScanRangeTypeHasBeenSet() const;
 
                     /**
                      * 获取true 全选，false 自选
                      * @return ScanRangeAll true 全选，false 自选
+                     * 
                      */
                     bool GetScanRangeAll() const;
 
                     /**
                      * 设置true 全选，false 自选
-                     * @param ScanRangeAll true 全选，false 自选
+                     * @param _scanRangeAll true 全选，false 自选
+                     * 
                      */
                     void SetScanRangeAll(const bool& _scanRangeAll);
 
                     /**
                      * 判断参数 ScanRangeAll 是否已赋值
                      * @return ScanRangeAll 是否已赋值
+                     * 
                      */
                     bool ScanRangeAllHasBeenSet() const;
 
                     /**
                      * 获取自选扫描范围的容器id或者主机id 根据ScanRangeType决定
                      * @return ScanIds 自选扫描范围的容器id或者主机id 根据ScanRangeType决定
+                     * 
                      */
                     std::vector<std::string> GetScanIds() const;
 
                     /**
                      * 设置自选扫描范围的容器id或者主机id 根据ScanRangeType决定
-                     * @param ScanIds 自选扫描范围的容器id或者主机id 根据ScanRangeType决定
+                     * @param _scanIds 自选扫描范围的容器id或者主机id 根据ScanRangeType决定
+                     * 
                      */
                     void SetScanIds(const std::vector<std::string>& _scanIds);
 
                     /**
                      * 判断参数 ScanIds 是否已赋值
                      * @return ScanIds 是否已赋值
+                     * 
                      */
                     bool ScanIdsHasBeenSet() const;
 

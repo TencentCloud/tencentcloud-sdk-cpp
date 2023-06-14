@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取本地网关信息。
                      * @return LocalGateway 本地网关信息。
+                     * 
                      */
                     LocalGateway GetLocalGateway() const;
 
                     /**
                      * 判断参数 LocalGateway 是否已赋值
                      * @return LocalGateway 是否已赋值
+                     * 
                      */
                     bool LocalGatewayHasBeenSet() const;
 

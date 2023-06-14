@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分页查询偏移量，默认为 0
                      * @return Offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量，默认为 0
-                     * @param Offset 分页查询偏移量，默认为 0
+                     * @param _offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目，默认为 100
                      * @return Limit 分页查询限制数目，默认为 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目，默认为 100
-                     * @param Limit 分页查询限制数目，默认为 100
+                     * @param _limit 分页查询限制数目，默认为 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取指定的域名查询
                      * @return Domains 指定的域名查询
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置指定的域名查询
-                     * @param Domains 指定的域名查询
+                     * @param _domains 指定的域名查询
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

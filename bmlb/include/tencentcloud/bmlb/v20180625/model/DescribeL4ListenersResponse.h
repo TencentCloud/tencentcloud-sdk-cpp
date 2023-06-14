@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取监听器信息数组。
                      * @return ListenerSet 监听器信息数组。
+                     * 
                      */
                     std::vector<L4Listener> GetListenerSet() const;
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 

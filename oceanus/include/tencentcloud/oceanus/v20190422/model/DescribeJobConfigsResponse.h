@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总的配置版本数量
                      * @return TotalCount 总的配置版本数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取作业配置列表
                      * @return JobConfigSet 作业配置列表
+                     * 
                      */
                     std::vector<JobConfig> GetJobConfigSet() const;
 
                     /**
                      * 判断参数 JobConfigSet 是否已赋值
                      * @return JobConfigSet 是否已赋值
+                     * 
                      */
                     bool JobConfigSetHasBeenSet() const;
 

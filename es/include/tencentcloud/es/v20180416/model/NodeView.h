@@ -49,306 +49,357 @@ namespace TencentCloud
                     /**
                      * 获取节点ID
                      * @return NodeId 节点ID
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点ID
-                     * @param NodeId 节点ID
+                     * @param _nodeId 节点ID
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点IP
                      * @return NodeIp 节点IP
+                     * 
                      */
                     std::string GetNodeIp() const;
 
                     /**
                      * 设置节点IP
-                     * @param NodeIp 节点IP
+                     * @param _nodeIp 节点IP
+                     * 
                      */
                     void SetNodeIp(const std::string& _nodeIp);
 
                     /**
                      * 判断参数 NodeIp 是否已赋值
                      * @return NodeIp 是否已赋值
+                     * 
                      */
                     bool NodeIpHasBeenSet() const;
 
                     /**
                      * 获取节点是否可见
                      * @return Visible 节点是否可见
+                     * 
                      */
                     double GetVisible() const;
 
                     /**
                      * 设置节点是否可见
-                     * @param Visible 节点是否可见
+                     * @param _visible 节点是否可见
+                     * 
                      */
                     void SetVisible(const double& _visible);
 
                     /**
                      * 判断参数 Visible 是否已赋值
                      * @return Visible 是否已赋值
+                     * 
                      */
                     bool VisibleHasBeenSet() const;
 
                     /**
                      * 获取是否熔断
                      * @return Break 是否熔断
+                     * 
                      */
                     double GetBreak() const;
 
                     /**
                      * 设置是否熔断
-                     * @param Break 是否熔断
+                     * @param _break 是否熔断
+                     * 
                      */
                     void SetBreak(const double& _break);
 
                     /**
                      * 判断参数 Break 是否已赋值
                      * @return Break 是否已赋值
+                     * 
                      */
                     bool BreakHasBeenSet() const;
 
                     /**
                      * 获取节点总磁盘大小
                      * @return DiskSize 节点总磁盘大小
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置节点总磁盘大小
-                     * @param DiskSize 节点总磁盘大小
+                     * @param _diskSize 节点总磁盘大小
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取磁盘使用率
                      * @return DiskUsage 磁盘使用率
+                     * 
                      */
                     double GetDiskUsage() const;
 
                     /**
                      * 设置磁盘使用率
-                     * @param DiskUsage 磁盘使用率
+                     * @param _diskUsage 磁盘使用率
+                     * 
                      */
                     void SetDiskUsage(const double& _diskUsage);
 
                     /**
                      * 判断参数 DiskUsage 是否已赋值
                      * @return DiskUsage 是否已赋值
+                     * 
                      */
                     bool DiskUsageHasBeenSet() const;
 
                     /**
                      * 获取节点内存大小，单位GB
                      * @return MemSize 节点内存大小，单位GB
+                     * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
                      * 设置节点内存大小，单位GB
-                     * @param MemSize 节点内存大小，单位GB
+                     * @param _memSize 节点内存大小，单位GB
+                     * 
                      */
                     void SetMemSize(const int64_t& _memSize);
 
                     /**
                      * 判断参数 MemSize 是否已赋值
                      * @return MemSize 是否已赋值
+                     * 
                      */
                     bool MemSizeHasBeenSet() const;
 
                     /**
                      * 获取内存使用率
                      * @return MemUsage 内存使用率
+                     * 
                      */
                     double GetMemUsage() const;
 
                     /**
                      * 设置内存使用率
-                     * @param MemUsage 内存使用率
+                     * @param _memUsage 内存使用率
+                     * 
                      */
                     void SetMemUsage(const double& _memUsage);
 
                     /**
                      * 判断参数 MemUsage 是否已赋值
                      * @return MemUsage 是否已赋值
+                     * 
                      */
                     bool MemUsageHasBeenSet() const;
 
                     /**
                      * 获取节点cpu个数
                      * @return CpuNum 节点cpu个数
+                     * 
                      */
                     int64_t GetCpuNum() const;
 
                     /**
                      * 设置节点cpu个数
-                     * @param CpuNum 节点cpu个数
+                     * @param _cpuNum 节点cpu个数
+                     * 
                      */
                     void SetCpuNum(const int64_t& _cpuNum);
 
                     /**
                      * 判断参数 CpuNum 是否已赋值
                      * @return CpuNum 是否已赋值
+                     * 
                      */
                     bool CpuNumHasBeenSet() const;
 
                     /**
                      * 获取cpu使用率
                      * @return CpuUsage cpu使用率
+                     * 
                      */
                     double GetCpuUsage() const;
 
                     /**
                      * 设置cpu使用率
-                     * @param CpuUsage cpu使用率
+                     * @param _cpuUsage cpu使用率
+                     * 
                      */
                     void SetCpuUsage(const double& _cpuUsage);
 
                     /**
                      * 判断参数 CpuUsage 是否已赋值
                      * @return CpuUsage 是否已赋值
+                     * 
                      */
                     bool CpuUsageHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取节点角色
                      * @return NodeRole 节点角色
+                     * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
                      * 设置节点角色
-                     * @param NodeRole 节点角色
+                     * @param _nodeRole 节点角色
+                     * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
 
                     /**
                      * 判断参数 NodeRole 是否已赋值
                      * @return NodeRole 是否已赋值
+                     * 
                      */
                     bool NodeRoleHasBeenSet() const;
 
                     /**
                      * 获取节点HTTP IP
                      * @return NodeHttpIp 节点HTTP IP
+                     * 
                      */
                     std::string GetNodeHttpIp() const;
 
                     /**
                      * 设置节点HTTP IP
-                     * @param NodeHttpIp 节点HTTP IP
+                     * @param _nodeHttpIp 节点HTTP IP
+                     * 
                      */
                     void SetNodeHttpIp(const std::string& _nodeHttpIp);
 
                     /**
                      * 判断参数 NodeHttpIp 是否已赋值
                      * @return NodeHttpIp 是否已赋值
+                     * 
                      */
                     bool NodeHttpIpHasBeenSet() const;
 
                     /**
                      * 获取JVM内存使用率
                      * @return JvmMemUsage JVM内存使用率
+                     * 
                      */
                     double GetJvmMemUsage() const;
 
                     /**
                      * 设置JVM内存使用率
-                     * @param JvmMemUsage JVM内存使用率
+                     * @param _jvmMemUsage JVM内存使用率
+                     * 
                      */
                     void SetJvmMemUsage(const double& _jvmMemUsage);
 
                     /**
                      * 判断参数 JvmMemUsage 是否已赋值
                      * @return JvmMemUsage 是否已赋值
+                     * 
                      */
                     bool JvmMemUsageHasBeenSet() const;
 
                     /**
                      * 获取节点分片数
                      * @return ShardNum 节点分片数
+                     * 
                      */
                     int64_t GetShardNum() const;
 
                     /**
                      * 设置节点分片数
-                     * @param ShardNum 节点分片数
+                     * @param _shardNum 节点分片数
+                     * 
                      */
                     void SetShardNum(const int64_t& _shardNum);
 
                     /**
                      * 判断参数 ShardNum 是否已赋值
                      * @return ShardNum 是否已赋值
+                     * 
                      */
                     bool ShardNumHasBeenSet() const;
 
                     /**
                      * 获取节点上磁盘ID列表
                      * @return DiskIds 节点上磁盘ID列表
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置节点上磁盘ID列表
-                     * @param DiskIds 节点上磁盘ID列表
+                     * @param _diskIds 节点上磁盘ID列表
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 
                     /**
                      * 获取是否为隐藏可用区
                      * @return Hidden 是否为隐藏可用区
+                     * 
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置是否为隐藏可用区
-                     * @param Hidden 是否为隐藏可用区
+                     * @param _hidden 是否为隐藏可用区
+                     * 
                      */
                     void SetHidden(const bool& _hidden);
 
                     /**
                      * 判断参数 Hidden 是否已赋值
                      * @return Hidden 是否已赋值
+                     * 
                      */
                     bool HiddenHasBeenSet() const;
 

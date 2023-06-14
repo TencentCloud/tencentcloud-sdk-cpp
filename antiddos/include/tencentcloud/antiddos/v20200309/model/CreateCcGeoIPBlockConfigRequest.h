@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取ip地址
                      * @return IP ip地址
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置ip地址
-                     * @param IP ip地址
+                     * @param _iP ip地址
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取协议类型
                      * @return Protocol 协议类型
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型
-                     * @param Protocol 协议类型
+                     * @param _protocol 协议类型
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取CC区域封禁配置
                      * @return CcGeoIPBlockConfig CC区域封禁配置
+                     * 
                      */
                     CcGeoIPBlockConfig GetCcGeoIPBlockConfig() const;
 
                     /**
                      * 设置CC区域封禁配置
-                     * @param CcGeoIPBlockConfig CC区域封禁配置
+                     * @param _ccGeoIPBlockConfig CC区域封禁配置
+                     * 
                      */
                     void SetCcGeoIPBlockConfig(const CcGeoIPBlockConfig& _ccGeoIPBlockConfig);
 
                     /**
                      * 判断参数 CcGeoIPBlockConfig 是否已赋值
                      * @return CcGeoIPBlockConfig 是否已赋值
+                     * 
                      */
                     bool CcGeoIPBlockConfigHasBeenSet() const;
 

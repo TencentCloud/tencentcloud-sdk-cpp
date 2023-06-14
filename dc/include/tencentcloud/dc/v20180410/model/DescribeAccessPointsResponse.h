@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取接入点信息。
                      * @return AccessPointSet 接入点信息。
+                     * 
                      */
                     std::vector<AccessPoint> GetAccessPointSet() const;
 
                     /**
                      * 判断参数 AccessPointSet 是否已赋值
                      * @return AccessPointSet 是否已赋值
+                     * 
                      */
                     bool AccessPointSetHasBeenSet() const;
 
                     /**
                      * 获取符合接入点数量。
                      * @return TotalCount 符合接入点数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

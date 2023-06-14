@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用的唯一ID。
                      * @return ApplicationId 应用的唯一ID。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationAccounts 应用账户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetApplicationAccounts() const;
 
                     /**
                      * 判断参数 ApplicationAccounts 是否已赋值
                      * @return ApplicationAccounts 是否已赋值
+                     * 
                      */
                     bool ApplicationAccountsHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 授权用户的唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 授权的用户名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -103,12 +111,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationUserResourceList 返回的资源列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthorizationUserResouceInfo> GetAuthorizationUserResourceList() const;
 
                     /**
                      * 判断参数 AuthorizationUserResourceList 是否已赋值
                      * @return AuthorizationUserResourceList 是否已赋值
+                     * 
                      */
                     bool AuthorizationUserResourceListHasBeenSet() const;
 

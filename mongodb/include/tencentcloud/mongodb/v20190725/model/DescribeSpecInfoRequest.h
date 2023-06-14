@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待查询可用区
                      * @return Zone 待查询可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置待查询可用区
-                     * @param Zone 待查询可用区
+                     * @param _zone 待查询可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

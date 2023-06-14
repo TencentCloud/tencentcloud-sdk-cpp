@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批次号
                      * @return BatchNum 批次号
+                     * 
                      */
                     int64_t GetBatchNum() const;
 
                     /**
                      * 设置批次号
-                     * @param BatchNum 批次号
+                     * @param _batchNum 批次号
+                     * 
                      */
                     void SetBatchNum(const int64_t& _batchNum);
 
                     /**
                      * 判断参数 BatchNum 是否已赋值
                      * @return BatchNum 是否已赋值
+                     * 
                      */
                     bool BatchNumHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取房间信息。
                      * @return Room 房间信息。
+                     * 
                      */
                     Room GetRoom() const;
 
                     /**
                      * 判断参数 Room 是否已赋值
                      * @return Room 是否已赋值
+                     * 
                      */
                     bool RoomHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)
                      * @return AlarmId 该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)
+                     * 
                      */
                     std::string GetAlarmId() const;
 
                     /**
                      * 设置该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)
-                     * @param AlarmId 该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)
+                     * @param _alarmId 该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)
+                     * 
                      */
                     void SetAlarmId(const std::string& _alarmId);
 
                     /**
                      * 判断参数 AlarmId 是否已赋值
                      * @return AlarmId 是否已赋值
+                     * 
                      */
                     bool AlarmIdHasBeenSet() const;
 
                     /**
                      * 获取告警事件表状态，当该节点为告警点时生效
                      * @return Status 告警事件表状态，当该节点为告警点时生效
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置告警事件表状态，当该节点为告警点时生效
-                     * @param Status 告警事件表状态，当该节点为告警点时生效
+                     * @param _status 告警事件表状态，当该节点为告警点时生效
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

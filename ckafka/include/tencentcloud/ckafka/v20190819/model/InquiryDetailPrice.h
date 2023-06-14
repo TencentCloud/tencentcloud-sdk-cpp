@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthPrice 额外内网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryBasePrice GetBandwidthPrice() const;
 
                     /**
                      * 设置额外内网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BandwidthPrice 额外内网带宽价格
+                     * @param _bandwidthPrice 额外内网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBandwidthPrice(const InquiryBasePrice& _bandwidthPrice);
 
                     /**
                      * 判断参数 BandwidthPrice 是否已赋值
                      * @return BandwidthPrice 是否已赋值
+                     * 
                      */
                     bool BandwidthPriceHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskPrice 硬盘价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryBasePrice GetDiskPrice() const;
 
                     /**
                      * 设置硬盘价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskPrice 硬盘价格
+                     * @param _diskPrice 硬盘价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskPrice(const InquiryBasePrice& _diskPrice);
 
                     /**
                      * 判断参数 DiskPrice 是否已赋值
                      * @return DiskPrice 是否已赋值
+                     * 
                      */
                     bool DiskPriceHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionPrice 额外分区价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryBasePrice GetPartitionPrice() const;
 
                     /**
                      * 设置额外分区价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionPrice 额外分区价格
+                     * @param _partitionPrice 额外分区价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionPrice(const InquiryBasePrice& _partitionPrice);
 
                     /**
                      * 判断参数 PartitionPrice 是否已赋值
                      * @return PartitionPrice 是否已赋值
+                     * 
                      */
                     bool PartitionPriceHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicPrice 额外Topic价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryBasePrice GetTopicPrice() const;
 
                     /**
                      * 设置额外Topic价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicPrice 额外Topic价格
+                     * @param _topicPrice 额外Topic价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicPrice(const InquiryBasePrice& _topicPrice);
 
                     /**
                      * 判断参数 TopicPrice 是否已赋值
                      * @return TopicPrice 是否已赋值
+                     * 
                      */
                     bool TopicPriceHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTypePrice 实例套餐价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryBasePrice GetInstanceTypePrice() const;
 
                     /**
                      * 设置实例套餐价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceTypePrice 实例套餐价格
+                     * @param _instanceTypePrice 实例套餐价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceTypePrice(const InquiryBasePrice& _instanceTypePrice);
 
                     /**
                      * 判断参数 InstanceTypePrice 是否已赋值
                      * @return InstanceTypePrice 是否已赋值
+                     * 
                      */
                     bool InstanceTypePriceHasBeenSet() const;
 

@@ -46,198 +46,231 @@ namespace TencentCloud
                     /**
                      * 获取应用名称
                      * @return ApplicationName 应用名称
+                     * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-                     * @param ApplicationName 应用名称
+                     * @param _applicationName 应用名称
+                     * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
 
                     /**
                      * 判断参数 ApplicationName 是否已赋值
                      * @return ApplicationName 是否已赋值
+                     * 
                      */
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
                      * 获取应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
                      * @return ApplicationType 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
+                     * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
                      * 设置应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
-                     * @param ApplicationType 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
+                     * @param _applicationType 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
+                     * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
                      * 获取应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
                      * @return MicroserviceType 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
                      * 设置应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
-                     * @param MicroserviceType 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     * @param _microserviceType 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
 
                     /**
                      * 判断参数 MicroserviceType 是否已赋值
                      * @return MicroserviceType 是否已赋值
+                     * 
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
                      * 获取应用描述
                      * @return ApplicationDesc 应用描述
+                     * 
                      */
                     std::string GetApplicationDesc() const;
 
                     /**
                      * 设置应用描述
-                     * @param ApplicationDesc 应用描述
+                     * @param _applicationDesc 应用描述
+                     * 
                      */
                     void SetApplicationDesc(const std::string& _applicationDesc);
 
                     /**
                      * 判断参数 ApplicationDesc 是否已赋值
                      * @return ApplicationDesc 是否已赋值
+                     * 
                      */
                     bool ApplicationDescHasBeenSet() const;
 
                     /**
                      * 获取应用日志配置项，废弃参数
                      * @return ApplicationLogConfig 应用日志配置项，废弃参数
+                     * 
                      */
                     std::string GetApplicationLogConfig() const;
 
                     /**
                      * 设置应用日志配置项，废弃参数
-                     * @param ApplicationLogConfig 应用日志配置项，废弃参数
+                     * @param _applicationLogConfig 应用日志配置项，废弃参数
+                     * 
                      */
                     void SetApplicationLogConfig(const std::string& _applicationLogConfig);
 
                     /**
                      * 判断参数 ApplicationLogConfig 是否已赋值
                      * @return ApplicationLogConfig 是否已赋值
+                     * 
                      */
                     bool ApplicationLogConfigHasBeenSet() const;
 
                     /**
                      * 获取应用资源类型，废弃参数
                      * @return ApplicationResourceType 应用资源类型，废弃参数
+                     * 
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
                      * 设置应用资源类型，废弃参数
-                     * @param ApplicationResourceType 应用资源类型，废弃参数
+                     * @param _applicationResourceType 应用资源类型，废弃参数
+                     * 
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
 
                     /**
                      * 判断参数 ApplicationResourceType 是否已赋值
                      * @return ApplicationResourceType 是否已赋值
+                     * 
                      */
                     bool ApplicationResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取应用runtime类型
                      * @return ApplicationRuntimeType 应用runtime类型
+                     * 
                      */
                     std::string GetApplicationRuntimeType() const;
 
                     /**
                      * 设置应用runtime类型
-                     * @param ApplicationRuntimeType 应用runtime类型
+                     * @param _applicationRuntimeType 应用runtime类型
+                     * 
                      */
                     void SetApplicationRuntimeType(const std::string& _applicationRuntimeType);
 
                     /**
                      * 判断参数 ApplicationRuntimeType 是否已赋值
                      * @return ApplicationRuntimeType 是否已赋值
+                     * 
                      */
                     bool ApplicationRuntimeTypeHasBeenSet() const;
 
                     /**
                      * 获取需要绑定的数据集ID
                      * @return ProgramId 需要绑定的数据集ID
+                     * 
                      */
                     std::string GetProgramId() const;
 
                     /**
                      * 设置需要绑定的数据集ID
-                     * @param ProgramId 需要绑定的数据集ID
+                     * @param _programId 需要绑定的数据集ID
+                     * 
                      */
                     void SetProgramId(const std::string& _programId);
 
                     /**
                      * 判断参数 ProgramId 是否已赋值
                      * @return ProgramId 是否已赋值
+                     * 
                      */
                     bool ProgramIdHasBeenSet() const;
 
                     /**
                      * 获取服务配置信息列表
                      * @return ServiceConfigList 服务配置信息列表
+                     * 
                      */
                     std::vector<ServiceConfig> GetServiceConfigList() const;
 
                     /**
                      * 设置服务配置信息列表
-                     * @param ServiceConfigList 服务配置信息列表
+                     * @param _serviceConfigList 服务配置信息列表
+                     * 
                      */
                     void SetServiceConfigList(const std::vector<ServiceConfig>& _serviceConfigList);
 
                     /**
                      * 判断参数 ServiceConfigList 是否已赋值
                      * @return ServiceConfigList 是否已赋值
+                     * 
                      */
                     bool ServiceConfigListHasBeenSet() const;
 
                     /**
                      * 获取忽略创建镜像仓库
                      * @return IgnoreCreateImageRepository 忽略创建镜像仓库
+                     * 
                      */
                     bool GetIgnoreCreateImageRepository() const;
 
                     /**
                      * 设置忽略创建镜像仓库
-                     * @param IgnoreCreateImageRepository 忽略创建镜像仓库
+                     * @param _ignoreCreateImageRepository 忽略创建镜像仓库
+                     * 
                      */
                     void SetIgnoreCreateImageRepository(const bool& _ignoreCreateImageRepository);
 
                     /**
                      * 判断参数 IgnoreCreateImageRepository 是否已赋值
                      * @return IgnoreCreateImageRepository 是否已赋值
+                     * 
                      */
                     bool IgnoreCreateImageRepositoryHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProgramIdList 无
+                     * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
                      * 设置无
-                     * @param ProgramIdList 无
+                     * @param _programIdList 无
+                     * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
 
                     /**
                      * 判断参数 ProgramIdList 是否已赋值
                      * @return ProgramIdList 是否已赋值
+                     * 
                      */
                     bool ProgramIdListHasBeenSet() const;
 

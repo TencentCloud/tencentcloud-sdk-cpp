@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取版本保留策略列表
                      * @return RetentionPolicyList 版本保留策略列表
+                     * 
                      */
                     std::vector<RetentionPolicy> GetRetentionPolicyList() const;
 
                     /**
                      * 判断参数 RetentionPolicyList 是否已赋值
                      * @return RetentionPolicyList 是否已赋值
+                     * 
                      */
                     bool RetentionPolicyListHasBeenSet() const;
 
                     /**
                      * 获取版本保留策略总数
                      * @return TotalCount 版本保留策略总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

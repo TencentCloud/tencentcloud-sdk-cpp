@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取Web 攻击防护（WAF）配置
                      * @return Waf Web 攻击防护（WAF）配置
+                     * 
                      */
                     ScdnWafConfig GetWaf() const;
 
                     /**
                      * 设置Web 攻击防护（WAF）配置
-                     * @param Waf Web 攻击防护（WAF）配置
+                     * @param _waf Web 攻击防护（WAF）配置
+                     * 
                      */
                     void SetWaf(const ScdnWafConfig& _waf);
 
                     /**
                      * 判断参数 Waf 是否已赋值
                      * @return Waf 是否已赋值
+                     * 
                      */
                     bool WafHasBeenSet() const;
 
                     /**
                      * 获取自定义防护策略配置
                      * @return Acl 自定义防护策略配置
+                     * 
                      */
                     ScdnAclConfig GetAcl() const;
 
                     /**
                      * 设置自定义防护策略配置
-                     * @param Acl 自定义防护策略配置
+                     * @param _acl 自定义防护策略配置
+                     * 
                      */
                     void SetAcl(const ScdnAclConfig& _acl);
 
                     /**
                      * 判断参数 Acl 是否已赋值
                      * @return Acl 是否已赋值
+                     * 
                      */
                     bool AclHasBeenSet() const;
 
                     /**
                      * 获取CC 防护配置，目前 CC 防护默认开启
                      * @return CC CC 防护配置，目前 CC 防护默认开启
+                     * 
                      */
                     ScdnConfig GetCC() const;
 
                     /**
                      * 设置CC 防护配置，目前 CC 防护默认开启
-                     * @param CC CC 防护配置，目前 CC 防护默认开启
+                     * @param _cC CC 防护配置，目前 CC 防护默认开启
+                     * 
                      */
                     void SetCC(const ScdnConfig& _cC);
 
                     /**
                      * 判断参数 CC 是否已赋值
                      * @return CC 是否已赋值
+                     * 
                      */
                     bool CCHasBeenSet() const;
 
                     /**
                      * 获取DDOS 防护配置，目前 DDoS 防护默认开启
                      * @return Ddos DDOS 防护配置，目前 DDoS 防护默认开启
+                     * 
                      */
                     ScdnDdosConfig GetDdos() const;
 
                     /**
                      * 设置DDOS 防护配置，目前 DDoS 防护默认开启
-                     * @param Ddos DDOS 防护配置，目前 DDoS 防护默认开启
+                     * @param _ddos DDOS 防护配置，目前 DDoS 防护默认开启
+                     * 
                      */
                     void SetDdos(const ScdnDdosConfig& _ddos);
 
                     /**
                      * 判断参数 Ddos 是否已赋值
                      * @return Ddos 是否已赋值
+                     * 
                      */
                     bool DdosHasBeenSet() const;
 
                     /**
                      * 获取BOT 防护配置
                      * @return Bot BOT 防护配置
+                     * 
                      */
                     ScdnBotConfig GetBot() const;
 
                     /**
                      * 设置BOT 防护配置
-                     * @param Bot BOT 防护配置
+                     * @param _bot BOT 防护配置
+                     * 
                      */
                     void SetBot(const ScdnBotConfig& _bot);
 
                     /**
                      * 判断参数 Bot 是否已赋值
                      * @return Bot 是否已赋值
+                     * 
                      */
                     bool BotHasBeenSet() const;
 

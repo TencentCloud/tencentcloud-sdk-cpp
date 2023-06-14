@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DID网络列表
                      * @return DidClusterList DID网络列表
+                     * 
                      */
                     std::vector<DidCluster> GetDidClusterList() const;
 
                     /**
                      * 判断参数 DidClusterList 是否已赋值
                      * @return DidClusterList 是否已赋值
+                     * 
                      */
                     bool DidClusterListHasBeenSet() const;
 

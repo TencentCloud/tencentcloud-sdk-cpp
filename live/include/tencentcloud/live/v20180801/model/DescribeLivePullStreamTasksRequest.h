@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return TaskId 任务 ID。 
 来源：调用 CreateLivePullStreamTask 接口时返回。
 不填默认查询所有任务，按更新时间倒序排序。
+                     * 
                      */
                     std::string GetTaskId() const;
 
@@ -56,33 +57,38 @@ namespace TencentCloud
                      * 设置任务 ID。 
 来源：调用 CreateLivePullStreamTask 接口时返回。
 不填默认查询所有任务，按更新时间倒序排序。
-                     * @param TaskId 任务 ID。 
+                     * @param _taskId 任务 ID。 
 来源：调用 CreateLivePullStreamTask 接口时返回。
 不填默认查询所有任务，按更新时间倒序排序。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取取得第几页，默认值：1。
                      * @return PageNum 取得第几页，默认值：1。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 设置取得第几页，默认值：1。
-                     * @param PageNum 取得第几页，默认值：1。
+                     * @param _pageNum 取得第几页，默认值：1。
+                     * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 取值范围：1~20 之前的任意整数。
                      * @return PageSize 分页大小，默认值：10。
 取值范围：1~20 之前的任意整数。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小，默认值：10。
 取值范围：1~20 之前的任意整数。
-                     * @param PageSize 分页大小，默认值：10。
+                     * @param _pageSize 分页大小，默认值：10。
 取值范围：1~20 之前的任意整数。
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取专业周报漏洞数据数组。
                      * @return WeeklyReportVuls 专业周报漏洞数据数组。
+                     * 
                      */
                     std::vector<WeeklyReportVul> GetWeeklyReportVuls() const;
 
                     /**
                      * 判断参数 WeeklyReportVuls 是否已赋值
                      * @return WeeklyReportVuls 是否已赋值
+                     * 
                      */
                     bool WeeklyReportVulsHasBeenSet() const;
 
                     /**
                      * 获取记录总数。
                      * @return TotalCount 记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

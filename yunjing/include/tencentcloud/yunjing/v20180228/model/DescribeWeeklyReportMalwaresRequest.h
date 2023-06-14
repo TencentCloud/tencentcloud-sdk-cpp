@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取专业周报开始时间。
                      * @return BeginDate 专业周报开始时间。
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置专业周报开始时间。
-                     * @param BeginDate 专业周报开始时间。
+                     * @param _beginDate 专业周报开始时间。
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

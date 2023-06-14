@@ -52,6 +52,7 @@ namespace TencentCloud
 图片 base64 编码后大小不可超过5M。
 图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImage() const;
 
@@ -60,34 +61,39 @@ namespace TencentCloud
 图片 base64 编码后大小不可超过5M。
 图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 人体图片 Base64 数据。
+                     * @param _image 人体图片 Base64 数据。
 图片 base64 编码后大小不可超过5M。
 图片分辨率不得超过 1920 * 1080 。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
                      * @return MaxBodyNum 最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
+                     * 
                      */
                     uint64_t GetMaxBodyNum() const;
 
                     /**
                      * 设置最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
-                     * @param MaxBodyNum 最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
+                     * @param _maxBodyNum 最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。
+                     * 
                      */
                     void SetMaxBodyNum(const uint64_t& _maxBodyNum);
 
                     /**
                      * 判断参数 MaxBodyNum 是否已赋值
                      * @return MaxBodyNum 是否已赋值
+                     * 
                      */
                     bool MaxBodyNumHasBeenSet() const;
 
@@ -106,6 +112,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -117,19 +124,21 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 人体图片 Url 。
+                     * @param _url 人体图片 Url 。
 Url、Image必须提供一个，如果都提供，只使用 Url。
 图片 base64 编码后大小不可超过5M。 
 图片分辨率不得超过 1920 * 1080 。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -146,6 +155,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
 关于各属性的详细描述，参见下文出参。 
 最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     * 
                      */
                     AttributesOptions GetAttributesOptions() const;
 
@@ -156,18 +166,20 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
 关于各属性的详细描述，参见下文出参。 
 最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
-                     * @param AttributesOptions 是否返回年龄、性别、朝向等属性。 
+                     * @param _attributesOptions 是否返回年龄、性别、朝向等属性。 
 可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
 如果此参数为空则为不需要返回。 
 需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
 关于各属性的详细描述，参见下文出参。 
 最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     * 
                      */
                     void SetAttributesOptions(const AttributesOptions& _attributesOptions);
 
                     /**
                      * 判断参数 AttributesOptions 是否已赋值
                      * @return AttributesOptions 是否已赋值
+                     * 
                      */
                     bool AttributesOptionsHasBeenSet() const;
 

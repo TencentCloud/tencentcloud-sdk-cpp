@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要过滤的账户列表
                      * @return AccountNames 需要过滤的账户列表
+                     * 
                      */
                     std::vector<std::string> GetAccountNames() const;
 
                     /**
                      * 设置需要过滤的账户列表
-                     * @param AccountNames 需要过滤的账户列表
+                     * @param _accountNames 需要过滤的账户列表
+                     * 
                      */
                     void SetAccountNames(const std::vector<std::string>& _accountNames);
 
                     /**
                      * 判断参数 AccountNames 是否已赋值
                      * @return AccountNames 是否已赋值
+                     * 
                      */
                     bool AccountNamesHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return DbType 数据库类型，取值范围: 
 <li> MYSQL </li>
 该参数已废用
+                     * 
                      */
                     std::string GetDbType() const;
 
@@ -92,69 +99,80 @@ namespace TencentCloud
                      * 设置数据库类型，取值范围: 
 <li> MYSQL </li>
 该参数已废用
-                     * @param DbType 数据库类型，取值范围: 
+                     * @param _dbType 数据库类型，取值范围: 
 <li> MYSQL </li>
 该参数已废用
+                     * 
                      */
                     void SetDbType(const std::string& _dbType);
 
                     /**
                      * 判断参数 DbType 是否已赋值
                      * @return DbType 是否已赋值
+                     * 
                      */
                     bool DbTypeHasBeenSet() const;
 
                     /**
                      * 获取需要过滤的账户列表
                      * @return Hosts 需要过滤的账户列表
+                     * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
                      * 设置需要过滤的账户列表
-                     * @param Hosts 需要过滤的账户列表
+                     * @param _hosts 需要过滤的账户列表
+                     * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
 
                     /**
                      * 判断参数 Hosts 是否已赋值
                      * @return Hosts 是否已赋值
+                     * 
                      */
                     bool HostsHasBeenSet() const;
 
                     /**
                      * 获取限制量
                      * @return Limit 限制量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制量
-                     * @param Limit 限制量
+                     * @param _limit 限制量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

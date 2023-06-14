@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)
                      * @return Operation Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)
-                     * @param Operation Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)
+                     * @param _operation Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取权限类型，(Deny，Allow)
                      * @return PermissionType 权限类型，(Deny，Allow)
+                     * 
                      */
                     std::string GetPermissionType() const;
 
                     /**
                      * 设置权限类型，(Deny，Allow)
-                     * @param PermissionType 权限类型，(Deny，Allow)
+                     * @param _permissionType 权限类型，(Deny，Allow)
+                     * 
                      */
                     void SetPermissionType(const std::string& _permissionType);
 
                     /**
                      * 判断参数 PermissionType 是否已赋值
                      * @return PermissionType 是否已赋值
+                     * 
                      */
                     bool PermissionTypeHasBeenSet() const;
 
                     /**
                      * 获取默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段
                      * @return Host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段
-                     * @param Host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段
+                     * @param _host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。
                      * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。
+                     * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
                      * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。
-                     * @param Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。
+                     * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。
+                     * 
                      */
                     void SetPrincipal(const std::string& _principal);
 
                     /**
                      * 判断参数 Principal 是否已赋值
                      * @return Principal 是否已赋值
+                     * 
                      */
                     bool PrincipalHasBeenSet() const;
 

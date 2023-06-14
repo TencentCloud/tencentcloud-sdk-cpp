@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Type 链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -75,51 +79,59 @@ namespace TencentCloud
                      * 设置链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
-                     * @param Type 链接类型，可取值有:
+                     * @param _type 链接类型，可取值有:
 <li>CLASS: 分类链接；</li>
 <li> MATERIAL：媒体文件链接。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取链接名称，不能超过30个字符。
                      * @return Name 链接名称，不能超过30个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置链接名称，不能超过30个字符。
-                     * @param Name 链接名称，不能超过30个字符。
+                     * @param _name 链接名称，不能超过30个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取链接归属者。
                      * @return Owner 链接归属者。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置链接归属者。
-                     * @param Owner 链接归属者。
+                     * @param _owner 链接归属者。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
@@ -130,6 +142,7 @@ namespace TencentCloud
                      * @return DestinationId 目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
+                     * 
                      */
                     std::string GetDestinationId() const;
 
@@ -137,69 +150,80 @@ namespace TencentCloud
                      * 设置目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
-                     * @param DestinationId 目标资源Id。可取值有：
+                     * @param _destinationId 目标资源Id。可取值有：
 <li>当 Type 为 MATERIAL 时填媒体 ID；</li>
 <li>当 Type 为 CLASS 时填写分类路径。</li>
+                     * 
                      */
                     void SetDestinationId(const std::string& _destinationId);
 
                     /**
                      * 判断参数 DestinationId 是否已赋值
                      * @return DestinationId 是否已赋值
+                     * 
                      */
                     bool DestinationIdHasBeenSet() const;
 
                     /**
                      * 获取目标资源归属者。
                      * @return DestinationOwner 目标资源归属者。
+                     * 
                      */
                     Entity GetDestinationOwner() const;
 
                     /**
                      * 设置目标资源归属者。
-                     * @param DestinationOwner 目标资源归属者。
+                     * @param _destinationOwner 目标资源归属者。
+                     * 
                      */
                     void SetDestinationOwner(const Entity& _destinationOwner);
 
                     /**
                      * 判断参数 DestinationOwner 是否已赋值
                      * @return DestinationOwner 是否已赋值
+                     * 
                      */
                     bool DestinationOwnerHasBeenSet() const;
 
                     /**
                      * 获取链接的分类路径，如填"/a/b"则代表链接属于该分类路径，不填则默认为根路径。
                      * @return ClassPath 链接的分类路径，如填"/a/b"则代表链接属于该分类路径，不填则默认为根路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置链接的分类路径，如填"/a/b"则代表链接属于该分类路径，不填则默认为根路径。
-                     * @param ClassPath 链接的分类路径，如填"/a/b"则代表链接属于该分类路径，不填则默认为根路径。
+                     * @param _classPath 链接的分类路径，如填"/a/b"则代表链接属于该分类路径，不填则默认为根路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

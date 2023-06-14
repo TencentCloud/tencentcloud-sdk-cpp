@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID
                      * @return TaskId 任务 ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务是否完成。0 代表任务未开始，1 代表任务正在执行，2 代表任务已完成
                      * @return TaskStatus 任务是否完成。0 代表任务未开始，1 代表任务正在执行，2 代表任务已完成
+                     * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -109,6 +115,7 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
+                     * 
                      */
                     std::string GetPackageId() const;
 
@@ -128,7 +135,7 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
-                     * @param PackageId 云存套餐ID：
+                     * @param _packageId 云存套餐ID：
 yc1m3d ： 全时3天存储月套餐。
 yc1m7d ： 全时7天存储月套餐。
 yc1m30d ：全时30天存储月套餐。
@@ -143,30 +150,35 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
                      * @return Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * 
                      */
                     uint64_t GetOverride() const;
 
                     /**
                      * 设置如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
-                     * @param Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * @param _override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * 
                      */
                     void SetOverride(const uint64_t& _override);
 
                     /**
                      * 判断参数 Override 是否已赋值
                      * @return Override 是否已赋值
+                     * 
                      */
                     bool OverrideHasBeenSet() const;
 

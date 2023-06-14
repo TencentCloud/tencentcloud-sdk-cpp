@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取品牌ID
                      * @return BrandId 品牌ID
+                     * 
                      */
                     std::string GetBrandId() const;
 
                     /**
                      * 设置品牌ID
-                     * @param BrandId 品牌ID
+                     * @param _brandId 品牌ID
+                     * 
                      */
                     void SetBrandId(const std::string& _brandId);
 
                     /**
                      * 判断参数 BrandId 是否已赋值
                      * @return BrandId 是否已赋值
+                     * 
                      */
                     bool BrandIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间
                      * @return StartDate 查询开始时间
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置查询开始时间
-                     * @param StartDate 查询开始时间
+                     * @param _startDate 查询开始时间
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return EndDate 查询结束时间
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param EndDate 查询结束时间
+                     * @param _endDate 查询结束时间
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取查询条数上限，默认20
                      * @return Limit 查询条数上限，默认20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询条数上限，默认20
-                     * @param Limit 查询条数上限，默认20
+                     * @param _limit 查询条数上限，默认20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询偏移，从0开始
                      * @return Offset 查询偏移，从0开始
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移，从0开始
-                     * @param Offset 查询偏移，从0开始
+                     * @param _offset 查询偏移，从0开始
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

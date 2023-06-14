@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取记录信息
                      * @return RecordInfo 记录信息
+                     * 
                      */
                     RecordInfo GetRecordInfo() const;
 
                     /**
                      * 判断参数 RecordInfo 是否已赋值
                      * @return RecordInfo 是否已赋值
+                     * 
                      */
                     bool RecordInfoHasBeenSet() const;
 

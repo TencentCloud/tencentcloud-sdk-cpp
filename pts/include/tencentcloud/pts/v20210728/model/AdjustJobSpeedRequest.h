@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return JobId 任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务ID
-                     * @param JobId 任务ID
+                     * @param _jobId 任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取目标RPS
                      * @return TargetRequestsPerSecond 目标RPS
+                     * 
                      */
                     int64_t GetTargetRequestsPerSecond() const;
 
                     /**
                      * 设置目标RPS
-                     * @param TargetRequestsPerSecond 目标RPS
+                     * @param _targetRequestsPerSecond 目标RPS
+                     * 
                      */
                     void SetTargetRequestsPerSecond(const int64_t& _targetRequestsPerSecond);
 
                     /**
                      * 判断参数 TargetRequestsPerSecond 是否已赋值
                      * @return TargetRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool TargetRequestsPerSecondHasBeenSet() const;
 

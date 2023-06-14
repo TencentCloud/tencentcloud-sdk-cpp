@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取长连接临时token
                      * @return Token 长连接临时token
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数
                      * @return TotalCount 记录总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取异地登录白名单数组
                      * @return LoginWhiteLists 异地登录白名单数组
+                     * 
                      */
                     std::vector<LoginWhiteLists> GetLoginWhiteLists() const;
 
                     /**
                      * 判断参数 LoginWhiteLists 是否已赋值
                      * @return LoginWhiteLists 是否已赋值
+                     * 
                      */
                     bool LoginWhiteListsHasBeenSet() const;
 

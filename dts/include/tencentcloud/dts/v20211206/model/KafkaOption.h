@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取投递到kafka的数据类型，如Avro,Json
                      * @return DataType 投递到kafka的数据类型，如Avro,Json
+                     * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置投递到kafka的数据类型，如Avro,Json
-                     * @param DataType 投递到kafka的数据类型，如Avro,Json
+                     * @param _dataType 投递到kafka的数据类型，如Avro,Json
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 
                     /**
                      * 获取同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
                      * @return TopicType 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * 
                      */
                     std::string GetTopicType() const;
 
                     /**
                      * 设置同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
-                     * @param TopicType 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * @param _topicType 同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)
+                     * 
                      */
                     void SetTopicType(const std::string& _topicType);
 
                     /**
                      * 判断参数 TopicType 是否已赋值
                      * @return TopicType 是否已赋值
+                     * 
                      */
                     bool TopicTypeHasBeenSet() const;
 
                     /**
                      * 获取用于存储ddl的topic
                      * @return DDLTopicName 用于存储ddl的topic
+                     * 
                      */
                     std::string GetDDLTopicName() const;
 
                     /**
                      * 设置用于存储ddl的topic
-                     * @param DDLTopicName 用于存储ddl的topic
+                     * @param _dDLTopicName 用于存储ddl的topic
+                     * 
                      */
                     void SetDDLTopicName(const std::string& _dDLTopicName);
 
                     /**
                      * 判断参数 DDLTopicName 是否已赋值
                      * @return DDLTopicName 是否已赋值
+                     * 
                      */
                     bool DDLTopicNameHasBeenSet() const;
 
                     /**
                      * 获取单topic和自定义topic的描述
                      * @return TopicRules 单topic和自定义topic的描述
+                     * 
                      */
                     std::vector<TopicRule> GetTopicRules() const;
 
                     /**
                      * 设置单topic和自定义topic的描述
-                     * @param TopicRules 单topic和自定义topic的描述
+                     * @param _topicRules 单topic和自定义topic的描述
+                     * 
                      */
                     void SetTopicRules(const std::vector<TopicRule>& _topicRules);
 
                     /**
                      * 判断参数 TopicRules 是否已赋值
                      * @return TopicRules 是否已赋值
+                     * 
                      */
                     bool TopicRulesHasBeenSet() const;
 

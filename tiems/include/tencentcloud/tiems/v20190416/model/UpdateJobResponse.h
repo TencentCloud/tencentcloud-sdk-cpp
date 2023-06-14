@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务标识符
                      * @return JobId 任务标识符
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取没有注册的人的ID列表
                      * @return NotRegisteredSet 没有注册的人的ID列表
+                     * 
                      */
                     std::string GetNotRegisteredSet() const;
 
                     /**
                      * 判断参数 NotRegisteredSet 是否已赋值
                      * @return NotRegisteredSet 是否已赋值
+                     * 
                      */
                     bool NotRegisteredSetHasBeenSet() const;
 

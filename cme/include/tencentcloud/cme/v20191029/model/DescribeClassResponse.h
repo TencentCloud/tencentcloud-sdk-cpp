@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取分类信息列表。
                      * @return ClassInfoSet 分类信息列表。
+                     * 
                      */
                     std::vector<ClassInfo> GetClassInfoSet() const;
 
                     /**
                      * 判断参数 ClassInfoSet 是否已赋值
                      * @return ClassInfoSet 是否已赋值
+                     * 
                      */
                     bool ClassInfoSetHasBeenSet() const;
 

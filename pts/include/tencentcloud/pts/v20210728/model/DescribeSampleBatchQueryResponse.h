@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricSampleSet 返回指标内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomSample> GetMetricSampleSet() const;
 
                     /**
                      * 判断参数 MetricSampleSet 是否已赋值
                      * @return MetricSampleSet 是否已赋值
+                     * 
                      */
                     bool MetricSampleSetHasBeenSet() const;
 

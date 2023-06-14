@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 提交时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置提交时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubmitTime 提交时间。
+                     * @param _submitTime 提交时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
 
                     /**
                      * 判断参数 SubmitTime 是否已赋值
                      * @return SubmitTime 是否已赋值
+                     * 
                      */
                     bool SubmitTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

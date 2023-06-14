@@ -51,6 +51,7 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
+                     * @param _imageUrl 图片的 Url 地址。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -145,6 +151,7 @@ HmtResidentPermitFront: 港澳台居住证正面
 HmtResidentPermitBack: 港澳台居住证背面
 EstateCert: 不动产证
 BizLicense: 营业执照
+                     * 
                      */
                     std::vector<std::string> GetDiscernType() const;
 
@@ -168,7 +175,7 @@ HmtResidentPermitFront: 港澳台居住证正面
 HmtResidentPermitBack: 港澳台居住证背面
 EstateCert: 不动产证
 BizLicense: 营业执照
-                     * @param DiscernType 可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。
+                     * @param _discernType 可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。
 
 以下是当前支持的类型：
 IDCardFront: 身份证正面识别
@@ -187,12 +194,14 @@ HmtResidentPermitFront: 港澳台居住证正面
 HmtResidentPermitBack: 港澳台居住证背面
 EstateCert: 不动产证
 BizLicense: 营业执照
+                     * 
                      */
                     void SetDiscernType(const std::vector<std::string>& _discernType);
 
                     /**
                      * 判断参数 DiscernType 是否已赋值
                      * @return DiscernType 是否已赋值
+                     * 
                      */
                     bool DiscernTypeHasBeenSet() const;
 

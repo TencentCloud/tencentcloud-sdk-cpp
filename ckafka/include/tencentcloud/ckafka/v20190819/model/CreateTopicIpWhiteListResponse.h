@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取删除主题IP白名单结果
                      * @return Result 删除主题IP白名单结果
+                     * 
                      */
                     JgwOperateResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

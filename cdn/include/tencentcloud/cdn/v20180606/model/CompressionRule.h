@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Compress true：需要设置为 ture，启用压缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetCompress() const;
 
                     /**
                      * 设置true：需要设置为 ture，启用压缩
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Compress true：需要设置为 ture，启用压缩
+                     * @param _compress true：需要设置为 ture，启用压缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompress(const bool& _compress);
 
                     /**
                      * 判断参数 Compress 是否已赋值
                      * @return Compress 是否已赋值
+                     * 
                      */
                     bool CompressHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinLength 触发压缩的文件长度最小值，单位为字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinLength() const;
 
                     /**
                      * 设置触发压缩的文件长度最小值，单位为字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinLength 触发压缩的文件长度最小值，单位为字节数
+                     * @param _minLength 触发压缩的文件长度最小值，单位为字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinLength(const int64_t& _minLength);
 
                     /**
                      * 判断参数 MinLength 是否已赋值
                      * @return MinLength 是否已赋值
+                     * 
                      */
                     bool MinLengthHasBeenSet() const;
 
@@ -97,6 +103,7 @@ namespace TencentCloud
                      * @return MaxLength 触发压缩的文件长度最大值，单位为字节数
 最大可设置为 30MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxLength() const;
 
@@ -104,15 +111,17 @@ namespace TencentCloud
                      * 设置触发压缩的文件长度最大值，单位为字节数
 最大可设置为 30MB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxLength 触发压缩的文件长度最大值，单位为字节数
+                     * @param _maxLength 触发压缩的文件长度最大值，单位为字节数
 最大可设置为 30MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxLength(const int64_t& _maxLength);
 
                     /**
                      * 判断参数 MaxLength 是否已赋值
                      * @return MaxLength 是否已赋值
+                     * 
                      */
                     bool MaxLengthHasBeenSet() const;
 
@@ -125,6 +134,7 @@ brotli：指定Brotli压缩
 gzip：指定 GZIP 压缩
 brotli：指定Brotli压缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAlgorithms() const;
 
@@ -133,16 +143,18 @@ brotli：指定Brotli压缩
 gzip：指定 GZIP 压缩
 brotli：指定Brotli压缩
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Algorithms 文件压缩算法
+                     * @param _algorithms 文件压缩算法
 gzip：指定 GZIP 压缩
 brotli：指定Brotli压缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlgorithms(const std::vector<std::string>& _algorithms);
 
                     /**
                      * 判断参数 Algorithms 是否已赋值
                      * @return Algorithms 是否已赋值
+                     * 
                      */
                     bool AlgorithmsHasBeenSet() const;
 
@@ -153,6 +165,7 @@ brotli：指定Brotli压缩
                      * @return FileExtensions 根据文件后缀类型压缩
 例如 jpg、txt
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFileExtensions() const;
 
@@ -160,15 +173,17 @@ brotli：指定Brotli压缩
                      * 设置根据文件后缀类型压缩
 例如 jpg、txt
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileExtensions 根据文件后缀类型压缩
+                     * @param _fileExtensions 根据文件后缀类型压缩
 例如 jpg、txt
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileExtensions(const std::vector<std::string>& _fileExtensions);
 
                     /**
                      * 判断参数 FileExtensions 是否已赋值
                      * @return FileExtensions 是否已赋值
+                     * 
                      */
                     bool FileExtensionsHasBeenSet() const;
 
@@ -189,6 +204,7 @@ path：指定绝对路径生效
 contentType：指定Content-Type头为特定值时生效
 当指定了此字段时，FileExtensions字段不生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -201,7 +217,7 @@ path：指定绝对路径生效
 contentType：指定Content-Type头为特定值时生效
 当指定了此字段时，FileExtensions字段不生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
@@ -209,12 +225,14 @@ path：指定绝对路径生效
 contentType：指定Content-Type头为特定值时生效
 当指定了此字段时，FileExtensions字段不生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -233,6 +251,7 @@ directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 contentType 时填充 text/html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -244,19 +263,21 @@ directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 contentType 时填充 text/html
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RulePaths CacheType 对应类型下的匹配内容：
+                     * @param _rulePaths CacheType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 contentType 时填充 text/html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 

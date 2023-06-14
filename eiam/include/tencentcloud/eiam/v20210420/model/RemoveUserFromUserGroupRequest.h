@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要加入用户组的用户ID列表。
                      * @return UserIds 要加入用户组的用户ID列表。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置要加入用户组的用户ID列表。
-                     * @param UserIds 要加入用户组的用户ID列表。
+                     * @param _userIds 要加入用户组的用户ID列表。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 
                     /**
                      * 获取用户组ID，是用户组的全局唯一标识。
                      * @return UserGroupId 用户组ID，是用户组的全局唯一标识。
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置用户组ID，是用户组的全局唯一标识。
-                     * @param UserGroupId 用户组ID，是用户组的全局唯一标识。
+                     * @param _userGroupId 用户组ID，是用户组的全局唯一标识。
+                     * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 

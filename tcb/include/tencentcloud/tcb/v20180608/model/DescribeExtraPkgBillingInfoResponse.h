@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取增值包计费信息列表
                      * @return EnvInfoList 增值包计费信息列表
+                     * 
                      */
                     std::vector<EnvBillingInfoItem> GetEnvInfoList() const;
 
                     /**
                      * 判断参数 EnvInfoList 是否已赋值
                      * @return EnvInfoList 是否已赋值
+                     * 
                      */
                     bool EnvInfoListHasBeenSet() const;
 
                     /**
                      * 获取增值包数目
                      * @return Total 增值包数目
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

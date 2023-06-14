@@ -51,20 +51,23 @@ namespace TencentCloud
 不填则不修改。
                      * @return Bitrate 音频码率，单位：bps。
 不填则不修改。
+                     * 
                      */
                     std::string GetBitrate() const;
 
                     /**
                      * 设置音频码率，单位：bps。
 不填则不修改。
-                     * @param Bitrate 音频码率，单位：bps。
+                     * @param _bitrate 音频码率，单位：bps。
 不填则不修改。
+                     * 
                      */
                     void SetBitrate(const std::string& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 不填则不修改。
+                     * 
                      */
                     uint64_t GetChannels() const;
 
@@ -85,16 +89,18 @@ namespace TencentCloud
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 不填则不修改。
-                     * @param Channels 音频声道数，可选值： 
+                     * @param _channels 音频声道数，可选值： 
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 不填则不修改。
+                     * 
                      */
                     void SetChannels(const uint64_t& _channels);
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 不填则不修改。
                      * @return SampleRate 音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。
 不填则不修改。
+                     * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
                      * 设置音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。
 不填则不修改。
-                     * @param SampleRate 音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。
+                     * @param _sampleRate 音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。
 不填则不修改。
+                     * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 

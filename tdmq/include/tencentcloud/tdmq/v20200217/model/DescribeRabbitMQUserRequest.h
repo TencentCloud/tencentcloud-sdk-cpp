@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集群实例Id
                      * @return InstanceId 集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例Id
-                     * @param InstanceId 集群实例Id
+                     * @param _instanceId 集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户名检索，支持前缀匹配，后缀匹配
                      * @return SearchUser 用户名检索，支持前缀匹配，后缀匹配
+                     * 
                      */
                     std::string GetSearchUser() const;
 
                     /**
                      * 设置用户名检索，支持前缀匹配，后缀匹配
-                     * @param SearchUser 用户名检索，支持前缀匹配，后缀匹配
+                     * @param _searchUser 用户名检索，支持前缀匹配，后缀匹配
+                     * 
                      */
                     void SetSearchUser(const std::string& _searchUser);
 
                     /**
                      * 判断参数 SearchUser 是否已赋值
                      * @return SearchUser 是否已赋值
+                     * 
                      */
                     bool SearchUserHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取用户名，精确查询
                      * @return User 用户名，精确查询
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置用户名，精确查询
-                     * @param User 用户名，精确查询
+                     * @param _user 用户名，精确查询
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取用户标签，根据标签过滤列表
                      * @return Tags 用户标签，根据标签过滤列表
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置用户标签，根据标签过滤列表
-                     * @param Tags 用户标签，根据标签过滤列表
+                     * @param _tags 用户标签，根据标签过滤列表
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

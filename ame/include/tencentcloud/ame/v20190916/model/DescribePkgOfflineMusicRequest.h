@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取订单id
                      * @return PackageOrderId 订单id
+                     * 
                      */
                     std::string GetPackageOrderId() const;
 
                     /**
                      * 设置订单id
-                     * @param PackageOrderId 订单id
+                     * @param _packageOrderId 订单id
+                     * 
                      */
                     void SetPackageOrderId(const std::string& _packageOrderId);
 
                     /**
                      * 判断参数 PackageOrderId 是否已赋值
                      * @return PackageOrderId 是否已赋值
+                     * 
                      */
                     bool PackageOrderIdHasBeenSet() const;
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。
                      * @return Limit 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。
-                     * @param Limit 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。
+                     * @param _limit 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
                      * @return Offset 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-                     * @param Offset 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _offset 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 单位输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置单位输出值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 单位输出值
+                     * @param _value 单位输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 主诉详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ChiefComplaintDetailBlock> GetDetail() const;
 
                     /**
                      * 设置主诉详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 主诉详情
+                     * @param _detail 主诉详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetail(const std::vector<ChiefComplaintDetailBlock>& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

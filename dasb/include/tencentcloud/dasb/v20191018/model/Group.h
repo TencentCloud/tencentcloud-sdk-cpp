@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取组ID
                      * @return Id 组ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置组ID
-                     * @param Id 组ID
+                     * @param _id 组ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取组名称
                      * @return Name 组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组名称
-                     * @param Name 组名称
+                     * @param _name 组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 所属部门信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置所属部门信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 所属部门信息
+                     * @param _department 所属部门信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartment(const Department& _department);
 
                     /**
                      * 判断参数 Department 是否已赋值
                      * @return Department 是否已赋值
+                     * 
                      */
                     bool DepartmentHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 个数
+                     * @param _count 个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

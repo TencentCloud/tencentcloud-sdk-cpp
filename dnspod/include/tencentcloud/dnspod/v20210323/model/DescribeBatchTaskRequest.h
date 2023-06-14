@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID。操作批量接口时会返回JobId
                      * @return JobId 任务ID。操作批量接口时会返回JobId
+                     * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 设置任务ID。操作批量接口时会返回JobId
-                     * @param JobId 任务ID。操作批量接口时会返回JobId
+                     * @param _jobId 任务ID。操作批量接口时会返回JobId
+                     * 
                      */
                     void SetJobId(const uint64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

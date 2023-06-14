@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义人物类型数组
                      * @return CategorySet 自定义人物类型数组
+                     * 
                      */
                     std::vector<CustomCategory> GetCategorySet() const;
 
                     /**
                      * 判断参数 CategorySet 是否已赋值
                      * @return CategorySet 是否已赋值
+                     * 
                      */
                     bool CategorySetHasBeenSet() const;
 

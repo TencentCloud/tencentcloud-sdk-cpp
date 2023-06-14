@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取网关产品ID
                      * @return GatewayProductId 网关产品ID
+                     * 
                      */
                     std::string GetGatewayProductId() const;
 
                     /**
                      * 设置网关产品ID
-                     * @param GatewayProductId 网关产品ID
+                     * @param _gatewayProductId 网关产品ID
+                     * 
                      */
                     void SetGatewayProductId(const std::string& _gatewayProductId);
 
                     /**
                      * 判断参数 GatewayProductId 是否已赋值
                      * @return GatewayProductId 是否已赋值
+                     * 
                      */
                     bool GatewayProductIdHasBeenSet() const;
 
                     /**
                      * 获取网关设备名称
                      * @return GatewayDeviceName 网关设备名称
+                     * 
                      */
                     std::string GetGatewayDeviceName() const;
 
                     /**
                      * 设置网关设备名称
-                     * @param GatewayDeviceName 网关设备名称
+                     * @param _gatewayDeviceName 网关设备名称
+                     * 
                      */
                     void SetGatewayDeviceName(const std::string& _gatewayDeviceName);
 
                     /**
                      * 判断参数 GatewayDeviceName 是否已赋值
                      * @return GatewayDeviceName 是否已赋值
+                     * 
                      */
                     bool GatewayDeviceNameHasBeenSet() const;
 
                     /**
                      * 获取分页偏移
                      * @return Offset 分页偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移
-                     * @param Offset 分页偏移
+                     * @param _offset 分页偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小
                      * @return Limit 分页的大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小
-                     * @param Limit 分页的大小
+                     * @param _limit 分页的大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

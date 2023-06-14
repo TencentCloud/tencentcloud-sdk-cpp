@@ -53,6 +53,7 @@ false 不是
                      * @return IsPremium 是否是溢价域名：
 ture 是    
 false 不是
+                     * 
                      */
                     bool GetIsPremium() const;
 
@@ -60,51 +61,59 @@ false 不是
                      * 设置是否是溢价域名：
 ture 是    
 false 不是
-                     * @param IsPremium 是否是溢价域名：
+                     * @param _isPremium 是否是溢价域名：
 ture 是    
 false 不是
+                     * 
                      */
                     void SetIsPremium(const bool& _isPremium);
 
                     /**
                      * 判断参数 IsPremium 是否已赋值
                      * @return IsPremium 是否已赋值
+                     * 
                      */
                     bool IsPremiumHasBeenSet() const;
 
                     /**
                      * 获取域名资源ID。
                      * @return DomainId 域名资源ID。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名资源ID。
-                     * @param DomainId 域名资源ID。
+                     * @param _domainId 域名资源ID。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取域名名称。
                      * @return DomainName 域名名称。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名名称。
-                     * @param DomainName 域名名称。
+                     * @param _domainName 域名名称。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -117,6 +126,7 @@ false 不是
 0：未设置 
 1：已设置
 2：设置后，关闭
+                     * 
                      */
                     uint64_t GetAutoRenew() const;
 
@@ -125,88 +135,102 @@ false 不是
 0：未设置 
 1：已设置
 2：设置后，关闭
-                     * @param AutoRenew 是否已设置自动续费 。
+                     * @param _autoRenew 是否已设置自动续费 。
 0：未设置 
 1：已设置
 2：设置后，关闭
+                     * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
+                     * 
                      */
                     bool AutoRenewHasBeenSet() const;
 
                     /**
                      * 获取注册时间。
                      * @return CreationDate 注册时间。
+                     * 
                      */
                     std::string GetCreationDate() const;
 
                     /**
                      * 设置注册时间。
-                     * @param CreationDate 注册时间。
+                     * @param _creationDate 注册时间。
+                     * 
                      */
                     void SetCreationDate(const std::string& _creationDate);
 
                     /**
                      * 判断参数 CreationDate 是否已赋值
                      * @return CreationDate 是否已赋值
+                     * 
                      */
                     bool CreationDateHasBeenSet() const;
 
                     /**
                      * 获取到期时间。
                      * @return ExpirationDate 到期时间。
+                     * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置到期时间。
-                     * @param ExpirationDate 到期时间。
+                     * @param _expirationDate 到期时间。
+                     * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
 
                     /**
                      * 判断参数 ExpirationDate 是否已赋值
                      * @return ExpirationDate 是否已赋值
+                     * 
                      */
                     bool ExpirationDateHasBeenSet() const;
 
                     /**
                      * 获取域名后缀
                      * @return Tld 域名后缀
+                     * 
                      */
                     std::string GetTld() const;
 
                     /**
                      * 设置域名后缀
-                     * @param Tld 域名后缀
+                     * @param _tld 域名后缀
+                     * 
                      */
                     void SetTld(const std::string& _tld);
 
                     /**
                      * 判断参数 Tld 是否已赋值
                      * @return Tld 是否已赋值
+                     * 
                      */
                     bool TldHasBeenSet() const;
 
                     /**
                      * 获取编码后的后缀（中文会进行编码）
                      * @return CodeTld 编码后的后缀（中文会进行编码）
+                     * 
                      */
                     std::string GetCodeTld() const;
 
                     /**
                      * 设置编码后的后缀（中文会进行编码）
-                     * @param CodeTld 编码后的后缀（中文会进行编码）
+                     * @param _codeTld 编码后的后缀（中文会进行编码）
+                     * 
                      */
                     void SetCodeTld(const std::string& _codeTld);
 
                     /**
                      * 判断参数 CodeTld 是否已赋值
                      * @return CodeTld 是否已赋值
+                     * 
                      */
                     bool CodeTldHasBeenSet() const;
 
@@ -237,6 +261,7 @@ RedemptionDoing：赎回中
 TransferPending：转入中
 TransferTransing：转入中
 TransferFailed：转入失败
+                     * 
                      */
                     std::string GetBuyStatus() const;
 
@@ -254,7 +279,7 @@ RedemptionDoing：赎回中
 TransferPending：转入中
 TransferTransing：转入中
 TransferFailed：转入失败
-                     * @param BuyStatus 域名购买状态。
+                     * @param _buyStatus 域名购买状态。
 ok：正常
 AboutToExpire: 即将到期
 RegisterPending：注册中
@@ -267,12 +292,14 @@ RedemptionDoing：赎回中
 TransferPending：转入中
 TransferTransing：转入中
 TransferFailed：转入失败
+                     * 
                      */
                     void SetBuyStatus(const std::string& _buyStatus);
 
                     /**
                      * 判断参数 BuyStatus 是否已赋值
                      * @return BuyStatus 是否已赋值
+                     * 
                      */
                     bool BuyStatusHasBeenSet() const;
 

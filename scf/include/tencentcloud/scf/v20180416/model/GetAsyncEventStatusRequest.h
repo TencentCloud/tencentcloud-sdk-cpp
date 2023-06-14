@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取异步执行请求 id
                      * @return InvokeRequestId 异步执行请求 id
+                     * 
                      */
                     std::string GetInvokeRequestId() const;
 
                     /**
                      * 设置异步执行请求 id
-                     * @param InvokeRequestId 异步执行请求 id
+                     * @param _invokeRequestId 异步执行请求 id
+                     * 
                      */
                     void SetInvokeRequestId(const std::string& _invokeRequestId);
 
                     /**
                      * 判断参数 InvokeRequestId 是否已赋值
                      * @return InvokeRequestId 是否已赋值
+                     * 
                      */
                     bool InvokeRequestIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取专线网关名称
                      * @return DirectConnectGatewayName 专线网关名称
+                     * 
                      */
                     std::string GetDirectConnectGatewayName() const;
 
                     /**
                      * 设置专线网关名称
-                     * @param DirectConnectGatewayName 专线网关名称
+                     * @param _directConnectGatewayName 专线网关名称
+                     * 
                      */
                     void SetDirectConnectGatewayName(const std::string& _directConnectGatewayName);
 
                     /**
                      * 判断参数 DirectConnectGatewayName 是否已赋值
                      * @return DirectConnectGatewayName 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayNameHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return NetworkType 关联网络类型，可选值：
 <li>VPC - 私有网络</li>
 <li>CCN - 云联网</li>
+                     * 
                      */
                     std::string GetNetworkType() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置关联网络类型，可选值：
 <li>VPC - 私有网络</li>
 <li>CCN - 云联网</li>
-                     * @param NetworkType 关联网络类型，可选值：
+                     * @param _networkType 关联网络类型，可选值：
 <li>VPC - 私有网络</li>
 <li>CCN - 云联网</li>
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 <li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>
                      * @return NetworkInstanceId <li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>
 <li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>
+                     * 
                      */
                     std::string GetNetworkInstanceId() const;
 
                     /**
                      * 设置<li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>
 <li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>
-                     * @param NetworkInstanceId <li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>
+                     * @param _networkInstanceId <li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>
 <li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>
+                     * 
                      */
                     void SetNetworkInstanceId(const std::string& _networkInstanceId);
 
                     /**
                      * 判断参数 NetworkInstanceId 是否已赋值
                      * @return NetworkInstanceId 是否已赋值
+                     * 
                      */
                     bool NetworkInstanceIdHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
                      * @return GatewayType 网关类型，可选值：
 <li>NORMAL - （默认）标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
+                     * 
                      */
                     std::string GetGatewayType() const;
 
@@ -122,69 +132,80 @@ namespace TencentCloud
                      * 设置网关类型，可选值：
 <li>NORMAL - （默认）标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
-                     * @param GatewayType 网关类型，可选值：
+                     * @param _gatewayType 网关类型，可选值：
 <li>NORMAL - （默认）标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
+                     * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
 
                     /**
                      * 判断参数 GatewayType 是否已赋值
                      * @return GatewayType 是否已赋值
+                     * 
                      */
                     bool GatewayTypeHasBeenSet() const;
 
                     /**
                      * 获取云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。
                      * @return ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。
+                     * 
                      */
                     std::string GetModeType() const;
 
                     /**
                      * 设置云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。
-                     * @param ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。
+                     * @param _modeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。
+                     * 
                      */
                     void SetModeType(const std::string& _modeType);
 
                     /**
                      * 判断参数 ModeType 是否已赋值
                      * @return ModeType 是否已赋值
+                     * 
                      */
                     bool ModeTypeHasBeenSet() const;
 
                     /**
                      * 获取专线网关可用区
                      * @return Zone 专线网关可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置专线网关可用区
-                     * @param Zone 专线网关可用区
+                     * @param _zone 专线网关可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取专线网关高可用区容灾组ID
                      * @return HaZoneGroupId 专线网关高可用区容灾组ID
+                     * 
                      */
                     std::string GetHaZoneGroupId() const;
 
                     /**
                      * 设置专线网关高可用区容灾组ID
-                     * @param HaZoneGroupId 专线网关高可用区容灾组ID
+                     * @param _haZoneGroupId 专线网关高可用区容灾组ID
+                     * 
                      */
                     void SetHaZoneGroupId(const std::string& _haZoneGroupId);
 
                     /**
                      * 判断参数 HaZoneGroupId 是否已赋值
                      * @return HaZoneGroupId 是否已赋值
+                     * 
                      */
                     bool HaZoneGroupIdHasBeenSet() const;
 

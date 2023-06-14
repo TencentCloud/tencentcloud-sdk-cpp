@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建成功群组ID
                      * @return GroupId 创建成功群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

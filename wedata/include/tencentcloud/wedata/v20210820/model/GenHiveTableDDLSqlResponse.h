@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取生成的ddl语句
                      * @return DDLSql 生成的ddl语句
+                     * 
                      */
                     std::string GetDDLSql() const;
 
                     /**
                      * 判断参数 DDLSql 是否已赋值
                      * @return DDLSql 是否已赋值
+                     * 
                      */
                     bool DDLSqlHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 生成的ddl语句。与DDLSql相同含义，优先取Data，如果Data为空，则取DDLSql。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

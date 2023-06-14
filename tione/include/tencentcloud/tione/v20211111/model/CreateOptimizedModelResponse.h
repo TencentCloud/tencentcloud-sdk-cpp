@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 模型ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelVersionId 模型版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelVersionId() const;
 
                     /**
                      * 判断参数 ModelVersionId 是否已赋值
                      * @return ModelVersionId 是否已赋值
+                     * 
                      */
                     bool ModelVersionIdHasBeenSet() const;
 

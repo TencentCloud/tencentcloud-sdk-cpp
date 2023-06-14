@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取维护开始时间，单位为秒，如3:00为10800
                      * @return MaintainStartTime 维护开始时间，单位为秒，如3:00为10800
+                     * 
                      */
                     int64_t GetMaintainStartTime() const;
 
                     /**
                      * 设置维护开始时间，单位为秒，如3:00为10800
-                     * @param MaintainStartTime 维护开始时间，单位为秒，如3:00为10800
+                     * @param _maintainStartTime 维护开始时间，单位为秒，如3:00为10800
+                     * 
                      */
                     void SetMaintainStartTime(const int64_t& _maintainStartTime);
 
                     /**
                      * 判断参数 MaintainStartTime 是否已赋值
                      * @return MaintainStartTime 是否已赋值
+                     * 
                      */
                     bool MaintainStartTimeHasBeenSet() const;
 
                     /**
                      * 获取维护持续时间，单位为秒，如1小时为3600
                      * @return MaintainDuration 维护持续时间，单位为秒，如1小时为3600
+                     * 
                      */
                     int64_t GetMaintainDuration() const;
 
                     /**
                      * 设置维护持续时间，单位为秒，如1小时为3600
-                     * @param MaintainDuration 维护持续时间，单位为秒，如1小时为3600
+                     * @param _maintainDuration 维护持续时间，单位为秒，如1小时为3600
+                     * 
                      */
                     void SetMaintainDuration(const int64_t& _maintainDuration);
 
                     /**
                      * 判断参数 MaintainDuration 是否已赋值
                      * @return MaintainDuration 是否已赋值
+                     * 
                      */
                     bool MaintainDurationHasBeenSet() const;
 
                     /**
                      * 获取每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]
                      * @return MaintainWeekDays 每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+                     * 
                      */
                     std::vector<std::string> GetMaintainWeekDays() const;
 
                     /**
                      * 设置每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]
-                     * @param MaintainWeekDays 每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+                     * @param _maintainWeekDays 每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+                     * 
                      */
                     void SetMaintainWeekDays(const std::vector<std::string>& _maintainWeekDays);
 
                     /**
                      * 判断参数 MaintainWeekDays 是否已赋值
                      * @return MaintainWeekDays 是否已赋值
+                     * 
                      */
                     bool MaintainWeekDaysHasBeenSet() const;
 

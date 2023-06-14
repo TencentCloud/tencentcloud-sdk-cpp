@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取发信地址
                      * @return EmailAddress 发信地址
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置发信地址
-                     * @param EmailAddress 发信地址
+                     * @param _emailAddress 发信地址
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 

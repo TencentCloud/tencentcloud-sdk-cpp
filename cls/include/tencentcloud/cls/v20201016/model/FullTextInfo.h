@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否大小写敏感
                      * @return CaseSensitive 是否大小写敏感
+                     * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置是否大小写敏感
-                     * @param CaseSensitive 是否大小写敏感
+                     * @param _caseSensitive 是否大小写敏感
+                     * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
 
                     /**
                      * 判断参数 CaseSensitive 是否已赋值
                      * @return CaseSensitive 是否已赋值
+                     * 
                      */
                     bool CaseSensitiveHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return Tokenizer 全文索引的分词符，其中的每个字符代表一个分词符；
 仅支持英文符号、\n\t\r及转义符\；
 注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义
+                     * 
                      */
                     std::string GetTokenizer() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置全文索引的分词符，其中的每个字符代表一个分词符；
 仅支持英文符号、\n\t\r及转义符\；
 注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义
-                     * @param Tokenizer 全文索引的分词符，其中的每个字符代表一个分词符；
+                     * @param _tokenizer 全文索引的分词符，其中的每个字符代表一个分词符；
 仅支持英文符号、\n\t\r及转义符\；
 注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义
+                     * 
                      */
                     void SetTokenizer(const std::string& _tokenizer);
 
                     /**
                      * 判断参数 Tokenizer 是否已赋值
                      * @return Tokenizer 是否已赋值
+                     * 
                      */
                     bool TokenizerHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainZH 是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetContainZH() const;
 
                     /**
                      * 设置是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainZH 是否包含中文
+                     * @param _containZH 是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainZH(const bool& _containZH);
 
                     /**
                      * 判断参数 ContainZH 是否已赋值
                      * @return ContainZH 是否已赋值
+                     * 
                      */
                     bool ContainZHHasBeenSet() const;
 

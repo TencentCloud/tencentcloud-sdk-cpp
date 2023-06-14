@@ -70,24 +70,28 @@ namespace TencentCloud
 -6: 权威数据源服务异常
 -7: 未查询到身份信息
 -8: 权威数据源升级中，请稍后再试
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -102,12 +106,14 @@ namespace TencentCloud
 [8,16)表示年龄8-16周岁区间，不包括16岁；
 [16,18)表示年龄16-18周岁区间，不包括18岁；
 [18,+)表示年龄大于18周岁。
+                     * 
                      */
                     std::string GetAgeRange() const;
 
                     /**
                      * 判断参数 AgeRange 是否已赋值
                      * @return AgeRange 是否已赋值
+                     * 
                      */
                     bool AgeRangeHasBeenSet() const;
 

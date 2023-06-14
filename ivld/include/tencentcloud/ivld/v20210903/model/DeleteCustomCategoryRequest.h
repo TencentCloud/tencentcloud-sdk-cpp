@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自定义分类ID
                      * @return CategoryId 自定义分类ID
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 设置自定义分类ID
-                     * @param CategoryId 自定义分类ID
+                     * @param _categoryId 自定义分类ID
+                     * 
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutUserId 外部用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutUserId() const;
 
                     /**
                      * 设置外部用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutUserId 外部用户ID
+                     * @param _outUserId 外部用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutUserId(const std::string& _outUserId);
 
                     /**
                      * 判断参数 OutUserId 是否已赋值
                      * @return OutUserId 是否已赋值
+                     * 
                      */
                     bool OutUserIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 0:B端用户
 1:C端用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUserType() const;
 
@@ -85,16 +89,18 @@ namespace TencentCloud
 0:B端用户
 1:C端用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserType 用户类型
+                     * @param _userType 用户类型
 0:B端用户
 1:C端用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserType(const int64_t& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
@@ -107,6 +113,7 @@ namespace TencentCloud
 0:身份证
 1:社会信用代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIdType() const;
 
@@ -115,16 +122,18 @@ namespace TencentCloud
 0:身份证
 1:社会信用代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdType 证件类型
+                     * @param _idType 证件类型
 0:身份证
 1:社会信用代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdType(const int64_t& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
@@ -133,20 +142,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdNo 证件号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdNo() const;
 
                     /**
                      * 设置证件号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdNo 证件号
+                     * @param _idNo 证件号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdNo(const std::string& _idNo);
 
                     /**
                      * 判断参数 IdNo 是否已赋值
                      * @return IdNo 是否已赋值
+                     * 
                      */
                     bool IdNoHasBeenSet() const;
 
@@ -155,20 +167,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 姓名
+                     * @param _name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordList 见RecordInfoBatchModify
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BatchRecordInfo> GetRecordList() const;
 
                     /**
                      * 设置见RecordInfoBatchModify
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordList 见RecordInfoBatchModify
+                     * @param _recordList 见RecordInfoBatchModify
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordList(const std::vector<BatchRecordInfo>& _recordList);
 
                     /**
                      * 判断参数 RecordList 是否已赋值
                      * @return RecordList 是否已赋值
+                     * 
                      */
                     bool RecordListHasBeenSet() const;
 
                     /**
                      * 获取任务编号
                      * @return Id 任务编号
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置任务编号
-                     * @param Id 任务编号
+                     * @param _id 任务编号
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名
+                     * @param _domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainGrade 域名等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomainGrade() const;
 
                     /**
                      * 设置域名等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainGrade 域名等级
+                     * @param _domainGrade 域名等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainGrade(const std::string& _domainGrade);
 
                     /**
                      * 判断参数 DomainGrade 是否已赋值
                      * @return DomainGrade 是否已赋值
+                     * 
                      */
                     bool DomainGradeHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrMsg 错误信息
+                     * @param _errMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 该条任务运行状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置该条任务运行状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 该条任务运行状态
+                     * @param _status 该条任务运行状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -180,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 操作类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operation 操作类型
+                     * @param _operation 操作类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
@@ -202,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainId 域名ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainId 域名ID
+                     * @param _domainId 域名ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

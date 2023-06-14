@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取异步任务ID。
                      * @return TaskId 异步任务ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置异步任务ID。
-                     * @param TaskId 异步任务ID。
+                     * @param _taskId 异步任务ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

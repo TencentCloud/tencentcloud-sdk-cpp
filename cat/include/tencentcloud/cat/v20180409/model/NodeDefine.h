@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取节点名称
                      * @return Name 节点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称
-                     * @param Name 节点名称
+                     * @param _name 节点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取节点代码
                      * @return Code 节点代码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置节点代码
-                     * @param Code 节点代码
+                     * @param _code 节点代码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -99,70 +106,81 @@ namespace TencentCloud
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
-                     * @param Type 节点类型
+                     * @param _type 节点类型
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取网络服务商
                      * @return NetService 网络服务商
+                     * 
                      */
                     std::string GetNetService() const;
 
                     /**
                      * 设置网络服务商
-                     * @param NetService 网络服务商
+                     * @param _netService 网络服务商
+                     * 
                      */
                     void SetNetService(const std::string& _netService);
 
                     /**
                      * 判断参数 NetService 是否已赋值
                      * @return NetService 是否已赋值
+                     * 
                      */
                     bool NetServiceHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return District 区域
+                     * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置区域
-                     * @param District 区域
+                     * @param _district 区域
+                     * 
                      */
                     void SetDistrict(const std::string& _district);
 
                     /**
                      * 判断参数 District 是否已赋值
                      * @return District 是否已赋值
+                     * 
                      */
                     bool DistrictHasBeenSet() const;
 
                     /**
                      * 获取城市
                      * @return City 城市
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
-                     * @param City 城市
+                     * @param _city 城市
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -175,6 +193,7 @@ namespace TencentCloud
 <li> 1 = IPv4 </li>
 <li> 2 = IPv6 </li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIPType() const;
 
@@ -183,16 +202,18 @@ namespace TencentCloud
 <li> 1 = IPv4 </li>
 <li> 2 = IPv6 </li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IPType IP 类型
+                     * @param _iPType IP 类型
 <li> 1 = IPv4 </li>
 <li> 2 = IPv6 </li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIPType(const int64_t& _iPType);
 
                     /**
                      * 判断参数 IPType 是否已赋值
                      * @return IPType 是否已赋值
+                     * 
                      */
                     bool IPTypeHasBeenSet() const;
 
@@ -207,6 +228,7 @@ namespace TencentCloud
 <li> 2 = 港澳台 </li>
 <li> 3 = 国外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLocation() const;
 
@@ -216,17 +238,19 @@ namespace TencentCloud
 <li> 2 = 港澳台 </li>
 <li> 3 = 国外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location 区域
+                     * @param _location 区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
 <li> 3 = 国外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const int64_t& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
@@ -235,20 +259,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeType 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeType() const;
 
                     /**
                      * 设置节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeType 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
+                     * @param _codeType 节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeType(const std::string& _codeType);
 
                     /**
                      * 判断参数 CodeType 是否已赋值
                      * @return CodeType 是否已赋值
+                     * 
                      */
                     bool CodeTypeHasBeenSet() const;
 
@@ -257,20 +284,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeDefineStatus 节点状态：1-运行,2-下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNodeDefineStatus() const;
 
                     /**
                      * 设置节点状态：1-运行,2-下线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeDefineStatus 节点状态：1-运行,2-下线
+                     * @param _nodeDefineStatus 节点状态：1-运行,2-下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeDefineStatus(const uint64_t& _nodeDefineStatus);
 
                     /**
                      * 判断参数 NodeDefineStatus 是否已赋值
                      * @return NodeDefineStatus 是否已赋值
+                     * 
                      */
                     bool NodeDefineStatusHasBeenSet() const;
 

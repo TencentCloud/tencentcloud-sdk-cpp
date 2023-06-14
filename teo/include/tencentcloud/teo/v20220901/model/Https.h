@@ -57,6 +57,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHttp2() const;
 
@@ -65,16 +66,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http2 http2 配置开关，取值有：
+                     * @param _http2 http2 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttp2(const std::string& _http2);
 
                     /**
                      * 判断参数 Http2 是否已赋值
                      * @return Http2 是否已赋值
+                     * 
                      */
                     bool Http2HasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcspStapling() const;
 
@@ -95,16 +99,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcspStapling OCSP 配置开关，取值有：
+                     * @param _ocspStapling OCSP 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcspStapling(const std::string& _ocspStapling);
 
                     /**
                      * 判断参数 OcspStapling 是否已赋值
                      * @return OcspStapling 是否已赋值
+                     * 
                      */
                     bool OcspStaplingHasBeenSet() const;
 
@@ -121,6 +127,7 @@ namespace TencentCloud
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTlsVersion() const;
 
@@ -131,18 +138,20 @@ namespace TencentCloud
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TlsVersion Tls 版本设置，取值有：
+                     * @param _tlsVersion Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
 
                     /**
                      * 判断参数 TlsVersion 是否已赋值
                      * @return TlsVersion 是否已赋值
+                     * 
                      */
                     bool TlsVersionHasBeenSet() const;
 
@@ -151,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hsts HSTS 配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Hsts GetHsts() const;
 
                     /**
                      * 设置HSTS 配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Hsts HSTS 配置。
+                     * @param _hsts HSTS 配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHsts(const Hsts& _hsts);
 
                     /**
                      * 判断参数 Hsts 是否已赋值
                      * @return Hsts 是否已赋值
+                     * 
                      */
                     bool HstsHasBeenSet() const;
 
@@ -173,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertInfo 证书配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ServerCertInfo> GetCertInfo() const;
 
                     /**
                      * 设置证书配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertInfo 证书配置。
+                     * @param _certInfo 证书配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertInfo(const std::vector<ServerCertInfo>& _certInfo);
 
                     /**
                      * 判断参数 CertInfo 是否已赋值
                      * @return CertInfo 是否已赋值
+                     * 
                      */
                     bool CertInfoHasBeenSet() const;
 
@@ -199,6 +214,7 @@ namespace TencentCloud
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplyType() const;
 
@@ -207,16 +223,18 @@ namespace TencentCloud
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplyType 申请类型，取值有：
+                     * @param _applyType 申请类型，取值有：
 <li>apply：托管EdgeOne；</li>
 <li>none：不托管EdgeOne。</li>不填，默认取值为none。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplyType(const std::string& _applyType);
 
                     /**
                      * 判断参数 ApplyType 是否已赋值
                      * @return ApplyType 是否已赋值
+                     * 
                      */
                     bool ApplyTypeHasBeenSet() const;
 
@@ -231,6 +249,7 @@ namespace TencentCloud
 <li>general-v2023：提供较高的兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供最高的安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCipherSuite() const;
 
@@ -240,17 +259,19 @@ namespace TencentCloud
 <li>general-v2023：提供较高的兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供最高的安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CipherSuite 密码套件，取值有：
+                     * @param _cipherSuite 密码套件，取值有：
 <li>loose-v2023：提供最高的兼容性，安全性一般，支持 TLS 1.0-1.3 密码套件；</li>
 <li>general-v2023：提供较高的兼容性，安全性中等，支持 TLS 1.2-1.3 密码套件；</li>
 <li>strict-v2023：提供最高的安全性能，禁用所有含不安全隐患的加密套件，支持 TLS 1.2-1.3 密码套件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCipherSuite(const std::string& _cipherSuite);
 
                     /**
                      * 判断参数 CipherSuite 是否已赋值
                      * @return CipherSuite 是否已赋值
+                     * 
                      */
                     bool CipherSuiteHasBeenSet() const;
 

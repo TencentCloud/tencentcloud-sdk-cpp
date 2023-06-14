@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
                      * @return VpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
                      * 设置VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
-                     * @param VpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * @param _vpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
 
                     /**
                      * 判断参数 VpcIds 是否已赋值
                      * @return VpcIds 是否已赋值
+                     * 
                      */
                     bool VpcIdsHasBeenSet() const;
 
@@ -74,6 +77,7 @@ vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
 cidr-block - String - （过滤条件）vpc的cidr。
 state - String - （过滤条件）VPC状态。(pending | available).
 zone -  String - （过滤条件）VPC的可用区。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -84,54 +88,62 @@ vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
 cidr-block - String - （过滤条件）vpc的cidr。
 state - String - （过滤条件）VPC状态。(pending | available).
 zone -  String - （过滤条件）VPC的可用区。
-                     * @param Filters 过滤条件，参数不支持同时指定VpcIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定VpcIds和Filters。
 vpc-name - String - （过滤条件）VPC实例名称。
 vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。
 cidr-block - String - （过滤条件）vpc的cidr。
 state - String - （过滤条件）VPC状态。(pending | available).
 zone -  String - （过滤条件）VPC的可用区。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取初始行的偏移量，默认为0。
                      * @return Offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置初始行的偏移量，默认为0。
-                     * @param Offset 初始行的偏移量，默认为0。
+                     * @param _offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页行数，默认为20。
                      * @return Limit 每页行数，默认为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页行数，默认为20。
-                     * @param Limit 每页行数，默认为20。
+                     * @param _limit 每页行数，默认为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

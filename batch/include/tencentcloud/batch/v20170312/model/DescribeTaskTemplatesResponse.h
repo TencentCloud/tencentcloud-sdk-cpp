@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取任务模板列表
                      * @return TaskTemplateSet 任务模板列表
+                     * 
                      */
                     std::vector<TaskTemplateView> GetTaskTemplateSet() const;
 
                     /**
                      * 判断参数 TaskTemplateSet 是否已赋值
                      * @return TaskTemplateSet 是否已赋值
+                     * 
                      */
                     bool TaskTemplateSetHasBeenSet() const;
 
                     /**
                      * 获取任务模板数量
                      * @return TotalCount 任务模板数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取座席账号。
                      * @return SeatUserId 座席账号。
+                     * 
                      */
                     std::string GetSeatUserId() const;
 
                     /**
                      * 设置座席账号。
-                     * @param SeatUserId 座席账号。
+                     * @param _seatUserId 座席账号。
+                     * 
                      */
                     void SetSeatUserId(const std::string& _seatUserId);
 
                     /**
                      * 判断参数 SeatUserId 是否已赋值
                      * @return SeatUserId 是否已赋值
+                     * 
                      */
                     bool SeatUserIdHasBeenSet() const;
 

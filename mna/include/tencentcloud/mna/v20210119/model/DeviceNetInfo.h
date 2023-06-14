@@ -57,6 +57,7 @@ namespace TencentCloud
 1:Wi-Fi
 2:有线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 1:Wi-Fi
 2:有线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 网络类型：
+                     * @param _type 网络类型：
 0:数据
 1:Wi-Fi
 2:有线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -85,20 +88,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEnable 启用/禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDataEnable() const;
 
                     /**
                      * 设置启用/禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataEnable 启用/禁用
+                     * @param _dataEnable 启用/禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataEnable(const bool& _dataEnable);
 
                     /**
                      * 判断参数 DataEnable 是否已赋值
                      * @return DataEnable 是否已赋值
+                     * 
                      */
                     bool DataEnableHasBeenSet() const;
 
@@ -107,20 +113,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadLimit 上行限速
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadLimit() const;
 
                     /**
                      * 设置上行限速
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UploadLimit 上行限速
+                     * @param _uploadLimit 上行限速
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUploadLimit(const std::string& _uploadLimit);
 
                     /**
                      * 判断参数 UploadLimit 是否已赋值
                      * @return UploadLimit 是否已赋值
+                     * 
                      */
                     bool UploadLimitHasBeenSet() const;
 
@@ -129,20 +138,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadLimit 下行限速
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadLimit() const;
 
                     /**
                      * 设置下行限速
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownloadLimit 下行限速
+                     * @param _downloadLimit 下行限速
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownloadLimit(const std::string& _downloadLimit);
 
                     /**
                      * 判断参数 DownloadLimit 是否已赋值
                      * @return DownloadLimit 是否已赋值
+                     * 
                      */
                     bool DownloadLimitHasBeenSet() const;
 
@@ -151,20 +163,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataRx 接收实时速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDataRx() const;
 
                     /**
                      * 设置接收实时速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataRx 接收实时速率
+                     * @param _dataRx 接收实时速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataRx(const uint64_t& _dataRx);
 
                     /**
                      * 判断参数 DataRx 是否已赋值
                      * @return DataRx 是否已赋值
+                     * 
                      */
                     bool DataRxHasBeenSet() const;
 
@@ -173,20 +188,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTx 发送实时速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDataTx() const;
 
                     /**
                      * 设置发送实时速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataTx 发送实时速率
+                     * @param _dataTx 发送实时速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataTx(const uint64_t& _dataTx);
 
                     /**
                      * 判断参数 DataTx 是否已赋值
                      * @return DataTx 是否已赋值
+                     * 
                      */
                     bool DataTxHasBeenSet() const;
 
@@ -201,6 +219,7 @@ namespace TencentCloud
 2: 中国电信; 
 3: 中国联通
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVendor() const;
 
@@ -210,17 +229,19 @@ namespace TencentCloud
 2: 中国电信; 
 3: 中国联通
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vendor 运营商类型：
+                     * @param _vendor 运营商类型：
 1: 中国移动；
 2: 中国电信; 
 3: 中国联通
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVendor(const int64_t& _vendor);
 
                     /**
                      * 判断参数 Vendor 是否已赋值
                      * @return Vendor 是否已赋值
+                     * 
                      */
                     bool VendorHasBeenSet() const;
 
@@ -235,6 +256,7 @@ namespace TencentCloud
 1:连接中
 2:已连接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetState() const;
 
@@ -244,17 +266,19 @@ namespace TencentCloud
 1:连接中
 2:已连接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 连接状态：
+                     * @param _state 连接状态：
 0:无连接
 1:连接中
 2:已连接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -263,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIp 公网IP
+                     * @param _publicIp 公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
@@ -285,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignalStrength 信号强度/单位：dbm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSignalStrength() const;
 
                     /**
                      * 设置信号强度/单位：dbm
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignalStrength 信号强度/单位：dbm
+                     * @param _signalStrength 信号强度/单位：dbm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSignalStrength(const int64_t& _signalStrength);
 
                     /**
                      * 判断参数 SignalStrength 是否已赋值
                      * @return SignalStrength 是否已赋值
+                     * 
                      */
                     bool SignalStrengthHasBeenSet() const;
 
@@ -317,6 +347,7 @@ namespace TencentCloud
 4：4G 
 5：5G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRat() const;
 
@@ -328,19 +359,21 @@ namespace TencentCloud
 4：4G 
 5：5G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rat 数据网络类型：
+                     * @param _rat 数据网络类型：
 -1 ：无效值   
 2：2G 
 3：3G 
 4：4G 
 5：5G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRat(const int64_t& _rat);
 
                     /**
                      * 判断参数 Rat 是否已赋值
                      * @return Rat 是否已赋值
+                     * 
                      */
                     bool RatHasBeenSet() const;
 
@@ -349,20 +382,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetInfoName 网卡名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNetInfoName() const;
 
                     /**
                      * 设置网卡名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetInfoName 网卡名
+                     * @param _netInfoName 网卡名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetInfoName(const std::string& _netInfoName);
 
                     /**
                      * 判断参数 NetInfoName 是否已赋值
                      * @return NetInfoName 是否已赋值
+                     * 
                      */
                     bool NetInfoNameHasBeenSet() const;
 
@@ -371,20 +407,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDownRate() const;
 
                     /**
                      * 设置下行实时速率（浮点数类型代替上一版本DataRx的整型）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
+                     * @param _downRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownRate(const double& _downRate);
 
                     /**
                      * 判断参数 DownRate 是否已赋值
                      * @return DownRate 是否已赋值
+                     * 
                      */
                     bool DownRateHasBeenSet() const;
 
@@ -393,20 +432,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUpRate() const;
 
                     /**
                      * 设置上行实时速率（浮点数类型代替上一版本TxRate的整型）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
+                     * @param _upRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpRate(const double& _upRate);
 
                     /**
                      * 判断参数 UpRate 是否已赋值
                      * @return UpRate 是否已赋值
+                     * 
                      */
                     bool UpRateHasBeenSet() const;
 

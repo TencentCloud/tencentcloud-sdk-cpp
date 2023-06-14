@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraArgs 集群自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeClusterExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置集群自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraArgs 集群自定义参数
+                     * @param _extraArgs 集群自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraArgs(const EdgeClusterExtraArgs& _extraArgs);
 
                     /**
                      * 判断参数 ExtraArgs 是否已赋值
                      * @return ExtraArgs 是否已赋值
+                     * 
                      */
                     bool ExtraArgsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时类型，支持"docker"和"containerd"，默认为docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时类型，支持"docker"和"containerd"，默认为docker
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Runtime 运行时类型，支持"docker"和"containerd"，默认为docker
+                     * @param _runtime 运行时类型，支持"docker"和"containerd"，默认为docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuntime(const std::string& _runtime);
 
                     /**
                      * 判断参数 Runtime 是否已赋值
                      * @return Runtime 是否已赋值
+                     * 
                      */
                     bool RuntimeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyMode() const;
 
                     /**
                      * 设置集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+                     * @param _proxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyMode(const std::string& _proxyMode);
 
                     /**
                      * 判断参数 ProxyMode 是否已赋值
                      * @return ProxyMode 是否已赋值
+                     * 
                      */
                     bool ProxyModeHasBeenSet() const;
 

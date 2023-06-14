@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取带宽配置信息列表。
                      * @return InternetBandwidthConfigSet 带宽配置信息列表。
+                     * 
                      */
                     std::vector<InternetBandwidthConfig> GetInternetBandwidthConfigSet() const;
 
                     /**
                      * 判断参数 InternetBandwidthConfigSet 是否已赋值
                      * @return InternetBandwidthConfigSet 是否已赋值
+                     * 
                      */
                     bool InternetBandwidthConfigSetHasBeenSet() const;
 

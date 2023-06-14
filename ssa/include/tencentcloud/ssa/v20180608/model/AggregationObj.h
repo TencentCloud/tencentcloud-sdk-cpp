@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取类型
                      * @return Type 类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-                     * @param Type 类型
+                     * @param _type 类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取数组
                      * @return Bucket 数组
+                     * 
                      */
                     std::vector<Bucket> GetBucket() const;
 
                     /**
                      * 设置数组
-                     * @param Bucket 数组
+                     * @param _bucket 数组
+                     * 
                      */
                     void SetBucket(const std::vector<Bucket>& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

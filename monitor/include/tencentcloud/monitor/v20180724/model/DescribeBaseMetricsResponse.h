@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询得到的指标描述列表
                      * @return MetricSet 查询得到的指标描述列表
+                     * 
                      */
                     std::vector<MetricSet> GetMetricSet() const;
 
                     /**
                      * 判断参数 MetricSet 是否已赋值
                      * @return MetricSet 是否已赋值
+                     * 
                      */
                     bool MetricSetHasBeenSet() const;
 

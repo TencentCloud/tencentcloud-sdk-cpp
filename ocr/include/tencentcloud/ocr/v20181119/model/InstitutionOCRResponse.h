@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取注册号
                      * @return RegId 注册号
+                     * 
                      */
                     std::string GetRegId() const;
 
                     /**
                      * 判断参数 RegId 是否已赋值
                      * @return RegId 是否已赋值
+                     * 
                      */
                     bool RegIdHasBeenSet() const;
 
                     /**
                      * 获取有效期
                      * @return ValidDate 有效期
+                     * 
                      */
                     std::string GetValidDate() const;
 
                     /**
                      * 判断参数 ValidDate 是否已赋值
                      * @return ValidDate 是否已赋值
+                     * 
                      */
                     bool ValidDateHasBeenSet() const;
 
                     /**
                      * 获取住所
                      * @return Location 住所
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取法定代表人
                      * @return LegalPerson 法定代表人
+                     * 
                      */
                     std::string GetLegalPerson() const;
 
                     /**
                      * 判断参数 LegalPerson 是否已赋值
                      * @return LegalPerson 是否已赋值
+                     * 
                      */
                     bool LegalPersonHasBeenSet() const;
 

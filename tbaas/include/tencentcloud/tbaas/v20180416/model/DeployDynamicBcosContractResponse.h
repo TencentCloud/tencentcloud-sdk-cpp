@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取部署成功返回的合约地址
                      * @return ContractAddress 部署成功返回的合约地址
+                     * 
                      */
                     std::string GetContractAddress() const;
 
                     /**
                      * 判断参数 ContractAddress 是否已赋值
                      * @return ContractAddress 是否已赋值
+                     * 
                      */
                     bool ContractAddressHasBeenSet() const;
 

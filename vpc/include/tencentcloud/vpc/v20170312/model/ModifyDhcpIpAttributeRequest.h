@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。
                      * @return DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。
+                     * 
                      */
                     std::string GetDhcpIpId() const;
 
                     /**
                      * 设置`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。
-                     * @param DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。
+                     * @param _dhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。
+                     * 
                      */
                     void SetDhcpIpId(const std::string& _dhcpIpId);
 
                     /**
                      * 判断参数 DhcpIpId 是否已赋值
                      * @return DhcpIpId 是否已赋值
+                     * 
                      */
                     bool DhcpIpIdHasBeenSet() const;
 
                     /**
                      * 获取`DhcpIp`名称，可任意命名，但不得超过60个字符。
                      * @return DhcpIpName `DhcpIp`名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetDhcpIpName() const;
 
                     /**
                      * 设置`DhcpIp`名称，可任意命名，但不得超过60个字符。
-                     * @param DhcpIpName `DhcpIp`名称，可任意命名，但不得超过60个字符。
+                     * @param _dhcpIpName `DhcpIp`名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetDhcpIpName(const std::string& _dhcpIpName);
 
                     /**
                      * 判断参数 DhcpIpName 是否已赋值
                      * @return DhcpIpName 是否已赋值
+                     * 
                      */
                     bool DhcpIpNameHasBeenSet() const;
 

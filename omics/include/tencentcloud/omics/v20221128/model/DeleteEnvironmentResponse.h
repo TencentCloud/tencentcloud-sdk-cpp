@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取工作流UUID。
                      * @return WorkflowUuid 工作流UUID。
+                     * 
                      */
                     std::string GetWorkflowUuid() const;
 
                     /**
                      * 判断参数 WorkflowUuid 是否已赋值
                      * @return WorkflowUuid 是否已赋值
+                     * 
                      */
                     bool WorkflowUuidHasBeenSet() const;
 

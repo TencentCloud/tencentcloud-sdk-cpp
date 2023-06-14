@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取VPN通道实例ID。形如：bmvpnx-f49l6u0z。
                      * @return VpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * 
                      */
                     std::string GetVpnConnectionId() const;
 
                     /**
                      * 设置VPN通道实例ID。形如：bmvpnx-f49l6u0z。
-                     * @param VpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * @param _vpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * 
                      */
                     void SetVpnConnectionId(const std::string& _vpnConnectionId);
 
                     /**
                      * 判断参数 VpnConnectionId 是否已赋值
                      * @return VpnConnectionId 是否已赋值
+                     * 
                      */
                     bool VpnConnectionIdHasBeenSet() const;
 
                     /**
                      * 获取厂商,取值 h3c，cisco
                      * @return VendorName 厂商,取值 h3c，cisco
+                     * 
                      */
                     std::string GetVendorName() const;
 
                     /**
                      * 设置厂商,取值 h3c，cisco
-                     * @param VendorName 厂商,取值 h3c，cisco
+                     * @param _vendorName 厂商,取值 h3c，cisco
+                     * 
                      */
                     void SetVendorName(const std::string& _vendorName);
 
                     /**
                      * 判断参数 VendorName 是否已赋值
                      * @return VendorName 是否已赋值
+                     * 
                      */
                     bool VendorNameHasBeenSet() const;
 

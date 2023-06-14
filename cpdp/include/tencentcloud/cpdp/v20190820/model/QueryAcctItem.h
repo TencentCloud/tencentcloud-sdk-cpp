@@ -55,6 +55,7 @@ namespace TencentCloud
 个人: personal
 企业：enterprise
 缺省： enterprise
+                     * 
                      */
                     std::string GetSubMchType() const;
 
@@ -63,106 +64,123 @@ namespace TencentCloud
 个人: personal
 企业：enterprise
 缺省： enterprise
-                     * @param SubMchType 子商户类型：
+                     * @param _subMchType 子商户类型：
 个人: personal
 企业：enterprise
 缺省： enterprise
+                     * 
                      */
                     void SetSubMchType(const std::string& _subMchType);
 
                     /**
                      * 判断参数 SubMchType 是否已赋值
                      * @return SubMchType 是否已赋值
+                     * 
                      */
                     bool SubMchTypeHasBeenSet() const;
 
                     /**
                      * 获取子商户名称
                      * @return SubMchName 子商户名称
+                     * 
                      */
                     std::string GetSubMchName() const;
 
                     /**
                      * 设置子商户名称
-                     * @param SubMchName 子商户名称
+                     * @param _subMchName 子商户名称
+                     * 
                      */
                     void SetSubMchName(const std::string& _subMchName);
 
                     /**
                      * 判断参数 SubMchName 是否已赋值
                      * @return SubMchName 是否已赋值
+                     * 
                      */
                     bool SubMchNameHasBeenSet() const;
 
                     /**
                      * 获取子账号
                      * @return SubAcctNo 子账号
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置子账号
-                     * @param SubAcctNo 子账号
+                     * @param _subAcctNo 子账号
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
                     /**
                      * 获取不填则默认子商户名称
                      * @return ShortName 不填则默认子商户名称
+                     * 
                      */
                     std::string GetShortName() const;
 
                     /**
                      * 设置不填则默认子商户名称
-                     * @param ShortName 不填则默认子商户名称
+                     * @param _shortName 不填则默认子商户名称
+                     * 
                      */
                     void SetShortName(const std::string& _shortName);
 
                     /**
                      * 判断参数 ShortName 是否已赋值
                      * @return ShortName 是否已赋值
+                     * 
                      */
                     bool ShortNameHasBeenSet() const;
 
                     /**
                      * 获取业务平台的子商户Id，唯一
                      * @return SubMchId 业务平台的子商户Id，唯一
+                     * 
                      */
                     std::string GetSubMchId() const;
 
                     /**
                      * 设置业务平台的子商户Id，唯一
-                     * @param SubMchId 业务平台的子商户Id，唯一
+                     * @param _subMchId 业务平台的子商户Id，唯一
+                     * 
                      */
                     void SetSubMchId(const std::string& _subMchId);
 
                     /**
                      * 判断参数 SubMchId 是否已赋值
                      * @return SubMchId 是否已赋值
+                     * 
                      */
                     bool SubMchIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -171,38 +189,44 @@ namespace TencentCloud
 <敏感信息>
                      * @return Contact 子商户联系人
 <敏感信息>
+                     * 
                      */
                     std::string GetContact() const;
 
                     /**
                      * 设置子商户联系人
 <敏感信息>
-                     * @param Contact 子商户联系人
+                     * @param _contact 子商户联系人
 <敏感信息>
+                     * 
                      */
                     void SetContact(const std::string& _contact);
 
                     /**
                      * 判断参数 Contact 是否已赋值
                      * @return Contact 是否已赋值
+                     * 
                      */
                     bool ContactHasBeenSet() const;
 
                     /**
                      * 获取子商户地址
                      * @return Address 子商户地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置子商户地址
-                     * @param Address 子商户地址
+                     * @param _address 子商户地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -211,20 +235,23 @@ namespace TencentCloud
 <敏感信息>
                      * @return Mobile 联系人手机号
 <敏感信息>
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置联系人手机号
 <敏感信息>
-                     * @param Mobile 联系人手机号
+                     * @param _mobile 联系人手机号
 <敏感信息>
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
@@ -233,20 +260,23 @@ namespace TencentCloud
 <敏感信息>
                      * @return Email 邮箱 
 <敏感信息>
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱 
 <敏感信息>
-                     * @param Email 邮箱 
+                     * @param _email 邮箱 
 <敏感信息>
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -261,6 +291,7 @@ general:普通子账户
 merchant:商户子账户
 缺省： general
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubMerchantMemberType() const;
 
@@ -270,17 +301,19 @@ general:普通子账户
 merchant:商户子账户
 缺省： general
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubMerchantMemberType 子商户会员类型：
+                     * @param _subMerchantMemberType 子商户会员类型：
 general:普通子账户
 merchant:商户子账户
 缺省： general
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubMerchantMemberType(const std::string& _subMerchantMemberType);
 
                     /**
                      * 判断参数 SubMerchantMemberType 是否已赋值
                      * @return SubMerchantMemberType 是否已赋值
+                     * 
                      */
                     bool SubMerchantMemberTypeHasBeenSet() const;
 

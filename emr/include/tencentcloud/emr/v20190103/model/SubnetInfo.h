@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网信息（名字）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网信息（名字）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetName 子网信息（名字）
+                     * @param _subnetName 子网信息（名字）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网信息（ID）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网信息（ID）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网信息（ID）
+                     * @param _subnetId 子网信息（ID）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

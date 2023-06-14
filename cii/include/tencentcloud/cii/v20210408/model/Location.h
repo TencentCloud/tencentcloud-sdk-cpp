@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取位置信息
                      * @return Points 位置信息
+                     * 
                      */
                     std::vector<Point> GetPoints() const;
 
                     /**
                      * 设置位置信息
-                     * @param Points 位置信息
+                     * @param _points 位置信息
+                     * 
                      */
                     void SetPoints(const std::vector<Point>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 

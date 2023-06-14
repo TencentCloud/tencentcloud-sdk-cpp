@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取shell地址
                      * @return Webshell shell地址
+                     * 
                      */
                     std::string GetWebshell() const;
 
                     /**
                      * 设置shell地址
-                     * @param Webshell shell地址
+                     * @param _webshell shell地址
+                     * 
                      */
                     void SetWebshell(const std::string& _webshell);
 
                     /**
                      * 判断参数 Webshell 是否已赋值
                      * @return Webshell 是否已赋值
+                     * 
                      */
                     bool WebshellHasBeenSet() const;
 
                     /**
                      * 获取pod的id
                      * @return PodId pod的id
+                     * 
                      */
                     std::string GetPodId() const;
 
                     /**
                      * 设置pod的id
-                     * @param PodId pod的id
+                     * @param _podId pod的id
+                     * 
                      */
                     void SetPodId(const std::string& _podId);
 
                     /**
                      * 判断参数 PodId 是否已赋值
                      * @return PodId 是否已赋值
+                     * 
                      */
                     bool PodIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取实例的ip
                      * @return PodIp 实例的ip
+                     * 
                      */
                     std::string GetPodIp() const;
 
                     /**
                      * 设置实例的ip
-                     * @param PodIp 实例的ip
+                     * @param _podIp 实例的ip
+                     * 
                      */
                     void SetPodIp(const std::string& _podIp);
 
                     /**
                      * 判断参数 PodIp 是否已赋值
                      * @return PodIp 是否已赋值
+                     * 
                      */
                     bool PodIpHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployVersion 部署版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeployVersion() const;
 
                     /**
                      * 设置部署版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployVersion 部署版本
+                     * @param _deployVersion 部署版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeployVersion(const std::string& _deployVersion);
 
                     /**
                      * 判断参数 DeployVersion 是否已赋值
                      * @return DeployVersion 是否已赋值
+                     * 
                      */
                     bool DeployVersionHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestartCount 重启次数
+                     * @param _restartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 

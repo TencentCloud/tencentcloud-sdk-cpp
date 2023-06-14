@@ -50,48 +50,56 @@ namespace TencentCloud
                     /**
                      * 获取攻击类型统计
                      * @return TopTypeData 攻击类型统计
+                     * 
                      */
                     std::vector<ScdnTypeData> GetTopTypeData() const;
 
                     /**
                      * 判断参数 TopTypeData 是否已赋值
                      * @return TopTypeData 是否已赋值
+                     * 
                      */
                     bool TopTypeDataHasBeenSet() const;
 
                     /**
                      * 获取IP统计
                      * @return TopIpData IP统计
+                     * 
                      */
                     std::vector<ScdnTopData> GetTopIpData() const;
 
                     /**
                      * 判断参数 TopIpData 是否已赋值
                      * @return TopIpData 是否已赋值
+                     * 
                      */
                     bool TopIpDataHasBeenSet() const;
 
                     /**
                      * 获取URL统计
                      * @return TopUrlData URL统计
+                     * 
                      */
                     std::vector<ScdnTopUrlData> GetTopUrlData() const;
 
                     /**
                      * 判断参数 TopUrlData 是否已赋值
                      * @return TopUrlData 是否已赋值
+                     * 
                      */
                     bool TopUrlDataHasBeenSet() const;
 
                     /**
                      * 获取域名统计
                      * @return TopDomainData 域名统计
+                     * 
                      */
                     std::vector<ScdnTopDomainData> GetTopDomainData() const;
 
                     /**
                      * 判断参数 TopDomainData 是否已赋值
                      * @return TopDomainData 是否已赋值
+                     * 
                      */
                     bool TopDomainDataHasBeenSet() const;
 

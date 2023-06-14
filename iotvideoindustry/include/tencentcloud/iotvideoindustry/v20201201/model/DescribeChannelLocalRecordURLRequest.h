@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一标识
                      * @return DeviceId 设备唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
                      * @return ChannelId 通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * @param _channelId 通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
                     /**
                      * 获取录像文件Id，通过获取本地录像返回
                      * @return RecordId 录像文件Id，通过获取本地录像返回
+                     * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置录像文件Id，通过获取本地录像返回
-                     * @param RecordId 录像文件Id，通过获取本地录像返回
+                     * @param _recordId 录像文件Id，通过获取本地录像返回
+                     * 
                      */
                     void SetRecordId(const std::string& _recordId);
 
                     /**
                      * 判断参数 RecordId 是否已赋值
                      * @return RecordId 是否已赋值
+                     * 
                      */
                     bool RecordIdHasBeenSet() const;
 
                     /**
                      * 获取UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
                      * @return ExpireTime UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
-                     * @param ExpireTime UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     * @param _expireTime UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
                      * @return StartTime 录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
-                     * @param StartTime 录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * @param _startTime 录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
                      * @return EndTime 录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
-                     * @param EndTime 录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * @param _endTime 录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

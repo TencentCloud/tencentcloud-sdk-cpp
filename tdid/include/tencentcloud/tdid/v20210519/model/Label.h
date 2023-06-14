@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取标签ID
                      * @return LabelId 标签ID
+                     * 
                      */
                     uint64_t GetLabelId() const;
 
                     /**
                      * 设置标签ID
-                     * @param LabelId 标签ID
+                     * @param _labelId 标签ID
+                     * 
                      */
                     void SetLabelId(const uint64_t& _labelId);
 
                     /**
                      * 判断参数 LabelId 是否已赋值
                      * @return LabelId 是否已赋值
+                     * 
                      */
                     bool LabelIdHasBeenSet() const;
 
                     /**
                      * 获取标签名称
                      * @return LabelName 标签名称
+                     * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置标签名称
-                     * @param LabelName 标签名称
+                     * @param _labelName 标签名称
+                     * 
                      */
                     void SetLabelName(const std::string& _labelName);
 
                     /**
                      * 判断参数 LabelName 是否已赋值
                      * @return LabelName 是否已赋值
+                     * 
                      */
                     bool LabelNameHasBeenSet() const;
 
                     /**
                      * 获取did数量
                      * @return DidCount did数量
+                     * 
                      */
                     int64_t GetDidCount() const;
 
                     /**
                      * 设置did数量
-                     * @param DidCount did数量
+                     * @param _didCount did数量
+                     * 
                      */
                     void SetDidCount(const int64_t& _didCount);
 
                     /**
                      * 判断参数 DidCount 是否已赋值
                      * @return DidCount 是否已赋值
+                     * 
                      */
                     bool DidCountHasBeenSet() const;
 
                     /**
                      * 获取创建者did
                      * @return Did 创建者did
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 设置创建者did
-                     * @param Did 创建者did
+                     * @param _did 创建者did
+                     * 
                      */
                     void SetDid(const std::string& _did);
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

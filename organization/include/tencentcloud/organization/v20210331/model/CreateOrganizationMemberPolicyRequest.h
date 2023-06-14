@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取成员Uin。
                      * @return MemberUin 成员Uin。
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员Uin。
-                     * @param MemberUin 成员Uin。
+                     * @param _memberUin 成员Uin。
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 
                     /**
                      * 获取策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
                      * @return PolicyName 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
-                     * @param PolicyName 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
+                     * @param _policyName 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
                      * @return IdentityId 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
+                     * 
                      */
                     int64_t GetIdentityId() const;
 
                     /**
                      * 设置成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
-                     * @param IdentityId 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
+                     * @param _identityId 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
+                     * 
                      */
                     void SetIdentityId(const int64_t& _identityId);
 
                     /**
                      * 判断参数 IdentityId 是否已赋值
                      * @return IdentityId 是否已赋值
+                     * 
                      */
                     bool IdentityIdHasBeenSet() const;
 
                     /**
                      * 获取描述。
                      * @return Description 描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
-                     * @param Description 描述。
+                     * @param _description 描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

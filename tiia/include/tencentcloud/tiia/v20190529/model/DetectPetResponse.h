@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取识别出图片中的宠物信息列表。
                      * @return Pets 识别出图片中的宠物信息列表。
+                     * 
                      */
                     std::vector<Pet> GetPets() const;
 
                     /**
                      * 判断参数 Pets 是否已赋值
                      * @return Pets 是否已赋值
+                     * 
                      */
                     bool PetsHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Agent 版本号。
                      * @return Version Agent 版本号。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置Agent 版本号。
-                     * @param Version Agent 版本号。
+                     * @param _version Agent 版本号。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取上次心跳时间
                      * @return LastHeartbeatTime 上次心跳时间
+                     * 
                      */
                     std::string GetLastHeartbeatTime() const;
 
                     /**
                      * 设置上次心跳时间
-                     * @param LastHeartbeatTime 上次心跳时间
+                     * @param _lastHeartbeatTime 上次心跳时间
+                     * 
                      */
                     void SetLastHeartbeatTime(const std::string& _lastHeartbeatTime);
 
                     /**
                      * 判断参数 LastHeartbeatTime 是否已赋值
                      * @return LastHeartbeatTime 是否已赋值
+                     * 
                      */
                     bool LastHeartbeatTimeHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return AgentStatus Agent状态，取值范围：
 <li> Online：在线
 <li> Offline：离线
+                     * 
                      */
                     std::string GetAgentStatus() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置Agent状态，取值范围：
 <li> Online：在线
 <li> Offline：离线
-                     * @param AgentStatus Agent状态，取值范围：
+                     * @param _agentStatus Agent状态，取值范围：
 <li> Online：在线
 <li> Offline：离线
+                     * 
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
 
                     /**
                      * 判断参数 AgentStatus 是否已赋值
                      * @return AgentStatus 是否已赋值
+                     * 
                      */
                     bool AgentStatusHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
                      * @return Environment Agent运行环境，取值范围：
 <li> Linux：Linux实例
 <li> Windows：Windows实例
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -140,33 +153,38 @@ namespace TencentCloud
                      * 设置Agent运行环境，取值范围：
 <li> Linux：Linux实例
 <li> Windows：Windows实例
-                     * @param Environment Agent运行环境，取值范围：
+                     * @param _environment Agent运行环境，取值范围：
 <li> Linux：Linux实例
 <li> Windows：Windows实例
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
                     /**
                      * 获取Agent 支持的功能列表。
                      * @return SupportFeatures Agent 支持的功能列表。
+                     * 
                      */
                     std::vector<std::string> GetSupportFeatures() const;
 
                     /**
                      * 设置Agent 支持的功能列表。
-                     * @param SupportFeatures Agent 支持的功能列表。
+                     * @param _supportFeatures Agent 支持的功能列表。
+                     * 
                      */
                     void SetSupportFeatures(const std::vector<std::string>& _supportFeatures);
 
                     /**
                      * 判断参数 SupportFeatures 是否已赋值
                      * @return SupportFeatures 是否已赋值
+                     * 
                      */
                     bool SupportFeaturesHasBeenSet() const;
 

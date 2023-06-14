@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。
                      * @return Date 查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。
-                     * @param Date 查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。
+                     * @param _date 查询日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。该参数仅日期部分有效。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。
                      * @return DomainName 域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。
-                     * @param DomainName 域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。
+                     * @param _domainName 域名。查询该域名播放 Top100 的媒体文件的统计数据。默认查询所有域名的播放统计数据。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 <li>Traffic：播放流量，按播放流量统计 Top100 的数据。</li>
 <li>PlayTimes：播放次数，按播放次数统计播放 Top100 的数据。</li>
 默认值为Traffic。
+                     * 
                      */
                     std::string GetMetric() const;
 
@@ -95,34 +102,39 @@ namespace TencentCloud
 <li>Traffic：播放流量，按播放流量统计 Top100 的数据。</li>
 <li>PlayTimes：播放次数，按播放次数统计播放 Top100 的数据。</li>
 默认值为Traffic。
-                     * @param Metric Top 数据的统计指标，取值有：
+                     * @param _metric Top 数据的统计指标，取值有：
 <li>Traffic：播放流量，按播放流量统计 Top100 的数据。</li>
 <li>PlayTimes：播放次数，按播放次数统计播放 Top100 的数据。</li>
 默认值为Traffic。
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

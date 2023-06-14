@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取折扣价
                      * @return RealTotalCost 折扣价
+                     * 
                      */
                     double GetRealTotalCost() const;
 
                     /**
                      * 设置折扣价
-                     * @param RealTotalCost 折扣价
+                     * @param _realTotalCost 折扣价
+                     * 
                      */
                     void SetRealTotalCost(const double& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
                      * 获取原价
                      * @return TotalCost 原价
+                     * 
                      */
                     double GetTotalCost() const;
 
                     /**
                      * 设置原价
-                     * @param TotalCost 原价
+                     * @param _totalCost 原价
+                     * 
                      */
                     void SetTotalCost(const double& _totalCost);
 
                     /**
                      * 判断参数 TotalCost 是否已赋值
                      * @return TotalCost 是否已赋值
+                     * 
                      */
                     bool TotalCostHasBeenSet() const;
 

@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取模块ID。
                      * @return ModuleId 模块ID。
+                     * 
                      */
                     std::string GetModuleId() const;
 
                     /**
                      * 设置模块ID。
-                     * @param ModuleId 模块ID。
+                     * @param _moduleId 模块ID。
+                     * 
                      */
                     void SetModuleId(const std::string& _moduleId);
 
                     /**
                      * 判断参数 ModuleId 是否已赋值
                      * @return ModuleId 是否已赋值
+                     * 
                      */
                     bool ModuleIdHasBeenSet() const;
 
                     /**
                      * 获取机型ID。
                      * @return InstanceType 机型ID。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置机型ID。
-                     * @param InstanceType 机型ID。
+                     * @param _instanceType 机型ID。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
                      * @return DefaultDataDiskSize 默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 
                      */
                     int64_t GetDefaultDataDiskSize() const;
 
                     /**
                      * 设置默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
-                     * @param DefaultDataDiskSize 默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * @param _defaultDataDiskSize 默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 
                      */
                     void SetDefaultDataDiskSize(const int64_t& _defaultDataDiskSize);
 
                     /**
                      * 判断参数 DefaultDataDiskSize 是否已赋值
                      * @return DefaultDataDiskSize 是否已赋值
+                     * 
                      */
                     bool DefaultDataDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
                      * @return DefaultSystemDiskSize 默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 
                      */
                     int64_t GetDefaultSystemDiskSize() const;
 
                     /**
                      * 设置默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
-                     * @param DefaultSystemDiskSize 默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * @param _defaultSystemDiskSize 默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。
+                     * 
                      */
                     void SetDefaultSystemDiskSize(const int64_t& _defaultSystemDiskSize);
 
                     /**
                      * 判断参数 DefaultSystemDiskSize 是否已赋值
                      * @return DefaultSystemDiskSize 是否已赋值
+                     * 
                      */
                     bool DefaultSystemDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取系统盘
                      * @return SystemDisk 系统盘
+                     * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
                      * 设置系统盘
-                     * @param SystemDisk 系统盘
+                     * @param _systemDisk 系统盘
+                     * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
                     /**
                      * 获取数据盘
                      * @return DataDisks 数据盘
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置数据盘
-                     * @param DataDisks 数据盘
+                     * @param _dataDisks 数据盘
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 

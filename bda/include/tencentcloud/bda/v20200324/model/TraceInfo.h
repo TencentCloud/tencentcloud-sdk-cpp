@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取人体动作轨迹ID。
                      * @return TraceId 人体动作轨迹ID。
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置人体动作轨迹ID。
-                     * @param TraceId 人体动作轨迹ID。
+                     * @param _traceId 人体动作轨迹ID。
+                     * 
                      */
                     void SetTraceId(const std::string& _traceId);
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 
                     /**
                      * 获取包含的人体动作轨迹图片Id列表。
                      * @return BodyIds 包含的人体动作轨迹图片Id列表。
+                     * 
                      */
                     std::vector<std::string> GetBodyIds() const;
 
                     /**
                      * 设置包含的人体动作轨迹图片Id列表。
-                     * @param BodyIds 包含的人体动作轨迹图片Id列表。
+                     * @param _bodyIds 包含的人体动作轨迹图片Id列表。
+                     * 
                      */
                     void SetBodyIds(const std::vector<std::string>& _bodyIds);
 
                     /**
                      * 判断参数 BodyIds 是否已赋值
                      * @return BodyIds 是否已赋值
+                     * 
                      */
                     bool BodyIdsHasBeenSet() const;
 

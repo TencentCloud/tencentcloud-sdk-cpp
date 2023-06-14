@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return Name 用户名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户名
-                     * @param Name 用户名
+                     * @param _name 用户名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
                      * @return Answer 答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * 
                      */
                     uint64_t GetAnswer() const;
 
                     /**
                      * 设置答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
-                     * @param Answer 答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * @param _answer 答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）
+                     * 
                      */
                     void SetAnswer(const uint64_t& _answer);
 
                     /**
                      * 判断参数 Answer 是否已赋值
                      * @return Answer 是否已赋值
+                     * 
                      */
                     bool AnswerHasBeenSet() const;
 
                     /**
                      * 获取答题用时
                      * @return CostTime 答题用时
+                     * 
                      */
                     uint64_t GetCostTime() const;
 
                     /**
                      * 设置答题用时
-                     * @param CostTime 答题用时
+                     * @param _costTime 答题用时
+                     * 
                      */
                     void SetCostTime(const uint64_t& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取答案是否正确（1正确0错误）
                      * @return IsCorrect 答案是否正确（1正确0错误）
+                     * 
                      */
                     uint64_t GetIsCorrect() const;
 
                     /**
                      * 设置答案是否正确（1正确0错误）
-                     * @param IsCorrect 答案是否正确（1正确0错误）
+                     * @param _isCorrect 答案是否正确（1正确0错误）
+                     * 
                      */
                     void SetIsCorrect(const uint64_t& _isCorrect);
 
                     /**
                      * 判断参数 IsCorrect 是否已赋值
                      * @return IsCorrect 是否已赋值
+                     * 
                      */
                     bool IsCorrectHasBeenSet() const;
 

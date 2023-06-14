@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例的备份ID，可通过DescribeBackups接口查询备份的ID。
                      * @return BackupId 实例的备份ID，可通过DescribeBackups接口查询备份的ID。
+                     * 
                      */
                     int64_t GetBackupId() const;
 
                     /**
                      * 设置实例的备份ID，可通过DescribeBackups接口查询备份的ID。
-                     * @param BackupId 实例的备份ID，可通过DescribeBackups接口查询备份的ID。
+                     * @param _backupId 实例的备份ID，可通过DescribeBackups接口查询备份的ID。
+                     * 
                      */
                     void SetBackupId(const int64_t& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 

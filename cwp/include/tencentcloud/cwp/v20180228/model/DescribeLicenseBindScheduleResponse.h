@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取进度
                      * @return Schedule 进度
+                     * 
                      */
                     uint64_t GetSchedule() const;
 
                     /**
                      * 判断参数 Schedule 是否已赋值
                      * @return Schedule 是否已赋值
+                     * 
                      */
                     bool ScheduleHasBeenSet() const;
 
                     /**
                      * 获取绑定任务详情
                      * @return List 绑定任务详情
+                     * 
                      */
                     std::vector<LicenseBindTaskDetail> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

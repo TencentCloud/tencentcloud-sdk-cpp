@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取模板或样例id
                      * @return TemplateId 模板或样例id
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板或样例id
-                     * @param TemplateId 模板或样例id
+                     * @param _templateId 模板或样例id
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板内容
                      * @return TemplateContent 模板内容
+                     * 
                      */
                     std::string GetTemplateContent() const;
 
                     /**
                      * 设置模板内容
-                     * @param TemplateContent 模板内容
+                     * @param _templateContent 模板内容
+                     * 
                      */
                     void SetTemplateContent(const std::string& _templateContent);
 
                     /**
                      * 判断参数 TemplateContent 是否已赋值
                      * @return TemplateContent 是否已赋值
+                     * 
                      */
                     bool TemplateContentHasBeenSet() const;
 
                     /**
                      * 获取触达成功数
                      * @return SendCount 触达成功数
+                     * 
                      */
                     uint64_t GetSendCount() const;
 
                     /**
                      * 设置触达成功数
-                     * @param SendCount 触达成功数
+                     * @param _sendCount 触达成功数
+                     * 
                      */
                     void SetSendCount(const uint64_t& _sendCount);
 
                     /**
                      * 判断参数 SendCount 是否已赋值
                      * @return SendCount 是否已赋值
+                     * 
                      */
                     bool SendCountHasBeenSet() const;
 
                     /**
                      * 获取短链点击数
                      * @return ClickCount 短链点击数
+                     * 
                      */
                     uint64_t GetClickCount() const;
 
                     /**
                      * 设置短链点击数
-                     * @param ClickCount 短链点击数
+                     * @param _clickCount 短链点击数
+                     * 
                      */
                     void SetClickCount(const uint64_t& _clickCount);
 
                     /**
                      * 判断参数 ClickCount 是否已赋值
                      * @return ClickCount 是否已赋值
+                     * 
                      */
                     bool ClickCountHasBeenSet() const;
 

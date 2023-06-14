@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取待解绑的主机端口，可选值1~65535。
                      * @return Port 待解绑的主机端口，可选值1~65535。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置待解绑的主机端口，可选值1~65535。
-                     * @param Port 待解绑的主机端口，可选值1~65535。
+                     * @param _port 待解绑的主机端口，可选值1~65535。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取待解绑的主机实例ID。
                      * @return InstanceId 待解绑的主机实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待解绑的主机实例ID。
-                     * @param InstanceId 待解绑的主机实例ID。
+                     * @param _instanceId 待解绑的主机实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

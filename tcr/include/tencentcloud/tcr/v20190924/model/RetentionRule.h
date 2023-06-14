@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）
                      * @return Key 支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）
-                     * @param Key 支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）
+                     * @param _key 支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取规则设置下的对应值
                      * @return Value 规则设置下的对应值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置规则设置下的对应值
-                     * @param Value 规则设置下的对应值
+                     * @param _value 规则设置下的对应值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

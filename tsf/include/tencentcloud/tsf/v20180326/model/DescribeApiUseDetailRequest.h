@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取网关部署组ID
                      * @return GatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
                      * 设置网关部署组ID
-                     * @param GatewayDeployGroupId 网关部署组ID
+                     * @param _gatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
 
                     /**
                      * 判断参数 GatewayDeployGroupId 是否已赋值
                      * @return GatewayDeployGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
                     /**
                      * 获取网关分组Api ID
                      * @return ApiId 网关分组Api ID
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置网关分组Api ID
-                     * @param ApiId 网关分组Api ID
+                     * @param _apiId 网关分组Api ID
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取查询的日期,格式：yyyy-MM-dd HH:mm:ss
                      * @return StartTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询的日期,格式：yyyy-MM-dd HH:mm:ss
-                     * @param StartTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询的日期,格式：yyyy-MM-dd HH:mm:ss
                      * @return EndTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询的日期,格式：yyyy-MM-dd HH:mm:ss
-                     * @param EndTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 查询的日期,格式：yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

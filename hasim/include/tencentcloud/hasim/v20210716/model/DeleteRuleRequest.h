@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自动化规则ID
                      * @return RuleID 自动化规则ID
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置自动化规则ID
-                     * @param RuleID 自动化规则ID
+                     * @param _ruleID 自动化规则ID
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 

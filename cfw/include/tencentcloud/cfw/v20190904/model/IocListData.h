@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取待处置IP地址，IP/Domain字段二选一
                      * @return IP 待处置IP地址，IP/Domain字段二选一
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置待处置IP地址，IP/Domain字段二选一
-                     * @param IP 待处置IP地址，IP/Domain字段二选一
+                     * @param _iP 待处置IP地址，IP/Domain字段二选一
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取只能为0或者1   0代表出站 1代表入站
                      * @return Direction 只能为0或者1   0代表出站 1代表入站
+                     * 
                      */
                     int64_t GetDirection() const;
 
                     /**
                      * 设置只能为0或者1   0代表出站 1代表入站
-                     * @param Direction 只能为0或者1   0代表出站 1代表入站
+                     * @param _direction 只能为0或者1   0代表出站 1代表入站
+                     * 
                      */
                     void SetDirection(const int64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取待处置域名，IP/Domain字段二选一
                      * @return Domain 待处置域名，IP/Domain字段二选一
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置待处置域名，IP/Domain字段二选一
-                     * @param Domain 待处置域名，IP/Domain字段二选一
+                     * @param _domain 待处置域名，IP/Domain字段二选一
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取流量包唯一ID
                      * @return TrafficPackageId 流量包唯一ID
+                     * 
                      */
                     std::string GetTrafficPackageId() const;
 
                     /**
                      * 设置流量包唯一ID
-                     * @param TrafficPackageId 流量包唯一ID
+                     * @param _trafficPackageId 流量包唯一ID
+                     * 
                      */
                     void SetTrafficPackageId(const std::string& _trafficPackageId);
 
                     /**
                      * 判断参数 TrafficPackageId 是否已赋值
                      * @return TrafficPackageId 是否已赋值
+                     * 
                      */
                     bool TrafficPackageIdHasBeenSet() const;
 
@@ -70,128 +73,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficPackageName 流量包名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrafficPackageName() const;
 
                     /**
                      * 设置流量包名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrafficPackageName 流量包名称
+                     * @param _trafficPackageName 流量包名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrafficPackageName(const std::string& _trafficPackageName);
 
                     /**
                      * 判断参数 TrafficPackageName 是否已赋值
                      * @return TrafficPackageName 是否已赋值
+                     * 
                      */
                     bool TrafficPackageNameHasBeenSet() const;
 
                     /**
                      * 获取流量包总量，单位GB
                      * @return TotalAmount 流量包总量，单位GB
+                     * 
                      */
                     double GetTotalAmount() const;
 
                     /**
                      * 设置流量包总量，单位GB
-                     * @param TotalAmount 流量包总量，单位GB
+                     * @param _totalAmount 流量包总量，单位GB
+                     * 
                      */
                     void SetTotalAmount(const double& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 
                     /**
                      * 获取流量包剩余量，单位GB
                      * @return RemainingAmount 流量包剩余量，单位GB
+                     * 
                      */
                     double GetRemainingAmount() const;
 
                     /**
                      * 设置流量包剩余量，单位GB
-                     * @param RemainingAmount 流量包剩余量，单位GB
+                     * @param _remainingAmount 流量包剩余量，单位GB
+                     * 
                      */
                     void SetRemainingAmount(const double& _remainingAmount);
 
                     /**
                      * 判断参数 RemainingAmount 是否已赋值
                      * @return RemainingAmount 是否已赋值
+                     * 
                      */
                     bool RemainingAmountHasBeenSet() const;
 
                     /**
                      * 获取流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除
                      * @return Status 流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除
-                     * @param Status 流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除
+                     * @param _status 流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取流量包创建时间
                      * @return CreatedTime 流量包创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置流量包创建时间
-                     * @param CreatedTime 流量包创建时间
+                     * @param _createdTime 流量包创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取流量包截止时间
                      * @return Deadline 流量包截止时间
+                     * 
                      */
                     std::string GetDeadline() const;
 
                     /**
                      * 设置流量包截止时间
-                     * @param Deadline 流量包截止时间
+                     * @param _deadline 流量包截止时间
+                     * 
                      */
                     void SetDeadline(const std::string& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取已使用的流量，单位GB
                      * @return UsedAmount 已使用的流量，单位GB
+                     * 
                      */
                     double GetUsedAmount() const;
 
                     /**
                      * 设置已使用的流量，单位GB
-                     * @param UsedAmount 已使用的流量，单位GB
+                     * @param _usedAmount 已使用的流量，单位GB
+                     * 
                      */
                     void SetUsedAmount(const double& _usedAmount);
 
                     /**
                      * 判断参数 UsedAmount 是否已赋值
                      * @return UsedAmount 是否已赋值
+                     * 
                      */
                     bool UsedAmountHasBeenSet() const;
 
@@ -200,38 +224,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 流量包标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置流量包标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 流量包标签
+                     * @param _tagSet 流量包标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取区分闲时流量包与全时流量包
                      * @return DeductType 区分闲时流量包与全时流量包
+                     * 
                      */
                     std::string GetDeductType() const;
 
                     /**
                      * 设置区分闲时流量包与全时流量包
-                     * @param DeductType 区分闲时流量包与全时流量包
+                     * @param _deductType 区分闲时流量包与全时流量包
+                     * 
                      */
                     void SetDeductType(const std::string& _deductType);
 
                     /**
                      * 判断参数 DeductType 是否已赋值
                      * @return DeductType 是否已赋值
+                     * 
                      */
                     bool DeductTypeHasBeenSet() const;
 

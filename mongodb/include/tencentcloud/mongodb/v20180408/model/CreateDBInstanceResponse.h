@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取订单ID
                      * @return DealId 订单ID
+                     * 
                      */
                     std::string GetDealId() const;
 
                     /**
                      * 判断参数 DealId 是否已赋值
                      * @return DealId 是否已赋值
+                     * 
                      */
                     bool DealIdHasBeenSet() const;
 
                     /**
                      * 获取创建的实例ID列表
                      * @return InstanceIds 创建的实例ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

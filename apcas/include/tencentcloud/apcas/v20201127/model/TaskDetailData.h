@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取画像TAG ID
                      * @return TagId 画像TAG ID
+                     * 
                      */
                     uint64_t GetTagId() const;
 
                     /**
                      * 设置画像TAG ID
-                     * @param TagId 画像TAG ID
+                     * @param _tagId 画像TAG ID
+                     * 
                      */
                     void SetTagId(const uint64_t& _tagId);
 
                     /**
                      * 判断参数 TagId 是否已赋值
                      * @return TagId 是否已赋值
+                     * 
                      */
                     bool TagIdHasBeenSet() const;
 
                     /**
                      * 获取画像TAG描述（如“省份分布”）
                      * @return TagDesc 画像TAG描述（如“省份分布”）
+                     * 
                      */
                     std::string GetTagDesc() const;
 
                     /**
                      * 设置画像TAG描述（如“省份分布”）
-                     * @param TagDesc 画像TAG描述（如“省份分布”）
+                     * @param _tagDesc 画像TAG描述（如“省份分布”）
+                     * 
                      */
                     void SetTagDesc(const std::string& _tagDesc);
 
                     /**
                      * 判断参数 TagDesc 是否已赋值
                      * @return TagDesc 是否已赋值
+                     * 
                      */
                     bool TagDescHasBeenSet() const;
 
                     /**
                      * 获取画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）
                      * @return LabelDetailDataList 画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）
+                     * 
                      */
                     std::vector<LabelDetailData> GetLabelDetailDataList() const;
 
                     /**
                      * 设置画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）
-                     * @param LabelDetailDataList 画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）
+                     * @param _labelDetailDataList 画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）
+                     * 
                      */
                     void SetLabelDetailDataList(const std::vector<LabelDetailData>& _labelDetailDataList);
 
                     /**
                      * 判断参数 LabelDetailDataList 是否已赋值
                      * @return LabelDetailDataList 是否已赋值
+                     * 
                      */
                     bool LabelDetailDataListHasBeenSet() const;
 

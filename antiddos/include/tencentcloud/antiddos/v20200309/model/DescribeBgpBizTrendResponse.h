@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取曲线图各个时间点的值
                      * @return DataList 曲线图各个时间点的值
+                     * 
                      */
                     std::vector<uint64_t> GetDataList() const;
 
                     /**
                      * 判断参数 DataList 是否已赋值
                      * @return DataList 是否已赋值
+                     * 
                      */
                     bool DataListHasBeenSet() const;
 
                     /**
                      * 获取曲线图取值个数
                      * @return Total 曲线图取值个数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取统计纬度
                      * @return MetricName 统计纬度
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取返回数组最大值
                      * @return MaxData 返回数组最大值
+                     * 
                      */
                     uint64_t GetMaxData() const;
 
                     /**
                      * 判断参数 MaxData 是否已赋值
                      * @return MaxData 是否已赋值
+                     * 
                      */
                     bool MaxDataHasBeenSet() const;
 

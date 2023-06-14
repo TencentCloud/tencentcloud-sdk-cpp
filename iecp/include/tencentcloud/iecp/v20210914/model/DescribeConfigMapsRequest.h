@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量
-                     * @param Offset 翻页偏移量
+                     * @param _offset 翻页偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页大小(最大100)
                      * @return Limit 每页大小(最大100)
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页大小(最大100)
-                     * @param Limit 每页大小(最大100)
+                     * @param _limit 每页大小(最大100)
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return ConfigMapNamespace 命名空间
+                     * 
                      */
                     std::string GetConfigMapNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param ConfigMapNamespace 命名空间
+                     * @param _configMapNamespace 命名空间
+                     * 
                      */
                     void SetConfigMapNamespace(const std::string& _configMapNamespace);
 
                     /**
                      * 判断参数 ConfigMapNamespace 是否已赋值
                      * @return ConfigMapNamespace 是否已赋值
+                     * 
                      */
                     bool ConfigMapNamespaceHasBeenSet() const;
 
                     /**
                      * 获取模糊匹配的名称
                      * @return NamePattern 模糊匹配的名称
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置模糊匹配的名称
-                     * @param NamePattern 模糊匹配的名称
+                     * @param _namePattern 模糊匹配的名称
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取Sort.Fileld填写CreateTime Sort.Order(ASC|DESC) 默认ASC
                      * @return Sort Sort.Fileld填写CreateTime Sort.Order(ASC|DESC) 默认ASC
+                     * 
                      */
                     FieldSort GetSort() const;
 
                     /**
                      * 设置Sort.Fileld填写CreateTime Sort.Order(ASC|DESC) 默认ASC
-                     * @param Sort Sort.Fileld填写CreateTime Sort.Order(ASC|DESC) 默认ASC
+                     * @param _sort Sort.Fileld填写CreateTime Sort.Order(ASC|DESC) 默认ASC
+                     * 
                      */
                     void SetSort(const FieldSort& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 

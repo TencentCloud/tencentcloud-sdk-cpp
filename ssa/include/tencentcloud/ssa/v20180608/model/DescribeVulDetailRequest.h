@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取漏洞唯一标识符
                      * @return UniqId 漏洞唯一标识符
+                     * 
                      */
                     std::string GetUniqId() const;
 
                     /**
                      * 设置漏洞唯一标识符
-                     * @param UniqId 漏洞唯一标识符
+                     * @param _uniqId 漏洞唯一标识符
+                     * 
                      */
                     void SetUniqId(const std::string& _uniqId);
 
                     /**
                      * 判断参数 UniqId 是否已赋值
                      * @return UniqId 是否已赋值
+                     * 
                      */
                     bool UniqIdHasBeenSet() const;
 
                     /**
                      * 获取查看详情来源
                      * @return Source 查看详情来源
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置查看详情来源
-                     * @param Source 查看详情来源
+                     * @param _source 查看详情来源
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 

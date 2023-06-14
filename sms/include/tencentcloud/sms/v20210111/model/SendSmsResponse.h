@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取短信发送状态。
                      * @return SendStatusSet 短信发送状态。
+                     * 
                      */
                     std::vector<SendStatus> GetSendStatusSet() const;
 
                     /**
                      * 判断参数 SendStatusSet 是否已赋值
                      * @return SendStatusSet 是否已赋值
+                     * 
                      */
                     bool SendStatusSetHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP）
                      * @return Business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID
                      * @return Id 资源实例ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param Id 资源实例ID
+                     * @param _id 资源实例ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

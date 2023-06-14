@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Add 允许操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAdd() const;
 
                     /**
                      * 设置允许操作列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Add 允许操作列表
+                     * @param _add 允许操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdd(const std::vector<std::string>& _add);
 
                     /**
                      * 判断参数 Add 是否已赋值
                      * @return Add 是否已赋值
+                     * 
                      */
                     bool AddHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Drop 禁止操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDrop() const;
 
                     /**
                      * 设置禁止操作列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Drop 禁止操作列表
+                     * @param _drop 禁止操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDrop(const std::vector<std::string>& _drop);
 
                     /**
                      * 判断参数 Drop 是否已赋值
                      * @return Drop 是否已赋值
+                     * 
                      */
                     bool DropHasBeenSet() const;
 

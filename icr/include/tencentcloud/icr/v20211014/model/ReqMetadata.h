@@ -51,108 +51,126 @@ namespace TencentCloud
                     /**
                      * 获取渠道
                      * @return ChannelID 渠道
+                     * 
                      */
                     std::string GetChannelID() const;
 
                     /**
                      * 设置渠道
-                     * @param ChannelID 渠道
+                     * @param _channelID 渠道
+                     * 
                      */
                     void SetChannelID(const std::string& _channelID);
 
                     /**
                      * 判断参数 ChannelID 是否已赋值
                      * @return ChannelID 是否已赋值
+                     * 
                      */
                     bool ChannelIDHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return BusinessName 无
+                     * 
                      */
                     std::string GetBusinessName() const;
 
                     /**
                      * 设置无
-                     * @param BusinessName 无
+                     * @param _businessName 无
+                     * 
                      */
                     void SetBusinessName(const std::string& _businessName);
 
                     /**
                      * 判断参数 BusinessName 是否已赋值
                      * @return BusinessName 是否已赋值
+                     * 
                      */
                     bool BusinessNameHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return GUID 无
+                     * 
                      */
                     std::string GetGUID() const;
 
                     /**
                      * 设置无
-                     * @param GUID 无
+                     * @param _gUID 无
+                     * 
                      */
                     void SetGUID(const std::string& _gUID);
 
                     /**
                      * 判断参数 GUID 是否已赋值
                      * @return GUID 是否已赋值
+                     * 
                      */
                     bool GUIDHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return AppKey 无
+                     * 
                      */
                     std::string GetAppKey() const;
 
                     /**
                      * 设置无
-                     * @param AppKey 无
+                     * @param _appKey 无
+                     * 
                      */
                     void SetAppKey(const std::string& _appKey);
 
                     /**
                      * 判断参数 AppKey 是否已赋值
                      * @return AppKey 是否已赋值
+                     * 
                      */
                     bool AppKeyHasBeenSet() const;
 
                     /**
                      * 获取位置定位服务
                      * @return LBS 位置定位服务
+                     * 
                      */
                     ReqMetadataLBS GetLBS() const;
 
                     /**
                      * 设置位置定位服务
-                     * @param LBS 位置定位服务
+                     * @param _lBS 位置定位服务
+                     * 
                      */
                     void SetLBS(const ReqMetadataLBS& _lBS);
 
                     /**
                      * 判断参数 LBS 是否已赋值
                      * @return LBS 是否已赋值
+                     * 
                      */
                     bool LBSHasBeenSet() const;
 
                     /**
                      * 获取透传字段
                      * @return Vagrants 透传字段
+                     * 
                      */
                     std::vector<ReqMetadataVagrant> GetVagrants() const;
 
                     /**
                      * 设置透传字段
-                     * @param Vagrants 透传字段
+                     * @param _vagrants 透传字段
+                     * 
                      */
                     void SetVagrants(const std::vector<ReqMetadataVagrant>& _vagrants);
 
                     /**
                      * 判断参数 Vagrants 是否已赋值
                      * @return Vagrants 是否已赋值
+                     * 
                      */
                     bool VagrantsHasBeenSet() const;
 

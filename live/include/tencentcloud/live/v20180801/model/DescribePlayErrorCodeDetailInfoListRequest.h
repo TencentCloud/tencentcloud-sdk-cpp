@@ -47,20 +47,23 @@ namespace TencentCloud
 格式：yyyy-mm-dd HH:MM:SS。
                      * @return StartTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-                     * @param StartTime 起始时间，北京时间，
+                     * @param _startTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return EndTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：EndTime 和 StartTime 只支持最近1天的数据查询。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：EndTime 和 StartTime 只支持最近1天的数据查询。
-                     * @param EndTime 结束时间，北京时间，
+                     * @param _endTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：EndTime 和 StartTime 只支持最近1天的数据查询。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -95,74 +101,86 @@ namespace TencentCloud
 1-1分钟粒度。
                      * @return Granularity 查询粒度：
 1-1分钟粒度。
+                     * 
                      */
                     uint64_t GetGranularity() const;
 
                     /**
                      * 设置查询粒度：
 1-1分钟粒度。
-                     * @param Granularity 查询粒度：
+                     * @param _granularity 查询粒度：
 1-1分钟粒度。
+                     * 
                      */
                     void SetGranularity(const uint64_t& _granularity);
 
                     /**
                      * 判断参数 Granularity 是否已赋值
                      * @return Granularity 是否已赋值
+                     * 
                      */
                     bool GranularityHasBeenSet() const;
 
                     /**
                      * 获取是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。
                      * @return StatType 是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。
+                     * 
                      */
                     std::string GetStatType() const;
 
                     /**
                      * 设置是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。
-                     * @param StatType 是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。
+                     * @param _statType 是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。
+                     * 
                      */
                     void SetStatType(const std::string& _statType);
 
                     /**
                      * 判断参数 StatType 是否已赋值
                      * @return StatType 是否已赋值
+                     * 
                      */
                     bool StatTypeHasBeenSet() const;
 
                     /**
                      * 获取播放域名列表。
                      * @return PlayDomains 播放域名列表。
+                     * 
                      */
                     std::vector<std::string> GetPlayDomains() const;
 
                     /**
                      * 设置播放域名列表。
-                     * @param PlayDomains 播放域名列表。
+                     * @param _playDomains 播放域名列表。
+                     * 
                      */
                     void SetPlayDomains(const std::vector<std::string>& _playDomains);
 
                     /**
                      * 判断参数 PlayDomains 是否已赋值
                      * @return PlayDomains 是否已赋值
+                     * 
                      */
                     bool PlayDomainsHasBeenSet() const;
 
                     /**
                      * 获取地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
                      * @return MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * 
                      */
                     std::string GetMainlandOrOversea() const;
 
                     /**
                      * 设置地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
-                     * @param MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @param _mainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * 
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
 
                     /**
                      * 判断参数 MainlandOrOversea 是否已赋值
                      * @return MainlandOrOversea 是否已赋值
+                     * 
                      */
                     bool MainlandOrOverseaHasBeenSet() const;
 

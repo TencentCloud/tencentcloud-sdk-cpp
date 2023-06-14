@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取已使用的端口规则数，单位条
                      * @return PortRulesUsage 已使用的端口规则数，单位条
+                     * 
                      */
                     uint64_t GetPortRulesUsage() const;
 
                     /**
                      * 设置已使用的端口规则数，单位条
-                     * @param PortRulesUsage 已使用的端口规则数，单位条
+                     * @param _portRulesUsage 已使用的端口规则数，单位条
+                     * 
                      */
                     void SetPortRulesUsage(const uint64_t& _portRulesUsage);
 
                     /**
                      * 判断参数 PortRulesUsage 是否已赋值
                      * @return PortRulesUsage 是否已赋值
+                     * 
                      */
                     bool PortRulesUsageHasBeenSet() const;
 
                     /**
                      * 获取已使用的域名规则数，单位条
                      * @return DomainRulesUsage 已使用的域名规则数，单位条
+                     * 
                      */
                     uint64_t GetDomainRulesUsage() const;
 
                     /**
                      * 设置已使用的域名规则数，单位条
-                     * @param DomainRulesUsage 已使用的域名规则数，单位条
+                     * @param _domainRulesUsage 已使用的域名规则数，单位条
+                     * 
                      */
                     void SetDomainRulesUsage(const uint64_t& _domainRulesUsage);
 
                     /**
                      * 判断参数 DomainRulesUsage 是否已赋值
                      * @return DomainRulesUsage 是否已赋值
+                     * 
                      */
                     bool DomainRulesUsageHasBeenSet() const;
 
                     /**
                      * 获取最近7天的攻击次数，单位次
                      * @return Last7DayAttackCount 最近7天的攻击次数，单位次
+                     * 
                      */
                     uint64_t GetLast7DayAttackCount() const;
 
                     /**
                      * 设置最近7天的攻击次数，单位次
-                     * @param Last7DayAttackCount 最近7天的攻击次数，单位次
+                     * @param _last7DayAttackCount 最近7天的攻击次数，单位次
+                     * 
                      */
                     void SetLast7DayAttackCount(const uint64_t& _last7DayAttackCount);
 
                     /**
                      * 判断参数 Last7DayAttackCount 是否已赋值
                      * @return Last7DayAttackCount 是否已赋值
+                     * 
                      */
                     bool Last7DayAttackCountHasBeenSet() const;
 

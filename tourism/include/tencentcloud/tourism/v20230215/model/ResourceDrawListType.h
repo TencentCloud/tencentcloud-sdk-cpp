@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 记录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置记录id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 记录id
+                     * @param _id 记录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 资源记录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFlowId() const;
 
                     /**
                      * 设置资源记录id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowId 资源记录id
+                     * @param _flowId 资源记录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowId(const uint64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源id
+                     * @param _resourceId 资源id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexId 本订单资源序列号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexId() const;
 
                     /**
                      * 设置本订单资源序列号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexId 本订单资源序列号
+                     * @param _indexId 本订单资源序列号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexId(const std::string& _indexId);
 
                     /**
                      * 判断参数 IndexId 是否已赋值
                      * @return IndexId 是否已赋值
+                     * 
                      */
                     bool IndexIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 客户的uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置客户的uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 客户的uin
+                     * @param _uin 客户的uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealId 大订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
                      * 设置大订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BigDealId 大订单号
+                     * @param _bigDealId 大订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBigDealId(const std::string& _bigDealId);
 
                     /**
                      * 判断参数 BigDealId 是否已赋值
                      * @return BigDealId 是否已赋值
+                     * 
                      */
                     bool BigDealIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmallOrderId 小订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSmallOrderId() const;
 
                     /**
                      * 设置小订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmallOrderId 小订单号
+                     * @param _smallOrderId 小订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmallOrderId(const std::string& _smallOrderId);
 
                     /**
                      * 判断参数 SmallOrderId 是否已赋值
                      * @return SmallOrderId 是否已赋值
+                     * 
                      */
                     bool SmallOrderIdHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceNewStartTime 资源创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceNewStartTime() const;
 
                     /**
                      * 设置资源创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceNewStartTime 资源创建时间
+                     * @param _resourceNewStartTime 资源创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceNewStartTime(const std::string& _resourceNewStartTime);
 
                     /**
                      * 判断参数 ResourceNewStartTime 是否已赋值
                      * @return ResourceNewStartTime 是否已赋值
+                     * 
                      */
                     bool ResourceNewStartTimeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceNewEndTime 资源到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceNewEndTime() const;
 
                     /**
                      * 设置资源到期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceNewEndTime 资源到期时间
+                     * @param _resourceNewEndTime 资源到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceNewEndTime(const std::string& _resourceNewEndTime);
 
                     /**
                      * 判断参数 ResourceNewEndTime 是否已赋值
                      * @return ResourceNewEndTime 是否已赋值
+                     * 
                      */
                     bool ResourceNewEndTimeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceStatus 资源状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResourceStatus() const;
 
                     /**
                      * 设置资源状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceStatus 资源状态
+                     * @param _resourceStatus 资源状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceStatus(const int64_t& _resourceStatus);
 
                     /**
                      * 判断参数 ResourceStatus 是否已赋值
                      * @return ResourceStatus 是否已赋值
+                     * 
                      */
                     bool ResourceStatusHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 本记录状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置本记录状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 本记录状态
+                     * @param _status 本记录状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 项目类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetResourceType() const;
 
                     /**
                      * 设置项目类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 项目类型
+                     * @param _resourceType 项目类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const uint64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

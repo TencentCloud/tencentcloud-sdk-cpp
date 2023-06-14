@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 类型，取值有：
 <li>MATERIAL：素材。</li>
 <li>CLASS：分类。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置类型，取值有：
 <li>MATERIAL：素材。</li>
 <li>CLASS：分类。</li>
-                     * @param Type 类型，取值有：
+                     * @param _type 类型，取值有：
 <li>MATERIAL：素材。</li>
 <li>CLASS：分类。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。
                      * @return Id 资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。
-                     * @param Id 资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。
+                     * @param _id 资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

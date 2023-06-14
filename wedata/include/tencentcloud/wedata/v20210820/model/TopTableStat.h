@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取告警表列表
                      * @return AlarmTables 告警表列表
+                     * 
                      */
                     std::vector<TopTableStatItem> GetAlarmTables() const;
 
                     /**
                      * 设置告警表列表
-                     * @param AlarmTables 告警表列表
+                     * @param _alarmTables 告警表列表
+                     * 
                      */
                     void SetAlarmTables(const std::vector<TopTableStatItem>& _alarmTables);
 
                     /**
                      * 判断参数 AlarmTables 是否已赋值
                      * @return AlarmTables 是否已赋值
+                     * 
                      */
                     bool AlarmTablesHasBeenSet() const;
 
                     /**
                      * 获取阻塞表列表
                      * @return PipelineTables 阻塞表列表
+                     * 
                      */
                     std::vector<TopTableStatItem> GetPipelineTables() const;
 
                     /**
                      * 设置阻塞表列表
-                     * @param PipelineTables 阻塞表列表
+                     * @param _pipelineTables 阻塞表列表
+                     * 
                      */
                     void SetPipelineTables(const std::vector<TopTableStatItem>& _pipelineTables);
 
                     /**
                      * 判断参数 PipelineTables 是否已赋值
                      * @return PipelineTables 是否已赋值
+                     * 
                      */
                     bool PipelineTablesHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchTickets 匹配票据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MatchTicket> GetMatchTickets() const;
 
                     /**
                      * 判断参数 MatchTickets 是否已赋值
                      * @return MatchTickets 是否已赋值
+                     * 
                      */
                     bool MatchTicketsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 

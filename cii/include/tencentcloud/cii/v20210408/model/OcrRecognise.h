@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取原文字段
                      * @return OriginalField 原文字段
+                     * 
                      */
                     std::string GetOriginalField() const;
 
                     /**
                      * 设置原文字段
-                     * @param OriginalField 原文字段
+                     * @param _originalField 原文字段
+                     * 
                      */
                     void SetOriginalField(const std::string& _originalField);
 
                     /**
                      * 判断参数 OriginalField 是否已赋值
                      * @return OriginalField 是否已赋值
+                     * 
                      */
                     bool OriginalFieldHasBeenSet() const;
 
                     /**
                      * 获取识别结果
                      * @return Value 识别结果
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别结果
-                     * @param Value 识别结果
+                     * @param _value 识别结果
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取置信度
                      * @return Confidence 置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度
-                     * @param Confidence 置信度
+                     * @param _confidence 置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取位置信息
                      * @return Location 位置信息
+                     * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置位置信息
-                     * @param Location 位置信息
+                     * @param _location 位置信息
+                     * 
                      */
                     void SetLocation(const Location& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取字段名
                      * @return Field 字段名
+                     * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置字段名
-                     * @param Field 字段名
+                     * @param _field 字段名
+                     * 
                      */
                     void SetField(const std::string& _field);
 
                     /**
                      * 判断参数 Field 是否已赋值
                      * @return Field 是否已赋值
+                     * 
                      */
                     bool FieldHasBeenSet() const;
 

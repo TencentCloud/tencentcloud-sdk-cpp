@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取申请到的 EIP 的唯一 ID 列表。
                      * @return AddressSet 申请到的 EIP 的唯一 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetAddressSet() const;
 
                     /**
                      * 判断参数 AddressSet 是否已赋值
                      * @return AddressSet 是否已赋值
+                     * 
                      */
                     bool AddressSetHasBeenSet() const;
 
                     /**
                      * 获取异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
                      * @return TaskId 异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

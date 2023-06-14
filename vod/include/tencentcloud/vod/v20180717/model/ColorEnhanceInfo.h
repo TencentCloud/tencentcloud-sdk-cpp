@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 色彩增强控制开关，可选值：
 <li>ON：开启综合增强；</li>
 <li>OFF：关闭综合增强。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置色彩增强控制开关，可选值：
 <li>ON：开启综合增强；</li>
 <li>OFF：关闭综合增强。</li>
-                     * @param Switch 色彩增强控制开关，可选值：
+                     * @param _switch 色彩增强控制开关，可选值：
 <li>ON：开启综合增强；</li>
 <li>OFF：关闭综合增强。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 <li>normal：正常色彩增强；</li>
 <li>strong：强色彩增强。</li>
 默认值：weak。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 <li>normal：正常色彩增强；</li>
 <li>strong：强色彩增强。</li>
 默认值：weak。
-                     * @param Type 色彩增强类型，仅当色彩增强控制开关为 ON 时有效，可选值：
+                     * @param _type 色彩增强类型，仅当色彩增强控制开关为 ON 时有效，可选值：
 <li>weak：轻色彩增强；</li>
 <li>normal：正常色彩增强；</li>
 <li>strong：强色彩增强。</li>
 默认值：weak。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

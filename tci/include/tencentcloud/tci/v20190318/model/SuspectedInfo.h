@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取TopN匹配信息列表
                      * @return FaceSet TopN匹配信息列表
+                     * 
                      */
                     std::vector<FrameInfo> GetFaceSet() const;
 
                     /**
                      * 设置TopN匹配信息列表
-                     * @param FaceSet TopN匹配信息列表
+                     * @param _faceSet TopN匹配信息列表
+                     * 
                      */
                     void SetFaceSet(const std::vector<FrameInfo>& _faceSet);
 
                     /**
                      * 判断参数 FaceSet 是否已赋值
                      * @return FaceSet 是否已赋值
+                     * 
                      */
                     bool FaceSetHasBeenSet() const;
 
                     /**
                      * 获取识别到的人员id
                      * @return PersonId 识别到的人员id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置识别到的人员id
-                     * @param PersonId 识别到的人员id
+                     * @param _personId 识别到的人员id
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

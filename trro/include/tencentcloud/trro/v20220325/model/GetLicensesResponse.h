@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取license列表
                      * @return Licenses license列表
+                     * 
                      */
                     std::vector<License> GetLicenses() const;
 
                     /**
                      * 判断参数 Licenses 是否已赋值
                      * @return Licenses 是否已赋值
+                     * 
                      */
                     bool LicensesHasBeenSet() const;
 
                     /**
                      * 获取license列表项数量
                      * @return TotalCount license列表项数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取对端网关名称，可任意命名，但不得超过60个字符。
                      * @return CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetCustomerGatewayName() const;
 
                     /**
                      * 设置对端网关名称，可任意命名，但不得超过60个字符。
-                     * @param CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * @param _customerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetCustomerGatewayName(const std::string& _customerGatewayName);
 
                     /**
                      * 判断参数 CustomerGatewayName 是否已赋值
                      * @return CustomerGatewayName 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取对端网关公网IP。
                      * @return IpAddress 对端网关公网IP。
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置对端网关公网IP。
-                     * @param IpAddress 对端网关公网IP。
+                     * @param _ipAddress 对端网关公网IP。
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
                     /**
                      * 获取可用区ID
                      * @return Zone 可用区ID
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区ID
-                     * @param Zone 可用区ID
+                     * @param _zone 可用区ID
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 当设置值为0时，表示采用默认值；
                      * @return Threshold DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
 当设置值为0时，表示采用默认值；
+                     * 
                      */
                     uint64_t GetThreshold() const;
 
                     /**
                      * 设置DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
 当设置值为0时，表示采用默认值；
-                     * @param Threshold DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+                     * @param _threshold DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
 当设置值为0时，表示采用默认值；
+                     * 
                      */
                     void SetThreshold(const uint64_t& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 

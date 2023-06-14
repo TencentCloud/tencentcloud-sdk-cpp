@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取TSF应用ID
                      * @return ApplicationId TSF应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置TSF应用ID
-                     * @param ApplicationId TSF应用ID
+                     * @param _applicationId TSF应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 

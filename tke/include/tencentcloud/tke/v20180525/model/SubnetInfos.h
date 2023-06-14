@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取子网id
                      * @return SubnetId 子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-                     * @param SubnetId 子网id
+                     * @param _subnetId 子网id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取子网节点名称
                      * @return Name 子网节点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置子网节点名称
-                     * @param Name 子网节点名称
+                     * @param _name 子网节点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取安全组id
                      * @return SecurityGroups 安全组id
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
                      * 设置安全组id
-                     * @param SecurityGroups 安全组id
+                     * @param _securityGroups 安全组id
+                     * 
                      */
                     void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
 
                     /**
                      * 判断参数 SecurityGroups 是否已赋值
                      * @return SecurityGroups 是否已赋值
+                     * 
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
                     /**
                      * 获取系统
                      * @return Os 系统
+                     * 
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置系统
-                     * @param Os 系统
+                     * @param _os 系统
+                     * 
                      */
                     void SetOs(const std::string& _os);
 
                     /**
                      * 判断参数 Os 是否已赋值
                      * @return Os 是否已赋值
+                     * 
                      */
                     bool OsHasBeenSet() const;
 
                     /**
                      * 获取硬件架构
                      * @return Arch 硬件架构
+                     * 
                      */
                     std::string GetArch() const;
 
                     /**
                      * 设置硬件架构
-                     * @param Arch 硬件架构
+                     * @param _arch 硬件架构
+                     * 
                      */
                     void SetArch(const std::string& _arch);
 
                     /**
                      * 判断参数 Arch 是否已赋值
                      * @return Arch 是否已赋值
+                     * 
                      */
                     bool ArchHasBeenSet() const;
 

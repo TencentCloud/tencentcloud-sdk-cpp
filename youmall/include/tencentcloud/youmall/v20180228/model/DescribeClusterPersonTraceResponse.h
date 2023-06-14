@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取卖场系统编码
                      * @return MallId 卖场系统编码
+                     * 
                      */
                     std::string GetMallId() const;
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取卖场用户编码
                      * @return MallCode 卖场用户编码
+                     * 
                      */
                     std::string GetMallCode() const;
 
                     /**
                      * 判断参数 MallCode 是否已赋值
                      * @return MallCode 是否已赋值
+                     * 
                      */
                     bool MallCodeHasBeenSet() const;
 
                     /**
                      * 获取客户编码
                      * @return PersonId 客户编码
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取轨迹序列
                      * @return TracePointSet 轨迹序列
+                     * 
                      */
                     std::vector<DailyTracePoint> GetTracePointSet() const;
 
                     /**
                      * 判断参数 TracePointSet 是否已赋值
                      * @return TracePointSet 是否已赋值
+                     * 
                      */
                     bool TracePointSetHasBeenSet() const;
 

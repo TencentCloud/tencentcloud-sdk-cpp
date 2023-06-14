@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return Database 数据库名称
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Database 数据库名称
+                     * @param _database 数据库名称
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取数据库表
                      * @return Tables 数据库表
+                     * 
                      */
                     std::vector<RollbackTableInfo> GetTables() const;
 
                     /**
                      * 设置数据库表
-                     * @param Tables 数据库表
+                     * @param _tables 数据库表
+                     * 
                      */
                     void SetTables(const std::vector<RollbackTableInfo>& _tables);
 
                     /**
                      * 判断参数 Tables 是否已赋值
                      * @return Tables 是否已赋值
+                     * 
                      */
                     bool TablesHasBeenSet() const;
 

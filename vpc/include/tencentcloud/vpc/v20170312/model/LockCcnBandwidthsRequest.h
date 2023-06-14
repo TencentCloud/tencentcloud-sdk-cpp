@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取带宽实例的唯一ID数组。
                      * @return Instances 带宽实例的唯一ID数组。
+                     * 
                      */
                     std::vector<CcnFlowLock> GetInstances() const;
 
                     /**
                      * 设置带宽实例的唯一ID数组。
-                     * @param Instances 带宽实例的唯一ID数组。
+                     * @param _instances 带宽实例的唯一ID数组。
+                     * 
                      */
                     void SetInstances(const std::vector<CcnFlowLock>& _instances);
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 

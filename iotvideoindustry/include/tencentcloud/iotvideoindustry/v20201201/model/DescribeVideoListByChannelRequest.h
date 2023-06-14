@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一标识
                      * @return DeviceId 设备唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
                      * @return ChannelId 通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * @param _channelId 通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
                     /**
                      * 获取1: 云端录制 2: 本地录制
                      * @return Type 1: 云端录制 2: 本地录制
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置1: 云端录制 2: 本地录制
-                     * @param Type 1: 云端录制 2: 本地录制
+                     * @param _type 1: 云端录制 2: 本地录制
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -101,56 +110,65 @@ namespace TencentCloud
 为空时默认查询最近一天的记录
                      * @return Date 指定某天。取值【YYYY-MM-DD】
 为空时默认查询最近一天的记录
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置指定某天。取值【YYYY-MM-DD】
 为空时默认查询最近一天的记录
-                     * @param Date 指定某天。取值【YYYY-MM-DD】
+                     * @param _date 指定某天。取值【YYYY-MM-DD】
 为空时默认查询最近一天的记录
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取限制量，默认2000
                      * @return Limit 限制量，默认2000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制量，默认2000
-                     * @param Limit 限制量，默认2000
+                     * @param _limit 限制量，默认2000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0
                      * @return Offset 偏移量，默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * @param _offset 偏移量，默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

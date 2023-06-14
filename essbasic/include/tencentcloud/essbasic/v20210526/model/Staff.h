@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取员工在电子签平台的用户ID
                      * @return UserId 员工在电子签平台的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置员工在电子签平台的用户ID
-                     * @param UserId 员工在电子签平台的用户ID
+                     * @param _userId 员工在电子签平台的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取显示的员工名
                      * @return DisplayName 显示的员工名
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置显示的员工名
-                     * @param DisplayName 显示的员工名
+                     * @param _displayName 显示的员工名
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取员工手机号
                      * @return Mobile 员工手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置员工手机号
-                     * @param Mobile 员工手机号
+                     * @param _mobile 员工手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
@@ -107,20 +116,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 员工邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置员工邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Email 员工邮箱
+                     * @param _email 员工邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -129,20 +141,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId 员工在第三方应用平台的用户ID
+                     * @param _openId 员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
@@ -151,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Roles 员工角色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StaffRole> GetRoles() const;
 
                     /**
                      * 设置员工角色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Roles 员工角色
+                     * @param _roles 员工角色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoles(const std::vector<StaffRole>& _roles);
 
                     /**
                      * 判断参数 Roles 是否已赋值
                      * @return Roles 是否已赋值
+                     * 
                      */
                     bool RolesHasBeenSet() const;
 
@@ -173,92 +191,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 员工部门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置员工部门
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 员工部门
+                     * @param _department 员工部门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartment(const Department& _department);
 
                     /**
                      * 判断参数 Department 是否已赋值
                      * @return Department 是否已赋值
+                     * 
                      */
                     bool DepartmentHasBeenSet() const;
 
                     /**
                      * 获取员工是否实名
                      * @return Verified 员工是否实名
+                     * 
                      */
                     bool GetVerified() const;
 
                     /**
                      * 设置员工是否实名
-                     * @param Verified 员工是否实名
+                     * @param _verified 员工是否实名
+                     * 
                      */
                     void SetVerified(const bool& _verified);
 
                     /**
                      * 判断参数 Verified 是否已赋值
                      * @return Verified 是否已赋值
+                     * 
                      */
                     bool VerifiedHasBeenSet() const;
 
                     /**
                      * 获取员工创建时间戳，单位秒
                      * @return CreatedOn 员工创建时间戳，单位秒
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置员工创建时间戳，单位秒
-                     * @param CreatedOn 员工创建时间戳，单位秒
+                     * @param _createdOn 员工创建时间戳，单位秒
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取员工实名时间戳，单位秒
                      * @return VerifiedOn 员工实名时间戳，单位秒
+                     * 
                      */
                     int64_t GetVerifiedOn() const;
 
                     /**
                      * 设置员工实名时间戳，单位秒
-                     * @param VerifiedOn 员工实名时间戳，单位秒
+                     * @param _verifiedOn 员工实名时间戳，单位秒
+                     * 
                      */
                     void SetVerifiedOn(const int64_t& _verifiedOn);
 
                     /**
                      * 判断参数 VerifiedOn 是否已赋值
                      * @return VerifiedOn 是否已赋值
+                     * 
                      */
                     bool VerifiedOnHasBeenSet() const;
 
                     /**
                      * 获取员工是否离职：0-未离职，1-离职
                      * @return QuiteJob 员工是否离职：0-未离职，1-离职
+                     * 
                      */
                     int64_t GetQuiteJob() const;
 
                     /**
                      * 设置员工是否离职：0-未离职，1-离职
-                     * @param QuiteJob 员工是否离职：0-未离职，1-离职
+                     * @param _quiteJob 员工是否离职：0-未离职，1-离职
+                     * 
                      */
                     void SetQuiteJob(const int64_t& _quiteJob);
 
                     /**
                      * 判断参数 QuiteJob 是否已赋值
                      * @return QuiteJob 是否已赋值
+                     * 
                      */
                     bool QuiteJobHasBeenSet() const;
 

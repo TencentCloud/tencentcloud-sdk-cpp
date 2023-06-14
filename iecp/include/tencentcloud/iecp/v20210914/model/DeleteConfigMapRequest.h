@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取ConfigMap名
                      * @return ConfigMapName ConfigMap名
+                     * 
                      */
                     std::string GetConfigMapName() const;
 
                     /**
                      * 设置ConfigMap名
-                     * @param ConfigMapName ConfigMap名
+                     * @param _configMapName ConfigMap名
+                     * 
                      */
                     void SetConfigMapName(const std::string& _configMapName);
 
                     /**
                      * 判断参数 ConfigMapName 是否已赋值
                      * @return ConfigMapName 是否已赋值
+                     * 
                      */
                     bool ConfigMapNameHasBeenSet() const;
 
                     /**
                      * 获取ConfigMap命名空间，默认：default
                      * @return ConfigMapNamespace ConfigMap命名空间，默认：default
+                     * 
                      */
                     std::string GetConfigMapNamespace() const;
 
                     /**
                      * 设置ConfigMap命名空间，默认：default
-                     * @param ConfigMapNamespace ConfigMap命名空间，默认：default
+                     * @param _configMapNamespace ConfigMap命名空间，默认：default
+                     * 
                      */
                     void SetConfigMapNamespace(const std::string& _configMapNamespace);
 
                     /**
                      * 判断参数 ConfigMapNamespace 是否已赋值
                      * @return ConfigMapNamespace 是否已赋值
+                     * 
                      */
                     bool ConfigMapNamespaceHasBeenSet() const;
 

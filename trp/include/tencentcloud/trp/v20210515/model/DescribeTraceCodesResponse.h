@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceCodes 标识列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TraceCode> GetTraceCodes() const;
 
                     /**
                      * 判断参数 TraceCodes 是否已赋值
                      * @return TraceCodes 是否已赋值
+                     * 
                      */
                     bool TraceCodesHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

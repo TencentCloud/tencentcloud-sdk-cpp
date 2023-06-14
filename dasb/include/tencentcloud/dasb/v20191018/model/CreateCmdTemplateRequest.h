@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取模板名，最大长度32字符，不能包含空白字符
                      * @return Name 模板名，最大长度32字符，不能包含空白字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模板名，最大长度32字符，不能包含空白字符
-                     * @param Name 模板名，最大长度32字符，不能包含空白字符
+                     * @param _name 模板名，最大长度32字符，不能包含空白字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命令列表，\n分隔，最大长度32768字节
                      * @return CmdList 命令列表，\n分隔，最大长度32768字节
+                     * 
                      */
                     std::string GetCmdList() const;
 
                     /**
                      * 设置命令列表，\n分隔，最大长度32768字节
-                     * @param CmdList 命令列表，\n分隔，最大长度32768字节
+                     * @param _cmdList 命令列表，\n分隔，最大长度32768字节
+                     * 
                      */
                     void SetCmdList(const std::string& _cmdList);
 
                     /**
                      * 判断参数 CmdList 是否已赋值
                      * @return CmdList 是否已赋值
+                     * 
                      */
                     bool CmdListHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Encoding 标识cmdlist字段前端是否为base64加密传值.
 0:表示非base64加密
 1:表示是base64加密
+                     * 
                      */
                     uint64_t GetEncoding() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置标识cmdlist字段前端是否为base64加密传值.
 0:表示非base64加密
 1:表示是base64加密
-                     * @param Encoding 标识cmdlist字段前端是否为base64加密传值.
+                     * @param _encoding 标识cmdlist字段前端是否为base64加密传值.
 0:表示非base64加密
 1:表示是base64加密
+                     * 
                      */
                     void SetEncoding(const uint64_t& _encoding);
 
                     /**
                      * 判断参数 Encoding 是否已赋值
                      * @return Encoding 是否已赋值
+                     * 
                      */
                     bool EncodingHasBeenSet() const;
 

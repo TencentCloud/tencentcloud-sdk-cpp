@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取Notebook实例名称
                      * @return NotebookInstanceName Notebook实例名称
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType Notebook算力资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleArn 角色的资源描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleArn() const;
 
                     /**
                      * 判断参数 RoleArn 是否已赋值
                      * @return RoleArn 是否已赋值
+                     * 
                      */
                     bool RoleArnHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectInternetAccess 外网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDirectInternetAccess() const;
 
                     /**
                      * 判断参数 DirectInternetAccess 是否已赋值
                      * @return DirectInternetAccess 是否已赋值
+                     * 
                      */
                     bool DirectInternetAccessHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootAccess Root用户权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRootAccess() const;
 
                     /**
                      * 判断参数 RootAccess 是否已赋值
                      * @return RootAccess 是否已赋值
+                     * 
                      */
                     bool RootAccessHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeSizeInGB 数据卷大小(GB)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVolumeSizeInGB() const;
 
                     /**
                      * 判断参数 VolumeSizeInGB 是否已赋值
                      * @return VolumeSizeInGB 是否已赋值
+                     * 
                      */
                     bool VolumeSizeInGBHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureReason 创建失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailureReason() const;
 
                     /**
                      * 判断参数 FailureReason 是否已赋值
                      * @return FailureReason 是否已赋值
+                     * 
                      */
                     bool FailureReasonHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime Notebook实例创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -174,12 +192,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedTime Notebook实例最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 
@@ -188,12 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogUrl Notebook实例日志链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogUrl() const;
 
                     /**
                      * 判断参数 LogUrl 是否已赋值
                      * @return LogUrl 是否已赋值
+                     * 
                      */
                     bool LogUrlHasBeenSet() const;
 
@@ -214,12 +236,14 @@ Stopping: 停止中
 Stopped: 已停止
 Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNotebookInstanceStatus() const;
 
                     /**
                      * 判断参数 NotebookInstanceStatus 是否已赋值
                      * @return NotebookInstanceStatus 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceStatusHasBeenSet() const;
 
@@ -228,12 +252,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId Notebook实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -242,12 +268,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifecycleScriptsName notebook生命周期脚本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLifecycleScriptsName() const;
 
                     /**
                      * 判断参数 LifecycleScriptsName 是否已赋值
                      * @return LifecycleScriptsName 是否已赋值
+                     * 
                      */
                     bool LifecycleScriptsNameHasBeenSet() const;
 
@@ -258,12 +286,14 @@ Failed: 失败
                      * @return DefaultCodeRepository 默认存储库名称
 可以是已创建的存储库名称或者已https://开头的公共git库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultCodeRepository() const;
 
                     /**
                      * 判断参数 DefaultCodeRepository 是否已赋值
                      * @return DefaultCodeRepository 是否已赋值
+                     * 
                      */
                     bool DefaultCodeRepositoryHasBeenSet() const;
 
@@ -274,12 +304,14 @@ Failed: 失败
                      * @return AdditionalCodeRepositories 其他存储库列表
 每个元素可以是已创建的存储库名称或者已https://开头的公共git库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAdditionalCodeRepositories() const;
 
                     /**
                      * 判断参数 AdditionalCodeRepositories 是否已赋值
                      * @return AdditionalCodeRepositories 是否已赋值
+                     * 
                      */
                     bool AdditionalCodeRepositoriesHasBeenSet() const;
 
@@ -288,12 +320,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsAccess 是否开启CLS日志服务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClsAccess() const;
 
                     /**
                      * 判断参数 ClsAccess 是否已赋值
                      * @return ClsAccess 是否已赋值
+                     * 
                      */
                     bool ClsAccessHasBeenSet() const;
 
@@ -302,12 +336,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prepay 是否预付费实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPrepay() const;
 
                     /**
                      * 判断参数 Prepay 是否已赋值
                      * @return Prepay 是否已赋值
+                     * 
                      */
                     bool PrepayHasBeenSet() const;
 
@@ -316,12 +352,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 实例运行截止时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeadline() const;
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
@@ -330,12 +368,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppingCondition 自动停止配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StoppingCondition GetStoppingCondition() const;
 
                     /**
                      * 判断参数 StoppingCondition 是否已赋值
                      * @return StoppingCondition 是否已赋值
+                     * 
                      */
                     bool StoppingConditionHasBeenSet() const;
 
@@ -344,12 +384,14 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsConfig Cls配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClsConfig GetClsConfig() const;
 
                     /**
                      * 判断参数 ClsConfig 是否已赋值
                      * @return ClsConfig 是否已赋值
+                     * 
                      */
                     bool ClsConfigHasBeenSet() const;
 

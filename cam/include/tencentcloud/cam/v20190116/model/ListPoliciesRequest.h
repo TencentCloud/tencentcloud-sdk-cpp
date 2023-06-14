@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取每页数量，默认值是 20，必须大于 0 且小于或等于 200
                      * @return Rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页数量，默认值是 20，必须大于 0 且小于或等于 200
-                     * @param Rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * @param _rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 
                     /**
                      * 获取页码，默认值是 1，从 1开始，不能大于 200
                      * @return Page 页码，默认值是 1，从 1开始，不能大于 200
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码，默认值是 1，从 1开始，不能大于 200
-                     * @param Page 页码，默认值是 1，从 1开始，不能大于 200
+                     * @param _page 页码，默认值是 1，从 1开始，不能大于 200
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
                      * @return Scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * 
                      */
                     std::string GetScope() const;
 
                     /**
                      * 设置可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
-                     * @param Scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * @param _scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+                     * 
                      */
                     void SetScope(const std::string& _scope);
 
                     /**
                      * 判断参数 Scope 是否已赋值
                      * @return Scope 是否已赋值
+                     * 
                      */
                     bool ScopeHasBeenSet() const;
 
                     /**
                      * 获取按策略名匹配
                      * @return Keyword 按策略名匹配
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置按策略名匹配
-                     * @param Keyword 按策略名匹配
+                     * @param _keyword 按策略名匹配
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

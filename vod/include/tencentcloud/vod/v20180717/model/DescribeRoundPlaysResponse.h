@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的轮播播单总数。
                      * @return TotalCount 符合过滤条件的轮播播单总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取轮播播单详情列表。
                      * @return RoundPlaySet 轮播播单详情列表。
+                     * 
                      */
                     std::vector<RoundPlayInfo> GetRoundPlaySet() const;
 
                     /**
                      * 判断参数 RoundPlaySet 是否已赋值
                      * @return RoundPlaySet 是否已赋值
+                     * 
                      */
                     bool RoundPlaySetHasBeenSet() const;
 

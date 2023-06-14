@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的镜像实例数量。
                      * @return TotalCount 符合条件的镜像实例数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取镜像实例列表信息。
                      * @return BlueprintInstanceSet 镜像实例列表信息。
+                     * 
                      */
                     std::vector<BlueprintInstance> GetBlueprintInstanceSet() const;
 
                     /**
                      * 判断参数 BlueprintInstanceSet 是否已赋值
                      * @return BlueprintInstanceSet 是否已赋值
+                     * 
                      */
                     bool BlueprintInstanceSetHasBeenSet() const;
 

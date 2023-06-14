@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取短信模板id或超级短信样例id
                      * @return Id 短信模板id或超级短信样例id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置短信模板id或超级短信样例id
-                     * @param Id 短信模板id或超级短信样例id
+                     * @param _id 短信模板id或超级短信样例id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取素材类型 0-普短 1-超短
                      * @return ContentType 素材类型 0-普短 1-超短
+                     * 
                      */
                     int64_t GetContentType() const;
 
                     /**
                      * 设置素材类型 0-普短 1-超短
-                     * @param ContentType 素材类型 0-普短 1-超短
+                     * @param _contentType 素材类型 0-普短 1-超短
+                     * 
                      */
                     void SetContentType(const int64_t& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 

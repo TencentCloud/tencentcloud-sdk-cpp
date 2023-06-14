@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取文件篡改信息
                      * @return FileTamperNum 文件篡改信息
+                     * 
                      */
                     std::vector<ProtectStat> GetFileTamperNum() const;
 
                     /**
                      * 判断参数 FileTamperNum 是否已赋值
                      * @return FileTamperNum 是否已赋值
+                     * 
                      */
                     bool FileTamperNumHasBeenSet() const;
 
                     /**
                      * 获取防护文件分类信息
                      * @return ProtectFileType 防护文件分类信息
+                     * 
                      */
                     std::vector<ProtectStat> GetProtectFileType() const;
 
                     /**
                      * 判断参数 ProtectFileType 是否已赋值
                      * @return ProtectFileType 是否已赋值
+                     * 
                      */
                     bool ProtectFileTypeHasBeenSet() const;
 

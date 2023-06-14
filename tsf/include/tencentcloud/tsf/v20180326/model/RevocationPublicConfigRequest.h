@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取配置项发布ID
                      * @return ConfigReleaseId 配置项发布ID
+                     * 
                      */
                     std::string GetConfigReleaseId() const;
 
                     /**
                      * 设置配置项发布ID
-                     * @param ConfigReleaseId 配置项发布ID
+                     * @param _configReleaseId 配置项发布ID
+                     * 
                      */
                     void SetConfigReleaseId(const std::string& _configReleaseId);
 
                     /**
                      * 判断参数 ConfigReleaseId 是否已赋值
                      * @return ConfigReleaseId 是否已赋值
+                     * 
                      */
                     bool ConfigReleaseIdHasBeenSet() const;
 

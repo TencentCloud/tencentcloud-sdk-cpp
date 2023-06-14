@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSetList 日志集列表数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LogSetInfo> GetLogSetList() const;
 
                     /**
                      * 判断参数 LogSetList 是否已赋值
                      * @return LogSetList 是否已赋值
+                     * 
                      */
                     bool LogSetListHasBeenSet() const;
 
                     /**
                      * 获取查询结果的总条数。
                      * @return TotalCount 查询结果的总条数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

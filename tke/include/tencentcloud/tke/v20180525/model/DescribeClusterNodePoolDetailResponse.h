@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取节点池详情
                      * @return NodePool 节点池详情
+                     * 
                      */
                     NodePool GetNodePool() const;
 
                     /**
                      * 判断参数 NodePool 是否已赋值
                      * @return NodePool 是否已赋值
+                     * 
                      */
                     bool NodePoolHasBeenSet() const;
 

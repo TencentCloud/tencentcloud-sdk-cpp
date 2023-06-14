@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取云存服务ID
                      * @return ServiceId 云存服务ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取云存服务所在的区域
                      * @return StorageRegion 云存服务所在的区域
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
                      * @return ChnNum 视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
+                     * 
                      */
                     int64_t GetChnNum() const;
 
                     /**
                      * 判断参数 ChnNum 是否已赋值
                      * @return ChnNum 是否已赋值
+                     * 
                      */
                     bool ChnNumHasBeenSet() const;
 
                     /**
                      * 获取终端用户在IoT Video平台的注册ID
                      * @return AccessId 终端用户在IoT Video平台的注册ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取服务开始时间
                      * @return StartTime 服务开始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取服务失效时间
                      * @return EndTime 服务失效时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -139,24 +153,28 @@ namespace TencentCloud
 2：待续费。设备云存服务已到期，但是历史云存数据未过期。续费后仍可查看这些历史数据。
 3：已过期。查询不到设备保存在云端的数据。
 4：等待服务生效。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取云存定单列表
                      * @return Data 云存定单列表
+                     * 
                      */
                     std::vector<StorageOrder> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

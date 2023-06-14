@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务模板ID
                      * @return TaskTemplateId 任务模板ID
+                     * 
                      */
                     std::string GetTaskTemplateId() const;
 
                     /**
                      * 判断参数 TaskTemplateId 是否已赋值
                      * @return TaskTemplateId 是否已赋值
+                     * 
                      */
                     bool TaskTemplateIdHasBeenSet() const;
 

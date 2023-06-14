@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureName 功能名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFeatureName() const;
 
                     /**
                      * 设置功能名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeatureName 功能名称
+                     * @param _featureName 功能名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatureName(const std::string& _featureName);
 
                     /**
                      * 判断参数 FeatureName 是否已赋值
                      * @return FeatureName 是否已赋值
+                     * 
                      */
                     bool FeatureNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 功能ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置功能ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 功能ID
+                     * @param _iD 功能ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetID(const std::string& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取相似词数组
                      * @return SimilarWords 相似词数组
+                     * 
                      */
                     std::vector<std::string> GetSimilarWords() const;
 
                     /**
                      * 判断参数 SimilarWords 是否已赋值
                      * @return SimilarWords 是否已赋值
+                     * 
                      */
                     bool SimilarWordsHasBeenSet() const;
 

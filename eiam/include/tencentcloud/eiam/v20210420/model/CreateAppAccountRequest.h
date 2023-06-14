@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取账号名称
                      * @return AccountName 账号名称
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名称
-                     * @param AccountName 账号名称
+                     * @param _accountName 账号名称
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取账号密码
                      * @return Password 账号密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置账号密码
-                     * @param Password 账号密码
+                     * @param _password 账号密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

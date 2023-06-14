@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话
                      * @return GameServerSession 游戏服务器会话
+                     * 
                      */
                     GameServerSession GetGameServerSession() const;
 
                     /**
                      * 设置游戏服务器会话
-                     * @param GameServerSession 游戏服务器会话
+                     * @param _gameServerSession 游戏服务器会话
+                     * 
                      */
                     void SetGameServerSession(const GameServerSession& _gameServerSession);
 
                     /**
                      * 判断参数 GameServerSession 是否已赋值
                      * @return GameServerSession 是否已赋值
+                     * 
                      */
                     bool GameServerSessionHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectionPolicy 保护策略，可选（NoProtection,FullProtection）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtectionPolicy() const;
 
                     /**
                      * 设置保护策略，可选（NoProtection,FullProtection）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProtectionPolicy 保护策略，可选（NoProtection,FullProtection）
+                     * @param _protectionPolicy 保护策略，可选（NoProtection,FullProtection）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtectionPolicy(const std::string& _protectionPolicy);
 
                     /**
                      * 判断参数 ProtectionPolicy 是否已赋值
                      * @return ProtectionPolicy 是否已赋值
+                     * 
                      */
                     bool ProtectionPolicyHasBeenSet() const;
 

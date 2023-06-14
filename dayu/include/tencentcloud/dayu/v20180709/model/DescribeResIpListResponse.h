@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源的IP列表
                      * @return Resource 资源的IP列表
+                     * 
                      */
                     std::vector<ResourceIp> GetResource() const;
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return ProductName 产品名称
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
                      * @return Status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
-                     * @param Status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * @param _status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取可调用数量
                      * @return Total 可调用数量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置可调用数量
-                     * @param Total 可调用数量
+                     * @param _total 可调用数量
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已调用数量
                      * @return Used 已调用数量
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 设置已调用数量
-                     * @param Used 已调用数量
+                     * @param _used 已调用数量
+                     * 
                      */
                     void SetUsed(const uint64_t& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取申请时间
                      * @return ApplyTime 申请时间
+                     * 
                      */
                     uint64_t GetApplyTime() const;
 
                     /**
                      * 设置申请时间
-                     * @param ApplyTime 申请时间
+                     * @param _applyTime 申请时间
+                     * 
                      */
                     void SetApplyTime(const uint64_t& _applyTime);
 
                     /**
                      * 判断参数 ApplyTime 是否已赋值
                      * @return ApplyTime 是否已赋值
+                     * 
                      */
                     bool ApplyTimeHasBeenSet() const;
 
                     /**
                      * 获取审批通过时间
                      * @return ApprovalTime 审批通过时间
+                     * 
                      */
                     uint64_t GetApprovalTime() const;
 
                     /**
                      * 设置审批通过时间
-                     * @param ApprovalTime 审批通过时间
+                     * @param _approvalTime 审批通过时间
+                     * 
                      */
                     void SetApprovalTime(const uint64_t& _approvalTime);
 
                     /**
                      * 判断参数 ApprovalTime 是否已赋值
                      * @return ApprovalTime 是否已赋值
+                     * 
                      */
                     bool ApprovalTimeHasBeenSet() const;
 

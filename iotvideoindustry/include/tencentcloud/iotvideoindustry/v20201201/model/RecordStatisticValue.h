@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpectTimeLen 期望执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExpectTimeLen() const;
 
                     /**
                      * 设置期望执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpectTimeLen 期望执行时间 秒
+                     * @param _expectTimeLen 期望执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpectTimeLen(const int64_t& _expectTimeLen);
 
                     /**
                      * 判断参数 ExpectTimeLen 是否已赋值
                      * @return ExpectTimeLen 是否已赋值
+                     * 
                      */
                     bool ExpectTimeLenHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordTimeLen 实际执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordTimeLen() const;
 
                     /**
                      * 设置实际执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordTimeLen 实际执行时间 秒
+                     * @param _recordTimeLen 实际执行时间 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordTimeLen(const int64_t& _recordTimeLen);
 
                     /**
                      * 判断参数 RecordTimeLen 是否已赋值
                      * @return RecordTimeLen 是否已赋值
+                     * 
                      */
                     bool RecordTimeLenHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 存储大小 G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFileSize() const;
 
                     /**
                      * 设置存储大小 G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 存储大小 G
+                     * @param _fileSize 存储大小 G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const double& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 

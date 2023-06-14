@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取查询时间范围启始时间，毫秒级unix时间戳
                      * @return From 查询时间范围启始时间，毫秒级unix时间戳
+                     * 
                      */
                     uint64_t GetFrom() const;
 
                     /**
                      * 设置查询时间范围启始时间，毫秒级unix时间戳
-                     * @param From 查询时间范围启始时间，毫秒级unix时间戳
+                     * @param _from 查询时间范围启始时间，毫秒级unix时间戳
+                     * 
                      */
                     void SetFrom(const uint64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取查询时间范围结束时间，毫秒级unix时间戳
                      * @return To 查询时间范围结束时间，毫秒级unix时间戳
+                     * 
                      */
                     uint64_t GetTo() const;
 
                     /**
                      * 设置查询时间范围结束时间，毫秒级unix时间戳
-                     * @param To 查询时间范围结束时间，毫秒级unix时间戳
+                     * @param _to 查询时间范围结束时间，毫秒级unix时间戳
+                     * 
                      */
                     void SetTo(const uint64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，默认值为0。
                      * @return Offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，默认值为0。
-                     * @param Offset 分页的偏移量，默认值为0。
+                     * @param _offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页单页限制数目，最大值100。
                      * @return Limit 分页单页限制数目，最大值100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页单页限制数目，最大值100。
-                     * @param Limit 分页单页限制数目，最大值100。
+                     * @param _limit 分页单页限制数目，最大值100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -128,6 +140,7 @@ namespace TencentCloud
 - alarmLevel：按照告警等级进行过滤。类型：String 必选：否，0代表警告，1代表提醒，2代表紧急
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -138,18 +151,20 @@ namespace TencentCloud
 - alarmLevel：按照告警等级进行过滤。类型：String 必选：否，0代表警告，1代表提醒，2代表紧急
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @param Filters - alertId：按照告警策略ID进行过滤。类型：String 必选：否
+                     * @param _filters - alertId：按照告警策略ID进行过滤。类型：String 必选：否
 - topicId：按照监控对象ID进行过滤。类型：String 必选：否
 - status：按照告警状态进行过滤。类型：String 必选：否，0代表未恢复，1代表已恢复，2代表已失效
 - alarmLevel：按照告警等级进行过滤。类型：String 必选：否，0代表警告，1代表提醒，2代表紧急
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

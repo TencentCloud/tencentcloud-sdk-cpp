@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取限流任务ID列表。
                      * @return FilterIds 限流任务ID列表。
+                     * 
                      */
                     std::vector<int64_t> GetFilterIds() const;
 
                     /**
                      * 设置限流任务ID列表。
-                     * @param FilterIds 限流任务ID列表。
+                     * @param _filterIds 限流任务ID列表。
+                     * 
                      */
                     void SetFilterIds(const std::vector<int64_t>& _filterIds);
 
                     /**
                      * 判断参数 FilterIds 是否已赋值
                      * @return FilterIds 是否已赋值
+                     * 
                      */
                     bool FilterIdsHasBeenSet() const;
 
                     /**
                      * 获取通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
                      * @return SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 设置通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @param SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @param _sessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
 
                     /**
                      * 判断参数 SessionToken 是否已赋值
                      * @return SessionToken 是否已赋值
+                     * 
                      */
                     bool SessionTokenHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
                      * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @param Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

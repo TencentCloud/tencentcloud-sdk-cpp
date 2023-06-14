@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取进件成功后返给商户的AppId
                      * @return MerchantAppId 进件成功后返给商户的AppId
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 设置进件成功后返给商户的AppId
-                     * @param MerchantAppId 进件成功后返给商户的AppId
+                     * @param _merchantAppId 进件成功后返给商户的AppId
+                     * 
                      */
                     void SetMerchantAppId(const std::string& _merchantAppId);
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取收款商户名称
                      * @return MerchantName 收款商户名称
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置收款商户名称
-                     * @param MerchantName 收款商户名称
+                     * @param _merchantName 收款商户名称
+                     * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 
                     /**
                      * 获取B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。
                      * @return BusinessPayFlag B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。
+                     * 
                      */
                     std::string GetBusinessPayFlag() const;
 
                     /**
                      * 设置B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。
-                     * @param BusinessPayFlag B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。
+                     * @param _businessPayFlag B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。
+                     * 
                      */
                     void SetBusinessPayFlag(const std::string& _businessPayFlag);
 
                     /**
                      * 判断参数 BusinessPayFlag 是否已赋值
                      * @return BusinessPayFlag 是否已赋值
+                     * 
                      */
                     bool BusinessPayFlagHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取主题的ID
                      * @return TopicId 主题的ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题的ID
-                     * @param TopicId 主题的ID
+                     * @param _topicId 主题的ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取主题的名称
                      * @return TopicName 主题的名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题的名称
-                     * @param TopicName 主题的名称
+                     * @param _topicName 主题的名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Note 备注
+                     * @param _note 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 

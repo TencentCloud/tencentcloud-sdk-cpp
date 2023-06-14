@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取人脸检查结果，0：通过检查，1：图片模糊
                      * @return CheckResult 人脸检查结果，0：通过检查，1：图片模糊
+                     * 
                      */
                     int64_t GetCheckResult() const;
 
                     /**
                      * 判断参数 CheckResult 是否已赋值
                      * @return CheckResult 是否已赋值
+                     * 
                      */
                     bool CheckResultHasBeenSet() const;
 

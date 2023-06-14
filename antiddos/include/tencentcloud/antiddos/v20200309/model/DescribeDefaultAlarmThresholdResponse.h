@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取默认告警阈值配置
                      * @return DefaultAlarmConfigList 默认告警阈值配置
+                     * 
                      */
                     std::vector<DefaultAlarmThreshold> GetDefaultAlarmConfigList() const;
 
                     /**
                      * 判断参数 DefaultAlarmConfigList 是否已赋值
                      * @return DefaultAlarmConfigList 是否已赋值
+                     * 
                      */
                     bool DefaultAlarmConfigListHasBeenSet() const;
 

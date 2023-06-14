@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取专业周报开始时间。
                      * @return BeginDate 专业周报开始时间。
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置专业周报开始时间。
-                     * @param BeginDate 专业周报开始时间。
+                     * @param _beginDate 专业周报开始时间。
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 

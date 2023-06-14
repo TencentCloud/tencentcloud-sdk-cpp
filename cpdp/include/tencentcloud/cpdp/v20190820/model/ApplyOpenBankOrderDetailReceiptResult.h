@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取渠道回单申请ID
                      * @return ChannelApplyId 渠道回单申请ID
+                     * 
                      */
                     std::string GetChannelApplyId() const;
 
                     /**
                      * 设置渠道回单申请ID
-                     * @param ChannelApplyId 渠道回单申请ID
+                     * @param _channelApplyId 渠道回单申请ID
+                     * 
                      */
                     void SetChannelApplyId(const std::string& _channelApplyId);
 
                     /**
                      * 判断参数 ChannelApplyId 是否已赋值
                      * @return ChannelApplyId 是否已赋值
+                     * 
                      */
                     bool ChannelApplyIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ SUCCESS：申请成功；
 FAILED：申请失败；
 PROCESSING：申请中。
 注意：若返回申请中，需要再次调用回单申请结果查询接口，查询结果。
+                     * 
                      */
                     std::string GetReceiptStatus() const;
 
@@ -84,17 +88,19 @@ SUCCESS：申请成功；
 FAILED：申请失败；
 PROCESSING：申请中。
 注意：若返回申请中，需要再次调用回单申请结果查询接口，查询结果。
-                     * @param ReceiptStatus 申请状态。
+                     * @param _receiptStatus 申请状态。
 SUCCESS：申请成功；
 FAILED：申请失败；
 PROCESSING：申请中。
 注意：若返回申请中，需要再次调用回单申请结果查询接口，查询结果。
+                     * 
                      */
                     void SetReceiptStatus(const std::string& _receiptStatus);
 
                     /**
                      * 判断参数 ReceiptStatus 是否已赋值
                      * @return ReceiptStatus 是否已赋值
+                     * 
                      */
                     bool ReceiptStatusHasBeenSet() const;
 
@@ -103,20 +109,23 @@ PROCESSING：申请中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiptMessage 申请返回描述，例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReceiptMessage() const;
 
                     /**
                      * 设置申请返回描述，例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiptMessage 申请返回描述，例如失败原因等。
+                     * @param _receiptMessage 申请返回描述，例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiptMessage(const std::string& _receiptMessage);
 
                     /**
                      * 判断参数 ReceiptMessage 是否已赋值
                      * @return ReceiptMessage 是否已赋值
+                     * 
                      */
                     bool ReceiptMessageHasBeenSet() const;
 
@@ -125,20 +134,23 @@ PROCESSING：申请中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 回单下载链接，申请成功时返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置回单下载链接，申请成功时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownloadUrl 回单下载链接，申请成功时返回。
+                     * @param _downloadUrl 回单下载链接，申请成功时返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
@@ -147,20 +159,23 @@ PROCESSING：申请中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间，yyyy-MM-dd HH:mm:ss格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间，yyyy-MM-dd HH:mm:ss格式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间，yyyy-MM-dd HH:mm:ss格式。
+                     * @param _expireTime 过期时间，yyyy-MM-dd HH:mm:ss格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

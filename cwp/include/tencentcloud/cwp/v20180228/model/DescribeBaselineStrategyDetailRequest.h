@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户基线策略id
                      * @return StrategyId 用户基线策略id
+                     * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置用户基线策略id
-                     * @param StrategyId 用户基线策略id
+                     * @param _strategyId 用户基线策略id
+                     * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 

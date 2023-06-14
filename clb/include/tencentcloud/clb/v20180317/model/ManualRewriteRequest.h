@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取源监听器 ID。
                      * @return SourceListenerId 源监听器 ID。
+                     * 
                      */
                     std::string GetSourceListenerId() const;
 
                     /**
                      * 设置源监听器 ID。
-                     * @param SourceListenerId 源监听器 ID。
+                     * @param _sourceListenerId 源监听器 ID。
+                     * 
                      */
                     void SetSourceListenerId(const std::string& _sourceListenerId);
 
                     /**
                      * 判断参数 SourceListenerId 是否已赋值
                      * @return SourceListenerId 是否已赋值
+                     * 
                      */
                     bool SourceListenerIdHasBeenSet() const;
 
                     /**
                      * 获取目标监听器 ID。
                      * @return TargetListenerId 目标监听器 ID。
+                     * 
                      */
                     std::string GetTargetListenerId() const;
 
                     /**
                      * 设置目标监听器 ID。
-                     * @param TargetListenerId 目标监听器 ID。
+                     * @param _targetListenerId 目标监听器 ID。
+                     * 
                      */
                     void SetTargetListenerId(const std::string& _targetListenerId);
 
                     /**
                      * 判断参数 TargetListenerId 是否已赋值
                      * @return TargetListenerId 是否已赋值
+                     * 
                      */
                     bool TargetListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则之间的重定向关系。
                      * @return RewriteInfos 转发规则之间的重定向关系。
+                     * 
                      */
                     std::vector<RewriteLocationMap> GetRewriteInfos() const;
 
                     /**
                      * 设置转发规则之间的重定向关系。
-                     * @param RewriteInfos 转发规则之间的重定向关系。
+                     * @param _rewriteInfos 转发规则之间的重定向关系。
+                     * 
                      */
                     void SetRewriteInfos(const std::vector<RewriteLocationMap>& _rewriteInfos);
 
                     /**
                      * 判断参数 RewriteInfos 是否已赋值
                      * @return RewriteInfos 是否已赋值
+                     * 
                      */
                     bool RewriteInfosHasBeenSet() const;
 

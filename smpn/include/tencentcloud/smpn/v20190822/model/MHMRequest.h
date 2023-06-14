@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取电话号码
                      * @return PhoneNumber 电话号码
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置电话号码
-                     * @param PhoneNumber 电话号码
+                     * @param _phoneNumber 电话号码
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 

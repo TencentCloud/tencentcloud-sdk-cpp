@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取银行生成的子商户账户
                      * @return SubAcctNo 银行生成的子商户账户
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 

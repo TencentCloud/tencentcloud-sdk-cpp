@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回的规则总个数。
                      * @return TotalCount 返回的规则总个数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回的规则列表。
                      * @return RuleSet 返回的规则列表。
+                     * 
                      */
                     std::vector<RuleInfo> GetRuleSet() const;
 
                     /**
                      * 判断参数 RuleSet 是否已赋值
                      * @return RuleSet 是否已赋值
+                     * 
                      */
                     bool RuleSetHasBeenSet() const;
 

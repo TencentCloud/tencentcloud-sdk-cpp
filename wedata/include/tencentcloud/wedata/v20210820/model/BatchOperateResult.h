@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取批量操作成功数
                      * @return SuccessCount 批量操作成功数
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 设置批量操作成功数
-                     * @param SuccessCount 批量操作成功数
+                     * @param _successCount 批量操作成功数
+                     * 
                      */
                     void SetSuccessCount(const int64_t& _successCount);
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
                     /**
                      * 获取批量操作失败数
                      * @return FailedCount 批量操作失败数
+                     * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 设置批量操作失败数
-                     * @param FailedCount 批量操作失败数
+                     * @param _failedCount 批量操作失败数
+                     * 
                      */
                     void SetFailedCount(const int64_t& _failedCount);
 
                     /**
                      * 判断参数 FailedCount 是否已赋值
                      * @return FailedCount 是否已赋值
+                     * 
                      */
                     bool FailedCountHasBeenSet() const;
 
                     /**
                      * 获取批量操作的总数
                      * @return TotalCount 批量操作的总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置批量操作的总数
-                     * @param TotalCount 批量操作的总数
+                     * @param _totalCount 批量操作的总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

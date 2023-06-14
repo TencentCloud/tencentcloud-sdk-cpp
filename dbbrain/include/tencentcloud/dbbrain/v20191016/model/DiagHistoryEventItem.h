@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取诊断类型。
                      * @return DiagType 诊断类型。
+                     * 
                      */
                     std::string GetDiagType() const;
 
                     /**
                      * 设置诊断类型。
-                     * @param DiagType 诊断类型。
+                     * @param _diagType 诊断类型。
+                     * 
                      */
                     void SetDiagType(const std::string& _diagType);
 
                     /**
                      * 判断参数 DiagType 是否已赋值
                      * @return DiagType 是否已赋值
+                     * 
                      */
                     bool DiagTypeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取事件 ID 。
                      * @return EventId 事件 ID 。
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置事件 ID 。
-                     * @param EventId 事件 ID 。
+                     * @param _eventId 事件 ID 。
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      * @return Severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * 
                      */
                     int64_t GetSeverity() const;
 
                     /**
                      * 设置严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
-                     * @param Severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * @param _severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * 
                      */
                     void SetSeverity(const int64_t& _severity);
 
                     /**
                      * 判断参数 Severity 是否已赋值
                      * @return Severity 是否已赋值
+                     * 
                      */
                     bool SeverityHasBeenSet() const;
 
                     /**
                      * 获取概要。
                      * @return Outline 概要。
+                     * 
                      */
                     std::string GetOutline() const;
 
                     /**
                      * 设置概要。
-                     * @param Outline 概要。
+                     * @param _outline 概要。
+                     * 
                      */
                     void SetOutline(const std::string& _outline);
 
                     /**
                      * 判断参数 Outline 是否已赋值
                      * @return Outline 是否已赋值
+                     * 
                      */
                     bool OutlineHasBeenSet() const;
 
                     /**
                      * 获取诊断项。
                      * @return DiagItem 诊断项。
+                     * 
                      */
                     std::string GetDiagItem() const;
 
                     /**
                      * 设置诊断项。
-                     * @param DiagItem 诊断项。
+                     * @param _diagItem 诊断项。
+                     * 
                      */
                     void SetDiagItem(const std::string& _diagItem);
 
                     /**
                      * 判断参数 DiagItem 是否已赋值
                      * @return DiagItem 是否已赋值
+                     * 
                      */
                     bool DiagItemHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例 ID 。
+                     * @param _instanceId 实例 ID 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metric 保留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置保留字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metric 保留字段
+                     * @param _metric 保留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

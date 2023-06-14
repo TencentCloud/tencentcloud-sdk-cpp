@@ -56,6 +56,7 @@ namespace TencentCloud
 1: 在线
 2: 离线
 3: 重启
+                     * 
                      */
                     int64_t GetServerState() const;
 
@@ -64,52 +65,60 @@ namespace TencentCloud
 1: 在线
 2: 离线
 3: 重启
-                     * @param ServerState 服务器状态
+                     * @param _serverState 服务器状态
 1: 在线
 2: 离线
 3: 重启
+                     * 
                      */
                     void SetServerState(const int64_t& _serverState);
 
                     /**
                      * 判断参数 ServerState 是否已赋值
                      * @return ServerState 是否已赋值
+                     * 
                      */
                     bool ServerStateHasBeenSet() const;
 
                     /**
                      * 获取服务器IP
                      * @return ServerIp 服务器IP
+                     * 
                      */
                     std::string GetServerIp() const;
 
                     /**
                      * 设置服务器IP
-                     * @param ServerIp 服务器IP
+                     * @param _serverIp 服务器IP
+                     * 
                      */
                     void SetServerIp(const std::string& _serverIp);
 
                     /**
                      * 判断参数 ServerIp 是否已赋值
                      * @return ServerIp 是否已赋值
+                     * 
                      */
                     bool ServerIpHasBeenSet() const;
 
                     /**
                      * 获取硬盘监控信息列表
                      * @return DiskInfos 硬盘监控信息列表
+                     * 
                      */
                     std::vector<DiskInfo> GetDiskInfos() const;
 
                     /**
                      * 设置硬盘监控信息列表
-                     * @param DiskInfos 硬盘监控信息列表
+                     * @param _diskInfos 硬盘监控信息列表
+                     * 
                      */
                     void SetDiskInfos(const std::vector<DiskInfo>& _diskInfos);
 
                     /**
                      * 判断参数 DiskInfos 是否已赋值
                      * @return DiskInfos 是否已赋值
+                     * 
                      */
                     bool DiskInfosHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户签名证书的标识，会存在于用户申请的证书中
                      * @return CertMark 用户签名证书的标识，会存在于用户申请的证书中
+                     * 
                      */
                     std::string GetCertMark() const;
 
                     /**
                      * 设置用户签名证书的标识，会存在于用户申请的证书中
-                     * @param CertMark 用户签名证书的标识，会存在于用户申请的证书中
+                     * @param _certMark 用户签名证书的标识，会存在于用户申请的证书中
+                     * 
                      */
                     void SetCertMark(const std::string& _certMark);
 
                     /**
                      * 判断参数 CertMark 是否已赋值
                      * @return CertMark 是否已赋值
+                     * 
                      */
                     bool CertMarkHasBeenSet() const;
 
                     /**
                      * 获取用户申请签名证书所需要的证书请求文件的base64编码
                      * @return SignCsrContent 用户申请签名证书所需要的证书请求文件的base64编码
+                     * 
                      */
                     std::string GetSignCsrContent() const;
 
                     /**
                      * 设置用户申请签名证书所需要的证书请求文件的base64编码
-                     * @param SignCsrContent 用户申请签名证书所需要的证书请求文件的base64编码
+                     * @param _signCsrContent 用户申请签名证书所需要的证书请求文件的base64编码
+                     * 
                      */
                     void SetSignCsrContent(const std::string& _signCsrContent);
 
                     /**
                      * 判断参数 SignCsrContent 是否已赋值
                      * @return SignCsrContent 是否已赋值
+                     * 
                      */
                     bool SignCsrContentHasBeenSet() const;
 

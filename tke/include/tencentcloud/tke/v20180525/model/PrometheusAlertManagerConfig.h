@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取alertmanager url
                      * @return Url alertmanager url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置alertmanager url
-                     * @param Url alertmanager url
+                     * @param _url alertmanager url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType alertmanager部署所在集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置alertmanager部署所在集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterType alertmanager部署所在集群类型
+                     * @param _clusterType alertmanager部署所在集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId alertmanager部署所在集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置alertmanager部署所在集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId alertmanager部署所在集群ID
+                     * @param _clusterId alertmanager部署所在集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

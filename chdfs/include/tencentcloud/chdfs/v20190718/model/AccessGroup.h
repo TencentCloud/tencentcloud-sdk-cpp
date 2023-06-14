@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取权限组ID
                      * @return AccessGroupId 权限组ID
+                     * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组ID
-                     * @param AccessGroupId 权限组ID
+                     * @param _accessGroupId 权限组ID
+                     * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
 
                     /**
                      * 判断参数 AccessGroupId 是否已赋值
                      * @return AccessGroupId 是否已赋值
+                     * 
                      */
                     bool AccessGroupIdHasBeenSet() const;
 
                     /**
                      * 获取权限组名称
                      * @return AccessGroupName 权限组名称
+                     * 
                      */
                     std::string GetAccessGroupName() const;
 
                     /**
                      * 设置权限组名称
-                     * @param AccessGroupName 权限组名称
+                     * @param _accessGroupName 权限组名称
+                     * 
                      */
                     void SetAccessGroupName(const std::string& _accessGroupName);
 
                     /**
                      * 判断参数 AccessGroupName 是否已赋值
                      * @return AccessGroupName 是否已赋值
+                     * 
                      */
                     bool AccessGroupNameHasBeenSet() const;
 
                     /**
                      * 获取权限组描述
                      * @return Description 权限组描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置权限组描述
-                     * @param Description 权限组描述
+                     * @param _description 权限组描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

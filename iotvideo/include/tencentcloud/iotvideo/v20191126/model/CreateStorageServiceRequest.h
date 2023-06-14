@@ -73,6 +73,7 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
+                     * 
                      */
                     std::string GetPkgId() const;
 
@@ -92,7 +93,7 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
-                     * @param PkgId 云存套餐ID：
+                     * @param _pkgId 云存套餐ID：
 yc1m3d ： 全时3天存储月套餐。
 yc1m7d ： 全时7天存储月套餐。
 yc1m30d ：全时30天存储月套餐。
@@ -107,120 +108,140 @@ ye1y7d ：事件7天存储年套餐。
 ye1y30d ：事件30天存储年套餐。
 yc1w7d : 全时7天存储周套餐。
 ye1w7d : 事件7天存储周套餐。
+                     * 
                      */
                     void SetPkgId(const std::string& _pkgId);
 
                     /**
                      * 判断参数 PkgId 是否已赋值
                      * @return PkgId 是否已赋值
+                     * 
                      */
                     bool PkgIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取订单数量,可一次性创建多个订单
                      * @return OrderCount 订单数量,可一次性创建多个订单
+                     * 
                      */
                     int64_t GetOrderCount() const;
 
                     /**
                      * 设置订单数量,可一次性创建多个订单
-                     * @param OrderCount 订单数量,可一次性创建多个订单
+                     * @param _orderCount 订单数量,可一次性创建多个订单
+                     * 
                      */
                     void SetOrderCount(const int64_t& _orderCount);
 
                     /**
                      * 判断参数 OrderCount 是否已赋值
                      * @return OrderCount 是否已赋值
+                     * 
                      */
                     bool OrderCountHasBeenSet() const;
 
                     /**
                      * 获取云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
                      * @return StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
-                     * @param StorageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
+                     * @param _storageRegion 云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt
+                     * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
                      * @return ChnNum 视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
+                     * 
                      */
                     int64_t GetChnNum() const;
 
                     /**
                      * 设置视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
-                     * @param ChnNum 视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
+                     * @param _chnNum 视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)
+                     * 
                      */
                     void SetChnNum(const int64_t& _chnNum);
 
                     /**
                      * 判断参数 ChnNum 是否已赋值
                      * @return ChnNum 是否已赋值
+                     * 
                      */
                     bool ChnNumHasBeenSet() const;
 
                     /**
                      * 获取设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致
                      * @return AccessId 设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致
-                     * @param AccessId 设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致
+                     * @param _accessId 设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取服务生效时间,若不指定此参数，服务立即生效
                      * @return EnableTime 服务生效时间,若不指定此参数，服务立即生效
+                     * 
                      */
                     int64_t GetEnableTime() const;
 
                     /**
                      * 设置服务生效时间,若不指定此参数，服务立即生效
-                     * @param EnableTime 服务生效时间,若不指定此参数，服务立即生效
+                     * @param _enableTime 服务生效时间,若不指定此参数，服务立即生效
+                     * 
                      */
                     void SetEnableTime(const int64_t& _enableTime);
 
                     /**
                      * 判断参数 EnableTime 是否已赋值
                      * @return EnableTime 是否已赋值
+                     * 
                      */
                     bool EnableTimeHasBeenSet() const;
 

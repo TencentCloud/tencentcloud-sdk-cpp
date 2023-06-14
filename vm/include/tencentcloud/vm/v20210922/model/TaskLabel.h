@@ -65,6 +65,7 @@ Abuse 谩骂
 Terror 暴恐
 Ad 广告
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -78,7 +79,7 @@ Abuse 谩骂
 Terror 暴恐
 Ad 广告
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 命中的标签
+                     * @param _label 命中的标签
 Porn 色情
 Sexy 性感
 Polity 政治
@@ -87,12 +88,14 @@ Abuse 谩骂
 Terror 暴恐
 Ad 广告
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -107,6 +110,7 @@ Pass 通过，
 Review 建议人审，
 Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -116,17 +120,19 @@ Pass 通过，
 Review 建议人审，
 Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 审核建议，可选值：
+                     * @param _suggestion 审核建议，可选值：
 Pass 通过，
 Review 建议人审，
 Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -135,20 +141,23 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分，分数是 0 ～ 100
+                     * @param _score 得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

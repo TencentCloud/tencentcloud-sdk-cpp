@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取同步状态
                      * @return ReplicationStatus 同步状态
+                     * 
                      */
                     std::string GetReplicationStatus() const;
 
                     /**
                      * 判断参数 ReplicationStatus 是否已赋值
                      * @return ReplicationStatus 是否已赋值
+                     * 
                      */
                     bool ReplicationStatusHasBeenSet() const;
 
                     /**
                      * 获取同步完成时间
                      * @return ReplicationTime 同步完成时间
+                     * 
                      */
                     std::string GetReplicationTime() const;
 
                     /**
                      * 判断参数 ReplicationTime 是否已赋值
                      * @return ReplicationTime 是否已赋值
+                     * 
                      */
                     bool ReplicationTimeHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicationLog 同步日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReplicationLog GetReplicationLog() const;
 
                     /**
                      * 判断参数 ReplicationLog 是否已赋值
                      * @return ReplicationLog 是否已赋值
+                     * 
                      */
                     bool ReplicationLogHasBeenSet() const;
 

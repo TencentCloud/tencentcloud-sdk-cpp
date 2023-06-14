@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取磁盘ID
                      * @return DiskId 磁盘ID
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置磁盘ID
-                     * @param DiskId 磁盘ID
+                     * @param _diskId 磁盘ID
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取磁盘名称
                      * @return DiskName 磁盘名称
+                     * 
                      */
                     std::string GetDiskName() const;
 
                     /**
                      * 设置磁盘名称
-                     * @param DiskName 磁盘名称
+                     * @param _diskName 磁盘名称
+                     * 
                      */
                     void SetDiskName(const std::string& _diskName);
 
                     /**
                      * 判断参数 DiskName 是否已赋值
                      * @return DiskName 是否已赋值
+                     * 
                      */
                     bool DiskNameHasBeenSet() const;
 
                     /**
                      * 获取磁盘类型
                      * @return DiskUsage 磁盘类型
+                     * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
                      * 设置磁盘类型
-                     * @param DiskUsage 磁盘类型
+                     * @param _diskUsage 磁盘类型
+                     * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
 
                     /**
                      * 判断参数 DiskUsage 是否已赋值
                      * @return DiskUsage 是否已赋值
+                     * 
                      */
                     bool DiskUsageHasBeenSet() const;
 
                     /**
                      * 获取磁盘介质类型
                      * @return DiskType 磁盘介质类型
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘介质类型
-                     * @param DiskType 磁盘介质类型
+                     * @param _diskType 磁盘介质类型
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘付费类型
                      * @return DiskChargeType 磁盘付费类型
+                     * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
                      * 设置磁盘付费类型
-                     * @param DiskChargeType 磁盘付费类型
+                     * @param _diskChargeType 磁盘付费类型
+                     * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
 
                     /**
                      * 判断参数 DiskChargeType 是否已赋值
                      * @return DiskChargeType 是否已赋值
+                     * 
                      */
                     bool DiskChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘大小
                      * @return DiskSize 磁盘大小
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘大小
-                     * @param DiskSize 磁盘大小
+                     * @param _diskSize 磁盘大小
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取续费标识
                      * @return RenewFlag 续费标识
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置续费标识
-                     * @param RenewFlag 续费标识
+                     * @param _renewFlag 续费标识
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -231,6 +258,7 @@ namespace TencentCloud
 <li>TERMINATING：销毁中。</li>
 <li> DELETING：删除中。</li>
 <li> FREEZING：冻结中。</li>
+                     * 
                      */
                     std::string GetDiskState() const;
 
@@ -246,7 +274,7 @@ namespace TencentCloud
 <li>TERMINATING：销毁中。</li>
 <li> DELETING：删除中。</li>
 <li> FREEZING：冻结中。</li>
-                     * @param DiskState 磁盘状态，取值范围：
+                     * @param _diskState 磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
 <li>UNATTACHED：未挂载。</li>
 <li>ATTACHING：挂载中。</li>
@@ -257,102 +285,119 @@ namespace TencentCloud
 <li>TERMINATING：销毁中。</li>
 <li> DELETING：删除中。</li>
 <li> FREEZING：冻结中。</li>
+                     * 
                      */
                     void SetDiskState(const std::string& _diskState);
 
                     /**
                      * 判断参数 DiskState 是否已赋值
                      * @return DiskState 是否已赋值
+                     * 
                      */
                     bool DiskStateHasBeenSet() const;
 
                     /**
                      * 获取磁盘挂载状态
                      * @return Attached 磁盘挂载状态
+                     * 
                      */
                     bool GetAttached() const;
 
                     /**
                      * 设置磁盘挂载状态
-                     * @param Attached 磁盘挂载状态
+                     * @param _attached 磁盘挂载状态
+                     * 
                      */
                     void SetAttached(const bool& _attached);
 
                     /**
                      * 判断参数 Attached 是否已赋值
                      * @return Attached 是否已赋值
+                     * 
                      */
                     bool AttachedHasBeenSet() const;
 
                     /**
                      * 获取是否随实例释放
                      * @return DeleteWithInstance 是否随实例释放
+                     * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
                      * 设置是否随实例释放
-                     * @param DeleteWithInstance 是否随实例释放
+                     * @param _deleteWithInstance 是否随实例释放
+                     * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
 
                     /**
                      * 判断参数 DeleteWithInstance 是否已赋值
                      * @return DeleteWithInstance 是否已赋值
+                     * 
                      */
                     bool DeleteWithInstanceHasBeenSet() const;
 
                     /**
                      * 获取上一次操作
                      * @return LatestOperation 上一次操作
+                     * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
                      * 设置上一次操作
-                     * @param LatestOperation 上一次操作
+                     * @param _latestOperation 上一次操作
+                     * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
 
                     /**
                      * 判断参数 LatestOperation 是否已赋值
                      * @return LatestOperation 是否已赋值
+                     * 
                      */
                     bool LatestOperationHasBeenSet() const;
 
                     /**
                      * 获取上一次操作状态
                      * @return LatestOperationState 上一次操作状态
+                     * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
                      * 设置上一次操作状态
-                     * @param LatestOperationState 上一次操作状态
+                     * @param _latestOperationState 上一次操作状态
+                     * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
 
                     /**
                      * 判断参数 LatestOperationState 是否已赋值
                      * @return LatestOperationState 是否已赋值
+                     * 
                      */
                     bool LatestOperationStateHasBeenSet() const;
 
                     /**
                      * 获取上一次请求ID
                      * @return LatestOperationRequestId 上一次请求ID
+                     * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
                      * 设置上一次请求ID
-                     * @param LatestOperationRequestId 上一次请求ID
+                     * @param _latestOperationRequestId 上一次请求ID
+                     * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
 
                     /**
                      * 判断参数 LatestOperationRequestId 是否已赋值
                      * @return LatestOperationRequestId 是否已赋值
+                     * 
                      */
                     bool LatestOperationRequestIdHasBeenSet() const;
 
@@ -363,6 +408,7 @@ namespace TencentCloud
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
@@ -370,15 +416,17 @@ namespace TencentCloud
                      * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+                     * @param _createdTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -389,6 +437,7 @@ namespace TencentCloud
                      * @return ExpiredTime 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpiredTime() const;
 
@@ -396,15 +445,17 @@ namespace TencentCloud
                      * 设置到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredTime 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+                     * @param _expiredTime 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
@@ -415,6 +466,7 @@ namespace TencentCloud
                      * @return IsolatedTime 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsolatedTime() const;
 
@@ -422,51 +474,59 @@ namespace TencentCloud
                      * 设置隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsolatedTime 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+                     * @param _isolatedTime 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
 
                     /**
                      * 判断参数 IsolatedTime 是否已赋值
                      * @return IsolatedTime 是否已赋值
+                     * 
                      */
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
                      * 获取云硬盘的已有备份点数量。
                      * @return DiskBackupCount 云硬盘的已有备份点数量。
+                     * 
                      */
                     int64_t GetDiskBackupCount() const;
 
                     /**
                      * 设置云硬盘的已有备份点数量。
-                     * @param DiskBackupCount 云硬盘的已有备份点数量。
+                     * @param _diskBackupCount 云硬盘的已有备份点数量。
+                     * 
                      */
                     void SetDiskBackupCount(const int64_t& _diskBackupCount);
 
                     /**
                      * 判断参数 DiskBackupCount 是否已赋值
                      * @return DiskBackupCount 是否已赋值
+                     * 
                      */
                     bool DiskBackupCountHasBeenSet() const;
 
                     /**
                      * 获取云硬盘的备份点配额数量。
                      * @return DiskBackupQuota 云硬盘的备份点配额数量。
+                     * 
                      */
                     int64_t GetDiskBackupQuota() const;
 
                     /**
                      * 设置云硬盘的备份点配额数量。
-                     * @param DiskBackupQuota 云硬盘的备份点配额数量。
+                     * @param _diskBackupQuota 云硬盘的备份点配额数量。
+                     * 
                      */
                     void SetDiskBackupQuota(const int64_t& _diskBackupQuota);
 
                     /**
                      * 判断参数 DiskBackupQuota 是否已赋值
                      * @return DiskBackupQuota 是否已赋值
+                     * 
                      */
                     bool DiskBackupQuotaHasBeenSet() const;
 

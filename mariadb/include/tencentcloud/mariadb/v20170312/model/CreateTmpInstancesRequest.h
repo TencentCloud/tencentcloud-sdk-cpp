@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取回档实例的ID列表，形如：tdsql-ow728lmc。
                      * @return InstanceIds 回档实例的ID列表，形如：tdsql-ow728lmc。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置回档实例的ID列表，形如：tdsql-ow728lmc。
-                     * @param InstanceIds 回档实例的ID列表，形如：tdsql-ow728lmc。
+                     * @param _instanceIds 回档实例的ID列表，形如：tdsql-ow728lmc。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取回档时间点
                      * @return RollbackTime 回档时间点
+                     * 
                      */
                     std::string GetRollbackTime() const;
 
                     /**
                      * 设置回档时间点
-                     * @param RollbackTime 回档时间点
+                     * @param _rollbackTime 回档时间点
+                     * 
                      */
                     void SetRollbackTime(const std::string& _rollbackTime);
 
                     /**
                      * 判断参数 RollbackTime 是否已赋值
                      * @return RollbackTime 是否已赋值
+                     * 
                      */
                     bool RollbackTimeHasBeenSet() const;
 

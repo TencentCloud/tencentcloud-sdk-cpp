@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取用户信息
                      * @return UserInfo 用户信息
+                     * 
                      */
                     CkUserAlterInfo GetUserInfo() const;
 
                     /**
                      * 设置用户信息
-                     * @param UserInfo 用户信息
+                     * @param _userInfo 用户信息
+                     * 
                      */
                     void SetUserInfo(const CkUserAlterInfo& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 
@@ -66,20 +69,23 @@ namespace TencentCloud
 AddSystemUser新增用户，UpdateSystemUser，修改用户
                      * @return ApiType api接口类型，
 AddSystemUser新增用户，UpdateSystemUser，修改用户
+                     * 
                      */
                     std::string GetApiType() const;
 
                     /**
                      * 设置api接口类型，
 AddSystemUser新增用户，UpdateSystemUser，修改用户
-                     * @param ApiType api接口类型，
+                     * @param _apiType api接口类型，
 AddSystemUser新增用户，UpdateSystemUser，修改用户
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 

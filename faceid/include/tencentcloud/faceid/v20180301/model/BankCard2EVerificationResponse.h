@@ -84,24 +84,28 @@ namespace TencentCloud
   '-2': '姓名校验不通过'
   '-3': '银行卡号码有误'
   '-16': '验证中心服务繁忙'
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

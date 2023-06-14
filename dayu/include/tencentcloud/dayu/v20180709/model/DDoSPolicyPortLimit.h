@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取协议，取值范围[tcp,udp,all]
                      * @return Protocol 协议，取值范围[tcp,udp,all]
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，取值范围[tcp,udp,all]
-                     * @param Protocol 协议，取值范围[tcp,udp,all]
+                     * @param _protocol 协议，取值范围[tcp,udp,all]
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取开始目的端口，取值范围[0,65535]
                      * @return DPortStart 开始目的端口，取值范围[0,65535]
+                     * 
                      */
                     uint64_t GetDPortStart() const;
 
                     /**
                      * 设置开始目的端口，取值范围[0,65535]
-                     * @param DPortStart 开始目的端口，取值范围[0,65535]
+                     * @param _dPortStart 开始目的端口，取值范围[0,65535]
+                     * 
                      */
                     void SetDPortStart(const uint64_t& _dPortStart);
 
                     /**
                      * 判断参数 DPortStart 是否已赋值
                      * @return DPortStart 是否已赋值
+                     * 
                      */
                     bool DPortStartHasBeenSet() const;
 
                     /**
                      * 获取结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口
                      * @return DPortEnd 结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口
+                     * 
                      */
                     uint64_t GetDPortEnd() const;
 
                     /**
                      * 设置结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口
-                     * @param DPortEnd 结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口
+                     * @param _dPortEnd 结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口
+                     * 
                      */
                     void SetDPortEnd(const uint64_t& _dPortEnd);
 
                     /**
                      * 判断参数 DPortEnd 是否已赋值
                      * @return DPortEnd 是否已赋值
+                     * 
                      */
                     bool DPortEndHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SPortStart 开始源端口，取值范围[0,65535]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSPortStart() const;
 
                     /**
                      * 设置开始源端口，取值范围[0,65535]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SPortStart 开始源端口，取值范围[0,65535]
+                     * @param _sPortStart 开始源端口，取值范围[0,65535]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSPortStart(const uint64_t& _sPortStart);
 
                     /**
                      * 判断参数 SPortStart 是否已赋值
                      * @return SPortStart 是否已赋值
+                     * 
                      */
                     bool SPortStartHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SPortEnd 结束源端口，取值范围[0,65535]，要求大于等于开始源端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSPortEnd() const;
 
                     /**
                      * 设置结束源端口，取值范围[0,65535]，要求大于等于开始源端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SPortEnd 结束源端口，取值范围[0,65535]，要求大于等于开始源端口
+                     * @param _sPortEnd 结束源端口，取值范围[0,65535]，要求大于等于开始源端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSPortEnd(const uint64_t& _sPortEnd);
 
                     /**
                      * 判断参数 SPortEnd 是否已赋值
                      * @return SPortEnd 是否已赋值
+                     * 
                      */
                     bool SPortEndHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 执行动作，取值[drop(丢弃) ，transmit(转发)]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置执行动作，取值[drop(丢弃) ，transmit(转发)]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 执行动作，取值[drop(丢弃) ，transmit(转发)]
+                     * @param _action 执行动作，取值[drop(丢弃) ，transmit(转发)]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind 禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetKind() const;
 
                     /**
                      * 设置禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Kind 禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]
+                     * @param _kind 禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKind(const uint64_t& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 

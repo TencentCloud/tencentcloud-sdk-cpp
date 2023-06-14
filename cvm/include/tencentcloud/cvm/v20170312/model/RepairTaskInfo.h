@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取维修任务ID
                      * @return TaskId 维修任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置维修任务ID
-                     * @param TaskId 维修任务ID
+                     * @param _taskId 维修任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 实例名称
+                     * @param _alias 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -127,6 +136,7 @@ namespace TencentCloud
 - `107`：实例维护升级
 
 各任务类型的具体含义，可参考 [维修任务分类](https://cloud.tencent.com/document/product/213/67789#.E7.BB.B4.E4.BF.AE.E4.BB.BB.E5.8A.A1.E5.88.86.E7.B1.BB)。
+                     * 
                      */
                     uint64_t GetTaskTypeId() const;
 
@@ -142,7 +152,7 @@ namespace TencentCloud
 - `107`：实例维护升级
 
 各任务类型的具体含义，可参考 [维修任务分类](https://cloud.tencent.com/document/product/213/67789#.E7.BB.B4.E4.BF.AE.E4.BB.BB.E5.8A.A1.E5.88.86.E7.B1.BB)。
-                     * @param TaskTypeId 任务类型ID，与任务类型中文名的对应关系如下：
+                     * @param _taskTypeId 任务类型ID，与任务类型中文名的对应关系如下：
 
 - `101`：实例运行隐患
 - `102`：实例运行异常
@@ -153,30 +163,35 @@ namespace TencentCloud
 - `107`：实例维护升级
 
 各任务类型的具体含义，可参考 [维修任务分类](https://cloud.tencent.com/document/product/213/67789#.E7.BB.B4.E4.BF.AE.E4.BB.BB.E5.8A.A1.E5.88.86.E7.B1.BB)。
+                     * 
                      */
                     void SetTaskTypeId(const uint64_t& _taskTypeId);
 
                     /**
                      * 判断参数 TaskTypeId 是否已赋值
                      * @return TaskTypeId 是否已赋值
+                     * 
                      */
                     bool TaskTypeIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型中文名
                      * @return TaskTypeName 任务类型中文名
+                     * 
                      */
                     std::string GetTaskTypeName() const;
 
                     /**
                      * 设置任务类型中文名
-                     * @param TaskTypeName 任务类型中文名
+                     * @param _taskTypeName 任务类型中文名
+                     * 
                      */
                     void SetTaskTypeName(const std::string& _taskTypeName);
 
                     /**
                      * 判断参数 TaskTypeName 是否已赋值
                      * @return TaskTypeName 是否已赋值
+                     * 
                      */
                     bool TaskTypeNameHasBeenSet() const;
 
@@ -201,6 +216,7 @@ namespace TencentCloud
 - `6`：已避免
 
 各任务状态的具体含义，可参考 [任务状态](https://cloud.tencent.com/document/product/213/67789#.E4.BB.BB.E5.8A.A1.E7.8A.B6.E6.80.81)。
+                     * 
                      */
                     uint64_t GetTaskStatus() const;
 
@@ -215,7 +231,7 @@ namespace TencentCloud
 - `6`：已避免
 
 各任务状态的具体含义，可参考 [任务状态](https://cloud.tencent.com/document/product/213/67789#.E4.BB.BB.E5.8A.A1.E7.8A.B6.E6.80.81)。
-                     * @param TaskStatus 任务状态ID，与任务状态中文名的对应关系如下：
+                     * @param _taskStatus 任务状态ID，与任务状态中文名的对应关系如下：
 
 - `1`：待授权
 - `2`：处理中
@@ -225,12 +241,14 @@ namespace TencentCloud
 - `6`：已避免
 
 各任务状态的具体含义，可参考 [任务状态](https://cloud.tencent.com/document/product/213/67789#.E4.BB.BB.E5.8A.A1.E7.8A.B6.E6.80.81)。
+                     * 
                      */
                     void SetTaskStatus(const uint64_t& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -251,6 +269,7 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
+                     * 
                      */
                     uint64_t GetDeviceStatus() const;
 
@@ -263,7 +282,7 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
-                     * @param DeviceStatus 设备状态ID，与设备状态中文名的对应关系如下：
+                     * @param _deviceStatus 设备状态ID，与设备状态中文名的对应关系如下：
 
 - `1`：故障中
 - `2`：处理中
@@ -271,12 +290,14 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
+                     * 
                      */
                     void SetDeviceStatus(const uint64_t& _deviceStatus);
 
                     /**
                      * 判断参数 DeviceStatus 是否已赋值
                      * @return DeviceStatus 是否已赋值
+                     * 
                      */
                     bool DeviceStatusHasBeenSet() const;
 
@@ -297,6 +318,7 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
+                     * 
                      */
                     uint64_t GetOperateStatus() const;
 
@@ -309,7 +331,7 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
-                     * @param OperateStatus 操作状态ID，与操作状态中文名的对应关系如下：
+                     * @param _operateStatus 操作状态ID，与操作状态中文名的对应关系如下：
 
 - `1`：未授权
 - `2`：已授权
@@ -317,30 +339,35 @@ namespace TencentCloud
 - `4`：已预约
 - `5`：已取消
 - `6`：已避免
+                     * 
                      */
                     void SetOperateStatus(const uint64_t& _operateStatus);
 
                     /**
                      * 判断参数 OperateStatus 是否已赋值
                      * @return OperateStatus 是否已赋值
+                     * 
                      */
                     bool OperateStatusHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreateTime 任务创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -349,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthTime 任务授权时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthTime() const;
 
                     /**
                      * 设置任务授权时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthTime 任务授权时间
+                     * @param _authTime 任务授权时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthTime(const std::string& _authTime);
 
                     /**
                      * 判断参数 AuthTime 是否已赋值
                      * @return AuthTime 是否已赋值
+                     * 
                      */
                     bool AuthTimeHasBeenSet() const;
 
@@ -371,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 任务结束时间
+                     * @param _endTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -393,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskDetail 任务详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskDetail() const;
 
                     /**
                      * 设置任务详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskDetail 任务详情
+                     * @param _taskDetail 任务详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskDetail(const std::string& _taskDetail);
 
                     /**
                      * 判断参数 TaskDetail 是否已赋值
                      * @return TaskDetail 是否已赋值
+                     * 
                      */
                     bool TaskDetailHasBeenSet() const;
 
@@ -415,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -437,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -459,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 所在私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置所在私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 所在私有网络ID
+                     * @param _vpcId 所在私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -481,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName 所在私有网络名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置所在私有网络名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcName 所在私有网络名称
+                     * @param _vpcName 所在私有网络名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
@@ -503,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 所在子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置所在子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 所在子网ID
+                     * @param _subnetId 所在子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -525,20 +576,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 所在子网名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置所在子网名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetName 所在子网名称
+                     * @param _subnetName 所在子网名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
@@ -547,20 +601,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanIp 实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWanIp() const;
 
                     /**
                      * 设置实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanIp 实例公网IP
+                     * @param _wanIp 实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanIp(const std::string& _wanIp);
 
                     /**
                      * 判断参数 WanIp 是否已赋值
                      * @return WanIp 是否已赋值
+                     * 
                      */
                     bool WanIpHasBeenSet() const;
 
@@ -569,20 +626,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LanIp 实例内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLanIp() const;
 
                     /**
                      * 设置实例内网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LanIp 实例内网IP
+                     * @param _lanIp 实例内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLanIp(const std::string& _lanIp);
 
                     /**
                      * 判断参数 LanIp 是否已赋值
                      * @return LanIp 是否已赋值
+                     * 
                      */
                     bool LanIpHasBeenSet() const;
 
@@ -599,6 +659,7 @@ namespace TencentCloud
 - `CDH`：专用宿主机
 - `CPM2.0`：裸金属云服务器
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProduct() const;
 
@@ -609,18 +670,20 @@ namespace TencentCloud
 - `CDH`：专用宿主机
 - `CPM2.0`：裸金属云服务器
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Product 产品类型，支持取值：
+                     * @param _product 产品类型，支持取值：
 
 - `CVM`：云服务器
 - `CDH`：专用宿主机
 - `CPM2.0`：裸金属云服务器
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
@@ -629,38 +692,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskSubType 任务子类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskSubType() const;
 
                     /**
                      * 设置任务子类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskSubType 任务子类型
+                     * @param _taskSubType 任务子类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskSubType(const std::string& _taskSubType);
 
                     /**
                      * 判断参数 TaskSubType 是否已赋值
                      * @return TaskSubType 是否已赋值
+                     * 
                      */
                     bool TaskSubTypeHasBeenSet() const;
 
                     /**
                      * 获取任务授权类型
                      * @return AuthType 任务授权类型
+                     * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
                      * 设置任务授权类型
-                     * @param AuthType 任务授权类型
+                     * @param _authType 任务授权类型
+                     * 
                      */
                     void SetAuthType(const uint64_t& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
@@ -677,6 +746,7 @@ namespace TencentCloud
 - `Customer_auth`：客户操作授权
 - `System_mandatory_auth`：系统默认授权
 - `Pre_policy_auth`：预置策略授权
+                     * 
                      */
                     std::string GetAuthSource() const;
 
@@ -687,18 +757,20 @@ namespace TencentCloud
 - `Customer_auth`：客户操作授权
 - `System_mandatory_auth`：系统默认授权
 - `Pre_policy_auth`：预置策略授权
-                     * @param AuthSource 授权渠道，支持取值：
+                     * @param _authSource 授权渠道，支持取值：
 
 - `Waiting_auth`：待授权
 - `Customer_auth`：客户操作授权
 - `System_mandatory_auth`：系统默认授权
 - `Pre_policy_auth`：预置策略授权
+                     * 
                      */
                     void SetAuthSource(const std::string& _authSource);
 
                     /**
                      * 判断参数 AuthSource 是否已赋值
                      * @return AuthSource 是否已赋值
+                     * 
                      */
                     bool AuthSourceHasBeenSet() const;
 

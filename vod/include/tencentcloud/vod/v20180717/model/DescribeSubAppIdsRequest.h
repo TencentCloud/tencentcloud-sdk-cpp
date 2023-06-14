@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取子应用名称。
                      * @return Name 子应用名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置子应用名称。
-                     * @param Name 子应用名称。
+                     * @param _name 子应用名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取标签信息，查询指定标签的子应用列表。
                      * @return Tags 标签信息，查询指定标签的子应用列表。
+                     * 
                      */
                     std::vector<ResourceTag> GetTags() const;
 
                     /**
                      * 设置标签信息，查询指定标签的子应用列表。
-                     * @param Tags 标签信息，查询指定标签的子应用列表。
+                     * @param _tags 标签信息，查询指定标签的子应用列表。
+                     * 
                      */
                     void SetTags(const std::vector<ResourceTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取分页拉取的起始偏移量。默认值：0。
                      * @return Offset 分页拉取的起始偏移量。默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页拉取的起始偏移量。默认值：0。
-                     * @param Offset 分页拉取的起始偏移量。默认值：0。
+                     * @param _offset 分页拉取的起始偏移量。默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页拉取的最大返回结果数。默认值：200；最大值：200。
                      * @return Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页拉取的最大返回结果数。默认值：200；最大值：200。
-                     * @param Limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * @param _limit 分页拉取的最大返回结果数。默认值：200；最大值：200。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

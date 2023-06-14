@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取慧眼业务ID
                      * @return WbAppId 慧眼业务ID
+                     * 
                      */
                     std::string GetWbAppId() const;
 
                     /**
                      * 设置慧眼业务ID
-                     * @param WbAppId 慧眼业务ID
+                     * @param _wbAppId 慧眼业务ID
+                     * 
                      */
                     void SetWbAppId(const std::string& _wbAppId);
 
                     /**
                      * 判断参数 WbAppId 是否已赋值
                      * @return WbAppId 是否已赋值
+                     * 
                      */
                     bool WbAppIdHasBeenSet() const;
 
                     /**
                      * 获取订单号(orderNo); 限制在3个或以内
                      * @return OrderNumbers 订单号(orderNo); 限制在3个或以内
+                     * 
                      */
                     std::vector<std::string> GetOrderNumbers() const;
 
                     /**
                      * 设置订单号(orderNo); 限制在3个或以内
-                     * @param OrderNumbers 订单号(orderNo); 限制在3个或以内
+                     * @param _orderNumbers 订单号(orderNo); 限制在3个或以内
+                     * 
                      */
                     void SetOrderNumbers(const std::vector<std::string>& _orderNumbers);
 
                     /**
                      * 判断参数 OrderNumbers 是否已赋值
                      * @return OrderNumbers 是否已赋值
+                     * 
                      */
                     bool OrderNumbersHasBeenSet() const;
 
                     /**
                      * 获取1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选
                      * @return FileType 1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选
+                     * 
                      */
                     int64_t GetFileType() const;
 
                     /**
                      * 设置1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选
-                     * @param FileType 1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选
+                     * @param _fileType 1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选
+                     * 
                      */
                     void SetFileType(const int64_t& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 

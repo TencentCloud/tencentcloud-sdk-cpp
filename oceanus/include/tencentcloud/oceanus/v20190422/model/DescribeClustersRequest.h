@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
                      * @return ClusterIds 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 设置按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
-                     * @param ClusterIds 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * @param _clusterIds 按照一个或者多个集群 ID 查询，每次请求的集群上限为 100
+                     * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认 0
                      * @return Offset 偏移量，默认 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认 0
-                     * @param Offset 偏移量，默认 0
+                     * @param _offset 偏移量，默认 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取请求的集群数量，默认 20，最大值 100
                      * @return Limit 请求的集群数量，默认 20，最大值 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置请求的集群数量，默认 20，最大值 100
-                     * @param Limit 请求的集群数量，默认 20，最大值 100
+                     * @param _limit 请求的集群数量，默认 20，最大值 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
                      * @return OrderType 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
-                     * @param OrderType 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * @param _orderType 集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取过滤规则
                      * @return Filters 过滤规则
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤规则
-                     * @param Filters 过滤规则
+                     * @param _filters 过滤规则
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

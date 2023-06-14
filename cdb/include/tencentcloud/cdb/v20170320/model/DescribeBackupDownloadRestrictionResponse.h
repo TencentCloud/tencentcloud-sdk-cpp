@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取NoLimit 不限制,内外网都可以下载； LimitOnlyIntranet 仅内网可下载； Customize 用户自定义vpc:ip可下载。 只有该值为 Customize 时， LimitVpc 和 LimitIp 才有意义。
                      * @return LimitType NoLimit 不限制,内外网都可以下载； LimitOnlyIntranet 仅内网可下载； Customize 用户自定义vpc:ip可下载。 只有该值为 Customize 时， LimitVpc 和 LimitIp 才有意义。
+                     * 
                      */
                     std::string GetLimitType() const;
 
                     /**
                      * 判断参数 LimitType 是否已赋值
                      * @return LimitType 是否已赋值
+                     * 
                      */
                     bool LimitTypeHasBeenSet() const;
 
                     /**
                      * 获取该参数仅支持 In， 表示 LimitVpc 指定的vpc可以下载。
                      * @return VpcComparisonSymbol 该参数仅支持 In， 表示 LimitVpc 指定的vpc可以下载。
+                     * 
                      */
                     std::string GetVpcComparisonSymbol() const;
 
                     /**
                      * 判断参数 VpcComparisonSymbol 是否已赋值
                      * @return VpcComparisonSymbol 是否已赋值
+                     * 
                      */
                     bool VpcComparisonSymbolHasBeenSet() const;
 
                     /**
                      * 获取In: 指定的ip可以下载； NotIn: 指定的ip不可以下载。
                      * @return IpComparisonSymbol In: 指定的ip可以下载； NotIn: 指定的ip不可以下载。
+                     * 
                      */
                     std::string GetIpComparisonSymbol() const;
 
                     /**
                      * 判断参数 IpComparisonSymbol 是否已赋值
                      * @return IpComparisonSymbol 是否已赋值
+                     * 
                      */
                     bool IpComparisonSymbolHasBeenSet() const;
 
                     /**
                      * 获取限制下载的vpc设置。
                      * @return LimitVpc 限制下载的vpc设置。
+                     * 
                      */
                     std::vector<BackupLimitVpcItem> GetLimitVpc() const;
 
                     /**
                      * 判断参数 LimitVpc 是否已赋值
                      * @return LimitVpc 是否已赋值
+                     * 
                      */
                     bool LimitVpcHasBeenSet() const;
 
                     /**
                      * 获取限制下载的ip设置。
                      * @return LimitIp 限制下载的ip设置。
+                     * 
                      */
                     std::vector<std::string> GetLimitIp() const;
 
                     /**
                      * 判断参数 LimitIp 是否已赋值
                      * @return LimitIp 是否已赋值
+                     * 
                      */
                     bool LimitIpHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR
                      * @return DisposeMethod 支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR
+                     * 
                      */
                     std::string GetDisposeMethod() const;
 
                     /**
                      * 设置支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR
-                     * @param DisposeMethod 支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR
+                     * @param _disposeMethod 支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR
+                     * 
                      */
                     void SetDisposeMethod(const std::string& _disposeMethod);
 
                     /**
                      * 判断参数 DisposeMethod 是否已赋值
                      * @return DisposeMethod 是否已赋值
+                     * 
                      */
                     bool DisposeMethodHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CkafkaDeliveryParams 设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CkafkaDeliveryParams GetCkafkaDeliveryParams() const;
 
                     /**
                      * 设置设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CkafkaDeliveryParams 设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中
+                     * @param _ckafkaDeliveryParams 设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCkafkaDeliveryParams(const CkafkaDeliveryParams& _ckafkaDeliveryParams);
 
                     /**
                      * 判断参数 CkafkaDeliveryParams 是否已赋值
                      * @return CkafkaDeliveryParams 是否已赋值
+                     * 
                      */
                     bool CkafkaDeliveryParamsHasBeenSet() const;
 

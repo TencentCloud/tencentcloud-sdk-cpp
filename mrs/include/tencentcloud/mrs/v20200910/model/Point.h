@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return X x坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置x坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param X x坐标
+                     * @param _x x坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetX(const int64_t& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y y坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置y坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Y y坐标
+                     * @param _y y坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetY(const int64_t& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 

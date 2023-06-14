@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取ES集群ID
                      * @return InstanceId ES集群ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ES集群ID
-                     * @param InstanceId ES集群ID
+                     * @param _instanceId ES集群ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取创建的索引类型。auto：自治索引；normal：普通索引
                      * @return IndexType 创建的索引类型。auto：自治索引；normal：普通索引
+                     * 
                      */
                     std::string GetIndexType() const;
 
                     /**
                      * 设置创建的索引类型。auto：自治索引；normal：普通索引
-                     * @param IndexType 创建的索引类型。auto：自治索引；normal：普通索引
+                     * @param _indexType 创建的索引类型。auto：自治索引；normal：普通索引
+                     * 
                      */
                     void SetIndexType(const std::string& _indexType);
 
                     /**
                      * 判断参数 IndexType 是否已赋值
                      * @return IndexType 是否已赋值
+                     * 
                      */
                     bool IndexTypeHasBeenSet() const;
 
                     /**
                      * 获取创建的索引名
                      * @return IndexName 创建的索引名
+                     * 
                      */
                     std::string GetIndexName() const;
 
                     /**
                      * 设置创建的索引名
-                     * @param IndexName 创建的索引名
+                     * @param _indexName 创建的索引名
+                     * 
                      */
                     void SetIndexName(const std::string& _indexName);
 
                     /**
                      * 判断参数 IndexName 是否已赋值
                      * @return IndexName 是否已赋值
+                     * 
                      */
                     bool IndexNameHasBeenSet() const;
 
                     /**
                      * 获取创建的索引元数据JSON，如mappings、settings
                      * @return IndexMetaJson 创建的索引元数据JSON，如mappings、settings
+                     * 
                      */
                     std::string GetIndexMetaJson() const;
 
                     /**
                      * 设置创建的索引元数据JSON，如mappings、settings
-                     * @param IndexMetaJson 创建的索引元数据JSON，如mappings、settings
+                     * @param _indexMetaJson 创建的索引元数据JSON，如mappings、settings
+                     * 
                      */
                     void SetIndexMetaJson(const std::string& _indexMetaJson);
 
                     /**
                      * 判断参数 IndexMetaJson 是否已赋值
                      * @return IndexMetaJson 是否已赋值
+                     * 
                      */
                     bool IndexMetaJsonHasBeenSet() const;
 
                     /**
                      * 获取集群访问用户名
                      * @return Username 集群访问用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置集群访问用户名
-                     * @param Username 集群访问用户名
+                     * @param _username 集群访问用户名
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取集群访问密码
                      * @return Password 集群访问密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置集群访问密码
-                     * @param Password 集群访问密码
+                     * @param _password 集群访问密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取did服务机构名称
                      * @return AgencyName did服务机构名称
+                     * 
                      */
                     std::string GetAgencyName() const;
 
                     /**
                      * 设置did服务机构名称
-                     * @param AgencyName did服务机构名称
+                     * @param _agencyName did服务机构名称
+                     * 
                      */
                     void SetAgencyName(const std::string& _agencyName);
 
                     /**
                      * 判断参数 AgencyName 是否已赋值
                      * @return AgencyName 是否已赋值
+                     * 
                      */
                     bool AgencyNameHasBeenSet() const;
 

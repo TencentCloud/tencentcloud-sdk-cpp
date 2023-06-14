@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取内网IP和端口对应的状态。
                      * @return ReceiversStatusSet 内网IP和端口对应的状态。
+                     * 
                      */
                     std::vector<TrafficMirrorReciversStatus> GetReceiversStatusSet() const;
 
                     /**
                      * 判断参数 ReceiversStatusSet 是否已赋值
                      * @return ReceiversStatusSet 是否已赋值
+                     * 
                      */
                     bool ReceiversStatusSetHasBeenSet() const;
 

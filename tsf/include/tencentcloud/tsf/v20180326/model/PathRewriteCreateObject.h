@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取网关部署组ID
                      * @return GatewayGroupId 网关部署组ID
+                     * 
                      */
                     std::string GetGatewayGroupId() const;
 
                     /**
                      * 设置网关部署组ID
-                     * @param GatewayGroupId 网关部署组ID
+                     * @param _gatewayGroupId 网关部署组ID
+                     * 
                      */
                     void SetGatewayGroupId(const std::string& _gatewayGroupId);
 
                     /**
                      * 判断参数 GatewayGroupId 是否已赋值
                      * @return GatewayGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayGroupIdHasBeenSet() const;
 
                     /**
                      * 获取正则表达式
                      * @return Regex 正则表达式
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置正则表达式
-                     * @param Regex 正则表达式
+                     * @param _regex 正则表达式
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
                     /**
                      * 获取替换的内容
                      * @return Replacement 替换的内容
+                     * 
                      */
                     std::string GetReplacement() const;
 
                     /**
                      * 设置替换的内容
-                     * @param Replacement 替换的内容
+                     * @param _replacement 替换的内容
+                     * 
                      */
                     void SetReplacement(const std::string& _replacement);
 
                     /**
                      * 判断参数 Replacement 是否已赋值
                      * @return Replacement 是否已赋值
+                     * 
                      */
                     bool ReplacementHasBeenSet() const;
 
                     /**
                      * 获取是否屏蔽映射后路径，Y: 是 N: 否
                      * @return Blocked 是否屏蔽映射后路径，Y: 是 N: 否
+                     * 
                      */
                     std::string GetBlocked() const;
 
                     /**
                      * 设置是否屏蔽映射后路径，Y: 是 N: 否
-                     * @param Blocked 是否屏蔽映射后路径，Y: 是 N: 否
+                     * @param _blocked 是否屏蔽映射后路径，Y: 是 N: 否
+                     * 
                      */
                     void SetBlocked(const std::string& _blocked);
 
                     /**
                      * 判断参数 Blocked 是否已赋值
                      * @return Blocked 是否已赋值
+                     * 
                      */
                     bool BlockedHasBeenSet() const;
 
                     /**
                      * 获取规则顺序，越小优先级越高
                      * @return Order 规则顺序，越小优先级越高
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置规则顺序，越小优先级越高
-                     * @param Order 规则顺序，越小优先级越高
+                     * @param _order 规则顺序，越小优先级越高
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

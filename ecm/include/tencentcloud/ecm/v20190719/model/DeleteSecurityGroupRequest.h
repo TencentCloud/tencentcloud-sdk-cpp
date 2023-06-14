@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。
                      * @return SecurityGroupId 安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @param SecurityGroupId 安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * @param _securityGroupId 安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 

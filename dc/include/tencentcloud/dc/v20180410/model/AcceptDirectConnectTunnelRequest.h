@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取物理专线拥有者接受共享专用通道申请
                      * @return DirectConnectTunnelId 物理专线拥有者接受共享专用通道申请
+                     * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
                      * 设置物理专线拥有者接受共享专用通道申请
-                     * @param DirectConnectTunnelId 物理专线拥有者接受共享专用通道申请
+                     * @param _directConnectTunnelId 物理专线拥有者接受共享专用通道申请
+                     * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
 
                     /**
                      * 判断参数 DirectConnectTunnelId 是否已赋值
                      * @return DirectConnectTunnelId 是否已赋值
+                     * 
                      */
                     bool DirectConnectTunnelIdHasBeenSet() const;
 

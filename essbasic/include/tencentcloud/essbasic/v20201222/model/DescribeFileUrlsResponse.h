@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取文件下载URL数组
                      * @return FileUrls 文件下载URL数组
+                     * 
                      */
                     std::vector<FileUrl> GetFileUrls() const;
 
                     /**
                      * 判断参数 FileUrls 是否已赋值
                      * @return FileUrls 是否已赋值
+                     * 
                      */
                     bool FileUrlsHasBeenSet() const;
 
                     /**
                      * 获取URL数量
                      * @return TotalCount URL数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return EdgeUnitId 无
+                     * 
                      */
                     int64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置无
-                     * @param EdgeUnitId 无
+                     * @param _edgeUnitId 无
+                     * 
                      */
                     void SetEdgeUnitId(const int64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProductId 无
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置无
-                     * @param ProductId 无
+                     * @param _productId 无
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DeviceNames 无
+                     * 
                      */
                     std::vector<std::string> GetDeviceNames() const;
 
                     /**
                      * 设置无
-                     * @param DeviceNames 无
+                     * @param _deviceNames 无
+                     * 
                      */
                     void SetDeviceNames(const std::vector<std::string>& _deviceNames);
 
                     /**
                      * 判断参数 DeviceNames 是否已赋值
                      * @return DeviceNames 是否已赋值
+                     * 
                      */
                     bool DeviceNamesHasBeenSet() const;
 

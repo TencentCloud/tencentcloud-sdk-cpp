@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeline 时间轴
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimelineEvent> GetTimeline() const;
 
                     /**
                      * 设置时间轴
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeline 时间轴
+                     * @param _timeline 时间轴
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeline(const std::vector<TimelineEvent>& _timeline);
 
                     /**
                      * 判断参数 Timeline 是否已赋值
                      * @return Timeline 是否已赋值
+                     * 
                      */
                     bool TimelineHasBeenSet() const;
 

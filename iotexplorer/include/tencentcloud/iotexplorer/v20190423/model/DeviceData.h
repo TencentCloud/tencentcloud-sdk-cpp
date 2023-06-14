@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCert 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceCert() const;
 
                     /**
                      * 设置设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceCert 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
+                     * @param _deviceCert 设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceCert(const std::string& _deviceCert);
 
                     /**
                      * 判断参数 DeviceCert 是否已赋值
                      * @return DeviceCert 是否已赋值
+                     * 
                      */
                     bool DeviceCertHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceName 设备名称。
+                     * @param _deviceName 设备名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevicePrivateKey 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDevicePrivateKey() const;
 
                     /**
                      * 设置设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DevicePrivateKey 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
+                     * @param _devicePrivateKey 设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevicePrivateKey(const std::string& _devicePrivateKey);
 
                     /**
                      * 判断参数 DevicePrivateKey 是否已赋值
                      * @return DevicePrivateKey 是否已赋值
+                     * 
                      */
                     bool DevicePrivateKeyHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevicePsk 对称加密密钥，base64编码。采用对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDevicePsk() const;
 
                     /**
                      * 设置对称加密密钥，base64编码。采用对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DevicePsk 对称加密密钥，base64编码。采用对称加密时返回该参数。
+                     * @param _devicePsk 对称加密密钥，base64编码。采用对称加密时返回该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevicePsk(const std::string& _devicePsk);
 
                     /**
                      * 判断参数 DevicePsk 是否已赋值
                      * @return DevicePsk 是否已赋值
+                     * 
                      */
                     bool DevicePskHasBeenSet() const;
 

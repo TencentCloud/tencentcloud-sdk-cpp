@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取组件的PURL
                      * @return PURL 组件的PURL
+                     * 
                      */
                     PURL GetPURL() const;
 
                     /**
                      * 设置组件的PURL
-                     * @param PURL 组件的PURL
+                     * @param _pURL 组件的PURL
+                     * 
                      */
                     void SetPURL(const PURL& _pURL);
 
                     /**
                      * 判断参数 PURL 是否已赋值
                      * @return PURL 是否已赋值
+                     * 
                      */
                     bool PURLHasBeenSet() const;
 

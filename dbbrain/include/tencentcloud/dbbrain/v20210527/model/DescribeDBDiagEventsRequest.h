@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。
                      * @return StartTime 开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。
-                     * @param StartTime 开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。
+                     * @param _startTime 开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。
                      * @return EndTime 结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。
-                     * @param EndTime 结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。
+                     * @param _endTime 结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。
                      * @return Severities 风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。
+                     * 
                      */
                     std::vector<int64_t> GetSeverities() const;
 
                     /**
                      * 设置风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。
-                     * @param Severities 风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。
+                     * @param _severities 风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。
+                     * 
                      */
                     void SetSeverities(const std::vector<int64_t>& _severities);
 
                     /**
                      * 判断参数 Severities 是否已赋值
                      * @return Severities 是否已赋值
+                     * 
                      */
                     bool SeveritiesHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表。
                      * @return InstanceIds 实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表。
-                     * @param InstanceIds 实例ID列表。
+                     * @param _instanceIds 实例ID列表。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0。
                      * @return Offset 偏移量，默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0。
-                     * @param Offset 偏移量，默认0。
+                     * @param _offset 偏移量，默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认20，最大值为50。
                      * @return Limit 返回数量，默认20，最大值为50。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认20，最大值为50。
-                     * @param Limit 返回数量，默认20，最大值为50。
+                     * @param _limit 返回数量，默认20，最大值为50。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

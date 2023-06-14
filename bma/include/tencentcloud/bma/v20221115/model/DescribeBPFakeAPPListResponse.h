@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取仿冒应用列表
                      * @return FakeAPPList 仿冒应用列表
+                     * 
                      */
                     std::vector<FakeAPPData> GetFakeAPPList() const;
 
                     /**
                      * 判断参数 FakeAPPList 是否已赋值
                      * @return FakeAPPList 是否已赋值
+                     * 
                      */
                     bool FakeAPPListHasBeenSet() const;
 
                     /**
                      * 获取仿冒应用总数
                      * @return TotalCount 仿冒应用总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

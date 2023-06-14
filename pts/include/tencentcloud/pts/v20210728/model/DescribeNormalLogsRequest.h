@@ -45,198 +45,231 @@ namespace TencentCloud
                     /**
                      * 获取压测项目ID
                      * @return ProjectId 压测项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置压测项目ID
-                     * @param ProjectId 压测项目ID
+                     * @param _projectId 压测项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取测试场景ID
                      * @return ScenarioId 测试场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置测试场景ID
-                     * @param ScenarioId 测试场景ID
+                     * @param _scenarioId 测试场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取压测任务ID
                      * @return JobId 压测任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置压测任务ID
-                     * @param JobId 压测任务ID
+                     * @param _jobId 压测任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
                      * @return Context 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-                     * @param Context 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * @param _context 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取日志开始时间
                      * @return From 日志开始时间
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置日志开始时间
-                     * @param From 日志开始时间
+                     * @param _from 日志开始时间
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间
                      * @return To 日志结束时间
+                     * 
                      */
                     std::string GetTo() const;
 
                     /**
                      * 设置日志结束时间
-                     * @param To 日志结束时间
+                     * @param _to 日志结束时间
+                     * 
                      */
                     void SetTo(const std::string& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取日志级别，可取debug/info/error
                      * @return SeverityText 日志级别，可取debug/info/error
+                     * 
                      */
                     std::string GetSeverityText() const;
 
                     /**
                      * 设置日志级别，可取debug/info/error
-                     * @param SeverityText 日志级别，可取debug/info/error
+                     * @param _severityText 日志级别，可取debug/info/error
+                     * 
                      */
                     void SetSeverityText(const std::string& _severityText);
 
                     /**
                      * 判断参数 SeverityText 是否已赋值
                      * @return SeverityText 是否已赋值
+                     * 
                      */
                     bool SeverityTextHasBeenSet() const;
 
                     /**
                      * 获取施压节点IP
                      * @return Instance 施压节点IP
+                     * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置施压节点IP
-                     * @param Instance 施压节点IP
+                     * @param _instance 施压节点IP
+                     * 
                      */
                     void SetInstance(const std::string& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
                     /**
                      * 获取施压节点所在地域
                      * @return InstanceRegion 施压节点所在地域
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置施压节点所在地域
-                     * @param InstanceRegion 施压节点所在地域
+                     * @param _instanceRegion 施压节点所在地域
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
                      * 获取日志类型， console代表用户输出，engine代表引擎输出
                      * @return LogType 日志类型， console代表用户输出，engine代表引擎输出
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型， console代表用户输出，engine代表引擎输出
-                     * @param LogType 日志类型， console代表用户输出，engine代表引擎输出
+                     * @param _logType 日志类型， console代表用户输出，engine代表引擎输出
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取返回日志条数限制，最大100
                      * @return Limit 返回日志条数限制，最大100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回日志条数限制，最大100
-                     * @param Limit 返回日志条数限制，最大100
+                     * @param _limit 返回日志条数限制，最大100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

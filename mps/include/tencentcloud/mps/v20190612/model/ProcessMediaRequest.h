@@ -53,36 +53,42 @@ namespace TencentCloud
                     /**
                      * 获取媒体处理的文件输入信息。
                      * @return InputInfo 媒体处理的文件输入信息。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置媒体处理的文件输入信息。
-                     * @param InputInfo 媒体处理的文件输入信息。
+                     * @param _inputInfo 媒体处理的文件输入信息。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
                     /**
                      * 获取媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
                      * @return OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-                     * @param OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * @param _outputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 如果不填，表示与 InputInfo 中文件所在的目录一致。
                      * @return OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
 如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
                      * 设置媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
 如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @param OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+                     * @param _outputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
 如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
                     /**
                      * 判断参数 OutputDir 是否已赋值
                      * @return OutputDir 是否已赋值
+                     * 
                      */
                     bool OutputDirHasBeenSet() const;
 
@@ -123,6 +132,7 @@ namespace TencentCloud
 注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
 
 注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * 
                      */
                     int64_t GetScheduleId() const;
 
@@ -134,181 +144,210 @@ namespace TencentCloud
 注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
 
 注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
-                     * @param ScheduleId 编排ID。
+                     * @param _scheduleId 编排ID。
 注意1：对于OutputStorage、OutputDir参数：
 <li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>
 <li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有输出，将覆盖原有编排的默认输出。</li>
 注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。
 
 注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
 
                     /**
                      * 判断参数 ScheduleId 是否已赋值
                      * @return ScheduleId 是否已赋值
+                     * 
                      */
                     bool ScheduleIdHasBeenSet() const;
 
                     /**
                      * 获取媒体处理类型任务参数。
                      * @return MediaProcessTask 媒体处理类型任务参数。
+                     * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
                      * 设置媒体处理类型任务参数。
-                     * @param MediaProcessTask 媒体处理类型任务参数。
+                     * @param _mediaProcessTask 媒体处理类型任务参数。
+                     * 
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
 
                     /**
                      * 判断参数 MediaProcessTask 是否已赋值
                      * @return MediaProcessTask 是否已赋值
+                     * 
                      */
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核类型任务参数。
                      * @return AiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
                      * 设置视频内容审核类型任务参数。
-                     * @param AiContentReviewTask 视频内容审核类型任务参数。
+                     * @param _aiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
                     /**
                      * 判断参数 AiContentReviewTask 是否已赋值
                      * @return AiContentReviewTask 是否已赋值
+                     * 
                      */
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容分析类型任务参数。
                      * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
                      * 设置视频内容分析类型任务参数。
-                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+                     * @param _aiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
 
                     /**
                      * 判断参数 AiAnalysisTask 是否已赋值
                      * @return AiAnalysisTask 是否已赋值
+                     * 
                      */
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容识别类型任务参数。
                      * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
                      * 设置视频内容识别类型任务参数。
-                     * @param AiRecognitionTask 视频内容识别类型任务参数。
+                     * @param _aiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
                      * 判断参数 AiRecognitionTask 是否已赋值
                      * @return AiRecognitionTask 是否已赋值
+                     * 
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
                      * 获取视频质检类型任务参数。
                      * @return AiQualityControlTask 视频质检类型任务参数。
+                     * 
                      */
                     AiQualityControlTaskInput GetAiQualityControlTask() const;
 
                     /**
                      * 设置视频质检类型任务参数。
-                     * @param AiQualityControlTask 视频质检类型任务参数。
+                     * @param _aiQualityControlTask 视频质检类型任务参数。
+                     * 
                      */
                     void SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask);
 
                     /**
                      * 判断参数 AiQualityControlTask 是否已赋值
                      * @return AiQualityControlTask 是否已赋值
+                     * 
                      */
                     bool AiQualityControlTaskHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
                      * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
                      * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
 
                     /**
                      * 判断参数 TaskNotifyConfig 是否已赋值
                      * @return TaskNotifyConfig 是否已赋值
+                     * 
                      */
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
                      * 获取任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
                      * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
                      * 设置任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @param TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
 
                     /**
                      * 判断参数 TasksPriority 是否已赋值
                      * @return TasksPriority 是否已赋值
+                     * 
                      */
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 
@@ -319,6 +358,7 @@ namespace TencentCloud
                      * @return TaskType 任务类型，默认Online
 <li> Online：实时任务</li>
 <li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -326,15 +366,17 @@ namespace TencentCloud
                      * 设置任务类型，默认Online
 <li> Online：实时任务</li>
 <li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
-                     * @param TaskType 任务类型，默认Online
+                     * @param _taskType 任务类型，默认Online
 <li> Online：实时任务</li>
 <li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

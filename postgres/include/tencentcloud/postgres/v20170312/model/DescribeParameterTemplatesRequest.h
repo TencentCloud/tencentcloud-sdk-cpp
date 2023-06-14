@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
                      * @return Filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
-                     * @param Filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * @param _filters 过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取每页显示数量，[0，100]，默认 20
                      * @return Limit 每页显示数量，[0，100]，默认 20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页显示数量，[0，100]，默认 20
-                     * @param Limit 每页显示数量，[0，100]，默认 20
+                     * @param _limit 每页显示数量，[0，100]，默认 20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量
                      * @return Offset 数据偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量
-                     * @param Offset 数据偏移量
+                     * @param _offset 数据偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
                      * @return OrderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
-                     * @param OrderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * @param _orderBy 排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，枚举值，支持：asc（升序） ，desc（降序）
                      * @return OrderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置排序方式，枚举值，支持：asc（升序） ，desc（降序）
-                     * @param OrderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * @param _orderByType 排序方式，枚举值，支持：asc（升序） ，desc（降序）
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

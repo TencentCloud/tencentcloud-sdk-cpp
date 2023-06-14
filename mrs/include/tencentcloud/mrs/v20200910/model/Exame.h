@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverView 结论段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResultInfo> GetOverView() const;
 
                     /**
                      * 设置结论段落
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OverView 结论段落
+                     * @param _overView 结论段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOverView(const std::vector<ResultInfo>& _overView);
 
                     /**
                      * 判断参数 OverView 是否已赋值
                      * @return OverView 是否已赋值
+                     * 
                      */
                     bool OverViewHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abnormality 异常与建议段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResultInfo> GetAbnormality() const;
 
                     /**
                      * 设置异常与建议段落
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Abnormality 异常与建议段落
+                     * @param _abnormality 异常与建议段落
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAbnormality(const std::vector<ResultInfo>& _abnormality);
 
                     /**
                      * 判断参数 Abnormality 是否已赋值
                      * @return Abnormality 是否已赋值
+                     * 
                      */
                     bool AbnormalityHasBeenSet() const;
 

@@ -84,6 +84,7 @@ subnet-id String      是否必填：否      （过滤条件）按照实例的s
 
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -108,7 +109,7 @@ subnet-id String      是否必填：否      （过滤条件）按照实例的s
 
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
 zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
@@ -128,48 +129,56 @@ subnet-id String      是否必填：否      （过滤条件）按照实例的s
 
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。
                      * @return Limit 返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。
-                     * @param Limit 返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。
+                     * @param _limit 返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -182,6 +191,7 @@ timestamp 按实例创建时间排序。
 timestamp 按实例创建时间排序。
 注意：目前仅支持按创建时间排序，后续可能会有扩展。
 如果不传，默认按实例创建时间排序
+                     * 
                      */
                     std::string GetOrderByField() const;
 
@@ -190,34 +200,39 @@ timestamp 按实例创建时间排序。
 timestamp 按实例创建时间排序。
 注意：目前仅支持按创建时间排序，后续可能会有扩展。
 如果不传，默认按实例创建时间排序
-                     * @param OrderByField 指定排序字段。目前支持的可选值如下
+                     * @param _orderByField 指定排序字段。目前支持的可选值如下
 timestamp 按实例创建时间排序。
 注意：目前仅支持按创建时间排序，后续可能会有扩展。
 如果不传，默认按实例创建时间排序
+                     * 
                      */
                     void SetOrderByField(const std::string& _orderByField);
 
                     /**
                      * 判断参数 OrderByField 是否已赋值
                      * @return OrderByField 是否已赋值
+                     * 
                      */
                     bool OrderByFieldHasBeenSet() const;
 
                     /**
                      * 获取指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
                      * @return OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * 
                      */
                     int64_t GetOrderDirection() const;
 
                     /**
                      * 设置指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
-                     * @param OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @param _orderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * 
                      */
                     void SetOrderDirection(const int64_t& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

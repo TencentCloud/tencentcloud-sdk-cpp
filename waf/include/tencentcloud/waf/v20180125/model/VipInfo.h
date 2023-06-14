@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip Virtual IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置Virtual IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip Virtual IP
+                     * @param _vip Virtual IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId waf实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置waf实例id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId waf实例id
+                     * @param _instanceId waf实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

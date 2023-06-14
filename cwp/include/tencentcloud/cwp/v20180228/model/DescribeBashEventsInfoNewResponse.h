@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BashEventsInfo 事件详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BashEventsInfoNew GetBashEventsInfo() const;
 
                     /**
                      * 判断参数 BashEventsInfo 是否已赋值
                      * @return BashEventsInfo 是否已赋值
+                     * 
                      */
                     bool BashEventsInfoHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosUrl 下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 判断参数 CosUrl 是否已赋值
                      * @return CosUrl 是否已赋值
+                     * 
                      */
                     bool CosUrlHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

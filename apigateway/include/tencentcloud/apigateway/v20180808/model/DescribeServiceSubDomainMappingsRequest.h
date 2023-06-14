@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取服务唯一 ID。
                      * @return ServiceId 服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一 ID。
-                     * @param ServiceId 服务唯一 ID。
+                     * @param _serviceId 服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取服务绑定的自定义域名。
                      * @return SubDomain 服务绑定的自定义域名。
+                     * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 设置服务绑定的自定义域名。
-                     * @param SubDomain 服务绑定的自定义域名。
+                     * @param _subDomain 服务绑定的自定义域名。
+                     * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
 
                     /**
                      * 判断参数 SubDomain 是否已赋值
                      * @return SubDomain 是否已赋值
+                     * 
                      */
                     bool SubDomainHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取查询维度值。
                      * @return TypeKey 查询维度值。
+                     * 
                      */
                     std::string GetTypeKey() const;
 
                     /**
                      * 设置查询维度值。
-                     * @param TypeKey 查询维度值。
+                     * @param _typeKey 查询维度值。
+                     * 
                      */
                     void SetTypeKey(const std::string& _typeKey);
 
                     /**
                      * 判断参数 TypeKey 是否已赋值
                      * @return TypeKey 是否已赋值
+                     * 
                      */
                     bool TypeKeyHasBeenSet() const;
 
                     /**
                      * 获取top数据排行。
                      * @return DetailData top数据排行。
+                     * 
                      */
                     std::vector<TopDetailData> GetDetailData() const;
 
                     /**
                      * 设置top数据排行。
-                     * @param DetailData top数据排行。
+                     * @param _detailData top数据排行。
+                     * 
                      */
                     void SetDetailData(const std::vector<TopDetailData>& _detailData);
 
                     /**
                      * 判断参数 DetailData 是否已赋值
                      * @return DetailData 是否已赋值
+                     * 
                      */
                     bool DetailDataHasBeenSet() const;
 

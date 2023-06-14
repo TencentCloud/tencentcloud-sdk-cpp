@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待更新的版本ID
                      * @return VersionId 待更新的版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置待更新的版本ID
-                     * @param VersionId 待更新的版本ID
+                     * @param _versionId 待更新的版本ID
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
                     /**
                      * 获取模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
                      * @return TemplateUrl 模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * 
                      */
                     std::string GetTemplateUrl() const;
 
                     /**
                      * 设置模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
-                     * @param TemplateUrl 模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * @param _templateUrl 模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * 
                      */
                     void SetTemplateUrl(const std::string& _templateUrl);
 
                     /**
                      * 判断参数 TemplateUrl 是否已赋值
                      * @return TemplateUrl 是否已赋值
+                     * 
                      */
                     bool TemplateUrlHasBeenSet() const;
 
                     /**
                      * 获取版本名称，不得超过60个字符
                      * @return VersionName 版本名称，不得超过60个字符
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称，不得超过60个字符
-                     * @param VersionName 版本名称，不得超过60个字符
+                     * @param _versionName 版本名称，不得超过60个字符
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
                     /**
                      * 获取版本描述，不得超过200个字符
                      * @return Description 版本描述，不得超过200个字符
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置版本描述，不得超过200个字符
-                     * @param Description 版本描述，不得超过200个字符
+                     * @param _description 版本描述，不得超过200个字符
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

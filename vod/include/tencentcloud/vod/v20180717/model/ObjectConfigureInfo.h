@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 物体识别任务开关，可选值：
 <li>ON：开启智能物体识别任务；</li>
 <li>OFF：关闭智能物体识别任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置物体识别任务开关，可选值：
 <li>ON：开启智能物体识别任务；</li>
 <li>OFF：关闭智能物体识别任务。</li>
-                     * @param Switch 物体识别任务开关，可选值：
+                     * @param _switch 物体识别任务开关，可选值：
 <li>ON：开启智能物体识别任务；</li>
 <li>OFF：关闭智能物体识别任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 <li>UserDefine：使用用户自定义物体库。</li>
 <li>All：同时使用默认物体库和用户自定义物体库。</li>
 默认值： All，同时使用默认物体库和用户自定义物体库。
+                     * 
                      */
                     std::string GetObjectLibrary() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 <li>UserDefine：使用用户自定义物体库。</li>
 <li>All：同时使用默认物体库和用户自定义物体库。</li>
 默认值： All，同时使用默认物体库和用户自定义物体库。
-                     * @param ObjectLibrary 物体库选择，可选值：
+                     * @param _objectLibrary 物体库选择，可选值：
 <li>Default：使用默认物体库；</li>
 <li>UserDefine：使用用户自定义物体库。</li>
 <li>All：同时使用默认物体库和用户自定义物体库。</li>
 默认值： All，同时使用默认物体库和用户自定义物体库。
+                     * 
                      */
                     void SetObjectLibrary(const std::string& _objectLibrary);
 
                     /**
                      * 判断参数 ObjectLibrary 是否已赋值
                      * @return ObjectLibrary 是否已赋值
+                     * 
                      */
                     bool ObjectLibraryHasBeenSet() const;
 

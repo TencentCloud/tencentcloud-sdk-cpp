@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值
                      * @return EventType 事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值
+                     * 
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值
-                     * @param EventType 事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值
+                     * @param _eventType 事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取阈值，单位毫秒。0表示关闭，大于0表示开启
                      * @return Threshold 阈值，单位毫秒。0表示关闭，大于0表示开启
+                     * 
                      */
                     int64_t GetThreshold() const;
 
                     /**
                      * 设置阈值，单位毫秒。0表示关闭，大于0表示开启
-                     * @param Threshold 阈值，单位毫秒。0表示关闭，大于0表示开启
+                     * @param _threshold 阈值，单位毫秒。0表示关闭，大于0表示开启
+                     * 
                      */
                     void SetThreshold(const int64_t& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 

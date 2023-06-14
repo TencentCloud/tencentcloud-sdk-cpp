@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取告警策略列表
                      * @return WarningRules 告警策略列表
+                     * 
                      */
                     std::vector<WarningRule> GetWarningRules() const;
 
                     /**
                      * 判断参数 WarningRules 是否已赋值
                      * @return WarningRules 是否已赋值
+                     * 
                      */
                     bool WarningRulesHasBeenSet() const;
 

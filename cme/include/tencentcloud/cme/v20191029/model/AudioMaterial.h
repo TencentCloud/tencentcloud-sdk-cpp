@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取素材元信息。
                      * @return MetaData 素材元信息。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置素材元信息。
-                     * @param MetaData 素材元信息。
+                     * @param _metaData 素材元信息。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取素材媒体文件的播放 URL 地址。
                      * @return MaterialUrl 素材媒体文件的播放 URL 地址。
+                     * 
                      */
                     std::string GetMaterialUrl() const;
 
                     /**
                      * 设置素材媒体文件的播放 URL 地址。
-                     * @param MaterialUrl 素材媒体文件的播放 URL 地址。
+                     * @param _materialUrl 素材媒体文件的播放 URL 地址。
+                     * 
                      */
                     void SetMaterialUrl(const std::string& _materialUrl);
 
                     /**
                      * 判断参数 MaterialUrl 是否已赋值
                      * @return MaterialUrl 是否已赋值
+                     * 
                      */
                     bool MaterialUrlHasBeenSet() const;
 
                     /**
                      * 获取素材媒体文件的封面图片地址。
                      * @return CoverUrl 素材媒体文件的封面图片地址。
+                     * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置素材媒体文件的封面图片地址。
-                     * @param CoverUrl 素材媒体文件的封面图片地址。
+                     * @param _coverUrl 素材媒体文件的封面图片地址。
+                     * 
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
                     /**
                      * 判断参数 CoverUrl 是否已赋值
                      * @return CoverUrl 是否已赋值
+                     * 
                      */
                     bool CoverUrlHasBeenSet() const;
 
@@ -107,56 +116,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaterialStatus 素材状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MaterialStatus GetMaterialStatus() const;
 
                     /**
                      * 设置素材状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaterialStatus 素材状态。
+                     * @param _materialStatus 素材状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaterialStatus(const MaterialStatus& _materialStatus);
 
                     /**
                      * 判断参数 MaterialStatus 是否已赋值
                      * @return MaterialStatus 是否已赋值
+                     * 
                      */
                     bool MaterialStatusHasBeenSet() const;
 
                     /**
                      * 获取素材媒体文件的原始 URL 地址。
                      * @return OriginalUrl 素材媒体文件的原始 URL 地址。
+                     * 
                      */
                     std::string GetOriginalUrl() const;
 
                     /**
                      * 设置素材媒体文件的原始 URL 地址。
-                     * @param OriginalUrl 素材媒体文件的原始 URL 地址。
+                     * @param _originalUrl 素材媒体文件的原始 URL 地址。
+                     * 
                      */
                     void SetOriginalUrl(const std::string& _originalUrl);
 
                     /**
                      * 判断参数 OriginalUrl 是否已赋值
                      * @return OriginalUrl 是否已赋值
+                     * 
                      */
                     bool OriginalUrlHasBeenSet() const;
 
                     /**
                      * 获取云点播媒资 FileId。
                      * @return VodFileId 云点播媒资 FileId。
+                     * 
                      */
                     std::string GetVodFileId() const;
 
                     /**
                      * 设置云点播媒资 FileId。
-                     * @param VodFileId 云点播媒资 FileId。
+                     * @param _vodFileId 云点播媒资 FileId。
+                     * 
                      */
                     void SetVodFileId(const std::string& _vodFileId);
 
                     /**
                      * 判断参数 VodFileId 是否已赋值
                      * @return VodFileId 是否已赋值
+                     * 
                      */
                     bool VodFileIdHasBeenSet() const;
 

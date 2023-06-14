@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible
                      * @return Kind app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible
-                     * @param Kind app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible
+                     * @param _kind app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取app支持的操作系统，取值arm32、arm64、amd64
                      * @return Arch app支持的操作系统，取值arm32、arm64、amd64
+                     * 
                      */
                     std::string GetArch() const;
 
                     /**
                      * 设置app支持的操作系统，取值arm32、arm64、amd64
-                     * @param Arch app支持的操作系统，取值arm32、arm64、amd64
+                     * @param _arch app支持的操作系统，取值arm32、arm64、amd64
+                     * 
                      */
                     void SetArch(const std::string& _arch);
 
                     /**
                      * 判断参数 Arch 是否已赋值
                      * @return Arch 是否已赋值
+                     * 
                      */
                     bool ArchHasBeenSet() const;
 
                     /**
                      * 获取集群类型，取值tke、eks
                      * @return ClusterType 集群类型，取值tke、eks
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型，取值tke、eks
-                     * @param ClusterType 集群类型，取值tke、eks
+                     * @param _clusterType 集群类型，取值tke、eks
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 

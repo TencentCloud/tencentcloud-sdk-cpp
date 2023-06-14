@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。外部接入平台入驻云企付平台下发
                      * @return ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。外部接入平台入驻云企付平台下发
-                     * @param ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * @param _channelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
@@ -66,56 +69,65 @@ namespace TencentCloud
 __TENPAY__: 商企付
                      * @return ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
-                     * @param ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
+                     * @param _channelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取收款方信息。
                      * @return PayeeInfo 收款方信息。
+                     * 
                      */
                     OpenBankPayeeInfo GetPayeeInfo() const;
 
                     /**
                      * 设置收款方信息。
-                     * @param PayeeInfo 收款方信息。
+                     * @param _payeeInfo 收款方信息。
+                     * 
                      */
                     void SetPayeeInfo(const OpenBankPayeeInfo& _payeeInfo);
 
                     /**
                      * 判断参数 PayeeInfo 是否已赋值
                      * @return PayeeInfo 是否已赋值
+                     * 
                      */
                     bool PayeeInfoHasBeenSet() const;
 
                     /**
                      * 获取通知地址，如www.test.com。
                      * @return NotifyUrl 通知地址，如www.test.com。
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置通知地址，如www.test.com。
-                     * @param NotifyUrl 通知地址，如www.test.com。
+                     * @param _notifyUrl 通知地址，如www.test.com。
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 
@@ -128,6 +140,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -136,16 +149,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

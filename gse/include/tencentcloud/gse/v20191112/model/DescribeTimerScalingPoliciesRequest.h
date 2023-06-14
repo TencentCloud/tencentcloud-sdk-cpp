@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取扩缩容配置服务器舰队ID
                      * @return FleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置扩缩容配置服务器舰队ID
-                     * @param FleetId 扩缩容配置服务器舰队ID
+                     * @param _fleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取定时器名称
                      * @return TimerName 定时器名称
+                     * 
                      */
                     std::string GetTimerName() const;
 
                     /**
                      * 设置定时器名称
-                     * @param TimerName 定时器名称
+                     * @param _timerName 定时器名称
+                     * 
                      */
                     void SetTimerName(const std::string& _timerName);
 
                     /**
                      * 判断参数 TimerName 是否已赋值
                      * @return TimerName 是否已赋值
+                     * 
                      */
                     bool TimerNameHasBeenSet() const;
 
                     /**
                      * 获取定时器开始时间
                      * @return BeginTime 定时器开始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置定时器开始时间
-                     * @param BeginTime 定时器开始时间
+                     * @param _beginTime 定时器开始时间
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取定时器结束时间
                      * @return EndTime 定时器结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置定时器结束时间
-                     * @param EndTime 定时器结束时间
+                     * @param _endTime 定时器结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return Limit 页大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置页大小
-                     * @param Limit 页大小
+                     * @param _limit 页大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

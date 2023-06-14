@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取域名ID
                      * @return DomainId 域名ID
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名ID
-                     * @param DomainId 域名ID
+                     * @param _domainId 域名ID
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取别名
                      * @return Alias 别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
-                     * @param Alias 别名
+                     * @param _alias 别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取默认入口
                      * @return DefaultValue 默认入口
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置默认入口
-                     * @param DefaultValue 默认入口
+                     * @param _defaultValue 默认入口
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 

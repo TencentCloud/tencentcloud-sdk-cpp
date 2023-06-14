@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubh****。
                      * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubh****。
-                     * @param InstanceId 实例 ID，如：kee-6ubh****。
+                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取每页输出的节点信息大小。默认为 20。
                      * @return Limit 每页输出的节点信息大小。默认为 20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页输出的节点信息大小。默认为 20。
-                     * @param Limit 每页输出的节点信息大小。默认为 20。
+                     * @param _limit 每页输出的节点信息大小。默认为 20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

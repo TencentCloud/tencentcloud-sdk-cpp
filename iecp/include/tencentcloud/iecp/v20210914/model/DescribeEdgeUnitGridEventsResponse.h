@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventSet 事件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GridEventInfo> GetEventSet() const;
 
                     /**
                      * 判断参数 EventSet 是否已赋值
                      * @return EventSet 是否已赋值
+                     * 
                      */
                     bool EventSetHasBeenSet() const;
 

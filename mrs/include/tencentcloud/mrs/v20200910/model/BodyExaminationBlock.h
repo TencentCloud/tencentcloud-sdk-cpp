@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyTemperature 体温
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BodyTemperatureBlock GetBodyTemperature() const;
 
                     /**
                      * 设置体温
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BodyTemperature 体温
+                     * @param _bodyTemperature 体温
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBodyTemperature(const BodyTemperatureBlock& _bodyTemperature);
 
                     /**
                      * 判断参数 BodyTemperature 是否已赋值
                      * @return BodyTemperature 是否已赋值
+                     * 
                      */
                     bool BodyTemperatureHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pulse 脉搏
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BodyTemperatureBlock GetPulse() const;
 
                     /**
                      * 设置脉搏
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pulse 脉搏
+                     * @param _pulse 脉搏
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPulse(const BodyTemperatureBlock& _pulse);
 
                     /**
                      * 判断参数 Pulse 是否已赋值
                      * @return Pulse 是否已赋值
+                     * 
                      */
                     bool PulseHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Breathe 呼吸
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BodyTemperatureBlock GetBreathe() const;
 
                     /**
                      * 设置呼吸
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Breathe 呼吸
+                     * @param _breathe 呼吸
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBreathe(const BodyTemperatureBlock& _breathe);
 
                     /**
                      * 判断参数 Breathe 是否已赋值
                      * @return Breathe 是否已赋值
+                     * 
                      */
                     bool BreatheHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodPressure 血压
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BloodPressureBlock GetBloodPressure() const;
 
                     /**
                      * 设置血压
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BloodPressure 血压
+                     * @param _bloodPressure 血压
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBloodPressure(const BloodPressureBlock& _bloodPressure);
 
                     /**
                      * 判断参数 BloodPressure 是否已赋值
                      * @return BloodPressure 是否已赋值
+                     * 
                      */
                     bool BloodPressureHasBeenSet() const;
 

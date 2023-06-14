@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 事件类型
+                     * @param _type 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文本
+                     * @param _src 原文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubType 事件子类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubType() const;
 
                     /**
                      * 设置事件子类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubType 事件子类型
+                     * @param _subType 事件子类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubType(const std::string& _subType);
 
                     /**
                      * 判断参数 SubType 是否已赋值
                      * @return SubType 是否已赋值
+                     * 
                      */
                     bool SubTypeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 事件发生时间
+                     * @param _time 事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 事件值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置事件值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 事件值
+                     * @param _value 事件值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rectangle 位置坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Rectangle GetRectangle() const;
 
                     /**
                      * 设置位置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rectangle 位置坐标
+                     * @param _rectangle 位置坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRectangle(const Rectangle& _rectangle);
 
                     /**
                      * 判断参数 Rectangle 是否已赋值
                      * @return Rectangle 是否已赋值
+                     * 
                      */
                     bool RectangleHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Place 事件发生地点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlace() const;
 
                     /**
                      * 设置事件发生地点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Place 事件发生地点
+                     * @param _place 事件发生地点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlace(const std::string& _place);
 
                     /**
                      * 判断参数 Place 是否已赋值
                      * @return Place 是否已赋值
+                     * 
                      */
                     bool PlaceHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取组织单元ID列表
                      * @return NodeIds 组织单元ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetNodeIds() const;
 
                     /**
                      * 设置组织单元ID列表
-                     * @param NodeIds 组织单元ID列表
+                     * @param _nodeIds 组织单元ID列表
+                     * 
                      */
                     void SetNodeIds(const std::vector<uint64_t>& _nodeIds);
 
                     /**
                      * 判断参数 NodeIds 是否已赋值
                      * @return NodeIds 是否已赋值
+                     * 
                      */
                     bool NodeIdsHasBeenSet() const;
 

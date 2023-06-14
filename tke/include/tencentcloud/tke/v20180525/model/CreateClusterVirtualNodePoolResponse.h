@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取节点池ID
                      * @return NodePoolId 节点池ID
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 

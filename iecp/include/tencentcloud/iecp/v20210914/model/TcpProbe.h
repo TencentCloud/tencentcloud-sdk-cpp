@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 连接端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置连接端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 连接端口
+                     * @param _port 连接端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

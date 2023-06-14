@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待取消任务标志符。
                      * @return JobId 待取消任务标志符。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 设置待取消任务标志符。
-                     * @param JobId 待取消任务标志符。
+                     * @param _jobId 待取消任务标志符。
+                     * 
                      */
                     void SetJobId(const int64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

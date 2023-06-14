@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件的唯一标识。
                      * @return FileId 媒体文件的唯一标识。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件的唯一标识。
-                     * @param FileId 媒体文件的唯一标识。
+                     * @param _fileId 媒体文件的唯一标识。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取指定本次需要删除的部分。默认值为 "[]", 表示删除媒体及其对应的全部视频处理文件。
                      * @return DeleteParts 指定本次需要删除的部分。默认值为 "[]", 表示删除媒体及其对应的全部视频处理文件。
+                     * 
                      */
                     std::vector<MediaDeleteItem> GetDeleteParts() const;
 
                     /**
                      * 设置指定本次需要删除的部分。默认值为 "[]", 表示删除媒体及其对应的全部视频处理文件。
-                     * @param DeleteParts 指定本次需要删除的部分。默认值为 "[]", 表示删除媒体及其对应的全部视频处理文件。
+                     * @param _deleteParts 指定本次需要删除的部分。默认值为 "[]", 表示删除媒体及其对应的全部视频处理文件。
+                     * 
                      */
                     void SetDeleteParts(const std::vector<MediaDeleteItem>& _deleteParts);
 
                     /**
                      * 判断参数 DeleteParts 是否已赋值
                      * @return DeleteParts 是否已赋值
+                     * 
                      */
                     bool DeletePartsHasBeenSet() const;
 

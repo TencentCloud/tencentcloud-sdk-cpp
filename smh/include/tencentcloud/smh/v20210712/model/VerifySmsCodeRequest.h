@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
                      * @return Purpose 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
+                     * 
                      */
                     std::string GetPurpose() const;
 
                     /**
                      * 设置验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
-                     * @param Purpose 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
+                     * @param _purpose 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
+                     * 
                      */
                     void SetPurpose(const std::string& _purpose);
 
                     /**
                      * 判断参数 Purpose 是否已赋值
                      * @return Purpose 是否已赋值
+                     * 
                      */
                     bool PurposeHasBeenSet() const;
 
                     /**
                      * 获取将作为超级管理员账号的手机号码
                      * @return PhoneNumber 将作为超级管理员账号的手机号码
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置将作为超级管理员账号的手机号码
-                     * @param PhoneNumber 将作为超级管理员账号的手机号码
+                     * @param _phoneNumber 将作为超级管理员账号的手机号码
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取短信验证码
                      * @return Code 短信验证码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置短信验证码
-                     * @param Code 短信验证码
+                     * @param _code 短信验证码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取官方云盘实例 ID
                      * @return InstanceId 官方云盘实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置官方云盘实例 ID
-                     * @param InstanceId 官方云盘实例 ID
+                     * @param _instanceId 官方云盘实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取将作为超级管理员账号的手机号码的国家代码。默认为 +86。
                      * @return CountryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
                      * 设置将作为超级管理员账号的手机号码的国家代码。默认为 +86。
-                     * @param CountryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     * @param _countryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
+                     * 
                      */
                     void SetCountryCode(const std::string& _countryCode);
 
                     /**
                      * 判断参数 CountryCode 是否已赋值
                      * @return CountryCode 是否已赋值
+                     * 
                      */
                     bool CountryCodeHasBeenSet() const;
 

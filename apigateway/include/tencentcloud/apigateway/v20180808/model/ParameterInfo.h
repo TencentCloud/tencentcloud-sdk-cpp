@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取名字
                      * @return Name 名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
-                     * @param Name 名字
+                     * @param _name 名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取当前值
                      * @return Value 当前值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置当前值
-                     * @param Value 当前值
+                     * @param _value 当前值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取默认值
                      * @return Default 默认值
+                     * 
                      */
                     int64_t GetDefault() const;
 
                     /**
                      * 设置默认值
-                     * @param Default 默认值
+                     * @param _default 默认值
+                     * 
                      */
                     void SetDefault(const int64_t& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
                     /**
                      * 获取单位
                      * @return Unit 单位
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-                     * @param Unit 单位
+                     * @param _unit 单位
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
                     /**
                      * 获取类型, integer|string
                      * @return Type 类型, integer|string
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型, integer|string
-                     * @param Type 类型, integer|string
+                     * @param _type 类型, integer|string
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取最小
                      * @return Minimum 最小
+                     * 
                      */
                     int64_t GetMinimum() const;
 
                     /**
                      * 设置最小
-                     * @param Minimum 最小
+                     * @param _minimum 最小
+                     * 
                      */
                     void SetMinimum(const int64_t& _minimum);
 
                     /**
                      * 判断参数 Minimum 是否已赋值
                      * @return Minimum 是否已赋值
+                     * 
                      */
                     bool MinimumHasBeenSet() const;
 
                     /**
                      * 获取最大
                      * @return Maximum 最大
+                     * 
                      */
                     int64_t GetMaximum() const;
 
                     /**
                      * 设置最大
-                     * @param Maximum 最大
+                     * @param _maximum 最大
+                     * 
                      */
                     void SetMaximum(const int64_t& _maximum);
 
                     /**
                      * 判断参数 Maximum 是否已赋值
                      * @return Maximum 是否已赋值
+                     * 
                      */
                     bool MaximumHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifedTime 修改时间
+                     * 
                      */
                     std::string GetModifedTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifedTime 修改时间
+                     * @param _modifedTime 修改时间
+                     * 
                      */
                     void SetModifedTime(const std::string& _modifedTime);
 
                     /**
                      * 判断参数 ModifedTime 是否已赋值
                      * @return ModifedTime 是否已赋值
+                     * 
                      */
                     bool ModifedTimeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueString 字符类型的值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValueString() const;
 
                     /**
                      * 设置字符类型的值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueString 字符类型的值，当Type为string时才有意义
+                     * @param _valueString 字符类型的值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueString(const std::string& _valueString);
 
                     /**
                      * 判断参数 ValueString 是否已赋值
                      * @return ValueString 是否已赋值
+                     * 
                      */
                     bool ValueStringHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValueString 字符类型的默认值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultValueString() const;
 
                     /**
                      * 设置字符类型的默认值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultValueString 字符类型的默认值，当Type为string时才有意义
+                     * @param _defaultValueString 字符类型的默认值，当Type为string时才有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultValueString(const std::string& _defaultValueString);
 
                     /**
                      * 判断参数 DefaultValueString 是否已赋值
                      * @return DefaultValueString 是否已赋值
+                     * 
                      */
                     bool DefaultValueStringHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range 可调整范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRange() const;
 
                     /**
                      * 设置可调整范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range 可调整范围
+                     * @param _range 可调整范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRange(const std::string& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 

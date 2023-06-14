@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取视频帧率。
                      * @return VideoFPS 视频帧率。
+                     * 
                      */
                     int64_t GetVideoFPS() const;
 
                     /**
                      * 设置视频帧率。
-                     * @param VideoFPS 视频帧率。
+                     * @param _videoFPS 视频帧率。
+                     * 
                      */
                     void SetVideoFPS(const int64_t& _videoFPS);
 
                     /**
                      * 判断参数 VideoFPS 是否已赋值
                      * @return VideoFPS 是否已赋值
+                     * 
                      */
                     bool VideoFPSHasBeenSet() const;
 
                     /**
                      * 获取音频帧率。
                      * @return AudioFPS 音频帧率。
+                     * 
                      */
                     int64_t GetAudioFPS() const;
 
                     /**
                      * 设置音频帧率。
-                     * @param AudioFPS 音频帧率。
+                     * @param _audioFPS 音频帧率。
+                     * 
                      */
                     void SetAudioFPS(const int64_t& _audioFPS);
 
                     /**
                      * 判断参数 AudioFPS 是否已赋值
                      * @return AudioFPS 是否已赋值
+                     * 
                      */
                     bool AudioFPSHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
                      * @return ChargeType 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
-                     * @param ChargeType 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
+                     * @param _chargeType 计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取PREPAID需要传递，是否自动续费，1表示自动续费开启
                      * @return RenewFlag PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置PREPAID需要传递，是否自动续费，1表示自动续费开启
-                     * @param RenewFlag PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * @param _renewFlag PREPAID需要传递，是否自动续费，1表示自动续费开启
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取预付费需要传递，计费时间长度，多少个月
                      * @return TimeSpan 预付费需要传递，计费时间长度，多少个月
+                     * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置预付费需要传递，计费时间长度，多少个月
-                     * @param TimeSpan 预付费需要传递，计费时间长度，多少个月
+                     * @param _timeSpan 预付费需要传递，计费时间长度，多少个月
+                     * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 

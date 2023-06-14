@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取小程序appid
                      * @return IotAppID 小程序appid
+                     * 
                      */
                     std::string GetIotAppID() const;
 
                     /**
                      * 设置小程序appid
-                     * @param IotAppID 小程序appid
+                     * @param _iotAppID 小程序appid
+                     * 
                      */
                     void SetIotAppID(const std::string& _iotAppID);
 
                     /**
                      * 判断参数 IotAppID 是否已赋值
                      * @return IotAppID 是否已赋值
+                     * 
                      */
                     bool IotAppIDHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserID 用户ID
+                     * 
                      */
                     std::string GetUserID() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserID 用户ID
+                     * @param _userID 用户ID
+                     * 
                      */
                     void SetUserID(const std::string& _userID);
 
                     /**
                      * 判断参数 UserID 是否已赋值
                      * @return UserID 是否已赋值
+                     * 
                      */
                     bool UserIDHasBeenSet() const;
 
                     /**
                      * 获取家庭ID
                      * @return FamilyId 家庭ID
+                     * 
                      */
                     std::string GetFamilyId() const;
 
                     /**
                      * 设置家庭ID
-                     * @param FamilyId 家庭ID
+                     * @param _familyId 家庭ID
+                     * 
                      */
                     void SetFamilyId(const std::string& _familyId);
 
                     /**
                      * 判断参数 FamilyId 是否已赋值
                      * @return FamilyId 是否已赋值
+                     * 
                      */
                     bool FamilyIdHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取房间ID
                      * @return RoomId 房间ID
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间ID
-                     * @param RoomId 房间ID
+                     * @param _roomId 房间ID
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取Binlog保留天数
                      * @return BinlogSaveDays Binlog保留天数
+                     * 
                      */
                     int64_t GetBinlogSaveDays() const;
 
                     /**
                      * 判断参数 BinlogSaveDays 是否已赋值
                      * @return BinlogSaveDays 是否已赋值
+                     * 
                      */
                     bool BinlogSaveDaysHasBeenSet() const;
 

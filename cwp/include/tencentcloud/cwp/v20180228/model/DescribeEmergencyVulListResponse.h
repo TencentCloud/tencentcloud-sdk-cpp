@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 漏洞列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EmergencyVul> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 漏洞总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExistsRisk 是否存在风险
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetExistsRisk() const;
 
                     /**
                      * 判断参数 ExistsRisk 是否已赋值
                      * @return ExistsRisk 是否已赋值
+                     * 
                      */
                     bool ExistsRiskHasBeenSet() const;
 

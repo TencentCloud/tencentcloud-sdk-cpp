@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。
                      * @return KeyIds 白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。
+                     * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
                      * 设置白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。
-                     * @param KeyIds 白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。
+                     * @param _keyIds 白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。
+                     * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
 
                     /**
                      * 判断参数 KeyIds 是否已赋值
                      * @return KeyIds 是否已赋值
+                     * 
                      */
                     bool KeyIdsHasBeenSet() const;
 

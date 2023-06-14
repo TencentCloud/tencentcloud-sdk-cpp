@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取工作流 ID。
                      * @return WorkflowId 工作流 ID。
+                     * 
                      */
                     int64_t GetWorkflowId() const;
 
                     /**
                      * 设置工作流 ID。
-                     * @param WorkflowId 工作流 ID。
+                     * @param _workflowId 工作流 ID。
+                     * 
                      */
                     void SetWorkflowId(const int64_t& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 

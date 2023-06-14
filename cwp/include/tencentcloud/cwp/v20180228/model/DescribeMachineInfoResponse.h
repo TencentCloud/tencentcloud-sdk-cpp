@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取机器ip。
                      * @return MachineIp 机器ip。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取受主机安全保护天数。
                      * @return ProtectDays 受主机安全保护天数。
+                     * 
                      */
                     uint64_t GetProtectDays() const;
 
                     /**
                      * 判断参数 ProtectDays 是否已赋值
                      * @return ProtectDays 是否已赋值
+                     * 
                      */
                     bool ProtectDaysHasBeenSet() const;
 
                     /**
                      * 获取操作系统。
                      * @return MachineOs 操作系统。
+                     * 
                      */
                     std::string GetMachineOs() const;
 
                     /**
                      * 判断参数 MachineOs 是否已赋值
                      * @return MachineOs 是否已赋值
+                     * 
                      */
                     bool MachineOsHasBeenSet() const;
 
                     /**
                      * 获取主机名称。
                      * @return MachineName 主机名称。
+                     * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 判断参数 MachineName 是否已赋值
                      * @return MachineName 是否已赋值
+                     * 
                      */
                     bool MachineNameHasBeenSet() const;
 
@@ -98,60 +106,70 @@ namespace TencentCloud
                      * @return MachineStatus 在线状态。
 <li>ONLINE： 在线</li>
 <li>OFFLINE：离线</li>
+                     * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
                      * 判断参数 MachineStatus 是否已赋值
                      * @return MachineStatus 是否已赋值
+                     * 
                      */
                     bool MachineStatusHasBeenSet() const;
 
                     /**
                      * 获取CVM或BM主机唯一标识。
                      * @return InstanceId CVM或BM主机唯一标识。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取主机外网IP。
                      * @return MachineWanIp 主机外网IP。
+                     * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
                      * 判断参数 MachineWanIp 是否已赋值
                      * @return MachineWanIp 是否已赋值
+                     * 
                      */
                     bool MachineWanIpHasBeenSet() const;
 
                     /**
                      * 获取CVM或BM主机唯一Uuid。
                      * @return Quuid CVM或BM主机唯一Uuid。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端唯一Uuid。
                      * @return Uuid 主机安全客户端唯一Uuid。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
@@ -162,24 +180,28 @@ namespace TencentCloud
                      * @return IsProVersion 是否开通专业版。
 <li>true：是</li>
 <li>false：否</li>
+                     * 
                      */
                     bool GetIsProVersion() const;
 
                     /**
                      * 判断参数 IsProVersion 是否已赋值
                      * @return IsProVersion 是否已赋值
+                     * 
                      */
                     bool IsProVersionHasBeenSet() const;
 
                     /**
                      * 获取专业版开通时间。
                      * @return ProVersionOpenDate 专业版开通时间。
+                     * 
                      */
                     std::string GetProVersionOpenDate() const;
 
                     /**
                      * 判断参数 ProVersionOpenDate 是否已赋值
                      * @return ProVersionOpenDate 是否已赋值
+                     * 
                      */
                     bool ProVersionOpenDateHasBeenSet() const;
 
@@ -196,24 +218,28 @@ namespace TencentCloud
 <li>ECM: 边缘计算服务器</li>
 <li>LH: 轻量应用服务器</li>
 <li>Other: 混合云机器</li>
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
                     /**
                      * 获取机器所属地域。如：ap-guangzhou，ap-shanghai
                      * @return MachineRegion 机器所属地域。如：ap-guangzhou，ap-shanghai
+                     * 
                      */
                     std::string GetMachineRegion() const;
 
                     /**
                      * 判断参数 MachineRegion 是否已赋值
                      * @return MachineRegion 是否已赋值
+                     * 
                      */
                     bool MachineRegionHasBeenSet() const;
 
@@ -224,84 +250,98 @@ namespace TencentCloud
                      * @return PayMode 主机状态。
 <li>POSTPAY: 表示后付费，即按量计费  </li>
 <li>PREPAY: 表示预付费，即包年包月</li>
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取免费木马剩余检测数量。
                      * @return FreeMalwaresLeft 免费木马剩余检测数量。
+                     * 
                      */
                     uint64_t GetFreeMalwaresLeft() const;
 
                     /**
                      * 判断参数 FreeMalwaresLeft 是否已赋值
                      * @return FreeMalwaresLeft 是否已赋值
+                     * 
                      */
                     bool FreeMalwaresLeftHasBeenSet() const;
 
                     /**
                      * 获取免费漏洞剩余检测数量。
                      * @return FreeVulsLeft 免费漏洞剩余检测数量。
+                     * 
                      */
                     uint64_t GetFreeVulsLeft() const;
 
                     /**
                      * 判断参数 FreeVulsLeft 是否已赋值
                      * @return FreeVulsLeft 是否已赋值
+                     * 
                      */
                     bool FreeVulsLeftHasBeenSet() const;
 
                     /**
                      * 获取agent版本号
                      * @return AgentVersion agent版本号
+                     * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
                      * 判断参数 AgentVersion 是否已赋值
                      * @return AgentVersion 是否已赋值
+                     * 
                      */
                     bool AgentVersionHasBeenSet() const;
 
                     /**
                      * 获取专业版到期时间(仅预付费)
                      * @return ProVersionDeadline 专业版到期时间(仅预付费)
+                     * 
                      */
                     std::string GetProVersionDeadline() const;
 
                     /**
                      * 判断参数 ProVersionDeadline 是否已赋值
                      * @return ProVersionDeadline 是否已赋值
+                     * 
                      */
                     bool ProVersionDeadlineHasBeenSet() const;
 
                     /**
                      * 获取是否有资产扫描记录，0无，1有
                      * @return HasAssetScan 是否有资产扫描记录，0无，1有
+                     * 
                      */
                     uint64_t GetHasAssetScan() const;
 
                     /**
                      * 判断参数 HasAssetScan 是否已赋值
                      * @return HasAssetScan 是否已赋值
+                     * 
                      */
                     bool HasAssetScanHasBeenSet() const;
 
                     /**
                      * 获取防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      * @return ProtectType 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * 
                      */
                     std::string GetProtectType() const;
 
                     /**
                      * 判断参数 ProtectType 是否已赋值
                      * @return ProtectType 是否已赋值
+                     * 
                      */
                     bool ProtectTypeHasBeenSet() const;
 

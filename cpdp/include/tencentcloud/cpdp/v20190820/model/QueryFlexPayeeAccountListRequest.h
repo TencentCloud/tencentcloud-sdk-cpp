@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取账户属性信息
                      * @return PropertyInfo 账户属性信息
+                     * 
                      */
                     PayeeAccountPropertyInfo GetPropertyInfo() const;
 
                     /**
                      * 设置账户属性信息
-                     * @param PropertyInfo 账户属性信息
+                     * @param _propertyInfo 账户属性信息
+                     * 
                      */
                     void SetPropertyInfo(const PayeeAccountPropertyInfo& _propertyInfo);
 
                     /**
                      * 判断参数 PropertyInfo 是否已赋值
                      * @return PropertyInfo 是否已赋值
+                     * 
                      */
                     bool PropertyInfoHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return PageNumber 分页
+                     * 
                      */
                     Paging GetPageNumber() const;
 
                     /**
                      * 设置分页
-                     * @param PageNumber 分页
+                     * @param _pageNumber 分页
+                     * 
                      */
                     void SetPageNumber(const Paging& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
@@ -127,6 +139,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -136,17 +149,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

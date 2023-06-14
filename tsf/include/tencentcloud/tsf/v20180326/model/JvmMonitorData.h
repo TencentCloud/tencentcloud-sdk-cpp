@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeapMemory 堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetHeapMemory() const;
 
                     /**
                      * 设置堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeapMemory 堆内存监控图,三条线
+                     * @param _heapMemory 堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeapMemory(const MemoryPicture& _heapMemory);
 
                     /**
                      * 判断参数 HeapMemory 是否已赋值
                      * @return HeapMemory 是否已赋值
+                     * 
                      */
                     bool HeapMemoryHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonHeapMemory 非堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetNonHeapMemory() const;
 
                     /**
                      * 设置非堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NonHeapMemory 非堆内存监控图,三条线
+                     * @param _nonHeapMemory 非堆内存监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNonHeapMemory(const MemoryPicture& _nonHeapMemory);
 
                     /**
                      * 判断参数 NonHeapMemory 是否已赋值
                      * @return NonHeapMemory 是否已赋值
+                     * 
                      */
                     bool NonHeapMemoryHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdenSpace 伊甸园区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetEdenSpace() const;
 
                     /**
                      * 设置伊甸园区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EdenSpace 伊甸园区监控图,三条线
+                     * @param _edenSpace 伊甸园区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdenSpace(const MemoryPicture& _edenSpace);
 
                     /**
                      * 判断参数 EdenSpace 是否已赋值
                      * @return EdenSpace 是否已赋值
+                     * 
                      */
                     bool EdenSpaceHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurvivorSpace 幸存者区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetSurvivorSpace() const;
 
                     /**
                      * 设置幸存者区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurvivorSpace 幸存者区监控图,三条线
+                     * @param _survivorSpace 幸存者区监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSurvivorSpace(const MemoryPicture& _survivorSpace);
 
                     /**
                      * 判断参数 SurvivorSpace 是否已赋值
                      * @return SurvivorSpace 是否已赋值
+                     * 
                      */
                     bool SurvivorSpaceHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldSpace 老年代监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetOldSpace() const;
 
                     /**
                      * 设置老年代监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldSpace 老年代监控图,三条线
+                     * @param _oldSpace 老年代监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldSpace(const MemoryPicture& _oldSpace);
 
                     /**
                      * 判断参数 OldSpace 是否已赋值
                      * @return OldSpace 是否已赋值
+                     * 
                      */
                     bool OldSpaceHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaSpace 元空间监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemoryPicture GetMetaSpace() const;
 
                     /**
                      * 设置元空间监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaSpace 元空间监控图,三条线
+                     * @param _metaSpace 元空间监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaSpace(const MemoryPicture& _metaSpace);
 
                     /**
                      * 判断参数 MetaSpace 是否已赋值
                      * @return MetaSpace 是否已赋值
+                     * 
                      */
                     bool MetaSpaceHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThreadPicture 线程监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ThreadPicture GetThreadPicture() const;
 
                     /**
                      * 设置线程监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ThreadPicture 线程监控图,三条线
+                     * @param _threadPicture 线程监控图,三条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetThreadPicture(const ThreadPicture& _threadPicture);
 
                     /**
                      * 判断参数 ThreadPicture 是否已赋值
                      * @return ThreadPicture 是否已赋值
+                     * 
                      */
                     bool ThreadPictureHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return YoungGC youngGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CurvePoint> GetYoungGC() const;
 
                     /**
                      * 设置youngGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param YoungGC youngGC增量监控图,一条线
+                     * @param _youngGC youngGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYoungGC(const std::vector<CurvePoint>& _youngGC);
 
                     /**
                      * 判断参数 YoungGC 是否已赋值
                      * @return YoungGC 是否已赋值
+                     * 
                      */
                     bool YoungGCHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullGC fullGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CurvePoint> GetFullGC() const;
 
                     /**
                      * 设置fullGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullGC fullGC增量监控图,一条线
+                     * @param _fullGC fullGC增量监控图,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullGC(const std::vector<CurvePoint>& _fullGC);
 
                     /**
                      * 判断参数 FullGC 是否已赋值
                      * @return FullGC 是否已赋值
+                     * 
                      */
                     bool FullGCHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuUsage cpu使用率,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CurvePoint> GetCpuUsage() const;
 
                     /**
                      * 设置cpu使用率,一条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuUsage cpu使用率,一条线
+                     * @param _cpuUsage cpu使用率,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuUsage(const std::vector<CurvePoint>& _cpuUsage);
 
                     /**
                      * 判断参数 CpuUsage 是否已赋值
                      * @return CpuUsage 是否已赋值
+                     * 
                      */
                     bool CpuUsageHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassCount 加载类数,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CurvePoint> GetClassCount() const;
 
                     /**
                      * 设置加载类数,一条线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassCount 加载类数,一条线
+                     * @param _classCount 加载类数,一条线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassCount(const std::vector<CurvePoint>& _classCount);
 
                     /**
                      * 判断参数 ClassCount 是否已赋值
                      * @return ClassCount 是否已赋值
+                     * 
                      */
                     bool ClassCountHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户按键（0-9、*、#、A-D)
                      * @return Key 用户按键（0-9、*、#、A-D)
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置用户按键（0-9、*、#、A-D)
-                     * @param Key 用户按键（0-9、*、#、A-D)
+                     * @param _key 用户按键（0-9、*、#、A-D)
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取1: 呼通被叫 2：interruptPrompt 重播提示 3：拆线
                      * @return Operate 1: 呼通被叫 2：interruptPrompt 重播提示 3：拆线
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置1: 呼通被叫 2：interruptPrompt 重播提示 3：拆线
-                     * @param Operate 1: 呼通被叫 2：interruptPrompt 重播提示 3：拆线
+                     * @param _operate 1: 呼通被叫 2：interruptPrompt 重播提示 3：拆线
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 

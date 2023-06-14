@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
                      * @return InstanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
-                     * @param InstanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * @param _instanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
  查询实例规格获得。
                      * @return Memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
-                     * @param Memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
+                     * @param _memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
                      * @return Storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
-                     * @param Storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
+                     * @param _storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取新节点数，传0表示节点数不变
                      * @return NodeCount 新节点数，传0表示节点数不变
+                     * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
                      * 设置新节点数，传0表示节点数不变
-                     * @param NodeCount 新节点数，传0表示节点数不变
+                     * @param _nodeCount 新节点数，传0表示节点数不变
+                     * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
@@ -129,6 +141,7 @@ namespace TencentCloud
                      * @return AmountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     std::string GetAmountUnit() const;
 
@@ -136,15 +149,17 @@ namespace TencentCloud
                      * 设置价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
-                     * @param AmountUnit 价格金额单位，不传默认单位为分，取值：  
+                     * @param _amountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     void SetAmountUnit(const std::string& _amountUnit);
 
                     /**
                      * 判断参数 AmountUnit 是否已赋值
                      * @return AmountUnit 是否已赋值
+                     * 
                      */
                     bool AmountUnitHasBeenSet() const;
 

@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取匹配到的歌曲基础信息。
                      * @return KTVMusicBaseInfo 匹配到的歌曲基础信息。
+                     * 
                      */
                     KTVMusicBaseInfo GetKTVMusicBaseInfo() const;
 
                     /**
                      * 设置匹配到的歌曲基础信息。
-                     * @param KTVMusicBaseInfo 匹配到的歌曲基础信息。
+                     * @param _kTVMusicBaseInfo 匹配到的歌曲基础信息。
+                     * 
                      */
                     void SetKTVMusicBaseInfo(const KTVMusicBaseInfo& _kTVMusicBaseInfo);
 
                     /**
                      * 判断参数 KTVMusicBaseInfo 是否已赋值
                      * @return KTVMusicBaseInfo 是否已赋值
+                     * 
                      */
                     bool KTVMusicBaseInfoHasBeenSet() const;
 
                     /**
                      * 获取命中规则。
                      * @return MatchRule 命中规则。
+                     * 
                      */
                     KTVMatchRule GetMatchRule() const;
 
                     /**
                      * 设置命中规则。
-                     * @param MatchRule 命中规则。
+                     * @param _matchRule 命中规则。
+                     * 
                      */
                     void SetMatchRule(const KTVMatchRule& _matchRule);
 
                     /**
                      * 判断参数 MatchRule 是否已赋值
                      * @return MatchRule 是否已赋值
+                     * 
                      */
                     bool MatchRuleHasBeenSet() const;
 
@@ -90,20 +96,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AMEMusicBaseInfo AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AMEMusicBaseInfo GetAMEMusicBaseInfo() const;
 
                     /**
                      * 设置AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AMEMusicBaseInfo AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+                     * @param _aMEMusicBaseInfo AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAMEMusicBaseInfo(const AMEMusicBaseInfo& _aMEMusicBaseInfo);
 
                     /**
                      * 判断参数 AMEMusicBaseInfo 是否已赋值
                      * @return AMEMusicBaseInfo 是否已赋值
+                     * 
                      */
                     bool AMEMusicBaseInfoHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取统计信息详细数据
                      * @return Data 统计信息详细数据
+                     * 
                      */
                     std::vector<BotStats> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取当前返回数据的粒度，取值："2min"或者"hour"，分别表示2分钟或者1小时粒度
                      * @return Interval 当前返回数据的粒度，取值："2min"或者"hour"，分别表示2分钟或者1小时粒度
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 

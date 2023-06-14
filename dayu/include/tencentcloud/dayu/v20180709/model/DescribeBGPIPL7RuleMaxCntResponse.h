@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取高防IP最多可添加的7层规则数量
                      * @return Count 高防IP最多可添加的7层规则数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

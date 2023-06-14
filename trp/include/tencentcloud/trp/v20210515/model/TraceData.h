@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取溯源ID
                      * @return TraceId 溯源ID
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置溯源ID
-                     * @param TraceId 溯源ID
+                     * @param _traceId 溯源ID
+                     * 
                      */
                     void SetTraceId(const std::string& _traceId);
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取码类型 0: 批次, 1: 码, 2: 生产任务
                      * @return Type 码类型 0: 批次, 1: 码, 2: 生产任务
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置码类型 0: 批次, 1: 码, 2: 生产任务
-                     * @param Type 码类型 0: 批次, 1: 码, 2: 生产任务
+                     * @param _type 码类型 0: 批次, 1: 码, 2: 生产任务
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -108,74 +117,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 码值，跟码类型一一对应
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置码值，跟码类型一一对应
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 码值，跟码类型一一对应
+                     * @param _code 码值，跟码类型一一对应
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取排序，在Phase相同情况下，值越小排名靠前
                      * @return Rank 排序，在Phase相同情况下，值越小排名靠前
+                     * 
                      */
                     uint64_t GetRank() const;
 
                     /**
                      * 设置排序，在Phase相同情况下，值越小排名靠前
-                     * @param Rank 排序，在Phase相同情况下，值越小排名靠前
+                     * @param _rank 排序，在Phase相同情况下，值越小排名靠前
+                     * 
                      */
                     void SetRank(const uint64_t& _rank);
 
                     /**
                      * 判断参数 Rank 是否已赋值
                      * @return Rank 是否已赋值
+                     * 
                      */
                     bool RankHasBeenSet() const;
 
                     /**
                      * 获取溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      * @return Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * 
                      */
                     uint64_t GetPhase() const;
 
                     /**
                      * 设置溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-                     * @param Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * @param _phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * 
                      */
                     void SetPhase(const uint64_t& _phase);
 
                     /**
                      * 判断参数 Phase 是否已赋值
                      * @return Phase 是否已赋值
+                     * 
                      */
                     bool PhaseHasBeenSet() const;
 
                     /**
                      * 获取溯源环节名称
                      * @return PhaseName 溯源环节名称
+                     * 
                      */
                     std::string GetPhaseName() const;
 
                     /**
                      * 设置溯源环节名称
-                     * @param PhaseName 溯源环节名称
+                     * @param _phaseName 溯源环节名称
+                     * 
                      */
                     void SetPhaseName(const std::string& _phaseName);
 
                     /**
                      * 判断参数 PhaseName 是否已赋值
                      * @return PhaseName 是否已赋值
+                     * 
                      */
                     bool PhaseNameHasBeenSet() const;
 
@@ -184,38 +205,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceTime 溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTraceTime() const;
 
                     /**
                      * 设置溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TraceTime 溯源时间
+                     * @param _traceTime 溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTraceTime(const std::string& _traceTime);
 
                     /**
                      * 判断参数 TraceTime 是否已赋值
                      * @return TraceTime 是否已赋值
+                     * 
                      */
                     bool TraceTimeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return TraceItems 无
+                     * 
                      */
                     std::vector<TraceItem> GetTraceItems() const;
 
                     /**
                      * 设置无
-                     * @param TraceItems 无
+                     * @param _traceItems 无
+                     * 
                      */
                     void SetTraceItems(const std::vector<TraceItem>& _traceItems);
 
                     /**
                      * 判断参数 TraceItems 是否已赋值
                      * @return TraceItems 是否已赋值
+                     * 
                      */
                     bool TraceItemsHasBeenSet() const;
 
@@ -224,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -246,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainStatus 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetChainStatus() const;
 
                     /**
                      * 设置上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChainStatus 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
+                     * @param _chainStatus 上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChainStatus(const uint64_t& _chainStatus);
 
                     /**
                      * 判断参数 ChainStatus 是否已赋值
                      * @return ChainStatus 是否已赋值
+                     * 
                      */
                     bool ChainStatusHasBeenSet() const;
 
@@ -268,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainTime 上链时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChainTime() const;
 
                     /**
                      * 设置上链时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChainTime 上链时间
+                     * @param _chainTime 上链时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChainTime(const std::string& _chainTime);
 
                     /**
                      * 判断参数 ChainTime 是否已赋值
                      * @return ChainTime 是否已赋值
+                     * 
                      */
                     bool ChainTimeHasBeenSet() const;
 
@@ -290,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainData 上链数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ChainData GetChainData() const;
 
                     /**
                      * 设置上链数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChainData 上链数据
+                     * @param _chainData 上链数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChainData(const ChainData& _chainData);
 
                     /**
                      * 判断参数 ChainData 是否已赋值
                      * @return ChainData 是否已赋值
+                     * 
                      */
                     bool ChainDataHasBeenSet() const;
 
@@ -312,38 +351,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhaseData 溯源阶段配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PhaseData GetPhaseData() const;
 
                     /**
                      * 设置溯源阶段配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhaseData 溯源阶段配置
+                     * @param _phaseData 溯源阶段配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhaseData(const PhaseData& _phaseData);
 
                     /**
                      * 判断参数 PhaseData 是否已赋值
                      * @return PhaseData 是否已赋值
+                     * 
                      */
                     bool PhaseDataHasBeenSet() const;
 
                     /**
                      * 获取溯源阶段状态 0: 无效, 1: 有效
                      * @return Status 溯源阶段状态 0: 无效, 1: 有效
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置溯源阶段状态 0: 无效, 1: 有效
-                     * @param Status 溯源阶段状态 0: 无效, 1: 有效
+                     * @param _status 溯源阶段状态 0: 无效, 1: 有效
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

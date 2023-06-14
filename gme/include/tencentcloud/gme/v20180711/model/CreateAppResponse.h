@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取创建应用返回数据
                      * @return Data 创建应用返回数据
+                     * 
                      */
                     CreateAppResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

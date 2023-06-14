@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回各检测项所影响的资产的列表。
                      * @return AffectedAssetList 返回各检测项所影响的资产的列表。
+                     * 
                      */
                     std::vector<ComplianceAffectedAsset> GetAffectedAssetList() const;
 
                     /**
                      * 判断参数 AffectedAssetList 是否已赋值
                      * @return AffectedAssetList 是否已赋值
+                     * 
                      */
                     bool AffectedAssetListHasBeenSet() const;
 
                     /**
                      * 获取检测项影响的资产的总数。
                      * @return TotalCount 检测项影响的资产的总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

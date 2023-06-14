@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取分页查询偏移量。默认值：0，最小值：0。
                      * @return Offset 分页查询偏移量。默认值：0，最小值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量。默认值：0，最小值：0。
-                     * @param Offset 分页查询偏移量。默认值：0，最小值：0。
+                     * @param _offset 分页查询偏移量。默认值：0，最小值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目。默认值：1000，最大值：1000。
                      * @return Limit 分页查询限制数目。默认值：1000，最大值：1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目。默认值：1000，最大值：1000。
-                     * @param Limit 分页查询限制数目。默认值：1000，最大值：1000。
+                     * @param _limit 分页查询限制数目。默认值：1000，最大值：1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询条件过滤器，复杂类型。
                      * @return Filters 查询条件过滤器，复杂类型。
+                     * 
                      */
                     std::vector<ZoneFilter> GetFilters() const;
 
                     /**
                      * 设置查询条件过滤器，复杂类型。
-                     * @param Filters 查询条件过滤器，复杂类型。
+                     * @param _filters 查询条件过滤器，复杂类型。
+                     * 
                      */
                     void SetFilters(const std::vector<ZoneFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

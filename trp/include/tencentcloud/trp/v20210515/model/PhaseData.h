@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取启用头
                      * @return HeadEnabled 启用头
+                     * 
                      */
                     bool GetHeadEnabled() const;
 
                     /**
                      * 设置启用头
-                     * @param HeadEnabled 启用头
+                     * @param _headEnabled 启用头
+                     * 
                      */
                     void SetHeadEnabled(const bool& _headEnabled);
 
                     /**
                      * 判断参数 HeadEnabled 是否已赋值
                      * @return HeadEnabled 是否已赋值
+                     * 
                      */
                     bool HeadEnabledHasBeenSet() const;
 
                     /**
                      * 获取标题
                      * @return HeadTitle 标题
+                     * 
                      */
                     std::string GetHeadTitle() const;
 
                     /**
                      * 设置标题
-                     * @param HeadTitle 标题
+                     * @param _headTitle 标题
+                     * 
                      */
                     void SetHeadTitle(const std::string& _headTitle);
 
                     /**
                      * 判断参数 HeadTitle 是否已赋值
                      * @return HeadTitle 是否已赋值
+                     * 
                      */
                     bool HeadTitleHasBeenSet() const;
 
                     /**
                      * 获取标识符
                      * @return Key 标识符
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标识符
-                     * @param Key 标识符
+                     * @param _key 标识符
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取小程序AppId
                      * @return AppId 小程序AppId
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置小程序AppId
-                     * @param AppId 小程序AppId
+                     * @param _appId 小程序AppId
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取小程序AppPath
                      * @return AppPath 小程序AppPath
+                     * 
                      */
                     std::string GetAppPath() const;
 
                     /**
                      * 设置小程序AppPath
-                     * @param AppPath 小程序AppPath
+                     * @param _appPath 小程序AppPath
+                     * 
                      */
                     void SetAppPath(const std::string& _appPath);
 
                     /**
                      * 判断参数 AppPath 是否已赋值
                      * @return AppPath 是否已赋值
+                     * 
                      */
                     bool AppPathHasBeenSet() const;
 
                     /**
                      * 获取小程序名称AppName
                      * @return AppName 小程序名称AppName
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置小程序名称AppName
-                     * @param AppName 小程序名称AppName
+                     * @param _appName 小程序名称AppName
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

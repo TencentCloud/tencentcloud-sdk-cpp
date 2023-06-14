@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取gz
                      * @return Alias gz
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置gz
-                     * @param Alias gz
+                     * @param _alias gz
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取1
                      * @return RegionId 1
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置1
-                     * @param RegionId 1
+                     * @param _regionId 1
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取ap-guangzhou
                      * @return RegionName ap-guangzhou
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置ap-guangzhou
-                     * @param RegionName ap-guangzhou
+                     * @param _regionName ap-guangzhou
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取alluser
                      * @return Status alluser
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置alluser
-                     * @param Status alluser
+                     * @param _status alluser
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取remark
                      * @return Remark remark
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置remark
-                     * @param Remark remark
+                     * @param _remark remark
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedAt 更新时间
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdatedAt 更新时间
+                     * @param _updatedAt 更新时间
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
                      * 获取id
                      * @return Id id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-                     * @param Id id
+                     * @param _id id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

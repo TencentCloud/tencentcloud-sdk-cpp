@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取CMK的唯一标志
                      * @return KeyId CMK的唯一标志
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的唯一标志
-                     * @param KeyId CMK的唯一标志
+                     * @param _keyId CMK的唯一标志
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取计划删除时间区间[7,30]
                      * @return PendingWindowInDays 计划删除时间区间[7,30]
+                     * 
                      */
                     uint64_t GetPendingWindowInDays() const;
 
                     /**
                      * 设置计划删除时间区间[7,30]
-                     * @param PendingWindowInDays 计划删除时间区间[7,30]
+                     * @param _pendingWindowInDays 计划删除时间区间[7,30]
+                     * 
                      */
                     void SetPendingWindowInDays(const uint64_t& _pendingWindowInDays);
 
                     /**
                      * 判断参数 PendingWindowInDays 是否已赋值
                      * @return PendingWindowInDays 是否已赋值
+                     * 
                      */
                     bool PendingWindowInDaysHasBeenSet() const;
 

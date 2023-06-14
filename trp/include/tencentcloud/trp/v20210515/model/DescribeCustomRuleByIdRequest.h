@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取码规则ID
                      * @return CustomId 码规则ID
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID
-                     * @param CustomId 码规则ID
+                     * @param _customId 码规则ID
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

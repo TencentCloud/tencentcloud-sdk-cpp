@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取策略，ACCEPT 或者 DROP
                      * @return Action 策略，ACCEPT 或者 DROP
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置策略，ACCEPT 或者 DROP
-                     * @param Action 策略，ACCEPT 或者 DROP
+                     * @param _action 策略，ACCEPT 或者 DROP
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取来源或目的 IP 或 IP 段，例如172.16.0.0/12
                      * @return CidrIp 来源或目的 IP 或 IP 段，例如172.16.0.0/12
+                     * 
                      */
                     std::string GetCidrIp() const;
 
                     /**
                      * 设置来源或目的 IP 或 IP 段，例如172.16.0.0/12
-                     * @param CidrIp 来源或目的 IP 或 IP 段，例如172.16.0.0/12
+                     * @param _cidrIp 来源或目的 IP 或 IP 段，例如172.16.0.0/12
+                     * 
                      */
                     void SetCidrIp(const std::string& _cidrIp);
 
                     /**
                      * 判断参数 CidrIp 是否已赋值
                      * @return CidrIp 是否已赋值
+                     * 
                      */
                     bool CidrIpHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return PortRange 端口
+                     * 
                      */
                     std::string GetPortRange() const;
 
                     /**
                      * 设置端口
-                     * @param PortRange 端口
+                     * @param _portRange 端口
+                     * 
                      */
                     void SetPortRange(const std::string& _portRange);
 
                     /**
                      * 判断参数 PortRange 是否已赋值
                      * @return PortRange 是否已赋值
+                     * 
                      */
                     bool PortRangeHasBeenSet() const;
 
                     /**
                      * 获取网络协议，支持 UDP、TCP 等
                      * @return IpProtocol 网络协议，支持 UDP、TCP 等
+                     * 
                      */
                     std::string GetIpProtocol() const;
 
                     /**
                      * 设置网络协议，支持 UDP、TCP 等
-                     * @param IpProtocol 网络协议，支持 UDP、TCP 等
+                     * @param _ipProtocol 网络协议，支持 UDP、TCP 等
+                     * 
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
 
                     /**
                      * 判断参数 IpProtocol 是否已赋值
                      * @return IpProtocol 是否已赋值
+                     * 
                      */
                     bool IpProtocolHasBeenSet() const;
 
                     /**
                      * 获取规则描述
                      * @return Description 规则描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-                     * @param Description 规则描述
+                     * @param _description 规则描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

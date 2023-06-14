@@ -62,20 +62,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepairInfo 画质修复控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RepairInfo GetRepairInfo() const;
 
                     /**
                      * 设置画质修复控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepairInfo 画质修复控制参数。
+                     * @param _repairInfo 画质修复控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepairInfo(const RepairInfo& _repairInfo);
 
                     /**
                      * 判断参数 RepairInfo 是否已赋值
                      * @return RepairInfo 是否已赋值
+                     * 
                      */
                     bool RepairInfoHasBeenSet() const;
 
@@ -84,20 +87,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoFrameInterpolationInfo 智能插帧控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoFrameInterpolationInfo GetVideoFrameInterpolationInfo() const;
 
                     /**
                      * 设置智能插帧控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoFrameInterpolationInfo 智能插帧控制参数。
+                     * @param _videoFrameInterpolationInfo 智能插帧控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoFrameInterpolationInfo(const VideoFrameInterpolationInfo& _videoFrameInterpolationInfo);
 
                     /**
                      * 判断参数 VideoFrameInterpolationInfo 是否已赋值
                      * @return VideoFrameInterpolationInfo 是否已赋值
+                     * 
                      */
                     bool VideoFrameInterpolationInfoHasBeenSet() const;
 
@@ -106,20 +112,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperResolutionInfo 画面超分控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SuperResolutionInfo GetSuperResolutionInfo() const;
 
                     /**
                      * 设置画面超分控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuperResolutionInfo 画面超分控制参数。
+                     * @param _superResolutionInfo 画面超分控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuperResolutionInfo(const SuperResolutionInfo& _superResolutionInfo);
 
                     /**
                      * 判断参数 SuperResolutionInfo 是否已赋值
                      * @return SuperResolutionInfo 是否已赋值
+                     * 
                      */
                     bool SuperResolutionInfoHasBeenSet() const;
 
@@ -128,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HDRInfo 高动态范围类型控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HDRInfo GetHDRInfo() const;
 
                     /**
                      * 设置高动态范围类型控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HDRInfo 高动态范围类型控制参数。
+                     * @param _hDRInfo 高动态范围类型控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHDRInfo(const HDRInfo& _hDRInfo);
 
                     /**
                      * 判断参数 HDRInfo 是否已赋值
                      * @return HDRInfo 是否已赋值
+                     * 
                      */
                     bool HDRInfoHasBeenSet() const;
 
@@ -150,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoDenoiseInfo 视频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoDenoiseInfo GetVideoDenoiseInfo() const;
 
                     /**
                      * 设置视频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoDenoiseInfo 视频降噪控制参数。
+                     * @param _videoDenoiseInfo 视频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoDenoiseInfo(const VideoDenoiseInfo& _videoDenoiseInfo);
 
                     /**
                      * 判断参数 VideoDenoiseInfo 是否已赋值
                      * @return VideoDenoiseInfo 是否已赋值
+                     * 
                      */
                     bool VideoDenoiseInfoHasBeenSet() const;
 
@@ -172,20 +187,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorInfo 色彩增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ColorEnhanceInfo GetColorInfo() const;
 
                     /**
                      * 设置色彩增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColorInfo 色彩增强控制参数。
+                     * @param _colorInfo 色彩增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColorInfo(const ColorEnhanceInfo& _colorInfo);
 
                     /**
                      * 判断参数 ColorInfo 是否已赋值
                      * @return ColorInfo 是否已赋值
+                     * 
                      */
                     bool ColorInfoHasBeenSet() const;
 
@@ -194,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SharpInfo 细节增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SharpEnhanceInfo GetSharpInfo() const;
 
                     /**
                      * 设置细节增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SharpInfo 细节增强控制参数。
+                     * @param _sharpInfo 细节增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSharpInfo(const SharpEnhanceInfo& _sharpInfo);
 
                     /**
                      * 判断参数 SharpInfo 是否已赋值
                      * @return SharpInfo 是否已赋值
+                     * 
                      */
                     bool SharpInfoHasBeenSet() const;
 
@@ -216,20 +237,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceInfo 人脸增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FaceEnhanceInfo GetFaceInfo() const;
 
                     /**
                      * 设置人脸增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FaceInfo 人脸增强控制参数。
+                     * @param _faceInfo 人脸增强控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFaceInfo(const FaceEnhanceInfo& _faceInfo);
 
                     /**
                      * 判断参数 FaceInfo 是否已赋值
                      * @return FaceInfo 是否已赋值
+                     * 
                      */
                     bool FaceInfoHasBeenSet() const;
 
@@ -238,20 +262,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowLightInfo 低光照控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LowLightEnhanceInfo GetLowLightInfo() const;
 
                     /**
                      * 设置低光照控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LowLightInfo 低光照控制参数。
+                     * @param _lowLightInfo 低光照控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLowLightInfo(const LowLightEnhanceInfo& _lowLightInfo);
 
                     /**
                      * 判断参数 LowLightInfo 是否已赋值
                      * @return LowLightInfo 是否已赋值
+                     * 
                      */
                     bool LowLightInfoHasBeenSet() const;
 
@@ -260,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScratchRepairInfo 去划痕控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScratchRepairInfo GetScratchRepairInfo() const;
 
                     /**
                      * 设置去划痕控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScratchRepairInfo 去划痕控制参数。
+                     * @param _scratchRepairInfo 去划痕控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScratchRepairInfo(const ScratchRepairInfo& _scratchRepairInfo);
 
                     /**
                      * 判断参数 ScratchRepairInfo 是否已赋值
                      * @return ScratchRepairInfo 是否已赋值
+                     * 
                      */
                     bool ScratchRepairInfoHasBeenSet() const;
 
@@ -282,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ArtifactRepairInfo 去伪影控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ArtifactRepairInfo GetArtifactRepairInfo() const;
 
                     /**
                      * 设置去伪影控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ArtifactRepairInfo 去伪影控制参数。
+                     * @param _artifactRepairInfo 去伪影控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArtifactRepairInfo(const ArtifactRepairInfo& _artifactRepairInfo);
 
                     /**
                      * 判断参数 ArtifactRepairInfo 是否已赋值
                      * @return ArtifactRepairInfo 是否已赋值
+                     * 
                      */
                     bool ArtifactRepairInfoHasBeenSet() const;
 

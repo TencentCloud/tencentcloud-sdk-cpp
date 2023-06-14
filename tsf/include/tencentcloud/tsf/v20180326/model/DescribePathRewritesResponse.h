@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取路径重写翻页对象
                      * @return Result 路径重写翻页对象
+                     * 
                      */
                     PathRewritePage GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

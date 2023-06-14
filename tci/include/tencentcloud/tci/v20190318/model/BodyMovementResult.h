@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取置信度
                      * @return Confidence 置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度
-                     * @param Confidence 置信度
+                     * @param _confidence 置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取识别结果高度
                      * @return Height 识别结果高度
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置识别结果高度
-                     * @param Height 识别结果高度
+                     * @param _height 识别结果高度
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取识别结果左坐标
                      * @return Left 识别结果左坐标
+                     * 
                      */
                     int64_t GetLeft() const;
 
                     /**
                      * 设置识别结果左坐标
-                     * @param Left 识别结果左坐标
+                     * @param _left 识别结果左坐标
+                     * 
                      */
                     void SetLeft(const int64_t& _left);
 
                     /**
                      * 判断参数 Left 是否已赋值
                      * @return Left 是否已赋值
+                     * 
                      */
                     bool LeftHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 2、point_to_the_blackboard 指黑板
 3、writing_blackboard 写板书
 4、other 其他
+                     * 
                      */
                     std::string GetMovements() const;
 
@@ -120,53 +130,61 @@ namespace TencentCloud
 2、point_to_the_blackboard 指黑板
 3、writing_blackboard 写板书
 4、other 其他
-                     * @param Movements 老师动作识别结果，包含
+                     * @param _movements 老师动作识别结果，包含
 1、teach_on_positive_attitude 正面讲解
 2、point_to_the_blackboard 指黑板
 3、writing_blackboard 写板书
 4、other 其他
+                     * 
                      */
                     void SetMovements(const std::string& _movements);
 
                     /**
                      * 判断参数 Movements 是否已赋值
                      * @return Movements 是否已赋值
+                     * 
                      */
                     bool MovementsHasBeenSet() const;
 
                     /**
                      * 获取识别结果顶坐标
                      * @return Top 识别结果顶坐标
+                     * 
                      */
                     int64_t GetTop() const;
 
                     /**
                      * 设置识别结果顶坐标
-                     * @param Top 识别结果顶坐标
+                     * @param _top 识别结果顶坐标
+                     * 
                      */
                     void SetTop(const int64_t& _top);
 
                     /**
                      * 判断参数 Top 是否已赋值
                      * @return Top 是否已赋值
+                     * 
                      */
                     bool TopHasBeenSet() const;
 
                     /**
                      * 获取识别结果宽度
                      * @return Width 识别结果宽度
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置识别结果宽度
-                     * @param Width 识别结果宽度
+                     * @param _width 识别结果宽度
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 

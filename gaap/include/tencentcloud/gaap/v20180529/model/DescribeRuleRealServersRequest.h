@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取转发规则ID
                      * @return RuleId 转发规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置转发规则ID
-                     * @param RuleId 转发规则ID
+                     * @param _ruleId 转发规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为1000。
                      * @return Limit 返回数量，默认为20，最大值为1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为1000。
-                     * @param Limit 返回数量，默认为20，最大值为1000。
+                     * @param _limit 返回数量，默认为20，最大值为1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

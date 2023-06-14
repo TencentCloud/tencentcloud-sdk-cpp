@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取key文件名称
                      * @return FileName key文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置key文件名称
-                     * @param FileName key文件名称
+                     * @param _fileName key文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取key文件扩展名
                      * @return FileExtType key文件扩展名
+                     * 
                      */
                     std::string GetFileExtType() const;
 
                     /**
                      * 设置key文件扩展名
-                     * @param FileExtType key文件扩展名
+                     * @param _fileExtType key文件扩展名
+                     * 
                      */
                     void SetFileExtType(const std::string& _fileExtType);
 
                     /**
                      * 判断参数 FileExtType 是否已赋值
                      * @return FileExtType 是否已赋值
+                     * 
                      */
                     bool FileExtTypeHasBeenSet() const;
 
                     /**
                      * 获取key文件内容
                      * @return FileContent key文件内容
+                     * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置key文件内容
-                     * @param FileContent key文件内容
+                     * @param _fileContent key文件内容
+                     * 
                      */
                     void SetFileContent(const std::string& _fileContent);
 
                     /**
                      * 判断参数 FileContent 是否已赋值
                      * @return FileContent 是否已赋值
+                     * 
                      */
                     bool FileContentHasBeenSet() const;
 
                     /**
                      * 获取key文件大小
                      * @return FileSize key文件大小
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置key文件大小
-                     * @param FileSize key文件大小
+                     * @param _fileSize key文件大小
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 

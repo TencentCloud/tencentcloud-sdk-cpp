@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取场景识别结果
                      * @return Scene 场景识别结果
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景识别结果
-                     * @param Scene 场景识别结果
+                     * @param _scene 场景识别结果
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
                      * @return Suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-                     * @param Suggestion 建议您拿到判断结果后的执行操作。
+                     * @param _suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -92,110 +98,128 @@ namespace TencentCloud
 以及令人反感、不安全或不适宜的内容类型。
                      * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
-                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+                     * @param _label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取子标签检测结果
                      * @return SubLabel 子标签检测结果
+                     * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置子标签检测结果
-                     * @param SubLabel 子标签检测结果
+                     * @param _subLabel 子标签检测结果
+                     * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
 
                     /**
                      * 判断参数 SubLabel 是否已赋值
                      * @return SubLabel 是否已赋值
+                     * 
                      */
                     bool SubLabelHasBeenSet() const;
 
                     /**
                      * 获取该标签模型命中的分值
                      * @return Score 该标签模型命中的分值
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置该标签模型命中的分值
-                     * @param Score 该标签模型命中的分值
+                     * @param _score 该标签模型命中的分值
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取ocr结果详情
                      * @return Details ocr结果详情
+                     * 
                      */
                     std::vector<OcrTextDetail> GetDetails() const;
 
                     /**
                      * 设置ocr结果详情
-                     * @param Details ocr结果详情
+                     * @param _details ocr结果详情
+                     * 
                      */
                     void SetDetails(const std::vector<OcrTextDetail>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 
                     /**
                      * 获取ocr识别出的文本结果
                      * @return Text ocr识别出的文本结果
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置ocr识别出的文本结果
-                     * @param Text ocr识别出的文本结果
+                     * @param _text ocr识别出的文本结果
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取是否命中结果，0 未命中 1命中
                      * @return HitFlag 是否命中结果，0 未命中 1命中
+                     * 
                      */
                     uint64_t GetHitFlag() const;
 
                     /**
                      * 设置是否命中结果，0 未命中 1命中
-                     * @param HitFlag 是否命中结果，0 未命中 1命中
+                     * @param _hitFlag 是否命中结果，0 未命中 1命中
+                     * 
                      */
                     void SetHitFlag(const uint64_t& _hitFlag);
 
                     /**
                      * 判断参数 HitFlag 是否已赋值
                      * @return HitFlag 是否已赋值
+                     * 
                      */
                     bool HitFlagHasBeenSet() const;
 

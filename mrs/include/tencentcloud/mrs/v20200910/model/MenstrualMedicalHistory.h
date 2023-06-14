@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastMenstrualPeriod 末次月经时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastMenstrualPeriod() const;
 
                     /**
                      * 设置末次月经时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastMenstrualPeriod 末次月经时间
+                     * @param _lastMenstrualPeriod 末次月经时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastMenstrualPeriod(const std::string& _lastMenstrualPeriod);
 
                     /**
                      * 判断参数 LastMenstrualPeriod 是否已赋值
                      * @return LastMenstrualPeriod 是否已赋值
+                     * 
                      */
                     bool LastMenstrualPeriodHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualFlow 经量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenstrualFlow() const;
 
                     /**
                      * 设置经量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstrualFlow 经量
+                     * @param _menstrualFlow 经量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstrualFlow(const std::string& _menstrualFlow);
 
                     /**
                      * 判断参数 MenstrualFlow 是否已赋值
                      * @return MenstrualFlow 是否已赋值
+                     * 
                      */
                     bool MenstrualFlowHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenarcheAge 月经初潮年龄
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenarcheAge() const;
 
                     /**
                      * 设置月经初潮年龄
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenarcheAge 月经初潮年龄
+                     * @param _menarcheAge 月经初潮年龄
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenarcheAge(const std::string& _menarcheAge);
 
                     /**
                      * 判断参数 MenarcheAge 是否已赋值
                      * @return MenarcheAge 是否已赋值
+                     * 
                      */
                     bool MenarcheAgeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstruationOrNot 是否来月经
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenstruationOrNot() const;
 
                     /**
                      * 设置是否来月经
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstruationOrNot 是否来月经
+                     * @param _menstruationOrNot 是否来月经
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstruationOrNot(const std::string& _menstruationOrNot);
 
                     /**
                      * 判断参数 MenstruationOrNot 是否已赋值
                      * @return MenstruationOrNot 是否已赋值
+                     * 
                      */
                     bool MenstruationOrNotHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualCycles 月经周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenstrualCycles() const;
 
                     /**
                      * 设置月经周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstrualCycles 月经周期
+                     * @param _menstrualCycles 月经周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstrualCycles(const std::string& _menstrualCycles);
 
                     /**
                      * 判断参数 MenstrualCycles 是否已赋值
                      * @return MenstrualCycles 是否已赋值
+                     * 
                      */
                     bool MenstrualCyclesHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualPeriod 月经持续天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMenstrualPeriod() const;
 
                     /**
                      * 设置月经持续天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MenstrualPeriod 月经持续天数
+                     * @param _menstrualPeriod 月经持续天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMenstrualPeriod(const std::string& _menstrualPeriod);
 
                     /**
                      * 判断参数 MenstrualPeriod 是否已赋值
                      * @return MenstrualPeriod 是否已赋值
+                     * 
                      */
                     bool MenstrualPeriodHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取水印ID。
                      * @return WatermarkId 水印ID。
+                     * 
                      */
                     uint64_t GetWatermarkId() const;
 
                     /**
                      * 判断参数 WatermarkId 是否已赋值
                      * @return WatermarkId 是否已赋值
+                     * 
                      */
                     bool WatermarkIdHasBeenSet() const;
 

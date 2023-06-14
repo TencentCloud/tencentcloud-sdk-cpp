@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取告警配置信息
                      * @return TaskAlarmInfo 告警配置信息
+                     * 
                      */
                     TaskAlarmInfo GetTaskAlarmInfo() const;
 
                     /**
                      * 设置告警配置信息
-                     * @param TaskAlarmInfo 告警配置信息
+                     * @param _taskAlarmInfo 告警配置信息
+                     * 
                      */
                     void SetTaskAlarmInfo(const TaskAlarmInfo& _taskAlarmInfo);
 
                     /**
                      * 判断参数 TaskAlarmInfo 是否已赋值
                      * @return TaskAlarmInfo 是否已赋值
+                     * 
                      */
                     bool TaskAlarmInfoHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

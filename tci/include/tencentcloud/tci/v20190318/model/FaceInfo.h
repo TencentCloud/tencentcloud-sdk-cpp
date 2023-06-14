@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取人脸操作错误码
                      * @return ErrorCode 人脸操作错误码
+                     * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 设置人脸操作错误码
-                     * @param ErrorCode 人脸操作错误码
+                     * @param _errorCode 人脸操作错误码
+                     * 
                      */
                     void SetErrorCode(const std::string& _errorCode);
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取人脸操作结果信息
                      * @return ErrorMsg 人脸操作结果信息
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置人脸操作结果信息
-                     * @param ErrorMsg 人脸操作结果信息
+                     * @param _errorMsg 人脸操作结果信息
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 
                     /**
                      * 获取人脸唯一标识符
                      * @return FaceId 人脸唯一标识符
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 设置人脸唯一标识符
-                     * @param FaceId 人脸唯一标识符
+                     * @param _faceId 人脸唯一标识符
+                     * 
                      */
                     void SetFaceId(const std::string& _faceId);
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取人脸保存地址
                      * @return FaceUrl 人脸保存地址
+                     * 
                      */
                     std::string GetFaceUrl() const;
 
                     /**
                      * 设置人脸保存地址
-                     * @param FaceUrl 人脸保存地址
+                     * @param _faceUrl 人脸保存地址
+                     * 
                      */
                     void SetFaceUrl(const std::string& _faceUrl);
 
                     /**
                      * 判断参数 FaceUrl 是否已赋值
                      * @return FaceUrl 是否已赋值
+                     * 
                      */
                     bool FaceUrlHasBeenSet() const;
 
                     /**
                      * 获取人员唯一标识
                      * @return PersonId 人员唯一标识
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员唯一标识
-                     * @param PersonId 人员唯一标识
+                     * @param _personId 人员唯一标识
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

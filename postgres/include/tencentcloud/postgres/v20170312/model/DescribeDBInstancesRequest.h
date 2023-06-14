@@ -56,6 +56,7 @@ db-instance-name：按照实例名过滤，类型为string
 db-project-id：按照项目ID过滤，类型为integer
 db-pay-mode：按照付费模式过滤，类型为string
 db-tag-key：按照标签键过滤，类型为string
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -66,90 +67,104 @@ db-instance-name：按照实例名过滤，类型为string
 db-project-id：按照项目ID过滤，类型为integer
 db-pay-mode：按照付费模式过滤，类型为string
 db-tag-key：按照标签键过滤，类型为string
-                     * @param Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+                     * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
 db-instance-name：按照实例名过滤，类型为string
 db-project-id：按照项目ID过滤，类型为integer
 db-pay-mode：按照付费模式过滤，类型为string
 db-tag-key：按照标签键过滤，类型为string
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取每页显示数量，取值范围为1-100，默认为返回10条。
                      * @return Limit 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页显示数量，取值范围为1-100，默认为返回10条。
-                     * @param Limit 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * @param _limit 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，从0开始。
                      * @return Offset 数据偏移量，从0开始。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，从0开始。
-                     * @param Offset 数据偏移量，从0开始。
+                     * @param _offset 数据偏移量，从0开始。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
                      * @return OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
-                     * @param OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * @param _orderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，包括升序：asc、降序：desc。
                      * @return OrderByType 排序方式，包括升序：asc、降序：desc。
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置排序方式，包括升序：asc、降序：desc。
-                     * @param OrderByType 排序方式，包括升序：asc、降序：desc。
+                     * @param _orderByType 排序方式，包括升序：asc、降序：desc。
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

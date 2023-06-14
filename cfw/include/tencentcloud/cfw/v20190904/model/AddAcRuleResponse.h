@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取创建成功后返回新策略的uuid
                      * @return RuleUuid 创建成功后返回新策略的uuid
+                     * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
                     /**
                      * 获取0代表成功，-1代表失败
                      * @return ReturnCode 0代表成功，-1代表失败
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取success代表成功，failed代表失败
                      * @return ReturnMsg success代表成功，failed代表失败
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 

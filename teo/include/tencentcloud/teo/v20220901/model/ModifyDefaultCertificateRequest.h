@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取默认证书ID。
                      * @return CertId 默认证书ID。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置默认证书ID。
-                     * @param CertId 默认证书ID。
+                     * @param _certId 默认证书ID。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Status 证书状态，取值有：
 <li>deployed ：部署证书；</li>
 <li>disabled ：禁用证书。</li>失败状态下重新deployed即可重试。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置证书状态，取值有：
 <li>deployed ：部署证书；</li>
 <li>disabled ：禁用证书。</li>失败状态下重新deployed即可重试。
-                     * @param Status 证书状态，取值有：
+                     * @param _status 证书状态，取值有：
 <li>deployed ：部署证书；</li>
 <li>disabled ：禁用证书。</li>失败状态下重新deployed即可重试。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

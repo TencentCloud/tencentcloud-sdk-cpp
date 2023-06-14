@@ -51,6 +51,7 @@ namespace TencentCloud
 0：流量包
 1：转码包
 2: 连麦包。
+                     * 
                      */
                     int64_t GetPackageType() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 0：流量包
 1：转码包
 2: 连麦包。
-                     * @param PackageType 包类型，可选值：
+                     * @param _packageType 包类型，可选值：
 0：流量包
 1：转码包
 2: 连麦包。
+                     * 
                      */
                     void SetPackageType(const int64_t& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
@@ -89,6 +92,7 @@ namespace TencentCloud
 
 注意：
 1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -101,7 +105,7 @@ namespace TencentCloud
 
 注意：
 1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
-                     * @param OrderBy 排序规则:
+                     * @param _orderBy 排序规则:
 1. BuyTimeDesc： 最新购买的排在最前面
 2. BuyTimeAsc： 最老购买的排在最前面
 3. ExpireTimeDesc： 最后过期的排在最前面
@@ -109,30 +113,35 @@ namespace TencentCloud
 
 注意：
 1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取取得第几页的数据，和 PageSize 同时传递才会生效。
                      * @return PageNum 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置取得第几页的数据，和 PageSize 同时传递才会生效。
-                     * @param PageNum 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * @param _pageNum 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
@@ -141,20 +150,23 @@ namespace TencentCloud
 取值：10 ～ 100 之间的任意整数。
                      * @return PageSize 分页大小，和 PageNum 同时传递才会生效。
 取值：10 ～ 100 之间的任意整数。
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小，和 PageNum 同时传递才会生效。
 取值：10 ～ 100 之间的任意整数。
-                     * @param PageSize 分页大小，和 PageNum 同时传递才会生效。
+                     * @param _pageSize 分页大小，和 PageNum 同时传递才会生效。
 取值：10 ～ 100 之间的任意整数。
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

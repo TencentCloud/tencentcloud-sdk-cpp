@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取接入渠道，cdn或者ecdn，默认值为cdn
                      * @return Channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置接入渠道，cdn或者ecdn，默认值为cdn
-                     * @param Channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * @param _channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取发布函数的名称
                      * @return FunctionName 发布函数的名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置发布函数的名称
-                     * @param FunctionName 发布函数的名称
+                     * @param _functionName 发布函数的名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取函数的描述
                      * @return Description 函数的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置函数的描述
-                     * @param Description 函数的描述
+                     * @param _description 函数的描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取函数的命名空间
                      * @return Namespace 函数的命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数的命名空间
-                     * @param Namespace 函数的命名空间
+                     * @param _namespace 函数的命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

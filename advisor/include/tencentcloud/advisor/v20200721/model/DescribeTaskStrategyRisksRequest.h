@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取评估项ID
                      * @return StrategyId 评估项ID
+                     * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置评估项ID
-                     * @param StrategyId 评估项ID
+                     * @param _strategyId 评估项ID
+                     * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取返回数量,默认值为100,最大值为200
                      * @return Limit 返回数量,默认值为100,最大值为200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量,默认值为100,最大值为200
-                     * @param Limit 返回数量,默认值为100,最大值为200
+                     * @param _limit 返回数量,默认值为100,最大值为200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0
                      * @return Offset 偏移量,默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * @param _offset 偏移量,默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取环境
                      * @return Env 环境
+                     * 
                      */
                     std::string GetEnv() const;
 
                     /**
                      * 设置环境
-                     * @param Env 环境
+                     * @param _env 环境
+                     * 
                      */
                     void SetEnv(const std::string& _env);
 
                     /**
                      * 判断参数 Env 是否已赋值
                      * @return Env 是否已赋值
+                     * 
                      */
                     bool EnvHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

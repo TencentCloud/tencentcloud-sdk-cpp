@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取水印类型，0为图片（默认），1为文字，2为时间戳。
                      * @return WaterMarkType 水印类型，0为图片（默认），1为文字，2为时间戳。
+                     * 
                      */
                     uint64_t GetWaterMarkType() const;
 
                     /**
                      * 设置水印类型，0为图片（默认），1为文字，2为时间戳。
-                     * @param WaterMarkType 水印类型，0为图片（默认），1为文字，2为时间戳。
+                     * @param _waterMarkType 水印类型，0为图片（默认），1为文字，2为时间戳。
+                     * 
                      */
                     void SetWaterMarkType(const uint64_t& _waterMarkType);
 
                     /**
                      * 判断参数 WaterMarkType 是否已赋值
                      * @return WaterMarkType 是否已赋值
+                     * 
                      */
                     bool WaterMarkTypeHasBeenSet() const;
 
                     /**
                      * 获取水印为图片时的参数列表，水印为图片时校验必填。
                      * @return WaterMarkImage 水印为图片时的参数列表，水印为图片时校验必填。
+                     * 
                      */
                     WaterMarkImage GetWaterMarkImage() const;
 
                     /**
                      * 设置水印为图片时的参数列表，水印为图片时校验必填。
-                     * @param WaterMarkImage 水印为图片时的参数列表，水印为图片时校验必填。
+                     * @param _waterMarkImage 水印为图片时的参数列表，水印为图片时校验必填。
+                     * 
                      */
                     void SetWaterMarkImage(const WaterMarkImage& _waterMarkImage);
 
                     /**
                      * 判断参数 WaterMarkImage 是否已赋值
                      * @return WaterMarkImage 是否已赋值
+                     * 
                      */
                     bool WaterMarkImageHasBeenSet() const;
 
                     /**
                      * 获取水印为文字时的参数列表，水印为文字时校验必填。
                      * @return WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
+                     * 
                      */
                     WaterMarkChar GetWaterMarkChar() const;
 
                     /**
                      * 设置水印为文字时的参数列表，水印为文字时校验必填。
-                     * @param WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
+                     * @param _waterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
+                     * 
                      */
                     void SetWaterMarkChar(const WaterMarkChar& _waterMarkChar);
 
                     /**
                      * 判断参数 WaterMarkChar 是否已赋值
                      * @return WaterMarkChar 是否已赋值
+                     * 
                      */
                     bool WaterMarkCharHasBeenSet() const;
 
                     /**
                      * 获取水印为时间戳时的参数列表，水印为时间戳时校验必填。
                      * @return WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+                     * 
                      */
                     WaterMarkTimestamp GetWaterMarkTimestamp() const;
 
                     /**
                      * 设置水印为时间戳时的参数列表，水印为时间戳时校验必填。
-                     * @param WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+                     * @param _waterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+                     * 
                      */
                     void SetWaterMarkTimestamp(const WaterMarkTimestamp& _waterMarkTimestamp);
 
                     /**
                      * 判断参数 WaterMarkTimestamp 是否已赋值
                      * @return WaterMarkTimestamp 是否已赋值
+                     * 
                      */
                     bool WaterMarkTimestampHasBeenSet() const;
 

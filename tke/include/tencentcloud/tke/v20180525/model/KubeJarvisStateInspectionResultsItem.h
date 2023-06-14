@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 巡检结果名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置巡检结果名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 巡检结果名称
+                     * @param _name 巡检结果名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Statistics 诊断结果统计
+                     * @param _statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 

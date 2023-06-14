@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数据条数
                      * @return Count 数据条数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置数据条数
-                     * @param Count 数据条数
+                     * @param _count 数据条数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取自定义泄露事件列表
                      * @return List 自定义泄露事件列表
+                     * 
                      */
                     std::vector<SaDivulgeDataQueryPub> GetList() const;
 
                     /**
                      * 设置自定义泄露事件列表
-                     * @param List 自定义泄露事件列表
+                     * @param _list 自定义泄露事件列表
+                     * 
                      */
                     void SetList(const std::vector<SaDivulgeDataQueryPub>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

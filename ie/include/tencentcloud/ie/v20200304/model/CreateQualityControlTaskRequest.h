@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取质检任务参数
                      * @return QualityControlInfo 质检任务参数
+                     * 
                      */
                     QualityControlInfo GetQualityControlInfo() const;
 
                     /**
                      * 设置质检任务参数
-                     * @param QualityControlInfo 质检任务参数
+                     * @param _qualityControlInfo 质检任务参数
+                     * 
                      */
                     void SetQualityControlInfo(const QualityControlInfo& _qualityControlInfo);
 
                     /**
                      * 判断参数 QualityControlInfo 是否已赋值
                      * @return QualityControlInfo 是否已赋值
+                     * 
                      */
                     bool QualityControlInfoHasBeenSet() const;
 
                     /**
                      * 获取视频源信息
                      * @return DownInfo 视频源信息
+                     * 
                      */
                     DownInfo GetDownInfo() const;
 
                     /**
                      * 设置视频源信息
-                     * @param DownInfo 视频源信息
+                     * @param _downInfo 视频源信息
+                     * 
                      */
                     void SetDownInfo(const DownInfo& _downInfo);
 
                     /**
                      * 判断参数 DownInfo 是否已赋值
                      * @return DownInfo 是否已赋值
+                     * 
                      */
                     bool DownInfoHasBeenSet() const;
 
                     /**
                      * 获取任务结果回调地址信息
                      * @return CallbackInfo 任务结果回调地址信息
+                     * 
                      */
                     CallbackInfo GetCallbackInfo() const;
 
                     /**
                      * 设置任务结果回调地址信息
-                     * @param CallbackInfo 任务结果回调地址信息
+                     * @param _callbackInfo 任务结果回调地址信息
+                     * 
                      */
                     void SetCallbackInfo(const CallbackInfo& _callbackInfo);
 
                     /**
                      * 判断参数 CallbackInfo 是否已赋值
                      * @return CallbackInfo 是否已赋值
+                     * 
                      */
                     bool CallbackInfoHasBeenSet() const;
 

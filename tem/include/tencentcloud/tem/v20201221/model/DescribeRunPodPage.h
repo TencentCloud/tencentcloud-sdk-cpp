@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取分页下标
                      * @return Offset 分页下标
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页下标
-                     * @param Offset 分页下标
+                     * @param _offset 分页下标
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单页条数
                      * @return Limit 单页条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单页条数
-                     * @param Limit 单页条数
+                     * @param _limit 单页条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取请求id
                      * @return RequestId 请求id
+                     * 
                      */
                     std::string GetRequestId() const;
 
                     /**
                      * 设置请求id
-                     * @param RequestId 请求id
+                     * @param _requestId 请求id
+                     * 
                      */
                     void SetRequestId(const std::string& _requestId);
 
                     /**
                      * 判断参数 RequestId 是否已赋值
                      * @return RequestId 是否已赋值
+                     * 
                      */
                     bool RequestIdHasBeenSet() const;
 
                     /**
                      * 获取条目
                      * @return PodList 条目
+                     * 
                      */
                     std::vector<RunVersionPod> GetPodList() const;
 
                     /**
                      * 设置条目
-                     * @param PodList 条目
+                     * @param _podList 条目
+                     * 
                      */
                     void SetPodList(const std::vector<RunVersionPod>& _podList);
 
                     /**
                      * 判断参数 PodList 是否已赋值
                      * @return PodList 是否已赋值
+                     * 
                      */
                     bool PodListHasBeenSet() const;
 

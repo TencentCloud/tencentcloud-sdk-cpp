@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取作品ID
                      * @return WorkId 作品ID
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 
                     /**
                      * 获取侵权ID
                      * @return TortId 侵权ID
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取侵权标题
                      * @return TortTitle 侵权标题
+                     * 
                      */
                     std::string GetTortTitle() const;
 
                     /**
                      * 判断参数 TortTitle 是否已赋值
                      * @return TortTitle 是否已赋值
+                     * 
                      */
                     bool TortTitleHasBeenSet() const;
 
                     /**
                      * 获取侵权平台
                      * @return TortPlat 侵权平台
+                     * 
                      */
                     std::string GetTortPlat() const;
 
                     /**
                      * 判断参数 TortPlat 是否已赋值
                      * @return TortPlat 是否已赋值
+                     * 
                      */
                     bool TortPlatHasBeenSet() const;
 
                     /**
                      * 获取侵权网址
                      * @return TortURL 侵权网址
+                     * 
                      */
                     std::string GetTortURL() const;
 
                     /**
                      * 判断参数 TortURL 是否已赋值
                      * @return TortURL 是否已赋值
+                     * 
                      */
                     bool TortURLHasBeenSet() const;
 
                     /**
                      * 获取侵权域名
                      * @return TortDomain 侵权域名
+                     * 
                      */
                     std::string GetTortDomain() const;
 
                     /**
                      * 判断参数 TortDomain 是否已赋值
                      * @return TortDomain 是否已赋值
+                     * 
                      */
                     bool TortDomainHasBeenSet() const;
 
                     /**
                      * 获取侵权主体
                      * @return TortBodyName 侵权主体
+                     * 
                      */
                     std::string GetTortBodyName() const;
 
                     /**
                      * 判断参数 TortBodyName 是否已赋值
                      * @return TortBodyName 是否已赋值
+                     * 
                      */
                     bool TortBodyNameHasBeenSet() const;
 

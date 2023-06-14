@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取cbs存储大小，单位TB
                      * @return Size cbs存储大小，单位TB
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置cbs存储大小，单位TB
-                     * @param Size cbs存储大小，单位TB
+                     * @param _size cbs存储大小，单位TB
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取cbs存储类型，默认为SSD
                      * @return Type cbs存储类型，默认为SSD
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置cbs存储类型，默认为SSD
-                     * @param Type cbs存储类型，默认为SSD
+                     * @param _type cbs存储类型，默认为SSD
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

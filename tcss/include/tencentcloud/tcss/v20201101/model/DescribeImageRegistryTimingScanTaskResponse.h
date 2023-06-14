@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 定时扫描开关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取定时任务扫描时间
                      * @return ScanTime 定时任务扫描时间
+                     * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 判断参数 ScanTime 是否已赋值
                      * @return ScanTime 是否已赋值
+                     * 
                      */
                     bool ScanTimeHasBeenSet() const;
 
                     /**
                      * 获取定时扫描间隔
                      * @return ScanPeriod 定时扫描间隔
+                     * 
                      */
                     uint64_t GetScanPeriod() const;
 
                     /**
                      * 判断参数 ScanPeriod 是否已赋值
                      * @return ScanPeriod 是否已赋值
+                     * 
                      */
                     bool ScanPeriodHasBeenSet() const;
 
@@ -87,24 +93,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanType 扫描类型数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetScanType() const;
 
                     /**
                      * 判断参数 ScanType 是否已赋值
                      * @return ScanType 是否已赋值
+                     * 
                      */
                     bool ScanTypeHasBeenSet() const;
 
                     /**
                      * 获取扫描全部镜像
                      * @return All 扫描全部镜像
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
@@ -113,12 +123,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Images 自定义扫描镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageInfo> GetImages() const;
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 
@@ -127,12 +139,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 自动以扫描镜像Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -141,12 +155,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latest 是否扫描最新版本镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetLatest() const;
 
                     /**
                      * 判断参数 Latest 是否已赋值
                      * @return Latest 是否已赋值
+                     * 
                      */
                     bool LatestHasBeenSet() const;
 

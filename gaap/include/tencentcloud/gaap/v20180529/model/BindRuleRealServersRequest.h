@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取转发规则ID
                      * @return RuleId 转发规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置转发规则ID
-                     * @param RuleId 转发规则ID
+                     * @param _ruleId 转发规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -70,6 +73,7 @@ namespace TencentCloud
 如果已经存在绑定的源站，则会覆盖更新成这个源站列表。
 当不带该字段时，表示解绑该规则上的所有源站。
 如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。
+                     * 
                      */
                     std::vector<RealServerBindSetReq> GetRealServerBindSet() const;
 
@@ -78,16 +82,18 @@ namespace TencentCloud
 如果已经存在绑定的源站，则会覆盖更新成这个源站列表。
 当不带该字段时，表示解绑该规则上的所有源站。
 如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。
-                     * @param RealServerBindSet 需要绑定的源站信息列表。
+                     * @param _realServerBindSet 需要绑定的源站信息列表。
 如果已经存在绑定的源站，则会覆盖更新成这个源站列表。
 当不带该字段时，表示解绑该规则上的所有源站。
 如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。
+                     * 
                      */
                     void SetRealServerBindSet(const std::vector<RealServerBindSetReq>& _realServerBindSet);
 
                     /**
                      * 判断参数 RealServerBindSet 是否已赋值
                      * @return RealServerBindSet 是否已赋值
+                     * 
                      */
                     bool RealServerBindSetHasBeenSet() const;
 

@@ -53,6 +53,7 @@ PEM 格式，需要进行 Base 64 编码
                      * @return Certificate 客户端证书
 PEM 格式，需要进行 Base 64 编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificate() const;
 
@@ -60,15 +61,17 @@ PEM 格式，需要进行 Base 64 编码
                      * 设置客户端证书
 PEM 格式，需要进行 Base 64 编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Certificate 客户端证书
+                     * @param _certificate 客户端证书
 PEM 格式，需要进行 Base 64 编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificate(const std::string& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
@@ -77,20 +80,23 @@ PEM 格式，需要进行 Base 64 编码
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertName 客户端证书名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertName() const;
 
                     /**
                      * 设置客户端证书名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertName 客户端证书名称
+                     * @param _certName 客户端证书名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertName(const std::string& _certName);
 
                     /**
                      * 判断参数 CertName 是否已赋值
                      * @return CertName 是否已赋值
+                     * 
                      */
                     bool CertNameHasBeenSet() const;
 
@@ -101,6 +107,7 @@ PEM 格式，需要进行 Base 64 编码
                      * @return ExpireTime 证书过期时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
@@ -108,15 +115,17 @@ PEM 格式，需要进行 Base 64 编码
                      * 设置证书过期时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 证书过期时间
+                     * @param _expireTime 证书过期时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -127,6 +136,7 @@ PEM 格式，需要进行 Base 64 编码
                      * @return DeployTime 证书颁发时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeployTime() const;
 
@@ -134,15 +144,17 @@ PEM 格式，需要进行 Base 64 编码
                      * 设置证书颁发时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployTime 证书颁发时间
+                     * @param _deployTime 证书颁发时间
 作为入参时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeployTime(const std::string& _deployTime);
 
                     /**
                      * 判断参数 DeployTime 是否已赋值
                      * @return DeployTime 是否已赋值
+                     * 
                      */
                     bool DeployTimeHasBeenSet() const;
 

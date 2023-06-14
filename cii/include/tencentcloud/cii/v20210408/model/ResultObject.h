@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取图片质量分
                      * @return Quality 图片质量分
+                     * 
                      */
                     double GetQuality() const;
 
                     /**
                      * 设置图片质量分
-                     * @param Quality 图片质量分
+                     * @param _quality 图片质量分
+                     * 
                      */
                     void SetQuality(const double& _quality);
 
                     /**
                      * 判断参数 Quality 是否已赋值
                      * @return Quality 是否已赋值
+                     * 
                      */
                     bool QualityHasBeenSet() const;
 
                     /**
                      * 获取由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议
                      * @return StructureResult 由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议
+                     * 
                      */
                     std::string GetStructureResult() const;
 
                     /**
                      * 设置由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议
-                     * @param StructureResult 由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议
+                     * @param _structureResult 由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议
+                     * 
                      */
                     void SetStructureResult(const std::string& _structureResult);
 
                     /**
                      * 判断参数 StructureResult 是否已赋值
                      * @return StructureResult 是否已赋值
+                     * 
                      */
                     bool StructureResultHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportType 报告分类信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClassifyInfo> GetReportType() const;
 
                     /**
                      * 设置报告分类信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportType 报告分类信息
+                     * @param _reportType 报告分类信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportType(const std::vector<ClassifyInfo>& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 

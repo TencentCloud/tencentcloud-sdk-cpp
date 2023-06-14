@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取白名单id
                      * @return Id 白名单id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置白名单id
-                     * @param Id 白名单id
+                     * @param _id 白名单id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Mark 备注
+                     * 
                      */
                     std::string GetMark() const;
 
                     /**
                      * 设置备注
-                     * @param Mark 备注
+                     * @param _mark 备注
+                     * 
                      */
                     void SetMark(const std::string& _mark);
 
                     /**
                      * 判断参数 Mark 是否已赋值
                      * @return Mark 是否已赋值
+                     * 
                      */
                     bool MarkHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return ModifyTime 更新时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param ModifyTime 更新时间
+                     * @param _modifyTime 更新时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BookingFlag STRING(2)，记账标志（1: 转出; 2: 转入）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBookingFlag() const;
 
                     /**
                      * 设置STRING(2)，记账标志（1: 转出; 2: 转入）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BookingFlag STRING(2)，记账标志（1: 转出; 2: 转入）
+                     * @param _bookingFlag STRING(2)，记账标志（1: 转出; 2: 转入）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBookingFlag(const std::string& _bookingFlag);
 
                     /**
                      * 判断参数 BookingFlag 是否已赋值
                      * @return BookingFlag 是否已赋值
+                     * 
                      */
                     bool BookingFlagHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranStatus STRING(32)，交易状态（0: 成功）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranStatus() const;
 
                     /**
                      * 设置STRING(32)，交易状态（0: 成功）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranStatus STRING(32)，交易状态（0: 成功）
+                     * @param _tranStatus STRING(32)，交易状态（0: 成功）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranStatus(const std::string& _tranStatus);
 
                     /**
                      * 判断参数 TranStatus 是否已赋值
                      * @return TranStatus 是否已赋值
+                     * 
                      */
                     bool TranStatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranAmt STRING(20)，交易金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranAmt() const;
 
                     /**
                      * 设置STRING(20)，交易金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranAmt STRING(20)，交易金额
+                     * @param _tranAmt STRING(20)，交易金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranAmt(const std::string& _tranAmt);
 
                     /**
                      * 判断参数 TranAmt 是否已赋值
                      * @return TranAmt 是否已赋值
+                     * 
                      */
                     bool TranAmtHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranDate STRING(8)，交易日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranDate() const;
 
                     /**
                      * 设置STRING(8)，交易日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranDate STRING(8)，交易日期
+                     * @param _tranDate STRING(8)，交易日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranDate(const std::string& _tranDate);
 
                     /**
                      * 判断参数 TranDate 是否已赋值
                      * @return TranDate 是否已赋值
+                     * 
                      */
                     bool TranDateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranTime STRING(20)，交易时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranTime() const;
 
                     /**
                      * 设置STRING(20)，交易时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranTime STRING(20)，交易时间
+                     * @param _tranTime STRING(20)，交易时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranTime(const std::string& _tranTime);
 
                     /**
                      * 判断参数 TranTime 是否已赋值
                      * @return TranTime 是否已赋值
+                     * 
                      */
                     bool TranTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontSeqNo STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrontSeqNo() const;
 
                     /**
                      * 设置STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrontSeqNo STRING(52)，见证系统流水号
+                     * @param _frontSeqNo STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrontSeqNo(const std::string& _frontSeqNo);
 
                     /**
                      * 判断参数 FrontSeqNo 是否已赋值
                      * @return FrontSeqNo 是否已赋值
+                     * 
                      */
                     bool FrontSeqNoHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BookingType STRING(20)，记账类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBookingType() const;
 
                     /**
                      * 设置STRING(20)，记账类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BookingType STRING(20)，记账类型（详情见“常见问题”）
+                     * @param _bookingType STRING(20)，记账类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBookingType(const std::string& _bookingType);
 
                     /**
                      * 判断参数 BookingType 是否已赋值
                      * @return BookingType 是否已赋值
+                     * 
                      */
                     bool BookingTypeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InSubAcctNo STRING(50)，转入见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInSubAcctNo() const;
 
                     /**
                      * 设置STRING(50)，转入见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InSubAcctNo STRING(50)，转入见证子账户的帐号
+                     * @param _inSubAcctNo STRING(50)，转入见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInSubAcctNo(const std::string& _inSubAcctNo);
 
                     /**
                      * 判断参数 InSubAcctNo 是否已赋值
                      * @return InSubAcctNo 是否已赋值
+                     * 
                      */
                     bool InSubAcctNoHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutSubAcctNo STRING(50)，转出见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutSubAcctNo() const;
 
                     /**
                      * 设置STRING(50)，转出见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutSubAcctNo STRING(50)，转出见证子账户的帐号
+                     * @param _outSubAcctNo STRING(50)，转出见证子账户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutSubAcctNo(const std::string& _outSubAcctNo);
 
                     /**
                      * 判断参数 OutSubAcctNo 是否已赋值
                      * @return OutSubAcctNo 是否已赋值
+                     * 
                      */
                     bool OutSubAcctNoHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark STRING(300)，备注（返回交易订单号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置STRING(300)，备注（返回交易订单号）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark STRING(300)，备注（返回交易订单号）
+                     * @param _remark STRING(300)，备注（返回交易订单号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

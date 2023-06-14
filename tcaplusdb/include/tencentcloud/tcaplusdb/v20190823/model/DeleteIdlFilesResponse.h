@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取结果记录数量
                      * @return TotalCount 结果记录数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取删除结果
                      * @return IdlFileInfos 删除结果
+                     * 
                      */
                     std::vector<IdlFileInfoWithoutContent> GetIdlFileInfos() const;
 
                     /**
                      * 判断参数 IdlFileInfos 是否已赋值
                      * @return IdlFileInfos 是否已赋值
+                     * 
                      */
                     bool IdlFileInfosHasBeenSet() const;
 

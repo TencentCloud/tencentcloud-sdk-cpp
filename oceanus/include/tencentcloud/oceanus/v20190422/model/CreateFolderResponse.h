@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新建文件夹的唯一ID
                      * @return FolderId 新建文件夹的唯一ID
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 

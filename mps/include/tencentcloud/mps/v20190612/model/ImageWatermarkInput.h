@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。
                      * @return ImageContent 水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。
+                     * 
                      */
                     std::string GetImageContent() const;
 
                     /**
                      * 设置水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。
-                     * @param ImageContent 水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。
+                     * @param _imageContent 水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。
+                     * 
                      */
                     void SetImageContent(const std::string& _imageContent);
 
                     /**
                      * 判断参数 ImageContent 是否已赋值
                      * @return ImageContent 是否已赋值
+                     * 
                      */
                     bool ImageContentHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
 默认值：10%。
+                     * 
                      */
                     std::string GetWidth() const;
 
@@ -81,16 +85,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
 默认值：10%。
-                     * @param Width 水印的宽度。支持 %、px 两种格式：
+                     * @param _width 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>
 默认值：10%。
+                     * 
                      */
                     void SetWidth(const std::string& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -103,6 +109,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>
 默认值：0px，表示 Height 按照原始水印图片的宽高比缩放。
+                     * 
                      */
                     std::string GetHeight() const;
 
@@ -111,16 +118,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>
 默认值：0px，表示 Height 按照原始水印图片的宽高比缩放。
-                     * @param Height 水印的高度。支持 %、px 两种格式：
+                     * @param _height 水印的高度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>
 默认值：0px，表示 Height 按照原始水印图片的宽高比缩放。
+                     * 
                      */
                     void SetHeight(const std::string& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -133,6 +142,7 @@ namespace TencentCloud
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     * 
                      */
                     std::string GetRepeatType() const;
 
@@ -141,16 +151,18 @@ namespace TencentCloud
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束（默认值）。</li>
-                     * @param RepeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
+                     * @param _repeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束（默认值）。</li>
+                     * 
                      */
                     void SetRepeatType(const std::string& _repeatType);
 
                     /**
                      * 判断参数 RepeatType 是否已赋值
                      * @return RepeatType 是否已赋值
+                     * 
                      */
                     bool RepeatTypeHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取主机IP。
                      * @return MachineIp 主机IP。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机IP。
-                     * @param MachineIp 主机IP。
+                     * @param _machineIp 主机IP。
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取用户名。
                      * @return Username 用户名。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名。
-                     * @param Username 用户名。
+                     * @param _username 用户名。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取源IP。
                      * @return SrcIp 源IP。
+                     * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置源IP。
-                     * @param SrcIp 源IP。
+                     * @param _srcIp 源IP。
+                     * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
 
                     /**
                      * 判断参数 SrcIp 是否已赋值
                      * @return SrcIp 是否已赋值
+                     * 
                      */
                     bool SrcIpHasBeenSet() const;
 
                     /**
                      * 获取国家ID。
                      * @return Country 国家ID。
+                     * 
                      */
                     uint64_t GetCountry() const;
 
                     /**
                      * 设置国家ID。
-                     * @param Country 国家ID。
+                     * @param _country 国家ID。
+                     * 
                      */
                     void SetCountry(const uint64_t& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
                     /**
                      * 获取省份ID。
                      * @return Province 省份ID。
+                     * 
                      */
                     uint64_t GetProvince() const;
 
                     /**
                      * 设置省份ID。
-                     * @param Province 省份ID。
+                     * @param _province 省份ID。
+                     * 
                      */
                     void SetProvince(const uint64_t& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取城市ID。
                      * @return City 城市ID。
+                     * 
                      */
                     uint64_t GetCity() const;
 
                     /**
                      * 设置城市ID。
-                     * @param City 城市ID。
+                     * @param _city 城市ID。
+                     * 
                      */
                     void SetCity(const uint64_t& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取登录时间。
                      * @return LoginTime 登录时间。
+                     * 
                      */
                     std::string GetLoginTime() const;
 
                     /**
                      * 设置登录时间。
-                     * @param LoginTime 登录时间。
+                     * @param _loginTime 登录时间。
+                     * 
                      */
                     void SetLoginTime(const std::string& _loginTime);
 
                     /**
                      * 判断参数 LoginTime 是否已赋值
                      * @return LoginTime 是否已赋值
+                     * 
                      */
                     bool LoginTimeHasBeenSet() const;
 

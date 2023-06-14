@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如mssql-rljoi3bf
                      * @return InstanceId 实例ID，形如mssql-rljoi3bf
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如mssql-rljoi3bf
-                     * @param InstanceId 实例ID，形如mssql-rljoi3bf
+                     * @param _instanceId 实例ID，形如mssql-rljoi3bf
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名数组
                      * @return Names 数据库名数组
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置数据库名数组
-                     * @param Names 数据库名数组
+                     * @param _names 数据库名数组
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 

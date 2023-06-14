@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取识别片段置信度。取值：0~100。
                      * @return Confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置识别片段置信度。取值：0~100。
-                     * @param Confidence 识别片段置信度。取值：0~100。
+                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取识别片段起始的偏移时间，单位：秒。
                      * @return StartTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置识别片段起始的偏移时间，单位：秒。
-                     * @param StartTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取识别片段终止的偏移时间，单位：秒。
                      * @return EndTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置识别片段终止的偏移时间，单位：秒。
-                     * @param EndTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * @param _endTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取识别文本。
                      * @return Text 识别文本。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置识别文本。
-                     * @param Text 识别文本。
+                     * @param _text 识别文本。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取翻译文本。
                      * @return Trans 翻译文本。
+                     * 
                      */
                     std::string GetTrans() const;
 
                     /**
                      * 设置翻译文本。
-                     * @param Trans 翻译文本。
+                     * @param _trans 翻译文本。
+                     * 
                      */
                     void SetTrans(const std::string& _trans);
 
                     /**
                      * 判断参数 Trans 是否已赋值
                      * @return Trans 是否已赋值
+                     * 
                      */
                     bool TransHasBeenSet() const;
 

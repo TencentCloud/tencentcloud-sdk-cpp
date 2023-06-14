@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Name 域名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置域名
-                     * @param Name 域名
+                     * @param _name 域名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取站点端口
                      * @return Port 站点端口
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置站点端口
-                     * @param Port 站点端口
+                     * @param _port 站点端口
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取站点协议
                      * @return Proto 站点协议
+                     * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置站点协议
-                     * @param Proto 站点协议
+                     * @param _proto 站点协议
+                     * 
                      */
                     void SetProto(const std::string& _proto);
 
                     /**
                      * 判断参数 Proto 是否已赋值
                      * @return Proto 是否已赋值
+                     * 
                      */
                     bool ProtoHasBeenSet() const;
 
                     /**
                      * 获取服务类型
                      * @return ServiceType 服务类型
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置服务类型
-                     * @param ServiceType 服务类型
+                     * @param _serviceType 服务类型
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取安全模块状态：0未启用，1启用，999空，仅nginx
                      * @return SafeStatus 安全模块状态：0未启用，1启用，999空，仅nginx
+                     * 
                      */
                     uint64_t GetSafeStatus() const;
 
                     /**
                      * 设置安全模块状态：0未启用，1启用，999空，仅nginx
-                     * @param SafeStatus 安全模块状态：0未启用，1启用，999空，仅nginx
+                     * @param _safeStatus 安全模块状态：0未启用，1启用，999空，仅nginx
+                     * 
                      */
                     void SetSafeStatus(const uint64_t& _safeStatus);
 
                     /**
                      * 判断参数 SafeStatus 是否已赋值
                      * @return SafeStatus 是否已赋值
+                     * 
                      */
                     bool SafeStatusHasBeenSet() const;
 
                     /**
                      * 获取运行用户
                      * @return User 运行用户
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置运行用户
-                     * @param User 运行用户
+                     * @param _user 运行用户
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取主目录
                      * @return MainPath 主目录
+                     * 
                      */
                     std::string GetMainPath() const;
 
                     /**
                      * 设置主目录
-                     * @param MainPath 主目录
+                     * @param _mainPath 主目录
+                     * 
                      */
                     void SetMainPath(const std::string& _mainPath);
 
                     /**
                      * 判断参数 MainPath 是否已赋值
                      * @return MainPath 是否已赋值
+                     * 
                      */
                     bool MainPathHasBeenSet() const;
 
                     /**
                      * 获取启动命令
                      * @return Command 启动命令
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置启动命令
-                     * @param Command 启动命令
+                     * @param _command 启动命令
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取绑定IP
                      * @return Ip 绑定IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置绑定IP
-                     * @param Ip 绑定IP
+                     * @param _ip 绑定IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -213,20 +240,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 数据更新时间
+                     * @param _updateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

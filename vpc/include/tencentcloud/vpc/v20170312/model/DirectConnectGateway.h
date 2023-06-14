@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取专线网关`ID`。
                      * @return DirectConnectGatewayId 专线网关`ID`。
+                     * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
                      * 设置专线网关`ID`。
-                     * @param DirectConnectGatewayId 专线网关`ID`。
+                     * @param _directConnectGatewayId 专线网关`ID`。
+                     * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
 
                     /**
                      * 判断参数 DirectConnectGatewayId 是否已赋值
                      * @return DirectConnectGatewayId 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取专线网关名称。
                      * @return DirectConnectGatewayName 专线网关名称。
+                     * 
                      */
                     std::string GetDirectConnectGatewayName() const;
 
                     /**
                      * 设置专线网关名称。
-                     * @param DirectConnectGatewayName 专线网关名称。
+                     * @param _directConnectGatewayName 专线网关名称。
+                     * 
                      */
                     void SetDirectConnectGatewayName(const std::string& _directConnectGatewayName);
 
                     /**
                      * 判断参数 DirectConnectGatewayName 是否已赋值
                      * @return DirectConnectGatewayName 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取专线网关关联`VPC`实例`ID`。
                      * @return VpcId 专线网关关联`VPC`实例`ID`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置专线网关关联`VPC`实例`ID`。
-                     * @param VpcId 专线网关关联`VPC`实例`ID`。
+                     * @param _vpcId 专线网关关联`VPC`实例`ID`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return NetworkType 关联网络类型：
 <li>`VPC` - 私有网络</li>
 <li>`CCN` - 云联网</li>
+                     * 
                      */
                     std::string GetNetworkType() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置关联网络类型：
 <li>`VPC` - 私有网络</li>
 <li>`CCN` - 云联网</li>
-                     * @param NetworkType 关联网络类型：
+                     * @param _networkType 关联网络类型：
 <li>`VPC` - 私有网络</li>
 <li>`CCN` - 云联网</li>
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
                      * @return NetworkInstanceId 关联网络实例`ID`：
 <li>`NetworkType`为`VPC`时，这里为私有网络实例`ID`</li>
 <li>`NetworkType`为`CCN`时，这里为云联网实例`ID`</li>
+                     * 
                      */
                     std::string GetNetworkInstanceId() const;
 
@@ -140,15 +153,17 @@ namespace TencentCloud
                      * 设置关联网络实例`ID`：
 <li>`NetworkType`为`VPC`时，这里为私有网络实例`ID`</li>
 <li>`NetworkType`为`CCN`时，这里为云联网实例`ID`</li>
-                     * @param NetworkInstanceId 关联网络实例`ID`：
+                     * @param _networkInstanceId 关联网络实例`ID`：
 <li>`NetworkType`为`VPC`时，这里为私有网络实例`ID`</li>
 <li>`NetworkType`为`CCN`时，这里为云联网实例`ID`</li>
+                     * 
                      */
                     void SetNetworkInstanceId(const std::string& _networkInstanceId);
 
                     /**
                      * 判断参数 NetworkInstanceId 是否已赋值
                      * @return NetworkInstanceId 是否已赋值
+                     * 
                      */
                     bool NetworkInstanceIdHasBeenSet() const;
 
@@ -161,6 +176,7 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>NORMAL - 标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>
 NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
+                     * 
                      */
                     std::string GetGatewayType() const;
 
@@ -169,70 +185,81 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>NORMAL - 标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>
 NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
-                     * @param GatewayType 网关类型：
+                     * @param _gatewayType 网关类型：
 <li>NORMAL - 标准型，注：云联网只支持标准型</li>
 <li>NAT - NAT型</li>
 NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关
+                     * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
 
                     /**
                      * 判断参数 GatewayType 是否已赋值
                      * @return GatewayType 是否已赋值
+                     * 
                      */
                     bool GatewayTypeHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreateTime 创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取专线网关IP。
                      * @return DirectConnectGatewayIp 专线网关IP。
+                     * 
                      */
                     std::string GetDirectConnectGatewayIp() const;
 
                     /**
                      * 设置专线网关IP。
-                     * @param DirectConnectGatewayIp 专线网关IP。
+                     * @param _directConnectGatewayIp 专线网关IP。
+                     * 
                      */
                     void SetDirectConnectGatewayIp(const std::string& _directConnectGatewayIp);
 
                     /**
                      * 判断参数 DirectConnectGatewayIp 是否已赋值
                      * @return DirectConnectGatewayIp 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIpHasBeenSet() const;
 
                     /**
                      * 获取专线网关关联`CCN`实例`ID`。
                      * @return CcnId 专线网关关联`CCN`实例`ID`。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置专线网关关联`CCN`实例`ID`。
-                     * @param CcnId 专线网关关联`CCN`实例`ID`。
+                     * @param _ccnId 专线网关关联`CCN`实例`ID`。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
@@ -243,6 +270,7 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * @return CcnRouteType 云联网路由学习类型：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置。</li>
+                     * 
                      */
                     std::string GetCcnRouteType() const;
 
@@ -250,51 +278,59 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      * 设置云联网路由学习类型：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置。</li>
-                     * @param CcnRouteType 云联网路由学习类型：
+                     * @param _ccnRouteType 云联网路由学习类型：
 <li>`BGP` - 自动学习。</li>
 <li>`STATIC` - 静态，即用户配置。</li>
+                     * 
                      */
                     void SetCcnRouteType(const std::string& _ccnRouteType);
 
                     /**
                      * 判断参数 CcnRouteType 是否已赋值
                      * @return CcnRouteType 是否已赋值
+                     * 
                      */
                     bool CcnRouteTypeHasBeenSet() const;
 
                     /**
                      * 获取是否启用BGP。
                      * @return EnableBGP 是否启用BGP。
+                     * 
                      */
                     bool GetEnableBGP() const;
 
                     /**
                      * 设置是否启用BGP。
-                     * @param EnableBGP 是否启用BGP。
+                     * @param _enableBGP 是否启用BGP。
+                     * 
                      */
                     void SetEnableBGP(const bool& _enableBGP);
 
                     /**
                      * 判断参数 EnableBGP 是否已赋值
                      * @return EnableBGP 是否已赋值
+                     * 
                      */
                     bool EnableBGPHasBeenSet() const;
 
                     /**
                      * 获取开启和关闭BGP的community属性。
                      * @return EnableBGPCommunity 开启和关闭BGP的community属性。
+                     * 
                      */
                     bool GetEnableBGPCommunity() const;
 
                     /**
                      * 设置开启和关闭BGP的community属性。
-                     * @param EnableBGPCommunity 开启和关闭BGP的community属性。
+                     * @param _enableBGPCommunity 开启和关闭BGP的community属性。
+                     * 
                      */
                     void SetEnableBGPCommunity(const bool& _enableBGPCommunity);
 
                     /**
                      * 判断参数 EnableBGPCommunity 是否已赋值
                      * @return EnableBGPCommunity 是否已赋值
+                     * 
                      */
                     bool EnableBGPCommunityHasBeenSet() const;
 
@@ -303,20 +339,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId 绑定的NAT网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置绑定的NAT网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NatGatewayId 绑定的NAT网关ID。
+                     * @param _natGatewayId 绑定的NAT网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
@@ -325,20 +364,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VXLANSupport 专线网关是否支持VXLAN架构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<bool> GetVXLANSupport() const;
 
                     /**
                      * 设置专线网关是否支持VXLAN架构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VXLANSupport 专线网关是否支持VXLAN架构
+                     * @param _vXLANSupport 专线网关是否支持VXLAN架构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVXLANSupport(const std::vector<bool>& _vXLANSupport);
 
                     /**
                      * 判断参数 VXLANSupport 是否已赋值
                      * @return VXLANSupport 是否已赋值
+                     * 
                      */
                     bool VXLANSupportHasBeenSet() const;
 
@@ -347,20 +389,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModeType() const;
 
                     /**
                      * 设置云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
+                     * @param _modeType 云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModeType(const std::string& _modeType);
 
                     /**
                      * 判断参数 ModeType 是否已赋值
                      * @return ModeType 是否已赋值
+                     * 
                      */
                     bool ModeTypeHasBeenSet() const;
 
@@ -369,20 +414,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalZone 是否为localZone专线网关。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetLocalZone() const;
 
                     /**
                      * 设置是否为localZone专线网关。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalZone 是否为localZone专线网关。
+                     * @param _localZone 是否为localZone专线网关。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalZone(const bool& _localZone);
 
                     /**
                      * 判断参数 LocalZone 是否已赋值
                      * @return LocalZone 是否已赋值
+                     * 
                      */
                     bool LocalZoneHasBeenSet() const;
 
@@ -391,20 +439,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 专线网关所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置专线网关所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 专线网关所在可用区
+                     * @param _zone 专线网关所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -417,6 +468,7 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 0：关闭
 1：开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEnableFlowDetails() const;
 
@@ -425,16 +477,18 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 0：关闭
 1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableFlowDetails 网关流控明细启用状态：
+                     * @param _enableFlowDetails 网关流控明细启用状态：
 0：关闭
 1：开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableFlowDetails(const uint64_t& _enableFlowDetails);
 
                     /**
                      * 判断参数 EnableFlowDetails 是否已赋值
                      * @return EnableFlowDetails 是否已赋值
+                     * 
                      */
                     bool EnableFlowDetailsHasBeenSet() const;
 
@@ -443,20 +497,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDetailsUpdateTime 开启、关闭网关流控明细时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowDetailsUpdateTime() const;
 
                     /**
                      * 设置开启、关闭网关流控明细时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowDetailsUpdateTime 开启、关闭网关流控明细时间
+                     * @param _flowDetailsUpdateTime 开启、关闭网关流控明细时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowDetailsUpdateTime(const std::string& _flowDetailsUpdateTime);
 
                     /**
                      * 判断参数 FlowDetailsUpdateTime 是否已赋值
                      * @return FlowDetailsUpdateTime 是否已赋值
+                     * 
                      */
                     bool FlowDetailsUpdateTimeHasBeenSet() const;
 
@@ -469,6 +526,7 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 0：不支持
 1：支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNewAfc() const;
 
@@ -477,16 +535,18 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 0：不支持
 1：支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewAfc 是否支持开启网关流控明细
+                     * @param _newAfc 是否支持开启网关流控明细
 0：不支持
 1：支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewAfc(const uint64_t& _newAfc);
 
                     /**
                      * 判断参数 NewAfc 是否已赋值
                      * @return NewAfc 是否已赋值
+                     * 
                      */
                     bool NewAfcHasBeenSet() const;
 
@@ -501,6 +561,7 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccessNetworkType() const;
 
@@ -510,17 +571,19 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessNetworkType 专线网关接入网络类型：
+                     * @param _accessNetworkType 专线网关接入网络类型：
 <li>`VXLAN` - VXLAN类型。</li>
 <li>`MPLS` - MPLS类型。</li>
 <li>`Hybrid` - Hybrid类型。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessNetworkType(const std::string& _accessNetworkType);
 
                     /**
                      * 判断参数 AccessNetworkType 是否已赋值
                      * @return AccessNetworkType 是否已赋值
+                     * 
                      */
                     bool AccessNetworkTypeHasBeenSet() const;
 
@@ -529,20 +592,23 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaZoneList 跨可用区容灾专线网关的可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHaZoneList() const;
 
                     /**
                      * 设置跨可用区容灾专线网关的可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HaZoneList 跨可用区容灾专线网关的可用区列表
+                     * @param _haZoneList 跨可用区容灾专线网关的可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHaZoneList(const std::vector<std::string>& _haZoneList);
 
                     /**
                      * 判断参数 HaZoneList 是否已赋值
                      * @return HaZoneList 是否已赋值
+                     * 
                      */
                     bool HaZoneListHasBeenSet() const;
 

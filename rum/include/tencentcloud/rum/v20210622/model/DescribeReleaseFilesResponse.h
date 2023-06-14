@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取文件信息列表
                      * @return Files 文件信息列表
+                     * 
                      */
                     std::vector<ReleaseFile> GetFiles() const;
 
                     /**
                      * 判断参数 Files 是否已赋值
                      * @return Files 是否已赋值
+                     * 
                      */
                     bool FilesHasBeenSet() const;
 

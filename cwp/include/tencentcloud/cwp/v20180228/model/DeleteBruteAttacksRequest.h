@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取暴力破解事件Id数组。(最大 100条)
                      * @return Ids 暴力破解事件Id数组。(最大 100条)
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置暴力破解事件Id数组。(最大 100条)
-                     * @param Ids 暴力破解事件Id数组。(最大 100条)
+                     * @param _ids 暴力破解事件Id数组。(最大 100条)
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

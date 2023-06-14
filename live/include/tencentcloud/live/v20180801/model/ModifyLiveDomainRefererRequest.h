@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取播放域名。
                      * @return DomainName 播放域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置播放域名。
-                     * @param DomainName 播放域名。
+                     * @param _domainName 播放域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取是否开启当前域名的 Referer 黑白名单鉴权。
                      * @return Enable 是否开启当前域名的 Referer 黑白名单鉴权。
+                     * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置是否开启当前域名的 Referer 黑白名单鉴权。
-                     * @param Enable 是否开启当前域名的 Referer 黑白名单鉴权。
+                     * @param _enable 是否开启当前域名的 Referer 黑白名单鉴权。
+                     * 
                      */
                     void SetEnable(const int64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取名单类型，0：黑名单，1：白名单。
                      * @return Type 名单类型，0：黑名单，1：白名单。
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置名单类型，0：黑名单，1：白名单。
-                     * @param Type 名单类型，0：黑名单，1：白名单。
+                     * @param _type 名单类型，0：黑名单，1：白名单。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取是否允许空 Referer，0：不允许，1：允许。
                      * @return AllowEmpty 是否允许空 Referer，0：不允许，1：允许。
+                     * 
                      */
                     int64_t GetAllowEmpty() const;
 
                     /**
                      * 设置是否允许空 Referer，0：不允许，1：允许。
-                     * @param AllowEmpty 是否允许空 Referer，0：不允许，1：允许。
+                     * @param _allowEmpty 是否允许空 Referer，0：不允许，1：允许。
+                     * 
                      */
                     void SetAllowEmpty(const int64_t& _allowEmpty);
 
                     /**
                      * 判断参数 AllowEmpty 是否已赋值
                      * @return AllowEmpty 是否已赋值
+                     * 
                      */
                     bool AllowEmptyHasBeenSet() const;
 
                     /**
                      * 获取Referer 名单列表，以;分隔。
                      * @return Rules Referer 名单列表，以;分隔。
+                     * 
                      */
                     std::string GetRules() const;
 
                     /**
                      * 设置Referer 名单列表，以;分隔。
-                     * @param Rules Referer 名单列表，以;分隔。
+                     * @param _rules Referer 名单列表，以;分隔。
+                     * 
                      */
                     void SetRules(const std::string& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

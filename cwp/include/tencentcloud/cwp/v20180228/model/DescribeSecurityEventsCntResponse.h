@@ -47,168 +47,196 @@ namespace TencentCloud
                     /**
                      * 获取木马文件相关风险事件
                      * @return Malware 木马文件相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetMalware() const;
 
                     /**
                      * 判断参数 Malware 是否已赋值
                      * @return Malware 是否已赋值
+                     * 
                      */
                     bool MalwareHasBeenSet() const;
 
                     /**
                      * 获取登录审计相关风险事件
                      * @return HostLogin 登录审计相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetHostLogin() const;
 
                     /**
                      * 判断参数 HostLogin 是否已赋值
                      * @return HostLogin 是否已赋值
+                     * 
                      */
                     bool HostLoginHasBeenSet() const;
 
                     /**
                      * 获取密码破解相关风险事件
                      * @return BruteAttack 密码破解相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetBruteAttack() const;
 
                     /**
                      * 判断参数 BruteAttack 是否已赋值
                      * @return BruteAttack 是否已赋值
+                     * 
                      */
                     bool BruteAttackHasBeenSet() const;
 
                     /**
                      * 获取恶意请求相关风险事件
                      * @return RiskDns 恶意请求相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetRiskDns() const;
 
                     /**
                      * 判断参数 RiskDns 是否已赋值
                      * @return RiskDns 是否已赋值
+                     * 
                      */
                     bool RiskDnsHasBeenSet() const;
 
                     /**
                      * 获取高危命令相关风险事件
                      * @return Bash 高危命令相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetBash() const;
 
                     /**
                      * 判断参数 Bash 是否已赋值
                      * @return Bash 是否已赋值
+                     * 
                      */
                     bool BashHasBeenSet() const;
 
                     /**
                      * 获取本地提权相关风险事件
                      * @return PrivilegeRules 本地提权相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetPrivilegeRules() const;
 
                     /**
                      * 判断参数 PrivilegeRules 是否已赋值
                      * @return PrivilegeRules 是否已赋值
+                     * 
                      */
                     bool PrivilegeRulesHasBeenSet() const;
 
                     /**
                      * 获取反弹Shell相关风险事件
                      * @return ReverseShell 反弹Shell相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetReverseShell() const;
 
                     /**
                      * 判断参数 ReverseShell 是否已赋值
                      * @return ReverseShell 是否已赋值
+                     * 
                      */
                     bool ReverseShellHasBeenSet() const;
 
                     /**
                      * 获取应用漏洞风险事件
                      * @return SysVul 应用漏洞风险事件
+                     * 
                      */
                     SecurityEventInfo GetSysVul() const;
 
                     /**
                      * 判断参数 SysVul 是否已赋值
                      * @return SysVul 是否已赋值
+                     * 
                      */
                     bool SysVulHasBeenSet() const;
 
                     /**
                      * 获取Web应用漏洞相关风险事件
                      * @return WebVul Web应用漏洞相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetWebVul() const;
 
                     /**
                      * 判断参数 WebVul 是否已赋值
                      * @return WebVul 是否已赋值
+                     * 
                      */
                     bool WebVulHasBeenSet() const;
 
                     /**
                      * 获取应急漏洞相关风险事件
                      * @return EmergencyVul 应急漏洞相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetEmergencyVul() const;
 
                     /**
                      * 判断参数 EmergencyVul 是否已赋值
                      * @return EmergencyVul 是否已赋值
+                     * 
                      */
                     bool EmergencyVulHasBeenSet() const;
 
                     /**
                      * 获取安全基线相关风险事件
                      * @return BaseLine 安全基线相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetBaseLine() const;
 
                     /**
                      * 判断参数 BaseLine 是否已赋值
                      * @return BaseLine 是否已赋值
+                     * 
                      */
                     bool BaseLineHasBeenSet() const;
 
                     /**
                      * 获取攻击检测相关风险事件
                      * @return AttackLogs 攻击检测相关风险事件
+                     * 
                      */
                     SecurityEventInfo GetAttackLogs() const;
 
                     /**
                      * 判断参数 AttackLogs 是否已赋值
                      * @return AttackLogs 是否已赋值
+                     * 
                      */
                     bool AttackLogsHasBeenSet() const;
 
                     /**
                      * 获取受影响机器数
                      * @return EffectMachineCount 受影响机器数
+                     * 
                      */
                     uint64_t GetEffectMachineCount() const;
 
                     /**
                      * 判断参数 EffectMachineCount 是否已赋值
                      * @return EffectMachineCount 是否已赋值
+                     * 
                      */
                     bool EffectMachineCountHasBeenSet() const;
 
                     /**
                      * 获取所有事件总数
                      * @return EventsCount 所有事件总数
+                     * 
                      */
                     uint64_t GetEventsCount() const;
 
                     /**
                      * 判断参数 EventsCount 是否已赋值
                      * @return EventsCount 是否已赋值
+                     * 
                      */
                     bool EventsCountHasBeenSet() const;
 
@@ -217,12 +245,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WindowVul window 系统漏洞事件总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SecurityEventInfo GetWindowVul() const;
 
                     /**
                      * 判断参数 WindowVul 是否已赋值
                      * @return WindowVul 是否已赋值
+                     * 
                      */
                     bool WindowVulHasBeenSet() const;
 
@@ -231,12 +261,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinuxVul linux系统漏洞事件总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SecurityEventInfo GetLinuxVul() const;
 
                     /**
                      * 判断参数 LinuxVul 是否已赋值
                      * @return LinuxVul 是否已赋值
+                     * 
                      */
                     bool LinuxVulHasBeenSet() const;
 

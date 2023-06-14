@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取转换实例名称
                      * @return Ip6TranslatorName 转换实例名称
+                     * 
                      */
                     std::string GetIp6TranslatorName() const;
 
                     /**
                      * 设置转换实例名称
-                     * @param Ip6TranslatorName 转换实例名称
+                     * @param _ip6TranslatorName 转换实例名称
+                     * 
                      */
                     void SetIp6TranslatorName(const std::string& _ip6TranslatorName);
 
                     /**
                      * 判断参数 Ip6TranslatorName 是否已赋值
                      * @return Ip6TranslatorName 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorNameHasBeenSet() const;
 
                     /**
                      * 获取创建转换实例数量，默认是1个
                      * @return Ip6TranslatorCount 创建转换实例数量，默认是1个
+                     * 
                      */
                     int64_t GetIp6TranslatorCount() const;
 
                     /**
                      * 设置创建转换实例数量，默认是1个
-                     * @param Ip6TranslatorCount 创建转换实例数量，默认是1个
+                     * @param _ip6TranslatorCount 创建转换实例数量，默认是1个
+                     * 
                      */
                     void SetIp6TranslatorCount(const int64_t& _ip6TranslatorCount);
 
                     /**
                      * 判断参数 Ip6TranslatorCount 是否已赋值
                      * @return Ip6TranslatorCount 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorCountHasBeenSet() const;
 
                     /**
                      * 获取转换实例运营商属性，可取"CMCC","CTCC","CUCC","BGP"
                      * @return Ip6InternetServiceProvider 转换实例运营商属性，可取"CMCC","CTCC","CUCC","BGP"
+                     * 
                      */
                     std::string GetIp6InternetServiceProvider() const;
 
                     /**
                      * 设置转换实例运营商属性，可取"CMCC","CTCC","CUCC","BGP"
-                     * @param Ip6InternetServiceProvider 转换实例运营商属性，可取"CMCC","CTCC","CUCC","BGP"
+                     * @param _ip6InternetServiceProvider 转换实例运营商属性，可取"CMCC","CTCC","CUCC","BGP"
+                     * 
                      */
                     void SetIp6InternetServiceProvider(const std::string& _ip6InternetServiceProvider);
 
                     /**
                      * 判断参数 Ip6InternetServiceProvider 是否已赋值
                      * @return Ip6InternetServiceProvider 是否已赋值
+                     * 
                      */
                     bool Ip6InternetServiceProviderHasBeenSet() const;
 

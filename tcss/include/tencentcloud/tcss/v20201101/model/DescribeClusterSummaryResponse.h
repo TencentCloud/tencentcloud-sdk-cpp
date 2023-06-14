@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取集群总数
                      * @return TotalCount 集群总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取有风险的集群数量
                      * @return RiskClusterCount 有风险的集群数量
+                     * 
                      */
                     uint64_t GetRiskClusterCount() const;
 
                     /**
                      * 判断参数 RiskClusterCount 是否已赋值
                      * @return RiskClusterCount 是否已赋值
+                     * 
                      */
                     bool RiskClusterCountHasBeenSet() const;
 
                     /**
                      * 获取未检查的集群数量
                      * @return UncheckClusterCount 未检查的集群数量
+                     * 
                      */
                     uint64_t GetUncheckClusterCount() const;
 
                     /**
                      * 判断参数 UncheckClusterCount 是否已赋值
                      * @return UncheckClusterCount 是否已赋值
+                     * 
                      */
                     bool UncheckClusterCountHasBeenSet() const;
 
                     /**
                      * 获取托管集群数量
                      * @return ManagedClusterCount 托管集群数量
+                     * 
                      */
                     uint64_t GetManagedClusterCount() const;
 
                     /**
                      * 判断参数 ManagedClusterCount 是否已赋值
                      * @return ManagedClusterCount 是否已赋值
+                     * 
                      */
                     bool ManagedClusterCountHasBeenSet() const;
 
                     /**
                      * 获取独立集群数量
                      * @return IndependentClusterCount 独立集群数量
+                     * 
                      */
                     uint64_t GetIndependentClusterCount() const;
 
                     /**
                      * 判断参数 IndependentClusterCount 是否已赋值
                      * @return IndependentClusterCount 是否已赋值
+                     * 
                      */
                     bool IndependentClusterCountHasBeenSet() const;
 
                     /**
                      * 获取无风险的集群数量
                      * @return NoRiskClusterCount 无风险的集群数量
+                     * 
                      */
                     uint64_t GetNoRiskClusterCount() const;
 
                     /**
                      * 判断参数 NoRiskClusterCount 是否已赋值
                      * @return NoRiskClusterCount 是否已赋值
+                     * 
                      */
                     bool NoRiskClusterCountHasBeenSet() const;
 
                     /**
                      * 获取已经检查集群数
                      * @return CheckedClusterCount 已经检查集群数
+                     * 
                      */
                     uint64_t GetCheckedClusterCount() const;
 
                     /**
                      * 判断参数 CheckedClusterCount 是否已赋值
                      * @return CheckedClusterCount 是否已赋值
+                     * 
                      */
                     bool CheckedClusterCountHasBeenSet() const;
 
                     /**
                      * 获取自动检查集群数
                      * @return AutoCheckClusterCount 自动检查集群数
+                     * 
                      */
                     uint64_t GetAutoCheckClusterCount() const;
 
                     /**
                      * 判断参数 AutoCheckClusterCount 是否已赋值
                      * @return AutoCheckClusterCount 是否已赋值
+                     * 
                      */
                     bool AutoCheckClusterCountHasBeenSet() const;
 
                     /**
                      * 获取手动检查集群数
                      * @return ManualCheckClusterCount 手动检查集群数
+                     * 
                      */
                     uint64_t GetManualCheckClusterCount() const;
 
                     /**
                      * 判断参数 ManualCheckClusterCount 是否已赋值
                      * @return ManualCheckClusterCount 是否已赋值
+                     * 
                      */
                     bool ManualCheckClusterCountHasBeenSet() const;
 
                     /**
                      * 获取检查失败集群数
                      * @return FailedClusterCount 检查失败集群数
+                     * 
                      */
                     uint64_t GetFailedClusterCount() const;
 
                     /**
                      * 判断参数 FailedClusterCount 是否已赋值
                      * @return FailedClusterCount 是否已赋值
+                     * 
                      */
                     bool FailedClusterCountHasBeenSet() const;
 
                     /**
                      * 获取未导入的集群数量
                      * @return NotImportedClusterCount 未导入的集群数量
+                     * 
                      */
                     uint64_t GetNotImportedClusterCount() const;
 
                     /**
                      * 判断参数 NotImportedClusterCount 是否已赋值
                      * @return NotImportedClusterCount 是否已赋值
+                     * 
                      */
                     bool NotImportedClusterCountHasBeenSet() const;
 
                     /**
                      * 获取eks集群数量
                      * @return ServerlessClusterCount eks集群数量
+                     * 
                      */
                     uint64_t GetServerlessClusterCount() const;
 
                     /**
                      * 判断参数 ServerlessClusterCount 是否已赋值
                      * @return ServerlessClusterCount 是否已赋值
+                     * 
                      */
                     bool ServerlessClusterCountHasBeenSet() const;
 

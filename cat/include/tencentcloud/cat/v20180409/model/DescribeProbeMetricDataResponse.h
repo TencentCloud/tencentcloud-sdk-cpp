@@ -48,12 +48,14 @@ namespace TencentCloud
 "[{\"name\":\"task_navigate_request_gauge\",\"columns\":[\"time\",\"avg(first_screen_time) / 1000\"],\"values\":[[1641571200,6.756600000000001]],\"tags\":null}]"
                      * @return MetricSet 返回指标 JSON 序列化后的字符串,具体如下所示：
 "[{\"name\":\"task_navigate_request_gauge\",\"columns\":[\"time\",\"avg(first_screen_time) / 1000\"],\"values\":[[1641571200,6.756600000000001]],\"tags\":null}]"
+                     * 
                      */
                     std::string GetMetricSet() const;
 
                     /**
                      * 判断参数 MetricSet 是否已赋值
                      * @return MetricSet 是否已赋值
+                     * 
                      */
                     bool MetricSetHasBeenSet() const;
 

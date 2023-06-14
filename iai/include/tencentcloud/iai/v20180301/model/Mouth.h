@@ -52,20 +52,23 @@ namespace TencentCloud
 AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
                      * @return MouthOpen 是否张嘴信息。
 AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * 
                      */
                     AttributeItem GetMouthOpen() const;
 
                     /**
                      * 设置是否张嘴信息。
 AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
-                     * @param MouthOpen 是否张嘴信息。
+                     * @param _mouthOpen 是否张嘴信息。
 AttributeItem对应的Type为 —— 0：不张嘴，1：张嘴。
+                     * 
                      */
                     void SetMouthOpen(const AttributeItem& _mouthOpen);
 
                     /**
                      * 判断参数 MouthOpen 是否已赋值
                      * @return MouthOpen 是否已赋值
+                     * 
                      */
                     bool MouthOpenHasBeenSet() const;
 

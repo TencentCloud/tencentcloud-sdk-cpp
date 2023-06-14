@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取子网名称，可任意命名，但不得超过60个字符
                      * @return SubnetName 子网名称，可任意命名，但不得超过60个字符
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名称，可任意命名，但不得超过60个字符
-                     * @param SubnetName 子网名称，可任意命名，但不得超过60个字符
+                     * @param _subnetName 子网名称，可任意命名，但不得超过60个字符
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠
                      * @return CidrBlock 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠
-                     * @param CidrBlock 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠
+                     * @param _cidrBlock 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中
                      * @return DistributedFlag 是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中
+                     * 
                      */
                     uint64_t GetDistributedFlag() const;
 
                     /**
                      * 设置是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中
-                     * @param DistributedFlag 是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中
+                     * @param _distributedFlag 是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中
+                     * 
                      */
                     void SetDistributedFlag(const uint64_t& _distributedFlag);
 
                     /**
                      * 判断参数 DistributedFlag 是否已赋值
                      * @return DistributedFlag 是否已赋值
+                     * 
                      */
                     bool DistributedFlagHasBeenSet() const;
 
                     /**
                      * 获取是否开启dhcp relay ，关闭为0，开启为1。默认为0
                      * @return DhcpEnable 是否开启dhcp relay ，关闭为0，开启为1。默认为0
+                     * 
                      */
                     uint64_t GetDhcpEnable() const;
 
                     /**
                      * 设置是否开启dhcp relay ，关闭为0，开启为1。默认为0
-                     * @param DhcpEnable 是否开启dhcp relay ，关闭为0，开启为1。默认为0
+                     * @param _dhcpEnable 是否开启dhcp relay ，关闭为0，开启为1。默认为0
+                     * 
                      */
                     void SetDhcpEnable(const uint64_t& _dhcpEnable);
 
                     /**
                      * 判断参数 DhcpEnable 是否已赋值
                      * @return DhcpEnable 是否已赋值
+                     * 
                      */
                     bool DhcpEnableHasBeenSet() const;
 
                     /**
                      * 获取DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP
                      * @return DhcpServerIp DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP
+                     * 
                      */
                     std::vector<std::string> GetDhcpServerIp() const;
 
                     /**
                      * 设置DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP
-                     * @param DhcpServerIp DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP
+                     * @param _dhcpServerIp DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP
+                     * 
                      */
                     void SetDhcpServerIp(const std::vector<std::string>& _dhcpServerIp);
 
                     /**
                      * 判断参数 DhcpServerIp 是否已赋值
                      * @return DhcpServerIp 是否已赋值
+                     * 
                      */
                     bool DhcpServerIpHasBeenSet() const;
 
                     /**
                      * 获取预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段
                      * @return IpReserve 预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段
+                     * 
                      */
                     uint64_t GetIpReserve() const;
 
                     /**
                      * 设置预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段
-                     * @param IpReserve 预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段
+                     * @param _ipReserve 预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段
+                     * 
                      */
                     void SetIpReserve(const uint64_t& _ipReserve);
 
                     /**
                      * 判断参数 IpReserve 是否已赋值
                      * @return IpReserve 是否已赋值
+                     * 
                      */
                     bool IpReserveHasBeenSet() const;
 
                     /**
                      * 获取子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。
                      * @return VlanId 子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。
+                     * 
                      */
                     uint64_t GetVlanId() const;
 
                     /**
                      * 设置子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。
-                     * @param VlanId 子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。
+                     * @param _vlanId 子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。
+                     * 
                      */
                     void SetVlanId(const uint64_t& _vlanId);
 
                     /**
                      * 判断参数 VlanId 是否已赋值
                      * @return VlanId 是否已赋值
+                     * 
                      */
                     bool VlanIdHasBeenSet() const;
 
                     /**
                      * 获取黑石子网的可用区
                      * @return Zone 黑石子网的可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置黑石子网的可用区
-                     * @param Zone 黑石子网的可用区
+                     * @param _zone 黑石子网的可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取是否25G子网，1为是，0为否。
                      * @return IsSmartNic 是否25G子网，1为是，0为否。
+                     * 
                      */
                     uint64_t GetIsSmartNic() const;
 
                     /**
                      * 设置是否25G子网，1为是，0为否。
-                     * @param IsSmartNic 是否25G子网，1为是，0为否。
+                     * @param _isSmartNic 是否25G子网，1为是，0为否。
+                     * 
                      */
                     void SetIsSmartNic(const uint64_t& _isSmartNic);
 
                     /**
                      * 判断参数 IsSmartNic 是否已赋值
                      * @return IsSmartNic 是否已赋值
+                     * 
                      */
                     bool IsSmartNicHasBeenSet() const;
 

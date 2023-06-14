@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return DBInstanceId 实例ID。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param DBInstanceId 实例ID。
+                     * @param _dBInstanceId 实例ID。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取日志备份ID。
                      * @return LogBackupId 日志备份ID。
+                     * 
                      */
                     std::string GetLogBackupId() const;
 
                     /**
                      * 设置日志备份ID。
-                     * @param LogBackupId 日志备份ID。
+                     * @param _logBackupId 日志备份ID。
+                     * 
                      */
                     void SetLogBackupId(const std::string& _logBackupId);
 
                     /**
                      * 判断参数 LogBackupId 是否已赋值
                      * @return LogBackupId 是否已赋值
+                     * 
                      */
                     bool LogBackupIdHasBeenSet() const;
 

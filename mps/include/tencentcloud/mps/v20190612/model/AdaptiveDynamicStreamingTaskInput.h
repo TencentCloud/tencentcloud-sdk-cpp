@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取转自适应码流模板 ID。
                      * @return Definition 转自适应码流模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置转自适应码流模板 ID。
-                     * @param Definition 转自适应码流模板 ID。
+                     * @param _definition 转自适应码流模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
                     /**
                      * 判断参数 WatermarkSet 是否已赋值
                      * @return WatermarkSet 是否已赋值
+                     * 
                      */
                     bool WatermarkSetHasBeenSet() const;
 
@@ -89,74 +95,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStorage 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputStorage 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * @param _outputStorage 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
                     /**
                      * 获取转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。
                      * @return OutputObjectPath 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。
+                     * 
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
                      * 设置转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。
-                     * @param OutputObjectPath 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。
+                     * @param _outputObjectPath 转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。
+                     * 
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
 
                     /**
                      * 判断参数 OutputObjectPath 是否已赋值
                      * @return OutputObjectPath 是否已赋值
+                     * 
                      */
                     bool OutputObjectPathHasBeenSet() const;
 
                     /**
                      * 获取转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
                      * @return SubStreamObjectName 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * 
                      */
                     std::string GetSubStreamObjectName() const;
 
                     /**
                      * 设置转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
-                     * @param SubStreamObjectName 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * @param _subStreamObjectName 转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。
+                     * 
                      */
                     void SetSubStreamObjectName(const std::string& _subStreamObjectName);
 
                     /**
                      * 判断参数 SubStreamObjectName 是否已赋值
                      * @return SubStreamObjectName 是否已赋值
+                     * 
                      */
                     bool SubStreamObjectNameHasBeenSet() const;
 
                     /**
                      * 获取转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
                      * @return SegmentObjectName 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * 
                      */
                     std::string GetSegmentObjectName() const;
 
                     /**
                      * 设置转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
-                     * @param SegmentObjectName 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * @param _segmentObjectName 转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。
+                     * 
                      */
                     void SetSegmentObjectName(const std::string& _segmentObjectName);
 
                     /**
                      * 判断参数 SegmentObjectName 是否已赋值
                      * @return SegmentObjectName 是否已赋值
+                     * 
                      */
                     bool SegmentObjectNameHasBeenSet() const;
 

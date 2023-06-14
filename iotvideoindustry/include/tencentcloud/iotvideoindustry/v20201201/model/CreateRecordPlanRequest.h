@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取计划名称
                      * @return Name 计划名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
-                     * @param Name 计划名称
+                     * @param _name 计划名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取时间模板ID
                      * @return TimeTemplateId 时间模板ID
+                     * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-                     * @param TimeTemplateId 时间模板ID
+                     * @param _timeTemplateId 时间模板ID
+                     * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
 
                     /**
                      * 判断参数 TimeTemplateId 是否已赋值
                      * @return TimeTemplateId 是否已赋值
+                     * 
                      */
                     bool TimeTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取触发录制的事件类别 1:全部
                      * @return EventId 触发录制的事件类别 1:全部
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置触发录制的事件类别 1:全部
-                     * @param EventId 触发录制的事件类别 1:全部
+                     * @param _eventId 触发录制的事件类别 1:全部
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取该录制计划绑定的设备列表
                      * @return Devices 该录制计划绑定的设备列表
+                     * 
                      */
                     std::vector<DeviceItem> GetDevices() const;
 
                     /**
                      * 设置该录制计划绑定的设备列表
-                     * @param Devices 该录制计划绑定的设备列表
+                     * @param _devices 该录制计划绑定的设备列表
+                     * 
                      */
                     void SetDevices(const std::vector<DeviceItem>& _devices);
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 
                     /**
                      * 获取存储周期
                      * @return RecordStorageTime 存储周期
+                     * 
                      */
                     int64_t GetRecordStorageTime() const;
 
                     /**
                      * 设置存储周期
-                     * @param RecordStorageTime 存储周期
+                     * @param _recordStorageTime 存储周期
+                     * 
                      */
                     void SetRecordStorageTime(const int64_t& _recordStorageTime);
 
                     /**
                      * 判断参数 RecordStorageTime 是否已赋值
                      * @return RecordStorageTime 是否已赋值
+                     * 
                      */
                     bool RecordStorageTimeHasBeenSet() const;
 

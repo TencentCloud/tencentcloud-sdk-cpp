@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份
                      * @return BackupFileType 备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份
+                     * 
                      */
                     std::string GetBackupFileType() const;
 
                     /**
                      * 设置备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份
-                     * @param BackupFileType 备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份
+                     * @param _backupFileType 备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份
+                     * 
                      */
                     void SetBackupFileType(const std::string& _backupFileType);
 
                     /**
                      * 判断参数 BackupFileType 是否已赋值
                      * @return BackupFileType 是否已赋值
+                     * 
                      */
                     bool BackupFileTypeHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return DataBaseName 数据库名称
+                     * 
                      */
                     std::string GetDataBaseName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DataBaseName 数据库名称
+                     * @param _dataBaseName 数据库名称
+                     * 
                      */
                     void SetDataBaseName(const std::string& _dataBaseName);
 
                     /**
                      * 判断参数 DataBaseName 是否已赋值
                      * @return DataBaseName 是否已赋值
+                     * 
                      */
                     bool DataBaseNameHasBeenSet() const;
 
                     /**
                      * 获取是否需要恢复，NO-不需要，YES-需要
                      * @return IsRecovery 是否需要恢复，NO-不需要，YES-需要
+                     * 
                      */
                     std::string GetIsRecovery() const;
 
                     /**
                      * 设置是否需要恢复，NO-不需要，YES-需要
-                     * @param IsRecovery 是否需要恢复，NO-不需要，YES-需要
+                     * @param _isRecovery 是否需要恢复，NO-不需要，YES-需要
+                     * 
                      */
                     void SetIsRecovery(const std::string& _isRecovery);
 
                     /**
                      * 判断参数 IsRecovery 是否已赋值
                      * @return IsRecovery 是否已赋值
+                     * 
                      */
                     bool IsRecoveryHasBeenSet() const;
 
                     /**
                      * 获取备份文件保存的路径；如果不填则默认在D:\\
                      * @return LocalPath 备份文件保存的路径；如果不填则默认在D:\\
+                     * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置备份文件保存的路径；如果不填则默认在D:\\
-                     * @param LocalPath 备份文件保存的路径；如果不填则默认在D:\\
+                     * @param _localPath 备份文件保存的路径；如果不填则默认在D:\\
+                     * 
                      */
                     void SetLocalPath(const std::string& _localPath);
 
                     /**
                      * 判断参数 LocalPath 是否已赋值
                      * @return LocalPath 是否已赋值
+                     * 
                      */
                     bool LocalPathHasBeenSet() const;
 

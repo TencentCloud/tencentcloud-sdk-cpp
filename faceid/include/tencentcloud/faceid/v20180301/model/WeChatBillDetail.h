@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取token
                      * @return BizToken token
+                     * 
                      */
                     std::string GetBizToken() const;
 
                     /**
                      * 设置token
-                     * @param BizToken token
+                     * @param _bizToken token
+                     * 
                      */
                     void SetBizToken(const std::string& _bizToken);
 
                     /**
                      * 判断参数 BizToken 是否已赋值
                      * @return BizToken 是否已赋值
+                     * 
                      */
                     bool BizTokenHasBeenSet() const;
 
                     /**
                      * 获取本token收费次数
                      * @return ChargeCount 本token收费次数
+                     * 
                      */
                     uint64_t GetChargeCount() const;
 
                     /**
                      * 设置本token收费次数
-                     * @param ChargeCount 本token收费次数
+                     * @param _chargeCount 本token收费次数
+                     * 
                      */
                     void SetChargeCount(const uint64_t& _chargeCount);
 
                     /**
                      * 判断参数 ChargeCount 是否已赋值
                      * @return ChargeCount 是否已赋值
+                     * 
                      */
                     bool ChargeCountHasBeenSet() const;
 
                     /**
                      * 获取本token计费详情
                      * @return ChargeDetails 本token计费详情
+                     * 
                      */
                     std::vector<ChargeDetail> GetChargeDetails() const;
 
                     /**
                      * 设置本token计费详情
-                     * @param ChargeDetails 本token计费详情
+                     * @param _chargeDetails 本token计费详情
+                     * 
                      */
                     void SetChargeDetails(const std::vector<ChargeDetail>& _chargeDetails);
 
                     /**
                      * 判断参数 ChargeDetails 是否已赋值
                      * @return ChargeDetails 是否已赋值
+                     * 
                      */
                     bool ChargeDetailsHasBeenSet() const;
 
                     /**
                      * 获取业务RuleId
                      * @return RuleId 业务RuleId
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置业务RuleId
-                     * @param RuleId 业务RuleId
+                     * @param _ruleId 业务RuleId
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

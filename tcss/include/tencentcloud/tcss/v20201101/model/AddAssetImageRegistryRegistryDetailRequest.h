@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取仓库名
                      * @return Name 仓库名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置仓库名
-                     * @param Name 仓库名
+                     * @param _name 仓库名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return Username 用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
-                     * @param Username 用户名
+                     * @param _username 用户名
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return Password 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
-                     * @param Password 密码
+                     * @param _password 密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取仓库url
                      * @return Url 仓库url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置仓库url
-                     * @param Url 仓库url
+                     * @param _url 仓库url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取仓库类型，列表：harbor
                      * @return RegistryType 仓库类型，列表：harbor
+                     * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 设置仓库类型，列表：harbor
-                     * @param RegistryType 仓库类型，列表：harbor
+                     * @param _registryType 仓库类型，列表：harbor
+                     * 
                      */
                     void SetRegistryType(const std::string& _registryType);
 
                     /**
                      * 判断参数 RegistryType 是否已赋值
                      * @return RegistryType 是否已赋值
+                     * 
                      */
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
                      * 获取网络类型，列表：public（公网）
                      * @return NetType 网络类型，列表：public（公网）
+                     * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 设置网络类型，列表：public（公网）
-                     * @param NetType 网络类型，列表：public（公网）
+                     * @param _netType 网络类型，列表：public（公网）
+                     * 
                      */
                     void SetNetType(const std::string& _netType);
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
                     /**
                      * 获取仓库版本
                      * @return RegistryVersion 仓库版本
+                     * 
                      */
                     std::string GetRegistryVersion() const;
 
                     /**
                      * 设置仓库版本
-                     * @param RegistryVersion 仓库版本
+                     * @param _registryVersion 仓库版本
+                     * 
                      */
                     void SetRegistryVersion(const std::string& _registryVersion);
 
                     /**
                      * 判断参数 RegistryVersion 是否已赋值
                      * @return RegistryVersion 是否已赋值
+                     * 
                      */
                     bool RegistryVersionHasBeenSet() const;
 
                     /**
                      * 获取区域，列表：default（默认）
                      * @return RegistryRegion 区域，列表：default（默认）
+                     * 
                      */
                     std::string GetRegistryRegion() const;
 
                     /**
                      * 设置区域，列表：default（默认）
-                     * @param RegistryRegion 区域，列表：default（默认）
+                     * @param _registryRegion 区域，列表：default（默认）
+                     * 
                      */
                     void SetRegistryRegion(const std::string& _registryRegion);
 
                     /**
                      * 判断参数 RegistryRegion 是否已赋值
                      * @return RegistryRegion 是否已赋值
+                     * 
                      */
                     bool RegistryRegionHasBeenSet() const;
 
                     /**
                      * 获取限速
                      * @return SpeedLimit 限速
+                     * 
                      */
                     int64_t GetSpeedLimit() const;
 
                     /**
                      * 设置限速
-                     * @param SpeedLimit 限速
+                     * @param _speedLimit 限速
+                     * 
                      */
                     void SetSpeedLimit(const int64_t& _speedLimit);
 
                     /**
                      * 判断参数 SpeedLimit 是否已赋值
                      * @return SpeedLimit 是否已赋值
+                     * 
                      */
                     bool SpeedLimitHasBeenSet() const;
 
                     /**
                      * 获取安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
                      * @return Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+                     * 
                      */
                     uint64_t GetInsecure() const;
 
                     /**
                      * 设置安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
-                     * @param Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+                     * @param _insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
+                     * 
                      */
                     void SetInsecure(const uint64_t& _insecure);
 
                     /**
                      * 判断参数 Insecure 是否已赋值
                      * @return Insecure 是否已赋值
+                     * 
                      */
                     bool InsecureHasBeenSet() const;
 

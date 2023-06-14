@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取房间Id。
                      * @return RoomId 房间Id。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间Id。
-                     * @param RoomId 房间Id。
+                     * @param _roomId 房间Id。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取低代码平台的SdkAppId。
                      * @return SdkAppId 低代码平台的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台的SdkAppId。
-                     * @param SdkAppId 低代码平台的SdkAppId。
+                     * @param _sdkAppId 低代码平台的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取需要踢出成员Id
                      * @return UserId 需要踢出成员Id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置需要踢出成员Id
-                     * @param UserId 需要踢出成员Id
+                     * @param _userId 需要踢出成员Id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -103,6 +112,7 @@ namespace TencentCloud
                      * @return KickType 踢出类型：
 1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。
 2：永久踢出
+                     * 
                      */
                     uint64_t GetKickType() const;
 
@@ -110,33 +120,38 @@ namespace TencentCloud
                      * 设置踢出类型：
 1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。
 2：永久踢出
-                     * @param KickType 踢出类型：
+                     * @param _kickType 踢出类型：
 1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。
 2：永久踢出
+                     * 
                      */
                     void SetKickType(const uint64_t& _kickType);
 
                     /**
                      * 判断参数 KickType 是否已赋值
                      * @return KickType 是否已赋值
+                     * 
                      */
                     bool KickTypeHasBeenSet() const;
 
                     /**
                      * 获取污点时间(单位秒)，KickType = 1时生效，默认为0
                      * @return Duration 污点时间(单位秒)，KickType = 1时生效，默认为0
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置污点时间(单位秒)，KickType = 1时生效，默认为0
-                     * @param Duration 污点时间(单位秒)，KickType = 1时生效，默认为0
+                     * @param _duration 污点时间(单位秒)，KickType = 1时生效，默认为0
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

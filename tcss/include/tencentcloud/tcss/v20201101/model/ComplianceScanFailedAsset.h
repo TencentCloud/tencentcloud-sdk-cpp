@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取客户资产的ID。
                      * @return CustomerAssetId 客户资产的ID。
+                     * 
                      */
                     uint64_t GetCustomerAssetId() const;
 
                     /**
                      * 设置客户资产的ID。
-                     * @param CustomerAssetId 客户资产的ID。
+                     * @param _customerAssetId 客户资产的ID。
+                     * 
                      */
                     void SetCustomerAssetId(const uint64_t& _customerAssetId);
 
                     /**
                      * 判断参数 CustomerAssetId 是否已赋值
                      * @return CustomerAssetId 是否已赋值
+                     * 
                      */
                     bool CustomerAssetIdHasBeenSet() const;
 
                     /**
                      * 获取资产类别。
                      * @return AssetType 资产类别。
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类别。
-                     * @param AssetType 资产类别。
+                     * @param _assetType 资产类别。
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
+                     * 
                      */
                     std::string GetCheckStatus() const;
 
@@ -102,89 +109,103 @@ CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
-                     * @param CheckStatus 检测状态
+                     * @param _checkStatus 检测状态
 CHECK_INIT, 待检测
 CHECK_RUNNING, 检测中
 CHECK_FINISHED, 检测完成
 CHECK_FAILED, 检测失败
+                     * 
                      */
                     void SetCheckStatus(const std::string& _checkStatus);
 
                     /**
                      * 判断参数 CheckStatus 是否已赋值
                      * @return CheckStatus 是否已赋值
+                     * 
                      */
                     bool CheckStatusHasBeenSet() const;
 
                     /**
                      * 获取资产的名称。
                      * @return AssetName 资产的名称。
+                     * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产的名称。
-                     * @param AssetName 资产的名称。
+                     * @param _assetName 资产的名称。
+                     * 
                      */
                     void SetAssetName(const std::string& _assetName);
 
                     /**
                      * 判断参数 AssetName 是否已赋值
                      * @return AssetName 是否已赋值
+                     * 
                      */
                     bool AssetNameHasBeenSet() const;
 
                     /**
                      * 获取资产检测失败的原因。
                      * @return FailureReason 资产检测失败的原因。
+                     * 
                      */
                     std::string GetFailureReason() const;
 
                     /**
                      * 设置资产检测失败的原因。
-                     * @param FailureReason 资产检测失败的原因。
+                     * @param _failureReason 资产检测失败的原因。
+                     * 
                      */
                     void SetFailureReason(const std::string& _failureReason);
 
                     /**
                      * 判断参数 FailureReason 是否已赋值
                      * @return FailureReason 是否已赋值
+                     * 
                      */
                     bool FailureReasonHasBeenSet() const;
 
                     /**
                      * 获取检测失败的处理建议。
                      * @return Suggestion 检测失败的处理建议。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置检测失败的处理建议。
-                     * @param Suggestion 检测失败的处理建议。
+                     * @param _suggestion 检测失败的处理建议。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取检测的时间。
                      * @return CheckTime 检测的时间。
+                     * 
                      */
                     std::string GetCheckTime() const;
 
                     /**
                      * 设置检测的时间。
-                     * @param CheckTime 检测的时间。
+                     * @param _checkTime 检测的时间。
+                     * 
                      */
                     void SetCheckTime(const std::string& _checkTime);
 
                     /**
                      * 判断参数 CheckTime 是否已赋值
                      * @return CheckTime 是否已赋值
+                     * 
                      */
                     bool CheckTimeHasBeenSet() const;
 

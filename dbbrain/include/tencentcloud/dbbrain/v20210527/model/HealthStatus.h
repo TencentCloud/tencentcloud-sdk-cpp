@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取健康分数，满分100。
                      * @return HealthScore 健康分数，满分100。
+                     * 
                      */
                     int64_t GetHealthScore() const;
 
                     /**
                      * 设置健康分数，满分100。
-                     * @param HealthScore 健康分数，满分100。
+                     * @param _healthScore 健康分数，满分100。
+                     * 
                      */
                     void SetHealthScore(const int64_t& _healthScore);
 
                     /**
                      * 判断参数 HealthScore 是否已赋值
                      * @return HealthScore 是否已赋值
+                     * 
                      */
                     bool HealthScoreHasBeenSet() const;
 
                     /**
                      * 获取健康等级，取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK"- 危险；"HIGH_RISK" - 高危。
                      * @return HealthLevel 健康等级，取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK"- 危险；"HIGH_RISK" - 高危。
+                     * 
                      */
                     std::string GetHealthLevel() const;
 
                     /**
                      * 设置健康等级，取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK"- 危险；"HIGH_RISK" - 高危。
-                     * @param HealthLevel 健康等级，取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK"- 危险；"HIGH_RISK" - 高危。
+                     * @param _healthLevel 健康等级，取值包括："HEALTH" - 健康；"SUB_HEALTH" - 亚健康；"RISK"- 危险；"HIGH_RISK" - 高危。
+                     * 
                      */
                     void SetHealthLevel(const std::string& _healthLevel);
 
                     /**
                      * 判断参数 HealthLevel 是否已赋值
                      * @return HealthLevel 是否已赋值
+                     * 
                      */
                     bool HealthLevelHasBeenSet() const;
 
                     /**
                      * 获取总扣分分数。
                      * @return ScoreLost 总扣分分数。
+                     * 
                      */
                     int64_t GetScoreLost() const;
 
                     /**
                      * 设置总扣分分数。
-                     * @param ScoreLost 总扣分分数。
+                     * @param _scoreLost 总扣分分数。
+                     * 
                      */
                     void SetScoreLost(const int64_t& _scoreLost);
 
                     /**
                      * 判断参数 ScoreLost 是否已赋值
                      * @return ScoreLost 是否已赋值
+                     * 
                      */
                     bool ScoreLostHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScoreDetails 扣分详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScoreDetail> GetScoreDetails() const;
 
                     /**
                      * 设置扣分详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScoreDetails 扣分详情。
+                     * @param _scoreDetails 扣分详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScoreDetails(const std::vector<ScoreDetail>& _scoreDetails);
 
                     /**
                      * 判断参数 ScoreDetails 是否已赋值
                      * @return ScoreDetails 是否已赋值
+                     * 
                      */
                     bool ScoreDetailsHasBeenSet() const;
 

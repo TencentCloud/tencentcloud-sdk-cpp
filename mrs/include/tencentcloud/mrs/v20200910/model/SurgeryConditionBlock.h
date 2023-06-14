@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryList 手术历史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SurgeryListBlock> GetSurgeryList() const;
 
                     /**
                      * 设置手术历史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurgeryList 手术历史
+                     * @param _surgeryList 手术历史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSurgeryList(const std::vector<SurgeryListBlock>& _surgeryList);
 
                     /**
                      * 判断参数 SurgeryList 是否已赋值
                      * @return SurgeryList 是否已赋值
+                     * 
                      */
                     bool SurgeryListHasBeenSet() const;
 
@@ -120,6 +129,7 @@ namespace TencentCloud
                      * @return Value 对外输出值
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
@@ -127,15 +137,17 @@ namespace TencentCloud
                      * 设置对外输出值
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 对外输出值
+                     * @param _value 对外输出值
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

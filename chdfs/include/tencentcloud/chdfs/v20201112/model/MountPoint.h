@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取挂载点ID
                      * @return MountPointId 挂载点ID
+                     * 
                      */
                     std::string GetMountPointId() const;
 
                     /**
                      * 设置挂载点ID
-                     * @param MountPointId 挂载点ID
+                     * @param _mountPointId 挂载点ID
+                     * 
                      */
                     void SetMountPointId(const std::string& _mountPointId);
 
                     /**
                      * 判断参数 MountPointId 是否已赋值
                      * @return MountPointId 是否已赋值
+                     * 
                      */
                     bool MountPointIdHasBeenSet() const;
 
                     /**
                      * 获取挂载点名称
                      * @return MountPointName 挂载点名称
+                     * 
                      */
                     std::string GetMountPointName() const;
 
                     /**
                      * 设置挂载点名称
-                     * @param MountPointName 挂载点名称
+                     * @param _mountPointName 挂载点名称
+                     * 
                      */
                     void SetMountPointName(const std::string& _mountPointName);
 
                     /**
                      * 判断参数 MountPointName 是否已赋值
                      * @return MountPointName 是否已赋值
+                     * 
                      */
                     bool MountPointNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取挂载点状态（1：打开；2：关闭）
                      * @return Status 挂载点状态（1：打开；2：关闭）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置挂载点状态（1：打开；2：关闭）
-                     * @param Status 挂载点状态（1：打开；2：关闭）
+                     * @param _status 挂载点状态（1：打开；2：关闭）
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取绑定的权限组ID列表
                      * @return AccessGroupIds 绑定的权限组ID列表
+                     * 
                      */
                     std::vector<std::string> GetAccessGroupIds() const;
 
                     /**
                      * 设置绑定的权限组ID列表
-                     * @param AccessGroupIds 绑定的权限组ID列表
+                     * @param _accessGroupIds 绑定的权限组ID列表
+                     * 
                      */
                     void SetAccessGroupIds(const std::vector<std::string>& _accessGroupIds);
 
                     /**
                      * 判断参数 AccessGroupIds 是否已赋值
                      * @return AccessGroupIds 是否已赋值
+                     * 
                      */
                     bool AccessGroupIdsHasBeenSet() const;
 

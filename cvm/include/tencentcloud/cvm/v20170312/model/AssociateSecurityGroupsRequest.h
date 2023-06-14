@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
                      * @return SecurityGroupIds 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
-                     * @param SecurityGroupIds 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+                     * @param _securityGroupIds 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
                      * @return InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
-                     * @param InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
+                     * @param _instanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

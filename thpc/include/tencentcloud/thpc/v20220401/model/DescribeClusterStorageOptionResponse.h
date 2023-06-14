@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取集群存储选项信息概览。
                      * @return StorageOption 集群存储选项信息概览。
+                     * 
                      */
                     StorageOptionOverview GetStorageOption() const;
 
                     /**
                      * 判断参数 StorageOption 是否已赋值
                      * @return StorageOption 是否已赋值
+                     * 
                      */
                     bool StorageOptionHasBeenSet() const;
 

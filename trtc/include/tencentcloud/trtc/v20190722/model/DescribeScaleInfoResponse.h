@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的数据条数
                      * @return Total 返回的数据条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleList 返回的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScaleInfomation> GetScaleList() const;
 
                     /**
                      * 判断参数 ScaleList 是否已赋值
                      * @return ScaleList 是否已赋值
+                     * 
                      */
                     bool ScaleListHasBeenSet() const;
 

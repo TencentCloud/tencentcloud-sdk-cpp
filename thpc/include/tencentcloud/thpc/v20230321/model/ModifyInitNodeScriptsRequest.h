@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID。
-                     * @param ClusterId 集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点初始化脚本信息列表。
                      * @return InitNodeScripts 节点初始化脚本信息列表。
+                     * 
                      */
                     std::vector<NodeScript> GetInitNodeScripts() const;
 
                     /**
                      * 设置节点初始化脚本信息列表。
-                     * @param InitNodeScripts 节点初始化脚本信息列表。
+                     * @param _initNodeScripts 节点初始化脚本信息列表。
+                     * 
                      */
                     void SetInitNodeScripts(const std::vector<NodeScript>& _initNodeScripts);
 
                     /**
                      * 判断参数 InitNodeScripts 是否已赋值
                      * @return InitNodeScripts 是否已赋值
+                     * 
                      */
                     bool InitNodeScriptsHasBeenSet() const;
 

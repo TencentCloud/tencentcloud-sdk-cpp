@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取基线检测项ID
                      * @return ItemId 基线检测项ID
+                     * 
                      */
                     int64_t GetItemId() const;
 
                     /**
                      * 设置基线检测项ID
-                     * @param ItemId 基线检测项ID
+                     * @param _itemId 基线检测项ID
+                     * 
                      */
                     void SetItemId(const int64_t& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
                     /**
                      * 获取检测项名字
                      * @return ItemName 检测项名字
+                     * 
                      */
                     std::string GetItemName() const;
 
                     /**
                      * 设置检测项名字
-                     * @param ItemName 检测项名字
+                     * @param _itemName 检测项名字
+                     * 
                      */
                     void SetItemName(const std::string& _itemName);
 
                     /**
                      * 判断参数 ItemName 是否已赋值
                      * @return ItemName 是否已赋值
+                     * 
                      */
                     bool ItemNameHasBeenSet() const;
 
@@ -88,92 +94,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 检测项所属规则的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置检测项所属规则的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 检测项所属规则的ID
+                     * @param _ruleId 检测项所属规则的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取检测项描述
                      * @return ItemDesc 检测项描述
+                     * 
                      */
                     std::string GetItemDesc() const;
 
                     /**
                      * 设置检测项描述
-                     * @param ItemDesc 检测项描述
+                     * @param _itemDesc 检测项描述
+                     * 
                      */
                     void SetItemDesc(const std::string& _itemDesc);
 
                     /**
                      * 判断参数 ItemDesc 是否已赋值
                      * @return ItemDesc 是否已赋值
+                     * 
                      */
                     bool ItemDescHasBeenSet() const;
 
                     /**
                      * 获取检测项的修复方法
                      * @return FixMethod 检测项的修复方法
+                     * 
                      */
                     std::string GetFixMethod() const;
 
                     /**
                      * 设置检测项的修复方法
-                     * @param FixMethod 检测项的修复方法
+                     * @param _fixMethod 检测项的修复方法
+                     * 
                      */
                     void SetFixMethod(const std::string& _fixMethod);
 
                     /**
                      * 判断参数 FixMethod 是否已赋值
                      * @return FixMethod 是否已赋值
+                     * 
                      */
                     bool FixMethodHasBeenSet() const;
 
                     /**
                      * 获取检测项所属规则名字
                      * @return RuleName 检测项所属规则名字
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置检测项所属规则名字
-                     * @param RuleName 检测项所属规则名字
+                     * @param _ruleName 检测项所属规则名字
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取危险等级
                      * @return Level 危险等级
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置危险等级
-                     * @param Level 危险等级
+                     * @param _level 危险等级
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SysRuleId 系统规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSysRuleId() const;
 
                     /**
                      * 设置系统规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SysRuleId 系统规则ID
+                     * @param _sysRuleId 系统规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSysRuleId(const int64_t& _sysRuleId);
 
                     /**
                      * 判断参数 SysRuleId 是否已赋值
                      * @return SysRuleId 是否已赋值
+                     * 
                      */
                     bool SysRuleIdHasBeenSet() const;
 
@@ -204,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedCustomRuleInfo 被引自定义规则信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BaselineCustomRuleIdName> GetRelatedCustomRuleInfo() const;
 
                     /**
                      * 设置被引自定义规则信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelatedCustomRuleInfo 被引自定义规则信息
+                     * @param _relatedCustomRuleInfo 被引自定义规则信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelatedCustomRuleInfo(const std::vector<BaselineCustomRuleIdName>& _relatedCustomRuleInfo);
 
                     /**
                      * 判断参数 RelatedCustomRuleInfo 是否已赋值
                      * @return RelatedCustomRuleInfo 是否已赋值
+                     * 
                      */
                     bool RelatedCustomRuleInfoHasBeenSet() const;
 

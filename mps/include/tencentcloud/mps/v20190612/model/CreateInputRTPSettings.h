@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取默认为“none”，可选值['none']。
                      * @return FEC 默认为“none”，可选值['none']。
+                     * 
                      */
                     std::string GetFEC() const;
 
                     /**
                      * 设置默认为“none”，可选值['none']。
-                     * @param FEC 默认为“none”，可选值['none']。
+                     * @param _fEC 默认为“none”，可选值['none']。
+                     * 
                      */
                     void SetFEC(const std::string& _fEC);
 
                     /**
                      * 判断参数 FEC 是否已赋值
                      * @return FEC 是否已赋值
+                     * 
                      */
                     bool FECHasBeenSet() const;
 
                     /**
                      * 获取空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
                      * @return IdleTimeout 空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 
                      */
                     int64_t GetIdleTimeout() const;
 
                     /**
                      * 设置空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
-                     * @param IdleTimeout 空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * @param _idleTimeout 空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 
                      */
                     void SetIdleTimeout(const int64_t& _idleTimeout);
 
                     /**
                      * 判断参数 IdleTimeout 是否已赋值
                      * @return IdleTimeout 是否已赋值
+                     * 
                      */
                     bool IdleTimeoutHasBeenSet() const;
 

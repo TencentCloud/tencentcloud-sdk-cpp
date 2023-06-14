@@ -53,18 +53,21 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的消费组数量
                      * @return TotalCount 符合条件的消费组数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的消费组数量
-                     * @param TotalCount 符合条件的消费组数量
+                     * @param _totalCount 符合条件的消费组数量
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConsumerGroupTopic> GetTopicList() const;
 
                     /**
                      * 设置主题列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicList 主题列表
+                     * @param _topicList 主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicList(const std::vector<ConsumerGroupTopic>& _topicList);
 
                     /**
                      * 判断参数 TopicList 是否已赋值
                      * @return TopicList 是否已赋值
+                     * 
                      */
                     bool TopicListHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupList 消费分组List
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConsumerGroup> GetGroupList() const;
 
                     /**
                      * 设置消费分组List
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupList 消费分组List
+                     * @param _groupList 消费分组List
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupList(const std::vector<ConsumerGroup>& _groupList);
 
                     /**
                      * 判断参数 GroupList 是否已赋值
                      * @return GroupList 是否已赋值
+                     * 
                      */
                     bool GroupListHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPartition 所有分区数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalPartition() const;
 
                     /**
                      * 设置所有分区数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalPartition 所有分区数量
+                     * @param _totalPartition 所有分区数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalPartition(const int64_t& _totalPartition);
 
                     /**
                      * 判断参数 TotalPartition 是否已赋值
                      * @return TotalPartition 是否已赋值
+                     * 
                      */
                     bool TotalPartitionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionListForMonitor 监控的分区列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Partition> GetPartitionListForMonitor() const;
 
                     /**
                      * 设置监控的分区列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionListForMonitor 监控的分区列表
+                     * @param _partitionListForMonitor 监控的分区列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionListForMonitor(const std::vector<Partition>& _partitionListForMonitor);
 
                     /**
                      * 判断参数 PartitionListForMonitor 是否已赋值
                      * @return PartitionListForMonitor 是否已赋值
+                     * 
                      */
                     bool PartitionListForMonitorHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTopic 主题总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalTopic() const;
 
                     /**
                      * 设置主题总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalTopic 主题总数
+                     * @param _totalTopic 主题总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalTopic(const int64_t& _totalTopic);
 
                     /**
                      * 判断参数 TotalTopic 是否已赋值
                      * @return TotalTopic 是否已赋值
+                     * 
                      */
                     bool TotalTopicHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicListForMonitor 监控的主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConsumerGroupTopic> GetTopicListForMonitor() const;
 
                     /**
                      * 设置监控的主题列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicListForMonitor 监控的主题列表
+                     * @param _topicListForMonitor 监控的主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicListForMonitor(const std::vector<ConsumerGroupTopic>& _topicListForMonitor);
 
                     /**
                      * 判断参数 TopicListForMonitor 是否已赋值
                      * @return TopicListForMonitor 是否已赋值
+                     * 
                      */
                     bool TopicListForMonitorHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupListForMonitor 监控的组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Group> GetGroupListForMonitor() const;
 
                     /**
                      * 设置监控的组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupListForMonitor 监控的组列表
+                     * @param _groupListForMonitor 监控的组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupListForMonitor(const std::vector<Group>& _groupListForMonitor);
 
                     /**
                      * 判断参数 GroupListForMonitor 是否已赋值
                      * @return GroupListForMonitor 是否已赋值
+                     * 
                      */
                     bool GroupListForMonitorHasBeenSet() const;
 

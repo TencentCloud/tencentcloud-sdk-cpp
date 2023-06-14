@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取公司ID
                      * @return CompanyId 公司ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置公司ID
-                     * @param CompanyId 公司ID
+                     * @param _companyId 公司ID
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取门店ID
                      * @return ShopId 门店ID
+                     * 
                      */
                     uint64_t GetShopId() const;
 
                     /**
                      * 设置门店ID
-                     * @param ShopId 门店ID
+                     * @param _shopId 门店ID
+                     * 
                      */
                     void SetShopId(const uint64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
                      * @return Offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
-                     * @param Offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * @param _offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取Limit:每页的数据项，最大100，超过100会被强制指定为100
                      * @return Limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置Limit:每页的数据项，最大100，超过100会被强制指定为100
-                     * @param Limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * @param _limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime
                      * @return StartDate 开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime
-                     * @param StartDate 开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime
+                     * @param _startDate 开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime
                      * @return EndDate 结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime
-                     * @param EndDate 结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime
+                     * @param _endDate 结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
                      * @return PictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * 
                      */
                     uint64_t GetPictureExpires() const;
 
                     /**
                      * 设置图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
-                     * @param PictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * @param _pictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * 
                      */
                     void SetPictureExpires(const uint64_t& _pictureExpires);
 
                     /**
                      * 判断参数 PictureExpires 是否已赋值
                      * @return PictureExpires 是否已赋值
+                     * 
                      */
                     bool PictureExpiresHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式yyyy-MM-dd HH:mm:ss
                      * @return StartDateTime 开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetStartDateTime() const;
 
                     /**
                      * 设置开始时间，格式yyyy-MM-dd HH:mm:ss
-                     * @param StartDateTime 开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _startDateTime 开始时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetStartDateTime(const std::string& _startDateTime);
 
                     /**
                      * 判断参数 StartDateTime 是否已赋值
                      * @return StartDateTime 是否已赋值
+                     * 
                      */
                     bool StartDateTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式yyyy-MM-dd HH:mm:ss
                      * @return EndDateTime 结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetEndDateTime() const;
 
                     /**
                      * 设置结束时间，格式yyyy-MM-dd HH:mm:ss
-                     * @param EndDateTime 结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _endDateTime 结束时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetEndDateTime(const std::string& _endDateTime);
 
                     /**
                      * 判断参数 EndDateTime 是否已赋值
                      * @return EndDateTime 是否已赋值
+                     * 
                      */
                     bool EndDateTimeHasBeenSet() const;
 

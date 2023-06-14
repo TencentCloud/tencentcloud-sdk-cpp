@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取检查项列表
                      * @return Data 检查项列表
+                     * 
                      */
                     std::vector<DataCompliance> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTotalNum 总检查资产数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAssetTotalNum() const;
 
                     /**
                      * 判断参数 AssetTotalNum 是否已赋值
                      * @return AssetTotalNum 是否已赋值
+                     * 
                      */
                     bool AssetTotalNumHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTotalNum 总检查项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetConfigTotalNum() const;
 
                     /**
                      * 判断参数 ConfigTotalNum 是否已赋值
                      * @return ConfigTotalNum 是否已赋值
+                     * 
                      */
                     bool ConfigTotalNumHasBeenSet() const;
 

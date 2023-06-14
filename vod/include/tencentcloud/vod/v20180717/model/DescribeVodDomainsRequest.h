@@ -47,74 +47,86 @@ namespace TencentCloud
 <li>域名个数度最大为 20。</li>
                      * @return Domains 域名列表。当该字段不填时，则默认列出所有域名信息。本字段字段限制如下：
 <li>域名个数度最大为 20。</li>
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置域名列表。当该字段不填时，则默认列出所有域名信息。本字段字段限制如下：
 <li>域名个数度最大为 20。</li>
-                     * @param Domains 域名列表。当该字段不填时，则默认列出所有域名信息。本字段字段限制如下：
+                     * @param _domains 域名列表。当该字段不填时，则默认列出所有域名信息。本字段字段限制如下：
 <li>域名个数度最大为 20。</li>
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
                     /**
                      * 获取分页拉取的最大返回结果数。默认值：20。
                      * @return Limit 分页拉取的最大返回结果数。默认值：20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页拉取的最大返回结果数。默认值：20。
-                     * @param Limit 分页拉取的最大返回结果数。默认值：20。
+                     * @param _limit 分页拉取的最大返回结果数。默认值：20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页拉取的起始偏移量。默认值：0。
                      * @return Offset 分页拉取的起始偏移量。默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页拉取的起始偏移量。默认值：0。
-                     * @param Offset 分页拉取的起始偏移量。默认值：0。
+                     * @param _offset 分页拉取的起始偏移量。默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @param _subAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

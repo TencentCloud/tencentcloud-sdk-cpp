@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取类型 1 告警 2阻断
                      * @return QueryType 类型 1 告警 2阻断
+                     * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置类型 1 告警 2阻断
-                     * @param QueryType 类型 1 告警 2阻断
+                     * @param _queryType 类型 1 告警 2阻断
+                     * 
                      */
                     void SetQueryType(const std::string& _queryType);
 
                     /**
                      * 判断参数 QueryType 是否已赋值
                      * @return QueryType 是否已赋值
+                     * 
                      */
                     bool QueryTypeHasBeenSet() const;
 
                     /**
                      * 获取top数
                      * @return Top top数
+                     * 
                      */
                     int64_t GetTop() const;
 
                     /**
                      * 设置top数
-                     * @param Top top数
+                     * @param _top top数
+                     * 
                      */
                     void SetTop(const int64_t& _top);
 
                     /**
                      * 判断参数 Top 是否已赋值
                      * @return Top 是否已赋值
+                     * 
                      */
                     bool TopHasBeenSet() const;
 
                     /**
                      * 获取查询条件
                      * @return SearchValue 查询条件
+                     * 
                      */
                     std::string GetSearchValue() const;
 
                     /**
                      * 设置查询条件
-                     * @param SearchValue 查询条件
+                     * @param _searchValue 查询条件
+                     * 
                      */
                     void SetSearchValue(const std::string& _searchValue);
 
                     /**
                      * 判断参数 SearchValue 是否已赋值
                      * @return SearchValue 是否已赋值
+                     * 
                      */
                     bool SearchValueHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取发布订阅ID，可通过DescribePublishSubscribe接口获得
                      * @return PublishSubscribeId 发布订阅ID，可通过DescribePublishSubscribe接口获得
+                     * 
                      */
                     uint64_t GetPublishSubscribeId() const;
 
                     /**
                      * 设置发布订阅ID，可通过DescribePublishSubscribe接口获得
-                     * @param PublishSubscribeId 发布订阅ID，可通过DescribePublishSubscribe接口获得
+                     * @param _publishSubscribeId 发布订阅ID，可通过DescribePublishSubscribe接口获得
+                     * 
                      */
                     void SetPublishSubscribeId(const uint64_t& _publishSubscribeId);
 
                     /**
                      * 判断参数 PublishSubscribeId 是否已赋值
                      * @return PublishSubscribeId 是否已赋值
+                     * 
                      */
                     bool PublishSubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取待删除的数据库的订阅发布关系集合
                      * @return DatabaseTupleSet 待删除的数据库的订阅发布关系集合
+                     * 
                      */
                     std::vector<DatabaseTuple> GetDatabaseTupleSet() const;
 
                     /**
                      * 设置待删除的数据库的订阅发布关系集合
-                     * @param DatabaseTupleSet 待删除的数据库的订阅发布关系集合
+                     * @param _databaseTupleSet 待删除的数据库的订阅发布关系集合
+                     * 
                      */
                     void SetDatabaseTupleSet(const std::vector<DatabaseTuple>& _databaseTupleSet);
 
                     /**
                      * 判断参数 DatabaseTupleSet 是否已赋值
                      * @return DatabaseTupleSet 是否已赋值
+                     * 
                      */
                     bool DatabaseTupleSetHasBeenSet() const;
 

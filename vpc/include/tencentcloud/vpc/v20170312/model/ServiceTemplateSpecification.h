@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取协议端口ID，例如：ppm-f5n1f8da。
                      * @return ServiceId 协议端口ID，例如：ppm-f5n1f8da。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置协议端口ID，例如：ppm-f5n1f8da。
-                     * @param ServiceId 协议端口ID，例如：ppm-f5n1f8da。
+                     * @param _serviceId 协议端口ID，例如：ppm-f5n1f8da。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取协议端口组ID，例如：ppmg-f5n1f8da。
                      * @return ServiceGroupId 协议端口组ID，例如：ppmg-f5n1f8da。
+                     * 
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
                      * 设置协议端口组ID，例如：ppmg-f5n1f8da。
-                     * @param ServiceGroupId 协议端口组ID，例如：ppmg-f5n1f8da。
+                     * @param _serviceGroupId 协议端口组ID，例如：ppmg-f5n1f8da。
+                     * 
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
 
                     /**
                      * 判断参数 ServiceGroupId 是否已赋值
                      * @return ServiceGroupId 是否已赋值
+                     * 
                      */
                     bool ServiceGroupIdHasBeenSet() const;
 

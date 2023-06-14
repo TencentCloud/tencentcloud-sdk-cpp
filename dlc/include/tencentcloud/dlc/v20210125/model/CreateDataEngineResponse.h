@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取虚拟引擎id
                      * @return DataEngineId 虚拟引擎id
+                     * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 判断参数 DataEngineId 是否已赋值
                      * @return DataEngineId 是否已赋值
+                     * 
                      */
                     bool DataEngineIdHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取队伍ID。最长不超过16个字符。
                      * @return Id 队伍ID。最长不超过16个字符。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置队伍ID。最长不超过16个字符。
-                     * @param Id 队伍ID。最长不超过16个字符。
+                     * @param _id 队伍ID。最长不超过16个字符。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取队伍名称。最长不超过32个字符。
                      * @return Name 队伍名称。最长不超过32个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置队伍名称。最长不超过32个字符。
-                     * @param Name 队伍名称。最长不超过32个字符。
+                     * @param _name 队伍名称。最长不超过32个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取队伍最小人数。最大不超过100人。
                      * @return MinPlayers 队伍最小人数。最大不超过100人。
+                     * 
                      */
                     int64_t GetMinPlayers() const;
 
                     /**
                      * 设置队伍最小人数。最大不超过100人。
-                     * @param MinPlayers 队伍最小人数。最大不超过100人。
+                     * @param _minPlayers 队伍最小人数。最大不超过100人。
+                     * 
                      */
                     void SetMinPlayers(const int64_t& _minPlayers);
 
                     /**
                      * 判断参数 MinPlayers 是否已赋值
                      * @return MinPlayers 是否已赋值
+                     * 
                      */
                     bool MinPlayersHasBeenSet() const;
 
                     /**
                      * 获取队伍最大人数。最大不超过100人。
                      * @return MaxPlayers 队伍最大人数。最大不超过100人。
+                     * 
                      */
                     int64_t GetMaxPlayers() const;
 
                     /**
                      * 设置队伍最大人数。最大不超过100人。
-                     * @param MaxPlayers 队伍最大人数。最大不超过100人。
+                     * @param _maxPlayers 队伍最大人数。最大不超过100人。
+                     * 
                      */
                     void SetMaxPlayers(const int64_t& _maxPlayers);
 
                     /**
                      * 判断参数 MaxPlayers 是否已赋值
                      * @return MaxPlayers 是否已赋值
+                     * 
                      */
                     bool MaxPlayersHasBeenSet() const;
 

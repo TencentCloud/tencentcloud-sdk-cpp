@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取印章信息
                      * @return Seals 印章信息
+                     * 
                      */
                     std::vector<Seal> GetSeals() const;
 
                     /**
                      * 判断参数 Seals 是否已赋值
                      * @return Seals 是否已赋值
+                     * 
                      */
                     bool SealsHasBeenSet() const;
 

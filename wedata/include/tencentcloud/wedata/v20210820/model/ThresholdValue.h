@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueType 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValueType() const;
 
                     /**
                      * 设置阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueType 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * @param _valueType 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueType(const uint64_t& _valueType);
 
                     /**
                      * 判断参数 ValueType 是否已赋值
                      * @return ValueType 是否已赋值
+                     * 
                      */
                     bool ValueTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 阈值
+                     * @param _value 阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

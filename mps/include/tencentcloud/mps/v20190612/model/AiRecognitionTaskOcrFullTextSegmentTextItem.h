@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取识别片段置信度。取值：0~100。
                      * @return Confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置识别片段置信度。取值：0~100。
-                     * @param Confidence 识别片段置信度。取值：0~100。
+                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
                      * @return AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @param AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * @param _areaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 
                     /**
                      * 获取识别文本。
                      * @return Text 识别文本。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置识别文本。
-                     * @param Text 识别文本。
+                     * @param _text 识别文本。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

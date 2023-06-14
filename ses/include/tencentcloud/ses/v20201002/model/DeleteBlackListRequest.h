@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要清除的黑名单邮箱列表，数组长度至少为1
                      * @return EmailAddressList 需要清除的黑名单邮箱列表，数组长度至少为1
+                     * 
                      */
                     std::vector<std::string> GetEmailAddressList() const;
 
                     /**
                      * 设置需要清除的黑名单邮箱列表，数组长度至少为1
-                     * @param EmailAddressList 需要清除的黑名单邮箱列表，数组长度至少为1
+                     * @param _emailAddressList 需要清除的黑名单邮箱列表，数组长度至少为1
+                     * 
                      */
                     void SetEmailAddressList(const std::vector<std::string>& _emailAddressList);
 
                     /**
                      * 判断参数 EmailAddressList 是否已赋值
                      * @return EmailAddressList 是否已赋值
+                     * 
                      */
                     bool EmailAddressListHasBeenSet() const;
 

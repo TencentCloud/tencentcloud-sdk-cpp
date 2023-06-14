@@ -48,24 +48,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetIds 服务器舰队 Id 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFleetIds() const;
 
                     /**
                      * 判断参数 FleetIds 是否已赋值
                      * @return FleetIds 是否已赋值
+                     * 
                      */
                     bool FleetIdsHasBeenSet() const;
 
                     /**
                      * 获取服务器舰队 Id 总数，最小值0
                      * @return TotalCount 服务器舰队 Id 总数，最小值0
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取类型(cpu|memory)
                      * @return Type 类型(cpu|memory)
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型(cpu|memory)
-                     * @param Type 类型(cpu|memory)
+                     * @param _type 类型(cpu|memory)
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取平均值
                      * @return AverageValue 平均值
+                     * 
                      */
                     int64_t GetAverageValue() const;
 
                     /**
                      * 设置平均值
-                     * @param AverageValue 平均值
+                     * @param _averageValue 平均值
+                     * 
                      */
                     void SetAverageValue(const int64_t& _averageValue);
 
                     /**
                      * 判断参数 AverageValue 是否已赋值
                      * @return AverageValue 是否已赋值
+                     * 
                      */
                     bool AverageValueHasBeenSet() const;
 
                     /**
                      * 获取单位
                      * @return Scale 单位
+                     * 
                      */
                     std::string GetScale() const;
 
                     /**
                      * 设置单位
-                     * @param Scale 单位
+                     * @param _scale 单位
+                     * 
                      */
                     void SetScale(const std::string& _scale);
 
                     /**
                      * 判断参数 Scale 是否已赋值
                      * @return Scale 是否已赋值
+                     * 
                      */
                     bool ScaleHasBeenSet() const;
 
                     /**
                      * 获取平均值
                      * @return AverageUtilization 平均值
+                     * 
                      */
                     int64_t GetAverageUtilization() const;
 
                     /**
                      * 设置平均值
-                     * @param AverageUtilization 平均值
+                     * @param _averageUtilization 平均值
+                     * 
                      */
                     void SetAverageUtilization(const int64_t& _averageUtilization);
 
                     /**
                      * 判断参数 AverageUtilization 是否已赋值
                      * @return AverageUtilization 是否已赋值
+                     * 
                      */
                     bool AverageUtilizationHasBeenSet() const;
 

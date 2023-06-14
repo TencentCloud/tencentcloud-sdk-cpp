@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID。
                      * @return AutoScalingGroupId 伸缩组ID。
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID。
-                     * @param AutoScalingGroupId 伸缩组ID。
+                     * @param _autoScalingGroupId 伸缩组ID。
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取希望扩容的实例数量。
                      * @return ScaleOutNumber 希望扩容的实例数量。
+                     * 
                      */
                     uint64_t GetScaleOutNumber() const;
 
                     /**
                      * 设置希望扩容的实例数量。
-                     * @param ScaleOutNumber 希望扩容的实例数量。
+                     * @param _scaleOutNumber 希望扩容的实例数量。
+                     * 
                      */
                     void SetScaleOutNumber(const uint64_t& _scaleOutNumber);
 
                     /**
                      * 判断参数 ScaleOutNumber 是否已赋值
                      * @return ScaleOutNumber 是否已赋值
+                     * 
                      */
                     bool ScaleOutNumberHasBeenSet() const;
 

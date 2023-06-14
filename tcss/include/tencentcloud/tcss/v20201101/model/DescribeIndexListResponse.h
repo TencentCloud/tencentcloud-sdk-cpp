@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取ES 索引信息
                      * @return Data ES 索引信息
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

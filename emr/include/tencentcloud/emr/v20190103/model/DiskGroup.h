@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取磁盘规格。
                      * @return Spec 磁盘规格。
+                     * 
                      */
                     DiskSpec GetSpec() const;
 
                     /**
                      * 设置磁盘规格。
-                     * @param Spec 磁盘规格。
+                     * @param _spec 磁盘规格。
+                     * 
                      */
                     void SetSpec(const DiskSpec& _spec);
 
                     /**
                      * 判断参数 Spec 是否已赋值
                      * @return Spec 是否已赋值
+                     * 
                      */
                     bool SpecHasBeenSet() const;
 
                     /**
                      * 获取同类型磁盘数量。
                      * @return Count 同类型磁盘数量。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置同类型磁盘数量。
-                     * @param Count 同类型磁盘数量。
+                     * @param _count 同类型磁盘数量。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取后付费订单号
                      * @return TranId 后付费订单号
+                     * 
                      */
                     std::string GetTranId() const;
 
                     /**
                      * 判断参数 TranId 是否已赋值
                      * @return TranId 是否已赋值
+                     * 
                      */
                     bool TranIdHasBeenSet() const;
 

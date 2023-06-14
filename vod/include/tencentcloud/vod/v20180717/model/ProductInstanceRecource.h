@@ -59,6 +59,7 @@ namespace TencentCloud
 <li>Transcode：普通转码资源包。</li>
 <li>TESHD：极速高清转码资源包。</li>
 <li>Review：音视频审核转码资源包。</li>
+                     * 
                      */
                     std::string GetResourceType() const;
 
@@ -69,18 +70,20 @@ namespace TencentCloud
 <li>Transcode：普通转码资源包。</li>
 <li>TESHD：极速高清转码资源包。</li>
 <li>Review：音视频审核转码资源包。</li>
-                     * @param ResourceType 资源类型。
+                     * @param _resourceType 资源类型。
 <li>Storage：存储资源包。</li>
 <li>Traffic：流量资源包。</li>
 <li>Transcode：普通转码资源包。</li>
 <li>TESHD：极速高清转码资源包。</li>
 <li>Review：音视频审核转码资源包。</li>
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -97,6 +100,7 @@ namespace TencentCloud
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
+                     * 
                      */
                     int64_t GetAmount() const;
 
@@ -107,18 +111,20 @@ namespace TencentCloud
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
-                     * @param Amount 资源包额度。
+                     * @param _amount 资源包额度。
 <li>音视频存储资源包，单位为字节。</li>
 <li>音视频转码资源包，单位为秒。</li>
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
+                     * 
                      */
                     void SetAmount(const int64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
@@ -135,6 +141,7 @@ namespace TencentCloud
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
+                     * 
                      */
                     int64_t GetLeft() const;
 
@@ -145,18 +152,20 @@ namespace TencentCloud
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
-                     * @param Left 资源包余量。
+                     * @param _left 资源包余量。
 <li>音视频存储资源包，单位为字节。</li>
 <li>音视频转码资源包，单位为秒。</li>
 <li>音视频审核资源包，单位为秒。</li>
 <li>音视频极速高清资源包，单位为秒。</li>
 <li>音视频加速资源包，单位为字节。</li>
+                     * 
                      */
                     void SetLeft(const int64_t& _left);
 
                     /**
                      * 判断参数 Left 是否已赋值
                      * @return Left 是否已赋值
+                     * 
                      */
                     bool LeftHasBeenSet() const;
 

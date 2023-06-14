@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
                      * @return InstanceId 待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
-                     * @param InstanceId 待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * @param _instanceId 待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。
                      * @return InstanceName 新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。
-                     * @param InstanceName 新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。
+                     * @param _instanceName 新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 

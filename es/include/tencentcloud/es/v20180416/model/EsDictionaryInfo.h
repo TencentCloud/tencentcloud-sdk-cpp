@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取启用词词典列表
                      * @return MainDict 启用词词典列表
+                     * 
                      */
                     std::vector<DictInfo> GetMainDict() const;
 
                     /**
                      * 设置启用词词典列表
-                     * @param MainDict 启用词词典列表
+                     * @param _mainDict 启用词词典列表
+                     * 
                      */
                     void SetMainDict(const std::vector<DictInfo>& _mainDict);
 
                     /**
                      * 判断参数 MainDict 是否已赋值
                      * @return MainDict 是否已赋值
+                     * 
                      */
                     bool MainDictHasBeenSet() const;
 
                     /**
                      * 获取停用词词典列表
                      * @return Stopwords 停用词词典列表
+                     * 
                      */
                     std::vector<DictInfo> GetStopwords() const;
 
                     /**
                      * 设置停用词词典列表
-                     * @param Stopwords 停用词词典列表
+                     * @param _stopwords 停用词词典列表
+                     * 
                      */
                     void SetStopwords(const std::vector<DictInfo>& _stopwords);
 
                     /**
                      * 判断参数 Stopwords 是否已赋值
                      * @return Stopwords 是否已赋值
+                     * 
                      */
                     bool StopwordsHasBeenSet() const;
 
                     /**
                      * 获取QQ分词词典列表
                      * @return QQDict QQ分词词典列表
+                     * 
                      */
                     std::vector<DictInfo> GetQQDict() const;
 
                     /**
                      * 设置QQ分词词典列表
-                     * @param QQDict QQ分词词典列表
+                     * @param _qQDict QQ分词词典列表
+                     * 
                      */
                     void SetQQDict(const std::vector<DictInfo>& _qQDict);
 
                     /**
                      * 判断参数 QQDict 是否已赋值
                      * @return QQDict 是否已赋值
+                     * 
                      */
                     bool QQDictHasBeenSet() const;
 
                     /**
                      * 获取同义词词典列表
                      * @return Synonym 同义词词典列表
+                     * 
                      */
                     std::vector<DictInfo> GetSynonym() const;
 
                     /**
                      * 设置同义词词典列表
-                     * @param Synonym 同义词词典列表
+                     * @param _synonym 同义词词典列表
+                     * 
                      */
                     void SetSynonym(const std::vector<DictInfo>& _synonym);
 
                     /**
                      * 判断参数 Synonym 是否已赋值
                      * @return Synonym 是否已赋值
+                     * 
                      */
                     bool SynonymHasBeenSet() const;
 
                     /**
                      * 获取更新词典类型
                      * @return UpdateType 更新词典类型
+                     * 
                      */
                     std::string GetUpdateType() const;
 
                     /**
                      * 设置更新词典类型
-                     * @param UpdateType 更新词典类型
+                     * @param _updateType 更新词典类型
+                     * 
                      */
                     void SetUpdateType(const std::string& _updateType);
 
                     /**
                      * 判断参数 UpdateType 是否已赋值
                      * @return UpdateType 是否已赋值
+                     * 
                      */
                     bool UpdateTypeHasBeenSet() const;
 

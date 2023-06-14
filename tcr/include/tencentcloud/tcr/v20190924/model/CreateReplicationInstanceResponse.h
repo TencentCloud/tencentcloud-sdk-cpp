@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取企业版复制实例Id
                      * @return ReplicationRegistryId 企业版复制实例Id
+                     * 
                      */
                     std::string GetReplicationRegistryId() const;
 
                     /**
                      * 判断参数 ReplicationRegistryId 是否已赋值
                      * @return ReplicationRegistryId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegistryIdHasBeenSet() const;
 

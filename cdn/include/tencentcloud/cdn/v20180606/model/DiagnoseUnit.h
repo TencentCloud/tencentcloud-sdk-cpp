@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 内容单元英文名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置内容单元英文名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 内容单元英文名称。
+                     * @param _key 内容单元英文名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyText 内容单元中文名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyText() const;
 
                     /**
                      * 设置内容单元中文名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyText 内容单元中文名称。
+                     * @param _keyText 内容单元中文名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyText(const std::string& _keyText);
 
                     /**
                      * 判断参数 KeyText 是否已赋值
                      * @return KeyText 是否已赋值
+                     * 
                      */
                     bool KeyTextHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 报告内容。
+                     * @param _value 报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueText 报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValueText() const;
 
                     /**
                      * 设置报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueText 报告内容。
+                     * @param _valueText 报告内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueText(const std::string& _valueText);
 
                     /**
                      * 判断参数 ValueText 是否已赋值
                      * @return ValueText 是否已赋值
+                     * 
                      */
                     bool ValueTextHasBeenSet() const;
 

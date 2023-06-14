@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待删除资源ID列表
                      * @return ResourceIds 待删除资源ID列表
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置待删除资源ID列表
-                     * @param ResourceIds 待删除资源ID列表
+                     * @param _resourceIds 待删除资源ID列表
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

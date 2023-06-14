@@ -55,6 +55,7 @@ avg：平均值
 sum：累加求和
 max：最大值，带宽模式下，采用 5 分钟粒度汇总数据，计算峰值带宽
 avg：平均值
+                     * 
                      */
                     std::string GetName() const;
 
@@ -63,34 +64,39 @@ avg：平均值
 sum：累加求和
 max：最大值，带宽模式下，采用 5 分钟粒度汇总数据，计算峰值带宽
 avg：平均值
-                     * @param Name 汇总方式，存在以下几种：
+                     * @param _name 汇总方式，存在以下几种：
 sum：累加求和
 max：最大值，带宽模式下，采用 5 分钟粒度汇总数据，计算峰值带宽
 avg：平均值
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取汇总后的数据值
                      * @return Value 汇总后的数据值
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置汇总后的数据值
-                     * @param Value 汇总后的数据值
+                     * @param _value 汇总后的数据值
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

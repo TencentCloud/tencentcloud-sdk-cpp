@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取起始端口，取值1~65535
                      * @return BeginPort 起始端口，取值1~65535
+                     * 
                      */
                     uint64_t GetBeginPort() const;
 
                     /**
                      * 设置起始端口，取值1~65535
-                     * @param BeginPort 起始端口，取值1~65535
+                     * @param _beginPort 起始端口，取值1~65535
+                     * 
                      */
                     void SetBeginPort(const uint64_t& _beginPort);
 
                     /**
                      * 判断参数 BeginPort 是否已赋值
                      * @return BeginPort 是否已赋值
+                     * 
                      */
                     bool BeginPortHasBeenSet() const;
 
                     /**
                      * 获取结束端口，取值1~65535，必须不小于起始端口
                      * @return EndPort 结束端口，取值1~65535，必须不小于起始端口
+                     * 
                      */
                     uint64_t GetEndPort() const;
 
                     /**
                      * 设置结束端口，取值1~65535，必须不小于起始端口
-                     * @param EndPort 结束端口，取值1~65535，必须不小于起始端口
+                     * @param _endPort 结束端口，取值1~65535，必须不小于起始端口
+                     * 
                      */
                     void SetEndPort(const uint64_t& _endPort);
 
                     /**
                      * 判断参数 EndPort 是否已赋值
                      * @return EndPort 是否已赋值
+                     * 
                      */
                     bool EndPortHasBeenSet() const;
 

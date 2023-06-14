@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取跳转到人脸核身页面的链接
                      * @return Url 跳转到人脸核身页面的链接
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

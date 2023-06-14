@@ -48,38 +48,44 @@ namespace TencentCloud
 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。
                      * @return IdCard 身份证号
 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置身份证号
 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。
-                     * @param IdCard 身份证号
+                     * @param _idCard 身份证号
 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
                      * @return ImageBase64 身份证人像面的 Base64 值
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -97,15 +104,17 @@ namespace TencentCloud
                      * 设置身份证人像面的 Base64 值
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @param ImageBase64 身份证人像面的 Base64 值
+                     * @param _imageBase64 身份证人像面的 Base64 值
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -120,6 +129,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -129,35 +139,40 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 身份证人像面的 Url 地址
+                     * @param _imageUrl 身份证人像面的 Url 地址
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
                     /**
                      * 获取敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 设置敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     void SetEncryption(const Encryption& _encryption);
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 

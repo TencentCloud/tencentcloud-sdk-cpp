@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取备份开始时间。
                      * @return StartTime 备份开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置备份开始时间。
-                     * @param StartTime 备份开始时间。
+                     * @param _startTime 备份开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取备份结束时间。
                      * @return EndTime 备份结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置备份结束时间。
-                     * @param EndTime 备份结束时间。
+                     * @param _endTime 备份结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取备份 ID。
                      * @return BackupId 备份 ID。
+                     * 
                      */
                     std::string GetBackupId() const;
 
                     /**
                      * 设置备份 ID。
-                     * @param BackupId 备份 ID。
+                     * @param _backupId 备份 ID。
+                     * 
                      */
                     void SetBackupId(const std::string& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 
                     /**
                      * 获取备份文件名。
                      * @return Filename 备份文件名。
+                     * 
                      */
                     std::string GetFilename() const;
 
                     /**
                      * 设置备份文件名。
-                     * @param Filename 备份文件名。
+                     * @param _filename 备份文件名。
+                     * 
                      */
                     void SetFilename(const std::string& _filename);
 
                     /**
                      * 判断参数 Filename 是否已赋值
                      * @return Filename 是否已赋值
+                     * 
                      */
                     bool FilenameHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 备份文件大小，单位：Byte。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置备份文件大小，单位：Byte。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 备份文件大小，单位：Byte。
+                     * @param _fileSize 备份文件大小，单位：Byte。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 

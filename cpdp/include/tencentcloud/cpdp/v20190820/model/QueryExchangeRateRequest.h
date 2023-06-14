@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取源币种 (默认CNY)
                      * @return SourceCurrency 源币种 (默认CNY)
+                     * 
                      */
                     std::string GetSourceCurrency() const;
 
                     /**
                      * 设置源币种 (默认CNY)
-                     * @param SourceCurrency 源币种 (默认CNY)
+                     * @param _sourceCurrency 源币种 (默认CNY)
+                     * 
                      */
                     void SetSourceCurrency(const std::string& _sourceCurrency);
 
                     /**
                      * 判断参数 SourceCurrency 是否已赋值
                      * @return SourceCurrency 是否已赋值
+                     * 
                      */
                     bool SourceCurrencyHasBeenSet() const;
 
                     /**
                      * 获取目的币种 (见常见问题-汇出币种)
                      * @return TargetCurrency 目的币种 (见常见问题-汇出币种)
+                     * 
                      */
                     std::string GetTargetCurrency() const;
 
                     /**
                      * 设置目的币种 (见常见问题-汇出币种)
-                     * @param TargetCurrency 目的币种 (见常见问题-汇出币种)
+                     * @param _targetCurrency 目的币种 (见常见问题-汇出币种)
+                     * 
                      */
                     void SetTargetCurrency(const std::string& _targetCurrency);
 
                     /**
                      * 判断参数 TargetCurrency 是否已赋值
                      * @return TargetCurrency 是否已赋值
+                     * 
                      */
                     bool TargetCurrencyHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

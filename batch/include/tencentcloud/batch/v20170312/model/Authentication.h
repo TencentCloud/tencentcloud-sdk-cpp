@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取授权场景，例如COS
                      * @return Scene 授权场景，例如COS
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置授权场景，例如COS
-                     * @param Scene 授权场景，例如COS
+                     * @param _scene 授权场景，例如COS
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取SecretId
                      * @return SecretId SecretId
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置SecretId
-                     * @param SecretId SecretId
+                     * @param _secretId SecretId
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取SecretKey
                      * @return SecretKey SecretKey
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置SecretKey
-                     * @param SecretKey SecretKey
+                     * @param _secretKey SecretKey
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 

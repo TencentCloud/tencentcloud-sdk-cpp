@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例的参数总数
                      * @return TotalCount 实例的参数总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取参数详情
                      * @return Items 参数详情
+                     * 
                      */
                     std::vector<ParameterDetail> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

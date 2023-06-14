@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id
                      * @return MusicId 歌曲Id
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 设置歌曲Id
-                     * @param MusicId 歌曲Id
+                     * @param _musicId 歌曲Id
+                     * 
                      */
                     void SetMusicId(const std::string& _musicId);
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 <li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
 <li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
 默认为：MP3-128K-FTW
+                     * 
                      */
                     std::string GetMusicType() const;
 
@@ -80,17 +84,19 @@ namespace TencentCloud
 <li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
 <li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
 默认为：MP3-128K-FTW
-                     * @param MusicType 歌曲类型，可选值有：
+                     * @param _musicType 歌曲类型，可选值有：
 <li>MP3-128K-FTW：含有水印的试听资源；</li>
 <li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
 <li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
 默认为：MP3-128K-FTW
+                     * 
                      */
                     void SetMusicType(const std::string& _musicType);
 
                     /**
                      * 判断参数 MusicType 是否已赋值
                      * @return MusicType 是否已赋值
+                     * 
                      */
                     bool MusicTypeHasBeenSet() const;
 

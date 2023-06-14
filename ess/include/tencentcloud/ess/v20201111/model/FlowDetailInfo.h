@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取合同(流程)的ID
                      * @return FlowId 合同(流程)的ID
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同(流程)的ID
-                     * @param FlowId 合同(流程)的ID
+                     * @param _flowId 合同(流程)的ID
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取合同(流程)的名字
                      * @return FlowName 合同(流程)的名字
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置合同(流程)的名字
-                     * @param FlowName 合同(流程)的名字
+                     * @param _flowName 合同(流程)的名字
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowType 合同(流程)的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同(流程)的类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowType 合同(流程)的类型
+                     * @param _flowType 合同(流程)的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowType(const std::string& _flowType);
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
@@ -132,6 +141,7 @@ namespace TencentCloud
 - 9 部分填写
 - 10 拒填
 - 21 已解除
+                     * 
                      */
                     int64_t GetFlowStatus() const;
 
@@ -149,7 +159,7 @@ namespace TencentCloud
 - 9 部分填写
 - 10 拒填
 - 21 已解除
-                     * @param FlowStatus 流程状态
+                     * @param _flowStatus 流程状态
 - 0 还没有发起
 - 1 待签署
 - 2 部分签署
@@ -162,12 +172,14 @@ namespace TencentCloud
 - 9 部分填写
 - 10 拒填
 - 21 已解除
+                     * 
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
 
                     /**
                      * 判断参数 FlowStatus 是否已赋值
                      * @return FlowStatus 是否已赋值
+                     * 
                      */
                     bool FlowStatusHasBeenSet() const;
 
@@ -176,20 +188,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMessage 合同(流程)的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 设置合同(流程)的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowMessage 合同(流程)的信息
+                     * @param _flowMessage 合同(流程)的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowMessage(const std::string& _flowMessage);
 
                     /**
                      * 判断参数 FlowMessage 是否已赋值
                      * @return FlowMessage 是否已赋值
+                     * 
                      */
                     bool FlowMessageHasBeenSet() const;
 
@@ -198,74 +213,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 流程的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置流程的描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowDescription 流程的描述
+                     * @param _flowDescription 流程的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
                     /**
                      * 判断参数 FlowDescription 是否已赋值
                      * @return FlowDescription 是否已赋值
+                     * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取合同(流程)的创建时间戳，单位秒
                      * @return CreatedOn 合同(流程)的创建时间戳，单位秒
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置合同(流程)的创建时间戳，单位秒
-                     * @param CreatedOn 合同(流程)的创建时间戳，单位秒
+                     * @param _createdOn 合同(流程)的创建时间戳，单位秒
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取合同(流程)的签署方数组
                      * @return FlowApproverInfos 合同(流程)的签署方数组
+                     * 
                      */
                     std::vector<FlowApproverDetail> GetFlowApproverInfos() const;
 
                     /**
                      * 设置合同(流程)的签署方数组
-                     * @param FlowApproverInfos 合同(流程)的签署方数组
+                     * @param _flowApproverInfos 合同(流程)的签署方数组
+                     * 
                      */
                     void SetFlowApproverInfos(const std::vector<FlowApproverDetail>& _flowApproverInfos);
 
                     /**
                      * 判断参数 FlowApproverInfos 是否已赋值
                      * @return FlowApproverInfos 是否已赋值
+                     * 
                      */
                     bool FlowApproverInfosHasBeenSet() const;
 
                     /**
                      * 获取合同(流程)的关注方信息列表
                      * @return CcInfos 合同(流程)的关注方信息列表
+                     * 
                      */
                     std::vector<FlowApproverDetail> GetCcInfos() const;
 
                     /**
                      * 设置合同(流程)的关注方信息列表
-                     * @param CcInfos 合同(流程)的关注方信息列表
+                     * @param _ccInfos 合同(流程)的关注方信息列表
+                     * 
                      */
                     void SetCcInfos(const std::vector<FlowApproverDetail>& _ccInfos);
 
                     /**
                      * 判断参数 CcInfos 是否已赋值
                      * @return CcInfos 是否已赋值
+                     * 
                      */
                     bool CcInfosHasBeenSet() const;
 
@@ -274,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 合同发起人UserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置合同发起人UserId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Creator 合同发起人UserId
+                     * @param _creator 合同发起人UserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 

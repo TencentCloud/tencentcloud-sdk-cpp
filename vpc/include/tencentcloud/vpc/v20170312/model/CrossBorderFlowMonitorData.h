@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取入带宽，单位：`bps`。
                      * @return InBandwidth 入带宽，单位：`bps`。
+                     * 
                      */
                     std::vector<int64_t> GetInBandwidth() const;
 
                     /**
                      * 设置入带宽，单位：`bps`。
-                     * @param InBandwidth 入带宽，单位：`bps`。
+                     * @param _inBandwidth 入带宽，单位：`bps`。
+                     * 
                      */
                     void SetInBandwidth(const std::vector<int64_t>& _inBandwidth);
 
                     /**
                      * 判断参数 InBandwidth 是否已赋值
                      * @return InBandwidth 是否已赋值
+                     * 
                      */
                     bool InBandwidthHasBeenSet() const;
 
                     /**
                      * 获取出带宽，单位：`bps`。
                      * @return OutBandwidth 出带宽，单位：`bps`。
+                     * 
                      */
                     std::vector<int64_t> GetOutBandwidth() const;
 
                     /**
                      * 设置出带宽，单位：`bps`。
-                     * @param OutBandwidth 出带宽，单位：`bps`。
+                     * @param _outBandwidth 出带宽，单位：`bps`。
+                     * 
                      */
                     void SetOutBandwidth(const std::vector<int64_t>& _outBandwidth);
 
                     /**
                      * 判断参数 OutBandwidth 是否已赋值
                      * @return OutBandwidth 是否已赋值
+                     * 
                      */
                     bool OutBandwidthHasBeenSet() const;
 
                     /**
                      * 获取入包，单位：`pps`。
                      * @return InPkg 入包，单位：`pps`。
+                     * 
                      */
                     std::vector<int64_t> GetInPkg() const;
 
                     /**
                      * 设置入包，单位：`pps`。
-                     * @param InPkg 入包，单位：`pps`。
+                     * @param _inPkg 入包，单位：`pps`。
+                     * 
                      */
                     void SetInPkg(const std::vector<int64_t>& _inPkg);
 
                     /**
                      * 判断参数 InPkg 是否已赋值
                      * @return InPkg 是否已赋值
+                     * 
                      */
                     bool InPkgHasBeenSet() const;
 
                     /**
                      * 获取出包，单位：`pps`。
                      * @return OutPkg 出包，单位：`pps`。
+                     * 
                      */
                     std::vector<int64_t> GetOutPkg() const;
 
                     /**
                      * 设置出包，单位：`pps`。
-                     * @param OutPkg 出包，单位：`pps`。
+                     * @param _outPkg 出包，单位：`pps`。
+                     * 
                      */
                     void SetOutPkg(const std::vector<int64_t>& _outPkg);
 
                     /**
                      * 判断参数 OutPkg 是否已赋值
                      * @return OutPkg 是否已赋值
+                     * 
                      */
                     bool OutPkgHasBeenSet() const;
 

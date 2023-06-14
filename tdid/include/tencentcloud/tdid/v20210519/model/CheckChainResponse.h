@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取1为盟主，0为非盟主
                      * @return RoleType 1为盟主，0为非盟主
+                     * 
                      */
                     int64_t GetRoleType() const;
 
                     /**
                      * 判断参数 RoleType 是否已赋值
                      * @return RoleType 是否已赋值
+                     * 
                      */
                     bool RoleTypeHasBeenSet() const;
 
                     /**
                      * 获取链ID
                      * @return ChainId 链ID
+                     * 
                      */
                     std::string GetChainId() const;
 
                     /**
                      * 判断参数 ChainId 是否已赋值
                      * @return ChainId 是否已赋值
+                     * 
                      */
                     bool ChainIdHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return AppName 应用名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

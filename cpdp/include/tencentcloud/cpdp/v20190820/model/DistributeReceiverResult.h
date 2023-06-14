@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantNo 商户编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantNo() const;
 
                     /**
                      * 设置商户编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantNo 商户编号
+                     * @param _merchantNo 商户编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantNo(const std::string& _merchantNo);
 
                     /**
                      * 判断参数 MerchantNo 是否已赋值
                      * @return MerchantNo 是否已赋值
+                     * 
                      */
                     bool MerchantNoHasBeenSet() const;
 

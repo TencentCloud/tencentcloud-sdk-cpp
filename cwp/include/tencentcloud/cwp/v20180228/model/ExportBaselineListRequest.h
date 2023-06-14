@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>BaselineName  - String - 基线名称</li>
 <li>AliasName- String - 服务器名称/服务器ip</li>
 <li>Uuid- String - 主机uuid</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -66,36 +67,41 @@ namespace TencentCloud
 <li>BaselineName  - String - 基线名称</li>
 <li>AliasName- String - 服务器名称/服务器ip</li>
 <li>Uuid- String - 主机uuid</li>
-                     * @param Filters 过滤条件：
+                     * @param _filters 过滤条件：
 <li>StrategyId- Uint64 - 基线策略id</li>
 <li>Status - Uint64 - 事件状态：0-未通过，1-忽略，3-通过，5-检测中</li>
 <li>BaselineName  - String - 基线名称</li>
 <li>AliasName- String - 服务器名称/服务器ip</li>
 <li>Uuid- String - 主机uuid</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取已废弃
                      * @return IfDetail 已废弃
+                     * 
                      */
                     uint64_t GetIfDetail() const;
 
                     /**
                      * 设置已废弃
-                     * @param IfDetail 已废弃
+                     * @param _ifDetail 已废弃
+                     * 
                      */
                     void SetIfDetail(const uint64_t& _ifDetail);
 
                     /**
                      * 判断参数 IfDetail 是否已赋值
                      * @return IfDetail 是否已赋值
+                     * 
                      */
                     bool IfDetailHasBeenSet() const;
 

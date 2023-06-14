@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Session Statement详情
                      * @return NotebookSessionStatement Session Statement详情
+                     * 
                      */
                     NotebookSessionStatementInfo GetNotebookSessionStatement() const;
 
                     /**
                      * 判断参数 NotebookSessionStatement 是否已赋值
                      * @return NotebookSessionStatement 是否已赋值
+                     * 
                      */
                     bool NotebookSessionStatementHasBeenSet() const;
 

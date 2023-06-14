@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBUser 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDBUser() const;
 
                     /**
                      * 设置用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DBUser 用户名
+                     * @param _dBUser 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDBUser(const std::string& _dBUser);
 
                     /**
                      * 判断参数 DBUser 是否已赋值
                      * @return DBUser 是否已赋值
+                     * 
                      */
                     bool DBUserHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBPassword 密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDBPassword() const;
 
                     /**
                      * 设置密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DBPassword 密码
+                     * @param _dBPassword 密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDBPassword(const std::string& _dBPassword);
 
                     /**
                      * 判断参数 DBPassword 是否已赋值
                      * @return DBPassword 是否已赋值
+                     * 
                      */
                     bool DBPasswordHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBConnLimit 连接数限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDBConnLimit() const;
 
                     /**
                      * 设置连接数限制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DBConnLimit 连接数限制
+                     * @param _dBConnLimit 连接数限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDBConnLimit(const int64_t& _dBConnLimit);
 
                     /**
                      * 判断参数 DBConnLimit 是否已赋值
                      * @return DBConnLimit 是否已赋值
+                     * 
                      */
                     bool DBConnLimitHasBeenSet() const;
 

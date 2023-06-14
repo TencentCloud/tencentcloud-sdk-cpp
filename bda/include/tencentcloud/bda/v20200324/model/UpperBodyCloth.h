@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取上衣纹理信息。
                      * @return Texture 上衣纹理信息。
+                     * 
                      */
                     UpperBodyClothTexture GetTexture() const;
 
                     /**
                      * 设置上衣纹理信息。
-                     * @param Texture 上衣纹理信息。
+                     * @param _texture 上衣纹理信息。
+                     * 
                      */
                     void SetTexture(const UpperBodyClothTexture& _texture);
 
                     /**
                      * 判断参数 Texture 是否已赋值
                      * @return Texture 是否已赋值
+                     * 
                      */
                     bool TextureHasBeenSet() const;
 
                     /**
                      * 获取上衣颜色信息。
                      * @return Color 上衣颜色信息。
+                     * 
                      */
                     UpperBodyClothColor GetColor() const;
 
                     /**
                      * 设置上衣颜色信息。
-                     * @param Color 上衣颜色信息。
+                     * @param _color 上衣颜色信息。
+                     * 
                      */
                     void SetColor(const UpperBodyClothColor& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
                     /**
                      * 获取上衣衣袖信息。
                      * @return Sleeve 上衣衣袖信息。
+                     * 
                      */
                     UpperBodyClothSleeve GetSleeve() const;
 
                     /**
                      * 设置上衣衣袖信息。
-                     * @param Sleeve 上衣衣袖信息。
+                     * @param _sleeve 上衣衣袖信息。
+                     * 
                      */
                     void SetSleeve(const UpperBodyClothSleeve& _sleeve);
 
                     /**
                      * 判断参数 Sleeve 是否已赋值
                      * @return Sleeve 是否已赋值
+                     * 
                      */
                     bool SleeveHasBeenSet() const;
 

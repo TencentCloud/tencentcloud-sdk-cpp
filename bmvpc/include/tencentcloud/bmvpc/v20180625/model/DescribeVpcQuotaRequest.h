@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取类型
                      * @return TypeIds 类型
+                     * 
                      */
                     std::vector<uint64_t> GetTypeIds() const;
 
                     /**
                      * 设置类型
-                     * @param TypeIds 类型
+                     * @param _typeIds 类型
+                     * 
                      */
                     void SetTypeIds(const std::vector<uint64_t>& _typeIds);
 
                     /**
                      * 判断参数 TypeIds 是否已赋值
                      * @return TypeIds 是否已赋值
+                     * 
                      */
                     bool TypeIdsHasBeenSet() const;
 

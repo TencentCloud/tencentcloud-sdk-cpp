@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取扩缩容配置服务器舰队ID
                      * @return FleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置扩缩容配置服务器舰队ID
-                     * @param FleetId 扩缩容配置服务器舰队ID
+                     * @param _fleetId 扩缩容配置服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取扩缩容策略名称，最小长度为1，最大长度为1024
                      * @return Name 扩缩容策略名称，最小长度为1，最大长度为1024
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置扩缩容策略名称，最小长度为1，最大长度为1024
-                     * @param Name 扩缩容策略名称，最小长度为1，最大长度为1024
+                     * @param _name 扩缩容策略名称，最小长度为1，最大长度为1024
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -84,92 +90,107 @@ namespace TencentCloud
 ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
                      * @return ScalingAdjustment 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
 ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
+                     * 
                      */
                     int64_t GetScalingAdjustment() const;
 
                     /**
                      * 设置扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
 ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
-                     * @param ScalingAdjustment 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
+                     * @param _scalingAdjustment 扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99
 ScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额
+                     * 
                      */
                     void SetScalingAdjustment(const int64_t& _scalingAdjustment);
 
                     /**
                      * 判断参数 ScalingAdjustment 是否已赋值
                      * @return ScalingAdjustment 是否已赋值
+                     * 
                      */
                     bool ScalingAdjustmentHasBeenSet() const;
 
                     /**
                      * 获取扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
                      * @return ScalingAdjustmentType 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
+                     * 
                      */
                     std::string GetScalingAdjustmentType() const;
 
                     /**
                      * 设置扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
-                     * @param ScalingAdjustmentType 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
+                     * @param _scalingAdjustmentType 扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）
+                     * 
                      */
                     void SetScalingAdjustmentType(const std::string& _scalingAdjustmentType);
 
                     /**
                      * 判断参数 ScalingAdjustmentType 是否已赋值
                      * @return ScalingAdjustmentType 是否已赋值
+                     * 
                      */
                     bool ScalingAdjustmentTypeHasBeenSet() const;
 
                     /**
                      * 获取扩缩容指标阈值
                      * @return Threshold 扩缩容指标阈值
+                     * 
                      */
                     double GetThreshold() const;
 
                     /**
                      * 设置扩缩容指标阈值
-                     * @param Threshold 扩缩容指标阈值
+                     * @param _threshold 扩缩容指标阈值
+                     * 
                      */
                     void SetThreshold(const double& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 
                     /**
                      * 获取扩缩容策略比较符，取值：>,>=,<,<=
                      * @return ComparisonOperator 扩缩容策略比较符，取值：>,>=,<,<=
+                     * 
                      */
                     std::string GetComparisonOperator() const;
 
                     /**
                      * 设置扩缩容策略比较符，取值：>,>=,<,<=
-                     * @param ComparisonOperator 扩缩容策略比较符，取值：>,>=,<,<=
+                     * @param _comparisonOperator 扩缩容策略比较符，取值：>,>=,<,<=
+                     * 
                      */
                     void SetComparisonOperator(const std::string& _comparisonOperator);
 
                     /**
                      * 判断参数 ComparisonOperator 是否已赋值
                      * @return ComparisonOperator 是否已赋值
+                     * 
                      */
                     bool ComparisonOperatorHasBeenSet() const;
 
                     /**
                      * 获取单个策略持续时间长度（分钟）
                      * @return EvaluationPeriods 单个策略持续时间长度（分钟）
+                     * 
                      */
                     int64_t GetEvaluationPeriods() const;
 
                     /**
                      * 设置单个策略持续时间长度（分钟）
-                     * @param EvaluationPeriods 单个策略持续时间长度（分钟）
+                     * @param _evaluationPeriods 单个策略持续时间长度（分钟）
+                     * 
                      */
                     void SetEvaluationPeriods(const int64_t& _evaluationPeriods);
 
                     /**
                      * 判断参数 EvaluationPeriods 是否已赋值
                      * @return EvaluationPeriods 是否已赋值
+                     * 
                      */
                     bool EvaluationPeriodsHasBeenSet() const;
 
@@ -180,6 +201,7 @@ PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
                      * @return MetricName 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
 MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
 PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -187,51 +209,59 @@ PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
                      * 设置扩缩容参与计算的指标名称，PolicyType取值RuleBased，
 MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
 PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
-                     * @param MetricName 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
+                     * @param _metricName 扩缩容参与计算的指标名称，PolicyType取值RuleBased，
 MetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；
 PolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
                      * @return PolicyType 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
-                     * @param PolicyType 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
+                     * @param _policyType 策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取扩缩容目标值配置，只有TargetBased类型的策略生效
                      * @return TargetConfiguration 扩缩容目标值配置，只有TargetBased类型的策略生效
+                     * 
                      */
                     TargetConfiguration GetTargetConfiguration() const;
 
                     /**
                      * 设置扩缩容目标值配置，只有TargetBased类型的策略生效
-                     * @param TargetConfiguration 扩缩容目标值配置，只有TargetBased类型的策略生效
+                     * @param _targetConfiguration 扩缩容目标值配置，只有TargetBased类型的策略生效
+                     * 
                      */
                     void SetTargetConfiguration(const TargetConfiguration& _targetConfiguration);
 
                     /**
                      * 判断参数 TargetConfiguration 是否已赋值
                      * @return TargetConfiguration 是否已赋值
+                     * 
                      */
                     bool TargetConfigurationHasBeenSet() const;
 

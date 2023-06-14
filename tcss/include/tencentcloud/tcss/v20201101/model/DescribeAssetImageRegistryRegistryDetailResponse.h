@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取仓库名
                      * @return Name 仓库名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return Username 用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return Password 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取仓库url
                      * @return Url 仓库url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取仓库类型，列表：harbor
                      * @return RegistryType 仓库类型，列表：harbor
+                     * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 判断参数 RegistryType 是否已赋值
                      * @return RegistryType 是否已赋值
+                     * 
                      */
                     bool RegistryTypeHasBeenSet() const;
 
@@ -108,24 +118,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryVersion 仓库版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryVersion() const;
 
                     /**
                      * 判断参数 RegistryVersion 是否已赋值
                      * @return RegistryVersion 是否已赋值
+                     * 
                      */
                     bool RegistryVersionHasBeenSet() const;
 
                     /**
                      * 获取网络类型，列表：public（公网）
                      * @return NetType 网络类型，列表：public（公网）
+                     * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
@@ -134,12 +148,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryRegion 区域，列表:default（默认）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryRegion() const;
 
                     /**
                      * 判断参数 RegistryRegion 是否已赋值
                      * @return RegistryRegion 是否已赋值
+                     * 
                      */
                     bool RegistryRegionHasBeenSet() const;
 
@@ -148,12 +164,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeedLimit 限速
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSpeedLimit() const;
 
                     /**
                      * 判断参数 SpeedLimit 是否已赋值
                      * @return SpeedLimit 是否已赋值
+                     * 
                      */
                     bool SpeedLimitHasBeenSet() const;
 
@@ -162,12 +180,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInsecure() const;
 
                     /**
                      * 判断参数 Insecure 是否已赋值
                      * @return Insecure 是否已赋值
+                     * 
                      */
                     bool InsecureHasBeenSet() const;
 

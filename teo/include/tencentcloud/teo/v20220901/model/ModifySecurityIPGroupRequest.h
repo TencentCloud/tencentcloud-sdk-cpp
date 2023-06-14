@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取站点 Id。
                      * @return ZoneId 站点 Id。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 Id。
-                     * @param ZoneId 站点 Id。
+                     * @param _zoneId 站点 Id。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取IP 组配置。
                      * @return IPGroup IP 组配置。
+                     * 
                      */
                     IPGroup GetIPGroup() const;
 
                     /**
                      * 设置IP 组配置。
-                     * @param IPGroup IP 组配置。
+                     * @param _iPGroup IP 组配置。
+                     * 
                      */
                     void SetIPGroup(const IPGroup& _iPGroup);
 
                     /**
                      * 判断参数 IPGroup 是否已赋值
                      * @return IPGroup 是否已赋值
+                     * 
                      */
                     bool IPGroupHasBeenSet() const;
 
@@ -88,6 +94,7 @@ namespace TencentCloud
 <li> append: 向 IPGroup 中追加 Content 参数中内容；</li>
 <li> remove: 从 IPGroup 中删除 Content 参数中内容；</li>
 <li> update: 全量替换 IPGroup 内容，并可修改 IPGroup 名称。 </li>
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -96,16 +103,18 @@ namespace TencentCloud
 <li> append: 向 IPGroup 中追加 Content 参数中内容；</li>
 <li> remove: 从 IPGroup 中删除 Content 参数中内容；</li>
 <li> update: 全量替换 IPGroup 内容，并可修改 IPGroup 名称。 </li>
-                     * @param Mode 操作类型，取值有：
+                     * @param _mode 操作类型，取值有：
 <li> append: 向 IPGroup 中追加 Content 参数中内容；</li>
 <li> remove: 从 IPGroup 中删除 Content 参数中内容；</li>
 <li> update: 全量替换 IPGroup 内容，并可修改 IPGroup 名称。 </li>
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

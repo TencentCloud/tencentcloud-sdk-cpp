@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取kill完成的sql会话ID列表。
                      * @return Threads kill完成的sql会话ID列表。
+                     * 
                      */
                     std::vector<int64_t> GetThreads() const;
 
                     /**
                      * 判断参数 Threads 是否已赋值
                      * @return Threads 是否已赋值
+                     * 
                      */
                     bool ThreadsHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlExecId 执行ID， Prepare阶段的任务输出，用于Commit阶段中指定执行kill操作的会话ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSqlExecId() const;
 
                     /**
                      * 判断参数 SqlExecId 是否已赋值
                      * @return SqlExecId 是否已赋值
+                     * 
                      */
                     bool SqlExecIdHasBeenSet() const;
 

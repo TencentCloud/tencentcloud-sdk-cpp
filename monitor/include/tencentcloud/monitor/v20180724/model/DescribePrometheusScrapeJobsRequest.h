@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Agent ID
                      * @return AgentId Agent ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置Agent ID
-                     * @param AgentId Agent ID
+                     * @param _agentId Agent ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取任务名
                      * @return Name 任务名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置任务名
-                     * @param Name 任务名
+                     * @param _name 任务名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取任务 ID 列表
                      * @return JobIds 任务 ID 列表
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 设置任务 ID 列表
-                     * @param JobIds 任务 ID 列表
+                     * @param _jobIds 任务 ID 列表
+                     * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100
                      * @return Limit 返回数量，默认为20，最大值为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100
-                     * @param Limit 返回数量，默认为20，最大值为100
+                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

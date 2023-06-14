@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取String(20)，返回码
                      * @return TxnReturnCode String(20)，返回码
+                     * 
                      */
                     std::string GetTxnReturnCode() const;
 
                     /**
                      * 判断参数 TxnReturnCode 是否已赋值
                      * @return TxnReturnCode 是否已赋值
+                     * 
                      */
                     bool TxnReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取String(100)，返回信息
                      * @return TxnReturnMsg String(100)，返回信息
+                     * 
                      */
                     std::string GetTxnReturnMsg() const;
 
                     /**
                      * 判断参数 TxnReturnMsg 是否已赋值
                      * @return TxnReturnMsg 是否已赋值
+                     * 
                      */
                     bool TxnReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取String(22)，交易流水号
                      * @return CnsmrSeqNo String(22)，交易流水号
+                     * 
                      */
                     std::string GetCnsmrSeqNo() const;
 
                     /**
                      * 判断参数 CnsmrSeqNo 是否已赋值
                      * @return CnsmrSeqNo 是否已赋值
+                     * 
                      */
                     bool CnsmrSeqNoHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BookingFlag STRING(2)，记账标志（记账标志。1: 登记挂账; 2: 支付; 3: 提现; 4: 清分; 5: 下单预支付; 6: 确认并付款; 7: 退款; 8: 支付到平台; N: 其他）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBookingFlag() const;
 
                     /**
                      * 判断参数 BookingFlag 是否已赋值
                      * @return BookingFlag 是否已赋值
+                     * 
                      */
                     bool BookingFlagHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranStatus STRING(32)，交易状态（0: 成功; 1: 失败; 2: 待确认; 5: 待处理; 6: 处理中。0和1是终态，2、5、6是中间态，其中2是特指提现后待确认提现是否成功，5是银行收到交易等待处理，6是交易正在处理）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranStatus() const;
 
                     /**
                      * 判断参数 TranStatus 是否已赋值
                      * @return TranStatus 是否已赋值
+                     * 
                      */
                     bool TranStatusHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranAmt STRING(20)，交易金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranAmt() const;
 
                     /**
                      * 判断参数 TranAmt 是否已赋值
                      * @return TranAmt 是否已赋值
+                     * 
                      */
                     bool TranAmtHasBeenSet() const;
 
@@ -126,12 +138,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranDate STRING(8)，交易日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranDate() const;
 
                     /**
                      * 判断参数 TranDate 是否已赋值
                      * @return TranDate 是否已赋值
+                     * 
                      */
                     bool TranDateHasBeenSet() const;
 
@@ -140,12 +154,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranTime STRING(20)，交易时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranTime() const;
 
                     /**
                      * 判断参数 TranTime 是否已赋值
                      * @return TranTime 是否已赋值
+                     * 
                      */
                     bool TranTimeHasBeenSet() const;
 
@@ -154,12 +170,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InSubAcctNo STRING(50)，转入子账户账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInSubAcctNo() const;
 
                     /**
                      * 判断参数 InSubAcctNo 是否已赋值
                      * @return InSubAcctNo 是否已赋值
+                     * 
                      */
                     bool InSubAcctNoHasBeenSet() const;
 
@@ -168,12 +186,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutSubAcctNo STRING(50)，转出子账户账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutSubAcctNo() const;
 
                     /**
                      * 判断参数 OutSubAcctNo 是否已赋值
                      * @return OutSubAcctNo 是否已赋值
+                     * 
                      */
                     bool OutSubAcctNoHasBeenSet() const;
 
@@ -182,12 +202,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailMsg STRING(300)，失败信息（当提现失败时，返回交易失败原因）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailMsg() const;
 
                     /**
                      * 判断参数 FailMsg 是否已赋值
                      * @return FailMsg 是否已赋值
+                     * 
                      */
                     bool FailMsgHasBeenSet() const;
 
@@ -196,12 +218,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldTranFrontSeqNo STRING(50)，原前置流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldTranFrontSeqNo() const;
 
                     /**
                      * 判断参数 OldTranFrontSeqNo 是否已赋值
                      * @return OldTranFrontSeqNo 是否已赋值
+                     * 
                      */
                     bool OldTranFrontSeqNoHasBeenSet() const;
 

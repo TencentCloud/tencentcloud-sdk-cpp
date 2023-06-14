@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoftQuotaDayDetail 弹性计费扣费详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SoftQuotaDayInfo> GetSoftQuotaDayDetail() const;
 
                     /**
                      * 判断参数 SoftQuotaDayDetail 是否已赋值
                      * @return SoftQuotaDayDetail 是否已赋值
+                     * 
                      */
                     bool SoftQuotaDayDetailHasBeenSet() const;
 

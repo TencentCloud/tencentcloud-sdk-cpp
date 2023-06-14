@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取添加签名响应
                      * @return AddSignStatus 添加签名响应
+                     * 
                      */
                     AddSignStatus GetAddSignStatus() const;
 
                     /**
                      * 判断参数 AddSignStatus 是否已赋值
                      * @return AddSignStatus 是否已赋值
+                     * 
                      */
                     bool AddSignStatusHasBeenSet() const;
 

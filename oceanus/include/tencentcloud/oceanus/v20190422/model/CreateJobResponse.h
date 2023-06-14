@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取作业Id
                      * @return JobId 作业Id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

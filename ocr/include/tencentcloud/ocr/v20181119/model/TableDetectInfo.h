@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cells 单元格内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableCell> GetCells() const;
 
                     /**
                      * 设置单元格内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cells 单元格内容
+                     * @param _cells 单元格内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCells(const std::vector<TableCell>& _cells);
 
                     /**
                      * 判断参数 Cells 是否已赋值
                      * @return Cells 是否已赋值
+                     * 
                      */
                     bool CellsHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Titles 表格标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableTitle> GetTitles() const;
 
                     /**
                      * 设置表格标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Titles 表格标题
+                     * @param _titles 表格标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTitles(const std::vector<TableTitle>& _titles);
 
                     /**
                      * 判断参数 Titles 是否已赋值
                      * @return Titles 是否已赋值
+                     * 
                      */
                     bool TitlesHasBeenSet() const;
 
@@ -102,6 +108,7 @@ namespace TencentCloud
 1 为有线表格，2 为无线表格
 （接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -110,16 +117,18 @@ namespace TencentCloud
 1 为有线表格，2 为无线表格
 （接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 图像中的文本块类型，0 为非表格文本，
+                     * @param _type 图像中的文本块类型，0 为非表格文本，
 1 为有线表格，2 为无线表格
 （接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -130,6 +139,7 @@ namespace TencentCloud
                      * @return TableCoordPoint 表格主体四个顶点坐标（依次为左上角，
 右上角，右下角，左下角）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetTableCoordPoint() const;
 
@@ -137,15 +147,17 @@ namespace TencentCloud
                      * 设置表格主体四个顶点坐标（依次为左上角，
 右上角，右下角，左下角）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableCoordPoint 表格主体四个顶点坐标（依次为左上角，
+                     * @param _tableCoordPoint 表格主体四个顶点坐标（依次为左上角，
 右上角，右下角，左下角）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableCoordPoint(const std::vector<Coord>& _tableCoordPoint);
 
                     /**
                      * 判断参数 TableCoordPoint 是否已赋值
                      * @return TableCoordPoint 是否已赋值
+                     * 
                      */
                     bool TableCoordPointHasBeenSet() const;
 

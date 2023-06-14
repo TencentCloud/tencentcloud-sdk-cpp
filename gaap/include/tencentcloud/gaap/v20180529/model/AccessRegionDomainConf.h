@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取地域ID。
                      * @return RegionId 地域ID。
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID。
-                     * @param RegionId 地域ID。
+                     * @param _regionId 地域ID。
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。
                      * @return NationCountryInnerList 就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。
+                     * 
                      */
                     std::vector<std::string> GetNationCountryInnerList() const;
 
                     /**
                      * 设置就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。
-                     * @param NationCountryInnerList 就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。
+                     * @param _nationCountryInnerList 就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。
+                     * 
                      */
                     void SetNationCountryInnerList(const std::vector<std::string>& _nationCountryInnerList);
 
                     /**
                      * 判断参数 NationCountryInnerList 是否已赋值
                      * @return NationCountryInnerList 是否已赋值
+                     * 
                      */
                     bool NationCountryInnerListHasBeenSet() const;
 

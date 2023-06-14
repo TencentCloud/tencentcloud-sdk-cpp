@@ -55,6 +55,7 @@ second：二级目录
 first：一级目录
 second：二级目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCatalogueLevel() const;
 
@@ -63,16 +64,18 @@ second：二级目录
 first：一级目录
 second：二级目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CatalogueLevel 目录级别，支持参数：
+                     * @param _catalogueLevel 目录级别，支持参数：
 first：一级目录
 second：二级目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCatalogueLevel(const std::string& _catalogueLevel);
 
                     /**
                      * 判断参数 CatalogueLevel 是否已赋值
                      * @return CatalogueLevel 是否已赋值
+                     * 
                      */
                     bool CatalogueLevelHasBeenSet() const;
 
@@ -81,20 +84,23 @@ second：二级目录
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CatalogueName 目录名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCatalogueName() const;
 
                     /**
                      * 设置目录名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CatalogueName 目录名
+                     * @param _catalogueName 目录名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCatalogueName(const std::string& _catalogueName);
 
                     /**
                      * 判断参数 CatalogueName 是否已赋值
                      * @return CatalogueName 是否已赋值
+                     * 
                      */
                     bool CatalogueNameHasBeenSet() const;
 

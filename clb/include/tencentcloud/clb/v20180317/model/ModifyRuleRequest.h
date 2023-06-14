@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器 ID。
                      * @return ListenerId 负载均衡监听器 ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器 ID。
-                     * @param ListenerId 负载均衡监听器 ID。
+                     * @param _listenerId 负载均衡监听器 ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取要修改的转发规则的 ID。
                      * @return LocationId 要修改的转发规则的 ID。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置要修改的转发规则的 ID。
-                     * @param LocationId 要修改的转发规则的 ID。
+                     * @param _locationId 要修改的转发规则的 ID。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
                      * @return Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
-                     * @param Url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
+                     * @param _url 转发规则的新的转发路径，如不需修改Url，则不需提供此参数。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取健康检查信息。
                      * @return HealthCheck 健康检查信息。
+                     * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
                      * 设置健康检查信息。
-                     * @param HealthCheck 健康检查信息。
+                     * @param _healthCheck 健康检查信息。
+                     * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
                     /**
                      * 判断参数 HealthCheck 是否已赋值
                      * @return HealthCheck 是否已赋值
+                     * 
                      */
                     bool HealthCheckHasBeenSet() const;
 
@@ -138,92 +153,107 @@ namespace TencentCloud
 分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      * @return Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
 分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * 
                      */
                     std::string GetScheduler() const;
 
                     /**
                      * 设置规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
 分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
-                     * @param Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+                     * @param _scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
 分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * 
                      */
                     void SetScheduler(const std::string& _scheduler);
 
                     /**
                      * 判断参数 Scheduler 是否已赋值
                      * @return Scheduler 是否已赋值
+                     * 
                      */
                     bool SchedulerHasBeenSet() const;
 
                     /**
                      * 获取会话保持时间。
                      * @return SessionExpireTime 会话保持时间。
+                     * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
                      * 设置会话保持时间。
-                     * @param SessionExpireTime 会话保持时间。
+                     * @param _sessionExpireTime 会话保持时间。
+                     * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
 
                     /**
                      * 判断参数 SessionExpireTime 是否已赋值
                      * @return SessionExpireTime 是否已赋值
+                     * 
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
                      * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
+                     * 
                      */
                     std::string GetForwardType() const;
 
                     /**
                      * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
-                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
+                     * @param _forwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。
+                     * 
                      */
                     void SetForwardType(const std::string& _forwardType);
 
                     /**
                      * 判断参数 ForwardType 是否已赋值
                      * @return ForwardType 是否已赋值
+                     * 
                      */
                     bool ForwardTypeHasBeenSet() const;
 
                     /**
                      * 获取TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
                      * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
                      * 设置TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
-                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @param _trpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
 
                     /**
                      * 判断参数 TrpcCallee 是否已赋值
                      * @return TrpcCallee 是否已赋值
+                     * 
                      */
                     bool TrpcCalleeHasBeenSet() const;
 
                     /**
                      * 获取TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
                      * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
                      * 设置TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
-                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @param _trpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * 
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
 
                     /**
                      * 判断参数 TrpcFunc 是否已赋值
                      * @return TrpcFunc 是否已赋值
+                     * 
                      */
                     bool TrpcFuncHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡ID
                      * @return LoadBalancerId 负载均衡ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡ID
-                     * @param LoadBalancerId 负载均衡ID
+                     * @param _loadBalancerId 负载均衡ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡名字
                      * @return LoadBalancerName 负载均衡名字
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡名字
-                     * @param LoadBalancerName 负载均衡名字
+                     * @param _loadBalancerName 负载均衡名字
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡所在地域
                      * @return Region 负载均衡所在地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置负载均衡所在地域
-                     * @param Region 负载均衡所在地域
+                     * @param _region 负载均衡所在地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的vip
                      * @return Vip 负载均衡的vip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置负载均衡的vip
-                     * @param Vip 负载均衡的vip
+                     * @param _vip 负载均衡的vip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。
                      * @return IdleReason 闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。
+                     * 
                      */
                     std::string GetIdleReason() const;
 
                     /**
                      * 设置闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。
-                     * @param IdleReason 闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。
+                     * @param _idleReason 闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。
+                     * 
                      */
                     void SetIdleReason(const std::string& _idleReason);
 
                     /**
                      * 判断参数 IdleReason 是否已赋值
                      * @return IdleReason 是否已赋值
+                     * 
                      */
                     bool IdleReasonHasBeenSet() const;
 
@@ -141,38 +156,44 @@ namespace TencentCloud
 0：创建中，1：正常运行。
                      * @return Status 负载均衡实例的状态，包括
 0：创建中，1：正常运行。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置负载均衡实例的状态，包括
 0：创建中，1：正常运行。
-                     * @param Status 负载均衡实例的状态，包括
+                     * @param _status 负载均衡实例的状态，包括
 0：创建中，1：正常运行。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
                      * @return Forward 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
+                     * 
                      */
                     uint64_t GetForward() const;
 
                     /**
                      * 设置负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
-                     * @param Forward 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
+                     * @param _forward 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
+                     * 
                      */
                     void SetForward(const uint64_t& _forward);
 
                     /**
                      * 判断参数 Forward 是否已赋值
                      * @return Forward 是否已赋值
+                     * 
                      */
                     bool ForwardHasBeenSet() const;
 
@@ -181,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 负载均衡域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置负载均衡域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 负载均衡域名
+                     * @param _domain 负载均衡域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

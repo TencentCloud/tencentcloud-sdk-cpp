@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -90,6 +96,7 @@ abnormal = 异常
                      * @return Status agent状态
 normal = 正常
 abnormal = 异常
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -97,33 +104,38 @@ abnormal = 异常
                      * 设置agent状态
 normal = 正常
 abnormal = 异常
-                     * @param Status agent状态
+                     * @param _status agent状态
 normal = 正常
 abnormal = 异常
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -134,6 +146,7 @@ abnormal = 异常
                      * @return ExternalLabels 额外labels
 本集群的所有指标都会带上这几个label
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Label> GetExternalLabels() const;
 
@@ -141,15 +154,17 @@ abnormal = 异常
                      * 设置额外labels
 本集群的所有指标都会带上这几个label
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalLabels 额外labels
+                     * @param _externalLabels 额外labels
 本集群的所有指标都会带上这几个label
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalLabels(const std::vector<Label>& _externalLabels);
 
                     /**
                      * 判断参数 ExternalLabels 是否已赋值
                      * @return ExternalLabels 是否已赋值
+                     * 
                      */
                     bool ExternalLabelsHasBeenSet() const;
 
@@ -158,20 +173,23 @@ abnormal = 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 集群所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置集群所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 集群所在地域
+                     * @param _region 集群所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -180,20 +198,23 @@ abnormal = 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 集群所在VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群所在VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 集群所在VPC ID
+                     * @param _vpcId 集群所在VPC ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -202,20 +223,23 @@ abnormal = 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 记录关联等操作的失败信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
                      * 设置记录关联等操作的失败信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedReason 记录关联等操作的失败信息
+                     * @param _failedReason 记录关联等操作的失败信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
 
                     /**
                      * 判断参数 FailedReason 是否已赋值
                      * @return FailedReason 是否已赋值
+                     * 
                      */
                     bool FailedReasonHasBeenSet() const;
 
@@ -224,20 +248,23 @@ abnormal = 异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name agent名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置agent名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name agent名称
+                     * @param _name agent名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

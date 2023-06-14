@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的云数据库产品类型，目前仅支持 "mysql"。
                      * @return Product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置需要查询的云数据库产品类型，目前仅支持 "mysql"。
-                     * @param Product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * @param _product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取分页查询数据的偏移量，默认为0。
                      * @return Offset 分页查询数据的偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询数据的偏移量，默认为0。
-                     * @param Offset 分页查询数据的偏移量，默认为0。
+                     * @param _offset 分页查询数据的偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
                      * @return Limit 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
-                     * @param Limit 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
+                     * @param _limit 分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
                      * @return OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
-                     * @param OrderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
+                     * @param _orderBy 指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
                      * @return OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
-                     * @param OrderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
+                     * @param _orderDirection 指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

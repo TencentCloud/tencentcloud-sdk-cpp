@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取节点ID。
                      * @return NodeIds 节点ID。
+                     * 
                      */
                     std::vector<std::string> GetNodeIds() const;
 
                     /**
                      * 设置节点ID。
-                     * @param NodeIds 节点ID。
+                     * @param _nodeIds 节点ID。
+                     * 
                      */
                     void SetNodeIds(const std::vector<std::string>& _nodeIds);
 
                     /**
                      * 判断参数 NodeIds 是否已赋值
                      * @return NodeIds 是否已赋值
+                     * 
                      */
                     bool NodeIdsHasBeenSet() const;
 
@@ -84,56 +90,65 @@ namespace TencentCloud
 <ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
                      * @return Roles 节点角色。可选值包括：
 <ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+                     * 
                      */
                     std::vector<std::string> GetRoles() const;
 
                     /**
                      * 设置节点角色。可选值包括：
 <ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
-                     * @param Roles 节点角色。可选值包括：
+                     * @param _roles 节点角色。可选值包括：
 <ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>
+                     * 
                      */
                     void SetRoles(const std::vector<std::string>& _roles);
 
                     /**
                      * 判断参数 Roles 是否已赋值
                      * @return Roles 是否已赋值
+                     * 
                      */
                     bool RolesHasBeenSet() const;
 
                     /**
                      * 获取该参数指定节点是否为Hidden节点，默认为false。
                      * @return OnlyHidden 该参数指定节点是否为Hidden节点，默认为false。
+                     * 
                      */
                     bool GetOnlyHidden() const;
 
                     /**
                      * 设置该参数指定节点是否为Hidden节点，默认为false。
-                     * @param OnlyHidden 该参数指定节点是否为Hidden节点，默认为false。
+                     * @param _onlyHidden 该参数指定节点是否为Hidden节点，默认为false。
+                     * 
                      */
                     void SetOnlyHidden(const bool& _onlyHidden);
 
                     /**
                      * 判断参数 OnlyHidden 是否已赋值
                      * @return OnlyHidden 是否已赋值
+                     * 
                      */
                     bool OnlyHiddenHasBeenSet() const;
 
                     /**
                      * 获取该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。
                      * @return Priority 该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。
-                     * @param Priority 该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * @param _priority 该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -142,38 +157,44 @@ namespace TencentCloud
 <ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
                      * @return Votes 该参数指定节点投票权。
 <ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+                     * 
                      */
                     int64_t GetVotes() const;
 
                     /**
                      * 设置该参数指定节点投票权。
 <ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
-                     * @param Votes 该参数指定节点投票权。
+                     * @param _votes 该参数指定节点投票权。
 <ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>
+                     * 
                      */
                     void SetVotes(const int64_t& _votes);
 
                     /**
                      * 判断参数 Votes 是否已赋值
                      * @return Votes 是否已赋值
+                     * 
                      */
                     bool VotesHasBeenSet() const;
 
                     /**
                      * 获取节点标签。
                      * @return Tags 节点标签。
+                     * 
                      */
                     std::vector<NodeTag> GetTags() const;
 
                     /**
                      * 设置节点标签。
-                     * @param Tags 节点标签。
+                     * @param _tags 节点标签。
+                     * 
                      */
                     void SetTags(const std::vector<NodeTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

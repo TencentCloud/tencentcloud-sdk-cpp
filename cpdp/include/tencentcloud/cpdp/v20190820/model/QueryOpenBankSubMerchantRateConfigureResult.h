@@ -55,6 +55,7 @@ PROCESSING: 开通中
 SUCCESS: 开通成功 
 FAILED: 开通失败
 PROCESSING: 开通中
+                     * 
                      */
                     std::string GetDealStatus() const;
 
@@ -63,16 +64,18 @@ PROCESSING: 开通中
 SUCCESS: 开通成功 
 FAILED: 开通失败
 PROCESSING: 开通中
-                     * @param DealStatus 处理状态 
+                     * @param _dealStatus 处理状态 
 SUCCESS: 开通成功 
 FAILED: 开通失败
 PROCESSING: 开通中
+                     * 
                      */
                     void SetDealStatus(const std::string& _dealStatus);
 
                     /**
                      * 判断参数 DealStatus 是否已赋值
                      * @return DealStatus 是否已赋值
+                     * 
                      */
                     bool DealStatusHasBeenSet() const;
 
@@ -81,20 +84,23 @@ PROCESSING: 开通中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealMessage 处理描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealMessage() const;
 
                     /**
                      * 设置处理描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealMessage 处理描述
+                     * @param _dealMessage 处理描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealMessage(const std::string& _dealMessage);
 
                     /**
                      * 判断参数 DealMessage 是否已赋值
                      * @return DealMessage 是否已赋值
+                     * 
                      */
                     bool DealMessageHasBeenSet() const;
 

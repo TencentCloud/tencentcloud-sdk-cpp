@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取授权项目Id
                      * @return AuthInfoId 授权项目Id
+                     * 
                      */
                     std::string GetAuthInfoId() const;
 
                     /**
                      * 设置授权项目Id
-                     * @param AuthInfoId 授权项目Id
+                     * @param _authInfoId 授权项目Id
+                     * 
                      */
                     void SetAuthInfoId(const std::string& _authInfoId);
 
                     /**
                      * 判断参数 AuthInfoId 是否已赋值
                      * @return AuthInfoId 是否已赋值
+                     * 
                      */
                     bool AuthInfoIdHasBeenSet() const;
 

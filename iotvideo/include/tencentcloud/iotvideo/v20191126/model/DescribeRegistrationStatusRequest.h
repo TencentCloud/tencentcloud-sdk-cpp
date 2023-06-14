@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取终端用户的唯一ID列表，0<元素数量<=100
                      * @return CunionIds 终端用户的唯一ID列表，0<元素数量<=100
+                     * 
                      */
                     std::vector<std::string> GetCunionIds() const;
 
                     /**
                      * 设置终端用户的唯一ID列表，0<元素数量<=100
-                     * @param CunionIds 终端用户的唯一ID列表，0<元素数量<=100
+                     * @param _cunionIds 终端用户的唯一ID列表，0<元素数量<=100
+                     * 
                      */
                     void SetCunionIds(const std::vector<std::string>& _cunionIds);
 
                     /**
                      * 判断参数 CunionIds 是否已赋值
                      * @return CunionIds 是否已赋值
+                     * 
                      */
                     bool CunionIdsHasBeenSet() const;
 

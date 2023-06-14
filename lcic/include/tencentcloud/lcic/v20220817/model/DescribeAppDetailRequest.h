@@ -47,38 +47,44 @@ namespace TencentCloud
 
                      * @return ApplicationId 应用ID。低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID。低代码互动课堂的SdkAppId。
 
-                     * @param ApplicationId 应用ID。低代码互动课堂的SdkAppId。
+                     * @param _applicationId 应用ID。低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取开发商ID
                      * @return DeveloperId 开发商ID
+                     * 
                      */
                     std::string GetDeveloperId() const;
 
                     /**
                      * 设置开发商ID
-                     * @param DeveloperId 开发商ID
+                     * @param _developerId 开发商ID
+                     * 
                      */
                     void SetDeveloperId(const std::string& _developerId);
 
                     /**
                      * 判断参数 DeveloperId 是否已赋值
                      * @return DeveloperId 是否已赋值
+                     * 
                      */
                     bool DeveloperIdHasBeenSet() const;
 

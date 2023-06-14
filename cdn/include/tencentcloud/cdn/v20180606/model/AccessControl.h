@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 启用请求头部及请求url访问控制开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置启用请求头部及请求url访问控制开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 启用请求头部及请求url访问控制开关，取值有：
+                     * @param _switch 启用请求头部及请求url访问控制开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessControlRules 请求头部及请求url访问规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AccessControlRule> GetAccessControlRules() const;
 
                     /**
                      * 设置请求头部及请求url访问规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessControlRules 请求头部及请求url访问规则
+                     * @param _accessControlRules 请求头部及请求url访问规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessControlRules(const std::vector<AccessControlRule>& _accessControlRules);
 
                     /**
                      * 判断参数 AccessControlRules 是否已赋值
                      * @return AccessControlRules 是否已赋值
+                     * 
                      */
                     bool AccessControlRulesHasBeenSet() const;
 
@@ -100,20 +106,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode 返回状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 设置返回状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReturnCode 返回状态码
+                     * @param _returnCode 返回状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReturnCode(const int64_t& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 

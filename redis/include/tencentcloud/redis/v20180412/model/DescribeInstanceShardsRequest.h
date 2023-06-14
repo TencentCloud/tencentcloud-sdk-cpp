@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
-                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return FilterSlave 是否过滤掉从节信息。
 - true；过滤从节点。
 - false：不过滤。
+                     * 
                      */
                     bool GetFilterSlave() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置是否过滤掉从节信息。
 - true；过滤从节点。
 - false：不过滤。
-                     * @param FilterSlave 是否过滤掉从节信息。
+                     * @param _filterSlave 是否过滤掉从节信息。
 - true；过滤从节点。
 - false：不过滤。
+                     * 
                      */
                     void SetFilterSlave(const bool& _filterSlave);
 
                     /**
                      * 判断参数 FilterSlave 是否已赋值
                      * @return FilterSlave 是否已赋值
+                     * 
                      */
                     bool FilterSlaveHasBeenSet() const;
 

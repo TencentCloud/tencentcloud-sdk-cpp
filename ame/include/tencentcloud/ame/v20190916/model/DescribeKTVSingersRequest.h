@@ -48,20 +48,23 @@ namespace TencentCloud
 <li> 数组长度限制10</li>
                      * @return SingerIds 歌手id集合，精确匹配歌手id
 <li> 数组长度限制10</li>
+                     * 
                      */
                     std::vector<std::string> GetSingerIds() const;
 
                     /**
                      * 设置歌手id集合，精确匹配歌手id
 <li> 数组长度限制10</li>
-                     * @param SingerIds 歌手id集合，精确匹配歌手id
+                     * @param _singerIds 歌手id集合，精确匹配歌手id
 <li> 数组长度限制10</li>
+                     * 
                      */
                     void SetSingerIds(const std::vector<std::string>& _singerIds);
 
                     /**
                      * 判断参数 SingerIds 是否已赋值
                      * @return SingerIds 是否已赋值
+                     * 
                      */
                     bool SingerIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Genders 歌手性别集合，不传为全部，精确匹配歌手性别类型，
 <li>数组长度限制1</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回性别分类信息列表中，分类英文名</li>
+                     * 
                      */
                     std::vector<std::string> GetGenders() const;
 
@@ -79,15 +83,17 @@ namespace TencentCloud
                      * 设置歌手性别集合，不传为全部，精确匹配歌手性别类型，
 <li>数组长度限制1</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回性别分类信息列表中，分类英文名</li>
-                     * @param Genders 歌手性别集合，不传为全部，精确匹配歌手性别类型，
+                     * @param _genders 歌手性别集合，不传为全部，精确匹配歌手性别类型，
 <li>数组长度限制1</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回性别分类信息列表中，分类英文名</li>
+                     * 
                      */
                     void SetGenders(const std::vector<std::string>& _genders);
 
                     /**
                      * 判断参数 Genders 是否已赋值
                      * @return Genders 是否已赋值
+                     * 
                      */
                     bool GendersHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
                      * @return Areas 歌手区域集合，不传为全部，精确匹配歌手区域
 <li>数组长度限制10</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回的区域分类信息列表中，分类英文名</li>
+                     * 
                      */
                     std::vector<std::string> GetAreas() const;
 
@@ -105,15 +112,17 @@ namespace TencentCloud
                      * 设置歌手区域集合，不传为全部，精确匹配歌手区域
 <li>数组长度限制10</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回的区域分类信息列表中，分类英文名</li>
-                     * @param Areas 歌手区域集合，不传为全部，精确匹配歌手区域
+                     * @param _areas 歌手区域集合，不传为全部，精确匹配歌手区域
 <li>数组长度限制10</li>
 <li>取值范围：直播互动曲库歌手分类信息接口，返回的区域分类信息列表中，分类英文名</li>
+                     * 
                      */
                     void SetAreas(const std::vector<std::string>& _areas);
 
                     /**
                      * 判断参数 Areas 是否已赋值
                      * @return Areas 是否已赋值
+                     * 
                      */
                     bool AreasHasBeenSet() const;
 
@@ -122,56 +131,65 @@ namespace TencentCloud
 <li> Sort.Field 可选 PlayCount。</li>
                      * @return Sort 排序方式。默认按照播放数倒序
 <li> Sort.Field 可选 PlayCount。</li>
+                     * 
                      */
                     SortBy GetSort() const;
 
                     /**
                      * 设置排序方式。默认按照播放数倒序
 <li> Sort.Field 可选 PlayCount。</li>
-                     * @param Sort 排序方式。默认按照播放数倒序
+                     * @param _sort 排序方式。默认按照播放数倒序
 <li> Sort.Field 可选 PlayCount。</li>
+                     * 
                      */
                     void SetSort(const SortBy& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
                      * @return Limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-                     * @param Limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

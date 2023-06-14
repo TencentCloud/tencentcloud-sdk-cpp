@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetAddress VPC接入IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIntranetAddress() const;
 
                     /**
                      * 设置VPC接入IP列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntranetAddress VPC接入IP列表
+                     * @param _intranetAddress VPC接入IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntranetAddress(const std::string& _intranetAddress);
 
                     /**
                      * 判断参数 IntranetAddress 是否已赋值
                      * @return IntranetAddress 是否已赋值
+                     * 
                      */
                     bool IntranetAddressHasBeenSet() const;
 

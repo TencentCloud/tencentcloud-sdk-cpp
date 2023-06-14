@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZone 集群所在的主可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMasterZone() const;
 
                     /**
                      * 设置集群所在的主可用区。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MasterZone 集群所在的主可用区。
+                     * @param _masterZone 集群所在的主可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMasterZone(const std::vector<std::string>& _masterZone);
 
                     /**
                      * 判断参数 MasterZone 是否已赋值
                      * @return MasterZone 是否已赋值
+                     * 
                      */
                     bool MasterZoneHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZone 集群所在的备可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSlaveZone() const;
 
                     /**
                      * 设置集群所在的备可用区。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlaveZone 集群所在的备可用区。
+                     * @param _slaveZone 集群所在的备可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlaveZone(const std::vector<std::string>& _slaveZone);
 
                     /**
                      * 判断参数 SlaveZone 是否已赋值
                      * @return SlaveZone 是否已赋值
+                     * 
                      */
                     bool SlaveZoneHasBeenSet() const;
 

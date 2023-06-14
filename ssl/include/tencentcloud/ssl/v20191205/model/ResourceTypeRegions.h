@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取云资源类型
                      * @return ResourceType 云资源类型
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置云资源类型
-                     * @param ResourceType 云资源类型
+                     * @param _resourceType 云资源类型
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取地域列表
                      * @return Regions 地域列表
+                     * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 设置地域列表
-                     * @param Regions 地域列表
+                     * @param _regions 地域列表
+                     * 
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
+                     * 
                      */
                     bool RegionsHasBeenSet() const;
 

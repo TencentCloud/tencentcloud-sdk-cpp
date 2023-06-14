@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志内容结果
                      * @return LogResults 日志内容结果
+                     * 
                      */
                     LogResObject GetLogResults() const;
 
                     /**
                      * 判断参数 LogResults 是否已赋值
                      * @return LogResults 是否已赋值
+                     * 
                      */
                     bool LogResultsHasBeenSet() const;
 

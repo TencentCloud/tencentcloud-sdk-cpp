@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取按名称搜索
                      * @return NameKeyword 按名称搜索
+                     * 
                      */
                     std::string GetNameKeyword() const;
 
                     /**
                      * 设置按名称搜索
-                     * @param NameKeyword 按名称搜索
+                     * @param _nameKeyword 按名称搜索
+                     * 
                      */
                     void SetNameKeyword(const std::string& _nameKeyword);
 
                     /**
                      * 判断参数 NameKeyword 是否已赋值
                      * @return NameKeyword 是否已赋值
+                     * 
                      */
                     bool NameKeywordHasBeenSet() const;
 

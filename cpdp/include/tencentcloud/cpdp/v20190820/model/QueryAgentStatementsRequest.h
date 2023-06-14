@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取结算单日期，月结算单填每月1日
                      * @return Date 结算单日期，月结算单填每月1日
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置结算单日期，月结算单填每月1日
-                     * @param Date 结算单日期，月结算单填每月1日
+                     * @param _date 结算单日期，月结算单填每月1日
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 月结算单:monthly
                      * @return Type 日结算单:daily
 月结算单:monthly
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置日结算单:daily
 月结算单:monthly
-                     * @param Type 日结算单:daily
+                     * @param _type 日结算单:daily
 月结算单:monthly
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

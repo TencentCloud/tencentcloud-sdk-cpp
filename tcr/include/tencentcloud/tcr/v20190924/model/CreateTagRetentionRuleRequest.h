@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取主实例iD
                      * @return RegistryId 主实例iD
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例iD
-                     * @param RegistryId 主实例iD
+                     * @param _registryId 主实例iD
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间的Id
                      * @return NamespaceId 命名空间的Id
+                     * 
                      */
                     int64_t GetNamespaceId() const;
 
                     /**
                      * 设置命名空间的Id
-                     * @param NamespaceId 命名空间的Id
+                     * @param _namespaceId 命名空间的Id
+                     * 
                      */
                     void SetNamespaceId(const int64_t& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取保留策略
                      * @return RetentionRule 保留策略
+                     * 
                      */
                     RetentionRule GetRetentionRule() const;
 
                     /**
                      * 设置保留策略
-                     * @param RetentionRule 保留策略
+                     * @param _retentionRule 保留策略
+                     * 
                      */
                     void SetRetentionRule(const RetentionRule& _retentionRule);
 
                     /**
                      * 判断参数 RetentionRule 是否已赋值
                      * @return RetentionRule 是否已赋值
+                     * 
                      */
                     bool RetentionRuleHasBeenSet() const;
 
                     /**
                      * 获取执行周期，当前只能选择： manual;daily;weekly;monthly
                      * @return CronSetting 执行周期，当前只能选择： manual;daily;weekly;monthly
+                     * 
                      */
                     std::string GetCronSetting() const;
 
                     /**
                      * 设置执行周期，当前只能选择： manual;daily;weekly;monthly
-                     * @param CronSetting 执行周期，当前只能选择： manual;daily;weekly;monthly
+                     * @param _cronSetting 执行周期，当前只能选择： manual;daily;weekly;monthly
+                     * 
                      */
                     void SetCronSetting(const std::string& _cronSetting);
 
                     /**
                      * 判断参数 CronSetting 是否已赋值
                      * @return CronSetting 是否已赋值
+                     * 
                      */
                     bool CronSettingHasBeenSet() const;
 
                     /**
                      * 获取是否禁用规则，默认值为false
                      * @return Disabled 是否禁用规则，默认值为false
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置是否禁用规则，默认值为false
-                     * @param Disabled 是否禁用规则，默认值为false
+                     * @param _disabled 是否禁用规则，默认值为false
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 

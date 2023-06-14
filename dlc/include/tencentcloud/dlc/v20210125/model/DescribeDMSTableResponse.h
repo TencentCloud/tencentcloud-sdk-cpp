@@ -52,12 +52,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asset 基础对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Asset GetAsset() const;
 
                     /**
                      * 判断参数 Asset 是否已赋值
                      * @return Asset 是否已赋值
+                     * 
                      */
                     bool AssetHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewOriginalText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewOriginalText() const;
 
                     /**
                      * 判断参数 ViewOriginalText 是否已赋值
                      * @return ViewOriginalText 是否已赋值
+                     * 
                      */
                     bool ViewOriginalTextHasBeenSet() const;
 
@@ -80,12 +84,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewExpandedText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewExpandedText() const;
 
                     /**
                      * 判断参数 ViewExpandedText 是否已赋值
                      * @return ViewExpandedText 是否已赋值
+                     * 
                      */
                     bool ViewExpandedTextHasBeenSet() const;
 
@@ -94,12 +100,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retention hive维护版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRetention() const;
 
                     /**
                      * 判断参数 Retention 是否已赋值
                      * @return Retention 是否已赋值
+                     * 
                      */
                     bool RetentionHasBeenSet() const;
 
@@ -108,12 +116,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sds 存储对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DMSSds GetSds() const;
 
                     /**
                      * 判断参数 Sds 是否已赋值
                      * @return Sds 是否已赋值
+                     * 
                      */
                     bool SdsHasBeenSet() const;
 
@@ -122,12 +132,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionKeys 分区列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSColumn> GetPartitionKeys() const;
 
                     /**
                      * 判断参数 PartitionKeys 是否已赋值
                      * @return PartitionKeys 是否已赋值
+                     * 
                      */
                     bool PartitionKeysHasBeenSet() const;
 
@@ -136,12 +148,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 分区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSPartition> GetPartitions() const;
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
@@ -150,12 +164,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 表类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -164,12 +180,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
@@ -178,12 +196,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName Schame名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
@@ -192,12 +212,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSize 存储大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
                      * 判断参数 StorageSize 是否已赋值
                      * @return StorageSize 是否已赋值
+                     * 
                      */
                     bool StorageSizeHasBeenSet() const;
 
@@ -206,12 +228,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordCount 记录数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordCount() const;
 
                     /**
                      * 判断参数 RecordCount 是否已赋值
                      * @return RecordCount 是否已赋值
+                     * 
                      */
                     bool RecordCountHasBeenSet() const;
 
@@ -220,12 +244,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifeTime 生命周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLifeTime() const;
 
                     /**
                      * 判断参数 LifeTime 是否已赋值
                      * @return LifeTime 是否已赋值
+                     * 
                      */
                     bool LifeTimeHasBeenSet() const;
 
@@ -234,12 +260,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastAccessTime 最后访问时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastAccessTime() const;
 
                     /**
                      * 判断参数 LastAccessTime 是否已赋值
                      * @return LastAccessTime 是否已赋值
+                     * 
                      */
                     bool LastAccessTimeHasBeenSet() const;
 
@@ -248,12 +276,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataUpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataUpdateTime() const;
 
                     /**
                      * 判断参数 DataUpdateTime 是否已赋值
                      * @return DataUpdateTime 是否已赋值
+                     * 
                      */
                     bool DataUpdateTimeHasBeenSet() const;
 
@@ -262,12 +292,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StructUpdateTime 结构更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStructUpdateTime() const;
 
                     /**
                      * 判断参数 StructUpdateTime 是否已赋值
                      * @return StructUpdateTime 是否已赋值
+                     * 
                      */
                     bool StructUpdateTimeHasBeenSet() const;
 
@@ -276,12 +308,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSColumn> GetColumns() const;
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
@@ -290,12 +324,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

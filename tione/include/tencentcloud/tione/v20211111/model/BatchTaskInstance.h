@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务实例id
                      * @return BatchTaskInstanceId 任务实例id
+                     * 
                      */
                     std::string GetBatchTaskInstanceId() const;
 
                     /**
                      * 设置任务实例id
-                     * @param BatchTaskInstanceId 任务实例id
+                     * @param _batchTaskInstanceId 任务实例id
+                     * 
                      */
                     void SetBatchTaskInstanceId(const std::string& _batchTaskInstanceId);
 
                     /**
                      * 判断参数 BatchTaskInstanceId 是否已赋值
                      * @return BatchTaskInstanceId 是否已赋值
+                     * 
                      */
                     bool BatchTaskInstanceIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -91,38 +97,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态
-                     * @param Status 任务状态
+                     * @param _status 任务状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeInSeconds 运行时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuntimeInSeconds() const;
 
                     /**
                      * 设置运行时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuntimeInSeconds 运行时长
+                     * @param _runtimeInSeconds 运行时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuntimeInSeconds(const uint64_t& _runtimeInSeconds);
 
                     /**
                      * 判断参数 RuntimeInSeconds 是否已赋值
                      * @return RuntimeInSeconds 是否已赋值
+                     * 
                      */
                     bool RuntimeInSecondsHasBeenSet() const;
 

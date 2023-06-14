@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取请求的规则
                      * @return RuleID 请求的规则
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置请求的规则
-                     * @param RuleID 请求的规则
+                     * @param _ruleID 请求的规则
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取限制条数,默认10,最大100
                      * @return Limit 限制条数,默认10,最大100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制条数,默认10,最大100
-                     * @param Limit 限制条数,默认10,最大100
+                     * @param _limit 限制条数,默认10,最大100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0
                      * @return Offset 偏移量,默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * @param _offset 偏移量,默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * @return StartTime 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param StartTime 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _startTime 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
                      * @return EndTime 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param EndTime 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * @param _endTime 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取实例带宽信息。
                      * @return InternetAccessible 实例带宽信息。
+                     * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置实例带宽信息。
-                     * @param InternetAccessible 实例带宽信息。
+                     * @param _internetAccessible 实例带宽信息。
+                     * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
                     /**
                      * 判断参数 InternetAccessible 是否已赋值
                      * @return InternetAccessible 是否已赋值
+                     * 
                      */
                     bool InternetAccessibleHasBeenSet() const;
 

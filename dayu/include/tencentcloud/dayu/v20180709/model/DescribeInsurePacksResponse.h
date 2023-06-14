@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取保险包套餐列表
                      * @return InsurePacks 保险包套餐列表
+                     * 
                      */
                     std::vector<KeyValueRecord> GetInsurePacks() const;
 
                     /**
                      * 判断参数 InsurePacks 是否已赋值
                      * @return InsurePacks 是否已赋值
+                     * 
                      */
                     bool InsurePacksHasBeenSet() const;
 

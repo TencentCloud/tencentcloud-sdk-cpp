@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建托管存储内表sql语句描述
                      * @return Execution 创建托管存储内表sql语句描述
+                     * 
                      */
                     std::string GetExecution() const;
 
                     /**
                      * 判断参数 Execution 是否已赋值
                      * @return Execution 是否已赋值
+                     * 
                      */
                     bool ExecutionHasBeenSet() const;
 

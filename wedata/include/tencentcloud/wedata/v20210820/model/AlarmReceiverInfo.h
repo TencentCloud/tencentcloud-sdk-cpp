@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取告警ID
                      * @return AlarmId 告警ID
+                     * 
                      */
                     std::string GetAlarmId() const;
 
                     /**
                      * 设置告警ID
-                     * @param AlarmId 告警ID
+                     * @param _alarmId 告警ID
+                     * 
                      */
                     void SetAlarmId(const std::string& _alarmId);
 
                     /**
                      * 判断参数 AlarmId 是否已赋值
                      * @return AlarmId 是否已赋值
+                     * 
                      */
                     bool AlarmIdHasBeenSet() const;
 
                     /**
                      * 获取告警接收人ID
                      * @return AlarmReceiver 告警接收人ID
+                     * 
                      */
                     std::string GetAlarmReceiver() const;
 
                     /**
                      * 设置告警接收人ID
-                     * @param AlarmReceiver 告警接收人ID
+                     * @param _alarmReceiver 告警接收人ID
+                     * 
                      */
                     void SetAlarmReceiver(const std::string& _alarmReceiver);
 
                     /**
                      * 判断参数 AlarmReceiver 是否已赋值
                      * @return AlarmReceiver 是否已赋值
+                     * 
                      */
                     bool AlarmReceiverHasBeenSet() const;
 
                     /**
                      * 获取邮件，0：未设置，1：成功，2：失败
                      * @return Email 邮件，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetEmail() const;
 
                     /**
                      * 设置邮件，0：未设置，1：成功，2：失败
-                     * @param Email 邮件，0：未设置，1：成功，2：失败
+                     * @param _email 邮件，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetEmail(const uint64_t& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取短信，0：未设置，1：成功，2：失败
                      * @return Sms 短信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetSms() const;
 
                     /**
                      * 设置短信，0：未设置，1：成功，2：失败
-                     * @param Sms 短信，0：未设置，1：成功，2：失败
+                     * @param _sms 短信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetSms(const uint64_t& _sms);
 
                     /**
                      * 判断参数 Sms 是否已赋值
                      * @return Sms 是否已赋值
+                     * 
                      */
                     bool SmsHasBeenSet() const;
 
                     /**
                      * 获取微信，0：未设置，1：成功，2：失败
                      * @return Wechat 微信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetWechat() const;
 
                     /**
                      * 设置微信，0：未设置，1：成功，2：失败
-                     * @param Wechat 微信，0：未设置，1：成功，2：失败
+                     * @param _wechat 微信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetWechat(const uint64_t& _wechat);
 
                     /**
                      * 判断参数 Wechat 是否已赋值
                      * @return Wechat 是否已赋值
+                     * 
                      */
                     bool WechatHasBeenSet() const;
 
                     /**
                      * 获取电话，0：未设置，1：成功，2：失败
                      * @return Voice 电话，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetVoice() const;
 
                     /**
                      * 设置电话，0：未设置，1：成功，2：失败
-                     * @param Voice 电话，0：未设置，1：成功，2：失败
+                     * @param _voice 电话，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetVoice(const uint64_t& _voice);
 
                     /**
                      * 判断参数 Voice 是否已赋值
                      * @return Voice 是否已赋值
+                     * 
                      */
                     bool VoiceHasBeenSet() const;
 
                     /**
                      * 获取企业微信，0：未设置，1：成功，2：失败
                      * @return Wecom 企业微信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetWecom() const;
 
                     /**
                      * 设置企业微信，0：未设置，1：成功，2：失败
-                     * @param Wecom 企业微信，0：未设置，1：成功，2：失败
+                     * @param _wecom 企业微信，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetWecom(const uint64_t& _wecom);
 
                     /**
                      * 判断参数 Wecom 是否已赋值
                      * @return Wecom 是否已赋值
+                     * 
                      */
                     bool WecomHasBeenSet() const;
 
                     /**
                      * 获取http，0：未设置，1：成功，2：失败
                      * @return Http http，0：未设置，1：成功，2：失败
+                     * 
                      */
                     uint64_t GetHttp() const;
 
                     /**
                      * 设置http，0：未设置，1：成功，2：失败
-                     * @param Http http，0：未设置，1：成功，2：失败
+                     * @param _http http，0：未设置，1：成功，2：失败
+                     * 
                      */
                     void SetHttp(const uint64_t& _http);
 
                     /**
                      * 判断参数 Http 是否已赋值
                      * @return Http 是否已赋值
+                     * 
                      */
                     bool HttpHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WecomGroup 企业微信群，0：未设置，1：成功，2：失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetWecomGroup() const;
 
                     /**
                      * 设置企业微信群，0：未设置，1：成功，2：失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WecomGroup 企业微信群，0：未设置，1：成功，2：失败
+                     * @param _wecomGroup 企业微信群，0：未设置，1：成功，2：失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWecomGroup(const uint64_t& _wecomGroup);
 
                     /**
                      * 判断参数 WecomGroup 是否已赋值
                      * @return WecomGroup 是否已赋值
+                     * 
                      */
                     bool WecomGroupHasBeenSet() const;
 

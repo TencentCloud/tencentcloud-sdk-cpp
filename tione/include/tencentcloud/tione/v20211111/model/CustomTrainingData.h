@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metrics 指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomTrainingMetric> GetMetrics() const;
 
                     /**
                      * 设置指标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metrics 指标
+                     * @param _metrics 指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetrics(const std::vector<CustomTrainingMetric>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 

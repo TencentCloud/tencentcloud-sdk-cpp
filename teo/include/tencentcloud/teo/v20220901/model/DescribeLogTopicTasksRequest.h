@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询的限制数目，默认值为20，最大查询条目为1000。
                      * @return Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页查询的限制数目，默认值为20，最大查询条目为1000。
-                     * @param Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * @param _limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，默认值为0。
                      * @return Offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，默认值为0。
-                     * @param Offset 分页的偏移量，默认值为0。
+                     * @param _offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

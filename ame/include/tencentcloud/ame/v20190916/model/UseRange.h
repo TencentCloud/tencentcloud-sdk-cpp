@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用途id
                      * @return UseRangeId 用途id
+                     * 
                      */
                     int64_t GetUseRangeId() const;
 
                     /**
                      * 设置用途id
-                     * @param UseRangeId 用途id
+                     * @param _useRangeId 用途id
+                     * 
                      */
                     void SetUseRangeId(const int64_t& _useRangeId);
 
                     /**
                      * 判断参数 UseRangeId 是否已赋值
                      * @return UseRangeId 是否已赋值
+                     * 
                      */
                     bool UseRangeIdHasBeenSet() const;
 
                     /**
                      * 获取用途范围名称
                      * @return Name 用途范围名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用途范围名称
-                     * @param Name 用途范围名称
+                     * @param _name 用途范围名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

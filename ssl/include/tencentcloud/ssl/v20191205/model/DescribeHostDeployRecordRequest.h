@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待部署的证书ID
                      * @return CertificateId 待部署的证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置待部署的证书ID
-                     * @param CertificateId 待部署的证书ID
+                     * @param _certificateId 待部署的证书ID
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，从0开始。
                      * @return Offset 分页偏移量，从0开始。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始。
-                     * @param Offset 分页偏移量，从0开始。
+                     * @param _offset 分页偏移量，从0开始。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量，默认10。
                      * @return Limit 每页数量，默认10。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数量，默认10。
-                     * @param Limit 每页数量，默认10。
+                     * @param _limit 每页数量，默认10。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源类型
                      * @return ResourceType 资源类型
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型
-                     * @param ResourceType 资源类型
+                     * @param _resourceType 资源类型
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

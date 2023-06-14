@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取推荐返回的商品ID
                      * @return GoodsId 推荐返回的商品ID
+                     * 
                      */
                     std::string GetGoodsId() const;
 
                     /**
                      * 设置推荐返回的商品ID
-                     * @param GoodsId 推荐返回的商品ID
+                     * @param _goodsId 推荐返回的商品ID
+                     * 
                      */
                     void SetGoodsId(const std::string& _goodsId);
 
                     /**
                      * 判断参数 GoodsId 是否已赋值
                      * @return GoodsId 是否已赋值
+                     * 
                      */
                     bool GoodsIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 推荐结果分，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置推荐结果分，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 推荐结果分，取值范围[0,1000000]
+                     * @param _score 推荐结果分，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该GoodsTraceId上报。每次接口调用返回的GoodsTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGoodsTraceId() const;
 
                     /**
                      * 设置推荐追踪id，本次推荐内容产生的后续行为上报均要用该GoodsTraceId上报。每次接口调用返回的GoodsTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GoodsTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该GoodsTraceId上报。每次接口调用返回的GoodsTraceId不同
+                     * @param _goodsTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该GoodsTraceId上报。每次接口调用返回的GoodsTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGoodsTraceId(const std::string& _goodsTraceId);
 
                     /**
                      * 判断参数 GoodsTraceId 是否已赋值
                      * @return GoodsTraceId 是否已赋值
+                     * 
                      */
                     bool GoodsTraceIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 商品所在位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPosition() const;
 
                     /**
                      * 设置商品所在位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Position 商品所在位置
+                     * @param _position 商品所在位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPosition(const int64_t& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 

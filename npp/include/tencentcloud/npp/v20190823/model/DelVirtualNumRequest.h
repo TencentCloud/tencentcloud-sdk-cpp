@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取业务appid
                      * @return BizAppId 业务appid
+                     * 
                      */
                     std::string GetBizAppId() const;
 
                     /**
                      * 设置业务appid
-                     * @param BizAppId 业务appid
+                     * @param _bizAppId 业务appid
+                     * 
                      */
                     void SetBizAppId(const std::string& _bizAppId);
 
                     /**
                      * 判断参数 BizAppId 是否已赋值
                      * @return BizAppId 是否已赋值
+                     * 
                      */
                     bool BizAppIdHasBeenSet() const;
 
                     /**
                      * 获取双方号码 + 中间号绑定 ID，该 ID 全局唯一
                      * @return BindId 双方号码 + 中间号绑定 ID，该 ID 全局唯一
+                     * 
                      */
                     std::string GetBindId() const;
 
                     /**
                      * 设置双方号码 + 中间号绑定 ID，该 ID 全局唯一
-                     * @param BindId 双方号码 + 中间号绑定 ID，该 ID 全局唯一
+                     * @param _bindId 双方号码 + 中间号绑定 ID，该 ID 全局唯一
+                     * 
                      */
                     void SetBindId(const std::string& _bindId);
 
                     /**
                      * 判断参数 BindId 是否已赋值
                      * @return BindId 是否已赋值
+                     * 
                      */
                     bool BindIdHasBeenSet() const;
 
                     /**
                      * 获取应用二级业务 ID，bizId 需保证在该 appId 下全局唯一，最大长度不超过 16 个字节。
                      * @return BizId 应用二级业务 ID，bizId 需保证在该 appId 下全局唯一，最大长度不超过 16 个字节。
+                     * 
                      */
                     std::string GetBizId() const;
 
                     /**
                      * 设置应用二级业务 ID，bizId 需保证在该 appId 下全局唯一，最大长度不超过 16 个字节。
-                     * @param BizId 应用二级业务 ID，bizId 需保证在该 appId 下全局唯一，最大长度不超过 16 个字节。
+                     * @param _bizId 应用二级业务 ID，bizId 需保证在该 appId 下全局唯一，最大长度不超过 16 个字节。
+                     * 
                      */
                     void SetBizId(const std::string& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 

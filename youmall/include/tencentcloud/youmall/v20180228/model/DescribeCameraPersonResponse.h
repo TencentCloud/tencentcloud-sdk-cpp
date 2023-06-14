@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取集团id
                      * @return CompanyId 集团id
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺id
                      * @return ShopId 店铺id
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取摄像机id
                      * @return CameraId 摄像机id
+                     * 
                      */
                     int64_t GetCameraId() const;
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取pos机id
                      * @return PosId pos机id
+                     * 
                      */
                     std::string GetPosId() const;
 
                     /**
                      * 判断参数 PosId 是否已赋值
                      * @return PosId 是否已赋值
+                     * 
                      */
                     bool PosIdHasBeenSet() const;
 
                     /**
                      * 获取抓取的顾客信息
                      * @return Infos 抓取的顾客信息
+                     * 
                      */
                     std::vector<CameraPersonInfo> GetInfos() const;
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 

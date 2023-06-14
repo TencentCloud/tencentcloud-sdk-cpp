@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱
                      * @return Html base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱
+                     * 
                      */
                     std::string GetHtml() const;
 
                     /**
                      * 设置base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱
-                     * @param Html base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱
+                     * @param _html base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱
+                     * 
                      */
                     void SetHtml(const std::string& _html);
 
                     /**
                      * 判断参数 Html 是否已赋值
                      * @return Html 是否已赋值
+                     * 
                      */
                     bool HtmlHasBeenSet() const;
 
                     /**
                      * 获取base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式
                      * @return Text base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式
-                     * @param Text base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式
+                     * @param _text base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取资源组节点id
                      * @return InstanceId 资源组节点id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源组节点id
-                     * @param InstanceId 资源组节点id
+                     * @param _instanceId 资源组节点id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedResource 节点已用资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ResourceInfo GetUsedResource() const;
 
                     /**
                      * 设置节点已用资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsedResource 节点已用资源
+                     * @param _usedResource 节点已用资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsedResource(const ResourceInfo& _usedResource);
 
                     /**
                      * 判断参数 UsedResource 是否已赋值
                      * @return UsedResource 是否已赋值
+                     * 
                      */
                     bool UsedResourceHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalResource 节点总资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ResourceInfo GetTotalResource() const;
 
                     /**
                      * 设置节点总资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalResource 节点总资源
+                     * @param _totalResource 节点总资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalResource(const ResourceInfo& _totalResource);
 
                     /**
                      * 判断参数 TotalResource 是否已赋值
                      * @return TotalResource 是否已赋值
+                     * 
                      */
                     bool TotalResourceHasBeenSet() const;
 
@@ -130,6 +139,7 @@ DEPLOY_FAILED: 部署失败
 RELEASED：已释放 
 EXCEPTION：异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceStatus() const;
 
@@ -144,7 +154,7 @@ DEPLOY_FAILED: 部署失败
 RELEASED：已释放 
 EXCEPTION：异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceStatus 节点状态 
+                     * @param _instanceStatus 节点状态 
 注意：此字段为枚举值
 说明: 
 DEPLOYING: 部署中
@@ -154,30 +164,35 @@ DEPLOY_FAILED: 部署失败
 RELEASED：已释放 
 EXCEPTION：异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
                      * 获取创建人
                      * @return SubUin 创建人
+                     * 
                      */
                     std::string GetSubUin() const;
 
                     /**
                      * 设置创建人
-                     * @param SubUin 创建人
+                     * @param _subUin 创建人
+                     * 
                      */
                     void SetSubUin(const std::string& _subUin);
 
                     /**
                      * 判断参数 SubUin 是否已赋值
                      * @return SubUin 是否已赋值
+                     * 
                      */
                     bool SubUinHasBeenSet() const;
 
@@ -188,6 +203,7 @@ EXCEPTION：异常
                      * @return CreateTime 创建时间: 
 注意：北京时间，比如: 2021-12-01 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
@@ -195,15 +211,17 @@ EXCEPTION：异常
                      * 设置创建时间: 
 注意：北京时间，比如: 2021-12-01 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间: 
+                     * @param _createTime 创建时间: 
 注意：北京时间，比如: 2021-12-01 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -214,6 +232,7 @@ EXCEPTION：异常
                      * @return ExpireTime 到期时间
 注意：北京时间，比如：2021-12-11 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
@@ -221,15 +240,17 @@ EXCEPTION：异常
                      * 设置到期时间
 注意：北京时间，比如：2021-12-11 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 到期时间
+                     * @param _expireTime 到期时间
 注意：北京时间，比如：2021-12-11 12:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -248,6 +269,7 @@ NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期通知
 NOTIFY_AND_AUTO_RENEW：自动续费且到期通知
 DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAutoRenewFlag() const;
 
@@ -259,55 +281,63 @@ NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期通知
 NOTIFY_AND_AUTO_RENEW：自动续费且到期通知
 DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不通知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoRenewFlag 自动续费标识
+                     * @param _autoRenewFlag 自动续费标识
 注意：此字段为枚举值
 说明：
 NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期通知
 NOTIFY_AND_AUTO_RENEW：自动续费且到期通知
 DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoRenewFlag(const std::string& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取计费项ID
                      * @return SpecId 计费项ID
+                     * 
                      */
                     std::string GetSpecId() const;
 
                     /**
                      * 设置计费项ID
-                     * @param SpecId 计费项ID
+                     * @param _specId 计费项ID
+                     * 
                      */
                     void SetSpecId(const std::string& _specId);
 
                     /**
                      * 判断参数 SpecId 是否已赋值
                      * @return SpecId 是否已赋值
+                     * 
                      */
                     bool SpecIdHasBeenSet() const;
 
                     /**
                      * 获取计费项别名
                      * @return SpecAlias 计费项别名
+                     * 
                      */
                     std::string GetSpecAlias() const;
 
                     /**
                      * 设置计费项别名
-                     * @param SpecAlias 计费项别名
+                     * @param _specAlias 计费项别名
+                     * 
                      */
                     void SetSpecAlias(const std::string& _specAlias);
 
                     /**
                      * 判断参数 SpecAlias 是否已赋值
                      * @return SpecAlias 是否已赋值
+                     * 
                      */
                     bool SpecAliasHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取spark作业Id，与JobName同时存在时，JobName无效
                      * @return JobId spark作业Id，与JobName同时存在时，JobName无效
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置spark作业Id，与JobName同时存在时，JobName无效
-                     * @param JobId spark作业Id，与JobName同时存在时，JobName无效
+                     * @param _jobId spark作业Id，与JobName同时存在时，JobName无效
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取spark作业名
                      * @return JobName spark作业名
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置spark作业名
-                     * @param JobName spark作业名
+                     * @param _jobName spark作业名
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 

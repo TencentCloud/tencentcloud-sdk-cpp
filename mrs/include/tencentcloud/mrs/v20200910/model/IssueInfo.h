@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertNumber 编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertNumber() const;
 
                     /**
                      * 设置编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertNumber 编号
+                     * @param _certNumber 编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertNumber(const std::string& _certNumber);
 
                     /**
                      * 判断参数 CertNumber 是否已赋值
                      * @return CertNumber 是否已赋值
+                     * 
                      */
                     bool CertNumberHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuedAuthority 签发机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIssuedAuthority() const;
 
                     /**
                      * 设置签发机构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IssuedAuthority 签发机构
+                     * @param _issuedAuthority 签发机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssuedAuthority(const std::string& _issuedAuthority);
 
                     /**
                      * 判断参数 IssuedAuthority 是否已赋值
                      * @return IssuedAuthority 是否已赋值
+                     * 
                      */
                     bool IssuedAuthorityHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuedDate 签发日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIssuedDate() const;
 
                     /**
                      * 设置签发日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IssuedDate 签发日期
+                     * @param _issuedDate 签发日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssuedDate(const std::string& _issuedDate);
 
                     /**
                      * 判断参数 IssuedDate 是否已赋值
                      * @return IssuedDate 是否已赋值
+                     * 
                      */
                     bool IssuedDateHasBeenSet() const;
 

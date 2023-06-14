@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取单分片入流量带宽限制，单位：MB。
                      * @return InNetLimit 单分片入流量带宽限制，单位：MB。
+                     * 
                      */
                     int64_t GetInNetLimit() const;
 
                     /**
                      * 判断参数 InNetLimit 是否已赋值
                      * @return InNetLimit 是否已赋值
+                     * 
                      */
                     bool InNetLimitHasBeenSet() const;
 
                     /**
                      * 获取单分片出流量带宽限制，单位：MB。
                      * @return OutNetLimit 单分片出流量带宽限制，单位：MB。
+                     * 
                      */
                     int64_t GetOutNetLimit() const;
 
                     /**
                      * 判断参数 OutNetLimit 是否已赋值
                      * @return OutNetLimit 是否已赋值
+                     * 
                      */
                     bool OutNetLimitHasBeenSet() const;
 
                     /**
                      * 获取单分片连接数限制。
                      * @return ClientLimit 单分片连接数限制。
+                     * 
                      */
                     int64_t GetClientLimit() const;
 
                     /**
                      * 判断参数 ClientLimit 是否已赋值
                      * @return ClientLimit 是否已赋值
+                     * 
                      */
                     bool ClientLimitHasBeenSet() const;
 

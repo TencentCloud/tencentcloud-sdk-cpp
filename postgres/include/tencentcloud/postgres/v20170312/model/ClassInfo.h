@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取规格ID
                      * @return SpecCode 规格ID
+                     * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
                      * 设置规格ID
-                     * @param SpecCode 规格ID
+                     * @param _specCode 规格ID
+                     * 
                      */
                     void SetSpecCode(const std::string& _specCode);
 
                     /**
                      * 判断参数 SpecCode 是否已赋值
                      * @return SpecCode 是否已赋值
+                     * 
                      */
                     bool SpecCodeHasBeenSet() const;
 
                     /**
                      * 获取CPU核数
                      * @return CPU CPU核数
+                     * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
                      * 设置CPU核数
-                     * @param CPU CPU核数
+                     * @param _cPU CPU核数
+                     * 
                      */
                     void SetCPU(const uint64_t& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位：MB
                      * @return Memory 内存大小，单位：MB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位：MB
-                     * @param Memory 内存大小，单位：MB
+                     * @param _memory 内存大小，单位：MB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取该规格所支持最大存储容量，单位：GB
                      * @return MaxStorage 该规格所支持最大存储容量，单位：GB
+                     * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置该规格所支持最大存储容量，单位：GB
-                     * @param MaxStorage 该规格所支持最大存储容量，单位：GB
+                     * @param _maxStorage 该规格所支持最大存储容量，单位：GB
+                     * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
                     /**
                      * 获取该规格所支持最小存储容量，单位：GB
                      * @return MinStorage 该规格所支持最小存储容量，单位：GB
+                     * 
                      */
                     uint64_t GetMinStorage() const;
 
                     /**
                      * 设置该规格所支持最小存储容量，单位：GB
-                     * @param MinStorage 该规格所支持最小存储容量，单位：GB
+                     * @param _minStorage 该规格所支持最小存储容量，单位：GB
+                     * 
                      */
                     void SetMinStorage(const uint64_t& _minStorage);
 
                     /**
                      * 判断参数 MinStorage 是否已赋值
                      * @return MinStorage 是否已赋值
+                     * 
                      */
                     bool MinStorageHasBeenSet() const;
 
                     /**
                      * 获取该规格的预估QPS
                      * @return QPS 该规格的预估QPS
+                     * 
                      */
                     uint64_t GetQPS() const;
 
                     /**
                      * 设置该规格的预估QPS
-                     * @param QPS 该规格的预估QPS
+                     * @param _qPS 该规格的预估QPS
+                     * 
                      */
                     void SetQPS(const uint64_t& _qPS);
 
                     /**
                      * 判断参数 QPS 是否已赋值
                      * @return QPS 是否已赋值
+                     * 
                      */
                     bool QPSHasBeenSet() const;
 

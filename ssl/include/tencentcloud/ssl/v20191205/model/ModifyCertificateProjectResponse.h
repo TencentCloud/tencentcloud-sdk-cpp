@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCertificates 修改所属项目成功的证书集合。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSuccessCertificates() const;
 
                     /**
                      * 判断参数 SuccessCertificates 是否已赋值
                      * @return SuccessCertificates 是否已赋值
+                     * 
                      */
                     bool SuccessCertificatesHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCertificates 修改所属项目失败的证书集合。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailCertificates() const;
 
                     /**
                      * 判断参数 FailCertificates 是否已赋值
                      * @return FailCertificates 是否已赋值
+                     * 
                      */
                     bool FailCertificatesHasBeenSet() const;
 

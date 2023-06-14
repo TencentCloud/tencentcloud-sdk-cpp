@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取规则名称 [a-zA-Z0-9-\.]*
                      * @return RuleName 规则名称 [a-zA-Z0-9-\.]*
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称 [a-zA-Z0-9-\.]*
-                     * @param RuleName 规则名称 [a-zA-Z0-9-\.]*
+                     * @param _ruleName 规则名称 [a-zA-Z0-9-\.]*
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDesc 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleDesc() const;
 
                     /**
                      * 设置规则描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleDesc 规则描述
+                     * @param _ruleDesc 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleDesc(const std::string& _ruleDesc);
 
                     /**
                      * 判断参数 RuleDesc 是否已赋值
                      * @return RuleDesc 是否已赋值
+                     * 
                      */
                     bool RuleDescHasBeenSet() const;
 
                     /**
                      * 获取规则脚本
                      * @return RuleScript 规则脚本
+                     * 
                      */
                     std::string GetRuleScript() const;
 
                     /**
                      * 设置规则脚本
-                     * @param RuleScript 规则脚本
+                     * @param _ruleScript 规则脚本
+                     * 
                      */
                     void SetRuleScript(const std::string& _ruleScript);
 
                     /**
                      * 判断参数 RuleScript 是否已赋值
                      * @return RuleScript 是否已赋值
+                     * 
                      */
                     bool RuleScriptHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StringKV> GetTags() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签
+                     * @param _tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<StringKV>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -150,38 +165,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchCodeList 关联匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StringKV> GetMatchCodeList() const;
 
                     /**
                      * 设置关联匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MatchCodeList 关联匹配
+                     * @param _matchCodeList 关联匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMatchCodeList(const std::vector<StringKV>& _matchCodeList);
 
                     /**
                      * 判断参数 MatchCodeList 是否已赋值
                      * @return MatchCodeList 是否已赋值
+                     * 
                      */
                     bool MatchCodeListHasBeenSet() const;
 
                     /**
                      * 获取规则code
                      * @return RuleCode 规则code
+                     * 
                      */
                     std::string GetRuleCode() const;
 
                     /**
                      * 设置规则code
-                     * @param RuleCode 规则code
+                     * @param _ruleCode 规则code
+                     * 
                      */
                     void SetRuleCode(const std::string& _ruleCode);
 
                     /**
                      * 判断参数 RuleCode 是否已赋值
                      * @return RuleCode 是否已赋值
+                     * 
                      */
                     bool RuleCodeHasBeenSet() const;
 
@@ -190,20 +211,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地区
+                     * @param _region 地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户AppId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId 用户AppId
+                     * @param _appId 用户AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -234,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 用户Uin
+                     * @param _uin 用户Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -256,20 +286,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUin 用户OwnerUin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateUin() const;
 
                     /**
                      * 设置用户OwnerUin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUin 用户OwnerUin
+                     * @param _createUin 用户OwnerUin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateUin(const std::string& _createUin);
 
                     /**
                      * 判断参数 CreateUin 是否已赋值
                      * @return CreateUin 是否已赋值
+                     * 
                      */
                     bool CreateUinHasBeenSet() const;
 

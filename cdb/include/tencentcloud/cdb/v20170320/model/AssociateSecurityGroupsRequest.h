@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取安全组 ID。
                      * @return SecurityGroupId 安全组 ID。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组 ID。
-                     * @param SecurityGroupId 安全组 ID。
+                     * @param _securityGroupId 安全组 ID。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例 ID 列表，一个或者多个实例 ID 组成的数组。
                      * @return InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID 列表，一个或者多个实例 ID 组成的数组。
-                     * @param InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * @param _instanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
                      * @return ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 
                      */
                     bool GetForReadonlyInstance() const;
 
                     /**
                      * 设置当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
-                     * @param ForReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * @param _forReadonlyInstance 当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True
+                     * 
                      */
                     void SetForReadonlyInstance(const bool& _forReadonlyInstance);
 
                     /**
                      * 判断参数 ForReadonlyInstance 是否已赋值
                      * @return ForReadonlyInstance 是否已赋值
+                     * 
                      */
                     bool ForReadonlyInstanceHasBeenSet() const;
 

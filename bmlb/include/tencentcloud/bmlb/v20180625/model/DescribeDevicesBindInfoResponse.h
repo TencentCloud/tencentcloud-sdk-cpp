@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的负载均衡绑定信息。
                      * @return LoadBalancerSet 返回的负载均衡绑定信息。
+                     * 
                      */
                     std::vector<DevicesBindInfoLoadBalancer> GetLoadBalancerSet() const;
 
                     /**
                      * 判断参数 LoadBalancerSet 是否已赋值
                      * @return LoadBalancerSet 是否已赋值
+                     * 
                      */
                     bool LoadBalancerSetHasBeenSet() const;
 

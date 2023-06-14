@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取规则详情
                      * @return RuleList 规则详情
+                     * 
                      */
                     std::vector<DescribeCustomRulesRspRuleListItem> GetRuleList() const;
 
                     /**
                      * 判断参数 RuleList 是否已赋值
                      * @return RuleList 是否已赋值
+                     * 
                      */
                     bool RuleListHasBeenSet() const;
 
                     /**
                      * 获取规则条数
                      * @return TotalCount 规则条数
+                     * 
                      */
                     std::string GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

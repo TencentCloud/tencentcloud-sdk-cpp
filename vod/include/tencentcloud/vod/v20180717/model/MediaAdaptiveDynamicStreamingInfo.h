@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取转自适应码流信息数组。
                      * @return AdaptiveDynamicStreamingSet 转自适应码流信息数组。
+                     * 
                      */
                     std::vector<AdaptiveDynamicStreamingInfoItem> GetAdaptiveDynamicStreamingSet() const;
 
                     /**
                      * 设置转自适应码流信息数组。
-                     * @param AdaptiveDynamicStreamingSet 转自适应码流信息数组。
+                     * @param _adaptiveDynamicStreamingSet 转自适应码流信息数组。
+                     * 
                      */
                     void SetAdaptiveDynamicStreamingSet(const std::vector<AdaptiveDynamicStreamingInfoItem>& _adaptiveDynamicStreamingSet);
 
                     /**
                      * 判断参数 AdaptiveDynamicStreamingSet 是否已赋值
                      * @return AdaptiveDynamicStreamingSet 是否已赋值
+                     * 
                      */
                     bool AdaptiveDynamicStreamingSetHasBeenSet() const;
 

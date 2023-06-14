@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return Date 统计日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param Date 统计日期
+                     * @param _date 统计日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewRegisterCnt 新增注册设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNewRegisterCnt() const;
 
                     /**
                      * 设置新增注册设备数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewRegisterCnt 新增注册设备数
+                     * @param _newRegisterCnt 新增注册设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewRegisterCnt(const uint64_t& _newRegisterCnt);
 
                     /**
                      * 判断参数 NewRegisterCnt 是否已赋值
                      * @return NewRegisterCnt 是否已赋值
+                     * 
                      */
                     bool NewRegisterCntHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewActivateCnt 新增激活设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNewActivateCnt() const;
 
                     /**
                      * 设置新增激活设备数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewActivateCnt 新增激活设备数
+                     * @param _newActivateCnt 新增激活设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewActivateCnt(const uint64_t& _newActivateCnt);
 
                     /**
                      * 判断参数 NewActivateCnt 是否已赋值
                      * @return NewActivateCnt 是否已赋值
+                     * 
                      */
                     bool NewActivateCntHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveCnt 活跃设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActiveCnt() const;
 
                     /**
                      * 设置活跃设备数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveCnt 活跃设备数
+                     * @param _activeCnt 活跃设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveCnt(const uint64_t& _activeCnt);
 
                     /**
                      * 判断参数 ActiveCnt 是否已赋值
                      * @return ActiveCnt 是否已赋值
+                     * 
                      */
                     bool ActiveCntHasBeenSet() const;
 

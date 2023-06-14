@@ -61,6 +61,7 @@ BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
 BANDWIDTH_PACKAGE：带宽包用户
 默认取值：非带宽包用户默认与子机付费类型保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
@@ -72,19 +73,21 @@ BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
 BANDWIDTH_PACKAGE：带宽包用户
 默认取值：非带宽包用户默认与子机付费类型保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetChargeType 网络计费类型。取值范围：
+                     * @param _internetChargeType 网络计费类型。取值范围：
 BANDWIDTH_PREPAID：预付费按带宽结算
 TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费
 BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费
 BANDWIDTH_PACKAGE：带宽包用户
 默认取值：非带宽包用户默认与子机付费类型保持一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
@@ -93,20 +96,23 @@ BANDWIDTH_PACKAGE：带宽包用户
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。
+                     * @param _internetMaxBandwidthOut 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 

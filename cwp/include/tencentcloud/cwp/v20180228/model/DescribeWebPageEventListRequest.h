@@ -52,6 +52,7 @@ namespace TencentCloud
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>EventType - String - 是否必填：否 - 事件类型</li>
 <li>EventStatus - String - 是否必填：否 - 事件状态</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -60,88 +61,102 @@ namespace TencentCloud
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>EventType - String - 是否必填：否 - 事件类型</li>
 <li>EventStatus - String - 是否必填：否 - 事件状态</li>
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>EventType - String - 是否必填：否 - 事件类型</li>
 <li>EventStatus - String - 是否必填：否 - 事件状态</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序方式：CreateTime 或 RestoreTime，默认为CreateTime
                      * @return By 排序方式：CreateTime 或 RestoreTime，默认为CreateTime
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序方式：CreateTime 或 RestoreTime，默认为CreateTime
-                     * @param By 排序方式：CreateTime 或 RestoreTime，默认为CreateTime
+                     * @param _by 排序方式：CreateTime 或 RestoreTime，默认为CreateTime
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，0降序，1升序，默认为0
                      * @return Order 排序方式，0降序，1升序，默认为0
+                     * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
                      * 设置排序方式，0降序，1升序，默认为0
-                     * @param Order 排序方式，0降序，1升序，默认为0
+                     * @param _order 排序方式，0降序，1升序，默认为0
+                     * 
                      */
                     void SetOrder(const uint64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

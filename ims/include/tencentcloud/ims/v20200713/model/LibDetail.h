@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取序号
                      * @return Id 序号
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置序号
-                     * @param Id 序号
+                     * @param _id 序号
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取仅当Label为Custom自定义关键词时有效，表示自定义库id
                      * @return LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * 
                      */
                     std::string GetLibId() const;
 
                     /**
                      * 设置仅当Label为Custom自定义关键词时有效，表示自定义库id
-                     * @param LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * @param _libId 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * 
                      */
                     void SetLibId(const std::string& _libId);
 
                     /**
                      * 判断参数 LibId 是否已赋值
                      * @return LibId 是否已赋值
+                     * 
                      */
                     bool LibIdHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * @param _libName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibName(const std::string& _libName);
 
                     /**
                      * 判断参数 LibName 是否已赋值
                      * @return LibName 是否已赋值
+                     * 
                      */
                     bool LibNameHasBeenSet() const;
 
                     /**
                      * 获取图片ID
                      * @return ImageId 图片ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置图片ID
-                     * @param ImageId 图片ID
+                     * @param _imageId 图片ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 以及其他令人反感、不安全或不适宜的内容类型。
                      * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及其他令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及其他令人反感、不安全或不适宜的内容类型。
-                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+                     * @param _label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及其他令人反感、不安全或不适宜的内容类型。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -149,38 +164,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 自定义标签
+                     * @param _tag 自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取命中的模型分值
                      * @return Score 命中的模型分值
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置命中的模型分值
-                     * @param Score 命中的模型分值
+                     * @param _score 命中的模型分值
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

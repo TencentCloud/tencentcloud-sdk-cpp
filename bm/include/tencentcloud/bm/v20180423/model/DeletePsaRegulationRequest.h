@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取预授权规则ID
                      * @return PsaId 预授权规则ID
+                     * 
                      */
                     std::string GetPsaId() const;
 
                     /**
                      * 设置预授权规则ID
-                     * @param PsaId 预授权规则ID
+                     * @param _psaId 预授权规则ID
+                     * 
                      */
                     void SetPsaId(const std::string& _psaId);
 
                     /**
                      * 判断参数 PsaId 是否已赋值
                      * @return PsaId 是否已赋值
+                     * 
                      */
                     bool PsaIdHasBeenSet() const;
 

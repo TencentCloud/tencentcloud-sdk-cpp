@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。
                      * @return AppData AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。
+                     * 
                      */
                     std::string GetAppData() const;
 
                     /**
                      * 设置AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。
-                     * @param AppData AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。
+                     * @param _appData AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。
+                     * 
                      */
                     void SetAppData(const std::string& _appData);
 
                     /**
                      * 判断参数 AppData 是否已赋值
                      * @return AppData 是否已赋值
+                     * 
                      */
                     bool AppDataHasBeenSet() const;
 
                     /**
                      * 获取SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）
                      * @return PayloadType SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）
+                     * 
                      */
                     uint64_t GetPayloadType() const;
 
                     /**
                      * 设置SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）
-                     * @param PayloadType SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）
+                     * @param _payloadType SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）
+                     * 
                      */
                     void SetPayloadType(const uint64_t& _payloadType);
 
                     /**
                      * 判断参数 PayloadType 是否已赋值
                      * @return PayloadType 是否已赋值
+                     * 
                      */
                     bool PayloadTypeHasBeenSet() const;
 
                     /**
                      * 获取SEI发送间隔，单位毫秒，默认值为1000。
                      * @return Interval SEI发送间隔，单位毫秒，默认值为1000。
+                     * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置SEI发送间隔，单位毫秒，默认值为1000。
-                     * @param Interval SEI发送间隔，单位毫秒，默认值为1000。
+                     * @param _interval SEI发送间隔，单位毫秒，默认值为1000。
+                     * 
                      */
                     void SetInterval(const uint64_t& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
                      * @return FollowIdr 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
+                     * 
                      */
                     uint64_t GetFollowIdr() const;
 
                     /**
                      * 设置取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-                     * @param FollowIdr 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
+                     * @param _followIdr 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
+                     * 
                      */
                     void SetFollowIdr(const uint64_t& _followIdr);
 
                     /**
                      * 判断参数 FollowIdr 是否已赋值
                      * @return FollowIdr 是否已赋值
+                     * 
                      */
                     bool FollowIdrHasBeenSet() const;
 

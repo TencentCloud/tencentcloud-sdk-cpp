@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取路径重写规则ID
                      * @return PathRewriteId 路径重写规则ID
+                     * 
                      */
                     std::string GetPathRewriteId() const;
 
                     /**
                      * 设置路径重写规则ID
-                     * @param PathRewriteId 路径重写规则ID
+                     * @param _pathRewriteId 路径重写规则ID
+                     * 
                      */
                     void SetPathRewriteId(const std::string& _pathRewriteId);
 
                     /**
                      * 判断参数 PathRewriteId 是否已赋值
                      * @return PathRewriteId 是否已赋值
+                     * 
                      */
                     bool PathRewriteIdHasBeenSet() const;
 

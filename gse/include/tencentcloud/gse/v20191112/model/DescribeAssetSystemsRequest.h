@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取生成包支持的操作系统类型
                      * @return OsType 生成包支持的操作系统类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置生成包支持的操作系统类型
-                     * @param OsType 生成包支持的操作系统类型
+                     * @param _osType 生成包支持的操作系统类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取生成包支持的操作系统位数
                      * @return OsBit 生成包支持的操作系统位数
+                     * 
                      */
                     int64_t GetOsBit() const;
 
                     /**
                      * 设置生成包支持的操作系统位数
-                     * @param OsBit 生成包支持的操作系统位数
+                     * @param _osBit 生成包支持的操作系统位数
+                     * 
                      */
                     void SetOsBit(const int64_t& _osBit);
 
                     /**
                      * 判断参数 OsBit 是否已赋值
                      * @return OsBit 是否已赋值
+                     * 
                      */
                     bool OsBitHasBeenSet() const;
 

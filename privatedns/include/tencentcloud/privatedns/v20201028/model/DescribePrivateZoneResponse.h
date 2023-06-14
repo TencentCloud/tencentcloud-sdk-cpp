@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取私有域详情
                      * @return PrivateZone 私有域详情
+                     * 
                      */
                     PrivateZone GetPrivateZone() const;
 
                     /**
                      * 判断参数 PrivateZone 是否已赋值
                      * @return PrivateZone 是否已赋值
+                     * 
                      */
                     bool PrivateZoneHasBeenSet() const;
 

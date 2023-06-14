@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductID 产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取日志等级
                      * @return Level 日志等级
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
-                     * @param Level 日志等级
+                     * @param _level 日志等级
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取日志时间
                      * @return DateTime 日志时间
+                     * 
                      */
                     std::string GetDateTime() const;
 
                     /**
                      * 设置日志时间
-                     * @param DateTime 日志时间
+                     * @param _dateTime 日志时间
+                     * 
                      */
                     void SetDateTime(const std::string& _dateTime);
 
                     /**
                      * 判断参数 DateTime 是否已赋值
                      * @return DateTime 是否已赋值
+                     * 
                      */
                     bool DateTimeHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return Content 日志内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-                     * @param Content 日志内容
+                     * @param _content 日志内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

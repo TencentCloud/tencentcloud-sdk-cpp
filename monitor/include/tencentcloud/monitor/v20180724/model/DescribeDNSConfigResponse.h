@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取DNS 服务器数组
                      * @return NameServers DNS 服务器数组
+                     * 
                      */
                     std::vector<std::string> GetNameServers() const;
 
                     /**
                      * 判断参数 NameServers 是否已赋值
                      * @return NameServers 是否已赋值
+                     * 
                      */
                     bool NameServersHasBeenSet() const;
 

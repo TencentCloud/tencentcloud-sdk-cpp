@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取运营商
                      * @return Operator 运营商
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置运营商
-                     * @param Operator 运营商
+                     * @param _operator 运营商
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取审核状态：0未审核，1审核通过，2审核拒绝
                      * @return State 审核状态：0未审核，1审核通过，2审核拒绝
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置审核状态：0未审核，1审核通过，2审核拒绝
-                     * @param State 审核状态：0未审核，1审核通过，2审核拒绝
+                     * @param _state 审核状态：0未审核，1审核通过，2审核拒绝
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分类中文名
                      * @return ChineseName 分类中文名
+                     * 
                      */
                     std::string GetChineseName() const;
 
                     /**
                      * 设置分类中文名
-                     * @param ChineseName 分类中文名
+                     * @param _chineseName 分类中文名
+                     * 
                      */
                     void SetChineseName(const std::string& _chineseName);
 
                     /**
                      * 判断参数 ChineseName 是否已赋值
                      * @return ChineseName 是否已赋值
+                     * 
                      */
                     bool ChineseNameHasBeenSet() const;
 
                     /**
                      * 获取分类英文名
                      * @return EnglishName 分类英文名
+                     * 
                      */
                     std::string GetEnglishName() const;
 
                     /**
                      * 设置分类英文名
-                     * @param EnglishName 分类英文名
+                     * @param _englishName 分类英文名
+                     * 
                      */
                     void SetEnglishName(const std::string& _englishName);
 
                     /**
                      * 判断参数 EnglishName 是否已赋值
                      * @return EnglishName 是否已赋值
+                     * 
                      */
                     bool EnglishNameHasBeenSet() const;
 

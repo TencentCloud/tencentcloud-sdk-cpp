@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取请求类型:1,人群特征洞察统计 2购车意向预测统计
                      * @return Type 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置请求类型:1,人群特征洞察统计 2购车意向预测统计
-                     * @param Type 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * @param _type 请求类型:1,人群特征洞察统计 2购车意向预测统计
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

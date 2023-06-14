@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionId 警告条件ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetConditionId() const;
 
                     /**
                      * 设置警告条件ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConditionId 警告条件ID
+                     * @param _conditionId 警告条件ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConditionId(const uint64_t& _conditionId);
 
                     /**
                      * 判断参数 ConditionId 是否已赋值
                      * @return ConditionId 是否已赋值
+                     * 
                      */
                     bool ConditionIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 警告级别，2:中风险，3:高风险
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置警告级别，2:中风险，3:高风险
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 警告级别，2:中风险，3:高风险
+                     * @param _level 警告级别，2:中风险，3:高风险
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -95,38 +101,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelDesc 警告级别描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevelDesc() const;
 
                     /**
                      * 设置警告级别描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LevelDesc 警告级别描述
+                     * @param _levelDesc 警告级别描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevelDesc(const std::string& _levelDesc);
 
                     /**
                      * 判断参数 LevelDesc 是否已赋值
                      * @return LevelDesc 是否已赋值
+                     * 
                      */
                     bool LevelDescHasBeenSet() const;
 
                     /**
                      * 获取警告条件描述
                      * @return Desc 警告条件描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置警告条件描述
-                     * @param Desc 警告条件描述
+                     * @param _desc 警告条件描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 

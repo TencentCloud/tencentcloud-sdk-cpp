@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的项目 ID
                      * @return ID 需要删除的项目 ID
+                     * 
                      */
                     uint64_t GetID() const;
 
                     /**
                      * 设置需要删除的项目 ID
-                     * @param ID 需要删除的项目 ID
+                     * @param _iD 需要删除的项目 ID
+                     * 
                      */
                     void SetID(const uint64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Agent ID
                      * @return AgentId Agent ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置Agent ID
-                     * @param AgentId Agent ID
+                     * @param _agentId Agent ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取任务 ID 列表
                      * @return JobIds 任务 ID 列表
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 设置任务 ID 列表
-                     * @param JobIds 任务 ID 列表
+                     * @param _jobIds 任务 ID 列表
+                     * 
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 

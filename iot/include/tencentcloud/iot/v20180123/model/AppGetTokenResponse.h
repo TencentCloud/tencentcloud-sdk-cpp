@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取访问Token
                      * @return AccessToken 访问Token
+                     * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 判断参数 AccessToken 是否已赋值
                      * @return AccessToken 是否已赋值
+                     * 
                      */
                     bool AccessTokenHasBeenSet() const;
 

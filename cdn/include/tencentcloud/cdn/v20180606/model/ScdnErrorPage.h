@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return RedirectCode 状态码
 执行动作为：intercept 默认传值 403
 执行动作为：redirect 默认传值 301
+                     * 
                      */
                     int64_t GetRedirectCode() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置状态码
 执行动作为：intercept 默认传值 403
 执行动作为：redirect 默认传值 301
-                     * @param RedirectCode 状态码
+                     * @param _redirectCode 状态码
 执行动作为：intercept 默认传值 403
 执行动作为：redirect 默认传值 301
+                     * 
                      */
                     void SetRedirectCode(const int64_t& _redirectCode);
 
                     /**
                      * 判断参数 RedirectCode 是否已赋值
                      * @return RedirectCode 是否已赋值
+                     * 
                      */
                     bool RedirectCodeHasBeenSet() const;
 
                     /**
                      * 获取重定向url
                      * @return RedirectUrl 重定向url
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置重定向url
-                     * @param RedirectUrl 重定向url
+                     * @param _redirectUrl 重定向url
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 

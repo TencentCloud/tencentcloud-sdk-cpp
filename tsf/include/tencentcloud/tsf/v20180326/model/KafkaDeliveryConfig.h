@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigId 配置项id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置项id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigId 配置项id
+                     * @param _configId 配置项id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigName 配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigName 配置名称
+                     * @param _configName 配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectPath 采集路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCollectPath() const;
 
                     /**
                      * 设置采集路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CollectPath 采集路径
+                     * @param _collectPath 采集路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCollectPath(const std::vector<std::string>& _collectPath);
 
                     /**
                      * 判断参数 CollectPath 是否已赋值
                      * @return CollectPath 是否已赋值
+                     * 
                      */
                     bool CollectPathHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaVIp kafka vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKafkaVIp() const;
 
                     /**
                      * 设置kafka vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaVIp kafka vip
+                     * @param _kafkaVIp kafka vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaVIp(const std::string& _kafkaVIp);
 
                     /**
                      * 判断参数 KafkaVIp 是否已赋值
                      * @return KafkaVIp 是否已赋值
+                     * 
                      */
                     bool KafkaVIpHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaVPort kafka vport
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKafkaVPort() const;
 
                     /**
                      * 设置kafka vport
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaVPort kafka vport
+                     * @param _kafkaVPort kafka vport
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaVPort(const std::string& _kafkaVPort);
 
                     /**
                      * 判断参数 KafkaVPort 是否已赋值
                      * @return KafkaVPort 是否已赋值
+                     * 
                      */
                     bool KafkaVPortHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic kafka topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置kafka topic
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Topic kafka topic
+                     * @param _topic kafka topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineRule 换行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLineRule() const;
 
                     /**
                      * 设置换行规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LineRule 换行规则
+                     * @param _lineRule 换行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLineRule(const std::string& _lineRule);
 
                     /**
                      * 判断参数 LineRule 是否已赋值
                      * @return LineRule 是否已赋值
+                     * 
                      */
                     bool LineRuleHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAuth 是否需要认证
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableAuth() const;
 
                     /**
                      * 设置是否需要认证
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableAuth 是否需要认证
+                     * @param _enableAuth 是否需要认证
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableAuth(const bool& _enableAuth);
 
                     /**
                      * 判断参数 EnableAuth 是否已赋值
                      * @return EnableAuth 是否已赋值
+                     * 
                      */
                     bool EnableAuthHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Username 用户名
+                     * @param _username 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Password 密码
+                     * @param _password 密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaInfos 投递的topic和path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeliveryKafkaInfo> GetKafkaInfos() const;
 
                     /**
                      * 设置投递的topic和path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaInfos 投递的topic和path
+                     * @param _kafkaInfos 投递的topic和path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaInfos(const std::vector<DeliveryKafkaInfo>& _kafkaInfos);
 
                     /**
                      * 判断参数 KafkaInfos 是否已赋值
                      * @return KafkaInfos 是否已赋值
+                     * 
                      */
                     bool KafkaInfosHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableGlobalLineRule 是否应用单行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableGlobalLineRule() const;
 
                     /**
                      * 设置是否应用单行规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableGlobalLineRule 是否应用单行规则
+                     * @param _enableGlobalLineRule 是否应用单行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableGlobalLineRule(const bool& _enableGlobalLineRule);
 
                     /**
                      * 判断参数 EnableGlobalLineRule 是否已赋值
                      * @return EnableGlobalLineRule 是否已赋值
+                     * 
                      */
                     bool EnableGlobalLineRuleHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRule 自定义分行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomRule() const;
 
                     /**
                      * 设置自定义分行规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomRule 自定义分行规则
+                     * @param _customRule 自定义分行规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomRule(const std::string& _customRule);
 
                     /**
                      * 判断参数 CustomRule 是否已赋值
                      * @return CustomRule 是否已赋值
+                     * 
                      */
                     bool CustomRuleHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaAddress KafkaAddress
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKafkaAddress() const;
 
                     /**
                      * 设置KafkaAddress
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaAddress KafkaAddress
+                     * @param _kafkaAddress KafkaAddress
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaAddress(const std::string& _kafkaAddress);
 
                     /**
                      * 判断参数 KafkaAddress 是否已赋值
                      * @return KafkaAddress 是否已赋值
+                     * 
                      */
                     bool KafkaAddressHasBeenSet() const;
 

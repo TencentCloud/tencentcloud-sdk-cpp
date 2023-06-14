@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取开发者的环境ID
                      * @return EnvId 开发者的环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置开发者的环境ID
-                     * @param EnvId 开发者的环境ID
+                     * @param _envId 开发者的环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取可选参数，偏移量，默认 0
                      * @return Offset 可选参数，偏移量，默认 0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置可选参数，偏移量，默认 0
-                     * @param Offset 可选参数，偏移量，默认 0
+                     * @param _offset 可选参数，偏移量，默认 0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取可选参数，拉取数量，默认 20
                      * @return Limit 可选参数，拉取数量，默认 20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置可选参数，拉取数量，默认 20
-                     * @param Limit 可选参数，拉取数量，默认 20
+                     * @param _limit 可选参数，拉取数量，默认 20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取按照 uuid 列表过滤，最大个数为100
                      * @return UUIds 按照 uuid 列表过滤，最大个数为100
+                     * 
                      */
                     std::vector<std::string> GetUUIds() const;
 
                     /**
                      * 设置按照 uuid 列表过滤，最大个数为100
-                     * @param UUIds 按照 uuid 列表过滤，最大个数为100
+                     * @param _uUIds 按照 uuid 列表过滤，最大个数为100
+                     * 
                      */
                     void SetUUIds(const std::vector<std::string>& _uUIds);
 
                     /**
                      * 判断参数 UUIds 是否已赋值
                      * @return UUIds 是否已赋值
+                     * 
                      */
                     bool UUIdsHasBeenSet() const;
 

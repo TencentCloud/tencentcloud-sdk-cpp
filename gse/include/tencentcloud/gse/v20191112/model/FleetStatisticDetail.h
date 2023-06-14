@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 舰队ID
+                     * @param _fleetId 舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIP 实例IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceIP() const;
 
                     /**
                      * 设置实例IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIP 实例IP
+                     * @param _instanceIP 实例IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIP(const std::string& _instanceIP);
 
                     /**
                      * 判断参数 InstanceIP 是否已赋值
                      * @return InstanceIP 是否已赋值
+                     * 
                      */
                     bool InstanceIPHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 开始时间
+                     * @param _beginTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedTimeSeconds 总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotalUsedTimeSeconds() const;
 
                     /**
                      * 设置总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUsedTimeSeconds 总时长，单位秒
+                     * @param _totalUsedTimeSeconds 总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUsedTimeSeconds(const std::string& _totalUsedTimeSeconds);
 
                     /**
                      * 判断参数 TotalUsedTimeSeconds 是否已赋值
                      * @return TotalUsedTimeSeconds 是否已赋值
+                     * 
                      */
                     bool TotalUsedTimeSecondsHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedFlowMegaBytes 总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotalUsedFlowMegaBytes() const;
 
                     /**
                      * 设置总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUsedFlowMegaBytes 总流量，单位MB
+                     * @param _totalUsedFlowMegaBytes 总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUsedFlowMegaBytes(const double& _totalUsedFlowMegaBytes);
 
                     /**
                      * 判断参数 TotalUsedFlowMegaBytes 是否已赋值
                      * @return TotalUsedFlowMegaBytes 是否已赋值
+                     * 
                      */
                     bool TotalUsedFlowMegaBytesHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityId 身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIdentityId() const;
 
                     /**
                      * 设置身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityId 身份ID。
+                     * @param _identityId 身份ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityId(const int64_t& _identityId);
 
                     /**
                      * 判断参数 IdentityId 是否已赋值
                      * @return IdentityId 是否已赋值
+                     * 
                      */
                     bool IdentityIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityAliasName 身份名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdentityAliasName() const;
 
                     /**
                      * 设置身份名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityAliasName 身份名称。
+                     * @param _identityAliasName 身份名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityAliasName(const std::string& _identityAliasName);
 
                     /**
                      * 判断参数 IdentityAliasName 是否已赋值
                      * @return IdentityAliasName 是否已赋值
+                     * 
                      */
                     bool IdentityAliasNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述。
+                     * @param _description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityPolicy 身份策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IdentityPolicy> GetIdentityPolicy() const;
 
                     /**
                      * 设置身份策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityPolicy 身份策略。
+                     * @param _identityPolicy 身份策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityPolicy(const std::vector<IdentityPolicy>& _identityPolicy);
 
                     /**
                      * 判断参数 IdentityPolicy 是否已赋值
                      * @return IdentityPolicy 是否已赋值
+                     * 
                      */
                     bool IdentityPolicyHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityType 身份类型。 1-预设、 2-自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIdentityType() const;
 
                     /**
                      * 设置身份类型。 1-预设、 2-自定义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityType 身份类型。 1-预设、 2-自定义
+                     * @param _identityType 身份类型。 1-预设、 2-自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityType(const uint64_t& _identityType);
 
                     /**
                      * 判断参数 IdentityType 是否已赋值
                      * @return IdentityType 是否已赋值
+                     * 
                      */
                     bool IdentityTypeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间。
+                     * @param _updateTime 更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

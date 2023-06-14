@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取true为开启全球加速，false为关闭
                      * @return Allowed true为开启全球加速，false为关闭
+                     * 
                      */
                     bool GetAllowed() const;
 
                     /**
                      * 设置true为开启全球加速，false为关闭
-                     * @param Allowed true为开启全球加速，false为关闭
+                     * @param _allowed true为开启全球加速，false为关闭
+                     * 
                      */
                     void SetAllowed(const bool& _allowed);
 
                     /**
                      * 判断参数 Allowed 是否已赋值
                      * @return Allowed 是否已赋值
+                     * 
                      */
                     bool AllowedHasBeenSet() const;
 

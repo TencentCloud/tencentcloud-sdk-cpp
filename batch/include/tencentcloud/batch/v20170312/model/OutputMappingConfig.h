@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取存储类型，仅支持COS
                      * @return Scene 存储类型，仅支持COS
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置存储类型，仅支持COS
-                     * @param Scene 存储类型，仅支持COS
+                     * @param _scene 存储类型，仅支持COS
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取并行worker数量
                      * @return WorkerNum 并行worker数量
+                     * 
                      */
                     int64_t GetWorkerNum() const;
 
                     /**
                      * 设置并行worker数量
-                     * @param WorkerNum 并行worker数量
+                     * @param _workerNum 并行worker数量
+                     * 
                      */
                     void SetWorkerNum(const int64_t& _workerNum);
 
                     /**
                      * 判断参数 WorkerNum 是否已赋值
                      * @return WorkerNum 是否已赋值
+                     * 
                      */
                     bool WorkerNumHasBeenSet() const;
 
                     /**
                      * 获取worker分块大小，单位MB
                      * @return WorkerPartSize worker分块大小，单位MB
+                     * 
                      */
                     int64_t GetWorkerPartSize() const;
 
                     /**
                      * 设置worker分块大小，单位MB
-                     * @param WorkerPartSize worker分块大小，单位MB
+                     * @param _workerPartSize worker分块大小，单位MB
+                     * 
                      */
                     void SetWorkerPartSize(const int64_t& _workerPartSize);
 
                     /**
                      * 判断参数 WorkerPartSize 是否已赋值
                      * @return WorkerPartSize 是否已赋值
+                     * 
                      */
                     bool WorkerPartSizeHasBeenSet() const;
 

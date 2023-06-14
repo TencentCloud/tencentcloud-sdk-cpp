@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的 API 接口数量。
                      * @return TotalCount 符合条件的 API 接口数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的 API 接口数量。
-                     * @param TotalCount 符合条件的 API 接口数量。
+                     * @param _totalCount 符合条件的 API 接口数量。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取API 接口列表。
                      * @return ApiIdStatusSet API 接口列表。
+                     * 
                      */
                     std::vector<DescribeApisStatusResultApiIdStatusSetInfo> GetApiIdStatusSet() const;
 
                     /**
                      * 设置API 接口列表。
-                     * @param ApiIdStatusSet API 接口列表。
+                     * @param _apiIdStatusSet API 接口列表。
+                     * 
                      */
                     void SetApiIdStatusSet(const std::vector<DescribeApisStatusResultApiIdStatusSetInfo>& _apiIdStatusSet);
 
                     /**
                      * 判断参数 ApiIdStatusSet 是否已赋值
                      * @return ApiIdStatusSet 是否已赋值
+                     * 
                      */
                     bool ApiIdStatusSetHasBeenSet() const;
 

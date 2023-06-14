@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 存储类型，string数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 日志存储天数，3640表示不限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodModifyCount 本月Period的修改次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeriodModifyCount() const;
 
                     /**
                      * 判断参数 PeriodModifyCount 是否已赋值
                      * @return PeriodModifyCount 是否已赋值
+                     * 
                      */
                     bool PeriodModifyCountHasBeenSet() const;
 

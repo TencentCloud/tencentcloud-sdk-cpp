@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一ID
                      * @return DeviceId 设备唯一ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一ID
-                     * @param DeviceId 设备唯一ID
+                     * @param _deviceId 设备唯一ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备创建的时间，单位：ms
                      * @return CreateTime 设备创建的时间，单位：ms
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置设备创建的时间，单位：ms
-                     * @param CreateTime 设备创建的时间，单位：ms
+                     * @param _createTime 设备创建的时间，单位：ms
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取设备最后在线时间，单位：ms
                      * @return LastTime 设备最后在线时间，单位：ms
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置设备最后在线时间，单位：ms
-                     * @param LastTime 设备最后在线时间，单位：ms
+                     * @param _lastTime 设备最后在线时间，单位：ms
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
                     /**
                      * 获取设备的备注
                      * @return Remark 设备的备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置设备的备注
-                     * @param Remark 设备的备注
+                     * @param _remark 设备的备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

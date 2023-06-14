@@ -55,6 +55,7 @@ MACAOCERTIFICATE：澳门来往内地通行证
 IDCARD：身份证 
 PASSPORT：护照 SOLDIERSCERTIFICATE：士兵证 OFFICERSCERTIFICATE：军官证 GATXCERTIFICATE：香港居民来往内地通行证 TWNDCERTIFICATE：台湾同胞来往内地通行证 
 MACAOCERTIFICATE：澳门来往内地通行证
+                     * 
                      */
                     std::string GetIdType() const;
 
@@ -63,52 +64,60 @@ MACAOCERTIFICATE：澳门来往内地通行证
 IDCARD：身份证 
 PASSPORT：护照 SOLDIERSCERTIFICATE：士兵证 OFFICERSCERTIFICATE：军官证 GATXCERTIFICATE：香港居民来往内地通行证 TWNDCERTIFICATE：台湾同胞来往内地通行证 
 MACAOCERTIFICATE：澳门来往内地通行证
-                     * @param IdType 证件类型 
+                     * @param _idType 证件类型 
 IDCARD：身份证 
 PASSPORT：护照 SOLDIERSCERTIFICATE：士兵证 OFFICERSCERTIFICATE：军官证 GATXCERTIFICATE：香港居民来往内地通行证 TWNDCERTIFICATE：台湾同胞来往内地通行证 
 MACAOCERTIFICATE：澳门来往内地通行证
+                     * 
                      */
                     void SetIdType(const std::string& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
                     /**
                      * 获取证件号码
                      * @return IdNumber 证件号码
+                     * 
                      */
                     std::string GetIdNumber() const;
 
                     /**
                      * 设置证件号码
-                     * @param IdNumber 证件号码
+                     * @param _idNumber 证件号码
+                     * 
                      */
                     void SetIdNumber(const std::string& _idNumber);
 
                     /**
                      * 判断参数 IdNumber 是否已赋值
                      * @return IdNumber 是否已赋值
+                     * 
                      */
                     bool IdNumberHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return PersonName 姓名
+                     * 
                      */
                     std::string GetPersonName() const;
 
                     /**
                      * 设置姓名
-                     * @param PersonName 姓名
+                     * @param _personName 姓名
+                     * 
                      */
                     void SetPersonName(const std::string& _personName);
 
                     /**
                      * 判断参数 PersonName 是否已赋值
                      * @return PersonName 是否已赋值
+                     * 
                      */
                     bool PersonNameHasBeenSet() const;
 
@@ -119,6 +128,7 @@ OTHER：非长期有效
                      * @return IdValidityType 证件有效期类型 
 LONGTERM：长期有效 
 OTHER：非长期有效
+                     * 
                      */
                     std::string GetIdValidityType() const;
 
@@ -126,105 +136,122 @@ OTHER：非长期有效
                      * 设置证件有效期类型 
 LONGTERM：长期有效 
 OTHER：非长期有效
-                     * @param IdValidityType 证件有效期类型 
+                     * @param _idValidityType 证件有效期类型 
 LONGTERM：长期有效 
 OTHER：非长期有效
+                     * 
                      */
                     void SetIdValidityType(const std::string& _idValidityType);
 
                     /**
                      * 判断参数 IdValidityType 是否已赋值
                      * @return IdValidityType 是否已赋值
+                     * 
                      */
                     bool IdValidityTypeHasBeenSet() const;
 
                     /**
                      * 获取证件生效日期，yyyy-MM-dd
                      * @return IdEffectiveDate 证件生效日期，yyyy-MM-dd
+                     * 
                      */
                     std::string GetIdEffectiveDate() const;
 
                     /**
                      * 设置证件生效日期，yyyy-MM-dd
-                     * @param IdEffectiveDate 证件生效日期，yyyy-MM-dd
+                     * @param _idEffectiveDate 证件生效日期，yyyy-MM-dd
+                     * 
                      */
                     void SetIdEffectiveDate(const std::string& _idEffectiveDate);
 
                     /**
                      * 判断参数 IdEffectiveDate 是否已赋值
                      * @return IdEffectiveDate 是否已赋值
+                     * 
                      */
                     bool IdEffectiveDateHasBeenSet() const;
 
                     /**
                      * 获取联系电话
                      * @return ContactPhone 联系电话
+                     * 
                      */
                     std::string GetContactPhone() const;
 
                     /**
                      * 设置联系电话
-                     * @param ContactPhone 联系电话
+                     * @param _contactPhone 联系电话
+                     * 
                      */
                     void SetContactPhone(const std::string& _contactPhone);
 
                     /**
                      * 判断参数 ContactPhone 是否已赋值
                      * @return ContactPhone 是否已赋值
+                     * 
                      */
                     bool ContactPhoneHasBeenSet() const;
 
                     /**
                      * 获取证件失效日期，yyyy-MM-dd
                      * @return IdExpireDate 证件失效日期，yyyy-MM-dd
+                     * 
                      */
                     std::string GetIdExpireDate() const;
 
                     /**
                      * 设置证件失效日期，yyyy-MM-dd
-                     * @param IdExpireDate 证件失效日期，yyyy-MM-dd
+                     * @param _idExpireDate 证件失效日期，yyyy-MM-dd
+                     * 
                      */
                     void SetIdExpireDate(const std::string& _idExpireDate);
 
                     /**
                      * 判断参数 IdExpireDate 是否已赋值
                      * @return IdExpireDate 是否已赋值
+                     * 
                      */
                     bool IdExpireDateHasBeenSet() const;
 
                     /**
                      * 获取联系地址
                      * @return ContactAddress 联系地址
+                     * 
                      */
                     std::string GetContactAddress() const;
 
                     /**
                      * 设置联系地址
-                     * @param ContactAddress 联系地址
+                     * @param _contactAddress 联系地址
+                     * 
                      */
                     void SetContactAddress(const std::string& _contactAddress);
 
                     /**
                      * 判断参数 ContactAddress 是否已赋值
                      * @return ContactAddress 是否已赋值
+                     * 
                      */
                     bool ContactAddressHasBeenSet() const;
 
                     /**
                      * 获取邮箱地址
                      * @return EmailAddress 邮箱地址
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置邮箱地址
-                     * @param EmailAddress 邮箱地址
+                     * @param _emailAddress 邮箱地址
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 

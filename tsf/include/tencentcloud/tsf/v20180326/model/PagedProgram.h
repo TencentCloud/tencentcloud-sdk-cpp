@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总条数
-                     * @param TotalCount 总条数
+                     * @param _totalCount 总条数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取数据集列表
                      * @return Content 数据集列表
+                     * 
                      */
                     std::vector<Program> GetContent() const;
 
                     /**
                      * 设置数据集列表
-                     * @param Content 数据集列表
+                     * @param _content 数据集列表
+                     * 
                      */
                     void SetContent(const std::vector<Program>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

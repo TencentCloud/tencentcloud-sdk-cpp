@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取客户的SdkAppId
                      * @return SdkAppId 客户的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置客户的SdkAppId
-                     * @param SdkAppId 客户的SdkAppId
+                     * @param _sdkAppId 客户的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ transcode: 文档转码
                      * @return TaskType 需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -74,15 +78,17 @@ transcode: 文档转码
                      * 设置需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
-                     * @param TaskType 需要查询的任务类型
+                     * @param _taskType 需要查询的任务类型
 recording: 实时录制
 transcode: 文档转码
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

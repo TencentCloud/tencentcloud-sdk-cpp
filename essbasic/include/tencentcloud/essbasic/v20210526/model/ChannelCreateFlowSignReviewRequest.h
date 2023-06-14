@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取签署流程编号
                      * @return FlowId 签署流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程编号
-                     * @param FlowId 签署流程编号
+                     * @param _flowId 签署流程编号
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -88,6 +94,7 @@ SIGN_REJECT:拒签(流程结束)
 PASS: 通过
 REJECT: 拒绝
 SIGN_REJECT:拒签(流程结束)
+                     * 
                      */
                     std::string GetReviewType() const;
 
@@ -96,16 +103,18 @@ SIGN_REJECT:拒签(流程结束)
 PASS: 通过
 REJECT: 拒绝
 SIGN_REJECT:拒签(流程结束)
-                     * @param ReviewType 企业内部审核结果
+                     * @param _reviewType 企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
 SIGN_REJECT:拒签(流程结束)
+                     * 
                      */
                     void SetReviewType(const std::string& _reviewType);
 
                     /**
                      * 判断参数 ReviewType 是否已赋值
                      * @return ReviewType 是否已赋值
+                     * 
                      */
                     bool ReviewTypeHasBeenSet() const;
 
@@ -114,38 +123,44 @@ SIGN_REJECT:拒签(流程结束)
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
                      * @return ReviewMessage 审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 
                      */
                     std::string GetReviewMessage() const;
 
                     /**
                      * 设置审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
-                     * @param ReviewMessage 审核原因 
+                     * @param _reviewMessage 审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 
                      */
                     void SetReviewMessage(const std::string& _reviewMessage);
 
                     /**
                      * 判断参数 ReviewMessage 是否已赋值
                      * @return ReviewMessage 是否已赋值
+                     * 
                      */
                     bool ReviewMessageHasBeenSet() const;
 
                     /**
                      * 获取签署节点审核时需要指定
                      * @return RecipientId 签署节点审核时需要指定
+                     * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署节点审核时需要指定
-                     * @param RecipientId 签署节点审核时需要指定
+                     * @param _recipientId 签署节点审核时需要指定
+                     * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
                     /**
                      * 判断参数 RecipientId 是否已赋值
                      * @return RecipientId 是否已赋值
+                     * 
                      */
                     bool RecipientIdHasBeenSet() const;
 
@@ -158,6 +173,7 @@ SIGN_REJECT:拒签(流程结束)
 注：接口通过该字段区分操作类型
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
 若想使用发起审核，请指定该字段为：CreateReview
+                     * 
                      */
                     std::string GetOperateType() const;
 
@@ -166,16 +182,18 @@ SIGN_REJECT:拒签(流程结束)
 注：接口通过该字段区分操作类型
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
 若想使用发起审核，请指定该字段为：CreateReview
-                     * @param OperateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+                     * @param _operateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
 注：接口通过该字段区分操作类型
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
 若想使用发起审核，请指定该字段为：CreateReview
+                     * 
                      */
                     void SetOperateType(const std::string& _operateType);
 
                     /**
                      * 判断参数 OperateType 是否已赋值
                      * @return OperateType 是否已赋值
+                     * 
                      */
                     bool OperateTypeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取账号组ID数组。
                      * @return AccountGroupIdList 账号组ID数组。
+                     * 
                      */
                     std::vector<std::string> GetAccountGroupIdList() const;
 
                     /**
                      * 设置账号组ID数组。
-                     * @param AccountGroupIdList 账号组ID数组。
+                     * @param _accountGroupIdList 账号组ID数组。
+                     * 
                      */
                     void SetAccountGroupIdList(const std::vector<std::string>& _accountGroupIdList);
 
                     /**
                      * 判断参数 AccountGroupIdList 是否已赋值
                      * @return AccountGroupIdList 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdListHasBeenSet() const;
 

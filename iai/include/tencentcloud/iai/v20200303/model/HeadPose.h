@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取上下偏移[-30,30]。
                      * @return Pitch 上下偏移[-30,30]。
+                     * 
                      */
                     int64_t GetPitch() const;
 
                     /**
                      * 设置上下偏移[-30,30]。
-                     * @param Pitch 上下偏移[-30,30]。
+                     * @param _pitch 上下偏移[-30,30]。
+                     * 
                      */
                     void SetPitch(const int64_t& _pitch);
 
                     /**
                      * 判断参数 Pitch 是否已赋值
                      * @return Pitch 是否已赋值
+                     * 
                      */
                     bool PitchHasBeenSet() const;
 
                     /**
                      * 获取左右偏移[-30,30]。
                      * @return Yaw 左右偏移[-30,30]。
+                     * 
                      */
                     int64_t GetYaw() const;
 
                     /**
                      * 设置左右偏移[-30,30]。
-                     * @param Yaw 左右偏移[-30,30]。
+                     * @param _yaw 左右偏移[-30,30]。
+                     * 
                      */
                     void SetYaw(const int64_t& _yaw);
 
                     /**
                      * 判断参数 Yaw 是否已赋值
                      * @return Yaw 是否已赋值
+                     * 
                      */
                     bool YawHasBeenSet() const;
 
                     /**
                      * 获取平面旋转[-180,180]。
                      * @return Roll 平面旋转[-180,180]。
+                     * 
                      */
                     int64_t GetRoll() const;
 
                     /**
                      * 设置平面旋转[-180,180]。
-                     * @param Roll 平面旋转[-180,180]。
+                     * @param _roll 平面旋转[-180,180]。
+                     * 
                      */
                     void SetRoll(const int64_t& _roll);
 
                     /**
                      * 判断参数 Roll 是否已赋值
                      * @return Roll 是否已赋值
+                     * 
                      */
                     bool RollHasBeenSet() const;
 

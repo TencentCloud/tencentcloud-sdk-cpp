@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取可用区数量
                      * @return TotalCount 可用区数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取可用区详细信息列表
                      * @return ZoneInfoSet 可用区详细信息列表
+                     * 
                      */
                     std::vector<ZoneInfo> GetZoneInfoSet() const;
 
                     /**
                      * 判断参数 ZoneInfoSet 是否已赋值
                      * @return ZoneInfoSet 是否已赋值
+                     * 
                      */
                     bool ZoneInfoSetHasBeenSet() const;
 

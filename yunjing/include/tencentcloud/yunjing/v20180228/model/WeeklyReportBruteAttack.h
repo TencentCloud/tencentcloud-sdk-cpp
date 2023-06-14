@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取主机IP。
                      * @return MachineIp 主机IP。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机IP。
-                     * @param MachineIp 主机IP。
+                     * @param _machineIp 主机IP。
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取被破解用户名。
                      * @return Username 被破解用户名。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置被破解用户名。
-                     * @param Username 被破解用户名。
+                     * @param _username 被破解用户名。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取源IP。
                      * @return SrcIp 源IP。
+                     * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置源IP。
-                     * @param SrcIp 源IP。
+                     * @param _srcIp 源IP。
+                     * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
 
                     /**
                      * 判断参数 SrcIp 是否已赋值
                      * @return SrcIp 是否已赋值
+                     * 
                      */
                     bool SrcIpHasBeenSet() const;
 
                     /**
                      * 获取尝试次数。
                      * @return Count 尝试次数。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置尝试次数。
-                     * @param Count 尝试次数。
+                     * @param _count 尝试次数。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取攻击时间。
                      * @return AttackTime 攻击时间。
+                     * 
                      */
                     std::string GetAttackTime() const;
 
                     /**
                      * 设置攻击时间。
-                     * @param AttackTime 攻击时间。
+                     * @param _attackTime 攻击时间。
+                     * 
                      */
                     void SetAttackTime(const std::string& _attackTime);
 
                     /**
                      * 判断参数 AttackTime 是否已赋值
                      * @return AttackTime 是否已赋值
+                     * 
                      */
                     bool AttackTimeHasBeenSet() const;
 

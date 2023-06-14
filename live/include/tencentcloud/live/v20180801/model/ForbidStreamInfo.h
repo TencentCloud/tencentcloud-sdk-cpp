@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 创建时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
 注：此字段为北京时间（UTC+8时区）。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注：此字段为北京时间（UTC+8时区）。
                      * @return ExpireTime 禁推过期时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置禁推过期时间。
 注：此字段为北京时间（UTC+8时区）。
-                     * @param ExpireTime 禁推过期时间。
+                     * @param _expireTime 禁推过期时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainName 推流域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 

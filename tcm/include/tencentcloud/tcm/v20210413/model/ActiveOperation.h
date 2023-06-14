@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取操作Id
                      * @return OperationId 操作Id
+                     * 
                      */
                     std::string GetOperationId() const;
 
                     /**
                      * 设置操作Id
-                     * @param OperationId 操作Id
+                     * @param _operationId 操作Id
+                     * 
                      */
                     void SetOperationId(const std::string& _operationId);
 
                     /**
                      * 判断参数 OperationId 是否已赋值
                      * @return OperationId 是否已赋值
+                     * 
                      */
                     bool OperationIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 - RELINK_CLUSTERS: 重新关联集群
 - UNLINK_CLUSTERS: 解关联集群
 - INSTALL_MESH: 安装网格
+                     * 
                      */
                     std::string GetType() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 - RELINK_CLUSTERS: 重新关联集群
 - UNLINK_CLUSTERS: 解关联集群
 - INSTALL_MESH: 安装网格
-                     * @param Type 操作类型，取值范围：
+                     * @param _type 操作类型，取值范围：
 - LINK_CLUSTERS: 关联集群
 - RELINK_CLUSTERS: 重新关联集群
 - UNLINK_CLUSTERS: 解关联集群
 - INSTALL_MESH: 安装网格
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

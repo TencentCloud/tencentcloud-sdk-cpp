@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIdSet 创建中的实例ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 

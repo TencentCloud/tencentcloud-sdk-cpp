@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取当月已使用配额
                      * @return UsedQuota 当月已使用配额
+                     * 
                      */
                     uint64_t GetUsedQuota() const;
 
                     /**
                      * 设置当月已使用配额
-                     * @param UsedQuota 当月已使用配额
+                     * @param _usedQuota 当月已使用配额
+                     * 
                      */
                     void SetUsedQuota(const uint64_t& _usedQuota);
 
                     /**
                      * 判断参数 UsedQuota 是否已赋值
                      * @return UsedQuota 是否已赋值
+                     * 
                      */
                     bool UsedQuotaHasBeenSet() const;
 
                     /**
                      * 获取单次购买最大数量
                      * @return OnceQuota 单次购买最大数量
+                     * 
                      */
                     uint64_t GetOnceQuota() const;
 
                     /**
                      * 设置单次购买最大数量
-                     * @param OnceQuota 单次购买最大数量
+                     * @param _onceQuota 单次购买最大数量
+                     * 
                      */
                     void SetOnceQuota(const uint64_t& _onceQuota);
 
                     /**
                      * 判断参数 OnceQuota 是否已赋值
                      * @return OnceQuota 是否已赋值
+                     * 
                      */
                     bool OnceQuotaHasBeenSet() const;
 
                     /**
                      * 获取剩余配额
                      * @return RemainingQuota 剩余配额
+                     * 
                      */
                     uint64_t GetRemainingQuota() const;
 
                     /**
                      * 设置剩余配额
-                     * @param RemainingQuota 剩余配额
+                     * @param _remainingQuota 剩余配额
+                     * 
                      */
                     void SetRemainingQuota(const uint64_t& _remainingQuota);
 
                     /**
                      * 判断参数 RemainingQuota 是否已赋值
                      * @return RemainingQuota 是否已赋值
+                     * 
                      */
                     bool RemainingQuotaHasBeenSet() const;
 
                     /**
                      * 获取总配额
                      * @return TotalQuota 总配额
+                     * 
                      */
                     uint64_t GetTotalQuota() const;
 
                     /**
                      * 设置总配额
-                     * @param TotalQuota 总配额
+                     * @param _totalQuota 总配额
+                     * 
                      */
                     void SetTotalQuota(const uint64_t& _totalQuota);
 
                     /**
                      * 判断参数 TotalQuota 是否已赋值
                      * @return TotalQuota 是否已赋值
+                     * 
                      */
                     bool TotalQuotaHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

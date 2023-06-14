@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取视频拆条片段地址。
                      * @return SegmentUrl 视频拆条片段地址。
+                     * 
                      */
                     std::string GetSegmentUrl() const;
 
                     /**
                      * 设置视频拆条片段地址。
-                     * @param SegmentUrl 视频拆条片段地址。
+                     * @param _segmentUrl 视频拆条片段地址。
+                     * 
                      */
                     void SetSegmentUrl(const std::string& _segmentUrl);
 
                     /**
                      * 判断参数 SegmentUrl 是否已赋值
                      * @return SegmentUrl 是否已赋值
+                     * 
                      */
                     bool SegmentUrlHasBeenSet() const;
 
                     /**
                      * 获取拆条封面图片地址。
                      * @return CovImgUrl 拆条封面图片地址。
+                     * 
                      */
                     std::string GetCovImgUrl() const;
 
                     /**
                      * 设置拆条封面图片地址。
-                     * @param CovImgUrl 拆条封面图片地址。
+                     * @param _covImgUrl 拆条封面图片地址。
+                     * 
                      */
                     void SetCovImgUrl(const std::string& _covImgUrl);
 
                     /**
                      * 判断参数 CovImgUrl 是否已赋值
                      * @return CovImgUrl 是否已赋值
+                     * 
                      */
                     bool CovImgUrlHasBeenSet() const;
 
                     /**
                      * 获取置信度，取值范围是 0 到 100。
                      * @return Confidence 置信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度，取值范围是 0 到 100。
-                     * @param Confidence 置信度，取值范围是 0 到 100。
+                     * @param _confidence 置信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取拆条片段起始的偏移时间，单位：秒。
                      * @return StartTimeOffset 拆条片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置拆条片段起始的偏移时间，单位：秒。
-                     * @param StartTimeOffset 拆条片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 拆条片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取拆条片段终止的偏移时间，单位：秒。
                      * @return EndTimeOffset 拆条片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置拆条片段终止的偏移时间，单位：秒。
-                     * @param EndTimeOffset 拆条片段终止的偏移时间，单位：秒。
+                     * @param _endTimeOffset 拆条片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

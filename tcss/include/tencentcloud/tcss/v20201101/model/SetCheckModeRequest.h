@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取要设置的集群ID列表
                      * @return ClusterIds 要设置的集群ID列表
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 设置要设置的集群ID列表
-                     * @param ClusterIds 要设置的集群ID列表
+                     * @param _clusterIds 要设置的集群ID列表
+                     * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
                      * 获取集群检查模式(正常模式"Cluster_Normal"、主动模式"Cluster_Actived"、不设置"Cluster_Unset")
                      * @return ClusterCheckMode 集群检查模式(正常模式"Cluster_Normal"、主动模式"Cluster_Actived"、不设置"Cluster_Unset")
+                     * 
                      */
                     std::string GetClusterCheckMode() const;
 
                     /**
                      * 设置集群检查模式(正常模式"Cluster_Normal"、主动模式"Cluster_Actived"、不设置"Cluster_Unset")
-                     * @param ClusterCheckMode 集群检查模式(正常模式"Cluster_Normal"、主动模式"Cluster_Actived"、不设置"Cluster_Unset")
+                     * @param _clusterCheckMode 集群检查模式(正常模式"Cluster_Normal"、主动模式"Cluster_Actived"、不设置"Cluster_Unset")
+                     * 
                      */
                     void SetClusterCheckMode(const std::string& _clusterCheckMode);
 
                     /**
                      * 判断参数 ClusterCheckMode 是否已赋值
                      * @return ClusterCheckMode 是否已赋值
+                     * 
                      */
                     bool ClusterCheckModeHasBeenSet() const;
 
                     /**
                      * 获取0不设置 1打开 2关闭
                      * @return ClusterAutoCheck 0不设置 1打开 2关闭
+                     * 
                      */
                     uint64_t GetClusterAutoCheck() const;
 
                     /**
                      * 设置0不设置 1打开 2关闭
-                     * @param ClusterAutoCheck 0不设置 1打开 2关闭
+                     * @param _clusterAutoCheck 0不设置 1打开 2关闭
+                     * 
                      */
                     void SetClusterAutoCheck(const uint64_t& _clusterAutoCheck);
 
                     /**
                      * 判断参数 ClusterAutoCheck 是否已赋值
                      * @return ClusterAutoCheck 是否已赋值
+                     * 
                      */
                     bool ClusterAutoCheckHasBeenSet() const;
 

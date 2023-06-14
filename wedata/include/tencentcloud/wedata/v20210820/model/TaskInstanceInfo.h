@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkflowId 工作流id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
                      * 设置工作流id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkflowId 工作流id
+                     * @param _workflowId 工作流id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkflowName 工作流名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
                      * 设置工作流名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkflowName 工作流名称
+                     * @param _workflowName 工作流名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
 
                     /**
                      * 判断参数 WorkflowName 是否已赋值
                      * @return WorkflowName 是否已赋值
+                     * 
                      */
                     bool WorkflowNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectIdent 项目标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectIdent() const;
 
                     /**
                      * 设置项目标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectIdent 项目标识
+                     * @param _projectIdent 项目标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectIdent(const std::string& _projectIdent);
 
                     /**
                      * 判断参数 ProjectIdent 是否已赋值
                      * @return ProjectIdent 是否已赋值
+                     * 
                      */
                     bool ProjectIdentHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 实例状态，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置实例状态，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 实例状态，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功
+                     * @param _state 实例状态，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTypeId 任务类型id，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskTypeId() const;
 
                     /**
                      * 设置任务类型id，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskTypeId 任务类型id，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
+                     * @param _taskTypeId 任务类型id，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskTypeId(const uint64_t& _taskTypeId);
 
                     /**
                      * 判断参数 TaskTypeId 是否已赋值
                      * @return TaskTypeId 是否已赋值
+                     * 
                      */
                     bool TaskTypeIdHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTypeDesc 任务类型描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskTypeDesc() const;
 
                     /**
                      * 设置任务类型描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskTypeDesc 任务类型描述
+                     * @param _taskTypeDesc 任务类型描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskTypeDesc(const std::string& _taskTypeDesc);
 
                     /**
                      * 判断参数 TaskTypeDesc 是否已赋值
                      * @return TaskTypeDesc 是否已赋值
+                     * 
                      */
                     bool TaskTypeDescHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FolderName 文件夹名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFolderName() const;
 
                     /**
                      * 设置文件夹名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FolderName 文件夹名称
+                     * @param _folderName 文件夹名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFolderName(const std::string& _folderName);
 
                     /**
                      * 判断参数 FolderName 是否已赋值
                      * @return FolderName 是否已赋值
+                     * 
                      */
                     bool FolderNameHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FolderId 文件夹id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置文件夹id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FolderId 文件夹id
+                     * @param _folderId 文件夹id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerDesc 调度计划展示描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchedulerDesc() const;
 
                     /**
                      * 设置调度计划展示描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchedulerDesc 调度计划展示描述信息
+                     * @param _schedulerDesc 调度计划展示描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchedulerDesc(const std::string& _schedulerDesc);
 
                     /**
                      * 判断参数 SchedulerDesc 是否已赋值
                      * @return SchedulerDesc 是否已赋值
+                     * 
                      */
                     bool SchedulerDescHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InCharge 负责人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInCharge() const;
 
                     /**
                      * 设置负责人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InCharge 负责人
+                     * @param _inCharge 负责人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInCharge(const std::string& _inCharge);
 
                     /**
                      * 判断参数 InCharge 是否已赋值
                      * @return InCharge 是否已赋值
+                     * 
                      */
                     bool InChargeHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleType 调度周期类型，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCycleType() const;
 
                     /**
                      * 设置调度周期类型，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CycleType 调度周期类型，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab
+                     * @param _cycleType 调度周期类型，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCycleType(const std::string& _cycleType);
 
                     /**
                      * 判断参数 CycleType 是否已赋值
                      * @return CycleType 是否已赋值
+                     * 
                      */
                     bool CycleTypeHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 实例开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置实例开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 实例开始时间
+                     * @param _startTime 实例开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 实例结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置实例结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 实例结束时间
+                     * @param _endTime 实例结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型，0补录实例，1周期实例，2非周期实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型，0补录实例，1周期实例，2非周期实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 实例类型，0补录实例，1周期实例，2非周期实例
+                     * @param _instanceType 实例类型，0补录实例，1周期实例，2非周期实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -447,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryLimit 最大重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTryLimit() const;
 
                     /**
                      * 设置最大重试次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TryLimit 最大重试次数
+                     * @param _tryLimit 最大重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTryLimit(const int64_t& _tryLimit);
 
                     /**
                      * 判断参数 TryLimit 是否已赋值
                      * @return TryLimit 是否已赋值
+                     * 
                      */
                     bool TryLimitHasBeenSet() const;
 
@@ -469,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tries 当前重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTries() const;
 
                     /**
                      * 设置当前重试次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tries 当前重试次数
+                     * @param _tries 当前重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTries(const int64_t& _tries);
 
                     /**
                      * 判断参数 Tries 是否已赋值
                      * @return Tries 是否已赋值
+                     * 
                      */
                     bool TriesHasBeenSet() const;
 
@@ -491,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerDateTime 计划调度时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchedulerDateTime() const;
 
                     /**
                      * 设置计划调度时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchedulerDateTime 计划调度时间
+                     * @param _schedulerDateTime 计划调度时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchedulerDateTime(const std::string& _schedulerDateTime);
 
                     /**
                      * 判断参数 SchedulerDateTime 是否已赋值
                      * @return SchedulerDateTime 是否已赋值
+                     * 
                      */
                     bool SchedulerDateTimeHasBeenSet() const;
 
@@ -513,20 +576,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 运行耗时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCostTime() const;
 
                     /**
                      * 设置运行耗时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CostTime 运行耗时
+                     * @param _costTime 运行耗时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCostTime(const std::string& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 

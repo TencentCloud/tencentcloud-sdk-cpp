@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioDenoiseInfo 音频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioDenoiseInfo GetAudioDenoiseInfo() const;
 
                     /**
                      * 设置音频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioDenoiseInfo 音频降噪控制参数。
+                     * @param _audioDenoiseInfo 音频降噪控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioDenoiseInfo(const AudioDenoiseInfo& _audioDenoiseInfo);
 
                     /**
                      * 判断参数 AudioDenoiseInfo 是否已赋值
                      * @return AudioDenoiseInfo 是否已赋值
+                     * 
                      */
                     bool AudioDenoiseInfoHasBeenSet() const;
 

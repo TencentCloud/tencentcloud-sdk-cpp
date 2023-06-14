@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签名称, 最大长度限制15个字符
                      * @return TagName 标签名称, 最大长度限制15个字符
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置标签名称, 最大长度限制15个字符
-                     * @param TagName 标签名称, 最大长度限制15个字符
+                     * @param _tagName 标签名称, 最大长度限制15个字符
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 
                     /**
                      * 获取标签组排序,值越大,排序越靠前
                      * @return Sort 标签组排序,值越大,排序越靠前
+                     * 
                      */
                     uint64_t GetSort() const;
 
                     /**
                      * 设置标签组排序,值越大,排序越靠前
-                     * @param Sort 标签组排序,值越大,排序越靠前
+                     * @param _sort 标签组排序,值越大,排序越靠前
+                     * 
                      */
                     void SetSort(const uint64_t& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 

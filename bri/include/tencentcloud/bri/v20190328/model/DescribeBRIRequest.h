@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取业务风险情报请求体
                      * @return RequestData 业务风险情报请求体
+                     * 
                      */
                     BRIRequest GetRequestData() const;
 
                     /**
                      * 设置业务风险情报请求体
-                     * @param RequestData 业务风险情报请求体
+                     * @param _requestData 业务风险情报请求体
+                     * 
                      */
                     void SetRequestData(const BRIRequest& _requestData);
 
                     /**
                      * 判断参数 RequestData 是否已赋值
                      * @return RequestData 是否已赋值
+                     * 
                      */
                     bool RequestDataHasBeenSet() const;
 
                     /**
                      * 获取客户用于计费的资源ID
                      * @return ResourceId 客户用于计费的资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置客户用于计费的资源ID
-                     * @param ResourceId 客户用于计费的资源ID
+                     * @param _resourceId 客户用于计费的资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

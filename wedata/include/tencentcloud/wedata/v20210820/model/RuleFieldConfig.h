@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhereConfig where变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FieldConfig> GetWhereConfig() const;
 
                     /**
                      * 设置where变量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhereConfig where变量
+                     * @param _whereConfig where变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhereConfig(const std::vector<FieldConfig>& _whereConfig);
 
                     /**
                      * 判断参数 WhereConfig 是否已赋值
                      * @return WhereConfig 是否已赋值
+                     * 
                      */
                     bool WhereConfigHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableConfig 库表变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableConfig> GetTableConfig() const;
 
                     /**
                      * 设置库表变量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableConfig 库表变量
+                     * @param _tableConfig 库表变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableConfig(const std::vector<TableConfig>& _tableConfig);
 
                     /**
                      * 判断参数 TableConfig 是否已赋值
                      * @return TableConfig 是否已赋值
+                     * 
                      */
                     bool TableConfigHasBeenSet() const;
 

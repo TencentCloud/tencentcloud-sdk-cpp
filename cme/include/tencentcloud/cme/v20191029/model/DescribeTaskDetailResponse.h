@@ -53,24 +53,28 @@ namespace TencentCloud
 <li>PROCESSING：处理中：</li>
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务进度，取值为：0~100。
                      * @return Progress 任务进度，取值为：0~100。
+                     * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -81,24 +85,28 @@ namespace TencentCloud
                      * @return ErrCode 错误码。
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     uint64_t GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return ErrMsg 错误信息。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -107,12 +115,14 @@ namespace TencentCloud
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
                      * @return TaskType 任务类型，取值有：
 <li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
@@ -121,24 +131,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoEditProjectOutput 导出项目输出信息。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoEditProjectOutput GetVideoEditProjectOutput() const;
 
                     /**
                      * 判断参数 VideoEditProjectOutput 是否已赋值
                      * @return VideoEditProjectOutput 是否已赋值
+                     * 
                      */
                     bool VideoEditProjectOutputHasBeenSet() const;
 
                     /**
                      * 获取创建时间，格式按照 ISO 8601 标准表示。
                      * @return CreateTime 创建时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

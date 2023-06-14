@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取设备ID
                      * @return DeviceId 设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备状态，offline为离线，ready为在线准备，connected为会话中
                      * @return DeviceStatus 设备状态，offline为离线，ready为在线准备，connected为会话中
+                     * 
                      */
                     std::string GetDeviceStatus() const;
 
                     /**
                      * 设置设备状态，offline为离线，ready为在线准备，connected为会话中
-                     * @param DeviceStatus 设备状态，offline为离线，ready为在线准备，connected为会话中
+                     * @param _deviceStatus 设备状态，offline为离线，ready为在线准备，connected为会话中
+                     * 
                      */
                     void SetDeviceStatus(const std::string& _deviceStatus);
 
                     /**
                      * 判断参数 DeviceStatus 是否已赋值
                      * @return DeviceStatus 是否已赋值
+                     * 
                      */
                     bool DeviceStatusHasBeenSet() const;
 
                     /**
                      * 获取设备类型，field为现场设备（受控方），remote为远端设备（操控方）
                      * @return DeviceType 设备类型，field为现场设备（受控方），remote为远端设备（操控方）
+                     * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型，field为现场设备（受控方），remote为远端设备（操控方）
-                     * @param DeviceType 设备类型，field为现场设备（受控方），remote为远端设备（操控方）
+                     * @param _deviceType 设备类型，field为现场设备（受控方），remote为远端设备（操控方）
+                     * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
                      * 获取设备信息最近修改时间
                      * @return ModifyTime 设备信息最近修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置设备信息最近修改时间
-                     * @param ModifyTime 设备信息最近修改时间
+                     * @param _modifyTime 设备信息最近修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取设备状态最近更新时间
                      * @return LastReportTime 设备状态最近更新时间
+                     * 
                      */
                     std::string GetLastReportTime() const;
 
                     /**
                      * 设置设备状态最近更新时间
-                     * @param LastReportTime 设备状态最近更新时间
+                     * @param _lastReportTime 设备状态最近更新时间
+                     * 
                      */
                     void SetLastReportTime(const std::string& _lastReportTime);
 
                     /**
                      * 判断参数 LastReportTime 是否已赋值
                      * @return LastReportTime 是否已赋值
+                     * 
                      */
                     bool LastReportTimeHasBeenSet() const;
 
                     /**
                      * 获取设备所属项目Id
                      * @return ProjectId 设备所属项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置设备所属项目Id
-                     * @param ProjectId 设备所属项目Id
+                     * @param _projectId 设备所属项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

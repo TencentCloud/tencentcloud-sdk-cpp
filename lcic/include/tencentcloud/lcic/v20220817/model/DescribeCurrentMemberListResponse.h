@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数。当前房间的总人数。
                      * @return Total 记录总数。当前房间的总人数。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取成员记录列表。
                      * @return MemberRecords 成员记录列表。
+                     * 
                      */
                     std::vector<MemberRecord> GetMemberRecords() const;
 
                     /**
                      * 判断参数 MemberRecords 是否已赋值
                      * @return MemberRecords 是否已赋值
+                     * 
                      */
                     bool MemberRecordsHasBeenSet() const;
 

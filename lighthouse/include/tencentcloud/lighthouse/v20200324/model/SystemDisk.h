@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return DiskType 系统盘类型。
 取值范围： 
 <li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置系统盘类型。
 取值范围： 
 <li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
-                     * @param DiskType 系统盘类型。
+                     * @param _diskType 系统盘类型。
 取值范围： 
 <li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取系统盘大小，单位：GB。
                      * @return DiskSize 系统盘大小，单位：GB。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置系统盘大小，单位：GB。
-                     * @param DiskSize 系统盘大小，单位：GB。
+                     * @param _diskSize 系统盘大小，单位：GB。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskId 系统盘ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置系统盘ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskId 系统盘ID。
+                     * @param _diskId 系统盘ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 

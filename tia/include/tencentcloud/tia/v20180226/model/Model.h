@@ -62,288 +62,336 @@ namespace TencentCloud
                     /**
                      * 获取模型名称
                      * @return Name 模型名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模型名称
-                     * @param Name 模型名称
+                     * @param _name 模型名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取模型描述
                      * @return Description 模型描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置模型描述
-                     * @param Description 模型描述
+                     * @param _description 模型描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return Cluster 集群名称
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置集群名称
-                     * @param Cluster 集群名称
+                     * @param _cluster 集群名称
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取模型地址
                      * @return Model 模型地址
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 设置模型地址
-                     * @param Model 模型地址
+                     * @param _model 模型地址
+                     * 
                      */
                     void SetModel(const std::string& _model);
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
                     /**
                      * 获取运行环境编号
                      * @return RuntimeVersion 运行环境编号
+                     * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
                      * 设置运行环境编号
-                     * @param RuntimeVersion 运行环境编号
+                     * @param _runtimeVersion 运行环境编号
+                     * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
 
                     /**
                      * 判断参数 RuntimeVersion 是否已赋值
                      * @return RuntimeVersion 是否已赋值
+                     * 
                      */
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
                      * 获取模型创建时间
                      * @return CreateTime 模型创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置模型创建时间
-                     * @param CreateTime 模型创建时间
+                     * @param _createTime 模型创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取模型运行状态
                      * @return State 模型运行状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置模型运行状态
-                     * @param State 模型运行状态
+                     * @param _state 模型运行状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取提供服务的url
                      * @return ServingUrl 提供服务的url
+                     * 
                      */
                     std::string GetServingUrl() const;
 
                     /**
                      * 设置提供服务的url
-                     * @param ServingUrl 提供服务的url
+                     * @param _servingUrl 提供服务的url
+                     * 
                      */
                     void SetServingUrl(const std::string& _servingUrl);
 
                     /**
                      * 判断参数 ServingUrl 是否已赋值
                      * @return ServingUrl 是否已赋值
+                     * 
                      */
                     bool ServingUrlHasBeenSet() const;
 
                     /**
                      * 获取相关消息
                      * @return Message 相关消息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置相关消息
-                     * @param Message 相关消息
+                     * @param _message 相关消息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取编号
                      * @return AppId 编号
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置编号
-                     * @param AppId 编号
+                     * @param _appId 编号
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取机型
                      * @return ServType 机型
+                     * 
                      */
                     std::string GetServType() const;
 
                     /**
                      * 设置机型
-                     * @param ServType 机型
+                     * @param _servType 机型
+                     * 
                      */
                     void SetServType(const std::string& _servType);
 
                     /**
                      * 判断参数 ServType 是否已赋值
                      * @return ServType 是否已赋值
+                     * 
                      */
                     bool ServTypeHasBeenSet() const;
 
                     /**
                      * 获取模型暴露方式
                      * @return Expose 模型暴露方式
+                     * 
                      */
                     std::string GetExpose() const;
 
                     /**
                      * 设置模型暴露方式
-                     * @param Expose 模型暴露方式
+                     * @param _expose 模型暴露方式
+                     * 
                      */
                     void SetExpose(const std::string& _expose);
 
                     /**
                      * 判断参数 Expose 是否已赋值
                      * @return Expose 是否已赋值
+                     * 
                      */
                     bool ExposeHasBeenSet() const;
 
                     /**
                      * 获取部署副本数量
                      * @return Replicas 部署副本数量
+                     * 
                      */
                     uint64_t GetReplicas() const;
 
                     /**
                      * 设置部署副本数量
-                     * @param Replicas 部署副本数量
+                     * @param _replicas 部署副本数量
+                     * 
                      */
                     void SetReplicas(const uint64_t& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
                     /**
                      * 获取模型Id
                      * @return Id 模型Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置模型Id
-                     * @param Id 模型Id
+                     * @param _id 模型Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取创建任务的Uin
                      * @return Uin 创建任务的Uin
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置创建任务的Uin
-                     * @param Uin 创建任务的Uin
+                     * @param _uin 创建任务的Uin
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST
                      * @return DelTime 模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST
+                     * 
                      */
                     std::string GetDelTime() const;
 
                     /**
                      * 设置模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST
-                     * @param DelTime 模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST
+                     * @param _delTime 模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST
+                     * 
                      */
                     void SetDelTime(const std::string& _delTime);
 
                     /**
                      * 判断参数 DelTime 是否已赋值
                      * @return DelTime 是否已赋值
+                     * 
                      */
                     bool DelTimeHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询偏移量。默认值：0。
                      * @return Offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量。默认值：0。
-                     * @param Offset 分页查询偏移量。默认值：0。
+                     * @param _offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目。默认值：20，最大值：1000。
                      * @return Limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目。默认值：20，最大值：1000。
-                     * @param Limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * @param _limit 分页查询限制数目。默认值：20，最大值：1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -102,20 +111,23 @@ namespace TencentCloud
 <li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。
                      * @return Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。
+                     * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。
-                     * @param Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
+                     * @param _filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。
+                     * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

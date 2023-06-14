@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取域名所属项目ID
                      * @return ProjectId 域名所属项目ID
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置域名所属项目ID
-                     * @param ProjectId 域名所属项目ID
+                     * @param _projectId 域名所属项目ID
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取域名默认入口
                      * @return DefaultValue 域名默认入口
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置域名默认入口
-                     * @param DefaultValue 域名默认入口
+                     * @param _defaultValue 域名默认入口
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 
                     /**
                      * 获取别名
                      * @return Alias 别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
-                     * @param Alias 别名
+                     * @param _alias 别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return TagSet 标签列表
+                     * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表
-                     * @param TagSet 标签列表
+                     * @param _tagSet 标签列表
+                     * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetails 流量数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NetDetails> GetNetDetails() const;
 
                     /**
                      * 设置流量数据点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetDetails 流量数据点
+                     * @param _netDetails 流量数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetDetails(const std::vector<NetDetails>& _netDetails);
 
                     /**
                      * 判断参数 NetDetails 是否已赋值
                      * @return NetDetails 是否已赋值
+                     * 
                      */
                     bool NetDetailsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxValue 流量最大值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMaxValue() const;
 
                     /**
                      * 设置流量最大值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxValue 流量最大值（单位：bytes）
+                     * @param _maxValue 流量最大值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxValue(const double& _maxValue);
 
                     /**
                      * 判断参数 MaxValue 是否已赋值
                      * @return MaxValue 是否已赋值
+                     * 
                      */
                     bool MaxValueHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvgValue 流量平均值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAvgValue() const;
 
                     /**
                      * 设置流量平均值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvgValue 流量平均值（单位：bytes）
+                     * @param _avgValue 流量平均值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvgValue(const double& _avgValue);
 
                     /**
                      * 判断参数 AvgValue 是否已赋值
                      * @return AvgValue 是否已赋值
+                     * 
                      */
                     bool AvgValueHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalValue 流量总值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotalValue() const;
 
                     /**
                      * 设置流量总值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalValue 流量总值（单位：bytes）
+                     * @param _totalValue 流量总值（单位：bytes）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalValue(const double& _totalValue);
 
                     /**
                      * 判断参数 TotalValue 是否已赋值
                      * @return TotalValue 是否已赋值
+                     * 
                      */
                     bool TotalValueHasBeenSet() const;
 

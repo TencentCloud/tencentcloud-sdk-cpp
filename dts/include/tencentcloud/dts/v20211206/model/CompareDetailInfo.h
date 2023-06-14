@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Difference 数据不一致的表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DifferenceDetail GetDifference() const;
 
                     /**
                      * 设置数据不一致的表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Difference 数据不一致的表详情
+                     * @param _difference 数据不一致的表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDifference(const DifferenceDetail& _difference);
 
                     /**
                      * 判断参数 Difference 是否已赋值
                      * @return Difference 是否已赋值
+                     * 
                      */
                     bool DifferenceHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Skipped 跳过校验的表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SkippedDetail GetSkipped() const;
 
                     /**
                      * 设置跳过校验的表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Skipped 跳过校验的表详情
+                     * @param _skipped 跳过校验的表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipped(const SkippedDetail& _skipped);
 
                     /**
                      * 判断参数 Skipped 是否已赋值
                      * @return Skipped 是否已赋值
+                     * 
                      */
                     bool SkippedHasBeenSet() const;
 

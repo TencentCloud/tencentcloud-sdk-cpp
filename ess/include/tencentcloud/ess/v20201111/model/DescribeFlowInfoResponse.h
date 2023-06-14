@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签署流程信息
                      * @return FlowDetailInfos 签署流程信息
+                     * 
                      */
                     std::vector<FlowDetailInfo> GetFlowDetailInfos() const;
 
                     /**
                      * 判断参数 FlowDetailInfos 是否已赋值
                      * @return FlowDetailInfos 是否已赋值
+                     * 
                      */
                     bool FlowDetailInfosHasBeenSet() const;
 

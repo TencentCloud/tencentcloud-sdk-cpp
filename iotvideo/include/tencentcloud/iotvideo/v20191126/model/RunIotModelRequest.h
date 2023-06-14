@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取物模型定义，json格式的字符串
                      * @return IotModel 物模型定义，json格式的字符串
+                     * 
                      */
                     std::string GetIotModel() const;
 
                     /**
                      * 设置物模型定义，json格式的字符串
-                     * @param IotModel 物模型定义，json格式的字符串
+                     * @param _iotModel 物模型定义，json格式的字符串
+                     * 
                      */
                     void SetIotModel(const std::string& _iotModel);
 
                     /**
                      * 判断参数 IotModel 是否已赋值
                      * @return IotModel 是否已赋值
+                     * 
                      */
                     bool IotModelHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterAsGroupOption 集群弹性伸缩属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClusterAsGroupOption GetClusterAsGroupOption() const;
 
                     /**
                      * 判断参数 ClusterAsGroupOption 是否已赋值
                      * @return ClusterAsGroupOption 是否已赋值
+                     * 
                      */
                     bool ClusterAsGroupOptionHasBeenSet() const;
 

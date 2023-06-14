@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，默认值为0。
                      * @return Offset 偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值为0。
-                     * @param Offset 偏移量，默认值为0。
+                     * @param _offset 偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认值为20，最大值为100。
                      * @return Limit 返回数量，默认值为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认值为20，最大值为100。
-                     * @param Limit 返回数量，默认值为20，最大值为100。
+                     * @param _limit 返回数量，默认值为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
 -1，该用户下所有项目
 0，默认项目
 其他值，指定的项目
+                     * 
                      */
                     int64_t GetProjectId() const;
 
@@ -97,16 +104,18 @@ namespace TencentCloud
 -1，该用户下所有项目
 0，默认项目
 其他值，指定的项目
-                     * @param ProjectId 项目ID。取值范围：
+                     * @param _projectId 项目ID。取值范围：
 -1，该用户下所有项目
 0，默认项目
 其他值，指定的项目
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -119,6 +128,7 @@ PackageType - String - 是否必填：否 - （过滤条件）通道组类型，
 每次请求的Filter.Values的上限为5。
 RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
 PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -127,16 +137,18 @@ PackageType - String - 是否必填：否 - （过滤条件）通道组类型，
 每次请求的Filter.Values的上限为5。
 RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
 PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
-                     * @param Filters 过滤条件。   
+                     * @param _filters 过滤条件。   
 每次请求的Filter.Values的上限为5。
 RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
 PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -145,20 +157,23 @@ PackageType - String - 是否必填：否 - （过滤条件）通道组类型，
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
                      * @return TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
+                     * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
-                     * @param TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
+                     * @param _tagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
+                     * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

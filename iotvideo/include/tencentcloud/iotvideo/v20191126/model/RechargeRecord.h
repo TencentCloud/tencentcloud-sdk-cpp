@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterId 流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWaterId() const;
 
                     /**
                      * 设置流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WaterId 流水记录号。
+                     * @param _waterId 流水记录号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWaterId(const int64_t& _waterId);
 
                     /**
                      * 判断参数 WaterId 是否已赋值
                      * @return WaterId 是否已赋值
+                     * 
                      */
                     bool WaterIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BalanceBeforeRecharge 充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBalanceBeforeRecharge() const;
 
                     /**
                      * 设置充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BalanceBeforeRecharge 充值前的余额，单位0.01元。
+                     * @param _balanceBeforeRecharge 充值前的余额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBalanceBeforeRecharge(const int64_t& _balanceBeforeRecharge);
 
                     /**
                      * 判断参数 BalanceBeforeRecharge 是否已赋值
                      * @return BalanceBeforeRecharge 是否已赋值
+                     * 
                      */
                     bool BalanceBeforeRechargeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Money 充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMoney() const;
 
                     /**
                      * 设置充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Money 充值金额，单位0.01元。
+                     * @param _money 充值金额，单位0.01元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMoney(const int64_t& _money);
 
                     /**
                      * 判断参数 Money 是否已赋值
                      * @return Money 是否已赋值
+                     * 
                      */
                     bool MoneyHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateTime 充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOperateTime() const;
 
                     /**
                      * 设置充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateTime 充值时间, UTC值。
+                     * @param _operateTime 充值时间, UTC值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperateTime(const int64_t& _operateTime);
 
                     /**
                      * 判断参数 OperateTime 是否已赋值
                      * @return OperateTime 是否已赋值
+                     * 
                      */
                     bool OperateTimeHasBeenSet() const;
 

@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PronAccuracy 准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPronAccuracy() const;
 
                     /**
                      * 设置准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PronAccuracy 准确度 (<75则认为不合格)
+                     * @param _pronAccuracy 准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPronAccuracy(const double& _pronAccuracy);
 
                     /**
                      * 判断参数 PronAccuracy 是否已赋值
                      * @return PronAccuracy 是否已赋值
+                     * 
                      */
                     bool PronAccuracyHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PronFluency 流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPronFluency() const;
 
                     /**
                      * 设置流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PronFluency 流畅度 (<0.95则认为不合格)
+                     * @param _pronFluency 流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPronFluency(const double& _pronFluency);
 
                     /**
                      * 判断参数 PronFluency 是否已赋值
                      * @return PronFluency 是否已赋值
+                     * 
                      */
                     bool PronFluencyHasBeenSet() const;
 
@@ -109,6 +115,7 @@ namespace TencentCloud
 4: oov  待评估字不在发音评估的词库
 5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTag() const;
 
@@ -121,7 +128,7 @@ namespace TencentCloud
 4: oov  待评估字不在发音评估的词库
 5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag tag: 
+                     * @param _tag tag: 
 0: match  匹配
 1: insert   多读
 2: delete  少读
@@ -129,12 +136,14 @@ namespace TencentCloud
 4: oov  待评估字不在发音评估的词库
 5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const int64_t& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
@@ -143,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Word 字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Word 字
+                     * @param _word 字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取工作组Id，全局唯一
                      * @return WorkGroupId 工作组Id，全局唯一
+                     * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
                      * 判断参数 WorkGroupId 是否已赋值
                      * @return WorkGroupId 是否已赋值
+                     * 
                      */
                     bool WorkGroupIdHasBeenSet() const;
 

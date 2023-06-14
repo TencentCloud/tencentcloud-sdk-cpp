@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取子账户Uin列表，传空默认为调用此接口的SubUin
                      * @return SubAccounts 子账户Uin列表，传空默认为调用此接口的SubUin
+                     * 
                      */
                     std::vector<std::string> GetSubAccounts() const;
 
                     /**
                      * 设置子账户Uin列表，传空默认为调用此接口的SubUin
-                     * @param SubAccounts 子账户Uin列表，传空默认为调用此接口的SubUin
+                     * @param _subAccounts 子账户Uin列表，传空默认为调用此接口的SubUin
+                     * 
                      */
                     void SetSubAccounts(const std::vector<std::string>& _subAccounts);
 
                     /**
                      * 判断参数 SubAccounts 是否已赋值
                      * @return SubAccounts 是否已赋值
+                     * 
                      */
                     bool SubAccountsHasBeenSet() const;
 

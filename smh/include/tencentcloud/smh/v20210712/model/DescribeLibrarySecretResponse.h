@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取查询的媒体库 ID
                      * @return LibraryId 查询的媒体库 ID
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取查询到的媒体库密钥
                      * @return LibrarySecret 查询到的媒体库密钥
+                     * 
                      */
                     std::string GetLibrarySecret() const;
 
                     /**
                      * 判断参数 LibrarySecret 是否已赋值
                      * @return LibrarySecret 是否已赋值
+                     * 
                      */
                     bool LibrarySecretHasBeenSet() const;
 

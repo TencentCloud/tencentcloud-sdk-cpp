@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
                      * @return EventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * 
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
-                     * @param EventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * @param _eventType 事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取扩展文件生成开始时间
                      * @return StartTime 扩展文件生成开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置扩展文件生成开始时间
-                     * @param StartTime 扩展文件生成开始时间
+                     * @param _startTime 扩展文件生成开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取扩展文件生成结束时间
                      * @return EndTime 扩展文件生成结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置扩展文件生成结束时间
-                     * @param EndTime 扩展文件生成结束时间
+                     * @param _endTime 扩展文件生成结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页返回，页编号，默认值为第0页
                      * @return Offset 分页返回，页编号，默认值为第0页
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回，页编号，默认值为第0页
-                     * @param Offset 分页返回，页编号，默认值为第0页
+                     * @param _offset 分页返回，页编号，默认值为第0页
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回，每页返回的数目，取值为1~100，默认值为20
                      * @return Limit 分页返回，每页返回的数目，取值为1~100，默认值为20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回，每页返回的数目，取值为1~100，默认值为20
-                     * @param Limit 分页返回，每页返回的数目，取值为1~100，默认值为20
+                     * @param _limit 分页返回，每页返回的数目，取值为1~100，默认值为20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

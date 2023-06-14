@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取管道总数
                      * @return TotalCount 管道总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取管道列表
                      * @return LogstashPipelineList 管道列表
+                     * 
                      */
                     std::vector<LogstashPipelineInfo> GetLogstashPipelineList() const;
 
                     /**
                      * 判断参数 LogstashPipelineList 是否已赋值
                      * @return LogstashPipelineList 是否已赋值
+                     * 
                      */
                     bool LogstashPipelineListHasBeenSet() const;
 

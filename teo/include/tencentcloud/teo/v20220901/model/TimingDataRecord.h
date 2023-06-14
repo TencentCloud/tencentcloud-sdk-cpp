@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取查询维度值。
                      * @return TypeKey 查询维度值。
+                     * 
                      */
                     std::string GetTypeKey() const;
 
                     /**
                      * 设置查询维度值。
-                     * @param TypeKey 查询维度值。
+                     * @param _typeKey 查询维度值。
+                     * 
                      */
                     void SetTypeKey(const std::string& _typeKey);
 
                     /**
                      * 判断参数 TypeKey 是否已赋值
                      * @return TypeKey 是否已赋值
+                     * 
                      */
                     bool TypeKeyHasBeenSet() const;
 
                     /**
                      * 获取详细时序数据。
                      * @return TypeValue 详细时序数据。
+                     * 
                      */
                     std::vector<TimingTypeValue> GetTypeValue() const;
 
                     /**
                      * 设置详细时序数据。
-                     * @param TypeValue 详细时序数据。
+                     * @param _typeValue 详细时序数据。
+                     * 
                      */
                     void SetTypeValue(const std::vector<TimingTypeValue>& _typeValue);
 
                     /**
                      * 判断参数 TypeValue 是否已赋值
                      * @return TypeValue 是否已赋值
+                     * 
                      */
                     bool TypeValueHasBeenSet() const;
 

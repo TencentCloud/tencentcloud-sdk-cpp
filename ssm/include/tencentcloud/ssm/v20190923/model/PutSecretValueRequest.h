@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取指定需要增加版本的凭据名称。
                      * @return SecretName 指定需要增加版本的凭据名称。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置指定需要增加版本的凭据名称。
-                     * @param SecretName 指定需要增加版本的凭据名称。
+                     * @param _secretName 指定需要增加版本的凭据名称。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
                      * @return VersionId 指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
-                     * @param VersionId 指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * @param _versionId 指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
@@ -83,38 +89,44 @@ namespace TencentCloud
 SecretBinary 和 SecretString 必须且只能设置一个。
                      * @return SecretBinary 二进制凭据信息，使用base64编码。
 SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 
                      */
                     std::string GetSecretBinary() const;
 
                     /**
                      * 设置二进制凭据信息，使用base64编码。
 SecretBinary 和 SecretString 必须且只能设置一个。
-                     * @param SecretBinary 二进制凭据信息，使用base64编码。
+                     * @param _secretBinary 二进制凭据信息，使用base64编码。
 SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 
                      */
                     void SetSecretBinary(const std::string& _secretBinary);
 
                     /**
                      * 判断参数 SecretBinary 是否已赋值
                      * @return SecretBinary 是否已赋值
+                     * 
                      */
                     bool SecretBinaryHasBeenSet() const;
 
                     /**
                      * 获取文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。
                      * @return SecretString 文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 
                      */
                     std::string GetSecretString() const;
 
                     /**
                      * 设置文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。
-                     * @param SecretString 文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。
+                     * @param _secretString 文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 
                      */
                     void SetSecretString(const std::string& _secretString);
 
                     /**
                      * 判断参数 SecretString 是否已赋值
                      * @return SecretString 是否已赋值
+                     * 
                      */
                     bool SecretStringHasBeenSet() const;
 

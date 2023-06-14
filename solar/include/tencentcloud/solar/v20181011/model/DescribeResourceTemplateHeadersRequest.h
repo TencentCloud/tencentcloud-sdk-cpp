@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取微信公众号appId
                      * @return WxAppId 微信公众号appId
+                     * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
                      * 设置微信公众号appId
-                     * @param WxAppId 微信公众号appId
+                     * @param _wxAppId 微信公众号appId
+                     * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
 
                     /**
                      * 判断参数 WxAppId 是否已赋值
                      * @return WxAppId 是否已赋值
+                     * 
                      */
                     bool WxAppIdHasBeenSet() const;
 

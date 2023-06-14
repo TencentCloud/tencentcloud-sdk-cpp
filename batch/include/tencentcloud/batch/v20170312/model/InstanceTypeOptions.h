@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取CPU核数。
                      * @return CPU CPU核数。
+                     * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
                      * 设置CPU核数。
-                     * @param CPU CPU核数。
+                     * @param _cPU CPU核数。
+                     * 
                      */
                     void SetCPU(const uint64_t& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取内存值，单位GB。
                      * @return Memory 内存值，单位GB。
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存值，单位GB。
-                     * @param Memory 内存值，单位GB。
+                     * @param _memory 内存值，单位GB。
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。
                      * @return InstanceCategories 实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。
+                     * 
                      */
                     std::vector<std::string> GetInstanceCategories() const;
 
                     /**
                      * 设置实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。
-                     * @param InstanceCategories 实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。
+                     * @param _instanceCategories 实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。
+                     * 
                      */
                     void SetInstanceCategories(const std::vector<std::string>& _instanceCategories);
 
                     /**
                      * 判断参数 InstanceCategories 是否已赋值
                      * @return InstanceCategories 是否已赋值
+                     * 
                      */
                     bool InstanceCategoriesHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     * @param _status 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusStr 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusStr() const;
 
                     /**
                      * 设置任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusStr 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     * @param _statusStr 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusStr(const std::string& _statusStr);
 
                     /**
                      * 判断参数 StatusStr 是否已赋值
                      * @return StatusStr 是否已赋值
+                     * 
                      */
                     bool StatusStrHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceType 音色id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVoiceType() const;
 
                     /**
                      * 设置音色id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VoiceType 音色id
+                     * @param _voiceType 音色id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVoiceType(const int64_t& _voiceType);
 
                     /**
                      * 判断参数 VoiceType 是否已赋值
                      * @return VoiceType 是否已赋值
+                     * 
                      */
                     bool VoiceTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 失败原因说明。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置失败原因说明。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMsg 失败原因说明。
+                     * @param _errorMsg 失败原因说明。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

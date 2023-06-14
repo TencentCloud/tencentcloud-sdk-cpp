@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回数量，最大值为100。
                      * @return Limit 返回数量，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，最大值为100。
-                     * @param Limit 返回数量，最大值为100。
+                     * @param _limit 返回数量，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -92,6 +98,7 @@ namespace TencentCloud
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
 <li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -102,72 +109,83 @@ namespace TencentCloud
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
 <li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
 <li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序方式 desc , asc
                      * @return Order 排序方式 desc , asc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式 desc , asc
-                     * @param Order 排序方式 desc , asc
+                     * @param _order 排序方式 desc , asc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序字段 PublishDate  LastScanTime HostCount
                      * @return By 排序字段 PublishDate  LastScanTime HostCount
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段 PublishDate  LastScanTime HostCount
-                     * @param By 排序字段 PublishDate  LastScanTime HostCount
+                     * @param _by 排序字段 PublishDate  LastScanTime HostCount
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取是否热点漏洞
                      * @return HotspotAttack 是否热点漏洞
+                     * 
                      */
                     bool GetHotspotAttack() const;
 
                     /**
                      * 设置是否热点漏洞
-                     * @param HotspotAttack 是否热点漏洞
+                     * @param _hotspotAttack 是否热点漏洞
+                     * 
                      */
                     void SetHotspotAttack(const bool& _hotspotAttack);
 
                     /**
                      * 判断参数 HotspotAttack 是否已赋值
                      * @return HotspotAttack 是否已赋值
+                     * 
                      */
                     bool HotspotAttackHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
                      * @return Offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
-                     * @param Offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * @param _offset 偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取Limit:每页的数据项，最大100，超过100会被强制指定为100
                      * @return Limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置Limit:每页的数据项，最大100，超过100会被强制指定为100
-                     * @param Limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * @param _limit Limit:每页的数据项，最大100，超过100会被强制指定为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

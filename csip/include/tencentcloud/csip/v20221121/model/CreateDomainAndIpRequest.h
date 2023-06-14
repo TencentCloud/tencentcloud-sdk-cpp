@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取-
                      * @return Content -
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置-
-                     * @param Content -
+                     * @param _content -
+                     * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

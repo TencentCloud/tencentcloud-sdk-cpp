@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取子账号Uin
                      * @return TargetUin 子账号Uin
+                     * 
                      */
                     int64_t GetTargetUin() const;
 
                     /**
                      * 设置子账号Uin
-                     * @param TargetUin 子账号Uin
+                     * @param _targetUin 子账号Uin
+                     * 
                      */
                     void SetTargetUin(const int64_t& _targetUin);
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取输入分析对象内容，输入数据格式参考FileType参数释义
                      * @return FileContent 输入分析对象内容，输入数据格式参考FileType参数释义
+                     * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置输入分析对象内容，输入数据格式参考FileType参数释义
-                     * @param FileContent 输入分析对象内容，输入数据格式参考FileType参数释义
+                     * @param _fileContent 输入分析对象内容，输入数据格式参考FileType参数释义
+                     * 
                      */
                     void SetFileContent(const std::string& _fileContent);
 
                     /**
                      * 判断参数 FileContent 是否已赋值
                      * @return FileContent 是否已赋值
+                     * 
                      */
                     bool FileContentHasBeenSet() const;
 
                     /**
                      * 获取输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码
                      * @return FileType 输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码
-                     * @param FileType 输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码
+                     * @param _fileType 输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取查询人员库列表，可填写学生们的注册照所在人员库
                      * @return LibrarySet 查询人员库列表，可填写学生们的注册照所在人员库
+                     * 
                      */
                     std::vector<std::string> GetLibrarySet() const;
 
                     /**
                      * 设置查询人员库列表，可填写学生们的注册照所在人员库
-                     * @param LibrarySet 查询人员库列表，可填写学生们的注册照所在人员库
+                     * @param _librarySet 查询人员库列表，可填写学生们的注册照所在人员库
+                     * 
                      */
                     void SetLibrarySet(const std::vector<std::string>& _librarySet);
 
                     /**
                      * 判断参数 LibrarySet 是否已赋值
                      * @return LibrarySet 是否已赋值
+                     * 
                      */
                     bool LibrarySetHasBeenSet() const;
 
                     /**
                      * 获取视频评估时间，单位秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
                      * @return MaxVideoDuration 视频评估时间，单位秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
+                     * 
                      */
                     int64_t GetMaxVideoDuration() const;
 
                     /**
                      * 设置视频评估时间，单位秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
-                     * @param MaxVideoDuration 视频评估时间，单位秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
+                     * @param _maxVideoDuration 视频评估时间，单位秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
+                     * 
                      */
                     void SetMaxVideoDuration(const int64_t& _maxVideoDuration);
 
                     /**
                      * 判断参数 MaxVideoDuration 是否已赋值
                      * @return MaxVideoDuration 是否已赋值
+                     * 
                      */
                     bool MaxVideoDurationHasBeenSet() const;
 

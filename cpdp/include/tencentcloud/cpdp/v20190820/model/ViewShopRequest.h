@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取收单系统分配的开放ID
                      * @return OpenId 收单系统分配的开放ID
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * @param _openId 收单系统分配的开放ID
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取收单系统分配的密钥
                      * @return OpenKey 收单系统分配的密钥
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * @param _openKey 收单系统分配的密钥
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取外部商户主键编号（ShopNo或OutShopId必须传一个）
                      * @return OutShopId 外部商户主键编号（ShopNo或OutShopId必须传一个）
+                     * 
                      */
                     std::string GetOutShopId() const;
 
                     /**
                      * 设置外部商户主键编号（ShopNo或OutShopId必须传一个）
-                     * @param OutShopId 外部商户主键编号（ShopNo或OutShopId必须传一个）
+                     * @param _outShopId 外部商户主键编号（ShopNo或OutShopId必须传一个）
+                     * 
                      */
                     void SetOutShopId(const std::string& _outShopId);
 
                     /**
                      * 判断参数 OutShopId 是否已赋值
                      * @return OutShopId 是否已赋值
+                     * 
                      */
                     bool OutShopIdHasBeenSet() const;
 
                     /**
                      * 获取门店编号（ShopNo或OutShopId必须传一个）
                      * @return ShopNo 门店编号（ShopNo或OutShopId必须传一个）
+                     * 
                      */
                     std::string GetShopNo() const;
 
                     /**
                      * 设置门店编号（ShopNo或OutShopId必须传一个）
-                     * @param ShopNo 门店编号（ShopNo或OutShopId必须传一个）
+                     * @param _shopNo 门店编号（ShopNo或OutShopId必须传一个）
+                     * 
                      */
                     void SetShopNo(const std::string& _shopNo);
 
                     /**
                      * 判断参数 ShopNo 是否已赋值
                      * @return ShopNo 是否已赋值
+                     * 
                      */
                     bool ShopNoHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

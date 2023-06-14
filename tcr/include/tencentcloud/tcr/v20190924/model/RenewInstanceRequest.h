@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return RegistryId 实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例Id
-                     * @param RegistryId 实例Id
+                     * @param _registryId 实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
                      * @return RegistryChargePrepaid 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
+                     * 
                      */
                     RegistryChargePrepaid GetRegistryChargePrepaid() const;
 
                     /**
                      * 设置预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
-                     * @param RegistryChargePrepaid 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
+                     * @param _registryChargePrepaid 预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月
+                     * 
                      */
                     void SetRegistryChargePrepaid(const RegistryChargePrepaid& _registryChargePrepaid);
 
                     /**
                      * 判断参数 RegistryChargePrepaid 是否已赋值
                      * @return RegistryChargePrepaid 是否已赋值
+                     * 
                      */
                     bool RegistryChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取0 续费， 1按量转包年包月
                      * @return Flag 0 续费， 1按量转包年包月
+                     * 
                      */
                     int64_t GetFlag() const;
 
                     /**
                      * 设置0 续费， 1按量转包年包月
-                     * @param Flag 0 续费， 1按量转包年包月
+                     * @param _flag 0 续费， 1按量转包年包月
+                     * 
                      */
                     void SetFlag(const int64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 

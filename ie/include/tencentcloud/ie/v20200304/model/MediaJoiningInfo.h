@@ -52,20 +52,23 @@ namespace TencentCloud
 其中Format只支持mp4.
                      * @return TargetInfo 输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。
 其中Format只支持mp4.
+                     * 
                      */
                     MediaTargetInfo GetTargetInfo() const;
 
                     /**
                      * 设置输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。
 其中Format只支持mp4.
-                     * @param TargetInfo 输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。
+                     * @param _targetInfo 输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。
 其中Format只支持mp4.
+                     * 
                      */
                     void SetTargetInfo(const MediaTargetInfo& _targetInfo);
 
                     /**
                      * 判断参数 TargetInfo 是否已赋值
                      * @return TargetInfo 是否已赋值
+                     * 
                      */
                     bool TargetInfoHasBeenSet() const;
 
@@ -76,6 +79,7 @@ Normal：正常；
                      * @return Mode 拼接模式：
 Fast：快速；
 Normal：正常；
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -83,15 +87,17 @@ Normal：正常；
                      * 设置拼接模式：
 Fast：快速；
 Normal：正常；
-                     * @param Mode 拼接模式：
+                     * @param _mode 拼接模式：
 Fast：快速；
 Normal：正常；
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

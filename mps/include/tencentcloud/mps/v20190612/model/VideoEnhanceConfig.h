@@ -62,20 +62,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameRate 插帧帧率配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FrameRateConfig GetFrameRate() const;
 
                     /**
                      * 设置插帧帧率配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameRate 插帧帧率配置。
+                     * @param _frameRate 插帧帧率配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameRate(const FrameRateConfig& _frameRate);
 
                     /**
                      * 判断参数 FrameRate 是否已赋值
                      * @return FrameRate 是否已赋值
+                     * 
                      */
                     bool FrameRateHasBeenSet() const;
 
@@ -84,20 +87,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperResolution 超分配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SuperResolutionConfig GetSuperResolution() const;
 
                     /**
                      * 设置超分配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuperResolution 超分配置。
+                     * @param _superResolution 超分配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuperResolution(const SuperResolutionConfig& _superResolution);
 
                     /**
                      * 判断参数 SuperResolution 是否已赋值
                      * @return SuperResolution 是否已赋值
+                     * 
                      */
                     bool SuperResolutionHasBeenSet() const;
 
@@ -106,20 +112,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hdr HDR配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HdrConfig GetHdr() const;
 
                     /**
                      * 设置HDR配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Hdr HDR配置。
+                     * @param _hdr HDR配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHdr(const HdrConfig& _hdr);
 
                     /**
                      * 判断参数 Hdr 是否已赋值
                      * @return Hdr 是否已赋值
+                     * 
                      */
                     bool HdrHasBeenSet() const;
 
@@ -128,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Denoise 视频降噪配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoDenoiseConfig GetDenoise() const;
 
                     /**
                      * 设置视频降噪配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Denoise 视频降噪配置。
+                     * @param _denoise 视频降噪配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDenoise(const VideoDenoiseConfig& _denoise);
 
                     /**
                      * 判断参数 Denoise 是否已赋值
                      * @return Denoise 是否已赋值
+                     * 
                      */
                     bool DenoiseHasBeenSet() const;
 
@@ -150,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageQualityEnhance 综合增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageQualityEnhanceConfig GetImageQualityEnhance() const;
 
                     /**
                      * 设置综合增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageQualityEnhance 综合增强配置。
+                     * @param _imageQualityEnhance 综合增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageQualityEnhance(const ImageQualityEnhanceConfig& _imageQualityEnhance);
 
                     /**
                      * 判断参数 ImageQualityEnhance 是否已赋值
                      * @return ImageQualityEnhance 是否已赋值
+                     * 
                      */
                     bool ImageQualityEnhanceHasBeenSet() const;
 
@@ -172,20 +187,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorEnhance 色彩增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ColorEnhanceConfig GetColorEnhance() const;
 
                     /**
                      * 设置色彩增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColorEnhance 色彩增强配置。
+                     * @param _colorEnhance 色彩增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColorEnhance(const ColorEnhanceConfig& _colorEnhance);
 
                     /**
                      * 判断参数 ColorEnhance 是否已赋值
                      * @return ColorEnhance 是否已赋值
+                     * 
                      */
                     bool ColorEnhanceHasBeenSet() const;
 
@@ -194,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SharpEnhance 细节增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SharpEnhanceConfig GetSharpEnhance() const;
 
                     /**
                      * 设置细节增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SharpEnhance 细节增强配置。
+                     * @param _sharpEnhance 细节增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSharpEnhance(const SharpEnhanceConfig& _sharpEnhance);
 
                     /**
                      * 判断参数 SharpEnhance 是否已赋值
                      * @return SharpEnhance 是否已赋值
+                     * 
                      */
                     bool SharpEnhanceHasBeenSet() const;
 
@@ -216,20 +237,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceEnhance 人脸增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FaceEnhanceConfig GetFaceEnhance() const;
 
                     /**
                      * 设置人脸增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FaceEnhance 人脸增强配置。
+                     * @param _faceEnhance 人脸增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFaceEnhance(const FaceEnhanceConfig& _faceEnhance);
 
                     /**
                      * 判断参数 FaceEnhance 是否已赋值
                      * @return FaceEnhance 是否已赋值
+                     * 
                      */
                     bool FaceEnhanceHasBeenSet() const;
 
@@ -238,20 +262,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowLightEnhance 低光照增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LowLightEnhanceConfig GetLowLightEnhance() const;
 
                     /**
                      * 设置低光照增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LowLightEnhance 低光照增强配置。
+                     * @param _lowLightEnhance 低光照增强配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLowLightEnhance(const LowLightEnhanceConfig& _lowLightEnhance);
 
                     /**
                      * 判断参数 LowLightEnhance 是否已赋值
                      * @return LowLightEnhance 是否已赋值
+                     * 
                      */
                     bool LowLightEnhanceHasBeenSet() const;
 
@@ -260,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScratchRepair 去划痕配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScratchRepairConfig GetScratchRepair() const;
 
                     /**
                      * 设置去划痕配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScratchRepair 去划痕配置。
+                     * @param _scratchRepair 去划痕配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScratchRepair(const ScratchRepairConfig& _scratchRepair);
 
                     /**
                      * 判断参数 ScratchRepair 是否已赋值
                      * @return ScratchRepair 是否已赋值
+                     * 
                      */
                     bool ScratchRepairHasBeenSet() const;
 
@@ -282,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ArtifactRepair 去伪影（毛刺）配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ArtifactRepairConfig GetArtifactRepair() const;
 
                     /**
                      * 设置去伪影（毛刺）配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ArtifactRepair 去伪影（毛刺）配置。
+                     * @param _artifactRepair 去伪影（毛刺）配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArtifactRepair(const ArtifactRepairConfig& _artifactRepair);
 
                     /**
                      * 判断参数 ArtifactRepair 是否已赋值
                      * @return ArtifactRepair 是否已赋值
+                     * 
                      */
                     bool ArtifactRepairHasBeenSet() const;
 

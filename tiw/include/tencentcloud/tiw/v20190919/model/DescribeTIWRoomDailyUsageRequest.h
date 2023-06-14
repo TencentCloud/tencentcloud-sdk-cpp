@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取互动白板应用SdkAppId
                      * @return SdkAppId 互动白板应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置互动白板应用SdkAppId
-                     * @param SdkAppId 互动白板应用SdkAppId
+                     * @param _sdkAppId 互动白板应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return SubProduct 需要查询的子产品用量，支持传入以下值
 - sp_tiw_board: 互动白板时长，单位为分钟
 - sp_tiw_ric: 实时录制时长，单位分钟
+                     * 
                      */
                     std::string GetSubProduct() const;
 
@@ -74,105 +78,122 @@ namespace TencentCloud
                      * 设置需要查询的子产品用量，支持传入以下值
 - sp_tiw_board: 互动白板时长，单位为分钟
 - sp_tiw_ric: 实时录制时长，单位分钟
-                     * @param SubProduct 需要查询的子产品用量，支持传入以下值
+                     * @param _subProduct 需要查询的子产品用量，支持传入以下值
 - sp_tiw_board: 互动白板时长，单位为分钟
 - sp_tiw_ric: 实时录制时长，单位分钟
+                     * 
                      */
                     void SetSubProduct(const std::string& _subProduct);
 
                     /**
                      * 判断参数 SubProduct 是否已赋值
                      * @return SubProduct 是否已赋值
+                     * 
                      */
                     bool SubProductHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
                      * @return StartTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
-                     * @param StartTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * @param _startTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
                      * @return EndTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
-                     * @param EndTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * @param _endTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取需要查询的房间ID列表，不填默认查询全部房间
                      * @return RoomIDs 需要查询的房间ID列表，不填默认查询全部房间
+                     * 
                      */
                     std::vector<uint64_t> GetRoomIDs() const;
 
                     /**
                      * 设置需要查询的房间ID列表，不填默认查询全部房间
-                     * @param RoomIDs 需要查询的房间ID列表，不填默认查询全部房间
+                     * @param _roomIDs 需要查询的房间ID列表，不填默认查询全部房间
+                     * 
                      */
                     void SetRoomIDs(const std::vector<uint64_t>& _roomIDs);
 
                     /**
                      * 判断参数 RoomIDs 是否已赋值
                      * @return RoomIDs 是否已赋值
+                     * 
                      */
                     bool RoomIDsHasBeenSet() const;
 
                     /**
                      * 获取查询偏移量，默认为0
                      * @return Offset 查询偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移量，默认为0
-                     * @param Offset 查询偏移量，默认为0
+                     * @param _offset 查询偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每次查询返回条目限制，默认为20
                      * @return Limit 每次查询返回条目限制，默认为20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每次查询返回条目限制，默认为20
-                     * @param Limit 每次查询返回条目限制，默认为20
+                     * @param _limit 每次查询返回条目限制，默认为20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

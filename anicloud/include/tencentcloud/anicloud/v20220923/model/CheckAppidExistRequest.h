@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取业务的appid
                      * @return SDKAppid 业务的appid
+                     * 
                      */
                     std::string GetSDKAppid() const;
 
                     /**
                      * 设置业务的appid
-                     * @param SDKAppid 业务的appid
+                     * @param _sDKAppid 业务的appid
+                     * 
                      */
                     void SetSDKAppid(const std::string& _sDKAppid);
 
                     /**
                      * 判断参数 SDKAppid 是否已赋值
                      * @return SDKAppid 是否已赋值
+                     * 
                      */
                     bool SDKAppidHasBeenSet() const;
 
                     /**
                      * 获取sub product code
                      * @return Type sub product code
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置sub product code
-                     * @param Type sub product code
+                     * @param _type sub product code
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

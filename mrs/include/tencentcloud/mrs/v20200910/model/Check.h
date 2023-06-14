@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Desc GetDesc() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 描述
+                     * @param _desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const Desc& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Summary GetSummary() const;
 
                     /**
                      * 设置结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Summary 结论
+                     * @param _summary 结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSummary(const Summary& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 

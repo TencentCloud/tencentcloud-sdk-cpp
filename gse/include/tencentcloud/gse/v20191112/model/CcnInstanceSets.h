@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountId 云联网账号 Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置云联网账号 Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountId 云联网账号 Uin
+                     * @param _accountId 云联网账号 Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 云联网 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网 Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CcnId 云联网 Id
+                     * @param _ccnId 云联网 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 云联网关联时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置云联网关联时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 云联网关联时间
+                     * @param _createTime 云联网关联时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 云联网实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置云联网实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 云联网实例名称
+                     * @param _instanceName 云联网实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 云联网状态：申请中、已连接、已过期、已拒绝、已删除、失败的、关联中、解关联中、解关联失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置云联网状态：申请中、已连接、已过期、已拒绝、已删除、失败的、关联中、解关联中、解关联失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 云联网状态：申请中、已连接、已过期、已拒绝、已删除、失败的、关联中、解关联中、解关联失败
+                     * @param _state 云联网状态：申请中、已连接、已过期、已拒绝、已删除、失败的、关联中、解关联中、解关联失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

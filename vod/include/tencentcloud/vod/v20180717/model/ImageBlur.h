@@ -51,56 +51,65 @@ namespace TencentCloud
 <li>Gaussian : 高斯模糊。</li>
                      * @return Type 图片模糊的操作类型。可选模式有：
 <li>Gaussian : 高斯模糊。</li>
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置图片模糊的操作类型。可选模式有：
 <li>Gaussian : 高斯模糊。</li>
-                     * @param Type 图片模糊的操作类型。可选模式有：
+                     * @param _type 图片模糊的操作类型。可选模式有：
 <li>Gaussian : 高斯模糊。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。
                      * @return Radius 模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。
+                     * 
                      */
                     int64_t GetRadius() const;
 
                     /**
                      * 设置模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。
-                     * @param Radius 模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。
+                     * @param _radius 模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。
+                     * 
                      */
                     void SetRadius(const int64_t& _radius);
 
                     /**
                      * 判断参数 Radius 是否已赋值
                      * @return Radius 是否已赋值
+                     * 
                      */
                     bool RadiusHasBeenSet() const;
 
                     /**
                      * 获取正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。
                      * @return Sigma 正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。
+                     * 
                      */
                     int64_t GetSigma() const;
 
                     /**
                      * 设置正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。
-                     * @param Sigma 正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。
+                     * @param _sigma 正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。
+                     * 
                      */
                     void SetSigma(const int64_t& _sigma);
 
                     /**
                      * 判断参数 Sigma 是否已赋值
                      * @return Sigma 是否已赋值
+                     * 
                      */
                     bool SigmaHasBeenSet() const;
 

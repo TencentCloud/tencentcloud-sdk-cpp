@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取文件系统信息列表
                      * @return CfsInsList 文件系统信息列表
+                     * 
                      */
                     std::vector<CfsInsInfo> GetCfsInsList() const;
 
                     /**
                      * 设置文件系统信息列表
-                     * @param CfsInsList 文件系统信息列表
+                     * @param _cfsInsList 文件系统信息列表
+                     * 
                      */
                     void SetCfsInsList(const std::vector<CfsInsInfo>& _cfsInsList);
 
                     /**
                      * 判断参数 CfsInsList 是否已赋值
                      * @return CfsInsList 是否已赋值
+                     * 
                      */
                     bool CfsInsListHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取总共能查到日志条数
                      * @return Total 总共能查到日志条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取日志详细内容
                      * @return Sources 日志详细内容
+                     * 
                      */
                     std::vector<std::string> GetSources() const;
 
                     /**
                      * 判断参数 Sources 是否已赋值
                      * @return Sources 是否已赋值
+                     * 
                      */
                     bool SourcesHasBeenSet() const;
 
                     /**
                      * 获取按时间段聚合后每个时间段的日志条数
                      * @return Buckets 按时间段聚合后每个时间段的日志条数
+                     * 
                      */
                     std::vector<std::string> GetBuckets() const;
 
                     /**
                      * 判断参数 Buckets 是否已赋值
                      * @return Buckets 是否已赋值
+                     * 
                      */
                     bool BucketsHasBeenSet() const;
 
                     /**
                      * 获取用于递归拉取的上下文Key，下一次请求的时候带上
                      * @return Context 用于递归拉取的上下文Key，下一次请求的时候带上
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 

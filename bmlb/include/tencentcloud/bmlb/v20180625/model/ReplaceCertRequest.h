@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取要被替换的证书ID
                      * @return OldCertId 要被替换的证书ID
+                     * 
                      */
                     std::string GetOldCertId() const;
 
                     /**
                      * 设置要被替换的证书ID
-                     * @param OldCertId 要被替换的证书ID
+                     * @param _oldCertId 要被替换的证书ID
+                     * 
                      */
                     void SetOldCertId(const std::string& _oldCertId);
 
                     /**
                      * 判断参数 OldCertId 是否已赋值
                      * @return OldCertId 是否已赋值
+                     * 
                      */
                     bool OldCertIdHasBeenSet() const;
 
                     /**
                      * 获取证书内容
                      * @return NewCert 证书内容
+                     * 
                      */
                     std::string GetNewCert() const;
 
                     /**
                      * 设置证书内容
-                     * @param NewCert 证书内容
+                     * @param _newCert 证书内容
+                     * 
                      */
                     void SetNewCert(const std::string& _newCert);
 
                     /**
                      * 判断参数 NewCert 是否已赋值
                      * @return NewCert 是否已赋值
+                     * 
                      */
                     bool NewCertHasBeenSet() const;
 
                     /**
                      * 获取证书名称
                      * @return NewAlias 证书名称
+                     * 
                      */
                     std::string GetNewAlias() const;
 
                     /**
                      * 设置证书名称
-                     * @param NewAlias 证书名称
+                     * @param _newAlias 证书名称
+                     * 
                      */
                     void SetNewAlias(const std::string& _newAlias);
 
                     /**
                      * 判断参数 NewAlias 是否已赋值
                      * @return NewAlias 是否已赋值
+                     * 
                      */
                     bool NewAliasHasBeenSet() const;
 
                     /**
                      * 获取私钥内容，证书类型为SVR时不需要传递
                      * @return NewKey 私钥内容，证书类型为SVR时不需要传递
+                     * 
                      */
                     std::string GetNewKey() const;
 
                     /**
                      * 设置私钥内容，证书类型为SVR时不需要传递
-                     * @param NewKey 私钥内容，证书类型为SVR时不需要传递
+                     * @param _newKey 私钥内容，证书类型为SVR时不需要传递
+                     * 
                      */
                     void SetNewKey(const std::string& _newKey);
 
                     /**
                      * 判断参数 NewKey 是否已赋值
                      * @return NewKey 是否已赋值
+                     * 
                      */
                     bool NewKeyHasBeenSet() const;
 
                     /**
                      * 获取是否删除旧证书，0 表示不删除，1 表示删除
                      * @return DeleteOld 是否删除旧证书，0 表示不删除，1 表示删除
+                     * 
                      */
                     uint64_t GetDeleteOld() const;
 
                     /**
                      * 设置是否删除旧证书，0 表示不删除，1 表示删除
-                     * @param DeleteOld 是否删除旧证书，0 表示不删除，1 表示删除
+                     * @param _deleteOld 是否删除旧证书，0 表示不删除，1 表示删除
+                     * 
                      */
                     void SetDeleteOld(const uint64_t& _deleteOld);
 
                     /**
                      * 判断参数 DeleteOld 是否已赋值
                      * @return DeleteOld 是否已赋值
+                     * 
                      */
                     bool DeleteOldHasBeenSet() const;
 

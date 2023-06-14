@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取域名列表。
                      * @return Hosts 域名列表。
+                     * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
                      * 设置域名列表。
-                     * @param Hosts 域名列表。
+                     * @param _hosts 域名列表。
+                     * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
 
                     /**
                      * 判断参数 Hosts 是否已赋值
                      * @return Hosts 是否已赋值
+                     * 
                      */
                     bool HostsHasBeenSet() const;
 
                     /**
                      * 获取代理ID列表。
                      * @return ProxyIds 代理ID列表。
+                     * 
                      */
                     std::vector<std::string> GetProxyIds() const;
 
                     /**
                      * 设置代理ID列表。
-                     * @param ProxyIds 代理ID列表。
+                     * @param _proxyIds 代理ID列表。
+                     * 
                      */
                     void SetProxyIds(const std::vector<std::string>& _proxyIds);
 
                     /**
                      * 判断参数 ProxyIds 是否已赋值
                      * @return ProxyIds 是否已赋值
+                     * 
                      */
                     bool ProxyIdsHasBeenSet() const;
 
@@ -107,20 +116,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentIPWhitelist 当前版本的IP白名单。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IPWhitelist GetCurrentIPWhitelist() const;
 
                     /**
                      * 设置当前版本的IP白名单。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentIPWhitelist 当前版本的IP白名单。
+                     * @param _currentIPWhitelist 当前版本的IP白名单。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentIPWhitelist(const IPWhitelist& _currentIPWhitelist);
 
                     /**
                      * 判断参数 CurrentIPWhitelist 是否已赋值
                      * @return CurrentIPWhitelist 是否已赋值
+                     * 
                      */
                     bool CurrentIPWhitelistHasBeenSet() const;
 
@@ -131,6 +143,7 @@ namespace TencentCloud
                      * @return NeedUpdate 该站点是否需要更新源站白名单，取值有：
 <li>true ：需要更新IP白名单 ；</li>
 <li>false ：无需更新IP白名单。</li>
+                     * 
                      */
                     bool GetNeedUpdate() const;
 
@@ -138,15 +151,17 @@ namespace TencentCloud
                      * 设置该站点是否需要更新源站白名单，取值有：
 <li>true ：需要更新IP白名单 ；</li>
 <li>false ：无需更新IP白名单。</li>
-                     * @param NeedUpdate 该站点是否需要更新源站白名单，取值有：
+                     * @param _needUpdate 该站点是否需要更新源站白名单，取值有：
 <li>true ：需要更新IP白名单 ；</li>
 <li>false ：无需更新IP白名单。</li>
+                     * 
                      */
                     void SetNeedUpdate(const bool& _needUpdate);
 
                     /**
                      * 判断参数 NeedUpdate 是否已赋值
                      * @return NeedUpdate 是否已赋值
+                     * 
                      */
                     bool NeedUpdateHasBeenSet() const;
 
@@ -159,6 +174,7 @@ namespace TencentCloud
 <li>online ：源站防护启用中 ；</li>
 <li>offline ：源站防护已停用 ；</li>
 <li>nonactivate ：源站防护未激活，仅在从未使用过源站防护功能的站点调用中返回。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -167,16 +183,18 @@ namespace TencentCloud
 <li>online ：源站防护启用中 ；</li>
 <li>offline ：源站防护已停用 ；</li>
 <li>nonactivate ：源站防护未激活，仅在从未使用过源站防护功能的站点调用中返回。</li>
-                     * @param Status 源站防护状态，取值有：
+                     * @param _status 源站防护状态，取值有：
 <li>online ：源站防护启用中 ；</li>
 <li>offline ：源站防护已停用 ；</li>
 <li>nonactivate ：源站防护未激活，仅在从未使用过源站防护功能的站点调用中返回。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -187,6 +205,7 @@ namespace TencentCloud
                      * @return PlanSupport 站点套餐是否支持源站防护，取值有：
 <li>true ：支持 ；</li>
 <li>false ：不支持。</li>
+                     * 
                      */
                     bool GetPlanSupport() const;
 
@@ -194,15 +213,17 @@ namespace TencentCloud
                      * 设置站点套餐是否支持源站防护，取值有：
 <li>true ：支持 ；</li>
 <li>false ：不支持。</li>
-                     * @param PlanSupport 站点套餐是否支持源站防护，取值有：
+                     * @param _planSupport 站点套餐是否支持源站防护，取值有：
 <li>true ：支持 ；</li>
 <li>false ：不支持。</li>
+                     * 
                      */
                     void SetPlanSupport(const bool& _planSupport);
 
                     /**
                      * 判断参数 PlanSupport 是否已赋值
                      * @return PlanSupport 是否已赋值
+                     * 
                      */
                     bool PlanSupportHasBeenSet() const;
 
@@ -211,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiffIPWhitelist 最新IP白名单与当前IP白名单的对比。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DiffIPWhitelist GetDiffIPWhitelist() const;
 
                     /**
                      * 设置最新IP白名单与当前IP白名单的对比。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiffIPWhitelist 最新IP白名单与当前IP白名单的对比。
+                     * @param _diffIPWhitelist 最新IP白名单与当前IP白名单的对比。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiffIPWhitelist(const DiffIPWhitelist& _diffIPWhitelist);
 
                     /**
                      * 判断参数 DiffIPWhitelist 是否已赋值
                      * @return DiffIPWhitelist 是否已赋值
+                     * 
                      */
                     bool DiffIPWhitelistHasBeenSet() const;
 

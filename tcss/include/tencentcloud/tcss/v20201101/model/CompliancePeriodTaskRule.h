@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取执行的频率（几天一次），取值为：1,3,7。
                      * @return Frequency 执行的频率（几天一次），取值为：1,3,7。
+                     * 
                      */
                     uint64_t GetFrequency() const;
 
                     /**
                      * 设置执行的频率（几天一次），取值为：1,3,7。
-                     * @param Frequency 执行的频率（几天一次），取值为：1,3,7。
+                     * @param _frequency 执行的频率（几天一次），取值为：1,3,7。
+                     * 
                      */
                     void SetFrequency(const uint64_t& _frequency);
 
                     /**
                      * 判断参数 Frequency 是否已赋值
                      * @return Frequency 是否已赋值
+                     * 
                      */
                     bool FrequencyHasBeenSet() const;
 
                     /**
                      * 获取在这天的什么时间执行，格式为：HH:mm:SS。
                      * @return ExecutionTime 在这天的什么时间执行，格式为：HH:mm:SS。
+                     * 
                      */
                     std::string GetExecutionTime() const;
 
                     /**
                      * 设置在这天的什么时间执行，格式为：HH:mm:SS。
-                     * @param ExecutionTime 在这天的什么时间执行，格式为：HH:mm:SS。
+                     * @param _executionTime 在这天的什么时间执行，格式为：HH:mm:SS。
+                     * 
                      */
                     void SetExecutionTime(const std::string& _executionTime);
 
                     /**
                      * 判断参数 ExecutionTime 是否已赋值
                      * @return ExecutionTime 是否已赋值
+                     * 
                      */
                     bool ExecutionTimeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enable 是否开启
+                     * @param _enable 是否开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

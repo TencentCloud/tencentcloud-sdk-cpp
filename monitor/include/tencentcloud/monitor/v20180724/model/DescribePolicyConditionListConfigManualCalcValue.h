@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置默认值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Default 默认值
+                     * @param _default 默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefault(const std::string& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fixed 固定值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFixed() const;
 
                     /**
                      * 设置固定值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fixed 固定值
+                     * @param _fixed 固定值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFixed(const std::string& _fixed);
 
                     /**
                      * 判断参数 Fixed 是否已赋值
                      * @return Fixed 是否已赋值
+                     * 
                      */
                     bool FixedHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 最大值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置最大值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Max 最大值
+                     * @param _max 最大值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMax(const std::string& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
@@ -117,38 +126,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Min 最小值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置最小值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Min 最小值
+                     * @param _min 最小值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMin(const std::string& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取是否必须
                      * @return Need 是否必须
+                     * 
                      */
                     bool GetNeed() const;
 
                     /**
                      * 设置是否必须
-                     * @param Need 是否必须
+                     * @param _need 是否必须
+                     * 
                      */
                     void SetNeed(const bool& _need);
 
                     /**
                      * 判断参数 Need 是否已赋值
                      * @return Need 是否已赋值
+                     * 
                      */
                     bool NeedHasBeenSet() const;
 

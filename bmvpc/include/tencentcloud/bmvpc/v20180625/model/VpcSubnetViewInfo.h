@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取子网名称
                      * @return SubnetName 子网名称
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名称
-                     * @param SubnetName 子网名称
+                     * @param _subnetName 子网名称
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取子网CIDR
                      * @return CidrBlock 子网CIDR
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置子网CIDR
-                     * @param CidrBlock 子网CIDR
+                     * @param _cidrBlock 子网CIDR
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取子网下设备个数
                      * @return CpmNum 子网下设备个数
+                     * 
                      */
                     uint64_t GetCpmNum() const;
 
                     /**
                      * 设置子网下设备个数
-                     * @param CpmNum 子网下设备个数
+                     * @param _cpmNum 子网下设备个数
+                     * 
                      */
                     void SetCpmNum(const uint64_t& _cpmNum);
 
                     /**
                      * 判断参数 CpmNum 是否已赋值
                      * @return CpmNum 是否已赋值
+                     * 
                      */
                     bool CpmNumHasBeenSet() const;
 
                     /**
                      * 获取内网负载均衡个数
                      * @return LbNum 内网负载均衡个数
+                     * 
                      */
                     uint64_t GetLbNum() const;
 
                     /**
                      * 设置内网负载均衡个数
-                     * @param LbNum 内网负载均衡个数
+                     * @param _lbNum 内网负载均衡个数
+                     * 
                      */
                     void SetLbNum(const uint64_t& _lbNum);
 
                     /**
                      * 判断参数 LbNum 是否已赋值
                      * @return LbNum 是否已赋值
+                     * 
                      */
                     bool LbNumHasBeenSet() const;
 
                     /**
                      * 获取子网所在可用区
                      * @return Zone 子网所在可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置子网所在可用区
-                     * @param Zone 子网所在可用区
+                     * @param _zone 子网所在可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

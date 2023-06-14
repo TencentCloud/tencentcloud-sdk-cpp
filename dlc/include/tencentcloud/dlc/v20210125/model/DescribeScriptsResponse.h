@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scripts Script列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Script> GetScripts() const;
 
                     /**
                      * 判断参数 Scripts 是否已赋值
                      * @return Scripts 是否已赋值
+                     * 
                      */
                     bool ScriptsHasBeenSet() const;
 
                     /**
                      * 获取实例总数
                      * @return TotalCount 实例总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的对象总数。
                      * @return TotalCount 符合条件的对象总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取云联网地域间限速带宽实例的信息。
                      * @return CcnBandwidthSet 云联网地域间限速带宽实例的信息。
+                     * 
                      */
                     std::vector<CcnBandwidth> GetCcnBandwidthSet() const;
 
                     /**
                      * 判断参数 CcnBandwidthSet 是否已赋值
                      * @return CcnBandwidthSet 是否已赋值
+                     * 
                      */
                     bool CcnBandwidthSetHasBeenSet() const;
 

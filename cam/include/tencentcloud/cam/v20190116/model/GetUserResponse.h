@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取子用户用户 UIN
                      * @return Uin 子用户用户 UIN
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取子用户用户名
                      * @return Name 子用户用户名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取子用户 UID
                      * @return Uid 子用户 UID
+                     * 
                      */
                     uint64_t GetUid() const;
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
@@ -84,60 +90,70 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 子用户备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台
                      * @return ConsoleLogin 子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台
+                     * 
                      */
                     uint64_t GetConsoleLogin() const;
 
                     /**
                      * 判断参数 ConsoleLogin 是否已赋值
                      * @return ConsoleLogin 是否已赋值
+                     * 
                      */
                     bool ConsoleLoginHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return PhoneNum 手机号
+                     * 
                      */
                     std::string GetPhoneNum() const;
 
                     /**
                      * 判断参数 PhoneNum 是否已赋值
                      * @return PhoneNum 是否已赋值
+                     * 
                      */
                     bool PhoneNumHasBeenSet() const;
 
                     /**
                      * 获取区号
                      * @return CountryCode 区号
+                     * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
                      * 判断参数 CountryCode 是否已赋值
                      * @return CountryCode 是否已赋值
+                     * 
                      */
                     bool CountryCodeHasBeenSet() const;
 
                     /**
                      * 获取邮箱
                      * @return Email 邮箱
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -146,12 +162,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecentlyLoginIP 最近一次登录ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecentlyLoginIP() const;
 
                     /**
                      * 判断参数 RecentlyLoginIP 是否已赋值
                      * @return RecentlyLoginIP 是否已赋值
+                     * 
                      */
                     bool RecentlyLoginIPHasBeenSet() const;
 
@@ -160,12 +178,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecentlyLoginTime 最近一次登录时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecentlyLoginTime() const;
 
                     /**
                      * 判断参数 RecentlyLoginTime 是否已赋值
                      * @return RecentlyLoginTime 是否已赋值
+                     * 
                      */
                     bool RecentlyLoginTimeHasBeenSet() const;
 

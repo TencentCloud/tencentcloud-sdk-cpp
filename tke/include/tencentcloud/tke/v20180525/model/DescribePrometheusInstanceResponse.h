@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return Name 实例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取私有网络id
                      * @return VpcId 私有网络id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网id
                      * @return SubnetId 子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取cos桶名称
                      * @return COSBucket cos桶名称
+                     * 
                      */
                     std::string GetCOSBucket() const;
 
                     /**
                      * 判断参数 COSBucket 是否已赋值
                      * @return COSBucket 是否已赋值
+                     * 
                      */
                     bool COSBucketHasBeenSet() const;
 
                     /**
                      * 获取数据查询地址
                      * @return QueryAddress 数据查询地址
+                     * 
                      */
                     std::string GetQueryAddress() const;
 
                     /**
                      * 判断参数 QueryAddress 是否已赋值
                      * @return QueryAddress 是否已赋值
+                     * 
                      */
                     bool QueryAddressHasBeenSet() const;
 
@@ -121,12 +133,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grafana 实例中grafana相关的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PrometheusGrafanaInfo GetGrafana() const;
 
                     /**
                      * 判断参数 Grafana 是否已赋值
                      * @return Grafana 是否已赋值
+                     * 
                      */
                     bool GrafanaHasBeenSet() const;
 
@@ -135,12 +149,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertManagerUrl 用户自定义alertmanager
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlertManagerUrl() const;
 
                     /**
                      * 判断参数 AlertManagerUrl 是否已赋值
                      * @return AlertManagerUrl 是否已赋值
+                     * 
                      */
                     bool AlertManagerUrlHasBeenSet() const;
 

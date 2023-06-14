@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return DirectConnectTunnelId 无
+                     * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
                      * 设置无
-                     * @param DirectConnectTunnelId 无
+                     * @param _directConnectTunnelId 无
+                     * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
 
                     /**
                      * 判断参数 DirectConnectTunnelId 是否已赋值
                      * @return DirectConnectTunnelId 是否已赋值
+                     * 
                      */
                     bool DirectConnectTunnelIdHasBeenSet() const;
 

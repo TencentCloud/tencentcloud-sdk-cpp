@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Zone ID
                      * @return ZoneId Zone ID
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置Zone ID
-                     * @param ZoneId Zone ID
+                     * @param _zoneId Zone ID
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 - purge_prefix：前缀
 - purge_host：Hostname
 - purge_all：全部缓存
+                     * 
                      */
                     std::string GetType() const;
 
@@ -80,17 +84,19 @@ namespace TencentCloud
 - purge_prefix：前缀
 - purge_host：Hostname
 - purge_all：全部缓存
-                     * @param Type 类型，当前支持的类型：
+                     * @param _type 类型，当前支持的类型：
 - purge_url：URL
 - purge_prefix：前缀
 - purge_host：Hostname
 - purge_all：全部缓存
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -113,6 +119,7 @@ Targets可为空，不需要填写
 形如：https://www.example.com/example.jpg
 4）Type = purge_all 时
 Targets可为空，不需要填写
+                     * 
                      */
                     std::vector<std::string> GetTargets() const;
 
@@ -126,7 +133,7 @@ Targets可为空，不需要填写
 形如：https://www.example.com/example.jpg
 4）Type = purge_all 时
 Targets可为空，不需要填写
-                     * @param Targets 要刷新的资源列表，每个元素格式依据Type而定
+                     * @param _targets 要刷新的资源列表，每个元素格式依据Type而定
 1) Type = purge_host 时
 形如：www.example.com 或 foo.bar.example.com
 2) Type = purge_prefix 时
@@ -135,12 +142,14 @@ Targets可为空，不需要填写
 形如：https://www.example.com/example.jpg
 4）Type = purge_all 时
 Targets可为空，不需要填写
+                     * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
@@ -149,20 +158,23 @@ Targets可为空，不需要填写
 若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
                      * @return EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源
 若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
+                     * 
                      */
                     bool GetEncodeUrl() const;
 
                     /**
                      * 设置若有编码转换，仅清除编码转换后匹配的资源
 若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
-                     * @param EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源
+                     * @param _encodeUrl 若有编码转换，仅清除编码转换后匹配的资源
 若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）
+                     * 
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
                     /**
                      * 判断参数 EncodeUrl 是否已赋值
                      * @return EncodeUrl 是否已赋值
+                     * 
                      */
                     bool EncodeUrlHasBeenSet() const;
 

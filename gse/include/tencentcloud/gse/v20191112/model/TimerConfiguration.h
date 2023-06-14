@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerType 定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimerType() const;
 
                     /**
                      * 设置定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerType 定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）
+                     * @param _timerType 定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerType(const int64_t& _timerType);
 
                     /**
                      * 判断参数 TimerType 是否已赋值
                      * @return TimerType 是否已赋值
+                     * 
                      */
                     bool TimerTypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerValue 定时器取值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TimerValue GetTimerValue() const;
 
                     /**
                      * 设置定时器取值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerValue 定时器取值
+                     * @param _timerValue 定时器取值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerValue(const TimerValue& _timerValue);
 
                     /**
                      * 判断参数 TimerValue 是否已赋值
                      * @return TimerValue 是否已赋值
+                     * 
                      */
                     bool TimerValueHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 定时器开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置定时器开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 定时器开始时间
+                     * @param _beginTime 定时器开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 定时器结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置定时器结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 定时器结束时间
+                     * @param _endTime 定时器结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

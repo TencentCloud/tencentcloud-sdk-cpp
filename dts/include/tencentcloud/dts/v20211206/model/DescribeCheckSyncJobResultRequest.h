@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填
                      * @return JobId 同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填
-                     * @param JobId 同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填
+                     * @param _jobId 同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

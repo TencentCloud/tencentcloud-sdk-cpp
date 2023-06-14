@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width logo图标宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWidth() const;
 
                     /**
                      * 设置logo图标宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width logo图标宽度
+                     * @param _width logo图标宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const double& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cy logo纵坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCy() const;
 
                     /**
                      * 设置logo纵坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cy logo纵坐标
+                     * @param _cy logo纵坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCy(const double& _cy);
 
                     /**
                      * 判断参数 Cy 是否已赋值
                      * @return Cy 是否已赋值
+                     * 
                      */
                     bool CyHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cx logo横坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCx() const;
 
                     /**
                      * 设置logo横坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cx logo横坐标
+                     * @param _cx logo横坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCx(const double& _cx);
 
                     /**
                      * 判断参数 Cx 是否已赋值
                      * @return Cx 是否已赋值
+                     * 
                      */
                     bool CxHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rotate logo图标中心旋转度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRotate() const;
 
                     /**
                      * 设置logo图标中心旋转度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rotate logo图标中心旋转度
+                     * @param _rotate logo图标中心旋转度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRotate(const double& _rotate);
 
                     /**
                      * 判断参数 Rotate 是否已赋值
                      * @return Rotate 是否已赋值
+                     * 
                      */
                     bool RotateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height logo图标高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetHeight() const;
 
                     /**
                      * 设置logo图标高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height logo图标高度
+                     * @param _height logo图标高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const double& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

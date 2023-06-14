@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取产品任务详细信息
                      * @return TaskInfo 产品任务详细信息
+                     * 
                      */
                     ProductTaskInfo GetTaskInfo() const;
 
                     /**
                      * 判断参数 TaskInfo 是否已赋值
                      * @return TaskInfo 是否已赋值
+                     * 
                      */
                     bool TaskInfoHasBeenSet() const;
 

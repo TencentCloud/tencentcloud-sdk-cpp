@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否开启。
                      * @return Enabled 是否开启。
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启。
-                     * @param Enabled 是否开启。
+                     * @param _enabled 是否开启。
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 

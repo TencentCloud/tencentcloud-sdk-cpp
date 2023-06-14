@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取状态机资源名
                      * @return StateMachineResourceName 状态机资源名
+                     * 
                      */
                     std::string GetStateMachineResourceName() const;
 
                     /**
                      * 设置状态机资源名
-                     * @param StateMachineResourceName 状态机资源名
+                     * @param _stateMachineResourceName 状态机资源名
+                     * 
                      */
                     void SetStateMachineResourceName(const std::string& _stateMachineResourceName);
 
                     /**
                      * 判断参数 StateMachineResourceName 是否已赋值
                      * @return StateMachineResourceName 是否已赋值
+                     * 
                      */
                     bool StateMachineResourceNameHasBeenSet() const;
 
                     /**
                      * 获取页大小，最大100
                      * @return PageSize 页大小，最大100
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页大小，最大100
-                     * @param PageSize 页大小，最大100
+                     * @param _pageSize 页大小，最大100
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取页序号，从1开始
                      * @return PageIndex 页序号，从1开始
+                     * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
                      * 设置页序号，从1开始
-                     * @param PageIndex 页序号，从1开始
+                     * @param _pageIndex 页序号，从1开始
+                     * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED
                      * @return FilterExecutionStatus 按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED
+                     * 
                      */
                     std::string GetFilterExecutionStatus() const;
 
                     /**
                      * 设置按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED
-                     * @param FilterExecutionStatus 按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED
+                     * @param _filterExecutionStatus 按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED
+                     * 
                      */
                     void SetFilterExecutionStatus(const std::string& _filterExecutionStatus);
 
                     /**
                      * 判断参数 FilterExecutionStatus 是否已赋值
                      * @return FilterExecutionStatus 是否已赋值
+                     * 
                      */
                     bool FilterExecutionStatusHasBeenSet() const;
 
                     /**
                      * 获取按执行名过滤条件
                      * @return FilterExecutionResourceName 按执行名过滤条件
+                     * 
                      */
                     std::string GetFilterExecutionResourceName() const;
 
                     /**
                      * 设置按执行名过滤条件
-                     * @param FilterExecutionResourceName 按执行名过滤条件
+                     * @param _filterExecutionResourceName 按执行名过滤条件
+                     * 
                      */
                     void SetFilterExecutionResourceName(const std::string& _filterExecutionResourceName);
 
                     /**
                      * 判断参数 FilterExecutionResourceName 是否已赋值
                      * @return FilterExecutionResourceName 是否已赋值
+                     * 
                      */
                     bool FilterExecutionResourceNameHasBeenSet() const;
 

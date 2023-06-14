@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填）
                      * @return SdkAppId 应用 ID（必填）
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填）
-                     * @param SdkAppId 应用 ID（必填）
+                     * @param _sdkAppId 应用 ID（必填）
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取技能组名称
                      * @return SkillGroupName 技能组名称
+                     * 
                      */
                     std::string GetSkillGroupName() const;
 
                     /**
                      * 设置技能组名称
-                     * @param SkillGroupName 技能组名称
+                     * @param _skillGroupName 技能组名称
+                     * 
                      */
                     void SetSkillGroupName(const std::string& _skillGroupName);
 
                     /**
                      * 判断参数 SkillGroupName 是否已赋值
                      * @return SkillGroupName 是否已赋值
+                     * 
                      */
                     bool SkillGroupNameHasBeenSet() const;
 
                     /**
                      * 获取技能组类型0-电话，1-在线，3-音频，4-视频
                      * @return SkillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频
+                     * 
                      */
                     int64_t GetSkillGroupType() const;
 
                     /**
                      * 设置技能组类型0-电话，1-在线，3-音频，4-视频
-                     * @param SkillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频
+                     * @param _skillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频
+                     * 
                      */
                     void SetSkillGroupType(const int64_t& _skillGroupType);
 
                     /**
                      * 判断参数 SkillGroupType 是否已赋值
                      * @return SkillGroupType 是否已赋值
+                     * 
                      */
                     bool SkillGroupTypeHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 2、若技能组类型为电话、音频、视频，则接待上线必须只能为1
                      * @return MaxConcurrency 技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上
 2、若技能组类型为电话、音频、视频，则接待上线必须只能为1
+                     * 
                      */
                     uint64_t GetMaxConcurrency() const;
 
                     /**
                      * 设置技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上
 2、若技能组类型为电话、音频、视频，则接待上线必须只能为1
-                     * @param MaxConcurrency 技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上
+                     * @param _maxConcurrency 技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上
 2、若技能组类型为电话、音频、视频，则接待上线必须只能为1
+                     * 
                      */
                     void SetMaxConcurrency(const uint64_t& _maxConcurrency);
 
                     /**
                      * 判断参数 MaxConcurrency 是否已赋值
                      * @return MaxConcurrency 是否已赋值
+                     * 
                      */
                     bool MaxConcurrencyHasBeenSet() const;
 

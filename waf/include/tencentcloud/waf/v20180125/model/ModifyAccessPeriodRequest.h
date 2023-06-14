@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取访问日志保存期限，范围为[1, 30]
                      * @return Period 访问日志保存期限，范围为[1, 30]
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置访问日志保存期限，范围为[1, 30]
-                     * @param Period 访问日志保存期限，范围为[1, 30]
+                     * @param _period 访问日志保存期限，范围为[1, 30]
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取日志主题
                      * @return TopicId 日志主题
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题
-                     * @param TopicId 日志主题
+                     * @param _topicId 日志主题
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

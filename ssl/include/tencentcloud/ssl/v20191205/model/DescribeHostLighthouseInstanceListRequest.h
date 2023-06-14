@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取待部署的证书ID
                      * @return CertificateId 待部署的证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置待部署的证书ID
-                     * @param CertificateId 待部署的证书ID
+                     * @param _certificateId 待部署的证书ID
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取部署资源类型 lighthouse
                      * @return ResourceType 部署资源类型 lighthouse
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署资源类型 lighthouse
-                     * @param ResourceType 部署资源类型 lighthouse
+                     * @param _resourceType 部署资源类型 lighthouse
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * 
                      */
                     uint64_t GetIsCache() const;
 
                     /**
                      * 设置是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
-                     * @param IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * @param _isCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * 
                      */
                     void SetIsCache(const uint64_t& _isCache);
 
                     /**
                      * 判断参数 IsCache 是否已赋值
                      * @return IsCache 是否已赋值
+                     * 
                      */
                     bool IsCacheHasBeenSet() const;
 
                     /**
                      * 获取过滤参数列表
                      * @return Filters 过滤参数列表
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数列表
-                     * @param Filters 过滤参数列表
+                     * @param _filters 过滤参数列表
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 手术编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetCode() const;
 
                     /**
                      * 设置手术编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 手术编码
+                     * @param _code 手术编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const BaseItem& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 手术名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetName() const;
 
                     /**
                      * 设置手术名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 手术名称
+                     * @param _name 手术名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const BaseItem& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetStartTime() const;
 
                     /**
                      * 设置手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 手术开始时间
+                     * @param _startTime 手术开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const BaseItem& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetEndTime() const;
 
                     /**
                      * 设置手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 手术结束时间
+                     * @param _endTime 手术结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const BaseItem& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 手术等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetLevel() const;
 
                     /**
                      * 设置手术等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 手术等级
+                     * @param _level 手术等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const BaseItem& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 手术类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetType() const;
 
                     /**
                      * 设置手术类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 手术类型
+                     * @param _type 手术类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const BaseItem& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncisionHealingGrade 醉愈合方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetIncisionHealingGrade() const;
 
                     /**
                      * 设置醉愈合方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncisionHealingGrade 醉愈合方式
+                     * @param _incisionHealingGrade 醉愈合方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncisionHealingGrade(const BaseItem& _incisionHealingGrade);
 
                     /**
                      * 判断参数 IncisionHealingGrade 是否已赋值
                      * @return IncisionHealingGrade 是否已赋值
+                     * 
                      */
                     bool IncisionHealingGradeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnesthesiaMethod 麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetAnesthesiaMethod() const;
 
                     /**
                      * 设置麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnesthesiaMethod 麻醉方法
+                     * @param _anesthesiaMethod 麻醉方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnesthesiaMethod(const BaseItem& _anesthesiaMethod);
 
                     /**
                      * 判断参数 AnesthesiaMethod 是否已赋值
                      * @return AnesthesiaMethod 是否已赋值
+                     * 
                      */
                     bool AnesthesiaMethodHasBeenSet() const;
 

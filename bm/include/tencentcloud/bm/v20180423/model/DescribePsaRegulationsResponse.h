@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回规则数量
                      * @return TotalCount 返回规则数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回规则列表
                      * @return PsaRegulations 返回规则列表
+                     * 
                      */
                     std::vector<PsaRegulation> GetPsaRegulations() const;
 
                     /**
                      * 判断参数 PsaRegulations 是否已赋值
                      * @return PsaRegulations 是否已赋值
+                     * 
                      */
                     bool PsaRegulationsHasBeenSet() const;
 

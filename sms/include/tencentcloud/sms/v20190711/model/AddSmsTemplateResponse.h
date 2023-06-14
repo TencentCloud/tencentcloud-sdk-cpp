@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取添加短信模板响应包体
                      * @return AddTemplateStatus 添加短信模板响应包体
+                     * 
                      */
                     AddTemplateStatus GetAddTemplateStatus() const;
 
                     /**
                      * 判断参数 AddTemplateStatus 是否已赋值
                      * @return AddTemplateStatus 是否已赋值
+                     * 
                      */
                     bool AddTemplateStatusHasBeenSet() const;
 

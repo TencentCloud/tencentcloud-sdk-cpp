@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取SSL-VPN-SERVER 实例ID。
                      * @return SslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 
                      */
                     std::string GetSslVpnServerId() const;
 
                     /**
                      * 设置SSL-VPN-SERVER 实例ID。
-                     * @param SslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * @param _sslVpnServerId SSL-VPN-SERVER 实例ID。
+                     * 
                      */
                     void SetSslVpnServerId(const std::string& _sslVpnServerId);
 
                     /**
                      * 判断参数 SslVpnServerId 是否已赋值
                      * @return SslVpnServerId 是否已赋值
+                     * 
                      */
                     bool SslVpnServerIdHasBeenSet() const;
 

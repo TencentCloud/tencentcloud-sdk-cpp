@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGrade() const;
 
                     /**
                      * 设置等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Grade 等级
+                     * @param _grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrade(const std::string& _grade);
 
                     /**
                      * 判断参数 Grade 是否已赋值
                      * @return Grade 是否已赋值
+                     * 
                      */
                     bool GradeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetPercent() const;
 
                     /**
                      * 设置百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Percent 百分比
+                     * @param _percent 百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPercent(const std::vector<double>& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 阳性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPositive() const;
 
                     /**
                      * 设置阳性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Positive 阳性
+                     * @param _positive 阳性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPositive(const std::string& _positive);
 
                     /**
                      * 判断参数 Positive 是否已赋值
                      * @return Positive 是否已赋值
+                     * 
                      */
                     bool PositiveHasBeenSet() const;
 

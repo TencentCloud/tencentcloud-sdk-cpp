@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态码
+                     * @param _status 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 结果码
+                     * @param _result 结果码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 错误出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置错误出现次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 错误出现次数
+                     * @param _count 错误出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rate 错误率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRate() const;
 
                     /**
                      * 设置错误率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rate 错误率
+                     * @param _rate 错误率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRate(const double& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误信息
+                     * @param _message 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proto 请求协议类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置请求协议类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Proto 请求协议类型
+                     * @param _proto 请求协议类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProto(const std::string& _proto);
 
                     /**
                      * 判断参数 Proto 是否已赋值
                      * @return Proto 是否已赋值
+                     * 
                      */
                     bool ProtoHasBeenSet() const;
 

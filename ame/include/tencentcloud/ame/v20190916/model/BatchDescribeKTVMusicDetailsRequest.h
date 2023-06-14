@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id列表，注：列表最大长度为50
                      * @return MusicIds 歌曲Id列表，注：列表最大长度为50
+                     * 
                      */
                     std::vector<std::string> GetMusicIds() const;
 
                     /**
                      * 设置歌曲Id列表，注：列表最大长度为50
-                     * @param MusicIds 歌曲Id列表，注：列表最大长度为50
+                     * @param _musicIds 歌曲Id列表，注：列表最大长度为50
+                     * 
                      */
                     void SetMusicIds(const std::vector<std::string>& _musicIds);
 
                     /**
                      * 判断参数 MusicIds 是否已赋值
                      * @return MusicIds 是否已赋值
+                     * 
                      */
                     bool MusicIdsHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取Limits 描述了允许的最大计算资源量。
                      * @return Limits Limits 描述了允许的最大计算资源量。
+                     * 
                      */
                     std::vector<Resource> GetLimits() const;
 
                     /**
                      * 设置Limits 描述了允许的最大计算资源量。
-                     * @param Limits Limits 描述了允许的最大计算资源量。
+                     * @param _limits Limits 描述了允许的最大计算资源量。
+                     * 
                      */
                     void SetLimits(const std::vector<Resource>& _limits);
 
                     /**
                      * 判断参数 Limits 是否已赋值
                      * @return Limits 是否已赋值
+                     * 
                      */
                     bool LimitsHasBeenSet() const;
 
                     /**
                      * 获取Requests 描述所需的最小计算资源量。
                      * @return Requests Requests 描述所需的最小计算资源量。
+                     * 
                      */
                     std::vector<Resource> GetRequests() const;
 
                     /**
                      * 设置Requests 描述所需的最小计算资源量。
-                     * @param Requests Requests 描述所需的最小计算资源量。
+                     * @param _requests Requests 描述所需的最小计算资源量。
+                     * 
                      */
                     void SetRequests(const std::vector<Resource>& _requests);
 
                     /**
                      * 判断参数 Requests 是否已赋值
                      * @return Requests 是否已赋值
+                     * 
                      */
                     bool RequestsHasBeenSet() const;
 

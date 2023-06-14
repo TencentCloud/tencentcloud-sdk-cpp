@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 固件升级任务的设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Devices 固件升级任务的设备列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceUpdateStatus> GetDevices() const;
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 

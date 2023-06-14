@@ -53,6 +53,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
+                     * 
                      */
                     std::string GetInputImage() const;
 
@@ -61,16 +62,18 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
-                     * @param InputImage 输入图 Base64 数据。
+                     * @param _inputImage 输入图 Base64 数据。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
+                     * 
                      */
                     void SetInputImage(const std::string& _inputImage);
 
                     /**
                      * 判断参数 InputImage 是否已赋值
                      * @return InputImage 是否已赋值
+                     * 
                      */
                     bool InputImageHasBeenSet() const;
 
@@ -83,6 +86,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
+                     * 
                      */
                     std::string GetInputUrl() const;
 
@@ -91,16 +95,18 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
-                     * @param InputUrl 输入图 Url。
+                     * @param _inputUrl 输入图 Url。
 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
 Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。
+                     * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
 
                     /**
                      * 判断参数 InputUrl 是否已赋值
                      * @return InputUrl 是否已赋值
+                     * 
                      */
                     bool InputUrlHasBeenSet() const;
 
@@ -111,6 +117,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
                      * @return Prompt 文本描述。
 用于在输入图的基础上引导生成图效果，建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。推荐使用中文。最多支持512个 utf-8 字符。
 注意：如果不输入任何文本描述，可能导致较差的效果，建议根据期望的效果输入相应的文本描述。
+                     * 
                      */
                     std::string GetPrompt() const;
 
@@ -118,15 +125,17 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
                      * 设置文本描述。
 用于在输入图的基础上引导生成图效果，建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。推荐使用中文。最多支持512个 utf-8 字符。
 注意：如果不输入任何文本描述，可能导致较差的效果，建议根据期望的效果输入相应的文本描述。
-                     * @param Prompt 文本描述。
+                     * @param _prompt 文本描述。
 用于在输入图的基础上引导生成图效果，建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。推荐使用中文。最多支持512个 utf-8 字符。
 注意：如果不输入任何文本描述，可能导致较差的效果，建议根据期望的效果输入相应的文本描述。
+                     * 
                      */
                     void SetPrompt(const std::string& _prompt);
 
                     /**
                      * 判断参数 Prompt 是否已赋值
                      * @return Prompt 是否已赋值
+                     * 
                      */
                     bool PromptHasBeenSet() const;
 
@@ -137,6 +146,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
                      * @return NegativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     std::string GetNegativePrompt() const;
 
@@ -144,15 +154,17 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
                      * 设置反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
-                     * @param NegativePrompt 反向文本描述。
+                     * @param _negativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
 
                     /**
                      * 判断参数 NegativePrompt 是否已赋值
                      * @return NegativePrompt 是否已赋值
+                     * 
                      */
                     bool NegativePromptHasBeenSet() const;
 
@@ -165,6 +177,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 请在  [智能图生图风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
+                     * 
                      */
                     std::vector<std::string> GetStyles() const;
 
@@ -173,34 +186,39 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 请在  [智能图生图风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
-                     * @param Styles 绘画风格。
+                     * @param _styles 绘画风格。
 请在  [智能图生图风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
+                     * 
                      */
                     void SetStyles(const std::vector<std::string>& _styles);
 
                     /**
                      * 判断参数 Styles 是否已赋值
                      * @return Styles 是否已赋值
+                     * 
                      */
                     bool StylesHasBeenSet() const;
 
                     /**
                      * 获取生成图结果的配置，包括输出图片分辨率和尺寸等。
                      * @return ResultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * 
                      */
                     ResultConfig GetResultConfig() const;
 
                     /**
                      * 设置生成图结果的配置，包括输出图片分辨率和尺寸等。
-                     * @param ResultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * @param _resultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * 
                      */
                     void SetResultConfig(const ResultConfig& _resultConfig);
 
                     /**
                      * 判断参数 ResultConfig 是否已赋值
                      * @return ResultConfig 是否已赋值
+                     * 
                      */
                     bool ResultConfigHasBeenSet() const;
 
@@ -215,6 +233,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 
                      */
                     int64_t GetLogoAdd() const;
 
@@ -224,17 +243,19 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @param LogoAdd 为生成结果图添加标识的开关，默认为1。
+                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。
 1：添加标识。
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
 
                     /**
                      * 判断参数 LogoAdd 是否已赋值
                      * @return LogoAdd 是否已赋值
+                     * 
                      */
                     bool LogoAddHasBeenSet() const;
 
@@ -243,20 +264,23 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
                      * @return LogoParam 标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
                      * 设置标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param LogoParam 标识内容设置。
+                     * @param _logoParam 标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
 
                     /**
                      * 判断参数 LogoParam 是否已赋值
                      * @return LogoParam 是否已赋值
+                     * 
                      */
                     bool LogoParamHasBeenSet() const;
 
@@ -265,20 +289,23 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      * @return Strength 生成自由度。
 Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
+                     * 
                      */
                     double GetStrength() const;
 
                     /**
                      * 设置生成自由度。
 Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
-                     * @param Strength 生成自由度。
+                     * @param _strength 生成自由度。
 Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
+                     * 
                      */
                     void SetStrength(const double& _strength);
 
                     /**
                      * 判断参数 Strength 是否已赋值
                      * @return Strength 是否已赋值
+                     * 
                      */
                     bool StrengthHasBeenSet() const;
 

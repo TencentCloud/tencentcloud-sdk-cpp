@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckItemName 检查项的名称，如：源实例权限检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckItemName() const;
 
                     /**
                      * 设置检查项的名称，如：源实例权限检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckItemName 检查项的名称，如：源实例权限检查
+                     * @param _checkItemName 检查项的名称，如：源实例权限检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckItemName(const std::string& _checkItemName);
 
                     /**
                      * 判断参数 CheckItemName 是否已赋值
                      * @return CheckItemName 是否已赋值
+                     * 
                      */
                     bool CheckItemNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 检查项详细内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置检查项详细内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 检查项详细内容
+                     * @param _description 检查项详细内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckResult pass(通过)，failed(失败), warning(校验有警告，但仍通过)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckResult() const;
 
                     /**
                      * 设置pass(通过)，failed(失败), warning(校验有警告，但仍通过)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckResult pass(通过)，failed(失败), warning(校验有警告，但仍通过)
+                     * @param _checkResult pass(通过)，failed(失败), warning(校验有警告，但仍通过)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
 
                     /**
                      * 判断参数 CheckResult 是否已赋值
                      * @return CheckResult 是否已赋值
+                     * 
                      */
                     bool CheckResultHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureReason 检查项失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailureReason() const;
 
                     /**
                      * 设置检查项失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailureReason 检查项失败原因
+                     * @param _failureReason 检查项失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailureReason(const std::string& _failureReason);
 
                     /**
                      * 判断参数 FailureReason 是否已赋值
                      * @return FailureReason 是否已赋值
+                     * 
                      */
                     bool FailureReasonHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Solution 解决方案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Solution 解决方案
+                     * @param _solution 解决方案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLog 运行报错日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetErrorLog() const;
 
                     /**
                      * 设置运行报错日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorLog 运行报错日志
+                     * @param _errorLog 运行报错日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorLog(const std::vector<std::string>& _errorLog);
 
                     /**
                      * 判断参数 ErrorLog 是否已赋值
                      * @return ErrorLog 是否已赋值
+                     * 
                      */
                     bool ErrorLogHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HelpDoc 详细帮助的文档链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHelpDoc() const;
 
                     /**
                      * 设置详细帮助的文档链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HelpDoc 详细帮助的文档链接
+                     * @param _helpDoc 详细帮助的文档链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHelpDoc(const std::vector<std::string>& _helpDoc);
 
                     /**
                      * 判断参数 HelpDoc 是否已赋值
                      * @return HelpDoc 是否已赋值
+                     * 
                      */
                     bool HelpDocHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipInfo 跳过风险文案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSkipInfo() const;
 
                     /**
                      * 设置跳过风险文案
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkipInfo 跳过风险文案
+                     * @param _skipInfo 跳过风险文案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipInfo(const std::string& _skipInfo);
 
                     /**
                      * 判断参数 SkipInfo 是否已赋值
                      * @return SkipInfo 是否已赋值
+                     * 
                      */
                     bool SkipInfoHasBeenSet() const;
 

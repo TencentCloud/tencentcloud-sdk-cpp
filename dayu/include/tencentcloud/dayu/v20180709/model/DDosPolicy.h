@@ -56,180 +56,210 @@ namespace TencentCloud
                     /**
                      * 获取策略绑定的资源
                      * @return Resources 策略绑定的资源
+                     * 
                      */
                     std::vector<ResourceIp> GetResources() const;
 
                     /**
                      * 设置策略绑定的资源
-                     * @param Resources 策略绑定的资源
+                     * @param _resources 策略绑定的资源
+                     * 
                      */
                     void SetResources(const std::vector<ResourceIp>& _resources);
 
                     /**
                      * 判断参数 Resources 是否已赋值
                      * @return Resources 是否已赋值
+                     * 
                      */
                     bool ResourcesHasBeenSet() const;
 
                     /**
                      * 获取禁用协议
                      * @return DropOptions 禁用协议
+                     * 
                      */
                     DDoSPolicyDropOption GetDropOptions() const;
 
                     /**
                      * 设置禁用协议
-                     * @param DropOptions 禁用协议
+                     * @param _dropOptions 禁用协议
+                     * 
                      */
                     void SetDropOptions(const DDoSPolicyDropOption& _dropOptions);
 
                     /**
                      * 判断参数 DropOptions 是否已赋值
                      * @return DropOptions 是否已赋值
+                     * 
                      */
                     bool DropOptionsHasBeenSet() const;
 
                     /**
                      * 获取禁用端口
                      * @return PortLimits 禁用端口
+                     * 
                      */
                     std::vector<DDoSPolicyPortLimit> GetPortLimits() const;
 
                     /**
                      * 设置禁用端口
-                     * @param PortLimits 禁用端口
+                     * @param _portLimits 禁用端口
+                     * 
                      */
                     void SetPortLimits(const std::vector<DDoSPolicyPortLimit>& _portLimits);
 
                     /**
                      * 判断参数 PortLimits 是否已赋值
                      * @return PortLimits 是否已赋值
+                     * 
                      */
                     bool PortLimitsHasBeenSet() const;
 
                     /**
                      * 获取报文过滤
                      * @return PacketFilters 报文过滤
+                     * 
                      */
                     std::vector<DDoSPolicyPacketFilter> GetPacketFilters() const;
 
                     /**
                      * 设置报文过滤
-                     * @param PacketFilters 报文过滤
+                     * @param _packetFilters 报文过滤
+                     * 
                      */
                     void SetPacketFilters(const std::vector<DDoSPolicyPacketFilter>& _packetFilters);
 
                     /**
                      * 判断参数 PacketFilters 是否已赋值
                      * @return PacketFilters 是否已赋值
+                     * 
                      */
                     bool PacketFiltersHasBeenSet() const;
 
                     /**
                      * 获取黑白IP名单
                      * @return IpBlackWhiteLists 黑白IP名单
+                     * 
                      */
                     std::vector<IpBlackWhite> GetIpBlackWhiteLists() const;
 
                     /**
                      * 设置黑白IP名单
-                     * @param IpBlackWhiteLists 黑白IP名单
+                     * @param _ipBlackWhiteLists 黑白IP名单
+                     * 
                      */
                     void SetIpBlackWhiteLists(const std::vector<IpBlackWhite>& _ipBlackWhiteLists);
 
                     /**
                      * 判断参数 IpBlackWhiteLists 是否已赋值
                      * @return IpBlackWhiteLists 是否已赋值
+                     * 
                      */
                     bool IpBlackWhiteListsHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PolicyName 策略名称
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PolicyName 策略名称
+                     * @param _policyName 策略名称
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取策略创建时间
                      * @return CreateTime 策略创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置策略创建时间
-                     * @param CreateTime 策略创建时间
+                     * @param _createTime 策略创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取水印策略参数，最多只有一个，当没有水印策略时数组为空
                      * @return WaterPrint 水印策略参数，最多只有一个，当没有水印策略时数组为空
+                     * 
                      */
                     std::vector<WaterPrintPolicy> GetWaterPrint() const;
 
                     /**
                      * 设置水印策略参数，最多只有一个，当没有水印策略时数组为空
-                     * @param WaterPrint 水印策略参数，最多只有一个，当没有水印策略时数组为空
+                     * @param _waterPrint 水印策略参数，最多只有一个，当没有水印策略时数组为空
+                     * 
                      */
                     void SetWaterPrint(const std::vector<WaterPrintPolicy>& _waterPrint);
 
                     /**
                      * 判断参数 WaterPrint 是否已赋值
                      * @return WaterPrint 是否已赋值
+                     * 
                      */
                     bool WaterPrintHasBeenSet() const;
 
                     /**
                      * 获取水印密钥，最多只有2个，当没有水印策略时数组为空
                      * @return WaterKey 水印密钥，最多只有2个，当没有水印策略时数组为空
+                     * 
                      */
                     std::vector<WaterPrintKey> GetWaterKey() const;
 
                     /**
                      * 设置水印密钥，最多只有2个，当没有水印策略时数组为空
-                     * @param WaterKey 水印密钥，最多只有2个，当没有水印策略时数组为空
+                     * @param _waterKey 水印密钥，最多只有2个，当没有水印策略时数组为空
+                     * 
                      */
                     void SetWaterKey(const std::vector<WaterPrintKey>& _waterKey);
 
                     /**
                      * 判断参数 WaterKey 是否已赋值
                      * @return WaterKey 是否已赋值
+                     * 
                      */
                     bool WaterKeyHasBeenSet() const;
 
@@ -238,20 +268,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoundResources 策略绑定的资源实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBoundResources() const;
 
                     /**
                      * 设置策略绑定的资源实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BoundResources 策略绑定的资源实例
+                     * @param _boundResources 策略绑定的资源实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBoundResources(const std::vector<std::string>& _boundResources);
 
                     /**
                      * 判断参数 BoundResources 是否已赋值
                      * @return BoundResources 是否已赋值
+                     * 
                      */
                     bool BoundResourcesHasBeenSet() const;
 
@@ -260,20 +293,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneId 策略所属的策略场景
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSceneId() const;
 
                     /**
                      * 设置策略所属的策略场景
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SceneId 策略所属的策略场景
+                     * @param _sceneId 策略所属的策略场景
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSceneId(const std::string& _sceneId);
 
                     /**
                      * 判断参数 SceneId 是否已赋值
                      * @return SceneId 是否已赋值
+                     * 
                      */
                     bool SceneIdHasBeenSet() const;
 

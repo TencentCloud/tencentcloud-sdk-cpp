@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 动态消息保留时间配置开关（0: 关闭，1: 开启）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置动态消息保留时间配置开关（0: 关闭，1: 开启）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enable 动态消息保留时间配置开关（0: 关闭，1: 开启）
+                     * @param _enable 动态消息保留时间配置开关（0: 关闭，1: 开启）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnable(const int64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskQuotaPercentage 磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskQuotaPercentage() const;
 
                     /**
                      * 设置磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskQuotaPercentage 磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件
+                     * @param _diskQuotaPercentage 磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskQuotaPercentage(const int64_t& _diskQuotaPercentage);
 
                     /**
                      * 判断参数 DiskQuotaPercentage 是否已赋值
                      * @return DiskQuotaPercentage 是否已赋值
+                     * 
                      */
                     bool DiskQuotaPercentageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepForwardPercentage 每次向前调整消息保留时间百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStepForwardPercentage() const;
 
                     /**
                      * 设置每次向前调整消息保留时间百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepForwardPercentage 每次向前调整消息保留时间百分比
+                     * @param _stepForwardPercentage 每次向前调整消息保留时间百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepForwardPercentage(const int64_t& _stepForwardPercentage);
 
                     /**
                      * 判断参数 StepForwardPercentage 是否已赋值
                      * @return StepForwardPercentage 是否已赋值
+                     * 
                      */
                     bool StepForwardPercentageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BottomRetention 保底时长，单位分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBottomRetention() const;
 
                     /**
                      * 设置保底时长，单位分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BottomRetention 保底时长，单位分钟
+                     * @param _bottomRetention 保底时长，单位分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBottomRetention(const int64_t& _bottomRetention);
 
                     /**
                      * 判断参数 BottomRetention 是否已赋值
                      * @return BottomRetention 是否已赋值
+                     * 
                      */
                     bool BottomRetentionHasBeenSet() const;
 

@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取数量限制
                      * @return Limit 数量限制
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置数量限制
-                     * @param Limit 数量限制
+                     * @param _limit 数量限制
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取规则ID过滤，支持模糊查询
                      * @return PsaIds 规则ID过滤，支持模糊查询
+                     * 
                      */
                     std::vector<std::string> GetPsaIds() const;
 
                     /**
                      * 设置规则ID过滤，支持模糊查询
-                     * @param PsaIds 规则ID过滤，支持模糊查询
+                     * @param _psaIds 规则ID过滤，支持模糊查询
+                     * 
                      */
                     void SetPsaIds(const std::vector<std::string>& _psaIds);
 
                     /**
                      * 判断参数 PsaIds 是否已赋值
                      * @return PsaIds 是否已赋值
+                     * 
                      */
                     bool PsaIdsHasBeenSet() const;
 
                     /**
                      * 获取规则别名过滤，支持模糊查询
                      * @return PsaNames 规则别名过滤，支持模糊查询
+                     * 
                      */
                     std::vector<std::string> GetPsaNames() const;
 
                     /**
                      * 设置规则别名过滤，支持模糊查询
-                     * @param PsaNames 规则别名过滤，支持模糊查询
+                     * @param _psaNames 规则别名过滤，支持模糊查询
+                     * 
                      */
                     void SetPsaNames(const std::vector<std::string>& _psaNames);
 
                     /**
                      * 判断参数 PsaNames 是否已赋值
                      * @return PsaNames 是否已赋值
+                     * 
                      */
                     bool PsaNamesHasBeenSet() const;
 
                     /**
                      * 获取标签过滤
                      * @return Tags 标签过滤
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签过滤
-                     * @param Tags 标签过滤
+                     * @param _tags 标签过滤
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取排序字段，取值支持：CreateTime
                      * @return OrderField 排序字段，取值支持：CreateTime
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段，取值支持：CreateTime
-                     * @param OrderField 排序字段，取值支持：CreateTime
+                     * @param _orderField 排序字段，取值支持：CreateTime
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方式 0:递增(默认) 1:递减
                      * @return Order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
                      * 设置排序方式 0:递增(默认) 1:递减
-                     * @param Order 排序方式 0:递增(默认) 1:递减
+                     * @param _order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     void SetOrder(const uint64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

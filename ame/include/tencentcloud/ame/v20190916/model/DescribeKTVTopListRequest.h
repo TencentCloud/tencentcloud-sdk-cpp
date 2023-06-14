@@ -47,20 +47,23 @@ namespace TencentCloud
 <li> Hot, 热歌榜。</li>
                      * @return Type 榜单类型。默认Hot
 <li> Hot, 热歌榜。</li>
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置榜单类型。默认Hot
 <li> Hot, 热歌榜。</li>
-                     * @param Type 榜单类型。默认Hot
+                     * @param _type 榜单类型。默认Hot
 <li> Hot, 热歌榜。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return Period 榜单周期 默认为Week
 <li> Week, 周榜。</li>
 <li> Month, 月榜。</li>
+                     * 
                      */
                     std::string GetPeriod() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置榜单周期 默认为Week
 <li> Week, 周榜。</li>
 <li> Month, 月榜。</li>
-                     * @param Period 榜单周期 默认为Week
+                     * @param _period 榜单周期 默认为Week
 <li> Week, 周榜。</li>
 <li> Month, 月榜。</li>
+                     * 
                      */
                     void SetPeriod(const std::string& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

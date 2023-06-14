@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取配置文件名称
                      * @return FileName 配置文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置配置文件名称
-                     * @param FileName 配置文件名称
+                     * @param _fileName 配置文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取配置文件对应的相关属性信息
                      * @return FileConf 配置文件对应的相关属性信息
+                     * 
                      */
                     std::string GetFileConf() const;
 
                     /**
                      * 设置配置文件对应的相关属性信息
-                     * @param FileConf 配置文件对应的相关属性信息
+                     * @param _fileConf 配置文件对应的相关属性信息
+                     * 
                      */
                     void SetFileConf(const std::string& _fileConf);
 
                     /**
                      * 判断参数 FileConf 是否已赋值
                      * @return FileConf 是否已赋值
+                     * 
                      */
                     bool FileConfHasBeenSet() const;
 
                     /**
                      * 获取配置文件对应的其他属性信息
                      * @return KeyConf 配置文件对应的其他属性信息
+                     * 
                      */
                     std::string GetKeyConf() const;
 
                     /**
                      * 设置配置文件对应的其他属性信息
-                     * @param KeyConf 配置文件对应的其他属性信息
+                     * @param _keyConf 配置文件对应的其他属性信息
+                     * 
                      */
                     void SetKeyConf(const std::string& _keyConf);
 
                     /**
                      * 判断参数 KeyConf 是否已赋值
                      * @return KeyConf 是否已赋值
+                     * 
                      */
                     bool KeyConfHasBeenSet() const;
 
                     /**
                      * 获取配置文件的内容，base64编码
                      * @return OriParam 配置文件的内容，base64编码
+                     * 
                      */
                     std::string GetOriParam() const;
 
                     /**
                      * 设置配置文件的内容，base64编码
-                     * @param OriParam 配置文件的内容，base64编码
+                     * @param _oriParam 配置文件的内容，base64编码
+                     * 
                      */
                     void SetOriParam(const std::string& _oriParam);
 
                     /**
                      * 判断参数 OriParam 是否已赋值
                      * @return OriParam 是否已赋值
+                     * 
                      */
                     bool OriParamHasBeenSet() const;
 
                     /**
                      * 获取用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启
                      * @return NeedRestart 用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启
+                     * 
                      */
                     int64_t GetNeedRestart() const;
 
                     /**
                      * 设置用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启
-                     * @param NeedRestart 用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启
+                     * @param _needRestart 用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启
+                     * 
                      */
                     void SetNeedRestart(const int64_t& _needRestart);
 
                     /**
                      * 判断参数 NeedRestart 是否已赋值
                      * @return NeedRestart 是否已赋值
+                     * 
                      */
                     bool NeedRestartHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 保存配置文件的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置保存配置文件的路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePath 保存配置文件的路径
+                     * @param _filePath 保存配置文件的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

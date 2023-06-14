@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUrl 文件下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 

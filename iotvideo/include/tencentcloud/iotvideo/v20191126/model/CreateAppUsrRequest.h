@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取标识用户的唯一ID，防止同一个用户多次注册
                      * @return CunionId 标识用户的唯一ID，防止同一个用户多次注册
+                     * 
                      */
                     std::string GetCunionId() const;
 
                     /**
                      * 设置标识用户的唯一ID，防止同一个用户多次注册
-                     * @param CunionId 标识用户的唯一ID，防止同一个用户多次注册
+                     * @param _cunionId 标识用户的唯一ID，防止同一个用户多次注册
+                     * 
                      */
                     void SetCunionId(const std::string& _cunionId);
 
                     /**
                      * 判断参数 CunionId 是否已赋值
                      * @return CunionId 是否已赋值
+                     * 
                      */
                     bool CunionIdHasBeenSet() const;
 
                     /**
                      * 获取用于小程序关联手机号
                      * @return Mobile 用于小程序关联手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置用于小程序关联手机号
-                     * @param Mobile 用于小程序关联手机号
+                     * @param _mobile 用于小程序关联手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。
                      * @return LoadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID。
-                     * @param LoadBalancerId 负载均衡实例ID。
+                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。
                      * @return ListenerIds 指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 设置指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。
-                     * @param ListenerIds 指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。
+                     * @param _listenerIds 指定删除的监听器ID数组，最大为20个。若不填则删除负载均衡的所有监听器。
+                     * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 

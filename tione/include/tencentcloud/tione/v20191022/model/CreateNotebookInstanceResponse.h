@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取Notebook实例名字
                      * @return NotebookInstanceName Notebook实例名字
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 

@@ -51,216 +51,252 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取Vpc Id
                      * @return VpcId Vpc Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc Id
-                     * @param VpcId Vpc Id
+                     * @param _vpcId Vpc Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网列表
                      * @return SubnetIds 子网列表
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网列表
-                     * @param SubnetIds 子网列表
+                     * @param _subnetIds 子网列表
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取k8s 版本号
                      * @return K8SVersion k8s 版本号
+                     * 
                      */
                     std::string GetK8SVersion() const;
 
                     /**
                      * 设置k8s 版本号
-                     * @param K8SVersion k8s 版本号
+                     * @param _k8SVersion k8s 版本号
+                     * 
                      */
                     void SetK8SVersion(const std::string& _k8SVersion);
 
                     /**
                      * 判断参数 K8SVersion 是否已赋值
                      * @return K8SVersion 是否已赋值
+                     * 
                      */
                     bool K8SVersionHasBeenSet() const;
 
                     /**
                      * 获取集群状态(running运行中，initializing 初始化中，failed异常)
                      * @return Status 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置集群状态(running运行中，initializing 初始化中，failed异常)
-                     * @param Status 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * @param _status 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取集群描述信息
                      * @return ClusterDesc 集群描述信息
+                     * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
                      * 设置集群描述信息
-                     * @param ClusterDesc 集群描述信息
+                     * @param _clusterDesc 集群描述信息
+                     * 
                      */
                     void SetClusterDesc(const std::string& _clusterDesc);
 
                     /**
                      * 判断参数 ClusterDesc 是否已赋值
                      * @return ClusterDesc 是否已赋值
+                     * 
                      */
                     bool ClusterDescHasBeenSet() const;
 
                     /**
                      * 获取集群创建时间
                      * @return CreatedTime 集群创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置集群创建时间
-                     * @param CreatedTime 集群创建时间
+                     * @param _createdTime 集群创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取Service 子网Id
                      * @return ServiceSubnetId Service 子网Id
+                     * 
                      */
                     std::string GetServiceSubnetId() const;
 
                     /**
                      * 设置Service 子网Id
-                     * @param ServiceSubnetId Service 子网Id
+                     * @param _serviceSubnetId Service 子网Id
+                     * 
                      */
                     void SetServiceSubnetId(const std::string& _serviceSubnetId);
 
                     /**
                      * 判断参数 ServiceSubnetId 是否已赋值
                      * @return ServiceSubnetId 是否已赋值
+                     * 
                      */
                     bool ServiceSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取集群的自定义dns 服务器信息
                      * @return DnsServers 集群的自定义dns 服务器信息
+                     * 
                      */
                     std::vector<DnsServerConf> GetDnsServers() const;
 
                     /**
                      * 设置集群的自定义dns 服务器信息
-                     * @param DnsServers 集群的自定义dns 服务器信息
+                     * @param _dnsServers 集群的自定义dns 服务器信息
+                     * 
                      */
                     void SetDnsServers(const std::vector<DnsServerConf>& _dnsServers);
 
                     /**
                      * 判断参数 DnsServers 是否已赋值
                      * @return DnsServers 是否已赋值
+                     * 
                      */
                     bool DnsServersHasBeenSet() const;
 
                     /**
                      * 获取将来删除集群时是否要删除cbs。默认为 FALSE
                      * @return NeedDeleteCbs 将来删除集群时是否要删除cbs。默认为 FALSE
+                     * 
                      */
                     bool GetNeedDeleteCbs() const;
 
                     /**
                      * 设置将来删除集群时是否要删除cbs。默认为 FALSE
-                     * @param NeedDeleteCbs 将来删除集群时是否要删除cbs。默认为 FALSE
+                     * @param _needDeleteCbs 将来删除集群时是否要删除cbs。默认为 FALSE
+                     * 
                      */
                     void SetNeedDeleteCbs(const bool& _needDeleteCbs);
 
                     /**
                      * 判断参数 NeedDeleteCbs 是否已赋值
                      * @return NeedDeleteCbs 是否已赋值
+                     * 
                      */
                     bool NeedDeleteCbsHasBeenSet() const;
 
                     /**
                      * 获取是否在用户集群内开启Dns。默认为TRUE
                      * @return EnableVpcCoreDNS 是否在用户集群内开启Dns。默认为TRUE
+                     * 
                      */
                     bool GetEnableVpcCoreDNS() const;
 
                     /**
                      * 设置是否在用户集群内开启Dns。默认为TRUE
-                     * @param EnableVpcCoreDNS 是否在用户集群内开启Dns。默认为TRUE
+                     * @param _enableVpcCoreDNS 是否在用户集群内开启Dns。默认为TRUE
+                     * 
                      */
                     void SetEnableVpcCoreDNS(const bool& _enableVpcCoreDNS);
 
                     /**
                      * 判断参数 EnableVpcCoreDNS 是否已赋值
                      * @return EnableVpcCoreDNS 是否已赋值
+                     * 
                      */
                     bool EnableVpcCoreDNSHasBeenSet() const;
 
@@ -269,20 +305,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 标签描述列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagSpecification> GetTagSpecification() const;
 
                     /**
                      * 设置标签描述列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSpecification 标签描述列表。
+                     * @param _tagSpecification 标签描述列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 

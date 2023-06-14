@@ -61,6 +61,7 @@ namespace TencentCloud
 <li>uri：HTTP请求URI；</li>
 <li>body_raw：HTTP请求Body；</li>
 <li>body_json： JSON格式的HTTP Body。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -72,19 +73,21 @@ namespace TencentCloud
 <li>uri：HTTP请求URI；</li>
 <li>body_raw：HTTP请求Body；</li>
 <li>body_json： JSON格式的HTTP Body。</li>
-                     * @param Type 例外跳过类型，取值为：
+                     * @param _type 例外跳过类型，取值为：
 <li>header_fields：HTTP请求Header；</li>
 <li>cookie：HTTP请求Cookie；</li>
 <li>query_string：HTTP请求URL中的Query参数；</li>
 <li>uri：HTTP请求URI；</li>
 <li>body_raw：HTTP请求Body；</li>
 <li>body_json： JSON格式的HTTP Body。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -105,6 +108,7 @@ namespace TencentCloud
 <li>keys：所有的Key；</li>
 <li>values：匹配Key对应的值；</li>
 <li>key_value：匹配Key及匹配Value。</li>
+                     * 
                      */
                     std::string GetSelector() const;
 
@@ -117,7 +121,7 @@ namespace TencentCloud
 <li>keys：所有的Key；</li>
 <li>values：匹配Key对应的值；</li>
 <li>key_value：匹配Key及匹配Value。</li>
-                     * @param Selector 选择跳过的字段，取值为：
+                     * @param _selector 选择跳过的字段，取值为：
 <li>args：uri 下选择 query 参数: ?name1=jack&age=12；</li>
 <li>path：uri 下选择部分路径：/path/to/resource.jpg；</li>
 <li>full：uri 下选择完整路径：example.com/path/to/resource.jpg?name1=jack&age=12；</li>
@@ -125,12 +129,14 @@ namespace TencentCloud
 <li>keys：所有的Key；</li>
 <li>values：匹配Key对应的值；</li>
 <li>key_value：匹配Key及匹配Value。</li>
+                     * 
                      */
                     void SetSelector(const std::string& _selector);
 
                     /**
                      * 判断参数 Selector 是否已赋值
                      * @return Selector 是否已赋值
+                     * 
                      */
                     bool SelectorHasBeenSet() const;
 
@@ -141,6 +147,7 @@ namespace TencentCloud
                      * @return MatchFromType 匹配Key所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
+                     * 
                      */
                     std::string GetMatchFromType() const;
 
@@ -148,15 +155,17 @@ namespace TencentCloud
                      * 设置匹配Key所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
-                     * @param MatchFromType 匹配Key所使用的匹配方式，取值为：
+                     * @param _matchFromType 匹配Key所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
+                     * 
                      */
                     void SetMatchFromType(const std::string& _matchFromType);
 
                     /**
                      * 判断参数 MatchFromType 是否已赋值
                      * @return MatchFromType 是否已赋值
+                     * 
                      */
                     bool MatchFromTypeHasBeenSet() const;
 
@@ -165,20 +174,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchFrom 匹配Key的值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMatchFrom() const;
 
                     /**
                      * 设置匹配Key的值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MatchFrom 匹配Key的值。
+                     * @param _matchFrom 匹配Key的值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMatchFrom(const std::vector<std::string>& _matchFrom);
 
                     /**
                      * 判断参数 MatchFrom 是否已赋值
                      * @return MatchFrom 是否已赋值
+                     * 
                      */
                     bool MatchFromHasBeenSet() const;
 
@@ -189,6 +201,7 @@ namespace TencentCloud
                      * @return MatchContentType 匹配Content所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
+                     * 
                      */
                     std::string GetMatchContentType() const;
 
@@ -196,15 +209,17 @@ namespace TencentCloud
                      * 设置匹配Content所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
-                     * @param MatchContentType 匹配Content所使用的匹配方式，取值为：
+                     * @param _matchContentType 匹配Content所使用的匹配方式，取值为：
 <li>equal：精准匹配，等于；</li>
 <li>wildcard：通配符匹配，支持 * 通配。</li>
+                     * 
                      */
                     void SetMatchContentType(const std::string& _matchContentType);
 
                     /**
                      * 判断参数 MatchContentType 是否已赋值
                      * @return MatchContentType 是否已赋值
+                     * 
                      */
                     bool MatchContentTypeHasBeenSet() const;
 
@@ -213,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchContent 匹配Value的值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMatchContent() const;
 
                     /**
                      * 设置匹配Value的值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MatchContent 匹配Value的值。
+                     * @param _matchContent 匹配Value的值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMatchContent(const std::vector<std::string>& _matchContent);
 
                     /**
                      * 判断参数 MatchContent 是否已赋值
                      * @return MatchContent 是否已赋值
+                     * 
                      */
                     bool MatchContentHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetType 资产类型
+                     * @param _assetType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetCount 统计计数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAssetCount() const;
 
                     /**
                      * 设置统计计数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetCount 统计计数
+                     * @param _assetCount 统计计数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetCount(const uint64_t& _assetCount);
 
                     /**
                      * 判断参数 AssetCount 是否已赋值
                      * @return AssetCount 是否已赋值
+                     * 
                      */
                     bool AssetCountHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取日期，格式yyyy-MM-dd
                      * @return Date 日期，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期，格式yyyy-MM-dd
-                     * @param Date 日期，格式yyyy-MM-dd
+                     * @param _date 日期，格式yyyy-MM-dd
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取分时客流详细信息
                      * @return HourTrafficInfoDetailSet 分时客流详细信息
+                     * 
                      */
                     std::vector<HourTrafficInfoDetail> GetHourTrafficInfoDetailSet() const;
 
                     /**
                      * 设置分时客流详细信息
-                     * @param HourTrafficInfoDetailSet 分时客流详细信息
+                     * @param _hourTrafficInfoDetailSet 分时客流详细信息
+                     * 
                      */
                     void SetHourTrafficInfoDetailSet(const std::vector<HourTrafficInfoDetail>& _hourTrafficInfoDetailSet);
 
                     /**
                      * 判断参数 HourTrafficInfoDetailSet 是否已赋值
                      * @return HourTrafficInfoDetailSet 是否已赋值
+                     * 
                      */
                     bool HourTrafficInfoDetailSetHasBeenSet() const;
 

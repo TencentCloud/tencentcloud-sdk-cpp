@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdleTimeout 空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIdleTimeout() const;
 
                     /**
                      * 设置空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdleTimeout 空闲超时时间。
+                     * @param _idleTimeout 空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdleTimeout(const int64_t& _idleTimeout);
 
                     /**
                      * 判断参数 IdleTimeout 是否已赋值
                      * @return IdleTimeout 是否已赋值
+                     * 
                      */
                     bool IdleTimeoutHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChunkSize Chunk大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChunkSize() const;
 
                     /**
                      * 设置Chunk大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChunkSize Chunk大小。
+                     * @param _chunkSize Chunk大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChunkSize(const int64_t& _chunkSize);
 
                     /**
                      * 判断参数 ChunkSize 是否已赋值
                      * @return ChunkSize 是否已赋值
+                     * 
                      */
                     bool ChunkSizeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destinations 转推RTMP的目标地址信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RTMPAddressDestination> GetDestinations() const;
 
                     /**
                      * 设置转推RTMP的目标地址信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Destinations 转推RTMP的目标地址信息列表。
+                     * @param _destinations 转推RTMP的目标地址信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestinations(const std::vector<RTMPAddressDestination>& _destinations);
 
                     /**
                      * 判断参数 Destinations 是否已赋值
                      * @return Destinations 是否已赋值
+                     * 
                      */
                     bool DestinationsHasBeenSet() const;
 

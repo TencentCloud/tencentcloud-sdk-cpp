@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取源镜像名称，不包含domain。例如： tencentyun/foo:v1
                      * @return SrcImage 源镜像名称，不包含domain。例如： tencentyun/foo:v1
+                     * 
                      */
                     std::string GetSrcImage() const;
 
                     /**
                      * 设置源镜像名称，不包含domain。例如： tencentyun/foo:v1
-                     * @param SrcImage 源镜像名称，不包含domain。例如： tencentyun/foo:v1
+                     * @param _srcImage 源镜像名称，不包含domain。例如： tencentyun/foo:v1
+                     * 
                      */
                     void SetSrcImage(const std::string& _srcImage);
 
                     /**
                      * 判断参数 SrcImage 是否已赋值
                      * @return SrcImage 是否已赋值
+                     * 
                      */
                     bool SrcImageHasBeenSet() const;
 
                     /**
                      * 获取目的镜像名称，不包含domain。例如： tencentyun/foo:latest
                      * @return DestImage 目的镜像名称，不包含domain。例如： tencentyun/foo:latest
+                     * 
                      */
                     std::string GetDestImage() const;
 
                     /**
                      * 设置目的镜像名称，不包含domain。例如： tencentyun/foo:latest
-                     * @param DestImage 目的镜像名称，不包含domain。例如： tencentyun/foo:latest
+                     * @param _destImage 目的镜像名称，不包含domain。例如： tencentyun/foo:latest
+                     * 
                      */
                     void SetDestImage(const std::string& _destImage);
 
                     /**
                      * 判断参数 DestImage 是否已赋值
                      * @return DestImage 是否已赋值
+                     * 
                      */
                     bool DestImageHasBeenSet() const;
 

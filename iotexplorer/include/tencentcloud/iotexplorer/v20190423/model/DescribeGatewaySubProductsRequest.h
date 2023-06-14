@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取网关产品ID
                      * @return GatewayProductId 网关产品ID
+                     * 
                      */
                     std::string GetGatewayProductId() const;
 
                     /**
                      * 设置网关产品ID
-                     * @param GatewayProductId 网关产品ID
+                     * @param _gatewayProductId 网关产品ID
+                     * 
                      */
                     void SetGatewayProductId(const std::string& _gatewayProductId);
 
                     /**
                      * 判断参数 GatewayProductId 是否已赋值
                      * @return GatewayProductId 是否已赋值
+                     * 
                      */
                     bool GatewayProductIdHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量
                      * @return Offset 分页的偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量
-                     * @param Offset 分页的偏移量
+                     * @param _offset 分页的偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小
                      * @return Limit 分页的大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小
-                     * @param Limit 分页的大小
+                     * @param _limit 分页的大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否跨账号产品
                      * @return ProductSource 是否跨账号产品
+                     * 
                      */
                     int64_t GetProductSource() const;
 
                     /**
                      * 设置是否跨账号产品
-                     * @param ProductSource 是否跨账号产品
+                     * @param _productSource 是否跨账号产品
+                     * 
                      */
                     void SetProductSource(const int64_t& _productSource);
 
                     /**
                      * 判断参数 ProductSource 是否已赋值
                      * @return ProductSource 是否已赋值
+                     * 
                      */
                     bool ProductSourceHasBeenSet() const;
 

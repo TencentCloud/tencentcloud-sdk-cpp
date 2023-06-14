@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例所属groupId
                      * @return GroupId 实例所属groupId
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置实例所属groupId
-                     * @param GroupId 实例所属groupId
+                     * @param _groupId 实例所属groupId
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取值从0开始
                      * @return Offset 偏移量，取值从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取值从0开始
-                     * @param Offset 偏移量，取值从0开始
+                     * @param _offset 偏移量，取值从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数，默认为20， 取值应为1~50
                      * @return Limit 分页个数，默认为20， 取值应为1~50
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页个数，默认为20， 取值应为1~50
-                     * @param Limit 分页个数，默认为20， 取值应为1~50
+                     * @param _limit 分页个数，默认为20， 取值应为1~50
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤字段
                      * @return PodNameList 过滤字段
+                     * 
                      */
                     std::vector<std::string> GetPodNameList() const;
 
                     /**
                      * 设置过滤字段
-                     * @param PodNameList 过滤字段
+                     * @param _podNameList 过滤字段
+                     * 
                      */
                     void SetPodNameList(const std::vector<std::string>& _podNameList);
 
                     /**
                      * 判断参数 PodNameList 是否已赋值
                      * @return PodNameList 是否已赋值
+                     * 
                      */
                     bool PodNameListHasBeenSet() const;
 

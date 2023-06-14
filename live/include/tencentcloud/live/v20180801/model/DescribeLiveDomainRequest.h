@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名。
                      * @return DomainName 域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名。
-                     * @param DomainName 域名。
+                     * @param _domainName 域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 

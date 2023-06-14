@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return X 矩形框左上角水平座标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置矩形框左上角水平座标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param X 矩形框左上角水平座标
+                     * @param _x 矩形框左上角水平座标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetX(const double& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y 矩形框左上角竖直座标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置矩形框左上角竖直座标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Y 矩形框左上角竖直座标
+                     * @param _y 矩形框左上角竖直座标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetY(const double& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 矩形框宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWidth() const;
 
                     /**
                      * 设置矩形框宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 矩形框宽度
+                     * @param _width 矩形框宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const double& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 矩形框长度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetHeight() const;
 
                     /**
                      * 设置矩形框长度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 矩形框长度
+                     * @param _height 矩形框长度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const double& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取返回的监听器中标识是否绑定在此流量镜像中。
                      * @return TrafficMirrorId 返回的监听器中标识是否绑定在此流量镜像中。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置返回的监听器中标识是否绑定在此流量镜像中。
-                     * @param TrafficMirrorId 返回的监听器中标识是否绑定在此流量镜像中。
+                     * @param _trafficMirrorId 返回的监听器中标识是否绑定在此流量镜像中。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取待获取监听器所在的VPC的ID。
                      * @return VpcId 待获取监听器所在的VPC的ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置待获取监听器所在的VPC的ID。
-                     * @param VpcId 待获取监听器所在的VPC的ID。
+                     * @param _vpcId 待获取监听器所在的VPC的ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取此VPC中获取负载均衡的偏移。
                      * @return Offset 此VPC中获取负载均衡的偏移。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置此VPC中获取负载均衡的偏移。
-                     * @param Offset 此VPC中获取负载均衡的偏移。
+                     * @param _offset 此VPC中获取负载均衡的偏移。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取此VPC中获取负载均衡的数量。
                      * @return Limit 此VPC中获取负载均衡的数量。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置此VPC中获取负载均衡的数量。
-                     * @param Limit 此VPC中获取负载均衡的数量。
+                     * @param _limit 此VPC中获取负载均衡的数量。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -132,6 +144,7 @@ ListenerId - String - （过滤条件）监听器ID。
 ListenerName -  String - （过滤条件）监听器名称。
 Protocol -  String - （过滤条件）七层协议。
 LoadBalancerPort -  String - （过滤条件）监听器端口。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -144,7 +157,7 @@ ListenerId - String - （过滤条件）监听器ID。
 ListenerName -  String - （过滤条件）监听器名称。
 Protocol -  String - （过滤条件）七层协议。
 LoadBalancerPort -  String - （过滤条件）监听器端口。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 LoadBalancerId - String - （过滤条件）负载均衡ID。
 LoadBalancerName - String - （过滤条件）负载均衡名称。
 Vip - String - （过滤条件）VIP。
@@ -152,12 +165,14 @@ ListenerId - String - （过滤条件）监听器ID。
 ListenerName -  String - （过滤条件）监听器名称。
 Protocol -  String - （过滤条件）七层协议。
 LoadBalancerPort -  String - （过滤条件）监听器端口。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

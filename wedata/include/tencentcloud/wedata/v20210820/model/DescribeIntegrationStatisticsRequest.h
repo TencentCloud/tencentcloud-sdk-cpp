@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取任务类型（实时：201，离线：202）
                      * @return TaskType 任务类型（实时：201，离线：202）
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型（实时：201，离线：202）
-                     * @param TaskType 任务类型（实时：201，离线：202）
+                     * @param _taskType 任务类型（实时：201，离线：202）
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取查询日期
                      * @return QueryDate 查询日期
+                     * 
                      */
                     std::string GetQueryDate() const;
 
                     /**
                      * 设置查询日期
-                     * @param QueryDate 查询日期
+                     * @param _queryDate 查询日期
+                     * 
                      */
                     void SetQueryDate(const std::string& _queryDate);
 
                     /**
                      * 判断参数 QueryDate 是否已赋值
                      * @return QueryDate 是否已赋值
+                     * 
                      */
                     bool QueryDateHasBeenSet() const;
 

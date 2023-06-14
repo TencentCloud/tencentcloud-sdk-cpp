@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的数据列表。
                      * @return DataInfoList 返回的数据列表。
+                     * 
                      */
                     std::vector<PushQualityData> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

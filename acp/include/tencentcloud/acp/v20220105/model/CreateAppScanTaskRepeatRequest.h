@@ -45,216 +45,252 @@ namespace TencentCloud
                     /**
                      * 获取任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
                      * @return Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     * 
                      */
                     int64_t GetSource() const;
 
                     /**
                      * 设置任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
-                     * @param Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     * @param _source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     * 
                      */
                     void SetSource(const int64_t& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取应用平台, 0:android, 1:ios, 2:小程序
                      * @return Platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * 
                      */
                     int64_t GetPlatform() const;
 
                     /**
                      * 设置应用平台, 0:android, 1:ios, 2:小程序
-                     * @param Platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * @param _platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * 
                      */
                     void SetPlatform(const int64_t& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取任务类型, 0:基础版, 1:专家版, 2:本地化
                      * @return TaskType 任务类型, 0:基础版, 1:专家版, 2:本地化
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型, 0:基础版, 1:专家版, 2:本地化
-                     * @param TaskType 任务类型, 0:基础版, 1:专家版, 2:本地化
+                     * @param _taskType 任务类型, 0:基础版, 1:专家版, 2:本地化
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取原诊断任务ID
                      * @return OrgTaskID 原诊断任务ID
+                     * 
                      */
                     std::string GetOrgTaskID() const;
 
                     /**
                      * 设置原诊断任务ID
-                     * @param OrgTaskID 原诊断任务ID
+                     * @param _orgTaskID 原诊断任务ID
+                     * 
                      */
                     void SetOrgTaskID(const std::string& _orgTaskID);
 
                     /**
                      * 判断参数 OrgTaskID 是否已赋值
                      * @return OrgTaskID 是否已赋值
+                     * 
                      */
                     bool OrgTaskIDHasBeenSet() const;
 
                     /**
                      * 获取App包名
                      * @return AppPackage App包名
+                     * 
                      */
                     std::string GetAppPackage() const;
 
                     /**
                      * 设置App包名
-                     * @param AppPackage App包名
+                     * @param _appPackage App包名
+                     * 
                      */
                     void SetAppPackage(const std::string& _appPackage);
 
                     /**
                      * 判断参数 AppPackage 是否已赋值
                      * @return AppPackage 是否已赋值
+                     * 
                      */
                     bool AppPackageHasBeenSet() const;
 
                     /**
                      * 获取上传的文件ID(任务来源为1时必填)
                      * @return FileID 上传的文件ID(任务来源为1时必填)
+                     * 
                      */
                     std::string GetFileID() const;
 
                     /**
                      * 设置上传的文件ID(任务来源为1时必填)
-                     * @param FileID 上传的文件ID(任务来源为1时必填)
+                     * @param _fileID 上传的文件ID(任务来源为1时必填)
+                     * 
                      */
                     void SetFileID(const std::string& _fileID);
 
                     /**
                      * 判断参数 FileID 是否已赋值
                      * @return FileID 是否已赋值
+                     * 
                      */
                     bool FileIDHasBeenSet() const;
 
                     /**
                      * 获取软件下载链接地址(任务来源为2时必填)
                      * @return AppDownloadUrl 软件下载链接地址(任务来源为2时必填)
+                     * 
                      */
                     std::string GetAppDownloadUrl() const;
 
                     /**
                      * 设置软件下载链接地址(任务来源为2时必填)
-                     * @param AppDownloadUrl 软件下载链接地址(任务来源为2时必填)
+                     * @param _appDownloadUrl 软件下载链接地址(任务来源为2时必填)
+                     * 
                      */
                     void SetAppDownloadUrl(const std::string& _appDownloadUrl);
 
                     /**
                      * 判断参数 AppDownloadUrl 是否已赋值
                      * @return AppDownloadUrl 是否已赋值
+                     * 
                      */
                     bool AppDownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取隐私文本下载地址(任务来源为2时必填)
                      * @return PrivacyTextUrl 隐私文本下载地址(任务来源为2时必填)
+                     * 
                      */
                     std::string GetPrivacyTextUrl() const;
 
                     /**
                      * 设置隐私文本下载地址(任务来源为2时必填)
-                     * @param PrivacyTextUrl 隐私文本下载地址(任务来源为2时必填)
+                     * @param _privacyTextUrl 隐私文本下载地址(任务来源为2时必填)
+                     * 
                      */
                     void SetPrivacyTextUrl(const std::string& _privacyTextUrl);
 
                     /**
                      * 判断参数 PrivacyTextUrl 是否已赋值
                      * @return PrivacyTextUrl 是否已赋值
+                     * 
                      */
                     bool PrivacyTextUrlHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return AppName 应用名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-                     * @param AppName 应用名称
+                     * @param _appName 应用名称
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取隐私申明文件名称
                      * @return PrivacyTextName 隐私申明文件名称
+                     * 
                      */
                     std::string GetPrivacyTextName() const;
 
                     /**
                      * 设置隐私申明文件名称
-                     * @param PrivacyTextName 隐私申明文件名称
+                     * @param _privacyTextName 隐私申明文件名称
+                     * 
                      */
                     void SetPrivacyTextName(const std::string& _privacyTextName);
 
                     /**
                      * 判断参数 PrivacyTextName 是否已赋值
                      * @return PrivacyTextName 是否已赋值
+                     * 
                      */
                     bool PrivacyTextNameHasBeenSet() const;
 
                     /**
                      * 获取软件Sha1值(PrivacyTextMD5不为空时必填)
                      * @return AppSha1 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     * 
                      */
                     std::string GetAppSha1() const;
 
                     /**
                      * 设置软件Sha1值(PrivacyTextMD5不为空时必填)
-                     * @param AppSha1 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     * @param _appSha1 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     * 
                      */
                     void SetAppSha1(const std::string& _appSha1);
 
                     /**
                      * 判断参数 AppSha1 是否已赋值
                      * @return AppSha1 是否已赋值
+                     * 
                      */
                     bool AppSha1HasBeenSet() const;
 
                     /**
                      * 获取隐私申明文本md5(AppSha1不为空时必填)
                      * @return PrivacyTextMD5 隐私申明文本md5(AppSha1不为空时必填)
+                     * 
                      */
                     std::string GetPrivacyTextMD5() const;
 
                     /**
                      * 设置隐私申明文本md5(AppSha1不为空时必填)
-                     * @param PrivacyTextMD5 隐私申明文本md5(AppSha1不为空时必填)
+                     * @param _privacyTextMD5 隐私申明文本md5(AppSha1不为空时必填)
+                     * 
                      */
                     void SetPrivacyTextMD5(const std::string& _privacyTextMD5);
 
                     /**
                      * 判断参数 PrivacyTextMD5 是否已赋值
                      * @return PrivacyTextMD5 是否已赋值
+                     * 
                      */
                     bool PrivacyTextMD5HasBeenSet() const;
 

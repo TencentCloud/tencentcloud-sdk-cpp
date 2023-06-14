@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取函数日志的总数
                      * @return TotalCount 函数日志的总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取函数日志信息
                      * @return Data 函数日志信息
+                     * 
                      */
                     std::vector<FunctionLog> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取该字段已下线
                      * @return SearchContext 该字段已下线
+                     * 
                      */
                     LogSearchContext GetSearchContext() const;
 
                     /**
                      * 判断参数 SearchContext 是否已赋值
                      * @return SearchContext 是否已赋值
+                     * 
                      */
                     bool SearchContextHasBeenSet() const;
 

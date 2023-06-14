@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取执行的事件ID
                      * @return EventId 执行的事件ID
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

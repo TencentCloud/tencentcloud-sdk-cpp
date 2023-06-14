@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取别名对象
                      * @return Alias 别名对象
+                     * 
                      */
                     Alias GetAlias() const;
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取统计开始日期
                      * @return StartDate 统计开始日期
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置统计开始日期
-                     * @param StartDate 统计开始日期
+                     * @param _startDate 统计开始日期
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取统计结束日期
                      * @return EndDate 统计结束日期
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置统计结束日期
-                     * @param EndDate 统计结束日期
+                     * @param _endDate 统计结束日期
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取产品id
                      * @return ProductId 产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品id
-                     * @param ProductId 产品id
+                     * @param _productId 产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

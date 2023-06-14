@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取P2P流统计信息。
                      * @return DataInfoList P2P流统计信息。
+                     * 
                      */
                     std::vector<XP2PDetailInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

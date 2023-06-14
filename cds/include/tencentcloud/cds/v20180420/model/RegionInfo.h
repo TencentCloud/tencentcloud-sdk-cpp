@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return Region 地域名称
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域名称
-                     * @param Region 地域名称
+                     * @param _region 地域名称
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域描述
                      * @return RegionName 地域描述
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域描述
-                     * @param RegionName 地域描述
+                     * @param _regionName 地域描述
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域可用状态
                      * @return RegionState 地域可用状态
+                     * 
                      */
                     int64_t GetRegionState() const;
 
                     /**
                      * 设置地域可用状态
-                     * @param RegionState 地域可用状态
+                     * @param _regionState 地域可用状态
+                     * 
                      */
                     void SetRegionState(const int64_t& _regionState);
 
                     /**
                      * 判断参数 RegionState 是否已赋值
                      * @return RegionState 是否已赋值
+                     * 
                      */
                     bool RegionStateHasBeenSet() const;
 

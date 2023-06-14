@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取网关id
                      * @return GatewayId 网关id
+                     * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关id
-                     * @param GatewayId 网关id
+                     * @param _gatewayId 网关id
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取服务名称
                      * @return GatewayRouteName 服务名称
+                     * 
                      */
                     std::string GetGatewayRouteName() const;
 
                     /**
                      * 设置服务名称
-                     * @param GatewayRouteName 服务名称
+                     * @param _gatewayRouteName 服务名称
+                     * 
                      */
                     void SetGatewayRouteName(const std::string& _gatewayRouteName);
 
                     /**
                      * 判断参数 GatewayRouteName 是否已赋值
                      * @return GatewayRouteName 是否已赋值
+                     * 
                      */
                     bool GatewayRouteNameHasBeenSet() const;
 
                     /**
                      * 获取服务地址
                      * @return GatewayRouteAddr 服务地址
+                     * 
                      */
                     std::string GetGatewayRouteAddr() const;
 
                     /**
                      * 设置服务地址
-                     * @param GatewayRouteAddr 服务地址
+                     * @param _gatewayRouteAddr 服务地址
+                     * 
                      */
                     void SetGatewayRouteAddr(const std::string& _gatewayRouteAddr);
 
                     /**
                      * 判断参数 GatewayRouteAddr 是否已赋值
                      * @return GatewayRouteAddr 是否已赋值
+                     * 
                      */
                     bool GatewayRouteAddrHasBeenSet() const;
 
                     /**
                      * 获取协议类型 http/https
                      * @return GatewayRouteProtocol 协议类型 http/https
+                     * 
                      */
                     std::string GetGatewayRouteProtocol() const;
 
                     /**
                      * 设置协议类型 http/https
-                     * @param GatewayRouteProtocol 协议类型 http/https
+                     * @param _gatewayRouteProtocol 协议类型 http/https
+                     * 
                      */
                     void SetGatewayRouteProtocol(const std::string& _gatewayRouteProtocol);
 
                     /**
                      * 判断参数 GatewayRouteProtocol 是否已赋值
                      * @return GatewayRouteProtocol 是否已赋值
+                     * 
                      */
                     bool GatewayRouteProtocolHasBeenSet() const;
 
                     /**
                      * 获取服务描述
                      * @return GatewayRouteDesc 服务描述
+                     * 
                      */
                     std::string GetGatewayRouteDesc() const;
 
                     /**
                      * 设置服务描述
-                     * @param GatewayRouteDesc 服务描述
+                     * @param _gatewayRouteDesc 服务描述
+                     * 
                      */
                     void SetGatewayRouteDesc(const std::string& _gatewayRouteDesc);
 
                     /**
                      * 判断参数 GatewayRouteDesc 是否已赋值
                      * @return GatewayRouteDesc 是否已赋值
+                     * 
                      */
                     bool GatewayRouteDescHasBeenSet() const;
 

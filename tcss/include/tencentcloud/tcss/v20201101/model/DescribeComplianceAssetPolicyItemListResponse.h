@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回检测项的总数。如果用户未启用基线检查，此处返回0。
                      * @return TotalCount 返回检测项的总数。如果用户未启用基线检查，此处返回0。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回某个资产下的检测项的列表。
                      * @return AssetPolicyItemList 返回某个资产下的检测项的列表。
+                     * 
                      */
                     std::vector<ComplianceAssetPolicyItem> GetAssetPolicyItemList() const;
 
                     /**
                      * 判断参数 AssetPolicyItemList 是否已赋值
                      * @return AssetPolicyItemList 是否已赋值
+                     * 
                      */
                     bool AssetPolicyItemListHasBeenSet() const;
 

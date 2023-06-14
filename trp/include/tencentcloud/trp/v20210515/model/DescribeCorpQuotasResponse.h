@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpQuotas 子企业额度使用情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CorpQuota> GetCorpQuotas() const;
 
                     /**
                      * 判断参数 CorpQuotas 是否已赋值
                      * @return CorpQuotas 是否已赋值
+                     * 
                      */
                     bool CorpQuotasHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 记录总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

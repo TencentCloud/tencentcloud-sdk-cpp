@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取产品id
                      * @return ProductId 产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品id
-                     * @param ProductId 产品id
+                     * @param _productId 产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

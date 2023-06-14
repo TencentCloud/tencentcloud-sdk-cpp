@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaximumIndividualPlayerLatencyMilliseconds 任意player允许的最大延迟，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaximumIndividualPlayerLatencyMilliseconds() const;
 
                     /**
                      * 设置任意player允许的最大延迟，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaximumIndividualPlayerLatencyMilliseconds 任意player允许的最大延迟，单位：毫秒
+                     * @param _maximumIndividualPlayerLatencyMilliseconds 任意player允许的最大延迟，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaximumIndividualPlayerLatencyMilliseconds(const uint64_t& _maximumIndividualPlayerLatencyMilliseconds);
 
                     /**
                      * 判断参数 MaximumIndividualPlayerLatencyMilliseconds 是否已赋值
                      * @return MaximumIndividualPlayerLatencyMilliseconds 是否已赋值
+                     * 
                      */
                     bool MaximumIndividualPlayerLatencyMillisecondsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDurationSeconds 放置新GameServerSession时强制实施策略的时间长度，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPolicyDurationSeconds() const;
 
                     /**
                      * 设置放置新GameServerSession时强制实施策略的时间长度，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyDurationSeconds 放置新GameServerSession时强制实施策略的时间长度，单位：秒
+                     * @param _policyDurationSeconds 放置新GameServerSession时强制实施策略的时间长度，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyDurationSeconds(const uint64_t& _policyDurationSeconds);
 
                     /**
                      * 判断参数 PolicyDurationSeconds 是否已赋值
                      * @return PolicyDurationSeconds 是否已赋值
+                     * 
                      */
                     bool PolicyDurationSecondsHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取参数模板IP地址成员配额。
                      * @return AddressTemplateMemberLimit 参数模板IP地址成员配额。
+                     * 
                      */
                     uint64_t GetAddressTemplateMemberLimit() const;
 
                     /**
                      * 设置参数模板IP地址成员配额。
-                     * @param AddressTemplateMemberLimit 参数模板IP地址成员配额。
+                     * @param _addressTemplateMemberLimit 参数模板IP地址成员配额。
+                     * 
                      */
                     void SetAddressTemplateMemberLimit(const uint64_t& _addressTemplateMemberLimit);
 
                     /**
                      * 判断参数 AddressTemplateMemberLimit 是否已赋值
                      * @return AddressTemplateMemberLimit 是否已赋值
+                     * 
                      */
                     bool AddressTemplateMemberLimitHasBeenSet() const;
 
                     /**
                      * 获取参数模板IP地址组成员配额。
                      * @return AddressTemplateGroupMemberLimit 参数模板IP地址组成员配额。
+                     * 
                      */
                     uint64_t GetAddressTemplateGroupMemberLimit() const;
 
                     /**
                      * 设置参数模板IP地址组成员配额。
-                     * @param AddressTemplateGroupMemberLimit 参数模板IP地址组成员配额。
+                     * @param _addressTemplateGroupMemberLimit 参数模板IP地址组成员配额。
+                     * 
                      */
                     void SetAddressTemplateGroupMemberLimit(const uint64_t& _addressTemplateGroupMemberLimit);
 
                     /**
                      * 判断参数 AddressTemplateGroupMemberLimit 是否已赋值
                      * @return AddressTemplateGroupMemberLimit 是否已赋值
+                     * 
                      */
                     bool AddressTemplateGroupMemberLimitHasBeenSet() const;
 
                     /**
                      * 获取参数模板I协议端口成员配额。
                      * @return ServiceTemplateMemberLimit 参数模板I协议端口成员配额。
+                     * 
                      */
                     uint64_t GetServiceTemplateMemberLimit() const;
 
                     /**
                      * 设置参数模板I协议端口成员配额。
-                     * @param ServiceTemplateMemberLimit 参数模板I协议端口成员配额。
+                     * @param _serviceTemplateMemberLimit 参数模板I协议端口成员配额。
+                     * 
                      */
                     void SetServiceTemplateMemberLimit(const uint64_t& _serviceTemplateMemberLimit);
 
                     /**
                      * 判断参数 ServiceTemplateMemberLimit 是否已赋值
                      * @return ServiceTemplateMemberLimit 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateMemberLimitHasBeenSet() const;
 
                     /**
                      * 获取参数模板协议端口组成员配额。
                      * @return ServiceTemplateGroupMemberLimit 参数模板协议端口组成员配额。
+                     * 
                      */
                     uint64_t GetServiceTemplateGroupMemberLimit() const;
 
                     /**
                      * 设置参数模板协议端口组成员配额。
-                     * @param ServiceTemplateGroupMemberLimit 参数模板协议端口组成员配额。
+                     * @param _serviceTemplateGroupMemberLimit 参数模板协议端口组成员配额。
+                     * 
                      */
                     void SetServiceTemplateGroupMemberLimit(const uint64_t& _serviceTemplateGroupMemberLimit);
 
                     /**
                      * 判断参数 ServiceTemplateGroupMemberLimit 是否已赋值
                      * @return ServiceTemplateGroupMemberLimit 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupMemberLimitHasBeenSet() const;
 

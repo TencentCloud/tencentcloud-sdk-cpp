@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取性别
                      * @return Gender 性别
+                     * 
                      */
                     std::string GetGender() const;
 
                     /**
                      * 设置性别
-                     * @param Gender 性别
+                     * @param _gender 性别
+                     * 
                      */
                     void SetGender(const std::string& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percent 百分比
+                     * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
                      * 设置百分比
-                     * @param Percent 百分比
+                     * @param _percent 百分比
+                     * 
                      */
                     void SetPercent(const uint64_t& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

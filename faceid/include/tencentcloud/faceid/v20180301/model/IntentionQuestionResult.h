@@ -89,6 +89,7 @@ namespace TencentCloud
 -998: "系统数据异常"   
 -999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFinalResultDetailCode() const;
 
@@ -114,7 +115,7 @@ namespace TencentCloud
 -998: "系统数据异常"   
 -999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalResultDetailCode 意愿核身错误码：
+                     * @param _finalResultDetailCode 意愿核身错误码：
 0: "成功"       
 -1: "参数错误"    
 -2: "系统异常"    
@@ -135,12 +136,14 @@ namespace TencentCloud
 -998: "系统数据异常"   
 -999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinalResultDetailCode(const int64_t& _finalResultDetailCode);
 
                     /**
                      * 判断参数 FinalResultDetailCode 是否已赋值
                      * @return FinalResultDetailCode 是否已赋值
+                     * 
                      */
                     bool FinalResultDetailCodeHasBeenSet() const;
 
@@ -149,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinalResultMessage 意愿核身错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinalResultMessage() const;
 
                     /**
                      * 设置意愿核身错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalResultMessage 意愿核身错误信息
+                     * @param _finalResultMessage 意愿核身错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinalResultMessage(const std::string& _finalResultMessage);
 
                     /**
                      * 判断参数 FinalResultMessage 是否已赋值
                      * @return FinalResultMessage 是否已赋值
+                     * 
                      */
                     bool FinalResultMessageHasBeenSet() const;
 
@@ -171,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Video 视频base64（其中包含全程问题和回答音频，mp4格式）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVideo() const;
 
                     /**
                      * 设置视频base64（其中包含全程问题和回答音频，mp4格式）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Video 视频base64（其中包含全程问题和回答音频，mp4格式）
+                     * @param _video 视频base64（其中包含全程问题和回答音频，mp4格式）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideo(const std::string& _video);
 
                     /**
                      * 判断参数 Video 是否已赋值
                      * @return Video 是否已赋值
+                     * 
                      */
                     bool VideoHasBeenSet() const;
 
@@ -193,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScreenShot 屏幕截图base64列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetScreenShot() const;
 
                     /**
                      * 设置屏幕截图base64列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScreenShot 屏幕截图base64列表
+                     * @param _screenShot 屏幕截图base64列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScreenShot(const std::vector<std::string>& _screenShot);
 
                     /**
                      * 判断参数 ScreenShot 是否已赋值
                      * @return ScreenShot 是否已赋值
+                     * 
                      */
                     bool ScreenShotHasBeenSet() const;
 
@@ -217,6 +229,7 @@ namespace TencentCloud
                      * @return ResultCode 和答案匹配结果列表
 0：成功，-1：不匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetResultCode() const;
 
@@ -224,15 +237,17 @@ namespace TencentCloud
                      * 设置和答案匹配结果列表
 0：成功，-1：不匹配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultCode 和答案匹配结果列表
+                     * @param _resultCode 和答案匹配结果列表
 0：成功，-1：不匹配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultCode(const std::vector<std::string>& _resultCode);
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
@@ -241,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrResult 回答问题语音识别结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAsrResult() const;
 
                     /**
                      * 设置回答问题语音识别结果列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AsrResult 回答问题语音识别结果列表
+                     * @param _asrResult 回答问题语音识别结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAsrResult(const std::vector<std::string>& _asrResult);
 
                     /**
                      * 判断参数 AsrResult 是否已赋值
                      * @return AsrResult 是否已赋值
+                     * 
                      */
                     bool AsrResultHasBeenSet() const;
 
@@ -263,20 +281,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Audios 答案录音音频
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAudios() const;
 
                     /**
                      * 设置答案录音音频
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Audios 答案录音音频
+                     * @param _audios 答案录音音频
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudios(const std::vector<std::string>& _audios);
 
                     /**
                      * 判断参数 Audios 是否已赋值
                      * @return Audios 是否已赋值
+                     * 
                      */
                     bool AudiosHasBeenSet() const;
 
@@ -287,6 +308,7 @@ namespace TencentCloud
                      * @return FinalResultCode 意愿核身最终结果：
 0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinalResultCode() const;
 
@@ -294,15 +316,17 @@ namespace TencentCloud
                      * 设置意愿核身最终结果：
 0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalResultCode 意愿核身最终结果：
+                     * @param _finalResultCode 意愿核身最终结果：
 0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinalResultCode(const std::string& _finalResultCode);
 
                     /**
                      * 判断参数 FinalResultCode 是否已赋值
                      * @return FinalResultCode 是否已赋值
+                     * 
                      */
                     bool FinalResultCodeHasBeenSet() const;
 

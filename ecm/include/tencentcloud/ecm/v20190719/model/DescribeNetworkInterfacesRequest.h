@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
                      * @return NetworkInterfaceIds 弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetNetworkInterfaceIds() const;
 
                     /**
                      * 设置弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
-                     * @param NetworkInterfaceIds 弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * @param _networkInterfaceIds 弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * 
                      */
                     void SetNetworkInterfaceIds(const std::vector<std::string>& _networkInterfaceIds);
 
                     /**
                      * 判断参数 NetworkInterfaceIds 是否已赋值
                      * @return NetworkInterfaceIds 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdsHasBeenSet() const;
 
@@ -86,6 +89,7 @@ address-ip - String - （过滤条件）内网IPv4地址。
 tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2
 tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。
 is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -102,7 +106,7 @@ address-ip - String - （过滤条件）内网IPv4地址。
 tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2
 tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。
 is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。
-                     * @param Filters 过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。
 network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。
@@ -114,66 +118,77 @@ address-ip - String - （过滤条件）内网IPv4地址。
 tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2
 tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。
 is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域，形如ap-xian-ecm。
                      * @return EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域，形如ap-xian-ecm。
-                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * @param _ecmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

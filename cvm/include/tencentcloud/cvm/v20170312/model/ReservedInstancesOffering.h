@@ -51,20 +51,23 @@ namespace TencentCloud
 返回项：<a href="https://cloud.tencent.com/document/product/213/6091">可用区列表</a>
                      * @return Zone 预留实例计费可购买的可用区。形如：ap-guangzhou-1。
 返回项：<a href="https://cloud.tencent.com/document/product/213/6091">可用区列表</a>
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置预留实例计费可购买的可用区。形如：ap-guangzhou-1。
 返回项：<a href="https://cloud.tencent.com/document/product/213/6091">可用区列表</a>
-                     * @param Zone 预留实例计费可购买的可用区。形如：ap-guangzhou-1。
+                     * @param _zone 预留实例计费可购买的可用区。形如：ap-guangzhou-1。
 返回项：<a href="https://cloud.tencent.com/document/product/213/6091">可用区列表</a>
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 返回项：USD（美元）。
                      * @return CurrencyCode 可购买的预留实例计费类型的结算货币，使用ISO 4217标准货币代码。
 返回项：USD（美元）。
+                     * 
                      */
                     std::string GetCurrencyCode() const;
 
                     /**
                      * 设置可购买的预留实例计费类型的结算货币，使用ISO 4217标准货币代码。
 返回项：USD（美元）。
-                     * @param CurrencyCode 可购买的预留实例计费类型的结算货币，使用ISO 4217标准货币代码。
+                     * @param _currencyCode 可购买的预留实例计费类型的结算货币，使用ISO 4217标准货币代码。
 返回项：USD（美元）。
+                     * 
                      */
                     void SetCurrencyCode(const std::string& _currencyCode);
 
                     /**
                      * 判断参数 CurrencyCode 是否已赋值
                      * @return CurrencyCode 是否已赋值
+                     * 
                      */
                     bool CurrencyCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 计量单位：秒
                      * @return Duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
-                     * @param Duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
+                     * @param _duration 预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。
 计量单位：秒
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 计量单位：与 currencyCode 一致，目前支持 USD（美元）
                      * @return FixedPrice 预留实例计费的购买价格。形如：4000.0。
 计量单位：与 currencyCode 一致，目前支持 USD（美元）
+                     * 
                      */
                     double GetFixedPrice() const;
 
                     /**
                      * 设置预留实例计费的购买价格。形如：4000.0。
 计量单位：与 currencyCode 一致，目前支持 USD（美元）
-                     * @param FixedPrice 预留实例计费的购买价格。形如：4000.0。
+                     * @param _fixedPrice 预留实例计费的购买价格。形如：4000.0。
 计量单位：与 currencyCode 一致，目前支持 USD（美元）
+                     * 
                      */
                     void SetFixedPrice(const double& _fixedPrice);
 
                     /**
                      * 判断参数 FixedPrice 是否已赋值
                      * @return FixedPrice 是否已赋值
+                     * 
                      */
                     bool FixedPriceHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 返回项：<a href="https://cloud.tencent.com/product/cvm/instances">预留实例计费类型列表</a>
                      * @return InstanceType 预留实例计费的实例类型。形如：S3.MEDIUM4。
 返回项：<a href="https://cloud.tencent.com/product/cvm/instances">预留实例计费类型列表</a>
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置预留实例计费的实例类型。形如：S3.MEDIUM4。
 返回项：<a href="https://cloud.tencent.com/product/cvm/instances">预留实例计费类型列表</a>
-                     * @param InstanceType 预留实例计费的实例类型。形如：S3.MEDIUM4。
+                     * @param _instanceType 预留实例计费的实例类型。形如：S3.MEDIUM4。
 返回项：<a href="https://cloud.tencent.com/product/cvm/instances">预留实例计费类型列表</a>
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -161,38 +176,44 @@ namespace TencentCloud
 返回项： All Upfront (预付全部费用)。
                      * @return OfferingType 预留实例计费的付款类型。形如：All Upfront。
 返回项： All Upfront (预付全部费用)。
+                     * 
                      */
                     std::string GetOfferingType() const;
 
                     /**
                      * 设置预留实例计费的付款类型。形如：All Upfront。
 返回项： All Upfront (预付全部费用)。
-                     * @param OfferingType 预留实例计费的付款类型。形如：All Upfront。
+                     * @param _offeringType 预留实例计费的付款类型。形如：All Upfront。
 返回项： All Upfront (预付全部费用)。
+                     * 
                      */
                     void SetOfferingType(const std::string& _offeringType);
 
                     /**
                      * 判断参数 OfferingType 是否已赋值
                      * @return OfferingType 是否已赋值
+                     * 
                      */
                     bool OfferingTypeHasBeenSet() const;
 
                     /**
                      * 获取可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
                      * @return ReservedInstancesOfferingId 可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * 
                      */
                     std::string GetReservedInstancesOfferingId() const;
 
                     /**
                      * 设置可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
-                     * @param ReservedInstancesOfferingId 可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * @param _reservedInstancesOfferingId 可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * 
                      */
                     void SetReservedInstancesOfferingId(const std::string& _reservedInstancesOfferingId);
 
                     /**
                      * 判断参数 ReservedInstancesOfferingId 是否已赋值
                      * @return ReservedInstancesOfferingId 是否已赋值
+                     * 
                      */
                     bool ReservedInstancesOfferingIdHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 返回项： linux 。
                      * @return ProductDescription 预留实例计费的平台描述（即操作系统）。形如：linux。
 返回项： linux 。
+                     * 
                      */
                     std::string GetProductDescription() const;
 
                     /**
                      * 设置预留实例计费的平台描述（即操作系统）。形如：linux。
 返回项： linux 。
-                     * @param ProductDescription 预留实例计费的平台描述（即操作系统）。形如：linux。
+                     * @param _productDescription 预留实例计费的平台描述（即操作系统）。形如：linux。
 返回项： linux 。
+                     * 
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
                     /**
                      * 判断参数 ProductDescription 是否已赋值
                      * @return ProductDescription 是否已赋值
+                     * 
                      */
                     bool ProductDescriptionHasBeenSet() const;
 
@@ -225,6 +249,7 @@ namespace TencentCloud
                      * @return UsagePrice 扣除预付费之后的使用价格 (按小时计费)。形如：0.0。
 目前，因为只支持 All Upfront 付款类型，所以默认为 0元/小时。
 计量单位：元/小时，货币单位与 currencyCode 一致，目前支持 USD（美元）
+                     * 
                      */
                     double GetUsagePrice() const;
 
@@ -232,15 +257,17 @@ namespace TencentCloud
                      * 设置扣除预付费之后的使用价格 (按小时计费)。形如：0.0。
 目前，因为只支持 All Upfront 付款类型，所以默认为 0元/小时。
 计量单位：元/小时，货币单位与 currencyCode 一致，目前支持 USD（美元）
-                     * @param UsagePrice 扣除预付费之后的使用价格 (按小时计费)。形如：0.0。
+                     * @param _usagePrice 扣除预付费之后的使用价格 (按小时计费)。形如：0.0。
 目前，因为只支持 All Upfront 付款类型，所以默认为 0元/小时。
 计量单位：元/小时，货币单位与 currencyCode 一致，目前支持 USD（美元）
+                     * 
                      */
                     void SetUsagePrice(const double& _usagePrice);
 
                     /**
                      * 判断参数 UsagePrice 是否已赋值
                      * @return UsagePrice 是否已赋值
+                     * 
                      */
                     bool UsagePriceHasBeenSet() const;
 

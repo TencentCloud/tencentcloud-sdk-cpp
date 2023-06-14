@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取公众人物姓名
                      * @return Name 公众人物姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置公众人物姓名
-                     * @param Name 公众人物姓名
+                     * @param _name 公众人物姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取公众人物职务
                      * @return Job 公众人物职务
+                     * 
                      */
                     std::string GetJob() const;
 
                     /**
                      * 设置公众人物职务
-                     * @param Job 公众人物职务
+                     * @param _job 公众人物职务
+                     * 
                      */
                     void SetJob(const std::string& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
                     /**
                      * 获取首次出现模态，可选值为[1,3]，详细参见AppearIndex定义
                      * @return FirstAppear 首次出现模态，可选值为[1,3]，详细参见AppearIndex定义
+                     * 
                      */
                     int64_t GetFirstAppear() const;
 
                     /**
                      * 设置首次出现模态，可选值为[1,3]，详细参见AppearIndex定义
-                     * @param FirstAppear 首次出现模态，可选值为[1,3]，详细参见AppearIndex定义
+                     * @param _firstAppear 首次出现模态，可选值为[1,3]，详细参见AppearIndex定义
+                     * 
                      */
                     void SetFirstAppear(const int64_t& _firstAppear);
 
                     /**
                      * 判断参数 FirstAppear 是否已赋值
                      * @return FirstAppear 是否已赋值
+                     * 
                      */
                     bool FirstAppearHasBeenSet() const;
 
                     /**
                      * 获取人物出现信息
                      * @return AppearInfo 人物出现信息
+                     * 
                      */
                     AppearInfo GetAppearInfo() const;
 
                     /**
                      * 设置人物出现信息
-                     * @param AppearInfo 人物出现信息
+                     * @param _appearInfo 人物出现信息
+                     * 
                      */
                     void SetAppearInfo(const AppearInfo& _appearInfo);
 
                     /**
                      * 判断参数 AppearInfo 是否已赋值
                      * @return AppearInfo 是否已赋值
+                     * 
                      */
                     bool AppearInfoHasBeenSet() const;
 
@@ -125,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearRect 人脸在图片中的位置，仅在图片标签任务有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Rectf GetAppearRect() const;
 
                     /**
                      * 设置人脸在图片中的位置，仅在图片标签任务有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearRect 人脸在图片中的位置，仅在图片标签任务有效
+                     * @param _appearRect 人脸在图片中的位置，仅在图片标签任务有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearRect(const Rectf& _appearRect);
 
                     /**
                      * 判断参数 AppearRect 是否已赋值
                      * @return AppearRect 是否已赋值
+                     * 
                      */
                     bool AppearRectHasBeenSet() const;
 

@@ -83,6 +83,7 @@ th：泰语
 ms：马来西亚语
 ar：阿拉伯语
 hi：印地语
+                     * 
                      */
                     std::string GetSource() const;
 
@@ -107,7 +108,7 @@ th：泰语
 ms：马来西亚语
 ar：阿拉伯语
 hi：印地语
-                     * @param Source 源语言，支持： 
+                     * @param _source 源语言，支持： 
 auto：自动识别（识别为一种语言）
 zh：简体中文
 zh-TW：繁体中文
@@ -127,12 +128,14 @@ th：泰语
 ms：马来西亚语
 ar：阿拉伯语
 hi：印地语
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -177,6 +180,7 @@ hi：印地语
 <li>ms（马来语）：zh（中文）、en（英语）</li>
 <li>ar（阿拉伯语）：en（英语）</li>
 <li>hi（印地语）：en（英语）</li>
+                     * 
                      */
                     std::string GetTarget() const;
 
@@ -201,7 +205,7 @@ hi：印地语
 <li>ms（马来语）：zh（中文）、en（英语）</li>
 <li>ar（阿拉伯语）：en（英语）</li>
 <li>hi（印地语）：en（英语）</li>
-                     * @param Target 目标语言，各源语言的目标语言支持列表如下
+                     * @param _target 目标语言，各源语言的目标语言支持列表如下
 
 <li> zh（简体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>
 <li>zh-TW（繁体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>
@@ -221,48 +225,56 @@ hi：印地语
 <li>ms（马来语）：zh（中文）、en（英语）</li>
 <li>ar（阿拉伯语）：en（英语）</li>
 <li>hi（印地语）：en（英语）</li>
+                     * 
                      */
                     void SetTarget(const std::string& _target);
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
                      * @return ProjectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
-                     * @param ProjectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * @param _projectId 项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。
                      * @return SourceTextList 待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。
+                     * 
                      */
                     std::vector<std::string> GetSourceTextList() const;
 
                     /**
                      * 设置待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。
-                     * @param SourceTextList 待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。
+                     * @param _sourceTextList 待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。
+                     * 
                      */
                     void SetSourceTextList(const std::vector<std::string>& _sourceTextList);
 
                     /**
                      * 判断参数 SourceTextList 是否已赋值
                      * @return SourceTextList 是否已赋值
+                     * 
                      */
                     bool SourceTextListHasBeenSet() const;
 

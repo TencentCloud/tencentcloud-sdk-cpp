@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户SdkAppId（如：1400xxxxxx）
                      * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置用户SdkAppId（如：1400xxxxxx）
-                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * @param _sdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）
                      * @return StartTime 查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）
-                     * @param StartTime 查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）
+                     * @param _startTime 查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，格式为YYYY-MM-DD。
                      * @return EndTime 查询结束时间，格式为YYYY-MM-DD。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，格式为YYYY-MM-DD。
-                     * @param EndTime 查询结束时间，格式为YYYY-MM-DD。
+                     * @param _endTime 查询结束时间，格式为YYYY-MM-DD。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -103,6 +112,7 @@ h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数�
                      * @return Period 返回数据的粒度，支持设为以下值：
 d：按天。此时返回查询时间范围内 UTC 时间为零点的数据。
 h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。
+                     * 
                      */
                     std::string GetPeriod() const;
 
@@ -110,15 +120,17 @@ h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数�
                      * 设置返回数据的粒度，支持设为以下值：
 d：按天。此时返回查询时间范围内 UTC 时间为零点的数据。
 h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。
-                     * @param Period 返回数据的粒度，支持设为以下值：
+                     * @param _period 返回数据的粒度，支持设为以下值：
 d：按天。此时返回查询时间范围内 UTC 时间为零点的数据。
 h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。
+                     * 
                      */
                     void SetPeriod(const std::string& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

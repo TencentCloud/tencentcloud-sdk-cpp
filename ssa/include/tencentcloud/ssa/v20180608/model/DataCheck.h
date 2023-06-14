@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取检查项唯一标识符uuid
                      * @return Id 检查项唯一标识符uuid
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置检查项唯一标识符uuid
-                     * @param Id 检查项唯一标识符uuid
+                     * @param _id 检查项唯一标识符uuid
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取检查项名称
                      * @return Name 检查项名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检查项名称
-                     * @param Name 检查项名称
+                     * @param _name 检查项名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取检查项类型
                      * @return Type 检查项类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置检查项类型
-                     * @param Type 检查项类型
+                     * @param _type 检查项类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 最近一次检查时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置最近一次检查时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastCheckTime 最近一次检查时间
+                     * @param _lastCheckTime 最近一次检查时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
 
                     /**
                      * 判断参数 LastCheckTime 是否已赋值
                      * @return LastCheckTime 是否已赋值
+                     * 
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 初始未检测状态0, 已通过为1，未通过为2
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置初始未检测状态0, 已通过为1，未通过为2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 初始未检测状态0, 已通过为1，未通过为2
+                     * @param _status 初始未检测状态0, 已通过为1，未通过为2
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsIgnored 0-未忽略,1-已忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsIgnored() const;
 
                     /**
                      * 设置0-未忽略,1-已忽略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsIgnored 0-未忽略,1-已忽略
+                     * @param _isIgnored 0-未忽略,1-已忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsIgnored(const uint64_t& _isIgnored);
 
                     /**
                      * 判断参数 IsIgnored 是否已赋值
                      * @return IsIgnored 是否已赋值
+                     * 
                      */
                     bool IsIgnoredHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCount 有风险的资源总数，未通过数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRiskCount() const;
 
                     /**
                      * 设置有风险的资源总数，未通过数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskCount 有风险的资源总数，未通过数量
+                     * @param _riskCount 有风险的资源总数，未通过数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskCount(const uint64_t& _riskCount);
 
                     /**
                      * 判断参数 RiskCount 是否已赋值
                      * @return RiskCount 是否已赋值
+                     * 
                      */
                     bool RiskCountHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsChecked 0-检测中,1-结束检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsChecked() const;
 
                     /**
                      * 设置0-检测中,1-结束检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsChecked 0-检测中,1-结束检测
+                     * @param _isChecked 0-检测中,1-结束检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsChecked(const uint64_t& _isChecked);
 
                     /**
                      * 判断参数 IsChecked 是否已赋值
                      * @return IsChecked 是否已赋值
+                     * 
                      */
                     bool IsCheckedHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTotal 总资产数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAssetTotal() const;
 
                     /**
                      * 设置总资产数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetTotal 总资产数
+                     * @param _assetTotal 总资产数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetTotal(const int64_t& _assetTotal);
 
                     /**
                      * 判断参数 AssetTotal 是否已赋值
                      * @return AssetTotal 是否已赋值
+                     * 
                      */
                     bool AssetTotalHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remarks 备注内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemarks() const;
 
                     /**
                      * 设置备注内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remarks 备注内容
+                     * @param _remarks 备注内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemarks(const std::string& _remarks);
 
                     /**
                      * 判断参数 Remarks 是否已赋值
                      * @return Remarks 是否已赋值
+                     * 
                      */
                     bool RemarksHasBeenSet() const;
 

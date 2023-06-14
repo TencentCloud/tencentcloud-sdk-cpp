@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取关键词ID
                      * @return SampleID 关键词ID
+                     * 
                      */
                     std::string GetSampleID() const;
 
                     /**
                      * 设置关键词ID
-                     * @param SampleID 关键词ID
+                     * @param _sampleID 关键词ID
+                     * 
                      */
                     void SetSampleID(const std::string& _sampleID);
 
                     /**
                      * 判断参数 SampleID 是否已赋值
                      * @return SampleID 是否已赋值
+                     * 
                      */
                     bool SampleIDHasBeenSet() const;
 
                     /**
                      * 获取关键词内容
                      * @return Content 关键词内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置关键词内容
-                     * @param Content 关键词内容
+                     * @param _content 关键词内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取是否删除成功
                      * @return Deleted 是否删除成功
+                     * 
                      */
                     bool GetDeleted() const;
 
                     /**
                      * 设置是否删除成功
-                     * @param Deleted 是否删除成功
+                     * @param _deleted 是否删除成功
+                     * 
                      */
                     void SetDeleted(const bool& _deleted);
 
                     /**
                      * 判断参数 Deleted 是否已赋值
                      * @return Deleted 是否已赋值
+                     * 
                      */
                     bool DeletedHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return ErrorInfo 错误信息
+                     * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
                      * 设置错误信息
-                     * @param ErrorInfo 错误信息
+                     * @param _errorInfo 错误信息
+                     * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
 
                     /**
                      * 判断参数 ErrorInfo 是否已赋值
                      * @return ErrorInfo 是否已赋值
+                     * 
                      */
                     bool ErrorInfoHasBeenSet() const;
 

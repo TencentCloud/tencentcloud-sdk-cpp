@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取实例名
                      * @return InstanceName 实例名
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名
-                     * @param InstanceName 实例名
+                     * @param _instanceName 实例名
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取VPC ID
                      * @return VpcId VPC ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-                     * @param VpcId VPC ID
+                     * @param _vpcId VPC ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网 ID 数组
                      * @return SubnetIds 子网 ID 数组
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网 ID 数组
-                     * @param SubnetIds 子网 ID 数组
+                     * @param _subnetIds 子网 ID 数组
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取是否启用外网
                      * @return EnableInternet 是否启用外网
+                     * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
                      * 设置是否启用外网
-                     * @param EnableInternet 是否启用外网
+                     * @param _enableInternet 是否启用外网
+                     * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
 
                     /**
                      * 判断参数 EnableInternet 是否已赋值
                      * @return EnableInternet 是否已赋值
+                     * 
                      */
                     bool EnableInternetHasBeenSet() const;
 
                     /**
                      * 获取Grafana 初始密码
                      * @return GrafanaInitPassword Grafana 初始密码
+                     * 
                      */
                     std::string GetGrafanaInitPassword() const;
 
                     /**
                      * 设置Grafana 初始密码
-                     * @param GrafanaInitPassword Grafana 初始密码
+                     * @param _grafanaInitPassword Grafana 初始密码
+                     * 
                      */
                     void SetGrafanaInitPassword(const std::string& _grafanaInitPassword);
 
                     /**
                      * 判断参数 GrafanaInitPassword 是否已赋值
                      * @return GrafanaInitPassword 是否已赋值
+                     * 
                      */
                     bool GrafanaInitPasswordHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return TagSpecification 标签
+                     * 
                      */
                     std::vector<PrometheusTag> GetTagSpecification() const;
 
                     /**
                      * 设置标签
-                     * @param TagSpecification 标签
+                     * @param _tagSpecification 标签
+                     * 
                      */
                     void SetTagSpecification(const std::vector<PrometheusTag>& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 

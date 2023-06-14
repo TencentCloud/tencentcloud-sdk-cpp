@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取周报开始时间。
                      * @return BeginDate 周报开始时间。
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置周报开始时间。
-                     * @param BeginDate 周报开始时间。
+                     * @param _beginDate 周报开始时间。
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取周报结束时间。
                      * @return EndDate 周报结束时间。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置周报结束时间。
-                     * @param EndDate 周报结束时间。
+                     * @param _endDate 周报结束时间。
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

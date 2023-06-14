@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取录制计划ID
                      * @return PlanId 录制计划ID
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置录制计划ID
-                     * @param PlanId 录制计划ID
+                     * @param _planId 录制计划ID
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取计划名称
                      * @return Name 计划名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
-                     * @param Name 计划名称
+                     * @param _name 计划名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取时间模板ID
                      * @return TimeTemplateId 时间模板ID
+                     * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-                     * @param TimeTemplateId 时间模板ID
+                     * @param _timeTemplateId 时间模板ID
+                     * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
 
                     /**
                      * 判断参数 TimeTemplateId 是否已赋值
                      * @return TimeTemplateId 是否已赋值
+                     * 
                      */
                     bool TimeTemplateIdHasBeenSet() const;
 

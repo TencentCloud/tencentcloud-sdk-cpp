@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的 API 密钥数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的 API 密钥数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 符合条件的 API 密钥数量。
+                     * @param _totalCount 符合条件的 API 密钥数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiKeySet API 密钥列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApiKey> GetApiKeySet() const;
 
                     /**
                      * 设置API 密钥列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiKeySet API 密钥列表。
+                     * @param _apiKeySet API 密钥列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiKeySet(const std::vector<ApiKey>& _apiKeySet);
 
                     /**
                      * 判断参数 ApiKeySet 是否已赋值
                      * @return ApiKeySet 是否已赋值
+                     * 
                      */
                     bool ApiKeySetHasBeenSet() const;
 

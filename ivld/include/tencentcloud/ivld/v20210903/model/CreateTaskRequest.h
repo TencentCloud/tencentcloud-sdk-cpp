@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取媒资文件ID，最长32B
                      * @return MediaId 媒资文件ID，最长32B
+                     * 
                      */
                     std::string GetMediaId() const;
 
                     /**
                      * 设置媒资文件ID，最长32B
-                     * @param MediaId 媒资文件ID，最长32B
+                     * @param _mediaId 媒资文件ID，最长32B
+                     * 
                      */
                     void SetMediaId(const std::string& _mediaId);
 
                     /**
                      * 判断参数 MediaId 是否已赋值
                      * @return MediaId 是否已赋值
+                     * 
                      */
                     bool MediaIdHasBeenSet() const;
 
                     /**
                      * 获取媒资素材先验知识，相关限制参考MediaPreknownInfo
                      * @return MediaPreknownInfo 媒资素材先验知识，相关限制参考MediaPreknownInfo
+                     * 
                      */
                     MediaPreknownInfo GetMediaPreknownInfo() const;
 
                     /**
                      * 设置媒资素材先验知识，相关限制参考MediaPreknownInfo
-                     * @param MediaPreknownInfo 媒资素材先验知识，相关限制参考MediaPreknownInfo
+                     * @param _mediaPreknownInfo 媒资素材先验知识，相关限制参考MediaPreknownInfo
+                     * 
                      */
                     void SetMediaPreknownInfo(const MediaPreknownInfo& _mediaPreknownInfo);
 
                     /**
                      * 判断参数 MediaPreknownInfo 是否已赋值
                      * @return MediaPreknownInfo 是否已赋值
+                     * 
                      */
                     bool MediaPreknownInfoHasBeenSet() const;
 
                     /**
                      * 获取任务名称，最长100个中文字符
                      * @return TaskName 任务名称，最长100个中文字符
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称，最长100个中文字符
-                     * @param TaskName 任务名称，最长100个中文字符
+                     * @param _taskName 任务名称，最长100个中文字符
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取是否上传转码后的视频，仅设置true时上传，默认为false
                      * @return UploadVideo 是否上传转码后的视频，仅设置true时上传，默认为false
+                     * 
                      */
                     bool GetUploadVideo() const;
 
                     /**
                      * 设置是否上传转码后的视频，仅设置true时上传，默认为false
-                     * @param UploadVideo 是否上传转码后的视频，仅设置true时上传，默认为false
+                     * @param _uploadVideo 是否上传转码后的视频，仅设置true时上传，默认为false
+                     * 
                      */
                     void SetUploadVideo(const bool& _uploadVideo);
 
                     /**
                      * 判断参数 UploadVideo 是否已赋值
                      * @return UploadVideo 是否已赋值
+                     * 
                      */
                     bool UploadVideoHasBeenSet() const;
 
                     /**
                      * 获取自定义标签，可用于查询
                      * @return Label 自定义标签，可用于查询
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置自定义标签，可用于查询
-                     * @param Label 自定义标签，可用于查询
+                     * @param _label 自定义标签，可用于查询
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
                      * @return CallbackURL 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * 
                      */
                     std::string GetCallbackURL() const;
 
                     /**
                      * 设置任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
-                     * @param CallbackURL 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @param _callbackURL 任务分析完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * 
                      */
                     void SetCallbackURL(const std::string& _callbackURL);
 
                     /**
                      * 判断参数 CallbackURL 是否已赋值
                      * @return CallbackURL 是否已赋值
+                     * 
                      */
                     bool CallbackURLHasBeenSet() const;
 

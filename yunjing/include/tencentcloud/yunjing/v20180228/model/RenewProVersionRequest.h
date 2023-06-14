@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取购买相关参数。
                      * @return ChargePrepaid 购买相关参数。
+                     * 
                      */
                     ChargePrepaid GetChargePrepaid() const;
 
                     /**
                      * 设置购买相关参数。
-                     * @param ChargePrepaid 购买相关参数。
+                     * @param _chargePrepaid 购买相关参数。
+                     * 
                      */
                     void SetChargePrepaid(const ChargePrepaid& _chargePrepaid);
 
                     /**
                      * 判断参数 ChargePrepaid 是否已赋值
                      * @return ChargePrepaid 是否已赋值
+                     * 
                      */
                     bool ChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取主机唯一ID，对应CVM的uuid、BM的InstanceId。
                      * @return Quuid 主机唯一ID，对应CVM的uuid、BM的InstanceId。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机唯一ID，对应CVM的uuid、BM的InstanceId。
-                     * @param Quuid 主机唯一ID，对应CVM的uuid、BM的InstanceId。
+                     * @param _quuid 主机唯一ID，对应CVM的uuid、BM的InstanceId。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务状态 0(初始化中), 1(运行中), 2(已完成), 3(任务失败)
                      * @return Status 任务状态 0(初始化中), 1(运行中), 2(已完成), 3(任务失败)
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取已完成的文件数量
                      * @return FinishedFileNumber 已完成的文件数量
+                     * 
                      */
                     uint64_t GetFinishedFileNumber() const;
 
                     /**
                      * 判断参数 FinishedFileNumber 是否已赋值
                      * @return FinishedFileNumber 是否已赋值
+                     * 
                      */
                     bool FinishedFileNumberHasBeenSet() const;
 
                     /**
                      * 获取已完成的数据量
                      * @return FinishedCapacity 已完成的数据量
+                     * 
                      */
                     uint64_t GetFinishedCapacity() const;
 
                     /**
                      * 判断参数 FinishedCapacity 是否已赋值
                      * @return FinishedCapacity 是否已赋值
+                     * 
                      */
                     bool FinishedCapacityHasBeenSet() const;
 

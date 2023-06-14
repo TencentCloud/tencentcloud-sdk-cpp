@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取批次创建的设备数量
                      * @return DevNum 批次创建的设备数量
+                     * 
                      */
                     uint64_t GetDevNum() const;
 
                     /**
                      * 设置批次创建的设备数量
-                     * @param DevNum 批次创建的设备数量
+                     * @param _devNum 批次创建的设备数量
+                     * 
                      */
                     void SetDevNum(const uint64_t& _devNum);
 
                     /**
                      * 判断参数 DevNum 是否已赋值
                      * @return DevNum 是否已赋值
+                     * 
                      */
                     bool DevNumHasBeenSet() const;
 
                     /**
                      * 获取批次创建的设备前缀。不超过24个字符
                      * @return DevPre 批次创建的设备前缀。不超过24个字符
+                     * 
                      */
                     std::string GetDevPre() const;
 
                     /**
                      * 设置批次创建的设备前缀。不超过24个字符
-                     * @param DevPre 批次创建的设备前缀。不超过24个字符
+                     * @param _devPre 批次创建的设备前缀。不超过24个字符
+                     * 
                      */
                     void SetDevPre(const std::string& _devPre);
 
                     /**
                      * 判断参数 DevPre 是否已赋值
                      * @return DevPre 是否已赋值
+                     * 
                      */
                     bool DevPreHasBeenSet() const;
 

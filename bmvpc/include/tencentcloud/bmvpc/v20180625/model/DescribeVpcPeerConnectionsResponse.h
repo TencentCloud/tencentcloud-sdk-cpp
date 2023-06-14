@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取对等连接实例。
                      * @return VpcPeerConnectionSet 对等连接实例。
+                     * 
                      */
                     std::vector<VpcPeerConnection> GetVpcPeerConnectionSet() const;
 
                     /**
                      * 判断参数 VpcPeerConnectionSet 是否已赋值
                      * @return VpcPeerConnectionSet 是否已赋值
+                     * 
                      */
                     bool VpcPeerConnectionSetHasBeenSet() const;
 

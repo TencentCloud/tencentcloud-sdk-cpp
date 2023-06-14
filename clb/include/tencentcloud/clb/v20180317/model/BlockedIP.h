@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取黑名单IP
                      * @return IP 黑名单IP
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置黑名单IP
-                     * @param IP 黑名单IP
+                     * @param _iP 黑名单IP
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取加入黑名单的时间
                      * @return CreateTime 加入黑名单的时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置加入黑名单的时间
-                     * @param CreateTime 加入黑名单的时间
+                     * @param _createTime 加入黑名单的时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ExpireTime 过期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * @param _expireTime 过期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

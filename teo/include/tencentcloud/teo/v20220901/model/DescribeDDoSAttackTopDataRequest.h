@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 <li>ddos_attackNum_sregion：按攻击源地区的攻击数量排行；</li>
 <li>ddos_attackFlux_sip：按攻击源IP的攻击数量排行；</li>
 <li>ddos_attackFlux_sregion：按攻击源地区的攻击数量排行。</li>
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -104,55 +111,63 @@ namespace TencentCloud
 <li>ddos_attackNum_sregion：按攻击源地区的攻击数量排行；</li>
 <li>ddos_attackFlux_sip：按攻击源IP的攻击数量排行；</li>
 <li>ddos_attackFlux_sregion：按攻击源地区的攻击数量排行。</li>
-                     * @param MetricName 查询的统计指标，取值有：
+                     * @param _metricName 查询的统计指标，取值有：
 <li>ddos_attackFlux_protocol：按各协议的攻击流量排行；</li>
 <li>ddos_attackPackageNum_protocol：按各协议的攻击包量排行；</li>
 <li>ddos_attackNum_attackType：按各攻击类型的攻击数量排行；</li>
 <li>ddos_attackNum_sregion：按攻击源地区的攻击数量排行；</li>
 <li>ddos_attackFlux_sip：按攻击源IP的攻击数量排行；</li>
 <li>ddos_attackFlux_sregion：按攻击源地区的攻击数量排行。</li>
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取站点ID集合，不填默认选择全部站点。
                      * @return ZoneIds 站点ID集合，不填默认选择全部站点。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点ID集合，不填默认选择全部站点。
-                     * @param ZoneIds 站点ID集合，不填默认选择全部站点。
+                     * @param _zoneIds 站点ID集合，不填默认选择全部站点。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取DDoS策略组ID集合，不填默认选择全部策略ID。
                      * @return PolicyIds DDoS策略组ID集合，不填默认选择全部策略ID。
+                     * 
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
                      * 设置DDoS策略组ID集合，不填默认选择全部策略ID。
-                     * @param PolicyIds DDoS策略组ID集合，不填默认选择全部策略ID。
+                     * @param _policyIds DDoS策略组ID集合，不填默认选择全部策略ID。
+                     * 
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
                     /**
                      * 判断参数 PolicyIds 是否已赋值
                      * @return PolicyIds 是否已赋值
+                     * 
                      */
                     bool PolicyIdsHasBeenSet() const;
 
@@ -165,6 +180,7 @@ namespace TencentCloud
 <li>flood：洪泛攻击；</li>
 <li>icmpFlood：icmp洪泛攻击；</li>
 <li>all：所有的攻击类型。</li>不填默认为all，表示查询全部攻击类型。
+                     * 
                      */
                     std::string GetAttackType() const;
 
@@ -173,16 +189,18 @@ namespace TencentCloud
 <li>flood：洪泛攻击；</li>
 <li>icmpFlood：icmp洪泛攻击；</li>
 <li>all：所有的攻击类型。</li>不填默认为all，表示查询全部攻击类型。
-                     * @param AttackType 攻击类型，取值有：
+                     * @param _attackType 攻击类型，取值有：
 <li>flood：洪泛攻击；</li>
 <li>icmpFlood：icmp洪泛攻击；</li>
 <li>all：所有的攻击类型。</li>不填默认为all，表示查询全部攻击类型。
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
@@ -195,6 +213,7 @@ namespace TencentCloud
 <li>tcp：tcp协议；</li>
 <li>udp：udp协议；</li>
 <li>all：所有的协议类型。</li>不填默认为all，表示查询所有协议。
+                     * 
                      */
                     std::string GetProtocolType() const;
 
@@ -203,52 +222,60 @@ namespace TencentCloud
 <li>tcp：tcp协议；</li>
 <li>udp：udp协议；</li>
 <li>all：所有的协议类型。</li>不填默认为all，表示查询所有协议。
-                     * @param ProtocolType 协议类型，取值有：
+                     * @param _protocolType 协议类型，取值有：
 <li>tcp：tcp协议；</li>
 <li>udp：udp协议；</li>
 <li>all：所有的协议类型。</li>不填默认为all，表示查询所有协议。
+                     * 
                      */
                     void SetProtocolType(const std::string& _protocolType);
 
                     /**
                      * 判断参数 ProtocolType 是否已赋值
                      * @return ProtocolType 是否已赋值
+                     * 
                      */
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
                      * 获取端口号。
                      * @return Port 端口号。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口号。
-                     * @param Port 端口号。
+                     * @param _port 端口号。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取查询前多少个数据，不填默认默认为10， 表示查询前top 10的数据。
                      * @return Limit 查询前多少个数据，不填默认默认为10， 表示查询前top 10的数据。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询前多少个数据，不填默认默认为10， 表示查询前top 10的数据。
-                     * @param Limit 查询前多少个数据，不填默认默认为10， 表示查询前top 10的数据。
+                     * @param _limit 查询前多少个数据，不填默认默认为10， 表示查询前top 10的数据。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -259,6 +286,7 @@ namespace TencentCloud
                      * @return Area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -266,15 +294,17 @@ namespace TencentCloud
                      * 设置数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>不填将根据用户所在地智能选择地区。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

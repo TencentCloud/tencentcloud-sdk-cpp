@@ -61,6 +61,7 @@ namespace TencentCloud
 "cmcc"：移动线路IP
 "abroad"：境外线路IP
 ]
+                     * 
                      */
                     std::string GetType() const;
 
@@ -72,73 +73,84 @@ namespace TencentCloud
 "cmcc"：移动线路IP
 "abroad"：境外线路IP
 ]
-                     * @param Type IP线路类型，取值[
+                     * @param _type IP线路类型，取值[
 "bgp"：BGP线路IP
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
 "abroad"：境外线路IP
 ]
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取线路IP
                      * @return Eip 线路IP
+                     * 
                      */
                     std::string GetEip() const;
 
                     /**
                      * 设置线路IP
-                     * @param Eip 线路IP
+                     * @param _eip 线路IP
+                     * 
                      */
                     void SetEip(const std::string& _eip);
 
                     /**
                      * 判断参数 Eip 是否已赋值
                      * @return Eip 是否已赋值
+                     * 
                      */
                     bool EipHasBeenSet() const;
 
                     /**
                      * 获取实例对应的cname
                      * @return Cname 实例对应的cname
+                     * 
                      */
                     std::string GetCname() const;
 
                     /**
                      * 设置实例对应的cname
-                     * @param Cname 实例对应的cname
+                     * @param _cname 实例对应的cname
+                     * 
                      */
                     void SetCname(const std::string& _cname);
 
                     /**
                      * 判断参数 Cname 是否已赋值
                      * @return Cname 是否已赋值
+                     * 
                      */
                     bool CnameHasBeenSet() const;
 
                     /**
                      * 获取资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
                      * @return ResourceFlag 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     * 
                      */
                     int64_t GetResourceFlag() const;
 
                     /**
                      * 设置资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
-                     * @param ResourceFlag 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     * @param _resourceFlag 资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP
+                     * 
                      */
                     void SetResourceFlag(const int64_t& _resourceFlag);
 
                     /**
                      * 判断参数 ResourceFlag 是否已赋值
                      * @return ResourceFlag 是否已赋值
+                     * 
                      */
                     bool ResourceFlagHasBeenSet() const;
 
@@ -147,20 +159,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名化资产对应的域名
+                     * @param _domain 域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

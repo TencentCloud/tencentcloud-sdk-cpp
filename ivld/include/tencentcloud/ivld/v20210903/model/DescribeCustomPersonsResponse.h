@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取满足过滤条件的自定义人物数量
                      * @return TotalCount 满足过滤条件的自定义人物数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取自定义人物信息
                      * @return PersonInfoSet 自定义人物信息
+                     * 
                      */
                     std::vector<CustomPersonInfo> GetPersonInfoSet() const;
 
                     /**
                      * 判断参数 PersonInfoSet 是否已赋值
                      * @return PersonInfoSet 是否已赋值
+                     * 
                      */
                     bool PersonInfoSetHasBeenSet() const;
 

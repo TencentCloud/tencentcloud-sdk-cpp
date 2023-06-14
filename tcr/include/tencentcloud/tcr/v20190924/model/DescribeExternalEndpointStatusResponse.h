@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）
                      * @return Status 开启公网访问状态，开启中（Opening）、已开启（Opened）、关闭（Closed）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取网关实体ID
                      * @return Id 网关实体ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置网关实体ID
-                     * @param Id 网关实体ID
+                     * @param _id 网关实体ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

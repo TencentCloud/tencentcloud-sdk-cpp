@@ -51,74 +51,86 @@ namespace TencentCloud
 当前支持ap-shanghai
                      * @return Region 资源所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置资源所属地域。
 当前支持ap-shanghai
-                     * @param Region 资源所属地域。
+                     * @param _region 资源所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取桶名，存储资源的唯一标识
                      * @return Bucket 桶名，存储资源的唯一标识
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶名，存储资源的唯一标识
-                     * @param Bucket 桶名，存储资源的唯一标识
+                     * @param _bucket 桶名，存储资源的唯一标识
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取cdn 域名
                      * @return CdnDomain cdn 域名
+                     * 
                      */
                     std::string GetCdnDomain() const;
 
                     /**
                      * 设置cdn 域名
-                     * @param CdnDomain cdn 域名
+                     * @param _cdnDomain cdn 域名
+                     * 
                      */
                     void SetCdnDomain(const std::string& _cdnDomain);
 
                     /**
                      * 判断参数 CdnDomain 是否已赋值
                      * @return CdnDomain 是否已赋值
+                     * 
                      */
                     bool CdnDomainHasBeenSet() const;
 
                     /**
                      * 获取资源所属用户的腾讯云appId
                      * @return AppId 资源所属用户的腾讯云appId
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置资源所属用户的腾讯云appId
-                     * @param AppId 资源所属用户的腾讯云appId
+                     * @param _appId 资源所属用户的腾讯云appId
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 

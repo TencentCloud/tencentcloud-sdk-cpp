@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordingDevice 录制设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRecordingDevice() const;
 
                     /**
                      * 判断参数 RecordingDevice 是否已赋值
                      * @return RecordingDevice 是否已赋值
+                     * 
                      */
                     bool RecordingDeviceHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonRecordingDevice 非录制设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNonRecordingDevice() const;
 
                     /**
                      * 判断参数 NonRecordingDevice 是否已赋值
                      * @return NonRecordingDevice 是否已赋值
+                     * 
                      */
                     bool NonRecordingDeviceHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatchFlux 观看流量总数。为直播观看流量与点播观看流量之和。单位：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWatchFlux() const;
 
                     /**
                      * 判断参数 WatchFlux 是否已赋值
                      * @return WatchFlux 是否已赋值
+                     * 
                      */
                     bool WatchFluxHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageUsage 累计有效存储容量总数。单位：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStorageUsage() const;
 
                     /**
                      * 判断参数 StorageUsage 是否已赋值
                      * @return StorageUsage 是否已赋值
+                     * 
                      */
                     bool StorageUsageHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P2PFluxTotal X-P2P分享流量。单位 Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetP2PFluxTotal() const;
 
                     /**
                      * 判断参数 P2PFluxTotal 是否已赋值
                      * @return P2PFluxTotal 是否已赋值
+                     * 
                      */
                     bool P2PFluxTotalHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P2PPeakValue X-P2P峰值带宽。 单位bps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetP2PPeakValue() const;
 
                     /**
                      * 判断参数 P2PPeakValue 是否已赋值
                      * @return P2PPeakValue 是否已赋值
+                     * 
                      */
                     bool P2PPeakValueHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePushTotal RTMP推流路数 ( 直播推流)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLivePushTotal() const;
 
                     /**
                      * 判断参数 LivePushTotal 是否已赋值
                      * @return LivePushTotal 是否已赋值
+                     * 
                      */
                     bool LivePushTotalHasBeenSet() const;
 

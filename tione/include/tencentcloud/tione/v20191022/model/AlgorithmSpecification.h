@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingImageName 镜像名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingImageName() const;
 
                     /**
                      * 设置镜像名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingImageName 镜像名字
+                     * @param _trainingImageName 镜像名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingImageName(const std::string& _trainingImageName);
 
                     /**
                      * 判断参数 TrainingImageName 是否已赋值
                      * @return TrainingImageName 是否已赋值
+                     * 
                      */
                     bool TrainingImageNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingInputMode 输入模式File|Pipe
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingInputMode() const;
 
                     /**
                      * 设置输入模式File|Pipe
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingInputMode 输入模式File|Pipe
+                     * @param _trainingInputMode 输入模式File|Pipe
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingInputMode(const std::string& _trainingInputMode);
 
                     /**
                      * 判断参数 TrainingInputMode 是否已赋值
                      * @return TrainingInputMode 是否已赋值
+                     * 
                      */
                     bool TrainingInputModeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgorithmName 算法名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlgorithmName() const;
 
                     /**
                      * 设置算法名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlgorithmName 算法名字
+                     * @param _algorithmName 算法名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlgorithmName(const std::string& _algorithmName);
 
                     /**
                      * 判断参数 AlgorithmName 是否已赋值
                      * @return AlgorithmName 是否已赋值
+                     * 
                      */
                     bool AlgorithmNameHasBeenSet() const;
 

@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取签署参与者ID
                      * @return RecipientId 签署参与者ID
+                     * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署参与者ID
-                     * @param RecipientId 签署参与者ID
+                     * @param _recipientId 签署参与者ID
+                     * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
                     /**
                      * 判断参数 RecipientId 是否已赋值
                      * @return RecipientId 是否已赋值
+                     * 
                      */
                     bool RecipientIdHasBeenSet() const;
 
                     /**
                      * 获取参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      * @return RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 
                      */
                     std::string GetRecipientType() const;
 
                     /**
                      * 设置参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
-                     * @param RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * @param _recipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * 
                      */
                     void SetRecipientType(const std::string& _recipientType);
 
                     /**
                      * 判断参数 RecipientType 是否已赋值
                      * @return RecipientType 是否已赋值
+                     * 
                      */
                     bool RecipientTypeHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取角色名称
                      * @return RoleName 角色名称
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名称
-                     * @param RoleName 角色名称
+                     * @param _roleName 角色名称
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取是否需要验证，默认为false
                      * @return RequireValidation 是否需要验证，默认为false
+                     * 
                      */
                     bool GetRequireValidation() const;
 
                     /**
                      * 设置是否需要验证，默认为false
-                     * @param RequireValidation 是否需要验证，默认为false
+                     * @param _requireValidation 是否需要验证，默认为false
+                     * 
                      */
                     void SetRequireValidation(const bool& _requireValidation);
 
                     /**
                      * 判断参数 RequireValidation 是否已赋值
                      * @return RequireValidation 是否已赋值
+                     * 
                      */
                     bool RequireValidationHasBeenSet() const;
 
                     /**
                      * 获取是否需要签署，默认为true
                      * @return RequireSign 是否需要签署，默认为true
+                     * 
                      */
                     bool GetRequireSign() const;
 
                     /**
                      * 设置是否需要签署，默认为true
-                     * @param RequireSign 是否需要签署，默认为true
+                     * @param _requireSign 是否需要签署，默认为true
+                     * 
                      */
                     void SetRequireSign(const bool& _requireSign);
 
                     /**
                      * 判断参数 RequireSign 是否已赋值
                      * @return RequireSign 是否已赋值
+                     * 
                      */
                     bool RequireSignHasBeenSet() const;
 
                     /**
                      * 获取添加序列，0～N
                      * @return RoutingOrder 添加序列，0～N
+                     * 
                      */
                     int64_t GetRoutingOrder() const;
 
                     /**
                      * 设置添加序列，0～N
-                     * @param RoutingOrder 添加序列，0～N
+                     * @param _routingOrder 添加序列，0～N
+                     * 
                      */
                     void SetRoutingOrder(const int64_t& _routingOrder);
 
                     /**
                      * 判断参数 RoutingOrder 是否已赋值
                      * @return RoutingOrder 是否已赋值
+                     * 
                      */
                     bool RoutingOrderHasBeenSet() const;
 
                     /**
                      * 获取是否需要发送，默认为true
                      * @return RequireDelivery 是否需要发送，默认为true
+                     * 
                      */
                     bool GetRequireDelivery() const;
 
                     /**
                      * 设置是否需要发送，默认为true
-                     * @param RequireDelivery 是否需要发送，默认为true
+                     * @param _requireDelivery 是否需要发送，默认为true
+                     * 
                      */
                     void SetRequireDelivery(const bool& _requireDelivery);
 
                     /**
                      * 判断参数 RequireDelivery 是否已赋值
                      * @return RequireDelivery 是否已赋值
+                     * 
                      */
                     bool RequireDeliveryHasBeenSet() const;
 
                     /**
                      * 获取邮箱地址
                      * @return Email 邮箱地址
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱地址
-                     * @param Email 邮箱地址
+                     * @param _email 邮箱地址
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取电话号码
                      * @return Mobile 电话号码
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置电话号码
-                     * @param Mobile 电话号码
+                     * @param _mobile 电话号码
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取关联的用户ID
                      * @return UserId 关联的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置关联的用户ID
-                     * @param UserId 关联的用户ID
+                     * @param _userId 关联的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
                      * @return DeliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * 
                      */
                     std::string GetDeliveryMethod() const;
 
                     /**
                      * 设置发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
-                     * @param DeliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * @param _deliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * 
                      */
                     void SetDeliveryMethod(const std::string& _deliveryMethod);
 
                     /**
                      * 判断参数 DeliveryMethod 是否已赋值
                      * @return DeliveryMethod 是否已赋值
+                     * 
                      */
                     bool DeliveryMethodHasBeenSet() const;
 
                     /**
                      * 获取附属信息
                      * @return RecipientExtra 附属信息
+                     * 
                      */
                     std::string GetRecipientExtra() const;
 
                     /**
                      * 设置附属信息
-                     * @param RecipientExtra 附属信息
+                     * @param _recipientExtra 附属信息
+                     * 
                      */
                     void SetRecipientExtra(const std::string& _recipientExtra);
 
                     /**
                      * 判断参数 RecipientExtra 是否已赋值
                      * @return RecipientExtra 是否已赋值
+                     * 
                      */
                     bool RecipientExtraHasBeenSet() const;
 

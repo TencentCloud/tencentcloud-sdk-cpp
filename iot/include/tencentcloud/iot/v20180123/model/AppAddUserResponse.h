@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用用户
                      * @return AppUser 应用用户
+                     * 
                      */
                     AppUser GetAppUser() const;
 
                     /**
                      * 判断参数 AppUser 是否已赋值
                      * @return AppUser 是否已赋值
+                     * 
                      */
                     bool AppUserHasBeenSet() const;
 

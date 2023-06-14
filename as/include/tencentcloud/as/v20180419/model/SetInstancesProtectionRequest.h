@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID。
                      * @return AutoScalingGroupId 伸缩组ID。
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID。
-                     * @param AutoScalingGroupId 伸缩组ID。
+                     * @param _autoScalingGroupId 伸缩组ID。
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID。
                      * @return InstanceIds 实例ID。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceIds 实例ID。
+                     * @param _instanceIds 实例ID。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取实例是否需要设置保护。
                      * @return ProtectedFromScaleIn 实例是否需要设置保护。
+                     * 
                      */
                     bool GetProtectedFromScaleIn() const;
 
                     /**
                      * 设置实例是否需要设置保护。
-                     * @param ProtectedFromScaleIn 实例是否需要设置保护。
+                     * @param _protectedFromScaleIn 实例是否需要设置保护。
+                     * 
                      */
                     void SetProtectedFromScaleIn(const bool& _protectedFromScaleIn);
 
                     /**
                      * 判断参数 ProtectedFromScaleIn 是否已赋值
                      * @return ProtectedFromScaleIn 是否已赋值
+                     * 
                      */
                     bool ProtectedFromScaleInHasBeenSet() const;
 

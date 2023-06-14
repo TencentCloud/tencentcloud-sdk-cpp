@@ -49,12 +49,14 @@ namespace TencentCloud
                     /**
                      * 获取网络带宽硬盘大小的范围信息。
                      * @return NetworkStorageRange 网络带宽硬盘大小的范围信息。
+                     * 
                      */
                     NetworkStorageRange GetNetworkStorageRange() const;
 
                     /**
                      * 判断参数 NetworkStorageRange 是否已赋值
                      * @return NetworkStorageRange 是否已赋值
+                     * 
                      */
                     bool NetworkStorageRangeHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageWhiteSet 镜像操作系统白名单。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetImageWhiteSet() const;
 
                     /**
                      * 判断参数 ImageWhiteSet 是否已赋值
                      * @return ImageWhiteSet 是否已赋值
+                     * 
                      */
                     bool ImageWhiteSetHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNetworkLimitConfigs 网络限额信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNetworkLimitConfig> GetInstanceNetworkLimitConfigs() const;
 
                     /**
                      * 判断参数 InstanceNetworkLimitConfigs 是否已赋值
                      * @return InstanceNetworkLimitConfigs 是否已赋值
+                     * 
                      */
                     bool InstanceNetworkLimitConfigsHasBeenSet() const;
 
@@ -91,24 +97,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageLimits 镜像限额信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageLimitConfig GetImageLimits() const;
 
                     /**
                      * 判断参数 ImageLimits 是否已赋值
                      * @return ImageLimits 是否已赋值
+                     * 
                      */
                     bool ImageLimitsHasBeenSet() const;
 
                     /**
                      * 获取默认是否IP直通，用于模块创建，虚机购买等具有直通参数场景时的默认参数。
                      * @return DefaultIPDirect 默认是否IP直通，用于模块创建，虚机购买等具有直通参数场景时的默认参数。
+                     * 
                      */
                     bool GetDefaultIPDirect() const;
 
                     /**
                      * 判断参数 DefaultIPDirect 是否已赋值
                      * @return DefaultIPDirect 是否已赋值
+                     * 
                      */
                     bool DefaultIPDirectHasBeenSet() const;
 

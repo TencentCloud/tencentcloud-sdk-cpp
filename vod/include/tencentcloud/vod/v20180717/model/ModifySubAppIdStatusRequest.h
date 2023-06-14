@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
 当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -80,17 +84,19 @@ namespace TencentCloud
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
 当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。
-                     * @param Status 子应用状态，取值范围：
+                     * @param _status 子应用状态，取值范围：
 <li>On：启用。</li>
 <li>Off：停用。</li>
 <li>Destroyed：销毁。</li>
 当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

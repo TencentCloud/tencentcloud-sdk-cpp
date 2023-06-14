@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取结果
                      * @return Data 结果
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList 实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceList> GetInstanceList() const;
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
                      * @return InstanceList 是否已赋值
+                     * 
                      */
                     bool InstanceListHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取分区转换策略
                      * @return Transform 分区转换策略
+                     * 
                      */
                     std::string GetTransform() const;
 
                     /**
                      * 设置分区转换策略
-                     * @param Transform 分区转换策略
+                     * @param _transform 分区转换策略
+                     * 
                      */
                     void SetTransform(const std::string& _transform);
 
                     /**
                      * 判断参数 Transform 是否已赋值
                      * @return Transform 是否已赋值
+                     * 
                      */
                     bool TransformHasBeenSet() const;
 
                     /**
                      * 获取分区字段名
                      * @return Name 分区字段名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分区字段名
-                     * @param Name 分区字段名
+                     * @param _name 分区字段名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取策略参数
                      * @return TransformArgs 策略参数
+                     * 
                      */
                     std::vector<std::string> GetTransformArgs() const;
 
                     /**
                      * 设置策略参数
-                     * @param TransformArgs 策略参数
+                     * @param _transformArgs 策略参数
+                     * 
                      */
                     void SetTransformArgs(const std::vector<std::string>& _transformArgs);
 
                     /**
                      * 判断参数 TransformArgs 是否已赋值
                      * @return TransformArgs 是否已赋值
+                     * 
                      */
                     bool TransformArgsHasBeenSet() const;
 

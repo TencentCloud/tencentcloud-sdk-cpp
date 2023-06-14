@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取手机号，隐藏中间4位数字，用*代替
                      * @return Mobile 手机号，隐藏中间4位数字，用*代替
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置手机号，隐藏中间4位数字，用*代替
-                     * @param Mobile 手机号，隐藏中间4位数字，用*代替
+                     * @param _mobile 手机号，隐藏中间4位数字，用*代替
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取注册时间点 (UNIX时间戳)
                      * @return CreatedOn 注册时间点 (UNIX时间戳)
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置注册时间点 (UNIX时间戳)
-                     * @param CreatedOn 注册时间点 (UNIX时间戳)
+                     * @param _createdOn 注册时间点 (UNIX时间戳)
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return VerifyStatus 实名认证状态：
 0 - 未实名；
 1 - 通过实名
+                     * 
                      */
                     int64_t GetVerifyStatus() const;
 
@@ -114,51 +124,59 @@ namespace TencentCloud
                      * 设置实名认证状态：
 0 - 未实名；
 1 - 通过实名
-                     * @param VerifyStatus 实名认证状态：
+                     * @param _verifyStatus 实名认证状态：
 0 - 未实名；
 1 - 通过实名
+                     * 
                      */
                     void SetVerifyStatus(const int64_t& _verifyStatus);
 
                     /**
                      * 判断参数 VerifyStatus 是否已赋值
                      * @return VerifyStatus 是否已赋值
+                     * 
                      */
                     bool VerifyStatusHasBeenSet() const;
 
                     /**
                      * 获取真实姓名
                      * @return Name 真实姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置真实姓名
-                     * @param Name 真实姓名
+                     * @param _name 真实姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取实名认证通过时间 (UNIX时间戳)
                      * @return VerifiedOn 实名认证通过时间 (UNIX时间戳)
+                     * 
                      */
                     int64_t GetVerifiedOn() const;
 
                     /**
                      * 设置实名认证通过时间 (UNIX时间戳)
-                     * @param VerifiedOn 实名认证通过时间 (UNIX时间戳)
+                     * @param _verifiedOn 实名认证通过时间 (UNIX时间戳)
+                     * 
                      */
                     void SetVerifiedOn(const int64_t& _verifiedOn);
 
                     /**
                      * 判断参数 VerifiedOn 是否已赋值
                      * @return VerifiedOn 是否已赋值
+                     * 
                      */
                     bool VerifiedOnHasBeenSet() const;
 
@@ -177,6 +195,7 @@ MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内�
 MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证；
 HOUSEHOLD_REGISTER - 户口本；
 TEMP_ID_CARD - 临时居民身份证
+                     * 
                      */
                     std::string GetIdCardType() const;
 
@@ -188,37 +207,42 @@ MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内�
 MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证；
 HOUSEHOLD_REGISTER - 户口本；
 TEMP_ID_CARD - 临时居民身份证
-                     * @param IdCardType 身份证件类型; 
+                     * @param _idCardType 身份证件类型; 
 ID_CARD - 居民身份证；
 PASSPORT - 护照；
 MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证；
 MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证；
 HOUSEHOLD_REGISTER - 户口本；
 TEMP_ID_CARD - 临时居民身份证
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取身份证件号码 (脱敏)
                      * @return IdCardNumber 身份证件号码 (脱敏)
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置身份证件号码 (脱敏)
-                     * @param IdCardNumber 身份证件号码 (脱敏)
+                     * @param _idCardNumber 身份证件号码 (脱敏)
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 

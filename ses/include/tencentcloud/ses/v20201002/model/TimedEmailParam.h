@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取定时发送邮件的开始时间
                      * @return BeginTime 定时发送邮件的开始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置定时发送邮件的开始时间
-                     * @param BeginTime 定时发送邮件的开始时间
+                     * @param _beginTime 定时发送邮件的开始时间
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 

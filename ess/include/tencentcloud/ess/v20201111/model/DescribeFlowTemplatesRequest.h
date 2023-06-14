@@ -49,138 +49,151 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
                      * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 
                      */
                     int64_t GetContentType() const;
 
                     /**
                      * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param _contentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 
                      */
                     void SetContentType(const int64_t& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
                     /**
                      * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
                      * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @param Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * @param _filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询偏移位置，默认0
                      * @return Offset 查询偏移位置，默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移位置，默认0
-                     * @param Offset 查询偏移位置，默认0
+                     * @param _offset 查询偏移位置，默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询个数，默认20，最大200
                      * @return Limit 查询个数，默认20，最大200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询个数，默认20，最大200
-                     * @param Limit 查询个数，默认20，最大200
+                     * @param _limit 查询个数，默认20，最大200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取这个参数跟下面的IsChannel参数配合使用。
-IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+                     * 获取ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
-                     * @return ApplicationId 这个参数跟下面的IsChannel参数配合使用。
-IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+                     * @return ApplicationId ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置这个参数跟下面的IsChannel参数配合使用。
-IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+                     * 设置ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
-                     * @param ApplicationId 这个参数跟下面的IsChannel参数配合使用。
-IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+                     * @param _applicationId ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -189,56 +202,65 @@ ApplicationId为空，查询所有应用下的模板列表
 为true，查询第三方应用集成平台企业模板库管理列表
                      * @return IsChannel 默认为false，查询SaaS模板库列表；
 为true，查询第三方应用集成平台企业模板库管理列表
+                     * @deprecated
                      */
                     bool GetIsChannel() const;
 
                     /**
                      * 设置默认为false，查询SaaS模板库列表；
 为true，查询第三方应用集成平台企业模板库管理列表
-                     * @param IsChannel 默认为false，查询SaaS模板库列表；
+                     * @param _isChannel 默认为false，查询SaaS模板库列表；
 为true，查询第三方应用集成平台企业模板库管理列表
+                     * @deprecated
                      */
                     void SetIsChannel(const bool& _isChannel);
 
                     /**
                      * 判断参数 IsChannel 是否已赋值
                      * @return IsChannel 是否已赋值
+                     * @deprecated
                      */
                     bool IsChannelHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Organization 暂未开放
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Organization 暂未开放
+                     * @param _organization 暂未开放
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return GenerateSource 暂未开放
+                     * @deprecated
                      */
                     uint64_t GetGenerateSource() const;
 
                     /**
                      * 设置暂未开放
-                     * @param GenerateSource 暂未开放
+                     * @param _generateSource 暂未开放
+                     * @deprecated
                      */
                     void SetGenerateSource(const uint64_t& _generateSource);
 
                     /**
                      * 判断参数 GenerateSource 是否已赋值
                      * @return GenerateSource 是否已赋值
+                     * @deprecated
                      */
                     bool GenerateSourceHasBeenSet() const;
 
@@ -281,9 +303,7 @@ ApplicationId为空，查询所有应用下的模板列表
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 这个参数跟下面的IsChannel参数配合使用。
-IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+                     * ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
                      */
                     std::string m_applicationId;

@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取编号
                      * @return Id 编号
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置编号
-                     * @param Id 编号
+                     * @param _id 编号
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取监控区域
                      * @return MonitoringArea 监控区域
+                     * 
                      */
                     std::vector<Point> GetMonitoringArea() const;
 
                     /**
                      * 设置监控区域
-                     * @param MonitoringArea 监控区域
+                     * @param _monitoringArea 监控区域
+                     * 
                      */
                     void SetMonitoringArea(const std::vector<Point>& _monitoringArea);
 
                     /**
                      * 判断参数 MonitoringArea 是否已赋值
                      * @return MonitoringArea 是否已赋值
+                     * 
                      */
                     bool MonitoringAreaHasBeenSet() const;
 
                     /**
                      * 获取告警列表
                      * @return WarningInfos 告警列表
+                     * 
                      */
                     std::vector<MultiBizWarningInfo> GetWarningInfos() const;
 
                     /**
                      * 设置告警列表
-                     * @param WarningInfos 告警列表
+                     * @param _warningInfos 告警列表
+                     * 
                      */
                     void SetWarningInfos(const std::vector<MultiBizWarningInfo>& _warningInfos);
 
                     /**
                      * 判断参数 WarningInfos 是否已赋值
                      * @return WarningInfos 是否已赋值
+                     * 
                      */
                     bool WarningInfosHasBeenSet() const;
 

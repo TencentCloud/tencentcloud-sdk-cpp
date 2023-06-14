@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取命名空间创建时间
                      * @return ModTime 命名空间创建时间
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 设置命名空间创建时间
-                     * @param ModTime 命名空间创建时间
+                     * @param _modTime 命名空间创建时间
+                     * 
                      */
                     void SetModTime(const std::string& _modTime);
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 
                     /**
                      * 获取命名空间修改时间
                      * @return AddTime 命名空间修改时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置命名空间修改时间
-                     * @param AddTime 命名空间修改时间
+                     * @param _addTime 命名空间修改时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取命名空间描述
                      * @return Description 命名空间描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置命名空间描述
-                     * @param Description 命名空间描述
+                     * @param _description 命名空间描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return Name 命名空间名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param Name 命名空间名称
+                     * @param _name 命名空间名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取默认default，TCB表示是小程序云开发创建的
                      * @return Type 默认default，TCB表示是小程序云开发创建的
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置默认default，TCB表示是小程序云开发创建的
-                     * @param Type 默认default，TCB表示是小程序云开发创建的
+                     * @param _type 默认default，TCB表示是小程序云开发创建的
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

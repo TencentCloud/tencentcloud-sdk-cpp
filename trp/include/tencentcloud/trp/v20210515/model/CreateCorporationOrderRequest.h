@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取企业名称
                      * @return CorpName 企业名称
+                     * 
                      */
                     std::string GetCorpName() const;
 
                     /**
                      * 设置企业名称
-                     * @param CorpName 企业名称
+                     * @param _corpName 企业名称
+                     * 
                      */
                     void SetCorpName(const std::string& _corpName);
 
                     /**
                      * 判断参数 CorpName 是否已赋值
                      * @return CorpName 是否已赋值
+                     * 
                      */
                     bool CorpNameHasBeenSet() const;
 
                     /**
                      * 获取所有者ID
                      * @return Owner 所有者ID
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置所有者ID
-                     * @param Owner 所有者ID
+                     * @param _owner 所有者ID
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取溯源码额度
                      * @return CodeQuota 溯源码额度
+                     * 
                      */
                     uint64_t GetCodeQuota() const;
 
                     /**
                      * 设置溯源码额度
-                     * @param CodeQuota 溯源码额度
+                     * @param _codeQuota 溯源码额度
+                     * 
                      */
                     void SetCodeQuota(const uint64_t& _codeQuota);
 
                     /**
                      * 判断参数 CodeQuota 是否已赋值
                      * @return CodeQuota 是否已赋值
+                     * 
                      */
                     bool CodeQuotaHasBeenSet() const;
 
                     /**
                      * 获取额度过期时间
                      * @return ExpireTime 额度过期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置额度过期时间
-                     * @param ExpireTime 额度过期时间
+                     * @param _expireTime 额度过期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Amount 金额
+                     * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 设置金额
-                     * @param Amount 金额
+                     * @param _amount 金额
+                     * 
                      */
                     void SetAmount(const int64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取联系人
                      * @return ContactPerson 联系人
+                     * 
                      */
                     std::string GetContactPerson() const;
 
                     /**
                      * 设置联系人
-                     * @param ContactPerson 联系人
+                     * @param _contactPerson 联系人
+                     * 
                      */
                     void SetContactPerson(const std::string& _contactPerson);
 
                     /**
                      * 判断参数 ContactPerson 是否已赋值
                      * @return ContactPerson 是否已赋值
+                     * 
                      */
                     bool ContactPersonHasBeenSet() const;
 
                     /**
                      * 获取联系电话
                      * @return ContactNumber 联系电话
+                     * 
                      */
                     std::string GetContactNumber() const;
 
                     /**
                      * 设置联系电话
-                     * @param ContactNumber 联系电话
+                     * @param _contactNumber 联系电话
+                     * 
                      */
                     void SetContactNumber(const std::string& _contactNumber);
 
                     /**
                      * 判断参数 ContactNumber 是否已赋值
                      * @return ContactNumber 是否已赋值
+                     * 
                      */
                     bool ContactNumberHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

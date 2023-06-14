@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取生成的随机数的明文，该明文使用base64编码，用户需要使用base64解码得到明文。
                      * @return Plaintext 生成的随机数的明文，该明文使用base64编码，用户需要使用base64解码得到明文。
+                     * 
                      */
                     std::string GetPlaintext() const;
 
                     /**
                      * 判断参数 Plaintext 是否已赋值
                      * @return Plaintext 是否已赋值
+                     * 
                      */
                     bool PlaintextHasBeenSet() const;
 

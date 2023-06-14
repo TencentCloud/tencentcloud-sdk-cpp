@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取API 所在的服务唯一 ID。
                      * @return ServiceId API 所在的服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置API 所在的服务唯一 ID。
-                     * @param ServiceId API 所在的服务唯一 ID。
+                     * @param _serviceId API 所在的服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取API 接口唯一 ID。
                      * @return ApiId API 接口唯一 ID。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API 接口唯一 ID。
-                     * @param ApiId API 接口唯一 ID。
+                     * @param _apiId API 接口唯一 ID。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取Api所属地域
                      * @return ApiRegion Api所属地域
+                     * 
                      */
                     std::string GetApiRegion() const;
 
                     /**
                      * 设置Api所属地域
-                     * @param ApiRegion Api所属地域
+                     * @param _apiRegion Api所属地域
+                     * 
                      */
                     void SetApiRegion(const std::string& _apiRegion);
 
                     /**
                      * 判断参数 ApiRegion 是否已赋值
                      * @return ApiRegion 是否已赋值
+                     * 
                      */
                     bool ApiRegionHasBeenSet() const;
 

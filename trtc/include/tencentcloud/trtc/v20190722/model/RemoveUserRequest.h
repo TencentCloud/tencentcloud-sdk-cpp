@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的SDKAppId。
                      * @return SdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的SDKAppId。
-                     * @param SdkAppId TRTC的SDKAppId。
+                     * @param _sdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取房间号。
                      * @return RoomId 房间号。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间号。
-                     * @param RoomId 房间号。
+                     * @param _roomId 房间号。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取要移出的用户列表，最多10个。
                      * @return UserIds 要移出的用户列表，最多10个。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置要移出的用户列表，最多10个。
-                     * @param UserIds 要移出的用户列表，最多10个。
+                     * @param _userIds 要移出的用户列表，最多10个。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

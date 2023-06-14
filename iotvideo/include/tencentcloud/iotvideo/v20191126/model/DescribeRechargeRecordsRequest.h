@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取账户类型 1:设备接入 2:云存。
                      * @return AccountType 账户类型 1:设备接入 2:云存。
+                     * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
                      * 设置账户类型 1:设备接入 2:云存。
-                     * @param AccountType 账户类型 1:设备接入 2:云存。
+                     * @param _accountType 账户类型 1:设备接入 2:云存。
+                     * 
                      */
                     void SetAccountType(const int64_t& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
                     /**
                      * 获取从第几条记录开始显示, 默认值为0。
                      * @return Offset 从第几条记录开始显示, 默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置从第几条记录开始显示, 默认值为0。
-                     * @param Offset 从第几条记录开始显示, 默认值为0。
+                     * @param _offset 从第几条记录开始显示, 默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取总共查询多少条记录，默认为值50。
                      * @return Limit 总共查询多少条记录，默认为值50。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置总共查询多少条记录，默认为值50。
-                     * @param Limit 总共查询多少条记录，默认为值50。
+                     * @param _limit 总共查询多少条记录，默认为值50。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

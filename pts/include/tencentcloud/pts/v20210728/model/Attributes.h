@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 采用请求返回码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置采用请求返回码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 采用请求返回码
+                     * @param _status 采用请求返回码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 采样请求结果码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置采样请求结果码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 采样请求结果码
+                     * @param _result 采样请求结果码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 采样请求API
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置采样请求API
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Service 采样请求API
+                     * @param _service 采样请求API
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 采样请求调用方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置采样请求调用方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 采样请求调用方法
+                     * @param _method 采样请求调用方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 采样请求延时时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置采样请求延时时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 采样请求延时时间
+                     * @param _duration 采样请求延时时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const std::string& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

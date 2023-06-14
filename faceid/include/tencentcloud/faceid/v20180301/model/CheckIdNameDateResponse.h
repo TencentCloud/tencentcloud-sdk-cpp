@@ -66,24 +66,28 @@ namespace TencentCloud
 -5: 身份信息无效
 -6: 证件库服务异常
 -7: 证件库中无此身份证记录
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

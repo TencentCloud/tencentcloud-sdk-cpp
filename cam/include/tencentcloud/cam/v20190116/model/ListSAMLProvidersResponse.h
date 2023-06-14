@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取SAML身份提供商总数
                      * @return TotalCount SAML身份提供商总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取SAML身份提供商列表
                      * @return SAMLProviderSet SAML身份提供商列表
+                     * 
                      */
                     std::vector<SAMLProviderInfo> GetSAMLProviderSet() const;
 
                     /**
                      * 判断参数 SAMLProviderSet 是否已赋值
                      * @return SAMLProviderSet 是否已赋值
+                     * 
                      */
                     bool SAMLProviderSetHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用于制作镜像的物理机ID
                      * @return InstanceId 用于制作镜像的物理机ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置用于制作镜像的物理机ID
-                     * @param InstanceId 用于制作镜像的物理机ID
+                     * @param _instanceId 用于制作镜像的物理机ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取镜像别名
                      * @return ImageName 镜像别名
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像别名
-                     * @param ImageName 镜像别名
+                     * @param _imageName 镜像别名
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像描述
                      * @return ImageDescription 镜像描述
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像描述
-                     * @param ImageDescription 镜像描述
+                     * @param _imageDescription 镜像描述
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 

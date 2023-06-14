@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取备案ICP订单号
                      * @return IcpOrderId 备案ICP订单号
+                     * 
                      */
                     std::string GetIcpOrderId() const;
 
                     /**
                      * 设置备案ICP订单号
-                     * @param IcpOrderId 备案ICP订单号
+                     * @param _icpOrderId 备案ICP订单号
+                     * 
                      */
                     void SetIcpOrderId(const std::string& _icpOrderId);
 
                     /**
                      * 判断参数 IcpOrderId 是否已赋值
                      * @return IcpOrderId 是否已赋值
+                     * 
                      */
                     bool IcpOrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单里的webId
                      * @return SourceWebId 订单里的webId
+                     * 
                      */
                     std::string GetSourceWebId() const;
 
                     /**
                      * 设置订单里的webId
-                     * @param SourceWebId 订单里的webId
+                     * @param _sourceWebId 订单里的webId
+                     * 
                      */
                     void SetSourceWebId(const std::string& _sourceWebId);
 
                     /**
                      * 判断参数 SourceWebId 是否已赋值
                      * @return SourceWebId 是否已赋值
+                     * 
                      */
                     bool SourceWebIdHasBeenSet() const;
 
                     /**
                      * 获取订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)
                      * @return TargetWebIds 订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)
+                     * 
                      */
                     std::vector<std::string> GetTargetWebIds() const;
 
                     /**
                      * 设置订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)
-                     * @param TargetWebIds 订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)
+                     * @param _targetWebIds 订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)
+                     * 
                      */
                     void SetTargetWebIds(const std::vector<std::string>& _targetWebIds);
 
                     /**
                      * 判断参数 TargetWebIds 是否已赋值
                      * @return TargetWebIds 是否已赋值
+                     * 
                      */
                     bool TargetWebIdsHasBeenSet() const;
 
                     /**
                      * 获取网站信息字段名 数组
                      * @return SyncFields 网站信息字段名 数组
+                     * 
                      */
                     std::vector<std::string> GetSyncFields() const;
 
                     /**
                      * 设置网站信息字段名 数组
-                     * @param SyncFields 网站信息字段名 数组
+                     * @param _syncFields 网站信息字段名 数组
+                     * 
                      */
                     void SetSyncFields(const std::vector<std::string>& _syncFields);
 
                     /**
                      * 判断参数 SyncFields 是否已赋值
                      * @return SyncFields 是否已赋值
+                     * 
                      */
                     bool SyncFieldsHasBeenSet() const;
 
                     /**
                      * 获取是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值
                      * @return CheckSamePerson 是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值
+                     * 
                      */
                     bool GetCheckSamePerson() const;
 
                     /**
                      * 设置是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值
-                     * @param CheckSamePerson 是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值
+                     * @param _checkSamePerson 是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值
+                     * 
                      */
                     void SetCheckSamePerson(const bool& _checkSamePerson);
 
                     /**
                      * 判断参数 CheckSamePerson 是否已赋值
                      * @return CheckSamePerson 是否已赋值
+                     * 
                      */
                     bool CheckSamePersonHasBeenSet() const;
 

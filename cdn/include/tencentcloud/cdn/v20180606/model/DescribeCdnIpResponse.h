@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询的节点归属详情。
                      * @return Ips 查询的节点归属详情。
+                     * 
                      */
                     std::vector<CdnIp> GetIps() const;
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 

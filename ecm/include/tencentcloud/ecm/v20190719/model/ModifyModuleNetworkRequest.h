@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取模块Id
                      * @return ModuleId 模块Id
+                     * 
                      */
                     std::string GetModuleId() const;
 
                     /**
                      * 设置模块Id
-                     * @param ModuleId 模块Id
+                     * @param _moduleId 模块Id
+                     * 
                      */
                     void SetModuleId(const std::string& _moduleId);
 
                     /**
                      * 判断参数 ModuleId 是否已赋值
                      * @return ModuleId 是否已赋值
+                     * 
                      */
                     bool ModuleIdHasBeenSet() const;
 
                     /**
                      * 获取默认出带宽上限
                      * @return DefaultBandwidth 默认出带宽上限
+                     * 
                      */
                     int64_t GetDefaultBandwidth() const;
 
                     /**
                      * 设置默认出带宽上限
-                     * @param DefaultBandwidth 默认出带宽上限
+                     * @param _defaultBandwidth 默认出带宽上限
+                     * 
                      */
                     void SetDefaultBandwidth(const int64_t& _defaultBandwidth);
 
                     /**
                      * 判断参数 DefaultBandwidth 是否已赋值
                      * @return DefaultBandwidth 是否已赋值
+                     * 
                      */
                     bool DefaultBandwidthHasBeenSet() const;
 
                     /**
                      * 获取默认入带宽上限
                      * @return DefaultBandwidthIn 默认入带宽上限
+                     * 
                      */
                     int64_t GetDefaultBandwidthIn() const;
 
                     /**
                      * 设置默认入带宽上限
-                     * @param DefaultBandwidthIn 默认入带宽上限
+                     * @param _defaultBandwidthIn 默认入带宽上限
+                     * 
                      */
                     void SetDefaultBandwidthIn(const int64_t& _defaultBandwidthIn);
 
                     /**
                      * 判断参数 DefaultBandwidthIn 是否已赋值
                      * @return DefaultBandwidthIn 是否已赋值
+                     * 
                      */
                     bool DefaultBandwidthInHasBeenSet() const;
 

@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取转发协议，取值[TCP, UDP]
                      * @return Protocol 转发协议，取值[TCP, UDP]
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置转发协议，取值[TCP, UDP]
-                     * @param Protocol 转发协议，取值[TCP, UDP]
+                     * @param _protocol 转发协议，取值[TCP, UDP]
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取转发端口
                      * @return VirtualPort 转发端口
+                     * 
                      */
                     uint64_t GetVirtualPort() const;
 
                     /**
                      * 设置转发端口
-                     * @param VirtualPort 转发端口
+                     * @param _virtualPort 转发端口
+                     * 
                      */
                     void SetVirtualPort(const uint64_t& _virtualPort);
 
                     /**
                      * 判断参数 VirtualPort 是否已赋值
                      * @return VirtualPort 是否已赋值
+                     * 
                      */
                     bool VirtualPortHasBeenSet() const;
 
                     /**
                      * 获取=1表示开启；=0表示关闭
                      * @return Enable =1表示开启；=0表示关闭
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置=1表示开启；=0表示关闭
-                     * @param Enable =1表示开启；=0表示关闭
+                     * @param _enable =1表示开启；=0表示关闭
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取响应超时时间，单位秒
                      * @return TimeOut 响应超时时间，单位秒
+                     * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
                      * 设置响应超时时间，单位秒
-                     * @param TimeOut 响应超时时间，单位秒
+                     * @param _timeOut 响应超时时间，单位秒
+                     * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
 
                     /**
                      * 判断参数 TimeOut 是否已赋值
                      * @return TimeOut 是否已赋值
+                     * 
                      */
                     bool TimeOutHasBeenSet() const;
 
                     /**
                      * 获取检测间隔时间，单位秒
                      * @return Interval 检测间隔时间，单位秒
+                     * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置检测间隔时间，单位秒
-                     * @param Interval 检测间隔时间，单位秒
+                     * @param _interval 检测间隔时间，单位秒
+                     * 
                      */
                     void SetInterval(const uint64_t& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取不健康阈值，单位次
                      * @return KickNum 不健康阈值，单位次
+                     * 
                      */
                     uint64_t GetKickNum() const;
 
                     /**
                      * 设置不健康阈值，单位次
-                     * @param KickNum 不健康阈值，单位次
+                     * @param _kickNum 不健康阈值，单位次
+                     * 
                      */
                     void SetKickNum(const uint64_t& _kickNum);
 
                     /**
                      * 判断参数 KickNum 是否已赋值
                      * @return KickNum 是否已赋值
+                     * 
                      */
                     bool KickNumHasBeenSet() const;
 
                     /**
                      * 获取健康阈值，单位次
                      * @return AliveNum 健康阈值，单位次
+                     * 
                      */
                     uint64_t GetAliveNum() const;
 
                     /**
                      * 设置健康阈值，单位次
-                     * @param AliveNum 健康阈值，单位次
+                     * @param _aliveNum 健康阈值，单位次
+                     * 
                      */
                     void SetAliveNum(const uint64_t& _aliveNum);
 
                     /**
                      * 判断参数 AliveNum 是否已赋值
                      * @return AliveNum 是否已赋值
+                     * 
                      */
                     bool AliveNumHasBeenSet() const;
 
                     /**
                      * 获取会话保持时间，单位秒
                      * @return KeepTime 会话保持时间，单位秒
+                     * 
                      */
                     uint64_t GetKeepTime() const;
 
                     /**
                      * 设置会话保持时间，单位秒
-                     * @param KeepTime 会话保持时间，单位秒
+                     * @param _keepTime 会话保持时间，单位秒
+                     * 
                      */
                     void SetKeepTime(const uint64_t& _keepTime);
 
                     /**
                      * 判断参数 KeepTime 是否已赋值
                      * @return KeepTime 是否已赋值
+                     * 
                      */
                     bool KeepTimeHasBeenSet() const;
 

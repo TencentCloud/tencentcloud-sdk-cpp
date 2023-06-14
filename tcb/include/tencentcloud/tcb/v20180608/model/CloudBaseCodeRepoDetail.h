@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取repo的名字
                      * @return Name repo的名字
+                     * 
                      */
                     CloudBaseCodeRepoName GetName() const;
 
                     /**
                      * 设置repo的名字
-                     * @param Name repo的名字
+                     * @param _name repo的名字
+                     * 
                      */
                     void SetName(const CloudBaseCodeRepoName& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取repo的url
                      * @return Url repo的url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置repo的url
-                     * @param Url repo的url
+                     * @param _url repo的url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

@@ -52,12 +52,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebpAdapter WebpAdapter配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WebpAdapter GetWebpAdapter() const;
 
                     /**
                      * 判断参数 WebpAdapter 是否已赋值
                      * @return WebpAdapter 是否已赋值
+                     * 
                      */
                     bool WebpAdapterHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TpgAdapter TpgAdapter配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TpgAdapter GetTpgAdapter() const;
 
                     /**
                      * 判断参数 TpgAdapter 是否已赋值
                      * @return TpgAdapter 是否已赋值
+                     * 
                      */
                     bool TpgAdapterHasBeenSet() const;
 
@@ -80,12 +84,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GuetzliAdapter GuetzliAdapter配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GuetzliAdapter GetGuetzliAdapter() const;
 
                     /**
                      * 判断参数 GuetzliAdapter 是否已赋值
                      * @return GuetzliAdapter 是否已赋值
+                     * 
                      */
                     bool GuetzliAdapterHasBeenSet() const;
 
@@ -94,12 +100,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvifAdapter AvifAdapter配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AvifAdapter GetAvifAdapter() const;
 
                     /**
                      * 判断参数 AvifAdapter 是否已赋值
                      * @return AvifAdapter 是否已赋值
+                     * 
                      */
                     bool AvifAdapterHasBeenSet() const;
 

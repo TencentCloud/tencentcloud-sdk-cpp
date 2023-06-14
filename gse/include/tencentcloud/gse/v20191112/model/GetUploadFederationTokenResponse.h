@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取临时证书的过期时间，Unix 时间戳，精确到秒
                      * @return ExpiredTime 临时证书的过期时间，Unix 时间戳，精确到秒
+                     * 
                      */
                     uint64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取临时证书
                      * @return AssetCredentials 临时证书
+                     * 
                      */
                     AssetCredentials GetAssetCredentials() const;
 
                     /**
                      * 判断参数 AssetCredentials 是否已赋值
                      * @return AssetCredentials 是否已赋值
+                     * 
                      */
                     bool AssetCredentialsHasBeenSet() const;
 

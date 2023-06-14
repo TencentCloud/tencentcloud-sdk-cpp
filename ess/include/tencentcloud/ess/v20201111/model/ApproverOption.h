@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否可以拒签 false-可以拒签,默认 true-不可以拒签
                      * @return NoRefuse 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * 
                      */
                     bool GetNoRefuse() const;
 
                     /**
                      * 设置是否可以拒签 false-可以拒签,默认 true-不可以拒签
-                     * @param NoRefuse 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * @param _noRefuse 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * 
                      */
                     void SetNoRefuse(const bool& _noRefuse);
 
                     /**
                      * 判断参数 NoRefuse 是否已赋值
                      * @return NoRefuse 是否已赋值
+                     * 
                      */
                     bool NoRefuseHasBeenSet() const;
 
                     /**
                      * 获取是否可以转发 false-可以转发,默认 true-不可以转发
                      * @return NoTransfer 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * 
                      */
                     bool GetNoTransfer() const;
 
                     /**
                      * 设置是否可以转发 false-可以转发,默认 true-不可以转发
-                     * @param NoTransfer 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * @param _noTransfer 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * 
                      */
                     void SetNoTransfer(const bool& _noTransfer);
 
                     /**
                      * 判断参数 NoTransfer 是否已赋值
                      * @return NoTransfer 是否已赋值
+                     * 
                      */
                     bool NoTransferHasBeenSet() const;
 

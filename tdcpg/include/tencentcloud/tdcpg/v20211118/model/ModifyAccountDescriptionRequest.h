@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取账号名字
                      * @return AccountName 账号名字
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名字
-                     * @param AccountName 账号名字
+                     * @param _accountName 账号名字
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取账号描述，0-256个字符
                      * @return AccountDescription 账号描述，0-256个字符
+                     * 
                      */
                     std::string GetAccountDescription() const;
 
                     /**
                      * 设置账号描述，0-256个字符
-                     * @param AccountDescription 账号描述，0-256个字符
+                     * @param _accountDescription 账号描述，0-256个字符
+                     * 
                      */
                     void SetAccountDescription(const std::string& _accountDescription);
 
                     /**
                      * 判断参数 AccountDescription 是否已赋值
                      * @return AccountDescription 是否已赋值
+                     * 
                      */
                     bool AccountDescriptionHasBeenSet() const;
 

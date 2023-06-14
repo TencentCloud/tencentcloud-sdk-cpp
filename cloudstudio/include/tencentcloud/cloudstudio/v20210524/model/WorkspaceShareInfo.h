@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取共享或不共享状态
                      * @return Status 共享或不共享状态
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置共享或不共享状态
-                     * @param Status 共享或不共享状态
+                     * @param _status 共享或不共享状态
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WithMe 是否与我共享
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetWithMe() const;
 
                     /**
                      * 设置是否与我共享
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WithMe 是否与我共享
+                     * @param _withMe 是否与我共享
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWithMe(const bool& _withMe);
 
                     /**
                      * 判断参数 WithMe 是否已赋值
                      * @return WithMe 是否已赋值
+                     * 
                      */
                     bool WithMeHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginDate 开始共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置开始共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginDate 开始共享的时间
+                     * @param _beginDate 开始共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
@@ -114,38 +123,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndDate 停止共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置停止共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndDate 停止共享的时间
+                     * @param _endDate 停止共享的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取停止共享的时间
                      * @return Users 停止共享的时间
+                     * 
                      */
                     std::vector<UserInfoRsp> GetUsers() const;
 
                     /**
                      * 设置停止共享的时间
-                     * @param Users 停止共享的时间
+                     * @param _users 停止共享的时间
+                     * 
                      */
                     void SetUsers(const std::vector<UserInfoRsp>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 

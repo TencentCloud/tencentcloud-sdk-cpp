@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取所需要删除规则的ID
                      * @return Id 所需要删除规则的ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置所需要删除规则的ID
-                     * @param Id 所需要删除规则的ID
+                     * @param _id 所需要删除规则的ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取腾讯云地域的英文简写
                      * @return Area 腾讯云地域的英文简写
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置腾讯云地域的英文简写
-                     * @param Area 腾讯云地域的英文简写
+                     * @param _area 腾讯云地域的英文简写
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取方向，0：出站，1：入站
                      * @return Direction 方向，0：出站，1：入站
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置方向，0：出站，1：入站
-                     * @param Direction 方向，0：出站，1：入站
+                     * @param _direction 方向，0：出站，1：入站
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取是否删除反向规则，0：否，1：是
                      * @return IsDelReverse 是否删除反向规则，0：否，1：是
+                     * 
                      */
                     uint64_t GetIsDelReverse() const;
 
                     /**
                      * 设置是否删除反向规则，0：否，1：是
-                     * @param IsDelReverse 是否删除反向规则，0：否，1：是
+                     * @param _isDelReverse 是否删除反向规则，0：否，1：是
+                     * 
                      */
                     void SetIsDelReverse(const uint64_t& _isDelReverse);
 
                     /**
                      * 判断参数 IsDelReverse 是否已赋值
                      * @return IsDelReverse 是否已赋值
+                     * 
                      */
                     bool IsDelReverseHasBeenSet() const;
 

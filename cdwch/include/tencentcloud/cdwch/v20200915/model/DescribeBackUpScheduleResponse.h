@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取备份是否开启
                      * @return BackUpOpened 备份是否开启
+                     * 
                      */
                     bool GetBackUpOpened() const;
 
                     /**
                      * 判断参数 BackUpOpened 是否已赋值
                      * @return BackUpOpened 是否已赋值
+                     * 
                      */
                     bool BackUpOpenedHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaStrategy 元数据备份策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScheduleStrategy GetMetaStrategy() const;
 
                     /**
                      * 判断参数 MetaStrategy 是否已赋值
                      * @return MetaStrategy 是否已赋值
+                     * 
                      */
                     bool MetaStrategyHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataStrategy 表数据备份策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScheduleStrategy GetDataStrategy() const;
 
                     /**
                      * 判断参数 DataStrategy 是否已赋值
                      * @return DataStrategy 是否已赋值
+                     * 
                      */
                     bool DataStrategyHasBeenSet() const;
 
@@ -90,24 +96,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackUpContents 备份表列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BackupTableContent> GetBackUpContents() const;
 
                     /**
                      * 判断参数 BackUpContents 是否已赋值
                      * @return BackUpContents 是否已赋值
+                     * 
                      */
                     bool BackUpContentsHasBeenSet() const;
 
                     /**
                      * 获取备份的状态
                      * @return BackUpStatus 备份的状态
+                     * 
                      */
                     int64_t GetBackUpStatus() const;
 
                     /**
                      * 判断参数 BackUpStatus 是否已赋值
                      * @return BackUpStatus 是否已赋值
+                     * 
                      */
                     bool BackUpStatusHasBeenSet() const;
 

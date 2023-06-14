@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取程序包总量
                      * @return TotalCount 程序包总量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置程序包总量
-                     * @param TotalCount 程序包总量
+                     * @param _totalCount 程序包总量
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 程序包信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PkgInfo> GetContent() const;
 
                     /**
                      * 设置程序包信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 程序包信息列表
+                     * @param _content 程序包信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::vector<PkgInfo>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryId 程序包仓库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置程序包仓库id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepositoryId 程序包仓库id
+                     * @param _repositoryId 程序包仓库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
 
                     /**
                      * 判断参数 RepositoryId 是否已赋值
                      * @return RepositoryId 是否已赋值
+                     * 
                      */
                     bool RepositoryIdHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryType 程序包仓库类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置程序包仓库类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepositoryType 程序包仓库类型
+                     * @param _repositoryType 程序包仓库类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
 
                     /**
                      * 判断参数 RepositoryType 是否已赋值
                      * @return RepositoryType 是否已赋值
+                     * 
                      */
                     bool RepositoryTypeHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryName 程序包仓库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置程序包仓库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepositoryName 程序包仓库名称
+                     * @param _repositoryName 程序包仓库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
                     /**
                      * 判断参数 RepositoryName 是否已赋值
                      * @return RepositoryName 是否已赋值
+                     * 
                      */
                     bool RepositoryNameHasBeenSet() const;
 

@@ -55,24 +55,28 @@ namespace TencentCloud
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
+                     * 
                      */
                     std::string GetLimitType() const;
 
                     /**
                      * 判断参数 LimitType 是否已赋值
                      * @return LimitType 是否已赋值
+                     * 
                      */
                     bool LimitTypeHasBeenSet() const;
 
                     /**
                      * 获取该参数仅支持输入 In，表示自定义的**LimitVpc**可以下载备份文件。
                      * @return VpcComparisonSymbol 该参数仅支持输入 In，表示自定义的**LimitVpc**可以下载备份文件。
+                     * 
                      */
                     std::string GetVpcComparisonSymbol() const;
 
                     /**
                      * 判断参数 VpcComparisonSymbol 是否已赋值
                      * @return VpcComparisonSymbol 是否已赋值
+                     * 
                      */
                     bool VpcComparisonSymbolHasBeenSet() const;
 
@@ -85,36 +89,42 @@ namespace TencentCloud
 
 - In: 自定义的 IP 地址可以下载。
 - NotIn: 自定义的 IP 不可以下载。
+                     * 
                      */
                     std::string GetIpComparisonSymbol() const;
 
                     /**
                      * 判断参数 IpComparisonSymbol 是否已赋值
                      * @return IpComparisonSymbol 是否已赋值
+                     * 
                      */
                     bool IpComparisonSymbolHasBeenSet() const;
 
                     /**
                      * 获取自定义的可下载备份文件的 VPC ID。当参数**LimitType**为**Customize **时，显示该参数。
                      * @return LimitVpc 自定义的可下载备份文件的 VPC ID。当参数**LimitType**为**Customize **时，显示该参数。
+                     * 
                      */
                     std::vector<BackupLimitVpcItem> GetLimitVpc() const;
 
                     /**
                      * 判断参数 LimitVpc 是否已赋值
                      * @return LimitVpc 是否已赋值
+                     * 
                      */
                     bool LimitVpcHasBeenSet() const;
 
                     /**
                      * 获取自定义的可下载备份文件的 VPC ID。当参数**LimitType**为**Customize **时，显示该参数。
                      * @return LimitIp 自定义的可下载备份文件的 VPC ID。当参数**LimitType**为**Customize **时，显示该参数。
+                     * 
                      */
                     std::vector<std::string> GetLimitIp() const;
 
                     /**
                      * 判断参数 LimitIp 是否已赋值
                      * @return LimitIp 是否已赋值
+                     * 
                      */
                     bool LimitIpHasBeenSet() const;
 

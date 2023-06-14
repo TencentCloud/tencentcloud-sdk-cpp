@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取筛选条件的key。
                      * @return Key 筛选条件的key。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置筛选条件的key。
-                     * @param Key 筛选条件的key。
+                     * @param _key 筛选条件的key。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 <li>notStartWith: 不以value的值开始；</li>
 <li>endWith: 结尾是value值；</li>
 <li>notEndWith: 不以value的值结尾。</li>
+                     * 
                      */
                     std::string GetOperator() const;
 
@@ -96,7 +100,7 @@ namespace TencentCloud
 <li>notStartWith: 不以value的值开始；</li>
 <li>endWith: 结尾是value值；</li>
 <li>notEndWith: 不以value的值结尾。</li>
-                     * @param Operator 查询条件操作符，操作类型有：
+                     * @param _operator 查询条件操作符，操作类型有：
 <li>equals: 等于；</li>
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
@@ -105,30 +109,35 @@ namespace TencentCloud
 <li>notStartWith: 不以value的值开始；</li>
 <li>endWith: 结尾是value值；</li>
 <li>notEndWith: 不以value的值结尾。</li>
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取筛选条件的值。
                      * @return Value 筛选条件的值。
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置筛选条件的值。
-                     * @param Value 筛选条件的值。
+                     * @param _value 筛选条件的值。
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取边缘集群ID
                      * @return EdgeUnitId 边缘集群ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘集群ID
-                     * @param EdgeUnitId 边缘集群ID
+                     * @param _edgeUnitId 边缘集群ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取边缘集群名称，64字符以内
                      * @return Name 边缘集群名称，64字符以内
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置边缘集群名称，64字符以内
-                     * @param Name 边缘集群名称，64字符以内
+                     * @param _name 边缘集群名称，64字符以内
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取集群描述，200字符以内
                      * @return Description 集群描述，200字符以内
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置集群描述，200字符以内
-                     * @param Description 集群描述，200字符以内
+                     * @param _description 集群描述，200字符以内
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

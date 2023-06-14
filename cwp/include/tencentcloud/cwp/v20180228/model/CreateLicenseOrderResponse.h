@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取订单号列表
                      * @return DealNames 订单号列表
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 
                     /**
                      * 获取资源ID列表,预付费订单该字段空值
                      * @return ResourceIds 资源ID列表,预付费订单该字段空值
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取大订单号 , 后付费该字段空值
                      * @return BigDealId 大订单号 , 后付费该字段空值
+                     * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
                      * 判断参数 BigDealId 是否已赋值
                      * @return BigDealId 是否已赋值
+                     * 
                      */
                     bool BigDealIdHasBeenSet() const;
 

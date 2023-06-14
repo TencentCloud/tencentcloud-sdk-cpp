@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，例如：mssql-sdf32n1d
                      * @return InstanceId 实例ID，例如：mssql-sdf32n1d
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，例如：mssql-sdf32n1d
-                     * @param InstanceId 实例ID，例如：mssql-sdf32n1d
+                     * @param _instanceId 实例ID，例如：mssql-sdf32n1d
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。
                      * @return FlowId 实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。
-                     * @param FlowId 实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。
+                     * @param _flowId 实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

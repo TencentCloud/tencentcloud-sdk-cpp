@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取密钥ID最近访问列表
                      * @return SecretIdLastUsedRows 密钥ID最近访问列表
+                     * 
                      */
                     std::vector<SecretIdLastUsed> GetSecretIdLastUsedRows() const;
 
                     /**
                      * 判断参数 SecretIdLastUsedRows 是否已赋值
                      * @return SecretIdLastUsedRows 是否已赋值
+                     * 
                      */
                     bool SecretIdLastUsedRowsHasBeenSet() const;
 

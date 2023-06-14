@@ -48,216 +48,252 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取指标列表
                      * @return Metrics 指标列表
+                     * 
                      */
                     std::vector<QueryMetricItem> GetMetrics() const;
 
                     /**
                      * 设置指标列表
-                     * @param Metrics 指标列表
+                     * @param _metrics 指标列表
+                     * 
                      */
                     void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取聚合维度
                      * @return GroupBy 聚合维度
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
                      * 设置聚合维度
-                     * @param GroupBy 聚合维度
+                     * @param _groupBy 聚合维度
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 
                     /**
                      * 获取排序
                      * @return OrderBy 排序
+                     * 
                      */
                     OrderBy GetOrderBy() const;
 
                     /**
                      * 设置排序
-                     * @param OrderBy 排序
+                     * @param _orderBy 排序
+                     * 
                      */
                     void SetOrderBy(const OrderBy& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取每页大小
                      * @return Limit 每页大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页大小
-                     * @param Limit 每页大小
+                     * @param _limit 每页大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取分页起始点
                      * @return Offset 分页起始点
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页起始点
-                     * @param Offset 分页起始点
+                     * @param _offset 分页起始点
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取业务名称（默认值：taw）
                      * @return BusinessName 业务名称（默认值：taw）
+                     * 
                      */
                     std::string GetBusinessName() const;
 
                     /**
                      * 设置业务名称（默认值：taw）
-                     * @param BusinessName 业务名称（默认值：taw）
+                     * @param _businessName 业务名称（默认值：taw）
+                     * 
                      */
                     void SetBusinessName(const std::string& _businessName);
 
                     /**
                      * 判断参数 BusinessName 是否已赋值
                      * @return BusinessName 是否已赋值
+                     * 
                      */
                     bool BusinessNameHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return PageIndex 页码
+                     * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
                      * 设置页码
-                     * @param PageIndex 页码
+                     * @param _pageIndex 页码
+                     * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取页长
                      * @return PageSize 页长
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页长
-                     * @param PageSize 页长
+                     * @param _pageSize 页长
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

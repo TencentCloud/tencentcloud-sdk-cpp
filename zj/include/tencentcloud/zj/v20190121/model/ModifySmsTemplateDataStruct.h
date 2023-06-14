@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 短信模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置短信模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 短信模板id
+                     * @param _templateId 短信模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

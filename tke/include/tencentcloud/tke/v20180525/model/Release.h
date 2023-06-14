@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取应用名称
                      * @return Name 应用名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置应用名称
-                     * @param Name 应用名称
+                     * @param _name 应用名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取应用命名空间
                      * @return Namespace 应用命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置应用命名空间
-                     * @param Namespace 应用命名空间
+                     * @param _namespace 应用命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 应用当前版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRevision() const;
 
                     /**
                      * 设置应用当前版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Revision 应用当前版本
+                     * @param _revision 应用当前版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRevision(const std::string& _revision);
 
                     /**
                      * 判断参数 Revision 是否已赋值
                      * @return Revision 是否已赋值
+                     * 
                      */
                     bool RevisionHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 应用状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应用状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 应用状态
+                     * @param _status 应用状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChartName 制品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChartName() const;
 
                     /**
                      * 设置制品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChartName 制品名称
+                     * @param _chartName 制品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChartName(const std::string& _chartName);
 
                     /**
                      * 判断参数 ChartName 是否已赋值
                      * @return ChartName 是否已赋值
+                     * 
                      */
                     bool ChartNameHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChartVersion 制品版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChartVersion() const;
 
                     /**
                      * 设置制品版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChartVersion 制品版本
+                     * @param _chartVersion 制品版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChartVersion(const std::string& _chartVersion);
 
                     /**
                      * 判断参数 ChartVersion 是否已赋值
                      * @return ChartVersion 是否已赋值
+                     * 
                      */
                     bool ChartVersionHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppVersion 制品应用版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
                      * 设置制品应用版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppVersion 制品应用版本
+                     * @param _appVersion 制品应用版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
 
                     /**
                      * 判断参数 AppVersion 是否已赋值
                      * @return AppVersion 是否已赋值
+                     * 
                      */
                     bool AppVersionHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 更新时间
+                     * @param _updatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 应用描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置应用描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 应用描述
+                     * @param _description 应用描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

@@ -52,24 +52,28 @@ namespace TencentCloud
                     /**
                      * 获取计算环境 ID
                      * @return EnvId 计算环境 ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取计算环境名称
                      * @return EnvName 计算环境名称
+                     * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 判断参数 EnvName 是否已赋值
                      * @return EnvName 是否已赋值
+                     * 
                      */
                     bool EnvNameHasBeenSet() const;
 
@@ -78,96 +82,112 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvDescription 计算环境描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvDescription() const;
 
                     /**
                      * 判断参数 EnvDescription 是否已赋值
                      * @return EnvDescription 是否已赋值
+                     * 
                      */
                     bool EnvDescriptionHasBeenSet() const;
 
                     /**
                      * 获取计算环境类型，仅支持“MANAGED”类型
                      * @return EnvType 计算环境类型，仅支持“MANAGED”类型
+                     * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 判断参数 EnvType 是否已赋值
                      * @return EnvType 是否已赋值
+                     * 
                      */
                     bool EnvTypeHasBeenSet() const;
 
                     /**
                      * 获取计算环境参数
                      * @return EnvData 计算环境参数
+                     * 
                      */
                     EnvData GetEnvData() const;
 
                     /**
                      * 判断参数 EnvData 是否已赋值
                      * @return EnvData 是否已赋值
+                     * 
                      */
                     bool EnvDataHasBeenSet() const;
 
                     /**
                      * 获取数据盘挂载选项
                      * @return MountDataDisks 数据盘挂载选项
+                     * 
                      */
                     std::vector<MountDataDisk> GetMountDataDisks() const;
 
                     /**
                      * 判断参数 MountDataDisks 是否已赋值
                      * @return MountDataDisks 是否已赋值
+                     * 
                      */
                     bool MountDataDisksHasBeenSet() const;
 
                     /**
                      * 获取输入映射
                      * @return InputMappings 输入映射
+                     * 
                      */
                     std::vector<InputMapping> GetInputMappings() const;
 
                     /**
                      * 判断参数 InputMappings 是否已赋值
                      * @return InputMappings 是否已赋值
+                     * 
                      */
                     bool InputMappingsHasBeenSet() const;
 
                     /**
                      * 获取授权信息
                      * @return Authentications 授权信息
+                     * 
                      */
                     std::vector<Authentication> GetAuthentications() const;
 
                     /**
                      * 判断参数 Authentications 是否已赋值
                      * @return Authentications 是否已赋值
+                     * 
                      */
                     bool AuthenticationsHasBeenSet() const;
 
                     /**
                      * 获取通知信息
                      * @return Notifications 通知信息
+                     * 
                      */
                     std::vector<Notification> GetNotifications() const;
 
                     /**
                      * 判断参数 Notifications 是否已赋值
                      * @return Notifications 是否已赋值
+                     * 
                      */
                     bool NotificationsHasBeenSet() const;
 
                     /**
                      * 获取计算节点期望个数
                      * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     int64_t GetDesiredComputeNodeCount() const;
 
                     /**
                      * 判断参数 DesiredComputeNodeCount 是否已赋值
                      * @return DesiredComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
@@ -176,12 +196,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 计算环境绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

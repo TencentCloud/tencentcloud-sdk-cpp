@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取编辑成功后返回新策略ID列表
                      * @return RuleUuid 编辑成功后返回新策略ID列表
+                     * 
                      */
                     std::vector<int64_t> GetRuleUuid() const;
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 

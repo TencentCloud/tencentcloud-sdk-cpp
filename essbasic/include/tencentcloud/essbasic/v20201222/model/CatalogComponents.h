@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取流程ID
                      * @return FlowId 流程ID
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程ID
-                     * @param FlowId 流程ID
+                     * @param _flowId 流程ID
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取签署区列表
                      * @return SignComponents 签署区列表
+                     * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
                      * 设置签署区列表
-                     * @param SignComponents 签署区列表
+                     * @param _signComponents 签署区列表
+                     * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
 
                     /**
                      * 判断参数 SignComponents 是否已赋值
                      * @return SignComponents 是否已赋值
+                     * 
                      */
                     bool SignComponentsHasBeenSet() const;
 
                     /**
                      * 获取签署任务ID
                      * @return SignId 签署任务ID
+                     * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 设置签署任务ID
-                     * @param SignId 签署任务ID
+                     * @param _signId 签署任务ID
+                     * 
                      */
                     void SetSignId(const std::string& _signId);
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 

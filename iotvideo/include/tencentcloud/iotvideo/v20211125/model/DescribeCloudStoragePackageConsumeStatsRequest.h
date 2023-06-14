@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始日期
                      * @return StartDate 开始日期
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期
-                     * @param StartDate 开始日期
+                     * @param _startDate 开始日期
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期，开始与结束日期间隔不可超过一年
                      * @return EndDate 结束日期，开始与结束日期间隔不可超过一年
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期，开始与结束日期间隔不可超过一年
-                     * @param EndDate 结束日期，开始与结束日期间隔不可超过一年
+                     * @param _endDate 结束日期，开始与结束日期间隔不可超过一年
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

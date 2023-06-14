@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取文件Id
                      * @return FileId 文件Id
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件Id
-                     * @param FileId 文件Id
+                     * @param _fileId 文件Id
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取文件名
                      * @return FileName 文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名
-                     * @param FileName 文件名
+                     * @param _fileName 文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取文件大小，单位为Byte
                      * @return FileSize 文件大小，单位为Byte
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小，单位为Byte
-                     * @param FileSize 文件大小，单位为Byte
+                     * @param _fileSize 文件大小，单位为Byte
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取文件上传时间，10位时间戳（精确到秒）
                      * @return CreatedOn 文件上传时间，10位时间戳（精确到秒）
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置文件上传时间，10位时间戳（精确到秒）
-                     * @param CreatedOn 文件上传时间，10位时间戳（精确到秒）
+                     * @param _createdOn 文件上传时间，10位时间戳（精确到秒）
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 

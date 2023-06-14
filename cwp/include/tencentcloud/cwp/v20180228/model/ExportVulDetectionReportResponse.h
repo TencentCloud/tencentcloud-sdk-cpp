@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取导出文件下载链接地址
                      * @return DownloadUrl 导出文件下载链接地址
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取导出检测报告的任务Id（不同于入参的漏洞扫描任务id）
                      * @return TaskId 导出检测报告的任务Id（不同于入参的漏洞扫描任务id）
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

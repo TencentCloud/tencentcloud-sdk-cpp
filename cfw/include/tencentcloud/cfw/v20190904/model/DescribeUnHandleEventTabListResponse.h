@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 租户伪攻击链未处置事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     UnHandleEvent GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取错误码，0成功 非0错误
                      * @return ReturnCode 错误码，0成功 非0错误
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取返回信息 success成功
                      * @return ReturnMsg 返回信息 success成功
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 

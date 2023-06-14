@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取回调地址。
                      * @return Callback 回调地址。
+                     * 
                      */
                     std::string GetCallback() const;
 
                     /**
                      * 设置回调地址。
-                     * @param Callback 回调地址。
+                     * @param _callback 回调地址。
+                     * 
                      */
                     void SetCallback(const std::string& _callback);
 
                     /**
                      * 判断参数 Callback 是否已赋值
                      * @return Callback 是否已赋值
+                     * 
                      */
                     bool CallbackHasBeenSet() const;
 
                     /**
                      * 获取回调key。
                      * @return CallbackKey 回调key。
+                     * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
                      * 设置回调key。
-                     * @param CallbackKey 回调key。
+                     * @param _callbackKey 回调key。
+                     * 
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
 
                     /**
                      * 判断参数 CallbackKey 是否已赋值
                      * @return CallbackKey 是否已赋值
+                     * 
                      */
                     bool CallbackKeyHasBeenSet() const;
 

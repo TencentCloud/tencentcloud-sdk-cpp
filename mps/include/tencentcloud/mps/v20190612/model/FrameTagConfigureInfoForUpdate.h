@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 智能按帧标签任务开关，可选值：
 <li>ON：开启智能按帧标签任务；</li>
 <li>OFF：关闭智能按帧标签任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置智能按帧标签任务开关，可选值：
 <li>ON：开启智能按帧标签任务；</li>
 <li>OFF：关闭智能按帧标签任务。</li>
-                     * @param Switch 智能按帧标签任务开关，可选值：
+                     * @param _switch 智能按帧标签任务开关，可选值：
 <li>ON：开启智能按帧标签任务；</li>
 <li>OFF：关闭智能按帧标签任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

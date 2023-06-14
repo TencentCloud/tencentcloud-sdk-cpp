@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例信息。
                      * @return LoadBalancerSla 负载均衡实例信息。
+                     * 
                      */
                     std::vector<SlaUpdateParam> GetLoadBalancerSla() const;
 
                     /**
                      * 设置负载均衡实例信息。
-                     * @param LoadBalancerSla 负载均衡实例信息。
+                     * @param _loadBalancerSla 负载均衡实例信息。
+                     * 
                      */
                     void SetLoadBalancerSla(const std::vector<SlaUpdateParam>& _loadBalancerSla);
 
                     /**
                      * 判断参数 LoadBalancerSla 是否已赋值
                      * @return LoadBalancerSla 是否已赋值
+                     * 
                      */
                     bool LoadBalancerSlaHasBeenSet() const;
 

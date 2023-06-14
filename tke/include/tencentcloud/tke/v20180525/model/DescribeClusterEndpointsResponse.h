@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群APIServer的CA证书
                      * @return CertificationAuthority 集群APIServer的CA证书
+                     * 
                      */
                     std::string GetCertificationAuthority() const;
 
                     /**
                      * 判断参数 CertificationAuthority 是否已赋值
                      * @return CertificationAuthority 是否已赋值
+                     * 
                      */
                     bool CertificationAuthorityHasBeenSet() const;
 
                     /**
                      * 获取集群APIServer的外网访问地址
                      * @return ClusterExternalEndpoint 集群APIServer的外网访问地址
+                     * 
                      */
                     std::string GetClusterExternalEndpoint() const;
 
                     /**
                      * 判断参数 ClusterExternalEndpoint 是否已赋值
                      * @return ClusterExternalEndpoint 是否已赋值
+                     * 
                      */
                     bool ClusterExternalEndpointHasBeenSet() const;
 
                     /**
                      * 获取集群APIServer的内网访问地址
                      * @return ClusterIntranetEndpoint 集群APIServer的内网访问地址
+                     * 
                      */
                     std::string GetClusterIntranetEndpoint() const;
 
                     /**
                      * 判断参数 ClusterIntranetEndpoint 是否已赋值
                      * @return ClusterIntranetEndpoint 是否已赋值
+                     * 
                      */
                     bool ClusterIntranetEndpointHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDomain 集群APIServer的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterDomain() const;
 
                     /**
                      * 判断参数 ClusterDomain 是否已赋值
                      * @return ClusterDomain 是否已赋值
+                     * 
                      */
                     bool ClusterDomainHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterExternalACL 集群APIServer的外网访问ACL列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetClusterExternalACL() const;
 
                     /**
                      * 判断参数 ClusterExternalACL 是否已赋值
                      * @return ClusterExternalACL 是否已赋值
+                     * 
                      */
                     bool ClusterExternalACLHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterExternalDomain 外网域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterExternalDomain() const;
 
                     /**
                      * 判断参数 ClusterExternalDomain 是否已赋值
                      * @return ClusterExternalDomain 是否已赋值
+                     * 
                      */
                     bool ClusterExternalDomainHasBeenSet() const;
 
@@ -126,12 +138,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIntranetDomain 内网域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterIntranetDomain() const;
 
                     /**
                      * 判断参数 ClusterIntranetDomain 是否已赋值
                      * @return ClusterIntranetDomain 是否已赋值
+                     * 
                      */
                     bool ClusterIntranetDomainHasBeenSet() const;
 
@@ -140,12 +154,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 外网安全组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

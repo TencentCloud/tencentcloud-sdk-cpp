@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义
                      * @return FwCidrType 防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义
+                     * 
                      */
                     std::string GetFwCidrType() const;
 
                     /**
                      * 设置防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义
-                     * @param FwCidrType 防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义
+                     * @param _fwCidrType 防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义
+                     * 
                      */
                     void SetFwCidrType(const std::string& _fwCidrType);
 
                     /**
                      * 判断参数 FwCidrType 是否已赋值
                      * @return FwCidrType 是否已赋值
+                     * 
                      */
                     bool FwCidrTypeHasBeenSet() const;
 
                     /**
                      * 获取为每个vpc指定防火墙的网段
                      * @return FwCidrLst 为每个vpc指定防火墙的网段
+                     * 
                      */
                     std::vector<FwVpcCidr> GetFwCidrLst() const;
 
                     /**
                      * 设置为每个vpc指定防火墙的网段
-                     * @param FwCidrLst 为每个vpc指定防火墙的网段
+                     * @param _fwCidrLst 为每个vpc指定防火墙的网段
+                     * 
                      */
                     void SetFwCidrLst(const std::vector<FwVpcCidr>& _fwCidrLst);
 
                     /**
                      * 判断参数 FwCidrLst 是否已赋值
                      * @return FwCidrLst 是否已赋值
+                     * 
                      */
                     bool FwCidrLstHasBeenSet() const;
 
                     /**
                      * 获取其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段
                      * @return ComFwCidr 其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段
+                     * 
                      */
                     std::string GetComFwCidr() const;
 
                     /**
                      * 设置其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段
-                     * @param ComFwCidr 其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段
+                     * @param _comFwCidr 其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段
+                     * 
                      */
                     void SetComFwCidr(const std::string& _comFwCidr);
 
                     /**
                      * 判断参数 ComFwCidr 是否已赋值
                      * @return ComFwCidr 是否已赋值
+                     * 
                      */
                     bool ComFwCidrHasBeenSet() const;
 

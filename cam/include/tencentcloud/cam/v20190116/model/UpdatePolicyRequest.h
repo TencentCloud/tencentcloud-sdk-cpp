@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取策略ID，与PolicyName二选一必填
                      * @return PolicyId 策略ID，与PolicyName二选一必填
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID，与PolicyName二选一必填
-                     * @param PolicyId 策略ID，与PolicyName二选一必填
+                     * @param _policyId 策略ID，与PolicyName二选一必填
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略名，与PolicyId二选一必填
                      * @return PolicyName 策略名，与PolicyId二选一必填
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名，与PolicyId二选一必填
-                     * @param PolicyName 策略名，与PolicyId二选一必填
+                     * @param _policyName 策略名，与PolicyId二选一必填
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取策略描述
                      * @return Description 策略描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述
-                     * @param Description 策略描述
+                     * @param _description 策略描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取策略文档，示例：{"version":"2.0","statement":[{"action":"name/sts:AssumeRole","effect":"allow","principal":{"service":["cloudaudit.cloud.tencent.com","cls.cloud.tencent.com"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo
                      * @return PolicyDocument 策略文档，示例：{"version":"2.0","statement":[{"action":"name/sts:AssumeRole","effect":"allow","principal":{"service":["cloudaudit.cloud.tencent.com","cls.cloud.tencent.com"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo
+                     * 
                      */
                     std::string GetPolicyDocument() const;
 
                     /**
                      * 设置策略文档，示例：{"version":"2.0","statement":[{"action":"name/sts:AssumeRole","effect":"allow","principal":{"service":["cloudaudit.cloud.tencent.com","cls.cloud.tencent.com"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo
-                     * @param PolicyDocument 策略文档，示例：{"version":"2.0","statement":[{"action":"name/sts:AssumeRole","effect":"allow","principal":{"service":["cloudaudit.cloud.tencent.com","cls.cloud.tencent.com"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo
+                     * @param _policyDocument 策略文档，示例：{"version":"2.0","statement":[{"action":"name/sts:AssumeRole","effect":"allow","principal":{"service":["cloudaudit.cloud.tencent.com","cls.cloud.tencent.com"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo
+                     * 
                      */
                     void SetPolicyDocument(const std::string& _policyDocument);
 
                     /**
                      * 判断参数 PolicyDocument 是否已赋值
                      * @return PolicyDocument 是否已赋值
+                     * 
                      */
                     bool PolicyDocumentHasBeenSet() const;
 
                     /**
                      * 获取预设策略备注
                      * @return Alias 预设策略备注
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置预设策略备注
-                     * @param Alias 预设策略备注
+                     * @param _alias 预设策略备注
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

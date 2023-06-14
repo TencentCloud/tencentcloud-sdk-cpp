@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义内容。
                      * @return CustomContent 自定义内容。
+                     * 
                      */
                     std::vector<AppCustomContent> GetCustomContent() const;
 
                     /**
                      * 设置自定义内容。
-                     * @param CustomContent 自定义内容。
+                     * @param _customContent 自定义内容。
+                     * 
                      */
                     void SetCustomContent(const std::vector<AppCustomContent>& _customContent);
 
                     /**
                      * 判断参数 CustomContent 是否已赋值
                      * @return CustomContent 是否已赋值
+                     * 
                      */
                     bool CustomContentHasBeenSet() const;
 
                     /**
                      * 获取应用ID。
                      * @return SdkAppId 应用ID。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用ID。
-                     * @param SdkAppId 应用ID。
+                     * @param _sdkAppId 应用ID。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

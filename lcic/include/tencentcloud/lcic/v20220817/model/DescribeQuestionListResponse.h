@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件的房间问答问题总数
                      * @return Total 符合查询条件的房间问答问题总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuestionInfo 房间问答问题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QuestionInfo> GetQuestionInfo() const;
 
                     /**
                      * 判断参数 QuestionInfo 是否已赋值
                      * @return QuestionInfo 是否已赋值
+                     * 
                      */
                     bool QuestionInfoHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取死信队列模式
                      * @return Type 死信队列模式
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置死信队列模式
-                     * @param Type 死信队列模式
+                     * @param _type 死信队列模式
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取死信队列名称
                      * @return Name 死信队列名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置死信队列名称
-                     * @param Name 死信队列名称
+                     * @param _name 死信队列名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取死信队列主题模式的标签形式
                      * @return FilterType 死信队列主题模式的标签形式
+                     * 
                      */
                     std::string GetFilterType() const;
 
                     /**
                      * 设置死信队列主题模式的标签形式
-                     * @param FilterType 死信队列主题模式的标签形式
+                     * @param _filterType 死信队列主题模式的标签形式
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 

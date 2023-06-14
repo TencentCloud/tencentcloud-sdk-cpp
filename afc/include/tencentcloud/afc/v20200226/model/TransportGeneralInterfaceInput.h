@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取公证处请求接口名
                      * @return InterfaceName 公证处请求接口名
+                     * 
                      */
                     std::string GetInterfaceName() const;
 
                     /**
                      * 设置公证处请求接口名
-                     * @param InterfaceName 公证处请求接口名
+                     * @param _interfaceName 公证处请求接口名
+                     * 
                      */
                     void SetInterfaceName(const std::string& _interfaceName);
 
                     /**
                      * 判断参数 InterfaceName 是否已赋值
                      * @return InterfaceName 是否已赋值
+                     * 
                      */
                     bool InterfaceNameHasBeenSet() const;
 
                     /**
                      * 获取公证处业务详情二层入参
                      * @return NotarizationInput 公证处业务详情二层入参
+                     * 
                      */
                     std::string GetNotarizationInput() const;
 
                     /**
                      * 设置公证处业务详情二层入参
-                     * @param NotarizationInput 公证处业务详情二层入参
+                     * @param _notarizationInput 公证处业务详情二层入参
+                     * 
                      */
                     void SetNotarizationInput(const std::string& _notarizationInput);
 
                     /**
                      * 判断参数 NotarizationInput 是否已赋值
                      * @return NotarizationInput 是否已赋值
+                     * 
                      */
                     bool NotarizationInputHasBeenSet() const;
 
                     /**
                      * 获取业务二层详情入参的哈希签名
                      * @return NotarizationSign 业务二层详情入参的哈希签名
+                     * 
                      */
                     std::string GetNotarizationSign() const;
 
                     /**
                      * 设置业务二层详情入参的哈希签名
-                     * @param NotarizationSign 业务二层详情入参的哈希签名
+                     * @param _notarizationSign 业务二层详情入参的哈希签名
+                     * 
                      */
                     void SetNotarizationSign(const std::string& _notarizationSign);
 
                     /**
                      * 判断参数 NotarizationSign 是否已赋值
                      * @return NotarizationSign 是否已赋值
+                     * 
                      */
                     bool NotarizationSignHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
                      * @return TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
                      * 设置实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
-                     * @param TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * @param _timeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
                     /**
                      * 获取待续费集群ID列表。
                      * @return InstanceId 待续费集群ID列表。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待续费集群ID列表。
-                     * @param InstanceId 待续费集群ID列表。
+                     * @param _instanceId 待续费集群ID列表。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param _placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取实例计费模式。此处只支持取值为1，表示包年包月。
                      * @return PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置实例计费模式。此处只支持取值为1，表示包年包月。
-                     * @param PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
+                     * @param _payMode 实例计费模式。此处只支持取值为1，表示包年包月。
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
@@ -120,20 +132,23 @@ namespace TencentCloud
 <li>m：表示月份。</li>
                      * @return TimeUnit 实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
-                     * @param TimeUnit 实例续费的时间单位。取值范围：
+                     * @param _timeUnit 实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 <li>CNY：表示人民币。</li>
                      * @return Currency 货币种类。取值范围：
 <li>CNY：表示人民币。</li>
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置货币种类。取值范围：
 <li>CNY：表示人民币。</li>
-                     * @param Currency 货币种类。取值范围：
+                     * @param _currency 货币种类。取值范围：
 <li>CNY：表示人民币。</li>
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

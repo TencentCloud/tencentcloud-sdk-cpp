@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 模型版本号；默认顺序为 0、1、2、3、…其中：0=主模型，跟 RiskScore 保持一致；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型版本号；默认顺序为 0、1、2、3、…其中：0=主模型，跟 RiskScore 保持一致；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelId 模型版本号；默认顺序为 0、1、2、3、…其中：0=主模型，跟 RiskScore 保持一致；
+                     * @param _modelId 模型版本号；默认顺序为 0、1、2、3、…其中：0=主模型，跟 RiskScore 保持一致；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
                      * @return ModelScore 模型版本对应的评分结果；Found=1 时：模型版本对应的评分结果，0~100 分
 区间；Found=-1（未查到）时：全部模型结果返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelScore() const;
 
@@ -82,15 +86,17 @@ namespace TencentCloud
                      * 设置模型版本对应的评分结果；Found=1 时：模型版本对应的评分结果，0~100 分
 区间；Found=-1（未查到）时：全部模型结果返回-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelScore 模型版本对应的评分结果；Found=1 时：模型版本对应的评分结果，0~100 分
+                     * @param _modelScore 模型版本对应的评分结果；Found=1 时：模型版本对应的评分结果，0~100 分
 区间；Found=-1（未查到）时：全部模型结果返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelScore(const std::string& _modelScore);
 
                     /**
                      * 判断参数 ModelScore 是否已赋值
                      * @return ModelScore 是否已赋值
+                     * 
                      */
                     bool ModelScoreHasBeenSet() const;
 

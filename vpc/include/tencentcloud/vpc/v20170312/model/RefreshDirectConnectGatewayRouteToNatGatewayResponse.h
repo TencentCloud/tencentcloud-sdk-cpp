@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取IDC子网信息
                      * @return DirectConnectSubnetSet IDC子网信息
+                     * 
                      */
                     std::vector<DirectConnectSubnet> GetDirectConnectSubnetSet() const;
 
                     /**
                      * 判断参数 DirectConnectSubnetSet 是否已赋值
                      * @return DirectConnectSubnetSet 是否已赋值
+                     * 
                      */
                     bool DirectConnectSubnetSetHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取IECP边缘节点ID列表
                      * @return NodeIds IECP边缘节点ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetNodeIds() const;
 
                     /**
                      * 设置IECP边缘节点ID列表
-                     * @param NodeIds IECP边缘节点ID列表
+                     * @param _nodeIds IECP边缘节点ID列表
+                     * 
                      */
                     void SetNodeIds(const std::vector<uint64_t>& _nodeIds);
 
                     /**
                      * 判断参数 NodeIds 是否已赋值
                      * @return NodeIds 是否已赋值
+                     * 
                      */
                     bool NodeIdsHasBeenSet() const;
 

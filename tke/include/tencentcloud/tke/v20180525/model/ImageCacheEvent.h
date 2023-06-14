@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取镜像缓存Id
                      * @return ImageCacheId 镜像缓存Id
+                     * 
                      */
                     std::string GetImageCacheId() const;
 
                     /**
                      * 设置镜像缓存Id
-                     * @param ImageCacheId 镜像缓存Id
+                     * @param _imageCacheId 镜像缓存Id
+                     * 
                      */
                     void SetImageCacheId(const std::string& _imageCacheId);
 
                     /**
                      * 判断参数 ImageCacheId 是否已赋值
                      * @return ImageCacheId 是否已赋值
+                     * 
                      */
                     bool ImageCacheIdHasBeenSet() const;
 
                     /**
                      * 获取事件类型, Normal或者Warning
                      * @return Type 事件类型, Normal或者Warning
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型, Normal或者Warning
-                     * @param Type 事件类型, Normal或者Warning
+                     * @param _type 事件类型, Normal或者Warning
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取事件原因简述
                      * @return Reason 事件原因简述
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置事件原因简述
-                     * @param Reason 事件原因简述
+                     * @param _reason 事件原因简述
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取事件原因详述
                      * @return Message 事件原因详述
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置事件原因详述
-                     * @param Message 事件原因详述
+                     * @param _message 事件原因详述
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取事件第一次出现时间
                      * @return FirstTimestamp 事件第一次出现时间
+                     * 
                      */
                     std::string GetFirstTimestamp() const;
 
                     /**
                      * 设置事件第一次出现时间
-                     * @param FirstTimestamp 事件第一次出现时间
+                     * @param _firstTimestamp 事件第一次出现时间
+                     * 
                      */
                     void SetFirstTimestamp(const std::string& _firstTimestamp);
 
                     /**
                      * 判断参数 FirstTimestamp 是否已赋值
                      * @return FirstTimestamp 是否已赋值
+                     * 
                      */
                     bool FirstTimestampHasBeenSet() const;
 
                     /**
                      * 获取事件最后一次出现时间
                      * @return LastTimestamp 事件最后一次出现时间
+                     * 
                      */
                     std::string GetLastTimestamp() const;
 
                     /**
                      * 设置事件最后一次出现时间
-                     * @param LastTimestamp 事件最后一次出现时间
+                     * @param _lastTimestamp 事件最后一次出现时间
+                     * 
                      */
                     void SetLastTimestamp(const std::string& _lastTimestamp);
 
                     /**
                      * 判断参数 LastTimestamp 是否已赋值
                      * @return LastTimestamp 是否已赋值
+                     * 
                      */
                     bool LastTimestampHasBeenSet() const;
 

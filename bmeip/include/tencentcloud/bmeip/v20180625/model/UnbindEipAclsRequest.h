@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取待解关联的 EIP 与 ACL列表
                      * @return EipIdAclIdList 待解关联的 EIP 与 ACL列表
+                     * 
                      */
                     std::vector<EipAclMap> GetEipIdAclIdList() const;
 
                     /**
                      * 设置待解关联的 EIP 与 ACL列表
-                     * @param EipIdAclIdList 待解关联的 EIP 与 ACL列表
+                     * @param _eipIdAclIdList 待解关联的 EIP 与 ACL列表
+                     * 
                      */
                     void SetEipIdAclIdList(const std::vector<EipAclMap>& _eipIdAclIdList);
 
                     /**
                      * 判断参数 EipIdAclIdList 是否已赋值
                      * @return EipIdAclIdList 是否已赋值
+                     * 
                      */
                     bool EipIdAclIdListHasBeenSet() const;
 

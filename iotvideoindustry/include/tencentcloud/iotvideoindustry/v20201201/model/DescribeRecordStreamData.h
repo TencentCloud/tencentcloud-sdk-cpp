@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取Rtsp地址
                      * @return RtspAddr Rtsp地址
+                     * 
                      */
                     std::string GetRtspAddr() const;
 
                     /**
                      * 设置Rtsp地址
-                     * @param RtspAddr Rtsp地址
+                     * @param _rtspAddr Rtsp地址
+                     * 
                      */
                     void SetRtspAddr(const std::string& _rtspAddr);
 
                     /**
                      * 判断参数 RtspAddr 是否已赋值
                      * @return RtspAddr 是否已赋值
+                     * 
                      */
                     bool RtspAddrHasBeenSet() const;
 
                     /**
                      * 获取Rtmp地址
                      * @return RtmpAddr Rtmp地址
+                     * 
                      */
                     std::string GetRtmpAddr() const;
 
                     /**
                      * 设置Rtmp地址
-                     * @param RtmpAddr Rtmp地址
+                     * @param _rtmpAddr Rtmp地址
+                     * 
                      */
                     void SetRtmpAddr(const std::string& _rtmpAddr);
 
                     /**
                      * 判断参数 RtmpAddr 是否已赋值
                      * @return RtmpAddr 是否已赋值
+                     * 
                      */
                     bool RtmpAddrHasBeenSet() const;
 
                     /**
                      * 获取Hls地址
                      * @return HlsAddr Hls地址
+                     * 
                      */
                     std::string GetHlsAddr() const;
 
                     /**
                      * 设置Hls地址
-                     * @param HlsAddr Hls地址
+                     * @param _hlsAddr Hls地址
+                     * 
                      */
                     void SetHlsAddr(const std::string& _hlsAddr);
 
                     /**
                      * 判断参数 HlsAddr 是否已赋值
                      * @return HlsAddr 是否已赋值
+                     * 
                      */
                     bool HlsAddrHasBeenSet() const;
 
                     /**
                      * 获取Flv地址
                      * @return FlvAddr Flv地址
+                     * 
                      */
                     std::string GetFlvAddr() const;
 
                     /**
                      * 设置Flv地址
-                     * @param FlvAddr Flv地址
+                     * @param _flvAddr Flv地址
+                     * 
                      */
                     void SetFlvAddr(const std::string& _flvAddr);
 
                     /**
                      * 判断参数 FlvAddr 是否已赋值
                      * @return FlvAddr 是否已赋值
+                     * 
                      */
                     bool FlvAddrHasBeenSet() const;
 
                     /**
                      * 获取流Id
                      * @return StreamId 流Id
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置流Id
-                     * @param StreamId 流Id
+                     * @param _streamId 流Id
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 

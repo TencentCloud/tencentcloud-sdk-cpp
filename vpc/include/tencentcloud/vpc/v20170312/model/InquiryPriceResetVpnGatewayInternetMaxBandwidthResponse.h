@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取商品价格。
                      * @return Price 商品价格。
+                     * 
                      */
                     Price GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

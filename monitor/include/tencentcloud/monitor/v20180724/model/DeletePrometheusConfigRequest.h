@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取要删除的ServiceMonitor名字列表
                      * @return ServiceMonitors 要删除的ServiceMonitor名字列表
+                     * 
                      */
                     std::vector<std::string> GetServiceMonitors() const;
 
                     /**
                      * 设置要删除的ServiceMonitor名字列表
-                     * @param ServiceMonitors 要删除的ServiceMonitor名字列表
+                     * @param _serviceMonitors 要删除的ServiceMonitor名字列表
+                     * 
                      */
                     void SetServiceMonitors(const std::vector<std::string>& _serviceMonitors);
 
                     /**
                      * 判断参数 ServiceMonitors 是否已赋值
                      * @return ServiceMonitors 是否已赋值
+                     * 
                      */
                     bool ServiceMonitorsHasBeenSet() const;
 
                     /**
                      * 获取要删除的PodMonitor名字列表
                      * @return PodMonitors 要删除的PodMonitor名字列表
+                     * 
                      */
                     std::vector<std::string> GetPodMonitors() const;
 
                     /**
                      * 设置要删除的PodMonitor名字列表
-                     * @param PodMonitors 要删除的PodMonitor名字列表
+                     * @param _podMonitors 要删除的PodMonitor名字列表
+                     * 
                      */
                     void SetPodMonitors(const std::vector<std::string>& _podMonitors);
 
                     /**
                      * 判断参数 PodMonitors 是否已赋值
                      * @return PodMonitors 是否已赋值
+                     * 
                      */
                     bool PodMonitorsHasBeenSet() const;
 
                     /**
                      * 获取要删除的RawJobs名字列表
                      * @return RawJobs 要删除的RawJobs名字列表
+                     * 
                      */
                     std::vector<std::string> GetRawJobs() const;
 
                     /**
                      * 设置要删除的RawJobs名字列表
-                     * @param RawJobs 要删除的RawJobs名字列表
+                     * @param _rawJobs 要删除的RawJobs名字列表
+                     * 
                      */
                     void SetRawJobs(const std::vector<std::string>& _rawJobs);
 
                     /**
                      * 判断参数 RawJobs 是否已赋值
                      * @return RawJobs 是否已赋值
+                     * 
                      */
                     bool RawJobsHasBeenSet() const;
 

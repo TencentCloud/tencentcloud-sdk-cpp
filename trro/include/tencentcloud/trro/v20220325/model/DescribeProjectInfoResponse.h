@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目描述
                      * @return ProjectDescription 项目描述
+                     * 
                      */
                     std::string GetProjectDescription() const;
 
                     /**
                      * 判断参数 ProjectDescription 是否已赋值
                      * @return ProjectDescription 是否已赋值
+                     * 
                      */
                     bool ProjectDescriptionHasBeenSet() const;
 
                     /**
                      * 获取项目权限模式，black为黑名单，white为白名单
                      * @return PolicyMode 项目权限模式，black为黑名单，white为白名单
+                     * 
                      */
                     std::string GetPolicyMode() const;
 
                     /**
                      * 判断参数 PolicyMode 是否已赋值
                      * @return PolicyMode 是否已赋值
+                     * 
                      */
                     bool PolicyModeHasBeenSet() const;
 
                     /**
                      * 获取项目信息修改时间
                      * @return ModifyTime 项目信息修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

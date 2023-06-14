@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取分析完成后的统计结果
                      * @return HighlightsInfo 分析完成后的统计结果
+                     * 
                      */
                     std::vector<HighlightsInfomation> GetHighlightsInfo() const;
 
                     /**
                      * 设置分析完成后的统计结果
-                     * @param HighlightsInfo 分析完成后的统计结果
+                     * @param _highlightsInfo 分析完成后的统计结果
+                     * 
                      */
                     void SetHighlightsInfo(const std::vector<HighlightsInfomation>& _highlightsInfo);
 
                     /**
                      * 判断参数 HighlightsInfo 是否已赋值
                      * @return HighlightsInfo 是否已赋值
+                     * 
                      */
                     bool HighlightsInfoHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return Message 状态描述
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置状态描述
-                     * @param Message 状态描述
+                     * @param _message 状态描述
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态
-                     * @param Status 任务状态
+                     * @param _status 任务状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

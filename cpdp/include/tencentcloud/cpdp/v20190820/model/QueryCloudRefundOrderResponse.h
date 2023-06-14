@@ -47,96 +47,112 @@ namespace TencentCloud
                     /**
                      * 获取该笔退款订单对应的UnifiedOrder下单时传入的OutTradeNo
                      * @return OutTradeNo 该笔退款订单对应的UnifiedOrder下单时传入的OutTradeNo
+                     * 
                      */
                     std::string GetOutTradeNo() const;
 
                     /**
                      * 判断参数 OutTradeNo 是否已赋值
                      * @return OutTradeNo 是否已赋值
+                     * 
                      */
                     bool OutTradeNoHasBeenSet() const;
 
                     /**
                      * 获取该笔退款订单对应的支付成功后支付机构返回的支付订单号
                      * @return ChannelExternalOrderId 该笔退款订单对应的支付成功后支付机构返回的支付订单号
+                     * 
                      */
                     std::string GetChannelExternalOrderId() const;
 
                     /**
                      * 判断参数 ChannelExternalOrderId 是否已赋值
                      * @return ChannelExternalOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalOrderIdHasBeenSet() const;
 
                     /**
                      * 获取该笔退款订单退款后支付机构返回的退款单号
                      * @return ChannelExternalRefundId 该笔退款订单退款后支付机构返回的退款单号
+                     * 
                      */
                     std::string GetChannelExternalRefundId() const;
 
                     /**
                      * 判断参数 ChannelExternalRefundId 是否已赋值
                      * @return ChannelExternalRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalRefundIdHasBeenSet() const;
 
                     /**
                      * 获取内部请求微信支付、银行等支付机构的订单号
                      * @return ChannelOrderId 内部请求微信支付、银行等支付机构的订单号
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
                     /**
                      * 获取请求退款时传的退款ID后查询退款时传的RefundId
                      * @return RefundId 请求退款时传的退款ID后查询退款时传的RefundId
+                     * 
                      */
                     std::string GetRefundId() const;
 
                     /**
                      * 判断参数 RefundId 是否已赋值
                      * @return RefundId 是否已赋值
+                     * 
                      */
                     bool RefundIdHasBeenSet() const;
 
                     /**
                      * 获取被使用的RefundId，业务可忽略该字段
                      * @return UsedRefundId 被使用的RefundId，业务可忽略该字段
+                     * 
                      */
                     std::string GetUsedRefundId() const;
 
                     /**
                      * 判断参数 UsedRefundId 是否已赋值
                      * @return UsedRefundId 是否已赋值
+                     * 
                      */
                     bool UsedRefundIdHasBeenSet() const;
 
                     /**
                      * 获取退款总金额
                      * @return TotalRefundAmt 退款总金额
+                     * 
                      */
                     int64_t GetTotalRefundAmt() const;
 
                     /**
                      * 判断参数 TotalRefundAmt 是否已赋值
                      * @return TotalRefundAmt 是否已赋值
+                     * 
                      */
                     bool TotalRefundAmtHasBeenSet() const;
 
                     /**
                      * 获取ISO货币代码
                      * @return CurrencyType ISO货币代码
+                     * 
                      */
                     std::string GetCurrencyType() const;
 
                     /**
                      * 判断参数 CurrencyType 是否已赋值
                      * @return CurrencyType 是否已赋值
+                     * 
                      */
                     bool CurrencyTypeHasBeenSet() const;
 
@@ -149,12 +165,14 @@ namespace TencentCloud
 1:退款中
 2:退款成功
 3:退款失败
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -163,24 +181,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubRefundList 子单退款信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CloudSubRefundItem> GetSubRefundList() const;
 
                     /**
                      * 判断参数 SubRefundList 是否已赋值
                      * @return SubRefundList 是否已赋值
+                     * 
                      */
                     bool SubRefundListHasBeenSet() const;
 
                     /**
                      * 获取透传字段，退款成功回调透传给应用，用于开发者透传自定义内容
                      * @return Metadata 透传字段，退款成功回调透传给应用，用于开发者透传自定义内容
+                     * 
                      */
                     std::string GetMetadata() const;
 
                     /**
                      * 判断参数 Metadata 是否已赋值
                      * @return Metadata 是否已赋值
+                     * 
                      */
                     bool MetadataHasBeenSet() const;
 
@@ -189,24 +211,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 米大师分配的支付主MidasAppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取该笔退款订单退款后内部返回的退款单号
                      * @return ChannelRefundId 该笔退款订单退款后内部返回的退款单号
+                     * 
                      */
                     std::string GetChannelRefundId() const;
 
                     /**
                      * 判断参数 ChannelRefundId 是否已赋值
                      * @return ChannelRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelRefundIdHasBeenSet() const;
 

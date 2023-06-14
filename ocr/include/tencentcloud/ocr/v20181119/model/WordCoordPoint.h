@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取英文OCR识别出的每个单词在原图中的四点坐标。
                      * @return WordCoordinate 英文OCR识别出的每个单词在原图中的四点坐标。
+                     * 
                      */
                     std::vector<Coord> GetWordCoordinate() const;
 
                     /**
                      * 设置英文OCR识别出的每个单词在原图中的四点坐标。
-                     * @param WordCoordinate 英文OCR识别出的每个单词在原图中的四点坐标。
+                     * @param _wordCoordinate 英文OCR识别出的每个单词在原图中的四点坐标。
+                     * 
                      */
                     void SetWordCoordinate(const std::vector<Coord>& _wordCoordinate);
 
                     /**
                      * 判断参数 WordCoordinate 是否已赋值
                      * @return WordCoordinate 是否已赋值
+                     * 
                      */
                     bool WordCoordinateHasBeenSet() const;
 

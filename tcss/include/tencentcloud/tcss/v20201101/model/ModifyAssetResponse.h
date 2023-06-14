@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取同步任务发送结果
                      * @return Status 同步任务发送结果
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

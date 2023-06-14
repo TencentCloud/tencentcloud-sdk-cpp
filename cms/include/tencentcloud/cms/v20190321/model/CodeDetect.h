@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModerationCode 检测是否成功，0：成功，-1：出错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetModerationCode() const;
 
                     /**
                      * 设置检测是否成功，0：成功，-1：出错
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModerationCode 检测是否成功，0：成功，-1：出错
+                     * @param _moderationCode 检测是否成功，0：成功，-1：出错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModerationCode(const int64_t& _moderationCode);
 
                     /**
                      * 判断参数 ModerationCode 是否已赋值
                      * @return ModerationCode 是否已赋值
+                     * 
                      */
                     bool ModerationCodeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModerationDetail 从图片中检测到的二维码，可能为多个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CodeDetail> GetModerationDetail() const;
 
                     /**
                      * 设置从图片中检测到的二维码，可能为多个
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModerationDetail 从图片中检测到的二维码，可能为多个
+                     * @param _moderationDetail 从图片中检测到的二维码，可能为多个
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModerationDetail(const std::vector<CodeDetail>& _moderationDetail);
 
                     /**
                      * 判断参数 ModerationDetail 是否已赋值
                      * @return ModerationDetail 是否已赋值
+                     * 
                      */
                     bool ModerationDetailHasBeenSet() const;
 

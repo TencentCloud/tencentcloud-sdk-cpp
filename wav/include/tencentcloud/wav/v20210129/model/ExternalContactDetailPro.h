@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customer 客户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ExternalContact GetCustomer() const;
 
                     /**
                      * 设置客户信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Customer 客户信息
+                     * @param _customer 客户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomer(const ExternalContact& _customer);
 
                     /**
                      * 判断参数 Customer 是否已赋值
                      * @return Customer 是否已赋值
+                     * 
                      */
                     bool CustomerHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowUser 添加了此外部联系人的企业成员信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FollowUserPro> GetFollowUser() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowUser 添加了此外部联系人的企业成员信息
+                     * @param _followUser 添加了此外部联系人的企业成员信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFollowUser(const std::vector<FollowUserPro>& _followUser);
 
                     /**
                      * 判断参数 FollowUser 是否已赋值
                      * @return FollowUser 是否已赋值
+                     * 
                      */
                     bool FollowUserHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取svr占用的机器
                      * @return ServerList svr占用的机器
+                     * 
                      */
                     std::vector<MachineInfo> GetServerList() const;
 
                     /**
                      * 设置svr占用的机器
-                     * @param ServerList svr占用的机器
+                     * @param _serverList svr占用的机器
+                     * 
                      */
                     void SetServerList(const std::vector<MachineInfo>& _serverList);
 
                     /**
                      * 判断参数 ServerList 是否已赋值
                      * @return ServerList 是否已赋值
+                     * 
                      */
                     bool ServerListHasBeenSet() const;
 
                     /**
                      * 获取proxy占用的机器
                      * @return ProxyList proxy占用的机器
+                     * 
                      */
                     std::vector<MachineInfo> GetProxyList() const;
 
                     /**
                      * 设置proxy占用的机器
-                     * @param ProxyList proxy占用的机器
+                     * @param _proxyList proxy占用的机器
+                     * 
                      */
                     void SetProxyList(const std::vector<MachineInfo>& _proxyList);
 
                     /**
                      * 判断参数 ProxyList 是否已赋值
                      * @return ProxyList 是否已赋值
+                     * 
                      */
                     bool ProxyListHasBeenSet() const;
 
                     /**
                      * 获取集群类型1共享集群2独占集群
                      * @return ClusterType 集群类型1共享集群2独占集群
+                     * 
                      */
                     int64_t GetClusterType() const;
 
                     /**
                      * 设置集群类型1共享集群2独占集群
-                     * @param ClusterType 集群类型1共享集群2独占集群
+                     * @param _clusterType 集群类型1共享集群2独占集群
+                     * 
                      */
                     void SetClusterType(const int64_t& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 

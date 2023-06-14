@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 标签分组名称
+                     * @param _groupName 标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizGroupId 标签分组业务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizGroupId() const;
 
                     /**
                      * 设置标签分组业务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizGroupId 标签分组业务ID
+                     * @param _bizGroupId 标签分组业务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizGroupId(const std::string& _bizGroupId);
 
                     /**
                      * 判断参数 BizGroupId 是否已赋值
                      * @return BizGroupId 是否已赋值
+                     * 
                      */
                     bool BizGroupIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagName 标签名称
+                     * @param _tagName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagId() const;
 
                     /**
                      * 设置标签ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagId 标签ID
+                     * @param _tagId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagId(const std::string& _tagId);
 
                     /**
                      * 判断参数 TagId 是否已赋值
                      * @return TagId 是否已赋值
+                     * 
                      */
                     bool TagIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizTagId 标签业务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizTagId() const;
 
                     /**
                      * 设置标签业务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizTagId 标签业务ID
+                     * @param _bizTagId 标签业务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizTagId(const std::string& _bizTagId);
 
                     /**
                      * 判断参数 BizTagId 是否已赋值
                      * @return BizTagId 是否已赋值
+                     * 
                      */
                     bool BizTagIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 标签分类，1：企业设置、2：用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置标签分类，1：企业设置、2：用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 标签分类，1：企业设置、2：用户自定义
+                     * @param _type 标签分类，1：企业设置、2：用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizTagIdStr 标签业务ID字符串格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizTagIdStr() const;
 
                     /**
                      * 设置标签业务ID字符串格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizTagIdStr 标签业务ID字符串格式
+                     * @param _bizTagIdStr 标签业务ID字符串格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizTagIdStr(const std::string& _bizTagIdStr);
 
                     /**
                      * 判断参数 BizTagIdStr 是否已赋值
                      * @return BizTagIdStr 是否已赋值
+                     * 
                      */
                     bool BizTagIdStrHasBeenSet() const;
 

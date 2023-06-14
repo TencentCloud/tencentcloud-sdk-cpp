@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取拉流配置 ID。
                      * @return ConfigId 拉流配置 ID。
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置拉流配置 ID。
-                     * @param ConfigId 拉流配置 ID。
+                     * @param _configId 拉流配置 ID。
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取源 URL。
                      * @return FromUrl 源 URL。
+                     * 
                      */
                     std::string GetFromUrl() const;
 
                     /**
                      * 设置源 URL。
-                     * @param FromUrl 源 URL。
+                     * @param _fromUrl 源 URL。
+                     * 
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
                     /**
                      * 判断参数 FromUrl 是否已赋值
                      * @return FromUrl 是否已赋值
+                     * 
                      */
                     bool FromUrlHasBeenSet() const;
 
                     /**
                      * 获取目的 URL。
                      * @return ToUrl 目的 URL。
+                     * 
                      */
                     std::string GetToUrl() const;
 
                     /**
                      * 设置目的 URL。
-                     * @param ToUrl 目的 URL。
+                     * @param _toUrl 目的 URL。
+                     * 
                      */
                     void SetToUrl(const std::string& _toUrl);
 
                     /**
                      * 判断参数 ToUrl 是否已赋值
                      * @return ToUrl 是否已赋值
+                     * 
                      */
                     bool ToUrlHasBeenSet() const;
 
                     /**
                      * 获取区域名。
                      * @return AreaName 区域名。
+                     * 
                      */
                     std::string GetAreaName() const;
 
                     /**
                      * 设置区域名。
-                     * @param AreaName 区域名。
+                     * @param _areaName 区域名。
+                     * 
                      */
                     void SetAreaName(const std::string& _areaName);
 
                     /**
                      * 判断参数 AreaName 是否已赋值
                      * @return AreaName 是否已赋值
+                     * 
                      */
                     bool AreaNameHasBeenSet() const;
 
                     /**
                      * 获取运营商名。
                      * @return IspName 运营商名。
+                     * 
                      */
                     std::string GetIspName() const;
 
                     /**
                      * 设置运营商名。
-                     * @param IspName 运营商名。
+                     * @param _ispName 运营商名。
+                     * 
                      */
                     void SetIspName(const std::string& _ispName);
 
                     /**
                      * 判断参数 IspName 是否已赋值
                      * @return IspName 是否已赋值
+                     * 
                      */
                     bool IspNameHasBeenSet() const;
 
@@ -143,6 +158,7 @@ UTC格式时间，例如: 2019-01-08T10:00:00Z。
                      * @return StartTime 开始时间。
 UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -150,15 +166,17 @@ UTC格式时间，例如: 2019-01-08T10:00:00Z。
                      * 设置开始时间。
 UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
 UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -171,6 +189,7 @@ UTC格式时间，例如：2019-01-08T10:00:00Z。
 
 UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -179,16 +198,18 @@ UTC格式时间，例如：2019-01-08T10:00:00Z。
 
 UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
 
 UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -205,6 +226,7 @@ UTC格式时间，例如：2019-01-08T10:00:00Z。
 2: 正在运行。
 3: 拉起失败。
 4: 暂停。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -215,18 +237,20 @@ UTC格式时间，例如：2019-01-08T10:00:00Z。
 2: 正在运行。
 3: 拉起失败。
 4: 暂停。
-                     * @param Status 状态:
+                     * @param _status 状态:
 0: 无效。
 1: 初始状态。
 2: 正在运行。
 3: 拉起失败。
 4: 暂停。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

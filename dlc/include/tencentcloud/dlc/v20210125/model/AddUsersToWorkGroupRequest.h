@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取要操作的工作组和用户信息
                      * @return AddInfo 要操作的工作组和用户信息
+                     * 
                      */
                     UserIdSetOfWorkGroupId GetAddInfo() const;
 
                     /**
                      * 设置要操作的工作组和用户信息
-                     * @param AddInfo 要操作的工作组和用户信息
+                     * @param _addInfo 要操作的工作组和用户信息
+                     * 
                      */
                     void SetAddInfo(const UserIdSetOfWorkGroupId& _addInfo);
 
                     /**
                      * 判断参数 AddInfo 是否已赋值
                      * @return AddInfo 是否已赋值
+                     * 
                      */
                     bool AddInfoHasBeenSet() const;
 

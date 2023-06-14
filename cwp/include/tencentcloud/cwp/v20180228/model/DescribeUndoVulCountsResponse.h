@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UndoVulCount 未处理的漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUndoVulCount() const;
 
                     /**
                      * 判断参数 UndoVulCount 是否已赋值
                      * @return UndoVulCount 是否已赋值
+                     * 
                      */
                     bool UndoVulCountHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UndoHostCount 未处理的主机数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUndoHostCount() const;
 
                     /**
                      * 判断参数 UndoHostCount 是否已赋值
                      * @return UndoHostCount 是否已赋值
+                     * 
                      */
                     bool UndoHostCountHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotProfessionCount 普通版主机数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNotProfessionCount() const;
 
                     /**
                      * 判断参数 NotProfessionCount 是否已赋值
                      * @return NotProfessionCount 是否已赋值
+                     * 
                      */
                     bool NotProfessionCountHasBeenSet() const;
 

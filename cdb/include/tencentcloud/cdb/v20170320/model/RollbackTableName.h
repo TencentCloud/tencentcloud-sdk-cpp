@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 回档前的原数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置回档前的原数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 回档前的原数据库表名
+                     * @param _tableName 回档前的原数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewTableName 回档后的新数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewTableName() const;
 
                     /**
                      * 设置回档后的新数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewTableName 回档后的新数据库表名
+                     * @param _newTableName 回档后的新数据库表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewTableName(const std::string& _newTableName);
 
                     /**
                      * 判断参数 NewTableName 是否已赋值
                      * @return NewTableName 是否已赋值
+                     * 
                      */
                     bool NewTableNameHasBeenSet() const;
 

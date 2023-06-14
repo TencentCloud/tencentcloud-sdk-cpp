@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取规则 ID
                      * @return RuleId 规则 ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 

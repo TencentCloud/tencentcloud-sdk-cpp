@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群规格，托管集群询价
                      * @return ClusterLevel 集群规格，托管集群询价
+                     * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
                      * 设置集群规格，托管集群询价
-                     * @param ClusterLevel 集群规格，托管集群询价
+                     * @param _clusterLevel 集群规格，托管集群询价
+                     * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
 
                     /**
                      * 判断参数 ClusterLevel 是否已赋值
                      * @return ClusterLevel 是否已赋值
+                     * 
                      */
                     bool ClusterLevelHasBeenSet() const;
 

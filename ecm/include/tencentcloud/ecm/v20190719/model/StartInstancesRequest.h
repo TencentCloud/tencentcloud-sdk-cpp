@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
                      * @return InstanceIdSet 待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
-                     * @param InstanceIdSet 待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * @param _instanceIdSet 待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 

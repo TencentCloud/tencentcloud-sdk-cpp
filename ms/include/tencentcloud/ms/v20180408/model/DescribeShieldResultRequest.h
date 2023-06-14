@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务唯一标识
                      * @return ItemId 任务唯一标识
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置任务唯一标识
-                     * @param ItemId 任务唯一标识
+                     * @param _itemId 任务唯一标识
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 

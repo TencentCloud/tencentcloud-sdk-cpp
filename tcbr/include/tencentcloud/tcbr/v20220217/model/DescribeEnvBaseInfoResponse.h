@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取环境基础信息
                      * @return EnvBaseInfo 环境基础信息
+                     * 
                      */
                     EnvBaseInfo GetEnvBaseInfo() const;
 
                     /**
                      * 判断参数 EnvBaseInfo 是否已赋值
                      * @return EnvBaseInfo 是否已赋值
+                     * 
                      */
                     bool EnvBaseInfoHasBeenSet() const;
 

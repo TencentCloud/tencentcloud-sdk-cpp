@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像 ID  ，是 Blueprint 的唯一标识。
                      * @return BlueprintId 镜像 ID  ，是 Blueprint 的唯一标识。
+                     * 
                      */
                     std::string GetBlueprintId() const;
 
                     /**
                      * 设置镜像 ID  ，是 Blueprint 的唯一标识。
-                     * @param BlueprintId 镜像 ID  ，是 Blueprint 的唯一标识。
+                     * @param _blueprintId 镜像 ID  ，是 Blueprint 的唯一标识。
+                     * 
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
                     /**
                      * 判断参数 BlueprintId 是否已赋值
                      * @return BlueprintId 是否已赋值
+                     * 
                      */
                     bool BlueprintIdHasBeenSet() const;
 
                     /**
                      * 获取镜像对外展示标题。
                      * @return DisplayTitle 镜像对外展示标题。
+                     * 
                      */
                     std::string GetDisplayTitle() const;
 
                     /**
                      * 设置镜像对外展示标题。
-                     * @param DisplayTitle 镜像对外展示标题。
+                     * @param _displayTitle 镜像对外展示标题。
+                     * 
                      */
                     void SetDisplayTitle(const std::string& _displayTitle);
 
                     /**
                      * 判断参数 DisplayTitle 是否已赋值
                      * @return DisplayTitle 是否已赋值
+                     * 
                      */
                     bool DisplayTitleHasBeenSet() const;
 
                     /**
                      * 获取镜像对外展示版本。
                      * @return DisplayVersion 镜像对外展示版本。
+                     * 
                      */
                     std::string GetDisplayVersion() const;
 
                     /**
                      * 设置镜像对外展示版本。
-                     * @param DisplayVersion 镜像对外展示版本。
+                     * @param _displayVersion 镜像对外展示版本。
+                     * 
                      */
                     void SetDisplayVersion(const std::string& _displayVersion);
 
                     /**
                      * 判断参数 DisplayVersion 是否已赋值
                      * @return DisplayVersion 是否已赋值
+                     * 
                      */
                     bool DisplayVersionHasBeenSet() const;
 
@@ -105,146 +114,170 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 镜像描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置镜像描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 镜像描述信息。
+                     * @param _description 镜像描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取操作系统名称。
                      * @return OsName 操作系统名称。
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称。
-                     * @param OsName 操作系统名称。
+                     * @param _osName 操作系统名称。
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取操作系统平台。
                      * @return Platform 操作系统平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置操作系统平台。
-                     * @param Platform 操作系统平台。
+                     * @param _platform 操作系统平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取操作系统平台类型，如 LINUX_UNIX、WINDOWS。
                      * @return PlatformType 操作系统平台类型，如 LINUX_UNIX、WINDOWS。
+                     * 
                      */
                     std::string GetPlatformType() const;
 
                     /**
                      * 设置操作系统平台类型，如 LINUX_UNIX、WINDOWS。
-                     * @param PlatformType 操作系统平台类型，如 LINUX_UNIX、WINDOWS。
+                     * @param _platformType 操作系统平台类型，如 LINUX_UNIX、WINDOWS。
+                     * 
                      */
                     void SetPlatformType(const std::string& _platformType);
 
                     /**
                      * 判断参数 PlatformType 是否已赋值
                      * @return PlatformType 是否已赋值
+                     * 
                      */
                     bool PlatformTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像类型，如 APP_OS、PURE_OS、PRIVATE。
                      * @return BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 
                      */
                     std::string GetBlueprintType() const;
 
                     /**
                      * 设置镜像类型，如 APP_OS、PURE_OS、PRIVATE。
-                     * @param BlueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * @param _blueprintType 镜像类型，如 APP_OS、PURE_OS、PRIVATE。
+                     * 
                      */
                     void SetBlueprintType(const std::string& _blueprintType);
 
                     /**
                      * 判断参数 BlueprintType 是否已赋值
                      * @return BlueprintType 是否已赋值
+                     * 
                      */
                     bool BlueprintTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像图片 URL。
                      * @return ImageUrl 镜像图片 URL。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置镜像图片 URL。
-                     * @param ImageUrl 镜像图片 URL。
+                     * @param _imageUrl 镜像图片 URL。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
                     /**
                      * 获取镜像所需系统盘大小，单位 GB。
                      * @return RequiredSystemDiskSize 镜像所需系统盘大小，单位 GB。
+                     * 
                      */
                     int64_t GetRequiredSystemDiskSize() const;
 
                     /**
                      * 设置镜像所需系统盘大小，单位 GB。
-                     * @param RequiredSystemDiskSize 镜像所需系统盘大小，单位 GB。
+                     * @param _requiredSystemDiskSize 镜像所需系统盘大小，单位 GB。
+                     * 
                      */
                     void SetRequiredSystemDiskSize(const int64_t& _requiredSystemDiskSize);
 
                     /**
                      * 判断参数 RequiredSystemDiskSize 是否已赋值
                      * @return RequiredSystemDiskSize 是否已赋值
+                     * 
                      */
                     bool RequiredSystemDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取镜像状态。
                      * @return BlueprintState 镜像状态。
+                     * 
                      */
                     std::string GetBlueprintState() const;
 
                     /**
                      * 设置镜像状态。
-                     * @param BlueprintState 镜像状态。
+                     * @param _blueprintState 镜像状态。
+                     * 
                      */
                     void SetBlueprintState(const std::string& _blueprintState);
 
                     /**
                      * 判断参数 BlueprintState 是否已赋值
                      * @return BlueprintState 是否已赋值
+                     * 
                      */
                     bool BlueprintStateHasBeenSet() const;
 
@@ -255,6 +288,7 @@ namespace TencentCloud
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
@@ -262,69 +296,80 @@ namespace TencentCloud
                      * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+                     * @param _createdTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取镜像名称。
                      * @return BlueprintName 镜像名称。
+                     * 
                      */
                     std::string GetBlueprintName() const;
 
                     /**
                      * 设置镜像名称。
-                     * @param BlueprintName 镜像名称。
+                     * @param _blueprintName 镜像名称。
+                     * 
                      */
                     void SetBlueprintName(const std::string& _blueprintName);
 
                     /**
                      * 判断参数 BlueprintName 是否已赋值
                      * @return BlueprintName 是否已赋值
+                     * 
                      */
                     bool BlueprintNameHasBeenSet() const;
 
                     /**
                      * 获取镜像是否支持自动化助手。
                      * @return SupportAutomationTools 镜像是否支持自动化助手。
+                     * 
                      */
                     bool GetSupportAutomationTools() const;
 
                     /**
                      * 设置镜像是否支持自动化助手。
-                     * @param SupportAutomationTools 镜像是否支持自动化助手。
+                     * @param _supportAutomationTools 镜像是否支持自动化助手。
+                     * 
                      */
                     void SetSupportAutomationTools(const bool& _supportAutomationTools);
 
                     /**
                      * 判断参数 SupportAutomationTools 是否已赋值
                      * @return SupportAutomationTools 是否已赋值
+                     * 
                      */
                     bool SupportAutomationToolsHasBeenSet() const;
 
                     /**
                      * 获取镜像所需内存大小, 单位: GB
                      * @return RequiredMemorySize 镜像所需内存大小, 单位: GB
+                     * 
                      */
                     int64_t GetRequiredMemorySize() const;
 
                     /**
                      * 设置镜像所需内存大小, 单位: GB
-                     * @param RequiredMemorySize 镜像所需内存大小, 单位: GB
+                     * @param _requiredMemorySize 镜像所需内存大小, 单位: GB
+                     * 
                      */
                     void SetRequiredMemorySize(const int64_t& _requiredMemorySize);
 
                     /**
                      * 判断参数 RequiredMemorySize 是否已赋值
                      * @return RequiredMemorySize 是否已赋值
+                     * 
                      */
                     bool RequiredMemorySizeHasBeenSet() const;
 
@@ -333,56 +378,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+                     * @param _imageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取官方网站Url。
                      * @return CommunityUrl 官方网站Url。
+                     * 
                      */
                     std::string GetCommunityUrl() const;
 
                     /**
                      * 设置官方网站Url。
-                     * @param CommunityUrl 官方网站Url。
+                     * @param _communityUrl 官方网站Url。
+                     * 
                      */
                     void SetCommunityUrl(const std::string& _communityUrl);
 
                     /**
                      * 判断参数 CommunityUrl 是否已赋值
                      * @return CommunityUrl 是否已赋值
+                     * 
                      */
                     bool CommunityUrlHasBeenSet() const;
 
                     /**
                      * 获取指导文章Url。
                      * @return GuideUrl 指导文章Url。
+                     * 
                      */
                     std::string GetGuideUrl() const;
 
                     /**
                      * 设置指导文章Url。
-                     * @param GuideUrl 指导文章Url。
+                     * @param _guideUrl 指导文章Url。
+                     * 
                      */
                     void SetGuideUrl(const std::string& _guideUrl);
 
                     /**
                      * 判断参数 GuideUrl 是否已赋值
                      * @return GuideUrl 是否已赋值
+                     * 
                      */
                     bool GuideUrlHasBeenSet() const;
 
@@ -391,20 +445,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneIdSet 镜像关联使用场景Id列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSceneIdSet() const;
 
                     /**
                      * 设置镜像关联使用场景Id列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SceneIdSet 镜像关联使用场景Id列表。
+                     * @param _sceneIdSet 镜像关联使用场景Id列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSceneIdSet(const std::vector<std::string>& _sceneIdSet);
 
                     /**
                      * 判断参数 SceneIdSet 是否已赋值
                      * @return SceneIdSet 是否已赋值
+                     * 
                      */
                     bool SceneIdSetHasBeenSet() const;
 
@@ -413,20 +470,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerVersion Docker版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerVersion() const;
 
                     /**
                      * 设置Docker版本号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DockerVersion Docker版本号。
+                     * @param _dockerVersion Docker版本号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDockerVersion(const std::string& _dockerVersion);
 
                     /**
                      * 判断参数 DockerVersion 是否已赋值
                      * @return DockerVersion 是否已赋值
+                     * 
                      */
                     bool DockerVersionHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取规则
                      * @return Rule 规则
+                     * 
                      */
                     Rule GetRule() const;
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 

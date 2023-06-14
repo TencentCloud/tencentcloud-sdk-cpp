@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户名，登录时使用
                      * @return User 用户名，登录时使用
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 

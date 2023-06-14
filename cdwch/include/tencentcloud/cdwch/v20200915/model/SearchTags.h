@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取标签的键
                      * @return TagKey 标签的键
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置标签的键
-                     * @param TagKey 标签的键
+                     * @param _tagKey 标签的键
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取标签的值
                      * @return TagValue 标签的值
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置标签的值
-                     * @param TagValue 标签的值
+                     * @param _tagValue 标签的值
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 
                     /**
                      * 获取1表示只输入标签的键，没有输入值；0表示输入键时且输入值
                      * @return AllValue 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * 
                      */
                     int64_t GetAllValue() const;
 
                     /**
                      * 设置1表示只输入标签的键，没有输入值；0表示输入键时且输入值
-                     * @param AllValue 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * @param _allValue 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * 
                      */
                     void SetAllValue(const int64_t& _allValue);
 
                     /**
                      * 判断参数 AllValue 是否已赋值
                      * @return AllValue 是否已赋值
+                     * 
                      */
                     bool AllValueHasBeenSet() const;
 

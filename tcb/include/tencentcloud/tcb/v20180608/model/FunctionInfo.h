@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 当前支持ap-shanghai
                      * @return Region 所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域。
 当前支持ap-shanghai
-                     * @param Region 所属地域。
+                     * @param _region 所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

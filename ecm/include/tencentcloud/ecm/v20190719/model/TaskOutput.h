@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return Message 状态描述
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置状态描述
-                     * @param Message 状态描述
+                     * @param _message 状态描述
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取状态值，SUCCESS/FAILED/OPERATING
                      * @return Status 状态值，SUCCESS/FAILED/OPERATING
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态值，SUCCESS/FAILED/OPERATING
-                     * @param Status 状态值，SUCCESS/FAILED/OPERATING
+                     * @param _status 状态值，SUCCESS/FAILED/OPERATING
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务提交时间
                      * @return AddTime 任务提交时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置任务提交时间
-                     * @param AddTime 任务提交时间
+                     * @param _addTime 任务提交时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结束时间
                      * @return EndTime 任务结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间
-                     * @param EndTime 任务结束时间
+                     * @param _endTime 任务结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取操作名
                      * @return Operation 操作名
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名
-                     * @param Operation 操作名
+                     * @param _operation 操作名
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 

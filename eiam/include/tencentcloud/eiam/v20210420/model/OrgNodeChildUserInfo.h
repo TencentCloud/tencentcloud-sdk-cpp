@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeId 机构ID，是机构节点全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeId() const;
 
                     /**
                      * 设置机构ID，是机构节点全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgNodeId 机构ID，是机构节点全局唯一标识，长度限制：64个字符。
+                     * @param _orgNodeId 机构ID，是机构节点全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgNodeId(const std::string& _orgNodeId);
 
                     /**
                      * 判断参数 OrgNodeId 是否已赋值
                      * @return OrgNodeId 是否已赋值
+                     * 
                      */
                     bool OrgNodeIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserInfo 用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UserInfo> GetUserInfo() const;
 
                     /**
                      * 设置用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserInfo 用户信息列表。
+                     * @param _userInfo 用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserInfo(const std::vector<UserInfo>& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUserNum 当前机构节点下的用户总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalUserNum() const;
 
                     /**
                      * 设置当前机构节点下的用户总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUserNum 当前机构节点下的用户总数。
+                     * @param _totalUserNum 当前机构节点下的用户总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUserNum(const int64_t& _totalUserNum);
 
                     /**
                      * 判断参数 TotalUserNum 是否已赋值
                      * @return TotalUserNum 是否已赋值
+                     * 
                      */
                     bool TotalUserNumHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeIdPath 组织机构ID路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeIdPath() const;
 
                     /**
                      * 设置组织机构ID路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgNodeIdPath 组织机构ID路径。
+                     * @param _orgNodeIdPath 组织机构ID路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgNodeIdPath(const std::string& _orgNodeIdPath);
 
                     /**
                      * 判断参数 OrgNodeIdPath 是否已赋值
                      * @return OrgNodeIdPath 是否已赋值
+                     * 
                      */
                     bool OrgNodeIdPathHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeNamePath 组织机构名称路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeNamePath() const;
 
                     /**
                      * 设置组织机构名称路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgNodeNamePath 组织机构名称路径。
+                     * @param _orgNodeNamePath 组织机构名称路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgNodeNamePath(const std::string& _orgNodeNamePath);
 
                     /**
                      * 判断参数 OrgNodeNamePath 是否已赋值
                      * @return OrgNodeNamePath 是否已赋值
+                     * 
                      */
                     bool OrgNodeNamePathHasBeenSet() const;
 

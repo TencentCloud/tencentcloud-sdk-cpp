@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 

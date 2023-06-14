@@ -60,6 +60,7 @@ MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
 MediaRecognition: 媒体识别。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -69,71 +70,82 @@ MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
 MediaRecognition: 媒体识别。
-                     * @param Type 编辑处理任务类型，可选值：
+                     * @param _type 编辑处理任务类型，可选值：
 MediaEditing：媒体编辑（待上线）；
 MediaCutting：媒体剪切；
 MediaJoining：媒体拼接。
 MediaRecognition: 媒体识别。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取视频剪切任务参数，Type=MediaCutting时必选。
                      * @return MediaCuttingInfo 视频剪切任务参数，Type=MediaCutting时必选。
+                     * 
                      */
                     MediaCuttingInfo GetMediaCuttingInfo() const;
 
                     /**
                      * 设置视频剪切任务参数，Type=MediaCutting时必选。
-                     * @param MediaCuttingInfo 视频剪切任务参数，Type=MediaCutting时必选。
+                     * @param _mediaCuttingInfo 视频剪切任务参数，Type=MediaCutting时必选。
+                     * 
                      */
                     void SetMediaCuttingInfo(const MediaCuttingInfo& _mediaCuttingInfo);
 
                     /**
                      * 判断参数 MediaCuttingInfo 是否已赋值
                      * @return MediaCuttingInfo 是否已赋值
+                     * 
                      */
                     bool MediaCuttingInfoHasBeenSet() const;
 
                     /**
                      * 获取视频拼接任务参数，Type=MediaJoining时必选。
                      * @return MediaJoiningInfo 视频拼接任务参数，Type=MediaJoining时必选。
+                     * 
                      */
                     MediaJoiningInfo GetMediaJoiningInfo() const;
 
                     /**
                      * 设置视频拼接任务参数，Type=MediaJoining时必选。
-                     * @param MediaJoiningInfo 视频拼接任务参数，Type=MediaJoining时必选。
+                     * @param _mediaJoiningInfo 视频拼接任务参数，Type=MediaJoining时必选。
+                     * 
                      */
                     void SetMediaJoiningInfo(const MediaJoiningInfo& _mediaJoiningInfo);
 
                     /**
                      * 判断参数 MediaJoiningInfo 是否已赋值
                      * @return MediaJoiningInfo 是否已赋值
+                     * 
                      */
                     bool MediaJoiningInfoHasBeenSet() const;
 
                     /**
                      * 获取媒体识别任务参数，Type=MediaRecognition时必选
                      * @return MediaRecognitionInfo 媒体识别任务参数，Type=MediaRecognition时必选
+                     * 
                      */
                     MediaRecognitionInfo GetMediaRecognitionInfo() const;
 
                     /**
                      * 设置媒体识别任务参数，Type=MediaRecognition时必选
-                     * @param MediaRecognitionInfo 媒体识别任务参数，Type=MediaRecognition时必选
+                     * @param _mediaRecognitionInfo 媒体识别任务参数，Type=MediaRecognition时必选
+                     * 
                      */
                     void SetMediaRecognitionInfo(const MediaRecognitionInfo& _mediaRecognitionInfo);
 
                     /**
                      * 判断参数 MediaRecognitionInfo 是否已赋值
                      * @return MediaRecognitionInfo 是否已赋值
+                     * 
                      */
                     bool MediaRecognitionInfoHasBeenSet() const;
 

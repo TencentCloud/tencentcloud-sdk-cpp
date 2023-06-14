@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogInfo 任务日志信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogInfo() const;
 
                     /**
                      * 设置任务日志信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogInfo 任务日志信息
+                     * @param _logInfo 任务日志信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogInfo(const std::string& _logInfo);
 
                     /**
                      * 判断参数 LogInfo 是否已赋值
                      * @return LogInfo 是否已赋值
+                     * 
                      */
                     bool LogInfoHasBeenSet() const;
 

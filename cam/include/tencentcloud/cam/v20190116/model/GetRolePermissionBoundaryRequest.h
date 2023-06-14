@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取角色ID
                      * @return RoleId 角色ID
+                     * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色ID
-                     * @param RoleId 角色ID
+                     * @param _roleId 角色ID
+                     * 
                      */
                     void SetRoleId(const std::string& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 

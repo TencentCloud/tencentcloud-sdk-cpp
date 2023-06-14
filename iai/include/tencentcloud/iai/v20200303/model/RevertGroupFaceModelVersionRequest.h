@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要回滚的升级任务ID。
                      * @return JobId 需要回滚的升级任务ID。
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置需要回滚的升级任务ID。
-                     * @param JobId 需要回滚的升级任务ID。
+                     * @param _jobId 需要回滚的升级任务ID。
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

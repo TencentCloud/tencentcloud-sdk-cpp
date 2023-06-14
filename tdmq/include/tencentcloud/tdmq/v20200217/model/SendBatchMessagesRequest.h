@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default
                      * @return Topic 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default
-                     * @param Topic 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default
+                     * @param _topic 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取需要发送消息的内容
                      * @return Payload 需要发送消息的内容
+                     * 
                      */
                     std::string GetPayload() const;
 
                     /**
                      * 设置需要发送消息的内容
-                     * @param Payload 需要发送消息的内容
+                     * @param _payload 需要发送消息的内容
+                     * 
                      */
                     void SetPayload(const std::string& _payload);
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 
                     /**
                      * 获取String 类型的 token，可以不填，系统会自动获取
                      * @return StringToken String 类型的 token，可以不填，系统会自动获取
+                     * 
                      */
                     std::string GetStringToken() const;
 
                     /**
                      * 设置String 类型的 token，可以不填，系统会自动获取
-                     * @param StringToken String 类型的 token，可以不填，系统会自动获取
+                     * @param _stringToken String 类型的 token，可以不填，系统会自动获取
+                     * 
                      */
                     void SetStringToken(const std::string& _stringToken);
 
                     /**
                      * 判断参数 StringToken 是否已赋值
                      * @return StringToken 是否已赋值
+                     * 
                      */
                     bool StringTokenHasBeenSet() const;
 
                     /**
                      * 获取producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成
                      * @return ProducerName producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成
+                     * 
                      */
                     std::string GetProducerName() const;
 
                     /**
                      * 设置producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成
-                     * @param ProducerName producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成
+                     * @param _producerName producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成
+                     * 
                      */
                     void SetProducerName(const std::string& _producerName);
 
                     /**
                      * 判断参数 ProducerName 是否已赋值
                      * @return ProducerName 是否已赋值
+                     * 
                      */
                     bool ProducerNameHasBeenSet() const;
 
                     /**
                      * 获取单位：s。消息发送的超时时间。默认值为：30s
                      * @return SendTimeout 单位：s。消息发送的超时时间。默认值为：30s
+                     * 
                      */
                     int64_t GetSendTimeout() const;
 
                     /**
                      * 设置单位：s。消息发送的超时时间。默认值为：30s
-                     * @param SendTimeout 单位：s。消息发送的超时时间。默认值为：30s
+                     * @param _sendTimeout 单位：s。消息发送的超时时间。默认值为：30s
+                     * 
                      */
                     void SetSendTimeout(const int64_t& _sendTimeout);
 
                     /**
                      * 判断参数 SendTimeout 是否已赋值
                      * @return SendTimeout 是否已赋值
+                     * 
                      */
                     bool SendTimeoutHasBeenSet() const;
 
                     /**
                      * 获取内存中允许缓存的生产消息的最大数量，默认值：1000条
                      * @return MaxPendingMessages 内存中允许缓存的生产消息的最大数量，默认值：1000条
+                     * 
                      */
                     int64_t GetMaxPendingMessages() const;
 
                     /**
                      * 设置内存中允许缓存的生产消息的最大数量，默认值：1000条
-                     * @param MaxPendingMessages 内存中允许缓存的生产消息的最大数量，默认值：1000条
+                     * @param _maxPendingMessages 内存中允许缓存的生产消息的最大数量，默认值：1000条
+                     * 
                      */
                     void SetMaxPendingMessages(const int64_t& _maxPendingMessages);
 
                     /**
                      * 判断参数 MaxPendingMessages 是否已赋值
                      * @return MaxPendingMessages 是否已赋值
+                     * 
                      */
                     bool MaxPendingMessagesHasBeenSet() const;
 
                     /**
                      * 获取每一个batch中消息的最大数量，默认值：1000条/batch
                      * @return BatchingMaxMessages 每一个batch中消息的最大数量，默认值：1000条/batch
+                     * 
                      */
                     int64_t GetBatchingMaxMessages() const;
 
                     /**
                      * 设置每一个batch中消息的最大数量，默认值：1000条/batch
-                     * @param BatchingMaxMessages 每一个batch中消息的最大数量，默认值：1000条/batch
+                     * @param _batchingMaxMessages 每一个batch中消息的最大数量，默认值：1000条/batch
+                     * 
                      */
                     void SetBatchingMaxMessages(const int64_t& _batchingMaxMessages);
 
                     /**
                      * 判断参数 BatchingMaxMessages 是否已赋值
                      * @return BatchingMaxMessages 是否已赋值
+                     * 
                      */
                     bool BatchingMaxMessagesHasBeenSet() const;
 
                     /**
                      * 获取每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms
                      * @return BatchingMaxPublishDelay 每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms
+                     * 
                      */
                     int64_t GetBatchingMaxPublishDelay() const;
 
                     /**
                      * 设置每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms
-                     * @param BatchingMaxPublishDelay 每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms
+                     * @param _batchingMaxPublishDelay 每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms
+                     * 
                      */
                     void SetBatchingMaxPublishDelay(const int64_t& _batchingMaxPublishDelay);
 
                     /**
                      * 判断参数 BatchingMaxPublishDelay 是否已赋值
                      * @return BatchingMaxPublishDelay 是否已赋值
+                     * 
                      */
                     bool BatchingMaxPublishDelayHasBeenSet() const;
 
                     /**
                      * 获取每一个batch中最大允许的消息的大小，默认：128KB
                      * @return BatchingMaxBytes 每一个batch中最大允许的消息的大小，默认：128KB
+                     * 
                      */
                     int64_t GetBatchingMaxBytes() const;
 
                     /**
                      * 设置每一个batch中最大允许的消息的大小，默认：128KB
-                     * @param BatchingMaxBytes 每一个batch中最大允许的消息的大小，默认：128KB
+                     * @param _batchingMaxBytes 每一个batch中最大允许的消息的大小，默认：128KB
+                     * 
                      */
                     void SetBatchingMaxBytes(const int64_t& _batchingMaxBytes);
 
                     /**
                      * 判断参数 BatchingMaxBytes 是否已赋值
                      * @return BatchingMaxBytes 是否已赋值
+                     * 
                      */
                     bool BatchingMaxBytesHasBeenSet() const;
 

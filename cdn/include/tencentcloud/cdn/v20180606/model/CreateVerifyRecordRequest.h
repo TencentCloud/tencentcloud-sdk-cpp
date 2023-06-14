@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要取回的域名
                      * @return Domain 要取回的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置要取回的域名
-                     * @param Domain 要取回的域名
+                     * @param _domain 要取回的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

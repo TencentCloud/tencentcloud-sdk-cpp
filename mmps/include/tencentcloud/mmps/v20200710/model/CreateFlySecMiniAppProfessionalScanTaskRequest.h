@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取小程序AppID
                      * @return MiniAppID 小程序AppID
+                     * 
                      */
                     std::string GetMiniAppID() const;
 
                     /**
                      * 设置小程序AppID
-                     * @param MiniAppID 小程序AppID
+                     * @param _miniAppID 小程序AppID
+                     * 
                      */
                     void SetMiniAppID(const std::string& _miniAppID);
 
                     /**
                      * 判断参数 MiniAppID 是否已赋值
                      * @return MiniAppID 是否已赋值
+                     * 
                      */
                     bool MiniAppIDHasBeenSet() const;
 
                     /**
                      * 获取小程序名称
                      * @return MiniAppName 小程序名称
+                     * 
                      */
                     std::string GetMiniAppName() const;
 
                     /**
                      * 设置小程序名称
-                     * @param MiniAppName 小程序名称
+                     * @param _miniAppName 小程序名称
+                     * 
                      */
                     void SetMiniAppName(const std::string& _miniAppName);
 
                     /**
                      * 判断参数 MiniAppName 是否已赋值
                      * @return MiniAppName 是否已赋值
+                     * 
                      */
                     bool MiniAppNameHasBeenSet() const;
 
                     /**
                      * 获取诊断模式 2:深度诊断
                      * @return Mode 诊断模式 2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置诊断模式 2:深度诊断
-                     * @param Mode 诊断模式 2:深度诊断
+                     * @param _mode 诊断模式 2:深度诊断
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取公司名称
                      * @return CorpName 公司名称
+                     * 
                      */
                     std::string GetCorpName() const;
 
                     /**
                      * 设置公司名称
-                     * @param CorpName 公司名称
+                     * @param _corpName 公司名称
+                     * 
                      */
                     void SetCorpName(const std::string& _corpName);
 
                     /**
                      * 判断参数 CorpName 是否已赋值
                      * @return CorpName 是否已赋值
+                     * 
                      */
                     bool CorpNameHasBeenSet() const;
 
                     /**
                      * 获取手机号码
                      * @return Mobile 手机号码
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置手机号码
-                     * @param Mobile 手机号码
+                     * @param _mobile 手机号码
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取电子邮箱
                      * @return Email 电子邮箱
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置电子邮箱
-                     * @param Email 电子邮箱
+                     * @param _email 电子邮箱
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取备注信息
                      * @return Remark 备注信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-                     * @param Remark 备注信息
+                     * @param _remark 备注信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回数量
                      * @return TotalCount 返回数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取设备所在机架信息
                      * @return DevicePositionInfoSet 设备所在机架信息
+                     * 
                      */
                     std::vector<DevicePositionInfo> GetDevicePositionInfoSet() const;
 
                     /**
                      * 判断参数 DevicePositionInfoSet 是否已赋值
                      * @return DevicePositionInfoSet 是否已赋值
+                     * 
                      */
                     bool DevicePositionInfoSetHasBeenSet() const;
 

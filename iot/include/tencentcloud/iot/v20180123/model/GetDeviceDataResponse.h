@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取设备数据
                      * @return DeviceData 设备数据
+                     * 
                      */
                     std::string GetDeviceData() const;
 
                     /**
                      * 判断参数 DeviceData 是否已赋值
                      * @return DeviceData 是否已赋值
+                     * 
                      */
                     bool DeviceDataHasBeenSet() const;
 

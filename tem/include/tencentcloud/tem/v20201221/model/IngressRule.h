@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取ingress rule value
                      * @return Http ingress rule value
+                     * 
                      */
                     IngressRuleValue GetHttp() const;
 
                     /**
                      * 设置ingress rule value
-                     * @param Http ingress rule value
+                     * @param _http ingress rule value
+                     * 
                      */
                     void SetHttp(const IngressRuleValue& _http);
 
                     /**
                      * 判断参数 Http 是否已赋值
                      * @return Http 是否已赋值
+                     * 
                      */
                     bool HttpHasBeenSet() const;
 
@@ -70,38 +73,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host host 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置host 地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host host 地址
+                     * @param _host host 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取协议，选项为 http， https，默认为 http
                      * @return Protocol 协议，选项为 http， https，默认为 http
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，选项为 http， https，默认为 http
-                     * @param Protocol 协议，选项为 http， https，默认为 http
+                     * @param _protocol 协议，选项为 http， https，默认为 http
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

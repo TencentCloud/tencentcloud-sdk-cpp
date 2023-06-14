@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取仓库名字
                      * @return RepoName 仓库名字
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名字
-                     * @param RepoName 仓库名字
+                     * @param _repoName 仓库名字
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 

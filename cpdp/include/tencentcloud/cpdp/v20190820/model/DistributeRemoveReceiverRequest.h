@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取使用门店OpenId
                      * @return OpenId 使用门店OpenId
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置使用门店OpenId
-                     * @param OpenId 使用门店OpenId
+                     * @param _openId 使用门店OpenId
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取使用门店OpenKey
                      * @return OpenKey 使用门店OpenKey
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置使用门店OpenKey
-                     * @param OpenKey 使用门店OpenKey
+                     * @param _openKey 使用门店OpenKey
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取商户编号
                      * @return MerchantNo 商户编号
+                     * 
                      */
                     std::string GetMerchantNo() const;
 
                     /**
                      * 设置商户编号
-                     * @param MerchantNo 商户编号
+                     * @param _merchantNo 商户编号
+                     * 
                      */
                     void SetMerchantNo(const std::string& _merchantNo);
 
                     /**
                      * 判断参数 MerchantNo 是否已赋值
                      * @return MerchantNo 是否已赋值
+                     * 
                      */
                     bool MerchantNoHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

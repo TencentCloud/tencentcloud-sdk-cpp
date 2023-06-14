@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取句法依存关系的类型
                      * @return Relation 句法依存关系的类型
+                     * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置句法依存关系的类型
-                     * @param Relation 句法依存关系的类型
+                     * @param _relation 句法依存关系的类型
+                     * 
                      */
                     void SetRelation(const std::string& _relation);
 
                     /**
                      * 判断参数 Relation 是否已赋值
                      * @return Relation 是否已赋值
+                     * 
                      */
                     bool RelationHasBeenSet() const;
 
                     /**
                      * 获取当前词父节点的序号
                      * @return HeadId 当前词父节点的序号
+                     * 
                      */
                     uint64_t GetHeadId() const;
 
                     /**
                      * 设置当前词父节点的序号
-                     * @param HeadId 当前词父节点的序号
+                     * @param _headId 当前词父节点的序号
+                     * 
                      */
                     void SetHeadId(const uint64_t& _headId);
 
                     /**
                      * 判断参数 HeadId 是否已赋值
                      * @return HeadId 是否已赋值
+                     * 
                      */
                     bool HeadIdHasBeenSet() const;
 
                     /**
                      * 获取基础词
                      * @return Word 基础词
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置基础词
-                     * @param Word 基础词
+                     * @param _word 基础词
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取基础词的序号
                      * @return Id 基础词的序号
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置基础词的序号
-                     * @param Id 基础词的序号
+                     * @param _id 基础词的序号
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

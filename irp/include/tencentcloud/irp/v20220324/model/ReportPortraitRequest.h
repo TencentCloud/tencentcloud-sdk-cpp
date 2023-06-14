@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取推荐平台上的业务id
                      * @return Bid 推荐平台上的业务id
+                     * 
                      */
                     std::string GetBid() const;
 
                     /**
                      * 设置推荐平台上的业务id
-                     * @param Bid 推荐平台上的业务id
+                     * @param _bid 推荐平台上的业务id
+                     * 
                      */
                     void SetBid(const std::string& _bid);
 
                     /**
                      * 判断参数 Bid 是否已赋值
                      * @return Bid 是否已赋值
+                     * 
                      */
                     bool BidHasBeenSet() const;
 
                     /**
                      * 获取上报的用户画像数组，数量不超过50
                      * @return PortraitList 上报的用户画像数组，数量不超过50
+                     * 
                      */
                     std::vector<PortraitInfo> GetPortraitList() const;
 
                     /**
                      * 设置上报的用户画像数组，数量不超过50
-                     * @param PortraitList 上报的用户画像数组，数量不超过50
+                     * @param _portraitList 上报的用户画像数组，数量不超过50
+                     * 
                      */
                     void SetPortraitList(const std::vector<PortraitInfo>& _portraitList);
 
                     /**
                      * 判断参数 PortraitList 是否已赋值
                      * @return PortraitList 是否已赋值
+                     * 
                      */
                     bool PortraitListHasBeenSet() const;
 

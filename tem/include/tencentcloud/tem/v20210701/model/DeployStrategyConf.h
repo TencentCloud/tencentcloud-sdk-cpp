@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取总分批数
                      * @return TotalBatchCount 总分批数
+                     * 
                      */
                     int64_t GetTotalBatchCount() const;
 
                     /**
                      * 设置总分批数
-                     * @param TotalBatchCount 总分批数
+                     * @param _totalBatchCount 总分批数
+                     * 
                      */
                     void SetTotalBatchCount(const int64_t& _totalBatchCount);
 
                     /**
                      * 判断参数 TotalBatchCount 是否已赋值
                      * @return TotalBatchCount 是否已赋值
+                     * 
                      */
                     bool TotalBatchCountHasBeenSet() const;
 
                     /**
                      * 获取beta分批实例数
                      * @return BetaBatchNum beta分批实例数
+                     * 
                      */
                     int64_t GetBetaBatchNum() const;
 
                     /**
                      * 设置beta分批实例数
-                     * @param BetaBatchNum beta分批实例数
+                     * @param _betaBatchNum beta分批实例数
+                     * 
                      */
                     void SetBetaBatchNum(const int64_t& _betaBatchNum);
 
                     /**
                      * 判断参数 BetaBatchNum 是否已赋值
                      * @return BetaBatchNum 是否已赋值
+                     * 
                      */
                     bool BetaBatchNumHasBeenSet() const;
 
                     /**
                      * 获取分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
                      * @return DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
+                     * 
                      */
                     int64_t GetDeployStrategyType() const;
 
                     /**
                      * 设置分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
-                     * @param DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
+                     * @param _deployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
+                     * 
                      */
                     void SetDeployStrategyType(const int64_t& _deployStrategyType);
 
                     /**
                      * 判断参数 DeployStrategyType 是否已赋值
                      * @return DeployStrategyType 是否已赋值
+                     * 
                      */
                     bool DeployStrategyTypeHasBeenSet() const;
 
                     /**
                      * 获取每批暂停间隔
                      * @return BatchInterval 每批暂停间隔
+                     * 
                      */
                     int64_t GetBatchInterval() const;
 
                     /**
                      * 设置每批暂停间隔
-                     * @param BatchInterval 每批暂停间隔
+                     * @param _batchInterval 每批暂停间隔
+                     * 
                      */
                     void SetBatchInterval(const int64_t& _batchInterval);
 
                     /**
                      * 判断参数 BatchInterval 是否已赋值
                      * @return BatchInterval 是否已赋值
+                     * 
                      */
                     bool BatchIntervalHasBeenSet() const;
 
                     /**
                      * 获取最小可用实例数
                      * @return MinAvailable 最小可用实例数
+                     * 
                      */
                     int64_t GetMinAvailable() const;
 
                     /**
                      * 设置最小可用实例数
-                     * @param MinAvailable 最小可用实例数
+                     * @param _minAvailable 最小可用实例数
+                     * 
                      */
                     void SetMinAvailable(const int64_t& _minAvailable);
 
                     /**
                      * 判断参数 MinAvailable 是否已赋值
                      * @return MinAvailable 是否已赋值
+                     * 
                      */
                     bool MinAvailableHasBeenSet() const;
 
                     /**
                      * 获取是否强制发布
                      * @return Force 是否强制发布
+                     * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否强制发布
-                     * @param Force 是否强制发布
+                     * @param _force 是否强制发布
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
                      * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @param _label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取风险等级，1:疑似，2：恶意
                      * @return Level 风险等级，1:疑似，2：恶意
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置风险等级，1:疑似，2：恶意
-                     * @param Level 风险等级，1:疑似，2：恶意
+                     * @param _level 风险等级，1:疑似，2：恶意
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

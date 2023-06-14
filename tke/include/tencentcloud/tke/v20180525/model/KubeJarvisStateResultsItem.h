@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 诊断结果级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置诊断结果级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 诊断结果级别
+                     * @param _level 诊断结果级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjName 诊断对象名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetObjName() const;
 
                     /**
                      * 设置诊断对象名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjName 诊断对象名
+                     * @param _objName 诊断对象名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjName(const std::string& _objName);
 
                     /**
                      * 判断参数 ObjName 是否已赋值
                      * @return ObjName 是否已赋值
+                     * 
                      */
                     bool ObjNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjInfo 诊断对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateResultObjInfo> GetObjInfo() const;
 
                     /**
                      * 设置诊断对象信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjInfo 诊断对象信息
+                     * @param _objInfo 诊断对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjInfo(const std::vector<KubeJarvisStateResultObjInfo>& _objInfo);
 
                     /**
                      * 判断参数 ObjInfo 是否已赋值
                      * @return ObjInfo 是否已赋值
+                     * 
                      */
                     bool ObjInfoHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 诊断项标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置诊断项标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Title 诊断项标题
+                     * @param _title 诊断项标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 诊断项描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置诊断项描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 诊断项描述
+                     * @param _desc 诊断项描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proposal 诊断建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProposal() const;
 
                     /**
                      * 设置诊断建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Proposal 诊断建议
+                     * @param _proposal 诊断建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProposal(const std::string& _proposal);
 
                     /**
                      * 判断参数 Proposal 是否已赋值
                      * @return Proposal 是否已赋值
+                     * 
                      */
                     bool ProposalHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProposalDocUrl 诊断建议文档链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProposalDocUrl() const;
 
                     /**
                      * 设置诊断建议文档链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProposalDocUrl 诊断建议文档链接
+                     * @param _proposalDocUrl 诊断建议文档链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProposalDocUrl(const std::string& _proposalDocUrl);
 
                     /**
                      * 判断参数 ProposalDocUrl 是否已赋值
                      * @return ProposalDocUrl 是否已赋值
+                     * 
                      */
                     bool ProposalDocUrlHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProposalDocName 诊断建议文档名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProposalDocName() const;
 
                     /**
                      * 设置诊断建议文档名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProposalDocName 诊断建议文档名称
+                     * @param _proposalDocName 诊断建议文档名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProposalDocName(const std::string& _proposalDocName);
 
                     /**
                      * 判断参数 ProposalDocName 是否已赋值
                      * @return ProposalDocName 是否已赋值
+                     * 
                      */
                     bool ProposalDocNameHasBeenSet() const;
 

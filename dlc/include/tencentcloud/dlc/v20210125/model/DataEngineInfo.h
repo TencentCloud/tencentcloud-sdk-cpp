@@ -53,126 +53,147 @@ namespace TencentCloud
                     /**
                      * 获取DataEngine名称
                      * @return DataEngineName DataEngine名称
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置DataEngine名称
-                     * @param DataEngineName DataEngine名称
+                     * @param _dataEngineName DataEngine名称
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
                      * 获取引擎类型 spark/presto
                      * @return EngineType 引擎类型 spark/presto
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置引擎类型 spark/presto
-                     * @param EngineType 引擎类型 spark/presto
+                     * @param _engineType 引擎类型 spark/presto
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 
                     /**
                      * 获取集群资源类型 spark_private/presto_private/presto_cu/spark_cu
                      * @return ClusterType 集群资源类型 spark_private/presto_private/presto_cu/spark_cu
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群资源类型 spark_private/presto_private/presto_cu/spark_cu
-                     * @param ClusterType 集群资源类型 spark_private/presto_private/presto_cu/spark_cu
+                     * @param _clusterType 集群资源类型 spark_private/presto_private/presto_cu/spark_cu
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取引用ID
                      * @return QuotaId 引用ID
+                     * 
                      */
                     std::string GetQuotaId() const;
 
                     /**
                      * 设置引用ID
-                     * @param QuotaId 引用ID
+                     * @param _quotaId 引用ID
+                     * 
                      */
                     void SetQuotaId(const std::string& _quotaId);
 
                     /**
                      * 判断参数 QuotaId 是否已赋值
                      * @return QuotaId 是否已赋值
+                     * 
                      */
                     bool QuotaIdHasBeenSet() const;
 
                     /**
                      * 获取数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中
                      * @return State 数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中
-                     * @param State 数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中
+                     * @param _state 数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -181,38 +202,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 集群规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置集群规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Size 集群规格
+                     * @param _size 集群规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取计费模式 0共享模式 1按量计费 2包年包月
                      * @return Mode 计费模式 0共享模式 1按量计费 2包年包月
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置计费模式 0共享模式 1按量计费 2包年包月
-                     * @param Mode 计费模式 0共享模式 1按量计费 2包年包月
+                     * @param _mode 计费模式 0共享模式 1按量计费 2包年包月
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinClusters 最小集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinClusters() const;
 
                     /**
                      * 设置最小集群数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinClusters 最小集群数
+                     * @param _minClusters 最小集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinClusters(const int64_t& _minClusters);
 
                     /**
                      * 判断参数 MinClusters 是否已赋值
                      * @return MinClusters 是否已赋值
+                     * 
                      */
                     bool MinClustersHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxClusters 最大集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxClusters() const;
 
                     /**
                      * 设置最大集群数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxClusters 最大集群数
+                     * @param _maxClusters 最大集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxClusters(const int64_t& _maxClusters);
 
                     /**
                      * 判断参数 MaxClusters 是否已赋值
                      * @return MaxClusters 是否已赋值
+                     * 
                      */
                     bool MaxClustersHasBeenSet() const;
 
@@ -265,20 +298,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoResume 是否自动恢复
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoResume() const;
 
                     /**
                      * 设置是否自动恢复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoResume 是否自动恢复
+                     * @param _autoResume 是否自动恢复
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoResume(const bool& _autoResume);
 
                     /**
                      * 判断参数 AutoResume 是否已赋值
                      * @return AutoResume 是否已赋值
+                     * 
                      */
                     bool AutoResumeHasBeenSet() const;
 
@@ -287,20 +323,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpendAfter 自动恢复时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSpendAfter() const;
 
                     /**
                      * 设置自动恢复时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpendAfter 自动恢复时间
+                     * @param _spendAfter 自动恢复时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpendAfter(const int64_t& _spendAfter);
 
                     /**
                      * 判断参数 SpendAfter 是否已赋值
                      * @return SpendAfter 是否已赋值
+                     * 
                      */
                     bool SpendAfterHasBeenSet() const;
 
@@ -309,20 +348,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CidrBlock 集群网段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置集群网段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CidrBlock 集群网段
+                     * @param _cidrBlock 集群网段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
@@ -331,20 +373,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDataEngine 是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDefaultDataEngine() const;
 
                     /**
                      * 设置是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultDataEngine 是否为默认引擎
+                     * @param _defaultDataEngine 是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultDataEngine(const bool& _defaultDataEngine);
 
                     /**
                      * 判断参数 DefaultDataEngine 是否已赋值
                      * @return DefaultDataEngine 是否已赋值
+                     * 
                      */
                     bool DefaultDataEngineHasBeenSet() const;
 
@@ -353,110 +398,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置返回信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 返回信息
+                     * @param _message 返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取引擎id
                      * @return DataEngineId 引擎id
+                     * 
                      */
                     std::string GetDataEngineId() const;
 
                     /**
                      * 设置引擎id
-                     * @param DataEngineId 引擎id
+                     * @param _dataEngineId 引擎id
+                     * 
                      */
                     void SetDataEngineId(const std::string& _dataEngineId);
 
                     /**
                      * 判断参数 DataEngineId 是否已赋值
                      * @return DataEngineId 是否已赋值
+                     * 
                      */
                     bool DataEngineIdHasBeenSet() const;
 
                     /**
                      * 获取操作者
                      * @return SubAccountUin 操作者
+                     * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置操作者
-                     * @param SubAccountUin 操作者
+                     * @param _subAccountUin 操作者
+                     * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
 
                     /**
                      * 判断参数 SubAccountUin 是否已赋值
                      * @return SubAccountUin 是否已赋值
+                     * 
                      */
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
                      * 获取到期时间
                      * @return ExpireTime 到期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置到期时间
-                     * @param ExpireTime 到期时间
+                     * @param _expireTime 到期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取隔离时间
                      * @return IsolatedTime 隔离时间
+                     * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
                      * 设置隔离时间
-                     * @param IsolatedTime 隔离时间
+                     * @param _isolatedTime 隔离时间
+                     * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
 
                     /**
                      * 判断参数 IsolatedTime 是否已赋值
                      * @return IsolatedTime 是否已赋值
+                     * 
                      */
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
                      * 获取冲正时间
                      * @return ReversalTime 冲正时间
+                     * 
                      */
                     std::string GetReversalTime() const;
 
                     /**
                      * 设置冲正时间
-                     * @param ReversalTime 冲正时间
+                     * @param _reversalTime 冲正时间
+                     * 
                      */
                     void SetReversalTime(const std::string& _reversalTime);
 
                     /**
                      * 判断参数 ReversalTime 是否已赋值
                      * @return ReversalTime 是否已赋值
+                     * 
                      */
                     bool ReversalTimeHasBeenSet() const;
 
@@ -465,20 +528,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置用户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAlias 用户名称
+                     * @param _userAlias 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
 
                     /**
                      * 判断参数 UserAlias 是否已赋值
                      * @return UserAlias 是否已赋值
+                     * 
                      */
                     bool UserAliasHasBeenSet() const;
 
@@ -487,20 +553,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 标签对集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
                      * 设置标签对集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagList 标签对集合
+                     * @param _tagList 标签对集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagList(const std::vector<TagInfo>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 
@@ -509,20 +578,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Permissions 引擎拥有的权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPermissions() const;
 
                     /**
                      * 设置引擎拥有的权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Permissions 引擎拥有的权限
+                     * @param _permissions 引擎拥有的权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPermissions(const std::vector<std::string>& _permissions);
 
                     /**
                      * 判断参数 Permissions 是否已赋值
                      * @return Permissions 是否已赋值
+                     * 
                      */
                     bool PermissionsHasBeenSet() const;
 
@@ -531,20 +603,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoSuspend 是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoSuspend() const;
 
                     /**
                      * 设置是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoSuspend 是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起
+                     * @param _autoSuspend 是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoSuspend(const bool& _autoSuspend);
 
                     /**
                      * 判断参数 AutoSuspend 是否已赋值
                      * @return AutoSuspend 是否已赋值
+                     * 
                      */
                     bool AutoSuspendHasBeenSet() const;
 
@@ -553,20 +628,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrontabResumeSuspend 定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCrontabResumeSuspend() const;
 
                     /**
                      * 设置定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CrontabResumeSuspend 定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）
+                     * @param _crontabResumeSuspend 定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCrontabResumeSuspend(const int64_t& _crontabResumeSuspend);
 
                     /**
                      * 判断参数 CrontabResumeSuspend 是否已赋值
                      * @return CrontabResumeSuspend 是否已赋值
+                     * 
                      */
                     bool CrontabResumeSuspendHasBeenSet() const;
 
@@ -575,20 +653,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrontabResumeSuspendStrategy 定时启停策略，复杂类型：包含启停时间、挂起集群策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CrontabResumeSuspendStrategy GetCrontabResumeSuspendStrategy() const;
 
                     /**
                      * 设置定时启停策略，复杂类型：包含启停时间、挂起集群策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CrontabResumeSuspendStrategy 定时启停策略，复杂类型：包含启停时间、挂起集群策略
+                     * @param _crontabResumeSuspendStrategy 定时启停策略，复杂类型：包含启停时间、挂起集群策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCrontabResumeSuspendStrategy(const CrontabResumeSuspendStrategy& _crontabResumeSuspendStrategy);
 
                     /**
                      * 判断参数 CrontabResumeSuspendStrategy 是否已赋值
                      * @return CrontabResumeSuspendStrategy 是否已赋值
+                     * 
                      */
                     bool CrontabResumeSuspendStrategyHasBeenSet() const;
 
@@ -597,20 +678,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineExecType 引擎执行任务类型，有效值：SQL/BATCH
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEngineExecType() const;
 
                     /**
                      * 设置引擎执行任务类型，有效值：SQL/BATCH
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EngineExecType 引擎执行任务类型，有效值：SQL/BATCH
+                     * @param _engineExecType 引擎执行任务类型，有效值：SQL/BATCH
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEngineExecType(const std::string& _engineExecType);
 
                     /**
                      * 判断参数 EngineExecType 是否已赋值
                      * @return EngineExecType 是否已赋值
+                     * 
                      */
                     bool EngineExecTypeHasBeenSet() const;
 
@@ -619,20 +703,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewFlag 自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费
+                     * @param _renewFlag 自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -641,20 +728,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoSuspendTime 集群自动挂起时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAutoSuspendTime() const;
 
                     /**
                      * 设置集群自动挂起时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoSuspendTime 集群自动挂起时间
+                     * @param _autoSuspendTime 集群自动挂起时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoSuspendTime(const int64_t& _autoSuspendTime);
 
                     /**
                      * 判断参数 AutoSuspendTime 是否已赋值
                      * @return AutoSuspendTime 是否已赋值
+                     * 
                      */
                     bool AutoSuspendTimeHasBeenSet() const;
 
@@ -663,20 +753,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkConnectionSet 网络连接配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NetworkConnection> GetNetworkConnectionSet() const;
 
                     /**
                      * 设置网络连接配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkConnectionSet 网络连接配置
+                     * @param _networkConnectionSet 网络连接配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkConnectionSet(const std::vector<NetworkConnection>& _networkConnectionSet);
 
                     /**
                      * 判断参数 NetworkConnectionSet 是否已赋值
                      * @return NetworkConnectionSet 是否已赋值
+                     * 
                      */
                     bool NetworkConnectionSetHasBeenSet() const;
 
@@ -685,20 +778,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UiURL ui的跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUiURL() const;
 
                     /**
                      * 设置ui的跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UiURL ui的跳转地址
+                     * @param _uiURL ui的跳转地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUiURL(const std::string& _uiURL);
 
                     /**
                      * 判断参数 UiURL 是否已赋值
                      * @return UiURL 是否已赋值
+                     * 
                      */
                     bool UiURLHasBeenSet() const;
 
@@ -707,20 +803,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 引擎的资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置引擎的资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 引擎的资源类型
+                     * @param _resourceType 引擎的资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -729,20 +828,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageVersionId 集群镜像版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageVersionId() const;
 
                     /**
                      * 设置集群镜像版本ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageVersionId 集群镜像版本ID
+                     * @param _imageVersionId 集群镜像版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageVersionId(const std::string& _imageVersionId);
 
                     /**
                      * 判断参数 ImageVersionId 是否已赋值
                      * @return ImageVersionId 是否已赋值
+                     * 
                      */
                     bool ImageVersionIdHasBeenSet() const;
 
@@ -751,20 +853,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChildImageVersionId 集群镜像小版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChildImageVersionId() const;
 
                     /**
                      * 设置集群镜像小版本ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChildImageVersionId 集群镜像小版本ID
+                     * @param _childImageVersionId 集群镜像小版本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChildImageVersionId(const std::string& _childImageVersionId);
 
                     /**
                      * 判断参数 ChildImageVersionId 是否已赋值
                      * @return ChildImageVersionId 是否已赋值
+                     * 
                      */
                     bool ChildImageVersionIdHasBeenSet() const;
 
@@ -773,20 +878,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageVersionName 集群镜像版本名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageVersionName() const;
 
                     /**
                      * 设置集群镜像版本名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageVersionName 集群镜像版本名字
+                     * @param _imageVersionName 集群镜像版本名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageVersionName(const std::string& _imageVersionName);
 
                     /**
                      * 判断参数 ImageVersionName 是否已赋值
                      * @return ImageVersionName 是否已赋值
+                     * 
                      */
                     bool ImageVersionNameHasBeenSet() const;
 
@@ -795,20 +903,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartStandbyCluster 是否开启备集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetStartStandbyCluster() const;
 
                     /**
                      * 设置是否开启备集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartStandbyCluster 是否开启备集群
+                     * @param _startStandbyCluster 是否开启备集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartStandbyCluster(const bool& _startStandbyCluster);
 
                     /**
                      * 判断参数 StartStandbyCluster 是否已赋值
                      * @return StartStandbyCluster 是否已赋值
+                     * 
                      */
                     bool StartStandbyClusterHasBeenSet() const;
 
@@ -817,20 +928,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticSwitch spark jar 包年包月集群是否开启弹性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetElasticSwitch() const;
 
                     /**
                      * 设置spark jar 包年包月集群是否开启弹性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ElasticSwitch spark jar 包年包月集群是否开启弹性
+                     * @param _elasticSwitch spark jar 包年包月集群是否开启弹性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetElasticSwitch(const bool& _elasticSwitch);
 
                     /**
                      * 判断参数 ElasticSwitch 是否已赋值
                      * @return ElasticSwitch 是否已赋值
+                     * 
                      */
                     bool ElasticSwitchHasBeenSet() const;
 
@@ -839,20 +953,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticLimit spark jar 包年包月集群弹性上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetElasticLimit() const;
 
                     /**
                      * 设置spark jar 包年包月集群弹性上限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ElasticLimit spark jar 包年包月集群弹性上限
+                     * @param _elasticLimit spark jar 包年包月集群弹性上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetElasticLimit(const int64_t& _elasticLimit);
 
                     /**
                      * 判断参数 ElasticLimit 是否已赋值
                      * @return ElasticLimit 是否已赋值
+                     * 
                      */
                     bool ElasticLimitHasBeenSet() const;
 
@@ -861,20 +978,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultHouse 是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDefaultHouse() const;
 
                     /**
                      * 设置是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultHouse 是否为默认引擎
+                     * @param _defaultHouse 是否为默认引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultHouse(const bool& _defaultHouse);
 
                     /**
                      * 判断参数 DefaultHouse 是否已赋值
                      * @return DefaultHouse 是否已赋值
+                     * 
                      */
                     bool DefaultHouseHasBeenSet() const;
 
@@ -883,20 +1003,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConcurrency 单个集群任务最大并发数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxConcurrency() const;
 
                     /**
                      * 设置单个集群任务最大并发数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxConcurrency 单个集群任务最大并发数
+                     * @param _maxConcurrency 单个集群任务最大并发数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxConcurrency(const int64_t& _maxConcurrency);
 
                     /**
                      * 判断参数 MaxConcurrency 是否已赋值
                      * @return MaxConcurrency 是否已赋值
+                     * 
                      */
                     bool MaxConcurrencyHasBeenSet() const;
 
@@ -905,20 +1028,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TolerableQueueTime 任务排队上限时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTolerableQueueTime() const;
 
                     /**
                      * 设置任务排队上限时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TolerableQueueTime 任务排队上限时间
+                     * @param _tolerableQueueTime 任务排队上限时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTolerableQueueTime(const int64_t& _tolerableQueueTime);
 
                     /**
                      * 判断参数 TolerableQueueTime 是否已赋值
                      * @return TolerableQueueTime 是否已赋值
+                     * 
                      */
                     bool TolerableQueueTimeHasBeenSet() const;
 
@@ -927,20 +1053,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAppId 用户appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUserAppId() const;
 
                     /**
                      * 设置用户appid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAppId 用户appid
+                     * @param _userAppId 用户appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAppId(const int64_t& _userAppId);
 
                     /**
                      * 判断参数 UserAppId 是否已赋值
                      * @return UserAppId 是否已赋值
+                     * 
                      */
                     bool UserAppIdHasBeenSet() const;
 
@@ -949,20 +1078,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserUin 用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 设置用户uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserUin 用户uin
+                     * @param _userUin 用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserUin(const std::string& _userUin);
 
                     /**
                      * 判断参数 UserUin 是否已赋值
                      * @return UserUin 是否已赋值
+                     * 
                      */
                     bool UserUinHasBeenSet() const;
 
@@ -971,20 +1103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionResourceTemplate SessionResourceTemplate
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SessionResourceTemplate GetSessionResourceTemplate() const;
 
                     /**
                      * 设置SessionResourceTemplate
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionResourceTemplate SessionResourceTemplate
+                     * @param _sessionResourceTemplate SessionResourceTemplate
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate);
 
                     /**
                      * 判断参数 SessionResourceTemplate 是否已赋值
                      * @return SessionResourceTemplate 是否已赋值
+                     * 
                      */
                     bool SessionResourceTemplateHasBeenSet() const;
 

@@ -51,56 +51,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 单价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置单价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPrice 单价
+                     * @param _unitPrice 单价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
 
                     /**
                      * 判断参数 UnitPrice 是否已赋值
                      * @return UnitPrice 是否已赋值
+                     * 
                      */
                     bool UnitPriceHasBeenSet() const;
 
                     /**
                      * 获取原价
                      * @return OriginalPrice 原价
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置原价
-                     * @param OriginalPrice 原价
+                     * @param _originalPrice 原价
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取折扣加
                      * @return DiscountPrice 折扣加
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置折扣加
-                     * @param DiscountPrice 折扣加
+                     * @param _discountPrice 折扣加
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 

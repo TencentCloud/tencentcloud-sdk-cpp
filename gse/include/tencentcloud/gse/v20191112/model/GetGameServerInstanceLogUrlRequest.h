@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取游戏舰队ID
                      * @return FleetId 游戏舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置游戏舰队ID
-                     * @param FleetId 游戏舰队ID
+                     * @param _fleetId 游戏舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例IP
                      * @return ServerIp 实例IP
+                     * 
                      */
                     std::string GetServerIp() const;
 
                     /**
                      * 设置实例IP
-                     * @param ServerIp 实例IP
+                     * @param _serverIp 实例IP
+                     * 
                      */
                     void SetServerIp(const std::string& _serverIp);
 
                     /**
                      * 判断参数 ServerIp 是否已赋值
                      * @return ServerIp 是否已赋值
+                     * 
                      */
                     bool ServerIpHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每次条数
                      * @return Size 每次条数
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置每次条数
-                     * @param Size 每次条数
+                     * @param _size 每次条数
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

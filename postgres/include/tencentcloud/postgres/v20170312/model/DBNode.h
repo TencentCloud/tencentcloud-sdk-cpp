@@ -53,6 +53,7 @@ Standby，代表备节点。
                      * @return Role 节点类型，值可以为：
 Primary，代表主节点；
 Standby，代表备节点。
+                     * 
                      */
                     std::string GetRole() const;
 
@@ -60,33 +61,38 @@ Standby，代表备节点。
                      * 设置节点类型，值可以为：
 Primary，代表主节点；
 Standby，代表备节点。
-                     * @param Role 节点类型，值可以为：
+                     * @param _role 节点类型，值可以为：
 Primary，代表主节点；
 Standby，代表备节点。
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取节点所在可用区，例如 ap-guangzhou-1。
                      * @return Zone 节点所在可用区，例如 ap-guangzhou-1。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置节点所在可用区，例如 ap-guangzhou-1。
-                     * @param Zone 节点所在可用区，例如 ap-guangzhou-1。
+                     * @param _zone 节点所在可用区，例如 ap-guangzhou-1。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

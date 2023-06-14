@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Cpt索引
                      * @return CptIndex Cpt索引
+                     * 
                      */
                     uint64_t GetCptIndex() const;
 
                     /**
                      * 设置Cpt索引
-                     * @param CptIndex Cpt索引
+                     * @param _cptIndex Cpt索引
+                     * 
                      */
                     void SetCptIndex(const uint64_t& _cptIndex);
 
                     /**
                      * 判断参数 CptIndex 是否已赋值
                      * @return CptIndex 是否已赋值
+                     * 
                      */
                     bool CptIndexHasBeenSet() const;
 

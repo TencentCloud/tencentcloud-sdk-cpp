@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamId 流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStreamId() const;
 
                     /**
                      * 设置流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamId 流在媒体文件中的流ID
+                     * @param _streamId 流在媒体文件中的流ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamId(const int64_t& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 流的时长，单位：毫秒
+                     * @param _duration 流的时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取COS bucket
                      * @return Bucket COS bucket
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置COS bucket
-                     * @param Bucket COS bucket
+                     * @param _bucket COS bucket
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取COS路径
                      * @return Key COS路径
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置COS路径
-                     * @param Key COS路径
+                     * @param _key COS路径
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取COS区域
                      * @return Region COS区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置COS区域
-                     * @param Region COS区域
+                     * @param _region COS区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

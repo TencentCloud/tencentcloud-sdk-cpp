@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取转化率上报响应包体。
                      * @return ReportConversionStatus 转化率上报响应包体。
+                     * 
                      */
                     ReportConversionStatus GetReportConversionStatus() const;
 
                     /**
                      * 判断参数 ReportConversionStatus 是否已赋值
                      * @return ReportConversionStatus 是否已赋值
+                     * 
                      */
                     bool ReportConversionStatusHasBeenSet() const;
 

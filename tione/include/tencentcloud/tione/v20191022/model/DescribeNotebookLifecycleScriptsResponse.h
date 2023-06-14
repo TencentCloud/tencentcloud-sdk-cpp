@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取Notebook生命周期脚本列表
                      * @return NotebookLifecycleScriptsSet Notebook生命周期脚本列表
+                     * 
                      */
                     std::vector<NotebookLifecycleScriptsSummary> GetNotebookLifecycleScriptsSet() const;
 
                     /**
                      * 判断参数 NotebookLifecycleScriptsSet 是否已赋值
                      * @return NotebookLifecycleScriptsSet 是否已赋值
+                     * 
                      */
                     bool NotebookLifecycleScriptsSetHasBeenSet() const;
 
                     /**
                      * 获取Notebook生命周期脚本总数量
                      * @return TotalCount Notebook生命周期脚本总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

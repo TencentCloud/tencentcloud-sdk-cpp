@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取生成包ID
                      * @return AssetId 生成包ID
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 
                     /**
                      * 获取生成包的全局唯一资源标识符
                      * @return AssetArn 生成包的全局唯一资源标识符
+                     * 
                      */
                     std::string GetAssetArn() const;
 
                     /**
                      * 判断参数 AssetArn 是否已赋值
                      * @return AssetArn 是否已赋值
+                     * 
                      */
                     bool AssetArnHasBeenSet() const;
 

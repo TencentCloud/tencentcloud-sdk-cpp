@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取监测结果
                      * @return Monitors 监测结果
+                     * 
                      */
                     std::vector<Monitor> GetMonitors() const;
 
                     /**
                      * 判断参数 Monitors 是否已赋值
                      * @return Monitors 是否已赋值
+                     * 
                      */
                     bool MonitorsHasBeenSet() const;
 
                     /**
                      * 获取记录总条数
                      * @return TotalCount 记录总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取导出地址
                      * @return ExportURL 导出地址
+                     * 
                      */
                     std::string GetExportURL() const;
 
                     /**
                      * 判断参数 ExportURL 是否已赋值
                      * @return ExportURL 是否已赋值
+                     * 
                      */
                     bool ExportURLHasBeenSet() const;
 

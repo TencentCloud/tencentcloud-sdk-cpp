@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页每页限制数
                      * @return Limit 分页每页限制数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页每页限制数
-                     * @param Limit 分页每页限制数
+                     * @param _limit 分页每页限制数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取公司ID
                      * @return CompanyId 公司ID
+                     * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
                      * 设置公司ID
-                     * @param CompanyId 公司ID
+                     * @param _companyId 公司ID
+                     * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 

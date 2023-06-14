@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取待删除客服邮箱列表
                      * @return StaffList 待删除客服邮箱列表
+                     * 
                      */
                     std::vector<std::string> GetStaffList() const;
 
                     /**
                      * 设置待删除客服邮箱列表
-                     * @param StaffList 待删除客服邮箱列表
+                     * @param _staffList 待删除客服邮箱列表
+                     * 
                      */
                     void SetStaffList(const std::vector<std::string>& _staffList);
 
                     /**
                      * 判断参数 StaffList 是否已赋值
                      * @return StaffList 是否已赋值
+                     * 
                      */
                     bool StaffListHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取证书ID列表
                      * @return CertificateIds 证书ID列表
+                     * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
 
                     /**
                      * 判断参数 CertificateIds 是否已赋值
                      * @return CertificateIds 是否已赋值
+                     * 
                      */
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
                      * 获取订单号列表
                      * @return DealIds 订单号列表
+                     * 
                      */
                     std::vector<std::string> GetDealIds() const;
 
                     /**
                      * 判断参数 DealIds 是否已赋值
                      * @return DealIds 是否已赋值
+                     * 
                      */
                     bool DealIdsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 磁盘数量
+                     * @param _count 磁盘数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -103,6 +106,7 @@ namespace TencentCloud
 <li>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</li>
 <li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -124,7 +128,7 @@ namespace TencentCloud
 <li>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</li>
 <li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 系统盘类型 取值范围：
+                     * @param _diskType 系统盘类型 取值范围：
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_BASIC：表示云硬盘。</li>
@@ -141,12 +145,14 @@ namespace TencentCloud
 <li>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</li>
 <li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -155,20 +161,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 数据容量，单位为GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置数据容量，单位为GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskSize 数据容量，单位为GB
+                     * @param _diskSize 数据容量，单位为GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 

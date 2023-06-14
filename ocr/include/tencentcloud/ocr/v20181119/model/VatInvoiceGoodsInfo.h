@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取项目名称
                      * @return Item 项目名称
+                     * 
                      */
                     std::string GetItem() const;
 
                     /**
                      * 设置项目名称
-                     * @param Item 项目名称
+                     * @param _item 项目名称
+                     * 
                      */
                     void SetItem(const std::string& _item);
 
                     /**
                      * 判断参数 Item 是否已赋值
                      * @return Item 是否已赋值
+                     * 
                      */
                     bool ItemHasBeenSet() const;
 
                     /**
                      * 获取规格型号
                      * @return Specification 规格型号
+                     * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置规格型号
-                     * @param Specification 规格型号
+                     * @param _specification 规格型号
+                     * 
                      */
                     void SetSpecification(const std::string& _specification);
 
                     /**
                      * 判断参数 Specification 是否已赋值
                      * @return Specification 是否已赋值
+                     * 
                      */
                     bool SpecificationHasBeenSet() const;
 
                     /**
                      * 获取单位
                      * @return MeasurementDimension 单位
+                     * 
                      */
                     std::string GetMeasurementDimension() const;
 
                     /**
                      * 设置单位
-                     * @param MeasurementDimension 单位
+                     * @param _measurementDimension 单位
+                     * 
                      */
                     void SetMeasurementDimension(const std::string& _measurementDimension);
 
                     /**
                      * 判断参数 MeasurementDimension 是否已赋值
                      * @return MeasurementDimension 是否已赋值
+                     * 
                      */
                     bool MeasurementDimensionHasBeenSet() const;
 
                     /**
                      * 获取价格
                      * @return Price 价格
+                     * 
                      */
                     std::string GetPrice() const;
 
                     /**
                      * 设置价格
-                     * @param Price 价格
+                     * @param _price 价格
+                     * 
                      */
                     void SetPrice(const std::string& _price);
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Quantity 数量
+                     * 
                      */
                     std::string GetQuantity() const;
 
                     /**
                      * 设置数量
-                     * @param Quantity 数量
+                     * @param _quantity 数量
+                     * 
                      */
                     void SetQuantity(const std::string& _quantity);
 
                     /**
                      * 判断参数 Quantity 是否已赋值
                      * @return Quantity 是否已赋值
+                     * 
                      */
                     bool QuantityHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Amount 金额
+                     * 
                      */
                     std::string GetAmount() const;
 
                     /**
                      * 设置金额
-                     * @param Amount 金额
+                     * @param _amount 金额
+                     * 
                      */
                     void SetAmount(const std::string& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
                     /**
                      * 获取税率(如6%、免税)
                      * @return TaxScheme 税率(如6%、免税)
+                     * 
                      */
                     std::string GetTaxScheme() const;
 
                     /**
                      * 设置税率(如6%、免税)
-                     * @param TaxScheme 税率(如6%、免税)
+                     * @param _taxScheme 税率(如6%、免税)
+                     * 
                      */
                     void SetTaxScheme(const std::string& _taxScheme);
 
                     /**
                      * 判断参数 TaxScheme 是否已赋值
                      * @return TaxScheme 是否已赋值
+                     * 
                      */
                     bool TaxSchemeHasBeenSet() const;
 
                     /**
                      * 获取税额
                      * @return TaxAmount 税额
+                     * 
                      */
                     std::string GetTaxAmount() const;
 
                     /**
                      * 设置税额
-                     * @param TaxAmount 税额
+                     * @param _taxAmount 税额
+                     * 
                      */
                     void SetTaxAmount(const std::string& _taxAmount);
 
                     /**
                      * 判断参数 TaxAmount 是否已赋值
                      * @return TaxAmount 是否已赋值
+                     * 
                      */
                     bool TaxAmountHasBeenSet() const;
 

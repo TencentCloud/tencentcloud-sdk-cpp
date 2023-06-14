@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Ip 地址的类型。可为 advertise, public 等
                      * @return Type Ip 地址的类型。可为 advertise, public 等
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Ip 地址的类型。可为 advertise, public 等
-                     * @param Type Ip 地址的类型。可为 advertise, public 等
+                     * @param _type Ip 地址的类型。可为 advertise, public 等
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Ip 地址
                      * @return Ip Ip 地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Ip 地址
-                     * @param Ip Ip 地址
+                     * @param _ip Ip 地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取网络端口
                      * @return Port 网络端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置网络端口
-                     * @param Port 网络端口
+                     * @param _port 网络端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

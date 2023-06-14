@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如mssql-j8kv137v
                      * @return InstanceId 实例ID，形如mssql-j8kv137v
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如mssql-j8kv137v
-                     * @param InstanceId 实例ID，形如mssql-j8kv137v
+                     * @param _instanceId 实例ID，形如mssql-j8kv137v
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
                      * @return BackupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * 
                      */
                     std::vector<std::string> GetBackupNames() const;
 
                     /**
                      * 设置待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
-                     * @param BackupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * @param _backupNames 待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。
+                     * 
                      */
                     void SetBackupNames(const std::vector<std::string>& _backupNames);
 
                     /**
                      * 判断参数 BackupNames 是否已赋值
                      * @return BackupNames 是否已赋值
+                     * 
                      */
                     bool BackupNamesHasBeenSet() const;
 
                     /**
                      * 获取批量删除手动备份起始时间
                      * @return StartTime 批量删除手动备份起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置批量删除手动备份起始时间
-                     * @param StartTime 批量删除手动备份起始时间
+                     * @param _startTime 批量删除手动备份起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取批量删除手动备份截止时间
                      * @return EndTime 批量删除手动备份截止时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置批量删除手动备份截止时间
-                     * @param EndTime 批量删除手动备份截止时间
+                     * @param _endTime 批量删除手动备份截止时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -47,20 +47,23 @@ namespace TencentCloud
 建议先对图片进行压缩，以便提升处理速度。
                      * @return ImageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
-                     * @param ImageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
+                     * @param _imageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return ImageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
-                     * @param ImageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
+                     * @param _imageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 

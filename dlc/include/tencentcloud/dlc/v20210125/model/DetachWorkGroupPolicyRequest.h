@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取工作组Id
                      * @return WorkGroupId 工作组Id
+                     * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
                      * 设置工作组Id
-                     * @param WorkGroupId 工作组Id
+                     * @param _workGroupId 工作组Id
+                     * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
 
                     /**
                      * 判断参数 WorkGroupId 是否已赋值
                      * @return WorkGroupId 是否已赋值
+                     * 
                      */
                     bool WorkGroupIdHasBeenSet() const;
 
                     /**
                      * 获取解绑的权限集合
                      * @return PolicySet 解绑的权限集合
+                     * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
                      * 设置解绑的权限集合
-                     * @param PolicySet 解绑的权限集合
+                     * @param _policySet 解绑的权限集合
+                     * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
 
                     /**
                      * 判断参数 PolicySet 是否已赋值
                      * @return PolicySet 是否已赋值
+                     * 
                      */
                     bool PolicySetHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据表对象
                      * @return Table 数据表对象
+                     * 
                      */
                     TableResponseInfo GetTable() const;
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 

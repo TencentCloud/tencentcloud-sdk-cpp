@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取部门列表
                      * @return Departments 部门列表
+                     * 
                      */
                     std::vector<IntegrationDepartment> GetDepartments() const;
 
                     /**
                      * 判断参数 Departments 是否已赋值
                      * @return Departments 是否已赋值
+                     * 
                      */
                     bool DepartmentsHasBeenSet() const;
 

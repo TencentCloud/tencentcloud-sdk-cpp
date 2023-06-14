@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取输入的文本（仅支持UTF-8格式，不超过500字）
                      * @return Text 输入的文本（仅支持UTF-8格式，不超过500字）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置输入的文本（仅支持UTF-8格式，不超过500字）
-                     * @param Text 输入的文本（仅支持UTF-8格式，不超过500字）
+                     * @param _text 输入的文本（仅支持UTF-8格式，不超过500字）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

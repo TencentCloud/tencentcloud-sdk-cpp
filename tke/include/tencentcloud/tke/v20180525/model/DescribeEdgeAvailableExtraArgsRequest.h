@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群版本
                      * @return ClusterVersion 集群版本
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置集群版本
-                     * @param ClusterVersion 集群版本
+                     * @param _clusterVersion 集群版本
+                     * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 

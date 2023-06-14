@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取删除的脚本数量
                      * @return ScriptsAffected 删除的脚本数量
+                     * 
                      */
                     int64_t GetScriptsAffected() const;
 
                     /**
                      * 判断参数 ScriptsAffected 是否已赋值
                      * @return ScriptsAffected 是否已赋值
+                     * 
                      */
                     bool ScriptsAffectedHasBeenSet() const;
 

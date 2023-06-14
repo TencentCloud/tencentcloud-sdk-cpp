@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取待消费TopicId
                      * @return TopicID 待消费TopicId
+                     * 
                      */
                     std::string GetTopicID() const;
 
                     /**
                      * 判断参数 TopicID 是否已赋值
                      * @return TopicID 是否已赋值
+                     * 
                      */
                     bool TopicIDHasBeenSet() const;
 

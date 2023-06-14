@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroupId 用户组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroupName 用户组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserGroupName() const;
 
                     /**
                      * 判断参数 UserGroupName 是否已赋值
                      * @return UserGroupName 是否已赋值
+                     * 
                      */
                     bool UserGroupNameHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationUserGroupResourceList 资源列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthorizationResourceEntityInfo> GetAuthorizationUserGroupResourceList() const;
 
                     /**
                      * 判断参数 AuthorizationUserGroupResourceList 是否已赋值
                      * @return AuthorizationUserGroupResourceList 是否已赋值
+                     * 
                      */
                     bool AuthorizationUserGroupResourceListHasBeenSet() const;
 

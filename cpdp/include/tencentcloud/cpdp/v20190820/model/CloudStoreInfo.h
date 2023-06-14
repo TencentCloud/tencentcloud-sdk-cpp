@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取门店ID。
                      * @return StoreId 门店ID。
+                     * 
                      */
                     std::string GetStoreId() const;
 
                     /**
                      * 设置门店ID。
-                     * @param StoreId 门店ID。
+                     * @param _storeId 门店ID。
+                     * 
                      */
                     void SetStoreId(const std::string& _storeId);
 
                     /**
                      * 判断参数 StoreId 是否已赋值
                      * @return StoreId 是否已赋值
+                     * 
                      */
                     bool StoreIdHasBeenSet() const;
 
                     /**
                      * 获取门店名称。
                      * @return StoreName 门店名称。
+                     * 
                      */
                     std::string GetStoreName() const;
 
                     /**
                      * 设置门店名称。
-                     * @param StoreName 门店名称。
+                     * @param _storeName 门店名称。
+                     * 
                      */
                     void SetStoreName(const std::string& _storeName);
 
                     /**
                      * 判断参数 StoreName 是否已赋值
                      * @return StoreName 是否已赋值
+                     * 
                      */
                     bool StoreNameHasBeenSet() const;
 
                     /**
                      * 获取门店地址。
                      * @return StoreAddress 门店地址。
+                     * 
                      */
                     std::string GetStoreAddress() const;
 
                     /**
                      * 设置门店地址。
-                     * @param StoreAddress 门店地址。
+                     * @param _storeAddress 门店地址。
+                     * 
                      */
                     void SetStoreAddress(const std::string& _storeAddress);
 
                     /**
                      * 判断参数 StoreAddress 是否已赋值
                      * @return StoreAddress 是否已赋值
+                     * 
                      */
                     bool StoreAddressHasBeenSet() const;
 
                     /**
                      * 获取门店地区代码。
                      * @return StoreAreaCode 门店地区代码。
+                     * 
                      */
                     std::string GetStoreAreaCode() const;
 
                     /**
                      * 设置门店地区代码。
-                     * @param StoreAreaCode 门店地区代码。
+                     * @param _storeAreaCode 门店地区代码。
+                     * 
                      */
                     void SetStoreAreaCode(const std::string& _storeAreaCode);
 
                     /**
                      * 判断参数 StoreAreaCode 是否已赋值
                      * @return StoreAreaCode 是否已赋值
+                     * 
                      */
                     bool StoreAreaCodeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
                      * @return StoreDeviceId 设备ID。
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
+                     * 
                      */
                     std::string GetStoreDeviceId() const;
 
                     /**
                      * 设置设备ID。
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
-                     * @param StoreDeviceId 设备ID。
+                     * @param _storeDeviceId 设备ID。
 wechat_ecommerce渠道 - h5支付方式，此字段必填。
+                     * 
                      */
                     void SetStoreDeviceId(const std::string& _storeDeviceId);
 
                     /**
                      * 判断参数 StoreDeviceId 是否已赋值
                      * @return StoreDeviceId 是否已赋值
+                     * 
                      */
                     bool StoreDeviceIdHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取VPC ID
                      * @return VpcId VPC ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网 ID
                      * @return SubnetId 子网 ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -112,12 +120,14 @@ namespace TencentCloud
 6：已停服
 8：欠费停服中
 9：欠费已停服
+                     * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 
@@ -138,12 +148,14 @@ namespace TencentCloud
 4：分配中
 5：分配失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChargeStatus() const;
 
                     /**
                      * 判断参数 ChargeStatus 是否已赋值
                      * @return ChargeStatus 是否已赋值
+                     * 
                      */
                     bool ChargeStatusHasBeenSet() const;
 
@@ -154,12 +166,14 @@ namespace TencentCloud
                      * @return EnableGrafana 是否开启 Grafana
 0：不开启
 1：开启
+                     * 
                      */
                     int64_t GetEnableGrafana() const;
 
                     /**
                      * 判断参数 EnableGrafana 是否已赋值
                      * @return EnableGrafana 是否已赋值
+                     * 
                      */
                     bool EnableGrafanaHasBeenSet() const;
 
@@ -168,12 +182,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrafanaURL Grafana 面板 URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGrafanaURL() const;
 
                     /**
                      * 判断参数 GrafanaURL 是否已赋值
                      * @return GrafanaURL 是否已赋值
+                     * 
                      */
                     bool GrafanaURLHasBeenSet() const;
 
@@ -186,12 +202,14 @@ namespace TencentCloud
 
 2：包年包月
 3：按量
+                     * 
                      */
                     int64_t GetInstanceChargeType() const;
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
@@ -200,12 +218,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecName 规格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
@@ -214,12 +234,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataRetentionTime 存储周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
                      * 判断参数 DataRetentionTime 是否已赋值
                      * @return DataRetentionTime 是否已赋值
+                     * 
                      */
                     bool DataRetentionTimeHasBeenSet() const;
 
@@ -228,12 +250,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 购买的实例过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -252,12 +276,14 @@ namespace TencentCloud
 2：禁止自动续费
 -1：无效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 

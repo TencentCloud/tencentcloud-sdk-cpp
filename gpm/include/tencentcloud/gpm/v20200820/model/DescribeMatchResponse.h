@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchInfo 匹配信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MatchInfo GetMatchInfo() const;
 
                     /**
                      * 判断参数 MatchInfo 是否已赋值
                      * @return MatchInfo 是否已赋值
+                     * 
                      */
                     bool MatchInfoHasBeenSet() const;
 

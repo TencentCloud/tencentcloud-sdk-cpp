@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Resource 域名
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置域名
-                     * @param Resource 域名
+                     * @param _resource 域名
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取结果详情
                      * @return DetailData 结果详情
+                     * 
                      */
                     std::vector<DetailData> GetDetailData() const;
 
                     /**
                      * 设置结果详情
-                     * @param DetailData 结果详情
+                     * @param _detailData 结果详情
+                     * 
                      */
                     void SetDetailData(const std::vector<DetailData>& _detailData);
 
                     /**
                      * 判断参数 DetailData 是否已赋值
                      * @return DetailData 是否已赋值
+                     * 
                      */
                     bool DetailDataHasBeenSet() const;
 

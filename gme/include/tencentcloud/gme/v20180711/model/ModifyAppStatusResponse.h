@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取修改应用开关状态返回数据
                      * @return Data 修改应用开关状态返回数据
+                     * 
                      */
                     ModifyAppStatusResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

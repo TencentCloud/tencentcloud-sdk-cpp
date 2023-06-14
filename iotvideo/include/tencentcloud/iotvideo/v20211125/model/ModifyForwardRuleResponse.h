@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云账号
                      * @return Endpoint 腾讯云账号
+                     * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 判断参数 Endpoint 是否已赋值
                      * @return Endpoint 是否已赋值
+                     * 
                      */
                     bool EndpointHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     uint64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return ErrMsg 错误信息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
                     /**
                      * 获取队列类型 0.CMQ 1.CKafka
                      * @return QueueType 队列类型 0.CMQ 1.CKafka
+                     * 
                      */
                     uint64_t GetQueueType() const;
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 

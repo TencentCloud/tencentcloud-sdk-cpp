@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名
                      * @return Database 数据库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-                     * @param Database 数据库名
+                     * @param _database 数据库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取数据表名
                      * @return Table 数据表名
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置数据表名
-                     * @param Table 数据表名
+                     * @param _table 数据表名
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
@@ -105,6 +114,7 @@ all：返回 view 和表
 view：只返回 view，
 base_table： 只返回基本表，
 all：返回 view 和表
+                     * 
                      */
                     std::string GetTableType() const;
 
@@ -113,16 +123,18 @@ all：返回 view 和表
 view：只返回 view，
 base_table： 只返回基本表，
 all：返回 view 和表
-                     * @param TableType 数据表类型：
+                     * @param _tableType 数据表类型：
 view：只返回 view，
 base_table： 只返回基本表，
 all：返回 view 和表
+                     * 
                      */
                     void SetTableType(const std::string& _tableType);
 
                     /**
                      * 判断参数 TableType 是否已赋值
                      * @return TableType 是否已赋值
+                     * 
                      */
                     bool TableTypeHasBeenSet() const;
 

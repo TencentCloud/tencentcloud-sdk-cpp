@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return MachineType 云主机类型。
 <li>CVM：表示虚拟主机</li>
 <li>BM:  表示黑石物理机</li>
+                     * 
                      */
                     std::string GetMachineType() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置云主机类型。
 <li>CVM：表示虚拟主机</li>
 <li>BM:  表示黑石物理机</li>
-                     * @param MachineType 云主机类型。
+                     * @param _machineType 云主机类型。
 <li>CVM：表示虚拟主机</li>
 <li>BM:  表示黑石物理机</li>
+                     * 
                      */
                     void SetMachineType(const std::string& _machineType);
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 如：ap-guangzhou，ap-shanghai
                      * @return MachineRegion 机器所属地域。
 如：ap-guangzhou，ap-shanghai
+                     * 
                      */
                     std::string GetMachineRegion() const;
 
                     /**
                      * 设置机器所属地域。
 如：ap-guangzhou，ap-shanghai
-                     * @param MachineRegion 机器所属地域。
+                     * @param _machineRegion 机器所属地域。
 如：ap-guangzhou，ap-shanghai
+                     * 
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
 
                     /**
                      * 判断参数 MachineRegion 是否已赋值
                      * @return MachineRegion 是否已赋值
+                     * 
                      */
                     bool MachineRegionHasBeenSet() const;
 
@@ -95,38 +101,44 @@ namespace TencentCloud
 黑石的InstanceId，CVM的Uuid
                      * @return Quuids 主机唯一标识Uuid数组。
 黑石的InstanceId，CVM的Uuid
+                     * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置主机唯一标识Uuid数组。
 黑石的InstanceId，CVM的Uuid
-                     * @param Quuids 主机唯一标识Uuid数组。
+                     * @param _quuids 主机唯一标识Uuid数组。
 黑石的InstanceId，CVM的Uuid
+                     * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
+                     * 
                      */
                     bool QuuidsHasBeenSet() const;
 
                     /**
                      * 获取活动ID。
                      * @return ActivityId 活动ID。
+                     * 
                      */
                     uint64_t GetActivityId() const;
 
                     /**
                      * 设置活动ID。
-                     * @param ActivityId 活动ID。
+                     * @param _activityId 活动ID。
+                     * 
                      */
                     void SetActivityId(const uint64_t& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 

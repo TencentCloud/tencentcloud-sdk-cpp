@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取实例Id。
                      * @return InstanceId 实例Id。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id。
-                     * @param InstanceId 实例Id。
+                     * @param _instanceId 实例Id。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例类型，目前支持安全组：securitygroup。
                      * @return InstanceType 实例类型，目前支持安全组：securitygroup。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型，目前支持安全组：securitygroup。
-                     * @param InstanceType 实例类型，目前支持安全组：securitygroup。
+                     * @param _instanceType 实例类型，目前支持安全组：securitygroup。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取实例所在地域。
                      * @return InstanceRegion 实例所在地域。
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置实例所在地域。
-                     * @param InstanceRegion 实例所在地域。
+                     * @param _instanceRegion 实例所在地域。
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称。
                      * @return InstanceName 实例名称。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
-                     * @param InstanceName 实例名称。
+                     * @param _instanceName 实例名称。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 

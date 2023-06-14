@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
+                     * @param _certId 服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
                      * @return CertName 服务器证书名称
 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertName() const;
 
@@ -84,15 +88,17 @@ namespace TencentCloud
                      * 设置服务器证书名称
 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertName 服务器证书名称
+                     * @param _certName 服务器证书名称
 在 SSL 证书管理进行证书托管时自动生成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertName(const std::string& _certName);
 
                     /**
                      * 判断参数 CertName 是否已赋值
                      * @return CertName 是否已赋值
+                     * 
                      */
                     bool CertNameHasBeenSet() const;
 
@@ -103,6 +109,7 @@ namespace TencentCloud
                      * @return Certificate 服务器证书信息
 上传自有证书时必填，需要包含完整的证书链
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificate() const;
 
@@ -110,15 +117,17 @@ namespace TencentCloud
                      * 设置服务器证书信息
 上传自有证书时必填，需要包含完整的证书链
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Certificate 服务器证书信息
+                     * @param _certificate 服务器证书信息
 上传自有证书时必填，需要包含完整的证书链
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificate(const std::string& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
@@ -129,6 +138,7 @@ namespace TencentCloud
                      * @return PrivateKey 服务器密钥信息
 上传自有证书时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateKey() const;
 
@@ -136,15 +146,17 @@ namespace TencentCloud
                      * 设置服务器密钥信息
 上传自有证书时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateKey 服务器密钥信息
+                     * @param _privateKey 服务器密钥信息
 上传自有证书时必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
                     /**
                      * 判断参数 PrivateKey 是否已赋值
                      * @return PrivateKey 是否已赋值
+                     * 
                      */
                     bool PrivateKeyHasBeenSet() const;
 
@@ -155,6 +167,7 @@ namespace TencentCloud
                      * @return ExpireTime 证书过期时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
@@ -162,15 +175,17 @@ namespace TencentCloud
                      * 设置证书过期时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 证书过期时间
+                     * @param _expireTime 证书过期时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -181,6 +196,7 @@ namespace TencentCloud
                      * @return DeployTime 证书颁发时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeployTime() const;
 
@@ -188,15 +204,17 @@ namespace TencentCloud
                      * 设置证书颁发时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployTime 证书颁发时间
+                     * @param _deployTime 证书颁发时间
 作为入参配置时无需填充
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeployTime(const std::string& _deployTime);
 
                     /**
                      * 判断参数 DeployTime 是否已赋值
                      * @return DeployTime 是否已赋值
+                     * 
                      */
                     bool DeployTimeHasBeenSet() const;
 
@@ -205,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 证书备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置证书备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 证书备注信息
+                     * @param _message 证书备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -227,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return From 证书来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置证书来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param From 证书来源
+                     * @param _from 证书来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 

@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取主机个数
                      * @return HostNum 主机个数
+                     * 
                      */
                     uint64_t GetHostNum() const;
 
                     /**
                      * 设置主机个数
-                     * @param HostNum 主机个数
+                     * @param _hostNum 主机个数
+                     * 
                      */
                     void SetHostNum(const uint64_t& _hostNum);
 
                     /**
                      * 判断参数 HostNum 是否已赋值
                      * @return HostNum 是否已赋值
+                     * 
                      */
                     bool HostNumHasBeenSet() const;
 
                     /**
                      * 获取服务状态 0未启动，·响应中，2响应完成
                      * @return Status 服务状态 0未启动，·响应中，2响应完成
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置服务状态 0未启动，·响应中，2响应完成
-                     * @param Status 服务状态 0未启动，·响应中，2响应完成
+                     * @param _status 服务状态 0未启动，·响应中，2响应完成
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取服务开始时间
                      * @return StartTime 服务开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置服务开始时间
-                     * @param StartTime 服务开始时间
+                     * @param _startTime 服务开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取服务结束时间
                      * @return EndTime 服务结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置服务结束时间
-                     * @param EndTime 服务结束时间
+                     * @param _endTime 服务结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取报告下载地址
                      * @return ReportPath 报告下载地址
+                     * 
                      */
                     std::string GetReportPath() const;
 
                     /**
                      * 设置报告下载地址
-                     * @param ReportPath 报告下载地址
+                     * @param _reportPath 报告下载地址
+                     * 
                      */
                     void SetReportPath(const std::string& _reportPath);
 
                     /**
                      * 判断参数 ReportPath 是否已赋值
                      * @return ReportPath 是否已赋值
+                     * 
                      */
                     bool ReportPathHasBeenSet() const;
 

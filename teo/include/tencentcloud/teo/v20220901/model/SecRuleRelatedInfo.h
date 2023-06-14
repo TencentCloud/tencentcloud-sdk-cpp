@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取规则ID。
                      * @return RuleId 规则ID。
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID。
-                     * @param RuleId 规则ID。
+                     * @param _ruleId 规则ID。
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>redirect ：重定向 ；</li>
 <li>page ：返回指定页面 ；</li>
 <li>monitor ：观察 。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 <li>redirect ：重定向 ；</li>
 <li>page ：返回指定页面 ；</li>
 <li>monitor ：观察 。</li>
-                     * @param Action 执行动作（处置方式），取值有：
+                     * @param _action 执行动作（处置方式），取值有：
 <li>trans ：通过 ；</li>
 <li>alg ：算法挑战 ；</li>
 <li>drop ：丢弃 ；</li>
@@ -101,12 +105,14 @@ namespace TencentCloud
 <li>redirect ：重定向 ；</li>
 <li>page ：返回指定页面 ；</li>
 <li>monitor ：观察 。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -121,6 +127,7 @@ namespace TencentCloud
 <li>middle risk ：中危 ；</li>
 <li>low risk ：低危 ；</li>
 <li>unkonw ：未知 。</li>
+                     * 
                      */
                     std::string GetRiskLevel() const;
 
@@ -130,17 +137,19 @@ namespace TencentCloud
 <li>middle risk ：中危 ；</li>
 <li>low risk ：低危 ；</li>
 <li>unkonw ：未知 。</li>
-                     * @param RiskLevel 风险等级（waf日志中独有），取值有：
+                     * @param _riskLevel 风险等级（waf日志中独有），取值有：
 <li>high risk ：高危 ；</li>
 <li>middle risk ：中危 ；</li>
 <li>low risk ：低危 ；</li>
 <li>unkonw ：未知 。</li>
+                     * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
@@ -149,56 +158,65 @@ namespace TencentCloud
 <li>normal  ：正常 。</li>
                      * @return RuleLevel 规则等级，取值有：
 <li>normal  ：正常 。</li>
+                     * 
                      */
                     std::string GetRuleLevel() const;
 
                     /**
                      * 设置规则等级，取值有：
 <li>normal  ：正常 。</li>
-                     * @param RuleLevel 规则等级，取值有：
+                     * @param _ruleLevel 规则等级，取值有：
 <li>normal  ：正常 。</li>
+                     * 
                      */
                     void SetRuleLevel(const std::string& _ruleLevel);
 
                     /**
                      * 判断参数 RuleLevel 是否已赋值
                      * @return RuleLevel 是否已赋值
+                     * 
                      */
                     bool RuleLevelHasBeenSet() const;
 
                     /**
                      * 获取规则描述。
                      * @return Description 规则描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述。
-                     * @param Description 规则描述。
+                     * @param _description 规则描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取规则类型名称。
                      * @return RuleTypeName 规则类型名称。
+                     * 
                      */
                     std::string GetRuleTypeName() const;
 
                     /**
                      * 设置规则类型名称。
-                     * @param RuleTypeName 规则类型名称。
+                     * @param _ruleTypeName 规则类型名称。
+                     * 
                      */
                     void SetRuleTypeName(const std::string& _ruleTypeName);
 
                     /**
                      * 判断参数 RuleTypeName 是否已赋值
                      * @return RuleTypeName 是否已赋值
+                     * 
                      */
                     bool RuleTypeNameHasBeenSet() const;
 
@@ -207,20 +225,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttackContent() const;
 
                     /**
                      * 设置攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackContent 攻击内容。
+                     * @param _attackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttackContent(const std::string& _attackContent);
 
                     /**
                      * 判断参数 AttackContent 是否已赋值
                      * @return AttackContent 是否已赋值
+                     * 
                      */
                     bool AttackContentHasBeenSet() const;
 
@@ -235,6 +256,7 @@ namespace TencentCloud
 <li>acl：自定义规则；</li>
 <li>rate：速率限制规则；</li>
 <li>bot：bot防护规则。</li>
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -244,35 +266,40 @@ namespace TencentCloud
 <li>acl：自定义规则；</li>
 <li>rate：速率限制规则；</li>
 <li>bot：bot防护规则。</li>
-                     * @param RuleType 规则类型，取值有：
+                     * @param _ruleType 规则类型，取值有：
 <li>waf: 托管规则；</li>
 <li>acl：自定义规则；</li>
 <li>rate：速率限制规则；</li>
 <li>bot：bot防护规则。</li>
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
                     /**
                      * 获取规则是否开启。
                      * @return RuleEnabled 规则是否开启。
+                     * 
                      */
                     bool GetRuleEnabled() const;
 
                     /**
                      * 设置规则是否开启。
-                     * @param RuleEnabled 规则是否开启。
+                     * @param _ruleEnabled 规则是否开启。
+                     * 
                      */
                     void SetRuleEnabled(const bool& _ruleEnabled);
 
                     /**
                      * 判断参数 RuleEnabled 是否已赋值
                      * @return RuleEnabled 是否已赋值
+                     * 
                      */
                     bool RuleEnabledHasBeenSet() const;
 
@@ -283,6 +310,7 @@ namespace TencentCloud
                      * @return RuleDeleted 规则是否存在，取值有：
 <li>true: 规则不存在；</li>
 <li>false: 规则存在。</li>
+                     * 
                      */
                     bool GetRuleDeleted() const;
 
@@ -290,33 +318,38 @@ namespace TencentCloud
                      * 设置规则是否存在，取值有：
 <li>true: 规则不存在；</li>
 <li>false: 规则存在。</li>
-                     * @param RuleDeleted 规则是否存在，取值有：
+                     * @param _ruleDeleted 规则是否存在，取值有：
 <li>true: 规则不存在；</li>
 <li>false: 规则存在。</li>
+                     * 
                      */
                     void SetRuleDeleted(const bool& _ruleDeleted);
 
                     /**
                      * 判断参数 RuleDeleted 是否已赋值
                      * @return RuleDeleted 是否已赋值
+                     * 
                      */
                     bool RuleDeletedHasBeenSet() const;
 
                     /**
                      * 获取规则是否启用监控告警。
                      * @return AlarmEnabled 规则是否启用监控告警。
+                     * 
                      */
                     bool GetAlarmEnabled() const;
 
                     /**
                      * 设置规则是否启用监控告警。
-                     * @param AlarmEnabled 规则是否启用监控告警。
+                     * @param _alarmEnabled 规则是否启用监控告警。
+                     * 
                      */
                     void SetAlarmEnabled(const bool& _alarmEnabled);
 
                     /**
                      * 判断参数 AlarmEnabled 是否已赋值
                      * @return AlarmEnabled 是否已赋值
+                     * 
                      */
                     bool AlarmEnabledHasBeenSet() const;
 

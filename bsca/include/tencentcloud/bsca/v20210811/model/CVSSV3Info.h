@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取CVE评分。
                      * @return CVSS CVE评分。
+                     * 
                      */
                     double GetCVSS() const;
 
                     /**
                      * 设置CVE评分。
-                     * @param CVSS CVE评分。
+                     * @param _cVSS CVE评分。
+                     * 
                      */
                     void SetCVSS(const double& _cVSS);
 
                     /**
                      * 判断参数 CVSS 是否已赋值
                      * @return CVSS 是否已赋值
+                     * 
                      */
                     bool CVSSHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
 <li>PHYSICAL 物理</li>
+                     * 
                      */
                     std::string GetAttackVector() const;
 
@@ -87,18 +91,20 @@ namespace TencentCloud
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
 <li>PHYSICAL 物理</li>
-                     * @param AttackVector AttackVector 攻击途径。
+                     * @param _attackVector AttackVector 攻击途径。
 取值范围：
 <li>NETWORK 远程</li>
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
 <li>PHYSICAL 物理</li>
+                     * 
                      */
                     void SetAttackVector(const std::string& _attackVector);
 
                     /**
                      * 判断参数 AttackVector 是否已赋值
                      * @return AttackVector 是否已赋值
+                     * 
                      */
                     bool AttackVectorHasBeenSet() const;
 
@@ -111,6 +117,7 @@ namespace TencentCloud
 取值范围：
 <li>HIGH 高</li>
 <li>LOW 低</li>
+                     * 
                      */
                     std::string GetAttackComplexity() const;
 
@@ -119,16 +126,18 @@ namespace TencentCloud
 取值范围：
 <li>HIGH 高</li>
 <li>LOW 低</li>
-                     * @param AttackComplexity AttackComplexity 攻击复杂度。
+                     * @param _attackComplexity AttackComplexity 攻击复杂度。
 取值范围：
 <li>HIGH 高</li>
 <li>LOW 低</li>
+                     * 
                      */
                     void SetAttackComplexity(const std::string& _attackComplexity);
 
                     /**
                      * 判断参数 AttackComplexity 是否已赋值
                      * @return AttackComplexity 是否已赋值
+                     * 
                      */
                     bool AttackComplexityHasBeenSet() const;
 
@@ -143,6 +152,7 @@ namespace TencentCloud
 <li>HIGH 高</li>
 <li>LOW 低</li>
 <li>NONE 无</li>
+                     * 
                      */
                     std::string GetPrivilegesRequired() const;
 
@@ -152,17 +162,19 @@ namespace TencentCloud
 <li>HIGH 高</li>
 <li>LOW 低</li>
 <li>NONE 无</li>
-                     * @param PrivilegesRequired PrivilegesRequired 触发特权。
+                     * @param _privilegesRequired PrivilegesRequired 触发特权。
 取值范围：
 <li>HIGH 高</li>
 <li>LOW 低</li>
 <li>NONE 无</li>
+                     * 
                      */
                     void SetPrivilegesRequired(const std::string& _privilegesRequired);
 
                     /**
                      * 判断参数 PrivilegesRequired 是否已赋值
                      * @return PrivilegesRequired 是否已赋值
+                     * 
                      */
                     bool PrivilegesRequiredHasBeenSet() const;
 
@@ -175,6 +187,7 @@ namespace TencentCloud
 取值范围：
 <li>NONE 无</li>
 <li>REQUIRED 需要</li>
+                     * 
                      */
                     std::string GetUserInteraction() const;
 
@@ -183,16 +196,18 @@ namespace TencentCloud
 取值范围：
 <li>NONE 无</li>
 <li>REQUIRED 需要</li>
-                     * @param UserInteraction UserInteraction 交互必要性。
+                     * @param _userInteraction UserInteraction 交互必要性。
 取值范围：
 <li>NONE 无</li>
 <li>REQUIRED 需要</li>
+                     * 
                      */
                     void SetUserInteraction(const std::string& _userInteraction);
 
                     /**
                      * 判断参数 UserInteraction 是否已赋值
                      * @return UserInteraction 是否已赋值
+                     * 
                      */
                     bool UserInteractionHasBeenSet() const;
 
@@ -205,6 +220,7 @@ namespace TencentCloud
 取值范围：
 <li>UNCHANGED 否</li>
 <li>CHANGED 能</li>
+                     * 
                      */
                     std::string GetScope() const;
 
@@ -213,16 +229,18 @@ namespace TencentCloud
 取值范围：
 <li>UNCHANGED 否</li>
 <li>CHANGED 能</li>
-                     * @param Scope Scope 绕过安全边界。
+                     * @param _scope Scope 绕过安全边界。
 取值范围：
 <li>UNCHANGED 否</li>
 <li>CHANGED 能</li>
+                     * 
                      */
                     void SetScope(const std::string& _scope);
 
                     /**
                      * 判断参数 Scope 是否已赋值
                      * @return Scope 是否已赋值
+                     * 
                      */
                     bool ScopeHasBeenSet() const;
 
@@ -237,6 +255,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     std::string GetConImpact() const;
 
@@ -246,17 +265,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
-                     * @param ConImpact ConfidentialityImpact 机密性影响。
+                     * @param _conImpact ConfidentialityImpact 机密性影响。
 取值范围：
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     void SetConImpact(const std::string& _conImpact);
 
                     /**
                      * 判断参数 ConImpact 是否已赋值
                      * @return ConImpact 是否已赋值
+                     * 
                      */
                     bool ConImpactHasBeenSet() const;
 
@@ -271,6 +292,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     std::string GetIntegrityImpact() const;
 
@@ -280,17 +302,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
-                     * @param IntegrityImpact IntegrityImpact 完整性影响。
+                     * @param _integrityImpact IntegrityImpact 完整性影响。
 取值范围：
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     void SetIntegrityImpact(const std::string& _integrityImpact);
 
                     /**
                      * 判断参数 IntegrityImpact 是否已赋值
                      * @return IntegrityImpact 是否已赋值
+                     * 
                      */
                     bool IntegrityImpactHasBeenSet() const;
 
@@ -305,6 +329,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     std::string GetAvailabilityImpact() const;
 
@@ -314,17 +339,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
-                     * @param AvailabilityImpact AvailabilityImpact 可用性影响。
+                     * @param _availabilityImpact AvailabilityImpact 可用性影响。
 取值范围：
 <li>NONE 无</li>
 <li>LOW 低</li>
 <li>HIGH 高</li>
+                     * 
                      */
                     void SetAvailabilityImpact(const std::string& _availabilityImpact);
 
                     /**
                      * 判断参数 AvailabilityImpact 是否已赋值
                      * @return AvailabilityImpact 是否已赋值
+                     * 
                      */
                     bool AvailabilityImpactHasBeenSet() const;
 

@@ -58,20 +58,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const BlockInfo& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -80,20 +83,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const Part& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -102,20 +108,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Size> GetSize() const;
 
                     /**
                      * 设置大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Size 大小
+                     * @param _size 大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSize(const std::vector<Size>& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
@@ -124,20 +133,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Multiple 多发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Multiple GetMultiple() const;
 
                     /**
                      * 设置多发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Multiple 多发
+                     * @param _multiple 多发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMultiple(const Multiple& _multiple);
 
                     /**
                      * 判断参数 Multiple 是否已赋值
                      * @return Multiple 是否已赋值
+                     * 
                      */
                     bool MultipleHasBeenSet() const;
 
@@ -146,20 +158,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AspectRatio 纵横比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AspectRatio GetAspectRatio() const;
 
                     /**
                      * 设置纵横比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AspectRatio 纵横比
+                     * @param _aspectRatio 纵横比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAspectRatio(const AspectRatio& _aspectRatio);
 
                     /**
                      * 判断参数 AspectRatio 是否已赋值
                      * @return AspectRatio 是否已赋值
+                     * 
                      */
                     bool AspectRatioHasBeenSet() const;
 
@@ -168,20 +183,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Edge 边缘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetEdge() const;
 
                     /**
                      * 设置边缘
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Edge 边缘
+                     * @param _edge 边缘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdge(const BlockInfo& _edge);
 
                     /**
                      * 判断参数 Edge 是否已赋值
                      * @return Edge 是否已赋值
+                     * 
                      */
                     bool EdgeHasBeenSet() const;
 
@@ -190,20 +208,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEcho 内部回声
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetInnerEcho() const;
 
                     /**
                      * 设置内部回声
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerEcho 内部回声
+                     * @param _innerEcho 内部回声
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerEcho(const BlockInfo& _innerEcho);
 
                     /**
                      * 判断参数 InnerEcho 是否已赋值
                      * @return InnerEcho 是否已赋值
+                     * 
                      */
                     bool InnerEchoHasBeenSet() const;
 
@@ -212,20 +233,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RearEcho 外部回声
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetRearEcho() const;
 
                     /**
                      * 设置外部回声
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RearEcho 外部回声
+                     * @param _rearEcho 外部回声
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRearEcho(const BlockInfo& _rearEcho);
 
                     /**
                      * 判断参数 RearEcho 是否已赋值
                      * @return RearEcho 是否已赋值
+                     * 
                      */
                     bool RearEchoHasBeenSet() const;
 
@@ -234,20 +258,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Elastic 弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Elastic GetElastic() const;
 
                     /**
                      * 设置弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Elastic 弹性质地
+                     * @param _elastic 弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetElastic(const Elastic& _elastic);
 
                     /**
                      * 判断参数 Elastic 是否已赋值
                      * @return Elastic 是否已赋值
+                     * 
                      */
                     bool ElasticHasBeenSet() const;
 
@@ -256,20 +283,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Shape 形状
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetShape() const;
 
                     /**
                      * 设置形状
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Shape 形状
+                     * @param _shape 形状
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShape(const BlockInfo& _shape);
 
                     /**
                      * 判断参数 Shape 是否已赋值
                      * @return Shape 是否已赋值
+                     * 
                      */
                     bool ShapeHasBeenSet() const;
 
@@ -278,20 +308,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShapeAttr 形态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetShapeAttr() const;
 
                     /**
                      * 设置形态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShapeAttr 形态
+                     * @param _shapeAttr 形态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShapeAttr(const BlockInfo& _shapeAttr);
 
                     /**
                      * 判断参数 ShapeAttr 是否已赋值
                      * @return ShapeAttr 是否已赋值
+                     * 
                      */
                     bool ShapeAttrHasBeenSet() const;
 
@@ -300,20 +333,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkinMedulla 皮髓质信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetSkinMedulla() const;
 
                     /**
                      * 设置皮髓质信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkinMedulla 皮髓质信息
+                     * @param _skinMedulla 皮髓质信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkinMedulla(const BlockInfo& _skinMedulla);
 
                     /**
                      * 判断参数 SkinMedulla 是否已赋值
                      * @return SkinMedulla 是否已赋值
+                     * 
                      */
                     bool SkinMedullaHasBeenSet() const;
 
@@ -322,20 +358,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trend 变化趋势
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetTrend() const;
 
                     /**
                      * 设置变化趋势
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Trend 变化趋势
+                     * @param _trend 变化趋势
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrend(const BlockInfo& _trend);
 
                     /**
                      * 判断参数 Trend 是否已赋值
                      * @return Trend 是否已赋值
+                     * 
                      */
                     bool TrendHasBeenSet() const;
 
@@ -344,20 +383,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Calcification 钙化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetCalcification() const;
 
                     /**
                      * 设置钙化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Calcification 钙化
+                     * @param _calcification 钙化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcification(const BlockInfo& _calcification);
 
                     /**
                      * 判断参数 Calcification 是否已赋值
                      * @return Calcification 是否已赋值
+                     * 
                      */
                     bool CalcificationHasBeenSet() const;
 
@@ -366,20 +408,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Envelope 包膜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetEnvelope() const;
 
                     /**
                      * 设置包膜
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Envelope 包膜
+                     * @param _envelope 包膜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvelope(const BlockInfo& _envelope);
 
                     /**
                      * 判断参数 Envelope 是否已赋值
                      * @return Envelope 是否已赋值
+                     * 
                      */
                     bool EnvelopeHasBeenSet() const;
 
@@ -388,20 +433,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enhancement 强化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetEnhancement() const;
 
                     /**
                      * 设置强化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enhancement 强化
+                     * @param _enhancement 强化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnhancement(const BlockInfo& _enhancement);
 
                     /**
                      * 判断参数 Enhancement 是否已赋值
                      * @return Enhancement 是否已赋值
+                     * 
                      */
                     bool EnhancementHasBeenSet() const;
 
@@ -410,20 +458,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphEnlargement 淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetLymphEnlargement() const;
 
                     /**
                      * 设置淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LymphEnlargement 淋巴结
+                     * @param _lymphEnlargement 淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLymphEnlargement(const BlockInfo& _lymphEnlargement);
 
                     /**
                      * 判断参数 LymphEnlargement 是否已赋值
                      * @return LymphEnlargement 是否已赋值
+                     * 
                      */
                     bool LymphEnlargementHasBeenSet() const;
 
@@ -432,20 +483,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphDoor 淋巴门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetLymphDoor() const;
 
                     /**
                      * 设置淋巴门
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LymphDoor 淋巴门
+                     * @param _lymphDoor 淋巴门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLymphDoor(const BlockInfo& _lymphDoor);
 
                     /**
                      * 判断参数 LymphDoor 是否已赋值
                      * @return LymphDoor 是否已赋值
+                     * 
                      */
                     bool LymphDoorHasBeenSet() const;
 
@@ -454,20 +508,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Activity 活动度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetActivity() const;
 
                     /**
                      * 设置活动度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Activity 活动度
+                     * @param _activity 活动度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivity(const BlockInfo& _activity);
 
                     /**
                      * 判断参数 Activity 是否已赋值
                      * @return Activity 是否已赋值
+                     * 
                      */
                     bool ActivityHasBeenSet() const;
 
@@ -476,20 +533,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 手术情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetOperation() const;
 
                     /**
                      * 设置手术情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operation 手术情况
+                     * @param _operation 手术情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperation(const BlockInfo& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
@@ -498,20 +558,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CDFI 血液cdfi
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetCDFI() const;
 
                     /**
                      * 设置血液cdfi
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CDFI 血液cdfi
+                     * @param _cDFI 血液cdfi
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCDFI(const BlockInfo& _cDFI);
 
                     /**
                      * 判断参数 CDFI 是否已赋值
                      * @return CDFI 是否已赋值
+                     * 
                      */
                     bool CDFIHasBeenSet() const;
 
@@ -520,20 +583,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 原文位置
+                     * @param _index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -542,20 +608,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SizeStatus 大小状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetSizeStatus() const;
 
                     /**
                      * 设置大小状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SizeStatus 大小状态
+                     * @param _sizeStatus 大小状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSizeStatus(const BlockInfo& _sizeStatus);
 
                     /**
                      * 判断参数 SizeStatus 是否已赋值
                      * @return SizeStatus 是否已赋值
+                     * 
                      */
                     bool SizeStatusHasBeenSet() const;
 
@@ -564,20 +633,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEchoDistribution 内部回声分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetInnerEchoDistribution() const;
 
                     /**
                      * 设置内部回声分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerEchoDistribution 内部回声分布
+                     * @param _innerEchoDistribution 内部回声分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerEchoDistribution(const BlockInfo& _innerEchoDistribution);
 
                     /**
                      * 判断参数 InnerEchoDistribution 是否已赋值
                      * @return InnerEchoDistribution 是否已赋值
+                     * 
                      */
                     bool InnerEchoDistributionHasBeenSet() const;
 
@@ -586,20 +658,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEchoType 内部回声类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BlockInfo> GetInnerEchoType() const;
 
                     /**
                      * 设置内部回声类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerEchoType 内部回声类型
+                     * @param _innerEchoType 内部回声类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerEchoType(const std::vector<BlockInfo>& _innerEchoType);
 
                     /**
                      * 判断参数 InnerEchoType 是否已赋值
                      * @return InnerEchoType 是否已赋值
+                     * 
                      */
                     bool InnerEchoTypeHasBeenSet() const;
 
@@ -608,20 +683,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Outline 轮廓
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetOutline() const;
 
                     /**
                      * 设置轮廓
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Outline 轮廓
+                     * @param _outline 轮廓
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutline(const BlockInfo& _outline);
 
                     /**
                      * 判断参数 Outline 是否已赋值
                      * @return Outline 是否已赋值
+                     * 
                      */
                     bool OutlineHasBeenSet() const;
 
@@ -630,20 +708,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Structure 结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetStructure() const;
 
                     /**
                      * 设置结构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Structure 结构
+                     * @param _structure 结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStructure(const BlockInfo& _structure);
 
                     /**
                      * 判断参数 Structure 是否已赋值
                      * @return Structure 是否已赋值
+                     * 
                      */
                     bool StructureHasBeenSet() const;
 
@@ -652,20 +733,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Density 密度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetDensity() const;
 
                     /**
                      * 设置密度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Density 密度
+                     * @param _density 密度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDensity(const BlockInfo& _density);
 
                     /**
                      * 判断参数 Density 是否已赋值
                      * @return Density 是否已赋值
+                     * 
                      */
                     bool DensityHasBeenSet() const;
 
@@ -674,20 +758,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vas 血管
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetVas() const;
 
                     /**
                      * 设置血管
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vas 血管
+                     * @param _vas 血管
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVas(const BlockInfo& _vas);
 
                     /**
                      * 判断参数 Vas 是否已赋值
                      * @return Vas 是否已赋值
+                     * 
                      */
                     bool VasHasBeenSet() const;
 
@@ -696,20 +783,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cysticwall 囊壁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetCysticwall() const;
 
                     /**
                      * 设置囊壁
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cysticwall 囊壁
+                     * @param _cysticwall 囊壁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCysticwall(const BlockInfo& _cysticwall);
 
                     /**
                      * 判断参数 Cysticwall 是否已赋值
                      * @return Cysticwall 是否已赋值
+                     * 
                      */
                     bool CysticwallHasBeenSet() const;
 
@@ -718,20 +808,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Capsule 被膜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetCapsule() const;
 
                     /**
                      * 设置被膜
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Capsule 被膜
+                     * @param _capsule 被膜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCapsule(const BlockInfo& _capsule);
 
                     /**
                      * 判断参数 Capsule 是否已赋值
                      * @return Capsule 是否已赋值
+                     * 
                      */
                     bool CapsuleHasBeenSet() const;
 
@@ -740,20 +833,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsthmusThicknese 峡部厚度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Size GetIsthmusThicknese() const;
 
                     /**
                      * 设置峡部厚度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsthmusThicknese 峡部厚度
+                     * @param _isthmusThicknese 峡部厚度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsthmusThicknese(const Size& _isthmusThicknese);
 
                     /**
                      * 判断参数 IsthmusThicknese 是否已赋值
                      * @return IsthmusThicknese 是否已赋值
+                     * 
                      */
                     bool IsthmusThickneseHasBeenSet() const;
 
@@ -762,20 +858,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -784,20 +883,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transparent 透声度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetTransparent() const;
 
                     /**
                      * 设置透声度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Transparent 透声度
+                     * @param _transparent 透声度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransparent(const BlockInfo& _transparent);
 
                     /**
                      * 判断参数 Transparent 是否已赋值
                      * @return Transparent 是否已赋值
+                     * 
                      */
                     bool TransparentHasBeenSet() const;
 
@@ -806,20 +908,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriAdc MRI ADC
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetMriAdc() const;
 
                     /**
                      * 设置MRI ADC
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MriAdc MRI ADC
+                     * @param _mriAdc MRI ADC
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMriAdc(const BlockInfo& _mriAdc);
 
                     /**
                      * 判断参数 MriAdc 是否已赋值
                      * @return MriAdc 是否已赋值
+                     * 
                      */
                     bool MriAdcHasBeenSet() const;
 
@@ -828,20 +933,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriDwi MRI DWI
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetMriDwi() const;
 
                     /**
                      * 设置MRI DWI
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MriDwi MRI DWI
+                     * @param _mriDwi MRI DWI
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMriDwi(const BlockInfo& _mriDwi);
 
                     /**
                      * 判断参数 MriDwi 是否已赋值
                      * @return MriDwi 是否已赋值
+                     * 
                      */
                     bool MriDwiHasBeenSet() const;
 
@@ -850,20 +958,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriT1 MRI T1信号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetMriT1() const;
 
                     /**
                      * 设置MRI T1信号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MriT1 MRI T1信号
+                     * @param _mriT1 MRI T1信号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMriT1(const BlockInfo& _mriT1);
 
                     /**
                      * 判断参数 MriT1 是否已赋值
                      * @return MriT1 是否已赋值
+                     * 
                      */
                     bool MriT1HasBeenSet() const;
 
@@ -872,20 +983,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriT2 MRI T2信号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetMriT2() const;
 
                     /**
                      * 设置MRI T2信号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MriT2 MRI T2信号
+                     * @param _mriT2 MRI T2信号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMriT2(const BlockInfo& _mriT2);
 
                     /**
                      * 判断参数 MriT2 是否已赋值
                      * @return MriT2 是否已赋值
+                     * 
                      */
                     bool MriT2HasBeenSet() const;
 
@@ -894,20 +1008,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CtHu CT HU值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetCtHu() const;
 
                     /**
                      * 设置CT HU值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CtHu CT HU值
+                     * @param _ctHu CT HU值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCtHu(const BlockInfo& _ctHu);
 
                     /**
                      * 判断参数 CtHu 是否已赋值
                      * @return CtHu 是否已赋值
+                     * 
                      */
                     bool CtHuHasBeenSet() const;
 
@@ -916,20 +1033,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suvmax SUmax值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetSuvmax() const;
 
                     /**
                      * 设置SUmax值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suvmax SUmax值
+                     * @param _suvmax SUmax值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuvmax(const BlockInfo& _suvmax);
 
                     /**
                      * 判断参数 Suvmax 是否已赋值
                      * @return Suvmax 是否已赋值
+                     * 
                      */
                     bool SuvmaxHasBeenSet() const;
 
@@ -938,20 +1058,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metabolism 代谢情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetMetabolism() const;
 
                     /**
                      * 设置代谢情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metabolism 代谢情况
+                     * @param _metabolism 代谢情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetabolism(const BlockInfo& _metabolism);
 
                     /**
                      * 判断参数 Metabolism 是否已赋值
                      * @return Metabolism 是否已赋值
+                     * 
                      */
                     bool MetabolismHasBeenSet() const;
 
@@ -960,20 +1083,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RadioactiveUptake 放射性摄取
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetRadioactiveUptake() const;
 
                     /**
                      * 设置放射性摄取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RadioactiveUptake 放射性摄取
+                     * @param _radioactiveUptake 放射性摄取
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRadioactiveUptake(const BlockInfo& _radioactiveUptake);
 
                     /**
                      * 判断参数 RadioactiveUptake 是否已赋值
                      * @return RadioactiveUptake 是否已赋值
+                     * 
                      */
                     bool RadioactiveUptakeHasBeenSet() const;
 
@@ -982,20 +1108,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymDesc 病变
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetSymDesc() const;
 
                     /**
                      * 设置病变
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SymDesc 病变
+                     * @param _symDesc 病变
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSymDesc(const BlockInfo& _symDesc);
 
                     /**
                      * 判断参数 SymDesc 是否已赋值
                      * @return SymDesc 是否已赋值
+                     * 
                      */
                     bool SymDescHasBeenSet() const;
 
@@ -1004,20 +1133,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFeature 影像特征
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetImageFeature() const;
 
                     /**
                      * 设置影像特征
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageFeature 影像特征
+                     * @param _imageFeature 影像特征
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageFeature(const BlockInfo& _imageFeature);
 
                     /**
                      * 判断参数 ImageFeature 是否已赋值
                      * @return ImageFeature 是否已赋值
+                     * 
                      */
                     bool ImageFeatureHasBeenSet() const;
 
@@ -1026,20 +1158,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 在报告图片中的坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置在报告图片中的坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 在报告图片中的坐标
+                     * @param _coords 在报告图片中的坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

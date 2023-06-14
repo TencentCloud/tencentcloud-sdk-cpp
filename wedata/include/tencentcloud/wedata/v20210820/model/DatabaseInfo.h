@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceName 数据源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceName() const;
 
                     /**
                      * 设置数据源名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceName 数据源名称
+                     * @param _datasourceName 数据源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceName(const std::string& _datasourceName);
 
                     /**
                      * 判断参数 DatasourceName 是否已赋值
                      * @return DatasourceName 是否已赋值
+                     * 
                      */
                     bool DatasourceNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceId 数据源Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据源Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceId 数据源Id
+                     * @param _datasourceId 数据源Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库id
+                     * @param _databaseId 数据库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceType 数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDatasourceType() const;
 
                     /**
                      * 设置数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceType 数据源类型
+                     * @param _datasourceType 数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceType(const uint64_t& _datasourceType);
 
                     /**
                      * 判断参数 DatasourceType 是否已赋值
                      * @return DatasourceType 是否已赋值
+                     * 
                      */
                     bool DatasourceTypeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginDatabaseName 数据库原始名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginDatabaseName() const;
 
                     /**
                      * 设置数据库原始名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginDatabaseName 数据库原始名称
+                     * @param _originDatabaseName 数据库原始名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginDatabaseName(const std::string& _originDatabaseName);
 
                     /**
                      * 判断参数 OriginDatabaseName 是否已赋值
                      * @return OriginDatabaseName 是否已赋值
+                     * 
                      */
                     bool OriginDatabaseNameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginSchemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginSchemaName() const;
 
                     /**
                      * 设置schema名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginSchemaName schema名称
+                     * @param _originSchemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginSchemaName(const std::string& _originSchemaName);
 
                     /**
                      * 判断参数 OriginSchemaName 是否已赋值
                      * @return OriginSchemaName 是否已赋值
+                     * 
                      */
                     bool OriginSchemaNameHasBeenSet() const;
 

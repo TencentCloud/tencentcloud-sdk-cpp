@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取终端用户在IoT Video上的唯一标识ID
                      * @return AccessId 终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置终端用户在IoT Video上的唯一标识ID
-                     * @param AccessId 终端用户在IoT Video上的唯一标识ID
+                     * @param _accessId 终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取用户角色，owner：主人，guest：访客
                      * @return Role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置用户角色，owner：主人，guest：访客
-                     * @param Role 用户角色，owner：主人，guest：访客
+                     * @param _role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

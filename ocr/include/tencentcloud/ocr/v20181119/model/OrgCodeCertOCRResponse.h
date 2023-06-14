@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取代码
                      * @return OrgCode 代码
+                     * 
                      */
                     std::string GetOrgCode() const;
 
                     /**
                      * 判断参数 OrgCode 是否已赋值
                      * @return OrgCode 是否已赋值
+                     * 
                      */
                     bool OrgCodeHasBeenSet() const;
 
                     /**
                      * 获取机构名称
                      * @return Name 机构名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取地址
                      * @return Address 地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取有效期
                      * @return ValidDate 有效期
+                     * 
                      */
                     std::string GetValidDate() const;
 
                     /**
                      * 判断参数 ValidDate 是否已赋值
                      * @return ValidDate 是否已赋值
+                     * 
                      */
                     bool ValidDateHasBeenSet() const;
 

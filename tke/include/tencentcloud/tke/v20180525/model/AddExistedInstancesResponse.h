@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedInstanceIds 失败的节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedInstanceIds() const;
 
                     /**
                      * 判断参数 FailedInstanceIds 是否已赋值
                      * @return FailedInstanceIds 是否已赋值
+                     * 
                      */
                     bool FailedInstanceIdsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccInstanceIds 成功的节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSuccInstanceIds() const;
 
                     /**
                      * 判断参数 SuccInstanceIds 是否已赋值
                      * @return SuccInstanceIds 是否已赋值
+                     * 
                      */
                     bool SuccInstanceIdsHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutInstanceIds 超时未返回出来节点的ID(可能失败，也可能成功)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTimeoutInstanceIds() const;
 
                     /**
                      * 判断参数 TimeoutInstanceIds 是否已赋值
                      * @return TimeoutInstanceIds 是否已赋值
+                     * 
                      */
                     bool TimeoutInstanceIdsHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReasons 失败的节点的失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedReasons() const;
 
                     /**
                      * 判断参数 FailedReasons 是否已赋值
                      * @return FailedReasons 是否已赋值
+                     * 
                      */
                     bool FailedReasonsHasBeenSet() const;
 

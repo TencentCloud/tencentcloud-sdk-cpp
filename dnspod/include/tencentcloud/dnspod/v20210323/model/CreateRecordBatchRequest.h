@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取域名ID，多个 domain_id 用英文逗号进行分割。
                      * @return DomainIdList 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * 
                      */
                     std::vector<std::string> GetDomainIdList() const;
 
                     /**
                      * 设置域名ID，多个 domain_id 用英文逗号进行分割。
-                     * @param DomainIdList 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * @param _domainIdList 域名ID，多个 domain_id 用英文逗号进行分割。
+                     * 
                      */
                     void SetDomainIdList(const std::vector<std::string>& _domainIdList);
 
                     /**
                      * 判断参数 DomainIdList 是否已赋值
                      * @return DomainIdList 是否已赋值
+                     * 
                      */
                     bool DomainIdListHasBeenSet() const;
 
                     /**
                      * 获取记录数组
                      * @return RecordList 记录数组
+                     * 
                      */
                     std::vector<AddRecordBatch> GetRecordList() const;
 
                     /**
                      * 设置记录数组
-                     * @param RecordList 记录数组
+                     * @param _recordList 记录数组
+                     * 
                      */
                     void SetRecordList(const std::vector<AddRecordBatch>& _recordList);
 
                     /**
                      * 判断参数 RecordList 是否已赋值
                      * @return RecordList 是否已赋值
+                     * 
                      */
                     bool RecordListHasBeenSet() const;
 

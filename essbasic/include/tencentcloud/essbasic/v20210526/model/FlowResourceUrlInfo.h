@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 流程对应Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程对应Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowId 流程对应Id
+                     * @param _flowId 流程对应Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceUrlInfos 流程对应资源链接信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceUrlInfo> GetResourceUrlInfos() const;
 
                     /**
                      * 设置流程对应资源链接信息数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceUrlInfos 流程对应资源链接信息数组
+                     * @param _resourceUrlInfos 流程对应资源链接信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceUrlInfos(const std::vector<ResourceUrlInfo>& _resourceUrlInfos);
 
                     /**
                      * 判断参数 ResourceUrlInfos 是否已赋值
                      * @return ResourceUrlInfos 是否已赋值
+                     * 
                      */
                     bool ResourceUrlInfosHasBeenSet() const;
 

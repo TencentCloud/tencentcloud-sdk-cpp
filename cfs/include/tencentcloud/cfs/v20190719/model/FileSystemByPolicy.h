@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取文件系统名称
                      * @return CreationToken 文件系统名称
+                     * 
                      */
                     std::string GetCreationToken() const;
 
                     /**
                      * 设置文件系统名称
-                     * @param CreationToken 文件系统名称
+                     * @param _creationToken 文件系统名称
+                     * 
                      */
                     void SetCreationToken(const std::string& _creationToken);
 
                     /**
                      * 判断参数 CreationToken 是否已赋值
                      * @return CreationToken 是否已赋值
+                     * 
                      */
                     bool CreationTokenHasBeenSet() const;
 
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统大小
                      * @return SizeByte 文件系统大小
+                     * 
                      */
                     uint64_t GetSizeByte() const;
 
                     /**
                      * 设置文件系统大小
-                     * @param SizeByte 文件系统大小
+                     * @param _sizeByte 文件系统大小
+                     * 
                      */
                     void SetSizeByte(const uint64_t& _sizeByte);
 
                     /**
                      * 判断参数 SizeByte 是否已赋值
                      * @return SizeByte 是否已赋值
+                     * 
                      */
                     bool SizeByteHasBeenSet() const;
 
                     /**
                      * 获取存储类型
                      * @return StorageType 存储类型
+                     * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置存储类型
-                     * @param StorageType 存储类型
+                     * @param _storageType 存储类型
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 
                     /**
                      * 获取快照总大小
                      * @return TotalSnapshotSize 快照总大小
+                     * 
                      */
                     uint64_t GetTotalSnapshotSize() const;
 
                     /**
                      * 设置快照总大小
-                     * @param TotalSnapshotSize 快照总大小
+                     * @param _totalSnapshotSize 快照总大小
+                     * 
                      */
                     void SetTotalSnapshotSize(const uint64_t& _totalSnapshotSize);
 
                     /**
                      * 判断参数 TotalSnapshotSize 是否已赋值
                      * @return TotalSnapshotSize 是否已赋值
+                     * 
                      */
                     bool TotalSnapshotSizeHasBeenSet() const;
 
                     /**
                      * 获取文件系统创建时间
                      * @return CreationTime 文件系统创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置文件系统创建时间
-                     * @param CreationTime 文件系统创建时间
+                     * @param _creationTime 文件系统创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取文件系统所在区ID
                      * @return ZoneId 文件系统所在区ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置文件系统所在区ID
-                     * @param ZoneId 文件系统所在区ID
+                     * @param _zoneId 文件系统所在区ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 

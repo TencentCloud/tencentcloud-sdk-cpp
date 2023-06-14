@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Acl资源类型，(2:TOPIC）
                      * @return ResourceType Acl资源类型，(2:TOPIC）
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置Acl资源类型，(2:TOPIC）
-                     * @param ResourceType Acl资源类型，(2:TOPIC）
+                     * @param _resourceType Acl资源类型，(2:TOPIC）
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源列表数组
                      * @return ResourceNames 资源列表数组
+                     * 
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
                      * 设置资源列表数组
-                     * @param ResourceNames 资源列表数组
+                     * @param _resourceNames 资源列表数组
+                     * 
                      */
                     void SetResourceNames(const std::vector<std::string>& _resourceNames);
 
                     /**
                      * 判断参数 ResourceNames 是否已赋值
                      * @return ResourceNames 是否已赋值
+                     * 
                      */
                     bool ResourceNamesHasBeenSet() const;
 
                     /**
                      * 获取设置的ACL规则列表
                      * @return RuleList 设置的ACL规则列表
+                     * 
                      */
                     std::vector<AclRuleInfo> GetRuleList() const;
 
                     /**
                      * 设置设置的ACL规则列表
-                     * @param RuleList 设置的ACL规则列表
+                     * @param _ruleList 设置的ACL规则列表
+                     * 
                      */
                     void SetRuleList(const std::vector<AclRuleInfo>& _ruleList);
 
                     /**
                      * 判断参数 RuleList 是否已赋值
                      * @return RuleList 是否已赋值
+                     * 
                      */
                     bool RuleListHasBeenSet() const;
 

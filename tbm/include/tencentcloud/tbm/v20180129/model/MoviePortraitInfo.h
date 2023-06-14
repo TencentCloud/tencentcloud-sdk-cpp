@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取用户喜好电影画像数组
                      * @return PortraitSet 用户喜好电影画像数组
+                     * 
                      */
                     std::vector<MoviePortrait> GetPortraitSet() const;
 
                     /**
                      * 设置用户喜好电影画像数组
-                     * @param PortraitSet 用户喜好电影画像数组
+                     * @param _portraitSet 用户喜好电影画像数组
+                     * 
                      */
                     void SetPortraitSet(const std::vector<MoviePortrait>& _portraitSet);
 
                     /**
                      * 判断参数 PortraitSet 是否已赋值
                      * @return PortraitSet 是否已赋值
+                     * 
                      */
                     bool PortraitSetHasBeenSet() const;
 

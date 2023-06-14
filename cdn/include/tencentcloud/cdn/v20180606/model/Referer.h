@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch referer 黑白名单配置开关，取值有：
+                     * @param _switch referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefererRules referer 黑白名单配置规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RefererRule> GetRefererRules() const;
 
                     /**
                      * 设置referer 黑白名单配置规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefererRules referer 黑白名单配置规则
+                     * @param _refererRules referer 黑白名单配置规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefererRules(const std::vector<RefererRule>& _refererRules);
 
                     /**
                      * 判断参数 RefererRules 是否已赋值
                      * @return RefererRules 是否已赋值
+                     * 
                      */
                     bool RefererRulesHasBeenSet() const;
 

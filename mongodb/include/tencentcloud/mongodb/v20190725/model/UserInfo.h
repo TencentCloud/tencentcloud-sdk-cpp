@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取账号名。
                      * @return UserName 账号名。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置账号名。
-                     * @param UserName 账号名。
+                     * @param _userName 账号名。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取账号权限详情。
                      * @return AuthRole 账号权限详情。
+                     * 
                      */
                     std::vector<Auth> GetAuthRole() const;
 
                     /**
                      * 设置账号权限详情。
-                     * @param AuthRole 账号权限详情。
+                     * @param _authRole 账号权限详情。
+                     * 
                      */
                     void SetAuthRole(const std::vector<Auth>& _authRole);
 
                     /**
                      * 判断参数 AuthRole 是否已赋值
                      * @return AuthRole 是否已赋值
+                     * 
                      */
                     bool AuthRoleHasBeenSet() const;
 
                     /**
                      * 获取账号创建时间。
                      * @return CreateTime 账号创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置账号创建时间。
-                     * @param CreateTime 账号创建时间。
+                     * @param _createTime 账号创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取账号更新时间。
                      * @return UpdateTime 账号更新时间。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置账号更新时间。
-                     * @param UpdateTime 账号更新时间。
+                     * @param _updateTime 账号更新时间。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取备注信息。
                      * @return UserDesc 备注信息。
+                     * 
                      */
                     std::string GetUserDesc() const;
 
                     /**
                      * 设置备注信息。
-                     * @param UserDesc 备注信息。
+                     * @param _userDesc 备注信息。
+                     * 
                      */
                     void SetUserDesc(const std::string& _userDesc);
 
                     /**
                      * 判断参数 UserDesc 是否已赋值
                      * @return UserDesc 是否已赋值
+                     * 
                      */
                     bool UserDescHasBeenSet() const;
 

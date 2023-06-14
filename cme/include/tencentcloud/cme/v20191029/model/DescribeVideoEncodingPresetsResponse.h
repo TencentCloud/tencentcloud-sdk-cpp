@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的编码配置总个数。
                      * @return TotalCount 符合条件的编码配置总个数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取视频编码配置信息。
                      * @return VideoEncodingPresetSet 视频编码配置信息。
+                     * 
                      */
                     std::vector<VideoEncodingPreset> GetVideoEncodingPresetSet() const;
 
                     /**
                      * 判断参数 VideoEncodingPresetSet 是否已赋值
                      * @return VideoEncodingPresetSet 是否已赋值
+                     * 
                      */
                     bool VideoEncodingPresetSetHasBeenSet() const;
 

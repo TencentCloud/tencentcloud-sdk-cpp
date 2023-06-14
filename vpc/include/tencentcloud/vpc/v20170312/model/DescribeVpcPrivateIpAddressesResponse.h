@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取内网`IP`地址信息列表。
                      * @return VpcPrivateIpAddressSet 内网`IP`地址信息列表。
+                     * 
                      */
                     std::vector<VpcPrivateIpAddress> GetVpcPrivateIpAddressSet() const;
 
                     /**
                      * 判断参数 VpcPrivateIpAddressSet 是否已赋值
                      * @return VpcPrivateIpAddressSet 是否已赋值
+                     * 
                      */
                     bool VpcPrivateIpAddressSetHasBeenSet() const;
 

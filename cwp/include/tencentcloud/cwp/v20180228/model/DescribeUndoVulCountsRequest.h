@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取漏洞分类，1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
                      * @return VulCategory 漏洞分类，1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * 
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
                      * 设置漏洞分类，1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-                     * @param VulCategory 漏洞分类，1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * @param _vulCategory 漏洞分类，1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
+                     * 
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
 
                     /**
                      * 判断参数 VulCategory 是否已赋值
                      * @return VulCategory 是否已赋值
+                     * 
                      */
                     bool VulCategoryHasBeenSet() const;
 
                     /**
                      * 获取是否应急漏洞筛选, 是 : yes
                      * @return IfEmergency 是否应急漏洞筛选, 是 : yes
+                     * 
                      */
                     std::string GetIfEmergency() const;
 
                     /**
                      * 设置是否应急漏洞筛选, 是 : yes
-                     * @param IfEmergency 是否应急漏洞筛选, 是 : yes
+                     * @param _ifEmergency 是否应急漏洞筛选, 是 : yes
+                     * 
                      */
                     void SetIfEmergency(const std::string& _ifEmergency);
 
                     /**
                      * 判断参数 IfEmergency 是否已赋值
                      * @return IfEmergency 是否已赋值
+                     * 
                      */
                     bool IfEmergencyHasBeenSet() const;
 

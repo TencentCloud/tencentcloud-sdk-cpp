@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertificateIds 证书ID
+                     * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertificateIds 证书ID
+                     * @param _certificateIds 证书ID
+                     * 
                      */
                     void SetCertificateIds(const std::vector<std::string>& _certificateIds);
 
                     /**
                      * 判断参数 CertificateIds 是否已赋值
                      * @return CertificateIds 是否已赋值
+                     * 
                      */
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
                      * 获取资源类型:clb,cdn,live,waf,antiddos
                      * @return ResourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型:clb,cdn,live,waf,antiddos
-                     * @param ResourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * @param _resourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

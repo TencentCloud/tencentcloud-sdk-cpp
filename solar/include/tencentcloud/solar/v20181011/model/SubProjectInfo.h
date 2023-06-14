@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取子项目id
                      * @return SubProjectId 子项目id
+                     * 
                      */
                     std::string GetSubProjectId() const;
 
                     /**
                      * 设置子项目id
-                     * @param SubProjectId 子项目id
+                     * @param _subProjectId 子项目id
+                     * 
                      */
                     void SetSubProjectId(const std::string& _subProjectId);
 
                     /**
                      * 判断参数 SubProjectId 是否已赋值
                      * @return SubProjectId 是否已赋值
+                     * 
                      */
                     bool SubProjectIdHasBeenSet() const;
 
                     /**
                      * 获取子项目名称
                      * @return SubProjectName 子项目名称
+                     * 
                      */
                     std::string GetSubProjectName() const;
 
                     /**
                      * 设置子项目名称
-                     * @param SubProjectName 子项目名称
+                     * @param _subProjectName 子项目名称
+                     * 
                      */
                     void SetSubProjectName(const std::string& _subProjectName);
 
                     /**
                      * 判断参数 SubProjectName 是否已赋值
                      * @return SubProjectName 是否已赋值
+                     * 
                      */
                     bool SubProjectNameHasBeenSet() const;
 
                     /**
                      * 获取子项目状态
                      * @return SubProjectStatus 子项目状态
+                     * 
                      */
                     std::string GetSubProjectStatus() const;
 
                     /**
                      * 设置子项目状态
-                     * @param SubProjectStatus 子项目状态
+                     * @param _subProjectStatus 子项目状态
+                     * 
                      */
                     void SetSubProjectStatus(const std::string& _subProjectStatus);
 
                     /**
                      * 判断参数 SubProjectStatus 是否已赋值
                      * @return SubProjectStatus 是否已赋值
+                     * 
                      */
                     bool SubProjectStatusHasBeenSet() const;
 

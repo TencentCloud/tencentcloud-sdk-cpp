@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取印章id
                      * @return SealId 印章id
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 

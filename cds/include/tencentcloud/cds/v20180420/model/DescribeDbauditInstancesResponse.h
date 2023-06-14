@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总实例数
                      * @return TotalCount 总实例数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取数据安全审计实例信息列表
                      * @return CdsAuditInstanceSet 数据安全审计实例信息列表
+                     * 
                      */
                     std::vector<CdsAuditInstance> GetCdsAuditInstanceSet() const;
 
                     /**
                      * 判断参数 CdsAuditInstanceSet 是否已赋值
                      * @return CdsAuditInstanceSet 是否已赋值
+                     * 
                      */
                     bool CdsAuditInstanceSetHasBeenSet() const;
 

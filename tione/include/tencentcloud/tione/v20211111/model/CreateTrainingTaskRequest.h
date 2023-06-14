@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取训练任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      * @return Name 训练任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置训练任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @param Name 训练任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * @param _name 训练任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -72,380 +75,443 @@ namespace TencentCloud
 POSTPAID_BY_HOUR 按量计费
                      * @return ChargeType 计费模式，eg：PREPAID 包年包月（资源组）;
 POSTPAID_BY_HOUR 按量计费
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置计费模式，eg：PREPAID 包年包月（资源组）;
 POSTPAID_BY_HOUR 按量计费
-                     * @param ChargeType 计费模式，eg：PREPAID 包年包月（资源组）;
+                     * @param _chargeType 计费模式，eg：PREPAID 包年包月（资源组）;
 POSTPAID_BY_HOUR 按量计费
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{"Role":"WORKER", "InstanceType": "TI.S.MEDIUM.POST", "InstanceNum": 1}]
                      * @return ResourceConfigInfos 资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{"Role":"WORKER", "InstanceType": "TI.S.MEDIUM.POST", "InstanceNum": 1}]
+                     * 
                      */
                     std::vector<ResourceConfigInfo> GetResourceConfigInfos() const;
 
                     /**
                      * 设置资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{"Role":"WORKER", "InstanceType": "TI.S.MEDIUM.POST", "InstanceNum": 1}]
-                     * @param ResourceConfigInfos 资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{"Role":"WORKER", "InstanceType": "TI.S.MEDIUM.POST", "InstanceNum": 1}]
+                     * @param _resourceConfigInfos 资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{"Role":"WORKER", "InstanceType": "TI.S.MEDIUM.POST", "InstanceNum": 1}]
+                     * 
                      */
                     void SetResourceConfigInfos(const std::vector<ResourceConfigInfo>& _resourceConfigInfos);
 
                     /**
                      * 判断参数 ResourceConfigInfos 是否已赋值
                      * @return ResourceConfigInfos 是否已赋值
+                     * 
                      */
                     bool ResourceConfigInfosHasBeenSet() const;
 
                     /**
                      * 获取COS代码包路径
                      * @return CodePackagePath COS代码包路径
+                     * 
                      */
                     CosPathInfo GetCodePackagePath() const;
 
                     /**
                      * 设置COS代码包路径
-                     * @param CodePackagePath COS代码包路径
+                     * @param _codePackagePath COS代码包路径
+                     * 
                      */
                     void SetCodePackagePath(const CosPathInfo& _codePackagePath);
 
                     /**
                      * 判断参数 CodePackagePath 是否已赋值
                      * @return CodePackagePath 是否已赋值
+                     * 
                      */
                     bool CodePackagePathHasBeenSet() const;
 
                     /**
                      * 获取训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
                      * @return TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 
                      */
                     std::string GetTrainingMode() const;
 
                     /**
                      * 设置训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * @param TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @param _trainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 
                      */
                     void SetTrainingMode(const std::string& _trainingMode);
 
                     /**
                      * 判断参数 TrainingMode 是否已赋值
                      * @return TrainingMode 是否已赋值
+                     * 
                      */
                     bool TrainingModeHasBeenSet() const;
 
                     /**
                      * 获取COS训练输出路径
                      * @return Output COS训练输出路径
+                     * 
                      */
                     CosPathInfo GetOutput() const;
 
                     /**
                      * 设置COS训练输出路径
-                     * @param Output COS训练输出路径
+                     * @param _output COS训练输出路径
+                     * 
                      */
                     void SetOutput(const CosPathInfo& _output);
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 
                     /**
                      * 获取是否上报日志
                      * @return LogEnable 是否上报日志
+                     * 
                      */
                     bool GetLogEnable() const;
 
                     /**
                      * 设置是否上报日志
-                     * @param LogEnable 是否上报日志
+                     * @param _logEnable 是否上报日志
+                     * 
                      */
                     void SetLogEnable(const bool& _logEnable);
 
                     /**
                      * 判断参数 LogEnable 是否已赋值
                      * @return LogEnable 是否已赋值
+                     * 
                      */
                     bool LogEnableHasBeenSet() const;
 
                     /**
                      * 获取训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
                      * @return FrameworkName 训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
+                     * 
                      */
                     std::string GetFrameworkName() const;
 
                     /**
                      * 设置训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
-                     * @param FrameworkName 训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
+                     * @param _frameworkName 训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH
+                     * 
                      */
                     void SetFrameworkName(const std::string& _frameworkName);
 
                     /**
                      * 判断参数 FrameworkName 是否已赋值
                      * @return FrameworkName 是否已赋值
+                     * 
                      */
                     bool FrameworkNameHasBeenSet() const;
 
                     /**
                      * 获取训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
                      * @return FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
+                     * 
                      */
                     std::string GetFrameworkVersion() const;
 
                     /**
                      * 设置训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
-                     * @param FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
+                     * @param _frameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
+                     * 
                      */
                     void SetFrameworkVersion(const std::string& _frameworkVersion);
 
                     /**
                      * 判断参数 FrameworkVersion 是否已赋值
                      * @return FrameworkVersion 是否已赋值
+                     * 
                      */
                     bool FrameworkVersionHasBeenSet() const;
 
                     /**
                      * 获取训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
                      * @return FrameworkEnvironment 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * 
                      */
                     std::string GetFrameworkEnvironment() const;
 
                     /**
                      * 设置训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
-                     * @param FrameworkEnvironment 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * @param _frameworkEnvironment 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * 
                      */
                     void SetFrameworkEnvironment(const std::string& _frameworkEnvironment);
 
                     /**
                      * 判断参数 FrameworkEnvironment 是否已赋值
                      * @return FrameworkEnvironment 是否已赋值
+                     * 
                      */
                     bool FrameworkEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
                      * @return ResourceGroupId 预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
+                     * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
                      * 设置预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
-                     * @param ResourceGroupId 预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
+                     * @param _resourceGroupId 预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
+                     * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
 
                     /**
                      * 判断参数 ResourceGroupId 是否已赋值
                      * @return ResourceGroupId 是否已赋值
+                     * 
                      */
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
                      * 获取标签配置
                      * @return Tags 标签配置
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签配置
-                     * @param Tags 标签配置
+                     * @param _tags 标签配置
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取自定义镜像信息
                      * @return ImageInfo 自定义镜像信息
+                     * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
                      * 设置自定义镜像信息
-                     * @param ImageInfo 自定义镜像信息
+                     * @param _imageInfo 自定义镜像信息
+                     * 
                      */
                     void SetImageInfo(const ImageInfo& _imageInfo);
 
                     /**
                      * 判断参数 ImageInfo 是否已赋值
                      * @return ImageInfo 是否已赋值
+                     * 
                      */
                     bool ImageInfoHasBeenSet() const;
 
                     /**
                      * 获取启动命令信息，默认为sh start.sh
                      * @return StartCmdInfo 启动命令信息，默认为sh start.sh
+                     * 
                      */
                     StartCmdInfo GetStartCmdInfo() const;
 
                     /**
                      * 设置启动命令信息，默认为sh start.sh
-                     * @param StartCmdInfo 启动命令信息，默认为sh start.sh
+                     * @param _startCmdInfo 启动命令信息，默认为sh start.sh
+                     * 
                      */
                     void SetStartCmdInfo(const StartCmdInfo& _startCmdInfo);
 
                     /**
                      * 判断参数 StartCmdInfo 是否已赋值
                      * @return StartCmdInfo 是否已赋值
+                     * 
                      */
                     bool StartCmdInfoHasBeenSet() const;
 
                     /**
                      * 获取数据配置，依赖DataSource字段
                      * @return DataConfigs 数据配置，依赖DataSource字段
+                     * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
                      * 设置数据配置，依赖DataSource字段
-                     * @param DataConfigs 数据配置，依赖DataSource字段
+                     * @param _dataConfigs 数据配置，依赖DataSource字段
+                     * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
 
                     /**
                      * 判断参数 DataConfigs 是否已赋值
                      * @return DataConfigs 是否已赋值
+                     * 
                      */
                     bool DataConfigsHasBeenSet() const;
 
                     /**
                      * 获取VPC Id
                      * @return VpcId VPC Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC Id
-                     * @param VpcId VPC Id
+                     * @param _vpcId VPC Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网Id
                      * @return SubnetId 子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网Id
-                     * @param SubnetId 子网Id
+                     * @param _subnetId 子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取CLS日志配置
                      * @return LogConfig CLS日志配置
+                     * 
                      */
                     LogConfig GetLogConfig() const;
 
                     /**
                      * 设置CLS日志配置
-                     * @param LogConfig CLS日志配置
+                     * @param _logConfig CLS日志配置
+                     * 
                      */
                     void SetLogConfig(const LogConfig& _logConfig);
 
                     /**
                      * 判断参数 LogConfig 是否已赋值
                      * @return LogConfig 是否已赋值
+                     * 
                      */
                     bool LogConfigHasBeenSet() const;
 
                     /**
                      * 获取调优参数
                      * @return TuningParameters 调优参数
+                     * 
                      */
                     std::string GetTuningParameters() const;
 
                     /**
                      * 设置调优参数
-                     * @param TuningParameters 调优参数
+                     * @param _tuningParameters 调优参数
+                     * 
                      */
                     void SetTuningParameters(const std::string& _tuningParameters);
 
                     /**
                      * 判断参数 TuningParameters 是否已赋值
                      * @return TuningParameters 是否已赋值
+                     * 
                      */
                     bool TuningParametersHasBeenSet() const;
 
                     /**
                      * 获取备注，最多500个字
                      * @return Remark 备注，最多500个字
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注，最多500个字
-                     * @param Remark 备注，最多500个字
+                     * @param _remark 备注，最多500个字
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取数据来源，eg：DATASET、COS、CFS、HDFS
                      * @return DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * 
                      */
                     std::string GetDataSource() const;
 
                     /**
                      * 设置数据来源，eg：DATASET、COS、CFS、HDFS
-                     * @param DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * @param _dataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * 
                      */
                     void SetDataSource(const std::string& _dataSource);
 
                     /**
                      * 判断参数 DataSource 是否已赋值
                      * @return DataSource 是否已赋值
+                     * 
                      */
                     bool DataSourceHasBeenSet() const;
 
                     /**
                      * 获取回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)
                      * @return CallbackUrl 回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)
-                     * @param CallbackUrl 回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)
+                     * @param _callbackUrl 回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 

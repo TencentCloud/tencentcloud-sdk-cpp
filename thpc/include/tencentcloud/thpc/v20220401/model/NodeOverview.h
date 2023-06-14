@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 节点实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置节点实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 节点实例ID。
+                     * @param _instanceId 节点实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 节点所在可用区信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置节点所在可用区信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 节点所在可用区信息。
+                     * @param _zone 节点所在可用区信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeState 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeState() const;
 
                     /**
                      * 设置节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeState 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * @param _nodeState 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeState(const std::string& _nodeState);
 
                     /**
                      * 判断参数 NodeState 是否已赋值
                      * @return NodeState 是否已赋值
+                     * 
                      */
                     bool NodeStateHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId 镜像ID。
+                     * @param _imageId 镜像ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueName 节点所属队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置节点所属队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueName 节点所属队列名称。
+                     * @param _queueName 节点所属队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeRole 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
                      * 设置节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeRole 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * @param _nodeRole 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
 
                     /**
                      * 判断参数 NodeRole 是否已赋值
                      * @return NodeRole 是否已赋值
+                     * 
                      */
                     bool NodeRoleHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeType 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * @param _nodeType 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 

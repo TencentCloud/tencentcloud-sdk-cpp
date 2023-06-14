@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取组 Id，创建时填 0 即可。
                      * @return GroupId 组 Id，创建时填 0 即可。
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置组 Id，创建时填 0 即可。
-                     * @param GroupId 组 Id，创建时填 0 即可。
+                     * @param _groupId 组 Id，创建时填 0 即可。
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取组名称。
                      * @return Name 组名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组名称。
-                     * @param Name 组名称。
+                     * @param _name 组名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取IP 组内容，可以填入 IP 及 IP 掩码。
                      * @return Content IP 组内容，可以填入 IP 及 IP 掩码。
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置IP 组内容，可以填入 IP 及 IP 掩码。
-                     * @param Content IP 组内容，可以填入 IP 及 IP 掩码。
+                     * @param _content IP 组内容，可以填入 IP 及 IP 掩码。
+                     * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

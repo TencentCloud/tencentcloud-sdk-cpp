@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取机构的分佣扣率扣率
                      * @return OrganizationFee 机构的分佣扣率扣率
+                     * 
                      */
                     std::string GetOrganizationFee() const;
 
                     /**
                      * 设置机构的分佣扣率扣率
-                     * @param OrganizationFee 机构的分佣扣率扣率
+                     * @param _organizationFee 机构的分佣扣率扣率
+                     * 
                      */
                     void SetOrganizationFee(const std::string& _organizationFee);
 
                     /**
                      * 判断参数 OrganizationFee 是否已赋值
                      * @return OrganizationFee 是否已赋值
+                     * 
                      */
                     bool OrganizationFeeHasBeenSet() const;
 
                     /**
                      * 获取商户手续费封顶值，0为不限封顶
                      * @return PaymentClassificationLimit 商户手续费封顶值，0为不限封顶
+                     * 
                      */
                     std::string GetPaymentClassificationLimit() const;
 
                     /**
                      * 设置商户手续费封顶值，0为不限封顶
-                     * @param PaymentClassificationLimit 商户手续费封顶值，0为不限封顶
+                     * @param _paymentClassificationLimit 商户手续费封顶值，0为不限封顶
+                     * 
                      */
                     void SetPaymentClassificationLimit(const std::string& _paymentClassificationLimit);
 
                     /**
                      * 判断参数 PaymentClassificationLimit 是否已赋值
                      * @return PaymentClassificationLimit 是否已赋值
+                     * 
                      */
                     bool PaymentClassificationLimitHasBeenSet() const;
 
                     /**
                      * 获取机构的分佣扣率类型(1按签约扣率，2按收单收益)
                      * @return OrganizationFeeType 机构的分佣扣率类型(1按签约扣率，2按收单收益)
+                     * 
                      */
                     std::string GetOrganizationFeeType() const;
 
                     /**
                      * 设置机构的分佣扣率类型(1按签约扣率，2按收单收益)
-                     * @param OrganizationFeeType 机构的分佣扣率类型(1按签约扣率，2按收单收益)
+                     * @param _organizationFeeType 机构的分佣扣率类型(1按签约扣率，2按收单收益)
+                     * 
                      */
                     void SetOrganizationFeeType(const std::string& _organizationFeeType);
 
                     /**
                      * 判断参数 OrganizationFeeType 是否已赋值
                      * @return OrganizationFeeType 是否已赋值
+                     * 
                      */
                     bool OrganizationFeeTypeHasBeenSet() const;
 
                     /**
                      * 获取商户扣率最大值
                      * @return PaymentClassificationMaxFee 商户扣率最大值
+                     * 
                      */
                     std::string GetPaymentClassificationMaxFee() const;
 
                     /**
                      * 设置商户扣率最大值
-                     * @param PaymentClassificationMaxFee 商户扣率最大值
+                     * @param _paymentClassificationMaxFee 商户扣率最大值
+                     * 
                      */
                     void SetPaymentClassificationMaxFee(const std::string& _paymentClassificationMaxFee);
 
                     /**
                      * 判断参数 PaymentClassificationMaxFee 是否已赋值
                      * @return PaymentClassificationMaxFee 是否已赋值
+                     * 
                      */
                     bool PaymentClassificationMaxFeeHasBeenSet() const;
 
                     /**
                      * 获取商户扣率最小值
                      * @return PaymentClassificationMinFee 商户扣率最小值
+                     * 
                      */
                     std::string GetPaymentClassificationMinFee() const;
 
                     /**
                      * 设置商户扣率最小值
-                     * @param PaymentClassificationMinFee 商户扣率最小值
+                     * @param _paymentClassificationMinFee 商户扣率最小值
+                     * 
                      */
                     void SetPaymentClassificationMinFee(const std::string& _paymentClassificationMinFee);
 
                     /**
                      * 判断参数 PaymentClassificationMinFee 是否已赋值
                      * @return PaymentClassificationMinFee 是否已赋值
+                     * 
                      */
                     bool PaymentClassificationMinFeeHasBeenSet() const;
 
                     /**
                      * 获取行业会类编号
                      * @return PaymentClassificationId 行业会类编号
+                     * 
                      */
                     std::string GetPaymentClassificationId() const;
 
                     /**
                      * 设置行业会类编号
-                     * @param PaymentClassificationId 行业会类编号
+                     * @param _paymentClassificationId 行业会类编号
+                     * 
                      */
                     void SetPaymentClassificationId(const std::string& _paymentClassificationId);
 
                     /**
                      * 判断参数 PaymentClassificationId 是否已赋值
                      * @return PaymentClassificationId 是否已赋值
+                     * 
                      */
                     bool PaymentClassificationIdHasBeenSet() const;
 
                     /**
                      * 获取行业分类名称
                      * @return PaymentClassificationName 行业分类名称
+                     * 
                      */
                     std::string GetPaymentClassificationName() const;
 
                     /**
                      * 设置行业分类名称
-                     * @param PaymentClassificationName 行业分类名称
+                     * @param _paymentClassificationName 行业分类名称
+                     * 
                      */
                     void SetPaymentClassificationName(const std::string& _paymentClassificationName);
 
                     /**
                      * 判断参数 PaymentClassificationName 是否已赋值
                      * @return PaymentClassificationName 是否已赋值
+                     * 
                      */
                     bool PaymentClassificationNameHasBeenSet() const;
 

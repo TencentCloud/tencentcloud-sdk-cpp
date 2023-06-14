@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取新建文件夹名
                      * @return FolderName 新建文件夹名
+                     * 
                      */
                     std::string GetFolderName() const;
 
                     /**
                      * 设置新建文件夹名
-                     * @param FolderName 新建文件夹名
+                     * @param _folderName 新建文件夹名
+                     * 
                      */
                     void SetFolderName(const std::string& _folderName);
 
                     /**
                      * 判断参数 FolderName 是否已赋值
                      * @return FolderName 是否已赋值
+                     * 
                      */
                     bool FolderNameHasBeenSet() const;
 
                     /**
                      * 获取新建文件夹的父目录ID
                      * @return ParentId 新建文件夹的父目录ID
+                     * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置新建文件夹的父目录ID
-                     * @param ParentId 新建文件夹的父目录ID
+                     * @param _parentId 新建文件夹的父目录ID
+                     * 
                      */
                     void SetParentId(const std::string& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
                     /**
                      * 获取文件夹类型，0是任务文件夹，1是依赖文件夹
                      * @return FolderType 文件夹类型，0是任务文件夹，1是依赖文件夹
+                     * 
                      */
                     int64_t GetFolderType() const;
 
                     /**
                      * 设置文件夹类型，0是任务文件夹，1是依赖文件夹
-                     * @param FolderType 文件夹类型，0是任务文件夹，1是依赖文件夹
+                     * @param _folderType 文件夹类型，0是任务文件夹，1是依赖文件夹
+                     * 
                      */
                     void SetFolderType(const int64_t& _folderType);
 
                     /**
                      * 判断参数 FolderType 是否已赋值
                      * @return FolderType 是否已赋值
+                     * 
                      */
                     bool FolderTypeHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

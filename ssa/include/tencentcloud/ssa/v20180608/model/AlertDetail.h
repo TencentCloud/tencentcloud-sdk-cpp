@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseInfo 告警基础信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AlertType GetBaseInfo() const;
 
                     /**
                      * 设置告警基础信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BaseInfo 告警基础信息
+                     * @param _baseInfo 告警基础信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBaseInfo(const AlertType& _baseInfo);
 
                     /**
                      * 判断参数 BaseInfo 是否已赋值
                      * @return BaseInfo 是否已赋值
+                     * 
                      */
                     bool BaseInfoHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 告警详情，json序列化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDetail() const;
 
                     /**
                      * 设置告警详情，json序列化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 告警详情，json序列化
+                     * @param _detail 告警详情，json序列化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetail(const std::string& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

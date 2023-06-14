@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
                      * @return NetworkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetNetworkInterfaceIds() const;
 
                     /**
                      * 设置弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
-                     * @param NetworkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * @param _networkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * 
                      */
                     void SetNetworkInterfaceIds(const std::vector<std::string>& _networkInterfaceIds);
 
                     /**
                      * 判断参数 NetworkInterfaceIds 是否已赋值
                      * @return NetworkInterfaceIds 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdsHasBeenSet() const;
 
                     /**
                      * 获取安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。
                      * @return SecurityGroupIds 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。
-                     * @param SecurityGroupIds 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。
+                     * @param _securityGroupIds 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

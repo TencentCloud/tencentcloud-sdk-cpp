@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取应用SdkAppId
                      * @return SdkAppId 应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用SdkAppId
-                     * @param SdkAppId 应用SdkAppId
+                     * @param _sdkAppId 应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID对应的签名
                      * @return UserSig 用户ID对应的签名
+                     * 
                      */
                     std::string GetUserSig() const;
 
                     /**
                      * 设置用户ID对应的签名
-                     * @param UserSig 用户ID对应的签名
+                     * @param _userSig 用户ID对应的签名
+                     * 
                      */
                     void SetUserSig(const std::string& _userSig);
 
                     /**
                      * 判断参数 UserSig 是否已赋值
                      * @return UserSig 是否已赋值
+                     * 
                      */
                     bool UserSigHasBeenSet() const;
 

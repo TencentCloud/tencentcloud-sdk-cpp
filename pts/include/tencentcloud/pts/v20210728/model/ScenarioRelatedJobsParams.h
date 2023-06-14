@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取job偏移量
                      * @return Offset job偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置job偏移量
-                     * @param Offset job偏移量
+                     * @param _offset job偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制最多查询的job数
                      * @return Limit 限制最多查询的job数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制最多查询的job数
-                     * @param Limit 限制最多查询的job数
+                     * @param _limit 限制最多查询的job数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return OrderBy 排序字段
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param OrderBy 排序字段
+                     * @param _orderBy 排序字段
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取是否升序
                      * @return Ascend 是否升序
+                     * 
                      */
                     bool GetAscend() const;
 
                     /**
                      * 设置是否升序
-                     * @param Ascend 是否升序
+                     * @param _ascend 是否升序
+                     * 
                      */
                     void SetAscend(const bool& _ascend);
 
                     /**
                      * 判断参数 Ascend 是否已赋值
                      * @return Ascend 是否已赋值
+                     * 
                      */
                     bool AscendHasBeenSet() const;
 

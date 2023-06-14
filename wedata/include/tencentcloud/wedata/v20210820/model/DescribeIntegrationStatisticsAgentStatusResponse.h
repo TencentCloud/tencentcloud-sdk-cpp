@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusData 统计结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusData() const;
 
                     /**
                      * 判断参数 StatusData 是否已赋值
                      * @return StatusData 是否已赋值
+                     * 
                      */
                     bool StatusDataHasBeenSet() const;
 

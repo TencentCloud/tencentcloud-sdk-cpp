@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取数据和。
                      * @return Sum 数据和。
+                     * 
                      */
                     int64_t GetSum() const;
 
                     /**
                      * 设置数据和。
-                     * @param Sum 数据和。
+                     * @param _sum 数据和。
+                     * 
                      */
                     void SetSum(const int64_t& _sum);
 
                     /**
                      * 判断参数 Sum 是否已赋值
                      * @return Sum 是否已赋值
+                     * 
                      */
                     bool SumHasBeenSet() const;
 
                     /**
                      * 获取最大值。
                      * @return Max 最大值。
+                     * 
                      */
                     int64_t GetMax() const;
 
                     /**
                      * 设置最大值。
-                     * @param Max 最大值。
+                     * @param _max 最大值。
+                     * 
                      */
                     void SetMax(const int64_t& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取平均值。
                      * @return Avg 平均值。
+                     * 
                      */
                     int64_t GetAvg() const;
 
                     /**
                      * 设置平均值。
-                     * @param Avg 平均值。
+                     * @param _avg 平均值。
+                     * 
                      */
                     void SetAvg(const int64_t& _avg);
 
                     /**
                      * 判断参数 Avg 是否已赋值
                      * @return Avg 是否已赋值
+                     * 
                      */
                     bool AvgHasBeenSet() const;
 
                     /**
                      * 获取指标名。
                      * @return MetricName 指标名。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名。
-                     * @param MetricName 指标名。
+                     * @param _metricName 指标名。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimingDataItem> GetDetail() const;
 
                     /**
                      * 设置详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 详细数据。
+                     * @param _detail 详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetail(const std::vector<TimingDataItem>& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

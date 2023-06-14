@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberUin 成员uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberUin 成员uin
+                     * @param _memberUin 成员uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberName 成员名称j
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberName() const;
 
                     /**
                      * 设置成员名称j
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberName 成员名称j
+                     * @param _memberName 成员名称j
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberName(const std::string& _memberName);
 
                     /**
                      * 判断参数 MemberName 是否已赋值
                      * @return MemberName 是否已赋值
+                     * 
                      */
                     bool MemberNameHasBeenSet() const;
 

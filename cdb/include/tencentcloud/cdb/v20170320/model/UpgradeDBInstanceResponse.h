@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取订单 ID。
                      * @return DealIds 订单 ID。
+                     * 
                      */
                     std::vector<std::string> GetDealIds() const;
 
                     /**
                      * 判断参数 DealIds 是否已赋值
                      * @return DealIds 是否已赋值
+                     * 
                      */
                     bool DealIdsHasBeenSet() const;
 
                     /**
                      * 获取异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
                      * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
+                     * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

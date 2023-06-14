@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取job id
                      * @return JobId job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置job id
-                     * @param JobId job id
+                     * @param _jobId job id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取场景id
                      * @return ScenarioId 场景id
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景id
-                     * @param ScenarioId 场景id
+                     * @param _scenarioId 场景id
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取查询指标数组
                      * @return Queries 查询指标数组
+                     * 
                      */
                     std::vector<InternalMetricQuery> GetQueries() const;
 
                     /**
                      * 设置查询指标数组
-                     * @param Queries 查询指标数组
+                     * @param _queries 查询指标数组
+                     * 
                      */
                     void SetQueries(const std::vector<InternalMetricQuery>& _queries);
 
                     /**
                      * 判断参数 Queries 是否已赋值
                      * @return Queries 是否已赋值
+                     * 
                      */
                     bool QueriesHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

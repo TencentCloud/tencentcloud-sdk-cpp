@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取剪辑开始时间，单位：ms。
                      * @return StartTime 剪辑开始时间，单位：ms。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置剪辑开始时间，单位：ms。
-                     * @param StartTime 剪辑开始时间，单位：ms。
+                     * @param _startTime 剪辑开始时间，单位：ms。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取剪辑结束时间，单位：ms
                      * @return EndTime 剪辑结束时间，单位：ms
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置剪辑结束时间，单位：ms
-                     * @param EndTime 剪辑结束时间，单位：ms
+                     * @param _endTime 剪辑结束时间，单位：ms
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

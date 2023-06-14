@@ -51,6 +51,7 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
+                     * @param _imageUrl 图片的 Url 地址。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -125,6 +131,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"RetImageType":"PROPROCESS"})
 API 3.0 Explorer 设置方式参考：
 Config = {"RetImageType":"PROPROCESS"}
+                     * 
                      */
                     std::string GetConfig() const;
 
@@ -138,7 +145,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"RetImageType":"PROPROCESS"})
 API 3.0 Explorer 设置方式参考：
 Config = {"RetImageType":"PROPROCESS"}
-                     * @param Config 可选字段，根据需要选择是否请求对应字段。
+                     * @param _config 可选字段，根据需要选择是否请求对应字段。
 目前支持的字段为：
 RetImageType-“PROPROCESS” 图像预处理，string 类型。
 图像预处理功能为，检测图片倾斜的角度，将原本倾斜的图片围绕中心点转正，最终输出一张正的名片抠图。
@@ -147,12 +154,14 @@ SDK 设置方式参考：
 Config = Json.stringify({"RetImageType":"PROPROCESS"})
 API 3.0 Explorer 设置方式参考：
 Config = {"RetImageType":"PROPROCESS"}
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

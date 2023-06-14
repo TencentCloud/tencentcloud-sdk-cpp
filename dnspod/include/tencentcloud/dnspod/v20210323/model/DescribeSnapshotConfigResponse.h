@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取解析快照配置
                      * @return SnapshotConfig 解析快照配置
+                     * 
                      */
                     SnapshotConfig GetSnapshotConfig() const;
 
                     /**
                      * 判断参数 SnapshotConfig 是否已赋值
                      * @return SnapshotConfig 是否已赋值
+                     * 
                      */
                     bool SnapshotConfigHasBeenSet() const;
 

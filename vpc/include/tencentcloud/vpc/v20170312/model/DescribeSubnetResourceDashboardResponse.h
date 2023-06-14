@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源统计结果。
                      * @return ResourceStatisticsSet 资源统计结果。
+                     * 
                      */
                     std::vector<ResourceStatistics> GetResourceStatisticsSet() const;
 
                     /**
                      * 判断参数 ResourceStatisticsSet 是否已赋值
                      * @return ResourceStatisticsSet 是否已赋值
+                     * 
                      */
                     bool ResourceStatisticsSetHasBeenSet() const;
 

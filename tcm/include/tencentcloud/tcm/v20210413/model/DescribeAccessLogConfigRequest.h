@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取mesh名字
                      * @return MeshId mesh名字
+                     * 
                      */
                     std::string GetMeshId() const;
 
                     /**
                      * 设置mesh名字
-                     * @param MeshId mesh名字
+                     * @param _meshId mesh名字
+                     * 
                      */
                     void SetMeshId(const std::string& _meshId);
 
                     /**
                      * 判断参数 MeshId 是否已赋值
                      * @return MeshId 是否已赋值
+                     * 
                      */
                     bool MeshIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务批次ID。
                      * @return RunGroupId 任务批次ID。
+                     * 
                      */
                     std::string GetRunGroupId() const;
 
                     /**
                      * 判断参数 RunGroupId 是否已赋值
                      * @return RunGroupId 是否已赋值
+                     * 
                      */
                     bool RunGroupIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取待同步实例的uin
                      * @return PeerRegistryUin 待同步实例的uin
+                     * 
                      */
                     std::string GetPeerRegistryUin() const;
 
                     /**
                      * 设置待同步实例的uin
-                     * @param PeerRegistryUin 待同步实例的uin
+                     * @param _peerRegistryUin 待同步实例的uin
+                     * 
                      */
                     void SetPeerRegistryUin(const std::string& _peerRegistryUin);
 
                     /**
                      * 判断参数 PeerRegistryUin 是否已赋值
                      * @return PeerRegistryUin 是否已赋值
+                     * 
                      */
                     bool PeerRegistryUinHasBeenSet() const;
 
                     /**
                      * 获取待同步实例的访问永久Token
                      * @return PeerRegistryToken 待同步实例的访问永久Token
+                     * 
                      */
                     std::string GetPeerRegistryToken() const;
 
                     /**
                      * 设置待同步实例的访问永久Token
-                     * @param PeerRegistryToken 待同步实例的访问永久Token
+                     * @param _peerRegistryToken 待同步实例的访问永久Token
+                     * 
                      */
                     void SetPeerRegistryToken(const std::string& _peerRegistryToken);
 
                     /**
                      * 判断参数 PeerRegistryToken 是否已赋值
                      * @return PeerRegistryToken 是否已赋值
+                     * 
                      */
                     bool PeerRegistryTokenHasBeenSet() const;
 
                     /**
                      * 获取是否开启跨主账号实例同步
                      * @return EnablePeerReplication 是否开启跨主账号实例同步
+                     * 
                      */
                     bool GetEnablePeerReplication() const;
 
                     /**
                      * 设置是否开启跨主账号实例同步
-                     * @param EnablePeerReplication 是否开启跨主账号实例同步
+                     * @param _enablePeerReplication 是否开启跨主账号实例同步
+                     * 
                      */
                     void SetEnablePeerReplication(const bool& _enablePeerReplication);
 
                     /**
                      * 判断参数 EnablePeerReplication 是否已赋值
                      * @return EnablePeerReplication 是否已赋值
+                     * 
                      */
                     bool EnablePeerReplicationHasBeenSet() const;
 

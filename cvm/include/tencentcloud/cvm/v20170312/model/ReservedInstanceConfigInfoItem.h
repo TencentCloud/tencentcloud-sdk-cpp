@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取实例规格。
                      * @return Type 实例规格。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置实例规格。
-                     * @param Type 实例规格。
+                     * @param _type 实例规格。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取实例规格名称。
                      * @return TypeName 实例规格名称。
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置实例规格名称。
-                     * @param TypeName 实例规格名称。
+                     * @param _typeName 实例规格名称。
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取优先级。
                      * @return Order 优先级。
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置优先级。
-                     * @param Order 优先级。
+                     * @param _order 优先级。
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取实例族信息列表。
                      * @return InstanceFamilies 实例族信息列表。
+                     * 
                      */
                     std::vector<ReservedInstanceFamilyItem> GetInstanceFamilies() const;
 
                     /**
                      * 设置实例族信息列表。
-                     * @param InstanceFamilies 实例族信息列表。
+                     * @param _instanceFamilies 实例族信息列表。
+                     * 
                      */
                     void SetInstanceFamilies(const std::vector<ReservedInstanceFamilyItem>& _instanceFamilies);
 
                     /**
                      * 判断参数 InstanceFamilies 是否已赋值
                      * @return InstanceFamilies 是否已赋值
+                     * 
                      */
                     bool InstanceFamiliesHasBeenSet() const;
 

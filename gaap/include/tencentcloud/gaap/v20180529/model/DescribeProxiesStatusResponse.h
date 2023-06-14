@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通道状态列表。
                      * @return InstanceStatusSet 通道状态列表。
+                     * 
                      */
                     std::vector<ProxyStatus> GetInstanceStatusSet() const;
 
                     /**
                      * 判断参数 InstanceStatusSet 是否已赋值
                      * @return InstanceStatusSet 是否已赋值
+                     * 
                      */
                     bool InstanceStatusSetHasBeenSet() const;
 

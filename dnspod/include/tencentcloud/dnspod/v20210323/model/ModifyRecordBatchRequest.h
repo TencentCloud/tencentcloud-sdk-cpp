@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      * @return RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 
                      */
                     std::vector<uint64_t> GetRecordIdList() const;
 
                     /**
                      * 设置记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @param RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * @param _recordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 
                      */
                     void SetRecordIdList(const std::vector<uint64_t>& _recordIdList);
 
                     /**
                      * 判断参数 RecordIdList 是否已赋值
                      * @return RecordIdList 是否已赋值
+                     * 
                      */
                     bool RecordIdListHasBeenSet() const;
 
                     /**
                      * 获取要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
                      * @return Change 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * 
                      */
                     std::string GetChange() const;
 
                     /**
                      * 设置要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
-                     * @param Change 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * @param _change 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * 
                      */
                     void SetChange(const std::string& _change);
 
                     /**
                      * 判断参数 Change 是否已赋值
                      * @return Change 是否已赋值
+                     * 
                      */
                     bool ChangeHasBeenSet() const;
 
                     /**
                      * 获取修改为，具体依赖 change 字段，必填参数。
                      * @return ChangeTo 修改为，具体依赖 change 字段，必填参数。
+                     * 
                      */
                     std::string GetChangeTo() const;
 
                     /**
                      * 设置修改为，具体依赖 change 字段，必填参数。
-                     * @param ChangeTo 修改为，具体依赖 change 字段，必填参数。
+                     * @param _changeTo 修改为，具体依赖 change 字段，必填参数。
+                     * 
                      */
                     void SetChangeTo(const std::string& _changeTo);
 
                     /**
                      * 判断参数 ChangeTo 是否已赋值
                      * @return ChangeTo 是否已赋值
+                     * 
                      */
                     bool ChangeToHasBeenSet() const;
 
                     /**
                      * 获取要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
                      * @return Value 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
-                     * @param Value 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * @param _value 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取MX记录优先级，仅当修改为 MX 记录时为必填参数。
                      * @return MX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 
                      */
                     std::string GetMX() const;
 
                     /**
                      * 设置MX记录优先级，仅当修改为 MX 记录时为必填参数。
-                     * @param MX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * @param _mX MX记录优先级，仅当修改为 MX 记录时为必填参数。
+                     * 
                      */
                     void SetMX(const std::string& _mX);
 
                     /**
                      * 判断参数 MX 是否已赋值
                      * @return MX 是否已赋值
+                     * 
                      */
                     bool MXHasBeenSet() const;
 

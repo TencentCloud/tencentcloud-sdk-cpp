@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取应用唯一ID。
                      * @return AppId 应用唯一ID。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置应用唯一ID。
-                     * @param AppId 应用唯一ID。
+                     * @param _appId 应用唯一ID。
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取类型名称。
                      * @return EntityName 类型名称。
+                     * 
                      */
                     std::string GetEntityName() const;
 
                     /**
                      * 设置类型名称。
-                     * @param EntityName 类型名称。
+                     * @param _entityName 类型名称。
+                     * 
                      */
                     void SetEntityName(const std::string& _entityName);
 
                     /**
                      * 判断参数 EntityName 是否已赋值
                      * @return EntityName 是否已赋值
+                     * 
                      */
                     bool EntityNameHasBeenSet() const;
 
                     /**
                      * 获取类型唯一ID。
                      * @return EntityId 类型唯一ID。
+                     * 
                      */
                     std::string GetEntityId() const;
 
                     /**
                      * 设置类型唯一ID。
-                     * @param EntityId 类型唯一ID。
+                     * @param _entityId 类型唯一ID。
+                     * 
                      */
                     void SetEntityId(const std::string& _entityId);
 
                     /**
                      * 判断参数 EntityId 是否已赋值
                      * @return EntityId 是否已赋值
+                     * 
                      */
                     bool EntityIdHasBeenSet() const;
 
                     /**
                      * 获取上次更新时间，符合 ISO8601 标准。
                      * @return LastModifiedDate 上次更新时间，符合 ISO8601 标准。
+                     * 
                      */
                     std::string GetLastModifiedDate() const;
 
                     /**
                      * 设置上次更新时间，符合 ISO8601 标准。
-                     * @param LastModifiedDate 上次更新时间，符合 ISO8601 标准。
+                     * @param _lastModifiedDate 上次更新时间，符合 ISO8601 标准。
+                     * 
                      */
                     void SetLastModifiedDate(const std::string& _lastModifiedDate);
 
                     /**
                      * 判断参数 LastModifiedDate 是否已赋值
                      * @return LastModifiedDate 是否已赋值
+                     * 
                      */
                     bool LastModifiedDateHasBeenSet() const;
 
                     /**
                      * 获取授权类型唯一ID。
                      * @return AuthorizationId 授权类型唯一ID。
+                     * 
                      */
                     std::string GetAuthorizationId() const;
 
                     /**
                      * 设置授权类型唯一ID。
-                     * @param AuthorizationId 授权类型唯一ID。
+                     * @param _authorizationId 授权类型唯一ID。
+                     * 
                      */
                     void SetAuthorizationId(const std::string& _authorizationId);
 
                     /**
                      * 判断参数 AuthorizationId 是否已赋值
                      * @return AuthorizationId 是否已赋值
+                     * 
                      */
                     bool AuthorizationIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取容器id
                      * @return ContainerId 容器id
+                     * 
                      */
                     std::string GetContainerId() const;
 
                     /**
                      * 设置容器id
-                     * @param ContainerId 容器id
+                     * @param _containerId 容器id
+                     * 
                      */
                     void SetContainerId(const std::string& _containerId);
 
                     /**
                      * 判断参数 ContainerId 是否已赋值
                      * @return ContainerId 是否已赋值
+                     * 
                      */
                     bool ContainerIdHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID，登录控制台创建应用得到的AppID
                      * @return BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     int64_t GetBizId() const;
 
                     /**
                      * 设置应用 ID，登录控制台创建应用得到的AppID
-                     * @param BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * @param _bizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     void SetBizId(const int64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
                      * @return TextUrl 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
+                     * 
                      */
                     std::string GetTextUrl() const;
 
                     /**
                      * 设置文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
-                     * @param TextUrl 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
+                     * @param _textUrl 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
+                     * 
                      */
                     void SetTextUrl(const std::string& _textUrl);
 
                     /**
                      * 判断参数 TextUrl 是否已赋值
                      * @return TextUrl 是否已赋值
+                     * 
                      */
                     bool TextUrlHasBeenSet() const;
 
                     /**
                      * 获取模型名称，名称长度不超过36，默认为BizId。
                      * @return ModelName 模型名称，名称长度不超过36，默认为BizId。
+                     * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置模型名称，名称长度不超过36，默认为BizId。
-                     * @param ModelName 模型名称，名称长度不超过36，默认为BizId。
+                     * @param _modelName 模型名称，名称长度不超过36，默认为BizId。
+                     * 
                      */
                     void SetModelName(const std::string& _modelName);
 
                     /**
                      * 判断参数 ModelName 是否已赋值
                      * @return ModelName 是否已赋值
+                     * 
                      */
                     bool ModelNameHasBeenSet() const;
 

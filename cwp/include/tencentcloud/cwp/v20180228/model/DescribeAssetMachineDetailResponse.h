@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取主机详情
                      * @return MachineDetail 主机详情
+                     * 
                      */
                     AssetMachineDetail GetMachineDetail() const;
 
                     /**
                      * 判断参数 MachineDetail 是否已赋值
                      * @return MachineDetail 是否已赋值
+                     * 
                      */
                     bool MachineDetailHasBeenSet() const;
 

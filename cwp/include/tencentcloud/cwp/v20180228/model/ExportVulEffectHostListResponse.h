@@ -48,24 +48,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取导出任务Id , 可通过ExportTasks 接口下载
                      * @return TaskId 导出任务Id , 可通过ExportTasks 接口下载
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

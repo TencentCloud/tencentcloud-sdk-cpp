@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取用户传入的名称
                      * @return DisplayName 用户传入的名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置用户传入的名称
-                     * @param DisplayName 用户传入的名称
+                     * @param _displayName 用户传入的名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取用户传入的手机号
                      * @return Mobile 用户传入的手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置用户传入的手机号
-                     * @param Mobile 用户传入的手机号
+                     * @param _mobile 用户传入的手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return Reason 失败原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取用户Id
                      * @return UserId 用户Id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id
-                     * @param UserId 用户Id
+                     * @param _userId 用户Id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取员工在第三方平台的openId
                      * @return OpenId 员工在第三方平台的openId
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置员工在第三方平台的openId
-                     * @param OpenId 员工在第三方平台的openId
+                     * @param _openId 员工在第三方平台的openId
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 该客户档案当前已成功关联的企业标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置该客户档案当前已成功关联的企业标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 该客户档案当前已成功关联的企业标签分组名称
+                     * @param _groupName 该客户档案当前已成功关联的企业标签分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName 该客户档案当前已成功关联的企业标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置该客户档案当前已成功关联的企业标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagName 该客户档案当前已成功关联的企业标签名称
+                     * @param _tagName 该客户档案当前已成功关联的企业标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagId 该客户档案当前已成功关联的企业标签的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagId() const;
 
                     /**
                      * 设置该客户档案当前已成功关联的企业标签的id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagId 该客户档案当前已成功关联的企业标签的id
+                     * @param _tagId 该客户档案当前已成功关联的企业标签的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagId(const std::string& _tagId);
 
                     /**
                      * 判断参数 TagId 是否已赋值
                      * @return TagId 是否已赋值
+                     * 
                      */
                     bool TagIdHasBeenSet() const;
 

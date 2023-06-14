@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取作文内容
                      * @return Content 作文内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置作文内容
-                     * @param Content 作文内容
+                     * @param _content 作文内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorrectData 批改结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CorrectData GetCorrectData() const;
 
                     /**
                      * 设置批改结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorrectData 批改结果
+                     * @param _correctData 批改结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorrectData(const CorrectData& _correctData);
 
                     /**
                      * 判断参数 CorrectData 是否已赋值
                      * @return CorrectData 是否已赋值
+                     * 
                      */
                     bool CorrectDataHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务 id，用于查询接口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 id，用于查询接口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务 id，用于查询接口
+                     * @param _taskId 任务 id，用于查询接口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId 图像识别唯一标识，一次识别一个 SessionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置图像识别唯一标识，一次识别一个 SessionId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionId 图像识别唯一标识，一次识别一个 SessionId
+                     * @param _sessionId 图像识别唯一标识，一次识别一个 SessionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

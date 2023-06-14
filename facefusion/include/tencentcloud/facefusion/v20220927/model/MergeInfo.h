@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取输入图片base64
                      * @return Image 输入图片base64
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置输入图片base64
-                     * @param Image 输入图片base64
+                     * @param _image 输入图片base64
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取输入图片url
                      * @return Url 输入图片url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置输入图片url
-                     * @param Url 输入图片url
+                     * @param _url 输入图片url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取上传的图片人脸位置信息（人脸框）
                      * @return InputImageFaceRect 上传的图片人脸位置信息（人脸框）
+                     * 
                      */
                     FaceRect GetInputImageFaceRect() const;
 
                     /**
                      * 设置上传的图片人脸位置信息（人脸框）
-                     * @param InputImageFaceRect 上传的图片人脸位置信息（人脸框）
+                     * @param _inputImageFaceRect 上传的图片人脸位置信息（人脸框）
+                     * 
                      */
                     void SetInputImageFaceRect(const FaceRect& _inputImageFaceRect);
 
                     /**
                      * 判断参数 InputImageFaceRect 是否已赋值
                      * @return InputImageFaceRect 是否已赋值
+                     * 
                      */
                     bool InputImageFaceRectHasBeenSet() const;
 
                     /**
                      * 获取控制台上传的素材人脸ID，不填默认取最大人脸
                      * @return TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * 
                      */
                     std::string GetTemplateFaceID() const;
 
                     /**
                      * 设置控制台上传的素材人脸ID，不填默认取最大人脸
-                     * @param TemplateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * @param _templateFaceID 控制台上传的素材人脸ID，不填默认取最大人脸
+                     * 
                      */
                     void SetTemplateFaceID(const std::string& _templateFaceID);
 
                     /**
                      * 判断参数 TemplateFaceID 是否已赋值
                      * @return TemplateFaceID 是否已赋值
+                     * 
                      */
                     bool TemplateFaceIDHasBeenSet() const;
 

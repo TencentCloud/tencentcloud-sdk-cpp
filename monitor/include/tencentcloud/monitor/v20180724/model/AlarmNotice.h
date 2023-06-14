@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 告警通知模板 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置告警通知模板 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 告警通知模板 ID
+                     * @param _id 告警通知模板 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 告警通知模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置告警通知模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 告警通知模板名称
+                     * @param _name 告警通知模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedAt 上次修改时间
+                     * @param _updatedAt 上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedBy 上次修改人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedBy() const;
 
                     /**
                      * 设置上次修改人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedBy 上次修改人
+                     * @param _updatedBy 上次修改人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedBy(const std::string& _updatedBy);
 
                     /**
                      * 判断参数 UpdatedBy 是否已赋值
                      * @return UpdatedBy 是否已赋值
+                     * 
                      */
                     bool UpdatedByHasBeenSet() const;
 
@@ -143,20 +155,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeType 告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNoticeType() const;
 
                     /**
                      * 设置告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeType 告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知
+                     * @param _noticeType 告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoticeType(const std::string& _noticeType);
 
                     /**
                      * 判断参数 NoticeType 是否已赋值
                      * @return NoticeType 是否已赋值
+                     * 
                      */
                     bool NoticeTypeHasBeenSet() const;
 
@@ -165,20 +180,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserNotices 用户通知列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UserNotice> GetUserNotices() const;
 
                     /**
                      * 设置用户通知列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserNotices 用户通知列表
+                     * @param _userNotices 用户通知列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserNotices(const std::vector<UserNotice>& _userNotices);
 
                     /**
                      * 判断参数 UserNotices 是否已赋值
                      * @return UserNotices 是否已赋值
+                     * 
                      */
                     bool UserNoticesHasBeenSet() const;
 
@@ -187,20 +205,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URLNotices 回调通知列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<URLNotice> GetURLNotices() const;
 
                     /**
                      * 设置回调通知列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param URLNotices 回调通知列表
+                     * @param _uRLNotices 回调通知列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetURLNotices(const std::vector<URLNotice>& _uRLNotices);
 
                     /**
                      * 判断参数 URLNotices 是否已赋值
                      * @return URLNotices 是否已赋值
+                     * 
                      */
                     bool URLNoticesHasBeenSet() const;
 
@@ -209,20 +230,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPreset 是否是系统预设通知模板 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsPreset() const;
 
                     /**
                      * 设置是否是系统预设通知模板 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsPreset 是否是系统预设通知模板 0=否 1=是
+                     * @param _isPreset 是否是系统预设通知模板 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsPreset(const int64_t& _isPreset);
 
                     /**
                      * 判断参数 IsPreset 是否已赋值
                      * @return IsPreset 是否已赋值
+                     * 
                      */
                     bool IsPresetHasBeenSet() const;
 
@@ -231,20 +255,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeLanguage 通知语言 zh-CN=中文 en-US=英文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNoticeLanguage() const;
 
                     /**
                      * 设置通知语言 zh-CN=中文 en-US=英文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeLanguage 通知语言 zh-CN=中文 en-US=英文
+                     * @param _noticeLanguage 通知语言 zh-CN=中文 en-US=英文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoticeLanguage(const std::string& _noticeLanguage);
 
                     /**
                      * 判断参数 NoticeLanguage 是否已赋值
                      * @return NoticeLanguage 是否已赋值
+                     * 
                      */
                     bool NoticeLanguageHasBeenSet() const;
 
@@ -253,20 +280,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyIds 告警通知模板绑定的告警策略ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPolicyIds() const;
 
                     /**
                      * 设置告警通知模板绑定的告警策略ID列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyIds 告警通知模板绑定的告警策略ID列表
+                     * @param _policyIds 告警通知模板绑定的告警策略ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyIds(const std::vector<std::string>& _policyIds);
 
                     /**
                      * 判断参数 PolicyIds 是否已赋值
                      * @return PolicyIds 是否已赋值
+                     * 
                      */
                     bool PolicyIdsHasBeenSet() const;
 
@@ -275,20 +305,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AMPConsumerId 后台 amp consumer id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAMPConsumerId() const;
 
                     /**
                      * 设置后台 amp consumer id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AMPConsumerId 后台 amp consumer id
+                     * @param _aMPConsumerId 后台 amp consumer id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAMPConsumerId(const std::string& _aMPConsumerId);
 
                     /**
                      * 判断参数 AMPConsumerId 是否已赋值
                      * @return AMPConsumerId 是否已赋值
+                     * 
                      */
                     bool AMPConsumerIdHasBeenSet() const;
 
@@ -297,20 +330,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLSNotices 推送cls渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CLSNotice> GetCLSNotices() const;
 
                     /**
                      * 设置推送cls渠道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CLSNotices 推送cls渠道
+                     * @param _cLSNotices 推送cls渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCLSNotices(const std::vector<CLSNotice>& _cLSNotices);
 
                     /**
                      * 判断参数 CLSNotices 是否已赋值
                      * @return CLSNotices 是否已赋值
+                     * 
                      */
                     bool CLSNoticesHasBeenSet() const;
 
@@ -319,20 +355,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 通知模板绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置通知模板绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 通知模板绑定的标签
+                     * @param _tags 通知模板绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

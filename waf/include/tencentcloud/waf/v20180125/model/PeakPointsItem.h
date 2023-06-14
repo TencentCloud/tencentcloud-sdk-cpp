@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取秒级别时间戳
                      * @return Time 秒级别时间戳
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置秒级别时间戳
-                     * @param Time 秒级别时间戳
+                     * @param _time 秒级别时间戳
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取QPS
                      * @return Access QPS
+                     * 
                      */
                     uint64_t GetAccess() const;
 
                     /**
                      * 设置QPS
-                     * @param Access QPS
+                     * @param _access QPS
+                     * 
                      */
                     void SetAccess(const uint64_t& _access);
 
                     /**
                      * 判断参数 Access 是否已赋值
                      * @return Access 是否已赋值
+                     * 
                      */
                     bool AccessHasBeenSet() const;
 
                     /**
                      * 获取上行带宽峰值，单位B
                      * @return Up 上行带宽峰值，单位B
+                     * 
                      */
                     uint64_t GetUp() const;
 
                     /**
                      * 设置上行带宽峰值，单位B
-                     * @param Up 上行带宽峰值，单位B
+                     * @param _up 上行带宽峰值，单位B
+                     * 
                      */
                     void SetUp(const uint64_t& _up);
 
                     /**
                      * 判断参数 Up 是否已赋值
                      * @return Up 是否已赋值
+                     * 
                      */
                     bool UpHasBeenSet() const;
 
                     /**
                      * 获取下行带宽峰值，单位B
                      * @return Down 下行带宽峰值，单位B
+                     * 
                      */
                     uint64_t GetDown() const;
 
                     /**
                      * 设置下行带宽峰值，单位B
-                     * @param Down 下行带宽峰值，单位B
+                     * @param _down 下行带宽峰值，单位B
+                     * 
                      */
                     void SetDown(const uint64_t& _down);
 
                     /**
                      * 判断参数 Down 是否已赋值
                      * @return Down 是否已赋值
+                     * 
                      */
                     bool DownHasBeenSet() const;
 
                     /**
                      * 获取Web攻击次数
                      * @return Attack Web攻击次数
+                     * 
                      */
                     uint64_t GetAttack() const;
 
                     /**
                      * 设置Web攻击次数
-                     * @param Attack Web攻击次数
+                     * @param _attack Web攻击次数
+                     * 
                      */
                     void SetAttack(const uint64_t& _attack);
 
                     /**
                      * 判断参数 Attack 是否已赋值
                      * @return Attack 是否已赋值
+                     * 
                      */
                     bool AttackHasBeenSet() const;
 
                     /**
                      * 获取CC攻击次数
                      * @return Cc CC攻击次数
+                     * 
                      */
                     uint64_t GetCc() const;
 
                     /**
                      * 设置CC攻击次数
-                     * @param Cc CC攻击次数
+                     * @param _cc CC攻击次数
+                     * 
                      */
                     void SetCc(const uint64_t& _cc);
 
                     /**
                      * 判断参数 Cc 是否已赋值
                      * @return Cc 是否已赋值
+                     * 
                      */
                     bool CcHasBeenSet() const;
 
                     /**
                      * 获取Bot qps
                      * @return BotAccess Bot qps
+                     * 
                      */
                     uint64_t GetBotAccess() const;
 
                     /**
                      * 设置Bot qps
-                     * @param BotAccess Bot qps
+                     * @param _botAccess Bot qps
+                     * 
                      */
                     void SetBotAccess(const uint64_t& _botAccess);
 
                     /**
                      * 判断参数 BotAccess 是否已赋值
                      * @return BotAccess 是否已赋值
+                     * 
                      */
                     bool BotAccessHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusServerError WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatusServerError() const;
 
                     /**
                      * 设置WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusServerError WAF返回给客户端状态码次数
+                     * @param _statusServerError WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusServerError(const uint64_t& _statusServerError);
 
                     /**
                      * 判断参数 StatusServerError 是否已赋值
                      * @return StatusServerError 是否已赋值
+                     * 
                      */
                     bool StatusServerErrorHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusClientError WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatusClientError() const;
 
                     /**
                      * 设置WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusClientError WAF返回给客户端状态码次数
+                     * @param _statusClientError WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusClientError(const uint64_t& _statusClientError);
 
                     /**
                      * 判断参数 StatusClientError 是否已赋值
                      * @return StatusClientError 是否已赋值
+                     * 
                      */
                     bool StatusClientErrorHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusRedirect WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatusRedirect() const;
 
                     /**
                      * 设置WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusRedirect WAF返回给客户端状态码次数
+                     * @param _statusRedirect WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusRedirect(const uint64_t& _statusRedirect);
 
                     /**
                      * 判断参数 StatusRedirect 是否已赋值
                      * @return StatusRedirect 是否已赋值
+                     * 
                      */
                     bool StatusRedirectHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusOk WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatusOk() const;
 
                     /**
                      * 设置WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusOk WAF返回给客户端状态码次数
+                     * @param _statusOk WAF返回给客户端状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusOk(const uint64_t& _statusOk);
 
                     /**
                      * 判断参数 StatusOk 是否已赋值
                      * @return StatusOk 是否已赋值
+                     * 
                      */
                     bool StatusOkHasBeenSet() const;
 
@@ -265,20 +298,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamServerError 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpstreamServerError() const;
 
                     /**
                      * 设置源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpstreamServerError 源站返回给WAF状态码次数
+                     * @param _upstreamServerError 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpstreamServerError(const uint64_t& _upstreamServerError);
 
                     /**
                      * 判断参数 UpstreamServerError 是否已赋值
                      * @return UpstreamServerError 是否已赋值
+                     * 
                      */
                     bool UpstreamServerErrorHasBeenSet() const;
 
@@ -287,20 +323,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamClientError 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpstreamClientError() const;
 
                     /**
                      * 设置源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpstreamClientError 源站返回给WAF状态码次数
+                     * @param _upstreamClientError 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpstreamClientError(const uint64_t& _upstreamClientError);
 
                     /**
                      * 判断参数 UpstreamClientError 是否已赋值
                      * @return UpstreamClientError 是否已赋值
+                     * 
                      */
                     bool UpstreamClientErrorHasBeenSet() const;
 
@@ -309,20 +348,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamRedirect 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpstreamRedirect() const;
 
                     /**
                      * 设置源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpstreamRedirect 源站返回给WAF状态码次数
+                     * @param _upstreamRedirect 源站返回给WAF状态码次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpstreamRedirect(const uint64_t& _upstreamRedirect);
 
                     /**
                      * 判断参数 UpstreamRedirect 是否已赋值
                      * @return UpstreamRedirect 是否已赋值
+                     * 
                      */
                     bool UpstreamRedirectHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取目录ID
                      * @return CatalogId 目录ID
+                     * 
                      */
                     std::string GetCatalogId() const;
 
                     /**
                      * 设置目录ID
-                     * @param CatalogId 目录ID
+                     * @param _catalogId 目录ID
+                     * 
                      */
                     void SetCatalogId(const std::string& _catalogId);
 
                     /**
                      * 判断参数 CatalogId 是否已赋值
                      * @return CatalogId 是否已赋值
+                     * 
                      */
                     bool CatalogIdHasBeenSet() const;
 
                     /**
                      * 获取查询指定用户是否为参与者,为空表示查询所有参与者
                      * @return UserId 查询指定用户是否为参与者,为空表示查询所有参与者
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置查询指定用户是否为参与者,为空表示查询所有参与者
-                     * @param UserId 查询指定用户是否为参与者,为空表示查询所有参与者
+                     * @param _userId 查询指定用户是否为参与者,为空表示查询所有参与者
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

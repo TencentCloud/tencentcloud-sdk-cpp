@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要查询的CVM实例ID或弹性网卡ID。
                      * @return InstanceId 要查询的CVM实例ID或弹性网卡ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置要查询的CVM实例ID或弹性网卡ID。
-                     * @param InstanceId 要查询的CVM实例ID或弹性网卡ID。
+                     * @param _instanceId 要查询的CVM实例ID或弹性网卡ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return JobId 任务id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务id
-                     * @param JobId 任务id
+                     * @param _jobId 任务id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge
                      * @return NewInstanceClass 新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge
+                     * 
                      */
                     std::string GetNewInstanceClass() const;
 
                     /**
                      * 设置新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge
-                     * @param NewInstanceClass 新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge
+                     * @param _newInstanceClass 新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge
+                     * 
                      */
                     void SetNewInstanceClass(const std::string& _newInstanceClass);
 
                     /**
                      * 判断参数 NewInstanceClass 是否已赋值
                      * @return NewInstanceClass 是否已赋值
+                     * 
                      */
                     bool NewInstanceClassHasBeenSet() const;
 

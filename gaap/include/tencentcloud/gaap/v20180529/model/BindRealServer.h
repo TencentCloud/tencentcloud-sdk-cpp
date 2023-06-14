@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取源站ID
                      * @return RealServerId 源站ID
+                     * 
                      */
                     std::string GetRealServerId() const;
 
                     /**
                      * 设置源站ID
-                     * @param RealServerId 源站ID
+                     * @param _realServerId 源站ID
+                     * 
                      */
                     void SetRealServerId(const std::string& _realServerId);
 
                     /**
                      * 判断参数 RealServerId 是否已赋值
                      * @return RealServerId 是否已赋值
+                     * 
                      */
                     bool RealServerIdHasBeenSet() const;
 
                     /**
                      * 获取源站IP或者域名
                      * @return RealServerIP 源站IP或者域名
+                     * 
                      */
                     std::string GetRealServerIP() const;
 
                     /**
                      * 设置源站IP或者域名
-                     * @param RealServerIP 源站IP或者域名
+                     * @param _realServerIP 源站IP或者域名
+                     * 
                      */
                     void SetRealServerIP(const std::string& _realServerIP);
 
                     /**
                      * 判断参数 RealServerIP 是否已赋值
                      * @return RealServerIP 是否已赋值
+                     * 
                      */
                     bool RealServerIPHasBeenSet() const;
 
                     /**
                      * 获取该源站所占权重
                      * @return RealServerWeight 该源站所占权重
+                     * 
                      */
                     int64_t GetRealServerWeight() const;
 
                     /**
                      * 设置该源站所占权重
-                     * @param RealServerWeight 该源站所占权重
+                     * @param _realServerWeight 该源站所占权重
+                     * 
                      */
                     void SetRealServerWeight(const int64_t& _realServerWeight);
 
                     /**
                      * 判断参数 RealServerWeight 是否已赋值
                      * @return RealServerWeight 是否已赋值
+                     * 
                      */
                     bool RealServerWeightHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRealServerStatus() const;
 
@@ -120,17 +130,19 @@ namespace TencentCloud
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerStatus 源站健康检查状态，其中：
+                     * @param _realServerStatus 源站健康检查状态，其中：
 0表示正常；
 1表示异常。
 未开启健康检查状态时，该状态始终为正常。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerStatus(const int64_t& _realServerStatus);
 
                     /**
                      * 判断参数 RealServerStatus 是否已赋值
                      * @return RealServerStatus 是否已赋值
+                     * 
                      */
                     bool RealServerStatusHasBeenSet() const;
 
@@ -139,56 +151,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealServerPort 源站的端口号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRealServerPort() const;
 
                     /**
                      * 设置源站的端口号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealServerPort 源站的端口号
+                     * @param _realServerPort 源站的端口号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealServerPort(const int64_t& _realServerPort);
 
                     /**
                      * 判断参数 RealServerPort 是否已赋值
                      * @return RealServerPort 是否已赋值
+                     * 
                      */
                     bool RealServerPortHasBeenSet() const;
 
                     /**
                      * 获取当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。
                      * @return DownIPList 当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。
+                     * 
                      */
                     std::vector<std::string> GetDownIPList() const;
 
                     /**
                      * 设置当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。
-                     * @param DownIPList 当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。
+                     * @param _downIPList 当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。
+                     * 
                      */
                     void SetDownIPList(const std::vector<std::string>& _downIPList);
 
                     /**
                      * 判断参数 DownIPList 是否已赋值
                      * @return DownIPList 是否已赋值
+                     * 
                      */
                     bool DownIPListHasBeenSet() const;
 
                     /**
                      * 获取源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
                      * @return RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * 
                      */
                     std::string GetRealServerFailoverRole() const;
 
                     /**
                      * 设置源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
-                     * @param RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * @param _realServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * 
                      */
                     void SetRealServerFailoverRole(const std::string& _realServerFailoverRole);
 
                     /**
                      * 判断参数 RealServerFailoverRole 是否已赋值
                      * @return RealServerFailoverRole 是否已赋值
+                     * 
                      */
                     bool RealServerFailoverRoleHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取弹性公网ip
                      * @return Eip 弹性公网ip
+                     * 
                      */
                     std::string GetEip() const;
 
                     /**
                      * 设置弹性公网ip
-                     * @param Eip 弹性公网ip
+                     * @param _eip 弹性公网ip
+                     * 
                      */
                     void SetEip(const std::string& _eip);
 
                     /**
                      * 判断参数 Eip 是否已赋值
                      * @return Eip 是否已赋值
+                     * 
                      */
                     bool EipHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId 所属的Nat网关Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置所属的Nat网关Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NatGatewayId 所属的Nat网关Id
+                     * @param _natGatewayId 所属的Nat网关Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayName Nat网关名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
                      * 设置Nat网关名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NatGatewayName Nat网关名称
+                     * @param _natGatewayName Nat网关名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
 
                     /**
                      * 判断参数 NatGatewayName 是否已赋值
                      * @return NatGatewayName 是否已赋值
+                     * 
                      */
                     bool NatGatewayNameHasBeenSet() const;
 

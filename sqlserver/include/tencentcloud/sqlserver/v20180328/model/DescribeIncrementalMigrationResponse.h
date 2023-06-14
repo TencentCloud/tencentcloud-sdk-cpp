@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取增量导入任务总数
                      * @return TotalCount 增量导入任务总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取增量导入任务集合
                      * @return IncrementalMigrationSet 增量导入任务集合
+                     * 
                      */
                     std::vector<Migration> GetIncrementalMigrationSet() const;
 
                     /**
                      * 判断参数 IncrementalMigrationSet 是否已赋值
                      * @return IncrementalMigrationSet 是否已赋值
+                     * 
                      */
                     bool IncrementalMigrationSetHasBeenSet() const;
 

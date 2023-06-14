@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取域名 Referer 黑白名单配置。
                      * @return RefererAuthConfig 域名 Referer 黑白名单配置。
+                     * 
                      */
                     RefererAuthConfig GetRefererAuthConfig() const;
 
                     /**
                      * 判断参数 RefererAuthConfig 是否已赋值
                      * @return RefererAuthConfig 是否已赋值
+                     * 
                      */
                     bool RefererAuthConfigHasBeenSet() const;
 

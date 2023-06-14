@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备份开始时间。
                      * @return StartTime 备份开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置备份开始时间。
-                     * @param StartTime 备份开始时间。
+                     * @param _startTime 备份开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取备份任务ID。
                      * @return BackupId 备份任务ID。
+                     * 
                      */
                     std::string GetBackupId() const;
 
                     /**
                      * 设置备份任务ID。
-                     * @param BackupId 备份任务ID。
+                     * @param _backupId 备份任务ID。
+                     * 
                      */
                     void SetBackupId(const std::string& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return BackupType 备份类型。
 - 1：凌晨系统发起的自动备份。
 - 0：用户发起的手动备份。
+                     * 
                      */
                     std::string GetBackupType() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置备份类型。
 - 1：凌晨系统发起的自动备份。
 - 0：用户发起的手动备份。
-                     * @param BackupType 备份类型。
+                     * @param _backupType 备份类型。
 - 1：凌晨系统发起的自动备份。
 - 0：用户发起的手动备份。
+                     * 
                      */
                     void SetBackupType(const std::string& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
+                     * 
                      */
                     bool BackupTypeHasBeenSet() const;
 
@@ -121,6 +130,7 @@ namespace TencentCloud
 - -1：备份已过期。
 - 3：备份正在被导出。
 - 4：备份导出成功。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -131,36 +141,41 @@ namespace TencentCloud
 - -1：备份已过期。
 - 3：备份正在被导出。
 - 4：备份导出成功。
-                     * @param Status 备份状态。 
+                     * @param _status 备份状态。 
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
 - 3：备份正在被导出。
 - 4：备份导出成功。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取备份的备注信息。
                      * @return Remark 备份的备注信息。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备份的备注信息。
-                     * @param Remark 备份的备注信息。
+                     * @param _remark 备份的备注信息。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -171,6 +186,7 @@ namespace TencentCloud
                      * @return Locked 备份是否被锁定。
 - 0：未被锁定。
 - 1：已被锁定。
+                     * 
                      */
                     int64_t GetLocked() const;
 
@@ -178,15 +194,17 @@ namespace TencentCloud
                      * 设置备份是否被锁定。
 - 0：未被锁定。
 - 1：已被锁定。
-                     * @param Locked 备份是否被锁定。
+                     * @param _locked 备份是否被锁定。
 - 0：未被锁定。
 - 1：已被锁定。
+                     * 
                      */
                     void SetLocked(const int64_t& _locked);
 
                     /**
                      * 判断参数 Locked 是否已赋值
                      * @return Locked 是否已赋值
+                     * 
                      */
                     bool LockedHasBeenSet() const;
 
@@ -195,20 +213,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSize 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBackupSize() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSize 内部字段，用户可忽略。
+                     * @param _backupSize 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSize(const int64_t& _backupSize);
 
                     /**
                      * 判断参数 BackupSize 是否已赋值
                      * @return BackupSize 是否已赋值
+                     * 
                      */
                     bool BackupSizeHasBeenSet() const;
 
@@ -217,20 +238,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullBackup 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFullBackup() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullBackup 内部字段，用户可忽略。
+                     * @param _fullBackup 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullBackup(const int64_t& _fullBackup);
 
                     /**
                      * 判断参数 FullBackup 是否已赋值
                      * @return FullBackup 是否已赋值
+                     * 
                      */
                     bool FullBackupHasBeenSet() const;
 
@@ -239,128 +263,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 内部字段，用户可忽略。
+                     * @param _instanceType 内部字段，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称。
                      * @return InstanceName 实例名称。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
-                     * @param InstanceName 实例名称。
+                     * @param _instanceName 实例名称。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取本地备份所在地域。
                      * @return Region 本地备份所在地域。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置本地备份所在地域。
-                     * @param Region 本地备份所在地域。
+                     * @param _region 本地备份所在地域。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取备份结束时间。
                      * @return EndTime 备份结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置备份结束时间。
-                     * @param EndTime 备份结束时间。
+                     * @param _endTime 备份结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取备份文件类型。
                      * @return FileType 备份文件类型。
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置备份文件类型。
-                     * @param FileType 备份文件类型。
+                     * @param _fileType 备份文件类型。
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取备份文件过期时间。
                      * @return ExpireTime 备份文件过期时间。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置备份文件过期时间。
-                     * @param ExpireTime 备份文件过期时间。
+                     * @param _expireTime 备份文件过期时间。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

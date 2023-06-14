@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyIds 快照策略Id。
+                     * 
                      */
                     std::vector<std::string> GetSnapshotPolicyIds() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyIds 快照策略Id。
+                     * @param _snapshotPolicyIds 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyIds(const std::vector<std::string>& _snapshotPolicyIds);
 
                     /**
                      * 判断参数 SnapshotPolicyIds 是否已赋值
                      * @return SnapshotPolicyIds 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdsHasBeenSet() const;
 

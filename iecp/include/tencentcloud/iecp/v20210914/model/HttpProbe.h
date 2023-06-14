@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 请求路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置请求路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 请求路径
+                     * @param _path 请求路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 请求端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置请求端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 请求端口
+                     * @param _port 请求端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 请求地址，默认Pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置请求地址，默认Pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host 请求地址，默认Pod的IP
+                     * @param _host 请求地址，默认Pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheme 请求模式  HTTP|HTTPS，默认HTTP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScheme() const;
 
                     /**
                      * 设置请求模式  HTTP|HTTPS，默认HTTP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheme 请求模式  HTTP|HTTPS，默认HTTP
+                     * @param _scheme 请求模式  HTTP|HTTPS，默认HTTP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheme(const std::string& _scheme);
 
                     /**
                      * 判断参数 Scheme 是否已赋值
                      * @return Scheme 是否已赋值
+                     * 
                      */
                     bool SchemeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers HTTP的请求头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HttpHeader> GetHeaders() const;
 
                     /**
                      * 设置HTTP的请求头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Headers HTTP的请求头
+                     * @param _headers HTTP的请求头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaders(const std::vector<HttpHeader>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
+                     * 
                      */
                     bool HeadersHasBeenSet() const;
 

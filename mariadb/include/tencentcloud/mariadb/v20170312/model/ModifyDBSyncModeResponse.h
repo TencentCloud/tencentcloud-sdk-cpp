@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步任务Id，可通过 DescribeFlow 查询任务状态。
                      * @return FlowId 异步任务Id，可通过 DescribeFlow 查询任务状态。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

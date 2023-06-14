@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取房间ID。
                      * @return RoomId 房间ID。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID。
-                     * @param RoomId 房间ID。
+                     * @param _roomId 房间ID。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取文档ID。
                      * @return DocumentId 文档ID。
+                     * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
                      * 设置文档ID。
-                     * @param DocumentId 文档ID。
+                     * @param _documentId 文档ID。
+                     * 
                      */
                     void SetDocumentId(const std::string& _documentId);
 
                     /**
                      * 判断参数 DocumentId 是否已赋值
                      * @return DocumentId 是否已赋值
+                     * 
                      */
                     bool DocumentIdHasBeenSet() const;
 
                     /**
                      * 获取绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
                      * @return BindType 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * 
                      */
                     uint64_t GetBindType() const;
 
                     /**
                      * 设置绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
-                     * @param BindType 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * @param _bindType 绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。
+                     * 
                      */
                     void SetBindType(const uint64_t& _bindType);
 
                     /**
                      * 判断参数 BindType 是否已赋值
                      * @return BindType 是否已赋值
+                     * 
                      */
                     bool BindTypeHasBeenSet() const;
 

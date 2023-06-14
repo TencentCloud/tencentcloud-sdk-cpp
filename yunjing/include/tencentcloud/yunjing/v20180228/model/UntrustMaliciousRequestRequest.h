@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取受信任记录ID。
                      * @return Id 受信任记录ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置受信任记录ID。
-                     * @param Id 受信任记录ID。
+                     * @param _id 受信任记录ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

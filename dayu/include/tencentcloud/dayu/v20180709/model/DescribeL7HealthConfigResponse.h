@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取七层健康检查配置数组
                      * @return HealthConfig 七层健康检查配置数组
+                     * 
                      */
                     std::vector<L7HealthConfig> GetHealthConfig() const;
 
                     /**
                      * 判断参数 HealthConfig 是否已赋值
                      * @return HealthConfig 是否已赋值
+                     * 
                      */
                     bool HealthConfigHasBeenSet() const;
 

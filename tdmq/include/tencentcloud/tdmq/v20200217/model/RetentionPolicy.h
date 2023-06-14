@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取消息保留时长
                      * @return TimeInMinutes 消息保留时长
+                     * 
                      */
                     int64_t GetTimeInMinutes() const;
 
                     /**
                      * 设置消息保留时长
-                     * @param TimeInMinutes 消息保留时长
+                     * @param _timeInMinutes 消息保留时长
+                     * 
                      */
                     void SetTimeInMinutes(const int64_t& _timeInMinutes);
 
                     /**
                      * 判断参数 TimeInMinutes 是否已赋值
                      * @return TimeInMinutes 是否已赋值
+                     * 
                      */
                     bool TimeInMinutesHasBeenSet() const;
 
                     /**
                      * 获取消息保留大小
                      * @return SizeInMB 消息保留大小
+                     * 
                      */
                     int64_t GetSizeInMB() const;
 
                     /**
                      * 设置消息保留大小
-                     * @param SizeInMB 消息保留大小
+                     * @param _sizeInMB 消息保留大小
+                     * 
                      */
                     void SetSizeInMB(const int64_t& _sizeInMB);
 
                     /**
                      * 判断参数 SizeInMB 是否已赋值
                      * @return SizeInMB 是否已赋值
+                     * 
                      */
                     bool SizeInMBHasBeenSet() const;
 

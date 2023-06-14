@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取银行流水号
                      * @return FrontSeqNo 银行流水号
+                     * 
                      */
                     std::string GetFrontSeqNo() const;
 
                     /**
                      * 判断参数 FrontSeqNo 是否已赋值
                      * @return FrontSeqNo 是否已赋值
+                     * 
                      */
                     bool FrontSeqNoHasBeenSet() const;
 
                     /**
                      * 获取保留字段
                      * @return ReservedMessage 保留字段
+                     * 
                      */
                     std::string GetReservedMessage() const;
 
                     /**
                      * 判断参数 ReservedMessage 是否已赋值
                      * @return ReservedMessage 是否已赋值
+                     * 
                      */
                     bool ReservedMessageHasBeenSet() const;
 
                     /**
                      * 获取请求类型
                      * @return RequestType 请求类型
+                     * 
                      */
                     std::string GetRequestType() const;
 
                     /**
                      * 判断参数 RequestType 是否已赋值
                      * @return RequestType 是否已赋值
+                     * 
                      */
                     bool RequestTypeHasBeenSet() const;
 

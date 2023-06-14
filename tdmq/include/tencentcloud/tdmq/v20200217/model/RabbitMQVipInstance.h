@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -87,182 +93,212 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 实例版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置实例版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceVersion 实例版本
+                     * @param _instanceVersion 实例版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
 
                     /**
                      * 判断参数 InstanceVersion 是否已赋值
                      * @return InstanceVersion 是否已赋值
+                     * 
                      */
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
                      * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
                      * @return Status 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-                     * @param Status 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * @param _status 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return NodeCount 节点数量
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeCount 节点数量
+                     * @param _nodeCount 节点数量
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取实例配置规格名称
                      * @return ConfigDisplay 实例配置规格名称
+                     * 
                      */
                     std::string GetConfigDisplay() const;
 
                     /**
                      * 设置实例配置规格名称
-                     * @param ConfigDisplay 实例配置规格名称
+                     * @param _configDisplay 实例配置规格名称
+                     * 
                      */
                     void SetConfigDisplay(const std::string& _configDisplay);
 
                     /**
                      * 判断参数 ConfigDisplay 是否已赋值
                      * @return ConfigDisplay 是否已赋值
+                     * 
                      */
                     bool ConfigDisplayHasBeenSet() const;
 
                     /**
                      * 获取峰值TPS
                      * @return MaxTps 峰值TPS
+                     * 
                      */
                     uint64_t GetMaxTps() const;
 
                     /**
                      * 设置峰值TPS
-                     * @param MaxTps 峰值TPS
+                     * @param _maxTps 峰值TPS
+                     * 
                      */
                     void SetMaxTps(const uint64_t& _maxTps);
 
                     /**
                      * 判断参数 MaxTps 是否已赋值
                      * @return MaxTps 是否已赋值
+                     * 
                      */
                     bool MaxTpsHasBeenSet() const;
 
                     /**
                      * 获取峰值带宽，Mbps为单位
                      * @return MaxBandWidth 峰值带宽，Mbps为单位
+                     * 
                      */
                     uint64_t GetMaxBandWidth() const;
 
                     /**
                      * 设置峰值带宽，Mbps为单位
-                     * @param MaxBandWidth 峰值带宽，Mbps为单位
+                     * @param _maxBandWidth 峰值带宽，Mbps为单位
+                     * 
                      */
                     void SetMaxBandWidth(const uint64_t& _maxBandWidth);
 
                     /**
                      * 判断参数 MaxBandWidth 是否已赋值
                      * @return MaxBandWidth 是否已赋值
+                     * 
                      */
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
                      * 获取存储容量，GB为单位
                      * @return MaxStorage 存储容量，GB为单位
+                     * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置存储容量，GB为单位
-                     * @param MaxStorage 存储容量，GB为单位
+                     * @param _maxStorage 存储容量，GB为单位
+                     * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
                     /**
                      * 获取实例到期时间，毫秒为单位
                      * @return ExpireTime 实例到期时间，毫秒为单位
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置实例到期时间，毫秒为单位
-                     * @param ExpireTime 实例到期时间，毫秒为单位
+                     * @param _expireTime 实例到期时间，毫秒为单位
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
                      * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @param AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取0-后付费，1-预付费
                      * @return PayMode 0-后付费，1-预付费
+                     * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
                      * 设置0-后付费，1-预付费
-                     * @param PayMode 0-后付费，1-预付费
+                     * @param _payMode 0-后付费，1-预付费
+                     * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
@@ -271,38 +307,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注信息
+                     * @param _remark 备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取实例配置ID
                      * @return SpecName 实例配置ID
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置实例配置ID
-                     * @param SpecName 实例配置ID
+                     * @param _specName 实例配置ID
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
@@ -311,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptionInformation 集群异常。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
                      * 设置集群异常。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExceptionInformation 集群异常。
+                     * @param _exceptionInformation 集群异常。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExceptionInformation(const std::string& _exceptionInformation);
 
                     /**
                      * 判断参数 ExceptionInformation 是否已赋值
                      * @return ExceptionInformation 是否已赋值
+                     * 
                      */
                     bool ExceptionInformationHasBeenSet() const;
 
@@ -333,20 +378,23 @@ namespace TencentCloud
 为了和计费区分开，额外开启一个状态位，用于显示。
                      * @return ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
 为了和计费区分开，额外开启一个状态位，用于显示。
+                     * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
                      * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
 为了和计费区分开，额外开启一个状态位，用于显示。
-                     * @param ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * @param _clusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
 为了和计费区分开，额外开启一个状态位，用于显示。
+                     * 
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
 
                     /**
                      * 判断参数 ClusterStatus 是否已赋值
                      * @return ClusterStatus 是否已赋值
+                     * 
                      */
                     bool ClusterStatusHasBeenSet() const;
 

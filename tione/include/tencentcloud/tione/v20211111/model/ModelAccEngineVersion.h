@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelFormat 模型格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelFormat() const;
 
                     /**
                      * 设置模型格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelFormat 模型格式
+                     * @param _modelFormat 模型格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelFormat(const std::string& _modelFormat);
 
                     /**
                      * 判断参数 ModelFormat 是否已赋值
                      * @return ModelFormat 是否已赋值
+                     * 
                      */
                     bool ModelFormatHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineVersions 引擎版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EngineVersion> GetEngineVersions() const;
 
                     /**
                      * 设置引擎版本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EngineVersions 引擎版本信息
+                     * @param _engineVersions 引擎版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEngineVersions(const std::vector<EngineVersion>& _engineVersions);
 
                     /**
                      * 判断参数 EngineVersions 是否已赋值
                      * @return EngineVersions 是否已赋值
+                     * 
                      */
                     bool EngineVersionsHasBeenSet() const;
 

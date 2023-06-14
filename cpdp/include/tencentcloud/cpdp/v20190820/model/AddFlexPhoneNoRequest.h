@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取手机号
                      * @return PhoneNo 手机号
+                     * 
                      */
                     std::string GetPhoneNo() const;
 
                     /**
                      * 设置手机号
-                     * @param PhoneNo 手机号
+                     * @param _phoneNo 手机号
+                     * 
                      */
                     void SetPhoneNo(const std::string& _phoneNo);
 
                     /**
                      * 判断参数 PhoneNo 是否已赋值
                      * @return PhoneNo 是否已赋值
+                     * 
                      */
                     bool PhoneNoHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -98,17 +105,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

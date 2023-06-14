@@ -54,12 +54,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本类信息。（基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从Eidinfo参数中返回，如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoText GetText() const;
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -68,12 +70,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardData 身份证照片信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoIdCardData GetIdCardData() const;
 
                     /**
                      * 判断参数 IdCardData 是否已赋值
                      * @return IdCardData 是否已赋值
+                     * 
                      */
                     bool IdCardDataHasBeenSet() const;
 
@@ -82,12 +86,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BestFrame 最佳帧信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DetectInfoBestFrame GetBestFrame() const;
 
                     /**
                      * 判断参数 BestFrame 是否已赋值
                      * @return BestFrame 是否已赋值
+                     * 
                      */
                     bool BestFrameHasBeenSet() const;
 
@@ -96,12 +102,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EidInfo Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EidInfo GetEidInfo() const;
 
                     /**
                      * 判断参数 EidInfo 是否已赋值
                      * @return EidInfo 是否已赋值
+                     * 
                      */
                     bool EidInfoHasBeenSet() const;
 
@@ -110,12 +118,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntentionVerifyData 意愿核身朗读模式相关信息。若未使用意愿核身朗读功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntentionVerifyData GetIntentionVerifyData() const;
 
                     /**
                      * 判断参数 IntentionVerifyData 是否已赋值
                      * @return IntentionVerifyData 是否已赋值
+                     * 
                      */
                     bool IntentionVerifyDataHasBeenSet() const;
 
@@ -124,12 +134,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntentionQuestionResult 意愿核身问答模式相关信息。若未使用意愿核身问答模式功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntentionQuestionResult GetIntentionQuestionResult() const;
 
                     /**
                      * 判断参数 IntentionQuestionResult 是否已赋值
                      * @return IntentionQuestionResult 是否已赋值
+                     * 
                      */
                     bool IntentionQuestionResultHasBeenSet() const;
 

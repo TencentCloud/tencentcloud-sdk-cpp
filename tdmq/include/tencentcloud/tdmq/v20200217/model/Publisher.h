@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProducerId 生产者id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProducerId() const;
 
                     /**
                      * 设置生产者id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProducerId 生产者id
+                     * @param _producerId 生产者id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProducerId(const int64_t& _producerId);
 
                     /**
                      * 判断参数 ProducerId 是否已赋值
                      * @return ProducerId 是否已赋值
+                     * 
                      */
                     bool ProducerIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProducerName 生产者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProducerName() const;
 
                     /**
                      * 设置生产者名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProducerName 生产者名称
+                     * @param _producerName 生产者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProducerName(const std::string& _producerName);
 
                     /**
                      * 判断参数 ProducerName 是否已赋值
                      * @return ProducerName 是否已赋值
+                     * 
                      */
                     bool ProducerNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 生产者地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置生产者地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 生产者地址
+                     * @param _address 生产者地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientVersion 客户端版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientVersion() const;
 
                     /**
                      * 设置客户端版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientVersion 客户端版本
+                     * @param _clientVersion 客户端版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientVersion(const std::string& _clientVersion);
 
                     /**
                      * 判断参数 ClientVersion 是否已赋值
                      * @return ClientVersion 是否已赋值
+                     * 
                      */
                     bool ClientVersionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgRateIn 消息生产速率（条/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMsgRateIn() const;
 
                     /**
                      * 设置消息生产速率（条/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgRateIn 消息生产速率（条/秒）
+                     * @param _msgRateIn 消息生产速率（条/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgRateIn(const double& _msgRateIn);
 
                     /**
                      * 判断参数 MsgRateIn 是否已赋值
                      * @return MsgRateIn 是否已赋值
+                     * 
                      */
                     bool MsgRateInHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgThroughputIn 消息生产吞吐速率（字节/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMsgThroughputIn() const;
 
                     /**
                      * 设置消息生产吞吐速率（字节/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgThroughputIn 消息生产吞吐速率（字节/秒）
+                     * @param _msgThroughputIn 消息生产吞吐速率（字节/秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgThroughputIn(const double& _msgThroughputIn);
 
                     /**
                      * 判断参数 MsgThroughputIn 是否已赋值
                      * @return MsgThroughputIn 是否已赋值
+                     * 
                      */
                     bool MsgThroughputInHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AverageMsgSize 平均消息大小（字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAverageMsgSize() const;
 
                     /**
                      * 设置平均消息大小（字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AverageMsgSize 平均消息大小（字节）
+                     * @param _averageMsgSize 平均消息大小（字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAverageMsgSize(const double& _averageMsgSize);
 
                     /**
                      * 判断参数 AverageMsgSize 是否已赋值
                      * @return AverageMsgSize 是否已赋值
+                     * 
                      */
                     bool AverageMsgSizeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectedSince 连接时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectedSince() const;
 
                     /**
                      * 设置连接时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectedSince 连接时间
+                     * @param _connectedSince 连接时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectedSince(const std::string& _connectedSince);
 
                     /**
                      * 判断参数 ConnectedSince 是否已赋值
                      * @return ConnectedSince 是否已赋值
+                     * 
                      */
                     bool ConnectedSinceHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partition 生产者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPartition() const;
 
                     /**
                      * 设置生产者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partition 生产者连接的主题分区号
+                     * @param _partition 生产者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartition(const int64_t& _partition);
 
                     /**
                      * 判断参数 Partition 是否已赋值
                      * @return Partition 是否已赋值
+                     * 
                      */
                     bool PartitionHasBeenSet() const;
 

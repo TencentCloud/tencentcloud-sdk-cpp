@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取协议端口模板集合实例ID，例如：ppmg-2klmrefu。
                      * @return ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-2klmrefu。
+                     * 
                      */
                     std::string GetServiceTemplateGroupId() const;
 
                     /**
                      * 设置协议端口模板集合实例ID，例如：ppmg-2klmrefu。
-                     * @param ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-2klmrefu。
+                     * @param _serviceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-2klmrefu。
+                     * 
                      */
                     void SetServiceTemplateGroupId(const std::string& _serviceTemplateGroupId);
 
                     /**
                      * 判断参数 ServiceTemplateGroupId 是否已赋值
                      * @return ServiceTemplateGroupId 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupIdHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板集合名称。
                      * @return ServiceTemplateGroupName 协议端口模板集合名称。
+                     * 
                      */
                     std::string GetServiceTemplateGroupName() const;
 
                     /**
                      * 设置协议端口模板集合名称。
-                     * @param ServiceTemplateGroupName 协议端口模板集合名称。
+                     * @param _serviceTemplateGroupName 协议端口模板集合名称。
+                     * 
                      */
                     void SetServiceTemplateGroupName(const std::string& _serviceTemplateGroupName);
 
                     /**
                      * 判断参数 ServiceTemplateGroupName 是否已赋值
                      * @return ServiceTemplateGroupName 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupNameHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板实例ID。
                      * @return ServiceTemplateIdSet 协议端口模板实例ID。
+                     * 
                      */
                     std::vector<std::string> GetServiceTemplateIdSet() const;
 
                     /**
                      * 设置协议端口模板实例ID。
-                     * @param ServiceTemplateIdSet 协议端口模板实例ID。
+                     * @param _serviceTemplateIdSet 协议端口模板实例ID。
+                     * 
                      */
                     void SetServiceTemplateIdSet(const std::vector<std::string>& _serviceTemplateIdSet);
 
                     /**
                      * 判断参数 ServiceTemplateIdSet 是否已赋值
                      * @return ServiceTemplateIdSet 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateIdSetHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板实例信息。
                      * @return ServiceTemplateSet 协议端口模板实例信息。
+                     * 
                      */
                     std::vector<ServiceTemplate> GetServiceTemplateSet() const;
 
                     /**
                      * 设置协议端口模板实例信息。
-                     * @param ServiceTemplateSet 协议端口模板实例信息。
+                     * @param _serviceTemplateSet 协议端口模板实例信息。
+                     * 
                      */
                     void SetServiceTemplateSet(const std::vector<ServiceTemplate>& _serviceTemplateSet);
 
                     /**
                      * 判断参数 ServiceTemplateSet 是否已赋值
                      * @return ServiceTemplateSet 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateSetHasBeenSet() const;
 

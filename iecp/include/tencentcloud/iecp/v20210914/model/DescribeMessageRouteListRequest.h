@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Limit 无
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置无
-                     * @param Limit 无
+                     * @param _limit 无
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Offset 无
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置无
-                     * @param Offset 无
+                     * @param _offset 无
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Filter 无
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置无
-                     * @param Filter 无
+                     * @param _filter 无
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return StartTime 无
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置无
-                     * @param StartTime 无
+                     * @param _startTime 无
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return EndTime 无
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置无
-                     * @param EndTime 无
+                     * @param _endTime 无
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Order 无
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置无
-                     * @param Order 无
+                     * @param _order 无
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcUrl RTMP源站的TcUrl地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTcUrl() const;
 
                     /**
                      * 设置RTMP源站的TcUrl地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TcUrl RTMP源站的TcUrl地址。
+                     * @param _tcUrl RTMP源站的TcUrl地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTcUrl(const std::string& _tcUrl);
 
                     /**
                      * 判断参数 TcUrl 是否已赋值
                      * @return TcUrl 是否已赋值
+                     * 
                      */
                     bool TcUrlHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 RTMP源站地址拼接规则为：$TcUrl/$StreamKey。
                      * @return StreamKey RTMP源站的StreamKey。
 RTMP源站地址拼接规则为：$TcUrl/$StreamKey。
+                     * 
                      */
                     std::string GetStreamKey() const;
 
                     /**
                      * 设置RTMP源站的StreamKey。
 RTMP源站地址拼接规则为：$TcUrl/$StreamKey。
-                     * @param StreamKey RTMP源站的StreamKey。
+                     * @param _streamKey RTMP源站的StreamKey。
 RTMP源站地址拼接规则为：$TcUrl/$StreamKey。
+                     * 
                      */
                     void SetStreamKey(const std::string& _streamKey);
 
                     /**
                      * 判断参数 StreamKey 是否已赋值
                      * @return StreamKey 是否已赋值
+                     * 
                      */
                     bool StreamKeyHasBeenSet() const;
 

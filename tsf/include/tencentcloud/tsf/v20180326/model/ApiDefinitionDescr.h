@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取对象名称
                      * @return Name 对象名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置对象名称
-                     * @param Name 对象名称
+                     * @param _name 对象名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取对象属性列表
                      * @return Properties 对象属性列表
+                     * 
                      */
                     std::vector<PropertyField> GetProperties() const;
 
                     /**
                      * 设置对象属性列表
-                     * @param Properties 对象属性列表
+                     * @param _properties 对象属性列表
+                     * 
                      */
                     void SetProperties(const std::vector<PropertyField>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 

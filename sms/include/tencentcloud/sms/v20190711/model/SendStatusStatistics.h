@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
                      * @return FeeCount 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
+                     * 
                      */
                     uint64_t GetFeeCount() const;
 
                     /**
                      * 设置短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
-                     * @param FeeCount 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
+                     * @param _feeCount 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
+                     * 
                      */
                     void SetFeeCount(const uint64_t& _feeCount);
 
                     /**
                      * 判断参数 FeeCount 是否已赋值
                      * @return FeeCount 是否已赋值
+                     * 
                      */
                     bool FeeCountHasBeenSet() const;
 
                     /**
                      * 获取短信提交量统计。
                      * @return RequestCount 短信提交量统计。
+                     * 
                      */
                     uint64_t GetRequestCount() const;
 
                     /**
                      * 设置短信提交量统计。
-                     * @param RequestCount 短信提交量统计。
+                     * @param _requestCount 短信提交量统计。
+                     * 
                      */
                     void SetRequestCount(const uint64_t& _requestCount);
 
                     /**
                      * 判断参数 RequestCount 是否已赋值
                      * @return RequestCount 是否已赋值
+                     * 
                      */
                     bool RequestCountHasBeenSet() const;
 
                     /**
                      * 获取短信提交成功量统计。
                      * @return RequestSuccessCount 短信提交成功量统计。
+                     * 
                      */
                     uint64_t GetRequestSuccessCount() const;
 
                     /**
                      * 设置短信提交成功量统计。
-                     * @param RequestSuccessCount 短信提交成功量统计。
+                     * @param _requestSuccessCount 短信提交成功量统计。
+                     * 
                      */
                     void SetRequestSuccessCount(const uint64_t& _requestSuccessCount);
 
                     /**
                      * 判断参数 RequestSuccessCount 是否已赋值
                      * @return RequestSuccessCount 是否已赋值
+                     * 
                      */
                     bool RequestSuccessCountHasBeenSet() const;
 

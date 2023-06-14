@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取保底防护峰值，单位Gbps
                      * @return ProtectBandwidth 保底防护峰值，单位Gbps
+                     * 
                      */
                     uint64_t GetProtectBandwidth() const;
 
                     /**
                      * 设置保底防护峰值，单位Gbps
-                     * @param ProtectBandwidth 保底防护峰值，单位Gbps
+                     * @param _protectBandwidth 保底防护峰值，单位Gbps
+                     * 
                      */
                     void SetProtectBandwidth(const uint64_t& _protectBandwidth);
 
                     /**
                      * 判断参数 ProtectBandwidth 是否已赋值
                      * @return ProtectBandwidth 是否已赋值
+                     * 
                      */
                     bool ProtectBandwidthHasBeenSet() const;
 
                     /**
                      * 获取防护次数，单位次
                      * @return ProtectCountLimit 防护次数，单位次
+                     * 
                      */
                     uint64_t GetProtectCountLimit() const;
 
                     /**
                      * 设置防护次数，单位次
-                     * @param ProtectCountLimit 防护次数，单位次
+                     * @param _protectCountLimit 防护次数，单位次
+                     * 
                      */
                     void SetProtectCountLimit(const uint64_t& _protectCountLimit);
 
                     /**
                      * 判断参数 ProtectCountLimit 是否已赋值
                      * @return ProtectCountLimit 是否已赋值
+                     * 
                      */
                     bool ProtectCountLimitHasBeenSet() const;
 
                     /**
                      * 获取防护IP数，单位个
                      * @return ProtectIPNumberLimit 防护IP数，单位个
+                     * 
                      */
                     uint64_t GetProtectIPNumberLimit() const;
 
                     /**
                      * 设置防护IP数，单位个
-                     * @param ProtectIPNumberLimit 防护IP数，单位个
+                     * @param _protectIPNumberLimit 防护IP数，单位个
+                     * 
                      */
                     void SetProtectIPNumberLimit(const uint64_t& _protectIPNumberLimit);
 
                     /**
                      * 判断参数 ProtectIPNumberLimit 是否已赋值
                      * @return ProtectIPNumberLimit 是否已赋值
+                     * 
                      */
                     bool ProtectIPNumberLimitHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 0：没有开启自动续费
 1：开启了自动续费
 ]
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
@@ -117,16 +127,18 @@ namespace TencentCloud
 0：没有开启自动续费
 1：开启了自动续费
 ]
-                     * @param AutoRenewFlag 自动续费状态，取值[
+                     * @param _autoRenewFlag 自动续费状态，取值[
 0：没有开启自动续费
 1：开启了自动续费
 ]
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUnionPackFlag() const;
 
                     /**
                      * 设置联合产品标记，0代表普通高防包，1代表联合高防包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
+                     * @param _unionPackFlag 联合产品标记，0代表普通高防包，1代表联合高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnionPackFlag(const uint64_t& _unionPackFlag);
 
                     /**
                      * 判断参数 UnionPackFlag 是否已赋值
                      * @return UnionPackFlag 是否已赋值
+                     * 
                      */
                     bool UnionPackFlagHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceBandWidth 业务带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetServiceBandWidth() const;
 
                     /**
                      * 设置业务带宽
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceBandWidth 业务带宽
+                     * @param _serviceBandWidth 业务带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceBandWidth(const uint64_t& _serviceBandWidth);
 
                     /**
                      * 判断参数 ServiceBandWidth 是否已赋值
                      * @return ServiceBandWidth 是否已赋值
+                     * 
                      */
                     bool ServiceBandWidthHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BattleEditionFlag 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBattleEditionFlag() const;
 
                     /**
                      * 设置战斗服版本标记，0表示普通高防包，1表示战斗服高防包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BattleEditionFlag 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
+                     * @param _battleEditionFlag 战斗服版本标记，0表示普通高防包，1表示战斗服高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBattleEditionFlag(const uint64_t& _battleEditionFlag);
 
                     /**
                      * 判断参数 BattleEditionFlag 是否已赋值
                      * @return BattleEditionFlag 是否已赋值
+                     * 
                      */
                     bool BattleEditionFlagHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelEditionFlag 渠道版标记，0表示普通高防包，1表示渠道版高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetChannelEditionFlag() const;
 
                     /**
                      * 设置渠道版标记，0表示普通高防包，1表示渠道版高防包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelEditionFlag 渠道版标记，0表示普通高防包，1表示渠道版高防包
+                     * @param _channelEditionFlag 渠道版标记，0表示普通高防包，1表示渠道版高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelEditionFlag(const uint64_t& _channelEditionFlag);
 
                     /**
                      * 判断参数 ChannelEditionFlag 是否已赋值
                      * @return ChannelEditionFlag 是否已赋值
+                     * 
                      */
                     bool ChannelEditionFlagHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEnterpriseFlag() const;
 
                     /**
                      * 设置高防包企业版标记，0表示普通高防包；1表示企业版高防包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
+                     * @param _enterpriseFlag 高防包企业版标记，0表示普通高防包；1表示企业版高防包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnterpriseFlag(const uint64_t& _enterpriseFlag);
 
                     /**
                      * 判断参数 EnterpriseFlag 是否已赋值
                      * @return EnterpriseFlag 是否已赋值
+                     * 
                      */
                     bool EnterpriseFlagHasBeenSet() const;
 
@@ -245,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetElasticLimit() const;
 
                     /**
                      * 设置高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ElasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
+                     * @param _elasticLimit 高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetElasticLimit(const uint64_t& _elasticLimit);
 
                     /**
                      * 判断参数 ElasticLimit 是否已赋值
                      * @return ElasticLimit 是否已赋值
+                     * 
                      */
                     bool ElasticLimitHasBeenSet() const;
 
@@ -267,20 +297,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownGradeProtect 降配后的防护能力，单位Gbps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDownGradeProtect() const;
 
                     /**
                      * 设置降配后的防护能力，单位Gbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownGradeProtect 降配后的防护能力，单位Gbps
+                     * @param _downGradeProtect 降配后的防护能力，单位Gbps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownGradeProtect(const uint64_t& _downGradeProtect);
 
                     /**
                      * 判断参数 DownGradeProtect 是否已赋值
                      * @return DownGradeProtect 是否已赋值
+                     * 
                      */
                     bool DownGradeProtectHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取检测到的车辆 VIN 码。
                      * @return Vin 检测到的车辆 VIN 码。
+                     * 
                      */
                     std::string GetVin() const;
 
                     /**
                      * 判断参数 Vin 是否已赋值
                      * @return Vin 是否已赋值
+                     * 
                      */
                     bool VinHasBeenSet() const;
 

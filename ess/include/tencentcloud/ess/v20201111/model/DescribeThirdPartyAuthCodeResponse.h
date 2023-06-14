@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户是否实名，VERIFIED 为实名，UNVERIFIED 未实名
                      * @return VerifyStatus 用户是否实名，VERIFIED 为实名，UNVERIFIED 未实名
+                     * 
                      */
                     std::string GetVerifyStatus() const;
 
                     /**
                      * 判断参数 VerifyStatus 是否已赋值
                      * @return VerifyStatus 是否已赋值
+                     * 
                      */
                     bool VerifyStatusHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditRule 是否是规则审计。true-规则审计，false-全审计。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAuditRule() const;
 
                     /**
                      * 设置是否是规则审计。true-规则审计，false-全审计。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuditRule 是否是规则审计。true-规则审计，false-全审计。
+                     * @param _auditRule 是否是规则审计。true-规则审计，false-全审计。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuditRule(const bool& _auditRule);
 
                     /**
                      * 判断参数 AuditRule 是否已赋值
                      * @return AuditRule 是否已赋值
+                     * 
                      */
                     bool AuditRuleHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditRuleFilters 审计规则详情。仅当AuditRule=true时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
                      * 设置审计规则详情。仅当AuditRule=true时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuditRuleFilters 审计规则详情。仅当AuditRule=true时有效。
+                     * @param _auditRuleFilters 审计规则详情。仅当AuditRule=true时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
+                     * 
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 

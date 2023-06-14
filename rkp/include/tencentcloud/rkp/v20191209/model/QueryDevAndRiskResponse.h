@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取是否查得
                      * @return Found 是否查得
+                     * 
                      */
                     int64_t GetFound() const;
 
                     /**
                      * 判断参数 Found 是否已赋值
                      * @return Found 是否已赋值
+                     * 
                      */
                     bool FoundHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllCnt 匹配数量级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAllCnt() const;
 
                     /**
                      * 判断参数 AllCnt 是否已赋值
                      * @return AllCnt 是否已赋值
+                     * 
                      */
                     bool AllCntHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Matches 匹配到的设备信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DevInfoQ> GetMatches() const;
 
                     /**
                      * 判断参数 Matches 是否已赋值
                      * @return Matches 是否已赋值
+                     * 
                      */
                     bool MatchesHasBeenSet() const;
 

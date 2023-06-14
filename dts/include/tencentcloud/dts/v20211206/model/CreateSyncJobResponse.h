@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取同步任务ids
                      * @return JobIds 同步任务ids
+                     * 
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
                      * 判断参数 JobIds 是否已赋值
                      * @return JobIds 是否已赋值
+                     * 
                      */
                     bool JobIdsHasBeenSet() const;
 

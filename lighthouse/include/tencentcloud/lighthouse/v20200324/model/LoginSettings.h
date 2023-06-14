@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。
                      * @return KeyIds 密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
                      * 设置密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。
-                     * @param KeyIds 密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。
+                     * @param _keyIds 密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。
+                     * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
 
                     /**
                      * 判断参数 KeyIds 是否已赋值
                      * @return KeyIds 是否已赋值
+                     * 
                      */
                     bool KeyIdsHasBeenSet() const;
 

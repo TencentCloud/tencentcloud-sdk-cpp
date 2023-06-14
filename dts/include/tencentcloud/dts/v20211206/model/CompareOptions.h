@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @param _method 对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleRate 抽样比例;范围0,100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
                      * 设置抽样比例;范围0,100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SampleRate 抽样比例;范围0,100
+                     * @param _sampleRate 抽样比例;范围0,100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThreadCount 线程数，取值1-5，默认为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetThreadCount() const;
 
                     /**
                      * 设置线程数，取值1-5，默认为1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ThreadCount 线程数，取值1-5，默认为1
+                     * @param _threadCount 线程数，取值1-5，默认为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetThreadCount(const int64_t& _threadCount);
 
                     /**
                      * 判断参数 ThreadCount 是否已赋值
                      * @return ThreadCount 是否已赋值
+                     * 
                      */
                     bool ThreadCountHasBeenSet() const;
 

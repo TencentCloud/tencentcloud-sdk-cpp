@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取维度
                      * @return Content 维度
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置维度
-                     * @param Content 维度
+                     * @param _content 维度
+                     * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

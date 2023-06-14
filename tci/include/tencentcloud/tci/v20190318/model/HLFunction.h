@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取是否开启人脸检测
                      * @return EnableFaceDetect 是否开启人脸检测
+                     * 
                      */
                     bool GetEnableFaceDetect() const;
 
                     /**
                      * 设置是否开启人脸检测
-                     * @param EnableFaceDetect 是否开启人脸检测
+                     * @param _enableFaceDetect 是否开启人脸检测
+                     * 
                      */
                     void SetEnableFaceDetect(const bool& _enableFaceDetect);
 
                     /**
                      * 判断参数 EnableFaceDetect 是否已赋值
                      * @return EnableFaceDetect 是否已赋值
+                     * 
                      */
                     bool EnableFaceDetectHasBeenSet() const;
 
                     /**
                      * 获取是否开启表情识别
                      * @return EnableFaceExpression 是否开启表情识别
+                     * 
                      */
                     bool GetEnableFaceExpression() const;
 
                     /**
                      * 设置是否开启表情识别
-                     * @param EnableFaceExpression 是否开启表情识别
+                     * @param _enableFaceExpression 是否开启表情识别
+                     * 
                      */
                     void SetEnableFaceExpression(const bool& _enableFaceExpression);
 
                     /**
                      * 判断参数 EnableFaceExpression 是否已赋值
                      * @return EnableFaceExpression 是否已赋值
+                     * 
                      */
                     bool EnableFaceExpressionHasBeenSet() const;
 
                     /**
                      * 获取是否开启人脸检索
                      * @return EnableFaceIdent 是否开启人脸检索
+                     * 
                      */
                     bool GetEnableFaceIdent() const;
 
                     /**
                      * 设置是否开启人脸检索
-                     * @param EnableFaceIdent 是否开启人脸检索
+                     * @param _enableFaceIdent 是否开启人脸检索
+                     * 
                      */
                     void SetEnableFaceIdent(const bool& _enableFaceIdent);
 
                     /**
                      * 判断参数 EnableFaceIdent 是否已赋值
                      * @return EnableFaceIdent 是否已赋值
+                     * 
                      */
                     bool EnableFaceIdentHasBeenSet() const;
 
                     /**
                      * 获取是否开启视频集锦-老师关键字识别
                      * @return EnableKeywordWonderfulTime 是否开启视频集锦-老师关键字识别
+                     * 
                      */
                     bool GetEnableKeywordWonderfulTime() const;
 
                     /**
                      * 设置是否开启视频集锦-老师关键字识别
-                     * @param EnableKeywordWonderfulTime 是否开启视频集锦-老师关键字识别
+                     * @param _enableKeywordWonderfulTime 是否开启视频集锦-老师关键字识别
+                     * 
                      */
                     void SetEnableKeywordWonderfulTime(const bool& _enableKeywordWonderfulTime);
 
                     /**
                      * 判断参数 EnableKeywordWonderfulTime 是否已赋值
                      * @return EnableKeywordWonderfulTime 是否已赋值
+                     * 
                      */
                     bool EnableKeywordWonderfulTimeHasBeenSet() const;
 
                     /**
                      * 获取是否开启视频集锦-微笑识别
                      * @return EnableSmileWonderfulTime 是否开启视频集锦-微笑识别
+                     * 
                      */
                     bool GetEnableSmileWonderfulTime() const;
 
                     /**
                      * 设置是否开启视频集锦-微笑识别
-                     * @param EnableSmileWonderfulTime 是否开启视频集锦-微笑识别
+                     * @param _enableSmileWonderfulTime 是否开启视频集锦-微笑识别
+                     * 
                      */
                     void SetEnableSmileWonderfulTime(const bool& _enableSmileWonderfulTime);
 
                     /**
                      * 判断参数 EnableSmileWonderfulTime 是否已赋值
                      * @return EnableSmileWonderfulTime 是否已赋值
+                     * 
                      */
                     bool EnableSmileWonderfulTimeHasBeenSet() const;
 

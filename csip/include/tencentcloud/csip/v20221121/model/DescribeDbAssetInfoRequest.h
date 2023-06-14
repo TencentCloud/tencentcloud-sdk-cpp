@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资产id
                      * @return AssetId 资产id
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置资产id
-                     * @param AssetId 资产id
+                     * @param _assetId 资产id
+                     * 
                      */
                     void SetAssetId(const std::string& _assetId);
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 

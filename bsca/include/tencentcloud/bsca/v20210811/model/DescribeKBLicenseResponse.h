@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseList 许可证列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LicenseUnion> GetLicenseList() const;
 
                     /**
                      * 判断参数 LicenseList 是否已赋值
                      * @return LicenseList 是否已赋值
+                     * 
                      */
                     bool LicenseListHasBeenSet() const;
 
                     /**
                      * 获取用于匹配的License表达式
                      * @return NormalizedLicenseExpression 用于匹配的License表达式
+                     * 
                      */
                     std::string GetNormalizedLicenseExpression() const;
 
                     /**
                      * 判断参数 NormalizedLicenseExpression 是否已赋值
                      * @return NormalizedLicenseExpression 是否已赋值
+                     * 
                      */
                     bool NormalizedLicenseExpressionHasBeenSet() const;
 

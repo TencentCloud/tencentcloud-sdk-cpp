@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资产指纹类型id列表
                      * @return AssetTypeIds 资产指纹类型id列表
+                     * 
                      */
                     std::vector<uint64_t> GetAssetTypeIds() const;
 
                     /**
                      * 设置资产指纹类型id列表
-                     * @param AssetTypeIds 资产指纹类型id列表
+                     * @param _assetTypeIds 资产指纹类型id列表
+                     * 
                      */
                     void SetAssetTypeIds(const std::vector<uint64_t>& _assetTypeIds);
 
                     /**
                      * 判断参数 AssetTypeIds 是否已赋值
                      * @return AssetTypeIds 是否已赋值
+                     * 
                      */
                     bool AssetTypeIdsHasBeenSet() const;
 
                     /**
                      * 获取Quuid列表
                      * @return Quuids Quuid列表
+                     * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置Quuid列表
-                     * @param Quuids Quuid列表
+                     * @param _quuids Quuid列表
+                     * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
+                     * 
                      */
                     bool QuuidsHasBeenSet() const;
 

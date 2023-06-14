@@ -52,12 +52,14 @@ false：操作失败。
 true：操作成功。
 false：操作失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

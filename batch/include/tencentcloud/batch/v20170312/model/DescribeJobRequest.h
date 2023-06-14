@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取作业标识
                      * @return JobId 作业标识
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业标识
-                     * @param JobId 作业标识
+                     * @param _jobId 作业标识
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

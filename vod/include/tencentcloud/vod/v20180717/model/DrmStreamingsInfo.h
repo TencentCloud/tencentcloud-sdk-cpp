@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取保护类型为 SimpleAES 的转自适应码流模板 ID。
                      * @return SimpleAesDefinition 保护类型为 SimpleAES 的转自适应码流模板 ID。
+                     * 
                      */
                     uint64_t GetSimpleAesDefinition() const;
 
                     /**
                      * 设置保护类型为 SimpleAES 的转自适应码流模板 ID。
-                     * @param SimpleAesDefinition 保护类型为 SimpleAES 的转自适应码流模板 ID。
+                     * @param _simpleAesDefinition 保护类型为 SimpleAES 的转自适应码流模板 ID。
+                     * 
                      */
                     void SetSimpleAesDefinition(const uint64_t& _simpleAesDefinition);
 
                     /**
                      * 判断参数 SimpleAesDefinition 是否已赋值
                      * @return SimpleAesDefinition 是否已赋值
+                     * 
                      */
                     bool SimpleAesDefinitionHasBeenSet() const;
 
                     /**
                      * 获取保护类型为 Widevine 的转自适应码流模板 ID。
                      * @return WidevineDefinition 保护类型为 Widevine 的转自适应码流模板 ID。
+                     * 
                      */
                     uint64_t GetWidevineDefinition() const;
 
                     /**
                      * 设置保护类型为 Widevine 的转自适应码流模板 ID。
-                     * @param WidevineDefinition 保护类型为 Widevine 的转自适应码流模板 ID。
+                     * @param _widevineDefinition 保护类型为 Widevine 的转自适应码流模板 ID。
+                     * 
                      */
                     void SetWidevineDefinition(const uint64_t& _widevineDefinition);
 
                     /**
                      * 判断参数 WidevineDefinition 是否已赋值
                      * @return WidevineDefinition 是否已赋值
+                     * 
                      */
                     bool WidevineDefinitionHasBeenSet() const;
 
                     /**
                      * 获取保护类型为 FairPlay 的转自适应码流模板 ID。
                      * @return FairPlayDefinition 保护类型为 FairPlay 的转自适应码流模板 ID。
+                     * 
                      */
                     uint64_t GetFairPlayDefinition() const;
 
                     /**
                      * 设置保护类型为 FairPlay 的转自适应码流模板 ID。
-                     * @param FairPlayDefinition 保护类型为 FairPlay 的转自适应码流模板 ID。
+                     * @param _fairPlayDefinition 保护类型为 FairPlay 的转自适应码流模板 ID。
+                     * 
                      */
                     void SetFairPlayDefinition(const uint64_t& _fairPlayDefinition);
 
                     /**
                      * 判断参数 FairPlayDefinition 是否已赋值
                      * @return FairPlayDefinition 是否已赋值
+                     * 
                      */
                     bool FairPlayDefinitionHasBeenSet() const;
 

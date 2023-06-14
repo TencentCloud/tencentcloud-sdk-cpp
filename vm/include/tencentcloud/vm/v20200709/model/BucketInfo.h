@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云对象存储，存储桶名称
                      * @return Bucket 腾讯云对象存储，存储桶名称
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置腾讯云对象存储，存储桶名称
-                     * @param Bucket 腾讯云对象存储，存储桶名称
+                     * @param _bucket 腾讯云对象存储，存储桶名称
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取对象Key
                      * @return Object 对象Key
+                     * 
                      */
                     std::string GetObject() const;
 
                     /**
                      * 设置对象Key
-                     * @param Object 对象Key
+                     * @param _object 对象Key
+                     * 
                      */
                     void SetObject(const std::string& _object);
 
                     /**
                      * 判断参数 Object 是否已赋值
                      * @return Object 是否已赋值
+                     * 
                      */
                     bool ObjectHasBeenSet() const;
 

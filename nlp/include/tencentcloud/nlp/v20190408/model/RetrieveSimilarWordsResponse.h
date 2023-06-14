@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取召回的相似词数组。
                      * @return WordList 召回的相似词数组。
+                     * 
                      */
                     std::vector<std::string> GetWordList() const;
 
                     /**
                      * 判断参数 WordList 是否已赋值
                      * @return WordList 是否已赋值
+                     * 
                      */
                     bool WordListHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取服务器实例类型列表
                      * @return InstanceTypeList 服务器实例类型列表
+                     * 
                      */
                     std::vector<InstanceTypeInfo> GetInstanceTypeList() const;
 
                     /**
                      * 判断参数 InstanceTypeList 是否已赋值
                      * @return InstanceTypeList 是否已赋值
+                     * 
                      */
                     bool InstanceTypeListHasBeenSet() const;
 

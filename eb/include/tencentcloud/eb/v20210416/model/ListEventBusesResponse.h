@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件集信息
                      * @return EventBuses 事件集信息
+                     * 
                      */
                     std::vector<EventBus> GetEventBuses() const;
 
                     /**
                      * 判断参数 EventBuses 是否已赋值
                      * @return EventBuses 是否已赋值
+                     * 
                      */
                     bool EventBusesHasBeenSet() const;
 
                     /**
                      * 获取事件集总数
                      * @return TotalCount 事件集总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

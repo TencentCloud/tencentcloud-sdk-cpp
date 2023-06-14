@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取摄像头ID
                      * @return CameraId 摄像头ID
+                     * 
                      */
                     uint64_t GetCameraId() const;
 
                     /**
                      * 设置摄像头ID
-                     * @param CameraId 摄像头ID
+                     * @param _cameraId 摄像头ID
+                     * 
                      */
                     void SetCameraId(const uint64_t& _cameraId);
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取摄像头名称
                      * @return CameraName 摄像头名称
+                     * 
                      */
                     std::string GetCameraName() const;
 
                     /**
                      * 设置摄像头名称
-                     * @param CameraName 摄像头名称
+                     * @param _cameraName 摄像头名称
+                     * 
                      */
                     void SetCameraName(const std::string& _cameraName);
 
                     /**
                      * 判断参数 CameraName 是否已赋值
                      * @return CameraName 是否已赋值
+                     * 
                      */
                     bool CameraNameHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
                      * @return CameraFeature 摄像头功能:
 1: 人脸
 2: 人体
+                     * 
                      */
                     int64_t GetCameraFeature() const;
 
@@ -97,33 +104,38 @@ namespace TencentCloud
                      * 设置摄像头功能:
 1: 人脸
 2: 人体
-                     * @param CameraFeature 摄像头功能:
+                     * @param _cameraFeature 摄像头功能:
 1: 人脸
 2: 人体
+                     * 
                      */
                     void SetCameraFeature(const int64_t& _cameraFeature);
 
                     /**
                      * 判断参数 CameraFeature 是否已赋值
                      * @return CameraFeature 是否已赋值
+                     * 
                      */
                     bool CameraFeatureHasBeenSet() const;
 
                     /**
                      * 获取摄像头IP
                      * @return CameraIp 摄像头IP
+                     * 
                      */
                     std::string GetCameraIp() const;
 
                     /**
                      * 设置摄像头IP
-                     * @param CameraIp 摄像头IP
+                     * @param _cameraIp 摄像头IP
+                     * 
                      */
                     void SetCameraIp(const std::string& _cameraIp);
 
                     /**
                      * 判断参数 CameraIp 是否已赋值
                      * @return CameraIp 是否已赋值
+                     * 
                      */
                     bool CameraIpHasBeenSet() const;
 
@@ -148,6 +160,7 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 正常
+                     * 
                      */
                     int64_t GetCameraState() const;
 
@@ -162,7 +175,7 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 正常
-                     * @param CameraState 摄像头状态:
+                     * @param _cameraState 摄像头状态:
 0: 异常 (不再使用)
 1: 正常 (不再使用)
 10: 初始化
@@ -172,30 +185,35 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 正常
+                     * 
                      */
                     void SetCameraState(const int64_t& _cameraState);
 
                     /**
                      * 判断参数 CameraState 是否已赋值
                      * @return CameraState 是否已赋值
+                     * 
                      */
                     bool CameraStateHasBeenSet() const;
 
                     /**
                      * 获取点位列表
                      * @return Zones 点位列表
+                     * 
                      */
                     std::vector<BunkZone> GetZones() const;
 
                     /**
                      * 设置点位列表
-                     * @param Zones 点位列表
+                     * @param _zones 点位列表
+                     * 
                      */
                     void SetZones(const std::vector<BunkZone>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 
@@ -208,6 +226,7 @@ namespace TencentCloud
 130W(1280*960)
 200W(1920*1080)
 400W(2560*1440)
+                     * 
                      */
                     std::string GetPixel() const;
 
@@ -216,16 +235,18 @@ namespace TencentCloud
 130W(1280*960)
 200W(1920*1080)
 400W(2560*1440)
-                     * @param Pixel 像素:
+                     * @param _pixel 像素:
 130W(1280*960)
 200W(1920*1080)
 400W(2560*1440)
+                     * 
                      */
                     void SetPixel(const std::string& _pixel);
 
                     /**
                      * 判断参数 Pixel 是否已赋值
                      * @return Pixel 是否已赋值
+                     * 
                      */
                     bool PixelHasBeenSet() const;
 
@@ -234,20 +255,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTSP 相机Rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRTSP() const;
 
                     /**
                      * 设置相机Rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTSP 相机Rtsp地址
+                     * @param _rTSP 相机Rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTSP(const std::string& _rTSP);
 
                     /**
                      * 判断参数 RTSP 是否已赋值
                      * @return RTSP 是否已赋值
+                     * 
                      */
                     bool RTSPHasBeenSet() const;
 

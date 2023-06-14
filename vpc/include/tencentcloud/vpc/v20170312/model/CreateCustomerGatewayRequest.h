@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取对端网关名称，可任意命名，但不得超过60个字符。
                      * @return CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetCustomerGatewayName() const;
 
                     /**
                      * 设置对端网关名称，可任意命名，但不得超过60个字符。
-                     * @param CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * @param _customerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetCustomerGatewayName(const std::string& _customerGatewayName);
 
                     /**
                      * 判断参数 CustomerGatewayName 是否已赋值
                      * @return CustomerGatewayName 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取对端网关公网IP。
                      * @return IpAddress 对端网关公网IP。
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置对端网关公网IP。
-                     * @param IpAddress 对端网关公网IP。
+                     * @param _ipAddress 对端网关公网IP。
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
                     /**
                      * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
                      * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

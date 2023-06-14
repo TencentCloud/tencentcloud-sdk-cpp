@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取同步类型1.单表同步，2.解决方案
                      * @return SyncType 同步类型1.单表同步，2.解决方案
+                     * 
                      */
                     int64_t GetSyncType() const;
 
                     /**
                      * 设置同步类型1.单表同步，2.解决方案
-                     * @param SyncType 同步类型1.单表同步，2.解决方案
+                     * @param _syncType 同步类型1.单表同步，2.解决方案
+                     * 
                      */
                     void SetSyncType(const int64_t& _syncType);
 
                     /**
                      * 判断参数 SyncType 是否已赋值
                      * @return SyncType 是否已赋值
+                     * 
                      */
                     bool SyncTypeHasBeenSet() const;
 

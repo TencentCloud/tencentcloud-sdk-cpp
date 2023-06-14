@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取物理机ID
                      * @return InstanceId 物理机ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置物理机ID
-                     * @param InstanceId 物理机ID
+                     * @param _instanceId 物理机ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取带外IP
                      * @return OutBandIp 带外IP
+                     * 
                      */
                     std::string GetOutBandIp() const;
 
                     /**
                      * 设置带外IP
-                     * @param OutBandIp 带外IP
+                     * @param _outBandIp 带外IP
+                     * 
                      */
                     void SetOutBandIp(const std::string& _outBandIp);
 
                     /**
                      * 判断参数 OutBandIp 是否已赋值
                      * @return OutBandIp 是否已赋值
+                     * 
                      */
                     bool OutBandIpHasBeenSet() const;
 
                     /**
                      * 获取VPN的IP
                      * @return VpnIp VPN的IP
+                     * 
                      */
                     std::string GetVpnIp() const;
 
                     /**
                      * 设置VPN的IP
-                     * @param VpnIp VPN的IP
+                     * @param _vpnIp VPN的IP
+                     * 
                      */
                     void SetVpnIp(const std::string& _vpnIp);
 
                     /**
                      * 判断参数 VpnIp 是否已赋值
                      * @return VpnIp 是否已赋值
+                     * 
                      */
                     bool VpnIpHasBeenSet() const;
 
                     /**
                      * 获取VPN的端口
                      * @return VpnPort VPN的端口
+                     * 
                      */
                     uint64_t GetVpnPort() const;
 
                     /**
                      * 设置VPN的端口
-                     * @param VpnPort VPN的端口
+                     * @param _vpnPort VPN的端口
+                     * 
                      */
                     void SetVpnPort(const uint64_t& _vpnPort);
 
                     /**
                      * 判断参数 VpnPort 是否已赋值
                      * @return VpnPort 是否已赋值
+                     * 
                      */
                     bool VpnPortHasBeenSet() const;
 

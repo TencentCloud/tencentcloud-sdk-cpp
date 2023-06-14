@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。
                      * @return Name 播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。
-                     * @param Name 播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。
+                     * @param _name 播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 <li>Transcode：转码输出；</li>
 <li>Original：原始音视频。</li>
 默认为 AdaptiveDynamicStream。
+                     * 
                      */
                     std::string GetAudioVideoType() const;
 
@@ -100,17 +107,19 @@ namespace TencentCloud
 <li>Transcode：转码输出；</li>
 <li>Original：原始音视频。</li>
 默认为 AdaptiveDynamicStream。
-                     * @param AudioVideoType 播放的音视频类型，可选值：
+                     * @param _audioVideoType 播放的音视频类型，可选值：
 <li>AdaptiveDynamicStream：自适应码流输出；</li>
 <li>Transcode：转码输出；</li>
 <li>Original：原始音视频。</li>
 默认为 AdaptiveDynamicStream。
+                     * 
                      */
                     void SetAudioVideoType(const std::string& _audioVideoType);
 
                     /**
                      * 判断参数 AudioVideoType 是否已赋值
                      * @return AudioVideoType 是否已赋值
+                     * 
                      */
                     bool AudioVideoTypeHasBeenSet() const;
 
@@ -125,6 +134,7 @@ namespace TencentCloud
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
 当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
+                     * 
                      */
                     std::string GetDrmSwitch() const;
 
@@ -134,17 +144,19 @@ namespace TencentCloud
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
 当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
-                     * @param DrmSwitch 播放 DRM 保护的自适应码流开关：
+                     * @param _drmSwitch 播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
 当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
+                     * 
                      */
                     void SetDrmSwitch(const std::string& _drmSwitch);
 
                     /**
                      * 判断参数 DrmSwitch 是否已赋值
                      * @return DrmSwitch 是否已赋值
+                     * 
                      */
                     bool DrmSwitchHasBeenSet() const;
 
@@ -155,6 +167,7 @@ namespace TencentCloud
                      * @return AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
+                     * 
                      */
                     uint64_t GetAdaptiveDynamicStreamingDefinition() const;
 
@@ -162,15 +175,17 @@ namespace TencentCloud
                      * 设置允许输出的未加密的自适应码流模板 ID。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
-                     * @param AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID。
+                     * @param _adaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
+                     * 
                      */
                     void SetAdaptiveDynamicStreamingDefinition(const uint64_t& _adaptiveDynamicStreamingDefinition);
 
                     /**
                      * 判断参数 AdaptiveDynamicStreamingDefinition 是否已赋值
                      * @return AdaptiveDynamicStreamingDefinition 是否已赋值
+                     * 
                      */
                     bool AdaptiveDynamicStreamingDefinitionHasBeenSet() const;
 
@@ -181,6 +196,7 @@ namespace TencentCloud
                      * @return DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
+                     * 
                      */
                     DrmStreamingsInfo GetDrmStreamingsInfo() const;
 
@@ -188,15 +204,17 @@ namespace TencentCloud
                      * 设置允许输出的 DRM 自适应码流模板内容。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
-                     * @param DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容。
+                     * @param _drmStreamingsInfo 允许输出的 DRM 自适应码流模板内容。
 
 当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
+                     * 
                      */
                     void SetDrmStreamingsInfo(const DrmStreamingsInfo& _drmStreamingsInfo);
 
                     /**
                      * 判断参数 DrmStreamingsInfo 是否已赋值
                      * @return DrmStreamingsInfo 是否已赋值
+                     * 
                      */
                     bool DrmStreamingsInfoHasBeenSet() const;
 
@@ -207,6 +225,7 @@ namespace TencentCloud
                      * @return TranscodeDefinition 允许输出的转码模板 ID。
 
 当 AudioVideoType 为 Transcode 时必填。
+                     * 
                      */
                     uint64_t GetTranscodeDefinition() const;
 
@@ -214,33 +233,38 @@ namespace TencentCloud
                      * 设置允许输出的转码模板 ID。
 
 当 AudioVideoType 为 Transcode 时必填。
-                     * @param TranscodeDefinition 允许输出的转码模板 ID。
+                     * @param _transcodeDefinition 允许输出的转码模板 ID。
 
 当 AudioVideoType 为 Transcode 时必填。
+                     * 
                      */
                     void SetTranscodeDefinition(const uint64_t& _transcodeDefinition);
 
                     /**
                      * 判断参数 TranscodeDefinition 是否已赋值
                      * @return TranscodeDefinition 是否已赋值
+                     * 
                      */
                     bool TranscodeDefinitionHasBeenSet() const;
 
                     /**
                      * 获取允许输出的雪碧图模板 ID。
                      * @return ImageSpriteDefinition 允许输出的雪碧图模板 ID。
+                     * 
                      */
                     uint64_t GetImageSpriteDefinition() const;
 
                     /**
                      * 设置允许输出的雪碧图模板 ID。
-                     * @param ImageSpriteDefinition 允许输出的雪碧图模板 ID。
+                     * @param _imageSpriteDefinition 允许输出的雪碧图模板 ID。
+                     * 
                      */
                     void SetImageSpriteDefinition(const uint64_t& _imageSpriteDefinition);
 
                     /**
                      * 判断参数 ImageSpriteDefinition 是否已赋值
                      * @return ImageSpriteDefinition 是否已赋值
+                     * 
                      */
                     bool ImageSpriteDefinitionHasBeenSet() const;
 
@@ -261,6 +285,7 @@ namespace TencentCloud
 <li>MinEdgeLength：1440，Name：2K；</li>
 <li>MinEdgeLength：2160，Name：4K；</li>
 <li>MinEdgeLength：4320，Name：8K。</li>
+                     * 
                      */
                     std::vector<ResolutionNameInfo> GetResolutionNames() const;
 
@@ -273,7 +298,7 @@ namespace TencentCloud
 <li>MinEdgeLength：1440，Name：2K；</li>
 <li>MinEdgeLength：2160，Name：4K；</li>
 <li>MinEdgeLength：4320，Name：8K。</li>
-                     * @param ResolutionNames 播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * @param _resolutionNames 播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>
@@ -281,30 +306,35 @@ namespace TencentCloud
 <li>MinEdgeLength：1440，Name：2K；</li>
 <li>MinEdgeLength：2160，Name：4K；</li>
 <li>MinEdgeLength：4320，Name：8K。</li>
+                     * 
                      */
                     void SetResolutionNames(const std::vector<ResolutionNameInfo>& _resolutionNames);
 
                     /**
                      * 判断参数 ResolutionNames 是否已赋值
                      * @return ResolutionNames 是否已赋值
+                     * 
                      */
                     bool ResolutionNamesHasBeenSet() const;
 
                     /**
                      * 获取播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
                      * @return Domain 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
-                     * @param Domain 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     * @param _domain 播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -315,6 +345,7 @@ namespace TencentCloud
                      * @return Scheme 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
 <li>HTTP；</li>
 <li>HTTPS。</li>
+                     * 
                      */
                     std::string GetScheme() const;
 
@@ -322,33 +353,38 @@ namespace TencentCloud
                      * 设置播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
 <li>HTTP；</li>
 <li>HTTPS。</li>
-                     * @param Scheme 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
+                     * @param _scheme 播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：
 <li>HTTP；</li>
 <li>HTTPS。</li>
+                     * 
                      */
                     void SetScheme(const std::string& _scheme);
 
                     /**
                      * 判断参数 Scheme 是否已赋值
                      * @return Scheme 是否已赋值
+                     * 
                      */
                     bool SchemeHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息，长度限制：256 个字符。
                      * @return Comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息，长度限制：256 个字符。
-                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     * @param _comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取搜索模板
                      * @return SearchTemplate 搜索模板
+                     * 
                      */
                     SearchTemplate GetSearchTemplate() const;
 
                     /**
                      * 设置搜索模板
-                     * @param SearchTemplate 搜索模板
+                     * @param _searchTemplate 搜索模板
+                     * 
                      */
                     void SetSearchTemplate(const SearchTemplate& _searchTemplate);
 
                     /**
                      * 判断参数 SearchTemplate 是否已赋值
                      * @return SearchTemplate 是否已赋值
+                     * 
                      */
                     bool SearchTemplateHasBeenSet() const;
 

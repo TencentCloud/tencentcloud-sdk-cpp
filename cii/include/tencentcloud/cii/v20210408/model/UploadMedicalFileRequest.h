@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
                      * @return File 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
+                     * 
                      */
                     std::string GetFile() const;
 
                     /**
                      * 设置文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
-                     * @param File 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
+                     * @param _file 文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。
+                     * 
                      */
                     void SetFile(const std::string& _file);
 
                     /**
                      * 判断参数 File 是否已赋值
                      * @return File 是否已赋值
+                     * 
                      */
                     bool FileHasBeenSet() const;
 
                     /**
                      * 获取文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
                      * @return FileURL 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
+                     * 
                      */
                     std::string GetFileURL() const;
 
                     /**
                      * 设置文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
-                     * @param FileURL 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
+                     * @param _fileURL 文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。
+                     * 
                      */
                     void SetFileURL(const std::string& _fileURL);
 
                     /**
                      * 判断参数 FileURL 是否已赋值
                      * @return FileURL 是否已赋值
+                     * 
                      */
                     bool FileURLHasBeenSet() const;
 

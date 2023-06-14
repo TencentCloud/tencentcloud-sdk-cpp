@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取操作结果；true表示成功；false表示失败
                      * @return Result 操作结果；true表示成功；false表示失败
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 设置操作结果；true表示成功；false表示失败
-                     * @param Result 操作结果；true表示成功；false表示失败
+                     * @param _result 操作结果；true表示成功；false表示失败
+                     * 
                      */
                     void SetResult(const bool& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorId 错误编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorId() const;
 
                     /**
                      * 设置错误编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorId 错误编号
+                     * @param _errorId 错误编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorId(const std::string& _errorId);
 
                     /**
                      * 判断参数 ErrorId 是否已赋值
                      * @return ErrorId 是否已赋值
+                     * 
                      */
                     bool ErrorIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorDesc 操作信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorDesc() const;
 
                     /**
                      * 设置操作信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorDesc 操作信息
+                     * @param _errorDesc 操作信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorDesc(const std::string& _errorDesc);
 
                     /**
                      * 判断参数 ErrorDesc 是否已赋值
                      * @return ErrorDesc 是否已赋值
+                     * 
                      */
                     bool ErrorDescHasBeenSet() const;
 

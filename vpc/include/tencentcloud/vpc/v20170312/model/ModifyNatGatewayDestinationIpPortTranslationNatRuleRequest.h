@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关的ID，形如：`nat-df45454`。
                      * @return NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID，形如：`nat-df45454`。
-                     * @param NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * @param _natGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取源NAT网关的端口转换规则。
                      * @return SourceNatRule 源NAT网关的端口转换规则。
+                     * 
                      */
                     DestinationIpPortTranslationNatRule GetSourceNatRule() const;
 
                     /**
                      * 设置源NAT网关的端口转换规则。
-                     * @param SourceNatRule 源NAT网关的端口转换规则。
+                     * @param _sourceNatRule 源NAT网关的端口转换规则。
+                     * 
                      */
                     void SetSourceNatRule(const DestinationIpPortTranslationNatRule& _sourceNatRule);
 
                     /**
                      * 判断参数 SourceNatRule 是否已赋值
                      * @return SourceNatRule 是否已赋值
+                     * 
                      */
                     bool SourceNatRuleHasBeenSet() const;
 
                     /**
                      * 获取目的NAT网关的端口转换规则。
                      * @return DestinationNatRule 目的NAT网关的端口转换规则。
+                     * 
                      */
                     DestinationIpPortTranslationNatRule GetDestinationNatRule() const;
 
                     /**
                      * 设置目的NAT网关的端口转换规则。
-                     * @param DestinationNatRule 目的NAT网关的端口转换规则。
+                     * @param _destinationNatRule 目的NAT网关的端口转换规则。
+                     * 
                      */
                     void SetDestinationNatRule(const DestinationIpPortTranslationNatRule& _destinationNatRule);
 
                     /**
                      * 判断参数 DestinationNatRule 是否已赋值
                      * @return DestinationNatRule 是否已赋值
+                     * 
                      */
                     bool DestinationNatRuleHasBeenSet() const;
 

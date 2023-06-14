@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取规则名称,长度不超过128英文字符
                      * @return RuleName 规则名称,长度不超过128英文字符
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称,长度不超过128英文字符
-                     * @param RuleName 规则名称,长度不超过128英文字符
+                     * @param _ruleName 规则名称,长度不超过128英文字符
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则Id
                      * @return RuleId 规则Id
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则Id
-                     * @param RuleId 规则Id
+                     * @param _ruleId 规则Id
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取规则类型 [0:系统|1:自定义]
                      * @return RuleType 规则类型 [0:系统|1:自定义]
+                     * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
                      * 设置规则类型 [0:系统|1:自定义]
-                     * @param RuleType 规则类型 [0:系统|1:自定义]
+                     * @param _ruleType 规则类型 [0:系统|1:自定义]
+                     * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
                     /**
                      * 获取规则分类
                      * @return CategoryId 规则分类
+                     * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置规则分类
-                     * @param CategoryId 规则分类
+                     * @param _categoryId 规则分类
+                     * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取规则描述
                      * @return RuleDesc 规则描述
+                     * 
                      */
                     std::string GetRuleDesc() const;
 
                     /**
                      * 设置规则描述
-                     * @param RuleDesc 规则描述
+                     * @param _ruleDesc 规则描述
+                     * 
                      */
                     void SetRuleDesc(const std::string& _ruleDesc);
 
                     /**
                      * 判断参数 RuleDesc 是否已赋值
                      * @return RuleDesc 是否已赋值
+                     * 
                      */
                     bool RuleDescHasBeenSet() const;
 
                     /**
                      * 获取主机数
                      * @return HostCount 主机数
+                     * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置主机数
-                     * @param HostCount 主机数
+                     * @param _hostCount 主机数
+                     * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
                     /**
                      * 获取适配项ID列表
                      * @return Items 适配项ID列表
+                     * 
                      */
                     std::vector<Item> GetItems() const;
 
                     /**
                      * 设置适配项ID列表
-                     * @param Items 适配项ID列表
+                     * @param _items 适配项ID列表
+                     * 
                      */
                     void SetItems(const std::vector<Item>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType [0:所有专业版旗舰版|1:hostID|2:ip]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAssetType() const;
 
                     /**
                      * 设置[0:所有专业版旗舰版|1:hostID|2:ip]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetType [0:所有专业版旗舰版|1:hostID|2:ip]
+                     * @param _assetType [0:所有专业版旗舰版|1:hostID|2:ip]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetType(const int64_t& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -200,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIds 主机Id集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
                      * 设置主机Id集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostIds 主机Id集合
+                     * @param _hostIds 主机Id集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
 
                     /**
                      * 判断参数 HostIds 是否已赋值
                      * @return HostIds 是否已赋值
+                     * 
                      */
                     bool HostIdsHasBeenSet() const;
 
@@ -222,20 +249,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIps 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHostIps() const;
 
                     /**
                      * 设置主机IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostIps 主机IP
+                     * @param _hostIps 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostIps(const std::vector<std::string>& _hostIps);
 
                     /**
                      * 判断参数 HostIps 是否已赋值
                      * @return HostIps 是否已赋值
+                     * 
                      */
                     bool HostIpsHasBeenSet() const;
 

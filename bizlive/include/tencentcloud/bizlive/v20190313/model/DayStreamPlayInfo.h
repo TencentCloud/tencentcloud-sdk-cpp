@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取带宽（单位Mbps）。
                      * @return Bandwidth 带宽（单位Mbps）。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽（单位Mbps）。
-                     * @param Bandwidth 带宽（单位Mbps）。
+                     * @param _bandwidth 带宽（单位Mbps）。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取流量 （单位MB）。
                      * @return Flux 流量 （单位MB）。
+                     * 
                      */
                     double GetFlux() const;
 
                     /**
                      * 设置流量 （单位MB）。
-                     * @param Flux 流量 （单位MB）。
+                     * @param _flux 流量 （单位MB）。
+                     * 
                      */
                     void SetFlux(const double& _flux);
 
                     /**
                      * 判断参数 Flux 是否已赋值
                      * @return Flux 是否已赋值
+                     * 
                      */
                     bool FluxHasBeenSet() const;
 
                     /**
                      * 获取在线人数。
                      * @return Online 在线人数。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置在线人数。
-                     * @param Online 在线人数。
+                     * @param _online 在线人数。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
                     /**
                      * 获取请求数。
                      * @return Request 请求数。
+                     * 
                      */
                     uint64_t GetRequest() const;
 
                     /**
                      * 设置请求数。
-                     * @param Request 请求数。
+                     * @param _request 请求数。
+                     * 
                      */
                     void SetRequest(const uint64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
                     /**
                      * 获取数据时间点，格式：yyyy-mm-dd HH:MM:SS。
                      * @return Time 数据时间点，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置数据时间点，格式：yyyy-mm-dd HH:MM:SS。
-                     * @param Time 数据时间点，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param _time 数据时间点，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

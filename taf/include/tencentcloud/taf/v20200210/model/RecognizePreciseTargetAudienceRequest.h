@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取业务数据
                      * @return BspData 业务数据
+                     * 
                      */
                     InputRecognizeTargetAudience GetBspData() const;
 
                     /**
                      * 设置业务数据
-                     * @param BspData 业务数据
+                     * @param _bspData 业务数据
+                     * 
                      */
                     void SetBspData(const InputRecognizeTargetAudience& _bspData);
 
                     /**
                      * 判断参数 BspData 是否已赋值
                      * @return BspData 是否已赋值
+                     * 
                      */
                     bool BspDataHasBeenSet() const;
 

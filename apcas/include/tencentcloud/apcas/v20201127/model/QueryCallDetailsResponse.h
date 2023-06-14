@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取调用明细
                      * @return CallDetails 调用明细
+                     * 
                      */
                     CallDetails GetCallDetails() const;
 
                     /**
                      * 判断参数 CallDetails 是否已赋值
                      * @return CallDetails 是否已赋值
+                     * 
                      */
                     bool CallDetailsHasBeenSet() const;
 

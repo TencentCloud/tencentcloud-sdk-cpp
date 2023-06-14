@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取签署流程编号
                      * @return FlowId 签署流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程编号
-                     * @param FlowId 签署流程编号
+                     * @param _flowId 签署流程编号
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取撤回原因，最大不超过200字符
                      * @return CancelMessage 撤回原因，最大不超过200字符
+                     * 
                      */
                     std::string GetCancelMessage() const;
 
                     /**
                      * 设置撤回原因，最大不超过200字符
-                     * @param CancelMessage 撤回原因，最大不超过200字符
+                     * @param _cancelMessage 撤回原因，最大不超过200字符
+                     * 
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
 
                     /**
                      * 判断参数 CancelMessage 是否已赋值
                      * @return CancelMessage 是否已赋值
+                     * 
                      */
                     bool CancelMessageHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 1 只保留身份信息：展示为【发起方】
 2 保留身份信息+企业名称：展示为【发起方xxx公司】
 3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     * 
                      */
                     int64_t GetCancelMessageFormat() const;
 
@@ -118,35 +128,40 @@ namespace TencentCloud
 1 只保留身份信息：展示为【发起方】
 2 保留身份信息+企业名称：展示为【发起方xxx公司】
 3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
-                     * @param CancelMessageFormat 撤销理由自定义格式；选项：
+                     * @param _cancelMessageFormat 撤销理由自定义格式；选项：
 0 默认格式
 1 只保留身份信息：展示为【发起方】
 2 保留身份信息+企业名称：展示为【发起方xxx公司】
 3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     * 
                      */
                     void SetCancelMessageFormat(const int64_t& _cancelMessageFormat);
 
                     /**
                      * 判断参数 CancelMessageFormat 是否已赋值
                      * @return CancelMessageFormat 是否已赋值
+                     * 
                      */
                     bool CancelMessageFormatHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

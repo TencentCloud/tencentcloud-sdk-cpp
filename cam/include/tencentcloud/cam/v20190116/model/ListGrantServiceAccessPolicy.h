@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略名
                      * @return PolicyName 策略名
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名
-                     * @param PolicyName 策略名
+                     * @param _policyName 策略名
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取策略类型: Custom自定义策略，Presetting预设策略
                      * @return PolicyType 策略类型: Custom自定义策略，Presetting预设策略
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型: Custom自定义策略，Presetting预设策略
-                     * @param PolicyType 策略类型: Custom自定义策略，Presetting预设策略
+                     * @param _policyType 策略类型: Custom自定义策略，Presetting预设策略
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取策略描述
                      * @return PolicyDescription 策略描述
+                     * 
                      */
                     std::string GetPolicyDescription() const;
 
                     /**
                      * 设置策略描述
-                     * @param PolicyDescription 策略描述
+                     * @param _policyDescription 策略描述
+                     * 
                      */
                     void SetPolicyDescription(const std::string& _policyDescription);
 
                     /**
                      * 判断参数 PolicyDescription 是否已赋值
                      * @return PolicyDescription 是否已赋值
+                     * 
                      */
                     bool PolicyDescriptionHasBeenSet() const;
 

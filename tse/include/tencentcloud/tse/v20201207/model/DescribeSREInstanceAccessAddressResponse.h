@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取内网访问地址
                      * @return IntranetAddress 内网访问地址
+                     * 
                      */
                     std::string GetIntranetAddress() const;
 
                     /**
                      * 判断参数 IntranetAddress 是否已赋值
                      * @return IntranetAddress 是否已赋值
+                     * 
                      */
                     bool IntranetAddressHasBeenSet() const;
 
                     /**
                      * 获取公网访问地址
                      * @return InternetAddress 公网访问地址
+                     * 
                      */
                     std::string GetInternetAddress() const;
 
                     /**
                      * 判断参数 InternetAddress 是否已赋值
                      * @return InternetAddress 是否已赋值
+                     * 
                      */
                     bool InternetAddressHasBeenSet() const;
 
                     /**
                      * 获取apollo多环境公网ip
                      * @return EnvAddressInfos apollo多环境公网ip
+                     * 
                      */
                     std::vector<EnvAddressInfo> GetEnvAddressInfos() const;
 
                     /**
                      * 判断参数 EnvAddressInfos 是否已赋值
                      * @return EnvAddressInfos 是否已赋值
+                     * 
                      */
                     bool EnvAddressInfosHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleInternetAddress 控制台公网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConsoleInternetAddress() const;
 
                     /**
                      * 判断参数 ConsoleInternetAddress 是否已赋值
                      * @return ConsoleInternetAddress 是否已赋值
+                     * 
                      */
                     bool ConsoleInternetAddressHasBeenSet() const;
 
@@ -100,12 +108,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleIntranetAddress 控制台内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConsoleIntranetAddress() const;
 
                     /**
                      * 判断参数 ConsoleIntranetAddress 是否已赋值
                      * @return ConsoleIntranetAddress 是否已赋值
+                     * 
                      */
                     bool ConsoleIntranetAddressHasBeenSet() const;
 
@@ -114,12 +124,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetBandWidth 客户端公网带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInternetBandWidth() const;
 
                     /**
                      * 判断参数 InternetBandWidth 是否已赋值
                      * @return InternetBandWidth 是否已赋值
+                     * 
                      */
                     bool InternetBandWidthHasBeenSet() const;
 
@@ -128,12 +140,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleInternetBandWidth 控制台公网带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetConsoleInternetBandWidth() const;
 
                     /**
                      * 判断参数 ConsoleInternetBandWidth 是否已赋值
                      * @return ConsoleInternetBandWidth 是否已赋值
+                     * 
                      */
                     bool ConsoleInternetBandWidthHasBeenSet() const;
 
@@ -142,12 +156,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimiterAddressInfos 北极星限流server节点接入IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PolarisLimiterAddress> GetLimiterAddressInfos() const;
 
                     /**
                      * 判断参数 LimiterAddressInfos 是否已赋值
                      * @return LimiterAddressInfos 是否已赋值
+                     * 
                      */
                     bool LimiterAddressInfosHasBeenSet() const;
 

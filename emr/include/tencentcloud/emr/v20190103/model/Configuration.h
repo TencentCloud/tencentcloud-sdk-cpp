@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。
                      * @return Classification 配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。
+                     * 
                      */
                     std::string GetClassification() const;
 
                     /**
                      * 设置配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。
-                     * @param Classification 配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。
+                     * @param _classification 配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。
+                     * 
                      */
                     void SetClassification(const std::string& _classification);
 
                     /**
                      * 判断参数 Classification 是否已赋值
                      * @return Classification 是否已赋值
+                     * 
                      */
                     bool ClassificationHasBeenSet() const;
 
                     /**
                      * 获取配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键"content"传入所有内容。
                      * @return Properties 配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键"content"传入所有内容。
+                     * 
                      */
                     std::string GetProperties() const;
 
                     /**
                      * 设置配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键"content"传入所有内容。
-                     * @param Properties 配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键"content"传入所有内容。
+                     * @param _properties 配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键"content"传入所有内容。
+                     * 
                      */
                     void SetProperties(const std::string& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 

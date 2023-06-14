@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取订单编号
                      * @return OrderId 订单编号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单编号
-                     * @param OrderId 订单编号
+                     * @param _orderId 订单编号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取下载数量：1~10
                      * @return Quantity 下载数量：1~10
+                     * 
                      */
                     uint64_t GetQuantity() const;
 
                     /**
                      * 设置下载数量：1~10
-                     * @param Quantity 下载数量：1~10
+                     * @param _quantity 下载数量：1~10
+                     * 
                      */
                     void SetQuantity(const uint64_t& _quantity);
 
                     /**
                      * 判断参数 Quantity 是否已赋值
                      * @return Quantity 是否已赋值
+                     * 
                      */
                     bool QuantityHasBeenSet() const;
 

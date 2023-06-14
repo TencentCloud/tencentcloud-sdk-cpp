@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取维修任务ID
                      * @return TaskId 维修任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置维修任务ID
-                     * @param TaskId 维修任务ID
+                     * @param _taskId 维修任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取排序字段，目前支持：OperationTime
                      * @return OrderField 排序字段，目前支持：OperationTime
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段，目前支持：OperationTime
-                     * @param OrderField 排序字段，目前支持：OperationTime
+                     * @param _orderField 排序字段，目前支持：OperationTime
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方式 0:递增(默认) 1:递减
                      * @return Order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
                      * 设置排序方式 0:递增(默认) 1:递减
-                     * @param Order 排序方式 0:递增(默认) 1:递减
+                     * @param _order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     void SetOrder(const uint64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 高级配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高级配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 高级配置名称。
+                     * @param _name 高级配置名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -77,6 +80,7 @@ off：不支持
 on：支持
 off：不支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
@@ -85,16 +89,18 @@ off：不支持
 on：支持
 off：不支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 是否支持高级配置，
+                     * @param _value 是否支持高级配置，
 on：支持
 off：不支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

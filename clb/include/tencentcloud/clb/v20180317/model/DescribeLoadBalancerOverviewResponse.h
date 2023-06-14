@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡总数
                      * @return TotalCount 负载均衡总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取运行中的负载均衡数目
                      * @return RunningCount 运行中的负载均衡数目
+                     * 
                      */
                     int64_t GetRunningCount() const;
 
                     /**
                      * 判断参数 RunningCount 是否已赋值
                      * @return RunningCount 是否已赋值
+                     * 
                      */
                     bool RunningCountHasBeenSet() const;
 
                     /**
                      * 获取隔离中的负载均衡数目
                      * @return IsolationCount 隔离中的负载均衡数目
+                     * 
                      */
                     int64_t GetIsolationCount() const;
 
                     /**
                      * 判断参数 IsolationCount 是否已赋值
                      * @return IsolationCount 是否已赋值
+                     * 
                      */
                     bool IsolationCountHasBeenSet() const;
 
                     /**
                      * 获取即将到期的负载均衡数目
                      * @return WillExpireCount 即将到期的负载均衡数目
+                     * 
                      */
                     int64_t GetWillExpireCount() const;
 
                     /**
                      * 判断参数 WillExpireCount 是否已赋值
                      * @return WillExpireCount 是否已赋值
+                     * 
                      */
                     bool WillExpireCountHasBeenSet() const;
 

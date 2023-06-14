@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务标识ID,可以用与追溯任务状态，查看任务结果
                      * @return TaskID 任务标识ID,可以用与追溯任务状态，查看任务结果
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
                     /**
                      * 获取预估处理时间，单位为秒
                      * @return EstimatedProcessingTime 预估处理时间，单位为秒
+                     * 
                      */
                     double GetEstimatedProcessingTime() const;
 
                     /**
                      * 判断参数 EstimatedProcessingTime 是否已赋值
                      * @return EstimatedProcessingTime 是否已赋值
+                     * 
                      */
                     bool EstimatedProcessingTimeHasBeenSet() const;
 

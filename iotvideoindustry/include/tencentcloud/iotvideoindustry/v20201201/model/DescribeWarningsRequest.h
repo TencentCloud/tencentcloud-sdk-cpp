@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序
                      * @return OrderType 1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序
-                     * @param OrderType 1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序
+                     * @param _orderType 1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取可选设备id
                      * @return DeviceId 可选设备id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置可选设备id
-                     * @param DeviceId 可选设备id
+                     * @param _deviceId 可选设备id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取如果不传则查询所有，取值参见配置
                      * @return WarnLevelArray 如果不传则查询所有，取值参见配置
+                     * 
                      */
                     std::vector<int64_t> GetWarnLevelArray() const;
 
                     /**
                      * 设置如果不传则查询所有，取值参见配置
-                     * @param WarnLevelArray 如果不传则查询所有，取值参见配置
+                     * @param _warnLevelArray 如果不传则查询所有，取值参见配置
+                     * 
                      */
                     void SetWarnLevelArray(const std::vector<int64_t>& _warnLevelArray);
 
                     /**
                      * 判断参数 WarnLevelArray 是否已赋值
                      * @return WarnLevelArray 是否已赋值
+                     * 
                      */
                     bool WarnLevelArrayHasBeenSet() const;
 
                     /**
                      * 获取如果不传则查询所有，取值参见配置
                      * @return WarnModeArray 如果不传则查询所有，取值参见配置
+                     * 
                      */
                     std::vector<int64_t> GetWarnModeArray() const;
 
                     /**
                      * 设置如果不传则查询所有，取值参见配置
-                     * @param WarnModeArray 如果不传则查询所有，取值参见配置
+                     * @param _warnModeArray 如果不传则查询所有，取值参见配置
+                     * 
                      */
                     void SetWarnModeArray(const std::vector<int64_t>& _warnModeArray);
 
                     /**
                      * 判断参数 WarnModeArray 是否已赋值
                      * @return WarnModeArray 是否已赋值
+                     * 
                      */
                     bool WarnModeArrayHasBeenSet() const;
 
                     /**
                      * 获取不传认为是0
                      * @return Offset 不传认为是0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置不传认为是0
-                     * @param Offset 不传认为是0
+                     * @param _offset 不传认为是0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取不传认为是20
                      * @return Limit 不传认为是20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置不传认为是20
-                     * @param Limit 不传认为是20
+                     * @param _limit 不传认为是20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期
                      * @return DateBegin 形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * 
                      */
                     std::string GetDateBegin() const;
 
                     /**
                      * 设置形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期
-                     * @param DateBegin 形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * @param _dateBegin 形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * 
                      */
                     void SetDateBegin(const std::string& _dateBegin);
 
                     /**
                      * 判断参数 DateBegin 是否已赋值
                      * @return DateBegin 是否已赋值
+                     * 
                      */
                     bool DateBeginHasBeenSet() const;
 
                     /**
                      * 获取形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期
                      * @return DateEnd 形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * 
                      */
                     std::string GetDateEnd() const;
 
                     /**
                      * 设置形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期
-                     * @param DateEnd 形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * @param _dateEnd 形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期
+                     * 
                      */
                     void SetDateEnd(const std::string& _dateEnd);
 
                     /**
                      * 判断参数 DateEnd 是否已赋值
                      * @return DateEnd 是否已赋值
+                     * 
                      */
                     bool DateEndHasBeenSet() const;
 

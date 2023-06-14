@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
                      * @return UserId 唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
-                     * @param UserId 唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
+                     * @param _userId 唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取【多人游戏】游戏主机用户ID
                      * @return HostUserId 【多人游戏】游戏主机用户ID
+                     * 
                      */
                     std::string GetHostUserId() const;
 
                     /**
                      * 设置【多人游戏】游戏主机用户ID
-                     * @param HostUserId 【多人游戏】游戏主机用户ID
+                     * @param _hostUserId 【多人游戏】游戏主机用户ID
+                     * 
                      */
                     void SetHostUserId(const std::string& _hostUserId);
 
                     /**
                      * 判断参数 HostUserId 是否已赋值
                      * @return HostUserId 是否已赋值
+                     * 
                      */
                     bool HostUserIdHasBeenSet() const;
 

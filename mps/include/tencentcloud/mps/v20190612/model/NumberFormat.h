@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取`{number}`变量的起始值，默认为0。
                      * @return InitialValue `{number}`变量的起始值，默认为0。
+                     * 
                      */
                     uint64_t GetInitialValue() const;
 
                     /**
                      * 设置`{number}`变量的起始值，默认为0。
-                     * @param InitialValue `{number}`变量的起始值，默认为0。
+                     * @param _initialValue `{number}`变量的起始值，默认为0。
+                     * 
                      */
                     void SetInitialValue(const uint64_t& _initialValue);
 
                     /**
                      * 判断参数 InitialValue 是否已赋值
                      * @return InitialValue 是否已赋值
+                     * 
                      */
                     bool InitialValueHasBeenSet() const;
 
                     /**
                      * 获取`{number}`变量的增长步长，默认为1。
                      * @return Increment `{number}`变量的增长步长，默认为1。
+                     * 
                      */
                     uint64_t GetIncrement() const;
 
                     /**
                      * 设置`{number}`变量的增长步长，默认为1。
-                     * @param Increment `{number}`变量的增长步长，默认为1。
+                     * @param _increment `{number}`变量的增长步长，默认为1。
+                     * 
                      */
                     void SetIncrement(const uint64_t& _increment);
 
                     /**
                      * 判断参数 Increment 是否已赋值
                      * @return Increment 是否已赋值
+                     * 
                      */
                     bool IncrementHasBeenSet() const;
 
                     /**
                      * 获取`{number}`变量的最小长度，不足时补占位符。默认为1。
                      * @return MinLength `{number}`变量的最小长度，不足时补占位符。默认为1。
+                     * 
                      */
                     uint64_t GetMinLength() const;
 
                     /**
                      * 设置`{number}`变量的最小长度，不足时补占位符。默认为1。
-                     * @param MinLength `{number}`变量的最小长度，不足时补占位符。默认为1。
+                     * @param _minLength `{number}`变量的最小长度，不足时补占位符。默认为1。
+                     * 
                      */
                     void SetMinLength(const uint64_t& _minLength);
 
                     /**
                      * 判断参数 MinLength 是否已赋值
                      * @return MinLength 是否已赋值
+                     * 
                      */
                     bool MinLengthHasBeenSet() const;
 
                     /**
                      * 获取`{number}`变量的长度不足时，补充的占位符。默认为"0"。
                      * @return PlaceHolder `{number}`变量的长度不足时，补充的占位符。默认为"0"。
+                     * 
                      */
                     std::string GetPlaceHolder() const;
 
                     /**
                      * 设置`{number}`变量的长度不足时，补充的占位符。默认为"0"。
-                     * @param PlaceHolder `{number}`变量的长度不足时，补充的占位符。默认为"0"。
+                     * @param _placeHolder `{number}`变量的长度不足时，补充的占位符。默认为"0"。
+                     * 
                      */
                     void SetPlaceHolder(const std::string& _placeHolder);
 
                     /**
                      * 判断参数 PlaceHolder 是否已赋值
                      * @return PlaceHolder 是否已赋值
+                     * 
                      */
                     bool PlaceHolderHasBeenSet() const;
 

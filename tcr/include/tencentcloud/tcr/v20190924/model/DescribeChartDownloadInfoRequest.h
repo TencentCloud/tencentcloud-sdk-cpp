@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return NamespaceName 命名空间
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间
-                     * @param NamespaceName 命名空间
+                     * @param _namespaceName 命名空间
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取Chart包的名称
                      * @return ChartName Chart包的名称
+                     * 
                      */
                     std::string GetChartName() const;
 
                     /**
                      * 设置Chart包的名称
-                     * @param ChartName Chart包的名称
+                     * @param _chartName Chart包的名称
+                     * 
                      */
                     void SetChartName(const std::string& _chartName);
 
                     /**
                      * 判断参数 ChartName 是否已赋值
                      * @return ChartName 是否已赋值
+                     * 
                      */
                     bool ChartNameHasBeenSet() const;
 
                     /**
                      * 获取Chart包的版本
                      * @return ChartVersion Chart包的版本
+                     * 
                      */
                     std::string GetChartVersion() const;
 
                     /**
                      * 设置Chart包的版本
-                     * @param ChartVersion Chart包的版本
+                     * @param _chartVersion Chart包的版本
+                     * 
                      */
                     void SetChartVersion(const std::string& _chartVersion);
 
                     /**
                      * 判断参数 ChartVersion 是否已赋值
                      * @return ChartVersion 是否已赋值
+                     * 
                      */
                     bool ChartVersionHasBeenSet() const;
 

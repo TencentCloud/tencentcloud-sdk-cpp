@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取分类路径归属。
                      * @return Owner 分类路径归属。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置分类路径归属。
-                     * @param Owner 分类路径归属。
+                     * @param _owner 分类路径归属。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取按分类路径检索。 不填则默认按根分类路径检索。
                      * @return ClassPath 按分类路径检索。 不填则默认按根分类路径检索。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置按分类路径检索。 不填则默认按根分类路径检索。
-                     * @param ClassPath 按分类路径检索。 不填则默认按根分类路径检索。
+                     * @param _classPath 按分类路径检索。 不填则默认按根分类路径检索。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 

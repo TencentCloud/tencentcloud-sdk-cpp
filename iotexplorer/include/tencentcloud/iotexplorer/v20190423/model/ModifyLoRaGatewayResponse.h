@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回网关数据
                      * @return Gateway 返回网关数据
+                     * 
                      */
                     LoRaGatewayItem GetGateway() const;
 
                     /**
                      * 判断参数 Gateway 是否已赋值
                      * @return Gateway 是否已赋值
+                     * 
                      */
                     bool GatewayHasBeenSet() const;
 

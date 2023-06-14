@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取数据hash
                      * @return EvidenceHash 数据hash
+                     * 
                      */
                     std::string GetEvidenceHash() const;
 
                     /**
                      * 设置数据hash
-                     * @param EvidenceHash 数据hash
+                     * @param _evidenceHash 数据hash
+                     * 
                      */
                     void SetEvidenceHash(const std::string& _evidenceHash);
 
                     /**
                      * 判断参数 EvidenceHash 是否已赋值
                      * @return EvidenceHash 是否已赋值
+                     * 
                      */
                     bool EvidenceHashHasBeenSet() const;
 
                     /**
                      * 获取该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
                      * @return BusinessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
-                     * @param BusinessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * @param _businessId 该字段为透传字段，方便调用方做业务处理， 长度最大不超过64
+                     * 
                      */
                     void SetBusinessId(const std::string& _businessId);
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
                      * @return HashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * 
                      */
                     uint64_t GetHashType() const;
 
                     /**
                      * 设置算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
-                     * @param HashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * @param _hashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * 
                      */
                     void SetHashType(const uint64_t& _hashType);
 
                     /**
                      * 判断参数 HashType 是否已赋值
                      * @return HashType 是否已赋值
+                     * 
                      */
                     bool HashTypeHasBeenSet() const;
 
                     /**
                      * 获取业务扩展信息
                      * @return EvidenceInfo 业务扩展信息
+                     * 
                      */
                     std::string GetEvidenceInfo() const;
 
                     /**
                      * 设置业务扩展信息
-                     * @param EvidenceInfo 业务扩展信息
+                     * @param _evidenceInfo 业务扩展信息
+                     * 
                      */
                     void SetEvidenceInfo(const std::string& _evidenceInfo);
 
                     /**
                      * 判断参数 EvidenceInfo 是否已赋值
                      * @return EvidenceInfo 是否已赋值
+                     * 
                      */
                     bool EvidenceInfoHasBeenSet() const;
 

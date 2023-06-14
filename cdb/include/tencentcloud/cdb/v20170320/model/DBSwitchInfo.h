@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取切换时间，格式为：2017-09-03 01:34:31
                      * @return SwitchTime 切换时间，格式为：2017-09-03 01:34:31
+                     * 
                      */
                     std::string GetSwitchTime() const;
 
                     /**
                      * 设置切换时间，格式为：2017-09-03 01:34:31
-                     * @param SwitchTime 切换时间，格式为：2017-09-03 01:34:31
+                     * @param _switchTime 切换时间，格式为：2017-09-03 01:34:31
+                     * 
                      */
                     void SetSwitchTime(const std::string& _switchTime);
 
                     /**
                      * 判断参数 SwitchTime 是否已赋值
                      * @return SwitchTime 是否已赋值
+                     * 
                      */
                     bool SwitchTimeHasBeenSet() const;
 
                     /**
                      * 获取切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
                      * @return SwitchType 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
+                     * 
                      */
                     std::string GetSwitchType() const;
 
                     /**
                      * 设置切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
-                     * @param SwitchType 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
+                     * @param _switchType 切换类型，可能的返回值为：TRANSFER - 数据迁移；MASTER2SLAVE - 主备切换；RECOVERY - 主从恢复
+                     * 
                      */
                     void SetSwitchType(const std::string& _switchType);
 
                     /**
                      * 判断参数 SwitchType 是否已赋值
                      * @return SwitchType 是否已赋值
+                     * 
                      */
                     bool SwitchTypeHasBeenSet() const;
 

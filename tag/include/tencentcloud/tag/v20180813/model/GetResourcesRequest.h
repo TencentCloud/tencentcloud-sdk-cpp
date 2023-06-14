@@ -52,6 +52,7 @@ N取值范围：0~9
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
 如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。
 N取值范围：0~9
+                     * 
                      */
                     std::vector<std::string> GetResourceList() const;
 
@@ -60,16 +61,18 @@ N取值范围：0~9
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
 如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。
 N取值范围：0~9
-                     * @param ResourceList 资源六段式列表。腾讯云使用资源六段式描述一个资源。
+                     * @param _resourceList 资源六段式列表。腾讯云使用资源六段式描述一个资源。
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
 如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。
 N取值范围：0~9
+                     * 
                      */
                     void SetResourceList(const std::vector<std::string>& _resourceList);
 
                     /**
                      * 判断参数 ResourceList 是否已赋值
                      * @return ResourceList 是否已赋值
+                     * 
                      */
                     bool ResourceListHasBeenSet() const;
 
@@ -82,6 +85,7 @@ N取值范围：0~5。
 指定多个标签，会查询同时绑定了该多个标签的资源。
 N取值范围：0~5。
 每个TagFilters中的TagValue最多支持10个
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
@@ -90,16 +94,18 @@ N取值范围：0~5。
 指定多个标签，会查询同时绑定了该多个标签的资源。
 N取值范围：0~5。
 每个TagFilters中的TagValue最多支持10个
-                     * @param TagFilters 标签键和标签值。
+                     * @param _tagFilters 标签键和标签值。
 指定多个标签，会查询同时绑定了该多个标签的资源。
 N取值范围：0~5。
 每个TagFilters中的TagValue最多支持10个
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
@@ -108,20 +114,23 @@ N取值范围：0~5。
 如果是第一次请求，设置为空。
                      * @return PaginationToken 从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
+                     * 
                      */
                     std::string GetPaginationToken() const;
 
                     /**
                      * 设置从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
-                     * @param PaginationToken 从上一页的响应中获取的下一页的Token值。
+                     * @param _paginationToken 从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
+                     * 
                      */
                     void SetPaginationToken(const std::string& _paginationToken);
 
                     /**
                      * 判断参数 PaginationToken 是否已赋值
                      * @return PaginationToken 是否已赋值
+                     * 
                      */
                     bool PaginationTokenHasBeenSet() const;
 
@@ -130,20 +139,23 @@ N取值范围：0~5。
 缺省值：50。
                      * @return MaxResults 每一页返回的数据最大条数，最大200。
 缺省值：50。
+                     * 
                      */
                     uint64_t GetMaxResults() const;
 
                     /**
                      * 设置每一页返回的数据最大条数，最大200。
 缺省值：50。
-                     * @param MaxResults 每一页返回的数据最大条数，最大200。
+                     * @param _maxResults 每一页返回的数据最大条数，最大200。
 缺省值：50。
+                     * 
                      */
                     void SetMaxResults(const uint64_t& _maxResults);
 
                     /**
                      * 判断参数 MaxResults 是否已赋值
                      * @return MaxResults 是否已赋值
+                     * 
                      */
                     bool MaxResultsHasBeenSet() const;
 

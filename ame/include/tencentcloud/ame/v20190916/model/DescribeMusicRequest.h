@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取歌曲ID
                      * @return ItemId 歌曲ID
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置歌曲ID
-                     * @param ItemId 歌曲ID
+                     * @param _itemId 歌曲ID
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
                     /**
                      * 获取在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
                      * @return IdentityId 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
+                     * 
                      */
                     std::string GetIdentityId() const;
 
                     /**
                      * 设置在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
-                     * @param IdentityId 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
+                     * @param _identityId 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
+                     * 
                      */
                     void SetIdentityId(const std::string& _identityId);
 
                     /**
                      * 判断参数 IdentityId 是否已赋值
                      * @return IdentityId 是否已赋值
+                     * 
                      */
                     bool IdentityIdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                      * @return SubItemType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
 MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * 
                      */
                     std::string GetSubItemType() const;
 
                     /**
                      * 设置MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
 MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
-                     * @param SubItemType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
+                     * @param _subItemType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
 MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * 
                      */
                     void SetSubItemType(const std::string& _subItemType);
 
                     /**
                      * 判断参数 SubItemType 是否已赋值
                      * @return SubItemType 是否已赋值
+                     * 
                      */
                     bool SubItemTypeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
 Values:Y , N(default)
                      * @return Ssl CDN URL Protocol:HTTP or HTTPS/SSL
 Values:Y , N(default)
+                     * 
                      */
                     std::string GetSsl() const;
 
                     /**
                      * 设置CDN URL Protocol:HTTP or HTTPS/SSL
 Values:Y , N(default)
-                     * @param Ssl CDN URL Protocol:HTTP or HTTPS/SSL
+                     * @param _ssl CDN URL Protocol:HTTP or HTTPS/SSL
 Values:Y , N(default)
+                     * 
                      */
                     void SetSsl(const std::string& _ssl);
 
                     /**
                      * 判断参数 Ssl 是否已赋值
                      * @return Ssl 是否已赋值
+                     * 
                      */
                     bool SslHasBeenSet() const;
 

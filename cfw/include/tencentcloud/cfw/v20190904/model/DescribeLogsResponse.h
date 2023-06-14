@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取日志列表
                      * @return Data 日志列表
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取返回状态码 0 成功 非0不成功
                      * @return ReturnCode 返回状态码 0 成功 非0不成功
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取返回信息  success 成功 其他 不成功
                      * @return ReturnMsg 返回信息  success 成功 其他 不成功
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 

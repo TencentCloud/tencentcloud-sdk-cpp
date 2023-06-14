@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取生命周期脚本名称
                      * @return NotebookLifecycleScriptsName 生命周期脚本名称
+                     * 
                      */
                     std::string GetNotebookLifecycleScriptsName() const;
 
                     /**
                      * 判断参数 NotebookLifecycleScriptsName 是否已赋值
                      * @return NotebookLifecycleScriptsName 是否已赋值
+                     * 
                      */
                     bool NotebookLifecycleScriptsNameHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Packages 已购曲库包列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Package> GetPackages() const;
 
                     /**
                      * 判断参数 Packages 是否已赋值
                      * @return Packages 是否已赋值
+                     * 
                      */
                     bool PackagesHasBeenSet() const;
 

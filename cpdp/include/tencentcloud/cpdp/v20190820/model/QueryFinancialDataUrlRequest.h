@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
                      * @return EndTime 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
-                     * @param EndTime 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
                      * @return StartTime 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
-                     * @param StartTime 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -85,6 +91,7 @@ NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
                      * @return DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
 NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
 NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
+                     * 
                      */
                     std::string GetDataType() const;
 
@@ -92,15 +99,17 @@ NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
                      * 设置数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
 NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
 NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
-                     * @param DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+                     * @param _dataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
 NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
 NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 

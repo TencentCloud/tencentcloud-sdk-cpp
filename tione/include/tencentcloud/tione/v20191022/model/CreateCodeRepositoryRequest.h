@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取存储库名称
                      * @return CodeRepositoryName 存储库名称
+                     * 
                      */
                     std::string GetCodeRepositoryName() const;
 
                     /**
                      * 设置存储库名称
-                     * @param CodeRepositoryName 存储库名称
+                     * @param _codeRepositoryName 存储库名称
+                     * 
                      */
                     void SetCodeRepositoryName(const std::string& _codeRepositoryName);
 
                     /**
                      * 判断参数 CodeRepositoryName 是否已赋值
                      * @return CodeRepositoryName 是否已赋值
+                     * 
                      */
                     bool CodeRepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取Git相关配置
                      * @return GitConfig Git相关配置
+                     * 
                      */
                     GitConfig GetGitConfig() const;
 
                     /**
                      * 设置Git相关配置
-                     * @param GitConfig Git相关配置
+                     * @param _gitConfig Git相关配置
+                     * 
                      */
                     void SetGitConfig(const GitConfig& _gitConfig);
 
                     /**
                      * 判断参数 GitConfig 是否已赋值
                      * @return GitConfig 是否已赋值
+                     * 
                      */
                     bool GitConfigHasBeenSet() const;
 
                     /**
                      * 获取Git凭证
                      * @return GitSecret Git凭证
+                     * 
                      */
                     GitSecret GetGitSecret() const;
 
                     /**
                      * 设置Git凭证
-                     * @param GitSecret Git凭证
+                     * @param _gitSecret Git凭证
+                     * 
                      */
                     void SetGitSecret(const GitSecret& _gitSecret);
 
                     /**
                      * 判断参数 GitSecret 是否已赋值
                      * @return GitSecret 是否已赋值
+                     * 
                      */
                     bool GitSecretHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取内容审核结果列表。
                      * @return ResultSet 内容审核结果列表。
+                     * 
                      */
                     std::vector<LiveStreamAiReviewResultItem> GetResultSet() const;
 
                     /**
                      * 设置内容审核结果列表。
-                     * @param ResultSet 内容审核结果列表。
+                     * @param _resultSet 内容审核结果列表。
+                     * 
                      */
                     void SetResultSet(const std::vector<LiveStreamAiReviewResultItem>& _resultSet);
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 

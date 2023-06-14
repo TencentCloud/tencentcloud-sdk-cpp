@@ -47,20 +47,23 @@ namespace TencentCloud
 示例值：129284394
                      * @return MerchantId 商户号。
 示例值：129284394
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号。
 示例值：129284394
-                     * @param MerchantId 商户号。
+                     * @param _merchantId 商户号。
 示例值：129284394
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return MerchantBatchNo 商家批次单号。
 商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantBatchNo() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置商家批次单号。
 商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。
 示例值：plfk2020042013
-                     * @param MerchantBatchNo 商家批次单号。
+                     * @param _merchantBatchNo 商家批次单号。
 商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。
 示例值：plfk2020042013
+                     * 
                      */
                     void SetMerchantBatchNo(const std::string& _merchantBatchNo);
 
                     /**
                      * 判断参数 MerchantBatchNo 是否已赋值
                      * @return MerchantBatchNo 是否已赋值
+                     * 
                      */
                     bool MerchantBatchNoHasBeenSet() const;
 
@@ -97,6 +103,7 @@ namespace TencentCloud
                      * @return MerchantDetailNo 商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantDetailNo() const;
 
@@ -104,15 +111,17 @@ namespace TencentCloud
                      * 设置商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
-                     * @param MerchantDetailNo 商家明细单号。
+                     * @param _merchantDetailNo 商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
+                     * 
                      */
                     void SetMerchantDetailNo(const std::string& _merchantDetailNo);
 
                     /**
                      * 判断参数 MerchantDetailNo 是否已赋值
                      * @return MerchantDetailNo 是否已赋值
+                     * 
                      */
                     bool MerchantDetailNoHasBeenSet() const;
 
@@ -125,6 +134,7 @@ namespace TencentCloud
 微信商家转账系统返回的唯一标识。
 商家单号（包含批次号和明细单号）和微信单号（包含批次号和明细单号）二者必填其一。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetBatchId() const;
 
@@ -133,16 +143,18 @@ namespace TencentCloud
 微信商家转账系统返回的唯一标识。
 商家单号（包含批次号和明细单号）和微信单号（包含批次号和明细单号）二者必填其一。
 示例值：1030000071100999991182020050700019480001
-                     * @param BatchId 微信批次单号。
+                     * @param _batchId 微信批次单号。
 微信商家转账系统返回的唯一标识。
 商家单号（包含批次号和明细单号）和微信单号（包含批次号和明细单号）二者必填其一。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -153,6 +165,7 @@ namespace TencentCloud
                      * @return DetailId 微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetDetailId() const;
 
@@ -160,15 +173,17 @@ namespace TencentCloud
                      * 设置微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
-                     * @param DetailId 微信明细单号。
+                     * @param _detailId 微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     void SetDetailId(const std::string& _detailId);
 
                     /**
                      * 判断参数 DetailId 是否已赋值
                      * @return DetailId 是否已赋值
+                     * 
                      */
                     bool DetailIdHasBeenSet() const;
 
@@ -183,6 +198,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetProfile() const;
 
@@ -192,17 +208,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param Profile 环境名:
+                     * @param _profile 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

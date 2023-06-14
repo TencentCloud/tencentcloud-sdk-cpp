@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取地域Ap-Code
                      * @return RegionName 地域Ap-Code
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域Ap-Code
-                     * @param RegionName 地域Ap-Code
+                     * @param _regionName 地域Ap-Code
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域缩写
                      * @return RegionAbbr 地域缩写
+                     * 
                      */
                     std::string GetRegionAbbr() const;
 
                     /**
                      * 设置地域缩写
-                     * @param RegionAbbr 地域缩写
+                     * @param _regionAbbr 地域缩写
+                     * 
                      */
                     void SetRegionAbbr(const std::string& _regionAbbr);
 
                     /**
                      * 判断参数 RegionAbbr 是否已赋值
                      * @return RegionAbbr 是否已赋值
+                     * 
                      */
                     bool RegionAbbrHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取是否支持ipv6，0:不支持，1:支持
                      * @return Ipv6Enable 是否支持ipv6，0:不支持，1:支持
+                     * 
                      */
                     uint64_t GetIpv6Enable() const;
 
                     /**
                      * 设置是否支持ipv6，0:不支持，1:支持
-                     * @param Ipv6Enable 是否支持ipv6，0:不支持，1:支持
+                     * @param _ipv6Enable 是否支持ipv6，0:不支持，1:支持
+                     * 
                      */
                     void SetIpv6Enable(const uint64_t& _ipv6Enable);
 
                     /**
                      * 判断参数 Ipv6Enable 是否已赋值
                      * @return Ipv6Enable 是否已赋值
+                     * 
                      */
                     bool Ipv6EnableHasBeenSet() const;
 

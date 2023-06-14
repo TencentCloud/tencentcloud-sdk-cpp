@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取检查点名字
                      * @return Name 检查点名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检查点名字
-                     * @param Name 检查点名字
+                     * @param _name 检查点名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取检查点所在步骤名字
                      * @return Step 检查点所在步骤名字
+                     * 
                      */
                     std::string GetStep() const;
 
                     /**
                      * 设置检查点所在步骤名字
-                     * @param Step 检查点所在步骤名字
+                     * @param _step 检查点所在步骤名字
+                     * 
                      */
                     void SetStep(const std::string& _step);
 
                     /**
                      * 判断参数 Step 是否已赋值
                      * @return Step 是否已赋值
+                     * 
                      */
                     bool StepHasBeenSet() const;
 
                     /**
                      * 获取检查点成功次数
                      * @return SuccessCount 检查点成功次数
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 设置检查点成功次数
-                     * @param SuccessCount 检查点成功次数
+                     * @param _successCount 检查点成功次数
+                     * 
                      */
                     void SetSuccessCount(const int64_t& _successCount);
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
                     /**
                      * 获取检查失败次数
                      * @return FailCount 检查失败次数
+                     * 
                      */
                     int64_t GetFailCount() const;
 
                     /**
                      * 设置检查失败次数
-                     * @param FailCount 检查失败次数
+                     * @param _failCount 检查失败次数
+                     * 
                      */
                     void SetFailCount(const int64_t& _failCount);
 
                     /**
                      * 判断参数 FailCount 是否已赋值
                      * @return FailCount 是否已赋值
+                     * 
                      */
                     bool FailCountHasBeenSet() const;
 
                     /**
                      * 获取错误比例
                      * @return ErrorRate 错误比例
+                     * 
                      */
                     double GetErrorRate() const;
 
                     /**
                      * 设置错误比例
-                     * @param ErrorRate 错误比例
+                     * @param _errorRate 错误比例
+                     * 
                      */
                     void SetErrorRate(const double& _errorRate);
 
                     /**
                      * 判断参数 ErrorRate 是否已赋值
                      * @return ErrorRate 是否已赋值
+                     * 
                      */
                     bool ErrorRateHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取空间、项目id
                      * @return ProjectId 空间、项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置空间、项目id
-                     * @param ProjectId 空间、项目id
+                     * @param _projectId 空间、项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典
                      * @return Type 标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典
-                     * @param Type 标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典
+                     * @param _type 标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

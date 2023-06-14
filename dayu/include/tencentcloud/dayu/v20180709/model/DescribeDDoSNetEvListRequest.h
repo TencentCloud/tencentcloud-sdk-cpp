@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（net表示高防IP专业版）
                      * @return Business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取一页条数，填0表示不分页
                      * @return Limit 一页条数，填0表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * @param _limit 一页条数，填0表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

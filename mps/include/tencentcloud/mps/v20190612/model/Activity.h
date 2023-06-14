@@ -74,6 +74,7 @@ namespace TencentCloud
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityType() const;
 
@@ -91,7 +92,7 @@ namespace TencentCloud
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityType 原子任务类型：
+                     * @param _activityType 原子任务类型：
 <li>input: 起始节点</li>
 <li>output：终止节点</li>
 <li>action-trans：转码</li>
@@ -104,12 +105,14 @@ namespace TencentCloud
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityType(const std::string& _activityType);
 
                     /**
                      * 判断参数 ActivityType 是否已赋值
                      * @return ActivityType 是否已赋值
+                     * 
                      */
                     bool ActivityTypeHasBeenSet() const;
 
@@ -118,20 +121,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReardriveIndex 后驱节点索引数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetReardriveIndex() const;
 
                     /**
                      * 设置后驱节点索引数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReardriveIndex 后驱节点索引数组
+                     * @param _reardriveIndex 后驱节点索引数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReardriveIndex(const std::vector<int64_t>& _reardriveIndex);
 
                     /**
                      * 判断参数 ReardriveIndex 是否已赋值
                      * @return ReardriveIndex 是否已赋值
+                     * 
                      */
                     bool ReardriveIndexHasBeenSet() const;
 
@@ -140,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityPara 原子任务参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ActivityPara GetActivityPara() const;
 
                     /**
                      * 设置原子任务参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityPara 原子任务参数
+                     * @param _activityPara 原子任务参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityPara(const ActivityPara& _activityPara);
 
                     /**
                      * 判断参数 ActivityPara 是否已赋值
                      * @return ActivityPara 是否已赋值
+                     * 
                      */
                     bool ActivityParaHasBeenSet() const;
 

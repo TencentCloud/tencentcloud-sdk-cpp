@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取集成任务ID
                      * @return TaskId 集成任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置集成任务ID
-                     * @param TaskId 集成任务ID
+                     * @param _taskId 集成任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取集成任务名称
                      * @return TaskName 集成任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置集成任务名称
-                     * @param TaskName 集成任务名称
+                     * @param _taskName 集成任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取集成任务状态
                      * @return TaskStatus 集成任务状态
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置集成任务状态
-                     * @param TaskStatus 集成任务状态
+                     * @param _taskStatus 集成任务状态
+                     * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 

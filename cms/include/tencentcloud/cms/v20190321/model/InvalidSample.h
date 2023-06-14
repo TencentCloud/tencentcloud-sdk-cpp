@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置关键词
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 关键词
+                     * @param _content 关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvalidCode 无效代码:1-标签不存在;2-词过长;3-词类型不匹配;4-备注超长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInvalidCode() const;
 
                     /**
                      * 设置无效代码:1-标签不存在;2-词过长;3-词类型不匹配;4-备注超长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvalidCode 无效代码:1-标签不存在;2-词过长;3-词类型不匹配;4-备注超长
+                     * @param _invalidCode 无效代码:1-标签不存在;2-词过长;3-词类型不匹配;4-备注超长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvalidCode(const int64_t& _invalidCode);
 
                     /**
                      * 判断参数 InvalidCode 是否已赋值
                      * @return InvalidCode 是否已赋值
+                     * 
                      */
                     bool InvalidCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvalidMessage 无效描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvalidMessage() const;
 
                     /**
                      * 设置无效描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvalidMessage 无效描述
+                     * @param _invalidMessage 无效描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvalidMessage(const std::string& _invalidMessage);
 
                     /**
                      * 判断参数 InvalidMessage 是否已赋值
                      * @return InvalidMessage 是否已赋值
+                     * 
                      */
                     bool InvalidMessageHasBeenSet() const;
 

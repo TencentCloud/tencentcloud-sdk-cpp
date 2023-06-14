@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 日志条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLogs 错误日志列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CynosdbErrorLogItem> GetErrorLogs() const;
 
                     /**
                      * 判断参数 ErrorLogs 是否已赋值
                      * @return ErrorLogs 是否已赋值
+                     * 
                      */
                     bool ErrorLogsHasBeenSet() const;
 

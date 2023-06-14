@@ -51,6 +51,7 @@ k8sApi: k8s_api
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
+                     * 
                      */
                     std::string GetLogType() const;
 
@@ -59,34 +60,39 @@ k8sApi: k8s_api
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
-                     * @param LogType 日志类型
+                     * @param _logType 日志类型
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取状态(true:开 false:关)
                      * @return State 状态(true:开 false:关)
+                     * 
                      */
                     bool GetState() const;
 
                     /**
                      * 设置状态(true:开 false:关)
-                     * @param State 状态(true:开 false:关)
+                     * @param _state 状态(true:开 false:关)
+                     * 
                      */
                     void SetState(const bool& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

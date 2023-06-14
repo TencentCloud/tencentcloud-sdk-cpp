@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoAppearSet 视觉出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VideoAppearInfo> GetVideoAppearSet() const;
 
                     /**
                      * 设置视觉出现信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoAppearSet 视觉出现信息
+                     * @param _videoAppearSet 视觉出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoAppearSet(const std::vector<VideoAppearInfo>& _videoAppearSet);
 
                     /**
                      * 判断参数 VideoAppearSet 是否已赋值
                      * @return VideoAppearSet 是否已赋值
+                     * 
                      */
                     bool VideoAppearSetHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PutLibraryAllowed 未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPutLibraryAllowed() const;
 
                     /**
                      * 设置未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PutLibraryAllowed 未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)
+                     * @param _putLibraryAllowed 未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPutLibraryAllowed(const bool& _putLibraryAllowed);
 
                     /**
                      * 判断参数 PutLibraryAllowed 是否已赋值
                      * @return PutLibraryAllowed 是否已赋值
+                     * 
                      */
                     bool PutLibraryAllowedHasBeenSet() const;
 

@@ -45,198 +45,231 @@ namespace TencentCloud
                     /**
                      * 获取主实例ID
                      * @return MasterDBInstanceId 主实例ID
+                     * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
                      * 设置主实例ID
-                     * @param MasterDBInstanceId 主实例ID
+                     * @param _masterDBInstanceId 主实例ID
+                     * 
                      */
                     void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
 
                     /**
                      * 判断参数 MasterDBInstanceId 是否已赋值
                      * @return MasterDBInstanceId 是否已赋值
+                     * 
                      */
                     bool MasterDBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读组名称
                      * @return Name 只读组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置只读组名称
-                     * @param Name 只读组名称
+                     * @param _name 只读组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取延迟时间大小开关：0关、1开
                      * @return ReplayLagEliminate 延迟时间大小开关：0关、1开
+                     * 
                      */
                     uint64_t GetReplayLagEliminate() const;
 
                     /**
                      * 设置延迟时间大小开关：0关、1开
-                     * @param ReplayLagEliminate 延迟时间大小开关：0关、1开
+                     * @param _replayLagEliminate 延迟时间大小开关：0关、1开
+                     * 
                      */
                     void SetReplayLagEliminate(const uint64_t& _replayLagEliminate);
 
                     /**
                      * 判断参数 ReplayLagEliminate 是否已赋值
                      * @return ReplayLagEliminate 是否已赋值
+                     * 
                      */
                     bool ReplayLagEliminateHasBeenSet() const;
 
                     /**
                      * 获取延迟空间大小开关： 0关、1开
                      * @return ReplayLatencyEliminate 延迟空间大小开关： 0关、1开
+                     * 
                      */
                     uint64_t GetReplayLatencyEliminate() const;
 
                     /**
                      * 设置延迟空间大小开关： 0关、1开
-                     * @param ReplayLatencyEliminate 延迟空间大小开关： 0关、1开
+                     * @param _replayLatencyEliminate 延迟空间大小开关： 0关、1开
+                     * 
                      */
                     void SetReplayLatencyEliminate(const uint64_t& _replayLatencyEliminate);
 
                     /**
                      * 判断参数 ReplayLatencyEliminate 是否已赋值
                      * @return ReplayLatencyEliminate 是否已赋值
+                     * 
                      */
                     bool ReplayLatencyEliminateHasBeenSet() const;
 
                     /**
                      * 获取延迟时间大小阈值，单位ms
                      * @return MaxReplayLag 延迟时间大小阈值，单位ms
+                     * 
                      */
                     uint64_t GetMaxReplayLag() const;
 
                     /**
                      * 设置延迟时间大小阈值，单位ms
-                     * @param MaxReplayLag 延迟时间大小阈值，单位ms
+                     * @param _maxReplayLag 延迟时间大小阈值，单位ms
+                     * 
                      */
                     void SetMaxReplayLag(const uint64_t& _maxReplayLag);
 
                     /**
                      * 判断参数 MaxReplayLag 是否已赋值
                      * @return MaxReplayLag 是否已赋值
+                     * 
                      */
                     bool MaxReplayLagHasBeenSet() const;
 
                     /**
                      * 获取延迟空间大小阈值，单位MB
                      * @return MaxReplayLatency 延迟空间大小阈值，单位MB
+                     * 
                      */
                     uint64_t GetMaxReplayLatency() const;
 
                     /**
                      * 设置延迟空间大小阈值，单位MB
-                     * @param MaxReplayLatency 延迟空间大小阈值，单位MB
+                     * @param _maxReplayLatency 延迟空间大小阈值，单位MB
+                     * 
                      */
                     void SetMaxReplayLatency(const uint64_t& _maxReplayLatency);
 
                     /**
                      * 判断参数 MaxReplayLatency 是否已赋值
                      * @return MaxReplayLatency 是否已赋值
+                     * 
                      */
                     bool MaxReplayLatencyHasBeenSet() const;
 
                     /**
                      * 获取延迟剔除最小保留实例数
                      * @return MinDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 
                      */
                     uint64_t GetMinDelayEliminateReserve() const;
 
                     /**
                      * 设置延迟剔除最小保留实例数
-                     * @param MinDelayEliminateReserve 延迟剔除最小保留实例数
+                     * @param _minDelayEliminateReserve 延迟剔除最小保留实例数
+                     * 
                      */
                     void SetMinDelayEliminateReserve(const uint64_t& _minDelayEliminateReserve);
 
                     /**
                      * 判断参数 MinDelayEliminateReserve 是否已赋值
                      * @return MinDelayEliminateReserve 是否已赋值
+                     * 
                      */
                     bool MinDelayEliminateReserveHasBeenSet() const;
 
                     /**
                      * 获取安全组id
                      * @return SecurityGroupIds 安全组id
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组id
-                     * @param SecurityGroupIds 安全组id
+                     * @param _securityGroupIds 安全组id
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

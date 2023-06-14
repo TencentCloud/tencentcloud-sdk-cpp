@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取配置项ID
                      * @return ConfigId 配置项ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置项ID
-                     * @param ConfigId 配置项ID
+                     * @param _configId 配置项ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取配置项名称
                      * @return ConfigName 配置项名称
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置项名称
-                     * @param ConfigName 配置项名称
+                     * @param _configName 配置项名称
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigPath 配置项日志路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigPath() const;
 
                     /**
                      * 设置配置项日志路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigPath 配置项日志路径
+                     * @param _configPath 配置项日志路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigPath(const std::string& _configPath);
 
                     /**
                      * 判断参数 ConfigPath 是否已赋值
                      * @return ConfigPath 是否已赋值
+                     * 
                      */
                     bool ConfigPathHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigDesc 配置项描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigDesc() const;
 
                     /**
                      * 设置配置项描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigDesc 配置项描述
+                     * @param _configDesc 配置项描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigDesc(const std::string& _configDesc);
 
                     /**
                      * 判断参数 ConfigDesc 是否已赋值
                      * @return ConfigDesc 是否已赋值
+                     * 
                      */
                     bool ConfigDescHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTags 配置项标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTags() const;
 
                     /**
                      * 设置配置项标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTags 配置项标签
+                     * @param _configTags 配置项标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTags(const std::string& _configTags);
 
                     /**
                      * 判断参数 ConfigTags 是否已赋值
                      * @return ConfigTags 是否已赋值
+                     * 
                      */
                     bool ConfigTagsHasBeenSet() const;
 
@@ -155,20 +170,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigPipeline 配置项对应的ES管道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigPipeline() const;
 
                     /**
                      * 设置配置项对应的ES管道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigPipeline 配置项对应的ES管道
+                     * @param _configPipeline 配置项对应的ES管道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigPipeline(const std::string& _configPipeline);
 
                     /**
                      * 判断参数 ConfigPipeline 是否已赋值
                      * @return ConfigPipeline 是否已赋值
+                     * 
                      */
                     bool ConfigPipelineHasBeenSet() const;
 
@@ -177,20 +195,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigCreateTime 配置项创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigCreateTime() const;
 
                     /**
                      * 设置配置项创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigCreateTime 配置项创建时间
+                     * @param _configCreateTime 配置项创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigCreateTime(const std::string& _configCreateTime);
 
                     /**
                      * 判断参数 ConfigCreateTime 是否已赋值
                      * @return ConfigCreateTime 是否已赋值
+                     * 
                      */
                     bool ConfigCreateTimeHasBeenSet() const;
 
@@ -199,20 +220,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigUpdateTime 配置项更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigUpdateTime() const;
 
                     /**
                      * 设置配置项更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigUpdateTime 配置项更新时间
+                     * @param _configUpdateTime 配置项更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigUpdateTime(const std::string& _configUpdateTime);
 
                     /**
                      * 判断参数 ConfigUpdateTime 是否已赋值
                      * @return ConfigUpdateTime 是否已赋值
+                     * 
                      */
                     bool ConfigUpdateTimeHasBeenSet() const;
 
@@ -221,20 +245,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigSchema 配置项解析规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BusinessLogConfigSchema GetConfigSchema() const;
 
                     /**
                      * 设置配置项解析规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigSchema 配置项解析规则
+                     * @param _configSchema 配置项解析规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigSchema(const BusinessLogConfigSchema& _configSchema);
 
                     /**
                      * 判断参数 ConfigSchema 是否已赋值
                      * @return ConfigSchema 是否已赋值
+                     * 
                      */
                     bool ConfigSchemaHasBeenSet() const;
 
@@ -243,20 +270,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigAssociatedGroups 配置项关联部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BusinesLogConfigAssociatedGroup> GetConfigAssociatedGroups() const;
 
                     /**
                      * 设置配置项关联部署组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigAssociatedGroups 配置项关联部署组
+                     * @param _configAssociatedGroups 配置项关联部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigAssociatedGroups(const std::vector<BusinesLogConfigAssociatedGroup>& _configAssociatedGroups);
 
                     /**
                      * 判断参数 ConfigAssociatedGroups 是否已赋值
                      * @return ConfigAssociatedGroups 是否已赋值
+                     * 
                      */
                     bool ConfigAssociatedGroupsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备硬件配置信息
                      * @return DeviceHardwareInfoSet 设备硬件配置信息
+                     * 
                      */
                     std::vector<DeviceHardwareInfo> GetDeviceHardwareInfoSet() const;
 
                     /**
                      * 判断参数 DeviceHardwareInfoSet 是否已赋值
                      * @return DeviceHardwareInfoSet 是否已赋值
+                     * 
                      */
                     bool DeviceHardwareInfoSetHasBeenSet() const;
 

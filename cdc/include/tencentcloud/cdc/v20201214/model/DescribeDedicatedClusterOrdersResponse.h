@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取专用集群订单列表
                      * @return DedicatedClusterOrderSet 专用集群订单列表
+                     * 
                      */
                     std::vector<DedicatedClusterOrder> GetDedicatedClusterOrderSet() const;
 
                     /**
                      * 判断参数 DedicatedClusterOrderSet 是否已赋值
                      * @return DedicatedClusterOrderSet 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterOrderSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的专用集群订单总数
                      * @return TotalCount 符合条件的专用集群订单总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

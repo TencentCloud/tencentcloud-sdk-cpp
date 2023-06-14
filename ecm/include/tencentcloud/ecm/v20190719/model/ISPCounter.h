@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取运营商名称
                      * @return ProviderName 运营商名称
+                     * 
                      */
                     std::string GetProviderName() const;
 
                     /**
                      * 设置运营商名称
-                     * @param ProviderName 运营商名称
+                     * @param _providerName 运营商名称
+                     * 
                      */
                     void SetProviderName(const std::string& _providerName);
 
                     /**
                      * 判断参数 ProviderName 是否已赋值
                      * @return ProviderName 是否已赋值
+                     * 
                      */
                     bool ProviderNameHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return ProviderNodeNum 节点数量
+                     * 
                      */
                     int64_t GetProviderNodeNum() const;
 
                     /**
                      * 设置节点数量
-                     * @param ProviderNodeNum 节点数量
+                     * @param _providerNodeNum 节点数量
+                     * 
                      */
                     void SetProviderNodeNum(const int64_t& _providerNodeNum);
 
                     /**
                      * 判断参数 ProviderNodeNum 是否已赋值
                      * @return ProviderNodeNum 是否已赋值
+                     * 
                      */
                     bool ProviderNodeNumHasBeenSet() const;
 
                     /**
                      * 获取实例数量
                      * @return ProvederInstanceNum 实例数量
+                     * 
                      */
                     int64_t GetProvederInstanceNum() const;
 
                     /**
                      * 设置实例数量
-                     * @param ProvederInstanceNum 实例数量
+                     * @param _provederInstanceNum 实例数量
+                     * 
                      */
                     void SetProvederInstanceNum(const int64_t& _provederInstanceNum);
 
                     /**
                      * 判断参数 ProvederInstanceNum 是否已赋值
                      * @return ProvederInstanceNum 是否已赋值
+                     * 
                      */
                     bool ProvederInstanceNumHasBeenSet() const;
 
                     /**
                      * 获取Zone实例信息结构体数组
                      * @return ZoneInstanceInfoSet Zone实例信息结构体数组
+                     * 
                      */
                     std::vector<ZoneInstanceInfo> GetZoneInstanceInfoSet() const;
 
                     /**
                      * 设置Zone实例信息结构体数组
-                     * @param ZoneInstanceInfoSet Zone实例信息结构体数组
+                     * @param _zoneInstanceInfoSet Zone实例信息结构体数组
+                     * 
                      */
                     void SetZoneInstanceInfoSet(const std::vector<ZoneInstanceInfo>& _zoneInstanceInfoSet);
 
                     /**
                      * 判断参数 ZoneInstanceInfoSet 是否已赋值
                      * @return ZoneInstanceInfoSet 是否已赋值
+                     * 
                      */
                     bool ZoneInstanceInfoSetHasBeenSet() const;
 

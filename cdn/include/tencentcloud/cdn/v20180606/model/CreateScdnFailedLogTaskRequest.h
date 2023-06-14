@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取重试失败任务的taskID
                      * @return TaskId 重试失败任务的taskID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置重试失败任务的taskID
-                     * @param TaskId 重试失败任务的taskID
+                     * @param _taskId 重试失败任务的taskID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取地域：mainland或overseas
                      * @return Area 地域：mainland或overseas
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域：mainland或overseas
-                     * @param Area 地域：mainland或overseas
+                     * @param _area 地域：mainland或overseas
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取类型值。
                      * @return Value 类型值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置类型值。
-                     * @param Value 类型值。
+                     * @param _value 类型值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取类型名称。
                      * @return Text 类型名称。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置类型名称。
-                     * @param Text 类型名称。
+                     * @param _text 类型名称。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

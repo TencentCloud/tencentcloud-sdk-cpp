@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待修改用户ID
                      * @return UserId 待修改用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置待修改用户ID
-                     * @param UserId 待修改用户ID
+                     * @param _userId 待修改用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的用户名
                      * @return Nickname 待修改的用户名
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置待修改的用户名
-                     * @param Nickname 待修改的用户名
+                     * @param _nickname 待修改的用户名
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 
                     /**
                      * 获取待修改头像url
                      * @return Avatar 待修改头像url
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置待修改头像url
-                     * @param Avatar 待修改头像url
+                     * @param _avatar 待修改头像url
+                     * 
                      */
                     void SetAvatar(const std::string& _avatar);
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 

@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取权限模式
                      * @return PolicyMode 权限模式
+                     * 
                      */
                     std::string GetPolicyMode() const;
 
                     /**
                      * 判断参数 PolicyMode 是否已赋值
                      * @return PolicyMode 是否已赋值
+                     * 
                      */
                     bool PolicyModeHasBeenSet() const;
 
                     /**
                      * 获取返回的权限模式是否为当前生效的权限模式
                      * @return PolicyEnabled 返回的权限模式是否为当前生效的权限模式
+                     * 
                      */
                     bool GetPolicyEnabled() const;
 
                     /**
                      * 判断参数 PolicyEnabled 是否已赋值
                      * @return PolicyEnabled 是否已赋值
+                     * 
                      */
                     bool PolicyEnabledHasBeenSet() const;
 
                     /**
                      * 获取权限信息列表
                      * @return PolicyInfo 权限信息列表
+                     * 
                      */
                     std::vector<PolicyInfo> GetPolicyInfo() const;
 
                     /**
                      * 判断参数 PolicyInfo 是否已赋值
                      * @return PolicyInfo 是否已赋值
+                     * 
                      */
                     bool PolicyInfoHasBeenSet() const;
 
                     /**
                      * 获取本次返回的权限信息数量
                      * @return Num 本次返回的权限信息数量
+                     * 
                      */
                     int64_t GetNum() const;
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 
                     /**
                      * 获取权限信息总数
                      * @return Total 权限信息总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

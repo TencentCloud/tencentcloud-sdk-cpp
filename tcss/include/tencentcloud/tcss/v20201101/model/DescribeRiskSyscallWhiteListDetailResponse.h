@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取白名单基本信息
                      * @return WhiteListDetailInfo 白名单基本信息
+                     * 
                      */
                     RiskSyscallWhiteListInfo GetWhiteListDetailInfo() const;
 
                     /**
                      * 判断参数 WhiteListDetailInfo 是否已赋值
                      * @return WhiteListDetailInfo 是否已赋值
+                     * 
                      */
                     bool WhiteListDetailInfoHasBeenSet() const;
 

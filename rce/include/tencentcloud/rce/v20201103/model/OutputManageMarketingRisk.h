@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 返回码。0表示成功，非0标识失败错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置返回码。0表示成功，非0标识失败错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 返回码。0表示成功，非0标识失败错误码。
+                     * @param _code 返回码。0表示成功，非0标识失败错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message UTF-8编码，出错消息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置UTF-8编码，出错消息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message UTF-8编码，出错消息。
+                     * @param _message UTF-8编码，出错消息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 业务详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutputManageMarketingRiskValue GetValue() const;
 
                     /**
                      * 设置业务详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 业务详情。
+                     * @param _value 业务详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const OutputManageMarketingRiskValue& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UUid 控制台显示的req_id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUUid() const;
 
                     /**
                      * 设置控制台显示的req_id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UUid 控制台显示的req_id。
+                     * @param _uUid 控制台显示的req_id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUUid(const std::string& _uUid);
 
                     /**
                      * 判断参数 UUid 是否已赋值
                      * @return UUid 是否已赋值
+                     * 
                      */
                     bool UUidHasBeenSet() const;
 

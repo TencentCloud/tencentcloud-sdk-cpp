@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return DBInstanceId 实例ID
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param DBInstanceId 实例ID
+                     * @param _dBInstanceId 实例ID
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
                      * @return TargetDBKernelVersion 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * 
                      */
                     std::string GetTargetDBKernelVersion() const;
 
                     /**
                      * 设置升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
-                     * @param TargetDBKernelVersion 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * @param _targetDBKernelVersion 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * 
                      */
                     void SetTargetDBKernelVersion(const std::string& _targetDBKernelVersion);
 
                     /**
                      * 判断参数 TargetDBKernelVersion 是否已赋值
                      * @return TargetDBKernelVersion 是否已赋值
+                     * 
                      */
                     bool TargetDBKernelVersionHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 0：立即切换（默认值）。
 1：指定时间切换。
 2：维护时间窗口内切换。
+                     * 
                      */
                     uint64_t GetSwitchTag() const;
 
@@ -95,52 +102,60 @@ namespace TencentCloud
 0：立即切换（默认值）。
 1：指定时间切换。
 2：维护时间窗口内切换。
-                     * @param SwitchTag 指定实例升级内核版本号完成后的切换时间。可选值，
+                     * @param _switchTag 指定实例升级内核版本号完成后的切换时间。可选值，
 0：立即切换（默认值）。
 1：指定时间切换。
 2：维护时间窗口内切换。
+                     * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
 
                     /**
                      * 判断参数 SwitchTag 是否已赋值
                      * @return SwitchTag 是否已赋值
+                     * 
                      */
                     bool SwitchTagHasBeenSet() const;
 
                     /**
                      * 获取切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
                      * @return SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * 
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
                      * 设置切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
-                     * @param SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * @param _switchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * 
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
 
                     /**
                      * 判断参数 SwitchStartTime 是否已赋值
                      * @return SwitchStartTime 是否已赋值
+                     * 
                      */
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
                      * 获取切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。
                      * @return SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。
+                     * 
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
                      * 设置切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。
-                     * @param SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。
+                     * @param _switchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。
+                     * 
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
 
                     /**
                      * 判断参数 SwitchEndTime 是否已赋值
                      * @return SwitchEndTime 是否已赋值
+                     * 
                      */
                     bool SwitchEndTimeHasBeenSet() const;
 
@@ -151,6 +166,7 @@ false：发送正常请求（默认值），通过检查后直接升级内核版
                      * @return DryRun 是否对本次升级实例内核版本号操作执行预检查。可选值，
 true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
 false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+                     * 
                      */
                     bool GetDryRun() const;
 
@@ -158,15 +174,17 @@ false：发送正常请求（默认值），通过检查后直接升级内核版
                      * 设置是否对本次升级实例内核版本号操作执行预检查。可选值，
 true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
 false：发送正常请求（默认值），通过检查后直接升级内核版本号。
-                     * @param DryRun 是否对本次升级实例内核版本号操作执行预检查。可选值，
+                     * @param _dryRun 是否对本次升级实例内核版本号操作执行预检查。可选值，
 true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
 false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 

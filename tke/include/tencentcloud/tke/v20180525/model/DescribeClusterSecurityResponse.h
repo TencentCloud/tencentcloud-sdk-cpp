@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取集群的账号名称
                      * @return UserName 集群的账号名称
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取集群的访问密码
                      * @return Password 集群的访问密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取集群访问CA证书
                      * @return CertificationAuthority 集群访问CA证书
+                     * 
                      */
                     std::string GetCertificationAuthority() const;
 
                     /**
                      * 判断参数 CertificationAuthority 是否已赋值
                      * @return CertificationAuthority 是否已赋值
+                     * 
                      */
                     bool CertificationAuthorityHasBeenSet() const;
 
                     /**
                      * 获取集群访问的地址
                      * @return ClusterExternalEndpoint 集群访问的地址
+                     * 
                      */
                     std::string GetClusterExternalEndpoint() const;
 
                     /**
                      * 判断参数 ClusterExternalEndpoint 是否已赋值
                      * @return ClusterExternalEndpoint 是否已赋值
+                     * 
                      */
                     bool ClusterExternalEndpointHasBeenSet() const;
 
                     /**
                      * 获取集群访问的域名
                      * @return Domain 集群访问的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取集群Endpoint地址
                      * @return PgwEndpoint 集群Endpoint地址
+                     * 
                      */
                     std::string GetPgwEndpoint() const;
 
                     /**
                      * 判断参数 PgwEndpoint 是否已赋值
                      * @return PgwEndpoint 是否已赋值
+                     * 
                      */
                     bool PgwEndpointHasBeenSet() const;
 
@@ -120,12 +132,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityPolicy 集群访问策略组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSecurityPolicy() const;
 
                     /**
                      * 判断参数 SecurityPolicy 是否已赋值
                      * @return SecurityPolicy 是否已赋值
+                     * 
                      */
                     bool SecurityPolicyHasBeenSet() const;
 
@@ -134,12 +148,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kubeconfig 集群Kubeconfig文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKubeconfig() const;
 
                     /**
                      * 判断参数 Kubeconfig 是否已赋值
                      * @return Kubeconfig 是否已赋值
+                     * 
                      */
                     bool KubeconfigHasBeenSet() const;
 
@@ -148,12 +164,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JnsGwEndpoint 集群JnsGw的访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJnsGwEndpoint() const;
 
                     /**
                      * 判断参数 JnsGwEndpoint 是否已赋值
                      * @return JnsGwEndpoint 是否已赋值
+                     * 
                      */
                     bool JnsGwEndpointHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取如果IdSet不为空，则忽略其他参数
                      * @return IdSet 如果IdSet不为空，则忽略其他参数
+                     * 
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
                      * 设置如果IdSet不为空，则忽略其他参数
-                     * @param IdSet 如果IdSet不为空，则忽略其他参数
+                     * @param _idSet 如果IdSet不为空，则忽略其他参数
+                     * 
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
 
                     /**
                      * 判断参数 IdSet 是否已赋值
                      * @return IdSet 是否已赋值
+                     * 
                      */
                     bool IdSetHasBeenSet() const;
 
                     /**
                      * 获取模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询
                      * @return Name 模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询
-                     * @param Name 模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询
+                     * @param _name 模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分页偏移位置，默认值为0
                      * @return Offset 分页偏移位置，默认值为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移位置，默认值为0
-                     * @param Offset 分页偏移位置，默认值为0
+                     * @param _offset 分页偏移位置，默认值为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页条目数量，默认20, 最大500
                      * @return Limit 每页条目数量，默认20, 最大500
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页条目数量，默认20, 最大500
-                     * @param Limit 每页条目数量，默认20, 最大500
+                     * @param _limit 每页条目数量，默认20, 最大500
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取精确查询，IdSet为空时才生效
                      * @return UserName 精确查询，IdSet为空时才生效
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置精确查询，IdSet为空时才生效
-                     * @param UserName 精确查询，IdSet为空时才生效
+                     * @param _userName 精确查询，IdSet为空时才生效
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -137,74 +152,86 @@ namespace TencentCloud
 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
                      * @return Phone 精确查询，IdSet、UserName为空时才生效。
 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置精确查询，IdSet、UserName为空时才生效。
 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @param Phone 精确查询，IdSet、UserName为空时才生效。
+                     * @param _phone 精确查询，IdSet、UserName为空时才生效。
 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取查询具有指定资产ID访问权限的用户
                      * @return AuthorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
+                     * 
                      */
                     std::vector<uint64_t> GetAuthorizedDeviceIdSet() const;
 
                     /**
                      * 设置查询具有指定资产ID访问权限的用户
-                     * @param AuthorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
+                     * @param _authorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
+                     * 
                      */
                     void SetAuthorizedDeviceIdSet(const std::vector<uint64_t>& _authorizedDeviceIdSet);
 
                     /**
                      * 判断参数 AuthorizedDeviceIdSet 是否已赋值
                      * @return AuthorizedDeviceIdSet 是否已赋值
+                     * 
                      */
                     bool AuthorizedDeviceIdSetHasBeenSet() const;
 
                     /**
                      * 获取认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      * @return AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * 
                      */
                     std::vector<uint64_t> GetAuthTypeSet() const;
 
                     /**
                      * 设置认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
-                     * @param AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * @param _authTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
+                     * 
                      */
                     void SetAuthTypeSet(const std::vector<uint64_t>& _authTypeSet);
 
                     /**
                      * 判断参数 AuthTypeSet 是否已赋值
                      * @return AuthTypeSet 是否已赋值
+                     * 
                      */
                     bool AuthTypeSetHasBeenSet() const;
 
                     /**
                      * 获取部门ID，用于过滤属于某个部门的用户
                      * @return DepartmentId 部门ID，用于过滤属于某个部门的用户
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置部门ID，用于过滤属于某个部门的用户
-                     * @param DepartmentId 部门ID，用于过滤属于某个部门的用户
+                     * @param _departmentId 部门ID，用于过滤属于某个部门的用户
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

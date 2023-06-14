@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取批次号
                      * @return BatchId 批次号
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次号
-                     * @param BatchId 批次号
+                     * @param _batchId 批次号
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchInfoList 批次列表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CreateBatchPaymentBatchData> GetBatchInfoList() const;
 
                     /**
                      * 设置批次列表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchInfoList 批次列表详情
+                     * @param _batchInfoList 批次列表详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchInfoList(const std::vector<CreateBatchPaymentBatchData>& _batchInfoList);
 
                     /**
                      * 判断参数 BatchInfoList 是否已赋值
                      * @return BatchInfoList 是否已赋值
+                     * 
                      */
                     bool BatchInfoListHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数
                      * @return TotalCount 记录总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取漏洞影响机器列表数组
                      * @return ImpactedHosts 漏洞影响机器列表数组
+                     * 
                      */
                     std::vector<ImpactedHost> GetImpactedHosts() const;
 
                     /**
                      * 判断参数 ImpactedHosts 是否已赋值
                      * @return ImpactedHosts 是否已赋值
+                     * 
                      */
                     bool ImpactedHostsHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取匹配关键字
                      * @return MatchKey 匹配关键字
+                     * 
                      */
                     std::string GetMatchKey() const;
 
                     /**
                      * 设置匹配关键字
-                     * @param MatchKey 匹配关键字
+                     * @param _matchKey 匹配关键字
+                     * 
                      */
                     void SetMatchKey(const std::string& _matchKey);
 
                     /**
                      * 判断参数 MatchKey 是否已赋值
                      * @return MatchKey 是否已赋值
+                     * 
                      */
                     bool MatchKeyHasBeenSet() const;
 
                     /**
                      * 获取逻辑操作符，取值如下
                      * @return LogiOperator 逻辑操作符，取值如下
+                     * 
                      */
                     std::string GetLogiOperator() const;
 
                     /**
                      * 设置逻辑操作符，取值如下
-                     * @param LogiOperator 逻辑操作符，取值如下
+                     * @param _logiOperator 逻辑操作符，取值如下
+                     * 
                      */
                     void SetLogiOperator(const std::string& _logiOperator);
 
                     /**
                      * 判断参数 LogiOperator 是否已赋值
                      * @return LogiOperator 是否已赋值
+                     * 
                      */
                     bool LogiOperatorHasBeenSet() const;
 
                     /**
                      * 获取匹配值。
                      * @return MatchValue 匹配值。
+                     * 
                      */
                     std::string GetMatchValue() const;
 
                     /**
                      * 设置匹配值。
-                     * @param MatchValue 匹配值。
+                     * @param _matchValue 匹配值。
+                     * 
                      */
                     void SetMatchValue(const std::string& _matchValue);
 
                     /**
                      * 判断参数 MatchValue 是否已赋值
                      * @return MatchValue 是否已赋值
+                     * 
                      */
                     bool MatchValueHasBeenSet() const;
 

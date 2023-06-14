@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取匹配关键字，ip, attack_location
                      * @return Key 匹配关键字，ip, attack_location
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置匹配关键字，ip, attack_location
-                     * @param Key 匹配关键字，ip, attack_location
+                     * @param _key 匹配关键字，ip, attack_location
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取逻辑操作符，取值 exclude, include
                      * @return Operator 逻辑操作符，取值 exclude, include
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置逻辑操作符，取值 exclude, include
-                     * @param Operator 逻辑操作符，取值 exclude, include
+                     * @param _operator 逻辑操作符，取值 exclude, include
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*
                      * @return Value 匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*
-                     * @param Value 匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*
+                     * @param _value 匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

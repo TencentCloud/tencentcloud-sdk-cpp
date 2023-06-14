@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取输入的词语（仅支持UTF-8格式，不超过20字）
                      * @return Text 输入的词语（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置输入的词语（仅支持UTF-8格式，不超过20字）
-                     * @param Text 输入的词语（仅支持UTF-8格式，不超过20字）
+                     * @param _text 输入的词语（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取相似词个数；取值范围：1-200，默认为10；
                      * @return WordNumber 相似词个数；取值范围：1-200，默认为10；
+                     * 
                      */
                     uint64_t GetWordNumber() const;
 
                     /**
                      * 设置相似词个数；取值范围：1-200，默认为10；
-                     * @param WordNumber 相似词个数；取值范围：1-200，默认为10；
+                     * @param _wordNumber 相似词个数；取值范围：1-200，默认为10；
+                     * 
                      */
                     void SetWordNumber(const uint64_t& _wordNumber);
 
                     /**
                      * 判断参数 WordNumber 是否已赋值
                      * @return WordNumber 是否已赋值
+                     * 
                      */
                     bool WordNumberHasBeenSet() const;
 

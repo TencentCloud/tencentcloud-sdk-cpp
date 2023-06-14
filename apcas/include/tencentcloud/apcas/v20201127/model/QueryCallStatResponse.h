@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取调用量数组
                      * @return CallSet 调用量数组
+                     * 
                      */
                     std::vector<CallStatItem> GetCallSet() const;
 
                     /**
                      * 判断参数 CallSet 是否已赋值
                      * @return CallSet 是否已赋值
+                     * 
                      */
                     bool CallSetHasBeenSet() const;
 

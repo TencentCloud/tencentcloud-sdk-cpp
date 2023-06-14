@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取输入视频的来源类型，可以取的值为 File，Stream 两种。
                      * @return InputType 输入视频的来源类型，可以取的值为 File，Stream 两种。
+                     * 
                      */
                     std::string GetInputType() const;
 
                     /**
                      * 设置输入视频的来源类型，可以取的值为 File，Stream 两种。
-                     * @param InputType 输入视频的来源类型，可以取的值为 File，Stream 两种。
+                     * @param _inputType 输入视频的来源类型，可以取的值为 File，Stream 两种。
+                     * 
                      */
                     void SetInputType(const std::string& _inputType);
 
                     /**
                      * 判断参数 InputType 是否已赋值
                      * @return InputType 是否已赋值
+                     * 
                      */
                     bool InputTypeHasBeenSet() const;
 
                     /**
                      * 获取输入的视频文件信息，当 InputType 为 File 时，该字段有值。
                      * @return FileInfoSet 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
+                     * 
                      */
                     std::vector<EditMediaFileInfo> GetFileInfoSet() const;
 
                     /**
                      * 设置输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-                     * @param FileInfoSet 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
+                     * @param _fileInfoSet 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
+                     * 
                      */
                     void SetFileInfoSet(const std::vector<EditMediaFileInfo>& _fileInfoSet);
 
                     /**
                      * 判断参数 FileInfoSet 是否已赋值
                      * @return FileInfoSet 是否已赋值
+                     * 
                      */
                     bool FileInfoSetHasBeenSet() const;
 
                     /**
                      * 获取输入的流信息，当 InputType 为 Stream 时，该字段有值。
                      * @return StreamInfoSet 输入的流信息，当 InputType 为 Stream 时，该字段有值。
+                     * 
                      */
                     std::vector<EditMediaStreamInfo> GetStreamInfoSet() const;
 
                     /**
                      * 设置输入的流信息，当 InputType 为 Stream 时，该字段有值。
-                     * @param StreamInfoSet 输入的流信息，当 InputType 为 Stream 时，该字段有值。
+                     * @param _streamInfoSet 输入的流信息，当 InputType 为 Stream 时，该字段有值。
+                     * 
                      */
                     void SetStreamInfoSet(const std::vector<EditMediaStreamInfo>& _streamInfoSet);
 
                     /**
                      * 判断参数 StreamInfoSet 是否已赋值
                      * @return StreamInfoSet 是否已赋值
+                     * 
                      */
                     bool StreamInfoSetHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取接入点ID
                      * @return EndpointId 接入点ID
+                     * 
                      */
                     std::string GetEndpointId() const;
 
                     /**
                      * 设置接入点ID
-                     * @param EndpointId 接入点ID
+                     * @param _endpointId 接入点ID
+                     * 
                      */
                     void SetEndpointId(const std::string& _endpointId);
 
                     /**
                      * 判断参数 EndpointId 是否已赋值
                      * @return EndpointId 是否已赋值
+                     * 
                      */
                     bool EndpointIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return WanStatus 取值为： 
  - OPEN：开启外网 
  - CLOSE：关闭外网
+                     * 
                      */
                     std::string GetWanStatus() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置取值为： 
  - OPEN：开启外网 
  - CLOSE：关闭外网
-                     * @param WanStatus 取值为： 
+                     * @param _wanStatus 取值为： 
  - OPEN：开启外网 
  - CLOSE：关闭外网
+                     * 
                      */
                     void SetWanStatus(const std::string& _wanStatus);
 
                     /**
                      * 判断参数 WanStatus 是否已赋值
                      * @return WanStatus 是否已赋值
+                     * 
                      */
                     bool WanStatusHasBeenSet() const;
 

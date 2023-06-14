@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取服务的调用结果
                      * @return Results 服务的调用结果
+                     * 
                      */
                     std::vector<AlgorithmResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
                      * @return Status 0:获取结果失败
 1：结果还没有生成，继续轮询
 2：获取结果成功
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

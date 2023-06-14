@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取视频编辑模板宽高比。
                      * @return AspectRatio 视频编辑模板宽高比。
+                     * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
                      * 设置视频编辑模板宽高比。
-                     * @param AspectRatio 视频编辑模板宽高比。
+                     * @param _aspectRatio 视频编辑模板宽高比。
+                     * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
 
                     /**
                      * 判断参数 AspectRatio 是否已赋值
                      * @return AspectRatio 是否已赋值
+                     * 
                      */
                     bool AspectRatioHasBeenSet() const;
 
                     /**
                      * 获取卡槽信息。
                      * @return SlotSet 卡槽信息。
+                     * 
                      */
                     std::vector<SlotInfo> GetSlotSet() const;
 
                     /**
                      * 设置卡槽信息。
-                     * @param SlotSet 卡槽信息。
+                     * @param _slotSet 卡槽信息。
+                     * 
                      */
                     void SetSlotSet(const std::vector<SlotInfo>& _slotSet);
 
                     /**
                      * 判断参数 SlotSet 是否已赋值
                      * @return SlotSet 是否已赋值
+                     * 
                      */
                     bool SlotSetHasBeenSet() const;
 
                     /**
                      * 获取模板预览视频 URL 地址 。
                      * @return PreviewVideoUrl 模板预览视频 URL 地址 。
+                     * 
                      */
                     std::string GetPreviewVideoUrl() const;
 
                     /**
                      * 设置模板预览视频 URL 地址 。
-                     * @param PreviewVideoUrl 模板预览视频 URL 地址 。
+                     * @param _previewVideoUrl 模板预览视频 URL 地址 。
+                     * 
                      */
                     void SetPreviewVideoUrl(const std::string& _previewVideoUrl);
 
                     /**
                      * 判断参数 PreviewVideoUrl 是否已赋值
                      * @return PreviewVideoUrl 是否已赋值
+                     * 
                      */
                     bool PreviewVideoUrlHasBeenSet() const;
 

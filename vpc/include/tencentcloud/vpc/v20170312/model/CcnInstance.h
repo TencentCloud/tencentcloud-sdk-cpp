@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取关联实例ID。
                      * @return InstanceId 关联实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置关联实例ID。
-                     * @param InstanceId 关联实例ID。
+                     * @param _instanceId 关联实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取关联实例ID所属大区，例如：ap-guangzhou。
                      * @return InstanceRegion 关联实例ID所属大区，例如：ap-guangzhou。
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置关联实例ID所属大区，例如：ap-guangzhou。
-                     * @param InstanceRegion 关联实例ID所属大区，例如：ap-guangzhou。
+                     * @param _instanceRegion 关联实例ID所属大区，例如：ap-guangzhou。
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 <li>`DIRECTCONNECT`：专线网关</li>
 <li>`BMVPC`：黑石私有网络</li>
 <li>`VPNGW`：VPNGW类型</li>
+                     * 
                      */
                     std::string GetInstanceType() const;
 
@@ -102,35 +109,40 @@ namespace TencentCloud
 <li>`DIRECTCONNECT`：专线网关</li>
 <li>`BMVPC`：黑石私有网络</li>
 <li>`VPNGW`：VPNGW类型</li>
-                     * @param InstanceType 关联实例类型，可选值：
+                     * @param _instanceType 关联实例类型，可选值：
 <li>`VPC`：私有网络</li>
 <li>`DIRECTCONNECT`：专线网关</li>
 <li>`BMVPC`：黑石私有网络</li>
 <li>`VPNGW`：VPNGW类型</li>
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Description 备注
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-                     * @param Description 备注
+                     * @param _description 备注
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableId 实例关联的路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置实例关联的路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteTableId 实例关联的路由表ID。
+                     * @param _routeTableId 实例关联的路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 文件链接。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置文件链接。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 文件链接。
+                     * @param _url 文件链接。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 文件大小，部分任务支持，单位：字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小，部分任务支持，单位：字节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 文件大小，部分任务支持，单位：字节
+                     * @param _fileSize 文件大小，部分任务支持，单位：字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfo 媒体信息，对于媒体文件，部分任务支持返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaResultInfo GetMediaInfo() const;
 
                     /**
                      * 设置媒体信息，对于媒体文件，部分任务支持返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaInfo 媒体信息，对于媒体文件，部分任务支持返回
+                     * @param _mediaInfo 媒体信息，对于媒体文件，部分任务支持返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaInfo(const MediaResultInfo& _mediaInfo);
 
                     /**
                      * 判断参数 MediaInfo 是否已赋值
                      * @return MediaInfo 是否已赋值
+                     * 
                      */
                     bool MediaInfoHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 文件对应的md5。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置文件对应的md5。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5 文件对应的md5。
+                     * @param _md5 文件对应的md5。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 

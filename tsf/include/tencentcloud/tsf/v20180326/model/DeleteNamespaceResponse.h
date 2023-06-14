@@ -50,12 +50,14 @@ false：删除失败。
                      * @return Result 删除命名空间是否成功。
 true：删除成功。
 false：删除失败。
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取分组ID列表
                      * @return GroupIds 分组ID列表
+                     * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置分组ID列表
-                     * @param GroupIds 分组ID列表
+                     * @param _groupIds 分组ID列表
+                     * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
 
                     /**
                      * 判断参数 GroupIds 是否已赋值
                      * @return GroupIds 是否已赋值
+                     * 
                      */
                     bool GroupIdsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName RTMP的推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置RTMP的推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppName RTMP的推流路径。
+                     * @param _appName RTMP的推流路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 RTMP的推流地址拼接规则为：rtmp://Ip:1935/AppName/StreamKey
                      * @return StreamKey RTMP的推流StreamKey。
 RTMP的推流地址拼接规则为：rtmp://Ip:1935/AppName/StreamKey
+                     * 
                      */
                     std::string GetStreamKey() const;
 
                     /**
                      * 设置RTMP的推流StreamKey。
 RTMP的推流地址拼接规则为：rtmp://Ip:1935/AppName/StreamKey
-                     * @param StreamKey RTMP的推流StreamKey。
+                     * @param _streamKey RTMP的推流StreamKey。
 RTMP的推流地址拼接规则为：rtmp://Ip:1935/AppName/StreamKey
+                     * 
                      */
                     void SetStreamKey(const std::string& _streamKey);
 
                     /**
                      * 判断参数 StreamKey 是否已赋值
                      * @return StreamKey 是否已赋值
+                     * 
                      */
                     bool StreamKeyHasBeenSet() const;
 

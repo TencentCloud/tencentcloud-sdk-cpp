@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusChangeAmount 状态变更的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatusChangeAmount() const;
 
                     /**
                      * 设置状态变更的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusChangeAmount 状态变更的事件数量
+                     * @param _statusChangeAmount 状态变更的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusChangeAmount(const int64_t& _statusChangeAmount);
 
                     /**
                      * 判断参数 StatusChangeAmount 是否已赋值
                      * @return StatusChangeAmount 是否已赋值
+                     * 
                      */
                     bool StatusChangeAmountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnConfigAlarmAmount 告警状态未配置的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnConfigAlarmAmount() const;
 
                     /**
                      * 设置告警状态未配置的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnConfigAlarmAmount 告警状态未配置的事件数量
+                     * @param _unConfigAlarmAmount 告警状态未配置的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnConfigAlarmAmount(const int64_t& _unConfigAlarmAmount);
 
                     /**
                      * 判断参数 UnConfigAlarmAmount 是否已赋值
                      * @return UnConfigAlarmAmount 是否已赋值
+                     * 
                      */
                     bool UnConfigAlarmAmountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnNormalEventAmount 异常事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnNormalEventAmount() const;
 
                     /**
                      * 设置异常事件数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnNormalEventAmount 异常事件数量
+                     * @param _unNormalEventAmount 异常事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnNormalEventAmount(const int64_t& _unNormalEventAmount);
 
                     /**
                      * 判断参数 UnNormalEventAmount 是否已赋值
                      * @return UnNormalEventAmount 是否已赋值
+                     * 
                      */
                     bool UnNormalEventAmountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnRecoverAmount 未恢复的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnRecoverAmount() const;
 
                     /**
                      * 设置未恢复的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnRecoverAmount 未恢复的事件数量
+                     * @param _unRecoverAmount 未恢复的事件数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnRecoverAmount(const int64_t& _unRecoverAmount);
 
                     /**
                      * 判断参数 UnRecoverAmount 是否已赋值
                      * @return UnRecoverAmount 是否已赋值
+                     * 
                      */
                     bool UnRecoverAmountHasBeenSet() const;
 

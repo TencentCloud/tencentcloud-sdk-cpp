@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-kleu3gt0
                      * @return InstanceId Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-kleu3gt0
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
                      * @return PluginId 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
-                     * @param PluginId 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
+                     * @param _pluginId 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 

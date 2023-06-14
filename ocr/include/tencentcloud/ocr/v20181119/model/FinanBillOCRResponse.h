@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取金融票据整单识别结果，具体内容请点击左侧链接。
                      * @return FinanBillInfos 金融票据整单识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<FinanBillInfo> GetFinanBillInfos() const;
 
                     /**
                      * 判断参数 FinanBillInfos 是否已赋值
                      * @return FinanBillInfos 是否已赋值
+                     * 
                      */
                     bool FinanBillInfosHasBeenSet() const;
 

@@ -54,12 +54,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseGroup 代理组基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseGroupInfo GetBaseGroup() const;
 
                     /**
                      * 判断参数 BaseGroup 是否已赋值
                      * @return BaseGroup 是否已赋值
+                     * 
                      */
                     bool BaseGroupHasBeenSet() const;
 
@@ -68,12 +70,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 代理组地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Address GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -82,12 +86,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNode 代理组节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProxyNodeInfo GetProxyNode() const;
 
                     /**
                      * 判断参数 ProxyNode 是否已赋值
                      * @return ProxyNode 是否已赋值
+                     * 
                      */
                     bool ProxyNodeHasBeenSet() const;
 
@@ -96,12 +102,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RWInstInfo 读写分析信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RWInfo GetRWInstInfo() const;
 
                     /**
                      * 判断参数 RWInstInfo 是否已赋值
                      * @return RWInstInfo 是否已赋值
+                     * 
                      */
                     bool RWInstInfoHasBeenSet() const;
 
@@ -110,12 +118,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolInfo 连接池信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ConnectionPoolInfo GetConnectionPoolInfo() const;
 
                     /**
                      * 判断参数 ConnectionPoolInfo 是否已赋值
                      * @return ConnectionPoolInfo 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolInfoHasBeenSet() const;
 
@@ -124,12 +134,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 代理数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -138,12 +150,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroup 代理信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyGroup> GetProxyGroup() const;
 
                     /**
                      * 判断参数 ProxyGroup 是否已赋值
                      * @return ProxyGroup 是否已赋值
+                     * 
                      */
                     bool ProxyGroupHasBeenSet() const;
 

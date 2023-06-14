@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取事件规则ID
                      * @return RuleId 事件规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置事件规则ID
-                     * @param RuleId 事件规则ID
+                     * @param _ruleId 事件规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取启动配置ID。
                      * @return LaunchConfigurationId 启动配置ID。
+                     * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
                      * 设置启动配置ID。
-                     * @param LaunchConfigurationId 启动配置ID。
+                     * @param _launchConfigurationId 启动配置ID。
+                     * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
 
                     /**
                      * 判断参数 LaunchConfigurationId 是否已赋值
                      * @return LaunchConfigurationId 是否已赋值
+                     * 
                      */
                     bool LaunchConfigurationIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 填 true 代表清空“数据盘”信息，清空后基于此新创建的云主机将不含有任何数据盘。
                      * @return ClearDataDisks 是否清空数据盘信息，非必填，默认为 false。
 填 true 代表清空“数据盘”信息，清空后基于此新创建的云主机将不含有任何数据盘。
+                     * 
                      */
                     bool GetClearDataDisks() const;
 
                     /**
                      * 设置是否清空数据盘信息，非必填，默认为 false。
 填 true 代表清空“数据盘”信息，清空后基于此新创建的云主机将不含有任何数据盘。
-                     * @param ClearDataDisks 是否清空数据盘信息，非必填，默认为 false。
+                     * @param _clearDataDisks 是否清空数据盘信息，非必填，默认为 false。
 填 true 代表清空“数据盘”信息，清空后基于此新创建的云主机将不含有任何数据盘。
+                     * 
                      */
                     void SetClearDataDisks(const bool& _clearDataDisks);
 
                     /**
                      * 判断参数 ClearDataDisks 是否已赋值
                      * @return ClearDataDisks 是否已赋值
+                     * 
                      */
                     bool ClearDataDisksHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
                      * @return ClearHostNameSettings 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     * 
                      */
                     bool GetClearHostNameSettings() const;
 
                     /**
                      * 设置是否清空云服务器主机名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
-                     * @param ClearHostNameSettings 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+                     * @param _clearHostNameSettings 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     * 
                      */
                     void SetClearHostNameSettings(const bool& _clearHostNameSettings);
 
                     /**
                      * 判断参数 ClearHostNameSettings 是否已赋值
                      * @return ClearHostNameSettings 是否已赋值
+                     * 
                      */
                     bool ClearHostNameSettingsHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
                      * @return ClearInstanceNameSettings 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     * 
                      */
                     bool GetClearInstanceNameSettings() const;
 
                     /**
                      * 设置是否清空云服务器实例名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
-                     * @param ClearInstanceNameSettings 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+                     * @param _clearInstanceNameSettings 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
 填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     * 
                      */
                     void SetClearInstanceNameSettings(const bool& _clearInstanceNameSettings);
 
                     /**
                      * 判断参数 ClearInstanceNameSettings 是否已赋值
                      * @return ClearInstanceNameSettings 是否已赋值
+                     * 
                      */
                     bool ClearInstanceNameSettingsHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
                      * @return ClearDisasterRecoverGroupIds 是否清空置放群组信息，非必填，默认为 false。
 填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     * 
                      */
                     bool GetClearDisasterRecoverGroupIds() const;
 
                     /**
                      * 设置是否清空置放群组信息，非必填，默认为 false。
 填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
-                     * @param ClearDisasterRecoverGroupIds 是否清空置放群组信息，非必填，默认为 false。
+                     * @param _clearDisasterRecoverGroupIds 是否清空置放群组信息，非必填，默认为 false。
 填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     * 
                      */
                     void SetClearDisasterRecoverGroupIds(const bool& _clearDisasterRecoverGroupIds);
 
                     /**
                      * 判断参数 ClearDisasterRecoverGroupIds 是否已赋值
                      * @return ClearDisasterRecoverGroupIds 是否已赋值
+                     * 
                      */
                     bool ClearDisasterRecoverGroupIdsHasBeenSet() const;
 

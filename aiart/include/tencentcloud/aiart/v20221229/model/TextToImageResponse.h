@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的生成图 Base64 编码。
                      * @return ResultImage 返回的生成图 Base64 编码。
+                     * 
                      */
                     std::string GetResultImage() const;
 
                     /**
                      * 判断参数 ResultImage 是否已赋值
                      * @return ResultImage 是否已赋值
+                     * 
                      */
                     bool ResultImageHasBeenSet() const;
 

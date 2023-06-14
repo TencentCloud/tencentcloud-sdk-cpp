@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取询价参数，支持批量询价
                      * @return SpecsParam 询价参数，支持批量询价
+                     * 
                      */
                     std::vector<SpecUnit> GetSpecsParam() const;
 
                     /**
                      * 设置询价参数，支持批量询价
-                     * @param SpecsParam 询价参数，支持批量询价
+                     * @param _specsParam 询价参数，支持批量询价
+                     * 
                      */
                     void SetSpecsParam(const std::vector<SpecUnit>& _specsParam);
 
                     /**
                      * 判断参数 SpecsParam 是否已赋值
                      * @return SpecsParam 是否已赋值
+                     * 
                      */
                     bool SpecsParamHasBeenSet() const;
 

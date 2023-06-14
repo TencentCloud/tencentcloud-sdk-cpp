@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取内存容量，单位为G
                      * @return Memory 内存容量，单位为G
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存容量，单位为G
-                     * @param Memory 内存容量，单位为G
+                     * @param _memory 内存容量，单位为G
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取CPU核数
                      * @return CPUCores CPU核数
+                     * 
                      */
                     uint64_t GetCPUCores() const;
 
                     /**
                      * 设置CPU核数
-                     * @param CPUCores CPU核数
+                     * @param _cPUCores CPU核数
+                     * 
                      */
                     void SetCPUCores(const uint64_t& _cPUCores);
 
                     /**
                      * 判断参数 CPUCores 是否已赋值
                      * @return CPUCores 是否已赋值
+                     * 
                      */
                     bool CPUCoresHasBeenSet() const;
 
                     /**
                      * 获取机器资源ID（EMR测资源标识）
                      * @return ResourceId 机器资源ID（EMR测资源标识）
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置机器资源ID（EMR测资源标识）
-                     * @param ResourceId 机器资源ID（EMR测资源标识）
+                     * @param _resourceId 机器资源ID（EMR测资源标识）
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取变配机器规格
                      * @return InstanceType 变配机器规格
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置变配机器规格
-                     * @param InstanceType 变配机器规格
+                     * @param _instanceType 变配机器规格
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

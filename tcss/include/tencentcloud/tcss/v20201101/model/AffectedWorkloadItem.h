@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名字
                      * @return ClusterName 集群名字
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名字
-                     * @param ClusterName 集群名字
+                     * @param _clusterName 集群名字
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取工作负载名称
                      * @return WorkloadName 工作负载名称
+                     * 
                      */
                     std::string GetWorkloadName() const;
 
                     /**
                      * 设置工作负载名称
-                     * @param WorkloadName 工作负载名称
+                     * @param _workloadName 工作负载名称
+                     * 
                      */
                     void SetWorkloadName(const std::string& _workloadName);
 
                     /**
                      * 判断参数 WorkloadName 是否已赋值
                      * @return WorkloadName 是否已赋值
+                     * 
                      */
                     bool WorkloadNameHasBeenSet() const;
 
                     /**
                      * 获取工作负载类型
                      * @return WorkloadType 工作负载类型
+                     * 
                      */
                     std::string GetWorkloadType() const;
 
                     /**
                      * 设置工作负载类型
-                     * @param WorkloadType 工作负载类型
+                     * @param _workloadType 工作负载类型
+                     * 
                      */
                     void SetWorkloadType(const std::string& _workloadType);
 
                     /**
                      * 判断参数 WorkloadType 是否已赋值
                      * @return WorkloadType 是否已赋值
+                     * 
                      */
                     bool WorkloadTypeHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return Region 区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置区域
-                     * @param Region 区域
+                     * @param _region 区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取检测结果的验证信息
                      * @return VerifyInfo 检测结果的验证信息
+                     * 
                      */
                     std::string GetVerifyInfo() const;
 
                     /**
                      * 设置检测结果的验证信息
-                     * @param VerifyInfo 检测结果的验证信息
+                     * @param _verifyInfo 检测结果的验证信息
+                     * 
                      */
                     void SetVerifyInfo(const std::string& _verifyInfo);
 
                     /**
                      * 判断参数 VerifyInfo 是否已赋值
                      * @return VerifyInfo 是否已赋值
+                     * 
                      */
                     bool VerifyInfoHasBeenSet() const;
 

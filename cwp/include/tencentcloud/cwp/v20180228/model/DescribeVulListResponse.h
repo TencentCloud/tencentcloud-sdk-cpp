@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulInfoList 漏洞列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulInfoList> GetVulInfoList() const;
 
                     /**
                      * 判断参数 VulInfoList 是否已赋值
                      * @return VulInfoList 是否已赋值
+                     * 
                      */
                     bool VulInfoListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 漏洞总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowVulCount 重点关注漏洞总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFollowVulCount() const;
 
                     /**
                      * 判断参数 FollowVulCount 是否已赋值
                      * @return FollowVulCount 是否已赋值
+                     * 
                      */
                     bool FollowVulCountHasBeenSet() const;
 

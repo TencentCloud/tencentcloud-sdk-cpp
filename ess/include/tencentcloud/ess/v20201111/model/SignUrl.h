@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取小程序签署链接
                      * @return AppSignUrl 小程序签署链接
+                     * 
                      */
                     std::string GetAppSignUrl() const;
 
                     /**
                      * 设置小程序签署链接
-                     * @param AppSignUrl 小程序签署链接
+                     * @param _appSignUrl 小程序签署链接
+                     * 
                      */
                     void SetAppSignUrl(const std::string& _appSignUrl);
 
                     /**
                      * 判断参数 AppSignUrl 是否已赋值
                      * @return AppSignUrl 是否已赋值
+                     * 
                      */
                     bool AppSignUrlHasBeenSet() const;
 
                     /**
                      * 获取签署链接有效时间
                      * @return EffectiveTime 签署链接有效时间
+                     * 
                      */
                     std::string GetEffectiveTime() const;
 
                     /**
                      * 设置签署链接有效时间
-                     * @param EffectiveTime 签署链接有效时间
+                     * @param _effectiveTime 签署链接有效时间
+                     * 
                      */
                     void SetEffectiveTime(const std::string& _effectiveTime);
 
                     /**
                      * 判断参数 EffectiveTime 是否已赋值
                      * @return EffectiveTime 是否已赋值
+                     * 
                      */
                     bool EffectiveTimeHasBeenSet() const;
 
                     /**
                      * 获取移动端签署链接
                      * @return HttpSignUrl 移动端签署链接
+                     * 
                      */
                     std::string GetHttpSignUrl() const;
 
                     /**
                      * 设置移动端签署链接
-                     * @param HttpSignUrl 移动端签署链接
+                     * @param _httpSignUrl 移动端签署链接
+                     * 
                      */
                     void SetHttpSignUrl(const std::string& _httpSignUrl);
 
                     /**
                      * 判断参数 HttpSignUrl 是否已赋值
                      * @return HttpSignUrl 是否已赋值
+                     * 
                      */
                     bool HttpSignUrlHasBeenSet() const;
 

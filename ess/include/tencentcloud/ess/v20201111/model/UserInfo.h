@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取用户在平台的编号
                      * @return UserId 用户在平台的编号
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户在平台的编号
-                     * @param UserId 用户在平台的编号
+                     * @param _userId 用户在平台的编号
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户的来源渠道，一般不用传，特定场景根据接口说明传值
                      * @return Channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * @deprecated
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置用户的来源渠道，一般不用传，特定场景根据接口说明传值
-                     * @param Channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * @param _channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * @deprecated
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * @deprecated
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取用户在渠道的编号，一般不用传，特定场景根据接口说明传值
                      * @return OpenId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * @deprecated
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置用户在渠道的编号，一般不用传，特定场景根据接口说明传值
-                     * @param OpenId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * @param _openId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * @deprecated
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * @deprecated
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取用户真实IP，内部字段，暂未开放
                      * @return ClientIp 用户真实IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置用户真实IP，内部字段，暂未开放
-                     * @param ClientIp 用户真实IP，内部字段，暂未开放
+                     * @param _clientIp 用户真实IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * @deprecated
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取用户代理IP，内部字段，暂未开放
                      * @return ProxyIp 用户代理IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetProxyIp() const;
 
                     /**
                      * 设置用户代理IP，内部字段，暂未开放
-                     * @param ProxyIp 用户代理IP，内部字段，暂未开放
+                     * @param _proxyIp 用户代理IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
                     /**
                      * 判断参数 ProxyIp 是否已赋值
                      * @return ProxyIp 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyIpHasBeenSet() const;
 

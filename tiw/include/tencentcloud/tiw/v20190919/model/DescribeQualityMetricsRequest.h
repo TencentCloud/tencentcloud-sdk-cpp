@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取白板应用的SdkAppId
                      * @return SdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置白板应用的SdkAppId
-                     * @param SdkAppId 白板应用的SdkAppId
+                     * @param _sdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间，Unix时间戳，单位秒，时间跨度不能超过7天
                      * @return StartTime 开始时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间，Unix时间戳，单位秒，时间跨度不能超过7天
-                     * @param StartTime 开始时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * @param _startTime 开始时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，Unix时间戳，单位秒，时间跨度不能超过7天
                      * @return EndTime 结束时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间，Unix时间戳，单位秒，时间跨度不能超过7天
-                     * @param EndTime 结束时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * @param _endTime 结束时间，Unix时间戳，单位秒，时间跨度不能超过7天
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -121,6 +130,7 @@ namespace TencentCloud
   - verify_sdk_success_rate: 白板鉴权成功率（单位，百分比）
   - verify_sdk_in_one_second_rate: 白板鉴权秒开率（单位，百分比）
   - verify_sdk_cost_avg: 白板鉴权耗时平均时间（单位，毫秒）
+                     * 
                      */
                     std::string GetMetric() const;
 
@@ -137,7 +147,7 @@ namespace TencentCloud
   - verify_sdk_success_rate: 白板鉴权成功率（单位，百分比）
   - verify_sdk_in_one_second_rate: 白板鉴权秒开率（单位，百分比）
   - verify_sdk_cost_avg: 白板鉴权耗时平均时间（单位，毫秒）
-                     * @param Metric 查询的指标，目前支持以下值
+                     * @param _metric 查询的指标，目前支持以下值
   - image_load_total_count: 图片加载总数（单位，次）
   - image_load_fail_count: 图片加载失败数量（单位，次）
   - image_load_success_rate: 图片加载成功率（百分比）
@@ -149,30 +159,35 @@ namespace TencentCloud
   - verify_sdk_success_rate: 白板鉴权成功率（单位，百分比）
   - verify_sdk_in_one_second_rate: 白板鉴权秒开率（单位，百分比）
   - verify_sdk_cost_avg: 白板鉴权耗时平均时间（单位，毫秒）
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合的时间维度，目前只支持1小时，输入值为"1h"
                      * @return Interval 聚合的时间维度，目前只支持1小时，输入值为"1h"
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 设置聚合的时间维度，目前只支持1小时，输入值为"1h"
-                     * @param Interval 聚合的时间维度，目前只支持1小时，输入值为"1h"
+                     * @param _interval 聚合的时间维度，目前只支持1小时，输入值为"1h"
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 

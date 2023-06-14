@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取按量计费后付费单价，单位：元。
                      * @return UnitPrice 按量计费后付费单价，单位：元。
+                     * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置按量计费后付费单价，单位：元。
-                     * @param UnitPrice 按量计费后付费单价，单位：元。
+                     * @param _unitPrice 按量计费后付费单价，单位：元。
+                     * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
 
                     /**
                      * 判断参数 UnitPrice 是否已赋值
                      * @return UnitPrice 是否已赋值
+                     * 
                      */
                     bool UnitPriceHasBeenSet() const;
 
                     /**
                      * 获取按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
                      * @return ChargeUnit 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+                     * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
-                     * @param ChargeUnit 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+                     * @param _chargeUnit 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+                     * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
 
                     /**
                      * 判断参数 ChargeUnit 是否已赋值
                      * @return ChargeUnit 是否已赋值
+                     * 
                      */
                     bool ChargeUnitHasBeenSet() const;
 
                     /**
                      * 获取预付费商品的原价，单位：元。
                      * @return OriginalPrice 预付费商品的原价，单位：元。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置预付费商品的原价，单位：元。
-                     * @param OriginalPrice 预付费商品的原价，单位：元。
+                     * @param _originalPrice 预付费商品的原价，单位：元。
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取预付费商品的折扣价，单位：元。
                      * @return DiscountPrice 预付费商品的折扣价，单位：元。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置预付费商品的折扣价，单位：元。
-                     * @param DiscountPrice 预付费商品的折扣价，单位：元。
+                     * @param _discountPrice 预付费商品的折扣价，单位：元。
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 

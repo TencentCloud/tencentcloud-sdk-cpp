@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，取值为 “UpdateShadow” 或者 “PublishMessage”
                      * @return TaskType 任务类型，取值为 “UpdateShadow” 或者 “PublishMessage”
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型，取值为 “UpdateShadow” 或者 “PublishMessage”
-                     * @param TaskType 任务类型，取值为 “UpdateShadow” 或者 “PublishMessage”
+                     * @param _taskType 任务类型，取值为 “UpdateShadow” 或者 “PublishMessage”
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取执行任务的产品ID
                      * @return ProductId 执行任务的产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置执行任务的产品ID
-                     * @param ProductId 执行任务的产品ID
+                     * @param _productId 执行任务的产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取执行任务的设备名的正则表达式
                      * @return DeviceNameFilter 执行任务的设备名的正则表达式
+                     * 
                      */
                     std::string GetDeviceNameFilter() const;
 
                     /**
                      * 设置执行任务的设备名的正则表达式
-                     * @param DeviceNameFilter 执行任务的设备名的正则表达式
+                     * @param _deviceNameFilter 执行任务的设备名的正则表达式
+                     * 
                      */
                     void SetDeviceNameFilter(const std::string& _deviceNameFilter);
 
                     /**
                      * 判断参数 DeviceNameFilter 是否已赋值
                      * @return DeviceNameFilter 是否已赋值
+                     * 
                      */
                     bool DeviceNameFilterHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行的时间。 取值为 Unix 时间戳，单位秒，且需大于等于当前时间时间戳，0为系统当前时间时间戳，即立即执行，最大为当前时间86400秒后，超过则取值为当前时间86400秒后
                      * @return ScheduleTimeInSeconds 任务开始执行的时间。 取值为 Unix 时间戳，单位秒，且需大于等于当前时间时间戳，0为系统当前时间时间戳，即立即执行，最大为当前时间86400秒后，超过则取值为当前时间86400秒后
+                     * 
                      */
                     uint64_t GetScheduleTimeInSeconds() const;
 
                     /**
                      * 设置任务开始执行的时间。 取值为 Unix 时间戳，单位秒，且需大于等于当前时间时间戳，0为系统当前时间时间戳，即立即执行，最大为当前时间86400秒后，超过则取值为当前时间86400秒后
-                     * @param ScheduleTimeInSeconds 任务开始执行的时间。 取值为 Unix 时间戳，单位秒，且需大于等于当前时间时间戳，0为系统当前时间时间戳，即立即执行，最大为当前时间86400秒后，超过则取值为当前时间86400秒后
+                     * @param _scheduleTimeInSeconds 任务开始执行的时间。 取值为 Unix 时间戳，单位秒，且需大于等于当前时间时间戳，0为系统当前时间时间戳，即立即执行，最大为当前时间86400秒后，超过则取值为当前时间86400秒后
+                     * 
                      */
                     void SetScheduleTimeInSeconds(const uint64_t& _scheduleTimeInSeconds);
 
                     /**
                      * 判断参数 ScheduleTimeInSeconds 是否已赋值
                      * @return ScheduleTimeInSeconds 是否已赋值
+                     * 
                      */
                     bool ScheduleTimeInSecondsHasBeenSet() const;
 
                     /**
                      * 获取任务描述细节，描述见下 Task
                      * @return Tasks 任务描述细节，描述见下 Task
+                     * 
                      */
                     Task GetTasks() const;
 
                     /**
                      * 设置任务描述细节，描述见下 Task
-                     * @param Tasks 任务描述细节，描述见下 Task
+                     * @param _tasks 任务描述细节，描述见下 Task
+                     * 
                      */
                     void SetTasks(const Task& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 
                     /**
                      * 获取最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400
                      * @return MaxExecutionTimeInSeconds 最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400
+                     * 
                      */
                     uint64_t GetMaxExecutionTimeInSeconds() const;
 
                     /**
                      * 设置最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400
-                     * @param MaxExecutionTimeInSeconds 最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400
+                     * @param _maxExecutionTimeInSeconds 最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400
+                     * 
                      */
                     void SetMaxExecutionTimeInSeconds(const uint64_t& _maxExecutionTimeInSeconds);
 
                     /**
                      * 判断参数 MaxExecutionTimeInSeconds 是否已赋值
                      * @return MaxExecutionTimeInSeconds 是否已赋值
+                     * 
                      */
                     bool MaxExecutionTimeInSecondsHasBeenSet() const;
 

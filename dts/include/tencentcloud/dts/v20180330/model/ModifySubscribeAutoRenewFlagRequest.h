@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取订阅实例ID，例如：subs-8uey736k
                      * @return SubscribeId 订阅实例ID，例如：subs-8uey736k
+                     * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
                      * 设置订阅实例ID，例如：subs-8uey736k
-                     * @param SubscribeId 订阅实例ID，例如：subs-8uey736k
+                     * @param _subscribeId 订阅实例ID，例如：subs-8uey736k
+                     * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
 
                     /**
                      * 判断参数 SubscribeId 是否已赋值
                      * @return SubscribeId 是否已赋值
+                     * 
                      */
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取自动续费标识。1-自动续费，0-不自动续费
                      * @return AutoRenewFlag 自动续费标识。1-自动续费，0-不自动续费
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标识。1-自动续费，0-不自动续费
-                     * @param AutoRenewFlag 自动续费标识。1-自动续费，0-不自动续费
+                     * @param _autoRenewFlag 自动续费标识。1-自动续费，0-不自动续费
+                     * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置日志毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 日志毫秒时间戳
+                     * @param _timestamp 日志毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attributes 采样日志属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Attributes GetAttributes() const;
 
                     /**
                      * 设置采样日志属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attributes 采样日志属性
+                     * @param _attributes 采样日志属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttributes(const Attributes& _attributes);
 
                     /**
                      * 判断参数 Attributes 是否已赋值
                      * @return Attributes 是否已赋值
+                     * 
                      */
                     bool AttributesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body har格式的采样请求
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置har格式的采样请求
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Body har格式的采样请求
+                     * @param _body har格式的采样请求
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 

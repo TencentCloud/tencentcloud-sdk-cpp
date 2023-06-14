@@ -51,38 +51,44 @@ namespace TencentCloud
 在开启了视频拼接功能的情况下，实时录制服务会把同一个用户因为暂停导致的多段视频拼接成一个视频
                      * @return Enabled 是否开启拼接功能
 在开启了视频拼接功能的情况下，实时录制服务会把同一个用户因为暂停导致的多段视频拼接成一个视频
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启拼接功能
 在开启了视频拼接功能的情况下，实时录制服务会把同一个用户因为暂停导致的多段视频拼接成一个视频
-                     * @param Enabled 是否开启拼接功能
+                     * @param _enabled 是否开启拼接功能
 在开启了视频拼接功能的情况下，实时录制服务会把同一个用户因为暂停导致的多段视频拼接成一个视频
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片
                      * @return Image 视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片
-                     * @param Image 视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片
+                     * @param _image 视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 

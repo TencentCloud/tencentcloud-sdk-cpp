@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取游戏用户ID
                      * @return UserId 游戏用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置游戏用户ID
-                     * @param UserId 游戏用户ID
+                     * @param _userId 游戏用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

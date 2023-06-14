@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取事件名称。
                      * @return EventName 事件名称。
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置事件名称。
-                     * @param EventName 事件名称。
+                     * @param _eventName 事件名称。
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
                     /**
                      * 获取事件描述。
                      * @return Description 事件描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件描述。
-                     * @param Description 事件描述。
+                     * @param _description 事件描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

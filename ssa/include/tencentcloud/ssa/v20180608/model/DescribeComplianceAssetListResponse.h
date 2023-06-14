@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取资产组列表
                      * @return CheckAssetsList 资产组列表
+                     * 
                      */
                     std::vector<CheckAssetItem> GetCheckAssetsList() const;
 
                     /**
                      * 判断参数 CheckAssetsList 是否已赋值
                      * @return CheckAssetsList 是否已赋值
+                     * 
                      */
                     bool CheckAssetsListHasBeenSet() const;
 
                     /**
                      * 获取资产组列表总数
                      * @return Total 资产组列表总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllTotal 规则总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAllTotal() const;
 
                     /**
                      * 判断参数 AllTotal 是否已赋值
                      * @return AllTotal 是否已赋值
+                     * 
                      */
                     bool AllTotalHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyNum 阻断策略规则数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStrategyNum() const;
 
                     /**
                      * 判断参数 StrategyNum 是否已赋值
                      * @return StrategyNum 是否已赋值
+                     * 
                      */
                     bool StrategyNumHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartRuleNum 启用规则数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStartRuleNum() const;
 
                     /**
                      * 判断参数 StartRuleNum 是否已赋值
                      * @return StartRuleNum 是否已赋值
+                     * 
                      */
                     bool StartRuleNumHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopRuleNum 停用规则数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStopRuleNum() const;
 
                     /**
                      * 判断参数 StopRuleNum 是否已赋值
                      * @return StopRuleNum 是否已赋值
+                     * 
                      */
                     bool StopRuleNumHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingNum 剩余配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainingNum() const;
 
                     /**
                      * 判断参数 RemainingNum 是否已赋值
                      * @return RemainingNum 是否已赋值
+                     * 
                      */
                     bool RemainingNumHasBeenSet() const;
 

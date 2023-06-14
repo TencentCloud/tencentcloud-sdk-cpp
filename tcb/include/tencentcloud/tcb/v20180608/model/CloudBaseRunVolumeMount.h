@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取资源名
                      * @return Name 资源名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名
-                     * @param Name 资源名
+                     * @param _name 资源名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取挂载路径
                      * @return MountPath 挂载路径
+                     * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
-                     * @param MountPath 挂载路径
+                     * @param _mountPath 挂载路径
+                     * 
                      */
                     void SetMountPath(const std::string& _mountPath);
 
                     /**
                      * 判断参数 MountPath 是否已赋值
                      * @return MountPath 是否已赋值
+                     * 
                      */
                     bool MountPathHasBeenSet() const;
 
                     /**
                      * 获取是否只读
                      * @return ReadOnly 是否只读
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
-                     * @param ReadOnly 是否只读
+                     * @param _readOnly 是否只读
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
                      * 获取Nfs挂载信息
                      * @return NfsVolumes Nfs挂载信息
+                     * 
                      */
                     std::vector<CloudBaseRunNfsVolumeSource> GetNfsVolumes() const;
 
                     /**
                      * 设置Nfs挂载信息
-                     * @param NfsVolumes Nfs挂载信息
+                     * @param _nfsVolumes Nfs挂载信息
+                     * 
                      */
                     void SetNfsVolumes(const std::vector<CloudBaseRunNfsVolumeSource>& _nfsVolumes);
 
                     /**
                      * 判断参数 NfsVolumes 是否已赋值
                      * @return NfsVolumes 是否已赋值
+                     * 
                      */
                     bool NfsVolumesHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取列表过滤条件
                      * @return Filter 列表过滤条件
+                     * 
                      */
                     Filter GetFilter() const;
 
                     /**
                      * 设置列表过滤条件
-                     * @param Filter 列表过滤条件
+                     * @param _filter 列表过滤条件
+                     * 
                      */
                     void SetFilter(const Filter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

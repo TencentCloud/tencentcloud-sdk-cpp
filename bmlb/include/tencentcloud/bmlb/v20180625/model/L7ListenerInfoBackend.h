@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取绑定类别（0代表黑石物理机，1代表虚拟机IP）。
                      * @return BindType 绑定类别（0代表黑石物理机，1代表虚拟机IP）。
+                     * 
                      */
                     int64_t GetBindType() const;
 
                     /**
                      * 设置绑定类别（0代表黑石物理机，1代表虚拟机IP）。
-                     * @param BindType 绑定类别（0代表黑石物理机，1代表虚拟机IP）。
+                     * @param _bindType 绑定类别（0代表黑石物理机，1代表虚拟机IP）。
+                     * 
                      */
                     void SetBindType(const int64_t& _bindType);
 
                     /**
                      * 判断参数 BindType 是否已赋值
                      * @return BindType 是否已赋值
+                     * 
                      */
                     bool BindTypeHasBeenSet() const;
 
                     /**
                      * 获取主机端口。
                      * @return Port 主机端口。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置主机端口。
-                     * @param Port 主机端口。
+                     * @param _port 主机端口。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取权重。
                      * @return Weight 权重。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重。
-                     * @param Weight 权重。
+                     * @param _weight 权重。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。
                      * @return Status 当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。
-                     * @param Status 当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。
+                     * @param _status 当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取黑石物理机的主机ID。
                      * @return InstanceId 黑石物理机的主机ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置黑石物理机的主机ID。
-                     * @param InstanceId 黑石物理机的主机ID。
+                     * @param _instanceId 黑石物理机的主机ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取黑石物理机的别名。
                      * @return Alias 黑石物理机的别名。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置黑石物理机的别名。
-                     * @param Alias 黑石物理机的别名。
+                     * @param _alias 黑石物理机的别名。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取主机IP。
                      * @return LanIp 主机IP。
+                     * 
                      */
                     std::string GetLanIp() const;
 
                     /**
                      * 设置主机IP。
-                     * @param LanIp 主机IP。
+                     * @param _lanIp 主机IP。
+                     * 
                      */
                     void SetLanIp(const std::string& _lanIp);
 
                     /**
                      * 判断参数 LanIp 是否已赋值
                      * @return LanIp 是否已赋值
+                     * 
                      */
                     bool LanIpHasBeenSet() const;
 

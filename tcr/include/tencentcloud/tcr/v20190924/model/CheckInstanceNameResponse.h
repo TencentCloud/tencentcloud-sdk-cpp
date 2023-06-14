@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取检查结果，true为合法，false为非法
                      * @return IsValidated 检查结果，true为合法，false为非法
+                     * 
                      */
                     bool GetIsValidated() const;
 
                     /**
                      * 判断参数 IsValidated 是否已赋值
                      * @return IsValidated 是否已赋值
+                     * 
                      */
                     bool IsValidatedHasBeenSet() const;
 

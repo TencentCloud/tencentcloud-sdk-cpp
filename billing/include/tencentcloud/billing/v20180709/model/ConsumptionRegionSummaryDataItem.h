@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return RegionName 地域名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取折后总价
                      * @return RealTotalCost 折后总价
+                     * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置折后总价
-                     * @param RealTotalCost 折后总价
+                     * @param _realTotalCost 折后总价
+                     * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
                      * 获取趋势
                      * @return Trend 趋势
+                     * 
                      */
                     ConsumptionSummaryTrend GetTrend() const;
 
                     /**
                      * 设置趋势
-                     * @param Trend 趋势
+                     * @param _trend 趋势
+                     * 
                      */
                     void SetTrend(const ConsumptionSummaryTrend& _trend);
 
                     /**
                      * 判断参数 Trend 是否已赋值
                      * @return Trend 是否已赋值
+                     * 
                      */
                     bool TrendHasBeenSet() const;
 
                     /**
                      * 获取产品消费详情
                      * @return Business 产品消费详情
+                     * 
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> GetBusiness() const;
 
                     /**
                      * 设置产品消费详情
-                     * @param Business 产品消费详情
+                     * @param _business 产品消费详情
+                     * 
                      */
                     void SetBusiness(const std::vector<ConsumptionBusinessSummaryDataItem>& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 

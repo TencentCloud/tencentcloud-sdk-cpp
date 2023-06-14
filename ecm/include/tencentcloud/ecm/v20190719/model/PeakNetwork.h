@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取记录时间。
                      * @return RecordTime 记录时间。
+                     * 
                      */
                     std::string GetRecordTime() const;
 
                     /**
                      * 设置记录时间。
-                     * @param RecordTime 记录时间。
+                     * @param _recordTime 记录时间。
+                     * 
                      */
                     void SetRecordTime(const std::string& _recordTime);
 
                     /**
                      * 判断参数 RecordTime 是否已赋值
                      * @return RecordTime 是否已赋值
+                     * 
                      */
                     bool RecordTimeHasBeenSet() const;
 
                     /**
                      * 获取入带宽数据。
                      * @return PeakInNetwork 入带宽数据。
+                     * 
                      */
                     std::string GetPeakInNetwork() const;
 
                     /**
                      * 设置入带宽数据。
-                     * @param PeakInNetwork 入带宽数据。
+                     * @param _peakInNetwork 入带宽数据。
+                     * 
                      */
                     void SetPeakInNetwork(const std::string& _peakInNetwork);
 
                     /**
                      * 判断参数 PeakInNetwork 是否已赋值
                      * @return PeakInNetwork 是否已赋值
+                     * 
                      */
                     bool PeakInNetworkHasBeenSet() const;
 
                     /**
                      * 获取出带宽数据。
                      * @return PeakOutNetwork 出带宽数据。
+                     * 
                      */
                     std::string GetPeakOutNetwork() const;
 
                     /**
                      * 设置出带宽数据。
-                     * @param PeakOutNetwork 出带宽数据。
+                     * @param _peakOutNetwork 出带宽数据。
+                     * 
                      */
                     void SetPeakOutNetwork(const std::string& _peakOutNetwork);
 
                     /**
                      * 判断参数 PeakOutNetwork 是否已赋值
                      * @return PeakOutNetwork 是否已赋值
+                     * 
                      */
                     bool PeakOutNetworkHasBeenSet() const;
 
                     /**
                      * 获取计费带宽。单位bps
                      * @return ChargeNetwork 计费带宽。单位bps
+                     * 
                      */
                     std::string GetChargeNetwork() const;
 
                     /**
                      * 设置计费带宽。单位bps
-                     * @param ChargeNetwork 计费带宽。单位bps
+                     * @param _chargeNetwork 计费带宽。单位bps
+                     * 
                      */
                     void SetChargeNetwork(const std::string& _chargeNetwork);
 
                     /**
                      * 判断参数 ChargeNetwork 是否已赋值
                      * @return ChargeNetwork 是否已赋值
+                     * 
                      */
                     bool ChargeNetworkHasBeenSet() const;
 

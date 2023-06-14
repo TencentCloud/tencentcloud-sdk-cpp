@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备绑定签名列表
                      * @return DeviceSignatures 设备绑定签名列表
+                     * 
                      */
                     std::vector<DeviceSignature> GetDeviceSignatures() const;
 
                     /**
                      * 判断参数 DeviceSignatures 是否已赋值
                      * @return DeviceSignatures 是否已赋值
+                     * 
                      */
                     bool DeviceSignaturesHasBeenSet() const;
 

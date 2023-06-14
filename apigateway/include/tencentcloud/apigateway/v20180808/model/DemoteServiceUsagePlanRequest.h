@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取使用计划ID。
                      * @return UsagePlanId 使用计划ID。
+                     * 
                      */
                     std::string GetUsagePlanId() const;
 
                     /**
                      * 设置使用计划ID。
-                     * @param UsagePlanId 使用计划ID。
+                     * @param _usagePlanId 使用计划ID。
+                     * 
                      */
                     void SetUsagePlanId(const std::string& _usagePlanId);
 
                     /**
                      * 判断参数 UsagePlanId 是否已赋值
                      * @return UsagePlanId 是否已赋值
+                     * 
                      */
                     bool UsagePlanIdHasBeenSet() const;
 
                     /**
                      * 获取待降级的服务唯一 ID。
                      * @return ServiceId 待降级的服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待降级的服务唯一 ID。
-                     * @param ServiceId 待降级的服务唯一 ID。
+                     * @param _serviceId 待降级的服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取环境名称。
                      * @return Environment 环境名称。
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置环境名称。
-                     * @param Environment 环境名称。
+                     * @param _environment 环境名称。
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

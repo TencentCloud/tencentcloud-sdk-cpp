@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取邮箱被拉黑时间
                      * @return BounceTime 邮箱被拉黑时间
+                     * 
                      */
                     std::string GetBounceTime() const;
 
                     /**
                      * 设置邮箱被拉黑时间
-                     * @param BounceTime 邮箱被拉黑时间
+                     * @param _bounceTime 邮箱被拉黑时间
+                     * 
                      */
                     void SetBounceTime(const std::string& _bounceTime);
 
                     /**
                      * 判断参数 BounceTime 是否已赋值
                      * @return BounceTime 是否已赋值
+                     * 
                      */
                     bool BounceTimeHasBeenSet() const;
 
                     /**
                      * 获取被拉黑的邮箱地址
                      * @return EmailAddress 被拉黑的邮箱地址
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置被拉黑的邮箱地址
-                     * @param EmailAddress 被拉黑的邮箱地址
+                     * @param _emailAddress 被拉黑的邮箱地址
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 

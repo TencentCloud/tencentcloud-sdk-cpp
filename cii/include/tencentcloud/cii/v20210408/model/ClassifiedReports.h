@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取报告类型
                      * @return ReportType 报告类型
+                     * 
                      */
                     std::string GetReportType() const;
 
                     /**
                      * 设置报告类型
-                     * @param ReportType 报告类型
+                     * @param _reportType 报告类型
+                     * 
                      */
                     void SetReportType(const std::string& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 
                     /**
                      * 获取文件列表
                      * @return FileList 文件列表
+                     * 
                      */
                     std::vector<std::string> GetFileList() const;
 
                     /**
                      * 设置文件列表
-                     * @param FileList 文件列表
+                     * @param _fileList 文件列表
+                     * 
                      */
                     void SetFileList(const std::vector<std::string>& _fileList);
 
                     /**
                      * 判断参数 FileList 是否已赋值
                      * @return FileList 是否已赋值
+                     * 
                      */
                     bool FileListHasBeenSet() const;
 

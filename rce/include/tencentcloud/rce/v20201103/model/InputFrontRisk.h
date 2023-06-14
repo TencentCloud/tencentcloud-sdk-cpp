@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取事件ID
                      * @return EventId 事件ID
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置事件ID
-                     * @param EventId 事件ID
+                     * @param _eventId 事件ID
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取趋势类型
                      * @return Type 趋势类型
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置趋势类型
-                     * @param Type 趋势类型
+                     * @param _type 趋势类型
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取当前开始时间
                      * @return CurrentStartTime 当前开始时间
+                     * 
                      */
                     std::string GetCurrentStartTime() const;
 
                     /**
                      * 设置当前开始时间
-                     * @param CurrentStartTime 当前开始时间
+                     * @param _currentStartTime 当前开始时间
+                     * 
                      */
                     void SetCurrentStartTime(const std::string& _currentStartTime);
 
                     /**
                      * 判断参数 CurrentStartTime 是否已赋值
                      * @return CurrentStartTime 是否已赋值
+                     * 
                      */
                     bool CurrentStartTimeHasBeenSet() const;
 
                     /**
                      * 获取当前结束时间
                      * @return CurrentEndTime 当前结束时间
+                     * 
                      */
                     std::string GetCurrentEndTime() const;
 
                     /**
                      * 设置当前结束时间
-                     * @param CurrentEndTime 当前结束时间
+                     * @param _currentEndTime 当前结束时间
+                     * 
                      */
                     void SetCurrentEndTime(const std::string& _currentEndTime);
 
                     /**
                      * 判断参数 CurrentEndTime 是否已赋值
                      * @return CurrentEndTime 是否已赋值
+                     * 
                      */
                     bool CurrentEndTimeHasBeenSet() const;
 

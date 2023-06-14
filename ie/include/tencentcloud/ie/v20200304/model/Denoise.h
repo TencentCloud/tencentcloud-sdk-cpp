@@ -57,6 +57,7 @@ namespace TencentCloud
 2.normal，
 3.strong
 默认为weak
+                     * 
                      */
                     std::string GetType() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 2.normal，
 3.strong
 默认为weak
-                     * @param Type 音频降噪强度，可选项：
+                     * @param _type 音频降噪强度，可选项：
 1. weak
 2.normal，
 3.strong
 默认为weak
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

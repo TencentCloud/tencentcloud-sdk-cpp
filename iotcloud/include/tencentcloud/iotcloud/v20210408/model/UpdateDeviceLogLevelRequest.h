@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试
                      * @return LogLevel 日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试
+                     * 
                      */
                     uint64_t GetLogLevel() const;
 
                     /**
                      * 设置日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试
-                     * @param LogLevel 日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试
+                     * @param _logLevel 日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试
+                     * 
                      */
                     void SetLogLevel(const uint64_t& _logLevel);
 
                     /**
                      * 判断参数 LogLevel 是否已赋值
                      * @return LogLevel 是否已赋值
+                     * 
                      */
                     bool LogLevelHasBeenSet() const;
 

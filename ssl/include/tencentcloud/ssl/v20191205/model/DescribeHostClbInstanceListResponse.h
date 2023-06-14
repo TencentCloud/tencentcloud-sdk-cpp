@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList CLB实例监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClbInstanceDetail> GetInstanceList() const;
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
                      * @return InstanceList 是否已赋值
+                     * 
                      */
                     bool InstanceListHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncTotalNum 异步刷新总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAsyncTotalNum() const;
 
                     /**
                      * 判断参数 AsyncTotalNum 是否已赋值
                      * @return AsyncTotalNum 是否已赋值
+                     * 
                      */
                     bool AsyncTotalNumHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncOffset 异步刷新当前执行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAsyncOffset() const;
 
                     /**
                      * 判断参数 AsyncOffset 是否已赋值
                      * @return AsyncOffset 是否已赋值
+                     * 
                      */
                     bool AsyncOffsetHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncCacheTime 当前缓存读取时间	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAsyncCacheTime() const;
 
                     /**
                      * 判断参数 AsyncCacheTime 是否已赋值
                      * @return AsyncCacheTime 是否已赋值
+                     * 
                      */
                     bool AsyncCacheTimeHasBeenSet() const;
 

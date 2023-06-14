@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取数据集id列表
                      * @return DatasetIds 数据集id列表
+                     * 
                      */
                     std::vector<std::string> GetDatasetIds() const;
 
                     /**
                      * 设置数据集id列表
-                     * @param DatasetIds 数据集id列表
+                     * @param _datasetIds 数据集id列表
+                     * 
                      */
                     void SetDatasetIds(const std::vector<std::string>& _datasetIds);
 
                     /**
                      * 判断参数 DatasetIds 是否已赋值
                      * @return DatasetIds 是否已赋值
+                     * 
                      */
                     bool DatasetIdsHasBeenSet() const;
 
@@ -69,6 +72,7 @@ DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
                      * @return Filters 数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String
 DatasetName，数据集名称
 DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -76,105 +80,122 @@ DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
                      * 设置数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String
 DatasetName，数据集名称
 DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
-                     * @param Filters 数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String
+                     * @param _filters 数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String
 DatasetName，数据集名称
 DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取标签过滤条件
                      * @return TagFilters 标签过滤条件
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤条件
-                     * @param TagFilters 标签过滤条件
+                     * @param _tagFilters 标签过滤条件
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
                     /**
                      * 获取排序值，支持Asc或Desc，默认Desc
                      * @return Order 排序值，支持Asc或Desc，默认Desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序值，支持Asc或Desc，默认Desc
-                     * @param Order 排序值，支持Asc或Desc，默认Desc
+                     * @param _order 排序值，支持Asc或Desc，默认Desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序字段，支持CreateTime或UpdateTime，默认CreateTime
                      * @return OrderField 排序字段，支持CreateTime或UpdateTime，默认CreateTime
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段，支持CreateTime或UpdateTime，默认CreateTime
-                     * @param OrderField 排序字段，支持CreateTime或UpdateTime，默认CreateTime
+                     * @param _orderField 排序字段，支持CreateTime或UpdateTime，默认CreateTime
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取偏移值
                      * @return Offset 偏移值
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移值
-                     * @param Offset 偏移值
+                     * @param _offset 偏移值
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据个数，默认20，最大支持200
                      * @return Limit 返回数据个数，默认20，最大支持200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数据个数，默认20，最大支持200
-                     * @param Limit 返回数据个数，默认20，最大支持200
+                     * @param _limit 返回数据个数，默认20，最大支持200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

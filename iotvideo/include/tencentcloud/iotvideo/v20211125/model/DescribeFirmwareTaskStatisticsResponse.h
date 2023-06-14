@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessTotal 升级成功的设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSuccessTotal() const;
 
                     /**
                      * 判断参数 SuccessTotal 是否已赋值
                      * @return SuccessTotal 是否已赋值
+                     * 
                      */
                     bool SuccessTotalHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureTotal 升级失败的设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFailureTotal() const;
 
                     /**
                      * 判断参数 FailureTotal 是否已赋值
                      * @return FailureTotal 是否已赋值
+                     * 
                      */
                     bool FailureTotalHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradingTotal 正在升级的设备总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpgradingTotal() const;
 
                     /**
                      * 判断参数 UpgradingTotal 是否已赋值
                      * @return UpgradingTotal 是否已赋值
+                     * 
                      */
                     bool UpgradingTotalHasBeenSet() const;
 

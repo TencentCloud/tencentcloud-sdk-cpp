@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Status QUIC 配置状态，可选值：
 <li>Enabled: 启用；</li>
 <li>Disabled: 禁用。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置QUIC 配置状态，可选值：
 <li>Enabled: 启用；</li>
 <li>Disabled: 禁用。</li>
-                     * @param Status QUIC 配置状态，可选值：
+                     * @param _status QUIC 配置状态，可选值：
 <li>Enabled: 启用；</li>
 <li>Disabled: 禁用。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

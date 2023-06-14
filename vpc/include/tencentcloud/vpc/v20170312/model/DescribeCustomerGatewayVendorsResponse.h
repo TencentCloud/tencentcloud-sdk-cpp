@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取对端网关厂商信息对象。
                      * @return CustomerGatewayVendorSet 对端网关厂商信息对象。
+                     * 
                      */
                     std::vector<CustomerGatewayVendor> GetCustomerGatewayVendorSet() const;
 
                     /**
                      * 判断参数 CustomerGatewayVendorSet 是否已赋值
                      * @return CustomerGatewayVendorSet 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayVendorSetHasBeenSet() const;
 

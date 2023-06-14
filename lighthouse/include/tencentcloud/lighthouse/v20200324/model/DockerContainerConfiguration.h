@@ -52,108 +52,126 @@ namespace TencentCloud
                     /**
                      * 获取容器镜像地址
                      * @return ContainerImage 容器镜像地址
+                     * 
                      */
                     std::string GetContainerImage() const;
 
                     /**
                      * 设置容器镜像地址
-                     * @param ContainerImage 容器镜像地址
+                     * @param _containerImage 容器镜像地址
+                     * 
                      */
                     void SetContainerImage(const std::string& _containerImage);
 
                     /**
                      * 判断参数 ContainerImage 是否已赋值
                      * @return ContainerImage 是否已赋值
+                     * 
                      */
                     bool ContainerImageHasBeenSet() const;
 
                     /**
                      * 获取容器名称
                      * @return ContainerName 容器名称
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名称
-                     * @param ContainerName 容器名称
+                     * @param _containerName 容器名称
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取环境变量列表
                      * @return Envs 环境变量列表
+                     * 
                      */
                     std::vector<ContainerEnv> GetEnvs() const;
 
                     /**
                      * 设置环境变量列表
-                     * @param Envs 环境变量列表
+                     * @param _envs 环境变量列表
+                     * 
                      */
                     void SetEnvs(const std::vector<ContainerEnv>& _envs);
 
                     /**
                      * 判断参数 Envs 是否已赋值
                      * @return Envs 是否已赋值
+                     * 
                      */
                     bool EnvsHasBeenSet() const;
 
                     /**
                      * 获取容器端口主机端口映射列表
                      * @return PublishPorts 容器端口主机端口映射列表
+                     * 
                      */
                     std::vector<DockerContainerPublishPort> GetPublishPorts() const;
 
                     /**
                      * 设置容器端口主机端口映射列表
-                     * @param PublishPorts 容器端口主机端口映射列表
+                     * @param _publishPorts 容器端口主机端口映射列表
+                     * 
                      */
                     void SetPublishPorts(const std::vector<DockerContainerPublishPort>& _publishPorts);
 
                     /**
                      * 判断参数 PublishPorts 是否已赋值
                      * @return PublishPorts 是否已赋值
+                     * 
                      */
                     bool PublishPortsHasBeenSet() const;
 
                     /**
                      * 获取容器加载本地卷列表
                      * @return Volumes 容器加载本地卷列表
+                     * 
                      */
                     std::vector<DockerContainerVolume> GetVolumes() const;
 
                     /**
                      * 设置容器加载本地卷列表
-                     * @param Volumes 容器加载本地卷列表
+                     * @param _volumes 容器加载本地卷列表
+                     * 
                      */
                     void SetVolumes(const std::vector<DockerContainerVolume>& _volumes);
 
                     /**
                      * 判断参数 Volumes 是否已赋值
                      * @return Volumes 是否已赋值
+                     * 
                      */
                     bool VolumesHasBeenSet() const;
 
                     /**
                      * 获取运行的命令
                      * @return Command 运行的命令
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置运行的命令
-                     * @param Command 运行的命令
+                     * @param _command 运行的命令
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 

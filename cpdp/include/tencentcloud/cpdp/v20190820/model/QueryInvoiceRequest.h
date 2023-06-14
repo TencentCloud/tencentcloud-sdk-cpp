@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return InvoicePlatformId 开票平台ID
 0 : 高灯
 1 : 票易通
+                     * 
                      */
                     int64_t GetInvoicePlatformId() const;
 
@@ -56,51 +57,59 @@ namespace TencentCloud
                      * 设置开票平台ID
 0 : 高灯
 1 : 票易通
-                     * @param InvoicePlatformId 开票平台ID
+                     * @param _invoicePlatformId 开票平台ID
 0 : 高灯
 1 : 票易通
+                     * 
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
                     /**
                      * 判断参数 InvoicePlatformId 是否已赋值
                      * @return InvoicePlatformId 是否已赋值
+                     * 
                      */
                     bool InvoicePlatformIdHasBeenSet() const;
 
                     /**
                      * 获取订单号
                      * @return OrderId 订单号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取业务开票号
                      * @return OrderSn 业务开票号
+                     * 
                      */
                     std::string GetOrderSn() const;
 
                     /**
                      * 设置业务开票号
-                     * @param OrderSn 业务开票号
+                     * @param _orderSn 业务开票号
+                     * 
                      */
                     void SetOrderSn(const std::string& _orderSn);
 
                     /**
                      * 判断参数 OrderSn 是否已赋值
                      * @return OrderSn 是否已赋值
+                     * 
                      */
                     bool OrderSnHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
                      * @return IsRed 发票种类：
 0：蓝票
 1：红票【该字段默认为0， 如果需要查询红票信息，本字段必须传1，否则可能查询不到需要的发票信息】。
+                     * 
                      */
                     int64_t GetIsRed() const;
 
@@ -118,69 +128,80 @@ namespace TencentCloud
                      * 设置发票种类：
 0：蓝票
 1：红票【该字段默认为0， 如果需要查询红票信息，本字段必须传1，否则可能查询不到需要的发票信息】。
-                     * @param IsRed 发票种类：
+                     * @param _isRed 发票种类：
 0：蓝票
 1：红票【该字段默认为0， 如果需要查询红票信息，本字段必须传1，否则可能查询不到需要的发票信息】。
+                     * 
                      */
                     void SetIsRed(const int64_t& _isRed);
 
                     /**
                      * 判断参数 IsRed 是否已赋值
                      * @return IsRed 是否已赋值
+                     * 
                      */
                     bool IsRedHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox。
                      * @return Profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox。
-                     * @param Profile 接入环境。沙箱环境填sandbox。
+                     * @param _profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 
                     /**
                      * 获取开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
                      * @return InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * 
                      */
                     int64_t GetInvoiceChannel() const;
 
                     /**
                      * 设置开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
-                     * @param InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @param _invoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * 
                      */
                     void SetInvoiceChannel(const int64_t& _invoiceChannel);
 
                     /**
                      * 判断参数 InvoiceChannel 是否已赋值
                      * @return InvoiceChannel 是否已赋值
+                     * 
                      */
                     bool InvoiceChannelHasBeenSet() const;
 
                     /**
                      * 获取当渠道为线下渠道时，必填
                      * @return SellerTaxpayerNum 当渠道为线下渠道时，必填
+                     * 
                      */
                     std::string GetSellerTaxpayerNum() const;
 
                     /**
                      * 设置当渠道为线下渠道时，必填
-                     * @param SellerTaxpayerNum 当渠道为线下渠道时，必填
+                     * @param _sellerTaxpayerNum 当渠道为线下渠道时，必填
+                     * 
                      */
                     void SetSellerTaxpayerNum(const std::string& _sellerTaxpayerNum);
 
                     /**
                      * 判断参数 SellerTaxpayerNum 是否已赋值
                      * @return SellerTaxpayerNum 是否已赋值
+                     * 
                      */
                     bool SellerTaxpayerNumHasBeenSet() const;
 

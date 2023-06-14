@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取连接器操作名称
                      * @return OperationName 连接器操作名称
+                     * 
                      */
                     std::string GetOperationName() const;
 
                     /**
                      * 设置连接器操作名称
-                     * @param OperationName 连接器操作名称
+                     * @param _operationName 连接器操作名称
+                     * 
                      */
                     void SetOperationName(const std::string& _operationName);
 
                     /**
                      * 判断参数 OperationName 是否已赋值
                      * @return OperationName 是否已赋值
+                     * 
                      */
                     bool OperationNameHasBeenSet() const;
 
                     /**
                      * 获取连接器展示名称
                      * @return DisplayName 连接器展示名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置连接器展示名称
-                     * @param DisplayName 连接器展示名称
+                     * @param _displayName 连接器展示名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取操作是否为触发器
                      * @return IsTrigger 操作是否为触发器
+                     * 
                      */
                     bool GetIsTrigger() const;
 
                     /**
                      * 设置操作是否为触发器
-                     * @param IsTrigger 操作是否为触发器
+                     * @param _isTrigger 操作是否为触发器
+                     * 
                      */
                     void SetIsTrigger(const bool& _isTrigger);
 
                     /**
                      * 判断参数 IsTrigger 是否已赋值
                      * @return IsTrigger 是否已赋值
+                     * 
                      */
                     bool IsTriggerHasBeenSet() const;
 

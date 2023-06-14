@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取场景ID
                      * @return ScenarioId 场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景ID
-                     * @param ScenarioId 场景ID
+                     * @param _scenarioId 场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取任务发起人
                      * @return JobOwner 任务发起人
+                     * 
                      */
                     std::string GetJobOwner() const;
 
                     /**
                      * 设置任务发起人
-                     * @param JobOwner 任务发起人
+                     * @param _jobOwner 任务发起人
+                     * 
                      */
                     void SetJobOwner(const std::string& _jobOwner);
 
                     /**
                      * 判断参数 JobOwner 是否已赋值
                      * @return JobOwner 是否已赋值
+                     * 
                      */
                     bool JobOwnerHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否调试
                      * @return Debug 是否调试
+                     * 
                      */
                     bool GetDebug() const;
 
                     /**
                      * 设置是否调试
-                     * @param Debug 是否调试
+                     * @param _debug 是否调试
+                     * 
                      */
                     void SetDebug(const bool& _debug);
 
                     /**
                      * 判断参数 Debug 是否已赋值
                      * @return Debug 是否已赋值
+                     * 
                      */
                     bool DebugHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Note 备注
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-                     * @param Note 备注
+                     * @param _note 备注
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 

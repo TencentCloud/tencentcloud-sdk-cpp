@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 <li>OfficialRec：官方推荐；</li>
 <li>Customize：自定义。</li>
 默认值为 OfficialRec。
+                     * 
                      */
                     std::vector<std::string> GetTypes() const;
 
@@ -95,52 +102,60 @@ namespace TencentCloud
 <li>OfficialRec：官方推荐；</li>
 <li>Customize：自定义。</li>
 默认值为 OfficialRec。
-                     * @param Types 类型列表，取值有：
+                     * @param _types 类型列表，取值有：
 <li>OfficialRec：官方推荐；</li>
 <li>Customize：自定义。</li>
 默认值为 OfficialRec。
+                     * 
                      */
                     void SetTypes(const std::vector<std::string>& _types);
 
                     /**
                      * 判断参数 Types 是否已赋值
                      * @return Types 是否已赋值
+                     * 
                      */
                     bool TypesHasBeenSet() const;
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
                      * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回的记录条数，默认值：20，最大值：50。
                      * @return Limit 分页返回的记录条数，默认值：20，最大值：50。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的记录条数，默认值：20，最大值：50。
-                     * @param Limit 分页返回的记录条数，默认值：20，最大值：50。
+                     * @param _limit 分页返回的记录条数，默认值：20，最大值：50。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

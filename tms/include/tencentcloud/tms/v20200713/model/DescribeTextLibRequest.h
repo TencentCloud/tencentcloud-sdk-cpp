@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取内容类型 text: 1; image: 2; audio: 3; video: 4
                      * @return StrategyType 内容类型 text: 1; image: 2; audio: 3; video: 4
+                     * 
                      */
                     int64_t GetStrategyType() const;
 
                     /**
                      * 设置内容类型 text: 1; image: 2; audio: 3; video: 4
-                     * @param StrategyType 内容类型 text: 1; image: 2; audio: 3; video: 4
+                     * @param _strategyType 内容类型 text: 1; image: 2; audio: 3; video: 4
+                     * 
                      */
                     void SetStrategyType(const int64_t& _strategyType);
 
                     /**
                      * 判断参数 StrategyType 是否已赋值
                      * @return StrategyType 是否已赋值
+                     * 
                      */
                     bool StrategyTypeHasBeenSet() const;
 

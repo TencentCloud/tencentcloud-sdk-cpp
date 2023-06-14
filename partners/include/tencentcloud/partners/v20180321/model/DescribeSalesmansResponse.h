@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取业务员列表
                      * @return AgentSalesmanSet 业务员列表
+                     * 
                      */
                     std::vector<AgentSalesmanElem> GetAgentSalesmanSet() const;
 
                     /**
                      * 判断参数 AgentSalesmanSet 是否已赋值
                      * @return AgentSalesmanSet 是否已赋值
+                     * 
                      */
                     bool AgentSalesmanSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的代客总数
                      * @return TotalCount 符合条件的代客总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

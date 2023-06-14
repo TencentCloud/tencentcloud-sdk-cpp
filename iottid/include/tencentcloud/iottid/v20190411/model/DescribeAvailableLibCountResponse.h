@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取可空发的白盒密钥数量
                      * @return Quantity 可空发的白盒密钥数量
+                     * 
                      */
                     uint64_t GetQuantity() const;
 
                     /**
                      * 判断参数 Quantity 是否已赋值
                      * @return Quantity 是否已赋值
+                     * 
                      */
                     bool QuantityHasBeenSet() const;
 

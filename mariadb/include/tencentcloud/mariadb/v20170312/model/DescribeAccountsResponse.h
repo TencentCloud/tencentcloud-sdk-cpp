@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，透传入参。
                      * @return InstanceId 实例ID，透传入参。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例用户列表。
                      * @return Users 实例用户列表。
+                     * 
                      */
                     std::vector<DBAccount> GetUsers() const;
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 

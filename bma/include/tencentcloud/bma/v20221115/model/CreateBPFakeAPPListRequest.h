@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批量模板
                      * @return FakeAPPs 批量模板
+                     * 
                      */
                     std::string GetFakeAPPs() const;
 
                     /**
                      * 设置批量模板
-                     * @param FakeAPPs 批量模板
+                     * @param _fakeAPPs 批量模板
+                     * 
                      */
                     void SetFakeAPPs(const std::string& _fakeAPPs);
 
                     /**
                      * 判断参数 FakeAPPs 是否已赋值
                      * @return FakeAPPs 是否已赋值
+                     * 
                      */
                     bool FakeAPPsHasBeenSet() const;
 

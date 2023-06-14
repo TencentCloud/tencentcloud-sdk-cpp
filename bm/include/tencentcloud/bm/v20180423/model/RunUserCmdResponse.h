@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取运行成功的任务信息列表
                      * @return SuccessTaskInfoSet 运行成功的任务信息列表
+                     * 
                      */
                     std::vector<SuccessTaskInfo> GetSuccessTaskInfoSet() const;
 
                     /**
                      * 判断参数 SuccessTaskInfoSet 是否已赋值
                      * @return SuccessTaskInfoSet 是否已赋值
+                     * 
                      */
                     bool SuccessTaskInfoSetHasBeenSet() const;
 
                     /**
                      * 获取运行失败的任务信息列表
                      * @return FailedTaskInfoSet 运行失败的任务信息列表
+                     * 
                      */
                     std::vector<FailedTaskInfo> GetFailedTaskInfoSet() const;
 
                     /**
                      * 判断参数 FailedTaskInfoSet 是否已赋值
                      * @return FailedTaskInfoSet 是否已赋值
+                     * 
                      */
                     bool FailedTaskInfoSetHasBeenSet() const;
 

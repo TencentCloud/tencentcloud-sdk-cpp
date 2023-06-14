@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数据集总量（名称维度）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetGroups 数据集按照数据集名称聚合的分组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DatasetGroup> GetDatasetGroups() const;
 
                     /**
                      * 判断参数 DatasetGroups 是否已赋值
                      * @return DatasetGroups 是否已赋值
+                     * 
                      */
                     bool DatasetGroupsHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetIdNums 数据集ID总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDatasetIdNums() const;
 
                     /**
                      * 判断参数 DatasetIdNums 是否已赋值
                      * @return DatasetIdNums 是否已赋值
+                     * 
                      */
                     bool DatasetIdNumsHasBeenSet() const;
 

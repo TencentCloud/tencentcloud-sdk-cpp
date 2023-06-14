@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return Password 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
-                     * @param Password 密码
+                     * @param _password 密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取TTL
                      * @return Expire TTL
+                     * 
                      */
                     uint64_t GetExpire() const;
 
                     /**
                      * 设置TTL
-                     * @param Expire TTL
+                     * @param _expire TTL
+                     * 
                      */
                     void SetExpire(const uint64_t& _expire);
 
                     /**
                      * 判断参数 Expire 是否已赋值
                      * @return Expire 是否已赋值
+                     * 
                      */
                     bool ExpireHasBeenSet() const;
 

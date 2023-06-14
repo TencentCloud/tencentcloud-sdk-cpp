@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取人脸图片COS存储桶Host地址
                      * @return Bucket 人脸图片COS存储桶Host地址
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置人脸图片COS存储桶Host地址
-                     * @param Bucket 人脸图片COS存储桶Host地址
+                     * @param _bucket 人脸图片COS存储桶Host地址
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

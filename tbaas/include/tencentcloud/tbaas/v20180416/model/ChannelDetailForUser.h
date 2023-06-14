@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取通道名称
                      * @return ChannelName 通道名称
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置通道名称
-                     * @param ChannelName 通道名称
+                     * @param _channelName 通道名称
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取当前组织加入通道的节点列表
                      * @return PeerList 当前组织加入通道的节点列表
+                     * 
                      */
                     std::vector<PeerDetailForUser> GetPeerList() const;
 
                     /**
                      * 设置当前组织加入通道的节点列表
-                     * @param PeerList 当前组织加入通道的节点列表
+                     * @param _peerList 当前组织加入通道的节点列表
+                     * 
                      */
                     void SetPeerList(const std::vector<PeerDetailForUser>& _peerList);
 
                     /**
                      * 判断参数 PeerList 是否已赋值
                      * @return PeerList 是否已赋值
+                     * 
                      */
                     bool PeerListHasBeenSet() const;
 

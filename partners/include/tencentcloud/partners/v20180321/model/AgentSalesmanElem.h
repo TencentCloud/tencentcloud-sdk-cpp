@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取代理商账号ID
                      * @return Uin 代理商账号ID
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置代理商账号ID
-                     * @param Uin 代理商账号ID
+                     * @param _uin 代理商账号ID
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取业务员ID
                      * @return SalesUin 业务员ID
+                     * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员ID
-                     * @param SalesUin 业务员ID
+                     * @param _salesUin 业务员ID
+                     * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
 
                     /**
                      * 判断参数 SalesUin 是否已赋值
                      * @return SalesUin 是否已赋值
+                     * 
                      */
                     bool SalesUinHasBeenSet() const;
 
                     /**
                      * 获取业务员姓名
                      * @return SalesName 业务员姓名
+                     * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置业务员姓名
-                     * @param SalesName 业务员姓名
+                     * @param _salesName 业务员姓名
+                     * 
                      */
                     void SetSalesName(const std::string& _salesName);
 
                     /**
                      * 判断参数 SalesName 是否已赋值
                      * @return SalesName 是否已赋值
+                     * 
                      */
                     bool SalesNameHasBeenSet() const;
 
                     /**
                      * 获取业务员创建时间
                      * @return CreateTime 业务员创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置业务员创建时间
-                     * @param CreateTime 业务员创建时间
+                     * @param _createTime 业务员创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

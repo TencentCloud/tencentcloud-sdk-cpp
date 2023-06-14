@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取二维码id
                      * @return QrCodeId 二维码id
+                     * 
                      */
                     std::string GetQrCodeId() const;
 
                     /**
                      * 设置二维码id
-                     * @param QrCodeId 二维码id
+                     * @param _qrCodeId 二维码id
+                     * 
                      */
                     void SetQrCodeId(const std::string& _qrCodeId);
 
                     /**
                      * 判断参数 QrCodeId 是否已赋值
                      * @return QrCodeId 是否已赋值
+                     * 
                      */
                     bool QrCodeIdHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

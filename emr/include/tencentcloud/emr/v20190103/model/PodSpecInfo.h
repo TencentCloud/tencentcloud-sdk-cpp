@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取使用Pod资源扩容时，指定的Pod规格以及来源等信息
                      * @return PodSpec 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     * 
                      */
                     PodNewSpec GetPodSpec() const;
 
                     /**
                      * 设置使用Pod资源扩容时，指定的Pod规格以及来源等信息
-                     * @param PodSpec 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     * @param _podSpec 使用Pod资源扩容时，指定的Pod规格以及来源等信息
+                     * 
                      */
                     void SetPodSpec(const PodNewSpec& _podSpec);
 
                     /**
                      * 判断参数 PodSpec 是否已赋值
                      * @return PodSpec 是否已赋值
+                     * 
                      */
                     bool PodSpecHasBeenSet() const;
 
                     /**
                      * 获取POD自定义权限和自定义参数
                      * @return PodParameter POD自定义权限和自定义参数
+                     * 
                      */
                     PodNewParameter GetPodParameter() const;
 
                     /**
                      * 设置POD自定义权限和自定义参数
-                     * @param PodParameter POD自定义权限和自定义参数
+                     * @param _podParameter POD自定义权限和自定义参数
+                     * 
                      */
                     void SetPodParameter(const PodNewParameter& _podParameter);
 
                     /**
                      * 判断参数 PodParameter 是否已赋值
                      * @return PodParameter 是否已赋值
+                     * 
                      */
                     bool PodParameterHasBeenSet() const;
 

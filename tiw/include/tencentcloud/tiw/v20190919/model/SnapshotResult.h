@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorCode 任务执行错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 设置任务执行错误码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorCode 任务执行错误码
+                     * @param _errorCode 任务执行错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorCode(const std::string& _errorCode);
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 任务执行错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置任务执行错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMessage 任务执行错误信息
+                     * @param _errorMessage 任务执行错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 快照生成图片总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置快照生成图片总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 快照生成图片总数
+                     * @param _total 快照生成图片总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Snapshots 快照图片链接列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSnapshots() const;
 
                     /**
                      * 设置快照图片链接列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Snapshots 快照图片链接列表
+                     * @param _snapshots 快照图片链接列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshots(const std::vector<std::string>& _snapshots);
 
                     /**
                      * 判断参数 Snapshots 是否已赋值
                      * @return Snapshots 是否已赋值
+                     * 
                      */
                     bool SnapshotsHasBeenSet() const;
 

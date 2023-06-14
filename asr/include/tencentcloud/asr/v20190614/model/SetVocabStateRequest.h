@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取热词表ID。
                      * @return VocabId 热词表ID。
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 设置热词表ID。
-                     * @param VocabId 热词表ID。
+                     * @param _vocabId 热词表ID。
+                     * 
                      */
                     void SetVocabId(const std::string& _vocabId);
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 
                     /**
                      * 获取热词表状态，1：设为默认状态；0：设为非默认状态。
                      * @return State 热词表状态，1：设为默认状态；0：设为非默认状态。
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置热词表状态，1：设为默认状态；0：设为非默认状态。
-                     * @param State 热词表状态，1：设为默认状态；0：设为非默认状态。
+                     * @param _state 热词表状态，1：设为默认状态；0：设为非默认状态。
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

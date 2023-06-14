@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取状态：0：初始化、1：成功、2：失败、3：取消、4：异常；
                      * @return State 状态：0：初始化、1：成功、2：失败、3：取消、4：异常；
+                     * 
                      */
                     uint64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSet 日志信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SparkSessionBatchLog> GetLogSet() const;
 
                     /**
                      * 判断参数 LogSet 是否已赋值
                      * @return LogSet 是否已赋值
+                     * 
                      */
                     bool LogSetHasBeenSet() const;
 

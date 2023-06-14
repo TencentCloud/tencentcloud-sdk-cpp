@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书ID列表。最多50个
                      * @return CertificateIds 证书ID列表。最多50个
+                     * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
 
                     /**
                      * 设置证书ID列表。最多50个
-                     * @param CertificateIds 证书ID列表。最多50个
+                     * @param _certificateIds 证书ID列表。最多50个
+                     * 
                      */
                     void SetCertificateIds(const std::vector<std::string>& _certificateIds);
 
                     /**
                      * 判断参数 CertificateIds 是否已赋值
                      * @return CertificateIds 是否已赋值
+                     * 
                      */
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
                      * 获取0:不忽略通知。1:忽略通知
                      * @return SwitchStatus 0:不忽略通知。1:忽略通知
+                     * 
                      */
                     uint64_t GetSwitchStatus() const;
 
                     /**
                      * 设置0:不忽略通知。1:忽略通知
-                     * @param SwitchStatus 0:不忽略通知。1:忽略通知
+                     * @param _switchStatus 0:不忽略通知。1:忽略通知
+                     * 
                      */
                     void SetSwitchStatus(const uint64_t& _switchStatus);
 
                     /**
                      * 判断参数 SwitchStatus 是否已赋值
                      * @return SwitchStatus 是否已赋值
+                     * 
                      */
                     bool SwitchStatusHasBeenSet() const;
 

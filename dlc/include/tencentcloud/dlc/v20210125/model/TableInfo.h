@@ -53,90 +53,105 @@ namespace TencentCloud
                     /**
                      * 获取数据表配置信息。
                      * @return TableBaseInfo 数据表配置信息。
+                     * 
                      */
                     TableBaseInfo GetTableBaseInfo() const;
 
                     /**
                      * 设置数据表配置信息。
-                     * @param TableBaseInfo 数据表配置信息。
+                     * @param _tableBaseInfo 数据表配置信息。
+                     * 
                      */
                     void SetTableBaseInfo(const TableBaseInfo& _tableBaseInfo);
 
                     /**
                      * 判断参数 TableBaseInfo 是否已赋值
                      * @return TableBaseInfo 是否已赋值
+                     * 
                      */
                     bool TableBaseInfoHasBeenSet() const;
 
                     /**
                      * 获取数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。
                      * @return DataFormat 数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。
+                     * 
                      */
                     DataFormat GetDataFormat() const;
 
                     /**
                      * 设置数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。
-                     * @param DataFormat 数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。
+                     * @param _dataFormat 数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。
+                     * 
                      */
                     void SetDataFormat(const DataFormat& _dataFormat);
 
                     /**
                      * 判断参数 DataFormat 是否已赋值
                      * @return DataFormat 是否已赋值
+                     * 
                      */
                     bool DataFormatHasBeenSet() const;
 
                     /**
                      * 获取数据表列信息。
                      * @return Columns 数据表列信息。
+                     * 
                      */
                     std::vector<Column> GetColumns() const;
 
                     /**
                      * 设置数据表列信息。
-                     * @param Columns 数据表列信息。
+                     * @param _columns 数据表列信息。
+                     * 
                      */
                     void SetColumns(const std::vector<Column>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
                     /**
                      * 获取数据表分块信息。
                      * @return Partitions 数据表分块信息。
+                     * 
                      */
                     std::vector<Partition> GetPartitions() const;
 
                     /**
                      * 设置数据表分块信息。
-                     * @param Partitions 数据表分块信息。
+                     * @param _partitions 数据表分块信息。
+                     * 
                      */
                     void SetPartitions(const std::vector<Partition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
                     /**
                      * 获取数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。
                      * @return Location 数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。
-                     * @param Location 数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。
+                     * @param _location 数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

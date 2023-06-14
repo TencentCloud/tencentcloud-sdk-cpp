@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-kleu3gt0
                      * @return InstanceID Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-kleu3gt0
-                     * @param InstanceID Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * @param _instanceID Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取开启或关闭公网访问，true为开启，false 为不开启
                      * @return EnableInternet 开启或关闭公网访问，true为开启，false 为不开启
+                     * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
                      * 设置开启或关闭公网访问，true为开启，false 为不开启
-                     * @param EnableInternet 开启或关闭公网访问，true为开启，false 为不开启
+                     * @param _enableInternet 开启或关闭公网访问，true为开启，false 为不开启
+                     * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
 
                     /**
                      * 判断参数 EnableInternet 是否已赋值
                      * @return EnableInternet 是否已赋值
+                     * 
                      */
                     bool EnableInternetHasBeenSet() const;
 

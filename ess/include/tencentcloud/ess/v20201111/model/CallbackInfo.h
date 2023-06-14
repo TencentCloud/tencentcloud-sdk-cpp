@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取回调url
                      * @return CallbackUrl 回调url
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调url
-                     * @param CallbackUrl 回调url
+                     * @param _callbackUrl 回调url
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取回调加密key，已废弃
                      * @return Token 回调加密key，已废弃
+                     * @deprecated
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置回调加密key，已废弃
-                     * @param Token 回调加密key，已废弃
+                     * @param _token 回调加密key，已废弃
+                     * @deprecated
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * @deprecated
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取回调加密key
                      * @return CallbackKey 回调加密key
+                     * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
                      * 设置回调加密key
-                     * @param CallbackKey 回调加密key
+                     * @param _callbackKey 回调加密key
+                     * 
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
 
                     /**
                      * 判断参数 CallbackKey 是否已赋值
                      * @return CallbackKey 是否已赋值
+                     * 
                      */
                     bool CallbackKeyHasBeenSet() const;
 
                     /**
                      * 获取回调验签token
                      * @return CallbackToken 回调验签token
+                     * 
                      */
                     std::string GetCallbackToken() const;
 
                     /**
                      * 设置回调验签token
-                     * @param CallbackToken 回调验签token
+                     * @param _callbackToken 回调验签token
+                     * 
                      */
                     void SetCallbackToken(const std::string& _callbackToken);
 
                     /**
                      * 判断参数 CallbackToken 是否已赋值
                      * @return CallbackToken 是否已赋值
+                     * 
                      */
                     bool CallbackTokenHasBeenSet() const;
 

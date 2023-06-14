@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Capabilities 安全特性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CloudBaseCapabilities GetCapabilities() const;
 
                     /**
                      * 设置安全特性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Capabilities 安全特性
+                     * @param _capabilities 安全特性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCapabilities(const CloudBaseCapabilities& _capabilities);
 
                     /**
                      * 判断参数 Capabilities 是否已赋值
                      * @return Capabilities 是否已赋值
+                     * 
                      */
                     bool CapabilitiesHasBeenSet() const;
 

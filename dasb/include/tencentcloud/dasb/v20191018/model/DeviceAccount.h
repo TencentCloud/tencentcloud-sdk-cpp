@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取账号ID
                      * @return Id 账号ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置账号ID
-                     * @param Id 账号ID
+                     * @param _id 账号ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取主机ID
                      * @return DeviceId 主机ID
+                     * 
                      */
                     uint64_t GetDeviceId() const;
 
                     /**
                      * 设置主机ID
-                     * @param DeviceId 主机ID
+                     * @param _deviceId 主机ID
+                     * 
                      */
                     void SetDeviceId(const uint64_t& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取账号名
                      * @return Account 账号名
+                     * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置账号名
-                     * @param Account 账号名
+                     * @param _account 账号名
+                     * 
                      */
                     void SetAccount(const std::string& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
                     /**
                      * 获取true-已托管密码，false-未托管密码
                      * @return BoundPassword true-已托管密码，false-未托管密码
+                     * 
                      */
                     bool GetBoundPassword() const;
 
                     /**
                      * 设置true-已托管密码，false-未托管密码
-                     * @param BoundPassword true-已托管密码，false-未托管密码
+                     * @param _boundPassword true-已托管密码，false-未托管密码
+                     * 
                      */
                     void SetBoundPassword(const bool& _boundPassword);
 
                     /**
                      * 判断参数 BoundPassword 是否已赋值
                      * @return BoundPassword 是否已赋值
+                     * 
                      */
                     bool BoundPasswordHasBeenSet() const;
 
                     /**
                      * 获取true-已托管私钥，false-未托管私钥
                      * @return BoundPrivateKey true-已托管私钥，false-未托管私钥
+                     * 
                      */
                     bool GetBoundPrivateKey() const;
 
                     /**
                      * 设置true-已托管私钥，false-未托管私钥
-                     * @param BoundPrivateKey true-已托管私钥，false-未托管私钥
+                     * @param _boundPrivateKey true-已托管私钥，false-未托管私钥
+                     * 
                      */
                     void SetBoundPrivateKey(const bool& _boundPrivateKey);
 
                     /**
                      * 判断参数 BoundPrivateKey 是否已赋值
                      * @return BoundPrivateKey 是否已赋值
+                     * 
                      */
                     bool BoundPrivateKeyHasBeenSet() const;
 

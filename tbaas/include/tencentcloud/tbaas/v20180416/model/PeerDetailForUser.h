@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取节点名称
                      * @return PeerName 节点名称
+                     * 
                      */
                     std::string GetPeerName() const;
 
                     /**
                      * 设置节点名称
-                     * @param PeerName 节点名称
+                     * @param _peerName 节点名称
+                     * 
                      */
                     void SetPeerName(const std::string& _peerName);
 
                     /**
                      * 判断参数 PeerName 是否已赋值
                      * @return PeerName 是否已赋值
+                     * 
                      */
                     bool PeerNameHasBeenSet() const;
 

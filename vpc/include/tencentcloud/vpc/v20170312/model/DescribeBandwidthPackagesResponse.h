@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的带宽包数量
                      * @return TotalCount 符合条件的带宽包数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取描述带宽包详细信息
                      * @return BandwidthPackageSet 描述带宽包详细信息
+                     * 
                      */
                     std::vector<BandwidthPackage> GetBandwidthPackageSet() const;
 
                     /**
                      * 判断参数 BandwidthPackageSet 是否已赋值
                      * @return BandwidthPackageSet 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageSetHasBeenSet() const;
 

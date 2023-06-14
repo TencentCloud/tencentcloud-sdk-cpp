@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取缓存类型，支持all，file，directory，path，index，分别表示全部文件，后缀类型，目录，完整路径，首页。
                      * @return CacheType 缓存类型，支持all，file，directory，path，index，分别表示全部文件，后缀类型，目录，完整路径，首页。
+                     * 
                      */
                     std::string GetCacheType() const;
 
                     /**
                      * 设置缓存类型，支持all，file，directory，path，index，分别表示全部文件，后缀类型，目录，完整路径，首页。
-                     * @param CacheType 缓存类型，支持all，file，directory，path，index，分别表示全部文件，后缀类型，目录，完整路径，首页。
+                     * @param _cacheType 缓存类型，支持all，file，directory，path，index，分别表示全部文件，后缀类型，目录，完整路径，首页。
+                     * 
                      */
                     void SetCacheType(const std::string& _cacheType);
 
                     /**
                      * 判断参数 CacheType 是否已赋值
                      * @return CacheType 是否已赋值
+                     * 
                      */
                     bool CacheTypeHasBeenSet() const;
 
                     /**
                      * 获取缓存内容列表。
                      * @return CacheContents 缓存内容列表。
+                     * 
                      */
                     std::vector<std::string> GetCacheContents() const;
 
                     /**
                      * 设置缓存内容列表。
-                     * @param CacheContents 缓存内容列表。
+                     * @param _cacheContents 缓存内容列表。
+                     * 
                      */
                     void SetCacheContents(const std::vector<std::string>& _cacheContents);
 
                     /**
                      * 判断参数 CacheContents 是否已赋值
                      * @return CacheContents 是否已赋值
+                     * 
                      */
                     bool CacheContentsHasBeenSet() const;
 
                     /**
                      * 获取缓存时间，单位秒。
                      * @return CacheTime 缓存时间，单位秒。
+                     * 
                      */
                     int64_t GetCacheTime() const;
 
                     /**
                      * 设置缓存时间，单位秒。
-                     * @param CacheTime 缓存时间，单位秒。
+                     * @param _cacheTime 缓存时间，单位秒。
+                     * 
                      */
                     void SetCacheTime(const int64_t& _cacheTime);
 
                     /**
                      * 判断参数 CacheTime 是否已赋值
                      * @return CacheTime 是否已赋值
+                     * 
                      */
                     bool CacheTimeHasBeenSet() const;
 

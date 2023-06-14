@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取站点名称。
                      * @return ZoneName 站点名称。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置站点名称。
-                     * @param ZoneName 站点名称。
+                     * @param _zoneName 站点名称。
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Type 接入方式，取值有：
 <li> full：NS接入；</li>
 <li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -75,51 +79,59 @@ namespace TencentCloud
                      * 设置接入方式，取值有：
 <li> full：NS接入；</li>
 <li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
-                     * @param Type 接入方式，取值有：
+                     * @param _type 接入方式，取值有：
 <li> full：NS接入；</li>
 <li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取是否跳过站点现有的DNS记录扫描。默认值：false。
                      * @return JumpStart 是否跳过站点现有的DNS记录扫描。默认值：false。
+                     * 
                      */
                     bool GetJumpStart() const;
 
                     /**
                      * 设置是否跳过站点现有的DNS记录扫描。默认值：false。
-                     * @param JumpStart 是否跳过站点现有的DNS记录扫描。默认值：false。
+                     * @param _jumpStart 是否跳过站点现有的DNS记录扫描。默认值：false。
+                     * 
                      */
                     void SetJumpStart(const bool& _jumpStart);
 
                     /**
                      * 判断参数 JumpStart 是否已赋值
                      * @return JumpStart 是否已赋值
+                     * 
                      */
                     bool JumpStartHasBeenSet() const;
 
                     /**
                      * 获取资源标签。
                      * @return Tags 资源标签。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置资源标签。
-                     * @param Tags 资源标签。
+                     * @param _tags 资源标签。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -130,6 +142,7 @@ namespace TencentCloud
                      * @return AllowDuplicates 是否允许重复接入。
 <li> true：允许重复接入；</li>
 <li> false：不允许重复接入。</li>不填写使用默认值false。
+                     * 
                      */
                     bool GetAllowDuplicates() const;
 
@@ -137,33 +150,38 @@ namespace TencentCloud
                      * 设置是否允许重复接入。
 <li> true：允许重复接入；</li>
 <li> false：不允许重复接入。</li>不填写使用默认值false。
-                     * @param AllowDuplicates 是否允许重复接入。
+                     * @param _allowDuplicates 是否允许重复接入。
 <li> true：允许重复接入；</li>
 <li> false：不允许重复接入。</li>不填写使用默认值false。
+                     * 
                      */
                     void SetAllowDuplicates(const bool& _allowDuplicates);
 
                     /**
                      * 判断参数 AllowDuplicates 是否已赋值
                      * @return AllowDuplicates 是否已赋值
+                     * 
                      */
                     bool AllowDuplicatesHasBeenSet() const;
 
                     /**
                      * 获取站点别名。数字、英文、-和_组合，限制20个字符。
                      * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * 
                      */
                     std::string GetAliasZoneName() const;
 
                     /**
                      * 设置站点别名。数字、英文、-和_组合，限制20个字符。
-                     * @param AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * @param _aliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * 
                      */
                     void SetAliasZoneName(const std::string& _aliasZoneName);
 
                     /**
                      * 判断参数 AliasZoneName 是否已赋值
                      * @return AliasZoneName 是否已赋值
+                     * 
                      */
                     bool AliasZoneNameHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取视频美颜任务的Job id
                      * @return JobId 视频美颜任务的Job id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取预估处理时间，粒度为秒
                      * @return EstimatedProcessTime 预估处理时间，粒度为秒
+                     * 
                      */
                     int64_t GetEstimatedProcessTime() const;
 
                     /**
                      * 判断参数 EstimatedProcessTime 是否已赋值
                      * @return EstimatedProcessTime 是否已赋值
+                     * 
                      */
                     bool EstimatedProcessTimeHasBeenSet() const;
 

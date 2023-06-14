@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取插件相关的API总数。
                      * @return TotalCount 插件相关的API总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置插件相关的API总数。
-                     * @param TotalCount 插件相关的API总数。
+                     * @param _totalCount 插件相关的API总数。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取插件相关的API信息。
                      * @return ApiSet 插件相关的API信息。
+                     * 
                      */
                     std::vector<AvailableApiInfo> GetApiSet() const;
 
                     /**
                      * 设置插件相关的API信息。
-                     * @param ApiSet 插件相关的API信息。
+                     * @param _apiSet 插件相关的API信息。
+                     * 
                      */
                     void SetApiSet(const std::vector<AvailableApiInfo>& _apiSet);
 
                     /**
                      * 判断参数 ApiSet 是否已赋值
                      * @return ApiSet 是否已赋值
+                     * 
                      */
                     bool ApiSetHasBeenSet() const;
 

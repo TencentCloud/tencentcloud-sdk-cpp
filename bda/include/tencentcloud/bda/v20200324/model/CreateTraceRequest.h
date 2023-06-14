@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取人员ID。
                      * @return PersonId 人员ID。
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员ID。
-                     * @param PersonId 人员ID。
+                     * @param _personId 人员ID。
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取人体动作轨迹信息。
                      * @return Trace 人体动作轨迹信息。
+                     * 
                      */
                     Trace GetTrace() const;
 
                     /**
                      * 设置人体动作轨迹信息。
-                     * @param Trace 人体动作轨迹信息。
+                     * @param _trace 人体动作轨迹信息。
+                     * 
                      */
                     void SetTrace(const Trace& _trace);
 
                     /**
                      * 判断参数 Trace 是否已赋值
                      * @return Trace 是否已赋值
+                     * 
                      */
                     bool TraceHasBeenSet() const;
 

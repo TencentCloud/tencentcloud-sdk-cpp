@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Advice GetAdvice() const;
 
                     /**
                      * 设置建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Advice 建议
+                     * @param _advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvice(const Advice& _advice);
 
                     /**
                      * 判断参数 Advice 是否已赋值
                      * @return Advice 是否已赋值
+                     * 
                      */
                     bool AdviceHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Diagnosis 诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiagCertItem> GetDiagnosis() const;
 
                     /**
                      * 设置诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Diagnosis 诊断
+                     * @param _diagnosis 诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiagnosis(const std::vector<DiagCertItem>& _diagnosis);
 
                     /**
                      * 判断参数 Diagnosis 是否已赋值
                      * @return Diagnosis 是否已赋值
+                     * 
                      */
                     bool DiagnosisHasBeenSet() const;
 

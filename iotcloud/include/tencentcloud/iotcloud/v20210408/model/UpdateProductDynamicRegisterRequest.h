@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品Id
                      * @return ProductId 产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品Id
-                     * @param ProductId 产品Id
+                     * @param _productId 产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
                      * @return RegisterType 动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
+                     * 
                      */
                     uint64_t GetRegisterType() const;
 
                     /**
                      * 设置动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
-                     * @param RegisterType 动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
+                     * @param _registerType 动态注册类型，0-关闭 1-预创建设备 2-自动创建设备
+                     * 
                      */
                     void SetRegisterType(const uint64_t& _registerType);
 
                     /**
                      * 判断参数 RegisterType 是否已赋值
                      * @return RegisterType 是否已赋值
+                     * 
                      */
                     bool RegisterTypeHasBeenSet() const;
 
                     /**
                      * 获取动态注册设备上限
                      * @return RegisterLimit 动态注册设备上限
+                     * 
                      */
                     uint64_t GetRegisterLimit() const;
 
                     /**
                      * 设置动态注册设备上限
-                     * @param RegisterLimit 动态注册设备上限
+                     * @param _registerLimit 动态注册设备上限
+                     * 
                      */
                     void SetRegisterLimit(const uint64_t& _registerLimit);
 
                     /**
                      * 判断参数 RegisterLimit 是否已赋值
                      * @return RegisterLimit 是否已赋值
+                     * 
                      */
                     bool RegisterLimitHasBeenSet() const;
 

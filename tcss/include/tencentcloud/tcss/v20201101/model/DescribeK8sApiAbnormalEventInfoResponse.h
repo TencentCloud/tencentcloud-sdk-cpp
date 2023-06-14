@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取事件详情
                      * @return Info 事件详情
+                     * 
                      */
                     K8sApiAbnormalEventInfo GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

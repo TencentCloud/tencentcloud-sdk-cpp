@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PushLogs 预热历史记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PushTask> GetPushLogs() const;
 
                     /**
                      * 判断参数 PushLogs 是否已赋值
                      * @return PushLogs 是否已赋值
+                     * 
                      */
                     bool PushLogsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务总数，用于分页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

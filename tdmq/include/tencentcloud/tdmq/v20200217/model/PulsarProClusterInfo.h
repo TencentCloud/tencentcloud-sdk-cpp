@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取集群Id。
                      * @return ClusterId 集群Id。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id。
-                     * @param ClusterId 集群Id。
+                     * @param _clusterId 集群Id。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称。
                      * @return ClusterName 集群名称。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称。
-                     * @param ClusterName 集群名称。
+                     * @param _clusterName 集群名称。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取说明信息。
                      * @return Remark 说明信息。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息。
-                     * @param Remark 说明信息。
+                     * @param _remark 说明信息。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取集群状态，0:创建中，1:正常，2:隔离
                      * @return Status 集群状态，0:创建中，1:正常，2:隔离
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置集群状态，0:创建中，1:正常，2:隔离
-                     * @param Status 集群状态，0:创建中，1:正常，2:隔离
+                     * @param _status 集群状态，0:创建中，1:正常，2:隔离
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取集群版本
                      * @return Version 集群版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置集群版本
-                     * @param Version 集群版本
+                     * @param _version 集群版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -160,38 +178,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeDistribution 节点分布情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNodeDistribution> GetNodeDistribution() const;
 
                     /**
                      * 设置节点分布情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeDistribution 节点分布情况
+                     * @param _nodeDistribution 节点分布情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeDistribution(const std::vector<InstanceNodeDistribution>& _nodeDistribution);
 
                     /**
                      * 判断参数 NodeDistribution 是否已赋值
                      * @return NodeDistribution 是否已赋值
+                     * 
                      */
                     bool NodeDistributionHasBeenSet() const;
 
                     /**
                      * 获取最大储存容量，单位：MB
                      * @return MaxStorage 最大储存容量，单位：MB
+                     * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置最大储存容量，单位：MB
-                     * @param MaxStorage 最大储存容量，单位：MB
+                     * @param _maxStorage 最大储存容量，单位：MB
+                     * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
@@ -200,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanEditRoute 是否可以修改路由
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetCanEditRoute() const;
 
                     /**
                      * 设置是否可以修改路由
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CanEditRoute 是否可以修改路由
+                     * @param _canEditRoute 是否可以修改路由
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCanEditRoute(const bool& _canEditRoute);
 
                     /**
                      * 判断参数 CanEditRoute 是否已赋值
                      * @return CanEditRoute 是否已赋值
+                     * 
                      */
                     bool CanEditRouteHasBeenSet() const;
 

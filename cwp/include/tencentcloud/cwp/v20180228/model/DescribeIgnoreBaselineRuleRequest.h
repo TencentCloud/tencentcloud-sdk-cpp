@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分页参数 最大100条
                      * @return Limit 分页参数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数 最大100条
-                     * @param Limit 分页参数 最大100条
+                     * @param _limit 分页参数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Offset 分页参数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数
-                     * @param Offset 分页参数
+                     * @param _offset 分页参数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取检测项名称
                      * @return RuleName 检测项名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置检测项名称
-                     * @param RuleName 检测项名称
+                     * @param _ruleName 检测项名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerScalingPolicies 定时器扩缩容策略配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimerScalingPolicy> GetTimerScalingPolicies() const;
 
                     /**
                      * 判断参数 TimerScalingPolicies 是否已赋值
                      * @return TimerScalingPolicies 是否已赋值
+                     * 
                      */
                     bool TimerScalingPoliciesHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 定时器总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

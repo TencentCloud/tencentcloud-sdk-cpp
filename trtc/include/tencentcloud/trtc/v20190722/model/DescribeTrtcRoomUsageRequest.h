@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的SdkAppId，和房间所对应的SdkAppId相同。
                      * @return SdkAppid TRTC的SdkAppId，和房间所对应的SdkAppId相同。
+                     * 
                      */
                     uint64_t GetSdkAppid() const;
 
                     /**
                      * 设置TRTC的SdkAppId，和房间所对应的SdkAppId相同。
-                     * @param SdkAppid TRTC的SdkAppId，和房间所对应的SdkAppId相同。
+                     * @param _sdkAppid TRTC的SdkAppId，和房间所对应的SdkAppId相同。
+                     * 
                      */
                     void SetSdkAppid(const uint64_t& _sdkAppid);
 
                     /**
                      * 判断参数 SdkAppid 是否已赋值
                      * @return SdkAppid 是否已赋值
+                     * 
                      */
                     bool SdkAppidHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。
                      * @return StartTime 查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。
-                     * @param StartTime 查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。
+                     * @param _startTime 查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。
                      * @return EndTime 查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。
-                     * @param EndTime 查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。
+                     * @param _endTime 查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

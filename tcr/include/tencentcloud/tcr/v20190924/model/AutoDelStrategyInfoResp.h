@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取总数目
                      * @return TotalCount 总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数目
-                     * @param TotalCount 总数目
+                     * @param _totalCount 总数目
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyInfo 自动删除策略列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AutoDelStrategyInfo> GetStrategyInfo() const;
 
                     /**
                      * 设置自动删除策略列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrategyInfo 自动删除策略列表
+                     * @param _strategyInfo 自动删除策略列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrategyInfo(const std::vector<AutoDelStrategyInfo>& _strategyInfo);
 
                     /**
                      * 判断参数 StrategyInfo 是否已赋值
                      * @return StrategyInfo 是否已赋值
+                     * 
                      */
                     bool StrategyInfoHasBeenSet() const;
 

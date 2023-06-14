@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取同步速度条/s列表
                      * @return RecordsSpeedList 同步速度条/s列表
+                     * 
                      */
                     std::vector<RecordsSpeed> GetRecordsSpeedList() const;
 
                     /**
                      * 设置同步速度条/s列表
-                     * @param RecordsSpeedList 同步速度条/s列表
+                     * @param _recordsSpeedList 同步速度条/s列表
+                     * 
                      */
                     void SetRecordsSpeedList(const std::vector<RecordsSpeed>& _recordsSpeedList);
 
                     /**
                      * 判断参数 RecordsSpeedList 是否已赋值
                      * @return RecordsSpeedList 是否已赋值
+                     * 
                      */
                     bool RecordsSpeedListHasBeenSet() const;
 
                     /**
                      * 获取同步速度字节/s列表
                      * @return BytesSpeedList 同步速度字节/s列表
+                     * 
                      */
                     std::vector<BytesSpeed> GetBytesSpeedList() const;
 
                     /**
                      * 设置同步速度字节/s列表
-                     * @param BytesSpeedList 同步速度字节/s列表
+                     * @param _bytesSpeedList 同步速度字节/s列表
+                     * 
                      */
                     void SetBytesSpeedList(const std::vector<BytesSpeed>& _bytesSpeedList);
 
                     /**
                      * 判断参数 BytesSpeedList 是否已赋值
                      * @return BytesSpeedList 是否已赋值
+                     * 
                      */
                     bool BytesSpeedListHasBeenSet() const;
 

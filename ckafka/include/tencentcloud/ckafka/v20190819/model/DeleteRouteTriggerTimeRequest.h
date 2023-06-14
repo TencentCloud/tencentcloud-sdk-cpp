@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取修改时间
                      * @return DelayTime 修改时间
+                     * 
                      */
                     std::string GetDelayTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param DelayTime 修改时间
+                     * @param _delayTime 修改时间
+                     * 
                      */
                     void SetDelayTime(const std::string& _delayTime);
 
                     /**
                      * 判断参数 DelayTime 是否已赋值
                      * @return DelayTime 是否已赋值
+                     * 
                      */
                     bool DelayTimeHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取授权用户
                      * @return DbUserName 授权用户
+                     * 
                      */
                     std::string GetDbUserName() const;
 
                     /**
                      * 设置授权用户
-                     * @param DbUserName 授权用户
+                     * @param _dbUserName 授权用户
+                     * 
                      */
                     void SetDbUserName(const std::string& _dbUserName);
 
                     /**
                      * 判断参数 DbUserName 是否已赋值
                      * @return DbUserName 是否已赋值
+                     * 
                      */
                     bool DbUserNameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbHost 客户端ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbHost() const;
 
                     /**
                      * 设置客户端ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbHost 客户端ip
+                     * @param _dbHost 客户端ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbHost(const std::string& _dbHost);
 
                     /**
                      * 判断参数 DbHost 是否已赋值
                      * @return DbHost 是否已赋值
+                     * 
                      */
                     bool DbHostHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbPrivilege 用户权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbPrivilege() const;
 
                     /**
                      * 设置用户权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbPrivilege 用户权限
+                     * @param _dbPrivilege 用户权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbPrivilege(const std::string& _dbPrivilege);
 
                     /**
                      * 判断参数 DbPrivilege 是否已赋值
                      * @return DbPrivilege 是否已赋值
+                     * 
                      */
                     bool DbPrivilegeHasBeenSet() const;
 

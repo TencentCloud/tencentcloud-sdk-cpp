@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取S3 bucket。
                      * @return S3Bucket S3 bucket。
+                     * 
                      */
                     std::string GetS3Bucket() const;
 
                     /**
                      * 设置S3 bucket。
-                     * @param S3Bucket S3 bucket。
+                     * @param _s3Bucket S3 bucket。
+                     * 
                      */
                     void SetS3Bucket(const std::string& _s3Bucket);
 
                     /**
                      * 判断参数 S3Bucket 是否已赋值
                      * @return S3Bucket 是否已赋值
+                     * 
                      */
                     bool S3BucketHasBeenSet() const;
 
                     /**
                      * 获取S3 bucket 对应的区域。
                      * @return S3Region S3 bucket 对应的区域。
+                     * 
                      */
                     std::string GetS3Region() const;
 
                     /**
                      * 设置S3 bucket 对应的区域。
-                     * @param S3Region S3 bucket 对应的区域。
+                     * @param _s3Region S3 bucket 对应的区域。
+                     * 
                      */
                     void SetS3Region(const std::string& _s3Region);
 
                     /**
                      * 判断参数 S3Region 是否已赋值
                      * @return S3Region 是否已赋值
+                     * 
                      */
                     bool S3RegionHasBeenSet() const;
 
                     /**
                      * 获取AWS 内网上传 媒体资源的秘钥id。
                      * @return S3SecretId AWS 内网上传 媒体资源的秘钥id。
+                     * 
                      */
                     std::string GetS3SecretId() const;
 
                     /**
                      * 设置AWS 内网上传 媒体资源的秘钥id。
-                     * @param S3SecretId AWS 内网上传 媒体资源的秘钥id。
+                     * @param _s3SecretId AWS 内网上传 媒体资源的秘钥id。
+                     * 
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
 
                     /**
                      * 判断参数 S3SecretId 是否已赋值
                      * @return S3SecretId 是否已赋值
+                     * 
                      */
                     bool S3SecretIdHasBeenSet() const;
 
                     /**
                      * 获取AWS 内网上传 媒体资源的秘钥key。
                      * @return S3SecretKey AWS 内网上传 媒体资源的秘钥key。
+                     * 
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
                      * 设置AWS 内网上传 媒体资源的秘钥key。
-                     * @param S3SecretKey AWS 内网上传 媒体资源的秘钥key。
+                     * @param _s3SecretKey AWS 内网上传 媒体资源的秘钥key。
+                     * 
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
 
                     /**
                      * 判断参数 S3SecretKey 是否已赋值
                      * @return S3SecretKey 是否已赋值
+                     * 
                      */
                     bool S3SecretKeyHasBeenSet() const;
 

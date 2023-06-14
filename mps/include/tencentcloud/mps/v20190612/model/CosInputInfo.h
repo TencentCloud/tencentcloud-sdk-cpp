@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      * @return Bucket 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
-                     * @param Bucket 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * @param _bucket 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
                      * @return Region 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
-                     * @param Region 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * @param _region 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
                      * @return Object 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * 
                      */
                     std::string GetObject() const;
 
                     /**
                      * 设置媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
-                     * @param Object 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * @param _object 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * 
                      */
                     void SetObject(const std::string& _object);
 
                     /**
                      * 判断参数 Object 是否已赋值
                      * @return Object 是否已赋值
+                     * 
                      */
                     bool ObjectHasBeenSet() const;
 

@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型 master core task common router mysql
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型 master core task common router mysql
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeType 节点类型 master core task common router mysql
+                     * @param _nodeType 节点类型 master core task common router mysql
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取节点组成部分价格详情
                      * @return PartDetailPrice 节点组成部分价格详情
+                     * 
                      */
                     std::vector<PartDetailPriceItem> GetPartDetailPrice() const;
 
                     /**
                      * 设置节点组成部分价格详情
-                     * @param PartDetailPrice 节点组成部分价格详情
+                     * @param _partDetailPrice 节点组成部分价格详情
+                     * 
                      */
                     void SetPartDetailPrice(const std::vector<PartDetailPriceItem>& _partDetailPrice);
 
                     /**
                      * 判断参数 PartDetailPrice 是否已赋值
                      * @return PartDetailPrice 是否已赋值
+                     * 
                      */
                     bool PartDetailPriceHasBeenSet() const;
 

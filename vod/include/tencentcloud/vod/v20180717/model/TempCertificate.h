@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取临时安全证书 Id。
                      * @return SecretId 临时安全证书 Id。
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置临时安全证书 Id。
-                     * @param SecretId 临时安全证书 Id。
+                     * @param _secretId 临时安全证书 Id。
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时安全证书 Key。
                      * @return SecretKey 临时安全证书 Key。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置临时安全证书 Key。
-                     * @param SecretKey 临时安全证书 Key。
+                     * @param _secretKey 临时安全证书 Key。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取Token 值。
                      * @return Token Token 值。
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置Token 值。
-                     * @param Token Token 值。
+                     * @param _token Token 值。
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取证书无效的时间，返回 Unix 时间戳，精确到秒。
                      * @return ExpiredTime 证书无效的时间，返回 Unix 时间戳，精确到秒。
+                     * 
                      */
                     uint64_t GetExpiredTime() const;
 
                     /**
                      * 设置证书无效的时间，返回 Unix 时间戳，精确到秒。
-                     * @param ExpiredTime 证书无效的时间，返回 Unix 时间戳，精确到秒。
+                     * @param _expiredTime 证书无效的时间，返回 Unix 时间戳，精确到秒。
+                     * 
                      */
                     void SetExpiredTime(const uint64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

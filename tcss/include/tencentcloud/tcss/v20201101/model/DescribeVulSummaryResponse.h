@@ -46,132 +46,154 @@ namespace TencentCloud
                     /**
                      * 获取漏洞总数量
                      * @return VulTotalCount 漏洞总数量
+                     * 
                      */
                     int64_t GetVulTotalCount() const;
 
                     /**
                      * 判断参数 VulTotalCount 是否已赋值
                      * @return VulTotalCount 是否已赋值
+                     * 
                      */
                     bool VulTotalCountHasBeenSet() const;
 
                     /**
                      * 获取严重及高危漏洞数量
                      * @return SeriousVulCount 严重及高危漏洞数量
+                     * 
                      */
                     int64_t GetSeriousVulCount() const;
 
                     /**
                      * 判断参数 SeriousVulCount 是否已赋值
                      * @return SeriousVulCount 是否已赋值
+                     * 
                      */
                     bool SeriousVulCountHasBeenSet() const;
 
                     /**
                      * 获取重点关注漏洞数量
                      * @return SuggestVulCount 重点关注漏洞数量
+                     * 
                      */
                     int64_t GetSuggestVulCount() const;
 
                     /**
                      * 判断参数 SuggestVulCount 是否已赋值
                      * @return SuggestVulCount 是否已赋值
+                     * 
                      */
                     bool SuggestVulCountHasBeenSet() const;
 
                     /**
                      * 获取有Poc或者Exp的漏洞数量
                      * @return PocExpLevelVulCount 有Poc或者Exp的漏洞数量
+                     * 
                      */
                     int64_t GetPocExpLevelVulCount() const;
 
                     /**
                      * 判断参数 PocExpLevelVulCount 是否已赋值
                      * @return PocExpLevelVulCount 是否已赋值
+                     * 
                      */
                     bool PocExpLevelVulCountHasBeenSet() const;
 
                     /**
                      * 获取有远程Exp的漏洞数量
                      * @return RemoteExpLevelVulCount 有远程Exp的漏洞数量
+                     * 
                      */
                     int64_t GetRemoteExpLevelVulCount() const;
 
                     /**
                      * 判断参数 RemoteExpLevelVulCount 是否已赋值
                      * @return RemoteExpLevelVulCount 是否已赋值
+                     * 
                      */
                     bool RemoteExpLevelVulCountHasBeenSet() const;
 
                     /**
                      * 获取受严重或高危漏洞影响的最新版本镜像数
                      * @return SeriousVulNewestImageCount 受严重或高危漏洞影响的最新版本镜像数
+                     * 
                      */
                     int64_t GetSeriousVulNewestImageCount() const;
 
                     /**
                      * 判断参数 SeriousVulNewestImageCount 是否已赋值
                      * @return SeriousVulNewestImageCount 是否已赋值
+                     * 
                      */
                     bool SeriousVulNewestImageCountHasBeenSet() const;
 
                     /**
                      * 获取系统漏洞重点关注数
                      * @return SystemVulnerabilityFocusCount 系统漏洞重点关注数
+                     * 
                      */
                     int64_t GetSystemVulnerabilityFocusCount() const;
 
                     /**
                      * 判断参数 SystemVulnerabilityFocusCount 是否已赋值
                      * @return SystemVulnerabilityFocusCount 是否已赋值
+                     * 
                      */
                     bool SystemVulnerabilityFocusCountHasBeenSet() const;
 
                     /**
                      * 获取web漏洞重点关注数
                      * @return WebVulnerabilityFocusCount web漏洞重点关注数
+                     * 
                      */
                     int64_t GetWebVulnerabilityFocusCount() const;
 
                     /**
                      * 判断参数 WebVulnerabilityFocusCount 是否已赋值
                      * @return WebVulnerabilityFocusCount 是否已赋值
+                     * 
                      */
                     bool WebVulnerabilityFocusCountHasBeenSet() const;
 
                     /**
                      * 获取受影响本地镜像数
                      * @return SeriousVulnerabilityLocalImageCount 受影响本地镜像数
+                     * 
                      */
                     int64_t GetSeriousVulnerabilityLocalImageCount() const;
 
                     /**
                      * 判断参数 SeriousVulnerabilityLocalImageCount 是否已赋值
                      * @return SeriousVulnerabilityLocalImageCount 是否已赋值
+                     * 
                      */
                     bool SeriousVulnerabilityLocalImageCountHasBeenSet() const;
 
                     /**
                      * 获取受影响仓库镜像数
                      * @return SeriousVulnerabilityRegistryImageCount 受影响仓库镜像数
+                     * 
                      */
                     int64_t GetSeriousVulnerabilityRegistryImageCount() const;
 
                     /**
                      * 判断参数 SeriousVulnerabilityRegistryImageCount 是否已赋值
                      * @return SeriousVulnerabilityRegistryImageCount 是否已赋值
+                     * 
                      */
                     bool SeriousVulnerabilityRegistryImageCountHasBeenSet() const;
 
                     /**
                      * 获取应急漏洞数量
                      * @return EmergencyVulnerabilityCount 应急漏洞数量
+                     * 
                      */
                     int64_t GetEmergencyVulnerabilityCount() const;
 
                     /**
                      * 判断参数 EmergencyVulnerabilityCount 是否已赋值
                      * @return EmergencyVulnerabilityCount 是否已赋值
+                     * 
                      */
                     bool EmergencyVulnerabilityCountHasBeenSet() const;
 

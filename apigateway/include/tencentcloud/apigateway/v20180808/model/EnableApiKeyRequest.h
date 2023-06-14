@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待启用的密钥 ID。
                      * @return AccessKeyId 待启用的密钥 ID。
+                     * 
                      */
                     std::string GetAccessKeyId() const;
 
                     /**
                      * 设置待启用的密钥 ID。
-                     * @param AccessKeyId 待启用的密钥 ID。
+                     * @param _accessKeyId 待启用的密钥 ID。
+                     * 
                      */
                     void SetAccessKeyId(const std::string& _accessKeyId);
 
                     /**
                      * 判断参数 AccessKeyId 是否已赋值
                      * @return AccessKeyId 是否已赋值
+                     * 
                      */
                     bool AccessKeyIdHasBeenSet() const;
 

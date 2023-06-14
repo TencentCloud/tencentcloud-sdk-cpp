@@ -83,6 +83,7 @@ namespace TencentCloud
 <li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
 <li>portrait：画像分析，仅bot自定义规则可用；</li>
 <li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
+                     * 
                      */
                     std::string GetMatchFrom() const;
 
@@ -105,7 +106,7 @@ namespace TencentCloud
 <li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
 <li>portrait：画像分析，仅bot自定义规则可用；</li>
 <li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
-                     * @param MatchFrom 匹配字段，取值有：
+                     * @param _matchFrom 匹配字段，取值有：
 <li>host：请求域名；</li>
 <li>sip：客户端IP；</li>
 <li>ua：User-Agent；</li>
@@ -123,30 +124,35 @@ namespace TencentCloud
 <li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
 <li>portrait：画像分析，仅bot自定义规则可用；</li>
 <li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
+                     * 
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
 
                     /**
                      * 判断参数 MatchFrom 是否已赋值
                      * @return MatchFrom 是否已赋值
+                     * 
                      */
                     bool MatchFromHasBeenSet() const;
 
                     /**
                      * 获取匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
                      * @return MatchParam 匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * 
                      */
                     std::string GetMatchParam() const;
 
                     /**
                      * 设置匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
-                     * @param MatchParam 匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * @param _matchParam 匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * 
                      */
                     void SetMatchParam(const std::string& _matchParam);
 
                     /**
                      * 判断参数 MatchParam 是否已赋值
                      * @return MatchParam 是否已赋值
+                     * 
                      */
                     bool MatchParamHasBeenSet() const;
 
@@ -185,6 +191,7 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
+                     * 
                      */
                     std::string GetOperator() const;
 
@@ -206,7 +213,7 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-                     * @param Operator 匹配关系，取值有：
+                     * @param _operator 匹配关系，取值有：
 <li>equal：字符串等于；</li>
 <li>not_equal：数值不等于；</li>
 <li>include：字符包含；</li>
@@ -223,30 +230,35 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取匹配内容。
                      * @return MatchContent 匹配内容。
+                     * 
                      */
                     std::string GetMatchContent() const;
 
                     /**
                      * 设置匹配内容。
-                     * @param MatchContent 匹配内容。
+                     * @param _matchContent 匹配内容。
+                     * 
                      */
                     void SetMatchContent(const std::string& _matchContent);
 
                     /**
                      * 判断参数 MatchContent 是否已赋值
                      * @return MatchContent 是否已赋值
+                     * 
                      */
                     bool MatchContentHasBeenSet() const;
 

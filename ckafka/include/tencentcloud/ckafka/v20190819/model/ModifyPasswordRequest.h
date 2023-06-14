@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户名称
                      * @return Name 用户名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户名称
-                     * @param Name 用户名称
+                     * @param _name 用户名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户当前密码
                      * @return Password 用户当前密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置用户当前密码
-                     * @param Password 用户当前密码
+                     * @param _password 用户当前密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取用户新密码
                      * @return PasswordNew 用户新密码
+                     * 
                      */
                     std::string GetPasswordNew() const;
 
                     /**
                      * 设置用户新密码
-                     * @param PasswordNew 用户新密码
+                     * @param _passwordNew 用户新密码
+                     * 
                      */
                     void SetPasswordNew(const std::string& _passwordNew);
 
                     /**
                      * 判断参数 PasswordNew 是否已赋值
                      * @return PasswordNew 是否已赋值
+                     * 
                      */
                     bool PasswordNewHasBeenSet() const;
 

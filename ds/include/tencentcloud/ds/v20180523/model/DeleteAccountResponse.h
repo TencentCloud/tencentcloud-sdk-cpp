@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取删除成功帐号ID列表
                      * @return DelSuccessList 删除成功帐号ID列表
+                     * 
                      */
                     std::vector<std::string> GetDelSuccessList() const;
 
                     /**
                      * 判断参数 DelSuccessList 是否已赋值
                      * @return DelSuccessList 是否已赋值
+                     * 
                      */
                     bool DelSuccessListHasBeenSet() const;
 
                     /**
                      * 获取删除失败帐号ID列表
                      * @return DelFailedList 删除失败帐号ID列表
+                     * 
                      */
                     std::vector<std::string> GetDelFailedList() const;
 
                     /**
                      * 判断参数 DelFailedList 是否已赋值
                      * @return DelFailedList 是否已赋值
+                     * 
                      */
                     bool DelFailedListHasBeenSet() const;
 

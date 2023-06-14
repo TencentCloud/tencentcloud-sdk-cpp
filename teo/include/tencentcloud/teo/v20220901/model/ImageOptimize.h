@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

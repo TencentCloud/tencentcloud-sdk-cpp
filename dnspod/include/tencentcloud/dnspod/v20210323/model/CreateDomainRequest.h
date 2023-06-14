@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      * @return GroupId 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
-                     * @param GroupId 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * @param _groupId 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取是否星标域名，”yes”、”no” 分别代表是和否。
                      * @return IsMark 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * 
                      */
                     std::string GetIsMark() const;
 
                     /**
                      * 设置是否星标域名，”yes”、”no” 分别代表是和否。
-                     * @param IsMark 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * @param _isMark 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * 
                      */
                     void SetIsMark(const std::string& _isMark);
 
                     /**
                      * 判断参数 IsMark 是否已赋值
                      * @return IsMark 是否已赋值
+                     * 
                      */
                     bool IsMarkHasBeenSet() const;
 

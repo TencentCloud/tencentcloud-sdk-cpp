@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取恶意标记等级回应内容
                      * @return ResponseData 恶意标记等级回应内容
+                     * 
                      */
                     MRLResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

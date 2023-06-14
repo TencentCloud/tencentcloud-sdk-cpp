@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return DeviceIDList 无
+                     * 
                      */
                     std::vector<uint64_t> GetDeviceIDList() const;
 
                     /**
                      * 设置无
-                     * @param DeviceIDList 无
+                     * @param _deviceIDList 无
+                     * 
                      */
                     void SetDeviceIDList(const std::vector<uint64_t>& _deviceIDList);
 
                     /**
                      * 判断参数 DeviceIDList 是否已赋值
                      * @return DeviceIDList 是否已赋值
+                     * 
                      */
                     bool DeviceIDListHasBeenSet() const;
 

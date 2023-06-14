@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例。
                      * @return NetworkInterface 弹性网卡实例。
+                     * 
                      */
                     NetworkInterface GetNetworkInterface() const;
 
                     /**
                      * 判断参数 NetworkInterface 是否已赋值
                      * @return NetworkInterface 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceHasBeenSet() const;
 

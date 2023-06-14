@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取识别出的最相似候选人
                      * @return Candidates 识别出的最相似候选人
+                     * 
                      */
                     std::vector<Candidate> GetCandidates() const;
 
                     /**
                      * 设置识别出的最相似候选人
-                     * @param Candidates 识别出的最相似候选人
+                     * @param _candidates 识别出的最相似候选人
+                     * 
                      */
                     void SetCandidates(const std::vector<Candidate>& _candidates);
 
                     /**
                      * 判断参数 Candidates 是否已赋值
                      * @return Candidates 是否已赋值
+                     * 
                      */
                     bool CandidatesHasBeenSet() const;
 
                     /**
                      * 获取检测出的人脸框位置
                      * @return FaceRect 检测出的人脸框位置
+                     * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
                      * 设置检测出的人脸框位置
-                     * @param FaceRect 检测出的人脸框位置
+                     * @param _faceRect 检测出的人脸框位置
+                     * 
                      */
                     void SetFaceRect(const FaceRect& _faceRect);
 
                     /**
                      * 判断参数 FaceRect 是否已赋值
                      * @return FaceRect 是否已赋值
+                     * 
                      */
                     bool FaceRectHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      * @return RetCode 检测出的人脸图片状态返回码。0 表示正常。 
 -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
                      * 设置检测出的人脸图片状态返回码。0 表示正常。 
 -1601代表不符合图片质量控制要求，此时Candidate内容为空。
-                     * @param RetCode 检测出的人脸图片状态返回码。0 表示正常。 
+                     * @param _retCode 检测出的人脸图片状态返回码。0 表示正常。 
 -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 
                      */
                     void SetRetCode(const int64_t& _retCode);
 
                     /**
                      * 判断参数 RetCode 是否已赋值
                      * @return RetCode 是否已赋值
+                     * 
                      */
                     bool RetCodeHasBeenSet() const;
 

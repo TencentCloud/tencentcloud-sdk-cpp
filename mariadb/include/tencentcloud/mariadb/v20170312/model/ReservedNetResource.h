@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取私有网络
                      * @return VpcId 私有网络
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络
-                     * @param VpcId 私有网络
+                     * @param _vpcId 私有网络
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网
                      * @return SubnetId 子网
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网
-                     * @param SubnetId 子网
+                     * @param _subnetId 子网
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取VpcId,SubnetId下保留的内网ip
                      * @return Vip VpcId,SubnetId下保留的内网ip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置VpcId,SubnetId下保留的内网ip
-                     * @param Vip VpcId,SubnetId下保留的内网ip
+                     * @param _vip VpcId,SubnetId下保留的内网ip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取Vip下的端口
                      * @return Vports Vip下的端口
+                     * 
                      */
                     std::vector<int64_t> GetVports() const;
 
                     /**
                      * 设置Vip下的端口
-                     * @param Vports Vip下的端口
+                     * @param _vports Vip下的端口
+                     * 
                      */
                     void SetVports(const std::vector<int64_t>& _vports);
 
                     /**
                      * 判断参数 Vports 是否已赋值
                      * @return Vports 是否已赋值
+                     * 
                      */
                     bool VportsHasBeenSet() const;
 
                     /**
                      * 获取vip的回收时间
                      * @return RecycleTime vip的回收时间
+                     * 
                      */
                     std::string GetRecycleTime() const;
 
                     /**
                      * 设置vip的回收时间
-                     * @param RecycleTime vip的回收时间
+                     * @param _recycleTime vip的回收时间
+                     * 
                      */
                     void SetRecycleTime(const std::string& _recycleTime);
 
                     /**
                      * 判断参数 RecycleTime 是否已赋值
                      * @return RecycleTime 是否已赋值
+                     * 
                      */
                     bool RecycleTimeHasBeenSet() const;
 

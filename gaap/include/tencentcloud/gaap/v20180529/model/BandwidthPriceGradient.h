@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取带宽范围。
                      * @return BandwidthRange 带宽范围。
+                     * 
                      */
                     std::vector<int64_t> GetBandwidthRange() const;
 
                     /**
                      * 设置带宽范围。
-                     * @param BandwidthRange 带宽范围。
+                     * @param _bandwidthRange 带宽范围。
+                     * 
                      */
                     void SetBandwidthRange(const std::vector<int64_t>& _bandwidthRange);
 
                     /**
                      * 判断参数 BandwidthRange 是否已赋值
                      * @return BandwidthRange 是否已赋值
+                     * 
                      */
                     bool BandwidthRangeHasBeenSet() const;
 
                     /**
                      * 获取在对应带宽范围内的单宽单价，单位：元/Mbps/天。
                      * @return BandwidthUnitPrice 在对应带宽范围内的单宽单价，单位：元/Mbps/天。
+                     * 
                      */
                     double GetBandwidthUnitPrice() const;
 
                     /**
                      * 设置在对应带宽范围内的单宽单价，单位：元/Mbps/天。
-                     * @param BandwidthUnitPrice 在对应带宽范围内的单宽单价，单位：元/Mbps/天。
+                     * @param _bandwidthUnitPrice 在对应带宽范围内的单宽单价，单位：元/Mbps/天。
+                     * 
                      */
                     void SetBandwidthUnitPrice(const double& _bandwidthUnitPrice);
 
                     /**
                      * 判断参数 BandwidthUnitPrice 是否已赋值
                      * @return BandwidthUnitPrice 是否已赋值
+                     * 
                      */
                     bool BandwidthUnitPriceHasBeenSet() const;
 
                     /**
                      * 获取带宽折扣价，单位：元/Mbps/天。
                      * @return DiscountBandwidthUnitPrice 带宽折扣价，单位：元/Mbps/天。
+                     * 
                      */
                     double GetDiscountBandwidthUnitPrice() const;
 
                     /**
                      * 设置带宽折扣价，单位：元/Mbps/天。
-                     * @param DiscountBandwidthUnitPrice 带宽折扣价，单位：元/Mbps/天。
+                     * @param _discountBandwidthUnitPrice 带宽折扣价，单位：元/Mbps/天。
+                     * 
                      */
                     void SetDiscountBandwidthUnitPrice(const double& _discountBandwidthUnitPrice);
 
                     /**
                      * 判断参数 DiscountBandwidthUnitPrice 是否已赋值
                      * @return DiscountBandwidthUnitPrice 是否已赋值
+                     * 
                      */
                     bool DiscountBandwidthUnitPriceHasBeenSet() const;
 

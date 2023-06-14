@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return Type 参与校验的参数类型。
 0：使用手机号进行校验；
 1：使用姓名与身份证号进行校验。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -57,15 +58,17 @@ namespace TencentCloud
                      * 设置参与校验的参数类型。
 0：使用手机号进行校验；
 1：使用姓名与身份证号进行校验。
-                     * @param Type 参与校验的参数类型。
+                     * @param _type 参与校验的参数类型。
 0：使用手机号进行校验；
 1：使用姓名与身份证号进行校验。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
                      * @return Mobile 手机号，11位数字，
 特别提示：
 手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。
+                     * 
                      */
                     std::string GetMobile() const;
 
@@ -83,69 +87,80 @@ namespace TencentCloud
                      * 设置手机号，11位数字，
 特别提示：
 手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。
-                     * @param Mobile 手机号，11位数字，
+                     * @param _mobile 手机号，11位数字，
 特别提示：
 手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取身份证号码。
                      * @return IdCard 身份证号码。
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置身份证号码。
-                     * @param IdCard 身份证号码。
+                     * @param _idCard 身份证号码。
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
                     /**
                      * 获取姓名。
                      * @return Name 姓名。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名。
-                     * @param Name 姓名。
+                     * @param _name 姓名。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 设置敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     void SetEncryption(const Encryption& _encryption);
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 

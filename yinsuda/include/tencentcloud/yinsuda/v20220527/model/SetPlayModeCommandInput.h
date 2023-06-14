@@ -57,6 +57,7 @@ namespace TencentCloud
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+                     * 
                      */
                     std::string GetPlayMode() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
-                     * @param PlayMode 播放模式，取值有：
+                     * @param _playMode 播放模式，取值有：
 <li>RepeatPlaylist：列表循环</li>
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+                     * 
                      */
                     void SetPlayMode(const std::string& _playMode);
 
                     /**
                      * 判断参数 PlayMode 是否已赋值
                      * @return PlayMode 是否已赋值
+                     * 
                      */
                     bool PlayModeHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -76,6 +79,7 @@ state - String
 mode - String 
 create-time - String 
 message - String
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -87,181 +91,210 @@ state - String
 mode - String 
 create-time - String 
 message - String
-                     * @param Filters 滤类型，传参Name应为以下其中一个,
+                     * @param _filters 滤类型，传参Name应为以下其中一个,
 data-engine-name - String 
 engine-type - String
 state - String 
 mode - String 
 create-time - String 
 message - String
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段，支持如下字段类型，create-time
                      * @return SortBy 排序字段，支持如下字段类型，create-time
+                     * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置排序字段，支持如下字段类型，create-time
-                     * @param SortBy 排序字段，支持如下字段类型，create-time
+                     * @param _sortBy 排序字段，支持如下字段类型，create-time
+                     * 
                      */
                     void SetSortBy(const std::string& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，desc表示正序，asc表示反序， 默认为asc。
                      * @return Sorting 排序方式，desc表示正序，asc表示反序， 默认为asc。
+                     * 
                      */
                     std::string GetSorting() const;
 
                     /**
                      * 设置排序方式，desc表示正序，asc表示反序， 默认为asc。
-                     * @param Sorting 排序方式，desc表示正序，asc表示反序， 默认为asc。
+                     * @param _sorting 排序方式，desc表示正序，asc表示反序， 默认为asc。
+                     * 
                      */
                     void SetSorting(const std::string& _sorting);
 
                     /**
                      * 判断参数 Sorting 是否已赋值
                      * @return Sorting 是否已赋值
+                     * 
                      */
                     bool SortingHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取已废弃，请使用DatasourceConnectionNameSet
                      * @return DatasourceConnectionName 已废弃，请使用DatasourceConnectionNameSet
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置已废弃，请使用DatasourceConnectionNameSet
-                     * @param DatasourceConnectionName 已废弃，请使用DatasourceConnectionNameSet
+                     * @param _datasourceConnectionName 已废弃，请使用DatasourceConnectionNameSet
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
                     /**
                      * 获取是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎
                      * @return ExcludePublicEngine 是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎
+                     * 
                      */
                     bool GetExcludePublicEngine() const;
 
                     /**
                      * 设置是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎
-                     * @param ExcludePublicEngine 是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎
+                     * @param _excludePublicEngine 是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎
+                     * 
                      */
                     void SetExcludePublicEngine(const bool& _excludePublicEngine);
 
                     /**
                      * 判断参数 ExcludePublicEngine 是否已赋值
                      * @return ExcludePublicEngine 是否已赋值
+                     * 
                      */
                     bool ExcludePublicEngineHasBeenSet() const;
 
                     /**
                      * 获取参数应该为引擎权限类型，有效类型："USE", "MODIFY", "OPERATE", "MONITOR", "DELETE"
                      * @return AccessTypes 参数应该为引擎权限类型，有效类型："USE", "MODIFY", "OPERATE", "MONITOR", "DELETE"
+                     * 
                      */
                     std::vector<std::string> GetAccessTypes() const;
 
                     /**
                      * 设置参数应该为引擎权限类型，有效类型："USE", "MODIFY", "OPERATE", "MONITOR", "DELETE"
-                     * @param AccessTypes 参数应该为引擎权限类型，有效类型："USE", "MODIFY", "OPERATE", "MONITOR", "DELETE"
+                     * @param _accessTypes 参数应该为引擎权限类型，有效类型："USE", "MODIFY", "OPERATE", "MONITOR", "DELETE"
+                     * 
                      */
                     void SetAccessTypes(const std::vector<std::string>& _accessTypes);
 
                     /**
                      * 判断参数 AccessTypes 是否已赋值
                      * @return AccessTypes 是否已赋值
+                     * 
                      */
                     bool AccessTypesHasBeenSet() const;
 
                     /**
                      * 获取引擎执行任务类型，有效值：SQL/BATCH
                      * @return EngineExecType 引擎执行任务类型，有效值：SQL/BATCH
+                     * 
                      */
                     std::string GetEngineExecType() const;
 
                     /**
                      * 设置引擎执行任务类型，有效值：SQL/BATCH
-                     * @param EngineExecType 引擎执行任务类型，有效值：SQL/BATCH
+                     * @param _engineExecType 引擎执行任务类型，有效值：SQL/BATCH
+                     * 
                      */
                     void SetEngineExecType(const std::string& _engineExecType);
 
                     /**
                      * 判断参数 EngineExecType 是否已赋值
                      * @return EngineExecType 是否已赋值
+                     * 
                      */
                     bool EngineExecTypeHasBeenSet() const;
 
                     /**
                      * 获取引擎类型，有效值：spark/presto
                      * @return EngineType 引擎类型，有效值：spark/presto
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置引擎类型，有效值：spark/presto
-                     * @param EngineType 引擎类型，有效值：spark/presto
+                     * @param _engineType 引擎类型，有效值：spark/presto
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 
                     /**
                      * 获取网络配置列表，若传入该参数，则返回网络配置关联的计算引擎
                      * @return DatasourceConnectionNameSet 网络配置列表，若传入该参数，则返回网络配置关联的计算引擎
+                     * 
                      */
                     std::vector<std::string> GetDatasourceConnectionNameSet() const;
 
                     /**
                      * 设置网络配置列表，若传入该参数，则返回网络配置关联的计算引擎
-                     * @param DatasourceConnectionNameSet 网络配置列表，若传入该参数，则返回网络配置关联的计算引擎
+                     * @param _datasourceConnectionNameSet 网络配置列表，若传入该参数，则返回网络配置关联的计算引擎
+                     * 
                      */
                     void SetDatasourceConnectionNameSet(const std::vector<std::string>& _datasourceConnectionNameSet);
 
                     /**
                      * 判断参数 DatasourceConnectionNameSet 是否已赋值
                      * @return DatasourceConnectionNameSet 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameSetHasBeenSet() const;
 

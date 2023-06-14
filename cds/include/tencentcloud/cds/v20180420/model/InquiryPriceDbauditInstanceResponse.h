@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取总价，单位：元
                      * @return TotalPrice 总价，单位：元
+                     * 
                      */
                     double GetTotalPrice() const;
 
                     /**
                      * 判断参数 TotalPrice 是否已赋值
                      * @return TotalPrice 是否已赋值
+                     * 
                      */
                     bool TotalPriceHasBeenSet() const;
 
                     /**
                      * 获取真实价钱，预支费用的折扣价，单位：元
                      * @return RealTotalCost 真实价钱，预支费用的折扣价，单位：元
+                     * 
                      */
                     double GetRealTotalCost() const;
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 

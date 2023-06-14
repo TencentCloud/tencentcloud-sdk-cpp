@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountId 账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountId 账户ID
+                     * @param _accountId 账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 账户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountName 账户名称
+                     * @param _accountName 账户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserInfo 用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PayeeAccountUserInfo GetUserInfo() const;
 
                     /**
                      * 设置用户信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserInfo 用户信息
+                     * @param _userInfo 用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserInfo(const PayeeAccountUserInfo& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PropertyInfo 属性信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PayeeAccountPropertyInfo GetPropertyInfo() const;
 
                     /**
                      * 设置属性信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PropertyInfo 属性信息
+                     * @param _propertyInfo 属性信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPropertyInfo(const PayeeAccountPropertyInfo& _propertyInfo);
 
                     /**
                      * 判断参数 PropertyInfo 是否已赋值
                      * @return PropertyInfo 是否已赋值
+                     * 
                      */
                     bool PropertyInfoHasBeenSet() const;
 

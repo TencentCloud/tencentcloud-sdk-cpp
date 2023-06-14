@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取设备Id，设备的唯一标识
                      * @return DeviceId 设备Id，设备的唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备Id，设备的唯一标识
-                     * @param DeviceId 设备Id，设备的唯一标识
+                     * @param _deviceId 设备Id，设备的唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取流Id，流的唯一标识
                      * @return StreamId 流Id，流的唯一标识
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置流Id，流的唯一标识
-                     * @param StreamId 流Id，流的唯一标识
+                     * @param _streamId 流Id，流的唯一标识
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 "Command": "{"Action":"PAUSE"}" 暂停
 "Command": "{"Action":"PLAY"}" 暂停恢复
 "Command": "{"Action":"PLAY","Offset":"15"}" 位置偏移，可以替代jump操作
+                     * 
                      */
                     std::string GetCommand() const;
 
@@ -101,36 +108,41 @@ namespace TencentCloud
 "Command": "{"Action":"PAUSE"}" 暂停
 "Command": "{"Action":"PLAY"}" 暂停恢复
 "Command": "{"Action":"PLAY","Offset":"15"}" 位置偏移，可以替代jump操作
-                     * @param Command |控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)
+                     * @param _command |控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)
 | Offset  | uint  |否|拖动播放时的时间偏移量（相对于起始时间）,单位：秒
 目前支持的command：
 "Command": "{"Action":"PAUSE"}" 暂停
 "Command": "{"Action":"PLAY"}" 暂停恢复
 "Command": "{"Action":"PLAY","Offset":"15"}" 位置偏移，可以替代jump操作
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
                      * @return ChannelId 通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * @param _channelId 通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 

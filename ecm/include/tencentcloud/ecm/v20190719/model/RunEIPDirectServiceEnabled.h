@@ -57,6 +57,7 @@ TRUE：表示开通IP直通
 FALSE：表示不开通IP直通
 默认取值：TRUE。
 windows镜像目前不支持IP直通。
+                     * 
                      */
                     bool GetEnabled() const;
 
@@ -66,17 +67,19 @@ TRUE：表示开通IP直通
 FALSE：表示不开通IP直通
 默认取值：TRUE。
 windows镜像目前不支持IP直通。
-                     * @param Enabled 是否开通IP直通。取值范围：
+                     * @param _enabled 是否开通IP直通。取值范围：
 TRUE：表示开通IP直通
 FALSE：表示不开通IP直通
 默认取值：TRUE。
 windows镜像目前不支持IP直通。
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 

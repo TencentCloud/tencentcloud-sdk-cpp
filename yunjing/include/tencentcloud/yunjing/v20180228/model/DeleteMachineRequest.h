@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取云镜客户端Uuid。
                      * @return Uuid 云镜客户端Uuid。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜客户端Uuid。
-                     * @param Uuid 云镜客户端Uuid。
+                     * @param _uuid 云镜客户端Uuid。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 

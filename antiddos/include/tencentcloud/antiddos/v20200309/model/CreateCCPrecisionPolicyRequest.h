@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取IP值
                      * @return Ip IP值
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP值
-                     * @param Ip IP值
+                     * @param _ip IP值
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取协议， 可取值HTTP，HTTPS
                      * @return Protocol 协议， 可取值HTTP，HTTPS
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议， 可取值HTTP，HTTPS
-                     * @param Protocol 协议， 可取值HTTP，HTTPS
+                     * @param _protocol 协议， 可取值HTTP，HTTPS
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取策略方式，可取值alg表示验证码，drop表示丢弃
                      * @return PolicyAction 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 
                      */
                     std::string GetPolicyAction() const;
 
                     /**
                      * 设置策略方式，可取值alg表示验证码，drop表示丢弃
-                     * @param PolicyAction 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * @param _policyAction 策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 
                      */
                     void SetPolicyAction(const std::string& _policyAction);
 
                     /**
                      * 判断参数 PolicyAction 是否已赋值
                      * @return PolicyAction 是否已赋值
+                     * 
                      */
                     bool PolicyActionHasBeenSet() const;
 
                     /**
                      * 获取策略记录
                      * @return PolicyList 策略记录
+                     * 
                      */
                     std::vector<CCPrecisionPlyRecord> GetPolicyList() const;
 
                     /**
                      * 设置策略记录
-                     * @param PolicyList 策略记录
+                     * @param _policyList 策略记录
+                     * 
                      */
                     void SetPolicyList(const std::vector<CCPrecisionPlyRecord>& _policyList);
 
                     /**
                      * 判断参数 PolicyList 是否已赋值
                      * @return PolicyList 是否已赋值
+                     * 
                      */
                     bool PolicyListHasBeenSet() const;
 

@@ -205,8 +205,6 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyAMQPExchangeResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyAMQPQueueRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyAMQPQueueResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h>
@@ -546,9 +544,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAMQPQueueResponse> ModifyAMQPQueueOutcome;
                 typedef std::future<ModifyAMQPQueueOutcome> ModifyAMQPQueueOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPQueueRequest&, ModifyAMQPQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPQueueAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAMQPVHostResponse> ModifyAMQPVHostOutcome;
-                typedef std::future<ModifyAMQPVHostOutcome> ModifyAMQPVHostOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPVHostRequest&, ModifyAMQPVHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPVHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterResponse> ModifyClusterOutcome;
                 typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyClusterRequest&, ModifyClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
@@ -1484,17 +1479,6 @@ namespace TencentCloud
                 ModifyAMQPQueueOutcome ModifyAMQPQueue(const Model::ModifyAMQPQueueRequest &request);
                 void ModifyAMQPQueueAsync(const Model::ModifyAMQPQueueRequest& request, const ModifyAMQPQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAMQPQueueOutcomeCallable ModifyAMQPQueueCallable(const Model::ModifyAMQPQueueRequest& request);
-
-                /**
-                 *产品下线了，对应的接口也要下线。
-
-更新Vhost
-                 * @param req ModifyAMQPVHostRequest
-                 * @return ModifyAMQPVHostOutcome
-                 */
-                ModifyAMQPVHostOutcome ModifyAMQPVHost(const Model::ModifyAMQPVHostRequest &request);
-                void ModifyAMQPVHostAsync(const Model::ModifyAMQPVHostRequest& request, const ModifyAMQPVHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAMQPVHostOutcomeCallable ModifyAMQPVHostCallable(const Model::ModifyAMQPVHostRequest& request);
 
                 /**
                  *更新集群信息

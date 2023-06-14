@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取chart名称
                      * @return Name chart名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置chart名称
-                     * @param Name chart名称
+                     * @param _name chart名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label chart的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置chart的标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label chart的标签
+                     * @param _label chart的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取chart的版本
                      * @return LatestVersion chart的版本
+                     * 
                      */
                     std::string GetLatestVersion() const;
 
                     /**
                      * 设置chart的版本
-                     * @param LatestVersion chart的版本
+                     * @param _latestVersion chart的版本
+                     * 
                      */
                     void SetLatestVersion(const std::string& _latestVersion);
 
                     /**
                      * 判断参数 LatestVersion 是否已赋值
                      * @return LatestVersion 是否已赋值
+                     * 
                      */
                     bool LatestVersionHasBeenSet() const;
 

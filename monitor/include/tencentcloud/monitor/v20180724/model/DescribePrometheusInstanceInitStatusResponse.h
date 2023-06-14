@@ -55,12 +55,14 @@ uninitialized 未初始化
 initializing 初始化中
 running 初始化完成，运行中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -69,12 +71,14 @@ running 初始化完成，运行中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Steps 初始化任务步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskStepInfo> GetSteps() const;
 
                     /**
                      * 判断参数 Steps 是否已赋值
                      * @return Steps 是否已赋值
+                     * 
                      */
                     bool StepsHasBeenSet() const;
 
@@ -83,12 +87,14 @@ running 初始化完成，运行中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EksClusterId 实例eks集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEksClusterId() const;
 
                     /**
                      * 判断参数 EksClusterId 是否已赋值
                      * @return EksClusterId 是否已赋值
+                     * 
                      */
                     bool EksClusterIdHasBeenSet() const;
 

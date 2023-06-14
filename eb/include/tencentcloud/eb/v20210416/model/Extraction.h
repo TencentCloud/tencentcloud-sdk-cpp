@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取JsonPath, 不指定则使用默认值$.
                      * @return ExtractionInputPath JsonPath, 不指定则使用默认值$.
+                     * 
                      */
                     std::string GetExtractionInputPath() const;
 
                     /**
                      * 设置JsonPath, 不指定则使用默认值$.
-                     * @param ExtractionInputPath JsonPath, 不指定则使用默认值$.
+                     * @param _extractionInputPath JsonPath, 不指定则使用默认值$.
+                     * 
                      */
                     void SetExtractionInputPath(const std::string& _extractionInputPath);
 
                     /**
                      * 判断参数 ExtractionInputPath 是否已赋值
                      * @return ExtractionInputPath 是否已赋值
+                     * 
                      */
                     bool ExtractionInputPathHasBeenSet() const;
 
                     /**
                      * 获取取值: TEXT/JSON
                      * @return Format 取值: TEXT/JSON
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置取值: TEXT/JSON
-                     * @param Format 取值: TEXT/JSON
+                     * @param _format 取值: TEXT/JSON
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextParams 仅在Text需要传递
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextParams GetTextParams() const;
 
                     /**
                      * 设置仅在Text需要传递
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextParams 仅在Text需要传递
+                     * @param _textParams 仅在Text需要传递
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextParams(const TextParams& _textParams);
 
                     /**
                      * 判断参数 TextParams 是否已赋值
                      * @return TextParams 是否已赋值
+                     * 
                      */
                     bool TextParamsHasBeenSet() const;
 

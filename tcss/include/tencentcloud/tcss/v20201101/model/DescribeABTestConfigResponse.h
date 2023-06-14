@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取灰度项目配置
                      * @return Config 灰度项目配置
+                     * 
                      */
                     std::vector<ABTestConfig> GetConfig() const;
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

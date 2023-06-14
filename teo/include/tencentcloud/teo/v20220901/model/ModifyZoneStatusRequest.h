@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return Paused 站点状态，取值有：
 <li> false：开启站点；</li>
 <li> true：关闭站点。</li>
+                     * 
                      */
                     bool GetPaused() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置站点状态，取值有：
 <li> false：开启站点；</li>
 <li> true：关闭站点。</li>
-                     * @param Paused 站点状态，取值有：
+                     * @param _paused 站点状态，取值有：
 <li> false：开启站点；</li>
 <li> true：关闭站点。</li>
+                     * 
                      */
                     void SetPaused(const bool& _paused);
 
                     /**
                      * 判断参数 Paused 是否已赋值
                      * @return Paused 是否已赋值
+                     * 
                      */
                     bool PausedHasBeenSet() const;
 

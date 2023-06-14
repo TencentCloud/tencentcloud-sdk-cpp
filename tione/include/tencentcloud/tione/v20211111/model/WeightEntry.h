@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取服务id
                      * @return ServiceId 服务id
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务id
-                     * @param ServiceId 服务id
+                     * @param _serviceId 服务id
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取流量权重值，同 ServiceGroup 下 总和应为 100
                      * @return Weight 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置流量权重值，同 ServiceGroup 下 总和应为 100
-                     * @param Weight 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * @param _weight 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

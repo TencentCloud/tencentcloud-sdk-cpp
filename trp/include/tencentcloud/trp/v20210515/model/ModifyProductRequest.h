@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取商品名称
                      * @return Name 商品名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商品名称
-                     * @param Name 商品名称
+                     * @param _name 商品名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取商品ID
                      * @return ProductId 商品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置商品ID
-                     * @param ProductId 商品ID
+                     * @param _productId 商品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取商品规格
                      * @return Specification 商品规格
+                     * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置商品规格
-                     * @param Specification 商品规格
+                     * @param _specification 商品规格
+                     * 
                      */
                     void SetSpecification(const std::string& _specification);
 
                     /**
                      * 判断参数 Specification 是否已赋值
                      * @return Specification 是否已赋值
+                     * 
                      */
                     bool SpecificationHasBeenSet() const;
 
                     /**
                      * 获取商品图片
                      * @return Logo 商品图片
+                     * 
                      */
                     std::vector<std::string> GetLogo() const;
 
                     /**
                      * 设置商品图片
-                     * @param Logo 商品图片
+                     * @param _logo 商品图片
+                     * 
                      */
                     void SetLogo(const std::vector<std::string>& _logo);
 
                     /**
                      * 判断参数 Logo 是否已赋值
                      * @return Logo 是否已赋值
+                     * 
                      */
                     bool LogoHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取预留字段
                      * @return Ext 预留字段
+                     * 
                      */
                     Ext GetExt() const;
 
                     /**
                      * 设置预留字段
-                     * @param Ext 预留字段
+                     * @param _ext 预留字段
+                     * 
                      */
                     void SetExt(const Ext& _ext);
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 

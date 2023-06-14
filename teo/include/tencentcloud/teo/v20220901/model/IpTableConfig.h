@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭；</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭；</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭；</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpTableRules 基础管控规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IpTableRule> GetIpTableRules() const;
 
                     /**
                      * 设置基础管控规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpTableRules 基础管控规则。如果为null，默认使用历史配置。
+                     * @param _ipTableRules 基础管控规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpTableRules(const std::vector<IpTableRule>& _ipTableRules);
 
                     /**
                      * 判断参数 IpTableRules 是否已赋值
                      * @return IpTableRules 是否已赋值
+                     * 
                      */
                     bool IpTableRulesHasBeenSet() const;
 

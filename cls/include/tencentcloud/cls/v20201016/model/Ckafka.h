@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取Ckafka 的 Vip
                      * @return Vip Ckafka 的 Vip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置Ckafka 的 Vip
-                     * @param Vip Ckafka 的 Vip
+                     * @param _vip Ckafka 的 Vip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 Vport
                      * @return Vport Ckafka 的 Vport
+                     * 
                      */
                     std::string GetVport() const;
 
                     /**
                      * 设置Ckafka 的 Vport
-                     * @param Vport Ckafka 的 Vport
+                     * @param _vport Ckafka 的 Vport
+                     * 
                      */
                     void SetVport(const std::string& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 InstanceId
                      * @return InstanceId Ckafka 的 InstanceId
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Ckafka 的 InstanceId
-                     * @param InstanceId Ckafka 的 InstanceId
+                     * @param _instanceId Ckafka 的 InstanceId
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 InstanceName
                      * @return InstanceName Ckafka 的 InstanceName
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置Ckafka 的 InstanceName
-                     * @param InstanceName Ckafka 的 InstanceName
+                     * @param _instanceName Ckafka 的 InstanceName
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 TopicId
                      * @return TopicId Ckafka 的 TopicId
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Ckafka 的 TopicId
-                     * @param TopicId Ckafka 的 TopicId
+                     * @param _topicId Ckafka 的 TopicId
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 TopicName
                      * @return TopicName Ckafka 的 TopicName
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Ckafka 的 TopicName
-                     * @param TopicName Ckafka 的 TopicName
+                     * @param _topicName Ckafka 的 TopicName
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

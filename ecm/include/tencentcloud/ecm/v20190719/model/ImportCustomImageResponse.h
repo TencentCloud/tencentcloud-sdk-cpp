@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageId 镜像ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取异步任务ID，可根据DescribeCustomImageTask查询任务信息
                      * @return TaskId 异步任务ID，可根据DescribeCustomImageTask查询任务信息
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

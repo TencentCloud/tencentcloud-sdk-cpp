@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return BusinessLicenseType 营业证件类型
  IDCARD：身份证
  CREDITCODE：统一社会信用代码
+                     * 
                      */
                     std::string GetBusinessLicenseType() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置营业证件类型
  IDCARD：身份证
  CREDITCODE：统一社会信用代码
-                     * @param BusinessLicenseType 营业证件类型
+                     * @param _businessLicenseType 营业证件类型
  IDCARD：身份证
  CREDITCODE：统一社会信用代码
+                     * 
                      */
                     void SetBusinessLicenseType(const std::string& _businessLicenseType);
 
                     /**
                      * 判断参数 BusinessLicenseType 是否已赋值
                      * @return BusinessLicenseType 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取营业证件号码 非个人商户上送统一社会信用代码，个人商户上送身份证号码
                      * @return BusinessLicenseNumber 营业证件号码 非个人商户上送统一社会信用代码，个人商户上送身份证号码
+                     * 
                      */
                     std::string GetBusinessLicenseNumber() const;
 
                     /**
                      * 设置营业证件号码 非个人商户上送统一社会信用代码，个人商户上送身份证号码
-                     * @param BusinessLicenseNumber 营业证件号码 非个人商户上送统一社会信用代码，个人商户上送身份证号码
+                     * @param _businessLicenseNumber 营业证件号码 非个人商户上送统一社会信用代码，个人商户上送身份证号码
+                     * 
                      */
                     void SetBusinessLicenseNumber(const std::string& _businessLicenseNumber);
 
                     /**
                      * 判断参数 BusinessLicenseNumber 是否已赋值
                      * @return BusinessLicenseNumber 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseNumberHasBeenSet() const;
 
@@ -97,6 +103,7 @@ OTHER：非长期有效
                      * @return BusinessLicenseValidityType 营业证件有效期类型 
 LONGTERM：长期有效
 OTHER：非长期有效
+                     * 
                      */
                     std::string GetBusinessLicenseValidityType() const;
 
@@ -104,51 +111,59 @@ OTHER：非长期有效
                      * 设置营业证件有效期类型 
 LONGTERM：长期有效
 OTHER：非长期有效
-                     * @param BusinessLicenseValidityType 营业证件有效期类型 
+                     * @param _businessLicenseValidityType 营业证件有效期类型 
 LONGTERM：长期有效
 OTHER：非长期有效
+                     * 
                      */
                     void SetBusinessLicenseValidityType(const std::string& _businessLicenseValidityType);
 
                     /**
                      * 判断参数 BusinessLicenseValidityType 是否已赋值
                      * @return BusinessLicenseValidityType 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseValidityTypeHasBeenSet() const;
 
                     /**
                      * 获取营业证件生效日期，yyyy-MM-dd
                      * @return BusinessLicenseEffectiveDate 营业证件生效日期，yyyy-MM-dd
+                     * 
                      */
                     std::string GetBusinessLicenseEffectiveDate() const;
 
                     /**
                      * 设置营业证件生效日期，yyyy-MM-dd
-                     * @param BusinessLicenseEffectiveDate 营业证件生效日期，yyyy-MM-dd
+                     * @param _businessLicenseEffectiveDate 营业证件生效日期，yyyy-MM-dd
+                     * 
                      */
                     void SetBusinessLicenseEffectiveDate(const std::string& _businessLicenseEffectiveDate);
 
                     /**
                      * 判断参数 BusinessLicenseEffectiveDate 是否已赋值
                      * @return BusinessLicenseEffectiveDate 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseEffectiveDateHasBeenSet() const;
 
                     /**
                      * 获取营业证件失效日期，yyyy-MM-dd
                      * @return BusinessLicenseExpireDate 营业证件失效日期，yyyy-MM-dd
+                     * 
                      */
                     std::string GetBusinessLicenseExpireDate() const;
 
                     /**
                      * 设置营业证件失效日期，yyyy-MM-dd
-                     * @param BusinessLicenseExpireDate 营业证件失效日期，yyyy-MM-dd
+                     * @param _businessLicenseExpireDate 营业证件失效日期，yyyy-MM-dd
+                     * 
                      */
                     void SetBusinessLicenseExpireDate(const std::string& _businessLicenseExpireDate);
 
                     /**
                      * 判断参数 BusinessLicenseExpireDate 是否已赋值
                      * @return BusinessLicenseExpireDate 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseExpireDateHasBeenSet() const;
 

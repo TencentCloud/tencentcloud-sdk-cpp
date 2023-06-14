@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return TransferType 1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
+                     * 
                      */
                     int64_t GetTransferType() const;
 
@@ -57,69 +58,80 @@ namespace TencentCloud
                      * 设置1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
-                     * @param TransferType 1 微信企业付款 
+                     * @param _transferType 1 微信企业付款 
 2 支付宝转账 
 3 平安银企直连代发转账
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
                     /**
                      * 获取转账详情
                      * @return RecipientList 转账详情
+                     * 
                      */
                     std::vector<CreateBatchPaymentRecipient> GetRecipientList() const;
 
                     /**
                      * 设置转账详情
-                     * @param RecipientList 转账详情
+                     * @param _recipientList 转账详情
+                     * 
                      */
                     void SetRecipientList(const std::vector<CreateBatchPaymentRecipient>& _recipientList);
 
                     /**
                      * 判断参数 RecipientList 是否已赋值
                      * @return RecipientList 是否已赋值
+                     * 
                      */
                     bool RecipientListHasBeenSet() const;
 
                     /**
                      * 获取请求预留字段
                      * @return ReqReserved 请求预留字段
+                     * 
                      */
                     std::string GetReqReserved() const;
 
                     /**
                      * 设置请求预留字段
-                     * @param ReqReserved 请求预留字段
+                     * @param _reqReserved 请求预留字段
+                     * 
                      */
                     void SetReqReserved(const std::string& _reqReserved);
 
                     /**
                      * 判断参数 ReqReserved 是否已赋值
                      * @return ReqReserved 是否已赋值
+                     * 
                      */
                     bool ReqReservedHasBeenSet() const;
 
                     /**
                      * 获取回调Url
                      * @return NotifyUrl 回调Url
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置回调Url
-                     * @param NotifyUrl 回调Url
+                     * @param _notifyUrl 回调Url
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 

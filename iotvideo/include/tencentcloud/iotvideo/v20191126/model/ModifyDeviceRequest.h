@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备ID
                      * @return Tid 设备ID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备ID
-                     * @param Tid 设备ID
+                     * @param _tid 设备ID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return AccessId 用户ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置用户ID
-                     * @param AccessId 用户ID
+                     * @param _accessId 用户ID
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取设备昵称，最多不超过64个字符
                      * @return Nick 设备昵称，最多不超过64个字符
+                     * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置设备昵称，最多不超过64个字符
-                     * @param Nick 设备昵称，最多不超过64个字符
+                     * @param _nick 设备昵称，最多不超过64个字符
+                     * 
                      */
                     void SetNick(const std::string& _nick);
 
                     /**
                      * 判断参数 Nick 是否已赋值
                      * @return Nick 是否已赋值
+                     * 
                      */
                     bool NickHasBeenSet() const;
 

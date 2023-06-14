@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取人像照片Base64后的结果
                      * @return HeadPortrait 人像照片Base64后的结果
+                     * 
                      */
                     TextDetectionResult GetHeadPortrait() const;
 
                     /**
                      * 判断参数 HeadPortrait 是否已赋值
                      * @return HeadPortrait 是否已赋值
+                     * 
                      */
                     bool HeadPortraitHasBeenSet() const;
 
                     /**
                      * 获取菲律宾VoteID的VIN
                      * @return VIN 菲律宾VoteID的VIN
+                     * 
                      */
                     TextDetectionResult GetVIN() const;
 
                     /**
                      * 判断参数 VIN 是否已赋值
                      * @return VIN 是否已赋值
+                     * 
                      */
                     bool VINHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return FirstName 姓名
+                     * 
                      */
                     TextDetectionResult GetFirstName() const;
 
                     /**
                      * 判断参数 FirstName 是否已赋值
                      * @return FirstName 是否已赋值
+                     * 
                      */
                     bool FirstNameHasBeenSet() const;
 
                     /**
                      * 获取姓氏
                      * @return LastName 姓氏
+                     * 
                      */
                     TextDetectionResult GetLastName() const;
 
                     /**
                      * 判断参数 LastName 是否已赋值
                      * @return LastName 是否已赋值
+                     * 
                      */
                     bool LastNameHasBeenSet() const;
 
                     /**
                      * 获取出生日期
                      * @return Birthday 出生日期
+                     * 
                      */
                     TextDetectionResult GetBirthday() const;
 
                     /**
                      * 判断参数 Birthday 是否已赋值
                      * @return Birthday 是否已赋值
+                     * 
                      */
                     bool BirthdayHasBeenSet() const;
 
                     /**
                      * 获取婚姻状况
                      * @return CivilStatus 婚姻状况
+                     * 
                      */
                     TextDetectionResult GetCivilStatus() const;
 
                     /**
                      * 判断参数 CivilStatus 是否已赋值
                      * @return CivilStatus 是否已赋值
+                     * 
                      */
                     bool CivilStatusHasBeenSet() const;
 
                     /**
                      * 获取国籍
                      * @return Citizenship 国籍
+                     * 
                      */
                     TextDetectionResult GetCitizenship() const;
 
                     /**
                      * 判断参数 Citizenship 是否已赋值
                      * @return Citizenship 是否已赋值
+                     * 
                      */
                     bool CitizenshipHasBeenSet() const;
 
                     /**
                      * 获取地址
                      * @return Address 地址
+                     * 
                      */
                     TextDetectionResult GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取地区
                      * @return PrecinctNo 地区
+                     * 
                      */
                     TextDetectionResult GetPrecinctNo() const;
 
                     /**
                      * 判断参数 PrecinctNo 是否已赋值
                      * @return PrecinctNo 是否已赋值
+                     * 
                      */
                     bool PrecinctNoHasBeenSet() const;
 

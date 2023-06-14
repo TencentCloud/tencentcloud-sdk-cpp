@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取作品ID
                      * @return WorkId 作品ID
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 设置作品ID
-                     * @param WorkId 作品ID
+                     * @param _workId 作品ID
+                     * 
                      */
                     void SetWorkId(const int64_t& _workId);
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 

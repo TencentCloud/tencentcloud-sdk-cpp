@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取模型信息
                      * @return Model 模型信息
+                     * 
                      */
                     Model GetModel() const;
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 

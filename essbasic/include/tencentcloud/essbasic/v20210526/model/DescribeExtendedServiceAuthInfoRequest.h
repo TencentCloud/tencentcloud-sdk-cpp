@@ -52,6 +52,7 @@ namespace TencentCloud
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
 
+                     * 
                      */
                     Agent GetAgent() const;
 
@@ -60,16 +61,18 @@ namespace TencentCloud
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
 
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
 
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return StartTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
-                     * @param StartTime 起始时间点，接口查询支持两种时间格式：
+                     * @param _startTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持查询最近1年的数据。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -85,70 +89,81 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持查询最近1年的数据。
-                     * @param EndTime 结束时间点，接口查询支持两种时间格式：
+                     * @param _endTime 结束时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持查询最近1年的数据。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。
                      * @return Zone 地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。
-                     * @param Zone 地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。
+                     * @param _zone 地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取推流域名（支持查询2019年11 月1日之后的域名维度数据）。
                      * @return PushDomains 推流域名（支持查询2019年11 月1日之后的域名维度数据）。
+                     * 
                      */
                     std::vector<std::string> GetPushDomains() const;
 
                     /**
                      * 设置推流域名（支持查询2019年11 月1日之后的域名维度数据）。
-                     * @param PushDomains 推流域名（支持查询2019年11 月1日之后的域名维度数据）。
+                     * @param _pushDomains 推流域名（支持查询2019年11 月1日之后的域名维度数据）。
+                     * 
                      */
                     void SetPushDomains(const std::vector<std::string>& _pushDomains);
 
                     /**
                      * 判断参数 PushDomains 是否已赋值
                      * @return PushDomains 是否已赋值
+                     * 
                      */
                     bool PushDomainsHasBeenSet() const;
 
                     /**
                      * 获取数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。
                      * @return Granularity 数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。
+                     * 
                      */
                     std::string GetGranularity() const;
 
                     /**
                      * 设置数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。
-                     * @param Granularity 数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。
+                     * @param _granularity 数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。
+                     * 
                      */
                     void SetGranularity(const std::string& _granularity);
 
                     /**
                      * 判断参数 Granularity 是否已赋值
                      * @return Granularity 是否已赋值
+                     * 
                      */
                     bool GranularityHasBeenSet() const;
 

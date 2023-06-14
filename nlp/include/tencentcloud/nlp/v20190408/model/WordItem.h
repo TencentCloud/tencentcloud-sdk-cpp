@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取词条文本内容。
                      * @return Text 词条文本内容。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置词条文本内容。
-                     * @param Text 词条文本内容。
+                     * @param _text 词条文本内容。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取词条创建时间。
                      * @return CreateTime 词条创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置词条创建时间。
-                     * @param CreateTime 词条创建时间。
+                     * @param _createTime 词条创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取词条的词性。
                      * @return Pos 词条的词性。
+                     * 
                      */
                     std::string GetPos() const;
 
                     /**
                      * 设置词条的词性。
-                     * @param Pos 词条的词性。
+                     * @param _pos 词条的词性。
+                     * 
                      */
                     void SetPos(const std::string& _pos);
 
                     /**
                      * 判断参数 Pos 是否已赋值
                      * @return Pos 是否已赋值
+                     * 
                      */
                     bool PosHasBeenSet() const;
 

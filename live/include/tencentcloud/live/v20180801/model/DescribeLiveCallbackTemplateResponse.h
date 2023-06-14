@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取回调模板信息。
                      * @return Template 回调模板信息。
+                     * 
                      */
                     CallBackTemplateInfo GetTemplate() const;
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 

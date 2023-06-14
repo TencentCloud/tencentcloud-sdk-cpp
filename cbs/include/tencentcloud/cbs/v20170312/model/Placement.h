@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。
                      * @return Zone 云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。
-                     * @param Zone 云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * @param _zone 云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CageId 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCageId() const;
 
                     /**
                      * 设置围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CageId 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
+                     * @param _cageId 围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCageId(const std::string& _cageId);
 
                     /**
                      * 判断参数 CageId 是否已赋值
                      * @return CageId 是否已赋值
+                     * 
                      */
                     bool CageIdHasBeenSet() const;
 
                     /**
                      * 获取实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
                      * @return ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
-                     * @param ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * @param _projectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 实例所属项目名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置实例所属项目名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectName 实例所属项目名称。
+                     * @param _projectName 实例所属项目名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCdcName() const;
 
                     /**
                      * 设置独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+                     * @param _cdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCdcName(const std::string& _cdcName);
 
                     /**
                      * 判断参数 CdcName 是否已赋值
                      * @return CdcName 是否已赋值
+                     * 
                      */
                     bool CdcNameHasBeenSet() const;
 
@@ -153,38 +168,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CdcId 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+                     * @param _cdcId 实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCdcId(const std::string& _cdcId);
 
                     /**
                      * 判断参数 CdcId 是否已赋值
                      * @return CdcId 是否已赋值
+                     * 
                      */
                     bool CdcIdHasBeenSet() const;
 
                     /**
                      * 获取独享集群id。
                      * @return DedicatedClusterId 独享集群id。
+                     * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置独享集群id。
-                     * @param DedicatedClusterId 独享集群id。
+                     * @param _dedicatedClusterId 独享集群id。
+                     * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
 
                     /**
                      * 判断参数 DedicatedClusterId 是否已赋值
                      * @return DedicatedClusterId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 

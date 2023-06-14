@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库用户名
                      * @return UserName 数据库用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置数据库用户名
-                     * @param UserName 数据库用户名
+                     * @param _userName 数据库用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
                      * @return Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
+                     * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
-                     * @param Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
+                     * @param _privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
+                     * 
                      */
                     void SetPrivilege(const std::string& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 
                     /**
                      * 获取账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
                      * @return AccountType 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
-                     * @param AccountType 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * @param _accountType 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 

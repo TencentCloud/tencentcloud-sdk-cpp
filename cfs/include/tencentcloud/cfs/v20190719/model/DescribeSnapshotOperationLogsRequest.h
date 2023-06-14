@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统快照ID
                      * @return SnapshotId 文件系统快照ID
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置文件系统快照ID
-                     * @param SnapshotId 文件系统快照ID
+                     * @param _snapshotId 文件系统快照ID
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取起始时间
                      * @return StartTime 起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间
-                     * @param StartTime 起始时间
+                     * @param _startTime 起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

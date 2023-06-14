@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardKey 第三方推送密钥，如果选择自动生成则会返回此字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetForwardKey() const;
 
                     /**
                      * 判断参数 ForwardKey 是否已赋值
                      * @return ForwardKey 是否已赋值
+                     * 
                      */
                     bool ForwardKeyHasBeenSet() const;
 

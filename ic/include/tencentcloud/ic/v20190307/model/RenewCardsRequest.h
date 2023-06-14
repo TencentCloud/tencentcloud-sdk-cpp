@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return Sdkappid 应用ID
+                     * 
                      */
                     uint64_t GetSdkappid() const;
 
                     /**
                      * 设置应用ID
-                     * @param Sdkappid 应用ID
+                     * @param _sdkappid 应用ID
+                     * 
                      */
                     void SetSdkappid(const uint64_t& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 
                     /**
                      * 获取续费的iccid
                      * @return Iccids 续费的iccid
+                     * 
                      */
                     std::vector<std::string> GetIccids() const;
 
                     /**
                      * 设置续费的iccid
-                     * @param Iccids 续费的iccid
+                     * @param _iccids 续费的iccid
+                     * 
                      */
                     void SetIccids(const std::vector<std::string>& _iccids);
 
                     /**
                      * 判断参数 Iccids 是否已赋值
                      * @return Iccids 是否已赋值
+                     * 
                      */
                     bool IccidsHasBeenSet() const;
 
                     /**
                      * 获取续费的周期（单位：月）
                      * @return RenewNum 续费的周期（单位：月）
+                     * 
                      */
                     uint64_t GetRenewNum() const;
 
                     /**
                      * 设置续费的周期（单位：月）
-                     * @param RenewNum 续费的周期（单位：月）
+                     * @param _renewNum 续费的周期（单位：月）
+                     * 
                      */
                     void SetRenewNum(const uint64_t& _renewNum);
 
                     /**
                      * 判断参数 RenewNum 是否已赋值
                      * @return RenewNum 是否已赋值
+                     * 
                      */
                     bool RenewNumHasBeenSet() const;
 

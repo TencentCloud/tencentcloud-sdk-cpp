@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取设备唯一标识列表
                      * @return DeviceList 设备唯一标识列表
+                     * 
                      */
                     std::vector<std::string> GetDeviceList() const;
 
                     /**
                      * 设置设备唯一标识列表
-                     * @param DeviceList 设备唯一标识列表
+                     * @param _deviceList 设备唯一标识列表
+                     * 
                      */
                     void SetDeviceList(const std::vector<std::string>& _deviceList);
 
                     /**
                      * 判断参数 DeviceList 是否已赋值
                      * @return DeviceList 是否已赋值
+                     * 
                      */
                     bool DeviceListHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 1 表示自定义策略，2 表示预设策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最近更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDocument 策略文档
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyDocument() const;
 
                     /**
                      * 判断参数 PolicyDocument 是否已赋值
                      * @return PolicyDocument 是否已赋值
+                     * 
                      */
                     bool PolicyDocumentHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PresetAlias 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPresetAlias() const;
 
                     /**
                      * 判断参数 PresetAlias 是否已赋值
                      * @return PresetAlias 是否已赋值
+                     * 
                      */
                     bool PresetAliasHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsServiceLinkedRolePolicy 是否服务相关策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsServiceLinkedRolePolicy() const;
 
                     /**
                      * 判断参数 IsServiceLinkedRolePolicy 是否已赋值
                      * @return IsServiceLinkedRolePolicy 是否已赋值
+                     * 
                      */
                     bool IsServiceLinkedRolePolicyHasBeenSet() const;
 

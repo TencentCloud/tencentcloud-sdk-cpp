@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
                      * @return AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
-                     * @param AddressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
+                     * @param _addressId 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
@@ -95,6 +101,7 @@ FALSE：表示解绑 EIP 之后不分配普通公网 IP。
 只有满足以下条件时才能指定该参数：
 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。
 解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 DescribeAddressQuota 接口获取。
+                     * 
                      */
                     bool GetReallocateNormalPublicIp() const;
 
@@ -107,7 +114,7 @@ FALSE：表示解绑 EIP 之后不分配普通公网 IP。
 只有满足以下条件时才能指定该参数：
 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。
 解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 DescribeAddressQuota 接口获取。
-                     * @param ReallocateNormalPublicIp 表示解绑 EIP 之后是否分配普通公网 IP。取值范围：
+                     * @param _reallocateNormalPublicIp 表示解绑 EIP 之后是否分配普通公网 IP。取值范围：
 TRUE：表示解绑 EIP 之后分配普通公网 IP。
 FALSE：表示解绑 EIP 之后不分配普通公网 IP。
 默认取值：FALSE。
@@ -115,12 +122,14 @@ FALSE：表示解绑 EIP 之后不分配普通公网 IP。
 只有满足以下条件时才能指定该参数：
 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。
 解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 DescribeAddressQuota 接口获取。
+                     * 
                      */
                     void SetReallocateNormalPublicIp(const bool& _reallocateNormalPublicIp);
 
                     /**
                      * 判断参数 ReallocateNormalPublicIp 是否已赋值
                      * @return ReallocateNormalPublicIp 是否已赋值
+                     * 
                      */
                     bool ReallocateNormalPublicIpHasBeenSet() const;
 

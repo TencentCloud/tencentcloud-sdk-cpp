@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 实例 ID
                      * @return InstanceId Prometheus 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID
-                     * @param InstanceId Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100
                      * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100
-                     * @param Limit 返回数量，默认为 20，最大值为 100
+                     * @param _limit 返回数量，默认为 20，最大值为 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0
                      * @return Offset 偏移量，默认为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0
-                     * @param Offset 偏移量，默认为 0
+                     * @param _offset 偏移量，默认为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取规则 ID
                      * @return RuleId 规则 ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则 ID
-                     * @param RuleId 规则 ID
+                     * @param _ruleId 规则 ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -121,6 +133,7 @@ namespace TencentCloud
                      * @return RuleState 规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
+                     * 
                      */
                     int64_t GetRuleState() const;
 
@@ -128,51 +141,59 @@ namespace TencentCloud
                      * 设置规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
-                     * @param RuleState 规则状态码，取值如下：
+                     * @param _ruleState 规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
+                     * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
 
                     /**
                      * 判断参数 RuleState 是否已赋值
                      * @return RuleState 是否已赋值
+                     * 
                      */
                     bool RuleStateHasBeenSet() const;
 
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取报警策略模板分类
                      * @return Type 报警策略模板分类
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置报警策略模板分类
-                     * @param Type 报警策略模板分类
+                     * @param _type 报警策略模板分类
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

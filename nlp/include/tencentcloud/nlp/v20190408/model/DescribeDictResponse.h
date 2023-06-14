@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dicts 查询到的词库信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DictInfo> GetDicts() const;
 
                     /**
                      * 判断参数 Dicts 是否已赋值
                      * @return Dicts 是否已赋值
+                     * 
                      */
                     bool DictsHasBeenSet() const;
 

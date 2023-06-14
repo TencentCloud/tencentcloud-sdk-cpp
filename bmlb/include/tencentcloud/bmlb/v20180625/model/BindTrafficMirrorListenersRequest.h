@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID。
                      * @return TrafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置流量镜像实例ID。
-                     * @param TrafficMirrorId 流量镜像实例ID。
+                     * @param _trafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。
                      * @return ListenerIds 七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 设置七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。
-                     * @param ListenerIds 七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。
+                     * @param _listenerIds 七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 

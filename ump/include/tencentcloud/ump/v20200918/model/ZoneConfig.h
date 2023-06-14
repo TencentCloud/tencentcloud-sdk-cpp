@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取点位ID
                      * @return ZoneId 点位ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置点位ID
-                     * @param ZoneId 点位ID
+                     * @param _zoneId 点位ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取点位名称
                      * @return ZoneName 点位名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置点位名称
-                     * @param ZoneName 点位名称
+                     * @param _zoneName 点位名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
 10: 开放式门店
 11: 品类区
 12: 公共区
+                     * 
                      */
                     int64_t GetZoneType() const;
 
@@ -114,7 +121,7 @@ namespace TencentCloud
 10: 开放式门店
 11: 品类区
 12: 公共区
-                     * @param ZoneType 点位类型:
+                     * @param _zoneType 点位类型:
 1: 场门
 3: 层门
 5: 特殊区域
@@ -123,102 +130,119 @@ namespace TencentCloud
 10: 开放式门店
 11: 品类区
 12: 公共区
+                     * 
                      */
                     void SetZoneType(const int64_t& _zoneType);
 
                     /**
                      * 判断参数 ZoneType 是否已赋值
                      * @return ZoneType 是否已赋值
+                     * 
                      */
                     bool ZoneTypeHasBeenSet() const;
 
                     /**
                      * 获取铺位编码
                      * @return BunkCodes 铺位编码
+                     * 
                      */
                     std::string GetBunkCodes() const;
 
                     /**
                      * 设置铺位编码
-                     * @param BunkCodes 铺位编码
+                     * @param _bunkCodes 铺位编码
+                     * 
                      */
                     void SetBunkCodes(const std::string& _bunkCodes);
 
                     /**
                      * 判断参数 BunkCodes 是否已赋值
                      * @return BunkCodes 是否已赋值
+                     * 
                      */
                     bool BunkCodesHasBeenSet() const;
 
                     /**
                      * 获取楼层名称
                      * @return FloorName 楼层名称
+                     * 
                      */
                     std::string GetFloorName() const;
 
                     /**
                      * 设置楼层名称
-                     * @param FloorName 楼层名称
+                     * @param _floorName 楼层名称
+                     * 
                      */
                     void SetFloorName(const std::string& _floorName);
 
                     /**
                      * 判断参数 FloorName 是否已赋值
                      * @return FloorName 是否已赋值
+                     * 
                      */
                     bool FloorNameHasBeenSet() const;
 
                     /**
                      * 获取楼层ID
                      * @return FloorId 楼层ID
+                     * 
                      */
                     int64_t GetFloorId() const;
 
                     /**
                      * 设置楼层ID
-                     * @param FloorId 楼层ID
+                     * @param _floorId 楼层ID
+                     * 
                      */
                     void SetFloorId(const int64_t& _floorId);
 
                     /**
                      * 判断参数 FloorId 是否已赋值
                      * @return FloorId 是否已赋值
+                     * 
                      */
                     bool FloorIdHasBeenSet() const;
 
                     /**
                      * 获取绑定数
                      * @return BindNum 绑定数
+                     * 
                      */
                     int64_t GetBindNum() const;
 
                     /**
                      * 设置绑定数
-                     * @param BindNum 绑定数
+                     * @param _bindNum 绑定数
+                     * 
                      */
                     void SetBindNum(const int64_t& _bindNum);
 
                     /**
                      * 判断参数 BindNum 是否已赋值
                      * @return BindNum 是否已赋值
+                     * 
                      */
                     bool BindNumHasBeenSet() const;
 
                     /**
                      * 获取调试数
                      * @return DebugNum 调试数
+                     * 
                      */
                     int64_t GetDebugNum() const;
 
                     /**
                      * 设置调试数
-                     * @param DebugNum 调试数
+                     * @param _debugNum 调试数
+                     * 
                      */
                     void SetDebugNum(const int64_t& _debugNum);
 
                     /**
                      * 判断参数 DebugNum 是否已赋值
                      * @return DebugNum 是否已赋值
+                     * 
                      */
                     bool DebugNumHasBeenSet() const;
 
@@ -231,6 +255,7 @@ namespace TencentCloud
 1: 不可下发
 2: 可下发
 3: 已下发
+                     * 
                      */
                     int64_t GetState() const;
 
@@ -239,16 +264,18 @@ namespace TencentCloud
 1: 不可下发
 2: 可下发
 3: 已下发
-                     * @param State 下发状态:
+                     * @param _state 下发状态:
 1: 不可下发
 2: 可下发
 3: 已下发
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

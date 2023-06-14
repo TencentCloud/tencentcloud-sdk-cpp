@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table DMS表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DMSTable GetTable() const;
 
                     /**
                      * 设置DMS表信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Table DMS表信息
+                     * @param _table DMS表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTable(const DMSTable& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asset 基础对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Asset GetAsset() const;
 
                     /**
                      * 设置基础对象信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Asset 基础对象信息
+                     * @param _asset 基础对象信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAsset(const Asset& _asset);
 
                     /**
                      * 判断参数 Asset 是否已赋值
                      * @return Asset 是否已赋值
+                     * 
                      */
                     bool AssetHasBeenSet() const;
 

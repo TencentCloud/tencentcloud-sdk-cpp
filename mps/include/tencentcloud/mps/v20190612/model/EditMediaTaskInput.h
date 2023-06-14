@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取输入的视频文件信息。
                      * @return FileInfoSet 输入的视频文件信息。
+                     * 
                      */
                     std::vector<EditMediaFileInfo> GetFileInfoSet() const;
 
                     /**
                      * 设置输入的视频文件信息。
-                     * @param FileInfoSet 输入的视频文件信息。
+                     * @param _fileInfoSet 输入的视频文件信息。
+                     * 
                      */
                     void SetFileInfoSet(const std::vector<EditMediaFileInfo>& _fileInfoSet);
 
                     /**
                      * 判断参数 FileInfoSet 是否已赋值
                      * @return FileInfoSet 是否已赋值
+                     * 
                      */
                     bool FileInfoSetHasBeenSet() const;
 

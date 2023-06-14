@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取指定删除的规则 ID 列表。
                      * @return RuleIds 指定删除的规则 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetRuleIds() const;
 
                     /**
                      * 设置指定删除的规则 ID 列表。
-                     * @param RuleIds 指定删除的规则 ID 列表。
+                     * @param _ruleIds 指定删除的规则 ID 列表。
+                     * 
                      */
                     void SetRuleIds(const std::vector<std::string>& _ruleIds);
 
                     /**
                      * 判断参数 RuleIds 是否已赋值
                      * @return RuleIds 是否已赋值
+                     * 
                      */
                     bool RuleIdsHasBeenSet() const;
 

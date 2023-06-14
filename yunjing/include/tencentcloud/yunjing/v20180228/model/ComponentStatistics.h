@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取组件ID。
                      * @return Id 组件ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置组件ID。
-                     * @param Id 组件ID。
+                     * @param _id 组件ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取主机数量。
                      * @return MachineNum 主机数量。
+                     * 
                      */
                     uint64_t GetMachineNum() const;
 
                     /**
                      * 设置主机数量。
-                     * @param MachineNum 主机数量。
+                     * @param _machineNum 主机数量。
+                     * 
                      */
                     void SetMachineNum(const uint64_t& _machineNum);
 
                     /**
                      * 判断参数 MachineNum 是否已赋值
                      * @return MachineNum 是否已赋值
+                     * 
                      */
                     bool MachineNumHasBeenSet() const;
 
                     /**
                      * 获取组件名称。
                      * @return ComponentName 组件名称。
+                     * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置组件名称。
-                     * @param ComponentName 组件名称。
+                     * @param _componentName 组件名称。
+                     * 
                      */
                     void SetComponentName(const std::string& _componentName);
 
                     /**
                      * 判断参数 ComponentName 是否已赋值
                      * @return ComponentName 是否已赋值
+                     * 
                      */
                     bool ComponentNameHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return ComponentType 组件类型。
 <li>WEB：Web组件</li>
 <li>SYSTEM：系统组件</li>
+                     * 
                      */
                     std::string GetComponentType() const;
 
@@ -114,33 +124,38 @@ namespace TencentCloud
                      * 设置组件类型。
 <li>WEB：Web组件</li>
 <li>SYSTEM：系统组件</li>
-                     * @param ComponentType 组件类型。
+                     * @param _componentType 组件类型。
 <li>WEB：Web组件</li>
 <li>SYSTEM：系统组件</li>
+                     * 
                      */
                     void SetComponentType(const std::string& _componentType);
 
                     /**
                      * 判断参数 ComponentType 是否已赋值
                      * @return ComponentType 是否已赋值
+                     * 
                      */
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
                      * 获取组件描述。
                      * @return Description 组件描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置组件描述。
-                     * @param Description 组件描述。
+                     * @param _description 组件描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

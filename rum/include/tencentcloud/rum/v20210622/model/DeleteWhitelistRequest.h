@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceID 实例ID
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceID 实例ID
+                     * @param _instanceID 实例ID
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取名单ID
                      * @return ID 名单ID
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置名单ID
-                     * @param ID 名单ID
+                     * @param _iD 名单ID
+                     * 
                      */
                     void SetID(const std::string& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

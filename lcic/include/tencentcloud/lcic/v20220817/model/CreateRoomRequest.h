@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取房间名称。
                      * @return Name 房间名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置房间名称。
-                     * @param Name 房间名称。
+                     * @param _name 房间名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取预定的房间开始时间，unix时间戳。
                      * @return StartTime 预定的房间开始时间，unix时间戳。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置预定的房间开始时间，unix时间戳。
-                     * @param StartTime 预定的房间开始时间，unix时间戳。
+                     * @param _startTime 预定的房间开始时间，unix时间戳。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取预定的房间结束时间，unix时间戳。
                      * @return EndTime 预定的房间结束时间，unix时间戳。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置预定的房间结束时间，unix时间戳。
-                     * @param EndTime 预定的房间结束时间，unix时间戳。
+                     * @param _endTime 预定的房间结束时间，unix时间戳。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -123,6 +135,7 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
+                     * 
                      */
                     uint64_t GetResolution() const;
 
@@ -131,34 +144,39 @@ namespace TencentCloud
 1 标清
 2 高清
 3 全高清
-                     * @param Resolution 分辨率。可以有如下取值：
+                     * @param _resolution 分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
+                     * 
                      */
                     void SetResolution(const uint64_t& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
                     /**
                      * 获取最大连麦人数（不包括老师）。取值范围[0, 16]
                      * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
                      * 设置最大连麦人数（不包括老师）。取值范围[0, 16]
-                     * @param MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * @param _maxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * 
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
 
                     /**
                      * 判断参数 MaxMicNumber 是否已赋值
                      * @return MaxMicNumber 是否已赋值
+                     * 
                      */
                     bool MaxMicNumberHasBeenSet() const;
 
@@ -169,6 +187,7 @@ video 纯视频
                      * @return SubType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
+                     * 
                      */
                     std::string GetSubType() const;
 
@@ -176,33 +195,38 @@ video 纯视频
                      * 设置房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-                     * @param SubType 房间子类型，可以有以下取值：
+                     * @param _subType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
+                     * 
                      */
                     void SetSubType(const std::string& _subType);
 
                     /**
                      * 判断参数 SubType 是否已赋值
                      * @return SubType 是否已赋值
+                     * 
                      */
                     bool SubTypeHasBeenSet() const;
 
                     /**
                      * 获取老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
                      * @return TeacherId 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
-                     * @param TeacherId 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
+                     * @param _teacherId 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
@@ -213,6 +237,7 @@ video 纯视频
                      * @return AutoMic 进入课堂时是否自动连麦。可以有以下取值：
 0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
+                     * 
                      */
                     uint64_t GetAutoMic() const;
 
@@ -220,15 +245,17 @@ video 纯视频
                      * 设置进入课堂时是否自动连麦。可以有以下取值：
 0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
-                     * @param AutoMic 进入课堂时是否自动连麦。可以有以下取值：
+                     * @param _autoMic 进入课堂时是否自动连麦。可以有以下取值：
 0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
+                     * 
                      */
                     void SetAutoMic(const uint64_t& _autoMic);
 
                     /**
                      * 判断参数 AutoMic 是否已赋值
                      * @return AutoMic 是否已赋值
+                     * 
                      */
                     bool AutoMicHasBeenSet() const;
 
@@ -239,6 +266,7 @@ video 纯视频
                      * @return TurnOffMic 释放音视频权限后是否自动取消连麦。可以有以下取值：
 0 自动取消连麦（默认值）
 1 保持连麦状态
+                     * 
                      */
                     uint64_t GetTurnOffMic() const;
 
@@ -246,15 +274,17 @@ video 纯视频
                      * 设置释放音视频权限后是否自动取消连麦。可以有以下取值：
 0 自动取消连麦（默认值）
 1 保持连麦状态
-                     * @param TurnOffMic 释放音视频权限后是否自动取消连麦。可以有以下取值：
+                     * @param _turnOffMic 释放音视频权限后是否自动取消连麦。可以有以下取值：
 0 自动取消连麦（默认值）
 1 保持连麦状态
+                     * 
                      */
                     void SetTurnOffMic(const uint64_t& _turnOffMic);
 
                     /**
                      * 判断参数 TurnOffMic 是否已赋值
                      * @return TurnOffMic 是否已赋值
+                     * 
                      */
                     bool TurnOffMicHasBeenSet() const;
 
@@ -265,6 +295,7 @@ video 纯视频
                      * @return AudioQuality 声音音质。可以有以下取值：
 0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。
 1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。
+                     * 
                      */
                     uint64_t GetAudioQuality() const;
 
@@ -272,15 +303,17 @@ video 纯视频
                      * 设置声音音质。可以有以下取值：
 0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。
 1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。
-                     * @param AudioQuality 声音音质。可以有以下取值：
+                     * @param _audioQuality 声音音质。可以有以下取值：
 0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。
 1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。
+                     * 
                      */
                     void SetAudioQuality(const uint64_t& _audioQuality);
 
                     /**
                      * 判断参数 AudioQuality 是否已赋值
                      * @return AudioQuality 是否已赋值
+                     * 
                      */
                     bool AudioQualityHasBeenSet() const;
 
@@ -293,6 +326,7 @@ video 纯视频
 0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * 
                      */
                     uint64_t GetDisableRecord() const;
 
@@ -301,106 +335,123 @@ video 纯视频
 0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
-                     * @param DisableRecord 上课后是否禁止自动录制。可以有以下取值：
+                     * @param _disableRecord 上课后是否禁止自动录制。可以有以下取值：
 0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * 
                      */
                     void SetDisableRecord(const uint64_t& _disableRecord);
 
                     /**
                      * 判断参数 DisableRecord 是否已赋值
                      * @return DisableRecord 是否已赋值
+                     * 
                      */
                     bool DisableRecordHasBeenSet() const;
 
                     /**
                      * 获取助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
                      * @return Assistants 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
+                     * 
                      */
                     std::vector<std::string> GetAssistants() const;
 
                     /**
                      * 设置助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
-                     * @param Assistants 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
+                     * @param _assistants 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
+                     * 
                      */
                     void SetAssistants(const std::vector<std::string>& _assistants);
 
                     /**
                      * 判断参数 Assistants 是否已赋值
                      * @return Assistants 是否已赋值
+                     * 
                      */
                     bool AssistantsHasBeenSet() const;
 
                     /**
                      * 获取rtc人数。
                      * @return RTCAudienceNumber rtc人数。
+                     * 
                      */
                     uint64_t GetRTCAudienceNumber() const;
 
                     /**
                      * 设置rtc人数。
-                     * @param RTCAudienceNumber rtc人数。
+                     * @param _rTCAudienceNumber rtc人数。
+                     * 
                      */
                     void SetRTCAudienceNumber(const uint64_t& _rTCAudienceNumber);
 
                     /**
                      * 判断参数 RTCAudienceNumber 是否已赋值
                      * @return RTCAudienceNumber 是否已赋值
+                     * 
                      */
                     bool RTCAudienceNumberHasBeenSet() const;
 
                     /**
                      * 获取观看类型，互动直播（默认）。
                      * @return AudienceType 观看类型，互动直播（默认）。
+                     * 
                      */
                     uint64_t GetAudienceType() const;
 
                     /**
                      * 设置观看类型，互动直播（默认）。
-                     * @param AudienceType 观看类型，互动直播（默认）。
+                     * @param _audienceType 观看类型，互动直播（默认）。
+                     * 
                      */
                     void SetAudienceType(const uint64_t& _audienceType);
 
                     /**
                      * 判断参数 AudienceType 是否已赋值
                      * @return AudienceType 是否已赋值
+                     * 
                      */
                     bool AudienceTypeHasBeenSet() const;
 
                     /**
                      * 获取录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      * @return RecordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 
                      */
                     uint64_t GetRecordLayout() const;
 
                     /**
                      * 设置录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
-                     * @param RecordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @param _recordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 
                      */
                     void SetRecordLayout(const uint64_t& _recordLayout);
 
                     /**
                      * 判断参数 RecordLayout 是否已赋值
                      * @return RecordLayout 是否已赋值
+                     * 
                      */
                     bool RecordLayoutHasBeenSet() const;
 
                     /**
                      * 获取房间绑定的群组ID,非空时限制组成员进入
                      * @return GroupId 房间绑定的群组ID,非空时限制组成员进入
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置房间绑定的群组ID,非空时限制组成员进入
-                     * @param GroupId 房间绑定的群组ID,非空时限制组成员进入
+                     * @param _groupId 房间绑定的群组ID,非空时限制组成员进入
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -411,6 +462,7 @@ video 纯视频
                      * @return EnableDirectControl 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
 0 不允许直接控制（需同意，默认值）
 1 允许直接控制（无需同意）
+                     * 
                      */
                     uint64_t GetEnableDirectControl() const;
 
@@ -418,15 +470,17 @@ video 纯视频
                      * 设置是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
 0 不允许直接控制（需同意，默认值）
 1 允许直接控制（无需同意）
-                     * @param EnableDirectControl 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+                     * @param _enableDirectControl 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
 0 不允许直接控制（需同意，默认值）
 1 允许直接控制（无需同意）
+                     * 
                      */
                     void SetEnableDirectControl(const uint64_t& _enableDirectControl);
 
                     /**
                      * 判断参数 EnableDirectControl 是否已赋值
                      * @return EnableDirectControl 是否已赋值
+                     * 
                      */
                     bool EnableDirectControlHasBeenSet() const;
 

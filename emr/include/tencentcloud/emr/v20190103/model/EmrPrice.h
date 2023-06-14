@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 刊例价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginalCost() const;
 
                     /**
                      * 设置刊例价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalCost 刊例价格
+                     * @param _originalCost 刊例价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalCost(const std::string& _originalCost);
 
                     /**
                      * 判断参数 OriginalCost 是否已赋值
                      * @return OriginalCost 是否已赋值
+                     * 
                      */
                     bool OriginalCostHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountCost 折扣价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiscountCost() const;
 
                     /**
                      * 设置折扣价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountCost 折扣价格
+                     * @param _discountCost 折扣价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountCost(const std::string& _discountCost);
 
                     /**
                      * 判断参数 DiscountCost 是否已赋值
                      * @return DiscountCost 是否已赋值
+                     * 
                      */
                     bool DiscountCostHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 单位
+                     * @param _unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceSpec 询价配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PriceResource GetPriceSpec() const;
 
                     /**
                      * 设置询价配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PriceSpec 询价配置
+                     * @param _priceSpec 询价配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriceSpec(const PriceResource& _priceSpec);
 
                     /**
                      * 判断参数 PriceSpec 是否已赋值
                      * @return PriceSpec 是否已赋值
+                     * 
                      */
                     bool PriceSpecHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportSpotPaid 是否支持竞价实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSupportSpotPaid() const;
 
                     /**
                      * 设置是否支持竞价实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportSpotPaid 是否支持竞价实例
+                     * @param _supportSpotPaid 是否支持竞价实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportSpotPaid(const bool& _supportSpotPaid);
 
                     /**
                      * 判断参数 SupportSpotPaid 是否已赋值
                      * @return SupportSpotPaid 是否已赋值
+                     * 
                      */
                     bool SupportSpotPaidHasBeenSet() const;
 

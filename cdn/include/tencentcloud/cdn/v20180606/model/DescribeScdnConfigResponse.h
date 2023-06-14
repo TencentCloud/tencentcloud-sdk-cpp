@@ -51,60 +51,70 @@ namespace TencentCloud
                     /**
                      * 获取自定义防护策略配置
                      * @return Acl 自定义防护策略配置
+                     * 
                      */
                     ScdnAclConfig GetAcl() const;
 
                     /**
                      * 判断参数 Acl 是否已赋值
                      * @return Acl 是否已赋值
+                     * 
                      */
                     bool AclHasBeenSet() const;
 
                     /**
                      * 获取Web 攻击防护（WAF）配置
                      * @return Waf Web 攻击防护（WAF）配置
+                     * 
                      */
                     ScdnWafConfig GetWaf() const;
 
                     /**
                      * 判断参数 Waf 是否已赋值
                      * @return Waf 是否已赋值
+                     * 
                      */
                     bool WafHasBeenSet() const;
 
                     /**
                      * 获取CC 防护配置
                      * @return CC CC 防护配置
+                     * 
                      */
                     ScdnConfig GetCC() const;
 
                     /**
                      * 判断参数 CC 是否已赋值
                      * @return CC 是否已赋值
+                     * 
                      */
                     bool CCHasBeenSet() const;
 
                     /**
                      * 获取DDOS 防护配置
                      * @return Ddos DDOS 防护配置
+                     * 
                      */
                     ScdnDdosConfig GetDdos() const;
 
                     /**
                      * 判断参数 Ddos 是否已赋值
                      * @return Ddos 是否已赋值
+                     * 
                      */
                     bool DdosHasBeenSet() const;
 
                     /**
                      * 获取BOT 防护配置
                      * @return Bot BOT 防护配置
+                     * 
                      */
                     ScdnBotConfig GetBot() const;
 
                     /**
                      * 判断参数 Bot 是否已赋值
                      * @return Bot 是否已赋值
+                     * 
                      */
                     bool BotHasBeenSet() const;
 
@@ -113,12 +123,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 当前状态，取值online | offline
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

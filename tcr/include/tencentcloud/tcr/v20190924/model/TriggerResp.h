@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerName 触发器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
                      * 设置触发器名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerName 触发器名称
+                     * @param _triggerName 触发器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
 
                     /**
                      * 判断参数 TriggerName 是否已赋值
                      * @return TriggerName 是否已赋值
+                     * 
                      */
                     bool TriggerNameHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeSource 触发来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvokeSource() const;
 
                     /**
                      * 设置触发来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvokeSource 触发来源
+                     * @param _invokeSource 触发来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvokeSource(const std::string& _invokeSource);
 
                     /**
                      * 判断参数 InvokeSource 是否已赋值
                      * @return InvokeSource 是否已赋值
+                     * 
                      */
                     bool InvokeSourceHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeAction 触发动作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvokeAction() const;
 
                     /**
                      * 设置触发动作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvokeAction 触发动作
+                     * @param _invokeAction 触发动作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvokeAction(const std::string& _invokeAction);
 
                     /**
                      * 判断参数 InvokeAction 是否已赋值
                      * @return InvokeAction 是否已赋值
+                     * 
                      */
                     bool InvokeActionHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeCondition 触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TriggerInvokeCondition GetInvokeCondition() const;
 
                     /**
                      * 设置触发条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvokeCondition 触发条件
+                     * @param _invokeCondition 触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvokeCondition(const TriggerInvokeCondition& _invokeCondition);
 
                     /**
                      * 判断参数 InvokeCondition 是否已赋值
                      * @return InvokeCondition 是否已赋值
+                     * 
                      */
                     bool InvokeConditionHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokePara 触发器参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TriggerInvokePara GetInvokePara() const;
 
                     /**
                      * 设置触发器参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvokePara 触发器参数
+                     * @param _invokePara 触发器参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvokePara(const TriggerInvokePara& _invokePara);
 
                     /**
                      * 判断参数 InvokePara 是否已赋值
                      * @return InvokePara 是否已赋值
+                     * 
                      */
                     bool InvokeParaHasBeenSet() const;
 

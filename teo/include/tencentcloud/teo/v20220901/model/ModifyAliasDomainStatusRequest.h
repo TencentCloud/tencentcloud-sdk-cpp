@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return Paused 别称域名状态，取值有：
 <li> false：开启别称域名；</li>
 <li> true：关闭别称域名。</li>
+                     * 
                      */
                     bool GetPaused() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置别称域名状态，取值有：
 <li> false：开启别称域名；</li>
 <li> true：关闭别称域名。</li>
-                     * @param Paused 别称域名状态，取值有：
+                     * @param _paused 别称域名状态，取值有：
 <li> false：开启别称域名；</li>
 <li> true：关闭别称域名。</li>
+                     * 
                      */
                     void SetPaused(const bool& _paused);
 
                     /**
                      * 判断参数 Paused 是否已赋值
                      * @return Paused 是否已赋值
+                     * 
                      */
                     bool PausedHasBeenSet() const;
 
                     /**
                      * 获取待修改状态的别称域名名称。如果为空，则不执行修改状态操作。
                      * @return AliasNames 待修改状态的别称域名名称。如果为空，则不执行修改状态操作。
+                     * 
                      */
                     std::vector<std::string> GetAliasNames() const;
 
                     /**
                      * 设置待修改状态的别称域名名称。如果为空，则不执行修改状态操作。
-                     * @param AliasNames 待修改状态的别称域名名称。如果为空，则不执行修改状态操作。
+                     * @param _aliasNames 待修改状态的别称域名名称。如果为空，则不执行修改状态操作。
+                     * 
                      */
                     void SetAliasNames(const std::vector<std::string>& _aliasNames);
 
                     /**
                      * 判断参数 AliasNames 是否已赋值
                      * @return AliasNames 是否已赋值
+                     * 
                      */
                     bool AliasNamesHasBeenSet() const;
 

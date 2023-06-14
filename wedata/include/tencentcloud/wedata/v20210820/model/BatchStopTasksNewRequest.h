@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取批量停止任务的TaskId
                      * @return TaskIdList 批量停止任务的TaskId
+                     * 
                      */
                     std::vector<std::string> GetTaskIdList() const;
 
                     /**
                      * 设置批量停止任务的TaskId
-                     * @param TaskIdList 批量停止任务的TaskId
+                     * @param _taskIdList 批量停止任务的TaskId
+                     * 
                      */
                     void SetTaskIdList(const std::vector<std::string>& _taskIdList);
 
                     /**
                      * 判断参数 TaskIdList 是否已赋值
                      * @return TaskIdList 是否已赋值
+                     * 
                      */
                     bool TaskIdListHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

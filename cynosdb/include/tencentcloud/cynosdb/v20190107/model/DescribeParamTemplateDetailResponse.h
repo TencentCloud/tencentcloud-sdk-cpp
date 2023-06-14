@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID
                      * @return TemplateId 参数模板ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取参数模板名称
                      * @return TemplateName 参数模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述
                      * @return TemplateDescription 参数模板描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取引擎版本
                      * @return EngineVersion 引擎版本
+                     * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取参数总条数
                      * @return TotalCount 参数总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取参数列表
                      * @return Items 参数列表
+                     * 
                      */
                     std::vector<ParamDetail> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取数据库类型，可选值：NORMAL，SERVERLESS
                      * @return DbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 判断参数 DbMode 是否已赋值
                      * @return DbMode 是否已赋值
+                     * 
                      */
                     bool DbModeHasBeenSet() const;
 

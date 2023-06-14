@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取水印在视频里第一次出现的播放时间点，单位：秒。
                      * @return StartTime 水印在视频里第一次出现的播放时间点，单位：秒。
+                     * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置水印在视频里第一次出现的播放时间点，单位：秒。
-                     * @param StartTime 水印在视频里第一次出现的播放时间点，单位：秒。
+                     * @param _startTime 水印在视频里第一次出现的播放时间点，单位：秒。
+                     * 
                      */
                     void SetStartTime(const double& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取在一个水印周期内，水印显示的持续时间，单位：秒。
                      * @return DisplayDuration 在一个水印周期内，水印显示的持续时间，单位：秒。
+                     * 
                      */
                     double GetDisplayDuration() const;
 
                     /**
                      * 设置在一个水印周期内，水印显示的持续时间，单位：秒。
-                     * @param DisplayDuration 在一个水印周期内，水印显示的持续时间，单位：秒。
+                     * @param _displayDuration 在一个水印周期内，水印显示的持续时间，单位：秒。
+                     * 
                      */
                     void SetDisplayDuration(const double& _displayDuration);
 
                     /**
                      * 判断参数 DisplayDuration 是否已赋值
                      * @return DisplayDuration 是否已赋值
+                     * 
                      */
                     bool DisplayDurationHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 填 0 表示水印只持续一个水印周期（即在整个视频里只显示 DisplayDuration 秒）。
                      * @return CycleDuration 一个水印周期的持续时间，单位：秒。
 填 0 表示水印只持续一个水印周期（即在整个视频里只显示 DisplayDuration 秒）。
+                     * 
                      */
                     double GetCycleDuration() const;
 
                     /**
                      * 设置一个水印周期的持续时间，单位：秒。
 填 0 表示水印只持续一个水印周期（即在整个视频里只显示 DisplayDuration 秒）。
-                     * @param CycleDuration 一个水印周期的持续时间，单位：秒。
+                     * @param _cycleDuration 一个水印周期的持续时间，单位：秒。
 填 0 表示水印只持续一个水印周期（即在整个视频里只显示 DisplayDuration 秒）。
+                     * 
                      */
                     void SetCycleDuration(const double& _cycleDuration);
 
                     /**
                      * 判断参数 CycleDuration 是否已赋值
                      * @return CycleDuration 是否已赋值
+                     * 
                      */
                     bool CycleDurationHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网络列表
                      * @return ClusterList 网络列表
+                     * 
                      */
                     std::vector<BcosClusterItem> GetClusterList() const;
 
                     /**
                      * 判断参数 ClusterList 是否已赋值
                      * @return ClusterList 是否已赋值
+                     * 
                      */
                     bool ClusterListHasBeenSet() const;
 

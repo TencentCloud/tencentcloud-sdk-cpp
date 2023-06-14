@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。
                      * @return RoInstanceId 只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。
+                     * 
                      */
                     std::string GetRoInstanceId() const;
 
                     /**
                      * 设置只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。
-                     * @param RoInstanceId 只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。
+                     * @param _roInstanceId 只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。
+                     * 
                      */
                     void SetRoInstanceId(const std::string& _roInstanceId);
 
                     /**
                      * 判断参数 RoInstanceId 是否已赋值
                      * @return RoInstanceId 是否已赋值
+                     * 
                      */
                     bool RoInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。
                      * @return MasterInstanceId 主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。
+                     * 
                      */
                     std::string GetMasterInstanceId() const;
 
                     /**
                      * 设置主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。
-                     * @param MasterInstanceId 主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。
+                     * @param _masterInstanceId 主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。
+                     * 
                      */
                     void SetMasterInstanceId(const std::string& _masterInstanceId);
 
                     /**
                      * 判断参数 MasterInstanceId 是否已赋值
                      * @return MasterInstanceId 是否已赋值
+                     * 
                      */
                     bool MasterInstanceIdHasBeenSet() const;
 

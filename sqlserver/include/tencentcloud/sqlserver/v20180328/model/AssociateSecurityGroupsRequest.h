@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取安全组ID。
                      * @return SecurityGroupId 安全组ID。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组ID。
-                     * @param SecurityGroupId 安全组ID。
+                     * @param _securityGroupId 安全组ID。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。
                      * @return InstanceIdSet 实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。
-                     * @param InstanceIdSet 实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。
+                     * @param _instanceIdSet 实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 

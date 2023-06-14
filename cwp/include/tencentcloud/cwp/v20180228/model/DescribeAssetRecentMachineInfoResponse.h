@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalList 总数量列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetKeyVal> GetTotalList() const;
 
                     /**
                      * 判断参数 TotalList 是否已赋值
                      * @return TotalList 是否已赋值
+                     * 
                      */
                     bool TotalListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveList 在线数量列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetKeyVal> GetLiveList() const;
 
                     /**
                      * 判断参数 LiveList 是否已赋值
                      * @return LiveList 是否已赋值
+                     * 
                      */
                     bool LiveListHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineList 离线数量列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetKeyVal> GetOfflineList() const;
 
                     /**
                      * 判断参数 OfflineList 是否已赋值
                      * @return OfflineList 是否已赋值
+                     * 
                      */
                     bool OfflineListHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskList 风险数量列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetKeyVal> GetRiskList() const;
 
                     /**
                      * 判断参数 RiskList 是否已赋值
                      * @return RiskList 是否已赋值
+                     * 
                      */
                     bool RiskListHasBeenSet() const;
 

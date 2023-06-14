@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取独享集群实例Id
                      * @return InstanceId 独享集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享集群实例Id
-                     * @param InstanceId 独享集群实例Id
+                     * @param _instanceId 独享集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitID 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitID 边缘单元ID
+                     * @param _edgeUnitID 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取Secret名
                      * @return SecretName Secret名
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置Secret名
-                     * @param SecretName Secret名
+                     * @param _secretName Secret名
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取Secret的Yaml格式
                      * @return Yaml Secret的Yaml格式
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置Secret的Yaml格式
-                     * @param Yaml Secret的Yaml格式
+                     * @param _yaml Secret的Yaml格式
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
                     /**
                      * 获取Secret命名空间（默认:default）
                      * @return SecretNamespace Secret命名空间（默认:default）
+                     * 
                      */
                     std::string GetSecretNamespace() const;
 
                     /**
                      * 设置Secret命名空间（默认:default）
-                     * @param SecretNamespace Secret命名空间（默认:default）
+                     * @param _secretNamespace Secret命名空间（默认:default）
+                     * 
                      */
                     void SetSecretNamespace(const std::string& _secretNamespace);
 
                     /**
                      * 判断参数 SecretNamespace 是否已赋值
                      * @return SecretNamespace 是否已赋值
+                     * 
                      */
                     bool SecretNamespaceHasBeenSet() const;
 

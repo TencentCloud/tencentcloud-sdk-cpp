@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取纠错句子的序号。
                      * @return Order 纠错句子的序号。
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置纠错句子的序号。
-                     * @param Order 纠错句子的序号。
+                     * @param _order 纠错句子的序号。
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取错误的起始位置，从0开始。
                      * @return BeginOffset 错误的起始位置，从0开始。
+                     * 
                      */
                     int64_t GetBeginOffset() const;
 
                     /**
                      * 设置错误的起始位置，从0开始。
-                     * @param BeginOffset 错误的起始位置，从0开始。
+                     * @param _beginOffset 错误的起始位置，从0开始。
+                     * 
                      */
                     void SetBeginOffset(const int64_t& _beginOffset);
 
                     /**
                      * 判断参数 BeginOffset 是否已赋值
                      * @return BeginOffset 是否已赋值
+                     * 
                      */
                     bool BeginOffsetHasBeenSet() const;
 
                     /**
                      * 获取错误内容长度。
                      * @return Len 错误内容长度。
+                     * 
                      */
                     int64_t GetLen() const;
 
                     /**
                      * 设置错误内容长度。
-                     * @param Len 错误内容长度。
+                     * @param _len 错误内容长度。
+                     * 
                      */
                     void SetLen(const int64_t& _len);
 
                     /**
                      * 判断参数 Len 是否已赋值
                      * @return Len 是否已赋值
+                     * 
                      */
                     bool LenHasBeenSet() const;
 
                     /**
                      * 获取错误内容。
                      * @return Word 错误内容。
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置错误内容。
-                     * @param Word 错误内容。
+                     * @param _word 错误内容。
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
@@ -123,56 +135,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorrectWord 纠错结果，当为删除类错误时，结果为null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCorrectWord() const;
 
                     /**
                      * 设置纠错结果，当为删除类错误时，结果为null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorrectWord 纠错结果，当为删除类错误时，结果为null。
+                     * @param _correctWord 纠错结果，当为删除类错误时，结果为null。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorrectWord(const std::vector<std::string>& _correctWord);
 
                     /**
                      * 判断参数 CorrectWord 是否已赋值
                      * @return CorrectWord 是否已赋值
+                     * 
                      */
                     bool CorrectWordHasBeenSet() const;
 
                     /**
                      * 获取纠错类型。0：替换；1：插入；2：删除。
                      * @return CorrectionType 纠错类型。0：替换；1：插入；2：删除。
+                     * 
                      */
                     int64_t GetCorrectionType() const;
 
                     /**
                      * 设置纠错类型。0：替换；1：插入；2：删除。
-                     * @param CorrectionType 纠错类型。0：替换；1：插入；2：删除。
+                     * @param _correctionType 纠错类型。0：替换；1：插入；2：删除。
+                     * 
                      */
                     void SetCorrectionType(const int64_t& _correctionType);
 
                     /**
                      * 判断参数 CorrectionType 是否已赋值
                      * @return CorrectionType 是否已赋值
+                     * 
                      */
                     bool CorrectionTypeHasBeenSet() const;
 
                     /**
                      * 获取纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）
                      * @return Confidence 纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）
-                     * @param Confidence 纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）
+                     * @param _confidence 纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -181,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescriptionZh 纠错信息中文描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescriptionZh() const;
 
                     /**
                      * 设置纠错信息中文描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DescriptionZh 纠错信息中文描述。
+                     * @param _descriptionZh 纠错信息中文描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescriptionZh(const std::string& _descriptionZh);
 
                     /**
                      * 判断参数 DescriptionZh 是否已赋值
                      * @return DescriptionZh 是否已赋值
+                     * 
                      */
                     bool DescriptionZhHasBeenSet() const;
 
@@ -203,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescriptionEn 纠错信息英文描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescriptionEn() const;
 
                     /**
                      * 设置纠错信息英文描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DescriptionEn 纠错信息英文描述。
+                     * @param _descriptionEn 纠错信息英文描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescriptionEn(const std::string& _descriptionEn);
 
                     /**
                      * 判断参数 DescriptionEn 是否已赋值
                      * @return DescriptionEn 是否已赋值
+                     * 
                      */
                     bool DescriptionEnHasBeenSet() const;
 

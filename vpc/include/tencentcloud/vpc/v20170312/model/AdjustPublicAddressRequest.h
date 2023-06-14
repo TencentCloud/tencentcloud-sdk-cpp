@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。
                      * @return InstanceId 标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。
-                     * @param InstanceId 标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。
+                     * @param _instanceId 标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
                      * @return AddressId 标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @param AddressId 标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * @param _addressId 标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 

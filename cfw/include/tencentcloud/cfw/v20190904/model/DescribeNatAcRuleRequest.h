@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取每页条数
                      * @return Limit 每页条数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页条数
-                     * @param Limit 每页条数
+                     * @param _limit 每页条数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移值
                      * @return Offset 偏移值
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移值
-                     * @param Offset 偏移值
+                     * @param _offset 偏移值
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取需要查询的索引，特定场景使用，可不填
                      * @return Index 需要查询的索引，特定场景使用，可不填
+                     * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置需要查询的索引，特定场景使用，可不填
-                     * @param Index 需要查询的索引，特定场景使用，可不填
+                     * @param _index 需要查询的索引，特定场景使用，可不填
+                     * 
                      */
                     void SetIndex(const std::string& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
                     /**
                      * 获取过滤条件组合
                      * @return Filters 过滤条件组合
+                     * 
                      */
                     std::vector<CommonFilter> GetFilters() const;
 
                     /**
                      * 设置过滤条件组合
-                     * @param Filters 过滤条件组合
+                     * @param _filters 过滤条件组合
+                     * 
                      */
                     void SetFilters(const std::vector<CommonFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取检索的起始时间，可不传
                      * @return StartTime 检索的起始时间，可不传
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置检索的起始时间，可不传
-                     * @param StartTime 检索的起始时间，可不传
+                     * @param _startTime 检索的起始时间，可不传
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取检索的截止时间，可不传
                      * @return EndTime 检索的截止时间，可不传
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置检索的截止时间，可不传
-                     * @param EndTime 检索的截止时间，可不传
+                     * @param _endTime 检索的截止时间，可不传
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
                      * @return Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @param Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * @param _order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序所用到的字段
                      * @return By 排序所用到的字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序所用到的字段
-                     * @param By 排序所用到的字段
+                     * @param _by 排序所用到的字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

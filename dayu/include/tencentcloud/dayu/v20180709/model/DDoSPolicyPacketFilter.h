@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取协议，取值范围[tcp,udp,icmp,all]
                      * @return Protocol 协议，取值范围[tcp,udp,icmp,all]
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，取值范围[tcp,udp,icmp,all]
-                     * @param Protocol 协议，取值范围[tcp,udp,icmp,all]
+                     * @param _protocol 协议，取值范围[tcp,udp,icmp,all]
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取开始源端口，取值范围[0,65535]
                      * @return SportStart 开始源端口，取值范围[0,65535]
+                     * 
                      */
                     uint64_t GetSportStart() const;
 
                     /**
                      * 设置开始源端口，取值范围[0,65535]
-                     * @param SportStart 开始源端口，取值范围[0,65535]
+                     * @param _sportStart 开始源端口，取值范围[0,65535]
+                     * 
                      */
                     void SetSportStart(const uint64_t& _sportStart);
 
                     /**
                      * 判断参数 SportStart 是否已赋值
                      * @return SportStart 是否已赋值
+                     * 
                      */
                     bool SportStartHasBeenSet() const;
 
                     /**
                      * 获取结束源端口，取值范围[0,65535]
                      * @return SportEnd 结束源端口，取值范围[0,65535]
+                     * 
                      */
                     uint64_t GetSportEnd() const;
 
                     /**
                      * 设置结束源端口，取值范围[0,65535]
-                     * @param SportEnd 结束源端口，取值范围[0,65535]
+                     * @param _sportEnd 结束源端口，取值范围[0,65535]
+                     * 
                      */
                     void SetSportEnd(const uint64_t& _sportEnd);
 
                     /**
                      * 判断参数 SportEnd 是否已赋值
                      * @return SportEnd 是否已赋值
+                     * 
                      */
                     bool SportEndHasBeenSet() const;
 
                     /**
                      * 获取开始目的端口，取值范围[0,65535]
                      * @return DportStart 开始目的端口，取值范围[0,65535]
+                     * 
                      */
                     uint64_t GetDportStart() const;
 
                     /**
                      * 设置开始目的端口，取值范围[0,65535]
-                     * @param DportStart 开始目的端口，取值范围[0,65535]
+                     * @param _dportStart 开始目的端口，取值范围[0,65535]
+                     * 
                      */
                     void SetDportStart(const uint64_t& _dportStart);
 
                     /**
                      * 判断参数 DportStart 是否已赋值
                      * @return DportStart 是否已赋值
+                     * 
                      */
                     bool DportStartHasBeenSet() const;
 
                     /**
                      * 获取结束目的端口，取值范围[0,65535]
                      * @return DportEnd 结束目的端口，取值范围[0,65535]
+                     * 
                      */
                     uint64_t GetDportEnd() const;
 
                     /**
                      * 设置结束目的端口，取值范围[0,65535]
-                     * @param DportEnd 结束目的端口，取值范围[0,65535]
+                     * @param _dportEnd 结束目的端口，取值范围[0,65535]
+                     * 
                      */
                     void SetDportEnd(const uint64_t& _dportEnd);
 
                     /**
                      * 判断参数 DportEnd 是否已赋值
                      * @return DportEnd 是否已赋值
+                     * 
                      */
                     bool DportEndHasBeenSet() const;
 
                     /**
                      * 获取最小包长，取值范围[0,1500]
                      * @return PktlenMin 最小包长，取值范围[0,1500]
+                     * 
                      */
                     uint64_t GetPktlenMin() const;
 
                     /**
                      * 设置最小包长，取值范围[0,1500]
-                     * @param PktlenMin 最小包长，取值范围[0,1500]
+                     * @param _pktlenMin 最小包长，取值范围[0,1500]
+                     * 
                      */
                     void SetPktlenMin(const uint64_t& _pktlenMin);
 
                     /**
                      * 判断参数 PktlenMin 是否已赋值
                      * @return PktlenMin 是否已赋值
+                     * 
                      */
                     bool PktlenMinHasBeenSet() const;
 
                     /**
                      * 获取最大包长，取值范围[0,1500]
                      * @return PktlenMax 最大包长，取值范围[0,1500]
+                     * 
                      */
                     uint64_t GetPktlenMax() const;
 
                     /**
                      * 设置最大包长，取值范围[0,1500]
-                     * @param PktlenMax 最大包长，取值范围[0,1500]
+                     * @param _pktlenMax 最大包长，取值范围[0,1500]
+                     * 
                      */
                     void SetPktlenMax(const uint64_t& _pktlenMax);
 
                     /**
                      * 判断参数 PktlenMax 是否已赋值
                      * @return PktlenMax 是否已赋值
+                     * 
                      */
                     bool PktlenMaxHasBeenSet() const;
 
@@ -185,6 +206,7 @@ begin_l4(TCP头)
 begin_l5(载荷)
 no_match(不检测)
 ]
+                     * 
                      */
                     std::string GetMatchBegin() const;
 
@@ -195,126 +217,146 @@ begin_l4(TCP头)
 begin_l5(载荷)
 no_match(不检测)
 ]
-                     * @param MatchBegin 是否检测载荷，取值范围[
+                     * @param _matchBegin 是否检测载荷，取值范围[
 begin_l3(IP头)
 begin_l4(TCP头)
 begin_l5(载荷)
 no_match(不检测)
 ]
+                     * 
                      */
                     void SetMatchBegin(const std::string& _matchBegin);
 
                     /**
                      * 判断参数 MatchBegin 是否已赋值
                      * @return MatchBegin 是否已赋值
+                     * 
                      */
                     bool MatchBeginHasBeenSet() const;
 
                     /**
                      * 获取是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]
                      * @return MatchType 是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]
+                     * 
                      */
                     std::string GetMatchType() const;
 
                     /**
                      * 设置是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]
-                     * @param MatchType 是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]
+                     * @param _matchType 是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]
+                     * 
                      */
                     void SetMatchType(const std::string& _matchType);
 
                     /**
                      * 判断参数 MatchType 是否已赋值
                      * @return MatchType 是否已赋值
+                     * 
                      */
                     bool MatchTypeHasBeenSet() const;
 
                     /**
                      * 获取关键字或正则表达式
                      * @return Str 关键字或正则表达式
+                     * 
                      */
                     std::string GetStr() const;
 
                     /**
                      * 设置关键字或正则表达式
-                     * @param Str 关键字或正则表达式
+                     * @param _str 关键字或正则表达式
+                     * 
                      */
                     void SetStr(const std::string& _str);
 
                     /**
                      * 判断参数 Str 是否已赋值
                      * @return Str 是否已赋值
+                     * 
                      */
                     bool StrHasBeenSet() const;
 
                     /**
                      * 获取检测深度，取值范围[0,1500]
                      * @return Depth 检测深度，取值范围[0,1500]
+                     * 
                      */
                     uint64_t GetDepth() const;
 
                     /**
                      * 设置检测深度，取值范围[0,1500]
-                     * @param Depth 检测深度，取值范围[0,1500]
+                     * @param _depth 检测深度，取值范围[0,1500]
+                     * 
                      */
                     void SetDepth(const uint64_t& _depth);
 
                     /**
                      * 判断参数 Depth 是否已赋值
                      * @return Depth 是否已赋值
+                     * 
                      */
                     bool DepthHasBeenSet() const;
 
                     /**
                      * 获取检测偏移量，取值范围[0,1500]
                      * @return Offset 检测偏移量，取值范围[0,1500]
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置检测偏移量，取值范围[0,1500]
-                     * @param Offset 检测偏移量，取值范围[0,1500]
+                     * @param _offset 检测偏移量，取值范围[0,1500]
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取是否包括，取值范围[0(表示不包含),1(表示包含)]
                      * @return IsNot 是否包括，取值范围[0(表示不包含),1(表示包含)]
+                     * 
                      */
                     uint64_t GetIsNot() const;
 
                     /**
                      * 设置是否包括，取值范围[0(表示不包含),1(表示包含)]
-                     * @param IsNot 是否包括，取值范围[0(表示不包含),1(表示包含)]
+                     * @param _isNot 是否包括，取值范围[0(表示不包含),1(表示包含)]
+                     * 
                      */
                     void SetIsNot(const uint64_t& _isNot);
 
                     /**
                      * 判断参数 IsNot 是否已赋值
                      * @return IsNot 是否已赋值
+                     * 
                      */
                     bool IsNotHasBeenSet() const;
 
                     /**
                      * 获取策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]
                      * @return Action 策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]
-                     * @param Action 策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]
+                     * @param _action 策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 

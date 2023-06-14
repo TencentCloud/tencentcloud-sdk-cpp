@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取图片翻译结果
                      * @return Value 图片翻译结果
+                     * 
                      */
                     std::vector<ItemValue> GetValue() const;
 
                     /**
                      * 设置图片翻译结果
-                     * @param Value 图片翻译结果
+                     * @param _value 图片翻译结果
+                     * 
                      */
                     void SetValue(const std::vector<ItemValue>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

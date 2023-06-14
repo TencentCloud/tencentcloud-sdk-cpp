@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取导入的用户数据
                      * @return DataFlowUserCreateList 导入的用户数据
+                     * 
                      */
                     std::vector<ImportUser> GetDataFlowUserCreateList() const;
 
                     /**
                      * 设置导入的用户数据
-                     * @param DataFlowUserCreateList 导入的用户数据
+                     * @param _dataFlowUserCreateList 导入的用户数据
+                     * 
                      */
                     void SetDataFlowUserCreateList(const std::vector<ImportUser>& _dataFlowUserCreateList);
 
                     /**
                      * 判断参数 DataFlowUserCreateList 是否已赋值
                      * @return DataFlowUserCreateList 是否已赋值
+                     * 
                      */
                     bool DataFlowUserCreateListHasBeenSet() const;
 

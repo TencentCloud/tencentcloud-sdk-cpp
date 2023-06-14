@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ID 项目ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID
-                     * @param ID 项目ID
+                     * @param _iD 项目ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取日志导出ID
                      * @return ExportID 日志导出ID
+                     * 
                      */
                     std::string GetExportID() const;
 
                     /**
                      * 设置日志导出ID
-                     * @param ExportID 日志导出ID
+                     * @param _exportID 日志导出ID
+                     * 
                      */
                     void SetExportID(const std::string& _exportID);
 
                     /**
                      * 判断参数 ExportID 是否已赋值
                      * @return ExportID 是否已赋值
+                     * 
                      */
                     bool ExportIDHasBeenSet() const;
 

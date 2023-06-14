@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取装箱配额组
                      * @return PackingQuotaSet 装箱配额组
+                     * 
                      */
                     std::vector<PackingQuotaGroup> GetPackingQuotaSet() const;
 
                     /**
                      * 判断参数 PackingQuotaSet 是否已赋值
                      * @return PackingQuotaSet 是否已赋值
+                     * 
                      */
                     bool PackingQuotaSetHasBeenSet() const;
 

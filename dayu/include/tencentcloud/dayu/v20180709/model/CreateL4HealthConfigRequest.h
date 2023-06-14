@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取四层健康检查配置数组
                      * @return HealthConfig 四层健康检查配置数组
+                     * 
                      */
                     std::vector<L4HealthConfig> GetHealthConfig() const;
 
                     /**
                      * 设置四层健康检查配置数组
-                     * @param HealthConfig 四层健康检查配置数组
+                     * @param _healthConfig 四层健康检查配置数组
+                     * 
                      */
                     void SetHealthConfig(const std::vector<L4HealthConfig>& _healthConfig);
 
                     /**
                      * 判断参数 HealthConfig 是否已赋值
                      * @return HealthConfig 是否已赋值
+                     * 
                      */
                     bool HealthConfigHasBeenSet() const;
 

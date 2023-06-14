@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取保留字段
                      * @return Field 保留字段
+                     * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置保留字段
-                     * @param Field 保留字段
+                     * @param _field 保留字段
+                     * 
                      */
                     void SetField(const std::string& _field);
 
                     /**
                      * 判断参数 Field 是否已赋值
                      * @return Field 是否已赋值
+                     * 
                      */
                     bool FieldHasBeenSet() const;
 
                     /**
                      * 获取人员名称
                      * @return Label 人员名称
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置人员名称
-                     * @param Label 人员名称
+                     * @param _label 人员名称
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
+                     * 
                      */
                     double GetConfidence() const;
 
@@ -99,16 +106,18 @@ namespace TencentCloud
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
-                     * @param Confidence 对应识别label的置信度，分数越高意味违法违规可能性越大。 
+                     * @param _confidence 对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -121,6 +130,7 @@ BLOCK：违规
 PASS：正常 
 REVIEW：疑似  
 BLOCK：违规
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -129,16 +139,18 @@ BLOCK：违规
 PASS：正常 
 REVIEW：疑似  
 BLOCK：违规
-                     * @param Suggestion 识别场景的审核结论：  
+                     * @param _suggestion 识别场景的审核结论：  
 PASS：正常 
 REVIEW：疑似  
 BLOCK：违规
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取是否已完成导入任务
                      * @return Result 是否已完成导入任务
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

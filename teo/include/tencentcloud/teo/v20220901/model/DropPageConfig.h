@@ -54,6 +54,7 @@ namespace TencentCloud
                      * @return Switch 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ namespace TencentCloud
                      * 设置配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 配置开关，取值有：
+                     * @param _switch 配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafDropPageDetail Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DropPageDetail GetWafDropPageDetail() const;
 
                     /**
                      * 设置Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WafDropPageDetail Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
+                     * @param _wafDropPageDetail Waf(托管规则)模块的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWafDropPageDetail(const DropPageDetail& _wafDropPageDetail);
 
                     /**
                      * 判断参数 WafDropPageDetail 是否已赋值
                      * @return WafDropPageDetail 是否已赋值
+                     * 
                      */
                     bool WafDropPageDetailHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclDropPageDetail 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DropPageDetail GetAclDropPageDetail() const;
 
                     /**
                      * 设置自定义页面的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AclDropPageDetail 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
+                     * @param _aclDropPageDetail 自定义页面的拦截页面配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAclDropPageDetail(const DropPageDetail& _aclDropPageDetail);
 
                     /**
                      * 判断参数 AclDropPageDetail 是否已赋值
                      * @return AclDropPageDetail 是否已赋值
+                     * 
                      */
                     bool AclDropPageDetailHasBeenSet() const;
 

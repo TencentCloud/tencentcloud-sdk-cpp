@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 该字段用于返回创建视频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 设置该字段用于返回创建视频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataId 该字段用于返回创建视频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
+                     * @param _dataId 该字段用于返回创建视频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataId(const std::string& _dataId);
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 该字段用于返回视频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置该字段用于返回视频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 该字段用于返回视频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
+                     * @param _taskId 该字段用于返回视频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
+                     * @param _code 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置**仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
+                     * @param _message **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

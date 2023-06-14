@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取ACL 名称
                      * @return AclName ACL 名称
+                     * 
                      */
                     std::string GetAclName() const;
 
                     /**
                      * 设置ACL 名称
-                     * @param AclName ACL 名称
+                     * @param _aclName ACL 名称
+                     * 
                      */
                     void SetAclName(const std::string& _aclName);
 
                     /**
                      * 判断参数 AclName 是否已赋值
                      * @return AclName 是否已赋值
+                     * 
                      */
                     bool AclNameHasBeenSet() const;
 
                     /**
                      * 获取ACL 状态 0：无状态，1：有状态
                      * @return Status ACL 状态 0：无状态，1：有状态
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置ACL 状态 0：无状态，1：有状态
-                     * @param Status ACL 状态 0：无状态，1：有状态
+                     * @param _status ACL 状态 0：无状态，1：有状态
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

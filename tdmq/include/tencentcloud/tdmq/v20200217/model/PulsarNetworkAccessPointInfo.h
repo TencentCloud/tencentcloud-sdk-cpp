@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc的id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId vpc的id，支撑网和公网接入点，该字段为空
+                     * @param _vpcId vpc的id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -73,56 +76,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网id，支撑网和公网接入点，该字段为空
+                     * @param _subnetId 子网id，支撑网和公网接入点，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取接入地址
                      * @return Endpoint 接入地址
+                     * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 设置接入地址
-                     * @param Endpoint 接入地址
+                     * @param _endpoint 接入地址
+                     * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
 
                     /**
                      * 判断参数 Endpoint 是否已赋值
                      * @return Endpoint 是否已赋值
+                     * 
                      */
                     bool EndpointHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -135,6 +147,7 @@ namespace TencentCloud
 0：支撑网接入点 
 1：VPC接入点 
 2：公网接入点
+                     * 
                      */
                     uint64_t GetRouteType() const;
 
@@ -143,16 +156,18 @@ namespace TencentCloud
 0：支撑网接入点 
 1：VPC接入点 
 2：公网接入点
-                     * @param RouteType 接入点类型：
+                     * @param _routeType 接入点类型：
 0：支撑网接入点 
 1：VPC接入点 
 2：公网接入点
+                     * 
                      */
                     void SetRouteType(const uint64_t& _routeType);
 
                     /**
                      * 判断参数 RouteType 是否已赋值
                      * @return RouteType 是否已赋值
+                     * 
                      */
                     bool RouteTypeHasBeenSet() const;
 

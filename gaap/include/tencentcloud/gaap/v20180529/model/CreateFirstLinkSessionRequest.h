@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取模版ID
                      * @return TemplateId 模版ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模版ID
-                     * @param TemplateId 模版ID
+                     * @param _templateId 模版ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取终端网络信息
                      * @return SrcAddressInfo 终端网络信息
+                     * 
                      */
                     SrcAddressInfo GetSrcAddressInfo() const;
 
                     /**
                      * 设置终端网络信息
-                     * @param SrcAddressInfo 终端网络信息
+                     * @param _srcAddressInfo 终端网络信息
+                     * 
                      */
                     void SetSrcAddressInfo(const SrcAddressInfo& _srcAddressInfo);
 
                     /**
                      * 判断参数 SrcAddressInfo 是否已赋值
                      * @return SrcAddressInfo 是否已赋值
+                     * 
                      */
                     bool SrcAddressInfoHasBeenSet() const;
 
                     /**
                      * 获取加速目标网络信息
                      * @return DestAddressInfo 加速目标网络信息
+                     * 
                      */
                     DestAddressInfo GetDestAddressInfo() const;
 
                     /**
                      * 设置加速目标网络信息
-                     * @param DestAddressInfo 加速目标网络信息
+                     * @param _destAddressInfo 加速目标网络信息
+                     * 
                      */
                     void SetDestAddressInfo(const DestAddressInfo& _destAddressInfo);
 
                     /**
                      * 判断参数 DestAddressInfo 是否已赋值
                      * @return DestAddressInfo 是否已赋值
+                     * 
                      */
                     bool DestAddressInfoHasBeenSet() const;
 
                     /**
                      * 获取终端设备信息
                      * @return DeviceInfo 终端设备信息
+                     * 
                      */
                     DeviceInfo GetDeviceInfo() const;
 
                     /**
                      * 设置终端设备信息
-                     * @param DeviceInfo 终端设备信息
+                     * @param _deviceInfo 终端设备信息
+                     * 
                      */
                     void SetDeviceInfo(const DeviceInfo& _deviceInfo);
 
                     /**
                      * 判断参数 DeviceInfo 是否已赋值
                      * @return DeviceInfo 是否已赋值
+                     * 
                      */
                     bool DeviceInfoHasBeenSet() const;
 
                     /**
                      * 获取接口扩展参数，如果是电信用户，需要填充CTCC Token字段
                      * @return Capacity 接口扩展参数，如果是电信用户，需要填充CTCC Token字段
+                     * 
                      */
                     Capacity GetCapacity() const;
 
                     /**
                      * 设置接口扩展参数，如果是电信用户，需要填充CTCC Token字段
-                     * @param Capacity 接口扩展参数，如果是电信用户，需要填充CTCC Token字段
+                     * @param _capacity 接口扩展参数，如果是电信用户，需要填充CTCC Token字段
+                     * 
                      */
                     void SetCapacity(const Capacity& _capacity);
 
                     /**
                      * 判断参数 Capacity 是否已赋值
                      * @return Capacity 是否已赋值
+                     * 
                      */
                     bool CapacityHasBeenSet() const;
 

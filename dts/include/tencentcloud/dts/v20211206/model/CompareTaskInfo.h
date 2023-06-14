@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareTaskId 一致性校验任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
                      * 设置一致性校验任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareTaskId 一致性校验任务Id
+                     * @param _compareTaskId 一致性校验任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
 
                     /**
                      * 判断参数 CompareTaskId 是否已赋值
                      * @return CompareTaskId 是否已赋值
+                     * 
                      */
                     bool CompareTaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 一致性校验结果，包括：unstart(未启动)、running(校验中)、canceled(已终止)、failed(校验任务失败)、inconsistent(不一致)、consistent(一致)、notexist(不存在校验任务)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置一致性校验结果，包括：unstart(未启动)、running(校验中)、canceled(已终止)、failed(校验任务失败)、inconsistent(不一致)、consistent(一致)、notexist(不存在校验任务)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 一致性校验结果，包括：unstart(未启动)、running(校验中)、canceled(已终止)、failed(校验任务失败)、inconsistent(不一致)、consistent(一致)、notexist(不存在校验任务)
+                     * @param _status 一致性校验结果，包括：unstart(未启动)、running(校验中)、canceled(已终止)、failed(校验任务失败)、inconsistent(不一致)、consistent(一致)、notexist(不存在校验任务)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

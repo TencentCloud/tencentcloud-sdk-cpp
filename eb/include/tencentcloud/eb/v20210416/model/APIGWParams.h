@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取HTTPS
                      * @return Protocol HTTPS
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置HTTPS
-                     * @param Protocol HTTPS
+                     * @param _protocol HTTPS
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取POST
                      * @return Method POST
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置POST
-                     * @param Method POST
+                     * @param _method POST
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 

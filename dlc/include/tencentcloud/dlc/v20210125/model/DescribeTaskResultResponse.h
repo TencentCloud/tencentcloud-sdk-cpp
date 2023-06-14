@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskInfo 查询的任务信息，返回为空表示输入任务ID对应的任务不存在。只有当任务状态为成功（2）的时候，才会返回任务的结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskResultInfo GetTaskInfo() const;
 
                     /**
                      * 判断参数 TaskInfo 是否已赋值
                      * @return TaskInfo 是否已赋值
+                     * 
                      */
                     bool TaskInfoHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务的唯一ID。
                      * @return ServiceId 服务的唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务的唯一ID。
-                     * @param ServiceId 服务的唯一ID。
+                     * @param _serviceId 服务的唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取用户自定义的策略名称。
                      * @return StrategyName 用户自定义的策略名称。
+                     * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置用户自定义的策略名称。
-                     * @param StrategyName 用户自定义的策略名称。
+                     * @param _strategyName 用户自定义的策略名称。
+                     * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
 
                     /**
                      * 判断参数 StrategyName 是否已赋值
                      * @return StrategyName 是否已赋值
+                     * 
                      */
                     bool StrategyNameHasBeenSet() const;
 
                     /**
                      * 获取策略类型。支持WHITE（白名单）和BLACK（黑名单）。
                      * @return StrategyType 策略类型。支持WHITE（白名单）和BLACK（黑名单）。
+                     * 
                      */
                     std::string GetStrategyType() const;
 
                     /**
                      * 设置策略类型。支持WHITE（白名单）和BLACK（黑名单）。
-                     * @param StrategyType 策略类型。支持WHITE（白名单）和BLACK（黑名单）。
+                     * @param _strategyType 策略类型。支持WHITE（白名单）和BLACK（黑名单）。
+                     * 
                      */
                     void SetStrategyType(const std::string& _strategyType);
 
                     /**
                      * 判断参数 StrategyType 是否已赋值
                      * @return StrategyType 是否已赋值
+                     * 
                      */
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
                      * 获取策略详情，多个ip 使用\n 分隔符分开。
                      * @return StrategyData 策略详情，多个ip 使用\n 分隔符分开。
+                     * 
                      */
                     std::string GetStrategyData() const;
 
                     /**
                      * 设置策略详情，多个ip 使用\n 分隔符分开。
-                     * @param StrategyData 策略详情，多个ip 使用\n 分隔符分开。
+                     * @param _strategyData 策略详情，多个ip 使用\n 分隔符分开。
+                     * 
                      */
                     void SetStrategyData(const std::string& _strategyData);
 
                     /**
                      * 判断参数 StrategyData 是否已赋值
                      * @return StrategyData 是否已赋值
+                     * 
                      */
                     bool StrategyDataHasBeenSet() const;
 

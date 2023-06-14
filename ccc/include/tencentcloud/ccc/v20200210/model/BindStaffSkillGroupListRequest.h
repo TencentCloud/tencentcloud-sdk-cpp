@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取坐席邮箱
                      * @return StaffEmail 坐席邮箱
+                     * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
                      * 设置坐席邮箱
-                     * @param StaffEmail 坐席邮箱
+                     * @param _staffEmail 坐席邮箱
+                     * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
 
                     /**
                      * 判断参数 StaffEmail 是否已赋值
                      * @return StaffEmail 是否已赋值
+                     * 
                      */
                     bool StaffEmailHasBeenSet() const;
 
                     /**
                      * 获取绑定技能组列表
                      * @return SkillGroupList 绑定技能组列表
+                     * 
                      */
                     std::vector<int64_t> GetSkillGroupList() const;
 
                     /**
                      * 设置绑定技能组列表
-                     * @param SkillGroupList 绑定技能组列表
+                     * @param _skillGroupList 绑定技能组列表
+                     * 
                      */
                     void SetSkillGroupList(const std::vector<int64_t>& _skillGroupList);
 
                     /**
                      * 判断参数 SkillGroupList 是否已赋值
                      * @return SkillGroupList 是否已赋值
+                     * 
                      */
                     bool SkillGroupListHasBeenSet() const;
 

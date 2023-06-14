@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取消息保留时间，单位：ms，当前最小值为60000ms。
                      * @return RetentionMs 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
                      * 设置消息保留时间，单位：ms，当前最小值为60000ms。
-                     * @param RetentionMs 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * @param _retentionMs 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
 
                     /**
                      * 判断参数 RetentionMs 是否已赋值
                      * @return RetentionMs 是否已赋值
+                     * 
                      */
                     bool RetentionMsHasBeenSet() const;
 
                     /**
                      * 获取主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
                      * @return Note 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
-                     * @param Note 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * @param _note 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

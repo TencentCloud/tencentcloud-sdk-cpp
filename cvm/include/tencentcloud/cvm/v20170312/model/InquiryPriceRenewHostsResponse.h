@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取CDH实例续费价格信息
                      * @return Price CDH实例续费价格信息
+                     * 
                      */
                     HostPriceInfo GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

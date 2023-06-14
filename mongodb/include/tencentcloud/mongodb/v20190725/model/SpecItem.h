@@ -49,378 +49,441 @@ namespace TencentCloud
                     /**
                      * 获取规格信息标识
                      * @return SpecCode 规格信息标识
+                     * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
                      * 设置规格信息标识
-                     * @param SpecCode 规格信息标识
+                     * @param _specCode 规格信息标识
+                     * 
                      */
                     void SetSpecCode(const std::string& _specCode);
 
                     /**
                      * 判断参数 SpecCode 是否已赋值
                      * @return SpecCode 是否已赋值
+                     * 
                      */
                     bool SpecCodeHasBeenSet() const;
 
                     /**
                      * 获取规格有效标志，取值：0-停止售卖，1-开放售卖
                      * @return Status 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规格有效标志，取值：0-停止售卖，1-开放售卖
-                     * @param Status 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * @param _status 规格有效标志，取值：0-停止售卖，1-开放售卖
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取计算资源规格，单位为CPU核心数
                      * @return Cpu 计算资源规格，单位为CPU核心数
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置计算资源规格，单位为CPU核心数
-                     * @param Cpu 计算资源规格，单位为CPU核心数
+                     * @param _cpu 计算资源规格，单位为CPU核心数
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存规格，单位为MB
                      * @return Memory 内存规格，单位为MB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存规格，单位为MB
-                     * @param Memory 内存规格，单位为MB
+                     * @param _memory 内存规格，单位为MB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取默认磁盘规格，单位MB
                      * @return DefaultStorage 默认磁盘规格，单位MB
+                     * 
                      */
                     uint64_t GetDefaultStorage() const;
 
                     /**
                      * 设置默认磁盘规格，单位MB
-                     * @param DefaultStorage 默认磁盘规格，单位MB
+                     * @param _defaultStorage 默认磁盘规格，单位MB
+                     * 
                      */
                     void SetDefaultStorage(const uint64_t& _defaultStorage);
 
                     /**
                      * 判断参数 DefaultStorage 是否已赋值
                      * @return DefaultStorage 是否已赋值
+                     * 
                      */
                     bool DefaultStorageHasBeenSet() const;
 
                     /**
                      * 获取最大磁盘规格，单位MB
                      * @return MaxStorage 最大磁盘规格，单位MB
+                     * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置最大磁盘规格，单位MB
-                     * @param MaxStorage 最大磁盘规格，单位MB
+                     * @param _maxStorage 最大磁盘规格，单位MB
+                     * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
                     /**
                      * 获取最小磁盘规格，单位MB
                      * @return MinStorage 最小磁盘规格，单位MB
+                     * 
                      */
                     uint64_t GetMinStorage() const;
 
                     /**
                      * 设置最小磁盘规格，单位MB
-                     * @param MinStorage 最小磁盘规格，单位MB
+                     * @param _minStorage 最小磁盘规格，单位MB
+                     * 
                      */
                     void SetMinStorage(const uint64_t& _minStorage);
 
                     /**
                      * 判断参数 MinStorage 是否已赋值
                      * @return MinStorage 是否已赋值
+                     * 
                      */
                     bool MinStorageHasBeenSet() const;
 
                     /**
                      * 获取可承载qps信息
                      * @return Qps 可承载qps信息
+                     * 
                      */
                     uint64_t GetQps() const;
 
                     /**
                      * 设置可承载qps信息
-                     * @param Qps 可承载qps信息
+                     * @param _qps 可承载qps信息
+                     * 
                      */
                     void SetQps(const uint64_t& _qps);
 
                     /**
                      * 判断参数 Qps 是否已赋值
                      * @return Qps 是否已赋值
+                     * 
                      */
                     bool QpsHasBeenSet() const;
 
                     /**
                      * 获取连接数限制
                      * @return Conns 连接数限制
+                     * 
                      */
                     uint64_t GetConns() const;
 
                     /**
                      * 设置连接数限制
-                     * @param Conns 连接数限制
+                     * @param _conns 连接数限制
+                     * 
                      */
                     void SetConns(const uint64_t& _conns);
 
                     /**
                      * 判断参数 Conns 是否已赋值
                      * @return Conns 是否已赋值
+                     * 
                      */
                     bool ConnsHasBeenSet() const;
 
                     /**
                      * 获取实例mongodb版本信息
                      * @return MongoVersionCode 实例mongodb版本信息
+                     * 
                      */
                     std::string GetMongoVersionCode() const;
 
                     /**
                      * 设置实例mongodb版本信息
-                     * @param MongoVersionCode 实例mongodb版本信息
+                     * @param _mongoVersionCode 实例mongodb版本信息
+                     * 
                      */
                     void SetMongoVersionCode(const std::string& _mongoVersionCode);
 
                     /**
                      * 判断参数 MongoVersionCode 是否已赋值
                      * @return MongoVersionCode 是否已赋值
+                     * 
                      */
                     bool MongoVersionCodeHasBeenSet() const;
 
                     /**
                      * 获取实例mongodb版本号
                      * @return MongoVersionValue 实例mongodb版本号
+                     * 
                      */
                     uint64_t GetMongoVersionValue() const;
 
                     /**
                      * 设置实例mongodb版本号
-                     * @param MongoVersionValue 实例mongodb版本号
+                     * @param _mongoVersionValue 实例mongodb版本号
+                     * 
                      */
                     void SetMongoVersionValue(const uint64_t& _mongoVersionValue);
 
                     /**
                      * 判断参数 MongoVersionValue 是否已赋值
                      * @return MongoVersionValue 是否已赋值
+                     * 
                      */
                     bool MongoVersionValueHasBeenSet() const;
 
                     /**
                      * 获取实例mongodb版本号（短）
                      * @return Version 实例mongodb版本号（短）
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置实例mongodb版本号（短）
-                     * @param Version 实例mongodb版本号（短）
+                     * @param _version 实例mongodb版本号（短）
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取存储引擎
                      * @return EngineName 存储引擎
+                     * 
                      */
                     std::string GetEngineName() const;
 
                     /**
                      * 设置存储引擎
-                     * @param EngineName 存储引擎
+                     * @param _engineName 存储引擎
+                     * 
                      */
                     void SetEngineName(const std::string& _engineName);
 
                     /**
                      * 判断参数 EngineName 是否已赋值
                      * @return EngineName 是否已赋值
+                     * 
                      */
                     bool EngineNameHasBeenSet() const;
 
                     /**
                      * 获取集群类型，取值：1-分片集群，0-副本集集群
                      * @return ClusterType 集群类型，取值：1-分片集群，0-副本集集群
+                     * 
                      */
                     uint64_t GetClusterType() const;
 
                     /**
                      * 设置集群类型，取值：1-分片集群，0-副本集集群
-                     * @param ClusterType 集群类型，取值：1-分片集群，0-副本集集群
+                     * @param _clusterType 集群类型，取值：1-分片集群，0-副本集集群
+                     * 
                      */
                     void SetClusterType(const uint64_t& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取最小副本集从节点数
                      * @return MinNodeNum 最小副本集从节点数
+                     * 
                      */
                     uint64_t GetMinNodeNum() const;
 
                     /**
                      * 设置最小副本集从节点数
-                     * @param MinNodeNum 最小副本集从节点数
+                     * @param _minNodeNum 最小副本集从节点数
+                     * 
                      */
                     void SetMinNodeNum(const uint64_t& _minNodeNum);
 
                     /**
                      * 判断参数 MinNodeNum 是否已赋值
                      * @return MinNodeNum 是否已赋值
+                     * 
                      */
                     bool MinNodeNumHasBeenSet() const;
 
                     /**
                      * 获取最大副本集从节点数
                      * @return MaxNodeNum 最大副本集从节点数
+                     * 
                      */
                     uint64_t GetMaxNodeNum() const;
 
                     /**
                      * 设置最大副本集从节点数
-                     * @param MaxNodeNum 最大副本集从节点数
+                     * @param _maxNodeNum 最大副本集从节点数
+                     * 
                      */
                     void SetMaxNodeNum(const uint64_t& _maxNodeNum);
 
                     /**
                      * 判断参数 MaxNodeNum 是否已赋值
                      * @return MaxNodeNum 是否已赋值
+                     * 
                      */
                     bool MaxNodeNumHasBeenSet() const;
 
                     /**
                      * 获取最小分片数
                      * @return MinReplicateSetNum 最小分片数
+                     * 
                      */
                     uint64_t GetMinReplicateSetNum() const;
 
                     /**
                      * 设置最小分片数
-                     * @param MinReplicateSetNum 最小分片数
+                     * @param _minReplicateSetNum 最小分片数
+                     * 
                      */
                     void SetMinReplicateSetNum(const uint64_t& _minReplicateSetNum);
 
                     /**
                      * 判断参数 MinReplicateSetNum 是否已赋值
                      * @return MinReplicateSetNum 是否已赋值
+                     * 
                      */
                     bool MinReplicateSetNumHasBeenSet() const;
 
                     /**
                      * 获取最大分片数
                      * @return MaxReplicateSetNum 最大分片数
+                     * 
                      */
                     uint64_t GetMaxReplicateSetNum() const;
 
                     /**
                      * 设置最大分片数
-                     * @param MaxReplicateSetNum 最大分片数
+                     * @param _maxReplicateSetNum 最大分片数
+                     * 
                      */
                     void SetMaxReplicateSetNum(const uint64_t& _maxReplicateSetNum);
 
                     /**
                      * 判断参数 MaxReplicateSetNum 是否已赋值
                      * @return MaxReplicateSetNum 是否已赋值
+                     * 
                      */
                     bool MaxReplicateSetNumHasBeenSet() const;
 
                     /**
                      * 获取最小分片从节点数
                      * @return MinReplicateSetNodeNum 最小分片从节点数
+                     * 
                      */
                     uint64_t GetMinReplicateSetNodeNum() const;
 
                     /**
                      * 设置最小分片从节点数
-                     * @param MinReplicateSetNodeNum 最小分片从节点数
+                     * @param _minReplicateSetNodeNum 最小分片从节点数
+                     * 
                      */
                     void SetMinReplicateSetNodeNum(const uint64_t& _minReplicateSetNodeNum);
 
                     /**
                      * 判断参数 MinReplicateSetNodeNum 是否已赋值
                      * @return MinReplicateSetNodeNum 是否已赋值
+                     * 
                      */
                     bool MinReplicateSetNodeNumHasBeenSet() const;
 
                     /**
                      * 获取最大分片从节点数
                      * @return MaxReplicateSetNodeNum 最大分片从节点数
+                     * 
                      */
                     uint64_t GetMaxReplicateSetNodeNum() const;
 
                     /**
                      * 设置最大分片从节点数
-                     * @param MaxReplicateSetNodeNum 最大分片从节点数
+                     * @param _maxReplicateSetNodeNum 最大分片从节点数
+                     * 
                      */
                     void SetMaxReplicateSetNodeNum(const uint64_t& _maxReplicateSetNodeNum);
 
                     /**
                      * 判断参数 MaxReplicateSetNodeNum 是否已赋值
                      * @return MaxReplicateSetNodeNum 是否已赋值
+                     * 
                      */
                     bool MaxReplicateSetNodeNumHasBeenSet() const;
 
                     /**
                      * 获取机器类型，取值：0-HIO，4-HIO10G
                      * @return MachineType 机器类型，取值：0-HIO，4-HIO10G
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置机器类型，取值：0-HIO，4-HIO10G
-                     * @param MachineType 机器类型，取值：0-HIO，4-HIO10G
+                     * @param _machineType 机器类型，取值：0-HIO，4-HIO10G
+                     * 
                      */
                     void SetMachineType(const std::string& _machineType);
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 

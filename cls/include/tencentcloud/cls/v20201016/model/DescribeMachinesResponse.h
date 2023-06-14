@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取机器状态信息组
                      * @return Machines 机器状态信息组
+                     * 
                      */
                     std::vector<MachineInfo> GetMachines() const;
 
                     /**
                      * 判断参数 Machines 是否已赋值
                      * @return Machines 是否已赋值
+                     * 
                      */
                     bool MachinesHasBeenSet() const;
 
                     /**
                      * 获取机器组是否开启自动升级功能
                      * @return AutoUpdate 机器组是否开启自动升级功能
+                     * 
                      */
                     int64_t GetAutoUpdate() const;
 
                     /**
                      * 判断参数 AutoUpdate 是否已赋值
                      * @return AutoUpdate 是否已赋值
+                     * 
                      */
                     bool AutoUpdateHasBeenSet() const;
 
                     /**
                      * 获取机器组自动升级功能预设开始时间
                      * @return UpdateStartTime 机器组自动升级功能预设开始时间
+                     * 
                      */
                     std::string GetUpdateStartTime() const;
 
                     /**
                      * 判断参数 UpdateStartTime 是否已赋值
                      * @return UpdateStartTime 是否已赋值
+                     * 
                      */
                     bool UpdateStartTimeHasBeenSet() const;
 
                     /**
                      * 获取机器组自动升级功能预设结束时间
                      * @return UpdateEndTime 机器组自动升级功能预设结束时间
+                     * 
                      */
                     std::string GetUpdateEndTime() const;
 
                     /**
                      * 判断参数 UpdateEndTime 是否已赋值
                      * @return UpdateEndTime 是否已赋值
+                     * 
                      */
                     bool UpdateEndTimeHasBeenSet() const;
 
                     /**
                      * 获取当前用户可用最新的Loglistener版本
                      * @return LatestAgentVersion 当前用户可用最新的Loglistener版本
+                     * 
                      */
                     std::string GetLatestAgentVersion() const;
 
                     /**
                      * 判断参数 LatestAgentVersion 是否已赋值
                      * @return LatestAgentVersion 是否已赋值
+                     * 
                      */
                     bool LatestAgentVersionHasBeenSet() const;
 
                     /**
                      * 获取是否开启服务日志
                      * @return ServiceLogging 是否开启服务日志
+                     * 
                      */
                     bool GetServiceLogging() const;
 
                     /**
                      * 判断参数 ServiceLogging 是否已赋值
                      * @return ServiceLogging 是否已赋值
+                     * 
                      */
                     bool ServiceLoggingHasBeenSet() const;
 

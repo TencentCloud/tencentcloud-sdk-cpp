@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取分析结果返回的KV数据对
                      * @return Data 分析结果返回的KV数据对
+                     * 
                      */
                     std::vector<LogItem> GetData() const;
 
                     /**
                      * 设置分析结果返回的KV数据对
-                     * @param Data 分析结果返回的KV数据对
+                     * @param _data 分析结果返回的KV数据对
+                     * 
                      */
                     void SetData(const std::vector<LogItem>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

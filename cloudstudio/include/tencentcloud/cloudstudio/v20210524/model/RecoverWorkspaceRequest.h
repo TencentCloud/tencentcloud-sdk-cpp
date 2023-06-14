@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return CloudStudioSessionTeam 无
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置无
-                     * @param CloudStudioSessionTeam 无
+                     * @param _cloudStudioSessionTeam 无
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SpaceKey 无
+                     * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置无
-                     * @param SpaceKey 无
+                     * @param _spaceKey 无
+                     * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
                     /**
                      * 判断参数 SpaceKey 是否已赋值
                      * @return SpaceKey 是否已赋值
+                     * 
                      */
                     bool SpaceKeyHasBeenSet() const;
 

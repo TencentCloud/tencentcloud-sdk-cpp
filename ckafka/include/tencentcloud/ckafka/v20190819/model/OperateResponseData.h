@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId FlowId11
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置FlowId11
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowId FlowId11
+                     * @param _flowId FlowId11
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteDTO RouteIdDto
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RouteDTO GetRouteDTO() const;
 
                     /**
                      * 设置RouteIdDto
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteDTO RouteIdDto
+                     * @param _routeDTO RouteIdDto
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteDTO(const RouteDTO& _routeDTO);
 
                     /**
                      * 判断参数 RouteDTO 是否已赋值
                      * @return RouteDTO 是否已赋值
+                     * 
                      */
                     bool RouteDTOHasBeenSet() const;
 

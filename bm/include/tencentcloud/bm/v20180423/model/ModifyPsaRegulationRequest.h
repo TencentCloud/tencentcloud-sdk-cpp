@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取预授权规则ID
                      * @return PsaId 预授权规则ID
+                     * 
                      */
                     std::string GetPsaId() const;
 
                     /**
                      * 设置预授权规则ID
-                     * @param PsaId 预授权规则ID
+                     * @param _psaId 预授权规则ID
+                     * 
                      */
                     void SetPsaId(const std::string& _psaId);
 
                     /**
                      * 判断参数 PsaId 是否已赋值
                      * @return PsaId 是否已赋值
+                     * 
                      */
                     bool PsaIdHasBeenSet() const;
 
                     /**
                      * 获取预授权规则别名
                      * @return PsaName 预授权规则别名
+                     * 
                      */
                     std::string GetPsaName() const;
 
                     /**
                      * 设置预授权规则别名
-                     * @param PsaName 预授权规则别名
+                     * @param _psaName 预授权规则别名
+                     * 
                      */
                     void SetPsaName(const std::string& _psaName);
 
                     /**
                      * 判断参数 PsaName 是否已赋值
                      * @return PsaName 是否已赋值
+                     * 
                      */
                     bool PsaNameHasBeenSet() const;
 
                     /**
                      * 获取维修中的实例上限
                      * @return RepairLimit 维修中的实例上限
+                     * 
                      */
                     uint64_t GetRepairLimit() const;
 
                     /**
                      * 设置维修中的实例上限
-                     * @param RepairLimit 维修中的实例上限
+                     * @param _repairLimit 维修中的实例上限
+                     * 
                      */
                     void SetRepairLimit(const uint64_t& _repairLimit);
 
                     /**
                      * 判断参数 RepairLimit 是否已赋值
                      * @return RepairLimit 是否已赋值
+                     * 
                      */
                     bool RepairLimitHasBeenSet() const;
 
                     /**
                      * 获取预授权规则备注
                      * @return PsaDescription 预授权规则备注
+                     * 
                      */
                     std::string GetPsaDescription() const;
 
                     /**
                      * 设置预授权规则备注
-                     * @param PsaDescription 预授权规则备注
+                     * @param _psaDescription 预授权规则备注
+                     * 
                      */
                     void SetPsaDescription(const std::string& _psaDescription);
 
                     /**
                      * 判断参数 PsaDescription 是否已赋值
                      * @return PsaDescription 是否已赋值
+                     * 
                      */
                     bool PsaDescriptionHasBeenSet() const;
 
                     /**
                      * 获取预授权规则关联故障类型ID列表
                      * @return TaskTypeIds 预授权规则关联故障类型ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetTaskTypeIds() const;
 
                     /**
                      * 设置预授权规则关联故障类型ID列表
-                     * @param TaskTypeIds 预授权规则关联故障类型ID列表
+                     * @param _taskTypeIds 预授权规则关联故障类型ID列表
+                     * 
                      */
                     void SetTaskTypeIds(const std::vector<uint64_t>& _taskTypeIds);
 
                     /**
                      * 判断参数 TaskTypeIds 是否已赋值
                      * @return TaskTypeIds 是否已赋值
+                     * 
                      */
                     bool TaskTypeIdsHasBeenSet() const;
 

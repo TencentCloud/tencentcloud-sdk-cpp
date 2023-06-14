@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductID 产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取固件版本
                      * @return FirmwareVersion 固件版本
+                     * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
                      * 设置固件版本
-                     * @param FirmwareVersion 固件版本
+                     * @param _firmwareVersion 固件版本
+                     * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
 
                     /**
                      * 判断参数 FirmwareVersion 是否已赋值
                      * @return FirmwareVersion 是否已赋值
+                     * 
                      */
                     bool FirmwareVersionHasBeenSet() const;
 

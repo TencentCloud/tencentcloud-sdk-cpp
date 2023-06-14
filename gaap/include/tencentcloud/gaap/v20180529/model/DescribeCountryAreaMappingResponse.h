@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取国家地区编码映射表。
                      * @return CountryAreaMappingList 国家地区编码映射表。
+                     * 
                      */
                     std::vector<CountryAreaMap> GetCountryAreaMappingList() const;
 
                     /**
                      * 判断参数 CountryAreaMappingList 是否已赋值
                      * @return CountryAreaMappingList 是否已赋值
+                     * 
                      */
                     bool CountryAreaMappingListHasBeenSet() const;
 

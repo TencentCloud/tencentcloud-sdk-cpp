@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。
                      * @return LoadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID。
-                     * @param LoadBalancerId 负载均衡实例ID。
+                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器ID。
                      * @return ListenerId 负载均衡监听器ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器ID。
-                     * @param ListenerId 负载均衡监听器ID。
+                     * @param _listenerId 负载均衡监听器ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取要修改端口的后端服务列表。
                      * @return Targets 要修改端口的后端服务列表。
+                     * 
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
                      * 设置要修改端口的后端服务列表。
-                     * @param Targets 要修改端口的后端服务列表。
+                     * @param _targets 要修改端口的后端服务列表。
+                     * 
                      */
                     void SetTargets(const std::vector<Target>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
                     /**
                      * 获取后端服务绑定到监听器或转发规则的新端口。
                      * @return NewPort 后端服务绑定到监听器或转发规则的新端口。
+                     * 
                      */
                     int64_t GetNewPort() const;
 
                     /**
                      * 设置后端服务绑定到监听器或转发规则的新端口。
-                     * @param NewPort 后端服务绑定到监听器或转发规则的新端口。
+                     * @param _newPort 后端服务绑定到监听器或转发规则的新端口。
+                     * 
                      */
                     void SetNewPort(const int64_t& _newPort);
 
                     /**
                      * 判断参数 NewPort 是否已赋值
                      * @return NewPort 是否已赋值
+                     * 
                      */
                     bool NewPortHasBeenSet() const;
 
                     /**
                      * 获取转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。
                      * @return LocationId 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。
-                     * @param LocationId 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。
+                     * @param _locationId 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取目标规则的域名，提供LocationId参数时本参数不生效。
                      * @return Domain 目标规则的域名，提供LocationId参数时本参数不生效。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置目标规则的域名，提供LocationId参数时本参数不生效。
-                     * @param Domain 目标规则的域名，提供LocationId参数时本参数不生效。
+                     * @param _domain 目标规则的域名，提供LocationId参数时本参数不生效。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取目标规则的URL，提供LocationId参数时本参数不生效。
                      * @return Url 目标规则的URL，提供LocationId参数时本参数不生效。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置目标规则的URL，提供LocationId参数时本参数不生效。
-                     * @param Url 目标规则的URL，提供LocationId参数时本参数不生效。
+                     * @param _url 目标规则的URL，提供LocationId参数时本参数不生效。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

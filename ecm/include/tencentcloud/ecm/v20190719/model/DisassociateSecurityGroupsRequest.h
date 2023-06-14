@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。
                      * @return SecurityGroupIds 要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。
-                     * @param SecurityGroupIds 要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。
+                     * @param _securityGroupIds 要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。
                      * @return InstanceIds 被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。
-                     * @param InstanceIds 被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。
+                     * @param _instanceIds 被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取记录数
                      * @return TotalCount 记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SearchFileBySidResult 某会话的文件操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SearchFileBySidResult> GetSearchFileBySidResult() const;
 
                     /**
                      * 判断参数 SearchFileBySidResult 是否已赋值
                      * @return SearchFileBySidResult 是否已赋值
+                     * 
                      */
                     bool SearchFileBySidResultHasBeenSet() const;
 

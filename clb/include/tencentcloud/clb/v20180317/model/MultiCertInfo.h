@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
                      * @return SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * 
                      */
                     std::string GetSSLMode() const;
 
                     /**
                      * 设置认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
-                     * @param SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * @param _sSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * 
                      */
                     void SetSSLMode(const std::string& _sSLMode);
 
                     /**
                      * 判断参数 SSLMode 是否已赋值
                      * @return SSLMode 是否已赋值
+                     * 
                      */
                     bool SSLModeHasBeenSet() const;
 
                     /**
                      * 获取监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。
                      * @return CertList 监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。
+                     * 
                      */
                     std::vector<CertInfo> GetCertList() const;
 
                     /**
                      * 设置监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。
-                     * @param CertList 监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。
+                     * @param _certList 监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。
+                     * 
                      */
                     void SetCertList(const std::vector<CertInfo>& _certList);
 
                     /**
                      * 判断参数 CertList 是否已赋值
                      * @return CertList 是否已赋值
+                     * 
                      */
                     bool CertListHasBeenSet() const;
 

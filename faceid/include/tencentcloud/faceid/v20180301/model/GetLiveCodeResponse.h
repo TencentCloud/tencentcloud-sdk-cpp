@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取数字验证码，如：1234
                      * @return LiveCode 数字验证码，如：1234
+                     * 
                      */
                     std::string GetLiveCode() const;
 
                     /**
                      * 判断参数 LiveCode 是否已赋值
                      * @return LiveCode 是否已赋值
+                     * 
                      */
                     bool LiveCodeHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取申请单id
                      * @return ApplicationId 申请单id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置申请单id
-                     * @param ApplicationId 申请单id
+                     * @param _applicationId 申请单id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取申请类型
                      * @return ApplicationType 申请类型
+                     * 
                      */
                     int64_t GetApplicationType() const;
 
                     /**
                      * 设置申请类型
-                     * @param ApplicationType 申请类型
+                     * @param _applicationType 申请类型
+                     * 
                      */
                     void SetApplicationType(const int64_t& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationStatus 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetApplicationStatus() const;
 
                     /**
                      * 设置处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationStatus 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
+                     * @param _applicationStatus 处理状态 0-待审核 1-已经审核并提交任务 2-已驳回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationStatus(const int64_t& _applicationStatus);
 
                     /**
                      * 判断参数 ApplicationStatus 是否已赋值
                      * @return ApplicationStatus 是否已赋值
+                     * 
                      */
                     bool ApplicationStatusHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 已提交的任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置已提交的任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 已提交的任务Id
+                     * @param _taskId 已提交的任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

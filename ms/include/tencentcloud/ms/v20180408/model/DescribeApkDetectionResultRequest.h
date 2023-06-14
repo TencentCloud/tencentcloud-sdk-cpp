@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取软件包的下载链接
                      * @return ApkUrl 软件包的下载链接
+                     * 
                      */
                     std::string GetApkUrl() const;
 
                     /**
                      * 设置软件包的下载链接
-                     * @param ApkUrl 软件包的下载链接
+                     * @param _apkUrl 软件包的下载链接
+                     * 
                      */
                     void SetApkUrl(const std::string& _apkUrl);
 
                     /**
                      * 判断参数 ApkUrl 是否已赋值
                      * @return ApkUrl 是否已赋值
+                     * 
                      */
                     bool ApkUrlHasBeenSet() const;
 
                     /**
                      * 获取软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。
                      * @return ApkMd5 软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。
+                     * 
                      */
                     std::string GetApkMd5() const;
 
                     /**
                      * 设置软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。
-                     * @param ApkMd5 软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。
+                     * @param _apkMd5 软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。
+                     * 
                      */
                     void SetApkMd5(const std::string& _apkMd5);
 
                     /**
                      * 判断参数 ApkMd5 是否已赋值
                      * @return ApkMd5 是否已赋值
+                     * 
                      */
                     bool ApkMd5HasBeenSet() const;
 

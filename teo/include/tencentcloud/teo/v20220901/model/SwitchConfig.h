@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return WebSwitch Web类型的安全总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不影响DDoS与Bot的开关。
+                     * 
                      */
                     std::string GetWebSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置Web类型的安全总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不影响DDoS与Bot的开关。
-                     * @param WebSwitch Web类型的安全总开关，取值有：
+                     * @param _webSwitch Web类型的安全总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不影响DDoS与Bot的开关。
+                     * 
                      */
                     void SetWebSwitch(const std::string& _webSwitch);
 
                     /**
                      * 判断参数 WebSwitch 是否已赋值
                      * @return WebSwitch 是否已赋值
+                     * 
                      */
                     bool WebSwitchHasBeenSet() const;
 

@@ -51,6 +51,7 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     std::string GetGatewayId() const;
 
@@ -59,70 +60,81 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
-                     * @param GatewayId 网关实例ID，目前我们支持的网关实例类型有，
+                     * @param _gatewayId 网关实例ID，目前我们支持的网关实例类型有，
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取限流的云服务器内网IP。
                      * @return IpAddresses 限流的云服务器内网IP。
+                     * 
                      */
                     std::vector<std::string> GetIpAddresses() const;
 
                     /**
                      * 设置限流的云服务器内网IP。
-                     * @param IpAddresses 限流的云服务器内网IP。
+                     * @param _ipAddresses 限流的云服务器内网IP。
+                     * 
                      */
                     void SetIpAddresses(const std::vector<std::string>& _ipAddresses);
 
                     /**
                      * 判断参数 IpAddresses 是否已赋值
                      * @return IpAddresses 是否已赋值
+                     * 
                      */
                     bool IpAddressesHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

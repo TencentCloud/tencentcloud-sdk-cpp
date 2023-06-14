@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取申请对账文件的任务ID。
                      * @return ApplyFileId 申请对账文件的任务ID。
+                     * 
                      */
                     std::string GetApplyFileId() const;
 
                     /**
                      * 设置申请对账文件的任务ID。
-                     * @param ApplyFileId 申请对账文件的任务ID。
+                     * @param _applyFileId 申请对账文件的任务ID。
+                     * 
                      */
                     void SetApplyFileId(const std::string& _applyFileId);
 
                     /**
                      * 判断参数 ApplyFileId 是否已赋值
                      * @return ApplyFileId 是否已赋值
+                     * 
                      */
                     bool ApplyFileIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -80,17 +84,19 @@ __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
-                     * @param MidasEnvironment 环境名。
+                     * @param _midasEnvironment 环境名。
 __release__: 现网环境
 __sandbox__: 沙箱环境
 __development__: 开发环境
 _缺省: release_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

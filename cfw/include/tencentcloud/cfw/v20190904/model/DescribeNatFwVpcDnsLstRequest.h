@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取natfw 防火墙实例id
                      * @return NatFwInsId natfw 防火墙实例id
+                     * 
                      */
                     std::string GetNatFwInsId() const;
 
                     /**
                      * 设置natfw 防火墙实例id
-                     * @param NatFwInsId natfw 防火墙实例id
+                     * @param _natFwInsId natfw 防火墙实例id
+                     * 
                      */
                     void SetNatFwInsId(const std::string& _natFwInsId);
 
                     /**
                      * 判断参数 NatFwInsId 是否已赋值
                      * @return NatFwInsId 是否已赋值
+                     * 
                      */
                     bool NatFwInsIdHasBeenSet() const;
 
                     /**
                      * 获取natfw 过滤，以','分隔
                      * @return NatInsIdFilter natfw 过滤，以','分隔
+                     * 
                      */
                     std::string GetNatInsIdFilter() const;
 
                     /**
                      * 设置natfw 过滤，以','分隔
-                     * @param NatInsIdFilter natfw 过滤，以','分隔
+                     * @param _natInsIdFilter natfw 过滤，以','分隔
+                     * 
                      */
                     void SetNatInsIdFilter(const std::string& _natInsIdFilter);
 
                     /**
                      * 判断参数 NatInsIdFilter 是否已赋值
                      * @return NatInsIdFilter 是否已赋值
+                     * 
                      */
                     bool NatInsIdFilterHasBeenSet() const;
 
                     /**
                      * 获取分页页数
                      * @return Offset 分页页数
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页页数
-                     * @param Offset 分页页数
+                     * @param _offset 分页页数
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页最多个数
                      * @return Limit 每页最多个数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页最多个数
-                     * @param Limit 每页最多个数
+                     * @param _limit 每页最多个数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

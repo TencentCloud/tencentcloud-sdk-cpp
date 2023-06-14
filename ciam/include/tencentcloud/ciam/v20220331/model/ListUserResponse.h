@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pageable 分页对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Pageable GetPageable() const;
 
                     /**
                      * 判断参数 Pageable 是否已赋值
                      * @return Pageable 是否已赋值
+                     * 
                      */
                     bool PageableHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 用户列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<User> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

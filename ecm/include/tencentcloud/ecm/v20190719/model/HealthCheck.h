@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthSwitch 是否开启健康检查：1（开启）、0（关闭）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHealthSwitch() const;
 
                     /**
                      * 设置是否开启健康检查：1（开启）、0（关闭）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HealthSwitch 是否开启健康检查：1（开启）、0（关闭）
+                     * @param _healthSwitch 是否开启健康检查：1（开启）、0（关闭）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthSwitch(const int64_t& _healthSwitch);
 
                     /**
                      * 判断参数 HealthSwitch 是否已赋值
                      * @return HealthSwitch 是否已赋值
+                     * 
                      */
                     bool HealthSwitchHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeOut 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeOut() const;
 
                     /**
                      * 设置健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeOut 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
+                     * @param _timeOut 健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeOut(const int64_t& _timeOut);
 
                     /**
                      * 判断参数 TimeOut 是否已赋值
                      * @return TimeOut 是否已赋值
+                     * 
                      */
                     bool TimeOutHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntervalTime 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIntervalTime() const;
 
                     /**
                      * 设置健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntervalTime 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * @param _intervalTime 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntervalTime(const int64_t& _intervalTime);
 
                     /**
                      * 判断参数 IntervalTime 是否已赋值
                      * @return IntervalTime 是否已赋值
+                     * 
                      */
                     bool IntervalTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthNum 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHealthNum() const;
 
                     /**
                      * 设置健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HealthNum 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
+                     * @param _healthNum 健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthNum(const int64_t& _healthNum);
 
                     /**
                      * 判断参数 HealthNum 是否已赋值
                      * @return HealthNum 是否已赋值
+                     * 
                      */
                     bool HealthNumHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnHealthyNum 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnHealthyNum() const;
 
                     /**
                      * 设置不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnHealthyNum 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
+                     * @param _unHealthyNum 不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnHealthyNum(const int64_t& _unHealthyNum);
 
                     /**
                      * 判断参数 UnHealthyNum 是否已赋值
                      * @return UnHealthyNum 是否已赋值
+                     * 
                      */
                     bool UnHealthyNumHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPort 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCheckPort() const;
 
                     /**
                      * 设置自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckPort 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。
+                     * @param _checkPort 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckPort(const int64_t& _checkPort);
 
                     /**
                      * 判断参数 CheckPort 是否已赋值
                      * @return CheckPort 是否已赋值
+                     * 
                      */
                     bool CheckPortHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContextType 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContextType() const;
 
                     /**
                      * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContextType 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。
+                     * @param _contextType 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContextType(const std::string& _contextType);
 
                     /**
                      * 判断参数 ContextType 是否已赋值
                      * @return ContextType 是否已赋值
+                     * 
                      */
                     bool ContextTypeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSendContext() const;
 
                     /**
                      * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SendContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。
+                     * @param _sendContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSendContext(const std::string& _sendContext);
 
                     /**
                      * 判断参数 SendContext 是否已赋值
                      * @return SendContext 是否已赋值
+                     * 
                      */
                     bool SendContextHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecvContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecvContext() const;
 
                     /**
                      * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecvContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。
+                     * @param _recvContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecvContext(const std::string& _recvContext);
 
                     /**
                      * 判断参数 RecvContext 是否已赋值
                      * @return RecvContext 是否已赋值
+                     * 
                      */
                     bool RecvContextHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckType 自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckType() const;
 
                     /**
                      * 设置自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckType 自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+                     * @param _checkType 自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckType(const std::string& _checkType);
 
                     /**
                      * 判断参数 CheckType 是否已赋值
                      * @return CheckType 是否已赋值
+                     * 
                      */
                     bool CheckTypeHasBeenSet() const;
 

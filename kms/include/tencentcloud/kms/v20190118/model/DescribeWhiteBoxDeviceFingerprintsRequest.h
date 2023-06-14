@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取白盒密钥ID
                      * @return KeyId 白盒密钥ID
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置白盒密钥ID
-                     * @param KeyId 白盒密钥ID
+                     * @param _keyId 白盒密钥ID
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

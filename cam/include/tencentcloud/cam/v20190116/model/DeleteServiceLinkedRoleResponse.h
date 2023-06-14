@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取删除任务ID，可用于检查删除服务相关角色状态。
                      * @return DeletionTaskId 删除任务ID，可用于检查删除服务相关角色状态。
+                     * 
                      */
                     std::string GetDeletionTaskId() const;
 
                     /**
                      * 判断参数 DeletionTaskId 是否已赋值
                      * @return DeletionTaskId 是否已赋值
+                     * 
                      */
                     bool DeletionTaskIdHasBeenSet() const;
 

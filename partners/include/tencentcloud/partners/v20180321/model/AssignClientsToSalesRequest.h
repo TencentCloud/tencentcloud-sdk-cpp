@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取代客/申请中代客uin列表，最大50条
                      * @return ClientUins 代客/申请中代客uin列表，最大50条
+                     * 
                      */
                     std::vector<std::string> GetClientUins() const;
 
                     /**
                      * 设置代客/申请中代客uin列表，最大50条
-                     * @param ClientUins 代客/申请中代客uin列表，最大50条
+                     * @param _clientUins 代客/申请中代客uin列表，最大50条
+                     * 
                      */
                     void SetClientUins(const std::vector<std::string>& _clientUins);
 
                     /**
                      * 判断参数 ClientUins 是否已赋值
                      * @return ClientUins 是否已赋值
+                     * 
                      */
                     bool ClientUinsHasBeenSet() const;
 
                     /**
                      * 获取业务员uin
                      * @return SalesUin 业务员uin
+                     * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员uin
-                     * @param SalesUin 业务员uin
+                     * @param _salesUin 业务员uin
+                     * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
 
                     /**
                      * 判断参数 SalesUin 是否已赋值
                      * @return SalesUin 是否已赋值
+                     * 
                      */
                     bool SalesUinHasBeenSet() const;
 
                     /**
                      * 获取代客类型:normal-代客 apply-申请中代客
                      * @return AssignClientStatus 代客类型:normal-代客 apply-申请中代客
+                     * 
                      */
                     std::string GetAssignClientStatus() const;
 
                     /**
                      * 设置代客类型:normal-代客 apply-申请中代客
-                     * @param AssignClientStatus 代客类型:normal-代客 apply-申请中代客
+                     * @param _assignClientStatus 代客类型:normal-代客 apply-申请中代客
+                     * 
                      */
                     void SetAssignClientStatus(const std::string& _assignClientStatus);
 
                     /**
                      * 判断参数 AssignClientStatus 是否已赋值
                      * @return AssignClientStatus 是否已赋值
+                     * 
                      */
                     bool AssignClientStatusHasBeenSet() const;
 
                     /**
                      * 获取操作类型:assign-执行分派 cancel-取消分派
                      * @return AssignActionType 操作类型:assign-执行分派 cancel-取消分派
+                     * 
                      */
                     std::string GetAssignActionType() const;
 
                     /**
                      * 设置操作类型:assign-执行分派 cancel-取消分派
-                     * @param AssignActionType 操作类型:assign-执行分派 cancel-取消分派
+                     * @param _assignActionType 操作类型:assign-执行分派 cancel-取消分派
+                     * 
                      */
                     void SetAssignActionType(const std::string& _assignActionType);
 
                     /**
                      * 判断参数 AssignActionType 是否已赋值
                      * @return AssignActionType 是否已赋值
+                     * 
                      */
                     bool AssignActionTypeHasBeenSet() const;
 

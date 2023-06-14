@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @return After <li>大于等于此时间（起始时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     std::string GetAfter() const;
 
                     /**
                      * 设置<li>大于等于此时间（起始时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @param After <li>大于等于此时间（起始时间）。</li>
+                     * @param _after <li>大于等于此时间（起始时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     void SetAfter(const std::string& _after);
 
                     /**
                      * 判断参数 After 是否已赋值
                      * @return After 是否已赋值
+                     * 
                      */
                     bool AfterHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @return Before <li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     std::string GetBefore() const;
 
                     /**
                      * 设置<li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @param Before <li>小于此时间（结束时间）。</li>
+                     * @param _before <li>小于此时间（结束时间）。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     void SetBefore(const std::string& _before);
 
                     /**
                      * 判断参数 Before 是否已赋值
                      * @return Before 是否已赋值
+                     * 
                      */
                     bool BeforeHasBeenSet() const;
 

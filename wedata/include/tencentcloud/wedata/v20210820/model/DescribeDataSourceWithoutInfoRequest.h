@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取1
                      * @return OrderFields 1
+                     * 
                      */
                     std::vector<OrderField> GetOrderFields() const;
 
                     /**
                      * 设置1
-                     * @param OrderFields 1
+                     * @param _orderFields 1
+                     * 
                      */
                     void SetOrderFields(const std::vector<OrderField>& _orderFields);
 
                     /**
                      * 判断参数 OrderFields 是否已赋值
                      * @return OrderFields 是否已赋值
+                     * 
                      */
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
                      * 获取1
                      * @return Filters 1
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置1
-                     * @param Filters 1
+                     * @param _filters 1
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

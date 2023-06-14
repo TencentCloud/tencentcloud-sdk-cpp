@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取RO 实例 ID。
                      * @return InstanceId RO 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置RO 实例 ID。
-                     * @param InstanceId RO 实例 ID。
+                     * @param _instanceId RO 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取权重值。取值范围为 [0, 100]。
                      * @return Weight 权重值。取值范围为 [0, 100]。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重值。取值范围为 [0, 100]。
-                     * @param Weight 权重值。取值范围为 [0, 100]。
+                     * @param _weight 权重值。取值范围为 [0, 100]。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

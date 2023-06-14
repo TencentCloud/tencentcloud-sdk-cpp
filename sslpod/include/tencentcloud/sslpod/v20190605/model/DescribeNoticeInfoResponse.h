@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通知信息结果
                      * @return Data 通知信息结果
+                     * 
                      */
                     NoticeInfoResult GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

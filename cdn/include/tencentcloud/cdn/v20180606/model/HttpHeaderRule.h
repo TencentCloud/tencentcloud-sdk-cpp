@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
                      * @return HeaderMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
+                     * 
                      */
                     std::string GetHeaderMode() const;
 
                     /**
                      * 设置http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
-                     * @param HeaderMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
+                     * @param _headerMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
+                     * 
                      */
                     void SetHeaderMode(const std::string& _headerMode);
 
                     /**
                      * 判断参数 HeaderMode 是否已赋值
                      * @return HeaderMode 是否已赋值
+                     * 
                      */
                     bool HeaderModeHasBeenSet() const;
 
                     /**
                      * 获取http头部名称。
                      * @return HeaderName http头部名称。
+                     * 
                      */
                     std::string GetHeaderName() const;
 
                     /**
                      * 设置http头部名称。
-                     * @param HeaderName http头部名称。
+                     * @param _headerName http头部名称。
+                     * 
                      */
                     void SetHeaderName(const std::string& _headerName);
 
                     /**
                      * 判断参数 HeaderName 是否已赋值
                      * @return HeaderName 是否已赋值
+                     * 
                      */
                     bool HeaderNameHasBeenSet() const;
 
                     /**
                      * 获取http头部值。
                      * @return HeaderValue http头部值。
+                     * 
                      */
                     std::string GetHeaderValue() const;
 
                     /**
                      * 设置http头部值。
-                     * @param HeaderValue http头部值。
+                     * @param _headerValue http头部值。
+                     * 
                      */
                     void SetHeaderValue(const std::string& _headerValue);
 
                     /**
                      * 判断参数 HeaderValue 是否已赋值
                      * @return HeaderValue 是否已赋值
+                     * 
                      */
                     bool HeaderValueHasBeenSet() const;
 

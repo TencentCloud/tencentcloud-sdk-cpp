@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Eyebrow 眉毛的遮挡分数[0,100]，分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEyebrow() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置眉毛的遮挡分数[0,100]，分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Eyebrow 眉毛的遮挡分数[0,100]，分数越高遮挡越少。 
+                     * @param _eyebrow 眉毛的遮挡分数[0,100]，分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEyebrow(const int64_t& _eyebrow);
 
                     /**
                      * 判断参数 Eyebrow 是否已赋值
                      * @return Eyebrow 是否已赋值
+                     * 
                      */
                     bool EyebrowHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return Eye 眼睛的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEye() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置眼睛的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Eye 眼睛的遮挡分数[0,100],分数越高遮挡越少。 
+                     * @param _eye 眼睛的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,80]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEye(const int64_t& _eye);
 
                     /**
                      * 判断参数 Eye 是否已赋值
                      * @return Eye 是否已赋值
+                     * 
                      */
                     bool EyeHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
                      * @return Nose 鼻子的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,60]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNose() const;
 
@@ -112,15 +119,17 @@ namespace TencentCloud
                      * 设置鼻子的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,60]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nose 鼻子的遮挡分数[0,100],分数越高遮挡越少。 
+                     * @param _nose 鼻子的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,60]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNose(const int64_t& _nose);
 
                     /**
                      * 判断参数 Nose 是否已赋值
                      * @return Nose 是否已赋值
+                     * 
                      */
                     bool NoseHasBeenSet() const;
 
@@ -131,6 +140,7 @@ namespace TencentCloud
                      * @return Cheek 脸颊的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCheek() const;
 
@@ -138,15 +148,17 @@ namespace TencentCloud
                      * 设置脸颊的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cheek 脸颊的遮挡分数[0,100],分数越高遮挡越少。 
+                     * @param _cheek 脸颊的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheek(const int64_t& _cheek);
 
                     /**
                      * 判断参数 Cheek 是否已赋值
                      * @return Cheek 是否已赋值
+                     * 
                      */
                     bool CheekHasBeenSet() const;
 
@@ -157,6 +169,7 @@ namespace TencentCloud
                      * @return Mouth 嘴巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,50]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMouth() const;
 
@@ -164,15 +177,17 @@ namespace TencentCloud
                      * 设置嘴巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,50]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mouth 嘴巴的遮挡分数[0,100],分数越高遮挡越少。 
+                     * @param _mouth 嘴巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,50]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMouth(const int64_t& _mouth);
 
                     /**
                      * 判断参数 Mouth 是否已赋值
                      * @return Mouth 是否已赋值
+                     * 
                      */
                     bool MouthHasBeenSet() const;
 
@@ -183,6 +198,7 @@ namespace TencentCloud
                      * @return Chin 下巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChin() const;
 
@@ -190,15 +206,17 @@ namespace TencentCloud
                      * 设置下巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Chin 下巴的遮挡分数[0,100],分数越高遮挡越少。 
+                     * @param _chin 下巴的遮挡分数[0,100],分数越高遮挡越少。 
 参考范围：[0,70]表示发生遮挡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChin(const int64_t& _chin);
 
                     /**
                      * 判断参数 Chin 是否已赋值
                      * @return Chin 是否已赋值
+                     * 
                      */
                     bool ChinHasBeenSet() const;
 

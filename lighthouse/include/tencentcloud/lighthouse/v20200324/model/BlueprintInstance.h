@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像信息。
                      * @return Blueprint 镜像信息。
+                     * 
                      */
                     Blueprint GetBlueprint() const;
 
                     /**
                      * 设置镜像信息。
-                     * @param Blueprint 镜像信息。
+                     * @param _blueprint 镜像信息。
+                     * 
                      */
                     void SetBlueprint(const Blueprint& _blueprint);
 
                     /**
                      * 判断参数 Blueprint 是否已赋值
                      * @return Blueprint 是否已赋值
+                     * 
                      */
                     bool BlueprintHasBeenSet() const;
 
                     /**
                      * 获取软件列表。
                      * @return SoftwareSet 软件列表。
+                     * 
                      */
                     std::vector<Software> GetSoftwareSet() const;
 
                     /**
                      * 设置软件列表。
-                     * @param SoftwareSet 软件列表。
+                     * @param _softwareSet 软件列表。
+                     * 
                      */
                     void SetSoftwareSet(const std::vector<Software>& _softwareSet);
 
                     /**
                      * 判断参数 SoftwareSet 是否已赋值
                      * @return SoftwareSet 是否已赋值
+                     * 
                      */
                     bool SoftwareSetHasBeenSet() const;
 
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

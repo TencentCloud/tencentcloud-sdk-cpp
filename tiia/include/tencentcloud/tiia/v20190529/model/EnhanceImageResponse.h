@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取增强后图片的base64编码。
                      * @return EnhancedImage 增强后图片的base64编码。
+                     * 
                      */
                     std::string GetEnhancedImage() const;
 
                     /**
                      * 判断参数 EnhancedImage 是否已赋值
                      * @return EnhancedImage 是否已赋值
+                     * 
                      */
                     bool EnhancedImageHasBeenSet() const;
 

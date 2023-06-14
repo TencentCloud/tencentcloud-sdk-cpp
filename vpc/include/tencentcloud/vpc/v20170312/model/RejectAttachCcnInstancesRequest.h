@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取CCN实例ID。形如：ccn-f49l6u0z。
                      * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置CCN实例ID。形如：ccn-f49l6u0z。
-                     * @param CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取拒绝关联实例列表。
                      * @return Instances 拒绝关联实例列表。
+                     * 
                      */
                     std::vector<CcnInstance> GetInstances() const;
 
                     /**
                      * 设置拒绝关联实例列表。
-                     * @param Instances 拒绝关联实例列表。
+                     * @param _instances 拒绝关联实例列表。
+                     * 
                      */
                     void SetInstances(const std::vector<CcnInstance>& _instances);
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取交易结果码
                      * @return Code 交易结果码
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置交易结果码
-                     * @param Code 交易结果码
+                     * @param _code 交易结果码
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeMessage 交易结果码含义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeMessage() const;
 
                     /**
                      * 设置交易结果码含义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeMessage 交易结果码含义
+                     * @param _codeMessage 交易结果码含义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeMessage(const std::string& _codeMessage);
 
                     /**
                      * 判断参数 CodeMessage 是否已赋值
                      * @return CodeMessage 是否已赋值
+                     * 
                      */
                     bool CodeMessageHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxId 交易ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTxId() const;
 
                     /**
                      * 设置交易ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TxId 交易ID
+                     * @param _txId 交易ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTxId(const std::string& _txId);
 
                     /**
                      * 判断参数 TxId 是否已赋值
                      * @return TxId 是否已赋值
+                     * 
                      */
                     bool TxIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GasUsed Gas使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGasUsed() const;
 
                     /**
                      * 设置Gas使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GasUsed Gas使用量
+                     * @param _gasUsed Gas使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGasUsed(const int64_t& _gasUsed);
 
                     /**
                      * 判断参数 GasUsed 是否已赋值
                      * @return GasUsed 是否已赋值
+                     * 
                      */
                     bool GasUsedHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 合约返回消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置合约返回消息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 合约返回消息
+                     * @param _message 合约返回消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 合约函数返回，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置合约函数返回，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 合约函数返回，base64编码
+                     * @param _result 合约函数返回，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

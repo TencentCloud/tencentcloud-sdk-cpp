@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取应用Id。
                      * @return SdkAppId 应用Id。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户Id。
                      * @return UserId 用户Id。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户昵称。
                      * @return Name 用户昵称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户头像Url。
                      * @return Avatar 用户头像Url。
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取安全策略ID
                      * @return PolicyId 安全策略ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全策略ID
-                     * @param PolicyId 安全策略ID
+                     * @param _policyId 安全策略ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

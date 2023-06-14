@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取已接入普通主机数量
                      * @return Count 已接入普通主机数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置已接入普通主机数量
-                     * @param Count 已接入普通主机数量
+                     * @param _count 已接入普通主机数量
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取已接入超级节点数量
                      * @return SuperNodeCount 已接入超级节点数量
+                     * 
                      */
                     uint64_t GetSuperNodeCount() const;
 
                     /**
                      * 设置已接入超级节点数量
-                     * @param SuperNodeCount 已接入超级节点数量
+                     * @param _superNodeCount 已接入超级节点数量
+                     * 
                      */
                     void SetSuperNodeCount(const uint64_t& _superNodeCount);
 
                     /**
                      * 判断参数 SuperNodeCount 是否已赋值
                      * @return SuperNodeCount 是否已赋值
+                     * 
                      */
                     bool SuperNodeCountHasBeenSet() const;
 
                     /**
                      * 获取是否已接入(true:已接入 false:未接入)
                      * @return IsJoined 是否已接入(true:已接入 false:未接入)
+                     * 
                      */
                     bool GetIsJoined() const;
 
                     /**
                      * 设置是否已接入(true:已接入 false:未接入)
-                     * @param IsJoined 是否已接入(true:已接入 false:未接入)
+                     * @param _isJoined 是否已接入(true:已接入 false:未接入)
+                     * 
                      */
                     void SetIsJoined(const bool& _isJoined);
 
                     /**
                      * 判断参数 IsJoined 是否已赋值
                      * @return IsJoined 是否已赋值
+                     * 
                      */
                     bool IsJoinedHasBeenSet() const;
 
@@ -111,6 +120,7 @@ k8sApi: "k8s_api"
 容器启动: "container_launch"
 k8sApi: "k8s_api"
 )
+                     * 
                      */
                     std::string GetLogType() const;
 
@@ -120,17 +130,19 @@ k8sApi: "k8s_api"
 容器启动: "container_launch"
 k8sApi: "k8s_api"
 )
-                     * @param LogType 日志类型(
+                     * @param _logType 日志类型(
 容器bash:  "container_bash"
 容器启动: "container_launch"
 k8sApi: "k8s_api"
 )
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 

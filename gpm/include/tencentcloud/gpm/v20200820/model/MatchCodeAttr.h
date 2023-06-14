@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchCode 匹配code
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配code
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MatchCode 匹配code
+                     * @param _matchCode 匹配code
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 

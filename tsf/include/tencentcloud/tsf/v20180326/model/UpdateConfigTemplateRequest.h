@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取配置模板id
                      * @return ConfigTemplateId 配置模板id
+                     * 
                      */
                     std::string GetConfigTemplateId() const;
 
                     /**
                      * 设置配置模板id
-                     * @param ConfigTemplateId 配置模板id
+                     * @param _configTemplateId 配置模板id
+                     * 
                      */
                     void SetConfigTemplateId(const std::string& _configTemplateId);
 
                     /**
                      * 判断参数 ConfigTemplateId 是否已赋值
                      * @return ConfigTemplateId 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取配置模板名称
                      * @return ConfigTemplateName 配置模板名称
+                     * 
                      */
                     std::string GetConfigTemplateName() const;
 
                     /**
                      * 设置配置模板名称
-                     * @param ConfigTemplateName 配置模板名称
+                     * @param _configTemplateName 配置模板名称
+                     * 
                      */
                     void SetConfigTemplateName(const std::string& _configTemplateName);
 
                     /**
                      * 判断参数 ConfigTemplateName 是否已赋值
                      * @return ConfigTemplateName 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取配置模板对应的微服务框架
                      * @return ConfigTemplateType 配置模板对应的微服务框架
+                     * 
                      */
                     std::string GetConfigTemplateType() const;
 
                     /**
                      * 设置配置模板对应的微服务框架
-                     * @param ConfigTemplateType 配置模板对应的微服务框架
+                     * @param _configTemplateType 配置模板对应的微服务框架
+                     * 
                      */
                     void SetConfigTemplateType(const std::string& _configTemplateType);
 
                     /**
                      * 判断参数 ConfigTemplateType 是否已赋值
                      * @return ConfigTemplateType 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateTypeHasBeenSet() const;
 
                     /**
                      * 获取配置模板数据
                      * @return ConfigTemplateValue 配置模板数据
+                     * 
                      */
                     std::string GetConfigTemplateValue() const;
 
                     /**
                      * 设置配置模板数据
-                     * @param ConfigTemplateValue 配置模板数据
+                     * @param _configTemplateValue 配置模板数据
+                     * 
                      */
                     void SetConfigTemplateValue(const std::string& _configTemplateValue);
 
                     /**
                      * 判断参数 ConfigTemplateValue 是否已赋值
                      * @return ConfigTemplateValue 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateValueHasBeenSet() const;
 
                     /**
                      * 获取配置模板描述
                      * @return ConfigTemplateDesc 配置模板描述
+                     * 
                      */
                     std::string GetConfigTemplateDesc() const;
 
                     /**
                      * 设置配置模板描述
-                     * @param ConfigTemplateDesc 配置模板描述
+                     * @param _configTemplateDesc 配置模板描述
+                     * 
                      */
                     void SetConfigTemplateDesc(const std::string& _configTemplateDesc);
 
                     /**
                      * 判断参数 ConfigTemplateDesc 是否已赋值
                      * @return ConfigTemplateDesc 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateDescHasBeenSet() const;
 

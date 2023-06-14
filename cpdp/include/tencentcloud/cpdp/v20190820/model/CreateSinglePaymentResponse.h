@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取错误码
                      * @return ErrCode 错误码
+                     * 
                      */
                     std::string GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取响应消息
                      * @return ErrMessage 响应消息
+                     * 
                      */
                     std::string GetErrMessage() const;
 
                     /**
                      * 判断参数 ErrMessage 是否已赋值
                      * @return ErrMessage 是否已赋值
+                     * 
                      */
                     bool ErrMessageHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CreateSinglePaymentData GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

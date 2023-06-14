@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取高危命令模板ID
                      * @return Id 高危命令模板ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置高危命令模板ID
-                     * @param Id 高危命令模板ID
+                     * @param _id 高危命令模板ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取高危命令模板名称
                      * @return Name 高危命令模板名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高危命令模板名称
-                     * @param Name 高危命令模板名称
+                     * @param _name 高危命令模板名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命令列表，命令之间用换行符（"\n"）分隔
                      * @return CmdList 命令列表，命令之间用换行符（"\n"）分隔
+                     * 
                      */
                     std::string GetCmdList() const;
 
                     /**
                      * 设置命令列表，命令之间用换行符（"\n"）分隔
-                     * @param CmdList 命令列表，命令之间用换行符（"\n"）分隔
+                     * @param _cmdList 命令列表，命令之间用换行符（"\n"）分隔
+                     * 
                      */
                     void SetCmdList(const std::string& _cmdList);
 
                     /**
                      * 判断参数 CmdList 是否已赋值
                      * @return CmdList 是否已赋值
+                     * 
                      */
                     bool CmdListHasBeenSet() const;
 

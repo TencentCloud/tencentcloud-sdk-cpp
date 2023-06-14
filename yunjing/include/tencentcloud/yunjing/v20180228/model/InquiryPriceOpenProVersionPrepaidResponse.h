@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取预支费用的原价，单位：元。
                      * @return OriginalPrice 预支费用的原价，单位：元。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取预支费用的折扣价，单位：元。
                      * @return DiscountPrice 预支费用的折扣价，单位：元。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 

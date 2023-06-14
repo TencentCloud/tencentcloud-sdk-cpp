@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentVersion 可升级的集群组件和
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComponentVersion() const;
 
                     /**
                      * 判断参数 ComponentVersion 是否已赋值
                      * @return ComponentVersion 是否已赋值
+                     * 
                      */
                     bool ComponentVersionHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeVersionCurrent 边缘集群当前版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEdgeVersionCurrent() const;
 
                     /**
                      * 判断参数 EdgeVersionCurrent 是否已赋值
                      * @return EdgeVersionCurrent 是否已赋值
+                     * 
                      */
                     bool EdgeVersionCurrentHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryPrefix 边缘组件镜像仓库地址前缀，包含域名和命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryPrefix() const;
 
                     /**
                      * 判断参数 RegistryPrefix 是否已赋值
                      * @return RegistryPrefix 是否已赋值
+                     * 
                      */
                     bool RegistryPrefixHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterUpgradeStatus 集群升级状态，可能值：running、updating、failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterUpgradeStatus() const;
 
                     /**
                      * 判断参数 ClusterUpgradeStatus 是否已赋值
                      * @return ClusterUpgradeStatus 是否已赋值
+                     * 
                      */
                     bool ClusterUpgradeStatusHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterUpgradeStatusReason 集群升级中状态或者失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterUpgradeStatusReason() const;
 
                     /**
                      * 判断参数 ClusterUpgradeStatusReason 是否已赋值
                      * @return ClusterUpgradeStatusReason 是否已赋值
+                     * 
                      */
                     bool ClusterUpgradeStatusReasonHasBeenSet() const;
 

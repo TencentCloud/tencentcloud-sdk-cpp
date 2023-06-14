@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticalType 统计类型 新增NEWUSER 和登录 LOGIN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatisticalType() const;
 
                     /**
                      * 设置统计类型 新增NEWUSER 和登录 LOGIN
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticalType 统计类型 新增NEWUSER 和登录 LOGIN
+                     * @param _statisticalType 统计类型 新增NEWUSER 和登录 LOGIN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticalType(const std::string& _statisticalType);
 
                     /**
                      * 判断参数 StatisticalType 是否已赋值
                      * @return StatisticalType 是否已赋值
+                     * 
                      */
                     bool StatisticalTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticalCycle 统计周期：日DAY，周WEEK，月MONTH
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatisticalCycle() const;
 
                     /**
                      * 设置统计周期：日DAY，周WEEK，月MONTH
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticalCycle 统计周期：日DAY，周WEEK，月MONTH
+                     * @param _statisticalCycle 统计周期：日DAY，周WEEK，月MONTH
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticalCycle(const std::string& _statisticalCycle);
 
                     /**
                      * 判断参数 StatisticalCycle 是否已赋值
                      * @return StatisticalCycle 是否已赋值
+                     * 
                      */
                     bool StatisticalCycleHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 统计总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置统计总量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 统计总量
+                     * @param _count 统计总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

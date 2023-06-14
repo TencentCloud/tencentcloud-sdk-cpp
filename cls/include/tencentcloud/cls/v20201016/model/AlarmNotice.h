@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取告警通知模板名称。
                      * @return Name 告警通知模板名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置告警通知模板名称。
-                     * @param Name 告警通知模板名称。
+                     * @param _name 告警通知模板名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <br><li> Trigger - 告警触发
 <br><li> Recovery - 告警恢复
 <br><li> All - 告警触发和告警恢复
+                     * 
                      */
                     std::string GetType() const;
 
@@ -83,16 +87,18 @@ namespace TencentCloud
 <br><li> Trigger - 告警触发
 <br><li> Recovery - 告警恢复
 <br><li> All - 告警触发和告警恢复
-                     * @param Type 告警模板的类型。可选值：
+                     * @param _type 告警模板的类型。可选值：
 <br><li> Trigger - 告警触发
 <br><li> Recovery - 告警恢复
 <br><li> All - 告警触发和告警恢复
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -101,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeReceivers 告警通知模板接收者信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
                      * 设置告警通知模板接收者信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeReceivers 告警通知模板接收者信息。
+                     * @param _noticeReceivers 告警通知模板接收者信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
 
                     /**
                      * 判断参数 NoticeReceivers 是否已赋值
                      * @return NoticeReceivers 是否已赋值
+                     * 
                      */
                     bool NoticeReceiversHasBeenSet() const;
 
@@ -123,20 +132,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCallbacks 告警通知模板回调信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
                      * 设置告警通知模板回调信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebCallbacks 告警通知模板回调信息。
+                     * @param _webCallbacks 告警通知模板回调信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
 
                     /**
                      * 判断参数 WebCallbacks 是否已赋值
                      * @return WebCallbacks 是否已赋值
+                     * 
                      */
                     bool WebCallbacksHasBeenSet() const;
 
@@ -145,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmNoticeId 告警通知模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
                      * 设置告警通知模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmNoticeId 告警通知模板ID。
+                     * @param _alarmNoticeId 告警通知模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
 
                     /**
                      * 判断参数 AlarmNoticeId 是否已赋值
                      * @return AlarmNoticeId 是否已赋值
+                     * 
                      */
                     bool AlarmNoticeIdHasBeenSet() const;
 
@@ -167,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -189,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最近更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 最近更新时间。
+                     * @param _updateTime 最近更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

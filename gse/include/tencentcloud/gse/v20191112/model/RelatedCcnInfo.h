@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取云联网所属账号
                      * @return AccountId 云联网所属账号
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置云联网所属账号
-                     * @param AccountId 云联网所属账号
+                     * @param _accountId 云联网所属账号
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取云联网 ID
                      * @return CcnId 云联网 ID
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网 ID
-                     * @param CcnId 云联网 ID
+                     * @param _ccnId 云联网 ID
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取关联云联网状态
                      * @return AttachType 关联云联网状态
+                     * 
                      */
                     std::string GetAttachType() const;
 
                     /**
                      * 设置关联云联网状态
-                     * @param AttachType 关联云联网状态
+                     * @param _attachType 关联云联网状态
+                     * 
                      */
                     void SetAttachType(const std::string& _attachType);
 
                     /**
                      * 判断参数 AttachType 是否已赋值
                      * @return AttachType 是否已赋值
+                     * 
                      */
                     bool AttachTypeHasBeenSet() const;
 

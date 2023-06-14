@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户组 ID。
                      * @return GroupId 用户组 ID。
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置用户组 ID。
-                     * @param GroupId 用户组 ID。
+                     * @param _groupId 用户组 ID。
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取页码。默认为1。
                      * @return Page 页码。默认为1。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码。默认为1。
-                     * @param Page 页码。默认为1。
+                     * @param _page 页码。默认为1。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数量。默认为20。
                      * @return Rp 每页数量。默认为20。
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页数量。默认为20。
-                     * @param Rp 每页数量。默认为20。
+                     * @param _rp 每页数量。默认为20。
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘备份点ID。
                      * @return DiskBackupId 云硬盘备份点ID。
+                     * 
                      */
                     std::string GetDiskBackupId() const;
 
                     /**
                      * 设置云硬盘备份点ID。
-                     * @param DiskBackupId 云硬盘备份点ID。
+                     * @param _diskBackupId 云硬盘备份点ID。
+                     * 
                      */
                     void SetDiskBackupId(const std::string& _diskBackupId);
 
                     /**
                      * 判断参数 DiskBackupId 是否已赋值
                      * @return DiskBackupId 是否已赋值
+                     * 
                      */
                     bool DiskBackupIdHasBeenSet() const;
 
                     /**
                      * 获取创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>
                      * @return DiskUsage 创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>
+                     * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
                      * 设置创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>
-                     * @param DiskUsage 创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>
+                     * @param _diskUsage 创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>
+                     * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
 
                     /**
                      * 判断参数 DiskUsage 是否已赋值
                      * @return DiskUsage 是否已赋值
+                     * 
                      */
                     bool DiskUsageHasBeenSet() const;
 
                     /**
                      * 获取创建此云硬盘备份点的云硬盘 ID。
                      * @return DiskId 创建此云硬盘备份点的云硬盘 ID。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置创建此云硬盘备份点的云硬盘 ID。
-                     * @param DiskId 创建此云硬盘备份点的云硬盘 ID。
+                     * @param _diskId 创建此云硬盘备份点的云硬盘 ID。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取创建此云硬盘备份点的云硬盘大小，单位 GB。
                      * @return DiskSize 创建此云硬盘备份点的云硬盘大小，单位 GB。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置创建此云硬盘备份点的云硬盘大小，单位 GB。
-                     * @param DiskSize 创建此云硬盘备份点的云硬盘大小，单位 GB。
+                     * @param _diskSize 创建此云硬盘备份点的云硬盘大小，单位 GB。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取云硬盘备份点名称，用户自定义的云硬盘备份点别名。
                      * @return DiskBackupName 云硬盘备份点名称，用户自定义的云硬盘备份点别名。
+                     * 
                      */
                     std::string GetDiskBackupName() const;
 
                     /**
                      * 设置云硬盘备份点名称，用户自定义的云硬盘备份点别名。
-                     * @param DiskBackupName 云硬盘备份点名称，用户自定义的云硬盘备份点别名。
+                     * @param _diskBackupName 云硬盘备份点名称，用户自定义的云硬盘备份点别名。
+                     * 
                      */
                     void SetDiskBackupName(const std::string& _diskBackupName);
 
                     /**
                      * 判断参数 DiskBackupName 是否已赋值
                      * @return DiskBackupName 是否已赋值
+                     * 
                      */
                     bool DiskBackupNameHasBeenSet() const;
 
@@ -147,6 +162,7 @@ namespace TencentCloud
 <li>CREATING：创建中。</li>
 <li>ROLLBACKING：回滚中。</li>
 <li>DELETING：删除中。</li>
+                     * 
                      */
                     std::string GetDiskBackupState() const;
 
@@ -156,35 +172,40 @@ namespace TencentCloud
 <li>CREATING：创建中。</li>
 <li>ROLLBACKING：回滚中。</li>
 <li>DELETING：删除中。</li>
-                     * @param DiskBackupState 云硬盘备份点的状态。取值范围：
+                     * @param _diskBackupState 云硬盘备份点的状态。取值范围：
 <li>NORMAL：正常。 </li>
 <li>CREATING：创建中。</li>
 <li>ROLLBACKING：回滚中。</li>
 <li>DELETING：删除中。</li>
+                     * 
                      */
                     void SetDiskBackupState(const std::string& _diskBackupState);
 
                     /**
                      * 判断参数 DiskBackupState 是否已赋值
                      * @return DiskBackupState 是否已赋值
+                     * 
                      */
                     bool DiskBackupStateHasBeenSet() const;
 
                     /**
                      * 获取创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。
                      * @return Percent 创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。
+                     * 
                      */
                     int64_t GetPercent() const;
 
                     /**
                      * 设置创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。
-                     * @param Percent 创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。
+                     * @param _percent 创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。
+                     * 
                      */
                     void SetPercent(const int64_t& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperation 上一次操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
                      * 设置上一次操作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestOperation 上一次操作
+                     * @param _latestOperation 上一次操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
 
                     /**
                      * 判断参数 LatestOperation 是否已赋值
                      * @return LatestOperation 是否已赋值
+                     * 
                      */
                     bool LatestOperationHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 上一次操作状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
                      * 设置上一次操作状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestOperationState 上一次操作状态
+                     * @param _latestOperationState 上一次操作状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
 
                     /**
                      * 判断参数 LatestOperationState 是否已赋值
                      * @return LatestOperationState 是否已赋值
+                     * 
                      */
                     bool LatestOperationStateHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationRequestId 上一次请求ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
                      * 设置上一次请求ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestOperationRequestId 上一次请求ID
+                     * @param _latestOperationRequestId 上一次请求ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
 
                     /**
                      * 判断参数 LatestOperationRequestId 是否已赋值
                      * @return LatestOperationRequestId 是否已赋值
+                     * 
                      */
                     bool LatestOperationRequestIdHasBeenSet() const;
 
@@ -259,20 +289,23 @@ namespace TencentCloud
 格式为： YYYY-MM-DDThh:mm:ssZ。
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
-                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+                     * @param _createdTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 

@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取校验任务状态：unavailable(当前不可用), starting(开始中)，running(校验中)，finished(校验完成)
                      * @return Status 校验任务状态：unavailable(当前不可用), starting(开始中)，running(校验中)，finished(校验完成)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务的错误码
                      * @return ErrorCode 任务的错误码
+                     * 
                      */
                     int64_t GetErrorCode() const;
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取任务的错误信息
                      * @return ErrorMessage 任务的错误信息
+                     * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
                      * 获取Check任务总进度,如："30"表示30%
                      * @return Progress Check任务总进度,如："30"表示30%
+                     * 
                      */
                     std::string GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取校验是否通过,0-未通过，1-校验通过, 3-未校验
                      * @return CheckFlag 校验是否通过,0-未通过，1-校验通过, 3-未校验
+                     * 
                      */
                     int64_t GetCheckFlag() const;
 
                     /**
                      * 判断参数 CheckFlag 是否已赋值
                      * @return CheckFlag 是否已赋值
+                     * 
                      */
                     bool CheckFlagHasBeenSet() const;
 

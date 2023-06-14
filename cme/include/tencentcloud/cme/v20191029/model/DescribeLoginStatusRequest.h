@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取用户 Id 列表，N 从0开始取值，最大19。
                      * @return UserIds 用户 Id 列表，N 从0开始取值，最大19。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置用户 Id 列表，N 从0开始取值，最大19。
-                     * @param UserIds 用户 Id 列表，N 从0开始取值，最大19。
+                     * @param _userIds 用户 Id 列表，N 从0开始取值，最大19。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

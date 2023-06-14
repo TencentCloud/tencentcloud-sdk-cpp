@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取对账单文件下载链接
                      * @return Url 对账单文件下载链接
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置对账单文件下载链接
-                     * @param Url 对账单文件下载链接
+                     * @param _url 对账单文件下载链接
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取下载链接过期时间
                      * @return ExpireTime 下载链接过期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置下载链接过期时间
-                     * @param ExpireTime 下载链接过期时间
+                     * @param _expireTime 下载链接过期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

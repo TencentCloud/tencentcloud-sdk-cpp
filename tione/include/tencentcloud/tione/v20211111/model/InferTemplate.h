@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取模板ID
                      * @return InferTemplateId 模板ID
+                     * 
                      */
                     std::string GetInferTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param InferTemplateId 模板ID
+                     * @param _inferTemplateId 模板ID
+                     * 
                      */
                     void SetInferTemplateId(const std::string& _inferTemplateId);
 
                     /**
                      * 判断参数 InferTemplateId 是否已赋值
                      * @return InferTemplateId 是否已赋值
+                     * 
                      */
                     bool InferTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板镜像
                      * @return InferTemplateImage 模板镜像
+                     * 
                      */
                     std::string GetInferTemplateImage() const;
 
                     /**
                      * 设置模板镜像
-                     * @param InferTemplateImage 模板镜像
+                     * @param _inferTemplateImage 模板镜像
+                     * 
                      */
                     void SetInferTemplateImage(const std::string& _inferTemplateImage);
 
                     /**
                      * 判断参数 InferTemplateImage 是否已赋值
                      * @return InferTemplateImage 是否已赋值
+                     * 
                      */
                     bool InferTemplateImageHasBeenSet() const;
 

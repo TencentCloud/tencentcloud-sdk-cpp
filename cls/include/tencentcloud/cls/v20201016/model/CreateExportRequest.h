@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取日志导出数量,  最大值5000万
                      * @return Count 日志导出数量,  最大值5000万
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置日志导出数量,  最大值5000万
-                     * @param Count 日志导出数量,  最大值5000万
+                     * @param _count 日志导出数量,  最大值5000万
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
                      * @return Query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
-                     * @param Query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * @param _query 日志导出检索语句，不支持<a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取日志导出起始时间，毫秒时间戳
                      * @return From 日志导出起始时间，毫秒时间戳
+                     * 
                      */
                     int64_t GetFrom() const;
 
                     /**
                      * 设置日志导出起始时间，毫秒时间戳
-                     * @param From 日志导出起始时间，毫秒时间戳
+                     * @param _from 日志导出起始时间，毫秒时间戳
+                     * 
                      */
                     void SetFrom(const int64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取日志导出结束时间，毫秒时间戳
                      * @return To 日志导出结束时间，毫秒时间戳
+                     * 
                      */
                     int64_t GetTo() const;
 
                     /**
                      * 设置日志导出结束时间，毫秒时间戳
-                     * @param To 日志导出结束时间，毫秒时间戳
+                     * @param _to 日志导出结束时间，毫秒时间戳
+                     * 
                      */
                     void SetTo(const int64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取日志导出时间排序。desc，asc，默认为desc
                      * @return Order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置日志导出时间排序。desc，asc，默认为desc
-                     * @param Order 日志导出时间排序。desc，asc，默认为desc
+                     * @param _order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取日志导出数据格式。json，csv，默认为json
                      * @return Format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志导出数据格式。json，csv，默认为json
-                     * @param Format 日志导出数据格式。json，csv，默认为json
+                     * @param _format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

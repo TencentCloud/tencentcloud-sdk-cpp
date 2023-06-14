@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统快照ID
                      * @return SnapshotId 文件系统快照ID
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置文件系统快照ID
-                     * @param SnapshotId 文件系统快照ID
+                     * @param _snapshotId 文件系统快照ID
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统快照名称
                      * @return SnapshotName 文件系统快照名称
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置文件系统快照名称
-                     * @param SnapshotName 文件系统快照名称
+                     * @param _snapshotName 文件系统快照名称
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统快照保留天数
                      * @return AliveDays 文件系统快照保留天数
+                     * 
                      */
                     uint64_t GetAliveDays() const;
 
                     /**
                      * 设置文件系统快照保留天数
-                     * @param AliveDays 文件系统快照保留天数
+                     * @param _aliveDays 文件系统快照保留天数
+                     * 
                      */
                     void SetAliveDays(const uint64_t& _aliveDays);
 
                     /**
                      * 判断参数 AliveDays 是否已赋值
                      * @return AliveDays 是否已赋值
+                     * 
                      */
                     bool AliveDaysHasBeenSet() const;
 

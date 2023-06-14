@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 主机名称
+                     * @param _hostName 主机名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 危害等级：1-低位，2-中危，3-高危，4-严重
+                     * @param _level 危害等级：1-低位，2-中危，3-高危，4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 主机标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTagList() const;
 
                     /**
                      * 设置主机标签数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagList 主机标签数组
+                     * @param _tagList 主机标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagList(const std::vector<std::string>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态：0-未通过，1-忽略，3-已通过，5-检测中
+                     * @param _status 状态：0-未通过，1-忽略，3-已通过，5-检测中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastScanTime 最后检测时间
+                     * @param _lastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
 
                     /**
                      * 判断参数 LastScanTime 是否已赋值
                      * @return LastScanTime 是否已赋值
+                     * 
                      */
                     bool LastScanTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEventId() const;
 
                     /**
                      * 设置事件id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventId 事件id
+                     * @param _eventId 事件id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventId(const uint64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机quuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quuid 主机quuid
+                     * @param _quuid 主机quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 

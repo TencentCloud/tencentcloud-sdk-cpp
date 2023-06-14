@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Token 鉴权token
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置鉴权token
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Token 鉴权token
+                     * @param _token 鉴权token
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EtlIp 数据接收Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEtlIp() const;
 
                     /**
                      * 设置数据接收Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EtlIp 数据接收Ip
+                     * @param _etlIp 数据接收Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEtlIp(const std::string& _etlIp);
 
                     /**
                      * 判断参数 EtlIp 是否已赋值
                      * @return EtlIp 是否已赋值
+                     * 
                      */
                     bool EtlIpHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EtlPort 数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEtlPort() const;
 
                     /**
                      * 设置数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EtlPort 数据接收port
+                     * @param _etlPort 数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEtlPort(const std::string& _etlPort);
 
                     /**
                      * 判断参数 EtlPort 是否已赋值
                      * @return EtlPort 是否已赋值
+                     * 
                      */
                     bool EtlPortHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ByHandAccess 手动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetByHandAccess() const;
 
                     /**
                      * 设置手动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ByHandAccess 手动接入脚本串
+                     * @param _byHandAccess 手动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetByHandAccess(const std::string& _byHandAccess);
 
                     /**
                      * 判断参数 ByHandAccess 是否已赋值
                      * @return ByHandAccess 是否已赋值
+                     * 
                      */
                     bool ByHandAccessHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ByShellAccess 自动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetByShellAccess() const;
 
                     /**
                      * 设置自动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ByShellAccess 自动接入脚本串
+                     * @param _byShellAccess 自动接入脚本串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetByShellAccess(const std::string& _byShellAccess);
 
                     /**
                      * 判断参数 ByShellAccess 是否已赋值
                      * @return ByShellAccess 是否已赋值
+                     * 
                      */
                     bool ByShellAccessHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkyWalkingPort SkyWalking数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSkyWalkingPort() const;
 
                     /**
                      * 设置SkyWalking数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkyWalkingPort SkyWalking数据接收port
+                     * @param _skyWalkingPort SkyWalking数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkyWalkingPort(const std::string& _skyWalkingPort);
 
                     /**
                      * 判断参数 SkyWalkingPort 是否已赋值
                      * @return SkyWalkingPort 是否已赋值
+                     * 
                      */
                     bool SkyWalkingPortHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZipkinPort Zipkin数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZipkinPort() const;
 
                     /**
                      * 设置Zipkin数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZipkinPort Zipkin数据接收port
+                     * @param _zipkinPort Zipkin数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZipkinPort(const std::string& _zipkinPort);
 
                     /**
                      * 判断参数 ZipkinPort 是否已赋值
                      * @return ZipkinPort 是否已赋值
+                     * 
                      */
                     bool ZipkinPortHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JaegerPort Jaeger数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJaegerPort() const;
 
                     /**
                      * 设置Jaeger数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JaegerPort Jaeger数据接收port
+                     * @param _jaegerPort Jaeger数据接收port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJaegerPort(const std::string& _jaegerPort);
 
                     /**
                      * 判断参数 JaegerPort 是否已赋值
                      * @return JaegerPort 是否已赋值
+                     * 
                      */
                     bool JaegerPortHasBeenSet() const;
 

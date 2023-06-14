@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetCapacity 服务器舰队的容量配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetCapacity> GetFleetCapacity() const;
 
                     /**
                      * 判断参数 FleetCapacity 是否已赋值
                      * @return FleetCapacity 是否已赋值
+                     * 
                      */
                     bool FleetCapacityHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 结果返回最大数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取源站ID列表
                      * @return RealServerIds 源站ID列表
+                     * 
                      */
                     std::vector<std::string> GetRealServerIds() const;
 
                     /**
                      * 设置源站ID列表
-                     * @param RealServerIds 源站ID列表
+                     * @param _realServerIds 源站ID列表
+                     * 
                      */
                     void SetRealServerIds(const std::vector<std::string>& _realServerIds);
 
                     /**
                      * 判断参数 RealServerIds 是否已赋值
                      * @return RealServerIds 是否已赋值
+                     * 
                      */
                     bool RealServerIdsHasBeenSet() const;
 

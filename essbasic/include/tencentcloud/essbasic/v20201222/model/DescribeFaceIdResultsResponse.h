@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取核身结果列表
                      * @return Results 核身结果列表
+                     * 
                      */
                     std::vector<FaceIdResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

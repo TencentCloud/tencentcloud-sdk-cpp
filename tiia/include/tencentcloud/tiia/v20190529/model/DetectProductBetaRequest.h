@@ -47,20 +47,23 @@ namespace TencentCloud
 建议先对图片进行压缩，以便提升处理速度。
                      * @return ImageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
-                     * @param ImageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
+                     * @param _imageUrl 图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 
 建议先对图片进行压缩，以便提升处理速度。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 与ImageUrl同时存在时优先使用ImageUrl字段。
                      * @return ImageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
-                     * @param ImageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
+                     * @param _imageBase64 图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 
 与ImageUrl同时存在时优先使用ImageUrl字段。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
                     /**
                      * 获取是否需要百科信息 1：是，0: 否，默认是0
                      * @return NeedLemma 是否需要百科信息 1：是，0: 否，默认是0
+                     * 
                      */
                     int64_t GetNeedLemma() const;
 
                     /**
                      * 设置是否需要百科信息 1：是，0: 否，默认是0
-                     * @param NeedLemma 是否需要百科信息 1：是，0: 否，默认是0
+                     * @param _needLemma 是否需要百科信息 1：是，0: 否，默认是0
+                     * 
                      */
                     void SetNeedLemma(const int64_t& _needLemma);
 
                     /**
                      * 判断参数 NeedLemma 是否已赋值
                      * @return NeedLemma 是否已赋值
+                     * 
                      */
                     bool NeedLemmaHasBeenSet() const;
 

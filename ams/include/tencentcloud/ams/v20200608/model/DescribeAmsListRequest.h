@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取页码
                      * @return PageToken 页码
+                     * 
                      */
                     std::string GetPageToken() const;
 
                     /**
                      * 设置页码
-                     * @param PageToken 页码
+                     * @param _pageToken 页码
+                     * 
                      */
                     void SetPageToken(const std::string& _pageToken);
 
                     /**
                      * 判断参数 PageToken 是否已赋值
                      * @return PageToken 是否已赋值
+                     * 
                      */
                     bool PageTokenHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Limit 过滤条件
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Limit 过滤条件
+                     * @param _limit 过滤条件
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询方向
                      * @return PageDirection 查询方向
+                     * 
                      */
                     std::string GetPageDirection() const;
 
                     /**
                      * 设置查询方向
-                     * @param PageDirection 查询方向
+                     * @param _pageDirection 查询方向
+                     * 
                      */
                     void SetPageDirection(const std::string& _pageDirection);
 
                     /**
                      * 判断参数 PageDirection 是否已赋值
                      * @return PageDirection 是否已赋值
+                     * 
                      */
                     bool PageDirectionHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID，用于唯一确认待操作的参数模板
                      * @return TemplateId 参数模板ID，用于唯一确认待操作的参数模板
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置参数模板ID，用于唯一确认待操作的参数模板
-                     * @param TemplateId 参数模板ID，用于唯一确认待操作的参数模板
+                     * @param _templateId 参数模板ID，用于唯一确认待操作的参数模板
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

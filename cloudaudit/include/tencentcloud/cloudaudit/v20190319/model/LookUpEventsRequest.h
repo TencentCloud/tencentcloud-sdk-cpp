@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取检索条件
                      * @return LookupAttributes 检索条件
+                     * 
                      */
                     std::vector<LookupAttribute> GetLookupAttributes() const;
 
                     /**
                      * 设置检索条件
-                     * @param LookupAttributes 检索条件
+                     * @param _lookupAttributes 检索条件
+                     * 
                      */
                     void SetLookupAttributes(const std::vector<LookupAttribute>& _lookupAttributes);
 
                     /**
                      * 判断参数 LookupAttributes 是否已赋值
                      * @return LookupAttributes 是否已赋值
+                     * 
                      */
                     bool LookupAttributesHasBeenSet() const;
 
                     /**
                      * 获取查看更多日志的凭证
                      * @return NextToken 查看更多日志的凭证
+                     * 
                      */
                     std::string GetNextToken() const;
 
                     /**
                      * 设置查看更多日志的凭证
-                     * @param NextToken 查看更多日志的凭证
+                     * @param _nextToken 查看更多日志的凭证
+                     * 
                      */
                     void SetNextToken(const std::string& _nextToken);
 
                     /**
                      * 判断参数 NextToken 是否已赋值
                      * @return NextToken 是否已赋值
+                     * 
                      */
                     bool NextTokenHasBeenSet() const;
 
                     /**
                      * 获取返回日志的最大条数
                      * @return MaxResults 返回日志的最大条数
+                     * 
                      */
                     int64_t GetMaxResults() const;
 
                     /**
                      * 设置返回日志的最大条数
-                     * @param MaxResults 返回日志的最大条数
+                     * @param _maxResults 返回日志的最大条数
+                     * 
                      */
                     void SetMaxResults(const int64_t& _maxResults);
 
                     /**
                      * 判断参数 MaxResults 是否已赋值
                      * @return MaxResults 是否已赋值
+                     * 
                      */
                     bool MaxResultsHasBeenSet() const;
 
                     /**
                      * 获取云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
                      * @return Mode 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
-                     * @param Mode 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     * @param _mode 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

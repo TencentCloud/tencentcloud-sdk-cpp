@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步流程ID，可以通过DescribeAsyncTaskStatus接口查询流程运行状态
                      * @return TaskId 异步流程ID，可以通过DescribeAsyncTaskStatus接口查询流程运行状态
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

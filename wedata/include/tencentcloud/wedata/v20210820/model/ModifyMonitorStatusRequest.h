@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取规则组ID
                      * @return RuleGroupId 规则组ID
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组ID
-                     * @param RuleGroupId 规则组ID
+                     * @param _ruleGroupId 规则组ID
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
                      * 获取监控开关状态
                      * @return MonitorStatus 监控开关状态
+                     * 
                      */
                     bool GetMonitorStatus() const;
 
                     /**
                      * 设置监控开关状态
-                     * @param MonitorStatus 监控开关状态
+                     * @param _monitorStatus 监控开关状态
+                     * 
                      */
                     void SetMonitorStatus(const bool& _monitorStatus);
 
                     /**
                      * 判断参数 MonitorStatus 是否已赋值
                      * @return MonitorStatus 是否已赋值
+                     * 
                      */
                     bool MonitorStatusHasBeenSet() const;
 

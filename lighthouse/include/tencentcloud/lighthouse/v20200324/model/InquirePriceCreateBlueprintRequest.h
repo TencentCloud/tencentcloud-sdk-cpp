@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自定义镜像的个数。默认值为1。
                      * @return BlueprintCount 自定义镜像的个数。默认值为1。
+                     * 
                      */
                     int64_t GetBlueprintCount() const;
 
                     /**
                      * 设置自定义镜像的个数。默认值为1。
-                     * @param BlueprintCount 自定义镜像的个数。默认值为1。
+                     * @param _blueprintCount 自定义镜像的个数。默认值为1。
+                     * 
                      */
                     void SetBlueprintCount(const int64_t& _blueprintCount);
 
                     /**
                      * 判断参数 BlueprintCount 是否已赋值
                      * @return BlueprintCount 是否已赋值
+                     * 
                      */
                     bool BlueprintCountHasBeenSet() const;
 

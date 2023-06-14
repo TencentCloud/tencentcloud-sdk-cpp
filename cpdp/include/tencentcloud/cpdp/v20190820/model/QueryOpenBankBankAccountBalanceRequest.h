@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云企付渠道商户号。外部接入平台入驻云企付平台后下发。
                      * @return ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置云企付渠道商户号。外部接入平台入驻云企付平台后下发。
-                     * @param ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * @param _channelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取云企付渠道子商户号。入驻在渠道商户下的子商户ID，如付款方的商户ID，对应创建支付订单中接口参数中的PayerInfo中的payerId。
                      * @return ChannelSubMerchantId 云企付渠道子商户号。入驻在渠道商户下的子商户ID，如付款方的商户ID，对应创建支付订单中接口参数中的PayerInfo中的payerId。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置云企付渠道子商户号。入驻在渠道商户下的子商户ID，如付款方的商户ID，对应创建支付订单中接口参数中的PayerInfo中的payerId。
-                     * @param ChannelSubMerchantId 云企付渠道子商户号。入驻在渠道商户下的子商户ID，如付款方的商户ID，对应创建支付订单中接口参数中的PayerInfo中的payerId。
+                     * @param _channelSubMerchantId 云企付渠道子商户号。入驻在渠道商户下的子商户ID，如付款方的商户ID，对应创建支付订单中接口参数中的PayerInfo中的payerId。
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -95,16 +102,18 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param ChannelName 渠道名称。
+                     * @param _channelName 渠道名称。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -115,6 +124,7 @@ __OPENBANK_PAYMENT__: openbank付款
                      * @return PaymentMethod 支付方式，如
 __EBANK_PAYMENT__:ebank付款
 __OPENBANK_PAYMENT__: openbank付款
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -122,33 +132,38 @@ __OPENBANK_PAYMENT__: openbank付款
                      * 设置支付方式，如
 __EBANK_PAYMENT__:ebank付款
 __OPENBANK_PAYMENT__: openbank付款
-                     * @param PaymentMethod 支付方式，如
+                     * @param _paymentMethod 支付方式，如
 __EBANK_PAYMENT__:ebank付款
 __OPENBANK_PAYMENT__: openbank付款
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
                     /**
                      * 获取绑卡序列号，银行账户唯一ID，区分多卡或多账户的场景
                      * @return BindSerialNo 绑卡序列号，银行账户唯一ID，区分多卡或多账户的场景
+                     * 
                      */
                     std::string GetBindSerialNo() const;
 
                     /**
                      * 设置绑卡序列号，银行账户唯一ID，区分多卡或多账户的场景
-                     * @param BindSerialNo 绑卡序列号，银行账户唯一ID，区分多卡或多账户的场景
+                     * @param _bindSerialNo 绑卡序列号，银行账户唯一ID，区分多卡或多账户的场景
+                     * 
                      */
                     void SetBindSerialNo(const std::string& _bindSerialNo);
 
                     /**
                      * 判断参数 BindSerialNo 是否已赋值
                      * @return BindSerialNo 是否已赋值
+                     * 
                      */
                     bool BindSerialNoHasBeenSet() const;
 
@@ -161,6 +176,7 @@ sandbox:沙箱环境
 release:生产环境
 sandbox:沙箱环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -169,16 +185,18 @@ sandbox:沙箱环境
 release:生产环境
 sandbox:沙箱环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 release:生产环境
 sandbox:沙箱环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

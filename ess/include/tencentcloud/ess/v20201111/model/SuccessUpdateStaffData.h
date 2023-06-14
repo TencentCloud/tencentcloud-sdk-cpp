@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取传入的用户名称
                      * @return DisplayName 传入的用户名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置传入的用户名称
-                     * @param DisplayName 传入的用户名称
+                     * @param _displayName 传入的用户名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取传入的手机号
                      * @return Mobile 传入的手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置传入的手机号
-                     * @param Mobile 传入的手机号
+                     * @param _mobile 传入的手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取用户Id
                      * @return UserId 用户Id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id
-                     * @param UserId 用户Id
+                     * @param _userId 用户Id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

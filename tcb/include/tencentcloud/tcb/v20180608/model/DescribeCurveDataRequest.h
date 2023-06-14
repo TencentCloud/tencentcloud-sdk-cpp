@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
@@ -111,6 +114,7 @@ namespace TencentCloud
 <li> FunctionConcurrencyMemoryMB: 云函数并发执行内存量 </li>
 <li> FunctionThrottle: 云函数受限次数 </li>
 <li> FunctionProvisionedConcurrency: 云函数预置并发 </li>
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -140,7 +144,7 @@ namespace TencentCloud
 <li> FunctionConcurrencyMemoryMB: 云函数并发执行内存量 </li>
 <li> FunctionThrottle: 云函数受限次数 </li>
 <li> FunctionProvisionedConcurrency: 云函数预置并发 </li>
-                     * @param MetricName <li> 指标名: </li>
+                     * @param _metricName <li> 指标名: </li>
 <li> StorageRead: 存储读请求次数 </li>
 <li> StorageWrite: 存储写请求次数 </li>
 <li> StorageCdnOriginFlux: CDN回源流量, 单位字节 </li>
@@ -165,66 +169,77 @@ namespace TencentCloud
 <li> FunctionConcurrencyMemoryMB: 云函数并发执行内存量 </li>
 <li> FunctionThrottle: 云函数受限次数 </li>
 <li> FunctionProvisionedConcurrency: 云函数预置并发 </li>
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟).
                      * @return StartTime 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟).
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟).
-                     * @param StartTime 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟).
+                     * @param _startTime 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟).
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)..
                      * @return EndTime 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)..
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)..
-                     * @param EndTime 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)..
+                     * @param _endTime 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)..
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocation, FunctionGBs, FunctionFlux, FunctionError, FunctionDuration)、容器托管（服务名称）, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.如果想查询数据库某个集合相关信息，传入集合名称
                      * @return ResourceID 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocation, FunctionGBs, FunctionFlux, FunctionError, FunctionDuration)、容器托管（服务名称）, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.如果想查询数据库某个集合相关信息，传入集合名称
+                     * 
                      */
                     std::string GetResourceID() const;
 
                     /**
                      * 设置资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocation, FunctionGBs, FunctionFlux, FunctionError, FunctionDuration)、容器托管（服务名称）, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.如果想查询数据库某个集合相关信息，传入集合名称
-                     * @param ResourceID 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocation, FunctionGBs, FunctionFlux, FunctionError, FunctionDuration)、容器托管（服务名称）, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.如果想查询数据库某个集合相关信息，传入集合名称
+                     * @param _resourceID 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocation, FunctionGBs, FunctionFlux, FunctionError, FunctionDuration)、容器托管（服务名称）, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.如果想查询数据库某个集合相关信息，传入集合名称
+                     * 
                      */
                     void SetResourceID(const std::string& _resourceID);
 
                     /**
                      * 判断参数 ResourceID 是否已赋值
                      * @return ResourceID 是否已赋值
+                     * 
                      */
                     bool ResourceIDHasBeenSet() const;
 

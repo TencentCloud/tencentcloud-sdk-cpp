@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassRate 策略扫描通过率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPassRate() const;
 
                     /**
                      * 判断参数 PassRate 是否已赋值
                      * @return PassRate 是否已赋值
+                     * 
                      */
                     bool PassRateHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 判断参数 StrategyName 是否已赋值
                      * @return StrategyName 是否已赋值
+                     * 
                      */
                     bool StrategyNameHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanCycle 策略扫描周期(天)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanCycle() const;
 
                     /**
                      * 判断参数 ScanCycle 是否已赋值
                      * @return ScanCycle 是否已赋值
+                     * 
                      */
                     bool ScanCycleHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanAt 定期检测时间, 该时间下发扫描
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanAt() const;
 
                     /**
                      * 判断参数 ScanAt 是否已赋值
                      * @return ScanAt 是否已赋值
+                     * 
                      */
                     bool ScanAtHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGlobal 扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
                      * 判断参数 IsGlobal 是否已赋值
                      * @return IsGlobal 是否已赋值
+                     * 
                      */
                     bool IsGlobalHasBeenSet() const;
 
@@ -128,12 +138,14 @@ ecm：边缘计算主机
 lh: 轻量应用服务器
 ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
@@ -142,12 +154,14 @@ ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 主机地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -156,12 +170,14 @@ ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 用户该策略下的所有主机id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
+                     * 
                      */
                     bool QuuidsHasBeenSet() const;
 
@@ -170,12 +186,14 @@ ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryIds 用户该策略下所有的基线id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCategoryIds() const;
 
                     /**
                      * 判断参数 CategoryIds 是否已赋值
                      * @return CategoryIds 是否已赋值
+                     * 
                      */
                     bool CategoryIdsHasBeenSet() const;
 
@@ -184,12 +202,14 @@ ohter: 混合云机器
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfScanned 1 表示扫描过, 0没扫描过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIfScanned() const;
 
                     /**
                      * 判断参数 IfScanned 是否已赋值
                      * @return IfScanned 是否已赋值
+                     * 
                      */
                     bool IfScannedHasBeenSet() const;
 

@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetId 数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
                      * 设置数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetId 数据集ID
+                     * @param _datasetId 数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetId(const std::string& _datasetId);
 
                     /**
                      * 判断参数 DatasetId 是否已赋值
                      * @return DatasetId 是否已赋值
+                     * 
                      */
                     bool DatasetIdHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetName 数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetName() const;
 
                     /**
                      * 设置数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetName 数据集名称
+                     * @param _datasetName 数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetName(const std::string& _datasetName);
 
                     /**
                      * 判断参数 DatasetName 是否已赋值
                      * @return DatasetName 是否已赋值
+                     * 
                      */
                     bool DatasetNameHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 创建者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建者
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Creator 创建者
+                     * @param _creator 创建者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetVersion 数据集版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetVersion() const;
 
                     /**
                      * 设置数据集版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetVersion 数据集版本
+                     * @param _datasetVersion 数据集版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetVersion(const std::string& _datasetVersion);
 
                     /**
                      * 判断参数 DatasetVersion 是否已赋值
                      * @return DatasetVersion 是否已赋值
+                     * 
                      */
                     bool DatasetVersionHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetType 数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetType() const;
 
                     /**
                      * 设置数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetType 数据集类型
+                     * @param _datasetType 数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetType(const std::string& _datasetType);
 
                     /**
                      * 判断参数 DatasetType 是否已赋值
                      * @return DatasetType 是否已赋值
+                     * 
                      */
                     bool DatasetTypeHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetTags 数据集标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetDatasetTags() const;
 
                     /**
                      * 设置数据集标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetTags 数据集标签
+                     * @param _datasetTags 数据集标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetTags(const std::vector<Tag>& _datasetTags);
 
                     /**
                      * 判断参数 DatasetTags 是否已赋值
                      * @return DatasetTags 是否已赋值
+                     * 
                      */
                     bool DatasetTagsHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetAnnotationTaskName 数据集标注任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetAnnotationTaskName() const;
 
                     /**
                      * 设置数据集标注任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetAnnotationTaskName 数据集标注任务名称
+                     * @param _datasetAnnotationTaskName 数据集标注任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetAnnotationTaskName(const std::string& _datasetAnnotationTaskName);
 
                     /**
                      * 判断参数 DatasetAnnotationTaskName 是否已赋值
                      * @return DatasetAnnotationTaskName 是否已赋值
+                     * 
                      */
                     bool DatasetAnnotationTaskNameHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetAnnotationTaskId 数据集标注任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetAnnotationTaskId() const;
 
                     /**
                      * 设置数据集标注任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetAnnotationTaskId 数据集标注任务ID
+                     * @param _datasetAnnotationTaskId 数据集标注任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetAnnotationTaskId(const std::string& _datasetAnnotationTaskId);
 
                     /**
                      * 判断参数 DatasetAnnotationTaskId 是否已赋值
                      * @return DatasetAnnotationTaskId 是否已赋值
+                     * 
                      */
                     bool DatasetAnnotationTaskIdHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 处理进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProcess() const;
 
                     /**
                      * 设置处理进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Process 处理进度
+                     * @param _process 处理进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcess(const uint64_t& _process);
 
                     /**
                      * 判断参数 Process 是否已赋值
                      * @return Process 是否已赋值
+                     * 
                      */
                     bool ProcessHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetStatus 数据集状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetStatus() const;
 
                     /**
                      * 设置数据集状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetStatus 数据集状态
+                     * @param _datasetStatus 数据集状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetStatus(const std::string& _datasetStatus);
 
                     /**
                      * 判断参数 DatasetStatus 是否已赋值
                      * @return DatasetStatus 是否已赋值
+                     * 
                      */
                     bool DatasetStatusHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置错误详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMsg 错误详情
+                     * @param _errorMsg 错误详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -318,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -340,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalTaskType 外部关联TASKType
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalTaskType() const;
 
                     /**
                      * 设置外部关联TASKType
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalTaskType 外部关联TASKType
+                     * @param _externalTaskType 外部关联TASKType
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalTaskType(const std::string& _externalTaskType);
 
                     /**
                      * 判断参数 ExternalTaskType 是否已赋值
                      * @return ExternalTaskType 是否已赋值
+                     * 
                      */
                     bool ExternalTaskTypeHasBeenSet() const;
 
@@ -362,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetSize 数据集大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetSize() const;
 
                     /**
                      * 设置数据集大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetSize 数据集大小
+                     * @param _datasetSize 数据集大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetSize(const std::string& _datasetSize);
 
                     /**
                      * 判断参数 DatasetSize 是否已赋值
                      * @return DatasetSize 是否已赋值
+                     * 
                      */
                     bool DatasetSizeHasBeenSet() const;
 
@@ -384,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileNum 数据集数据量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFileNum() const;
 
                     /**
                      * 设置数据集数据量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileNum 数据集数据量
+                     * @param _fileNum 数据集数据量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileNum(const uint64_t& _fileNum);
 
                     /**
                      * 判断参数 FileNum 是否已赋值
                      * @return FileNum 是否已赋值
+                     * 
                      */
                     bool FileNumHasBeenSet() const;
 
@@ -406,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageDataPath 数据集源COS路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosPathInfo GetStorageDataPath() const;
 
                     /**
                      * 设置数据集源COS路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageDataPath 数据集源COS路径
+                     * @param _storageDataPath 数据集源COS路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorageDataPath(const CosPathInfo& _storageDataPath);
 
                     /**
                      * 判断参数 StorageDataPath 是否已赋值
                      * @return StorageDataPath 是否已赋值
+                     * 
                      */
                     bool StorageDataPathHasBeenSet() const;
 
@@ -428,20 +479,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageLabelPath 数据集标签存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosPathInfo GetStorageLabelPath() const;
 
                     /**
                      * 设置数据集标签存储路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageLabelPath 数据集标签存储路径
+                     * @param _storageLabelPath 数据集标签存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorageLabelPath(const CosPathInfo& _storageLabelPath);
 
                     /**
                      * 判断参数 StorageLabelPath 是否已赋值
                      * @return StorageLabelPath 是否已赋值
+                     * 
                      */
                     bool StorageLabelPathHasBeenSet() const;
 
@@ -450,20 +504,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetVersions 数据集版本聚合详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DatasetInfo> GetDatasetVersions() const;
 
                     /**
                      * 设置数据集版本聚合详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetVersions 数据集版本聚合详情
+                     * @param _datasetVersions 数据集版本聚合详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetVersions(const std::vector<DatasetInfo>& _datasetVersions);
 
                     /**
                      * 判断参数 DatasetVersions 是否已赋值
                      * @return DatasetVersions 是否已赋值
+                     * 
                      */
                     bool DatasetVersionsHasBeenSet() const;
 
@@ -472,20 +529,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnnotationStatus 数据集标注状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnnotationStatus() const;
 
                     /**
                      * 设置数据集标注状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnnotationStatus 数据集标注状态
+                     * @param _annotationStatus 数据集标注状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnnotationStatus(const std::string& _annotationStatus);
 
                     /**
                      * 判断参数 AnnotationStatus 是否已赋值
                      * @return AnnotationStatus 是否已赋值
+                     * 
                      */
                     bool AnnotationStatusHasBeenSet() const;
 
@@ -494,20 +554,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnnotationType 数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnnotationType() const;
 
                     /**
                      * 设置数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnnotationType 数据集类型
+                     * @param _annotationType 数据集类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnnotationType(const std::string& _annotationType);
 
                     /**
                      * 判断参数 AnnotationType 是否已赋值
                      * @return AnnotationType 是否已赋值
+                     * 
                      */
                     bool AnnotationTypeHasBeenSet() const;
 
@@ -516,20 +579,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnnotationFormat 数据集标注格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnnotationFormat() const;
 
                     /**
                      * 设置数据集标注格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnnotationFormat 数据集标注格式
+                     * @param _annotationFormat 数据集标注格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnnotationFormat(const std::string& _annotationFormat);
 
                     /**
                      * 判断参数 AnnotationFormat 是否已赋值
                      * @return AnnotationFormat 是否已赋值
+                     * 
                      */
                     bool AnnotationFormatHasBeenSet() const;
 
@@ -538,20 +604,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetScope 数据集范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetScope() const;
 
                     /**
                      * 设置数据集范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasetScope 数据集范围
+                     * @param _datasetScope 数据集范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasetScope(const std::string& _datasetScope);
 
                     /**
                      * 判断参数 DatasetScope 是否已赋值
                      * @return DatasetScope 是否已赋值
+                     * 
                      */
                     bool DatasetScopeHasBeenSet() const;
 
@@ -560,20 +629,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrScene 数据集OCR子场景
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcrScene() const;
 
                     /**
                      * 设置数据集OCR子场景
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrScene 数据集OCR子场景
+                     * @param _ocrScene 数据集OCR子场景
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcrScene(const std::string& _ocrScene);
 
                     /**
                      * 判断参数 OcrScene 是否已赋值
                      * @return OcrScene 是否已赋值
+                     * 
                      */
                     bool OcrSceneHasBeenSet() const;
 
@@ -582,20 +654,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnnotationKeyStatus 数据集字典修改状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnnotationKeyStatus() const;
 
                     /**
                      * 设置数据集字典修改状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnnotationKeyStatus 数据集字典修改状态
+                     * @param _annotationKeyStatus 数据集字典修改状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnnotationKeyStatus(const std::string& _annotationKeyStatus);
 
                     /**
                      * 判断参数 AnnotationKeyStatus 是否已赋值
                      * @return AnnotationKeyStatus 是否已赋值
+                     * 
                      */
                     bool AnnotationKeyStatusHasBeenSet() const;
 
@@ -604,20 +679,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentType 文本数据集导入方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置文本数据集导入方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContentType 文本数据集导入方式
+                     * @param _contentType 文本数据集导入方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 

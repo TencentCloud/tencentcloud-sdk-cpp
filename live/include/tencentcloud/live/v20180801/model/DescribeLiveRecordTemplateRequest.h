@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取[DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
                      * @return TemplateId [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置[DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
-                     * @param TemplateId [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
+                     * @param _templateId [DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

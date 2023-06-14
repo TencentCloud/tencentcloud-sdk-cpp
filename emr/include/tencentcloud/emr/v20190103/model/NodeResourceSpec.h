@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 规格类型，如S2.MEDIUM8
+                     * @param _instanceType 规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemDisk 系统盘，系统盘个数不超过1块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiskSpecInfo> GetSystemDisk() const;
 
                     /**
                      * 设置系统盘，系统盘个数不超过1块
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SystemDisk 系统盘，系统盘个数不超过1块
+                     * @param _systemDisk 系统盘，系统盘个数不超过1块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSystemDisk(const std::vector<DiskSpecInfo>& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 需要绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置需要绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 需要绑定的标签列表
+                     * @param _tags 需要绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisk 云数据盘，云数据盘总个数不超过15块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiskSpecInfo> GetDataDisk() const;
 
                     /**
                      * 设置云数据盘，云数据盘总个数不超过15块
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataDisk 云数据盘，云数据盘总个数不超过15块
+                     * @param _dataDisk 云数据盘，云数据盘总个数不超过15块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataDisk(const std::vector<DiskSpecInfo>& _dataDisk);
 
                     /**
                      * 判断参数 DataDisk 是否已赋值
                      * @return DataDisk 是否已赋值
+                     * 
                      */
                     bool DataDiskHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalDataDisk 本地数据盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiskSpecInfo> GetLocalDataDisk() const;
 
                     /**
                      * 设置本地数据盘
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalDataDisk 本地数据盘
+                     * @param _localDataDisk 本地数据盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalDataDisk(const std::vector<DiskSpecInfo>& _localDataDisk);
 
                     /**
                      * 判断参数 LocalDataDisk 是否已赋值
                      * @return LocalDataDisk 是否已赋值
+                     * 
                      */
                     bool LocalDataDiskHasBeenSet() const;
 

@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取操作的印章状态，DISABLE-停用印章
                      * @return Status 操作的印章状态，DISABLE-停用印章
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置操作的印章状态，DISABLE-停用印章
-                     * @param Status 操作的印章状态，DISABLE-停用印章
+                     * @param _status 操作的印章状态，DISABLE-停用印章
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取印章ID
                      * @return SealId 印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章ID
-                     * @param SealId 印章ID
+                     * @param _sealId 印章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取更新印章状态原因说明
                      * @return Reason 更新印章状态原因说明
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置更新印章状态原因说明
-                     * @param Reason 更新印章状态原因说明
+                     * @param _reason 更新印章状态原因说明
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * @param _operator 操作者的信息
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

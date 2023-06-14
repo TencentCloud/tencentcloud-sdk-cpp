@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取企微SaaS平台经销商id
                      * @return DealerId 企微SaaS平台经销商id
+                     * 
                      */
                     uint64_t GetDealerId() const;
 
                     /**
                      * 设置企微SaaS平台经销商id
-                     * @param DealerId 企微SaaS平台经销商id
+                     * @param _dealerId 企微SaaS平台经销商id
+                     * 
                      */
                     void SetDealerId(const uint64_t& _dealerId);
 
                     /**
                      * 判断参数 DealerId 是否已赋值
                      * @return DealerId 是否已赋值
+                     * 
                      */
                     bool DealerIdHasBeenSet() const;
 
                     /**
                      * 获取经销商名称
                      * @return DealerName 经销商名称
+                     * 
                      */
                     std::string GetDealerName() const;
 
                     /**
                      * 设置经销商名称
-                     * @param DealerName 经销商名称
+                     * @param _dealerName 经销商名称
+                     * 
                      */
                     void SetDealerName(const std::string& _dealerName);
 
                     /**
                      * 判断参数 DealerName 是否已赋值
                      * @return DealerName 是否已赋值
+                     * 
                      */
                     bool DealerNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProvinceCode 所属省份编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvinceCode() const;
 
                     /**
                      * 设置所属省份编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProvinceCode 所属省份编号
+                     * @param _provinceCode 所属省份编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvinceCode(const std::string& _provinceCode);
 
                     /**
                      * 判断参数 ProvinceCode 是否已赋值
                      * @return ProvinceCode 是否已赋值
+                     * 
                      */
                     bool ProvinceCodeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CityCodeList 所属城市编号列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCityCodeList() const;
 
                     /**
                      * 设置所属城市编号列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CityCodeList 所属城市编号列表
+                     * @param _cityCodeList 所属城市编号列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCityCodeList(const std::vector<std::string>& _cityCodeList);
 
                     /**
                      * 判断参数 CityCodeList 是否已赋值
                      * @return CityCodeList 是否已赋值
+                     * 
                      */
                     bool CityCodeListHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrandIdList 业务覆盖品牌id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBrandIdList() const;
 
                     /**
                      * 设置业务覆盖品牌id列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrandIdList 业务覆盖品牌id列表
+                     * @param _brandIdList 业务覆盖品牌id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrandIdList(const std::vector<std::string>& _brandIdList);
 
                     /**
                      * 判断参数 BrandIdList 是否已赋值
                      * @return BrandIdList 是否已赋值
+                     * 
                      */
                     bool BrandIdListHasBeenSet() const;
 

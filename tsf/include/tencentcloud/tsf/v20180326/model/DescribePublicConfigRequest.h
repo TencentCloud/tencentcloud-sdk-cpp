@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的配置项ID
                      * @return ConfigId 需要查询的配置项ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置需要查询的配置项ID
-                     * @param ConfigId 需要查询的配置项ID
+                     * @param _configId 需要查询的配置项ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 

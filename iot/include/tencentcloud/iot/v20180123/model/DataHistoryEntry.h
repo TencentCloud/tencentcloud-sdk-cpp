@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取日志id
                      * @return Id 日志id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置日志id
-                     * @param Id 日志id
+                     * @param _id 日志id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取时间戳
                      * @return Timestamp 时间戳
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳
-                     * @param Timestamp 时间戳
+                     * @param _timestamp 时间戳
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取数据
                      * @return Data 数据
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置数据
-                     * @param Data 数据
+                     * @param _data 数据
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

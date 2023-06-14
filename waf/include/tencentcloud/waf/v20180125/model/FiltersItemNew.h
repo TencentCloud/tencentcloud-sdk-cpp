@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取字段名
                      * @return Name 字段名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名
-                     * @param Name 字段名
+                     * @param _name 字段名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤值
                      * @return Values 过滤值
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤值
-                     * @param Values 过滤值
+                     * @param _values 过滤值
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否精确查找
                      * @return ExactMatch 是否精确查找
+                     * 
                      */
                     bool GetExactMatch() const;
 
                     /**
                      * 设置是否精确查找
-                     * @param ExactMatch 是否精确查找
+                     * @param _exactMatch 是否精确查找
+                     * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
 
                     /**
                      * 判断参数 ExactMatch 是否已赋值
                      * @return ExactMatch 是否已赋值
+                     * 
                      */
                     bool ExactMatchHasBeenSet() const;
 

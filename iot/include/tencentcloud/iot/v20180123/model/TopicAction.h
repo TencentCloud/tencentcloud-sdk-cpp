@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取目标topic
                      * @return Topic 目标topic
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置目标topic
-                     * @param Topic 目标topic
+                     * @param _topic 目标topic
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 

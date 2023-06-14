@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取网格ID
                      * @return MeshID 网格ID
+                     * 
                      */
                     std::string GetMeshID() const;
 
                     /**
                      * 设置网格ID
-                     * @param MeshID 网格ID
+                     * @param _meshID 网格ID
+                     * 
                      */
                     void SetMeshID(const std::string& _meshID);
 
                     /**
                      * 判断参数 MeshID 是否已赋值
                      * @return MeshID 是否已赋值
+                     * 
                      */
                     bool MeshIDHasBeenSet() const;
 
                     /**
                      * 获取配置
                      * @return Prometheus 配置
+                     * 
                      */
                     PrometheusConfig GetPrometheus() const;
 
                     /**
                      * 设置配置
-                     * @param Prometheus 配置
+                     * @param _prometheus 配置
+                     * 
                      */
                     void SetPrometheus(const PrometheusConfig& _prometheus);
 
                     /**
                      * 判断参数 Prometheus 是否已赋值
                      * @return Prometheus 是否已赋值
+                     * 
                      */
                     bool PrometheusHasBeenSet() const;
 

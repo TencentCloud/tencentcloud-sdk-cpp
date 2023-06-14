@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取总流量，单位: MB。
                      * @return TotalFlux 总流量，单位: MB。
+                     * 
                      */
                     double GetTotalFlux() const;
 
                     /**
                      * 设置总流量，单位: MB。
-                     * @param TotalFlux 总流量，单位: MB。
+                     * @param _totalFlux 总流量，单位: MB。
+                     * 
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
                     /**
                      * 判断参数 TotalFlux 是否已赋值
                      * @return TotalFlux 是否已赋值
+                     * 
                      */
                     bool TotalFluxHasBeenSet() const;
 

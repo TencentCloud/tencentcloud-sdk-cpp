@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取检查项详情
                      * @return CheckConfigDetail 检查项详情
+                     * 
                      */
                     CheckConfigDetail GetCheckConfigDetail() const;
 
                     /**
                      * 判断参数 CheckConfigDetail 是否已赋值
                      * @return CheckConfigDetail 是否已赋值
+                     * 
                      */
                     bool CheckConfigDetailHasBeenSet() const;
 

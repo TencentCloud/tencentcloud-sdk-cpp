@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的定时任务ID。
                      * @return ScheduledActionId 待删除的定时任务ID。
+                     * 
                      */
                     std::string GetScheduledActionId() const;
 
                     /**
                      * 设置待删除的定时任务ID。
-                     * @param ScheduledActionId 待删除的定时任务ID。
+                     * @param _scheduledActionId 待删除的定时任务ID。
+                     * 
                      */
                     void SetScheduledActionId(const std::string& _scheduledActionId);
 
                     /**
                      * 判断参数 ScheduledActionId 是否已赋值
                      * @return ScheduledActionId 是否已赋值
+                     * 
                      */
                     bool ScheduledActionIdHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefMsg 校验任务结果输出简要信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBriefMsg() const;
 
                     /**
                      * 判断参数 BriefMsg 是否已赋值
                      * @return BriefMsg 是否已赋值
+                     * 
                      */
                     bool BriefMsgHasBeenSet() const;
 
@@ -77,24 +81,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfo 检查步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CheckStep> GetStepInfo() const;
 
                     /**
                      * 判断参数 StepInfo 是否已赋值
                      * @return StepInfo 是否已赋值
+                     * 
                      */
                     bool StepInfoHasBeenSet() const;
 
                     /**
                      * 获取校验结果，如：checkPass(校验通过)、checkNotPass(校验未通过)
                      * @return CheckFlag 校验结果，如：checkPass(校验通过)、checkNotPass(校验未通过)
+                     * 
                      */
                     std::string GetCheckFlag() const;
 
                     /**
                      * 判断参数 CheckFlag 是否已赋值
                      * @return CheckFlag 是否已赋值
+                     * 
                      */
                     bool CheckFlagHasBeenSet() const;
 

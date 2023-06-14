@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return EnvironmentId 命名空间
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置命名空间
-                     * @param EnvironmentId 命名空间
+                     * @param _environmentId 命名空间
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题，查询死信时传groupId
                      * @return TopicName 主题，查询死信时传groupId
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题，查询死信时传groupId
-                     * @param TopicName 主题，查询死信时传groupId
+                     * @param _topicName 主题，查询死信时传groupId
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取消息id
                      * @return MsgId 消息id
+                     * 
                      */
                     std::string GetMsgId() const;
 
                     /**
                      * 设置消息id
-                     * @param MsgId 消息id
+                     * @param _msgId 消息id
+                     * 
                      */
                     void SetMsgId(const std::string& _msgId);
 
                     /**
                      * 判断参数 MsgId 是否已赋值
                      * @return MsgId 是否已赋值
+                     * 
                      */
                     bool MsgIdHasBeenSet() const;
 
                     /**
                      * 获取pulsar消息id
                      * @return PulsarMsgId pulsar消息id
+                     * 
                      */
                     std::string GetPulsarMsgId() const;
 
                     /**
                      * 设置pulsar消息id
-                     * @param PulsarMsgId pulsar消息id
+                     * @param _pulsarMsgId pulsar消息id
+                     * 
                      */
                     void SetPulsarMsgId(const std::string& _pulsarMsgId);
 
                     /**
                      * 判断参数 PulsarMsgId 是否已赋值
                      * @return PulsarMsgId 是否已赋值
+                     * 
                      */
                     bool PulsarMsgIdHasBeenSet() const;
 
                     /**
                      * 获取查询死信时该值为true，只对Rocketmq有效
                      * @return QueryDlqMsg 查询死信时该值为true，只对Rocketmq有效
+                     * 
                      */
                     bool GetQueryDlqMsg() const;
 
                     /**
                      * 设置查询死信时该值为true，只对Rocketmq有效
-                     * @param QueryDlqMsg 查询死信时该值为true，只对Rocketmq有效
+                     * @param _queryDlqMsg 查询死信时该值为true，只对Rocketmq有效
+                     * 
                      */
                     void SetQueryDlqMsg(const bool& _queryDlqMsg);
 
                     /**
                      * 判断参数 QueryDlqMsg 是否已赋值
                      * @return QueryDlqMsg 是否已赋值
+                     * 
                      */
                     bool QueryDlqMsgHasBeenSet() const;
 

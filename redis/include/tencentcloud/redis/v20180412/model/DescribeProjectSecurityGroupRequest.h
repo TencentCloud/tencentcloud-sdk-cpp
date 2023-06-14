@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取0:默认项目；-1 所有项目; >0: 特定项目
                      * @return ProjectId 0:默认项目；-1 所有项目; >0: 特定项目
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置0:默认项目；-1 所有项目; >0: 特定项目
-                     * @param ProjectId 0:默认项目；-1 所有项目; >0: 特定项目
+                     * @param _projectId 0:默认项目；-1 所有项目; >0: 特定项目
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取安全组Id
                      * @return SecurityGroupId 安全组Id
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组Id
-                     * @param SecurityGroupId 安全组Id
+                     * @param _securityGroupId 安全组Id
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 

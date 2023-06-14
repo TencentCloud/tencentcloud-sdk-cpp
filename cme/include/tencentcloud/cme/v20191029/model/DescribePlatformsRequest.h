@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
                      * @return Platforms 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
+                     * 
                      */
                     std::vector<std::string> GetPlatforms() const;
 
                     /**
                      * 设置平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
-                     * @param Platforms 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
+                     * @param _platforms 平台 Id 列表。如果不填，则不按平台 Id 进行过滤。
+                     * 
                      */
                     void SetPlatforms(const std::vector<std::string>& _platforms);
 
                     /**
                      * 判断参数 Platforms 是否已赋值
                      * @return Platforms 是否已赋值
+                     * 
                      */
                     bool PlatformsHasBeenSet() const;
 
                     /**
                      * 获取平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
                      * @return LicenseIds 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
+                     * 
                      */
                     std::vector<std::string> GetLicenseIds() const;
 
                     /**
                      * 设置平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
-                     * @param LicenseIds 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
+                     * @param _licenseIds 平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。
+                     * 
                      */
                     void SetLicenseIds(const std::vector<std::string>& _licenseIds);
 
                     /**
                      * 判断参数 LicenseIds 是否已赋值
                      * @return LicenseIds 是否已赋值
+                     * 
                      */
                     bool LicenseIdsHasBeenSet() const;
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：0。
                      * @return Offset 分页返回的起始偏移量，默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。
-                     * @param Offset 分页返回的起始偏移量，默认值：0。
+                     * @param _offset 分页返回的起始偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回的记录条数，默认值：10，最大值：20。
                      * @return Limit 分页返回的记录条数，默认值：10，最大值：20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的记录条数，默认值：10，最大值：20。
-                     * @param Limit 分页返回的记录条数，默认值：10，最大值：20。
+                     * @param _limit 分页返回的记录条数，默认值：10，最大值：20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

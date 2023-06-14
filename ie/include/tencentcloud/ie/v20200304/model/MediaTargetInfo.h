@@ -58,6 +58,7 @@ index：序号；
 注1：部分子服务支持占位符，形式为： {parameter}
 预设parameter有：
 index：序号；
+                     * 
                      */
                     std::string GetFileName() const;
 
@@ -67,71 +68,82 @@ index：序号；
 注1：部分子服务支持占位符，形式为： {parameter}
 预设parameter有：
 index：序号；
-                     * @param FileName 目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
+                     * @param _fileName 目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。
 
 注1：部分子服务支持占位符，形式为： {parameter}
 预设parameter有：
 index：序号；
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取媒体封装格式，最长5字符，具体格式支持根据子任务确定。
                      * @return Format 媒体封装格式，最长5字符，具体格式支持根据子任务确定。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置媒体封装格式，最长5字符，具体格式支持根据子任务确定。
-                     * @param Format 媒体封装格式，最长5字符，具体格式支持根据子任务确定。
+                     * @param _format 媒体封装格式，最长5字符，具体格式支持根据子任务确定。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取视频流信息。
                      * @return TargetVideoInfo 视频流信息。
+                     * 
                      */
                     TargetVideoInfo GetTargetVideoInfo() const;
 
                     /**
                      * 设置视频流信息。
-                     * @param TargetVideoInfo 视频流信息。
+                     * @param _targetVideoInfo 视频流信息。
+                     * 
                      */
                     void SetTargetVideoInfo(const TargetVideoInfo& _targetVideoInfo);
 
                     /**
                      * 判断参数 TargetVideoInfo 是否已赋值
                      * @return TargetVideoInfo 是否已赋值
+                     * 
                      */
                     bool TargetVideoInfoHasBeenSet() const;
 
                     /**
                      * 获取【不再使用】
                      * @return ResultListSaveType 【不再使用】
+                     * 
                      */
                     std::string GetResultListSaveType() const;
 
                     /**
                      * 设置【不再使用】
-                     * @param ResultListSaveType 【不再使用】
+                     * @param _resultListSaveType 【不再使用】
+                     * 
                      */
                     void SetResultListSaveType(const std::string& _resultListSaveType);
 
                     /**
                      * 判断参数 ResultListSaveType 是否已赋值
                      * @return ResultListSaveType 是否已赋值
+                     * 
                      */
                     bool ResultListSaveTypeHasBeenSet() const;
 

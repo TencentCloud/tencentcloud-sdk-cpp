@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取签署流程批量撤销失败原因，错误信息与流程Id一一对应，成功为“”,失败则对应失败消息
                      * @return FailMessages 签署流程批量撤销失败原因，错误信息与流程Id一一对应，成功为“”,失败则对应失败消息
+                     * 
                      */
                     std::vector<std::string> GetFailMessages() const;
 
                     /**
                      * 判断参数 FailMessages 是否已赋值
                      * @return FailMessages 是否已赋值
+                     * 
                      */
                     bool FailMessagesHasBeenSet() const;
 

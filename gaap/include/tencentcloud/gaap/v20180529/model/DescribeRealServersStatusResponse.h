@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回源站查询结果的个数
                      * @return TotalCount 返回源站查询结果的个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取源站被绑定状态列表
                      * @return RealServerStatusSet 源站被绑定状态列表
+                     * 
                      */
                     std::vector<RealServerStatus> GetRealServerStatusSet() const;
 
                     /**
                      * 判断参数 RealServerStatusSet 是否已赋值
                      * @return RealServerStatusSet 是否已赋值
+                     * 
                      */
                     bool RealServerStatusSetHasBeenSet() const;
 

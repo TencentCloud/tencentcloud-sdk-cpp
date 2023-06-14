@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取传1拉取所有项目（包括隐藏项目），传0拉取显示项目
                      * @return AllList 传1拉取所有项目（包括隐藏项目），传0拉取显示项目
+                     * 
                      */
                     uint64_t GetAllList() const;
 
                     /**
                      * 设置传1拉取所有项目（包括隐藏项目），传0拉取显示项目
-                     * @param AllList 传1拉取所有项目（包括隐藏项目），传0拉取显示项目
+                     * @param _allList 传1拉取所有项目（包括隐藏项目），传0拉取显示项目
+                     * 
                      */
                     void SetAllList(const uint64_t& _allList);
 
                     /**
                      * 判断参数 AllList 是否已赋值
                      * @return AllList 是否已赋值
+                     * 
                      */
                     bool AllListHasBeenSet() const;
 
                     /**
                      * 获取分页条数，固定值1000。
                      * @return Limit 分页条数，固定值1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页条数，固定值1000。
-                     * @param Limit 分页条数，固定值1000。
+                     * @param _limit 分页条数，固定值1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量。
                      * @return Offset 分页偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量。
-                     * @param Offset 分页偏移量。
+                     * @param _offset 分页偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

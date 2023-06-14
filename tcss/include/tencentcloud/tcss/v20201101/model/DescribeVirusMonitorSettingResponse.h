@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取是否开启实时监控
                      * @return EnableScan 是否开启实时监控
+                     * 
                      */
                     bool GetEnableScan() const;
 
                     /**
                      * 判断参数 EnableScan 是否已赋值
                      * @return EnableScan 是否已赋值
+                     * 
                      */
                     bool EnableScanHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPathAll 扫描全部路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetScanPathAll() const;
 
                     /**
                      * 判断参数 ScanPathAll 是否已赋值
                      * @return ScanPathAll 是否已赋值
+                     * 
                      */
                     bool ScanPathAllHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScanPathType() const;
 
                     /**
                      * 判断参数 ScanPathType 是否已赋值
                      * @return ScanPathType 是否已赋值
+                     * 
                      */
                     bool ScanPathTypeHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPath 自选排除或扫描的地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetScanPath() const;
 
                     /**
                      * 判断参数 ScanPath 是否已赋值
                      * @return ScanPath 是否已赋值
+                     * 
                      */
                     bool ScanPathHasBeenSet() const;
 
@@ -108,12 +116,14 @@ SCAN_PATH_ALL：全部路径
 SCAN_PATH_DEFAULT：默认路径
 SCAN_PATH_USER_DEFINE：用户自定义路径
 
+                     * 
                      */
                     std::string GetScanPathMode() const;
 
                     /**
                      * 判断参数 ScanPathMode 是否已赋值
                      * @return ScanPathMode 是否已赋值
+                     * 
                      */
                     bool ScanPathModeHasBeenSet() const;
 

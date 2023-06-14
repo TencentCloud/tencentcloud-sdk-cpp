@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type NONE：不使用调度策略；CROSS_AZ：跨可用区部署
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置NONE：不使用调度策略；CROSS_AZ：跨可用区部署
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type NONE：不使用调度策略；CROSS_AZ：跨可用区部署
+                     * @param _type NONE：不使用调度策略；CROSS_AZ：跨可用区部署
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

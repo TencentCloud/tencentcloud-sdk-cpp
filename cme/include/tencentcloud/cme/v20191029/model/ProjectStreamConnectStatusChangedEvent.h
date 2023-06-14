@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取项目 Id。
                      * @return ProjectId 项目 Id。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 Id。
-                     * @param ProjectId 项目 Id。
+                     * @param _projectId 项目 Id。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 <li>Stopped：云转推推流结束；</li>
 <li>InputInterrupted：云转推输入断流；</li>
 <li>OutputInterrupted：云转推输出断流。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -86,17 +90,19 @@ namespace TencentCloud
 <li>Stopped：云转推推流结束；</li>
 <li>InputInterrupted：云转推输入断流；</li>
 <li>OutputInterrupted：云转推输出断流。</li>
-                     * @param Status 项目状态，取值有：
+                     * @param _status 项目状态，取值有：
 <li>Working：云转推推流开始；</li>
 <li>Stopped：云转推推流结束；</li>
 <li>InputInterrupted：云转推输入断流；</li>
 <li>OutputInterrupted：云转推输出断流。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,20 +111,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInterruptInfo 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamConnectInputInterruptInfo GetInputInterruptInfo() const;
 
                     /**
                      * 设置云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputInterruptInfo 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+                     * @param _inputInterruptInfo 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputInterruptInfo(const StreamConnectInputInterruptInfo& _inputInterruptInfo);
 
                     /**
                      * 判断参数 InputInterruptInfo 是否已赋值
                      * @return InputInterruptInfo 是否已赋值
+                     * 
                      */
                     bool InputInterruptInfoHasBeenSet() const;
 
@@ -127,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputInterruptInfo 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamConnectOutputInterruptInfo GetOutputInterruptInfo() const;
 
                     /**
                      * 设置云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputInterruptInfo 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+                     * @param _outputInterruptInfo 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputInterruptInfo(const StreamConnectOutputInterruptInfo& _outputInterruptInfo);
 
                     /**
                      * 判断参数 OutputInterruptInfo 是否已赋值
                      * @return OutputInterruptInfo 是否已赋值
+                     * 
                      */
                     bool OutputInterruptInfoHasBeenSet() const;
 

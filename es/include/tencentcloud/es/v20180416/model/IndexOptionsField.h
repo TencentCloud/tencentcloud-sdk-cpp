@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireMaxAge 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireMaxAge() const;
 
                     /**
                      * 设置过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireMaxAge 过期时间
+                     * @param _expireMaxAge 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireMaxAge(const std::string& _expireMaxAge);
 
                     /**
                      * 判断参数 ExpireMaxAge 是否已赋值
                      * @return ExpireMaxAge 是否已赋值
+                     * 
                      */
                     bool ExpireMaxAgeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireMaxSize 过期大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireMaxSize() const;
 
                     /**
                      * 设置过期大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireMaxSize 过期大小
+                     * @param _expireMaxSize 过期大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireMaxSize(const std::string& _expireMaxSize);
 
                     /**
                      * 判断参数 ExpireMaxSize 是否已赋值
                      * @return ExpireMaxSize 是否已赋值
+                     * 
                      */
                     bool ExpireMaxSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RolloverMaxAge 滚动周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRolloverMaxAge() const;
 
                     /**
                      * 设置滚动周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RolloverMaxAge 滚动周期
+                     * @param _rolloverMaxAge 滚动周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRolloverMaxAge(const std::string& _rolloverMaxAge);
 
                     /**
                      * 判断参数 RolloverMaxAge 是否已赋值
                      * @return RolloverMaxAge 是否已赋值
+                     * 
                      */
                     bool RolloverMaxAgeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RolloverDynamic 是否开启动态滚动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRolloverDynamic() const;
 
                     /**
                      * 设置是否开启动态滚动
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RolloverDynamic 是否开启动态滚动
+                     * @param _rolloverDynamic 是否开启动态滚动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRolloverDynamic(const std::string& _rolloverDynamic);
 
                     /**
                      * 判断参数 RolloverDynamic 是否已赋值
                      * @return RolloverDynamic 是否已赋值
+                     * 
                      */
                     bool RolloverDynamicHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardNumDynamic 是否开启动态分片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShardNumDynamic() const;
 
                     /**
                      * 设置是否开启动态分片
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShardNumDynamic 是否开启动态分片
+                     * @param _shardNumDynamic 是否开启动态分片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShardNumDynamic(const std::string& _shardNumDynamic);
 
                     /**
                      * 判断参数 ShardNumDynamic 是否已赋值
                      * @return ShardNumDynamic 是否已赋值
+                     * 
                      */
                     bool ShardNumDynamicHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimestampField 时间分区字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimestampField() const;
 
                     /**
                      * 设置时间分区字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimestampField 时间分区字段
+                     * @param _timestampField 时间分区字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestampField(const std::string& _timestampField);
 
                     /**
                      * 判断参数 TimestampField 是否已赋值
                      * @return TimestampField 是否已赋值
+                     * 
                      */
                     bool TimestampFieldHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WriteMode 写入模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWriteMode() const;
 
                     /**
                      * 设置写入模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WriteMode 写入模式
+                     * @param _writeMode 写入模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWriteMode(const std::string& _writeMode);
 
                     /**
                      * 判断参数 WriteMode 是否已赋值
                      * @return WriteMode 是否已赋值
+                     * 
                      */
                     bool WriteModeHasBeenSet() const;
 

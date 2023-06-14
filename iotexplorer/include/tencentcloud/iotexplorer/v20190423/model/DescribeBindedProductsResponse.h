@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取当前分页的子产品数组
                      * @return Products 当前分页的子产品数组
+                     * 
                      */
                     std::vector<BindProductInfo> GetProducts() const;
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
+                     * 
                      */
                     bool ProductsHasBeenSet() const;
 
                     /**
                      * 获取绑定的子产品总数量
                      * @return Total 绑定的子产品总数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

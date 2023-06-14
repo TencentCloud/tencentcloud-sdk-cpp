@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedFlowList 流量统计列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetStatisticFlows> GetUsedFlowList() const;
 
                     /**
                      * 判断参数 UsedFlowList 是否已赋值
                      * @return UsedFlowList 是否已赋值
+                     * 
                      */
                     bool UsedFlowListHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedTimeList 时长统计列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetStatisticTimes> GetUsedTimeList() const;
 
                     /**
                      * 判断参数 UsedTimeList 是否已赋值
                      * @return UsedTimeList 是否已赋值
+                     * 
                      */
                     bool UsedTimeListHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 记录总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeType 统计时间类型，取值：小时和天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeType() const;
 
                     /**
                      * 判断参数 TimeType 是否已赋值
                      * @return TimeType 是否已赋值
+                     * 
                      */
                     bool TimeTypeHasBeenSet() const;
 

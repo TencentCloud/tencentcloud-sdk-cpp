@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取数据来源，lakefsStorage、taskResult
                      * @return InputType 数据来源，lakefsStorage、taskResult
+                     * 
                      */
                     std::string GetInputType() const;
 
                     /**
                      * 设置数据来源，lakefsStorage、taskResult
-                     * @param InputType 数据来源，lakefsStorage、taskResult
+                     * @param _inputType 数据来源，lakefsStorage、taskResult
+                     * 
                      */
                     void SetInputType(const std::string& _inputType);
 
                     /**
                      * 判断参数 InputType 是否已赋值
                      * @return InputType 是否已赋值
+                     * 
                      */
                     bool InputTypeHasBeenSet() const;
 
                     /**
                      * 获取导出任务输入配置
                      * @return InputConf 导出任务输入配置
+                     * 
                      */
                     std::vector<KVPair> GetInputConf() const;
 
                     /**
                      * 设置导出任务输入配置
-                     * @param InputConf 导出任务输入配置
+                     * @param _inputConf 导出任务输入配置
+                     * 
                      */
                     void SetInputConf(const std::vector<KVPair>& _inputConf);
 
                     /**
                      * 判断参数 InputConf 是否已赋值
                      * @return InputConf 是否已赋值
+                     * 
                      */
                     bool InputConfHasBeenSet() const;
 
                     /**
                      * 获取导出任务输出配置
                      * @return OutputConf 导出任务输出配置
+                     * 
                      */
                     std::vector<KVPair> GetOutputConf() const;
 
                     /**
                      * 设置导出任务输出配置
-                     * @param OutputConf 导出任务输出配置
+                     * @param _outputConf 导出任务输出配置
+                     * 
                      */
                     void SetOutputConf(const std::vector<KVPair>& _outputConf);
 
                     /**
                      * 判断参数 OutputConf 是否已赋值
                      * @return OutputConf 是否已赋值
+                     * 
                      */
                     bool OutputConfHasBeenSet() const;
 
                     /**
                      * 获取目标数据源的类型，目前支持导出到cos
                      * @return OutputType 目标数据源的类型，目前支持导出到cos
+                     * 
                      */
                     std::string GetOutputType() const;
 
                     /**
                      * 设置目标数据源的类型，目前支持导出到cos
-                     * @param OutputType 目标数据源的类型，目前支持导出到cos
+                     * @param _outputType 目标数据源的类型，目前支持导出到cos
+                     * 
                      */
                     void SetOutputType(const std::string& _outputType);
 
                     /**
                      * 判断参数 OutputType 是否已赋值
                      * @return OutputType 是否已赋值
+                     * 
                      */
                     bool OutputTypeHasBeenSet() const;
 

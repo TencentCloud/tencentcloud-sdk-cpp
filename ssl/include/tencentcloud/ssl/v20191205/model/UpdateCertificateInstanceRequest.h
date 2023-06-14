@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取一键更新新证书ID
                      * @return CertificateId 一键更新新证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置一键更新新证书ID
-                     * @param CertificateId 一键更新新证书ID
+                     * @param _certificateId 一键更新新证书ID
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取一键更新原证书ID
                      * @return OldCertificateId 一键更新原证书ID
+                     * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
                      * 设置一键更新原证书ID
-                     * @param OldCertificateId 一键更新原证书ID
+                     * @param _oldCertificateId 一键更新原证书ID
+                     * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
 
                     /**
                      * 判断参数 OldCertificateId 是否已赋值
                      * @return OldCertificateId 是否已赋值
+                     * 
                      */
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
                      * 获取需要部署的资源类型
                      * @return ResourceTypes 需要部署的资源类型
+                     * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
                      * 设置需要部署的资源类型
-                     * @param ResourceTypes 需要部署的资源类型
+                     * @param _resourceTypes 需要部署的资源类型
+                     * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
 
                     /**
                      * 判断参数 ResourceTypes 是否已赋值
                      * @return ResourceTypes 是否已赋值
+                     * 
                      */
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
                      * 获取需要部署的地域列表（废弃）
                      * @return Regions 需要部署的地域列表（废弃）
+                     * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 设置需要部署的地域列表（废弃）
-                     * @param Regions 需要部署的地域列表（废弃）
+                     * @param _regions 需要部署的地域列表（废弃）
+                     * 
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
+                     * 
                      */
                     bool RegionsHasBeenSet() const;
 
                     /**
                      * 获取云资源需要部署的地域列表
                      * @return ResourceTypesRegions 云资源需要部署的地域列表
+                     * 
                      */
                     std::vector<ResourceTypeRegions> GetResourceTypesRegions() const;
 
                     /**
                      * 设置云资源需要部署的地域列表
-                     * @param ResourceTypesRegions 云资源需要部署的地域列表
+                     * @param _resourceTypesRegions 云资源需要部署的地域列表
+                     * 
                      */
                     void SetResourceTypesRegions(const std::vector<ResourceTypeRegions>& _resourceTypesRegions);
 
                     /**
                      * 判断参数 ResourceTypesRegions 是否已赋值
                      * @return ResourceTypesRegions 是否已赋值
+                     * 
                      */
                     bool ResourceTypesRegionsHasBeenSet() const;
 

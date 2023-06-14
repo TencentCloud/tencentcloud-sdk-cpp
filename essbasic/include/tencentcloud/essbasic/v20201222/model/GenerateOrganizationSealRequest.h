@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
@@ -76,6 +79,7 @@ CONTRACT-合同专用章
 LEGAL_REPRESENTATIVE-法定代表人章
 SPECIAL_NATIONWIDE_INVOICE-发票专用章
 OTHER-其他
+                     * 
                      */
                     std::string GetSealType() const;
 
@@ -87,91 +91,105 @@ CONTRACT-合同专用章
 LEGAL_REPRESENTATIVE-法定代表人章
 SPECIAL_NATIONWIDE_INVOICE-发票专用章
 OTHER-其他
-                     * @param SealType 印章类型：
+                     * @param _sealType 印章类型：
 OFFICIAL-公章
 SPECIAL_FINANCIAL-财务专用章
 CONTRACT-合同专用章
 LEGAL_REPRESENTATIVE-法定代表人章
 SPECIAL_NATIONWIDE_INVOICE-发票专用章
 OTHER-其他
+                     * 
                      */
                     void SetSealType(const std::string& _sealType);
 
                     /**
                      * 判断参数 SealType 是否已赋值
                      * @return SealType 是否已赋值
+                     * 
                      */
                     bool SealTypeHasBeenSet() const;
 
                     /**
                      * 获取请求生成企业印章的客户端Ip
                      * @return SourceIp 请求生成企业印章的客户端Ip
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求生成企业印章的客户端Ip
-                     * @param SourceIp 请求生成企业印章的客户端Ip
+                     * @param _sourceIp 请求生成企业印章的客户端Ip
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 
                     /**
                      * 获取电子印章名称
                      * @return SealName 电子印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置电子印章名称
-                     * @param SealName 电子印章名称
+                     * @param _sealName 电子印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取企业印章横向文字，最多可填8个汉字（可不填，默认为"电子签名专用章"）
                      * @return SealHorizontalText 企业印章横向文字，最多可填8个汉字（可不填，默认为"电子签名专用章"）
+                     * 
                      */
                     std::string GetSealHorizontalText() const;
 
                     /**
                      * 设置企业印章横向文字，最多可填8个汉字（可不填，默认为"电子签名专用章"）
-                     * @param SealHorizontalText 企业印章横向文字，最多可填8个汉字（可不填，默认为"电子签名专用章"）
+                     * @param _sealHorizontalText 企业印章横向文字，最多可填8个汉字（可不填，默认为"电子签名专用章"）
+                     * 
                      */
                     void SetSealHorizontalText(const std::string& _sealHorizontalText);
 
                     /**
                      * 判断参数 SealHorizontalText 是否已赋值
                      * @return SealHorizontalText 是否已赋值
+                     * 
                      */
                     bool SealHorizontalTextHasBeenSet() const;
 
                     /**
                      * 获取是否是默认印章 true：是，false：否
                      * @return IsDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否是默认印章 true：是，false：否
-                     * @param IsDefault 是否是默认印章 true：是，false：否
+                     * @param _isDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取生成二维码，引导用户扫码
                      * @return QRCodeUrl 生成二维码，引导用户扫码
+                     * 
                      */
                     std::string GetQRCodeUrl() const;
 
                     /**
                      * 设置生成二维码，引导用户扫码
-                     * @param QRCodeUrl 生成二维码，引导用户扫码
+                     * @param _qRCodeUrl 生成二维码，引导用户扫码
+                     * 
                      */
                     void SetQRCodeUrl(const std::string& _qRCodeUrl);
 
                     /**
                      * 判断参数 QRCodeUrl 是否已赋值
                      * @return QRCodeUrl 是否已赋值
+                     * 
                      */
                     bool QRCodeUrlHasBeenSet() const;
 
                     /**
                      * 获取二维码凭证
                      * @return QRCodeKey 二维码凭证
+                     * 
                      */
                     std::string GetQRCodeKey() const;
 
                     /**
                      * 设置二维码凭证
-                     * @param QRCodeKey 二维码凭证
+                     * @param _qRCodeKey 二维码凭证
+                     * 
                      */
                     void SetQRCodeKey(const std::string& _qRCodeKey);
 
                     /**
                      * 判断参数 QRCodeKey 是否已赋值
                      * @return QRCodeKey 是否已赋值
+                     * 
                      */
                     bool QRCodeKeyHasBeenSet() const;
 
@@ -88,92 +94,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 跳转 URL,用于客户端跳转，订单未支付时返回该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置跳转 URL,用于客户端跳转，订单未支付时返回该参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 跳转 URL,用于客户端跳转，订单未支付时返回该参数
+                     * @param _url 跳转 URL,用于客户端跳转，订单未支付时返回该参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取跳转凭证过期时间,yyyy-MM-dd HH:mm:ss
                      * @return ExpireTime 跳转凭证过期时间,yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置跳转凭证过期时间,yyyy-MM-dd HH:mm:ss
-                     * @param ExpireTime 跳转凭证过期时间,yyyy-MM-dd HH:mm:ss
+                     * @param _expireTime 跳转凭证过期时间,yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取小程序 appid
                      * @return MpAppId 小程序 appid
+                     * 
                      */
                     std::string GetMpAppId() const;
 
                     /**
                      * 设置小程序 appid
-                     * @param MpAppId 小程序 appid
+                     * @param _mpAppId 小程序 appid
+                     * 
                      */
                     void SetMpAppId(const std::string& _mpAppId);
 
                     /**
                      * 判断参数 MpAppId 是否已赋值
                      * @return MpAppId 是否已赋值
+                     * 
                      */
                     bool MpAppIdHasBeenSet() const;
 
                     /**
                      * 获取小程序路径
                      * @return MpPath 小程序路径
+                     * 
                      */
                     std::string GetMpPath() const;
 
                     /**
                      * 设置小程序路径
-                     * @param MpPath 小程序路径
+                     * @param _mpPath 小程序路径
+                     * 
                      */
                     void SetMpPath(const std::string& _mpPath);
 
                     /**
                      * 判断参数 MpPath 是否已赋值
                      * @return MpPath 是否已赋值
+                     * 
                      */
                     bool MpPathHasBeenSet() const;
 
                     /**
                      * 获取小程序原始 id
                      * @return MpUserName 小程序原始 id
+                     * 
                      */
                     std::string GetMpUserName() const;
 
                     /**
                      * 设置小程序原始 id
-                     * @param MpUserName 小程序原始 id
+                     * @param _mpUserName 小程序原始 id
+                     * 
                      */
                     void SetMpUserName(const std::string& _mpUserName);
 
                     /**
                      * 判断参数 MpUserName 是否已赋值
                      * @return MpUserName 是否已赋值
+                     * 
                      */
                     bool MpUserNameHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormInfo 网银支付提交页面信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OpenBankFormInfo GetFormInfo() const;
 
                     /**
                      * 设置网银支付提交页面信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FormInfo 网银支付提交页面信息
+                     * @param _formInfo 网银支付提交页面信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormInfo(const OpenBankFormInfo& _formInfo);
 
                     /**
                      * 判断参数 FormInfo 是否已赋值
                      * @return FormInfo 是否已赋值
+                     * 
                      */
                     bool FormInfoHasBeenSet() const;
 

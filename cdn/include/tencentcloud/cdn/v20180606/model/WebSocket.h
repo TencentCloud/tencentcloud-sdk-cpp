@@ -56,6 +56,7 @@ off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 on：开启，可以调整超时时间
 off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 on：开启，可以调整超时时间
 off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 
-                     * @param Switch WebSocket 超时配置开关，取值有：
+                     * @param _switch WebSocket 超时配置开关，取值有：
 on：开启，可以调整超时时间
 off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ off：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeout 设置超时时间，单位为秒，最大超时时间300秒。
+                     * @param _timeout 设置超时时间，单位为秒，最大超时时间300秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 

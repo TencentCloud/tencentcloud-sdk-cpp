@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnnotatedTotalCount 已标注数据量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAnnotatedTotalCount() const;
 
                     /**
                      * 判断参数 AnnotatedTotalCount 是否已赋值
                      * @return AnnotatedTotalCount 是否已赋值
+                     * 
                      */
                     bool AnnotatedTotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonAnnotatedTotalCount 没有标注数据量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNonAnnotatedTotalCount() const;
 
                     /**
                      * 判断参数 NonAnnotatedTotalCount 是否已赋值
                      * @return NonAnnotatedTotalCount 是否已赋值
+                     * 
                      */
                     bool NonAnnotatedTotalCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterTotalCount 过滤数据总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFilterTotalCount() const;
 
                     /**
                      * 判断参数 FilterTotalCount 是否已赋值
                      * @return FilterTotalCount 是否已赋值
+                     * 
                      */
                     bool FilterTotalCountHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterLabelList 过滤数据详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterLabelInfo> GetFilterLabelList() const;
 
                     /**
                      * 判断参数 FilterLabelList 是否已赋值
                      * @return FilterLabelList 是否已赋值
+                     * 
                      */
                     bool FilterLabelListHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowTexts 数据文本行，默认返回前1000行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRowTexts() const;
 
                     /**
                      * 判断参数 RowTexts 是否已赋值
                      * @return RowTexts 是否已赋值
+                     * 
                      */
                     bool RowTextsHasBeenSet() const;
 

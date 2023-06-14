@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取转推的目标地址，可填1~2个。
                      * @return Destinations 转推的目标地址，可填1~2个。
+                     * 
                      */
                     std::vector<CreateOutputRTPSettingsDestinations> GetDestinations() const;
 
                     /**
                      * 设置转推的目标地址，可填1~2个。
-                     * @param Destinations 转推的目标地址，可填1~2个。
+                     * @param _destinations 转推的目标地址，可填1~2个。
+                     * 
                      */
                     void SetDestinations(const std::vector<CreateOutputRTPSettingsDestinations>& _destinations);
 
                     /**
                      * 判断参数 Destinations 是否已赋值
                      * @return Destinations 是否已赋值
+                     * 
                      */
                     bool DestinationsHasBeenSet() const;
 
                     /**
                      * 获取只能填none。
                      * @return FEC 只能填none。
+                     * 
                      */
                     std::string GetFEC() const;
 
                     /**
                      * 设置只能填none。
-                     * @param FEC 只能填none。
+                     * @param _fEC 只能填none。
+                     * 
                      */
                     void SetFEC(const std::string& _fEC);
 
                     /**
                      * 判断参数 FEC 是否已赋值
                      * @return FEC 是否已赋值
+                     * 
                      */
                     bool FECHasBeenSet() const;
 
                     /**
                      * 获取空闲超时时间，单位ms。
                      * @return IdleTimeout 空闲超时时间，单位ms。
+                     * 
                      */
                     int64_t GetIdleTimeout() const;
 
                     /**
                      * 设置空闲超时时间，单位ms。
-                     * @param IdleTimeout 空闲超时时间，单位ms。
+                     * @param _idleTimeout 空闲超时时间，单位ms。
+                     * 
                      */
                     void SetIdleTimeout(const int64_t& _idleTimeout);
 
                     /**
                      * 判断参数 IdleTimeout 是否已赋值
                      * @return IdleTimeout 是否已赋值
+                     * 
                      */
                     bool IdleTimeoutHasBeenSet() const;
 

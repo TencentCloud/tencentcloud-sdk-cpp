@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取默认0，Offset=Offset+Length
                      * @return Offset 默认0，Offset=Offset+Length
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置默认0，Offset=Offset+Length
-                     * @param Offset 默认0，Offset=Offset+Length
+                     * @param _offset 默认0，Offset=Offset+Length
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取默认20
                      * @return Length 默认20
+                     * 
                      */
                     uint64_t GetLength() const;
 
                     /**
                      * 设置默认20
-                     * @param Length 默认20
+                     * @param _length 默认20
+                     * 
                      */
                     void SetLength(const uint64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 

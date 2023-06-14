@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取创建的服务器ID
                      * @return ResourceIds 创建的服务器ID
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return FlowId 任务ID
+                     * 
                      */
                     uint64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

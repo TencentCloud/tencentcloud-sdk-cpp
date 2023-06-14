@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取播放统计数据。
                      * @return DailyPlayStatInfoSet 播放统计数据。
+                     * 
                      */
                     std::vector<DailyPlayStatInfo> GetDailyPlayStatInfoSet() const;
 
                     /**
                      * 判断参数 DailyPlayStatInfoSet 是否已赋值
                      * @return DailyPlayStatInfoSet 是否已赋值
+                     * 
                      */
                     bool DailyPlayStatInfoSetHasBeenSet() const;
 

@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取任务对象列表。
                      * @return TaskList 任务对象列表。
+                     * 
                      */
                     std::vector<TaskResponseInfo> GetTaskList() const;
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 
                     /**
                      * 获取实例总数。
                      * @return TotalCount 实例总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TasksOverview 任务概览信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TasksOverview GetTasksOverview() const;
 
                     /**
                      * 判断参数 TasksOverview 是否已赋值
                      * @return TasksOverview 是否已赋值
+                     * 
                      */
                     bool TasksOverviewHasBeenSet() const;
 

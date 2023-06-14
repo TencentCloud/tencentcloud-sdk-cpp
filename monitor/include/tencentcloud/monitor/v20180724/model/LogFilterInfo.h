@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取字段名
                      * @return Key 字段名
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置字段名
-                     * @param Key 字段名
+                     * @param _key 字段名
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取比较符号
                      * @return Operator 比较符号
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置比较符号
-                     * @param Operator 比较符号
+                     * @param _operator 比较符号
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取字段值
                      * @return Value 字段值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段值
-                     * @param Value 字段值
+                     * @param _value 字段值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取上传带宽，单位Mb/s，-1：未知
                      * @return Upload 上传带宽，单位Mb/s，-1：未知
+                     * 
                      */
                     double GetUpload() const;
 
                     /**
                      * 设置上传带宽，单位Mb/s，-1：未知
-                     * @param Upload 上传带宽，单位Mb/s，-1：未知
+                     * @param _upload 上传带宽，单位Mb/s，-1：未知
+                     * 
                      */
                     void SetUpload(const double& _upload);
 
                     /**
                      * 判断参数 Upload 是否已赋值
                      * @return Upload 是否已赋值
+                     * 
                      */
                     bool UploadHasBeenSet() const;
 
                     /**
                      * 获取下载带宽，单位Mb/s，-1：未知
                      * @return Download 下载带宽，单位Mb/s，-1：未知
+                     * 
                      */
                     double GetDownload() const;
 
                     /**
                      * 设置下载带宽，单位Mb/s，-1：未知
-                     * @param Download 下载带宽，单位Mb/s，-1：未知
+                     * @param _download 下载带宽，单位Mb/s，-1：未知
+                     * 
                      */
                     void SetDownload(const double& _download);
 
                     /**
                      * 判断参数 Download 是否已赋值
                      * @return Download 是否已赋值
+                     * 
                      */
                     bool DownloadHasBeenSet() const;
 
                     /**
                      * 获取最小延迟，单位ms，-1：未知
                      * @return MinRtt 最小延迟，单位ms，-1：未知
+                     * 
                      */
                     double GetMinRtt() const;
 
                     /**
                      * 设置最小延迟，单位ms，-1：未知
-                     * @param MinRtt 最小延迟，单位ms，-1：未知
+                     * @param _minRtt 最小延迟，单位ms，-1：未知
+                     * 
                      */
                     void SetMinRtt(const double& _minRtt);
 
                     /**
                      * 判断参数 MinRtt 是否已赋值
                      * @return MinRtt 是否已赋值
+                     * 
                      */
                     bool MinRttHasBeenSet() const;
 
                     /**
                      * 获取平均延迟，单位ms，-1：未知
                      * @return AvgRtt 平均延迟，单位ms，-1：未知
+                     * 
                      */
                     double GetAvgRtt() const;
 
                     /**
                      * 设置平均延迟，单位ms，-1：未知
-                     * @param AvgRtt 平均延迟，单位ms，-1：未知
+                     * @param _avgRtt 平均延迟，单位ms，-1：未知
+                     * 
                      */
                     void SetAvgRtt(const double& _avgRtt);
 
                     /**
                      * 判断参数 AvgRtt 是否已赋值
                      * @return AvgRtt 是否已赋值
+                     * 
                      */
                     bool AvgRttHasBeenSet() const;
 
                     /**
                      * 获取最大延迟，单位ms，-1：未知
                      * @return MaxRtt 最大延迟，单位ms，-1：未知
+                     * 
                      */
                     double GetMaxRtt() const;
 
                     /**
                      * 设置最大延迟，单位ms，-1：未知
-                     * @param MaxRtt 最大延迟，单位ms，-1：未知
+                     * @param _maxRtt 最大延迟，单位ms，-1：未知
+                     * 
                      */
                     void SetMaxRtt(const double& _maxRtt);
 
                     /**
                      * 判断参数 MaxRtt 是否已赋值
                      * @return MaxRtt 是否已赋值
+                     * 
                      */
                     bool MaxRttHasBeenSet() const;
 
                     /**
                      * 获取平均偏差延迟，单位ms，-1：未知
                      * @return MdevRtt 平均偏差延迟，单位ms，-1：未知
+                     * 
                      */
                     double GetMdevRtt() const;
 
                     /**
                      * 设置平均偏差延迟，单位ms，-1：未知
-                     * @param MdevRtt 平均偏差延迟，单位ms，-1：未知
+                     * @param _mdevRtt 平均偏差延迟，单位ms，-1：未知
+                     * 
                      */
                     void SetMdevRtt(const double& _mdevRtt);
 
                     /**
                      * 判断参数 MdevRtt 是否已赋值
                      * @return MdevRtt 是否已赋值
+                     * 
                      */
                     bool MdevRttHasBeenSet() const;
 
                     /**
                      * 获取丢包率百分比，-1：未知
                      * @return Loss 丢包率百分比，-1：未知
+                     * 
                      */
                     double GetLoss() const;
 
                     /**
                      * 设置丢包率百分比，-1：未知
-                     * @param Loss 丢包率百分比，-1：未知
+                     * @param _loss 丢包率百分比，-1：未知
+                     * 
                      */
                     void SetLoss(const double& _loss);
 
                     /**
                      * 判断参数 Loss 是否已赋值
                      * @return Loss 是否已赋值
+                     * 
                      */
                     bool LossHasBeenSet() const;
 
                     /**
                      * 获取更新时间戳
                      * @return UpdateTime 更新时间戳
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间戳
-                     * @param UpdateTime 更新时间戳
+                     * @param _updateTime 更新时间戳
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取上报网络状态设备
                      * @return Mac 上报网络状态设备
+                     * 
                      */
                     std::string GetMac() const;
 
                     /**
                      * 设置上报网络状态设备
-                     * @param Mac 上报网络状态设备
+                     * @param _mac 上报网络状态设备
+                     * 
                      */
                     void SetMac(const std::string& _mac);
 
                     /**
                      * 判断参数 Mac 是否已赋值
                      * @return Mac 是否已赋值
+                     * 
                      */
                     bool MacHasBeenSet() const;
 

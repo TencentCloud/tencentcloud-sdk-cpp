@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取停止状态
                      * @return Status 停止状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取设备密码
                      * @return PassWord 设备密码
+                     * 
                      */
                     std::string GetPassWord() const;
 
                     /**
                      * 判断参数 PassWord 是否已赋值
                      * @return PassWord 是否已赋值
+                     * 
                      */
                     bool PassWordHasBeenSet() const;
 

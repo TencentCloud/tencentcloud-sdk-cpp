@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 直播流类型，可选值：
 <li>Original（原始流，<b>默认值</b>）。</li>
 <li>Transcoding（转码流）。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置直播流类型，可选值：
 <li>Original（原始流，<b>默认值</b>）。</li>
 <li>Transcoding（转码流）。</li>
-                     * @param Type 直播流类型，可选值：
+                     * @param _type 直播流类型，可选值：
 <li>Original（原始流，<b>默认值</b>）。</li>
 <li>Transcoding（转码流）。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 <b>当Type值为"Transcoding"时，必须填写。</b>
                      * @return TemplateId 直播转码模板ID。
 <b>当Type值为"Transcoding"时，必须填写。</b>
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置直播转码模板ID。
 <b>当Type值为"Transcoding"时，必须填写。</b>
-                     * @param TemplateId 直播转码模板ID。
+                     * @param _templateId 直播转码模板ID。
 <b>当Type值为"Transcoding"时，必须填写。</b>
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

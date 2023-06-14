@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取竞价出价
                      * @return MaxPrice 竞价出价
+                     * 
                      */
                     std::string GetMaxPrice() const;
 
                     /**
                      * 设置竞价出价
-                     * @param MaxPrice 竞价出价
+                     * @param _maxPrice 竞价出价
+                     * 
                      */
                     void SetMaxPrice(const std::string& _maxPrice);
 
                     /**
                      * 判断参数 MaxPrice 是否已赋值
                      * @return MaxPrice 是否已赋值
+                     * 
                      */
                     bool MaxPriceHasBeenSet() const;
 
                     /**
                      * 获取竞价请求类型，当前仅支持类型：one-time
                      * @return SpotInstanceType 竞价请求类型，当前仅支持类型：one-time
+                     * 
                      */
                     std::string GetSpotInstanceType() const;
 
                     /**
                      * 设置竞价请求类型，当前仅支持类型：one-time
-                     * @param SpotInstanceType 竞价请求类型，当前仅支持类型：one-time
+                     * @param _spotInstanceType 竞价请求类型，当前仅支持类型：one-time
+                     * 
                      */
                     void SetSpotInstanceType(const std::string& _spotInstanceType);
 
                     /**
                      * 判断参数 SpotInstanceType 是否已赋值
                      * @return SpotInstanceType 是否已赋值
+                     * 
                      */
                     bool SpotInstanceTypeHasBeenSet() const;
 

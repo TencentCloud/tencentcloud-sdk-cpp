@@ -70,6 +70,7 @@ namespace TencentCloud
 <li>ImageSprites：雪碧图</li>
 <li>CoverBySnapshot：截图做封面</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -82,7 +83,7 @@ namespace TencentCloud
 <li>ImageSprites：雪碧图</li>
 <li>CoverBySnapshot：截图做封面</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
-                     * @param Type 任务的类型，可以取的值有：
+                     * @param _type 任务的类型，可以取的值有：
 <li>Transcode：转码</li>
 <li>AnimatedGraphics：转动图</li>
 <li>SnapshotByTimeOffset：时间点截图</li>
@@ -90,12 +91,14 @@ namespace TencentCloud
 <li>ImageSprites：雪碧图</li>
 <li>CoverBySnapshot：截图做封面</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -104,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskTranscodeResult GetTranscodeTask() const;
 
                     /**
                      * 设置视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranscodeTask 视频转码任务的查询结果，当任务类型为 Transcode 时有效。
+                     * @param _transcodeTask 视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranscodeTask(const MediaProcessTaskTranscodeResult& _transcodeTask);
 
                     /**
                      * 判断参数 TranscodeTask 是否已赋值
                      * @return TranscodeTask 是否已赋值
+                     * 
                      */
                     bool TranscodeTaskHasBeenSet() const;
 
@@ -126,20 +132,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnimatedGraphicTask 视频转动图任务的查询结果，当任务类型为 AnimatedGraphics 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskAnimatedGraphicResult GetAnimatedGraphicTask() const;
 
                     /**
                      * 设置视频转动图任务的查询结果，当任务类型为 AnimatedGraphics 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnimatedGraphicTask 视频转动图任务的查询结果，当任务类型为 AnimatedGraphics 时有效。
+                     * @param _animatedGraphicTask 视频转动图任务的查询结果，当任务类型为 AnimatedGraphics 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnimatedGraphicTask(const MediaProcessTaskAnimatedGraphicResult& _animatedGraphicTask);
 
                     /**
                      * 判断参数 AnimatedGraphicTask 是否已赋值
                      * @return AnimatedGraphicTask 是否已赋值
+                     * 
                      */
                     bool AnimatedGraphicTaskHasBeenSet() const;
 
@@ -148,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotByTimeOffsetTask 对视频按时间点截图任务的查询结果，当任务类型为 SnapshotByTimeOffset 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskSnapshotByTimeOffsetResult GetSnapshotByTimeOffsetTask() const;
 
                     /**
                      * 设置对视频按时间点截图任务的查询结果，当任务类型为 SnapshotByTimeOffset 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotByTimeOffsetTask 对视频按时间点截图任务的查询结果，当任务类型为 SnapshotByTimeOffset 时有效。
+                     * @param _snapshotByTimeOffsetTask 对视频按时间点截图任务的查询结果，当任务类型为 SnapshotByTimeOffset 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotByTimeOffsetTask(const MediaProcessTaskSnapshotByTimeOffsetResult& _snapshotByTimeOffsetTask);
 
                     /**
                      * 判断参数 SnapshotByTimeOffsetTask 是否已赋值
                      * @return SnapshotByTimeOffsetTask 是否已赋值
+                     * 
                      */
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
@@ -170,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleSnapshotTask 对视频采样截图任务的查询结果，当任务类型为 SampleSnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskSampleSnapshotResult GetSampleSnapshotTask() const;
 
                     /**
                      * 设置对视频采样截图任务的查询结果，当任务类型为 SampleSnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SampleSnapshotTask 对视频采样截图任务的查询结果，当任务类型为 SampleSnapshot 时有效。
+                     * @param _sampleSnapshotTask 对视频采样截图任务的查询结果，当任务类型为 SampleSnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSampleSnapshotTask(const MediaProcessTaskSampleSnapshotResult& _sampleSnapshotTask);
 
                     /**
                      * 判断参数 SampleSnapshotTask 是否已赋值
                      * @return SampleSnapshotTask 是否已赋值
+                     * 
                      */
                     bool SampleSnapshotTaskHasBeenSet() const;
 
@@ -192,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSpriteTask 对视频截雪碧图任务的查询结果，当任务类型为 ImageSprite 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskImageSpriteResult GetImageSpriteTask() const;
 
                     /**
                      * 设置对视频截雪碧图任务的查询结果，当任务类型为 ImageSprite 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageSpriteTask 对视频截雪碧图任务的查询结果，当任务类型为 ImageSprite 时有效。
+                     * @param _imageSpriteTask 对视频截雪碧图任务的查询结果，当任务类型为 ImageSprite 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageSpriteTask(const MediaProcessTaskImageSpriteResult& _imageSpriteTask);
 
                     /**
                      * 判断参数 ImageSpriteTask 是否已赋值
                      * @return ImageSpriteTask 是否已赋值
+                     * 
                      */
                     bool ImageSpriteTaskHasBeenSet() const;
 
@@ -214,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverBySnapshotTask 对视频截图做封面任务的查询结果，当任务类型为 CoverBySnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskCoverBySnapshotResult GetCoverBySnapshotTask() const;
 
                     /**
                      * 设置对视频截图做封面任务的查询结果，当任务类型为 CoverBySnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverBySnapshotTask 对视频截图做封面任务的查询结果，当任务类型为 CoverBySnapshot 时有效。
+                     * @param _coverBySnapshotTask 对视频截图做封面任务的查询结果，当任务类型为 CoverBySnapshot 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverBySnapshotTask(const MediaProcessTaskCoverBySnapshotResult& _coverBySnapshotTask);
 
                     /**
                      * 判断参数 CoverBySnapshotTask 是否已赋值
                      * @return CoverBySnapshotTask 是否已赋值
+                     * 
                      */
                     bool CoverBySnapshotTaskHasBeenSet() const;
 
@@ -236,20 +257,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingTask 对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaProcessTaskAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
                      * 设置对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdaptiveDynamicStreamingTask 对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+                     * @param _adaptiveDynamicStreamingTask 对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdaptiveDynamicStreamingTask(const MediaProcessTaskAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
 
                     /**
                      * 判断参数 AdaptiveDynamicStreamingTask 是否已赋值
                      * @return AdaptiveDynamicStreamingTask 是否已赋值
+                     * 
                      */
                     bool AdaptiveDynamicStreamingTaskHasBeenSet() const;
 

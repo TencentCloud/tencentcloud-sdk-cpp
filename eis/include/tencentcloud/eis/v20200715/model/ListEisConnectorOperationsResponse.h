@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取连接器列表
                      * @return Operations 连接器列表
+                     * 
                      */
                     std::vector<EisConnectionOperation> GetOperations() const;
 
                     /**
                      * 判断参数 Operations 是否已赋值
                      * @return Operations 是否已赋值
+                     * 
                      */
                     bool OperationsHasBeenSet() const;
 

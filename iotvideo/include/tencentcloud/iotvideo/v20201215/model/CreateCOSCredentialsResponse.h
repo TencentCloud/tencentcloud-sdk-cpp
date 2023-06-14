@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取COS存储桶名称
                      * @return StorageBucket COS存储桶名称
+                     * 
                      */
                     std::string GetStorageBucket() const;
 
                     /**
                      * 判断参数 StorageBucket 是否已赋值
                      * @return StorageBucket 是否已赋值
+                     * 
                      */
                     bool StorageBucketHasBeenSet() const;
 
                     /**
                      * 获取COS存储桶区域
                      * @return StorageRegion COS存储桶区域
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取COS存储桶路径
                      * @return StoragePath COS存储桶路径
+                     * 
                      */
                     std::string GetStoragePath() const;
 
                     /**
                      * 判断参数 StoragePath 是否已赋值
                      * @return StoragePath 是否已赋值
+                     * 
                      */
                     bool StoragePathHasBeenSet() const;
 
                     /**
                      * 获取COS上传用的SecretID
                      * @return SecretID COS上传用的SecretID
+                     * 
                      */
                     std::string GetSecretID() const;
 
                     /**
                      * 判断参数 SecretID 是否已赋值
                      * @return SecretID 是否已赋值
+                     * 
                      */
                     bool SecretIDHasBeenSet() const;
 
                     /**
                      * 获取COS上传用的SecretKey
                      * @return SecretKey COS上传用的SecretKey
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取COS上传用的Token
                      * @return Token COS上传用的Token
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取密钥信息过期时间
                      * @return ExpiredTime 密钥信息过期时间
+                     * 
                      */
                     uint64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

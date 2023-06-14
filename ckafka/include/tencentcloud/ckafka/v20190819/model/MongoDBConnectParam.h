@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port MongoDB的连接port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置MongoDB的连接port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port MongoDB的连接port
+                     * @param _port MongoDB的连接port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName MongoDB连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置MongoDB连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName MongoDB连接源的用户名
+                     * @param _userName MongoDB连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password MongoDB连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置MongoDB连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Password MongoDB连接源的密码
+                     * @param _password MongoDB连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource MongoDB连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置MongoDB连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource MongoDB连接源的实例资源
+                     * @param _resource MongoDB连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt MongoDB连接源是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置MongoDB连接源是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SelfBuilt MongoDB连接源是否为自建集群
+                     * @param _selfBuilt MongoDB连接源是否为自建集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
 
                     /**
                      * 判断参数 SelfBuilt 是否已赋值
                      * @return SelfBuilt 是否已赋值
+                     * 
                      */
                     bool SelfBuiltHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip MongoDB连接源的实例vip，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置MongoDB连接源的实例vip，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceVip MongoDB连接源的实例vip，当为腾讯云实例时，必填
+                     * @param _serviceVip MongoDB连接源的实例vip，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
 
                     /**
                      * 判断参数 ServiceVip 是否已赋值
                      * @return ServiceVip 是否已赋值
+                     * 
                      */
                     bool ServiceVipHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId MongoDB连接源的vpcId，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置MongoDB连接源的vpcId，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqVpcId MongoDB连接源的vpcId，当为腾讯云实例时，必填
+                     * @param _uniqVpcId MongoDB连接源的vpcId，当为腾讯云实例时，必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Datahub任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsUpdate 是否更新到关联的Datahub任务
+                     * @param _isUpdate 是否更新到关联的Datahub任务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
 
                     /**
                      * 判断参数 IsUpdate 是否已赋值
                      * @return IsUpdate 是否已赋值
+                     * 
                      */
                     bool IsUpdateHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取CMK的全局唯一标识符
                      * @return KeyId CMK的全局唯一标识符
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的别名
                      * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取密钥创建时间，unix时间戳
                      * @return CreateTime 密钥创建时间，unix时间戳
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -84,36 +90,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description CMK的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取CMK的状态
                      * @return KeyState CMK的状态
+                     * 
                      */
                     std::string GetKeyState() const;
 
                     /**
                      * 判断参数 KeyState 是否已赋值
                      * @return KeyState 是否已赋值
+                     * 
                      */
                     bool KeyStateHasBeenSet() const;
 
                     /**
                      * 获取CMK的用途
                      * @return KeyUsage CMK的用途
+                     * 
                      */
                     std::string GetKeyUsage() const;
 
                     /**
                      * 判断参数 KeyUsage 是否已赋值
                      * @return KeyUsage 是否已赋值
+                     * 
                      */
                     bool KeyUsageHasBeenSet() const;
 
@@ -122,12 +134,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTagCode() const;
 
                     /**
                      * 判断参数 TagCode 是否已赋值
                      * @return TagCode 是否已赋值
+                     * 
                      */
                     bool TagCodeHasBeenSet() const;
 
@@ -136,12 +150,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagMsg 标签操作的返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagMsg() const;
 
                     /**
                      * 判断参数 TagMsg 是否已赋值
                      * @return TagMsg 是否已赋值
+                     * 
                      */
                     bool TagMsgHasBeenSet() const;
 
@@ -150,12 +166,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
                      * 判断参数 HsmClusterId 是否已赋值
                      * @return HsmClusterId 是否已赋值
+                     * 
                      */
                     bool HsmClusterIdHasBeenSet() const;
 

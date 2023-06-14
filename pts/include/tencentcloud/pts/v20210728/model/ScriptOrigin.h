@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取机器数量
                      * @return MachineNumber 机器数量
+                     * 
                      */
                     int64_t GetMachineNumber() const;
 
                     /**
                      * 设置机器数量
-                     * @param MachineNumber 机器数量
+                     * @param _machineNumber 机器数量
+                     * 
                      */
                     void SetMachineNumber(const int64_t& _machineNumber);
 
                     /**
                      * 判断参数 MachineNumber 是否已赋值
                      * @return MachineNumber 是否已赋值
+                     * 
                      */
                     bool MachineNumberHasBeenSet() const;
 
                     /**
                      * 获取机器规格
                      * @return MachineSpecification 机器规格
+                     * 
                      */
                     std::string GetMachineSpecification() const;
 
                     /**
                      * 设置机器规格
-                     * @param MachineSpecification 机器规格
+                     * @param _machineSpecification 机器规格
+                     * 
                      */
                     void SetMachineSpecification(const std::string& _machineSpecification);
 
                     /**
                      * 判断参数 MachineSpecification 是否已赋值
                      * @return MachineSpecification 是否已赋值
+                     * 
                      */
                     bool MachineSpecificationHasBeenSet() const;
 
                     /**
                      * 获取压测时长
                      * @return DurationSeconds 压测时长
+                     * 
                      */
                     int64_t GetDurationSeconds() const;
 
                     /**
                      * 设置压测时长
-                     * @param DurationSeconds 压测时长
+                     * @param _durationSeconds 压测时长
+                     * 
                      */
                     void SetDurationSeconds(const int64_t& _durationSeconds);
 
                     /**
                      * 判断参数 DurationSeconds 是否已赋值
                      * @return DurationSeconds 是否已赋值
+                     * 
                      */
                     bool DurationSecondsHasBeenSet() const;
 

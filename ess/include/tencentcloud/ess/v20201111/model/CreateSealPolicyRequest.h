@@ -47,126 +47,147 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取用户在电子文件签署平台标识信息，具体参考UserInfo结构体。可跟下面的UserIds可叠加起作用
                      * @return Users 用户在电子文件签署平台标识信息，具体参考UserInfo结构体。可跟下面的UserIds可叠加起作用
+                     * 
                      */
                     std::vector<UserInfo> GetUsers() const;
 
                     /**
                      * 设置用户在电子文件签署平台标识信息，具体参考UserInfo结构体。可跟下面的UserIds可叠加起作用
-                     * @param Users 用户在电子文件签署平台标识信息，具体参考UserInfo结构体。可跟下面的UserIds可叠加起作用
+                     * @param _users 用户在电子文件签署平台标识信息，具体参考UserInfo结构体。可跟下面的UserIds可叠加起作用
+                     * 
                      */
                     void SetUsers(const std::vector<UserInfo>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取印章ID
                      * @return SealId 印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章ID
-                     * @param SealId 印章ID
+                     * @param _sealId 印章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取授权有效期。时间戳秒级
                      * @return Expired 授权有效期。时间戳秒级
+                     * 
                      */
                     int64_t GetExpired() const;
 
                     /**
                      * 设置授权有效期。时间戳秒级
-                     * @param Expired 授权有效期。时间戳秒级
+                     * @param _expired 授权有效期。时间戳秒级
+                     * 
                      */
                     void SetExpired(const int64_t& _expired);
 
                     /**
                      * 判断参数 Expired 是否已赋值
                      * @return Expired 是否已赋值
+                     * 
                      */
                     bool ExpiredHasBeenSet() const;
 
                     /**
                      * 获取需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
                      * @return UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     * @param UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     * @param _userIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 
                     /**
                      * 获取印章授权内容
                      * @return Policy 印章授权内容
+                     * 
                      */
                     std::string GetPolicy() const;
 
                     /**
                      * 设置印章授权内容
-                     * @param Policy 印章授权内容
+                     * @param _policy 印章授权内容
+                     * 
                      */
                     void SetPolicy(const std::string& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

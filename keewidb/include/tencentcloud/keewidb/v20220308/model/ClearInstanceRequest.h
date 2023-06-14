@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubhg****。
                      * @return InstanceId 实例 ID，如：kee-6ubhg****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubhg****。
-                     * @param InstanceId 实例 ID，如：kee-6ubhg****。
+                     * @param _instanceId 实例 ID，如：kee-6ubhg****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 实例为免密访问，则无需设置该参数。
                      * @return Password 实例访问密码。
 实例为免密访问，则无需设置该参数。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置实例访问密码。
 实例为免密访问，则无需设置该参数。
-                     * @param Password 实例访问密码。
+                     * @param _password 实例访问密码。
 实例为免密访问，则无需设置该参数。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

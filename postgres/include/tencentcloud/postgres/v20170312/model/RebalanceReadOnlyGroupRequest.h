@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取只读组ID
                      * @return ReadOnlyGroupId 只读组ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组ID
-                     * @param ReadOnlyGroupId 只读组ID
+                     * @param _readOnlyGroupId 只读组ID
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取告警类型
                      * @return MsgType 告警类型
+                     * 
                      */
                     std::string GetMsgType() const;
 
                     /**
                      * 设置告警类型
-                     * @param MsgType 告警类型
+                     * @param _msgType 告警类型
+                     * 
                      */
                     void SetMsgType(const std::string& _msgType);
 
                     /**
                      * 判断参数 MsgType 是否已赋值
                      * @return MsgType 是否已赋值
+                     * 
                      */
                     bool MsgTypeHasBeenSet() const;
 
                     /**
                      * 获取告警值
                      * @return MsgValue 告警值
+                     * 
                      */
                     std::string GetMsgValue() const;
 
                     /**
                      * 设置告警值
-                     * @param MsgValue 告警值
+                     * @param _msgValue 告警值
+                     * 
                      */
                     void SetMsgValue(const std::string& _msgValue);
 
                     /**
                      * 判断参数 MsgValue 是否已赋值
                      * @return MsgValue 是否已赋值
+                     * 
                      */
                     bool MsgValueHasBeenSet() const;
 
                     /**
                      * 获取状态(0:关闭 1:开启)
                      * @return State 状态(0:关闭 1:开启)
+                     * 
                      */
                     bool GetState() const;
 
                     /**
                      * 设置状态(0:关闭 1:开启)
-                     * @param State 状态(0:关闭 1:开启)
+                     * @param _state 状态(0:关闭 1:开启)
+                     * 
                      */
                     void SetState(const bool& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

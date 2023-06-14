@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目 ID
                      * @return ProjectId 项目 ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * @param _projectId 项目 ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取Notice ID
                      * @return NoticeId Notice ID
+                     * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
                      * 设置Notice ID
-                     * @param NoticeId Notice ID
+                     * @param _noticeId Notice ID
+                     * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
 
                     /**
                      * 判断参数 NoticeId 是否已赋值
                      * @return NoticeId 是否已赋值
+                     * 
                      */
                     bool NoticeIdHasBeenSet() const;
 

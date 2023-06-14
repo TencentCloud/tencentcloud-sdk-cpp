@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>add：添加 Formats 指定的格式列表；</li>
 <li>delete：删除 Formats 指定的格式列表；<l/i>
 <li>reset：将已配置的格式列表重置为  Formats 指定的格式列表。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>add：添加 Formats 指定的格式列表；</li>
 <li>delete：删除 Formats 指定的格式列表；<l/i>
 <li>reset：将已配置的格式列表重置为  Formats 指定的格式列表。</li>
-                     * @param Type 操作类型，取值范围：
+                     * @param _type 操作类型，取值范围：
 <li>add：添加 Formats 指定的格式列表；</li>
 <li>delete：删除 Formats 指定的格式列表；<l/i>
 <li>reset：将已配置的格式列表重置为  Formats 指定的格式列表。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return Formats 字幕格式列表，取值范围：
 <li>vtt：生成 WebVTT 字幕文件；</li>
 <li>srt：生成 SRT 字幕文件。</li>
+                     * 
                      */
                     std::vector<std::string> GetFormats() const;
 
@@ -90,15 +94,17 @@ namespace TencentCloud
                      * 设置字幕格式列表，取值范围：
 <li>vtt：生成 WebVTT 字幕文件；</li>
 <li>srt：生成 SRT 字幕文件。</li>
-                     * @param Formats 字幕格式列表，取值范围：
+                     * @param _formats 字幕格式列表，取值范围：
 <li>vtt：生成 WebVTT 字幕文件；</li>
 <li>srt：生成 SRT 字幕文件。</li>
+                     * 
                      */
                     void SetFormats(const std::vector<std::string>& _formats);
 
                     /**
                      * 判断参数 Formats 是否已赋值
                      * @return Formats 是否已赋值
+                     * 
                      */
                     bool FormatsHasBeenSet() const;
 

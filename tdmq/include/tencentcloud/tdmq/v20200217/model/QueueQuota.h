@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取可创建最大Queue数
                      * @return MaxQueue 可创建最大Queue数
+                     * 
                      */
                     int64_t GetMaxQueue() const;
 
                     /**
                      * 设置可创建最大Queue数
-                     * @param MaxQueue 可创建最大Queue数
+                     * @param _maxQueue 可创建最大Queue数
+                     * 
                      */
                     void SetMaxQueue(const int64_t& _maxQueue);
 
                     /**
                      * 判断参数 MaxQueue 是否已赋值
                      * @return MaxQueue 是否已赋值
+                     * 
                      */
                     bool MaxQueueHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedQueue 已创建Queue数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUsedQueue() const;
 
                     /**
                      * 设置已创建Queue数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsedQueue 已创建Queue数
+                     * @param _usedQueue 已创建Queue数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsedQueue(const int64_t& _usedQueue);
 
                     /**
                      * 判断参数 UsedQueue 是否已赋值
                      * @return UsedQueue 是否已赋值
+                     * 
                      */
                     bool UsedQueueHasBeenSet() const;
 

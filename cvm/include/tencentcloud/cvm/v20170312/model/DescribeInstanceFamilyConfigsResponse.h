@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例机型组配置的列表信息
                      * @return InstanceFamilyConfigSet 实例机型组配置的列表信息
+                     * 
                      */
                     std::vector<InstanceFamilyConfig> GetInstanceFamilyConfigSet() const;
 
                     /**
                      * 判断参数 InstanceFamilyConfigSet 是否已赋值
                      * @return InstanceFamilyConfigSet 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyConfigSetHasBeenSet() const;
 

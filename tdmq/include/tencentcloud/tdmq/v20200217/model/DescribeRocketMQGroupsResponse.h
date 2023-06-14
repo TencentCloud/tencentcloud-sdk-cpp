@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取订阅组列表
                      * @return Groups 订阅组列表
+                     * 
                      */
                     std::vector<RocketMQGroup> GetGroups() const;
 
                     /**
                      * 判断参数 Groups 是否已赋值
                      * @return Groups 是否已赋值
+                     * 
                      */
                     bool GroupsHasBeenSet() const;
 

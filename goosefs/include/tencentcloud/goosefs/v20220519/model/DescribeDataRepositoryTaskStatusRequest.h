@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取task id
                      * @return TaskId task id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置task id
-                     * @param TaskId task id
+                     * @param _taskId task id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取file system id
                      * @return FileSystemId file system id
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置file system id
-                     * @param FileSystemId file system id
+                     * @param _fileSystemId file system id
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 

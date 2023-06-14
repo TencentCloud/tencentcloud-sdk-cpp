@@ -54,414 +54,483 @@ namespace TencentCloud
                     /**
                      * 获取访问权限ID
                      * @return Id 访问权限ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置访问权限ID
-                     * @param Id 访问权限ID
+                     * @param _id 访问权限ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取访问权限名称
                      * @return Name 访问权限名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置访问权限名称
-                     * @param Name 访问权限名称
+                     * @param _name 访问权限名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否开启磁盘映射
                      * @return AllowDiskRedirect 是否开启磁盘映射
+                     * 
                      */
                     bool GetAllowDiskRedirect() const;
 
                     /**
                      * 设置是否开启磁盘映射
-                     * @param AllowDiskRedirect 是否开启磁盘映射
+                     * @param _allowDiskRedirect 是否开启磁盘映射
+                     * 
                      */
                     void SetAllowDiskRedirect(const bool& _allowDiskRedirect);
 
                     /**
                      * 判断参数 AllowDiskRedirect 是否已赋值
                      * @return AllowDiskRedirect 是否已赋值
+                     * 
                      */
                     bool AllowDiskRedirectHasBeenSet() const;
 
                     /**
                      * 获取是否开启剪贴板文件上行
                      * @return AllowClipFileUp 是否开启剪贴板文件上行
+                     * 
                      */
                     bool GetAllowClipFileUp() const;
 
                     /**
                      * 设置是否开启剪贴板文件上行
-                     * @param AllowClipFileUp 是否开启剪贴板文件上行
+                     * @param _allowClipFileUp 是否开启剪贴板文件上行
+                     * 
                      */
                     void SetAllowClipFileUp(const bool& _allowClipFileUp);
 
                     /**
                      * 判断参数 AllowClipFileUp 是否已赋值
                      * @return AllowClipFileUp 是否已赋值
+                     * 
                      */
                     bool AllowClipFileUpHasBeenSet() const;
 
                     /**
                      * 获取是否开启剪贴板文件下行
                      * @return AllowClipFileDown 是否开启剪贴板文件下行
+                     * 
                      */
                     bool GetAllowClipFileDown() const;
 
                     /**
                      * 设置是否开启剪贴板文件下行
-                     * @param AllowClipFileDown 是否开启剪贴板文件下行
+                     * @param _allowClipFileDown 是否开启剪贴板文件下行
+                     * 
                      */
                     void SetAllowClipFileDown(const bool& _allowClipFileDown);
 
                     /**
                      * 判断参数 AllowClipFileDown 是否已赋值
                      * @return AllowClipFileDown 是否已赋值
+                     * 
                      */
                     bool AllowClipFileDownHasBeenSet() const;
 
                     /**
                      * 获取是否开启剪贴板文本（目前含图片）上行
                      * @return AllowClipTextUp 是否开启剪贴板文本（目前含图片）上行
+                     * 
                      */
                     bool GetAllowClipTextUp() const;
 
                     /**
                      * 设置是否开启剪贴板文本（目前含图片）上行
-                     * @param AllowClipTextUp 是否开启剪贴板文本（目前含图片）上行
+                     * @param _allowClipTextUp 是否开启剪贴板文本（目前含图片）上行
+                     * 
                      */
                     void SetAllowClipTextUp(const bool& _allowClipTextUp);
 
                     /**
                      * 判断参数 AllowClipTextUp 是否已赋值
                      * @return AllowClipTextUp 是否已赋值
+                     * 
                      */
                     bool AllowClipTextUpHasBeenSet() const;
 
                     /**
                      * 获取是否开启剪贴板文本（目前含图片）下行
                      * @return AllowClipTextDown 是否开启剪贴板文本（目前含图片）下行
+                     * 
                      */
                     bool GetAllowClipTextDown() const;
 
                     /**
                      * 设置是否开启剪贴板文本（目前含图片）下行
-                     * @param AllowClipTextDown 是否开启剪贴板文本（目前含图片）下行
+                     * @param _allowClipTextDown 是否开启剪贴板文本（目前含图片）下行
+                     * 
                      */
                     void SetAllowClipTextDown(const bool& _allowClipTextDown);
 
                     /**
                      * 判断参数 AllowClipTextDown 是否已赋值
                      * @return AllowClipTextDown 是否已赋值
+                     * 
                      */
                     bool AllowClipTextDownHasBeenSet() const;
 
                     /**
                      * 获取是否开启文件传输上传
                      * @return AllowFileUp 是否开启文件传输上传
+                     * 
                      */
                     bool GetAllowFileUp() const;
 
                     /**
                      * 设置是否开启文件传输上传
-                     * @param AllowFileUp 是否开启文件传输上传
+                     * @param _allowFileUp 是否开启文件传输上传
+                     * 
                      */
                     void SetAllowFileUp(const bool& _allowFileUp);
 
                     /**
                      * 判断参数 AllowFileUp 是否已赋值
                      * @return AllowFileUp 是否已赋值
+                     * 
                      */
                     bool AllowFileUpHasBeenSet() const;
 
                     /**
                      * 获取文件传输上传大小限制（预留参数，暂未启用）
                      * @return MaxFileUpSize 文件传输上传大小限制（预留参数，暂未启用）
+                     * 
                      */
                     uint64_t GetMaxFileUpSize() const;
 
                     /**
                      * 设置文件传输上传大小限制（预留参数，暂未启用）
-                     * @param MaxFileUpSize 文件传输上传大小限制（预留参数，暂未启用）
+                     * @param _maxFileUpSize 文件传输上传大小限制（预留参数，暂未启用）
+                     * 
                      */
                     void SetMaxFileUpSize(const uint64_t& _maxFileUpSize);
 
                     /**
                      * 判断参数 MaxFileUpSize 是否已赋值
                      * @return MaxFileUpSize 是否已赋值
+                     * 
                      */
                     bool MaxFileUpSizeHasBeenSet() const;
 
                     /**
                      * 获取是否开启文件传输下载
                      * @return AllowFileDown 是否开启文件传输下载
+                     * 
                      */
                     bool GetAllowFileDown() const;
 
                     /**
                      * 设置是否开启文件传输下载
-                     * @param AllowFileDown 是否开启文件传输下载
+                     * @param _allowFileDown 是否开启文件传输下载
+                     * 
                      */
                     void SetAllowFileDown(const bool& _allowFileDown);
 
                     /**
                      * 判断参数 AllowFileDown 是否已赋值
                      * @return AllowFileDown 是否已赋值
+                     * 
                      */
                     bool AllowFileDownHasBeenSet() const;
 
                     /**
                      * 获取文件传输下载大小限制（预留参数，暂未启用）
                      * @return MaxFileDownSize 文件传输下载大小限制（预留参数，暂未启用）
+                     * 
                      */
                     uint64_t GetMaxFileDownSize() const;
 
                     /**
                      * 设置文件传输下载大小限制（预留参数，暂未启用）
-                     * @param MaxFileDownSize 文件传输下载大小限制（预留参数，暂未启用）
+                     * @param _maxFileDownSize 文件传输下载大小限制（预留参数，暂未启用）
+                     * 
                      */
                     void SetMaxFileDownSize(const uint64_t& _maxFileDownSize);
 
                     /**
                      * 判断参数 MaxFileDownSize 是否已赋值
                      * @return MaxFileDownSize 是否已赋值
+                     * 
                      */
                     bool MaxFileDownSizeHasBeenSet() const;
 
                     /**
                      * 获取是否允许任意账号登录
                      * @return AllowAnyAccount 是否允许任意账号登录
+                     * 
                      */
                     bool GetAllowAnyAccount() const;
 
                     /**
                      * 设置是否允许任意账号登录
-                     * @param AllowAnyAccount 是否允许任意账号登录
+                     * @param _allowAnyAccount 是否允许任意账号登录
+                     * 
                      */
                     void SetAllowAnyAccount(const bool& _allowAnyAccount);
 
                     /**
                      * 判断参数 AllowAnyAccount 是否已赋值
                      * @return AllowAnyAccount 是否已赋值
+                     * 
                      */
                     bool AllowAnyAccountHasBeenSet() const;
 
                     /**
                      * 获取关联的用户列表
                      * @return UserSet 关联的用户列表
+                     * 
                      */
                     std::vector<User> GetUserSet() const;
 
                     /**
                      * 设置关联的用户列表
-                     * @param UserSet 关联的用户列表
+                     * @param _userSet 关联的用户列表
+                     * 
                      */
                     void SetUserSet(const std::vector<User>& _userSet);
 
                     /**
                      * 判断参数 UserSet 是否已赋值
                      * @return UserSet 是否已赋值
+                     * 
                      */
                     bool UserSetHasBeenSet() const;
 
                     /**
                      * 获取关联的用户组列表
                      * @return UserGroupSet 关联的用户组列表
+                     * 
                      */
                     std::vector<Group> GetUserGroupSet() const;
 
                     /**
                      * 设置关联的用户组列表
-                     * @param UserGroupSet 关联的用户组列表
+                     * @param _userGroupSet 关联的用户组列表
+                     * 
                      */
                     void SetUserGroupSet(const std::vector<Group>& _userGroupSet);
 
                     /**
                      * 判断参数 UserGroupSet 是否已赋值
                      * @return UserGroupSet 是否已赋值
+                     * 
                      */
                     bool UserGroupSetHasBeenSet() const;
 
                     /**
                      * 获取关联的资产列表
                      * @return DeviceSet 关联的资产列表
+                     * 
                      */
                     std::vector<Device> GetDeviceSet() const;
 
                     /**
                      * 设置关联的资产列表
-                     * @param DeviceSet 关联的资产列表
+                     * @param _deviceSet 关联的资产列表
+                     * 
                      */
                     void SetDeviceSet(const std::vector<Device>& _deviceSet);
 
                     /**
                      * 判断参数 DeviceSet 是否已赋值
                      * @return DeviceSet 是否已赋值
+                     * 
                      */
                     bool DeviceSetHasBeenSet() const;
 
                     /**
                      * 获取关联的资产组列表
                      * @return DeviceGroupSet 关联的资产组列表
+                     * 
                      */
                     std::vector<Group> GetDeviceGroupSet() const;
 
                     /**
                      * 设置关联的资产组列表
-                     * @param DeviceGroupSet 关联的资产组列表
+                     * @param _deviceGroupSet 关联的资产组列表
+                     * 
                      */
                     void SetDeviceGroupSet(const std::vector<Group>& _deviceGroupSet);
 
                     /**
                      * 判断参数 DeviceGroupSet 是否已赋值
                      * @return DeviceGroupSet 是否已赋值
+                     * 
                      */
                     bool DeviceGroupSetHasBeenSet() const;
 
                     /**
                      * 获取关联的账号列表
                      * @return AccountSet 关联的账号列表
+                     * 
                      */
                     std::vector<std::string> GetAccountSet() const;
 
                     /**
                      * 设置关联的账号列表
-                     * @param AccountSet 关联的账号列表
+                     * @param _accountSet 关联的账号列表
+                     * 
                      */
                     void SetAccountSet(const std::vector<std::string>& _accountSet);
 
                     /**
                      * 判断参数 AccountSet 是否已赋值
                      * @return AccountSet 是否已赋值
+                     * 
                      */
                     bool AccountSetHasBeenSet() const;
 
                     /**
                      * 获取关联的高危命令模板列表
                      * @return CmdTemplateSet 关联的高危命令模板列表
+                     * 
                      */
                     std::vector<CmdTemplate> GetCmdTemplateSet() const;
 
                     /**
                      * 设置关联的高危命令模板列表
-                     * @param CmdTemplateSet 关联的高危命令模板列表
+                     * @param _cmdTemplateSet 关联的高危命令模板列表
+                     * 
                      */
                     void SetCmdTemplateSet(const std::vector<CmdTemplate>& _cmdTemplateSet);
 
                     /**
                      * 判断参数 CmdTemplateSet 是否已赋值
                      * @return CmdTemplateSet 是否已赋值
+                     * 
                      */
                     bool CmdTemplateSetHasBeenSet() const;
 
                     /**
                      * 获取是否开启 RDP 磁盘映射文件上传
                      * @return AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传
+                     * 
                      */
                     bool GetAllowDiskFileUp() const;
 
                     /**
                      * 设置是否开启 RDP 磁盘映射文件上传
-                     * @param AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传
+                     * @param _allowDiskFileUp 是否开启 RDP 磁盘映射文件上传
+                     * 
                      */
                     void SetAllowDiskFileUp(const bool& _allowDiskFileUp);
 
                     /**
                      * 判断参数 AllowDiskFileUp 是否已赋值
                      * @return AllowDiskFileUp 是否已赋值
+                     * 
                      */
                     bool AllowDiskFileUpHasBeenSet() const;
 
                     /**
                      * 获取是否开启 RDP 磁盘映射文件下载
                      * @return AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载
+                     * 
                      */
                     bool GetAllowDiskFileDown() const;
 
                     /**
                      * 设置是否开启 RDP 磁盘映射文件下载
-                     * @param AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载
+                     * @param _allowDiskFileDown 是否开启 RDP 磁盘映射文件下载
+                     * 
                      */
                     void SetAllowDiskFileDown(const bool& _allowDiskFileDown);
 
                     /**
                      * 判断参数 AllowDiskFileDown 是否已赋值
                      * @return AllowDiskFileDown 是否已赋值
+                     * 
                      */
                     bool AllowDiskFileDownHasBeenSet() const;
 
                     /**
                      * 获取是否开启 rz sz 文件上传
                      * @return AllowShellFileUp 是否开启 rz sz 文件上传
+                     * 
                      */
                     bool GetAllowShellFileUp() const;
 
                     /**
                      * 设置是否开启 rz sz 文件上传
-                     * @param AllowShellFileUp 是否开启 rz sz 文件上传
+                     * @param _allowShellFileUp 是否开启 rz sz 文件上传
+                     * 
                      */
                     void SetAllowShellFileUp(const bool& _allowShellFileUp);
 
                     /**
                      * 判断参数 AllowShellFileUp 是否已赋值
                      * @return AllowShellFileUp 是否已赋值
+                     * 
                      */
                     bool AllowShellFileUpHasBeenSet() const;
 
                     /**
                      * 获取是否开启 rz sz 文件下载
                      * @return AllowShellFileDown 是否开启 rz sz 文件下载
+                     * 
                      */
                     bool GetAllowShellFileDown() const;
 
                     /**
                      * 设置是否开启 rz sz 文件下载
-                     * @param AllowShellFileDown 是否开启 rz sz 文件下载
+                     * @param _allowShellFileDown 是否开启 rz sz 文件下载
+                     * 
                      */
                     void SetAllowShellFileDown(const bool& _allowShellFileDown);
 
                     /**
                      * 判断参数 AllowShellFileDown 是否已赋值
                      * @return AllowShellFileDown 是否已赋值
+                     * 
                      */
                     bool AllowShellFileDownHasBeenSet() const;
 
                     /**
                      * 获取是否开启 SFTP 文件删除
                      * @return AllowFileDel 是否开启 SFTP 文件删除
+                     * 
                      */
                     bool GetAllowFileDel() const;
 
                     /**
                      * 设置是否开启 SFTP 文件删除
-                     * @param AllowFileDel 是否开启 SFTP 文件删除
+                     * @param _allowFileDel 是否开启 SFTP 文件删除
+                     * 
                      */
                     void SetAllowFileDel(const bool& _allowFileDel);
 
                     /**
                      * 判断参数 AllowFileDel 是否已赋值
                      * @return AllowFileDel 是否已赋值
+                     * 
                      */
                     bool AllowFileDelHasBeenSet() const;
 
@@ -470,20 +539,23 @@ namespace TencentCloud
 生效、失效时间不填则访问权限长期有效
                      * @return ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
+                     * 
                      */
                     std::string GetValidateFrom() const;
 
                     /**
                      * 设置访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
-                     * @param ValidateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
+                     * @param _validateFrom 访问权限生效时间，如:"2021-09-22T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
+                     * 
                      */
                     void SetValidateFrom(const std::string& _validateFrom);
 
                     /**
                      * 判断参数 ValidateFrom 是否已赋值
                      * @return ValidateFrom 是否已赋值
+                     * 
                      */
                     bool ValidateFromHasBeenSet() const;
 
@@ -492,38 +564,44 @@ namespace TencentCloud
 生效、失效时间不填则访问权限长期有效
                      * @return ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
+                     * 
                      */
                     std::string GetValidateTo() const;
 
                     /**
                      * 设置访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
-                     * @param ValidateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
+                     * @param _validateTo 访问权限失效时间，如:"2021-09-23T00:00:00+00:00"
 生效、失效时间不填则访问权限长期有效
+                     * 
                      */
                     void SetValidateTo(const std::string& _validateTo);
 
                     /**
                      * 判断参数 ValidateTo 是否已赋值
                      * @return ValidateTo 是否已赋值
+                     * 
                      */
                     bool ValidateToHasBeenSet() const;
 
                     /**
                      * 获取访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      * @return Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
-                     * @param Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @param _status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -532,20 +610,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 所属部门的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置所属部门的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 所属部门的信息
+                     * @param _department 所属部门的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartment(const Department& _department);
 
                     /**
                      * 判断参数 Department 是否已赋值
                      * @return Department 是否已赋值
+                     * 
                      */
                     bool DepartmentHasBeenSet() const;
 

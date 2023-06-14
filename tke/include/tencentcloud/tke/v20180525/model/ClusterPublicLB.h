@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取是否开启公网访问LB
                      * @return Enabled 是否开启公网访问LB
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启公网访问LB
-                     * @param Enabled 是否开启公网访问LB
+                     * @param _enabled 是否开启公网访问LB
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取允许访问的来源CIDR列表
                      * @return AllowFromCidrs 允许访问的来源CIDR列表
+                     * 
                      */
                     std::vector<std::string> GetAllowFromCidrs() const;
 
                     /**
                      * 设置允许访问的来源CIDR列表
-                     * @param AllowFromCidrs 允许访问的来源CIDR列表
+                     * @param _allowFromCidrs 允许访问的来源CIDR列表
+                     * 
                      */
                     void SetAllowFromCidrs(const std::vector<std::string>& _allowFromCidrs);
 
                     /**
                      * 判断参数 AllowFromCidrs 是否已赋值
                      * @return AllowFromCidrs 是否已赋值
+                     * 
                      */
                     bool AllowFromCidrsHasBeenSet() const;
 
                     /**
                      * 获取安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
                      * @return SecurityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * 
                      */
                     std::vector<std::string> GetSecurityPolicies() const;
 
                     /**
                      * 设置安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
-                     * @param SecurityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * @param _securityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * 
                      */
                     void SetSecurityPolicies(const std::vector<std::string>& _securityPolicies);
 
                     /**
                      * 判断参数 SecurityPolicies 是否已赋值
                      * @return SecurityPolicies 是否已赋值
+                     * 
                      */
                     bool SecurityPoliciesHasBeenSet() const;
 
                     /**
                      * 获取外网访问相关的扩展参数，格式为json
                      * @return ExtraParam 外网访问相关的扩展参数，格式为json
+                     * 
                      */
                     std::string GetExtraParam() const;
 
                     /**
                      * 设置外网访问相关的扩展参数，格式为json
-                     * @param ExtraParam 外网访问相关的扩展参数，格式为json
+                     * @param _extraParam 外网访问相关的扩展参数，格式为json
+                     * 
                      */
                     void SetExtraParam(const std::string& _extraParam);
 
                     /**
                      * 判断参数 ExtraParam 是否已赋值
                      * @return ExtraParam 是否已赋值
+                     * 
                      */
                     bool ExtraParamHasBeenSet() const;
 
                     /**
                      * 获取新内外网功能，需要传递安全组
                      * @return SecurityGroup 新内外网功能，需要传递安全组
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置新内外网功能，需要传递安全组
-                     * @param SecurityGroup 新内外网功能，需要传递安全组
+                     * @param _securityGroup 新内外网功能，需要传递安全组
+                     * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

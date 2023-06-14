@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取歌曲详情列表信息
                      * @return KTVMusicDetailInfoSet 歌曲详情列表信息
+                     * 
                      */
                     std::vector<KTVMusicDetailInfo> GetKTVMusicDetailInfoSet() const;
 
                     /**
                      * 判断参数 KTVMusicDetailInfoSet 是否已赋值
                      * @return KTVMusicDetailInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVMusicDetailInfoSetHasBeenSet() const;
 
                     /**
                      * 获取不存在的歌曲 ID 列表。
                      * @return NotExistMusicIdSet 不存在的歌曲 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetNotExistMusicIdSet() const;
 
                     /**
                      * 判断参数 NotExistMusicIdSet 是否已赋值
                      * @return NotExistMusicIdSet 是否已赋值
+                     * 
                      */
                     bool NotExistMusicIdSetHasBeenSet() const;
 

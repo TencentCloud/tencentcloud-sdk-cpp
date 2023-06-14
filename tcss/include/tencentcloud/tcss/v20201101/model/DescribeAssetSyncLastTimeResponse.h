@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取资产最近同步时间
                      * @return AssetSyncLastTime 资产最近同步时间
+                     * 
                      */
                     std::string GetAssetSyncLastTime() const;
 
                     /**
                      * 判断参数 AssetSyncLastTime 是否已赋值
                      * @return AssetSyncLastTime 是否已赋值
+                     * 
                      */
                     bool AssetSyncLastTimeHasBeenSet() const;
 

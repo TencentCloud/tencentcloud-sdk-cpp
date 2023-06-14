@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取相应结果
                      * @return Result 相应结果
+                     * 
                      */
                     TsfApiListResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

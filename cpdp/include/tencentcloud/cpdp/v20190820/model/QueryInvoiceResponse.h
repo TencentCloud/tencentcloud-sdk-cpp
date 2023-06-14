@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取发票查询结果
                      * @return Result 发票查询结果
+                     * 
                      */
                     QueryInvoiceResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

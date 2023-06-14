@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _name 常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _desc 常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPosition() const;
 
                     /**
                      * 设置常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Position 常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _position 常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPosition(const std::string& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue 常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultValue 常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _defaultValue 常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 

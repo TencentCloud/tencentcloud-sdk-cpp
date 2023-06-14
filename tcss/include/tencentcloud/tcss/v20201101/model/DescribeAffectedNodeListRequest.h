@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取唯一的检测项的ID
                      * @return CheckItemId 唯一的检测项的ID
+                     * 
                      */
                     int64_t GetCheckItemId() const;
 
                     /**
                      * 设置唯一的检测项的ID
-                     * @param CheckItemId 唯一的检测项的ID
+                     * @param _checkItemId 唯一的检测项的ID
+                     * 
                      */
                     void SetCheckItemId(const int64_t& _checkItemId);
 
                     /**
                      * 判断参数 CheckItemId 是否已赋值
                      * @return CheckItemId 是否已赋值
+                     * 
                      */
                     bool CheckItemIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每次查询的最大记录数量
                      * @return Limit 每次查询的最大记录数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每次查询的最大记录数量
-                     * @param Limit 每次查询的最大记录数量
+                     * @param _limit 每次查询的最大记录数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -102,56 +111,65 @@ namespace TencentCloud
 Name 可取值：ClusterName, ClusterId,InstanceId,PrivateIpAddresses
                      * @return Filters Name - String
 Name 可取值：ClusterName, ClusterId,InstanceId,PrivateIpAddresses
+                     * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
                      * 设置Name - String
 Name 可取值：ClusterName, ClusterId,InstanceId,PrivateIpAddresses
-                     * @param Filters Name - String
+                     * @param _filters Name - String
 Name 可取值：ClusterName, ClusterId,InstanceId,PrivateIpAddresses
+                     * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return By 排序字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param By 排序字段
+                     * @param _by 排序字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取排序方式 asc,desc
                      * @return Order 排序方式 asc,desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式 asc,desc
-                     * @param Order 排序方式 asc,desc
+                     * @param _order 排序方式 asc,desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取外部进件序列号。
                      * @return OutRegistrationNo 外部进件序列号。
+                     * 
                      */
                     std::string GetOutRegistrationNo() const;
 
                     /**
                      * 设置外部进件序列号。
-                     * @param OutRegistrationNo 外部进件序列号。
+                     * @param _outRegistrationNo 外部进件序列号。
+                     * 
                      */
                     void SetOutRegistrationNo(const std::string& _outRegistrationNo);
 
                     /**
                      * 判断参数 OutRegistrationNo 是否已赋值
                      * @return OutRegistrationNo 是否已赋值
+                     * 
                      */
                     bool OutRegistrationNoHasBeenSet() const;
 
                     /**
                      * 获取渠道商户ID。
                      * @return ChannelMerchantId 渠道商户ID。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户ID。
-                     * @param ChannelMerchantId 渠道商户ID。
+                     * @param _channelMerchantId 渠道商户ID。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部子商户ID,平台侧商户唯一ID。
                      * @return OutSubMerchantId 外部子商户ID,平台侧商户唯一ID。
+                     * 
                      */
                     std::string GetOutSubMerchantId() const;
 
                     /**
                      * 设置外部子商户ID,平台侧商户唯一ID。
-                     * @param OutSubMerchantId 外部子商户ID,平台侧商户唯一ID。
+                     * @param _outSubMerchantId 外部子商户ID,平台侧商户唯一ID。
+                     * 
                      */
                     void SetOutSubMerchantId(const std::string& _outSubMerchantId);
 
                     /**
                      * 判断参数 OutSubMerchantId 是否已赋值
                      * @return OutSubMerchantId 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -113,16 +123,18 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
+                     * @param _channelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -133,6 +145,7 @@ __OPENBANK_PAYMENT__: openbank支付
                      * @return PaymentMethod 支付方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -140,141 +153,164 @@ __OPENBANK_PAYMENT__: openbank支付
                      * 设置支付方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
-                     * @param PaymentMethod 支付方式。详见附录-云企付枚举类说明-PaymentMethod。
+                     * @param _paymentMethod 支付方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
                     /**
                      * 获取社会信用代码。
                      * @return BusinessLicenseNumber 社会信用代码。
+                     * 
                      */
                     std::string GetBusinessLicenseNumber() const;
 
                     /**
                      * 设置社会信用代码。
-                     * @param BusinessLicenseNumber 社会信用代码。
+                     * @param _businessLicenseNumber 社会信用代码。
+                     * 
                      */
                     void SetBusinessLicenseNumber(const std::string& _businessLicenseNumber);
 
                     /**
                      * 判断参数 BusinessLicenseNumber 是否已赋值
                      * @return BusinessLicenseNumber 是否已赋值
+                     * 
                      */
                     bool BusinessLicenseNumberHasBeenSet() const;
 
                     /**
                      * 获取外部子商户名称。
                      * @return OutSubMerchantName 外部子商户名称。
+                     * 
                      */
                     std::string GetOutSubMerchantName() const;
 
                     /**
                      * 设置外部子商户名称。
-                     * @param OutSubMerchantName 外部子商户名称。
+                     * @param _outSubMerchantName 外部子商户名称。
+                     * 
                      */
                     void SetOutSubMerchantName(const std::string& _outSubMerchantName);
 
                     /**
                      * 判断参数 OutSubMerchantName 是否已赋值
                      * @return OutSubMerchantName 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantNameHasBeenSet() const;
 
                     /**
                      * 获取法人姓名。
                      * @return LegalName 法人姓名。
+                     * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名。
-                     * @param LegalName 法人姓名。
+                     * @param _legalName 法人姓名。
+                     * 
                      */
                     void SetLegalName(const std::string& _legalName);
 
                     /**
                      * 判断参数 LegalName 是否已赋值
                      * @return LegalName 是否已赋值
+                     * 
                      */
                     bool LegalNameHasBeenSet() const;
 
                     /**
                      * 获取外部子商户简称。
                      * @return OutSubMerchantShortName 外部子商户简称。
+                     * 
                      */
                     std::string GetOutSubMerchantShortName() const;
 
                     /**
                      * 设置外部子商户简称。
-                     * @param OutSubMerchantShortName 外部子商户简称。
+                     * @param _outSubMerchantShortName 外部子商户简称。
+                     * 
                      */
                     void SetOutSubMerchantShortName(const std::string& _outSubMerchantShortName);
 
                     /**
                      * 判断参数 OutSubMerchantShortName 是否已赋值
                      * @return OutSubMerchantShortName 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantShortNameHasBeenSet() const;
 
                     /**
                      * 获取外部子商户描述。
                      * @return OutSubMerchantDescription 外部子商户描述。
+                     * 
                      */
                     std::string GetOutSubMerchantDescription() const;
 
                     /**
                      * 设置外部子商户描述。
-                     * @param OutSubMerchantDescription 外部子商户描述。
+                     * @param _outSubMerchantDescription 外部子商户描述。
+                     * 
                      */
                     void SetOutSubMerchantDescription(const std::string& _outSubMerchantDescription);
 
                     /**
                      * 判断参数 OutSubMerchantDescription 是否已赋值
                      * @return OutSubMerchantDescription 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantDescriptionHasBeenSet() const;
 
                     /**
                      * 获取第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。
                      * @return ExternalSubMerchantRegistrationData 第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。
+                     * 
                      */
                     std::string GetExternalSubMerchantRegistrationData() const;
 
                     /**
                      * 设置第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。
-                     * @param ExternalSubMerchantRegistrationData 第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。
+                     * @param _externalSubMerchantRegistrationData 第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。
+                     * 
                      */
                     void SetExternalSubMerchantRegistrationData(const std::string& _externalSubMerchantRegistrationData);
 
                     /**
                      * 判断参数 ExternalSubMerchantRegistrationData 是否已赋值
                      * @return ExternalSubMerchantRegistrationData 是否已赋值
+                     * 
                      */
                     bool ExternalSubMerchantRegistrationDataHasBeenSet() const;
 
                     /**
                      * 获取通知地址。
                      * @return NotifyUrl 通知地址。
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置通知地址。
-                     * @param NotifyUrl 通知地址。
+                     * @param _notifyUrl 通知地址。
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 
@@ -287,6 +323,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -295,16 +332,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

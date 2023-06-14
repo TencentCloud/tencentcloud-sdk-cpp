@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取健名
                      * @return Key 健名
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置健名
-                     * @param Key 健名
+                     * @param _key 健名
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取对应本地路径
                      * @return Path 对应本地路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置对应本地路径
-                     * @param Path 对应本地路径
+                     * @param _path 对应本地路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取对应权限模式
                      * @return Mode 对应权限模式
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置对应权限模式
-                     * @param Mode 对应权限模式
+                     * @param _mode 对应权限模式
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

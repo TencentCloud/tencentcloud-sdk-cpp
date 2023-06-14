@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
 <li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -99,71 +106,82 @@ namespace TencentCloud
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
 <li>instance-id - String -（过滤条件）关联实例实例ID。</li>
-                     * @param Filters 过滤条件：
+                     * @param _filters 过滤条件：
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
 <li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取云联网实例ID
                      * @return CcnId 云联网实例ID
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网实例ID
-                     * @param CcnId 云联网实例ID
+                     * @param _ccnId 云联网实例ID
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
                      * @return OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
-                     * @param OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
+                     * @param _orderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
                      * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
-                     * @param OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * @param _orderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

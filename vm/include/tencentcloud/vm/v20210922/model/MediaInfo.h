@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取编码格式
                      * @return Codecs 编码格式
+                     * 
                      */
                     std::string GetCodecs() const;
 
                     /**
                      * 设置编码格式
-                     * @param Codecs 编码格式
+                     * @param _codecs 编码格式
+                     * 
                      */
                     void SetCodecs(const std::string& _codecs);
 
                     /**
                      * 判断参数 Codecs 是否已赋值
                      * @return Codecs 是否已赋值
+                     * 
                      */
                     bool CodecsHasBeenSet() const;
 
@@ -69,74 +72,86 @@ namespace TencentCloud
 注意：此字段可能返回 0，表示取不到有效值。
                      * @return Duration 流检测时分片时长
 注意：此字段可能返回 0，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置流检测时分片时长
 注意：此字段可能返回 0，表示取不到有效值。
-                     * @param Duration 流检测时分片时长
+                     * @param _duration 流检测时分片时长
 注意：此字段可能返回 0，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取宽，单位为像素
                      * @return Width 宽，单位为像素
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽，单位为像素
-                     * @param Width 宽，单位为像素
+                     * @param _width 宽，单位为像素
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取高，单位为像素
                      * @return Height 高，单位为像素
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高，单位为像素
-                     * @param Height 高，单位为像素
+                     * @param _height 高，单位为像素
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取封面
                      * @return Thumbnail 封面
+                     * 
                      */
                     std::string GetThumbnail() const;
 
                     /**
                      * 设置封面
-                     * @param Thumbnail 封面
+                     * @param _thumbnail 封面
+                     * 
                      */
                     void SetThumbnail(const std::string& _thumbnail);
 
                     /**
                      * 判断参数 Thumbnail 是否已赋值
                      * @return Thumbnail 是否已赋值
+                     * 
                      */
                     bool ThumbnailHasBeenSet() const;
 

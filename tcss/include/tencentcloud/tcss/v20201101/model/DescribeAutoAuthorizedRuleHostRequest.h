@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取规则id
                      * @return RuleId 规则id
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则id
-                     * @param RuleId 规则id
+                     * @param _ruleId 规则id
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为全部；
                      * @return Limit 需要返回的数量，默认为全部；
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为全部；
-                     * @param Limit 需要返回的数量，默认为全部；
+                     * @param _limit 需要返回的数量，默认为全部；
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return Order 排序字段
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序字段
-                     * @param Order 排序字段
+                     * @param _order 排序字段
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc，desc
                      * @return By 排序方式，asc，desc
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序方式，asc，desc
-                     * @param By 排序方式，asc，desc
+                     * @param _by 排序方式，asc，desc
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

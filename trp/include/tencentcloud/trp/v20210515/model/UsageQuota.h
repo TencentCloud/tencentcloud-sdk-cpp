@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FactoryCnt 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFactoryCnt() const;
 
                     /**
                      * 设置商户配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FactoryCnt 商户配额
+                     * @param _factoryCnt 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFactoryCnt(const int64_t& _factoryCnt);
 
                     /**
                      * 判断参数 FactoryCnt 是否已赋值
                      * @return FactoryCnt 是否已赋值
+                     * 
                      */
                     bool FactoryCntHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemCnt 商品数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetItemCnt() const;
 
                     /**
                      * 设置商品数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemCnt 商品数量
+                     * @param _itemCnt 商品数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemCnt(const int64_t& _itemCnt);
 
                     /**
                      * 判断参数 ItemCnt 是否已赋值
                      * @return ItemCnt 是否已赋值
+                     * 
                      */
                     bool ItemCntHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackCnt 溯源码量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTrackCnt() const;
 
                     /**
                      * 设置溯源码量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrackCnt 溯源码量
+                     * @param _trackCnt 溯源码量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrackCnt(const int64_t& _trackCnt);
 
                     /**
                      * 判断参数 TrackCnt 是否已赋值
                      * @return TrackCnt 是否已赋值
+                     * 
                      */
                     bool TrackCntHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaleCnt 营销码额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSaleCnt() const;
 
                     /**
                      * 设置营销码额度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SaleCnt 营销码额度
+                     * @param _saleCnt 营销码额度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSaleCnt(const int64_t& _saleCnt);
 
                     /**
                      * 判断参数 SaleCnt 是否已赋值
                      * @return SaleCnt 是否已赋值
+                     * 
                      */
                     bool SaleCntHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainCnt 区块链上链次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChainCnt() const;
 
                     /**
                      * 设置区块链上链次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChainCnt 区块链上链次数
+                     * @param _chainCnt 区块链上链次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChainCnt(const int64_t& _chainCnt);
 
                     /**
                      * 判断参数 ChainCnt 是否已赋值
                      * @return ChainCnt 是否已赋值
+                     * 
                      */
                     bool ChainCntHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCnt 营销风控次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRiskCnt() const;
 
                     /**
                      * 设置营销风控次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskCnt 营销风控次数
+                     * @param _riskCnt 营销风控次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskCnt(const int64_t& _riskCnt);
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
+                     * 
                      */
                     bool RiskCntHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 时间
+                     * @param _updateTime 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

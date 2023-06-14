@@ -51,56 +51,65 @@ namespace TencentCloud
 该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
                      * @return PageId 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
 该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
+                     * 
                      */
                     int64_t GetPageId() const;
 
                     /**
                      * 设置拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
 该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
-                     * @param PageId 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
+                     * @param _pageId 拦截页面的唯一Id。系统默认包含一个自带拦截页面，Id值为0。
 该Id可通过创建拦截页面接口进行上传获取。如传入0，代表使用系统默认拦截页面。
+                     * 
                      */
                     void SetPageId(const int64_t& _pageId);
 
                     /**
                      * 判断参数 PageId 是否已赋值
                      * @return PageId 是否已赋值
+                     * 
                      */
                     bool PageIdHasBeenSet() const;
 
                     /**
                      * 获取拦截页面的HTTP状态码。状态码范围是100-600。
                      * @return StatusCode 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
                      * 设置拦截页面的HTTP状态码。状态码范围是100-600。
-                     * @param StatusCode 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * @param _statusCode 拦截页面的HTTP状态码。状态码范围是100-600。
+                     * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
                     /**
                      * 获取页面文件名或url。
                      * @return Name 页面文件名或url。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置页面文件名或url。
-                     * @param Name 页面文件名或url。
+                     * @param _name 页面文件名或url。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
                      * @return Type 页面的类型，取值有：
 <li> file：页面文件内容；</li>
 <li> url：上传的url地址。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -118,15 +128,17 @@ namespace TencentCloud
                      * 设置页面的类型，取值有：
 <li> file：页面文件内容；</li>
 <li> url：上传的url地址。</li>
-                     * @param Type 页面的类型，取值有：
+                     * @param _type 页面的类型，取值有：
 <li> file：页面文件内容；</li>
 <li> url：上传的url地址。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

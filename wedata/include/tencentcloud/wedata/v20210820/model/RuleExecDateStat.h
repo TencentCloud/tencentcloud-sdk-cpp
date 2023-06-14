@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return StatDate 统计日期
+                     * 
                      */
                     std::string GetStatDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param StatDate 统计日期
+                     * @param _statDate 统计日期
+                     * 
                      */
                     void SetStatDate(const std::string& _statDate);
 
                     /**
                      * 判断参数 StatDate 是否已赋值
                      * @return StatDate 是否已赋值
+                     * 
                      */
                     bool StatDateHasBeenSet() const;
 
                     /**
                      * 获取告警数
                      * @return AlarmCnt 告警数
+                     * 
                      */
                     uint64_t GetAlarmCnt() const;
 
                     /**
                      * 设置告警数
-                     * @param AlarmCnt 告警数
+                     * @param _alarmCnt 告警数
+                     * 
                      */
                     void SetAlarmCnt(const uint64_t& _alarmCnt);
 
                     /**
                      * 判断参数 AlarmCnt 是否已赋值
                      * @return AlarmCnt 是否已赋值
+                     * 
                      */
                     bool AlarmCntHasBeenSet() const;
 
                     /**
                      * 获取阻塞数
                      * @return PipelineCnt 阻塞数
+                     * 
                      */
                     uint64_t GetPipelineCnt() const;
 
                     /**
                      * 设置阻塞数
-                     * @param PipelineCnt 阻塞数
+                     * @param _pipelineCnt 阻塞数
+                     * 
                      */
                     void SetPipelineCnt(const uint64_t& _pipelineCnt);
 
                     /**
                      * 判断参数 PipelineCnt 是否已赋值
                      * @return PipelineCnt 是否已赋值
+                     * 
                      */
                     bool PipelineCntHasBeenSet() const;
 

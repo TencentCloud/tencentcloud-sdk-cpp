@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchToken 当前的MatchCode对应的Token。如果当前MatchCode没有Token，该参数可能取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMatchToken() const;
 
                     /**
                      * 判断参数 MatchToken 是否已赋值
                      * @return MatchToken 是否已赋值
+                     * 
                      */
                     bool MatchTokenHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompatibleSpan 当Token被替换后，GPM将兼容推送原始Token的时间（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCompatibleSpan() const;
 
                     /**
                      * 判断参数 CompatibleSpan 是否已赋值
                      * @return CompatibleSpan 是否已赋值
+                     * 
                      */
                     bool CompatibleSpanHasBeenSet() const;
 

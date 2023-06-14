@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取流程编号
                      * @return FlowId 流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取流程文件列表
                      * @return FlowFileInfos 流程文件列表
+                     * 
                      */
                     std::vector<FlowFileInfo> GetFlowFileInfos() const;
 
                     /**
                      * 判断参数 FlowFileInfos 是否已赋值
                      * @return FlowFileInfos 是否已赋值
+                     * 
                      */
                     bool FlowFileInfosHasBeenSet() const;
 

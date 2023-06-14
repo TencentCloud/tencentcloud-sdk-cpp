@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取该iccid请求状态
                      * @return Code 该iccid请求状态
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置该iccid请求状态
-                     * @param Code 该iccid请求状态
+                     * @param _code 该iccid请求状态
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取短信发送返回信息
                      * @return Msg 短信发送返回信息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置短信发送返回信息
-                     * @param Msg 短信发送返回信息
+                     * @param _msg 短信发送返回信息
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
                     /**
                      * 获取卡片ID
                      * @return Iccid 卡片ID
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置卡片ID
-                     * @param Iccid 卡片ID
+                     * @param _iccid 卡片ID
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
                     /**
                      * 获取流水ID
                      * @return Sid 流水ID
+                     * 
                      */
                     std::string GetSid() const;
 
                     /**
                      * 设置流水ID
-                     * @param Sid 流水ID
+                     * @param _sid 流水ID
+                     * 
                      */
                     void SetSid(const std::string& _sid);
 
                     /**
                      * 判断参数 Sid 是否已赋值
                      * @return Sid 是否已赋值
+                     * 
                      */
                     bool SidHasBeenSet() const;
 

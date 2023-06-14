@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户 Id。
                      * @return UserId 用户 Id。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户 Id。
-                     * @param UserId 用户 Id。
+                     * @param _userId 用户 Id。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户手机号码。
                      * @return Phone 用户手机号码。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置用户手机号码。
-                     * @param Phone 用户手机号码。
+                     * @param _phone 用户手机号码。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取用户昵称。
                      * @return Nick 用户昵称。
+                     * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称。
-                     * @param Nick 用户昵称。
+                     * @param _nick 用户昵称。
+                     * 
                      */
                     void SetNick(const std::string& _nick);
 
                     /**
                      * 判断参数 Nick 是否已赋值
                      * @return Nick 是否已赋值
+                     * 
                      */
                     bool NickHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return Status 账号状态，取值：
 <li>Normal：有效；</li>
 <li>Stopped：无效。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置账号状态，取值：
 <li>Normal：有效；</li>
 <li>Stopped：无效。</li>
-                     * @param Status 账号状态，取值：
+                     * @param _status 账号状态，取值：
 <li>Normal：有效；</li>
 <li>Stopped：无效。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

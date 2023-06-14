@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取可用区ID：如ap-guangzhou-3
                      * @return ZoneId 可用区ID：如ap-guangzhou-3
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区ID：如ap-guangzhou-3
-                     * @param ZoneId 可用区ID：如ap-guangzhou-3
+                     * @param _zoneId 可用区ID：如ap-guangzhou-3
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区名称
                      * @return ZoneName 可用区名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区名称
-                     * @param ZoneName 可用区名称
+                     * @param _zoneName 可用区名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取可用区是否售罄
                      * @return IsSaleout 可用区是否售罄
+                     * 
                      */
                     bool GetIsSaleout() const;
 
                     /**
                      * 设置可用区是否售罄
-                     * @param IsSaleout 可用区是否售罄
+                     * @param _isSaleout 可用区是否售罄
+                     * 
                      */
                     void SetIsSaleout(const bool& _isSaleout);
 
                     /**
                      * 判断参数 IsSaleout 是否已赋值
                      * @return IsSaleout 是否已赋值
+                     * 
                      */
                     bool IsSaleoutHasBeenSet() const;
 
                     /**
                      * 获取是否为默认可用区
                      * @return IsDefault 是否为默认可用区
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否为默认可用区
-                     * @param IsDefault 是否为默认可用区
+                     * @param _isDefault 是否为默认可用区
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取网络类型：basenet -- 基础网络；vpcnet -- VPC网络
                      * @return NetWorkType 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * 
                      */
                     std::vector<std::string> GetNetWorkType() const;
 
                     /**
                      * 设置网络类型：basenet -- 基础网络；vpcnet -- VPC网络
-                     * @param NetWorkType 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * @param _netWorkType 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * 
                      */
                     void SetNetWorkType(const std::vector<std::string>& _netWorkType);
 
                     /**
                      * 判断参数 NetWorkType 是否已赋值
                      * @return NetWorkType 是否已赋值
+                     * 
                      */
                     bool NetWorkTypeHasBeenSet() const;
 
                     /**
                      * 获取可用区内产品规格等信息
                      * @return ProductSet 可用区内产品规格等信息
+                     * 
                      */
                     std::vector<ProductConf> GetProductSet() const;
 
                     /**
                      * 设置可用区内产品规格等信息
-                     * @param ProductSet 可用区内产品规格等信息
+                     * @param _productSet 可用区内产品规格等信息
+                     * 
                      */
                     void SetProductSet(const std::vector<ProductConf>& _productSet);
 
                     /**
                      * 判断参数 ProductSet 是否已赋值
                      * @return ProductSet 是否已赋值
+                     * 
                      */
                     bool ProductSetHasBeenSet() const;
 
                     /**
                      * 获取可用区ID：如100003
                      * @return OldZoneId 可用区ID：如100003
+                     * 
                      */
                     int64_t GetOldZoneId() const;
 
                     /**
                      * 设置可用区ID：如100003
-                     * @param OldZoneId 可用区ID：如100003
+                     * @param _oldZoneId 可用区ID：如100003
+                     * 
                      */
                     void SetOldZoneId(const int64_t& _oldZoneId);
 
                     /**
                      * 判断参数 OldZoneId 是否已赋值
                      * @return OldZoneId 是否已赋值
+                     * 
                      */
                     bool OldZoneIdHasBeenSet() const;
 

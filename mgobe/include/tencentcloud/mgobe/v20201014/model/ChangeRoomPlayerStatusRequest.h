@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取玩家自定义状态。
                      * @return CustomStatus 玩家自定义状态。
+                     * 
                      */
                     uint64_t GetCustomStatus() const;
 
                     /**
                      * 设置玩家自定义状态。
-                     * @param CustomStatus 玩家自定义状态。
+                     * @param _customStatus 玩家自定义状态。
+                     * 
                      */
                     void SetCustomStatus(const uint64_t& _customStatus);
 
                     /**
                      * 判断参数 CustomStatus 是否已赋值
                      * @return CustomStatus 是否已赋值
+                     * 
                      */
                     bool CustomStatusHasBeenSet() const;
 
                     /**
                      * 获取玩家id。
                      * @return PlayerId 玩家id。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置玩家id。
-                     * @param PlayerId 玩家id。
+                     * @param _playerId 玩家id。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 

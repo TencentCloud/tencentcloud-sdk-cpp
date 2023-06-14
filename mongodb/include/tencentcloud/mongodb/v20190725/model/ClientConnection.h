@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取连接的客户端IP
                      * @return IP 连接的客户端IP
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置连接的客户端IP
-                     * @param IP 连接的客户端IP
+                     * @param _iP 连接的客户端IP
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取对应客户端IP的连接数
                      * @return Count 对应客户端IP的连接数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置对应客户端IP的连接数
-                     * @param Count 对应客户端IP的连接数
+                     * @param _count 对应客户端IP的连接数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取是否为内部ip
                      * @return InternalService 是否为内部ip
+                     * 
                      */
                     bool GetInternalService() const;
 
                     /**
                      * 设置是否为内部ip
-                     * @param InternalService 是否为内部ip
+                     * @param _internalService 是否为内部ip
+                     * 
                      */
                     void SetInternalService(const bool& _internalService);
 
                     /**
                      * 判断参数 InternalService 是否已赋值
                      * @return InternalService 是否已赋值
+                     * 
                      */
                     bool InternalServiceHasBeenSet() const;
 

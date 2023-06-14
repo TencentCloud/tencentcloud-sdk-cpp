@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCnt 总数
+                     * 
                      */
                     uint64_t GetTotalCnt() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCnt 总数
+                     * @param _totalCnt 总数
+                     * 
                      */
                     void SetTotalCnt(const uint64_t& _totalCnt);
 
                     /**
                      * 判断参数 TotalCnt 是否已赋值
                      * @return TotalCnt 是否已赋值
+                     * 
                      */
                     bool TotalCntHasBeenSet() const;
 
                     /**
                      * 获取维度统计数
                      * @return DimCntList 维度统计数
+                     * 
                      */
                     std::vector<RuleDimCnt> GetDimCntList() const;
 
                     /**
                      * 设置维度统计数
-                     * @param DimCntList 维度统计数
+                     * @param _dimCntList 维度统计数
+                     * 
                      */
                     void SetDimCntList(const std::vector<RuleDimCnt>& _dimCntList);
 
                     /**
                      * 判断参数 DimCntList 是否已赋值
                      * @return DimCntList 是否已赋值
+                     * 
                      */
                     bool DimCntListHasBeenSet() const;
 

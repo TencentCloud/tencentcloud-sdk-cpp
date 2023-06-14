@@ -51,12 +51,14 @@ namespace TencentCloud
                      * @return PageNum 页号，
 范围是[1,1000]，
 默认值是1。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
@@ -65,72 +67,84 @@ namespace TencentCloud
 默认值是20。
                      * @return PageSize 每页个数，范围是[1,1000]，
 默认值是20。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取峰值指标，可选值包括”Domain”，”StreamId”。
                      * @return TopIndex 峰值指标，可选值包括”Domain”，”StreamId”。
+                     * 
                      */
                     std::string GetTopIndex() const;
 
                     /**
                      * 判断参数 TopIndex 是否已赋值
                      * @return TopIndex 是否已赋值
+                     * 
                      */
                     bool TopIndexHasBeenSet() const;
 
                     /**
                      * 获取排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。
                      * @return OrderParam 排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。
+                     * 
                      */
                     std::string GetOrderParam() const;
 
                     /**
                      * 判断参数 OrderParam 是否已赋值
                      * @return OrderParam 是否已赋值
+                     * 
                      */
                     bool OrderParamHasBeenSet() const;
 
                     /**
                      * 获取记录总数。
                      * @return TotalNum 记录总数。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取记录总页数。
                      * @return TotalPage 记录总页数。
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 
                     /**
                      * 获取数据内容。
                      * @return DataInfoList 数据内容。
+                     * 
                      */
                     std::vector<PlaySumStatInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

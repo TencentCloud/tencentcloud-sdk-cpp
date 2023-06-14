@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P5 数据聚合方式，周期5秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP5() const;
 
                     /**
                      * 设置数据聚合方式，周期5秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P5 数据聚合方式，周期5秒
+                     * @param _p5 数据聚合方式，周期5秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP5(const std::string& _p5);
 
                     /**
                      * 判断参数 P5 是否已赋值
                      * @return P5 是否已赋值
+                     * 
                      */
                     bool P5HasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P10 数据聚合方式，周期10秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP10() const;
 
                     /**
                      * 设置数据聚合方式，周期10秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P10 数据聚合方式，周期10秒
+                     * @param _p10 数据聚合方式，周期10秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP10(const std::string& _p10);
 
                     /**
                      * 判断参数 P10 是否已赋值
                      * @return P10 是否已赋值
+                     * 
                      */
                     bool P10HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P60 数据聚合方式，周期1分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP60() const;
 
                     /**
                      * 设置数据聚合方式，周期1分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P60 数据聚合方式，周期1分钟
+                     * @param _p60 数据聚合方式，周期1分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP60(const std::string& _p60);
 
                     /**
                      * 判断参数 P60 是否已赋值
                      * @return P60 是否已赋值
+                     * 
                      */
                     bool P60HasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P300 数据聚合方式，周期5分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP300() const;
 
                     /**
                      * 设置数据聚合方式，周期5分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P300 数据聚合方式，周期5分钟
+                     * @param _p300 数据聚合方式，周期5分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP300(const std::string& _p300);
 
                     /**
                      * 判断参数 P300 是否已赋值
                      * @return P300 是否已赋值
+                     * 
                      */
                     bool P300HasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P600 数据聚合方式，周期10分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP600() const;
 
                     /**
                      * 设置数据聚合方式，周期10分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P600 数据聚合方式，周期10分钟
+                     * @param _p600 数据聚合方式，周期10分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP600(const std::string& _p600);
 
                     /**
                      * 判断参数 P600 是否已赋值
                      * @return P600 是否已赋值
+                     * 
                      */
                     bool P600HasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P1800 数据聚合方式，周期30分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP1800() const;
 
                     /**
                      * 设置数据聚合方式，周期30分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P1800 数据聚合方式，周期30分钟
+                     * @param _p1800 数据聚合方式，周期30分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP1800(const std::string& _p1800);
 
                     /**
                      * 判断参数 P1800 是否已赋值
                      * @return P1800 是否已赋值
+                     * 
                      */
                     bool P1800HasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P3600 数据聚合方式，周期1小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP3600() const;
 
                     /**
                      * 设置数据聚合方式，周期1小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P3600 数据聚合方式，周期1小时
+                     * @param _p3600 数据聚合方式，周期1小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP3600(const std::string& _p3600);
 
                     /**
                      * 判断参数 P3600 是否已赋值
                      * @return P3600 是否已赋值
+                     * 
                      */
                     bool P3600HasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return P86400 数据聚合方式，周期1天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetP86400() const;
 
                     /**
                      * 设置数据聚合方式，周期1天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param P86400 数据聚合方式，周期1天
+                     * @param _p86400 数据聚合方式，周期1天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetP86400(const std::string& _p86400);
 
                     /**
                      * 判断参数 P86400 是否已赋值
                      * @return P86400 是否已赋值
+                     * 
                      */
                     bool P86400HasBeenSet() const;
 

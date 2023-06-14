@@ -58,12 +58,14 @@ request：请求数计费
 flux_sep：动静分离流量计费
 bandwidth_sep：动静分离带宽计费
 日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
+                     * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 判断参数 PayType 是否已赋值
                      * @return PayType 是否已赋值
+                     * 
                      */
                     bool PayTypeHasBeenSet() const;
 
@@ -76,12 +78,14 @@ hour：小时结计费
 day：日结计费
 month：月结计费
 hour：小时结计费
+                     * 
                      */
                     std::string GetBillingCycle() const;
 
                     /**
                      * 判断参数 BillingCycle 是否已赋值
                      * @return BillingCycle 是否已赋值
+                     * 
                      */
                     bool BillingCycleHasBeenSet() const;
 
@@ -98,12 +102,14 @@ day95：日 95 带宽，月结模式
 month95：月95带宽，月结模式
 sum：总流量/总请求数，日结或月结模式
 max：峰值带宽，日结模式
+                     * 
                      */
                     std::string GetStatType() const;
 
                     /**
                      * 判断参数 StatType 是否已赋值
                      * @return StatType 是否已赋值
+                     * 
                      */
                     bool StatTypeHasBeenSet() const;
 
@@ -114,12 +120,14 @@ multiple：分地区计费
                      * @return RegionType 计费区域
 all：全地区统一计费
 multiple：分地区计费
+                     * 
                      */
                     std::string GetRegionType() const;
 
                     /**
                      * 判断参数 RegionType 是否已赋值
                      * @return RegionType 是否已赋值
+                     * 
                      */
                     bool RegionTypeHasBeenSet() const;
 
@@ -136,12 +144,14 @@ bandwidth：带宽计费
 request：请求数计费
 flux_sep：动静分离流量计费
 bandwidth_sep：动静分离带宽计费
+                     * 
                      */
                     std::string GetCurrentPayType() const;
 
                     /**
                      * 判断参数 CurrentPayType 是否已赋值
                      * @return CurrentPayType 是否已赋值
+                     * 
                      */
                     bool CurrentPayTypeHasBeenSet() const;
 

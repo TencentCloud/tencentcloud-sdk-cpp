@@ -51,20 +51,23 @@ namespace TencentCloud
 默认值: weak
                      * @return Type 画质修复类型，可选值：weak，normal，strong;
 默认值: weak
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置画质修复类型，可选值：weak，normal，strong;
 默认值: weak
-                     * @param Type 画质修复类型，可选值：weak，normal，strong;
+                     * @param _type 画质修复类型，可选值：weak，normal，strong;
 默认值: weak
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

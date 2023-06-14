@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 

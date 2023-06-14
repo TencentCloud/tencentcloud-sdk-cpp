@@ -62,20 +62,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Placement 实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Placement 实例所在的位置。
+                     * @param _placement 实例所在的位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
@@ -84,20 +87,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例机型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例机型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 实例机型。
+                     * @param _instanceType 实例机型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -106,20 +112,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名称。
+                     * @param _instanceName 实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -128,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * @param _instanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
@@ -150,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemDisk 实例系统盘信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
                      * 设置实例系统盘信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SystemDisk 实例系统盘信息。
+                     * @param _systemDisk 实例系统盘信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
@@ -172,20 +187,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置实例数据盘信息。只包含随实例购买的数据盘。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
+                     * @param _dataDisks 实例数据盘信息。只包含随实例购买的数据盘。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 
@@ -194,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetAccessible 实例带宽信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置实例带宽信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetAccessible 实例带宽信息。
+                     * @param _internetAccessible 实例带宽信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
                     /**
                      * 判断参数 InternetAccessible 是否已赋值
                      * @return InternetAccessible 是否已赋值
+                     * 
                      */
                     bool InternetAccessibleHasBeenSet() const;
 
@@ -216,20 +237,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualPrivateCloud 实例所属虚拟私有网络信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
                      * 设置实例所属虚拟私有网络信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualPrivateCloud 实例所属虚拟私有网络信息。
+                     * @param _virtualPrivateCloud 实例所属虚拟私有网络信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
 
                     /**
                      * 判断参数 VirtualPrivateCloud 是否已赋值
                      * @return VirtualPrivateCloud 是否已赋值
+                     * 
                      */
                     bool VirtualPrivateCloudHasBeenSet() const;
 
@@ -238,20 +262,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 生产实例所使用的镜像`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置生产实例所使用的镜像`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId 生产实例所使用的镜像`ID`。
+                     * @param _imageId 生产实例所使用的镜像`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -260,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
+                     * @param _securityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
@@ -282,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginSettings 实例登录设置。目前只返回实例所关联的密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
                      * 设置实例登录设置。目前只返回实例所关联的密钥。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoginSettings 实例登录设置。目前只返回实例所关联的密钥。
+                     * @param _loginSettings 实例登录设置。目前只返回实例所关联的密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
 
                     /**
                      * 判断参数 LoginSettings 是否已赋值
                      * @return LoginSettings 是否已赋值
+                     * 
                      */
                     bool LoginSettingsHasBeenSet() const;
 
@@ -304,20 +337,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CamRoleName CAM角色名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
                      * 设置CAM角色名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CamRoleName CAM角色名。
+                     * @param _camRoleName CAM角色名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
 
                     /**
                      * 判断参数 CamRoleName 是否已赋值
                      * @return CamRoleName 是否已赋值
+                     * 
                      */
                     bool CamRoleNameHasBeenSet() const;
 
@@ -326,20 +362,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpcClusterId 高性能计算集群`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
                      * 设置高性能计算集群`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HpcClusterId 高性能计算集群`ID`。
+                     * @param _hpcClusterId 高性能计算集群`ID`。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
 
                     /**
                      * 判断参数 HpcClusterId 是否已赋值
                      * @return HpcClusterId 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
@@ -348,20 +387,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 购买实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置购买实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCount 购买实例数量。
+                     * @param _instanceCount 购买实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
@@ -370,20 +412,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnhancedService 增强服务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
                      * 设置增强服务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnhancedService 增强服务。
+                     * @param _enhancedService 增强服务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
 
                     /**
                      * 判断参数 EnhancedService 是否已赋值
                      * @return EnhancedService 是否已赋值
+                     * 
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
@@ -392,20 +437,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserData 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserData() const;
 
                     /**
                      * 设置提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserData 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。
+                     * @param _userData 提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserData(const std::string& _userData);
 
                     /**
                      * 判断参数 UserData 是否已赋值
                      * @return UserData 是否已赋值
+                     * 
                      */
                     bool UserDataHasBeenSet() const;
 
@@ -414,20 +462,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisasterRecoverGroupIds 置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
                      * 设置置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisasterRecoverGroupIds 置放群组ID，仅支持指定一个。
+                     * @param _disasterRecoverGroupIds 置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
 
                     /**
                      * 判断参数 DisasterRecoverGroupIds 是否已赋值
                      * @return DisasterRecoverGroupIds 是否已赋值
+                     * 
                      */
                     bool DisasterRecoverGroupIdsHasBeenSet() const;
 
@@ -436,20 +487,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTimer 定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ActionTimer GetActionTimer() const;
 
                     /**
                      * 设置定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActionTimer 定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。
+                     * @param _actionTimer 定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActionTimer(const ActionTimer& _actionTimer);
 
                     /**
                      * 判断参数 ActionTimer 是否已赋值
                      * @return ActionTimer 是否已赋值
+                     * 
                      */
                     bool ActionTimerHasBeenSet() const;
 
@@ -458,20 +512,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceMarketOptionsRequest GetInstanceMarketOptions() const;
 
                     /**
                      * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+                     * @param _instanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions);
 
                     /**
                      * 判断参数 InstanceMarketOptions 是否已赋值
                      * @return InstanceMarketOptions 是否已赋值
+                     * 
                      */
                     bool InstanceMarketOptionsHasBeenSet() const;
 
@@ -480,20 +537,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 云服务器的主机名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置云服务器的主机名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 云服务器的主机名。
+                     * @param _hostName 云服务器的主机名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
@@ -502,20 +562,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientToken 用于保证请求幂等性的字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 设置用于保证请求幂等性的字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientToken 用于保证请求幂等性的字符串。
+                     * @param _clientToken 用于保证请求幂等性的字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientToken(const std::string& _clientToken);
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 
@@ -524,20 +587,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
@@ -546,20 +612,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagSpecification> GetTagSpecification() const;
 
                     /**
                      * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
+                     * @param _tagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 
@@ -578,6 +647,7 @@ FALSE：表示关闭实例保护，允许通过api接口删除实例
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDisableApiTermination() const;
 
@@ -589,19 +659,21 @@ FALSE：表示关闭实例保护，允许通过api接口删除实例
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+                     * @param _disableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
 
 TRUE：表示开启实例保护，不允许通过api接口删除实例
 FALSE：表示关闭实例保护，允许通过api接口删除实例
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisableApiTermination(const bool& _disableApiTermination);
 
                     /**
                      * 判断参数 DisableApiTermination 是否已赋值
                      * @return DisableApiTermination 是否已赋值
+                     * 
                      */
                     bool DisableApiTerminationHasBeenSet() const;
 

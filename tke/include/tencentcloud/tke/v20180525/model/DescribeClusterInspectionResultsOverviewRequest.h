@@ -47,20 +47,23 @@ namespace TencentCloud
 
                      * @return ClusterIds Array of String	目标集群列表，为空查询用户所有集群
 
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 设置Array of String	目标集群列表，为空查询用户所有集群
 
-                     * @param ClusterIds Array of String	目标集群列表，为空查询用户所有集群
+                     * @param _clusterIds Array of String	目标集群列表，为空查询用户所有集群
 
+                     * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
@@ -71,6 +74,7 @@ catalogue.second：按二级分类聚合
                      * @return GroupBy 聚合字段信息，概览结果按照 GroupBy 信息聚合后返回，可选参数：
 catalogue.first：按一级分类聚合
 catalogue.second：按二级分类聚合
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
@@ -78,15 +82,17 @@ catalogue.second：按二级分类聚合
                      * 设置聚合字段信息，概览结果按照 GroupBy 信息聚合后返回，可选参数：
 catalogue.first：按一级分类聚合
 catalogue.second：按二级分类聚合
-                     * @param GroupBy 聚合字段信息，概览结果按照 GroupBy 信息聚合后返回，可选参数：
+                     * @param _groupBy 聚合字段信息，概览结果按照 GroupBy 信息聚合后返回，可选参数：
 catalogue.first：按一级分类聚合
 catalogue.second：按二级分类聚合
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 

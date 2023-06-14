@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取启动模板ID。
                      * @return LaunchTemplateId 启动模板ID。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置启动模板ID。
-                     * @param LaunchTemplateId 启动模板ID。
+                     * @param _launchTemplateId 启动模板ID。
+                     * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 

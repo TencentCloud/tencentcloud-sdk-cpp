@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取策略，ACCEPT或者DROP
                      * @return Action 策略，ACCEPT或者DROP
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置策略，ACCEPT或者DROP
-                     * @param Action 策略，ACCEPT或者DROP
+                     * @param _action 策略，ACCEPT或者DROP
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取来源Ip或Ip段，例如192.168.0.0/16
                      * @return CidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 
                      */
                     std::string GetCidrIp() const;
 
                     /**
                      * 设置来源Ip或Ip段，例如192.168.0.0/16
-                     * @param CidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * @param _cidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 
                      */
                     void SetCidrIp(const std::string& _cidrIp);
 
                     /**
                      * 判断参数 CidrIp 是否已赋值
                      * @return CidrIp 是否已赋值
+                     * 
                      */
                     bool CidrIpHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return PortRange 端口
+                     * 
                      */
                     std::string GetPortRange() const;
 
                     /**
                      * 设置端口
-                     * @param PortRange 端口
+                     * @param _portRange 端口
+                     * 
                      */
                     void SetPortRange(const std::string& _portRange);
 
                     /**
                      * 判断参数 PortRange 是否已赋值
                      * @return PortRange 是否已赋值
+                     * 
                      */
                     bool PortRangeHasBeenSet() const;
 
                     /**
                      * 获取网络协议，支持udp、tcp等
                      * @return IpProtocol 网络协议，支持udp、tcp等
+                     * 
                      */
                     std::string GetIpProtocol() const;
 
                     /**
                      * 设置网络协议，支持udp、tcp等
-                     * @param IpProtocol 网络协议，支持udp、tcp等
+                     * @param _ipProtocol 网络协议，支持udp、tcp等
+                     * 
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
 
                     /**
                      * 判断参数 IpProtocol 是否已赋值
                      * @return IpProtocol 是否已赋值
+                     * 
                      */
                     bool IpProtocolHasBeenSet() const;
 
                     /**
                      * 获取协议端口ID或者协议端口组ID。
                      * @return ServiceModule 协议端口ID或者协议端口组ID。
+                     * 
                      */
                     std::string GetServiceModule() const;
 
                     /**
                      * 设置协议端口ID或者协议端口组ID。
-                     * @param ServiceModule 协议端口ID或者协议端口组ID。
+                     * @param _serviceModule 协议端口ID或者协议端口组ID。
+                     * 
                      */
                     void SetServiceModule(const std::string& _serviceModule);
 
                     /**
                      * 判断参数 ServiceModule 是否已赋值
                      * @return ServiceModule 是否已赋值
+                     * 
                      */
                     bool ServiceModuleHasBeenSet() const;
 
                     /**
                      * 获取IP地址ID或者ID地址组ID。
                      * @return AddressModule IP地址ID或者ID地址组ID。
+                     * 
                      */
                     std::string GetAddressModule() const;
 
                     /**
                      * 设置IP地址ID或者ID地址组ID。
-                     * @param AddressModule IP地址ID或者ID地址组ID。
+                     * @param _addressModule IP地址ID或者ID地址组ID。
+                     * 
                      */
                     void SetAddressModule(const std::string& _addressModule);
 
                     /**
                      * 判断参数 AddressModule 是否已赋值
                      * @return AddressModule 是否已赋值
+                     * 
                      */
                     bool AddressModuleHasBeenSet() const;
 
                     /**
                      * 获取id
                      * @return Id id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置id
-                     * @param Id id
+                     * @param _id id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 

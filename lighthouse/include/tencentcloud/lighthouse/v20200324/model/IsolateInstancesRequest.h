@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。
                      * @return InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。
-                     * @param InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。
+                     * @param _instanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -69,6 +72,7 @@ FALSE：表示退还实例同时不再退还其挂载的数据盘。
 TRUE：表示退还实例同时退还其挂载的数据盘。
 FALSE：表示退还实例同时不再退还其挂载的数据盘。
 默认取值：TRUE。
+                     * 
                      */
                     bool GetIsolateDataDisk() const;
 
@@ -77,16 +81,18 @@ FALSE：表示退还实例同时不再退还其挂载的数据盘。
 TRUE：表示退还实例同时退还其挂载的数据盘。
 FALSE：表示退还实例同时不再退还其挂载的数据盘。
 默认取值：TRUE。
-                     * @param IsolateDataDisk 是否退还挂载的数据盘。取值范围：
+                     * @param _isolateDataDisk 是否退还挂载的数据盘。取值范围：
 TRUE：表示退还实例同时退还其挂载的数据盘。
 FALSE：表示退还实例同时不再退还其挂载的数据盘。
 默认取值：TRUE。
+                     * 
                      */
                     void SetIsolateDataDisk(const bool& _isolateDataDisk);
 
                     /**
                      * 判断参数 IsolateDataDisk 是否已赋值
                      * @return IsolateDataDisk 是否已赋值
+                     * 
                      */
                     bool IsolateDataDiskHasBeenSet() const;
 

@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取zone的id
                      * @return ZoneId zone的id
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置zone的id
-                     * @param ZoneId zone的id
+                     * @param _zoneId zone的id
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取是否内部APP
                      * @return IsInternalApp 是否内部APP
+                     * 
                      */
                     int64_t GetIsInternalApp() const;
 
                     /**
                      * 设置是否内部APP
-                     * @param IsInternalApp 是否内部APP
+                     * @param _isInternalApp 是否内部APP
+                     * 
                      */
                     void SetIsInternalApp(const int64_t& _isInternalApp);
 
                     /**
                      * 判断参数 IsInternalApp 是否已赋值
                      * @return IsInternalApp 是否已赋值
+                     * 
                      */
                     bool IsInternalAppHasBeenSet() const;
 
                     /**
                      * 获取app id
                      * @return AppId app id
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置app id
-                     * @param AppId app id
+                     * @param _appId app id
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取标识
                      * @return Flag 标识
+                     * 
                      */
                     bool GetFlag() const;
 
                     /**
                      * 设置标识
-                     * @param Flag 标识
+                     * @param _flag 标识
+                     * 
                      */
                     void SetFlag(const bool& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取zone名称
                      * @return ZoneName zone名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置zone名称
-                     * @param ZoneName zone名称
+                     * @param _zoneName zone名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取zone状态
                      * @return ZoneStatus zone状态
+                     * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
                      * 设置zone状态
-                     * @param ZoneStatus zone状态
+                     * @param _zoneStatus zone状态
+                     * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
 
                     /**
                      * 判断参数 ZoneStatus 是否已赋值
                      * @return ZoneStatus 是否已赋值
+                     * 
                      */
                     bool ZoneStatusHasBeenSet() const;
 
                     /**
                      * 获取额外标识
                      * @return Exflag 额外标识
+                     * 
                      */
                     std::string GetExflag() const;
 
                     /**
                      * 设置额外标识
-                     * @param Exflag 额外标识
+                     * @param _exflag 额外标识
+                     * 
                      */
                     void SetExflag(const std::string& _exflag);
 
                     /**
                      * 判断参数 Exflag 是否已赋值
                      * @return Exflag 是否已赋值
+                     * 
                      */
                     bool ExflagHasBeenSet() const;
 
                     /**
                      * 获取json对象，key为机型，value true为售罄，false为未售罄
                      * @return SoldOut json对象，key为机型，value true为售罄，false为未售罄
+                     * 
                      */
                     std::string GetSoldOut() const;
 
                     /**
                      * 设置json对象，key为机型，value true为售罄，false为未售罄
-                     * @param SoldOut json对象，key为机型，value true为售罄，false为未售罄
+                     * @param _soldOut json对象，key为机型，value true为售罄，false为未售罄
+                     * 
                      */
                     void SetSoldOut(const std::string& _soldOut);
 
                     /**
                      * 判断参数 SoldOut 是否已赋值
                      * @return SoldOut 是否已赋值
+                     * 
                      */
                     bool SoldOutHasBeenSet() const;
 
@@ -196,20 +220,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesInfo 标准版售罄信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SaleInfo> GetSalesInfo() const;
 
                     /**
                      * 设置标准版售罄信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SalesInfo 标准版售罄信息
+                     * @param _salesInfo 标准版售罄信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSalesInfo(const std::vector<SaleInfo>& _salesInfo);
 
                     /**
                      * 判断参数 SalesInfo 是否已赋值
                      * @return SalesInfo 是否已赋值
+                     * 
                      */
                     bool SalesInfoHasBeenSet() const;
 

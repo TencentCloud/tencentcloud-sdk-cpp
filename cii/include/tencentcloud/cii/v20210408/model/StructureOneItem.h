@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 新字段的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置新字段的路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 新字段的路径
+                     * @param _path 新字段的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 字段的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段的值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 字段的值
+                     * @param _value 字段的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

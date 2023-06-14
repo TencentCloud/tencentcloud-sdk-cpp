@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取是否生效
                      * @return Status 是否生效
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -73,24 +77,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 索引配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleInfo GetRule() const;
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 
                     /**
                      * 获取索引修改时间，初始值为索引创建时间。
                      * @return ModifyTime 索引修改时间，初始值为索引创建时间。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
@@ -103,12 +111,14 @@ namespace TencentCloud
 * false:不包含
 * true:包含
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIncludeInternalFields() const;
 
                     /**
                      * 判断参数 IncludeInternalFields 是否已赋值
                      * @return IncludeInternalFields 是否已赋值
+                     * 
                      */
                     bool IncludeInternalFieldsHasBeenSet() const;
 
@@ -123,12 +133,14 @@ namespace TencentCloud
 * 1:包含所有元数据字段
 * 2:不包含任何元数据字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMetadataFlag() const;
 
                     /**
                      * 判断参数 MetadataFlag 是否已赋值
                      * @return MetadataFlag 是否已赋值
+                     * 
                      */
                     bool MetadataFlagHasBeenSet() const;
 

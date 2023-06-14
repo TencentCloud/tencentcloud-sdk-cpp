@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
 当开启画面超分时，默认2倍超分。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
 当开启画面超分时，默认2倍超分。
-                     * @param Switch 画面超分控制开关，可选值：
+                     * @param _switch 画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
 当开启画面超分时，默认2倍超分。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -85,6 +88,7 @@ namespace TencentCloud
 <li>lq：针对低清晰度有较多噪声视频的超分；</li>
 <li>hq：针对高清晰度视频超分。</li>
 默认值：lq。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -93,16 +97,18 @@ namespace TencentCloud
 <li>lq：针对低清晰度有较多噪声视频的超分；</li>
 <li>hq：针对高清晰度视频超分。</li>
 默认值：lq。
-                     * @param Type 画面超分类型，仅当画面超分控制开关为 ON 时有效，可选值：
+                     * @param _type 画面超分类型，仅当画面超分控制开关为 ON 时有效，可选值：
 <li>lq：针对低清晰度有较多噪声视频的超分；</li>
 <li>hq：针对高清晰度视频超分。</li>
 默认值：lq。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -111,20 +117,23 @@ namespace TencentCloud
 默认值：2。
                      * @return Size 超分倍数，可选值：2。
 默认值：2。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置超分倍数，可选值：2。
 默认值：2。
-                     * @param Size 超分倍数，可选值：2。
+                     * @param _size 超分倍数，可选值：2。
 默认值：2。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

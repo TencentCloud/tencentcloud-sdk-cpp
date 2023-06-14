@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 行业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置行业ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 行业ID
+                     * @param _iD 行业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetID(const std::string& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndustryName 行业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndustryName() const;
 
                     /**
                      * 设置行业名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndustryName 行业名称
+                     * @param _industryName 行业名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndustryName(const std::string& _industryName);
 
                     /**
                      * 判断参数 IndustryName 是否已赋值
                      * @return IndustryName 是否已赋值
+                     * 
                      */
                     bool IndustryNameHasBeenSet() const;
 

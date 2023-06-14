@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @param _vpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网对象列表。
                      * @return Subnets 子网对象列表。
+                     * 
                      */
                     std::vector<SubnetInput> GetSubnets() const;
 
                     /**
                      * 设置子网对象列表。
-                     * @param Subnets 子网对象列表。
+                     * @param _subnets 子网对象列表。
+                     * 
                      */
                     void SetSubnets(const std::vector<SubnetInput>& _subnets);
 
                     /**
                      * 判断参数 Subnets 是否已赋值
                      * @return Subnets 是否已赋值
+                     * 
                      */
                     bool SubnetsHasBeenSet() const;
 
                     /**
                      * 获取指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
                      * @return Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
-                     * @param Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param _tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取需要增加到的CDC实例ID。
                      * @return CdcId 需要增加到的CDC实例ID。
+                     * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置需要增加到的CDC实例ID。
-                     * @param CdcId 需要增加到的CDC实例ID。
+                     * @param _cdcId 需要增加到的CDC实例ID。
+                     * 
                      */
                     void SetCdcId(const std::string& _cdcId);
 
                     /**
                      * 判断参数 CdcId 是否已赋值
                      * @return CdcId 是否已赋值
+                     * 
                      */
                     bool CdcIdHasBeenSet() const;
 

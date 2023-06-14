@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取文件系统id
                      * @return FileSystemId 文件系统id
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取规则状态0:关闭，1 开启
                      * @return Status 规则状态0:关闭，1 开启
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取扩容阈值,范围[10-90]
                      * @return ScaleUpThreshold 扩容阈值,范围[10-90]
+                     * 
                      */
                     uint64_t GetScaleUpThreshold() const;
 
                     /**
                      * 判断参数 ScaleUpThreshold 是否已赋值
                      * @return ScaleUpThreshold 是否已赋值
+                     * 
                      */
                     bool ScaleUpThresholdHasBeenSet() const;
 
                     /**
                      * 获取扩容后达到阈值,范围[10-90]
                      * @return TargetThreshold 扩容后达到阈值,范围[10-90]
+                     * 
                      */
                     uint64_t GetTargetThreshold() const;
 
                     /**
                      * 判断参数 TargetThreshold 是否已赋值
                      * @return TargetThreshold 是否已赋值
+                     * 
                      */
                     bool TargetThresholdHasBeenSet() const;
 

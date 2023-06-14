@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerUrls HLS拉流地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeOutputHLSPullServerUrl> GetServerUrls() const;
 
                     /**
                      * 设置HLS拉流地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerUrls HLS拉流地址列表。
+                     * @param _serverUrls HLS拉流地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServerUrls(const std::vector<DescribeOutputHLSPullServerUrl>& _serverUrls);
 
                     /**
                      * 判断参数 ServerUrls 是否已赋值
                      * @return ServerUrls 是否已赋值
+                     * 
                      */
                     bool ServerUrlsHasBeenSet() const;
 

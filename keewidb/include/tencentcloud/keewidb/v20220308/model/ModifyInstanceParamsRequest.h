@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubh****。
                      * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubh****。
-                     * @param InstanceId 实例 ID，如：kee-6ubh****。
+                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例修改的参数列表。
                      * @return InstanceParams 实例修改的参数列表。
+                     * 
                      */
                     std::vector<InstanceParam> GetInstanceParams() const;
 
                     /**
                      * 设置实例修改的参数列表。
-                     * @param InstanceParams 实例修改的参数列表。
+                     * @param _instanceParams 实例修改的参数列表。
+                     * 
                      */
                     void SetInstanceParams(const std::vector<InstanceParam>& _instanceParams);
 
                     /**
                      * 判断参数 InstanceParams 是否已赋值
                      * @return InstanceParams 是否已赋值
+                     * 
                      */
                     bool InstanceParamsHasBeenSet() const;
 

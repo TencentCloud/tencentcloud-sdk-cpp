@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取参数名称
                      * @return ParamName 参数名称
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称
-                     * @param ParamName 参数名称
+                     * @param _paramName 参数名称
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取当前值
                      * @return CurrentValue 当前值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置当前值
-                     * @param CurrentValue 当前值
+                     * @param _currentValue 当前值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
                     /**
                      * 获取原有值
                      * @return OldValue 原有值
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置原有值
-                     * @param OldValue 原有值
+                     * @param _oldValue 原有值
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 

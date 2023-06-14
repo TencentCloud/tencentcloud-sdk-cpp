@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取外部流量策略
                      * @return OutboundTrafficPolicy 外部流量策略
+                     * 
                      */
                     std::string GetOutboundTrafficPolicy() const;
 
                     /**
                      * 设置外部流量策略
-                     * @param OutboundTrafficPolicy 外部流量策略
+                     * @param _outboundTrafficPolicy 外部流量策略
+                     * 
                      */
                     void SetOutboundTrafficPolicy(const std::string& _outboundTrafficPolicy);
 
                     /**
                      * 判断参数 OutboundTrafficPolicy 是否已赋值
                      * @return OutboundTrafficPolicy 是否已赋值
+                     * 
                      */
                     bool OutboundTrafficPolicyHasBeenSet() const;
 
                     /**
                      * 获取调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
                      * @return Tracing 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
+                     * 
                      */
                     TracingConfig GetTracing() const;
 
                     /**
                      * 设置调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
-                     * @param Tracing 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
+                     * @param _tracing 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
+                     * 
                      */
                     void SetTracing(const TracingConfig& _tracing);
 
                     /**
                      * 判断参数 Tracing 是否已赋值
                      * @return Tracing 是否已赋值
+                     * 
                      */
                     bool TracingHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisablePolicyChecks 禁用策略检查功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDisablePolicyChecks() const;
 
                     /**
                      * 设置禁用策略检查功能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisablePolicyChecks 禁用策略检查功能
+                     * @param _disablePolicyChecks 禁用策略检查功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisablePolicyChecks(const bool& _disablePolicyChecks);
 
                     /**
                      * 判断参数 DisablePolicyChecks 是否已赋值
                      * @return DisablePolicyChecks 是否已赋值
+                     * 
                      */
                     bool DisablePolicyChecksHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnablePilotHTTP 支持HTTP1.0协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnablePilotHTTP() const;
 
                     /**
                      * 设置支持HTTP1.0协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnablePilotHTTP 支持HTTP1.0协议
+                     * @param _enablePilotHTTP 支持HTTP1.0协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnablePilotHTTP(const bool& _enablePilotHTTP);
 
                     /**
                      * 判断参数 EnablePilotHTTP 是否已赋值
                      * @return EnablePilotHTTP 是否已赋值
+                     * 
                      */
                     bool EnablePilotHTTPHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisableHTTPRetry 禁用HTTP重试策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDisableHTTPRetry() const;
 
                     /**
                      * 设置禁用HTTP重试策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisableHTTPRetry 禁用HTTP重试策略
+                     * @param _disableHTTPRetry 禁用HTTP重试策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisableHTTPRetry(const bool& _disableHTTPRetry);
 
                     /**
                      * 判断参数 DisableHTTPRetry 是否已赋值
                      * @return DisableHTTPRetry 是否已赋值
+                     * 
                      */
                     bool DisableHTTPRetryHasBeenSet() const;
 
@@ -155,20 +170,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartDNS SmartDNS策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SmartDNSConfig GetSmartDNS() const;
 
                     /**
                      * 设置SmartDNS策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmartDNS SmartDNS策略
+                     * @param _smartDNS SmartDNS策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmartDNS(const SmartDNSConfig& _smartDNS);
 
                     /**
                      * 判断参数 SmartDNS 是否已赋值
                      * @return SmartDNS 是否已赋值
+                     * 
                      */
                     bool SmartDNSHasBeenSet() const;
 

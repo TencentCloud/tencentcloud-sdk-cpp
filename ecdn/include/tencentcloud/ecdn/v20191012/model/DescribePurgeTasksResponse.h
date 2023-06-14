@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取刷新历史记录。
                      * @return PurgeLogs 刷新历史记录。
+                     * 
                      */
                     std::vector<PurgeTask> GetPurgeLogs() const;
 
                     /**
                      * 判断参数 PurgeLogs 是否已赋值
                      * @return PurgeLogs 是否已赋值
+                     * 
                      */
                     bool PurgeLogsHasBeenSet() const;
 
                     /**
                      * 获取任务总数，用于分页。
                      * @return TotalCount 任务总数，用于分页。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

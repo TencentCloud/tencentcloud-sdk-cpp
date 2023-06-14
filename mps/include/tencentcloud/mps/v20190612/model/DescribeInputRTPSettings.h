@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否FEC。
                      * @return FEC 是否FEC。
+                     * 
                      */
                     std::string GetFEC() const;
 
                     /**
                      * 设置是否FEC。
-                     * @param FEC 是否FEC。
+                     * @param _fEC 是否FEC。
+                     * 
                      */
                     void SetFEC(const std::string& _fEC);
 
                     /**
                      * 判断参数 FEC 是否已赋值
                      * @return FEC 是否已赋值
+                     * 
                      */
                     bool FECHasBeenSet() const;
 
                     /**
                      * 获取空闲超时时间。
                      * @return IdleTimeout 空闲超时时间。
+                     * 
                      */
                     int64_t GetIdleTimeout() const;
 
                     /**
                      * 设置空闲超时时间。
-                     * @param IdleTimeout 空闲超时时间。
+                     * @param _idleTimeout 空闲超时时间。
+                     * 
                      */
                     void SetIdleTimeout(const int64_t& _idleTimeout);
 
                     /**
                      * 判断参数 IdleTimeout 是否已赋值
                      * @return IdleTimeout 是否已赋值
+                     * 
                      */
                     bool IdleTimeoutHasBeenSet() const;
 

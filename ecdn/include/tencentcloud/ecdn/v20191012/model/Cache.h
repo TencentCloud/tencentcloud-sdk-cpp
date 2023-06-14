@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取缓存配置规则数组。
                      * @return CacheRules 缓存配置规则数组。
+                     * 
                      */
                     std::vector<CacheRule> GetCacheRules() const;
 
                     /**
                      * 设置缓存配置规则数组。
-                     * @param CacheRules 缓存配置规则数组。
+                     * @param _cacheRules 缓存配置规则数组。
+                     * 
                      */
                     void SetCacheRules(const std::vector<CacheRule>& _cacheRules);
 
                     /**
                      * 判断参数 CacheRules 是否已赋值
                      * @return CacheRules 是否已赋值
+                     * 
                      */
                     bool CacheRulesHasBeenSet() const;
 
@@ -76,6 +79,7 @@ on：开启
 off：关闭
 开启后，未能匹配 CacheRules 规则的资源将根据源站返回的 max-age 值进行节点缓存；匹配了 CacheRules 规则的资源将按照 CacheRules 中设置的缓存过期时间在节点进行缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFollowOrigin() const;
 
@@ -85,17 +89,19 @@ on：开启
 off：关闭
 开启后，未能匹配 CacheRules 规则的资源将根据源站返回的 max-age 值进行节点缓存；匹配了 CacheRules 规则的资源将按照 CacheRules 中设置的缓存过期时间在节点进行缓存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowOrigin 遵循源站 Cache-Control: max-age 配置，白名单功能。
+                     * @param _followOrigin 遵循源站 Cache-Control: max-age 配置，白名单功能。
 on：开启
 off：关闭
 开启后，未能匹配 CacheRules 规则的资源将根据源站返回的 max-age 值进行节点缓存；匹配了 CacheRules 规则的资源将按照 CacheRules 中设置的缓存过期时间在节点进行缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFollowOrigin(const std::string& _followOrigin);
 
                     /**
                      * 判断参数 FollowOrigin 是否已赋值
                      * @return FollowOrigin 是否已赋值
+                     * 
                      */
                     bool FollowOriginHasBeenSet() const;
 

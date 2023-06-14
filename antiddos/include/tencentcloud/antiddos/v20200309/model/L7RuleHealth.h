@@ -49,288 +49,336 @@ namespace TencentCloud
                     /**
                      * 获取配置状态，0： 正常，1：配置中，2：配置失败
                      * @return Status 配置状态，0： 正常，1：配置中，2：配置失败
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置配置状态，0： 正常，1：配置中，2：配置失败
-                     * @param Status 配置状态，0： 正常，1：配置中，2：配置失败
+                     * @param _status 配置状态，0： 正常，1：配置中，2：配置失败
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取=1表示开启；=0表示关闭
                      * @return Enable =1表示开启；=0表示关闭
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置=1表示开启；=0表示关闭
-                     * @param Enable =1表示开启；=0表示关闭
+                     * @param _enable =1表示开启；=0表示关闭
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取检查目录的URL，默认为/
                      * @return Url 检查目录的URL，默认为/
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置检查目录的URL，默认为/
-                     * @param Url 检查目录的URL，默认为/
+                     * @param _url 检查目录的URL，默认为/
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取检测间隔时间，单位秒
                      * @return Interval 检测间隔时间，单位秒
+                     * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置检测间隔时间，单位秒
-                     * @param Interval 检测间隔时间，单位秒
+                     * @param _interval 检测间隔时间，单位秒
+                     * 
                      */
                     void SetInterval(const uint64_t& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取健康阈值，单位次
                      * @return AliveNum 健康阈值，单位次
+                     * 
                      */
                     uint64_t GetAliveNum() const;
 
                     /**
                      * 设置健康阈值，单位次
-                     * @param AliveNum 健康阈值，单位次
+                     * @param _aliveNum 健康阈值，单位次
+                     * 
                      */
                     void SetAliveNum(const uint64_t& _aliveNum);
 
                     /**
                      * 判断参数 AliveNum 是否已赋值
                      * @return AliveNum 是否已赋值
+                     * 
                      */
                     bool AliveNumHasBeenSet() const;
 
                     /**
                      * 获取不健康阈值，单位次
                      * @return KickNum 不健康阈值，单位次
+                     * 
                      */
                     uint64_t GetKickNum() const;
 
                     /**
                      * 设置不健康阈值，单位次
-                     * @param KickNum 不健康阈值，单位次
+                     * @param _kickNum 不健康阈值，单位次
+                     * 
                      */
                     void SetKickNum(const uint64_t& _kickNum);
 
                     /**
                      * 判断参数 KickNum 是否已赋值
                      * @return KickNum 是否已赋值
+                     * 
                      */
                     bool KickNumHasBeenSet() const;
 
                     /**
                      * 获取HTTP请求方式，取值[HEAD,GET]
                      * @return Method HTTP请求方式，取值[HEAD,GET]
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置HTTP请求方式，取值[HEAD,GET]
-                     * @param Method HTTP请求方式，取值[HEAD,GET]
+                     * @param _method HTTP请求方式，取值[HEAD,GET]
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
                      * @return StatusCode 健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * 
                      */
                     uint64_t GetStatusCode() const;
 
                     /**
                      * 设置健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
-                     * @param StatusCode 健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * @param _statusCode 健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * 
                      */
                     void SetStatusCode(const uint64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
                     /**
                      * 获取是否同时下发http和https规则健康检查配置
                      * @return ProtocolFlag 是否同时下发http和https规则健康检查配置
+                     * 
                      */
                     uint64_t GetProtocolFlag() const;
 
                     /**
                      * 设置是否同时下发http和https规则健康检查配置
-                     * @param ProtocolFlag 是否同时下发http和https规则健康检查配置
+                     * @param _protocolFlag 是否同时下发http和https规则健康检查配置
+                     * 
                      */
                     void SetProtocolFlag(const uint64_t& _protocolFlag);
 
                     /**
                      * 判断参数 ProtocolFlag 是否已赋值
                      * @return ProtocolFlag 是否已赋值
+                     * 
                      */
                     bool ProtocolFlagHasBeenSet() const;
 
                     /**
                      * 获取被动探测开关，=1表示开启；=0表示关闭
                      * @return PassiveEnable 被动探测开关，=1表示开启；=0表示关闭
+                     * 
                      */
                     uint64_t GetPassiveEnable() const;
 
                     /**
                      * 设置被动探测开关，=1表示开启；=0表示关闭
-                     * @param PassiveEnable 被动探测开关，=1表示开启；=0表示关闭
+                     * @param _passiveEnable 被动探测开关，=1表示开启；=0表示关闭
+                     * 
                      */
                     void SetPassiveEnable(const uint64_t& _passiveEnable);
 
                     /**
                      * 判断参数 PassiveEnable 是否已赋值
                      * @return PassiveEnable 是否已赋值
+                     * 
                      */
                     bool PassiveEnableHasBeenSet() const;
 
                     /**
                      * 获取被动探测不健康屏蔽时间
                      * @return BlockInter 被动探测不健康屏蔽时间
+                     * 
                      */
                     uint64_t GetBlockInter() const;
 
                     /**
                      * 设置被动探测不健康屏蔽时间
-                     * @param BlockInter 被动探测不健康屏蔽时间
+                     * @param _blockInter 被动探测不健康屏蔽时间
+                     * 
                      */
                     void SetBlockInter(const uint64_t& _blockInter);
 
                     /**
                      * 判断参数 BlockInter 是否已赋值
                      * @return BlockInter 是否已赋值
+                     * 
                      */
                     bool BlockInterHasBeenSet() const;
 
                     /**
                      * 获取被动探测不健康统计间隔
                      * @return FailedCountInter 被动探测不健康统计间隔
+                     * 
                      */
                     uint64_t GetFailedCountInter() const;
 
                     /**
                      * 设置被动探测不健康统计间隔
-                     * @param FailedCountInter 被动探测不健康统计间隔
+                     * @param _failedCountInter 被动探测不健康统计间隔
+                     * 
                      */
                     void SetFailedCountInter(const uint64_t& _failedCountInter);
 
                     /**
                      * 判断参数 FailedCountInter 是否已赋值
                      * @return FailedCountInter 是否已赋值
+                     * 
                      */
                     bool FailedCountInterHasBeenSet() const;
 
                     /**
                      * 获取被动探测不健康阈值
                      * @return FailedThreshold 被动探测不健康阈值
+                     * 
                      */
                     uint64_t GetFailedThreshold() const;
 
                     /**
                      * 设置被动探测不健康阈值
-                     * @param FailedThreshold 被动探测不健康阈值
+                     * @param _failedThreshold 被动探测不健康阈值
+                     * 
                      */
                     void SetFailedThreshold(const uint64_t& _failedThreshold);
 
                     /**
                      * 判断参数 FailedThreshold 是否已赋值
                      * @return FailedThreshold 是否已赋值
+                     * 
                      */
                     bool FailedThresholdHasBeenSet() const;
 
                     /**
                      * 获取被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
                      * @return PassiveStatusCode 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * 
                      */
                     uint64_t GetPassiveStatusCode() const;
 
                     /**
                      * 设置被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
-                     * @param PassiveStatusCode 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * @param _passiveStatusCode 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * 
                      */
                     void SetPassiveStatusCode(const uint64_t& _passiveStatusCode);
 
                     /**
                      * 判断参数 PassiveStatusCode 是否已赋值
                      * @return PassiveStatusCode 是否已赋值
+                     * 
                      */
                     bool PassiveStatusCodeHasBeenSet() const;
 
                     /**
                      * 获取被动探测配置状态，0： 正常，1：配置中，2：配置失败
                      * @return PassiveStatus 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     * 
                      */
                     uint64_t GetPassiveStatus() const;
 
                     /**
                      * 设置被动探测配置状态，0： 正常，1：配置中，2：配置失败
-                     * @param PassiveStatus 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     * @param _passiveStatus 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     * 
                      */
                     void SetPassiveStatus(const uint64_t& _passiveStatus);
 
                     /**
                      * 判断参数 PassiveStatus 是否已赋值
                      * @return PassiveStatus 是否已赋值
+                     * 
                      */
                     bool PassiveStatusHasBeenSet() const;
 

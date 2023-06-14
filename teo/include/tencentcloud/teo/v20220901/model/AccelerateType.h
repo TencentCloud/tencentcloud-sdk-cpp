@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 加速开关。取值范围：
 <li> on：打开;</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置加速开关。取值范围：
 <li> on：打开;</li>
 <li>off：关闭。</li>
-                     * @param Switch 加速开关。取值范围：
+                     * @param _switch 加速开关。取值范围：
 <li> on：打开;</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

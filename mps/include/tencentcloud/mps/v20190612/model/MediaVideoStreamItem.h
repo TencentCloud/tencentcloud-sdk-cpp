@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取视频流的码率，单位：bps。
                      * @return Bitrate 视频流的码率，单位：bps。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流的码率，单位：bps。
-                     * @param Bitrate 视频流的码率，单位：bps。
+                     * @param _bitrate 视频流的码率，单位：bps。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
                     /**
                      * 获取视频流的高度，单位：px。
                      * @return Height 视频流的高度，单位：px。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频流的高度，单位：px。
-                     * @param Height 视频流的高度，单位：px。
+                     * @param _height 视频流的高度，单位：px。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取视频流的宽度，单位：px。
                      * @return Width 视频流的宽度，单位：px。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频流的宽度，单位：px。
-                     * @param Width 视频流的宽度，单位：px。
+                     * @param _width 视频流的宽度，单位：px。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取视频流的编码格式，例如 h264。
                      * @return Codec 视频流的编码格式，例如 h264。
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置视频流的编码格式，例如 h264。
-                     * @param Codec 视频流的编码格式，例如 h264。
+                     * @param _codec 视频流的编码格式，例如 h264。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
                     /**
                      * 获取帧率，单位：hz。
                      * @return Fps 帧率，单位：hz。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率，单位：hz。
-                     * @param Fps 帧率，单位：hz。
+                     * @param _fps 帧率，单位：hz。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorPrimaries 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColorPrimaries() const;
 
                     /**
                      * 设置色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColorPrimaries 色彩空间。
+                     * @param _colorPrimaries 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColorPrimaries(const std::string& _colorPrimaries);
 
                     /**
                      * 判断参数 ColorPrimaries 是否已赋值
                      * @return ColorPrimaries 是否已赋值
+                     * 
                      */
                     bool ColorPrimariesHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorSpace 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColorSpace() const;
 
                     /**
                      * 设置色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColorSpace 色彩空间。
+                     * @param _colorSpace 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColorSpace(const std::string& _colorSpace);
 
                     /**
                      * 判断参数 ColorSpace 是否已赋值
                      * @return ColorSpace 是否已赋值
+                     * 
                      */
                     bool ColorSpaceHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColorTransfer 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColorTransfer() const;
 
                     /**
                      * 设置色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColorTransfer 色彩空间。
+                     * @param _colorTransfer 色彩空间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColorTransfer(const std::string& _colorTransfer);
 
                     /**
                      * 判断参数 ColorTransfer 是否已赋值
                      * @return ColorTransfer 是否已赋值
+                     * 
                      */
                     bool ColorTransferHasBeenSet() const;
 
@@ -207,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HdrType HDR类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHdrType() const;
 
                     /**
                      * 设置HDR类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HdrType HDR类型。
+                     * @param _hdrType HDR类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHdrType(const std::string& _hdrType);
 
                     /**
                      * 判断参数 HdrType 是否已赋值
                      * @return HdrType 是否已赋值
+                     * 
                      */
                     bool HdrTypeHasBeenSet() const;
 
@@ -229,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codecs 视频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodecs() const;
 
                     /**
                      * 设置视频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Codecs 视频Codecs。
+                     * @param _codecs 视频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodecs(const std::string& _codecs);
 
                     /**
                      * 判断参数 Codecs 是否已赋值
                      * @return Codecs 是否已赋值
+                     * 
                      */
                     bool CodecsHasBeenSet() const;
 

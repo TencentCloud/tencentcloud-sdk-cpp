@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return RegistryId 实例ID
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例ID
-                     * @param RegistryId 实例ID
+                     * @param _registryId 实例ID
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return RegistryName 实例名称
+                     * 
                      */
                     std::string GetRegistryName() const;
 
                     /**
                      * 设置实例名称
-                     * @param RegistryName 实例名称
+                     * @param _registryName 实例名称
+                     * 
                      */
                     void SetRegistryName(const std::string& _registryName);
 
                     /**
                      * 判断参数 RegistryName 是否已赋值
                      * @return RegistryName 是否已赋值
+                     * 
                      */
                     bool RegistryNameHasBeenSet() const;
 
                     /**
                      * 获取实例规格
                      * @return RegistryType 实例规格
+                     * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 设置实例规格
-                     * @param RegistryType 实例规格
+                     * @param _registryType 实例规格
+                     * 
                      */
                     void SetRegistryType(const std::string& _registryType);
 
                     /**
                      * 判断参数 RegistryType 是否已赋值
                      * @return RegistryType 是否已赋值
+                     * 
                      */
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
                      * 获取实例状态
                      * @return Status 实例状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置实例状态
-                     * @param Status 实例状态
+                     * @param _status 实例状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实例的公共访问地址
                      * @return PublicDomain 实例的公共访问地址
+                     * 
                      */
                     std::string GetPublicDomain() const;
 
                     /**
                      * 设置实例的公共访问地址
-                     * @param PublicDomain 实例的公共访问地址
+                     * @param _publicDomain 实例的公共访问地址
+                     * 
                      */
                     void SetPublicDomain(const std::string& _publicDomain);
 
                     /**
                      * 判断参数 PublicDomain 是否已赋值
                      * @return PublicDomain 是否已赋值
+                     * 
                      */
                     bool PublicDomainHasBeenSet() const;
 
                     /**
                      * 获取实例创建时间
                      * @return CreatedAt 实例创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置实例创建时间
-                     * @param CreatedAt 实例创建时间
+                     * @param _createdAt 实例创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return RegionName 地域名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域Id
                      * @return RegionId 地域Id
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置地域Id
-                     * @param RegionId 地域Id
+                     * @param _regionId 地域Id
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取是否支持匿名
                      * @return EnableAnonymous 是否支持匿名
+                     * 
                      */
                     bool GetEnableAnonymous() const;
 
                     /**
                      * 设置是否支持匿名
-                     * @param EnableAnonymous 是否支持匿名
+                     * @param _enableAnonymous 是否支持匿名
+                     * 
                      */
                     void SetEnableAnonymous(const bool& _enableAnonymous);
 
                     /**
                      * 判断参数 EnableAnonymous 是否已赋值
                      * @return EnableAnonymous 是否已赋值
+                     * 
                      */
                     bool EnableAnonymousHasBeenSet() const;
 
                     /**
                      * 获取Token有效时间
                      * @return TokenValidTime Token有效时间
+                     * 
                      */
                     uint64_t GetTokenValidTime() const;
 
                     /**
                      * 设置Token有效时间
-                     * @param TokenValidTime Token有效时间
+                     * @param _tokenValidTime Token有效时间
+                     * 
                      */
                     void SetTokenValidTime(const uint64_t& _tokenValidTime);
 
                     /**
                      * 判断参数 TokenValidTime 是否已赋值
                      * @return TokenValidTime 是否已赋值
+                     * 
                      */
                     bool TokenValidTimeHasBeenSet() const;
 
                     /**
                      * 获取实例内部访问地址
                      * @return InternalEndpoint 实例内部访问地址
+                     * 
                      */
                     std::string GetInternalEndpoint() const;
 
                     /**
                      * 设置实例内部访问地址
-                     * @param InternalEndpoint 实例内部访问地址
+                     * @param _internalEndpoint 实例内部访问地址
+                     * 
                      */
                     void SetInternalEndpoint(const std::string& _internalEndpoint);
 
                     /**
                      * 判断参数 InternalEndpoint 是否已赋值
                      * @return InternalEndpoint 是否已赋值
+                     * 
                      */
                     bool InternalEndpointHasBeenSet() const;
 
@@ -250,20 +283,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 实例云标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TagSpecification GetTagSpecification() const;
 
                     /**
                      * 设置实例云标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSpecification 实例云标签
+                     * @param _tagSpecification 实例云标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSpecification(const TagSpecification& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 
@@ -272,20 +308,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredAt 实例过期时间（预付费）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpiredAt() const;
 
                     /**
                      * 设置实例过期时间（预付费）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredAt 实例过期时间（预付费）
+                     * @param _expiredAt 实例过期时间（预付费）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpiredAt(const std::string& _expiredAt);
 
                     /**
                      * 判断参数 ExpiredAt 是否已赋值
                      * @return ExpiredAt 是否已赋值
+                     * 
                      */
                     bool ExpiredAtHasBeenSet() const;
 
@@ -294,20 +333,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMod 实例付费类型，0表示后付费，1表示预付费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPayMod() const;
 
                     /**
                      * 设置实例付费类型，0表示后付费，1表示预付费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayMod 实例付费类型，0表示后付费，1表示预付费
+                     * @param _payMod 实例付费类型，0表示后付费，1表示预付费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayMod(const int64_t& _payMod);
 
                     /**
                      * 判断参数 PayMod 是否已赋值
                      * @return PayMod 是否已赋值
+                     * 
                      */
                     bool PayModHasBeenSet() const;
 
@@ -316,20 +358,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
+                     * @param _renewFlag 预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取地区列表，其中元素可为mainland/overseas
                      * @return Area 地区列表，其中元素可为mainland/overseas
+                     * 
                      */
                     std::vector<std::string> GetArea() const;
 
                     /**
                      * 设置地区列表，其中元素可为mainland/overseas
-                     * @param Area 地区列表，其中元素可为mainland/overseas
+                     * @param _area 地区列表，其中元素可为mainland/overseas
+                     * 
                      */
                     void SetArea(const std::vector<std::string>& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

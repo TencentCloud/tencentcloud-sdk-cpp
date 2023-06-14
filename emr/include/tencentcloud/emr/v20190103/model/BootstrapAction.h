@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取脚本位置，支持cos上的文件，且只支持https协议。
                      * @return Path 脚本位置，支持cos上的文件，且只支持https协议。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置脚本位置，支持cos上的文件，且只支持https协议。
-                     * @param Path 脚本位置，支持cos上的文件，且只支持https协议。
+                     * @param _path 脚本位置，支持cos上的文件，且只支持https协议。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -73,6 +76,7 @@ clusterAfter 表示在集群初始化后执行。
 resourceAfter 表示在机器资源申请成功后执行。
 clusterBefore 表示在集群初始化前执行。
 clusterAfter 表示在集群初始化后执行。
+                     * 
                      */
                     std::string GetWhenRun() const;
 
@@ -81,34 +85,39 @@ clusterAfter 表示在集群初始化后执行。
 resourceAfter 表示在机器资源申请成功后执行。
 clusterBefore 表示在集群初始化前执行。
 clusterAfter 表示在集群初始化后执行。
-                     * @param WhenRun 执行时间。
+                     * @param _whenRun 执行时间。
 resourceAfter 表示在机器资源申请成功后执行。
 clusterBefore 表示在集群初始化前执行。
 clusterAfter 表示在集群初始化后执行。
+                     * 
                      */
                     void SetWhenRun(const std::string& _whenRun);
 
                     /**
                      * 判断参数 WhenRun 是否已赋值
                      * @return WhenRun 是否已赋值
+                     * 
                      */
                     bool WhenRunHasBeenSet() const;
 
                     /**
                      * 获取脚本参数
                      * @return Args 脚本参数
+                     * 
                      */
                     std::vector<std::string> GetArgs() const;
 
                     /**
                      * 设置脚本参数
-                     * @param Args 脚本参数
+                     * @param _args 脚本参数
+                     * 
                      */
                     void SetArgs(const std::vector<std::string>& _args);
 
                     /**
                      * 判断参数 Args 是否已赋值
                      * @return Args 是否已赋值
+                     * 
                      */
                     bool ArgsHasBeenSet() const;
 

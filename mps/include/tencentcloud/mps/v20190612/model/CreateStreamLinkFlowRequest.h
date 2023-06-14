@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取流名称。
                      * @return FlowName 流名称。
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置流名称。
-                     * @param FlowName 流名称。
+                     * @param _flowName 流名称。
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
                     /**
                      * 获取最大带宽，单位bps，可选[10000000, 20000000, 50000000]。
                      * @return MaxBandwidth 最大带宽，单位bps，可选[10000000, 20000000, 50000000]。
+                     * 
                      */
                     int64_t GetMaxBandwidth() const;
 
                     /**
                      * 设置最大带宽，单位bps，可选[10000000, 20000000, 50000000]。
-                     * @param MaxBandwidth 最大带宽，单位bps，可选[10000000, 20000000, 50000000]。
+                     * @param _maxBandwidth 最大带宽，单位bps，可选[10000000, 20000000, 50000000]。
+                     * 
                      */
                     void SetMaxBandwidth(const int64_t& _maxBandwidth);
 
                     /**
                      * 判断参数 MaxBandwidth 是否已赋值
                      * @return MaxBandwidth 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthHasBeenSet() const;
 
                     /**
                      * 获取流的输入组。
                      * @return InputGroup 流的输入组。
+                     * 
                      */
                     std::vector<CreateInput> GetInputGroup() const;
 
                     /**
                      * 设置流的输入组。
-                     * @param InputGroup 流的输入组。
+                     * @param _inputGroup 流的输入组。
+                     * 
                      */
                     void SetInputGroup(const std::vector<CreateInput>& _inputGroup);
 
                     /**
                      * 判断参数 InputGroup 是否已赋值
                      * @return InputGroup 是否已赋值
+                     * 
                      */
                     bool InputGroupHasBeenSet() const;
 
                     /**
                      * 获取该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
                      * @return EventId 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
-                     * @param EventId 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     * @param _eventId 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

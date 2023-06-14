@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取标签ID
                      * @return TagID 标签ID
+                     * 
                      */
                     int64_t GetTagID() const;
 
                     /**
                      * 设置标签ID
-                     * @param TagID 标签ID
+                     * @param _tagID 标签ID
+                     * 
                      */
                     void SetTagID(const int64_t& _tagID);
 
                     /**
                      * 判断参数 TagID 是否已赋值
                      * @return TagID 是否已赋值
+                     * 
                      */
                     bool TagIDHasBeenSet() const;
 

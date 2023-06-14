@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取签约数据
                      * @return ContractData 签约数据
+                     * 
                      */
                     ResponseQueryContract GetContractData() const;
 
                     /**
                      * 判断参数 ContractData 是否已赋值
                      * @return ContractData 是否已赋值
+                     * 
                      */
                     bool ContractDataHasBeenSet() const;
 
                     /**
                      * 获取请求处理信息
                      * @return Msg 请求处理信息
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

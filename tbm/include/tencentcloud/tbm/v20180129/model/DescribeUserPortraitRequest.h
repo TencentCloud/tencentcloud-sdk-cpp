@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取品牌ID
                      * @return BrandId 品牌ID
+                     * 
                      */
                     std::string GetBrandId() const;
 
                     /**
                      * 设置品牌ID
-                     * @param BrandId 品牌ID
+                     * @param _brandId 品牌ID
+                     * 
                      */
                     void SetBrandId(const std::string& _brandId);
 
                     /**
                      * 判断参数 BrandId 是否已赋值
                      * @return BrandId 是否已赋值
+                     * 
                      */
                     bool BrandIdHasBeenSet() const;
 

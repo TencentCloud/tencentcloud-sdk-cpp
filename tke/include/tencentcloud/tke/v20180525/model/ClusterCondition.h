@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取集群创建过程类型
                      * @return Type 集群创建过程类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置集群创建过程类型
-                     * @param Type 集群创建过程类型
+                     * @param _type 集群创建过程类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取集群创建过程状态
                      * @return Status 集群创建过程状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置集群创建过程状态
-                     * @param Status 集群创建过程状态
+                     * @param _status 集群创建过程状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastProbeTime 最后一次探测到该状态的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastProbeTime() const;
 
                     /**
                      * 设置最后一次探测到该状态的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastProbeTime 最后一次探测到该状态的时间
+                     * @param _lastProbeTime 最后一次探测到该状态的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastProbeTime(const std::string& _lastProbeTime);
 
                     /**
                      * 判断参数 LastProbeTime 是否已赋值
                      * @return LastProbeTime 是否已赋值
+                     * 
                      */
                     bool LastProbeTimeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTransitionTime 最后一次转换到该过程的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastTransitionTime() const;
 
                     /**
                      * 设置最后一次转换到该过程的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTransitionTime 最后一次转换到该过程的时间
+                     * @param _lastTransitionTime 最后一次转换到该过程的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTransitionTime(const std::string& _lastTransitionTime);
 
                     /**
                      * 判断参数 LastTransitionTime 是否已赋值
                      * @return LastTransitionTime 是否已赋值
+                     * 
                      */
                     bool LastTransitionTimeHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 转换到该过程的简明原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置转换到该过程的简明原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 转换到该过程的简明原因
+                     * @param _reason 转换到该过程的简明原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 转换到该过程的更多信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置转换到该过程的更多信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 转换到该过程的更多信息
+                     * @param _message 转换到该过程的更多信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取成员列表。
                      * @return Items 成员列表。
+                     * 
                      */
                     std::vector<OrgMember> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取总数目。
                      * @return Total 总数目。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

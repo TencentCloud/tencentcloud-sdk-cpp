@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
                      * @return ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
-                     * @param ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * @param _imageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
                      * @return ImageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
-                     * @param ImageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * @param _imageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
                      * @return ImageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
-                     * @param ImageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * @param _imageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 

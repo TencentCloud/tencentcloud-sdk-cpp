@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivenessVideo 活体视频的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLivenessVideo() const;
 
                     /**
                      * 设置活体视频的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LivenessVideo 活体视频的base64编码
+                     * @param _livenessVideo 活体视频的base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLivenessVideo(const std::string& _livenessVideo);
 
                     /**
                      * 判断参数 LivenessVideo 是否已赋值
                      * @return LivenessVideo 是否已赋值
+                     * 
                      */
                     bool LivenessVideoHasBeenSet() const;
 

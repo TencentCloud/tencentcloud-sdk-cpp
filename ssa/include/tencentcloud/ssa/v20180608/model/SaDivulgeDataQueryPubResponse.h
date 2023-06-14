@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义泄露事件列表
                      * @return Data 自定义泄露事件列表
+                     * 
                      */
                     SaDivulgeDataQueryPubList GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

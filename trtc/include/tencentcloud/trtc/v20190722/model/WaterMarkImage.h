@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取下载的url地址， 只支持jpg， png，大小限制不超过5M。
                      * @return WaterMarkUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 
                      */
                     std::string GetWaterMarkUrl() const;
 
                     /**
                      * 设置下载的url地址， 只支持jpg， png，大小限制不超过5M。
-                     * @param WaterMarkUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * @param _waterMarkUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 
                      */
                     void SetWaterMarkUrl(const std::string& _waterMarkUrl);
 
                     /**
                      * 判断参数 WaterMarkUrl 是否已赋值
                      * @return WaterMarkUrl 是否已赋值
+                     * 
                      */
                     bool WaterMarkUrlHasBeenSet() const;
 
                     /**
                      * 获取画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。
                      * @return Top 画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。
+                     * 
                      */
                     uint64_t GetTop() const;
 
                     /**
                      * 设置画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。
-                     * @param Top 画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。
+                     * @param _top 画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。
+                     * 
                      */
                     void SetTop(const uint64_t& _top);
 
                     /**
                      * 判断参数 Top 是否已赋值
                      * @return Top 是否已赋值
+                     * 
                      */
                     bool TopHasBeenSet() const;
 
                     /**
                      * 获取画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。
                      * @return Left 画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。
+                     * 
                      */
                     uint64_t GetLeft() const;
 
                     /**
                      * 设置画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。
-                     * @param Left 画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。
+                     * @param _left 画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。
+                     * 
                      */
                     void SetLeft(const uint64_t& _left);
 
                     /**
                      * 判断参数 Left 是否已赋值
                      * @return Left 是否已赋值
+                     * 
                      */
                     bool LeftHasBeenSet() const;
 
                     /**
                      * 获取画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。
                      * @return Width 画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。
-                     * @param Width 画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。
+                     * @param _width 画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。
                      * @return Height 画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。
+                     * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。
-                     * @param Height 画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。
+                     * @param _height 画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

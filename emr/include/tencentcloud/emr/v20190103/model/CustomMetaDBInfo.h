@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
                      * @return MetaDataJdbcUrl 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * 
                      */
                     std::string GetMetaDataJdbcUrl() const;
 
                     /**
                      * 设置自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
-                     * @param MetaDataJdbcUrl 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * @param _metaDataJdbcUrl 自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname
+                     * 
                      */
                     void SetMetaDataJdbcUrl(const std::string& _metaDataJdbcUrl);
 
                     /**
                      * 判断参数 MetaDataJdbcUrl 是否已赋值
                      * @return MetaDataJdbcUrl 是否已赋值
+                     * 
                      */
                     bool MetaDataJdbcUrlHasBeenSet() const;
 
                     /**
                      * 获取自定义MetaDB用户名
                      * @return MetaDataUser 自定义MetaDB用户名
+                     * 
                      */
                     std::string GetMetaDataUser() const;
 
                     /**
                      * 设置自定义MetaDB用户名
-                     * @param MetaDataUser 自定义MetaDB用户名
+                     * @param _metaDataUser 自定义MetaDB用户名
+                     * 
                      */
                     void SetMetaDataUser(const std::string& _metaDataUser);
 
                     /**
                      * 判断参数 MetaDataUser 是否已赋值
                      * @return MetaDataUser 是否已赋值
+                     * 
                      */
                     bool MetaDataUserHasBeenSet() const;
 
                     /**
                      * 获取自定义MetaDB密码
                      * @return MetaDataPass 自定义MetaDB密码
+                     * 
                      */
                     std::string GetMetaDataPass() const;
 
                     /**
                      * 设置自定义MetaDB密码
-                     * @param MetaDataPass 自定义MetaDB密码
+                     * @param _metaDataPass 自定义MetaDB密码
+                     * 
                      */
                     void SetMetaDataPass(const std::string& _metaDataPass);
 
                     /**
                      * 判断参数 MetaDataPass 是否已赋值
                      * @return MetaDataPass 是否已赋值
+                     * 
                      */
                     bool MetaDataPassHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 <li>EMR_DEFAULT_META：表示集群默认创建</li>
 <li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 
                      */
                     std::string GetMetaType() const;
 
@@ -117,34 +127,39 @@ namespace TencentCloud
 <li>EMR_DEFAULT_META：表示集群默认创建</li>
 <li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
-                     * @param MetaType hive共享元数据库类型。取值范围：
+                     * @param _metaType hive共享元数据库类型。取值范围：
 <li>EMR_DEFAULT_META：表示集群默认创建</li>
 <li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>
 <li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * 
                      */
                     void SetMetaType(const std::string& _metaType);
 
                     /**
                      * 判断参数 MetaType 是否已赋值
                      * @return MetaType 是否已赋值
+                     * 
                      */
                     bool MetaTypeHasBeenSet() const;
 
                     /**
                      * 获取EMR-MetaDB实例
                      * @return UnifyMetaInstanceId EMR-MetaDB实例
+                     * 
                      */
                     std::string GetUnifyMetaInstanceId() const;
 
                     /**
                      * 设置EMR-MetaDB实例
-                     * @param UnifyMetaInstanceId EMR-MetaDB实例
+                     * @param _unifyMetaInstanceId EMR-MetaDB实例
+                     * 
                      */
                     void SetUnifyMetaInstanceId(const std::string& _unifyMetaInstanceId);
 
                     /**
                      * 判断参数 UnifyMetaInstanceId 是否已赋值
                      * @return UnifyMetaInstanceId 是否已赋值
+                     * 
                      */
                     bool UnifyMetaInstanceIdHasBeenSet() const;
 

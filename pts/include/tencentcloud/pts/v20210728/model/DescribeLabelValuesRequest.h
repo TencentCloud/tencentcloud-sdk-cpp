@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return JobId 任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务ID
-                     * @param JobId 任务ID
+                     * @param _jobId 任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取场景ID
                      * @return ScenarioId 场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景ID
-                     * @param ScenarioId 场景ID
+                     * @param _scenarioId 场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取指标名称
                      * @return Metric 指标名称
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名称
-                     * @param Metric 指标名称
+                     * @param _metric 指标名称
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取查询标签名称
                      * @return LabelName 查询标签名称
+                     * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置查询标签名称
-                     * @param LabelName 查询标签名称
+                     * @param _labelName 查询标签名称
+                     * 
                      */
                     void SetLabelName(const std::string& _labelName);
 
                     /**
                      * 判断参数 LabelName 是否已赋值
                      * @return LabelName 是否已赋值
+                     * 
                      */
                     bool LabelNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。
                      * @return InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。
-                     * @param InstanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。
+                     * @param _instanceIds 实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。
                      * @return BundleId 待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。
+                     * 
                      */
                     std::string GetBundleId() const;
 
                     /**
                      * 设置待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。
-                     * @param BundleId 待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。
+                     * @param _bundleId 待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。
+                     * 
                      */
                     void SetBundleId(const std::string& _bundleId);
 
                     /**
                      * 判断参数 BundleId 是否已赋值
                      * @return BundleId 是否已赋值
+                     * 
                      */
                     bool BundleIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ false：表示不自动抵扣代金券
 true：表示自动抵扣代金券
 false：表示不自动抵扣代金券
 默认取值：false。
+                     * 
                      */
                     bool GetAutoVoucher() const;
 
@@ -95,16 +102,18 @@ false：表示不自动抵扣代金券
 true：表示自动抵扣代金券
 false：表示不自动抵扣代金券
 默认取值：false。
-                     * @param AutoVoucher 是否自动抵扣代金券。取值范围：
+                     * @param _autoVoucher 是否自动抵扣代金券。取值范围：
 true：表示自动抵扣代金券
 false：表示不自动抵扣代金券
 默认取值：false。
+                     * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 

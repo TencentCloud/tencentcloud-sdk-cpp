@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取执行资源名
                      * @return ExecutionResourceName 执行资源名
+                     * 
                      */
                     std::string GetExecutionResourceName() const;
 
                     /**
                      * 设置执行资源名
-                     * @param ExecutionResourceName 执行资源名
+                     * @param _executionResourceName 执行资源名
+                     * 
                      */
                     void SetExecutionResourceName(const std::string& _executionResourceName);
 
                     /**
                      * 判断参数 ExecutionResourceName 是否已赋值
                      * @return ExecutionResourceName 是否已赋值
+                     * 
                      */
                     bool ExecutionResourceNameHasBeenSet() const;
 

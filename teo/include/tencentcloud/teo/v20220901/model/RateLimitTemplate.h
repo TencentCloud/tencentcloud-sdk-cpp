@@ -62,6 +62,7 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -73,19 +74,21 @@ namespace TencentCloud
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
-                     * @param Mode 模板等级名称，取值有：
+                     * @param _mode 模板等级名称，取值有：
 <li>sup_loose：超级宽松；</li>
 <li>loose：宽松；</li>
 <li>emergency：紧急；</li>
 <li>normal：适中；</li>
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -96,6 +99,7 @@ namespace TencentCloud
                      * @return Action 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>不填写默认取alg。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -103,33 +107,38 @@ namespace TencentCloud
                      * 设置模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>不填写默认取alg。
-                     * @param Action 模板处置方式，取值有：
+                     * @param _action 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>不填写默认取alg。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取模板值详情。仅出参返回。
                      * @return RateLimitTemplateDetail 模板值详情。仅出参返回。
+                     * 
                      */
                     RateLimitTemplateDetail GetRateLimitTemplateDetail() const;
 
                     /**
                      * 设置模板值详情。仅出参返回。
-                     * @param RateLimitTemplateDetail 模板值详情。仅出参返回。
+                     * @param _rateLimitTemplateDetail 模板值详情。仅出参返回。
+                     * 
                      */
                     void SetRateLimitTemplateDetail(const RateLimitTemplateDetail& _rateLimitTemplateDetail);
 
                     /**
                      * 判断参数 RateLimitTemplateDetail 是否已赋值
                      * @return RateLimitTemplateDetail 是否已赋值
+                     * 
                      */
                     bool RateLimitTemplateDetailHasBeenSet() const;
 

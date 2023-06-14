@@ -69,18 +69,21 @@ namespace TencentCloud
                     /**
                      * 获取站点名称。
                      * @return ZoneName 站点名称。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置站点名称。
-                     * @param ZoneName 站点名称。
+                     * @param _zoneName 站点名称。
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -91,6 +94,7 @@ namespace TencentCloud
                      * @return Area 站点加速区域信息，取值有：
 <li> mainland：中国境内加速；</li>
 <li> overseas：中国境外加速。</li>
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -98,15 +102,17 @@ namespace TencentCloud
                      * 设置站点加速区域信息，取值有：
 <li> mainland：中国境内加速；</li>
 <li> overseas：中国境外加速。</li>
-                     * @param Area 站点加速区域信息，取值有：
+                     * @param _area 站点加速区域信息，取值有：
 <li> mainland：中国境内加速；</li>
 <li> overseas：中国境外加速。</li>
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -115,20 +121,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheKey 节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheKey GetCacheKey() const;
 
                     /**
                      * 设置节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheKey 节点缓存键配置。
+                     * @param _cacheKey 节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheKey(const CacheKey& _cacheKey);
 
                     /**
                      * 判断参数 CacheKey 是否已赋值
                      * @return CacheKey 是否已赋值
+                     * 
                      */
                     bool CacheKeyHasBeenSet() const;
 
@@ -137,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quic Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Quic GetQuic() const;
 
                     /**
                      * 设置Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quic Quic访问配置。
+                     * @param _quic Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuic(const Quic& _quic);
 
                     /**
                      * 判断参数 Quic 是否已赋值
                      * @return Quic 是否已赋值
+                     * 
                      */
                     bool QuicHasBeenSet() const;
 
@@ -159,20 +171,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostMaxSize POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PostMaxSize GetPostMaxSize() const;
 
                     /**
                      * 设置POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PostMaxSize POST请求传输配置。
+                     * @param _postMaxSize POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPostMaxSize(const PostMaxSize& _postMaxSize);
 
                     /**
                      * 判断参数 PostMaxSize 是否已赋值
                      * @return PostMaxSize 是否已赋值
+                     * 
                      */
                     bool PostMaxSizeHasBeenSet() const;
 
@@ -181,20 +196,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Compression 智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Compression GetCompression() const;
 
                     /**
                      * 设置智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Compression 智能压缩配置。
+                     * @param _compression 智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompression(const Compression& _compression);
 
                     /**
                      * 判断参数 Compression 是否已赋值
                      * @return Compression 是否已赋值
+                     * 
                      */
                     bool CompressionHasBeenSet() const;
 
@@ -203,20 +221,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamHttp2 Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     UpstreamHttp2 GetUpstreamHttp2() const;
 
                     /**
                      * 设置Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpstreamHttp2 Http2回源配置。
+                     * @param _upstreamHttp2 Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpstreamHttp2(const UpstreamHttp2& _upstreamHttp2);
 
                     /**
                      * 判断参数 UpstreamHttp2 是否已赋值
                      * @return UpstreamHttp2 是否已赋值
+                     * 
                      */
                     bool UpstreamHttp2HasBeenSet() const;
 
@@ -225,20 +246,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForceRedirect 访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ForceRedirect GetForceRedirect() const;
 
                     /**
                      * 设置访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ForceRedirect 访问协议强制Https跳转配置。
+                     * @param _forceRedirect 访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetForceRedirect(const ForceRedirect& _forceRedirect);
 
                     /**
                      * 判断参数 ForceRedirect 是否已赋值
                      * @return ForceRedirect 是否已赋值
+                     * 
                      */
                     bool ForceRedirectHasBeenSet() const;
 
@@ -247,20 +271,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheConfig 缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CacheConfig GetCacheConfig() const;
 
                     /**
                      * 设置缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheConfig 缓存过期时间配置。
+                     * @param _cacheConfig 缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheConfig(const CacheConfig& _cacheConfig);
 
                     /**
                      * 判断参数 CacheConfig 是否已赋值
                      * @return CacheConfig 是否已赋值
+                     * 
                      */
                     bool CacheConfigHasBeenSet() const;
 
@@ -269,20 +296,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origin 源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Origin GetOrigin() const;
 
                     /**
                      * 设置源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origin 源站配置。
+                     * @param _origin 源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrigin(const Origin& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 
@@ -291,20 +321,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmartRouting 智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SmartRouting GetSmartRouting() const;
 
                     /**
                      * 设置智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmartRouting 智能加速配置。
+                     * @param _smartRouting 智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmartRouting(const SmartRouting& _smartRouting);
 
                     /**
                      * 判断参数 SmartRouting 是否已赋值
                      * @return SmartRouting 是否已赋值
+                     * 
                      */
                     bool SmartRoutingHasBeenSet() const;
 
@@ -313,20 +346,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxAge 浏览器缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MaxAge GetMaxAge() const;
 
                     /**
                      * 设置浏览器缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAge 浏览器缓存配置。
+                     * @param _maxAge 浏览器缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxAge(const MaxAge& _maxAge);
 
                     /**
                      * 判断参数 MaxAge 是否已赋值
                      * @return MaxAge 是否已赋值
+                     * 
                      */
                     bool MaxAgeHasBeenSet() const;
 
@@ -335,20 +371,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineCache 离线缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OfflineCache GetOfflineCache() const;
 
                     /**
                      * 设置离线缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OfflineCache 离线缓存配置。
+                     * @param _offlineCache 离线缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOfflineCache(const OfflineCache& _offlineCache);
 
                     /**
                      * 判断参数 OfflineCache 是否已赋值
                      * @return OfflineCache 是否已赋值
+                     * 
                      */
                     bool OfflineCacheHasBeenSet() const;
 
@@ -357,20 +396,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebSocket WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WebSocket GetWebSocket() const;
 
                     /**
                      * 设置WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebSocket WebSocket配置。
+                     * @param _webSocket WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebSocket(const WebSocket& _webSocket);
 
                     /**
                      * 判断参数 WebSocket 是否已赋值
                      * @return WebSocket 是否已赋值
+                     * 
                      */
                     bool WebSocketHasBeenSet() const;
 
@@ -379,20 +421,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIpHeader 客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClientIpHeader GetClientIpHeader() const;
 
                     /**
                      * 设置客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientIpHeader 客户端IP回源请求头配置。
+                     * @param _clientIpHeader 客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientIpHeader(const ClientIpHeader& _clientIpHeader);
 
                     /**
                      * 判断参数 ClientIpHeader 是否已赋值
                      * @return ClientIpHeader 是否已赋值
+                     * 
                      */
                     bool ClientIpHeaderHasBeenSet() const;
 
@@ -401,20 +446,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CachePrefresh 缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CachePrefresh GetCachePrefresh() const;
 
                     /**
                      * 设置缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CachePrefresh 缓存预刷新配置。
+                     * @param _cachePrefresh 缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCachePrefresh(const CachePrefresh& _cachePrefresh);
 
                     /**
                      * 判断参数 CachePrefresh 是否已赋值
                      * @return CachePrefresh 是否已赋值
+                     * 
                      */
                     bool CachePrefreshHasBeenSet() const;
 
@@ -423,20 +471,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6 Ipv6访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
                      * 设置Ipv6访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv6 Ipv6访问配置。
+                     * @param _ipv6 Ipv6访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpv6(const Ipv6& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 
@@ -445,20 +496,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Https Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Https GetHttps() const;
 
                     /**
                      * 设置Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Https Https 加速配置。
+                     * @param _https Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttps(const Https& _https);
 
                     /**
                      * 判断参数 Https 是否已赋值
                      * @return Https 是否已赋值
+                     * 
                      */
                     bool HttpsHasBeenSet() const;
 
@@ -467,20 +521,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClientIpCountry GetClientIpCountry() const;
 
                     /**
                      * 设置回源时是否携带客户端IP所属地域信息的配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+                     * @param _clientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientIpCountry(const ClientIpCountry& _clientIpCountry);
 
                     /**
                      * 判断参数 ClientIpCountry 是否已赋值
                      * @return ClientIpCountry 是否已赋值
+                     * 
                      */
                     bool ClientIpCountryHasBeenSet() const;
 
@@ -489,20 +546,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grpc Grpc协议支持配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Grpc GetGrpc() const;
 
                     /**
                      * 设置Grpc协议支持配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Grpc Grpc协议支持配置。
+                     * @param _grpc Grpc协议支持配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrpc(const Grpc& _grpc);
 
                     /**
                      * 判断参数 Grpc 是否已赋值
                      * @return Grpc 是否已赋值
+                     * 
                      */
                     bool GrpcHasBeenSet() const;
 
@@ -511,20 +571,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageOptimize 图片优化相关配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageOptimize GetImageOptimize() const;
 
                     /**
                      * 设置图片优化相关配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageOptimize 图片优化相关配置。
+                     * @param _imageOptimize 图片优化相关配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageOptimize(const ImageOptimize& _imageOptimize);
 
                     /**
                      * 判断参数 ImageOptimize 是否已赋值
                      * @return ImageOptimize 是否已赋值
+                     * 
                      */
                     bool ImageOptimizeHasBeenSet() const;
 
@@ -533,20 +596,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccelerateMainland 中国大陆加速优化配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccelerateMainland GetAccelerateMainland() const;
 
                     /**
                      * 设置中国大陆加速优化配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccelerateMainland 中国大陆加速优化配置。
+                     * @param _accelerateMainland 中国大陆加速优化配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
 
                     /**
                      * 判断参数 AccelerateMainland 是否已赋值
                      * @return AccelerateMainland 是否已赋值
+                     * 
                      */
                     bool AccelerateMainlandHasBeenSet() const;
 

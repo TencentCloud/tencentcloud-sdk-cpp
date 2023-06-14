@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取经过Transformations处理之后的数据
                      * @return Output 经过Transformations处理之后的数据
+                     * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 

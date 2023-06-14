@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时移录制会话标识。
                      * @return Sid 时移录制会话标识。
+                     * 
                      */
                     std::string GetSid() const;
 
                     /**
                      * 设置时移录制会话标识。
-                     * @param Sid 时移录制会话标识。
+                     * @param _sid 时移录制会话标识。
+                     * 
                      */
                     void SetSid(const std::string& _sid);
 
                     /**
                      * 判断参数 Sid 是否已赋值
                      * @return Sid 是否已赋值
+                     * 
                      */
                     bool SidHasBeenSet() const;
 
                     /**
                      * 获取录制会话开始时间，Unix 时间戳。
                      * @return StartTime 录制会话开始时间，Unix 时间戳。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置录制会话开始时间，Unix 时间戳。
-                     * @param StartTime 录制会话开始时间，Unix 时间戳。
+                     * @param _startTime 录制会话开始时间，Unix 时间戳。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取录制会话结束时间，Unix 时间戳。
                      * @return EndTime 录制会话结束时间，Unix 时间戳。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置录制会话结束时间，Unix 时间戳。
-                     * @param EndTime 录制会话结束时间，Unix 时间戳。
+                     * @param _endTime 录制会话结束时间，Unix 时间戳。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

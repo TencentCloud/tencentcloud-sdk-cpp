@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 参数的Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置参数的Key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 参数的Key
+                     * @param _key 参数的Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 参数的Value
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置参数的Value
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 参数的Value
+                     * @param _value 参数的Value
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 优先级
+                     * @param _priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

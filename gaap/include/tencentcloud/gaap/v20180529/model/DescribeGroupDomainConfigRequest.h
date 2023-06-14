@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取通道组ID。
                      * @return GroupId 通道组ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置通道组ID。
-                     * @param GroupId 通道组ID。
+                     * @param _groupId 通道组ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

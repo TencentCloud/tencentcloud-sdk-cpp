@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取子任务ID
                      * @return SubTaskId 子任务ID
+                     * 
                      */
                     std::string GetSubTaskId() const;
 
                     /**
                      * 设置子任务ID
-                     * @param SubTaskId 子任务ID
+                     * @param _subTaskId 子任务ID
+                     * 
                      */
                     void SetSubTaskId(const std::string& _subTaskId);
 
                     /**
                      * 判断参数 SubTaskId 是否已赋值
                      * @return SubTaskId 是否已赋值
+                     * 
                      */
                     bool SubTaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)
                      * @return TaskType 任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)
-                     * @param TaskType 任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)
+                     * @param _taskType 任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取修改的项
                      * @return ModifyItems 修改的项
+                     * 
                      */
                     std::vector<StructureModifyItem> GetModifyItems() const;
 
                     /**
                      * 设置修改的项
-                     * @param ModifyItems 修改的项
+                     * @param _modifyItems 修改的项
+                     * 
                      */
                     void SetModifyItems(const std::vector<StructureModifyItem>& _modifyItems);
 
                     /**
                      * 判断参数 ModifyItems 是否已赋值
                      * @return ModifyItems 是否已赋值
+                     * 
                      */
                     bool ModifyItemsHasBeenSet() const;
 
                     /**
                      * 获取新增的项
                      * @return NewItems 新增的项
+                     * 
                      */
                     std::vector<StructureOneItem> GetNewItems() const;
 
                     /**
                      * 设置新增的项
-                     * @param NewItems 新增的项
+                     * @param _newItems 新增的项
+                     * 
                      */
                     void SetNewItems(const std::vector<StructureOneItem>& _newItems);
 
                     /**
                      * 判断参数 NewItems 是否已赋值
                      * @return NewItems 是否已赋值
+                     * 
                      */
                     bool NewItemsHasBeenSet() const;
 
                     /**
                      * 获取删除的项
                      * @return RemoveItems 删除的项
+                     * 
                      */
                     std::vector<StructureOneItem> GetRemoveItems() const;
 
                     /**
                      * 设置删除的项
-                     * @param RemoveItems 删除的项
+                     * @param _removeItems 删除的项
+                     * 
                      */
                     void SetRemoveItems(const std::vector<StructureOneItem>& _removeItems);
 
                     /**
                      * 判断参数 RemoveItems 是否已赋值
                      * @return RemoveItems 是否已赋值
+                     * 
                      */
                     bool RemoveItemsHasBeenSet() const;
 

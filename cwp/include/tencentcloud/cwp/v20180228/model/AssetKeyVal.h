@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签
                      * @return Key 标签
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签
-                     * @param Key 标签
+                     * @param _key 标签
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Value 数量
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置数量
-                     * @param Value 数量
+                     * @param _value 数量
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 描述信息
+                     * @param _desc 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewCount 今日新增数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNewCount() const;
 
                     /**
                      * 设置今日新增数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewCount 今日新增数量
+                     * @param _newCount 今日新增数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewCount(const int64_t& _newCount);
 
                     /**
                      * 判断参数 NewCount 是否已赋值
                      * @return NewCount 是否已赋值
+                     * 
                      */
                     bool NewCountHasBeenSet() const;
 

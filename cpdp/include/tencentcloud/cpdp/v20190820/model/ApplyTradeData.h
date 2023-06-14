@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取贸易材料流水号
                      * @return TradeFileId 贸易材料流水号
+                     * 
                      */
                     std::string GetTradeFileId() const;
 
                     /**
                      * 设置贸易材料流水号
-                     * @param TradeFileId 贸易材料流水号
+                     * @param _tradeFileId 贸易材料流水号
+                     * 
                      */
                     void SetTradeFileId(const std::string& _tradeFileId);
 
                     /**
                      * 判断参数 TradeFileId 是否已赋值
                      * @return TradeFileId 是否已赋值
+                     * 
                      */
                     bool TradeFileIdHasBeenSet() const;
 
                     /**
                      * 获取交易币种
                      * @return TradeCurrency 交易币种
+                     * 
                      */
                     std::string GetTradeCurrency() const;
 
                     /**
                      * 设置交易币种
-                     * @param TradeCurrency 交易币种
+                     * @param _tradeCurrency 交易币种
+                     * 
                      */
                     void SetTradeCurrency(const std::string& _tradeCurrency);
 
                     /**
                      * 判断参数 TradeCurrency 是否已赋值
                      * @return TradeCurrency 是否已赋值
+                     * 
                      */
                     bool TradeCurrencyHasBeenSet() const;
 
                     /**
                      * 获取交易金额
                      * @return TradeAmount 交易金额
+                     * 
                      */
                     std::string GetTradeAmount() const;
 
                     /**
                      * 设置交易金额
-                     * @param TradeAmount 交易金额
+                     * @param _tradeAmount 交易金额
+                     * 
                      */
                     void SetTradeAmount(const std::string& _tradeAmount);
 
                     /**
                      * 判断参数 TradeAmount 是否已赋值
                      * @return TradeAmount 是否已赋值
+                     * 
                      */
                     bool TradeAmountHasBeenSet() const;
 
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

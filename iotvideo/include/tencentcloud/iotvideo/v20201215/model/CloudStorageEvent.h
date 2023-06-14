@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取事件起始时间（Unix 时间戳，秒级
                      * @return StartTime 事件起始时间（Unix 时间戳，秒级
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置事件起始时间（Unix 时间戳，秒级
-                     * @param StartTime 事件起始时间（Unix 时间戳，秒级
+                     * @param _startTime 事件起始时间（Unix 时间戳，秒级
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取事件结束时间（Unix 时间戳，秒级
                      * @return EndTime 事件结束时间（Unix 时间戳，秒级
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置事件结束时间（Unix 时间戳，秒级
-                     * @param EndTime 事件结束时间（Unix 时间戳，秒级
+                     * @param _endTime 事件结束时间（Unix 时间戳，秒级
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取事件缩略图
                      * @return Thumbnail 事件缩略图
+                     * 
                      */
                     std::string GetThumbnail() const;
 
                     /**
                      * 设置事件缩略图
-                     * @param Thumbnail 事件缩略图
+                     * @param _thumbnail 事件缩略图
+                     * 
                      */
                     void SetThumbnail(const std::string& _thumbnail);
 
                     /**
                      * 判断参数 Thumbnail 是否已赋值
                      * @return Thumbnail 是否已赋值
+                     * 
                      */
                     bool ThumbnailHasBeenSet() const;
 
                     /**
                      * 获取事件ID
                      * @return EventId 事件ID
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件ID
-                     * @param EventId 事件ID
+                     * @param _eventId 事件ID
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

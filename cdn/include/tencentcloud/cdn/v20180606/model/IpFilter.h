@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
-                     * @param Switch IP 黑白名单配置开关，取值有
+                     * @param _switch IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,6 +85,7 @@ blacklist：黑名单
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilterType() const;
 
@@ -90,16 +94,18 @@ blacklist：黑名单
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterType IP 黑白名单类型
+                     * @param _filterType IP 黑白名单类型
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 
@@ -112,6 +118,7 @@ blacklist：黑名单
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -120,16 +127,18 @@ blacklist：黑名单
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Filters IP 黑白名单列表
+                     * @param _filters IP 黑白名单列表
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -138,20 +147,23 @@ blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterRules IP 黑白名单分路径配置，白名单功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IpFilterPathRule> GetFilterRules() const;
 
                     /**
                      * 设置IP 黑白名单分路径配置，白名单功能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterRules IP 黑白名单分路径配置，白名单功能
+                     * @param _filterRules IP 黑白名单分路径配置，白名单功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterRules(const std::vector<IpFilterPathRule>& _filterRules);
 
                     /**
                      * 判断参数 FilterRules 是否已赋值
                      * @return FilterRules 是否已赋值
+                     * 
                      */
                     bool FilterRulesHasBeenSet() const;
 
@@ -160,20 +172,23 @@ blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 设置IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReturnCode IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
+                     * @param _returnCode IP 黑白名单验证失败时返回的 code <br><font color=red>已下线，参数失效，不支持自定义状态码，固定返回514</font>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReturnCode(const int64_t& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 

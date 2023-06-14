@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库Id
+                     * @param _databaseId 数据库Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableId 表Id
+                     * @param _tableId 表Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableKey 表Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableKey() const;
 
                     /**
                      * 设置表Key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableKey 表Key
+                     * @param _tableKey 表Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableKey(const std::string& _tableKey);
 
                     /**
                      * 判断参数 TableKey 是否已赋值
                      * @return TableKey 是否已赋值
+                     * 
                      */
                     bool TableKeyHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldConfig 字段变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FieldConfig> GetFieldConfig() const;
 
                     /**
                      * 设置字段变量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldConfig 字段变量
+                     * @param _fieldConfig 字段变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldConfig(const std::vector<FieldConfig>& _fieldConfig);
 
                     /**
                      * 判断参数 FieldConfig 是否已赋值
                      * @return FieldConfig 是否已赋值
+                     * 
                      */
                     bool FieldConfigHasBeenSet() const;
 

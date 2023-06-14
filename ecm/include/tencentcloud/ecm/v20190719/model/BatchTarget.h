@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID
                      * @return ListenerId 监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * @param _listenerId 监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取绑定端口
                      * @return Port 绑定端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置绑定端口
-                     * @param Port 绑定端口
+                     * @param _port 绑定端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取子机ID
                      * @return InstanceId 子机ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置子机ID
-                     * @param InstanceId 子机ID
+                     * @param _instanceId 子机ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取弹性网卡ip
                      * @return EniIp 弹性网卡ip
+                     * 
                      */
                     std::string GetEniIp() const;
 
                     /**
                      * 设置弹性网卡ip
-                     * @param EniIp 弹性网卡ip
+                     * @param _eniIp 弹性网卡ip
+                     * 
                      */
                     void SetEniIp(const std::string& _eniIp);
 
                     /**
                      * 判断参数 EniIp 是否已赋值
                      * @return EniIp 是否已赋值
+                     * 
                      */
                     bool EniIpHasBeenSet() const;
 
                     /**
                      * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
                      * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-                     * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * @param _weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

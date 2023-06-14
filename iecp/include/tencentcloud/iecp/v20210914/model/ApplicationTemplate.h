@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 模板ID
+                     * @param _id 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 模板名称
+                     * @param _name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 来源。1 自定义应用模板 ;  2 官方应用模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSource() const;
 
                     /**
                      * 设置来源。1 自定义应用模板 ;  2 官方应用模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source 来源。1 自定义应用模板 ;  2 官方应用模板
+                     * @param _source 来源。1 自定义应用模板 ;  2 官方应用模板
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSource(const uint64_t& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadKind 应用类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置应用类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkloadKind 应用类型
+                     * @param _workloadKind 应用类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
 
                     /**
                      * 判断参数 WorkloadKind 是否已赋值
                      * @return WorkloadKind 是否已赋值
+                     * 
                      */
                     bool WorkloadKindHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManageUrl 管理地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManageUrl() const;
 
                     /**
                      * 设置管理地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ManageUrl 管理地址
+                     * @param _manageUrl 管理地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManageUrl(const std::string& _manageUrl);
 
                     /**
                      * 判断参数 ManageUrl 是否已赋值
                      * @return ManageUrl 是否已赋值
+                     * 
                      */
                     bool ManageUrlHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DistributeTime 发布时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDistributeTime() const;
 
                     /**
                      * 设置发布时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DistributeTime 发布时间
+                     * @param _distributeTime 发布时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDistributeTime(const std::string& _distributeTime);
 
                     /**
                      * 判断参数 DistributeTime 是否已赋值
                      * @return DistributeTime 是否已赋值
+                     * 
                      */
                     bool DistributeTimeHasBeenSet() const;
 

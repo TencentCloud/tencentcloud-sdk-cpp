@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return Password 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
-                     * @param Password 密码
+                     * @param _password 密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

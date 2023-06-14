@@ -52,56 +52,65 @@ namespace TencentCloud
 发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style="text-decoration:underline">购买方地址、电话</span>、<span style="text-decoration:underline">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style="text-decoration:underline">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类
                      * @return Name 识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：
 发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style="text-decoration:underline">购买方地址、电话</span>、<span style="text-decoration:underline">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style="text-decoration:underline">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：
 发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style="text-decoration:underline">购买方地址、电话</span>、<span style="text-decoration:underline">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style="text-decoration:underline">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类
-                     * @param Name 识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：
+                     * @param _name 识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：
 发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style="text-decoration:underline">购买方地址、电话</span>、<span style="text-decoration:underline">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style="text-decoration:underline">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取文本行在旋转纠正之后的图像中的像素坐标。
                      * @return Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 
                      */
                     Rect GetRect() const;
 
                     /**
                      * 设置文本行在旋转纠正之后的图像中的像素坐标。
-                     * @param Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * @param _rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 
                      */
                     void SetRect(const Rect& _rect);
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 

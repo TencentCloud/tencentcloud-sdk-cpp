@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取存储过程名称
                      * @return Proc 存储过程名称
+                     * 
                      */
                     std::string GetProc() const;
 
                     /**
                      * 设置存储过程名称
-                     * @param Proc 存储过程名称
+                     * @param _proc 存储过程名称
+                     * 
                      */
                     void SetProc(const std::string& _proc);
 
                     /**
                      * 判断参数 Proc 是否已赋值
                      * @return Proc 是否已赋值
+                     * 
                      */
                     bool ProcHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionCount 执行总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExecutionCount() const;
 
                     /**
                      * 设置执行总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecutionCount 执行总数
+                     * @param _executionCount 执行总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecutionCount(const int64_t& _executionCount);
 
                     /**
                      * 判断参数 ExecutionCount 是否已赋值
                      * @return ExecutionCount 是否已赋值
+                     * 
                      */
                     bool ExecutionCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data Statement数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KVPair> GetData() const;
 
                     /**
                      * 设置Statement数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data Statement数据
+                     * @param _data Statement数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const std::vector<KVPair>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status Statement状态:ok,error
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Statement状态:ok,error
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status Statement状态:ok,error
+                     * @param _status Statement状态:ok,error
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorName 错误名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorName() const;
 
                     /**
                      * 设置错误名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorName 错误名称
+                     * @param _errorName 错误名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorName(const std::string& _errorName);
 
                     /**
                      * 判断参数 ErrorName 是否已赋值
                      * @return ErrorName 是否已赋值
+                     * 
                      */
                     bool ErrorNameHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorValue 错误类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorValue() const;
 
                     /**
                      * 设置错误类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorValue 错误类型
+                     * @param _errorValue 错误类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorValue(const std::string& _errorValue);
 
                     /**
                      * 判断参数 ErrorValue 是否已赋值
                      * @return ErrorValue 是否已赋值
+                     * 
                      */
                     bool ErrorValueHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 错误堆栈信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetErrorMessage() const;
 
                     /**
                      * 设置错误堆栈信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMessage 错误堆栈信息
+                     * @param _errorMessage 错误堆栈信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMessage(const std::vector<std::string>& _errorMessage);
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SQLResult SQL类型任务结果返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSQLResult() const;
 
                     /**
                      * 设置SQL类型任务结果返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SQLResult SQL类型任务结果返回
+                     * @param _sQLResult SQL类型任务结果返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSQLResult(const std::string& _sQLResult);
 
                     /**
                      * 判断参数 SQLResult 是否已赋值
                      * @return SQLResult 是否已赋值
+                     * 
                      */
                     bool SQLResultHasBeenSet() const;
 

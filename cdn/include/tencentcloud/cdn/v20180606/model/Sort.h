@@ -55,6 +55,7 @@ certExpireTime，证书过期时间
 createTime，域名创建时间
 certExpireTime，证书过期时间
 默认createTime。
+                     * 
                      */
                     std::string GetKey() const;
 
@@ -63,34 +64,39 @@ certExpireTime，证书过期时间
 createTime，域名创建时间
 certExpireTime，证书过期时间
 默认createTime。
-                     * @param Key 排序字段，当前支持：
+                     * @param _key 排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
 默认createTime。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取asc/desc，默认desc。
                      * @return Sequence asc/desc，默认desc。
+                     * 
                      */
                     std::string GetSequence() const;
 
                     /**
                      * 设置asc/desc，默认desc。
-                     * @param Sequence asc/desc，默认desc。
+                     * @param _sequence asc/desc，默认desc。
+                     * 
                      */
                     void SetSequence(const std::string& _sequence);
 
                     /**
                      * 判断参数 Sequence 是否已赋值
                      * @return Sequence 是否已赋值
+                     * 
                      */
                     bool SequenceHasBeenSet() const;
 

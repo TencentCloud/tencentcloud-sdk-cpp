@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取虚假号码描述
                      * @return Status 虚假号码描述
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置虚假号码描述
-                     * @param Status 虚假号码描述
+                     * @param _status 虚假号码描述
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

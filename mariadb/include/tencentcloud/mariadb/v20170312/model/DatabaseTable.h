@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取表名
                      * @return Table 表名
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名
-                     * @param Table 表名
+                     * @param _table 表名
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 

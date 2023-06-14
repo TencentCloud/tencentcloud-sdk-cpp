@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取接入业务的唯一ID
                      * @return MsgID 接入业务的唯一ID
+                     * 
                      */
                     std::string GetMsgID() const;
 
                     /**
                      * 设置接入业务的唯一ID
-                     * @param MsgID 接入业务的唯一ID
+                     * @param _msgID 接入业务的唯一ID
+                     * 
                      */
                     void SetMsgID(const std::string& _msgID);
 
                     /**
                      * 判断参数 MsgID 是否已赋值
                      * @return MsgID 是否已赋值
+                     * 
                      */
                     bool MsgIDHasBeenSet() const;
 
                     /**
                      * 获取用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段
                      * @return Uin 用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段
-                     * @param Uin 用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段
+                     * @param _uin 用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 用户名
+                     * @param _userName 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroup 用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserGroup() const;
 
                     /**
                      * 设置用户组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserGroup 用户组
+                     * @param _userGroup 用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserGroup(const std::string& _userGroup);
 
                     /**
                      * 判断参数 UserGroup 是否已赋值
                      * @return UserGroup 是否已赋值
+                     * 
                      */
                     bool UserGroupHasBeenSet() const;
 

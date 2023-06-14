@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区数值形式的唯一ID，如：100001
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置可用区数值形式的唯一ID，如：100001
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 可用区数值形式的唯一ID，如：100001
+                     * @param _zoneId 可用区数值形式的唯一ID，如：100001
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区字符串形式的唯一ID，如：ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区字符串形式的唯一ID，如：ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区字符串形式的唯一ID，如：ap-guangzhou-1
+                     * @param _zone 可用区字符串形式的唯一ID，如：ap-guangzhou-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 可用区名称，如：广州一区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区名称，如：广州一区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneName 可用区名称，如：广州一区
+                     * @param _zoneName 可用区名称，如：广州一区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneRegion 可用区所属地域，如：ap-guangzhou
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneRegion() const;
 
                     /**
                      * 设置可用区所属地域，如：ap-guangzhou
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneRegion 可用区所属地域，如：ap-guangzhou
+                     * @param _zoneRegion 可用区所属地域，如：ap-guangzhou
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneRegion(const std::string& _zoneRegion);
 
                     /**
                      * 判断参数 ZoneRegion 是否已赋值
                      * @return ZoneRegion 是否已赋值
+                     * 
                      */
                     bool ZoneRegionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalZone 可用区是否是LocalZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetLocalZone() const;
 
                     /**
                      * 设置可用区是否是LocalZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalZone 可用区是否是LocalZone可用区，如：false
+                     * @param _localZone 可用区是否是LocalZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalZone(const bool& _localZone);
 
                     /**
                      * 判断参数 LocalZone 是否已赋值
                      * @return LocalZone 是否已赋值
+                     * 
                      */
                     bool LocalZoneHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeZone 可用区是否是EdgeZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEdgeZone() const;
 
                     /**
                      * 设置可用区是否是EdgeZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EdgeZone 可用区是否是EdgeZone可用区，如：false
+                     * @param _edgeZone 可用区是否是EdgeZone可用区，如：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdgeZone(const bool& _edgeZone);
 
                     /**
                      * 判断参数 EdgeZone 是否已赋值
                      * @return EdgeZone 是否已赋值
+                     * 
                      */
                     bool EdgeZoneHasBeenSet() const;
 

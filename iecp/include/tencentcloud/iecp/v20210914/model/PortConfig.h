@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取协议类型(tcp|udp)
                      * @return Protocol 协议类型(tcp|udp)
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型(tcp|udp)
-                     * @param Protocol 协议类型(tcp|udp)
+                     * @param _protocol 协议类型(tcp|udp)
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取源端口
                      * @return Port 源端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置源端口
-                     * @param Port 源端口
+                     * @param _port 源端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取目标端口
                      * @return TargetPort 目标端口
+                     * 
                      */
                     int64_t GetTargetPort() const;
 
                     /**
                      * 设置目标端口
-                     * @param TargetPort 目标端口
+                     * @param _targetPort 目标端口
+                     * 
                      */
                     void SetTargetPort(const int64_t& _targetPort);
 
                     /**
                      * 判断参数 TargetPort 是否已赋值
                      * @return TargetPort 是否已赋值
+                     * 
                      */
                     bool TargetPortHasBeenSet() const;
 
                     /**
                      * 获取节点端口
                      * @return NodePort 节点端口
+                     * 
                      */
                     int64_t GetNodePort() const;
 
                     /**
                      * 设置节点端口
-                     * @param NodePort 节点端口
+                     * @param _nodePort 节点端口
+                     * 
                      */
                     void SetNodePort(const int64_t& _nodePort);
 
                     /**
                      * 判断参数 NodePort 是否已赋值
                      * @return NodePort 是否已赋值
+                     * 
                      */
                     bool NodePortHasBeenSet() const;
 

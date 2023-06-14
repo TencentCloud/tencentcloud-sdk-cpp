@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取工作空间创建时间
                      * @return CreateDate 工作空间创建时间
+                     * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置工作空间创建时间
-                     * @param CreateDate 工作空间创建时间
+                     * @param _createDate 工作空间创建时间
+                     * 
                      */
                     void SetCreateDate(const std::string& _createDate);
 
                     /**
                      * 判断参数 CreateDate 是否已赋值
                      * @return CreateDate 是否已赋值
+                     * 
                      */
                     bool CreateDateHasBeenSet() const;
 
                     /**
                      * 获取空间key
                      * @return SpaceKey 空间key
+                     * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置空间key
-                     * @param SpaceKey 空间key
+                     * @param _spaceKey 空间key
+                     * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
                     /**
                      * 判断参数 SpaceKey 是否已赋值
                      * @return SpaceKey 是否已赋值
+                     * 
                      */
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
                      * 获取工作空间id
                      * @return WorkspaceId 工作空间id
+                     * 
                      */
                     int64_t GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间id
-                     * @param WorkspaceId 工作空间id
+                     * @param _workspaceId 工作空间id
+                     * 
                      */
                     void SetWorkspaceId(const int64_t& _workspaceId);
 
                     /**
                      * 判断参数 WorkspaceId 是否已赋值
                      * @return WorkspaceId 是否已赋值
+                     * 
                      */
                     bool WorkspaceIdHasBeenSet() const;
 

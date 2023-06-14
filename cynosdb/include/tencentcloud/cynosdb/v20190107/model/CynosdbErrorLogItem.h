@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 日志时间戳
+                     * @param _timestamp 日志时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 日志等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 日志等级
+                     * @param _level 日志等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 日志内容
+                     * @param _content 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

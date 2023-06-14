@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取监听器列表。
                      * @return Listeners 监听器列表。
+                     * 
                      */
                     std::vector<Listener> GetListeners() const;
 
                     /**
                      * 判断参数 Listeners 是否已赋值
                      * @return Listeners 是否已赋值
+                     * 
                      */
                     bool ListenersHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总的监听器个数（根据端口、协议、监听器ID过滤后）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
                      * @return DiskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
-                     * @param DiskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * @param _diskSize 云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @param DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取云盘所属项目ID。 如传入则仅用于鉴权。
                      * @return ProjectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置云盘所属项目ID。 如传入则仅用于鉴权。
-                     * @param ProjectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * @param _projectId 云盘所属项目ID。 如传入则仅用于鉴权。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

@@ -51,216 +51,252 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`名称。
                      * @return VpcName `VPC`名称。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置`VPC`名称。
-                     * @param VpcName `VPC`名称。
+                     * @param _vpcName `VPC`名称。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取`VPC`实例`ID`，例如：vpc-azd4dt1c。
                      * @return VpcId `VPC`实例`ID`，例如：vpc-azd4dt1c。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`，例如：vpc-azd4dt1c。
-                     * @param VpcId `VPC`实例`ID`，例如：vpc-azd4dt1c。
+                     * @param _vpcId `VPC`实例`ID`，例如：vpc-azd4dt1c。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取`VPC`的`IPv4` `CIDR`。
                      * @return CidrBlock `VPC`的`IPv4` `CIDR`。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置`VPC`的`IPv4` `CIDR`。
-                     * @param CidrBlock `VPC`的`IPv4` `CIDR`。
+                     * @param _cidrBlock `VPC`的`IPv4` `CIDR`。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取是否默认`VPC`。
                      * @return IsDefault 是否默认`VPC`。
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否默认`VPC`。
-                     * @param IsDefault 是否默认`VPC`。
+                     * @param _isDefault 是否默认`VPC`。
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取是否开启组播。
                      * @return EnableMulticast 是否开启组播。
+                     * 
                      */
                     bool GetEnableMulticast() const;
 
                     /**
                      * 设置是否开启组播。
-                     * @param EnableMulticast 是否开启组播。
+                     * @param _enableMulticast 是否开启组播。
+                     * 
                      */
                     void SetEnableMulticast(const bool& _enableMulticast);
 
                     /**
                      * 判断参数 EnableMulticast 是否已赋值
                      * @return EnableMulticast 是否已赋值
+                     * 
                      */
                     bool EnableMulticastHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取`DNS`列表。
                      * @return DnsServerSet `DNS`列表。
+                     * 
                      */
                     std::vector<std::string> GetDnsServerSet() const;
 
                     /**
                      * 设置`DNS`列表。
-                     * @param DnsServerSet `DNS`列表。
+                     * @param _dnsServerSet `DNS`列表。
+                     * 
                      */
                     void SetDnsServerSet(const std::vector<std::string>& _dnsServerSet);
 
                     /**
                      * 判断参数 DnsServerSet 是否已赋值
                      * @return DnsServerSet 是否已赋值
+                     * 
                      */
                     bool DnsServerSetHasBeenSet() const;
 
                     /**
                      * 获取`DHCP`域名选项值。
                      * @return DomainName `DHCP`域名选项值。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置`DHCP`域名选项值。
-                     * @param DomainName `DHCP`域名选项值。
+                     * @param _domainName `DHCP`域名选项值。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取`DHCP`选项集`ID`。
                      * @return DhcpOptionsId `DHCP`选项集`ID`。
+                     * 
                      */
                     std::string GetDhcpOptionsId() const;
 
                     /**
                      * 设置`DHCP`选项集`ID`。
-                     * @param DhcpOptionsId `DHCP`选项集`ID`。
+                     * @param _dhcpOptionsId `DHCP`选项集`ID`。
+                     * 
                      */
                     void SetDhcpOptionsId(const std::string& _dhcpOptionsId);
 
                     /**
                      * 判断参数 DhcpOptionsId 是否已赋值
                      * @return DhcpOptionsId 是否已赋值
+                     * 
                      */
                     bool DhcpOptionsIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启`DHCP`。
                      * @return EnableDhcp 是否开启`DHCP`。
+                     * 
                      */
                     bool GetEnableDhcp() const;
 
                     /**
                      * 设置是否开启`DHCP`。
-                     * @param EnableDhcp 是否开启`DHCP`。
+                     * @param _enableDhcp 是否开启`DHCP`。
+                     * 
                      */
                     void SetEnableDhcp(const bool& _enableDhcp);
 
                     /**
                      * 判断参数 EnableDhcp 是否已赋值
                      * @return EnableDhcp 是否已赋值
+                     * 
                      */
                     bool EnableDhcpHasBeenSet() const;
 
                     /**
                      * 获取`VPC`的`IPv6` `CIDR`。
                      * @return Ipv6CidrBlock `VPC`的`IPv6` `CIDR`。
+                     * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置`VPC`的`IPv6` `CIDR`。
-                     * @param Ipv6CidrBlock `VPC`的`IPv6` `CIDR`。
+                     * @param _ipv6CidrBlock `VPC`的`IPv6` `CIDR`。
+                     * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
 
                     /**
                      * 判断参数 Ipv6CidrBlock 是否已赋值
                      * @return Ipv6CidrBlock 是否已赋值
+                     * 
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取标签键值对
                      * @return TagSet 标签键值对
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对
-                     * @param TagSet 标签键值对
+                     * @param _tagSet 标签键值对
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -269,20 +305,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssistantCidrSet 辅助CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssistantCidr> GetAssistantCidrSet() const;
 
                     /**
                      * 设置辅助CIDR
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssistantCidrSet 辅助CIDR
+                     * @param _assistantCidrSet 辅助CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssistantCidrSet(const std::vector<AssistantCidr>& _assistantCidrSet);
 
                     /**
                      * 判断参数 AssistantCidrSet 是否已赋值
                      * @return AssistantCidrSet 是否已赋值
+                     * 
                      */
                     bool AssistantCidrSetHasBeenSet() const;
 

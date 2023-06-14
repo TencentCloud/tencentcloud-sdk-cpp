@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取名称匹配搜索，匹配范围包括：用户组名称。
                      * @return Keyword 名称匹配搜索，匹配范围包括：用户组名称。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置名称匹配搜索，匹配范围包括：用户组名称。
-                     * @param Keyword 名称匹配搜索，匹配范围包括：用户组名称。
+                     * @param _keyword 名称匹配搜索，匹配范围包括：用户组名称。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

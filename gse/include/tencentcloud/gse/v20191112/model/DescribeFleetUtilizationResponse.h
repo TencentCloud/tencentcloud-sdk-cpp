@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetUtilization 服务器舰队利用率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetUtilization> GetFleetUtilization() const;
 
                     /**
                      * 判断参数 FleetUtilization 是否已赋值
                      * @return FleetUtilization 是否已赋值
+                     * 
                      */
                     bool FleetUtilizationHasBeenSet() const;
 
                     /**
                      * 获取总数，最小值0
                      * @return TotalCount 总数，最小值0
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

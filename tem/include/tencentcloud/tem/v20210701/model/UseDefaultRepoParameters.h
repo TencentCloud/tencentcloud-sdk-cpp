@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceName 企业版实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnterpriseInstanceName() const;
 
                     /**
                      * 设置企业版实例名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnterpriseInstanceName 企业版实例名
+                     * @param _enterpriseInstanceName 企业版实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnterpriseInstanceName(const std::string& _enterpriseInstanceName);
 
                     /**
                      * 判断参数 EnterpriseInstanceName 是否已赋值
                      * @return EnterpriseInstanceName 是否已赋值
+                     * 
                      */
                     bool EnterpriseInstanceNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceChargeType 企业版收费类型  0 按量收费   1 包年包月
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEnterpriseInstanceChargeType() const;
 
                     /**
                      * 设置企业版收费类型  0 按量收费   1 包年包月
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnterpriseInstanceChargeType 企业版收费类型  0 按量收费   1 包年包月
+                     * @param _enterpriseInstanceChargeType 企业版收费类型  0 按量收费   1 包年包月
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnterpriseInstanceChargeType(const int64_t& _enterpriseInstanceChargeType);
 
                     /**
                      * 判断参数 EnterpriseInstanceChargeType 是否已赋值
                      * @return EnterpriseInstanceChargeType 是否已赋值
+                     * 
                      */
                     bool EnterpriseInstanceChargeTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnterpriseInstanceType 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnterpriseInstanceType() const;
 
                     /**
                      * 设置企业版规格：basic-基础班 ，standard-标准版，premium-高级版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnterpriseInstanceType 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
+                     * @param _enterpriseInstanceType 企业版规格：basic-基础班 ，standard-标准版，premium-高级版
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnterpriseInstanceType(const std::string& _enterpriseInstanceType);
 
                     /**
                      * 判断参数 EnterpriseInstanceType 是否已赋值
                      * @return EnterpriseInstanceType 是否已赋值
+                     * 
                      */
                     bool EnterpriseInstanceTypeHasBeenSet() const;
 

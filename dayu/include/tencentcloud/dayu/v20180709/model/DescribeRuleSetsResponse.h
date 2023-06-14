@@ -55,12 +55,14 @@ Key值为"Id"时，Value表示资源ID
 Key值为"RuleIdList"时，Value值表示资源的规则ID，多个规则ID用","分割
 Key值为"RuleNameList"时，Value值表示资源的规则名，多个规则名用","分割
 Key值为"RuleNum"时，Value值表示资源的规则数
+                     * 
                      */
                     std::vector<KeyValueRecord> GetL4RuleSets() const;
 
                     /**
                      * 判断参数 L4RuleSets 是否已赋值
                      * @return L4RuleSets 是否已赋值
+                     * 
                      */
                     bool L4RuleSetsHasBeenSet() const;
 
@@ -75,12 +77,14 @@ Key值为"Id"时，Value表示资源ID
 Key值为"RuleIdList"时，Value值表示资源的规则ID，多个规则ID用","分割
 Key值为"RuleNameList"时，Value值表示资源的规则名，多个规则名用","分割
 Key值为"RuleNum"时，Value值表示资源的规则数
+                     * 
                      */
                     std::vector<KeyValueRecord> GetL7RuleSets() const;
 
                     /**
                      * 判断参数 L7RuleSets 是否已赋值
                      * @return L7RuleSets 是否已赋值
+                     * 
                      */
                     bool L7RuleSetsHasBeenSet() const;
 

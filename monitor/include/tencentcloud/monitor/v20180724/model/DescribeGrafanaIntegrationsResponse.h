@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取集成数组
                      * @return IntegrationSet 集成数组
+                     * 
                      */
                     std::vector<GrafanaIntegrationConfig> GetIntegrationSet() const;
 
                     /**
                      * 判断参数 IntegrationSet 是否已赋值
                      * @return IntegrationSet 是否已赋值
+                     * 
                      */
                     bool IntegrationSetHasBeenSet() const;
 

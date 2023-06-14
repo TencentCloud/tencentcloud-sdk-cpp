@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID
                      * @return TaskId 任务 ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID
-                     * @param TaskId 任务 ID
+                     * @param _taskId 任务 ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Success 是否成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSuccess() const;
 
                     /**
                      * 设置是否成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Success 是否成功
+                     * @param _success 是否成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccess(const bool& _success);
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorMessage 错误信息
+                     * @param _errorMessage 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 

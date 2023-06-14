@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
                      * @return LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-                     * @param LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * @param _loadBalancerIds 传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
                      * @return ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * 
                      */
                     std::vector<ForwardLoadBalancer> GetForwardLoadBalancers() const;
 
                     /**
                      * 设置应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-                     * @param ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * @param _forwardLoadBalancers 应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+                     * 
                      */
                     void SetForwardLoadBalancers(const std::vector<ForwardLoadBalancer>& _forwardLoadBalancers);
 
                     /**
                      * 判断参数 ForwardLoadBalancers 是否已赋值
                      * @return ForwardLoadBalancers 是否已赋值
+                     * 
                      */
                     bool ForwardLoadBalancersHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return LoadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
 <br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
 <br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     * 
                      */
                     std::string GetLoadBalancersCheckPolicy() const;
 
@@ -111,15 +121,17 @@ namespace TencentCloud
                      * 设置负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
 <br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
 <br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
-                     * @param LoadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+                     * @param _loadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
 <br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
 <br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     * 
                      */
                     void SetLoadBalancersCheckPolicy(const std::string& _loadBalancersCheckPolicy);
 
                     /**
                      * 判断参数 LoadBalancersCheckPolicy 是否已赋值
                      * @return LoadBalancersCheckPolicy 是否已赋值
+                     * 
                      */
                     bool LoadBalancersCheckPolicyHasBeenSet() const;
 

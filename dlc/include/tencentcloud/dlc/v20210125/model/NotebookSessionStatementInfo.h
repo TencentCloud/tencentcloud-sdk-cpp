@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Completed 完成时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCompleted() const;
 
                     /**
                      * 设置完成时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Completed 完成时间戳
+                     * @param _completed 完成时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompleted(const int64_t& _completed);
 
                     /**
                      * 判断参数 Completed 是否已赋值
                      * @return Completed 是否已赋值
+                     * 
                      */
                     bool CompletedHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Started 开始时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStarted() const;
 
                     /**
                      * 设置开始时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Started 开始时间戳
+                     * @param _started 开始时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStarted(const int64_t& _started);
 
                     /**
                      * 判断参数 Started 是否已赋值
                      * @return Started 是否已赋值
+                     * 
                      */
                     bool StartedHasBeenSet() const;
 
@@ -96,56 +102,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 完成进度，百分制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置完成进度，百分制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 完成进度，百分制
+                     * @param _progress 完成进度，百分制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const double& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取Session Statement唯一标识
                      * @return StatementId Session Statement唯一标识
+                     * 
                      */
                     std::string GetStatementId() const;
 
                     /**
                      * 设置Session Statement唯一标识
-                     * @param StatementId Session Statement唯一标识
+                     * @param _statementId Session Statement唯一标识
+                     * 
                      */
                     void SetStatementId(const std::string& _statementId);
 
                     /**
                      * 判断参数 StatementId 是否已赋值
                      * @return StatementId 是否已赋值
+                     * 
                      */
                     bool StatementIdHasBeenSet() const;
 
                     /**
                      * 获取Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）
                      * @return State Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）
-                     * @param State Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）
+                     * @param _state Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutPut Statement输出信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StatementOutput GetOutPut() const;
 
                     /**
                      * 设置Statement输出信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutPut Statement输出信息
+                     * @param _outPut Statement输出信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutPut(const StatementOutput& _outPut);
 
                     /**
                      * 判断参数 OutPut 是否已赋值
                      * @return OutPut 是否已赋值
+                     * 
                      */
                     bool OutPutHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchId 批任务id
+                     * @param _batchId 批任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -198,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 运行语句
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置运行语句
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 运行语句
+                     * @param _code 运行语句
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -220,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

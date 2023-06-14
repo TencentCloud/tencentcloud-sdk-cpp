@@ -50,12 +50,14 @@ namespace TencentCloud
 <font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> 
                      * @return ReviewResultSet 图片审核任务结果。
 <font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> 
+                     * 
                      */
                     std::vector<ContentReviewResult> GetReviewResultSet() const;
 
                     /**
                      * 判断参数 ReviewResultSet 是否已赋值
                      * @return ReviewResultSet 是否已赋值
+                     * 
                      */
                     bool ReviewResultSetHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaReviewResult 图片审核任务结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReviewImageResult GetMediaReviewResult() const;
 
                     /**
                      * 判断参数 MediaReviewResult 是否已赋值
                      * @return MediaReviewResult 是否已赋值
+                     * 
                      */
                     bool MediaReviewResultHasBeenSet() const;
 

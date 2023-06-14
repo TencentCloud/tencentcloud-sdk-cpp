@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID
                      * @return Id 资源实例ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param Id 资源实例ID
+                     * @param _id 资源实例ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -98,6 +104,7 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -111,7 +118,7 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；
-                     * @param MetricName 指标名，取值：
+                     * @param _metricName 指标名，取值：
 connum表示TCP活跃连接数；
 new_conn表示新建TCP连接数；
 inactive_conn表示非活跃连接数;
@@ -120,66 +127,77 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）
                      * @return Period 统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）
-                     * @param Period 统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）
+                     * @param _period 统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取统计开始时间，秒部分保持为0，分钟部分为5的倍数
                      * @return StartTime 统计开始时间，秒部分保持为0，分钟部分为5的倍数
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置统计开始时间，秒部分保持为0，分钟部分为5的倍数
-                     * @param StartTime 统计开始时间，秒部分保持为0，分钟部分为5的倍数
+                     * @param _startTime 统计开始时间，秒部分保持为0，分钟部分为5的倍数
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取统计结束时间，秒部分保持为0，分钟部分为5的倍数
                      * @return EndTime 统计结束时间，秒部分保持为0，分钟部分为5的倍数
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置统计结束时间，秒部分保持为0，分钟部分为5的倍数
-                     * @param EndTime 统计结束时间，秒部分保持为0，分钟部分为5的倍数
+                     * @param _endTime 统计结束时间，秒部分保持为0，分钟部分为5的倍数
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -192,6 +210,7 @@ avg表示均值；
 max表示最大值；
 min表示最小值；
 avg表示均值；
+                     * 
                      */
                     std::string GetStatistics() const;
 
@@ -200,52 +219,60 @@ avg表示均值；
 max表示最大值；
 min表示最小值；
 avg表示均值；
-                     * @param Statistics 统计方式，取值：
+                     * @param _statistics 统计方式，取值：
 max表示最大值；
 min表示最小值；
 avg表示均值；
+                     * 
                      */
                     void SetStatistics(const std::string& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 
                     /**
                      * 获取协议端口数组
                      * @return ProtocolPort 协议端口数组
+                     * 
                      */
                     std::vector<ProtocolPort> GetProtocolPort() const;
 
                     /**
                      * 设置协议端口数组
-                     * @param ProtocolPort 协议端口数组
+                     * @param _protocolPort 协议端口数组
+                     * 
                      */
                     void SetProtocolPort(const std::vector<ProtocolPort>& _protocolPort);
 
                     /**
                      * 判断参数 ProtocolPort 是否已赋值
                      * @return ProtocolPort 是否已赋值
+                     * 
                      */
                     bool ProtocolPortHasBeenSet() const;
 
                     /**
                      * 获取资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；
                      * @return Ip 资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；
-                     * @param Ip 资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；
+                     * @param _ip 资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 

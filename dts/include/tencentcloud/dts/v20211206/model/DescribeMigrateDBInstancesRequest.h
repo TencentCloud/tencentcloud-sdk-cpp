@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取数据库类型，如mysql
                      * @return DatabaseType 数据库类型，如mysql
+                     * 
                      */
                     std::string GetDatabaseType() const;
 
                     /**
                      * 设置数据库类型，如mysql
-                     * @param DatabaseType 数据库类型，如mysql
+                     * @param _databaseType 数据库类型，如mysql
+                     * 
                      */
                     void SetDatabaseType(const std::string& _databaseType);
 
                     /**
                      * 判断参数 DatabaseType 是否已赋值
                      * @return DatabaseType 是否已赋值
+                     * 
                      */
                     bool DatabaseTypeHasBeenSet() const;
 
                     /**
                      * 获取实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
                      * @return MigrateRole 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * 
                      */
                     std::string GetMigrateRole() const;
 
                     /**
                      * 设置实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
-                     * @param MigrateRole 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * @param _migrateRole 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * 
                      */
                     void SetMigrateRole(const std::string& _migrateRole);
 
                     /**
                      * 判断参数 MigrateRole 是否已赋值
                      * @return MigrateRole 是否已赋值
+                     * 
                      */
                     bool MigrateRoleHasBeenSet() const;
 
                     /**
                      * 获取云数据库实例ID
                      * @return InstanceId 云数据库实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云数据库实例ID
-                     * @param InstanceId 云数据库实例ID
+                     * @param _instanceId 云数据库实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取云数据库名称
                      * @return InstanceName 云数据库名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置云数据库名称
-                     * @param InstanceName 云数据库名称
+                     * @param _instanceName 云数据库名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取返回数量限制
                      * @return Limit 返回数量限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量限制
-                     * @param Limit 返回数量限制
+                     * @param _limit 返回数量限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
                      * @return AccountMode 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * 
                      */
                     std::string GetAccountMode() const;
 
                     /**
                      * 设置资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
-                     * @param AccountMode 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * @param _accountMode 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * 
                      */
                     void SetAccountMode(const std::string& _accountMode);
 
                     /**
                      * 判断参数 AccountMode 是否已赋值
                      * @return AccountMode 是否已赋值
+                     * 
                      */
                     bool AccountModeHasBeenSet() const;
 
                     /**
                      * 获取临时密钥Id，若为跨账号资源此项必填
                      * @return TmpSecretId 临时密钥Id，若为跨账号资源此项必填
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时密钥Id，若为跨账号资源此项必填
-                     * @param TmpSecretId 临时密钥Id，若为跨账号资源此项必填
+                     * @param _tmpSecretId 临时密钥Id，若为跨账号资源此项必填
+                     * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时密钥Key，若为跨账号资源此项必填
                      * @return TmpSecretKey 临时密钥Key，若为跨账号资源此项必填
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时密钥Key，若为跨账号资源此项必填
-                     * @param TmpSecretKey 临时密钥Key，若为跨账号资源此项必填
+                     * @param _tmpSecretKey 临时密钥Key，若为跨账号资源此项必填
+                     * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取临时密钥Token，若为跨账号资源此项必填
                      * @return TmpToken 临时密钥Token，若为跨账号资源此项必填
+                     * 
                      */
                     std::string GetTmpToken() const;
 
                     /**
                      * 设置临时密钥Token，若为跨账号资源此项必填
-                     * @param TmpToken 临时密钥Token，若为跨账号资源此项必填
+                     * @param _tmpToken 临时密钥Token，若为跨账号资源此项必填
+                     * 
                      */
                     void SetTmpToken(const std::string& _tmpToken);
 
                     /**
                      * 判断参数 TmpToken 是否已赋值
                      * @return TmpToken 是否已赋值
+                     * 
                      */
                     bool TmpTokenHasBeenSet() const;
 

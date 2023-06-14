@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID
                      * @return LoadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * @param _loadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组
                      * @return SecurityGroups 安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
                      * 设置安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组
-                     * @param SecurityGroups 安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组
+                     * @param _securityGroups 安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组
+                     * 
                      */
                     void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
 
                     /**
                      * 判断参数 SecurityGroups 是否已赋值
                      * @return SecurityGroups 是否已赋值
+                     * 
                      */
                     bool SecurityGroupsHasBeenSet() const;
 

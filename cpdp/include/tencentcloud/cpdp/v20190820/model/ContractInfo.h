@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取米大师内部签约商户号
                      * @return ChannelContractMerchantId 米大师内部签约商户号
+                     * 
                      */
                     std::string GetChannelContractMerchantId() const;
 
                     /**
                      * 设置米大师内部签约商户号
-                     * @param ChannelContractMerchantId 米大师内部签约商户号
+                     * @param _channelContractMerchantId 米大师内部签约商户号
+                     * 
                      */
                     void SetChannelContractMerchantId(const std::string& _channelContractMerchantId);
 
                     /**
                      * 判断参数 ChannelContractMerchantId 是否已赋值
                      * @return ChannelContractMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelContractMerchantIdHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelContractSubMerchantId 米大师内部签约子商户号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelContractSubMerchantId() const;
 
                     /**
                      * 设置米大师内部签约子商户号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelContractSubMerchantId 米大师内部签约子商户号
+                     * @param _channelContractSubMerchantId 米大师内部签约子商户号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelContractSubMerchantId(const std::string& _channelContractSubMerchantId);
 
                     /**
                      * 判断参数 ChannelContractSubMerchantId 是否已赋值
                      * @return ChannelContractSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelContractSubMerchantIdHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelContractAppId 米大师内部签约应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelContractAppId() const;
 
                     /**
                      * 设置米大师内部签约应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelContractAppId 米大师内部签约应用ID
+                     * @param _channelContractAppId 米大师内部签约应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelContractAppId(const std::string& _channelContractAppId);
 
                     /**
                      * 判断参数 ChannelContractAppId 是否已赋值
                      * @return ChannelContractAppId 是否已赋值
+                     * 
                      */
                     bool ChannelContractAppIdHasBeenSet() const;
 
@@ -115,38 +124,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelContractSubAppId 米大师内部签约子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelContractSubAppId() const;
 
                     /**
                      * 设置米大师内部签约子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelContractSubAppId 米大师内部签约子应用ID
+                     * @param _channelContractSubAppId 米大师内部签约子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelContractSubAppId(const std::string& _channelContractSubAppId);
 
                     /**
                      * 判断参数 ChannelContractSubAppId 是否已赋值
                      * @return ChannelContractSubAppId 是否已赋值
+                     * 
                      */
                     bool ChannelContractSubAppIdHasBeenSet() const;
 
                     /**
                      * 获取业务合约协议号
                      * @return OutContractCode 业务合约协议号
+                     * 
                      */
                     std::string GetOutContractCode() const;
 
                     /**
                      * 设置业务合约协议号
-                     * @param OutContractCode 业务合约协议号
+                     * @param _outContractCode 业务合约协议号
+                     * 
                      */
                     void SetOutContractCode(const std::string& _outContractCode);
 
                     /**
                      * 判断参数 OutContractCode 是否已赋值
                      * @return OutContractCode 是否已赋值
+                     * 
                      */
                     bool OutContractCodeHasBeenSet() const;
 
@@ -155,38 +170,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalContractUserInfoList 第三方渠道用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExternalContractUserInfo> GetExternalContractUserInfoList() const;
 
                     /**
                      * 设置第三方渠道用户信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalContractUserInfoList 第三方渠道用户信息
+                     * @param _externalContractUserInfoList 第三方渠道用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalContractUserInfoList(const std::vector<ExternalContractUserInfo>& _externalContractUserInfoList);
 
                     /**
                      * 判断参数 ExternalContractUserInfoList 是否已赋值
                      * @return ExternalContractUserInfoList 是否已赋值
+                     * 
                      */
                     bool ExternalContractUserInfoListHasBeenSet() const;
 
                     /**
                      * 获取签约方式，如 wechat_app ，使用app方式下的微信签
                      * @return ContractMethod 签约方式，如 wechat_app ，使用app方式下的微信签
+                     * 
                      */
                     std::string GetContractMethod() const;
 
                     /**
                      * 设置签约方式，如 wechat_app ，使用app方式下的微信签
-                     * @param ContractMethod 签约方式，如 wechat_app ，使用app方式下的微信签
+                     * @param _contractMethod 签约方式，如 wechat_app ，使用app方式下的微信签
+                     * 
                      */
                     void SetContractMethod(const std::string& _contractMethod);
 
                     /**
                      * 判断参数 ContractMethod 是否已赋值
                      * @return ContractMethod 是否已赋值
+                     * 
                      */
                     bool ContractMethodHasBeenSet() const;
 
@@ -195,56 +216,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContractSceneId 合约场景id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContractSceneId() const;
 
                     /**
                      * 设置合约场景id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContractSceneId 合约场景id
+                     * @param _contractSceneId 合约场景id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContractSceneId(const std::string& _contractSceneId);
 
                     /**
                      * 判断参数 ContractSceneId 是否已赋值
                      * @return ContractSceneId 是否已赋值
+                     * 
                      */
                     bool ContractSceneIdHasBeenSet() const;
 
                     /**
                      * 获取用户信息
                      * @return UserInfo 用户信息
+                     * 
                      */
                     ContractUserInfo GetUserInfo() const;
 
                     /**
                      * 设置用户信息
-                     * @param UserInfo 用户信息
+                     * @param _userInfo 用户信息
+                     * 
                      */
                     void SetUserInfo(const ContractUserInfo& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 
                     /**
                      * 获取第三方渠道签约数据
                      * @return ExternalContractData 第三方渠道签约数据
+                     * 
                      */
                     std::string GetExternalContractData() const;
 
                     /**
                      * 设置第三方渠道签约数据
-                     * @param ExternalContractData 第三方渠道签约数据
+                     * @param _externalContractData 第三方渠道签约数据
+                     * 
                      */
                     void SetExternalContractData(const std::string& _externalContractData);
 
                     /**
                      * 判断参数 ExternalContractData 是否已赋值
                      * @return ExternalContractData 是否已赋值
+                     * 
                      */
                     bool ExternalContractDataHasBeenSet() const;
 

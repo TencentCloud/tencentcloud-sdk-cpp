@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取P2P应用ID
                      * @return P2PAppId P2P应用ID
+                     * 
                      */
                     std::string GetP2PAppId() const;
 
                     /**
                      * 设置P2P应用ID
-                     * @param P2PAppId P2P应用ID
+                     * @param _p2PAppId P2P应用ID
+                     * 
                      */
                     void SetP2PAppId(const std::string& _p2PAppId);
 
                     /**
                      * 判断参数 P2PAppId 是否已赋值
                      * @return P2PAppId 是否已赋值
+                     * 
                      */
                     bool P2PAppIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间，时间戳秒
                      * @return From 查询开始时间，时间戳秒
+                     * 
                      */
                     int64_t GetFrom() const;
 
                     /**
                      * 设置查询开始时间，时间戳秒
-                     * @param From 查询开始时间，时间戳秒
+                     * @param _from 查询开始时间，时间戳秒
+                     * 
                      */
                     void SetFrom(const int64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，时间戳秒
                      * @return To 查询结束时间，时间戳秒
+                     * 
                      */
                     int64_t GetTo() const;
 
                     /**
                      * 设置查询结束时间，时间戳秒
-                     * @param To 查询结束时间，时间戳秒
+                     * @param _to 查询结束时间，时间戳秒
+                     * 
                      */
                     void SetTo(const int64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取P2P通路ID
                      * @return P2PChannelId P2P通路ID
+                     * 
                      */
                     std::string GetP2PChannelId() const;
 
                     /**
                      * 设置P2P通路ID
-                     * @param P2PChannelId P2P通路ID
+                     * @param _p2PChannelId P2P通路ID
+                     * 
                      */
                     void SetP2PChannelId(const std::string& _p2PChannelId);
 
                     /**
                      * 判断参数 P2PChannelId 是否已赋值
                      * @return P2PChannelId 是否已赋值
+                     * 
                      */
                     bool P2PChannelIdHasBeenSet() const;
 

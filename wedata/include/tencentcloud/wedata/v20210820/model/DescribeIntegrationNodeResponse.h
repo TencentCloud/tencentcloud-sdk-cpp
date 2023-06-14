@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInfo 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IntegrationNodeInfo GetNodeInfo() const;
 
                     /**
                      * 判断参数 NodeInfo 是否已赋值
                      * @return NodeInfo 是否已赋值
+                     * 
                      */
                     bool NodeInfoHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceCheckFlag 上游节点是否已经修改。true 已修改，需要提示；false 没有修改
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSourceCheckFlag() const;
 
                     /**
                      * 判断参数 SourceCheckFlag 是否已赋值
                      * @return SourceCheckFlag 是否已赋值
+                     * 
                      */
                     bool SourceCheckFlagHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取人员库唯一标识符
                      * @return LibraryId 人员库唯一标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员库名称
                      * @return LibraryName 人员库名称
+                     * 
                      */
                     std::string GetLibraryName() const;
 
                     /**
                      * 判断参数 LibraryName 是否已赋值
                      * @return LibraryName 是否已赋值
+                     * 
                      */
                     bool LibraryNameHasBeenSet() const;
 

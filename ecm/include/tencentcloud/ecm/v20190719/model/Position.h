@@ -55,108 +55,126 @@ namespace TencentCloud
                     /**
                      * 获取实例所在的Zone的信息。
                      * @return ZoneInfo 实例所在的Zone的信息。
+                     * 
                      */
                     ZoneInfo GetZoneInfo() const;
 
                     /**
                      * 设置实例所在的Zone的信息。
-                     * @param ZoneInfo 实例所在的Zone的信息。
+                     * @param _zoneInfo 实例所在的Zone的信息。
+                     * 
                      */
                     void SetZoneInfo(const ZoneInfo& _zoneInfo);
 
                     /**
                      * 判断参数 ZoneInfo 是否已赋值
                      * @return ZoneInfo 是否已赋值
+                     * 
                      */
                     bool ZoneInfoHasBeenSet() const;
 
                     /**
                      * 获取实例所在的国家的信息。
                      * @return Country 实例所在的国家的信息。
+                     * 
                      */
                     Country GetCountry() const;
 
                     /**
                      * 设置实例所在的国家的信息。
-                     * @param Country 实例所在的国家的信息。
+                     * @param _country 实例所在的国家的信息。
+                     * 
                      */
                     void SetCountry(const Country& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
                     /**
                      * 获取实例所在的Area的信息。
                      * @return Area 实例所在的Area的信息。
+                     * 
                      */
                     Area GetArea() const;
 
                     /**
                      * 设置实例所在的Area的信息。
-                     * @param Area 实例所在的Area的信息。
+                     * @param _area 实例所在的Area的信息。
+                     * 
                      */
                     void SetArea(const Area& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取实例所在的省份的信息。
                      * @return Province 实例所在的省份的信息。
+                     * 
                      */
                     Province GetProvince() const;
 
                     /**
                      * 设置实例所在的省份的信息。
-                     * @param Province 实例所在的省份的信息。
+                     * @param _province 实例所在的省份的信息。
+                     * 
                      */
                     void SetProvince(const Province& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取实例所在的城市的信息。
                      * @return City 实例所在的城市的信息。
+                     * 
                      */
                     City GetCity() const;
 
                     /**
                      * 设置实例所在的城市的信息。
-                     * @param City 实例所在的城市的信息。
+                     * @param _city 实例所在的城市的信息。
+                     * 
                      */
                     void SetCity(const City& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取实例所在的Region的信息。
                      * @return RegionInfo 实例所在的Region的信息。
+                     * 
                      */
                     RegionInfo GetRegionInfo() const;
 
                     /**
                      * 设置实例所在的Region的信息。
-                     * @param RegionInfo 实例所在的Region的信息。
+                     * @param _regionInfo 实例所在的Region的信息。
+                     * 
                      */
                     void SetRegionInfo(const RegionInfo& _regionInfo);
 
                     /**
                      * 判断参数 RegionInfo 是否已赋值
                      * @return RegionInfo 是否已赋值
+                     * 
                      */
                     bool RegionInfoHasBeenSet() const;
 

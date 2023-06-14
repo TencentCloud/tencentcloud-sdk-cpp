@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务id
                      * @return MigrateId 迁移任务id
+                     * 
                      */
                     int64_t GetMigrateId() const;
 
                     /**
                      * 设置迁移任务id
-                     * @param MigrateId 迁移任务id
+                     * @param _migrateId 迁移任务id
+                     * 
                      */
                     void SetMigrateId(const int64_t& _migrateId);
 
                     /**
                      * 判断参数 MigrateId 是否已赋值
                      * @return MigrateId 是否已赋值
+                     * 
                      */
                     bool MigrateIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取客户备注名称
                      * @return ClientRemark 客户备注名称
+                     * 
                      */
                     std::string GetClientRemark() const;
 
                     /**
                      * 设置客户备注名称
-                     * @param ClientRemark 客户备注名称
+                     * @param _clientRemark 客户备注名称
+                     * 
                      */
                     void SetClientRemark(const std::string& _clientRemark);
 
                     /**
                      * 判断参数 ClientRemark 是否已赋值
                      * @return ClientRemark 是否已赋值
+                     * 
                      */
                     bool ClientRemarkHasBeenSet() const;
 
                     /**
                      * 获取客户账号ID
                      * @return ClientUin 客户账号ID
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 设置客户账号ID
-                     * @param ClientUin 客户账号ID
+                     * @param _clientUin 客户账号ID
+                     * 
                      */
                     void SetClientUin(const std::string& _clientUin);
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 

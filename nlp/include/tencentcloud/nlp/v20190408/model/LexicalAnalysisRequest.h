@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待分析的文本（仅支持UTF-8格式，不超过500字）
                      * @return Text 待分析的文本（仅支持UTF-8格式，不超过500字）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待分析的文本（仅支持UTF-8格式，不超过500字）
-                     * @param Text 待分析的文本（仅支持UTF-8格式，不超过500字）
+                     * @param _text 待分析的文本（仅支持UTF-8格式，不超过500字）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取指定要加载的自定义词库ID。
                      * @return DictId 指定要加载的自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置指定要加载的自定义词库ID。
-                     * @param DictId 指定要加载的自定义词库ID。
+                     * @param _dictId 指定要加载的自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Flag 词法分析模式（默认取2值）：
 1、高精度（混合粒度分词能力）；
 2、高性能（单粒度分词能力）；
+                     * 
                      */
                     uint64_t GetFlag() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置词法分析模式（默认取2值）：
 1、高精度（混合粒度分词能力）；
 2、高性能（单粒度分词能力）；
-                     * @param Flag 词法分析模式（默认取2值）：
+                     * @param _flag 词法分析模式（默认取2值）：
 1、高精度（混合粒度分词能力）；
 2、高性能（单粒度分词能力）；
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 

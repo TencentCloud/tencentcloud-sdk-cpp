@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取视频处理统计数据概览，展示所查询任务的概览以及详细数据。
                      * @return MediaProcessDataSet 视频处理统计数据概览，展示所查询任务的概览以及详细数据。
+                     * 
                      */
                     std::vector<TaskStatData> GetMediaProcessDataSet() const;
 
                     /**
                      * 判断参数 MediaProcessDataSet 是否已赋值
                      * @return MediaProcessDataSet 是否已赋值
+                     * 
                      */
                     bool MediaProcessDataSetHasBeenSet() const;
 

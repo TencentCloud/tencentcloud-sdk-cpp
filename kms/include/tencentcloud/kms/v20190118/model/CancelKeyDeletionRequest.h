@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要被取消删除的CMK的唯一标志
                      * @return KeyId 需要被取消删除的CMK的唯一标志
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置需要被取消删除的CMK的唯一标志
-                     * @param KeyId 需要被取消删除的CMK的唯一标志
+                     * @param _keyId 需要被取消删除的CMK的唯一标志
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

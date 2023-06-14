@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取指定时间点截图模板 ID。
                      * @return Definition 指定时间点截图模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置指定时间点截图模板 ID。
-                     * @param Definition 指定时间点截图模板 ID。
+                     * @param _definition 指定时间点截图模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return PositionType 截图方式。包含：
 <li>Time：依照时间点截图</li>
 <li>Percent：依照百分比截图</li>
+                     * 
                      */
                     std::string GetPositionType() const;
 
@@ -79,15 +83,17 @@ namespace TencentCloud
                      * 设置截图方式。包含：
 <li>Time：依照时间点截图</li>
 <li>Percent：依照百分比截图</li>
-                     * @param PositionType 截图方式。包含：
+                     * @param _positionType 截图方式。包含：
 <li>Time：依照时间点截图</li>
 <li>Percent：依照百分比截图</li>
+                     * 
                      */
                     void SetPositionType(const std::string& _positionType);
 
                     /**
                      * 判断参数 PositionType 是否已赋值
                      * @return PositionType 是否已赋值
+                     * 
                      */
                     bool PositionTypeHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
                      * @return PositionValue 截图位置：
 <li>对于依照时间点截图，该值表示指定视频第几秒的截图作为封面</li>
 <li>对于依照百分比截图，该值表示使用视频百分之多少的截图作为封面</li>
+                     * 
                      */
                     double GetPositionValue() const;
 
@@ -105,33 +112,38 @@ namespace TencentCloud
                      * 设置截图位置：
 <li>对于依照时间点截图，该值表示指定视频第几秒的截图作为封面</li>
 <li>对于依照百分比截图，该值表示使用视频百分之多少的截图作为封面</li>
-                     * @param PositionValue 截图位置：
+                     * @param _positionValue 截图位置：
 <li>对于依照时间点截图，该值表示指定视频第几秒的截图作为封面</li>
 <li>对于依照百分比截图，该值表示使用视频百分之多少的截图作为封面</li>
+                     * 
                      */
                     void SetPositionValue(const double& _positionValue);
 
                     /**
                      * 判断参数 PositionValue 是否已赋值
                      * @return PositionValue 是否已赋值
+                     * 
                      */
                     bool PositionValueHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
                     /**
                      * 判断参数 WatermarkSet 是否已赋值
                      * @return WatermarkSet 是否已赋值
+                     * 
                      */
                     bool WatermarkSetHasBeenSet() const;
 

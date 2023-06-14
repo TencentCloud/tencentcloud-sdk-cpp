@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取配额信息
                      * @return LimitInfo 配额信息
+                     * 
                      */
                     std::vector<Limit> GetLimitInfo() const;
 
                     /**
                      * 设置配额信息
-                     * @param LimitInfo 配额信息
+                     * @param _limitInfo 配额信息
+                     * 
                      */
                     void SetLimitInfo(const std::vector<Limit>& _limitInfo);
 
                     /**
                      * 判断参数 LimitInfo 是否已赋值
                      * @return LimitInfo 是否已赋值
+                     * 
                      */
                     bool LimitInfoHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
                      * @return OpenId 第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
-                     * @param OpenId 第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * @param _openId 第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取内部参数，暂未开放使用
                      * @return Channel 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置内部参数，暂未开放使用
-                     * @param Channel 内部参数，暂未开放使用
+                     * @param _channel 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * @deprecated
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取内部参数，暂未开放使用
                      * @return CustomUserId 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     std::string GetCustomUserId() const;
 
                     /**
                      * 设置内部参数，暂未开放使用
-                     * @param CustomUserId 内部参数，暂未开放使用
+                     * @param _customUserId 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     void SetCustomUserId(const std::string& _customUserId);
 
                     /**
                      * 判断参数 CustomUserId 是否已赋值
                      * @return CustomUserId 是否已赋值
+                     * @deprecated
                      */
                     bool CustomUserIdHasBeenSet() const;
 
                     /**
                      * 获取内部参数，暂未开放使用
                      * @return ClientIp 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置内部参数，暂未开放使用
-                     * @param ClientIp 内部参数，暂未开放使用
+                     * @param _clientIp 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * @deprecated
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取内部参数，暂未开放使用
                      * @return ProxyIp 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     std::string GetProxyIp() const;
 
                     /**
                      * 设置内部参数，暂未开放使用
-                     * @param ProxyIp 内部参数，暂未开放使用
+                     * @param _proxyIp 内部参数，暂未开放使用
+                     * @deprecated
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
                     /**
                      * 判断参数 ProxyIp 是否已赋值
                      * @return ProxyIp 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyIpHasBeenSet() const;
 

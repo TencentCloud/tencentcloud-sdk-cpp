@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取录制任务ID。
                      * @return TaskId 录制任务ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置录制任务ID。
-                     * @param TaskId 录制任务ID。
+                     * @param _taskId 录制任务ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

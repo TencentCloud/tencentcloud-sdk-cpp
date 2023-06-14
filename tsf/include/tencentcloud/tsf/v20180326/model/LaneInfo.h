@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneId 泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLaneId() const;
 
                     /**
                      * 设置泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaneId 泳道ID
+                     * @param _laneId 泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaneId(const std::string& _laneId);
 
                     /**
                      * 判断参数 LaneId 是否已赋值
                      * @return LaneId 是否已赋值
+                     * 
                      */
                     bool LaneIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneName 泳道名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLaneName() const;
 
                     /**
                      * 设置泳道名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaneName 泳道名称
+                     * @param _laneName 泳道名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaneName(const std::string& _laneName);
 
                     /**
                      * 判断参数 LaneName 是否已赋值
                      * @return LaneName 是否已赋值
+                     * 
                      */
                     bool LaneNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 泳道备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置泳道备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 泳道备注
+                     * @param _remark 泳道备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneGroupList 泳道部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LaneGroup> GetLaneGroupList() const;
 
                     /**
                      * 设置泳道部署组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaneGroupList 泳道部署组
+                     * @param _laneGroupList 泳道部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaneGroupList(const std::vector<LaneGroup>& _laneGroupList);
 
                     /**
                      * 判断参数 LaneGroupList 是否已赋值
                      * @return LaneGroupList 是否已赋值
+                     * 
                      */
                     bool LaneGroupListHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Entrance 是否入口应用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEntrance() const;
 
                     /**
                      * 设置是否入口应用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Entrance 是否入口应用
+                     * @param _entrance 是否入口应用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEntrance(const bool& _entrance);
 
                     /**
                      * 判断参数 Entrance 是否已赋值
                      * @return Entrance 是否已赋值
+                     * 
                      */
                     bool EntranceHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceIdList 泳道已经关联部署组的命名空间列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNamespaceIdList() const;
 
                     /**
                      * 设置泳道已经关联部署组的命名空间列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceIdList 泳道已经关联部署组的命名空间列表
+                     * @param _namespaceIdList 泳道已经关联部署组的命名空间列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceIdList(const std::vector<std::string>& _namespaceIdList);
 
                     /**
                      * 判断参数 NamespaceIdList 是否已赋值
                      * @return NamespaceIdList 是否已赋值
+                     * 
                      */
                     bool NamespaceIdListHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域码
                      * @return Region 地域码
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域码
-                     * @param Region 地域码
+                     * @param _region 地域码
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域码（新规范）
                      * @return RegionV3 地域码（新规范）
+                     * 
                      */
                     std::string GetRegionV3() const;
 
                     /**
                      * 设置地域码（新规范）
-                     * @param RegionV3 地域码（新规范）
+                     * @param _regionV3 地域码（新规范）
+                     * 
                      */
                     void SetRegionV3(const std::string& _regionV3);
 
                     /**
                      * 判断参数 RegionV3 是否已赋值
                      * @return RegionV3 是否已赋值
+                     * 
                      */
                     bool RegionV3HasBeenSet() const;
 
                     /**
                      * 获取资源实例数
                      * @return Count 资源实例数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置资源实例数
-                     * @param Count 资源实例数
+                     * @param _count 资源实例数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

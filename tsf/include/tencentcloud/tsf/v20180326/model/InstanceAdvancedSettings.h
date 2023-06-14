@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return MountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountTarget() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
+                     * @param _mountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountTarget(const std::string& _mountTarget);
 
                     /**
                      * 判断参数 MountTarget 是否已赋值
                      * @return MountTarget 是否已赋值
+                     * 
                      */
                     bool MountTargetHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
                      * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
 
                     /**
                      * 判断参数 DockerGraphPath 是否已赋值
                      * @return DockerGraphPath 是否已赋值
+                     * 
                      */
                     bool DockerGraphPathHasBeenSet() const;
 

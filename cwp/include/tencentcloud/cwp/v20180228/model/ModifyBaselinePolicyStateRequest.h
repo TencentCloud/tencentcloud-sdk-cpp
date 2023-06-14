@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取策略Id
                      * @return PolicyId 策略Id
+                     * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
                      * 设置策略Id
-                     * @param PolicyId 策略Id
+                     * @param _policyId 策略Id
+                     * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取开启状态[1:开启|0:未开启]
                      * @return IsEnabled 开启状态[1:开启|0:未开启]
+                     * 
                      */
                     int64_t GetIsEnabled() const;
 
                     /**
                      * 设置开启状态[1:开启|0:未开启]
-                     * @param IsEnabled 开启状态[1:开启|0:未开启]
+                     * @param _isEnabled 开启状态[1:开启|0:未开启]
+                     * 
                      */
                     void SetIsEnabled(const int64_t& _isEnabled);
 
                     /**
                      * 判断参数 IsEnabled 是否已赋值
                      * @return IsEnabled 是否已赋值
+                     * 
                      */
                     bool IsEnabledHasBeenSet() const;
 

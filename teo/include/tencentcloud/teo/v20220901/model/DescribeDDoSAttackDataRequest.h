@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
 <li>ddos_attackMaxPackageRate：攻击包速率峰值 ；</li>
 <li>ddos_attackBandwidth：攻击带宽曲线；</li>
 <li>ddos_attackPackageRate：攻击包速率曲线。</li>
+                     * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
@@ -98,53 +105,61 @@ namespace TencentCloud
 <li>ddos_attackMaxPackageRate：攻击包速率峰值 ；</li>
 <li>ddos_attackBandwidth：攻击带宽曲线；</li>
 <li>ddos_attackPackageRate：攻击包速率曲线。</li>
-                     * @param MetricNames 统计指标列表，取值有：
+                     * @param _metricNames 统计指标列表，取值有：
 <li>ddos_attackMaxBandwidth：攻击带宽峰值；</li>
 <li>ddos_attackMaxPackageRate：攻击包速率峰值 ；</li>
 <li>ddos_attackBandwidth：攻击带宽曲线；</li>
 <li>ddos_attackPackageRate：攻击包速率曲线。</li>
+                     * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
                     /**
                      * 判断参数 MetricNames 是否已赋值
                      * @return MetricNames 是否已赋值
+                     * 
                      */
                     bool MetricNamesHasBeenSet() const;
 
                     /**
                      * 获取站点集合，不填默认选择全部站点。
                      * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点集合，不填默认选择全部站点。
-                     * @param ZoneIds 站点集合，不填默认选择全部站点。
+                     * @param _zoneIds 站点集合，不填默认选择全部站点。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取DDoS策略组ID列表，不填默认选择全部策略ID。
                      * @return PolicyIds DDoS策略组ID列表，不填默认选择全部策略ID。
+                     * 
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
                      * 设置DDoS策略组ID列表，不填默认选择全部策略ID。
-                     * @param PolicyIds DDoS策略组ID列表，不填默认选择全部策略ID。
+                     * @param _policyIds DDoS策略组ID列表，不填默认选择全部策略ID。
+                     * 
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
                     /**
                      * 判断参数 PolicyIds 是否已赋值
                      * @return PolicyIds 是否已赋值
+                     * 
                      */
                     bool PolicyIdsHasBeenSet() const;
 
@@ -159,6 +174,7 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间与结束时间的间隔自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -168,17 +184,19 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间与结束时间的间隔自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
-                     * @param Interval 查询时间粒度，取值有：
+                     * @param _interval 查询时间粒度，取值有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间与结束时间的间隔自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
@@ -191,6 +209,7 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -199,16 +218,18 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

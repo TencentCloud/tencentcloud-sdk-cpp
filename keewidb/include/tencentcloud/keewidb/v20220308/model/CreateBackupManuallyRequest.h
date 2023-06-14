@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。
                      * @return InstanceId 待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。
-                     * @param InstanceId 待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。
+                     * @param _instanceId 待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取本次备份的备注信息。
                      * @return Remark 本次备份的备注信息。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置本次备份的备注信息。
-                     * @param Remark 本次备份的备注信息。
+                     * @param _remark 本次备份的备注信息。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取备份文件保存天数。0代表指定默认保留时间
                      * @return StorageDays 备份文件保存天数。0代表指定默认保留时间
+                     * 
                      */
                     int64_t GetStorageDays() const;
 
                     /**
                      * 设置备份文件保存天数。0代表指定默认保留时间
-                     * @param StorageDays 备份文件保存天数。0代表指定默认保留时间
+                     * @param _storageDays 备份文件保存天数。0代表指定默认保留时间
+                     * 
                      */
                     void SetStorageDays(const int64_t& _storageDays);
 
                     /**
                      * 判断参数 StorageDays 是否已赋值
                      * @return StorageDays 是否已赋值
+                     * 
                      */
                     bool StorageDaysHasBeenSet() const;
 

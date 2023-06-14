@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntegrationId 集成 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
                      * 判断参数 IntegrationId 是否已赋值
                      * @return IntegrationId 是否已赋值
+                     * 
                      */
                     bool IntegrationIdHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取虚拟网络Id
                      * @return VpcId 虚拟网络Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置虚拟网络Id
-                     * @param VpcId 虚拟网络Id
+                     * @param _vpcId 虚拟网络Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网Id
                      * @return SubnetId 子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网Id
-                     * @param SubnetId 子网Id
+                     * @param _subnetId 子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取关联已存在实例Id，不填则默认创建
                      * @return InstanceId 关联已存在实例Id，不填则默认创建
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置关联已存在实例Id，不填则默认创建
-                     * @param InstanceId 关联已存在实例Id，不填则默认创建
+                     * @param _instanceId 关联已存在实例Id，不填则默认创建
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomProm 第三方 Prometheus
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CustomPromConfig GetCustomProm() const;
 
                     /**
                      * 设置第三方 Prometheus
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomProm 第三方 Prometheus
+                     * @param _customProm 第三方 Prometheus
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomProm(const CustomPromConfig& _customProm);
 
                     /**
                      * 判断参数 CustomProm 是否已赋值
                      * @return CustomProm 是否已赋值
+                     * 
                      */
                     bool CustomPromHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡ID。
                      * @return LoadBalancerId 负载均衡ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡ID。
-                     * @param LoadBalancerId 负载均衡ID。
+                     * @param _loadBalancerId 负载均衡ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取解绑目标。
                      * @return Targets 解绑目标。
+                     * 
                      */
                     std::vector<BatchTarget> GetTargets() const;
 
                     /**
                      * 设置解绑目标。
-                     * @param Targets 解绑目标。
+                     * @param _targets 解绑目标。
+                     * 
                      */
                     void SetTargets(const std::vector<BatchTarget>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

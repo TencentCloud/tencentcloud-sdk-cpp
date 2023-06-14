@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取成功或者失败
                      * @return Data 成功或者失败
+                     * 
                      */
                     bool GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

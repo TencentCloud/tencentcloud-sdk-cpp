@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 基线名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置基线名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 基线名
+                     * @param _name 基线名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 危害等级：1-低危；2-中危；3-高危；4-严重
+                     * @param _level 危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCount 检测项数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleCount() const;
 
                     /**
                      * 设置检测项数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleCount 检测项数量
+                     * @param _ruleCount 检测项数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleCount(const uint64_t& _ruleCount);
 
                     /**
                      * 判断参数 RuleCount 是否已赋值
                      * @return RuleCount 是否已赋值
+                     * 
                      */
                     bool RuleCountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 影响服务器数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 设置影响服务器数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostCount 影响服务器数量
+                     * @param _hostCount 影响服务器数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostCount(const uint64_t& _hostCount);
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 通过状态:0:未通过,1:已通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置通过状态:0:未通过,1:已通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 通过状态:0:未通过,1:已通过
+                     * @param _status 通过状态:0:未通过,1:已通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 基线id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCategoryId() const;
 
                     /**
                      * 设置基线id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CategoryId 基线id
+                     * @param _categoryId 基线id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategoryId(const uint64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastScanTime 最后检测时间
+                     * @param _lastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
 
                     /**
                      * 判断参数 LastScanTime 是否已赋值
                      * @return LastScanTime 是否已赋值
+                     * 
                      */
                     bool LastScanTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStatus 检测中状态: 5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxStatus() const;
 
                     /**
                      * 设置检测中状态: 5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxStatus 检测中状态: 5
+                     * @param _maxStatus 检测中状态: 5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxStatus(const uint64_t& _maxStatus);
 
                     /**
                      * 判断参数 MaxStatus 是否已赋值
                      * @return MaxStatus 是否已赋值
+                     * 
                      */
                     bool MaxStatusHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineFailCount 基线风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBaselineFailCount() const;
 
                     /**
                      * 设置基线风险项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BaselineFailCount 基线风险项
+                     * @param _baselineFailCount 基线风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBaselineFailCount(const uint64_t& _baselineFailCount);
 
                     /**
                      * 判断参数 BaselineFailCount 是否已赋值
                      * @return BaselineFailCount 是否已赋值
+                     * 
                      */
                     bool BaselineFailCountHasBeenSet() const;
 

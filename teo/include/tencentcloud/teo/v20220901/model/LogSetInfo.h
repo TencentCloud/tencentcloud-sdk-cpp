@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取日志集所属地区。
                      * @return LogSetRegion 日志集所属地区。
+                     * 
                      */
                     std::string GetLogSetRegion() const;
 
                     /**
                      * 设置日志集所属地区。
-                     * @param LogSetRegion 日志集所属地区。
+                     * @param _logSetRegion 日志集所属地区。
+                     * 
                      */
                     void SetLogSetRegion(const std::string& _logSetRegion);
 
                     /**
                      * 判断参数 LogSetRegion 是否已赋值
                      * @return LogSetRegion 是否已赋值
+                     * 
                      */
                     bool LogSetRegionHasBeenSet() const;
 
                     /**
                      * 获取日志集名
                      * @return LogSetName 日志集名
+                     * 
                      */
                     std::string GetLogSetName() const;
 
                     /**
                      * 设置日志集名
-                     * @param LogSetName 日志集名
+                     * @param _logSetName 日志集名
+                     * 
                      */
                     void SetLogSetName(const std::string& _logSetName);
 
                     /**
                      * 判断参数 LogSetName 是否已赋值
                      * @return LogSetName 是否已赋值
+                     * 
                      */
                     bool LogSetNameHasBeenSet() const;
 
                     /**
                      * 获取日志集Id
                      * @return LogSetId 日志集Id
+                     * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置日志集Id
-                     * @param LogSetId 日志集Id
+                     * @param _logSetId 日志集Id
+                     * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
                     /**
                      * 判断参数 LogSetId 是否已赋值
                      * @return LogSetId 是否已赋值
+                     * 
                      */
                     bool LogSetIdHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return Deleted 该日志集是否已被删除, 可选的值有：
 <li>no: 日志集没有被删除；</li>
 <li>yes: 日志集已经被删除；</li>
+                     * 
                      */
                     std::string GetDeleted() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置该日志集是否已被删除, 可选的值有：
 <li>no: 日志集没有被删除；</li>
 <li>yes: 日志集已经被删除；</li>
-                     * @param Deleted 该日志集是否已被删除, 可选的值有：
+                     * @param _deleted 该日志集是否已被删除, 可选的值有：
 <li>no: 日志集没有被删除；</li>
 <li>yes: 日志集已经被删除；</li>
+                     * 
                      */
                     void SetDeleted(const std::string& _deleted);
 
                     /**
                      * 判断参数 Deleted 是否已赋值
                      * @return Deleted 是否已赋值
+                     * 
                      */
                     bool DeletedHasBeenSet() const;
 

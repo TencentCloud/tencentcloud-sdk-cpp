@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取总读取条数
                      * @return TotalReadRecords 总读取条数
+                     * 
                      */
                     uint64_t GetTotalReadRecords() const;
 
                     /**
                      * 判断参数 TotalReadRecords 是否已赋值
                      * @return TotalReadRecords 是否已赋值
+                     * 
                      */
                     bool TotalReadRecordsHasBeenSet() const;
 
                     /**
                      * 获取总读取字节数，单位为Byte
                      * @return TotalReadBytes 总读取字节数，单位为Byte
+                     * 
                      */
                     uint64_t GetTotalReadBytes() const;
 
                     /**
                      * 判断参数 TotalReadBytes 是否已赋值
                      * @return TotalReadBytes 是否已赋值
+                     * 
                      */
                     bool TotalReadBytesHasBeenSet() const;
 
                     /**
                      * 获取总写入条数
                      * @return TotalWriteRecords 总写入条数
+                     * 
                      */
                     uint64_t GetTotalWriteRecords() const;
 
                     /**
                      * 判断参数 TotalWriteRecords 是否已赋值
                      * @return TotalWriteRecords 是否已赋值
+                     * 
                      */
                     bool TotalWriteRecordsHasBeenSet() const;
 
                     /**
                      * 获取总写入字节数，单位为Byte
                      * @return TotalWriteBytes 总写入字节数，单位为Byte
+                     * 
                      */
                     uint64_t GetTotalWriteBytes() const;
 
                     /**
                      * 判断参数 TotalWriteBytes 是否已赋值
                      * @return TotalWriteBytes 是否已赋值
+                     * 
                      */
                     bool TotalWriteBytesHasBeenSet() const;
 
                     /**
                      * 获取总脏数据条数
                      * @return TotalErrorRecords 总脏数据条数
+                     * 
                      */
                     uint64_t GetTotalErrorRecords() const;
 
                     /**
                      * 判断参数 TotalErrorRecords 是否已赋值
                      * @return TotalErrorRecords 是否已赋值
+                     * 
                      */
                     bool TotalErrorRecordsHasBeenSet() const;
 

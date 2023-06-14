@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取申请对账文件的任务ID。
                      * @return ApplyFileId 申请对账文件的任务ID。
+                     * 
                      */
                     std::string GetApplyFileId() const;
 
                     /**
                      * 设置申请对账文件的任务ID。
-                     * @param ApplyFileId 申请对账文件的任务ID。
+                     * @param _applyFileId 申请对账文件的任务ID。
+                     * 
                      */
                     void SetApplyFileId(const std::string& _applyFileId);
 
                     /**
                      * 判断参数 ApplyFileId 是否已赋值
                      * @return ApplyFileId 是否已赋值
+                     * 
                      */
                     bool ApplyFileIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ __F__：申请失败
 __I__：申请中
 __S__：申请成功
 __F__：申请失败
+                     * 
                      */
                     std::string GetApplyStatus() const;
 
@@ -81,16 +85,18 @@ __F__：申请失败
 __I__：申请中
 __S__：申请成功
 __F__：申请失败
-                     * @param ApplyStatus 对账文件申请状态。
+                     * @param _applyStatus 对账文件申请状态。
 __I__：申请中
 __S__：申请成功
 __F__：申请失败
+                     * 
                      */
                     void SetApplyStatus(const std::string& _applyStatus);
 
                     /**
                      * 判断参数 ApplyStatus 是否已赋值
                      * @return ApplyStatus 是否已赋值
+                     * 
                      */
                     bool ApplyStatusHasBeenSet() const;
 
@@ -99,20 +105,23 @@ __F__：申请失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyMessage 申请结果描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplyMessage() const;
 
                     /**
                      * 设置申请结果描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplyMessage 申请结果描述。
+                     * @param _applyMessage 申请结果描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplyMessage(const std::string& _applyMessage);
 
                     /**
                      * 判断参数 ApplyMessage 是否已赋值
                      * @return ApplyMessage 是否已赋值
+                     * 
                      */
                     bool ApplyMessageHasBeenSet() const;
 
@@ -121,20 +130,23 @@ __F__：申请失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUrlArray 对账文件下载地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFileUrlArray() const;
 
                     /**
                      * 设置对账文件下载地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileUrlArray 对账文件下载地址列表。
+                     * @param _fileUrlArray 对账文件下载地址列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileUrlArray(const std::vector<std::string>& _fileUrlArray);
 
                     /**
                      * 判断参数 FileUrlArray 是否已赋值
                      * @return FileUrlArray 是否已赋值
+                     * 
                      */
                     bool FileUrlArrayHasBeenSet() const;
 

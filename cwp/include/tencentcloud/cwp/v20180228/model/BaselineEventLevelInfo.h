@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventLevel 危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEventLevel() const;
 
                     /**
                      * 设置危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventLevel 危害等级：1-低危；2-中危；3-高危；4-严重
+                     * @param _eventLevel 危害等级：1-低危；2-中危；3-高危；4-严重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventLevel(const uint64_t& _eventLevel);
 
                     /**
                      * 判断参数 EventLevel 是否已赋值
                      * @return EventLevel 是否已赋值
+                     * 
                      */
                     bool EventLevelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCount 漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEventCount() const;
 
                     /**
                      * 设置漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventCount 漏洞数量
+                     * @param _eventCount 漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventCount(const uint64_t& _eventCount);
 
                     /**
                      * 判断参数 EventCount 是否已赋值
                      * @return EventCount 是否已赋值
+                     * 
                      */
                     bool EventCountHasBeenSet() const;
 

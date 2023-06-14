@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取API ID
                      * @return ApiId API ID
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID
-                     * @param ApiId API ID
+                     * @param _apiId API ID
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取切换状态，enabled/disabled
                      * @return UsableStatus 切换状态，enabled/disabled
+                     * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
                      * 设置切换状态，enabled/disabled
-                     * @param UsableStatus 切换状态，enabled/disabled
+                     * @param _usableStatus 切换状态，enabled/disabled
+                     * 
                      */
                     void SetUsableStatus(const std::string& _usableStatus);
 
                     /**
                      * 判断参数 UsableStatus 是否已赋值
                      * @return UsableStatus 是否已赋值
+                     * 
                      */
                     bool UsableStatusHasBeenSet() const;
 

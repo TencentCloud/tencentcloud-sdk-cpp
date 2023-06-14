@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 溯源水印任务开关，此字段必填，可选值：
 <li>ON：开启溯源水印；</li>
 <li>OFF：关闭溯源水印。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置溯源水印任务开关，此字段必填，可选值：
 <li>ON：开启溯源水印；</li>
 <li>OFF：关闭溯源水印。</li>
-                     * @param Switch 溯源水印任务开关，此字段必填，可选值：
+                     * @param _switch 溯源水印任务开关，此字段必填，可选值：
 <li>ON：开启溯源水印；</li>
 <li>OFF：关闭溯源水印。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取该字段已废弃，请勿使用。
                      * @return Definition 该字段已废弃，请勿使用。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置该字段已废弃，请勿使用。
-                     * @param Definition 该字段已废弃，请勿使用。
+                     * @param _definition 该字段已废弃，请勿使用。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取策略名称
                      * @return Name 策略名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略名称
-                     * @param Name 策略名称
+                     * @param _name 策略名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
                      * @return Smode 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
+                     * 
                      */
                     std::string GetSmode() const;
 
                     /**
                      * 设置匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
-                     * @param Smode 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
+                     * @param _smode 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
+                     * 
                      */
                     void SetSmode(const std::string& _smode);
 
                     /**
                      * 判断参数 Smode 是否已赋值
                      * @return Smode 是否已赋值
+                     * 
                      */
                     bool SmodeHasBeenSet() const;
 
                     /**
                      * 获取策略id
                      * @return SetId 策略id
+                     * 
                      */
                     std::string GetSetId() const;
 
                     /**
                      * 设置策略id
-                     * @param SetId 策略id
+                     * @param _setId 策略id
+                     * 
                      */
                     void SetSetId(const std::string& _setId);
 
                     /**
                      * 判断参数 SetId 是否已赋值
                      * @return SetId 是否已赋值
+                     * 
                      */
                     bool SetIdHasBeenSet() const;
 
                     /**
                      * 获取每分钟限制的次数
                      * @return Frequency 每分钟限制的次数
+                     * 
                      */
                     uint64_t GetFrequency() const;
 
                     /**
                      * 设置每分钟限制的次数
-                     * @param Frequency 每分钟限制的次数
+                     * @param _frequency 每分钟限制的次数
+                     * 
                      */
                     void SetFrequency(const uint64_t& _frequency);
 
                     /**
                      * 判断参数 Frequency 是否已赋值
                      * @return Frequency 是否已赋值
+                     * 
                      */
                     bool FrequencyHasBeenSet() const;
 
                     /**
                      * 获取执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
                      * @return ExeMode 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
+                     * 
                      */
                     std::string GetExeMode() const;
 
                     /**
                      * 设置执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
-                     * @param ExeMode 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
+                     * @param _exeMode 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
+                     * 
                      */
                     void SetExeMode(const std::string& _exeMode);
 
                     /**
                      * 判断参数 ExeMode 是否已赋值
                      * @return ExeMode 是否已赋值
+                     * 
                      */
                     bool ExeModeHasBeenSet() const;
 
                     /**
                      * 获取生效开关
                      * @return Switch 生效开关
+                     * 
                      */
                     uint64_t GetSwitch() const;
 
                     /**
                      * 设置生效开关
-                     * @param Switch 生效开关
+                     * @param _switch 生效开关
+                     * 
                      */
                     void SetSwitch(const uint64_t& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取规则列表
                      * @return RuleList 规则列表
+                     * 
                      */
                     std::vector<CCRule> GetRuleList() const;
 
                     /**
                      * 设置规则列表
-                     * @param RuleList 规则列表
+                     * @param _ruleList 规则列表
+                     * 
                      */
                     void SetRuleList(const std::vector<CCRule>& _ruleList);
 
                     /**
                      * 判断参数 RuleList 是否已赋值
                      * @return RuleList 是否已赋值
+                     * 
                      */
                     bool RuleListHasBeenSet() const;
 
                     /**
                      * 获取IP列表，如果不填时，请传空数组但不能为null；
                      * @return IpList IP列表，如果不填时，请传空数组但不能为null；
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置IP列表，如果不填时，请传空数组但不能为null；
-                     * @param IpList IP列表，如果不填时，请传空数组但不能为null；
+                     * @param _ipList IP列表，如果不填时，请传空数组但不能为null；
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 
                     /**
                      * 获取cc防护类型，取值[http，https]
                      * @return Protocol cc防护类型，取值[http，https]
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置cc防护类型，取值[http，https]
-                     * @param Protocol cc防护类型，取值[http，https]
+                     * @param _protocol cc防护类型，取值[http，https]
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
                      * @return RuleId 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
-                     * @param RuleId 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
+                     * @param _ruleId 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取HTTPS的CC防护域名
                      * @return Domain HTTPS的CC防护域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置HTTPS的CC防护域名
-                     * @param Domain HTTPS的CC防护域名
+                     * @param _domain HTTPS的CC防护域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

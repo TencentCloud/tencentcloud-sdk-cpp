@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return StartTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
-                     * @param StartTime 起始时间点，接口查询支持两种时间格式：
+                     * @param _startTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近三个月的数据查询，时间跨度最大是1个月。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -85,16 +89,18 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近三个月的数据查询，时间跨度最大是1个月。
-                     * @param EndTime 结束时间点，接口查询支持两种时间格式：
+                     * @param _endTime 结束时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 支持最近三个月的数据查询，时间跨度最大是1个月。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

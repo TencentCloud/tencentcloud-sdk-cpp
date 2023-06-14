@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowId CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
+                     * @param _flowId CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealNames 订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 设置订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealNames 订单号列表
+                     * @param _dealNames 订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * @param _instanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealNameInstanceIdMapping 订单和购买实例对应映射列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DealInstanceDTO> GetDealNameInstanceIdMapping() const;
 
                     /**
                      * 设置订单和购买实例对应映射列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealNameInstanceIdMapping 订单和购买实例对应映射列表
+                     * @param _dealNameInstanceIdMapping 订单和购买实例对应映射列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealNameInstanceIdMapping(const std::vector<DealInstanceDTO>& _dealNameInstanceIdMapping);
 
                     /**
                      * 判断参数 DealNameInstanceIdMapping 是否已赋值
                      * @return DealNameInstanceIdMapping 是否已赋值
+                     * 
                      */
                     bool DealNameInstanceIdMappingHasBeenSet() const;
 

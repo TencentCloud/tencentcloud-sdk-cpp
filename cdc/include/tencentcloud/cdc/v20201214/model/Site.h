@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取站点名称
                      * @return Name 站点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置站点名称
-                     * @param Name 站点名称
+                     * @param _name 站点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取站点id
                      * @return SiteId 站点id
+                     * 
                      */
                     std::string GetSiteId() const;
 
                     /**
                      * 设置站点id
-                     * @param SiteId 站点id
+                     * @param _siteId 站点id
+                     * 
                      */
                     void SetSiteId(const std::string& _siteId);
 
                     /**
                      * 判断参数 SiteId 是否已赋值
                      * @return SiteId 是否已赋值
+                     * 
                      */
                     bool SiteIdHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 站点描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置站点描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 站点描述
+                     * @param _description 站点描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取站点创建时间
                      * @return CreateTime 站点创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置站点创建时间
-                     * @param CreateTime 站点创建时间
+                     * @param _createTime 站点创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

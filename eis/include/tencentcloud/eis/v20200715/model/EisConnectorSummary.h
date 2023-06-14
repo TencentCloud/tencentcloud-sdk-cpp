@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取连接器名称
                      * @return ConnectorName 连接器名称
+                     * 
                      */
                     std::string GetConnectorName() const;
 
                     /**
                      * 设置连接器名称
-                     * @param ConnectorName 连接器名称
+                     * @param _connectorName 连接器名称
+                     * 
                      */
                     void SetConnectorName(const std::string& _connectorName);
 
                     /**
                      * 判断参数 ConnectorName 是否已赋值
                      * @return ConnectorName 是否已赋值
+                     * 
                      */
                     bool ConnectorNameHasBeenSet() const;
 
                     /**
                      * 获取连接器展示名称
                      * @return DisplayName 连接器展示名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置连接器展示名称
-                     * @param DisplayName 连接器展示名称
+                     * @param _displayName 连接器展示名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取连接器对应企业
                      * @return Company 连接器对应企业
+                     * 
                      */
                     std::string GetCompany() const;
 
                     /**
                      * 设置连接器对应企业
-                     * @param Company 连接器对应企业
+                     * @param _company 连接器对应企业
+                     * 
                      */
                     void SetCompany(const std::string& _company);
 
                     /**
                      * 判断参数 Company 是否已赋值
                      * @return Company 是否已赋值
+                     * 
                      */
                     bool CompanyHasBeenSet() const;
 
                     /**
                      * 获取连接器对应产品
                      * @return Product 连接器对应产品
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置连接器对应产品
-                     * @param Product 连接器对应产品
+                     * @param _product 连接器对应产品
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取连接器版本
                      * @return ConnectorVersion 连接器版本
+                     * 
                      */
                     std::string GetConnectorVersion() const;
 
                     /**
                      * 设置连接器版本
-                     * @param ConnectorVersion 连接器版本
+                     * @param _connectorVersion 连接器版本
+                     * 
                      */
                     void SetConnectorVersion(const std::string& _connectorVersion);
 
                     /**
                      * 判断参数 ConnectorVersion 是否已赋值
                      * @return ConnectorVersion 是否已赋值
+                     * 
                      */
                     bool ConnectorVersionHasBeenSet() const;
 
                     /**
                      * 获取连接器创建时间
                      * @return CreateTime 连接器创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置连接器创建时间
-                     * @param CreateTime 连接器创建时间
+                     * @param _createTime 连接器创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

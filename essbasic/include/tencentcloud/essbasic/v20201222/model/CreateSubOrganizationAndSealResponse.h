@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取子机构在电子文件签署平台唯一标识
                      * @return SubOrganizationId 子机构在电子文件签署平台唯一标识
+                     * 
                      */
                     std::string GetSubOrganizationId() const;
 
                     /**
                      * 判断参数 SubOrganizationId 是否已赋值
                      * @return SubOrganizationId 是否已赋值
+                     * 
                      */
                     bool SubOrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取电子印章ID
                      * @return SealId 电子印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 

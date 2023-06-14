@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量
-                     * @param Offset 翻页偏移量
+                     * @param _offset 翻页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页的记录数
                      * @return Limit 每页的记录数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页的记录数
-                     * @param Limit 每页的记录数
+                     * @param _limit 每页的记录数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字，支持 API path
                      * @return SearchWord 搜索关键字，支持 API path
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字，支持 API path
-                     * @param SearchWord 搜索关键字，支持 API path
+                     * @param _searchWord 搜索关键字，支持 API path
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取部署组ID
                      * @return GatewayDeployGroupId 部署组ID
+                     * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
                      * 设置部署组ID
-                     * @param GatewayDeployGroupId 部署组ID
+                     * @param _gatewayDeployGroupId 部署组ID
+                     * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
 
                     /**
                      * 判断参数 GatewayDeployGroupId 是否已赋值
                      * @return GatewayDeployGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取阻断状态 0:关闭 1:开启
                      * @return Status 阻断状态 0:关闭 1:开启
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置阻断状态 0:关闭 1:开启
-                     * @param Status 阻断状态 0:关闭 1:开启
+                     * @param _status 阻断状态 0:关闭 1:开启
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

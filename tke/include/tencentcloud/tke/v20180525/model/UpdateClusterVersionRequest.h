@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群 Id
                      * @return ClusterId 集群 Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群 Id
-                     * @param ClusterId 集群 Id
+                     * @param _clusterId 集群 Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要升级到的版本
                      * @return DstVersion 需要升级到的版本
+                     * 
                      */
                     std::string GetDstVersion() const;
 
                     /**
                      * 设置需要升级到的版本
-                     * @param DstVersion 需要升级到的版本
+                     * @param _dstVersion 需要升级到的版本
+                     * 
                      */
                     void SetDstVersion(const std::string& _dstVersion);
 
                     /**
                      * 判断参数 DstVersion 是否已赋值
                      * @return DstVersion 是否已赋值
+                     * 
                      */
                     bool DstVersionHasBeenSet() const;
 
                     /**
                      * 获取集群自定义参数
                      * @return ExtraArgs 集群自定义参数
+                     * 
                      */
                     ClusterExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置集群自定义参数
-                     * @param ExtraArgs 集群自定义参数
+                     * @param _extraArgs 集群自定义参数
+                     * 
                      */
                     void SetExtraArgs(const ClusterExtraArgs& _extraArgs);
 
                     /**
                      * 判断参数 ExtraArgs 是否已赋值
                      * @return ExtraArgs 是否已赋值
+                     * 
                      */
                     bool ExtraArgsHasBeenSet() const;
 
                     /**
                      * 获取可容忍的最大不可用pod数目
                      * @return MaxNotReadyPercent 可容忍的最大不可用pod数目
+                     * 
                      */
                     double GetMaxNotReadyPercent() const;
 
                     /**
                      * 设置可容忍的最大不可用pod数目
-                     * @param MaxNotReadyPercent 可容忍的最大不可用pod数目
+                     * @param _maxNotReadyPercent 可容忍的最大不可用pod数目
+                     * 
                      */
                     void SetMaxNotReadyPercent(const double& _maxNotReadyPercent);
 
                     /**
                      * 判断参数 MaxNotReadyPercent 是否已赋值
                      * @return MaxNotReadyPercent 是否已赋值
+                     * 
                      */
                     bool MaxNotReadyPercentHasBeenSet() const;
 
                     /**
                      * 获取是否跳过预检查阶段
                      * @return SkipPreCheck 是否跳过预检查阶段
+                     * 
                      */
                     bool GetSkipPreCheck() const;
 
                     /**
                      * 设置是否跳过预检查阶段
-                     * @param SkipPreCheck 是否跳过预检查阶段
+                     * @param _skipPreCheck 是否跳过预检查阶段
+                     * 
                      */
                     void SetSkipPreCheck(const bool& _skipPreCheck);
 
                     /**
                      * 判断参数 SkipPreCheck 是否已赋值
                      * @return SkipPreCheck 是否已赋值
+                     * 
                      */
                     bool SkipPreCheckHasBeenSet() const;
 

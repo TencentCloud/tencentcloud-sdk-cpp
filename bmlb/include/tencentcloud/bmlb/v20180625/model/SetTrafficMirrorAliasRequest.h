@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID。
                      * @return TrafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置流量镜像实例ID。
-                     * @param TrafficMirrorId 流量镜像实例ID。
+                     * @param _trafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取流量镜像实例别名。
                      * @return Alias 流量镜像实例别名。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置流量镜像实例别名。
-                     * @param Alias 流量镜像实例别名。
+                     * @param _alias 流量镜像实例别名。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

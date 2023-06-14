@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取模版ID
                      * @return TemplateId 模版ID
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置模版ID
-                     * @param TemplateId 模版ID
+                     * @param _templateId 模版ID
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return Version 版本
+                     * 
                      */
                     uint64_t GetVersion() const;
 
                     /**
                      * 设置版本
-                     * @param Version 版本
+                     * @param _version 版本
+                     * 
                      */
                     void SetVersion(const uint64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取用户Id
                      * @return UserId 用户Id
+                     * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
                      * 设置用户Id
-                     * @param UserId 用户Id
+                     * @param _userId 用户Id
+                     * 
                      */
                     void SetUserId(const uint64_t& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户昵称
                      * @return UserName 用户昵称
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户昵称
-                     * @param UserName 用户昵称
+                     * @param _userName 用户昵称
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取变更类型1.新增2.修改3.删除
                      * @return AlterType 变更类型1.新增2.修改3.删除
+                     * 
                      */
                     uint64_t GetAlterType() const;
 
                     /**
                      * 设置变更类型1.新增2.修改3.删除
-                     * @param AlterType 变更类型1.新增2.修改3.删除
+                     * @param _alterType 变更类型1.新增2.修改3.删除
+                     * 
                      */
                     void SetAlterType(const uint64_t& _alterType);
 
                     /**
                      * 判断参数 AlterType 是否已赋值
                      * @return AlterType 是否已赋值
+                     * 
                      */
                     bool AlterTypeHasBeenSet() const;
 
                     /**
                      * 获取变更内容
                      * @return AlterContent 变更内容
+                     * 
                      */
                     std::string GetAlterContent() const;
 
                     /**
                      * 设置变更内容
-                     * @param AlterContent 变更内容
+                     * @param _alterContent 变更内容
+                     * 
                      */
                     void SetAlterContent(const std::string& _alterContent);
 
                     /**
                      * 判断参数 AlterContent 是否已赋值
                      * @return AlterContent 是否已赋值
+                     * 
                      */
                     bool AlterContentHasBeenSet() const;
 

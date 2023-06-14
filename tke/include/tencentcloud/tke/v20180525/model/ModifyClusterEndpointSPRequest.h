@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
                      * @return SecurityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * 
                      */
                     std::vector<std::string> GetSecurityPolicies() const;
 
                     /**
                      * 设置安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
-                     * @param SecurityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * @param _securityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+                     * 
                      */
                     void SetSecurityPolicies(const std::vector<std::string>& _securityPolicies);
 
                     /**
                      * 判断参数 SecurityPolicies 是否已赋值
                      * @return SecurityPolicies 是否已赋值
+                     * 
                      */
                     bool SecurityPoliciesHasBeenSet() const;
 
                     /**
                      * 获取修改外网访问安全组
                      * @return SecurityGroup 修改外网访问安全组
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置修改外网访问安全组
-                     * @param SecurityGroup 修改外网访问安全组
+                     * @param _securityGroup 修改外网访问安全组
+                     * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

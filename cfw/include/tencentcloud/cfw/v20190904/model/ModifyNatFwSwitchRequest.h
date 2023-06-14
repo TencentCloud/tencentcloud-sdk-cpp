@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取开关，0：关闭，1：开启
                      * @return Enable 开关，0：关闭，1：开启
+                     * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置开关，0：关闭，1：开启
-                     * @param Enable 开关，0：关闭，1：开启
+                     * @param _enable 开关，0：关闭，1：开启
+                     * 
                      */
                     void SetEnable(const int64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
                      * @return CfwInsIdList 防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     std::vector<std::string> GetCfwInsIdList() const;
 
                     /**
                      * 设置防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
-                     * @param CfwInsIdList 防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * @param _cfwInsIdList 防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     void SetCfwInsIdList(const std::vector<std::string>& _cfwInsIdList);
 
                     /**
                      * 判断参数 CfwInsIdList 是否已赋值
                      * @return CfwInsIdList 是否已赋值
+                     * 
                      */
                     bool CfwInsIdListHasBeenSet() const;
 
                     /**
                      * 获取子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
                      * @return SubnetIdList 子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIdList() const;
 
                     /**
                      * 设置子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
-                     * @param SubnetIdList 子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * @param _subnetIdList 子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     void SetSubnetIdList(const std::vector<std::string>& _subnetIdList);
 
                     /**
                      * 判断参数 SubnetIdList 是否已赋值
                      * @return SubnetIdList 是否已赋值
+                     * 
                      */
                     bool SubnetIdListHasBeenSet() const;
 
                     /**
                      * 获取路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
                      * @return RouteTableIdList 路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     std::vector<std::string> GetRouteTableIdList() const;
 
                     /**
                      * 设置路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
-                     * @param RouteTableIdList 路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * @param _routeTableIdList 路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。
+                     * 
                      */
                     void SetRouteTableIdList(const std::vector<std::string>& _routeTableIdList);
 
                     /**
                      * 判断参数 RouteTableIdList 是否已赋值
                      * @return RouteTableIdList 是否已赋值
+                     * 
                      */
                     bool RouteTableIdListHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 指标名称
+                     * @param _metricName 指标名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricFunction 指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricFunction() const;
 
                     /**
                      * 设置指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricFunction 指标计算方式
+                     * @param _metricFunction 指标计算方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricFunction(const std::string& _metricFunction);
 
                     /**
                      * 判断参数 MetricFunction 是否已赋值
                      * @return MetricFunction 是否已赋值
+                     * 
                      */
                     bool MetricFunctionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricDataPoints 指标数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MetricDataPoint> GetMetricDataPoints() const;
 
                     /**
                      * 设置指标数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricDataPoints 指标数据点集合
+                     * @param _metricDataPoints 指标数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricDataPoints(const std::vector<MetricDataPoint>& _metricDataPoints);
 
                     /**
                      * 判断参数 MetricDataPoints 是否已赋值
                      * @return MetricDataPoints 是否已赋值
+                     * 
                      */
                     bool MetricDataPointsHasBeenSet() const;
 

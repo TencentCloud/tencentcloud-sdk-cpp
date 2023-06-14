@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取用户id
                      * @return UserId 用户id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户id
-                     * @param UserId 用户id
+                     * @param _userId 用户id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户组id
                      * @return UserGroupId 用户组id
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置用户组id
-                     * @param UserGroupId 用户组id
+                     * @param _userGroupId 用户组id
+                     * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统实例id
                      * @return CfsId 文件系统实例id
+                     * 
                      */
                     std::string GetCfsId() const;
 
                     /**
                      * 设置文件系统实例id
-                     * @param CfsId 文件系统实例id
+                     * @param _cfsId 文件系统实例id
+                     * 
                      */
                     void SetCfsId(const std::string& _cfsId);
 
                     /**
                      * 判断参数 CfsId 是否已赋值
                      * @return CfsId 是否已赋值
+                     * 
                      */
                     bool CfsIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统挂载点id
                      * @return MountInsId 文件系统挂载点id
+                     * 
                      */
                     std::string GetMountInsId() const;
 
                     /**
                      * 设置文件系统挂载点id
-                     * @param MountInsId 文件系统挂载点id
+                     * @param _mountInsId 文件系统挂载点id
+                     * 
                      */
                     void SetMountInsId(const std::string& _mountInsId);
 
                     /**
                      * 判断参数 MountInsId 是否已赋值
                      * @return MountInsId 是否已赋值
+                     * 
                      */
                     bool MountInsIdHasBeenSet() const;
 
                     /**
                      * 获取本地挂载点
                      * @return LocalMountDir 本地挂载点
+                     * 
                      */
                     std::string GetLocalMountDir() const;
 
                     /**
                      * 设置本地挂载点
-                     * @param LocalMountDir 本地挂载点
+                     * @param _localMountDir 本地挂载点
+                     * 
                      */
                     void SetLocalMountDir(const std::string& _localMountDir);
 
                     /**
                      * 判断参数 LocalMountDir 是否已赋值
                      * @return LocalMountDir 是否已赋值
+                     * 
                      */
                     bool LocalMountDirHasBeenSet() const;
 
                     /**
                      * 获取远程挂载点
                      * @return RemoteMountDir 远程挂载点
+                     * 
                      */
                     std::string GetRemoteMountDir() const;
 
                     /**
                      * 设置远程挂载点
-                     * @param RemoteMountDir 远程挂载点
+                     * @param _remoteMountDir 远程挂载点
+                     * 
                      */
                     void SetRemoteMountDir(const std::string& _remoteMountDir);
 
                     /**
                      * 判断参数 RemoteMountDir 是否已赋值
                      * @return RemoteMountDir 是否已赋值
+                     * 
                      */
                     bool RemoteMountDirHasBeenSet() const;
 
@@ -161,6 +179,7 @@ namespace TencentCloud
                      * @return IpAddress 文件系统ip，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpAddress() const;
 
@@ -168,15 +187,17 @@ namespace TencentCloud
                      * 设置文件系统ip，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpAddress 文件系统ip，配置 cfs 时无需填写。
+                     * @param _ipAddress 文件系统ip，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
@@ -187,6 +208,7 @@ namespace TencentCloud
                      * @return MountVpcId 文件系统所在的私有网络id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountVpcId() const;
 
@@ -194,15 +216,17 @@ namespace TencentCloud
                      * 设置文件系统所在的私有网络id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountVpcId 文件系统所在的私有网络id，配置 cfs 时无需填写。
+                     * @param _mountVpcId 文件系统所在的私有网络id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountVpcId(const std::string& _mountVpcId);
 
                     /**
                      * 判断参数 MountVpcId 是否已赋值
                      * @return MountVpcId 是否已赋值
+                     * 
                      */
                     bool MountVpcIdHasBeenSet() const;
 
@@ -213,6 +237,7 @@ namespace TencentCloud
                      * @return MountSubnetId 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountSubnetId() const;
 
@@ -220,15 +245,17 @@ namespace TencentCloud
                      * 设置文件系统所在私有网络的子网id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountSubnetId 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
+                     * @param _mountSubnetId 文件系统所在私有网络的子网id，配置 cfs 时无需填写。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountSubnetId(const std::string& _mountSubnetId);
 
                     /**
                      * 判断参数 MountSubnetId 是否已赋值
                      * @return MountSubnetId 是否已赋值
+                     * 
                      */
                     bool MountSubnetIdHasBeenSet() const;
 

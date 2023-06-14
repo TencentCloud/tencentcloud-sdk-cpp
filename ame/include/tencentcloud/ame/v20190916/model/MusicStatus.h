@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id
                      * @return MusicId 歌曲Id
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 设置歌曲Id
-                     * @param MusicId 歌曲Id
+                     * @param _musicId 歌曲Id
+                     * 
                      */
                     void SetMusicId(const std::string& _musicId);
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 
                     /**
                      * 获取在售状态,0为在售，1为临时下架，2为永久下架
                      * @return SaleStatus 在售状态,0为在售，1为临时下架，2为永久下架
+                     * 
                      */
                     int64_t GetSaleStatus() const;
 
                     /**
                      * 设置在售状态,0为在售，1为临时下架，2为永久下架
-                     * @param SaleStatus 在售状态,0为在售，1为临时下架，2为永久下架
+                     * @param _saleStatus 在售状态,0为在售，1为临时下架，2为永久下架
+                     * 
                      */
                     void SetSaleStatus(const int64_t& _saleStatus);
 
                     /**
                      * 判断参数 SaleStatus 是否已赋值
                      * @return SaleStatus 是否已赋值
+                     * 
                      */
                     bool SaleStatusHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集团编码
                      * @return GroupCode 集团编码
+                     * 
                      */
                     std::string GetGroupCode() const;
 
                     /**
                      * 设置集团编码
-                     * @param GroupCode 集团编码
+                     * @param _groupCode 集团编码
+                     * 
                      */
                     void SetGroupCode(const std::string& _groupCode);
 
                     /**
                      * 判断参数 GroupCode 是否已赋值
                      * @return GroupCode 是否已赋值
+                     * 
                      */
                     bool GroupCodeHasBeenSet() const;
 
                     /**
                      * 获取进程监控信息列表
                      * @return ProgramStateItems 进程监控信息列表
+                     * 
                      */
                     std::vector<ProgramStateItem> GetProgramStateItems() const;
 
                     /**
                      * 设置进程监控信息列表
-                     * @param ProgramStateItems 进程监控信息列表
+                     * @param _programStateItems 进程监控信息列表
+                     * 
                      */
                     void SetProgramStateItems(const std::vector<ProgramStateItem>& _programStateItems);
 
                     /**
                      * 判断参数 ProgramStateItems 是否已赋值
                      * @return ProgramStateItems 是否已赋值
+                     * 
                      */
                     bool ProgramStateItemsHasBeenSet() const;
 
                     /**
                      * 获取商场ID
                      * @return MallId 商场ID
+                     * 
                      */
                     uint64_t GetMallId() const;
 
                     /**
                      * 设置商场ID
-                     * @param MallId 商场ID
+                     * @param _mallId 商场ID
+                     * 
                      */
                     void SetMallId(const uint64_t& _mallId);
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 

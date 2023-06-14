@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取多个生命周期规则ID，上限为10
                      * @return LifeCycleRuleIds 多个生命周期规则ID，上限为10
+                     * 
                      */
                     std::vector<uint64_t> GetLifeCycleRuleIds() const;
 
                     /**
                      * 设置多个生命周期规则ID，上限为10
-                     * @param LifeCycleRuleIds 多个生命周期规则ID，上限为10
+                     * @param _lifeCycleRuleIds 多个生命周期规则ID，上限为10
+                     * 
                      */
                     void SetLifeCycleRuleIds(const std::vector<uint64_t>& _lifeCycleRuleIds);
 
                     /**
                      * 判断参数 LifeCycleRuleIds 是否已赋值
                      * @return LifeCycleRuleIds 是否已赋值
+                     * 
                      */
                     bool LifeCycleRuleIdsHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取方向，0：出站，1：入站  默认值是 0
                      * @return Direction 方向，0：出站，1：入站  默认值是 0
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置方向，0：出站，1：入站  默认值是 0
-                     * @param Direction 方向，0：出站，1：入站  默认值是 0
+                     * @param _direction 方向，0：出站，1：入站  默认值是 0
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
                      * @return EdgeId VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
+                     * 
                      */
                     std::string GetEdgeId() const;
 
                     /**
                      * 设置VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
-                     * @param EdgeId VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
+                     * @param _edgeId VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’
+                     * 
                      */
                     void SetEdgeId(const std::string& _edgeId);
 
                     /**
                      * 判断参数 EdgeId 是否已赋值
                      * @return EdgeId 是否已赋值
+                     * 
                      */
                     bool EdgeIdHasBeenSet() const;
 
                     /**
                      * 获取nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
                      * @return Area nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
-                     * @param Area nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
+                     * @param _area nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

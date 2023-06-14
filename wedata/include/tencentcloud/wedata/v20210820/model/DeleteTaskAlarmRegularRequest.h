@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取主键ID
                      * @return Id 主键ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置主键ID
-                     * @param Id 主键ID
+                     * @param _id 主键ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型(201表示实时任务，202表示离线任务)
                      * @return TaskType 任务类型(201表示实时任务，202表示离线任务)
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型(201表示实时任务，202表示离线任务)
-                     * @param TaskType 任务类型(201表示实时任务，202表示离线任务)
+                     * @param _taskType 任务类型(201表示实时任务，202表示离线任务)
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

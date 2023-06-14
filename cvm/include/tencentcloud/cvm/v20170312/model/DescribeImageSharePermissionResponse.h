@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取镜像共享信息
                      * @return SharePermissionSet 镜像共享信息
+                     * 
                      */
                     std::vector<SharePermission> GetSharePermissionSet() const;
 
                     /**
                      * 判断参数 SharePermissionSet 是否已赋值
                      * @return SharePermissionSet 是否已赋值
+                     * 
                      */
                     bool SharePermissionSetHasBeenSet() const;
 

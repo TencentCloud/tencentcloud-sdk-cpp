@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMemberResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Partners::V20180321::Model;
+using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-DescribeAgentDealsCacheResponse::DescribeAgentDealsCacheResponse() :
-    m_agentDealSetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DescribeOrganizationFinancialByMemberResponse::DescribeOrganizationFinancialByMemberResponse() :
+    m_totalCostHasBeenSet(false),
+    m_itemsHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAgentDealsCacheResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeOrganizationFinancialByMemberResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +64,85 @@ CoreInternalOutcome DescribeAgentDealsCacheResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("AgentDealSet") && !rsp["AgentDealSet"].IsNull())
+    if (rsp.HasMember("TotalCost") && !rsp["TotalCost"].IsNull())
     {
-        if (!rsp["AgentDealSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AgentDealSet` is not array type"));
+        if (!rsp["TotalCost"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCost` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCost = rsp["TotalCost"].GetDouble();
+        m_totalCostHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["AgentDealSet"];
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
+    {
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentDealElem item;
+            OrgMemberFinancial item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_agentDealSet.push_back(item);
+            m_items.push_back(item);
         }
-        m_agentDealSetHasBeenSet = true;
+        m_itemsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAgentDealsCacheResponse::ToJsonString() const
+string DescribeOrganizationFinancialByMemberResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_agentDealSetHasBeenSet)
+    if (m_totalCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AgentDealSet";
+        string key = "TotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCost, allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_agentDealSet.begin(); itr != m_agentDealSet.end(); ++itr, ++i)
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_totalCountHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +157,34 @@ string DescribeAgentDealsCacheResponse::ToJsonString() const
 }
 
 
-vector<AgentDealElem> DescribeAgentDealsCacheResponse::GetAgentDealSet() const
+double DescribeOrganizationFinancialByMemberResponse::GetTotalCost() const
 {
-    return m_agentDealSet;
+    return m_totalCost;
 }
 
-bool DescribeAgentDealsCacheResponse::AgentDealSetHasBeenSet() const
+bool DescribeOrganizationFinancialByMemberResponse::TotalCostHasBeenSet() const
 {
-    return m_agentDealSetHasBeenSet;
+    return m_totalCostHasBeenSet;
 }
 
-uint64_t DescribeAgentDealsCacheResponse::GetTotalCount() const
+vector<OrgMemberFinancial> DescribeOrganizationFinancialByMemberResponse::GetItems() const
 {
-    return m_totalCount;
+    return m_items;
 }
 
-bool DescribeAgentDealsCacheResponse::TotalCountHasBeenSet() const
+bool DescribeOrganizationFinancialByMemberResponse::ItemsHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_itemsHasBeenSet;
+}
+
+int64_t DescribeOrganizationFinancialByMemberResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeOrganizationFinancialByMemberResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

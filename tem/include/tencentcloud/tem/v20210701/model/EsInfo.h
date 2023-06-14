@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取最小实例数
                      * @return MinAliveInstances 最小实例数
+                     * 
                      */
                     int64_t GetMinAliveInstances() const;
 
                     /**
                      * 设置最小实例数
-                     * @param MinAliveInstances 最小实例数
+                     * @param _minAliveInstances 最小实例数
+                     * 
                      */
                     void SetMinAliveInstances(const int64_t& _minAliveInstances);
 
                     /**
                      * 判断参数 MinAliveInstances 是否已赋值
                      * @return MinAliveInstances 是否已赋值
+                     * 
                      */
                     bool MinAliveInstancesHasBeenSet() const;
 
                     /**
                      * 获取最大实例数
                      * @return MaxAliveInstances 最大实例数
+                     * 
                      */
                     int64_t GetMaxAliveInstances() const;
 
                     /**
                      * 设置最大实例数
-                     * @param MaxAliveInstances 最大实例数
+                     * @param _maxAliveInstances 最大实例数
+                     * 
                      */
                     void SetMaxAliveInstances(const int64_t& _maxAliveInstances);
 
                     /**
                      * 判断参数 MaxAliveInstances 是否已赋值
                      * @return MaxAliveInstances 是否已赋值
+                     * 
                      */
                     bool MaxAliveInstancesHasBeenSet() const;
 
                     /**
                      * 获取弹性策略,1:cpu，2:内存
                      * @return EsStrategy 弹性策略,1:cpu，2:内存
+                     * 
                      */
                     int64_t GetEsStrategy() const;
 
                     /**
                      * 设置弹性策略,1:cpu，2:内存
-                     * @param EsStrategy 弹性策略,1:cpu，2:内存
+                     * @param _esStrategy 弹性策略,1:cpu，2:内存
+                     * 
                      */
                     void SetEsStrategy(const int64_t& _esStrategy);
 
                     /**
                      * 判断参数 EsStrategy 是否已赋值
                      * @return EsStrategy 是否已赋值
+                     * 
                      */
                     bool EsStrategyHasBeenSet() const;
 
                     /**
                      * 获取弹性扩缩容条件值
                      * @return Threshold 弹性扩缩容条件值
+                     * 
                      */
                     uint64_t GetThreshold() const;
 
                     /**
                      * 设置弹性扩缩容条件值
-                     * @param Threshold 弹性扩缩容条件值
+                     * @param _threshold 弹性扩缩容条件值
+                     * 
                      */
                     void SetThreshold(const uint64_t& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 
                     /**
                      * 获取版本Id
                      * @return VersionId 版本Id
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本Id
-                     * @param VersionId 版本Id
+                     * @param _versionId 版本Id
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

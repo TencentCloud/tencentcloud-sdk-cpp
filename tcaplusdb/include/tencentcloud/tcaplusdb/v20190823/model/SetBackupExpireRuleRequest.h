@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取表所属集群实例ID
                      * @return ClusterId 表所属集群实例ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表所属集群实例ID
-                     * @param ClusterId 表所属集群实例ID
+                     * @param _clusterId 表所属集群实例ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取淘汰策略数组
                      * @return BackupExpireRules 淘汰策略数组
+                     * 
                      */
                     std::vector<BackupExpireRuleInfo> GetBackupExpireRules() const;
 
                     /**
                      * 设置淘汰策略数组
-                     * @param BackupExpireRules 淘汰策略数组
+                     * @param _backupExpireRules 淘汰策略数组
+                     * 
                      */
                     void SetBackupExpireRules(const std::vector<BackupExpireRuleInfo>& _backupExpireRules);
 
                     /**
                      * 判断参数 BackupExpireRules 是否已赋值
                      * @return BackupExpireRules 是否已赋值
+                     * 
                      */
                     bool BackupExpireRulesHasBeenSet() const;
 

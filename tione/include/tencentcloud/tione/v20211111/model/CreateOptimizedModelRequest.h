@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取模型加速任务ID
                      * @return ModelAccTaskId 模型加速任务ID
+                     * 
                      */
                     std::string GetModelAccTaskId() const;
 
                     /**
                      * 设置模型加速任务ID
-                     * @param ModelAccTaskId 模型加速任务ID
+                     * @param _modelAccTaskId 模型加速任务ID
+                     * 
                      */
                     void SetModelAccTaskId(const std::string& _modelAccTaskId);
 
                     /**
                      * 判断参数 ModelAccTaskId 是否已赋值
                      * @return ModelAccTaskId 是否已赋值
+                     * 
                      */
                     bool ModelAccTaskIdHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

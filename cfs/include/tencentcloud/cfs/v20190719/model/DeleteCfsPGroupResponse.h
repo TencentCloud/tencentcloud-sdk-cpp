@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取用户 ID
                      * @return AppId 用户 ID
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 

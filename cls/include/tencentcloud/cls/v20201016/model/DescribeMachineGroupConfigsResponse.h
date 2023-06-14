@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configs 采集规则配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConfigInfo> GetConfigs() const;
 
                     /**
                      * 判断参数 Configs 是否已赋值
                      * @return Configs 是否已赋值
+                     * 
                      */
                     bool ConfigsHasBeenSet() const;
 

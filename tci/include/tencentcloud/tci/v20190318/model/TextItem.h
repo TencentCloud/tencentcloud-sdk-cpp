@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取当前句子包含的所有单词信息
                      * @return Words 当前句子包含的所有单词信息
+                     * 
                      */
                     std::vector<Word> GetWords() const;
 
                     /**
                      * 设置当前句子包含的所有单词信息
-                     * @param Words 当前句子包含的所有单词信息
+                     * @param _words 当前句子包含的所有单词信息
+                     * 
                      */
                     void SetWords(const std::vector<Word>& _words);
 
                     /**
                      * 判断参数 Words 是否已赋值
                      * @return Words 是否已赋值
+                     * 
                      */
                     bool WordsHasBeenSet() const;
 
                     /**
                      * 获取当前句子的置信度
                      * @return Confidence 当前句子的置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置当前句子的置信度
-                     * @param Confidence 当前句子的置信度
+                     * @param _confidence 当前句子的置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取当前句子语音的起始时间点，单位为ms
                      * @return Mbtm 当前句子语音的起始时间点，单位为ms
+                     * 
                      */
                     int64_t GetMbtm() const;
 
                     /**
                      * 设置当前句子语音的起始时间点，单位为ms
-                     * @param Mbtm 当前句子语音的起始时间点，单位为ms
+                     * @param _mbtm 当前句子语音的起始时间点，单位为ms
+                     * 
                      */
                     void SetMbtm(const int64_t& _mbtm);
 
                     /**
                      * 判断参数 Mbtm 是否已赋值
                      * @return Mbtm 是否已赋值
+                     * 
                      */
                     bool MbtmHasBeenSet() const;
 
                     /**
                      * 获取当前句子语音的终止时间点，单位为ms
                      * @return Metm 当前句子语音的终止时间点，单位为ms
+                     * 
                      */
                     int64_t GetMetm() const;
 
                     /**
                      * 设置当前句子语音的终止时间点，单位为ms
-                     * @param Metm 当前句子语音的终止时间点，单位为ms
+                     * @param _metm 当前句子语音的终止时间点，单位为ms
+                     * 
                      */
                     void SetMetm(const int64_t& _metm);
 
                     /**
                      * 判断参数 Metm 是否已赋值
                      * @return Metm 是否已赋值
+                     * 
                      */
                     bool MetmHasBeenSet() const;
 
                     /**
                      * 获取保留参数，暂无意义
                      * @return Tag 保留参数，暂无意义
+                     * 
                      */
                     int64_t GetTag() const;
 
                     /**
                      * 设置保留参数，暂无意义
-                     * @param Tag 保留参数，暂无意义
+                     * @param _tag 保留参数，暂无意义
+                     * 
                      */
                     void SetTag(const int64_t& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取当前句子
                      * @return Text 当前句子
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置当前句子
-                     * @param Text 当前句子
+                     * @param _text 当前句子
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取当前句子的字节数
                      * @return TextSize 当前句子的字节数
+                     * 
                      */
                     int64_t GetTextSize() const;
 
                     /**
                      * 设置当前句子的字节数
-                     * @param TextSize 当前句子的字节数
+                     * @param _textSize 当前句子的字节数
+                     * 
                      */
                     void SetTextSize(const int64_t& _textSize);
 
                     /**
                      * 判断参数 TextSize 是否已赋值
                      * @return TextSize 是否已赋值
+                     * 
                      */
                     bool TextSizeHasBeenSet() const;
 

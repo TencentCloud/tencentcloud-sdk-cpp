@@ -57,6 +57,7 @@ PAYMENT_ORDER_EXTERNAL_REQUEST_DATA: 支付下单请求数据
 PAYMENT_ORDER_EXTERNAL_RETURN_DATA: 支付下单返回数据
 PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalChannelDataName() const;
 
@@ -66,17 +67,19 @@ PAYMENT_ORDER_EXTERNAL_REQUEST_DATA: 支付下单请求数据
 PAYMENT_ORDER_EXTERNAL_RETURN_DATA: 支付下单返回数据
 PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalChannelDataName 第三方渠道数据名。
+                     * @param _externalChannelDataName 第三方渠道数据名。
 PAYMENT_ORDER_EXTERNAL_REQUEST_DATA: 支付下单请求数据
 PAYMENT_ORDER_EXTERNAL_RETURN_DATA: 支付下单返回数据
 PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalChannelDataName(const std::string& _externalChannelDataName);
 
                     /**
                      * 判断参数 ExternalChannelDataName 是否已赋值
                      * @return ExternalChannelDataName 是否已赋值
+                     * 
                      */
                     bool ExternalChannelDataNameHasBeenSet() const;
 
@@ -87,6 +90,7 @@ PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据
                      * @return ExternalChannelDataValue 第三方渠道数据值。
 当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://dev.tke.midas.qq.com/juxin-doc-next/apidocs/external-channel-data/QueryExternalChannelData.html#externalchannelpaymentdatavalue)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalChannelDataValue() const;
 
@@ -94,15 +98,17 @@ PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据
                      * 设置第三方渠道数据值。
 当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://dev.tke.midas.qq.com/juxin-doc-next/apidocs/external-channel-data/QueryExternalChannelData.html#externalchannelpaymentdatavalue)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalChannelDataValue 第三方渠道数据值。
+                     * @param _externalChannelDataValue 第三方渠道数据值。
 当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://dev.tke.midas.qq.com/juxin-doc-next/apidocs/external-channel-data/QueryExternalChannelData.html#externalchannelpaymentdatavalue)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalChannelDataValue(const std::string& _externalChannelDataValue);
 
                     /**
                      * 判断参数 ExternalChannelDataValue 是否已赋值
                      * @return ExternalChannelDataValue 是否已赋值
+                     * 
                      */
                     bool ExternalChannelDataValueHasBeenSet() const;
 

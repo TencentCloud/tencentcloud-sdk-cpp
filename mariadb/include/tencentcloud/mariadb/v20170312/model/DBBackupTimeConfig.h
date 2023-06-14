@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
                      * @return StartBackupTime 每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
+                     * 
                      */
                     std::string GetStartBackupTime() const;
 
                     /**
                      * 设置每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
-                     * @param StartBackupTime 每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
+                     * @param _startBackupTime 每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
+                     * 
                      */
                     void SetStartBackupTime(const std::string& _startBackupTime);
 
                     /**
                      * 判断参数 StartBackupTime 是否已赋值
                      * @return StartBackupTime 是否已赋值
+                     * 
                      */
                     bool StartBackupTimeHasBeenSet() const;
 
                     /**
                      * 获取每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
                      * @return EndBackupTime 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
+                     * 
                      */
                     std::string GetEndBackupTime() const;
 
                     /**
                      * 设置每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
-                     * @param EndBackupTime 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
+                     * @param _endBackupTime 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
+                     * 
                      */
                     void SetEndBackupTime(const std::string& _endBackupTime);
 
                     /**
                      * 判断参数 EndBackupTime 是否已赋值
                      * @return EndBackupTime 是否已赋值
+                     * 
                      */
                     bool EndBackupTimeHasBeenSet() const;
 

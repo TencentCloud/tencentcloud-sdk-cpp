@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     uint64_t GetBatchId() const;
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 

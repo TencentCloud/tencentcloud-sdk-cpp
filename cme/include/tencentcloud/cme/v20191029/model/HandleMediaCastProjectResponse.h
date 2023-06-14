@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayInfo 播放信息，Operation 为 DescribePlayInfo 时返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaCastPlayInfo GetPlayInfo() const;
 
                     /**
                      * 判断参数 PlayInfo 是否已赋值
                      * @return PlayInfo 是否已赋值
+                     * 
                      */
                     bool PlayInfoHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceInfoSet 输入源信息， Operation 为 AddSource 时返回添加成功的输入源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MediaCastSourceInfo> GetSourceInfoSet() const;
 
                     /**
                      * 判断参数 SourceInfoSet 是否已赋值
                      * @return SourceInfoSet 是否已赋值
+                     * 
                      */
                     bool SourceInfoSetHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationInfoSet 输出源信息， Operation 为 AddDestination 时返回添加成功的输出源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MediaCastDestinationInfo> GetDestinationInfoSet() const;
 
                     /**
                      * 判断参数 DestinationInfoSet 是否已赋值
                      * @return DestinationInfoSet 是否已赋值
+                     * 
                      */
                     bool DestinationInfoSetHasBeenSet() const;
 

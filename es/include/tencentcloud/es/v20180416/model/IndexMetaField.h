@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexType 索引类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexType() const;
 
                     /**
                      * 设置索引类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexType 索引类型
+                     * @param _indexType 索引类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexType(const std::string& _indexType);
 
                     /**
                      * 判断参数 IndexType 是否已赋值
                      * @return IndexType 是否已赋值
+                     * 
                      */
                     bool IndexTypeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexName 索引名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexName() const;
 
                     /**
                      * 设置索引名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexName 索引名
+                     * @param _indexName 索引名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexName(const std::string& _indexName);
 
                     /**
                      * 判断参数 IndexName 是否已赋值
                      * @return IndexName 是否已赋值
+                     * 
                      */
                     bool IndexNameHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexStatus 索引状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexStatus() const;
 
                     /**
                      * 设置索引状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexStatus 索引状态
+                     * @param _indexStatus 索引状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexStatus(const std::string& _indexStatus);
 
                     /**
                      * 判断参数 IndexStatus 是否已赋值
                      * @return IndexStatus 是否已赋值
+                     * 
                      */
                     bool IndexStatusHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexStorage 索引存储大小，单位Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIndexStorage() const;
 
                     /**
                      * 设置索引存储大小，单位Byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexStorage 索引存储大小，单位Byte
+                     * @param _indexStorage 索引存储大小，单位Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexStorage(const int64_t& _indexStorage);
 
                     /**
                      * 判断参数 IndexStorage 是否已赋值
                      * @return IndexStorage 是否已赋值
+                     * 
                      */
                     bool IndexStorageHasBeenSet() const;
 
@@ -143,20 +155,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexCreateTime 索引创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexCreateTime() const;
 
                     /**
                      * 设置索引创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexCreateTime 索引创建时间
+                     * @param _indexCreateTime 索引创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexCreateTime(const std::string& _indexCreateTime);
 
                     /**
                      * 判断参数 IndexCreateTime 是否已赋值
                      * @return IndexCreateTime 是否已赋值
+                     * 
                      */
                     bool IndexCreateTimeHasBeenSet() const;
 
@@ -165,20 +180,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackingIndices 后备索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BackingIndexMetaField> GetBackingIndices() const;
 
                     /**
                      * 设置后备索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackingIndices 后备索引
+                     * @param _backingIndices 后备索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackingIndices(const std::vector<BackingIndexMetaField>& _backingIndices);
 
                     /**
                      * 判断参数 BackingIndices 是否已赋值
                      * @return BackingIndices 是否已赋值
+                     * 
                      */
                     bool BackingIndicesHasBeenSet() const;
 
@@ -187,20 +205,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 索引所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置索引所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 索引所属集群ID
+                     * @param _clusterId 索引所属集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -209,20 +230,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 索引所属集群名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置索引所属集群名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 索引所属集群名
+                     * @param _clusterName 索引所属集群名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -231,20 +255,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 索引所属集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置索引所属集群版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterVersion 索引所属集群版本
+                     * @param _clusterVersion 索引所属集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 
@@ -253,20 +280,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexPolicyField 索引生命周期字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IndexPolicyField GetIndexPolicyField() const;
 
                     /**
                      * 设置索引生命周期字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexPolicyField 索引生命周期字段
+                     * @param _indexPolicyField 索引生命周期字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexPolicyField(const IndexPolicyField& _indexPolicyField);
 
                     /**
                      * 判断参数 IndexPolicyField 是否已赋值
                      * @return IndexPolicyField 是否已赋值
+                     * 
                      */
                     bool IndexPolicyFieldHasBeenSet() const;
 
@@ -275,20 +305,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexOptionsField 索引自治字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IndexOptionsField GetIndexOptionsField() const;
 
                     /**
                      * 设置索引自治字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexOptionsField 索引自治字段
+                     * @param _indexOptionsField 索引自治字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexOptionsField(const IndexOptionsField& _indexOptionsField);
 
                     /**
                      * 判断参数 IndexOptionsField 是否已赋值
                      * @return IndexOptionsField 是否已赋值
+                     * 
                      */
                     bool IndexOptionsFieldHasBeenSet() const;
 
@@ -297,20 +330,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexSettingsField 索引配置字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IndexSettingsField GetIndexSettingsField() const;
 
                     /**
                      * 设置索引配置字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexSettingsField 索引配置字段
+                     * @param _indexSettingsField 索引配置字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexSettingsField(const IndexSettingsField& _indexSettingsField);
 
                     /**
                      * 判断参数 IndexSettingsField 是否已赋值
                      * @return IndexSettingsField 是否已赋值
+                     * 
                      */
                     bool IndexSettingsFieldHasBeenSet() const;
 
@@ -319,20 +355,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 索引所属集群APP ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置索引所属集群APP ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId 索引所属集群APP ID
+                     * @param _appId 索引所属集群APP ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -341,20 +380,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexDocs 索引文档数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIndexDocs() const;
 
                     /**
                      * 设置索引文档数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexDocs 索引文档数
+                     * @param _indexDocs 索引文档数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexDocs(const uint64_t& _indexDocs);
 
                     /**
                      * 判断参数 IndexDocs 是否已赋值
                      * @return IndexDocs 是否已赋值
+                     * 
                      */
                     bool IndexDocsHasBeenSet() const;
 

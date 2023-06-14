@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取风险码 参数详细定义请加微信：TYXGJ-01
                      * @return RiskCode 风险码 参数详细定义请加微信：TYXGJ-01
+                     * 
                      */
                     uint64_t GetRiskCode() const;
 
                     /**
                      * 设置风险码 参数详细定义请加微信：TYXGJ-01
-                     * @param RiskCode 风险码 参数详细定义请加微信：TYXGJ-01
+                     * @param _riskCode 风险码 参数详细定义请加微信：TYXGJ-01
+                     * 
                      */
                     void SetRiskCode(const uint64_t& _riskCode);
 
                     /**
                      * 判断参数 RiskCode 是否已赋值
                      * @return RiskCode 是否已赋值
+                     * 
                      */
                     bool RiskCodeHasBeenSet() const;
 

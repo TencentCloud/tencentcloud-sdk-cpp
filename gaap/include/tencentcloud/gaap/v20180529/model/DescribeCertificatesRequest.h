@@ -59,6 +59,7 @@ namespace TencentCloud
 4，表示通道SSL证书。
 -1，所有类型。
 默认为-1。
+                     * 
                      */
                     int64_t GetCertificateType() const;
 
@@ -71,7 +72,7 @@ namespace TencentCloud
 4，表示通道SSL证书。
 -1，所有类型。
 默认为-1。
-                     * @param CertificateType 证书类型。其中：
+                     * @param _certificateType 证书类型。其中：
 0，表示基础认证配置；
 1，表示客户端CA证书；
 2，表示服务器SSL证书；
@@ -79,48 +80,56 @@ namespace TencentCloud
 4，表示通道SSL证书。
 -1，所有类型。
 默认为-1。
+                     * 
                      */
                     void SetCertificateType(const int64_t& _certificateType);
 
                     /**
                      * 判断参数 CertificateType 是否已赋值
                      * @return CertificateType 是否已赋值
+                     * 
                      */
                     bool CertificateTypeHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数量，默认为20。
                      * @return Limit 限制数量，默认为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数量，默认为20。
-                     * @param Limit 限制数量，默认为20。
+                     * @param _limit 限制数量，默认为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

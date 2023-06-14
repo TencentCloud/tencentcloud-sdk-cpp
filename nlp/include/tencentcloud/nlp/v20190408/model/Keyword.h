@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取权重
                      * @return Score 权重
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置权重
-                     * @param Score 权重
+                     * @param _score 权重
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取关键词
                      * @return Word 关键词
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置关键词
-                     * @param Word 关键词
+                     * @param _word 关键词
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 

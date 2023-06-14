@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取NodeUnitId
                      * @return Id NodeUnitId
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置NodeUnitId
-                     * @param Id NodeUnitId
+                     * @param _id NodeUnitId
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取NodeUnit名称
                      * @return NodeUnitName NodeUnit名称
+                     * 
                      */
                     std::string GetNodeUnitName() const;
 
                     /**
                      * 设置NodeUnit名称
-                     * @param NodeUnitName NodeUnit名称
+                     * @param _nodeUnitName NodeUnit名称
+                     * 
                      */
                     void SetNodeUnitName(const std::string& _nodeUnitName);
 
                     /**
                      * 判断参数 NodeUnitName 是否已赋值
                      * @return NodeUnitName 是否已赋值
+                     * 
                      */
                     bool NodeUnitNameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeList 包含节点列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeUnitNodeInfo> GetNodeList() const;
 
                     /**
                      * 设置包含节点列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeList 包含节点列表
+                     * @param _nodeList 包含节点列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeList(const std::vector<NodeUnitNodeInfo>& _nodeList);
 
                     /**
                      * 判断参数 NodeList 是否已赋值
                      * @return NodeList 是否已赋值
+                     * 
                      */
                     bool NodeListHasBeenSet() const;
 

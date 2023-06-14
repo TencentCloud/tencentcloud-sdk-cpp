@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgId 程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PkgId 程序包ID
+                     * @param _pkgId 程序包ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPkgId(const std::string& _pkgId);
 
                     /**
                      * 判断参数 PkgId 是否已赋值
                      * @return PkgId 是否已赋值
+                     * 
                      */
                     bool PkgIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket 桶
+                     * @param _bucket 桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 目标地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置目标地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 目标地域
+                     * @param _region 目标地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -118,38 +127,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置存储路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 存储路径
+                     * @param _path 存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取鉴权信息
                      * @return Credentials 鉴权信息
+                     * 
                      */
                     CosCredentials GetCredentials() const;
 
                     /**
                      * 设置鉴权信息
-                     * @param Credentials 鉴权信息
+                     * @param _credentials 鉴权信息
+                     * 
                      */
                     void SetCredentials(const CosCredentials& _credentials);
 
                     /**
                      * 判断参数 Credentials 是否已赋值
                      * @return Credentials 是否已赋值
+                     * 
                      */
                     bool CredentialsHasBeenSet() const;
 

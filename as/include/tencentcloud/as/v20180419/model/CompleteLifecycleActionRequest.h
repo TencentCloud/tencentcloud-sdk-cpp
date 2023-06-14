@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取生命周期挂钩ID
                      * @return LifecycleHookId 生命周期挂钩ID
+                     * 
                      */
                     std::string GetLifecycleHookId() const;
 
                     /**
                      * 设置生命周期挂钩ID
-                     * @param LifecycleHookId 生命周期挂钩ID
+                     * @param _lifecycleHookId 生命周期挂钩ID
+                     * 
                      */
                     void SetLifecycleHookId(const std::string& _lifecycleHookId);
 
                     /**
                      * 判断参数 LifecycleHookId 是否已赋值
                      * @return LifecycleHookId 是否已赋值
+                     * 
                      */
                     bool LifecycleHookIdHasBeenSet() const;
 
                     /**
                      * 获取生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
                      * @return LifecycleActionResult 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+                     * 
                      */
                     std::string GetLifecycleActionResult() const;
 
                     /**
                      * 设置生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
-                     * @param LifecycleActionResult 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+                     * @param _lifecycleActionResult 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+                     * 
                      */
                     void SetLifecycleActionResult(const std::string& _lifecycleActionResult);
 
                     /**
                      * 判断参数 LifecycleActionResult 是否已赋值
                      * @return LifecycleActionResult 是否已赋值
+                     * 
                      */
                     bool LifecycleActionResultHasBeenSet() const;
 
                     /**
                      * 获取实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
                      * @return InstanceId 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
-                     * @param InstanceId 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * @param _instanceId 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取“InstanceId”和“LifecycleActionToken”必须填充其中一个
                      * @return LifecycleActionToken “InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * 
                      */
                     std::string GetLifecycleActionToken() const;
 
                     /**
                      * 设置“InstanceId”和“LifecycleActionToken”必须填充其中一个
-                     * @param LifecycleActionToken “InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * @param _lifecycleActionToken “InstanceId”和“LifecycleActionToken”必须填充其中一个
+                     * 
                      */
                     void SetLifecycleActionToken(const std::string& _lifecycleActionToken);
 
                     /**
                      * 判断参数 LifecycleActionToken 是否已赋值
                      * @return LifecycleActionToken 是否已赋值
+                     * 
                      */
                     bool LifecycleActionTokenHasBeenSet() const;
 

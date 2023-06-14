@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取挂载点名称
                      * @return MountPointName 挂载点名称
+                     * 
                      */
                     std::string GetMountPointName() const;
 
                     /**
                      * 设置挂载点名称
-                     * @param MountPointName 挂载点名称
+                     * @param _mountPointName 挂载点名称
+                     * 
                      */
                     void SetMountPointName(const std::string& _mountPointName);
 
                     /**
                      * 判断参数 MountPointName 是否已赋值
                      * @return MountPointName 是否已赋值
+                     * 
                      */
                     bool MountPointNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取权限组ID
                      * @return AccessGroupId 权限组ID
+                     * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组ID
-                     * @param AccessGroupId 权限组ID
+                     * @param _accessGroupId 权限组ID
+                     * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
 
                     /**
                      * 判断参数 AccessGroupId 是否已赋值
                      * @return AccessGroupId 是否已赋值
+                     * 
                      */
                     bool AccessGroupIdHasBeenSet() const;
 
                     /**
                      * 获取VPC网络ID
                      * @return VpcId VPC网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC网络ID
-                     * @param VpcId VPC网络ID
+                     * @param _vpcId VPC网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取挂载点状态（1：打开；2：关闭）
                      * @return MountPointStatus 挂载点状态（1：打开；2：关闭）
+                     * 
                      */
                     uint64_t GetMountPointStatus() const;
 
                     /**
                      * 设置挂载点状态（1：打开；2：关闭）
-                     * @param MountPointStatus 挂载点状态（1：打开；2：关闭）
+                     * @param _mountPointStatus 挂载点状态（1：打开；2：关闭）
+                     * 
                      */
                     void SetMountPointStatus(const uint64_t& _mountPointStatus);
 
                     /**
                      * 判断参数 MountPointStatus 是否已赋值
                      * @return MountPointStatus 是否已赋值
+                     * 
                      */
                     bool MountPointStatusHasBeenSet() const;
 
                     /**
                      * 获取VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
                      * @return VpcType VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     * 
                      */
                     uint64_t GetVpcType() const;
 
                     /**
                      * 设置VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
-                     * @param VpcType VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     * @param _vpcType VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     * 
                      */
                     void SetVpcType(const uint64_t& _vpcType);
 
                     /**
                      * 判断参数 VpcType 是否已赋值
                      * @return VpcType 是否已赋值
+                     * 
                      */
                     bool VpcTypeHasBeenSet() const;
 

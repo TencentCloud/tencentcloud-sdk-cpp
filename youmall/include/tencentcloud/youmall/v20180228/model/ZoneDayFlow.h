@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取日期，如 2018-08-6
                      * @return Day 日期，如 2018-08-6
+                     * 
                      */
                     std::string GetDay() const;
 
                     /**
                      * 设置日期，如 2018-08-6
-                     * @param Day 日期，如 2018-08-6
+                     * @param _day 日期，如 2018-08-6
+                     * 
                      */
                     void SetDay(const std::string& _day);
 
                     /**
                      * 判断参数 Day 是否已赋值
                      * @return Day 是否已赋值
+                     * 
                      */
                     bool DayHasBeenSet() const;
 
                     /**
                      * 获取客流量
                      * @return FlowCount 客流量
+                     * 
                      */
                     int64_t GetFlowCount() const;
 
                     /**
                      * 设置客流量
-                     * @param FlowCount 客流量
+                     * @param _flowCount 客流量
+                     * 
                      */
                     void SetFlowCount(const int64_t& _flowCount);
 
                     /**
                      * 判断参数 FlowCount 是否已赋值
                      * @return FlowCount 是否已赋值
+                     * 
                      */
                     bool FlowCountHasBeenSet() const;
 

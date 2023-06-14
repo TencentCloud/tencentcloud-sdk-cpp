@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
                      * @return PageSize 每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
-                     * @param PageSize 每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * @param _pageSize 每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
                      * @return PageNumber 当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
-                     * @param PageNumber 当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * @param _pageNumber 当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取搜索设备的关键字（ID或者设备名），为空时匹配所有设备
                      * @return Keyword 搜索设备的关键字（ID或者设备名），为空时匹配所有设备
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索设备的关键字（ID或者设备名），为空时匹配所有设备
-                     * @param Keyword 搜索设备的关键字（ID或者设备名），为空时匹配所有设备
+                     * @param _keyword 搜索设备的关键字（ID或者设备名），为空时匹配所有设备
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

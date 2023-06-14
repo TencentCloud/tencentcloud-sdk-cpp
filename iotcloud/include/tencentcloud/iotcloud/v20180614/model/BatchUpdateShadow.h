@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取设备影子的期望状态，格式为 Json 对象序列化之后的字符串
                      * @return Desired 设备影子的期望状态，格式为 Json 对象序列化之后的字符串
+                     * 
                      */
                     std::string GetDesired() const;
 
                     /**
                      * 设置设备影子的期望状态，格式为 Json 对象序列化之后的字符串
-                     * @param Desired 设备影子的期望状态，格式为 Json 对象序列化之后的字符串
+                     * @param _desired 设备影子的期望状态，格式为 Json 对象序列化之后的字符串
+                     * 
                      */
                     void SetDesired(const std::string& _desired);
 
                     /**
                      * 判断参数 Desired 是否已赋值
                      * @return Desired 是否已赋值
+                     * 
                      */
                     bool DesiredHasBeenSet() const;
 

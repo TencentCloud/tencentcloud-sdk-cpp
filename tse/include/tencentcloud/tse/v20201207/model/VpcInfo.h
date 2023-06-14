@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Vpc Id
                      * @return VpcId Vpc Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc Id
-                     * @param VpcId Vpc Id
+                     * @param _vpcId Vpc Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetAddress 内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIntranetAddress() const;
 
                     /**
                      * 设置内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntranetAddress 内网访问地址
+                     * @param _intranetAddress 内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntranetAddress(const std::string& _intranetAddress);
 
                     /**
                      * 判断参数 IntranetAddress 是否已赋值
                      * @return IntranetAddress 是否已赋值
+                     * 
                      */
                     bool IntranetAddressHasBeenSet() const;
 

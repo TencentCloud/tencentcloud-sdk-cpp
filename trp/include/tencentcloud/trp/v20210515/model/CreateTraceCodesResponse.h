@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取导入成功码数量
                      * @return ActiveCnt 导入成功码数量
+                     * 
                      */
                     uint64_t GetActiveCnt() const;
 
                     /**
                      * 判断参数 ActiveCnt 是否已赋值
                      * @return ActiveCnt 是否已赋值
+                     * 
                      */
                     bool ActiveCntHasBeenSet() const;
 
                     /**
                      * 获取批次码数量
                      * @return CodeCnt 批次码数量
+                     * 
                      */
                     uint64_t GetCodeCnt() const;
 
                     /**
                      * 判断参数 CodeCnt 是否已赋值
                      * @return CodeCnt 是否已赋值
+                     * 
                      */
                     bool CodeCntHasBeenSet() const;
 

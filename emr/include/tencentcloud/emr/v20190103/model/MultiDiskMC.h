@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 该类型云盘个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该类型云盘个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 该类型云盘个数
+                     * @param _count 该类型云盘个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 磁盘类型
+                     * @param _type 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 云盘大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置云盘大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Volume 云盘大小
+                     * @param _volume 云盘大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVolume(const int64_t& _volume);
 
                     /**
                      * 判断参数 Volume 是否已赋值
                      * @return Volume 是否已赋值
+                     * 
                      */
                     bool VolumeHasBeenSet() const;
 

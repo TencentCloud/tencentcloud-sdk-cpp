@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取图片内容智能识别任务结果。
                      * @return ContentReviewResultSet 图片内容智能识别任务结果。
+                     * 
                      */
                     std::vector<ContentReviewResult> GetContentReviewResultSet() const;
 
                     /**
                      * 判断参数 ContentReviewResultSet 是否已赋值
                      * @return ContentReviewResultSet 是否已赋值
+                     * 
                      */
                     bool ContentReviewResultSetHasBeenSet() const;
 

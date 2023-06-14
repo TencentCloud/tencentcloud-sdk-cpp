@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号
                      * @return ChannelMerchantId 渠道商户号
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号
-                     * @param ChannelMerchantId 渠道商户号
+                     * @param _channelMerchantId 渠道商户号
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户号
                      * @return ChannelSubMerchantId 渠道子商户号
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户号
-                     * @param ChannelSubMerchantId 渠道子商户号
+                     * @param _channelSubMerchantId 渠道子商户号
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部结算流水号，与渠道结算流水号二选一
                      * @return OutSettleId 外部结算流水号，与渠道结算流水号二选一
+                     * 
                      */
                     std::string GetOutSettleId() const;
 
                     /**
                      * 设置外部结算流水号，与渠道结算流水号二选一
-                     * @param OutSettleId 外部结算流水号，与渠道结算流水号二选一
+                     * @param _outSettleId 外部结算流水号，与渠道结算流水号二选一
+                     * 
                      */
                     void SetOutSettleId(const std::string& _outSettleId);
 
                     /**
                      * 判断参数 OutSettleId 是否已赋值
                      * @return OutSettleId 是否已赋值
+                     * 
                      */
                     bool OutSettleIdHasBeenSet() const;
 
                     /**
                      * 获取渠道结算流水号，与外部结算流水号二选一
                      * @return ChannelSettleId 渠道结算流水号，与外部结算流水号二选一
+                     * 
                      */
                     std::string GetChannelSettleId() const;
 
                     /**
                      * 设置渠道结算流水号，与外部结算流水号二选一
-                     * @param ChannelSettleId 渠道结算流水号，与外部结算流水号二选一
+                     * @param _channelSettleId 渠道结算流水号，与外部结算流水号二选一
+                     * 
                      */
                     void SetChannelSettleId(const std::string& _channelSettleId);
 
                     /**
                      * 判断参数 ChannelSettleId 是否已赋值
                      * @return ChannelSettleId 是否已赋值
+                     * 
                      */
                     bool ChannelSettleIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
                      * @return Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
-                     * @param Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * @param _environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

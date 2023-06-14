@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的实例列表
                      * @return InstanceIds 需要查询的实例列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置需要查询的实例列表
-                     * @param InstanceIds 需要查询的实例列表
+                     * @param _instanceIds 需要查询的实例列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取购买时长单位，当前只支持取值为m
                      * @return TimeUnit 购买时长单位，当前只支持取值为m
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长单位，当前只支持取值为m
-                     * @param TimeUnit 购买时长单位，当前只支持取值为m
+                     * @param _timeUnit 购买时长单位，当前只支持取值为m
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
                     /**
                      * 获取购买时长
                      * @return TimeSpan 购买时长
+                     * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买时长
-                     * @param TimeSpan 购买时长
+                     * @param _timeSpan 购买时长
+                     * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计信息
                      * @return StatisticsList 统计信息
+                     * 
                      */
                     std::vector<SnapshotStatistics> GetStatisticsList() const;
 
                     /**
                      * 判断参数 StatisticsList 是否已赋值
                      * @return StatisticsList 是否已赋值
+                     * 
                      */
                     bool StatisticsListHasBeenSet() const;
 

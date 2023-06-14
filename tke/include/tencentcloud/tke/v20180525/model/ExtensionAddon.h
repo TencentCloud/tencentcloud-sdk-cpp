@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取扩展组件名称
                      * @return AddonName 扩展组件名称
+                     * 
                      */
                     std::string GetAddonName() const;
 
                     /**
                      * 设置扩展组件名称
-                     * @param AddonName 扩展组件名称
+                     * @param _addonName 扩展组件名称
+                     * 
                      */
                     void SetAddonName(const std::string& _addonName);
 
                     /**
                      * 判断参数 AddonName 是否已赋值
                      * @return AddonName 是否已赋值
+                     * 
                      */
                     bool AddonNameHasBeenSet() const;
 
                     /**
                      * 获取扩展组件信息(扩展组件资源对象的json字符串描述)
                      * @return AddonParam 扩展组件信息(扩展组件资源对象的json字符串描述)
+                     * 
                      */
                     std::string GetAddonParam() const;
 
                     /**
                      * 设置扩展组件信息(扩展组件资源对象的json字符串描述)
-                     * @param AddonParam 扩展组件信息(扩展组件资源对象的json字符串描述)
+                     * @param _addonParam 扩展组件信息(扩展组件资源对象的json字符串描述)
+                     * 
                      */
                     void SetAddonParam(const std::string& _addonParam);
 
                     /**
                      * 判断参数 AddonParam 是否已赋值
                      * @return AddonParam 是否已赋值
+                     * 
                      */
                     bool AddonParamHasBeenSet() const;
 

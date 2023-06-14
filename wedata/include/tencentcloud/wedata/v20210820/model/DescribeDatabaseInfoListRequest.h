@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取过滤参数
                      * @return Filters 过滤参数
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取如果是hive这里写rpc，如果是其他类型不传
                      * @return ConnectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 
                      */
                     std::string GetConnectionType() const;
 
                     /**
                      * 设置如果是hive这里写rpc，如果是其他类型不传
-                     * @param ConnectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * @param _connectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 
                      */
                     void SetConnectionType(const std::string& _connectionType);
 
                     /**
                      * 判断参数 ConnectionType 是否已赋值
                      * @return ConnectionType 是否已赋值
+                     * 
                      */
                     bool ConnectionTypeHasBeenSet() const;
 

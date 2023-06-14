@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取终端用户在IoT Video上的唯一标识ID
                      * @return AccessId 终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取IoT Video平台的AccessToken
                      * @return AccessToken IoT Video平台的AccessToken
+                     * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 判断参数 AccessToken 是否已赋值
                      * @return AccessToken 是否已赋值
+                     * 
                      */
                     bool AccessTokenHasBeenSet() const;
 
                     /**
                      * 获取Token的过期时间，单位秒(UTC时间)
                      * @return ExpireTime Token的过期时间，单位秒(UTC时间)
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

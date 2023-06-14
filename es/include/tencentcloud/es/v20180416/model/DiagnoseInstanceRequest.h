@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取ES实例ID
                      * @return InstanceId ES实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ES实例ID
-                     * @param InstanceId ES实例ID
+                     * @param _instanceId ES实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取需要触发的诊断项
                      * @return DiagnoseJobs 需要触发的诊断项
+                     * 
                      */
                     std::vector<std::string> GetDiagnoseJobs() const;
 
                     /**
                      * 设置需要触发的诊断项
-                     * @param DiagnoseJobs 需要触发的诊断项
+                     * @param _diagnoseJobs 需要触发的诊断项
+                     * 
                      */
                     void SetDiagnoseJobs(const std::vector<std::string>& _diagnoseJobs);
 
                     /**
                      * 判断参数 DiagnoseJobs 是否已赋值
                      * @return DiagnoseJobs 是否已赋值
+                     * 
                      */
                     bool DiagnoseJobsHasBeenSet() const;
 
                     /**
                      * 获取需要诊断的索引，支持通配符
                      * @return DiagnoseIndices 需要诊断的索引，支持通配符
+                     * 
                      */
                     std::string GetDiagnoseIndices() const;
 
                     /**
                      * 设置需要诊断的索引，支持通配符
-                     * @param DiagnoseIndices 需要诊断的索引，支持通配符
+                     * @param _diagnoseIndices 需要诊断的索引，支持通配符
+                     * 
                      */
                     void SetDiagnoseIndices(const std::string& _diagnoseIndices);
 
                     /**
                      * 判断参数 DiagnoseIndices 是否已赋值
                      * @return DiagnoseIndices 是否已赋值
+                     * 
                      */
                     bool DiagnoseIndicesHasBeenSet() const;
 

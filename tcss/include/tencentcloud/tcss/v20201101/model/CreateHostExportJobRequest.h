@@ -66,6 +66,7 @@ namespace TencentCloud
 <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
 <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
 <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -81,7 +82,7 @@ namespace TencentCloud
 <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
 <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
 <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
 <li>HostName - String - 是否必填：否 - 主机名筛选</li>
 <li>Group- String - 是否必填：否 - 主机群组搜索</li>
@@ -92,102 +93,119 @@ namespace TencentCloud
 <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
 <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
 <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Limit 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Limit 偏移量，默认为0。
+                     * @param _limit 偏移量，默认为0。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为10000
                      * @return Offset 需要返回的数量，默认为10，最大值为10000
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为10000
-                     * @param Offset 需要返回的数量，默认为10，最大值为10000
+                     * @param _offset 需要返回的数量，默认为10，最大值为10000
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return By 排序字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param By 排序字段
+                     * @param _by 排序字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取升序降序,asc desc
                      * @return Order 升序降序,asc desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置升序降序,asc desc
-                     * @param Order 升序降序,asc desc
+                     * @param _order 升序降序,asc desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取导出字段
                      * @return ExportField 导出字段
+                     * 
                      */
                     std::vector<std::string> GetExportField() const;
 
                     /**
                      * 设置导出字段
-                     * @param ExportField 导出字段
+                     * @param _exportField 导出字段
+                     * 
                      */
                     void SetExportField(const std::vector<std::string>& _exportField);
 
                     /**
                      * 判断参数 ExportField 是否已赋值
                      * @return ExportField 是否已赋值
+                     * 
                      */
                     bool ExportFieldHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取资源描述
                      * @return Resource 资源描述
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置资源描述
-                     * @param Resource 资源描述
+                     * @param _resource 资源描述
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取表名
                      * @return Metric 表名
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置表名
-                     * @param Metric 表名
+                     * @param _metric 表名
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取表数据
                      * @return DataSet 表数据
+                     * 
                      */
                     std::vector<DatePoint> GetDataSet() const;
 
                     /**
                      * 设置表数据
-                     * @param DataSet 表数据
+                     * @param _dataSet 表数据
+                     * 
                      */
                     void SetDataSet(const std::vector<DatePoint>& _dataSet);
 
                     /**
                      * 判断参数 DataSet 是否已赋值
                      * @return DataSet 是否已赋值
+                     * 
                      */
                     bool DataSetHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricCount 查询范围内的请求总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMetricCount() const;
 
                     /**
                      * 设置查询范围内的请求总量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricCount 查询范围内的请求总量
+                     * @param _metricCount 查询范围内的请求总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricCount(const int64_t& _metricCount);
 
                     /**
                      * 判断参数 MetricCount 是否已赋值
                      * @return MetricCount 是否已赋值
+                     * 
                      */
                     bool MetricCountHasBeenSet() const;
 

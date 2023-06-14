@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据集id
                      * @return DatasetId 数据集id
+                     * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
                      * 设置数据集id
-                     * @param DatasetId 数据集id
+                     * @param _datasetId 数据集id
+                     * 
                      */
                     void SetDatasetId(const std::string& _datasetId);
 
                     /**
                      * 判断参数 DatasetId 是否已赋值
                      * @return DatasetId 是否已赋值
+                     * 
                      */
                     bool DatasetIdHasBeenSet() const;
 
                     /**
                      * 获取是否删除cos标签文件
                      * @return DeleteLabelEnable 是否删除cos标签文件
+                     * 
                      */
                     bool GetDeleteLabelEnable() const;
 
                     /**
                      * 设置是否删除cos标签文件
-                     * @param DeleteLabelEnable 是否删除cos标签文件
+                     * @param _deleteLabelEnable 是否删除cos标签文件
+                     * 
                      */
                     void SetDeleteLabelEnable(const bool& _deleteLabelEnable);
 
                     /**
                      * 判断参数 DeleteLabelEnable 是否已赋值
                      * @return DeleteLabelEnable 是否已赋值
+                     * 
                      */
                     bool DeleteLabelEnableHasBeenSet() const;
 

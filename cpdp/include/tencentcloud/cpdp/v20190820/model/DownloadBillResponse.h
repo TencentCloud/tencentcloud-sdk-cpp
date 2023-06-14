@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取账单文件名
                      * @return FileName 账单文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取账单文件的MD5值
                      * @return FileMD5 账单文件的MD5值
+                     * 
                      */
                     std::string GetFileMD5() const;
 
                     /**
                      * 判断参数 FileMD5 是否已赋值
                      * @return FileMD5 是否已赋值
+                     * 
                      */
                     bool FileMD5HasBeenSet() const;
 
                     /**
                      * 获取账单文件的真实下载地址
                      * @return DownloadUrl 账单文件的真实下载地址
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
@@ -88,12 +94,14 @@ FUND，资金账单
 TRADE，对账单
 FUND，资金账单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStateType() const;
 
                     /**
                      * 判断参数 StateType 是否已赋值
                      * @return StateType 是否已赋值
+                     * 
                      */
                     bool StateTypeHasBeenSet() const;
 

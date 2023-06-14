@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的命令ID。
                      * @return CommandId 待删除的命令ID。
+                     * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置待删除的命令ID。
-                     * @param CommandId 待删除的命令ID。
+                     * @param _commandId 待删除的命令ID。
+                     * 
                      */
                     void SetCommandId(const std::string& _commandId);
 
                     /**
                      * 判断参数 CommandId 是否已赋值
                      * @return CommandId 是否已赋值
+                     * 
                      */
                     bool CommandIdHasBeenSet() const;
 

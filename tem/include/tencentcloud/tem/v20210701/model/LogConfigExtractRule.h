@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginningRegex 首行正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginningRegex() const;
 
                     /**
                      * 设置首行正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginningRegex 首行正则表达式
+                     * @param _beginningRegex 首行正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginningRegex(const std::string& _beginningRegex);
 
                     /**
                      * 判断参数 BeginningRegex 是否已赋值
                      * @return BeginningRegex 是否已赋值
+                     * 
                      */
                     bool BeginningRegexHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 提取结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeys() const;
 
                     /**
                      * 设置提取结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keys 提取结果
+                     * @param _keys 提取结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeys(const std::vector<std::string>& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterKeys 过滤键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFilterKeys() const;
 
                     /**
                      * 设置过滤键
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterKeys 过滤键
+                     * @param _filterKeys 过滤键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterKeys(const std::vector<std::string>& _filterKeys);
 
                     /**
                      * 判断参数 FilterKeys 是否已赋值
                      * @return FilterKeys 是否已赋值
+                     * 
                      */
                     bool FilterKeysHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterRegex 过滤值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFilterRegex() const;
 
                     /**
                      * 设置过滤值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterRegex 过滤值
+                     * @param _filterRegex 过滤值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterRegex(const std::vector<std::string>& _filterRegex);
 
                     /**
                      * 判断参数 FilterRegex 是否已赋值
                      * @return FilterRegex 是否已赋值
+                     * 
                      */
                     bool FilterRegexHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogRegex 日志正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogRegex() const;
 
                     /**
                      * 设置日志正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogRegex 日志正则表达式
+                     * @param _logRegex 日志正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogRegex(const std::string& _logRegex);
 
                     /**
                      * 判断参数 LogRegex 是否已赋值
                      * @return LogRegex 是否已赋值
+                     * 
                      */
                     bool LogRegexHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeKey 时间字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
                      * 设置时间字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeKey 时间字段
+                     * @param _timeKey 时间字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeKey(const std::string& _timeKey);
 
                     /**
                      * 判断参数 TimeKey 是否已赋值
                      * @return TimeKey 是否已赋值
+                     * 
                      */
                     bool TimeKeyHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeFormat 时间格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
                      * 设置时间格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeFormat 时间格式
+                     * @param _timeFormat 时间格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
 
                     /**
                      * 判断参数 TimeFormat 是否已赋值
                      * @return TimeFormat 是否已赋值
+                     * 
                      */
                     bool TimeFormatHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnMatchUpload 是否上传解析失败日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnMatchUpload() const;
 
                     /**
                      * 设置是否上传解析失败日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnMatchUpload 是否上传解析失败日志
+                     * @param _unMatchUpload 是否上传解析失败日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnMatchUpload(const std::string& _unMatchUpload);
 
                     /**
                      * 判断参数 UnMatchUpload 是否已赋值
                      * @return UnMatchUpload 是否已赋值
+                     * 
                      */
                     bool UnMatchUploadHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnMatchedKey 解析失败日志的键名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnMatchedKey() const;
 
                     /**
                      * 设置解析失败日志的键名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnMatchedKey 解析失败日志的键名称
+                     * @param _unMatchedKey 解析失败日志的键名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnMatchedKey(const std::string& _unMatchedKey);
 
                     /**
                      * 判断参数 UnMatchedKey 是否已赋值
                      * @return UnMatchedKey 是否已赋值
+                     * 
                      */
                     bool UnMatchedKeyHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Backtracking tracking
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBacktracking() const;
 
                     /**
                      * 设置tracking
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Backtracking tracking
+                     * @param _backtracking tracking
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBacktracking(const std::string& _backtracking);
 
                     /**
                      * 判断参数 Backtracking 是否已赋值
                      * @return Backtracking 是否已赋值
+                     * 
                      */
                     bool BacktrackingHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Delimiter 分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
                      * 设置分隔符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Delimiter 分隔符
+                     * @param _delimiter 分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
 
                     /**
                      * 判断参数 Delimiter 是否已赋值
                      * @return Delimiter 是否已赋值
+                     * 
                      */
                     bool DelimiterHasBeenSet() const;
 

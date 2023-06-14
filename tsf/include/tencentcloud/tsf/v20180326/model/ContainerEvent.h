@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTimestamp 第一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFirstTimestamp() const;
 
                     /**
                      * 设置第一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstTimestamp 第一次出现的时间，以 ms 为单位的时间戳
+                     * @param _firstTimestamp 第一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstTimestamp(const int64_t& _firstTimestamp);
 
                     /**
                      * 判断参数 FirstTimestamp 是否已赋值
                      * @return FirstTimestamp 是否已赋值
+                     * 
                      */
                     bool FirstTimestampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTimestamp 最后一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLastTimestamp() const;
 
                     /**
                      * 设置最后一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTimestamp 最后一次出现的时间，以 ms 为单位的时间戳
+                     * @param _lastTimestamp 最后一次出现的时间，以 ms 为单位的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTimestamp(const int64_t& _lastTimestamp);
 
                     /**
                      * 判断参数 LastTimestamp 是否已赋值
                      * @return LastTimestamp 是否已赋值
+                     * 
                      */
                     bool LastTimestampHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 级别
+                     * @param _type 级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Kind 资源类型
+                     * @param _kind 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 资源名称
+                     * @param _name 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 内容
+                     * @param _reason 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 详细描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置详细描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 详细描述
+                     * @param _message 详细描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置出现次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 出现次数
+                     * @param _count 出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

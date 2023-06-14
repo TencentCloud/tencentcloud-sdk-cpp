@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取私有域ID
                      * @return ZoneId 私有域ID
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置私有域ID
-                     * @param ZoneId 私有域ID
+                     * @param _zoneId 私有域ID
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取记录ID
                      * @return RecordId 记录ID
+                     * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置记录ID
-                     * @param RecordId 记录ID
+                     * @param _recordId 记录ID
+                     * 
                      */
                     void SetRecordId(const std::string& _recordId);
 
                     /**
                      * 判断参数 RecordId 是否已赋值
                      * @return RecordId 是否已赋值
+                     * 
                      */
                     bool RecordIdHasBeenSet() const;
 
                     /**
                      * 获取记录ID数组，RecordId 优先
                      * @return RecordIdSet 记录ID数组，RecordId 优先
+                     * 
                      */
                     std::vector<std::string> GetRecordIdSet() const;
 
                     /**
                      * 设置记录ID数组，RecordId 优先
-                     * @param RecordIdSet 记录ID数组，RecordId 优先
+                     * @param _recordIdSet 记录ID数组，RecordId 优先
+                     * 
                      */
                     void SetRecordIdSet(const std::vector<std::string>& _recordIdSet);
 
                     /**
                      * 判断参数 RecordIdSet 是否已赋值
                      * @return RecordIdSet 是否已赋值
+                     * 
                      */
                     bool RecordIdSetHasBeenSet() const;
 

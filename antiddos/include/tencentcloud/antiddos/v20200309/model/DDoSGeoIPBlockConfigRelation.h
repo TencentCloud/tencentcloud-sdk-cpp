@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取DDoS区域封禁配置
                      * @return GeoIPBlockConfig DDoS区域封禁配置
+                     * 
                      */
                     DDoSGeoIPBlockConfig GetGeoIPBlockConfig() const;
 
                     /**
                      * 设置DDoS区域封禁配置
-                     * @param GeoIPBlockConfig DDoS区域封禁配置
+                     * @param _geoIPBlockConfig DDoS区域封禁配置
+                     * 
                      */
                     void SetGeoIPBlockConfig(const DDoSGeoIPBlockConfig& _geoIPBlockConfig);
 
                     /**
                      * 判断参数 GeoIPBlockConfig 是否已赋值
                      * @return GeoIPBlockConfig 是否已赋值
+                     * 
                      */
                     bool GeoIPBlockConfigHasBeenSet() const;
 
                     /**
                      * 获取配置所属的资源实例
                      * @return InstanceDetailList 配置所属的资源实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetailList() const;
 
                     /**
                      * 设置配置所属的资源实例
-                     * @param InstanceDetailList 配置所属的资源实例
+                     * @param _instanceDetailList 配置所属的资源实例
+                     * 
                      */
                     void SetInstanceDetailList(const std::vector<InstanceRelation>& _instanceDetailList);
 
                     /**
                      * 判断参数 InstanceDetailList 是否已赋值
                      * @return InstanceDetailList 是否已赋值
+                     * 
                      */
                     bool InstanceDetailListHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待检测的实例Id
                      * @return RegistryId 待检测的实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置待检测的实例Id
-                     * @param RegistryId 待检测的实例Id
+                     * @param _registryId 待检测的实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 

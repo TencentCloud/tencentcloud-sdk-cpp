@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。外部接入平台入驻云企付平台下发
                      * @return ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。外部接入平台入驻云企付平台下发
-                     * @param ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * @param _channelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部商户订单号
                      * @return OutOrderId 外部商户订单号
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号
-                     * @param OutOrderId 外部商户订单号
+                     * @param _outOrderId 外部商户订单号
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取云企付平台订单号
                      * @return ChannelOrderId 云企付平台订单号
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云企付平台订单号
-                     * @param ChannelOrderId 云企付平台订单号
+                     * @param _channelOrderId 云企付平台订单号
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
                     /**
                      * 获取第三方支付平台订单号
                      * @return ThirdPayOrderId 第三方支付平台订单号
+                     * 
                      */
                     std::string GetThirdPayOrderId() const;
 
                     /**
                      * 设置第三方支付平台订单号
-                     * @param ThirdPayOrderId 第三方支付平台订单号
+                     * @param _thirdPayOrderId 第三方支付平台订单号
+                     * 
                      */
                     void SetThirdPayOrderId(const std::string& _thirdPayOrderId);
 
                     /**
                      * 判断参数 ThirdPayOrderId 是否已赋值
                      * @return ThirdPayOrderId 是否已赋值
+                     * 
                      */
                     bool ThirdPayOrderIdHasBeenSet() const;
 
@@ -142,6 +154,7 @@ PAY_FAIL：支付失败
 REVOKE：退票
 PART_REFUND：部分退款
 FULL_REFUND：全部退款
+                     * 
                      */
                     std::string GetOrderStatus() const;
 
@@ -156,7 +169,7 @@ PAY_FAIL：支付失败
 REVOKE：退票
 PART_REFUND：部分退款
 FULL_REFUND：全部退款
-                     * @param OrderStatus 订单状态。
+                     * @param _orderStatus 订单状态。
 INIT：初始化
 PAYING：支付中
 ACCEPTED：支付受理成功
@@ -166,30 +179,35 @@ PAY_FAIL：支付失败
 REVOKE：退票
 PART_REFUND：部分退款
 FULL_REFUND：全部退款
+                     * 
                      */
                     void SetOrderStatus(const std::string& _orderStatus);
 
                     /**
                      * 判断参数 OrderStatus 是否已赋值
                      * @return OrderStatus 是否已赋值
+                     * 
                      */
                     bool OrderStatusHasBeenSet() const;
 
                     /**
                      * 获取支付渠道名称，如TENPAY
                      * @return ChannelName 支付渠道名称，如TENPAY
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置支付渠道名称，如TENPAY
-                     * @param ChannelName 支付渠道名称，如TENPAY
+                     * @param _channelName 支付渠道名称，如TENPAY
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -198,56 +216,65 @@ FULL_REFUND：全部退款
 OPENBANK_PAYMENT
                      * @return PaymentMethod 付款方式。如EBANK_PAYMENT
 OPENBANK_PAYMENT
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
                     /**
                      * 设置付款方式。如EBANK_PAYMENT
 OPENBANK_PAYMENT
-                     * @param PaymentMethod 付款方式。如EBANK_PAYMENT
+                     * @param _paymentMethod 付款方式。如EBANK_PAYMENT
 OPENBANK_PAYMENT
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
                     /**
                      * 获取订单金额。单位分
                      * @return TotalAmount 订单金额。单位分
+                     * 
                      */
                     int64_t GetTotalAmount() const;
 
                     /**
                      * 设置订单金额。单位分
-                     * @param TotalAmount 订单金额。单位分
+                     * @param _totalAmount 订单金额。单位分
+                     * 
                      */
                     void SetTotalAmount(const int64_t& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 
                     /**
                      * 获取实际支付金额。单位分，支付成功时返回
                      * @return PayAmount 实际支付金额。单位分，支付成功时返回
+                     * 
                      */
                     int64_t GetPayAmount() const;
 
                     /**
                      * 设置实际支付金额。单位分，支付成功时返回
-                     * @param PayAmount 实际支付金额。单位分，支付成功时返回
+                     * @param _payAmount 实际支付金额。单位分，支付成功时返回
+                     * 
                      */
                     void SetPayAmount(const int64_t& _payAmount);
 
                     /**
                      * 判断参数 PayAmount 是否已赋值
                      * @return PayAmount 是否已赋值
+                     * 
                      */
                     bool PayAmountHasBeenSet() const;
 
@@ -256,20 +283,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因，若失败的返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因，若失败的返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因，若失败的返回
+                     * @param _failReason 失败原因，若失败的返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
@@ -278,20 +308,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attachment 附加信息，查询时原样透传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttachment() const;
 
                     /**
                      * 设置附加信息，查询时原样透传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attachment 附加信息，查询时原样透传
+                     * @param _attachment 附加信息，查询时原样透传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachment(const std::string& _attachment);
 
                     /**
                      * 判断参数 Attachment 是否已赋值
                      * @return Attachment 是否已赋值
+                     * 
                      */
                     bool AttachmentHasBeenSet() const;
 
@@ -302,6 +335,7 @@ OPENBANK_PAYMENT
                      * @return RedirectInfo 重定向参数，用于客户端跳转，订单未支付时返回该参数
 渠道为TENPAY，付款方式为EBANK_PAYMENT时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OpenBankRedirectInfo GetRedirectInfo() const;
 
@@ -309,15 +343,17 @@ OPENBANK_PAYMENT
                      * 设置重定向参数，用于客户端跳转，订单未支付时返回该参数
 渠道为TENPAY，付款方式为EBANK_PAYMENT时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectInfo 重定向参数，用于客户端跳转，订单未支付时返回该参数
+                     * @param _redirectInfo 重定向参数，用于客户端跳转，订单未支付时返回该参数
 渠道为TENPAY，付款方式为EBANK_PAYMENT时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectInfo(const OpenBankRedirectInfo& _redirectInfo);
 
                     /**
                      * 判断参数 RedirectInfo 是否已赋值
                      * @return RedirectInfo 是否已赋值
+                     * 
                      */
                     bool RedirectInfoHasBeenSet() const;
 
@@ -326,20 +362,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReturnData 第三方渠道返回信息，见渠道特殊说明,详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalReturnData() const;
 
                     /**
                      * 设置第三方渠道返回信息，见渠道特殊说明,详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalReturnData 第三方渠道返回信息，见渠道特殊说明,详情见附录-复杂类型。
+                     * @param _externalReturnData 第三方渠道返回信息，见渠道特殊说明,详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalReturnData(const std::string& _externalReturnData);
 
                     /**
                      * 判断参数 ExternalReturnData 是否已赋值
                      * @return ExternalReturnData 是否已赋值
+                     * 
                      */
                     bool ExternalReturnDataHasBeenSet() const;
 
@@ -348,20 +387,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BankApprovalGuideInfo 银行复核指引。当TENPAY下OPENBANT_PAYMENT时，下单受理成功是返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OpenBankApprovalGuideInfo GetBankApprovalGuideInfo() const;
 
                     /**
                      * 设置银行复核指引。当TENPAY下OPENBANT_PAYMENT时，下单受理成功是返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BankApprovalGuideInfo 银行复核指引。当TENPAY下OPENBANT_PAYMENT时，下单受理成功是返回。
+                     * @param _bankApprovalGuideInfo 银行复核指引。当TENPAY下OPENBANT_PAYMENT时，下单受理成功是返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBankApprovalGuideInfo(const OpenBankApprovalGuideInfo& _bankApprovalGuideInfo);
 
                     /**
                      * 判断参数 BankApprovalGuideInfo 是否已赋值
                      * @return BankApprovalGuideInfo 是否已赋值
+                     * 
                      */
                     bool BankApprovalGuideInfoHasBeenSet() const;
 
@@ -370,20 +412,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeAmount 手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFeeAmount() const;
 
                     /**
                      * 设置手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeeAmount 手续费金额
+                     * @param _feeAmount 手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeeAmount(const int64_t& _feeAmount);
 
                     /**
                      * 判断参数 FeeAmount 是否已赋值
                      * @return FeeAmount 是否已赋值
+                     * 
                      */
                     bool FeeAmountHasBeenSet() const;
 
@@ -392,20 +437,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeRate 手续费费率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFeeRate() const;
 
                     /**
                      * 设置手续费费率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeeRate 手续费费率
+                     * @param _feeRate 手续费费率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeeRate(const int64_t& _feeRate);
 
                     /**
                      * 判断参数 FeeRate 是否已赋值
                      * @return FeeRate 是否已赋值
+                     * 
                      */
                     bool FeeRateHasBeenSet() const;
 
@@ -414,20 +462,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfitShareRespInfoList 分账信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OpenBankProfitShareRespInfo> GetProfitShareRespInfoList() const;
 
                     /**
                      * 设置分账信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProfitShareRespInfoList 分账信息
+                     * @param _profitShareRespInfoList 分账信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProfitShareRespInfoList(const std::vector<OpenBankProfitShareRespInfo>& _profitShareRespInfoList);
 
                     /**
                      * 判断参数 ProfitShareRespInfoList 是否已赋值
                      * @return ProfitShareRespInfoList 是否已赋值
+                     * 
                      */
                     bool ProfitShareRespInfoListHasBeenSet() const;
 
@@ -436,20 +487,23 @@ OPENBANK_PAYMENT
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeFinish 支付完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeFinish() const;
 
                     /**
                      * 设置支付完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeFinish 支付完成时间
+                     * @param _timeFinish 支付完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeFinish(const std::string& _timeFinish);
 
                     /**
                      * 判断参数 TimeFinish 是否已赋值
                      * @return TimeFinish 是否已赋值
+                     * 
                      */
                     bool TimeFinishHasBeenSet() const;
 

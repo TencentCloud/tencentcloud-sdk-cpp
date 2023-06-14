@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取索引规则
                      * @return Rule 索引规则
+                     * 
                      */
                     RuleInfo GetRule() const;
 
                     /**
                      * 设置索引规则
-                     * @param Rule 索引规则
+                     * @param _rule 索引规则
+                     * 
                      */
                     void SetRule(const RuleInfo& _rule);
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 
                     /**
                      * 获取是否生效，默认为true
                      * @return Status 是否生效，默认为true
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置是否生效，默认为true
-                     * @param Status 是否生效，默认为true
+                     * @param _status 是否生效，默认为true
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return IncludeInternalFields 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
 * false:不包含
 * true:包含
+                     * 
                      */
                     bool GetIncludeInternalFields() const;
 
@@ -111,15 +121,17 @@ namespace TencentCloud
                      * 设置内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
 * false:不包含
 * true:包含
-                     * @param IncludeInternalFields 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+                     * @param _includeInternalFields 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
 * false:不包含
 * true:包含
+                     * 
                      */
                     void SetIncludeInternalFields(const bool& _includeInternalFields);
 
                     /**
                      * 判断参数 IncludeInternalFields 是否已赋值
                      * @return IncludeInternalFields 是否已赋值
+                     * 
                      */
                     bool IncludeInternalFieldsHasBeenSet() const;
 
@@ -132,6 +144,7 @@ namespace TencentCloud
 * 0:仅包含开启键值索引的元数据字段
 * 1:包含所有元数据字段
 * 2:不包含任何元数据字段
+                     * 
                      */
                     uint64_t GetMetadataFlag() const;
 
@@ -140,16 +153,18 @@ namespace TencentCloud
 * 0:仅包含开启键值索引的元数据字段
 * 1:包含所有元数据字段
 * 2:不包含任何元数据字段
-                     * @param MetadataFlag 元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+                     * @param _metadataFlag 元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
 * 0:仅包含开启键值索引的元数据字段
 * 1:包含所有元数据字段
 * 2:不包含任何元数据字段
+                     * 
                      */
                     void SetMetadataFlag(const uint64_t& _metadataFlag);
 
                     /**
                      * 判断参数 MetadataFlag 是否已赋值
                      * @return MetadataFlag 是否已赋值
+                     * 
                      */
                     bool MetadataFlagHasBeenSet() const;
 

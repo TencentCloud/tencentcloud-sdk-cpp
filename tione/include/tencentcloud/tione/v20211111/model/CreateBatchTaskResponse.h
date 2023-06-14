@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取跑批任务ID
                      * @return BatchTaskId 跑批任务ID
+                     * 
                      */
                     std::string GetBatchTaskId() const;
 
                     /**
                      * 判断参数 BatchTaskId 是否已赋值
                      * @return BatchTaskId 是否已赋值
+                     * 
                      */
                     bool BatchTaskIdHasBeenSet() const;
 

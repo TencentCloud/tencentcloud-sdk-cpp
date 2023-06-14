@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队 Id
                      * @return FleetId 服务器舰队 Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队 Id
-                     * @param FleetId 服务器舰队 Id
+                     * @param _fleetId 服务器舰队 Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取服务器舰队扩展策略，值为["AUTO_SCALING"]
                      * @return Actions 服务器舰队扩展策略，值为["AUTO_SCALING"]
+                     * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
                      * 设置服务器舰队扩展策略，值为["AUTO_SCALING"]
-                     * @param Actions 服务器舰队扩展策略，值为["AUTO_SCALING"]
+                     * @param _actions 服务器舰队扩展策略，值为["AUTO_SCALING"]
+                     * 
                      */
                     void SetActions(const std::vector<std::string>& _actions);
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 

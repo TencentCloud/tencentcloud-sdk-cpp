@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取购买时长，单位：月。
                      * @return Period 购买时长，单位：月。
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。
-                     * @param Period 购买时长，单位：月。
+                     * @param _period 购买时长，单位：月。
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>
                      * @return ModifyPayMode 标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>
+                     * 
                      */
                     std::string GetModifyPayMode() const;
 
                     /**
                      * 设置标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>
-                     * @param ModifyPayMode 标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>
+                     * @param _modifyPayMode 标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>
+                     * 
                      */
                     void SetModifyPayMode(const std::string& _modifyPayMode);
 
                     /**
                      * 判断参数 ModifyPayMode 是否已赋值
                      * @return ModifyPayMode 是否已赋值
+                     * 
                      */
                     bool ModifyPayModeHasBeenSet() const;
 

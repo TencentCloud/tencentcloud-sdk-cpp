@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取代理ID。
                      * @return ProxyId 代理ID。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置代理ID。
-                     * @param ProxyId 代理ID。
+                     * @param _proxyId 代理ID。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取规则ID。
                      * @return RuleId 规则ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID。
-                     * @param RuleId 规则ID。
+                     * @param _ruleId 规则ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -103,6 +112,7 @@ namespace TencentCloud
                      * @return OriginType 源站类型，取值有：
 <li>custom：手动添加；</li>
 <li>origins：源站组。</li>不填保持原有值。
+                     * 
                      */
                     std::string GetOriginType() const;
 
@@ -110,15 +120,17 @@ namespace TencentCloud
                      * 设置源站类型，取值有：
 <li>custom：手动添加；</li>
 <li>origins：源站组。</li>不填保持原有值。
-                     * @param OriginType 源站类型，取值有：
+                     * @param _originType 源站类型，取值有：
 <li>custom：手动添加；</li>
 <li>origins：源站组。</li>不填保持原有值。
+                     * 
                      */
                     void SetOriginType(const std::string& _originType);
 
                     /**
                      * 判断参数 OriginType 是否已赋值
                      * @return OriginType 是否已赋值
+                     * 
                      */
                     bool OriginTypeHasBeenSet() const;
 
@@ -129,6 +141,7 @@ namespace TencentCloud
                      * @return Port 端口，支持格式：
 <li>80：80端口；</li>
 <li>81-90：81至90端口。</li>
+                     * 
                      */
                     std::vector<std::string> GetPort() const;
 
@@ -136,15 +149,17 @@ namespace TencentCloud
                      * 设置端口，支持格式：
 <li>80：80端口；</li>
 <li>81-90：81至90端口。</li>
-                     * @param Port 端口，支持格式：
+                     * @param _port 端口，支持格式：
 <li>80：80端口；</li>
 <li>81-90：81至90端口。</li>
+                     * 
                      */
                     void SetPort(const std::vector<std::string>& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -155,6 +170,7 @@ namespace TencentCloud
                      * @return Proto 协议，取值有：
 <li>TCP：TCP协议；</li>
 <li>UDP：UDP协议。</li>不填保持原有值。
+                     * 
                      */
                     std::string GetProto() const;
 
@@ -162,15 +178,17 @@ namespace TencentCloud
                      * 设置协议，取值有：
 <li>TCP：TCP协议；</li>
 <li>UDP：UDP协议。</li>不填保持原有值。
-                     * @param Proto 协议，取值有：
+                     * @param _proto 协议，取值有：
 <li>TCP：TCP协议；</li>
 <li>UDP：UDP协议。</li>不填保持原有值。
+                     * 
                      */
                     void SetProto(const std::string& _proto);
 
                     /**
                      * 判断参数 Proto 是否已赋值
                      * @return Proto 是否已赋值
+                     * 
                      */
                     bool ProtoHasBeenSet() const;
 
@@ -185,6 +203,7 @@ namespace TencentCloud
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
 
 不填保持原有值。
+                     * 
                      */
                     std::vector<std::string> GetOriginValue() const;
 
@@ -194,17 +213,19 @@ namespace TencentCloud
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
 
 不填保持原有值。
-                     * @param OriginValue 源站信息：
+                     * @param _originValue 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
 
 不填保持原有值。
+                     * 
                      */
                     void SetOriginValue(const std::vector<std::string>& _originValue);
 
                     /**
                      * 判断参数 OriginValue 是否已赋值
                      * @return OriginValue 是否已赋值
+                     * 
                      */
                     bool OriginValueHasBeenSet() const;
 
@@ -219,6 +240,7 @@ namespace TencentCloud
 <li>PPV1：Proxy Protocol传递，协议版本V1（仅Proto=TCP时可选）；</li>
 <li>PPV2：Proxy Protocol传递，协议版本V2；</li>
 <li>OFF：不传递。</li>不填保持原有值。
+                     * 
                      */
                     std::string GetForwardClientIp() const;
 
@@ -228,17 +250,19 @@ namespace TencentCloud
 <li>PPV1：Proxy Protocol传递，协议版本V1（仅Proto=TCP时可选）；</li>
 <li>PPV2：Proxy Protocol传递，协议版本V2；</li>
 <li>OFF：不传递。</li>不填保持原有值。
-                     * @param ForwardClientIp 传递客户端IP，取值有：
+                     * @param _forwardClientIp 传递客户端IP，取值有：
 <li>TOA：TOA（仅Proto=TCP时可选）；</li>
 <li>PPV1：Proxy Protocol传递，协议版本V1（仅Proto=TCP时可选）；</li>
 <li>PPV2：Proxy Protocol传递，协议版本V2；</li>
 <li>OFF：不传递。</li>不填保持原有值。
+                     * 
                      */
                     void SetForwardClientIp(const std::string& _forwardClientIp);
 
                     /**
                      * 判断参数 ForwardClientIp 是否已赋值
                      * @return ForwardClientIp 是否已赋值
+                     * 
                      */
                     bool ForwardClientIpHasBeenSet() const;
 
@@ -249,6 +273,7 @@ namespace TencentCloud
                      * @return SessionPersist 是否开启会话保持，取值有：
 <li>true：开启；</li>
 <li>false：关闭。</li>不填为false。
+                     * 
                      */
                     bool GetSessionPersist() const;
 
@@ -256,15 +281,17 @@ namespace TencentCloud
                      * 设置是否开启会话保持，取值有：
 <li>true：开启；</li>
 <li>false：关闭。</li>不填为false。
-                     * @param SessionPersist 是否开启会话保持，取值有：
+                     * @param _sessionPersist 是否开启会话保持，取值有：
 <li>true：开启；</li>
 <li>false：关闭。</li>不填为false。
+                     * 
                      */
                     void SetSessionPersist(const bool& _sessionPersist);
 
                     /**
                      * 判断参数 SessionPersist 是否已赋值
                      * @return SessionPersist 是否已赋值
+                     * 
                      */
                     bool SessionPersistHasBeenSet() const;
 
@@ -275,6 +302,7 @@ namespace TencentCloud
                      * @return OriginPort 源站端口，支持格式：
 <li>单端口：80；</li>
 <li>端口段：81-90，81至90端口。</li>
+                     * 
                      */
                     std::string GetOriginPort() const;
 
@@ -282,15 +310,17 @@ namespace TencentCloud
                      * 设置源站端口，支持格式：
 <li>单端口：80；</li>
 <li>端口段：81-90，81至90端口。</li>
-                     * @param OriginPort 源站端口，支持格式：
+                     * @param _originPort 源站端口，支持格式：
 <li>单端口：80；</li>
 <li>端口段：81-90，81至90端口。</li>
+                     * 
                      */
                     void SetOriginPort(const std::string& _originPort);
 
                     /**
                      * 判断参数 OriginPort 是否已赋值
                      * @return OriginPort 是否已赋值
+                     * 
                      */
                     bool OriginPortHasBeenSet() const;
 

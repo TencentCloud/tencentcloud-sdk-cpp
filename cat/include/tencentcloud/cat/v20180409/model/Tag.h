@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取key
                      * @return TagKey key
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置key
-                     * @param TagKey key
+                     * @param _tagKey key
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取value
                      * @return TagValue value
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置value
-                     * @param TagValue value
+                     * @param _tagValue value
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 

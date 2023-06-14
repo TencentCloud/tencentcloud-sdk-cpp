@@ -48,12 +48,14 @@ namespace TencentCloud
 示例值：19300009329
                      * @return MerchantId 商户号。
 示例值：19300009329
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
                      * @return MerchantBatchNo 商家批次单号。
 商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantBatchNo() const;
 
                     /**
                      * 判断参数 MerchantBatchNo 是否已赋值
                      * @return MerchantBatchNo 是否已赋值
+                     * 
                      */
                     bool MerchantBatchNoHasBeenSet() const;
 
@@ -80,12 +84,14 @@ namespace TencentCloud
                      * @return BatchId 微信批次单号。
 微信商家转账系统返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -96,12 +102,14 @@ namespace TencentCloud
                      * @return MerchantDetailNo 商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantDetailNo() const;
 
                     /**
                      * 判断参数 MerchantDetailNo 是否已赋值
                      * @return MerchantDetailNo 是否已赋值
+                     * 
                      */
                     bool MerchantDetailNoHasBeenSet() const;
 
@@ -112,12 +120,14 @@ namespace TencentCloud
                      * @return DetailId 微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetDetailId() const;
 
                     /**
                      * 判断参数 DetailId 是否已赋值
                      * @return DetailId 是否已赋值
+                     * 
                      */
                     bool DetailIdHasBeenSet() const;
 
@@ -132,12 +142,14 @@ PROCESSING：转账中，正在处理，结果未明；
 SUCCESS：转账成功；
 FAIL：转账失败，需要确认失败原因以后，再决定是否重新发起地该笔明细的转账。
 示例值：SUCCESS
+                     * 
                      */
                     std::string GetDetailStatus() const;
 
                     /**
                      * 判断参数 DetailStatus 是否已赋值
                      * @return DetailStatus 是否已赋值
+                     * 
                      */
                     bool DetailStatusHasBeenSet() const;
 
@@ -148,12 +160,14 @@ FAIL：转账失败，需要确认失败原因以后，再决定是否重新发�
                      * @return TransferAmount 转账金额。
 单位为分。
 示例值：200
+                     * 
                      */
                     uint64_t GetTransferAmount() const;
 
                     /**
                      * 判断参数 TransferAmount 是否已赋值
                      * @return TransferAmount 是否已赋值
+                     * 
                      */
                     bool TransferAmountHasBeenSet() const;
 
@@ -192,12 +206,14 @@ ACCOUNT_NOT_EXIST：用户账户不存在
 TRANSFER_RISK：转账存在风险
 示例值：ACCOUNT_FROZEN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
@@ -210,12 +226,14 @@ TRANSFER_RISK：转账存在风险
 遵循rfc3339标准格式。格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE，YYYY-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.sss表示时分秒毫秒，TIMEZONE表示时区（+08:00表示东八区时间，领先UTC 8小时，即北京时间）。例如：2015-05-20T13:29:35.120+08:00表示北京时间2015年05月20日13点29分35秒。
 示例值：2015-05-20T13:29:35.120+08:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInitiateTime() const;
 
                     /**
                      * 判断参数 InitiateTime 是否已赋值
                      * @return InitiateTime 是否已赋值
+                     * 
                      */
                     bool InitiateTimeHasBeenSet() const;
 
@@ -228,12 +246,14 @@ TRANSFER_RISK：转账存在风险
 遵循rfc3339标准格式。格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE，YYYY-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.sss表示时分秒毫秒，TIMEZONE表示时区（+08:00表示东八区时间，领先UTC 8小时，即北京时间）。例如：2015-05-20T13:29:35.120+08:00表示北京时间2015年05月20日13点29分35秒。
 示例值：2015-05-20T13:29:35.120+08:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -244,12 +264,14 @@ TRANSFER_RISK：转账存在风险
                      * @return UserName 用户名。
 示例值：张三
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -262,12 +284,14 @@ TRANSFER_RISK：转账存在风险
 单条转账备注（微信用户会收到该备注）。UTF8编码，最多32字符。
 示例值：2020年4月报销
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransferRemark() const;
 
                     /**
                      * 判断参数 TransferRemark 是否已赋值
                      * @return TransferRemark 是否已赋值
+                     * 
                      */
                     bool TransferRemarkHasBeenSet() const;
 
@@ -276,12 +300,14 @@ TRANSFER_RISK：转账存在风险
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantAppId 商家绑定公众号APPID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
@@ -290,12 +316,14 @@ TRANSFER_RISK：转账存在风险
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 用户openId。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 

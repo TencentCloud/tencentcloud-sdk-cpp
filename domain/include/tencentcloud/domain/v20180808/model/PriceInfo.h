@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取域名后缀，例如.com
                      * @return Tld 域名后缀，例如.com
+                     * 
                      */
                     std::string GetTld() const;
 
                     /**
                      * 设置域名后缀，例如.com
-                     * @param Tld 域名后缀，例如.com
+                     * @param _tld 域名后缀，例如.com
+                     * 
                      */
                     void SetTld(const std::string& _tld);
 
                     /**
                      * 判断参数 Tld 是否已赋值
                      * @return Tld 是否已赋值
+                     * 
                      */
                     bool TldHasBeenSet() const;
 
                     /**
                      * 获取购买年限，范围[1-10]
                      * @return Year 购买年限，范围[1-10]
+                     * 
                      */
                     uint64_t GetYear() const;
 
                     /**
                      * 设置购买年限，范围[1-10]
-                     * @param Year 购买年限，范围[1-10]
+                     * @param _year 购买年限，范围[1-10]
+                     * 
                      */
                     void SetYear(const uint64_t& _year);
 
                     /**
                      * 判断参数 Year 是否已赋值
                      * @return Year 是否已赋值
+                     * 
                      */
                     bool YearHasBeenSet() const;
 
                     /**
                      * 获取域名原价
                      * @return Price 域名原价
+                     * 
                      */
                     uint64_t GetPrice() const;
 
                     /**
                      * 设置域名原价
-                     * @param Price 域名原价
+                     * @param _price 域名原价
+                     * 
                      */
                     void SetPrice(const uint64_t& _price);
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
                     /**
                      * 获取域名现价
                      * @return RealPrice 域名现价
+                     * 
                      */
                     uint64_t GetRealPrice() const;
 
                     /**
                      * 设置域名现价
-                     * @param RealPrice 域名现价
+                     * @param _realPrice 域名现价
+                     * 
                      */
                     void SetRealPrice(const uint64_t& _realPrice);
 
                     /**
                      * 判断参数 RealPrice 是否已赋值
                      * @return RealPrice 是否已赋值
+                     * 
                      */
                     bool RealPriceHasBeenSet() const;
 
                     /**
                      * 获取商品的购买类型，新购，续费，赎回，转入，续费并转入
                      * @return Operation 商品的购买类型，新购，续费，赎回，转入，续费并转入
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置商品的购买类型，新购，续费，赎回，转入，续费并转入
-                     * @param Operation 商品的购买类型，新购，续费，赎回，转入，续费并转入
+                     * @param _operation 商品的购买类型，新购，续费，赎回，转入，续费并转入
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 

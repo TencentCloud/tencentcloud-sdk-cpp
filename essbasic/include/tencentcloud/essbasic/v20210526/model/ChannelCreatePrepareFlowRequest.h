@@ -51,180 +51,210 @@ namespace TencentCloud
                     /**
                      * 获取资源id，与ResourceType对应
                      * @return ResourceId 资源id，与ResourceType对应
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id，与ResourceType对应
-                     * @param ResourceId 资源id，与ResourceType对应
+                     * @param _resourceId 资源id，与ResourceType对应
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源类型，1：模板，目前仅支持模板，与ResourceId对应
                      * @return ResourceType 资源类型，1：模板，目前仅支持模板，与ResourceId对应
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型，1：模板，目前仅支持模板，与ResourceId对应
-                     * @param ResourceType 资源类型，1：模板，目前仅支持模板，与ResourceId对应
+                     * @param _resourceType 资源类型，1：模板，目前仅支持模板，与ResourceId对应
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取合同流程基础信息
                      * @return FlowInfo 合同流程基础信息
+                     * 
                      */
                     BaseFlowInfo GetFlowInfo() const;
 
                     /**
                      * 设置合同流程基础信息
-                     * @param FlowInfo 合同流程基础信息
+                     * @param _flowInfo 合同流程基础信息
+                     * 
                      */
                     void SetFlowInfo(const BaseFlowInfo& _flowInfo);
 
                     /**
                      * 判断参数 FlowInfo 是否已赋值
                      * @return FlowInfo 是否已赋值
+                     * 
                      */
                     bool FlowInfoHasBeenSet() const;
 
                     /**
                      * 获取合同签署人信息
                      * @return FlowApproverList 合同签署人信息
+                     * 
                      */
                     std::vector<CommonFlowApprover> GetFlowApproverList() const;
 
                     /**
                      * 设置合同签署人信息
-                     * @param FlowApproverList 合同签署人信息
+                     * @param _flowApproverList 合同签署人信息
+                     * 
                      */
                     void SetFlowApproverList(const std::vector<CommonFlowApprover>& _flowApproverList);
 
                     /**
                      * 判断参数 FlowApproverList 是否已赋值
                      * @return FlowApproverList 是否已赋值
+                     * 
                      */
                     bool FlowApproverListHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取合同流程配置信息
                      * @return FlowOption 合同流程配置信息
+                     * 
                      */
                     CreateFlowOption GetFlowOption() const;
 
                     /**
                      * 设置合同流程配置信息
-                     * @param FlowOption 合同流程配置信息
+                     * @param _flowOption 合同流程配置信息
+                     * 
                      */
                     void SetFlowOption(const CreateFlowOption& _flowOption);
 
                     /**
                      * 判断参数 FlowOption 是否已赋值
                      * @return FlowOption 是否已赋值
+                     * 
                      */
                     bool FlowOptionHasBeenSet() const;
 
                     /**
                      * 获取通过flowid快速获得之前成功通过页面发起的合同生成链接
                      * @return FlowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置通过flowid快速获得之前成功通过页面发起的合同生成链接
-                     * @param FlowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * @param _flowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
                      * @return NeedPreview 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * 
                      */
                     bool GetNeedPreview() const;
 
                     /**
                      * 设置该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
-                     * @param NeedPreview 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * @param _needPreview 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * 
                      */
                     void SetNeedPreview(const bool& _needPreview);
 
                     /**
                      * 判断参数 NeedPreview 是否已赋值
                      * @return NeedPreview 是否已赋值
+                     * 
                      */
                     bool NeedPreviewHasBeenSet() const;
 
                     /**
                      * 获取企业机构信息，不用传
                      * @return Organization 企业机构信息，不用传
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置企业机构信息，不用传
-                     * @param Organization 企业机构信息，不用传
+                     * @param _organization 企业机构信息，不用传
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取操作人（用户）信息，不用传
                      * @return Operator 操作人（用户）信息，不用传
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人（用户）信息，不用传
-                     * @param Operator 操作人（用户）信息，不用传
+                     * @param _operator 操作人（用户）信息，不用传
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

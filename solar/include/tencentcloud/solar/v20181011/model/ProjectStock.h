@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取奖品id
                      * @return PrizeId 奖品id
+                     * 
                      */
                     std::string GetPrizeId() const;
 
                     /**
                      * 设置奖品id
-                     * @param PrizeId 奖品id
+                     * @param _prizeId 奖品id
+                     * 
                      */
                     void SetPrizeId(const std::string& _prizeId);
 
                     /**
                      * 判断参数 PrizeId 是否已赋值
                      * @return PrizeId 是否已赋值
+                     * 
                      */
                     bool PrizeIdHasBeenSet() const;
 
                     /**
                      * 获取奖品批次
                      * @return PrizeBat 奖品批次
+                     * 
                      */
                     uint64_t GetPrizeBat() const;
 
                     /**
                      * 设置奖品批次
-                     * @param PrizeBat 奖品批次
+                     * @param _prizeBat 奖品批次
+                     * 
                      */
                     void SetPrizeBat(const uint64_t& _prizeBat);
 
                     /**
                      * 判断参数 PrizeBat 是否已赋值
                      * @return PrizeBat 是否已赋值
+                     * 
                      */
                     bool PrizeBatHasBeenSet() const;
 
                     /**
                      * 获取奖品名称
                      * @return PrizeName 奖品名称
+                     * 
                      */
                     std::string GetPrizeName() const;
 
                     /**
                      * 设置奖品名称
-                     * @param PrizeName 奖品名称
+                     * @param _prizeName 奖品名称
+                     * 
                      */
                     void SetPrizeName(const std::string& _prizeName);
 
                     /**
                      * 判断参数 PrizeName 是否已赋值
                      * @return PrizeName 是否已赋值
+                     * 
                      */
                     bool PrizeNameHasBeenSet() const;
 
                     /**
                      * 获取已分配奖品数量
                      * @return UsedStock 已分配奖品数量
+                     * 
                      */
                     uint64_t GetUsedStock() const;
 
                     /**
                      * 设置已分配奖品数量
-                     * @param UsedStock 已分配奖品数量
+                     * @param _usedStock 已分配奖品数量
+                     * 
                      */
                     void SetUsedStock(const uint64_t& _usedStock);
 
                     /**
                      * 判断参数 UsedStock 是否已赋值
                      * @return UsedStock 是否已赋值
+                     * 
                      */
                     bool UsedStockHasBeenSet() const;
 
                     /**
                      * 获取该奖品剩余库存数量
                      * @return RemainStock 该奖品剩余库存数量
+                     * 
                      */
                     uint64_t GetRemainStock() const;
 
                     /**
                      * 设置该奖品剩余库存数量
-                     * @param RemainStock 该奖品剩余库存数量
+                     * @param _remainStock 该奖品剩余库存数量
+                     * 
                      */
                     void SetRemainStock(const uint64_t& _remainStock);
 
                     /**
                      * 判断参数 RemainStock 是否已赋值
                      * @return RemainStock 是否已赋值
+                     * 
                      */
                     bool RemainStockHasBeenSet() const;
 
                     /**
                      * 获取奖品所在奖池index
                      * @return PoolIdx 奖品所在奖池index
+                     * 
                      */
                     uint64_t GetPoolIdx() const;
 
                     /**
                      * 设置奖品所在奖池index
-                     * @param PoolIdx 奖品所在奖池index
+                     * @param _poolIdx 奖品所在奖池index
+                     * 
                      */
                     void SetPoolIdx(const uint64_t& _poolIdx);
 
                     /**
                      * 判断参数 PoolIdx 是否已赋值
                      * @return PoolIdx 是否已赋值
+                     * 
                      */
                     bool PoolIdxHasBeenSet() const;
 
                     /**
                      * 获取奖品所在奖池名称
                      * @return PoolName 奖品所在奖池名称
+                     * 
                      */
                     std::string GetPoolName() const;
 
                     /**
                      * 设置奖品所在奖池名称
-                     * @param PoolName 奖品所在奖池名称
+                     * @param _poolName 奖品所在奖池名称
+                     * 
                      */
                     void SetPoolName(const std::string& _poolName);
 
                     /**
                      * 判断参数 PoolName 是否已赋值
                      * @return PoolName 是否已赋值
+                     * 
                      */
                     bool PoolNameHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取已使用的资源字节数
                      * @return UsedSize 已使用的资源字节数
+                     * 
                      */
                     uint64_t GetUsedSize() const;
 
                     /**
                      * 判断参数 UsedSize 是否已赋值
                      * @return UsedSize 是否已赋值
+                     * 
                      */
                     bool UsedSizeHasBeenSet() const;
 
                     /**
                      * 获取可以使用资源的总大小
                      * @return Limit 可以使用资源的总大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

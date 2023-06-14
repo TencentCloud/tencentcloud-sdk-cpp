@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器 ID 列表。ID 数量上限为20个。
                      * @return ListenerIds 监听器 ID 列表。ID 数量上限为20个。
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 设置监听器 ID 列表。ID 数量上限为20个。
-                     * @param ListenerIds 监听器 ID 列表。ID 数量上限为20个。
+                     * @param _listenerIds 监听器 ID 列表。ID 数量上限为20个。
+                     * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
                      * 获取监听器协议类型。
                      * @return Protocol 监听器协议类型。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器协议类型。
-                     * @param Protocol 监听器协议类型。
+                     * @param _protocol 监听器协议类型。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取监听器端口。
                      * @return Port 监听器端口。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听器端口。
-                     * @param Port 监听器端口。
+                     * @param _port 监听器端口。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -122,6 +134,7 @@ namespace TencentCloud
                      * @return Filters 查询负载均衡绑定的后端服务列表，过滤条件如下：
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 规则ID 过滤，如："loc-12345678"。</li>
 <li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 后端服务内网IP 过滤，如："172.16.1.1"。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -129,15 +142,17 @@ namespace TencentCloud
                      * 设置查询负载均衡绑定的后端服务列表，过滤条件如下：
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 规则ID 过滤，如："loc-12345678"。</li>
 <li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 后端服务内网IP 过滤，如："172.16.1.1"。</li>
-                     * @param Filters 查询负载均衡绑定的后端服务列表，过滤条件如下：
+                     * @param _filters 查询负载均衡绑定的后端服务列表，过滤条件如下：
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 规则ID 过滤，如："loc-12345678"。</li>
 <li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 后端服务内网IP 过滤，如："172.16.1.1"。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取镜像id
                      * @return ImageID 镜像id
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像id
-                     * @param ImageID 镜像id
+                     * @param _imageID 镜像id
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像大小
                      * @return Size 镜像大小
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置镜像大小
-                     * @param Size 镜像大小
+                     * @param _size 镜像大小
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return ImageType 类型
+                     * 
                      */
                     std::string GetImageType() const;
 
                     /**
                      * 设置类型
-                     * @param ImageType 类型
+                     * @param _imageType 类型
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 
                     /**
                      * 获取关联容器数
                      * @return ContainerCnt 关联容器数
+                     * 
                      */
                     int64_t GetContainerCnt() const;
 
                     /**
                      * 设置关联容器数
-                     * @param ContainerCnt 关联容器数
+                     * @param _containerCnt 关联容器数
+                     * 
                      */
                     void SetContainerCnt(const int64_t& _containerCnt);
 
                     /**
                      * 判断参数 ContainerCnt 是否已赋值
                      * @return ContainerCnt 是否已赋值
+                     * 
                      */
                     bool ContainerCntHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmEventInfoList 告警事件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlarmEventInfo> GetAlarmEventInfoList() const;
 
                     /**
                      * 判断参数 AlarmEventInfoList 是否已赋值
                      * @return AlarmEventInfoList 是否已赋值
+                     * 
                      */
                     bool AlarmEventInfoListHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

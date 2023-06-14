@@ -51,126 +51,147 @@ namespace TencentCloud
                     /**
                      * 获取操作唯一id
                      * @return Id 操作唯一id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置操作唯一id
-                     * @param Id 操作唯一id
+                     * @param _id 操作唯一id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取操作开始时间
                      * @return StartTime 操作开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置操作开始时间
-                     * @param StartTime 操作开始时间
+                     * @param _startTime 操作开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取操作类型
                      * @return Type 操作类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置操作类型
-                     * @param Type 操作类型
+                     * @param _type 操作类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取操作详情
                      * @return Detail 操作详情
+                     * 
                      */
                     OperationDetail GetDetail() const;
 
                     /**
                      * 设置操作详情
-                     * @param Detail 操作详情
+                     * @param _detail 操作详情
+                     * 
                      */
                     void SetDetail(const OperationDetail& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 
                     /**
                      * 获取操作结果
                      * @return Result 操作结果
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置操作结果
-                     * @param Result 操作结果
+                     * @param _result 操作结果
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取流程任务信息
                      * @return Tasks 流程任务信息
+                     * 
                      */
                     std::vector<TaskDetail> GetTasks() const;
 
                     /**
                      * 设置流程任务信息
-                     * @param Tasks 流程任务信息
+                     * @param _tasks 流程任务信息
+                     * 
                      */
                     void SetTasks(const std::vector<TaskDetail>& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 
                     /**
                      * 获取操作进度
                      * @return Progress 操作进度
+                     * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置操作进度
-                     * @param Progress 操作进度
+                     * @param _progress 操作进度
+                     * 
                      */
                     void SetProgress(const double& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名名称。
                      * @return DomainName 域名名称。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名名称。
-                     * @param DomainName 域名名称。
+                     * @param _domainName 域名名称。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return DomainType 域名类型，
 0：推流域名，
 1：播放域名。
+                     * 
                      */
                     uint64_t GetDomainType() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置域名类型，
 0：推流域名，
 1：播放域名。
-                     * @param DomainType 域名类型，
+                     * @param _domainType 域名类型，
 0：推流域名，
 1：播放域名。
+                     * 
                      */
                     void SetDomainType(const uint64_t& _domainType);
 
                     /**
                      * 判断参数 DomainType 是否已赋值
                      * @return DomainType 是否已赋值
+                     * 
                      */
                     bool DomainTypeHasBeenSet() const;
 
@@ -97,6 +103,7 @@ namespace TencentCloud
 2：全球，
 3：境外。
 默认值：1。
+                     * 
                      */
                     uint64_t GetPlayType() const;
 
@@ -106,17 +113,19 @@ namespace TencentCloud
 2：全球，
 3：境外。
 默认值：1。
-                     * @param PlayType 拉流域名类型：
+                     * @param _playType 拉流域名类型：
 1：国内，
 2：全球，
 3：境外。
 默认值：1。
+                     * 
                      */
                     void SetPlayType(const uint64_t& _playType);
 
                     /**
                      * 判断参数 PlayType 是否已赋值
                      * @return PlayType 是否已赋值
+                     * 
                      */
                     bool PlayTypeHasBeenSet() const;
 
@@ -129,6 +138,7 @@ namespace TencentCloud
 0： 普通直播，
 1 ：慢直播 。
 默认值： 0。
+                     * 
                      */
                     int64_t GetIsDelayLive() const;
 
@@ -137,16 +147,18 @@ namespace TencentCloud
 0： 普通直播，
 1 ：慢直播 。
 默认值： 0。
-                     * @param IsDelayLive 是否是慢直播：
+                     * @param _isDelayLive 是否是慢直播：
 0： 普通直播，
 1 ：慢直播 。
 默认值： 0。
+                     * 
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
 
                     /**
                      * 判断参数 IsDelayLive 是否已赋值
                      * @return IsDelayLive 是否已赋值
+                     * 
                      */
                     bool IsDelayLiveHasBeenSet() const;
 
@@ -159,6 +171,7 @@ namespace TencentCloud
 0： 标准直播，
 1 ：小程序直播 。
 默认值： 0。
+                     * 
                      */
                     int64_t GetIsMiniProgramLive() const;
 
@@ -167,16 +180,18 @@ namespace TencentCloud
 0： 标准直播，
 1 ：小程序直播 。
 默认值： 0。
-                     * @param IsMiniProgramLive 是否是小程序直播：
+                     * @param _isMiniProgramLive 是否是小程序直播：
 0： 标准直播，
 1 ：小程序直播 。
 默认值： 0。
+                     * 
                      */
                     void SetIsMiniProgramLive(const int64_t& _isMiniProgramLive);
 
                     /**
                      * 判断参数 IsMiniProgramLive 是否已赋值
                      * @return IsMiniProgramLive 是否已赋值
+                     * 
                      */
                     bool IsMiniProgramLiveHasBeenSet() const;
 
@@ -193,6 +208,7 @@ dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
 若不传默认为 dbCheck 。
+                     * 
                      */
                     std::string GetVerifyOwnerType() const;
 
@@ -203,18 +219,20 @@ dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
 若不传默认为 dbCheck 。
-                     * @param VerifyOwnerType 域名归属校验类型。
+                     * @param _verifyOwnerType 域名归属校验类型。
 可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
 dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
 fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
 dbCheck :  检查是否已经验证成功过。
 若不传默认为 dbCheck 。
+                     * 
                      */
                     void SetVerifyOwnerType(const std::string& _verifyOwnerType);
 
                     /**
                      * 判断参数 VerifyOwnerType 是否已赋值
                      * @return VerifyOwnerType 是否已赋值
+                     * 
                      */
                     bool VerifyOwnerTypeHasBeenSet() const;
 

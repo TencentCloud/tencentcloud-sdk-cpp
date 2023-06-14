@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取服务商账户余额
                      * @return Balance 服务商账户余额
+                     * 
                      */
                     std::string GetBalance() const;
 
                     /**
                      * 设置服务商账户余额
-                     * @param Balance 服务商账户余额
+                     * @param _balance 服务商账户余额
+                     * 
                      */
                     void SetBalance(const std::string& _balance);
 
                     /**
                      * 判断参数 Balance 是否已赋值
                      * @return Balance 是否已赋值
+                     * 
                      */
                     bool BalanceHasBeenSet() const;
 

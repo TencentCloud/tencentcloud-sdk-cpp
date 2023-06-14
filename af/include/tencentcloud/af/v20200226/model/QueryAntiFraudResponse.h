@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取表示该条记录能否查到：1为能查到，-1为查不到
                      * @return Found 表示该条记录能否查到：1为能查到，-1为查不到
+                     * 
                      */
                     int64_t GetFound() const;
 
                     /**
                      * 判断参数 Found 是否已赋值
                      * @return Found 是否已赋值
+                     * 
                      */
                     bool FoundHasBeenSet() const;
 
                     /**
                      * 获取表示该条Id能否查到：1为能查到，-1为查不到
                      * @return IdFound 表示该条Id能否查到：1为能查到，-1为查不到
+                     * 
                      */
                     int64_t GetIdFound() const;
 
                     /**
                      * 判断参数 IdFound 是否已赋值
                      * @return IdFound 是否已赋值
+                     * 
                      */
                     bool IdFoundHasBeenSet() const;
 
                     /**
                      * 获取0~100;值越高 欺诈可能性越大
                      * @return RiskScore 0~100;值越高 欺诈可能性越大
+                     * 
                      */
                     uint64_t GetRiskScore() const;
 
                     /**
                      * 判断参数 RiskScore 是否已赋值
                      * @return RiskScore 是否已赋值
+                     * 
                      */
                     bool RiskScoreHasBeenSet() const;
 
                     /**
                      * 获取扩展字段，对风险类型的说明
                      * @return RiskInfo 扩展字段，对风险类型的说明
+                     * 
                      */
                     std::vector<RiskDetail> GetRiskInfo() const;
 
                     /**
                      * 判断参数 RiskInfo 是否已赋值
                      * @return RiskInfo 是否已赋值
+                     * 
                      */
                     bool RiskInfoHasBeenSet() const;
 
@@ -97,12 +105,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeDesc 业务侧错误码。成功时返回Success，错误时返回具体业务错误原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeDesc() const;
 
                     /**
                      * 判断参数 CodeDesc 是否已赋值
                      * @return CodeDesc 是否已赋值
+                     * 
                      */
                     bool CodeDescHasBeenSet() const;
 

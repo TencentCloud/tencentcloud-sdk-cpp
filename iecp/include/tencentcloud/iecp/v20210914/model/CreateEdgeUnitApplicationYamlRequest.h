@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitId 单元ID
+                     * 
                      */
                     int64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitId 单元ID
+                     * @param _edgeUnitId 单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const int64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取base64后的Yaml配置
                      * @return Yaml base64后的Yaml配置
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置base64后的Yaml配置
-                     * @param Yaml base64后的Yaml配置
+                     * @param _yaml base64后的Yaml配置
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
                     /**
                      * 获取基本信息
                      * @return BasicInfo 基本信息
+                     * 
                      */
                     ApplicationBasicInfo GetBasicInfo() const;
 
                     /**
                      * 设置基本信息
-                     * @param BasicInfo 基本信息
+                     * @param _basicInfo 基本信息
+                     * 
                      */
                     void SetBasicInfo(const ApplicationBasicInfo& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 

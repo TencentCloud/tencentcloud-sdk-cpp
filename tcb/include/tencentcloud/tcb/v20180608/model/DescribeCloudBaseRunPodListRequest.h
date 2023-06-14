@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名
                      * @return ServerName 服务名
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置服务名
-                     * @param ServerName 服务名
+                     * @param _serverName 服务名
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取版本名
                      * @return VersionName 版本名
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名
-                     * @param VersionName 版本名
+                     * @param _versionName 版本名
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
                     /**
                      * 获取分页限制
                      * @return Limit 分页限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页限制
-                     * @param Limit 分页限制
+                     * @param _limit 分页限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取容器状态
                      * @return Status 容器状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置容器状态
-                     * @param Status 容器状态
+                     * @param _status 容器状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取容器名
                      * @return PodName 容器名
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置容器名
-                     * @param PodName 容器名
+                     * @param _podName 容器名
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 

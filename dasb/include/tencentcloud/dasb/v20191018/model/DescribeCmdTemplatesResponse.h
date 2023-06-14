@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取命令模板列表
                      * @return CmdTemplateSet 命令模板列表
+                     * 
                      */
                     std::vector<CmdTemplate> GetCmdTemplateSet() const;
 
                     /**
                      * 判断参数 CmdTemplateSet 是否已赋值
                      * @return CmdTemplateSet 是否已赋值
+                     * 
                      */
                     bool CmdTemplateSetHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

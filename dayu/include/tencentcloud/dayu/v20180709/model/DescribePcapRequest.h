@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID
                      * @return Id 资源实例ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param Id 资源实例ID
+                     * @param _id 资源实例ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取攻击事件的开始时间，格式为"2018-08-28 07:00:00"
                      * @return StartTime 攻击事件的开始时间，格式为"2018-08-28 07:00:00"
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置攻击事件的开始时间，格式为"2018-08-28 07:00:00"
-                     * @param StartTime 攻击事件的开始时间，格式为"2018-08-28 07:00:00"
+                     * @param _startTime 攻击事件的开始时间，格式为"2018-08-28 07:00:00"
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取攻击事件的结束时间，格式为"2018-08-28 07:02:00"
                      * @return EndTime 攻击事件的结束时间，格式为"2018-08-28 07:02:00"
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置攻击事件的结束时间，格式为"2018-08-28 07:02:00"
-                     * @param EndTime 攻击事件的结束时间，格式为"2018-08-28 07:02:00"
+                     * @param _endTime 攻击事件的结束时间，格式为"2018-08-28 07:02:00"
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取资源的IP，只有当Business为net时才需要填写资源实例下的IP；
                      * @return Ip 资源的IP，只有当Business为net时才需要填写资源实例下的IP；
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置资源的IP，只有当Business为net时才需要填写资源实例下的IP；
-                     * @param Ip 资源的IP，只有当Business为net时才需要填写资源实例下的IP；
+                     * @param _ip 资源的IP，只有当Business为net时才需要填写资源实例下的IP；
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 

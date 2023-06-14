@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取CMK的唯一标识，用于指定目标导入密钥材料的CMK。
                      * @return KeyId CMK的唯一标识，用于指定目标导入密钥材料的CMK。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取导入密钥材料需要的token，用于作为 ImportKeyMaterial 的参数。
                      * @return ImportToken 导入密钥材料需要的token，用于作为 ImportKeyMaterial 的参数。
+                     * 
                      */
                     std::string GetImportToken() const;
 
                     /**
                      * 判断参数 ImportToken 是否已赋值
                      * @return ImportToken 是否已赋值
+                     * 
                      */
                     bool ImportTokenHasBeenSet() const;
 
                     /**
                      * 获取用于加密密钥材料的RSA公钥，base64编码。使用PublicKey base64解码后的公钥将导入密钥进行加密后作为 ImportKeyMaterial 的参数。
                      * @return PublicKey 用于加密密钥材料的RSA公钥，base64编码。使用PublicKey base64解码后的公钥将导入密钥进行加密后作为 ImportKeyMaterial 的参数。
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 
                     /**
                      * 获取该导出token和公钥的有效期，超过该时间后无法导入，需要重新调用GetParametersForImport获取。
                      * @return ParametersValidTo 该导出token和公钥的有效期，超过该时间后无法导入，需要重新调用GetParametersForImport获取。
+                     * 
                      */
                     uint64_t GetParametersValidTo() const;
 
                     /**
                      * 判断参数 ParametersValidTo 是否已赋值
                      * @return ParametersValidTo 是否已赋值
+                     * 
                      */
                     bool ParametersValidToHasBeenSet() const;
 

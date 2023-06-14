@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取联盟id
                      * @return ConsortiumId 联盟id
+                     * 
                      */
                     uint64_t GetConsortiumId() const;
 
                     /**
                      * 设置联盟id
-                     * @param ConsortiumId 联盟id
+                     * @param _consortiumId 联盟id
+                     * 
                      */
                     void SetConsortiumId(const uint64_t& _consortiumId);
 
                     /**
                      * 判断参数 ConsortiumId 是否已赋值
                      * @return ConsortiumId 是否已赋值
+                     * 
                      */
                     bool ConsortiumIdHasBeenSet() const;
 

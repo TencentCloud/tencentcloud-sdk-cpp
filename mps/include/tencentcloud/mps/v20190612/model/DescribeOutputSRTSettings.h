@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destinations 转推的目标的地址信息列表，SRT模式为CALLER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SRTAddressDestination> GetDestinations() const;
 
                     /**
                      * 设置转推的目标的地址信息列表，SRT模式为CALLER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Destinations 转推的目标的地址信息列表，SRT模式为CALLER时使用。
+                     * @param _destinations 转推的目标的地址信息列表，SRT模式为CALLER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestinations(const std::vector<SRTAddressDestination>& _destinations);
 
                     /**
                      * 判断参数 Destinations 是否已赋值
                      * @return Destinations 是否已赋值
+                     * 
                      */
                     bool DestinationsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamId 流Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置流Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamId 流Id。
+                     * @param _streamId 流Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latency 延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLatency() const;
 
                     /**
                      * 设置延迟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Latency 延迟。
+                     * @param _latency 延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatency(const int64_t& _latency);
 
                     /**
                      * 判断参数 Latency 是否已赋值
                      * @return Latency 是否已赋值
+                     * 
                      */
                     bool LatencyHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecvLatency 接收延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecvLatency() const;
 
                     /**
                      * 设置接收延迟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecvLatency 接收延迟。
+                     * @param _recvLatency 接收延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecvLatency(const int64_t& _recvLatency);
 
                     /**
                      * 判断参数 RecvLatency 是否已赋值
                      * @return RecvLatency 是否已赋值
+                     * 
                      */
                     bool RecvLatencyHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerLatency 对端延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
                      * 设置对端延迟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeerLatency 对端延迟。
+                     * @param _peerLatency 对端延迟。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeerLatency(const int64_t& _peerLatency);
 
                     /**
                      * 判断参数 PeerLatency 是否已赋值
                      * @return PeerLatency 是否已赋值
+                     * 
                      */
                     bool PeerLatencyHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerIdleTimeout 对端空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeerIdleTimeout() const;
 
                     /**
                      * 设置对端空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeerIdleTimeout 对端空闲超时时间。
+                     * @param _peerIdleTimeout 对端空闲超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeerIdleTimeout(const int64_t& _peerIdleTimeout);
 
                     /**
                      * 判断参数 PeerIdleTimeout 是否已赋值
                      * @return PeerIdleTimeout 是否已赋值
+                     * 
                      */
                     bool PeerIdleTimeoutHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Passphrase 加密密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPassphrase() const;
 
                     /**
                      * 设置加密密钥。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Passphrase 加密密钥。
+                     * @param _passphrase 加密密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassphrase(const std::string& _passphrase);
 
                     /**
                      * 判断参数 Passphrase 是否已赋值
                      * @return Passphrase 是否已赋值
+                     * 
                      */
                     bool PassphraseHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PbKeyLen 加密密钥长度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPbKeyLen() const;
 
                     /**
                      * 设置加密密钥长度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PbKeyLen 加密密钥长度。
+                     * @param _pbKeyLen 加密密钥长度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPbKeyLen(const int64_t& _pbKeyLen);
 
                     /**
                      * 判断参数 PbKeyLen 是否已赋值
                      * @return PbKeyLen 是否已赋值
+                     * 
                      */
                     bool PbKeyLenHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode SRT模式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置SRT模式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode SRT模式。
+                     * @param _mode SRT模式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceAddresses 服务器监听地址，SRT模式为LISTENER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OutputSRTSourceAddressResp> GetSourceAddresses() const;
 
                     /**
                      * 设置服务器监听地址，SRT模式为LISTENER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceAddresses 服务器监听地址，SRT模式为LISTENER时使用。
+                     * @param _sourceAddresses 服务器监听地址，SRT模式为LISTENER时使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceAddresses(const std::vector<OutputSRTSourceAddressResp>& _sourceAddresses);
 
                     /**
                      * 判断参数 SourceAddresses 是否已赋值
                      * @return SourceAddresses 是否已赋值
+                     * 
                      */
                     bool SourceAddressesHasBeenSet() const;
 

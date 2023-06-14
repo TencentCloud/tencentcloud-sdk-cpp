@@ -61,6 +61,7 @@ POST：PostObject、AppendObject
 HEAD： HeadObject
 DELETE： DeleteObject。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -72,19 +73,21 @@ POST：PostObject、AppendObject
 HEAD： HeadObject
 DELETE： DeleteObject。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action API调用后端COS的方式，前端请求方法与Action的可选值为：
+                     * @param _action API调用后端COS的方式，前端请求方法与Action的可选值为：
 GET：GetObject
 PUT：PutObject
 POST：PostObject、AppendObject
 HEAD： HeadObject
 DELETE： DeleteObject。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -93,20 +96,23 @@ DELETE： DeleteObject。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketName API后端COS的存储桶名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置API后端COS的存储桶名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BucketName API后端COS的存储桶名。
+                     * @param _bucketName API后端COS的存储桶名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucketName(const std::string& _bucketName);
 
                     /**
                      * 判断参数 BucketName 是否已赋值
                      * @return BucketName 是否已赋值
+                     * 
                      */
                     bool BucketNameHasBeenSet() const;
 
@@ -115,20 +121,23 @@ DELETE： DeleteObject。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Authorization API调用后端COS的签名开关，默认为false。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAuthorization() const;
 
                     /**
                      * 设置API调用后端COS的签名开关，默认为false。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Authorization API调用后端COS的签名开关，默认为false。
+                     * @param _authorization API调用后端COS的签名开关，默认为false。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthorization(const bool& _authorization);
 
                     /**
                      * 判断参数 Authorization 是否已赋值
                      * @return Authorization 是否已赋值
+                     * 
                      */
                     bool AuthorizationHasBeenSet() const;
 
@@ -145,6 +154,7 @@ FullPath ： 全路径匹配
 
 默认值为：BackEndPath
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPathMatchMode() const;
 
@@ -155,18 +165,20 @@ FullPath ： 全路径匹配
 
 默认值为：BackEndPath
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathMatchMode API后端COS的路径匹配模式，可选值：
+                     * @param _pathMatchMode API后端COS的路径匹配模式，可选值：
 BackEndPath ： 后端路径匹配
 FullPath ： 全路径匹配
 
 默认值为：BackEndPath
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPathMatchMode(const std::string& _pathMatchMode);
 
                     /**
                      * 判断参数 PathMatchMode 是否已赋值
                      * @return PathMatchMode 是否已赋值
+                     * 
                      */
                     bool PathMatchModeHasBeenSet() const;
 

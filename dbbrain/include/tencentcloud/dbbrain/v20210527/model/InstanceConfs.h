@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库巡检开关, Yes/No。
                      * @return DailyInspection 数据库巡检开关, Yes/No。
+                     * 
                      */
                     std::string GetDailyInspection() const;
 
                     /**
                      * 设置数据库巡检开关, Yes/No。
-                     * @param DailyInspection 数据库巡检开关, Yes/No。
+                     * @param _dailyInspection 数据库巡检开关, Yes/No。
+                     * 
                      */
                     void SetDailyInspection(const std::string& _dailyInspection);
 
                     /**
                      * 判断参数 DailyInspection 是否已赋值
                      * @return DailyInspection 是否已赋值
+                     * 
                      */
                     bool DailyInspectionHasBeenSet() const;
 
                     /**
                      * 获取实例概览开关，Yes/No。
                      * @return OverviewDisplay 实例概览开关，Yes/No。
+                     * 
                      */
                     std::string GetOverviewDisplay() const;
 
                     /**
                      * 设置实例概览开关，Yes/No。
-                     * @param OverviewDisplay 实例概览开关，Yes/No。
+                     * @param _overviewDisplay 实例概览开关，Yes/No。
+                     * 
                      */
                     void SetOverviewDisplay(const std::string& _overviewDisplay);
 
                     /**
                      * 判断参数 OverviewDisplay 是否已赋值
                      * @return OverviewDisplay 是否已赋值
+                     * 
                      */
                     bool OverviewDisplayHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyDelimiters redis大key分析的自定义分割符，仅redis使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeyDelimiters() const;
 
                     /**
                      * 设置redis大key分析的自定义分割符，仅redis使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyDelimiters redis大key分析的自定义分割符，仅redis使用
+                     * @param _keyDelimiters redis大key分析的自定义分割符，仅redis使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyDelimiters(const std::vector<std::string>& _keyDelimiters);
 
                     /**
                      * 判断参数 KeyDelimiters 是否已赋值
                      * @return KeyDelimiters 是否已赋值
+                     * 
                      */
                     bool KeyDelimitersHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取画像洞察任务ID等信息
                      * @return TaskData 画像洞察任务ID等信息
+                     * 
                      */
                     TaskData GetTaskData() const;
 
                     /**
                      * 判断参数 TaskData 是否已赋值
                      * @return TaskData 是否已赋值
+                     * 
                      */
                     bool TaskDataHasBeenSet() const;
 

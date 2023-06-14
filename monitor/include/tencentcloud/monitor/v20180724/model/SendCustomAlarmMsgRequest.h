@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取接口模块名，当前取值monitor
                      * @return Module 接口模块名，当前取值monitor
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置接口模块名，当前取值monitor
-                     * @param Module 接口模块名，当前取值monitor
+                     * @param _module 接口模块名，当前取值monitor
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取消息策略ID，在自定义消息页面配置
                      * @return PolicyId 消息策略ID，在自定义消息页面配置
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置消息策略ID，在自定义消息页面配置
-                     * @param PolicyId 消息策略ID，在自定义消息页面配置
+                     * @param _policyId 消息策略ID，在自定义消息页面配置
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取用户想要发送的自定义消息内容
                      * @return Msg 用户想要发送的自定义消息内容
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置用户想要发送的自定义消息内容
-                     * @param Msg 用户想要发送的自定义消息内容
+                     * @param _msg 用户想要发送的自定义消息内容
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

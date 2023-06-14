@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Ret 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetRet() const;
 
                     /**
                      * 判断参数 Ret 是否已赋值
                      * @return Ret 是否已赋值
+                     * 
                      */
                     bool RetHasBeenSet() const;
 
                     /**
                      * 获取诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
                      * @return Status 诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errno 诊断失败错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetErrno() const;
 
                     /**
                      * 判断参数 Errno 是否已赋值
                      * @return Errno 是否已赋值
+                     * 
                      */
                     bool ErrnoHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppName 小程序名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMiniAppName() const;
 
                     /**
                      * 判断参数 MiniAppName 是否已赋值
                      * @return MiniAppName 是否已赋值
+                     * 
                      */
                     bool MiniAppNameHasBeenSet() const;
 
@@ -100,12 +108,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppVersion 小程序版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMiniAppVersion() const;
 
                     /**
                      * 判断参数 MiniAppVersion 是否已赋值
                      * @return MiniAppVersion 是否已赋值
+                     * 
                      */
                     bool MiniAppVersionHasBeenSet() const;
 

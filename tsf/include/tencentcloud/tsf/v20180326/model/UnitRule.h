@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return Name 规则名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-                     * @param Name 规则名称
+                     * @param _name 规则名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 规则ID
+                     * @param _id 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstanceId 网关实体ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实体ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GatewayInstanceId 网关实体ID
+                     * @param _gatewayInstanceId 网关实体ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 规则描述
+                     * @param _description 规则描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 使用状态：enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置使用状态：enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 使用状态：enabled/disabled
+                     * @param _status 使用状态：enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitRuleItemList 规则项列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UnitRuleItem> GetUnitRuleItemList() const;
 
                     /**
                      * 设置规则项列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitRuleItemList 规则项列表
+                     * @param _unitRuleItemList 规则项列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitRuleItemList(const std::vector<UnitRuleItem>& _unitRuleItemList);
 
                     /**
                      * 判断参数 UnitRuleItemList 是否已赋值
                      * @return UnitRuleItemList 是否已赋值
+                     * 
                      */
                     bool UnitRuleItemListHasBeenSet() const;
 
@@ -180,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime CreatedTime
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置CreatedTime
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime CreatedTime
+                     * @param _createdTime CreatedTime
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -202,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime UpdatedTime
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置UpdatedTime
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime UpdatedTime
+                     * @param _updatedTime UpdatedTime
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 

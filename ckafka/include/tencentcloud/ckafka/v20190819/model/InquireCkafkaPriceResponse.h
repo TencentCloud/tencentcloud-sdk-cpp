@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取出参
                      * @return Result 出参
+                     * 
                      */
                     InquireCkafkaPriceResp GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取挂载信息列表
                      * @return AttachDetailSet 挂载信息列表
+                     * 
                      */
                     std::vector<AttachDetail> GetAttachDetailSet() const;
 
                     /**
                      * 判断参数 AttachDetailSet 是否已赋值
                      * @return AttachDetailSet 是否已赋值
+                     * 
                      */
                     bool AttachDetailSetHasBeenSet() const;
 
                     /**
                      * 获取挂载信息数量
                      * @return TotalCount 挂载信息数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

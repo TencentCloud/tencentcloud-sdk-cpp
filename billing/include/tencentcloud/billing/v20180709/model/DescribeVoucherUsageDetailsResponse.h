@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取券总数
                      * @return TotalCount 券总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取总已用金额（微分）
                      * @return TotalUsedAmount 总已用金额（微分）
+                     * 
                      */
                     int64_t GetTotalUsedAmount() const;
 
                     /**
                      * 判断参数 TotalUsedAmount 是否已赋值
                      * @return TotalUsedAmount 是否已赋值
+                     * 
                      */
                     bool TotalUsedAmountHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageRecords 代金券使用记录细节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsageRecords> GetUsageRecords() const;
 
                     /**
                      * 判断参数 UsageRecords 是否已赋值
                      * @return UsageRecords 是否已赋值
+                     * 
                      */
                     bool UsageRecordsHasBeenSet() const;
 

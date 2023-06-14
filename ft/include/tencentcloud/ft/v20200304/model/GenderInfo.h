@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取选择转换方向，0：男变女，1：女变男。
                      * @return Gender 选择转换方向，0：男变女，1：女变男。
+                     * 
                      */
                     int64_t GetGender() const;
 
                     /**
                      * 设置选择转换方向，0：男变女，1：女变男。
-                     * @param Gender 选择转换方向，0：男变女，1：女变男。
+                     * @param _gender 选择转换方向，0：男变女，1：女变男。
+                     * 
                      */
                     void SetGender(const int64_t& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
                      * @return FaceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
+                     * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
                      * 设置人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
-                     * @param FaceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
+                     * @param _faceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
+                     * 
                      */
                     void SetFaceRect(const FaceRect& _faceRect);
 
                     /**
                      * 判断参数 FaceRect 是否已赋值
                      * @return FaceRect 是否已赋值
+                     * 
                      */
                     bool FaceRectHasBeenSet() const;
 

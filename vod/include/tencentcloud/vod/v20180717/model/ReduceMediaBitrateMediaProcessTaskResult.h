@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Type 任务的类型，可以取的值有：
 <li>Transcode：转码</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置任务的类型，可以取的值有：
 <li>Transcode：转码</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
-                     * @param Type 任务的类型，可以取的值有：
+                     * @param _type 任务的类型，可以取的值有：
 <li>Transcode：转码</li>
 <li>AdaptiveDynamicStreaming：自适应码流</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -79,20 +82,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReduceMediaBitrateTranscodeResult GetTranscodeTask() const;
 
                     /**
                      * 设置降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranscodeTask 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
+                     * @param _transcodeTask 降码率任务中视频转码任务的查询结果，当任务类型为 Transcode 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranscodeTask(const ReduceMediaBitrateTranscodeResult& _transcodeTask);
 
                     /**
                      * 判断参数 TranscodeTask 是否已赋值
                      * @return TranscodeTask 是否已赋值
+                     * 
                      */
                     bool TranscodeTaskHasBeenSet() const;
 
@@ -101,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingTask 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReduceMediaBitrateAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
 
                     /**
                      * 设置降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdaptiveDynamicStreamingTask 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+                     * @param _adaptiveDynamicStreamingTask 降码率任务中对视频转自适应码流任务的查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdaptiveDynamicStreamingTask(const ReduceMediaBitrateAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
 
                     /**
                      * 判断参数 AdaptiveDynamicStreamingTask 是否已赋值
                      * @return AdaptiveDynamicStreamingTask 是否已赋值
+                     * 
                      */
                     bool AdaptiveDynamicStreamingTaskHasBeenSet() const;
 

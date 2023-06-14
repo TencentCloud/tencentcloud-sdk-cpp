@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DayofWeek 一周中的周几
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDayofWeek() const;
 
                     /**
                      * 设置一周中的周几
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DayofWeek 一周中的周几
+                     * @param _dayofWeek 一周中的周几
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDayofWeek(const int64_t& _dayofWeek);
 
                     /**
                      * 判断参数 DayofWeek 是否已赋值
                      * @return DayofWeek 是否已赋值
+                     * 
                      */
                     bool DayofWeekHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 时间片段的开始时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置时间片段的开始时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 时间片段的开始时分。格式【HH:MM】
+                     * @param _beginTime 时间片段的开始时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 时间片段的结束时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置时间片段的结束时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 时间片段的结束时分。格式【HH:MM】
+                     * @param _endTime 时间片段的结束时分。格式【HH:MM】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取field数组
                      * @return Fields field数组
+                     * 
                      */
                     std::vector<ApmField> GetFields() const;
 
                     /**
                      * 设置field数组
-                     * @param Fields field数组
+                     * @param _fields field数组
+                     * 
                      */
                     void SetFields(const std::vector<ApmField>& _fields);
 
                     /**
                      * 判断参数 Fields 是否已赋值
                      * @return Fields 是否已赋值
+                     * 
                      */
                     bool FieldsHasBeenSet() const;
 
                     /**
                      * 获取tag数组
                      * @return Tags tag数组
+                     * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置tag数组
-                     * @param Tags tag数组
+                     * @param _tags tag数组
+                     * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

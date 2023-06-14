@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取一页条数
                      * @return Limit 一页条数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数
-                     * @param Limit 一页条数
+                     * @param _limit 一页条数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取可选参数，按照IP进行过滤
                      * @return FilterIp 可选参数，按照IP进行过滤
+                     * 
                      */
                     std::string GetFilterIp() const;
 
                     /**
                      * 设置可选参数，按照IP进行过滤
-                     * @param FilterIp 可选参数，按照IP进行过滤
+                     * @param _filterIp 可选参数，按照IP进行过滤
+                     * 
                      */
                     void SetFilterIp(const std::string& _filterIp);
 
                     /**
                      * 判断参数 FilterIp 是否已赋值
                      * @return FilterIp 是否已赋值
+                     * 
                      */
                     bool FilterIpHasBeenSet() const;
 
                     /**
                      * 获取可选参数，按照实例id进行过滤
                      * @return FilterInstanceId 可选参数，按照实例id进行过滤
+                     * 
                      */
                     std::string GetFilterInstanceId() const;
 
                     /**
                      * 设置可选参数，按照实例id进行过滤
-                     * @param FilterInstanceId 可选参数，按照实例id进行过滤
+                     * @param _filterInstanceId 可选参数，按照实例id进行过滤
+                     * 
                      */
                     void SetFilterInstanceId(const std::string& _filterInstanceId);
 
                     /**
                      * 判断参数 FilterInstanceId 是否已赋值
                      * @return FilterInstanceId 是否已赋值
+                     * 
                      */
                     bool FilterInstanceIdHasBeenSet() const;
 

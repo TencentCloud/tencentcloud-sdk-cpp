@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取域名BOT次数列表
                      * @return Data 域名BOT次数列表
+                     * 
                      */
                     std::vector<BotStatisticsCount> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

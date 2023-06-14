@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取命令模板ID集合，非必需
                      * @return IdSet 命令模板ID集合，非必需
+                     * 
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
                      * 设置命令模板ID集合，非必需
-                     * @param IdSet 命令模板ID集合，非必需
+                     * @param _idSet 命令模板ID集合，非必需
+                     * 
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
 
                     /**
                      * 判断参数 IdSet 是否已赋值
                      * @return IdSet 是否已赋值
+                     * 
                      */
                     bool IdSetHasBeenSet() const;
 
                     /**
                      * 获取命令模板名，模糊查询，最大长度64字符
                      * @return Name 命令模板名，模糊查询，最大长度64字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置命令模板名，模糊查询，最大长度64字符
-                     * @param Name 命令模板名，模糊查询，最大长度64字符
+                     * @param _name 命令模板名，模糊查询，最大长度64字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分页偏移位置，默认值为0
                      * @return Offset 分页偏移位置，默认值为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移位置，默认值为0
-                     * @param Offset 分页偏移位置，默认值为0
+                     * @param _offset 分页偏移位置，默认值为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页条目数量，默认20
                      * @return Limit 每页条目数量，默认20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页条目数量，默认20
-                     * @param Limit 每页条目数量，默认20
+                     * @param _limit 每页条目数量，默认20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

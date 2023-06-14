@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取图库名称。
                      * @return GroupId 图库名称。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置图库名称。
-                     * @param GroupId 图库名称。
+                     * @param _groupId 图库名称。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -78,6 +81,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
 建议：
 • 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -90,7 +94,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
 建议：
 • 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 。
+                     * @param _imageUrl 图片的 Url 。
 ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
 图片限制：
 • 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -98,12 +102,14 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
 建议：
 • 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -120,6 +126,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 • 图片大小：base64 编码后大小不可超过5M。图片分辨率不超过4096\*4096。
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -130,18 +137,20 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 • 图片大小：base64 编码后大小不可超过5M。图片分辨率不超过4096\*4096。
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
-                     * @param ImageBase64 图片 base64 数据。
+                     * @param _imageBase64 图片 base64 数据。
 ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
 图片限制：
 • 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 • 图片大小：base64 编码后大小不可超过5M。图片分辨率不超过4096\*4096。
 • 如果在商品图像搜索中开启主体识别，分辨率不超过2000\*2000，图片长宽比小于10。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -152,6 +161,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
                      * @return Limit 返回结果的数量，默认值为10，最大值为100。
 按照相似度分数由高到低排序。
 **<font color=#1E90FF>服务类型为图案花纹搜索时Limit = 1，最多只能返回1个结果。</font>**
+                     * 
                      */
                     int64_t GetLimit() const;
 
@@ -159,33 +169,38 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
                      * 设置返回结果的数量，默认值为10，最大值为100。
 按照相似度分数由高到低排序。
 **<font color=#1E90FF>服务类型为图案花纹搜索时Limit = 1，最多只能返回1个结果。</font>**
-                     * @param Limit 返回结果的数量，默认值为10，最大值为100。
+                     * @param _limit 返回结果的数量，默认值为10，最大值为100。
 按照相似度分数由高到低排序。
 **<font color=#1E90FF>服务类型为图案花纹搜索时Limit = 1，最多只能返回1个结果。</font>**
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取返回结果的起始序号，默认值为0。
                      * @return Offset 返回结果的起始序号，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置返回结果的起始序号，默认值为0。
-                     * @param Offset 返回结果的起始序号，默认值为0。
+                     * @param _offset 返回结果的起始序号，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -208,6 +223,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 图案花纹搜索1.0版：56。
 建议：
 可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。
+                     * 
                      */
                     int64_t GetMatchThreshold() const;
 
@@ -221,7 +237,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 图案花纹搜索1.0版：56。
 建议：
 可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。
-                     * @param MatchThreshold 匹配阈值。
+                     * @param _matchThreshold 匹配阈值。
 只有图片相似度分数超过匹配阈值的结果才会返回。
 当MatchThreshold为0（默认值）时，各服务类型将按照以下默认的匹配阈值进行结果过滤：
 • 通用图像搜索1.0版：50。
@@ -230,12 +246,14 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 图案花纹搜索1.0版：56。
 建议：
 可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。
+                     * 
                      */
                     void SetMatchThreshold(const int64_t& _matchThreshold);
 
                     /**
                      * 判断参数 MatchThreshold 是否已赋值
                      * @return MatchThreshold 是否已赋值
+                     * 
                      */
                     bool MatchThresholdHasBeenSet() const;
 
@@ -244,20 +262,23 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
                      * @return Filter 标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
-                     * @param Filter 标签过滤条件。
+                     * @param _filter 标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
@@ -266,20 +287,23 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 若设置主体区域，提取指定的区域进行检索。
                      * @return ImageRect 图像主体区域。
 若设置主体区域，提取指定的区域进行检索。
+                     * 
                      */
                     ImageRect GetImageRect() const;
 
                     /**
                      * 设置图像主体区域。
 若设置主体区域，提取指定的区域进行检索。
-                     * @param ImageRect 图像主体区域。
+                     * @param _imageRect 图像主体区域。
 若设置主体区域，提取指定的区域进行检索。
+                     * 
                      */
                     void SetImageRect(const ImageRect& _imageRect);
 
                     /**
                      * 判断参数 ImageRect 是否已赋值
                      * @return ImageRect 是否已赋值
+                     * 
                      */
                     bool ImageRectHasBeenSet() const;
 
@@ -292,6 +316,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 为**TRUE**时，启用主体识别，返回主体信息。若没有指定**ImageRect**，自动提取最大面积主体进行检索并进行主体识别。主体识别结果可在**Response中**获取。
 • 为**FALSE**时，不启用主体识别，不返回主体信息。若没有指定**ImageRect**，以整张图检索图片。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
+                     * 
                      */
                     bool GetEnableDetect() const;
 
@@ -300,16 +325,18 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 为**TRUE**时，启用主体识别，返回主体信息。若没有指定**ImageRect**，自动提取最大面积主体进行检索并进行主体识别。主体识别结果可在**Response中**获取。
 • 为**FALSE**时，不启用主体识别，不返回主体信息。若没有指定**ImageRect**，以整张图检索图片。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
-                     * @param EnableDetect 是否需要启用主体识别，默认为**TRUE** 。
+                     * @param _enableDetect 是否需要启用主体识别，默认为**TRUE** 。
 • 为**TRUE**时，启用主体识别，返回主体信息。若没有指定**ImageRect**，自动提取最大面积主体进行检索并进行主体识别。主体识别结果可在**Response中**获取。
 • 为**FALSE**时，不启用主体识别，不返回主体信息。若没有指定**ImageRect**，以整张图检索图片。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
+                     * 
                      */
                     void SetEnableDetect(const bool& _enableDetect);
 
                     /**
                      * 判断参数 EnableDetect 是否已赋值
                      * @return EnableDetect 是否已赋值
+                     * 
                      */
                     bool EnableDetectHasBeenSet() const;
 
@@ -334,6 +361,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 4：鞋。
 5：配饰。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
+                     * 
                      */
                     int64_t GetCategoryId() const;
 
@@ -348,7 +376,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 4：鞋。
 5：配饰。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
-                     * @param CategoryId 图像类目ID。
+                     * @param _categoryId 图像类目ID。
 若设置类目ID，提取以下类目的主体进行检索。
 类目取值说明：
 0：上衣。
@@ -358,12 +386,14 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 4：鞋。
 5：配饰。
 **<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**
+                     * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取保护策略ID列表
                      * @return TemplatePolicyIdList 保护策略ID列表
+                     * 
                      */
                     std::vector<std::string> GetTemplatePolicyIdList() const;
 
                     /**
                      * 设置保护策略ID列表
-                     * @param TemplatePolicyIdList 保护策略ID列表
+                     * @param _templatePolicyIdList 保护策略ID列表
+                     * 
                      */
                     void SetTemplatePolicyIdList(const std::vector<std::string>& _templatePolicyIdList);
 
                     /**
                      * 判断参数 TemplatePolicyIdList 是否已赋值
                      * @return TemplatePolicyIdList 是否已赋值
+                     * 
                      */
                     bool TemplatePolicyIdListHasBeenSet() const;
 
                     /**
                      * 获取策略规则
                      * @return TemplatePolicyRule 策略规则
+                     * 
                      */
                     std::string GetTemplatePolicyRule() const;
 
                     /**
                      * 设置策略规则
-                     * @param TemplatePolicyRule 策略规则
+                     * @param _templatePolicyRule 策略规则
+                     * 
                      */
                     void SetTemplatePolicyRule(const std::string& _templatePolicyRule);
 
                     /**
                      * 判断参数 TemplatePolicyRule 是否已赋值
                      * @return TemplatePolicyRule 是否已赋值
+                     * 
                      */
                     bool TemplatePolicyRuleHasBeenSet() const;
 
                     /**
                      * 获取护栏策略生效处理策略 1:顺序执行，2:暂停
                      * @return TemplatePolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
+                     * 
                      */
                     int64_t GetTemplatePolicyDealType() const;
 
                     /**
                      * 设置护栏策略生效处理策略 1:顺序执行，2:暂停
-                     * @param TemplatePolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
+                     * @param _templatePolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
+                     * 
                      */
                     void SetTemplatePolicyDealType(const int64_t& _templatePolicyDealType);
 
                     /**
                      * 判断参数 TemplatePolicyDealType 是否已赋值
                      * @return TemplatePolicyDealType 是否已赋值
+                     * 
                      */
                     bool TemplatePolicyDealTypeHasBeenSet() const;
 

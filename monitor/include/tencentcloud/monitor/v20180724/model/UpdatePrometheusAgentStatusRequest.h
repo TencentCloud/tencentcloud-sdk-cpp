@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 实例 ID，例如：prom-abcd1234
                      * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID，例如：prom-abcd1234
-                     * @param InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * @param _instanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
                      * @return AgentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * 
                      */
                     std::vector<std::string> GetAgentIds() const;
 
                     /**
                      * 设置Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-                     * @param AgentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * @param _agentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * 
                      */
                     void SetAgentIds(const std::vector<std::string>& _agentIds);
 
                     /**
                      * 判断参数 AgentIds 是否已赋值
                      * @return AgentIds 是否已赋值
+                     * 
                      */
                     bool AgentIdsHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Status 要更新的状态
 <li> 1= 开启 </li>
 <li> 2= 关闭 </li>
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置要更新的状态
 <li> 1= 开启 </li>
 <li> 2= 关闭 </li>
-                     * @param Status 要更新的状态
+                     * @param _status 要更新的状态
 <li> 1= 开启 </li>
 <li> 2= 关闭 </li>
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

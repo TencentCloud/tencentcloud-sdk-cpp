@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取命名空间个数限制
                      * @return NamespacesCount 命名空间个数限制
+                     * 
                      */
                     int64_t GetNamespacesCount() const;
 
                     /**
                      * 设置命名空间个数限制
-                     * @param NamespacesCount 命名空间个数限制
+                     * @param _namespacesCount 命名空间个数限制
+                     * 
                      */
                     void SetNamespacesCount(const int64_t& _namespacesCount);
 
                     /**
                      * 判断参数 NamespacesCount 是否已赋值
                      * @return NamespacesCount 是否已赋值
+                     * 
                      */
                     bool NamespacesCountHasBeenSet() const;
 
                     /**
                      * 获取命名空间限制信息
                      * @return Namespace 命名空间限制信息
+                     * 
                      */
                     std::vector<NamespaceLimit> GetNamespace() const;
 
                     /**
                      * 设置命名空间限制信息
-                     * @param Namespace 命名空间限制信息
+                     * @param _namespace 命名空间限制信息
+                     * 
                      */
                     void SetNamespace(const std::vector<NamespaceLimit>& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

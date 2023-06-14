@@ -50,12 +50,14 @@ namespace TencentCloud
                      * @return MerchantBatchNo 商家批次单号。
 商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantBatchNo() const;
 
                     /**
                      * 判断参数 MerchantBatchNo 是否已赋值
                      * @return MerchantBatchNo 是否已赋值
+                     * 
                      */
                     bool MerchantBatchNoHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
                      * @return BatchId 微信批次单号。
 微信商家转账系统返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -80,12 +84,14 @@ namespace TencentCloud
 示例值：2015-05-20T13:29:35.120+08:00
                      * @return CreateTime 批次受理成功时返回，遵循rfc3339标准格式。格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE，YYYY-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.sss表示时分秒毫秒，TIMEZONE表示时区（+08:00表示东八区时间，领先UTC 8小时，即北京时间）。例如：2015-05-20T13:29:35.120+08:00表示北京时间2015年05月20日13点29分35秒。
 示例值：2015-05-20T13:29:35.120+08:00
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

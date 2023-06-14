@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取产品Id
                      * @return ProductId 产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品Id
-                     * @param ProductId 产品Id
+                     * @param _productId 产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return Name 产品名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置产品名称
-                     * @param Name 产品名称
+                     * @param _name 产品名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取产品描述
                      * @return Description 产品描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置产品描述
-                     * @param Description 产品描述
+                     * @param _description 产品描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取数据模版
                      * @return DataTemplate 数据模版
+                     * 
                      */
                     std::vector<DataTemplate> GetDataTemplate() const;
 
                     /**
                      * 设置数据模版
-                     * @param DataTemplate 数据模版
+                     * @param _dataTemplate 数据模版
+                     * 
                      */
                     void SetDataTemplate(const std::vector<DataTemplate>& _dataTemplate);
 
                     /**
                      * 判断参数 DataTemplate 是否已赋值
                      * @return DataTemplate 是否已赋值
+                     * 
                      */
                     bool DataTemplateHasBeenSet() const;
 

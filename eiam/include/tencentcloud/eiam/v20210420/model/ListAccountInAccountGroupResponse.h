@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountList 查询返回的相关账号列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AppAccountInfo> GetAccountList() const;
 
                     /**
                      * 判断参数 AccountList 是否已赋值
                      * @return AccountList 是否已赋值
+                     * 
                      */
                     bool AccountListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 返回查询账号的总数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupId 账号组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 判断参数 AccountGroupId 是否已赋值
                      * @return AccountGroupId 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
 

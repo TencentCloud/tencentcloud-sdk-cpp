@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取分片ID数组
                      * @return ShardInstanceIds 分片ID数组
+                     * 
                      */
                     std::vector<std::string> GetShardInstanceIds() const;
 
                     /**
                      * 设置分片ID数组
-                     * @param ShardInstanceIds 分片ID数组
+                     * @param _shardInstanceIds 分片ID数组
+                     * 
                      */
                     void SetShardInstanceIds(const std::vector<std::string>& _shardInstanceIds);
 
                     /**
                      * 判断参数 ShardInstanceIds 是否已赋值
                      * @return ShardInstanceIds 是否已赋值
+                     * 
                      */
                     bool ShardInstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取分片内存大小，单位 GB
                      * @return ShardMemory 分片内存大小，单位 GB
+                     * 
                      */
                     int64_t GetShardMemory() const;
 
                     /**
                      * 设置分片内存大小，单位 GB
-                     * @param ShardMemory 分片内存大小，单位 GB
+                     * @param _shardMemory 分片内存大小，单位 GB
+                     * 
                      */
                     void SetShardMemory(const int64_t& _shardMemory);
 
                     /**
                      * 判断参数 ShardMemory 是否已赋值
                      * @return ShardMemory 是否已赋值
+                     * 
                      */
                     bool ShardMemoryHasBeenSet() const;
 
                     /**
                      * 获取分片存储大小，单位 GB
                      * @return ShardStorage 分片存储大小，单位 GB
+                     * 
                      */
                     int64_t GetShardStorage() const;
 
                     /**
                      * 设置分片存储大小，单位 GB
-                     * @param ShardStorage 分片存储大小，单位 GB
+                     * @param _shardStorage 分片存储大小，单位 GB
+                     * 
                      */
                     void SetShardStorage(const int64_t& _shardStorage);
 
                     /**
                      * 判断参数 ShardStorage 是否已赋值
                      * @return ShardStorage 是否已赋值
+                     * 
                      */
                     bool ShardStorageHasBeenSet() const;
 
                     /**
                      * 获取分片节点数
                      * @return ShardNodeCount 分片节点数
+                     * 
                      */
                     int64_t GetShardNodeCount() const;
 
                     /**
                      * 设置分片节点数
-                     * @param ShardNodeCount 分片节点数
+                     * @param _shardNodeCount 分片节点数
+                     * 
                      */
                     void SetShardNodeCount(const int64_t& _shardNodeCount);
 
                     /**
                      * 判断参数 ShardNodeCount 是否已赋值
                      * @return ShardNodeCount 是否已赋值
+                     * 
                      */
                     bool ShardNodeCountHasBeenSet() const;
 

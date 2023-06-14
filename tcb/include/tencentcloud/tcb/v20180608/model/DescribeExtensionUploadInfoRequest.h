@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取待上传的文件
                      * @return ExtensionFiles 待上传的文件
+                     * 
                      */
                     std::vector<ExtensionFile> GetExtensionFiles() const;
 
                     /**
                      * 设置待上传的文件
-                     * @param ExtensionFiles 待上传的文件
+                     * @param _extensionFiles 待上传的文件
+                     * 
                      */
                     void SetExtensionFiles(const std::vector<ExtensionFile>& _extensionFiles);
 
                     /**
                      * 判断参数 ExtensionFiles 是否已赋值
                      * @return ExtensionFiles 是否已赋值
+                     * 
                      */
                     bool ExtensionFilesHasBeenSet() const;
 

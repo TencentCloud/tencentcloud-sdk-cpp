@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如：postgres-6bwgamo3。
                      * @return DBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如：postgres-6bwgamo3。
-                     * @param DBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * @param _dBInstanceId 实例ID，形如：postgres-6bwgamo3。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络统一 ID。
                      * @return VpcId 私有网络统一 ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络统一 ID。
-                     * @param VpcId 私有网络统一 ID。
+                     * @param _vpcId 私有网络统一 ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID。
                      * @return SubnetId 子网ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID。
-                     * @param SubnetId 子网ID。
+                     * @param _subnetId 子网ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取是否指定分配vip true-指定分配  false-自动分配。
                      * @return IsAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * 
                      */
                     bool GetIsAssignVip() const;
 
                     /**
                      * 设置是否指定分配vip true-指定分配  false-自动分配。
-                     * @param IsAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * @param _isAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * 
                      */
                     void SetIsAssignVip(const bool& _isAssignVip);
 
                     /**
                      * 判断参数 IsAssignVip 是否已赋值
                      * @return IsAssignVip 是否已赋值
+                     * 
                      */
                     bool IsAssignVipHasBeenSet() const;
 
                     /**
                      * 获取目标VIP地址。
                      * @return Vip 目标VIP地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置目标VIP地址。
-                     * @param Vip 目标VIP地址。
+                     * @param _vip 目标VIP地址。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 

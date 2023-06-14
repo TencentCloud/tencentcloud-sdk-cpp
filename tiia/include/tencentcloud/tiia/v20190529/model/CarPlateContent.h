@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Plate 车牌信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlate() const;
 
                     /**
                      * 设置车牌信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Plate 车牌信息。
+                     * @param _plate 车牌信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlate(const std::string& _plate);
 
                     /**
                      * 判断参数 Plate 是否已赋值
                      * @return Plate 是否已赋值
+                     * 
                      */
                     bool PlateHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Color 车牌颜色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColor() const;
 
                     /**
                      * 设置车牌颜色。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Color 车牌颜色。
+                     * @param _color 车牌颜色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColor(const std::string& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
@@ -102,6 +108,7 @@ namespace TencentCloud
 此字段可能返回 null，表示取不到有效值。
 此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -111,17 +118,19 @@ namespace TencentCloud
 此字段可能返回 null，表示取不到有效值。
 此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌
+                     * @param _type 车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌
 注意：
 此字段可能返回 null，表示取不到有效值。
 此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -130,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateLocation 车牌在图片中的坐标信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetPlateLocation() const;
 
                     /**
                      * 设置车牌在图片中的坐标信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateLocation 车牌在图片中的坐标信息。
+                     * @param _plateLocation 车牌在图片中的坐标信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlateLocation(const std::vector<Coord>& _plateLocation);
 
                     /**
                      * 判断参数 PlateLocation 是否已赋值
                      * @return PlateLocation 是否已赋值
+                     * 
                      */
                     bool PlateLocationHasBeenSet() const;
 
@@ -152,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateStatus 判断车牌是否遮挡：“遮挡污损模糊车牌”和"正常车牌"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlateStatus() const;
 
                     /**
                      * 设置判断车牌是否遮挡：“遮挡污损模糊车牌”和"正常车牌"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateStatus 判断车牌是否遮挡：“遮挡污损模糊车牌”和"正常车牌"。
+                     * @param _plateStatus 判断车牌是否遮挡：“遮挡污损模糊车牌”和"正常车牌"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlateStatus(const std::string& _plateStatus);
 
                     /**
                      * 判断参数 PlateStatus 是否已赋值
                      * @return PlateStatus 是否已赋值
+                     * 
                      */
                     bool PlateStatusHasBeenSet() const;
 
@@ -174,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateStatusConfidence 车牌遮挡的置信度，0-100。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPlateStatusConfidence() const;
 
                     /**
                      * 设置车牌遮挡的置信度，0-100。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateStatusConfidence 车牌遮挡的置信度，0-100。
+                     * @param _plateStatusConfidence 车牌遮挡的置信度，0-100。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlateStatusConfidence(const int64_t& _plateStatusConfidence);
 
                     /**
                      * 判断参数 PlateStatusConfidence 是否已赋值
                      * @return PlateStatusConfidence 是否已赋值
+                     * 
                      */
                     bool PlateStatusConfidenceHasBeenSet() const;
 
@@ -196,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlateAngle 车牌角度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPlateAngle() const;
 
                     /**
                      * 设置车牌角度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateAngle 车牌角度。
+                     * @param _plateAngle 车牌角度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlateAngle(const double& _plateAngle);
 
                     /**
                      * 判断参数 PlateAngle 是否已赋值
                      * @return PlateAngle 是否已赋值
+                     * 
                      */
                     bool PlateAngleHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一
                      * @return RoleId 角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一
-                     * @param RoleId 角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * @param _roleId 角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * 
                      */
                     void SetRoleId(const std::string& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 
                     /**
                      * 获取角色名，用于指定角色，入参 RoleId 与 RoleName 二选一
                      * @return RoleName 角色名，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名，用于指定角色，入参 RoleId 与 RoleName 二选一
-                     * @param RoleName 角色名，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * @param _roleName 角色名，用于指定角色，入参 RoleId 与 RoleName 二选一
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 

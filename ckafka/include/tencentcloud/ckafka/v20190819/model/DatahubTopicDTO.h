@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Topic名称
-                     * @param TopicName Topic名称
+                     * @param _topicName Topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取Topic Id
                      * @return TopicId Topic Id
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic Id
-                     * @param TopicId Topic Id
+                     * @param _topicId Topic Id
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取分区数
                      * @return PartitionNum 分区数
+                     * 
                      */
                     uint64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数
-                     * @param PartitionNum 分区数
+                     * @param _partitionNum 分区数
+                     * 
                      */
                     void SetPartitionNum(const uint64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return RetentionMs 过期时间
+                     * 
                      */
                     uint64_t GetRetentionMs() const;
 
                     /**
                      * 设置过期时间
-                     * @param RetentionMs 过期时间
+                     * @param _retentionMs 过期时间
+                     * 
                      */
                     void SetRetentionMs(const uint64_t& _retentionMs);
 
                     /**
                      * 判断参数 RetentionMs 是否已赋值
                      * @return RetentionMs 是否已赋值
+                     * 
                      */
                     bool RetentionMsHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Note 备注
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-                     * @param Note 备注
+                     * @param _note 备注
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
                     /**
                      * 获取状态，1使用中，2删除中
                      * @return Status 状态，1使用中，2删除中
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态，1使用中，2删除中
-                     * @param Status 状态，1使用中，2删除中
+                     * @param _status 状态，1使用中，2删除中
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

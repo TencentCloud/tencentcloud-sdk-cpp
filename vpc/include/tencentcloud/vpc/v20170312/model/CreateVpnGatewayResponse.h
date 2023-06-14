@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关对象
                      * @return VpnGateway VPN网关对象
+                     * 
                      */
                     VpnGateway GetVpnGateway() const;
 
                     /**
                      * 判断参数 VpnGateway 是否已赋值
                      * @return VpnGateway 是否已赋值
+                     * 
                      */
                     bool VpnGatewayHasBeenSet() const;
 

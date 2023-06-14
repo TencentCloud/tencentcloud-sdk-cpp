@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取投递任务ID
                      * @return TaskId 投递任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置投递任务ID
-                     * @param TaskId 投递任务ID
+                     * @param _taskId 投递任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取投递信息ID
                      * @return ShipperId 投递信息ID
+                     * 
                      */
                     std::string GetShipperId() const;
 
                     /**
                      * 设置投递信息ID
-                     * @param ShipperId 投递信息ID
+                     * @param _shipperId 投递信息ID
+                     * 
                      */
                     void SetShipperId(const std::string& _shipperId);
 
                     /**
                      * 判断参数 ShipperId 是否已赋值
                      * @return ShipperId 是否已赋值
+                     * 
                      */
                     bool ShipperIdHasBeenSet() const;
 
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取本批投递的日志的开始时间戳，毫秒
                      * @return RangeStart 本批投递的日志的开始时间戳，毫秒
+                     * 
                      */
                     int64_t GetRangeStart() const;
 
                     /**
                      * 设置本批投递的日志的开始时间戳，毫秒
-                     * @param RangeStart 本批投递的日志的开始时间戳，毫秒
+                     * @param _rangeStart 本批投递的日志的开始时间戳，毫秒
+                     * 
                      */
                     void SetRangeStart(const int64_t& _rangeStart);
 
                     /**
                      * 判断参数 RangeStart 是否已赋值
                      * @return RangeStart 是否已赋值
+                     * 
                      */
                     bool RangeStartHasBeenSet() const;
 
                     /**
                      * 获取本批投递的日志的结束时间戳， 毫秒
                      * @return RangeEnd 本批投递的日志的结束时间戳， 毫秒
+                     * 
                      */
                     int64_t GetRangeEnd() const;
 
                     /**
                      * 设置本批投递的日志的结束时间戳， 毫秒
-                     * @param RangeEnd 本批投递的日志的结束时间戳， 毫秒
+                     * @param _rangeEnd 本批投递的日志的结束时间戳， 毫秒
+                     * 
                      */
                     void SetRangeEnd(const int64_t& _rangeEnd);
 
                     /**
                      * 判断参数 RangeEnd 是否已赋值
                      * @return RangeEnd 是否已赋值
+                     * 
                      */
                     bool RangeEndHasBeenSet() const;
 
                     /**
                      * 获取本次投递任务的开始时间戳， 毫秒
                      * @return StartTime 本次投递任务的开始时间戳， 毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置本次投递任务的开始时间戳， 毫秒
-                     * @param StartTime 本次投递任务的开始时间戳， 毫秒
+                     * @param _startTime 本次投递任务的开始时间戳， 毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取本次投递任务的结束时间戳， 毫秒
                      * @return EndTime 本次投递任务的结束时间戳， 毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置本次投递任务的结束时间戳， 毫秒
-                     * @param EndTime 本次投递任务的结束时间戳， 毫秒
+                     * @param _endTime 本次投递任务的结束时间戳， 毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取本次投递的结果，"success","running","failed"
                      * @return Status 本次投递的结果，"success","running","failed"
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置本次投递的结果，"success","running","failed"
-                     * @param Status 本次投递的结果，"success","running","failed"
+                     * @param _status 本次投递的结果，"success","running","failed"
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取结果的详细信息
                      * @return Message 结果的详细信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置结果的详细信息
-                     * @param Message 结果的详细信息
+                     * @param _message 结果的详细信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

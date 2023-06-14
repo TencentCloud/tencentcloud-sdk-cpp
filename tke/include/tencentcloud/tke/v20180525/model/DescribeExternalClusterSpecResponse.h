@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取导入第三方集群YAML定义
                      * @return Spec 导入第三方集群YAML定义
+                     * 
                      */
                     std::string GetSpec() const;
 
                     /**
                      * 判断参数 Spec 是否已赋值
                      * @return Spec 是否已赋值
+                     * 
                      */
                     bool SpecHasBeenSet() const;
 
                     /**
                      * 获取agent.yaml文件过期时间字符串，时区UTC
                      * @return Expiration agent.yaml文件过期时间字符串，时区UTC
+                     * 
                      */
                     std::string GetExpiration() const;
 
                     /**
                      * 判断参数 Expiration 是否已赋值
                      * @return Expiration 是否已赋值
+                     * 
                      */
                     bool ExpirationHasBeenSet() const;
 

@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取分页信息
                      * @return Info 分页信息
+                     * 
                      */
                     SnapshotPageInfo GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取快照列表
                      * @return SnapshotList 快照列表
+                     * 
                      */
                     std::vector<SnapshotInfo> GetSnapshotList() const;
 
                     /**
                      * 判断参数 SnapshotList 是否已赋值
                      * @return SnapshotList 是否已赋值
+                     * 
                      */
                     bool SnapshotListHasBeenSet() const;
 

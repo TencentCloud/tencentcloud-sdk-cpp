@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取报告名称
                      * @return ReportName 报告名称
+                     * 
                      */
                     std::string GetReportName() const;
 
                     /**
                      * 判断参数 ReportName 是否已赋值
                      * @return ReportName 是否已赋值
+                     * 
                      */
                     bool ReportNameHasBeenSet() const;
 
                     /**
                      * 获取下载链接
                      * @return ReportUrl 下载链接
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 

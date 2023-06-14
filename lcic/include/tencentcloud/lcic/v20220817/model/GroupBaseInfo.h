@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取待创建群组名
                      * @return GroupName 待创建群组名
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置待创建群组名
-                     * @param GroupName 待创建群组名
+                     * @param _groupName 待创建群组名
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取群组主讲人ID
                      * @return TeacherId 群组主讲人ID
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置群组主讲人ID
-                     * @param TeacherId 群组主讲人ID
+                     * @param _teacherId 群组主讲人ID
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 

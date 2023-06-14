@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmsFreeQuotaList 短信免费量信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SmsFreeQuota> GetSmsFreeQuotaList() const;
 
                     /**
                      * 判断参数 SmsFreeQuotaList 是否已赋值
                      * @return SmsFreeQuotaList 是否已赋值
+                     * 
                      */
                     bool SmsFreeQuotaListHasBeenSet() const;
 

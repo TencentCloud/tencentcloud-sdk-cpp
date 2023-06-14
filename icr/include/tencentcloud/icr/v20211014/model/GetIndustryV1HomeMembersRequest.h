@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Payload 无
+                     * 
                      */
                     GetIndustryV1HomeMembersReqPayload GetPayload() const;
 
                     /**
                      * 设置无
-                     * @param Payload 无
+                     * @param _payload 无
+                     * 
                      */
                     void SetPayload(const GetIndustryV1HomeMembersReqPayload& _payload);
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Metadata 无
+                     * 
                      */
                     ReqMetadata GetMetadata() const;
 
                     /**
                      * 设置无
-                     * @param Metadata 无
+                     * @param _metadata 无
+                     * 
                      */
                     void SetMetadata(const ReqMetadata& _metadata);
 
                     /**
                      * 判断参数 Metadata 是否已赋值
                      * @return Metadata 是否已赋值
+                     * 
                      */
                     bool MetadataHasBeenSet() const;
 

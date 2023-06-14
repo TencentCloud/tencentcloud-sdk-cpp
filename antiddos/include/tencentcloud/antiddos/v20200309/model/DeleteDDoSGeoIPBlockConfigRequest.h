@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取DDoS区域封禁配置，填写参数时配置ID不能为空
                      * @return DDoSGeoIPBlockConfig DDoS区域封禁配置，填写参数时配置ID不能为空
+                     * 
                      */
                     DDoSGeoIPBlockConfig GetDDoSGeoIPBlockConfig() const;
 
                     /**
                      * 设置DDoS区域封禁配置，填写参数时配置ID不能为空
-                     * @param DDoSGeoIPBlockConfig DDoS区域封禁配置，填写参数时配置ID不能为空
+                     * @param _dDoSGeoIPBlockConfig DDoS区域封禁配置，填写参数时配置ID不能为空
+                     * 
                      */
                     void SetDDoSGeoIPBlockConfig(const DDoSGeoIPBlockConfig& _dDoSGeoIPBlockConfig);
 
                     /**
                      * 判断参数 DDoSGeoIPBlockConfig 是否已赋值
                      * @return DDoSGeoIPBlockConfig 是否已赋值
+                     * 
                      */
                     bool DDoSGeoIPBlockConfigHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取低代码平台应用ID
                      * @return SdkAppId 低代码平台应用ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台应用ID
-                     * @param SdkAppId 低代码平台应用ID
+                     * @param _sdkAppId 低代码平台应用ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，默认从1开始递增。
                      * @return Page 分页查询当前页数，默认从1开始递增。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置分页查询当前页数，默认从1开始递增。
-                     * @param Page 分页查询当前页数，默认从1开始递增。
+                     * @param _page 分页查询当前页数，默认从1开始递增。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，默认20，最大1000。
                      * @return Limit 每页数据量，默认20，最大1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，默认20，最大1000。
-                     * @param Limit 每页数据量，默认20，最大1000。
+                     * @param _limit 每页数据量，默认20，最大1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取
                      * @return TeacherId 主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取
-                     * @param TeacherId 主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取
+                     * @param _teacherId 主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
                     /**
                      * 获取成员ID刷选群组，与TeacherId有且只有一个
                      * @return MemberId 成员ID刷选群组，与TeacherId有且只有一个
+                     * 
                      */
                     std::string GetMemberId() const;
 
                     /**
                      * 设置成员ID刷选群组，与TeacherId有且只有一个
-                     * @param MemberId 成员ID刷选群组，与TeacherId有且只有一个
+                     * @param _memberId 成员ID刷选群组，与TeacherId有且只有一个
+                     * 
                      */
                     void SetMemberId(const std::string& _memberId);
 
                     /**
                      * 判断参数 MemberId 是否已赋值
                      * @return MemberId 是否已赋值
+                     * 
                      */
                     bool MemberIdHasBeenSet() const;
 

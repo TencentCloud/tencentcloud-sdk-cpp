@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取ConfigMap名称
                      * @return ConfigMapName ConfigMap名称
+                     * 
                      */
                     std::string GetConfigMapName() const;
 
                     /**
                      * 设置ConfigMap名称
-                     * @param ConfigMapName ConfigMap名称
+                     * @param _configMapName ConfigMap名称
+                     * 
                      */
                     void SetConfigMapName(const std::string& _configMapName);
 
                     /**
                      * 判断参数 ConfigMapName 是否已赋值
                      * @return ConfigMapName 是否已赋值
+                     * 
                      */
                     bool ConfigMapNameHasBeenSet() const;
 
                     /**
                      * 获取Yaml配置, base64之后的串
                      * @return Yaml Yaml配置, base64之后的串
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置Yaml配置, base64之后的串
-                     * @param Yaml Yaml配置, base64之后的串
+                     * @param _yaml Yaml配置, base64之后的串
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
                     /**
                      * 获取ConfigMap命名空间
                      * @return ConfigMapNamespace ConfigMap命名空间
+                     * 
                      */
                     std::string GetConfigMapNamespace() const;
 
                     /**
                      * 设置ConfigMap命名空间
-                     * @param ConfigMapNamespace ConfigMap命名空间
+                     * @param _configMapNamespace ConfigMap命名空间
+                     * 
                      */
                     void SetConfigMapNamespace(const std::string& _configMapNamespace);
 
                     /**
                      * 判断参数 ConfigMapNamespace 是否已赋值
                      * @return ConfigMapNamespace 是否已赋值
+                     * 
                      */
                     bool ConfigMapNamespaceHasBeenSet() const;
 

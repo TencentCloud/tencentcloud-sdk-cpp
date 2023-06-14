@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取匹配规则列表。
                      * @return Rules 匹配规则列表。
+                     * 
                      */
                     std::vector<KTVMatchRule> GetRules() const;
 
                     /**
                      * 设置匹配规则列表。
-                     * @param Rules 匹配规则列表。
+                     * @param _rules 匹配规则列表。
+                     * 
                      */
                     void SetRules(const std::vector<KTVMatchRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘ID列表。
                      * @return DiskIds 云硬盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置云硬盘ID列表。
-                     * @param DiskIds 云硬盘ID列表。
+                     * @param _diskIds 云硬盘ID列表。
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 
                     /**
                      * 获取续费云硬盘包年包月相关参数设置。
                      * @return RenewDiskChargePrepaid 续费云硬盘包年包月相关参数设置。
+                     * 
                      */
                     RenewDiskChargePrepaid GetRenewDiskChargePrepaid() const;
 
                     /**
                      * 设置续费云硬盘包年包月相关参数设置。
-                     * @param RenewDiskChargePrepaid 续费云硬盘包年包月相关参数设置。
+                     * @param _renewDiskChargePrepaid 续费云硬盘包年包月相关参数设置。
+                     * 
                      */
                     void SetRenewDiskChargePrepaid(const RenewDiskChargePrepaid& _renewDiskChargePrepaid);
 
                     /**
                      * 判断参数 RenewDiskChargePrepaid 是否已赋值
                      * @return RenewDiskChargePrepaid 是否已赋值
+                     * 
                      */
                     bool RenewDiskChargePrepaidHasBeenSet() const;
 

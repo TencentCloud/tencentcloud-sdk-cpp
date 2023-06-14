@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。
                      * @return Status 订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取订单原价。
                      * @return OriginalPrice 订单原价。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取订单折扣价格。
                      * @return DiscountPrice 订单折扣价格。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
                      * 获取订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。
                      * @return Action 订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 

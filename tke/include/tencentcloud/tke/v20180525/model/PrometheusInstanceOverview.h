@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return Name 实例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例名称
-                     * @param Name 实例名称
+                     * @param _name 实例名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取实例vpcId
                      * @return VpcId 实例vpcId
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置实例vpcId
-                     * @param VpcId 实例vpcId
+                     * @param _vpcId 实例vpcId
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取实例子网Id
                      * @return SubnetId 实例子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置实例子网Id
-                     * @param SubnetId 实例子网Id
+                     * @param _subnetId 实例子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -127,6 +139,7 @@ running = 运行中
 prepare_env = 初始化环境
 install_suit = 安装组件
 running = 运行中
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -135,34 +148,39 @@ running = 运行中
 prepare_env = 初始化环境
 install_suit = 安装组件
 running = 运行中
-                     * @param Status 实例当前的状态
+                     * @param _status 实例当前的状态
 prepare_env = 初始化环境
 install_suit = 安装组件
 running = 运行中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取COS桶存储
                      * @return COSBucket COS桶存储
+                     * 
                      */
                     std::string GetCOSBucket() const;
 
                     /**
                      * 设置COS桶存储
-                     * @param COSBucket COS桶存储
+                     * @param _cOSBucket COS桶存储
+                     * 
                      */
                     void SetCOSBucket(const std::string& _cOSBucket);
 
                     /**
                      * 判断参数 COSBucket 是否已赋值
                      * @return COSBucket 是否已赋值
+                     * 
                      */
                     bool COSBucketHasBeenSet() const;
 
@@ -171,20 +189,23 @@ running = 运行中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrafanaURL grafana默认地址，如果开启外网访问得为域名，否则为内网地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGrafanaURL() const;
 
                     /**
                      * 设置grafana默认地址，如果开启外网访问得为域名，否则为内网地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GrafanaURL grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+                     * @param _grafanaURL grafana默认地址，如果开启外网访问得为域名，否则为内网地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrafanaURL(const std::string& _grafanaURL);
 
                     /**
                      * 判断参数 GrafanaURL 是否已赋值
                      * @return GrafanaURL 是否已赋值
+                     * 
                      */
                     bool GrafanaURLHasBeenSet() const;
 
@@ -193,20 +214,23 @@ running = 运行中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoundTotal 关联集群总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBoundTotal() const;
 
                     /**
                      * 设置关联集群总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BoundTotal 关联集群总数
+                     * @param _boundTotal 关联集群总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBoundTotal(const uint64_t& _boundTotal);
 
                     /**
                      * 判断参数 BoundTotal 是否已赋值
                      * @return BoundTotal 是否已赋值
+                     * 
                      */
                     bool BoundTotalHasBeenSet() const;
 
@@ -215,20 +239,23 @@ running = 运行中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoundNormal 运行正常的集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBoundNormal() const;
 
                     /**
                      * 设置运行正常的集群数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BoundNormal 运行正常的集群数
+                     * @param _boundNormal 运行正常的集群数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBoundNormal(const uint64_t& _boundNormal);
 
                     /**
                      * 判断参数 BoundNormal 是否已赋值
                      * @return BoundNormal 是否已赋值
+                     * 
                      */
                     bool BoundNormalHasBeenSet() const;
 

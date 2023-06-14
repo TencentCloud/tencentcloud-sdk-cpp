@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取出现次数
                      * @return Count 出现次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置出现次数
-                     * @param Count 出现次数
+                     * @param _count 出现次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取表情
                      * @return Express 表情
+                     * 
                      */
                     std::string GetExpress() const;
 
                     /**
                      * 设置表情
-                     * @param Express 表情
+                     * @param _express 表情
+                     * 
                      */
                     void SetExpress(const std::string& _express);
 
                     /**
                      * 判断参数 Express 是否已赋值
                      * @return Express 是否已赋值
+                     * 
                      */
                     bool ExpressHasBeenSet() const;
 
                     /**
                      * 获取该表情时长占所有表情时长的比例
                      * @return Ratio 该表情时长占所有表情时长的比例
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置该表情时长占所有表情时长的比例
-                     * @param Ratio 该表情时长占所有表情时长的比例
+                     * @param _ratio 该表情时长占所有表情时长的比例
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 
                     /**
                      * 获取该表情时长占视频总时长的比例
                      * @return RatioUseDuration 该表情时长占视频总时长的比例
+                     * 
                      */
                     double GetRatioUseDuration() const;
 
                     /**
                      * 设置该表情时长占视频总时长的比例
-                     * @param RatioUseDuration 该表情时长占视频总时长的比例
+                     * @param _ratioUseDuration 该表情时长占视频总时长的比例
+                     * 
                      */
                     void SetRatioUseDuration(const double& _ratioUseDuration);
 
                     /**
                      * 判断参数 RatioUseDuration 是否已赋值
                      * @return RatioUseDuration 是否已赋值
+                     * 
                      */
                     bool RatioUseDurationHasBeenSet() const;
 

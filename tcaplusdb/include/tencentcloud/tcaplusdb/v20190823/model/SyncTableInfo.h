@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取目标缓写表的分表数目
                      * @return TargetTableSplitNum 目标缓写表的分表数目
+                     * 
                      */
                     uint64_t GetTargetTableSplitNum() const;
 
                     /**
                      * 设置目标缓写表的分表数目
-                     * @param TargetTableSplitNum 目标缓写表的分表数目
+                     * @param _targetTableSplitNum 目标缓写表的分表数目
+                     * 
                      */
                     void SetTargetTableSplitNum(const uint64_t& _targetTableSplitNum);
 
                     /**
                      * 判断参数 TargetTableSplitNum 是否已赋值
                      * @return TargetTableSplitNum 是否已赋值
+                     * 
                      */
                     bool TargetTableSplitNumHasBeenSet() const;
 
                     /**
                      * 获取目标缓写表名前缀
                      * @return TargetTableNamePrefix 目标缓写表名前缀
+                     * 
                      */
                     std::vector<std::string> GetTargetTableNamePrefix() const;
 
                     /**
                      * 设置目标缓写表名前缀
-                     * @param TargetTableNamePrefix 目标缓写表名前缀
+                     * @param _targetTableNamePrefix 目标缓写表名前缀
+                     * 
                      */
                     void SetTargetTableNamePrefix(const std::vector<std::string>& _targetTableNamePrefix);
 
                     /**
                      * 判断参数 TargetTableNamePrefix 是否已赋值
                      * @return TargetTableNamePrefix 是否已赋值
+                     * 
                      */
                     bool TargetTableNamePrefixHasBeenSet() const;
 
                     /**
                      * 获取缓写数据库实例ID
                      * @return TargetSyncDBInstanceId 缓写数据库实例ID
+                     * 
                      */
                     std::string GetTargetSyncDBInstanceId() const;
 
                     /**
                      * 设置缓写数据库实例ID
-                     * @param TargetSyncDBInstanceId 缓写数据库实例ID
+                     * @param _targetSyncDBInstanceId 缓写数据库实例ID
+                     * 
                      */
                     void SetTargetSyncDBInstanceId(const std::string& _targetSyncDBInstanceId);
 
                     /**
                      * 判断参数 TargetSyncDBInstanceId 是否已赋值
                      * @return TargetSyncDBInstanceId 是否已赋值
+                     * 
                      */
                     bool TargetSyncDBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取缓写表所在数据库名称
                      * @return TargetDatabaseName 缓写表所在数据库名称
+                     * 
                      */
                     std::string GetTargetDatabaseName() const;
 
                     /**
                      * 设置缓写表所在数据库名称
-                     * @param TargetDatabaseName 缓写表所在数据库名称
+                     * @param _targetDatabaseName 缓写表所在数据库名称
+                     * 
                      */
                     void SetTargetDatabaseName(const std::string& _targetDatabaseName);
 
                     /**
                      * 判断参数 TargetDatabaseName 是否已赋值
                      * @return TargetDatabaseName 是否已赋值
+                     * 
                      */
                     bool TargetDatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除
                      * @return Status 缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除
-                     * @param Status 缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除
+                     * @param _status 缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取表格所在集群ID
                      * @return ClusterId 表格所在集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格所在集群ID
-                     * @param ClusterId 表格所在集群ID
+                     * @param _clusterId 表格所在集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取表格所在表格组ID
                      * @return TableGroupId 表格所在表格组ID
+                     * 
                      */
                     uint64_t GetTableGroupId() const;
 
                     /**
                      * 设置表格所在表格组ID
-                     * @param TableGroupId 表格所在表格组ID
+                     * @param _tableGroupId 表格所在表格组ID
+                     * 
                      */
                     void SetTableGroupId(const uint64_t& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表格名称
                      * @return TableName 表格名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表格名称
-                     * @param TableName 表格名称
+                     * @param _tableName 表格名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取表格ID
                      * @return TableId 表格ID
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表格ID
-                     * @param TableId 表格ID
+                     * @param _tableId 表格ID
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
                     /**
                      * 获取TcaplusDB表主键字段到目标缓写表字段的映射
                      * @return KeyFieldMapping TcaplusDB表主键字段到目标缓写表字段的映射
+                     * 
                      */
                     std::vector<SyncTableField> GetKeyFieldMapping() const;
 
                     /**
                      * 设置TcaplusDB表主键字段到目标缓写表字段的映射
-                     * @param KeyFieldMapping TcaplusDB表主键字段到目标缓写表字段的映射
+                     * @param _keyFieldMapping TcaplusDB表主键字段到目标缓写表字段的映射
+                     * 
                      */
                     void SetKeyFieldMapping(const std::vector<SyncTableField>& _keyFieldMapping);
 
                     /**
                      * 判断参数 KeyFieldMapping 是否已赋值
                      * @return KeyFieldMapping 是否已赋值
+                     * 
                      */
                     bool KeyFieldMappingHasBeenSet() const;
 
                     /**
                      * 获取TcaplusDB表字段到目标缓写表字段的映射
                      * @return ValueFieldMapping TcaplusDB表字段到目标缓写表字段的映射
+                     * 
                      */
                     std::vector<SyncTableField> GetValueFieldMapping() const;
 
                     /**
                      * 设置TcaplusDB表字段到目标缓写表字段的映射
-                     * @param ValueFieldMapping TcaplusDB表字段到目标缓写表字段的映射
+                     * @param _valueFieldMapping TcaplusDB表字段到目标缓写表字段的映射
+                     * 
                      */
                     void SetValueFieldMapping(const std::vector<SyncTableField>& _valueFieldMapping);
 
                     /**
                      * 判断参数 ValueFieldMapping 是否已赋值
                      * @return ValueFieldMapping 是否已赋值
+                     * 
                      */
                     bool ValueFieldMappingHasBeenSet() const;
 

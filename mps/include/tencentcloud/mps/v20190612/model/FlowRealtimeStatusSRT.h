@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取延迟，单位为ms。
                      * @return Latency 延迟，单位为ms。
+                     * 
                      */
                     int64_t GetLatency() const;
 
                     /**
                      * 设置延迟，单位为ms。
-                     * @param Latency 延迟，单位为ms。
+                     * @param _latency 延迟，单位为ms。
+                     * 
                      */
                     void SetLatency(const int64_t& _latency);
 
                     /**
                      * 判断参数 Latency 是否已赋值
                      * @return Latency 是否已赋值
+                     * 
                      */
                     bool LatencyHasBeenSet() const;
 
                     /**
                      * 获取RTT，单位为ms。
                      * @return RTT RTT，单位为ms。
+                     * 
                      */
                     int64_t GetRTT() const;
 
                     /**
                      * 设置RTT，单位为ms。
-                     * @param RTT RTT，单位为ms。
+                     * @param _rTT RTT，单位为ms。
+                     * 
                      */
                     void SetRTT(const int64_t& _rTT);
 
                     /**
                      * 判断参数 RTT 是否已赋值
                      * @return RTT 是否已赋值
+                     * 
                      */
                     bool RTTHasBeenSet() const;
 
                     /**
                      * 获取实时发包数或者收包数。
                      * @return Packets 实时发包数或者收包数。
+                     * 
                      */
                     int64_t GetPackets() const;
 
                     /**
                      * 设置实时发包数或者收包数。
-                     * @param Packets 实时发包数或者收包数。
+                     * @param _packets 实时发包数或者收包数。
+                     * 
                      */
                     void SetPackets(const int64_t& _packets);
 
                     /**
                      * 判断参数 Packets 是否已赋值
                      * @return Packets 是否已赋值
+                     * 
                      */
                     bool PacketsHasBeenSet() const;
 
                     /**
                      * 获取丢包率。
                      * @return PacketLossRate 丢包率。
+                     * 
                      */
                     double GetPacketLossRate() const;
 
                     /**
                      * 设置丢包率。
-                     * @param PacketLossRate 丢包率。
+                     * @param _packetLossRate 丢包率。
+                     * 
                      */
                     void SetPacketLossRate(const double& _packetLossRate);
 
                     /**
                      * 判断参数 PacketLossRate 是否已赋值
                      * @return PacketLossRate 是否已赋值
+                     * 
                      */
                     bool PacketLossRateHasBeenSet() const;
 
                     /**
                      * 获取重传率。
                      * @return RetransmitRate 重传率。
+                     * 
                      */
                     double GetRetransmitRate() const;
 
                     /**
                      * 设置重传率。
-                     * @param RetransmitRate 重传率。
+                     * @param _retransmitRate 重传率。
+                     * 
                      */
                     void SetRetransmitRate(const double& _retransmitRate);
 
                     /**
                      * 判断参数 RetransmitRate 是否已赋值
                      * @return RetransmitRate 是否已赋值
+                     * 
                      */
                     bool RetransmitRateHasBeenSet() const;
 
                     /**
                      * 获取实时丢包数。
                      * @return DroppedPackets 实时丢包数。
+                     * 
                      */
                     int64_t GetDroppedPackets() const;
 
                     /**
                      * 设置实时丢包数。
-                     * @param DroppedPackets 实时丢包数。
+                     * @param _droppedPackets 实时丢包数。
+                     * 
                      */
                     void SetDroppedPackets(const int64_t& _droppedPackets);
 
                     /**
                      * 判断参数 DroppedPackets 是否已赋值
                      * @return DroppedPackets 是否已赋值
+                     * 
                      */
                     bool DroppedPacketsHasBeenSet() const;
 
                     /**
                      * 获取是否加密，On|Off。
                      * @return Encryption 是否加密，On|Off。
+                     * 
                      */
                     std::string GetEncryption() const;
 
                     /**
                      * 设置是否加密，On|Off。
-                     * @param Encryption 是否加密，On|Off。
+                     * @param _encryption 是否加密，On|Off。
+                     * 
                      */
                     void SetEncryption(const std::string& _encryption);
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 

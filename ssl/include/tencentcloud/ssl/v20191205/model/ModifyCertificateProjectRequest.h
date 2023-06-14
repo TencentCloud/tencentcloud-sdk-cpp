@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要修改所属项目的证书 ID 集合，最多100个证书。
                      * @return CertificateIdList 需要修改所属项目的证书 ID 集合，最多100个证书。
+                     * 
                      */
                     std::vector<std::string> GetCertificateIdList() const;
 
                     /**
                      * 设置需要修改所属项目的证书 ID 集合，最多100个证书。
-                     * @param CertificateIdList 需要修改所属项目的证书 ID 集合，最多100个证书。
+                     * @param _certificateIdList 需要修改所属项目的证书 ID 集合，最多100个证书。
+                     * 
                      */
                     void SetCertificateIdList(const std::vector<std::string>& _certificateIdList);
 
                     /**
                      * 判断参数 CertificateIdList 是否已赋值
                      * @return CertificateIdList 是否已赋值
+                     * 
                      */
                     bool CertificateIdListHasBeenSet() const;
 
                     /**
                      * 获取项目 ID。
                      * @return ProjectId 项目 ID。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-                     * @param ProjectId 项目 ID。
+                     * @param _projectId 项目 ID。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

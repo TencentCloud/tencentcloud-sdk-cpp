@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取摄像头ID
                      * @return CameraId 摄像头ID
+                     * 
                      */
                     uint64_t GetCameraId() const;
 
                     /**
                      * 设置摄像头ID
-                     * @param CameraId 摄像头ID
+                     * @param _cameraId 摄像头ID
+                     * 
                      */
                     void SetCameraId(const uint64_t& _cameraId);
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取rtsp 地址
                      * @return RTSP rtsp 地址
+                     * 
                      */
                     std::string GetRTSP() const;
 
                     /**
                      * 设置rtsp 地址
-                     * @param RTSP rtsp 地址
+                     * @param _rTSP rtsp 地址
+                     * 
                      */
                     void SetRTSP(const std::string& _rTSP);
 
                     /**
                      * 判断参数 RTSP 是否已赋值
                      * @return RTSP 是否已赋值
+                     * 
                      */
                     bool RTSPHasBeenSet() const;
 
                     /**
                      * 获取图片上传地址
                      * @return Url 图片上传地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置图片上传地址
-                     * @param Url 图片上传地址
+                     * @param _url 图片上传地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

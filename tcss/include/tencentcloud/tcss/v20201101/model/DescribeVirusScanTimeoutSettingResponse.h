@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 超时时长单位小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticName 统计属性名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetStatisticName() const;
 
                     /**
                      * 设置统计属性名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticName 统计属性名称
+                     * @param _statisticName 统计属性名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticName(const std::vector<std::string>& _statisticName);
 
                     /**
                      * 判断参数 StatisticName 是否已赋值
                      * @return StatisticName 是否已赋值
+                     * 
                      */
                     bool StatisticNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticValue 统计值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetStatisticValue() const;
 
                     /**
                      * 设置统计值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticValue 统计值
+                     * @param _statisticValue 统计值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticValue(const std::vector<int64_t>& _statisticValue);
 
                     /**
                      * 判断参数 StatisticValue 是否已赋值
                      * @return StatisticValue 是否已赋值
+                     * 
                      */
                     bool StatisticValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticType 统计项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatisticType() const;
 
                     /**
                      * 设置统计项目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticType 统计项目
+                     * @param _statisticType 统计项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticType(const std::string& _statisticType);
 
                     /**
                      * 判断参数 StatisticType 是否已赋值
                      * @return StatisticType 是否已赋值
+                     * 
                      */
                     bool StatisticTypeHasBeenSet() const;
 

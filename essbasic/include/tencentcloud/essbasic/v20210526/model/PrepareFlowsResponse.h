@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取待发起文件确认页
                      * @return ConfirmUrl 待发起文件确认页
+                     * 
                      */
                     std::string GetConfirmUrl() const;
 
                     /**
                      * 判断参数 ConfirmUrl 是否已赋值
                      * @return ConfirmUrl 是否已赋值
+                     * 
                      */
                     bool ConfirmUrlHasBeenSet() const;
 

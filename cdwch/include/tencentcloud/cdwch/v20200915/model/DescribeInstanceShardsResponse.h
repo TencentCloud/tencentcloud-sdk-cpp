@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceShardsList 实例shard信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceShardsList() const;
 
                     /**
                      * 判断参数 InstanceShardsList 是否已赋值
                      * @return InstanceShardsList 是否已赋值
+                     * 
                      */
                     bool InstanceShardsListHasBeenSet() const;
 

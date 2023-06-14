@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取验证结果
                      * @return Pass 验证结果
+                     * 
                      */
                     bool GetPass() const;
 
                     /**
                      * 判断参数 Pass 是否已赋值
                      * @return Pass 是否已赋值
+                     * 
                      */
                     bool PassHasBeenSet() const;
 
                     /**
                      * 获取已验证次数
                      * @return VerifiedTimes 已验证次数
+                     * 
                      */
                     uint64_t GetVerifiedTimes() const;
 
                     /**
                      * 判断参数 VerifiedTimes 是否已赋值
                      * @return VerifiedTimes 是否已赋值
+                     * 
                      */
                     bool VerifiedTimesHasBeenSet() const;
 
                     /**
                      * 获取剩余验证次数
                      * @return LeftTimes 剩余验证次数
+                     * 
                      */
                     uint64_t GetLeftTimes() const;
 
                     /**
                      * 判断参数 LeftTimes 是否已赋值
                      * @return LeftTimes 是否已赋值
+                     * 
                      */
                     bool LeftTimesHasBeenSet() const;
 

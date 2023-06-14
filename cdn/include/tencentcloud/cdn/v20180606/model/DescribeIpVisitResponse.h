@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取数据统计的时间粒度，支持5min,  day，分别表示5分钟，1天的时间粒度。
                      * @return Interval 数据统计的时间粒度，支持5min,  day，分别表示5分钟，1天的时间粒度。
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取各个资源的回源数据详情。
                      * @return Data 各个资源的回源数据详情。
+                     * 
                      */
                     std::vector<ResourceData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取标签ID
                      * @return LabelId 标签ID
+                     * 
                      */
                     uint64_t GetLabelId() const;
 
                     /**
                      * 设置标签ID
-                     * @param LabelId 标签ID
+                     * @param _labelId 标签ID
+                     * 
                      */
                     void SetLabelId(const uint64_t& _labelId);
 
                     /**
                      * 判断参数 LabelId 是否已赋值
                      * @return LabelId 是否已赋值
+                     * 
                      */
                     bool LabelIdHasBeenSet() const;
 
                     /**
                      * 获取tdid
                      * @return Did tdid
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 设置tdid
-                     * @param Did tdid
+                     * @param _did tdid
+                     * 
                      */
                     void SetDid(const std::string& _did);
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库
                      * @return Db 数据库
+                     * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库
-                     * @param Db 数据库
+                     * @param _db 数据库
+                     * 
                      */
                     void SetDb(const std::string& _db);
 
                     /**
                      * 判断参数 Db 是否已赋值
                      * @return Db 是否已赋值
+                     * 
                      */
                     bool DbHasBeenSet() const;
 
                     /**
                      * 获取权限列表
                      * @return Privileges 权限列表
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限列表
-                     * @param Privileges 权限列表
+                     * @param _privileges 权限列表
+                     * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 

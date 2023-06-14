@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取审核状态：0待审核，1，已审核
                      * @return AuditStatus 审核状态：0待审核，1，已审核
+                     * 
                      */
                     uint64_t GetAuditStatus() const;
 
                     /**
                      * 判断参数 AuditStatus 是否已赋值
                      * @return AuditStatus 是否已赋值
+                     * 
                      */
                     bool AuditStatusHasBeenSet() const;
 
                     /**
                      * 获取实名认证状态：0，未实名认证，1实名认证
                      * @return AuthState 实名认证状态：0，未实名认证，1实名认证
+                     * 
                      */
                     uint64_t GetAuthState() const;
 
                     /**
                      * 判断参数 AuthState 是否已赋值
                      * @return AuthState 是否已赋值
+                     * 
                      */
                     bool AuthStateHasBeenSet() const;
 
                     /**
                      * 获取客户级别
                      * @return ClientGrade 客户级别
+                     * 
                      */
                     std::string GetClientGrade() const;
 
                     /**
                      * 判断参数 ClientGrade 是否已赋值
                      * @return ClientGrade 是否已赋值
+                     * 
                      */
                     bool ClientGradeHasBeenSet() const;
 
                     /**
                      * 获取客户类型：1，个人；2，企业；3，其他
                      * @return ClientType 客户类型：1，个人；2，企业；3，其他
+                     * 
                      */
                     uint64_t GetClientType() const;
 
                     /**
                      * 判断参数 ClientType 是否已赋值
                      * @return ClientType 是否已赋值
+                     * 
                      */
                     bool ClientTypeHasBeenSet() const;
 

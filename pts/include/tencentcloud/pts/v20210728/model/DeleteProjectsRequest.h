@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目ID数组
                      * @return ProjectIds 项目ID数组
+                     * 
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
                      * 设置项目ID数组
-                     * @param ProjectIds 项目ID数组
+                     * @param _projectIds 项目ID数组
+                     * 
                      */
                     void SetProjectIds(const std::vector<std::string>& _projectIds);
 
                     /**
                      * 判断参数 ProjectIds 是否已赋值
                      * @return ProjectIds 是否已赋值
+                     * 
                      */
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
                      * 获取是否删除项目相关的场景。默认为否。
                      * @return DeleteScenarios 是否删除项目相关的场景。默认为否。
+                     * 
                      */
                     bool GetDeleteScenarios() const;
 
                     /**
                      * 设置是否删除项目相关的场景。默认为否。
-                     * @param DeleteScenarios 是否删除项目相关的场景。默认为否。
+                     * @param _deleteScenarios 是否删除项目相关的场景。默认为否。
+                     * 
                      */
                     void SetDeleteScenarios(const bool& _deleteScenarios);
 
                     /**
                      * 判断参数 DeleteScenarios 是否已赋值
                      * @return DeleteScenarios 是否已赋值
+                     * 
                      */
                     bool DeleteScenariosHasBeenSet() const;
 
                     /**
                      * 获取是否删除项目相关的任务。默认为否。
                      * @return DeleteJobs 是否删除项目相关的任务。默认为否。
+                     * 
                      */
                     bool GetDeleteJobs() const;
 
                     /**
                      * 设置是否删除项目相关的任务。默认为否。
-                     * @param DeleteJobs 是否删除项目相关的任务。默认为否。
+                     * @param _deleteJobs 是否删除项目相关的任务。默认为否。
+                     * 
                      */
                     void SetDeleteJobs(const bool& _deleteJobs);
 
                     /**
                      * 判断参数 DeleteJobs 是否已赋值
                      * @return DeleteJobs 是否已赋值
+                     * 
                      */
                     bool DeleteJobsHasBeenSet() const;
 

@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewOriginalText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewOriginalText() const;
 
                     /**
                      * 设置视图文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ViewOriginalText 视图文本
+                     * @param _viewOriginalText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViewOriginalText(const std::string& _viewOriginalText);
 
                     /**
                      * 判断参数 ViewOriginalText 是否已赋值
                      * @return ViewOriginalText 是否已赋值
+                     * 
                      */
                     bool ViewOriginalTextHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewExpandedText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewExpandedText() const;
 
                     /**
                      * 设置视图文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ViewExpandedText 视图文本
+                     * @param _viewExpandedText 视图文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViewExpandedText(const std::string& _viewExpandedText);
 
                     /**
                      * 判断参数 ViewExpandedText 是否已赋值
                      * @return ViewExpandedText 是否已赋值
+                     * 
                      */
                     bool ViewExpandedTextHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retention hive维护版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRetention() const;
 
                     /**
                      * 设置hive维护版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Retention hive维护版本
+                     * @param _retention hive维护版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetention(const int64_t& _retention);
 
                     /**
                      * 判断参数 Retention 是否已赋值
                      * @return Retention 是否已赋值
+                     * 
                      */
                     bool RetentionHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sds 存储对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DMSSds GetSds() const;
 
                     /**
                      * 设置存储对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sds 存储对象
+                     * @param _sds 存储对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSds(const DMSSds& _sds);
 
                     /**
                      * 判断参数 Sds 是否已赋值
                      * @return Sds 是否已赋值
+                     * 
                      */
                     bool SdsHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionKeys 分区列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSColumn> GetPartitionKeys() const;
 
                     /**
                      * 设置分区列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionKeys 分区列
+                     * @param _partitionKeys 分区列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionKeys(const std::vector<DMSColumn>& _partitionKeys);
 
                     /**
                      * 判断参数 PartitionKeys 是否已赋值
                      * @return PartitionKeys 是否已赋值
+                     * 
                      */
                     bool PartitionKeysHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 分区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSPartition> GetPartitions() const;
 
                     /**
                      * 设置分区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partitions 分区
+                     * @param _partitions 分区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitions(const std::vector<DMSPartition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 表类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置表类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 表类型
+                     * @param _type 表类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbName 数据库名称
+                     * @param _dbName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaName Schema名称
+                     * @param _schemaName Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSize 存储大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
                      * 设置存储大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageSize 存储大小
+                     * @param _storageSize 存储大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorageSize(const int64_t& _storageSize);
 
                     /**
                      * 判断参数 StorageSize 是否已赋值
                      * @return StorageSize 是否已赋值
+                     * 
                      */
                     bool StorageSizeHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordCount 记录数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordCount() const;
 
                     /**
                      * 设置记录数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordCount 记录数量
+                     * @param _recordCount 记录数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordCount(const int64_t& _recordCount);
 
                     /**
                      * 判断参数 RecordCount 是否已赋值
                      * @return RecordCount 是否已赋值
+                     * 
                      */
                     bool RecordCountHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifeTime 生命周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLifeTime() const;
 
                     /**
                      * 设置生命周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LifeTime 生命周期
+                     * @param _lifeTime 生命周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLifeTime(const int64_t& _lifeTime);
 
                     /**
                      * 判断参数 LifeTime 是否已赋值
                      * @return LifeTime 是否已赋值
+                     * 
                      */
                     bool LifeTimeHasBeenSet() const;
 
@@ -318,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastAccessTime 最后访问时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastAccessTime() const;
 
                     /**
                      * 设置最后访问时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastAccessTime 最后访问时间
+                     * @param _lastAccessTime 最后访问时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastAccessTime(const std::string& _lastAccessTime);
 
                     /**
                      * 判断参数 LastAccessTime 是否已赋值
                      * @return LastAccessTime 是否已赋值
+                     * 
                      */
                     bool LastAccessTimeHasBeenSet() const;
 
@@ -340,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataUpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataUpdateTime 数据更新时间
+                     * @param _dataUpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataUpdateTime(const std::string& _dataUpdateTime);
 
                     /**
                      * 判断参数 DataUpdateTime 是否已赋值
                      * @return DataUpdateTime 是否已赋值
+                     * 
                      */
                     bool DataUpdateTimeHasBeenSet() const;
 
@@ -362,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StructUpdateTime 结构更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStructUpdateTime() const;
 
                     /**
                      * 设置结构更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StructUpdateTime 结构更新时间
+                     * @param _structUpdateTime 结构更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStructUpdateTime(const std::string& _structUpdateTime);
 
                     /**
                      * 判断参数 StructUpdateTime 是否已赋值
                      * @return StructUpdateTime 是否已赋值
+                     * 
                      */
                     bool StructUpdateTimeHasBeenSet() const;
 
@@ -384,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DMSColumn> GetColumns() const;
 
                     /**
                      * 设置列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Columns 列
+                     * @param _columns 列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColumns(const std::vector<DMSColumn>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
@@ -406,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 表名
+                     * @param _name 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

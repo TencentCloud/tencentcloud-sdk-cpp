@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建 kill 会话任务返回的异步任务 id
                      * @return AsyncRequestId 创建 kill 会话任务返回的异步任务 id
+                     * 
                      */
                     int64_t GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

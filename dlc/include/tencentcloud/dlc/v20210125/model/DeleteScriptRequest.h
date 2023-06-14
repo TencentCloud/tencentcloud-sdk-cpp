@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取脚本id，其可以通过DescribeScripts接口提取
                      * @return ScriptIds 脚本id，其可以通过DescribeScripts接口提取
+                     * 
                      */
                     std::vector<std::string> GetScriptIds() const;
 
                     /**
                      * 设置脚本id，其可以通过DescribeScripts接口提取
-                     * @param ScriptIds 脚本id，其可以通过DescribeScripts接口提取
+                     * @param _scriptIds 脚本id，其可以通过DescribeScripts接口提取
+                     * 
                      */
                     void SetScriptIds(const std::vector<std::string>& _scriptIds);
 
                     /**
                      * 判断参数 ScriptIds 是否已赋值
                      * @return ScriptIds 是否已赋值
+                     * 
                      */
                     bool ScriptIdsHasBeenSet() const;
 

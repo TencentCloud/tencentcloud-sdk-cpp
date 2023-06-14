@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionType 规则检测范围类型 1.全表  2.条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetConditionType() const;
 
                     /**
                      * 设置规则检测范围类型 1.全表  2.条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConditionType 规则检测范围类型 1.全表  2.条件扫描
+                     * @param _conditionType 规则检测范围类型 1.全表  2.条件扫描
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConditionType(const uint64_t& _conditionType);
 
                     /**
                      * 判断参数 ConditionType 是否已赋值
                      * @return ConditionType 是否已赋值
+                     * 
                      */
                     bool ConditionTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Condition 检测范围表达式
+                     * @param _condition 检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCondition(const std::string& _condition);
 
                     /**
                      * 判断参数 Condition 是否已赋值
                      * @return Condition 是否已赋值
+                     * 
                      */
                     bool ConditionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetCondition 目标检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetCondition() const;
 
                     /**
                      * 设置目标检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetCondition 目标检测范围表达式
+                     * @param _targetCondition 目标检测范围表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetCondition(const std::string& _targetCondition);
 
                     /**
                      * 判断参数 TargetCondition 是否已赋值
                      * @return TargetCondition 是否已赋值
+                     * 
                      */
                     bool TargetConditionHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取cluster列表
                      * @return Clusters cluster列表
+                     * 
                      */
                     std::vector<ClusterInfo> GetClusters() const;
 
                     /**
                      * 判断参数 Clusters 是否已赋值
                      * @return Clusters 是否已赋值
+                     * 
                      */
                     bool ClustersHasBeenSet() const;
 

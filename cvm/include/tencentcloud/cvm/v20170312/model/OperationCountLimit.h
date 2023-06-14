@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
                      * @return Operation 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
-                     * @param Operation 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
+                     * @param _operation 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取当前已使用次数，如果返回值为-1表示该操作无次数限制。
                      * @return CurrentCount 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+                     * 
                      */
                     int64_t GetCurrentCount() const;
 
                     /**
                      * 设置当前已使用次数，如果返回值为-1表示该操作无次数限制。
-                     * @param CurrentCount 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+                     * @param _currentCount 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+                     * 
                      */
                     void SetCurrentCount(const int64_t& _currentCount);
 
                     /**
                      * 判断参数 CurrentCount 是否已赋值
                      * @return CurrentCount 是否已赋值
+                     * 
                      */
                     bool CurrentCountHasBeenSet() const;
 
                     /**
                      * 获取操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
                      * @return LimitCount 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+                     * 
                      */
                     int64_t GetLimitCount() const;
 
                     /**
                      * 设置操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
-                     * @param LimitCount 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+                     * @param _limitCount 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+                     * 
                      */
                     void SetLimitCount(const int64_t& _limitCount);
 
                     /**
                      * 判断参数 LimitCount 是否已赋值
                      * @return LimitCount 是否已赋值
+                     * 
                      */
                     bool LimitCountHasBeenSet() const;
 

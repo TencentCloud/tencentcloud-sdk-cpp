@@ -57,6 +57,7 @@ namespace TencentCloud
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
+                     * 
                      */
                     std::string GetNodeFlag() const;
 
@@ -66,35 +67,40 @@ namespace TencentCloud
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
-                     * @param NodeFlag 扩容节点类型取值范围：
+                     * @param _nodeFlag 扩容节点类型取值范围：
   <li>MASTER</li>
   <li>TASK</li>
   <li>CORE</li>
   <li>ROUTER</li>
+                     * 
                      */
                     void SetNodeFlag(const std::string& _nodeFlag);
 
                     /**
                      * 判断参数 NodeFlag 是否已赋值
                      * @return NodeFlag 是否已赋值
+                     * 
                      */
                     bool NodeFlagHasBeenSet() const;
 
                     /**
                      * 获取扩容节点数量
                      * @return NodeCount 扩容节点数量
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置扩容节点数量
-                     * @param NodeCount 扩容节点数量
+                     * @param _nodeCount 扩容节点数量
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 

@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取TID号码
                      * @return Tid TID号码
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置TID号码
-                     * @param Tid TID号码
+                     * @param _tid TID号码
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取公钥
                      * @return PublicKey 公钥
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 设置公钥
-                     * @param PublicKey 公钥
+                     * @param _publicKey 公钥
+                     * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 
                     /**
                      * 获取私钥
                      * @return PrivateKey 私钥
+                     * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
                      * 设置私钥
-                     * @param PrivateKey 私钥
+                     * @param _privateKey 私钥
+                     * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
                     /**
                      * 判断参数 PrivateKey 是否已赋值
                      * @return PrivateKey 是否已赋值
+                     * 
                      */
                     bool PrivateKeyHasBeenSet() const;
 
                     /**
                      * 获取共享密钥
                      * @return Psk 共享密钥
+                     * 
                      */
                     std::string GetPsk() const;
 
                     /**
                      * 设置共享密钥
-                     * @param Psk 共享密钥
+                     * @param _psk 共享密钥
+                     * 
                      */
                     void SetPsk(const std::string& _psk);
 
                     /**
                      * 判断参数 Psk 是否已赋值
                      * @return Psk 是否已赋值
+                     * 
                      */
                     bool PskHasBeenSet() const;
 
                     /**
                      * 获取软加固白盒密钥下载地址
                      * @return DownloadUrl 软加固白盒密钥下载地址
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置软加固白盒密钥下载地址
-                     * @param DownloadUrl 软加固白盒密钥下载地址
+                     * @param _downloadUrl 软加固白盒密钥下载地址
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取软加固设备标识码
                      * @return DeviceCode 软加固设备标识码
+                     * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
                      * 设置软加固设备标识码
-                     * @param DeviceCode 软加固设备标识码
+                     * @param _deviceCode 软加固设备标识码
+                     * 
                      */
                     void SetDeviceCode(const std::string& _deviceCode);
 
                     /**
                      * 判断参数 DeviceCode 是否已赋值
                      * @return DeviceCode 是否已赋值
+                     * 
                      */
                     bool DeviceCodeHasBeenSet() const;
 

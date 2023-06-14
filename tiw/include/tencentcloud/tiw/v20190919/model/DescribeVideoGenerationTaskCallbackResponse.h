@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取录制视频生成回调地址
                      * @return Callback 录制视频生成回调地址
+                     * 
                      */
                     std::string GetCallback() const;
 
                     /**
                      * 判断参数 Callback 是否已赋值
                      * @return Callback 是否已赋值
+                     * 
                      */
                     bool CallbackHasBeenSet() const;
 
                     /**
                      * 获取录制视频生成回调鉴权密钥
                      * @return CallbackKey 录制视频生成回调鉴权密钥
+                     * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
                      * 判断参数 CallbackKey 是否已赋值
                      * @return CallbackKey 是否已赋值
+                     * 
                      */
                     bool CallbackKeyHasBeenSet() const;
 

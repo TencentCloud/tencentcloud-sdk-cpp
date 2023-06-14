@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取配置组类型，如ldap,ad等
                      * @return Type 配置组类型，如ldap,ad等
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置配置组类型，如ldap,ad等
-                     * @param Type 配置组类型，如ldap,ad等
+                     * @param _type 配置组类型，如ldap,ad等
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取"{\"order\":0,\"url\":\"ldap://10.0.1.72:389\",\"bind_dn\":\"cn=admin,dc=tencent,dc=com\",\"user_search.base_dn\":\"dc=tencent,dc=com\",\"user_search.filter\":\"(cn={0})\",\"group_search.base_dn\":\"dc=tencent,dc=com\"}"
                      * @return EsConfig "{\"order\":0,\"url\":\"ldap://10.0.1.72:389\",\"bind_dn\":\"cn=admin,dc=tencent,dc=com\",\"user_search.base_dn\":\"dc=tencent,dc=com\",\"user_search.filter\":\"(cn={0})\",\"group_search.base_dn\":\"dc=tencent,dc=com\"}"
+                     * 
                      */
                     std::string GetEsConfig() const;
 
                     /**
                      * 设置"{\"order\":0,\"url\":\"ldap://10.0.1.72:389\",\"bind_dn\":\"cn=admin,dc=tencent,dc=com\",\"user_search.base_dn\":\"dc=tencent,dc=com\",\"user_search.filter\":\"(cn={0})\",\"group_search.base_dn\":\"dc=tencent,dc=com\"}"
-                     * @param EsConfig "{\"order\":0,\"url\":\"ldap://10.0.1.72:389\",\"bind_dn\":\"cn=admin,dc=tencent,dc=com\",\"user_search.base_dn\":\"dc=tencent,dc=com\",\"user_search.filter\":\"(cn={0})\",\"group_search.base_dn\":\"dc=tencent,dc=com\"}"
+                     * @param _esConfig "{\"order\":0,\"url\":\"ldap://10.0.1.72:389\",\"bind_dn\":\"cn=admin,dc=tencent,dc=com\",\"user_search.base_dn\":\"dc=tencent,dc=com\",\"user_search.filter\":\"(cn={0})\",\"group_search.base_dn\":\"dc=tencent,dc=com\"}"
+                     * 
                      */
                     void SetEsConfig(const std::string& _esConfig);
 
                     /**
                      * 判断参数 EsConfig 是否已赋值
                      * @return EsConfig 是否已赋值
+                     * 
                      */
                     bool EsConfigHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取实例对象维度组合
                      * @return Dimensions 实例对象维度组合
+                     * 
                      */
                     std::vector<Dimension> GetDimensions() const;
 
                     /**
                      * 设置实例对象维度组合
-                     * @param Dimensions 实例对象维度组合
+                     * @param _dimensions 实例对象维度组合
+                     * 
                      */
                     void SetDimensions(const std::vector<Dimension>& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 
                     /**
                      * 获取数据点列表
                      * @return Values 数据点列表
+                     * 
                      */
                     std::vector<Point> GetValues() const;
 
                     /**
                      * 设置数据点列表
-                     * @param Values 数据点列表
+                     * @param _values 数据点列表
+                     * 
                      */
                     void SetValues(const std::vector<Point>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

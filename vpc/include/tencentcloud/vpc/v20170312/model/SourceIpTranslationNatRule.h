@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -69,92 +72,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取源IP/网段
                      * @return PrivateIpAddress 源IP/网段
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置源IP/网段
-                     * @param PrivateIpAddress 源IP/网段
+                     * @param _privateIpAddress 源IP/网段
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 
                     /**
                      * 获取弹性IP地址池
                      * @return PublicIpAddresses 弹性IP地址池
+                     * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置弹性IP地址池
-                     * @param PublicIpAddresses 弹性IP地址池
+                     * @param _publicIpAddresses 弹性IP地址池
+                     * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
                     /**
                      * 判断参数 PublicIpAddresses 是否已赋值
                      * @return PublicIpAddresses 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取Snat规则ID
                      * @return NatGatewaySnatId Snat规则ID
+                     * 
                      */
                     std::string GetNatGatewaySnatId() const;
 
                     /**
                      * 设置Snat规则ID
-                     * @param NatGatewaySnatId Snat规则ID
+                     * @param _natGatewaySnatId Snat规则ID
+                     * 
                      */
                     void SetNatGatewaySnatId(const std::string& _natGatewaySnatId);
 
                     /**
                      * 判断参数 NatGatewaySnatId 是否已赋值
                      * @return NatGatewaySnatId 是否已赋值
+                     * 
                      */
                     bool NatGatewaySnatIdHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId NAT网关的ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NatGatewayId NAT网关的ID。
+                     * @param _natGatewayId NAT网关的ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络VPC的ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络VPC的ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 私有网络VPC的ID。
+                     * @param _vpcId 私有网络VPC的ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -207,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime NAT网关SNAT规则创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置NAT网关SNAT规则创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime NAT网关SNAT规则创建时间。
+                     * @param _createdTime NAT网关SNAT规则创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取防护域名配置信息
                      * @return Host 防护域名配置信息
+                     * 
                      */
                     HostRecord GetHost() const;
 
                     /**
                      * 设置防护域名配置信息
-                     * @param Host 防护域名配置信息
+                     * @param _host 防护域名配置信息
+                     * 
                      */
                     void SetHost(const HostRecord& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceID 实例id
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceID 实例id
+                     * @param _instanceID 实例id
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 

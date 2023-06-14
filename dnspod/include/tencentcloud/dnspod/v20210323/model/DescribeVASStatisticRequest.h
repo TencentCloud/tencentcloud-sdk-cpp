@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名ID
                      * @return DomainId 域名ID
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名ID
-                     * @param DomainId 域名ID
+                     * @param _domainId 域名ID
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

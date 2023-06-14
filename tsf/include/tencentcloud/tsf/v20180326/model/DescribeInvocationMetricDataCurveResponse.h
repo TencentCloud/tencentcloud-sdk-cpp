@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 指标监控数据曲线集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MetricDataCurve> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

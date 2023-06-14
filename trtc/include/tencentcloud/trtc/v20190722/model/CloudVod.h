@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云点播相关参数。
                      * @return TencentVod 腾讯云点播相关参数。
+                     * 
                      */
                     TencentVod GetTencentVod() const;
 
                     /**
                      * 设置腾讯云点播相关参数。
-                     * @param TencentVod 腾讯云点播相关参数。
+                     * @param _tencentVod 腾讯云点播相关参数。
+                     * 
                      */
                     void SetTencentVod(const TencentVod& _tencentVod);
 
                     /**
                      * 判断参数 TencentVod 是否已赋值
                      * @return TencentVod 是否已赋值
+                     * 
                      */
                     bool TencentVodHasBeenSet() const;
 

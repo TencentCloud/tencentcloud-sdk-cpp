@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备份仓库名称	
                      * @return Name 备份仓库名称	
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置备份仓库名称	
-                     * @param Name 备份仓库名称	
+                     * @param _name 备份仓库名称	
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取存储仓库所属地域，比如COS广州(ap-guangzhou)	
                      * @return StorageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)	
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置存储仓库所属地域，比如COS广州(ap-guangzhou)	
-                     * @param StorageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)	
+                     * @param _storageRegion 存储仓库所属地域，比如COS广州(ap-guangzhou)	
+                     * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Provider 存储服务提供方，默认腾讯云	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvider() const;
 
                     /**
                      * 设置存储服务提供方，默认腾讯云	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Provider 存储服务提供方，默认腾讯云	
+                     * @param _provider 存储服务提供方，默认腾讯云	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvider(const std::string& _provider);
 
                     /**
                      * 判断参数 Provider 是否已赋值
                      * @return Provider 是否已赋值
+                     * 
                      */
                     bool ProviderHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
+                     * @param _bucket 对象存储桶名称，如果是COS必须是tke-backup-前缀开头	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 对象存储桶路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置对象存储桶路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 对象存储桶路径
+                     * @param _path 对象存储桶路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 存储仓库状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置存储仓库状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 存储仓库状态
+                     * @param _state 存储仓库状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 详细状态信息	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置详细状态信息	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 详细状态信息	
+                     * @param _message 详细状态信息	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastValidationTime 最后一次检查时间	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastValidationTime() const;
 
                     /**
                      * 设置最后一次检查时间	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastValidationTime 最后一次检查时间	
+                     * @param _lastValidationTime 最后一次检查时间	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastValidationTime(const std::string& _lastValidationTime);
 
                     /**
                      * 判断参数 LastValidationTime 是否已赋值
                      * @return LastValidationTime 是否已赋值
+                     * 
                      */
                     bool LastValidationTimeHasBeenSet() const;
 

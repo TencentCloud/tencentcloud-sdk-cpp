@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取业务链ID，可在网络概览页获取
                      * @return ChainId 业务链ID，可在网络概览页获取
+                     * 
                      */
                     std::string GetChainId() const;
 
                     /**
                      * 设置业务链ID，可在网络概览页获取
-                     * @param ChainId 业务链ID，可在网络概览页获取
+                     * @param _chainId 业务链ID，可在网络概览页获取
+                     * 
                      */
                     void SetChainId(const std::string& _chainId);
 
                     /**
                      * 判断参数 ChainId 是否已赋值
                      * @return ChainId 是否已赋值
+                     * 
                      */
                     bool ChainIdHasBeenSet() const;
 
                     /**
                      * 获取交易ID，通过调用合约的返回值获取
                      * @return TxID 交易ID，通过调用合约的返回值获取
+                     * 
                      */
                     std::string GetTxID() const;
 
                     /**
                      * 设置交易ID，通过调用合约的返回值获取
-                     * @param TxID 交易ID，通过调用合约的返回值获取
+                     * @param _txID 交易ID，通过调用合约的返回值获取
+                     * 
                      */
                     void SetTxID(const std::string& _txID);
 
                     /**
                      * 判断参数 TxID 是否已赋值
                      * @return TxID 是否已赋值
+                     * 
                      */
                     bool TxIDHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名字
+                     * @param _name 名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerId id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerId() const;
 
                     /**
                      * 设置id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerId id
+                     * @param _containerId id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerId(const std::string& _containerId);
 
                     /**
                      * 判断参数 ContainerId 是否已赋值
                      * @return ContainerId 是否已赋值
+                     * 
                      */
                     bool ContainerIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Image 镜像地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置镜像地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Image 镜像地址
+                     * @param _image 镜像地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ContainerStatus GetStatus() const;
 
                     /**
                      * 设置容器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 容器状态
+                     * @param _status 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const ContainerStatus& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

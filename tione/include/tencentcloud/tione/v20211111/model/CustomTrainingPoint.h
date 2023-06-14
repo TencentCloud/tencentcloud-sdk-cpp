@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取X值
                      * @return XValue X值
+                     * 
                      */
                     double GetXValue() const;
 
                     /**
                      * 设置X值
-                     * @param XValue X值
+                     * @param _xValue X值
+                     * 
                      */
                     void SetXValue(const double& _xValue);
 
                     /**
                      * 判断参数 XValue 是否已赋值
                      * @return XValue 是否已赋值
+                     * 
                      */
                     bool XValueHasBeenSet() const;
 
                     /**
                      * 获取Y值
                      * @return YValue Y值
+                     * 
                      */
                     double GetYValue() const;
 
                     /**
                      * 设置Y值
-                     * @param YValue Y值
+                     * @param _yValue Y值
+                     * 
                      */
                     void SetYValue(const double& _yValue);
 
                     /**
                      * 判断参数 YValue 是否已赋值
                      * @return YValue 是否已赋值
+                     * 
                      */
                     bool YValueHasBeenSet() const;
 

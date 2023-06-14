@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取要查询的日志的起始时间，Unix时间戳，单位ms
                      * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 
                      */
                     int64_t GetFrom() const;
 
                     /**
                      * 设置要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @param From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * @param _from 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 
                      */
                     void SetFrom(const int64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取要查询的日志的结束时间，Unix时间戳，单位ms
                      * @return To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 
                      */
                     int64_t GetTo() const;
 
                     /**
                      * 设置要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @param To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * @param _to 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 
                      */
                     void SetTo(const int64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取查询语句，语句长度最大为1024
                      * @return Query 查询语句，语句长度最大为1024
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询语句，语句长度最大为1024
-                     * @param Query 查询语句，语句长度最大为1024
+                     * @param _query 查询语句，语句长度最大为1024
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取单次查询返回的日志条数，最大值为1000
                      * @return Limit 单次查询返回的日志条数，最大值为1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单次查询返回的日志条数，最大值为1000
-                     * @param Limit 单次查询返回的日志条数，最大值为1000
+                     * @param _limit 单次查询返回的日志条数，最大值为1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
                      * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * @param _context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
                      * @return Sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @param Sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * @param _sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
                      * @return UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 
                      */
                     bool GetUseNewAnalysis() const;
 
                     /**
                      * 设置为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
-                     * @param UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * @param _useNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 
                      */
                     void SetUseNewAnalysis(const bool& _useNewAnalysis);
 
                     /**
                      * 判断参数 UseNewAnalysis 是否已赋值
                      * @return UseNewAnalysis 是否已赋值
+                     * 
                      */
                     bool UseNewAnalysisHasBeenSet() const;
 

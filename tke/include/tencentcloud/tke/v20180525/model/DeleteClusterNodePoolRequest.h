@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取节点池对应的 ClusterId
                      * @return ClusterId 节点池对应的 ClusterId
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置节点池对应的 ClusterId
-                     * @param ClusterId 节点池对应的 ClusterId
+                     * @param _clusterId 节点池对应的 ClusterId
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要删除的节点池 Id 列表
                      * @return NodePoolIds 需要删除的节点池 Id 列表
+                     * 
                      */
                     std::vector<std::string> GetNodePoolIds() const;
 
                     /**
                      * 设置需要删除的节点池 Id 列表
-                     * @param NodePoolIds 需要删除的节点池 Id 列表
+                     * @param _nodePoolIds 需要删除的节点池 Id 列表
+                     * 
                      */
                     void SetNodePoolIds(const std::vector<std::string>& _nodePoolIds);
 
                     /**
                      * 判断参数 NodePoolIds 是否已赋值
                      * @return NodePoolIds 是否已赋值
+                     * 
                      */
                     bool NodePoolIdsHasBeenSet() const;
 
                     /**
                      * 获取删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)
                      * @return KeepInstance 删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)
+                     * 
                      */
                     bool GetKeepInstance() const;
 
                     /**
                      * 设置删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)
-                     * @param KeepInstance 删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)
+                     * @param _keepInstance 删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)
+                     * 
                      */
                     void SetKeepInstance(const bool& _keepInstance);
 
                     /**
                      * 判断参数 KeepInstance 是否已赋值
                      * @return KeepInstance 是否已赋值
+                     * 
                      */
                     bool KeepInstanceHasBeenSet() const;
 

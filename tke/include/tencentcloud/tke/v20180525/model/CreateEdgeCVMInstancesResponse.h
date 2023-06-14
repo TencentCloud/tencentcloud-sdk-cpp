@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取cvm id 列表
                      * @return CvmIdSet cvm id 列表
+                     * 
                      */
                     std::vector<std::string> GetCvmIdSet() const;
 
                     /**
                      * 判断参数 CvmIdSet 是否已赋值
                      * @return CvmIdSet 是否已赋值
+                     * 
                      */
                     bool CvmIdSetHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取属性名
                      * @return AttributeName 属性名
+                     * 
                      */
                     std::string GetAttributeName() const;
 
                     /**
                      * 设置属性名
-                     * @param AttributeName 属性名
+                     * @param _attributeName 属性名
+                     * 
                      */
                     void SetAttributeName(const std::string& _attributeName);
 
                     /**
                      * 判断参数 AttributeName 是否已赋值
                      * @return AttributeName 是否已赋值
+                     * 
                      */
                     bool AttributeNameHasBeenSet() const;
 
                     /**
                      * 获取属性值
                      * @return AttributeValues 属性值
+                     * 
                      */
                     std::vector<std::string> GetAttributeValues() const;
 
                     /**
                      * 设置属性值
-                     * @param AttributeValues 属性值
+                     * @param _attributeValues 属性值
+                     * 
                      */
                     void SetAttributeValues(const std::vector<std::string>& _attributeValues);
 
                     /**
                      * 判断参数 AttributeValues 是否已赋值
                      * @return AttributeValues 是否已赋值
+                     * 
                      */
                     bool AttributeValuesHasBeenSet() const;
 

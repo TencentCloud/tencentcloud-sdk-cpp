@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取总免费空间大小，单位byte。
                      * @return TotalFreeSize 总免费空间大小，单位byte。
+                     * 
                      */
                     uint64_t GetTotalFreeSize() const;
 
                     /**
                      * 判断参数 TotalFreeSize 是否已赋值
                      * @return TotalFreeSize 是否已赋值
+                     * 
                      */
                     bool TotalFreeSizeHasBeenSet() const;
 
                     /**
                      * 获取已使用免费空间大小，单位byte。
                      * @return UsedFreeSize 已使用免费空间大小，单位byte。
+                     * 
                      */
                     uint64_t GetUsedFreeSize() const;
 
                     /**
                      * 判断参数 UsedFreeSize 是否已赋值
                      * @return UsedFreeSize 是否已赋值
+                     * 
                      */
                     bool UsedFreeSizeHasBeenSet() const;
 
                     /**
                      * 获取已使用收费空间大小，单位byte。
                      * @return UsedBillingSize 已使用收费空间大小，单位byte。
+                     * 
                      */
                     uint64_t GetUsedBillingSize() const;
 
                     /**
                      * 判断参数 UsedBillingSize 是否已赋值
                      * @return UsedBillingSize 是否已赋值
+                     * 
                      */
                     bool UsedBillingSizeHasBeenSet() const;
 
                     /**
                      * 获取日志备份数量。
                      * @return LogBackupCount 日志备份数量。
+                     * 
                      */
                     uint64_t GetLogBackupCount() const;
 
                     /**
                      * 判断参数 LogBackupCount 是否已赋值
                      * @return LogBackupCount 是否已赋值
+                     * 
                      */
                     bool LogBackupCountHasBeenSet() const;
 
                     /**
                      * 获取日志备份大小，单位byte。
                      * @return LogBackupSize 日志备份大小，单位byte。
+                     * 
                      */
                     uint64_t GetLogBackupSize() const;
 
                     /**
                      * 判断参数 LogBackupSize 是否已赋值
                      * @return LogBackupSize 是否已赋值
+                     * 
                      */
                     bool LogBackupSizeHasBeenSet() const;
 
                     /**
                      * 获取手动创建的基础备份数量。
                      * @return ManualBaseBackupCount 手动创建的基础备份数量。
+                     * 
                      */
                     uint64_t GetManualBaseBackupCount() const;
 
                     /**
                      * 判断参数 ManualBaseBackupCount 是否已赋值
                      * @return ManualBaseBackupCount 是否已赋值
+                     * 
                      */
                     bool ManualBaseBackupCountHasBeenSet() const;
 
                     /**
                      * 获取手动创建的基础备份大小，单位byte。
                      * @return ManualBaseBackupSize 手动创建的基础备份大小，单位byte。
+                     * 
                      */
                     uint64_t GetManualBaseBackupSize() const;
 
                     /**
                      * 判断参数 ManualBaseBackupSize 是否已赋值
                      * @return ManualBaseBackupSize 是否已赋值
+                     * 
                      */
                     bool ManualBaseBackupSizeHasBeenSet() const;
 
                     /**
                      * 获取自动创建的基础备份数量。
                      * @return AutoBaseBackupCount 自动创建的基础备份数量。
+                     * 
                      */
                     uint64_t GetAutoBaseBackupCount() const;
 
                     /**
                      * 判断参数 AutoBaseBackupCount 是否已赋值
                      * @return AutoBaseBackupCount 是否已赋值
+                     * 
                      */
                     bool AutoBaseBackupCountHasBeenSet() const;
 
                     /**
                      * 获取自动创建的基础备份大小，单位byte。
                      * @return AutoBaseBackupSize 自动创建的基础备份大小，单位byte。
+                     * 
                      */
                     uint64_t GetAutoBaseBackupSize() const;
 
                     /**
                      * 判断参数 AutoBaseBackupSize 是否已赋值
                      * @return AutoBaseBackupSize 是否已赋值
+                     * 
                      */
                     bool AutoBaseBackupSizeHasBeenSet() const;
 

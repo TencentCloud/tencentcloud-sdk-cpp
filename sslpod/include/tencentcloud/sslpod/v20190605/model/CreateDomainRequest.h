@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
                      * @return ServerType 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
+                     * 
                      */
                     int64_t GetServerType() const;
 
                     /**
                      * 设置监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
-                     * @param ServerType 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
+                     * @param _serverType 监控的服务器类型（0：web，1：smtp，2：imap，3：pops）
+                     * 
                      */
                     void SetServerType(const int64_t& _serverType);
 
                     /**
                      * 判断参数 ServerType 是否已赋值
                      * @return ServerType 是否已赋值
+                     * 
                      */
                     bool ServerTypeHasBeenSet() const;
 
                     /**
                      * 获取添加的域名
                      * @return Domain 添加的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置添加的域名
-                     * @param Domain 添加的域名
+                     * @param _domain 添加的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取添加的端口
                      * @return Port 添加的端口
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置添加的端口
-                     * @param Port 添加的端口
+                     * @param _port 添加的端口
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取指定域名的IP
                      * @return IP 指定域名的IP
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置指定域名的IP
-                     * @param IP 指定域名的IP
+                     * @param _iP 指定域名的IP
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取是否开启通知告警；true：开启通知告警，false：关闭通知告警
                      * @return Notice 是否开启通知告警；true：开启通知告警，false：关闭通知告警
+                     * 
                      */
                     bool GetNotice() const;
 
                     /**
                      * 设置是否开启通知告警；true：开启通知告警，false：关闭通知告警
-                     * @param Notice 是否开启通知告警；true：开启通知告警，false：关闭通知告警
+                     * @param _notice 是否开启通知告警；true：开启通知告警，false：关闭通知告警
+                     * 
                      */
                     void SetNotice(const bool& _notice);
 
                     /**
                      * 判断参数 Notice 是否已赋值
                      * @return Notice 是否已赋值
+                     * 
                      */
                     bool NoticeHasBeenSet() const;
 
                     /**
                      * 获取给域名添加标签，多个以逗号隔开
                      * @return Tags 给域名添加标签，多个以逗号隔开
+                     * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置给域名添加标签，多个以逗号隔开
-                     * @param Tags 给域名添加标签，多个以逗号隔开
+                     * @param _tags 给域名添加标签，多个以逗号隔开
+                     * 
                      */
                     void SetTags(const std::string& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

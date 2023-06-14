@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取启动命令
                      * @return StartCmd 启动命令
+                     * 
                      */
                     std::string GetStartCmd() const;
 
                     /**
                      * 设置启动命令
-                     * @param StartCmd 启动命令
+                     * @param _startCmd 启动命令
+                     * 
                      */
                     void SetStartCmd(const std::string& _startCmd);
 
                     /**
                      * 判断参数 StartCmd 是否已赋值
                      * @return StartCmd 是否已赋值
+                     * 
                      */
                     bool StartCmdHasBeenSet() const;
 
                     /**
                      * 获取ps启动命令
                      * @return PsStartCmd ps启动命令
+                     * 
                      */
                     std::string GetPsStartCmd() const;
 
                     /**
                      * 设置ps启动命令
-                     * @param PsStartCmd ps启动命令
+                     * @param _psStartCmd ps启动命令
+                     * 
                      */
                     void SetPsStartCmd(const std::string& _psStartCmd);
 
                     /**
                      * 判断参数 PsStartCmd 是否已赋值
                      * @return PsStartCmd 是否已赋值
+                     * 
                      */
                     bool PsStartCmdHasBeenSet() const;
 
                     /**
                      * 获取worker启动命令
                      * @return WorkerStartCmd worker启动命令
+                     * 
                      */
                     std::string GetWorkerStartCmd() const;
 
                     /**
                      * 设置worker启动命令
-                     * @param WorkerStartCmd worker启动命令
+                     * @param _workerStartCmd worker启动命令
+                     * 
                      */
                     void SetWorkerStartCmd(const std::string& _workerStartCmd);
 
                     /**
                      * 判断参数 WorkerStartCmd 是否已赋值
                      * @return WorkerStartCmd 是否已赋值
+                     * 
                      */
                     bool WorkerStartCmdHasBeenSet() const;
 

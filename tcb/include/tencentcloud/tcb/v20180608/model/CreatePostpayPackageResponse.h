@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取后付费订单号
                      * @return TranId 后付费订单号
+                     * 
                      */
                     std::string GetTranId() const;
 
                     /**
                      * 判断参数 TranId 是否已赋值
                      * @return TranId 是否已赋值
+                     * 
                      */
                     bool TranIdHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 

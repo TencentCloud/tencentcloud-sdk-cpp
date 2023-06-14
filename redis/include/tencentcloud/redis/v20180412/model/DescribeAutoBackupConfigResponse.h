@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取该参数因兼容性问题暂时保留，请忽略。
                      * @return AutoBackupType 该参数因兼容性问题暂时保留，请忽略。
+                     * 
                      */
                     int64_t GetAutoBackupType() const;
 
                     /**
                      * 判断参数 AutoBackupType 是否已赋值
                      * @return AutoBackupType 是否已赋值
+                     * 
                      */
                     bool AutoBackupTypeHasBeenSet() const;
 
                     /**
                      * 获取备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
                      * @return WeekDays 备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * 
                      */
                     std::vector<std::string> GetWeekDays() const;
 
                     /**
                      * 判断参数 WeekDays 是否已赋值
                      * @return WeekDays 是否已赋值
+                     * 
                      */
                     bool WeekDaysHasBeenSet() const;
 
                     /**
                      * 获取备份任务发起时间段。
                      * @return TimePeriod 备份任务发起时间段。
+                     * 
                      */
                     std::string GetTimePeriod() const;
 
                     /**
                      * 判断参数 TimePeriod 是否已赋值
                      * @return TimePeriod 是否已赋值
+                     * 
                      */
                     bool TimePeriodHasBeenSet() const;
 
                     /**
                      * 获取全量备份文件保存天数。默认为7天。如需保存更多天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。
                      * @return BackupStorageDays 全量备份文件保存天数。默认为7天。如需保存更多天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。
+                     * 
                      */
                     int64_t GetBackupStorageDays() const;
 
                     /**
                      * 判断参数 BackupStorageDays 是否已赋值
                      * @return BackupStorageDays 是否已赋值
+                     * 
                      */
                     bool BackupStorageDaysHasBeenSet() const;
 
                     /**
                      * 获取该参数不再使用，请忽略。
                      * @return BinlogStorageDays 该参数不再使用，请忽略。
+                     * 
                      */
                     int64_t GetBinlogStorageDays() const;
 
                     /**
                      * 判断参数 BinlogStorageDays 是否已赋值
                      * @return BinlogStorageDays 是否已赋值
+                     * 
                      */
                     bool BinlogStorageDaysHasBeenSet() const;
 

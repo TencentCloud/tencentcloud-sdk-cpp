@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取客户端上传加速统计数据。
                      * @return ClientUploadAccelerationUsageDataSet 客户端上传加速统计数据。
+                     * 
                      */
                     std::vector<StatDataItem> GetClientUploadAccelerationUsageDataSet() const;
 
                     /**
                      * 判断参数 ClientUploadAccelerationUsageDataSet 是否已赋值
                      * @return ClientUploadAccelerationUsageDataSet 是否已赋值
+                     * 
                      */
                     bool ClientUploadAccelerationUsageDataSetHasBeenSet() const;
 

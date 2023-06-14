@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 用户名
+                     * @param _userName 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneNumber 手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneNumber 手机号
+                     * @param _phoneNumber 手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Email 邮箱
+                     * @param _email 邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -136,74 +148,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastSignOn 上次登录时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLastSignOn() const;
 
                     /**
                      * 设置上次登录时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastSignOn 上次登录时间
+                     * @param _lastSignOn 上次登录时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastSignOn(const int64_t& _lastSignOn);
 
                     /**
                      * 判断参数 LastSignOn 是否已赋值
                      * @return LastSignOn 是否已赋值
+                     * 
                      */
                     bool LastSignOnHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedDate 创建时间
+                     * 
                      */
                     int64_t GetCreatedDate() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedDate 创建时间
+                     * @param _createdDate 创建时间
+                     * 
                      */
                     void SetCreatedDate(const int64_t& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取用户来源
                      * @return UserDataSourceEnum 用户来源
+                     * 
                      */
                     std::string GetUserDataSourceEnum() const;
 
                     /**
                      * 设置用户来源
-                     * @param UserDataSourceEnum 用户来源
+                     * @param _userDataSourceEnum 用户来源
+                     * 
                      */
                     void SetUserDataSourceEnum(const std::string& _userDataSourceEnum);
 
                     /**
                      * 判断参数 UserDataSourceEnum 是否已赋值
                      * @return UserDataSourceEnum 是否已赋值
+                     * 
                      */
                     bool UserDataSourceEnumHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nickname 昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nickname 昵称
+                     * @param _nickname 昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 
@@ -234,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 地址
+                     * @param _address 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -256,20 +286,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Birthdate 生日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBirthdate() const;
 
                     /**
                      * 设置生日
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Birthdate 生日
+                     * @param _birthdate 生日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthdate(const int64_t& _birthdate);
 
                     /**
                      * 判断参数 Birthdate 是否已赋值
                      * @return Birthdate 是否已赋值
+                     * 
                      */
                     bool BirthdateHasBeenSet() const;
 
@@ -278,20 +311,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroups 用户组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetUserGroups() const;
 
                     /**
                      * 设置用户组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserGroups 用户组ID
+                     * @param _userGroups 用户组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserGroups(const std::vector<std::string>& _userGroups);
 
                     /**
                      * 判断参数 UserGroups 是否已赋值
                      * @return UserGroups 是否已赋值
+                     * 
                      */
                     bool UserGroupsHasBeenSet() const;
 
@@ -300,20 +336,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedDate 上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLastModifiedDate() const;
 
                     /**
                      * 设置上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedDate 上次修改时间
+                     * @param _lastModifiedDate 上次修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedDate(const int64_t& _lastModifiedDate);
 
                     /**
                      * 判断参数 LastModifiedDate 是否已赋值
                      * @return LastModifiedDate 是否已赋值
+                     * 
                      */
                     bool LastModifiedDateHasBeenSet() const;
 
@@ -322,20 +361,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomAttributes 自定义属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MemberMap> GetCustomAttributes() const;
 
                     /**
                      * 设置自定义属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomAttributes 自定义属性
+                     * @param _customAttributes 自定义属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomAttributes(const std::vector<MemberMap>& _customAttributes);
 
                     /**
                      * 判断参数 CustomAttributes 是否已赋值
                      * @return CustomAttributes 是否已赋值
+                     * 
                      */
                     bool CustomAttributesHasBeenSet() const;
 
@@ -344,20 +386,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResidentIdentityCard 身份证号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResidentIdentityCard() const;
 
                     /**
                      * 设置身份证号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResidentIdentityCard 身份证号
+                     * @param _residentIdentityCard 身份证号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResidentIdentityCard(const std::string& _residentIdentityCard);
 
                     /**
                      * 判断参数 ResidentIdentityCard 是否已赋值
                      * @return ResidentIdentityCard 是否已赋值
+                     * 
                      */
                     bool ResidentIdentityCardHasBeenSet() const;
 
@@ -366,20 +411,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QqOpenId QQ的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQqOpenId() const;
 
                     /**
                      * 设置QQ的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QqOpenId QQ的OpenId
+                     * @param _qqOpenId QQ的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQqOpenId(const std::string& _qqOpenId);
 
                     /**
                      * 判断参数 QqOpenId 是否已赋值
                      * @return QqOpenId 是否已赋值
+                     * 
                      */
                     bool QqOpenIdHasBeenSet() const;
 
@@ -388,20 +436,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QqUnionId QQ的UnionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQqUnionId() const;
 
                     /**
                      * 设置QQ的UnionId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QqUnionId QQ的UnionId
+                     * @param _qqUnionId QQ的UnionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQqUnionId(const std::string& _qqUnionId);
 
                     /**
                      * 判断参数 QqUnionId 是否已赋值
                      * @return QqUnionId 是否已赋值
+                     * 
                      */
                     bool QqUnionIdHasBeenSet() const;
 
@@ -410,20 +461,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatOpenId 微信的WechatOpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWechatOpenId() const;
 
                     /**
                      * 设置微信的WechatOpenId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WechatOpenId 微信的WechatOpenId
+                     * @param _wechatOpenId 微信的WechatOpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWechatOpenId(const std::string& _wechatOpenId);
 
                     /**
                      * 判断参数 WechatOpenId 是否已赋值
                      * @return WechatOpenId 是否已赋值
+                     * 
                      */
                     bool WechatOpenIdHasBeenSet() const;
 
@@ -432,20 +486,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatUnionId 微信的WechatUnionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWechatUnionId() const;
 
                     /**
                      * 设置微信的WechatUnionId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WechatUnionId 微信的WechatUnionId
+                     * @param _wechatUnionId 微信的WechatUnionId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWechatUnionId(const std::string& _wechatUnionId);
 
                     /**
                      * 判断参数 WechatUnionId 是否已赋值
                      * @return WechatUnionId 是否已赋值
+                     * 
                      */
                     bool WechatUnionIdHasBeenSet() const;
 
@@ -454,20 +511,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlipayUserId 支付宝的AlipayUserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlipayUserId() const;
 
                     /**
                      * 设置支付宝的AlipayUserId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlipayUserId 支付宝的AlipayUserId
+                     * @param _alipayUserId 支付宝的AlipayUserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlipayUserId(const std::string& _alipayUserId);
 
                     /**
                      * 判断参数 AlipayUserId 是否已赋值
                      * @return AlipayUserId 是否已赋值
+                     * 
                      */
                     bool AlipayUserIdHasBeenSet() const;
 
@@ -476,20 +536,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -498,20 +561,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 姓名
+                     * @param _name 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -520,20 +586,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Locale 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocale() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Locale 坐标
+                     * @param _locale 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocale(const std::string& _locale);
 
                     /**
                      * 判断参数 Locale 是否已赋值
                      * @return Locale 是否已赋值
+                     * 
                      */
                     bool LocaleHasBeenSet() const;
 
@@ -542,20 +611,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gender 性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGender() const;
 
                     /**
                      * 设置性别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gender 性别
+                     * @param _gender 性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGender(const std::string& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
@@ -564,20 +636,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityVerificationMethod 实名核验方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdentityVerificationMethod() const;
 
                     /**
                      * 设置实名核验方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityVerificationMethod 实名核验方式
+                     * @param _identityVerificationMethod 实名核验方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityVerificationMethod(const std::string& _identityVerificationMethod);
 
                     /**
                      * 判断参数 IdentityVerificationMethod 是否已赋值
                      * @return IdentityVerificationMethod 是否已赋值
+                     * 
                      */
                     bool IdentityVerificationMethodHasBeenSet() const;
 
@@ -586,20 +661,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityVerified 是否已经实名核验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIdentityVerified() const;
 
                     /**
                      * 设置是否已经实名核验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityVerified 是否已经实名核验
+                     * @param _identityVerified 是否已经实名核验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentityVerified(const bool& _identityVerified);
 
                     /**
                      * 判断参数 IdentityVerified 是否已赋值
                      * @return IdentityVerified 是否已赋值
+                     * 
                      */
                     bool IdentityVerifiedHasBeenSet() const;
 
@@ -608,20 +686,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 工作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJob() const;
 
                     /**
                      * 设置工作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Job 工作
+                     * @param _job 工作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJob(const std::string& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
@@ -630,20 +711,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nationality 国家
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 设置国家
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nationality 国家
+                     * @param _nationality 国家
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNationality(const std::string& _nationality);
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
@@ -652,20 +736,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否主账号（进行过账号融合后，主账号为true，从账号为false）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
+                     * @param _primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 
@@ -674,20 +761,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 时区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置时区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 时区
+                     * @param _zone 时区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -696,20 +786,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlreadyFirstLogin 是否已经首次登录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAlreadyFirstLogin() const;
 
                     /**
                      * 设置是否已经首次登录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlreadyFirstLogin 是否已经首次登录
+                     * @param _alreadyFirstLogin 是否已经首次登录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlreadyFirstLogin(const bool& _alreadyFirstLogin);
 
                     /**
                      * 判断参数 AlreadyFirstLogin 是否已赋值
                      * @return AlreadyFirstLogin 是否已赋值
+                     * 
                      */
                     bool AlreadyFirstLoginHasBeenSet() const;
 
@@ -718,20 +811,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantId 租户id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTenantId() const;
 
                     /**
                      * 设置租户id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TenantId 租户id
+                     * @param _tenantId 租户id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTenantId(const std::string& _tenantId);
 
                     /**
                      * 判断参数 TenantId 是否已赋值
                      * @return TenantId 是否已赋值
+                     * 
                      */
                     bool TenantIdHasBeenSet() const;
 
@@ -740,20 +836,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserStoreId 用户目录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserStoreId 用户目录id
+                     * @param _userStoreId 用户目录id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
@@ -762,20 +861,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本
+                     * @param _version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -784,20 +886,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockType 锁定类型（分为管理员锁定，和登录策略锁定）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLockType() const;
 
                     /**
                      * 设置锁定类型（分为管理员锁定，和登录策略锁定）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LockType 锁定类型（分为管理员锁定，和登录策略锁定）
+                     * @param _lockType 锁定类型（分为管理员锁定，和登录策略锁定）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLockType(const std::string& _lockType);
 
                     /**
                      * 判断参数 LockType 是否已赋值
                      * @return LockType 是否已赋值
+                     * 
                      */
                     bool LockTypeHasBeenSet() const;
 
@@ -806,20 +911,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockTime 锁定时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLockTime() const;
 
                     /**
                      * 设置锁定时间点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LockTime 锁定时间点
+                     * @param _lockTime 锁定时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLockTime(const int64_t& _lockTime);
 
                     /**
                      * 判断参数 LockTime 是否已赋值
                      * @return LockTime 是否已赋值
+                     * 
                      */
                     bool LockTimeHasBeenSet() const;
 
@@ -828,20 +936,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedAttribute1 索引字段1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexedAttribute1() const;
 
                     /**
                      * 设置索引字段1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexedAttribute1 索引字段1
+                     * @param _indexedAttribute1 索引字段1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexedAttribute1(const std::string& _indexedAttribute1);
 
                     /**
                      * 判断参数 IndexedAttribute1 是否已赋值
                      * @return IndexedAttribute1 是否已赋值
+                     * 
                      */
                     bool IndexedAttribute1HasBeenSet() const;
 
@@ -850,20 +961,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedAttribute2 索引字段2
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexedAttribute2() const;
 
                     /**
                      * 设置索引字段2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexedAttribute2 索引字段2
+                     * @param _indexedAttribute2 索引字段2
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexedAttribute2(const std::string& _indexedAttribute2);
 
                     /**
                      * 判断参数 IndexedAttribute2 是否已赋值
                      * @return IndexedAttribute2 是否已赋值
+                     * 
                      */
                     bool IndexedAttribute2HasBeenSet() const;
 
@@ -872,20 +986,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedAttribute3 索引字段3
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexedAttribute3() const;
 
                     /**
                      * 设置索引字段3
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexedAttribute3 索引字段3
+                     * @param _indexedAttribute3 索引字段3
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexedAttribute3(const std::string& _indexedAttribute3);
 
                     /**
                      * 判断参数 IndexedAttribute3 是否已赋值
                      * @return IndexedAttribute3 是否已赋值
+                     * 
                      */
                     bool IndexedAttribute3HasBeenSet() const;
 
@@ -894,20 +1011,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedAttribute4 索引字段4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexedAttribute4() const;
 
                     /**
                      * 设置索引字段4
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexedAttribute4 索引字段4
+                     * @param _indexedAttribute4 索引字段4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexedAttribute4(const std::string& _indexedAttribute4);
 
                     /**
                      * 判断参数 IndexedAttribute4 是否已赋值
                      * @return IndexedAttribute4 是否已赋值
+                     * 
                      */
                     bool IndexedAttribute4HasBeenSet() const;
 
@@ -916,20 +1036,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedAttribute5 索引字段5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndexedAttribute5() const;
 
                     /**
                      * 设置索引字段5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndexedAttribute5 索引字段5
+                     * @param _indexedAttribute5 索引字段5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndexedAttribute5(const std::string& _indexedAttribute5);
 
                     /**
                      * 判断参数 IndexedAttribute5 是否已赋值
                      * @return IndexedAttribute5 是否已赋值
+                     * 
                      */
                     bool IndexedAttribute5HasBeenSet() const;
 

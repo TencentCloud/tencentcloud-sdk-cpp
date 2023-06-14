@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleGroupId 规则组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleGroupId 规则组id
+                     * @param _ruleGroupId 规则组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表guid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表guid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableId 表guid
+                     * @param _tableId 表guid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceId 数据源id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDatasourceId() const;
 
                     /**
                      * 设置数据源id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceId 数据源id
+                     * @param _datasourceId 数据源id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceId(const uint64_t& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库guid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库guid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库guid
+                     * @param _databaseId 数据库guid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMonitorType() const;
 
                     /**
                      * 设置监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
+                     * @param _monitorType 监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonitorType(const uint64_t& _monitorType);
 
                     /**
                      * 判断参数 MonitorType 是否已赋值
                      * @return MonitorType 是否已赋值
+                     * 
                      */
                     bool MonitorTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorStatus 监控状态 0.false 1.true
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMonitorStatus() const;
 
                     /**
                      * 设置监控状态 0.false 1.true
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonitorStatus 监控状态 0.false 1.true
+                     * @param _monitorStatus 监控状态 0.false 1.true
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonitorStatus(const uint64_t& _monitorStatus);
 
                     /**
                      * 判断参数 MonitorStatus 是否已赋值
                      * @return MonitorStatus 是否已赋值
+                     * 
                      */
                     bool MonitorStatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 规则组创建人id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateUserId() const;
 
                     /**
                      * 设置规则组创建人id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUserId 规则组创建人id
+                     * @param _createUserId 规则组创建人id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateUserId(const uint64_t& _createUserId);
 
                     /**
                      * 判断参数 CreateUserId 是否已赋值
                      * @return CreateUserId 是否已赋值
+                     * 
                      */
                     bool CreateUserIdHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserName 规则组创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateUserName() const;
 
                     /**
                      * 设置规则组创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUserName 规则组创建人昵称
+                     * @param _createUserName 规则组创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateUserName(const std::string& _createUserName);
 
                     /**
                      * 判断参数 CreateUserName 是否已赋值
                      * @return CreateUserName 是否已赋值
+                     * 
                      */
                     bool CreateUserNameHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 规则创建时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置规则创建时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 规则创建时间 yyyy-MM-dd HH:mm:ss
+                     * @param _createTime 规则创建时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

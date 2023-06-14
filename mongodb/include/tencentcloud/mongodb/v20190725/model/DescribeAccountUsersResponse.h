@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例账号列表。
                      * @return Users 实例账号列表。
+                     * 
                      */
                     std::vector<UserInfo> GetUsers() const;
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 

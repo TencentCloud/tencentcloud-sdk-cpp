@@ -54,6 +54,7 @@ namespace TencentCloud
                      * @return Switch 开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,33 +62,38 @@ namespace TencentCloud
                      * 设置开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取用户自定义规则。
                      * @return AclUserRules 用户自定义规则。
+                     * 
                      */
                     std::vector<AclUserRule> GetAclUserRules() const;
 
                     /**
                      * 设置用户自定义规则。
-                     * @param AclUserRules 用户自定义规则。
+                     * @param _aclUserRules 用户自定义规则。
+                     * 
                      */
                     void SetAclUserRules(const std::vector<AclUserRule>& _aclUserRules);
 
                     /**
                      * 判断参数 AclUserRules 是否已赋值
                      * @return AclUserRules 是否已赋值
+                     * 
                      */
                     bool AclUserRulesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customizes 托管定制规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AclUserRule> GetCustomizes() const;
 
                     /**
                      * 设置托管定制规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Customizes 托管定制规则
+                     * @param _customizes 托管定制规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomizes(const std::vector<AclUserRule>& _customizes);
 
                     /**
                      * 判断参数 Customizes 是否已赋值
                      * @return Customizes 是否已赋值
+                     * 
                      */
                     bool CustomizesHasBeenSet() const;
 

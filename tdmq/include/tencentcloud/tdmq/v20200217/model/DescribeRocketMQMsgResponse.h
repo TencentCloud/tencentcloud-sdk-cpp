@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取消息体
                      * @return Body 消息体
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 
                     /**
                      * 获取详情参数
                      * @return Properties 详情参数
+                     * 
                      */
                     std::string GetProperties() const;
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
                     /**
                      * 获取生产时间
                      * @return ProduceTime 生产时间
+                     * 
                      */
                     std::string GetProduceTime() const;
 
                     /**
                      * 判断参数 ProduceTime 是否已赋值
                      * @return ProduceTime 是否已赋值
+                     * 
                      */
                     bool ProduceTimeHasBeenSet() const;
 
                     /**
                      * 获取消息id
                      * @return MsgId 消息id
+                     * 
                      */
                     std::string GetMsgId() const;
 
                     /**
                      * 判断参数 MsgId 是否已赋值
                      * @return MsgId 是否已赋值
+                     * 
                      */
                     bool MsgIdHasBeenSet() const;
 
                     /**
                      * 获取生产者地址
                      * @return ProducerAddr 生产者地址
+                     * 
                      */
                     std::string GetProducerAddr() const;
 
                     /**
                      * 判断参数 ProducerAddr 是否已赋值
                      * @return ProducerAddr 是否已赋值
+                     * 
                      */
                     bool ProducerAddrHasBeenSet() const;
 
@@ -109,12 +119,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageTracks 消费组消费情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RocketMQMessageTrack> GetMessageTracks() const;
 
                     /**
                      * 判断参数 MessageTracks 是否已赋值
                      * @return MessageTracks 是否已赋值
+                     * 
                      */
                     bool MessageTracksHasBeenSet() const;
 
@@ -123,12 +135,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShowTopicName 详情页展示的topic名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShowTopicName() const;
 
                     /**
                      * 判断参数 ShowTopicName 是否已赋值
                      * @return ShowTopicName 是否已赋值
+                     * 
                      */
                     bool ShowTopicNameHasBeenSet() const;
 

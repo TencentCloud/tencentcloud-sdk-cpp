@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 自定义header列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HttpHeaderParam> GetHeaders() const;
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
+                     * 
                      */
                     bool HeadersHasBeenSet() const;
 

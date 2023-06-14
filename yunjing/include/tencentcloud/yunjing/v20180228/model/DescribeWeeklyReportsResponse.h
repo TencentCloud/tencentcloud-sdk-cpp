@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取专业周报列表数组。
                      * @return WeeklyReports 专业周报列表数组。
+                     * 
                      */
                     std::vector<WeeklyReport> GetWeeklyReports() const;
 
                     /**
                      * 判断参数 WeeklyReports 是否已赋值
                      * @return WeeklyReports 是否已赋值
+                     * 
                      */
                     bool WeeklyReportsHasBeenSet() const;
 
                     /**
                      * 获取记录总数。
                      * @return TotalCount 记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

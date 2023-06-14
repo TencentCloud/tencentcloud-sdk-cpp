@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取用户登录状态列表。
                      * @return LoginStatusInfoSet 用户登录状态列表。
+                     * 
                      */
                     std::vector<LoginStatusInfo> GetLoginStatusInfoSet() const;
 
                     /**
                      * 判断参数 LoginStatusInfoSet 是否已赋值
                      * @return LoginStatusInfoSet 是否已赋值
+                     * 
                      */
                     bool LoginStatusInfoSetHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取类型
                      * @return Type 类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-                     * @param Type 类型
+                     * @param _type 类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取结论
                      * @return Conclusion 结论
+                     * 
                      */
                     std::string GetConclusion() const;
 
                     /**
                      * 设置结论
-                     * @param Conclusion 结论
+                     * @param _conclusion 结论
+                     * 
                      */
                     void SetConclusion(const std::string& _conclusion);
 
                     /**
                      * 判断参数 Conclusion 是否已赋值
                      * @return Conclusion 是否已赋值
+                     * 
                      */
                     bool ConclusionHasBeenSet() const;
 
                     /**
                      * 获取解释
                      * @return Explanation 解释
+                     * 
                      */
                     std::string GetExplanation() const;
 
                     /**
                      * 设置解释
-                     * @param Explanation 解释
+                     * @param _explanation 解释
+                     * 
                      */
                     void SetExplanation(const std::string& _explanation);
 
                     /**
                      * 判断参数 Explanation 是否已赋值
                      * @return Explanation 是否已赋值
+                     * 
                      */
                     bool ExplanationHasBeenSet() const;
 

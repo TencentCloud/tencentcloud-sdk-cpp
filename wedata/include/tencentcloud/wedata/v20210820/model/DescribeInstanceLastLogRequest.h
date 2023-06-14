@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取数据时间
                      * @return CurRunDate 数据时间
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间
-                     * @param CurRunDate 数据时间
+                     * @param _curRunDate 数据时间
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 

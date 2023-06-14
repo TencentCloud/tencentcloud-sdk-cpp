@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsScaleDownEnabled 是否开启缩容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsScaleDownEnabled() const;
 
                     /**
                      * 设置是否开启缩容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsScaleDownEnabled 是否开启缩容
+                     * @param _isScaleDownEnabled 是否开启缩容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsScaleDownEnabled(const bool& _isScaleDownEnabled);
 
                     /**
                      * 判断参数 IsScaleDownEnabled 是否已赋值
                      * @return IsScaleDownEnabled 是否已赋值
+                     * 
                      */
                     bool IsScaleDownEnabledHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expander 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpander() const;
 
                     /**
                      * 设置多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Expander 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
+                     * @param _expander 多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpander(const std::string& _expander);
 
                     /**
                      * 判断参数 Expander 是否已赋值
                      * @return Expander 是否已赋值
+                     * 
                      */
                     bool ExpanderHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxEmptyBulkDelete 最大并发缩容数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxEmptyBulkDelete() const;
 
                     /**
                      * 设置最大并发缩容数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxEmptyBulkDelete 最大并发缩容数
+                     * @param _maxEmptyBulkDelete 最大并发缩容数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxEmptyBulkDelete(const int64_t& _maxEmptyBulkDelete);
 
                     /**
                      * 判断参数 MaxEmptyBulkDelete 是否已赋值
                      * @return MaxEmptyBulkDelete 是否已赋值
+                     * 
                      */
                     bool MaxEmptyBulkDeleteHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleDownDelay 集群扩容后多少分钟开始判断缩容（默认为10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScaleDownDelay() const;
 
                     /**
                      * 设置集群扩容后多少分钟开始判断缩容（默认为10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScaleDownDelay 集群扩容后多少分钟开始判断缩容（默认为10分钟）
+                     * @param _scaleDownDelay 集群扩容后多少分钟开始判断缩容（默认为10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScaleDownDelay(const int64_t& _scaleDownDelay);
 
                     /**
                      * 判断参数 ScaleDownDelay 是否已赋值
                      * @return ScaleDownDelay 是否已赋值
+                     * 
                      */
                     bool ScaleDownDelayHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleDownUnneededTime 节点连续空闲多少分钟后被缩容（默认为 10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScaleDownUnneededTime() const;
 
                     /**
                      * 设置节点连续空闲多少分钟后被缩容（默认为 10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScaleDownUnneededTime 节点连续空闲多少分钟后被缩容（默认为 10分钟）
+                     * @param _scaleDownUnneededTime 节点连续空闲多少分钟后被缩容（默认为 10分钟）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScaleDownUnneededTime(const int64_t& _scaleDownUnneededTime);
 
                     /**
                      * 判断参数 ScaleDownUnneededTime 是否已赋值
                      * @return ScaleDownUnneededTime 是否已赋值
+                     * 
                      */
                     bool ScaleDownUnneededTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleDownUtilizationThreshold 节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScaleDownUtilizationThreshold() const;
 
                     /**
                      * 设置节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScaleDownUtilizationThreshold 节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))
+                     * @param _scaleDownUtilizationThreshold 节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScaleDownUtilizationThreshold(const int64_t& _scaleDownUtilizationThreshold);
 
                     /**
                      * 判断参数 ScaleDownUtilizationThreshold 是否已赋值
                      * @return ScaleDownUtilizationThreshold 是否已赋值
+                     * 
                      */
                     bool ScaleDownUtilizationThresholdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSkipNodesWithLocalStorage() const;
 
                     /**
                      * 设置含有本地存储Pod的节点是否不缩容(默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * @param _skipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipNodesWithLocalStorage(const bool& _skipNodesWithLocalStorage);
 
                     /**
                      * 判断参数 SkipNodesWithLocalStorage 是否已赋值
                      * @return SkipNodesWithLocalStorage 是否已赋值
+                     * 
                      */
                     bool SkipNodesWithLocalStorageHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSkipNodesWithSystemPods() const;
 
                     /**
                      * 设置含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * @param _skipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipNodesWithSystemPods(const bool& _skipNodesWithSystemPods);
 
                     /**
                      * 判断参数 SkipNodesWithSystemPods 是否已赋值
                      * @return SkipNodesWithSystemPods 是否已赋值
+                     * 
                      */
                     bool SkipNodesWithSystemPodsHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreDaemonSetsUtilization 计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIgnoreDaemonSetsUtilization() const;
 
                     /**
                      * 设置计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreDaemonSetsUtilization 计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)
+                     * @param _ignoreDaemonSetsUtilization 计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreDaemonSetsUtilization(const bool& _ignoreDaemonSetsUtilization);
 
                     /**
                      * 判断参数 IgnoreDaemonSetsUtilization 是否已赋值
                      * @return IgnoreDaemonSetsUtilization 是否已赋值
+                     * 
                      */
                     bool IgnoreDaemonSetsUtilizationHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OkTotalUnreadyCount CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOkTotalUnreadyCount() const;
 
                     /**
                      * 设置CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OkTotalUnreadyCount CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+                     * @param _okTotalUnreadyCount CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOkTotalUnreadyCount(const int64_t& _okTotalUnreadyCount);
 
                     /**
                      * 判断参数 OkTotalUnreadyCount 是否已赋值
                      * @return OkTotalUnreadyCount 是否已赋值
+                     * 
                      */
                     bool OkTotalUnreadyCountHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxTotalUnreadyPercentage 未就绪节点的最大百分比，此后CA会停止操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxTotalUnreadyPercentage() const;
 
                     /**
                      * 设置未就绪节点的最大百分比，此后CA会停止操作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxTotalUnreadyPercentage 未就绪节点的最大百分比，此后CA会停止操作
+                     * @param _maxTotalUnreadyPercentage 未就绪节点的最大百分比，此后CA会停止操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxTotalUnreadyPercentage(const int64_t& _maxTotalUnreadyPercentage);
 
                     /**
                      * 判断参数 MaxTotalUnreadyPercentage 是否已赋值
                      * @return MaxTotalUnreadyPercentage 是否已赋值
+                     * 
                      */
                     bool MaxTotalUnreadyPercentageHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScaleDownUnreadyTime() const;
 
                     /**
                      * 设置表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * @param _scaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScaleDownUnreadyTime(const int64_t& _scaleDownUnreadyTime);
 
                     /**
                      * 判断参数 ScaleDownUnreadyTime 是否已赋值
                      * @return ScaleDownUnreadyTime 是否已赋值
+                     * 
                      */
                     bool ScaleDownUnreadyTimeHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnregisteredNodeRemovalTime() const;
 
                     /**
                      * 设置CA删除未在Kubernetes中注册的节点之前等待的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * @param _unregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnregisteredNodeRemovalTime(const int64_t& _unregisteredNodeRemovalTime);
 
                     /**
                      * 判断参数 UnregisteredNodeRemovalTime 是否已赋值
                      * @return UnregisteredNodeRemovalTime 是否已赋值
+                     * 
                      */
                     bool UnregisteredNodeRemovalTimeHasBeenSet() const;
 

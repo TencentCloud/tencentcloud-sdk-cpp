@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队ID
                      * @return FleetId 服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队ID
-                     * @param FleetId 服务器舰队ID
+                     * @param _fleetId 服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取扩缩容策略名称，最小长度为0，最大长度为1024
                      * @return Name 扩缩容策略名称，最小长度为0，最大长度为1024
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置扩缩容策略名称，最小长度为0，最大长度为1024
-                     * @param Name 扩缩容策略名称，最小长度为0，最大长度为1024
+                     * @param _name 扩缩容策略名称，最小长度为0，最大长度为1024
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

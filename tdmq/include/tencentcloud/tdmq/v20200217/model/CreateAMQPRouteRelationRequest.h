@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取交换机所在的vhost
                      * @return VHostId 交换机所在的vhost
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置交换机所在的vhost
-                     * @param VHostId 交换机所在的vhost
+                     * @param _vHostId 交换机所在的vhost
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取源Exchange名称
                      * @return SourceExchange 源Exchange名称
+                     * 
                      */
                     std::string GetSourceExchange() const;
 
                     /**
                      * 设置源Exchange名称
-                     * @param SourceExchange 源Exchange名称
+                     * @param _sourceExchange 源Exchange名称
+                     * 
                      */
                     void SetSourceExchange(const std::string& _sourceExchange);
 
                     /**
                      * 判断参数 SourceExchange 是否已赋值
                      * @return SourceExchange 是否已赋值
+                     * 
                      */
                     bool SourceExchangeHasBeenSet() const;
 
                     /**
                      * 获取目标类型:Queue|Exchange
                      * @return DestType 目标类型:Queue|Exchange
+                     * 
                      */
                     std::string GetDestType() const;
 
                     /**
                      * 设置目标类型:Queue|Exchange
-                     * @param DestType 目标类型:Queue|Exchange
+                     * @param _destType 目标类型:Queue|Exchange
+                     * 
                      */
                     void SetDestType(const std::string& _destType);
 
                     /**
                      * 判断参数 DestType 是否已赋值
                      * @return DestType 是否已赋值
+                     * 
                      */
                     bool DestTypeHasBeenSet() const;
 
                     /**
                      * 获取目标值
                      * @return DestValue 目标值
+                     * 
                      */
                     std::string GetDestValue() const;
 
                     /**
                      * 设置目标值
-                     * @param DestValue 目标值
+                     * @param _destValue 目标值
+                     * 
                      */
                     void SetDestValue(const std::string& _destValue);
 
                     /**
                      * 判断参数 DestValue 是否已赋值
                      * @return DestValue 是否已赋值
+                     * 
                      */
                     bool DestValueHasBeenSet() const;
 
                     /**
                      * 获取交换机说明，最大128个字符
                      * @return Remark 交换机说明，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置交换机说明，最大128个字符
-                     * @param Remark 交换机说明，最大128个字符
+                     * @param _remark 交换机说明，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取绑定key,缺省值为default
                      * @return RoutingKey 绑定key,缺省值为default
+                     * 
                      */
                     std::string GetRoutingKey() const;
 
                     /**
                      * 设置绑定key,缺省值为default
-                     * @param RoutingKey 绑定key,缺省值为default
+                     * @param _routingKey 绑定key,缺省值为default
+                     * 
                      */
                     void SetRoutingKey(const std::string& _routingKey);
 
                     /**
                      * 判断参数 RoutingKey 是否已赋值
                      * @return RoutingKey 是否已赋值
+                     * 
                      */
                     bool RoutingKeyHasBeenSet() const;
 

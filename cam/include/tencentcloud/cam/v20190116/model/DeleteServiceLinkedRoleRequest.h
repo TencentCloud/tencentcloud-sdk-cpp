@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的服务相关角色的名称。
                      * @return RoleName 要删除的服务相关角色的名称。
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置要删除的服务相关角色的名称。
-                     * @param RoleName 要删除的服务相关角色的名称。
+                     * @param _roleName 要删除的服务相关角色的名称。
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 

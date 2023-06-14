@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件 ID 。
                      * @return FileId 媒体文件 ID 。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件 ID 。
-                     * @param FileId 媒体文件 ID 。
+                     * @param _fileId 媒体文件 ID 。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 
                     /**
                      * 获取任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
                      * 设置任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
 
                     /**
                      * 判断参数 TasksPriority 是否已赋值
                      * @return TasksPriority 是否已赋值
+                     * 
                      */
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
                      * 获取该字段已无效。
                      * @return TasksNotifyMode 该字段已无效。
+                     * 
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
                      * 设置该字段已无效。
-                     * @param TasksNotifyMode 该字段已无效。
+                     * @param _tasksNotifyMode 该字段已无效。
+                     * 
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
 
                     /**
                      * 判断参数 TasksNotifyMode 是否已赋值
                      * @return TasksNotifyMode 是否已赋值
+                     * 
                      */
                     bool TasksNotifyModeHasBeenSet() const;
 

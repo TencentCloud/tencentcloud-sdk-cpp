@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数
                      * @return Total 记录总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取事件列表
                      * @return EventList 事件列表
+                     * 
                      */
                     std::vector<OverviewDDoSEvent> GetEventList() const;
 
                     /**
                      * 判断参数 EventList 是否已赋值
                      * @return EventList 是否已赋值
+                     * 
                      */
                     bool EventListHasBeenSet() const;
 

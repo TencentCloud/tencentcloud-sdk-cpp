@@ -77,6 +77,7 @@ namespace TencentCloud
 当外层参数 Container 为 hls 时，可选值为：
 <li>libfdk_aac；</li>
 <li>libmp3lame。</li>
+                     * 
                      */
                     std::string GetCodec() const;
 
@@ -96,7 +97,7 @@ namespace TencentCloud
 当外层参数 Container 为 hls 时，可选值为：
 <li>libfdk_aac；</li>
 <li>libmp3lame。</li>
-                     * @param Codec 音频流的编码格式。
+                     * @param _codec 音频流的编码格式。
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：
@@ -111,12 +112,14 @@ namespace TencentCloud
 当外层参数 Container 为 hls 时，可选值为：
 <li>libfdk_aac；</li>
 <li>libmp3lame。</li>
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -125,20 +128,23 @@ namespace TencentCloud
 当取值为 0，表示音频码率和原始音频保持一致。
                      * @return Bitrate 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
 当取值为 0，表示音频码率和原始音频保持一致。
+                     * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
                      * 设置音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
 当取值为 0，表示音频码率和原始音频保持一致。
-                     * @param Bitrate 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
+                     * @param _bitrate 音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。
 当取值为 0，表示音频码率和原始音频保持一致。
+                     * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -153,6 +159,7 @@ namespace TencentCloud
 <li>44100</li>
 <li>48000</li>
 单位：Hz。
+                     * 
                      */
                     uint64_t GetSampleRate() const;
 
@@ -162,17 +169,19 @@ namespace TencentCloud
 <li>44100</li>
 <li>48000</li>
 单位：Hz。
-                     * @param SampleRate 音频流的采样率，可选值：
+                     * @param _sampleRate 音频流的采样率，可选值：
 <li>32000</li>
 <li>44100</li>
 <li>48000</li>
 单位：Hz。
+                     * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 
@@ -189,6 +198,7 @@ namespace TencentCloud
 <li>6：立体声</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
+                     * 
                      */
                     int64_t GetAudioChannel() const;
 
@@ -199,18 +209,20 @@ namespace TencentCloud
 <li>6：立体声</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
-                     * @param AudioChannel 音频通道方式，可选值：
+                     * @param _audioChannel 音频通道方式，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
+                     * 
                      */
                     void SetAudioChannel(const int64_t& _audioChannel);
 
                     /**
                      * 判断参数 AudioChannel 是否已赋值
                      * @return AudioChannel 是否已赋值
+                     * 
                      */
                     bool AudioChannelHasBeenSet() const;
 

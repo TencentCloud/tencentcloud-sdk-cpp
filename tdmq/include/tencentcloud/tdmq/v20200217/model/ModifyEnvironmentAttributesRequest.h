@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取命名空间名称。
                      * @return EnvironmentId 命名空间名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置命名空间名称。
-                     * @param EnvironmentId 命名空间名称。
+                     * @param _environmentId 命名空间名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取未消费消息过期时间，单位：秒，范围60秒~15天。
                      * @return MsgTTL 未消费消息过期时间，单位：秒，范围60秒~15天。
+                     * 
                      */
                     uint64_t GetMsgTTL() const;
 
                     /**
                      * 设置未消费消息过期时间，单位：秒，范围60秒~15天。
-                     * @param MsgTTL 未消费消息过期时间，单位：秒，范围60秒~15天。
+                     * @param _msgTTL 未消费消息过期时间，单位：秒，范围60秒~15天。
+                     * 
                      */
                     void SetMsgTTL(const uint64_t& _msgTTL);
 
                     /**
                      * 判断参数 MsgTTL 是否已赋值
                      * @return MsgTTL 是否已赋值
+                     * 
                      */
                     bool MsgTTLHasBeenSet() const;
 
                     /**
                      * 获取备注，字符串最长不超过128。
                      * @return Remark 备注，字符串最长不超过128。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注，字符串最长不超过128。
-                     * @param Remark 备注，字符串最长不超过128。
+                     * @param _remark 备注，字符串最长不超过128。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取消息保留策略
                      * @return RetentionPolicy 消息保留策略
+                     * 
                      */
                     RetentionPolicy GetRetentionPolicy() const;
 
                     /**
                      * 设置消息保留策略
-                     * @param RetentionPolicy 消息保留策略
+                     * @param _retentionPolicy 消息保留策略
+                     * 
                      */
                     void SetRetentionPolicy(const RetentionPolicy& _retentionPolicy);
 
                     /**
                      * 判断参数 RetentionPolicy 是否已赋值
                      * @return RetentionPolicy 是否已赋值
+                     * 
                      */
                     bool RetentionPolicyHasBeenSet() const;
 
                     /**
                      * 获取是否开启自动创建订阅
                      * @return AutoSubscriptionCreation 是否开启自动创建订阅
+                     * 
                      */
                     bool GetAutoSubscriptionCreation() const;
 
                     /**
                      * 设置是否开启自动创建订阅
-                     * @param AutoSubscriptionCreation 是否开启自动创建订阅
+                     * @param _autoSubscriptionCreation 是否开启自动创建订阅
+                     * 
                      */
                     void SetAutoSubscriptionCreation(const bool& _autoSubscriptionCreation);
 
                     /**
                      * 判断参数 AutoSubscriptionCreation 是否已赋值
                      * @return AutoSubscriptionCreation 是否已赋值
+                     * 
                      */
                     bool AutoSubscriptionCreationHasBeenSet() const;
 

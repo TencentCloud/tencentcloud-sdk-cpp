@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取通道数
                      * @return Channels 通道数
+                     * 
                      */
                     int64_t GetChannels() const;
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 
                     /**
                      * 获取设备数
                      * @return Devices 设备数
+                     * 
                      */
                     int64_t GetDevices() const;
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 
                     /**
                      * 获取在线通道数
                      * @return OnlineChannels 在线通道数
+                     * 
                      */
                     int64_t GetOnlineChannels() const;
 
                     /**
                      * 判断参数 OnlineChannels 是否已赋值
                      * @return OnlineChannels 是否已赋值
+                     * 
                      */
                     bool OnlineChannelsHasBeenSet() const;
 
                     /**
                      * 获取在线设备数
                      * @return OnlineDevices 在线设备数
+                     * 
                      */
                     int64_t GetOnlineDevices() const;
 
                     /**
                      * 判断参数 OnlineDevices 是否已赋值
                      * @return OnlineDevices 是否已赋值
+                     * 
                      */
                     bool OnlineDevicesHasBeenSet() const;
 
                     /**
                      * 获取正在录制通道数
                      * @return RecordingChannels 正在录制通道数
+                     * 
                      */
                     int64_t GetRecordingChannels() const;
 
                     /**
                      * 判断参数 RecordingChannels 是否已赋值
                      * @return RecordingChannels 是否已赋值
+                     * 
                      */
                     bool RecordingChannelsHasBeenSet() const;
 

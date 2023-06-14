@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取镜像自动授权规则授权范围主机列表
                      * @return List 镜像自动授权规则授权范围主机列表
+                     * 
                      */
                     std::vector<AutoAuthorizedRuleHostInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

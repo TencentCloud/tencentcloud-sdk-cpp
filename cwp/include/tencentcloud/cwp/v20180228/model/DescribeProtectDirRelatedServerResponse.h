@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取网站关联服务器列表信息
                      * @return List 网站关联服务器列表信息
+                     * 
                      */
                     std::vector<ProtectDirRelatedServer> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取已开启防护总数
                      * @return ProtectServerCount 已开启防护总数
+                     * 
                      */
                     uint64_t GetProtectServerCount() const;
 
                     /**
                      * 判断参数 ProtectServerCount 是否已赋值
                      * @return ProtectServerCount 是否已赋值
+                     * 
                      */
                     bool ProtectServerCountHasBeenSet() const;
 

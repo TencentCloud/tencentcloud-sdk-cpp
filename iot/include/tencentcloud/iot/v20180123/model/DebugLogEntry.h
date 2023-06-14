@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取日志id
                      * @return Id 日志id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置日志id
-                     * @param Id 日志id
+                     * @param _id 日志id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取行为（事件）
                      * @return Event 行为（事件）
+                     * 
                      */
                     std::string GetEvent() const;
 
                     /**
                      * 设置行为（事件）
-                     * @param Event 行为（事件）
+                     * @param _event 行为（事件）
+                     * 
                      */
                     void SetEvent(const std::string& _event);
 
                     /**
                      * 判断参数 Event 是否已赋值
                      * @return Event 是否已赋值
+                     * 
                      */
                     bool EventHasBeenSet() const;
 
                     /**
                      * 获取shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志
                      * @return LogType shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志
-                     * @param LogType shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志
+                     * @param _logType shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取时间戳
                      * @return Timestamp 时间戳
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳
-                     * @param Timestamp 时间戳
+                     * @param _timestamp 时间戳
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取success/fail
                      * @return Result success/fail
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置success/fail
-                     * @param Result success/fail
+                     * @param _result success/fail
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取日志详细内容
                      * @return Data 日志详细内容
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置日志详细内容
-                     * @param Data 日志详细内容
+                     * @param _data 日志详细内容
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取数据来源topic
                      * @return Topic 数据来源topic
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置数据来源topic
-                     * @param Topic 数据来源topic
+                     * @param _topic 数据来源topic
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例唯一id
                      * @return InstanceId 实例唯一id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例唯一id
-                     * @param InstanceId 实例唯一id
+                     * @param _instanceId 实例唯一id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取路由id
                      * @return RouteId 路由id
+                     * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
                      * 设置路由id
-                     * @param RouteId 路由id
+                     * @param _routeId 路由id
+                     * 
                      */
                     void SetRouteId(const int64_t& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取资源包唯一ID
                      * @return PackageId 资源包唯一ID
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包唯一ID
-                     * @param PackageId 资源包唯一ID
+                     * @param _packageId 资源包唯一ID
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return ClusterIds 实例ID
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 设置实例ID
-                     * @param ClusterIds 实例ID
+                     * @param _clusterIds 实例ID
+                     * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制
                      * @return Limit 限制
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置限制
-                     * @param Limit 限制
+                     * @param _limit 限制
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

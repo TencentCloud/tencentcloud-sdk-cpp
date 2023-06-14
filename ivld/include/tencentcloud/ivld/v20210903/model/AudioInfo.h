@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取ASR提取的文字信息
                      * @return Content ASR提取的文字信息
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置ASR提取的文字信息
-                     * @param Content ASR提取的文字信息
+                     * @param _content ASR提取的文字信息
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取ASR起始时间戳，从0开始
                      * @return StartTimeStamp ASR起始时间戳，从0开始
+                     * 
                      */
                     double GetStartTimeStamp() const;
 
                     /**
                      * 设置ASR起始时间戳，从0开始
-                     * @param StartTimeStamp ASR起始时间戳，从0开始
+                     * @param _startTimeStamp ASR起始时间戳，从0开始
+                     * 
                      */
                     void SetStartTimeStamp(const double& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
                      * 获取ASR结束时间戳，从0开始
                      * @return EndTimeStamp ASR结束时间戳，从0开始
+                     * 
                      */
                     double GetEndTimeStamp() const;
 
                     /**
                      * 设置ASR结束时间戳，从0开始
-                     * @param EndTimeStamp ASR结束时间戳，从0开始
+                     * @param _endTimeStamp ASR结束时间戳，从0开始
+                     * 
                      */
                     void SetEndTimeStamp(const double& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
                      * 获取ASR提取的音频标签
                      * @return Tag ASR提取的音频标签
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置ASR提取的音频标签
-                     * @param Tag ASR提取的音频标签
+                     * @param _tag ASR提取的音频标签
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

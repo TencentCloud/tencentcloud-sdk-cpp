@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取业务日志配置项ID列表
                      * @return ConfigIdList 业务日志配置项ID列表
+                     * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
                      * 设置业务日志配置项ID列表
-                     * @param ConfigIdList 业务日志配置项ID列表
+                     * @param _configIdList 业务日志配置项ID列表
+                     * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
 
                     /**
                      * 判断参数 ConfigIdList 是否已赋值
                      * @return ConfigIdList 是否已赋值
+                     * 
                      */
                     bool ConfigIdListHasBeenSet() const;
 
                     /**
                      * 获取TSF分组ID
                      * @return GroupId TSF分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置TSF分组ID
-                     * @param GroupId TSF分组ID
+                     * @param _groupId TSF分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

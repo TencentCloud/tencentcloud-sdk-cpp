@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤key
                      * @return FilterKey 过滤key
+                     * 
                      */
                     std::string GetFilterKey() const;
 
                     /**
                      * 设置过滤key
-                     * @param FilterKey 过滤key
+                     * @param _filterKey 过滤key
+                     * 
                      */
                     void SetFilterKey(const std::string& _filterKey);
 
                     /**
                      * 判断参数 FilterKey 是否已赋值
                      * @return FilterKey 是否已赋值
+                     * 
                      */
                     bool FilterKeyHasBeenSet() const;
 
                     /**
                      * 获取操作符(只支持32位)
                      * @return FilterOperatorType 操作符(只支持32位)
+                     * 
                      */
                     int64_t GetFilterOperatorType() const;
 
                     /**
                      * 设置操作符(只支持32位)
-                     * @param FilterOperatorType 操作符(只支持32位)
+                     * @param _filterOperatorType 操作符(只支持32位)
+                     * 
                      */
                     void SetFilterOperatorType(const int64_t& _filterOperatorType);
 
                     /**
                      * 判断参数 FilterOperatorType 是否已赋值
                      * @return FilterOperatorType 是否已赋值
+                     * 
                      */
                     bool FilterOperatorTypeHasBeenSet() const;
 
                     /**
                      * 获取过滤value
                      * @return FilterValue 过滤value
+                     * 
                      */
                     std::string GetFilterValue() const;
 
                     /**
                      * 设置过滤value
-                     * @param FilterValue 过滤value
+                     * @param _filterValue 过滤value
+                     * 
                      */
                     void SetFilterValue(const std::string& _filterValue);
 
                     /**
                      * 判断参数 FilterValue 是否已赋值
                      * @return FilterValue 是否已赋值
+                     * 
                      */
                     bool FilterValueHasBeenSet() const;
 

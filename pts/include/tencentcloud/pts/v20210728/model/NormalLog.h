@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 毫秒时间戳
+                     * @param _timestamp 毫秒时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeverityText 日志级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSeverityText() const;
 
                     /**
                      * 设置日志级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SeverityText 日志级别
+                     * @param _severityText 日志级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSeverityText(const std::string& _severityText);
 
                     /**
                      * 判断参数 SeverityText 是否已赋值
                      * @return SeverityText 是否已赋值
+                     * 
                      */
                     bool SeverityTextHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 日志输出内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置日志输出内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Body 日志输出内容
+                     * @param _body 日志输出内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfExist 策略是否存在, 1是 0否
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIfExist() const;
 
                     /**
                      * 判断参数 IfExist 是否已赋值
                      * @return IfExist 是否已赋值
+                     * 
                      */
                     bool IfExistHasBeenSet() const;
 

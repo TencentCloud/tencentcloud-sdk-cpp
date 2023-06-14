@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取用户实际接收到短信的时间。
                      * @return UserReceiveTime 用户实际接收到短信的时间。
+                     * 
                      */
                     std::string GetUserReceiveTime() const;
 
                     /**
                      * 设置用户实际接收到短信的时间。
-                     * @param UserReceiveTime 用户实际接收到短信的时间。
+                     * @param _userReceiveTime 用户实际接收到短信的时间。
+                     * 
                      */
                     void SetUserReceiveTime(const std::string& _userReceiveTime);
 
                     /**
                      * 判断参数 UserReceiveTime 是否已赋值
                      * @return UserReceiveTime 是否已赋值
+                     * 
                      */
                     bool UserReceiveTimeHasBeenSet() const;
 
                     /**
                      * 获取用户实际接收到短信的时间，UNIX 时间戳（单位：秒）。
                      * @return UserReceiveUnixTime 用户实际接收到短信的时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetUserReceiveUnixTime() const;
 
                     /**
                      * 设置用户实际接收到短信的时间，UNIX 时间戳（单位：秒）。
-                     * @param UserReceiveUnixTime 用户实际接收到短信的时间，UNIX 时间戳（单位：秒）。
+                     * @param _userReceiveUnixTime 用户实际接收到短信的时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetUserReceiveUnixTime(const uint64_t& _userReceiveUnixTime);
 
                     /**
                      * 判断参数 UserReceiveUnixTime 是否已赋值
                      * @return UserReceiveUnixTime 是否已赋值
+                     * 
                      */
                     bool UserReceiveUnixTimeHasBeenSet() const;
 
                     /**
                      * 获取国家（或地区）码。
                      * @return NationCode 国家（或地区）码。
+                     * 
                      */
                     std::string GetNationCode() const;
 
                     /**
                      * 设置国家（或地区）码。
-                     * @param NationCode 国家（或地区）码。
+                     * @param _nationCode 国家（或地区）码。
+                     * 
                      */
                     void SetNationCode(const std::string& _nationCode);
 
                     /**
                      * 判断参数 NationCode 是否已赋值
                      * @return NationCode 是否已赋值
+                     * 
                      */
                     bool NationCodeHasBeenSet() const;
 
                     /**
                      * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      * @return PurePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 
                      */
                     std::string GetPurePhoneNumber() const;
 
                     /**
                      * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @param PurePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * @param _purePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 
                      */
                     void SetPurePhoneNumber(const std::string& _purePhoneNumber);
 
                     /**
                      * 判断参数 PurePhoneNumber 是否已赋值
                      * @return PurePhoneNumber 是否已赋值
+                     * 
                      */
                     bool PurePhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取手机号码，普通格式，示例如：13711112222。
                      * @return PhoneNumber 手机号码，普通格式，示例如：13711112222。
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置手机号码，普通格式，示例如：13711112222。
-                     * @param PhoneNumber 手机号码，普通格式，示例如：13711112222。
+                     * @param _phoneNumber 手机号码，普通格式，示例如：13711112222。
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取本次发送标识 ID。
                      * @return SerialNo 本次发送标识 ID。
+                     * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
                      * 设置本次发送标识 ID。
-                     * @param SerialNo 本次发送标识 ID。
+                     * @param _serialNo 本次发送标识 ID。
+                     * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
 
                     /**
                      * 判断参数 SerialNo 是否已赋值
                      * @return SerialNo 是否已赋值
+                     * 
                      */
                     bool SerialNoHasBeenSet() const;
 
                     /**
                      * 获取实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。
                      * @return ReportStatus 实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。
+                     * 
                      */
                     std::string GetReportStatus() const;
 
                     /**
                      * 设置实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。
-                     * @param ReportStatus 实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。
+                     * @param _reportStatus 实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。
+                     * 
                      */
                     void SetReportStatus(const std::string& _reportStatus);
 
                     /**
                      * 判断参数 ReportStatus 是否已赋值
                      * @return ReportStatus 是否已赋值
+                     * 
                      */
                     bool ReportStatusHasBeenSet() const;
 
                     /**
                      * 获取用户接收短信状态描述。
                      * @return Description 用户接收短信状态描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户接收短信状态描述。
-                     * @param Description 用户接收短信状态描述。
+                     * @param _description 用户接收短信状态描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间点
                      * @return Time 时间点
+                     * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置时间点
-                     * @param Time 时间点
+                     * @param _time 时间点
+                     * 
                      */
                     void SetTime(const int64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取光线值
                      * @return Value 光线值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置光线值
-                     * @param Value 光线值
+                     * @param _value 光线值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

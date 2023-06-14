@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡ID
                      * @return LoadBalancerId 负载均衡ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡ID
-                     * @param LoadBalancerId 负载均衡ID
+                     * @param _loadBalancerId 负载均衡ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取目标组ID
                      * @return TargetGroupId 目标组ID
+                     * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
                      * 设置目标组ID
-                     * @param TargetGroupId 目标组ID
+                     * @param _targetGroupId 目标组ID
+                     * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
 
                     /**
                      * 判断参数 TargetGroupId 是否已赋值
                      * @return TargetGroupId 是否已赋值
+                     * 
                      */
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
                      * 获取监听器ID
                      * @return ListenerId 监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * @param _listenerId 监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则ID
                      * @return LocationId 转发规则ID
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发规则ID
-                     * @param LocationId 转发规则ID
+                     * @param _locationId 转发规则ID
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 

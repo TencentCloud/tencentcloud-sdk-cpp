@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取水印图片地址。
                      * @return ImageUrl 水印图片地址。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置水印图片地址。
-                     * @param ImageUrl 水印图片地址。
+                     * @param _imageUrl 水印图片地址。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return Width 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
+                     * 
                      */
                     std::string GetWidth() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
-                     * @param Width 水印的宽度。支持 %、px 两种格式：
+                     * @param _width 水印的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
+                     * 
                      */
                     void SetWidth(const std::string& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -99,6 +105,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；</li>
 0px：表示 Height 按照 Width 对视频宽度的比例缩放。
+                     * 
                      */
                     std::string GetHeight() const;
 
@@ -107,16 +114,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；</li>
 0px：表示 Height 按照 Width 对视频宽度的比例缩放。
-                     * @param Height 水印的高度。支持 %、px 两种格式：
+                     * @param _height 水印的高度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；</li>
 0px：表示 Height 按照 Width 对视频宽度的比例缩放。
+                     * 
                      */
                     void SetHeight(const std::string& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -129,6 +138,7 @@ namespace TencentCloud
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束。</li>
+                     * 
                      */
                     std::string GetRepeatType() const;
 
@@ -137,16 +147,18 @@ namespace TencentCloud
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束。</li>
-                     * @param RepeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
+                     * @param _repeatType 水印重复类型。使用场景：水印为动态图像。取值范围：
 <li>once：动态水印播放完后，不再出现；</li>
 <li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>
 <li>repeat：水印循环播放，直到视频结束。</li>
+                     * 
                      */
                     void SetRepeatType(const std::string& _repeatType);
 
                     /**
                      * 判断参数 RepeatType 是否已赋值
                      * @return RepeatType 是否已赋值
+                     * 
                      */
                     bool RepeatTypeHasBeenSet() const;
 
@@ -157,6 +169,7 @@ namespace TencentCloud
                      * @return Transparency 图片透明度，取值范围：[0, 100]
 <li>0：完全不透明</li>
 <li>100：完全透明。</li>
+                     * 
                      */
                     int64_t GetTransparency() const;
 
@@ -164,15 +177,17 @@ namespace TencentCloud
                      * 设置图片透明度，取值范围：[0, 100]
 <li>0：完全不透明</li>
 <li>100：完全透明。</li>
-                     * @param Transparency 图片透明度，取值范围：[0, 100]
+                     * @param _transparency 图片透明度，取值范围：[0, 100]
 <li>0：完全不透明</li>
 <li>100：完全透明。</li>
+                     * 
                      */
                     void SetTransparency(const int64_t& _transparency);
 
                     /**
                      * 判断参数 Transparency 是否已赋值
                      * @return Transparency 是否已赋值
+                     * 
                      */
                     bool TransparencyHasBeenSet() const;
 

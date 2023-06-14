@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取媒体传输事件的配置信息。
                      * @return Info 媒体传输事件的配置信息。
+                     * 
                      */
                     DescribeEvent GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

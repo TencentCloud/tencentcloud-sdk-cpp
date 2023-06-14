@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取tem namespaceId
                      * @return NamespaceId tem namespaceId
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置tem namespaceId
-                     * @param NamespaceId tem namespaceId
+                     * @param _namespaceId tem namespaceId
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取eks namespace 名
                      * @return EksNamespace eks namespace 名
+                     * 
                      */
                     std::string GetEksNamespace() const;
 
                     /**
                      * 设置eks namespace 名
-                     * @param EksNamespace eks namespace 名
+                     * @param _eksNamespace eks namespace 名
+                     * 
                      */
                     void SetEksNamespace(const std::string& _eksNamespace);
 
                     /**
                      * 判断参数 EksNamespace 是否已赋值
                      * @return EksNamespace 是否已赋值
+                     * 
                      */
                     bool EksNamespaceHasBeenSet() const;
 
                     /**
                      * 获取ingress 规则名
                      * @return Name ingress 规则名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置ingress 规则名
-                     * @param Name ingress 规则名
+                     * @param _name ingress 规则名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 

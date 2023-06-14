@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取kubeconfig文件内容
                      * @return Kubeconfig kubeconfig文件内容
+                     * 
                      */
                     std::string GetKubeconfig() const;
 
                     /**
                      * 判断参数 Kubeconfig 是否已赋值
                      * @return Kubeconfig 是否已赋值
+                     * 
                      */
                     bool KubeconfigHasBeenSet() const;
 

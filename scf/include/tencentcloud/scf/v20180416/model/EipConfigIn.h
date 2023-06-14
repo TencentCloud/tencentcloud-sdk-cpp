@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Eip开启状态，取值['ENABLE','DISABLE']
                      * @return EipStatus Eip开启状态，取值['ENABLE','DISABLE']
+                     * 
                      */
                     std::string GetEipStatus() const;
 
                     /**
                      * 设置Eip开启状态，取值['ENABLE','DISABLE']
-                     * @param EipStatus Eip开启状态，取值['ENABLE','DISABLE']
+                     * @param _eipStatus Eip开启状态，取值['ENABLE','DISABLE']
+                     * 
                      */
                     void SetEipStatus(const std::string& _eipStatus);
 
                     /**
                      * 判断参数 EipStatus 是否已赋值
                      * @return EipStatus 是否已赋值
+                     * 
                      */
                     bool EipStatusHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。
                      * @return Period 包年包月时间，默认为1，单位：月。
 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置包年包月时间，默认为1，单位：月。
 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。
-                     * @param Period 包年包月时间，默认为1，单位：月。
+                     * @param _period 包年包月时间，默认为1，单位：月。
 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
                      * @return RenewFlag 是否自动续费，默认为否。
 <li>true：是</li>
 <li>false：否</li>
+                     * 
                      */
                     bool GetRenewFlag() const;
 
@@ -83,15 +87,17 @@ namespace TencentCloud
                      * 设置是否自动续费，默认为否。
 <li>true：是</li>
 <li>false：否</li>
-                     * @param RenewFlag 是否自动续费，默认为否。
+                     * @param _renewFlag 是否自动续费，默认为否。
 <li>true：是</li>
 <li>false：否</li>
+                     * 
                      */
                     void SetRenewFlag(const bool& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 

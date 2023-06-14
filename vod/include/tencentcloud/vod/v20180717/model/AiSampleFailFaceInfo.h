@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取对应入参 FaceContents 中错误图片下标，从 0 开始。
                      * @return Index 对应入参 FaceContents 中错误图片下标，从 0 开始。
+                     * 
                      */
                     uint64_t GetIndex() const;
 
                     /**
                      * 设置对应入参 FaceContents 中错误图片下标，从 0 开始。
-                     * @param Index 对应入参 FaceContents 中错误图片下标，从 0 开始。
+                     * @param _index 对应入参 FaceContents 中错误图片下标，从 0 开始。
+                     * 
                      */
                     void SetIndex(const uint64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码，取值：
 <li>0：成功；</li>
 <li>其他：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -78,33 +82,38 @@ namespace TencentCloud
                      * 设置错误码，取值：
 <li>0：成功；</li>
 <li>其他：失败。</li>
-                     * @param ErrCode 错误码，取值：
+                     * @param _errCode 错误码，取值：
 <li>0：成功；</li>
 <li>其他：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误描述。
                      * @return Message 错误描述。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误描述。
-                     * @param Message 错误描述。
+                     * @param _message 错误描述。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

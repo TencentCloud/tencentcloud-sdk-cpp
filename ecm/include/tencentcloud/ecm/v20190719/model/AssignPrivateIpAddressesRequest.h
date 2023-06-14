@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域，形如ap-xian-ecm。
                      * @return EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域，形如ap-xian-ecm。
-                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * @param _ecmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
                      * @return PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
-                     * @param PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * @param _privateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<PrivateIpAddressSpecification>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数
                      * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数
+                     * 
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
                      * 设置新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数
+                     * @param _secondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数
+                     * 
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
                     /**
                      * 判断参数 SecondaryPrivateIpAddressCount 是否已赋值
                      * @return SecondaryPrivateIpAddressCount 是否已赋值
+                     * 
                      */
                     bool SecondaryPrivateIpAddressCountHasBeenSet() const;
 

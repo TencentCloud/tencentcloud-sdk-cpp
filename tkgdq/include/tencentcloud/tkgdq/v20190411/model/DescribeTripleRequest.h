@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取三元组查询条件
                      * @return TripleCondition 三元组查询条件
+                     * 
                      */
                     std::string GetTripleCondition() const;
 
                     /**
                      * 设置三元组查询条件
-                     * @param TripleCondition 三元组查询条件
+                     * @param _tripleCondition 三元组查询条件
+                     * 
                      */
                     void SetTripleCondition(const std::string& _tripleCondition);
 
                     /**
                      * 判断参数 TripleCondition 是否已赋值
                      * @return TripleCondition 是否已赋值
+                     * 
                      */
                     bool TripleConditionHasBeenSet() const;
 

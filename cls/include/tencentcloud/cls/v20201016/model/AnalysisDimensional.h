@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 分析名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分析名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 分析名称
+                     * @param _name 分析名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 分析类型：query，field ，original
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置分析类型：query，field ，original
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 分析类型：query，field ，original
+                     * @param _type 分析类型：query，field ，original
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 分析内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置分析内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 分析内容
+                     * @param _content 分析内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigInfo 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlarmAnalysisConfig> GetConfigInfo() const;
 
                     /**
                      * 设置配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigInfo 配置
+                     * @param _configInfo 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigInfo(const std::vector<AlarmAnalysisConfig>& _configInfo);
 
                     /**
                      * 判断参数 ConfigInfo 是否已赋值
                      * @return ConfigInfo 是否已赋值
+                     * 
                      */
                     bool ConfigInfoHasBeenSet() const;
 

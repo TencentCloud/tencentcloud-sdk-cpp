@@ -50,306 +50,357 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageId 镜像ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageId 镜像ID
+                     * @param _imageId 镜像ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像状态
                      * @return ImageState 镜像状态
+                     * 
                      */
                     std::string GetImageState() const;
 
                     /**
                      * 设置镜像状态
-                     * @param ImageState 镜像状态
+                     * @param _imageState 镜像状态
+                     * 
                      */
                     void SetImageState(const std::string& _imageState);
 
                     /**
                      * 判断参数 ImageState 是否已赋值
                      * @return ImageState 是否已赋值
+                     * 
                      */
                     bool ImageStateHasBeenSet() const;
 
                     /**
                      * 获取镜像类型
                      * @return ImageType 镜像类型
+                     * 
                      */
                     std::string GetImageType() const;
 
                     /**
                      * 设置镜像类型
-                     * @param ImageType 镜像类型
+                     * @param _imageType 镜像类型
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 
                     /**
                      * 获取操作系统名称
                      * @return ImageOsName 操作系统名称
+                     * 
                      */
                     std::string GetImageOsName() const;
 
                     /**
                      * 设置操作系统名称
-                     * @param ImageOsName 操作系统名称
+                     * @param _imageOsName 操作系统名称
+                     * 
                      */
                     void SetImageOsName(const std::string& _imageOsName);
 
                     /**
                      * 判断参数 ImageOsName 是否已赋值
                      * @return ImageOsName 是否已赋值
+                     * 
                      */
                     bool ImageOsNameHasBeenSet() const;
 
                     /**
                      * 获取镜像描述
                      * @return ImageDescription 镜像描述
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像描述
-                     * @param ImageDescription 镜像描述
+                     * @param _imageDescription 镜像描述
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
                      * 获取镜像导入时间
                      * @return ImageCreateTime 镜像导入时间
+                     * 
                      */
                     std::string GetImageCreateTime() const;
 
                     /**
                      * 设置镜像导入时间
-                     * @param ImageCreateTime 镜像导入时间
+                     * @param _imageCreateTime 镜像导入时间
+                     * 
                      */
                     void SetImageCreateTime(const std::string& _imageCreateTime);
 
                     /**
                      * 判断参数 ImageCreateTime 是否已赋值
                      * @return ImageCreateTime 是否已赋值
+                     * 
                      */
                     bool ImageCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取操作系统位数
                      * @return Architecture 操作系统位数
+                     * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 设置操作系统位数
-                     * @param Architecture 操作系统位数
+                     * @param _architecture 操作系统位数
+                     * 
                      */
                     void SetArchitecture(const std::string& _architecture);
 
                     /**
                      * 判断参数 Architecture 是否已赋值
                      * @return Architecture 是否已赋值
+                     * 
                      */
                     bool ArchitectureHasBeenSet() const;
 
                     /**
                      * 获取操作系统类型
                      * @return OsType 操作系统类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置操作系统类型
-                     * @param OsType 操作系统类型
+                     * @param _osType 操作系统类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取操作系统版本
                      * @return OsVersion 操作系统版本
+                     * 
                      */
                     std::string GetOsVersion() const;
 
                     /**
                      * 设置操作系统版本
-                     * @param OsVersion 操作系统版本
+                     * @param _osVersion 操作系统版本
+                     * 
                      */
                     void SetOsVersion(const std::string& _osVersion);
 
                     /**
                      * 判断参数 OsVersion 是否已赋值
                      * @return OsVersion 是否已赋值
+                     * 
                      */
                     bool OsVersionHasBeenSet() const;
 
                     /**
                      * 获取操作系统平台
                      * @return Platform 操作系统平台
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置操作系统平台
-                     * @param Platform 操作系统平台
+                     * @param _platform 操作系统平台
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取镜像所有者
                      * @return ImageOwner 镜像所有者
+                     * 
                      */
                     int64_t GetImageOwner() const;
 
                     /**
                      * 设置镜像所有者
-                     * @param ImageOwner 镜像所有者
+                     * @param _imageOwner 镜像所有者
+                     * 
                      */
                     void SetImageOwner(const int64_t& _imageOwner);
 
                     /**
                      * 判断参数 ImageOwner 是否已赋值
                      * @return ImageOwner 是否已赋值
+                     * 
                      */
                     bool ImageOwnerHasBeenSet() const;
 
                     /**
                      * 获取镜像大小。单位：GB
                      * @return ImageSize 镜像大小。单位：GB
+                     * 
                      */
                     int64_t GetImageSize() const;
 
                     /**
                      * 设置镜像大小。单位：GB
-                     * @param ImageSize 镜像大小。单位：GB
+                     * @param _imageSize 镜像大小。单位：GB
+                     * 
                      */
                     void SetImageSize(const int64_t& _imageSize);
 
                     /**
                      * 判断参数 ImageSize 是否已赋值
                      * @return ImageSize 是否已赋值
+                     * 
                      */
                     bool ImageSizeHasBeenSet() const;
 
                     /**
                      * 获取镜像来源信息
                      * @return SrcImage 镜像来源信息
+                     * 
                      */
                     SrcImage GetSrcImage() const;
 
                     /**
                      * 设置镜像来源信息
-                     * @param SrcImage 镜像来源信息
+                     * @param _srcImage 镜像来源信息
+                     * 
                      */
                     void SetSrcImage(const SrcImage& _srcImage);
 
                     /**
                      * 判断参数 SrcImage 是否已赋值
                      * @return SrcImage 是否已赋值
+                     * 
                      */
                     bool SrcImageHasBeenSet() const;
 
                     /**
                      * 获取镜像来源类型
                      * @return ImageSource 镜像来源类型
+                     * 
                      */
                     std::string GetImageSource() const;
 
                     /**
                      * 设置镜像来源类型
-                     * @param ImageSource 镜像来源类型
+                     * @param _imageSource 镜像来源类型
+                     * 
                      */
                     void SetImageSource(const std::string& _imageSource);
 
                     /**
                      * 判断参数 ImageSource 是否已赋值
                      * @return ImageSource 是否已赋值
+                     * 
                      */
                     bool ImageSourceHasBeenSet() const;
 
                     /**
                      * 获取中间态和失败时候的任务ID
                      * @return TaskId 中间态和失败时候的任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置中间态和失败时候的任务ID
-                     * @param TaskId 中间态和失败时候的任务ID
+                     * @param _taskId 中间态和失败时候的任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取是否支持CloudInit
                      * @return IsSupportCloudInit 是否支持CloudInit
+                     * 
                      */
                     bool GetIsSupportCloudInit() const;
 
                     /**
                      * 设置是否支持CloudInit
-                     * @param IsSupportCloudInit 是否支持CloudInit
+                     * @param _isSupportCloudInit 是否支持CloudInit
+                     * 
                      */
                     void SetIsSupportCloudInit(const bool& _isSupportCloudInit);
 
                     /**
                      * 判断参数 IsSupportCloudInit 是否已赋值
                      * @return IsSupportCloudInit 是否已赋值
+                     * 
                      */
                     bool IsSupportCloudInitHasBeenSet() const;
 

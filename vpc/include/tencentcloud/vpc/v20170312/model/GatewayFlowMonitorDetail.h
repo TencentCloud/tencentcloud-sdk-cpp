@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取来源`IP`。
                      * @return PrivateIpAddress 来源`IP`。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置来源`IP`。
-                     * @param PrivateIpAddress 来源`IP`。
+                     * @param _privateIpAddress 来源`IP`。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 
                     /**
                      * 获取入包量。
                      * @return InPkg 入包量。
+                     * 
                      */
                     uint64_t GetInPkg() const;
 
                     /**
                      * 设置入包量。
-                     * @param InPkg 入包量。
+                     * @param _inPkg 入包量。
+                     * 
                      */
                     void SetInPkg(const uint64_t& _inPkg);
 
                     /**
                      * 判断参数 InPkg 是否已赋值
                      * @return InPkg 是否已赋值
+                     * 
                      */
                     bool InPkgHasBeenSet() const;
 
                     /**
                      * 获取出包量。
                      * @return OutPkg 出包量。
+                     * 
                      */
                     uint64_t GetOutPkg() const;
 
                     /**
                      * 设置出包量。
-                     * @param OutPkg 出包量。
+                     * @param _outPkg 出包量。
+                     * 
                      */
                     void SetOutPkg(const uint64_t& _outPkg);
 
                     /**
                      * 判断参数 OutPkg 是否已赋值
                      * @return OutPkg 是否已赋值
+                     * 
                      */
                     bool OutPkgHasBeenSet() const;
 
                     /**
                      * 获取入流量，单位：`Byte`。
                      * @return InTraffic 入流量，单位：`Byte`。
+                     * 
                      */
                     uint64_t GetInTraffic() const;
 
                     /**
                      * 设置入流量，单位：`Byte`。
-                     * @param InTraffic 入流量，单位：`Byte`。
+                     * @param _inTraffic 入流量，单位：`Byte`。
+                     * 
                      */
                     void SetInTraffic(const uint64_t& _inTraffic);
 
                     /**
                      * 判断参数 InTraffic 是否已赋值
                      * @return InTraffic 是否已赋值
+                     * 
                      */
                     bool InTrafficHasBeenSet() const;
 
                     /**
                      * 获取出流量，单位：`Byte`。
                      * @return OutTraffic 出流量，单位：`Byte`。
+                     * 
                      */
                     uint64_t GetOutTraffic() const;
 
                     /**
                      * 设置出流量，单位：`Byte`。
-                     * @param OutTraffic 出流量，单位：`Byte`。
+                     * @param _outTraffic 出流量，单位：`Byte`。
+                     * 
                      */
                     void SetOutTraffic(const uint64_t& _outTraffic);
 
                     /**
                      * 判断参数 OutTraffic 是否已赋值
                      * @return OutTraffic 是否已赋值
+                     * 
                      */
                     bool OutTrafficHasBeenSet() const;
 

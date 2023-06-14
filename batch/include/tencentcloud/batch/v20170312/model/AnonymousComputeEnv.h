@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取计算环境管理类型
                      * @return EnvType 计算环境管理类型
+                     * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置计算环境管理类型
-                     * @param EnvType 计算环境管理类型
+                     * @param _envType 计算环境管理类型
+                     * 
                      */
                     void SetEnvType(const std::string& _envType);
 
                     /**
                      * 判断参数 EnvType 是否已赋值
                      * @return EnvType 是否已赋值
+                     * 
                      */
                     bool EnvTypeHasBeenSet() const;
 
                     /**
                      * 获取计算环境具体参数
                      * @return EnvData 计算环境具体参数
+                     * 
                      */
                     EnvData GetEnvData() const;
 
                     /**
                      * 设置计算环境具体参数
-                     * @param EnvData 计算环境具体参数
+                     * @param _envData 计算环境具体参数
+                     * 
                      */
                     void SetEnvData(const EnvData& _envData);
 
                     /**
                      * 判断参数 EnvData 是否已赋值
                      * @return EnvData 是否已赋值
+                     * 
                      */
                     bool EnvDataHasBeenSet() const;
 
                     /**
                      * 获取数据盘挂载选项
                      * @return MountDataDisks 数据盘挂载选项
+                     * 
                      */
                     std::vector<MountDataDisk> GetMountDataDisks() const;
 
                     /**
                      * 设置数据盘挂载选项
-                     * @param MountDataDisks 数据盘挂载选项
+                     * @param _mountDataDisks 数据盘挂载选项
+                     * 
                      */
                     void SetMountDataDisks(const std::vector<MountDataDisk>& _mountDataDisks);
 
                     /**
                      * 判断参数 MountDataDisks 是否已赋值
                      * @return MountDataDisks 是否已赋值
+                     * 
                      */
                     bool MountDataDisksHasBeenSet() const;
 
                     /**
                      * 获取agent运行模式，适用于Windows系统
                      * @return AgentRunningMode agent运行模式，适用于Windows系统
+                     * 
                      */
                     AgentRunningMode GetAgentRunningMode() const;
 
                     /**
                      * 设置agent运行模式，适用于Windows系统
-                     * @param AgentRunningMode agent运行模式，适用于Windows系统
+                     * @param _agentRunningMode agent运行模式，适用于Windows系统
+                     * 
                      */
                     void SetAgentRunningMode(const AgentRunningMode& _agentRunningMode);
 
                     /**
                      * 判断参数 AgentRunningMode 是否已赋值
                      * @return AgentRunningMode 是否已赋值
+                     * 
                      */
                     bool AgentRunningModeHasBeenSet() const;
 

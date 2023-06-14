@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 文件路径，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomKey 加密key，用于计算下载加密文件的header。参考SSE-C https://cloud.tencent.com/document/product/436/7728#sse-c
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomKey() const;
 
                     /**
                      * 判断参数 CustomKey 是否已赋值
                      * @return CustomKey 是否已赋值
+                     * 
                      */
                     bool CustomKeyHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 

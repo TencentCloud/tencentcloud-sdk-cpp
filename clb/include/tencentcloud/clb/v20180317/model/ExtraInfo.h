@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZhiTong 是否开通VIP直通
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetZhiTong() const;
 
                     /**
                      * 设置是否开通VIP直通
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZhiTong 是否开通VIP直通
+                     * @param _zhiTong 是否开通VIP直通
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZhiTong(const bool& _zhiTong);
 
                     /**
                      * 判断参数 ZhiTong 是否已赋值
                      * @return ZhiTong 是否已赋值
+                     * 
                      */
                     bool ZhiTongHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TgwGroupName TgwGroup名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTgwGroupName() const;
 
                     /**
                      * 设置TgwGroup名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TgwGroupName TgwGroup名称
+                     * @param _tgwGroupName TgwGroup名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTgwGroupName(const std::string& _tgwGroupName);
 
                     /**
                      * 判断参数 TgwGroupName 是否已赋值
                      * @return TgwGroupName 是否已赋值
+                     * 
                      */
                     bool TgwGroupNameHasBeenSet() const;
 

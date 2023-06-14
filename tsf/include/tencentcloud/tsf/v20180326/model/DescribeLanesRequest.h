@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取每页展示的条数
                      * @return Limit 每页展示的条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页展示的条数
-                     * @param Limit 每页展示的条数
+                     * @param _limit 每页展示的条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量
-                     * @param Offset 翻页偏移量
+                     * @param _offset 翻页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return LaneIdList 无
+                     * 
                      */
                     std::vector<std::string> GetLaneIdList() const;
 
                     /**
                      * 设置无
-                     * @param LaneIdList 无
+                     * @param _laneIdList 无
+                     * 
                      */
                     void SetLaneIdList(const std::vector<std::string>& _laneIdList);
 
                     /**
                      * 判断参数 LaneIdList 是否已赋值
                      * @return LaneIdList 是否已赋值
+                     * 
                      */
                     bool LaneIdListHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DisableProgramAuthCheck 无
+                     * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
                      * 设置无
-                     * @param DisableProgramAuthCheck 无
+                     * @param _disableProgramAuthCheck 无
+                     * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
 
                     /**
                      * 判断参数 DisableProgramAuthCheck 是否已赋值
                      * @return DisableProgramAuthCheck 是否已赋值
+                     * 
                      */
                     bool DisableProgramAuthCheckHasBeenSet() const;
 

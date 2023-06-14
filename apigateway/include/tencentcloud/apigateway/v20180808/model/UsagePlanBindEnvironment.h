@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentName 环境名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentName 环境名。
+                     * @param _environmentName 环境名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 服务唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceId 服务唯一ID。
+                     * @param _serviceId 服务唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 

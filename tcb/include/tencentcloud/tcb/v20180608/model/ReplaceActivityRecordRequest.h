@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取活动id
                      * @return ActivityId 活动id
+                     * 
                      */
                     int64_t GetActivityId() const;
 
                     /**
                      * 设置活动id
-                     * @param ActivityId 活动id
+                     * @param _activityId 活动id
+                     * 
                      */
                     void SetActivityId(const int64_t& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取状态码
                      * @return Status 状态码
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态码
-                     * @param Status 状态码
+                     * @param _status 状态码
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取自定义子状态
                      * @return SubStatus 自定义子状态
+                     * 
                      */
                     std::string GetSubStatus() const;
 
                     /**
                      * 设置自定义子状态
-                     * @param SubStatus 自定义子状态
+                     * @param _subStatus 自定义子状态
+                     * 
                      */
                     void SetSubStatus(const std::string& _subStatus);
 
                     /**
                      * 判断参数 SubStatus 是否已赋值
                      * @return SubStatus 是否已赋值
+                     * 
                      */
                     bool SubStatusHasBeenSet() const;
 
                     /**
                      * 获取鉴权token
                      * @return ChannelToken 鉴权token
+                     * 
                      */
                     std::string GetChannelToken() const;
 
                     /**
                      * 设置鉴权token
-                     * @param ChannelToken 鉴权token
+                     * @param _channelToken 鉴权token
+                     * 
                      */
                     void SetChannelToken(const std::string& _channelToken);
 
                     /**
                      * 判断参数 ChannelToken 是否已赋值
                      * @return ChannelToken 是否已赋值
+                     * 
                      */
                     bool ChannelTokenHasBeenSet() const;
 
                     /**
                      * 获取渠道名，不同渠道对应不同secretKey
                      * @return Channel 渠道名，不同渠道对应不同secretKey
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置渠道名，不同渠道对应不同secretKey
-                     * @param Channel 渠道名，不同渠道对应不同secretKey
+                     * @param _channel 渠道名，不同渠道对应不同secretKey
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 

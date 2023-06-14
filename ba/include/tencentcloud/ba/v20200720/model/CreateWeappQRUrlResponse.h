@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取渠道备案小程序二维码
                      * @return Url 渠道备案小程序二维码
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

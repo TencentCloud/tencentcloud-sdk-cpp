@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件总数量
                      * @return TotalCount 事件总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取事件详情
                      * @return Records 事件详情
+                     * 
                      */
                     std::vector<RecordInfo> GetRecords() const;
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 

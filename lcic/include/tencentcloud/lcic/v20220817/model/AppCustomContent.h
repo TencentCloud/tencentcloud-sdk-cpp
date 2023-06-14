@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取场景参数，一个应用下可以设置多个不同场景。
                      * @return Scene 场景参数，一个应用下可以设置多个不同场景。
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景参数，一个应用下可以设置多个不同场景。
-                     * @param Scene 场景参数，一个应用下可以设置多个不同场景。
+                     * @param _scene 场景参数，一个应用下可以设置多个不同场景。
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
                      * @return LogoUrl logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
+                     * 
                      */
                     std::string GetLogoUrl() const;
 
                     /**
                      * 设置logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
-                     * @param LogoUrl logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
+                     * @param _logoUrl logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
+                     * 
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
 
                     /**
                      * 判断参数 LogoUrl 是否已赋值
                      * @return LogoUrl 是否已赋值
+                     * 
                      */
                     bool LogoUrlHasBeenSet() const;
 
                     /**
                      * 获取HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
                      * @return HomeUrl HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
+                     * 
                      */
                     std::string GetHomeUrl() const;
 
                     /**
                      * 设置HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
-                     * @param HomeUrl HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
+                     * @param _homeUrl HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
+                     * 
                      */
                     void SetHomeUrl(const std::string& _homeUrl);
 
                     /**
                      * 判断参数 HomeUrl 是否已赋值
                      * @return HomeUrl 是否已赋值
+                     * 
                      */
                     bool HomeUrlHasBeenSet() const;
 
                     /**
                      * 获取JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
                      * @return JsUrl JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
+                     * 
                      */
                     std::string GetJsUrl() const;
 
                     /**
                      * 设置JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
-                     * @param JsUrl JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
+                     * @param _jsUrl JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
+                     * 
                      */
                     void SetJsUrl(const std::string& _jsUrl);
 
                     /**
                      * 判断参数 JsUrl 是否已赋值
                      * @return JsUrl 是否已赋值
+                     * 
                      */
                     bool JsUrlHasBeenSet() const;
 
                     /**
                      * 获取Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
                      * @return CssUrl Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
+                     * 
                      */
                     std::string GetCssUrl() const;
 
                     /**
                      * 设置Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
-                     * @param CssUrl Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
+                     * @param _cssUrl Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
+                     * 
                      */
                     void SetCssUrl(const std::string& _cssUrl);
 
                     /**
                      * 判断参数 CssUrl 是否已赋值
                      * @return CssUrl 是否已赋值
+                     * 
                      */
                     bool CssUrlHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取字幕信息列表。
                      * @return SubtitleSet 字幕信息列表。
+                     * 
                      */
                     std::vector<MediaSubtitleItem> GetSubtitleSet() const;
 
                     /**
                      * 设置字幕信息列表。
-                     * @param SubtitleSet 字幕信息列表。
+                     * @param _subtitleSet 字幕信息列表。
+                     * 
                      */
                     void SetSubtitleSet(const std::vector<MediaSubtitleItem>& _subtitleSet);
 
                     /**
                      * 判断参数 SubtitleSet 是否已赋值
                      * @return SubtitleSet 是否已赋值
+                     * 
                      */
                     bool SubtitleSetHasBeenSet() const;
 

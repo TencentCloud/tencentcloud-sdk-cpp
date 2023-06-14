@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取账户类型：1-设备接入；2-云存。
                      * @return AccountType 账户类型：1-设备接入；2-云存。
+                     * 
                      */
                     uint64_t GetAccountType() const;
 
                     /**
                      * 设置账户类型：1-设备接入；2-云存。
-                     * @param AccountType 账户类型：1-设备接入；2-云存。
+                     * @param _accountType 账户类型：1-设备接入；2-云存。
+                     * 
                      */
                     void SetAccountType(const uint64_t& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
                     /**
                      * 获取分页游标开始，默认为0开始拉取第一条。
                      * @return Offset 分页游标开始，默认为0开始拉取第一条。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页游标开始，默认为0开始拉取第一条。
-                     * @param Offset 分页游标开始，默认为0开始拉取第一条。
+                     * @param _offset 分页游标开始，默认为0开始拉取第一条。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页每页数量。
                      * @return Limit 分页每页数量。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页每页数量。
-                     * @param Limit 分页每页数量。
+                     * @param _limit 分页每页数量。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
                      * @return Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
-                     * @param Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
+                     * @param _operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 

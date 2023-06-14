@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取压缩格式，支持gzip、lzop、snappy和none不压缩
                      * @return Format 压缩格式，支持gzip、lzop、snappy和none不压缩
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置压缩格式，支持gzip、lzop、snappy和none不压缩
-                     * @param Format 压缩格式，支持gzip、lzop、snappy和none不压缩
+                     * @param _format 压缩格式，支持gzip、lzop、snappy和none不压缩
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

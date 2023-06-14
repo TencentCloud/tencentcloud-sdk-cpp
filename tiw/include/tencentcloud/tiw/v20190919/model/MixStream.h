@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启混流
                      * @return Enabled 是否开启混流
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启混流
-                     * @param Enabled 是否开启混流
+                     * @param _enabled 是否开启混流
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取是否禁用音频混流
                      * @return DisableAudio 是否禁用音频混流
+                     * 
                      */
                     bool GetDisableAudio() const;
 
                     /**
                      * 设置是否禁用音频混流
-                     * @param DisableAudio 是否禁用音频混流
+                     * @param _disableAudio 是否禁用音频混流
+                     * 
                      */
                     void SetDisableAudio(const bool& _disableAudio);
 
                     /**
                      * 判断参数 DisableAudio 是否已赋值
                      * @return DisableAudio 是否已赋值
+                     * 
                      */
                     bool DisableAudioHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 在没有填Custom字段时候，ModelId是必填的
                      * @return ModelId 内置混流布局模板ID, 取值 [1, 2], 区别见内置混流布局模板样式示例说明
 在没有填Custom字段时候，ModelId是必填的
+                     * 
                      */
                     int64_t GetModelId() const;
 
                     /**
                      * 设置内置混流布局模板ID, 取值 [1, 2], 区别见内置混流布局模板样式示例说明
 在没有填Custom字段时候，ModelId是必填的
-                     * @param ModelId 内置混流布局模板ID, 取值 [1, 2], 区别见内置混流布局模板样式示例说明
+                     * @param _modelId 内置混流布局模板ID, 取值 [1, 2], 区别见内置混流布局模板样式示例说明
 在没有填Custom字段时候，ModelId是必填的
+                     * 
                      */
                     void SetModelId(const int64_t& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -112,6 +121,7 @@ namespace TencentCloud
                      * @return TeacherId 老师用户ID
 此字段只有在ModelId填了的情况下生效
 填写TeacherId的效果是把指定为TeacherId的用户视频流显示在内置模板的第一个小画面中
+                     * 
                      */
                     std::string GetTeacherId() const;
 
@@ -119,15 +129,17 @@ namespace TencentCloud
                      * 设置老师用户ID
 此字段只有在ModelId填了的情况下生效
 填写TeacherId的效果是把指定为TeacherId的用户视频流显示在内置模板的第一个小画面中
-                     * @param TeacherId 老师用户ID
+                     * @param _teacherId 老师用户ID
 此字段只有在ModelId填了的情况下生效
 填写TeacherId的效果是把指定为TeacherId的用户视频流显示在内置模板的第一个小画面中
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 当此字段存在时，ModelId 及 TeacherId 字段将被忽略
                      * @return Custom 自定义混流布局参数
 当此字段存在时，ModelId 及 TeacherId 字段将被忽略
+                     * 
                      */
                     CustomLayout GetCustom() const;
 
                     /**
                      * 设置自定义混流布局参数
 当此字段存在时，ModelId 及 TeacherId 字段将被忽略
-                     * @param Custom 自定义混流布局参数
+                     * @param _custom 自定义混流布局参数
 当此字段存在时，ModelId 及 TeacherId 字段将被忽略
+                     * 
                      */
                     void SetCustom(const CustomLayout& _custom);
 
                     /**
                      * 判断参数 Custom 是否已赋值
                      * @return Custom 是否已赋值
+                     * 
                      */
                     bool CustomHasBeenSet() const;
 

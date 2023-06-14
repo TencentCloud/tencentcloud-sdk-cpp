@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否允许修改签署人信息
                      * @return CanEditApprover 是否允许修改签署人信息
+                     * 
                      */
                     bool GetCanEditApprover() const;
 
                     /**
                      * 设置是否允许修改签署人信息
-                     * @param CanEditApprover 是否允许修改签署人信息
+                     * @param _canEditApprover 是否允许修改签署人信息
+                     * 
                      */
                     void SetCanEditApprover(const bool& _canEditApprover);
 
                     /**
                      * 判断参数 CanEditApprover 是否已赋值
                      * @return CanEditApprover 是否已赋值
+                     * 
                      */
                     bool CanEditApproverHasBeenSet() const;
 

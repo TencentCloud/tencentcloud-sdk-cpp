@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取白板应用的SdkAppId
                      * @return SdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置白板应用的SdkAppId
-                     * @param SdkAppId 白板应用的SdkAppId
+                     * @param _sdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询用户列表的白板房间号
                      * @return RoomId 需要查询用户列表的白板房间号
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置需要查询用户列表的白板房间号
-                     * @param RoomId 需要查询用户列表的白板房间号
+                     * @param _roomId 需要查询用户列表的白板房间号
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
                      * @return TimeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * 
                      */
                     std::vector<int64_t> GetTimeRange() const;
 
                     /**
                      * 设置查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
-                     * @param TimeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * @param _timeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * 
                      */
                     void SetTimeRange(const std::vector<int64_t>& _timeRange);
 
                     /**
                      * 判断参数 TimeRange 是否已赋值
                      * @return TimeRange 是否已赋值
+                     * 
                      */
                     bool TimeRangeHasBeenSet() const;
 
                     /**
                      * 获取额外的查询条件
                      * @return Query 额外的查询条件
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置额外的查询条件
-                     * @param Query 额外的查询条件
+                     * @param _query 额外的查询条件
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取返回最大的数据条数，默认1000
                      * @return MaxSize 返回最大的数据条数，默认1000
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置返回最大的数据条数，默认1000
-                     * @param MaxSize 返回最大的数据条数，默认1000
+                     * @param _maxSize 返回最大的数据条数，默认1000
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 

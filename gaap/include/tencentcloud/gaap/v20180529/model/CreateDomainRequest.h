@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID。
                      * @return ListenerId 监听器ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID。
-                     * @param ListenerId 监听器ID。
+                     * @param _listenerId 监听器ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取需要创建的域名，一个监听器下最大支持100个域名。
                      * @return Domain 需要创建的域名，一个监听器下最大支持100个域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要创建的域名，一个监听器下最大支持100个域名。
-                     * @param Domain 需要创建的域名，一个监听器下最大支持100个域名。
+                     * @param _domain 需要创建的域名，一个监听器下最大支持100个域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取服务器证书，用于客户端与GAAP的HTTPS的交互。
                      * @return CertificateId 服务器证书，用于客户端与GAAP的HTTPS的交互。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置服务器证书，用于客户端与GAAP的HTTPS的交互。
-                     * @param CertificateId 服务器证书，用于客户端与GAAP的HTTPS的交互。
+                     * @param _certificateId 服务器证书，用于客户端与GAAP的HTTPS的交互。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      * @return ClientCertificateId 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
+                     * 
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
                      * 设置客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
-                     * @param ClientCertificateId 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+                     * @param _clientCertificateId 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
+                     * 
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
                     /**
                      * 判断参数 ClientCertificateId 是否已赋值
                      * @return ClientCertificateId 是否已赋值
+                     * 
                      */
                     bool ClientCertificateIdHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
                      * @return PolyClientCertificateIds 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     * 
                      */
                     std::vector<std::string> GetPolyClientCertificateIds() const;
 
                     /**
                      * 设置客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
-                     * @param PolyClientCertificateIds 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+                     * @param _polyClientCertificateIds 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
 仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     * 
                      */
                     void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
 
                     /**
                      * 判断参数 PolyClientCertificateIds 是否已赋值
                      * @return PolyClientCertificateIds 是否已赋值
+                     * 
                      */
                     bool PolyClientCertificateIdsHasBeenSet() const;
 
@@ -149,6 +164,7 @@ namespace TencentCloud
 0，表示不开启Http3；
 1，表示开启Http3。
 默认不开启Http3。可以通过SetDomainHttp3开启。
+                     * 
                      */
                     int64_t GetHttp3Supported() const;
 
@@ -157,16 +173,18 @@ namespace TencentCloud
 0，表示不开启Http3；
 1，表示开启Http3。
 默认不开启Http3。可以通过SetDomainHttp3开启。
-                     * @param Http3Supported 是否开启Http3特性的标识，其中：
+                     * @param _http3Supported 是否开启Http3特性的标识，其中：
 0，表示不开启Http3；
 1，表示开启Http3。
 默认不开启Http3。可以通过SetDomainHttp3开启。
+                     * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
 
                     /**
                      * 判断参数 Http3Supported 是否已赋值
                      * @return Http3Supported 是否已赋值
+                     * 
                      */
                     bool Http3SupportedHasBeenSet() const;
 

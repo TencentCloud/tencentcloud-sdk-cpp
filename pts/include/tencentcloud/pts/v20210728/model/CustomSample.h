@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return Metric 指标名
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名
-                     * @param Metric 指标名
+                     * @param _metric 指标名
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合条件
                      * @return Aggregation 聚合条件
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置聚合条件
-                     * @param Aggregation 聚合条件
+                     * @param _aggregation 聚合条件
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 过滤条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置过滤条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels 过滤条件
+                     * @param _labels 过滤条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取查询值
                      * @return Value 查询值
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置查询值
-                     * @param Value 查询值
+                     * @param _value 查询值
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -128,38 +140,44 @@ namespace TencentCloud
 // (1970-01-01 00:00 UTC) excluding leap seconds.
                      * @return Timestamp Time is the number of milliseconds since the epoch
 // (1970-01-01 00:00 UTC) excluding leap seconds.
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置Time is the number of milliseconds since the epoch
 // (1970-01-01 00:00 UTC) excluding leap seconds.
-                     * @param Timestamp Time is the number of milliseconds since the epoch
+                     * @param _timestamp Time is the number of milliseconds since the epoch
 // (1970-01-01 00:00 UTC) excluding leap seconds.
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %
                      * @return Unit 指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %
-                     * @param Unit 指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %
+                     * @param _unit 指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 指标序列名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指标序列名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 指标序列名字
+                     * @param _name 指标序列名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

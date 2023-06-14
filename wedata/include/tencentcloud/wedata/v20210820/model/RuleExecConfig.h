@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueName 计算队列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置计算队列名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueName 计算队列名称
+                     * @param _queueName 计算队列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorGroupId 执行资源组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExecutorGroupId() const;
 
                     /**
                      * 设置执行资源组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecutorGroupId 执行资源组
+                     * @param _executorGroupId 执行资源组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecutorGroupId(const std::string& _executorGroupId);
 
                     /**
                      * 判断参数 ExecutorGroupId 是否已赋值
                      * @return ExecutorGroupId 是否已赋值
+                     * 
                      */
                     bool ExecutorGroupIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置运行的执行引擎，不传时会请求该数据源下默认的执行引擎
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @param _engineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 

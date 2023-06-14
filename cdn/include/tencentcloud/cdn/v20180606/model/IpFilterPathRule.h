@@ -55,6 +55,7 @@ blacklist：黑名单
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilterType() const;
 
@@ -63,16 +64,18 @@ blacklist：黑名单
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterType IP 黑白名单类型
+                     * @param _filterType IP 黑白名单类型
 whitelist：白名单
 blacklist：黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 
@@ -85,6 +88,7 @@ blacklist：黑名单
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -93,16 +97,18 @@ blacklist：黑名单
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Filters IP 黑白名单列表
+                     * @param _filters IP 黑白名单列表
 支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段
 最多可填充 50 个白名单或 50 个黑名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -119,6 +125,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -129,18 +136,20 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -157,6 +166,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -167,18 +177,20 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RulePaths RuleType 对应类型下的匹配内容：
+                     * @param _rulePaths RuleType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 

@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取联盟名称
                      * @return ConsortiumName 联盟名称
+                     * 
                      */
                     std::string GetConsortiumName() const;
 
                     /**
                      * 设置联盟名称
-                     * @param ConsortiumName 联盟名称
+                     * @param _consortiumName 联盟名称
+                     * 
                      */
                     void SetConsortiumName(const std::string& _consortiumName);
 
                     /**
                      * 判断参数 ConsortiumName 是否已赋值
                      * @return ConsortiumName 是否已赋值
+                     * 
                      */
                     bool ConsortiumNameHasBeenSet() const;
 
                     /**
                      * 获取联盟ID
                      * @return ConsortiumId 联盟ID
+                     * 
                      */
                     int64_t GetConsortiumId() const;
 
                     /**
                      * 设置联盟ID
-                     * @param ConsortiumId 联盟ID
+                     * @param _consortiumId 联盟ID
+                     * 
                      */
                     void SetConsortiumId(const int64_t& _consortiumId);
 
                     /**
                      * 判断参数 ConsortiumId 是否已赋值
                      * @return ConsortiumId 是否已赋值
+                     * 
                      */
                     bool ConsortiumIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取机构名称
                      * @return AgencyName 机构名称
+                     * 
                      */
                     std::string GetAgencyName() const;
 
                     /**
                      * 设置机构名称
-                     * @param AgencyName 机构名称
+                     * @param _agencyName 机构名称
+                     * 
                      */
                     void SetAgencyName(const std::string& _agencyName);
 
                     /**
                      * 判断参数 AgencyName 是否已赋值
                      * @return AgencyName 是否已赋值
+                     * 
                      */
                     bool AgencyNameHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return AppName 应用名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-                     * @param AppName 应用名称
+                     * @param _appName 应用名称
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组名称
                      * @return GroupName 群组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置群组名称
-                     * @param GroupName 群组名称
+                     * @param _groupName 群组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 

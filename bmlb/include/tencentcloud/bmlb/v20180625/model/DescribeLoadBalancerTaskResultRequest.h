@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID。由具体的异步操作接口提供。
                      * @return TaskId 任务ID。由具体的异步操作接口提供。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID。由具体的异步操作接口提供。
-                     * @param TaskId 任务ID。由具体的异步操作接口提供。
+                     * @param _taskId 任务ID。由具体的异步操作接口提供。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

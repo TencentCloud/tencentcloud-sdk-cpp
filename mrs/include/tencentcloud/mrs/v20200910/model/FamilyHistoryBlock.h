@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelativeHistory 家庭成员
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RelativeHistoryBlock GetRelativeHistory() const;
 
                     /**
                      * 设置家庭成员
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelativeHistory 家庭成员
+                     * @param _relativeHistory 家庭成员
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelativeHistory(const RelativeHistoryBlock& _relativeHistory);
 
                     /**
                      * 判断参数 RelativeHistory 是否已赋值
                      * @return RelativeHistory 是否已赋值
+                     * 
                      */
                     bool RelativeHistoryHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelativeCancerHistory 家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RelativeCancerHistoryBlock GetRelativeCancerHistory() const;
 
                     /**
                      * 设置家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelativeCancerHistory 家族肿瘤史
+                     * @param _relativeCancerHistory 家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelativeCancerHistory(const RelativeCancerHistoryBlock& _relativeCancerHistory);
 
                     /**
                      * 判断参数 RelativeCancerHistory 是否已赋值
                      * @return RelativeCancerHistory 是否已赋值
+                     * 
                      */
                     bool RelativeCancerHistoryHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeneticHistory 家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GeneticHistoryBlock GetGeneticHistory() const;
 
                     /**
                      * 设置家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GeneticHistory 家族遗传史
+                     * @param _geneticHistory 家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGeneticHistory(const GeneticHistoryBlock& _geneticHistory);
 
                     /**
                      * 判断参数 GeneticHistory 是否已赋值
                      * @return GeneticHistory 是否已赋值
+                     * 
                      */
                     bool GeneticHistoryHasBeenSet() const;
 

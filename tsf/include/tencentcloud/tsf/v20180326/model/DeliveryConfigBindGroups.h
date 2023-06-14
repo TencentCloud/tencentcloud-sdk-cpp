@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 公共条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置公共条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 公共条数
+                     * @param _totalCount 公共条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeliveryConfigBindGroup> GetContent() const;
 
                     /**
                      * 设置内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 内容
+                     * @param _content 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::vector<DeliveryConfigBindGroup>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

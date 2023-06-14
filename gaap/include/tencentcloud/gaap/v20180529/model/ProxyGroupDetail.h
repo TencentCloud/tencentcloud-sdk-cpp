@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取通道组中通道数量
                      * @return ProxyNum 通道组中通道数量
+                     * 
                      */
                     int64_t GetProxyNum() const;
 
                     /**
                      * 设置通道组中通道数量
-                     * @param ProxyNum 通道组中通道数量
+                     * @param _proxyNum 通道组中通道数量
+                     * 
                      */
                     void SetProxyNum(const int64_t& _proxyNum);
 
                     /**
                      * 判断参数 ProxyNum 是否已赋值
                      * @return ProxyNum 是否已赋值
+                     * 
                      */
                     bool ProxyNumHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
 4表示销毁中；
 11表示迁移中；
 12表示部分部署中。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -125,90 +135,104 @@ namespace TencentCloud
 4表示销毁中；
 11表示迁移中；
 12表示部分部署中。
-                     * @param Status 通道组状态：
+                     * @param _status 通道组状态：
 0表示正常运行；
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
 12表示部分部署中。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取归属Uin
                      * @return OwnerUin 归属Uin
+                     * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置归属Uin
-                     * @param OwnerUin 归属Uin
+                     * @param _ownerUin 归属Uin
+                     * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 
                     /**
                      * 获取创建Uin
                      * @return CreateUin 创建Uin
+                     * 
                      */
                     std::string GetCreateUin() const;
 
                     /**
                      * 设置创建Uin
-                     * @param CreateUin 创建Uin
+                     * @param _createUin 创建Uin
+                     * 
                      */
                     void SetCreateUin(const std::string& _createUin);
 
                     /**
                      * 判断参数 CreateUin 是否已赋值
                      * @return CreateUin 是否已赋值
+                     * 
                      */
                     bool CreateUinHasBeenSet() const;
 
                     /**
                      * 获取通道名称
                      * @return GroupName 通道名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置通道名称
-                     * @param GroupName 通道名称
+                     * @param _groupName 通道名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取通道组域名解析默认IP
                      * @return DnsDefaultIp 通道组域名解析默认IP
+                     * 
                      */
                     std::string GetDnsDefaultIp() const;
 
                     /**
                      * 设置通道组域名解析默认IP
-                     * @param DnsDefaultIp 通道组域名解析默认IP
+                     * @param _dnsDefaultIp 通道组域名解析默认IP
+                     * 
                      */
                     void SetDnsDefaultIp(const std::string& _dnsDefaultIp);
 
                     /**
                      * 判断参数 DnsDefaultIp 是否已赋值
                      * @return DnsDefaultIp 是否已赋值
+                     * 
                      */
                     bool DnsDefaultIpHasBeenSet() const;
 
@@ -217,74 +241,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 通道组域名
+                     * @param _domain 通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取目标地域
                      * @return RealServerRegionInfo 目标地域
+                     * 
                      */
                     RegionDetail GetRealServerRegionInfo() const;
 
                     /**
                      * 设置目标地域
-                     * @param RealServerRegionInfo 目标地域
+                     * @param _realServerRegionInfo 目标地域
+                     * 
                      */
                     void SetRealServerRegionInfo(const RegionDetail& _realServerRegionInfo);
 
                     /**
                      * 判断参数 RealServerRegionInfo 是否已赋值
                      * @return RealServerRegionInfo 是否已赋值
+                     * 
                      */
                     bool RealServerRegionInfoHasBeenSet() const;
 
                     /**
                      * 获取是否老通道组，2018-08-03之前创建的通道组为老通道组
                      * @return IsOldGroup 是否老通道组，2018-08-03之前创建的通道组为老通道组
+                     * 
                      */
                     bool GetIsOldGroup() const;
 
                     /**
                      * 设置是否老通道组，2018-08-03之前创建的通道组为老通道组
-                     * @param IsOldGroup 是否老通道组，2018-08-03之前创建的通道组为老通道组
+                     * @param _isOldGroup 是否老通道组，2018-08-03之前创建的通道组为老通道组
+                     * 
                      */
                     void SetIsOldGroup(const bool& _isOldGroup);
 
                     /**
                      * 判断参数 IsOldGroup 是否已赋值
                      * @return IsOldGroup 是否已赋值
+                     * 
                      */
                     bool IsOldGroupHasBeenSet() const;
 
                     /**
                      * 获取通道组ID
                      * @return GroupId 通道组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置通道组ID
-                     * @param GroupId 通道组ID
+                     * @param _groupId 通道组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -293,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 标签列表
+                     * @param _tagSet 标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -315,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 安全策略ID，当设置了安全策略时，存在该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全策略ID，当设置了安全策略时，存在该字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyId 安全策略ID，当设置了安全策略时，存在该字段。
+                     * @param _policyId 安全策略ID，当设置了安全策略时，存在该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
@@ -337,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 通道组版本
+                     * @param _version 通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -359,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetClientIPMethod() const;
 
                     /**
                      * 设置通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
+                     * @param _clientIPMethod 通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientIPMethod(const std::vector<int64_t>& _clientIPMethod);
 
                     /**
                      * 判断参数 ClientIPMethod 是否已赋值
                      * @return ClientIPMethod 是否已赋值
+                     * 
                      */
                     bool ClientIPMethodHasBeenSet() const;
 
@@ -381,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIPAddressVersion() const;
 
                     /**
                      * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * @param _iPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIPAddressVersion(const std::string& _iPAddressVersion);
 
                     /**
                      * 判断参数 IPAddressVersion 是否已赋值
                      * @return IPAddressVersion 是否已赋值
+                     * 
                      */
                     bool IPAddressVersionHasBeenSet() const;
 
@@ -403,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageType() const;
 
                     /**
                      * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
+                     * @param _packageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
@@ -429,6 +483,7 @@ namespace TencentCloud
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHttp3Supported() const;
 
@@ -437,16 +492,18 @@ namespace TencentCloud
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http3Supported 支持Http3特性的标识，其中：
+                     * @param _http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
 
                     /**
                      * 判断参数 Http3Supported 是否已赋值
                      * @return Http3Supported 是否已赋值
+                     * 
                      */
                     bool Http3SupportedHasBeenSet() const;
 
@@ -477,6 +534,7 @@ namespace TencentCloud
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFeatureBitmap() const;
 
@@ -494,7 +552,7 @@ namespace TencentCloud
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
+                     * @param _featureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
 特性位图含义如下（从右往左）：
@@ -507,12 +565,14 @@ namespace TencentCloud
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatureBitmap(const int64_t& _featureBitmap);
 
                     /**
                      * 判断参数 FeatureBitmap 是否已赋值
                      * @return FeatureBitmap 是否已赋值
+                     * 
                      */
                     bool FeatureBitmapHasBeenSet() const;
 

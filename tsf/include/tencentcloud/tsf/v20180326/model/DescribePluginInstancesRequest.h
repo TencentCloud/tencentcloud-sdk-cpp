@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取分组或者API的ID
                      * @return ScopeValue 分组或者API的ID
+                     * 
                      */
                     std::string GetScopeValue() const;
 
                     /**
                      * 设置分组或者API的ID
-                     * @param ScopeValue 分组或者API的ID
+                     * @param _scopeValue 分组或者API的ID
+                     * 
                      */
                     void SetScopeValue(const std::string& _scopeValue);
 
                     /**
                      * 判断参数 ScopeValue 是否已赋值
                      * @return ScopeValue 是否已赋值
+                     * 
                      */
                     bool ScopeValueHasBeenSet() const;
 
                     /**
                      * 获取绑定: true; 未绑定: false
                      * @return Bound 绑定: true; 未绑定: false
+                     * 
                      */
                     bool GetBound() const;
 
                     /**
                      * 设置绑定: true; 未绑定: false
-                     * @param Bound 绑定: true; 未绑定: false
+                     * @param _bound 绑定: true; 未绑定: false
+                     * 
                      */
                     void SetBound(const bool& _bound);
 
                     /**
                      * 判断参数 Bound 是否已赋值
                      * @return Bound 是否已赋值
+                     * 
                      */
                     bool BoundHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量
-                     * @param Offset 翻页偏移量
+                     * @param _offset 翻页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页展示的条数
                      * @return Limit 每页展示的条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页展示的条数
-                     * @param Limit 每页展示的条数
+                     * @param _limit 每页展示的条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取插件类型
                      * @return Type 插件类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置插件类型
-                     * @param Type 插件类型
+                     * @param _type 插件类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 

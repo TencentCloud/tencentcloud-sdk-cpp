@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定预隔离实例ID。格式如：cmgo-p8vnipr5。
                      * @return InstanceId 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定预隔离实例ID。格式如：cmgo-p8vnipr5。
-                     * @param InstanceId 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * @param _instanceId 指定预隔离实例ID。格式如：cmgo-p8vnipr5。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

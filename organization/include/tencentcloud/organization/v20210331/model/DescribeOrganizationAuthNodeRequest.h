@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目。最大50
                      * @return Limit 限制数目。最大50
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目。最大50
-                     * @param Limit 限制数目。最大50
+                     * @param _limit 限制数目。最大50
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取互信主体名称。
                      * @return AuthName 互信主体名称。
+                     * 
                      */
                     std::string GetAuthName() const;
 
                     /**
                      * 设置互信主体名称。
-                     * @param AuthName 互信主体名称。
+                     * @param _authName 互信主体名称。
+                     * 
                      */
                     void SetAuthName(const std::string& _authName);
 
                     /**
                      * 判断参数 AuthName 是否已赋值
                      * @return AuthName 是否已赋值
+                     * 
                      */
                     bool AuthNameHasBeenSet() const;
 

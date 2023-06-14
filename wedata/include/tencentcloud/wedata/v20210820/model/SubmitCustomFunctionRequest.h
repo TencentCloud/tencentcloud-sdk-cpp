@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取函数唯一标识
                      * @return FunctionId 函数唯一标识
+                     * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
                      * 设置函数唯一标识
-                     * @param FunctionId 函数唯一标识
+                     * @param _functionId 函数唯一标识
+                     * 
                      */
                     void SetFunctionId(const std::string& _functionId);
 
                     /**
                      * 判断参数 FunctionId 是否已赋值
                      * @return FunctionId 是否已赋值
+                     * 
                      */
                     bool FunctionIdHasBeenSet() const;
 
                     /**
                      * 获取集群实例 ID
                      * @return ClusterIdentifier 集群实例 ID
+                     * 
                      */
                     std::string GetClusterIdentifier() const;
 
                     /**
                      * 设置集群实例 ID
-                     * @param ClusterIdentifier 集群实例 ID
+                     * @param _clusterIdentifier 集群实例 ID
+                     * 
                      */
                     void SetClusterIdentifier(const std::string& _clusterIdentifier);
 
                     /**
                      * 判断参数 ClusterIdentifier 是否已赋值
                      * @return ClusterIdentifier 是否已赋值
+                     * 
                      */
                     bool ClusterIdentifierHasBeenSet() const;
 
                     /**
                      * 获取备注信息
                      * @return Comment 备注信息
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置备注信息
-                     * @param Comment 备注信息
+                     * @param _comment 备注信息
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

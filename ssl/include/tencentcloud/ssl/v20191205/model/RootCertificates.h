@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sign 国密签名证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSign() const;
 
                     /**
                      * 设置国密签名证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sign 国密签名证书
+                     * @param _sign 国密签名证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSign(const std::string& _sign);
 
                     /**
                      * 判断参数 Sign 是否已赋值
                      * @return Sign 是否已赋值
+                     * 
                      */
                     bool SignHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt 国密加密证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEncrypt() const;
 
                     /**
                      * 设置国密加密证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Encrypt 国密加密证书
+                     * @param _encrypt 国密加密证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEncrypt(const std::string& _encrypt);
 
                     /**
                      * 判断参数 Encrypt 是否已赋值
                      * @return Encrypt 是否已赋值
+                     * 
                      */
                     bool EncryptHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Standard 标准证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStandard() const;
 
                     /**
                      * 设置标准证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Standard 标准证书
+                     * @param _standard 标准证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStandard(const std::string& _standard);
 
                     /**
                      * 判断参数 Standard 是否已赋值
                      * @return Standard 是否已赋值
+                     * 
                      */
                     bool StandardHasBeenSet() const;
 

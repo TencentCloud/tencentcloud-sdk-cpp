@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资质照片，照片的base64编码。
                      * @return ImageFile 资质照片，照片的base64编码。
+                     * 
                      */
                     std::string GetImageFile() const;
 
                     /**
                      * 设置资质照片，照片的base64编码。
-                     * @param ImageFile 资质照片，照片的base64编码。
+                     * @param _imageFile 资质照片，照片的base64编码。
+                     * 
                      */
                     void SetImageFile(const std::string& _imageFile);
 
                     /**
                      * 判断参数 ImageFile 是否已赋值
                      * @return ImageFile 是否已赋值
+                     * 
                      */
                     bool ImageFileHasBeenSet() const;
 

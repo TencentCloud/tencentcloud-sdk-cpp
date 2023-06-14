@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户评论内容
                      * @return Comment 用户评论内容
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置用户评论内容
-                     * @param Comment 用户评论内容
+                     * @param _comment 用户评论内容
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取评论的时间
                      * @return Date 评论的时间
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置评论的时间
-                     * @param Date 评论的时间
+                     * @param _date 评论的时间
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 

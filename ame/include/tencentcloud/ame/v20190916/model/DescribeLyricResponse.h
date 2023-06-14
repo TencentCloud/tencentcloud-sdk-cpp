@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lyric 歌词或者波形图详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Lyric GetLyric() const;
 
                     /**
                      * 判断参数 Lyric 是否已赋值
                      * @return Lyric 是否已赋值
+                     * 
                      */
                     bool LyricHasBeenSet() const;
 

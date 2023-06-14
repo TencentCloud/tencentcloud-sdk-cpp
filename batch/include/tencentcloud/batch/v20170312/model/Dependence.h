@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取依赖关系的起点任务名称
                      * @return StartTask 依赖关系的起点任务名称
+                     * 
                      */
                     std::string GetStartTask() const;
 
                     /**
                      * 设置依赖关系的起点任务名称
-                     * @param StartTask 依赖关系的起点任务名称
+                     * @param _startTask 依赖关系的起点任务名称
+                     * 
                      */
                     void SetStartTask(const std::string& _startTask);
 
                     /**
                      * 判断参数 StartTask 是否已赋值
                      * @return StartTask 是否已赋值
+                     * 
                      */
                     bool StartTaskHasBeenSet() const;
 
                     /**
                      * 获取依赖关系的终点任务名称
                      * @return EndTask 依赖关系的终点任务名称
+                     * 
                      */
                     std::string GetEndTask() const;
 
                     /**
                      * 设置依赖关系的终点任务名称
-                     * @param EndTask 依赖关系的终点任务名称
+                     * @param _endTask 依赖关系的终点任务名称
+                     * 
                      */
                     void SetEndTask(const std::string& _endTask);
 
                     /**
                      * 判断参数 EndTask 是否已赋值
                      * @return EndTask 是否已赋值
+                     * 
                      */
                     bool EndTaskHasBeenSet() const;
 

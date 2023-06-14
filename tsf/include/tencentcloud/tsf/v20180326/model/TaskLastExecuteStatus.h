@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
+                     * @param _state 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchLogId 批次历史ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchLogId() const;
 
                     /**
                      * 设置批次历史ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchLogId 批次历史ID
+                     * @param _batchLogId 批次历史ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchLogId(const std::string& _batchLogId);
 
                     /**
                      * 判断参数 BatchLogId 是否已赋值
                      * @return BatchLogId 是否已赋值
+                     * 
                      */
                     bool BatchLogIdHasBeenSet() const;
 

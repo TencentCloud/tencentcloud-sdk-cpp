@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取待修改表格所在集群ID
                      * @return ClusterId 待修改表格所在集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置待修改表格所在集群ID
-                     * @param ClusterId 待修改表格所在集群ID
+                     * @param _clusterId 待修改表格所在集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待修改表格列表
                      * @return SelectedTables 待修改表格列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置待修改表格列表
-                     * @param SelectedTables 待修改表格列表
+                     * @param _selectedTables 待修改表格列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 
                     /**
                      * 获取选中的已上传IDL文件列表，与NewIdlFiles必选其一
                      * @return ExistingIdlFiles 选中的已上传IDL文件列表，与NewIdlFiles必选其一
+                     * 
                      */
                     std::vector<IdlFileInfo> GetExistingIdlFiles() const;
 
                     /**
                      * 设置选中的已上传IDL文件列表，与NewIdlFiles必选其一
-                     * @param ExistingIdlFiles 选中的已上传IDL文件列表，与NewIdlFiles必选其一
+                     * @param _existingIdlFiles 选中的已上传IDL文件列表，与NewIdlFiles必选其一
+                     * 
                      */
                     void SetExistingIdlFiles(const std::vector<IdlFileInfo>& _existingIdlFiles);
 
                     /**
                      * 判断参数 ExistingIdlFiles 是否已赋值
                      * @return ExistingIdlFiles 是否已赋值
+                     * 
                      */
                     bool ExistingIdlFilesHasBeenSet() const;
 
                     /**
                      * 获取本次上传IDL文件列表，与ExistingIdlFiles必选其一
                      * @return NewIdlFiles 本次上传IDL文件列表，与ExistingIdlFiles必选其一
+                     * 
                      */
                     std::vector<IdlFileInfo> GetNewIdlFiles() const;
 
                     /**
                      * 设置本次上传IDL文件列表，与ExistingIdlFiles必选其一
-                     * @param NewIdlFiles 本次上传IDL文件列表，与ExistingIdlFiles必选其一
+                     * @param _newIdlFiles 本次上传IDL文件列表，与ExistingIdlFiles必选其一
+                     * 
                      */
                     void SetNewIdlFiles(const std::vector<IdlFileInfo>& _newIdlFiles);
 
                     /**
                      * 判断参数 NewIdlFiles 是否已赋值
                      * @return NewIdlFiles 是否已赋值
+                     * 
                      */
                     bool NewIdlFilesHasBeenSet() const;
 

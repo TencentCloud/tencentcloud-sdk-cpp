@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取用户侧网段地址
                      * @return Cidr 用户侧网段地址
+                     * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置用户侧网段地址
-                     * @param Cidr 用户侧网段地址
+                     * @param _cidr 用户侧网段地址
+                     * 
                      */
                     void SetCidr(const std::string& _cidr);
 
                     /**
                      * 判断参数 Cidr 是否已赋值
                      * @return Cidr 是否已赋值
+                     * 
                      */
                     bool CidrHasBeenSet() const;
 

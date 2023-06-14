@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取快照文件Id。
                      * @return SnapshotFileId 快照文件Id。
+                     * 
                      */
                     std::string GetSnapshotFileId() const;
 
                     /**
                      * 设置快照文件Id。
-                     * @param SnapshotFileId 快照文件Id。
+                     * @param _snapshotFileId 快照文件Id。
+                     * 
                      */
                     void SetSnapshotFileId(const std::string& _snapshotFileId);
 
                     /**
                      * 判断参数 SnapshotFileId 是否已赋值
                      * @return SnapshotFileId 是否已赋值
+                     * 
                      */
                     bool SnapshotFileIdHasBeenSet() const;
 
                     /**
                      * 获取安全组Id。
                      * @return SecurityGroupId 安全组Id。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组Id。
-                     * @param SecurityGroupId 安全组Id。
+                     * @param _securityGroupId 安全组Id。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 

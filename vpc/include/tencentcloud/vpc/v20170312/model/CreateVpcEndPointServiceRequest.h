@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取终端节点服务名称。
                      * @return EndPointServiceName 终端节点服务名称。
+                     * 
                      */
                     std::string GetEndPointServiceName() const;
 
                     /**
                      * 设置终端节点服务名称。
-                     * @param EndPointServiceName 终端节点服务名称。
+                     * @param _endPointServiceName 终端节点服务名称。
+                     * 
                      */
                     void SetEndPointServiceName(const std::string& _endPointServiceName);
 
                     /**
                      * 判断参数 EndPointServiceName 是否已赋值
                      * @return EndPointServiceName 是否已赋值
+                     * 
                      */
                     bool EndPointServiceNameHasBeenSet() const;
 
                     /**
                      * 获取是否自动接受。
                      * @return AutoAcceptFlag 是否自动接受。
+                     * 
                      */
                     bool GetAutoAcceptFlag() const;
 
                     /**
                      * 设置是否自动接受。
-                     * @param AutoAcceptFlag 是否自动接受。
+                     * @param _autoAcceptFlag 是否自动接受。
+                     * 
                      */
                     void SetAutoAcceptFlag(const bool& _autoAcceptFlag);
 
                     /**
                      * 判断参数 AutoAcceptFlag 是否已赋值
                      * @return AutoAcceptFlag 是否已赋值
+                     * 
                      */
                     bool AutoAcceptFlagHasBeenSet() const;
 
                     /**
                      * 获取后端服务ID，比如lb-xxx。
                      * @return ServiceInstanceId 后端服务ID，比如lb-xxx。
+                     * 
                      */
                     std::string GetServiceInstanceId() const;
 
                     /**
                      * 设置后端服务ID，比如lb-xxx。
-                     * @param ServiceInstanceId 后端服务ID，比如lb-xxx。
+                     * @param _serviceInstanceId 后端服务ID，比如lb-xxx。
+                     * 
                      */
                     void SetServiceInstanceId(const std::string& _serviceInstanceId);
 
                     /**
                      * 判断参数 ServiceInstanceId 是否已赋值
                      * @return ServiceInstanceId 是否已赋值
+                     * 
                      */
                     bool ServiceInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      * @return IsPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
+                     * 
                      */
                     bool GetIsPassService() const;
 
                     /**
                      * 设置~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
-                     * @param IsPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
+                     * @param _isPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
+                     * 
                      */
                     void SetIsPassService(const bool& _isPassService);
 
                     /**
                      * 判断参数 IsPassService 是否已赋值
                      * @return IsPassService 是否已赋值
+                     * 
                      */
                     bool IsPassServiceHasBeenSet() const;
 
                     /**
                      * 获取挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
                      * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
-                     * @param ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * @param _serviceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 

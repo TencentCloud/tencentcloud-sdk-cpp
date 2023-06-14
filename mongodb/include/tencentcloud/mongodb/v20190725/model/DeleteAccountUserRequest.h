@@ -47,56 +47,65 @@ namespace TencentCloud
 
                      * @return InstanceId 指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
-                     * @param InstanceId 指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取配置待删除的账号名。
                      * @return UserName 配置待删除的账号名。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置配置待删除的账号名。
-                     * @param UserName 配置待删除的账号名。
+                     * @param _userName 配置待删除的账号名。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。
                      * @return MongoUserPassword 配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。
+                     * 
                      */
                     std::string GetMongoUserPassword() const;
 
                     /**
                      * 设置配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。
-                     * @param MongoUserPassword 配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。
+                     * @param _mongoUserPassword 配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。
+                     * 
                      */
                     void SetMongoUserPassword(const std::string& _mongoUserPassword);
 
                     /**
                      * 判断参数 MongoUserPassword 是否已赋值
                      * @return MongoUserPassword 是否已赋值
+                     * 
                      */
                     bool MongoUserPasswordHasBeenSet() const;
 

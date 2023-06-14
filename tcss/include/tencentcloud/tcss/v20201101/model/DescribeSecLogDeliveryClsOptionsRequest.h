@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取地域
                      * @return ClsRegion 地域
+                     * 
                      */
                     std::string GetClsRegion() const;
 
                     /**
                      * 设置地域
-                     * @param ClsRegion 地域
+                     * @param _clsRegion 地域
+                     * 
                      */
                     void SetClsRegion(const std::string& _clsRegion);
 
                     /**
                      * 判断参数 ClsRegion 是否已赋值
                      * @return ClsRegion 是否已赋值
+                     * 
                      */
                     bool ClsRegionHasBeenSet() const;
 

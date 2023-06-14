@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
                      * @return FaceIdToken SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
                      * 设置SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
-                     * @param FaceIdToken SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * @param _faceIdToken SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
 
                     /**
                      * 判断参数 FaceIdToken 是否已赋值
                      * @return FaceIdToken 是否已赋值
+                     * 
                      */
                     bool FaceIdTokenHasBeenSet() const;
 
                     /**
                      * 获取是否需要拉取视频，默认false不需要
                      * @return IsNeedVideo 是否需要拉取视频，默认false不需要
+                     * 
                      */
                     bool GetIsNeedVideo() const;
 
                     /**
                      * 设置是否需要拉取视频，默认false不需要
-                     * @param IsNeedVideo 是否需要拉取视频，默认false不需要
+                     * @param _isNeedVideo 是否需要拉取视频，默认false不需要
+                     * 
                      */
                     void SetIsNeedVideo(const bool& _isNeedVideo);
 
                     /**
                      * 判断参数 IsNeedVideo 是否已赋值
                      * @return IsNeedVideo 是否已赋值
+                     * 
                      */
                     bool IsNeedVideoHasBeenSet() const;
 
                     /**
                      * 获取是否需要拉取截帧，默认false不需要
                      * @return IsNeedBestFrame 是否需要拉取截帧，默认false不需要
+                     * 
                      */
                     bool GetIsNeedBestFrame() const;
 
                     /**
                      * 设置是否需要拉取截帧，默认false不需要
-                     * @param IsNeedBestFrame 是否需要拉取截帧，默认false不需要
+                     * @param _isNeedBestFrame 是否需要拉取截帧，默认false不需要
+                     * 
                      */
                     void SetIsNeedBestFrame(const bool& _isNeedBestFrame);
 
                     /**
                      * 判断参数 IsNeedBestFrame 是否已赋值
                      * @return IsNeedBestFrame 是否已赋值
+                     * 
                      */
                     bool IsNeedBestFrameHasBeenSet() const;
 

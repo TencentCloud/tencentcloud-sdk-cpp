@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取告警事件的Id
                      * @return EventId 告警事件的Id
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置告警事件的Id
-                     * @param EventId 告警事件的Id
+                     * @param _eventId 告警事件的Id
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取告警发送收敛类型。0连续告警，1指数告警
                      * @return AlarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 
                      */
                     int64_t GetAlarmNotifyType() const;
 
                     /**
                      * 设置告警发送收敛类型。0连续告警，1指数告警
-                     * @param AlarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * @param _alarmNotifyType 告警发送收敛类型。0连续告警，1指数告警
+                     * 
                      */
                     void SetAlarmNotifyType(const int64_t& _alarmNotifyType);
 
                     /**
                      * 判断参数 AlarmNotifyType 是否已赋值
                      * @return AlarmNotifyType 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
                      * @return AlarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 
                      */
                     int64_t GetAlarmNotifyPeriod() const;
 
                     /**
                      * 设置告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
-                     * @param AlarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * @param _alarmNotifyPeriod 告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次
+                     * 
                      */
                     void SetAlarmNotifyPeriod(const int64_t& _alarmNotifyPeriod);
 
                     /**
                      * 判断参数 AlarmNotifyPeriod 是否已赋值
                      * @return AlarmNotifyPeriod 是否已赋值
+                     * 
                      */
                     bool AlarmNotifyPeriodHasBeenSet() const;
 
                     /**
                      * 获取如果通过模板创建，需要传入模板中该指标的对应RuleId
                      * @return RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置如果通过模板创建，需要传入模板中该指标的对应RuleId
-                     * @param RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * @param _ruleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取企业id
                      * @return CompanyId 企业id
+                     * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 

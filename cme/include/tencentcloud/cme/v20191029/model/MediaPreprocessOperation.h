@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>ImageTextMask：图片文字遮罩。</li>
                      * @return Type 预处理操作的类型，取值范围：
 <li>ImageTextMask：图片文字遮罩。</li>
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置预处理操作的类型，取值范围：
 <li>ImageTextMask：图片文字遮罩。</li>
-                     * @param Type 预处理操作的类型，取值范围：
+                     * @param _type 预处理操作的类型，取值范围：
 <li>ImageTextMask：图片文字遮罩。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 当 Type 取值 ImageTextMask 时，参数为要保留的文字。
                      * @return Args 预处理操作参数。
 当 Type 取值 ImageTextMask 时，参数为要保留的文字。
+                     * 
                      */
                     std::vector<std::string> GetArgs() const;
 
                     /**
                      * 设置预处理操作参数。
 当 Type 取值 ImageTextMask 时，参数为要保留的文字。
-                     * @param Args 预处理操作参数。
+                     * @param _args 预处理操作参数。
 当 Type 取值 ImageTextMask 时，参数为要保留的文字。
+                     * 
                      */
                     void SetArgs(const std::vector<std::string>& _args);
 
                     /**
                      * 判断参数 Args 是否已赋值
                      * @return Args 是否已赋值
+                     * 
                      */
                     bool ArgsHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
                      * @return VideoParams 录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * 
                      */
                     VideoParams GetVideoParams() const;
 
                     /**
                      * 设置录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
-                     * @param VideoParams 录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * @param _videoParams 录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * 
                      */
                     void SetVideoParams(const VideoParams& _videoParams);
 
                     /**
                      * 判断参数 VideoParams 是否已赋值
                      * @return VideoParams 是否已赋值
+                     * 
                      */
                     bool VideoParamsHasBeenSet() const;
 
                     /**
                      * 获取录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
                      * @return AudioParams 录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * 
                      */
                     AudioParams GetAudioParams() const;
 
                     /**
                      * 设置录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
-                     * @param AudioParams 录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * @param _audioParams 录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。
+                     * 
                      */
                     void SetAudioParams(const AudioParams& _audioParams);
 
                     /**
                      * 判断参数 AudioParams 是否已赋值
                      * @return AudioParams 是否已赋值
+                     * 
                      */
                     bool AudioParamsHasBeenSet() const;
 

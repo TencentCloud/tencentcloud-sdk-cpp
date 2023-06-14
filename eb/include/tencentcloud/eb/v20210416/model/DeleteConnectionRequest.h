@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取连接器ID
                      * @return ConnectionId 连接器ID
+                     * 
                      */
                     std::string GetConnectionId() const;
 
                     /**
                      * 设置连接器ID
-                     * @param ConnectionId 连接器ID
+                     * @param _connectionId 连接器ID
+                     * 
                      */
                     void SetConnectionId(const std::string& _connectionId);
 
                     /**
                      * 判断参数 ConnectionId 是否已赋值
                      * @return ConnectionId 是否已赋值
+                     * 
                      */
                     bool ConnectionIdHasBeenSet() const;
 
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取错误消息
                      * @return Message 错误消息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误消息
-                     * @param Message 错误消息
+                     * @param _message 错误消息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取错误码
                      * @return Code 错误码
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置错误码
-                     * @param Code 错误码
+                     * @param _code 错误码
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CreateInvoiceResultData GetData() const;
 
                     /**
                      * 设置数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 数据
+                     * @param _data 数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const CreateInvoiceResultData& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

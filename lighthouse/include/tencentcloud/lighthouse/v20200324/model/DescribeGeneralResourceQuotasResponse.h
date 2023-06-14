@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通用资源配额详细信息列表。
                      * @return GeneralResourceQuotaSet 通用资源配额详细信息列表。
+                     * 
                      */
                     std::vector<GeneralResourceQuota> GetGeneralResourceQuotaSet() const;
 
                     /**
                      * 判断参数 GeneralResourceQuotaSet 是否已赋值
                      * @return GeneralResourceQuotaSet 是否已赋值
+                     * 
                      */
                     bool GeneralResourceQuotaSetHasBeenSet() const;
 

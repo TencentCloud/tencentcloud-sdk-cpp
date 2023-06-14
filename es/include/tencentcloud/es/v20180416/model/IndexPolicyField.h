@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WarmEnable 是否开启warm阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWarmEnable() const;
 
                     /**
                      * 设置是否开启warm阶段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmEnable 是否开启warm阶段
+                     * @param _warmEnable 是否开启warm阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWarmEnable(const std::string& _warmEnable);
 
                     /**
                      * 判断参数 WarmEnable 是否已赋值
                      * @return WarmEnable 是否已赋值
+                     * 
                      */
                     bool WarmEnableHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WarmMinAge warm阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWarmMinAge() const;
 
                     /**
                      * 设置warm阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WarmMinAge warm阶段转入时间
+                     * @param _warmMinAge warm阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWarmMinAge(const std::string& _warmMinAge);
 
                     /**
                      * 判断参数 WarmMinAge 是否已赋值
                      * @return WarmMinAge 是否已赋值
+                     * 
                      */
                     bool WarmMinAgeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColdEnable 是否开启cold阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColdEnable() const;
 
                     /**
                      * 设置是否开启cold阶段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColdEnable 是否开启cold阶段
+                     * @param _coldEnable 是否开启cold阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColdEnable(const std::string& _coldEnable);
 
                     /**
                      * 判断参数 ColdEnable 是否已赋值
                      * @return ColdEnable 是否已赋值
+                     * 
                      */
                     bool ColdEnableHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColdMinAge cold阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColdMinAge() const;
 
                     /**
                      * 设置cold阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColdMinAge cold阶段转入时间
+                     * @param _coldMinAge cold阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColdMinAge(const std::string& _coldMinAge);
 
                     /**
                      * 判断参数 ColdMinAge 是否已赋值
                      * @return ColdMinAge 是否已赋值
+                     * 
                      */
                     bool ColdMinAgeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrozenEnable 是否开启frozen阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrozenEnable() const;
 
                     /**
                      * 设置是否开启frozen阶段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrozenEnable 是否开启frozen阶段
+                     * @param _frozenEnable 是否开启frozen阶段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrozenEnable(const std::string& _frozenEnable);
 
                     /**
                      * 判断参数 FrozenEnable 是否已赋值
                      * @return FrozenEnable 是否已赋值
+                     * 
                      */
                     bool FrozenEnableHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrozenMinAge frozen阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrozenMinAge() const;
 
                     /**
                      * 设置frozen阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrozenMinAge frozen阶段转入时间
+                     * @param _frozenMinAge frozen阶段转入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrozenMinAge(const std::string& _frozenMinAge);
 
                     /**
                      * 判断参数 FrozenMinAge 是否已赋值
                      * @return FrozenMinAge 是否已赋值
+                     * 
                      */
                     bool FrozenMinAgeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColdAction /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetColdAction() const;
 
                     /**
                      * 设置/
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColdAction /
+                     * @param _coldAction /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColdAction(const std::string& _coldAction);
 
                     /**
                      * 判断参数 ColdAction 是否已赋值
                      * @return ColdAction 是否已赋值
+                     * 
                      */
                     bool ColdActionHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取规则引擎条件，该数组内所有项全部满足即判断该条件满足。
                      * @return Conditions 规则引擎条件，该数组内所有项全部满足即判断该条件满足。
+                     * 
                      */
                     std::vector<RuleCondition> GetConditions() const;
 
                     /**
                      * 设置规则引擎条件，该数组内所有项全部满足即判断该条件满足。
-                     * @param Conditions 规则引擎条件，该数组内所有项全部满足即判断该条件满足。
+                     * @param _conditions 规则引擎条件，该数组内所有项全部满足即判断该条件满足。
+                     * 
                      */
                     void SetConditions(const std::vector<RuleCondition>& _conditions);
 
                     /**
                      * 判断参数 Conditions 是否已赋值
                      * @return Conditions 是否已赋值
+                     * 
                      */
                     bool ConditionsHasBeenSet() const;
 

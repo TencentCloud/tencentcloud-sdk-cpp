@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取规则ID，可选参数，填写后获取指定的规则
                      * @return RuleIdList 规则ID，可选参数，填写后获取指定的规则
+                     * 
                      */
                     std::vector<std::string> GetRuleIdList() const;
 
                     /**
                      * 设置规则ID，可选参数，填写后获取指定的规则
-                     * @param RuleIdList 规则ID，可选参数，填写后获取指定的规则
+                     * @param _ruleIdList 规则ID，可选参数，填写后获取指定的规则
+                     * 
                      */
                     void SetRuleIdList(const std::vector<std::string>& _ruleIdList);
 
                     /**
                      * 判断参数 RuleIdList 是否已赋值
                      * @return RuleIdList 是否已赋值
+                     * 
                      */
                     bool RuleIdListHasBeenSet() const;
 
                     /**
                      * 获取一页条数，填0表示不分页
                      * @return Limit 一页条数，填0表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * @param _limit 一页条数，填0表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

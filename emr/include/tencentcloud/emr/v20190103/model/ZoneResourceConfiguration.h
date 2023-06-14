@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualPrivateCloud 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
                      * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualPrivateCloud 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @param _virtualPrivateCloud 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
 
                     /**
                      * 判断参数 VirtualPrivateCloud 是否已赋值
                      * @return VirtualPrivateCloud 是否已赋值
+                     * 
                      */
                     bool VirtualPrivateCloudHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param _placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllNodeResourceSpec 所有节点资源的规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AllNodeResourceSpec GetAllNodeResourceSpec() const;
 
                     /**
                      * 设置所有节点资源的规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllNodeResourceSpec 所有节点资源的规格
+                     * @param _allNodeResourceSpec 所有节点资源的规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllNodeResourceSpec(const AllNodeResourceSpec& _allNodeResourceSpec);
 
                     /**
                      * 判断参数 AllNodeResourceSpec 是否已赋值
                      * @return AllNodeResourceSpec 是否已赋值
+                     * 
                      */
                     bool AllNodeResourceSpecHasBeenSet() const;
 
@@ -126,6 +135,7 @@ namespace TencentCloud
   <li>standby</li>
   <li>third-party</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneTag() const;
 
@@ -135,17 +145,19 @@ namespace TencentCloud
   <li>standby</li>
   <li>third-party</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneTag 如果是单可用区，ZoneTag可以不用填， 如果是双AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，如果是三AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，第三个可用区ZoneTag选择third-party，取值范围：
+                     * @param _zoneTag 如果是单可用区，ZoneTag可以不用填， 如果是双AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，如果是三AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，第三个可用区ZoneTag选择third-party，取值范围：
   <li>master</li>
   <li>standby</li>
   <li>third-party</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneTag(const std::string& _zoneTag);
 
                     /**
                      * 判断参数 ZoneTag 是否已赋值
                      * @return ZoneTag 是否已赋值
+                     * 
                      */
                     bool ZoneTagHasBeenSet() const;
 

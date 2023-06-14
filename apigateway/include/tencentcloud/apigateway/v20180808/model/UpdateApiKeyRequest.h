@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待更换的密钥 ID。
                      * @return AccessKeyId 待更换的密钥 ID。
+                     * 
                      */
                     std::string GetAccessKeyId() const;
 
                     /**
                      * 设置待更换的密钥 ID。
-                     * @param AccessKeyId 待更换的密钥 ID。
+                     * @param _accessKeyId 待更换的密钥 ID。
+                     * 
                      */
                     void SetAccessKeyId(const std::string& _accessKeyId);
 
                     /**
                      * 判断参数 AccessKeyId 是否已赋值
                      * @return AccessKeyId 是否已赋值
+                     * 
                      */
                     bool AccessKeyIdHasBeenSet() const;
 
                     /**
                      * 获取待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。
                      * @return AccessKeySecret 待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。
+                     * 
                      */
                     std::string GetAccessKeySecret() const;
 
                     /**
                      * 设置待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。
-                     * @param AccessKeySecret 待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。
+                     * @param _accessKeySecret 待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。
+                     * 
                      */
                     void SetAccessKeySecret(const std::string& _accessKeySecret);
 
                     /**
                      * 判断参数 AccessKeySecret 是否已赋值
                      * @return AccessKeySecret 是否已赋值
+                     * 
                      */
                     bool AccessKeySecretHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return EndPoint 云转推输入源标识，取值有：
 <li>Main：主源；</li>
 <li>Backup：备源。</li>
+                     * 
                      */
                     std::string GetEndPoint() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置云转推输入源标识，取值有：
 <li>Main：主源；</li>
 <li>Backup：备源。</li>
-                     * @param EndPoint 云转推输入源标识，取值有：
+                     * @param _endPoint 云转推输入源标识，取值有：
 <li>Main：主源；</li>
 <li>Backup：备源。</li>
+                     * 
                      */
                     void SetEndPoint(const std::string& _endPoint);
 
                     /**
                      * 判断参数 EndPoint 是否已赋值
                      * @return EndPoint 是否已赋值
+                     * 
                      */
                     bool EndPointHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 附加项的金额（必须是正数，单位：分），代表积分的数量、抵扣的金额、溢价的金额、补贴的金额
                      * @return AttachmentAmount 附加项金额。
 附加项的金额（必须是正数，单位：分），代表积分的数量、抵扣的金额、溢价的金额、补贴的金额
+                     * 
                      */
                     int64_t GetAttachmentAmount() const;
 
                     /**
                      * 设置附加项金额。
 附加项的金额（必须是正数，单位：分），代表积分的数量、抵扣的金额、溢价的金额、补贴的金额
-                     * @param AttachmentAmount 附加项金额。
+                     * @param _attachmentAmount 附加项金额。
 附加项的金额（必须是正数，单位：分），代表积分的数量、抵扣的金额、溢价的金额、补贴的金额
+                     * 
                      */
                     void SetAttachmentAmount(const int64_t& _attachmentAmount);
 
                     /**
                      * 判断参数 AttachmentAmount 是否已赋值
                      * @return AttachmentAmount 是否已赋值
+                     * 
                      */
                     bool AttachmentAmountHasBeenSet() const;
 
@@ -79,6 +82,7 @@ Add：加项；
 Sub：减项；
 Point：积分项；
 Subsidy：补贴项。
+                     * 
                      */
                     std::string GetAttachmentType() const;
 
@@ -88,17 +92,19 @@ Add：加项；
 Sub：减项；
 Point：积分项；
 Subsidy：补贴项。
-                     * @param AttachmentType 附加项类型。
+                     * @param _attachmentType 附加项类型。
 Add：加项；
 Sub：减项；
 Point：积分项；
 Subsidy：补贴项。
+                     * 
                      */
                     void SetAttachmentType(const std::string& _attachmentType);
 
                     /**
                      * 判断参数 AttachmentType 是否已赋值
                      * @return AttachmentType 是否已赋值
+                     * 
                      */
                     bool AttachmentTypeHasBeenSet() const;
 
@@ -107,20 +113,23 @@ Subsidy：补贴项。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
                      * @return AttachmentName 附加项名称。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
+                     * 
                      */
                     std::string GetAttachmentName() const;
 
                     /**
                      * 设置附加项名称。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
-                     * @param AttachmentName 附加项名称。
+                     * @param _attachmentName 附加项名称。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
+                     * 
                      */
                     void SetAttachmentName(const std::string& _attachmentName);
 
                     /**
                      * 判断参数 AttachmentName 是否已赋值
                      * @return AttachmentName 是否已赋值
+                     * 
                      */
                     bool AttachmentNameHasBeenSet() const;
 
@@ -129,20 +138,23 @@ Subsidy：补贴项。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
                      * @return AttachmentCode 附加项编号。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
+                     * 
                      */
                     std::string GetAttachmentCode() const;
 
                     /**
                      * 设置附加项编号。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
-                     * @param AttachmentCode 附加项编号。
+                     * @param _attachmentCode 附加项编号。
 当银行作为收单机构可能会对该字段有要求，请向米大师确认。
+                     * 
                      */
                     void SetAttachmentCode(const std::string& _attachmentCode);
 
                     /**
                      * 判断参数 AttachmentCode 是否已赋值
                      * @return AttachmentCode 是否已赋值
+                     * 
                      */
                     bool AttachmentCodeHasBeenSet() const;
 

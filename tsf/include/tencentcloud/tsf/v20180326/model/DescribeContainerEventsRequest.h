@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取event 的资源类型, group 或者 instance
                      * @return ResourceType event 的资源类型, group 或者 instance
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置event 的资源类型, group 或者 instance
-                     * @param ResourceType event 的资源类型, group 或者 instance
+                     * @param _resourceType event 的资源类型, group 或者 instance
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取event 的资源 id
                      * @return ResourceId event 的资源 id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置event 的资源 id
-                     * @param ResourceId event 的资源 id
+                     * @param _resourceId event 的资源 id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取值从0开始
                      * @return Offset 偏移量，取值从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取值从0开始
-                     * @param Offset 偏移量，取值从0开始
+                     * @param _offset 偏移量，取值从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数，默认为20， 取值应为1~50
                      * @return Limit 分页个数，默认为20， 取值应为1~50
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页个数，默认为20， 取值应为1~50
-                     * @param Limit 分页个数，默认为20， 取值应为1~50
+                     * @param _limit 分页个数，默认为20， 取值应为1~50
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取当类型是 instance 时需要
                      * @return GroupId 当类型是 instance 时需要
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置当类型是 instance 时需要
-                     * @param GroupId 当类型是 instance 时需要
+                     * @param _groupId 当类型是 instance 时需要
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

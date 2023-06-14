@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 腾讯电子签颁发给第三方应用平台的应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 第三方应用平台模板库模板唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateResult 全部成功-"all-success",部分成功-"part-success", 全部失败-"fail"失败的会在FailMessageList中展示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperateResult() const;
 
                     /**
                      * 判断参数 OperateResult 是否已赋值
                      * @return OperateResult 是否已赋值
+                     * 
                      */
                     bool OperateResultHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthTag 模板可见性, 全部可见-"all", 部分可见-"part"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthTag() const;
 
                     /**
                      * 判断参数 AuthTag 是否已赋值
                      * @return AuthTag 是否已赋值
+                     * 
                      */
                     bool AuthTagHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetProxyOrganizationOpenIds() const;
 
                     /**
                      * 判断参数 ProxyOrganizationOpenIds 是否已赋值
                      * @return ProxyOrganizationOpenIds 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailMessageList 操作失败信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthFailMessage> GetFailMessageList() const;
 
                     /**
                      * 判断参数 FailMessageList 是否已赋值
                      * @return FailMessageList 是否已赋值
+                     * 
                      */
                     bool FailMessageListHasBeenSet() const;
 

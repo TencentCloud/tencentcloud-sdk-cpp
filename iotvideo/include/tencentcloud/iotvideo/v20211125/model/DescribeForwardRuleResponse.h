@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云账号
                      * @return Endpoint 腾讯云账号
+                     * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 判断参数 Endpoint 是否已赋值
                      * @return Endpoint 是否已赋值
+                     * 
                      */
                     bool EndpointHasBeenSet() const;
 
                     /**
                      * 获取队列名称
                      * @return QueueName 队列名称
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取消息类型 1设备上报信息 2设备状态变化通知 3为全选
                      * @return MsgType 消息类型 1设备上报信息 2设备状态变化通知 3为全选
+                     * 
                      */
                     uint64_t GetMsgType() const;
 
                     /**
                      * 判断参数 MsgType 是否已赋值
                      * @return MsgType 是否已赋值
+                     * 
                      */
                     bool MsgTypeHasBeenSet() const;
 
                     /**
                      * 获取结果 2表示禁用 其他为成功
                      * @return Result 结果 2表示禁用 其他为成功
+                     * 
                      */
                     uint64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取角色名
                      * @return RoleName 角色名
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取角色ID
                      * @return RoleID 角色ID
+                     * 
                      */
                     uint64_t GetRoleID() const;
 
                     /**
                      * 判断参数 RoleID 是否已赋值
                      * @return RoleID 是否已赋值
+                     * 
                      */
                     bool RoleIDHasBeenSet() const;
 
                     /**
                      * 获取队列区域
                      * @return QueueRegion 队列区域
+                     * 
                      */
                     std::string GetQueueRegion() const;
 
                     /**
                      * 判断参数 QueueRegion 是否已赋值
                      * @return QueueRegion 是否已赋值
+                     * 
                      */
                     bool QueueRegionHasBeenSet() const;
 
                     /**
                      * 获取队列类型，0：CMQ，1：Ckafka
                      * @return QueueType 队列类型，0：CMQ，1：Ckafka
+                     * 
                      */
                     uint64_t GetQueueType() const;
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 
                     /**
                      * 获取实例id， 目前只有Ckafaka会用到
                      * @return InstanceId 实例id， 目前只有Ckafaka会用到
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称，目前只有Ckafaka会用到
                      * @return InstanceName 实例名称，目前只有Ckafaka会用到
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取错误消息
                      * @return ErrMsg 错误消息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

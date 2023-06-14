@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 管控节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置管控节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeId 管控节点ID。
+                     * @param _nodeId 管控节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 

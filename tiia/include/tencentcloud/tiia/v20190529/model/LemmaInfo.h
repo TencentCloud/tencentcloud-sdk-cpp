@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LemmaTitle 词条
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLemmaTitle() const;
 
                     /**
                      * 设置词条
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LemmaTitle 词条
+                     * @param _lemmaTitle 词条
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLemmaTitle(const std::string& _lemmaTitle);
 
                     /**
                      * 判断参数 LemmaTitle 是否已赋值
                      * @return LemmaTitle 是否已赋值
+                     * 
                      */
                     bool LemmaTitleHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LemmaAbstract 词条描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLemmaAbstract() const;
 
                     /**
                      * 设置词条描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LemmaAbstract 词条描述
+                     * @param _lemmaAbstract 词条描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLemmaAbstract(const std::string& _lemmaAbstract);
 
                     /**
                      * 判断参数 LemmaAbstract 是否已赋值
                      * @return LemmaAbstract 是否已赋值
+                     * 
                      */
                     bool LemmaAbstractHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 标签
+                     * @param _tag 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

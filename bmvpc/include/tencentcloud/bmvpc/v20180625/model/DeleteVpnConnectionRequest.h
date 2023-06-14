@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取VPN通道实例ID。形如：bmvpnx-f49l6u0z。
                      * @return VpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * 
                      */
                     std::string GetVpnConnectionId() const;
 
                     /**
                      * 设置VPN通道实例ID。形如：bmvpnx-f49l6u0z。
-                     * @param VpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * @param _vpnConnectionId VPN通道实例ID。形如：bmvpnx-f49l6u0z。
+                     * 
                      */
                     void SetVpnConnectionId(const std::string& _vpnConnectionId);
 
                     /**
                      * 判断参数 VpnConnectionId 是否已赋值
                      * @return VpnConnectionId 是否已赋值
+                     * 
                      */
                     bool VpnConnectionIdHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取媒体库 ID
                      * @return LibraryId 媒体库 ID
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 设置媒体库 ID
-                     * @param LibraryId 媒体库 ID
+                     * @param _libraryId 媒体库 ID
+                     * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取媒体库名称，最多 50 个字符。如不传则不修改。
                      * @return Name 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒体库名称，最多 50 个字符。如不传则不修改。
-                     * @param Name 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * @param _name 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取备注，最多 250 个字符。如不传则不修改。
                      * @return Remark 备注，最多 250 个字符。如不传则不修改。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注，最多 250 个字符。如不传则不修改。
-                     * @param Remark 备注，最多 250 个字符。如不传则不修改。
+                     * @param _remark 备注，最多 250 个字符。如不传则不修改。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
                      * @return LibraryExtension 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * 
                      */
                     LibraryExtension GetLibraryExtension() const;
 
                     /**
                      * 设置媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
-                     * @param LibraryExtension 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * @param _libraryExtension 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * 
                      */
                     void SetLibraryExtension(const LibraryExtension& _libraryExtension);
 
                     /**
                      * 判断参数 LibraryExtension 是否已赋值
                      * @return LibraryExtension 是否已赋值
+                     * 
                      */
                     bool LibraryExtensionHasBeenSet() const;
 

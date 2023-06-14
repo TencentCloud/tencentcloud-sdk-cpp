@@ -52,162 +52,189 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`实例`ID`。
                      * @return VpcId `VPC`实例`ID`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`。
-                     * @param VpcId `VPC`实例`ID`。
+                     * @param _vpcId `VPC`实例`ID`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取网络ACL实例`ID`。
                      * @return NetworkAclId 网络ACL实例`ID`。
+                     * 
                      */
                     std::string GetNetworkAclId() const;
 
                     /**
                      * 设置网络ACL实例`ID`。
-                     * @param NetworkAclId 网络ACL实例`ID`。
+                     * @param _networkAclId 网络ACL实例`ID`。
+                     * 
                      */
                     void SetNetworkAclId(const std::string& _networkAclId);
 
                     /**
                      * 判断参数 NetworkAclId 是否已赋值
                      * @return NetworkAclId 是否已赋值
+                     * 
                      */
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
                      * 获取网络ACL名称，最大长度为60。
                      * @return NetworkAclName 网络ACL名称，最大长度为60。
+                     * 
                      */
                     std::string GetNetworkAclName() const;
 
                     /**
                      * 设置网络ACL名称，最大长度为60。
-                     * @param NetworkAclName 网络ACL名称，最大长度为60。
+                     * @param _networkAclName 网络ACL名称，最大长度为60。
+                     * 
                      */
                     void SetNetworkAclName(const std::string& _networkAclName);
 
                     /**
                      * 判断参数 NetworkAclName 是否已赋值
                      * @return NetworkAclName 是否已赋值
+                     * 
                      */
                     bool NetworkAclNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取网络ACL关联的子网数组。
                      * @return SubnetSet 网络ACL关联的子网数组。
+                     * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
 
                     /**
                      * 设置网络ACL关联的子网数组。
-                     * @param SubnetSet 网络ACL关联的子网数组。
+                     * @param _subnetSet 网络ACL关联的子网数组。
+                     * 
                      */
                     void SetSubnetSet(const std::vector<Subnet>& _subnetSet);
 
                     /**
                      * 判断参数 SubnetSet 是否已赋值
                      * @return SubnetSet 是否已赋值
+                     * 
                      */
                     bool SubnetSetHasBeenSet() const;
 
                     /**
                      * 获取网络ACl入站规则。
                      * @return IngressEntries 网络ACl入站规则。
+                     * 
                      */
                     std::vector<NetworkAclEntry> GetIngressEntries() const;
 
                     /**
                      * 设置网络ACl入站规则。
-                     * @param IngressEntries 网络ACl入站规则。
+                     * @param _ingressEntries 网络ACl入站规则。
+                     * 
                      */
                     void SetIngressEntries(const std::vector<NetworkAclEntry>& _ingressEntries);
 
                     /**
                      * 判断参数 IngressEntries 是否已赋值
                      * @return IngressEntries 是否已赋值
+                     * 
                      */
                     bool IngressEntriesHasBeenSet() const;
 
                     /**
                      * 获取网络ACL出站规则。
                      * @return EgressEntries 网络ACL出站规则。
+                     * 
                      */
                     std::vector<NetworkAclEntry> GetEgressEntries() const;
 
                     /**
                      * 设置网络ACL出站规则。
-                     * @param EgressEntries 网络ACL出站规则。
+                     * @param _egressEntries 网络ACL出站规则。
+                     * 
                      */
                     void SetEgressEntries(const std::vector<NetworkAclEntry>& _egressEntries);
 
                     /**
                      * 判断参数 EgressEntries 是否已赋值
                      * @return EgressEntries 是否已赋值
+                     * 
                      */
                     bool EgressEntriesHasBeenSet() const;
 
                     /**
                      * 获取网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
                      * @return NetworkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * 
                      */
                     std::string GetNetworkAclType() const;
 
                     /**
                      * 设置网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
-                     * @param NetworkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * @param _networkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * 
                      */
                     void SetNetworkAclType(const std::string& _networkAclType);
 
                     /**
                      * 判断参数 NetworkAclType 是否已赋值
                      * @return NetworkAclType 是否已赋值
+                     * 
                      */
                     bool NetworkAclTypeHasBeenSet() const;
 
                     /**
                      * 获取标签键值对
                      * @return TagSet 标签键值对
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对
-                     * @param TagSet 标签键值对
+                     * @param _tagSet 标签键值对
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

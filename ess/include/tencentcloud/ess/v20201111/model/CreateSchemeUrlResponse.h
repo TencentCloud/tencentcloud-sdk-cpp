@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取小程序链接地址，有效期5分钟
                      * @return SchemeUrl 小程序链接地址，有效期5分钟
+                     * 
                      */
                     std::string GetSchemeUrl() const;
 
                     /**
                      * 判断参数 SchemeUrl 是否已赋值
                      * @return SchemeUrl 是否已赋值
+                     * 
                      */
                     bool SchemeUrlHasBeenSet() const;
 

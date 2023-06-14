@@ -50,24 +50,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mongos Mongos节点属性。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeProperty> GetMongos() const;
 
                     /**
                      * 判断参数 Mongos 是否已赋值
                      * @return Mongos 是否已赋值
+                     * 
                      */
                     bool MongosHasBeenSet() const;
 
                     /**
                      * 获取副本集节点信息。
                      * @return ReplicateSets 副本集节点信息。
+                     * 
                      */
                     std::vector<ReplicateSetInfo> GetReplicateSets() const;
 
                     /**
                      * 判断参数 ReplicateSets 是否已赋值
                      * @return ReplicateSets 是否已赋值
+                     * 
                      */
                     bool ReplicateSetsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
 
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 用户ID。
+                     * @param _userId 用户ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginId 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginId() const;
 
                     /**
                      * 设置用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginId 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
+                     * @param _originId 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginId(const std::string& _originId);
 
                     /**
                      * 判断参数 OriginId 是否已赋值
                      * @return OriginId 是否已赋值
+                     * 
                      */
                     bool OriginIdHasBeenSet() const;
 

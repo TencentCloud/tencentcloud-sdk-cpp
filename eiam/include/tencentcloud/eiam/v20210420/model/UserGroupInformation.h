@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取用户组ID。
                      * @return UserGroupId 用户组ID。
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置用户组ID。
-                     * @param UserGroupId 用户组ID。
+                     * @param _userGroupId 用户组ID。
+                     * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 
                     /**
                      * 获取用户组名称。
                      * @return UserGroupName 用户组名称。
+                     * 
                      */
                     std::string GetUserGroupName() const;
 
                     /**
                      * 设置用户组名称。
-                     * @param UserGroupName 用户组名称。
+                     * @param _userGroupName 用户组名称。
+                     * 
                      */
                     void SetUserGroupName(const std::string& _userGroupName);
 
                     /**
                      * 判断参数 UserGroupName 是否已赋值
                      * @return UserGroupName 是否已赋值
+                     * 
                      */
                     bool UserGroupNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedDate 上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedDate() const;
 
                     /**
                      * 设置上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedDate 上次更新时间，符合 ISO8601 标准。
+                     * @param _lastModifiedDate 上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedDate(const std::string& _lastModifiedDate);
 
                     /**
                      * 判断参数 LastModifiedDate 是否已赋值
                      * @return LastModifiedDate 是否已赋值
+                     * 
                      */
                     bool LastModifiedDateHasBeenSet() const;
 

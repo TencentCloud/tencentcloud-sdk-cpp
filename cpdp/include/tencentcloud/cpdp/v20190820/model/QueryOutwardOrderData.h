@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取对接方汇出指令编号
                      * @return TransactionId 对接方汇出指令编号
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置对接方汇出指令编号
-                     * @param TransactionId 对接方汇出指令编号
+                     * @param _transactionId 对接方汇出指令编号
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AcctDate 财务日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAcctDate() const;
 
                     /**
                      * 设置财务日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AcctDate 财务日期
+                     * @param _acctDate 财务日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAcctDate(const std::string& _acctDate);
 
                     /**
                      * 判断参数 AcctDate 是否已赋值
                      * @return AcctDate 是否已赋值
+                     * 
                      */
                     bool AcctDateHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PricingCurrency 定价币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPricingCurrency() const;
 
                     /**
                      * 设置定价币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PricingCurrency 定价币种
+                     * @param _pricingCurrency 定价币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPricingCurrency(const std::string& _pricingCurrency);
 
                     /**
                      * 判断参数 PricingCurrency 是否已赋值
                      * @return PricingCurrency 是否已赋值
+                     * 
                      */
                     bool PricingCurrencyHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceCurrency 源币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceCurrency() const;
 
                     /**
                      * 设置源币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceCurrency 源币种
+                     * @param _sourceCurrency 源币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceCurrency(const std::string& _sourceCurrency);
 
                     /**
                      * 判断参数 SourceCurrency 是否已赋值
                      * @return SourceCurrency 是否已赋值
+                     * 
                      */
                     bool SourceCurrencyHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceAmount 源金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceAmount() const;
 
                     /**
                      * 设置源金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceAmount 源金额
+                     * @param _sourceAmount 源金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceAmount(const std::string& _sourceAmount);
 
                     /**
                      * 判断参数 SourceAmount 是否已赋值
                      * @return SourceAmount 是否已赋值
+                     * 
                      */
                     bool SourceAmountHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetCurrency 目的币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetCurrency() const;
 
                     /**
                      * 设置目的币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetCurrency 目的币种
+                     * @param _targetCurrency 目的币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetCurrency(const std::string& _targetCurrency);
 
                     /**
                      * 判断参数 TargetCurrency 是否已赋值
                      * @return TargetCurrency 是否已赋值
+                     * 
                      */
                     bool TargetCurrencyHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetAmount 目的金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetAmount() const;
 
                     /**
                      * 设置目的金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetAmount 目的金额
+                     * @param _targetAmount 目的金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetAmount(const std::string& _targetAmount);
 
                     /**
                      * 判断参数 TargetAmount 是否已赋值
                      * @return TargetAmount 是否已赋值
+                     * 
                      */
                     bool TargetAmountHasBeenSet() const;
 
@@ -219,38 +243,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FxRate 汇率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFxRate() const;
 
                     /**
                      * 设置汇率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FxRate 汇率
+                     * @param _fxRate 汇率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFxRate(const std::string& _fxRate);
 
                     /**
                      * 判断参数 FxRate 是否已赋值
                      * @return FxRate 是否已赋值
+                     * 
                      */
                     bool FxRateHasBeenSet() const;
 
                     /**
                      * 获取指令状态
                      * @return Status 指令状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置指令状态
-                     * @param Status 指令状态
+                     * @param _status 指令状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -259,20 +289,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因
+                     * @param _failReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
@@ -281,20 +314,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundAmount 退汇金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefundAmount() const;
 
                     /**
                      * 设置退汇金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundAmount 退汇金额
+                     * @param _refundAmount 退汇金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundAmount(const std::string& _refundAmount);
 
                     /**
                      * 判断参数 RefundAmount 是否已赋值
                      * @return RefundAmount 是否已赋值
+                     * 
                      */
                     bool RefundAmountHasBeenSet() const;
 
@@ -303,20 +339,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundCurrency 退汇币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefundCurrency() const;
 
                     /**
                      * 设置退汇币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundCurrency 退汇币种
+                     * @param _refundCurrency 退汇币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundCurrency(const std::string& _refundCurrency);
 
                     /**
                      * 判断参数 RefundCurrency 是否已赋值
                      * @return RefundCurrency 是否已赋值
+                     * 
                      */
                     bool RefundCurrencyHasBeenSet() const;
 

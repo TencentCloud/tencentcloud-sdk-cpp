@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取按整形代表值的下限检索。
                      * @return LowerBound 按整形代表值的下限检索。
+                     * 
                      */
                     int64_t GetLowerBound() const;
 
                     /**
                      * 设置按整形代表值的下限检索。
-                     * @param LowerBound 按整形代表值的下限检索。
+                     * @param _lowerBound 按整形代表值的下限检索。
+                     * 
                      */
                     void SetLowerBound(const int64_t& _lowerBound);
 
                     /**
                      * 判断参数 LowerBound 是否已赋值
                      * @return LowerBound 是否已赋值
+                     * 
                      */
                     bool LowerBoundHasBeenSet() const;
 
                     /**
                      * 获取按整形代表值的上限检索。
                      * @return UpperBound 按整形代表值的上限检索。
+                     * 
                      */
                     int64_t GetUpperBound() const;
 
                     /**
                      * 设置按整形代表值的上限检索。
-                     * @param UpperBound 按整形代表值的上限检索。
+                     * @param _upperBound 按整形代表值的上限检索。
+                     * 
                      */
                     void SetUpperBound(const int64_t& _upperBound);
 
                     /**
                      * 判断参数 UpperBound 是否已赋值
                      * @return UpperBound 是否已赋值
+                     * 
                      */
                     bool UpperBoundHasBeenSet() const;
 

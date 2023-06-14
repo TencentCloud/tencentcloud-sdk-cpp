@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取pod名称
                      * @return PodName pod名称
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置pod名称
-                     * @param PodName pod名称
+                     * @param _podName pod名称
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取事件原因内容
                      * @return Reason 事件原因内容
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置事件原因内容
-                     * @param Reason 事件原因内容
+                     * @param _reason 事件原因内容
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取事件类型
                      * @return Type 事件类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型
-                     * @param Type 事件类型
+                     * @param _type 事件类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取事件出现次数
                      * @return Count 事件出现次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置事件出现次数
-                     * @param Count 事件出现次数
+                     * @param _count 事件出现次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取事件第一次出现时间
                      * @return FirstTimestamp 事件第一次出现时间
+                     * 
                      */
                     std::string GetFirstTimestamp() const;
 
                     /**
                      * 设置事件第一次出现时间
-                     * @param FirstTimestamp 事件第一次出现时间
+                     * @param _firstTimestamp 事件第一次出现时间
+                     * 
                      */
                     void SetFirstTimestamp(const std::string& _firstTimestamp);
 
                     /**
                      * 判断参数 FirstTimestamp 是否已赋值
                      * @return FirstTimestamp 是否已赋值
+                     * 
                      */
                     bool FirstTimestampHasBeenSet() const;
 
                     /**
                      * 获取事件最后一次出现时间
                      * @return LastTimestamp 事件最后一次出现时间
+                     * 
                      */
                     std::string GetLastTimestamp() const;
 
                     /**
                      * 设置事件最后一次出现时间
-                     * @param LastTimestamp 事件最后一次出现时间
+                     * @param _lastTimestamp 事件最后一次出现时间
+                     * 
                      */
                     void SetLastTimestamp(const std::string& _lastTimestamp);
 
                     /**
                      * 判断参数 LastTimestamp 是否已赋值
                      * @return LastTimestamp 是否已赋值
+                     * 
                      */
                     bool LastTimestampHasBeenSet() const;
 
                     /**
                      * 获取事件内容
                      * @return Message 事件内容
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置事件内容
-                     * @param Message 事件内容
+                     * @param _message 事件内容
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

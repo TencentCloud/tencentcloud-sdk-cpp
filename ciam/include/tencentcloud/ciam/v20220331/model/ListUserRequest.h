@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取分页数据
                      * @return Pageable 分页数据
+                     * 
                      */
                     Pageable GetPageable() const;
 
                     /**
                      * 设置分页数据
-                     * @param Pageable 分页数据
+                     * @param _pageable 分页数据
+                     * 
                      */
                     void SetPageable(const Pageable& _pageable);
 
                     /**
                      * 判断参数 Pageable 是否已赋值
                      * @return Pageable 是否已赋值
+                     * 
                      */
                     bool PageableHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -97,34 +104,39 @@ namespace TencentCloud
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
-                     * @param Filters Key可选值为condition、userGroupId
+                     * @param _filters Key可选值为condition、userGroupId
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取返回信息是否为原文
                      * @return Original 返回信息是否为原文
+                     * 
                      */
                     bool GetOriginal() const;
 
                     /**
                      * 设置返回信息是否为原文
-                     * @param Original 返回信息是否为原文
+                     * @param _original 返回信息是否为原文
+                     * 
                      */
                     void SetOriginal(const bool& _original);
 
                     /**
                      * 判断参数 Original 是否已赋值
                      * @return Original 是否已赋值
+                     * 
                      */
                     bool OriginalHasBeenSet() const;
 

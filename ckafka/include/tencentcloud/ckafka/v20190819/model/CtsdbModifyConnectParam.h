@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Ctsdb的连接port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Ctsdb的连接port
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port Ctsdb的连接port
+                     * @param _port Ctsdb的连接port
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip Ctsdb连接源的实例vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置Ctsdb连接源的实例vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceVip Ctsdb连接源的实例vip
+                     * @param _serviceVip Ctsdb连接源的实例vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
 
                     /**
                      * 判断参数 ServiceVip 是否已赋值
                      * @return ServiceVip 是否已赋值
+                     * 
                      */
                     bool ServiceVipHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId Ctsdb连接源的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置Ctsdb连接源的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqVpcId Ctsdb连接源的vpcId
+                     * @param _uniqVpcId Ctsdb连接源的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName Ctsdb连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Ctsdb连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName Ctsdb连接源的用户名
+                     * @param _userName Ctsdb连接源的用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Ctsdb连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Ctsdb连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Password Ctsdb连接源的密码
+                     * @param _password Ctsdb连接源的密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Ctsdb连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Ctsdb连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource Ctsdb连接源的实例资源
+                     * @param _resource Ctsdb连接源的实例资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

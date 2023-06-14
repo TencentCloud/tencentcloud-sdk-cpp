@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取运营商ID
                      * @return ISPId 运营商ID
+                     * 
                      */
                     std::string GetISPId() const;
 
                     /**
                      * 设置运营商ID
-                     * @param ISPId 运营商ID
+                     * @param _iSPId 运营商ID
+                     * 
                      */
                     void SetISPId(const std::string& _iSPId);
 
                     /**
                      * 判断参数 ISPId 是否已赋值
                      * @return ISPId 是否已赋值
+                     * 
                      */
                     bool ISPIdHasBeenSet() const;
 
                     /**
                      * 获取运营商名称
                      * @return ISPName 运营商名称
+                     * 
                      */
                     std::string GetISPName() const;
 
                     /**
                      * 设置运营商名称
-                     * @param ISPName 运营商名称
+                     * @param _iSPName 运营商名称
+                     * 
                      */
                     void SetISPName(const std::string& _iSPName);
 
                     /**
                      * 判断参数 ISPName 是否已赋值
                      * @return ISPName 是否已赋值
+                     * 
                      */
                     bool ISPNameHasBeenSet() const;
 

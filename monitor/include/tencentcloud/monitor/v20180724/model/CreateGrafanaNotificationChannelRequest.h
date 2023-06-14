@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-abcdefgh
                      * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取告警通道名称，例如：test
                      * @return ChannelName 告警通道名称，例如：test
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置告警通道名称，例如：test
-                     * @param ChannelName 告警通道名称，例如：test
+                     * @param _channelName 告警通道名称，例如：test
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取默认为1，已废弃，请使用 OrganizationIds
                      * @return OrgId 默认为1，已废弃，请使用 OrganizationIds
+                     * 
                      */
                     int64_t GetOrgId() const;
 
                     /**
                      * 设置默认为1，已废弃，请使用 OrganizationIds
-                     * @param OrgId 默认为1，已废弃，请使用 OrganizationIds
+                     * @param _orgId 默认为1，已废弃，请使用 OrganizationIds
+                     * 
                      */
                     void SetOrgId(const int64_t& _orgId);
 
                     /**
                      * 判断参数 OrgId 是否已赋值
                      * @return OrgId 是否已赋值
+                     * 
                      */
                     bool OrgIdHasBeenSet() const;
 
                     /**
                      * 获取接受告警通道 ID 数组
                      * @return Receivers 接受告警通道 ID 数组
+                     * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
                      * 设置接受告警通道 ID 数组
-                     * @param Receivers 接受告警通道 ID 数组
+                     * @param _receivers 接受告警通道 ID 数组
+                     * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
 
                     /**
                      * 判断参数 Receivers 是否已赋值
                      * @return Receivers 是否已赋值
+                     * 
                      */
                     bool ReceiversHasBeenSet() const;
 
                     /**
                      * 获取额外组织 ID 数组，已废弃，请使用 OrganizationIds
                      * @return ExtraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * 
                      */
                     std::vector<std::string> GetExtraOrgIds() const;
 
                     /**
                      * 设置额外组织 ID 数组，已废弃，请使用 OrganizationIds
-                     * @param ExtraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * @param _extraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * 
                      */
                     void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
 
                     /**
                      * 判断参数 ExtraOrgIds 是否已赋值
                      * @return ExtraOrgIds 是否已赋值
+                     * 
                      */
                     bool ExtraOrgIdsHasBeenSet() const;
 
                     /**
                      * 获取生效的所有组织 ID 数组，默认为 ["1"]
                      * @return OrganizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     * 
                      */
                     std::vector<std::string> GetOrganizationIds() const;
 
                     /**
                      * 设置生效的所有组织 ID 数组，默认为 ["1"]
-                     * @param OrganizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     * @param _organizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     * 
                      */
                     void SetOrganizationIds(const std::vector<std::string>& _organizationIds);
 
                     /**
                      * 判断参数 OrganizationIds 是否已赋值
                      * @return OrganizationIds 是否已赋值
+                     * 
                      */
                     bool OrganizationIdsHasBeenSet() const;
 

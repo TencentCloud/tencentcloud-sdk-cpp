@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取是否只解绑，不删除容器集群，默认不传则删除容器集群。
                      * @return Unbind 是否只解绑，不删除容器集群，默认不传则删除容器集群。
+                     * 
                      */
                     bool GetUnbind() const;
 
                     /**
                      * 设置是否只解绑，不删除容器集群，默认不传则删除容器集群。
-                     * @param Unbind 是否只解绑，不删除容器集群，默认不传则删除容器集群。
+                     * @param _unbind 是否只解绑，不删除容器集群，默认不传则删除容器集群。
+                     * 
                      */
                     void SetUnbind(const bool& _unbind);
 
                     /**
                      * 判断参数 Unbind 是否已赋值
                      * @return Unbind 是否已赋值
+                     * 
                      */
                     bool UnbindHasBeenSet() const;
 

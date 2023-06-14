@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
@@ -64,16 +65,18 @@ namespace TencentCloud
 <li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
-                     * @param StartTimeOffset 视频拆条起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 视频拆条起始的偏移时间，单位：秒。
 <li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
@@ -86,6 +89,7 @@ namespace TencentCloud
 <li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
@@ -94,52 +98,60 @@ namespace TencentCloud
 <li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
-                     * @param EndTimeOffset 视频拆条结束的偏移时间，单位：秒。
+                     * @param _endTimeOffset 视频拆条结束的偏移时间，单位：秒。
 <li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
 <li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
 <li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
                      * @return ProcedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * 
                      */
                     std::string GetProcedureName() const;
 
                     /**
                      * 设置[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
-                     * @param ProcedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * @param _procedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * 
                      */
                     void SetProcedureName(const std::string& _procedureName);
 
                     /**
                      * 判断参数 ProcedureName 是否已赋值
                      * @return ProcedureName 是否已赋值
+                     * 
                      */
                     bool ProcedureNameHasBeenSet() const;
 
                     /**
                      * 获取视频拆条输出信息。
                      * @return OutputConfig 视频拆条输出信息。
+                     * 
                      */
                     SplitMediaOutputConfig GetOutputConfig() const;
 
                     /**
                      * 设置视频拆条输出信息。
-                     * @param OutputConfig 视频拆条输出信息。
+                     * @param _outputConfig 视频拆条输出信息。
+                     * 
                      */
                     void SetOutputConfig(const SplitMediaOutputConfig& _outputConfig);
 
                     /**
                      * 判断参数 OutputConfig 是否已赋值
                      * @return OutputConfig 是否已赋值
+                     * 
                      */
                     bool OutputConfigHasBeenSet() const;
 

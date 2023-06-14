@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取环境ID。
                      * @return EnvironmentId 环境ID。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取工作流UUID。
                      * @return WorkflowUuid 工作流UUID。
+                     * 
                      */
                     std::string GetWorkflowUuid() const;
 
                     /**
                      * 判断参数 WorkflowUuid 是否已赋值
                      * @return WorkflowUuid 是否已赋值
+                     * 
                      */
                     bool WorkflowUuidHasBeenSet() const;
 

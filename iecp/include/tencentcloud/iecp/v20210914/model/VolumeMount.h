@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取挂载路径
                      * @return MountPath 挂载路径
+                     * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
-                     * @param MountPath 挂载路径
+                     * @param _mountPath 挂载路径
+                     * 
                      */
                     void SetMountPath(const std::string& _mountPath);
 
                     /**
                      * 判断参数 MountPath 是否已赋值
                      * @return MountPath 是否已赋值
+                     * 
                      */
                     bool MountPathHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubPath 子路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubPath() const;
 
                     /**
                      * 设置子路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubPath 子路径
+                     * @param _subPath 子路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubPath(const std::string& _subPath);
 
                     /**
                      * 判断参数 SubPath 是否已赋值
                      * @return SubPath 是否已赋值
+                     * 
                      */
                     bool SubPathHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否只读
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadOnly 是否只读
+                     * @param _readOnly 是否只读
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 

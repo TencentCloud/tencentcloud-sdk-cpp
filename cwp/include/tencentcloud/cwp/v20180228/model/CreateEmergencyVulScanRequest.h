@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取漏洞id
                      * @return VulId 漏洞id
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞id
-                     * @param VulId 漏洞id
+                     * @param _vulId 漏洞id
+                     * 
                      */
                     void SetVulId(const uint64_t& _vulId);
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 
                     /**
                      * 获取自选服务器时生效，主机uuid的string数组
                      * @return Uuids 自选服务器时生效，主机uuid的string数组
+                     * 
                      */
                     std::vector<std::string> GetUuids() const;
 
                     /**
                      * 设置自选服务器时生效，主机uuid的string数组
-                     * @param Uuids 自选服务器时生效，主机uuid的string数组
+                     * @param _uuids 自选服务器时生效，主机uuid的string数组
+                     * 
                      */
                     void SetUuids(const std::vector<std::string>& _uuids);
 
                     /**
                      * 判断参数 Uuids 是否已赋值
                      * @return Uuids 是否已赋值
+                     * 
                      */
                     bool UuidsHasBeenSet() const;
 
                     /**
                      * 获取扫描超时时长 ，单位秒
                      * @return TimeoutPeriod 扫描超时时长 ，单位秒
+                     * 
                      */
                     uint64_t GetTimeoutPeriod() const;
 
                     /**
                      * 设置扫描超时时长 ，单位秒
-                     * @param TimeoutPeriod 扫描超时时长 ，单位秒
+                     * @param _timeoutPeriod 扫描超时时长 ，单位秒
+                     * 
                      */
                     void SetTimeoutPeriod(const uint64_t& _timeoutPeriod);
 
                     /**
                      * 判断参数 TimeoutPeriod 是否已赋值
                      * @return TimeoutPeriod 是否已赋值
+                     * 
                      */
                     bool TimeoutPeriodHasBeenSet() const;
 

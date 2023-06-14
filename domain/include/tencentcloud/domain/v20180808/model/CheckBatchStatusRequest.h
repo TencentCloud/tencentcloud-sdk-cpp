@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取操作日志 ID数组，最多 200 个
                      * @return LogIds 操作日志 ID数组，最多 200 个
+                     * 
                      */
                     std::vector<uint64_t> GetLogIds() const;
 
                     /**
                      * 设置操作日志 ID数组，最多 200 个
-                     * @param LogIds 操作日志 ID数组，最多 200 个
+                     * @param _logIds 操作日志 ID数组，最多 200 个
+                     * 
                      */
                     void SetLogIds(const std::vector<uint64_t>& _logIds);
 
                     /**
                      * 判断参数 LogIds 是否已赋值
                      * @return LogIds 是否已赋值
+                     * 
                      */
                     bool LogIdsHasBeenSet() const;
 

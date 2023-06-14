@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -60,87 +61,101 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码
+                     * @param _errCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误描述。
                      * @return Message 错误描述。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误描述。
-                     * @param Message 错误描述。
+                     * @param _message 错误描述。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取输出目标文件的文件 ID。
                      * @return FileId 输出目标文件的文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置输出目标文件的文件 ID。
-                     * @param FileId 输出目标文件的文件 ID。
+                     * @param _fileId 输出目标文件的文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取输出目标文件的文件地址。
                      * @return FileUrl 输出目标文件的文件地址。
+                     * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置输出目标文件的文件地址。
-                     * @param FileUrl 输出目标文件的文件地址。
+                     * @param _fileUrl 输出目标文件的文件地址。
+                     * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 
                     /**
                      * 获取输出目标文件的文件类型。
                      * @return FileType 输出目标文件的文件类型。
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置输出目标文件的文件类型。
-                     * @param FileType 输出目标文件的文件类型。
+                     * @param _fileType 输出目标文件的文件类型。
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 

@@ -53,36 +53,42 @@ namespace TencentCloud
                     /**
                      * 获取Mesh实例Id
                      * @return MeshId Mesh实例Id
+                     * 
                      */
                     std::string GetMeshId() const;
 
                     /**
                      * 设置Mesh实例Id
-                     * @param MeshId Mesh实例Id
+                     * @param _meshId Mesh实例Id
+                     * 
                      */
                     void SetMeshId(const std::string& _meshId);
 
                     /**
                      * 判断参数 MeshId 是否已赋值
                      * @return MeshId 是否已赋值
+                     * 
                      */
                     bool MeshIdHasBeenSet() const;
 
                     /**
                      * 获取Mesh名称
                      * @return DisplayName Mesh名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置Mesh名称
-                     * @param DisplayName Mesh名称
+                     * @param _displayName Mesh名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
                      * @return Type Mesh类型，取值范围：
 - STANDALONE：独立网格
 - HOSTED：托管网格
+                     * 
                      */
                     std::string GetType() const;
 
@@ -100,51 +107,59 @@ namespace TencentCloud
                      * 设置Mesh类型，取值范围：
 - STANDALONE：独立网格
 - HOSTED：托管网格
-                     * @param Type Mesh类型，取值范围：
+                     * @param _type Mesh类型，取值范围：
 - STANDALONE：独立网格
 - HOSTED：托管网格
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return Version 版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
-                     * @param Version 版本
+                     * @param _version 版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -175,6 +190,7 @@ namespace TencentCloud
 - DELETE_FAILED：删除失败
 - UPGRADE_FAILED：升级失败
 - ROLLBACK_FAILED：回滚失败
+                     * 
                      */
                     std::string GetState() const;
 
@@ -192,7 +208,7 @@ namespace TencentCloud
 - DELETE_FAILED：删除失败
 - UPGRADE_FAILED：升级失败
 - ROLLBACK_FAILED：回滚失败
-                     * @param State Mesh状态，取值范围：
+                     * @param _state Mesh状态，取值范围：
 - PENDING：等待中
 - CREATING：创建中
 - RUNNING：运行中
@@ -205,30 +221,35 @@ namespace TencentCloud
 - DELETE_FAILED：删除失败
 - UPGRADE_FAILED：升级失败
 - ROLLBACK_FAILED：回滚失败
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedTime 创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -237,92 +258,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 修改时间
+                     * @param _updatedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
                      * 获取集群列表
                      * @return ClusterList 集群列表
+                     * 
                      */
                     std::vector<Cluster> GetClusterList() const;
 
                     /**
                      * 设置集群列表
-                     * @param ClusterList 集群列表
+                     * @param _clusterList 集群列表
+                     * 
                      */
                     void SetClusterList(const std::vector<Cluster>& _clusterList);
 
                     /**
                      * 判断参数 ClusterList 是否已赋值
                      * @return ClusterList 是否已赋值
+                     * 
                      */
                     bool ClusterListHasBeenSet() const;
 
                     /**
                      * 获取Mesh配置
                      * @return Config Mesh配置
+                     * 
                      */
                     MeshConfig GetConfig() const;
 
                     /**
                      * 设置Mesh配置
-                     * @param Config Mesh配置
+                     * @param _config Mesh配置
+                     * 
                      */
                     void SetConfig(const MeshConfig& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
                     /**
                      * 获取Mesh详细状态
                      * @return Status Mesh详细状态
+                     * 
                      */
                     MeshStatus GetStatus() const;
 
                     /**
                      * 设置Mesh详细状态
-                     * @param Status Mesh详细状态
+                     * @param _status Mesh详细状态
+                     * 
                      */
                     void SetStatus(const MeshStatus& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return TagList 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置标签列表
-                     * @param TagList 标签列表
+                     * @param _tagList 标签列表
+                     * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 

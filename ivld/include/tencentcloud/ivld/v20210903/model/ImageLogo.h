@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Logo 图片中出现的Logo识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogo() const;
 
                     /**
                      * 设置图片中出现的Logo识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Logo 图片中出现的Logo识别结果
+                     * @param _logo 图片中出现的Logo识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogo(const std::string& _logo);
 
                     /**
                      * 判断参数 Logo 是否已赋值
                      * @return Logo 是否已赋值
+                     * 
                      */
                     bool LogoHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearRect Logo在图片中出现的位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Rectf GetAppearRect() const;
 
                     /**
                      * 设置Logo在图片中出现的位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearRect Logo在图片中出现的位置
+                     * @param _appearRect Logo在图片中出现的位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearRect(const Rectf& _appearRect);
 
                     /**
                      * 判断参数 AppearRect 是否已赋值
                      * @return AppearRect 是否已赋值
+                     * 
                      */
                     bool AppearRectHasBeenSet() const;
 

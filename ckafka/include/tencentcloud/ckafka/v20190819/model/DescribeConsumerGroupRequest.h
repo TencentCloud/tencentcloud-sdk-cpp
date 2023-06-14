@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取ckafka实例id。
                      * @return InstanceId ckafka实例id。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ckafka实例id。
-                     * @param InstanceId ckafka实例id。
+                     * @param _instanceId ckafka实例id。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取可选，用户需要查询的group名称。
                      * @return GroupName 可选，用户需要查询的group名称。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置可选，用户需要查询的group名称。
-                     * @param GroupName 可选，用户需要查询的group名称。
+                     * @param _groupName 可选，用户需要查询的group名称。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
                      * @return TopicName 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
-                     * @param TopicName 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * @param _topicName 可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取本次返回个数限制
                      * @return Limit 本次返回个数限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置本次返回个数限制
-                     * @param Limit 本次返回个数限制
+                     * @param _limit 本次返回个数限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移位置
                      * @return Offset 偏移位置
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移位置
-                     * @param Offset 偏移位置
+                     * @param _offset 偏移位置
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

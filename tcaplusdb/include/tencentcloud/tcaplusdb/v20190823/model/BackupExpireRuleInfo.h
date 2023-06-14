@@ -56,90 +56,105 @@ OperType=0 代表动作为新增， =1 代表动作为删除， =2 代表动作�
                     /**
                      * 获取所属表格组ID
                      * @return TableGroupId 所属表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置所属表格组ID
-                     * @param TableGroupId 所属表格组ID
+                     * @param _tableGroupId 所属表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return TableName 表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取文件标签，见上面描述
                      * @return FileTag 文件标签，见上面描述
+                     * 
                      */
                     uint64_t GetFileTag() const;
 
                     /**
                      * 设置文件标签，见上面描述
-                     * @param FileTag 文件标签，见上面描述
+                     * @param _fileTag 文件标签，见上面描述
+                     * 
                      */
                     void SetFileTag(const uint64_t& _fileTag);
 
                     /**
                      * 判断参数 FileTag 是否已赋值
                      * @return FileTag 是否已赋值
+                     * 
                      */
                     bool FileTagHasBeenSet() const;
 
                     /**
                      * 获取淘汰天数，见上面描述
                      * @return ExpireDay 淘汰天数，见上面描述
+                     * 
                      */
                     uint64_t GetExpireDay() const;
 
                     /**
                      * 设置淘汰天数，见上面描述
-                     * @param ExpireDay 淘汰天数，见上面描述
+                     * @param _expireDay 淘汰天数，见上面描述
+                     * 
                      */
                     void SetExpireDay(const uint64_t& _expireDay);
 
                     /**
                      * 判断参数 ExpireDay 是否已赋值
                      * @return ExpireDay 是否已赋值
+                     * 
                      */
                     bool ExpireDayHasBeenSet() const;
 
                     /**
                      * 获取操作类型，见上面描述
                      * @return OperType 操作类型，见上面描述
+                     * 
                      */
                     uint64_t GetOperType() const;
 
                     /**
                      * 设置操作类型，见上面描述
-                     * @param OperType 操作类型，见上面描述
+                     * @param _operType 操作类型，见上面描述
+                     * 
                      */
                     void SetOperType(const uint64_t& _operType);
 
                     /**
                      * 判断参数 OperType 是否已赋值
                      * @return OperType 是否已赋值
+                     * 
                      */
                     bool OperTypeHasBeenSet() const;
 

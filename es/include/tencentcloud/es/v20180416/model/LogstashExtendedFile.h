@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取扩展文件名称
                      * @return Name 扩展文件名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置扩展文件名称
-                     * @param Name 扩展文件名称
+                     * @param _name 扩展文件名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取扩展文件大小，单位B
                      * @return Size 扩展文件大小，单位B
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置扩展文件大小，单位B
-                     * @param Size 扩展文件大小，单位B
+                     * @param _size 扩展文件大小，单位B
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

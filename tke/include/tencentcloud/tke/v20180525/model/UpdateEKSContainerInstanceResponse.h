@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EksCiId 容器实例 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEksCiId() const;
 
                     /**
                      * 判断参数 EksCiId 是否已赋值
                      * @return EksCiId 是否已赋值
+                     * 
                      */
                     bool EksCiIdHasBeenSet() const;
 

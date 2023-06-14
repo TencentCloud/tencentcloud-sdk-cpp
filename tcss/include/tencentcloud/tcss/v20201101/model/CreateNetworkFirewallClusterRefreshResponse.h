@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回创建的集群检查任务的ID，为0表示创建失败。
                      * @return TaskId 返回创建的集群检查任务的ID，为0表示创建失败。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取创建检查任务的结果，"Succ"为成功，"Failed"为失败
                      * @return Result 创建检查任务的结果，"Succ"为成功，"Failed"为失败
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

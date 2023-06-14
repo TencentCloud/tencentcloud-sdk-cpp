@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资产同步结果
                      * @return Status 资产同步结果
+                     * 
                      */
                     AssetSyncStatus GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

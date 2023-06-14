@@ -55,6 +55,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 组成Cachekey配置开关，取值有：
+                     * @param _switch 组成Cachekey配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,20 +84,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 组成CacheKey的header数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置组成CacheKey的header数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 组成CacheKey的header数组，';' 分割
+                     * @param _value 组成CacheKey的header数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

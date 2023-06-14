@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务ID，可通过 DescribeTaskInfo 接口查询任务执行状态
                      * @return TaskId 任务ID，可通过 DescribeTaskInfo 接口查询任务执行状态
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

@@ -48,92 +48,107 @@ namespace TencentCloud
 表示获取账号下所有实例)
                      * @return Registryids 实例ID列表(为空时，
 表示获取账号下所有实例)
+                     * 
                      */
                     std::vector<std::string> GetRegistryids() const;
 
                     /**
                      * 设置实例ID列表(为空时，
 表示获取账号下所有实例)
-                     * @param Registryids 实例ID列表(为空时，
+                     * @param _registryids 实例ID列表(为空时，
 表示获取账号下所有实例)
+                     * 
                      */
                     void SetRegistryids(const std::vector<std::string>& _registryids);
 
                     /**
                      * 判断参数 Registryids 是否已赋值
                      * @return Registryids 是否已赋值
+                     * 
                      */
                     bool RegistryidsHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0
                      * @return Offset 偏移量,默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * @param _offset 偏移量,默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取最大输出条数，默认20，最大为100
                      * @return Limit 最大输出条数，默认20，最大为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大输出条数，默认20，最大为100
-                     * @param Limit 最大输出条数，默认20，最大为100
+                     * @param _limit 最大输出条数，默认20，最大为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取获取所有地域的实例，默认为False
                      * @return AllRegion 获取所有地域的实例，默认为False
+                     * 
                      */
                     bool GetAllRegion() const;
 
                     /**
                      * 设置获取所有地域的实例，默认为False
-                     * @param AllRegion 获取所有地域的实例，默认为False
+                     * @param _allRegion 获取所有地域的实例，默认为False
+                     * 
                      */
                     void SetAllRegion(const bool& _allRegion);
 
                     /**
                      * 判断参数 AllRegion 是否已赋值
                      * @return AllRegion 是否已赋值
+                     * 
                      */
                     bool AllRegionHasBeenSet() const;
 

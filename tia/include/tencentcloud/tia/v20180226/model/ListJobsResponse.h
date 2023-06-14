@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取训练任务列表
                      * @return Jobs 训练任务列表
+                     * 
                      */
                     std::vector<Job> GetJobs() const;
 
                     /**
                      * 判断参数 Jobs 是否已赋值
                      * @return Jobs 是否已赋值
+                     * 
                      */
                     bool JobsHasBeenSet() const;
 

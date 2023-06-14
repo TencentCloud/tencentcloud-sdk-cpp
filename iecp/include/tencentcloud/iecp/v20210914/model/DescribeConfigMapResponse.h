@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml yaml配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Json 配置项的json格式(base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJson() const;
 
                     /**
                      * 判断参数 Json 是否已赋值
                      * @return Json 是否已赋值
+                     * 
                      */
                     bool JsonHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取字幕的唯一标识。
                      * @return Id 字幕的唯一标识。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置字幕的唯一标识。
-                     * @param Id 字幕的唯一标识。
+                     * @param _id 字幕的唯一标识。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取字幕名字。
                      * @return Name 字幕名字。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字幕名字。
-                     * @param Name 字幕名字。
+                     * @param _name 字幕名字。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
+                     * 
                      */
                     std::string GetLanguage() const;
 
@@ -102,17 +109,19 @@ namespace TencentCloud
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
-                     * @param Language 字幕语言。常见的取值如下：
+                     * @param _language 字幕语言。常见的取值如下：
 <li>cn：中文</li>
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
+                     * 
                      */
                     void SetLanguage(const std::string& _language);
 
                     /**
                      * 判断参数 Language 是否已赋值
                      * @return Language 是否已赋值
+                     * 
                      */
                     bool LanguageHasBeenSet() const;
 
@@ -121,38 +130,44 @@ namespace TencentCloud
 <li>vtt</li>
                      * @return Format 字幕格式。取值范围如下：
 <li>vtt</li>
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置字幕格式。取值范围如下：
 <li>vtt</li>
-                     * @param Format 字幕格式。取值范围如下：
+                     * @param _format 字幕格式。取值范围如下：
 <li>vtt</li>
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取字幕 URL。
                      * @return Url 字幕 URL。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置字幕 URL。
-                     * @param Url 字幕 URL。
+                     * @param _url 字幕 URL。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

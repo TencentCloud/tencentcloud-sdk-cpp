@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。目前仅支持单个实例的查询。
                      * @return InstanceIds 实例ID。目前仅支持单个实例的查询。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID。目前仅支持单个实例的查询。
-                     * @param InstanceIds 实例ID。目前仅支持单个实例的查询。
+                     * @param _instanceIds 实例ID。目前仅支持单个实例的查询。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

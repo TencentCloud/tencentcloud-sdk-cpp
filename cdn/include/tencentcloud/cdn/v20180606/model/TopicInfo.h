@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取主题ID
                      * @return TopicId 主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题ID
-                     * @param TopicId 主题ID
+                     * @param _topicId 主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取主题名字
                      * @return TopicName 主题名字
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名字
-                     * @param TopicName 主题名字
+                     * @param _topicName 主题名字
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取是否启用投递
                      * @return Enabled 是否启用投递
+                     * 
                      */
                     int64_t GetEnabled() const;
 
                     /**
                      * 设置是否启用投递
-                     * @param Enabled 是否启用投递
+                     * @param _enabled 是否启用投递
+                     * 
                      */
                     void SetEnabled(const int64_t& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 归属于cdn或ecdn
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置归属于cdn或ecdn
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Channel 归属于cdn或ecdn
+                     * @param _channel 归属于cdn或ecdn
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deleted cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeleted() const;
 
                     /**
                      * 设置cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deleted cls侧是否已经被删除
+                     * @param _deleted cls侧是否已经被删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleted(const std::string& _deleted);
 
                     /**
                      * 判断参数 Deleted 是否已赋值
                      * @return Deleted 是否已赋值
+                     * 
                      */
                     bool DeletedHasBeenSet() const;
 

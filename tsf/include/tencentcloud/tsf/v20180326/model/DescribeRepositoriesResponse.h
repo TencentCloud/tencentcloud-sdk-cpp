@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合查询仓库信息列表
                      * @return Result 符合查询仓库信息列表
+                     * 
                      */
                     RepositoryList GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

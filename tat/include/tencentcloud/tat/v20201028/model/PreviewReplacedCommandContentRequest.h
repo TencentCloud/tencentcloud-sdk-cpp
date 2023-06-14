@@ -53,6 +53,7 @@ key 为自定义参数名称，value 为该参数的取值。kv 均为字符串�
 自定义参数最多 20 个。
 自定义参数名称需符合以下规范：字符数目上限 64，可选范围【a-zA-Z0-9-_】。
 如果将预览的 CommandId 设置过 DefaultParameters，本参数可以为空。
+                     * 
                      */
                     std::string GetParameters() const;
 
@@ -62,17 +63,19 @@ key 为自定义参数名称，value 为该参数的取值。kv 均为字符串�
 自定义参数最多 20 个。
 自定义参数名称需符合以下规范：字符数目上限 64，可选范围【a-zA-Z0-9-_】。
 如果将预览的 CommandId 设置过 DefaultParameters，本参数可以为空。
-                     * @param Parameters 本次预览采用的自定义参数。字段类型为 json encoded string，如：{\"varA\": \"222\"}。
+                     * @param _parameters 本次预览采用的自定义参数。字段类型为 json encoded string，如：{\"varA\": \"222\"}。
 key 为自定义参数名称，value 为该参数的取值。kv 均为字符串型。
 自定义参数最多 20 个。
 自定义参数名称需符合以下规范：字符数目上限 64，可选范围【a-zA-Z0-9-_】。
 如果将预览的 CommandId 设置过 DefaultParameters，本参数可以为空。
+                     * 
                      */
                     void SetParameters(const std::string& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 
@@ -81,20 +84,23 @@ key 为自定义参数名称，value 为该参数的取值。kv 均为字符串�
 CommandId 与 Content，必须且只能提供一个。
                      * @return CommandId 要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。
 CommandId 与 Content，必须且只能提供一个。
+                     * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。
 CommandId 与 Content，必须且只能提供一个。
-                     * @param CommandId 要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。
+                     * @param _commandId 要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。
 CommandId 与 Content，必须且只能提供一个。
+                     * 
                      */
                     void SetCommandId(const std::string& _commandId);
 
                     /**
                      * 判断参数 CommandId 是否已赋值
                      * @return CommandId 是否已赋值
+                     * 
                      */
                     bool CommandIdHasBeenSet() const;
 
@@ -103,20 +109,23 @@ CommandId 与 Content，必须且只能提供一个。
 CommandId 与 Content，必须且只能提供一个。
                      * @return Content 要预览的命令内容，经 Base64 编码，长度不可超过 64KB。
 CommandId 与 Content，必须且只能提供一个。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置要预览的命令内容，经 Base64 编码，长度不可超过 64KB。
 CommandId 与 Content，必须且只能提供一个。
-                     * @param Content 要预览的命令内容，经 Base64 编码，长度不可超过 64KB。
+                     * @param _content 要预览的命令内容，经 Base64 编码，长度不可超过 64KB。
 CommandId 与 Content，必须且只能提供一个。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

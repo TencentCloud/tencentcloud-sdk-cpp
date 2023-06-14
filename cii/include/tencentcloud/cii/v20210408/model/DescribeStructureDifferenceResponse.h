@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取主任务号
                      * @return MainTaskId 主任务号
+                     * 
                      */
                     std::string GetMainTaskId() const;
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
                      * @return MainTaskId 是否已赋值
+                     * 
                      */
                     bool MainTaskIdHasBeenSet() const;
 
@@ -67,24 +69,28 @@ namespace TencentCloud
 1：结果未生成
 2：结果生成失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取差异的结果数组
                      * @return Results 差异的结果数组
+                     * 
                      */
                     std::vector<PerStructDifference> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

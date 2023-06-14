@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取图像主体区域。
                      * @return Rect 图像主体区域。
+                     * 
                      */
                     ImageRect GetRect() const;
 
                     /**
                      * 设置图像主体区域。
-                     * @param Rect 图像主体区域。
+                     * @param _rect 图像主体区域。
+                     * 
                      */
                     void SetRect(const ImageRect& _rect);
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 
                     /**
                      * 获取置信度。
                      * @return Score 置信度。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置置信度。
-                     * @param Score 置信度。
+                     * @param _score 置信度。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取主体区域类目ID
                      * @return CategoryId 主体区域类目ID
+                     * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置主体区域类目ID
-                     * @param CategoryId 主体区域类目ID
+                     * @param _categoryId 主体区域类目ID
+                     * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 

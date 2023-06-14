@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取CCN实例ID。形如：ccn-f49l6u0z。
                      * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置CCN实例ID。形如：ccn-f49l6u0z。
-                     * @param CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      * @return CcnName CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * 
                      */
                     std::string GetCcnName() const;
 
                     /**
                      * 设置CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
-                     * @param CcnName CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @param _ccnName CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * 
                      */
                     void SetCcnName(const std::string& _ccnName);
 
                     /**
                      * 判断参数 CcnName 是否已赋值
                      * @return CcnName 是否已赋值
+                     * 
                      */
                     bool CcnNameHasBeenSet() const;
 
                     /**
                      * 获取CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
                      * @return CcnDescription CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * 
                      */
                     std::string GetCcnDescription() const;
 
                     /**
                      * 设置CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
-                     * @param CcnDescription CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * @param _ccnDescription CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。
+                     * 
                      */
                     void SetCcnDescription(const std::string& _ccnDescription);
 
                     /**
                      * 判断参数 CcnDescription 是否已赋值
                      * @return CcnDescription 是否已赋值
+                     * 
                      */
                     bool CcnDescriptionHasBeenSet() const;
 

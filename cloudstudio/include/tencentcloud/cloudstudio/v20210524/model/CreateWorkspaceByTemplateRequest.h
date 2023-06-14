@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取工作空间名称
                      * @return Name 工作空间名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置工作空间名称
-                     * @param Name 工作空间名称
+                     * @param _name 工作空间名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleIDs 添加成功的关键词ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSampleIDs() const;
 
                     /**
                      * 判断参数 SampleIDs 是否已赋值
                      * @return SampleIDs 是否已赋值
+                     * 
                      */
                     bool SampleIDsHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DupInfos 重复关键词列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UserKeywordInfo> GetDupInfos() const;
 
                     /**
                      * 判断参数 DupInfos 是否已赋值
                      * @return DupInfos 是否已赋值
+                     * 
                      */
                     bool DupInfosHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvalidSamples 无效关键词列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InvalidSample> GetInvalidSamples() const;
 
                     /**
                      * 判断参数 InvalidSamples 是否已赋值
                      * @return InvalidSamples 是否已赋值
+                     * 
                      */
                     bool InvalidSamplesHasBeenSet() const;
 

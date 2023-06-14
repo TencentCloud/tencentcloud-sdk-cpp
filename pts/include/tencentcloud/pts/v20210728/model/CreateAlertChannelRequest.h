@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Notice ID
                      * @return NoticeId Notice ID
+                     * 
                      */
                     std::string GetNoticeId() const;
 
                     /**
                      * 设置Notice ID
-                     * @param NoticeId Notice ID
+                     * @param _noticeId Notice ID
+                     * 
                      */
                     void SetNoticeId(const std::string& _noticeId);
 
                     /**
                      * 判断参数 NoticeId 是否已赋值
                      * @return NoticeId 是否已赋值
+                     * 
                      */
                     bool NoticeIdHasBeenSet() const;
 
                     /**
                      * 获取项目 ID
                      * @return ProjectId 项目 ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * @param _projectId 项目 ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取AMP Consumer ID
                      * @return AMPConsumerId AMP Consumer ID
+                     * 
                      */
                     std::string GetAMPConsumerId() const;
 
                     /**
                      * 设置AMP Consumer ID
-                     * @param AMPConsumerId AMP Consumer ID
+                     * @param _aMPConsumerId AMP Consumer ID
+                     * 
                      */
                     void SetAMPConsumerId(const std::string& _aMPConsumerId);
 
                     /**
                      * 判断参数 AMPConsumerId 是否已赋值
                      * @return AMPConsumerId 是否已赋值
+                     * 
                      */
                     bool AMPConsumerIdHasBeenSet() const;
 

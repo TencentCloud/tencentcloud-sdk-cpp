@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取删除异地登录事件的方式，可选值："Ids"、"Ip"、"All"，默认为Ids
                      * @return DelType 删除异地登录事件的方式，可选值："Ids"、"Ip"、"All"，默认为Ids
+                     * 
                      */
                     std::string GetDelType() const;
 
                     /**
                      * 设置删除异地登录事件的方式，可选值："Ids"、"Ip"、"All"，默认为Ids
-                     * @param DelType 删除异地登录事件的方式，可选值："Ids"、"Ip"、"All"，默认为Ids
+                     * @param _delType 删除异地登录事件的方式，可选值："Ids"、"Ip"、"All"，默认为Ids
+                     * 
                      */
                     void SetDelType(const std::string& _delType);
 
                     /**
                      * 判断参数 DelType 是否已赋值
                      * @return DelType 是否已赋值
+                     * 
                      */
                     bool DelTypeHasBeenSet() const;
 
                     /**
                      * 获取异地登录事件ID数组。DelType为Ids或DelType未填时此项必填
                      * @return Ids 异地登录事件ID数组。DelType为Ids或DelType未填时此项必填
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置异地登录事件ID数组。DelType为Ids或DelType未填时此项必填
-                     * @param Ids 异地登录事件ID数组。DelType为Ids或DelType未填时此项必填
+                     * @param _ids 异地登录事件ID数组。DelType为Ids或DelType未填时此项必填
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取异地登录事件的Ip。DelType为Ip时必填
                      * @return Ip 异地登录事件的Ip。DelType为Ip时必填
+                     * 
                      */
                     std::vector<std::string> GetIp() const;
 
                     /**
                      * 设置异地登录事件的Ip。DelType为Ip时必填
-                     * @param Ip 异地登录事件的Ip。DelType为Ip时必填
+                     * @param _ip 异地登录事件的Ip。DelType为Ip时必填
+                     * 
                      */
                     void SetIp(const std::vector<std::string>& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取主机Uuid
                      * @return Uuid 主机Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机Uuid
-                     * @param Uuid 主机Uuid
+                     * @param _uuid 主机Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 

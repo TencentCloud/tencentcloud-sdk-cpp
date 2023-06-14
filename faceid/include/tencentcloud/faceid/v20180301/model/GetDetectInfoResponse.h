@@ -142,12 +142,14 @@ namespace TencentCloud
     "LivenessVideo": null
   }
 }
+                     * 
                      */
                     std::string GetDetectInfo() const;
 
                     /**
                      * 判断参数 DetectInfo 是否已赋值
                      * @return DetectInfo 是否已赋值
+                     * 
                      */
                     bool DetectInfoHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取出参数据
                      * @return Data 出参数据
+                     * 
                      */
                     std::vector<SendSmsPaasDataStruct> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

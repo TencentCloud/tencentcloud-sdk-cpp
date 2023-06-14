@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取未绑定套餐的站点ID。
                      * @return ZoneId 未绑定套餐的站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置未绑定套餐的站点ID。
-                     * @param ZoneId 未绑定套餐的站点ID。
+                     * @param _zoneId 未绑定套餐的站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的目标套餐ID。
                      * @return PlanId 待绑定的目标套餐ID。
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置待绑定的目标套餐ID。
-                     * @param PlanId 待绑定的目标套餐ID。
+                     * @param _planId 待绑定的目标套餐ID。
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 

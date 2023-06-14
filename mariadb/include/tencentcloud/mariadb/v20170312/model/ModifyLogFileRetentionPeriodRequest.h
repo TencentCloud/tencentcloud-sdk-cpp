@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：tdsql-ow728lmc。
                      * @return InstanceId 实例 ID，形如：tdsql-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，形如：tdsql-ow728lmc。
-                     * @param InstanceId 实例 ID，形如：tdsql-ow728lmc。
+                     * @param _instanceId 实例 ID，形如：tdsql-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取保存的天数,不能超过30
                      * @return Days 保存的天数,不能超过30
+                     * 
                      */
                     uint64_t GetDays() const;
 
                     /**
                      * 设置保存的天数,不能超过30
-                     * @param Days 保存的天数,不能超过30
+                     * @param _days 保存的天数,不能超过30
+                     * 
                      */
                     void SetDays(const uint64_t& _days);
 
                     /**
                      * 判断参数 Days 是否已赋值
                      * @return Days 是否已赋值
+                     * 
                      */
                     bool DaysHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的使用计划唯一 ID。
                      * @return UsagePlanId 待删除的使用计划唯一 ID。
+                     * 
                      */
                     std::string GetUsagePlanId() const;
 
                     /**
                      * 设置待删除的使用计划唯一 ID。
-                     * @param UsagePlanId 待删除的使用计划唯一 ID。
+                     * @param _usagePlanId 待删除的使用计划唯一 ID。
+                     * 
                      */
                     void SetUsagePlanId(const std::string& _usagePlanId);
 
                     /**
                      * 判断参数 UsagePlanId 是否已赋值
                      * @return UsagePlanId 是否已赋值
+                     * 
                      */
                     bool UsagePlanIdHasBeenSet() const;
 

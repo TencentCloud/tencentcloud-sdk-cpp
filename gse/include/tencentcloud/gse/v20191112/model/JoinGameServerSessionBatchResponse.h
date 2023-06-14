@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayerSessions 玩家会话列表，最大25组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PlayerSession> GetPlayerSessions() const;
 
                     /**
                      * 判断参数 PlayerSessions 是否已赋值
                      * @return PlayerSessions 是否已赋值
+                     * 
                      */
                     bool PlayerSessionsHasBeenSet() const;
 

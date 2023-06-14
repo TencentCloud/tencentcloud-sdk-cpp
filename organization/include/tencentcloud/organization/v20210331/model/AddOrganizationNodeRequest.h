@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取父节点ID。可以调用DescribeOrganizationNodes获取
                      * @return ParentNodeId 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * 
                      */
                     uint64_t GetParentNodeId() const;
 
                     /**
                      * 设置父节点ID。可以调用DescribeOrganizationNodes获取
-                     * @param ParentNodeId 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * @param _parentNodeId 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * 
                      */
                     void SetParentNodeId(const uint64_t& _parentNodeId);
 
                     /**
                      * 判断参数 ParentNodeId 是否已赋值
                      * @return ParentNodeId 是否已赋值
+                     * 
                      */
                     bool ParentNodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-
                      * @return Name 节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-
-                     * @param Name 节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-
+                     * @param _name 节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取备注。
                      * @return Remark 备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注。
-                     * @param Remark 备注。
+                     * @param _remark 备注。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取请求验证的域名
                      * @return EmailIdentity 请求验证的域名
+                     * 
                      */
                     std::string GetEmailIdentity() const;
 
                     /**
                      * 设置请求验证的域名
-                     * @param EmailIdentity 请求验证的域名
+                     * @param _emailIdentity 请求验证的域名
+                     * 
                      */
                     void SetEmailIdentity(const std::string& _emailIdentity);
 
                     /**
                      * 判断参数 EmailIdentity 是否已赋值
                      * @return EmailIdentity 是否已赋值
+                     * 
                      */
                     bool EmailIdentityHasBeenSet() const;
 

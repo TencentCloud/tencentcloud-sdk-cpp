@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 错误码
+                     * @param _code 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 回包信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置回包信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 回包信息
+                     * @param _message 回包信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotarizationData 公证处业务回包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNotarizationData() const;
 
                     /**
                      * 设置公证处业务回包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotarizationData 公证处业务回包
+                     * @param _notarizationData 公证处业务回包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotarizationData(const std::string& _notarizationData);
 
                     /**
                      * 判断参数 NotarizationData 是否已赋值
                      * @return NotarizationData 是否已赋值
+                     * 
                      */
                     bool NotarizationDataHasBeenSet() const;
 

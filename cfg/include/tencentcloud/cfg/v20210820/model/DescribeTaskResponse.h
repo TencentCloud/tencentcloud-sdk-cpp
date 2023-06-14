@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取任务信息
                      * @return Task 任务信息
+                     * 
                      */
                     Task GetTask() const;
 
                     /**
                      * 判断参数 Task 是否已赋值
                      * @return Task 是否已赋值
+                     * 
                      */
                     bool TaskHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportInfo 任务对应的演练报告信息，null表示未导出报告
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskReportInfo GetReportInfo() const;
 
                     /**
                      * 判断参数 ReportInfo 是否已赋值
                      * @return ReportInfo 是否已赋值
+                     * 
                      */
                     bool ReportInfoHasBeenSet() const;
 

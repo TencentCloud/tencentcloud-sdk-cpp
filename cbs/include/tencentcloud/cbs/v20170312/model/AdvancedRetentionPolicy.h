@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Days 保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDays() const;
 
                     /**
                      * 设置保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Days 保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]
+                     * @param _days 保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDays(const uint64_t& _days);
 
                     /**
                      * 判断参数 Days 是否已赋值
                      * @return Days 是否已赋值
+                     * 
                      */
                     bool DaysHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weeks 保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetWeeks() const;
 
                     /**
                      * 设置保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weeks 保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]
+                     * @param _weeks 保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeeks(const uint64_t& _weeks);
 
                     /**
                      * 判断参数 Weeks 是否已赋值
                      * @return Weeks 是否已赋值
+                     * 
                      */
                     bool WeeksHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Months 保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMonths() const;
 
                     /**
                      * 设置保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Months 保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]
+                     * @param _months 保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonths(const uint64_t& _months);
 
                     /**
                      * 判断参数 Months 是否已赋值
                      * @return Months 是否已赋值
+                     * 
                      */
                     bool MonthsHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Years 保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetYears() const;
 
                     /**
                      * 设置保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Years 保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]
+                     * @param _years 保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYears(const uint64_t& _years);
 
                     /**
                      * 判断参数 Years 是否已赋值
                      * @return Years 是否已赋值
+                     * 
                      */
                     bool YearsHasBeenSet() const;
 

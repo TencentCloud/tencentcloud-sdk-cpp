@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
                      * @return InstanceId 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
-                     * @param InstanceId 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * @param _instanceId 待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
                      * @return BackupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * 
                      */
                     std::string GetBackupId() const;
 
                     /**
                      * 设置备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
-                     * @param BackupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * @param _backupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
+                     * 
                      */
                     void SetBackupId(const std::string& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 
                     /**
                      * 获取实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
                      * @return Password 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
-                     * @param Password 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     * @param _password 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

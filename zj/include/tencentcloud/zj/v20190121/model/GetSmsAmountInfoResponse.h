@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取短信账号额度接口
                      * @return Data 短信账号额度接口
+                     * 
                      */
                     SmsAmountDataStruct GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

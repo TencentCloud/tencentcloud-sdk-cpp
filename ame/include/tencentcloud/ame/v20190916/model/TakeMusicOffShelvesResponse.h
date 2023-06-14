@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回成功数量
                      * @return SuccessNum 返回成功数量
+                     * 
                      */
                     int64_t GetSuccessNum() const;
 
                     /**
                      * 判断参数 SuccessNum 是否已赋值
                      * @return SuccessNum 是否已赋值
+                     * 
                      */
                     bool SuccessNumHasBeenSet() const;
 
                     /**
                      * 获取返回失败数量
                      * @return FailedNum 返回失败数量
+                     * 
                      */
                     int64_t GetFailedNum() const;
 
                     /**
                      * 判断参数 FailedNum 是否已赋值
                      * @return FailedNum 是否已赋值
+                     * 
                      */
                     bool FailedNumHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedMusicIds 返回失败歌曲musicId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedMusicIds() const;
 
                     /**
                      * 判断参数 FailedMusicIds 是否已赋值
                      * @return FailedMusicIds 是否已赋值
+                     * 
                      */
                     bool FailedMusicIdsHasBeenSet() const;
 

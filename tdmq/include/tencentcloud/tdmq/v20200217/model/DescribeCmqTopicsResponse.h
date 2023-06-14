@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CmqTopic> GetTopicList() const;
 
                     /**
                      * 判断参数 TopicList 是否已赋值
                      * @return TopicList 是否已赋值
+                     * 
                      */
                     bool TopicListHasBeenSet() const;
 
                     /**
                      * 获取全量主题数量
                      * @return TotalCount 全量主题数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取身份证号
                      * @return ID 身份证号
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取地址
                      * @return Address 地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
@@ -102,24 +110,28 @@ namespace TencentCloud
 -9102	证照复印件告警
 -9106       证件遮挡告警
 -9107       模糊图片告警
+                     * 
                      */
                     std::vector<int64_t> GetWarn() const;
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
+                     * 
                      */
                     bool WarnHasBeenSet() const;
 
                     /**
                      * 获取证件图片
                      * @return Image 证件图片
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -138,12 +150,14 @@ namespace TencentCloud
     Confidence:0.9999
   }
 }
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
@@ -164,24 +178,28 @@ MyKAS    临时身份证
 POLIS  警察证
 IKAD   劳工证
 MyKid 儿童卡
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）
                      * @return Birthday 出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）
+                     * 
                      */
                     std::string GetBirthday() const;
 
                     /**
                      * 判断参数 Birthday 是否已赋值
                      * @return Birthday 是否已赋值
+                     * 
                      */
                     bool BirthdayHasBeenSet() const;
 

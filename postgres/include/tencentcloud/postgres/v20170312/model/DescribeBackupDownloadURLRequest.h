@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return DBInstanceId 实例ID。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param DBInstanceId 实例ID。
+                     * @param _dBInstanceId 实例ID。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取备份类型，目前支持：LogBackup，BaseBackup。
                      * @return BackupType 备份类型，目前支持：LogBackup，BaseBackup。
+                     * 
                      */
                     std::string GetBackupType() const;
 
                     /**
                      * 设置备份类型，目前支持：LogBackup，BaseBackup。
-                     * @param BackupType 备份类型，目前支持：LogBackup，BaseBackup。
+                     * @param _backupType 备份类型，目前支持：LogBackup，BaseBackup。
+                     * 
                      */
                     void SetBackupType(const std::string& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
+                     * 
                      */
                     bool BackupTypeHasBeenSet() const;
 
                     /**
                      * 获取备份的唯一ID。
                      * @return BackupId 备份的唯一ID。
+                     * 
                      */
                     std::string GetBackupId() const;
 
                     /**
                      * 设置备份的唯一ID。
-                     * @param BackupId 备份的唯一ID。
+                     * @param _backupId 备份的唯一ID。
+                     * 
                      */
                     void SetBackupId(const std::string& _backupId);
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 
                     /**
                      * 获取链接的有效时间，默认为12小时。
                      * @return URLExpireTime 链接的有效时间，默认为12小时。
+                     * 
                      */
                     uint64_t GetURLExpireTime() const;
 
                     /**
                      * 设置链接的有效时间，默认为12小时。
-                     * @param URLExpireTime 链接的有效时间，默认为12小时。
+                     * @param _uRLExpireTime 链接的有效时间，默认为12小时。
+                     * 
                      */
                     void SetURLExpireTime(const uint64_t& _uRLExpireTime);
 
                     /**
                      * 判断参数 URLExpireTime 是否已赋值
                      * @return URLExpireTime 是否已赋值
+                     * 
                      */
                     bool URLExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取备份下载限制
                      * @return BackupDownloadRestriction 备份下载限制
+                     * 
                      */
                     BackupDownloadRestriction GetBackupDownloadRestriction() const;
 
                     /**
                      * 设置备份下载限制
-                     * @param BackupDownloadRestriction 备份下载限制
+                     * @param _backupDownloadRestriction 备份下载限制
+                     * 
                      */
                     void SetBackupDownloadRestriction(const BackupDownloadRestriction& _backupDownloadRestriction);
 
                     /**
                      * 判断参数 BackupDownloadRestriction 是否已赋值
                      * @return BackupDownloadRestriction 是否已赋值
+                     * 
                      */
                     bool BackupDownloadRestrictionHasBeenSet() const;
 

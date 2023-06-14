@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取top key列表。
                      * @return TopKeys top key列表。
+                     * 
                      */
                     std::vector<RedisKeySpaceData> GetTopKeys() const;
 
                     /**
                      * 判断参数 TopKeys 是否已赋值
                      * @return TopKeys 是否已赋值
+                     * 
                      */
                     bool TopKeysHasBeenSet() const;
 
                     /**
                      * 获取采集时间戳（秒）。
                      * @return Timestamp 采集时间戳（秒）。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 

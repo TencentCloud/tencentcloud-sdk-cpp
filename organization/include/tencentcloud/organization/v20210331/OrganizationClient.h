@@ -43,6 +43,12 @@
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMemberRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMemberResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMonthRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMonthResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByProductRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByProductResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthIdentitiesRequest.h>
@@ -107,6 +113,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationAuthNodeResponse> DescribeOrganizationAuthNodeOutcome;
                 typedef std::future<DescribeOrganizationAuthNodeOutcome> DescribeOrganizationAuthNodeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationAuthNodeRequest&, DescribeOrganizationAuthNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAuthNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationFinancialByMemberResponse> DescribeOrganizationFinancialByMemberOutcome;
+                typedef std::future<DescribeOrganizationFinancialByMemberOutcome> DescribeOrganizationFinancialByMemberOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationFinancialByMemberRequest&, DescribeOrganizationFinancialByMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationFinancialByMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationFinancialByMonthResponse> DescribeOrganizationFinancialByMonthOutcome;
+                typedef std::future<DescribeOrganizationFinancialByMonthOutcome> DescribeOrganizationFinancialByMonthOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationFinancialByMonthRequest&, DescribeOrganizationFinancialByMonthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationFinancialByMonthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationFinancialByProductResponse> DescribeOrganizationFinancialByProductOutcome;
+                typedef std::future<DescribeOrganizationFinancialByProductOutcome> DescribeOrganizationFinancialByProductOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationFinancialByProductRequest&, DescribeOrganizationFinancialByProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationFinancialByProductAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationMemberAuthAccountsResponse> DescribeOrganizationMemberAuthAccountsOutcome;
                 typedef std::future<DescribeOrganizationMemberAuthAccountsOutcome> DescribeOrganizationMemberAuthAccountsOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMemberAuthAccountsRequest&, DescribeOrganizationMemberAuthAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMemberAuthAccountsAsyncHandler;
@@ -230,6 +245,33 @@ namespace TencentCloud
                 DescribeOrganizationAuthNodeOutcome DescribeOrganizationAuthNode(const Model::DescribeOrganizationAuthNodeRequest &request);
                 void DescribeOrganizationAuthNodeAsync(const Model::DescribeOrganizationAuthNodeRequest& request, const DescribeOrganizationAuthNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrganizationAuthNodeOutcomeCallable DescribeOrganizationAuthNodeCallable(const Model::DescribeOrganizationAuthNodeRequest& request);
+
+                /**
+                 *以成员维度获取组织财务信息
+                 * @param req DescribeOrganizationFinancialByMemberRequest
+                 * @return DescribeOrganizationFinancialByMemberOutcome
+                 */
+                DescribeOrganizationFinancialByMemberOutcome DescribeOrganizationFinancialByMember(const Model::DescribeOrganizationFinancialByMemberRequest &request);
+                void DescribeOrganizationFinancialByMemberAsync(const Model::DescribeOrganizationFinancialByMemberRequest& request, const DescribeOrganizationFinancialByMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationFinancialByMemberOutcomeCallable DescribeOrganizationFinancialByMemberCallable(const Model::DescribeOrganizationFinancialByMemberRequest& request);
+
+                /**
+                 *以月维度获取组织财务信息趋势
+                 * @param req DescribeOrganizationFinancialByMonthRequest
+                 * @return DescribeOrganizationFinancialByMonthOutcome
+                 */
+                DescribeOrganizationFinancialByMonthOutcome DescribeOrganizationFinancialByMonth(const Model::DescribeOrganizationFinancialByMonthRequest &request);
+                void DescribeOrganizationFinancialByMonthAsync(const Model::DescribeOrganizationFinancialByMonthRequest& request, const DescribeOrganizationFinancialByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationFinancialByMonthOutcomeCallable DescribeOrganizationFinancialByMonthCallable(const Model::DescribeOrganizationFinancialByMonthRequest& request);
+
+                /**
+                 *以产品维度获取组织财务信息
+                 * @param req DescribeOrganizationFinancialByProductRequest
+                 * @return DescribeOrganizationFinancialByProductOutcome
+                 */
+                DescribeOrganizationFinancialByProductOutcome DescribeOrganizationFinancialByProduct(const Model::DescribeOrganizationFinancialByProductRequest &request);
+                void DescribeOrganizationFinancialByProductAsync(const Model::DescribeOrganizationFinancialByProductRequest& request, const DescribeOrganizationFinancialByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationFinancialByProductOutcomeCallable DescribeOrganizationFinancialByProductCallable(const Model::DescribeOrganizationFinancialByProductRequest& request);
 
                 /**
                  *获取组织成员被绑定授权关系的子账号列表

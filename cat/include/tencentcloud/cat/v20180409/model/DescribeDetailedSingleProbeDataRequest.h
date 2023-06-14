@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间戳（毫秒级）
                      * @return BeginTime 开始时间戳（毫秒级）
+                     * 
                      */
                     uint64_t GetBeginTime() const;
 
                     /**
                      * 设置开始时间戳（毫秒级）
-                     * @param BeginTime 开始时间戳（毫秒级）
+                     * @param _beginTime 开始时间戳（毫秒级）
+                     * 
                      */
                     void SetBeginTime(const uint64_t& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳（毫秒级）
                      * @return EndTime 结束时间戳（毫秒级）
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间戳（毫秒级）
-                     * @param EndTime 结束时间戳（毫秒级）
+                     * @param _endTime 结束时间戳（毫秒级）
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -91,6 +97,7 @@ AnalyzeTaskType_Browse：页面性能
 AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
 AnalyzeTaskType_Transport：端口性能
 AnalyzeTaskType_MediaStream：音视频体验
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -101,18 +108,20 @@ AnalyzeTaskType_Browse：页面性能
 AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
 AnalyzeTaskType_Transport：端口性能
 AnalyzeTaskType_MediaStream：音视频体验
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
 AnalyzeTaskType_Network：网络质量
 AnalyzeTaskType_Browse：页面性能
 AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
 AnalyzeTaskType_Transport：端口性能
 AnalyzeTaskType_MediaStream：音视频体验
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
@@ -123,6 +132,7 @@ AnalyzeTaskType_MediaStream：音视频体验
                      * @return SortField 待排序字段
 可以填写 ProbeTime 拨测时间排序
 也可填写SelectedFields 中的选中字段
+                     * 
                      */
                     std::string GetSortField() const;
 
@@ -130,105 +140,122 @@ AnalyzeTaskType_MediaStream：音视频体验
                      * 设置待排序字段
 可以填写 ProbeTime 拨测时间排序
 也可填写SelectedFields 中的选中字段
-                     * @param SortField 待排序字段
+                     * @param _sortField 待排序字段
 可以填写 ProbeTime 拨测时间排序
 也可填写SelectedFields 中的选中字段
+                     * 
                      */
                     void SetSortField(const std::string& _sortField);
 
                     /**
                      * 判断参数 SortField 是否已赋值
                      * @return SortField 是否已赋值
+                     * 
                      */
                     bool SortFieldHasBeenSet() const;
 
                     /**
                      * 获取true表示升序
                      * @return Ascending true表示升序
+                     * 
                      */
                     bool GetAscending() const;
 
                     /**
                      * 设置true表示升序
-                     * @param Ascending true表示升序
+                     * @param _ascending true表示升序
+                     * 
                      */
                     void SetAscending(const bool& _ascending);
 
                     /**
                      * 判断参数 Ascending 是否已赋值
                      * @return Ascending 是否已赋值
+                     * 
                      */
                     bool AscendingHasBeenSet() const;
 
                     /**
                      * 获取选中字段
                      * @return SelectedFields 选中字段
+                     * 
                      */
                     std::vector<std::string> GetSelectedFields() const;
 
                     /**
                      * 设置选中字段
-                     * @param SelectedFields 选中字段
+                     * @param _selectedFields 选中字段
+                     * 
                      */
                     void SetSelectedFields(const std::vector<std::string>& _selectedFields);
 
                     /**
                      * 判断参数 SelectedFields 是否已赋值
                      * @return SelectedFields 是否已赋值
+                     * 
                      */
                     bool SelectedFieldsHasBeenSet() const;
 
                     /**
                      * 获取起始取数位置
                      * @return Offset 起始取数位置
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置起始取数位置
-                     * @param Offset 起始取数位置
+                     * @param _offset 起始取数位置
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取取数数量
                      * @return Limit 取数数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置取数数量
-                     * @param Limit 取数数量
+                     * @param _limit 取数数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskID 任务ID
+                     * 
                      */
                     std::vector<std::string> GetTaskID() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskID 任务ID
+                     * @param _taskID 任务ID
+                     * 
                      */
                     void SetTaskID(const std::vector<std::string>& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
@@ -247,6 +274,7 @@ AnalyzeTaskType_MediaStream：音视频体验
 电信：中国电信
 移动：中国移动
 联通：中国联通
+                     * 
                      */
                     std::vector<std::string> GetOperators() const;
 
@@ -258,19 +286,21 @@ AnalyzeTaskType_MediaStream：音视频体验
 电信：中国电信
 移动：中国移动
 联通：中国联通
-                     * @param Operators 拨测点运营商
+                     * @param _operators 拨测点运营商
 	
 这里实际按拨测结果中的运营商来填写即可
 
 电信：中国电信
 移动：中国移动
 联通：中国联通
+                     * 
                      */
                     void SetOperators(const std::vector<std::string>& _operators);
 
                     /**
                      * 判断参数 Operators 是否已赋值
                      * @return Operators 是否已赋值
+                     * 
                      */
                     bool OperatorsHasBeenSet() const;
 
@@ -289,6 +319,7 @@ AnalyzeTaskType_MediaStream：音视频体验
 国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海
 
 境外一般是国家名，如澳大利亚、新加坡
+                     * 
                      */
                     std::vector<std::string> GetDistricts() const;
 
@@ -300,37 +331,42 @@ AnalyzeTaskType_MediaStream：音视频体验
 国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海
 
 境外一般是国家名，如澳大利亚、新加坡
-                     * @param Districts 拨测点地区
+                     * @param _districts 拨测点地区
 	
 这里实际按拨测结果中的地区来填写即可
 
 国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海
 
 境外一般是国家名，如澳大利亚、新加坡
+                     * 
                      */
                     void SetDistricts(const std::vector<std::string>& _districts);
 
                     /**
                      * 判断参数 Districts 是否已赋值
                      * @return Districts 是否已赋值
+                     * 
                      */
                     bool DistrictsHasBeenSet() const;
 
                     /**
                      * 获取错误类型
                      * @return ErrorTypes 错误类型
+                     * 
                      */
                     std::vector<std::string> GetErrorTypes() const;
 
                     /**
                      * 设置错误类型
-                     * @param ErrorTypes 错误类型
+                     * @param _errorTypes 错误类型
+                     * 
                      */
                     void SetErrorTypes(const std::vector<std::string>& _errorTypes);
 
                     /**
                      * 判断参数 ErrorTypes 是否已赋值
                      * @return ErrorTypes 是否已赋值
+                     * 
                      */
                     bool ErrorTypesHasBeenSet() const;
 
@@ -353,6 +389,7 @@ AnalyzeTaskType_MediaStream：音视频体验
 武汉市
 首尔
 多伦多
+                     * 
                      */
                     std::vector<std::string> GetCity() const;
 
@@ -366,7 +403,7 @@ AnalyzeTaskType_MediaStream：音视频体验
 武汉市
 首尔
 多伦多
-                     * @param City 城市
+                     * @param _city 城市
 这里实际按拨测结果中的城市来填写即可
 
 示例：
@@ -375,12 +412,14 @@ AnalyzeTaskType_MediaStream：音视频体验
 武汉市
 首尔
 多伦多
+                     * 
                      */
                     void SetCity(const std::vector<std::string>& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 

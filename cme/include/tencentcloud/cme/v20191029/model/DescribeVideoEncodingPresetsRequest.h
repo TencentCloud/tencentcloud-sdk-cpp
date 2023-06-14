@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。
                      * @return Ids 要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。
-                     * @param Ids 要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。
+                     * @param _ids 要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认20。最大值50。
                      * @return Limit 分页大小，默认20。最大值50。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，默认20。最大值50。
-                     * @param Limit 分页大小，默认20。最大值50。
+                     * @param _limit 分页大小，默认20。最大值50。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页起始，默认0。
                      * @return Offset 分页起始，默认0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页起始，默认0。
-                     * @param Offset 分页起始，默认0。
+                     * @param _offset 分页起始，默认0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

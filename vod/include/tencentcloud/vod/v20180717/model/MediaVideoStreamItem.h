@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取视频流的码率，单位：bps。
                      * @return Bitrate 视频流的码率，单位：bps。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流的码率，单位：bps。
-                     * @param Bitrate 视频流的码率，单位：bps。
+                     * @param _bitrate 视频流的码率，单位：bps。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
                     /**
                      * 获取视频流的高度，单位：px。
                      * @return Height 视频流的高度，单位：px。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频流的高度，单位：px。
-                     * @param Height 视频流的高度，单位：px。
+                     * @param _height 视频流的高度，单位：px。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取视频流的宽度，单位：px。
                      * @return Width 视频流的宽度，单位：px。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频流的宽度，单位：px。
-                     * @param Width 视频流的宽度，单位：px。
+                     * @param _width 视频流的宽度，单位：px。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取视频流的编码格式，例如 h264。
                      * @return Codec 视频流的编码格式，例如 h264。
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置视频流的编码格式，例如 h264。
-                     * @param Codec 视频流的编码格式，例如 h264。
+                     * @param _codec 视频流的编码格式，例如 h264。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
                     /**
                      * 获取帧率，单位：hz。
                      * @return Fps 帧率，单位：hz。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率，单位：hz。
-                     * @param Fps 帧率，单位：hz。
+                     * @param _fps 帧率，单位：hz。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
                     /**
                      * 获取编码标签，仅当 Codec 为 hevc 时有效。
                      * @return CodecTag 编码标签，仅当 Codec 为 hevc 时有效。
+                     * 
                      */
                     std::string GetCodecTag() const;
 
                     /**
                      * 设置编码标签，仅当 Codec 为 hevc 时有效。
-                     * @param CodecTag 编码标签，仅当 Codec 为 hevc 时有效。
+                     * @param _codecTag 编码标签，仅当 Codec 为 hevc 时有效。
+                     * 
                      */
                     void SetCodecTag(const std::string& _codecTag);
 
                     /**
                      * 判断参数 CodecTag 是否已赋值
                      * @return CodecTag 是否已赋值
+                     * 
                      */
                     bool CodecTagHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 <li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
                      * @return DynamicRangeInfo 画面动态范围信息。
 <li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     * 
                      */
                     DynamicRangeInfo GetDynamicRangeInfo() const;
 
                     /**
                      * 设置画面动态范围信息。
 <li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
-                     * @param DynamicRangeInfo 画面动态范围信息。
+                     * @param _dynamicRangeInfo 画面动态范围信息。
 <li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     * 
                      */
                     void SetDynamicRangeInfo(const DynamicRangeInfo& _dynamicRangeInfo);
 
                     /**
                      * 判断参数 DynamicRangeInfo 是否已赋值
                      * @return DynamicRangeInfo 是否已赋值
+                     * 
                      */
                     bool DynamicRangeInfoHasBeenSet() const;
 

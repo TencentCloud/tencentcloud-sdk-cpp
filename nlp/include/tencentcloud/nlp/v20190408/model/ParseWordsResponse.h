@@ -49,12 +49,14 @@ namespace TencentCloud
                     /**
                      * 获取输入文本正则化的结果。（包括对英文文本中的开头和实体进行大写等）
                      * @return NormalText 输入文本正则化的结果。（包括对英文文本中的开头和实体进行大写等）
+                     * 
                      */
                     std::string GetNormalText() const;
 
                     /**
                      * 判断参数 NormalText 是否已赋值
                      * @return NormalText 是否已赋值
+                     * 
                      */
                     bool NormalTextHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
 
                      * @return BasicParticiples 基础粒度分词和词性标注的结果。（词性表请参见附录）
 
+                     * 
                      */
                     std::vector<BasicParticiple> GetBasicParticiples() const;
 
                     /**
                      * 判断参数 BasicParticiples 是否已赋值
                      * @return BasicParticiples 是否已赋值
+                     * 
                      */
                     bool BasicParticiplesHasBeenSet() const;
 
                     /**
                      * 获取复合粒度分词和词性标注的结果。（词性表请参见附录）
                      * @return CompoundParticiples 复合粒度分词和词性标注的结果。（词性表请参见附录）
+                     * 
                      */
                     std::vector<CompoundParticiple> GetCompoundParticiples() const;
 
                     /**
                      * 判断参数 CompoundParticiples 是否已赋值
                      * @return CompoundParticiples 是否已赋值
+                     * 
                      */
                     bool CompoundParticiplesHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 
                      * @return Entities 实体识别结果。（实体类型数据请参见附录）
 
+                     * 
                      */
                     std::vector<Entity> GetEntities() const;
 
                     /**
                      * 判断参数 Entities 是否已赋值
                      * @return Entities 是否已赋值
+                     * 
                      */
                     bool EntitiesHasBeenSet() const;
 

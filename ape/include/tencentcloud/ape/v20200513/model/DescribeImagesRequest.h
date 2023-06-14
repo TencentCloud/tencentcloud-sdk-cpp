@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取页偏移量
                      * @return Offset 页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页偏移量
-                     * @param Offset 页偏移量
+                     * @param _offset 页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return Limit 页大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置页大小
-                     * @param Limit 页大小
+                     * @param _limit 页大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return Keyword 搜索关键字
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param Keyword 搜索关键字
+                     * @param _keyword 搜索关键字
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图
                      * @return Orientation 构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图
+                     * 
                      */
                     std::string GetOrientation() const;
 
                     /**
                      * 设置构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图
-                     * @param Orientation 构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图
+                     * @param _orientation 构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图
+                     * 
                      */
                     void SetOrientation(const std::string& _orientation);
 
                     /**
                      * 判断参数 Orientation 是否已赋值
                      * @return Orientation 是否已赋值
+                     * 
                      */
                     bool OrientationHasBeenSet() const;
 
                     /**
                      * 获取图片类型，可选以下值：照片、插画
                      * @return ImageSenseType 图片类型，可选以下值：照片、插画
+                     * 
                      */
                     std::string GetImageSenseType() const;
 
                     /**
                      * 设置图片类型，可选以下值：照片、插画
-                     * @param ImageSenseType 图片类型，可选以下值：照片、插画
+                     * @param _imageSenseType 图片类型，可选以下值：照片、插画
+                     * 
                      */
                     void SetImageSenseType(const std::string& _imageSenseType);
 
                     /**
                      * 判断参数 ImageSenseType 是否已赋值
                      * @return ImageSenseType 是否已赋值
+                     * 
                      */
                     bool ImageSenseTypeHasBeenSet() const;
 
                     /**
                      * 获取分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
                      * @return LayeredGalleryIds 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     * 
                      */
                     std::vector<int64_t> GetLayeredGalleryIds() const;
 
                     /**
                      * 设置分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
-                     * @param LayeredGalleryIds 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     * @param _layeredGalleryIds 分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)
+                     * 
                      */
                     void SetLayeredGalleryIds(const std::vector<int64_t>& _layeredGalleryIds);
 
                     /**
                      * 判断参数 LayeredGalleryIds 是否已赋值
                      * @return LayeredGalleryIds 是否已赋值
+                     * 
                      */
                     bool LayeredGalleryIdsHasBeenSet() const;
 

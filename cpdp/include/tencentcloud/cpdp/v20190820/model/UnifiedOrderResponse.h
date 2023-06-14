@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取支付金额，单位： 分
                      * @return TotalAmt 支付金额，单位： 分
+                     * 
                      */
                     int64_t GetTotalAmt() const;
 
                     /**
                      * 判断参数 TotalAmt 是否已赋值
                      * @return TotalAmt 是否已赋值
+                     * 
                      */
                     bool TotalAmtHasBeenSet() const;
 
                     /**
                      * 获取应用支付订单号
                      * @return OutTradeNo 应用支付订单号
+                     * 
                      */
                     std::string GetOutTradeNo() const;
 
                     /**
                      * 判断参数 OutTradeNo 是否已赋值
                      * @return OutTradeNo 是否已赋值
+                     * 
                      */
                     bool OutTradeNoHasBeenSet() const;
 
                     /**
                      * 获取支付参数透传给聚鑫SDK（原文透传给SDK即可，不需要解码）
                      * @return PayInfo 支付参数透传给聚鑫SDK（原文透传给SDK即可，不需要解码）
+                     * 
                      */
                     std::string GetPayInfo() const;
 
                     /**
                      * 判断参数 PayInfo 是否已赋值
                      * @return PayInfo 是否已赋值
+                     * 
                      */
                     bool PayInfoHasBeenSet() const;
 
                     /**
                      * 获取聚鑫的交易订单
                      * @return TransactionId 聚鑫的交易订单
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 

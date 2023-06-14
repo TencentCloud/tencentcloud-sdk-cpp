@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取时移计费明细数据。
                      * @return DataInfoList 时移计费明细数据。
+                     * 
                      */
                     std::vector<TimeShiftBillData> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

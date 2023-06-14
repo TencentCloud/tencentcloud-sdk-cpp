@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 触发任务类型 AS=弹性伸缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置触发任务类型 AS=弹性伸缩
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 触发任务类型 AS=弹性伸缩
+                     * @param _type 触发任务类型 AS=弹性伸缩
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskConfig 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskConfig() const;
 
                     /**
                      * 设置用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskConfig 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
+                     * @param _taskConfig 用 json 表示配置信息 {"Key1":"Value1","Key2":"Value2"}
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskConfig(const std::string& _taskConfig);
 
                     /**
                      * 判断参数 TaskConfig 是否已赋值
                      * @return TaskConfig 是否已赋值
+                     * 
                      */
                     bool TaskConfigHasBeenSet() const;
 

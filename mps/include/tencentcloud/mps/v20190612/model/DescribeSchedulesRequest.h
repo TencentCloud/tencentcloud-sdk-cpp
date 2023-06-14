@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取编排 ID 过滤条件，数组长度限制：100。
                      * @return ScheduleIds 编排 ID 过滤条件，数组长度限制：100。
+                     * 
                      */
                     std::vector<int64_t> GetScheduleIds() const;
 
                     /**
                      * 设置编排 ID 过滤条件，数组长度限制：100。
-                     * @param ScheduleIds 编排 ID 过滤条件，数组长度限制：100。
+                     * @param _scheduleIds 编排 ID 过滤条件，数组长度限制：100。
+                     * 
                      */
                     void SetScheduleIds(const std::vector<int64_t>& _scheduleIds);
 
                     /**
                      * 判断参数 ScheduleIds 是否已赋值
                      * @return ScheduleIds 是否已赋值
+                     * 
                      */
                     bool ScheduleIdsHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
 <li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
 <li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
 不填或者为空表示全部。
+                     * 
                      */
                     std::string GetTriggerType() const;
 
@@ -77,16 +81,18 @@ namespace TencentCloud
 <li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
 <li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
 不填或者为空表示全部。
-                     * @param TriggerType 编排触发类型，可选值：
+                     * @param _triggerType 编排触发类型，可选值：
 <li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
 <li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
 不填或者为空表示全部。
+                     * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
 
                     /**
                      * 判断参数 TriggerType 是否已赋值
                      * @return TriggerType 是否已赋值
+                     * 
                      */
                     bool TriggerTypeHasBeenSet() const;
 
@@ -99,6 +105,7 @@ namespace TencentCloud
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
 不填此参数，则不区编排状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -107,52 +114,60 @@ namespace TencentCloud
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
 不填此参数，则不区编排状态。
-                     * @param Status 状态，取值范围：
+                     * @param _status 状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
 不填此参数，则不区编排状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
                      * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param Limit 返回记录条数，默认值：10，最大值：100。
+                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

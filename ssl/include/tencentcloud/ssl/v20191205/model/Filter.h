@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取过滤参数key
                      * @return FilterKey 过滤参数key
+                     * 
                      */
                     std::string GetFilterKey() const;
 
                     /**
                      * 设置过滤参数key
-                     * @param FilterKey 过滤参数key
+                     * @param _filterKey 过滤参数key
+                     * 
                      */
                     void SetFilterKey(const std::string& _filterKey);
 
                     /**
                      * 判断参数 FilterKey 是否已赋值
                      * @return FilterKey 是否已赋值
+                     * 
                      */
                     bool FilterKeyHasBeenSet() const;
 
                     /**
                      * 获取过滤参数值
                      * @return FilterValue 过滤参数值
+                     * 
                      */
                     std::string GetFilterValue() const;
 
                     /**
                      * 设置过滤参数值
-                     * @param FilterValue 过滤参数值
+                     * @param _filterValue 过滤参数值
+                     * 
                      */
                     void SetFilterValue(const std::string& _filterValue);
 
                     /**
                      * 判断参数 FilterValue 是否已赋值
                      * @return FilterValue 是否已赋值
+                     * 
                      */
                     bool FilterValueHasBeenSet() const;
 

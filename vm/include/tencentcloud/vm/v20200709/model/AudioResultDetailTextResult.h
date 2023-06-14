@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 标签
+                     * @param _label 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keywords 命中的关键词
+                     * @param _keywords 命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibId 命中的LibId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibId() const;
 
                     /**
                      * 设置命中的LibId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibId 命中的LibId
+                     * @param _libId 命中的LibId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibId(const std::string& _libId);
 
                     /**
                      * 判断参数 LibId 是否已赋值
                      * @return LibId 是否已赋值
+                     * 
                      */
                     bool LibIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibName 命中的LibName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLibName() const;
 
                     /**
                      * 设置命中的LibName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 命中的LibName
+                     * @param _libName 命中的LibName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibName(const std::string& _libName);
 
                     /**
                      * 判断参数 LibName 是否已赋值
                      * @return LibName 是否已赋值
+                     * 
                      */
                     bool LibNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分
+                     * @param _score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LibType 词库类型 1 黑白库 2 自定义库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLibType() const;
 
                     /**
                      * 设置词库类型 1 黑白库 2 自定义库
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibType 词库类型 1 黑白库 2 自定义库
+                     * @param _libType 词库类型 1 黑白库 2 自定义库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLibType(const int64_t& _libType);
 
                     /**
                      * 判断参数 LibType 是否已赋值
                      * @return LibType 是否已赋值
+                     * 
                      */
                     bool LibTypeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 审核建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置审核建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 审核建议
+                     * @param _suggestion 审核建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 

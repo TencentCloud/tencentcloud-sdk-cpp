@@ -50,12 +50,14 @@ false：失败。
                      * @return Result 批量删除操作是否成功。
 true：成功。
 false：失败。
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

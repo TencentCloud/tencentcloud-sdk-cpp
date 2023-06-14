@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取可用区名称
                      * @return Zone 可用区名称
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称
-                     * @param Zone 可用区名称
+                     * @param _zone 可用区名称
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
 1、postgresql（云数据库PostgreSQL）；
 2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
 如不指定默认使用postgresql。
+                     * 
                      */
                     std::string GetDBEngine() const;
 
@@ -77,16 +81,18 @@ namespace TencentCloud
 1、postgresql（云数据库PostgreSQL）；
 2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
 如不指定默认使用postgresql。
-                     * @param DBEngine 数据库引擎，支持：
+                     * @param _dBEngine 数据库引擎，支持：
 1、postgresql（云数据库PostgreSQL）；
 2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
 如不指定默认使用postgresql。
+                     * 
                      */
                     void SetDBEngine(const std::string& _dBEngine);
 
                     /**
                      * 判断参数 DBEngine 是否已赋值
                      * @return DBEngine 是否已赋值
+                     * 
                      */
                     bool DBEngineHasBeenSet() const;
 

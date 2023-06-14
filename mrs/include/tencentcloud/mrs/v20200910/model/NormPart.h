@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位值
+                     * @param _part 部位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const std::string& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartDirection 部位方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPartDirection() const;
 
                     /**
                      * 设置部位方向
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartDirection 部位方向
+                     * @param _partDirection 部位方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartDirection(const std::string& _partDirection);
 
                     /**
                      * 判断参数 PartDirection 是否已赋值
                      * @return PartDirection 是否已赋值
+                     * 
                      */
                     bool PartDirectionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tissue 组织值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTissue() const;
 
                     /**
                      * 设置组织值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tissue 组织值
+                     * @param _tissue 组织值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTissue(const std::string& _tissue);
 
                     /**
                      * 判断参数 Tissue 是否已赋值
                      * @return Tissue 是否已赋值
+                     * 
                      */
                     bool TissueHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TissueDirection 组织方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTissueDirection() const;
 
                     /**
                      * 设置组织方向
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TissueDirection 组织方向
+                     * @param _tissueDirection 组织方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTissueDirection(const std::string& _tissueDirection);
 
                     /**
                      * 判断参数 TissueDirection 是否已赋值
                      * @return TissueDirection 是否已赋值
+                     * 
                      */
                     bool TissueDirectionHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Upper 上级部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpper() const;
 
                     /**
                      * 设置上级部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Upper 上级部位
+                     * @param _upper 上级部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpper(const std::string& _upper);
 
                     /**
                      * 判断参数 Upper 是否已赋值
                      * @return Upper 是否已赋值
+                     * 
                      */
                     bool UpperHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartDetail 部位详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PartDesc GetPartDetail() const;
 
                     /**
                      * 设置部位详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartDetail 部位详情
+                     * @param _partDetail 部位详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartDetail(const PartDesc& _partDetail);
 
                     /**
                      * 判断参数 PartDetail 是否已赋值
                      * @return PartDetail 是否已赋值
+                     * 
                      */
                     bool PartDetailHasBeenSet() const;
 

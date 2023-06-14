@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnAttachedInstanceSet 云联网关联的实例列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CcnAttachedInstance> GetCcnAttachedInstanceSet() const;
 
                     /**
                      * 判断参数 CcnAttachedInstanceSet 是否已赋值
                      * @return CcnAttachedInstanceSet 是否已赋值
+                     * 
                      */
                     bool CcnAttachedInstanceSetHasBeenSet() const;
 

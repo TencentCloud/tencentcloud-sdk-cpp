@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回后端服务列表数目，默认20，最大值100。
                      * @return Limit 返回后端服务列表数目，默认20，最大值100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回后端服务列表数目，默认20，最大值100。
-                     * @param Limit 返回后端服务列表数目，默认20，最大值100。
+                     * @param _limit 返回后端服务列表数目，默认20，最大值100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取返回后端服务列表起始偏移量，默认0。
                      * @return Offset 返回后端服务列表起始偏移量，默认0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置返回后端服务列表起始偏移量，默认0。
-                     * @param Offset 返回后端服务列表起始偏移量，默认0。
+                     * @param _offset 返回后端服务列表起始偏移量，默认0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
 <li> ip - String - 是否必填：否 - （过滤条件）按照 后端服务ip 过滤，如："192.168.0.1"。</li>
 <li> listener-id - String - 是否必填：否 - （过滤条件）按照 监听器ID 过滤，如："lbl-12345678"。</li>
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 七层监听器规则ID 过滤，如："loc-12345678"。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -99,17 +106,19 @@ namespace TencentCloud
 <li> ip - String - 是否必填：否 - （过滤条件）按照 后端服务ip 过滤，如："192.168.0.1"。</li>
 <li> listener-id - String - 是否必填：否 - （过滤条件）按照 监听器ID 过滤，如："lbl-12345678"。</li>
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 七层监听器规则ID 过滤，如："loc-12345678"。</li>
-                     * @param Filters 查询跨域2.0版本云联网后端子机和网卡服务列表条件，详细的过滤条件如下：
+                     * @param _filters 查询跨域2.0版本云联网后端子机和网卡服务列表条件，详细的过滤条件如下：
 <li> vpc-id - String - 是否必填：否 - （过滤条件）按照 本地私有网络ID，即负载均衡的VpcId 过滤，如："vpc-12345678"。</li>
 <li> ip - String - 是否必填：否 - （过滤条件）按照 后端服务ip 过滤，如："192.168.0.1"。</li>
 <li> listener-id - String - 是否必填：否 - （过滤条件）按照 监听器ID 过滤，如："lbl-12345678"。</li>
 <li> location-id - String - 是否必填：否 - （过滤条件）按照 七层监听器规则ID 过滤，如："loc-12345678"。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainOrganizationId 主企业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainOrganizationId() const;
 
                     /**
                      * 设置主企业id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainOrganizationId 主企业id
+                     * @param _mainOrganizationId 主企业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainOrganizationId(const std::string& _mainOrganizationId);
 
                     /**
                      * 判断参数 MainOrganizationId 是否已赋值
                      * @return MainOrganizationId 是否已赋值
+                     * 
                      */
                     bool MainOrganizationIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainUserId 主企业员工UserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainUserId() const;
 
                     /**
                      * 设置主企业员工UserId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainUserId 主企业员工UserId
+                     * @param _mainUserId 主企业员工UserId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainUserId(const std::string& _mainUserId);
 
                     /**
                      * 判断参数 MainUserId 是否已赋值
                      * @return MainUserId 是否已赋值
+                     * 
                      */
                     bool MainUserIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 主企业员工名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置主企业员工名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 主企业员工名
+                     * @param _userName 主企业员工名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 

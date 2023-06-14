@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取标签名
                      * @return Name 标签名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名
-                     * @param Name 标签名
+                     * @param _name 标签名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取标签ID
                      * @return Id 标签ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置标签ID
-                     * @param Id 标签ID
+                     * @param _id 标签ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取CVM主机ID
                      * @return Quuids CVM主机ID
+                     * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置CVM主机ID
-                     * @param Quuids CVM主机ID
+                     * @param _quuids CVM主机ID
+                     * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
+                     * 
                      */
                     bool QuuidsHasBeenSet() const;
 

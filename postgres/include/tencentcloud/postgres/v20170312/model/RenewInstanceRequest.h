@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如postgres-6fego161
                      * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-6fego161
-                     * @param DBInstanceId 实例ID，形如postgres-6fego161
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取续费多少个月
                      * @return Period 续费多少个月
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置续费多少个月
-                     * @param Period 续费多少个月
+                     * @param _period 续费多少个月
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券,1是,0否，默认不使用
                      * @return AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券,1是,0否，默认不使用
-                     * @param AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * @param _autoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券ID列表，目前仅支持指定一张代金券
                      * @return VoucherIds 代金券ID列表，目前仅支持指定一张代金券
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券ID列表，目前仅支持指定一张代金券
-                     * @param VoucherIds 代金券ID列表，目前仅支持指定一张代金券
+                     * @param _voucherIds 代金券ID列表，目前仅支持指定一张代金券
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 

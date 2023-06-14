@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 编辑处理任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置编辑处理任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 编辑处理任务ID。
+                     * @param _taskId 编辑处理任务ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -84,6 +87,7 @@ MediaCutting：视频剪切；
 MediaJoining：视频拼接。
 MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -94,18 +98,20 @@ MediaCutting：视频剪切；
 MediaJoining：视频拼接。
 MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 编辑处理任务类型，取值：
+                     * @param _type 编辑处理任务类型，取值：
 MediaEditing：视频编辑（待上线）；
 MediaCutting：视频剪切；
 MediaJoining：视频拼接。
 MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -114,20 +120,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 处理进度，范围：[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置处理进度，范围：[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 处理进度，范围：[0,100]
+                     * @param _progress 处理进度，范围：[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -144,6 +153,7 @@ MediaRecognition：媒体识别；
 2000：成功；
 5000：失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -154,18 +164,20 @@ MediaRecognition：媒体识别；
 2000：成功；
 5000：失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务状态：
+                     * @param _status 任务状态：
 1100：等待中；
 1200：执行中；
 2000：成功；
 5000：失败。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -174,20 +186,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 任务错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置任务错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrCode 任务错误码。
+                     * @param _errCode 任务错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
@@ -196,20 +211,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 任务错误信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置任务错误信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrMsg 任务错误信息。
+                     * @param _errMsg 任务错误信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -218,20 +236,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaCuttingTaskResult 剪切任务处理结果，当Type=MediaCutting时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaCuttingTaskResult GetMediaCuttingTaskResult() const;
 
                     /**
                      * 设置剪切任务处理结果，当Type=MediaCutting时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaCuttingTaskResult 剪切任务处理结果，当Type=MediaCutting时才有效。
+                     * @param _mediaCuttingTaskResult 剪切任务处理结果，当Type=MediaCutting时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaCuttingTaskResult(const MediaCuttingTaskResult& _mediaCuttingTaskResult);
 
                     /**
                      * 判断参数 MediaCuttingTaskResult 是否已赋值
                      * @return MediaCuttingTaskResult 是否已赋值
+                     * 
                      */
                     bool MediaCuttingTaskResultHasBeenSet() const;
 
@@ -240,20 +261,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaJoiningTaskResult 拼接任务处理结果，当Type=MediaJoining时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaJoiningTaskResult GetMediaJoiningTaskResult() const;
 
                     /**
                      * 设置拼接任务处理结果，当Type=MediaJoining时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaJoiningTaskResult 拼接任务处理结果，当Type=MediaJoining时才有效。
+                     * @param _mediaJoiningTaskResult 拼接任务处理结果，当Type=MediaJoining时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaJoiningTaskResult(const MediaJoiningTaskResult& _mediaJoiningTaskResult);
 
                     /**
                      * 判断参数 MediaJoiningTaskResult 是否已赋值
                      * @return MediaJoiningTaskResult 是否已赋值
+                     * 
                      */
                     bool MediaJoiningTaskResultHasBeenSet() const;
 
@@ -262,20 +286,23 @@ MediaRecognition：媒体识别；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaRecognitionTaskResult 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaRecognitionTaskResult GetMediaRecognitionTaskResult() const;
 
                     /**
                      * 设置媒体识别任务处理结果，当Type=MediaRecognition时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaRecognitionTaskResult 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
+                     * @param _mediaRecognitionTaskResult 媒体识别任务处理结果，当Type=MediaRecognition时才有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaRecognitionTaskResult(const MediaRecognitionTaskResult& _mediaRecognitionTaskResult);
 
                     /**
                      * 判断参数 MediaRecognitionTaskResult 是否已赋值
                      * @return MediaRecognitionTaskResult 是否已赋值
+                     * 
                      */
                     bool MediaRecognitionTaskResultHasBeenSet() const;
 

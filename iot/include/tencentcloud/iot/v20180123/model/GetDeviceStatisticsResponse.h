@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计数据
                      * @return DeviceStatistics 统计数据
+                     * 
                      */
                     std::vector<DeviceStatData> GetDeviceStatistics() const;
 
                     /**
                      * 判断参数 DeviceStatistics 是否已赋值
                      * @return DeviceStatistics 是否已赋值
+                     * 
                      */
                     bool DeviceStatisticsHasBeenSet() const;
 

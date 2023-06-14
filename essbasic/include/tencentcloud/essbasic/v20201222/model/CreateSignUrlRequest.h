@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取签署人ID
                      * @return UserId 签署人ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置签署人ID
-                     * @param UserId 签署人ID
+                     * @param _userId 签署人ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取文件签署截止时间戳
                      * @return Deadline 文件签署截止时间戳
+                     * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置文件签署截止时间戳
-                     * @param Deadline 文件签署截止时间戳
+                     * @param _deadline 文件签署截止时间戳
+                     * 
                      */
                     void SetDeadline(const int64_t& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取目录ID。当 SignUrlType 为 CATALOG 时必填
                      * @return CatalogId 目录ID。当 SignUrlType 为 CATALOG 时必填
+                     * 
                      */
                     std::string GetCatalogId() const;
 
                     /**
                      * 设置目录ID。当 SignUrlType 为 CATALOG 时必填
-                     * @param CatalogId 目录ID。当 SignUrlType 为 CATALOG 时必填
+                     * @param _catalogId 目录ID。当 SignUrlType 为 CATALOG 时必填
+                     * 
                      */
                     void SetCatalogId(const std::string& _catalogId);
 
                     /**
                      * 判断参数 CatalogId 是否已赋值
                      * @return CatalogId 是否已赋值
+                     * 
                      */
                     bool CatalogIdHasBeenSet() const;
 
                     /**
                      * 获取流程ID。当 SignUrlType 为 FLOW 时必填
                      * @return FlowId 流程ID。当 SignUrlType 为 FLOW 时必填
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程ID。当 SignUrlType 为 FLOW 时必填
-                     * @param FlowId 流程ID。当 SignUrlType 为 FLOW 时必填
+                     * @param _flowId 流程ID。当 SignUrlType 为 FLOW 时必填
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -140,6 +155,7 @@ namespace TencentCloud
                      * @return SignUrlType 签署链接类型：
 1. FLOW - 单流程签署 (默认) 
 2. CATALOG - 目录签署
+                     * 
                      */
                     std::string GetSignUrlType() const;
 
@@ -147,33 +163,38 @@ namespace TencentCloud
                      * 设置签署链接类型：
 1. FLOW - 单流程签署 (默认) 
 2. CATALOG - 目录签署
-                     * @param SignUrlType 签署链接类型：
+                     * @param _signUrlType 签署链接类型：
 1. FLOW - 单流程签署 (默认) 
 2. CATALOG - 目录签署
+                     * 
                      */
                     void SetSignUrlType(const std::string& _signUrlType);
 
                     /**
                      * 判断参数 SignUrlType 是否已赋值
                      * @return SignUrlType 是否已赋值
+                     * 
                      */
                     bool SignUrlTypeHasBeenSet() const;
 
                     /**
                      * 获取发送流程或目录时生成的签署任务ID
                      * @return SignId 发送流程或目录时生成的签署任务ID
+                     * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 设置发送流程或目录时生成的签署任务ID
-                     * @param SignId 发送流程或目录时生成的签署任务ID
+                     * @param _signId 发送流程或目录时生成的签署任务ID
+                     * 
                      */
                     void SetSignId(const std::string& _signId);
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 

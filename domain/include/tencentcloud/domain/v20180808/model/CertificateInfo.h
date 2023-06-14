@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取证件号码。
                      * @return CertificateCode 证件号码。
+                     * 
                      */
                     std::string GetCertificateCode() const;
 
                     /**
                      * 设置证件号码。
-                     * @param CertificateCode 证件号码。
+                     * @param _certificateCode 证件号码。
+                     * 
                      */
                     void SetCertificateCode(const std::string& _certificateCode);
 
                     /**
                      * 判断参数 CertificateCode 是否已赋值
                      * @return CertificateCode 是否已赋值
+                     * 
                      */
                     bool CertificateCodeHasBeenSet() const;
 
@@ -123,6 +126,7 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
+                     * 
                      */
                     std::string GetCertificateType() const;
 
@@ -156,7 +160,7 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-                     * @param CertificateType 证件类型。
+                     * @param _certificateType 证件类型。
 SFZ: 身份证。
 HZ: 护照。
 TXZ: 中国港澳居民来往内地通行证。
@@ -185,30 +189,35 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
+                     * 
                      */
                     void SetCertificateType(const std::string& _certificateType);
 
                     /**
                      * 判断参数 CertificateType 是否已赋值
                      * @return CertificateType 是否已赋值
+                     * 
                      */
                     bool CertificateTypeHasBeenSet() const;
 
                     /**
                      * 获取证件照片地址。
                      * @return ImgUrl 证件照片地址。
+                     * 
                      */
                     std::string GetImgUrl() const;
 
                     /**
                      * 设置证件照片地址。
-                     * @param ImgUrl 证件照片地址。
+                     * @param _imgUrl 证件照片地址。
+                     * 
                      */
                     void SetImgUrl(const std::string& _imgUrl);
 
                     /**
                      * 判断参数 ImgUrl 是否已赋值
                      * @return ImgUrl 是否已赋值
+                     * 
                      */
                     bool ImgUrlHasBeenSet() const;
 
@@ -217,20 +226,23 @@ GZJGZY: 公证机构执业证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginImgUrl 原始照片地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginImgUrl() const;
 
                     /**
                      * 设置原始照片地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginImgUrl 原始照片地址
+                     * @param _originImgUrl 原始照片地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginImgUrl(const std::string& _originImgUrl);
 
                     /**
                      * 判断参数 OriginImgUrl 是否已赋值
                      * @return OriginImgUrl 是否已赋值
+                     * 
                      */
                     bool OriginImgUrlHasBeenSet() const;
 
@@ -239,20 +251,23 @@ GZJGZY: 公证机构执业证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantCertificateCode 联系人证件号码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistrantCertificateCode() const;
 
                     /**
                      * 设置联系人证件号码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistrantCertificateCode 联系人证件号码。
+                     * @param _registrantCertificateCode 联系人证件号码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrantCertificateCode(const std::string& _registrantCertificateCode);
 
                     /**
                      * 判断参数 RegistrantCertificateCode 是否已赋值
                      * @return RegistrantCertificateCode 是否已赋值
+                     * 
                      */
                     bool RegistrantCertificateCodeHasBeenSet() const;
 
@@ -261,20 +276,23 @@ GZJGZY: 公证机构执业证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantCertificateType 联系人证件类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistrantCertificateType() const;
 
                     /**
                      * 设置联系人证件类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistrantCertificateType 联系人证件类型。
+                     * @param _registrantCertificateType 联系人证件类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrantCertificateType(const std::string& _registrantCertificateType);
 
                     /**
                      * 判断参数 RegistrantCertificateType 是否已赋值
                      * @return RegistrantCertificateType 是否已赋值
+                     * 
                      */
                     bool RegistrantCertificateTypeHasBeenSet() const;
 
@@ -283,20 +301,23 @@ GZJGZY: 公证机构执业证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantImgUrl 联系人证件照片地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistrantImgUrl() const;
 
                     /**
                      * 设置联系人证件照片地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistrantImgUrl 联系人证件照片地址。
+                     * @param _registrantImgUrl 联系人证件照片地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrantImgUrl(const std::string& _registrantImgUrl);
 
                     /**
                      * 判断参数 RegistrantImgUrl 是否已赋值
                      * @return RegistrantImgUrl 是否已赋值
+                     * 
                      */
                     bool RegistrantImgUrlHasBeenSet() const;
 

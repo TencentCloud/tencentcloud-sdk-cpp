@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取活动Id
                      * @return CampaignId 活动Id
+                     * 
                      */
                     uint64_t GetCampaignId() const;
 
                     /**
                      * 设置活动Id
-                     * @param CampaignId 活动Id
+                     * @param _campaignId 活动Id
+                     * 
                      */
                     void SetCampaignId(const uint64_t& _campaignId);
 
                     /**
                      * 判断参数 CampaignId 是否已赋值
                      * @return CampaignId 是否已赋值
+                     * 
                      */
                     bool CampaignIdHasBeenSet() const;
 
                     /**
                      * 获取统计数据
                      * @return Statistics 统计数据
+                     * 
                      */
                     std::vector<SmsCampaignStatisticsCrowdData> GetStatistics() const;
 
                     /**
                      * 设置统计数据
-                     * @param Statistics 统计数据
+                     * @param _statistics 统计数据
+                     * 
                      */
                     void SetStatistics(const std::vector<SmsCampaignStatisticsCrowdData>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 

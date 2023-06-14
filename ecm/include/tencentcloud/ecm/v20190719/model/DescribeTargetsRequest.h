@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID
                      * @return LoadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * @param _loadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器 ID列表
                      * @return ListenerIds 监听器 ID列表
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 设置监听器 ID列表
-                     * @param ListenerIds 监听器 ID列表
+                     * @param _listenerIds 监听器 ID列表
+                     * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
                      * 获取监听器协议类型
                      * @return Protocol 监听器协议类型
+                     * 
                      */
                     int64_t GetProtocol() const;
 
                     /**
                      * 设置监听器协议类型
-                     * @param Protocol 监听器协议类型
+                     * @param _protocol 监听器协议类型
+                     * 
                      */
                     void SetProtocol(const int64_t& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取监听器端口
                      * @return Port 监听器端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听器端口
-                     * @param Port 监听器端口
+                     * @param _port 监听器端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

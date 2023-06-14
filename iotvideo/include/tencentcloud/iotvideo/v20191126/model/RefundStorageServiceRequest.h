@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云存服务ID
                      * @return ServiceId 云存服务ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置云存服务ID
-                     * @param ServiceId 云存服务ID
+                     * @param _serviceId 云存服务ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单
                      * @return OrderId 云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单
-                     * @param OrderId 云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单
+                     * @param _orderId 云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

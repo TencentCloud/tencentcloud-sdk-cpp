@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取任务统计信息
                      * @return Statistic 任务统计信息
+                     * 
                      */
                     ImageTaskStatistic GetStatistic() const;
 
                     /**
                      * 判断参数 Statistic 是否已赋值
                      * @return Statistic 是否已赋值
+                     * 
                      */
                     bool StatisticHasBeenSet() const;
 
                     /**
                      * 获取图像任务唯一标识符
                      * @return JobId 图像任务唯一标识符
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

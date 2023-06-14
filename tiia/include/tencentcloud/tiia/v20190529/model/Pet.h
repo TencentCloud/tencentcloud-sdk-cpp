@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。
                      * @return Name 识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。
-                     * @param Name 识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。
+                     * @param _name 识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
                      * @return Score 识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
-                     * @param Score 识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * @param _score 识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取识别目标在图片中的坐标。
                      * @return Location 识别目标在图片中的坐标。
+                     * 
                      */
                     Rect GetLocation() const;
 
                     /**
                      * 设置识别目标在图片中的坐标。
-                     * @param Location 识别目标在图片中的坐标。
+                     * @param _location 识别目标在图片中的坐标。
+                     * 
                      */
                     void SetLocation(const Rect& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

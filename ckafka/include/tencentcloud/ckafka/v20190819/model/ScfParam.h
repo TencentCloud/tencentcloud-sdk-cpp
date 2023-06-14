@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取SCF云函数函数名
                      * @return FunctionName SCF云函数函数名
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置SCF云函数函数名
-                     * @param FunctionName SCF云函数函数名
+                     * @param _functionName SCF云函数函数名
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取SCF云函数命名空间, 默认为default
                      * @return Namespace SCF云函数命名空间, 默认为default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置SCF云函数命名空间, 默认为default
-                     * @param Namespace SCF云函数命名空间, 默认为default
+                     * @param _namespace SCF云函数命名空间, 默认为default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取SCF云函数版本及别名, 默认为$DEFAULT
                      * @return Qualifier SCF云函数版本及别名, 默认为$DEFAULT
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置SCF云函数版本及别名, 默认为$DEFAULT
-                     * @param Qualifier SCF云函数版本及别名, 默认为$DEFAULT
+                     * @param _qualifier SCF云函数版本及别名, 默认为$DEFAULT
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 
                     /**
                      * 获取每批最大发送消息数, 默认为1000
                      * @return BatchSize 每批最大发送消息数, 默认为1000
+                     * 
                      */
                     int64_t GetBatchSize() const;
 
                     /**
                      * 设置每批最大发送消息数, 默认为1000
-                     * @param BatchSize 每批最大发送消息数, 默认为1000
+                     * @param _batchSize 每批最大发送消息数, 默认为1000
+                     * 
                      */
                     void SetBatchSize(const int64_t& _batchSize);
 
                     /**
                      * 判断参数 BatchSize 是否已赋值
                      * @return BatchSize 是否已赋值
+                     * 
                      */
                     bool BatchSizeHasBeenSet() const;
 
                     /**
                      * 获取SCF调用失败后重试次数, 默认为5
                      * @return MaxRetries SCF调用失败后重试次数, 默认为5
+                     * 
                      */
                     int64_t GetMaxRetries() const;
 
                     /**
                      * 设置SCF调用失败后重试次数, 默认为5
-                     * @param MaxRetries SCF调用失败后重试次数, 默认为5
+                     * @param _maxRetries SCF调用失败后重试次数, 默认为5
+                     * 
                      */
                     void SetMaxRetries(const int64_t& _maxRetries);
 
                     /**
                      * 判断参数 MaxRetries 是否已赋值
                      * @return MaxRetries 是否已赋值
+                     * 
                      */
                     bool MaxRetriesHasBeenSet() const;
 

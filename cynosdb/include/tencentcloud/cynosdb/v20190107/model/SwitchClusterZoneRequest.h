@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取当前可用区
                      * @return OldZone 当前可用区
+                     * 
                      */
                     std::string GetOldZone() const;
 
                     /**
                      * 设置当前可用区
-                     * @param OldZone 当前可用区
+                     * @param _oldZone 当前可用区
+                     * 
                      */
                     void SetOldZone(const std::string& _oldZone);
 
                     /**
                      * 判断参数 OldZone 是否已赋值
                      * @return OldZone 是否已赋值
+                     * 
                      */
                     bool OldZoneHasBeenSet() const;
 
                     /**
                      * 获取要切换到的可用区
                      * @return NewZone 要切换到的可用区
+                     * 
                      */
                     std::string GetNewZone() const;
 
                     /**
                      * 设置要切换到的可用区
-                     * @param NewZone 要切换到的可用区
+                     * @param _newZone 要切换到的可用区
+                     * 
                      */
                     void SetNewZone(const std::string& _newZone);
 
                     /**
                      * 判断参数 NewZone 是否已赋值
                      * @return NewZone 是否已赋值
+                     * 
                      */
                     bool NewZoneHasBeenSet() const;
 
                     /**
                      * 获取维护期间执行-yes,立即执行-no
                      * @return IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     * 
                      */
                     std::string GetIsInMaintainPeriod() const;
 
                     /**
                      * 设置维护期间执行-yes,立即执行-no
-                     * @param IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     * @param _isInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     * 
                      */
                     void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
 
                     /**
                      * 判断参数 IsInMaintainPeriod 是否已赋值
                      * @return IsInMaintainPeriod 是否已赋值
+                     * 
                      */
                     bool IsInMaintainPeriodHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverUserId 接收人Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReceiverUserId() const;
 
                     /**
                      * 设置接收人Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverUserId 接收人Uin
+                     * @param _receiverUserId 接收人Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverUserId(const uint64_t& _receiverUserId);
 
                     /**
                      * 判断参数 ReceiverUserId 是否已赋值
                      * @return ReceiverUserId 是否已赋值
+                     * 
                      */
                     bool ReceiverUserIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverName 接收人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReceiverName() const;
 
                     /**
                      * 设置接收人名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverName 接收人名称
+                     * @param _receiverName 接收人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverName(const std::string& _receiverName);
 
                     /**
                      * 判断参数 ReceiverName 是否已赋值
                      * @return ReceiverName 是否已赋值
+                     * 
                      */
                     bool ReceiverNameHasBeenSet() const;
 

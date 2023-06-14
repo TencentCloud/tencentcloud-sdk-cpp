@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取解析记录的ID
                      * @return DnsRecordId 解析记录的ID
+                     * 
                      */
                     uint64_t GetDnsRecordId() const;
 
                     /**
                      * 设置解析记录的ID
-                     * @param DnsRecordId 解析记录的ID
+                     * @param _dnsRecordId 解析记录的ID
+                     * 
                      */
                     void SetDnsRecordId(const uint64_t& _dnsRecordId);
 
                     /**
                      * 判断参数 DnsRecordId 是否已赋值
                      * @return DnsRecordId 是否已赋值
+                     * 
                      */
                     bool DnsRecordIdHasBeenSet() const;
 

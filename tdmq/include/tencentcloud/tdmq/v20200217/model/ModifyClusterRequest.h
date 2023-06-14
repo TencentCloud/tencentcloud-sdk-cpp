@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取Pulsar 集群的ID，需要更新的集群Id。
                      * @return ClusterId Pulsar 集群的ID，需要更新的集群Id。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Pulsar 集群的ID，需要更新的集群Id。
-                     * @param ClusterId Pulsar 集群的ID，需要更新的集群Id。
+                     * @param _clusterId Pulsar 集群的ID，需要更新的集群Id。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取更新后的集群名称。
                      * @return ClusterName 更新后的集群名称。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置更新后的集群名称。
-                     * @param ClusterName 更新后的集群名称。
+                     * @param _clusterName 更新后的集群名称。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取说明信息。
                      * @return Remark 说明信息。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息。
-                     * @param Remark 说明信息。
+                     * @param _remark 说明信息。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取开启公网访问，只能为true
                      * @return PublicAccessEnabled 开启公网访问，只能为true
+                     * 
                      */
                     bool GetPublicAccessEnabled() const;
 
                     /**
                      * 设置开启公网访问，只能为true
-                     * @param PublicAccessEnabled 开启公网访问，只能为true
+                     * @param _publicAccessEnabled 开启公网访问，只能为true
+                     * 
                      */
                     void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
 
                     /**
                      * 判断参数 PublicAccessEnabled 是否已赋值
                      * @return PublicAccessEnabled 是否已赋值
+                     * 
                      */
                     bool PublicAccessEnabledHasBeenSet() const;
 

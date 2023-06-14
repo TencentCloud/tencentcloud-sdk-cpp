@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取NodeUnit所属的NodeGroup名称
                      * @return NodeGroupName NodeUnit所属的NodeGroup名称
+                     * 
                      */
                     std::string GetNodeGroupName() const;
 
                     /**
                      * 设置NodeUnit所属的NodeGroup名称
-                     * @param NodeGroupName NodeUnit所属的NodeGroup名称
+                     * @param _nodeGroupName NodeUnit所属的NodeGroup名称
+                     * 
                      */
                     void SetNodeGroupName(const std::string& _nodeGroupName);
 
                     /**
                      * 判断参数 NodeGroupName 是否已赋值
                      * @return NodeGroupName 是否已赋值
+                     * 
                      */
                     bool NodeGroupNameHasBeenSet() const;
 
                     /**
                      * 获取命名空间，默认default
                      * @return Namespace 命名空间，默认default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，默认default
-                     * @param Namespace 命名空间，默认default
+                     * @param _namespace 命名空间，默认default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取分页查询limit，默认20
                      * @return Limit 分页查询limit，默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询limit，默认20
-                     * @param Limit 分页查询limit，默认20
+                     * @param _limit 分页查询limit，默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页查询offset，默认0
                      * @return Offset 分页查询offset，默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询offset，默认0
-                     * @param Offset 分页查询offset，默认0
+                     * @param _offset 分页查询offset，默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取模糊匹配
                      * @return NameFilter 模糊匹配
+                     * 
                      */
                     std::string GetNameFilter() const;
 
                     /**
                      * 设置模糊匹配
-                     * @param NameFilter 模糊匹配
+                     * @param _nameFilter 模糊匹配
+                     * 
                      */
                     void SetNameFilter(const std::string& _nameFilter);
 
                     /**
                      * 判断参数 NameFilter 是否已赋值
                      * @return NameFilter 是否已赋值
+                     * 
                      */
                     bool NameFilterHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionName 版本名称
+                     * @param _versionName 版本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowRatio 流量占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowRatio() const;
 
                     /**
                      * 设置流量占比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowRatio 流量占比
+                     * @param _flowRatio 流量占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowRatio(const int64_t& _flowRatio);
 
                     /**
                      * 判断参数 FlowRatio 是否已赋值
                      * @return FlowRatio 是否已赋值
+                     * 
                      */
                     bool FlowRatioHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlParam 流量参数键值对（URL参数/HEADERS参数）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ObjectKV GetUrlParam() const;
 
                     /**
                      * 设置流量参数键值对（URL参数/HEADERS参数）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UrlParam 流量参数键值对（URL参数/HEADERS参数）
+                     * @param _urlParam 流量参数键值对（URL参数/HEADERS参数）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrlParam(const ObjectKV& _urlParam);
 
                     /**
                      * 判断参数 UrlParam 是否已赋值
                      * @return UrlParam 是否已赋值
+                     * 
                      */
                     bool UrlParamHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 优先级
+                     * @param _priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultPriority 是否是默认兜底版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsDefaultPriority() const;
 
                     /**
                      * 设置是否是默认兜底版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDefaultPriority 是否是默认兜底版本
+                     * @param _isDefaultPriority 是否是默认兜底版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDefaultPriority(const bool& _isDefaultPriority);
 
                     /**
                      * 判断参数 IsDefaultPriority 是否已赋值
                      * @return IsDefaultPriority 是否已赋值
+                     * 
                      */
                     bool IsDefaultPriorityHasBeenSet() const;
 

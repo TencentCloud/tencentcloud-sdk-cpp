@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectSet 项目数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Project> GetProjectSet() const;
 
                     /**
                      * 判断参数 ProjectSet 是否已赋值
                      * @return ProjectSet 是否已赋值
+                     * 
                      */
                     bool ProjectSetHasBeenSet() const;
 
                     /**
                      * 获取项目数量
                      * @return Total 项目数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

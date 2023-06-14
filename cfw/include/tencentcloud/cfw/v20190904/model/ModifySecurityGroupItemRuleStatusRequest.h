@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取方向，0：出站，1：入站，默认1
                      * @return Direction 方向，0：出站，1：入站，默认1
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置方向，0：出站，1：入站，默认1
-                     * @param Direction 方向，0：出站，1：入站，默认1
+                     * @param _direction 方向，0：出站，1：入站，默认1
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取是否开关开启，0：未开启，1：开启
                      * @return Status 是否开关开启，0：未开启，1：开启
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置是否开关开启，0：未开启，1：开启
-                     * @param Status 是否开关开启，0：未开启，1：开启
+                     * @param _status 是否开关开启，0：未开启，1：开启
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取更改的企业安全组规则的执行顺序
                      * @return RuleSequence 更改的企业安全组规则的执行顺序
+                     * 
                      */
                     uint64_t GetRuleSequence() const;
 
                     /**
                      * 设置更改的企业安全组规则的执行顺序
-                     * @param RuleSequence 更改的企业安全组规则的执行顺序
+                     * @param _ruleSequence 更改的企业安全组规则的执行顺序
+                     * 
                      */
                     void SetRuleSequence(const uint64_t& _ruleSequence);
 
                     /**
                      * 判断参数 RuleSequence 是否已赋值
                      * @return RuleSequence 是否已赋值
+                     * 
                      */
                     bool RuleSequenceHasBeenSet() const;
 

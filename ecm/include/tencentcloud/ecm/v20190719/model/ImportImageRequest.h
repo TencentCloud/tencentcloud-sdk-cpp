@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像的Id。
                      * @return ImageId 镜像的Id。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像的Id。
-                     * @param ImageId 镜像的Id。
+                     * @param _imageId 镜像的Id。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取镜像的描述。
                      * @return ImageDescription 镜像的描述。
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像的描述。
-                     * @param ImageDescription 镜像的描述。
+                     * @param _imageDescription 镜像的描述。
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
                      * 获取源地域
                      * @return SourceRegion 源地域
+                     * 
                      */
                     std::string GetSourceRegion() const;
 
                     /**
                      * 设置源地域
-                     * @param SourceRegion 源地域
+                     * @param _sourceRegion 源地域
+                     * 
                      */
                     void SetSourceRegion(const std::string& _sourceRegion);
 
                     /**
                      * 判断参数 SourceRegion 是否已赋值
                      * @return SourceRegion 是否已赋值
+                     * 
                      */
                     bool SourceRegionHasBeenSet() const;
 

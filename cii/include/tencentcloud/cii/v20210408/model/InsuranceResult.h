@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
                      * @return InsuranceType 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
+                     * 
                      */
                     std::string GetInsuranceType() const;
 
                     /**
                      * 设置险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
-                     * @param InsuranceType 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
+                     * @param _insuranceType 险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)
+                     * 
                      */
                     void SetInsuranceType(const std::string& _insuranceType);
 
                     /**
                      * 判断参数 InsuranceType 是否已赋值
                      * @return InsuranceType 是否已赋值
+                     * 
                      */
                     bool InsuranceTypeHasBeenSet() const;
 
                     /**
                      * 获取对应险种的机器核保结果
                      * @return Result 对应险种的机器核保结果
+                     * 
                      */
                     std::vector<MachinePredict> GetResult() const;
 
                     /**
                      * 设置对应险种的机器核保结果
-                     * @param Result 对应险种的机器核保结果
+                     * @param _result 对应险种的机器核保结果
+                     * 
                      */
                     void SetResult(const std::vector<MachinePredict>& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

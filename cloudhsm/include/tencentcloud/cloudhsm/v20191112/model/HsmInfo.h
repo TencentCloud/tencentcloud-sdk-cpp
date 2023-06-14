@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取加密机型号
                      * @return Model 加密机型号
+                     * 
                      */
                     std::string GetModel() const;
 
                     /**
                      * 设置加密机型号
-                     * @param Model 加密机型号
+                     * @param _model 加密机型号
+                     * 
                      */
                     void SetModel(const std::string& _model);
 
                     /**
                      * 判断参数 Model 是否已赋值
                      * @return Model 是否已赋值
+                     * 
                      */
                     bool ModelHasBeenSet() const;
 
                     /**
                      * 获取此类型的加密机所支持的VSM类型列表
                      * @return VsmTypes 此类型的加密机所支持的VSM类型列表
+                     * 
                      */
                     std::vector<VsmInfo> GetVsmTypes() const;
 
                     /**
                      * 设置此类型的加密机所支持的VSM类型列表
-                     * @param VsmTypes 此类型的加密机所支持的VSM类型列表
+                     * @param _vsmTypes 此类型的加密机所支持的VSM类型列表
+                     * 
                      */
                     void SetVsmTypes(const std::vector<VsmInfo>& _vsmTypes);
 
                     /**
                      * 判断参数 VsmTypes 是否已赋值
                      * @return VsmTypes 是否已赋值
+                     * 
                      */
                     bool VsmTypesHasBeenSet() const;
 
                     /**
                      * 获取加密机母机类型：virtualization、GHSM、EHSM、SHSM
                      * @return HsmType 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     * 
                      */
                     std::string GetHsmType() const;
 
                     /**
                      * 设置加密机母机类型：virtualization、GHSM、EHSM、SHSM
-                     * @param HsmType 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     * @param _hsmType 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     * 
                      */
                     void SetHsmType(const std::string& _hsmType);
 
                     /**
                      * 判断参数 HsmType 是否已赋值
                      * @return HsmType 是否已赋值
+                     * 
                      */
                     bool HsmTypeHasBeenSet() const;
 

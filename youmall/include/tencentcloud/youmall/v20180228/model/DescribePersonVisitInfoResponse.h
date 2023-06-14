@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取公司ID
                      * @return CompanyId 公司ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取门店ID
                      * @return ShopId 门店ID
+                     * 
                      */
                     uint64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取用户到访明细
                      * @return PersonVisitInfoSet 用户到访明细
+                     * 
                      */
                     std::vector<PersonVisitInfo> GetPersonVisitInfoSet() const;
 
                     /**
                      * 判断参数 PersonVisitInfoSet 是否已赋值
                      * @return PersonVisitInfoSet 是否已赋值
+                     * 
                      */
                     bool PersonVisitInfoSetHasBeenSet() const;
 

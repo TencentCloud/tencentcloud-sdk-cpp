@@ -55,6 +55,7 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -63,88 +64,102 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param Time 时间点，
+                     * @param _time 时间点，
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位: Mbps。
                      * @return Bandwidth 带宽，单位: Mbps。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽，单位: Mbps。
-                     * @param Bandwidth 带宽，单位: Mbps。
+                     * @param _bandwidth 带宽，单位: Mbps。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取流量，单位: MB。
                      * @return Flux 流量，单位: MB。
+                     * 
                      */
                     double GetFlux() const;
 
                     /**
                      * 设置流量，单位: MB。
-                     * @param Flux 流量，单位: MB。
+                     * @param _flux 流量，单位: MB。
+                     * 
                      */
                     void SetFlux(const double& _flux);
 
                     /**
                      * 判断参数 Flux 是否已赋值
                      * @return Flux 是否已赋值
+                     * 
                      */
                     bool FluxHasBeenSet() const;
 
                     /**
                      * 获取新增请求数。
                      * @return Request 新增请求数。
+                     * 
                      */
                     uint64_t GetRequest() const;
 
                     /**
                      * 设置新增请求数。
-                     * @param Request 新增请求数。
+                     * @param _request 新增请求数。
+                     * 
                      */
                     void SetRequest(const uint64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
                     /**
                      * 获取并发连接数。
                      * @return Online 并发连接数。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置并发连接数。
-                     * @param Online 并发连接数。
+                     * @param _online 并发连接数。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 

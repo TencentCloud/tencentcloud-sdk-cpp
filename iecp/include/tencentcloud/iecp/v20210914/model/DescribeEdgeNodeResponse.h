@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind 节点类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态 （1健康｜2异常｜3离线｜4未激活）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuArchitecture CPU体系结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCpuArchitecture() const;
 
                     /**
                      * 判断参数 CpuArchitecture 是否已赋值
                      * @return CpuArchitecture 是否已赋值
+                     * 
                      */
                     bool CpuArchitectureHasBeenSet() const;
 
@@ -120,12 +130,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiChipArchitecture AI处理器体系结构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAiChipArchitecture() const;
 
                     /**
                      * 判断参数 AiChipArchitecture 是否已赋值
                      * @return AiChipArchitecture 是否已赋值
+                     * 
                      */
                     bool AiChipArchitectureHasBeenSet() const;
 
@@ -134,24 +146,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取节点标签列表
                      * @return Labels 节点标签列表
+                     * 
                      */
                     std::vector<EdgeNodeLabel> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 节点资源信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeNodeResourceInfo GetResource() const;
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

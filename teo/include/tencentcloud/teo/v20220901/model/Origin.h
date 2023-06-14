@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origins 主源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetOrigins() const;
 
                     /**
                      * 设置主源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origins 主源站列表。
+                     * @param _origins 主源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrigins(const std::vector<std::string>& _origins);
 
                     /**
                      * 判断参数 Origins 是否已赋值
                      * @return Origins 是否已赋值
+                     * 
                      */
                     bool OriginsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupOrigins 备源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetBackupOrigins() const;
 
                     /**
                      * 设置备源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupOrigins 备源站列表。
+                     * @param _backupOrigins 备源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupOrigins(const std::vector<std::string>& _backupOrigins);
 
                     /**
                      * 判断参数 BackupOrigins 是否已赋值
                      * @return BackupOrigins 是否已赋值
+                     * 
                      */
                     bool BackupOriginsHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginPullProtocol() const;
 
@@ -110,17 +117,19 @@ namespace TencentCloud
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginPullProtocol 回源协议配置，取值有：
+                     * @param _originPullProtocol 回源协议配置，取值有：
 <li>http：强制 http 回源；</li>
 <li>follow：协议跟随回源；</li>
 <li>https：强制 https 回源。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginPullProtocol(const std::string& _originPullProtocol);
 
                     /**
                      * 判断参数 OriginPullProtocol 是否已赋值
                      * @return OriginPullProtocol 是否已赋值
+                     * 
                      */
                     bool OriginPullProtocolHasBeenSet() const;
 
@@ -133,6 +142,7 @@ namespace TencentCloud
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosPrivateAccess() const;
 
@@ -141,16 +151,18 @@ namespace TencentCloud
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
+                     * @param _cosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosPrivateAccess(const std::string& _cosPrivateAccess);
 
                     /**
                      * 判断参数 CosPrivateAccess 是否已赋值
                      * @return CosPrivateAccess 是否已赋值
+                     * 
                      */
                     bool CosPrivateAccessHasBeenSet() const;
 

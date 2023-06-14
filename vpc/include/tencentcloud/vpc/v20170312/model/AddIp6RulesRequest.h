@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换实例唯一ID，形如ip6-xxxxxxxx
                      * @return Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     std::string GetIp6TranslatorId() const;
 
                     /**
                      * 设置IPV6转换实例唯一ID，形如ip6-xxxxxxxx
-                     * @param Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * @param _ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     void SetIp6TranslatorId(const std::string& _ip6TranslatorId);
 
                     /**
                      * 判断参数 Ip6TranslatorId 是否已赋值
                      * @return Ip6TranslatorId 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorIdHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则信息
                      * @return Ip6RuleInfos IPV6转换规则信息
+                     * 
                      */
                     std::vector<Ip6RuleInfo> GetIp6RuleInfos() const;
 
                     /**
                      * 设置IPV6转换规则信息
-                     * @param Ip6RuleInfos IPV6转换规则信息
+                     * @param _ip6RuleInfos IPV6转换规则信息
+                     * 
                      */
                     void SetIp6RuleInfos(const std::vector<Ip6RuleInfo>& _ip6RuleInfos);
 
                     /**
                      * 判断参数 Ip6RuleInfos 是否已赋值
                      * @return Ip6RuleInfos 是否已赋值
+                     * 
                      */
                     bool Ip6RuleInfosHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则名称
                      * @return Ip6RuleName IPV6转换规则名称
+                     * 
                      */
                     std::string GetIp6RuleName() const;
 
                     /**
                      * 设置IPV6转换规则名称
-                     * @param Ip6RuleName IPV6转换规则名称
+                     * @param _ip6RuleName IPV6转换规则名称
+                     * 
                      */
                     void SetIp6RuleName(const std::string& _ip6RuleName);
 
                     /**
                      * 判断参数 Ip6RuleName 是否已赋值
                      * @return Ip6RuleName 是否已赋值
+                     * 
                      */
                     bool Ip6RuleNameHasBeenSet() const;
 

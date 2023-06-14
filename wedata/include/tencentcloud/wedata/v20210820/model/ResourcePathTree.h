@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 资源名字
+                     * @param _name 资源名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsLeaf 是否为叶子节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsLeaf() const;
 
                     /**
                      * 设置是否为叶子节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsLeaf 是否为叶子节点
+                     * @param _isLeaf 是否为叶子节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsLeaf(const bool& _isLeaf);
 
                     /**
                      * 判断参数 IsLeaf 是否已赋值
                      * @return IsLeaf 是否已赋值
+                     * 
                      */
                     bool IsLeafHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalPath 本地路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置本地路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalPath 本地路径
+                     * @param _localPath 本地路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalPath(const std::string& _localPath);
 
                     /**
                      * 判断参数 LocalPath 是否已赋值
                      * @return LocalPath 是否已赋值
+                     * 
                      */
                     bool LocalPathHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemotePath 远程路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemotePath() const;
 
                     /**
                      * 设置远程路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemotePath 远程路径
+                     * @param _remotePath 远程路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemotePath(const std::string& _remotePath);
 
                     /**
                      * 判断参数 RemotePath 是否已赋值
                      * @return RemotePath 是否已赋值
+                     * 
                      */
                     bool RemotePathHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileExtensionType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileExtensionType() const;
 
                     /**
                      * 设置文件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileExtensionType 文件类型
+                     * @param _fileExtensionType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileExtensionType(const std::string& _fileExtensionType);
 
                     /**
                      * 判断参数 FileExtensionType 是否已赋值
                      * @return FileExtensionType 是否已赋值
+                     * 
                      */
                     bool FileExtensionTypeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置文件大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Size 文件大小
+                     * @param _size 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5Value 文件MD5值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5Value() const;
 
                     /**
                      * 设置文件MD5值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5Value 文件MD5值
+                     * @param _md5Value 文件MD5值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5Value(const std::string& _md5Value);
 
                     /**
                      * 判断参数 Md5Value 是否已赋值
                      * @return Md5Value 是否已赋值
+                     * 
                      */
                     bool Md5ValueHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerName 文件拥有者名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerName() const;
 
                     /**
                      * 设置文件拥有者名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerName 文件拥有者名字
+                     * @param _ownerName 文件拥有者名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerName(const std::string& _ownerName);
 
                     /**
                      * 判断参数 OwnerName 是否已赋值
                      * @return OwnerName 是否已赋值
+                     * 
                      */
                     bool OwnerNameHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateUser 更新人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateUser() const;
 
                     /**
                      * 设置更新人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateUser 更新人
+                     * @param _updateUser 更新人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateUser(const std::string& _updateUser);
 
                     /**
                      * 判断参数 UpdateUser 是否已赋值
                      * @return UpdateUser 是否已赋值
+                     * 
                      */
                     bool UpdateUserHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateUserId 文件更新人uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateUserId() const;
 
                     /**
                      * 设置文件更新人uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateUserId 文件更新人uin
+                     * @param _updateUserId 文件更新人uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateUserId(const std::string& _updateUserId);
 
                     /**
                      * 判断参数 UpdateUserId 是否已赋值
                      * @return UpdateUserId 是否已赋值
+                     * 
                      */
                     bool UpdateUserIdHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosBucket Cos存储桶名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置Cos存储桶名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosBucket Cos存储桶名
+                     * @param _cosBucket Cos存储桶名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
 
                     /**
                      * 判断参数 CosBucket 是否已赋值
                      * @return CosBucket 是否已赋值
+                     * 
                      */
                     bool CosBucketHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosRegion Cos地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
                      * 设置Cos地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosRegion Cos地域
+                     * @param _cosRegion Cos地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
 
                     /**
                      * 判断参数 CosRegion 是否已赋值
                      * @return CosRegion 是否已赋值
+                     * 
                      */
                     bool CosRegionHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
                      * 设置额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraInfo 额外信息
+                     * @param _extraInfo 额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
 
                     /**
                      * 判断参数 ExtraInfo 是否已赋值
                      * @return ExtraInfo 是否已赋值
+                     * 
                      */
                     bool ExtraInfoHasBeenSet() const;
 

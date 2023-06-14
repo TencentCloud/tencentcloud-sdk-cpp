@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取关联作业信息
                      * @return RefJobInfos 关联作业信息
+                     * 
                      */
                     std::vector<ResourceRefJobInfo> GetRefJobInfos() const;
 
                     /**
                      * 判断参数 RefJobInfos 是否已赋值
                      * @return RefJobInfos 是否已赋值
+                     * 
                      */
                     bool RefJobInfosHasBeenSet() const;
 

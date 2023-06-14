@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulHostTopList 服务器风险top列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulHostTopInfo> GetVulHostTopList() const;
 
                     /**
                      * 判断参数 VulHostTopList 是否已赋值
                      * @return VulHostTopList 是否已赋值
+                     * 
                      */
                     bool VulHostTopListHasBeenSet() const;
 

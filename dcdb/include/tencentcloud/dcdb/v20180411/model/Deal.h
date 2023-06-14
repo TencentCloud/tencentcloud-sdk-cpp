@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取订单号
                      * @return DealName 订单号
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置订单号
-                     * @param DealName 订单号
+                     * @param _dealName 订单号
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 
                     /**
                      * 获取所属账号
                      * @return OwnerUin 所属账号
+                     * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置所属账号
-                     * @param OwnerUin 所属账号
+                     * @param _ownerUin 所属账号
+                     * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 
                     /**
                      * 获取商品数量
                      * @return Count 商品数量
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置商品数量
-                     * @param Count 商品数量
+                     * @param _count 商品数量
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取关联的流程 Id，可用于查询流程执行状态
                      * @return FlowId 关联的流程 Id，可用于查询流程执行状态
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置关联的流程 Id，可用于查询流程执行状态
-                     * @param FlowId 关联的流程 Id，可用于查询流程执行状态
+                     * @param _flowId 关联的流程 Id，可用于查询流程执行状态
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -123,38 +135,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIds 只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID
+                     * @param _instanceIds 只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取付费模式，0后付费/1预付费
                      * @return PayMode 付费模式，0后付费/1预付费
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费模式，0后付费/1预付费
-                     * @param PayMode 付费模式，0后付费/1预付费
+                     * @param _payMode 付费模式，0后付费/1预付费
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 

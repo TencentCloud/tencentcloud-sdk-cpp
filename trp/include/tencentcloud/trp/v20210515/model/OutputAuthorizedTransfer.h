@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 推送状态，0表示成功。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置推送状态，0表示成功。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 推送状态，0表示成功。
+                     * @param _code 推送状态，0表示成功。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误码。
+                     * @param _message 错误码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 错误信息描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置错误信息描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 错误信息描述。
+                     * @param _value 错误信息描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

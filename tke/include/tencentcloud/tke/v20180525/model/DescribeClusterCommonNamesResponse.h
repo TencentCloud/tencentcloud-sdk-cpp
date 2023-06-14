@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取子账户Uin与其客户端证书的CN字段映射
                      * @return CommonNames 子账户Uin与其客户端证书的CN字段映射
+                     * 
                      */
                     std::vector<CommonName> GetCommonNames() const;
 
                     /**
                      * 判断参数 CommonNames 是否已赋值
                      * @return CommonNames 是否已赋值
+                     * 
                      */
                     bool CommonNamesHasBeenSet() const;
 

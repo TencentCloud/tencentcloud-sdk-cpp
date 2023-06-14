@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取权威机构ID
                      * @return Id 权威机构ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置权威机构ID
-                     * @param Id 权威机构ID
+                     * @param _id 权威机构ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取Did的ID
                      * @return DidId Did的ID
+                     * 
                      */
                     uint64_t GetDidId() const;
 
                     /**
                      * 设置Did的ID
-                     * @param DidId Did的ID
+                     * @param _didId Did的ID
+                     * 
                      */
                     void SetDidId(const uint64_t& _didId);
 
                     /**
                      * 判断参数 DidId 是否已赋值
                      * @return DidId 是否已赋值
+                     * 
                      */
                     bool DidIdHasBeenSet() const;
 
                     /**
                      * 获取DID具体信息
                      * @return Did DID具体信息
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 设置DID具体信息
-                     * @param Did DID具体信息
+                     * @param _did DID具体信息
+                     * 
                      */
                     void SetDid(const std::string& _did);
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 
                     /**
                      * 获取机构名称
                      * @return Name 机构名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置机构名称
-                     * @param Name 机构名称
+                     * @param _name 机构名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取权威认证 1:已认证，2:未认证
                      * @return Status 权威认证 1:已认证，2:未认证
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置权威认证 1:已认证，2:未认证
-                     * @param Status 权威认证 1:已认证，2:未认证
+                     * @param _status 权威认证 1:已认证，2:未认证
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取DID服务ID
                      * @return DidServiceId DID服务ID
+                     * 
                      */
                     uint64_t GetDidServiceId() const;
 
                     /**
                      * 设置DID服务ID
-                     * @param DidServiceId DID服务ID
+                     * @param _didServiceId DID服务ID
+                     * 
                      */
                     void SetDidServiceId(const uint64_t& _didServiceId);
 
                     /**
                      * 判断参数 DidServiceId 是否已赋值
                      * @return DidServiceId 是否已赋值
+                     * 
                      */
                     bool DidServiceIdHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ContractAppId 应用ID
+                     * 
                      */
                     uint64_t GetContractAppId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ContractAppId 应用ID
+                     * @param _contractAppId 应用ID
+                     * 
                      */
                     void SetContractAppId(const uint64_t& _contractAppId);
 
                     /**
                      * 判断参数 ContractAppId 是否已赋值
                      * @return ContractAppId 是否已赋值
+                     * 
                      */
                     bool ContractAppIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisterTime 注册时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegisterTime() const;
 
                     /**
                      * 设置注册时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegisterTime 注册时间
+                     * @param _registerTime 注册时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegisterTime(const std::string& _registerTime);
 
                     /**
                      * 判断参数 RegisterTime 是否已赋值
                      * @return RegisterTime 是否已赋值
+                     * 
                      */
                     bool RegisterTimeHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecognizeTime 认证时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRecognizeTime() const;
 
                     /**
                      * 设置认证时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecognizeTime 认证时间
+                     * @param _recognizeTime 认证时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecognizeTime(const std::string& _recognizeTime);
 
                     /**
                      * 判断参数 RecognizeTime 是否已赋值
                      * @return RecognizeTime 是否已赋值
+                     * 
                      */
                     bool RecognizeTimeHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 生成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置生成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 生成时间
+                     * @param _createTime 生成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -261,92 +294,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取合约名称
                      * @return AppName 合约名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置合约名称
-                     * @param AppName 合约名称
+                     * @param _appName 合约名称
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取链上标签
                      * @return LabelName 链上标签
+                     * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置链上标签
-                     * @param LabelName 链上标签
+                     * @param _labelName 链上标签
+                     * 
                      */
                     void SetLabelName(const std::string& _labelName);
 
                     /**
                      * 判断参数 LabelName 是否已赋值
                      * @return LabelName 是否已赋值
+                     * 
                      */
                     bool LabelNameHasBeenSet() const;
 

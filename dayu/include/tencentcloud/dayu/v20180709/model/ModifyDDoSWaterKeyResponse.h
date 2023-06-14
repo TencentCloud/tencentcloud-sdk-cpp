@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取水印密钥列表
                      * @return KeyList 水印密钥列表
+                     * 
                      */
                     std::vector<WaterPrintKey> GetKeyList() const;
 
                     /**
                      * 判断参数 KeyList 是否已赋值
                      * @return KeyList 是否已赋值
+                     * 
                      */
                     bool KeyListHasBeenSet() const;
 

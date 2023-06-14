@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 创建的用户信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     User GetUser() const;
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 

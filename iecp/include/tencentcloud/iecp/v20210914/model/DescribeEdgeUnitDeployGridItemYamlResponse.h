@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取yaml，base64编码字符串
                      * @return Yaml yaml，base64编码字符串
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 对应类型的副本数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetReplicas() const;
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取插件ID
                      * @return PluginId 插件ID
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置插件ID
-                     * @param PluginId 插件ID
+                     * @param _pluginId 插件ID
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 
                     /**
                      * 获取绑定/未绑定: true / false
                      * @return Bound 绑定/未绑定: true / false
+                     * 
                      */
                     bool GetBound() const;
 
                     /**
                      * 设置绑定/未绑定: true / false
-                     * @param Bound 绑定/未绑定: true / false
+                     * @param _bound 绑定/未绑定: true / false
+                     * 
                      */
                     void SetBound(const bool& _bound);
 
                     /**
                      * 判断参数 Bound 是否已赋值
                      * @return Bound 是否已赋值
+                     * 
                      */
                     bool BoundHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量
                      * @return Offset 翻页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量
-                     * @param Offset 翻页偏移量
+                     * @param _offset 翻页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页记录数量
                      * @return Limit 每页记录数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页记录数量
-                     * @param Limit 每页记录数量
+                     * @param _limit 每页记录数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取网关实体ID
                      * @return GatewayInstanceId 网关实体ID
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实体ID
-                     * @param GatewayInstanceId 网关实体ID
+                     * @param _gatewayInstanceId 网关实体ID
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 

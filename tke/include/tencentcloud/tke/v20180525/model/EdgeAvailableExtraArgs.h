@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeAPIServer kube-apiserver可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeAPIServer() const;
 
                     /**
                      * 设置kube-apiserver可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KubeAPIServer kube-apiserver可用的自定义参数
+                     * @param _kubeAPIServer kube-apiserver可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKubeAPIServer(const std::vector<EdgeArgsFlag>& _kubeAPIServer);
 
                     /**
                      * 判断参数 KubeAPIServer 是否已赋值
                      * @return KubeAPIServer 是否已赋值
+                     * 
                      */
                     bool KubeAPIServerHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeControllerManager kube-controller-manager可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeControllerManager() const;
 
                     /**
                      * 设置kube-controller-manager可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KubeControllerManager kube-controller-manager可用的自定义参数
+                     * @param _kubeControllerManager kube-controller-manager可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKubeControllerManager(const std::vector<EdgeArgsFlag>& _kubeControllerManager);
 
                     /**
                      * 判断参数 KubeControllerManager 是否已赋值
                      * @return KubeControllerManager 是否已赋值
+                     * 
                      */
                     bool KubeControllerManagerHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeScheduler kube-scheduler可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EdgeArgsFlag> GetKubeScheduler() const;
 
                     /**
                      * 设置kube-scheduler可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KubeScheduler kube-scheduler可用的自定义参数
+                     * @param _kubeScheduler kube-scheduler可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKubeScheduler(const std::vector<EdgeArgsFlag>& _kubeScheduler);
 
                     /**
                      * 判断参数 KubeScheduler 是否已赋值
                      * @return KubeScheduler 是否已赋值
+                     * 
                      */
                     bool KubeSchedulerHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kubelet kubelet可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EdgeArgsFlag> GetKubelet() const;
 
                     /**
                      * 设置kubelet可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Kubelet kubelet可用的自定义参数
+                     * @param _kubelet kubelet可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKubelet(const std::vector<EdgeArgsFlag>& _kubelet);
 
                     /**
                      * 判断参数 Kubelet 是否已赋值
                      * @return Kubelet 是否已赋值
+                     * 
                      */
                     bool KubeletHasBeenSet() const;
 

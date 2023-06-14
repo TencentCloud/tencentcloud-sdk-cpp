@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。
                      * @return PeakBandwidthTime 峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetPeakBandwidthTime() const;
 
                     /**
                      * 判断参数 PeakBandwidthTime 是否已赋值
                      * @return PeakBandwidthTime 是否已赋值
+                     * 
                      */
                     bool PeakBandwidthTimeHasBeenSet() const;
 
                     /**
                      * 获取峰值带宽，单位是 Mbps。
                      * @return PeakBandwidth 峰值带宽，单位是 Mbps。
+                     * 
                      */
                     double GetPeakBandwidth() const;
 
                     /**
                      * 判断参数 PeakBandwidth 是否已赋值
                      * @return PeakBandwidth 是否已赋值
+                     * 
                      */
                     bool PeakBandwidthHasBeenSet() const;
 
                     /**
                      * 获取95峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。
                      * @return P95PeakBandwidthTime 95峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetP95PeakBandwidthTime() const;
 
                     /**
                      * 判断参数 P95PeakBandwidthTime 是否已赋值
                      * @return P95PeakBandwidthTime 是否已赋值
+                     * 
                      */
                     bool P95PeakBandwidthTimeHasBeenSet() const;
 
                     /**
                      * 获取95峰值带宽，单位是 Mbps。
                      * @return P95PeakBandwidth 95峰值带宽，单位是 Mbps。
+                     * 
                      */
                     double GetP95PeakBandwidth() const;
 
                     /**
                      * 判断参数 P95PeakBandwidth 是否已赋值
                      * @return P95PeakBandwidth 是否已赋值
+                     * 
                      */
                     bool P95PeakBandwidthHasBeenSet() const;
 
                     /**
                      * 获取总流量，单位是 MB。
                      * @return SumFlux 总流量，单位是 MB。
+                     * 
                      */
                     double GetSumFlux() const;
 
                     /**
                      * 判断参数 SumFlux 是否已赋值
                      * @return SumFlux 是否已赋值
+                     * 
                      */
                     bool SumFluxHasBeenSet() const;
 
                     /**
                      * 获取明细数据信息。
                      * @return DataInfoList 明细数据信息。
+                     * 
                      */
                     std::vector<BillDataInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

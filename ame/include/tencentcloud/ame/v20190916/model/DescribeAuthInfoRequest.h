@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取偏移量：Offset=Offset+Limit
                      * @return Offset 偏移量：Offset=Offset+Limit
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量：Offset=Offset+Limit
-                     * @param Offset 偏移量：Offset=Offset+Limit
+                     * @param _offset 偏移量：Offset=Offset+Limit
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取数据条数
                      * @return Limit 数据条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置数据条数
-                     * @param Limit 数据条数
+                     * @param _limit 数据条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return Key 搜索关键字
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param Key 搜索关键字
+                     * @param _key 搜索关键字
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取游戏用户ID
                      * @return UserId 游戏用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置游戏用户ID
-                     * @param UserId 游戏用户ID
+                     * @param _userId 游戏用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取游戏ID
                      * @return GameId 游戏ID
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏ID
-                     * @param GameId 游戏ID
+                     * @param _gameId 游戏ID
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取游戏存档Url
                      * @return GameArchiveUrl 游戏存档Url
+                     * 
                      */
                     std::string GetGameArchiveUrl() const;
 
                     /**
                      * 设置游戏存档Url
-                     * @param GameArchiveUrl 游戏存档Url
+                     * @param _gameArchiveUrl 游戏存档Url
+                     * 
                      */
                     void SetGameArchiveUrl(const std::string& _gameArchiveUrl);
 
                     /**
                      * 判断参数 GameArchiveUrl 是否已赋值
                      * @return GameArchiveUrl 是否已赋值
+                     * 
                      */
                     bool GameArchiveUrlHasBeenSet() const;
 
                     /**
                      * 获取游戏相关参数
                      * @return GameContext 游戏相关参数
+                     * 
                      */
                     std::string GetGameContext() const;
 
                     /**
                      * 设置游戏相关参数
-                     * @param GameContext 游戏相关参数
+                     * @param _gameContext 游戏相关参数
+                     * 
                      */
                     void SetGameContext(const std::string& _gameContext);
 
                     /**
                      * 判断参数 GameContext 是否已赋值
                      * @return GameContext 是否已赋值
+                     * 
                      */
                     bool GameContextHasBeenSet() const;
 

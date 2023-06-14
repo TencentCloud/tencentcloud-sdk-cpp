@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取机器的IP
                      * @return Ip 机器的IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置机器的IP
-                     * @param Ip 机器的IP
+                     * @param _ip 机器的IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取机器状态，0:异常，1:正常
                      * @return Status 机器状态，0:异常，1:正常
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置机器状态，0:异常，1:正常
-                     * @param Status 机器状态，0:异常，1:正常
+                     * @param _status 机器状态，0:异常，1:正常
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取机器离线时间，空为正常，异常返回具体时间
                      * @return OfflineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置机器离线时间，空为正常，异常返回具体时间
-                     * @param OfflineTime 机器离线时间，空为正常，异常返回具体时间
+                     * @param _offlineTime 机器离线时间，空为正常，异常返回具体时间
+                     * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
 
                     /**
                      * 判断参数 OfflineTime 是否已赋值
                      * @return OfflineTime 是否已赋值
+                     * 
                      */
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
                      * 获取机器是否开启自动升级。0:关闭，1:开启
                      * @return AutoUpdate 机器是否开启自动升级。0:关闭，1:开启
+                     * 
                      */
                     int64_t GetAutoUpdate() const;
 
                     /**
                      * 设置机器是否开启自动升级。0:关闭，1:开启
-                     * @param AutoUpdate 机器是否开启自动升级。0:关闭，1:开启
+                     * @param _autoUpdate 机器是否开启自动升级。0:关闭，1:开启
+                     * 
                      */
                     void SetAutoUpdate(const int64_t& _autoUpdate);
 
                     /**
                      * 判断参数 AutoUpdate 是否已赋值
                      * @return AutoUpdate 是否已赋值
+                     * 
                      */
                     bool AutoUpdateHasBeenSet() const;
 
                     /**
                      * 获取机器当前版本号。
                      * @return Version 机器当前版本号。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置机器当前版本号。
-                     * @param Version 机器当前版本号。
+                     * @param _version 机器当前版本号。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取机器升级功能状态。
                      * @return UpdateStatus 机器升级功能状态。
+                     * 
                      */
                     int64_t GetUpdateStatus() const;
 
                     /**
                      * 设置机器升级功能状态。
-                     * @param UpdateStatus 机器升级功能状态。
+                     * @param _updateStatus 机器升级功能状态。
+                     * 
                      */
                     void SetUpdateStatus(const int64_t& _updateStatus);
 
                     /**
                      * 判断参数 UpdateStatus 是否已赋值
                      * @return UpdateStatus 是否已赋值
+                     * 
                      */
                     bool UpdateStatusHasBeenSet() const;
 
                     /**
                      * 获取机器升级结果标识。
                      * @return ErrCode 机器升级结果标识。
+                     * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置机器升级结果标识。
-                     * @param ErrCode 机器升级结果标识。
+                     * @param _errCode 机器升级结果标识。
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取机器升级结果信息。
                      * @return ErrMsg 机器升级结果信息。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置机器升级结果信息。
-                     * @param ErrMsg 机器升级结果信息。
+                     * @param _errMsg 机器升级结果信息。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

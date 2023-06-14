@@ -47,180 +47,210 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
                      * @return VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * @param _vpcId VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取VPN网关名称，最大长度不能超过60个字节。
                      * @return VpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * 
                      */
                     std::string GetVpnGatewayName() const;
 
                     /**
                      * 设置VPN网关名称，最大长度不能超过60个字节。
-                     * @param VpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * @param _vpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * 
                      */
                     void SetVpnGatewayName(const std::string& _vpnGatewayName);
 
                     /**
                      * 判断参数 VpnGatewayName 是否已赋值
                      * @return VpnGatewayName 是否已赋值
+                     * 
                      */
                     bool VpnGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
                      * @return InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
-                     * @param InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * @param _internetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。
                      * @return InstanceChargeType VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。
-                     * @param InstanceChargeType VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。
+                     * @param _instanceChargeType VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取可用区，如：ap-guangzhou-2。
                      * @return Zone 可用区，如：ap-guangzhou-2。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区，如：ap-guangzhou-2。
-                     * @param Zone 可用区，如：ap-guangzhou-2。
+                     * @param _zone 可用区，如：ap-guangzhou-2。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
                      * @return Type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
-                     * @param Type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * @param _type VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
                      * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取CDC实例ID
                      * @return CdcId CDC实例ID
+                     * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC实例ID
-                     * @param CdcId CDC实例ID
+                     * @param _cdcId CDC实例ID
+                     * 
                      */
                     void SetCdcId(const std::string& _cdcId);
 
                     /**
                      * 判断参数 CdcId 是否已赋值
                      * @return CdcId 是否已赋值
+                     * 
                      */
                     bool CdcIdHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
                      * @return MaxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
                      * 设置SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
-                     * @param MaxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * @param _maxConnection SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。
+                     * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
 
                     /**
                      * 判断参数 MaxConnection 是否已赋值
                      * @return MaxConnection 是否已赋值
+                     * 
                      */
                     bool MaxConnectionHasBeenSet() const;
 

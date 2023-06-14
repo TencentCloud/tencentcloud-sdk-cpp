@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待分析的文本（仅支持UTF-8格式，不超过200字）
                      * @return Text 待分析的文本（仅支持UTF-8格式，不超过200字）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待分析的文本（仅支持UTF-8格式，不超过200字）
-                     * @param Text 待分析的文本（仅支持UTF-8格式，不超过200字）
+                     * @param _text 待分析的文本（仅支持UTF-8格式，不超过200字）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 2、社交类
 3、美食酒店类
 4、通用领域类
+                     * 
                      */
                     uint64_t GetFlag() const;
 
@@ -80,17 +84,19 @@ namespace TencentCloud
 2、社交类
 3、美食酒店类
 4、通用领域类
-                     * @param Flag 待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
+                     * @param _flag 待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
 4、通用领域类
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
                      * @return Mode 情感分类模式选项，可取2class或3class（默认值为2class）
 1、2class：返回正负面二分类情感结果
 2、3class：返回正负面及中性三分类情感结果
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -108,15 +115,17 @@ namespace TencentCloud
                      * 设置情感分类模式选项，可取2class或3class（默认值为2class）
 1、2class：返回正负面二分类情感结果
 2、3class：返回正负面及中性三分类情感结果
-                     * @param Mode 情感分类模式选项，可取2class或3class（默认值为2class）
+                     * @param _mode 情感分类模式选项，可取2class或3class（默认值为2class）
 1、2class：返回正负面二分类情感结果
 2、3class：返回正负面及中性三分类情感结果
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

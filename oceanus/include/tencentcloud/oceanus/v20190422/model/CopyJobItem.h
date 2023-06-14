@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取需要复制的作业serial id
                      * @return SourceId 需要复制的作业serial id
+                     * 
                      */
                     std::string GetSourceId() const;
 
                     /**
                      * 设置需要复制的作业serial id
-                     * @param SourceId 需要复制的作业serial id
+                     * @param _sourceId 需要复制的作业serial id
+                     * 
                      */
                     void SetSourceId(const std::string& _sourceId);
 
                     /**
                      * 判断参数 SourceId 是否已赋值
                      * @return SourceId 是否已赋值
+                     * 
                      */
                     bool SourceIdHasBeenSet() const;
 
                     /**
                      * 获取目标集群的cluster serial id
                      * @return TargetClusterId 目标集群的cluster serial id
+                     * 
                      */
                     std::string GetTargetClusterId() const;
 
                     /**
                      * 设置目标集群的cluster serial id
-                     * @param TargetClusterId 目标集群的cluster serial id
+                     * @param _targetClusterId 目标集群的cluster serial id
+                     * 
                      */
                     void SetTargetClusterId(const std::string& _targetClusterId);
 
                     /**
                      * 判断参数 TargetClusterId 是否已赋值
                      * @return TargetClusterId 是否已赋值
+                     * 
                      */
                     bool TargetClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要复制的作业名称
                      * @return SourceName 需要复制的作业名称
+                     * 
                      */
                     std::string GetSourceName() const;
 
                     /**
                      * 设置需要复制的作业名称
-                     * @param SourceName 需要复制的作业名称
+                     * @param _sourceName 需要复制的作业名称
+                     * 
                      */
                     void SetSourceName(const std::string& _sourceName);
 
                     /**
                      * 判断参数 SourceName 是否已赋值
                      * @return SourceName 是否已赋值
+                     * 
                      */
                     bool SourceNameHasBeenSet() const;
 
                     /**
                      * 获取新作业的名称
                      * @return TargetName 新作业的名称
+                     * 
                      */
                     std::string GetTargetName() const;
 
                     /**
                      * 设置新作业的名称
-                     * @param TargetName 新作业的名称
+                     * @param _targetName 新作业的名称
+                     * 
                      */
                     void SetTargetName(const std::string& _targetName);
 
                     /**
                      * 判断参数 TargetName 是否已赋值
                      * @return TargetName 是否已赋值
+                     * 
                      */
                     bool TargetNameHasBeenSet() const;
 
                     /**
                      * 获取新作业的目录id
                      * @return TargetFolderId 新作业的目录id
+                     * 
                      */
                     std::string GetTargetFolderId() const;
 
                     /**
                      * 设置新作业的目录id
-                     * @param TargetFolderId 新作业的目录id
+                     * @param _targetFolderId 新作业的目录id
+                     * 
                      */
                     void SetTargetFolderId(const std::string& _targetFolderId);
 
                     /**
                      * 判断参数 TargetFolderId 是否已赋值
                      * @return TargetFolderId 是否已赋值
+                     * 
                      */
                     bool TargetFolderIdHasBeenSet() const;
 
                     /**
                      * 获取源作业类型
                      * @return JobType 源作业类型
+                     * 
                      */
                     int64_t GetJobType() const;
 
                     /**
                      * 设置源作业类型
-                     * @param JobType 源作业类型
+                     * @param _jobType 源作业类型
+                     * 
                      */
                     void SetJobType(const int64_t& _jobType);
 
                     /**
                      * 判断参数 JobType 是否已赋值
                      * @return JobType 是否已赋值
+                     * 
                      */
                     bool JobTypeHasBeenSet() const;
 

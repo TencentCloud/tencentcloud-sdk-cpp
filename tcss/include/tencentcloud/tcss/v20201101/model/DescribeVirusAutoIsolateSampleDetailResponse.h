@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文件Md5值
                      * @return MD5 文件Md5值
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件大小(B)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusName 病毒名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirusName() const;
 
                     /**
                      * 判断参数 VirusName 是否已赋值
                      * @return VirusName 是否已赋值
+                     * 
                      */
                     bool VirusNameHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KillEngine 查杀引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKillEngine() const;
 
                     /**
                      * 判断参数 KillEngine 是否已赋值
                      * @return KillEngine 是否已赋值
+                     * 
                      */
                     bool KillEngineHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -130,12 +142,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HarmDescribe 事件描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHarmDescribe() const;
 
                     /**
                      * 判断参数 HarmDescribe 是否已赋值
                      * @return HarmDescribe 是否已赋值
+                     * 
                      */
                     bool HarmDescribeHasBeenSet() const;
 
@@ -144,12 +158,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestScheme 建议方案
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestScheme() const;
 
                     /**
                      * 判断参数 SuggestScheme 是否已赋值
                      * @return SuggestScheme 是否已赋值
+                     * 
                      */
                     bool SuggestSchemeHasBeenSet() const;
 
@@ -158,12 +174,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReferenceLink 参考链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReferenceLink() const;
 
                     /**
                      * 判断参数 ReferenceLink 是否已赋值
                      * @return ReferenceLink 是否已赋值
+                     * 
                      */
                     bool ReferenceLinkHasBeenSet() const;
 

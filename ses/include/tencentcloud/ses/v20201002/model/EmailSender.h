@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取发信地址
                      * @return EmailAddress 发信地址
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置发信地址
-                     * @param EmailAddress 发信地址
+                     * @param _emailAddress 发信地址
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmailSenderName 发信人别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmailSenderName() const;
 
                     /**
                      * 设置发信人别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmailSenderName 发信人别名
+                     * @param _emailSenderName 发信人别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmailSenderName(const std::string& _emailSenderName);
 
                     /**
                      * 判断参数 EmailSenderName 是否已赋值
                      * @return EmailSenderName 是否已赋值
+                     * 
                      */
                     bool EmailSenderNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTimestamp 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreatedTimestamp() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTimestamp 创建时间
+                     * @param _createdTimestamp 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTimestamp(const uint64_t& _createdTimestamp);
 
                     /**
                      * 判断参数 CreatedTimestamp 是否已赋值
                      * @return CreatedTimestamp 是否已赋值
+                     * 
                      */
                     bool CreatedTimestampHasBeenSet() const;
 

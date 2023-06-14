@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取新建设备的名称
                      * @return DeviceName 新建设备的名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置新建设备的名称
-                     * @param DeviceName 新建设备的名称
+                     * @param _deviceName 新建设备的名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取新建设备的备注
                      * @return Remark 新建设备的备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置新建设备的备注
-                     * @param Remark 新建设备的备注
+                     * @param _remark 新建设备的备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成
                      * @return DataKey 新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成
+                     * 
                      */
                     std::string GetDataKey() const;
 
                     /**
                      * 设置新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成
-                     * @param DataKey 新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成
+                     * @param _dataKey 新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成
+                     * 
                      */
                     void SetDataKey(const std::string& _dataKey);
 
                     /**
                      * 判断参数 DataKey 是否已赋值
                      * @return DataKey 是否已赋值
+                     * 
                      */
                     bool DataKeyHasBeenSet() const;
 
                     /**
                      * 获取是否设置预置密钥
                      * @return Encrypted 是否设置预置密钥
+                     * 
                      */
                     bool GetEncrypted() const;
 
                     /**
                      * 设置是否设置预置密钥
-                     * @param Encrypted 是否设置预置密钥
+                     * @param _encrypted 是否设置预置密钥
+                     * 
                      */
                     void SetEncrypted(const bool& _encrypted);
 
                     /**
                      * 判断参数 Encrypted 是否已赋值
                      * @return Encrypted 是否已赋值
+                     * 
                      */
                     bool EncryptedHasBeenSet() const;
 

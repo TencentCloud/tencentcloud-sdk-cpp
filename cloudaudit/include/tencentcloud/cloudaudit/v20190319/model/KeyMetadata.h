@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的别名
                      * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置作为密钥更容易辨识，更容易被人看懂的别名
-                     * @param Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * @param _alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取CMK的全局唯一标识
                      * @return KeyId CMK的全局唯一标识
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的全局唯一标识
-                     * @param KeyId CMK的全局唯一标识
+                     * @param _keyId CMK的全局唯一标识
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

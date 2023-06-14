@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取路径重写列表
                      * @return PathRewrites 路径重写列表
+                     * 
                      */
                     PathRewriteCreateObject GetPathRewrites() const;
 
                     /**
                      * 设置路径重写列表
-                     * @param PathRewrites 路径重写列表
+                     * @param _pathRewrites 路径重写列表
+                     * 
                      */
                     void SetPathRewrites(const PathRewriteCreateObject& _pathRewrites);
 
                     /**
                      * 判断参数 PathRewrites 是否已赋值
                      * @return PathRewrites 是否已赋值
+                     * 
                      */
                     bool PathRewritesHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取so文件列表
                      * @return SoFileNames so文件列表
+                     * 
                      */
                     std::vector<std::string> GetSoFileNames() const;
 
                     /**
                      * 设置so文件列表
-                     * @param SoFileNames so文件列表
+                     * @param _soFileNames so文件列表
+                     * 
                      */
                     void SetSoFileNames(const std::vector<std::string>& _soFileNames);
 
                     /**
                      * 判断参数 SoFileNames 是否已赋值
                      * @return SoFileNames 是否已赋值
+                     * 
                      */
                     bool SoFileNamesHasBeenSet() const;
 

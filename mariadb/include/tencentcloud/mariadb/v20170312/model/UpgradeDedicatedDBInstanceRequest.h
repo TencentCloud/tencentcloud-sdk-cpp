@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
                      * @return InstanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
-                     * @param InstanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * @param _instanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
  查询实例规格获得。
                      * @return Memory 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得。
-                     * @param Memory 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
+                     * @param _memory 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -87,74 +93,86 @@ namespace TencentCloud
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
                      * @return Storage 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
-                     * @param Storage 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
+                     * @param _storage 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取错过切换时间窗口时，是否自动重试一次，0-否，1-是
                      * @return SwitchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 
                      */
                     int64_t GetSwitchAutoRetry() const;
 
                     /**
                      * 设置错过切换时间窗口时，是否自动重试一次，0-否，1-是
-                     * @param SwitchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * @param _switchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 
                      */
                     void SetSwitchAutoRetry(const int64_t& _switchAutoRetry);
 
                     /**
                      * 判断参数 SwitchAutoRetry 是否已赋值
                      * @return SwitchAutoRetry 是否已赋值
+                     * 
                      */
                     bool SwitchAutoRetryHasBeenSet() const;
 
                     /**
                      * 获取切换时间窗口开始时间
                      * @return SwitchStartTime 切换时间窗口开始时间
+                     * 
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
                      * 设置切换时间窗口开始时间
-                     * @param SwitchStartTime 切换时间窗口开始时间
+                     * @param _switchStartTime 切换时间窗口开始时间
+                     * 
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
 
                     /**
                      * 判断参数 SwitchStartTime 是否已赋值
                      * @return SwitchStartTime 是否已赋值
+                     * 
                      */
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
                      * 获取切换时间窗口结束时间
                      * @return SwitchEndTime 切换时间窗口结束时间
+                     * 
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
                      * 设置切换时间窗口结束时间
-                     * @param SwitchEndTime 切换时间窗口结束时间
+                     * @param _switchEndTime 切换时间窗口结束时间
+                     * 
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
 
                     /**
                      * 判断参数 SwitchEndTime 是否已赋值
                      * @return SwitchEndTime 是否已赋值
+                     * 
                      */
                     bool SwitchEndTimeHasBeenSet() const;
 

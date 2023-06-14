@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID。
                      * @return TaskId 任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID。
-                     * @param TaskId 任务 ID。
+                     * @param _taskId 任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ FINISH：已完成。
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -81,16 +85,18 @@ FINISH：已完成。
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
-                     * @param Status 任务状态，取值：
+                     * @param _status 任务状态，取值：
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -101,6 +107,7 @@ FINISH：已完成。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -108,69 +115,80 @@ FINISH：已完成。
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码
+                     * @param _errCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取发布视频文件 ID。
                      * @return FileId 发布视频文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置发布视频文件 ID。
-                     * @param FileId 发布视频文件 ID。
+                     * @param _fileId 发布视频文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取发布视频所对应的转码模板 ID，为 0 代表原始视频。
                      * @return SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
                      * 设置发布视频所对应的转码模板 ID，为 0 代表原始视频。
-                     * @param SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * @param _sourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
 
                     /**
                      * 判断参数 SourceDefinition 是否已赋值
                      * @return SourceDefinition 是否已赋值
+                     * 
                      */
                     bool SourceDefinitionHasBeenSet() const;
 
@@ -183,6 +201,7 @@ FINISH：已完成。
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
 <li>Rejected：音视频审核未通过。</li>
+                     * 
                      */
                     std::string GetPublishResult() const;
 
@@ -191,16 +210,18 @@ FINISH：已完成。
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
 <li>Rejected：音视频审核未通过。</li>
-                     * @param PublishResult 微信小程序视频发布状态，取值：
+                     * @param _publishResult 微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
 <li>Rejected：音视频审核未通过。</li>
+                     * 
                      */
                     void SetPublishResult(const std::string& _publishResult);
 
                     /**
                      * 判断参数 PublishResult 是否已赋值
                      * @return PublishResult 是否已赋值
+                     * 
                      */
                     bool PublishResultHasBeenSet() const;
 

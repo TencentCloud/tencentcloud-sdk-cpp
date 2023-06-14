@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取本端网段
                      * @return LocalCidrBlock 本端网段
+                     * 
                      */
                     std::string GetLocalCidrBlock() const;
 
                     /**
                      * 设置本端网段
-                     * @param LocalCidrBlock 本端网段
+                     * @param _localCidrBlock 本端网段
+                     * 
                      */
                     void SetLocalCidrBlock(const std::string& _localCidrBlock);
 
                     /**
                      * 判断参数 LocalCidrBlock 是否已赋值
                      * @return LocalCidrBlock 是否已赋值
+                     * 
                      */
                     bool LocalCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取对端网段
                      * @return RemoteCidrBlock 对端网段
+                     * 
                      */
                     std::vector<std::string> GetRemoteCidrBlock() const;
 
                     /**
                      * 设置对端网段
-                     * @param RemoteCidrBlock 对端网段
+                     * @param _remoteCidrBlock 对端网段
+                     * 
                      */
                     void SetRemoteCidrBlock(const std::vector<std::string>& _remoteCidrBlock);
 
                     /**
                      * 判断参数 RemoteCidrBlock 是否已赋值
                      * @return RemoteCidrBlock 是否已赋值
+                     * 
                      */
                     bool RemoteCidrBlockHasBeenSet() const;
 

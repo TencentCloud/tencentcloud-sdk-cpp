@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取拨测时间戳
                      * @return ProbeTime 拨测时间戳
+                     * 
                      */
                     uint64_t GetProbeTime() const;
 
                     /**
                      * 设置拨测时间戳
-                     * @param ProbeTime 拨测时间戳
+                     * @param _probeTime 拨测时间戳
+                     * 
                      */
                     void SetProbeTime(const uint64_t& _probeTime);
 
                     /**
                      * 判断参数 ProbeTime 是否已赋值
                      * @return ProbeTime 是否已赋值
+                     * 
                      */
                     bool ProbeTimeHasBeenSet() const;
 
                     /**
                      * 获取储存所有string类型字段
                      * @return Labels 储存所有string类型字段
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置储存所有string类型字段
-                     * @param Labels 储存所有string类型字段
+                     * @param _labels 储存所有string类型字段
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取储存所有float类型字段
                      * @return Fields 储存所有float类型字段
+                     * 
                      */
                     std::vector<Field> GetFields() const;
 
                     /**
                      * 设置储存所有float类型字段
-                     * @param Fields 储存所有float类型字段
+                     * @param _fields 储存所有float类型字段
+                     * 
                      */
                     void SetFields(const std::vector<Field>& _fields);
 
                     /**
                      * 判断参数 Fields 是否已赋值
                      * @return Fields 是否已赋值
+                     * 
                      */
                     bool FieldsHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要操作的房间id
                      * @return RoomId 要操作的房间id
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置要操作的房间id
-                     * @param RoomId 要操作的房间id
+                     * @param _roomId 要操作的房间id
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取剔除类型 1-删除房间 2-剔除用户
                      * @return DeleteType 剔除类型 1-删除房间 2-剔除用户
+                     * 
                      */
                     uint64_t GetDeleteType() const;
 
                     /**
                      * 设置剔除类型 1-删除房间 2-剔除用户
-                     * @param DeleteType 剔除类型 1-删除房间 2-剔除用户
+                     * @param _deleteType 剔除类型 1-删除房间 2-剔除用户
+                     * 
                      */
                     void SetDeleteType(const uint64_t& _deleteType);
 
                     /**
                      * 判断参数 DeleteType 是否已赋值
                      * @return DeleteType 是否已赋值
+                     * 
                      */
                     bool DeleteTypeHasBeenSet() const;
 
                     /**
                      * 获取应用id
                      * @return BizId 应用id
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用id
-                     * @param BizId 应用id
+                     * @param _bizId 应用id
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取要剔除的用户列表
                      * @return Uids 要剔除的用户列表
+                     * 
                      */
                     std::vector<std::string> GetUids() const;
 
                     /**
                      * 设置要剔除的用户列表
-                     * @param Uids 要剔除的用户列表
+                     * @param _uids 要剔除的用户列表
+                     * 
                      */
                     void SetUids(const std::vector<std::string>& _uids);
 
                     /**
                      * 判断参数 Uids 是否已赋值
                      * @return Uids 是否已赋值
+                     * 
                      */
                     bool UidsHasBeenSet() const;
 

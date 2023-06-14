@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取主实例iD
                      * @return RegistryId 主实例iD
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例iD
-                     * @param RegistryId 主实例iD
+                     * @param _registryId 主实例iD
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例地域ID
                      * @return ReplicationRegionId 复制实例地域ID
+                     * 
                      */
                     uint64_t GetReplicationRegionId() const;
 
                     /**
                      * 设置复制实例地域ID
-                     * @param ReplicationRegionId 复制实例地域ID
+                     * @param _replicationRegionId 复制实例地域ID
+                     * 
                      */
                     void SetReplicationRegionId(const uint64_t& _replicationRegionId);
 
                     /**
                      * 判断参数 ReplicationRegionId 是否已赋值
                      * @return ReplicationRegionId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 
                     /**
                      * 获取复制实例地域名称
                      * @return ReplicationRegionName 复制实例地域名称
+                     * 
                      */
                     std::string GetReplicationRegionName() const;
 
                     /**
                      * 设置复制实例地域名称
-                     * @param ReplicationRegionName 复制实例地域名称
+                     * @param _replicationRegionName 复制实例地域名称
+                     * 
                      */
                     void SetReplicationRegionName(const std::string& _replicationRegionName);
 
                     /**
                      * 判断参数 ReplicationRegionName 是否已赋值
                      * @return ReplicationRegionName 是否已赋值
+                     * 
                      */
                     bool ReplicationRegionNameHasBeenSet() const;
 
                     /**
                      * 获取是否同步TCR云标签至生成的COS Bucket
                      * @return SyncTag 是否同步TCR云标签至生成的COS Bucket
+                     * 
                      */
                     bool GetSyncTag() const;
 
                     /**
                      * 设置是否同步TCR云标签至生成的COS Bucket
-                     * @param SyncTag 是否同步TCR云标签至生成的COS Bucket
+                     * @param _syncTag 是否同步TCR云标签至生成的COS Bucket
+                     * 
                      */
                     void SetSyncTag(const bool& _syncTag);
 
                     /**
                      * 判断参数 SyncTag 是否已赋值
                      * @return SyncTag 是否已赋值
+                     * 
                      */
                     bool SyncTagHasBeenSet() const;
 

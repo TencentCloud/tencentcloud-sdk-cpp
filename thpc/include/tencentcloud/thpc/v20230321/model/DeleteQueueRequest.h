@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID。
-                     * @param ClusterId 集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取队列名称。<br><li>最多支持32个字符。
                      * @return QueueName 队列名称。<br><li>最多支持32个字符。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置队列名称。<br><li>最多支持32个字符。
-                     * @param QueueName 队列名称。<br><li>最多支持32个字符。
+                     * @param _queueName 队列名称。<br><li>最多支持32个字符。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

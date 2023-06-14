@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取以周为单位，表示周几允许维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日。
                      * @return Weekly 以周为单位，表示周几允许维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日。
+                     * 
                      */
                     std::vector<int64_t> GetWeekly() const;
 
                     /**
                      * 判断参数 Weekly 是否已赋值
                      * @return Weekly 是否已赋值
+                     * 
                      */
                     bool WeeklyHasBeenSet() const;
 
                     /**
                      * 获取每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始。
                      * @return StartTime 每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时。
                      * @return Span 每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时。
+                     * 
                      */
                     uint64_t GetSpan() const;
 
                     /**
                      * 判断参数 Span 是否已赋值
                      * @return Span 是否已赋值
+                     * 
                      */
                     bool SpanHasBeenSet() const;
 

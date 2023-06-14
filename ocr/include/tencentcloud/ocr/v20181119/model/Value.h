@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取自动识别的字段内容
                      * @return AutoContent 自动识别的字段内容
+                     * 
                      */
                     std::string GetAutoContent() const;
 
                     /**
                      * 设置自动识别的字段内容
-                     * @param AutoContent 自动识别的字段内容
+                     * @param _autoContent 自动识别的字段内容
+                     * 
                      */
                     void SetAutoContent(const std::string& _autoContent);
 
                     /**
                      * 判断参数 AutoContent 是否已赋值
                      * @return AutoContent 是否已赋值
+                     * 
                      */
                     bool AutoContentHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coord 四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Polygon GetCoord() const;
 
                     /**
                      * 设置四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coord 四点坐标
+                     * @param _coord 四点坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoord(const Polygon& _coord);
 
                     /**
                      * 判断参数 Coord 是否已赋值
                      * @return Coord 是否已赋值
+                     * 
                      */
                     bool CoordHasBeenSet() const;
 

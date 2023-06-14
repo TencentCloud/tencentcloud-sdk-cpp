@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取外部结算流水号
                      * @return OutSettleId 外部结算流水号
+                     * 
                      */
                     std::string GetOutSettleId() const;
 
                     /**
                      * 设置外部结算流水号
-                     * @param OutSettleId 外部结算流水号
+                     * @param _outSettleId 外部结算流水号
+                     * 
                      */
                     void SetOutSettleId(const std::string& _outSettleId);
 
                     /**
                      * 判断参数 OutSettleId 是否已赋值
                      * @return OutSettleId 是否已赋值
+                     * 
                      */
                     bool OutSettleIdHasBeenSet() const;
 
                     /**
                      * 获取渠道结算流水号
                      * @return ChannelSettleId 渠道结算流水号
+                     * 
                      */
                     std::string GetChannelSettleId() const;
 
                     /**
                      * 设置渠道结算流水号
-                     * @param ChannelSettleId 渠道结算流水号
+                     * @param _channelSettleId 渠道结算流水号
+                     * 
                      */
                     void SetChannelSettleId(const std::string& _channelSettleId);
 
                     /**
                      * 判断参数 ChannelSettleId 是否已赋值
                      * @return ChannelSettleId 是否已赋值
+                     * 
                      */
                     bool ChannelSettleIdHasBeenSet() const;
 
@@ -101,6 +107,7 @@ ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSettleStatus() const;
 
@@ -114,7 +121,7 @@ ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SettleStatus 退款状态。
+                     * @param _settleStatus 退款状态。
 SUCCESS：结算成功；
 FAILED：结算失败；
 PROCESSING：结算中;
@@ -123,30 +130,35 @@ ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSettleStatus(const std::string& _settleStatus);
 
                     /**
                      * 判断参数 SettleStatus 是否已赋值
                      * @return SettleStatus 是否已赋值
+                     * 
                      */
                     bool SettleStatusHasBeenSet() const;
 
                     /**
                      * 获取结算金额
                      * @return SettleAmount 结算金额
+                     * 
                      */
                     int64_t GetSettleAmount() const;
 
                     /**
                      * 设置结算金额
-                     * @param SettleAmount 结算金额
+                     * @param _settleAmount 结算金额
+                     * 
                      */
                     void SetSettleAmount(const int64_t& _settleAmount);
 
                     /**
                      * 判断参数 SettleAmount 是否已赋值
                      * @return SettleAmount 是否已赋值
+                     * 
                      */
                     bool SettleAmountHasBeenSet() const;
 
@@ -155,38 +167,44 @@ _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SettleDate 结算日期，格式YYYYMMdd
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSettleDate() const;
 
                     /**
                      * 设置结算日期，格式YYYYMMdd
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SettleDate 结算日期，格式YYYYMMdd
+                     * @param _settleDate 结算日期，格式YYYYMMdd
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSettleDate(const std::string& _settleDate);
 
                     /**
                      * 判断参数 SettleDate 是否已赋值
                      * @return SettleDate 是否已赋值
+                     * 
                      */
                     bool SettleDateHasBeenSet() const;
 
                     /**
                      * 获取结算类型（T1/D1）
                      * @return SettleType 结算类型（T1/D1）
+                     * 
                      */
                     std::string GetSettleType() const;
 
                     /**
                      * 设置结算类型（T1/D1）
-                     * @param SettleType 结算类型（T1/D1）
+                     * @param _settleType 结算类型（T1/D1）
+                     * 
                      */
                     void SetSettleType(const std::string& _settleType);
 
                     /**
                      * 判断参数 SettleType 是否已赋值
                      * @return SettleType 是否已赋值
+                     * 
                      */
                     bool SettleTypeHasBeenSet() const;
 
@@ -195,20 +213,23 @@ _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因
+                     * @param _failReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
@@ -217,20 +238,23 @@ _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeFinish 完成时间，格式yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeFinish() const;
 
                     /**
                      * 设置完成时间，格式yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeFinish 完成时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _timeFinish 完成时间，格式yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeFinish(const std::string& _timeFinish);
 
                     /**
                      * 判断参数 TimeFinish 是否已赋值
                      * @return TimeFinish 是否已赋值
+                     * 
                      */
                     bool TimeFinishHasBeenSet() const;
 
@@ -239,20 +263,23 @@ _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SettleFee 结算手续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSettleFee() const;
 
                     /**
                      * 设置结算手续费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SettleFee 结算手续费
+                     * @param _settleFee 结算手续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSettleFee(const std::string& _settleFee);
 
                     /**
                      * 判断参数 SettleFee 是否已赋值
                      * @return SettleFee 是否已赋值
+                     * 
                      */
                     bool SettleFeeHasBeenSet() const;
 
@@ -261,20 +288,23 @@ _UNKNOWN：默认未知
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Currency 账户货币。参考附录“币种类型”。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置账户货币。参考附录“币种类型”。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Currency 账户货币。参考附录“币种类型”。
+                     * @param _currency 账户货币。参考附录“币种类型”。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取仓库列表id
                      * @return Id 仓库列表id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置仓库列表id
-                     * @param Id 仓库列表id
+                     * @param _id 仓库列表id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取镜像ID
                      * @return ImageId 镜像ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageId 镜像ID
+                     * @param _imageId 镜像ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 

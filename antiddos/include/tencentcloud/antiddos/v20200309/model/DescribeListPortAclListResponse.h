@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取端口acl策略
                      * @return AclList 端口acl策略
+                     * 
                      */
                     std::vector<AclConfigRelation> GetAclList() const;
 
                     /**
                      * 判断参数 AclList 是否已赋值
                      * @return AclList 是否已赋值
+                     * 
                      */
                     bool AclListHasBeenSet() const;
 

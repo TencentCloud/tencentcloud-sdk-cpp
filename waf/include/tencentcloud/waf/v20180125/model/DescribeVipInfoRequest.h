@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取waf实例id列表
                      * @return InstanceIds waf实例id列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置waf实例id列表
-                     * @param InstanceIds waf实例id列表
+                     * @param _instanceIds waf实例id列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

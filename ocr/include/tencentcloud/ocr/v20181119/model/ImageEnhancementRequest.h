@@ -51,6 +51,7 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。
+                     * @param _imageBase64 图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -92,17 +96,19 @@ namespace TencentCloud
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 图片的 Url 地址。
+                     * @param _imageUrl 图片的 Url 地址。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -115,6 +121,7 @@ namespace TencentCloud
 “preprocess”: 返回预处理后的图片数据
 “origin”：返回原图片数据
 " ":不返回图片数据
+                     * 
                      */
                     std::string GetReturnImage() const;
 
@@ -123,16 +130,18 @@ namespace TencentCloud
 “preprocess”: 返回预处理后的图片数据
 “origin”：返回原图片数据
 " ":不返回图片数据
-                     * @param ReturnImage 默认为空，ReturnImage的取值以及含义如下：
+                     * @param _returnImage 默认为空，ReturnImage的取值以及含义如下：
 “preprocess”: 返回预处理后的图片数据
 “origin”：返回原图片数据
 " ":不返回图片数据
+                     * 
                      */
                     void SetReturnImage(const std::string& _returnImage);
 
                     /**
                      * 判断参数 ReturnImage 是否已赋值
                      * @return ReturnImage 是否已赋值
+                     * 
                      */
                     bool ReturnImageHasBeenSet() const;
 
@@ -163,6 +172,7 @@ namespace TencentCloud
 302：去除阴影
 303：去除模糊 
 304：去除过曝
+                     * 
                      */
                     int64_t GetTaskType() const;
 
@@ -180,7 +190,7 @@ namespace TencentCloud
 302：去除阴影
 303：去除模糊 
 304：去除过曝
-                     * @param TaskType 默认值为1，指定图像增强方法：
+                     * @param _taskType 默认值为1，指定图像增强方法：
 1：切边增强
 2：弯曲矫正
 202：黑白模式
@@ -193,12 +203,14 @@ namespace TencentCloud
 302：去除阴影
 303：去除模糊 
 304：去除过曝
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

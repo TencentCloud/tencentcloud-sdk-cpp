@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取下载地址
                      * @return DownloadUrl 下载地址
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 

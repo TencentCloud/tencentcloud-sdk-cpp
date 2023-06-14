@@ -48,36 +48,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogList 域名信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetLogList() const;
 
                     /**
                      * 判断参数 LogList 是否已赋值
                      * @return LogList 是否已赋值
+                     * 
                      */
                     bool LogListHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取日志总条数
                      * @return TotalCount 日志总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

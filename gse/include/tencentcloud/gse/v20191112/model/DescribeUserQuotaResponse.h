@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaResource 配额资源信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     QuotaResource GetQuotaResource() const;
 
                     /**
                      * 判断参数 QuotaResource 是否已赋值
                      * @return QuotaResource 是否已赋值
+                     * 
                      */
                     bool QuotaResourceHasBeenSet() const;
 

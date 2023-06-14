@@ -51,56 +51,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 封禁属性标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置封禁属性标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 封禁属性标签
+                     * @param _tags 封禁属性标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取封禁模组启用状态
                      * @return DefenseStatus 封禁模组启用状态
+                     * 
                      */
                     int64_t GetDefenseStatus() const;
 
                     /**
                      * 设置封禁模组启用状态
-                     * @param DefenseStatus 封禁模组启用状态
+                     * @param _defenseStatus 封禁模组启用状态
+                     * 
                      */
                     void SetDefenseStatus(const int64_t& _defenseStatus);
 
                     /**
                      * 判断参数 DefenseStatus 是否已赋值
                      * @return DefenseStatus 是否已赋值
+                     * 
                      */
                     bool DefenseStatusHasBeenSet() const;
 
                     /**
                      * 获取最后更新时间
                      * @return LastUpdateTime 最后更新时间
+                     * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-                     * @param LastUpdateTime 最后更新时间
+                     * @param _lastUpdateTime 最后更新时间
+                     * 
                      */
                     void SetLastUpdateTime(const std::string& _lastUpdateTime);
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 

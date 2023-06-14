@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取VPN通道健康检查本端ip
                      * @return HealthCheckLocalIp VPN通道健康检查本端ip
+                     * 
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
                      * 判断参数 HealthCheckLocalIp 是否已赋值
                      * @return HealthCheckLocalIp 是否已赋值
+                     * 
                      */
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
                      * 获取VPN通道健康检查对端ip
                      * @return HealthCheckRemoteIp VPN通道健康检查对端ip
+                     * 
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
                      * 判断参数 HealthCheckRemoteIp 是否已赋值
                      * @return HealthCheckRemoteIp 是否已赋值
+                     * 
                      */
                     bool HealthCheckRemoteIpHasBeenSet() const;
 

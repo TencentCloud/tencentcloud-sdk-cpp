@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自动续费标志位。0: 不自动续费; 1: 自动续费
                      * @return AutoRenewFlag 自动续费标志位。0: 不自动续费; 1: 自动续费
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标志位。0: 不自动续费; 1: 自动续费
-                     * @param AutoRenewFlag 自动续费标志位。0: 不自动续费; 1: 自动续费
+                     * @param _autoRenewFlag 自动续费标志位。0: 不自动续费; 1: 自动续费
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取需要修改的设备ID列表
                      * @return InstanceIds 需要修改的设备ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置需要修改的设备ID列表
-                     * @param InstanceIds 需要修改的设备ID列表
+                     * @param _instanceIds 需要修改的设备ID列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

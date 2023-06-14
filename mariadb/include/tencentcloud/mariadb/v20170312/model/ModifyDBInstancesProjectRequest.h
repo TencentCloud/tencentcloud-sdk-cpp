@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
                      * @return InstanceIds 待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
-                     * @param InstanceIds 待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * @param _instanceIds 待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。
                      * @return ProjectId 要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。
-                     * @param ProjectId 要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。
+                     * @param _projectId 要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

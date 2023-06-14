@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取起始时间（必填），Unix 秒级时间戳
                      * @return StartTimestamp 起始时间（必填），Unix 秒级时间戳
+                     * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
                      * 设置起始时间（必填），Unix 秒级时间戳
-                     * @param StartTimestamp 起始时间（必填），Unix 秒级时间戳
+                     * @param _startTimestamp 起始时间（必填），Unix 秒级时间戳
+                     * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
 
                     /**
                      * 判断参数 StartTimestamp 是否已赋值
                      * @return StartTimestamp 是否已赋值
+                     * 
                      */
                     bool StartTimestampHasBeenSet() const;
 
                     /**
                      * 获取结束时间（必填），Unix 秒级时间戳
                      * @return EndTimestamp 结束时间（必填），Unix 秒级时间戳
+                     * 
                      */
                     int64_t GetEndTimestamp() const;
 
                     /**
                      * 设置结束时间（必填），Unix 秒级时间戳
-                     * @param EndTimestamp 结束时间（必填），Unix 秒级时间戳
+                     * @param _endTimestamp 结束时间（必填），Unix 秒级时间戳
+                     * 
                      */
                     void SetEndTimestamp(const int64_t& _endTimestamp);
 
                     /**
                      * 判断参数 EndTimestamp 是否已赋值
                      * @return EndTimestamp 是否已赋值
+                     * 
                      */
                     bool EndTimestampHasBeenSet() const;
 
                     /**
                      * 获取实例 ID（废弃）
                      * @return InstanceId 实例 ID（废弃）
+                     * 
                      */
                     int64_t GetInstanceId() const;
 
                     /**
                      * 设置实例 ID（废弃）
-                     * @param InstanceId 实例 ID（废弃）
+                     * @param _instanceId 实例 ID（废弃）
+                     * 
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，最大为100默认20
                      * @return Limit 返回记录条数，最大为100默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，最大为100默认20
-                     * @param Limit 返回记录条数，最大为100默认20
+                     * @param _limit 返回记录条数，最大为100默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取返回记录偏移，默认为 0
                      * @return Offset 返回记录偏移，默认为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置返回记录偏移，默认为 0
-                     * @param Offset 返回记录偏移，默认为 0
+                     * @param _offset 返回记录偏移，默认为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取1为全媒体，2为文本客服，不填则查询全部
                      * @return Type 1为全媒体，2为文本客服，不填则查询全部
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置1为全媒体，2为文本客服，不填则查询全部
-                     * @param Type 1为全媒体，2为文本客服，不填则查询全部
+                     * @param _type 1为全媒体，2为文本客服，不填则查询全部
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

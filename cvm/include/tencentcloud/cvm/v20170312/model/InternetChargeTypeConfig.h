@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取网络计费模式。
                      * @return InternetChargeType 网络计费模式。
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置网络计费模式。
-                     * @param InternetChargeType 网络计费模式。
+                     * @param _internetChargeType 网络计费模式。
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取网络计费模式描述信息。
                      * @return Description 网络计费模式描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置网络计费模式描述信息。
-                     * @param Description 网络计费模式描述信息。
+                     * @param _description 网络计费模式描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

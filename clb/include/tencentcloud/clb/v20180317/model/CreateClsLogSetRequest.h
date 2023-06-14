@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
                      * @return LogsetName 日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
-                     * @param LogsetName 日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
+                     * @param _logsetName 日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取日志集的保存周期，单位：天。
                      * @return Period 日志集的保存周期，单位：天。
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置日志集的保存周期，单位：天。
-                     * @param Period 日志集的保存周期，单位：天。
+                     * @param _period 日志集的保存周期，单位：天。
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
                      * @return LogsetType 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 
                      */
                     std::string GetLogsetType() const;
 
                     /**
                      * 设置日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @param LogsetType 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @param _logsetType 日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 
                      */
                     void SetLogsetType(const std::string& _logsetType);
 
                     /**
                      * 判断参数 LogsetType 是否已赋值
                      * @return LogsetType 是否已赋值
+                     * 
                      */
                     bool LogsetTypeHasBeenSet() const;
 

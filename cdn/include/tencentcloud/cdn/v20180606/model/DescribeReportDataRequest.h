@@ -51,6 +51,7 @@ namespace TencentCloud
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
-                     * @param StartTime 查询起始时间：yyyy-MM-dd
+                     * @param _startTime 查询起始时间：yyyy-MM-dd
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
-                     * @param EndTime 查询结束时间：yyyy-MM-dd
+                     * @param _endTime 查询结束时间：yyyy-MM-dd
 当报表类型为daily，起始时间和结束时间必须为同一天
 当报表类型为weekly，起始时间须为周一，结束时间须为同一周的周日
 当报表类型为monthly，起始时间须为自然月第一天，即1号，结束时间须为该自然月最后一天
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -111,6 +117,7 @@ monthly：月报表（自然月）
 daily：日报表
 weekly：周报表（周一至周日）
 monthly：月报表（自然月）
+                     * 
                      */
                     std::string GetReportType() const;
 
@@ -119,16 +126,18 @@ monthly：月报表（自然月）
 daily：日报表
 weekly：周报表（周一至周日）
 monthly：月报表（自然月）
-                     * @param ReportType 报表类型
+                     * @param _reportType 报表类型
 daily：日报表
 weekly：周报表（周一至周日）
 monthly：月报表（自然月）
+                     * 
                      */
                     void SetReportType(const std::string& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 
@@ -139,6 +148,7 @@ overseas：中国境外
                      * @return Area 域名加速区域
 mainland：中国境内
 overseas：中国境外
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -146,69 +156,80 @@ overseas：中国境外
                      * 设置域名加速区域
 mainland：中国境内
 overseas：中国境外
-                     * @param Area 域名加速区域
+                     * @param _area 域名加速区域
 mainland：中国境内
 overseas：中国境外
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0。
                      * @return Offset 偏移量，默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0。
-                     * @param Offset 偏移量，默认0。
+                     * @param _offset 偏移量，默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取数据个数，默认1000。
                      * @return Limit 数据个数，默认1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置数据个数，默认1000。
-                     * @param Limit 数据个数，默认1000。
+                     * @param _limit 数据个数，默认1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取按项目ID筛选
                      * @return Project 按项目ID筛选
+                     * 
                      */
                     int64_t GetProject() const;
 
                     /**
                      * 设置按项目ID筛选
-                     * @param Project 按项目ID筛选
+                     * @param _project 按项目ID筛选
+                     * 
                      */
                     void SetProject(const int64_t& _project);
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
+                     * 
                      */
                     bool ProjectHasBeenSet() const;
 

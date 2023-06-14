@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取采集配置ID
                      * @return ConfigId 采集配置ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 

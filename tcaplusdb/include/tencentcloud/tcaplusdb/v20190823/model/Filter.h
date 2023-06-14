@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤字段名
                      * @return Name 过滤字段名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤字段名
-                     * @param Name 过滤字段名
+                     * @param _name 过滤字段名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤字段值
                      * @return Value 过滤字段值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤字段值
-                     * @param Value 过滤字段值
+                     * @param _value 过滤字段值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取过滤字段值
                      * @return Values 过滤字段值
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤字段值
-                     * @param Values 过滤字段值
+                     * @param _values 过滤字段值
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

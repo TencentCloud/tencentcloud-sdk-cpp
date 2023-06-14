@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取集群规格名称
                      * @return SpecName 集群规格名称
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置集群规格名称
-                     * @param SpecName 集群规格名称
+                     * @param _specName 集群规格名称
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return NodeCount 节点数量
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeCount 节点数量
+                     * @param _nodeCount 节点数量
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取峰值tps
                      * @return MaxTps 峰值tps
+                     * 
                      */
                     uint64_t GetMaxTps() const;
 
                     /**
                      * 设置峰值tps
-                     * @param MaxTps 峰值tps
+                     * @param _maxTps 峰值tps
+                     * 
                      */
                     void SetMaxTps(const uint64_t& _maxTps);
 
                     /**
                      * 判断参数 MaxTps 是否已赋值
                      * @return MaxTps 是否已赋值
+                     * 
                      */
                     bool MaxTpsHasBeenSet() const;
 
                     /**
                      * 获取峰值带宽。单位：mbps
                      * @return MaxBandWidth 峰值带宽。单位：mbps
+                     * 
                      */
                     uint64_t GetMaxBandWidth() const;
 
                     /**
                      * 设置峰值带宽。单位：mbps
-                     * @param MaxBandWidth 峰值带宽。单位：mbps
+                     * @param _maxBandWidth 峰值带宽。单位：mbps
+                     * 
                      */
                     void SetMaxBandWidth(const uint64_t& _maxBandWidth);
 
                     /**
                      * 判断参数 MaxBandWidth 是否已赋值
                      * @return MaxBandWidth 是否已赋值
+                     * 
                      */
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
                      * 获取存储容量。单位：GB
                      * @return MaxStorage 存储容量。单位：GB
+                     * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置存储容量。单位：GB
-                     * @param MaxStorage 存储容量。单位：GB
+                     * @param _maxStorage 存储容量。单位：GB
+                     * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
 
                     /**
                      * 判断参数 MaxStorage 是否已赋值
                      * @return MaxStorage 是否已赋值
+                     * 
                      */
                     bool MaxStorageHasBeenSet() const;
 
                     /**
                      * 获取公网带宽tps。单位：Mbps
                      * @return PublicNetworkTps 公网带宽tps。单位：Mbps
+                     * 
                      */
                     uint64_t GetPublicNetworkTps() const;
 
                     /**
                      * 设置公网带宽tps。单位：Mbps
-                     * @param PublicNetworkTps 公网带宽tps。单位：Mbps
+                     * @param _publicNetworkTps 公网带宽tps。单位：Mbps
+                     * 
                      */
                     void SetPublicNetworkTps(const uint64_t& _publicNetworkTps);
 
                     /**
                      * 判断参数 PublicNetworkTps 是否已赋值
                      * @return PublicNetworkTps 是否已赋值
+                     * 
                      */
                     bool PublicNetworkTpsHasBeenSet() const;
 

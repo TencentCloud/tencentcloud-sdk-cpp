@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取黑石私有网络ID
                      * @return VpcId 黑石私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置黑石私有网络ID
-                     * @param VpcId 黑石私有网络ID
+                     * @param _vpcId 黑石私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取黑石子网ID
                      * @return SubnetId 黑石子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置黑石子网ID
-                     * @param SubnetId 黑石子网ID
+                     * @param _subnetId 黑石子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

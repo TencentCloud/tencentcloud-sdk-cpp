@@ -52,6 +52,7 @@ image-name: 镜像名称
 task-id: 异步任务ID
 image-id: 镜像ID
 image-name: 镜像名称
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -60,16 +61,18 @@ image-name: 镜像名称
 task-id: 异步任务ID
 image-id: 镜像ID
 image-name: 镜像名称
-                     * @param Filters 支持key,value查询
+                     * @param _filters 支持key,value查询
 task-id: 异步任务ID
 image-id: 镜像ID
 image-name: 镜像名称
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

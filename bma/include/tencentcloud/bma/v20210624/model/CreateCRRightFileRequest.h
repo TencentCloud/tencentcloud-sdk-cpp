@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取作品ID
                      * @return WorkId 作品ID
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 设置作品ID
-                     * @param WorkId 作品ID
+                     * @param _workId 作品ID
+                     * 
                      */
                     void SetWorkId(const int64_t& _workId);
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 
                     /**
                      * 获取权属文件列表
                      * @return FileList 权属文件列表
+                     * 
                      */
                     std::vector<File> GetFileList() const;
 
                     /**
                      * 设置权属文件列表
-                     * @param FileList 权属文件列表
+                     * @param _fileList 权属文件列表
+                     * 
                      */
                     void SetFileList(const std::vector<File>& _fileList);
 
                     /**
                      * 判断参数 FileList 是否已赋值
                      * @return FileList 是否已赋值
+                     * 
                      */
                     bool FileListHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分时 0~23
                      * @return Hour 分时 0~23
+                     * 
                      */
                     int64_t GetHour() const;
 
                     /**
                      * 设置分时 0~23
-                     * @param Hour 分时 0~23
+                     * @param _hour 分时 0~23
+                     * 
                      */
                     void SetHour(const int64_t& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 
                     /**
                      * 获取客流量
                      * @return FlowCount 客流量
+                     * 
                      */
                     int64_t GetFlowCount() const;
 
                     /**
                      * 设置客流量
-                     * @param FlowCount 客流量
+                     * @param _flowCount 客流量
+                     * 
                      */
                     void SetFlowCount(const int64_t& _flowCount);
 
                     /**
                      * 判断参数 FlowCount 是否已赋值
                      * @return FlowCount 是否已赋值
+                     * 
                      */
                     bool FlowCountHasBeenSet() const;
 

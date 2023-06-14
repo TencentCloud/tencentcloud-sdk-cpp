@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取新VPC网络Id
                      * @return NewVpcId 新VPC网络Id
+                     * 
                      */
                     std::string GetNewVpcId() const;
 
                     /**
                      * 设置新VPC网络Id
-                     * @param NewVpcId 新VPC网络Id
+                     * @param _newVpcId 新VPC网络Id
+                     * 
                      */
                     void SetNewVpcId(const std::string& _newVpcId);
 
                     /**
                      * 判断参数 NewVpcId 是否已赋值
                      * @return NewVpcId 是否已赋值
+                     * 
                      */
                     bool NewVpcIdHasBeenSet() const;
 
                     /**
                      * 获取新子网Id
                      * @return NewSubnetId 新子网Id
+                     * 
                      */
                     std::string GetNewSubnetId() const;
 
                     /**
                      * 设置新子网Id
-                     * @param NewSubnetId 新子网Id
+                     * @param _newSubnetId 新子网Id
+                     * 
                      */
                     void SetNewSubnetId(const std::string& _newSubnetId);
 
                     /**
                      * 判断参数 NewSubnetId 是否已赋值
                      * @return NewSubnetId 是否已赋值
+                     * 
                      */
                     bool NewSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时
                      * @return OldIpRetainTime 原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时
+                     * 
                      */
                     int64_t GetOldIpRetainTime() const;
 
                     /**
                      * 设置原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时
-                     * @param OldIpRetainTime 原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时
+                     * @param _oldIpRetainTime 原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时
+                     * 
                      */
                     void SetOldIpRetainTime(const int64_t& _oldIpRetainTime);
 
                     /**
                      * 判断参数 OldIpRetainTime 是否已赋值
                      * @return OldIpRetainTime 是否已赋值
+                     * 
                      */
                     bool OldIpRetainTimeHasBeenSet() const;
 
                     /**
                      * 获取指定VIP地址
                      * @return Vip 指定VIP地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置指定VIP地址
-                     * @param Vip 指定VIP地址
+                     * @param _vip 指定VIP地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 

@@ -50,234 +50,273 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID
-                     * @param BizId 应用ID
+                     * @param _bizId 应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取Dau统计项数目
                      * @return DauDataNum Dau统计项数目
+                     * 
                      */
                     uint64_t GetDauDataNum() const;
 
                     /**
                      * 设置Dau统计项数目
-                     * @param DauDataNum Dau统计项数目
+                     * @param _dauDataNum Dau统计项数目
+                     * 
                      */
                     void SetDauDataNum(const uint64_t& _dauDataNum);
 
                     /**
                      * 判断参数 DauDataNum 是否已赋值
                      * @return DauDataNum 是否已赋值
+                     * 
                      */
                     bool DauDataNumHasBeenSet() const;
 
                     /**
                      * 获取大陆地区Dau统计数据，单位人
                      * @return DauDataMainland 大陆地区Dau统计数据，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetDauDataMainland() const;
 
                     /**
                      * 设置大陆地区Dau统计数据，单位人
-                     * @param DauDataMainland 大陆地区Dau统计数据，单位人
+                     * @param _dauDataMainland 大陆地区Dau统计数据，单位人
+                     * 
                      */
                     void SetDauDataMainland(const std::vector<StatisticsItem>& _dauDataMainland);
 
                     /**
                      * 判断参数 DauDataMainland 是否已赋值
                      * @return DauDataMainland 是否已赋值
+                     * 
                      */
                     bool DauDataMainlandHasBeenSet() const;
 
                     /**
                      * 获取海外地区Dau统计数据，单位人
                      * @return DauDataOversea 海外地区Dau统计数据，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetDauDataOversea() const;
 
                     /**
                      * 设置海外地区Dau统计数据，单位人
-                     * @param DauDataOversea 海外地区Dau统计数据，单位人
+                     * @param _dauDataOversea 海外地区Dau统计数据，单位人
+                     * 
                      */
                     void SetDauDataOversea(const std::vector<StatisticsItem>& _dauDataOversea);
 
                     /**
                      * 判断参数 DauDataOversea 是否已赋值
                      * @return DauDataOversea 是否已赋值
+                     * 
                      */
                     bool DauDataOverseaHasBeenSet() const;
 
                     /**
                      * 获取大陆和海外地区Dau统计数据汇总，单位人
                      * @return DauDataSum 大陆和海外地区Dau统计数据汇总，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetDauDataSum() const;
 
                     /**
                      * 设置大陆和海外地区Dau统计数据汇总，单位人
-                     * @param DauDataSum 大陆和海外地区Dau统计数据汇总，单位人
+                     * @param _dauDataSum 大陆和海外地区Dau统计数据汇总，单位人
+                     * 
                      */
                     void SetDauDataSum(const std::vector<StatisticsItem>& _dauDataSum);
 
                     /**
                      * 判断参数 DauDataSum 是否已赋值
                      * @return DauDataSum 是否已赋值
+                     * 
                      */
                     bool DauDataSumHasBeenSet() const;
 
                     /**
                      * 获取实时语音时长统计项数目
                      * @return DurationDataNum 实时语音时长统计项数目
+                     * 
                      */
                     uint64_t GetDurationDataNum() const;
 
                     /**
                      * 设置实时语音时长统计项数目
-                     * @param DurationDataNum 实时语音时长统计项数目
+                     * @param _durationDataNum 实时语音时长统计项数目
+                     * 
                      */
                     void SetDurationDataNum(const uint64_t& _durationDataNum);
 
                     /**
                      * 判断参数 DurationDataNum 是否已赋值
                      * @return DurationDataNum 是否已赋值
+                     * 
                      */
                     bool DurationDataNumHasBeenSet() const;
 
                     /**
                      * 获取大陆地区实时语音时长统计数据，单位分钟
                      * @return DurationDataMainland 大陆地区实时语音时长统计数据，单位分钟
+                     * 
                      */
                     std::vector<StatisticsItem> GetDurationDataMainland() const;
 
                     /**
                      * 设置大陆地区实时语音时长统计数据，单位分钟
-                     * @param DurationDataMainland 大陆地区实时语音时长统计数据，单位分钟
+                     * @param _durationDataMainland 大陆地区实时语音时长统计数据，单位分钟
+                     * 
                      */
                     void SetDurationDataMainland(const std::vector<StatisticsItem>& _durationDataMainland);
 
                     /**
                      * 判断参数 DurationDataMainland 是否已赋值
                      * @return DurationDataMainland 是否已赋值
+                     * 
                      */
                     bool DurationDataMainlandHasBeenSet() const;
 
                     /**
                      * 获取海外地区实时语音时长统计数据，单位分钟
                      * @return DurationDataOversea 海外地区实时语音时长统计数据，单位分钟
+                     * 
                      */
                     std::vector<StatisticsItem> GetDurationDataOversea() const;
 
                     /**
                      * 设置海外地区实时语音时长统计数据，单位分钟
-                     * @param DurationDataOversea 海外地区实时语音时长统计数据，单位分钟
+                     * @param _durationDataOversea 海外地区实时语音时长统计数据，单位分钟
+                     * 
                      */
                     void SetDurationDataOversea(const std::vector<StatisticsItem>& _durationDataOversea);
 
                     /**
                      * 判断参数 DurationDataOversea 是否已赋值
                      * @return DurationDataOversea 是否已赋值
+                     * 
                      */
                     bool DurationDataOverseaHasBeenSet() const;
 
                     /**
                      * 获取大陆和海外地区实时语音时长统计数据汇总，单位分钟
                      * @return DurationDataSum 大陆和海外地区实时语音时长统计数据汇总，单位分钟
+                     * 
                      */
                     std::vector<StatisticsItem> GetDurationDataSum() const;
 
                     /**
                      * 设置大陆和海外地区实时语音时长统计数据汇总，单位分钟
-                     * @param DurationDataSum 大陆和海外地区实时语音时长统计数据汇总，单位分钟
+                     * @param _durationDataSum 大陆和海外地区实时语音时长统计数据汇总，单位分钟
+                     * 
                      */
                     void SetDurationDataSum(const std::vector<StatisticsItem>& _durationDataSum);
 
                     /**
                      * 判断参数 DurationDataSum 是否已赋值
                      * @return DurationDataSum 是否已赋值
+                     * 
                      */
                     bool DurationDataSumHasBeenSet() const;
 
                     /**
                      * 获取Pcu统计项数目
                      * @return PcuDataNum Pcu统计项数目
+                     * 
                      */
                     uint64_t GetPcuDataNum() const;
 
                     /**
                      * 设置Pcu统计项数目
-                     * @param PcuDataNum Pcu统计项数目
+                     * @param _pcuDataNum Pcu统计项数目
+                     * 
                      */
                     void SetPcuDataNum(const uint64_t& _pcuDataNum);
 
                     /**
                      * 判断参数 PcuDataNum 是否已赋值
                      * @return PcuDataNum 是否已赋值
+                     * 
                      */
                     bool PcuDataNumHasBeenSet() const;
 
                     /**
                      * 获取大陆地区Pcu统计数据，单位人
                      * @return PcuDataMainland 大陆地区Pcu统计数据，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetPcuDataMainland() const;
 
                     /**
                      * 设置大陆地区Pcu统计数据，单位人
-                     * @param PcuDataMainland 大陆地区Pcu统计数据，单位人
+                     * @param _pcuDataMainland 大陆地区Pcu统计数据，单位人
+                     * 
                      */
                     void SetPcuDataMainland(const std::vector<StatisticsItem>& _pcuDataMainland);
 
                     /**
                      * 判断参数 PcuDataMainland 是否已赋值
                      * @return PcuDataMainland 是否已赋值
+                     * 
                      */
                     bool PcuDataMainlandHasBeenSet() const;
 
                     /**
                      * 获取海外地区Pcu统计数据，单位人
                      * @return PcuDataOversea 海外地区Pcu统计数据，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetPcuDataOversea() const;
 
                     /**
                      * 设置海外地区Pcu统计数据，单位人
-                     * @param PcuDataOversea 海外地区Pcu统计数据，单位人
+                     * @param _pcuDataOversea 海外地区Pcu统计数据，单位人
+                     * 
                      */
                     void SetPcuDataOversea(const std::vector<StatisticsItem>& _pcuDataOversea);
 
                     /**
                      * 判断参数 PcuDataOversea 是否已赋值
                      * @return PcuDataOversea 是否已赋值
+                     * 
                      */
                     bool PcuDataOverseaHasBeenSet() const;
 
                     /**
                      * 获取大陆和海外地区Pcu统计数据汇总，单位人
                      * @return PcuDataSum 大陆和海外地区Pcu统计数据汇总，单位人
+                     * 
                      */
                     std::vector<StatisticsItem> GetPcuDataSum() const;
 
                     /**
                      * 设置大陆和海外地区Pcu统计数据汇总，单位人
-                     * @param PcuDataSum 大陆和海外地区Pcu统计数据汇总，单位人
+                     * @param _pcuDataSum 大陆和海外地区Pcu统计数据汇总，单位人
+                     * 
                      */
                     void SetPcuDataSum(const std::vector<StatisticsItem>& _pcuDataSum);
 
                     /**
                      * 判断参数 PcuDataSum 是否已赋值
                      * @return PcuDataSum 是否已赋值
+                     * 
                      */
                     bool PcuDataSumHasBeenSet() const;
 

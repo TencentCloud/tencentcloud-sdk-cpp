@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取用户在房间得进出时间列表
                      * @return InOutList 用户在房间得进出时间列表
+                     * 
                      */
                     std::vector<InOutTimeInfo> GetInOutList() const;
 
                     /**
                      * 判断参数 InOutList 是否已赋值
                      * @return InOutList 是否已赋值
+                     * 
                      */
                     bool InOutListHasBeenSet() const;
 
                     /**
                      * 获取用户在房间中总时长
                      * @return Duration 用户在房间中总时长
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

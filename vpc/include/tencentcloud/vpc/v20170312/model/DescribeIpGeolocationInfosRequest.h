@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
                      * @return AddressIps 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
+                     * 
                      */
                     std::vector<std::string> GetAddressIps() const;
 
                     /**
                      * 设置需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
-                     * @param AddressIps 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
+                     * @param _addressIps 需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。
+                     * 
                      */
                     void SetAddressIps(const std::vector<std::string>& _addressIps);
 
                     /**
                      * 判断参数 AddressIps 是否已赋值
                      * @return AddressIps 是否已赋值
+                     * 
                      */
                     bool AddressIpsHasBeenSet() const;
 
                     /**
                      * 获取需查询的IP地址的字段信息。
                      * @return Fields 需查询的IP地址的字段信息。
+                     * 
                      */
                     IpField GetFields() const;
 
                     /**
                      * 设置需查询的IP地址的字段信息。
-                     * @param Fields 需查询的IP地址的字段信息。
+                     * @param _fields 需查询的IP地址的字段信息。
+                     * 
                      */
                     void SetFields(const IpField& _fields);
 
                     /**
                      * 判断参数 Fields 是否已赋值
                      * @return Fields 是否已赋值
+                     * 
                      */
                     bool FieldsHasBeenSet() const;
 

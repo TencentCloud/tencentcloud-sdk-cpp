@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取标签ID
                      * @return Id 标签ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置标签ID
-                     * @param Id 标签ID
+                     * @param _id 标签ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取标签名
                      * @return Name 标签名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名
-                     * @param Name 标签名
+                     * @param _name 标签名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取服务器数
                      * @return Count 服务器数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置服务器数
-                     * @param Count 服务器数
+                     * @param _count 服务器数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelName 标签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置标签名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LabelName 标签名
+                     * @param _labelName 标签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabelName(const std::string& _labelName);
 
                     /**
                      * 判断参数 LabelName 是否已赋值
                      * @return LabelName 是否已赋值
+                     * 
                      */
                     bool LabelNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelValue 标签值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabelValue() const;
 
                     /**
                      * 设置标签值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LabelValue 标签值
+                     * @param _labelValue 标签值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabelValue(const std::string& _labelValue);
 
                     /**
                      * 判断参数 LabelValue 是否已赋值
                      * @return LabelValue 是否已赋值
+                     * 
                      */
                     bool LabelValueHasBeenSet() const;
 

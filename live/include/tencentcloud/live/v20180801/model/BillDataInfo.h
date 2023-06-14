@@ -55,6 +55,7 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -63,52 +64,60 @@ namespace TencentCloud
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param Time 时间点，
+                     * @param _time 时间点，
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位是 Mbps。
                      * @return Bandwidth 带宽，单位是 Mbps。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽，单位是 Mbps。
-                     * @param Bandwidth 带宽，单位是 Mbps。
+                     * @param _bandwidth 带宽，单位是 Mbps。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取流量，单位是 MB。
                      * @return Flux 流量，单位是 MB。
+                     * 
                      */
                     double GetFlux() const;
 
                     /**
                      * 设置流量，单位是 MB。
-                     * @param Flux 流量，单位是 MB。
+                     * @param _flux 流量，单位是 MB。
+                     * 
                      */
                     void SetFlux(const double& _flux);
 
                     /**
                      * 判断参数 Flux 是否已赋值
                      * @return Flux 是否已赋值
+                     * 
                      */
                     bool FluxHasBeenSet() const;
 
@@ -123,6 +132,7 @@ namespace TencentCloud
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * 
                      */
                     std::string GetPeakTime() const;
 
@@ -132,17 +142,19 @@ namespace TencentCloud
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
-                     * @param PeakTime 峰值时间点，
+                     * @param _peakTime 峰值时间点，
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
 原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * 
                      */
                     void SetPeakTime(const std::string& _peakTime);
 
                     /**
                      * 判断参数 PeakTime 是否已赋值
                      * @return PeakTime 是否已赋值
+                     * 
                      */
                     bool PeakTimeHasBeenSet() const;
 

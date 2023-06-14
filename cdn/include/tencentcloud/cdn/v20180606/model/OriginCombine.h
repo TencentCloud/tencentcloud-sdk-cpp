@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 合并回源配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置合并回源配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 合并回源配置开关，取值有：
+                     * @param _switch 合并回源配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

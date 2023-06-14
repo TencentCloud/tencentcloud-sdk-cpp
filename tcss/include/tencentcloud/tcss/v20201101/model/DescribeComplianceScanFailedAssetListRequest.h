@@ -54,6 +54,7 @@ ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
+                     * 
                      */
                     std::vector<std::string> GetAssetTypeSet() const;
 
@@ -63,71 +64,82 @@ ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @param AssetTypeSet 资产类型列表。
+                     * @param _assetTypeSet 资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
+                     * 
                      */
                     void SetAssetTypeSet(const std::vector<std::string>& _assetTypeSet);
 
                     /**
                      * 判断参数 AssetTypeSet 是否已赋值
                      * @return AssetTypeSet 是否已赋值
+                     * 
                      */
                     bool AssetTypeSetHasBeenSet() const;
 
                     /**
                      * 获取起始偏移量，默认为0。
                      * @return Offset 起始偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置起始偏移量，默认为0。
-                     * @param Offset 起始偏移量，默认为0。
+                     * @param _offset 起始偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回的数据量，默认为10，最大为100。
                      * @return Limit 返回的数据量，默认为10，最大为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回的数据量，默认为10，最大为100。
-                     * @param Limit 返回的数据量，默认为10，最大为100。
+                     * @param _limit 返回的数据量，默认为10，最大为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询过滤器
                      * @return Filters 查询过滤器
+                     * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
                      * 设置查询过滤器
-                     * @param Filters 查询过滤器
+                     * @param _filters 查询过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

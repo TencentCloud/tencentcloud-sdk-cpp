@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取SAML元数据文档，需要base64 encode
                      * @return SAMLMetadataDocument SAML元数据文档，需要base64 encode
+                     * 
                      */
                     std::string GetSAMLMetadataDocument() const;
 
                     /**
                      * 设置SAML元数据文档，需要base64 encode
-                     * @param SAMLMetadataDocument SAML元数据文档，需要base64 encode
+                     * @param _sAMLMetadataDocument SAML元数据文档，需要base64 encode
+                     * 
                      */
                     void SetSAMLMetadataDocument(const std::string& _sAMLMetadataDocument);
 
                     /**
                      * 判断参数 SAMLMetadataDocument 是否已赋值
                      * @return SAMLMetadataDocument 是否已赋值
+                     * 
                      */
                     bool SAMLMetadataDocumentHasBeenSet() const;
 
                     /**
                      * 获取辅助域名
                      * @return AuxiliaryDomain 辅助域名
+                     * 
                      */
                     std::string GetAuxiliaryDomain() const;
 
                     /**
                      * 设置辅助域名
-                     * @param AuxiliaryDomain 辅助域名
+                     * @param _auxiliaryDomain 辅助域名
+                     * 
                      */
                     void SetAuxiliaryDomain(const std::string& _auxiliaryDomain);
 
                     /**
                      * 判断参数 AuxiliaryDomain 是否已赋值
                      * @return AuxiliaryDomain 是否已赋值
+                     * 
                      */
                     bool AuxiliaryDomainHasBeenSet() const;
 

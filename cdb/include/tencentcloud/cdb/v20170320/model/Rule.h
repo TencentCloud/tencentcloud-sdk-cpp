@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LessThan 划分上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLessThan() const;
 
                     /**
                      * 设置划分上限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LessThan 划分上限
+                     * @param _lessThan 划分上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLessThan(const uint64_t& _lessThan);
 
                     /**
                      * 判断参数 LessThan 是否已赋值
                      * @return LessThan 是否已赋值
+                     * 
                      */
                     bool LessThanHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 权重
+                     * @param _weight 权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

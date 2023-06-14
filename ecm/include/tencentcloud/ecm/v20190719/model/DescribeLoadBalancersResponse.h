@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerSet 返回的负载均衡实例数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancerSet() const;
 
                     /**
                      * 判断参数 LoadBalancerSet 是否已赋值
                      * @return LoadBalancerSet 是否已赋值
+                     * 
                      */
                     bool LoadBalancerSetHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取标签分组英文名
                      * @return EnglishGroupName 标签分组英文名
+                     * 
                      */
                     std::string GetEnglishGroupName() const;
 
                     /**
                      * 设置标签分组英文名
-                     * @param EnglishGroupName 标签分组英文名
+                     * @param _englishGroupName 标签分组英文名
+                     * 
                      */
                     void SetEnglishGroupName(const std::string& _englishGroupName);
 
                     /**
                      * 判断参数 EnglishGroupName 是否已赋值
                      * @return EnglishGroupName 是否已赋值
+                     * 
                      */
                     bool EnglishGroupNameHasBeenSet() const;
 
                     /**
                      * 获取标签分组中文名
                      * @return ChineseGroupName 标签分组中文名
+                     * 
                      */
                     std::string GetChineseGroupName() const;
 
                     /**
                      * 设置标签分组中文名
-                     * @param ChineseGroupName 标签分组中文名
+                     * @param _chineseGroupName 标签分组中文名
+                     * 
                      */
                     void SetChineseGroupName(const std::string& _chineseGroupName);
 
                     /**
                      * 判断参数 ChineseGroupName 是否已赋值
                      * @return ChineseGroupName 是否已赋值
+                     * 
                      */
                     bool ChineseGroupNameHasBeenSet() const;
 
                     /**
                      * 获取标签分类下标签列表
                      * @return TagSet 标签分类下标签列表
+                     * 
                      */
                     std::vector<KTVMusicTagInfo> GetTagSet() const;
 
                     /**
                      * 设置标签分类下标签列表
-                     * @param TagSet 标签分类下标签列表
+                     * @param _tagSet 标签分类下标签列表
+                     * 
                      */
                     void SetTagSet(const std::vector<KTVMusicTagInfo>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMessage 保留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReservedMessage() const;
 
                     /**
                      * 判断参数 ReservedMessage 是否已赋值
                      * @return ReservedMessage 是否已赋值
+                     * 
                      */
                     bool ReservedMessageHasBeenSet() const;
 
@@ -62,24 +64,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontSequenceNumber 银行流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrontSequenceNumber() const;
 
                     /**
                      * 判断参数 FrontSequenceNumber 是否已赋值
                      * @return FrontSequenceNumber 是否已赋值
+                     * 
                      */
                     bool FrontSequenceNumberHasBeenSet() const;
 
                     /**
                      * 获取请求类型
                      * @return RequestType 请求类型
+                     * 
                      */
                     std::string GetRequestType() const;
 
                     /**
                      * 判断参数 RequestType 是否已赋值
                      * @return RequestType 是否已赋值
+                     * 
                      */
                     bool RequestTypeHasBeenSet() const;
 

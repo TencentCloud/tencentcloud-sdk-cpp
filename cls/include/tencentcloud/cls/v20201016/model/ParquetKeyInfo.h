@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取键值名称
                      * @return KeyName 键值名称
+                     * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置键值名称
-                     * @param KeyName 键值名称
+                     * @param _keyName 键值名称
+                     * 
                      */
                     void SetKeyName(const std::string& _keyName);
 
                     /**
                      * 判断参数 KeyName 是否已赋值
                      * @return KeyName 是否已赋值
+                     * 
                      */
                     bool KeyNameHasBeenSet() const;
 
                     /**
                      * 获取数据类型，目前支持6种类型：string、boolean、int32、int64、float、double
                      * @return KeyType 数据类型，目前支持6种类型：string、boolean、int32、int64、float、double
+                     * 
                      */
                     std::string GetKeyType() const;
 
                     /**
                      * 设置数据类型，目前支持6种类型：string、boolean、int32、int64、float、double
-                     * @param KeyType 数据类型，目前支持6种类型：string、boolean、int32、int64、float、double
+                     * @param _keyType 数据类型，目前支持6种类型：string、boolean、int32、int64、float、double
+                     * 
                      */
                     void SetKeyType(const std::string& _keyType);
 
                     /**
                      * 判断参数 KeyType 是否已赋值
                      * @return KeyType 是否已赋值
+                     * 
                      */
                     bool KeyTypeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyNonExistingField 解析失败赋值信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyNonExistingField() const;
 
                     /**
                      * 设置解析失败赋值信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyNonExistingField 解析失败赋值信息
+                     * @param _keyNonExistingField 解析失败赋值信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyNonExistingField(const std::string& _keyNonExistingField);
 
                     /**
                      * 判断参数 KeyNonExistingField 是否已赋值
                      * @return KeyNonExistingField 是否已赋值
+                     * 
                      */
                     bool KeyNonExistingFieldHasBeenSet() const;
 

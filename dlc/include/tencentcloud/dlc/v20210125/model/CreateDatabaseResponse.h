@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取生成的建库执行语句对象。
                      * @return Execution 生成的建库执行语句对象。
+                     * 
                      */
                     Execution GetExecution() const;
 
                     /**
                      * 判断参数 Execution 是否已赋值
                      * @return Execution 是否已赋值
+                     * 
                      */
                     bool ExecutionHasBeenSet() const;
 

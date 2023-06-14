@@ -52,56 +52,65 @@ namespace TencentCloud
 姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。
                      * @return Name 识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：
 姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：
 姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。
-                     * @param Name 识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：
+                     * @param _name 识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：
 姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
                      * @return ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 
                      */
                     ItemCoord GetItemCoord() const;
 
                     /**
                      * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
-                     * @param ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param _itemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 
                      */
                     void SetItemCoord(const ItemCoord& _itemCoord);
 
                     /**
                      * 判断参数 ItemCoord 是否已赋值
                      * @return ItemCoord 是否已赋值
+                     * 
                      */
                     bool ItemCoordHasBeenSet() const;
 

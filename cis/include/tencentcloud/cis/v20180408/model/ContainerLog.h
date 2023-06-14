@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取容器名称
                      * @return Name 容器名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置容器名称
-                     * @param Name 容器名称
+                     * @param _name 容器名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取日志
                      * @return Log 日志
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置日志
-                     * @param Log 日志
+                     * @param _log 日志
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 
                     /**
                      * 获取日志记录时间
                      * @return Time 日志记录时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日志记录时间
-                     * @param Time 日志记录时间
+                     * @param _time 日志记录时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

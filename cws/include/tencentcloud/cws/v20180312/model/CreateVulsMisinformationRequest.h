@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞ID列表
                      * @return VulIds 漏洞ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetVulIds() const;
 
                     /**
                      * 设置漏洞ID列表
-                     * @param VulIds 漏洞ID列表
+                     * @param _vulIds 漏洞ID列表
+                     * 
                      */
                     void SetVulIds(const std::vector<uint64_t>& _vulIds);
 
                     /**
                      * 判断参数 VulIds 是否已赋值
                      * @return VulIds 是否已赋值
+                     * 
                      */
                     bool VulIdsHasBeenSet() const;
 

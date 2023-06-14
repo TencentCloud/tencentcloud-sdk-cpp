@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取专用集群配置列表
                      * @return DedicatedClusterTypeSet 专用集群配置列表
+                     * 
                      */
                     std::vector<DedicatedClusterType> GetDedicatedClusterTypeSet() const;
 
                     /**
                      * 判断参数 DedicatedClusterTypeSet 是否已赋值
                      * @return DedicatedClusterTypeSet 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterTypeSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的个数
                      * @return TotalCount 符合条件的个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

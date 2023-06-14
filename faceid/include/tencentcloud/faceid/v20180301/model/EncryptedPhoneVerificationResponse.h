@@ -64,24 +64,28 @@ namespace TencentCloud
 -8: 参数错误
 -9: 没有记录
 -11: 验证中心服务繁忙
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -90,12 +94,14 @@ namespace TencentCloud
 取值范围为["移动","联通","电信",""]
                      * @return ISP 运营商名称。
 取值范围为["移动","联通","电信",""]
+                     * 
                      */
                     std::string GetISP() const;
 
                     /**
                      * 判断参数 ISP 是否已赋值
                      * @return ISP 是否已赋值
+                     * 
                      */
                     bool ISPHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关的ID，形如：`nat-df45454`。
                      * @return NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID，形如：`nat-df45454`。
-                     * @param NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * @param _natGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关的名称，形如：`test_nat`。
                      * @return NatGatewayName NAT网关的名称，形如：`test_nat`。
+                     * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
                      * 设置NAT网关的名称，形如：`test_nat`。
-                     * @param NatGatewayName NAT网关的名称，形如：`test_nat`。
+                     * @param _natGatewayName NAT网关的名称，形如：`test_nat`。
+                     * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
 
                     /**
                      * 判断参数 NatGatewayName 是否已赋值
                      * @return NatGatewayName 是否已赋值
+                     * 
                      */
                     bool NatGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取NAT网关最大外网出带宽(单位:Mbps)。
                      * @return InternetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)。
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置NAT网关最大外网出带宽(单位:Mbps)。
-                     * @param InternetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)。
+                     * @param _internetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取是否修改NAT网关绑定的安全组。
                      * @return ModifySecurityGroup 是否修改NAT网关绑定的安全组。
+                     * 
                      */
                     bool GetModifySecurityGroup() const;
 
                     /**
                      * 设置是否修改NAT网关绑定的安全组。
-                     * @param ModifySecurityGroup 是否修改NAT网关绑定的安全组。
+                     * @param _modifySecurityGroup 是否修改NAT网关绑定的安全组。
+                     * 
                      */
                     void SetModifySecurityGroup(const bool& _modifySecurityGroup);
 
                     /**
                      * 判断参数 ModifySecurityGroup 是否已赋值
                      * @return ModifySecurityGroup 是否已赋值
+                     * 
                      */
                     bool ModifySecurityGroupHasBeenSet() const;
 
                     /**
                      * 获取NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
                      * @return SecurityGroupIds NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
-                     * @param SecurityGroupIds NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     * @param _securityGroupIds NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

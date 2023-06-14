@@ -56,6 +56,7 @@ namespace TencentCloud
 按月格式yyyy-mm
 按天格式yyyy-mm-dd
 按分钟格式 yyyy-mm-dd HH:MM:SS
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -64,52 +65,60 @@ namespace TencentCloud
 按月格式yyyy-mm
 按天格式yyyy-mm-dd
 按分钟格式 yyyy-mm-dd HH:MM:SS
-                     * @param Time 时间
+                     * @param _time 时间
 按月格式yyyy-mm
 按天格式yyyy-mm-dd
 按分钟格式 yyyy-mm-dd HH:MM:SS
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取画图所需要的值
                      * @return Value 画图所需要的值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置画图所需要的值
-                     * @param Value 画图所需要的值
+                     * @param _value 画图所需要的值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取各个具体指标的详情
                      * @return Details 各个具体指标的详情
+                     * 
                      */
                     std::vector<Detail> GetDetails() const;
 
                     /**
                      * 设置各个具体指标的详情
-                     * @param Details 各个具体指标的详情
+                     * @param _details 各个具体指标的详情
+                     * 
                      */
                     void SetDetails(const std::vector<Detail>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取传输的包个数
                      * @return Packets 传输的包个数
+                     * 
                      */
                     int64_t GetPackets() const;
 
                     /**
                      * 设置传输的包个数
-                     * @param Packets 传输的包个数
+                     * @param _packets 传输的包个数
+                     * 
                      */
                     void SetPackets(const int64_t& _packets);
 
                     /**
                      * 判断参数 Packets 是否已赋值
                      * @return Packets 是否已赋值
+                     * 
                      */
                     bool PacketsHasBeenSet() const;
 

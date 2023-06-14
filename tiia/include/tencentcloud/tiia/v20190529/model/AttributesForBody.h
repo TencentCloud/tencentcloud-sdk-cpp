@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rect 人体框。当不开启人体检测时，内部参数默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageRect GetRect() const;
 
                     /**
                      * 设置人体框。当不开启人体检测时，内部参数默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rect 人体框。当不开启人体检测时，内部参数默认为0。
+                     * @param _rect 人体框。当不开启人体检测时，内部参数默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRect(const ImageRect& _rect);
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectConfidence 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDetectConfidence() const;
 
                     /**
                      * 设置人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectConfidence 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
+                     * @param _detectConfidence 人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetectConfidence(const double& _detectConfidence);
 
                     /**
                      * 判断参数 DetectConfidence 是否已赋值
                      * @return DetectConfidence 是否已赋值
+                     * 
                      */
                     bool DetectConfidenceHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attributes 属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BodyAttributes> GetAttributes() const;
 
                     /**
                      * 设置属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attributes 属性信息。
+                     * @param _attributes 属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttributes(const std::vector<BodyAttributes>& _attributes);
 
                     /**
                      * 判断参数 Attributes 是否已赋值
                      * @return Attributes 是否已赋值
+                     * 
                      */
                     bool AttributesHasBeenSet() const;
 

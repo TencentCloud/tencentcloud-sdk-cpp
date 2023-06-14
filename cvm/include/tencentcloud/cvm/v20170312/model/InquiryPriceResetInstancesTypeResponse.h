@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取该参数表示调整成对应机型实例的价格。
                      * @return Price 该参数表示调整成对应机型实例的价格。
+                     * 
                      */
                     Price GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

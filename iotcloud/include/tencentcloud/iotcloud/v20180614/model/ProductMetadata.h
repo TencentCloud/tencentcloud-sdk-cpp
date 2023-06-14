@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取产品创建时间
                      * @return CreationDate 产品创建时间
+                     * 
                      */
                     uint64_t GetCreationDate() const;
 
                     /**
                      * 设置产品创建时间
-                     * @param CreationDate 产品创建时间
+                     * @param _creationDate 产品创建时间
+                     * 
                      */
                     void SetCreationDate(const uint64_t& _creationDate);
 
                     /**
                      * 判断参数 CreationDate 是否已赋值
                      * @return CreationDate 是否已赋值
+                     * 
                      */
                     bool CreationDateHasBeenSet() const;
 

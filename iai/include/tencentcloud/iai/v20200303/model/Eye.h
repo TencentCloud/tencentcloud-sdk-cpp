@@ -52,20 +52,23 @@ namespace TencentCloud
 AttributeItem对应的Type为 —— 0：无眼镜，1：普通眼镜，2：墨镜
                      * @return Glass 识别是否佩戴眼镜。
 AttributeItem对应的Type为 —— 0：无眼镜，1：普通眼镜，2：墨镜
+                     * 
                      */
                     AttributeItem GetGlass() const;
 
                     /**
                      * 设置识别是否佩戴眼镜。
 AttributeItem对应的Type为 —— 0：无眼镜，1：普通眼镜，2：墨镜
-                     * @param Glass 识别是否佩戴眼镜。
+                     * @param _glass 识别是否佩戴眼镜。
 AttributeItem对应的Type为 —— 0：无眼镜，1：普通眼镜，2：墨镜
+                     * 
                      */
                     void SetGlass(const AttributeItem& _glass);
 
                     /**
                      * 判断参数 Glass 是否已赋值
                      * @return Glass 是否已赋值
+                     * 
                      */
                     bool GlassHasBeenSet() const;
 
@@ -74,20 +77,23 @@ AttributeItem对应的Type为 —— 0：无眼镜，1：普通眼镜，2：墨�
 AttributeItem对应的Type为 —— 0：睁开，1：闭眼
                      * @return EyeOpen 识别眼睛的睁开、闭合状态。
 AttributeItem对应的Type为 —— 0：睁开，1：闭眼
+                     * 
                      */
                     AttributeItem GetEyeOpen() const;
 
                     /**
                      * 设置识别眼睛的睁开、闭合状态。
 AttributeItem对应的Type为 —— 0：睁开，1：闭眼
-                     * @param EyeOpen 识别眼睛的睁开、闭合状态。
+                     * @param _eyeOpen 识别眼睛的睁开、闭合状态。
 AttributeItem对应的Type为 —— 0：睁开，1：闭眼
+                     * 
                      */
                     void SetEyeOpen(const AttributeItem& _eyeOpen);
 
                     /**
                      * 判断参数 EyeOpen 是否已赋值
                      * @return EyeOpen 是否已赋值
+                     * 
                      */
                     bool EyeOpenHasBeenSet() const;
 
@@ -96,20 +102,23 @@ AttributeItem对应的Type为 —— 0：睁开，1：闭眼
 AttributeItem对应的Type为 —— 0：无，1：有。
                      * @return EyelidType 识别是否双眼皮。
 AttributeItem对应的Type为 —— 0：无，1：有。
+                     * 
                      */
                     AttributeItem GetEyelidType() const;
 
                     /**
                      * 设置识别是否双眼皮。
 AttributeItem对应的Type为 —— 0：无，1：有。
-                     * @param EyelidType 识别是否双眼皮。
+                     * @param _eyelidType 识别是否双眼皮。
 AttributeItem对应的Type为 —— 0：无，1：有。
+                     * 
                      */
                     void SetEyelidType(const AttributeItem& _eyelidType);
 
                     /**
                      * 判断参数 EyelidType 是否已赋值
                      * @return EyelidType 是否已赋值
+                     * 
                      */
                     bool EyelidTypeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ AttributeItem对应的Type为 —— 0：无，1：有。
 AttributeItem对应的Type为 —— 0：小眼睛，1：普通眼睛，2：大眼睛。
                      * @return EyeSize 眼睛大小。
 AttributeItem对应的Type为 —— 0：小眼睛，1：普通眼睛，2：大眼睛。
+                     * 
                      */
                     AttributeItem GetEyeSize() const;
 
                     /**
                      * 设置眼睛大小。
 AttributeItem对应的Type为 —— 0：小眼睛，1：普通眼睛，2：大眼睛。
-                     * @param EyeSize 眼睛大小。
+                     * @param _eyeSize 眼睛大小。
 AttributeItem对应的Type为 —— 0：小眼睛，1：普通眼睛，2：大眼睛。
+                     * 
                      */
                     void SetEyeSize(const AttributeItem& _eyeSize);
 
                     /**
                      * 判断参数 EyeSize 是否已赋值
                      * @return EyeSize 是否已赋值
+                     * 
                      */
                     bool EyeSizeHasBeenSet() const;
 

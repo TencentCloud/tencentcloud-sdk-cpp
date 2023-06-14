@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名
                      * @return DbName 数据库名
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名
-                     * @param DbName 数据库名
+                     * @param _dbName 数据库名
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取新授权用户主机权限
                      * @return NewUserHostPrivileges 新授权用户主机权限
+                     * 
                      */
                     std::vector<UserHostPrivilege> GetNewUserHostPrivileges() const;
 
                     /**
                      * 设置新授权用户主机权限
-                     * @param NewUserHostPrivileges 新授权用户主机权限
+                     * @param _newUserHostPrivileges 新授权用户主机权限
+                     * 
                      */
                     void SetNewUserHostPrivileges(const std::vector<UserHostPrivilege>& _newUserHostPrivileges);
 
                     /**
                      * 判断参数 NewUserHostPrivileges 是否已赋值
                      * @return NewUserHostPrivileges 是否已赋值
+                     * 
                      */
                     bool NewUserHostPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Description 备注
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-                     * @param Description 备注
+                     * @param _description 备注
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取历史授权用户主机权限
                      * @return OldUserHostPrivileges 历史授权用户主机权限
+                     * 
                      */
                     std::vector<UserHostPrivilege> GetOldUserHostPrivileges() const;
 
                     /**
                      * 设置历史授权用户主机权限
-                     * @param OldUserHostPrivileges 历史授权用户主机权限
+                     * @param _oldUserHostPrivileges 历史授权用户主机权限
+                     * 
                      */
                     void SetOldUserHostPrivileges(const std::vector<UserHostPrivilege>& _oldUserHostPrivileges);
 
                     /**
                      * 判断参数 OldUserHostPrivileges 是否已赋值
                      * @return OldUserHostPrivileges 是否已赋值
+                     * 
                      */
                     bool OldUserHostPrivilegesHasBeenSet() const;
 

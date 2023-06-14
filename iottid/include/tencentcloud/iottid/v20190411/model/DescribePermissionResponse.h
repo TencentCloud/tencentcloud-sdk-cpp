@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取企业用户
                      * @return EnterpriseUser 企业用户
+                     * 
                      */
                     bool GetEnterpriseUser() const;
 
                     /**
                      * 判断参数 EnterpriseUser 是否已赋值
                      * @return EnterpriseUser 是否已赋值
+                     * 
                      */
                     bool EnterpriseUserHasBeenSet() const;
 
                     /**
                      * 获取下载控制台权限
                      * @return DownloadPermission 下载控制台权限
+                     * 
                      */
                     std::string GetDownloadPermission() const;
 
                     /**
                      * 判断参数 DownloadPermission 是否已赋值
                      * @return DownloadPermission 是否已赋值
+                     * 
                      */
                     bool DownloadPermissionHasBeenSet() const;
 
                     /**
                      * 获取使用控制台权限
                      * @return UsePermission 使用控制台权限
+                     * 
                      */
                     std::string GetUsePermission() const;
 
                     /**
                      * 判断参数 UsePermission 是否已赋值
                      * @return UsePermission 是否已赋值
+                     * 
                      */
                     bool UsePermissionHasBeenSet() const;
 

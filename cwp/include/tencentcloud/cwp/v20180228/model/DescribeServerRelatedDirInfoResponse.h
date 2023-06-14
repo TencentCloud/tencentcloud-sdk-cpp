@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称
                      * @return HostName 服务器名称
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取服务器IP
                      * @return HostIp 服务器IP
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取防护目录数量
                      * @return ProtectDirNum 防护目录数量
+                     * 
                      */
                     uint64_t GetProtectDirNum() const;
 
                     /**
                      * 判断参数 ProtectDirNum 是否已赋值
                      * @return ProtectDirNum 是否已赋值
+                     * 
                      */
                     bool ProtectDirNumHasBeenSet() const;
 
                     /**
                      * 获取防护文件数量
                      * @return ProtectFileNum 防护文件数量
+                     * 
                      */
                     uint64_t GetProtectFileNum() const;
 
                     /**
                      * 判断参数 ProtectFileNum 是否已赋值
                      * @return ProtectFileNum 是否已赋值
+                     * 
                      */
                     bool ProtectFileNumHasBeenSet() const;
 
                     /**
                      * 获取防篡改数量
                      * @return ProtectTamperNum 防篡改数量
+                     * 
                      */
                     uint64_t GetProtectTamperNum() const;
 
                     /**
                      * 判断参数 ProtectTamperNum 是否已赋值
                      * @return ProtectTamperNum 是否已赋值
+                     * 
                      */
                     bool ProtectTamperNumHasBeenSet() const;
 
                     /**
                      * 获取防护软链数量
                      * @return ProtectLinkNum 防护软链数量
+                     * 
                      */
                     uint64_t GetProtectLinkNum() const;
 
                     /**
                      * 判断参数 ProtectLinkNum 是否已赋值
                      * @return ProtectLinkNum 是否已赋值
+                     * 
                      */
                     bool ProtectLinkNumHasBeenSet() const;
 

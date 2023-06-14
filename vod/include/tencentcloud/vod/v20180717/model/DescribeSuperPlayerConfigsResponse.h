@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取播放器配置数组。
                      * @return PlayerConfigSet 播放器配置数组。
+                     * 
                      */
                     std::vector<PlayerConfig> GetPlayerConfigSet() const;
 
                     /**
                      * 判断参数 PlayerConfigSet 是否已赋值
                      * @return PlayerConfigSet 是否已赋值
+                     * 
                      */
                     bool PlayerConfigSetHasBeenSet() const;
 

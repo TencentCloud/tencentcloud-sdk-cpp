@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取组织类型（目前固定为1）
                      * @return OrgType 组织类型（目前固定为1）
+                     * 
                      */
                     uint64_t GetOrgType() const;
 
                     /**
                      * 设置组织类型（目前固定为1）
-                     * @param OrgType 组织类型（目前固定为1）
+                     * @param _orgType 组织类型（目前固定为1）
+                     * 
                      */
                     void SetOrgType(const uint64_t& _orgType);
 
                     /**
                      * 判断参数 OrgType 是否已赋值
                      * @return OrgType 是否已赋值
+                     * 
                      */
                     bool OrgTypeHasBeenSet() const;
 

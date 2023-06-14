@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取告警策略ID。
                      * @return AlarmId 告警策略ID。
+                     * 
                      */
                     std::string GetAlarmId() const;
 
                     /**
                      * 设置告警策略ID。
-                     * @param AlarmId 告警策略ID。
+                     * @param _alarmId 告警策略ID。
+                     * 
                      */
                     void SetAlarmId(const std::string& _alarmId);
 
                     /**
                      * 判断参数 AlarmId 是否已赋值
                      * @return AlarmId 是否已赋值
+                     * 
                      */
                     bool AlarmIdHasBeenSet() const;
 

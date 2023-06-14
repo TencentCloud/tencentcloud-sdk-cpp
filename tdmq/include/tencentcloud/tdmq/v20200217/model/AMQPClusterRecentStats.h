@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取Queue数量
                      * @return QueueNum Queue数量
+                     * 
                      */
                     uint64_t GetQueueNum() const;
 
                     /**
                      * 设置Queue数量
-                     * @param QueueNum Queue数量
+                     * @param _queueNum Queue数量
+                     * 
                      */
                     void SetQueueNum(const uint64_t& _queueNum);
 
                     /**
                      * 判断参数 QueueNum 是否已赋值
                      * @return QueueNum 是否已赋值
+                     * 
                      */
                     bool QueueNumHasBeenSet() const;
 
                     /**
                      * 获取消息生产数
                      * @return ProducedMsgNum 消息生产数
+                     * 
                      */
                     uint64_t GetProducedMsgNum() const;
 
                     /**
                      * 设置消息生产数
-                     * @param ProducedMsgNum 消息生产数
+                     * @param _producedMsgNum 消息生产数
+                     * 
                      */
                     void SetProducedMsgNum(const uint64_t& _producedMsgNum);
 
                     /**
                      * 判断参数 ProducedMsgNum 是否已赋值
                      * @return ProducedMsgNum 是否已赋值
+                     * 
                      */
                     bool ProducedMsgNumHasBeenSet() const;
 
                     /**
                      * 获取消息堆积数
                      * @return AccumulativeMsgNum 消息堆积数
+                     * 
                      */
                     uint64_t GetAccumulativeMsgNum() const;
 
                     /**
                      * 设置消息堆积数
-                     * @param AccumulativeMsgNum 消息堆积数
+                     * @param _accumulativeMsgNum 消息堆积数
+                     * 
                      */
                     void SetAccumulativeMsgNum(const uint64_t& _accumulativeMsgNum);
 
                     /**
                      * 判断参数 AccumulativeMsgNum 是否已赋值
                      * @return AccumulativeMsgNum 是否已赋值
+                     * 
                      */
                     bool AccumulativeMsgNumHasBeenSet() const;
 
                     /**
                      * 获取Exchange数量
                      * @return ExchangeNum Exchange数量
+                     * 
                      */
                     uint64_t GetExchangeNum() const;
 
                     /**
                      * 设置Exchange数量
-                     * @param ExchangeNum Exchange数量
+                     * @param _exchangeNum Exchange数量
+                     * 
                      */
                     void SetExchangeNum(const uint64_t& _exchangeNum);
 
                     /**
                      * 判断参数 ExchangeNum 是否已赋值
                      * @return ExchangeNum 是否已赋值
+                     * 
                      */
                     bool ExchangeNumHasBeenSet() const;
 

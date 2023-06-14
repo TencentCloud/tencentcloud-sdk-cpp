@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID数组。
                      * @return LoadBalancerIds 负载均衡实例ID数组。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡实例ID数组。
-                     * @param LoadBalancerIds 负载均衡实例ID数组。
+                     * @param _loadBalancerIds 负载均衡实例ID数组。
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
                      * @return MixIpTarget 开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
+                     * 
                      */
                     bool GetMixIpTarget() const;
 
                     /**
                      * 设置开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
-                     * @param MixIpTarget 开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
+                     * @param _mixIpTarget 开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
+                     * 
                      */
                     void SetMixIpTarget(const bool& _mixIpTarget);
 
                     /**
                      * 判断参数 MixIpTarget 是否已赋值
                      * @return MixIpTarget 是否已赋值
+                     * 
                      */
                     bool MixIpTargetHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name Pod名称
+                     * @param _name Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 容器ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置容器ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 容器ID
+                     * @param _id 容器ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Image 镜像（含版本号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置镜像（含版本号）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Image 镜像（含版本号）
+                     * @param _image 镜像（含版本号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuRequest CPU Request
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCpuRequest() const;
 
                     /**
                      * 设置CPU Request
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuRequest CPU Request
+                     * @param _cpuRequest CPU Request
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuRequest(const std::string& _cpuRequest);
 
                     /**
                      * 判断参数 CpuRequest 是否已赋值
                      * @return CpuRequest 是否已赋值
+                     * 
                      */
                     bool CpuRequestHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLimit CPU Limit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCpuLimit() const;
 
                     /**
                      * 设置CPU Limit
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuLimit CPU Limit
+                     * @param _cpuLimit CPU Limit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuLimit(const std::string& _cpuLimit);
 
                     /**
                      * 判断参数 CpuLimit 是否已赋值
                      * @return CpuLimit 是否已赋值
+                     * 
                      */
                     bool CpuLimitHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryRequest Memory Request
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemoryRequest() const;
 
                     /**
                      * 设置Memory Request
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemoryRequest Memory Request
+                     * @param _memoryRequest Memory Request
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemoryRequest(const std::string& _memoryRequest);
 
                     /**
                      * 判断参数 MemoryRequest 是否已赋值
                      * @return MemoryRequest 是否已赋值
+                     * 
                      */
                     bool MemoryRequestHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryLimit Memory Limit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemoryLimit() const;
 
                     /**
                      * 设置Memory Limit
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemoryLimit Memory Limit
+                     * @param _memoryLimit Memory Limit
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemoryLimit(const std::string& _memoryLimit);
 
                     /**
                      * 判断参数 MemoryLimit 是否已赋值
                      * @return MemoryLimit 是否已赋值
+                     * 
                      */
                     bool MemoryLimitHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRestartCount() const;
 
                     /**
                      * 设置重启次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestartCount 重启次数
+                     * @param _restartCount 重启次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestartCount(const uint64_t& _restartCount);
 
                     /**
                      * 判断参数 RestartCount 是否已赋值
                      * @return RestartCount 是否已赋值
+                     * 
                      */
                     bool RestartCountHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置容器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 容器状态
+                     * @param _status 容器状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

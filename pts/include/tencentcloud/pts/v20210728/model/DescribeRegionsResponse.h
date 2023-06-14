@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionSet 地域数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RegionDetail> GetRegionSet() const;
 
                     /**
                      * 判断参数 RegionSet 是否已赋值
                      * @return RegionSet 是否已赋值
+                     * 
                      */
                     bool RegionSetHasBeenSet() const;
 

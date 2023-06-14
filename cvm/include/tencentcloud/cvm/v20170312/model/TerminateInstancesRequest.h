@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
                      * @return InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-                     * @param InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * @param _instanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取释放实例挂载的包年包月数据盘。
                      * @return ReleasePrepaidDataDisks 释放实例挂载的包年包月数据盘。
+                     * 
                      */
                     bool GetReleasePrepaidDataDisks() const;
 
                     /**
                      * 设置释放实例挂载的包年包月数据盘。
-                     * @param ReleasePrepaidDataDisks 释放实例挂载的包年包月数据盘。
+                     * @param _releasePrepaidDataDisks 释放实例挂载的包年包月数据盘。
+                     * 
                      */
                     void SetReleasePrepaidDataDisks(const bool& _releasePrepaidDataDisks);
 
                     /**
                      * 判断参数 ReleasePrepaidDataDisks 是否已赋值
                      * @return ReleasePrepaidDataDisks 是否已赋值
+                     * 
                      */
                     bool ReleasePrepaidDataDisksHasBeenSet() const;
 

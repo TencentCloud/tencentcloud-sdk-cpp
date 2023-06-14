@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取子订单ID
                      * @return DealName 子订单ID
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置子订单ID
-                     * @param DealName 子订单ID
+                     * @param _dealName 子订单ID
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 
                     /**
                      * 获取审批状态 0全部 1通过 2驳回 3待审核
                      * @return AuditStatus 审批状态 0全部 1通过 2驳回 3待审核
+                     * 
                      */
                     int64_t GetAuditStatus() const;
 
                     /**
                      * 设置审批状态 0全部 1通过 2驳回 3待审核
-                     * @param AuditStatus 审批状态 0全部 1通过 2驳回 3待审核
+                     * @param _auditStatus 审批状态 0全部 1通过 2驳回 3待审核
+                     * 
                      */
                     void SetAuditStatus(const int64_t& _auditStatus);
 
                     /**
                      * 判断参数 AuditStatus 是否已赋值
                      * @return AuditStatus 是否已赋值
+                     * 
                      */
                     bool AuditStatusHasBeenSet() const;
 
                     /**
                      * 获取翻页大小
                      * @return Limit 翻页大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置翻页大小
-                     * @param Limit 翻页大小
+                     * @param _limit 翻页大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移
                      * @return Offset 翻页偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移
-                     * @param Offset 翻页偏移
+                     * @param _offset 翻页偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取开始时间,例如2022-06-30 00:00:00
                      * @return BeginTime 开始时间,例如2022-06-30 00:00:00
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间,例如2022-06-30 00:00:00
-                     * @param BeginTime 开始时间,例如2022-06-30 00:00:00
+                     * @param _beginTime 开始时间,例如2022-06-30 00:00:00
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间,例如2022-06-30 00:00:00
                      * @return EndTime 结束时间,例如2022-06-30 00:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间,例如2022-06-30 00:00:00
-                     * @param EndTime 结束时间,例如2022-06-30 00:00:00
+                     * @param _endTime 结束时间,例如2022-06-30 00:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

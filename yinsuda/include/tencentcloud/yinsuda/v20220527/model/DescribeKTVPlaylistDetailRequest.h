@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取歌单 Id。
                      * @return PlaylistId 歌单 Id。
+                     * 
                      */
                     std::string GetPlaylistId() const;
 
                     /**
                      * 设置歌单 Id。
-                     * @param PlaylistId 歌单 Id。
+                     * @param _playlistId 歌单 Id。
+                     * 
                      */
                     void SetPlaylistId(const std::string& _playlistId);
 
                     /**
                      * 判断参数 PlaylistId 是否已赋值
                      * @return PlaylistId 是否已赋值
+                     * 
                      */
                     bool PlaylistIdHasBeenSet() const;
 
                     /**
                      * 获取滚动标记。
                      * @return ScrollToken 滚动标记。
+                     * 
                      */
                     std::string GetScrollToken() const;
 
                     /**
                      * 设置滚动标记。
-                     * @param ScrollToken 滚动标记。
+                     * @param _scrollToken 滚动标记。
+                     * 
                      */
                     void SetScrollToken(const std::string& _scrollToken);
 
                     /**
                      * 判断参数 ScrollToken 是否已赋值
                      * @return ScrollToken 是否已赋值
+                     * 
                      */
                     bool ScrollTokenHasBeenSet() const;
 
                     /**
                      * 获取返回条数，默认：20，最大：50。
                      * @return Limit 返回条数，默认：20，最大：50。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回条数，默认：20，最大：50。
-                     * @param Limit 返回条数，默认：20，最大：50。
+                     * @param _limit 返回条数，默认：20，最大：50。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -139,6 +154,7 @@ namespace TencentCloud
                      * @return RightFilters 权益过滤，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
+                     * 
                      */
                     std::vector<std::string> GetRightFilters() const;
 
@@ -146,15 +162,17 @@ namespace TencentCloud
                      * 设置权益过滤，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
-                     * @param RightFilters 权益过滤，取值有：
+                     * @param _rightFilters 权益过滤，取值有：
 <li>Play：可播；</li>
 <li>Sing：可唱。</li>
+                     * 
                      */
                     void SetRightFilters(const std::vector<std::string>& _rightFilters);
 
                     /**
                      * 判断参数 RightFilters 是否已赋值
                      * @return RightFilters 是否已赋值
+                     * 
                      */
                     bool RightFiltersHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 <li>Live：直播</li><li>Chat：语聊</li>
                      * @return PlayScene 播放场景。默认为Chat
 <li>Live：直播</li><li>Chat：语聊</li>
+                     * 
                      */
                     std::string GetPlayScene() const;
 
                     /**
                      * 设置播放场景。默认为Chat
 <li>Live：直播</li><li>Chat：语聊</li>
-                     * @param PlayScene 播放场景。默认为Chat
+                     * @param _playScene 播放场景。默认为Chat
 <li>Live：直播</li><li>Chat：语聊</li>
+                     * 
                      */
                     void SetPlayScene(const std::string& _playScene);
 
                     /**
                      * 判断参数 PlayScene 是否已赋值
                      * @return PlayScene 是否已赋值
+                     * 
                      */
                     bool PlaySceneHasBeenSet() const;
 
@@ -187,6 +208,7 @@ namespace TencentCloud
                      * @return MaterialFilters 物料过滤，取值有：
 <li>Lyrics：含有歌词；</li>
 <li>Midi：含有音高线。</li>
+                     * 
                      */
                     std::vector<std::string> GetMaterialFilters() const;
 
@@ -194,15 +216,17 @@ namespace TencentCloud
                      * 设置物料过滤，取值有：
 <li>Lyrics：含有歌词；</li>
 <li>Midi：含有音高线。</li>
-                     * @param MaterialFilters 物料过滤，取值有：
+                     * @param _materialFilters 物料过滤，取值有：
 <li>Lyrics：含有歌词；</li>
 <li>Midi：含有音高线。</li>
+                     * 
                      */
                     void SetMaterialFilters(const std::vector<std::string>& _materialFilters);
 
                     /**
                      * 判断参数 MaterialFilters 是否已赋值
                      * @return MaterialFilters 是否已赋值
+                     * 
                      */
                     bool MaterialFiltersHasBeenSet() const;
 

@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取Topic 流量数组
                      * @return TopicFlow Topic 流量数组
+                     * 
                      */
                     std::vector<TopicFlowRanking> GetTopicFlow() const;
 
                     /**
                      * 设置Topic 流量数组
-                     * @param TopicFlow Topic 流量数组
+                     * @param _topicFlow Topic 流量数组
+                     * 
                      */
                     void SetTopicFlow(const std::vector<TopicFlowRanking>& _topicFlow);
 
                     /**
                      * 判断参数 TopicFlow 是否已赋值
                      * @return TopicFlow 是否已赋值
+                     * 
                      */
                     bool TopicFlowHasBeenSet() const;
 
                     /**
                      * 获取消费者组消费速度排行速度
                      * @return ConsumeSpeed 消费者组消费速度排行速度
+                     * 
                      */
                     std::vector<ConsumerGroupSpeed> GetConsumeSpeed() const;
 
                     /**
                      * 设置消费者组消费速度排行速度
-                     * @param ConsumeSpeed 消费者组消费速度排行速度
+                     * @param _consumeSpeed 消费者组消费速度排行速度
+                     * 
                      */
                     void SetConsumeSpeed(const std::vector<ConsumerGroupSpeed>& _consumeSpeed);
 
                     /**
                      * 判断参数 ConsumeSpeed 是否已赋值
                      * @return ConsumeSpeed 是否已赋值
+                     * 
                      */
                     bool ConsumeSpeedHasBeenSet() const;
 
@@ -90,20 +96,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicMessageHeap Topic 消息堆积/占用磁盘排行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TopicMessageHeapRanking> GetTopicMessageHeap() const;
 
                     /**
                      * 设置Topic 消息堆积/占用磁盘排行
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicMessageHeap Topic 消息堆积/占用磁盘排行
+                     * @param _topicMessageHeap Topic 消息堆积/占用磁盘排行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicMessageHeap(const std::vector<TopicMessageHeapRanking>& _topicMessageHeap);
 
                     /**
                      * 判断参数 TopicMessageHeap 是否已赋值
                      * @return TopicMessageHeap 是否已赋值
+                     * 
                      */
                     bool TopicMessageHeapHasBeenSet() const;
 

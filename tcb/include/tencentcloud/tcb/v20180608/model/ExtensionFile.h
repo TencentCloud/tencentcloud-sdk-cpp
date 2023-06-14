@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>FUNCTION：函数代码</li>
 <li>STATIC：静态托管代码</li>
 <li>SMS：短信文件</li>
+                     * 
                      */
                     std::string GetFileType() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 <li>FUNCTION：函数代码</li>
 <li>STATIC：静态托管代码</li>
 <li>SMS：短信文件</li>
-                     * @param FileType 文件类型。枚举值
+                     * @param _fileType 文件类型。枚举值
 <li>FUNCTION：函数代码</li>
 <li>STATIC：静态托管代码</li>
 <li>SMS：短信文件</li>
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取文件名，长度不超过24
                      * @return FileName 文件名，长度不超过24
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名，长度不超过24
-                     * @param FileName 文件名，长度不超过24
+                     * @param _fileName 文件名，长度不超过24
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 

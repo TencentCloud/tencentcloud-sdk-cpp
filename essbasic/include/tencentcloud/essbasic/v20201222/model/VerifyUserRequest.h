@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取电子签平台用户ID
                      * @return UserId 电子签平台用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置电子签平台用户ID
-                     * @param UserId 电子签平台用户ID
+                     * @param _userId 电子签平台用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -84,20 +90,23 @@ namespace TencentCloud
 注：如您有下发个人长效证书需求，请提前邮件至e-contract@oa.com进行申请。
                      * @return CertificateRequired 是否需要下发个人长效证书，默认为false
 注：如您有下发个人长效证书需求，请提前邮件至e-contract@oa.com进行申请。
+                     * 
                      */
                     bool GetCertificateRequired() const;
 
                     /**
                      * 设置是否需要下发个人长效证书，默认为false
 注：如您有下发个人长效证书需求，请提前邮件至e-contract@oa.com进行申请。
-                     * @param CertificateRequired 是否需要下发个人长效证书，默认为false
+                     * @param _certificateRequired 是否需要下发个人长效证书，默认为false
 注：如您有下发个人长效证书需求，请提前邮件至e-contract@oa.com进行申请。
+                     * 
                      */
                     void SetCertificateRequired(const bool& _certificateRequired);
 
                     /**
                      * 判断参数 CertificateRequired 是否已赋值
                      * @return CertificateRequired 是否已赋值
+                     * 
                      */
                     bool CertificateRequiredHasBeenSet() const;
 

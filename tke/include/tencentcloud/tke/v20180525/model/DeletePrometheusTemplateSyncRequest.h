@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取模板id
                      * @return TemplateId 模板id
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板id
-                     * @param TemplateId 模板id
+                     * @param _templateId 模板id
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取取消同步的对象列表
                      * @return Targets 取消同步的对象列表
+                     * 
                      */
                     std::vector<PrometheusTemplateSyncTarget> GetTargets() const;
 
                     /**
                      * 设置取消同步的对象列表
-                     * @param Targets 取消同步的对象列表
+                     * @param _targets 取消同步的对象列表
+                     * 
                      */
                     void SetTargets(const std::vector<PrometheusTemplateSyncTarget>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

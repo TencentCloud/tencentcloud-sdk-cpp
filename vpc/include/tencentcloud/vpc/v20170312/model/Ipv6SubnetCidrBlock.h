@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取子网实例`ID`。形如：`subnet-pxir56ns`。
                      * @return SubnetId 子网实例`ID`。形如：`subnet-pxir56ns`。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例`ID`。形如：`subnet-pxir56ns`。
-                     * @param SubnetId 子网实例`ID`。形如：`subnet-pxir56ns`。
+                     * @param _subnetId 子网实例`ID`。形如：`subnet-pxir56ns`。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取`IPv6`子网段。形如：`3402:4e00:20:1001::/64`
                      * @return Ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置`IPv6`子网段。形如：`3402:4e00:20:1001::/64`
-                     * @param Ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * @param _ipv6CidrBlock `IPv6`子网段。形如：`3402:4e00:20:1001::/64`
+                     * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
 
                     /**
                      * 判断参数 Ipv6CidrBlock 是否已赋值
                      * @return Ipv6CidrBlock 是否已赋值
+                     * 
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 

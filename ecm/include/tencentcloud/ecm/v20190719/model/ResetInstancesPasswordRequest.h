@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
                      * @return InstanceIdSet 待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
-                     * @param InstanceIdSet 待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * @param _instanceIdSet 待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
@@ -67,6 +70,7 @@ Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和
                      * @return Password 新密码，Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 如果实例即包含Linux实例又包含Windows实例，则密码复杂度限制按照Windows实例的限制。
+                     * 
                      */
                     std::string GetPassword() const;
 
@@ -74,51 +78,59 @@ Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和
                      * 设置新密码，Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 如果实例即包含Linux实例又包含Windows实例，则密码复杂度限制按照Windows实例的限制。
-                     * @param Password 新密码，Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
+                     * @param _password 新密码，Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。
 如果实例即包含Linux实例又包含Windows实例，则密码复杂度限制按照Windows实例的限制。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取是否强制关机，默认为false。
                      * @return ForceStop 是否强制关机，默认为false。
+                     * 
                      */
                     bool GetForceStop() const;
 
                     /**
                      * 设置是否强制关机，默认为false。
-                     * @param ForceStop 是否强制关机，默认为false。
+                     * @param _forceStop 是否强制关机，默认为false。
+                     * 
                      */
                     void SetForceStop(const bool& _forceStop);
 
                     /**
                      * 判断参数 ForceStop 是否已赋值
                      * @return ForceStop 是否已赋值
+                     * 
                      */
                     bool ForceStopHasBeenSet() const;
 
                     /**
                      * 获取待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。
                      * @return UserName 待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。
-                     * @param UserName 待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。
+                     * @param _userName 待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 

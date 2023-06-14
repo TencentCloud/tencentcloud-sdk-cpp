@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取累计曝光量
                      * @return TotalCount 累计曝光量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取按天计算的统计数据
                      * @return DateCountSet 按天计算的统计数据
+                     * 
                      */
                     std::vector<DateCount> GetDateCountSet() const;
 
                     /**
                      * 判断参数 DateCountSet 是否已赋值
                      * @return DateCountSet 是否已赋值
+                     * 
                      */
                     bool DateCountSetHasBeenSet() const;
 

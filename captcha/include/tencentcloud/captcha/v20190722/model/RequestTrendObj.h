@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取时间参数
                      * @return Ftime 时间参数
+                     * 
                      */
                     std::string GetFtime() const;
 
                     /**
                      * 设置时间参数
-                     * @param Ftime 时间参数
+                     * @param _ftime 时间参数
+                     * 
                      */
                     void SetFtime(const std::string& _ftime);
 
                     /**
                      * 判断参数 Ftime 是否已赋值
                      * @return Ftime 是否已赋值
+                     * 
                      */
                     bool FtimeHasBeenSet() const;
 
                     /**
                      * 获取请求量
                      * @return RequestAction 请求量
+                     * 
                      */
                     int64_t GetRequestAction() const;
 
                     /**
                      * 设置请求量
-                     * @param RequestAction 请求量
+                     * @param _requestAction 请求量
+                     * 
                      */
                     void SetRequestAction(const int64_t& _requestAction);
 
                     /**
                      * 判断参数 RequestAction 是否已赋值
                      * @return RequestAction 是否已赋值
+                     * 
                      */
                     bool RequestActionHasBeenSet() const;
 
                     /**
                      * 获取验证量
                      * @return RequestVerify 验证量
+                     * 
                      */
                     int64_t GetRequestVerify() const;
 
                     /**
                      * 设置验证量
-                     * @param RequestVerify 验证量
+                     * @param _requestVerify 验证量
+                     * 
                      */
                     void SetRequestVerify(const int64_t& _requestVerify);
 
                     /**
                      * 判断参数 RequestVerify 是否已赋值
                      * @return RequestVerify 是否已赋值
+                     * 
                      */
                     bool RequestVerifyHasBeenSet() const;
 
                     /**
                      * 获取通过量
                      * @return RequestThroughput 通过量
+                     * 
                      */
                     int64_t GetRequestThroughput() const;
 
                     /**
                      * 设置通过量
-                     * @param RequestThroughput 通过量
+                     * @param _requestThroughput 通过量
+                     * 
                      */
                     void SetRequestThroughput(const int64_t& _requestThroughput);
 
                     /**
                      * 判断参数 RequestThroughput 是否已赋值
                      * @return RequestThroughput 是否已赋值
+                     * 
                      */
                     bool RequestThroughputHasBeenSet() const;
 
                     /**
                      * 获取拦截量
                      * @return RequestIntercept 拦截量
+                     * 
                      */
                     uint64_t GetRequestIntercept() const;
 
                     /**
                      * 设置拦截量
-                     * @param RequestIntercept 拦截量
+                     * @param _requestIntercept 拦截量
+                     * 
                      */
                     void SetRequestIntercept(const uint64_t& _requestIntercept);
 
                     /**
                      * 判断参数 RequestIntercept 是否已赋值
                      * @return RequestIntercept 是否已赋值
+                     * 
                      */
                     bool RequestInterceptHasBeenSet() const;
 

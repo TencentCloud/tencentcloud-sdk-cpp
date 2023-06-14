@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名。空字符串表示所有域名。
                      * @return Domain 域名。空字符串表示所有域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名。空字符串表示所有域名。
-                     * @param Domain 域名。空字符串表示所有域名。
+                     * @param _domain 域名。空字符串表示所有域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取dns 服务器地址列表。地址格式 ip:port
                      * @return DnsServers dns 服务器地址列表。地址格式 ip:port
+                     * 
                      */
                     std::vector<std::string> GetDnsServers() const;
 
                     /**
                      * 设置dns 服务器地址列表。地址格式 ip:port
-                     * @param DnsServers dns 服务器地址列表。地址格式 ip:port
+                     * @param _dnsServers dns 服务器地址列表。地址格式 ip:port
+                     * 
                      */
                     void SetDnsServers(const std::vector<std::string>& _dnsServers);
 
                     /**
                      * 判断参数 DnsServers 是否已赋值
                      * @return DnsServers 是否已赋值
+                     * 
                      */
                     bool DnsServersHasBeenSet() const;
 

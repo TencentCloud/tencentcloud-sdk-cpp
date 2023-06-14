@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取删除成功的人脸数量
                      * @return SucDeletedNum 删除成功的人脸数量
+                     * 
                      */
                     uint64_t GetSucDeletedNum() const;
 
                     /**
                      * 判断参数 SucDeletedNum 是否已赋值
                      * @return SucDeletedNum 是否已赋值
+                     * 
                      */
                     bool SucDeletedNumHasBeenSet() const;
 
                     /**
                      * 获取删除成功的人脸ID列表
                      * @return SucFaceIds 删除成功的人脸ID列表
+                     * 
                      */
                     std::vector<std::string> GetSucFaceIds() const;
 
                     /**
                      * 判断参数 SucFaceIds 是否已赋值
                      * @return SucFaceIds 是否已赋值
+                     * 
                      */
                     bool SucFaceIdsHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要获取fleetId的别名ID
                      * @return AliasId 要获取fleetId的别名ID
+                     * 
                      */
                     std::string GetAliasId() const;
 
                     /**
                      * 设置要获取fleetId的别名ID
-                     * @param AliasId 要获取fleetId的别名ID
+                     * @param _aliasId 要获取fleetId的别名ID
+                     * 
                      */
                     void SetAliasId(const std::string& _aliasId);
 
                     /**
                      * 判断参数 AliasId 是否已赋值
                      * @return AliasId 是否已赋值
+                     * 
                      */
                     bool AliasIdHasBeenSet() const;
 

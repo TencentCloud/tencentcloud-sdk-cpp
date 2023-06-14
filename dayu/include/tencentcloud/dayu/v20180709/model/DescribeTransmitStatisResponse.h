@@ -48,12 +48,14 @@ namespace TencentCloud
 当MetricName=pkg时，表示入包速率，单位pps；
                      * @return InDataList 当MetricName=traffic时，表示入流量带宽，单位bps；
 当MetricName=pkg时，表示入包速率，单位pps；
+                     * 
                      */
                     std::vector<double> GetInDataList() const;
 
                     /**
                      * 判断参数 InDataList 是否已赋值
                      * @return InDataList 是否已赋值
+                     * 
                      */
                     bool InDataListHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 当MetricName=pkg时，表示出包速率，单位pps；
                      * @return OutDataList 当MetricName=traffic时，表示出流量带宽，单位bps；
 当MetricName=pkg时，表示出包速率，单位pps；
+                     * 
                      */
                     std::vector<double> GetOutDataList() const;
 
                     /**
                      * 判断参数 OutDataList 是否已赋值
                      * @return OutDataList 是否已赋值
+                     * 
                      */
                     bool OutDataListHasBeenSet() const;
 
@@ -78,12 +82,14 @@ pkg表示包速率；
                      * @return MetricName 指标名：
 traffic表示流量带宽；
 pkg表示包速率；
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 

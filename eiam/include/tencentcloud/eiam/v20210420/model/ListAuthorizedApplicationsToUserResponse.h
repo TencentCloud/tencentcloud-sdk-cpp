@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationAuthorizationInfo 用户拥有访问权限的应用信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApplicationAuthorizationInfo> GetApplicationAuthorizationInfo() const;
 
                     /**
                      * 判断参数 ApplicationAuthorizationInfo 是否已赋值
                      * @return ApplicationAuthorizationInfo 是否已赋值
+                     * 
                      */
                     bool ApplicationAuthorizationInfoHasBeenSet() const;
 

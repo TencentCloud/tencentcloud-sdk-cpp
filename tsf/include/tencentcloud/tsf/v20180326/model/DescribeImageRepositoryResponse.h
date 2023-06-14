@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询的权限数据对象
                      * @return Result 查询的权限数据对象
+                     * 
                      */
                     ImageRepositoryResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

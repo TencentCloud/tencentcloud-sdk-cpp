@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取服务开关状态， 0-正常，1-关闭
                      * @return Status 服务开关状态， 0-正常，1-关闭
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置服务开关状态， 0-正常，1-关闭
-                     * @param Status 服务开关状态， 0-正常，1-关闭
+                     * @param _status 服务开关状态， 0-正常，1-关闭
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

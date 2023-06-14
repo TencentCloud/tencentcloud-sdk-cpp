@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取横坐标
                      * @return TimeStamp 横坐标
+                     * 
                      */
                     std::string GetTimeStamp() const;
 
                     /**
                      * 设置横坐标
-                     * @param TimeStamp 横坐标
+                     * @param _timeStamp 横坐标
+                     * 
                      */
                     void SetTimeStamp(const std::string& _timeStamp);
 
                     /**
                      * 判断参数 TimeStamp 是否已赋值
                      * @return TimeStamp 是否已赋值
+                     * 
                      */
                     bool TimeStampHasBeenSet() const;
 
                     /**
                      * 获取value的所属对象
                      * @return Key value的所属对象
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置value的所属对象
-                     * @param Key value的所属对象
+                     * @param _key value的所属对象
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取纵列表
                      * @return Value 纵列表
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置纵列表
-                     * @param Value 纵列表
+                     * @param _value 纵列表
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取Key对应的页面展示内容
                      * @return Label Key对应的页面展示内容
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置Key对应的页面展示内容
-                     * @param Label Key对应的页面展示内容
+                     * @param _label Key对应的页面展示内容
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 

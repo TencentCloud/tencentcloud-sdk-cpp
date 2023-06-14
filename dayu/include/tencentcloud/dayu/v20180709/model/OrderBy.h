@@ -55,6 +55,7 @@ overloadCount（超峰值次数）
 bandwidth（带宽），
 overloadCount（超峰值次数）
 ]
+                     * 
                      */
                     std::string GetField() const;
 
@@ -63,34 +64,39 @@ overloadCount（超峰值次数）
 bandwidth（带宽），
 overloadCount（超峰值次数）
 ]
-                     * @param Field 排序字段名称，取值[
+                     * @param _field 排序字段名称，取值[
 bandwidth（带宽），
 overloadCount（超峰值次数）
 ]
+                     * 
                      */
                     void SetField(const std::string& _field);
 
                     /**
                      * 判断参数 Field 是否已赋值
                      * @return Field 是否已赋值
+                     * 
                      */
                     bool FieldHasBeenSet() const;
 
                     /**
                      * 获取升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]
                      * @return Order 升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]
-                     * @param Order 升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]
+                     * @param _order 升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

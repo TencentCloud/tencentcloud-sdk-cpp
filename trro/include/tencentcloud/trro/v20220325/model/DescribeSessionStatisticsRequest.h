@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取设备ID
                      * @return DeviceId 设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取起始时间，单位：秒
                      * @return StartTime 起始时间，单位：秒
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间，单位：秒
-                     * @param StartTime 起始时间，单位：秒
+                     * @param _startTime 起始时间，单位：秒
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，单位：秒
                      * @return EndTime 结束时间，单位：秒
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间，单位：秒
-                     * @param EndTime 结束时间，单位：秒
+                     * @param _endTime 结束时间，单位：秒
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

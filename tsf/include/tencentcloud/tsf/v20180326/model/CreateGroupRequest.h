@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取部署组所属的应用ID
                      * @return ApplicationId 部署组所属的应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置部署组所属的应用ID
-                     * @param ApplicationId 部署组所属的应用ID
+                     * @param _applicationId 部署组所属的应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取部署组所属命名空间ID
                      * @return NamespaceId 部署组所属命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置部署组所属命名空间ID
-                     * @param NamespaceId 部署组所属命名空间ID
+                     * @param _namespaceId 部署组所属命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取部署组名称
                      * @return GroupName 部署组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置部署组名称
-                     * @param GroupName 部署组名称
+                     * @param _groupName 部署组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取部署组描述
                      * @return GroupDesc 部署组描述
+                     * 
                      */
                     std::string GetGroupDesc() const;
 
                     /**
                      * 设置部署组描述
-                     * @param GroupDesc 部署组描述
+                     * @param _groupDesc 部署组描述
+                     * 
                      */
                     void SetGroupDesc(const std::string& _groupDesc);
 
                     /**
                      * 判断参数 GroupDesc 是否已赋值
                      * @return GroupDesc 是否已赋值
+                     * 
                      */
                     bool GroupDescHasBeenSet() const;
 
                     /**
                      * 获取部署组资源类型
                      * @return GroupResourceType 部署组资源类型
+                     * 
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
                      * 设置部署组资源类型
-                     * @param GroupResourceType 部署组资源类型
+                     * @param _groupResourceType 部署组资源类型
+                     * 
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
 
                     /**
                      * 判断参数 GroupResourceType 是否已赋值
                      * @return GroupResourceType 是否已赋值
+                     * 
                      */
                     bool GroupResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取部署组备注
                      * @return Alias 部署组备注
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置部署组备注
-                     * @param Alias 部署组备注
+                     * @param _alias 部署组备注
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

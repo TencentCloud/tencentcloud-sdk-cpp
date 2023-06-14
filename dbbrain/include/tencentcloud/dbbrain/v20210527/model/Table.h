@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取库名。
                      * @return TableSchema 库名。
+                     * 
                      */
                     std::string GetTableSchema() const;
 
                     /**
                      * 设置库名。
-                     * @param TableSchema 库名。
+                     * @param _tableSchema 库名。
+                     * 
                      */
                     void SetTableSchema(const std::string& _tableSchema);
 
                     /**
                      * 判断参数 TableSchema 是否已赋值
                      * @return TableSchema 是否已赋值
+                     * 
                      */
                     bool TableSchemaHasBeenSet() const;
 
                     /**
                      * 获取表名。
                      * @return TableName 表名。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名。
-                     * @param TableName 表名。
+                     * @param _tableName 表名。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取库表的存储引擎。
                      * @return Engine 库表的存储引擎。
+                     * 
                      */
                     std::string GetEngine() const;
 
                     /**
                      * 设置库表的存储引擎。
-                     * @param Engine 库表的存储引擎。
+                     * @param _engine 库表的存储引擎。
+                     * 
                      */
                     void SetEngine(const std::string& _engine);
 
                     /**
                      * 判断参数 Engine 是否已赋值
                      * @return Engine 是否已赋值
+                     * 
                      */
                     bool EngineHasBeenSet() const;
 
                     /**
                      * 获取行数。
                      * @return TableRows 行数。
+                     * 
                      */
                     int64_t GetTableRows() const;
 
                     /**
                      * 设置行数。
-                     * @param TableRows 行数。
+                     * @param _tableRows 行数。
+                     * 
                      */
                     void SetTableRows(const int64_t& _tableRows);
 
                     /**
                      * 判断参数 TableRows 是否已赋值
                      * @return TableRows 是否已赋值
+                     * 
                      */
                     bool TableRowsHasBeenSet() const;
 
                     /**
                      * 获取总使用空间（MB）。
                      * @return TotalLength 总使用空间（MB）。
+                     * 
                      */
                     double GetTotalLength() const;
 
                     /**
                      * 设置总使用空间（MB）。
-                     * @param TotalLength 总使用空间（MB）。
+                     * @param _totalLength 总使用空间（MB）。
+                     * 
                      */
                     void SetTotalLength(const double& _totalLength);
 
                     /**
                      * 判断参数 TotalLength 是否已赋值
                      * @return TotalLength 是否已赋值
+                     * 
                      */
                     bool TotalLengthHasBeenSet() const;
 

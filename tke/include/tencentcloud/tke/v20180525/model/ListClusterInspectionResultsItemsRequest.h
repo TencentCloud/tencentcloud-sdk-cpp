@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取目标集群ID
                      * @return ClusterId 目标集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置目标集群ID
-                     * @param ClusterId 目标集群ID
+                     * @param _clusterId 目标集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取查询历史结果的开始时间，Unix时间戳
                      * @return StartTime 查询历史结果的开始时间，Unix时间戳
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询历史结果的开始时间，Unix时间戳
-                     * @param StartTime 查询历史结果的开始时间，Unix时间戳
+                     * @param _startTime 查询历史结果的开始时间，Unix时间戳
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳
                      * @return EndTime 查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳
-                     * @param EndTime 查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳
+                     * @param _endTime 查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

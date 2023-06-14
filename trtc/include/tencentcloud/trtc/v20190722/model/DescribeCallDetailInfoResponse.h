@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的用户总条数
                      * @return Total 返回的用户总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserList 用户信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UserInformation> GetUserList() const;
 
                     /**
                      * 判断参数 UserList 是否已赋值
                      * @return UserList 是否已赋值
+                     * 
                      */
                     bool UserListHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 质量数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QualityData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取页码
                      * @return PageNo 页码
+                     * 
                      */
                     uint64_t GetPageNo() const;
 
                     /**
                      * 设置页码
-                     * @param PageNo 页码
+                     * @param _pageNo 页码
+                     * 
                      */
                     void SetPageNo(const uint64_t& _pageNo);
 
                     /**
                      * 判断参数 PageNo 是否已赋值
                      * @return PageNo 是否已赋值
+                     * 
                      */
                     bool PageNoHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Count 总数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置总数
-                     * @param Count 总数
+                     * @param _count 总数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataList 账单数据明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QueryOpenBankBillData> GetDataList() const;
 
                     /**
                      * 设置账单数据明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataList 账单数据明细
+                     * @param _dataList 账单数据明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataList(const std::vector<QueryOpenBankBillData>& _dataList);
 
                     /**
                      * 判断参数 DataList 是否已赋值
                      * @return DataList 是否已赋值
+                     * 
                      */
                     bool DataListHasBeenSet() const;
 

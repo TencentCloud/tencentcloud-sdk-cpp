@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取订单ID，表示注销实例成功
                      * @return AsyncRequestId 订单ID，表示注销实例成功
+                     * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

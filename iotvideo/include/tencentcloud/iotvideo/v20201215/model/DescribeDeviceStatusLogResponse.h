@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listover 数据是否已全部返回，true 表示数据全部返回，false 表示还有数据待返回，可将 Context 作为入参，继续查询返回结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetListover() const;
 
                     /**
                      * 判断参数 Listover 是否已赋值
                      * @return Listover 是否已赋值
+                     * 
                      */
                     bool ListoverHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 检索上下文，当 ListOver 为false时，可以用此上下文，继续读取后续数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 日志数据结果数组，返回对应时间点及取值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceStatusLogItem> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 日志数据结果总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

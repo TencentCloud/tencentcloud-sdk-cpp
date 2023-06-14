@@ -53,6 +53,7 @@ status: 母包处理进度 done, failed, processing
                      * @return Name 过滤字段名
 apk: apk名称
 status: 母包处理进度 done, failed, processing
+                     * 
                      */
                     std::string GetName() const;
 
@@ -60,33 +61,38 @@ status: 母包处理进度 done, failed, processing
                      * 设置过滤字段名
 apk: apk名称
 status: 母包处理进度 done, failed, processing
-                     * @param Name 过滤字段名
+                     * @param _name 过滤字段名
 apk: apk名称
 status: 母包处理进度 done, failed, processing
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤字段值
                      * @return Value 过滤字段值
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置过滤字段值
-                     * @param Value 过滤字段值
+                     * @param _value 过滤字段值
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ status: 母包处理进度 done, failed, processing
 模糊查询时，Value长度最大为1。
                      * @return Fuzzy 是否启用模糊查询，仅支持过滤字段名为 apk。
 模糊查询时，Value长度最大为1。
+                     * 
                      */
                     bool GetFuzzy() const;
 
                     /**
                      * 设置是否启用模糊查询，仅支持过滤字段名为 apk。
 模糊查询时，Value长度最大为1。
-                     * @param Fuzzy 是否启用模糊查询，仅支持过滤字段名为 apk。
+                     * @param _fuzzy 是否启用模糊查询，仅支持过滤字段名为 apk。
 模糊查询时，Value长度最大为1。
+                     * 
                      */
                     void SetFuzzy(const bool& _fuzzy);
 
                     /**
                      * 判断参数 Fuzzy 是否已赋值
                      * @return Fuzzy 是否已赋值
+                     * 
                      */
                     bool FuzzyHasBeenSet() const;
 

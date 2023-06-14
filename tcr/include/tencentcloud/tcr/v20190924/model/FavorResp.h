@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取收藏仓库的总数
                      * @return TotalCount 收藏仓库的总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置收藏仓库的总数
-                     * @param TotalCount 收藏仓库的总数
+                     * @param _totalCount 收藏仓库的总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoInfo 仓库信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Favors> GetRepoInfo() const;
 
                     /**
                      * 设置仓库信息数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepoInfo 仓库信息数组
+                     * @param _repoInfo 仓库信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepoInfo(const std::vector<Favors>& _repoInfo);
 
                     /**
                      * 判断参数 RepoInfo 是否已赋值
                      * @return RepoInfo 是否已赋值
+                     * 
                      */
                     bool RepoInfoHasBeenSet() const;
 

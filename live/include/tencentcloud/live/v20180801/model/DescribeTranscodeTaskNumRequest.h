@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取起始时间，格式：yyyy-mm-dd HH:MM:SS。
                      * @return StartTime 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间，格式：yyyy-mm-dd HH:MM:SS。
-                     * @param StartTime 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param _startTime 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式：yyyy-mm-dd HH:MM:SS。
                      * @return EndTime 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式：yyyy-mm-dd HH:MM:SS。
-                     * @param EndTime 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param _endTime 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取推流域名列表，不填表示总体数据。
                      * @return PushDomains 推流域名列表，不填表示总体数据。
+                     * 
                      */
                     std::vector<std::string> GetPushDomains() const;
 
                     /**
                      * 设置推流域名列表，不填表示总体数据。
-                     * @param PushDomains 推流域名列表，不填表示总体数据。
+                     * @param _pushDomains 推流域名列表，不填表示总体数据。
+                     * 
                      */
                     void SetPushDomains(const std::vector<std::string>& _pushDomains);
 
                     /**
                      * 判断参数 PushDomains 是否已赋值
                      * @return PushDomains 是否已赋值
+                     * 
                      */
                     bool PushDomainsHasBeenSet() const;
 

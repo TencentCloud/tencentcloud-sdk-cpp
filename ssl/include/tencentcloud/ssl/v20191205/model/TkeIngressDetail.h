@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取ingress名称
                      * @return IngressName ingress名称
+                     * 
                      */
                     std::string GetIngressName() const;
 
                     /**
                      * 设置ingress名称
-                     * @param IngressName ingress名称
+                     * @param _ingressName ingress名称
+                     * 
                      */
                     void SetIngressName(const std::string& _ingressName);
 
                     /**
                      * 判断参数 IngressName 是否已赋值
                      * @return IngressName 是否已赋值
+                     * 
                      */
                     bool IngressNameHasBeenSet() const;
 
                     /**
                      * 获取tls域名列表
                      * @return TlsDomains tls域名列表
+                     * 
                      */
                     std::vector<std::string> GetTlsDomains() const;
 
                     /**
                      * 设置tls域名列表
-                     * @param TlsDomains tls域名列表
+                     * @param _tlsDomains tls域名列表
+                     * 
                      */
                     void SetTlsDomains(const std::vector<std::string>& _tlsDomains);
 
                     /**
                      * 判断参数 TlsDomains 是否已赋值
                      * @return TlsDomains 是否已赋值
+                     * 
                      */
                     bool TlsDomainsHasBeenSet() const;
 
                     /**
                      * 获取ingress域名列表
                      * @return Domains ingress域名列表
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置ingress域名列表
-                     * @param Domains ingress域名列表
+                     * @param _domains ingress域名列表
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

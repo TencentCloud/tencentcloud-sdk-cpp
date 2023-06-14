@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取机器uuid
                      * @return Uuid 机器uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置机器uuid
-                     * @param Uuid 机器uuid
+                     * @param _uuid 机器uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取开始时间戳
                      * @return StartTime 开始时间戳
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间戳
-                     * @param StartTime 开始时间戳
+                     * @param _startTime 开始时间戳
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳
                      * @return EndTime 结束时间戳
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间戳
-                     * @param EndTime 结束时间戳
+                     * @param _endTime 结束时间戳
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

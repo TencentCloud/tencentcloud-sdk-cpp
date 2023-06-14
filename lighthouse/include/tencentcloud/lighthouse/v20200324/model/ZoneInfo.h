@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区中文名称
                      * @return ZoneName 可用区中文名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区中文名称
-                     * @param ZoneName 可用区中文名称
+                     * @param _zoneName 可用区中文名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取实例购买页可用区展示标签
                      * @return InstanceDisplayLabel 实例购买页可用区展示标签
+                     * 
                      */
                     std::string GetInstanceDisplayLabel() const;
 
                     /**
                      * 设置实例购买页可用区展示标签
-                     * @param InstanceDisplayLabel 实例购买页可用区展示标签
+                     * @param _instanceDisplayLabel 实例购买页可用区展示标签
+                     * 
                      */
                     void SetInstanceDisplayLabel(const std::string& _instanceDisplayLabel);
 
                     /**
                      * 判断参数 InstanceDisplayLabel 是否已赋值
                      * @return InstanceDisplayLabel 是否已赋值
+                     * 
                      */
                     bool InstanceDisplayLabelHasBeenSet() const;
 

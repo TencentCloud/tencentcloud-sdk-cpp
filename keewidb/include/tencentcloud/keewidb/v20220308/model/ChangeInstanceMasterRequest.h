@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubh****。
                      * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubh****。
-                     * @param InstanceId 实例 ID，如：kee-6ubh****。
+                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取副本节点 ID。
                      * @return NodeId 副本节点 ID。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置副本节点 ID。
-                     * @param NodeId 副本节点 ID。
+                     * @param _nodeId 副本节点 ID。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。
                      * @return DhcpIpIds DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetDhcpIpIds() const;
 
                     /**
                      * 设置DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。
-                     * @param DhcpIpIds DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。
+                     * @param _dhcpIpIds DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。
+                     * 
                      */
                     void SetDhcpIpIds(const std::vector<std::string>& _dhcpIpIds);
 
                     /**
                      * 判断参数 DhcpIpIds 是否已赋值
                      * @return DhcpIpIds 是否已赋值
+                     * 
                      */
                     bool DhcpIpIdsHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>
 <li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>
 <li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -84,54 +88,62 @@ namespace TencentCloud
 <li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>
 <li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>
 <li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定DhcpIpIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定DhcpIpIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
 <li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>
 <li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>
 <li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>
 <li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

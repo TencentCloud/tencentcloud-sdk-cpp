@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取精确匹配TopicName。
                      * @return TopicName 精确匹配TopicName。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置精确匹配TopicName。
-                     * @param TopicName 精确匹配TopicName。
+                     * @param _topicName 精确匹配TopicName。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

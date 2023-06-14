@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点列表，空为全部节点
                      * @return InstanceIds 节点列表，空为全部节点
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置节点列表，空为全部节点
-                     * @param InstanceIds 节点列表，空为全部节点
+                     * @param _instanceIds 节点列表，空为全部节点
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取升级类型
                      * @return UpgradeType 升级类型
+                     * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
                      * 设置升级类型
-                     * @param UpgradeType 升级类型
+                     * @param _upgradeType 升级类型
+                     * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
 
                     /**
                      * 判断参数 UpgradeType 是否已赋值
                      * @return UpgradeType 是否已赋值
+                     * 
                      */
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤
                      * @return Filter 过滤
+                     * 
                      */
                     std::vector<Filter> GetFilter() const;
 
                     /**
                      * 设置过滤
-                     * @param Filter 过滤
+                     * @param _filter 过滤
+                     * 
                      */
                     void SetFilter(const std::vector<Filter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

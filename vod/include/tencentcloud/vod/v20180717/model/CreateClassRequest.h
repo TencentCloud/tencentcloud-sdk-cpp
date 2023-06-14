@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取父类 ID，一级分类填写 -1。
                      * @return ParentId 父类 ID，一级分类填写 -1。
+                     * 
                      */
                     int64_t GetParentId() const;
 
                     /**
                      * 设置父类 ID，一级分类填写 -1。
-                     * @param ParentId 父类 ID，一级分类填写 -1。
+                     * @param _parentId 父类 ID，一级分类填写 -1。
+                     * 
                      */
                     void SetParentId(const int64_t& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
                     /**
                      * 获取分类名称，长度限制：1-64 个字符。
                      * @return ClassName 分类名称，长度限制：1-64 个字符。
+                     * 
                      */
                     std::string GetClassName() const;
 
                     /**
                      * 设置分类名称，长度限制：1-64 个字符。
-                     * @param ClassName 分类名称，长度限制：1-64 个字符。
+                     * @param _className 分类名称，长度限制：1-64 个字符。
+                     * 
                      */
                     void SetClassName(const std::string& _className);
 
                     /**
                      * 判断参数 ClassName 是否已赋值
                      * @return ClassName 是否已赋值
+                     * 
                      */
                     bool ClassNameHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

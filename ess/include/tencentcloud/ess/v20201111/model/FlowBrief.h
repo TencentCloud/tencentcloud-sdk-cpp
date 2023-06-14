@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取流程的编号ID
                      * @return FlowId 流程的编号ID
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程的编号ID
-                     * @param FlowId 流程的编号ID
+                     * @param _flowId 流程的编号ID
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取流程的名称
                      * @return FlowName 流程的名称
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置流程的名称
-                     * @param FlowName 流程的名称
+                     * @param _flowName 流程的名称
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowDescription 流程的描述信息
+                     * @param _flowDescription 流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
                     /**
                      * 判断参数 FlowDescription 是否已赋值
                      * @return FlowDescription 是否已赋值
+                     * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取流程的类型
                      * @return FlowType 流程的类型
+                     * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置流程的类型
-                     * @param FlowType 流程的类型
+                     * @param _flowType 流程的类型
+                     * 
                      */
                     void SetFlowType(const std::string& _flowType);
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
@@ -151,6 +163,7 @@ namespace TencentCloud
 - 10 拒填
 - 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowStatus() const;
 
@@ -169,7 +182,7 @@ namespace TencentCloud
 - 10 拒填
 - 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowStatus 流程状态
+                     * @param _flowStatus 流程状态
 - 0 还没有发起
 - 1 待签署
 - 2 部分签署
@@ -183,12 +196,14 @@ namespace TencentCloud
 - 10 拒填
 - 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
 
                     /**
                      * 判断参数 FlowStatus 是否已赋值
                      * @return FlowStatus 是否已赋值
+                     * 
                      */
                     bool FlowStatusHasBeenSet() const;
 
@@ -197,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedOn 流程创建的时间戳，单位秒
+                     * @param _createdOn 流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
@@ -219,20 +237,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMessage 拒签或者取消的原因描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 设置拒签或者取消的原因描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowMessage 拒签或者取消的原因描述
+                     * @param _flowMessage 拒签或者取消的原因描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowMessage(const std::string& _flowMessage);
 
                     /**
                      * 判断参数 FlowMessage 是否已赋值
                      * @return FlowMessage 是否已赋值
+                     * 
                      */
                     bool FlowMessageHasBeenSet() const;
 
@@ -241,20 +262,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator  合同发起人userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置 合同发起人userId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Creator  合同发起人userId
+                     * @param _creator  合同发起人userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
@@ -263,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 合同过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置合同过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deadline 合同过期时间，时间戳，单位秒
+                     * @param _deadline 合同过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeadline(const int64_t& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取CMQ主题名字，要求主题名有效且关联订阅
                      * @return TopicName CMQ主题名字，要求主题名有效且关联订阅
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置CMQ主题名字，要求主题名有效且关联订阅
-                     * @param TopicName CMQ主题名字，要求主题名有效且关联订阅
+                     * @param _topicName CMQ主题名字，要求主题名有效且关联订阅
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取事件配置
                      * @return EventConfigs 事件配置
+                     * 
                      */
                     std::vector<EventConfig> GetEventConfigs() const;
 
                     /**
                      * 设置事件配置
-                     * @param EventConfigs 事件配置
+                     * @param _eventConfigs 事件配置
+                     * 
                      */
                     void SetEventConfigs(const std::vector<EventConfig>& _eventConfigs);
 
                     /**
                      * 判断参数 EventConfigs 是否已赋值
                      * @return EventConfigs 是否已赋值
+                     * 
                      */
                     bool EventConfigsHasBeenSet() const;
 

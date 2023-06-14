@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPrice 预付费模式下资源总价，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalPrice() const;
 
                     /**
                      * 设置预付费模式下资源总价，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalPrice 预付费模式下资源总价，不包含优惠，单位:分
+                     * @param _totalPrice 预付费模式下资源总价，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalPrice(const int64_t& _totalPrice);
 
                     /**
                      * 判断参数 TotalPrice 是否已赋值
                      * @return TotalPrice 是否已赋值
+                     * 
                      */
                     bool TotalPriceHasBeenSet() const;
 
                     /**
                      * 获取总的折扣，100表示100%不打折
                      * @return Discount 总的折扣，100表示100%不打折
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置总的折扣，100表示100%不打折
-                     * @param Discount 总的折扣，100表示100%不打折
+                     * @param _discount 总的折扣，100表示100%不打折
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPriceDiscount 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalPriceDiscount() const;
 
                     /**
                      * 设置预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalPriceDiscount 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
+                     * @param _totalPriceDiscount 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalPriceDiscount(const int64_t& _totalPriceDiscount);
 
                     /**
                      * 判断参数 TotalPriceDiscount 是否已赋值
                      * @return TotalPriceDiscount 是否已赋值
+                     * 
                      */
                     bool TotalPriceDiscountHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 后付费模式下的单位资源价格，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnitPrice() const;
 
                     /**
                      * 设置后付费模式下的单位资源价格，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPrice 后付费模式下的单位资源价格，不包含优惠，单位:分
+                     * @param _unitPrice 后付费模式下的单位资源价格，不包含优惠，单位:分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPrice(const int64_t& _unitPrice);
 
                     /**
                      * 判断参数 UnitPrice 是否已赋值
                      * @return UnitPrice 是否已赋值
+                     * 
                      */
                     bool UnitPriceHasBeenSet() const;
 
@@ -135,38 +147,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscount 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUnitPriceDiscount() const;
 
                     /**
                      * 设置优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnitPriceDiscount 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
+                     * @param _unitPriceDiscount 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnitPriceDiscount(const int64_t& _unitPriceDiscount);
 
                     /**
                      * 判断参数 UnitPriceDiscount 是否已赋值
                      * @return UnitPriceDiscount 是否已赋值
+                     * 
                      */
                     bool UnitPriceDiscountHasBeenSet() const;
 
                     /**
                      * 获取计费价格单位
                      * @return ChargeUnit 计费价格单位
+                     * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置计费价格单位
-                     * @param ChargeUnit 计费价格单位
+                     * @param _chargeUnit 计费价格单位
+                     * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
 
                     /**
                      * 判断参数 ChargeUnit 是否已赋值
                      * @return ChargeUnit 是否已赋值
+                     * 
                      */
                     bool ChargeUnitHasBeenSet() const;
 

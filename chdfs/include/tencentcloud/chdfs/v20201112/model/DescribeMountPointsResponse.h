@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取挂载点列表
                      * @return MountPoints 挂载点列表
+                     * 
                      */
                     std::vector<MountPoint> GetMountPoints() const;
 
                     /**
                      * 判断参数 MountPoints 是否已赋值
                      * @return MountPoints 是否已赋值
+                     * 
                      */
                     bool MountPointsHasBeenSet() const;
 

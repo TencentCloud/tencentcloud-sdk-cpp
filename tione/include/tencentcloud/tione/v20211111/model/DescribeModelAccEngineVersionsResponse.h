@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccEngineVersions 模型加速版本列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ModelAccEngineVersion> GetModelAccEngineVersions() const;
 
                     /**
                      * 判断参数 ModelAccEngineVersions 是否已赋值
                      * @return ModelAccEngineVersions 是否已赋值
+                     * 
                      */
                     bool ModelAccEngineVersionsHasBeenSet() const;
 

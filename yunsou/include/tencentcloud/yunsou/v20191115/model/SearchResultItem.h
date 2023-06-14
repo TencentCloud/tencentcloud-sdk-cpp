@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取动态摘要信息
                      * @return DocAbs 动态摘要信息
+                     * 
                      */
                     std::string GetDocAbs() const;
 
                     /**
                      * 设置动态摘要信息
-                     * @param DocAbs 动态摘要信息
+                     * @param _docAbs 动态摘要信息
+                     * 
                      */
                     void SetDocAbs(const std::string& _docAbs);
 
                     /**
                      * 判断参数 DocAbs 是否已赋值
                      * @return DocAbs 是否已赋值
+                     * 
                      */
                     bool DocAbsHasBeenSet() const;
 
                     /**
                      * 获取检索文档id
                      * @return DocId 检索文档id
+                     * 
                      */
                     std::string GetDocId() const;
 
                     /**
                      * 设置检索文档id
-                     * @param DocId 检索文档id
+                     * @param _docId 检索文档id
+                     * 
                      */
                     void SetDocId(const std::string& _docId);
 
                     /**
                      * 判断参数 DocId 是否已赋值
                      * @return DocId 是否已赋值
+                     * 
                      */
                     bool DocIdHasBeenSet() const;
 
                     /**
                      * 获取原始文档信息
                      * @return DocMeta 原始文档信息
+                     * 
                      */
                     std::string GetDocMeta() const;
 
                     /**
                      * 设置原始文档信息
-                     * @param DocMeta 原始文档信息
+                     * @param _docMeta 原始文档信息
+                     * 
                      */
                     void SetDocMeta(const std::string& _docMeta);
 
                     /**
                      * 判断参数 DocMeta 是否已赋值
                      * @return DocMeta 是否已赋值
+                     * 
                      */
                     bool DocMetaHasBeenSet() const;
 
                     /**
                      * 获取精计算得分
                      * @return L2Score 精计算得分
+                     * 
                      */
                     double GetL2Score() const;
 
                     /**
                      * 设置精计算得分
-                     * @param L2Score 精计算得分
+                     * @param _l2Score 精计算得分
+                     * 
                      */
                     void SetL2Score(const double& _l2Score);
 
                     /**
                      * 判断参数 L2Score 是否已赋值
                      * @return L2Score 是否已赋值
+                     * 
                      */
                     bool L2ScoreHasBeenSet() const;
 
                     /**
                      * 获取文档级回传信息
                      * @return SearchDebuginfo 文档级回传信息
+                     * 
                      */
                     std::string GetSearchDebuginfo() const;
 
                     /**
                      * 设置文档级回传信息
-                     * @param SearchDebuginfo 文档级回传信息
+                     * @param _searchDebuginfo 文档级回传信息
+                     * 
                      */
                     void SetSearchDebuginfo(const std::string& _searchDebuginfo);
 
                     /**
                      * 判断参数 SearchDebuginfo 是否已赋值
                      * @return SearchDebuginfo 是否已赋值
+                     * 
                      */
                     bool SearchDebuginfoHasBeenSet() const;
 

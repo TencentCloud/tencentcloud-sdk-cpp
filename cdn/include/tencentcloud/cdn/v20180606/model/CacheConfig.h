@@ -53,6 +53,7 @@ off：关闭
                      * @return HeuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetHeuristicCacheTimeSwitch() const;
 
@@ -60,33 +61,38 @@ off：关闭
                      * 设置启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
-                     * @param HeuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
+                     * @param _heuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetHeuristicCacheTimeSwitch(const std::string& _heuristicCacheTimeSwitch);
 
                     /**
                      * 判断参数 HeuristicCacheTimeSwitch 是否已赋值
                      * @return HeuristicCacheTimeSwitch 是否已赋值
+                     * 
                      */
                     bool HeuristicCacheTimeSwitchHasBeenSet() const;
 
                     /**
                      * 获取单位 秒.
                      * @return HeuristicCacheTime 单位 秒.
+                     * 
                      */
                     int64_t GetHeuristicCacheTime() const;
 
                     /**
                      * 设置单位 秒.
-                     * @param HeuristicCacheTime 单位 秒.
+                     * @param _heuristicCacheTime 单位 秒.
+                     * 
                      */
                     void SetHeuristicCacheTime(const int64_t& _heuristicCacheTime);
 
                     /**
                      * 判断参数 HeuristicCacheTime 是否已赋值
                      * @return HeuristicCacheTime 是否已赋值
+                     * 
                      */
                     bool HeuristicCacheTimeHasBeenSet() const;
 

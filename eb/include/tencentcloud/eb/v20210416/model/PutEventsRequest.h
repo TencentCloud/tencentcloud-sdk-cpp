@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取事件列表
                      * @return EventList 事件列表
+                     * 
                      */
                     std::vector<Event> GetEventList() const;
 
                     /**
                      * 设置事件列表
-                     * @param EventList 事件列表
+                     * @param _eventList 事件列表
+                     * 
                      */
                     void SetEventList(const std::vector<Event>& _eventList);
 
                     /**
                      * 判断参数 EventList 是否已赋值
                      * @return EventList 是否已赋值
+                     * 
                      */
                     bool EventListHasBeenSet() const;
 
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 

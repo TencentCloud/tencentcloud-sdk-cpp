@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取vpc列表
                      * @return VpcSet vpc列表
+                     * 
                      */
                     std::vector<VpcAndDomainInfo> GetVpcSet() const;
 
                     /**
                      * 设置vpc列表
-                     * @param VpcSet vpc列表
+                     * @param _vpcSet vpc列表
+                     * 
                      */
                     void SetVpcSet(const std::vector<VpcAndDomainInfo>& _vpcSet);
 
                     /**
                      * 判断参数 VpcSet 是否已赋值
                      * @return VpcSet 是否已赋值
+                     * 
                      */
                     bool VpcSetHasBeenSet() const;
 

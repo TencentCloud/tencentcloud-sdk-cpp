@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取拉流配置。
                      * @return PullStreamConfigs 拉流配置。
+                     * 
                      */
                     std::vector<PullStreamConfig> GetPullStreamConfigs() const;
 
                     /**
                      * 判断参数 PullStreamConfigs 是否已赋值
                      * @return PullStreamConfigs 是否已赋值
+                     * 
                      */
                     bool PullStreamConfigsHasBeenSet() const;
 

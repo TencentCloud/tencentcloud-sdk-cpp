@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取=1表示开启；=0表示关闭
                      * @return Enable =1表示开启；=0表示关闭
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置=1表示开启；=0表示关闭
-                     * @param Enable =1表示开启；=0表示关闭
+                     * @param _enable =1表示开启；=0表示关闭
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取响应超时时间，单位秒
                      * @return TimeOut 响应超时时间，单位秒
+                     * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
                      * 设置响应超时时间，单位秒
-                     * @param TimeOut 响应超时时间，单位秒
+                     * @param _timeOut 响应超时时间，单位秒
+                     * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
 
                     /**
                      * 判断参数 TimeOut 是否已赋值
                      * @return TimeOut 是否已赋值
+                     * 
                      */
                     bool TimeOutHasBeenSet() const;
 
                     /**
                      * 获取检测间隔时间，单位秒，必须要大于响应超时时间
                      * @return Interval 检测间隔时间，单位秒，必须要大于响应超时时间
+                     * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置检测间隔时间，单位秒，必须要大于响应超时时间
-                     * @param Interval 检测间隔时间，单位秒，必须要大于响应超时时间
+                     * @param _interval 检测间隔时间，单位秒，必须要大于响应超时时间
+                     * 
                      */
                     void SetInterval(const uint64_t& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取不健康阈值，单位次
                      * @return KickNum 不健康阈值，单位次
+                     * 
                      */
                     uint64_t GetKickNum() const;
 
                     /**
                      * 设置不健康阈值，单位次
-                     * @param KickNum 不健康阈值，单位次
+                     * @param _kickNum 不健康阈值，单位次
+                     * 
                      */
                     void SetKickNum(const uint64_t& _kickNum);
 
                     /**
                      * 判断参数 KickNum 是否已赋值
                      * @return KickNum 是否已赋值
+                     * 
                      */
                     bool KickNumHasBeenSet() const;
 
                     /**
                      * 获取健康阈值，单位次
                      * @return AliveNum 健康阈值，单位次
+                     * 
                      */
                     uint64_t GetAliveNum() const;
 
                     /**
                      * 设置健康阈值，单位次
-                     * @param AliveNum 健康阈值，单位次
+                     * @param _aliveNum 健康阈值，单位次
+                     * 
                      */
                     void SetAliveNum(const uint64_t& _aliveNum);
 
                     /**
                      * 判断参数 AliveNum 是否已赋值
                      * @return AliveNum 是否已赋值
+                     * 
                      */
                     bool AliveNumHasBeenSet() const;
 

@@ -51,6 +51,7 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     std::string GetGatewayId() const;
 
@@ -59,16 +60,18 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
-                     * @param GatewayId 网关实例ID，目前我们支持的网关实例类型有，
+                     * @param _gatewayId 网关实例ID，目前我们支持的网关实例类型有，
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 

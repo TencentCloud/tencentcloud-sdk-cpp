@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取定时任务总数
                      * @return Total 定时任务总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronJobSet 定时任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CronJob> GetCronJobSet() const;
 
                     /**
                      * 判断参数 CronJobSet 是否已赋值
                      * @return CronJobSet 是否已赋值
+                     * 
                      */
                     bool CronJobSetHasBeenSet() const;
 

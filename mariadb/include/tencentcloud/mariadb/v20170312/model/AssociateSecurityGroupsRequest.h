@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称，本接口取值：mariadb。
                      * @return Product 数据库引擎名称，本接口取值：mariadb。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称，本接口取值：mariadb。
-                     * @param Product 数据库引擎名称，本接口取值：mariadb。
+                     * @param _product 数据库引擎名称，本接口取值：mariadb。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取要绑定的安全组ID，类似sg-efil73jd。
                      * @return SecurityGroupId 要绑定的安全组ID，类似sg-efil73jd。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置要绑定的安全组ID，类似sg-efil73jd。
-                     * @param SecurityGroupId 要绑定的安全组ID，类似sg-efil73jd。
+                     * @param _securityGroupId 要绑定的安全组ID，类似sg-efil73jd。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。
                      * @return InstanceIds 被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。
-                     * @param InstanceIds 被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。
+                     * @param _instanceIds 被绑定的实例ID，类似tdsql-lesecurk，支持指定多个实例。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

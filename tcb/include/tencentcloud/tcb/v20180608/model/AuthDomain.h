@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名ID
                      * @return Id 域名ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置域名ID
-                     * @param Id 域名ID
+                     * @param _id 域名ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Type 域名类型。包含以下取值：
 <li>SYSTEM</li>
 <li>USER</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置域名类型。包含以下取值：
 <li>SYSTEM</li>
 <li>USER</li>
-                     * @param Type 域名类型。包含以下取值：
+                     * @param _type 域名类型。包含以下取值：
 <li>SYSTEM</li>
 <li>USER</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
                      * @return Status 状态。包含以下取值：
 <li>ENABLE</li>
 <li>DISABLE</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -122,51 +132,59 @@ namespace TencentCloud
                      * 设置状态。包含以下取值：
 <li>ENABLE</li>
 <li>DISABLE</li>
-                     * @param Status 状态。包含以下取值：
+                     * @param _status 状态。包含以下取值：
 <li>ENABLE</li>
 <li>DISABLE</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

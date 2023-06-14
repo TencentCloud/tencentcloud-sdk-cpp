@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取规则ID。
                      * @return RuleId 规则ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID。
-                     * @param RuleId 规则ID。
+                     * @param _ruleId 规则ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取规则名称，名称字符串长度 1~255。
                      * @return RuleName 规则名称，名称字符串长度 1~255。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称，名称字符串长度 1~255。
-                     * @param RuleName 规则名称，名称字符串长度 1~255。
+                     * @param _ruleName 规则名称，名称字符串长度 1~255。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
                      * @return Status 规则状态，取值有:
 <li> enable: 启用； </li>
 <li> disable: 未启用。 </li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -97,69 +104,80 @@ namespace TencentCloud
                      * 设置规则状态，取值有:
 <li> enable: 启用； </li>
 <li> disable: 未启用。 </li>
-                     * @param Status 规则状态，取值有:
+                     * @param _status 规则状态，取值有:
 <li> enable: 启用； </li>
 <li> disable: 未启用。 </li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取规则内容。
                      * @return Rules 规则内容。
+                     * 
                      */
                     std::vector<Rule> GetRules() const;
 
                     /**
                      * 设置规则内容。
-                     * @param Rules 规则内容。
+                     * @param _rules 规则内容。
+                     * 
                      */
                     void SetRules(const std::vector<Rule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取规则优先级, 值越大优先级越高，最小为 1。
                      * @return RulePriority 规则优先级, 值越大优先级越高，最小为 1。
+                     * 
                      */
                     int64_t GetRulePriority() const;
 
                     /**
                      * 设置规则优先级, 值越大优先级越高，最小为 1。
-                     * @param RulePriority 规则优先级, 值越大优先级越高，最小为 1。
+                     * @param _rulePriority 规则优先级, 值越大优先级越高，最小为 1。
+                     * 
                      */
                     void SetRulePriority(const int64_t& _rulePriority);
 
                     /**
                      * 判断参数 RulePriority 是否已赋值
                      * @return RulePriority 是否已赋值
+                     * 
                      */
                     bool RulePriorityHasBeenSet() const;
 
                     /**
                      * 获取规则标签。
                      * @return Tags 规则标签。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置规则标签。
-                     * @param Tags 规则标签。
+                     * @param _tags 规则标签。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

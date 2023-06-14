@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remind 提醒等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemind() const;
 
                     /**
                      * 设置提醒等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remind 提醒等级阈值
+                     * @param _remind 提醒等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemind(const std::string& _remind);
 
                     /**
                      * 判断参数 Remind 是否已赋值
                      * @return Remind 是否已赋值
+                     * 
                      */
                     bool RemindHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Warn 警告等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWarn() const;
 
                     /**
                      * 设置警告等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Warn 警告等级阈值
+                     * @param _warn 警告等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWarn(const std::string& _warn);
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
+                     * 
                      */
                     bool WarnHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Serious 严重等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSerious() const;
 
                     /**
                      * 设置严重等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Serious 严重等级阈值
+                     * @param _serious 严重等级阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSerious(const std::string& _serious);
 
                     /**
                      * 判断参数 Serious 是否已赋值
                      * @return Serious 是否已赋值
+                     * 
                      */
                     bool SeriousHasBeenSet() const;
 

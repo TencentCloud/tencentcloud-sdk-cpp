@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。外部接入平台入驻云企付平台下发。
                      * @return ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。外部接入平台入驻云企付平台下发。
-                     * @param ChannelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发。
+                     * @param _channelMerchantId 渠道商户号。外部接入平台入驻云企付平台下发。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
                      * @return OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
-                     * @param OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
+                     * @param _outOrderId 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
                      * @return ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
-                     * @param ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
+                     * @param _channelOrderId 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
                      * @return Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
-                     * @param Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * @param _environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

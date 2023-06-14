@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件标识。
                      * @return FileId 媒体文件标识。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件标识。
-                     * @param FileId 媒体文件标识。
+                     * @param _fileId 媒体文件标识。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ Type 对应的格式必须为 HLS 格式。
 <li>Transcode：转码输出；转码输出会有多个模版，必须指定 Definition 字段</li>
 <li>Original：原始音视频。</li>
 Type 对应的格式必须为 HLS 格式。
+                     * 
                      */
                     std::string GetAudioVideoType() const;
 
@@ -81,34 +85,39 @@ Type 对应的格式必须为 HLS 格式。
 <li>Transcode：转码输出；转码输出会有多个模版，必须指定 Definition 字段</li>
 <li>Original：原始音视频。</li>
 Type 对应的格式必须为 HLS 格式。
-                     * @param AudioVideoType 播放的音视频类型，可选值：
+                     * @param _audioVideoType 播放的音视频类型，可选值：
 <li>Transcode：转码输出；转码输出会有多个模版，必须指定 Definition 字段</li>
 <li>Original：原始音视频。</li>
 Type 对应的格式必须为 HLS 格式。
+                     * 
                      */
                     void SetAudioVideoType(const std::string& _audioVideoType);
 
                     /**
                      * 判断参数 AudioVideoType 是否已赋值
                      * @return AudioVideoType 是否已赋值
+                     * 
                      */
                     bool AudioVideoTypeHasBeenSet() const;
 
                     /**
                      * 获取指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
                      * @return Definition 指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
-                     * @param Definition 指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
+                     * @param _definition 指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

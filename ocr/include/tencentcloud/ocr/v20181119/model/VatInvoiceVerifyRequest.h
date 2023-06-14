@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取发票代码， 一张发票一天只能查询5次。
                      * @return InvoiceCode 发票代码， 一张发票一天只能查询5次。
+                     * 
                      */
                     std::string GetInvoiceCode() const;
 
                     /**
                      * 设置发票代码， 一张发票一天只能查询5次。
-                     * @param InvoiceCode 发票代码， 一张发票一天只能查询5次。
+                     * @param _invoiceCode 发票代码， 一张发票一天只能查询5次。
+                     * 
                      */
                     void SetInvoiceCode(const std::string& _invoiceCode);
 
                     /**
                      * 判断参数 InvoiceCode 是否已赋值
                      * @return InvoiceCode 是否已赋值
+                     * 
                      */
                     bool InvoiceCodeHasBeenSet() const;
 
                     /**
                      * 获取发票号码（8位）
                      * @return InvoiceNo 发票号码（8位）
+                     * 
                      */
                     std::string GetInvoiceNo() const;
 
                     /**
                      * 设置发票号码（8位）
-                     * @param InvoiceNo 发票号码（8位）
+                     * @param _invoiceNo 发票号码（8位）
+                     * 
                      */
                     void SetInvoiceNo(const std::string& _invoiceNo);
 
                     /**
                      * 判断参数 InvoiceNo 是否已赋值
                      * @return InvoiceNo 是否已赋值
+                     * 
                      */
                     bool InvoiceNoHasBeenSet() const;
 
                     /**
                      * 获取开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
                      * @return InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
+                     * 
                      */
                     std::string GetInvoiceDate() const;
 
                     /**
                      * 设置开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
-                     * @param InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
+                     * @param _invoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
+                     * 
                      */
                     void SetInvoiceDate(const std::string& _invoiceDate);
 
                     /**
                      * 判断参数 InvoiceDate 是否已赋值
                      * @return InvoiceDate 是否已赋值
+                     * 
                      */
                     bool InvoiceDateHasBeenSet() const;
 
@@ -123,6 +132,7 @@ namespace TencentCloud
 货物运输业增值税专用发票：合计金额
 
 二手车销售统一发票：车价合计
+                     * 
                      */
                     std::string GetAdditional() const;
 
@@ -140,7 +150,7 @@ namespace TencentCloud
 货物运输业增值税专用发票：合计金额
 
 二手车销售统一发票：车价合计
-                     * @param Additional 根据票种传递对应值，如果报参数错误，请仔细检查每个票种对应的值
+                     * @param _additional 根据票种传递对应值，如果报参数错误，请仔细检查每个票种对应的值
 
 增值税专用发票：开具金额（不含税）
 
@@ -153,12 +163,14 @@ namespace TencentCloud
 货物运输业增值税专用发票：合计金额
 
 二手车销售统一发票：车价合计
+                     * 
                      */
                     void SetAdditional(const std::string& _additional);
 
                     /**
                      * 判断参数 Additional 是否已赋值
                      * @return Additional 是否已赋值
+                     * 
                      */
                     bool AdditionalHasBeenSet() const;
 

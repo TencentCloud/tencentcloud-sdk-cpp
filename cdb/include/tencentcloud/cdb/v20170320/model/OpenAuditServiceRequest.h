@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取CDB实例ID
                      * @return InstanceId CDB实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置CDB实例ID
-                     * @param InstanceId CDB实例ID
+                     * @param _instanceId CDB实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     uint64_t GetLogExpireDay() const;
 
@@ -90,7 +94,7 @@ namespace TencentCloud
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
-                     * @param LogExpireDay 审计日志保存时长。支持值包括：
+                     * @param _logExpireDay 审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
 90 - 三个月；
@@ -98,12 +102,14 @@ namespace TencentCloud
 365 - 一年；
 1095 - 三年；
 1825 - 五年；
+                     * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
 
                     /**
                      * 判断参数 LogExpireDay 是否已赋值
                      * @return LogExpireDay 是否已赋值
+                     * 
                      */
                     bool LogExpireDayHasBeenSet() const;
 
@@ -114,6 +120,7 @@ namespace TencentCloud
                      * @return HighLogExpireDay 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+                     * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
@@ -121,51 +128,59 @@ namespace TencentCloud
                      * 设置高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-                     * @param HighLogExpireDay 高频审计日志保存时长。支持值包括：
+                     * @param _highLogExpireDay 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+                     * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
 
                     /**
                      * 判断参数 HighLogExpireDay 是否已赋值
                      * @return HighLogExpireDay 是否已赋值
+                     * 
                      */
                     bool HighLogExpireDayHasBeenSet() const;
 
                     /**
                      * 获取审计规则。同RuleTemplateIds都不填是全审计。
                      * @return AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 
                      */
                     std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
 
                     /**
                      * 设置审计规则。同RuleTemplateIds都不填是全审计。
-                     * @param AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     * @param _auditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     * 
                      */
                     void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
 
                     /**
                      * 判断参数 AuditRuleFilters 是否已赋值
                      * @return AuditRuleFilters 是否已赋值
+                     * 
                      */
                     bool AuditRuleFiltersHasBeenSet() const;
 
                     /**
                      * 获取规则模版ID。同AuditRuleFilters都不填是全审计。
                      * @return RuleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置规则模版ID。同AuditRuleFilters都不填是全审计。
-                     * @param RuleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * @param _ruleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
 
                     /**
                      * 判断参数 RuleTemplateIds 是否已赋值
                      * @return RuleTemplateIds 是否已赋值
+                     * 
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Framework 算法框架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFramework() const;
 
                     /**
                      * 设置算法框架
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Framework 算法框架
+                     * @param _framework 算法框架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFramework(const std::string& _framework);
 
                     /**
                      * 判断参数 Framework 是否已赋值
                      * @return Framework 是否已赋值
+                     * 
                      */
                     bool FrameworkHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameworkVersion 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrameworkVersion() const;
 
                     /**
                      * 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameworkVersion 版本号
+                     * @param _frameworkVersion 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameworkVersion(const std::string& _frameworkVersion);
 
                     /**
                      * 判断参数 FrameworkVersion 是否已赋值
                      * @return FrameworkVersion 是否已赋值
+                     * 
                      */
                     bool FrameworkVersionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Groups 支持的训练框架集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetGroups() const;
 
                     /**
                      * 设置支持的训练框架集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Groups 支持的训练框架集合
+                     * @param _groups 支持的训练框架集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroups(const std::vector<std::string>& _groups);
 
                     /**
                      * 判断参数 Groups 是否已赋值
                      * @return Groups 是否已赋值
+                     * 
                      */
                     bool GroupsHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InferTemplates 镜像模板参数列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InferTemplate> GetInferTemplates() const;
 
                     /**
                      * 设置镜像模板参数列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InferTemplates 镜像模板参数列表
+                     * @param _inferTemplates 镜像模板参数列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInferTemplates(const std::vector<InferTemplate>& _inferTemplates);
 
                     /**
                      * 判断参数 InferTemplates 是否已赋值
                      * @return InferTemplates 是否已赋值
+                     * 
                      */
                     bool InferTemplatesHasBeenSet() const;
 

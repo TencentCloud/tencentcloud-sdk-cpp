@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取训练任务详情
                      * @return TrainingTaskDetail 训练任务详情
+                     * 
                      */
                     TrainingTaskDetail GetTrainingTaskDetail() const;
 
                     /**
                      * 判断参数 TrainingTaskDetail 是否已赋值
                      * @return TrainingTaskDetail 是否已赋值
+                     * 
                      */
                     bool TrainingTaskDetailHasBeenSet() const;
 

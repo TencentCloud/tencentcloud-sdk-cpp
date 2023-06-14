@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDiseaseHistory 主要病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MainDiseaseHistoryBlock GetMainDiseaseHistory() const;
 
                     /**
                      * 设置主要病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainDiseaseHistory 主要病史
+                     * @param _mainDiseaseHistory 主要病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainDiseaseHistory(const MainDiseaseHistoryBlock& _mainDiseaseHistory);
 
                     /**
                      * 判断参数 MainDiseaseHistory 是否已赋值
                      * @return MainDiseaseHistory 是否已赋值
+                     * 
                      */
                     bool MainDiseaseHistoryHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllergyHistory 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MainDiseaseHistoryBlock GetAllergyHistory() const;
 
                     /**
                      * 设置过敏史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllergyHistory 过敏史
+                     * @param _allergyHistory 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllergyHistory(const MainDiseaseHistoryBlock& _allergyHistory);
 
                     /**
                      * 判断参数 AllergyHistory 是否已赋值
                      * @return AllergyHistory 是否已赋值
+                     * 
                      */
                     bool AllergyHistoryHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfectHistory 注射史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MainDiseaseHistoryBlock GetInfectHistory() const;
 
                     /**
                      * 设置注射史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InfectHistory 注射史
+                     * @param _infectHistory 注射史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfectHistory(const MainDiseaseHistoryBlock& _infectHistory);
 
                     /**
                      * 判断参数 InfectHistory 是否已赋值
                      * @return InfectHistory 是否已赋值
+                     * 
                      */
                     bool InfectHistoryHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryHistoryBlock GetSurgeryHistory() const;
 
                     /**
                      * 设置手术史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurgeryHistory 手术史
+                     * @param _surgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSurgeryHistory(const SurgeryHistoryBlock& _surgeryHistory);
 
                     /**
                      * 判断参数 SurgeryHistory 是否已赋值
                      * @return SurgeryHistory 是否已赋值
+                     * 
                      */
                     bool SurgeryHistoryHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransfusionHistory 输血史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TransfusionHistoryBlock GetTransfusionHistory() const;
 
                     /**
                      * 设置输血史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransfusionHistory 输血史
+                     * @param _transfusionHistory 输血史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransfusionHistory(const TransfusionHistoryBlock& _transfusionHistory);
 
                     /**
                      * 判断参数 TransfusionHistory 是否已赋值
                      * @return TransfusionHistory 是否已赋值
+                     * 
                      */
                     bool TransfusionHistoryHasBeenSet() const;
 

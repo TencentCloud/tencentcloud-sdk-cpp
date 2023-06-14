@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取外部结算流水号
                      * @return OutSettleId 外部结算流水号
+                     * 
                      */
                     std::string GetOutSettleId() const;
 
                     /**
                      * 设置外部结算流水号
-                     * @param OutSettleId 外部结算流水号
+                     * @param _outSettleId 外部结算流水号
+                     * 
                      */
                     void SetOutSettleId(const std::string& _outSettleId);
 
                     /**
                      * 判断参数 OutSettleId 是否已赋值
                      * @return OutSettleId 是否已赋值
+                     * 
                      */
                     bool OutSettleIdHasBeenSet() const;
 
                     /**
                      * 获取渠道结算流水号
                      * @return ChannelSettleId 渠道结算流水号
+                     * 
                      */
                     std::string GetChannelSettleId() const;
 
                     /**
                      * 设置渠道结算流水号
-                     * @param ChannelSettleId 渠道结算流水号
+                     * @param _channelSettleId 渠道结算流水号
+                     * 
                      */
                     void SetChannelSettleId(const std::string& _channelSettleId);
 
                     /**
                      * 判断参数 ChannelSettleId 是否已赋值
                      * @return ChannelSettleId 是否已赋值
+                     * 
                      */
                     bool ChannelSettleIdHasBeenSet() const;
 
@@ -99,6 +105,7 @@ INIT:初始化;
 ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
+                     * 
                      */
                     std::string GetSettleStatus() const;
 
@@ -111,7 +118,7 @@ INIT:初始化;
 ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
-                     * @param SettleStatus 退款状态。
+                     * @param _settleStatus 退款状态。
 SUCCESS：结算成功；
 FAILED：结算失败；
 PROCESSING：结算中;
@@ -119,12 +126,14 @@ INIT:初始化;
 ACCEPT_FAILED:受理失败,底层银行返回订单不存在
 ACCEPTED：受理成功
 _UNKNOWN：默认未知
+                     * 
                      */
                     void SetSettleStatus(const std::string& _settleStatus);
 
                     /**
                      * 判断参数 SettleStatus 是否已赋值
                      * @return SettleStatus 是否已赋值
+                     * 
                      */
                     bool SettleStatusHasBeenSet() const;
 

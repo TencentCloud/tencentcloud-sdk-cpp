@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取
                      * @return Zone 可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取
-                     * @param Zone 可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取
+                     * @param _zone 可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)
                      * @return ComputeType 计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)
+                     * 
                      */
                     std::string GetComputeType() const;
 
                     /**
                      * 设置计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)
-                     * @param ComputeType 计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)
+                     * @param _computeType 计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)
+                     * 
                      */
                     void SetComputeType(const std::string& _computeType);
 
                     /**
                      * 判断参数 ComputeType 是否已赋值
                      * @return ComputeType 是否已赋值
+                     * 
                      */
                     bool ComputeTypeHasBeenSet() const;
 
                     /**
                      * 获取操作系统类型ID
                      * @return OsTypeId 操作系统类型ID
+                     * 
                      */
                     uint64_t GetOsTypeId() const;
 
                     /**
                      * 设置操作系统类型ID
-                     * @param OsTypeId 操作系统类型ID
+                     * @param _osTypeId 操作系统类型ID
+                     * 
                      */
                     void SetOsTypeId(const uint64_t& _osTypeId);
 
                     /**
                      * 判断参数 OsTypeId 是否已赋值
                      * @return OsTypeId 是否已赋值
+                     * 
                      */
                     bool OsTypeIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取购买的计算单元个数
                      * @return GoodsNum 购买的计算单元个数
+                     * 
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
                      * 设置购买的计算单元个数
-                     * @param GoodsNum 购买的计算单元个数
+                     * @param _goodsNum 购买的计算单元个数
+                     * 
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
 
                     /**
                      * 判断参数 GoodsNum 是否已赋值
                      * @return GoodsNum 是否已赋值
+                     * 
                      */
                     bool GoodsNumHasBeenSet() const;
 
                     /**
                      * 获取出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。
                      * @return SpotStrategy 出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。
+                     * 
                      */
                     std::string GetSpotStrategy() const;
 
                     /**
                      * 设置出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。
-                     * @param SpotStrategy 出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。
+                     * @param _spotStrategy 出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。
+                     * 
                      */
                     void SetSpotStrategy(const std::string& _spotStrategy);
 
                     /**
                      * 判断参数 SpotStrategy 是否已赋值
                      * @return SpotStrategy 是否已赋值
+                     * 
                      */
                     bool SpotStrategyHasBeenSet() const;
 
                     /**
                      * 获取用户设置的价格。当为SpotWithPriceLimit竞价策略时有效
                      * @return SpotPriceLimit 用户设置的价格。当为SpotWithPriceLimit竞价策略时有效
+                     * 
                      */
                     double GetSpotPriceLimit() const;
 
                     /**
                      * 设置用户设置的价格。当为SpotWithPriceLimit竞价策略时有效
-                     * @param SpotPriceLimit 用户设置的价格。当为SpotWithPriceLimit竞价策略时有效
+                     * @param _spotPriceLimit 用户设置的价格。当为SpotWithPriceLimit竞价策略时有效
+                     * 
                      */
                     void SetSpotPriceLimit(const double& _spotPriceLimit);
 
                     /**
                      * 判断参数 SpotPriceLimit 是否已赋值
                      * @return SpotPriceLimit 是否已赋值
+                     * 
                      */
                     bool SpotPriceLimitHasBeenSet() const;
 
                     /**
                      * 获取设置竞价实例密码。可选参数，没有指定会生成随机密码
                      * @return Passwd 设置竞价实例密码。可选参数，没有指定会生成随机密码
+                     * 
                      */
                     std::string GetPasswd() const;
 
                     /**
                      * 设置设置竞价实例密码。可选参数，没有指定会生成随机密码
-                     * @param Passwd 设置竞价实例密码。可选参数，没有指定会生成随机密码
+                     * @param _passwd 设置竞价实例密码。可选参数，没有指定会生成随机密码
+                     * 
                      */
                     void SetPasswd(const std::string& _passwd);
 
                     /**
                      * 判断参数 Passwd 是否已赋值
                      * @return Passwd 是否已赋值
+                     * 
                      */
                     bool PasswdHasBeenSet() const;
 

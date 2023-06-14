@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取页面大小
                      * @return PageSize 页面大小
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页面大小
-                     * @param PageSize 页面大小
+                     * @param _pageSize 页面大小
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取页数，第几页
                      * @return PageNum 页数，第几页
+                     * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置页数，第几页
-                     * @param PageNum 页数，第几页
+                     * @param _pageNum 页数，第几页
+                     * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取项目ID（必填）
                      * @return ID 项目ID（必填）
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID（必填）
-                     * @param ID 项目ID（必填）
+                     * @param _iD 项目ID（必填）
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

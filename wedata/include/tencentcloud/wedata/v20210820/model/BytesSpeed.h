@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeType 节点类型
+                     * @param _nodeType 节点类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 速度值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SpeedValue> GetValues() const;
 
                     /**
                      * 设置速度值列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 速度值列表
+                     * @param _values 速度值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<SpeedValue>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

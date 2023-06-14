@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资源栈ID
                      * @return StackId 资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置资源栈ID
-                     * @param StackId 资源栈ID
+                     * @param _stackId 资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取待执行apply事件的版本ID
                      * @return VersionId 待执行apply事件的版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置待执行apply事件的版本ID
-                     * @param VersionId 待执行apply事件的版本ID
+                     * @param _versionId 待执行apply事件的版本ID
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

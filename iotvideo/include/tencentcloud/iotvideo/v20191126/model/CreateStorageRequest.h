@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取云存套餐ID
                      * @return PkgId 云存套餐ID
+                     * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置云存套餐ID
-                     * @param PkgId 云存套餐ID
+                     * @param _pkgId 云存套餐ID
+                     * 
                      */
                     void SetPkgId(const std::string& _pkgId);
 
                     /**
                      * 判断参数 PkgId 是否已赋值
                      * @return PkgId 是否已赋值
+                     * 
                      */
                     bool PkgIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识，由厂商保证内部唯一性
                      * @return UserTag 用户唯一标识，由厂商保证内部唯一性
+                     * 
                      */
                     std::string GetUserTag() const;
 
                     /**
                      * 设置用户唯一标识，由厂商保证内部唯一性
-                     * @param UserTag 用户唯一标识，由厂商保证内部唯一性
+                     * @param _userTag 用户唯一标识，由厂商保证内部唯一性
+                     * 
                      */
                     void SetUserTag(const std::string& _userTag);
 
                     /**
                      * 判断参数 UserTag 是否已赋值
                      * @return UserTag 是否已赋值
+                     * 
                      */
                     bool UserTagHasBeenSet() const;
 

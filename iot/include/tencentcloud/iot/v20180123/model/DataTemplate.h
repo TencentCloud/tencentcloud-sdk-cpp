@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 数字类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NumberData GetNumber() const;
 
                     /**
                      * 设置数字类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Number 数字类型
+                     * @param _number 数字类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNumber(const NumberData& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return String 字符串类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StringData GetString() const;
 
                     /**
                      * 设置字符串类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param String 字符串类型
+                     * @param _string 字符串类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetString(const StringData& _string);
 
                     /**
                      * 判断参数 String 是否已赋值
                      * @return String 是否已赋值
+                     * 
                      */
                     bool StringHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enum 枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EnumData GetEnum() const;
 
                     /**
                      * 设置枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enum 枚举类型
+                     * @param _enum 枚举类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnum(const EnumData& _enum);
 
                     /**
                      * 判断参数 Enum 是否已赋值
                      * @return Enum 是否已赋值
+                     * 
                      */
                     bool EnumHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bool 布尔类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BoolData GetBool() const;
 
                     /**
                      * 设置布尔类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bool 布尔类型
+                     * @param _bool 布尔类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBool(const BoolData& _bool);
 
                     /**
                      * 判断参数 Bool 是否已赋值
                      * @return Bool 是否已赋值
+                     * 
                      */
                     bool BoolHasBeenSet() const;
 

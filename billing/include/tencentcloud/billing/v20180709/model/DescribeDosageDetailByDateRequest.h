@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询账单开始日期，如 2019-01-01
                      * @return StartDate 查询账单开始日期，如 2019-01-01
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置查询账单开始日期，如 2019-01-01
-                     * @param StartDate 查询账单开始日期，如 2019-01-01
+                     * @param _startDate 查询账单开始日期，如 2019-01-01
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取查询账单结束日期，如 2019-01-01， 时间跨度不超过7天
                      * @return EndDate 查询账单结束日期，如 2019-01-01， 时间跨度不超过7天
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置查询账单结束日期，如 2019-01-01， 时间跨度不超过7天
-                     * @param EndDate 查询账单结束日期，如 2019-01-01， 时间跨度不超过7天
+                     * @param _endDate 查询账单结束日期，如 2019-01-01， 时间跨度不超过7天
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
@@ -115,6 +121,7 @@ cdn业务：
 10227 视频直播带宽(国内)
 100763 视频直播流量(海外)
 100762 视频直播宽带(海外)
+                     * 
                      */
                     std::string GetProductCode() const;
 
@@ -137,7 +144,7 @@ cdn业务：
 10227 视频直播带宽(国内)
 100763 视频直播流量(海外)
 100762 视频直播宽带(海外)
-                     * @param ProductCode 互动直播：
+                     * @param _productCode 互动直播：
 10194   互动直播-核心机房           :
 10195   互动直播-边缘机房
 
@@ -155,12 +162,14 @@ cdn业务：
 10227 视频直播带宽(国内)
 100763 视频直播流量(海外)
 100762 视频直播宽带(海外)
+                     * 
                      */
                     void SetProductCode(const std::string& _productCode);
 
                     /**
                      * 判断参数 ProductCode 是否已赋值
                      * @return ProductCode 是否已赋值
+                     * 
                      */
                     bool ProductCodeHasBeenSet() const;
 
@@ -169,20 +178,23 @@ cdn业务：
 非CDN业务查询时传入空字符串，返回的值为空
                      * @return Domain 查询域名 例如 www.qq.com
 非CDN业务查询时传入空字符串，返回的值为空
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置查询域名 例如 www.qq.com
 非CDN业务查询时传入空字符串，返回的值为空
-                     * @param Domain 查询域名 例如 www.qq.com
+                     * @param _domain 查询域名 例如 www.qq.com
 非CDN业务查询时传入空字符串，返回的值为空
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -191,20 +203,23 @@ cdn业务：
 2、如果传入实例名，则返回该实例明细
                      * @return InstanceID 1、如果为空，则返回EIP或CLB所有实例的明细；
 2、如果传入实例名，则返回该实例明细
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置1、如果为空，则返回EIP或CLB所有实例的明细；
 2、如果传入实例名，则返回该实例明细
-                     * @param InstanceID 1、如果为空，则返回EIP或CLB所有实例的明细；
+                     * @param _instanceID 1、如果为空，则返回EIP或CLB所有实例的明细；
 2、如果传入实例名，则返回该实例明细
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 

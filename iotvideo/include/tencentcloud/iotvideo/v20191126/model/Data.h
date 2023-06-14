@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 直播协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置直播协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 直播协议
+                     * @param _protocol 直播协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URI 流媒体播放地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetURI() const;
 
                     /**
                      * 设置流媒体播放地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param URI 流媒体播放地址
+                     * @param _uRI 流媒体播放地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetURI(const std::string& _uRI);
 
                     /**
                      * 判断参数 URI 是否已赋值
                      * @return URI 是否已赋值
+                     * 
                      */
                     bool URIHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 流媒体地址过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置流媒体地址过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 流媒体地址过期时间
+                     * @param _expireTime 流媒体地址过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoCodec 视频编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVideoCodec() const;
 
                     /**
                      * 设置视频编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoCodec 视频编码
+                     * @param _videoCodec 视频编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoCodec(const std::string& _videoCodec);
 
                     /**
                      * 判断参数 VideoCodec 是否已赋值
                      * @return VideoCodec 是否已赋值
+                     * 
                      */
                     bool VideoCodecHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioCodec 音频编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAudioCodec() const;
 
                     /**
                      * 设置音频编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioCodec 音频编码
+                     * @param _audioCodec 音频编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioCodec(const std::string& _audioCodec);
 
                     /**
                      * 判断参数 AudioCodec 是否已赋值
                      * @return AudioCodec 是否已赋值
+                     * 
                      */
                     bool AudioCodecHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取资源详细信息集合
                      * @return ResourceSet 资源详细信息集合
+                     * 
                      */
                     std::vector<SystemResourceItem> GetResourceSet() const;
 
                     /**
                      * 判断参数 ResourceSet 是否已赋值
                      * @return ResourceSet 是否已赋值
+                     * 
                      */
                     bool ResourceSetHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

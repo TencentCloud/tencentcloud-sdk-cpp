@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回可用区资源列表数目，默认20，最大值100。
                      * @return Limit 返回可用区资源列表数目，默认20，最大值100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回可用区资源列表数目，默认20，最大值100。
-                     * @param Limit 返回可用区资源列表数目，默认20，最大值100。
+                     * @param _limit 返回可用区资源列表数目，默认20，最大值100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取返回可用区资源列表起始偏移量，默认0。
                      * @return Offset 返回可用区资源列表起始偏移量，默认0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置返回可用区资源列表起始偏移量，默认0。
-                     * @param Offset 返回可用区资源列表起始偏移量，默认0。
+                     * @param _offset 返回可用区资源列表起始偏移量，默认0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return Filters 查询可用区资源列表条件，详细的过滤条件如下：
 <li> zone - String - 是否必填：否 - （过滤条件）按照 可用区 过滤，如："ap-guangzhou-1"（广州一区）。</li>
 <li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如："BGP","CMCC","CUCC","CTCC"。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置查询可用区资源列表条件，详细的过滤条件如下：
 <li> zone - String - 是否必填：否 - （过滤条件）按照 可用区 过滤，如："ap-guangzhou-1"（广州一区）。</li>
 <li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如："BGP","CMCC","CUCC","CTCC"。</li>
-                     * @param Filters 查询可用区资源列表条件，详细的过滤条件如下：
+                     * @param _filters 查询可用区资源列表条件，详细的过滤条件如下：
 <li> zone - String - 是否必填：否 - （过滤条件）按照 可用区 过滤，如："ap-guangzhou-1"（广州一区）。</li>
 <li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如："BGP","CMCC","CUCC","CTCC"。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取用户列表，每一项都是uuid
                      * @return UserList 用户列表，每一项都是uuid
+                     * 
                      */
                     std::vector<std::string> GetUserList() const;
 
                     /**
                      * 设置用户列表，每一项都是uuid
-                     * @param UserList 用户列表，每一项都是uuid
+                     * @param _userList 用户列表，每一项都是uuid
+                     * 
                      */
                     void SetUserList(const std::vector<std::string>& _userList);
 
                     /**
                      * 判断参数 UserList 是否已赋值
                      * @return UserList 是否已赋值
+                     * 
                      */
                     bool UserListHasBeenSet() const;
 

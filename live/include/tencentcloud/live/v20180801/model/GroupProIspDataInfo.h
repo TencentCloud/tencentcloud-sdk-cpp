@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取省份。
                      * @return ProvinceName 省份。
+                     * 
                      */
                     std::string GetProvinceName() const;
 
                     /**
                      * 设置省份。
-                     * @param ProvinceName 省份。
+                     * @param _provinceName 省份。
+                     * 
                      */
                     void SetProvinceName(const std::string& _provinceName);
 
                     /**
                      * 判断参数 ProvinceName 是否已赋值
                      * @return ProvinceName 是否已赋值
+                     * 
                      */
                     bool ProvinceNameHasBeenSet() const;
 
                     /**
                      * 获取运营商。
                      * @return IspName 运营商。
+                     * 
                      */
                     std::string GetIspName() const;
 
                     /**
                      * 设置运营商。
-                     * @param IspName 运营商。
+                     * @param _ispName 运营商。
+                     * 
                      */
                     void SetIspName(const std::string& _ispName);
 
                     /**
                      * 判断参数 IspName 是否已赋值
                      * @return IspName 是否已赋值
+                     * 
                      */
                     bool IspNameHasBeenSet() const;
 
                     /**
                      * 获取分钟维度的明细数据。
                      * @return DetailInfoList 分钟维度的明细数据。
+                     * 
                      */
                     std::vector<CdnPlayStatData> GetDetailInfoList() const;
 
                     /**
                      * 设置分钟维度的明细数据。
-                     * @param DetailInfoList 分钟维度的明细数据。
+                     * @param _detailInfoList 分钟维度的明细数据。
+                     * 
                      */
                     void SetDetailInfoList(const std::vector<CdnPlayStatData>& _detailInfoList);
 
                     /**
                      * 判断参数 DetailInfoList 是否已赋值
                      * @return DetailInfoList 是否已赋值
+                     * 
                      */
                     bool DetailInfoListHasBeenSet() const;
 

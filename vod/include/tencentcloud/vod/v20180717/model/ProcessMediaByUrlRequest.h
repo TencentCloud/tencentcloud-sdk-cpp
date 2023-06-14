@@ -50,180 +50,210 @@ namespace TencentCloud
                     /**
                      * 获取API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
                      * @return InputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
-                     * @param InputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
+                     * @param _inputInfo API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
                     /**
                      * 获取输出文件 COS 路径信息。
                      * @return OutputInfo 输出文件 COS 路径信息。
+                     * 
                      */
                     MediaOutputInfo GetOutputInfo() const;
 
                     /**
                      * 设置输出文件 COS 路径信息。
-                     * @param OutputInfo 输出文件 COS 路径信息。
+                     * @param _outputInfo 输出文件 COS 路径信息。
+                     * 
                      */
                     void SetOutputInfo(const MediaOutputInfo& _outputInfo);
 
                     /**
                      * 判断参数 OutputInfo 是否已赋值
                      * @return OutputInfo 是否已赋值
+                     * 
                      */
                     bool OutputInfoHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核类型任务参数。
                      * @return AiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
                      * 设置视频内容审核类型任务参数。
-                     * @param AiContentReviewTask 视频内容审核类型任务参数。
+                     * @param _aiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
                     /**
                      * 判断参数 AiContentReviewTask 是否已赋值
                      * @return AiContentReviewTask 是否已赋值
+                     * 
                      */
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容分析类型任务参数。
                      * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
                      * 设置视频内容分析类型任务参数。
-                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+                     * @param _aiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
 
                     /**
                      * 判断参数 AiAnalysisTask 是否已赋值
                      * @return AiAnalysisTask 是否已赋值
+                     * 
                      */
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容识别类型任务参数。
                      * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
                      * 设置视频内容识别类型任务参数。
-                     * @param AiRecognitionTask 视频内容识别类型任务参数。
+                     * @param _aiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
                      * 判断参数 AiRecognitionTask 是否已赋值
                      * @return AiRecognitionTask 是否已赋值
+                     * 
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
                      * 获取任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
                      * 设置任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
 
                     /**
                      * 判断参数 TasksPriority 是否已赋值
                      * @return TasksPriority 是否已赋值
+                     * 
                      */
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
                      * 获取任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
                      * @return TasksNotifyMode 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * 
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
                      * 设置任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
-                     * @param TasksNotifyMode 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * @param _tasksNotifyMode 任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。
+                     * 
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
 
                     /**
                      * 判断参数 TasksNotifyMode 是否已赋值
                      * @return TasksNotifyMode 是否已赋值
+                     * 
                      */
                     bool TasksNotifyModeHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @param _subAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

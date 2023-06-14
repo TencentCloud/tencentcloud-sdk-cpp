@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取验证标识
                      * @return VerifyFlag 验证标识
+                     * 
                      */
                     uint64_t GetVerifyFlag() const;
 
                     /**
                      * 设置验证标识
-                     * @param VerifyFlag 验证标识
+                     * @param _verifyFlag 验证标识
+                     * 
                      */
                     void SetVerifyFlag(const uint64_t& _verifyFlag);
 
                     /**
                      * 判断参数 VerifyFlag 是否已赋值
                      * @return VerifyFlag 是否已赋值
+                     * 
                      */
                     bool VerifyFlagHasBeenSet() const;
 
                     /**
                      * 获取手机通知
                      * @return NotifyPhone 手机通知
+                     * 
                      */
                     uint64_t GetNotifyPhone() const;
 
                     /**
                      * 设置手机通知
-                     * @param NotifyPhone 手机通知
+                     * @param _notifyPhone 手机通知
+                     * 
                      */
                     void SetNotifyPhone(const uint64_t& _notifyPhone);
 
                     /**
                      * 判断参数 NotifyPhone 是否已赋值
                      * @return NotifyPhone 是否已赋值
+                     * 
                      */
                     bool NotifyPhoneHasBeenSet() const;
 
                     /**
                      * 获取邮箱通知
                      * @return NotifyEmail 邮箱通知
+                     * 
                      */
                     int64_t GetNotifyEmail() const;
 
                     /**
                      * 设置邮箱通知
-                     * @param NotifyEmail 邮箱通知
+                     * @param _notifyEmail 邮箱通知
+                     * 
                      */
                     void SetNotifyEmail(const int64_t& _notifyEmail);
 
                     /**
                      * 判断参数 NotifyEmail 是否已赋值
                      * @return NotifyEmail 是否已赋值
+                     * 
                      */
                     bool NotifyEmailHasBeenSet() const;
 
                     /**
                      * 获取微信通知
                      * @return NotifyWechat 微信通知
+                     * 
                      */
                     uint64_t GetNotifyWechat() const;
 
                     /**
                      * 设置微信通知
-                     * @param NotifyWechat 微信通知
+                     * @param _notifyWechat 微信通知
+                     * 
                      */
                     void SetNotifyWechat(const uint64_t& _notifyWechat);
 
                     /**
                      * 判断参数 NotifyWechat 是否已赋值
                      * @return NotifyWechat 是否已赋值
+                     * 
                      */
                     bool NotifyWechatHasBeenSet() const;
 
                     /**
                      * 获取提示
                      * @return Tips 提示
+                     * 
                      */
                     uint64_t GetTips() const;
 
                     /**
                      * 设置提示
-                     * @param Tips 提示
+                     * @param _tips 提示
+                     * 
                      */
                     void SetTips(const uint64_t& _tips);
 
                     /**
                      * 判断参数 Tips 是否已赋值
                      * @return Tips 是否已赋值
+                     * 
                      */
                     bool TipsHasBeenSet() const;
 

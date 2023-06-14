@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表
                      * @return InstanceIds 实例ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取对应的询价结果数组
                      * @return Prices 对应的询价结果数组
+                     * 
                      */
                     std::vector<TradePrice> GetPrices() const;
 
                     /**
                      * 判断参数 Prices 是否已赋值
                      * @return Prices 是否已赋值
+                     * 
                      */
                     bool PricesHasBeenSet() const;
 
                     /**
                      * 获取续费计算节点的总价格
                      * @return InstanceRealTotalPrice 续费计算节点的总价格
+                     * 
                      */
                     int64_t GetInstanceRealTotalPrice() const;
 
                     /**
                      * 判断参数 InstanceRealTotalPrice 是否已赋值
                      * @return InstanceRealTotalPrice 是否已赋值
+                     * 
                      */
                     bool InstanceRealTotalPriceHasBeenSet() const;
 
                     /**
                      * 获取续费存储节点的总价格
                      * @return StorageRealTotalPrice 续费存储节点的总价格
+                     * 
                      */
                     int64_t GetStorageRealTotalPrice() const;
 
                     /**
                      * 判断参数 StorageRealTotalPrice 是否已赋值
                      * @return StorageRealTotalPrice 是否已赋值
+                     * 
                      */
                     bool StorageRealTotalPriceHasBeenSet() const;
 

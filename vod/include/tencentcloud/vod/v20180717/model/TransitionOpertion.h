@@ -141,6 +141,7 @@ namespace TencentCloud
 </ul>
 </li>
 </ul>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -192,7 +193,7 @@ namespace TencentCloud
 </ul>
 </li>
 </ul>
-                     * @param Type 转场类型，取值有：
+                     * @param _type 转场类型，取值有：
 <ul>
 <li>图像的转场操作，用于两个视频片段图像间的转场处理：
 <ul>
@@ -239,12 +240,14 @@ namespace TencentCloud
 </ul>
 </li>
 </ul>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

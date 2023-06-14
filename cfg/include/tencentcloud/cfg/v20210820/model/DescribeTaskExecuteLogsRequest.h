@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取返回的内容行数
                      * @return Limit 返回的内容行数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回的内容行数
-                     * @param Limit 返回的内容行数
+                     * @param _limit 返回的内容行数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取日志起始的行数。
                      * @return Offset 日志起始的行数。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置日志起始的行数。
-                     * @param Offset 日志起始的行数。
+                     * @param _offset 日志起始的行数。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

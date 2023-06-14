@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取Vpc的Id
                      * @return VpcId Vpc的Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc的Id
-                     * @param VpcId Vpc的Id
+                     * @param _vpcId Vpc的Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网Id
                      * @return SubnetId 子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网Id
-                     * @param SubnetId 子网Id
+                     * @param _subnetId 子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取内网接入状态
                      * @return Status 内网接入状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置内网接入状态
-                     * @param Status 内网接入状态
+                     * @param _status 内网接入状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取内网接入Ip
                      * @return AccessIp 内网接入Ip
+                     * 
                      */
                     std::string GetAccessIp() const;
 
                     /**
                      * 设置内网接入Ip
-                     * @param AccessIp 内网接入Ip
+                     * @param _accessIp 内网接入Ip
+                     * 
                      */
                     void SetAccessIp(const std::string& _accessIp);
 
                     /**
                      * 判断参数 AccessIp 是否已赋值
                      * @return AccessIp 是否已赋值
+                     * 
                      */
                     bool AccessIpHasBeenSet() const;
 

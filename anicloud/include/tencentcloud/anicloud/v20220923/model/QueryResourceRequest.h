@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取0: sdk 1:material
                      * @return Type 0: sdk 1:material
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置0: sdk 1:material
-                     * @param Type 0: sdk 1:material
+                     * @param _type 0: sdk 1:material
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取分页起始页
                      * @return PageNumber 分页起始页
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页起始页
-                     * @param PageNumber 分页起始页
+                     * @param _pageNumber 分页起始页
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

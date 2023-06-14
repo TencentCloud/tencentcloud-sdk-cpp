@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取会话 ID
                      * @return SessionID 会话 ID
+                     * 
                      */
                     std::string GetSessionID() const;
 
                     /**
                      * 设置会话 ID
-                     * @param SessionID 会话 ID
+                     * @param _sessionID 会话 ID
+                     * 
                      */
                     void SetSessionID(const std::string& _sessionID);
 
                     /**
                      * 判断参数 SessionID 是否已赋值
                      * @return SessionID 是否已赋值
+                     * 
                      */
                     bool SessionIDHasBeenSet() const;
 
                     /**
                      * 获取会话临时房间 ID
                      * @return RoomID 会话临时房间 ID
+                     * 
                      */
                     std::string GetRoomID() const;
 
                     /**
                      * 设置会话临时房间 ID
-                     * @param RoomID 会话临时房间 ID
+                     * @param _roomID 会话临时房间 ID
+                     * 
                      */
                     void SetRoomID(const std::string& _roomID);
 
                     /**
                      * 判断参数 RoomID 是否已赋值
                      * @return RoomID 是否已赋值
+                     * 
                      */
                     bool RoomIDHasBeenSet() const;
 
                     /**
                      * 获取主叫
                      * @return Caller 主叫
+                     * 
                      */
                     std::string GetCaller() const;
 
                     /**
                      * 设置主叫
-                     * @param Caller 主叫
+                     * @param _caller 主叫
+                     * 
                      */
                     void SetCaller(const std::string& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取被叫
                      * @return Callee 被叫
+                     * 
                      */
                     std::string GetCallee() const;
 
                     /**
                      * 设置被叫
-                     * @param Callee 被叫
+                     * @param _callee 被叫
+                     * 
                      */
                     void SetCallee(const std::string& _callee);
 
                     /**
                      * 判断参数 Callee 是否已赋值
                      * @return Callee 是否已赋值
+                     * 
                      */
                     bool CalleeHasBeenSet() const;
 
                     /**
                      * 获取开始时间，Unix 时间戳
                      * @return StartTimestamp 开始时间，Unix 时间戳
+                     * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
                      * 设置开始时间，Unix 时间戳
-                     * @param StartTimestamp 开始时间，Unix 时间戳
+                     * @param _startTimestamp 开始时间，Unix 时间戳
+                     * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
 
                     /**
                      * 判断参数 StartTimestamp 是否已赋值
                      * @return StartTimestamp 是否已赋值
+                     * 
                      */
                     bool StartTimestampHasBeenSet() const;
 
                     /**
                      * 获取振铃时间，Unix 时间戳
                      * @return RingTimestamp 振铃时间，Unix 时间戳
+                     * 
                      */
                     int64_t GetRingTimestamp() const;
 
                     /**
                      * 设置振铃时间，Unix 时间戳
-                     * @param RingTimestamp 振铃时间，Unix 时间戳
+                     * @param _ringTimestamp 振铃时间，Unix 时间戳
+                     * 
                      */
                     void SetRingTimestamp(const int64_t& _ringTimestamp);
 
                     /**
                      * 判断参数 RingTimestamp 是否已赋值
                      * @return RingTimestamp 是否已赋值
+                     * 
                      */
                     bool RingTimestampHasBeenSet() const;
 
                     /**
                      * 获取接听时间，Unix 时间戳
                      * @return AcceptTimestamp 接听时间，Unix 时间戳
+                     * 
                      */
                     int64_t GetAcceptTimestamp() const;
 
                     /**
                      * 设置接听时间，Unix 时间戳
-                     * @param AcceptTimestamp 接听时间，Unix 时间戳
+                     * @param _acceptTimestamp 接听时间，Unix 时间戳
+                     * 
                      */
                     void SetAcceptTimestamp(const int64_t& _acceptTimestamp);
 
                     /**
                      * 判断参数 AcceptTimestamp 是否已赋值
                      * @return AcceptTimestamp 是否已赋值
+                     * 
                      */
                     bool AcceptTimestampHasBeenSet() const;
 
                     /**
                      * 获取坐席邮箱
                      * @return StaffEmail 坐席邮箱
+                     * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
                      * 设置坐席邮箱
-                     * @param StaffEmail 坐席邮箱
+                     * @param _staffEmail 坐席邮箱
+                     * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
 
                     /**
                      * 判断参数 StaffEmail 是否已赋值
                      * @return StaffEmail 是否已赋值
+                     * 
                      */
                     bool StaffEmailHasBeenSet() const;
 
                     /**
                      * 获取坐席工号
                      * @return StaffNumber 坐席工号
+                     * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
                      * 设置坐席工号
-                     * @param StaffNumber 坐席工号
+                     * @param _staffNumber 坐席工号
+                     * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
 
                     /**
                      * 判断参数 StaffNumber 是否已赋值
                      * @return StaffNumber 是否已赋值
+                     * 
                      */
                     bool StaffNumberHasBeenSet() const;
 
@@ -219,6 +246,7 @@ ringing 振铃中
 seatJoining  等待坐席接听
 inProgress 进行中
 finished 已完成
+                     * 
                      */
                     std::string GetSessionStatus() const;
 
@@ -228,107 +256,124 @@ ringing 振铃中
 seatJoining  等待坐席接听
 inProgress 进行中
 finished 已完成
-                     * @param SessionStatus 会话状态
+                     * @param _sessionStatus 会话状态
 ringing 振铃中
 seatJoining  等待坐席接听
 inProgress 进行中
 finished 已完成
+                     * 
                      */
                     void SetSessionStatus(const std::string& _sessionStatus);
 
                     /**
                      * 判断参数 SessionStatus 是否已赋值
                      * @return SessionStatus 是否已赋值
+                     * 
                      */
                     bool SessionStatusHasBeenSet() const;
 
                     /**
                      * 获取会话呼叫方向， 0 呼入 | 1 - 呼出
                      * @return Direction 会话呼叫方向， 0 呼入 | 1 - 呼出
+                     * 
                      */
                     int64_t GetDirection() const;
 
                     /**
                      * 设置会话呼叫方向， 0 呼入 | 1 - 呼出
-                     * @param Direction 会话呼叫方向， 0 呼入 | 1 - 呼出
+                     * @param _direction 会话呼叫方向， 0 呼入 | 1 - 呼出
+                     * 
                      */
                     void SetDirection(const int64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取转外线使用的号码（转外线主叫）
                      * @return OutBoundCaller 转外线使用的号码（转外线主叫）
+                     * 
                      */
                     std::string GetOutBoundCaller() const;
 
                     /**
                      * 设置转外线使用的号码（转外线主叫）
-                     * @param OutBoundCaller 转外线使用的号码（转外线主叫）
+                     * @param _outBoundCaller 转外线使用的号码（转外线主叫）
+                     * 
                      */
                     void SetOutBoundCaller(const std::string& _outBoundCaller);
 
                     /**
                      * 判断参数 OutBoundCaller 是否已赋值
                      * @return OutBoundCaller 是否已赋值
+                     * 
                      */
                     bool OutBoundCallerHasBeenSet() const;
 
                     /**
                      * 获取转外线被叫
                      * @return OutBoundCallee 转外线被叫
+                     * 
                      */
                     std::string GetOutBoundCallee() const;
 
                     /**
                      * 设置转外线被叫
-                     * @param OutBoundCallee 转外线被叫
+                     * @param _outBoundCallee 转外线被叫
+                     * 
                      */
                     void SetOutBoundCallee(const std::string& _outBoundCallee);
 
                     /**
                      * 判断参数 OutBoundCallee 是否已赋值
                      * @return OutBoundCallee 是否已赋值
+                     * 
                      */
                     bool OutBoundCalleeHasBeenSet() const;
 
                     /**
                      * 获取主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
                      * @return ProtectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     * 
                      */
                     std::string GetProtectedCaller() const;
 
                     /**
                      * 设置主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-                     * @param ProtectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     * @param _protectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
+                     * 
                      */
                     void SetProtectedCaller(const std::string& _protectedCaller);
 
                     /**
                      * 判断参数 ProtectedCaller 是否已赋值
                      * @return ProtectedCaller 是否已赋值
+                     * 
                      */
                     bool ProtectedCallerHasBeenSet() const;
 
                     /**
                      * 获取被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
                      * @return ProtectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     * 
                      */
                     std::string GetProtectedCallee() const;
 
                     /**
                      * 设置被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-                     * @param ProtectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     * @param _protectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
+                     * 
                      */
                     void SetProtectedCallee(const std::string& _protectedCallee);
 
                     /**
                      * 判断参数 ProtectedCallee 是否已赋值
                      * @return ProtectedCallee 是否已赋值
+                     * 
                      */
                     bool ProtectedCalleeHasBeenSet() const;
 

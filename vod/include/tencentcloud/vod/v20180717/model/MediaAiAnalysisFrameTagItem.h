@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取按帧标签名称。
                      * @return Tag 按帧标签名称。
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置按帧标签名称。
-                     * @param Tag 按帧标签名称。
+                     * @param _tag 按帧标签名称。
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
                      * @return CategorySet 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
 比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     * 
                      */
                     std::vector<std::string> GetCategorySet() const;
 
                     /**
                      * 设置按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
 比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
-                     * @param CategorySet 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
+                     * @param _categorySet 按帧标签名称的分类列表，CategorySet.N 表示第 N+1级分类。
 比如 Tag 为“塔楼”时，CategorySet 包含两个元素：CategorySet.0 为“场景”，CategorySet.1为 “建筑”，表示按帧标签为“塔楼”，且第1级分类是“场景”，第2级分类是“建筑”。
+                     * 
                      */
                     void SetCategorySet(const std::vector<std::string>& _categorySet);
 
                     /**
                      * 判断参数 CategorySet 是否已赋值
                      * @return CategorySet 是否已赋值
+                     * 
                      */
                     bool CategorySetHasBeenSet() const;
 
                     /**
                      * 获取按帧标签的可信度，取值范围是 0 到 100。
                      * @return Confidence 按帧标签的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置按帧标签的可信度，取值范围是 0 到 100。
-                     * @param Confidence 按帧标签的可信度，取值范围是 0 到 100。
+                     * @param _confidence 按帧标签的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

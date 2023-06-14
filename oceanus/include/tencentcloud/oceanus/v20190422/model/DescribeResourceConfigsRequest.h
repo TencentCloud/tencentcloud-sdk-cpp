@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，仅当设置 Limit 时该参数有效
                      * @return Offset 偏移量，仅当设置 Limit 时该参数有效
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，仅当设置 Limit 时该参数有效
-                     * @param Offset 偏移量，仅当设置 Limit 时该参数有效
+                     * @param _offset 偏移量，仅当设置 Limit 时该参数有效
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回值大小，不填则返回全量数据
                      * @return Limit 返回值大小，不填则返回全量数据
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回值大小，不填则返回全量数据
-                     * @param Limit 返回值大小，不填则返回全量数据
+                     * @param _limit 返回值大小，不填则返回全量数据
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源配置Versions集合
                      * @return ResourceConfigVersions 资源配置Versions集合
+                     * 
                      */
                     std::vector<int64_t> GetResourceConfigVersions() const;
 
                     /**
                      * 设置资源配置Versions集合
-                     * @param ResourceConfigVersions 资源配置Versions集合
+                     * @param _resourceConfigVersions 资源配置Versions集合
+                     * 
                      */
                     void SetResourceConfigVersions(const std::vector<int64_t>& _resourceConfigVersions);
 
                     /**
                      * 判断参数 ResourceConfigVersions 是否已赋值
                      * @return ResourceConfigVersions 是否已赋值
+                     * 
                      */
                     bool ResourceConfigVersionsHasBeenSet() const;
 
                     /**
                      * 获取作业配置版本
                      * @return JobConfigVersion 作业配置版本
+                     * 
                      */
                     int64_t GetJobConfigVersion() const;
 
                     /**
                      * 设置作业配置版本
-                     * @param JobConfigVersion 作业配置版本
+                     * @param _jobConfigVersion 作业配置版本
+                     * 
                      */
                     void SetJobConfigVersion(const int64_t& _jobConfigVersion);
 
                     /**
                      * 判断参数 JobConfigVersion 是否已赋值
                      * @return JobConfigVersion 是否已赋值
+                     * 
                      */
                     bool JobConfigVersionHasBeenSet() const;
 
                     /**
                      * 获取作业ID
                      * @return JobId 作业ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业ID
-                     * @param JobId 作业ID
+                     * @param _jobId 作业ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

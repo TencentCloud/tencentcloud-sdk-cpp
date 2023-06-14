@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageType 消息类型。0表示文本消息，1表示图片消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMessageType() const;
 
                     /**
                      * 设置消息类型。0表示文本消息，1表示图片消息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MessageType 消息类型。0表示文本消息，1表示图片消息
+                     * @param _messageType 消息类型。0表示文本消息，1表示图片消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessageType(const int64_t& _messageType);
 
                     /**
                      * 判断参数 MessageType 是否已赋值
                      * @return MessageType 是否已赋值
+                     * 
                      */
                     bool MessageTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextMessage 文本消息内容。message type为0时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTextMessage() const;
 
                     /**
                      * 设置文本消息内容。message type为0时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextMessage 文本消息内容。message type为0时有效。
+                     * @param _textMessage 文本消息内容。message type为0时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextMessage(const std::string& _textMessage);
 
                     /**
                      * 判断参数 TextMessage 是否已赋值
                      * @return TextMessage 是否已赋值
+                     * 
                      */
                     bool TextMessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageMessage 图片消息URL。 message type为1时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageMessage() const;
 
                     /**
                      * 设置图片消息URL。 message type为1时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageMessage 图片消息URL。 message type为1时有效。
+                     * @param _imageMessage 图片消息URL。 message type为1时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageMessage(const std::string& _imageMessage);
 
                     /**
                      * 判断参数 ImageMessage 是否已赋值
                      * @return ImageMessage 是否已赋值
+                     * 
                      */
                     bool ImageMessageHasBeenSet() const;
 

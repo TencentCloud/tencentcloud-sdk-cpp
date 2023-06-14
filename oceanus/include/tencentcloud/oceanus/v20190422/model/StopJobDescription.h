@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取作业Id
                      * @return JobId 作业Id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业Id
-                     * @param JobId 作业Id
+                     * @param _jobId 作业Id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取停止类型，1 停止 2 暂停
                      * @return StopType 停止类型，1 停止 2 暂停
+                     * 
                      */
                     int64_t GetStopType() const;
 
                     /**
                      * 设置停止类型，1 停止 2 暂停
-                     * @param StopType 停止类型，1 停止 2 暂停
+                     * @param _stopType 停止类型，1 停止 2 暂停
+                     * 
                      */
                     void SetStopType(const int64_t& _stopType);
 
                     /**
                      * 判断参数 StopType 是否已赋值
                      * @return StopType 是否已赋值
+                     * 
                      */
                     bool StopTypeHasBeenSet() const;
 

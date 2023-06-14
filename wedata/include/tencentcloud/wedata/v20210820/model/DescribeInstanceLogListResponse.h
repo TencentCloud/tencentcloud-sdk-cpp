@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志列表
                      * @return Data 日志列表
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceLogList 日志列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceLogList> GetInstanceLogList() const;
 
                     /**
                      * 判断参数 InstanceLogList 是否已赋值
                      * @return InstanceLogList 是否已赋值
+                     * 
                      */
                     bool InstanceLogListHasBeenSet() const;
 

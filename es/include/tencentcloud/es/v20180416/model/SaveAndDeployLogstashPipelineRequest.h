@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例管道信息
                      * @return Pipeline 实例管道信息
+                     * 
                      */
                     LogstashPipeline GetPipeline() const;
 
                     /**
                      * 设置实例管道信息
-                     * @param Pipeline 实例管道信息
+                     * @param _pipeline 实例管道信息
+                     * 
                      */
                     void SetPipeline(const LogstashPipeline& _pipeline);
 
                     /**
                      * 判断参数 Pipeline 是否已赋值
                      * @return Pipeline 是否已赋值
+                     * 
                      */
                     bool PipelineHasBeenSet() const;
 
                     /**
                      * 获取操作类型<li>1：只保存</li><li>2：保存并部署</li>
                      * @return OpType 操作类型<li>1：只保存</li><li>2：保存并部署</li>
+                     * 
                      */
                     uint64_t GetOpType() const;
 
                     /**
                      * 设置操作类型<li>1：只保存</li><li>2：保存并部署</li>
-                     * @param OpType 操作类型<li>1：只保存</li><li>2：保存并部署</li>
+                     * @param _opType 操作类型<li>1：只保存</li><li>2：保存并部署</li>
+                     * 
                      */
                     void SetOpType(const uint64_t& _opType);
 
                     /**
                      * 判断参数 OpType 是否已赋值
                      * @return OpType 是否已赋值
+                     * 
                      */
                     bool OpTypeHasBeenSet() const;
 

@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
                     /**
                      * 获取漏洞名称
                      * @return VulName 漏洞名称
+                     * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 判断参数 VulName 是否已赋值
                      * @return VulName 是否已赋值
+                     * 
                      */
                     bool VulNameHasBeenSet() const;
 
                     /**
                      * 获取披露时间
                      * @return SubmitTime 披露时间
+                     * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 判断参数 SubmitTime 是否已赋值
                      * @return SubmitTime 是否已赋值
+                     * 
                      */
                     bool SubmitTimeHasBeenSet() const;
 
                     /**
                      * 获取应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED：已扫描
                      * @return Status 应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED：已扫描
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取漏洞CVEID
                      * @return CVEID 漏洞CVEID
+                     * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 判断参数 CVEID 是否已赋值
                      * @return CVEID 是否已赋值
+                     * 
                      */
                     bool CVEIDHasBeenSet() const;
 

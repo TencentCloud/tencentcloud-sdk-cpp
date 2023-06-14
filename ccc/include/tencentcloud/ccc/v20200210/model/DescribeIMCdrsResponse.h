@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取服务记录列表
                      * @return IMCdrs 服务记录列表
+                     * 
                      */
                     std::vector<IMCdrInfo> GetIMCdrs() const;
 
                     /**
                      * 判断参数 IMCdrs 是否已赋值
                      * @return IMCdrs 是否已赋值
+                     * 
                      */
                     bool IMCdrsHasBeenSet() const;
 

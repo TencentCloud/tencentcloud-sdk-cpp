@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取配置项ID
                      * @return ConfigId 配置项ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置项ID
-                     * @param ConfigId 配置项ID
+                     * @param _configId 配置项ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取配置项ID列表
                      * @return ConfigIdList 配置项ID列表
+                     * 
                      */
                     std::vector<std::string> GetConfigIdList() const;
 
                     /**
                      * 设置配置项ID列表
-                     * @param ConfigIdList 配置项ID列表
+                     * @param _configIdList 配置项ID列表
+                     * 
                      */
                     void SetConfigIdList(const std::vector<std::string>& _configIdList);
 
                     /**
                      * 判断参数 ConfigIdList 是否已赋值
                      * @return ConfigIdList 是否已赋值
+                     * 
                      */
                     bool ConfigIdListHasBeenSet() const;
 
                     /**
                      * 获取配置项名称
                      * @return ConfigName 配置项名称
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置配置项名称
-                     * @param ConfigName 配置项名称
+                     * @param _configName 配置项名称
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页条数
                      * @return Limit 每页条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页条数
-                     * @param Limit 每页条数
+                     * @param _limit 每页条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取配置项版本
                      * @return ConfigVersion 配置项版本
+                     * 
                      */
                     std::string GetConfigVersion() const;
 
                     /**
                      * 设置配置项版本
-                     * @param ConfigVersion 配置项版本
+                     * @param _configVersion 配置项版本
+                     * 
                      */
                     void SetConfigVersion(const std::string& _configVersion);
 
                     /**
                      * 判断参数 ConfigVersion 是否已赋值
                      * @return ConfigVersion 是否已赋值
+                     * 
                      */
                     bool ConfigVersionHasBeenSet() const;
 

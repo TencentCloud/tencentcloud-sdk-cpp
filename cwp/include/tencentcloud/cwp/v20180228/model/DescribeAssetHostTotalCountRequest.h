@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取主机Uuid
                      * @return Uuid 主机Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机Uuid
-                     * @param Uuid 主机Uuid
+                     * @param _uuid 主机Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取主机Quuid
                      * @return Quuid 主机Quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机Quuid
-                     * @param Quuid 主机Quuid
+                     * @param _quuid 主机Quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 

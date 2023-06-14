@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取参数模板配额对象。
                      * @return TemplateLimit 参数模板配额对象。
+                     * 
                      */
                     TemplateLimit GetTemplateLimit() const;
 
                     /**
                      * 判断参数 TemplateLimit 是否已赋值
                      * @return TemplateLimit 是否已赋值
+                     * 
                      */
                     bool TemplateLimitHasBeenSet() const;
 

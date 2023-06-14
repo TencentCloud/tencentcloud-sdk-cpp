@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取视频的输入信息。
                      * @return InputInfo 视频的输入信息。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置视频的输入信息。
-                     * @param InputInfo 视频的输入信息。
+                     * @param _inputInfo 视频的输入信息。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑的起始时间偏移，单位：秒。
                      * @return StartTimeOffset 视频剪辑的起始时间偏移，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的起始时间偏移，单位：秒。
-                     * @param StartTimeOffset 视频剪辑的起始时间偏移，单位：秒。
+                     * @param _startTimeOffset 视频剪辑的起始时间偏移，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑的结束时间偏移，单位：秒。
                      * @return EndTimeOffset 视频剪辑的结束时间偏移，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的结束时间偏移，单位：秒。
-                     * @param EndTimeOffset 视频剪辑的结束时间偏移，单位：秒。
+                     * @param _endTimeOffset 视频剪辑的结束时间偏移，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

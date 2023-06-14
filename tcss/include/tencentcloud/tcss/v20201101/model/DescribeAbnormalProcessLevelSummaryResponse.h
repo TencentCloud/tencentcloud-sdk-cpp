@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取异常进程高危待处理事件数
                      * @return HighLevelEventCount 异常进程高危待处理事件数
+                     * 
                      */
                     int64_t GetHighLevelEventCount() const;
 
                     /**
                      * 判断参数 HighLevelEventCount 是否已赋值
                      * @return HighLevelEventCount 是否已赋值
+                     * 
                      */
                     bool HighLevelEventCountHasBeenSet() const;
 
                     /**
                      * 获取异常进程中危待处理事件数
                      * @return MediumLevelEventCount 异常进程中危待处理事件数
+                     * 
                      */
                     int64_t GetMediumLevelEventCount() const;
 
                     /**
                      * 判断参数 MediumLevelEventCount 是否已赋值
                      * @return MediumLevelEventCount 是否已赋值
+                     * 
                      */
                     bool MediumLevelEventCountHasBeenSet() const;
 
                     /**
                      * 获取异常进程低危待处理事件数
                      * @return LowLevelEventCount 异常进程低危待处理事件数
+                     * 
                      */
                     int64_t GetLowLevelEventCount() const;
 
                     /**
                      * 判断参数 LowLevelEventCount 是否已赋值
                      * @return LowLevelEventCount 是否已赋值
+                     * 
                      */
                     bool LowLevelEventCountHasBeenSet() const;
 

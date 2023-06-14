@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取投递任务绑定的日志主题 ID
                      * @return TopicId 投递任务绑定的日志主题 ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置投递任务绑定的日志主题 ID
-                     * @param TopicId 投递任务绑定的日志主题 ID
+                     * @param _topicId 投递任务绑定的日志主题 ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取是否投递日志的元数据信息，默认为 true
                      * @return NeedContent 是否投递日志的元数据信息，默认为 true
+                     * 
                      */
                     bool GetNeedContent() const;
 
                     /**
                      * 设置是否投递日志的元数据信息，默认为 true
-                     * @param NeedContent 是否投递日志的元数据信息，默认为 true
+                     * @param _needContent 是否投递日志的元数据信息，默认为 true
+                     * 
                      */
                     void SetNeedContent(const bool& _needContent);
 
                     /**
                      * 判断参数 NeedContent 是否已赋值
                      * @return NeedContent 是否已赋值
+                     * 
                      */
                     bool NeedContentHasBeenSet() const;
 
                     /**
                      * 获取如果需要投递元数据信息，元数据信息的描述
                      * @return Content 如果需要投递元数据信息，元数据信息的描述
+                     * 
                      */
                     ConsumerContent GetContent() const;
 
                     /**
                      * 设置如果需要投递元数据信息，元数据信息的描述
-                     * @param Content 如果需要投递元数据信息，元数据信息的描述
+                     * @param _content 如果需要投递元数据信息，元数据信息的描述
+                     * 
                      */
                     void SetContent(const ConsumerContent& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取CKafka的描述
                      * @return Ckafka CKafka的描述
+                     * 
                      */
                     Ckafka GetCkafka() const;
 
                     /**
                      * 设置CKafka的描述
-                     * @param Ckafka CKafka的描述
+                     * @param _ckafka CKafka的描述
+                     * 
                      */
                     void SetCkafka(const Ckafka& _ckafka);
 
                     /**
                      * 判断参数 Ckafka 是否已赋值
                      * @return Ckafka 是否已赋值
+                     * 
                      */
                     bool CkafkaHasBeenSet() const;
 
                     /**
                      * 获取投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
                      * @return Compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * 
                      */
                     int64_t GetCompression() const;
 
                     /**
                      * 设置投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
-                     * @param Compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * @param _compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * 
                      */
                     void SetCompression(const int64_t& _compression);
 
                     /**
                      * 判断参数 Compression 是否已赋值
                      * @return Compression 是否已赋值
+                     * 
                      */
                     bool CompressionHasBeenSet() const;
 

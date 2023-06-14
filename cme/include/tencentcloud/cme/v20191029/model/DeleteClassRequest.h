@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取归属者。
                      * @return Owner 归属者。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置归属者。
-                     * @param Owner 归属者。
+                     * @param _owner 归属者。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取分类路径。
                      * @return ClassPath 分类路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置分类路径。
-                     * @param ClassPath 分类路径。
+                     * @param _classPath 分类路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
                      * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * @param _operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

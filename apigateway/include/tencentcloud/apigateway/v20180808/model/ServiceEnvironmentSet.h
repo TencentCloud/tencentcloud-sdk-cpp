@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 服务绑定环境总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置服务绑定环境总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 服务绑定环境总数。
+                     * @param _totalCount 服务绑定环境总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentList 服务绑定环境列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Environment> GetEnvironmentList() const;
 
                     /**
                      * 设置服务绑定环境列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentList 服务绑定环境列表。
+                     * @param _environmentList 服务绑定环境列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentList(const std::vector<Environment>& _environmentList);
 
                     /**
                      * 判断参数 EnvironmentList 是否已赋值
                      * @return EnvironmentList 是否已赋值
+                     * 
                      */
                     bool EnvironmentListHasBeenSet() const;
 

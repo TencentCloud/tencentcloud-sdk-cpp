@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取审核类型 1: 机器审核; 2: 人工审核
                      * @return AuditType 审核类型 1: 机器审核; 2: 人工审核
+                     * 
                      */
                     int64_t GetAuditType() const;
 
                     /**
                      * 设置审核类型 1: 机器审核; 2: 人工审核
-                     * @param AuditType 审核类型 1: 机器审核; 2: 人工审核
+                     * @param _auditType 审核类型 1: 机器审核; 2: 人工审核
+                     * 
                      */
                     void SetAuditType(const int64_t& _auditType);
 
                     /**
                      * 判断参数 AuditType 是否已赋值
                      * @return AuditType 是否已赋值
+                     * 
                      */
                     bool AuditTypeHasBeenSet() const;
 
                     /**
                      * 获取查询条件
                      * @return Filters 查询条件
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置查询条件
-                     * @param Filters 查询条件
+                     * @param _filters 查询条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

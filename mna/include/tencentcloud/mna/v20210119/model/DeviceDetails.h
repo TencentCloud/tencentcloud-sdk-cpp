@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取设备基本信息
                      * @return DeviceBaseInfo 设备基本信息
+                     * 
                      */
                     DeviceBaseInfo GetDeviceBaseInfo() const;
 
                     /**
                      * 设置设备基本信息
-                     * @param DeviceBaseInfo 设备基本信息
+                     * @param _deviceBaseInfo 设备基本信息
+                     * 
                      */
                     void SetDeviceBaseInfo(const DeviceBaseInfo& _deviceBaseInfo);
 
                     /**
                      * 判断参数 DeviceBaseInfo 是否已赋值
                      * @return DeviceBaseInfo 是否已赋值
+                     * 
                      */
                     bool DeviceBaseInfoHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceNetInfo 设备网络信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceNetInfo> GetDeviceNetInfo() const;
 
                     /**
                      * 设置设备网络信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceNetInfo 设备网络信息
+                     * @param _deviceNetInfo 设备网络信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceNetInfo(const std::vector<DeviceNetInfo>& _deviceNetInfo);
 
                     /**
                      * 判断参数 DeviceNetInfo 是否已赋值
                      * @return DeviceNetInfo 是否已赋值
+                     * 
                      */
                     bool DeviceNetInfoHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewaySite 聚合服务器地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGatewaySite() const;
 
                     /**
                      * 设置聚合服务器地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GatewaySite 聚合服务器地址
+                     * @param _gatewaySite 聚合服务器地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGatewaySite(const std::string& _gatewaySite);
 
                     /**
                      * 判断参数 GatewaySite 是否已赋值
                      * @return GatewaySite 是否已赋值
+                     * 
                      */
                     bool GatewaySiteHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessDownRate 业务下行速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetBusinessDownRate() const;
 
                     /**
                      * 设置业务下行速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessDownRate 业务下行速率
+                     * @param _businessDownRate 业务下行速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessDownRate(const double& _businessDownRate);
 
                     /**
                      * 判断参数 BusinessDownRate 是否已赋值
                      * @return BusinessDownRate 是否已赋值
+                     * 
                      */
                     bool BusinessDownRateHasBeenSet() const;
 
@@ -137,20 +149,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessUpRate 业务上行速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetBusinessUpRate() const;
 
                     /**
                      * 设置业务上行速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessUpRate 业务上行速率
+                     * @param _businessUpRate 业务上行速率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessUpRate(const double& _businessUpRate);
 
                     /**
                      * 判断参数 BusinessUpRate 是否已赋值
                      * @return BusinessUpRate 是否已赋值
+                     * 
                      */
                     bool BusinessUpRateHasBeenSet() const;
 

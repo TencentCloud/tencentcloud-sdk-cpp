@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
                      * @return Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * 
                      */
                     int64_t GetMask() const;
 
                     /**
                      * 设置当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
-                     * @param Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * @param _mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * 
                      */
                     void SetMask(const int64_t& _mask);
 
                     /**
                      * 判断参数 Mask 是否已赋值
                      * @return Mask 是否已赋值
+                     * 
                      */
                     bool MaskHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
                      * @return NameSpace 指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
                      * 设置指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
-                     * @param NameSpace 指具有当前账号权限的数据库名。
+                     * @param _nameSpace 指具有当前账号权限的数据库名。
 <ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     * 
                      */
                     void SetNameSpace(const std::string& _nameSpace);
 
                     /**
                      * 判断参数 NameSpace 是否已赋值
                      * @return NameSpace 是否已赋值
+                     * 
                      */
                     bool NameSpaceHasBeenSet() const;
 

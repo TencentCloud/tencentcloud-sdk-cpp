@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取是否能够催办，true-是，false-否
                      * @return CanRemind 是否能够催办，true-是，false-否
+                     * 
                      */
                     bool GetCanRemind() const;
 
                     /**
                      * 设置是否能够催办，true-是，false-否
-                     * @param CanRemind 是否能够催办，true-是，false-否
+                     * @param _canRemind 是否能够催办，true-是，false-否
+                     * 
                      */
                     void SetCanRemind(const bool& _canRemind);
 
                     /**
                      * 判断参数 CanRemind 是否已赋值
                      * @return CanRemind 是否已赋值
+                     * 
                      */
                     bool CanRemindHasBeenSet() const;
 
                     /**
                      * 获取合同id
                      * @return FlowId 合同id
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同id
-                     * @param FlowId 合同id
+                     * @param _flowId 合同id
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取催办详情信息
                      * @return RemindMessage 催办详情信息
+                     * 
                      */
                     std::string GetRemindMessage() const;
 
                     /**
                      * 设置催办详情信息
-                     * @param RemindMessage 催办详情信息
+                     * @param _remindMessage 催办详情信息
+                     * 
                      */
                     void SetRemindMessage(const std::string& _remindMessage);
 
                     /**
                      * 判断参数 RemindMessage 是否已赋值
                      * @return RemindMessage 是否已赋值
+                     * 
                      */
                     bool RemindMessageHasBeenSet() const;
 

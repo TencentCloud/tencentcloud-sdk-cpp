@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取完税证明识别结果，具体内容请点击左侧链接。
                      * @return DutyPaidProofInfos 完税证明识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<DutyPaidProofInfo> GetDutyPaidProofInfos() const;
 
                     /**
                      * 判断参数 DutyPaidProofInfos 是否已赋值
                      * @return DutyPaidProofInfos 是否已赋值
+                     * 
                      */
                     bool DutyPaidProofInfosHasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。
                      * @return Angle 图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 

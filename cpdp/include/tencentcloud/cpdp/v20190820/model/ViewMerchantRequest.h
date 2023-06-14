@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取收单系统分配的开放ID
                      * @return OpenId 收单系统分配的开放ID
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * @param _openId 收单系统分配的开放ID
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取收单系统分配的密钥
                      * @return OpenKey 收单系统分配的密钥
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * @param _openKey 收单系统分配的密钥
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
                      * @return OutMerchantId 外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
+                     * 
                      */
                     std::string GetOutMerchantId() const;
 
                     /**
                      * 设置外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
-                     * @param OutMerchantId 外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
+                     * @param _outMerchantId 外部商户主键编号（MerchantNo或OutMerchantId必须传一个）
+                     * 
                      */
                     void SetOutMerchantId(const std::string& _outMerchantId);
 
                     /**
                      * 判断参数 OutMerchantId 是否已赋值
                      * @return OutMerchantId 是否已赋值
+                     * 
                      */
                     bool OutMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取商户编号（MerchantNo或OutMerchantId必须传一个）
                      * @return MerchantNo 商户编号（MerchantNo或OutMerchantId必须传一个）
+                     * 
                      */
                     std::string GetMerchantNo() const;
 
                     /**
                      * 设置商户编号（MerchantNo或OutMerchantId必须传一个）
-                     * @param MerchantNo 商户编号（MerchantNo或OutMerchantId必须传一个）
+                     * @param _merchantNo 商户编号（MerchantNo或OutMerchantId必须传一个）
+                     * 
                      */
                     void SetMerchantNo(const std::string& _merchantNo);
 
                     /**
                      * 判断参数 MerchantNo 是否已赋值
                      * @return MerchantNo 是否已赋值
+                     * 
                      */
                     bool MerchantNoHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

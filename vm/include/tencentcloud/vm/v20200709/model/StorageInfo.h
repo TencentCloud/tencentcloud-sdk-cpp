@@ -54,6 +54,7 @@ COS 腾讯云对象存储类型
                      * @return Type 类型 可选：
 URL 资源链接类型
 COS 腾讯云对象存储类型
+                     * 
                      */
                     std::string GetType() const;
 
@@ -61,51 +62,59 @@ COS 腾讯云对象存储类型
                      * 设置类型 可选：
 URL 资源链接类型
 COS 腾讯云对象存储类型
-                     * @param Type 类型 可选：
+                     * @param _type 类型 可选：
 URL 资源链接类型
 COS 腾讯云对象存储类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取资源链接
                      * @return Url 资源链接
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置资源链接
-                     * @param Url 资源链接
+                     * @param _url 资源链接
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取腾讯云存储桶信息
                      * @return BucketInfo 腾讯云存储桶信息
+                     * 
                      */
                     BucketInfo GetBucketInfo() const;
 
                     /**
                      * 设置腾讯云存储桶信息
-                     * @param BucketInfo 腾讯云存储桶信息
+                     * @param _bucketInfo 腾讯云存储桶信息
+                     * 
                      */
                     void SetBucketInfo(const BucketInfo& _bucketInfo);
 
                     /**
                      * 判断参数 BucketInfo 是否已赋值
                      * @return BucketInfo 是否已赋值
+                     * 
                      */
                     bool BucketInfoHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取满足过滤条件的任务总数量
                      * @return TotalCount 满足过滤条件的任务总数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskInfoSet 满足过滤条件的任务数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskInfo> GetTaskInfoSet() const;
 
                     /**
                      * 判断参数 TaskInfoSet 是否已赋值
                      * @return TaskInfoSet 是否已赋值
+                     * 
                      */
                     bool TaskInfoSetHasBeenSet() const;
 

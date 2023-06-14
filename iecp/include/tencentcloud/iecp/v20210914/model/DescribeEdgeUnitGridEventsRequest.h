@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取Grid名称
                      * @return GridName Grid名称
+                     * 
                      */
                     std::string GetGridName() const;
 
                     /**
                      * 设置Grid名称
-                     * @param GridName Grid名称
+                     * @param _gridName Grid名称
+                     * 
                      */
                     void SetGridName(const std::string& _gridName);
 
                     /**
                      * 判断参数 GridName 是否已赋值
                      * @return GridName 是否已赋值
+                     * 
                      */
                     bool GridNameHasBeenSet() const;
 
                     /**
                      * 获取负载类型（StatefulSetGrid｜DeploymentGrid）
                      * @return WorkloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置负载类型（StatefulSetGrid｜DeploymentGrid）
-                     * @param WorkloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * @param _workloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
 
                     /**
                      * 判断参数 WorkloadKind 是否已赋值
                      * @return WorkloadKind 是否已赋值
+                     * 
                      */
                     bool WorkloadKindHasBeenSet() const;
 
                     /**
                      * 获取命名空间，默认为default
                      * @return Namespace 命名空间，默认为default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，默认为default
-                     * @param Namespace 命名空间，默认为default
+                     * @param _namespace 命名空间，默认为default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取NodeUnit名称
                      * @return NodeUnit NodeUnit名称
+                     * 
                      */
                     std::string GetNodeUnit() const;
 
                     /**
                      * 设置NodeUnit名称
-                     * @param NodeUnit NodeUnit名称
+                     * @param _nodeUnit NodeUnit名称
+                     * 
                      */
                     void SetNodeUnit(const std::string& _nodeUnit);
 
                     /**
                      * 判断参数 NodeUnit 是否已赋值
                      * @return NodeUnit 是否已赋值
+                     * 
                      */
                     bool NodeUnitHasBeenSet() const;
 
                     /**
                      * 获取Pod名称
                      * @return PodName Pod名称
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置Pod名称
-                     * @param PodName Pod名称
+                     * @param _podName Pod名称
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 

@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取实例额外需要设置参数信息
                      * @return InstanceAdvancedSettings 实例额外需要设置参数信息
+                     * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
                      * 设置实例额外需要设置参数信息
-                     * @param InstanceAdvancedSettings 实例额外需要设置参数信息
+                     * @param _instanceAdvancedSettings 实例额外需要设置参数信息
+                     * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
 
                     /**
                      * 判断参数 InstanceAdvancedSettings 是否已赋值
                      * @return InstanceAdvancedSettings 是否已赋值
+                     * 
                      */
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
                      * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
                      * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
                      * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-                     * @param EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * @param _enhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
 
                     /**
                      * 判断参数 EnhancedService 是否已赋值
                      * @return EnhancedService 是否已赋值
+                     * 
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
                      * 获取节点登录信息（目前仅支持使用Password或者单个KeyIds）
                      * @return LoginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
                      * 设置节点登录信息（目前仅支持使用Password或者单个KeyIds）
-                     * @param LoginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * @param _loginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
 
                     /**
                      * 判断参数 LoginSettings 是否已赋值
                      * @return LoginSettings 是否已赋值
+                     * 
                      */
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
                      * 获取实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
                      * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
-                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * @param _securityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

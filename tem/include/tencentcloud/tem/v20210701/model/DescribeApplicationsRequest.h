@@ -47,144 +47,168 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID
                      * @return EnvironmentId 命名空间ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param EnvironmentId 命名空间ID
+                     * @param _environmentId 命名空间ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页offset
                      * @return Offset 分页offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页offset
-                     * @param Offset 分页offset
+                     * @param _offset 分页offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取服务id
                      * @return ApplicationId 服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
-                     * @param ApplicationId 服务id
+                     * @param _applicationId 服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return Keyword 搜索关键字
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param Keyword 搜索关键字
+                     * @param _keyword 搜索关键字
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取查询过滤器
                      * @return Filters 查询过滤器
+                     * 
                      */
                     std::vector<QueryFilter> GetFilters() const;
 
                     /**
                      * 设置查询过滤器
-                     * @param Filters 查询过滤器
+                     * @param _filters 查询过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<QueryFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return SortInfo 排序字段
+                     * 
                      */
                     SortType GetSortInfo() const;
 
                     /**
                      * 设置排序字段
-                     * @param SortInfo 排序字段
+                     * @param _sortInfo 排序字段
+                     * 
                      */
                     void SetSortInfo(const SortType& _sortInfo);
 
                     /**
                      * 判断参数 SortInfo 是否已赋值
                      * @return SortInfo 是否已赋值
+                     * 
                      */
                     bool SortInfoHasBeenSet() const;
 

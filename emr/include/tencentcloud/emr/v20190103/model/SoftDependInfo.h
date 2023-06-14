@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取组件名称
                      * @return SoftName 组件名称
+                     * 
                      */
                     std::string GetSoftName() const;
 
                     /**
                      * 设置组件名称
-                     * @param SoftName 组件名称
+                     * @param _softName 组件名称
+                     * 
                      */
                     void SetSoftName(const std::string& _softName);
 
                     /**
                      * 判断参数 SoftName 是否已赋值
                      * @return SoftName 是否已赋值
+                     * 
                      */
                     bool SoftNameHasBeenSet() const;
 
                     /**
                      * 获取是否必选
                      * @return Required 是否必选
+                     * 
                      */
                     bool GetRequired() const;
 
                     /**
                      * 设置是否必选
-                     * @param Required 是否必选
+                     * @param _required 是否必选
+                     * 
                      */
                     void SetRequired(const bool& _required);
 
                     /**
                      * 判断参数 Required 是否已赋值
                      * @return Required 是否已赋值
+                     * 
                      */
                     bool RequiredHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取购车关注点code
                      * @return Code 购车关注点code
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置购车关注点code
-                     * @param Code 购车关注点code
+                     * @param _code 购车关注点code
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取购车关注点描述
                      * @return Description 购车关注点描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置购车关注点描述
-                     * @param Description 购车关注点描述
+                     * @param _description 购车关注点描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

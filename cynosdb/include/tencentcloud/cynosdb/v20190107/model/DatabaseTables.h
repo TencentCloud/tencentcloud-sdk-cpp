@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Database 数据库名
+                     * @param _database 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 表名称列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTables() const;
 
                     /**
                      * 设置表名称列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tables 表名称列表
+                     * @param _tables 表名称列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTables(const std::vector<std::string>& _tables);
 
                     /**
                      * 判断参数 Tables 是否已赋值
                      * @return Tables 是否已赋值
+                     * 
                      */
                     bool TablesHasBeenSet() const;
 

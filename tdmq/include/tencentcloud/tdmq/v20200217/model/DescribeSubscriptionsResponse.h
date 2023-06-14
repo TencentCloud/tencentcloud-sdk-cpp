@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取订阅者集合数组。
                      * @return SubscriptionSets 订阅者集合数组。
+                     * 
                      */
                     std::vector<Subscription> GetSubscriptionSets() const;
 
                     /**
                      * 判断参数 SubscriptionSets 是否已赋值
                      * @return SubscriptionSets 是否已赋值
+                     * 
                      */
                     bool SubscriptionSetsHasBeenSet() const;
 
                     /**
                      * 获取数量。
                      * @return TotalCount 数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

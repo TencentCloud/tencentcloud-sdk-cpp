@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelId 直播频道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 判断参数 LiveChannelId 是否已赋值
                      * @return LiveChannelId 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PushStreamAddress 直播频道推流地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPushStreamAddress() const;
 
                     /**
                      * 判断参数 PushStreamAddress 是否已赋值
                      * @return PushStreamAddress 是否已赋值
+                     * 
                      */
                     bool PushStreamAddressHasBeenSet() const;
 

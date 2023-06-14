@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要分割的视频URL，可外网访问。
                      * @return VideoUrl 需要分割的视频URL，可外网访问。
+                     * 
                      */
                     std::string GetVideoUrl() const;
 
                     /**
                      * 设置需要分割的视频URL，可外网访问。
-                     * @param VideoUrl 需要分割的视频URL，可外网访问。
+                     * @param _videoUrl 需要分割的视频URL，可外网访问。
+                     * 
                      */
                     void SetVideoUrl(const std::string& _videoUrl);
 
                     /**
                      * 判断参数 VideoUrl 是否已赋值
                      * @return VideoUrl 是否已赋值
+                     * 
                      */
                     bool VideoUrlHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return BackgroundImageUrl 背景图片URL。 
 可以将视频背景替换为输入的图片。 
 如果不输入背景图片，则输出人像区域mask。
+                     * 
                      */
                     std::string GetBackgroundImageUrl() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置背景图片URL。 
 可以将视频背景替换为输入的图片。 
 如果不输入背景图片，则输出人像区域mask。
-                     * @param BackgroundImageUrl 背景图片URL。 
+                     * @param _backgroundImageUrl 背景图片URL。 
 可以将视频背景替换为输入的图片。 
 如果不输入背景图片，则输出人像区域mask。
+                     * 
                      */
                     void SetBackgroundImageUrl(const std::string& _backgroundImageUrl);
 
                     /**
                      * 判断参数 BackgroundImageUrl 是否已赋值
                      * @return BackgroundImageUrl 是否已赋值
+                     * 
                      */
                     bool BackgroundImageUrlHasBeenSet() const;
 
                     /**
                      * 获取预留字段，后期用于展示更多识别信息。
                      * @return Config 预留字段，后期用于展示更多识别信息。
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置预留字段，后期用于展示更多识别信息。
-                     * @param Config 预留字段，后期用于展示更多识别信息。
+                     * @param _config 预留字段，后期用于展示更多识别信息。
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

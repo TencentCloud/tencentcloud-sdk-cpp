@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Cpu核编号
                      * @return CpuCore Cpu核编号
+                     * 
                      */
                     int64_t GetCpuCore() const;
 
                     /**
                      * 设置Cpu核编号
-                     * @param CpuCore Cpu核编号
+                     * @param _cpuCore Cpu核编号
+                     * 
                      */
                     void SetCpuCore(const int64_t& _cpuCore);
 
                     /**
                      * 判断参数 CpuCore 是否已赋值
                      * @return CpuCore 是否已赋值
+                     * 
                      */
                     bool CpuCoreHasBeenSet() const;
 
                     /**
                      * 获取Cpu使用率
                      * @return Rate Cpu使用率
+                     * 
                      */
                     std::vector<int64_t> GetRate() const;
 
                     /**
                      * 设置Cpu使用率
-                     * @param Rate Cpu使用率
+                     * @param _rate Cpu使用率
+                     * 
                      */
                     void SetRate(const std::vector<int64_t>& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 

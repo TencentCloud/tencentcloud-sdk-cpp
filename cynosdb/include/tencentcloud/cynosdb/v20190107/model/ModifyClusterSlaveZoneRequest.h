@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取旧从可用区
                      * @return OldSlaveZone 旧从可用区
+                     * 
                      */
                     std::string GetOldSlaveZone() const;
 
                     /**
                      * 设置旧从可用区
-                     * @param OldSlaveZone 旧从可用区
+                     * @param _oldSlaveZone 旧从可用区
+                     * 
                      */
                     void SetOldSlaveZone(const std::string& _oldSlaveZone);
 
                     /**
                      * 判断参数 OldSlaveZone 是否已赋值
                      * @return OldSlaveZone 是否已赋值
+                     * 
                      */
                     bool OldSlaveZoneHasBeenSet() const;
 
                     /**
                      * 获取新从可用区
                      * @return NewSlaveZone 新从可用区
+                     * 
                      */
                     std::string GetNewSlaveZone() const;
 
                     /**
                      * 设置新从可用区
-                     * @param NewSlaveZone 新从可用区
+                     * @param _newSlaveZone 新从可用区
+                     * 
                      */
                     void SetNewSlaveZone(const std::string& _newSlaveZone);
 
                     /**
                      * 判断参数 NewSlaveZone 是否已赋值
                      * @return NewSlaveZone 是否已赋值
+                     * 
                      */
                     bool NewSlaveZoneHasBeenSet() const;
 

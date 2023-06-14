@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取tdid
                      * @return Did tdid
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 设置tdid
-                     * @param Did tdid
+                     * @param _did tdid
+                     * 
                      */
                     void SetDid(const std::string& _did);
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 
                     /**
                      * 获取权威机构名称
                      * @return Name 权威机构名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置权威机构名称
-                     * @param Name 权威机构名称
+                     * @param _name 权威机构名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Description 备注
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-                     * @param Description 备注
+                     * @param _description 备注
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

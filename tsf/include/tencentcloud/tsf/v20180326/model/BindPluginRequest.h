@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取分组/API绑定插件列表
                      * @return PluginInstanceList 分组/API绑定插件列表
+                     * 
                      */
                     std::vector<GatewayPluginBoundParam> GetPluginInstanceList() const;
 
                     /**
                      * 设置分组/API绑定插件列表
-                     * @param PluginInstanceList 分组/API绑定插件列表
+                     * @param _pluginInstanceList 分组/API绑定插件列表
+                     * 
                      */
                     void SetPluginInstanceList(const std::vector<GatewayPluginBoundParam>& _pluginInstanceList);
 
                     /**
                      * 判断参数 PluginInstanceList 是否已赋值
                      * @return PluginInstanceList 是否已赋值
+                     * 
                      */
                     bool PluginInstanceListHasBeenSet() const;
 

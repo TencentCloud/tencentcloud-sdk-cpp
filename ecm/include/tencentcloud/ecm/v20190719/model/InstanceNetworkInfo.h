@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressInfoSet 实例内外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AddressInfo> GetAddressInfoSet() const;
 
                     /**
                      * 设置实例内外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddressInfoSet 实例内外网ip相关信息。
+                     * @param _addressInfoSet 实例内外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddressInfoSet(const std::vector<AddressInfo>& _addressInfoSet);
 
                     /**
                      * 判断参数 AddressInfoSet 是否已赋值
                      * @return AddressInfoSet 是否已赋值
+                     * 
                      */
                     bool AddressInfoSetHasBeenSet() const;
 
                     /**
                      * 获取网卡ID。
                      * @return NetworkInterfaceId 网卡ID。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置网卡ID。
-                     * @param NetworkInterfaceId 网卡ID。
+                     * @param _networkInterfaceId 网卡ID。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
@@ -92,38 +98,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkInterfaceName 网卡名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNetworkInterfaceName() const;
 
                     /**
                      * 设置网卡名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkInterfaceName 网卡名称。
+                     * @param _networkInterfaceName 网卡名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkInterfaceName(const std::string& _networkInterfaceName);
 
                     /**
                      * 判断参数 NetworkInterfaceName 是否已赋值
                      * @return NetworkInterfaceName 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceNameHasBeenSet() const;
 
                     /**
                      * 获取主网卡属性。true为主网卡，false为辅助网卡。
                      * @return Primary 主网卡属性。true为主网卡，false为辅助网卡。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置主网卡属性。true为主网卡，false为辅助网卡。
-                     * @param Primary 主网卡属性。true为主网卡，false为辅助网卡。
+                     * @param _primary 主网卡属性。true为主网卡，false为辅助网卡。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 

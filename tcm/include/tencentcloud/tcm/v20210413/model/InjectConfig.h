@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeIPRanges 不需要进行代理的 ip 地址范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetExcludeIPRanges() const;
 
                     /**
                      * 设置不需要进行代理的 ip 地址范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExcludeIPRanges 不需要进行代理的 ip 地址范围
+                     * @param _excludeIPRanges 不需要进行代理的 ip 地址范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExcludeIPRanges(const std::vector<std::string>& _excludeIPRanges);
 
                     /**
                      * 判断参数 ExcludeIPRanges 是否已赋值
                      * @return ExcludeIPRanges 是否已赋值
+                     * 
                      */
                     bool ExcludeIPRangesHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HoldApplicationUntilProxyStarts 是否等待sidecar启动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHoldApplicationUntilProxyStarts() const;
 
                     /**
                      * 设置是否等待sidecar启动
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HoldApplicationUntilProxyStarts 是否等待sidecar启动
+                     * @param _holdApplicationUntilProxyStarts 是否等待sidecar启动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHoldApplicationUntilProxyStarts(const bool& _holdApplicationUntilProxyStarts);
 
                     /**
                      * 判断参数 HoldApplicationUntilProxyStarts 是否已赋值
                      * @return HoldApplicationUntilProxyStarts 是否已赋值
+                     * 
                      */
                     bool HoldApplicationUntilProxyStartsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HoldProxyUntilApplicationEnds 是否允许sidecar等待
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHoldProxyUntilApplicationEnds() const;
 
                     /**
                      * 设置是否允许sidecar等待
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HoldProxyUntilApplicationEnds 是否允许sidecar等待
+                     * @param _holdProxyUntilApplicationEnds 是否允许sidecar等待
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHoldProxyUntilApplicationEnds(const bool& _holdProxyUntilApplicationEnds);
 
                     /**
                      * 判断参数 HoldProxyUntilApplicationEnds 是否已赋值
                      * @return HoldProxyUntilApplicationEnds 是否已赋值
+                     * 
                      */
                     bool HoldProxyUntilApplicationEndsHasBeenSet() const;
 

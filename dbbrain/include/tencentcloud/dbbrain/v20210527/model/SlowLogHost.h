@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取来源地址。
                      * @return UserHost 来源地址。
+                     * 
                      */
                     std::string GetUserHost() const;
 
                     /**
                      * 设置来源地址。
-                     * @param UserHost 来源地址。
+                     * @param _userHost 来源地址。
+                     * 
                      */
                     void SetUserHost(const std::string& _userHost);
 
                     /**
                      * 判断参数 UserHost 是否已赋值
                      * @return UserHost 是否已赋值
+                     * 
                      */
                     bool UserHostHasBeenSet() const;
 
                     /**
                      * 获取该来源地址的慢日志数目占总数目的比例，单位%。
                      * @return Ratio 该来源地址的慢日志数目占总数目的比例，单位%。
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置该来源地址的慢日志数目占总数目的比例，单位%。
-                     * @param Ratio 该来源地址的慢日志数目占总数目的比例，单位%。
+                     * @param _ratio 该来源地址的慢日志数目占总数目的比例，单位%。
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 
                     /**
                      * 获取该来源地址的慢日志数目。
                      * @return Count 该来源地址的慢日志数目。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该来源地址的慢日志数目。
-                     * @param Count 该来源地址的慢日志数目。
+                     * @param _count 该来源地址的慢日志数目。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

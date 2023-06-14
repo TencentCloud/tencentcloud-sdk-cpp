@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月
                      * @return LicenseType 授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
                      * 设置授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月
-                     * @param LicenseType 授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * @param _licenseType 授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月
+                     * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取可编辑的属性名称 ,当前支持的有: alias 资源别名
                      * @return AttrName 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * 
                      */
                     std::string GetAttrName() const;
 
                     /**
                      * 设置可编辑的属性名称 ,当前支持的有: alias 资源别名
-                     * @param AttrName 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * @param _attrName 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * 
                      */
                     void SetAttrName(const std::string& _attrName);
 
                     /**
                      * 判断参数 AttrName 是否已赋值
                      * @return AttrName 是否已赋值
+                     * 
                      */
                     bool AttrNameHasBeenSet() const;
 
                     /**
                      * 获取属性值
                      * @return AttrValue 属性值
+                     * 
                      */
                     std::string GetAttrValue() const;
 
                     /**
                      * 设置属性值
-                     * @param AttrValue 属性值
+                     * @param _attrValue 属性值
+                     * 
                      */
                     void SetAttrValue(const std::string& _attrValue);
 
                     /**
                      * 判断参数 AttrValue 是否已赋值
                      * @return AttrValue 是否已赋值
+                     * 
                      */
                     bool AttrValueHasBeenSet() const;
 

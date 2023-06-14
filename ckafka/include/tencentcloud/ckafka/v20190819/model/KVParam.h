@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分隔符
                      * @return Delimiter 分隔符
+                     * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
                      * 设置分隔符
-                     * @param Delimiter 分隔符
+                     * @param _delimiter 分隔符
+                     * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
 
                     /**
                      * 判断参数 Delimiter 是否已赋值
                      * @return Delimiter 是否已赋值
+                     * 
                      */
                     bool DelimiterHasBeenSet() const;
 
                     /**
                      * 获取key-value二次解析分隔符
                      * @return Regex key-value二次解析分隔符
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置key-value二次解析分隔符
-                     * @param Regex key-value二次解析分隔符
+                     * @param _regex key-value二次解析分隔符
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepOriginalKey 保留源Key，默认为false不保留
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeepOriginalKey() const;
 
                     /**
                      * 设置保留源Key，默认为false不保留
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeepOriginalKey 保留源Key，默认为false不保留
+                     * @param _keepOriginalKey 保留源Key，默认为false不保留
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeepOriginalKey(const std::string& _keepOriginalKey);
 
                     /**
                      * 判断参数 KeepOriginalKey 是否已赋值
                      * @return KeepOriginalKey 是否已赋值
+                     * 
                      */
                     bool KeepOriginalKeyHasBeenSet() const;
 

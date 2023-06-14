@@ -59,6 +59,7 @@ namespace TencentCloud
 <li>CME ：视频来源于制作云媒体文件 ；</li>
 <li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>
 </ul>
+                     * 
                      */
                     std::string GetSourceType() const;
 
@@ -69,18 +70,20 @@ namespace TencentCloud
 <li>CME ：视频来源于制作云媒体文件 ；</li>
 <li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>
 </ul>
-                     * @param SourceType 音频媒体来源类型，取值有：
+                     * @param _sourceType 音频媒体来源类型，取值有：
 <ul>
 <li>VOD ：素材来源于云点播文件 ；</li>
 <li>CME ：视频来源于制作云媒体文件 ；</li>
 <li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>
 </ul>
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -105,6 +108,7 @@ namespace TencentCloud
 注意：
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>
+                     * 
                      */
                     std::string GetSourceMedia() const;
 
@@ -119,7 +123,7 @@ namespace TencentCloud
 注意：
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>
-                     * @param SourceMedia 音频媒体，可取值为：
+                     * @param _sourceMedia 音频媒体，可取值为：
 <ul>
 <li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
 <li>当 SourceType 为 CME 时，参数填多媒体创作引擎媒体 Id；</li>
@@ -129,48 +133,56 @@ namespace TencentCloud
 注意：
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>
 <li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>
+                     * 
                      */
                     void SetSourceMedia(const std::string& _sourceMedia);
 
                     /**
                      * 判断参数 SourceMedia 是否已赋值
                      * @return SourceMedia 是否已赋值
+                     * 
                      */
                     bool SourceMediaHasBeenSet() const;
 
                     /**
                      * 获取音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
                      * @return SourceMediaStartTime 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
+                     * 
                      */
                     double GetSourceMediaStartTime() const;
 
                     /**
                      * 设置音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
-                     * @param SourceMediaStartTime 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
+                     * @param _sourceMediaStartTime 音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。
+                     * 
                      */
                     void SetSourceMediaStartTime(const double& _sourceMediaStartTime);
 
                     /**
                      * 判断参数 SourceMediaStartTime 是否已赋值
                      * @return SourceMediaStartTime 是否已赋值
+                     * 
                      */
                     bool SourceMediaStartTimeHasBeenSet() const;
 
                     /**
                      * 获取音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
                      * @return Duration 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
-                     * @param Duration 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
+                     * @param _duration 音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

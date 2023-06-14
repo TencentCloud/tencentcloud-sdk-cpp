@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueName 队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueName 队列名称。
+                     * @param _queueName 队列名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

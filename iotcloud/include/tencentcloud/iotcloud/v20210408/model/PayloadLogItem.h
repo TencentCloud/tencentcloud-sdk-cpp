@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取账号id
                      * @return Uin 账号id
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置账号id
-                     * @param Uin 账号id
+                     * @param _uin 账号id
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取产品id
                      * @return ProductId 产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品id
-                     * @param ProductId 产品id
+                     * @param _productId 产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取来源类型
                      * @return SrcType 来源类型
+                     * 
                      */
                     std::string GetSrcType() const;
 
                     /**
                      * 设置来源类型
-                     * @param SrcType 来源类型
+                     * @param _srcType 来源类型
+                     * 
                      */
                     void SetSrcType(const std::string& _srcType);
 
                     /**
                      * 判断参数 SrcType 是否已赋值
                      * @return SrcType 是否已赋值
+                     * 
                      */
                     bool SrcTypeHasBeenSet() const;
 
                     /**
                      * 获取来源名称
                      * @return SrcName 来源名称
+                     * 
                      */
                     std::string GetSrcName() const;
 
                     /**
                      * 设置来源名称
-                     * @param SrcName 来源名称
+                     * @param _srcName 来源名称
+                     * 
                      */
                     void SetSrcName(const std::string& _srcName);
 
                     /**
                      * 判断参数 SrcName 是否已赋值
                      * @return SrcName 是否已赋值
+                     * 
                      */
                     bool SrcNameHasBeenSet() const;
 
                     /**
                      * 获取消息topic
                      * @return Topic 消息topic
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置消息topic
-                     * @param Topic 消息topic
+                     * @param _topic 消息topic
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取内容格式类型
                      * @return PayloadFormatType 内容格式类型
+                     * 
                      */
                     std::string GetPayloadFormatType() const;
 
                     /**
                      * 设置内容格式类型
-                     * @param PayloadFormatType 内容格式类型
+                     * @param _payloadFormatType 内容格式类型
+                     * 
                      */
                     void SetPayloadFormatType(const std::string& _payloadFormatType);
 
                     /**
                      * 判断参数 PayloadFormatType 是否已赋值
                      * @return PayloadFormatType 是否已赋值
+                     * 
                      */
                     bool PayloadFormatTypeHasBeenSet() const;
 
                     /**
                      * 获取内容信息
                      * @return Payload 内容信息
+                     * 
                      */
                     std::string GetPayload() const;
 
                     /**
                      * 设置内容信息
-                     * @param Payload 内容信息
+                     * @param _payload 内容信息
+                     * 
                      */
                     void SetPayload(const std::string& _payload);
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 
                     /**
                      * 获取请求ID
                      * @return RequestId 请求ID
+                     * 
                      */
                     std::string GetRequestId() const;
 
                     /**
                      * 设置请求ID
-                     * @param RequestId 请求ID
+                     * @param _requestId 请求ID
+                     * 
                      */
                     void SetRequestId(const std::string& _requestId);
 
                     /**
                      * 判断参数 RequestId 是否已赋值
                      * @return RequestId 是否已赋值
+                     * 
                      */
                     bool RequestIdHasBeenSet() const;
 
                     /**
                      * 获取日期时间
                      * @return DateTime 日期时间
+                     * 
                      */
                     std::string GetDateTime() const;
 
                     /**
                      * 设置日期时间
-                     * @param DateTime 日期时间
+                     * @param _dateTime 日期时间
+                     * 
                      */
                     void SetDateTime(const std::string& _dateTime);
 
                     /**
                      * 判断参数 DateTime 是否已赋值
                      * @return DateTime 是否已赋值
+                     * 
                      */
                     bool DateTimeHasBeenSet() const;
 

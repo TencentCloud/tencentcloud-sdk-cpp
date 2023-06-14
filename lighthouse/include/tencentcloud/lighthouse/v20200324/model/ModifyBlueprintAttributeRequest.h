@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
                      * @return BlueprintId 镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * 
                      */
                     std::string GetBlueprintId() const;
 
                     /**
                      * 设置镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
-                     * @param BlueprintId 镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * @param _blueprintId 镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * 
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
                     /**
                      * 判断参数 BlueprintId 是否已赋值
                      * @return BlueprintId 是否已赋值
+                     * 
                      */
                     bool BlueprintIdHasBeenSet() const;
 
                     /**
                      * 获取设置新的镜像名称。最大长度60。
                      * @return BlueprintName 设置新的镜像名称。最大长度60。
+                     * 
                      */
                     std::string GetBlueprintName() const;
 
                     /**
                      * 设置设置新的镜像名称。最大长度60。
-                     * @param BlueprintName 设置新的镜像名称。最大长度60。
+                     * @param _blueprintName 设置新的镜像名称。最大长度60。
+                     * 
                      */
                     void SetBlueprintName(const std::string& _blueprintName);
 
                     /**
                      * 判断参数 BlueprintName 是否已赋值
                      * @return BlueprintName 是否已赋值
+                     * 
                      */
                     bool BlueprintNameHasBeenSet() const;
 
                     /**
                      * 获取设置新的镜像描述。最大长度60。
                      * @return Description 设置新的镜像描述。最大长度60。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置设置新的镜像描述。最大长度60。
-                     * @param Description 设置新的镜像描述。最大长度60。
+                     * @param _description 设置新的镜像描述。最大长度60。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

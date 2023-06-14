@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启
                      * @return Enabled 是否开启
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启
-                     * @param Enabled 是否开启
+                     * @param _enabled 是否开启
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取云镜版本：0 基础版，1 专业版
                      * @return Version 云镜版本：0 基础版，1 专业版
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置云镜版本：0 基础版，1 专业版
-                     * @param Version 云镜版本：0 基础版，1 专业版
+                     * @param _version 云镜版本：0 基础版，1 专业版
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取总步骤数
                      * @return StepAll 总步骤数
+                     * 
                      */
                     int64_t GetStepAll() const;
 
                     /**
                      * 设置总步骤数
-                     * @param StepAll 总步骤数
+                     * @param _stepAll 总步骤数
+                     * 
                      */
                     void SetStepAll(const int64_t& _stepAll);
 
                     /**
                      * 判断参数 StepAll 是否已赋值
                      * @return StepAll 是否已赋值
+                     * 
                      */
                     bool StepAllHasBeenSet() const;
 
                     /**
                      * 获取当前步骤
                      * @return StepNow 当前步骤
+                     * 
                      */
                     int64_t GetStepNow() const;
 
                     /**
                      * 设置当前步骤
-                     * @param StepNow 当前步骤
+                     * @param _stepNow 当前步骤
+                     * 
                      */
                     void SetStepNow(const int64_t& _stepNow);
 
                     /**
                      * 判断参数 StepNow 是否已赋值
                      * @return StepNow 是否已赋值
+                     * 
                      */
                     bool StepNowHasBeenSet() const;
 
                     /**
                      * 获取总进度,如："30"表示30%
                      * @return Progress 总进度,如："30"表示30%
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置总进度,如："30"表示30%
-                     * @param Progress 总进度,如："30"表示30%
+                     * @param _progress 总进度,如："30"表示30%
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfo 步骤信息，null表示还未开始迁移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MigrationStep> GetStepInfo() const;
 
                     /**
                      * 设置步骤信息，null表示还未开始迁移
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepInfo 步骤信息，null表示还未开始迁移
+                     * @param _stepInfo 步骤信息，null表示还未开始迁移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepInfo(const std::vector<MigrationStep>& _stepInfo);
 
                     /**
                      * 判断参数 StepInfo 是否已赋值
                      * @return StepInfo 是否已赋值
+                     * 
                      */
                     bool StepInfoHasBeenSet() const;
 

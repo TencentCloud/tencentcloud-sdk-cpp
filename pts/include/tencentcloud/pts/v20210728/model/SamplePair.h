@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.
                      * @return Timestamp is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.
-                     * @param Timestamp is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.
+                     * @param _timestamp is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取is a representation of a value for a given sample at a given time.
                      * @return Value is a representation of a value for a given sample at a given time.
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置is a representation of a value for a given sample at a given time.
-                     * @param Value is a representation of a value for a given sample at a given time.
+                     * @param _value is a representation of a value for a given sample at a given time.
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

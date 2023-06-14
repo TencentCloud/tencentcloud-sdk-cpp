@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取日志id
                      * @return LogId 日志id
+                     * 
                      */
                     uint64_t GetLogId() const;
 
                     /**
                      * 判断参数 LogId 是否已赋值
                      * @return LogId 是否已赋值
+                     * 
                      */
                     bool LogIdHasBeenSet() const;
 

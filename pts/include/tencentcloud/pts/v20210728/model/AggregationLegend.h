@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取指标支持的聚合函数
                      * @return Aggregation 指标支持的聚合函数
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置指标支持的聚合函数
-                     * @param Aggregation 指标支持的聚合函数
+                     * @param _aggregation 指标支持的聚合函数
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
                     /**
                      * 获取聚合函数作用于指标后对应的描述
                      * @return Legend 聚合函数作用于指标后对应的描述
+                     * 
                      */
                     std::string GetLegend() const;
 
                     /**
                      * 设置聚合函数作用于指标后对应的描述
-                     * @param Legend 聚合函数作用于指标后对应的描述
+                     * @param _legend 聚合函数作用于指标后对应的描述
+                     * 
                      */
                     void SetLegend(const std::string& _legend);
 
                     /**
                      * 判断参数 Legend 是否已赋值
                      * @return Legend 是否已赋值
+                     * 
                      */
                     bool LegendHasBeenSet() const;
 
                     /**
                      * 获取聚合之后的指标单位
                      * @return Unit 聚合之后的指标单位
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置聚合之后的指标单位
-                     * @param Unit 聚合之后的指标单位
+                     * @param _unit 聚合之后的指标单位
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取变更预付费实例配置返回结构
                      * @return Result 变更预付费实例配置返回结构
+                     * 
                      */
                     CreateInstancePreResp GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

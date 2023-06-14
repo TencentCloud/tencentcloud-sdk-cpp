@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiAppName() const;
 
                     /**
                      * 设置应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiAppName 应用名称
+                     * @param _apiAppName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiAppName(const std::string& _apiAppName);
 
                     /**
                      * 判断参数 ApiAppName 是否已赋值
                      * @return ApiAppName 是否已赋值
+                     * 
                      */
                     bool ApiAppNameHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApiAppId 应用ID
+                     * 
                      */
                     std::string GetApiAppId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApiAppId 应用ID
+                     * @param _apiAppId 应用ID
+                     * 
                      */
                     void SetApiAppId(const std::string& _apiAppId);
 
                     /**
                      * 判断参数 ApiAppId 是否已赋值
                      * @return ApiAppId 是否已赋值
+                     * 
                      */
                     bool ApiAppIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiId Api的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置Api的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiId Api的ID
+                     * @param _apiId Api的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiName Api名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置Api名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiName Api名称
+                     * @param _apiName Api名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 服务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceId 服务ID
+                     * @param _serviceId 服务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedTime 授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthorizedTime() const;
 
                     /**
                      * 设置授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthorizedTime 授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _authorizedTime 授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthorizedTime(const std::string& _authorizedTime);
 
                     /**
                      * 判断参数 AuthorizedTime 是否已赋值
                      * @return AuthorizedTime 是否已赋值
+                     * 
                      */
                     bool AuthorizedTimeHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiRegion Api所属地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiRegion() const;
 
                     /**
                      * 设置Api所属地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiRegion Api所属地域
+                     * @param _apiRegion Api所属地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiRegion(const std::string& _apiRegion);
 
                     /**
                      * 判断参数 ApiRegion 是否已赋值
                      * @return ApiRegion 是否已赋值
+                     * 
                      */
                     bool ApiRegionHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentName 授权绑定的环境
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置授权绑定的环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentName 授权绑定的环境
+                     * @param _environmentName 授权绑定的环境
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 

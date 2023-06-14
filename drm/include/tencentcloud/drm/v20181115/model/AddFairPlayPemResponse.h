@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FairPlayPemId 设置私钥后，后台返回的pem id，用来唯一标识一个私钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFairPlayPemId() const;
 
                     /**
                      * 判断参数 FairPlayPemId 是否已赋值
                      * @return FairPlayPemId 是否已赋值
+                     * 
                      */
                     bool FairPlayPemIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 私钥的优先级，优先级数值越高，优先级越高。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

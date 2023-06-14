@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return Schema 数据库名称
+                     * 
                      */
                     std::string GetSchema() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Schema 数据库名称
+                     * @param _schema 数据库名称
+                     * 
                      */
                     void SetSchema(const std::string& _schema);
 
                     /**
                      * 判断参数 Schema 是否已赋值
                      * @return Schema 是否已赋值
+                     * 
                      */
                     bool SchemaHasBeenSet() const;
 

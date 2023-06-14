@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取要查询的负载均衡监听器 ID 数组，最大为100个。
                      * @return ListenerIds 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
                      * 设置要查询的负载均衡监听器 ID 数组，最大为100个。
-                     * @param ListenerIds 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * @param _listenerIds 要查询的负载均衡监听器 ID 数组，最大为100个。
+                     * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
                     /**
                      * 判断参数 ListenerIds 是否已赋值
                      * @return ListenerIds 是否已赋值
+                     * 
                      */
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
                      * 获取要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
                      * @return Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
-                     * @param Protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * @param _protocol 要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取要查询的监听器的端口。
                      * @return Port 要查询的监听器的端口。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置要查询的监听器的端口。
-                     * @param Port 要查询的监听器的端口。
+                     * @param _port 要查询的监听器的端口。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

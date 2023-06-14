@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
                      * @return DealIds 订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
+                     * 
                      */
                     std::vector<std::string> GetDealIds() const;
 
                     /**
                      * 设置订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
-                     * @param DealIds 订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
+                     * @param _dealIds 订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
+                     * 
                      */
                     void SetDealIds(const std::vector<std::string>& _dealIds);
 
                     /**
                      * 判断参数 DealIds 是否已赋值
                      * @return DealIds 是否已赋值
+                     * 
                      */
                     bool DealIdsHasBeenSet() const;
 

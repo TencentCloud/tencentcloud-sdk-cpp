@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
                      * @return ProtectMode 主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
+                     * 
                      */
                     int64_t GetProtectMode() const;
 
                     /**
                      * 判断参数 ProtectMode 是否已赋值
                      * @return ProtectMode 是否已赋值
+                     * 
                      */
                     bool ProtectModeHasBeenSet() const;
 
                     /**
                      * 获取主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
                      * @return DeployMode 主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
+                     * 
                      */
                     int64_t GetDeployMode() const;
 
                     /**
                      * 判断参数 DeployMode 是否已赋值
                      * @return DeployMode 是否已赋值
+                     * 
                      */
                     bool DeployModeHasBeenSet() const;
 
                     /**
                      * 获取实例可用区信息，格式如 "ap-shanghai-1"。
                      * @return Zone 实例可用区信息，格式如 "ap-shanghai-1"。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveConfig 备库的配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SlaveConfig GetSlaveConfig() const;
 
                     /**
                      * 判断参数 SlaveConfig 是否已赋值
                      * @return SlaveConfig 是否已赋值
+                     * 
                      */
                     bool SlaveConfigHasBeenSet() const;
 
@@ -100,24 +108,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupConfig 强同步实例第二备库的配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BackupConfig GetBackupConfig() const;
 
                     /**
                      * 判断参数 BackupConfig 是否已赋值
                      * @return BackupConfig 是否已赋值
+                     * 
                      */
                     bool BackupConfigHasBeenSet() const;
 
                     /**
                      * 获取是否切换备库。
                      * @return Switched 是否切换备库。
+                     * 
                      */
                     bool GetSwitched() const;
 
                     /**
                      * 判断参数 Switched 是否已赋值
                      * @return Switched 是否已赋值
+                     * 
                      */
                     bool SwitchedHasBeenSet() const;
 

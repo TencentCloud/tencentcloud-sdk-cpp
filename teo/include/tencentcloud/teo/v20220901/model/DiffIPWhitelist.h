@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取最新IP白名单列表。
                      * @return LatestIPWhitelist 最新IP白名单列表。
+                     * 
                      */
                     IPWhitelist GetLatestIPWhitelist() const;
 
                     /**
                      * 设置最新IP白名单列表。
-                     * @param LatestIPWhitelist 最新IP白名单列表。
+                     * @param _latestIPWhitelist 最新IP白名单列表。
+                     * 
                      */
                     void SetLatestIPWhitelist(const IPWhitelist& _latestIPWhitelist);
 
                     /**
                      * 判断参数 LatestIPWhitelist 是否已赋值
                      * @return LatestIPWhitelist 是否已赋值
+                     * 
                      */
                     bool LatestIPWhitelistHasBeenSet() const;
 
                     /**
                      * 获取最新IP白名单列表相比于当前IP白名单列表，新增部分。
                      * @return AddedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，新增部分。
+                     * 
                      */
                     IPWhitelist GetAddedIPWhitelist() const;
 
                     /**
                      * 设置最新IP白名单列表相比于当前IP白名单列表，新增部分。
-                     * @param AddedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，新增部分。
+                     * @param _addedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，新增部分。
+                     * 
                      */
                     void SetAddedIPWhitelist(const IPWhitelist& _addedIPWhitelist);
 
                     /**
                      * 判断参数 AddedIPWhitelist 是否已赋值
                      * @return AddedIPWhitelist 是否已赋值
+                     * 
                      */
                     bool AddedIPWhitelistHasBeenSet() const;
 
                     /**
                      * 获取最新IP白名单列表相比于当前IP白名单列表，删减部分。
                      * @return RemovedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，删减部分。
+                     * 
                      */
                     IPWhitelist GetRemovedIPWhitelist() const;
 
                     /**
                      * 设置最新IP白名单列表相比于当前IP白名单列表，删减部分。
-                     * @param RemovedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，删减部分。
+                     * @param _removedIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，删减部分。
+                     * 
                      */
                     void SetRemovedIPWhitelist(const IPWhitelist& _removedIPWhitelist);
 
                     /**
                      * 判断参数 RemovedIPWhitelist 是否已赋值
                      * @return RemovedIPWhitelist 是否已赋值
+                     * 
                      */
                     bool RemovedIPWhitelistHasBeenSet() const;
 
                     /**
                      * 获取最新IP白名单列表相比于当前IP白名单列表，不变部分。
                      * @return NoChangeIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，不变部分。
+                     * 
                      */
                     IPWhitelist GetNoChangeIPWhitelist() const;
 
                     /**
                      * 设置最新IP白名单列表相比于当前IP白名单列表，不变部分。
-                     * @param NoChangeIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，不变部分。
+                     * @param _noChangeIPWhitelist 最新IP白名单列表相比于当前IP白名单列表，不变部分。
+                     * 
                      */
                     void SetNoChangeIPWhitelist(const IPWhitelist& _noChangeIPWhitelist);
 
                     /**
                      * 判断参数 NoChangeIPWhitelist 是否已赋值
                      * @return NoChangeIPWhitelist 是否已赋值
+                     * 
                      */
                     bool NoChangeIPWhitelistHasBeenSet() const;
 

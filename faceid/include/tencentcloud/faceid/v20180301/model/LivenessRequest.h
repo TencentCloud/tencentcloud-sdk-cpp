@@ -47,20 +47,23 @@ namespace TencentCloud
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      * @return VideoBase64 用于活体检测的视频，视频的BASE64值；
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
+                     * 
                      */
                     std::string GetVideoBase64() const;
 
                     /**
                      * 设置用于活体检测的视频，视频的BASE64值；
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
-                     * @param VideoBase64 用于活体检测的视频，视频的BASE64值；
+                     * @param _videoBase64 用于活体检测的视频，视频的BASE64值；
 BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
+                     * 
                      */
                     void SetVideoBase64(const std::string& _videoBase64);
 
                     /**
                      * 判断参数 VideoBase64 是否已赋值
                      * @return VideoBase64 是否已赋值
+                     * 
                      */
                     bool VideoBase64HasBeenSet() const;
 
@@ -69,20 +72,23 @@ BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
 LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
                      * @return LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
 LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * 
                      */
                     std::string GetLivenessType() const;
 
                     /**
                      * 设置活体检测类型，取值：LIP/ACTION/SILENT。
 LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
-                     * @param LivenessType 活体检测类型，取值：LIP/ACTION/SILENT。
+                     * @param _livenessType 活体检测类型，取值：LIP/ACTION/SILENT。
 LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。
+                     * 
                      */
                     void SetLivenessType(const std::string& _livenessType);
 
                     /**
                      * 判断参数 LivenessType 是否已赋值
                      * @return LivenessType 是否已赋值
+                     * 
                      */
                     bool LivenessTypeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                      * @return ValidateData 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
 动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
 静默模式传参：不需要传递此参数。
+                     * 
                      */
                     std::string GetValidateData() const;
 
@@ -100,15 +107,17 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                      * 设置数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
 动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
 静默模式传参：不需要传递此参数。
-                     * @param ValidateData 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
+                     * @param _validateData 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
 动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
 静默模式传参：不需要传递此参数。
+                     * 
                      */
                     void SetValidateData(const std::string& _validateData);
 
                     /**
                      * 判断参数 ValidateData 是否已赋值
                      * @return ValidateData 是否已赋值
+                     * 
                      */
                     bool ValidateDataHasBeenSet() const;
 
@@ -121,6 +130,7 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
 {
 "BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
 }
+                     * 
                      */
                     std::string GetOptional() const;
 
@@ -129,16 +139,18 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
 {
 "BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
 }
-                     * @param Optional 额外配置，传入JSON字符串。
+                     * @param _optional 额外配置，传入JSON字符串。
 {
 "BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
 }
+                     * 
                      */
                     void SetOptional(const std::string& _optional);
 
                     /**
                      * 判断参数 Optional 是否已赋值
                      * @return Optional 是否已赋值
+                     * 
                      */
                     bool OptionalHasBeenSet() const;
 

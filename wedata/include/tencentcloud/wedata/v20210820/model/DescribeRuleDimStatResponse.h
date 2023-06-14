@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取结果
                      * @return Data 结果
+                     * 
                      */
                     RuleDimStat GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

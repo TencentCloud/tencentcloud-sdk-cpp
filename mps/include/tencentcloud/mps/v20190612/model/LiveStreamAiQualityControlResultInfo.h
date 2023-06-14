@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityControlResults 质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QualityControlResult> GetQualityControlResults() const;
 
                     /**
                      * 设置质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QualityControlResults 质检结果列表。
+                     * @param _qualityControlResults 质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQualityControlResults(const std::vector<QualityControlResult>& _qualityControlResults);
 
                     /**
                      * 判断参数 QualityControlResults 是否已赋值
                      * @return QualityControlResults 是否已赋值
+                     * 
                      */
                     bool QualityControlResultsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnoseResults 格式诊断结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiagnoseResult> GetDiagnoseResults() const;
 
                     /**
                      * 设置格式诊断结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiagnoseResults 格式诊断结果列表。
+                     * @param _diagnoseResults 格式诊断结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiagnoseResults(const std::vector<DiagnoseResult>& _diagnoseResults);
 
                     /**
                      * 判断参数 DiagnoseResults 是否已赋值
                      * @return DiagnoseResults 是否已赋值
+                     * 
                      */
                     bool DiagnoseResultsHasBeenSet() const;
 

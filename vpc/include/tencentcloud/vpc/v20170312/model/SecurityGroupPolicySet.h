@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+                     * @param _version 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 出站规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecurityGroupPolicy> GetEgress() const;
 
                     /**
                      * 设置出站规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Egress 出站规则。
+                     * @param _egress 出站规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEgress(const std::vector<SecurityGroupPolicy>& _egress);
 
                     /**
                      * 判断参数 Egress 是否已赋值
                      * @return Egress 是否已赋值
+                     * 
                      */
                     bool EgressHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ingress 入站规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecurityGroupPolicy> GetIngress() const;
 
                     /**
                      * 设置入站规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ingress 入站规则。
+                     * @param _ingress 入站规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIngress(const std::vector<SecurityGroupPolicy>& _ingress);
 
                     /**
                      * 判断参数 Ingress 是否已赋值
                      * @return Ingress 是否已赋值
+                     * 
                      */
                     bool IngressHasBeenSet() const;
 

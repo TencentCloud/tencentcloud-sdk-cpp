@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取身份提供商类型 11角色身份提供商
                      * @return ProviderType 身份提供商类型 11角色身份提供商
+                     * 
                      */
                     uint64_t GetProviderType() const;
 
                     /**
                      * 判断参数 ProviderType 是否已赋值
                      * @return ProviderType 是否已赋值
+                     * 
                      */
                     bool ProviderTypeHasBeenSet() const;
 
                     /**
                      * 获取身份提供商URL
                      * @return IdentityUrl 身份提供商URL
+                     * 
                      */
                     std::string GetIdentityUrl() const;
 
                     /**
                      * 判断参数 IdentityUrl 是否已赋值
                      * @return IdentityUrl 是否已赋值
+                     * 
                      */
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
                      * 获取签名公钥
                      * @return IdentityKey 签名公钥
+                     * 
                      */
                     std::string GetIdentityKey() const;
 
                     /**
                      * 判断参数 IdentityKey 是否已赋值
                      * @return IdentityKey 是否已赋值
+                     * 
                      */
                     bool IdentityKeyHasBeenSet() const;
 
                     /**
                      * 获取客户端id
                      * @return ClientId 客户端id
+                     * 
                      */
                     std::vector<std::string> GetClientId() const;
 
                     /**
                      * 判断参数 ClientId 是否已赋值
                      * @return ClientId 是否已赋值
+                     * 
                      */
                     bool ClientIdHasBeenSet() const;
 
                     /**
                      * 获取状态：0:未设置，11:已开启，2:已禁用
                      * @return Status 状态：0:未设置，11:已开启，2:已禁用
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

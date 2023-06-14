@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取子账户UIN
                      * @return SubaccountUin 子账户UIN
+                     * 
                      */
                     std::string GetSubaccountUin() const;
 
                     /**
                      * 设置子账户UIN
-                     * @param SubaccountUin 子账户UIN
+                     * @param _subaccountUin 子账户UIN
+                     * 
                      */
                     void SetSubaccountUin(const std::string& _subaccountUin);
 
                     /**
                      * 判断参数 SubaccountUin 是否已赋值
                      * @return SubaccountUin 是否已赋值
+                     * 
                      */
                     bool SubaccountUinHasBeenSet() const;
 
                     /**
                      * 获取子账户客户端证书中的CommonName字段
                      * @return CN 子账户客户端证书中的CommonName字段
+                     * 
                      */
                     std::string GetCN() const;
 
                     /**
                      * 设置子账户客户端证书中的CommonName字段
-                     * @param CN 子账户客户端证书中的CommonName字段
+                     * @param _cN 子账户客户端证书中的CommonName字段
+                     * 
                      */
                     void SetCN(const std::string& _cN);
 
                     /**
                      * 判断参数 CN 是否已赋值
                      * @return CN 是否已赋值
+                     * 
                      */
                     bool CNHasBeenSet() const;
 

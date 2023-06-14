@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 当前分区id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPartitions() const;
 
                     /**
                      * 设置当前分区id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partitions 当前分区id。
+                     * @param _partitions 当前分区id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitions(const uint64_t& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberOfEntries 消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNumberOfEntries() const;
 
                     /**
                      * 设置消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NumberOfEntries 消息数量。
+                     * @param _numberOfEntries 消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNumberOfEntries(const uint64_t& _numberOfEntries);
 
                     /**
                      * 判断参数 NumberOfEntries 是否已赋值
                      * @return NumberOfEntries 是否已赋值
+                     * 
                      */
                     bool NumberOfEntriesHasBeenSet() const;
 
@@ -95,56 +101,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgBacklog 消息积压数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMsgBacklog() const;
 
                     /**
                      * 设置消息积压数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgBacklog 消息积压数量。
+                     * @param _msgBacklog 消息积压数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgBacklog(const uint64_t& _msgBacklog);
 
                     /**
                      * 判断参数 MsgBacklog 是否已赋值
                      * @return MsgBacklog 是否已赋值
+                     * 
                      */
                     bool MsgBacklogHasBeenSet() const;
 
                     /**
                      * 获取消费者每秒分发消息的数量之和。
                      * @return MsgRateOut 消费者每秒分发消息的数量之和。
+                     * 
                      */
                     std::string GetMsgRateOut() const;
 
                     /**
                      * 设置消费者每秒分发消息的数量之和。
-                     * @param MsgRateOut 消费者每秒分发消息的数量之和。
+                     * @param _msgRateOut 消费者每秒分发消息的数量之和。
+                     * 
                      */
                     void SetMsgRateOut(const std::string& _msgRateOut);
 
                     /**
                      * 判断参数 MsgRateOut 是否已赋值
                      * @return MsgRateOut 是否已赋值
+                     * 
                      */
                     bool MsgRateOutHasBeenSet() const;
 
                     /**
                      * 获取消费者每秒消息的byte。
                      * @return MsgThroughputOut 消费者每秒消息的byte。
+                     * 
                      */
                     std::string GetMsgThroughputOut() const;
 
                     /**
                      * 设置消费者每秒消息的byte。
-                     * @param MsgThroughputOut 消费者每秒消息的byte。
+                     * @param _msgThroughputOut 消费者每秒消息的byte。
+                     * 
                      */
                     void SetMsgThroughputOut(const std::string& _msgThroughputOut);
 
                     /**
                      * 判断参数 MsgThroughputOut 是否已赋值
                      * @return MsgThroughputOut 是否已赋值
+                     * 
                      */
                     bool MsgThroughputOutHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgRateExpired 超时丢弃比例。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsgRateExpired() const;
 
                     /**
                      * 设置超时丢弃比例。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgRateExpired 超时丢弃比例。
+                     * @param _msgRateExpired 超时丢弃比例。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgRateExpired(const std::string& _msgRateExpired);
 
                     /**
                      * 判断参数 MsgRateExpired 是否已赋值
                      * @return MsgRateExpired 是否已赋值
+                     * 
                      */
                     bool MsgRateExpiredHasBeenSet() const;
 

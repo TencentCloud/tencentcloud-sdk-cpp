@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取SIP服务器地址
                      * @return Host SIP服务器地址
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置SIP服务器地址
-                     * @param Host SIP服务器地址
+                     * @param _host SIP服务器地址
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取SIP服务器端口
                      * @return Port SIP服务器端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置SIP服务器端口
-                     * @param Port SIP服务器端口
+                     * @param _port SIP服务器端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取SIP服务器编码
                      * @return Serial SIP服务器编码
+                     * 
                      */
                     std::string GetSerial() const;
 
                     /**
                      * 设置SIP服务器编码
-                     * @param Serial SIP服务器编码
+                     * @param _serial SIP服务器编码
+                     * 
                      */
                     void SetSerial(const std::string& _serial);
 
                     /**
                      * 判断参数 Serial 是否已赋值
                      * @return Serial 是否已赋值
+                     * 
                      */
                     bool SerialHasBeenSet() const;
 
                     /**
                      * 获取SIP服务器域
                      * @return Realm SIP服务器域
+                     * 
                      */
                     std::string GetRealm() const;
 
                     /**
                      * 设置SIP服务器域
-                     * @param Realm SIP服务器域
+                     * @param _realm SIP服务器域
+                     * 
                      */
                     void SetRealm(const std::string& _realm);
 
                     /**
                      * 判断参数 Realm 是否已赋值
                      * @return Realm 是否已赋值
+                     * 
                      */
                     bool RealmHasBeenSet() const;
 

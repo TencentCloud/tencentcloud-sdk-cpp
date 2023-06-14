@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取仓库是否存在
                      * @return IsExist 仓库是否存在
+                     * 
                      */
                     bool GetIsExist() const;
 
                     /**
                      * 设置仓库是否存在
-                     * @param IsExist 仓库是否存在
+                     * @param _isExist 仓库是否存在
+                     * 
                      */
                     void SetIsExist(const bool& _isExist);
 
                     /**
                      * 判断参数 IsExist 是否已赋值
                      * @return IsExist 是否已赋值
+                     * 
                      */
                     bool IsExistHasBeenSet() const;
 

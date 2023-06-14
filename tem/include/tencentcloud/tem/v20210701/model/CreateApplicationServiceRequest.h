@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取服务id
                      * @return ApplicationId 服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
-                     * @param ApplicationId 服务id
+                     * @param _applicationId 服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvironmentId 环境ID
+                     * @param _environmentId 环境ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取访问方式详情
                      * @return Service 访问方式详情
+                     * 
                      */
                     ServicePortMapping GetService() const;
 
                     /**
                      * 设置访问方式详情
-                     * @param Service 访问方式详情
+                     * @param _service 访问方式详情
+                     * 
                      */
                     void SetService(const ServicePortMapping& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 

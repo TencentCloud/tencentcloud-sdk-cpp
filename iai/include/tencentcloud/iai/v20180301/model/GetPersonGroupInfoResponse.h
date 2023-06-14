@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取包含此人员的人员库及描述字段内容列表
                      * @return PersonGroupInfos 包含此人员的人员库及描述字段内容列表
+                     * 
                      */
                     std::vector<PersonGroupInfo> GetPersonGroupInfos() const;
 
                     /**
                      * 判断参数 PersonGroupInfos 是否已赋值
                      * @return PersonGroupInfos 是否已赋值
+                     * 
                      */
                     bool PersonGroupInfosHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupNum 人员库总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGroupNum() const;
 
                     /**
                      * 判断参数 GroupNum 是否已赋值
                      * @return GroupNum 是否已赋值
+                     * 
                      */
                     bool GroupNumHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceModelVersion 人脸识别服务所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

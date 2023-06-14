@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagInfoUnit> GetTags() const;
 
                     /**
                      * 设置标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签信息
+                     * @param _tags 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<TagInfoUnit>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

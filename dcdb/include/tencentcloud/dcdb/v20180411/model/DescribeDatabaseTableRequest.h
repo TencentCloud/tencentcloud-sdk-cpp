@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：dcdbt-ow7t8lmc。
                      * @return InstanceId 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，形如：dcdbt-ow7t8lmc。
-                     * @param InstanceId 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * @param _instanceId 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名称，通过 DescribeDatabases 接口获取。
                      * @return DbName 数据库名称，通过 DescribeDatabases 接口获取。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称，通过 DescribeDatabases 接口获取。
-                     * @param DbName 数据库名称，通过 DescribeDatabases 接口获取。
+                     * @param _dbName 数据库名称，通过 DescribeDatabases 接口获取。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取表名称，通过 DescribeDatabaseObjects 接口获取。
                      * @return Table 表名称，通过 DescribeDatabaseObjects 接口获取。
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名称，通过 DescribeDatabaseObjects 接口获取。
-                     * @param Table 表名称，通过 DescribeDatabaseObjects 接口获取。
+                     * @param _table 表名称，通过 DescribeDatabaseObjects 接口获取。
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 

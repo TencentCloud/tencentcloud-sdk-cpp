@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取
                      * @return EipId Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取
+                     * 
                      */
                     std::string GetEipId() const;
 
                     /**
                      * 设置Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取
-                     * @param EipId Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取
+                     * @param _eipId Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取
+                     * 
                      */
                     void SetEipId(const std::string& _eipId);
 
                     /**
                      * 判断参数 EipId 是否已赋值
                      * @return EipId 是否已赋值
+                     * 
                      */
                     bool EipIdHasBeenSet() const;
 
                     /**
                      * 获取EIP 实例别名
                      * @return EipName EIP 实例别名
+                     * 
                      */
                     std::string GetEipName() const;
 
                     /**
                      * 设置EIP 实例别名
-                     * @param EipName EIP 实例别名
+                     * @param _eipName EIP 实例别名
+                     * 
                      */
                     void SetEipName(const std::string& _eipName);
 
                     /**
                      * 判断参数 EipName 是否已赋值
                      * @return EipName 是否已赋值
+                     * 
                      */
                     bool EipNameHasBeenSet() const;
 

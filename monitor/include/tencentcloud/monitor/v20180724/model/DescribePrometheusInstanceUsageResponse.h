@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageSet 用量列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusInstanceTenantUsage> GetUsageSet() const;
 
                     /**
                      * 判断参数 UsageSet 是否已赋值
                      * @return UsageSet 是否已赋值
+                     * 
                      */
                     bool UsageSetHasBeenSet() const;
 

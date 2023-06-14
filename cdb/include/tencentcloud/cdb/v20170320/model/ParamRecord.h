@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取参数名称
                      * @return ParamName 参数名称
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称
-                     * @param ParamName 参数名称
+                     * @param _paramName 参数名称
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取参数修改前的值
                      * @return OldValue 参数修改前的值
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置参数修改前的值
-                     * @param OldValue 参数修改前的值
+                     * @param _oldValue 参数修改前的值
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 
                     /**
                      * 获取参数修改后的值
                      * @return NewValue 参数修改后的值
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置参数修改后的值
-                     * @param NewValue 参数修改后的值
+                     * @param _newValue 参数修改后的值
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 
                     /**
                      * 获取参数是否修改成功
                      * @return IsSucess 参数是否修改成功
+                     * 
                      */
                     bool GetIsSucess() const;
 
                     /**
                      * 设置参数是否修改成功
-                     * @param IsSucess 参数是否修改成功
+                     * @param _isSucess 参数是否修改成功
+                     * 
                      */
                     void SetIsSucess(const bool& _isSucess);
 
                     /**
                      * 判断参数 IsSucess 是否已赋值
                      * @return IsSucess 是否已赋值
+                     * 
                      */
                     bool IsSucessHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

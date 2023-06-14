@@ -271,6 +271,8 @@
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamStatusRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamStatusResponse.h>
+#include <tencentcloud/live/v20180801/model/RestartLivePullStreamTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/RestartLivePullStreamTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/ResumeDelayLiveStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/ResumeDelayLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/ResumeLiveStreamRequest.h>
@@ -671,6 +673,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPullStreamStatusResponse> ModifyPullStreamStatusOutcome;
                 typedef std::future<ModifyPullStreamStatusOutcome> ModifyPullStreamStatusOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyPullStreamStatusRequest&, ModifyPullStreamStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPullStreamStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartLivePullStreamTaskResponse> RestartLivePullStreamTaskOutcome;
+                typedef std::future<RestartLivePullStreamTaskOutcome> RestartLivePullStreamTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::RestartLivePullStreamTaskRequest&, RestartLivePullStreamTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartLivePullStreamTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeDelayLiveStreamResponse> ResumeDelayLiveStreamOutcome;
                 typedef std::future<ResumeDelayLiveStreamOutcome> ResumeDelayLiveStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ResumeDelayLiveStreamRequest&, ResumeDelayLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeDelayLiveStreamAsyncHandler;
@@ -1917,6 +1922,18 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyPullStreamStatusOutcome ModifyPullStreamStatus(const Model::ModifyPullStreamStatusRequest &request);
                 void ModifyPullStreamStatusAsync(const Model::ModifyPullStreamStatusRequest& request, const ModifyPullStreamStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPullStreamStatusOutcomeCallable ModifyPullStreamStatusCallable(const Model::ModifyPullStreamStatusRequest& request);
+
+                /**
+                 *将正在运行的拉流转推任务进行重启。
+注意：
+1. 重启任务会造成推流中断。
+2. 点播源任务的重启，会根据VodRefreshType决定是续播还是从头开始播。
+                 * @param req RestartLivePullStreamTaskRequest
+                 * @return RestartLivePullStreamTaskOutcome
+                 */
+                RestartLivePullStreamTaskOutcome RestartLivePullStreamTask(const Model::RestartLivePullStreamTaskRequest &request);
+                void RestartLivePullStreamTaskAsync(const Model::RestartLivePullStreamTaskRequest& request, const RestartLivePullStreamTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartLivePullStreamTaskOutcomeCallable RestartLivePullStreamTaskCallable(const Model::RestartLivePullStreamTaskRequest& request);
 
                 /**
                  *取消直播流设置的延时配置，恢复实时直播画面。

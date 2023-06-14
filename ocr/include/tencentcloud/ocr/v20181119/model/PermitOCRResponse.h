@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取英文姓名
                      * @return EnglishName 英文姓名
+                     * 
                      */
                     std::string GetEnglishName() const;
 
                     /**
                      * 判断参数 EnglishName 是否已赋值
                      * @return EnglishName 是否已赋值
+                     * 
                      */
                     bool EnglishNameHasBeenSet() const;
 
                     /**
                      * 获取证件号
                      * @return Number 证件号
+                     * 
                      */
                     std::string GetNumber() const;
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取有效期限
                      * @return ValidDate 有效期限
+                     * 
                      */
                     std::string GetValidDate() const;
 
                     /**
                      * 判断参数 ValidDate 是否已赋值
                      * @return ValidDate 是否已赋值
+                     * 
                      */
                     bool ValidDateHasBeenSet() const;
 
                     /**
                      * 获取签发机关
                      * @return IssueAuthority 签发机关
+                     * 
                      */
                     std::string GetIssueAuthority() const;
 
                     /**
                      * 判断参数 IssueAuthority 是否已赋值
                      * @return IssueAuthority 是否已赋值
+                     * 
                      */
                     bool IssueAuthorityHasBeenSet() const;
 
                     /**
                      * 获取签发地点
                      * @return IssueAddress 签发地点
+                     * 
                      */
                     std::string GetIssueAddress() const;
 
                     /**
                      * 判断参数 IssueAddress 是否已赋值
                      * @return IssueAddress 是否已赋值
+                     * 
                      */
                     bool IssueAddressHasBeenSet() const;
 
                     /**
                      * 获取出生日期
                      * @return Birthday 出生日期
+                     * 
                      */
                     std::string GetBirthday() const;
 
                     /**
                      * 判断参数 Birthday 是否已赋值
                      * @return Birthday 是否已赋值
+                     * 
                      */
                     bool BirthdayHasBeenSet() const;
 

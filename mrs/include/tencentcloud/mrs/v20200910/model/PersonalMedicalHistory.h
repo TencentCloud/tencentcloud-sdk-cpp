@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthPlace 出生史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirthPlace() const;
 
                     /**
                      * 设置出生史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BirthPlace 出生史
+                     * @param _birthPlace 出生史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBirthPlace(const std::string& _birthPlace);
 
                     /**
                      * 判断参数 BirthPlace 是否已赋值
                      * @return BirthPlace 是否已赋值
+                     * 
                      */
                     bool BirthPlaceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePlace 居住史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLivePlace() const;
 
                     /**
                      * 设置居住史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LivePlace 居住史
+                     * @param _livePlace 居住史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLivePlace(const std::string& _livePlace);
 
                     /**
                      * 判断参数 LivePlace 是否已赋值
                      * @return LivePlace 是否已赋值
+                     * 
                      */
                     bool LivePlaceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Job 工作史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJob() const;
 
                     /**
                      * 设置工作史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Job 工作史
+                     * @param _job 工作史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJob(const std::string& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmokeHistory 吸烟史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSmokeHistory() const;
 
                     /**
                      * 设置吸烟史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SmokeHistory 吸烟史
+                     * @param _smokeHistory 吸烟史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSmokeHistory(const std::string& _smokeHistory);
 
                     /**
                      * 判断参数 SmokeHistory 是否已赋值
                      * @return SmokeHistory 是否已赋值
+                     * 
                      */
                     bool SmokeHistoryHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlcoholicHistory 饮酒史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlcoholicHistory() const;
 
                     /**
                      * 设置饮酒史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlcoholicHistory 饮酒史
+                     * @param _alcoholicHistory 饮酒史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlcoholicHistory(const std::string& _alcoholicHistory);
 
                     /**
                      * 判断参数 AlcoholicHistory 是否已赋值
                      * @return AlcoholicHistory 是否已赋值
+                     * 
                      */
                     bool AlcoholicHistoryHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID，需要系统自动创建环境时，此字段不传
                      * @return EnvId 环境ID，需要系统自动创建环境时，此字段不传
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID，需要系统自动创建环境时，此字段不传
-                     * @param EnvId 环境ID，需要系统自动创建环境时，此字段不传
+                     * @param _envId 环境ID，需要系统自动创建环境时，此字段不传
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取微信 AppId，微信必传
                      * @return WxAppId 微信 AppId，微信必传
+                     * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
                      * 设置微信 AppId，微信必传
-                     * @param WxAppId 微信 AppId，微信必传
+                     * @param _wxAppId 微信 AppId，微信必传
+                     * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
 
                     /**
                      * 判断参数 WxAppId 是否已赋值
                      * @return WxAppId 是否已赋值
+                     * 
                      */
                     bool WxAppIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Source 付费来源
 <li>miniapp</li>
 <li>qcloud</li>
+                     * 
                      */
                     std::string GetSource() const;
 
@@ -92,33 +99,38 @@ namespace TencentCloud
                      * 设置付费来源
 <li>miniapp</li>
 <li>qcloud</li>
-                     * @param Source 付费来源
+                     * @param _source 付费来源
 <li>miniapp</li>
 <li>qcloud</li>
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
                      * @return FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * 
                      */
                     std::string GetFreeQuota() const;
 
                     /**
                      * 设置用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
-                     * @param FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * @param _freeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * 
                      */
                     void SetFreeQuota(const std::string& _freeQuota);
 
                     /**
                      * 判断参数 FreeQuota 是否已赋值
                      * @return FreeQuota 是否已赋值
+                     * 
                      */
                     bool FreeQuotaHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
 和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
+                     * 
                      */
                     std::string GetEnvSource() const;
 
@@ -142,35 +155,40 @@ namespace TencentCloud
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
 和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
-                     * @param EnvSource 环境创建来源，取值：
+                     * @param _envSource 环境创建来源，取值：
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
 和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
+                     * 
                      */
                     void SetEnvSource(const std::string& _envSource);
 
                     /**
                      * 判断参数 EnvSource 是否已赋值
                      * @return EnvSource 是否已赋值
+                     * 
                      */
                     bool EnvSourceHasBeenSet() const;
 
                     /**
                      * 获取环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
                      * @return Alias 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
-                     * @param Alias 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
+                     * @param _alias 环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -181,6 +199,7 @@ namespace TencentCloud
                      * @return Channel 如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
+                     * 
                      */
                     std::string GetChannel() const;
 
@@ -188,33 +207,38 @@ namespace TencentCloud
                      * 设置如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
-                     * @param Channel 如果envsource为miniapp, channel可以为ide或api;
+                     * @param _channel 如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework
 和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取扩展ID
                      * @return ExtensionId 扩展ID
+                     * 
                      */
                     std::string GetExtensionId() const;
 
                     /**
                      * 设置扩展ID
-                     * @param ExtensionId 扩展ID
+                     * @param _extensionId 扩展ID
+                     * 
                      */
                     void SetExtensionId(const std::string& _extensionId);
 
                     /**
                      * 判断参数 ExtensionId 是否已赋值
                      * @return ExtensionId 是否已赋值
+                     * 
                      */
                     bool ExtensionIdHasBeenSet() const;
 
@@ -225,6 +249,7 @@ namespace TencentCloud
                      * @return Flag 订单标记。建议使用方统一转大小写之后再判断。
 <li>QuickStart：快速启动来源</li>
 <li>Activity：活动来源</li>
+                     * 
                      */
                     std::string GetFlag() const;
 
@@ -232,51 +257,59 @@ namespace TencentCloud
                      * 设置订单标记。建议使用方统一转大小写之后再判断。
 <li>QuickStart：快速启动来源</li>
 <li>Activity：活动来源</li>
-                     * @param Flag 订单标记。建议使用方统一转大小写之后再判断。
+                     * @param _flag 订单标记。建议使用方统一转大小写之后再判断。
 <li>QuickStart：快速启动来源</li>
 <li>Activity：活动来源</li>
+                     * 
                      */
                     void SetFlag(const std::string& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取环境别名，无字符类型限制
                      * @return EnvAlias 环境别名，无字符类型限制
+                     * 
                      */
                     std::string GetEnvAlias() const;
 
                     /**
                      * 设置环境别名，无字符类型限制
-                     * @param EnvAlias 环境别名，无字符类型限制
+                     * @param _envAlias 环境别名，无字符类型限制
+                     * 
                      */
                     void SetEnvAlias(const std::string& _envAlias);
 
                     /**
                      * 判断参数 EnvAlias 是否已赋值
                      * @return EnvAlias 是否已赋值
+                     * 
                      */
                     bool EnvAliasHasBeenSet() const;
 
                     /**
                      * 获取附加字段，用于透传额外的自定义信息
                      * @return Extra 附加字段，用于透传额外的自定义信息
+                     * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 设置附加字段，用于透传额外的自定义信息
-                     * @param Extra 附加字段，用于透传额外的自定义信息
+                     * @param _extra 附加字段，用于透传额外的自定义信息
+                     * 
                      */
                     void SetExtra(const std::string& _extra);
 
                     /**
                      * 判断参数 Extra 是否已赋值
                      * @return Extra 是否已赋值
+                     * 
                      */
                     bool ExtraHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interface 接口名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInterface() const;
 
                     /**
                      * 设置接口名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Interface 接口名
+                     * @param _interface 接口名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInterface(const std::string& _interface);
 
                     /**
                      * 判断参数 Interface 是否已赋值
                      * @return Interface 是否已赋值
+                     * 
                      */
                     bool InterfaceHasBeenSet() const;
 

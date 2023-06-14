@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取平台编号
                      * @return PlatformCode 平台编号
+                     * 
                      */
                     std::string GetPlatformCode() const;
 
                     /**
                      * 设置平台编号
-                     * @param PlatformCode 平台编号
+                     * @param _platformCode 平台编号
+                     * 
                      */
                     void SetPlatformCode(const std::string& _platformCode);
 
                     /**
                      * 判断参数 PlatformCode 是否已赋值
                      * @return PlatformCode 是否已赋值
+                     * 
                      */
                     bool PlatformCodeHasBeenSet() const;
 
                     /**
                      * 获取渠道方收款商户编号，由渠道方(银行)提 供。
                      * @return ChannelMerchantNo 渠道方收款商户编号，由渠道方(银行)提 供。
+                     * 
                      */
                     std::string GetChannelMerchantNo() const;
 
                     /**
                      * 设置渠道方收款商户编号，由渠道方(银行)提 供。
-                     * @param ChannelMerchantNo 渠道方收款商户编号，由渠道方(银行)提 供。
+                     * @param _channelMerchantNo 渠道方收款商户编号，由渠道方(银行)提 供。
+                     * 
                      */
                     void SetChannelMerchantNo(const std::string& _channelMerchantNo);
 
                     /**
                      * 判断参数 ChannelMerchantNo 是否已赋值
                      * @return ChannelMerchantNo 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantNoHasBeenSet() const;
 
@@ -83,56 +89,65 @@ namespace TencentCloud
 0:不验证
                      * @return ChannelCheckFlag 是否需要向渠道进行 商户信息验证 1:验证
 0:不验证
+                     * 
                      */
                     std::string GetChannelCheckFlag() const;
 
                     /**
                      * 设置是否需要向渠道进行 商户信息验证 1:验证
 0:不验证
-                     * @param ChannelCheckFlag 是否需要向渠道进行 商户信息验证 1:验证
+                     * @param _channelCheckFlag 是否需要向渠道进行 商户信息验证 1:验证
 0:不验证
+                     * 
                      */
                     void SetChannelCheckFlag(const std::string& _channelCheckFlag);
 
                     /**
                      * 判断参数 ChannelCheckFlag 是否已赋值
                      * @return ChannelCheckFlag 是否已赋值
+                     * 
                      */
                     bool ChannelCheckFlagHasBeenSet() const;
 
                     /**
                      * 获取收款商户名称
                      * @return MerchantName 收款商户名称
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置收款商户名称
-                     * @param MerchantName 收款商户名称
+                     * @param _merchantName 收款商户名称
+                     * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 
                     /**
                      * 获取是否开通 B2B 支付 1:开通 0:不开通 缺省:1
                      * @return BusinessPayFlag 是否开通 B2B 支付 1:开通 0:不开通 缺省:1
+                     * 
                      */
                     std::string GetBusinessPayFlag() const;
 
                     /**
                      * 设置是否开通 B2B 支付 1:开通 0:不开通 缺省:1
-                     * @param BusinessPayFlag 是否开通 B2B 支付 1:开通 0:不开通 缺省:1
+                     * @param _businessPayFlag 是否开通 B2B 支付 1:开通 0:不开通 缺省:1
+                     * 
                      */
                     void SetBusinessPayFlag(const std::string& _businessPayFlag);
 
                     /**
                      * 判断参数 BusinessPayFlag 是否已赋值
                      * @return BusinessPayFlag 是否已赋值
+                     * 
                      */
                     bool BusinessPayFlagHasBeenSet() const;
 

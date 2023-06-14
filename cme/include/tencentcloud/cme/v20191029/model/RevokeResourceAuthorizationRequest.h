@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取资源所属实体。
                      * @return Owner 资源所属实体。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置资源所属实体。
-                     * @param Owner 资源所属实体。
+                     * @param _owner 资源所属实体。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取被授权资源。
                      * @return Resources 被授权资源。
+                     * 
                      */
                     std::vector<Resource> GetResources() const;
 
                     /**
                      * 设置被授权资源。
-                     * @param Resources 被授权资源。
+                     * @param _resources 被授权资源。
+                     * 
                      */
                     void SetResources(const std::vector<Resource>& _resources);
 
                     /**
                      * 判断参数 Resources 是否已赋值
                      * @return Resources 是否已赋值
+                     * 
                      */
                     bool ResourcesHasBeenSet() const;
 
                     /**
                      * 获取被授权目标实体。
                      * @return Authorizees 被授权目标实体。
+                     * 
                      */
                     std::vector<Entity> GetAuthorizees() const;
 
                     /**
                      * 设置被授权目标实体。
-                     * @param Authorizees 被授权目标实体。
+                     * @param _authorizees 被授权目标实体。
+                     * 
                      */
                     void SetAuthorizees(const std::vector<Entity>& _authorizees);
 
                     /**
                      * 判断参数 Authorizees 是否已赋值
                      * @return Authorizees 是否已赋值
+                     * 
                      */
                     bool AuthorizeesHasBeenSet() const;
 
@@ -127,6 +139,7 @@ namespace TencentCloud
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
+                     * 
                      */
                     std::vector<std::string> GetPermissions() const;
 
@@ -136,35 +149,40 @@ namespace TencentCloud
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
-                     * @param Permissions 详细授权值。 取值有：
+                     * @param _permissions 详细授权值。 取值有：
 <li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>
 <li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>
 <li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>
 <li>W：可修改、删除媒资。</li>
+                     * 
                      */
                     void SetPermissions(const std::vector<std::string>& _permissions);
 
                     /**
                      * 判断参数 Permissions 是否已赋值
                      * @return Permissions 是否已赋值
+                     * 
                      */
                     bool PermissionsHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

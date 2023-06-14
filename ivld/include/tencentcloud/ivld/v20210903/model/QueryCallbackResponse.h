@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务分析完成后回调地址
                      * @return TaskFinishNotifyURL 任务分析完成后回调地址
+                     * 
                      */
                     std::string GetTaskFinishNotifyURL() const;
 
                     /**
                      * 判断参数 TaskFinishNotifyURL 是否已赋值
                      * @return TaskFinishNotifyURL 是否已赋值
+                     * 
                      */
                     bool TaskFinishNotifyURLHasBeenSet() const;
 
                     /**
                      * 获取媒体导入完成后回调地址
                      * @return MediaFinishNotifyURL 媒体导入完成后回调地址
+                     * 
                      */
                     std::string GetMediaFinishNotifyURL() const;
 
                     /**
                      * 判断参数 MediaFinishNotifyURL 是否已赋值
                      * @return MediaFinishNotifyURL 是否已赋值
+                     * 
                      */
                     bool MediaFinishNotifyURLHasBeenSet() const;
 

@@ -52,6 +52,7 @@ PullPicPushLive -图片。
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
+                     * 
                      */
                     std::string GetSourceType() const;
 
@@ -60,16 +61,18 @@ PullPicPushLive -图片。
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
-                     * @param SourceType 拉流源的类型：
+                     * @param _sourceType 拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播，
 PullPicPushLive -图片。
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -98,6 +101,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 4. 视频编码格式仅支持: H264, H265。
 5. 音频编码格式仅支持: AAC。
 6. 点播源请使用小文件，尽量时长保持在1小时内，较大文件打开和续播耗时较久，耗时超过15秒会有无法正常转推风险。
+                     * 
                      */
                     std::vector<std::string> GetSourceUrls() const;
 
@@ -114,7 +118,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 4. 视频编码格式仅支持: H264, H265。
 5. 音频编码格式仅支持: AAC。
 6. 点播源请使用小文件，尽量时长保持在1小时内，较大文件打开和续播耗时较久，耗时超过15秒会有无法正常转推风险。
-                     * @param SourceUrls 拉流源 url 列表。
+                     * @param _sourceUrls 拉流源 url 列表。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
@@ -126,12 +130,14 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 4. 视频编码格式仅支持: H264, H265。
 5. 音频编码格式仅支持: AAC。
 6. 点播源请使用小文件，尽量时长保持在1小时内，较大文件打开和续播耗时较久，耗时超过15秒会有无法正常转推风险。
+                     * 
                      */
                     void SetSourceUrls(const std::vector<std::string>& _sourceUrls);
 
                     /**
                      * 判断参数 SourceUrls 是否已赋值
                      * @return SourceUrls 是否已赋值
+                     * 
                      */
                     bool SourceUrlsHasBeenSet() const;
 
@@ -142,6 +148,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                      * @return DomainName 推流域名。
 将拉取过来的流推到该域名。
 注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
+                     * 
                      */
                     std::string GetDomainName() const;
 
@@ -149,15 +156,17 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                      * 设置推流域名。
 将拉取过来的流推到该域名。
 注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
 将拉取过来的流推到该域名。
 注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -166,20 +175,23 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 将拉取过来的流推到该路径。
                      * @return AppName 推流路径。
 将拉取过来的流推到该路径。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
 将拉取过来的流推到该路径。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
 将拉取过来的流推到该路径。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -188,20 +200,23 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 将拉取过来的流推到该流名称。
                      * @return StreamName 推流名称。
 将拉取过来的流推到该流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置推流名称。
 将拉取过来的流推到该流名称。
-                     * @param StreamName 推流名称。
+                     * @param _streamName 推流名称。
 将拉取过来的流推到该流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -214,6 +229,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -222,16 +238,18 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -250,6 +268,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -261,37 +280,42 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
-                     * @param EndTime 结束时间，注意：
+                     * @param _endTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
 使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务操作人备注。
                      * @return Operator 任务操作人备注。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置任务操作人备注。
-                     * @param Operator 任务操作人备注。
+                     * @param _operator 任务操作人备注。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -304,6 +328,7 @@ bak=1&test=2 。
 推流时携带自定义参数。
 示例：
 bak=1&test=2 。
+                     * 
                      */
                     std::string GetPushArgs() const;
 
@@ -312,16 +337,18 @@ bak=1&test=2 。
 推流时携带自定义参数。
 示例：
 bak=1&test=2 。
-                     * @param PushArgs 推流参数。
+                     * @param _pushArgs 推流参数。
 推流时携带自定义参数。
 示例：
 bak=1&test=2 。
+                     * 
                      */
                     void SetPushArgs(const std::string& _pushArgs);
 
                     /**
                      * 判断参数 PushArgs 是否已赋值
                      * @return PushArgs 是否已赋值
+                     * 
                      */
                     bool PushArgsHasBeenSet() const;
 
@@ -352,6 +379,7 @@ PushStreamUnstable - 推流不稳定，
 PullFileFailed - 文件拉取出错，
 PushStreamFailed - 推流出现失败，
 FileEndEarly - 文件提前结束。
+                     * 
                      */
                     std::vector<std::string> GetCallbackEvents() const;
 
@@ -369,7 +397,7 @@ PushStreamUnstable - 推流不稳定，
 PullFileFailed - 文件拉取出错，
 PushStreamFailed - 推流出现失败，
 FileEndEarly - 文件提前结束。
-                     * @param CallbackEvents 选择需要回调的事件（不填则回调全部）：
+                     * @param _callbackEvents 选择需要回调的事件（不填则回调全部）：
 TaskStart：任务启动回调，
 TaskExit：任务停止回调，
 VodSourceFileStart：从点播源文件开始拉流回调，
@@ -382,12 +410,14 @@ PushStreamUnstable - 推流不稳定，
 PullFileFailed - 文件拉取出错，
 PushStreamFailed - 推流出现失败，
 FileEndEarly - 文件提前结束。
+                     * 
                      */
                     void SetCallbackEvents(const std::vector<std::string>& _callbackEvents);
 
                     /**
                      * 判断参数 CallbackEvents 是否已赋值
                      * @return CallbackEvents 是否已赋值
+                     * 
                      */
                     bool CallbackEventsHasBeenSet() const;
 
@@ -402,6 +432,7 @@ FileEndEarly - 文件提前结束。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：该配置仅对拉流源为点播时生效。
+                     * 
                      */
                     std::string GetVodLoopTimes() const;
 
@@ -411,17 +442,19 @@ FileEndEarly - 文件提前结束。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：该配置仅对拉流源为点播时生效。
-                     * @param VodLoopTimes 点播拉流转推循环次数。默认：-1。
+                     * @param _vodLoopTimes 点播拉流转推循环次数。默认：-1。
 -1：无限循环，直到任务结束。
 0：不循环。
 >0：具体循环次数。次数和时间以先结束的为准。
 注意：该配置仅对拉流源为点播时生效。
+                     * 
                      */
                     void SetVodLoopTimes(const std::string& _vodLoopTimes);
 
                     /**
                      * 判断参数 VodLoopTimes 是否已赋值
                      * @return VodLoopTimes 是否已赋值
+                     * 
                      */
                     bool VodLoopTimesHasBeenSet() const;
 
@@ -436,6 +469,7 @@ ImmediateNewSource：立即播放新的拉流源内容；
 ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的拉流源播放。（旧拉流源未播放的点播 url 不会再播放）
 
 注意：该配置生效仅对变更前拉流源为点播时生效。
+                     * 
                      */
                     std::string GetVodRefreshType() const;
 
@@ -445,17 +479,19 @@ ImmediateNewSource：立即播放新的拉流源内容；
 ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的拉流源播放。（旧拉流源未播放的点播 url 不会再播放）
 
 注意：该配置生效仅对变更前拉流源为点播时生效。
-                     * @param VodRefreshType 点播更新SourceUrls后的播放方式：
+                     * @param _vodRefreshType 点播更新SourceUrls后的播放方式：
 ImmediateNewSource：立即播放新的拉流源内容；
 ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的拉流源播放。（旧拉流源未播放的点播 url 不会再播放）
 
 注意：该配置生效仅对变更前拉流源为点播时生效。
+                     * 
                      */
                     void SetVodRefreshType(const std::string& _vodRefreshType);
 
                     /**
                      * 判断参数 VodRefreshType 是否已赋值
                      * @return VodRefreshType 是否已赋值
+                     * 
                      */
                     bool VodRefreshTypeHasBeenSet() const;
 
@@ -464,20 +500,23 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 拉流转推任务相关事件会回调到该地址。
                      * @return CallbackUrl 自定义回调地址。
 拉流转推任务相关事件会回调到该地址。
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置自定义回调地址。
 拉流转推任务相关事件会回调到该地址。
-                     * @param CallbackUrl 自定义回调地址。
+                     * @param _callbackUrl 自定义回调地址。
 拉流转推任务相关事件会回调到该地址。
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -486,38 +525,44 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 示例: ignore_region  用于忽略传入地域, 内部按负载分配。
                      * @return ExtraCmd 其他参数。
 示例: ignore_region  用于忽略传入地域, 内部按负载分配。
+                     * 
                      */
                     std::string GetExtraCmd() const;
 
                     /**
                      * 设置其他参数。
 示例: ignore_region  用于忽略传入地域, 内部按负载分配。
-                     * @param ExtraCmd 其他参数。
+                     * @param _extraCmd 其他参数。
 示例: ignore_region  用于忽略传入地域, 内部按负载分配。
+                     * 
                      */
                     void SetExtraCmd(const std::string& _extraCmd);
 
                     /**
                      * 判断参数 ExtraCmd 是否已赋值
                      * @return ExtraCmd 是否已赋值
+                     * 
                      */
                     bool ExtraCmdHasBeenSet() const;
 
                     /**
                      * 获取任务描述，限制 512 字节。
                      * @return Comment 任务描述，限制 512 字节。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置任务描述，限制 512 字节。
-                     * @param Comment 任务描述，限制 512 字节。
+                     * @param _comment 任务描述，限制 512 字节。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -530,6 +575,7 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     * 
                      */
                     std::string GetToUrl() const;
 
@@ -538,16 +584,18 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
-                     * @param ToUrl 完整目标 URL 地址。
+                     * @param _toUrl 完整目标 URL 地址。
 用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     * 
                      */
                     void SetToUrl(const std::string& _toUrl);
 
                     /**
                      * 判断参数 ToUrl 是否已赋值
                      * @return ToUrl 是否已赋值
+                     * 
                      */
                     bool ToUrlHasBeenSet() const;
 
@@ -566,6 +614,7 @@ PullVodPushLive -点播。
 1. 仅当主源类型为直播源时，备源才会生效。
 2. 主直播源拉流中断时，自动使用备源进行拉流。
 3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * 
                      */
                     std::string GetBackupSourceType() const;
 
@@ -577,19 +626,21 @@ PullVodPushLive -点播。
 1. 仅当主源类型为直播源时，备源才会生效。
 2. 主直播源拉流中断时，自动使用备源进行拉流。
 3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
-                     * @param BackupSourceType 备源的类型：
+                     * @param _backupSourceType 备源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
 注意：
 1. 仅当主源类型为直播源时，备源才会生效。
 2. 主直播源拉流中断时，自动使用备源进行拉流。
 3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * 
                      */
                     void SetBackupSourceType(const std::string& _backupSourceType);
 
                     /**
                      * 判断参数 BackupSourceType 是否已赋值
                      * @return BackupSourceType 是否已赋值
+                     * 
                      */
                     bool BackupSourceTypeHasBeenSet() const;
 
@@ -598,20 +649,23 @@ PullVodPushLive -点播。
 只允许填一个备源 URL
                      * @return BackupSourceUrl 备源 URL。
 只允许填一个备源 URL
+                     * 
                      */
                     std::string GetBackupSourceUrl() const;
 
                     /**
                      * 设置备源 URL。
 只允许填一个备源 URL
-                     * @param BackupSourceUrl 备源 URL。
+                     * @param _backupSourceUrl 备源 URL。
 只允许填一个备源 URL
+                     * 
                      */
                     void SetBackupSourceUrl(const std::string& _backupSourceUrl);
 
                     /**
                      * 判断参数 BackupSourceUrl 是否已赋值
                      * @return BackupSourceUrl 是否已赋值
+                     * 
                      */
                     bool BackupSourceUrlHasBeenSet() const;
 
@@ -626,6 +680,7 @@ PullVodPushLive -点播。
 1. 最多支持4个不同位置的水印。
 2. 水印图片 URL 请使用合法外网可访问地址。
 3. 支持的水印图片格式：png，jpg，gif 等。
+                     * 
                      */
                     std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
 
@@ -635,17 +690,19 @@ PullVodPushLive -点播。
 1. 最多支持4个不同位置的水印。
 2. 水印图片 URL 请使用合法外网可访问地址。
 3. 支持的水印图片格式：png，jpg，gif 等。
-                     * @param WatermarkList 水印信息列表。
+                     * @param _watermarkList 水印信息列表。
 注意：
 1. 最多支持4个不同位置的水印。
 2. 水印图片 URL 请使用合法外网可访问地址。
 3. 支持的水印图片格式：png，jpg，gif 等。
+                     * 
                      */
                     void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
 
                     /**
                      * 判断参数 WatermarkList 是否已赋值
                      * @return WatermarkList 是否已赋值
+                     * 
                      */
                     bool WatermarkListHasBeenSet() const;
 
@@ -658,6 +715,7 @@ PullVodPushLive -点播。
 0 - 不启用。
 1 - 启用。
 注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     * 
                      */
                     int64_t GetVodLocalMode() const;
 
@@ -666,34 +724,39 @@ PullVodPushLive -点播。
 0 - 不启用。
 1 - 启用。
 注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
-                     * @param VodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
+                     * @param _vodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
 0 - 不启用。
 1 - 启用。
 注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     * 
                      */
                     void SetVodLocalMode(const int64_t& _vodLocalMode);
 
                     /**
                      * 判断参数 VodLocalMode 是否已赋值
                      * @return VodLocalMode 是否已赋值
+                     * 
                      */
                     bool VodLocalModeHasBeenSet() const;
 
                     /**
                      * 获取录制模板 ID。
                      * @return RecordTemplateId 录制模板 ID。
+                     * 
                      */
                     std::string GetRecordTemplateId() const;
 
                     /**
                      * 设置录制模板 ID。
-                     * @param RecordTemplateId 录制模板 ID。
+                     * @param _recordTemplateId 录制模板 ID。
+                     * 
                      */
                     void SetRecordTemplateId(const std::string& _recordTemplateId);
 
                     /**
                      * 判断参数 RecordTemplateId 是否已赋值
                      * @return RecordTemplateId 是否已赋值
+                     * 
                      */
                     bool RecordTemplateIdHasBeenSet() const;
 

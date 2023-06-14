@@ -65,6 +65,7 @@ namespace TencentCloud
  54:诈骗电话
  55:快递电话
  56:出租车专车
+                     * 
                      */
                     int64_t GetTagType() const;
 
@@ -78,7 +79,7 @@ namespace TencentCloud
  54:诈骗电话
  55:快递电话
  56:出租车专车
-                     * @param TagType 标记类型
+                     * @param _tagType 标记类型
  0: 无标记
  50:骚扰电话
  51:房产中介
@@ -87,30 +88,35 @@ namespace TencentCloud
  54:诈骗电话
  55:快递电话
  56:出租车专车
+                     * 
                      */
                     void SetTagType(const int64_t& _tagType);
 
                     /**
                      * 判断参数 TagType 是否已赋值
                      * @return TagType 是否已赋值
+                     * 
                      */
                     bool TagTypeHasBeenSet() const;
 
                     /**
                      * 获取标记次数
                      * @return TagCount 标记次数
+                     * 
                      */
                     int64_t GetTagCount() const;
 
                     /**
                      * 设置标记次数
-                     * @param TagCount 标记次数
+                     * @param _tagCount 标记次数
+                     * 
                      */
                     void SetTagCount(const int64_t& _tagCount);
 
                     /**
                      * 判断参数 TagCount 是否已赋值
                      * @return TagCount 是否已赋值
+                     * 
                      */
                     bool TagCountHasBeenSet() const;
 

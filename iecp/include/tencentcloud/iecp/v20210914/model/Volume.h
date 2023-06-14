@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取来源(emptyDir|hostPath|configMap|secret|nfs)
                      * @return Source 来源(emptyDir|hostPath|configMap|secret|nfs)
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源(emptyDir|hostPath|configMap|secret|nfs)
-                     * @param Source 来源(emptyDir|hostPath|configMap|secret|nfs)
+                     * @param _source 来源(emptyDir|hostPath|configMap|secret|nfs)
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -90,20 +96,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostPath Host挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VolumeHostPath GetHostPath() const;
 
                     /**
                      * 设置Host挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostPath Host挂载配置
+                     * @param _hostPath Host挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostPath(const VolumeHostPath& _hostPath);
 
                     /**
                      * 判断参数 HostPath 是否已赋值
                      * @return HostPath 是否已赋值
+                     * 
                      */
                     bool HostPathHasBeenSet() const;
 
@@ -112,20 +121,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigMap ConfigMap挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VolumeConfigMap GetConfigMap() const;
 
                     /**
                      * 设置ConfigMap挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigMap ConfigMap挂载配置
+                     * @param _configMap ConfigMap挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigMap(const VolumeConfigMap& _configMap);
 
                     /**
                      * 判断参数 ConfigMap 是否已赋值
                      * @return ConfigMap 是否已赋值
+                     * 
                      */
                     bool ConfigMapHasBeenSet() const;
 
@@ -134,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Secret Secret挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VolumeConfigMap GetSecret() const;
 
                     /**
                      * 设置Secret挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Secret Secret挂载配置
+                     * @param _secret Secret挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecret(const VolumeConfigMap& _secret);
 
                     /**
                      * 判断参数 Secret 是否已赋值
                      * @return Secret 是否已赋值
+                     * 
                      */
                     bool SecretHasBeenSet() const;
 
@@ -156,20 +171,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFS NFS挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VolumeNFS GetNFS() const;
 
                     /**
                      * 设置NFS挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NFS NFS挂载配置
+                     * @param _nFS NFS挂载配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNFS(const VolumeNFS& _nFS);
 
                     /**
                      * 判断参数 NFS 是否已赋值
                      * @return NFS 是否已赋值
+                     * 
                      */
                     bool NFSHasBeenSet() const;
 

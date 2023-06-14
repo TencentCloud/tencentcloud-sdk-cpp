@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckErr 连接错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHealthCheckErr() const;
 
                     /**
                      * 判断参数 HealthCheckErr 是否已赋值
                      * @return HealthCheckErr 是否已赋值
+                     * 
                      */
                     bool HealthCheckErrHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameRepeatErr 名称错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNameRepeatErr() const;
 
                     /**
                      * 判断参数 NameRepeatErr 是否已赋值
                      * @return NameRepeatErr 是否已赋值
+                     * 
                      */
                     bool NameRepeatErrHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryId 仓库唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRegistryId() const;
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 

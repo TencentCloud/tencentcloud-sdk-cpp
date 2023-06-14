@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取歌手id
                      * @return SingerId 歌手id
+                     * 
                      */
                     std::string GetSingerId() const;
 
                     /**
                      * 设置歌手id
-                     * @param SingerId 歌手id
+                     * @param _singerId 歌手id
+                     * 
                      */
                     void SetSingerId(const std::string& _singerId);
 
                     /**
                      * 判断参数 SingerId 是否已赋值
                      * @return SingerId 是否已赋值
+                     * 
                      */
                     bool SingerIdHasBeenSet() const;
 
                     /**
                      * 获取歌手名
                      * @return Name 歌手名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置歌手名
-                     * @param Name 歌手名
+                     * @param _name 歌手名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取歌手性别: 男，女，组合
                      * @return Gender 歌手性别: 男，女，组合
+                     * 
                      */
                     std::string GetGender() const;
 
                     /**
                      * 设置歌手性别: 男，女，组合
-                     * @param Gender 歌手性别: 男，女，组合
+                     * @param _gender 歌手性别: 男，女，组合
+                     * 
                      */
                     void SetGender(const std::string& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取地区: 大陆，港台，欧美，日本
                      * @return Area 地区: 大陆，港台，欧美，日本
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地区: 大陆，港台，欧美，日本
-                     * @param Area 地区: 大陆，港台，欧美，日本
+                     * @param _area 地区: 大陆，港台，欧美，日本
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取歌曲数
                      * @return MusicCount 歌曲数
+                     * 
                      */
                     int64_t GetMusicCount() const;
 
                     /**
                      * 设置歌曲数
-                     * @param MusicCount 歌曲数
+                     * @param _musicCount 歌曲数
+                     * 
                      */
                     void SetMusicCount(const int64_t& _musicCount);
 
                     /**
                      * 判断参数 MusicCount 是否已赋值
                      * @return MusicCount 是否已赋值
+                     * 
                      */
                     bool MusicCountHasBeenSet() const;
 
                     /**
                      * 获取歌曲总播放次数
                      * @return PlayCount 歌曲总播放次数
+                     * 
                      */
                     int64_t GetPlayCount() const;
 
                     /**
                      * 设置歌曲总播放次数
-                     * @param PlayCount 歌曲总播放次数
+                     * @param _playCount 歌曲总播放次数
+                     * 
                      */
                     void SetPlayCount(const int64_t& _playCount);
 
                     /**
                      * 判断参数 PlayCount 是否已赋值
                      * @return PlayCount 是否已赋值
+                     * 
                      */
                     bool PlayCountHasBeenSet() const;
 

@@ -56,12 +56,14 @@ namespace TencentCloud
 部分：partial（部分成功、部分失败）
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -72,12 +74,14 @@ namespace TencentCloud
                      * @return FailServerList 冻结失败服务列表
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailServerList() const;
 
                     /**
                      * 判断参数 FailServerList 是否已赋值
                      * @return FailServerList 是否已赋值
+                     * 
                      */
                     bool FailServerListHasBeenSet() const;
 

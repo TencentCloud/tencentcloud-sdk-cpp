@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const Part& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 原文位置
+                     * @param _index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartAlias 部位别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPartAlias() const;
 
                     /**
                      * 设置部位别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartAlias 部位别名
+                     * @param _partAlias 部位别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartAlias(const std::string& _partAlias);
 
                     /**
                      * 判断参数 PartAlias 是否已赋值
                      * @return PartAlias 是否已赋值
+                     * 
                      */
                     bool PartAliasHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymDescList 症状描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BlockInfo> GetSymDescList() const;
 
                     /**
                      * 设置症状描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SymDescList 症状描述
+                     * @param _symDescList 症状描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSymDescList(const std::vector<BlockInfo>& _symDescList);
 
                     /**
                      * 判断参数 SymDescList 是否已赋值
                      * @return SymDescList 是否已赋值
+                     * 
                      */
                     bool SymDescListHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 坐标
+                     * @param _coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

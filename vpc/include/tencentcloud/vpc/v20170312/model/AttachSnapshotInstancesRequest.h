@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取关联实例信息。
                      * @return Instances 关联实例信息。
+                     * 
                      */
                     std::vector<SnapshotInstance> GetInstances() const;
 
                     /**
                      * 设置关联实例信息。
-                     * @param Instances 关联实例信息。
+                     * @param _instances 关联实例信息。
+                     * 
                      */
                     void SetInstances(const std::vector<SnapshotInstance>& _instances);
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 

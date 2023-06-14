@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取宿主机规格
                      * @return HostType 宿主机规格
+                     * 
                      */
                     std::string GetHostType() const;
 
                     /**
                      * 设置宿主机规格
-                     * @param HostType 宿主机规格
+                     * @param _hostType 宿主机规格
+                     * 
                      */
                     void SetHostType(const std::string& _hostType);
 
                     /**
                      * 判断参数 HostType 是否已赋值
                      * @return HostType 是否已赋值
+                     * 
                      */
                     bool HostTypeHasBeenSet() const;
 
                     /**
                      * 获取宿主机机型系列
                      * @return HostFamily 宿主机机型系列
+                     * 
                      */
                     std::string GetHostFamily() const;
 
                     /**
                      * 设置宿主机机型系列
-                     * @param HostFamily 宿主机机型系列
+                     * @param _hostFamily 宿主机机型系列
+                     * 
                      */
                     void SetHostFamily(const std::string& _hostFamily);
 
                     /**
                      * 判断参数 HostFamily 是否已赋值
                      * @return HostFamily 是否已赋值
+                     * 
                      */
                     bool HostFamilyHasBeenSet() const;
 
                     /**
                      * 获取宿主机的CPU核数，单位：核
                      * @return Cpu 宿主机的CPU核数，单位：核
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置宿主机的CPU核数，单位：核
-                     * @param Cpu 宿主机的CPU核数，单位：核
+                     * @param _cpu 宿主机的CPU核数，单位：核
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取宿主机内存大小，单位：GB
                      * @return Memory 宿主机内存大小，单位：GB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置宿主机内存大小，单位：GB
-                     * @param Memory 宿主机内存大小，单位：GB
+                     * @param _memory 宿主机内存大小，单位：GB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取该规格宿主机的数量
                      * @return Count 该规格宿主机的数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置该规格宿主机的数量
-                     * @param Count 该规格宿主机的数量
+                     * @param _count 该规格宿主机的数量
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

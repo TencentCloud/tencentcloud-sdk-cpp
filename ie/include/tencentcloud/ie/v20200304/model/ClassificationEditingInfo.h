@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。
                      * @return Switch 是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。
+                     * 
                      */
                     int64_t GetSwitch() const;
 
                     /**
                      * 设置是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。
-                     * @param Switch 是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。
+                     * @param _switch 是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。
+                     * 
                      */
                     void SetSwitch(const int64_t& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取额外定制化服务参数。参数为序列化的Json字符串，例如：{"k1":"v1"}。
                      * @return CustomInfo 额外定制化服务参数。参数为序列化的Json字符串，例如：{"k1":"v1"}。
+                     * 
                      */
                     std::string GetCustomInfo() const;
 
                     /**
                      * 设置额外定制化服务参数。参数为序列化的Json字符串，例如：{"k1":"v1"}。
-                     * @param CustomInfo 额外定制化服务参数。参数为序列化的Json字符串，例如：{"k1":"v1"}。
+                     * @param _customInfo 额外定制化服务参数。参数为序列化的Json字符串，例如：{"k1":"v1"}。
+                     * 
                      */
                     void SetCustomInfo(const std::string& _customInfo);
 
                     /**
                      * 判断参数 CustomInfo 是否已赋值
                      * @return CustomInfo 是否已赋值
+                     * 
                      */
                     bool CustomInfoHasBeenSet() const;
 

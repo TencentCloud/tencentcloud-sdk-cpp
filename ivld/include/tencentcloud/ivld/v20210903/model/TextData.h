@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 文本内容信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置文本内容信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 文本内容信息
+                     * @param _content 文本内容信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 文本概要信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置文本概要信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Summary 文本概要信息
+                     * @param _summary 文本概要信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSummary(const std::string& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTagSet 文本标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MultiLevelTag GetTextTagSet() const;
 
                     /**
                      * 设置文本标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextTagSet 文本标签信息
+                     * @param _textTagSet 文本标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextTagSet(const MultiLevelTag& _textTagSet);
 
                     /**
                      * 判断参数 TextTagSet 是否已赋值
                      * @return TextTagSet 是否已赋值
+                     * 
                      */
                     bool TextTagSetHasBeenSet() const;
 

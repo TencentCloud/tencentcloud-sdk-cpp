@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     std::vector<std::string> GetRouteTableIds() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param _routeTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     void SetRouteTableIds(const std::vector<std::string>& _routeTableIds);
 
                     /**
                      * 判断参数 RouteTableIds 是否已赋值
                      * @return RouteTableIds 是否已赋值
+                     * 
                      */
                     bool RouteTableIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ route-table-id - String - （过滤条件）路由表实例ID。
 route-table-name - String - （过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 association.main - String - （过滤条件）是否主路由表。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,71 +85,82 @@ route-table-id - String - （过滤条件）路由表实例ID。
 route-table-name - String - （过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 association.main - String - （过滤条件）是否主路由表。
-                     * @param Filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
 route-table-id - String - （过滤条件）路由表实例ID。
 route-table-name - String - （过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 association.main - String - （过滤条件）是否主路由表。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限数
                      * @return Limit 限数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限数
-                     * @param Limit 限数
+                     * @param _limit 限数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域，传空或不传表示所有区域
                      * @return EcmRegion ECM 地域，传空或不传表示所有区域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域，传空或不传表示所有区域
-                     * @param EcmRegion ECM 地域，传空或不传表示所有区域
+                     * @param _ecmRegion ECM 地域，传空或不传表示所有区域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

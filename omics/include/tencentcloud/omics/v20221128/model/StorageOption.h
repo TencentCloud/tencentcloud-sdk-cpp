@@ -57,6 +57,7 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
+                     * 
                      */
                     std::string GetStorageType() const;
 
@@ -66,35 +67,40 @@ namespace TencentCloud
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
-                     * @param StorageType 文件存储类型，取值范围：
+                     * @param _storageType 文件存储类型，取值范围：
 - SD：通用标准型
 - HP：通用性能型
 - TB：turbo标准型
 - TP：turbo性能型
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 
                     /**
                      * 获取文件存储可用区。
                      * @return Zone 文件存储可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置文件存储可用区。
-                     * @param Zone 文件存储可用区。
+                     * @param _zone 文件存储可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
                      * @return Capacity 文件系统容量，turbo系列必填，单位为GiB。 
 - turbo标准型起售40TiB，即40960GiB；扩容步长20TiB，即20480 GiB。
 - turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。
+                     * 
                      */
                     uint64_t GetCapacity() const;
 
@@ -112,15 +119,17 @@ namespace TencentCloud
                      * 设置文件系统容量，turbo系列必填，单位为GiB。 
 - turbo标准型起售40TiB，即40960GiB；扩容步长20TiB，即20480 GiB。
 - turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。
-                     * @param Capacity 文件系统容量，turbo系列必填，单位为GiB。 
+                     * @param _capacity 文件系统容量，turbo系列必填，单位为GiB。 
 - turbo标准型起售40TiB，即40960GiB；扩容步长20TiB，即20480 GiB。
 - turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。
+                     * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
 
                     /**
                      * 判断参数 Capacity 是否已赋值
                      * @return Capacity 是否已赋值
+                     * 
                      */
                     bool CapacityHasBeenSet() const;
 

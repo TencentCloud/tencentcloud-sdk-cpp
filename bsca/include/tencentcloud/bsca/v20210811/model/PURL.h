@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取组件名称
                      * @return Name 组件名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
-                     * @param Name 组件名称
+                     * @param _name 组件名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等
                      * @return Protocol 组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等
-                     * @param Protocol 组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等
+                     * @param _protocol 组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等
                      * @return Namespace 组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等
-                     * @param Namespace 组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等
+                     * @param _namespace 组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -106,56 +115,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qualifiers 修饰组件的额外属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Qualifier> GetQualifiers() const;
 
                     /**
                      * 设置修饰组件的额外属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Qualifiers 修饰组件的额外属性
+                     * @param _qualifiers 修饰组件的额外属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQualifiers(const std::vector<Qualifier>& _qualifiers);
 
                     /**
                      * 判断参数 Qualifiers 是否已赋值
                      * @return Qualifiers 是否已赋值
+                     * 
                      */
                     bool QualifiersHasBeenSet() const;
 
                     /**
                      * 获取相对于组件包根位置的子目录
                      * @return Subpath 相对于组件包根位置的子目录
+                     * 
                      */
                     std::string GetSubpath() const;
 
                     /**
                      * 设置相对于组件包根位置的子目录
-                     * @param Subpath 相对于组件包根位置的子目录
+                     * @param _subpath 相对于组件包根位置的子目录
+                     * 
                      */
                     void SetSubpath(const std::string& _subpath);
 
                     /**
                      * 判断参数 Subpath 是否已赋值
                      * @return Subpath 是否已赋值
+                     * 
                      */
                     bool SubpathHasBeenSet() const;
 
                     /**
                      * 获取组件版本号
                      * @return Version 组件版本号
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置组件版本号
-                     * @param Version 组件版本号
+                     * @param _version 组件版本号
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

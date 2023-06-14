@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取SQL查询任务
                      * @return SQLTask SQL查询任务
+                     * 
                      */
                     SQLTask GetSQLTask() const;
 
                     /**
                      * 设置SQL查询任务
-                     * @param SQLTask SQL查询任务
+                     * @param _sQLTask SQL查询任务
+                     * 
                      */
                     void SetSQLTask(const SQLTask& _sQLTask);
 
                     /**
                      * 判断参数 SQLTask 是否已赋值
                      * @return SQLTask 是否已赋值
+                     * 
                      */
                     bool SQLTaskHasBeenSet() const;
 
                     /**
                      * 获取Spark SQL查询任务
                      * @return SparkSQLTask Spark SQL查询任务
+                     * 
                      */
                     SQLTask GetSparkSQLTask() const;
 
                     /**
                      * 设置Spark SQL查询任务
-                     * @param SparkSQLTask Spark SQL查询任务
+                     * @param _sparkSQLTask Spark SQL查询任务
+                     * 
                      */
                     void SetSparkSQLTask(const SQLTask& _sparkSQLTask);
 
                     /**
                      * 判断参数 SparkSQLTask 是否已赋值
                      * @return SparkSQLTask 是否已赋值
+                     * 
                      */
                     bool SparkSQLTaskHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 标签id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置标签id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 标签id
+                     * @param _id 标签id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 标签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 标签名
+                     * @param _name 标签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 推荐权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetWeight() const;
 
                     /**
                      * 设置推荐权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 推荐权重
+                     * @param _weight 推荐权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const double& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

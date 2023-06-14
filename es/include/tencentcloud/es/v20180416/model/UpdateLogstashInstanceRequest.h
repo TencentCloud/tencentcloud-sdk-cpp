@@ -48,162 +48,189 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例节点数量
                      * @return NodeNum 实例节点数量
+                     * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
                      * 设置实例节点数量
-                     * @param NodeNum 实例节点数量
+                     * @param _nodeNum 实例节点数量
+                     * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
 
                     /**
                      * 判断参数 NodeNum 是否已赋值
                      * @return NodeNum 是否已赋值
+                     * 
                      */
                     bool NodeNumHasBeenSet() const;
 
                     /**
                      * 获取实例YML配置
                      * @return YMLConfig 实例YML配置
+                     * 
                      */
                     std::string GetYMLConfig() const;
 
                     /**
                      * 设置实例YML配置
-                     * @param YMLConfig 实例YML配置
+                     * @param _yMLConfig 实例YML配置
+                     * 
                      */
                     void SetYMLConfig(const std::string& _yMLConfig);
 
                     /**
                      * 判断参数 YMLConfig 是否已赋值
                      * @return YMLConfig 是否已赋值
+                     * 
                      */
                     bool YMLConfigHasBeenSet() const;
 
                     /**
                      * 获取实例绑定的ES集群信息
                      * @return BindedES 实例绑定的ES集群信息
+                     * 
                      */
                     LogstashBindedES GetBindedES() const;
 
                     /**
                      * 设置实例绑定的ES集群信息
-                     * @param BindedES 实例绑定的ES集群信息
+                     * @param _bindedES 实例绑定的ES集群信息
+                     * 
                      */
                     void SetBindedES(const LogstashBindedES& _bindedES);
 
                     /**
                      * 判断参数 BindedES 是否已赋值
                      * @return BindedES 是否已赋值
+                     * 
                      */
                     bool BindedESHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取扩展文件列表
                      * @return ExtendedFiles 扩展文件列表
+                     * 
                      */
                     std::vector<LogstashExtendedFile> GetExtendedFiles() const;
 
                     /**
                      * 设置扩展文件列表
-                     * @param ExtendedFiles 扩展文件列表
+                     * @param _extendedFiles 扩展文件列表
+                     * 
                      */
                     void SetExtendedFiles(const std::vector<LogstashExtendedFile>& _extendedFiles);
 
                     /**
                      * 判断参数 ExtendedFiles 是否已赋值
                      * @return ExtendedFiles 是否已赋值
+                     * 
                      */
                     bool ExtendedFilesHasBeenSet() const;
 
                     /**
                      * 获取实例规格
                      * @return NodeType 实例规格
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置实例规格
-                     * @param NodeType 实例规格
+                     * @param _nodeType 实例规格
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取节点磁盘容量
                      * @return DiskSize 节点磁盘容量
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置节点磁盘容量
-                     * @param DiskSize 节点磁盘容量
+                     * @param _diskSize 节点磁盘容量
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取可维护时间段
                      * @return OperationDuration 可维护时间段
+                     * 
                      */
                     OperationDurationUpdated GetOperationDuration() const;
 
                     /**
                      * 设置可维护时间段
-                     * @param OperationDuration 可维护时间段
+                     * @param _operationDuration 可维护时间段
+                     * 
                      */
                     void SetOperationDuration(const OperationDurationUpdated& _operationDuration);
 
                     /**
                      * 判断参数 OperationDuration 是否已赋值
                      * @return OperationDuration 是否已赋值
+                     * 
                      */
                     bool OperationDurationHasBeenSet() const;
 

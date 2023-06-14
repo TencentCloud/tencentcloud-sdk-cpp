@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取IECP边缘节点ID
                      * @return NodeId IECP边缘节点ID
+                     * 
                      */
                     uint64_t GetNodeId() const;
 
                     /**
                      * 设置IECP边缘节点ID
-                     * @param NodeId IECP边缘节点ID
+                     * @param _nodeId IECP边缘节点ID
+                     * 
                      */
                     void SetNodeId(const uint64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Labels 标签列表
+                     * 
                      */
                     std::vector<KeyValueObj> GetLabels() const;
 
                     /**
                      * 设置标签列表
-                     * @param Labels 标签列表
+                     * @param _labels 标签列表
+                     * 
                      */
                     void SetLabels(const std::vector<KeyValueObj>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 

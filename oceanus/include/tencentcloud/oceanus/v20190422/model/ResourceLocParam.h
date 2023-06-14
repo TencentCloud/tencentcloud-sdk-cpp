@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取资源bucket
                      * @return Bucket 资源bucket
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置资源bucket
-                     * @param Bucket 资源bucket
+                     * @param _bucket 资源bucket
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取资源路径
                      * @return Path 资源路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置资源路径
-                     * @param Path 资源路径
+                     * @param _path 资源路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 资源所在地域，如果不填，则使用Resource的Region
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置资源所在地域，如果不填，则使用Resource的Region
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 资源所在地域，如果不填，则使用Resource的Region
+                     * @param _region 资源所在地域，如果不填，则使用Resource的Region
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

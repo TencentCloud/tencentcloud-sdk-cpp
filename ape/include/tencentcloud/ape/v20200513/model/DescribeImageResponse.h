@@ -47,168 +47,196 @@ namespace TencentCloud
                     /**
                      * 获取图片ID
                      * @return ImageId 图片ID
+                     * 
                      */
                     uint64_t GetImageId() const;
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取图片标题
                      * @return Title 图片标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取图片描述
                      * @return Description 图片描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取图片预览链接
                      * @return PreviewUrl 图片预览链接
+                     * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 判断参数 PreviewUrl 是否已赋值
                      * @return PreviewUrl 是否已赋值
+                     * 
                      */
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
                      * 获取图片缩略图
                      * @return ThumbUrl 图片缩略图
+                     * 
                      */
                     std::string GetThumbUrl() const;
 
                     /**
                      * 判断参数 ThumbUrl 是否已赋值
                      * @return ThumbUrl 是否已赋值
+                     * 
                      */
                     bool ThumbUrlHasBeenSet() const;
 
                     /**
                      * 获取图片供应商
                      * @return Vendor 图片供应商
+                     * 
                      */
                     std::string GetVendor() const;
 
                     /**
                      * 判断参数 Vendor 是否已赋值
                      * @return Vendor 是否已赋值
+                     * 
                      */
                     bool VendorHasBeenSet() const;
 
                     /**
                      * 获取图片售卖组合信息
                      * @return Marshals 图片售卖组合信息
+                     * 
                      */
                     std::vector<ImageMarshal> GetMarshals() const;
 
                     /**
                      * 判断参数 Marshals 是否已赋值
                      * @return Marshals 是否已赋值
+                     * 
                      */
                     bool MarshalsHasBeenSet() const;
 
                     /**
                      * 获取宽
                      * @return Width 宽
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取高
                      * @return Height 高
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取图片格式 jpg/eps/psd/...
                      * @return ImageFormat 图片格式 jpg/eps/psd/...
+                     * 
                      */
                     std::string GetImageFormat() const;
 
                     /**
                      * 判断参数 ImageFormat 是否已赋值
                      * @return ImageFormat 是否已赋值
+                     * 
                      */
                     bool ImageFormatHasBeenSet() const;
 
                     /**
                      * 获取图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板
                      * @return ImageSenseType 图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板
+                     * 
                      */
                     std::string GetImageSenseType() const;
 
                     /**
                      * 判断参数 ImageSenseType 是否已赋值
                      * @return ImageSenseType 是否已赋值
+                     * 
                      */
                     bool ImageSenseTypeHasBeenSet() const;
 
                     /**
                      * 获取关键词，多关键词用空格分隔
                      * @return Keywords 关键词，多关键词用空格分隔
+                     * 
                      */
                     std::string GetKeywords() const;
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
                     /**
                      * 获取分层图库id
                      * @return LayeredGalleryId 分层图库id
+                     * 
                      */
                     int64_t GetLayeredGalleryId() const;
 
                     /**
                      * 判断参数 LayeredGalleryId 是否已赋值
                      * @return LayeredGalleryId 是否已赋值
+                     * 
                      */
                     bool LayeredGalleryIdHasBeenSet() const;
 
                     /**
                      * 获取构图方式：horizontal:横图、vertical:竖图、square:方图
                      * @return Orientation 构图方式：horizontal:横图、vertical:竖图、square:方图
+                     * 
                      */
                     std::string GetOrientation() const;
 
                     /**
                      * 判断参数 Orientation 是否已赋值
                      * @return Orientation 是否已赋值
+                     * 
                      */
                     bool OrientationHasBeenSet() const;
 

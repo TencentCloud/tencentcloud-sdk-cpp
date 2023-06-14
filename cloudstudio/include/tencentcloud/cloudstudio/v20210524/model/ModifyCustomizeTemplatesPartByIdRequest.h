@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return Id 模板ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置模板ID
-                     * @param Id 模板ID
+                     * @param _id 模板ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取自定义模板Patched参数
                      * @return UserDefinedTemplatePatchedParams 自定义模板Patched参数
+                     * 
                      */
                     UserDefinedTemplatePatchedParams GetUserDefinedTemplatePatchedParams() const;
 
                     /**
                      * 设置自定义模板Patched参数
-                     * @param UserDefinedTemplatePatchedParams 自定义模板Patched参数
+                     * @param _userDefinedTemplatePatchedParams 自定义模板Patched参数
+                     * 
                      */
                     void SetUserDefinedTemplatePatchedParams(const UserDefinedTemplatePatchedParams& _userDefinedTemplatePatchedParams);
 
                     /**
                      * 判断参数 UserDefinedTemplatePatchedParams 是否已赋值
                      * @return UserDefinedTemplatePatchedParams 是否已赋值
+                     * 
                      */
                     bool UserDefinedTemplatePatchedParamsHasBeenSet() const;
 

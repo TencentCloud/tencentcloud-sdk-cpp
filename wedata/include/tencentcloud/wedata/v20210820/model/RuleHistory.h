@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlterTime 变更时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlterTime() const;
 
                     /**
                      * 设置变更时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlterTime 变更时间 yyyy-MM-dd HH:mm:ss
+                     * @param _alterTime 变更时间 yyyy-MM-dd HH:mm:ss
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlterTime(const std::string& _alterTime);
 
                     /**
                      * 判断参数 AlterTime 是否已赋值
                      * @return AlterTime 是否已赋值
+                     * 
                      */
                     bool AlterTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlterContent 变更内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlterContent() const;
 
                     /**
                      * 设置变更内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlterContent 变更内容
+                     * @param _alterContent 变更内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlterContent(const std::string& _alterContent);
 
                     /**
                      * 判断参数 AlterContent 是否已赋值
                      * @return AlterContent 是否已赋值
+                     * 
                      */
                     bool AlterContentHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorUserId 操作账号UId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOperatorUserId() const;
 
                     /**
                      * 设置操作账号UId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorUserId 操作账号UId
+                     * @param _operatorUserId 操作账号UId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatorUserId(const uint64_t& _operatorUserId);
 
                     /**
                      * 判断参数 OperatorUserId 是否已赋值
                      * @return OperatorUserId 是否已赋值
+                     * 
                      */
                     bool OperatorUserIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorName 操作人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperatorName() const;
 
                     /**
                      * 设置操作人名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorName 操作人名称
+                     * @param _operatorName 操作人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatorName(const std::string& _operatorName);
 
                     /**
                      * 判断参数 OperatorName 是否已赋值
                      * @return OperatorName 是否已赋值
+                     * 
                      */
                     bool OperatorNameHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取单页条数，最大为100条
                      * @return Limit 单页条数，最大为100条
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单页条数，最大为100条
-                     * @param Limit 单页条数，最大为100条
+                     * @param _limit 单页条数，最大为100条
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取条数偏移量
                      * @return Offset 条数偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置条数偏移量
-                     * @param Offset 条数偏移量
+                     * @param _offset 条数偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取词库ID
                      * @return LibID 词库ID
+                     * 
                      */
                     std::string GetLibID() const;
 
                     /**
                      * 设置词库ID
-                     * @param LibID 词库ID
+                     * @param _libID 词库ID
+                     * 
                      */
                     void SetLibID(const std::string& _libID);
 
                     /**
                      * 判断参数 LibID 是否已赋值
                      * @return LibID 是否已赋值
+                     * 
                      */
                     bool LibIDHasBeenSet() const;
 
                     /**
                      * 获取词内容过滤
                      * @return Content 词内容过滤
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置词内容过滤
-                     * @param Content 词内容过滤
+                     * @param _content 词内容过滤
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取违规类型列表过滤
                      * @return EvilTypeList 违规类型列表过滤
+                     * 
                      */
                     std::vector<int64_t> GetEvilTypeList() const;
 
                     /**
                      * 设置违规类型列表过滤
-                     * @param EvilTypeList 违规类型列表过滤
+                     * @param _evilTypeList 违规类型列表过滤
+                     * 
                      */
                     void SetEvilTypeList(const std::vector<int64_t>& _evilTypeList);
 
                     /**
                      * 判断参数 EvilTypeList 是否已赋值
                      * @return EvilTypeList 是否已赋值
+                     * 
                      */
                     bool EvilTypeListHasBeenSet() const;
 

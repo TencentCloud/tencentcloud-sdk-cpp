@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 指标
+                     * @param _metricName 指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricFunction 统计方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricFunction() const;
 
                     /**
                      * 设置统计方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricFunction 统计方式
+                     * @param _metricFunction 统计方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricFunction(const std::string& _metricFunction);
 
                     /**
                      * 判断参数 MetricFunction 是否已赋值
                      * @return MetricFunction 是否已赋值
+                     * 
                      */
                     bool MetricFunctionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricDataValue 指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricDataValue() const;
 
                     /**
                      * 设置指标值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricDataValue 指标值
+                     * @param _metricDataValue 指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricDataValue(const std::string& _metricDataValue);
 
                     /**
                      * 判断参数 MetricDataValue 是否已赋值
                      * @return MetricDataValue 是否已赋值
+                     * 
                      */
                     bool MetricDataValueHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DailyPercent 日环比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDailyPercent() const;
 
                     /**
                      * 设置日环比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DailyPercent 日环比
+                     * @param _dailyPercent 日环比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDailyPercent(const double& _dailyPercent);
 
                     /**
                      * 判断参数 DailyPercent 是否已赋值
                      * @return DailyPercent 是否已赋值
+                     * 
                      */
                     bool DailyPercentHasBeenSet() const;
 

@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Concurrency 并发施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Concurrency GetConcurrency() const;
 
                     /**
                      * 设置并发施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Concurrency 并发施压模式的配置
+                     * @param _concurrency 并发施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConcurrency(const Concurrency& _concurrency);
 
                     /**
                      * 判断参数 Concurrency 是否已赋值
                      * @return Concurrency 是否已赋值
+                     * 
                      */
                     bool ConcurrencyHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestsPerSecond RPS施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RequestsPerSecond GetRequestsPerSecond() const;
 
                     /**
                      * 设置RPS施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestsPerSecond RPS施压模式的配置
+                     * @param _requestsPerSecond RPS施压模式的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestsPerSecond(const RequestsPerSecond& _requestsPerSecond);
 
                     /**
                      * 判断参数 RequestsPerSecond 是否已赋值
                      * @return RequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool RequestsPerSecondHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptOrigin 脚本内置压力模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScriptOrigin GetScriptOrigin() const;
 
                     /**
                      * 设置脚本内置压力模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScriptOrigin 脚本内置压力模式
+                     * @param _scriptOrigin 脚本内置压力模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScriptOrigin(const ScriptOrigin& _scriptOrigin);
 
                     /**
                      * 判断参数 ScriptOrigin 是否已赋值
                      * @return ScriptOrigin 是否已赋值
+                     * 
                      */
                     bool ScriptOriginHasBeenSet() const;
 

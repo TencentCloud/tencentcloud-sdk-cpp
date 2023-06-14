@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取风险类型
                      * @return Type 风险类型
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置风险类型
-                     * @param Type 风险类型
+                     * @param _type 风险类型
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取风险等级
                      * @return Level 风险等级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置风险等级
-                     * @param Level 风险等级
+                     * @param _level 风险等级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

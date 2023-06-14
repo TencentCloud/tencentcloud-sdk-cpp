@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取日期
                      * @return Date 日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期
-                     * @param Date 日期
+                     * @param _date 日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取门店区域客流详细信息
                      * @return ZoneTrafficInfoDetailSet 门店区域客流详细信息
+                     * 
                      */
                     std::vector<ZoneTrafficInfoDetail> GetZoneTrafficInfoDetailSet() const;
 
                     /**
                      * 设置门店区域客流详细信息
-                     * @param ZoneTrafficInfoDetailSet 门店区域客流详细信息
+                     * @param _zoneTrafficInfoDetailSet 门店区域客流详细信息
+                     * 
                      */
                     void SetZoneTrafficInfoDetailSet(const std::vector<ZoneTrafficInfoDetail>& _zoneTrafficInfoDetailSet);
 
                     /**
                      * 判断参数 ZoneTrafficInfoDetailSet 是否已赋值
                      * @return ZoneTrafficInfoDetailSet 是否已赋值
+                     * 
                      */
                     bool ZoneTrafficInfoDetailSetHasBeenSet() const;
 

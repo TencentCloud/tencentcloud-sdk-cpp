@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullText 全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FullTextInfo GetFullText() const;
 
                     /**
                      * 设置全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullText 全文索引配置, 如果为空时代表未开启全文索引
+                     * @param _fullText 全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullText(const FullTextInfo& _fullText);
 
                     /**
                      * 判断参数 FullText 是否已赋值
                      * @return FullText 是否已赋值
+                     * 
                      */
                     bool FullTextHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValue 键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleKeyValueInfo GetKeyValue() const;
 
                     /**
                      * 设置键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyValue 键值索引配置，如果为空时代表未开启键值索引
+                     * @param _keyValue 键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyValue(const RuleKeyValueInfo& _keyValue);
 
                     /**
                      * 判断参数 KeyValue 是否已赋值
                      * @return KeyValue 是否已赋值
+                     * 
                      */
                     bool KeyValueHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleTagInfo GetTag() const;
 
                     /**
                      * 设置元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 元字段索引配置，如果为空时代表未开启元字段索引
+                     * @param _tag 元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const RuleTagInfo& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicIndex 动态索引配置，如果为空时代表未开启动态段索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DynamicIndex GetDynamicIndex() const;
 
                     /**
                      * 设置动态索引配置，如果为空时代表未开启动态段索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DynamicIndex 动态索引配置，如果为空时代表未开启动态段索引
+                     * @param _dynamicIndex 动态索引配置，如果为空时代表未开启动态段索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDynamicIndex(const DynamicIndex& _dynamicIndex);
 
                     /**
                      * 判断参数 DynamicIndex 是否已赋值
                      * @return DynamicIndex 是否已赋值
+                     * 
                      */
                     bool DynamicIndexHasBeenSet() const;
 

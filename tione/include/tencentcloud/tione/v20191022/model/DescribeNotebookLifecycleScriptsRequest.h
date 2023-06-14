@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20
                      * @return Limit 返回数量，默认为20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20
-                     * @param Limit 返回数量，默认为20
+                     * @param _limit 返回数量，默认为20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -86,6 +92,7 @@ search-by-name - String - 是否必填：否 -（过滤条件）按照名称检�
                      * @return Filters 过滤条件。
 instance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。
 search-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -93,15 +100,17 @@ search-by-name - String - 是否必填：否 -（过滤条件）按照名称检�
                      * 设置过滤条件。
 instance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。
 search-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 instance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。
 search-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -112,6 +121,7 @@ Ascending 按更新时间升序
                      * @return SortOrder 排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
+                     * 
                      */
                     std::string GetSortOrder() const;
 
@@ -119,15 +129,17 @@ Ascending 按更新时间升序
                      * 设置排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
-                     * @param SortOrder 排序规则。默认取Descending
+                     * @param _sortOrder 排序规则。默认取Descending
 Descending 按更新时间降序
 Ascending 按更新时间升序
+                     * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
 
                     /**
                      * 判断参数 SortOrder 是否已赋值
                      * @return SortOrder 是否已赋值
+                     * 
                      */
                     bool SortOrderHasBeenSet() const;
 

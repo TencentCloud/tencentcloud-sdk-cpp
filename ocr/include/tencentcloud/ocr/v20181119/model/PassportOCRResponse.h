@@ -46,180 +46,210 @@ namespace TencentCloud
                     /**
                      * 获取国家码
                      * @return Country 国家码
+                     * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
                     /**
                      * 获取护照号
                      * @return PassportNo 护照号
+                     * 
                      */
                     std::string GetPassportNo() const;
 
                     /**
                      * 判断参数 PassportNo 是否已赋值
                      * @return PassportNo 是否已赋值
+                     * 
                      */
                     bool PassportNoHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取国籍
                      * @return Nationality 国籍
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
                     /**
                      * 获取出生日期
                      * @return BirthDate 出生日期
+                     * 
                      */
                     std::string GetBirthDate() const;
 
                     /**
                      * 判断参数 BirthDate 是否已赋值
                      * @return BirthDate 是否已赋值
+                     * 
                      */
                     bool BirthDateHasBeenSet() const;
 
                     /**
                      * 获取出生地点
                      * @return BirthPlace 出生地点
+                     * 
                      */
                     std::string GetBirthPlace() const;
 
                     /**
                      * 判断参数 BirthPlace 是否已赋值
                      * @return BirthPlace 是否已赋值
+                     * 
                      */
                     bool BirthPlaceHasBeenSet() const;
 
                     /**
                      * 获取签发日期
                      * @return IssueDate 签发日期
+                     * 
                      */
                     std::string GetIssueDate() const;
 
                     /**
                      * 判断参数 IssueDate 是否已赋值
                      * @return IssueDate 是否已赋值
+                     * 
                      */
                     bool IssueDateHasBeenSet() const;
 
                     /**
                      * 获取签发地点
                      * @return IssuePlace 签发地点
+                     * 
                      */
                     std::string GetIssuePlace() const;
 
                     /**
                      * 判断参数 IssuePlace 是否已赋值
                      * @return IssuePlace 是否已赋值
+                     * 
                      */
                     bool IssuePlaceHasBeenSet() const;
 
                     /**
                      * 获取有效期
                      * @return ExpiryDate 有效期
+                     * 
                      */
                     std::string GetExpiryDate() const;
 
                     /**
                      * 判断参数 ExpiryDate 是否已赋值
                      * @return ExpiryDate 是否已赋值
+                     * 
                      */
                     bool ExpiryDateHasBeenSet() const;
 
                     /**
                      * 获取持证人签名
                      * @return Signature 持证人签名
+                     * 
                      */
                     std::string GetSignature() const;
 
                     /**
                      * 判断参数 Signature 是否已赋值
                      * @return Signature 是否已赋值
+                     * 
                      */
                     bool SignatureHasBeenSet() const;
 
                     /**
                      * 获取最下方第一行 MRZ Code 序列
                      * @return CodeSet 最下方第一行 MRZ Code 序列
+                     * 
                      */
                     std::string GetCodeSet() const;
 
                     /**
                      * 判断参数 CodeSet 是否已赋值
                      * @return CodeSet 是否已赋值
+                     * 
                      */
                     bool CodeSetHasBeenSet() const;
 
                     /**
                      * 获取最下方第二行 MRZ Code 序列
                      * @return CodeCrc 最下方第二行 MRZ Code 序列
+                     * 
                      */
                     std::string GetCodeCrc() const;
 
                     /**
                      * 判断参数 CodeCrc 是否已赋值
                      * @return CodeCrc 是否已赋值
+                     * 
                      */
                     bool CodeCrcHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取姓
                      * @return FamilyName 姓
+                     * 
                      */
                     std::string GetFamilyName() const;
 
                     /**
                      * 判断参数 FamilyName 是否已赋值
                      * @return FamilyName 是否已赋值
+                     * 
                      */
                     bool FamilyNameHasBeenSet() const;
 
                     /**
                      * 获取名
                      * @return FirstName 名
+                     * 
                      */
                     std::string GetFirstName() const;
 
                     /**
                      * 判断参数 FirstName 是否已赋值
                      * @return FirstName 是否已赋值
+                     * 
                      */
                     bool FirstNameHasBeenSet() const;
 

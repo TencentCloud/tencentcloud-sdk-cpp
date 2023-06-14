@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取人员ID。
                      * @return PersonId 人员ID。
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员ID。
-                     * @param PersonId 人员ID。
+                     * @param _personId 人员ID。
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取人体动作轨迹ID。
                      * @return TraceId 人体动作轨迹ID。
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置人体动作轨迹ID。
-                     * @param TraceId 人体动作轨迹ID。
+                     * @param _traceId 人体动作轨迹ID。
+                     * 
                      */
                     void SetTraceId(const std::string& _traceId);
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
 二十万人体库下，误识率百分之五对应的分数为80分；误识率百分之二对应的分数为90分；误识率百分之一对应的分数为95分。
  
 通常情况建议使用分数80分（保召回）。若希望获得较高精度，建议使用分数90分（保准确）。
+                     * 
                      */
                     double GetScore() const;
 
@@ -105,18 +112,20 @@ namespace TencentCloud
 二十万人体库下，误识率百分之五对应的分数为80分；误识率百分之二对应的分数为90分；误识率百分之一对应的分数为95分。
  
 通常情况建议使用分数80分（保召回）。若希望获得较高精度，建议使用分数90分（保准确）。
-                     * @param Score 候选者的匹配得分。 
+                     * @param _score 候选者的匹配得分。 
 十万人体库下，误识率百分之五对应的分数为70分；误识率百分之二对应的分数为80分；误识率百分之一对应的分数为90分。
  
 二十万人体库下，误识率百分之五对应的分数为80分；误识率百分之二对应的分数为90分；误识率百分之一对应的分数为95分。
  
 通常情况建议使用分数80分（保召回）。若希望获得较高精度，建议使用分数90分（保准确）。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

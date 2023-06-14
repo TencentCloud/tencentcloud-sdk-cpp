@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取点播输入拉流 URL 。
                      * @return InputUrls 点播输入拉流 URL 。
+                     * 
                      */
                     std::vector<std::string> GetInputUrls() const;
 
                     /**
                      * 设置点播输入拉流 URL 。
-                     * @param InputUrls 点播输入拉流 URL 。
+                     * @param _inputUrls 点播输入拉流 URL 。
+                     * 
                      */
                     void SetInputUrls(const std::vector<std::string>& _inputUrls);
 
                     /**
                      * 判断参数 InputUrls 是否已赋值
                      * @return InputUrls 是否已赋值
+                     * 
                      */
                     bool InputUrlsHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>0 : 不循环；</li>
 <li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>
 默认不循环。
+                     * 
                      */
                     int64_t GetLoopTimes() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 <li>0 : 不循环；</li>
 <li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>
 默认不循环。
-                     * @param LoopTimes 播放次数，取值有：
+                     * @param _loopTimes 播放次数，取值有：
 <li>-1 : 循环播放，直到转推结束；</li>
 <li>0 : 不循环；</li>
 <li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>
 默认不循环。
+                     * 
                      */
                     void SetLoopTimes(const int64_t& _loopTimes);
 
                     /**
                      * 判断参数 LoopTimes 是否已赋值
                      * @return LoopTimes 是否已赋值
+                     * 
                      */
                     bool LoopTimesHasBeenSet() const;
 

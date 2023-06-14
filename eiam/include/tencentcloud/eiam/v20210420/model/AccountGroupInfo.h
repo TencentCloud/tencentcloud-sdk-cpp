@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取账号组ID。
                      * @return AccountGroupId 账号组ID。
+                     * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 设置账号组ID。
-                     * @param AccountGroupId 账号组ID。
+                     * @param _accountGroupId 账号组ID。
+                     * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
 
                     /**
                      * 判断参数 AccountGroupId 是否已赋值
                      * @return AccountGroupId 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
                      * 获取账号组名。
                      * @return GroupName 账号组名。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置账号组名。
-                     * @param GroupName 账号组名。
+                     * @param _groupName 账号组名。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取备注。
                      * @return Description 备注。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注。
-                     * @param Description 备注。
+                     * @param _description 备注。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedDate 创建时间。
+                     * 
                      */
                     std::string GetCreatedDate() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedDate 创建时间。
+                     * @param _createdDate 创建时间。
+                     * 
                      */
                     void SetCreatedDate(const std::string& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 

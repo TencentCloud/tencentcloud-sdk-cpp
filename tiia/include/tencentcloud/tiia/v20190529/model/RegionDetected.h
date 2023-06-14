@@ -54,56 +54,65 @@ namespace TencentCloud
 包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。
                      * @return Category 商品的品类预测结果。 
 包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置商品的品类预测结果。 
 包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。
-                     * @param Category 商品的品类预测结果。 
+                     * @param _category 商品的品类预测结果。 
 包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
                     /**
                      * 获取商品品类预测的置信度
                      * @return CategoryScore 商品品类预测的置信度
+                     * 
                      */
                     double GetCategoryScore() const;
 
                     /**
                      * 设置商品品类预测的置信度
-                     * @param CategoryScore 商品品类预测的置信度
+                     * @param _categoryScore 商品品类预测的置信度
+                     * 
                      */
                     void SetCategoryScore(const double& _categoryScore);
 
                     /**
                      * 判断参数 CategoryScore 是否已赋值
                      * @return CategoryScore 是否已赋值
+                     * 
                      */
                     bool CategoryScoreHasBeenSet() const;
 
                     /**
                      * 获取检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标
                      * @return Location 检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标
+                     * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标
-                     * @param Location 检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标
+                     * @param _location 检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标
+                     * 
                      */
                     void SetLocation(const Location& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

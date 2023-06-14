@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return Db 数据库名称
+                     * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Db 数据库名称
+                     * @param _db 数据库名称
+                     * 
                      */
                     void SetDb(const std::string& _db);
 
                     /**
                      * 判断参数 Db 是否已赋值
                      * @return Db 是否已赋值
+                     * 
                      */
                     bool DbHasBeenSet() const;
 
                     /**
                      * 获取数据库表名称
                      * @return TableName 数据库表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置数据库表名称
-                     * @param TableName 数据库表名称
+                     * @param _tableName 数据库表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 

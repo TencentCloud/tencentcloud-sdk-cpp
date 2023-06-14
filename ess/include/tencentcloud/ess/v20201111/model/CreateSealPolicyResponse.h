@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取最终授权成功的。其他的跳过的是已经授权了的
                      * @return UserIds 最终授权成功的。其他的跳过的是已经授权了的
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

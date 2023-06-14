@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return Filters <li>ItemId - int64 - 是否必填：否 - 项Id</i>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>HostId - string - 是否必填：否 - 主机Id</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -57,15 +58,17 @@ namespace TencentCloud
                      * 设置<li>ItemId - int64 - 是否必填：否 - 项Id</i>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>HostId - string - 是否必填：否 - 主机Id</li>
-                     * @param Filters <li>ItemId - int64 - 是否必填：否 - 项Id</i>
+                     * @param _filters <li>ItemId - int64 - 是否必填：否 - 项Id</i>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>HostId - string - 是否必填：否 - 主机Id</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

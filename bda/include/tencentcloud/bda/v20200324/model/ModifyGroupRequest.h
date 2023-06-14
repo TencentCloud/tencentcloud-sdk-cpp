@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取人体库ID。
                      * @return GroupId 人体库ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置人体库ID。
-                     * @param GroupId 人体库ID。
+                     * @param _groupId 人体库ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取人体库名称。
                      * @return GroupName 人体库名称。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置人体库名称。
-                     * @param GroupName 人体库名称。
+                     * @param _groupName 人体库名称。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取人体库信息备注。
                      * @return Tag 人体库信息备注。
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置人体库信息备注。
-                     * @param Tag 人体库信息备注。
+                     * @param _tag 人体库信息备注。
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

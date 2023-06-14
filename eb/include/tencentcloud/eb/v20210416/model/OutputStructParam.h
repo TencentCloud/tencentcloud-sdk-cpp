@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取对应输出json中的key
                      * @return Key 对应输出json中的key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置对应输出json中的key
-                     * @param Key 对应输出json中的key
+                     * @param _key 对应输出json中的key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取可以填json-path也可以支持常量或者内置关键字date类型
                      * @return Value 可以填json-path也可以支持常量或者内置关键字date类型
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置可以填json-path也可以支持常量或者内置关键字date类型
-                     * @param Value 可以填json-path也可以支持常量或者内置关键字date类型
+                     * @param _value 可以填json-path也可以支持常量或者内置关键字date类型
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH
                      * @return ValueType value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH
+                     * 
                      */
                     std::string GetValueType() const;
 
                     /**
                      * 设置value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH
-                     * @param ValueType value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH
+                     * @param _valueType value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH
+                     * 
                      */
                     void SetValueType(const std::string& _valueType);
 
                     /**
                      * 判断参数 ValueType 是否已赋值
                      * @return ValueType 是否已赋值
+                     * 
                      */
                     bool ValueTypeHasBeenSet() const;
 

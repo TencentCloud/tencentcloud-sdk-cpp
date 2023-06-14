@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取CLB实例ID
                      * @return LoadBalancerId CLB实例ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置CLB实例ID
-                     * @param LoadBalancerId CLB实例ID
+                     * @param _loadBalancerId CLB实例ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取CLB实例名称
                      * @return LoadBalancerName CLB实例名称
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置CLB实例名称
-                     * @param LoadBalancerName CLB实例名称
+                     * @param _loadBalancerName CLB实例名称
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listeners CLB监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClbListener> GetListeners() const;
 
                     /**
                      * 设置CLB监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Listeners CLB监听器列表
+                     * @param _listeners CLB监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListeners(const std::vector<ClbListener>& _listeners);
 
                     /**
                      * 判断参数 Listeners 是否已赋值
                      * @return Listeners 是否已赋值
+                     * 
                      */
                     bool ListenersHasBeenSet() const;
 

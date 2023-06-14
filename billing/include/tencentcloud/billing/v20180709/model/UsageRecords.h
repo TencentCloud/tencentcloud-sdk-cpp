@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取使用金额（微分）
                      * @return UsedAmount 使用金额（微分）
+                     * 
                      */
                     int64_t GetUsedAmount() const;
 
                     /**
                      * 设置使用金额（微分）
-                     * @param UsedAmount 使用金额（微分）
+                     * @param _usedAmount 使用金额（微分）
+                     * 
                      */
                     void SetUsedAmount(const int64_t& _usedAmount);
 
                     /**
                      * 判断参数 UsedAmount 是否已赋值
                      * @return UsedAmount 是否已赋值
+                     * 
                      */
                     bool UsedAmountHasBeenSet() const;
 
                     /**
                      * 获取使用时间
                      * @return UsedTime 使用时间
+                     * 
                      */
                     std::string GetUsedTime() const;
 
                     /**
                      * 设置使用时间
-                     * @param UsedTime 使用时间
+                     * @param _usedTime 使用时间
+                     * 
                      */
                     void SetUsedTime(const std::string& _usedTime);
 
                     /**
                      * 判断参数 UsedTime 是否已赋值
                      * @return UsedTime 是否已赋值
+                     * 
                      */
                     bool UsedTimeHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageDetails 使用记录细节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsageDetails> GetUsageDetails() const;
 
                     /**
                      * 设置使用记录细节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsageDetails 使用记录细节
+                     * @param _usageDetails 使用记录细节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsageDetails(const std::vector<UsageDetails>& _usageDetails);
 
                     /**
                      * 判断参数 UsageDetails 是否已赋值
                      * @return UsageDetails 是否已赋值
+                     * 
                      */
                     bool UsageDetailsHasBeenSet() const;
 

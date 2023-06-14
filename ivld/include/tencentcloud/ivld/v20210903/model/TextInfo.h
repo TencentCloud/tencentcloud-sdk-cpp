@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取OCR提取的内容
                      * @return Content OCR提取的内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置OCR提取的内容
-                     * @param Content OCR提取的内容
+                     * @param _content OCR提取的内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取OCR起始时间戳，从0开始
                      * @return StartTimeStamp OCR起始时间戳，从0开始
+                     * 
                      */
                     double GetStartTimeStamp() const;
 
                     /**
                      * 设置OCR起始时间戳，从0开始
-                     * @param StartTimeStamp OCR起始时间戳，从0开始
+                     * @param _startTimeStamp OCR起始时间戳，从0开始
+                     * 
                      */
                     void SetStartTimeStamp(const double& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
                      * 获取OCR结束时间戳，从0开始
                      * @return EndTimeStamp OCR结束时间戳，从0开始
+                     * 
                      */
                     double GetEndTimeStamp() const;
 
                     /**
                      * 设置OCR结束时间戳，从0开始
-                     * @param EndTimeStamp OCR结束时间戳，从0开始
+                     * @param _endTimeStamp OCR结束时间戳，从0开始
+                     * 
                      */
                     void SetEndTimeStamp(const double& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
                      * 获取OCR标签信息
                      * @return Tag OCR标签信息
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置OCR标签信息
-                     * @param Tag OCR标签信息
+                     * @param _tag OCR标签信息
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称
                      * @return DbName 数据库名称
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DbName 数据库名称
+                     * @param _dbName 数据库名称
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return Name 表名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表名称
-                     * @param Name 表名称
+                     * @param _name 表名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否删除数据
                      * @return DeleteData 是否删除数据
+                     * 
                      */
                     bool GetDeleteData() const;
 
                     /**
                      * 设置是否删除数据
-                     * @param DeleteData 是否删除数据
+                     * @param _deleteData 是否删除数据
+                     * 
                      */
                     void SetDeleteData(const bool& _deleteData);
 
                     /**
                      * 判断参数 DeleteData 是否已赋值
                      * @return DeleteData 是否已赋值
+                     * 
                      */
                     bool DeleteDataHasBeenSet() const;
 
                     /**
                      * 获取环境属性
                      * @return EnvProps 环境属性
+                     * 
                      */
                     KVPair GetEnvProps() const;
 
                     /**
                      * 设置环境属性
-                     * @param EnvProps 环境属性
+                     * @param _envProps 环境属性
+                     * 
                      */
                     void SetEnvProps(const KVPair& _envProps);
 
                     /**
                      * 判断参数 EnvProps 是否已赋值
                      * @return EnvProps 是否已赋值
+                     * 
                      */
                     bool EnvPropsHasBeenSet() const;
 

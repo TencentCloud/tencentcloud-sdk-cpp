@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopStatusCode 总调用数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApiUseStatisticsEntity> GetTopStatusCode() const;
 
                     /**
                      * 设置总调用数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopStatusCode 总调用数
+                     * @param _topStatusCode 总调用数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopStatusCode(const std::vector<ApiUseStatisticsEntity>& _topStatusCode);
 
                     /**
                      * 判断参数 TopStatusCode 是否已赋值
                      * @return TopStatusCode 是否已赋值
+                     * 
                      */
                     bool TopStatusCodeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopTimeCost 平均错误率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApiUseStatisticsEntity> GetTopTimeCost() const;
 
                     /**
                      * 设置平均错误率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopTimeCost 平均错误率
+                     * @param _topTimeCost 平均错误率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopTimeCost(const std::vector<ApiUseStatisticsEntity>& _topTimeCost);
 
                     /**
                      * 判断参数 TopTimeCost 是否已赋值
                      * @return TopTimeCost 是否已赋值
+                     * 
                      */
                     bool TopTimeCostHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quantile 分位值对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     QuantileEntity GetQuantile() const;
 
                     /**
                      * 设置分位值对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quantile 分位值对象
+                     * @param _quantile 分位值对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuantile(const QuantileEntity& _quantile);
 
                     /**
                      * 判断参数 Quantile 是否已赋值
                      * @return Quantile 是否已赋值
+                     * 
                      */
                     bool QuantileHasBeenSet() const;
 

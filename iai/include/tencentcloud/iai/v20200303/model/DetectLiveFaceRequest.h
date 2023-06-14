@@ -49,6 +49,7 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
                      * @return Image 图片 base64 数据，base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。（图片的宽高比请接近3:4，不符合宽高比的图片返回的分值不具备参考意义）。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImage() const;
 
@@ -56,15 +57,17 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
                      * 设置图片 base64 数据，base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。（图片的宽高比请接近3:4，不符合宽高比的图片返回的分值不具备参考意义）。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 图片 base64 数据，base64 编码后大小不可超过5M。
+                     * @param _image 图片 base64 数据，base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。（图片的宽高比请接近3:4，不符合宽高比的图片返回的分值不具备参考意义）。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -83,6 +86,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -94,19 +98,21 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+                     * @param _url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 Url、Image必须提供一个，如果都提供，只使用 Url。 
 （图片的宽高比请接近 3:4，不符合宽高比的图片返回的分值不具备参考意义） 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -129,6 +135,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 2020年11月26日后开通服务的账号仅支持输入“3.0”。
 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
@@ -142,7 +149,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 2020年11月26日后开通服务的账号仅支持输入“3.0”。
 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
-                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本。
+                     * @param _faceModelVersion 人脸识别服务所用的算法模型版本。
 
 目前入参支持 “2.0”和“3.0“ 两个输入。
 
@@ -151,12 +158,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 2020年11月26日后开通服务的账号仅支持输入“3.0”。
 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
+                     * 
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanId 计划ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置计划ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlanId 计划ID
+                     * @param _planId 计划ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 计划名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 计划名称
+                     * @param _name 计划名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeTemplateId 时间模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeTemplateId 时间模板ID
+                     * @param _timeTemplateId 时间模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
 
                     /**
                      * 判断参数 TimeTemplateId 是否已赋值
                      * @return TimeTemplateId 是否已赋值
+                     * 
                      */
                     bool TimeTemplateIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeTemplateName 时间模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeTemplateName() const;
 
                     /**
                      * 设置时间模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeTemplateName 时间模板名称
+                     * @param _timeTemplateName 时间模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeTemplateName(const std::string& _timeTemplateName);
 
                     /**
                      * 判断参数 TimeTemplateName 是否已赋值
                      * @return TimeTemplateName 是否已赋值
+                     * 
                      */
                     bool TimeTemplateNameHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 录制类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置录制类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventId 录制类型
+                     * @param _eventId 录制类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Devices 绑定的设备列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceItem> GetDevices() const;
 
                     /**
                      * 设置绑定的设备列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Devices 绑定的设备列表
+                     * @param _devices 绑定的设备列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevices(const std::vector<DeviceItem>& _devices);
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordStorageTime 录像存储天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordStorageTime() const;
 
                     /**
                      * 设置录像存储天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordStorageTime 录像存储天数
+                     * @param _recordStorageTime 录像存储天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordStorageTime(const int64_t& _recordStorageTime);
 
                     /**
                      * 判断参数 RecordStorageTime 是否已赋值
                      * @return RecordStorageTime 是否已赋值
+                     * 
                      */
                     bool RecordStorageTimeHasBeenSet() const;
 

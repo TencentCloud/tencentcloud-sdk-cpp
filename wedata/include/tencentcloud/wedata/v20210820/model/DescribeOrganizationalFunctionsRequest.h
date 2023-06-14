@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取场景类型：开发、使用
                      * @return Type 场景类型：开发、使用
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置场景类型：开发、使用
-                     * @param Type 场景类型：开发、使用
+                     * @param _type 场景类型：开发、使用
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取项目 ID
                      * @return ProjectId 项目 ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * @param _projectId 项目 ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取函数名称
                      * @return Name 函数名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置函数名称
-                     * @param Name 函数名称
+                     * @param _name 函数名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取展示名称
                      * @return DisplayName 展示名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置展示名称
-                     * @param DisplayName 展示名称
+                     * @param _displayName 展示名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 

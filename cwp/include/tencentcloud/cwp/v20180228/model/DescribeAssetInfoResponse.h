@@ -46,240 +46,280 @@ namespace TencentCloud
                     /**
                      * 获取主机数
                      * @return MachineCount 主机数
+                     * 
                      */
                     uint64_t GetMachineCount() const;
 
                     /**
                      * 判断参数 MachineCount 是否已赋值
                      * @return MachineCount 是否已赋值
+                     * 
                      */
                     bool MachineCountHasBeenSet() const;
 
                     /**
                      * 获取账号数
                      * @return AccountCount 账号数
+                     * 
                      */
                     uint64_t GetAccountCount() const;
 
                     /**
                      * 判断参数 AccountCount 是否已赋值
                      * @return AccountCount 是否已赋值
+                     * 
                      */
                     bool AccountCountHasBeenSet() const;
 
                     /**
                      * 获取端口数
                      * @return PortCount 端口数
+                     * 
                      */
                     uint64_t GetPortCount() const;
 
                     /**
                      * 判断参数 PortCount 是否已赋值
                      * @return PortCount 是否已赋值
+                     * 
                      */
                     bool PortCountHasBeenSet() const;
 
                     /**
                      * 获取进程数
                      * @return ProcessCount 进程数
+                     * 
                      */
                     uint64_t GetProcessCount() const;
 
                     /**
                      * 判断参数 ProcessCount 是否已赋值
                      * @return ProcessCount 是否已赋值
+                     * 
                      */
                     bool ProcessCountHasBeenSet() const;
 
                     /**
                      * 获取软件数
                      * @return SoftwareCount 软件数
+                     * 
                      */
                     uint64_t GetSoftwareCount() const;
 
                     /**
                      * 判断参数 SoftwareCount 是否已赋值
                      * @return SoftwareCount 是否已赋值
+                     * 
                      */
                     bool SoftwareCountHasBeenSet() const;
 
                     /**
                      * 获取数据库数
                      * @return DatabaseCount 数据库数
+                     * 
                      */
                     uint64_t GetDatabaseCount() const;
 
                     /**
                      * 判断参数 DatabaseCount 是否已赋值
                      * @return DatabaseCount 是否已赋值
+                     * 
                      */
                     bool DatabaseCountHasBeenSet() const;
 
                     /**
                      * 获取Web应用数
                      * @return WebAppCount Web应用数
+                     * 
                      */
                     uint64_t GetWebAppCount() const;
 
                     /**
                      * 判断参数 WebAppCount 是否已赋值
                      * @return WebAppCount 是否已赋值
+                     * 
                      */
                     bool WebAppCountHasBeenSet() const;
 
                     /**
                      * 获取Web框架数
                      * @return WebFrameCount Web框架数
+                     * 
                      */
                     uint64_t GetWebFrameCount() const;
 
                     /**
                      * 判断参数 WebFrameCount 是否已赋值
                      * @return WebFrameCount 是否已赋值
+                     * 
                      */
                     bool WebFrameCountHasBeenSet() const;
 
                     /**
                      * 获取Web服务数
                      * @return WebServiceCount Web服务数
+                     * 
                      */
                     uint64_t GetWebServiceCount() const;
 
                     /**
                      * 判断参数 WebServiceCount 是否已赋值
                      * @return WebServiceCount 是否已赋值
+                     * 
                      */
                     bool WebServiceCountHasBeenSet() const;
 
                     /**
                      * 获取Web站点数
                      * @return WebLocationCount Web站点数
+                     * 
                      */
                     uint64_t GetWebLocationCount() const;
 
                     /**
                      * 判断参数 WebLocationCount 是否已赋值
                      * @return WebLocationCount 是否已赋值
+                     * 
                      */
                     bool WebLocationCountHasBeenSet() const;
 
                     /**
                      * 获取账号今日新增
                      * @return AccountNewCount 账号今日新增
+                     * 
                      */
                     int64_t GetAccountNewCount() const;
 
                     /**
                      * 判断参数 AccountNewCount 是否已赋值
                      * @return AccountNewCount 是否已赋值
+                     * 
                      */
                     bool AccountNewCountHasBeenSet() const;
 
                     /**
                      * 获取端口今日新增
                      * @return PortNewCount 端口今日新增
+                     * 
                      */
                     int64_t GetPortNewCount() const;
 
                     /**
                      * 判断参数 PortNewCount 是否已赋值
                      * @return PortNewCount 是否已赋值
+                     * 
                      */
                     bool PortNewCountHasBeenSet() const;
 
                     /**
                      * 获取进程今日新增
                      * @return ProcessNewCount 进程今日新增
+                     * 
                      */
                     int64_t GetProcessNewCount() const;
 
                     /**
                      * 判断参数 ProcessNewCount 是否已赋值
                      * @return ProcessNewCount 是否已赋值
+                     * 
                      */
                     bool ProcessNewCountHasBeenSet() const;
 
                     /**
                      * 获取软件今日新增
                      * @return SoftwareNewCount 软件今日新增
+                     * 
                      */
                     int64_t GetSoftwareNewCount() const;
 
                     /**
                      * 判断参数 SoftwareNewCount 是否已赋值
                      * @return SoftwareNewCount 是否已赋值
+                     * 
                      */
                     bool SoftwareNewCountHasBeenSet() const;
 
                     /**
                      * 获取数据库今日新增
                      * @return DatabaseNewCount 数据库今日新增
+                     * 
                      */
                     int64_t GetDatabaseNewCount() const;
 
                     /**
                      * 判断参数 DatabaseNewCount 是否已赋值
                      * @return DatabaseNewCount 是否已赋值
+                     * 
                      */
                     bool DatabaseNewCountHasBeenSet() const;
 
                     /**
                      * 获取Web应用今日新增
                      * @return WebAppNewCount Web应用今日新增
+                     * 
                      */
                     int64_t GetWebAppNewCount() const;
 
                     /**
                      * 判断参数 WebAppNewCount 是否已赋值
                      * @return WebAppNewCount 是否已赋值
+                     * 
                      */
                     bool WebAppNewCountHasBeenSet() const;
 
                     /**
                      * 获取Web框架今日新增
                      * @return WebFrameNewCount Web框架今日新增
+                     * 
                      */
                     int64_t GetWebFrameNewCount() const;
 
                     /**
                      * 判断参数 WebFrameNewCount 是否已赋值
                      * @return WebFrameNewCount 是否已赋值
+                     * 
                      */
                     bool WebFrameNewCountHasBeenSet() const;
 
                     /**
                      * 获取Web服务今日新增
                      * @return WebServiceNewCount Web服务今日新增
+                     * 
                      */
                     int64_t GetWebServiceNewCount() const;
 
                     /**
                      * 判断参数 WebServiceNewCount 是否已赋值
                      * @return WebServiceNewCount 是否已赋值
+                     * 
                      */
                     bool WebServiceNewCountHasBeenSet() const;
 
                     /**
                      * 获取Web站点今日新增
                      * @return WebLocationNewCount Web站点今日新增
+                     * 
                      */
                     int64_t GetWebLocationNewCount() const;
 
                     /**
                      * 判断参数 WebLocationNewCount 是否已赋值
                      * @return WebLocationNewCount 是否已赋值
+                     * 
                      */
                     bool WebLocationNewCountHasBeenSet() const;
 
                     /**
                      * 获取主机今日新增
                      * @return MachineNewCount 主机今日新增
+                     * 
                      */
                     int64_t GetMachineNewCount() const;
 
                     /**
                      * 判断参数 MachineNewCount 是否已赋值
                      * @return MachineNewCount 是否已赋值
+                     * 
                      */
                     bool MachineNewCountHasBeenSet() const;
 

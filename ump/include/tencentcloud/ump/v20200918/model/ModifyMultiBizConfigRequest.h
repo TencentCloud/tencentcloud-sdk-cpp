@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集团编码
                      * @return GroupCode 集团编码
+                     * 
                      */
                     std::string GetGroupCode() const;
 
                     /**
                      * 设置集团编码
-                     * @param GroupCode 集团编码
+                     * @param _groupCode 集团编码
+                     * 
                      */
                     void SetGroupCode(const std::string& _groupCode);
 
                     /**
                      * 判断参数 GroupCode 是否已赋值
                      * @return GroupCode 是否已赋值
+                     * 
                      */
                     bool GroupCodeHasBeenSet() const;
 
                     /**
                      * 获取广场ID
                      * @return MallId 广场ID
+                     * 
                      */
                     uint64_t GetMallId() const;
 
                     /**
                      * 设置广场ID
-                     * @param MallId 广场ID
+                     * @param _mallId 广场ID
+                     * 
                      */
                     void SetMallId(const uint64_t& _mallId);
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取点位ID
                      * @return ZoneId 点位ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置点位ID
-                     * @param ZoneId 点位ID
+                     * @param _zoneId 点位ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取摄像头ID
                      * @return CameraId 摄像头ID
+                     * 
                      */
                     uint64_t GetCameraId() const;
 
                     /**
                      * 设置摄像头ID
-                     * @param CameraId 摄像头ID
+                     * @param _cameraId 摄像头ID
+                     * 
                      */
                     void SetCameraId(const uint64_t& _cameraId);
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取监控区域
                      * @return MonitoringAreas 监控区域
+                     * 
                      */
                     std::vector<Polygon> GetMonitoringAreas() const;
 
                     /**
                      * 设置监控区域
-                     * @param MonitoringAreas 监控区域
+                     * @param _monitoringAreas 监控区域
+                     * 
                      */
                     void SetMonitoringAreas(const std::vector<Polygon>& _monitoringAreas);
 
                     /**
                      * 判断参数 MonitoringAreas 是否已赋值
                      * @return MonitoringAreas 是否已赋值
+                     * 
                      */
                     bool MonitoringAreasHasBeenSet() const;
 

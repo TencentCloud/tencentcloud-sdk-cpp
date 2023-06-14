@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return RuntimeId 环境id
+                     * 
                      */
                     int64_t GetRuntimeId() const;
 
                     /**
                      * 设置环境id
-                     * @param RuntimeId 环境id
+                     * @param _runtimeId 环境id
+                     * 
                      */
                     void SetRuntimeId(const int64_t& _runtimeId);
 
                     /**
                      * 判断参数 RuntimeId 是否已赋值
                      * @return RuntimeId 是否已赋值
+                     * 
                      */
                     bool RuntimeIdHasBeenSet() const;
 
                     /**
                      * 获取环境地域
                      * @return Zone 环境地域
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置环境地域
-                     * @param Zone 环境地域
+                     * @param _zone 环境地域
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取环境运行类型：0:运行时类型、1:api类型
                      * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * 
                      */
                     int64_t GetRuntimeClass() const;
 
                     /**
                      * 设置环境运行类型：0:运行时类型、1:api类型
-                     * @param RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * @param _runtimeClass 环境运行类型：0:运行时类型、1:api类型
+                     * 
                      */
                     void SetRuntimeClass(const int64_t& _runtimeClass);
 
                     /**
                      * 判断参数 RuntimeClass 是否已赋值
                      * @return RuntimeClass 是否已赋值
+                     * 
                      */
                     bool RuntimeClassHasBeenSet() const;
 

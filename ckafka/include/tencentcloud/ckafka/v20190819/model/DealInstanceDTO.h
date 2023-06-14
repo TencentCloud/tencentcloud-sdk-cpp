@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 订单流水
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置订单流水
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealName 订单流水
+                     * @param _dealName 订单流水
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIdList 订单流水对应购买的 CKafka 实例 id 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
                      * 设置订单流水对应购买的 CKafka 实例 id 列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIdList 订单流水对应购买的 CKafka 实例 id 列表
+                     * @param _instanceIdList 订单流水对应购买的 CKafka 实例 id 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
 
                     /**
                      * 判断参数 InstanceIdList 是否已赋值
                      * @return InstanceIdList 是否已赋值
+                     * 
                      */
                     bool InstanceIdListHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取人脸图片ID
                      * @return ImageId 人脸图片ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置人脸图片ID
-                     * @param ImageId 人脸图片ID
+                     * @param _imageId 人脸图片ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内
                      * @return ImageURL 自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内
+                     * 
                      */
                     std::string GetImageURL() const;
 
                     /**
                      * 设置自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内
-                     * @param ImageURL 自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内
+                     * @param _imageURL 自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内
+                     * 
                      */
                     void SetImageURL(const std::string& _imageURL);
 
                     /**
                      * 判断参数 ImageURL 是否已赋值
                      * @return ImageURL 是否已赋值
+                     * 
                      */
                     bool ImageURLHasBeenSet() const;
 
                     /**
                      * 获取自定义人脸图片处理错误码
                      * @return ErrorCode 自定义人脸图片处理错误码
+                     * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 设置自定义人脸图片处理错误码
-                     * @param ErrorCode 自定义人脸图片处理错误码
+                     * @param _errorCode 自定义人脸图片处理错误码
+                     * 
                      */
                     void SetErrorCode(const std::string& _errorCode);
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取自定义人脸图片处理错误信息
                      * @return ErrorMsg 自定义人脸图片处理错误信息
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置自定义人脸图片处理错误信息
-                     * @param ErrorMsg 自定义人脸图片处理错误信息
+                     * @param _errorMsg 自定义人脸图片处理错误信息
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

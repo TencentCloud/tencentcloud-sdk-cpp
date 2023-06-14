@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取计税模板列表
                      * @return TaxTemplateInfoList 计税模板列表
+                     * 
                      */
                     std::vector<PayeeTaxTemplateInfo> GetTaxTemplateInfoList() const;
 
                     /**
                      * 设置计税模板列表
-                     * @param TaxTemplateInfoList 计税模板列表
+                     * @param _taxTemplateInfoList 计税模板列表
+                     * 
                      */
                     void SetTaxTemplateInfoList(const std::vector<PayeeTaxTemplateInfo>& _taxTemplateInfoList);
 
                     /**
                      * 判断参数 TaxTemplateInfoList 是否已赋值
                      * @return TaxTemplateInfoList 是否已赋值
+                     * 
                      */
                     bool TaxTemplateInfoListHasBeenSet() const;
 
                     /**
                      * 获取纳税人识别号
                      * @return TaxpayerIdNo 纳税人识别号
+                     * 
                      */
                     std::string GetTaxpayerIdNo() const;
 
                     /**
                      * 设置纳税人识别号
-                     * @param TaxpayerIdNo 纳税人识别号
+                     * @param _taxpayerIdNo 纳税人识别号
+                     * 
                      */
                     void SetTaxpayerIdNo(const std::string& _taxpayerIdNo);
 
                     /**
                      * 判断参数 TaxpayerIdNo 是否已赋值
                      * @return TaxpayerIdNo 是否已赋值
+                     * 
                      */
                     bool TaxpayerIdNoHasBeenSet() const;
 
@@ -90,6 +96,7 @@ NON_NATURAL:非自然人
                      * @return TaxEntityType 纳税主体类型
 NATURAL:自然人
 NON_NATURAL:非自然人
+                     * 
                      */
                     std::string GetTaxEntityType() const;
 
@@ -97,33 +104,38 @@ NON_NATURAL:非自然人
                      * 设置纳税主体类型
 NATURAL:自然人
 NON_NATURAL:非自然人
-                     * @param TaxEntityType 纳税主体类型
+                     * @param _taxEntityType 纳税主体类型
 NATURAL:自然人
 NON_NATURAL:非自然人
+                     * 
                      */
                     void SetTaxEntityType(const std::string& _taxEntityType);
 
                     /**
                      * 判断参数 TaxEntityType 是否已赋值
                      * @return TaxEntityType 是否已赋值
+                     * 
                      */
                     bool TaxEntityTypeHasBeenSet() const;
 
                     /**
                      * 获取财税服务商ID
                      * @return TaxServiceProviderId 财税服务商ID
+                     * 
                      */
                     std::string GetTaxServiceProviderId() const;
 
                     /**
                      * 设置财税服务商ID
-                     * @param TaxServiceProviderId 财税服务商ID
+                     * @param _taxServiceProviderId 财税服务商ID
+                     * 
                      */
                     void SetTaxServiceProviderId(const std::string& _taxServiceProviderId);
 
                     /**
                      * 判断参数 TaxServiceProviderId 是否已赋值
                      * @return TaxServiceProviderId 是否已赋值
+                     * 
                      */
                     bool TaxServiceProviderIdHasBeenSet() const;
 

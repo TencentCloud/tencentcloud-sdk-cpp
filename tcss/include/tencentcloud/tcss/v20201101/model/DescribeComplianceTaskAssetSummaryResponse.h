@@ -55,24 +55,28 @@ USER_NORMAL: 正常状态。
 USER_UNINIT: 用户未初始化。
 USER_INITIALIZING，表示用户正在初始化环境。
 USER_NORMAL: 正常状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取返回各类资产的汇总信息的列表。
                      * @return AssetSummaryList 返回各类资产的汇总信息的列表。
+                     * 
                      */
                     std::vector<ComplianceAssetSummary> GetAssetSummaryList() const;
 
                     /**
                      * 判断参数 AssetSummaryList 是否已赋值
                      * @return AssetSummaryList 是否已赋值
+                     * 
                      */
                     bool AssetSummaryListHasBeenSet() const;
 

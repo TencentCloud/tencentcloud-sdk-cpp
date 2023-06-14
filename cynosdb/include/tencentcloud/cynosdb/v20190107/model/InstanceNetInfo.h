@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceGroupType 网络类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceGroupType() const;
 
                     /**
                      * 设置网络类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceGroupType 网络类型
+                     * @param _instanceGroupType 网络类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceGroupType(const std::string& _instanceGroupType);
 
                     /**
                      * 判断参数 InstanceGroupType 是否已赋值
                      * @return InstanceGroupType 是否已赋值
+                     * 
                      */
                     bool InstanceGroupTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceGroupId 实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
                      * 设置实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceGroupId 实例组ID
+                     * @param _instanceGroupId 实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
 
                     /**
                      * 判断参数 InstanceGroupId 是否已赋值
                      * @return InstanceGroupId 是否已赋值
+                     * 
                      */
                     bool InstanceGroupIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetType 网络类型, 0-基础网络, 1-vpc网络, 2-黑石网络
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNetType() const;
 
                     /**
                      * 设置网络类型, 0-基础网络, 1-vpc网络, 2-黑石网络
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetType 网络类型, 0-基础网络, 1-vpc网络, 2-黑石网络
+                     * @param _netType 网络类型, 0-基础网络, 1-vpc网络, 2-黑石网络
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetType(const int64_t& _netType);
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 私有网络IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置私有网络IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip 私有网络IP
+                     * @param _vip 私有网络IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 私有网络端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置私有网络端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vport 私有网络端口
+                     * @param _vport 私有网络端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanDomain 外网域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWanDomain() const;
 
                     /**
                      * 设置外网域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanDomain 外网域名
+                     * @param _wanDomain 外网域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanDomain(const std::string& _wanDomain);
 
                     /**
                      * 判断参数 WanDomain 是否已赋值
                      * @return WanDomain 是否已赋值
+                     * 
                      */
                     bool WanDomainHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanIP 外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWanIP() const;
 
                     /**
                      * 设置外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanIP 外网Ip
+                     * @param _wanIP 外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanIP(const std::string& _wanIP);
 
                     /**
                      * 判断参数 WanIP 是否已赋值
                      * @return WanIP 是否已赋值
+                     * 
                      */
                     bool WanIPHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanPort 外网端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWanPort() const;
 
                     /**
                      * 设置外网端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanPort 外网端口
+                     * @param _wanPort 外网端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanPort(const int64_t& _wanPort);
 
                     /**
                      * 判断参数 WanPort 是否已赋值
                      * @return WanPort 是否已赋值
+                     * 
                      */
                     bool WanPortHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanStatus 外网开启状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWanStatus() const;
 
                     /**
                      * 设置外网开启状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanStatus 外网开启状态
+                     * @param _wanStatus 外网开启状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanStatus(const std::string& _wanStatus);
 
                     /**
                      * 判断参数 WanStatus 是否已赋值
                      * @return WanStatus 是否已赋值
+                     * 
                      */
                     bool WanStatusHasBeenSet() const;
 

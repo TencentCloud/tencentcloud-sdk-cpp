@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取交易ID
                      * @return Txid 交易ID
+                     * 
                      */
                     std::string GetTxid() const;
 
                     /**
                      * 判断参数 Txid 是否已赋值
                      * @return Txid 是否已赋值
+                     * 
                      */
                     bool TxidHasBeenSet() const;
 
                     /**
                      * 获取交易执行结果
                      * @return Events 交易执行结果
+                     * 
                      */
                     std::string GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 

@@ -54,12 +54,14 @@ namespace TencentCloud
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
+                     * 
                      */
                     std::string GetAclTag() const;
 
                     /**
                      * 判断参数 AclTag 是否已赋值
                      * @return AclTag 是否已赋值
+                     * 
                      */
                     bool AclTagHasBeenSet() const;
 

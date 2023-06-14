@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的审计日志条数。
                      * @return TotalCount 符合条件的审计日志条数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 审计日志详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuditLog> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainInfoList 域名信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomizedDomainInfo> GetDomainInfoList() const;
 
                     /**
                      * 判断参数 DomainInfoList 是否已赋值
                      * @return DomainInfoList 是否已赋值
+                     * 
                      */
                     bool DomainInfoListHasBeenSet() const;
 
                     /**
                      * 获取总个数
                      * @return TotalCount 总个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

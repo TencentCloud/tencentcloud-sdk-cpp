@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取代理ID。
                      * @return ProxyId 代理ID。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置代理ID。
-                     * @param ProxyId 代理ID。
+                     * @param _proxyId 代理ID。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取规则ID。
                      * @return RuleId 规则ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID。
-                     * @param RuleId 规则ID。
+                     * @param _ruleId 规则ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

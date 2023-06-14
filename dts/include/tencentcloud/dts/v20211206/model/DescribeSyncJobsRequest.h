@@ -46,198 +46,231 @@ namespace TencentCloud
                     /**
                      * 获取同步任务id，如sync-werwfs23
                      * @return JobId 同步任务id，如sync-werwfs23
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置同步任务id，如sync-werwfs23
-                     * @param JobId 同步任务id，如sync-werwfs23
+                     * @param _jobId 同步任务id，如sync-werwfs23
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取同步任务名
                      * @return JobName 同步任务名
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置同步任务名
-                     * @param JobName 同步任务名
+                     * @param _jobName 同步任务名
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 
                     /**
                      * 获取排序字段，可以取值为CreateTime
                      * @return Order 排序字段，可以取值为CreateTime
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序字段，可以取值为CreateTime
-                     * @param Order 排序字段，可以取值为CreateTime
+                     * @param _order 排序字段，可以取值为CreateTime
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式，升序为ASC，降序为DESC，默认为CreateTime降序
                      * @return OrderSeq 排序方式，升序为ASC，降序为DESC，默认为CreateTime降序
+                     * 
                      */
                     std::string GetOrderSeq() const;
 
                     /**
                      * 设置排序方式，升序为ASC，降序为DESC，默认为CreateTime降序
-                     * @param OrderSeq 排序方式，升序为ASC，降序为DESC，默认为CreateTime降序
+                     * @param _orderSeq 排序方式，升序为ASC，降序为DESC，默认为CreateTime降序
+                     * 
                      */
                     void SetOrderSeq(const std::string& _orderSeq);
 
                     /**
                      * 判断参数 OrderSeq 是否已赋值
                      * @return OrderSeq 是否已赋值
+                     * 
                      */
                     bool OrderSeqHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回同步任务实例数量，默认20，有效区间[1,100]
                      * @return Limit 返回同步任务实例数量，默认20，有效区间[1,100]
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回同步任务实例数量，默认20，有效区间[1,100]
-                     * @param Limit 返回同步任务实例数量，默认20，有效区间[1,100]
+                     * @param _limit 返回同步任务实例数量，默认20，有效区间[1,100]
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
                      * @return Status 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
                      * 设置状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
-                     * @param Status 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * @param _status 状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped
+                     * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取运行模式，如Immediate:立即运行，Timed:定时运行
                      * @return RunMode 运行模式，如Immediate:立即运行，Timed:定时运行
+                     * 
                      */
                     std::string GetRunMode() const;
 
                     /**
                      * 设置运行模式，如Immediate:立即运行，Timed:定时运行
-                     * @param RunMode 运行模式，如Immediate:立即运行，Timed:定时运行
+                     * @param _runMode 运行模式，如Immediate:立即运行，Timed:定时运行
+                     * 
                      */
                     void SetRunMode(const std::string& _runMode);
 
                     /**
                      * 判断参数 RunMode 是否已赋值
                      * @return RunMode 是否已赋值
+                     * 
                      */
                     bool RunModeHasBeenSet() const;
 
                     /**
                      * 获取任务类型，如mysql2mysql：msyql同步到mysql
                      * @return JobType 任务类型，如mysql2mysql：msyql同步到mysql
+                     * 
                      */
                     std::string GetJobType() const;
 
                     /**
                      * 设置任务类型，如mysql2mysql：msyql同步到mysql
-                     * @param JobType 任务类型，如mysql2mysql：msyql同步到mysql
+                     * @param _jobType 任务类型，如mysql2mysql：msyql同步到mysql
+                     * 
                      */
                     void SetJobType(const std::string& _jobType);
 
                     /**
                      * 判断参数 JobType 是否已赋值
                      * @return JobType 是否已赋值
+                     * 
                      */
                     bool JobTypeHasBeenSet() const;
 
                     /**
                      * 获取付费类型，PrePay：预付费，PostPay：后付费
                      * @return PayMode 付费类型，PrePay：预付费，PostPay：后付费
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付费类型，PrePay：预付费，PostPay：后付费
-                     * @param PayMode 付费类型，PrePay：预付费，PostPay：后付费
+                     * @param _payMode 付费类型，PrePay：预付费，PostPay：后付费
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取tag
                      * @return TagFilters tag
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置tag
-                     * @param TagFilters tag
+                     * @param _tagFilters tag
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 

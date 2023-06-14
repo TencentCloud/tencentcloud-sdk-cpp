@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取（过滤条件）按照实例 ID 过滤。
                      * @return InstanceId （过滤条件）按照实例 ID 过滤。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置（过滤条件）按照实例 ID 过滤。
-                     * @param InstanceId （过滤条件）按照实例 ID 过滤。
+                     * @param _instanceId （过滤条件）按照实例 ID 过滤。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
                      * @return GroupList Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * 
                      */
                     std::vector<std::string> GetGroupList() const;
 
                     /**
                      * 设置Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
-                     * @param GroupList Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * @param _groupList Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * 
                      */
                     void SetGroupList(const std::vector<std::string>& _groupList);
 
                     /**
                      * 判断参数 GroupList 是否已赋值
                      * @return GroupList 是否已赋值
+                     * 
                      */
                     bool GroupListHasBeenSet() const;
 

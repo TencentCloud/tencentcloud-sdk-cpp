@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取SendEmail返回的MessageId
                      * @return MessageId SendEmail返回的MessageId
+                     * 
                      */
                     std::string GetMessageId() const;
 
                     /**
                      * 设置SendEmail返回的MessageId
-                     * @param MessageId SendEmail返回的MessageId
+                     * @param _messageId SendEmail返回的MessageId
+                     * 
                      */
                     void SetMessageId(const std::string& _messageId);
 
                     /**
                      * 判断参数 MessageId 是否已赋值
                      * @return MessageId 是否已赋值
+                     * 
                      */
                     bool MessageIdHasBeenSet() const;
 
                     /**
                      * 获取收件人邮箱
                      * @return ToEmailAddress 收件人邮箱
+                     * 
                      */
                     std::string GetToEmailAddress() const;
 
                     /**
                      * 设置收件人邮箱
-                     * @param ToEmailAddress 收件人邮箱
+                     * @param _toEmailAddress 收件人邮箱
+                     * 
                      */
                     void SetToEmailAddress(const std::string& _toEmailAddress);
 
                     /**
                      * 判断参数 ToEmailAddress 是否已赋值
                      * @return ToEmailAddress 是否已赋值
+                     * 
                      */
                     bool ToEmailAddressHasBeenSet() const;
 
                     /**
                      * 获取发件人邮箱
                      * @return FromEmailAddress 发件人邮箱
+                     * 
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
                      * 设置发件人邮箱
-                     * @param FromEmailAddress 发件人邮箱
+                     * @param _fromEmailAddress 发件人邮箱
+                     * 
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
 
                     /**
                      * 判断参数 FromEmailAddress 是否已赋值
                      * @return FromEmailAddress 是否已赋值
+                     * 
                      */
                     bool FromEmailAddressHasBeenSet() const;
 
@@ -151,6 +160,7 @@ namespace TencentCloud
 3024: 邮箱地址格式预检查失败
 3030: 退信率过高，临时限制发送
 3033: 余额不足，账号欠费等
+                     * 
                      */
                     int64_t GetSendStatus() const;
 
@@ -180,7 +190,7 @@ namespace TencentCloud
 3024: 邮箱地址格式预检查失败
 3030: 退信率过高，临时限制发送
 3033: 余额不足，账号欠费等
-                     * @param SendStatus 腾讯云处理状态
+                     * @param _sendStatus 腾讯云处理状态
 0: 处理成功
 1001: 内部系统异常
 1002: 内部系统异常
@@ -205,12 +215,14 @@ namespace TencentCloud
 3024: 邮箱地址格式预检查失败
 3030: 退信率过高，临时限制发送
 3033: 余额不足，账号欠费等
+                     * 
                      */
                     void SetSendStatus(const int64_t& _sendStatus);
 
                     /**
                      * 判断参数 SendStatus 是否已赋值
                      * @return SendStatus 是否已赋值
+                     * 
                      */
                     bool SendStatusHasBeenSet() const;
 
@@ -227,6 +239,7 @@ namespace TencentCloud
 2: 邮件因某种原因被丢弃，DeliverMessage表示丢弃原因
 3: 收件方ESP拒信，一般原因为邮箱地址不存在，或其它原因
 8: 邮件被ESP因某些原因延迟递送，DeliverMessage表示延迟原因
+                     * 
                      */
                     int64_t GetDeliverStatus() const;
 
@@ -237,144 +250,167 @@ namespace TencentCloud
 2: 邮件因某种原因被丢弃，DeliverMessage表示丢弃原因
 3: 收件方ESP拒信，一般原因为邮箱地址不存在，或其它原因
 8: 邮件被ESP因某些原因延迟递送，DeliverMessage表示延迟原因
-                     * @param DeliverStatus 收件方处理状态
+                     * @param _deliverStatus 收件方处理状态
 0: 请求成功被腾讯云接受，进入发送队列
 1: 邮件递送成功，DeliverTime表示递送成功的时间
 2: 邮件因某种原因被丢弃，DeliverMessage表示丢弃原因
 3: 收件方ESP拒信，一般原因为邮箱地址不存在，或其它原因
 8: 邮件被ESP因某些原因延迟递送，DeliverMessage表示延迟原因
+                     * 
                      */
                     void SetDeliverStatus(const int64_t& _deliverStatus);
 
                     /**
                      * 判断参数 DeliverStatus 是否已赋值
                      * @return DeliverStatus 是否已赋值
+                     * 
                      */
                     bool DeliverStatusHasBeenSet() const;
 
                     /**
                      * 获取收件方处理状态描述
                      * @return DeliverMessage 收件方处理状态描述
+                     * 
                      */
                     std::string GetDeliverMessage() const;
 
                     /**
                      * 设置收件方处理状态描述
-                     * @param DeliverMessage 收件方处理状态描述
+                     * @param _deliverMessage 收件方处理状态描述
+                     * 
                      */
                     void SetDeliverMessage(const std::string& _deliverMessage);
 
                     /**
                      * 判断参数 DeliverMessage 是否已赋值
                      * @return DeliverMessage 是否已赋值
+                     * 
                      */
                     bool DeliverMessageHasBeenSet() const;
 
                     /**
                      * 获取请求到达腾讯云时间戳
                      * @return RequestTime 请求到达腾讯云时间戳
+                     * 
                      */
                     int64_t GetRequestTime() const;
 
                     /**
                      * 设置请求到达腾讯云时间戳
-                     * @param RequestTime 请求到达腾讯云时间戳
+                     * @param _requestTime 请求到达腾讯云时间戳
+                     * 
                      */
                     void SetRequestTime(const int64_t& _requestTime);
 
                     /**
                      * 判断参数 RequestTime 是否已赋值
                      * @return RequestTime 是否已赋值
+                     * 
                      */
                     bool RequestTimeHasBeenSet() const;
 
                     /**
                      * 获取腾讯云执行递送时间戳
                      * @return DeliverTime 腾讯云执行递送时间戳
+                     * 
                      */
                     int64_t GetDeliverTime() const;
 
                     /**
                      * 设置腾讯云执行递送时间戳
-                     * @param DeliverTime 腾讯云执行递送时间戳
+                     * @param _deliverTime 腾讯云执行递送时间戳
+                     * 
                      */
                     void SetDeliverTime(const int64_t& _deliverTime);
 
                     /**
                      * 判断参数 DeliverTime 是否已赋值
                      * @return DeliverTime 是否已赋值
+                     * 
                      */
                     bool DeliverTimeHasBeenSet() const;
 
                     /**
                      * 获取用户是否打开该邮件
                      * @return UserOpened 用户是否打开该邮件
+                     * 
                      */
                     bool GetUserOpened() const;
 
                     /**
                      * 设置用户是否打开该邮件
-                     * @param UserOpened 用户是否打开该邮件
+                     * @param _userOpened 用户是否打开该邮件
+                     * 
                      */
                     void SetUserOpened(const bool& _userOpened);
 
                     /**
                      * 判断参数 UserOpened 是否已赋值
                      * @return UserOpened 是否已赋值
+                     * 
                      */
                     bool UserOpenedHasBeenSet() const;
 
                     /**
                      * 获取用户是否点击该邮件中的链接
                      * @return UserClicked 用户是否点击该邮件中的链接
+                     * 
                      */
                     bool GetUserClicked() const;
 
                     /**
                      * 设置用户是否点击该邮件中的链接
-                     * @param UserClicked 用户是否点击该邮件中的链接
+                     * @param _userClicked 用户是否点击该邮件中的链接
+                     * 
                      */
                     void SetUserClicked(const bool& _userClicked);
 
                     /**
                      * 判断参数 UserClicked 是否已赋值
                      * @return UserClicked 是否已赋值
+                     * 
                      */
                     bool UserClickedHasBeenSet() const;
 
                     /**
                      * 获取用户是否取消该发送者的订阅
                      * @return UserUnsubscribed 用户是否取消该发送者的订阅
+                     * 
                      */
                     bool GetUserUnsubscribed() const;
 
                     /**
                      * 设置用户是否取消该发送者的订阅
-                     * @param UserUnsubscribed 用户是否取消该发送者的订阅
+                     * @param _userUnsubscribed 用户是否取消该发送者的订阅
+                     * 
                      */
                     void SetUserUnsubscribed(const bool& _userUnsubscribed);
 
                     /**
                      * 判断参数 UserUnsubscribed 是否已赋值
                      * @return UserUnsubscribed 是否已赋值
+                     * 
                      */
                     bool UserUnsubscribedHasBeenSet() const;
 
                     /**
                      * 获取用户是否举报该发送者
                      * @return UserComplainted 用户是否举报该发送者
+                     * 
                      */
                     bool GetUserComplainted() const;
 
                     /**
                      * 设置用户是否举报该发送者
-                     * @param UserComplainted 用户是否举报该发送者
+                     * @param _userComplainted 用户是否举报该发送者
+                     * 
                      */
                     void SetUserComplainted(const bool& _userComplainted);
 
                     /**
                      * 判断参数 UserComplainted 是否已赋值
                      * @return UserComplainted 是否已赋值
+                     * 
                      */
                     bool UserComplaintedHasBeenSet() const;
 

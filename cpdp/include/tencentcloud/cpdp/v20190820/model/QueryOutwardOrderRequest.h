@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取对接方汇出指令编号
                      * @return TransactionId 对接方汇出指令编号
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置对接方汇出指令编号
-                     * @param TransactionId 对接方汇出指令编号
+                     * @param _transactionId 对接方汇出指令编号
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

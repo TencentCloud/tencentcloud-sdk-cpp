@@ -50,24 +50,28 @@ namespace TencentCloud
                      * @return ImageTag 图片数据标识：
 “origin”：原图
 “preprocess”:预处理后的图
+                     * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 判断参数 ImageTag 是否已赋值
                      * @return ImageTag 是否已赋值
+                     * 
                      */
                     bool ImageTagHasBeenSet() const;
 
                     /**
                      * 获取图片数据，返回预处理后图像或原图像base64字符
                      * @return Image 图片数据，返回预处理后图像或原图像base64字符
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 

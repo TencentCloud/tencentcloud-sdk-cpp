@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取CC防护的访问频率控制规则ID
                      * @return CCFrequencyRuleId CC防护的访问频率控制规则ID
+                     * 
                      */
                     std::string GetCCFrequencyRuleId() const;
 
                     /**
                      * 判断参数 CCFrequencyRuleId 是否已赋值
                      * @return CCFrequencyRuleId 是否已赋值
+                     * 
                      */
                     bool CCFrequencyRuleIdHasBeenSet() const;
 

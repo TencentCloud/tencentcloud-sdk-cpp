@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取`HAVIP`所在私有网络`ID`。
                      * @return VpcId `HAVIP`所在私有网络`ID`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`HAVIP`所在私有网络`ID`。
-                     * @param VpcId `HAVIP`所在私有网络`ID`。
+                     * @param _vpcId `HAVIP`所在私有网络`ID`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`所在子网`ID`。
                      * @return SubnetId `HAVIP`所在子网`ID`。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置`HAVIP`所在子网`ID`。
-                     * @param SubnetId `HAVIP`所在子网`ID`。
+                     * @param _subnetId `HAVIP`所在子网`ID`。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`名称。
                      * @return HaVipName `HAVIP`名称。
+                     * 
                      */
                     std::string GetHaVipName() const;
 
                     /**
                      * 设置`HAVIP`名称。
-                     * @param HaVipName `HAVIP`名称。
+                     * @param _haVipName `HAVIP`名称。
+                     * 
                      */
                     void SetHaVipName(const std::string& _haVipName);
 
                     /**
                      * 判断参数 HaVipName 是否已赋值
                      * @return HaVipName 是否已赋值
+                     * 
                      */
                     bool HaVipNameHasBeenSet() const;
 
                     /**
                      * 获取指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
                      * @return Vip 指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
-                     * @param Vip 指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
+                     * @param _vip 指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`所在弹性网卡`ID`。
                      * @return NetworkInterfaceId `HAVIP`所在弹性网卡`ID`。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置`HAVIP`所在弹性网卡`ID`。
-                     * @param NetworkInterfaceId `HAVIP`所在弹性网卡`ID`。
+                     * @param _networkInterfaceId `HAVIP`所在弹性网卡`ID`。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 

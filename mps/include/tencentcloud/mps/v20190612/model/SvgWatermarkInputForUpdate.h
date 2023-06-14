@@ -65,6 +65,7 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Width 为视频长边的百分比大小，如 10L% 表示 Width 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 W%。</li>
 默认值为 10W%。
+                     * 
                      */
                     std::string GetWidth() const;
 
@@ -78,7 +79,7 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Width 为视频长边的百分比大小，如 10L% 表示 Width 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 W%。</li>
 默认值为 10W%。
-                     * @param Width 水印的宽度，支持 px，%，W%，H%，S%，L% 六种格式：
+                     * @param _width 水印的宽度，支持 px，%，W%，H%，S%，L% 六种格式：
 <li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素；当填 0px 且
  Height 不为 0px 时，表示水印的宽度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的宽度取原始 SVG 图像的宽度；</li>
 <li>当字符串以 W% 结尾，表示水印 Width 为视频宽度的百分比大小，如 10W% 表示 Width 为视频宽度的 10%；</li>
@@ -87,12 +88,14 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Width 为视频长边的百分比大小，如 10L% 表示 Width 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 W%。</li>
 默认值为 10W%。
+                     * 
                      */
                     void SetWidth(const std::string& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -115,6 +118,7 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Height 为视频长边的百分比大小，如 10L% 表示 Height 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 H%。
 默认值为 0px。
+                     * 
                      */
                     std::string GetHeight() const;
 
@@ -128,7 +132,7 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Height 为视频长边的百分比大小，如 10L% 表示 Height 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 H%。
 默认值为 0px。
-                     * @param Height 水印的高度，支持 px，%，W%，H%，S%，L% 六种格式：
+                     * @param _height 水印的高度，支持 px，%，W%，H%，S%，L% 六种格式：
 <li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；当填 0px 且
  Width 不为 0px 时，表示水印的高度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的高度取原始 SVG 图像的高度；</li>
 <li>当字符串以 W% 结尾，表示水印 Height 为视频宽度的百分比大小，如 10W% 表示 Height 为视频宽度的 10%；</li>
@@ -137,12 +141,14 @@ namespace TencentCloud
 <li>当字符串以 L% 结尾，表示水印 Height 为视频长边的百分比大小，如 10L% 表示 Height 为视频长边的 10%；</li>
 <li>当字符串以 % 结尾时，含义同 H%。
 默认值为 0px。
+                     * 
                      */
                     void SetHeight(const std::string& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

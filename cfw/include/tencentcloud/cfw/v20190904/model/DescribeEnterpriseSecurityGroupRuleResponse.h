@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取分页查询时，显示的当前页的页码。
                      * @return PageNo 分页查询时，显示的当前页的页码。
+                     * 
                      */
                     std::string GetPageNo() const;
 
                     /**
                      * 判断参数 PageNo 是否已赋值
                      * @return PageNo 是否已赋值
+                     * 
                      */
                     bool PageNoHasBeenSet() const;
 
                     /**
                      * 获取分页查询时，显示的每页数据的最大条数。
                      * @return PageSize 分页查询时，显示的每页数据的最大条数。
+                     * 
                      */
                     std::string GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略列表
                      * @return Rules 访问控制策略列表
+                     * 
                      */
                     std::vector<SecurityGroupRule> GetRules() const;
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略的总数量。
                      * @return TotalCount 访问控制策略的总数量。
+                     * 
                      */
                     std::string GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

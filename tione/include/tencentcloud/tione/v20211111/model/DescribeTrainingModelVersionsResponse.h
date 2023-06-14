@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取模型版本列表
                      * @return TrainingModelVersions 模型版本列表
+                     * 
                      */
                     std::vector<TrainingModelVersionDTO> GetTrainingModelVersions() const;
 
                     /**
                      * 判断参数 TrainingModelVersions 是否已赋值
                      * @return TrainingModelVersions 是否已赋值
+                     * 
                      */
                     bool TrainingModelVersionsHasBeenSet() const;
 

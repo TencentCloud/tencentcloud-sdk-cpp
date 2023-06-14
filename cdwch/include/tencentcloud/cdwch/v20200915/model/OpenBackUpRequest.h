@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return InstanceId 集群id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群id
-                     * @param InstanceId 集群id
+                     * @param _instanceId 集群id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取OPEN 或者CLOSE
                      * @return OperationType OPEN 或者CLOSE
+                     * 
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置OPEN 或者CLOSE
-                     * @param OperationType OPEN 或者CLOSE
+                     * @param _operationType OPEN 或者CLOSE
+                     * 
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
+                     * 
                      */
                     bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取桶名字
                      * @return CosBucketName 桶名字
+                     * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置桶名字
-                     * @param CosBucketName 桶名字
+                     * @param _cosBucketName 桶名字
+                     * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
 
                     /**
                      * 判断参数 CosBucketName 是否已赋值
                      * @return CosBucketName 是否已赋值
+                     * 
                      */
                     bool CosBucketNameHasBeenSet() const;
 

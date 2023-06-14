@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取值个数
                      * @return Count 值个数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取值数组
                      * @return Data 值数组
+                     * 
                      */
                     std::vector<uint64_t> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

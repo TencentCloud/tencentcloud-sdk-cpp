@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 合格项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SocComplianceItem> GetItems() const;
 
                     /**
                      * 设置合格项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 合格项
+                     * @param _items 合格项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<SocComplianceItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

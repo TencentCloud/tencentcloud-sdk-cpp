@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取接入点列表
                      * @return EndpointSet 接入点列表
+                     * 
                      */
                     std::vector<Endpoint> GetEndpointSet() const;
 
                     /**
                      * 判断参数 EndpointSet 是否已赋值
                      * @return EndpointSet 是否已赋值
+                     * 
                      */
                     bool EndpointSetHasBeenSet() const;
 

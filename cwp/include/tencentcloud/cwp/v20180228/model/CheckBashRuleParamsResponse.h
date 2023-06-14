@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取0=校验通过  1=规则名称校验不通过 2=正则表达式校验不通过
                      * @return ErrCode 0=校验通过  1=规则名称校验不通过 2=正则表达式校验不通过
+                     * 
                      */
                     uint64_t GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取校验信息
                      * @return ErrMsg 校验信息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取应用ID，是应用的全局唯一标识。
                      * @return ApplicationId 应用ID，是应用的全局唯一标识。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID，是应用的全局唯一标识。
-                     * @param ApplicationId 应用ID，是应用的全局唯一标识。
+                     * @param _applicationId 应用ID，是应用的全局唯一标识。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisplayName 应用展示名称，长度限制：64个字符。 默认与应用名字相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置应用展示名称，长度限制：64个字符。 默认与应用名字相同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisplayName 应用展示名称，长度限制：64个字符。 默认与应用名字相同。
+                     * @param _displayName 应用展示名称，长度限制：64个字符。 默认与应用名字相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedDate 应用创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedDate() const;
 
                     /**
                      * 设置应用创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedDate 应用创建时间，符合 ISO8601 标准。
+                     * @param _createdDate 应用创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedDate(const std::string& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedDate 上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedDate() const;
 
                     /**
                      * 设置上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedDate 上次更新时间，符合 ISO8601 标准。
+                     * @param _lastModifiedDate 上次更新时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedDate(const std::string& _lastModifiedDate);
 
                     /**
                      * 判断参数 LastModifiedDate 是否已赋值
                      * @return LastModifiedDate 是否已赋值
+                     * 
                      */
                     bool LastModifiedDateHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppStatus 应用状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAppStatus() const;
 
                     /**
                      * 设置应用状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppStatus 应用状态。
+                     * @param _appStatus 应用状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppStatus(const bool& _appStatus);
 
                     /**
                      * 判断参数 AppStatus 是否已赋值
                      * @return AppStatus 是否已赋值
+                     * 
                      */
                     bool AppStatusHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Icon 应用图标。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIcon() const;
 
                     /**
                      * 设置应用图标。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Icon 应用图标。
+                     * @param _icon 应用图标。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIcon(const std::string& _icon);
 
                     /**
                      * 判断参数 Icon 是否已赋值
                      * @return Icon 是否已赋值
+                     * 
                      */
                     bool IconHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationType 应用类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
                      * 设置应用类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationType 应用类型。
+                     * @param _applicationType 应用类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientId 客户端id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置客户端id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientId 客户端id。
+                     * @param _clientId 客户端id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientId(const std::string& _clientId);
 
                     /**
                      * 判断参数 ClientId 是否已赋值
                      * @return ClientId 是否已赋值
+                     * 
                      */
                     bool ClientIdHasBeenSet() const;
 

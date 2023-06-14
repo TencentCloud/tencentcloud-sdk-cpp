@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取协议端口实例ID，例如：ppm-f5n1f8da。
                      * @return ServiceTemplateId 协议端口实例ID，例如：ppm-f5n1f8da。
+                     * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
                      * 设置协议端口实例ID，例如：ppm-f5n1f8da。
-                     * @param ServiceTemplateId 协议端口实例ID，例如：ppm-f5n1f8da。
+                     * @param _serviceTemplateId 协议端口实例ID，例如：ppm-f5n1f8da。
+                     * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
 
                     /**
                      * 判断参数 ServiceTemplateId 是否已赋值
                      * @return ServiceTemplateId 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板名称。
                      * @return ServiceTemplateName 模板名称。
+                     * 
                      */
                     std::string GetServiceTemplateName() const;
 
                     /**
                      * 设置模板名称。
-                     * @param ServiceTemplateName 模板名称。
+                     * @param _serviceTemplateName 模板名称。
+                     * 
                      */
                     void SetServiceTemplateName(const std::string& _serviceTemplateName);
 
                     /**
                      * 判断参数 ServiceTemplateName 是否已赋值
                      * @return ServiceTemplateName 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取协议端口信息。
                      * @return ServiceSet 协议端口信息。
+                     * 
                      */
                     std::vector<std::string> GetServiceSet() const;
 
                     /**
                      * 设置协议端口信息。
-                     * @param ServiceSet 协议端口信息。
+                     * @param _serviceSet 协议端口信息。
+                     * 
                      */
                     void SetServiceSet(const std::vector<std::string>& _serviceSet);
 
                     /**
                      * 判断参数 ServiceSet 是否已赋值
                      * @return ServiceSet 是否已赋值
+                     * 
                      */
                     bool ServiceSetHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取带备注的协议端口信息。
                      * @return ServiceExtraSet 带备注的协议端口信息。
+                     * 
                      */
                     std::vector<ServicesInfo> GetServiceExtraSet() const;
 
                     /**
                      * 设置带备注的协议端口信息。
-                     * @param ServiceExtraSet 带备注的协议端口信息。
+                     * @param _serviceExtraSet 带备注的协议端口信息。
+                     * 
                      */
                     void SetServiceExtraSet(const std::vector<ServicesInfo>& _serviceExtraSet);
 
                     /**
                      * 判断参数 ServiceExtraSet 是否已赋值
                      * @return ServiceExtraSet 是否已赋值
+                     * 
                      */
                     bool ServiceExtraSetHasBeenSet() const;
 

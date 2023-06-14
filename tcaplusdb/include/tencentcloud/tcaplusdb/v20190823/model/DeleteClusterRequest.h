@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的集群ID
                      * @return ClusterId 待删除的集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置待删除的集群ID
-                     * @param ClusterId 待删除的集群ID
+                     * @param _clusterId 待删除的集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

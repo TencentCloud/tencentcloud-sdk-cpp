@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取大区名称。
                      * @return Name 大区名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置大区名称。
-                     * @param Name 大区名称。
+                     * @param _name 大区名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取国家或地区明细数据。
                      * @return Countrys 国家或地区明细数据。
+                     * 
                      */
                     std::vector<BillCountryInfo> GetCountrys() const;
 
                     /**
                      * 设置国家或地区明细数据。
-                     * @param Countrys 国家或地区明细数据。
+                     * @param _countrys 国家或地区明细数据。
+                     * 
                      */
                     void SetCountrys(const std::vector<BillCountryInfo>& _countrys);
 
                     /**
                      * 判断参数 Countrys 是否已赋值
                      * @return Countrys 是否已赋值
+                     * 
                      */
                     bool CountrysHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
                      * @return Type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
                      * 设置运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
-                     * @param Type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * @param _type 运营商内具体资源信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * 
                      */
                     void SetType(const std::vector<std::string>& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取运营商信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
                      * @return Isp 运营商信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置运营商信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
-                     * @param Isp 运营商信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * @param _isp 运营商信息，如"CMCC", "CUCC", "CTCC", "BGP", "INTERNAL"。
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailabilitySet 可用资源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceAvailability> GetAvailabilitySet() const;
 
                     /**
                      * 设置可用资源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailabilitySet 可用资源。
+                     * @param _availabilitySet 可用资源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailabilitySet(const std::vector<ResourceAvailability>& _availabilitySet);
 
                     /**
                      * 判断参数 AvailabilitySet 是否已赋值
                      * @return AvailabilitySet 是否已赋值
+                     * 
                      */
                     bool AvailabilitySetHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeSet 运营商类型信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TypeInfo> GetTypeSet() const;
 
                     /**
                      * 设置运营商类型信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeSet 运营商类型信息
+                     * @param _typeSet 运营商类型信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeSet(const std::vector<TypeInfo>& _typeSet);
 
                     /**
                      * 判断参数 TypeSet 是否已赋值
                      * @return TypeSet 是否已赋值
+                     * 
                      */
                     bool TypeSetHasBeenSet() const;
 

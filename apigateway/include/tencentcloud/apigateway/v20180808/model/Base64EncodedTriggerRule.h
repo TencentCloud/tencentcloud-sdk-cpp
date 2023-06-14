@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取进行编码触发的header，可选值 "Accept"和"Content_Type" 对应实际数据流请求header中的Accept和 Content-Type。
                      * @return Name 进行编码触发的header，可选值 "Accept"和"Content_Type" 对应实际数据流请求header中的Accept和 Content-Type。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置进行编码触发的header，可选值 "Accept"和"Content_Type" 对应实际数据流请求header中的Accept和 Content-Type。
-                     * @param Name 进行编码触发的header，可选值 "Accept"和"Content_Type" 对应实际数据流请求header中的Accept和 Content-Type。
+                     * @param _name 进行编码触发的header，可选值 "Accept"和"Content_Type" 对应实际数据流请求header中的Accept和 Content-Type。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
     "application/vnd.ms-project",
     "application/vnd.rn-rn_music_package"
 ] 等都是合法的。
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
     "application/vnd.ms-project",
     "application/vnd.rn-rn_music_package"
 ] 等都是合法的。
-                     * @param Value 进行编码触发的header的可选值数组, 数组元素的字符串最大长度为40，元素可以包括数字，英文字母以及特殊字符，特殊字符的可选值为： `.`    `+`    `*`   `-`   `/`  `_` 
+                     * @param _value 进行编码触发的header的可选值数组, 数组元素的字符串最大长度为40，元素可以包括数字，英文字母以及特殊字符，特殊字符的可选值为： `.`    `+`    `*`   `-`   `/`  `_` 
 
 例如 [
     "application/x-vpeg005",
@@ -101,12 +105,14 @@ namespace TencentCloud
     "application/vnd.ms-project",
     "application/vnd.rn-rn_music_package"
 ] 等都是合法的。
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

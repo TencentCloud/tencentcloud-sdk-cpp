@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取专用集群所属的SiteId
                      * @return SiteId 专用集群所属的SiteId
+                     * 
                      */
                     std::string GetSiteId() const;
 
                     /**
                      * 设置专用集群所属的SiteId
-                     * @param SiteId 专用集群所属的SiteId
+                     * @param _siteId 专用集群所属的SiteId
+                     * 
                      */
                     void SetSiteId(const std::string& _siteId);
 
                     /**
                      * 判断参数 SiteId 是否已赋值
                      * @return SiteId 是否已赋值
+                     * 
                      */
                     bool SiteIdHasBeenSet() const;
 
                     /**
                      * 获取专用集群的名称
                      * @return Name 专用集群的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置专用集群的名称
-                     * @param Name 专用集群的名称
+                     * @param _name 专用集群的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取专用集群所属的可用区
                      * @return Zone 专用集群所属的可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置专用集群所属的可用区
-                     * @param Zone 专用集群所属的可用区
+                     * @param _zone 专用集群所属的可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取专用集群的描述
                      * @return Description 专用集群的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置专用集群的描述
-                     * @param Description 专用集群的描述
+                     * @param _description 专用集群的描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

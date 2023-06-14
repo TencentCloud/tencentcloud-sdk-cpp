@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务Id
                      * @return ServiceId 服务Id
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务Id
-                     * @param ServiceId 服务Id
+                     * @param _serviceId 服务Id
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
                      * @return ExposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * 
                      */
                     std::string GetExposeType() const;
 
                     /**
                      * 设置暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
-                     * @param ExposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * @param _exposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * 
                      */
                     void SetExposeType(const std::string& _exposeType);
 
                     /**
                      * 判断参数 ExposeType 是否已赋值
                      * @return ExposeType 是否已赋值
+                     * 
                      */
                     bool ExposeTypeHasBeenSet() const;
 
                     /**
                      * 获取暴露方式为 VPC 时，填写需要打通的私有网络Id
                      * @return VpcId 暴露方式为 VPC 时，填写需要打通的私有网络Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置暴露方式为 VPC 时，填写需要打通的私有网络Id
-                     * @param VpcId 暴露方式为 VPC 时，填写需要打通的私有网络Id
+                     * @param _vpcId 暴露方式为 VPC 时，填写需要打通的私有网络Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取暴露方式为 VPC 时，填写需要打通的子网Id
                      * @return SubnetId 暴露方式为 VPC 时，填写需要打通的子网Id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置暴露方式为 VPC 时，填写需要打通的子网Id
-                     * @param SubnetId 暴露方式为 VPC 时，填写需要打通的子网Id
+                     * @param _subnetId 暴露方式为 VPC 时，填写需要打通的子网Id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取新数据库名称
                      * @return NewName 新数据库名称
+                     * 
                      */
                     std::string GetNewName() const;
 
                     /**
                      * 设置新数据库名称
-                     * @param NewName 新数据库名称
+                     * @param _newName 新数据库名称
+                     * 
                      */
                     void SetNewName(const std::string& _newName);
 
                     /**
                      * 判断参数 NewName 是否已赋值
                      * @return NewName 是否已赋值
+                     * 
                      */
                     bool NewNameHasBeenSet() const;
 
                     /**
                      * 获取老数据库名称
                      * @return OldName 老数据库名称
+                     * 
                      */
                     std::string GetOldName() const;
 
                     /**
                      * 设置老数据库名称
-                     * @param OldName 老数据库名称
+                     * @param _oldName 老数据库名称
+                     * 
                      */
                     void SetOldName(const std::string& _oldName);
 
                     /**
                      * 判断参数 OldName 是否已赋值
                      * @return OldName 是否已赋值
+                     * 
                      */
                     bool OldNameHasBeenSet() const;
 

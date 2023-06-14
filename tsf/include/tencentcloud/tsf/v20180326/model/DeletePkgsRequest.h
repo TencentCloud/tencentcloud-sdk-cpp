@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取需要删除的程序包ID列表
                      * @return PkgIds 需要删除的程序包ID列表
+                     * 
                      */
                     std::vector<std::string> GetPkgIds() const;
 
                     /**
                      * 设置需要删除的程序包ID列表
-                     * @param PkgIds 需要删除的程序包ID列表
+                     * @param _pkgIds 需要删除的程序包ID列表
+                     * 
                      */
                     void SetPkgIds(const std::vector<std::string>& _pkgIds);
 
                     /**
                      * 判断参数 PkgIds 是否已赋值
                      * @return PkgIds 是否已赋值
+                     * 
                      */
                     bool PkgIdsHasBeenSet() const;
 
                     /**
                      * 获取程序包仓库类型
                      * @return RepositoryType 程序包仓库类型
+                     * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置程序包仓库类型
-                     * @param RepositoryType 程序包仓库类型
+                     * @param _repositoryType 程序包仓库类型
+                     * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
 
                     /**
                      * 判断参数 RepositoryType 是否已赋值
                      * @return RepositoryType 是否已赋值
+                     * 
                      */
                     bool RepositoryTypeHasBeenSet() const;
 
                     /**
                      * 获取程序包仓库id
                      * @return RepositoryId 程序包仓库id
+                     * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置程序包仓库id
-                     * @param RepositoryId 程序包仓库id
+                     * @param _repositoryId 程序包仓库id
+                     * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
 
                     /**
                      * 判断参数 RepositoryId 是否已赋值
                      * @return RepositoryId 是否已赋值
+                     * 
                      */
                     bool RepositoryIdHasBeenSet() const;
 

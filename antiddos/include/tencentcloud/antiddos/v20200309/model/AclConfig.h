@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取协议类型, 可取值tcp, udp, all
                      * @return ForwardProtocol 协议类型, 可取值tcp, udp, all
+                     * 
                      */
                     std::string GetForwardProtocol() const;
 
                     /**
                      * 设置协议类型, 可取值tcp, udp, all
-                     * @param ForwardProtocol 协议类型, 可取值tcp, udp, all
+                     * @param _forwardProtocol 协议类型, 可取值tcp, udp, all
+                     * 
                      */
                     void SetForwardProtocol(const std::string& _forwardProtocol);
 
                     /**
                      * 判断参数 ForwardProtocol 是否已赋值
                      * @return ForwardProtocol 是否已赋值
+                     * 
                      */
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
                      * 获取目的端口起始，可取值范围0~65535
                      * @return DPortStart 目的端口起始，可取值范围0~65535
+                     * 
                      */
                     uint64_t GetDPortStart() const;
 
                     /**
                      * 设置目的端口起始，可取值范围0~65535
-                     * @param DPortStart 目的端口起始，可取值范围0~65535
+                     * @param _dPortStart 目的端口起始，可取值范围0~65535
+                     * 
                      */
                     void SetDPortStart(const uint64_t& _dPortStart);
 
                     /**
                      * 判断参数 DPortStart 是否已赋值
                      * @return DPortStart 是否已赋值
+                     * 
                      */
                     bool DPortStartHasBeenSet() const;
 
                     /**
                      * 获取目的端口结束，可取值范围0~65535
                      * @return DPortEnd 目的端口结束，可取值范围0~65535
+                     * 
                      */
                     uint64_t GetDPortEnd() const;
 
                     /**
                      * 设置目的端口结束，可取值范围0~65535
-                     * @param DPortEnd 目的端口结束，可取值范围0~65535
+                     * @param _dPortEnd 目的端口结束，可取值范围0~65535
+                     * 
                      */
                     void SetDPortEnd(const uint64_t& _dPortEnd);
 
                     /**
                      * 判断参数 DPortEnd 是否已赋值
                      * @return DPortEnd 是否已赋值
+                     * 
                      */
                     bool DPortEndHasBeenSet() const;
 
                     /**
                      * 获取来源端口起始，可取值范围0~65535
                      * @return SPortStart 来源端口起始，可取值范围0~65535
+                     * 
                      */
                     uint64_t GetSPortStart() const;
 
                     /**
                      * 设置来源端口起始，可取值范围0~65535
-                     * @param SPortStart 来源端口起始，可取值范围0~65535
+                     * @param _sPortStart 来源端口起始，可取值范围0~65535
+                     * 
                      */
                     void SetSPortStart(const uint64_t& _sPortStart);
 
                     /**
                      * 判断参数 SPortStart 是否已赋值
                      * @return SPortStart 是否已赋值
+                     * 
                      */
                     bool SPortStartHasBeenSet() const;
 
                     /**
                      * 获取来源端口结束，可取值范围0~65535
                      * @return SPortEnd 来源端口结束，可取值范围0~65535
+                     * 
                      */
                     uint64_t GetSPortEnd() const;
 
                     /**
                      * 设置来源端口结束，可取值范围0~65535
-                     * @param SPortEnd 来源端口结束，可取值范围0~65535
+                     * @param _sPortEnd 来源端口结束，可取值范围0~65535
+                     * 
                      */
                     void SetSPortEnd(const uint64_t& _sPortEnd);
 
                     /**
                      * 判断参数 SPortEnd 是否已赋值
                      * @return SPortEnd 是否已赋值
+                     * 
                      */
                     bool SPortEndHasBeenSet() const;
 
                     /**
                      * 获取动作，可取值：drop， transmit， forward
                      * @return Action 动作，可取值：drop， transmit， forward
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作，可取值：drop， transmit， forward
-                     * @param Action 动作，可取值：drop， transmit， forward
+                     * @param _action 动作，可取值：drop， transmit， forward
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -159,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
+                     * @param _priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const uint64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 

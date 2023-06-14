@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询服务自定义域名列表。
                      * @return Result 查询服务自定义域名列表。
+                     * 
                      */
                     DomainSets GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

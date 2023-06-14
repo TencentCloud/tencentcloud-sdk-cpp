@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取地域信息
                      * @return Region 地域信息
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域信息
-                     * @param Region 地域信息
+                     * @param _region 地域信息
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取创建时间，毫秒为单位
                      * @return CreateTime 创建时间，毫秒为单位
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，毫秒为单位
-                     * @param CreateTime 创建时间，毫秒为单位
+                     * @param _createTime 创建时间，毫秒为单位
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -124,56 +136,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 集群说明信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置集群说明信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 集群说明信息
+                     * @param _remark 集群说明信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取公网接入地址
                      * @return PublicEndPoint 公网接入地址
+                     * 
                      */
                     std::string GetPublicEndPoint() const;
 
                     /**
                      * 设置公网接入地址
-                     * @param PublicEndPoint 公网接入地址
+                     * @param _publicEndPoint 公网接入地址
+                     * 
                      */
                     void SetPublicEndPoint(const std::string& _publicEndPoint);
 
                     /**
                      * 判断参数 PublicEndPoint 是否已赋值
                      * @return PublicEndPoint 是否已赋值
+                     * 
                      */
                     bool PublicEndPointHasBeenSet() const;
 
                     /**
                      * 获取VPC接入地址
                      * @return VpcEndPoint VPC接入地址
+                     * 
                      */
                     std::string GetVpcEndPoint() const;
 
                     /**
                      * 设置VPC接入地址
-                     * @param VpcEndPoint VPC接入地址
+                     * @param _vpcEndPoint VPC接入地址
+                     * 
                      */
                     void SetVpcEndPoint(const std::string& _vpcEndPoint);
 
                     /**
                      * 判断参数 VpcEndPoint 是否已赋值
                      * @return VpcEndPoint 是否已赋值
+                     * 
                      */
                     bool VpcEndPointHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportNamespaceEndpoint 是否支持命名空间接入点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSupportNamespaceEndpoint() const;
 
                     /**
                      * 设置是否支持命名空间接入点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportNamespaceEndpoint 是否支持命名空间接入点
+                     * @param _supportNamespaceEndpoint 是否支持命名空间接入点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportNamespaceEndpoint(const bool& _supportNamespaceEndpoint);
 
                     /**
                      * 判断参数 SupportNamespaceEndpoint 是否已赋值
                      * @return SupportNamespaceEndpoint 是否已赋值
+                     * 
                      */
                     bool SupportNamespaceEndpointHasBeenSet() const;
 
@@ -204,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vpcs VPC信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VpcConfig> GetVpcs() const;
 
                     /**
                      * 设置VPC信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vpcs VPC信息
+                     * @param _vpcs VPC信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcs(const std::vector<VpcConfig>& _vpcs);
 
                     /**
                      * 判断参数 Vpcs 是否已赋值
                      * @return Vpcs 是否已赋值
+                     * 
                      */
                     bool VpcsHasBeenSet() const;
 
@@ -226,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVip 是否为专享实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsVip() const;
 
                     /**
                      * 设置是否为专享实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsVip 是否为专享实例
+                     * @param _isVip 是否为专享实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsVip(const bool& _isVip);
 
                     /**
                      * 判断参数 IsVip 是否已赋值
                      * @return IsVip 是否已赋值
+                     * 
                      */
                     bool IsVipHasBeenSet() const;
 
@@ -248,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RocketMQFlag Rocketmq集群标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetRocketMQFlag() const;
 
                     /**
                      * 设置Rocketmq集群标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RocketMQFlag Rocketmq集群标识
+                     * @param _rocketMQFlag Rocketmq集群标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRocketMQFlag(const bool& _rocketMQFlag);
 
                     /**
                      * 判断参数 RocketMQFlag 是否已赋值
                      * @return RocketMQFlag 是否已赋值
+                     * 
                      */
                     bool RocketMQFlagHasBeenSet() const;
 
@@ -270,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 计费状态，1表示正常，2表示已停服，3表示已销毁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置计费状态，1表示正常，2表示已停服，3表示已销毁
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 计费状态，1表示正常，2表示已停服，3表示已销毁
+                     * @param _status 计费状态，1表示正常，2表示已停服，3表示已销毁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -292,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 欠费停服时间，毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsolateTime() const;
 
                     /**
                      * 设置欠费停服时间，毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsolateTime 欠费停服时间，毫秒为单位
+                     * @param _isolateTime 欠费停服时间，毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsolateTime(const int64_t& _isolateTime);
 
                     /**
                      * 判断参数 IsolateTime 是否已赋值
                      * @return IsolateTime 是否已赋值
+                     * 
                      */
                     bool IsolateTimeHasBeenSet() const;
 
@@ -314,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpPublicEndpoint HTTP协议公网接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHttpPublicEndpoint() const;
 
                     /**
                      * 设置HTTP协议公网接入地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpPublicEndpoint HTTP协议公网接入地址
+                     * @param _httpPublicEndpoint HTTP协议公网接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttpPublicEndpoint(const std::string& _httpPublicEndpoint);
 
                     /**
                      * 判断参数 HttpPublicEndpoint 是否已赋值
                      * @return HttpPublicEndpoint 是否已赋值
+                     * 
                      */
                     bool HttpPublicEndpointHasBeenSet() const;
 
@@ -336,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpVpcEndpoint HTTP协议VPC接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHttpVpcEndpoint() const;
 
                     /**
                      * 设置HTTP协议VPC接入地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpVpcEndpoint HTTP协议VPC接入地址
+                     * @param _httpVpcEndpoint HTTP协议VPC接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttpVpcEndpoint(const std::string& _httpVpcEndpoint);
 
                     /**
                      * 判断参数 HttpVpcEndpoint 是否已赋值
                      * @return HttpVpcEndpoint 是否已赋值
+                     * 
                      */
                     bool HttpVpcEndpointHasBeenSet() const;
 
@@ -358,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalEndpoint TCP内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInternalEndpoint() const;
 
                     /**
                      * 设置TCP内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternalEndpoint TCP内部接入地址
+                     * @param _internalEndpoint TCP内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternalEndpoint(const std::string& _internalEndpoint);
 
                     /**
                      * 判断参数 InternalEndpoint 是否已赋值
                      * @return InternalEndpoint 是否已赋值
+                     * 
                      */
                     bool InternalEndpointHasBeenSet() const;
 
@@ -380,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpInternalEndpoint HTTP协议内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHttpInternalEndpoint() const;
 
                     /**
                      * 设置HTTP协议内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpInternalEndpoint HTTP协议内部接入地址
+                     * @param _httpInternalEndpoint HTTP协议内部接入地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttpInternalEndpoint(const std::string& _httpInternalEndpoint);
 
                     /**
                      * 判断参数 HttpInternalEndpoint 是否已赋值
                      * @return HttpInternalEndpoint 是否已赋值
+                     * 
                      */
                     bool HttpInternalEndpointHasBeenSet() const;
 

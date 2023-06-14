@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要解绑的定期快照策略ID。
                      * @return AutoSnapshotPolicyId 要解绑的定期快照策略ID。
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
                      * 设置要解绑的定期快照策略ID。
-                     * @param AutoSnapshotPolicyId 要解绑的定期快照策略ID。
+                     * @param _autoSnapshotPolicyId 要解绑的定期快照策略ID。
+                     * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyId 是否已赋值
                      * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取要解绑定期快照策略的云盘ID列表。
                      * @return DiskIds 要解绑定期快照策略的云盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置要解绑定期快照策略的云盘ID列表。
-                     * @param DiskIds 要解绑定期快照策略的云盘ID列表。
+                     * @param _diskIds 要解绑定期快照策略的云盘ID列表。
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 

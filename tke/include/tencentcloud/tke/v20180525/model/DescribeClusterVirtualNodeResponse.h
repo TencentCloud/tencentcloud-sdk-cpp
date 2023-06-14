@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 节点列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VirtualNode> GetNodes() const;
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 节点总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

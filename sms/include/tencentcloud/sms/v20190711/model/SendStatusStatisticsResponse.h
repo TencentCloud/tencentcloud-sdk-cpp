@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取发送数据统计响应包体。
                      * @return SendStatusStatistics 发送数据统计响应包体。
+                     * 
                      */
                     SendStatusStatistics GetSendStatusStatistics() const;
 
                     /**
                      * 判断参数 SendStatusStatistics 是否已赋值
                      * @return SendStatusStatistics 是否已赋值
+                     * 
                      */
                     bool SendStatusStatisticsHasBeenSet() const;
 

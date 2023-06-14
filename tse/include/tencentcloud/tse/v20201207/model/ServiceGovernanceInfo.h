@@ -51,144 +51,168 @@ namespace TencentCloud
                     /**
                      * 获取引擎所在的地域
                      * @return EngineRegion 引擎所在的地域
+                     * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎所在的地域
-                     * @param EngineRegion 引擎所在的地域
+                     * @param _engineRegion 引擎所在的地域
+                     * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
 
                     /**
                      * 判断参数 EngineRegion 是否已赋值
                      * @return EngineRegion 是否已赋值
+                     * 
                      */
                     bool EngineRegionHasBeenSet() const;
 
                     /**
                      * 获取服务治理引擎绑定的kubernetes集群信息
                      * @return BoundK8SInfos 服务治理引擎绑定的kubernetes集群信息
+                     * 
                      */
                     std::vector<BoundK8SInfo> GetBoundK8SInfos() const;
 
                     /**
                      * 设置服务治理引擎绑定的kubernetes集群信息
-                     * @param BoundK8SInfos 服务治理引擎绑定的kubernetes集群信息
+                     * @param _boundK8SInfos 服务治理引擎绑定的kubernetes集群信息
+                     * 
                      */
                     void SetBoundK8SInfos(const std::vector<BoundK8SInfo>& _boundK8SInfos);
 
                     /**
                      * 判断参数 BoundK8SInfos 是否已赋值
                      * @return BoundK8SInfos 是否已赋值
+                     * 
                      */
                     bool BoundK8SInfosHasBeenSet() const;
 
                     /**
                      * 获取服务治理引擎绑定的网络信息
                      * @return VpcInfos 服务治理引擎绑定的网络信息
+                     * 
                      */
                     std::vector<VpcInfo> GetVpcInfos() const;
 
                     /**
                      * 设置服务治理引擎绑定的网络信息
-                     * @param VpcInfos 服务治理引擎绑定的网络信息
+                     * @param _vpcInfos 服务治理引擎绑定的网络信息
+                     * 
                      */
                     void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
 
                     /**
                      * 判断参数 VpcInfos 是否已赋值
                      * @return VpcInfos 是否已赋值
+                     * 
                      */
                     bool VpcInfosHasBeenSet() const;
 
                     /**
                      * 获取当前实例鉴权是否开启
                      * @return AuthOpen 当前实例鉴权是否开启
+                     * 
                      */
                     bool GetAuthOpen() const;
 
                     /**
                      * 设置当前实例鉴权是否开启
-                     * @param AuthOpen 当前实例鉴权是否开启
+                     * @param _authOpen 当前实例鉴权是否开启
+                     * 
                      */
                     void SetAuthOpen(const bool& _authOpen);
 
                     /**
                      * 判断参数 AuthOpen 是否已赋值
                      * @return AuthOpen 是否已赋值
+                     * 
                      */
                     bool AuthOpenHasBeenSet() const;
 
                     /**
                      * 获取该实例支持的功能，鉴权就是 Auth
                      * @return Features 该实例支持的功能，鉴权就是 Auth
+                     * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置该实例支持的功能，鉴权就是 Auth
-                     * @param Features 该实例支持的功能，鉴权就是 Auth
+                     * @param _features 该实例支持的功能，鉴权就是 Auth
+                     * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
 
                     /**
                      * 判断参数 Features 是否已赋值
                      * @return Features 是否已赋值
+                     * 
                      */
                     bool FeaturesHasBeenSet() const;
 
                     /**
                      * 获取主账户名默认为 polaris，该值为主账户的默认密码
                      * @return MainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     * 
                      */
                     std::string GetMainPassword() const;
 
                     /**
                      * 设置主账户名默认为 polaris，该值为主账户的默认密码
-                     * @param MainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     * @param _mainPassword 主账户名默认为 polaris，该值为主账户的默认密码
+                     * 
                      */
                     void SetMainPassword(const std::string& _mainPassword);
 
                     /**
                      * 判断参数 MainPassword 是否已赋值
                      * @return MainPassword 是否已赋值
+                     * 
                      */
                     bool MainPasswordHasBeenSet() const;
 
                     /**
                      * 获取服务治理pushgateway引擎绑定的网络信息
                      * @return PgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     * 
                      */
                     std::vector<VpcInfo> GetPgwVpcInfos() const;
 
                     /**
                      * 设置服务治理pushgateway引擎绑定的网络信息
-                     * @param PgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     * @param _pgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     * 
                      */
                     void SetPgwVpcInfos(const std::vector<VpcInfo>& _pgwVpcInfos);
 
                     /**
                      * 判断参数 PgwVpcInfos 是否已赋值
                      * @return PgwVpcInfos 是否已赋值
+                     * 
                      */
                     bool PgwVpcInfosHasBeenSet() const;
 
                     /**
                      * 获取服务治理限流server引擎绑定的网络信息
                      * @return LimiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     * 
                      */
                     std::vector<VpcInfo> GetLimiterVpcInfos() const;
 
                     /**
                      * 设置服务治理限流server引擎绑定的网络信息
-                     * @param LimiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     * @param _limiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     * 
                      */
                     void SetLimiterVpcInfos(const std::vector<VpcInfo>& _limiterVpcInfos);
 
                     /**
                      * 判断参数 LimiterVpcInfos 是否已赋值
                      * @return LimiterVpcInfos 是否已赋值
+                     * 
                      */
                     bool LimiterVpcInfosHasBeenSet() const;
 

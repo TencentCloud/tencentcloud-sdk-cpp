@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取状态机所属服务名
                      * @return FlowServiceName 状态机所属服务名
+                     * 
                      */
                     std::string GetFlowServiceName() const;
 
                     /**
                      * 判断参数 FlowServiceName 是否已赋值
                      * @return FlowServiceName 是否已赋值
+                     * 
                      */
                     bool FlowServiceNameHasBeenSet() const;
 
                     /**
                      * 获取状态机状态
                      * @return Status 状态机状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 定义文本（JSON格式）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefinition() const;
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -86,36 +92,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleResource 角色资源名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleResource() const;
 
                     /**
                      * 判断参数 RoleResource 是否已赋值
                      * @return RoleResource 是否已赋值
+                     * 
                      */
                     bool RoleResourceHasBeenSet() const;
 
                     /**
                      * 获取状态机的类型，可以为 （EXPRESS/STANDARD）
                      * @return Type 状态机的类型，可以为 （EXPRESS/STANDARD）
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取生成时间
                      * @return CreateDate 生成时间
+                     * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 判断参数 CreateDate 是否已赋值
                      * @return CreateDate 是否已赋值
+                     * 
                      */
                     bool CreateDateHasBeenSet() const;
 
@@ -124,12 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -138,12 +152,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowServiceChineseName 状态机所属服务中文名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowServiceChineseName() const;
 
                     /**
                      * 判断参数 FlowServiceChineseName 是否已赋值
                      * @return FlowServiceChineseName 是否已赋值
+                     * 
                      */
                     bool FlowServiceChineseNameHasBeenSet() const;
 
@@ -152,12 +168,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableCLS 是否开启日志CLS服务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableCLS() const;
 
                     /**
                      * 判断参数 EnableCLS 是否已赋值
                      * @return EnableCLS 是否已赋值
+                     * 
                      */
                     bool EnableCLSHasBeenSet() const;
 
@@ -166,12 +184,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLSUrl CLS日志查看地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCLSUrl() const;
 
                     /**
                      * 判断参数 CLSUrl 是否已赋值
                      * @return CLSUrl 是否已赋值
+                     * 
                      */
                     bool CLSUrlHasBeenSet() const;
 
@@ -180,12 +200,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowInput 工作流提示输入
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowInput() const;
 
                     /**
                      * 判断参数 FlowInput 是否已赋值
                      * @return FlowInput 是否已赋值
+                     * 
                      */
                     bool FlowInputHasBeenSet() const;
 

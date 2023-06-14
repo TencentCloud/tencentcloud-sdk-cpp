@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 其他厂商对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置其他厂商对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 其他厂商对象存储回源鉴权配置开关，取值有：
+                     * @param _switch 其他厂商对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessKey 访问ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
                      * 设置访问ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessKey 访问ID。
+                     * @param _accessKey 访问ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessKey(const std::string& _accessKey);
 
                     /**
                      * 判断参数 AccessKey 是否已赋值
                      * @return AccessKey 是否已赋值
+                     * 
                      */
                     bool AccessKeyHasBeenSet() const;
 
@@ -99,20 +105,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置密钥。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 密钥。
+                     * @param _secretKey 密钥。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -121,20 +130,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域。
+                     * @param _region 地域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -143,20 +155,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 存储桶名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置存储桶名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket 存储桶名称。
+                     * @param _bucket 存储桶名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

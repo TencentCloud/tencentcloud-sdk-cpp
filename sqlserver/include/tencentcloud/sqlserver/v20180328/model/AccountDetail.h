@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取账户名
                      * @return Name 账户名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置账户名
-                     * @param Name 账户名
+                     * @param _name 账户名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取账户备注
                      * @return Remark 账户备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置账户备注
-                     * @param Remark 账户备注
+                     * @param _remark 账户备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取账户创建时间
                      * @return CreateTime 账户创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置账户创建时间
-                     * @param CreateTime 账户创建时间
+                     * @param _createTime 账户创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
                      * @return Status 账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
-                     * @param Status 账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * @param _status 账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取账户更新时间
                      * @return UpdateTime 账户更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置账户更新时间
-                     * @param UpdateTime 账户更新时间
+                     * @param _updateTime 账户更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取密码更新时间
                      * @return PassTime 密码更新时间
+                     * 
                      */
                     std::string GetPassTime() const;
 
                     /**
                      * 设置密码更新时间
-                     * @param PassTime 密码更新时间
+                     * @param _passTime 密码更新时间
+                     * 
                      */
                     void SetPassTime(const std::string& _passTime);
 
                     /**
                      * 判断参数 PassTime 是否已赋值
                      * @return PassTime 是否已赋值
+                     * 
                      */
                     bool PassTimeHasBeenSet() const;
 
                     /**
                      * 获取账户内部状态，正常为enable
                      * @return InternalStatus 账户内部状态，正常为enable
+                     * 
                      */
                     std::string GetInternalStatus() const;
 
                     /**
                      * 设置账户内部状态，正常为enable
-                     * @param InternalStatus 账户内部状态，正常为enable
+                     * @param _internalStatus 账户内部状态，正常为enable
+                     * 
                      */
                     void SetInternalStatus(const std::string& _internalStatus);
 
                     /**
                      * 判断参数 InternalStatus 是否已赋值
                      * @return InternalStatus 是否已赋值
+                     * 
                      */
                     bool InternalStatusHasBeenSet() const;
 
                     /**
                      * 获取该账户对相关db的读写权限信息
                      * @return Dbs 该账户对相关db的读写权限信息
+                     * 
                      */
                     std::vector<DBPrivilege> GetDbs() const;
 
                     /**
                      * 设置该账户对相关db的读写权限信息
-                     * @param Dbs 该账户对相关db的读写权限信息
+                     * @param _dbs 该账户对相关db的读写权限信息
+                     * 
                      */
                     void SetDbs(const std::vector<DBPrivilege>& _dbs);
 
                     /**
                      * 判断参数 Dbs 是否已赋值
                      * @return Dbs 是否已赋值
+                     * 
                      */
                     bool DbsHasBeenSet() const;
 
                     /**
                      * 获取是否为管理员账户
                      * @return IsAdmin 是否为管理员账户
+                     * 
                      */
                     bool GetIsAdmin() const;
 
                     /**
                      * 设置是否为管理员账户
-                     * @param IsAdmin 是否为管理员账户
+                     * @param _isAdmin 是否为管理员账户
+                     * 
                      */
                     void SetIsAdmin(const bool& _isAdmin);
 
                     /**
                      * 判断参数 IsAdmin 是否已赋值
                      * @return IsAdmin 是否已赋值
+                     * 
                      */
                     bool IsAdminHasBeenSet() const;
 
                     /**
                      * 获取win-windows鉴权,sql-sqlserver鉴权
                      * @return Authentication win-windows鉴权,sql-sqlserver鉴权
+                     * 
                      */
                     std::string GetAuthentication() const;
 
                     /**
                      * 设置win-windows鉴权,sql-sqlserver鉴权
-                     * @param Authentication win-windows鉴权,sql-sqlserver鉴权
+                     * @param _authentication win-windows鉴权,sql-sqlserver鉴权
+                     * 
                      */
                     void SetAuthentication(const std::string& _authentication);
 
                     /**
                      * 判断参数 Authentication 是否已赋值
                      * @return Authentication 是否已赋值
+                     * 
                      */
                     bool AuthenticationHasBeenSet() const;
 
                     /**
                      * 获取win-windows鉴权账户需要host
                      * @return Host win-windows鉴权账户需要host
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置win-windows鉴权账户需要host
-                     * @param Host win-windows鉴权账户需要host
+                     * @param _host win-windows鉴权账户需要host
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
                      * @return AccountType 账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
-                     * @param AccountType 账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * @param _accountType 账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 

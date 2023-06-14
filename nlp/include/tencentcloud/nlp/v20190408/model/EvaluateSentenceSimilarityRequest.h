@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。
                      * @return SentencePairList 待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。
+                     * 
                      */
                     std::vector<SentencePair> GetSentencePairList() const;
 
                     /**
                      * 设置待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。
-                     * @param SentencePairList 待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。
+                     * @param _sentencePairList 待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。
+                     * 
                      */
                     void SetSentencePairList(const std::vector<SentencePair>& _sentencePairList);
 
                     /**
                      * 判断参数 SentencePairList 是否已赋值
                      * @return SentencePairList 是否已赋值
+                     * 
                      */
                     bool SentencePairListHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisplayName 机构节点展示名称，长度限制：64个字符。 默认与机构名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置机构节点展示名称，长度限制：64个字符。 默认与机构名相同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisplayName 机构节点展示名称，长度限制：64个字符。 默认与机构名相同。
+                     * @param _displayName 机构节点展示名称，长度限制：64个字符。 默认与机构名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedDate 机构节点最后修改时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedDate() const;
 
                     /**
                      * 设置机构节点最后修改时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedDate 机构节点最后修改时间，符合 ISO8601 标准。
+                     * @param _lastModifiedDate 机构节点最后修改时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedDate(const std::string& _lastModifiedDate);
 
                     /**
                      * 判断参数 LastModifiedDate 是否已赋值
                      * @return LastModifiedDate 是否已赋值
+                     * 
                      */
                     bool LastModifiedDateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomizedOrgNodeId 用户自定义可选填的机构节点对外ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomizedOrgNodeId() const;
 
                     /**
                      * 设置用户自定义可选填的机构节点对外ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomizedOrgNodeId 用户自定义可选填的机构节点对外ID。
+                     * @param _customizedOrgNodeId 用户自定义可选填的机构节点对外ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomizedOrgNodeId(const std::string& _customizedOrgNodeId);
 
                     /**
                      * 判断参数 CustomizedOrgNodeId 是否已赋值
                      * @return CustomizedOrgNodeId 是否已赋值
+                     * 
                      */
                     bool CustomizedOrgNodeIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentOrgNodeId 当前机构节点的父节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentOrgNodeId() const;
 
                     /**
                      * 设置当前机构节点的父节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentOrgNodeId 当前机构节点的父节点ID。
+                     * @param _parentOrgNodeId 当前机构节点的父节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentOrgNodeId(const std::string& _parentOrgNodeId);
 
                     /**
                      * 判断参数 ParentOrgNodeId 是否已赋值
                      * @return ParentOrgNodeId 是否已赋值
+                     * 
                      */
                     bool ParentOrgNodeIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeId 机构节点ID，是机构节点的全局唯一标识。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeId() const;
 
                     /**
                      * 设置机构节点ID，是机构节点的全局唯一标识。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgNodeId 机构节点ID，是机构节点的全局唯一标识。
+                     * @param _orgNodeId 机构节点ID，是机构节点的全局唯一标识。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgNodeId(const std::string& _orgNodeId);
 
                     /**
                      * 判断参数 OrgNodeId 是否已赋值
                      * @return OrgNodeId 是否已赋值
+                     * 
                      */
                     bool OrgNodeIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSource 数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataSource() const;
 
                     /**
                      * 设置数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSource 数据来源。
+                     * @param _dataSource 数据来源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSource(const std::string& _dataSource);
 
                     /**
                      * 判断参数 DataSource 是否已赋值
                      * @return DataSource 是否已赋值
+                     * 
                      */
                     bool DataSourceHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedDate 机构节点创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedDate() const;
 
                     /**
                      * 设置机构节点创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedDate 机构节点创建时间，符合 ISO8601 标准。
+                     * @param _createdDate 机构节点创建时间，符合 ISO8601 标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedDate(const std::string& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 机构节点描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置机构节点描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 机构节点描述。
+                     * @param _description 机构节点描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

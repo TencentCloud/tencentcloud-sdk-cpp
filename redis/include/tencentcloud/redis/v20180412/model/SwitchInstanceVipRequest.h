@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取源实例ID
                      * @return SrcInstanceId 源实例ID
+                     * 
                      */
                     std::string GetSrcInstanceId() const;
 
                     /**
                      * 设置源实例ID
-                     * @param SrcInstanceId 源实例ID
+                     * @param _srcInstanceId 源实例ID
+                     * 
                      */
                     void SetSrcInstanceId(const std::string& _srcInstanceId);
 
                     /**
                      * 判断参数 SrcInstanceId 是否已赋值
                      * @return SrcInstanceId 是否已赋值
+                     * 
                      */
                     bool SrcInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取目标实例ID
                      * @return DstInstanceId 目标实例ID
+                     * 
                      */
                     std::string GetDstInstanceId() const;
 
                     /**
                      * 设置目标实例ID
-                     * @param DstInstanceId 目标实例ID
+                     * @param _dstInstanceId 目标实例ID
+                     * 
                      */
                     void SetDstInstanceId(const std::string& _dstInstanceId);
 
                     /**
                      * 判断参数 DstInstanceId 是否已赋值
                      * @return DstInstanceId 是否已赋值
+                     * 
                      */
                     bool DstInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
                      * @return TimeDelay 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * 
                      */
                     int64_t GetTimeDelay() const;
 
                     /**
                      * 设置单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
-                     * @param TimeDelay 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * @param _timeDelay 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * 
                      */
                     void SetTimeDelay(const int64_t& _timeDelay);
 
                     /**
                      * 判断参数 TimeDelay 是否已赋值
                      * @return TimeDelay 是否已赋值
+                     * 
                      */
                     bool TimeDelayHasBeenSet() const;
 
                     /**
                      * 获取在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
                      * @return ForceSwitch 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * 
                      */
                     int64_t GetForceSwitch() const;
 
                     /**
                      * 设置在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
-                     * @param ForceSwitch 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * @param _forceSwitch 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * 
                      */
                     void SetForceSwitch(const int64_t& _forceSwitch);
 
                     /**
                      * 判断参数 ForceSwitch 是否已赋值
                      * @return ForceSwitch 是否已赋值
+                     * 
                      */
                     bool ForceSwitchHasBeenSet() const;
 
                     /**
                      * 获取now: 立即切换，syncComplete：等待同步完成后切换
                      * @return SwitchTime now: 立即切换，syncComplete：等待同步完成后切换
+                     * 
                      */
                     std::string GetSwitchTime() const;
 
                     /**
                      * 设置now: 立即切换，syncComplete：等待同步完成后切换
-                     * @param SwitchTime now: 立即切换，syncComplete：等待同步完成后切换
+                     * @param _switchTime now: 立即切换，syncComplete：等待同步完成后切换
+                     * 
                      */
                     void SetSwitchTime(const std::string& _switchTime);
 
                     /**
                      * 判断参数 SwitchTime 是否已赋值
                      * @return SwitchTime 是否已赋值
+                     * 
                      */
                     bool SwitchTimeHasBeenSet() const;
 

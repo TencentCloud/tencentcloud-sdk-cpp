@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取详情列表
                      * @return DetailSet 详情列表
+                     * 
                      */
                     std::vector<BillDetail> GetDetailSet() const;
 
                     /**
                      * 判断参数 DetailSet 是否已赋值
                      * @return DetailSet 是否已赋值
+                     * 
                      */
                     bool DetailSetHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总记录数，24小时缓存一次，可能比实际总记录数少
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 

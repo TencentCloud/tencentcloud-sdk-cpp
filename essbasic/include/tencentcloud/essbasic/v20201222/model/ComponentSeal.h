@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取签署区ID
                      * @return ComponentId 签署区ID
+                     * 
                      */
                     std::string GetComponentId() const;
 
                     /**
                      * 设置签署区ID
-                     * @param ComponentId 签署区ID
+                     * @param _componentId 签署区ID
+                     * 
                      */
                     void SetComponentId(const std::string& _componentId);
 
                     /**
                      * 判断参数 ComponentId 是否已赋值
                      * @return ComponentId 是否已赋值
+                     * 
                      */
                     bool ComponentIdHasBeenSet() const;
 
                     /**
                      * 获取印章ID
                      * @return SealId 印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置印章ID
-                     * @param SealId 印章ID
+                     * @param _sealId 印章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 

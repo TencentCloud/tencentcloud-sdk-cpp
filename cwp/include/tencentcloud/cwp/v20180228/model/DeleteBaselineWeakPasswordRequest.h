@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取弱口令Id
                      * @return PasswordIds 弱口令Id
+                     * 
                      */
                     std::vector<int64_t> GetPasswordIds() const;
 
                     /**
                      * 设置弱口令Id
-                     * @param PasswordIds 弱口令Id
+                     * @param _passwordIds 弱口令Id
+                     * 
                      */
                     void SetPasswordIds(const std::vector<int64_t>& _passwordIds);
 
                     /**
                      * 判断参数 PasswordIds 是否已赋值
                      * @return PasswordIds 是否已赋值
+                     * 
                      */
                     bool PasswordIdsHasBeenSet() const;
 

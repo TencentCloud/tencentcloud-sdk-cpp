@@ -59,6 +59,7 @@ namespace TencentCloud
 <li>AwsS3FileUpload：AWS触发，目前只支持转码任务。只有编排支持，工作流不支持。  </li>
 
 
+                     * 
                      */
                     std::string GetType() const;
 
@@ -68,17 +69,19 @@ namespace TencentCloud
 <li>AwsS3FileUpload：AWS触发，目前只支持转码任务。只有编排支持，工作流不支持。  </li>
 
 
-                     * @param Type 触发器的类型，可选值：
+                     * @param _type 触发器的类型，可选值：
 <li>CosFileUpload：COS触发</li>
 <li>AwsS3FileUpload：AWS触发，目前只支持转码任务。只有编排支持，工作流不支持。  </li>
 
 
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -87,20 +90,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosFileUploadTrigger 当 Type 为 CosFileUpload 时必填且有效，为 COS 触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosFileUploadTrigger GetCosFileUploadTrigger() const;
 
                     /**
                      * 设置当 Type 为 CosFileUpload 时必填且有效，为 COS 触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosFileUploadTrigger 当 Type 为 CosFileUpload 时必填且有效，为 COS 触发规则。
+                     * @param _cosFileUploadTrigger 当 Type 为 CosFileUpload 时必填且有效，为 COS 触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosFileUploadTrigger(const CosFileUploadTrigger& _cosFileUploadTrigger);
 
                     /**
                      * 判断参数 CosFileUploadTrigger 是否已赋值
                      * @return CosFileUploadTrigger 是否已赋值
+                     * 
                      */
                     bool CosFileUploadTriggerHasBeenSet() const;
 
@@ -113,6 +119,7 @@ namespace TencentCloud
 
 注意：目前AWS的S3、对应触发队列SQS、回调队列SQS的秘钥需要一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AwsS3FileUploadTrigger GetAwsS3FileUploadTrigger() const;
 
@@ -121,16 +128,18 @@ namespace TencentCloud
 
 注意：目前AWS的S3、对应触发队列SQS、回调队列SQS的秘钥需要一致。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AwsS3FileUploadTrigger 当 Type 为 AwsS3FileUpload 时必填且有效，为 AWS S3 触发规则。
+                     * @param _awsS3FileUploadTrigger 当 Type 为 AwsS3FileUpload 时必填且有效，为 AWS S3 触发规则。
 
 注意：目前AWS的S3、对应触发队列SQS、回调队列SQS的秘钥需要一致。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAwsS3FileUploadTrigger(const AwsS3FileUploadTrigger& _awsS3FileUploadTrigger);
 
                     /**
                      * 判断参数 AwsS3FileUploadTrigger 是否已赋值
                      * @return AwsS3FileUploadTrigger 是否已赋值
+                     * 
                      */
                     bool AwsS3FileUploadTriggerHasBeenSet() const;
 

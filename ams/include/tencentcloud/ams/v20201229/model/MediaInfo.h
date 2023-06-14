@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
                      * @return Codecs 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
+                     * 
                      */
                     std::string GetCodecs() const;
 
                     /**
                      * 设置该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
-                     * @param Codecs 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
+                     * @param _codecs 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
+                     * 
                      */
                     void SetCodecs(const std::string& _codecs);
 
                     /**
                      * 判断参数 Codecs 是否已赋值
                      * @return Codecs 是否已赋值
+                     * 
                      */
                     bool CodecsHasBeenSet() const;
 
                     /**
                      * 获取该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
                      * @return Duration 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
-                     * @param Duration 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
+                     * @param _duration 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取*内测中，敬请期待*
                      * @return Width *内测中，敬请期待*
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置*内测中，敬请期待*
-                     * @param Width *内测中，敬请期待*
+                     * @param _width *内测中，敬请期待*
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取*内测中，敬请期待*
                      * @return Height *内测中，敬请期待*
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置*内测中，敬请期待*
-                     * @param Height *内测中，敬请期待*
+                     * @param _height *内测中，敬请期待*
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取*内测中，敬请期待*
                      * @return Thumbnail *内测中，敬请期待*
+                     * 
                      */
                     std::string GetThumbnail() const;
 
                     /**
                      * 设置*内测中，敬请期待*
-                     * @param Thumbnail *内测中，敬请期待*
+                     * @param _thumbnail *内测中，敬请期待*
+                     * 
                      */
                     void SetThumbnail(const std::string& _thumbnail);
 
                     /**
                      * 判断参数 Thumbnail 是否已赋值
                      * @return Thumbnail 是否已赋值
+                     * 
                      */
                     bool ThumbnailHasBeenSet() const;
 

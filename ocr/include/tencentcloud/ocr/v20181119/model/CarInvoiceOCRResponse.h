@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取购车发票识别结果，具体内容请点击左侧链接。
                      * @return CarInvoiceInfos 购车发票识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<CarInvoiceInfo> GetCarInvoiceInfos() const;
 
                     /**
                      * 判断参数 CarInvoiceInfos 是否已赋值
                      * @return CarInvoiceInfos 是否已赋值
+                     * 
                      */
                     bool CarInvoiceInfosHasBeenSet() const;
 

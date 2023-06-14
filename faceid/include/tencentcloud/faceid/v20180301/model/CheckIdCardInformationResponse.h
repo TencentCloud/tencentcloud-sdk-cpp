@@ -47,120 +47,140 @@ namespace TencentCloud
                     /**
                      * 获取相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
                      * @return Sim 相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * 
                      */
                     double GetSim() const;
 
                     /**
                      * 判断参数 Sim 是否已赋值
                      * @return Sim 是否已赋值
+                     * 
                      */
                     bool SimHasBeenSet() const;
 
                     /**
                      * 获取业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
                      * @return Result 业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取民族
                      * @return Nation 民族
+                     * 
                      */
                     std::string GetNation() const;
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
+                     * 
                      */
                     bool NationHasBeenSet() const;
 
                     /**
                      * 获取出生日期
                      * @return Birth 出生日期
+                     * 
                      */
                     std::string GetBirth() const;
 
                     /**
                      * 判断参数 Birth 是否已赋值
                      * @return Birth 是否已赋值
+                     * 
                      */
                     bool BirthHasBeenSet() const;
 
                     /**
                      * 获取地址
                      * @return Address 地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取身份证号
                      * @return IdNum 身份证号
+                     * 
                      */
                     std::string GetIdNum() const;
 
                     /**
                      * 判断参数 IdNum 是否已赋值
                      * @return IdNum 是否已赋值
+                     * 
                      */
                     bool IdNumHasBeenSet() const;
 
                     /**
                      * 获取身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。
                      * @return Portrait 身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。
+                     * 
                      */
                     std::string GetPortrait() const;
 
                     /**
                      * 判断参数 Portrait 是否已赋值
                      * @return Portrait 是否已赋值
+                     * 
                      */
                     bool PortraitHasBeenSet() const;
 
@@ -185,24 +205,28 @@ namespace TencentCloud
 -9106 身份证 PS 告警。
 -8001 图片模糊告警
 多个会 |  隔开如 "-9101|-9106|-9104"
+                     * 
                      */
                     std::string GetWarnings() const;
 
                     /**
                      * 判断参数 Warnings 是否已赋值
                      * @return Warnings 是否已赋值
+                     * 
                      */
                     bool WarningsHasBeenSet() const;
 
                     /**
                      * 获取图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
                      * @return Quality 图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     * 
                      */
                     double GetQuality() const;
 
                     /**
                      * 判断参数 Quality 是否已赋值
                      * @return Quality 是否已赋值
+                     * 
                      */
                     bool QualityHasBeenSet() const;
 
@@ -211,12 +235,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encryption 敏感数据加密信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 

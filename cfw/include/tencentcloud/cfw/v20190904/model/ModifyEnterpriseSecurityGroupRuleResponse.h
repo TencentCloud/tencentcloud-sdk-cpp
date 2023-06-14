@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取状态值，0：编辑成功，非0：编辑失败
                      * @return Status 状态值，0：编辑成功，非0：编辑失败
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取编辑后新生成规则的Id
                      * @return NewRuleUuid 编辑后新生成规则的Id
+                     * 
                      */
                     uint64_t GetNewRuleUuid() const;
 
                     /**
                      * 判断参数 NewRuleUuid 是否已赋值
                      * @return NewRuleUuid 是否已赋值
+                     * 
                      */
                     bool NewRuleUuidHasBeenSet() const;
 

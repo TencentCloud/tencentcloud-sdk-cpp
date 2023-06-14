@@ -50,180 +50,210 @@ namespace TencentCloud
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取任务类型，SOURCE数据接入，SINK数据流出
                      * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取数据源
                      * @return SourceResource 数据源
+                     * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
                      * 设置数据源
-                     * @param SourceResource 数据源
+                     * @param _sourceResource 数据源
+                     * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
 
                     /**
                      * 判断参数 SourceResource 是否已赋值
                      * @return SourceResource 是否已赋值
+                     * 
                      */
                     bool SourceResourceHasBeenSet() const;
 
                     /**
                      * 获取数据目标
                      * @return TargetResource 数据目标
+                     * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
                      * 设置数据目标
-                     * @param TargetResource 数据目标
+                     * @param _targetResource 数据目标
+                     * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
 
                     /**
                      * 判断参数 TargetResource 是否已赋值
                      * @return TargetResource 是否已赋值
+                     * 
                      */
                     bool TargetResourceHasBeenSet() const;
 
                     /**
                      * 获取数据处理规则
                      * @return TransformParam 数据处理规则
+                     * 
                      */
                     TransformParam GetTransformParam() const;
 
                     /**
                      * 设置数据处理规则
-                     * @param TransformParam 数据处理规则
+                     * @param _transformParam 数据处理规则
+                     * 
                      */
                     void SetTransformParam(const TransformParam& _transformParam);
 
                     /**
                      * 判断参数 TransformParam 是否已赋值
                      * @return TransformParam 是否已赋值
+                     * 
                      */
                     bool TransformParamHasBeenSet() const;
 
                     /**
                      * 获取实例连接参数【已废弃】
                      * @return PrivateLinkParam 实例连接参数【已废弃】
+                     * 
                      */
                     PrivateLinkParam GetPrivateLinkParam() const;
 
                     /**
                      * 设置实例连接参数【已废弃】
-                     * @param PrivateLinkParam 实例连接参数【已废弃】
+                     * @param _privateLinkParam 实例连接参数【已废弃】
+                     * 
                      */
                     void SetPrivateLinkParam(const PrivateLinkParam& _privateLinkParam);
 
                     /**
                      * 判断参数 PrivateLinkParam 是否已赋值
                      * @return PrivateLinkParam 是否已赋值
+                     * 
                      */
                     bool PrivateLinkParamHasBeenSet() const;
 
                     /**
                      * 获取选择所要绑定的SchemaId
                      * @return SchemaId 选择所要绑定的SchemaId
+                     * 
                      */
                     std::string GetSchemaId() const;
 
                     /**
                      * 设置选择所要绑定的SchemaId
-                     * @param SchemaId 选择所要绑定的SchemaId
+                     * @param _schemaId 选择所要绑定的SchemaId
+                     * 
                      */
                     void SetSchemaId(const std::string& _schemaId);
 
                     /**
                      * 判断参数 SchemaId 是否已赋值
                      * @return SchemaId 是否已赋值
+                     * 
                      */
                     bool SchemaIdHasBeenSet() const;
 
                     /**
                      * 获取数据处理规则
                      * @return TransformsParam 数据处理规则
+                     * 
                      */
                     TransformsParam GetTransformsParam() const;
 
                     /**
                      * 设置数据处理规则
-                     * @param TransformsParam 数据处理规则
+                     * @param _transformsParam 数据处理规则
+                     * 
                      */
                     void SetTransformsParam(const TransformsParam& _transformsParam);
 
                     /**
                      * 判断参数 TransformsParam 是否已赋值
                      * @return TransformsParam 是否已赋值
+                     * 
                      */
                     bool TransformsParamHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

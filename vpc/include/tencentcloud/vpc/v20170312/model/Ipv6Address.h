@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取`IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`
                      * @return Address `IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置`IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`
-                     * @param Address `IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`
+                     * @param _address `IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取是否是主`IP`。
                      * @return Primary 是否是主`IP`。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否是主`IP`。
-                     * @param Primary 是否是主`IP`。
+                     * @param _primary 是否是主`IP`。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 
                     /**
                      * 获取`EIP`实例`ID`，形如：`eip-hxlqja90`。
                      * @return AddressId `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置`EIP`实例`ID`，形如：`eip-hxlqja90`。
-                     * @param AddressId `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * @param _addressId `EIP`实例`ID`，形如：`eip-hxlqja90`。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取描述信息。
                      * @return Description 描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取公网IP是否被封堵。
                      * @return IsWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     bool GetIsWanIpBlocked() const;
 
                     /**
                      * 设置公网IP是否被封堵。
-                     * @param IsWanIpBlocked 公网IP是否被封堵。
+                     * @param _isWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     void SetIsWanIpBlocked(const bool& _isWanIpBlocked);
 
                     /**
                      * 判断参数 IsWanIpBlocked 是否已赋值
                      * @return IsWanIpBlocked 是否已赋值
+                     * 
                      */
                     bool IsWanIpBlockedHasBeenSet() const;
 
@@ -147,6 +162,7 @@ namespace TencentCloud
 <li>`MIGRATING`：迁移中</li>
 <li>`DELETING`：删除中</li>
 <li>`AVAILABLE`：可用的</li>
+                     * 
                      */
                     std::string GetState() const;
 
@@ -156,17 +172,19 @@ namespace TencentCloud
 <li>`MIGRATING`：迁移中</li>
 <li>`DELETING`：删除中</li>
 <li>`AVAILABLE`：可用的</li>
-                     * @param State `IPv6`地址状态：
+                     * @param _state `IPv6`地址状态：
 <li>`PENDING`：生产中</li>
 <li>`MIGRATING`：迁移中</li>
 <li>`DELETING`：删除中</li>
 <li>`AVAILABLE`：可用的</li>
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

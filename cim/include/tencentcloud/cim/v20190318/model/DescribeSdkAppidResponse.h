@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取表示 appid 对应的 SdkAppid 的数据
                      * @return SdkAppids 表示 appid 对应的 SdkAppid 的数据
+                     * 
                      */
                     std::vector<int64_t> GetSdkAppids() const;
 
                     /**
                      * 判断参数 SdkAppids 是否已赋值
                      * @return SdkAppids 是否已赋值
+                     * 
                      */
                     bool SdkAppidsHasBeenSet() const;
 

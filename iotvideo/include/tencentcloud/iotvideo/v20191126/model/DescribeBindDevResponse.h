@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 绑定的设备列表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BindDevInfo> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

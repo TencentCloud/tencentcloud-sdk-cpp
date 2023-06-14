@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取满足条件的条目数。
                      * @return TotalCount 满足条件的条目数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取克隆任务列表。
                      * @return Items 克隆任务列表。
+                     * 
                      */
                     std::vector<CloneItem> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

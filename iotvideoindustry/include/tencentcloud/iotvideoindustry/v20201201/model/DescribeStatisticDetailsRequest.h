@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始日期，格式【YYYY-MM-DD】
                      * @return StartDate 开始日期，格式【YYYY-MM-DD】
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期，格式【YYYY-MM-DD】
-                     * @param StartDate 开始日期，格式【YYYY-MM-DD】
+                     * @param _startDate 开始日期，格式【YYYY-MM-DD】
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期，格式【YYYY-MM-DD】
                      * @return EndDate 结束日期，格式【YYYY-MM-DD】
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期，格式【YYYY-MM-DD】
-                     * @param EndDate 结束日期，格式【YYYY-MM-DD】
+                     * @param _endDate 结束日期，格式【YYYY-MM-DD】
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
 5. X-P2P分享流量: P2PFluxTotal
 6. X-P2P峰值带宽: P2PPeakValue
 7. RTMP推流路数(直播推流): LivePushTotal
+                     * 
                      */
                     std::string GetStatisticField() const;
 
@@ -107,7 +114,7 @@ namespace TencentCloud
 5. X-P2P分享流量: P2PFluxTotal
 6. X-P2P峰值带宽: P2PPeakValue
 7. RTMP推流路数(直播推流): LivePushTotal
-                     * @param StatisticField 统计项。取值范围：
+                     * @param _statisticField 统计项。取值范围：
 1.录制设备数：RecordingDevice
 2.非录制设备数：NonRecordingDevice
 3.观看流量总数：WatchFlux
@@ -115,12 +122,14 @@ namespace TencentCloud
 5. X-P2P分享流量: P2PFluxTotal
 6. X-P2P峰值带宽: P2PPeakValue
 7. RTMP推流路数(直播推流): LivePushTotal
+                     * 
                      */
                     void SetStatisticField(const std::string& _statisticField);
 
                     /**
                      * 判断参数 StatisticField 是否已赋值
                      * @return StatisticField 是否已赋值
+                     * 
                      */
                     bool StatisticFieldHasBeenSet() const;
 

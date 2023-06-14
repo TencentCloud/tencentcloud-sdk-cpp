@@ -53,342 +53,399 @@ namespace TencentCloud
                     /**
                      * 获取通道实例ID。
                      * @return VpnConnectionId 通道实例ID。
+                     * 
                      */
                     std::string GetVpnConnectionId() const;
 
                     /**
                      * 设置通道实例ID。
-                     * @param VpnConnectionId 通道实例ID。
+                     * @param _vpnConnectionId 通道实例ID。
+                     * 
                      */
                     void SetVpnConnectionId(const std::string& _vpnConnectionId);
 
                     /**
                      * 判断参数 VpnConnectionId 是否已赋值
                      * @return VpnConnectionId 是否已赋值
+                     * 
                      */
                     bool VpnConnectionIdHasBeenSet() const;
 
                     /**
                      * 获取通道名称。
                      * @return VpnConnectionName 通道名称。
+                     * 
                      */
                     std::string GetVpnConnectionName() const;
 
                     /**
                      * 设置通道名称。
-                     * @param VpnConnectionName 通道名称。
+                     * @param _vpnConnectionName 通道名称。
+                     * 
                      */
                     void SetVpnConnectionName(const std::string& _vpnConnectionName);
 
                     /**
                      * 判断参数 VpnConnectionName 是否已赋值
                      * @return VpnConnectionName 是否已赋值
+                     * 
                      */
                     bool VpnConnectionNameHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID。
-                     * @param VpnGatewayId VPN网关实例ID。
+                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取对端网关实例ID。
                      * @return CustomerGatewayId 对端网关实例ID。
+                     * 
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
                      * 设置对端网关实例ID。
-                     * @param CustomerGatewayId 对端网关实例ID。
+                     * @param _customerGatewayId 对端网关实例ID。
+                     * 
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
 
                     /**
                      * 判断参数 CustomerGatewayId 是否已赋值
                      * @return CustomerGatewayId 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取预共享密钥。
                      * @return PreShareKey 预共享密钥。
+                     * 
                      */
                     std::string GetPreShareKey() const;
 
                     /**
                      * 设置预共享密钥。
-                     * @param PreShareKey 预共享密钥。
+                     * @param _preShareKey 预共享密钥。
+                     * 
                      */
                     void SetPreShareKey(const std::string& _preShareKey);
 
                     /**
                      * 判断参数 PreShareKey 是否已赋值
                      * @return PreShareKey 是否已赋值
+                     * 
                      */
                     bool PreShareKeyHasBeenSet() const;
 
                     /**
                      * 获取通道传输协议。
                      * @return VpnProto 通道传输协议。
+                     * 
                      */
                     std::string GetVpnProto() const;
 
                     /**
                      * 设置通道传输协议。
-                     * @param VpnProto 通道传输协议。
+                     * @param _vpnProto 通道传输协议。
+                     * 
                      */
                     void SetVpnProto(const std::string& _vpnProto);
 
                     /**
                      * 判断参数 VpnProto 是否已赋值
                      * @return VpnProto 是否已赋值
+                     * 
                      */
                     bool VpnProtoHasBeenSet() const;
 
                     /**
                      * 获取通道加密协议。
                      * @return EncryptProto 通道加密协议。
+                     * 
                      */
                     std::string GetEncryptProto() const;
 
                     /**
                      * 设置通道加密协议。
-                     * @param EncryptProto 通道加密协议。
+                     * @param _encryptProto 通道加密协议。
+                     * 
                      */
                     void SetEncryptProto(const std::string& _encryptProto);
 
                     /**
                      * 判断参数 EncryptProto 是否已赋值
                      * @return EncryptProto 是否已赋值
+                     * 
                      */
                     bool EncryptProtoHasBeenSet() const;
 
                     /**
                      * 获取路由类型。
                      * @return RouteType 路由类型。
+                     * 
                      */
                     std::string GetRouteType() const;
 
                     /**
                      * 设置路由类型。
-                     * @param RouteType 路由类型。
+                     * @param _routeType 路由类型。
+                     * 
                      */
                     void SetRouteType(const std::string& _routeType);
 
                     /**
                      * 判断参数 RouteType 是否已赋值
                      * @return RouteType 是否已赋值
+                     * 
                      */
                     bool RouteTypeHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
                      * @return State 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
-                     * @param State 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * @param _state 通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取通道连接状态，AVAILABLE：已连接。
                      * @return NetStatus 通道连接状态，AVAILABLE：已连接。
+                     * 
                      */
                     std::string GetNetStatus() const;
 
                     /**
                      * 设置通道连接状态，AVAILABLE：已连接。
-                     * @param NetStatus 通道连接状态，AVAILABLE：已连接。
+                     * @param _netStatus 通道连接状态，AVAILABLE：已连接。
+                     * 
                      */
                     void SetNetStatus(const std::string& _netStatus);
 
                     /**
                      * 判断参数 NetStatus 是否已赋值
                      * @return NetStatus 是否已赋值
+                     * 
                      */
                     bool NetStatusHasBeenSet() const;
 
                     /**
                      * 获取SPD。
                      * @return SecurityPolicyDatabaseSet SPD。
+                     * 
                      */
                     std::vector<SecurityPolicyDatabase> GetSecurityPolicyDatabaseSet() const;
 
                     /**
                      * 设置SPD。
-                     * @param SecurityPolicyDatabaseSet SPD。
+                     * @param _securityPolicyDatabaseSet SPD。
+                     * 
                      */
                     void SetSecurityPolicyDatabaseSet(const std::vector<SecurityPolicyDatabase>& _securityPolicyDatabaseSet);
 
                     /**
                      * 判断参数 SecurityPolicyDatabaseSet 是否已赋值
                      * @return SecurityPolicyDatabaseSet 是否已赋值
+                     * 
                      */
                     bool SecurityPolicyDatabaseSetHasBeenSet() const;
 
                     /**
                      * 获取IKE选项。
                      * @return IKEOptionsSpecification IKE选项。
+                     * 
                      */
                     IKEOptionsSpecification GetIKEOptionsSpecification() const;
 
                     /**
                      * 设置IKE选项。
-                     * @param IKEOptionsSpecification IKE选项。
+                     * @param _iKEOptionsSpecification IKE选项。
+                     * 
                      */
                     void SetIKEOptionsSpecification(const IKEOptionsSpecification& _iKEOptionsSpecification);
 
                     /**
                      * 判断参数 IKEOptionsSpecification 是否已赋值
                      * @return IKEOptionsSpecification 是否已赋值
+                     * 
                      */
                     bool IKEOptionsSpecificationHasBeenSet() const;
 
                     /**
                      * 获取IPSEC选择。
                      * @return IPSECOptionsSpecification IPSEC选择。
+                     * 
                      */
                     IPSECOptionsSpecification GetIPSECOptionsSpecification() const;
 
                     /**
                      * 设置IPSEC选择。
-                     * @param IPSECOptionsSpecification IPSEC选择。
+                     * @param _iPSECOptionsSpecification IPSEC选择。
+                     * 
                      */
                     void SetIPSECOptionsSpecification(const IPSECOptionsSpecification& _iPSECOptionsSpecification);
 
                     /**
                      * 判断参数 IPSECOptionsSpecification 是否已赋值
                      * @return IPSECOptionsSpecification 是否已赋值
+                     * 
                      */
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
                     /**
                      * 获取是否支持健康状态探测
                      * @return EnableHealthCheck 是否支持健康状态探测
+                     * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
                      * 设置是否支持健康状态探测
-                     * @param EnableHealthCheck 是否支持健康状态探测
+                     * @param _enableHealthCheck 是否支持健康状态探测
+                     * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
 
                     /**
                      * 判断参数 EnableHealthCheck 是否已赋值
                      * @return EnableHealthCheck 是否已赋值
+                     * 
                      */
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
                      * 获取本端探测ip
                      * @return HealthCheckLocalIp 本端探测ip
+                     * 
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
                      * 设置本端探测ip
-                     * @param HealthCheckLocalIp 本端探测ip
+                     * @param _healthCheckLocalIp 本端探测ip
+                     * 
                      */
                     void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
 
                     /**
                      * 判断参数 HealthCheckLocalIp 是否已赋值
                      * @return HealthCheckLocalIp 是否已赋值
+                     * 
                      */
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
                      * 获取对端探测ip
                      * @return HealthCheckRemoteIp 对端探测ip
+                     * 
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
                      * 设置对端探测ip
-                     * @param HealthCheckRemoteIp 对端探测ip
+                     * @param _healthCheckRemoteIp 对端探测ip
+                     * 
                      */
                     void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
 
                     /**
                      * 判断参数 HealthCheckRemoteIp 是否已赋值
                      * @return HealthCheckRemoteIp 是否已赋值
+                     * 
                      */
                     bool HealthCheckRemoteIpHasBeenSet() const;
 
                     /**
                      * 获取通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
                      * @return HealthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * 
                      */
                     std::string GetHealthCheckStatus() const;
 
                     /**
                      * 设置通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
-                     * @param HealthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * @param _healthCheckStatus 通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象
+                     * 
                      */
                     void SetHealthCheckStatus(const std::string& _healthCheckStatus);
 
                     /**
                      * 判断参数 HealthCheckStatus 是否已赋值
                      * @return HealthCheckStatus 是否已赋值
+                     * 
                      */
                     bool HealthCheckStatusHasBeenSet() const;
 
@@ -397,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDpdEnable() const;
 
                     /**
                      * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+                     * @param _dpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDpdEnable(const int64_t& _dpdEnable);
 
                     /**
                      * 判断参数 DpdEnable 是否已赋值
                      * @return DpdEnable 是否已赋值
+                     * 
                      */
                     bool DpdEnableHasBeenSet() const;
 
@@ -419,20 +479,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDpdTimeout() const;
 
                     /**
                      * 设置DPD超时时间。即探测确认对端不存在需要的时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
+                     * @param _dpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDpdTimeout(const std::string& _dpdTimeout);
 
                     /**
                      * 判断参数 DpdTimeout 是否已赋值
                      * @return DpdTimeout 是否已赋值
+                     * 
                      */
                     bool DpdTimeoutHasBeenSet() const;
 
@@ -441,38 +504,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDpdAction() const;
 
                     /**
                      * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+                     * @param _dpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDpdAction(const std::string& _dpdAction);
 
                     /**
                      * 判断参数 DpdAction 是否已赋值
                      * @return DpdAction 是否已赋值
+                     * 
                      */
                     bool DpdActionHasBeenSet() const;
 
                     /**
                      * 获取标签键值对数组
                      * @return TagSet 标签键值对数组
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对数组
-                     * @param TagSet 标签键值对数组
+                     * @param _tagSet 标签键值对数组
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -481,20 +550,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NegotiationType 协商类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNegotiationType() const;
 
                     /**
                      * 设置协商类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NegotiationType 协商类型
+                     * @param _negotiationType 协商类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNegotiationType(const std::string& _negotiationType);
 
                     /**
                      * 判断参数 NegotiationType 是否已赋值
                      * @return NegotiationType 是否已赋值
+                     * 
                      */
                     bool NegotiationTypeHasBeenSet() const;
 

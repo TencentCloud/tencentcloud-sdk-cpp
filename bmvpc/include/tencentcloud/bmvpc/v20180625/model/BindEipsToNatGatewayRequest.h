@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关ID，例如：nat-kdm476mp
                      * @return NatId NAT网关ID，例如：nat-kdm476mp
+                     * 
                      */
                     std::string GetNatId() const;
 
                     /**
                      * 设置NAT网关ID，例如：nat-kdm476mp
-                     * @param NatId NAT网关ID，例如：nat-kdm476mp
+                     * @param _natId NAT网关ID，例如：nat-kdm476mp
+                     * 
                      */
                     void SetNatId(const std::string& _natId);
 
                     /**
                      * 判断参数 NatId 是否已赋值
                      * @return NatId 是否已赋值
+                     * 
                      */
                     bool NatIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID，例如：vpc-kd7d06of
                      * @return VpcId 私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID，例如：vpc-kd7d06of
-                     * @param VpcId 私有网络ID，例如：vpc-kd7d06of
+                     * @param _vpcId 私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个
                      * @return AssignedEips 已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个
+                     * 
                      */
                     std::vector<std::string> GetAssignedEips() const;
 
                     /**
                      * 设置已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个
-                     * @param AssignedEips 已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个
+                     * @param _assignedEips 已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个
+                     * 
                      */
                     void SetAssignedEips(const std::vector<std::string>& _assignedEips);
 
                     /**
                      * 判断参数 AssignedEips 是否已赋值
                      * @return AssignedEips 是否已赋值
+                     * 
                      */
                     bool AssignedEipsHasBeenSet() const;
 
                     /**
                      * 获取新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个
                      * @return AutoAllocEipNum 新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个
+                     * 
                      */
                     uint64_t GetAutoAllocEipNum() const;
 
                     /**
                      * 设置新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个
-                     * @param AutoAllocEipNum 新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个
+                     * @param _autoAllocEipNum 新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个
+                     * 
                      */
                     void SetAutoAllocEipNum(const uint64_t& _autoAllocEipNum);
 
                     /**
                      * 判断参数 AutoAllocEipNum 是否已赋值
                      * @return AutoAllocEipNum 是否已赋值
+                     * 
                      */
                     bool AutoAllocEipNumHasBeenSet() const;
 

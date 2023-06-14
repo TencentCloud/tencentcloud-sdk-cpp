@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取跳转短链
                      * @return Url 跳转短链
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取小程序AppId
                      * @return AppId 小程序AppId
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取小程序 原始 Id
                      * @return AppOriginalId 小程序 原始 Id
+                     * 
                      */
                     std::string GetAppOriginalId() const;
 
                     /**
                      * 判断参数 AppOriginalId 是否已赋值
                      * @return AppOriginalId 是否已赋值
+                     * 
                      */
                     bool AppOriginalIdHasBeenSet() const;
 
                     /**
                      * 获取跳转路径
                      * @return Path 跳转路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取base64格式跳转二维码
                      * @return QrCode base64格式跳转二维码
+                     * 
                      */
                     std::string GetQrCode() const;
 
                     /**
                      * 判断参数 QrCode 是否已赋值
                      * @return QrCode 是否已赋值
+                     * 
                      */
                     bool QrCodeHasBeenSet() const;
 
                     /**
                      * 获取链接类型，空-默认小程序端链接，H5SIGN-h5端链接
                      * @return UrlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 
                      */
                     std::string GetUrlType() const;
 
                     /**
                      * 判断参数 UrlType 是否已赋值
                      * @return UrlType 是否已赋值
+                     * 
                      */
                     bool UrlTypeHasBeenSet() const;
 

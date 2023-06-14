@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取欲新购实例的可用区ID。
                      * @return Zone 欲新购实例的可用区ID。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置欲新购实例的可用区ID。
-                     * @param Zone 欲新购实例的可用区ID。
+                     * @param _zone 欲新购实例的可用区ID。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
  查询实例规格获得。
                      * @return NodeCount 实例节点个数，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
                      * 设置实例节点个数，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
-                     * @param NodeCount 实例节点个数，可以通过 DescribeDBInstanceSpecs
+                     * @param _nodeCount 实例节点个数，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
  查询实例规格获得。
                      * @return Memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
-                     * @param Memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
+                     * @param _memory 内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得。
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -109,74 +118,86 @@ namespace TencentCloud
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
                      * @return Storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
-                     * @param Storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
+                     * @param _storage 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs
  查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取欲购买的时长，单位：月。
                      * @return Period 欲购买的时长，单位：月。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置欲购买的时长，单位：月。
-                     * @param Period 欲购买的时长，单位：月。
+                     * @param _period 欲购买的时长，单位：月。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取欲购买的数量，默认查询购买1个实例的价格。
                      * @return Count 欲购买的数量，默认查询购买1个实例的价格。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置欲购买的数量，默认查询购买1个实例的价格。
-                     * @param Count 欲购买的数量，默认查询购买1个实例的价格。
+                     * @param _count 欲购买的数量，默认查询购买1个实例的价格。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取付费类型。postpaid：按量付费   prepaid：预付费
                      * @return Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     * 
                      */
                     std::string GetPaymode() const;
 
                     /**
                      * 设置付费类型。postpaid：按量付费   prepaid：预付费
-                     * @param Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     * @param _paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     * 
                      */
                     void SetPaymode(const std::string& _paymode);
 
                     /**
                      * 判断参数 Paymode 是否已赋值
                      * @return Paymode 是否已赋值
+                     * 
                      */
                     bool PaymodeHasBeenSet() const;
 
@@ -187,6 +208,7 @@ namespace TencentCloud
                      * @return AmountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     std::string GetAmountUnit() const;
 
@@ -194,15 +216,17 @@ namespace TencentCloud
                      * 设置价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
-                     * @param AmountUnit 价格金额单位，不传默认单位为分，取值：  
+                     * @param _amountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     void SetAmountUnit(const std::string& _amountUnit);
 
                     /**
                      * 判断参数 AmountUnit 是否已赋值
                      * @return AmountUnit 是否已赋值
+                     * 
                      */
                     bool AmountUnitHasBeenSet() const;
 

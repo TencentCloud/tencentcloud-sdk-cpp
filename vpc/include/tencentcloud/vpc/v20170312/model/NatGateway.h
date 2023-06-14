@@ -53,54 +53,63 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关的ID。
                      * @return NatGatewayId NAT网关的ID。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID。
-                     * @param NatGatewayId NAT网关的ID。
+                     * @param _natGatewayId NAT网关的ID。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关的名称。
                      * @return NatGatewayName NAT网关的名称。
+                     * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
                      * 设置NAT网关的名称。
-                     * @param NatGatewayName NAT网关的名称。
+                     * @param _natGatewayName NAT网关的名称。
+                     * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
 
                     /**
                      * 判断参数 NatGatewayName 是否已赋值
                      * @return NatGatewayName 是否已赋值
+                     * 
                      */
                     bool NatGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取NAT网关创建的时间。
                      * @return CreatedTime NAT网关创建的时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置NAT网关创建的时间。
-                     * @param CreatedTime NAT网关创建的时间。
+                     * @param _createdTime NAT网关创建的时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
                      * @return State NAT网关的状态。
  'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，
 ‘FAILED’：失败。
+                     * 
                      */
                     std::string GetState() const;
 
@@ -118,141 +128,164 @@ namespace TencentCloud
                      * 设置NAT网关的状态。
  'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，
 ‘FAILED’：失败。
-                     * @param State NAT网关的状态。
+                     * @param _state NAT网关的状态。
  'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，
 ‘FAILED’：失败。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取网关最大外网出带宽(单位:Mbps)。
                      * @return InternetMaxBandwidthOut 网关最大外网出带宽(单位:Mbps)。
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置网关最大外网出带宽(单位:Mbps)。
-                     * @param InternetMaxBandwidthOut 网关最大外网出带宽(单位:Mbps)。
+                     * @param _internetMaxBandwidthOut 网关最大外网出带宽(单位:Mbps)。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取网关并发连接上限。
                      * @return MaxConcurrentConnection 网关并发连接上限。
+                     * 
                      */
                     uint64_t GetMaxConcurrentConnection() const;
 
                     /**
                      * 设置网关并发连接上限。
-                     * @param MaxConcurrentConnection 网关并发连接上限。
+                     * @param _maxConcurrentConnection 网关并发连接上限。
+                     * 
                      */
                     void SetMaxConcurrentConnection(const uint64_t& _maxConcurrentConnection);
 
                     /**
                      * 判断参数 MaxConcurrentConnection 是否已赋值
                      * @return MaxConcurrentConnection 是否已赋值
+                     * 
                      */
                     bool MaxConcurrentConnectionHasBeenSet() const;
 
                     /**
                      * 获取绑定NAT网关的公网IP对象数组。
                      * @return PublicIpAddressSet 绑定NAT网关的公网IP对象数组。
+                     * 
                      */
                     std::vector<NatGatewayAddress> GetPublicIpAddressSet() const;
 
                     /**
                      * 设置绑定NAT网关的公网IP对象数组。
-                     * @param PublicIpAddressSet 绑定NAT网关的公网IP对象数组。
+                     * @param _publicIpAddressSet 绑定NAT网关的公网IP对象数组。
+                     * 
                      */
                     void SetPublicIpAddressSet(const std::vector<NatGatewayAddress>& _publicIpAddressSet);
 
                     /**
                      * 判断参数 PublicIpAddressSet 是否已赋值
                      * @return PublicIpAddressSet 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressSetHasBeenSet() const;
 
                     /**
                      * 获取NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。
                      * @return NetworkState NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。
+                     * 
                      */
                     std::string GetNetworkState() const;
 
                     /**
                      * 设置NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。
-                     * @param NetworkState NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。
+                     * @param _networkState NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。
+                     * 
                      */
                     void SetNetworkState(const std::string& _networkState);
 
                     /**
                      * 判断参数 NetworkState 是否已赋值
                      * @return NetworkState 是否已赋值
+                     * 
                      */
                     bool NetworkStateHasBeenSet() const;
 
                     /**
                      * 获取NAT网关的端口转发规则。
                      * @return DestinationIpPortTranslationNatRuleSet NAT网关的端口转发规则。
+                     * 
                      */
                     std::vector<DestinationIpPortTranslationNatRule> GetDestinationIpPortTranslationNatRuleSet() const;
 
                     /**
                      * 设置NAT网关的端口转发规则。
-                     * @param DestinationIpPortTranslationNatRuleSet NAT网关的端口转发规则。
+                     * @param _destinationIpPortTranslationNatRuleSet NAT网关的端口转发规则。
+                     * 
                      */
                     void SetDestinationIpPortTranslationNatRuleSet(const std::vector<DestinationIpPortTranslationNatRule>& _destinationIpPortTranslationNatRuleSet);
 
                     /**
                      * 判断参数 DestinationIpPortTranslationNatRuleSet 是否已赋值
                      * @return DestinationIpPortTranslationNatRuleSet 是否已赋值
+                     * 
                      */
                     bool DestinationIpPortTranslationNatRuleSetHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关所在的可用区。
                      * @return Zone NAT网关所在的可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置NAT网关所在的可用区。
-                     * @param Zone NAT网关所在的可用区。
+                     * @param _zone NAT网关所在的可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -261,20 +294,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectConnectGatewayIds 绑定的专线网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDirectConnectGatewayIds() const;
 
                     /**
                      * 设置绑定的专线网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DirectConnectGatewayIds 绑定的专线网关ID。
+                     * @param _directConnectGatewayIds 绑定的专线网关ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
 
                     /**
                      * 判断参数 DirectConnectGatewayIds 是否已赋值
                      * @return DirectConnectGatewayIds 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdsHasBeenSet() const;
 
@@ -283,38 +319,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 所属子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置所属子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 所属子网ID。
+                     * @param _subnetId 所属子网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取标签键值对。
                      * @return TagSet 标签键值对。
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。
-                     * @param TagSet 标签键值对。
+                     * @param _tagSet 标签键值对。
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -323,20 +365,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupSet NAT网关绑定的安全组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupSet() const;
 
                     /**
                      * 设置NAT网关绑定的安全组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityGroupSet NAT网关绑定的安全组列表
+                     * @param _securityGroupSet NAT网关绑定的安全组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityGroupSet(const std::vector<std::string>& _securityGroupSet);
 
                     /**
                      * 判断参数 SecurityGroupSet 是否已赋值
                      * @return SecurityGroupSet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupSetHasBeenSet() const;
 
@@ -345,20 +390,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SourceIpTranslationNatRule> GetSourceIpTranslationNatRuleSet() const;
 
                     /**
                      * 设置NAT网关的SNAT转发规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
+                     * @param _sourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceIpTranslationNatRuleSet(const std::vector<SourceIpTranslationNatRule>& _sourceIpTranslationNatRuleSet);
 
                     /**
                      * 判断参数 SourceIpTranslationNatRuleSet 是否已赋值
                      * @return SourceIpTranslationNatRuleSet 是否已赋值
+                     * 
                      */
                     bool SourceIpTranslationNatRuleSetHasBeenSet() const;
 
@@ -367,20 +415,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsExclusive 是否独享型NAT。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsExclusive() const;
 
                     /**
                      * 设置是否独享型NAT。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsExclusive 是否独享型NAT。
+                     * @param _isExclusive 是否独享型NAT。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsExclusive(const bool& _isExclusive);
 
                     /**
                      * 判断参数 IsExclusive 是否已赋值
                      * @return IsExclusive 是否已赋值
+                     * 
                      */
                     bool IsExclusiveHasBeenSet() const;
 
@@ -389,20 +440,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExclusiveGatewayBandwidth() const;
 
                     /**
                      * 设置独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+                     * @param _exclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExclusiveGatewayBandwidth(const uint64_t& _exclusiveGatewayBandwidth);
 
                     /**
                      * 判断参数 ExclusiveGatewayBandwidth 是否已赋值
                      * @return ExclusiveGatewayBandwidth 是否已赋值
+                     * 
                      */
                     bool ExclusiveGatewayBandwidthHasBeenSet() const;
 
@@ -411,20 +465,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRestrictState() const;
 
                     /**
                      * 设置NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RestrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+                     * @param _restrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestrictState(const std::string& _restrictState);
 
                     /**
                      * 判断参数 RestrictState 是否已赋值
                      * @return RestrictState 是否已赋值
+                     * 
                      */
                     bool RestrictStateHasBeenSet() const;
 

@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称。
                      * @return DatabaseName 数据库名称。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称。
-                     * @param DatabaseName 数据库名称。
+                     * @param _databaseName 数据库名称。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 数据库描述信息，长度 0~256。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置数据库描述信息，长度 0~256。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 数据库描述信息，长度 0~256。
+                     * @param _comment 数据库描述信息，长度 0~256。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Properties 允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
                      * 设置允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Properties 允许针对数据库的属性元数据信息进行指定。
+                     * @param _properties 允许针对数据库的属性元数据信息进行指定。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 数据库创建时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置数据库创建时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 数据库创建时间戳，单位：s。
+                     * @param _createTime 数据库创建时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -137,20 +149,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 数据库更新时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置数据库更新时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiedTime 数据库更新时间戳，单位：s。
+                     * @param _modifiedTime 数据库更新时间戳，单位：s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -159,20 +174,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location cos存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置cos存储路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location cos存储路径
+                     * @param _location cos存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
@@ -181,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 建库用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置建库用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAlias 建库用户昵称
+                     * @param _userAlias 建库用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
 
                     /**
                      * 判断参数 UserAlias 是否已赋值
                      * @return UserAlias 是否已赋值
+                     * 
                      */
                     bool UserAliasHasBeenSet() const;
 
@@ -203,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSubUin 建库用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserSubUin() const;
 
                     /**
                      * 设置建库用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserSubUin 建库用户ID
+                     * @param _userSubUin 建库用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserSubUin(const std::string& _userSubUin);
 
                     /**
                      * 判断参数 UserSubUin 是否已赋值
                      * @return UserSubUin 是否已赋值
+                     * 
                      */
                     bool UserSubUinHasBeenSet() const;
 
@@ -225,20 +249,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GovernPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DataGovernPolicy GetGovernPolicy() const;
 
                     /**
                      * 设置数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GovernPolicy 数据治理配置项
+                     * @param _governPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGovernPolicy(const DataGovernPolicy& _governPolicy);
 
                     /**
                      * 判断参数 GovernPolicy 是否已赋值
                      * @return GovernPolicy 是否已赋值
+                     * 
                      */
                     bool GovernPolicyHasBeenSet() const;
 
@@ -247,20 +274,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库ID（无效字段）
+                     * @param _databaseId 数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 

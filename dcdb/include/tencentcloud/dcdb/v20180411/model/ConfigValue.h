@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取配置项的名称，支持填写max_user_connections
                      * @return Config 配置项的名称，支持填写max_user_connections
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置配置项的名称，支持填写max_user_connections
-                     * @param Config 配置项的名称，支持填写max_user_connections
+                     * @param _config 配置项的名称，支持填写max_user_connections
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
                     /**
                      * 获取配置值
                      * @return Value 配置值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置配置值
-                     * @param Value 配置值
+                     * @param _value 配置值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

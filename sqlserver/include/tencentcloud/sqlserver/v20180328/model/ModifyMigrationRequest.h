@@ -48,126 +48,147 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务ID
                      * @return MigrateId 迁移任务ID
+                     * 
                      */
                     uint64_t GetMigrateId() const;
 
                     /**
                      * 设置迁移任务ID
-                     * @param MigrateId 迁移任务ID
+                     * @param _migrateId 迁移任务ID
+                     * 
                      */
                     void SetMigrateId(const uint64_t& _migrateId);
 
                     /**
                      * 判断参数 MigrateId 是否已赋值
                      * @return MigrateId 是否已赋值
+                     * 
                      */
                     bool MigrateIdHasBeenSet() const;
 
                     /**
                      * 获取新的迁移任务的名称，若不填则不修改
                      * @return MigrateName 新的迁移任务的名称，若不填则不修改
+                     * 
                      */
                     std::string GetMigrateName() const;
 
                     /**
                      * 设置新的迁移任务的名称，若不填则不修改
-                     * @param MigrateName 新的迁移任务的名称，若不填则不修改
+                     * @param _migrateName 新的迁移任务的名称，若不填则不修改
+                     * 
                      */
                     void SetMigrateName(const std::string& _migrateName);
 
                     /**
                      * 判断参数 MigrateName 是否已赋值
                      * @return MigrateName 是否已赋值
+                     * 
                      */
                     bool MigrateNameHasBeenSet() const;
 
                     /**
                      * 获取新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改
                      * @return MigrateType 新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改
+                     * 
                      */
                     uint64_t GetMigrateType() const;
 
                     /**
                      * 设置新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改
-                     * @param MigrateType 新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改
+                     * @param _migrateType 新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改
+                     * 
                      */
                     void SetMigrateType(const uint64_t& _migrateType);
 
                     /**
                      * 判断参数 MigrateType 是否已赋值
                      * @return MigrateType 是否已赋值
+                     * 
                      */
                     bool MigrateTypeHasBeenSet() const;
 
                     /**
                      * 获取迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改
                      * @return SourceType 迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改
+                     * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
                      * 设置迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改
-                     * @param SourceType 迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改
+                     * @param _sourceType 迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改
+                     * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取迁移源，若不填则不修改
                      * @return Source 迁移源，若不填则不修改
+                     * 
                      */
                     MigrateSource GetSource() const;
 
                     /**
                      * 设置迁移源，若不填则不修改
-                     * @param Source 迁移源，若不填则不修改
+                     * @param _source 迁移源，若不填则不修改
+                     * 
                      */
                     void SetSource(const MigrateSource& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取迁移目标，若不填则不修改
                      * @return Target 迁移目标，若不填则不修改
+                     * 
                      */
                     MigrateTarget GetTarget() const;
 
                     /**
                      * 设置迁移目标，若不填则不修改
-                     * @param Target 迁移目标，若不填则不修改
+                     * @param _target 迁移目标，若不填则不修改
+                     * 
                      */
                     void SetTarget(const MigrateTarget& _target);
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改
                      * @return MigrateDBSet 迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改
+                     * 
                      */
                     std::vector<MigrateDB> GetMigrateDBSet() const;
 
                     /**
                      * 设置迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改
-                     * @param MigrateDBSet 迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改
+                     * @param _migrateDBSet 迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改
+                     * 
                      */
                     void SetMigrateDBSet(const std::vector<MigrateDB>& _migrateDBSet);
 
                     /**
                      * 判断参数 MigrateDBSet 是否已赋值
                      * @return MigrateDBSet 是否已赋值
+                     * 
                      */
                     bool MigrateDBSetHasBeenSet() const;
 

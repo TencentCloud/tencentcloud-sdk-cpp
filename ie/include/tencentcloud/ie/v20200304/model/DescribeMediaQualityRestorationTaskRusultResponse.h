@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取画质重生任务结果信息
                      * @return TaskResult 画质重生任务结果信息
+                     * 
                      */
                     MediaQualityRestorationTaskResult GetTaskResult() const;
 
                     /**
                      * 判断参数 TaskResult 是否已赋值
                      * @return TaskResult 是否已赋值
+                     * 
                      */
                     bool TaskResultHasBeenSet() const;
 

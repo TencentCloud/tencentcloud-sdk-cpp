@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckId 检查项id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCheckId() const;
 
                     /**
                      * 设置检查项id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckId 检查项id
+                     * @param _checkId 检查项id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckId(const std::string& _checkId);
 
                     /**
                      * 判断参数 CheckId 是否已赋值
                      * @return CheckId 是否已赋值
+                     * 
                      */
                     bool CheckIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 配置要求
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置要求
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 配置要求
+                     * @param _name 配置要求
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 检查项类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置检查项类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 检查项类型
+                     * @param _type 检查项类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 检查对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置检查对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetType 检查对象
+                     * @param _assetType 检查对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 默认风险等级 2:低危 3:中危 4:高危
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置默认风险等级 2:低危 3:中危 4:高危
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 默认风险等级 2:低危 3:中危 4:高危
+                     * @param _level 默认风险等级 2:低危 3:中危 4:高危
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Standard 相关规范
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStandard() const;
 
                     /**
                      * 设置相关规范
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Standard 相关规范
+                     * @param _standard 相关规范
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStandard(const std::string& _standard);
 
                     /**
                      * 判断参数 Standard 是否已赋值
                      * @return Standard 是否已赋值
+                     * 
                      */
                     bool StandardHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFree 检查项是否付费 1:免费 2:付费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsFree() const;
 
                     /**
                      * 设置检查项是否付费 1:免费 2:付费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsFree 检查项是否付费 1:免费 2:付费
+                     * @param _isFree 检查项是否付费 1:免费 2:付费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsFree(const int64_t& _isFree);
 
                     /**
                      * 判断参数 IsFree 是否已赋值
                      * @return IsFree 是否已赋值
+                     * 
                      */
                     bool IsFreeHasBeenSet() const;
 

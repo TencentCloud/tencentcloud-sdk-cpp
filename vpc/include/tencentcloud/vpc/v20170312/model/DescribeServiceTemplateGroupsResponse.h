@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取协议端口模板集合。
                      * @return ServiceTemplateGroupSet 协议端口模板集合。
+                     * 
                      */
                     std::vector<ServiceTemplateGroup> GetServiceTemplateGroupSet() const;
 
                     /**
                      * 判断参数 ServiceTemplateGroupSet 是否已赋值
                      * @return ServiceTemplateGroupSet 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupSetHasBeenSet() const;
 

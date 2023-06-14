@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取RocketMQ集群ID
                      * @return ClusterId RocketMQ集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置RocketMQ集群ID
-                     * @param ClusterId RocketMQ集群ID
+                     * @param _clusterId RocketMQ集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return ClusterName 3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param ClusterName 3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _clusterName 3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取说明信息，不超过128个字符
                      * @return Remark 说明信息，不超过128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息，不超过128个字符
-                     * @param Remark 说明信息，不超过128个字符
+                     * @param _remark 说明信息，不超过128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

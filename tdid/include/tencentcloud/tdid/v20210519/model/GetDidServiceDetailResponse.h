@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取did服务信息
                      * @return DidService did服务信息
+                     * 
                      */
                     DidServiceInfo GetDidService() const;
 
                     /**
                      * 判断参数 DidService 是否已赋值
                      * @return DidService 是否已赋值
+                     * 
                      */
                     bool DidServiceHasBeenSet() const;
 

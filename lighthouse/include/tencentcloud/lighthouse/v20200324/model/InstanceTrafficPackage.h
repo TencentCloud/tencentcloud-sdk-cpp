@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取流量包详情列表。
                      * @return TrafficPackageSet 流量包详情列表。
+                     * 
                      */
                     std::vector<TrafficPackage> GetTrafficPackageSet() const;
 
                     /**
                      * 设置流量包详情列表。
-                     * @param TrafficPackageSet 流量包详情列表。
+                     * @param _trafficPackageSet 流量包详情列表。
+                     * 
                      */
                     void SetTrafficPackageSet(const std::vector<TrafficPackage>& _trafficPackageSet);
 
                     /**
                      * 判断参数 TrafficPackageSet 是否已赋值
                      * @return TrafficPackageSet 是否已赋值
+                     * 
                      */
                     bool TrafficPackageSetHasBeenSet() const;
 

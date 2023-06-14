@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取平台。
                      * @return Platform 平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台。
-                     * @param Platform 平台。
+                     * @param _platform 平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取软件版本。
                      * @return SoftwareVersion 软件版本。
+                     * 
                      */
                     std::string GetSoftwareVersion() const;
 
                     /**
                      * 设置软件版本。
-                     * @param SoftwareVersion 软件版本。
+                     * @param _softwareVersion 软件版本。
+                     * 
                      */
                     void SetSoftwareVersion(const std::string& _softwareVersion);
 
                     /**
                      * 判断参数 SoftwareVersion 是否已赋值
                      * @return SoftwareVersion 是否已赋值
+                     * 
                      */
                     bool SoftwareVersionHasBeenSet() const;
 
                     /**
                      * 获取供应商名称。
                      * @return VendorName 供应商名称。
+                     * 
                      */
                     std::string GetVendorName() const;
 
                     /**
                      * 设置供应商名称。
-                     * @param VendorName 供应商名称。
+                     * @param _vendorName 供应商名称。
+                     * 
                      */
                     void SetVendorName(const std::string& _vendorName);
 
                     /**
                      * 判断参数 VendorName 是否已赋值
                      * @return VendorName 是否已赋值
+                     * 
                      */
                     bool VendorNameHasBeenSet() const;
 

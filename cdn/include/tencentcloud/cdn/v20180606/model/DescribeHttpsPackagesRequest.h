@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取分页查询起始地址，默认 0
                      * @return Offset 分页查询起始地址，默认 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询起始地址，默认 0
-                     * @param Offset 分页查询起始地址，默认 0
+                     * @param _offset 分页查询起始地址，默认 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询记录个数，默认100，最大1000
                      * @return Limit 分页查询记录个数，默认100，最大1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询记录个数，默认100，最大1000
-                     * @param Limit 分页查询记录个数，默认100，最大1000
+                     * @param _limit 分页查询记录个数，默认100，最大1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

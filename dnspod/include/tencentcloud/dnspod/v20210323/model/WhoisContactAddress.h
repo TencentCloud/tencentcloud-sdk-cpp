@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param City 无
+                     * @param _city 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Country 无
+                     * @param _country 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCountry(const std::string& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Email 无
+                     * @param _email 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fax 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFax() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fax 无
+                     * @param _fax 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFax(const std::string& _fax);
 
                     /**
                      * 判断参数 Fax 是否已赋值
                      * @return Fax 是否已赋值
+                     * 
                      */
                     bool FaxHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaxExt 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFaxExt() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FaxExt 无
+                     * @param _faxExt 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFaxExt(const std::string& _faxExt);
 
                     /**
                      * 判断参数 FaxExt 是否已赋值
                      * @return FaxExt 是否已赋值
+                     * 
                      */
                     bool FaxExtHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Handle 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHandle() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Handle 无
+                     * @param _handle 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHandle(const std::string& _handle);
 
                     /**
                      * 判断参数 Handle 是否已赋值
                      * @return Handle 是否已赋值
+                     * 
                      */
                     bool HandleHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 无
+                     * @param _name 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Organization 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrganization() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Organization 无
+                     * @param _organization 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrganization(const std::string& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
+                     * 
                      */
                     bool OrganizationHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phone 无
+                     * @param _phone 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostalCode 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPostalCode() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PostalCode 无
+                     * @param _postalCode 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPostalCode(const std::string& _postalCode);
 
                     /**
                      * 判断参数 PostalCode 是否已赋值
                      * @return PostalCode 是否已赋值
+                     * 
                      */
                     bool PostalCodeHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 无
+                     * @param _state 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Street 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStreet() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Street 无
+                     * @param _street 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreet(const std::string& _street);
 
                     /**
                      * 判断参数 Street 是否已赋值
                      * @return Street 是否已赋值
+                     * 
                      */
                     bool StreetHasBeenSet() const;
 

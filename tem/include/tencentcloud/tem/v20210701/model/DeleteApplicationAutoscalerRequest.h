@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务id
                      * @return ApplicationId 服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
-                     * @param ApplicationId 服务id
+                     * @param _applicationId 服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvironmentId 环境ID
+                     * @param _environmentId 环境ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取弹性伸缩策略ID
                      * @return AutoscalerId 弹性伸缩策略ID
+                     * 
                      */
                     std::string GetAutoscalerId() const;
 
                     /**
                      * 设置弹性伸缩策略ID
-                     * @param AutoscalerId 弹性伸缩策略ID
+                     * @param _autoscalerId 弹性伸缩策略ID
+                     * 
                      */
                     void SetAutoscalerId(const std::string& _autoscalerId);
 
                     /**
                      * 判断参数 AutoscalerId 是否已赋值
                      * @return AutoscalerId 是否已赋值
+                     * 
                      */
                     bool AutoscalerIdHasBeenSet() const;
 

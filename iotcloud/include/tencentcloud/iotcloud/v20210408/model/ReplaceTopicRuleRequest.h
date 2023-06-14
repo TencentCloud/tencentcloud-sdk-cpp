@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取替换的规则包体
                      * @return TopicRulePayload 替换的规则包体
+                     * 
                      */
                     TopicRulePayload GetTopicRulePayload() const;
 
                     /**
                      * 设置替换的规则包体
-                     * @param TopicRulePayload 替换的规则包体
+                     * @param _topicRulePayload 替换的规则包体
+                     * 
                      */
                     void SetTopicRulePayload(const TopicRulePayload& _topicRulePayload);
 
                     /**
                      * 判断参数 TopicRulePayload 是否已赋值
                      * @return TopicRulePayload 是否已赋值
+                     * 
                      */
                     bool TopicRulePayloadHasBeenSet() const;
 

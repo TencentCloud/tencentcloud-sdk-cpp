@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取项目名
                      * @return Name 项目名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名
-                     * @param Name 项目名
+                     * @param _name 项目名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取项目值
                      * @return Children 项目值
+                     * 
                      */
                     std::vector<ChartNameValue> GetChildren() const;
 
                     /**
                      * 设置项目值
-                     * @param Children 项目值
+                     * @param _children 项目值
+                     * 
                      */
                     void SetChildren(const std::vector<ChartNameValue>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
                      * @return Children 是否已赋值
+                     * 
                      */
                     bool ChildrenHasBeenSet() const;
 

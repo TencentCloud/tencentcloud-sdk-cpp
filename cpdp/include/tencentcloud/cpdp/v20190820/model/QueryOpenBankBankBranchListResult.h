@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取支行列表。
                      * @return BankBranchList 支行列表。
+                     * 
                      */
                     std::vector<BankBranchInfo> GetBankBranchList() const;
 
                     /**
                      * 设置支行列表。
-                     * @param BankBranchList 支行列表。
+                     * @param _bankBranchList 支行列表。
+                     * 
                      */
                     void SetBankBranchList(const std::vector<BankBranchInfo>& _bankBranchList);
 
                     /**
                      * 判断参数 BankBranchList 是否已赋值
                      * @return BankBranchList 是否已赋值
+                     * 
                      */
                     bool BankBranchListHasBeenSet() const;
 
                     /**
                      * 获取列表总数。
                      * @return Count 列表总数。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置列表总数。
-                     * @param Count 列表总数。
+                     * @param _count 列表总数。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

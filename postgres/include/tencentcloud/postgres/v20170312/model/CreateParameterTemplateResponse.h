@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID，用于唯一确认参数模板
                      * @return TemplateId 参数模板ID，用于唯一确认参数模板
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

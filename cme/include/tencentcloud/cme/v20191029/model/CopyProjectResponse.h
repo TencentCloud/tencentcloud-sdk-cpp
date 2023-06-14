@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取复制后的项目 ID。
                      * @return ProjectId 复制后的项目 ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

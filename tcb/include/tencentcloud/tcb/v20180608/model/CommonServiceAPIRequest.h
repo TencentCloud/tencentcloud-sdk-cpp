@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Service名，需要转发访问的接口名
                      * @return Service Service名，需要转发访问的接口名
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置Service名，需要转发访问的接口名
-                     * @param Service Service名，需要转发访问的接口名
+                     * @param _service Service名，需要转发访问的接口名
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取需要转发的云API参数，要转成JSON格式
                      * @return JSONData 需要转发的云API参数，要转成JSON格式
+                     * 
                      */
                     std::string GetJSONData() const;
 
                     /**
                      * 设置需要转发的云API参数，要转成JSON格式
-                     * @param JSONData 需要转发的云API参数，要转成JSON格式
+                     * @param _jSONData 需要转发的云API参数，要转成JSON格式
+                     * 
                      */
                     void SetJSONData(const std::string& _jSONData);
 
                     /**
                      * 判断参数 JSONData 是否已赋值
                      * @return JSONData 是否已赋值
+                     * 
                      */
                     bool JSONDataHasBeenSet() const;
 
                     /**
                      * 获取指定角色
                      * @return ApiRole 指定角色
+                     * 
                      */
                     std::string GetApiRole() const;
 
                     /**
                      * 设置指定角色
-                     * @param ApiRole 指定角色
+                     * @param _apiRole 指定角色
+                     * 
                      */
                     void SetApiRole(const std::string& _apiRole);
 
                     /**
                      * 判断参数 ApiRole 是否已赋值
                      * @return ApiRole 是否已赋值
+                     * 
                      */
                     bool ApiRoleHasBeenSet() const;
 

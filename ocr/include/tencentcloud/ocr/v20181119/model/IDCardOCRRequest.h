@@ -47,20 +47,23 @@ namespace TencentCloud
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+                     * @param _imageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @param ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -93,6 +99,7 @@ BACK：身份证有国徽的一面（国徽面），
                      * @return CardSide FRONT：身份证有照片的一面（人像面），
 BACK：身份证有国徽的一面（国徽面），
 该参数如果不填，将为您自动判断身份证正反面。
+                     * 
                      */
                     std::string GetCardSide() const;
 
@@ -100,15 +107,17 @@ BACK：身份证有国徽的一面（国徽面），
                      * 设置FRONT：身份证有照片的一面（人像面），
 BACK：身份证有国徽的一面（国徽面），
 该参数如果不填，将为您自动判断身份证正反面。
-                     * @param CardSide FRONT：身份证有照片的一面（人像面），
+                     * @param _cardSide FRONT：身份证有照片的一面（人像面），
 BACK：身份证有国徽的一面（国徽面），
 该参数如果不填，将为您自动判断身份证正反面。
+                     * 
                      */
                     void SetCardSide(const std::string& _cardSide);
 
                     /**
                      * 判断参数 CardSide 是否已赋值
                      * @return CardSide 是否已赋值
+                     * 
                      */
                     bool CardSideHasBeenSet() const;
 
@@ -147,6 +156,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"CropIdCard":true,"CropPortrait":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CropIdCard":true,"CropPortrait":true}
+                     * 
                      */
                     std::string GetConfig() const;
 
@@ -168,7 +178,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"CropIdCard":true,"CropPortrait":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CropIdCard":true,"CropPortrait":true}
-                     * @param Config 以下可选字段均为bool 类型，默认false：
+                     * @param _config 以下可选字段均为bool 类型，默认false：
 CropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）
 CropPortrait，人像照片裁剪（自动抠取身份证头像区域）
 CopyWarn，复印件告警
@@ -185,12 +195,14 @@ SDK 设置方式参考：
 Config = Json.stringify({"CropIdCard":true,"CropPortrait":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CropIdCard":true,"CropPortrait":true}
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型(workload|grid|configmap|secret)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型(workload|grid|configmap|secret)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型(workload|grid|configmap|secret)
+                     * @param _type 类型(workload|grid|configmap|secret)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 总数
+                     * @param _count 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Names 名称(最多返回5个）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置名称(最多返回5个）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Names 名称(最多返回5个）
+                     * @param _names 名称(最多返回5个）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 

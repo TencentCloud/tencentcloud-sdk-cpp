@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
                      * @return Type 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
-                     * @param Type 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * @param _type 别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 别名指向的队列的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置别名指向的队列的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 别名指向的队列的唯一标识符
+                     * @param _fleetId 别名指向的队列的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
+                     * @param _message 与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

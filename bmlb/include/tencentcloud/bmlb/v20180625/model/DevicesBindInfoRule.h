@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取转发域名。
                      * @return Domain 转发域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置转发域名。
-                     * @param Domain 转发域名。
+                     * @param _domain 转发域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取转发域名ID。
                      * @return DomainId 转发域名ID。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置转发域名ID。
-                     * @param DomainId 转发域名ID。
+                     * @param _domainId 转发域名ID。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取转发路径列表。
                      * @return LocationSet 转发路径列表。
+                     * 
                      */
                     std::vector<DevicesBindInfoLocation> GetLocationSet() const;
 
                     /**
                      * 设置转发路径列表。
-                     * @param LocationSet 转发路径列表。
+                     * @param _locationSet 转发路径列表。
+                     * 
                      */
                     void SetLocationSet(const std::vector<DevicesBindInfoLocation>& _locationSet);
 
                     /**
                      * 判断参数 LocationSet 是否已赋值
                      * @return LocationSet 是否已赋值
+                     * 
                      */
                     bool LocationSetHasBeenSet() const;
 

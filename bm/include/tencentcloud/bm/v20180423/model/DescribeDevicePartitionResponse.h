@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取物理机分区格式
                      * @return DevicePartition 物理机分区格式
+                     * 
                      */
                     DevicePartition GetDevicePartition() const;
 
                     /**
                      * 判断参数 DevicePartition 是否已赋值
                      * @return DevicePartition 是否已赋值
+                     * 
                      */
                     bool DevicePartitionHasBeenSet() const;
 

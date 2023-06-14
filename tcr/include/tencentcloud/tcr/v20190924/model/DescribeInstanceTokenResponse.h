@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取长期访问凭证总数
                      * @return TotalCount 长期访问凭证总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取长期访问凭证列表
                      * @return Tokens 长期访问凭证列表
+                     * 
                      */
                     std::vector<TcrInstanceToken> GetTokens() const;
 
                     /**
                      * 判断参数 Tokens 是否已赋值
                      * @return Tokens 是否已赋值
+                     * 
                      */
                     bool TokensHasBeenSet() const;
 

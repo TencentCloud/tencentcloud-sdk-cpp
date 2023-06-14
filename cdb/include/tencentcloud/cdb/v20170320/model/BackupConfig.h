@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取第二个从库复制方式，可能的返回值：async-异步，semisync-半同步
                      * @return ReplicationMode 第二个从库复制方式，可能的返回值：async-异步，semisync-半同步
+                     * 
                      */
                     std::string GetReplicationMode() const;
 
                     /**
                      * 设置第二个从库复制方式，可能的返回值：async-异步，semisync-半同步
-                     * @param ReplicationMode 第二个从库复制方式，可能的返回值：async-异步，semisync-半同步
+                     * @param _replicationMode 第二个从库复制方式，可能的返回值：async-异步，semisync-半同步
+                     * 
                      */
                     void SetReplicationMode(const std::string& _replicationMode);
 
                     /**
                      * 判断参数 ReplicationMode 是否已赋值
                      * @return ReplicationMode 是否已赋值
+                     * 
                      */
                     bool ReplicationModeHasBeenSet() const;
 
                     /**
                      * 获取第二个从库可用区的正式名称，如ap-shanghai-1
                      * @return Zone 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置第二个从库可用区的正式名称，如ap-shanghai-1
-                     * @param Zone 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * @param _zone 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取第二个从库内网IP地址
                      * @return Vip 第二个从库内网IP地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置第二个从库内网IP地址
-                     * @param Vip 第二个从库内网IP地址
+                     * @param _vip 第二个从库内网IP地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取第二个从库访问端口
                      * @return Vport 第二个从库访问端口
+                     * 
                      */
                     uint64_t GetVport() const;
 
                     /**
                      * 设置第二个从库访问端口
-                     * @param Vport 第二个从库访问端口
+                     * @param _vport 第二个从库访问端口
+                     * 
                      */
                     void SetVport(const uint64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 

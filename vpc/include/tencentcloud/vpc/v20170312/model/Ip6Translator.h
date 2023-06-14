@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换实例唯一ID，形如ip6-xxxxxxxx
                      * @return Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     std::string GetIp6TranslatorId() const;
 
                     /**
                      * 设置IPV6转换实例唯一ID，形如ip6-xxxxxxxx
-                     * @param Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * @param _ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     void SetIp6TranslatorId(const std::string& _ip6TranslatorId);
 
                     /**
                      * 判断参数 Ip6TranslatorId 是否已赋值
                      * @return Ip6TranslatorId 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorIdHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换实例名称
                      * @return Ip6TranslatorName IPV6转换实例名称
+                     * 
                      */
                     std::string GetIp6TranslatorName() const;
 
                     /**
                      * 设置IPV6转换实例名称
-                     * @param Ip6TranslatorName IPV6转换实例名称
+                     * @param _ip6TranslatorName IPV6转换实例名称
+                     * 
                      */
                     void SetIp6TranslatorName(const std::string& _ip6TranslatorName);
 
                     /**
                      * 判断参数 Ip6TranslatorName 是否已赋值
                      * @return Ip6TranslatorName 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorNameHasBeenSet() const;
 
                     /**
                      * 获取IPV6地址
                      * @return Vip6 IPV6地址
+                     * 
                      */
                     std::string GetVip6() const;
 
                     /**
                      * 设置IPV6地址
-                     * @param Vip6 IPV6地址
+                     * @param _vip6 IPV6地址
+                     * 
                      */
                     void SetVip6(const std::string& _vip6);
 
                     /**
                      * 判断参数 Vip6 是否已赋值
                      * @return Vip6 是否已赋值
+                     * 
                      */
                     bool Vip6HasBeenSet() const;
 
                     /**
                      * 获取IPV6转换地址所属运营商
                      * @return IspName IPV6转换地址所属运营商
+                     * 
                      */
                     std::string GetIspName() const;
 
                     /**
                      * 设置IPV6转换地址所属运营商
-                     * @param IspName IPV6转换地址所属运营商
+                     * @param _ispName IPV6转换地址所属运营商
+                     * 
                      */
                     void SetIspName(const std::string& _ispName);
 
                     /**
                      * 判断参数 IspName 是否已赋值
                      * @return IspName 是否已赋值
+                     * 
                      */
                     bool IspNameHasBeenSet() const;
 
                     /**
                      * 获取转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING
                      * @return TranslatorStatus 转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING
+                     * 
                      */
                     std::string GetTranslatorStatus() const;
 
                     /**
                      * 设置转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING
-                     * @param TranslatorStatus 转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING
+                     * @param _translatorStatus 转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING
+                     * 
                      */
                     void SetTranslatorStatus(const std::string& _translatorStatus);
 
                     /**
                      * 判断参数 TranslatorStatus 是否已赋值
                      * @return TranslatorStatus 是否已赋值
+                     * 
                      */
                     bool TranslatorStatusHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换实例创建时间
                      * @return CreatedTime IPV6转换实例创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置IPV6转换实例创建时间
-                     * @param CreatedTime IPV6转换实例创建时间
+                     * @param _createdTime IPV6转换实例创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取绑定的IPV6转换规则数量
                      * @return Ip6RuleCount 绑定的IPV6转换规则数量
+                     * 
                      */
                     int64_t GetIp6RuleCount() const;
 
                     /**
                      * 设置绑定的IPV6转换规则数量
-                     * @param Ip6RuleCount 绑定的IPV6转换规则数量
+                     * @param _ip6RuleCount 绑定的IPV6转换规则数量
+                     * 
                      */
                     void SetIp6RuleCount(const int64_t& _ip6RuleCount);
 
                     /**
                      * 判断参数 Ip6RuleCount 是否已赋值
                      * @return Ip6RuleCount 是否已赋值
+                     * 
                      */
                     bool Ip6RuleCountHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则信息
                      * @return IP6RuleSet IPV6转换规则信息
+                     * 
                      */
                     std::vector<Ip6Rule> GetIP6RuleSet() const;
 
                     /**
                      * 设置IPV6转换规则信息
-                     * @param IP6RuleSet IPV6转换规则信息
+                     * @param _iP6RuleSet IPV6转换规则信息
+                     * 
                      */
                     void SetIP6RuleSet(const std::vector<Ip6Rule>& _iP6RuleSet);
 
                     /**
                      * 判断参数 IP6RuleSet 是否已赋值
                      * @return IP6RuleSet 是否已赋值
+                     * 
                      */
                     bool IP6RuleSetHasBeenSet() const;
 

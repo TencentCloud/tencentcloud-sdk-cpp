@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取记录id
                      * @return UniqueId 记录id
+                     * 
                      */
                     std::string GetUniqueId() const;
 
                     /**
                      * 设置记录id
-                     * @param UniqueId 记录id
+                     * @param _uniqueId 记录id
+                     * 
                      */
                     void SetUniqueId(const std::string& _uniqueId);
 
                     /**
                      * 判断参数 UniqueId 是否已赋值
                      * @return UniqueId 是否已赋值
+                     * 
                      */
                     bool UniqueIdHasBeenSet() const;
 
                     /**
                      * 获取操作类型 1 置顶 0取消
                      * @return OpeType 操作类型 1 置顶 0取消
+                     * 
                      */
                     std::string GetOpeType() const;
 
                     /**
                      * 设置操作类型 1 置顶 0取消
-                     * @param OpeType 操作类型 1 置顶 0取消
+                     * @param _opeType 操作类型 1 置顶 0取消
+                     * 
                      */
                     void SetOpeType(const std::string& _opeType);
 
                     /**
                      * 判断参数 OpeType 是否已赋值
                      * @return OpeType 是否已赋值
+                     * 
                      */
                     bool OpeTypeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库ID。
                      * @return DictId 自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置自定义词库ID。
-                     * @param DictId 自定义词库ID。
+                     * @param _dictId 自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 
                     /**
                      * 获取词库描述，不超过100字。
                      * @return Description 词库描述，不超过100字。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置词库描述，不超过100字。
-                     * @param Description 词库描述，不超过100字。
+                     * @param _description 词库描述，不超过100字。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取词库名称，不超过20字。
                      * @return Name 词库名称，不超过20字。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置词库名称，不超过20字。
-                     * @param Name 词库名称，不超过20字。
+                     * @param _name 词库名称，不超过20字。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

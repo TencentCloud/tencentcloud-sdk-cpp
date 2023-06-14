@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取厂商云标识用户的唯一ID
                      * @return CunionId 厂商云标识用户的唯一ID
+                     * 
                      */
                     std::string GetCunionId() const;
 
                     /**
                      * 判断参数 CunionId 是否已赋值
                      * @return CunionId 是否已赋值
+                     * 
                      */
                     bool CunionIdHasBeenSet() const;
 
                     /**
                      * 获取客户的终端用户在IoT Video上的唯一标识ID
                      * @return AccessId 客户的终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取用户是否为新创建
                      * @return NewRegist 用户是否为新创建
+                     * 
                      */
                     bool GetNewRegist() const;
 
                     /**
                      * 判断参数 NewRegist 是否已赋值
                      * @return NewRegist 是否已赋值
+                     * 
                      */
                     bool NewRegistHasBeenSet() const;
 

@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取转码模板唯一标识。
                      * @return Definition 转码模板唯一标识。
+                     * 
                      */
                     std::string GetDefinition() const;
 
                     /**
                      * 设置转码模板唯一标识。
-                     * @param Definition 转码模板唯一标识。
+                     * @param _definition 转码模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const std::string& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取封装格式，取值：mp4、flv、hls、mp3、flac、ogg。
                      * @return Container 封装格式，取值：mp4、flv、hls、mp3、flac、ogg。
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置封装格式，取值：mp4、flv、hls、mp3、flac、ogg。
-                     * @param Container 封装格式，取值：mp4、flv、hls、mp3、flac、ogg。
+                     * @param _container 封装格式，取值：mp4、flv、hls、mp3、flac、ogg。
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
                     /**
                      * 获取转码模板名称。
                      * @return Name 转码模板名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置转码模板名称。
-                     * @param Name 转码模板名称。
+                     * @param _name 转码模板名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息。
                      * @return Comment 模板描述信息。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息。
-                     * @param Comment 模板描述信息。
+                     * @param _comment 模板描述信息。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -128,6 +140,7 @@ namespace TencentCloud
                      * @return Type 模板类型，取值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -135,15 +148,17 @@ namespace TencentCloud
                      * 设置模板类型，取值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
-                     * @param Type 模板类型，取值：
+                     * @param _type 模板类型，取值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -154,6 +169,7 @@ namespace TencentCloud
                      * @return RemoveVideo 是否去除视频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
+                     * 
                      */
                     int64_t GetRemoveVideo() const;
 
@@ -161,15 +177,17 @@ namespace TencentCloud
                      * 设置是否去除视频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
-                     * @param RemoveVideo 是否去除视频数据，取值：
+                     * @param _removeVideo 是否去除视频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
+                     * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
 
                     /**
                      * 判断参数 RemoveVideo 是否已赋值
                      * @return RemoveVideo 是否已赋值
+                     * 
                      */
                     bool RemoveVideoHasBeenSet() const;
 
@@ -180,6 +198,7 @@ namespace TencentCloud
                      * @return RemoveAudio 是否去除音频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
+                     * 
                      */
                     int64_t GetRemoveAudio() const;
 
@@ -187,15 +206,17 @@ namespace TencentCloud
                      * 设置是否去除音频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
-                     * @param RemoveAudio 是否去除音频数据，取值：
+                     * @param _removeAudio 是否去除音频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
+                     * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
 
                     /**
                      * 判断参数 RemoveAudio 是否已赋值
                      * @return RemoveAudio 是否已赋值
+                     * 
                      */
                     bool RemoveAudioHasBeenSet() const;
 
@@ -204,20 +225,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoTemplateInfo GetVideoTemplate() const;
 
                     /**
                      * 设置视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
+                     * @param _videoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfo& _videoTemplate);
 
                     /**
                      * 判断参数 VideoTemplate 是否已赋值
                      * @return VideoTemplate 是否已赋值
+                     * 
                      */
                     bool VideoTemplateHasBeenSet() const;
 
@@ -226,20 +250,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioTemplateInfo GetAudioTemplate() const;
 
                     /**
                      * 设置音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
+                     * @param _audioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfo& _audioTemplate);
 
                     /**
                      * 判断参数 AudioTemplate 是否已赋值
                      * @return AudioTemplate 是否已赋值
+                     * 
                      */
                     bool AudioTemplateHasBeenSet() const;
 
@@ -248,20 +275,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TEHDConfig 极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TEHDConfig GetTEHDConfig() const;
 
                     /**
                      * 设置极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TEHDConfig 极速高清转码参数。
+                     * @param _tEHDConfig 极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTEHDConfig(const TEHDConfig& _tEHDConfig);
 
                     /**
                      * 判断参数 TEHDConfig 是否已赋值
                      * @return TEHDConfig 是否已赋值
+                     * 
                      */
                     bool TEHDConfigHasBeenSet() const;
 
@@ -272,6 +302,7 @@ namespace TencentCloud
                      * @return ContainerType 封装格式过滤条件，可选值：
 <li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>
 <li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>
+                     * 
                      */
                     std::string GetContainerType() const;
 
@@ -279,69 +310,80 @@ namespace TencentCloud
                      * 设置封装格式过滤条件，可选值：
 <li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>
 <li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>
-                     * @param ContainerType 封装格式过滤条件，可选值：
+                     * @param _containerType 封装格式过滤条件，可选值：
 <li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>
 <li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>
+                     * 
                      */
                     void SetContainerType(const std::string& _containerType);
 
                     /**
                      * 判断参数 ContainerType 是否已赋值
                      * @return ContainerType 是否已赋值
+                     * 
                      */
                     bool ContainerTypeHasBeenSet() const;
 
                     /**
                      * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _updateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取切片类型，仅当 Container 为 hls 时有效。
                      * @return SegmentType 切片类型，仅当 Container 为 hls 时有效。
+                     * 
                      */
                     std::string GetSegmentType() const;
 
                     /**
                      * 设置切片类型，仅当 Container 为 hls 时有效。
-                     * @param SegmentType 切片类型，仅当 Container 为 hls 时有效。
+                     * @param _segmentType 切片类型，仅当 Container 为 hls 时有效。
+                     * 
                      */
                     void SetSegmentType(const std::string& _segmentType);
 
                     /**
                      * 判断参数 SegmentType 是否已赋值
                      * @return SegmentType 是否已赋值
+                     * 
                      */
                     bool SegmentTypeHasBeenSet() const;
 

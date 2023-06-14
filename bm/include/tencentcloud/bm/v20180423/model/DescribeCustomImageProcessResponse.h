@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取镜像制作进度
                      * @return CustomImageProcessSet 镜像制作进度
+                     * 
                      */
                     std::vector<CustomImageProcess> GetCustomImageProcessSet() const;
 
                     /**
                      * 判断参数 CustomImageProcessSet 是否已赋值
                      * @return CustomImageProcessSet 是否已赋值
+                     * 
                      */
                     bool CustomImageProcessSetHasBeenSet() const;
 

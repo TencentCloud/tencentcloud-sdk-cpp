@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取0--未开始，1--正在导出，2--导出成功，3--导出失败
                      * @return Stage 0--未开始，1--正在导出，2--导出成功，3--导出失败
+                     * 
                      */
                     int64_t GetStage() const;
 
                     /**
                      * 设置0--未开始，1--正在导出，2--导出成功，3--导出失败
-                     * @param Stage 0--未开始，1--正在导出，2--导出成功，3--导出失败
+                     * @param _stage 0--未开始，1--正在导出，2--导出成功，3--导出失败
+                     * 
                      */
                     void SetStage(const int64_t& _stage);
 
                     /**
                      * 判断参数 Stage 是否已赋值
                      * @return Stage 是否已赋值
+                     * 
                      */
                     bool StageHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取有效期截止时间
                      * @return ExpirationTime 有效期截止时间
+                     * 
                      */
                     std::string GetExpirationTime() const;
 
                     /**
                      * 设置有效期截止时间
-                     * @param ExpirationTime 有效期截止时间
+                     * @param _expirationTime 有效期截止时间
+                     * 
                      */
                     void SetExpirationTime(const std::string& _expirationTime);
 
                     /**
                      * 判断参数 ExpirationTime 是否已赋值
                      * @return ExpirationTime 是否已赋值
+                     * 
                      */
                     bool ExpirationTimeHasBeenSet() const;
 
                     /**
                      * 获取是否有效
                      * @return Expired 是否有效
+                     * 
                      */
                     bool GetExpired() const;
 
                     /**
                      * 设置是否有效
-                     * @param Expired 是否有效
+                     * @param _expired 是否有效
+                     * 
                      */
                     void SetExpired(const bool& _expired);
 
                     /**
                      * 判断参数 Expired 是否已赋值
                      * @return Expired 是否已赋值
+                     * 
                      */
                     bool ExpiredHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosUrl 演练报告cos文件地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 设置演练报告cos文件地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosUrl 演练报告cos文件地址
+                     * @param _cosUrl 演练报告cos文件地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
 
                     /**
                      * 判断参数 CosUrl 是否已赋值
                      * @return CosUrl 是否已赋值
+                     * 
                      */
                     bool CosUrlHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 演练报告导出日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置演练报告导出日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Log 演练报告导出日志
+                     * @param _log 演练报告导出日志
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 

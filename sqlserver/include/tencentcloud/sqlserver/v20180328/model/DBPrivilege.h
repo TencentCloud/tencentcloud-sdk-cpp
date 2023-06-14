@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库名
                      * @return DBName 数据库名
+                     * 
                      */
                     std::string GetDBName() const;
 
                     /**
                      * 设置数据库名
-                     * @param DBName 数据库名
+                     * @param _dBName 数据库名
+                     * 
                      */
                     void SetDBName(const std::string& _dBName);
 
                     /**
                      * 判断参数 DBName 是否已赋值
                      * @return DBName 是否已赋值
+                     * 
                      */
                     bool DBNameHasBeenSet() const;
 
                     /**
                      * 获取数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
                      * @return Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
+                     * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
-                     * @param Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
+                     * @param _privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
+                     * 
                      */
                     void SetPrivilege(const std::string& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务唯一ID
                      * @return TaskId 任务唯一ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务唯一ID
-                     * @param TaskId 任务唯一ID
+                     * @param _taskId 任务唯一ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 - RECORDING: 正在录制
 - STOPPED：录制已停止
 - FINISHED: 录制已结束
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -88,90 +92,104 @@ namespace TencentCloud
 - RECORDING: 正在录制
 - STOPPED：录制已停止
 - FINISHED: 录制已结束
-                     * @param Status 实时录制任务状态
+                     * @param _status 实时录制任务状态
 - PAUSED: 录制已暂停
 - PREPARED: 录制在准备阶段
 - RECORDING: 正在录制
 - STOPPED：录制已停止
 - FINISHED: 录制已结束
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实时录制房间号
                      * @return RoomId 实时录制房间号
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 设置实时录制房间号
-                     * @param RoomId 实时录制房间号
+                     * @param _roomId 实时录制房间号
+                     * 
                      */
                     void SetRoomId(const int64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreateTime 任务创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取用户应用SdkAppId
                      * @return SdkAppId 用户应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置用户应用SdkAppId
-                     * @param SdkAppId 用户应用SdkAppId
+                     * @param _sdkAppId 用户应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取实时录制结果
                      * @return Result 实时录制结果
+                     * 
                      */
                     RecordTaskResult GetResult() const;
 
                     /**
                      * 设置实时录制结果
-                     * @param Result 实时录制结果
+                     * @param _result 实时录制结果
+                     * 
                      */
                     void SetResult(const RecordTaskResult& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

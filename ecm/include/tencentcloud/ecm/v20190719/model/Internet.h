@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIPAddressSet 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrivateIPAddressInfo> GetPrivateIPAddressSet() const;
 
                     /**
                      * 设置实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIPAddressSet 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
+                     * @param _privateIPAddressSet 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIPAddressSet(const std::vector<PrivateIPAddressInfo>& _privateIPAddressSet);
 
                     /**
                      * 判断参数 PrivateIPAddressSet 是否已赋值
                      * @return PrivateIPAddressSet 是否已赋值
+                     * 
                      */
                     bool PrivateIPAddressSetHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIPAddressSet 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PublicIPAddressInfo> GetPublicIPAddressSet() const;
 
                     /**
                      * 设置实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIPAddressSet 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
+                     * @param _publicIPAddressSet 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIPAddressSet(const std::vector<PublicIPAddressInfo>& _publicIPAddressSet);
 
                     /**
                      * 判断参数 PublicIPAddressSet 是否已赋值
                      * @return PublicIPAddressSet 是否已赋值
+                     * 
                      */
                     bool PublicIPAddressSetHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNetworkInfoSet 实例网络相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNetworkInfo> GetInstanceNetworkInfoSet() const;
 
                     /**
                      * 设置实例网络相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceNetworkInfoSet 实例网络相关信息。
+                     * @param _instanceNetworkInfoSet 实例网络相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceNetworkInfoSet(const std::vector<InstanceNetworkInfo>& _instanceNetworkInfoSet);
 
                     /**
                      * 判断参数 InstanceNetworkInfoSet 是否已赋值
                      * @return InstanceNetworkInfoSet 是否已赋值
+                     * 
                      */
                     bool InstanceNetworkInfoSetHasBeenSet() const;
 

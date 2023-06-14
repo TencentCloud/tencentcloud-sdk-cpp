@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取项目ID，必填项
                      * @return ProjectId 项目ID，必填项
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID，必填项
-                     * @param ProjectId 项目ID，必填项
+                     * @param _projectId 项目ID，必填项
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取文件名，必填项
                      * @return Files 文件名，必填项
+                     * 
                      */
                     std::vector<std::string> GetFiles() const;
 
                     /**
                      * 设置文件名，必填项
-                     * @param Files 文件名，必填项
+                     * @param _files 文件名，必填项
+                     * 
                      */
                     void SetFiles(const std::vector<std::string>& _files);
 
                     /**
                      * 判断参数 Files 是否已赋值
                      * @return Files 是否已赋值
+                     * 
                      */
                     bool FilesHasBeenSet() const;
 
                     /**
                      * 获取必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
                      * @return FilePath 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
-                     * @param FilePath 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
+                     * @param _filePath 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
                     /**
                      * 获取cos存储桶名字
                      * @return CosBucketName cos存储桶名字
+                     * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置cos存储桶名字
-                     * @param CosBucketName cos存储桶名字
+                     * @param _cosBucketName cos存储桶名字
+                     * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
 
                     /**
                      * 判断参数 CosBucketName 是否已赋值
                      * @return CosBucketName 是否已赋值
+                     * 
                      */
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
                      * 获取cos所属地域
                      * @return CosRegion cos所属地域
+                     * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
                      * 设置cos所属地域
-                     * @param CosRegion cos所属地域
+                     * @param _cosRegion cos所属地域
+                     * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
 
                     /**
                      * 判断参数 CosRegion 是否已赋值
                      * @return CosRegion 是否已赋值
+                     * 
                      */
                     bool CosRegionHasBeenSet() const;
 
                     /**
                      * 获取是否为新文件，新增为 true，更新为 false
                      * @return NewFile 是否为新文件，新增为 true，更新为 false
+                     * 
                      */
                     bool GetNewFile() const;
 
                     /**
                      * 设置是否为新文件，新增为 true，更新为 false
-                     * @param NewFile 是否为新文件，新增为 true，更新为 false
+                     * @param _newFile 是否为新文件，新增为 true，更新为 false
+                     * 
                      */
                     void SetNewFile(const bool& _newFile);
 
                     /**
                      * 判断参数 NewFile 是否已赋值
                      * @return NewFile 是否已赋值
+                     * 
                      */
                     bool NewFileHasBeenSet() const;
 
                     /**
                      * 获取必填项，文件大小，与 Files 字段对应
                      * @return FilesSize 必填项，文件大小，与 Files 字段对应
+                     * 
                      */
                     std::vector<std::string> GetFilesSize() const;
 
                     /**
                      * 设置必填项，文件大小，与 Files 字段对应
-                     * @param FilesSize 必填项，文件大小，与 Files 字段对应
+                     * @param _filesSize 必填项，文件大小，与 Files 字段对应
+                     * 
                      */
                     void SetFilesSize(const std::vector<std::string>& _filesSize);
 
                     /**
                      * 判断参数 FilesSize 是否已赋值
                      * @return FilesSize 是否已赋值
+                     * 
                      */
                     bool FilesSizeHasBeenSet() const;
 

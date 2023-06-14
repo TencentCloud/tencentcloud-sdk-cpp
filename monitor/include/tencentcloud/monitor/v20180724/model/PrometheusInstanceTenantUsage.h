@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcDate 计费周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCalcDate() const;
 
                     /**
                      * 设置计费周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CalcDate 计费周期
+                     * @param _calcDate 计费周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcDate(const std::string& _calcDate);
 
                     /**
                      * 判断参数 CalcDate 是否已赋值
                      * @return CalcDate 是否已赋值
+                     * 
                      */
                     bool CalcDateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotal() const;
 
                     /**
                      * 设置总用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 总用量
+                     * @param _total 总用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const double& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Basic 基础指标用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetBasic() const;
 
                     /**
                      * 设置基础指标用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Basic 基础指标用量
+                     * @param _basic 基础指标用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBasic(const double& _basic);
 
                     /**
                      * 判断参数 Basic 是否已赋值
                      * @return Basic 是否已赋值
+                     * 
                      */
                     bool BasicHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fee 付费指标用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFee() const;
 
                     /**
                      * 设置付费指标用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fee 付费指标用量
+                     * @param _fee 付费指标用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFee(const double& _fee);
 
                     /**
                      * 判断参数 Fee 是否已赋值
                      * @return Fee 是否已赋值
+                     * 
                      */
                     bool FeeHasBeenSet() const;
 

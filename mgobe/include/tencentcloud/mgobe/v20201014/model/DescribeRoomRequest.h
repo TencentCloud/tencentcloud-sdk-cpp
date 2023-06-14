@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。
                      * @return PlayerId 玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。
-                     * @param PlayerId 玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。
+                     * @param _playerId 玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
                     /**
                      * 获取房间Id。
                      * @return RoomId 房间Id。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间Id。
-                     * @param RoomId 房间Id。
+                     * @param _roomId 房间Id。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

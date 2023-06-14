@@ -53,126 +53,147 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取转发类型列表
                      * @return ProxyTypeList 转发类型列表
+                     * 
                      */
                     std::vector<ProxyTypeInfo> GetProxyTypeList() const;
 
                     /**
                      * 设置转发类型列表
-                     * @param ProxyTypeList 转发类型列表
+                     * @param _proxyTypeList 转发类型列表
+                     * 
                      */
                     void SetProxyTypeList(const std::vector<ProxyTypeInfo>& _proxyTypeList);
 
                     /**
                      * 判断参数 ProxyTypeList 是否已赋值
                      * @return ProxyTypeList 是否已赋值
+                     * 
                      */
                     bool ProxyTypeListHasBeenSet() const;
 
                     /**
                      * 获取源站列表
                      * @return RealServers 源站列表
+                     * 
                      */
                     std::vector<SourceServer> GetRealServers() const;
 
                     /**
                      * 设置源站列表
-                     * @param RealServers 源站列表
+                     * @param _realServers 源站列表
+                     * 
                      */
                     void SetRealServers(const std::vector<SourceServer>& _realServers);
 
                     /**
                      * 判断参数 RealServers 是否已赋值
                      * @return RealServers 是否已赋值
+                     * 
                      */
                     bool RealServersHasBeenSet() const;
 
                     /**
                      * 获取资源实例
                      * @return InstanceDetails 资源实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetails() const;
 
                     /**
                      * 设置资源实例
-                     * @param InstanceDetails 资源实例
+                     * @param _instanceDetails 资源实例
+                     * 
                      */
                     void SetInstanceDetails(const std::vector<InstanceRelation>& _instanceDetails);
 
                     /**
                      * 判断参数 InstanceDetails 是否已赋值
                      * @return InstanceDetails 是否已赋值
+                     * 
                      */
                     bool InstanceDetailsHasBeenSet() const;
 
                     /**
                      * 获取规则所属的资源实例
                      * @return InstanceDetailRule 规则所属的资源实例
+                     * 
                      */
                     std::vector<RuleInstanceRelation> GetInstanceDetailRule() const;
 
                     /**
                      * 设置规则所属的资源实例
-                     * @param InstanceDetailRule 规则所属的资源实例
+                     * @param _instanceDetailRule 规则所属的资源实例
+                     * 
                      */
                     void SetInstanceDetailRule(const std::vector<RuleInstanceRelation>& _instanceDetailRule);
 
                     /**
                      * 判断参数 InstanceDetailRule 是否已赋值
                      * @return InstanceDetailRule 是否已赋值
+                     * 
                      */
                     bool InstanceDetailRuleHasBeenSet() const;
 
                     /**
                      * 获取协议
                      * @return Protocol 协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
-                     * @param Protocol 协议
+                     * @param _protocol 协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取端口号
                      * @return Vport 端口号
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置端口号
-                     * @param Vport 端口号
+                     * @param _vport 端口号
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 

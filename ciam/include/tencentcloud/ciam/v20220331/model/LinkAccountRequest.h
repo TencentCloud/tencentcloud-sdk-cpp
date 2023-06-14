@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取主用户ID
                      * @return PrimaryUserId 主用户ID
+                     * 
                      */
                     std::string GetPrimaryUserId() const;
 
                     /**
                      * 设置主用户ID
-                     * @param PrimaryUserId 主用户ID
+                     * @param _primaryUserId 主用户ID
+                     * 
                      */
                     void SetPrimaryUserId(const std::string& _primaryUserId);
 
                     /**
                      * 判断参数 PrimaryUserId 是否已赋值
                      * @return PrimaryUserId 是否已赋值
+                     * 
                      */
                     bool PrimaryUserIdHasBeenSet() const;
 
                     /**
                      * 获取从用户ID
                      * @return SecondaryUserId 从用户ID
+                     * 
                      */
                     std::string GetSecondaryUserId() const;
 
                     /**
                      * 设置从用户ID
-                     * @param SecondaryUserId 从用户ID
+                     * @param _secondaryUserId 从用户ID
+                     * 
                      */
                     void SetSecondaryUserId(const std::string& _secondaryUserId);
 
                     /**
                      * 判断参数 SecondaryUserId 是否已赋值
                      * @return SecondaryUserId 是否已赋值
+                     * 
                      */
                     bool SecondaryUserIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ namespace TencentCloud
 
 <li> **PHONENUMBER** </li>	  手机号码
 <li> **EMAIL** </li>  邮箱
+                     * 
                      */
                     std::string GetUserLinkedOnAttribute() const;
 
@@ -113,16 +123,18 @@ namespace TencentCloud
 
 <li> **PHONENUMBER** </li>	  手机号码
 <li> **EMAIL** </li>  邮箱
-                     * @param UserLinkedOnAttribute 融合属性
+                     * @param _userLinkedOnAttribute 融合属性
 
 <li> **PHONENUMBER** </li>	  手机号码
 <li> **EMAIL** </li>  邮箱
+                     * 
                      */
                     void SetUserLinkedOnAttribute(const std::string& _userLinkedOnAttribute);
 
                     /**
                      * 判断参数 UserLinkedOnAttribute 是否已赋值
                      * @return UserLinkedOnAttribute 是否已赋值
+                     * 
                      */
                     bool UserLinkedOnAttributeHasBeenSet() const;
 

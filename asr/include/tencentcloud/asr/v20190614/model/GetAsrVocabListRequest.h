@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
                      * @return TagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * 
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
-                     * @param TagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * @param _tagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * 
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
+                     * 
                      */
                     bool TagInfosHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

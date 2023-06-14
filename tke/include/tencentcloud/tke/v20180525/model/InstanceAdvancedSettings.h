@@ -56,20 +56,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDesiredPodNumber() const;
 
                     /**
                      * 设置该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+                     * @param _desiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesiredPodNumber(const int64_t& _desiredPodNumber);
 
                     /**
                      * 判断参数 DesiredPodNumber 是否已赋值
                      * @return DesiredPodNumber 是否已赋值
+                     * 
                      */
                     bool DesiredPodNumberHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUArgs GPU驱动相关参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GPUArgs GetGPUArgs() const;
 
                     /**
                      * 设置GPU驱动相关参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GPUArgs GPU驱动相关参数
+                     * @param _gPUArgs GPU驱动相关参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGPUArgs(const GPUArgs& _gPUArgs);
 
                     /**
                      * 判断参数 GPUArgs 是否已赋值
                      * @return GPUArgs 是否已赋值
+                     * 
                      */
                     bool GPUArgsHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPreStartUserScript() const;
 
                     /**
                      * 设置base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+                     * @param _preStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPreStartUserScript(const std::string& _preStartUserScript);
 
                     /**
                      * 判断参数 PreStartUserScript 是否已赋值
                      * @return PreStartUserScript 是否已赋值
+                     * 
                      */
                     bool PreStartUserScriptHasBeenSet() const;
 
@@ -122,20 +131,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Taints 节点污点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
                      * 设置节点污点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Taints 节点污点
+                     * @param _taints 节点污点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
 
                     /**
                      * 判断参数 Taints 是否已赋值
                      * @return Taints 是否已赋值
+                     * 
                      */
                     bool TaintsHasBeenSet() const;
 
@@ -146,6 +158,7 @@ namespace TencentCloud
                      * @return MountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountTarget() const;
 
@@ -153,15 +166,17 @@ namespace TencentCloud
                      * 设置数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
+                     * @param _mountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountTarget(const std::string& _mountTarget);
 
                     /**
                      * 判断参数 MountTarget 是否已赋值
                      * @return MountTarget 是否已赋值
+                     * 
                      */
                     bool MountTargetHasBeenSet() const;
 
@@ -170,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
                      * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
 
                     /**
                      * 判断参数 DockerGraphPath 是否已赋值
                      * @return DockerGraphPath 是否已赋值
+                     * 
                      */
                     bool DockerGraphPathHasBeenSet() const;
 
@@ -192,38 +210,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
+                     * @param _userScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserScript(const std::string& _userScript);
 
                     /**
                      * 判断参数 UserScript 是否已赋值
                      * @return UserScript 是否已赋值
+                     * 
                      */
                     bool UserScriptHasBeenSet() const;
 
                     /**
                      * 获取设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
                      * @return Unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 
                      */
                     int64_t GetUnschedulable() const;
 
                     /**
                      * 设置设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
-                     * @param Unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * @param _unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 
                      */
                     void SetUnschedulable(const int64_t& _unschedulable);
 
                     /**
                      * 判断参数 Unschedulable 是否已赋值
                      * @return Unschedulable 是否已赋值
+                     * 
                      */
                     bool UnschedulableHasBeenSet() const;
 
@@ -232,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 节点Label数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置节点Label数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels 节点Label数组
+                     * @param _labels 节点Label数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -254,20 +281,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisks 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataDisks 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
+                     * @param _dataDisks 多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 
@@ -276,20 +306,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraArgs 节点相关的自定义参数信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置节点相关的自定义参数信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraArgs 节点相关的自定义参数信息
+                     * @param _extraArgs 节点相关的自定义参数信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
 
                     /**
                      * 判断参数 ExtraArgs 是否已赋值
                      * @return ExtraArgs 是否已赋值
+                     * 
                      */
                     bool ExtraArgsHasBeenSet() const;
 

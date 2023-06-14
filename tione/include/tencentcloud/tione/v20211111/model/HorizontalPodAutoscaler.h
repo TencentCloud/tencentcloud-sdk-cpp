@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicas 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinReplicas 最小实例数
+                     * @param _minReplicas 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicas 最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxReplicas 最大实例数
+                     * @param _maxReplicas 最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpaMetrics 扩缩容指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Option> GetHpaMetrics() const;
 
                     /**
                      * 设置扩缩容指标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HpaMetrics 扩缩容指标
+                     * @param _hpaMetrics 扩缩容指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHpaMetrics(const std::vector<Option>& _hpaMetrics);
 
                     /**
                      * 判断参数 HpaMetrics 是否已赋值
                      * @return HpaMetrics 是否已赋值
+                     * 
                      */
                     bool HpaMetricsHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取身份证号
                      * @return IdCard 身份证号
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置身份证号
-                     * @param IdCard 身份证号
+                     * @param _idCard 身份证号
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Phone 手机号
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置手机号
-                     * @param Phone 手机号
+                     * @param _phone 手机号
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 设置敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     void SetEncryption(const Encryption& _encryption);
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 

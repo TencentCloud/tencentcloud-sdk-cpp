@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return MetricName 指标名
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取指标的值
                      * @return Value 指标的值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubValue 指标的附加值信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubValue() const;
 
                     /**
                      * 判断参数 SubValue 是否已赋值
                      * @return SubValue 是否已赋值
+                     * 
                      */
                     bool SubValueHasBeenSet() const;
 

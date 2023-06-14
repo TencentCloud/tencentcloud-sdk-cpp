@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectoryPath 文件系统目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDirectoryPath() const;
 
                     /**
                      * 设置文件系统目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DirectoryPath 文件系统目录
+                     * @param _directoryPath 文件系统目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDirectoryPath(const std::string& _directoryPath);
 
                     /**
                      * 判断参数 DirectoryPath 是否已赋值
                      * @return DirectoryPath 是否已赋值
+                     * 
                      */
                     bool DirectoryPathHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemType 文件系统类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileSystemType() const;
 
                     /**
                      * 设置文件系统类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystemType 文件系统类型
+                     * @param _fileSystemType 文件系统类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystemType(const std::string& _fileSystemType);
 
                     /**
                      * 判断参数 FileSystemType 是否已赋值
                      * @return FileSystemType 是否已赋值
+                     * 
                      */
                     bool FileSystemTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemAccessMode 文件系统访问模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileSystemAccessMode() const;
 
                     /**
                      * 设置文件系统访问模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystemAccessMode 文件系统访问模式
+                     * @param _fileSystemAccessMode 文件系统访问模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystemAccessMode(const std::string& _fileSystemAccessMode);
 
                     /**
                      * 判断参数 FileSystemAccessMode 是否已赋值
                      * @return FileSystemAccessMode 是否已赋值
+                     * 
                      */
                     bool FileSystemAccessModeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemId 文件系统ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 

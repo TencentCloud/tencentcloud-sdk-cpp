@@ -61,6 +61,7 @@ namespace TencentCloud
 <li>Audio：音频片段；</li>
 <li>Empty：空白片段；</li>
 <li>Transition：转场。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -70,53 +71,61 @@ namespace TencentCloud
 <li>Audio：音频片段；</li>
 <li>Empty：空白片段；</li>
 <li>Transition：转场。</li>
-                     * @param Type 片段类型。取值有：
+                     * @param _type 片段类型。取值有：
 <li>Video：视频片段；</li>
 <li>Audio：音频片段；</li>
 <li>Empty：空白片段；</li>
 <li>Transition：转场。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取视频片段，当 Type = Video 时有效。
                      * @return VideoItem 视频片段，当 Type = Video 时有效。
+                     * 
                      */
                     VideoTrackItem GetVideoItem() const;
 
                     /**
                      * 设置视频片段，当 Type = Video 时有效。
-                     * @param VideoItem 视频片段，当 Type = Video 时有效。
+                     * @param _videoItem 视频片段，当 Type = Video 时有效。
+                     * 
                      */
                     void SetVideoItem(const VideoTrackItem& _videoItem);
 
                     /**
                      * 判断参数 VideoItem 是否已赋值
                      * @return VideoItem 是否已赋值
+                     * 
                      */
                     bool VideoItemHasBeenSet() const;
 
                     /**
                      * 获取音频片段，当 Type = Audio 时有效。
                      * @return AudioItem 音频片段，当 Type = Audio 时有效。
+                     * 
                      */
                     AudioTrackItem GetAudioItem() const;
 
                     /**
                      * 设置音频片段，当 Type = Audio 时有效。
-                     * @param AudioItem 音频片段，当 Type = Audio 时有效。
+                     * @param _audioItem 音频片段，当 Type = Audio 时有效。
+                     * 
                      */
                     void SetAudioItem(const AudioTrackItem& _audioItem);
 
                     /**
                      * 判断参数 AudioItem 是否已赋值
                      * @return AudioItem 是否已赋值
+                     * 
                      */
                     bool AudioItemHasBeenSet() const;
 
@@ -125,38 +134,44 @@ namespace TencentCloud
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
                      * @return EmptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
+                     * 
                      */
                     EmptyTrackItem GetEmptyItem() const;
 
                     /**
                      * 设置空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
-                     * @param EmptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
+                     * @param _emptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
+                     * 
                      */
                     void SetEmptyItem(const EmptyTrackItem& _emptyItem);
 
                     /**
                      * 判断参数 EmptyItem 是否已赋值
                      * @return EmptyItem 是否已赋值
+                     * 
                      */
                     bool EmptyItemHasBeenSet() const;
 
                     /**
                      * 获取转场，当 Type = Transition 时有效。
                      * @return TransitionItem 转场，当 Type = Transition 时有效。
+                     * 
                      */
                     MediaTransitionItem GetTransitionItem() const;
 
                     /**
                      * 设置转场，当 Type = Transition 时有效。
-                     * @param TransitionItem 转场，当 Type = Transition 时有效。
+                     * @param _transitionItem 转场，当 Type = Transition 时有效。
+                     * 
                      */
                     void SetTransitionItem(const MediaTransitionItem& _transitionItem);
 
                     /**
                      * 判断参数 TransitionItem 是否已赋值
                      * @return TransitionItem 是否已赋值
+                     * 
                      */
                     bool TransitionItemHasBeenSet() const;
 

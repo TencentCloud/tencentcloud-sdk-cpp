@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sph 球镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BaseItem3> GetSph() const;
 
                     /**
                      * 设置球镜
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sph 球镜
+                     * @param _sph 球镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSph(const std::vector<BaseItem3>& _sph);
 
                     /**
                      * 判断参数 Sph 是否已赋值
                      * @return Sph 是否已赋值
+                     * 
                      */
                     bool SphHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cyl 柱镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BaseItem3> GetCyl() const;
 
                     /**
                      * 设置柱镜
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cyl 柱镜
+                     * @param _cyl 柱镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCyl(const std::vector<BaseItem3>& _cyl);
 
                     /**
                      * 判断参数 Cyl 是否已赋值
                      * @return Cyl 是否已赋值
+                     * 
                      */
                     bool CylHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ax 轴位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BaseItem3> GetAx() const;
 
                     /**
                      * 设置轴位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ax 轴位
+                     * @param _ax 轴位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAx(const std::vector<BaseItem3>& _ax);
 
                     /**
                      * 判断参数 Ax 是否已赋值
                      * @return Ax 是否已赋值
+                     * 
                      */
                     bool AxHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Se 等效球镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem2 GetSe() const;
 
                     /**
                      * 设置等效球镜
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Se 等效球镜
+                     * @param _se 等效球镜
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSe(const BaseItem2& _se);
 
                     /**
                      * 判断参数 Se 是否已赋值
                      * @return Se 是否已赋值
+                     * 
                      */
                     bool SeHasBeenSet() const;
 

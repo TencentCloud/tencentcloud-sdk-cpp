@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取目标组实例的内网IP
                      * @return BindIP 目标组实例的内网IP
+                     * 
                      */
                     std::string GetBindIP() const;
 
                     /**
                      * 设置目标组实例的内网IP
-                     * @param BindIP 目标组实例的内网IP
+                     * @param _bindIP 目标组实例的内网IP
+                     * 
                      */
                     void SetBindIP(const std::string& _bindIP);
 
                     /**
                      * 判断参数 BindIP 是否已赋值
                      * @return BindIP 是否已赋值
+                     * 
                      */
                     bool BindIPHasBeenSet() const;
 
                     /**
                      * 获取目标组实例的端口
                      * @return Port 目标组实例的端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置目标组实例的端口
-                     * @param Port 目标组实例的端口
+                     * @param _port 目标组实例的端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取目标组实例的权重
                      * @return Weight 目标组实例的权重
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置目标组实例的权重
-                     * @param Weight 目标组实例的权重
+                     * @param _weight 目标组实例的权重
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取目标组实例的新端口
                      * @return NewPort 目标组实例的新端口
+                     * 
                      */
                     uint64_t GetNewPort() const;
 
                     /**
                      * 设置目标组实例的新端口
-                     * @param NewPort 目标组实例的新端口
+                     * @param _newPort 目标组实例的新端口
+                     * 
                      */
                     void SetNewPort(const uint64_t& _newPort);
 
                     /**
                      * 判断参数 NewPort 是否已赋值
                      * @return NewPort 是否已赋值
+                     * 
                      */
                     bool NewPortHasBeenSet() const;
 

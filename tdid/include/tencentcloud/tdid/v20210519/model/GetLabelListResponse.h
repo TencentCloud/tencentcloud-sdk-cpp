@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取数据集合
                      * @return Result 数据集合
+                     * 
                      */
                     std::vector<Label> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取混贴票据识别结果，具体内容请点击左侧链接。
                      * @return MixedInvoiceItems 混贴票据识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<InvoiceItem> GetMixedInvoiceItems() const;
 
                     /**
                      * 判断参数 MixedInvoiceItems 是否已赋值
                      * @return MixedInvoiceItems 是否已赋值
+                     * 
                      */
                     bool MixedInvoiceItemsHasBeenSet() const;
 
                     /**
                      * 获取PDF文件总页码
                      * @return TotalPDFCount PDF文件总页码
+                     * 
                      */
                     int64_t GetTotalPDFCount() const;
 
                     /**
                      * 判断参数 TotalPDFCount 是否已赋值
                      * @return TotalPDFCount 是否已赋值
+                     * 
                      */
                     bool TotalPDFCountHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像名称。最大长度60。
                      * @return BlueprintName 镜像名称。最大长度60。
+                     * 
                      */
                     std::string GetBlueprintName() const;
 
                     /**
                      * 设置镜像名称。最大长度60。
-                     * @param BlueprintName 镜像名称。最大长度60。
+                     * @param _blueprintName 镜像名称。最大长度60。
+                     * 
                      */
                     void SetBlueprintName(const std::string& _blueprintName);
 
                     /**
                      * 判断参数 BlueprintName 是否已赋值
                      * @return BlueprintName 是否已赋值
+                     * 
                      */
                     bool BlueprintNameHasBeenSet() const;
 
                     /**
                      * 获取镜像描述。最大长度60。
                      * @return Description 镜像描述。最大长度60。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置镜像描述。最大长度60。
-                     * @param Description 镜像描述。最大长度60。
+                     * @param _description 镜像描述。最大长度60。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取需要制作镜像的实例ID。
                      * @return InstanceId 需要制作镜像的实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置需要制作镜像的实例ID。
-                     * @param InstanceId 需要制作镜像的实例ID。
+                     * @param _instanceId 需要制作镜像的实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -109,6 +118,7 @@ True：表示关机之后制作镜像
 False：表示开机状态制作镜像
 默认取值：True
 开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * 
                      */
                     bool GetForcePowerOff() const;
 
@@ -119,18 +129,20 @@ True：表示关机之后制作镜像
 False：表示开机状态制作镜像
 默认取值：True
 开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
-                     * @param ForcePowerOff 是否执行强制关机以制作镜像。
+                     * @param _forcePowerOff 是否执行强制关机以制作镜像。
 取值范围：
 True：表示关机之后制作镜像
 False：表示开机状态制作镜像
 默认取值：True
 开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * 
                      */
                     void SetForcePowerOff(const bool& _forcePowerOff);
 
                     /**
                      * 判断参数 ForcePowerOff 是否已赋值
                      * @return ForcePowerOff 是否已赋值
+                     * 
                      */
                     bool ForcePowerOffHasBeenSet() const;
 

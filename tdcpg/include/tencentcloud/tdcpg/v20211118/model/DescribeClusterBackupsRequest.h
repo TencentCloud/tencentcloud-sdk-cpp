@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取页码，取值范围为[1,INF)，默认值为1
                      * @return PageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置页码，取值范围为[1,INF)，默认值为1
-                     * @param PageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * @param _pageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每页个数，取值范围为默认为[1,100]，默认值为20
                      * @return PageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每页个数，取值范围为默认为[1,100]，默认值为20
-                     * @param PageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * @param _pageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

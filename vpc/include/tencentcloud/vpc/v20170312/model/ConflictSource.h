@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取冲突资源ID
                      * @return ConflictSourceId 冲突资源ID
+                     * 
                      */
                     std::string GetConflictSourceId() const;
 
                     /**
                      * 设置冲突资源ID
-                     * @param ConflictSourceId 冲突资源ID
+                     * @param _conflictSourceId 冲突资源ID
+                     * 
                      */
                     void SetConflictSourceId(const std::string& _conflictSourceId);
 
                     /**
                      * 判断参数 ConflictSourceId 是否已赋值
                      * @return ConflictSourceId 是否已赋值
+                     * 
                      */
                     bool ConflictSourceIdHasBeenSet() const;
 
                     /**
                      * 获取冲突资源
                      * @return SourceItem 冲突资源
+                     * 
                      */
                     std::string GetSourceItem() const;
 
                     /**
                      * 设置冲突资源
-                     * @param SourceItem 冲突资源
+                     * @param _sourceItem 冲突资源
+                     * 
                      */
                     void SetSourceItem(const std::string& _sourceItem);
 
                     /**
                      * 判断参数 SourceItem 是否已赋值
                      * @return SourceItem 是否已赋值
+                     * 
                      */
                     bool SourceItemHasBeenSet() const;
 
                     /**
                      * 获取冲突资源条目信息
                      * @return ConflictItemSet 冲突资源条目信息
+                     * 
                      */
                     std::vector<ConflictItem> GetConflictItemSet() const;
 
                     /**
                      * 设置冲突资源条目信息
-                     * @param ConflictItemSet 冲突资源条目信息
+                     * @param _conflictItemSet 冲突资源条目信息
+                     * 
                      */
                     void SetConflictItemSet(const std::vector<ConflictItem>& _conflictItemSet);
 
                     /**
                      * 判断参数 ConflictItemSet 是否已赋值
                      * @return ConflictItemSet 是否已赋值
+                     * 
                      */
                     bool ConflictItemSetHasBeenSet() const;
 

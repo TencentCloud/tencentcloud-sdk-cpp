@@ -52,180 +52,210 @@ namespace TencentCloud
                     /**
                      * 获取计算环境ID
                      * @return EnvId 计算环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置计算环境ID
-                     * @param EnvId 计算环境ID
+                     * @param _envId 计算环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取计算环境名称
                      * @return EnvName 计算环境名称
+                     * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 设置计算环境名称
-                     * @param EnvName 计算环境名称
+                     * @param _envName 计算环境名称
+                     * 
                      */
                     void SetEnvName(const std::string& _envName);
 
                     /**
                      * 判断参数 EnvName 是否已赋值
                      * @return EnvName 是否已赋值
+                     * 
                      */
                     bool EnvNameHasBeenSet() const;
 
                     /**
                      * 获取位置信息
                      * @return Placement 位置信息
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置位置信息
-                     * @param Placement 位置信息
+                     * @param _placement 位置信息
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取计算节点统计指标
                      * @return ComputeNodeMetrics 计算节点统计指标
+                     * 
                      */
                     ComputeNodeMetrics GetComputeNodeMetrics() const;
 
                     /**
                      * 设置计算节点统计指标
-                     * @param ComputeNodeMetrics 计算节点统计指标
+                     * @param _computeNodeMetrics 计算节点统计指标
+                     * 
                      */
                     void SetComputeNodeMetrics(const ComputeNodeMetrics& _computeNodeMetrics);
 
                     /**
                      * 判断参数 ComputeNodeMetrics 是否已赋值
                      * @return ComputeNodeMetrics 是否已赋值
+                     * 
                      */
                     bool ComputeNodeMetricsHasBeenSet() const;
 
                     /**
                      * 获取计算环境类型
                      * @return EnvType 计算环境类型
+                     * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置计算环境类型
-                     * @param EnvType 计算环境类型
+                     * @param _envType 计算环境类型
+                     * 
                      */
                     void SetEnvType(const std::string& _envType);
 
                     /**
                      * 判断参数 EnvType 是否已赋值
                      * @return EnvType 是否已赋值
+                     * 
                      */
                     bool EnvTypeHasBeenSet() const;
 
                     /**
                      * 获取计算节点期望个数
                      * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     uint64_t GetDesiredComputeNodeCount() const;
 
                     /**
                      * 设置计算节点期望个数
-                     * @param DesiredComputeNodeCount 计算节点期望个数
+                     * @param _desiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     void SetDesiredComputeNodeCount(const uint64_t& _desiredComputeNodeCount);
 
                     /**
                      * 判断参数 DesiredComputeNodeCount 是否已赋值
                      * @return DesiredComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
                     /**
                      * 获取计算环境资源类型，当前为CVM和CPM（黑石）
                      * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置计算环境资源类型，当前为CVM和CPM（黑石）
-                     * @param ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @param _resourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取下一步动作
                      * @return NextAction 下一步动作
+                     * 
                      */
                     std::string GetNextAction() const;
 
                     /**
                      * 设置下一步动作
-                     * @param NextAction 下一步动作
+                     * @param _nextAction 下一步动作
+                     * 
                      */
                     void SetNextAction(const std::string& _nextAction);
 
                     /**
                      * 判断参数 NextAction 是否已赋值
                      * @return NextAction 是否已赋值
+                     * 
                      */
                     bool NextActionHasBeenSet() const;
 
                     /**
                      * 获取用户添加到计算环境中的计算节点个数
                      * @return AttachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     * 
                      */
                     uint64_t GetAttachedComputeNodeCount() const;
 
                     /**
                      * 设置用户添加到计算环境中的计算节点个数
-                     * @param AttachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     * @param _attachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     * 
                      */
                     void SetAttachedComputeNodeCount(const uint64_t& _attachedComputeNodeCount);
 
                     /**
                      * 判断参数 AttachedComputeNodeCount 是否已赋值
                      * @return AttachedComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool AttachedComputeNodeCountHasBeenSet() const;
 
@@ -234,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 计算环境绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置计算环境绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 计算环境绑定的标签列表。
+                     * @param _tags 计算环境绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务日志Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务日志Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务日志Id
+                     * @param _taskId 任务日志Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务日志名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务日志名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务日志名称
+                     * @param _taskName 任务日志名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态码：1等待开始  2正在扫描  3扫描出错 4扫描完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置任务状态码：1等待开始  2正在扫描  3扫描出错 4扫描完成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务状态码：1等待开始  2正在扫描  3扫描出错 4扫描完成
+                     * @param _status 任务状态码：1等待开始  2正在扫描  3扫描出错 4扫描完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 任务进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置任务进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 任务进度
+                     * @param _progress 任务进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTime 对应的展示时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskTime() const;
 
                     /**
                      * 设置对应的展示时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskTime 对应的展示时间
+                     * @param _taskTime 对应的展示时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskTime(const std::string& _taskTime);
 
                     /**
                      * 判断参数 TaskTime 是否已赋值
                      * @return TaskTime 是否已赋值
+                     * 
                      */
                     bool TaskTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportId 报表id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportId() const;
 
                     /**
                      * 设置报表id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportId 报表id
+                     * @param _reportId 报表id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportId(const std::string& _reportId);
 
                     /**
                      * 判断参数 ReportId 是否已赋值
                      * @return ReportId 是否已赋值
+                     * 
                      */
                     bool ReportIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportName 报表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportName() const;
 
                     /**
                      * 设置报表名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportName 报表名称
+                     * @param _reportName 报表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportName(const std::string& _reportName);
 
                     /**
                      * 判断参数 ReportName 是否已赋值
                      * @return ReportName 是否已赋值
+                     * 
                      */
                     bool ReportNameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPlan 扫描计划，0-周期任务,1-立即扫描,2-定时扫描,3-自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScanPlan() const;
 
                     /**
                      * 设置扫描计划，0-周期任务,1-立即扫描,2-定时扫描,3-自定义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScanPlan 扫描计划，0-周期任务,1-立即扫描,2-定时扫描,3-自定义
+                     * @param _scanPlan 扫描计划，0-周期任务,1-立即扫描,2-定时扫描,3-自定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScanPlan(const int64_t& _scanPlan);
 
                     /**
                      * 判断参数 ScanPlan 是否已赋值
                      * @return ScanPlan 是否已赋值
+                     * 
                      */
                     bool ScanPlanHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetCount 关联的资产数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAssetCount() const;
 
                     /**
                      * 设置关联的资产数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetCount 关联的资产数
+                     * @param _assetCount 关联的资产数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetCount(const int64_t& _assetCount);
 
                     /**
                      * 判断参数 AssetCount 是否已赋值
                      * @return AssetCount 是否已赋值
+                     * 
                      */
                     bool AssetCountHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId APP ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置APP ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId APP ID
+                     * @param _appId APP ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UIN 用户主账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUIN() const;
 
                     /**
                      * 设置用户主账户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UIN 用户主账户ID
+                     * @param _uIN 用户主账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUIN(const std::string& _uIN);
 
                     /**
                      * 判断参数 UIN 是否已赋值
                      * @return UIN 是否已赋值
+                     * 
                      */
                     bool UINHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 用户名称
+                     * @param _userName 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 

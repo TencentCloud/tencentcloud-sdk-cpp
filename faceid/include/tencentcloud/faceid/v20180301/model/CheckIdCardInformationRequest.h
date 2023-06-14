@@ -53,6 +53,7 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 支持的图片大小：所下载图片经Base64编码后不超过 7M。
 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
 ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
@@ -62,17 +63,19 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 支持的图片大小：所下载图片经Base64编码后不超过 7M。
 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
 ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。
-                     * @param ImageBase64 身份证人像面的 Base64 值
+                     * @param _imageBase64 身份证人像面的 Base64 值
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。
 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
 ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -87,6 +90,7 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -96,17 +100,19 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param ImageUrl 身份证人像面的 Url 地址
+                     * @param _imageUrl 身份证人像面的 Url 地址
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。
 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。
 非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -135,6 +141,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"CopyWarn":true,"ReshootWarn":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CopyWarn":true,"ReshootWarn":true}
+                     * 
                      */
                     std::string GetConfig() const;
 
@@ -151,7 +158,7 @@ SDK 设置方式参考：
 Config = Json.stringify({"CopyWarn":true,"ReshootWarn":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CopyWarn":true,"ReshootWarn":true}
-                     * @param Config 以下可选字段均为bool 类型，默认false：
+                     * @param _config 以下可选字段均为bool 类型，默认false：
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
@@ -163,12 +170,14 @@ SDK 设置方式参考：
 Config = Json.stringify({"CopyWarn":true,"ReshootWarn":true})
 API 3.0 Explorer 设置方式参考：
 Config = {"CopyWarn":true,"ReshootWarn":true}
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -177,20 +186,23 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
 其中敏感信息包括：Response.IdNum、Response.Name
                      * @return IsEncrypt 是否需要对返回中的敏感信息进行加密。默认false。
 其中敏感信息包括：Response.IdNum、Response.Name
+                     * 
                      */
                     bool GetIsEncrypt() const;
 
                     /**
                      * 设置是否需要对返回中的敏感信息进行加密。默认false。
 其中敏感信息包括：Response.IdNum、Response.Name
-                     * @param IsEncrypt 是否需要对返回中的敏感信息进行加密。默认false。
+                     * @param _isEncrypt 是否需要对返回中的敏感信息进行加密。默认false。
 其中敏感信息包括：Response.IdNum、Response.Name
+                     * 
                      */
                     void SetIsEncrypt(const bool& _isEncrypt);
 
                     /**
                      * 判断参数 IsEncrypt 是否已赋值
                      * @return IsEncrypt 是否已赋值
+                     * 
                      */
                     bool IsEncryptHasBeenSet() const;
 

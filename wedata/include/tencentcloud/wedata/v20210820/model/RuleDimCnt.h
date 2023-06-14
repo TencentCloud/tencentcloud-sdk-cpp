@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
                      * @return Dim 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 
                      */
                     uint64_t GetDim() const;
 
                     /**
                      * 设置1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
-                     * @param Dim 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * @param _dim 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 
                      */
                     void SetDim(const uint64_t& _dim);
 
                     /**
                      * 判断参数 Dim 是否已赋值
                      * @return Dim 是否已赋值
+                     * 
                      */
                     bool DimHasBeenSet() const;
 
                     /**
                      * 获取count 数
                      * @return Cnt count 数
+                     * 
                      */
                     uint64_t GetCnt() const;
 
                     /**
                      * 设置count 数
-                     * @param Cnt count 数
+                     * @param _cnt count 数
+                     * 
                      */
                     void SetCnt(const uint64_t& _cnt);
 
                     /**
                      * 判断参数 Cnt 是否已赋值
                      * @return Cnt 是否已赋值
+                     * 
                      */
                     bool CntHasBeenSet() const;
 

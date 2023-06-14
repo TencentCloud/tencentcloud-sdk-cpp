@@ -90,36 +90,42 @@ MediaMeta.MediaLang
                     /**
                      * 获取媒资文件类型，参见MediaPreknownInfo结构体定义
                      * @return MediaType 媒资文件类型，参见MediaPreknownInfo结构体定义
+                     * 
                      */
                     int64_t GetMediaType() const;
 
                     /**
                      * 设置媒资文件类型，参见MediaPreknownInfo结构体定义
-                     * @param MediaType 媒资文件类型，参见MediaPreknownInfo结构体定义
+                     * @param _mediaType 媒资文件类型，参见MediaPreknownInfo结构体定义
+                     * 
                      */
                     void SetMediaType(const int64_t& _mediaType);
 
                     /**
                      * 判断参数 MediaType 是否已赋值
                      * @return MediaType 是否已赋值
+                     * 
                      */
                     bool MediaTypeHasBeenSet() const;
 
                     /**
                      * 获取媒资素材一级类型，参见MediaPreknownInfo结构体定义
                      * @return MediaLabel 媒资素材一级类型，参见MediaPreknownInfo结构体定义
+                     * 
                      */
                     int64_t GetMediaLabel() const;
 
                     /**
                      * 设置媒资素材一级类型，参见MediaPreknownInfo结构体定义
-                     * @param MediaLabel 媒资素材一级类型，参见MediaPreknownInfo结构体定义
+                     * @param _mediaLabel 媒资素材一级类型，参见MediaPreknownInfo结构体定义
+                     * 
                      */
                     void SetMediaLabel(const int64_t& _mediaLabel);
 
                     /**
                      * 判断参数 MediaLabel 是否已赋值
                      * @return MediaLabel 是否已赋值
+                     * 
                      */
                     bool MediaLabelHasBeenSet() const;
 
@@ -128,20 +134,23 @@ MediaMeta.MediaLang
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaSecondLabel 媒资素材二级类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMediaSecondLabel() const;
 
                     /**
                      * 设置媒资素材二级类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaSecondLabel 媒资素材二级类型，参见MediaPreknownInfo结构体定义
+                     * @param _mediaSecondLabel 媒资素材二级类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaSecondLabel(const int64_t& _mediaSecondLabel);
 
                     /**
                      * 判断参数 MediaSecondLabel 是否已赋值
                      * @return MediaSecondLabel 是否已赋值
+                     * 
                      */
                     bool MediaSecondLabelHasBeenSet() const;
 
@@ -150,20 +159,23 @@ MediaMeta.MediaLang
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaLang 媒资音频类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMediaLang() const;
 
                     /**
                      * 设置媒资音频类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaLang 媒资音频类型，参见MediaPreknownInfo结构体定义
+                     * @param _mediaLang 媒资音频类型，参见MediaPreknownInfo结构体定义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaLang(const int64_t& _mediaLang);
 
                     /**
                      * 判断参数 MediaLang 是否已赋值
                      * @return MediaLang 是否已赋值
+                     * 
                      */
                     bool MediaLangHasBeenSet() const;
 

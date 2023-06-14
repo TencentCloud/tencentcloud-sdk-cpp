@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)
                      * @return AlertCondition 告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)
+                     * 
                      */
                     std::string GetAlertCondition() const;
 
                     /**
                      * 设置告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)
-                     * @param AlertCondition 告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)
+                     * @param _alertCondition 告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)
+                     * 
                      */
                     void SetAlertCondition(const std::string& _alertCondition);
 
                     /**
                      * 判断参数 AlertCondition 是否已赋值
                      * @return AlertCondition 是否已赋值
+                     * 
                      */
                     bool AlertConditionHasBeenSet() const;
 
                     /**
                      * 获取是否使能围栏(true，使能；false，禁用)
                      * @return FenceEnable 是否使能围栏(true，使能；false，禁用)
+                     * 
                      */
                     bool GetFenceEnable() const;
 
                     /**
                      * 设置是否使能围栏(true，使能；false，禁用)
-                     * @param FenceEnable 是否使能围栏(true，使能；false，禁用)
+                     * @param _fenceEnable 是否使能围栏(true，使能；false，禁用)
+                     * 
                      */
                     void SetFenceEnable(const bool& _fenceEnable);
 
                     /**
                      * 判断参数 FenceEnable 是否已赋值
                      * @return FenceEnable 是否已赋值
+                     * 
                      */
                     bool FenceEnableHasBeenSet() const;
 
                     /**
                      * 获取告警处理方法
                      * @return Method 告警处理方法
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置告警处理方法
-                     * @param Method 告警处理方法
+                     * @param _method 告警处理方法
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 

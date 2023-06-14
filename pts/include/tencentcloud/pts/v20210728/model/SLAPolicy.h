@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SLARules SLA 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SLARule> GetSLARules() const;
 
                     /**
                      * 设置SLA 规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SLARules SLA 规则
+                     * @param _sLARules SLA 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSLARules(const std::vector<SLARule>& _sLARules);
 
                     /**
                      * 判断参数 SLARules 是否已赋值
                      * @return SLARules 是否已赋值
+                     * 
                      */
                     bool SLARulesHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertChannel 告警通知渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AlertChannel GetAlertChannel() const;
 
                     /**
                      * 设置告警通知渠道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertChannel 告警通知渠道
+                     * @param _alertChannel 告警通知渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlertChannel(const AlertChannel& _alertChannel);
 
                     /**
                      * 判断参数 AlertChannel 是否已赋值
                      * @return AlertChannel 是否已赋值
+                     * 
                      */
                     bool AlertChannelHasBeenSet() const;
 

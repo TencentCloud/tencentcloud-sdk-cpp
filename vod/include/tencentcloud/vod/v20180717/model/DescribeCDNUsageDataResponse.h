@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取时间粒度，单位：分钟。
                      * @return DataInterval 时间粒度，单位：分钟。
+                     * 
                      */
                     int64_t GetDataInterval() const;
 
                     /**
                      * 判断参数 DataInterval 是否已赋值
                      * @return DataInterval 是否已赋值
+                     * 
                      */
                     bool DataIntervalHasBeenSet() const;
 
                     /**
                      * 获取CDN 统计数据。
                      * @return Data CDN 统计数据。
+                     * 
                      */
                     std::vector<StatDataItem> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

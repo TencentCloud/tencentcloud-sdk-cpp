@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID。
-                     * @param VpnGatewayId VPN网关实例ID。
+                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取VPN网关名称，最大长度不能超过60个字节。
                      * @return VpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * 
                      */
                     std::string GetVpnGatewayName() const;
 
                     /**
                      * 设置VPN网关名称，最大长度不能超过60个字节。
-                     * @param VpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * @param _vpnGatewayName VPN网关名称，最大长度不能超过60个字节。
+                     * 
                      */
                     void SetVpnGatewayName(const std::string& _vpnGatewayName);
 
                     /**
                      * 判断参数 VpnGatewayName 是否已赋值
                      * @return VpnGatewayName 是否已赋值
+                     * 
                      */
                     bool VpnGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
                      * @return InstanceChargeType VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
-                     * @param InstanceChargeType VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
+                     * @param _instanceChargeType VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 

@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostPaidQuotaSet 后付费配额列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QuotaEntity> GetPostPaidQuotaSet() const;
 
                     /**
                      * 判断参数 PostPaidQuotaSet 是否已赋值
                      * @return PostPaidQuotaSet 是否已赋值
+                     * 
                      */
                     bool PostPaidQuotaSetHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpotPaidQuotaSet 竞价实例配额列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QuotaEntity> GetSpotPaidQuotaSet() const;
 
                     /**
                      * 判断参数 SpotPaidQuotaSet 是否已赋值
                      * @return SpotPaidQuotaSet 是否已赋值
+                     * 
                      */
                     bool SpotPaidQuotaSetHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EksQuotaSet eks配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PodSaleSpec> GetEksQuotaSet() const;
 
                     /**
                      * 判断参数 EksQuotaSet 是否已赋值
                      * @return EksQuotaSet 是否已赋值
+                     * 
                      */
                     bool EksQuotaSetHasBeenSet() const;
 

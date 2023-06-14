@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取表格关联的项目ID。
                      * @return ProjectId 表格关联的项目ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置表格关联的项目ID。
-                     * @param ProjectId 表格关联的项目ID。
+                     * @param _projectId 表格关联的项目ID。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取表格名称，支持20个字符内的英文字符、数字和下划线。
                      * @return Name 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表格名称，支持20个字符内的英文字符、数字和下划线。
-                     * @param Name 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * @param _name 表格名称，支持20个字符内的英文字符、数字和下划线。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取表格文件Cos对象路径。
                      * @return CosUri 表格文件Cos对象路径。
+                     * 
                      */
                     std::string GetCosUri() const;
 
                     /**
                      * 设置表格文件Cos对象路径。
-                     * @param CosUri 表格文件Cos对象路径。
+                     * @param _cosUri 表格文件Cos对象路径。
+                     * 
                      */
                     void SetCosUri(const std::string& _cosUri);
 
                     /**
                      * 判断参数 CosUri 是否已赋值
                      * @return CosUri 是否已赋值
+                     * 
                      */
                     bool CosUriHasBeenSet() const;
 
                     /**
                      * 获取表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
                      * @return DataType 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * 
                      */
                     std::vector<std::string> GetDataType() const;
 
                     /**
                      * 设置表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
-                     * @param DataType 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * @param _dataType 表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]
+                     * 
                      */
                     void SetDataType(const std::vector<std::string>& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 
                     /**
                      * 获取表格描述。
                      * @return Description 表格描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置表格描述。
-                     * @param Description 表格描述。
+                     * @param _description 表格描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取凭证模板索引
                      * @return Id 凭证模板索引
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取凭证模板id
                      * @return CptId 凭证模板id
+                     * 
                      */
                     uint64_t GetCptId() const;
 
                     /**
                      * 判断参数 CptId 是否已赋值
                      * @return CptId 是否已赋值
+                     * 
                      */
                     bool CptIdHasBeenSet() const;
 

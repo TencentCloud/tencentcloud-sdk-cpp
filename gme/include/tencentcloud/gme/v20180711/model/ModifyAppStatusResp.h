@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取GME应用ID
                      * @return BizId GME应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置GME应用ID
-                     * @param BizId GME应用ID
+                     * @param _bizId GME应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取应用状态，取值：open/close
                      * @return Status 应用状态，取值：open/close
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应用状态，取值：open/close
-                     * @param Status 应用状态，取值：open/close
+                     * @param _status 应用状态，取值：open/close
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取pod总数
                      * @return PodTotal pod总数
+                     * 
                      */
                     int64_t GetPodTotal() const;
 
                     /**
                      * 设置pod总数
-                     * @param PodTotal pod总数
+                     * @param _podTotal pod总数
+                     * 
                      */
                     void SetPodTotal(const int64_t& _podTotal);
 
                     /**
                      * 判断参数 PodTotal 是否已赋值
                      * @return PodTotal 是否已赋值
+                     * 
                      */
                     bool PodTotalHasBeenSet() const;
 
                     /**
                      * 获取NotReady pod总数
                      * @return NotReadyPod NotReady pod总数
+                     * 
                      */
                     int64_t GetNotReadyPod() const;
 
                     /**
                      * 设置NotReady pod总数
-                     * @param NotReadyPod NotReady pod总数
+                     * @param _notReadyPod NotReady pod总数
+                     * 
                      */
                     void SetNotReadyPod(const int64_t& _notReadyPod);
 
                     /**
                      * 判断参数 NotReadyPod 是否已赋值
                      * @return NotReadyPod 是否已赋值
+                     * 
                      */
                     bool NotReadyPodHasBeenSet() const;
 

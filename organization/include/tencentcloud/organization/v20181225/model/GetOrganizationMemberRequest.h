@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取组织成员UIN
                      * @return MemberUin 组织成员UIN
+                     * 
                      */
                     uint64_t GetMemberUin() const;
 
                     /**
                      * 设置组织成员UIN
-                     * @param MemberUin 组织成员UIN
+                     * @param _memberUin 组织成员UIN
+                     * 
                      */
                     void SetMemberUin(const uint64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 

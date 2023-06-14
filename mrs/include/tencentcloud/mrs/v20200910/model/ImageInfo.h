@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取图片id
                      * @return Id 图片id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置图片id
-                     * @param Id 图片id
+                     * @param _id 图片id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取图片url
                      * @return Url 图片url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置图片url
-                     * @param Url 图片url
+                     * @param _url 图片url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取图片base64编码
                      * @return Base64 图片base64编码
+                     * 
                      */
                     std::string GetBase64() const;
 
                     /**
                      * 设置图片base64编码
-                     * @param Base64 图片base64编码
+                     * @param _base64 图片base64编码
+                     * 
                      */
                     void SetBase64(const std::string& _base64);
 
                     /**
                      * 判断参数 Base64 是否已赋值
                      * @return Base64 是否已赋值
+                     * 
                      */
                     bool Base64HasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取识别结果统计
                      * @return Overview 识别结果统计
+                     * 
                      */
                     Overview GetOverview() const;
 
                     /**
                      * 判断参数 Overview 是否已赋值
                      * @return Overview 是否已赋值
+                     * 
                      */
                     bool OverviewHasBeenSet() const;
 
                     /**
                      * 获取识别量统计
                      * @return TrendCount 识别量统计
+                     * 
                      */
                     std::vector<TrendCount> GetTrendCount() const;
 
                     /**
                      * 判断参数 TrendCount 是否已赋值
                      * @return TrendCount 是否已赋值
+                     * 
                      */
                     bool TrendCountHasBeenSet() const;
 
                     /**
                      * 获取违规数据分布
                      * @return EvilCount 违规数据分布
+                     * 
                      */
                     std::vector<EvilCount> GetEvilCount() const;
 
                     /**
                      * 判断参数 EvilCount 是否已赋值
                      * @return EvilCount 是否已赋值
+                     * 
                      */
                     bool EvilCountHasBeenSet() const;
 

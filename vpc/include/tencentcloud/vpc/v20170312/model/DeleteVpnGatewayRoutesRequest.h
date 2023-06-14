@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关实例ID
                      * @return VpnGatewayId VPN网关实例ID
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID
-                     * @param VpnGatewayId VPN网关实例ID
+                     * @param _vpnGatewayId VPN网关实例ID
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。
                      * @return RouteIds 路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。
+                     * 
                      */
                     std::vector<std::string> GetRouteIds() const;
 
                     /**
                      * 设置路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。
-                     * @param RouteIds 路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。
+                     * @param _routeIds 路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。
+                     * 
                      */
                     void SetRouteIds(const std::vector<std::string>& _routeIds);
 
                     /**
                      * 判断参数 RouteIds 是否已赋值
                      * @return RouteIds 是否已赋值
+                     * 
                      */
                     bool RouteIdsHasBeenSet() const;
 

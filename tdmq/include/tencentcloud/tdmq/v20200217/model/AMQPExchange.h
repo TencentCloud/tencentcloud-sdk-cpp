@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Exchange名称
                      * @return Name Exchange名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Exchange名称
-                     * @param Name Exchange名称
+                     * @param _name Exchange名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Exchange的类别，为枚举类型:Direct, Fanout, Topic
                      * @return Type Exchange的类别，为枚举类型:Direct, Fanout, Topic
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Exchange的类别，为枚举类型:Direct, Fanout, Topic
-                     * @param Type Exchange的类别，为枚举类型:Direct, Fanout, Topic
+                     * @param _type Exchange的类别，为枚举类型:Direct, Fanout, Topic
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取主绑定数
                      * @return SourceBindedNum 主绑定数
+                     * 
                      */
                     uint64_t GetSourceBindedNum() const;
 
                     /**
                      * 设置主绑定数
-                     * @param SourceBindedNum 主绑定数
+                     * @param _sourceBindedNum 主绑定数
+                     * 
                      */
                     void SetSourceBindedNum(const uint64_t& _sourceBindedNum);
 
                     /**
                      * 判断参数 SourceBindedNum 是否已赋值
                      * @return SourceBindedNum 是否已赋值
+                     * 
                      */
                     bool SourceBindedNumHasBeenSet() const;
 
@@ -105,92 +114,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 说明
+                     * @param _remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取被绑定数
                      * @return DestBindedNum 被绑定数
+                     * 
                      */
                     uint64_t GetDestBindedNum() const;
 
                     /**
                      * 设置被绑定数
-                     * @param DestBindedNum 被绑定数
+                     * @param _destBindedNum 被绑定数
+                     * 
                      */
                     void SetDestBindedNum(const uint64_t& _destBindedNum);
 
                     /**
                      * 判断参数 DestBindedNum 是否已赋值
                      * @return DestBindedNum 是否已赋值
+                     * 
                      */
                     bool DestBindedNumHasBeenSet() const;
 
                     /**
                      * 获取创建时间，以毫秒为单位
                      * @return CreateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
-                     * @param CreateTime 创建时间，以毫秒为单位
+                     * @param _createTime 创建时间，以毫秒为单位
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取创建时间，以毫秒为单位
                      * @return UpdateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
-                     * @param UpdateTime 创建时间，以毫秒为单位
+                     * @param _updateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取是否为内部Exchange(以amq.前缀开头的)
                      * @return Internal 是否为内部Exchange(以amq.前缀开头的)
+                     * 
                      */
                     bool GetInternal() const;
 
                     /**
                      * 设置是否为内部Exchange(以amq.前缀开头的)
-                     * @param Internal 是否为内部Exchange(以amq.前缀开头的)
+                     * @param _internal 是否为内部Exchange(以amq.前缀开头的)
+                     * 
                      */
                     void SetInternal(const bool& _internal);
 
                     /**
                      * 判断参数 Internal 是否已赋值
                      * @return Internal 是否已赋值
+                     * 
                      */
                     bool InternalHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlternateExchange 备用Exchange名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlternateExchange() const;
 
                     /**
                      * 设置备用Exchange名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlternateExchange 备用Exchange名称
+                     * @param _alternateExchange 备用Exchange名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlternateExchange(const std::string& _alternateExchange);
 
                     /**
                      * 判断参数 AlternateExchange 是否已赋值
                      * @return AlternateExchange 是否已赋值
+                     * 
                      */
                     bool AlternateExchangeHasBeenSet() const;
 
@@ -221,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlternateExchangeDeleteMark 备用Exchange是否删除标识: true(已删除)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAlternateExchangeDeleteMark() const;
 
                     /**
                      * 设置备用Exchange是否删除标识: true(已删除)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlternateExchangeDeleteMark 备用Exchange是否删除标识: true(已删除)
+                     * @param _alternateExchangeDeleteMark 备用Exchange是否删除标识: true(已删除)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlternateExchangeDeleteMark(const bool& _alternateExchangeDeleteMark);
 
                     /**
                      * 判断参数 AlternateExchangeDeleteMark 是否已赋值
                      * @return AlternateExchangeDeleteMark 是否已赋值
+                     * 
                      */
                     bool AlternateExchangeDeleteMarkHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayType 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDelayType() const;
 
                     /**
                      * 设置延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DelayType 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
+                     * @param _delayType 延迟Exchange的类别，为枚举类型:Direct, Fanout, Topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDelayType(const std::string& _delayType);
 
                     /**
                      * 判断参数 DelayType 是否已赋值
                      * @return DelayType 是否已赋值
+                     * 
                      */
                     bool DelayTypeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 填1时，当参数中图层分辨率参数与视频实际分辨率不一致时，自动从视频中按图层设置的分辨率比例进行裁剪。
                      * @return UseMixCropCenter 取值范围[0,1]。
 填1时，当参数中图层分辨率参数与视频实际分辨率不一致时，自动从视频中按图层设置的分辨率比例进行裁剪。
+                     * 
                      */
                     int64_t GetUseMixCropCenter() const;
 
                     /**
                      * 设置取值范围[0,1]。
 填1时，当参数中图层分辨率参数与视频实际分辨率不一致时，自动从视频中按图层设置的分辨率比例进行裁剪。
-                     * @param UseMixCropCenter 取值范围[0,1]。
+                     * @param _useMixCropCenter 取值范围[0,1]。
 填1时，当参数中图层分辨率参数与视频实际分辨率不一致时，自动从视频中按图层设置的分辨率比例进行裁剪。
+                     * 
                      */
                     void SetUseMixCropCenter(const int64_t& _useMixCropCenter);
 
                     /**
                      * 判断参数 UseMixCropCenter 是否已赋值
                      * @return UseMixCropCenter 是否已赋值
+                     * 
                      */
                     bool UseMixCropCenterHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
                      * @return AllowCopy 取值范围[0,1]
 填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     * 
                      */
                     int64_t GetAllowCopy() const;
 
                     /**
                      * 设置取值范围[0,1]
 填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
-                     * @param AllowCopy 取值范围[0,1]
+                     * @param _allowCopy 取值范围[0,1]
 填1时，当InputStreamList中个数为1时，且OutputParams.OutputStreamType为1时，不执行取消操作，执行拷贝流操作
+                     * 
                      */
                     void SetAllowCopy(const int64_t& _allowCopy);
 
                     /**
                      * 判断参数 AllowCopy 是否已赋值
                      * @return AllowCopy 是否已赋值
+                     * 
                      */
                     bool AllowCopyHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 填1时，透传原始流的sei
                      * @return PassInputSei 取值范围[0,1]
 填1时，透传原始流的sei
+                     * 
                      */
                     int64_t GetPassInputSei() const;
 
                     /**
                      * 设置取值范围[0,1]
 填1时，透传原始流的sei
-                     * @param PassInputSei 取值范围[0,1]
+                     * @param _passInputSei 取值范围[0,1]
 填1时，透传原始流的sei
+                     * 
                      */
                     void SetPassInputSei(const int64_t& _passInputSei);
 
                     /**
                      * 判断参数 PassInputSei 是否已赋值
                      * @return PassInputSei 是否已赋值
+                     * 
                      */
                     bool PassInputSeiHasBeenSet() const;
 

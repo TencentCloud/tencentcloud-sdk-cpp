@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Data 无
+                     * 
                      */
                     BaselineRule GetData() const;
 
                     /**
                      * 设置无
-                     * @param Data 无
+                     * @param _data 无
+                     * 
                      */
                     void SetData(const BaselineRule& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取是否过滤全选
                      * @return SelectAll 是否过滤全选
+                     * 
                      */
                     int64_t GetSelectAll() const;
 
                     /**
                      * 设置是否过滤全选
-                     * @param SelectAll 是否过滤全选
+                     * @param _selectAll 是否过滤全选
+                     * 
                      */
                     void SetSelectAll(const int64_t& _selectAll);
 
                     /**
                      * 判断参数 SelectAll 是否已赋值
                      * @return SelectAll 是否已赋值
+                     * 
                      */
                     bool SelectAllHasBeenSet() const;
 
                     /**
                      * 获取<li>ItemName - string - 是否必填：否 - 项名称</li>
                      * @return Filters <li>ItemName - string - 是否必填：否 - 项名称</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置<li>ItemName - string - 是否必填：否 - 项名称</li>
-                     * @param Filters <li>ItemName - string - 是否必填：否 - 项名称</li>
+                     * @param _filters <li>ItemName - string - 是否必填：否 - 项名称</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

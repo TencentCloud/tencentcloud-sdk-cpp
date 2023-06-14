@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SDMCInfo 华曦达（SDMC）相关的 DRM 密钥提供商信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SDMCDrmKeyProviderInfo GetSDMCInfo() const;
 
                     /**
                      * 判断参数 SDMCInfo 是否已赋值
                      * @return SDMCInfo 是否已赋值
+                     * 
                      */
                     bool SDMCInfoHasBeenSet() const;
 

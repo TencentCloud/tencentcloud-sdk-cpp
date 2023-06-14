@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。
                      * @return StreamInputRtmpPushUrl 输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。
+                     * 
                      */
                     std::string GetStreamInputRtmpPushUrl() const;
 
                     /**
                      * 判断参数 StreamInputRtmpPushUrl 是否已赋值
                      * @return StreamInputRtmpPushUrl 是否已赋值
+                     * 
                      */
                     bool StreamInputRtmpPushUrlHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VodPullInputPlayInfo 点播输入源播放进度信息，当 Operation 取值 DescribeInputPlayInfo 且 InputType 为 VodPull 类型时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VodPullInputPlayInfo GetVodPullInputPlayInfo() const;
 
                     /**
                      * 判断参数 VodPullInputPlayInfo 是否已赋值
                      * @return VodPullInputPlayInfo 是否已赋值
+                     * 
                      */
                     bool VodPullInputPlayInfoHasBeenSet() const;
 

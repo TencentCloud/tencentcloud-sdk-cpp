@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取慢查询详情。
                      * @return TendisSlowLogDetail 慢查询详情。
+                     * 
                      */
                     std::vector<TendisSlowLogDetail> GetTendisSlowLogDetail() const;
 
                     /**
                      * 判断参数 TendisSlowLogDetail 是否已赋值
                      * @return TendisSlowLogDetail 是否已赋值
+                     * 
                      */
                     bool TendisSlowLogDetailHasBeenSet() const;
 
                     /**
                      * 获取慢查询总数。
                      * @return TotalCount 慢查询总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

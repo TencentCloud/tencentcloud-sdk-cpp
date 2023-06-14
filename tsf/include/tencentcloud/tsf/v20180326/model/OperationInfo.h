@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Init 初始化按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OperationInfoDetail GetInit() const;
 
                     /**
                      * 设置初始化按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Init 初始化按钮的控制信息
+                     * @param _init 初始化按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInit(const OperationInfoDetail& _init);
 
                     /**
                      * 判断参数 Init 是否已赋值
                      * @return Init 是否已赋值
+                     * 
                      */
                     bool InitHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddInstance 添加实例按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OperationInfoDetail GetAddInstance() const;
 
                     /**
                      * 设置添加实例按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddInstance 添加实例按钮的控制信息
+                     * @param _addInstance 添加实例按钮的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddInstance(const OperationInfoDetail& _addInstance);
 
                     /**
                      * 判断参数 AddInstance 是否已赋值
                      * @return AddInstance 是否已赋值
+                     * 
                      */
                     bool AddInstanceHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destroy 销毁机器的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OperationInfoDetail GetDestroy() const;
 
                     /**
                      * 设置销毁机器的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Destroy 销毁机器的控制信息
+                     * @param _destroy 销毁机器的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestroy(const OperationInfoDetail& _destroy);
 
                     /**
                      * 判断参数 Destroy 是否已赋值
                      * @return Destroy 是否已赋值
+                     * 
                      */
                     bool DestroyHasBeenSet() const;
 

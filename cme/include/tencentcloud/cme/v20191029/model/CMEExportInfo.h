@@ -51,108 +51,126 @@ namespace TencentCloud
                     /**
                      * 获取导出媒体归属，个人或团队。
                      * @return Owner 导出媒体归属，个人或团队。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置导出媒体归属，个人或团队。
-                     * @param Owner 导出媒体归属，个人或团队。
+                     * @param _owner 导出媒体归属，个人或团队。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取导出的媒体名称，不得超过30个字符。
                      * @return Name 导出的媒体名称，不得超过30个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置导出的媒体名称，不得超过30个字符。
-                     * @param Name 导出的媒体名称，不得超过30个字符。
+                     * @param _name 导出的媒体名称，不得超过30个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取导出的媒体信息，不得超过50个字符。
                      * @return Description 导出的媒体信息，不得超过50个字符。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置导出的媒体信息，不得超过50个字符。
-                     * @param Description 导出的媒体信息，不得超过50个字符。
+                     * @param _description 导出的媒体信息，不得超过50个字符。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
                      * @return ClassPath 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
-                     * @param ClassPath 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
+                     * @param _classPath 导出的媒体分类路径，长度不能超过15字符。不存在默认创建。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取导出的媒体标签，单个标签不得超过10个字符。
                      * @return TagSet 导出的媒体标签，单个标签不得超过10个字符。
+                     * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置导出的媒体标签，单个标签不得超过10个字符。
-                     * @param TagSet 导出的媒体标签，单个标签不得超过10个字符。
+                     * @param _tagSet 导出的媒体标签，单个标签不得超过10个字符。
+                     * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取第三方平台发布信息列表。暂未正式对外，请勿使用。
                      * @return ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * 
                      */
                     std::vector<ThirdPartyPublishInfo> GetThirdPartyPublishInfos() const;
 
                     /**
                      * 设置第三方平台发布信息列表。暂未正式对外，请勿使用。
-                     * @param ThirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * @param _thirdPartyPublishInfos 第三方平台发布信息列表。暂未正式对外，请勿使用。
+                     * 
                      */
                     void SetThirdPartyPublishInfos(const std::vector<ThirdPartyPublishInfo>& _thirdPartyPublishInfos);
 
                     /**
                      * 判断参数 ThirdPartyPublishInfos 是否已赋值
                      * @return ThirdPartyPublishInfos 是否已赋值
+                     * 
                      */
                     bool ThirdPartyPublishInfosHasBeenSet() const;
 

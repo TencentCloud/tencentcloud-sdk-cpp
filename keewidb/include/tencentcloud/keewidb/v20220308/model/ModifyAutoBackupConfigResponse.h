@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取增量备份文件保存天数。
                      * @return BackupStorageDays 增量备份文件保存天数。
+                     * 
                      */
                     int64_t GetBackupStorageDays() const;
 
                     /**
                      * 判断参数 BackupStorageDays 是否已赋值
                      * @return BackupStorageDays 是否已赋值
+                     * 
                      */
                     bool BackupStorageDaysHasBeenSet() const;
 
                     /**
                      * 获取全量备份文件保存天数。
                      * @return BinlogStorageDays 全量备份文件保存天数。
+                     * 
                      */
                     int64_t GetBinlogStorageDays() const;
 
                     /**
                      * 判断参数 BinlogStorageDays 是否已赋值
                      * @return BinlogStorageDays 是否已赋值
+                     * 
                      */
                     bool BinlogStorageDaysHasBeenSet() const;
 
                     /**
                      * 获取备份时间段。
                      * @return TimePeriod 备份时间段。
+                     * 
                      */
                     std::string GetTimePeriod() const;
 
                     /**
                      * 判断参数 TimePeriod 是否已赋值
                      * @return TimePeriod 是否已赋值
+                     * 
                      */
                     bool TimePeriodHasBeenSet() const;
 
                     /**
                      * 获取备份周期。Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
                      * @return WeekDays 备份周期。Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * 
                      */
                     std::vector<std::string> GetWeekDays() const;
 
                     /**
                      * 判断参数 WeekDays 是否已赋值
                      * @return WeekDays 是否已赋值
+                     * 
                      */
                     bool WeekDaysHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Ingress 规则配置
                      * @return Result Ingress 规则配置
+                     * 
                      */
                     IngressInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

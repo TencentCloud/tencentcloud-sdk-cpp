@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URLNotices 告警回调通知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<URLNotice> GetURLNotices() const;
 
                     /**
                      * 判断参数 URLNotices 是否已赋值
                      * @return URLNotices 是否已赋值
+                     * 
                      */
                     bool URLNoticesHasBeenSet() const;
 

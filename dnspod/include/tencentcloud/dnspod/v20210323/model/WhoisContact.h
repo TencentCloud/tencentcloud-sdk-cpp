@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Admin 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WhoisContactAddress GetAdmin() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Admin 无
+                     * @param _admin 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmin(const WhoisContactAddress& _admin);
 
                     /**
                      * 判断参数 Admin 是否已赋值
                      * @return Admin 是否已赋值
+                     * 
                      */
                     bool AdminHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Billing 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WhoisContactAddress GetBilling() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Billing 无
+                     * @param _billing 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBilling(const WhoisContactAddress& _billing);
 
                     /**
                      * 判断参数 Billing 是否已赋值
                      * @return Billing 是否已赋值
+                     * 
                      */
                     bool BillingHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Registrant 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WhoisContactAddress GetRegistrant() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Registrant 无
+                     * @param _registrant 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrant(const WhoisContactAddress& _registrant);
 
                     /**
                      * 判断参数 Registrant 是否已赋值
                      * @return Registrant 是否已赋值
+                     * 
                      */
                     bool RegistrantHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tech 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WhoisContactAddress GetTech() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tech 无
+                     * @param _tech 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTech(const WhoisContactAddress& _tech);
 
                     /**
                      * 判断参数 Tech 是否已赋值
                      * @return Tech 是否已赋值
+                     * 
                      */
                     bool TechHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID,实例ID形如: emr-xxxxxxxx
                      * @return InstanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID,实例ID形如: emr-xxxxxxxx
-                     * @param InstanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * @param _instanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

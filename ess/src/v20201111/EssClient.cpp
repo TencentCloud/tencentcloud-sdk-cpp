@@ -1287,6 +1287,49 @@ EssClient::DeleteSealPoliciesOutcomeCallable EssClient::DeleteSealPoliciesCallab
     return task->get_future();
 }
 
+EssClient::DescribeExtendedServiceAuthInfosOutcome EssClient::DescribeExtendedServiceAuthInfos(const DescribeExtendedServiceAuthInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtendedServiceAuthInfosResponse rsp = DescribeExtendedServiceAuthInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtendedServiceAuthInfosOutcome(rsp);
+        else
+            return DescribeExtendedServiceAuthInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtendedServiceAuthInfosOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeExtendedServiceAuthInfosAsync(const DescribeExtendedServiceAuthInfosRequest& request, const DescribeExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtendedServiceAuthInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeExtendedServiceAuthInfosOutcomeCallable EssClient::DescribeExtendedServiceAuthInfosCallable(const DescribeExtendedServiceAuthInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtendedServiceAuthInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtendedServiceAuthInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeFileUrlsOutcome EssClient::DescribeFileUrls(const DescribeFileUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFileUrls");

@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 测绘类型统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetTypeStatistic> GetStatistics() const;
 
                     /**
                      * 设置测绘类型统计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Statistics 测绘类型统计
+                     * @param _statistics 测绘类型统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatistics(const std::vector<AssetTypeStatistic>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测绘结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MappingResult> GetResult() const;
 
                     /**
                      * 设置测绘结果列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 测绘结果列表
+                     * @param _result 测绘结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::vector<MappingResult>& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCount 测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskCount() const;
 
                     /**
                      * 设置测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskCount 测绘任务数
+                     * @param _taskCount 测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskCount(const uint64_t& _taskCount);
 
                     /**
                      * 判断参数 TaskCount 是否已赋值
                      * @return TaskCount 是否已赋值
+                     * 
                      */
                     bool TaskCountHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskMaxCount 最大测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskMaxCount() const;
 
                     /**
                      * 设置最大测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskMaxCount 最大测绘任务数
+                     * @param _taskMaxCount 最大测绘任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskMaxCount(const uint64_t& _taskMaxCount);
 
                     /**
                      * 判断参数 TaskMaxCount 是否已赋值
                      * @return TaskMaxCount 是否已赋值
+                     * 
                      */
                     bool TaskMaxCountHasBeenSet() const;
 

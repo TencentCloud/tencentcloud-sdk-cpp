@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取客户的AppId
                      * @return AppId 客户的AppId
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -64,48 +66,56 @@ namespace TencentCloud
 
 0: 从未开通过白板服务
 1: 已经开通过白板服务
+                     * 
                      */
                     int64_t GetIsTiwUser() const;
 
                     /**
                      * 判断参数 IsTiwUser 是否已赋值
                      * @return IsTiwUser 是否已赋值
+                     * 
                      */
                     bool IsTiwUserHasBeenSet() const;
 
                     /**
                      * 获取是否开通过互动课堂（试用或正式）
                      * @return IsSaaSUser 是否开通过互动课堂（试用或正式）
+                     * 
                      */
                     int64_t GetIsSaaSUser() const;
 
                     /**
                      * 判断参数 IsSaaSUser 是否已赋值
                      * @return IsSaaSUser 是否已赋值
+                     * 
                      */
                     bool IsSaaSUserHasBeenSet() const;
 
                     /**
                      * 获取是否使用白板的课后录制
                      * @return IsTiwOfflineRecordUser 是否使用白板的课后录制
+                     * 
                      */
                     int64_t GetIsTiwOfflineRecordUser() const;
 
                     /**
                      * 判断参数 IsTiwOfflineRecordUser 是否已赋值
                      * @return IsTiwOfflineRecordUser 是否已赋值
+                     * 
                      */
                     bool IsTiwOfflineRecordUserHasBeenSet() const;
 
                     /**
                      * 获取用户是否实名认证
                      * @return IsAuthenticated 用户是否实名认证
+                     * 
                      */
                     int64_t GetIsAuthenticated() const;
 
                     /**
                      * 判断参数 IsAuthenticated 是否已赋值
                      * @return IsAuthenticated 是否已赋值
+                     * 
                      */
                     bool IsAuthenticatedHasBeenSet() const;
 

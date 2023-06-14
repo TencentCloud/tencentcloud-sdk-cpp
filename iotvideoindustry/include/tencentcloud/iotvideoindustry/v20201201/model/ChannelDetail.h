@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取通道名称
                      * @return ChannelName 通道名称
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置通道名称
-                     * @param ChannelName 通道名称
+                     * @param _channelName 通道名称
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识
                      * @return ChannelId 通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * @param _channelId 通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelType 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChannelType() const;
 
                     /**
                      * 设置通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelType 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
+                     * @param _channelType 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelType(const int64_t& _channelType);
 
                     /**
                      * 判断参数 ChannelType 是否已赋值
                      * @return ChannelType 是否已赋值
+                     * 
                      */
                     bool ChannelTypeHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelCode 20位国标通道编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelCode() const;
 
                     /**
                      * 设置20位国标通道编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelCode 20位国标通道编码
+                     * @param _channelCode 20位国标通道编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelCode(const std::string& _channelCode);
 
                     /**
                      * 判断参数 ChannelCode 是否已赋值
                      * @return ChannelCode 是否已赋值
+                     * 
                      */
                     bool ChannelCodeHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 通道扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置通道扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraInformation 通道扩展信息
+                     * @param _extraInformation 通道扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
 
                     /**
                      * 判断参数 ExtraInformation 是否已赋值
                      * @return ExtraInformation 是否已赋值
+                     * 
                      */
                     bool ExtraInformationHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 通道在线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置通道在线状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 通道在线状态
+                     * @param _status 通道在线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRecord 通道是否存在录像标识 0：无录像；1：有录像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsRecord() const;
 
                     /**
                      * 设置通道是否存在录像标识 0：无录像；1：有录像
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsRecord 通道是否存在录像标识 0：无录像；1：有录像
+                     * @param _isRecord 通道是否存在录像标识 0：无录像；1：有录像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsRecord(const int64_t& _isRecord);
 
                     /**
                      * 判断参数 IsRecord 是否已赋值
                      * @return IsRecord 是否已赋值
+                     * 
                      */
                     bool IsRecordHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 通道所属设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置通道所属设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceId 通道所属设备唯一标识
+                     * @param _deviceId 通道所属设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessGroupId 通道所属虚拟组织的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusinessGroupId() const;
 
                     /**
                      * 设置通道所属虚拟组织的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessGroupId 通道所属虚拟组织的ID
+                     * @param _businessGroupId 通道所属虚拟组织的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessGroupId(const std::string& _businessGroupId);
 
                     /**
                      * 判断参数 BusinessGroupId 是否已赋值
                      * @return BusinessGroupId 是否已赋值
+                     * 
                      */
                     bool BusinessGroupIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则ID
                      * @return Id 规则ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则ID
-                     * @param Id 规则ID
+                     * @param _id 规则ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取是否禁用
                      * @return Disabled 是否禁用
+                     * 
                      */
                     uint64_t GetDisabled() const;
 
                     /**
                      * 设置是否禁用
-                     * @param Disabled 是否禁用
+                     * @param _disabled 是否禁用
+                     * 
                      */
                     void SetDisabled(const uint64_t& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 

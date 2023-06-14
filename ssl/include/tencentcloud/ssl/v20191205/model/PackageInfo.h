@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取权益包ID。
                      * @return PackageId 权益包ID。
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置权益包ID。
-                     * @param PackageId 权益包ID。
+                     * @param _packageId 权益包ID。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取权益包内权益点总量。
                      * @return Total 权益包内权益点总量。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置权益包内权益点总量。
-                     * @param Total 权益包内权益点总量。
+                     * @param _total 权益包内权益点总量。
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取权益包内权益点余量。
                      * @return Balance 权益包内权益点余量。
+                     * 
                      */
                     uint64_t GetBalance() const;
 
                     /**
                      * 设置权益包内权益点余量。
-                     * @param Balance 权益包内权益点余量。
+                     * @param _balance 权益包内权益点余量。
+                     * 
                      */
                     void SetBalance(const uint64_t& _balance);
 
                     /**
                      * 判断参数 Balance 是否已赋值
                      * @return Balance 是否已赋值
+                     * 
                      */
                     bool BalanceHasBeenSet() const;
 
                     /**
                      * 获取权益包名称。
                      * @return Type 权益包名称。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置权益包名称。
-                     * @param Type 权益包名称。
+                     * @param _type 权益包名称。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -124,110 +136,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceUin 权益点是转入时，来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSourceUin() const;
 
                     /**
                      * 设置权益点是转入时，来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceUin 权益点是转入时，来源信息。
+                     * @param _sourceUin 权益点是转入时，来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceUin(const uint64_t& _sourceUin);
 
                     /**
                      * 判断参数 SourceUin 是否已赋值
                      * @return SourceUin 是否已赋值
+                     * 
                      */
                     bool SourceUinHasBeenSet() const;
 
                     /**
                      * 获取权益点状态。
                      * @return Status 权益点状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置权益点状态。
-                     * @param Status 权益点状态。
+                     * @param _status 权益点状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取过期时间。
                      * @return ExpireTime 过期时间。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间。
-                     * @param ExpireTime 过期时间。
+                     * @param _expireTime 过期时间。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间。
                      * @return UpdateTime 更新时间。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。
-                     * @param UpdateTime 更新时间。
+                     * @param _updateTime 更新时间。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取生成时间。
                      * @return CreateTime 生成时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置生成时间。
-                     * @param CreateTime 生成时间。
+                     * @param _createTime 生成时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取来源类型。
                      * @return SourceType 来源类型。
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置来源类型。
-                     * @param SourceType 来源类型。
+                     * @param _sourceType 来源类型。
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -236,20 +266,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferOutInfos 转移信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PackageTransferOutInfo> GetTransferOutInfos() const;
 
                     /**
                      * 设置转移信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransferOutInfos 转移信息。
+                     * @param _transferOutInfos 转移信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransferOutInfos(const std::vector<PackageTransferOutInfo>& _transferOutInfos);
 
                     /**
                      * 判断参数 TransferOutInfos 是否已赋值
                      * @return TransferOutInfos 是否已赋值
+                     * 
                      */
                     bool TransferOutInfosHasBeenSet() const;
 

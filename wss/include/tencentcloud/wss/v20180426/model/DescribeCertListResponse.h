@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数量。
                      * @return TotalCount 总数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取列表。
                      * @return CertificateSet 列表。
+                     * 
                      */
                     std::vector<SSLCertificate> GetCertificateSet() const;
 
                     /**
                      * 判断参数 CertificateSet 是否已赋值
                      * @return CertificateSet 是否已赋值
+                     * 
                      */
                     bool CertificateSetHasBeenSet() const;
 

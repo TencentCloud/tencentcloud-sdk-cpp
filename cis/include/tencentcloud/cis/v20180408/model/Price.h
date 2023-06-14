@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取原价，单位：元
                      * @return DiscountPrice 原价，单位：元
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置原价，单位：元
-                     * @param DiscountPrice 原价，单位：元
+                     * @param _discountPrice 原价，单位：元
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
                      * 获取折扣价，单位：元
                      * @return OriginalPrice 折扣价，单位：元
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置折扣价，单位：元
-                     * @param OriginalPrice 折扣价，单位：元
+                     * @param _originalPrice 折扣价，单位：元
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 

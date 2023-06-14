@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取限流任务总数目。
                      * @return TotalCount 限流任务总数目。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取限流任务列表。
                      * @return Items 限流任务列表。
+                     * 
                      */
                     std::vector<SQLFilter> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

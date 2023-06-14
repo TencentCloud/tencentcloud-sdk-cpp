@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的站点id列表
                      * @return SiteIds 要删除的站点id列表
+                     * 
                      */
                     std::vector<std::string> GetSiteIds() const;
 
                     /**
                      * 设置要删除的站点id列表
-                     * @param SiteIds 要删除的站点id列表
+                     * @param _siteIds 要删除的站点id列表
+                     * 
                      */
                     void SetSiteIds(const std::vector<std::string>& _siteIds);
 
                     /**
                      * 判断参数 SiteIds 是否已赋值
                      * @return SiteIds 是否已赋值
+                     * 
                      */
                     bool SiteIdsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 媒资图片文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置媒资图片文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 媒资图片文件大小，单位为Byte
+                     * @param _fileSize 媒资图片文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 媒资图片文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置媒资图片文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MD5 媒资图片文件MD5
+                     * @param _mD5 媒资图片文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 媒资图片文件宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置媒资图片文件宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 媒资图片文件宽度
+                     * @param _width 媒资图片文件宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 媒资图片文件高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置媒资图片文件高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 媒资图片文件高度
+                     * @param _height 媒资图片文件高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 媒资图片文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置媒资图片文件格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Format 媒资图片文件格式
+                     * @param _format 媒资图片文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

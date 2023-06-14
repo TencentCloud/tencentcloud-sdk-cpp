@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取线索处理状态码： 0-表示创建成功， 1-表示线索合并，2-表示线索重复
                      * @return BusinessCode 线索处理状态码： 0-表示创建成功， 1-表示线索合并，2-表示线索重复
+                     * 
                      */
                     int64_t GetBusinessCode() const;
 
                     /**
                      * 判断参数 BusinessCode 是否已赋值
                      * @return BusinessCode 是否已赋值
+                     * 
                      */
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
                      * 获取线索处理结果描述
                      * @return BusinessMsg 线索处理结果描述
+                     * 
                      */
                     std::string GetBusinessMsg() const;
 
                     /**
                      * 判断参数 BusinessMsg 是否已赋值
                      * @return BusinessMsg 是否已赋值
+                     * 
                      */
                     bool BusinessMsgHasBeenSet() const;
 

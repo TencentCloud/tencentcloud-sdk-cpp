@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取容器名称
                      * @return ContainerName 容器名称
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return LogContent 日志内容
+                     * 
                      */
                     std::string GetLogContent() const;
 
                     /**
                      * 判断参数 LogContent 是否已赋值
                      * @return LogContent 是否已赋值
+                     * 
                      */
                     bool LogContentHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取资源包ID
                      * @return BonusId 资源包ID
+                     * 
                      */
                     uint64_t GetBonusId() const;
 
                     /**
                      * 设置资源包ID
-                     * @param BonusId 资源包ID
+                     * @param _bonusId 资源包ID
+                     * 
                      */
                     void SetBonusId(const uint64_t& _bonusId);
 
                     /**
                      * 判断参数 BonusId 是否已赋值
                      * @return BonusId 是否已赋值
+                     * 
                      */
                     bool BonusIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取资源包配置ID
                      * @return PackageId 资源包配置ID
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包配置ID
-                     * @param PackageId 资源包配置ID
+                     * @param _packageId 资源包配置ID
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取资源总数
                      * @return Total 资源总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置资源总数
-                     * @param Total 资源总数
+                     * @param _total 资源总数
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取资源消耗总数
                      * @return Used 资源消耗总数
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 设置资源消耗总数
-                     * @param Used 资源消耗总数
+                     * @param _used 资源消耗总数
+                     * 
                      */
                     void SetUsed(const uint64_t& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取资源包过期时间
                      * @return ExpireTime 资源包过期时间
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置资源包过期时间
-                     * @param ExpireTime 资源包过期时间
+                     * @param _expireTime 资源包过期时间
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取资源包创建时间
                      * @return CreateTime 资源包创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置资源包创建时间
-                     * @param CreateTime 资源包创建时间
+                     * @param _createTime 资源包创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -177,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+                     * @param _status 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

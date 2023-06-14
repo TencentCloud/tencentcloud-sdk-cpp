@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取连接器ID
                      * @return ConnectionId 连接器ID
+                     * 
                      */
                     std::string GetConnectionId() const;
 
                     /**
                      * 设置连接器ID
-                     * @param ConnectionId 连接器ID
+                     * @param _connectionId 连接器ID
+                     * 
                      */
                     void SetConnectionId(const std::string& _connectionId);
 
                     /**
                      * 判断参数 ConnectionId 是否已赋值
                      * @return ConnectionId 是否已赋值
+                     * 
                      */
                     bool ConnectionIdHasBeenSet() const;
 
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取使能开关
                      * @return Enable 使能开关
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置使能开关
-                     * @param Enable 使能开关
+                     * @param _enable 使能开关
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取连接器名称
                      * @return ConnectionName 连接器名称
+                     * 
                      */
                     std::string GetConnectionName() const;
 
                     /**
                      * 设置连接器名称
-                     * @param ConnectionName 连接器名称
+                     * @param _connectionName 连接器名称
+                     * 
                      */
                     void SetConnectionName(const std::string& _connectionName);
 
                     /**
                      * 判断参数 ConnectionName 是否已赋值
                      * @return ConnectionName 是否已赋值
+                     * 
                      */
                     bool ConnectionNameHasBeenSet() const;
 

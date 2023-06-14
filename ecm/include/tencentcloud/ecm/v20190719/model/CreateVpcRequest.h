@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取vpc名称，最大长度不能超过60个字节。
                      * @return VpcName vpc名称，最大长度不能超过60个字节。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置vpc名称，最大长度不能超过60个字节。
-                     * @param VpcName vpc名称，最大长度不能超过60个字节。
+                     * @param _vpcName vpc名称，最大长度不能超过60个字节。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
                      * @return CidrBlock vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
-                     * @param CidrBlock vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
+                     * @param _cidrBlock vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取是否开启组播。true: 开启, false: 不开启。暂不支持
                      * @return EnableMulticast 是否开启组播。true: 开启, false: 不开启。暂不支持
+                     * 
                      */
                     std::string GetEnableMulticast() const;
 
                     /**
                      * 设置是否开启组播。true: 开启, false: 不开启。暂不支持
-                     * @param EnableMulticast 是否开启组播。true: 开启, false: 不开启。暂不支持
+                     * @param _enableMulticast 是否开启组播。true: 开启, false: 不开启。暂不支持
+                     * 
                      */
                     void SetEnableMulticast(const std::string& _enableMulticast);
 
                     /**
                      * 判断参数 EnableMulticast 是否已赋值
                      * @return EnableMulticast 是否已赋值
+                     * 
                      */
                     bool EnableMulticastHasBeenSet() const;
 
                     /**
                      * 获取DNS地址，最多支持4个，暂不支持
                      * @return DnsServers DNS地址，最多支持4个，暂不支持
+                     * 
                      */
                     std::vector<std::string> GetDnsServers() const;
 
                     /**
                      * 设置DNS地址，最多支持4个，暂不支持
-                     * @param DnsServers DNS地址，最多支持4个，暂不支持
+                     * @param _dnsServers DNS地址，最多支持4个，暂不支持
+                     * 
                      */
                     void SetDnsServers(const std::vector<std::string>& _dnsServers);
 
                     /**
                      * 判断参数 DnsServers 是否已赋值
                      * @return DnsServers 是否已赋值
+                     * 
                      */
                     bool DnsServersHasBeenSet() const;
 
                     /**
                      * 获取域名，暂不支持
                      * @return DomainName 域名，暂不支持
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名，暂不支持
-                     * @param DomainName 域名，暂不支持
+                     * @param _domainName 域名，暂不支持
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
                      * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

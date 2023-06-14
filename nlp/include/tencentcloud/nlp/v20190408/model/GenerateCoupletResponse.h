@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取横批。
                      * @return TopScroll 横批。
+                     * 
                      */
                     std::string GetTopScroll() const;
 
                     /**
                      * 判断参数 TopScroll 是否已赋值
                      * @return TopScroll 是否已赋值
+                     * 
                      */
                     bool TopScrollHasBeenSet() const;
 
                     /**
                      * 获取上联与下联。
                      * @return Content 上联与下联。
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取当对联随机生成时，展示随机生成原因。
                      * @return RandomCause 当对联随机生成时，展示随机生成原因。
+                     * 
                      */
                     std::string GetRandomCause() const;
 
                     /**
                      * 判断参数 RandomCause 是否已赋值
                      * @return RandomCause 是否已赋值
+                     * 
                      */
                     bool RandomCauseHasBeenSet() const;
 

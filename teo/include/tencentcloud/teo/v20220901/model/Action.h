@@ -104,6 +104,7 @@ namespace TencentCloud
 <li> 回源跟随重定向(UpstreamFollowRedirect)；</li>
 <li> 修改源站(Origin)。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NormalAction GetNormalAction() const;
 
@@ -135,7 +136,7 @@ namespace TencentCloud
 <li> 回源跟随重定向(UpstreamFollowRedirect)；</li>
 <li> 修改源站(Origin)。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NormalAction 常规功能操作，选择该类型的功能项有：
+                     * @param _normalAction 常规功能操作，选择该类型的功能项有：
 <li> 访问URL 重写（AccessUrlRedirect）；</li>
 <li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>
 <li> QUIC（QUIC）；</li>
@@ -162,12 +163,14 @@ namespace TencentCloud
 <li> 回源跟随重定向(UpstreamFollowRedirect)；</li>
 <li> 修改源站(Origin)。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNormalAction(const NormalAction& _normalAction);
 
                     /**
                      * 判断参数 NormalAction 是否已赋值
                      * @return NormalAction 是否已赋值
+                     * 
                      */
                     bool NormalActionHasBeenSet() const;
 
@@ -180,6 +183,7 @@ namespace TencentCloud
 <li> 修改 HTTP 请求头（RequestHeader）；</li>
 <li> 修改HTTP响应头（ResponseHeader）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RewriteAction GetRewriteAction() const;
 
@@ -188,16 +192,18 @@ namespace TencentCloud
 <li> 修改 HTTP 请求头（RequestHeader）；</li>
 <li> 修改HTTP响应头（ResponseHeader）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RewriteAction 带有请求头/响应头的功能操作，选择该类型的功能项有：
+                     * @param _rewriteAction 带有请求头/响应头的功能操作，选择该类型的功能项有：
 <li> 修改 HTTP 请求头（RequestHeader）；</li>
 <li> 修改HTTP响应头（ResponseHeader）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRewriteAction(const RewriteAction& _rewriteAction);
 
                     /**
                      * 判断参数 RewriteAction 是否已赋值
                      * @return RewriteAction 是否已赋值
+                     * 
                      */
                     bool RewriteActionHasBeenSet() const;
 
@@ -210,6 +216,7 @@ namespace TencentCloud
 <li> 自定义错误页面（ErrorPage）；</li>
 <li> 状态码缓存 TTL（StatusCodeCache）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CodeAction GetCodeAction() const;
 
@@ -218,16 +225,18 @@ namespace TencentCloud
 <li> 自定义错误页面（ErrorPage）；</li>
 <li> 状态码缓存 TTL（StatusCodeCache）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeAction 带有状态码的功能操作，选择该类型的功能项有：
+                     * @param _codeAction 带有状态码的功能操作，选择该类型的功能项有：
 <li> 自定义错误页面（ErrorPage）；</li>
 <li> 状态码缓存 TTL（StatusCodeCache）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeAction(const CodeAction& _codeAction);
 
                     /**
                      * 判断参数 CodeAction 是否已赋值
                      * @return CodeAction 是否已赋值
+                     * 
                      */
                     bool CodeActionHasBeenSet() const;
 

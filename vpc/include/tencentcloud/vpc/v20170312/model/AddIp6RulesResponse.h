@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换规则唯一ID数组，形如rule6-xxxxxxxx
                      * @return Ip6RuleSet IPV6转换规则唯一ID数组，形如rule6-xxxxxxxx
+                     * 
                      */
                     std::vector<std::string> GetIp6RuleSet() const;
 
                     /**
                      * 判断参数 Ip6RuleSet 是否已赋值
                      * @return Ip6RuleSet 是否已赋值
+                     * 
                      */
                     bool Ip6RuleSetHasBeenSet() const;
 

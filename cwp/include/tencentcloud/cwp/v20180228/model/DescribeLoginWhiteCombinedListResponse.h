@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginWhiteCombinedInfos 合并后的白名单列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoginWhiteCombinedInfo> GetLoginWhiteCombinedInfos() const;
 
                     /**
                      * 判断参数 LoginWhiteCombinedInfos 是否已赋值
                      * @return LoginWhiteCombinedInfos 是否已赋值
+                     * 
                      */
                     bool LoginWhiteCombinedInfosHasBeenSet() const;
 

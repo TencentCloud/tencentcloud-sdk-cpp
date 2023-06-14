@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 模板tag列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置模板tag列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 模板tag列表
+                     * @param _tags 模板tag列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Icons 模板图标列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetIcons() const;
 
                     /**
                      * 设置模板图标列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Icons 模板图标列表
+                     * @param _icons 模板图标列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIcons(const std::vector<std::string>& _icons);
 
                     /**
                      * 判断参数 Icons 是否已赋值
                      * @return Icons 是否已赋值
+                     * 
                      */
                     bool IconsHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Templates 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     UserDefinedTemplateParams GetTemplates() const;
 
                     /**
                      * 设置无
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Templates 无
+                     * @param _templates 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplates(const UserDefinedTemplateParams& _templates);
 
                     /**
                      * 判断参数 Templates 是否已赋值
                      * @return Templates 是否已赋值
+                     * 
                      */
                     bool TemplatesHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取编辑处理任务参数。
                      * @return MediaProcessInfo 编辑处理任务参数。
+                     * 
                      */
                     MediaProcessInfo GetMediaProcessInfo() const;
 
                     /**
                      * 设置编辑处理任务参数。
-                     * @param MediaProcessInfo 编辑处理任务参数。
+                     * @param _mediaProcessInfo 编辑处理任务参数。
+                     * 
                      */
                     void SetMediaProcessInfo(const MediaProcessInfo& _mediaProcessInfo);
 
                     /**
                      * 判断参数 MediaProcessInfo 是否已赋值
                      * @return MediaProcessInfo 是否已赋值
+                     * 
                      */
                     bool MediaProcessInfoHasBeenSet() const;
 
                     /**
                      * 获取编辑处理任务输入源列表。
                      * @return SourceInfoSet 编辑处理任务输入源列表。
+                     * 
                      */
                     std::vector<MediaSourceInfo> GetSourceInfoSet() const;
 
                     /**
                      * 设置编辑处理任务输入源列表。
-                     * @param SourceInfoSet 编辑处理任务输入源列表。
+                     * @param _sourceInfoSet 编辑处理任务输入源列表。
+                     * 
                      */
                     void SetSourceInfoSet(const std::vector<MediaSourceInfo>& _sourceInfoSet);
 
                     /**
                      * 判断参数 SourceInfoSet 是否已赋值
                      * @return SourceInfoSet 是否已赋值
+                     * 
                      */
                     bool SourceInfoSetHasBeenSet() const;
 
                     /**
                      * 获取结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。
                      * @return SaveInfoSet 结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。
+                     * 
                      */
                     std::vector<SaveInfo> GetSaveInfoSet() const;
 
                     /**
                      * 设置结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。
-                     * @param SaveInfoSet 结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。
+                     * @param _saveInfoSet 结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。
+                     * 
                      */
                     void SetSaveInfoSet(const std::vector<SaveInfo>& _saveInfoSet);
 
                     /**
                      * 判断参数 SaveInfoSet 是否已赋值
                      * @return SaveInfoSet 是否已赋值
+                     * 
                      */
                     bool SaveInfoSetHasBeenSet() const;
 
                     /**
                      * 获取任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。
                      * @return CallbackInfoSet 任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。
+                     * 
                      */
                     std::vector<CallbackInfo> GetCallbackInfoSet() const;
 
                     /**
                      * 设置任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。
-                     * @param CallbackInfoSet 任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。
+                     * @param _callbackInfoSet 任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。
+                     * 
                      */
                     void SetCallbackInfoSet(const std::vector<CallbackInfo>& _callbackInfoSet);
 
                     /**
                      * 判断参数 CallbackInfoSet 是否已赋值
                      * @return CallbackInfoSet 是否已赋值
+                     * 
                      */
                     bool CallbackInfoSetHasBeenSet() const;
 

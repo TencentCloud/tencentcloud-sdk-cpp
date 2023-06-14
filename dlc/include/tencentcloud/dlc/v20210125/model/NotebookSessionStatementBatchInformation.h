@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotebookSessionStatementBatch 任务详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NotebookSessionStatementInfo> GetNotebookSessionStatementBatch() const;
 
                     /**
                      * 设置任务详情列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotebookSessionStatementBatch 任务详情列表
+                     * @param _notebookSessionStatementBatch 任务详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotebookSessionStatementBatch(const std::vector<NotebookSessionStatementInfo>& _notebookSessionStatementBatch);
 
                     /**
                      * 判断参数 NotebookSessionStatementBatch 是否已赋值
                      * @return NotebookSessionStatementBatch 是否已赋值
+                     * 
                      */
                     bool NotebookSessionStatementBatchHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAvailable 当前批任务是否运行完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsAvailable() const;
 
                     /**
                      * 设置当前批任务是否运行完成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAvailable 当前批任务是否运行完成
+                     * @param _isAvailable 当前批任务是否运行完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsAvailable(const bool& _isAvailable);
 
                     /**
                      * 判断参数 IsAvailable 是否已赋值
                      * @return IsAvailable 是否已赋值
+                     * 
                      */
                     bool IsAvailableHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId Session唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置Session唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionId Session唯一标识
+                     * @param _sessionId Session唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId Batch唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置Batch唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchId Batch唯一标识
+                     * @param _batchId Batch唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 

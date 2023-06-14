@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签署流程资源对应链接信息
                      * @return FlowResourceUrlInfos 签署流程资源对应链接信息
+                     * 
                      */
                     std::vector<FlowResourceUrlInfo> GetFlowResourceUrlInfos() const;
 
                     /**
                      * 判断参数 FlowResourceUrlInfos 是否已赋值
                      * @return FlowResourceUrlInfos 是否已赋值
+                     * 
                      */
                     bool FlowResourceUrlInfosHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 成功为“”,创建失败则对应失败消息
                      * @return ErrorMessages 创建消息，对应多个合同ID，
 成功为“”,创建失败则对应失败消息
+                     * 
                      */
                     std::vector<std::string> GetErrorMessages() const;
 
                     /**
                      * 判断参数 ErrorMessages 是否已赋值
                      * @return ErrorMessages 是否已赋值
+                     * 
                      */
                     bool ErrorMessagesHasBeenSet() const;
 

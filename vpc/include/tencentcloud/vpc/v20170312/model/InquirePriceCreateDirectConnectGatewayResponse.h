@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 专线网关标准接入费用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCost() const;
 
                     /**
                      * 判断参数 TotalCost 是否已赋值
                      * @return TotalCost 是否已赋值
+                     * 
                      */
                     bool TotalCostHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 专线网关真实接入费用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRealTotalCost() const;
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取续费周期。
                      * @return Period 续费周期。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置续费周期。
-                     * @param Period 续费周期。
+                     * @param _period 续费周期。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -75,6 +78,7 @@ NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW�
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
@@ -84,53 +88,61 @@ NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW�
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
-                     * @param RenewFlag 续费标识。取值范围：
+                     * @param _renewFlag 续费标识。取值范围：
 
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取周期单位。取值范围：“m”(月)。默认值: "m"。
                      * @return TimeUnit 周期单位。取值范围：“m”(月)。默认值: "m"。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置周期单位。取值范围：“m”(月)。默认值: "m"。
-                     * @param TimeUnit 周期单位。取值范围：“m”(月)。默认值: "m"。
+                     * @param _timeUnit 周期单位。取值范围：“m”(月)。默认值: "m"。
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
                     /**
                      * 获取当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
                      * @return CurInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * 
                      */
                     std::string GetCurInstanceDeadline() const;
 
                     /**
                      * 设置当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
-                     * @param CurInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * @param _curInstanceDeadline 当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。
+                     * 
                      */
                     void SetCurInstanceDeadline(const std::string& _curInstanceDeadline);
 
                     /**
                      * 判断参数 CurInstanceDeadline 是否已赋值
                      * @return CurInstanceDeadline 是否已赋值
+                     * 
                      */
                     bool CurInstanceDeadlineHasBeenSet() const;
 

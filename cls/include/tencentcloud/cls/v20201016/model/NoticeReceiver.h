@@ -55,6 +55,7 @@ namespace TencentCloud
 <br><li> Uin - 用户ID
 <br><li> Group - 用户组ID
 暂不支持其余接收者类型。
+                     * 
                      */
                     std::string GetReceiverType() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 <br><li> Uin - 用户ID
 <br><li> Group - 用户组ID
 暂不支持其余接收者类型。
-                     * @param ReceiverType 接受者类型。可选值：
+                     * @param _receiverType 接受者类型。可选值：
 <br><li> Uin - 用户ID
 <br><li> Group - 用户组ID
 暂不支持其余接收者类型。
+                     * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
 
                     /**
                      * 判断参数 ReceiverType 是否已赋值
                      * @return ReceiverType 是否已赋值
+                     * 
                      */
                     bool ReceiverTypeHasBeenSet() const;
 
                     /**
                      * 获取接收者。
                      * @return ReceiverIds 接收者。
+                     * 
                      */
                     std::vector<int64_t> GetReceiverIds() const;
 
                     /**
                      * 设置接收者。
-                     * @param ReceiverIds 接收者。
+                     * @param _receiverIds 接收者。
+                     * 
                      */
                     void SetReceiverIds(const std::vector<int64_t>& _receiverIds);
 
                     /**
                      * 判断参数 ReceiverIds 是否已赋值
                      * @return ReceiverIds 是否已赋值
+                     * 
                      */
                     bool ReceiverIdsHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
 <br><li> Sms - 短信
 <br><li> WeChat - 微信
 <br><li> Phone - 电话
+                     * 
                      */
                     std::vector<std::string> GetReceiverChannels() const;
 
@@ -114,71 +121,82 @@ namespace TencentCloud
 <br><li> Sms - 短信
 <br><li> WeChat - 微信
 <br><li> Phone - 电话
-                     * @param ReceiverChannels 通知接收渠道。
+                     * @param _receiverChannels 通知接收渠道。
 <br><li> Email - 邮件
 <br><li> Sms - 短信
 <br><li> WeChat - 微信
 <br><li> Phone - 电话
+                     * 
                      */
                     void SetReceiverChannels(const std::vector<std::string>& _receiverChannels);
 
                     /**
                      * 判断参数 ReceiverChannels 是否已赋值
                      * @return ReceiverChannels 是否已赋值
+                     * 
                      */
                     bool ReceiverChannelsHasBeenSet() const;
 
                     /**
                      * 获取允许接收信息的开始时间。
                      * @return StartTime 允许接收信息的开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置允许接收信息的开始时间。
-                     * @param StartTime 允许接收信息的开始时间。
+                     * @param _startTime 允许接收信息的开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取允许接收信息的结束时间。
                      * @return EndTime 允许接收信息的结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置允许接收信息的结束时间。
-                     * @param EndTime 允许接收信息的结束时间。
+                     * @param _endTime 允许接收信息的结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取位序
                      * @return Index 位序
+                     * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置位序
-                     * @param Index 位序
+                     * @param _index 位序
+                     * 
                      */
                     void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 

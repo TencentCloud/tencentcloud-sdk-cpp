@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取私有域ID, zone-xxxxxx
                      * @return ZoneId 私有域ID, zone-xxxxxx
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取解析域关联的VPC列表
                      * @return VpcSet 解析域关联的VPC列表
+                     * 
                      */
                     std::vector<VpcInfo> GetVpcSet() const;
 
                     /**
                      * 判断参数 VpcSet 是否已赋值
                      * @return VpcSet 是否已赋值
+                     * 
                      */
                     bool VpcSetHasBeenSet() const;
 
                     /**
                      * 获取私有域账号关联的全部VPC列表
                      * @return AccountVpcSet 私有域账号关联的全部VPC列表
+                     * 
                      */
                     std::vector<AccountVpcInfoOutput> GetAccountVpcSet() const;
 
                     /**
                      * 判断参数 AccountVpcSet 是否已赋值
                      * @return AccountVpcSet 是否已赋值
+                     * 
                      */
                     bool AccountVpcSetHasBeenSet() const;
 

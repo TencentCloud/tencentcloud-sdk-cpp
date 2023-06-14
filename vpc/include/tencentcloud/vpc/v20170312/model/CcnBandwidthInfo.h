@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 带宽所属的云联网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置带宽所属的云联网ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CcnId 带宽所属的云联网ID。
+                     * @param _ccnId 带宽所属的云联网ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 实例的创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置实例的创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 实例的创建时间。
+                     * @param _createdTime 实例的创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 实例的过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
                      * 设置实例的过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredTime 实例的过期时间
+                     * @param _expiredTime 实例的过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionFlowControlId 带宽实例的唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionFlowControlId() const;
 
                     /**
                      * 设置带宽实例的唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionFlowControlId 带宽实例的唯一ID。
+                     * @param _regionFlowControlId 带宽实例的唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionFlowControlId(const std::string& _regionFlowControlId);
 
                     /**
                      * 判断参数 RegionFlowControlId 是否已赋值
                      * @return RegionFlowControlId 是否已赋值
+                     * 
                      */
                     bool RegionFlowControlIdHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 带宽是否自动续费的标记。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置带宽是否自动续费的标记。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewFlag 带宽是否自动续费的标记。
+                     * @param _renewFlag 带宽是否自动续费的标记。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CcnRegionBandwidthLimit GetCcnRegionBandwidthLimit() const;
 
                     /**
                      * 设置描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CcnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
+                     * @param _ccnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCcnRegionBandwidthLimit(const CcnRegionBandwidthLimit& _ccnRegionBandwidthLimit);
 
                     /**
                      * 判断参数 CcnRegionBandwidthLimit 是否已赋值
                      * @return CcnRegionBandwidthLimit 是否已赋值
+                     * 
                      */
                     bool CcnRegionBandwidthLimitHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarketId 云市场实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMarketId() const;
 
                     /**
                      * 设置云市场实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MarketId 云市场实例ID。
+                     * @param _marketId 云市场实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMarketId(const std::string& _marketId);
 
                     /**
                      * 判断参数 MarketId 是否已赋值
                      * @return MarketId 是否已赋值
+                     * 
                      */
                     bool MarketIdHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 资源绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置资源绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 资源绑定的标签列表
+                     * @param _tagSet 资源绑定的标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

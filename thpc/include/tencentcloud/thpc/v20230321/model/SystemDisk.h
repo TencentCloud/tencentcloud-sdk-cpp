@@ -61,6 +61,7 @@ CLOUD_PREMIUM：高性能云硬盘
 
 默认取值：当前有库存的硬盘类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -72,19 +73,21 @@ CLOUD_PREMIUM：高性能云硬盘
 
 默认取值：当前有库存的硬盘类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 系统盘类型。系统盘类型限制详见存储概述。取值范围：
+                     * @param _diskType 系统盘类型。系统盘类型限制详见存储概述。取值范围：
 CLOUD_BASIC：普通云硬盘
 CLOUD_SSD：SSD云硬盘
 CLOUD_PREMIUM：高性能云硬盘
 
 默认取值：当前有库存的硬盘类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -93,20 +96,23 @@ CLOUD_PREMIUM：高性能云硬盘
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskSize 系统盘大小，单位：GB。默认值为 50
+                     * @param _diskSize 系统盘大小，单位：GB。默认值为 50
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 

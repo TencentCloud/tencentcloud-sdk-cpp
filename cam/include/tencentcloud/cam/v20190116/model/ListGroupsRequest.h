@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取页码。默认为1。
                      * @return Page 页码。默认为1。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码。默认为1。
-                     * @param Page 页码。默认为1。
+                     * @param _page 页码。默认为1。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数量。默认为20。
                      * @return Rp 每页数量。默认为20。
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页数量。默认为20。
-                     * @param Rp 每页数量。默认为20。
+                     * @param _rp 每页数量。默认为20。
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 
                     /**
                      * 获取按用户组名称匹配。
                      * @return Keyword 按用户组名称匹配。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置按用户组名称匹配。
-                     * @param Keyword 按用户组名称匹配。
+                     * @param _keyword 按用户组名称匹配。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

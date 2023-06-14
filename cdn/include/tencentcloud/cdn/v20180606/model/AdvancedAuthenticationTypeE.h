@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置用于计算签名的密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
+                     * @param _secretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSignParam() const;
 
                     /**
                      * 设置uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _signParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSignParam(const std::string& _signParam);
 
                     /**
                      * 判断参数 SignParam 是否已赋值
                      * @return SignParam 是否已赋值
+                     * 
                      */
                     bool SignParamHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclSignParam uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAclSignParam() const;
 
                     /**
                      * 设置uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AclSignParam uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _aclSignParam uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAclSignParam(const std::string& _aclSignParam);
 
                     /**
                      * 判断参数 AclSignParam 是否已赋值
                      * @return AclSignParam 是否已赋值
+                     * 
                      */
                     bool AclSignParamHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeParam uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTimeParam() const;
 
                     /**
                      * 设置uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTimeParam uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _startTimeParam uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTimeParam(const std::string& _startTimeParam);
 
                     /**
                      * 判断参数 StartTimeParam 是否已赋值
                      * @return StartTimeParam 是否已赋值
+                     * 
                      */
                     bool StartTimeParamHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTimeParam uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTimeParam() const;
 
                     /**
                      * 设置uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTimeParam uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _expireTimeParam uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTimeParam(const std::string& _expireTimeParam);
 
                     /**
                      * 判断参数 ExpireTimeParam 是否已赋值
                      * @return ExpireTimeParam 是否已赋值
+                     * 
                      */
                     bool ExpireTimeParamHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeFormat 时间格式，dec
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
                      * 设置时间格式，dec
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeFormat 时间格式，dec
+                     * @param _timeFormat 时间格式，dec
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
 
                     /**
                      * 判断参数 TimeFormat 是否已赋值
                      * @return TimeFormat 是否已赋值
+                     * 
                      */
                     bool TimeFormatHasBeenSet() const;
 

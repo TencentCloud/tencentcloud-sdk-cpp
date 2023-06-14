@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取标签覆盖率占比（在整个上传的ID列表中的覆盖率）
                      * @return Proportion 标签覆盖率占比（在整个上传的ID列表中的覆盖率）
+                     * 
                      */
                     double GetProportion() const;
 
                     /**
                      * 设置标签覆盖率占比（在整个上传的ID列表中的覆盖率）
-                     * @param Proportion 标签覆盖率占比（在整个上传的ID列表中的覆盖率）
+                     * @param _proportion 标签覆盖率占比（在整个上传的ID列表中的覆盖率）
+                     * 
                      */
                     void SetProportion(const double& _proportion);
 
                     /**
                      * 判断参数 Proportion 是否已赋值
                      * @return Proportion 是否已赋值
+                     * 
                      */
                     bool ProportionHasBeenSet() const;
 
                     /**
                      * 获取标签大盘覆盖率占比
                      * @return Market 标签大盘覆盖率占比
+                     * 
                      */
                     double GetMarket() const;
 
                     /**
                      * 设置标签大盘覆盖率占比
-                     * @param Market 标签大盘覆盖率占比
+                     * @param _market 标签大盘覆盖率占比
+                     * 
                      */
                     void SetMarket(const double& _market);
 
                     /**
                      * 判断参数 Market 是否已赋值
                      * @return Market 是否已赋值
+                     * 
                      */
                     bool MarketHasBeenSet() const;
 
                     /**
                      * 获取TGI指数，由Proportion除以Market得到
                      * @return Tgi TGI指数，由Proportion除以Market得到
+                     * 
                      */
                     double GetTgi() const;
 
                     /**
                      * 设置TGI指数，由Proportion除以Market得到
-                     * @param Tgi TGI指数，由Proportion除以Market得到
+                     * @param _tgi TGI指数，由Proportion除以Market得到
+                     * 
                      */
                     void SetTgi(const double& _tgi);
 
                     /**
                      * 判断参数 Tgi 是否已赋值
                      * @return Tgi 是否已赋值
+                     * 
                      */
                     bool TgiHasBeenSet() const;
 

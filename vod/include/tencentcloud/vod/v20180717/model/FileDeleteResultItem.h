@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取删除的文件 ID 。
                      * @return FileId 删除的文件 ID 。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置删除的文件 ID 。
-                     * @param FileId 删除的文件 ID 。
+                     * @param _fileId 删除的文件 ID 。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteParts 本次删除的文件部分。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MediaDeleteItem> GetDeleteParts() const;
 
                     /**
                      * 设置本次删除的文件部分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteParts 本次删除的文件部分。
+                     * @param _deleteParts 本次删除的文件部分。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleteParts(const std::vector<MediaDeleteItem>& _deleteParts);
 
                     /**
                      * 判断参数 DeleteParts 是否已赋值
                      * @return DeleteParts 是否已赋值
+                     * 
                      */
                     bool DeletePartsHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      * @return Width 输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
-                     * @param Width 输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * @param _width 输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
                      * @return Height 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
-                     * @param Height 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * @param _height 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
                      * @return Fps 输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
+                     * 
                      */
                     uint64_t GetFps() const;
 
                     /**
                      * 设置输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
-                     * @param Fps 输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
+                     * @param _fps 输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。
+                     * 
                      */
                     void SetFps(const uint64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
                     /**
                      * 获取输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
                      * @return BitRate 输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
+                     * 
                      */
                     uint64_t GetBitRate() const;
 
                     /**
                      * 设置输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
-                     * @param BitRate 输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
+                     * @param _bitRate 输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。
+                     * 
                      */
                     void SetBitRate(const uint64_t& _bitRate);
 
                     /**
                      * 判断参数 BitRate 是否已赋值
                      * @return BitRate 是否已赋值
+                     * 
                      */
                     bool BitRateHasBeenSet() const;
 
                     /**
                      * 获取输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
                      * @return Gop 输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
+                     * 
                      */
                     uint64_t GetGop() const;
 
                     /**
                      * 设置输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
-                     * @param Gop 输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
+                     * @param _gop 输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
+                     * 
                      */
                     void SetGop(const uint64_t& _gop);
 
                     /**
                      * 判断参数 Gop 是否已赋值
                      * @return Gop 是否已赋值
+                     * 
                      */
                     bool GopHasBeenSet() const;
 

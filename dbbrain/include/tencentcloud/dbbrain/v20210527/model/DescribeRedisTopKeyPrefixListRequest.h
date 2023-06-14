@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取查询日期，如2021-05-27，最早可为前30天的日期。
                      * @return Date 查询日期，如2021-05-27，最早可为前30天的日期。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置查询日期，如2021-05-27，最早可为前30天的日期。
-                     * @param Date 查询日期，如2021-05-27，最早可为前30天的日期。
+                     * @param _date 查询日期，如2021-05-27，最早可为前30天的日期。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值包括 "redis" - 云数据库 Redis。
                      * @return Product 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值包括 "redis" - 云数据库 Redis。
-                     * @param Product 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * @param _product 服务产品类型，支持值包括 "redis" - 云数据库 Redis。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取查询数目，默认为20，最大值为100。
                      * @return Limit 查询数目，默认为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询数目，默认为20，最大值为100。
-                     * @param Limit 查询数目，默认为20，最大值为100。
+                     * @param _limit 查询数目，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

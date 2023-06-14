@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取secret名称
                      * @return SecretName secret名称
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名称
-                     * @param SecretName secret名称
+                     * @param _secretName secret名称
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取secret命名空间（默认:default）
                      * @return SecretNamespace secret命名空间（默认:default）
+                     * 
                      */
                     std::string GetSecretNamespace() const;
 
                     /**
                      * 设置secret命名空间（默认:default）
-                     * @param SecretNamespace secret命名空间（默认:default）
+                     * @param _secretNamespace secret命名空间（默认:default）
+                     * 
                      */
                     void SetSecretNamespace(const std::string& _secretNamespace);
 
                     /**
                      * 判断参数 SecretNamespace 是否已赋值
                      * @return SecretNamespace 是否已赋值
+                     * 
                      */
                     bool SecretNamespaceHasBeenSet() const;
 

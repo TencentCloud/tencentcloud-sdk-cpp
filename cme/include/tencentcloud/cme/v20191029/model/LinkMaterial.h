@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return LinkType 链接类型取值:
 <li>CLASS: 分类链接;</li>
 <li> MATERIAL：素材链接。</li>
+                     * 
                      */
                     std::string GetLinkType() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置链接类型取值:
 <li>CLASS: 分类链接;</li>
 <li> MATERIAL：素材链接。</li>
-                     * @param LinkType 链接类型取值:
+                     * @param _linkType 链接类型取值:
 <li>CLASS: 分类链接;</li>
 <li> MATERIAL：素材链接。</li>
+                     * 
                      */
                     void SetLinkType(const std::string& _linkType);
 
                     /**
                      * 判断参数 LinkType 是否已赋值
                      * @return LinkType 是否已赋值
+                     * 
                      */
                     bool LinkTypeHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
                      * @return LinkStatus 链接状态取值：
 <li> Normal：正常 ；</li>
 <li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>
+                     * 
                      */
                     std::string GetLinkStatus() const;
 
@@ -88,15 +92,17 @@ namespace TencentCloud
                      * 设置链接状态取值：
 <li> Normal：正常 ；</li>
 <li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>
-                     * @param LinkStatus 链接状态取值：
+                     * @param _linkStatus 链接状态取值：
 <li> Normal：正常 ；</li>
 <li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>
+                     * 
                      */
                     void SetLinkStatus(const std::string& _linkStatus);
 
                     /**
                      * 判断参数 LinkStatus 是否已赋值
                      * @return LinkStatus 是否已赋值
+                     * 
                      */
                     bool LinkStatusHasBeenSet() const;
 
@@ -105,20 +111,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkMaterialInfo 素材链接详细信息，当LinkType="MATERIAL"时有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LinkMaterialInfo GetLinkMaterialInfo() const;
 
                     /**
                      * 设置素材链接详细信息，当LinkType="MATERIAL"时有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LinkMaterialInfo 素材链接详细信息，当LinkType="MATERIAL"时有值。
+                     * @param _linkMaterialInfo 素材链接详细信息，当LinkType="MATERIAL"时有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLinkMaterialInfo(const LinkMaterialInfo& _linkMaterialInfo);
 
                     /**
                      * 判断参数 LinkMaterialInfo 是否已赋值
                      * @return LinkMaterialInfo 是否已赋值
+                     * 
                      */
                     bool LinkMaterialInfoHasBeenSet() const;
 
@@ -127,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkClassInfo 分类链接目标信息，当LinkType=“CLASS”时有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClassInfo GetLinkClassInfo() const;
 
                     /**
                      * 设置分类链接目标信息，当LinkType=“CLASS”时有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LinkClassInfo 分类链接目标信息，当LinkType=“CLASS”时有值。
+                     * @param _linkClassInfo 分类链接目标信息，当LinkType=“CLASS”时有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLinkClassInfo(const ClassInfo& _linkClassInfo);
 
                     /**
                      * 判断参数 LinkClassInfo 是否已赋值
                      * @return LinkClassInfo 是否已赋值
+                     * 
                      */
                     bool LinkClassInfoHasBeenSet() const;
 

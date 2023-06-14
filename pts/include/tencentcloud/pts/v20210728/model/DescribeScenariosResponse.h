@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioSet 场景列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Scenario> GetScenarioSet() const;
 
                     /**
                      * 判断参数 ScenarioSet 是否已赋值
                      * @return ScenarioSet 是否已赋值
+                     * 
                      */
                     bool ScenarioSetHasBeenSet() const;
 
                     /**
                      * 获取场景总数
                      * @return Total 场景总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

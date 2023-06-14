@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取登录节点ID。
                      * @return NodeId 登录节点ID。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置登录节点ID。
-                     * @param NodeId 登录节点ID。
+                     * @param _nodeId 登录节点ID。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 

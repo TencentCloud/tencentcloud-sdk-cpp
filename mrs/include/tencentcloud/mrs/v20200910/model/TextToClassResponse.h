@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取分类结果
                      * @return TextTypeList 分类结果
+                     * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
 
                     /**
                      * 判断参数 TextTypeList 是否已赋值
                      * @return TextTypeList 是否已赋值
+                     * 
                      */
                     bool TextTypeListHasBeenSet() const;
 

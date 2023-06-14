@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取图片中是否包含文字。
                      * @return HasText 图片中是否包含文字。
+                     * 
                      */
                     bool GetHasText() const;
 
                     /**
                      * 判断参数 HasText 是否已赋值
                      * @return HasText 是否已赋值
+                     * 
                      */
                     bool HasTextHasBeenSet() const;
 

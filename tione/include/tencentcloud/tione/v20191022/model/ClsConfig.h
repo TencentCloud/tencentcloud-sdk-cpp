@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取接入类型，可选项为free、customer
                      * @return Type 接入类型，可选项为free、customer
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置接入类型，可选项为free、customer
-                     * @param Type 接入类型，可选项为free、customer
+                     * @param _type 接入类型，可选项为free、customer
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取自定义CLS的日志集ID，只有当Type为customer时生效
                      * @return LogSetId 自定义CLS的日志集ID，只有当Type为customer时生效
+                     * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置自定义CLS的日志集ID，只有当Type为customer时生效
-                     * @param LogSetId 自定义CLS的日志集ID，只有当Type为customer时生效
+                     * @param _logSetId 自定义CLS的日志集ID，只有当Type为customer时生效
+                     * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
                     /**
                      * 判断参数 LogSetId 是否已赋值
                      * @return LogSetId 是否已赋值
+                     * 
                      */
                     bool LogSetIdHasBeenSet() const;
 
                     /**
                      * 获取自定义CLS的日志主题ID，只有当Type为customer时生效
                      * @return TopicId 自定义CLS的日志主题ID，只有当Type为customer时生效
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置自定义CLS的日志主题ID，只有当Type为customer时生效
-                     * @param TopicId 自定义CLS的日志主题ID，只有当Type为customer时生效
+                     * @param _topicId 自定义CLS的日志主题ID，只有当Type为customer时生效
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

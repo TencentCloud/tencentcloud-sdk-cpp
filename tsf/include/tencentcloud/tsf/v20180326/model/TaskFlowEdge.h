@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取节点 ID
                      * @return NodeId 节点 ID
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点 ID
-                     * @param NodeId 节点 ID
+                     * @param _nodeId 节点 ID
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChildNodeId 子节点 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChildNodeId() const;
 
                     /**
                      * 设置子节点 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChildNodeId 子节点 ID
+                     * @param _childNodeId 子节点 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChildNodeId(const std::string& _childNodeId);
 
                     /**
                      * 判断参数 ChildNodeId 是否已赋值
                      * @return ChildNodeId 是否已赋值
+                     * 
                      */
                     bool ChildNodeIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreNode 是否核心任务,Y/N
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoreNode() const;
 
                     /**
                      * 设置是否核心任务,Y/N
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoreNode 是否核心任务,Y/N
+                     * @param _coreNode 是否核心任务,Y/N
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoreNode(const std::string& _coreNode);
 
                     /**
                      * 判断参数 CoreNode 是否已赋值
                      * @return CoreNode 是否已赋值
+                     * 
                      */
                     bool CoreNodeHasBeenSet() const;
 
@@ -113,38 +122,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeType 边类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEdgeType() const;
 
                     /**
                      * 设置边类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EdgeType 边类型
+                     * @param _edgeType 边类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdgeType(const std::string& _edgeType);
 
                     /**
                      * 判断参数 EdgeType 是否已赋值
                      * @return EdgeType 是否已赋值
+                     * 
                      */
                     bool EdgeTypeHasBeenSet() const;
 
                     /**
                      * 获取任务节点类型
                      * @return NodeType 任务节点类型
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置任务节点类型
-                     * @param NodeType 任务节点类型
+                     * @param _nodeType 任务节点类型
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PositionX X轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPositionX() const;
 
                     /**
                      * 设置X轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PositionX X轴坐标位置
+                     * @param _positionX X轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPositionX(const std::string& _positionX);
 
                     /**
                      * 判断参数 PositionX 是否已赋值
                      * @return PositionX 是否已赋值
+                     * 
                      */
                     bool PositionXHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PositionY Y轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPositionY() const;
 
                     /**
                      * 设置Y轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PositionY Y轴坐标位置
+                     * @param _positionY Y轴坐标位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPositionY(const std::string& _positionY);
 
                     /**
                      * 判断参数 PositionY 是否已赋值
                      * @return PositionY 是否已赋值
+                     * 
                      */
                     bool PositionYHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GraphId 图 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGraphId() const;
 
                     /**
                      * 设置图 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GraphId 图 ID
+                     * @param _graphId 图 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGraphId(const std::string& _graphId);
 
                     /**
                      * 判断参数 GraphId 是否已赋值
                      * @return GraphId 是否已赋值
+                     * 
                      */
                     bool GraphIdHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 工作流 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置工作流 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowId 工作流 ID
+                     * @param _flowId 工作流 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -241,20 +268,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -263,20 +293,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -285,20 +318,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskLogId 任务历史ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskLogId() const;
 
                     /**
                      * 设置任务历史ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskLogId 任务历史ID
+                     * @param _taskLogId 任务历史ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskLogId(const std::string& _taskLogId);
 
                     /**
                      * 判断参数 TaskLogId 是否已赋值
                      * @return TaskLogId 是否已赋值
+                     * 
                      */
                     bool TaskLogIdHasBeenSet() const;
 

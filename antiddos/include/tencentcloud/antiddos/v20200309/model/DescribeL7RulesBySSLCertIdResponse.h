@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取证书规则集合
                      * @return CertSet 证书规则集合
+                     * 
                      */
                     std::vector<CertIdInsL7Rules> GetCertSet() const;
 
                     /**
                      * 判断参数 CertSet 是否已赋值
                      * @return CertSet 是否已赋值
+                     * 
                      */
                     bool CertSetHasBeenSet() const;
 

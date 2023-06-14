@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取API 请求路径
                      * @return Path API 请求路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API 请求路径
-                     * @param Path API 请求路径
+                     * @param _path API 请求路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取请求方法
                      * @return Method 请求方法
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法
-                     * @param Method 请求方法
+                     * @param _method 请求方法
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 方法描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置方法描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 方法描述
+                     * @param _description 方法描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status API状态 0:离线 1:在线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置API状态 0:离线 1:在线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status API状态 0:离线 1:在线
+                     * @param _status API状态 0:离线 1:在线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

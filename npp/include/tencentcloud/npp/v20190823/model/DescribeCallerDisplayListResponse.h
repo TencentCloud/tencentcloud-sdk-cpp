@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeList 主叫显号号码集合，codeList[0...*] 结构体数组，如果业务是主被叫互显，该字段为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CallBackPhoneCode> GetCodeList() const;
 
                     /**
                      * 判断参数 CodeList 是否已赋值
                      * @return CodeList 是否已赋值
+                     * 
                      */
                     bool CodeListHasBeenSet() const;
 
                     /**
                      * 获取错误码
                      * @return ErrorCode 错误码
+                     * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg 错误原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

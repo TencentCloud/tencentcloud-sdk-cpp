@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取置放群组ID。
                      * @return DeployGroupId 置放群组ID。
+                     * 
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
                      * 判断参数 DeployGroupId 是否已赋值
                      * @return DeployGroupId 是否已赋值
+                     * 
                      */
                     bool DeployGroupIdHasBeenSet() const;
 

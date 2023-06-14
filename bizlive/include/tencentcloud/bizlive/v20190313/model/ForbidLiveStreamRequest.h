@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取您的推流域名。
                      * @return DomainName 您的推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置您的推流域名。
-                     * @param DomainName 您的推流域名。
+                     * @param _domainName 您的推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 注意：默认禁播90天，且最长支持禁播90天。
                      * @return ResumeTime 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：默认禁播90天，且最长支持禁播90天。
+                     * 
                      */
                     std::string GetResumeTime() const;
 
                     /**
                      * 设置恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：默认禁播90天，且最长支持禁播90天。
-                     * @param ResumeTime 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
+                     * @param _resumeTime 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：默认禁播90天，且最长支持禁播90天。
+                     * 
                      */
                     void SetResumeTime(const std::string& _resumeTime);
 
                     /**
                      * 判断参数 ResumeTime 是否已赋值
                      * @return ResumeTime 是否已赋值
+                     * 
                      */
                     bool ResumeTimeHasBeenSet() const;
 

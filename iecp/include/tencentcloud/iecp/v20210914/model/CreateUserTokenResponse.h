@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Token 无
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 

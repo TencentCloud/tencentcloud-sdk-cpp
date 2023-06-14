@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取录制计划ID
                      * @return PlanId 录制计划ID
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置录制计划ID
-                     * @param PlanId 录制计划ID
+                     * @param _planId 录制计划ID
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取计划名称
                      * @return Name 计划名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置计划名称
-                     * @param Name 计划名称
+                     * @param _name 计划名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取时间模板ID
                      * @return TimeTemplateId 时间模板ID
+                     * 
                      */
                     std::string GetTimeTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-                     * @param TimeTemplateId 时间模板ID
+                     * @param _timeTemplateId 时间模板ID
+                     * 
                      */
                     void SetTimeTemplateId(const std::string& _timeTemplateId);
 
                     /**
                      * 判断参数 TimeTemplateId 是否已赋值
                      * @return TimeTemplateId 是否已赋值
+                     * 
                      */
                     bool TimeTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取触发录制的事件 1：全部
                      * @return EventId 触发录制的事件 1：全部
+                     * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置触发录制的事件 1：全部
-                     * @param EventId 触发录制的事件 1：全部
+                     * @param _eventId 触发录制的事件 1：全部
+                     * 
                      */
                     void SetEventId(const int64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取录制设备列表
                      * @return Devices 录制设备列表
+                     * 
                      */
                     std::vector<DeviceItem> GetDevices() const;
 
                     /**
                      * 设置录制设备列表
-                     * @param Devices 录制设备列表
+                     * @param _devices 录制设备列表
+                     * 
                      */
                     void SetDevices(const std::vector<DeviceItem>& _devices);
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 
@@ -140,6 +155,7 @@ namespace TencentCloud
                      * @return IsModifyDevices 是否更新绑定此录制计划的设备列表
 0 - 不更新
 1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     * 
                      */
                     int64_t GetIsModifyDevices() const;
 
@@ -147,15 +163,17 @@ namespace TencentCloud
                      * 设置是否更新绑定此录制计划的设备列表
 0 - 不更新
 1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
-                     * @param IsModifyDevices 是否更新绑定此录制计划的设备列表
+                     * @param _isModifyDevices 是否更新绑定此录制计划的设备列表
 0 - 不更新
 1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表
+                     * 
                      */
                     void SetIsModifyDevices(const int64_t& _isModifyDevices);
 
                     /**
                      * 判断参数 IsModifyDevices 是否已赋值
                      * @return IsModifyDevices 是否已赋值
+                     * 
                      */
                     bool IsModifyDevicesHasBeenSet() const;
 

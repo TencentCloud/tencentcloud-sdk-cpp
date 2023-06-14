@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，整型，从0开始
                      * @return Offset 偏移量，整型，从0开始
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，整型，从0开始
-                     * @param Offset 偏移量，整型，从0开始
+                     * @param _offset 偏移量，整型，从0开始
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目，整型，不超过100
                      * @return Limit 限制数目，整型，不超过100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目，整型，不超过100
-                     * @param Limit 限制数目，整型，不超过100
+                     * @param _limit 限制数目，整型，不超过100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段
                      * @return Status 列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段
-                     * @param Status 列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段
+                     * @param _status 列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取列表名称的关键字，模糊查询
                      * @return KeyWord 列表名称的关键字，模糊查询
+                     * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
                      * 设置列表名称的关键字，模糊查询
-                     * @param KeyWord 列表名称的关键字，模糊查询
+                     * @param _keyWord 列表名称的关键字，模糊查询
+                     * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
 
                     /**
                      * 判断参数 KeyWord 是否已赋值
                      * @return KeyWord 是否已赋值
+                     * 
                      */
                     bool KeyWordHasBeenSet() const;
 

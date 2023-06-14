@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return TaskId 无
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置无
-                     * @param TaskId 无
+                     * @param _taskId 无
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取带毫秒的时间戳
                      * @return StartTime 带毫秒的时间戳
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置带毫秒的时间戳
-                     * @param StartTime 带毫秒的时间戳
+                     * @param _startTime 带毫秒的时间戳
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取带毫秒的时间戳
                      * @return EndTime 带毫秒的时间戳
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置带毫秒的时间戳
-                     * @param EndTime 带毫秒的时间戳
+                     * @param _endTime 带毫秒的时间戳
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取粒度，1或者5
                      * @return Granularity 粒度，1或者5
+                     * 
                      */
                     uint64_t GetGranularity() const;
 
                     /**
                      * 设置粒度，1或者5
-                     * @param Granularity 粒度，1或者5
+                     * @param _granularity 粒度，1或者5
+                     * 
                      */
                     void SetGranularity(const uint64_t& _granularity);
 
                     /**
                      * 判断参数 Granularity 是否已赋值
                      * @return Granularity 是否已赋值
+                     * 
                      */
                     bool GranularityHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProjectId 无
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置无
-                     * @param ProjectId 无
+                     * @param _projectId 无
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

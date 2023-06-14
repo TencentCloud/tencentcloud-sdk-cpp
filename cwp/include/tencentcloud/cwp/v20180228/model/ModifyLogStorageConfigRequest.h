@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取是否修改有效期
                      * @return IsModifyPeriod 是否修改有效期
+                     * 
                      */
                     bool GetIsModifyPeriod() const;
 
                     /**
                      * 设置是否修改有效期
-                     * @param IsModifyPeriod 是否修改有效期
+                     * @param _isModifyPeriod 是否修改有效期
+                     * 
                      */
                     void SetIsModifyPeriod(const bool& _isModifyPeriod);
 
                     /**
                      * 判断参数 IsModifyPeriod 是否已赋值
                      * @return IsModifyPeriod 是否已赋值
+                     * 
                      */
                     bool IsModifyPeriodHasBeenSet() const;
 
                     /**
                      * 获取存储类型，string数组
                      * @return Type 存储类型，string数组
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
                      * 设置存储类型，string数组
-                     * @param Type 存储类型，string数组
+                     * @param _type 存储类型，string数组
+                     * 
                      */
                     void SetType(const std::vector<std::string>& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取日志存储天数，3640表示不限
                      * @return Period 日志存储天数，3640表示不限
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置日志存储天数，3640表示不限
-                     * @param Period 日志存储天数，3640表示不限
+                     * @param _period 日志存储天数，3640表示不限
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

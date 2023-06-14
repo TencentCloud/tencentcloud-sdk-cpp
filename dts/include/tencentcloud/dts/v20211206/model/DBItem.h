@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置需要迁移或同步的库名，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbName 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
+                     * @param _dbName 需要迁移或同步的库名，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewDbName 迁移或同步后的库名，默认与源库相同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewDbName() const;
 
                     /**
                      * 设置迁移或同步后的库名，默认与源库相同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewDbName 迁移或同步后的库名，默认与源库相同
+                     * @param _newDbName 迁移或同步后的库名，默认与源库相同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewDbName(const std::string& _newDbName);
 
                     /**
                      * 判断参数 NewDbName 是否已赋值
                      * @return NewDbName 是否已赋值
+                     * 
                      */
                     bool NewDbNameHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName 迁移或同步的 schema
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置迁移或同步的 schema
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaName 迁移或同步的 schema
+                     * @param _schemaName 迁移或同步的 schema
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewSchemaName 迁移或同步后的 schema name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewSchemaName() const;
 
                     /**
                      * 设置迁移或同步后的 schema name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewSchemaName 迁移或同步后的 schema name
+                     * @param _newSchemaName 迁移或同步后的 schema name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewSchemaName(const std::string& _newSchemaName);
 
                     /**
                      * 判断参数 NewSchemaName 是否已赋值
                      * @return NewSchemaName 是否已赋值
+                     * 
                      */
                     bool NewSchemaNameHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBMode DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDBMode() const;
 
                     /**
                      * 设置DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DBMode DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
+                     * @param _dBMode DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDBMode(const std::string& _dBMode);
 
                     /**
                      * 判断参数 DBMode 是否已赋值
                      * @return DBMode 是否已赋值
+                     * 
                      */
                     bool DBModeHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaMode schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaMode() const;
 
                     /**
                      * 设置schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaMode schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
+                     * @param _schemaMode schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaMode(const std::string& _schemaMode);
 
                     /**
                      * 判断参数 SchemaMode 是否已赋值
                      * @return SchemaMode 是否已赋值
+                     * 
                      */
                     bool SchemaModeHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableMode 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableMode() const;
 
                     /**
                      * 设置表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableMode 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
+                     * @param _tableMode 表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableMode(const std::string& _tableMode);
 
                     /**
                      * 判断参数 TableMode 是否已赋值
                      * @return TableMode 是否已赋值
+                     * 
                      */
                     bool TableModeHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 表图对象集合，当 TableMode 为 partial 时，此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TableItem> GetTables() const;
 
                     /**
                      * 设置表图对象集合，当 TableMode 为 partial 时，此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tables 表图对象集合，当 TableMode 为 partial 时，此项需要填写
+                     * @param _tables 表图对象集合，当 TableMode 为 partial 时，此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTables(const std::vector<TableItem>& _tables);
 
                     /**
                      * 判断参数 Tables 是否已赋值
                      * @return Tables 是否已赋值
+                     * 
                      */
                     bool TablesHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewMode() const;
 
                     /**
                      * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViewMode(const std::string& _viewMode);
 
                     /**
                      * 判断参数 ViewMode 是否已赋值
                      * @return ViewMode 是否已赋值
+                     * 
                      */
                     bool ViewModeHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Views 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ViewItem> GetViews() const;
 
                     /**
                      * 设置视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Views 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
+                     * @param _views 视图对象集合，当 ViewMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViews(const std::vector<ViewItem>& _views);
 
                     /**
                      * 判断参数 Views 是否已赋值
                      * @return Views 是否已赋值
+                     * 
                      */
                     bool ViewsHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleMode postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleMode() const;
 
                     /**
                      * 设置postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleMode postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
+                     * @param _roleMode postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleMode(const std::string& _roleMode);
 
                     /**
                      * 判断参数 RoleMode 是否已赋值
                      * @return RoleMode 是否已赋值
+                     * 
                      */
                     bool RoleModeHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Roles postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RoleItem> GetRoles() const;
 
                     /**
                      * 设置postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Roles postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
+                     * @param _roles postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoles(const std::vector<RoleItem>& _roles);
 
                     /**
                      * 判断参数 Roles 是否已赋值
                      * @return Roles 是否已赋值
+                     * 
                      */
                     bool RolesHasBeenSet() const;
 
@@ -318,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFunctionMode() const;
 
                     /**
                      * 设置选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FunctionMode 选择要同步的模式，partial为部分，all为整选
+                     * @param _functionMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFunctionMode(const std::string& _functionMode);
 
                     /**
                      * 判断参数 FunctionMode 是否已赋值
                      * @return FunctionMode 是否已赋值
+                     * 
                      */
                     bool FunctionModeHasBeenSet() const;
 
@@ -340,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
                      * 设置选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerMode 选择要同步的模式，partial为部分，all为整选
+                     * @param _triggerMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerMode(const std::string& _triggerMode);
 
                     /**
                      * 判断参数 TriggerMode 是否已赋值
                      * @return TriggerMode 是否已赋值
+                     * 
                      */
                     bool TriggerModeHasBeenSet() const;
 
@@ -362,20 +404,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventMode() const;
 
                     /**
                      * 设置选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventMode 选择要同步的模式，partial为部分，all为整选
+                     * @param _eventMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventMode(const std::string& _eventMode);
 
                     /**
                      * 判断参数 EventMode 是否已赋值
                      * @return EventMode 是否已赋值
+                     * 
                      */
                     bool EventModeHasBeenSet() const;
 
@@ -384,20 +429,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcedureMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcedureMode() const;
 
                     /**
                      * 设置选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcedureMode 选择要同步的模式，partial为部分，all为整选
+                     * @param _procedureMode 选择要同步的模式，partial为部分，all为整选
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcedureMode(const std::string& _procedureMode);
 
                     /**
                      * 判断参数 ProcedureMode 是否已赋值
                      * @return ProcedureMode 是否已赋值
+                     * 
                      */
                     bool ProcedureModeHasBeenSet() const;
 
@@ -406,20 +454,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Functions FunctionMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFunctions() const;
 
                     /**
                      * 设置FunctionMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Functions FunctionMode取值为partial时需要填写
+                     * @param _functions FunctionMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFunctions(const std::vector<std::string>& _functions);
 
                     /**
                      * 判断参数 Functions 是否已赋值
                      * @return Functions 是否已赋值
+                     * 
                      */
                     bool FunctionsHasBeenSet() const;
 
@@ -428,20 +479,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Procedures ProcedureMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetProcedures() const;
 
                     /**
                      * 设置ProcedureMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Procedures ProcedureMode取值为partial时需要填写
+                     * @param _procedures ProcedureMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcedures(const std::vector<std::string>& _procedures);
 
                     /**
                      * 判断参数 Procedures 是否已赋值
                      * @return Procedures 是否已赋值
+                     * 
                      */
                     bool ProceduresHasBeenSet() const;
 
@@ -450,20 +504,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events EventMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEvents() const;
 
                     /**
                      * 设置EventMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Events EventMode取值为partial时需要填写
+                     * @param _events EventMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEvents(const std::vector<std::string>& _events);
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
@@ -472,20 +529,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Triggers TriggerMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTriggers() const;
 
                     /**
                      * 设置TriggerMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Triggers TriggerMode取值为partial时需要填写
+                     * @param _triggers TriggerMode取值为partial时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggers(const std::vector<std::string>& _triggers);
 
                     /**
                      * 判断参数 Triggers 是否已赋值
                      * @return Triggers 是否已赋值
+                     * 
                      */
                     bool TriggersHasBeenSet() const;
 

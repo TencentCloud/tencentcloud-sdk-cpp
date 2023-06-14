@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。
                      * @return UserKeywords 关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。
+                     * 
                      */
                     std::vector<UserKeyword> GetUserKeywords() const;
 
                     /**
                      * 设置关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。
-                     * @param UserKeywords 关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。
+                     * @param _userKeywords 关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。
+                     * 
                      */
                     void SetUserKeywords(const std::vector<UserKeyword>& _userKeywords);
 
                     /**
                      * 判断参数 UserKeywords 是否已赋值
                      * @return UserKeywords 是否已赋值
+                     * 
                      */
                     bool UserKeywordsHasBeenSet() const;
 
                     /**
                      * 获取词库ID
                      * @return LibID 词库ID
+                     * 
                      */
                     std::string GetLibID() const;
 
                     /**
                      * 设置词库ID
-                     * @param LibID 词库ID
+                     * @param _libID 词库ID
+                     * 
                      */
                     void SetLibID(const std::string& _libID);
 
                     /**
                      * 判断参数 LibID 是否已赋值
                      * @return LibID 是否已赋值
+                     * 
                      */
                     bool LibIDHasBeenSet() const;
 

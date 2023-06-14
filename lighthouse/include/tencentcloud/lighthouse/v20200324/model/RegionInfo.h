@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取地域名称，例如，ap-guangzhou。
                      * @return Region 地域名称，例如，ap-guangzhou。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域名称，例如，ap-guangzhou。
-                     * @param Region 地域名称，例如，ap-guangzhou。
+                     * @param _region 地域名称，例如，ap-guangzhou。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域描述，例如，华南地区(广州)。
                      * @return RegionName 地域描述，例如，华南地区(广州)。
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域描述，例如，华南地区(广州)。
-                     * @param RegionName 地域描述，例如，华南地区(广州)。
+                     * @param _regionName 地域描述，例如，华南地区(广州)。
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域是否可用状态，取值仅为AVAILABLE。
                      * @return RegionState 地域是否可用状态，取值仅为AVAILABLE。
+                     * 
                      */
                     std::string GetRegionState() const;
 
                     /**
                      * 设置地域是否可用状态，取值仅为AVAILABLE。
-                     * @param RegionState 地域是否可用状态，取值仅为AVAILABLE。
+                     * @param _regionState 地域是否可用状态，取值仅为AVAILABLE。
+                     * 
                      */
                     void SetRegionState(const std::string& _regionState);
 
                     /**
                      * 判断参数 RegionState 是否已赋值
                      * @return RegionState 是否已赋值
+                     * 
                      */
                     bool RegionStateHasBeenSet() const;
 
                     /**
                      * 获取是否中国大陆地域
                      * @return IsChinaMainland 是否中国大陆地域
+                     * 
                      */
                     bool GetIsChinaMainland() const;
 
                     /**
                      * 设置是否中国大陆地域
-                     * @param IsChinaMainland 是否中国大陆地域
+                     * @param _isChinaMainland 是否中国大陆地域
+                     * 
                      */
                     void SetIsChinaMainland(const bool& _isChinaMainland);
 
                     /**
                      * 判断参数 IsChinaMainland 是否已赋值
                      * @return IsChinaMainland 是否已赋值
+                     * 
                      */
                     bool IsChinaMainlandHasBeenSet() const;
 

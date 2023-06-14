@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取实例化结果：0，实例化中；1，实例化成功；2，实例化失败
                      * @return InitResult 实例化结果：0，实例化中；1，实例化成功；2，实例化失败
+                     * 
                      */
                     uint64_t GetInitResult() const;
 
                     /**
                      * 判断参数 InitResult 是否已赋值
                      * @return InitResult 是否已赋值
+                     * 
                      */
                     bool InitResultHasBeenSet() const;
 
                     /**
                      * 获取实例化信息
                      * @return InitMessage 实例化信息
+                     * 
                      */
                     std::string GetInitMessage() const;
 
                     /**
                      * 判断参数 InitMessage 是否已赋值
                      * @return InitMessage 是否已赋值
+                     * 
                      */
                     bool InitMessageHasBeenSet() const;
 

@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Diagnostics 诊断结果概览
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateDiagnosticOverview> GetDiagnostics() const;
 
                     /**
                      * 判断参数 Diagnostics 是否已赋值
                      * @return Diagnostics 是否已赋值
+                     * 
                      */
                     bool DiagnosticsHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InspectionOverview 集群诊断结果概览
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateInspectionOverview> GetInspectionOverview() const;
 
                     /**
                      * 判断参数 InspectionOverview 是否已赋值
                      * @return InspectionOverview 是否已赋值
+                     * 
                      */
                     bool InspectionOverviewHasBeenSet() const;
 

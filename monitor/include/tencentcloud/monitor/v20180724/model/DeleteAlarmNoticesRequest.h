@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取模块名，这里填“monitor”
                      * @return Module 模块名，这里填“monitor”
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名，这里填“monitor”
-                     * @param Module 模块名，这里填“monitor”
+                     * @param _module 模块名，这里填“monitor”
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取告警通知模板id列表
                      * @return NoticeIds 告警通知模板id列表
+                     * 
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
                      * 设置告警通知模板id列表
-                     * @param NoticeIds 告警通知模板id列表
+                     * @param _noticeIds 告警通知模板id列表
+                     * 
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
 
                     /**
                      * 判断参数 NoticeIds 是否已赋值
                      * @return NoticeIds 是否已赋值
+                     * 
                      */
                     bool NoticeIdsHasBeenSet() const;
 
                     /**
                      * 获取通知模板与策略绑定关系
                      * @return NoticeBindPolicys 通知模板与策略绑定关系
+                     * 
                      */
                     std::vector<NoticeBindPolicys> GetNoticeBindPolicys() const;
 
                     /**
                      * 设置通知模板与策略绑定关系
-                     * @param NoticeBindPolicys 通知模板与策略绑定关系
+                     * @param _noticeBindPolicys 通知模板与策略绑定关系
+                     * 
                      */
                     void SetNoticeBindPolicys(const std::vector<NoticeBindPolicys>& _noticeBindPolicys);
 
                     /**
                      * 判断参数 NoticeBindPolicys 是否已赋值
                      * @return NoticeBindPolicys 是否已赋值
+                     * 
                      */
                     bool NoticeBindPolicysHasBeenSet() const;
 

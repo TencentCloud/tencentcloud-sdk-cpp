@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取账号所属公司或个人名称。
                      * @return CompanyName 账号所属公司或个人名称。
+                     * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
                      * 判断参数 CompanyName 是否已赋值
                      * @return CompanyName 是否已赋值
+                     * 
                      */
                     bool CompanyNameHasBeenSet() const;
 
                     /**
                      * 获取机器总数。
                      * @return MachineNum 机器总数。
+                     * 
                      */
                     uint64_t GetMachineNum() const;
 
                     /**
                      * 判断参数 MachineNum 是否已赋值
                      * @return MachineNum 是否已赋值
+                     * 
                      */
                     bool MachineNumHasBeenSet() const;
 
                     /**
                      * 获取云镜客户端在线数。
                      * @return OnlineMachineNum 云镜客户端在线数。
+                     * 
                      */
                     uint64_t GetOnlineMachineNum() const;
 
                     /**
                      * 判断参数 OnlineMachineNum 是否已赋值
                      * @return OnlineMachineNum 是否已赋值
+                     * 
                      */
                     bool OnlineMachineNumHasBeenSet() const;
 
                     /**
                      * 获取云镜客户端离线数。
                      * @return OfflineMachineNum 云镜客户端离线数。
+                     * 
                      */
                     uint64_t GetOfflineMachineNum() const;
 
                     /**
                      * 判断参数 OfflineMachineNum 是否已赋值
                      * @return OfflineMachineNum 是否已赋值
+                     * 
                      */
                     bool OfflineMachineNumHasBeenSet() const;
 
                     /**
                      * 获取开通云镜专业版数量。
                      * @return ProVersionMachineNum 开通云镜专业版数量。
+                     * 
                      */
                     uint64_t GetProVersionMachineNum() const;
 
                     /**
                      * 判断参数 ProVersionMachineNum 是否已赋值
                      * @return ProVersionMachineNum 是否已赋值
+                     * 
                      */
                     bool ProVersionMachineNumHasBeenSet() const;
 
                     /**
                      * 获取周报开始时间。
                      * @return BeginDate 周报开始时间。
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取周报结束时间。
                      * @return EndDate 周报结束时间。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
@@ -136,72 +150,84 @@ namespace TencentCloud
 <li>HIGH：高</li>
 <li>MIDDLE：中</li>
 <li>LOW：低</li>
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取木马记录数。
                      * @return MalwareNum 木马记录数。
+                     * 
                      */
                     uint64_t GetMalwareNum() const;
 
                     /**
                      * 判断参数 MalwareNum 是否已赋值
                      * @return MalwareNum 是否已赋值
+                     * 
                      */
                     bool MalwareNumHasBeenSet() const;
 
                     /**
                      * 获取异地登录数。
                      * @return NonlocalLoginNum 异地登录数。
+                     * 
                      */
                     uint64_t GetNonlocalLoginNum() const;
 
                     /**
                      * 判断参数 NonlocalLoginNum 是否已赋值
                      * @return NonlocalLoginNum 是否已赋值
+                     * 
                      */
                     bool NonlocalLoginNumHasBeenSet() const;
 
                     /**
                      * 获取密码破解成功数。
                      * @return BruteAttackSuccessNum 密码破解成功数。
+                     * 
                      */
                     uint64_t GetBruteAttackSuccessNum() const;
 
                     /**
                      * 判断参数 BruteAttackSuccessNum 是否已赋值
                      * @return BruteAttackSuccessNum 是否已赋值
+                     * 
                      */
                     bool BruteAttackSuccessNumHasBeenSet() const;
 
                     /**
                      * 获取漏洞数。
                      * @return VulNum 漏洞数。
+                     * 
                      */
                     uint64_t GetVulNum() const;
 
                     /**
                      * 判断参数 VulNum 是否已赋值
                      * @return VulNum 是否已赋值
+                     * 
                      */
                     bool VulNumHasBeenSet() const;
 
                     /**
                      * 获取导出文件下载地址。
                      * @return DownloadUrl 导出文件下载地址。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 

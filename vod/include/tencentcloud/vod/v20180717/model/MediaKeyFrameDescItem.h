@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取打点的视频偏移时间，单位：秒。
                      * @return TimeOffset 打点的视频偏移时间，单位：秒。
+                     * 
                      */
                     double GetTimeOffset() const;
 
                     /**
                      * 设置打点的视频偏移时间，单位：秒。
-                     * @param TimeOffset 打点的视频偏移时间，单位：秒。
+                     * @param _timeOffset 打点的视频偏移时间，单位：秒。
+                     * 
                      */
                     void SetTimeOffset(const double& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取打点的内容字符串，限制 1-128 个字符。
                      * @return Content 打点的内容字符串，限制 1-128 个字符。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置打点的内容字符串，限制 1-128 个字符。
-                     * @param Content 打点的内容字符串，限制 1-128 个字符。
+                     * @param _content 打点的内容字符串，限制 1-128 个字符。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

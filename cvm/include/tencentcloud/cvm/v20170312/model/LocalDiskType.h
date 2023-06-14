@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取本地磁盘类型。
                      * @return Type 本地磁盘类型。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置本地磁盘类型。
-                     * @param Type 本地磁盘类型。
+                     * @param _type 本地磁盘类型。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取本地磁盘属性。
                      * @return PartitionType 本地磁盘属性。
+                     * 
                      */
                     std::string GetPartitionType() const;
 
                     /**
                      * 设置本地磁盘属性。
-                     * @param PartitionType 本地磁盘属性。
+                     * @param _partitionType 本地磁盘属性。
+                     * 
                      */
                     void SetPartitionType(const std::string& _partitionType);
 
                     /**
                      * 判断参数 PartitionType 是否已赋值
                      * @return PartitionType 是否已赋值
+                     * 
                      */
                     bool PartitionTypeHasBeenSet() const;
 
                     /**
                      * 获取本地磁盘最小值。
                      * @return MinSize 本地磁盘最小值。
+                     * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
                      * 设置本地磁盘最小值。
-                     * @param MinSize 本地磁盘最小值。
+                     * @param _minSize 本地磁盘最小值。
+                     * 
                      */
                     void SetMinSize(const int64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
                     /**
                      * 获取本地磁盘最大值。
                      * @return MaxSize 本地磁盘最大值。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置本地磁盘最大值。
-                     * @param MaxSize 本地磁盘最大值。
+                     * @param _maxSize 本地磁盘最大值。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
                      * @return Required 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     * 
                      */
                     std::string GetRequired() const;
 
                     /**
                      * 设置购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
-                     * @param Required 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     * @param _required 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     * 
                      */
                     void SetRequired(const std::string& _required);
 
                     /**
                      * 判断参数 Required 是否已赋值
                      * @return Required 是否已赋值
+                     * 
                      */
                     bool RequiredHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例是否可退还。
                      * @return IsReturnable 实例是否可退还。
+                     * 
                      */
                     bool GetIsReturnable() const;
 
                     /**
                      * 设置实例是否可退还。
-                     * @param IsReturnable 实例是否可退还。
+                     * @param _isReturnable 实例是否可退还。
+                     * 
                      */
                     void SetIsReturnable(const bool& _isReturnable);
 
                     /**
                      * 判断参数 IsReturnable 是否已赋值
                      * @return IsReturnable 是否已赋值
+                     * 
                      */
                     bool IsReturnableHasBeenSet() const;
 
                     /**
                      * 获取实例退还失败错误码。
                      * @return ReturnFailCode 实例退还失败错误码。
+                     * 
                      */
                     int64_t GetReturnFailCode() const;
 
                     /**
                      * 设置实例退还失败错误码。
-                     * @param ReturnFailCode 实例退还失败错误码。
+                     * @param _returnFailCode 实例退还失败错误码。
+                     * 
                      */
                     void SetReturnFailCode(const int64_t& _returnFailCode);
 
                     /**
                      * 判断参数 ReturnFailCode 是否已赋值
                      * @return ReturnFailCode 是否已赋值
+                     * 
                      */
                     bool ReturnFailCodeHasBeenSet() const;
 
                     /**
                      * 获取实例退还失败错误信息。
                      * @return ReturnFailMessage 实例退还失败错误信息。
+                     * 
                      */
                     std::string GetReturnFailMessage() const;
 
                     /**
                      * 设置实例退还失败错误信息。
-                     * @param ReturnFailMessage 实例退还失败错误信息。
+                     * @param _returnFailMessage 实例退还失败错误信息。
+                     * 
                      */
                     void SetReturnFailMessage(const std::string& _returnFailMessage);
 
                     /**
                      * 判断参数 ReturnFailMessage 是否已赋值
                      * @return ReturnFailMessage 是否已赋值
+                     * 
                      */
                     bool ReturnFailMessageHasBeenSet() const;
 

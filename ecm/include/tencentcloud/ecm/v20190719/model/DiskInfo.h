@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取磁盘类型：LOCAL_BASIC
                      * @return DiskType 磁盘类型：LOCAL_BASIC
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型：LOCAL_BASIC
-                     * @param DiskType 磁盘类型：LOCAL_BASIC
+                     * @param _diskType 磁盘类型：LOCAL_BASIC
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘ID
                      * @return DiskId 磁盘ID
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置磁盘ID
-                     * @param DiskId 磁盘ID
+                     * @param _diskId 磁盘ID
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取磁盘大小（GB）
                      * @return DiskSize 磁盘大小（GB）
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘大小（GB）
-                     * @param DiskSize 磁盘大小（GB）
+                     * @param _diskSize 磁盘大小（GB）
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取是否随实例删除。
                      * @return DeleteWithInstance 是否随实例删除。
+                     * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
                      * 设置是否随实例删除。
-                     * @param DeleteWithInstance 是否随实例删除。
+                     * @param _deleteWithInstance 是否随实例删除。
+                     * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
 
                     /**
                      * 判断参数 DeleteWithInstance 是否已赋值
                      * @return DeleteWithInstance 是否已赋值
+                     * 
                      */
                     bool DeleteWithInstanceHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotId 快照ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotId 快照ID
+                     * @param _snapshotId 快照ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 

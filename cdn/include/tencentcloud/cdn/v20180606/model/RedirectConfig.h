@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 自定义回源302 follow请求host配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,51 +61,59 @@ off：关闭
                      * 设置自定义回源302 follow请求host配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 自定义回源302 follow请求host配置开关，取值有：
+                     * @param _switch 自定义回源302 follow请求host配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取主源站follow302请求时带的自定义的host头部
                      * @return FollowRedirectHost 主源站follow302请求时带的自定义的host头部
+                     * 
                      */
                     std::string GetFollowRedirectHost() const;
 
                     /**
                      * 设置主源站follow302请求时带的自定义的host头部
-                     * @param FollowRedirectHost 主源站follow302请求时带的自定义的host头部
+                     * @param _followRedirectHost 主源站follow302请求时带的自定义的host头部
+                     * 
                      */
                     void SetFollowRedirectHost(const std::string& _followRedirectHost);
 
                     /**
                      * 判断参数 FollowRedirectHost 是否已赋值
                      * @return FollowRedirectHost 是否已赋值
+                     * 
                      */
                     bool FollowRedirectHostHasBeenSet() const;
 
                     /**
                      * 获取备份源站follow302请求时带的自定义的host头部
                      * @return FollowRedirectBackupHost 备份源站follow302请求时带的自定义的host头部
+                     * 
                      */
                     std::string GetFollowRedirectBackupHost() const;
 
                     /**
                      * 设置备份源站follow302请求时带的自定义的host头部
-                     * @param FollowRedirectBackupHost 备份源站follow302请求时带的自定义的host头部
+                     * @param _followRedirectBackupHost 备份源站follow302请求时带的自定义的host头部
+                     * 
                      */
                     void SetFollowRedirectBackupHost(const std::string& _followRedirectBackupHost);
 
                     /**
                      * 判断参数 FollowRedirectBackupHost 是否已赋值
                      * @return FollowRedirectBackupHost 是否已赋值
+                     * 
                      */
                     bool FollowRedirectBackupHostHasBeenSet() const;
 

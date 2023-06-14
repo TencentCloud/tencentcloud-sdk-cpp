@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID
                      * @return Id 参数模板ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置参数模板ID
-                     * @param Id 参数模板ID
+                     * @param _id 参数模板ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取参数模板名称
                      * @return TemplateName 参数模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置参数模板名称
-                     * @param TemplateName 参数模板名称
+                     * @param _templateName 参数模板名称
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述
                      * @return TemplateDescription 参数模板描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置参数模板描述
-                     * @param TemplateDescription 参数模板描述
+                     * @param _templateDescription 参数模板描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取引擎版本
                      * @return EngineVersion 引擎版本
+                     * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置引擎版本
-                     * @param EngineVersion 引擎版本
+                     * @param _engineVersion 引擎版本
+                     * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取数据库类型，可选值：NORMAL，SERVERLESS
                      * @return DbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置数据库类型，可选值：NORMAL，SERVERLESS
-                     * @param DbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     * @param _dbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     * 
                      */
                     void SetDbMode(const std::string& _dbMode);
 
                     /**
                      * 判断参数 DbMode 是否已赋值
                      * @return DbMode 是否已赋值
+                     * 
                      */
                     bool DbModeHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamInfoSet 参数模板详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TemplateParamInfo> GetParamInfoSet() const;
 
                     /**
                      * 设置参数模板详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParamInfoSet 参数模板详情
+                     * @param _paramInfoSet 参数模板详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParamInfoSet(const std::vector<TemplateParamInfo>& _paramInfoSet);
 
                     /**
                      * 判断参数 ParamInfoSet 是否已赋值
                      * @return ParamInfoSet 是否已赋值
+                     * 
                      */
                     bool ParamInfoSetHasBeenSet() const;
 

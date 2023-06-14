@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取搜索词。
                      * @return KeyWord 搜索词。
+                     * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
                      * 设置搜索词。
-                     * @param KeyWord 搜索词。
+                     * @param _keyWord 搜索词。
+                     * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
 
                     /**
                      * 判断参数 KeyWord 是否已赋值
                      * @return KeyWord 是否已赋值
+                     * 
                      */
                     bool KeyWordHasBeenSet() const;
 

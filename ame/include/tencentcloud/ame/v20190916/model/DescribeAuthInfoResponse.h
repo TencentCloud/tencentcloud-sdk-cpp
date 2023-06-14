@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取授权项目列表
                      * @return AuthInfo 授权项目列表
+                     * 
                      */
                     std::vector<AuthInfo> GetAuthInfo() const;
 
                     /**
                      * 判断参数 AuthInfo 是否已赋值
                      * @return AuthInfo 是否已赋值
+                     * 
                      */
                     bool AuthInfoHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

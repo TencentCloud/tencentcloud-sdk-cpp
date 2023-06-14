@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取二维码
                      * @return Code 二维码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置二维码
-                     * @param Code 二维码
+                     * @param _code 二维码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取码包ID
                      * @return PackId 码包ID
+                     * 
                      */
                     std::string GetPackId() const;
 
                     /**
                      * 设置码包ID
-                     * @param PackId 码包ID
+                     * @param _packId 码包ID
+                     * 
                      */
                     void SetPackId(const std::string& _packId);
 
                     /**
                      * 判断参数 PackId 是否已赋值
                      * @return PackId 是否已赋值
+                     * 
                      */
                     bool PackIdHasBeenSet() const;
 
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取所属商户ID
                      * @return MerchantId 所属商户ID
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置所属商户ID
-                     * @param MerchantId 所属商户ID
+                     * @param _merchantId 所属商户ID
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取码状态 0: 冻结 1: 激活
                      * @return Status 码状态 0: 冻结 1: 激活
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置码状态 0: 冻结 1: 激活
-                     * @param Status 码状态 0: 冻结 1: 激活
+                     * @param _status 码状态 0: 冻结 1: 激活
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdateTime 修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取商户名称
                      * @return MerchantName 商户名称
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置商户名称
-                     * @param MerchantName 商户名称
+                     * @param _merchantName 商户名称
+                     * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return ProductName 产品名称
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取渠道商ID
                      * @return AgentId 渠道商ID
+                     * 
                      */
                     uint64_t GetAgentId() const;
 
                     /**
                      * 设置渠道商ID
-                     * @param AgentId 渠道商ID
+                     * @param _agentId 渠道商ID
+                     * 
                      */
                     void SetAgentId(const uint64_t& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取码层级 0: 最小级, 1: 一级, 2: 二级
                      * @return Level 码层级 0: 最小级, 1: 一级, 2: 二级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置码层级 0: 最小级, 1: 一级, 2: 二级
-                     * @param Level 码层级 0: 最小级, 1: 一级, 2: 二级
+                     * @param _level 码层级 0: 最小级, 1: 一级, 2: 二级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name pod名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置pod名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name pod名
+                     * @param _name pod名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP pod的IP
+                     * @param _iP pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 

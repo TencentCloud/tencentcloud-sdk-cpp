@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取自定义响应头开关，on或off。
                      * @return Switch 自定义响应头开关，on或off。
+                     * 
                      */
                     std::string GetSwitch() const;
 
                     /**
                      * 设置自定义响应头开关，on或off。
-                     * @param Switch 自定义响应头开关，on或off。
+                     * @param _switch 自定义响应头开关，on或off。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderRules 自定义响应头规则数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HttpHeaderPathRule> GetHeaderRules() const;
 
                     /**
                      * 设置自定义响应头规则数组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderRules 自定义响应头规则数组。
+                     * @param _headerRules 自定义响应头规则数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderRules(const std::vector<HttpHeaderPathRule>& _headerRules);
 
                     /**
                      * 判断参数 HeaderRules 是否已赋值
                      * @return HeaderRules 是否已赋值
+                     * 
                      */
                     bool HeaderRulesHasBeenSet() const;
 

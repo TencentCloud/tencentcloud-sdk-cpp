@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取是否启用
                      * @return Enable 是否启用
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enable 是否启用
+                     * @param _enable 是否启用
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取日志集
                      * @return LogSet 日志集
+                     * 
                      */
                     std::string GetLogSet() const;
 
                     /**
                      * 设置日志集
-                     * @param LogSet 日志集
+                     * @param _logSet 日志集
+                     * 
                      */
                     void SetLogSet(const std::string& _logSet);
 
                     /**
                      * 判断参数 LogSet 是否已赋值
                      * @return LogSet 是否已赋值
+                     * 
                      */
                     bool LogSetHasBeenSet() const;
 
                     /**
                      * 获取日志主题
                      * @return Topic 日志主题
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置日志主题
-                     * @param Topic 日志主题
+                     * @param _topic 日志主题
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取是否删除
                      * @return NeedDelete 是否删除
+                     * 
                      */
                     bool GetNeedDelete() const;
 
                     /**
                      * 设置是否删除
-                     * @param NeedDelete 是否删除
+                     * @param _needDelete 是否删除
+                     * 
                      */
                     void SetNeedDelete(const bool& _needDelete);
 
                     /**
                      * 判断参数 NeedDelete 是否已赋值
                      * @return NeedDelete 是否已赋值
+                     * 
                      */
                     bool NeedDeleteHasBeenSet() const;
 

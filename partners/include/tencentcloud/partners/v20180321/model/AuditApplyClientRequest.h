@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待审核客户账号ID
                      * @return ClientUin 待审核客户账号ID
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 设置待审核客户账号ID
-                     * @param ClientUin 待审核客户账号ID
+                     * @param _clientUin 待审核客户账号ID
+                     * 
                      */
                     void SetClientUin(const std::string& _clientUin);
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 
                     /**
                      * 获取审核结果，可能的取值：accept/reject
                      * @return AuditResult 审核结果，可能的取值：accept/reject
+                     * 
                      */
                     std::string GetAuditResult() const;
 
                     /**
                      * 设置审核结果，可能的取值：accept/reject
-                     * @param AuditResult 审核结果，可能的取值：accept/reject
+                     * @param _auditResult 审核结果，可能的取值：accept/reject
+                     * 
                      */
                     void SetAuditResult(const std::string& _auditResult);
 
                     /**
                      * 判断参数 AuditResult 是否已赋值
                      * @return AuditResult 是否已赋值
+                     * 
                      */
                     bool AuditResultHasBeenSet() const;
 
                     /**
                      * 获取申请理由，B类客户审核通过时必须填写申请理由
                      * @return Note 申请理由，B类客户审核通过时必须填写申请理由
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置申请理由，B类客户审核通过时必须填写申请理由
-                     * @param Note 申请理由，B类客户审核通过时必须填写申请理由
+                     * @param _note 申请理由，B类客户审核通过时必须填写申请理由
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 

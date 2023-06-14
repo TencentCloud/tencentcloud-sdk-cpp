@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricLabelWithValuesSet 指标所有的label和values数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MetricLabelWithValues> GetMetricLabelWithValuesSet() const;
 
                     /**
                      * 判断参数 MetricLabelWithValuesSet 是否已赋值
                      * @return MetricLabelWithValuesSet 是否已赋值
+                     * 
                      */
                     bool MetricLabelWithValuesSetHasBeenSet() const;
 

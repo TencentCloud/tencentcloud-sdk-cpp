@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
                      * @return CmqModel CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
+                     * 
                      */
                     std::string GetCmqModel() const;
 
                     /**
                      * 设置CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
-                     * @param CmqModel CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
+                     * @param _cmqModel CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。
+                     * 
                      */
                     void SetCmqModel(const std::string& _cmqModel);
 
                     /**
                      * 判断参数 CmqModel 是否已赋值
                      * @return CmqModel 是否已赋值
+                     * 
                      */
                     bool CmqModelHasBeenSet() const;
 
                     /**
                      * 获取CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
                      * @return CmqRegion CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
+                     * 
                      */
                     std::string GetCmqRegion() const;
 
                     /**
                      * 设置CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
-                     * @param CmqRegion CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
+                     * @param _cmqRegion CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。
+                     * 
                      */
                     void SetCmqRegion(const std::string& _cmqRegion);
 
                     /**
                      * 判断参数 CmqRegion 是否已赋值
                      * @return CmqRegion 是否已赋值
+                     * 
                      */
                     bool CmqRegionHasBeenSet() const;
 
                     /**
                      * 获取当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
                      * @return TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
-                     * @param TopicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
+                     * @param _topicName 当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
                      * @return QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
-                     * @param QueueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     * @param _queueName 当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
                      * @return NotifyMode 工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
+                     * 
                      */
                     std::string GetNotifyMode() const;
 
                     /**
                      * 设置工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
-                     * @param NotifyMode 工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
+                     * @param _notifyMode 工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。
+                     * 
                      */
                     void SetNotifyMode(const std::string& _notifyMode);
 
                     /**
                      * 判断参数 NotifyMode 是否已赋值
                      * @return NotifyMode 是否已赋值
+                     * 
                      */
                     bool NotifyModeHasBeenSet() const;
 
@@ -152,6 +167,7 @@ namespace TencentCloud
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
 <li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * 
                      */
                     std::string GetNotifyType() const;
 
@@ -163,37 +179,42 @@ namespace TencentCloud
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
 <li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * @param NotifyType 通知类型，可选值：
+                     * @param _notifyType 通知类型，可选值：
 <li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
 <li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
                     /**
                      * 判断参数 NotifyType 是否已赋值
                      * @return NotifyType 是否已赋值
+                     * 
                      */
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取HTTP回调地址，NotifyType为URL时必填。
                      * @return NotifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置HTTP回调地址，NotifyType为URL时必填。
-                     * @param NotifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     * @param _notifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 
@@ -204,6 +225,7 @@ namespace TencentCloud
                      * @return AwsSQS AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AwsSQS GetAwsSQS() const;
 
@@ -211,15 +233,17 @@ namespace TencentCloud
                      * 设置AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AwsSQS AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+                     * @param _awsSQS AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAwsSQS(const AwsSQS& _awsSQS);
 
                     /**
                      * 判断参数 AwsSQS 是否已赋值
                      * @return AwsSQS 是否已赋值
+                     * 
                      */
                     bool AwsSQSHasBeenSet() const;
 

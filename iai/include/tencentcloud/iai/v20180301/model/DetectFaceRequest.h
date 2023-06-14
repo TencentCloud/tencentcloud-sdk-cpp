@@ -47,20 +47,23 @@ namespace TencentCloud
 此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。
                      * @return MaxFaceNum 最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 
 此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。
+                     * 
                      */
                     uint64_t GetMaxFaceNum() const;
 
                     /**
                      * 设置最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 
 此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。
-                     * @param MaxFaceNum 最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 
+                     * @param _maxFaceNum 最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 
 此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。
+                     * 
                      */
                     void SetMaxFaceNum(const uint64_t& _maxFaceNum);
 
                     /**
                      * 判断参数 MaxFaceNum 是否已赋值
                      * @return MaxFaceNum 是否已赋值
+                     * 
                      */
                     bool MaxFaceNumHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return MinFaceSize 人脸长和宽的最小尺寸，单位为像素。
 默认为34。建议不低于34。
 低于MinFaceSize值的人脸不会被检测。
+                     * 
                      */
                     uint64_t GetMinFaceSize() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置人脸长和宽的最小尺寸，单位为像素。
 默认为34。建议不低于34。
 低于MinFaceSize值的人脸不会被检测。
-                     * @param MinFaceSize 人脸长和宽的最小尺寸，单位为像素。
+                     * @param _minFaceSize 人脸长和宽的最小尺寸，单位为像素。
 默认为34。建议不低于34。
 低于MinFaceSize值的人脸不会被检测。
+                     * 
                      */
                     void SetMinFaceSize(const uint64_t& _minFaceSize);
 
                     /**
                      * 判断参数 MinFaceSize 是否已赋值
                      * @return MinFaceSize 是否已赋值
+                     * 
                      */
                     bool MinFaceSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      * @return Image 图片 base64 数据，base64 编码后大小不可超过5M。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置图片 base64 数据，base64 编码后大小不可超过5M。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 图片 base64 数据，base64 编码后大小不可超过5M。
+                     * @param _image 图片 base64 数据，base64 编码后大小不可超过5M。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -123,6 +132,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -132,17 +142,19 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+                     * @param _url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
 Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -155,6 +167,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 非 1 值均视为不需要返回，此时 FaceAttributesInfo 不具备参考意义。  
 最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceAttributesInfo 不具备参考意义。  
 提取人脸属性信息较为耗时，如不需要人脸属性信息，建议关闭此项功能，加快人脸检测速度。
+                     * 
                      */
                     uint64_t GetNeedFaceAttributes() const;
 
@@ -163,16 +176,18 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 非 1 值均视为不需要返回，此时 FaceAttributesInfo 不具备参考意义。  
 最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceAttributesInfo 不具备参考意义。  
 提取人脸属性信息较为耗时，如不需要人脸属性信息，建议关闭此项功能，加快人脸检测速度。
-                     * @param NeedFaceAttributes 是否需要返回人脸属性信息（FaceAttributesInfo）。0 为不需要返回，1 为需要返回。默认为 0。 
+                     * @param _needFaceAttributes 是否需要返回人脸属性信息（FaceAttributesInfo）。0 为不需要返回，1 为需要返回。默认为 0。 
 非 1 值均视为不需要返回，此时 FaceAttributesInfo 不具备参考意义。  
 最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceAttributesInfo 不具备参考意义。  
 提取人脸属性信息较为耗时，如不需要人脸属性信息，建议关闭此项功能，加快人脸检测速度。
+                     * 
                      */
                     void SetNeedFaceAttributes(const uint64_t& _needFaceAttributes);
 
                     /**
                      * 判断参数 NeedFaceAttributes 是否已赋值
                      * @return NeedFaceAttributes 是否已赋值
+                     * 
                      */
                     bool NeedFaceAttributesHasBeenSet() const;
 
@@ -185,6 +200,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 非 1 值均视为不进行质量检测。
 最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
+                     * 
                      */
                     uint64_t GetNeedQualityDetection() const;
 
@@ -193,16 +209,18 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 非 1 值均视为不进行质量检测。
 最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
-                     * @param NeedQualityDetection 是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
+                     * @param _needQualityDetection 是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
 最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
+                     * 
                      */
                     void SetNeedQualityDetection(const uint64_t& _needQualityDetection);
 
                     /**
                      * 判断参数 NeedQualityDetection 是否已赋值
                      * @return NeedQualityDetection 是否已赋值
+                     * 
                      */
                     bool NeedQualityDetectionHasBeenSet() const;
 
@@ -213,6 +231,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * @return FaceModelVersion 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
 2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
@@ -220,33 +239,38 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * 设置人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
 2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
-                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+                     * @param _faceModelVersion 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
 2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。 
 不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。
+                     * 
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 
                     /**
                      * 获取是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
                      * @return NeedRotateDetection 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     * 
                      */
                     uint64_t GetNeedRotateDetection() const;
 
                     /**
                      * 设置是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
-                     * @param NeedRotateDetection 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     * @param _needRotateDetection 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     * 
                      */
                     void SetNeedRotateDetection(const uint64_t& _needRotateDetection);
 
                     /**
                      * 判断参数 NeedRotateDetection 是否已赋值
                      * @return NeedRotateDetection 是否已赋值
+                     * 
                      */
                     bool NeedRotateDetectionHasBeenSet() const;
 

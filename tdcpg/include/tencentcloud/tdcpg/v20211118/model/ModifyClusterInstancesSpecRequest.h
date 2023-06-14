@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表，目前只支持单个实例修改
                      * @return InstanceIdSet 实例ID列表，目前只支持单个实例修改
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置实例ID列表，目前只支持单个实例修改
-                     * @param InstanceIdSet 实例ID列表，目前只支持单个实例修改
+                     * @param _instanceIdSet 实例ID列表，目前只支持单个实例修改
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取修改后的CPU核数。取值参考文档【购买指南】
                      * @return CPU 修改后的CPU核数。取值参考文档【购买指南】
+                     * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
                      * 设置修改后的CPU核数。取值参考文档【购买指南】
-                     * @param CPU 修改后的CPU核数。取值参考文档【购买指南】
+                     * @param _cPU 修改后的CPU核数。取值参考文档【购买指南】
+                     * 
                      */
                     void SetCPU(const uint64_t& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取修改后的内存大小，单位GiB。取值参考文档【购买指南】
                      * @return Memory 修改后的内存大小，单位GiB。取值参考文档【购买指南】
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置修改后的内存大小，单位GiB。取值参考文档【购买指南】
-                     * @param Memory 修改后的内存大小，单位GiB。取值参考文档【购买指南】
+                     * @param _memory 修改后的内存大小，单位GiB。取值参考文档【购买指南】
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -121,6 +133,7 @@ namespace TencentCloud
                      * @return OperationTiming 操作时机
  - IMMEDIATE：立即执行 
  - MAINTAIN_PERIOD：维护窗口期执行
+                     * 
                      */
                     std::string GetOperationTiming() const;
 
@@ -128,15 +141,17 @@ namespace TencentCloud
                      * 设置操作时机
  - IMMEDIATE：立即执行 
  - MAINTAIN_PERIOD：维护窗口期执行
-                     * @param OperationTiming 操作时机
+                     * @param _operationTiming 操作时机
  - IMMEDIATE：立即执行 
  - MAINTAIN_PERIOD：维护窗口期执行
+                     * 
                      */
                     void SetOperationTiming(const std::string& _operationTiming);
 
                     /**
                      * 判断参数 OperationTiming 是否已赋值
                      * @return OperationTiming 是否已赋值
+                     * 
                      */
                     bool OperationTimingHasBeenSet() const;
 

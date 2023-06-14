@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取词汇库中的单词
                      * @return Keyword 词汇库中的单词
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置词汇库中的单词
-                     * @param Keyword 词汇库中的单词
+                     * @param _keyword 词汇库中的单词
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取单词出现在该音频中总次数
                      * @return Value 单词出现在该音频中总次数
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置单词出现在该音频中总次数
-                     * @param Value 单词出现在该音频中总次数
+                     * @param _value 单词出现在该音频中总次数
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取内核版本
                      * @return CynosVersion 内核版本
+                     * 
                      */
                     std::string GetCynosVersion() const;
 
                     /**
                      * 设置内核版本
-                     * @param CynosVersion 内核版本
+                     * @param _cynosVersion 内核版本
+                     * 
                      */
                     void SetCynosVersion(const std::string& _cynosVersion);
 
                     /**
                      * 判断参数 CynosVersion 是否已赋值
                      * @return CynosVersion 是否已赋值
+                     * 
                      */
                     bool CynosVersionHasBeenSet() const;
 
                     /**
                      * 获取升级时间类型，可选：upgradeImmediate,upgradeInMaintain
                      * @return UpgradeType 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
                      * 设置升级时间类型，可选：upgradeImmediate,upgradeInMaintain
-                     * @param UpgradeType 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * @param _upgradeType 升级时间类型，可选：upgradeImmediate,upgradeInMaintain
+                     * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
 
                     /**
                      * 判断参数 UpgradeType 是否已赋值
                      * @return UpgradeType 是否已赋值
+                     * 
                      */
                     bool UpgradeTypeHasBeenSet() const;
 

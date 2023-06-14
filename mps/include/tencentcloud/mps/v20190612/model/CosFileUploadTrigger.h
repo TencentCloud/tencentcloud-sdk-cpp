@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取工作流绑定的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      * @return Bucket 工作流绑定的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置工作流绑定的 COS Bucket 名，如 TopRankVideo-125xxx88。
-                     * @param Bucket 工作流绑定的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * @param _bucket 工作流绑定的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取工作流绑定的 COS Bucket 所属园区，如 ap-chongiqng。
                      * @return Region 工作流绑定的 COS Bucket 所属园区，如 ap-chongiqng。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置工作流绑定的 COS Bucket 所属园区，如 ap-chongiqng。
-                     * @param Region 工作流绑定的 COS Bucket 所属园区，如 ap-chongiqng。
+                     * @param _region 工作流绑定的 COS Bucket 所属园区，如 ap-chongiqng。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
                      * @return Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
+                     * 
                      */
                     std::string GetDir() const;
 
                     /**
                      * 设置工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
-                     * @param Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
+                     * @param _dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
+                     * 
                      */
                     void SetDir(const std::string& _dir);
 
                     /**
                      * 判断参数 Dir 是否已赋值
                      * @return Dir 是否已赋值
+                     * 
                      */
                     bool DirHasBeenSet() const;
 
                     /**
                      * 获取工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。
                      * @return Formats 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。
+                     * 
                      */
                     std::vector<std::string> GetFormats() const;
 
                     /**
                      * 设置工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。
-                     * @param Formats 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。
+                     * @param _formats 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。
+                     * 
                      */
                     void SetFormats(const std::vector<std::string>& _formats);
 
                     /**
                      * 判断参数 Formats 是否已赋值
                      * @return Formats 是否已赋值
+                     * 
                      */
                     bool FormatsHasBeenSet() const;
 

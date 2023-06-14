@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取会话ID
                      * @return SessionId 会话ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话ID
-                     * @param SessionId 会话ID
+                     * @param _sessionId 会话ID
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

@@ -50,12 +50,14 @@ VerifyType 传 fileCheck 时，为文件内容。
                      * @return Content 验证内容。
 VerifyType 传 dnsCheck 时，为要配的 TXT 记录值。
 VerifyType 传 fileCheck 时，为文件内容。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -66,12 +68,14 @@ VerifyType 传 fileCheck 时，为文件内容。
                      * @return Status 域名验证状态。
 >=0 为已验证归属。
 <0 未验证归属权。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -80,12 +84,14 @@ VerifyType 传 fileCheck 时，为文件内容。
 同一主域名下的所有域名只需成功验证一次，后续均无需再验证。
                      * @return MainDomain DomainName 对应的主域名。
 同一主域名下的所有域名只需成功验证一次，后续均无需再验证。
+                     * 
                      */
                     std::string GetMainDomain() const;
 
                     /**
                      * 判断参数 MainDomain 是否已赋值
                      * @return MainDomain 是否已赋值
+                     * 
                      */
                     bool MainDomainHasBeenSet() const;
 

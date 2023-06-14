@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取拉取最大条数，最多100条。
                      * @return Limit 拉取最大条数，最多100条。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置拉取最大条数，最多100条。
-                     * @param Limit 拉取最大条数，最多100条。
+                     * @param _limit 拉取最大条数，最多100条。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。
                      * @return SmsSdkAppid 短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。
+                     * 
                      */
                     std::string GetSmsSdkAppid() const;
 
                     /**
                      * 设置短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。
-                     * @param SmsSdkAppid 短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。
+                     * @param _smsSdkAppid 短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际 SdkAppid，例如1400006666。
+                     * 
                      */
                     void SetSmsSdkAppid(const std::string& _smsSdkAppid);
 
                     /**
                      * 判断参数 SmsSdkAppid 是否已赋值
                      * @return SmsSdkAppid 是否已赋值
+                     * 
                      */
                     bool SmsSdkAppidHasBeenSet() const;
 

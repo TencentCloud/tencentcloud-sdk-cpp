@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取许可证概览信息
                      * @return LicenseSummary 许可证概览信息
+                     * 
                      */
                     LicenseSummary GetLicenseSummary() const;
 
                     /**
                      * 设置许可证概览信息
-                     * @param LicenseSummary 许可证概览信息
+                     * @param _licenseSummary 许可证概览信息
+                     * 
                      */
                     void SetLicenseSummary(const LicenseSummary& _licenseSummary);
 
                     /**
                      * 判断参数 LicenseSummary 是否已赋值
                      * @return LicenseSummary 是否已赋值
+                     * 
                      */
                     bool LicenseSummaryHasBeenSet() const;
 
                     /**
                      * 获取许可证详细信息
                      * @return LicenseDetail 许可证详细信息
+                     * 
                      */
                     LicenseDetail GetLicenseDetail() const;
 
                     /**
                      * 设置许可证详细信息
-                     * @param LicenseDetail 许可证详细信息
+                     * @param _licenseDetail 许可证详细信息
+                     * 
                      */
                     void SetLicenseDetail(const LicenseDetail& _licenseDetail);
 
                     /**
                      * 判断参数 LicenseDetail 是否已赋值
                      * @return LicenseDetail 是否已赋值
+                     * 
                      */
                     bool LicenseDetailHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 规则创建时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置规则创建时间。
 注：此字段为北京时间（UTC+8时区）。
-                     * @param CreateTime 规则创建时间。
+                     * @param _createTime 规则创建时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -73,74 +76,86 @@ namespace TencentCloud
 注：此字段为北京时间（UTC+8时区）。
                      * @return UpdateTime 规则更新时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置规则更新时间。
 注：此字段为北京时间（UTC+8时区）。
-                     * @param UpdateTime 规则更新时间。
+                     * @param _updateTime 规则更新时间。
 注：此字段为北京时间（UTC+8时区）。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取模板 ID。
                      * @return TemplateId 模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板 ID。
-                     * @param TemplateId 模板 ID。
+                     * @param _templateId 模板 ID。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return DomainName 推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取推流路径。
                      * @return AppName 推流路径。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

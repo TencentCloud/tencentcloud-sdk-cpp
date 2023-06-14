@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetAttributes 服务器舰队属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetAttributes> GetFleetAttributes() const;
 
                     /**
                      * 判断参数 FleetAttributes 是否已赋值
                      * @return FleetAttributes 是否已赋值
+                     * 
                      */
                     bool FleetAttributesHasBeenSet() const;
 
                     /**
                      * 获取服务器舰队总数，最小值0
                      * @return TotalCount 服务器舰队总数，最小值0
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

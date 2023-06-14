@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
                      * @return Pos 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
+                     * 
                      */
                     uint64_t GetPos() const;
 
                     /**
                      * 设置时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-                     * @param Pos 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
+                     * @param _pos 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
+                     * 
                      */
                     void SetPos(const uint64_t& _pos);
 
                     /**
                      * 判断参数 Pos 是否已赋值
                      * @return Pos 是否已赋值
+                     * 
                      */
                     bool PosHasBeenSet() const;
 
                     /**
                      * 获取显示时间戳的时区，默认东八区
                      * @return TimeZone 显示时间戳的时区，默认东八区
+                     * 
                      */
                     uint64_t GetTimeZone() const;
 
                     /**
                      * 设置显示时间戳的时区，默认东八区
-                     * @param TimeZone 显示时间戳的时区，默认东八区
+                     * @param _timeZone 显示时间戳的时区，默认东八区
+                     * 
                      */
                     void SetTimeZone(const uint64_t& _timeZone);
 
                     /**
                      * 判断参数 TimeZone 是否已赋值
                      * @return TimeZone 是否已赋值
+                     * 
                      */
                     bool TimeZoneHasBeenSet() const;
 

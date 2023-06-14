@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取多个生命周期规则，上限为10
                      * @return LifeCycleRules 多个生命周期规则，上限为10
+                     * 
                      */
                     std::vector<LifeCycleRule> GetLifeCycleRules() const;
 
                     /**
                      * 设置多个生命周期规则，上限为10
-                     * @param LifeCycleRules 多个生命周期规则，上限为10
+                     * @param _lifeCycleRules 多个生命周期规则，上限为10
+                     * 
                      */
                     void SetLifeCycleRules(const std::vector<LifeCycleRule>& _lifeCycleRules);
 
                     /**
                      * 判断参数 LifeCycleRules 是否已赋值
                      * @return LifeCycleRules 是否已赋值
+                     * 
                      */
                     bool LifeCycleRulesHasBeenSet() const;
 

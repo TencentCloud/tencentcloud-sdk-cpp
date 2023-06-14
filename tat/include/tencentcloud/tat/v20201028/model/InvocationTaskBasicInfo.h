@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取执行任务ID。
                      * @return InvocationTaskId 执行任务ID。
+                     * 
                      */
                     std::string GetInvocationTaskId() const;
 
                     /**
                      * 设置执行任务ID。
-                     * @param InvocationTaskId 执行任务ID。
+                     * @param _invocationTaskId 执行任务ID。
+                     * 
                      */
                     void SetInvocationTaskId(const std::string& _invocationTaskId);
 
                     /**
                      * 判断参数 InvocationTaskId 是否已赋值
                      * @return InvocationTaskId 是否已赋值
+                     * 
                      */
                     bool InvocationTaskIdHasBeenSet() const;
 
@@ -93,6 +96,7 @@ namespace TencentCloud
 <li> CANCELLING：取消中
 <li> CANCELLED：已取消（命令启动前就被取消）
 <li> TERMINATED：已中止（命令执行期间被取消）
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
@@ -111,7 +115,7 @@ namespace TencentCloud
 <li> CANCELLING：取消中
 <li> CANCELLED：已取消（命令启动前就被取消）
 <li> TERMINATED：已中止（命令执行期间被取消）
-                     * @param TaskStatus 执行任务状态。取值范围：
+                     * @param _taskStatus 执行任务状态。取值范围：
 <li> PENDING：等待下发 
 <li> DELIVERING：下发中
 <li> DELIVER_DELAYED：延时下发 
@@ -125,30 +129,35 @@ namespace TencentCloud
 <li> CANCELLING：取消中
 <li> CANCELLED：已取消（命令启动前就被取消）
 <li> TERMINATED：已中止（命令执行期间被取消）
+                     * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

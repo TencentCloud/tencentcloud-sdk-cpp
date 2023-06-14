@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取节点ID
                      * @return NodeId 节点ID
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点ID
-                     * @param NodeId 节点ID
+                     * @param _nodeId 节点ID
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点IP
                      * @return Ip 节点IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置节点IP
-                     * @param Ip 节点IP
+                     * @param _ip 节点IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取节点端口
                      * @return Port 节点端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置节点端口
-                     * @param Port 节点端口
+                     * @param _port 节点端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

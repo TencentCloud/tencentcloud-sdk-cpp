@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID，不传入时查询全量
                      * @return NamespaceId 命名空间ID，不传入时查询全量
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID，不传入时查询全量
-                     * @param NamespaceId 命名空间ID，不传入时查询全量
+                     * @param _namespaceId 命名空间ID，不传入时查询全量
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页条数，默认为20
                      * @return Limit 每页条数，默认为20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页条数，默认为20
-                     * @param Limit 每页条数，默认为20
+                     * @param _limit 每页条数，默认为20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

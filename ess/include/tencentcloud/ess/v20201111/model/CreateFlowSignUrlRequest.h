@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取流程编号
                      * @return FlowId 流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流程编号
-                     * @param FlowId 流程编号
+                     * @param _flowId 流程编号
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
                      * @return FlowApproverInfos 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * 
                      */
                     std::vector<FlowCreateApprover> GetFlowApproverInfos() const;
 
                     /**
                      * 设置流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
-                     * @param FlowApproverInfos 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * @param _flowApproverInfos 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * 
                      */
                     void SetFlowApproverInfos(const std::vector<FlowCreateApprover>& _flowApproverInfos);
 
                     /**
                      * 判断参数 FlowApproverInfos 是否已赋值
                      * @return FlowApproverInfos 是否已赋值
+                     * 
                      */
                     bool FlowApproverInfosHasBeenSet() const;
 
                     /**
                      * 获取用户信息，此结构体UserId必填
                      * @return Operator 用户信息，此结构体UserId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置用户信息，此结构体UserId必填
-                     * @param Operator 用户信息，此结构体UserId必填
+                     * @param _operator 用户信息，此结构体UserId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取机构信息，暂未开放
                      * @return Organization 机构信息，暂未开放
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置机构信息，暂未开放
-                     * @param Organization 机构信息，暂未开放
+                     * @param _organization 机构信息，暂未开放
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 

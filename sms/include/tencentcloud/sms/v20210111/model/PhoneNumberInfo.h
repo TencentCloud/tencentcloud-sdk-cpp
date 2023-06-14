@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取号码信息查询错误码，查询成功返回 "Ok"。
                      * @return Code 号码信息查询错误码，查询成功返回 "Ok"。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置号码信息查询错误码，查询成功返回 "Ok"。
-                     * @param Code 号码信息查询错误码，查询成功返回 "Ok"。
+                     * @param _code 号码信息查询错误码，查询成功返回 "Ok"。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取号码信息查询错误码描述。
                      * @return Message 号码信息查询错误码描述。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置号码信息查询错误码描述。
-                     * @param Message 号码信息查询错误码描述。
+                     * @param _message 号码信息查询错误码描述。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取国家（或地区）码。
                      * @return NationCode 国家（或地区）码。
+                     * 
                      */
                     std::string GetNationCode() const;
 
                     /**
                      * 设置国家（或地区）码。
-                     * @param NationCode 国家（或地区）码。
+                     * @param _nationCode 国家（或地区）码。
+                     * 
                      */
                     void SetNationCode(const std::string& _nationCode);
 
                     /**
                      * 判断参数 NationCode 是否已赋值
                      * @return NationCode 是否已赋值
+                     * 
                      */
                     bool NationCodeHasBeenSet() const;
 
                     /**
                      * 获取用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
                      * @return SubscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * 
                      */
                     std::string GetSubscriberNumber() const;
 
                     /**
                      * 设置用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
-                     * @param SubscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * @param _subscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * 
                      */
                     void SetSubscriberNumber(const std::string& _subscriberNumber);
 
                     /**
                      * 判断参数 SubscriberNumber 是否已赋值
                      * @return SubscriberNumber 是否已赋值
+                     * 
                      */
                     bool SubscriberNumberHasBeenSet() const;
 
                     /**
                      * 获取解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。
                      * @return PhoneNumber 解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。
-                     * @param PhoneNumber 解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。
+                     * @param _phoneNumber 解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。
                      * @return IsoCode 国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。
+                     * 
                      */
                     std::string GetIsoCode() const;
 
                     /**
                      * 设置国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。
-                     * @param IsoCode 国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。
+                     * @param _isoCode 国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。
+                     * 
                      */
                     void SetIsoCode(const std::string& _isoCode);
 
                     /**
                      * 判断参数 IsoCode 是否已赋值
                      * @return IsoCode 是否已赋值
+                     * 
                      */
                     bool IsoCodeHasBeenSet() const;
 
                     /**
                      * 获取国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)
                      * @return IsoName 国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)
+                     * 
                      */
                     std::string GetIsoName() const;
 
                     /**
                      * 设置国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)
-                     * @param IsoName 国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)
+                     * @param _isoName 国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)
+                     * 
                      */
                     void SetIsoName(const std::string& _isoName);
 
                     /**
                      * 判断参数 IsoName 是否已赋值
                      * @return IsoName 是否已赋值
+                     * 
                      */
                     bool IsoNameHasBeenSet() const;
 

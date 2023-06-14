@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取短信活动配额
                      * @return SmsCampaignAmount 短信活动配额
+                     * 
                      */
                     uint64_t GetSmsCampaignAmount() const;
 
                     /**
                      * 设置短信活动配额
-                     * @param SmsCampaignAmount 短信活动配额
+                     * @param _smsCampaignAmount 短信活动配额
+                     * 
                      */
                     void SetSmsCampaignAmount(const uint64_t& _smsCampaignAmount);
 
                     /**
                      * 判断参数 SmsCampaignAmount 是否已赋值
                      * @return SmsCampaignAmount 是否已赋值
+                     * 
                      */
                     bool SmsCampaignAmountHasBeenSet() const;
 
                     /**
                      * 获取短信活动消耗配额
                      * @return SmsCampaignConsume 短信活动消耗配额
+                     * 
                      */
                     uint64_t GetSmsCampaignConsume() const;
 
                     /**
                      * 设置短信活动消耗配额
-                     * @param SmsCampaignConsume 短信活动消耗配额
+                     * @param _smsCampaignConsume 短信活动消耗配额
+                     * 
                      */
                     void SetSmsCampaignConsume(const uint64_t& _smsCampaignConsume);
 
                     /**
                      * 判断参数 SmsCampaignConsume 是否已赋值
                      * @return SmsCampaignConsume 是否已赋值
+                     * 
                      */
                     bool SmsCampaignConsumeHasBeenSet() const;
 
                     /**
                      * 获取短信发送额度
                      * @return SmsSendAmount 短信发送额度
+                     * 
                      */
                     uint64_t GetSmsSendAmount() const;
 
                     /**
                      * 设置短信发送额度
-                     * @param SmsSendAmount 短信发送额度
+                     * @param _smsSendAmount 短信发送额度
+                     * 
                      */
                     void SetSmsSendAmount(const uint64_t& _smsSendAmount);
 
                     /**
                      * 判断参数 SmsSendAmount 是否已赋值
                      * @return SmsSendAmount 是否已赋值
+                     * 
                      */
                     bool SmsSendAmountHasBeenSet() const;
 
                     /**
                      * 获取短信发送消耗额度
                      * @return SmsSendConsume 短信发送消耗额度
+                     * 
                      */
                     uint64_t GetSmsSendConsume() const;
 
                     /**
                      * 设置短信发送消耗额度
-                     * @param SmsSendConsume 短信发送消耗额度
+                     * @param _smsSendConsume 短信发送消耗额度
+                     * 
                      */
                     void SetSmsSendConsume(const uint64_t& _smsSendConsume);
 
                     /**
                      * 判断参数 SmsSendConsume 是否已赋值
                      * @return SmsSendConsume 是否已赋值
+                     * 
                      */
                     bool SmsSendConsumeHasBeenSet() const;
 
                     /**
                      * 获取超短活动额度
                      * @return MmsCampaignAmount 超短活动额度
+                     * 
                      */
                     uint64_t GetMmsCampaignAmount() const;
 
                     /**
                      * 设置超短活动额度
-                     * @param MmsCampaignAmount 超短活动额度
+                     * @param _mmsCampaignAmount 超短活动额度
+                     * 
                      */
                     void SetMmsCampaignAmount(const uint64_t& _mmsCampaignAmount);
 
                     /**
                      * 判断参数 MmsCampaignAmount 是否已赋值
                      * @return MmsCampaignAmount 是否已赋值
+                     * 
                      */
                     bool MmsCampaignAmountHasBeenSet() const;
 
                     /**
                      * 获取超短活动消耗额度
                      * @return MmsCampaignConsume 超短活动消耗额度
+                     * 
                      */
                     uint64_t GetMmsCampaignConsume() const;
 
                     /**
                      * 设置超短活动消耗额度
-                     * @param MmsCampaignConsume 超短活动消耗额度
+                     * @param _mmsCampaignConsume 超短活动消耗额度
+                     * 
                      */
                     void SetMmsCampaignConsume(const uint64_t& _mmsCampaignConsume);
 
                     /**
                      * 判断参数 MmsCampaignConsume 是否已赋值
                      * @return MmsCampaignConsume 是否已赋值
+                     * 
                      */
                     bool MmsCampaignConsumeHasBeenSet() const;
 
                     /**
                      * 获取超短短信额度
                      * @return MmsSendAmount 超短短信额度
+                     * 
                      */
                     uint64_t GetMmsSendAmount() const;
 
                     /**
                      * 设置超短短信额度
-                     * @param MmsSendAmount 超短短信额度
+                     * @param _mmsSendAmount 超短短信额度
+                     * 
                      */
                     void SetMmsSendAmount(const uint64_t& _mmsSendAmount);
 
                     /**
                      * 判断参数 MmsSendAmount 是否已赋值
                      * @return MmsSendAmount 是否已赋值
+                     * 
                      */
                     bool MmsSendAmountHasBeenSet() const;
 
                     /**
                      * 获取超短短信消耗额度
                      * @return MmsSendConsume 超短短信消耗额度
+                     * 
                      */
                     uint64_t GetMmsSendConsume() const;
 
                     /**
                      * 设置超短短信消耗额度
-                     * @param MmsSendConsume 超短短信消耗额度
+                     * @param _mmsSendConsume 超短短信消耗额度
+                     * 
                      */
                     void SetMmsSendConsume(const uint64_t& _mmsSendConsume);
 
                     /**
                      * 判断参数 MmsSendConsume 是否已赋值
                      * @return MmsSendConsume 是否已赋值
+                     * 
                      */
                     bool MmsSendConsumeHasBeenSet() const;
 

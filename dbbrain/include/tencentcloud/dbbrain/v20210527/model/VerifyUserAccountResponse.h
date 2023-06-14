@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取会话token，有效期为5分钟。
                      * @return SessionToken 会话token，有效期为5分钟。
+                     * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 判断参数 SessionToken 是否已赋值
                      * @return SessionToken 是否已赋值
+                     * 
                      */
                     bool SessionTokenHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取policy索引
                      * @return PolicyIndex policy索引
+                     * 
                      */
                     int64_t GetPolicyIndex() const;
 
                     /**
                      * 设置policy索引
-                     * @param PolicyIndex policy索引
+                     * @param _policyIndex policy索引
+                     * 
                      */
                     void SetPolicyIndex(const int64_t& _policyIndex);
 
                     /**
                      * 判断参数 PolicyIndex 是否已赋值
                      * @return PolicyIndex 是否已赋值
+                     * 
                      */
                     bool PolicyIndexHasBeenSet() const;
 

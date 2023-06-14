@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。
                      * @return InstanceId 只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。
-                     * @param InstanceId 只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。
+                     * @param _instanceId 只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取子网描述符，例如：subnet-1typ0s7d。
                      * @return UniqSubnetId 子网描述符，例如：subnet-1typ0s7d。
+                     * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网描述符，例如：subnet-1typ0s7d。
-                     * @param UniqSubnetId 子网描述符，例如：subnet-1typ0s7d。
+                     * @param _uniqSubnetId 子网描述符，例如：subnet-1typ0s7d。
+                     * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
                      * 判断参数 UniqSubnetId 是否已赋值
                      * @return UniqSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
                      * @return UniqVpcId vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
-                     * @param UniqVpcId vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
+                     * @param _uniqVpcId vpc描述符，例如：vpc-a23yt67j,如果传了该字段则UniqSubnetId必传
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 

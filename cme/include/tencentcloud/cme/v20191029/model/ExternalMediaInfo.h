@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
                      * @return MediaKey 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     * 
                      */
                     std::string GetMediaKey() const;
 
                     /**
                      * 设置目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
-                     * @param MediaKey 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     * @param _mediaKey 目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。
+                     * 
                      */
                     void SetMediaKey(const std::string& _mediaKey);
 
                     /**
                      * 判断参数 MediaKey 是否已赋值
                      * @return MediaKey 是否已赋值
+                     * 
                      */
                     bool MediaKeyHasBeenSet() const;
 
                     /**
                      * 获取该字段废弃，请勿使用。
                      * @return Definition 该字段废弃，请勿使用。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置该字段废弃，请勿使用。
-                     * @param Definition 该字段废弃，请勿使用。
+                     * @param _definition 该字段废弃，请勿使用。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取媒资挂载的存储 Id。
                      * @return StorageId 媒资挂载的存储 Id。
+                     * 
                      */
                     std::string GetStorageId() const;
 
                     /**
                      * 设置媒资挂载的存储 Id。
-                     * @param StorageId 媒资挂载的存储 Id。
+                     * @param _storageId 媒资挂载的存储 Id。
+                     * 
                      */
                     void SetStorageId(const std::string& _storageId);
 
                     /**
                      * 判断参数 StorageId 是否已赋值
                      * @return StorageId 是否已赋值
+                     * 
                      */
                     bool StorageIdHasBeenSet() const;
 

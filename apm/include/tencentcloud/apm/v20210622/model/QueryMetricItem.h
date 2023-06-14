@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return MetricName 指标名
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取同比，已弃用，不建议使用
                      * @return Compare 同比，已弃用，不建议使用
+                     * 
                      */
                     std::string GetCompare() const;
 
                     /**
                      * 设置同比，已弃用，不建议使用
-                     * @param Compare 同比，已弃用，不建议使用
+                     * @param _compare 同比，已弃用，不建议使用
+                     * 
                      */
                     void SetCompare(const std::string& _compare);
 
                     /**
                      * 判断参数 Compare 是否已赋值
                      * @return Compare 是否已赋值
+                     * 
                      */
                     bool CompareHasBeenSet() const;
 
                     /**
                      * 获取同比，支持多种同比方式
                      * @return Compares 同比，支持多种同比方式
+                     * 
                      */
                     std::vector<std::string> GetCompares() const;
 
                     /**
                      * 设置同比，支持多种同比方式
-                     * @param Compares 同比，支持多种同比方式
+                     * @param _compares 同比，支持多种同比方式
+                     * 
                      */
                     void SetCompares(const std::vector<std::string>& _compares);
 
                     /**
                      * 判断参数 Compares 是否已赋值
                      * @return Compares 是否已赋值
+                     * 
                      */
                     bool ComparesHasBeenSet() const;
 

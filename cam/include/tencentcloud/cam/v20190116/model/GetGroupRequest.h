@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户组 ID
                      * @return GroupId 用户组 ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置用户组 ID
-                     * @param GroupId 用户组 ID
+                     * @param _groupId 用户组 ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

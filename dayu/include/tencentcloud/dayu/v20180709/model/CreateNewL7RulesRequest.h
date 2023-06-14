@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP）
                      * @return Business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID列表
                      * @return IdList 资源ID列表
+                     * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
                      * 设置资源ID列表
-                     * @param IdList 资源ID列表
+                     * @param _idList 资源ID列表
+                     * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
 
                     /**
                      * 判断参数 IdList 是否已赋值
                      * @return IdList 是否已赋值
+                     * 
                      */
                     bool IdListHasBeenSet() const;
 
                     /**
                      * 获取资源IP列表
                      * @return VipList 资源IP列表
+                     * 
                      */
                     std::vector<std::string> GetVipList() const;
 
                     /**
                      * 设置资源IP列表
-                     * @param VipList 资源IP列表
+                     * @param _vipList 资源IP列表
+                     * 
                      */
                     void SetVipList(const std::vector<std::string>& _vipList);
 
                     /**
                      * 判断参数 VipList 是否已赋值
                      * @return VipList 是否已赋值
+                     * 
                      */
                     bool VipListHasBeenSet() const;
 
                     /**
                      * 获取规则列表
                      * @return Rules 规则列表
+                     * 
                      */
                     std::vector<L7RuleEntry> GetRules() const;
 
                     /**
                      * 设置规则列表
-                     * @param Rules 规则列表
+                     * @param _rules 规则列表
+                     * 
                      */
                     void SetRules(const std::vector<L7RuleEntry>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

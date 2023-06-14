@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取画面涉敏任务控制参数。
                      * @return ImgReviewInfo 画面涉敏任务控制参数。
+                     * 
                      */
                     TerrorismImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
                      * 设置画面涉敏任务控制参数。
-                     * @param ImgReviewInfo 画面涉敏任务控制参数。
+                     * @param _imgReviewInfo 画面涉敏任务控制参数。
+                     * 
                      */
                     void SetImgReviewInfo(const TerrorismImgReviewTemplateInfo& _imgReviewInfo);
 
                     /**
                      * 判断参数 ImgReviewInfo 是否已赋值
                      * @return ImgReviewInfo 是否已赋值
+                     * 
                      */
                     bool ImgReviewInfoHasBeenSet() const;
 
                     /**
                      * 获取文本涉敏任务控制参数。
                      * @return OcrReviewInfo 文本涉敏任务控制参数。
+                     * 
                      */
                     TerrorismOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
                      * 设置文本涉敏任务控制参数。
-                     * @param OcrReviewInfo 文本涉敏任务控制参数。
+                     * @param _ocrReviewInfo 文本涉敏任务控制参数。
+                     * 
                      */
                     void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfo& _ocrReviewInfo);
 
                     /**
                      * 判断参数 OcrReviewInfo 是否已赋值
                      * @return OcrReviewInfo 是否已赋值
+                     * 
                      */
                     bool OcrReviewInfoHasBeenSet() const;
 

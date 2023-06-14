@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取企业名称
                      * @return CompanyName 企业名称
+                     * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
                      * 设置企业名称
-                     * @param CompanyName 企业名称
+                     * @param _companyName 企业名称
+                     * 
                      */
                     void SetCompanyName(const std::string& _companyName);
 
                     /**
                      * 判断参数 CompanyName 是否已赋值
                      * @return CompanyName 是否已赋值
+                     * 
                      */
                     bool CompanyNameHasBeenSet() const;
 
                     /**
                      * 获取电话号码
                      * @return Phone 电话号码
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置电话号码
-                     * @param Phone 电话号码
+                     * @param _phone 电话号码
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取营业执照
                      * @return LicenseName 营业执照
+                     * 
                      */
                     std::string GetLicenseName() const;
 
                     /**
                      * 设置营业执照
-                     * @param LicenseName 营业执照
+                     * @param _licenseName 营业执照
+                     * 
                      */
                     void SetLicenseName(const std::string& _licenseName);
 
                     /**
                      * 判断参数 LicenseName 是否已赋值
                      * @return LicenseName 是否已赋值
+                     * 
                      */
                     bool LicenseNameHasBeenSet() const;
 
                     /**
                      * 获取保护网站
                      * @return ProtectURLs 保护网站
+                     * 
                      */
                     std::vector<std::string> GetProtectURLs() const;
 
                     /**
                      * 设置保护网站
-                     * @param ProtectURLs 保护网站
+                     * @param _protectURLs 保护网站
+                     * 
                      */
                     void SetProtectURLs(const std::vector<std::string>& _protectURLs);
 
                     /**
                      * 判断参数 ProtectURLs 是否已赋值
                      * @return ProtectURLs 是否已赋值
+                     * 
                      */
                     bool ProtectURLsHasBeenSet() const;
 
                     /**
                      * 获取网站名称
                      * @return ProtectWebs 网站名称
+                     * 
                      */
                     std::vector<std::string> GetProtectWebs() const;
 
                     /**
                      * 设置网站名称
-                     * @param ProtectWebs 网站名称
+                     * @param _protectWebs 网站名称
+                     * 
                      */
                     void SetProtectWebs(const std::vector<std::string>& _protectWebs);
 
                     /**
                      * 判断参数 ProtectWebs 是否已赋值
                      * @return ProtectWebs 是否已赋值
+                     * 
                      */
                     bool ProtectWebsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件 ID 列表，N 从 0 开始取值，最大 19。
                      * @return FileIds 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置媒体文件 ID 列表，N 从 0 开始取值，最大 19。
-                     * @param FileIds 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * @param _fileIds 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
 <li>subtitleInfo（字幕信息）。</li>
 <li>reviewInfo（审核信息）。</li>
+                     * 
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -122,7 +129,7 @@ namespace TencentCloud
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
 <li>subtitleInfo（字幕信息）。</li>
 <li>reviewInfo（审核信息）。</li>
-                     * @param Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+                     * @param _filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
 <li>transcodeInfo（视频转码结果信息）。</li>
@@ -135,12 +142,14 @@ namespace TencentCloud
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
 <li>subtitleInfo（字幕信息）。</li>
 <li>reviewInfo（审核信息）。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

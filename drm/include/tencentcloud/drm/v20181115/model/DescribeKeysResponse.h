@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取加密密钥列表
                      * @return Keys 加密密钥列表
+                     * 
                      */
                     std::vector<Key> GetKeys() const;
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
                      * @return SessionKey 用来加密密钥。
 如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。
 如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。
+                     * 
                      */
                     std::string GetSessionKey() const;
 
                     /**
                      * 判断参数 SessionKey 是否已赋值
                      * @return SessionKey 是否已赋值
+                     * 
                      */
                     bool SessionKeyHasBeenSet() const;
 
                     /**
                      * 获取内容ID
                      * @return ContentId 内容ID
+                     * 
                      */
                     std::string GetContentId() const;
 
                     /**
                      * 判断参数 ContentId 是否已赋值
                      * @return ContentId 是否已赋值
+                     * 
                      */
                     bool ContentIdHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 Fairplay方案无该值。
                      * @return Pssh Widevine方案的Pssh数据，Base64编码。
 Fairplay方案无该值。
+                     * 
                      */
                     std::string GetPssh() const;
 
                     /**
                      * 判断参数 Pssh 是否已赋值
                      * @return Pssh 是否已赋值
+                     * 
                      */
                     bool PsshHasBeenSet() const;
 

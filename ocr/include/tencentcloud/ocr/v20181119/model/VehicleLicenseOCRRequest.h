@@ -47,20 +47,23 @@ namespace TencentCloud
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
                      * @return ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param ImageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
+                     * @param _imageBase64 图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。
 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
                      * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
-                     * @param ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
 建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -95,6 +101,7 @@ DOUBLE 为行驶证主页正面和副页正面。
 BACK 为行驶证副页正面（有号码号牌的一面），
 DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
+                     * 
                      */
                     std::string GetCardSide() const;
 
@@ -103,16 +110,18 @@ DOUBLE 为行驶证主页正面和副页正面。
 BACK 为行驶证副页正面（有号码号牌的一面），
 DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
-                     * @param CardSide FRONT 为行驶证主页正面（有红色印章的一面），
+                     * @param _cardSide FRONT 为行驶证主页正面（有红色印章的一面），
 BACK 为行驶证副页正面（有号码号牌的一面），
 DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
+                     * 
                      */
                     void SetCardSide(const std::string& _cardSide);
 
                     /**
                      * 判断参数 CardSide 是否已赋值
                      * @return CardSide 是否已赋值
+                     * 
                      */
                     bool CardSideHasBeenSet() const;
 

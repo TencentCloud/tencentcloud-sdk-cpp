@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取对应的时间点
                      * @return Time 对应的时间点
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置对应的时间点
-                     * @param Time 对应的时间点
+                     * @param _time 对应的时间点
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 统计数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetData() const;
 
                     /**
                      * 设置统计数据值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 统计数据值
+                     * @param _data 统计数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const double& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

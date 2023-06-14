@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取CPU核心数
                      * @return CPU CPU核心数
+                     * 
                      */
                     double GetCPU() const;
 
                     /**
                      * 设置CPU核心数
-                     * @param CPU CPU核心数
+                     * @param _cPU CPU核心数
+                     * 
                      */
                     void SetCPU(const double& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位MB
                      * @return Mem 内存大小，单位MB
+                     * 
                      */
                     uint64_t GetMem() const;
 
                     /**
                      * 设置内存大小，单位MB
-                     * @param Mem 内存大小，单位MB
+                     * @param _mem 内存大小，单位MB
+                     * 
                      */
                     void SetMem(const uint64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
                     /**
                      * 获取套餐包版本名称
                      * @return PackageVersion 套餐包版本名称
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置套餐包版本名称
-                     * @param PackageVersion 套餐包版本名称
+                     * @param _packageVersion 套餐包版本名称
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 

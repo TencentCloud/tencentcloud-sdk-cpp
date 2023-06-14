@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取到场时间
                      * @return ArrivedTime 到场时间
+                     * 
                      */
                     std::string GetArrivedTime() const;
 
                     /**
                      * 设置到场时间
-                     * @param ArrivedTime 到场时间
+                     * @param _arrivedTime 到场时间
+                     * 
                      */
                     void SetArrivedTime(const std::string& _arrivedTime);
 
                     /**
                      * 判断参数 ArrivedTime 是否已赋值
                      * @return ArrivedTime 是否已赋值
+                     * 
                      */
                     bool ArrivedTimeHasBeenSet() const;
 
                     /**
                      * 获取出场时间
                      * @return LeaveTime 出场时间
+                     * 
                      */
                     std::string GetLeaveTime() const;
 
                     /**
                      * 设置出场时间
-                     * @param LeaveTime 出场时间
+                     * @param _leaveTime 出场时间
+                     * 
                      */
                     void SetLeaveTime(const std::string& _leaveTime);
 
                     /**
                      * 判断参数 LeaveTime 是否已赋值
                      * @return LeaveTime 是否已赋值
+                     * 
                      */
                     bool LeaveTimeHasBeenSet() const;
 
                     /**
                      * 获取停留时间，秒
                      * @return StaySecond 停留时间，秒
+                     * 
                      */
                     uint64_t GetStaySecond() const;
 
                     /**
                      * 设置停留时间，秒
-                     * @param StaySecond 停留时间，秒
+                     * @param _staySecond 停留时间，秒
+                     * 
                      */
                     void SetStaySecond(const uint64_t& _staySecond);
 
                     /**
                      * 判断参数 StaySecond 是否已赋值
                      * @return StaySecond 是否已赋值
+                     * 
                      */
                     bool StaySecondHasBeenSet() const;
 
                     /**
                      * 获取到场抓拍图片
                      * @return InCapPic 到场抓拍图片
+                     * 
                      */
                     std::string GetInCapPic() const;
 
                     /**
                      * 设置到场抓拍图片
-                     * @param InCapPic 到场抓拍图片
+                     * @param _inCapPic 到场抓拍图片
+                     * 
                      */
                     void SetInCapPic(const std::string& _inCapPic);
 
                     /**
                      * 判断参数 InCapPic 是否已赋值
                      * @return InCapPic 是否已赋值
+                     * 
                      */
                     bool InCapPicHasBeenSet() const;
 
                     /**
                      * 获取出场抓拍图片
                      * @return OutCapPic 出场抓拍图片
+                     * 
                      */
                     std::string GetOutCapPic() const;
 
                     /**
                      * 设置出场抓拍图片
-                     * @param OutCapPic 出场抓拍图片
+                     * @param _outCapPic 出场抓拍图片
+                     * 
                      */
                     void SetOutCapPic(const std::string& _outCapPic);
 
                     /**
                      * 判断参数 OutCapPic 是否已赋值
                      * @return OutCapPic 是否已赋值
+                     * 
                      */
                     bool OutCapPicHasBeenSet() const;
 
                     /**
                      * 获取轨迹编码
                      * @return TraceId 轨迹编码
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置轨迹编码
-                     * @param TraceId 轨迹编码
+                     * @param _traceId 轨迹编码
+                     * 
                      */
                     void SetTraceId(const std::string& _traceId);
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 

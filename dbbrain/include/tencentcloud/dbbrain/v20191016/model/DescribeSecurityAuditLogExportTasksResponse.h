@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取安全审计日志导出任务列表。
                      * @return Tasks 安全审计日志导出任务列表。
+                     * 
                      */
                     std::vector<SecLogExportTaskInfo> GetTasks() const;
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 
                     /**
                      * 获取安全审计日志导出任务总数。
                      * @return TotalCount 安全审计日志导出任务总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

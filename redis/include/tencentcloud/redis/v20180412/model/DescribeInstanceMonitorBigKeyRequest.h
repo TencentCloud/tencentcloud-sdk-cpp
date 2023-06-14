@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取请求类型：1——string类型，2——所有类型
                      * @return ReqType 请求类型：1——string类型，2——所有类型
+                     * 
                      */
                     int64_t GetReqType() const;
 
                     /**
                      * 设置请求类型：1——string类型，2——所有类型
-                     * @param ReqType 请求类型：1——string类型，2——所有类型
+                     * @param _reqType 请求类型：1——string类型，2——所有类型
+                     * 
                      */
                     void SetReqType(const int64_t& _reqType);
 
                     /**
                      * 判断参数 ReqType 是否已赋值
                      * @return ReqType 是否已赋值
+                     * 
                      */
                     bool ReqTypeHasBeenSet() const;
 
                     /**
                      * 获取时间；例如："20190219"
                      * @return Date 时间；例如："20190219"
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置时间；例如："20190219"
-                     * @param Date 时间；例如："20190219"
+                     * @param _date 时间；例如："20190219"
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回最大结果数
                      * @return Limit 返回最大结果数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回最大结果数
-                     * @param Limit 返回最大结果数
+                     * @param _limit 返回最大结果数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取业务字段，可忽略
                      * @return Business 业务字段，可忽略
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置业务字段，可忽略
-                     * @param Business 业务字段，可忽略
+                     * @param _business 业务字段，可忽略
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取cdc专有集群业务字段，可忽略
                      * @return CdcId cdc专有集群业务字段，可忽略
+                     * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置cdc专有集群业务字段，可忽略
-                     * @param CdcId cdc专有集群业务字段，可忽略
+                     * @param _cdcId cdc专有集群业务字段，可忽略
+                     * 
                      */
                     void SetCdcId(const std::string& _cdcId);
 
                     /**
                      * 判断参数 CdcId 是否已赋值
                      * @return CdcId 是否已赋值
+                     * 
                      */
                     bool CdcIdHasBeenSet() const;
 

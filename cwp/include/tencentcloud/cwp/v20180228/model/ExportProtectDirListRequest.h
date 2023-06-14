@@ -48,56 +48,65 @@ namespace TencentCloud
 DirPath 网站防护目录地址
                      * @return Filters DirName 网站名称
 DirPath 网站防护目录地址
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
                      * 设置DirName 网站名称
 DirPath 网站防护目录地址
-                     * @param Filters DirName 网站名称
+                     * @param _filters DirName 网站名称
 DirPath 网站防护目录地址
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取asc：升序/desc：降序
                      * @return Order asc：升序/desc：降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置asc：升序/desc：降序
-                     * @param Order asc：升序/desc：降序
+                     * @param _order asc：升序/desc：降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return By 排序字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param By 排序字段
+                     * @param _by 排序字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

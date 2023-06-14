@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询Top数据的开始时间，格式为：2020-01-01 00:00:00
                      * @return StartTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询Top数据的开始时间，格式为：2020-01-01 00:00:00
-                     * @param StartTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * @param _startTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -65,56 +68,65 @@ namespace TencentCloud
 支持 90 天内数据查询，时间跨度要小于等于7天
                      * @return EndTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，时间跨度要小于等于7天
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，时间跨度要小于等于7天
-                     * @param EndTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
+                     * @param _endTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，时间跨度要小于等于7天
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取查询Top的数量，不填默认值为10
                      * @return TopCount 查询Top的数量，不填默认值为10
+                     * 
                      */
                     uint64_t GetTopCount() const;
 
                     /**
                      * 设置查询Top的数量，不填默认值为10
-                     * @param TopCount 查询Top的数量，不填默认值为10
+                     * @param _topCount 查询Top的数量，不填默认值为10
+                     * 
                      */
                     void SetTopCount(const uint64_t& _topCount);
 
                     /**
                      * 判断参数 TopCount 是否已赋值
                      * @return TopCount 是否已赋值
+                     * 
                      */
                     bool TopCountHasBeenSet() const;
 
                     /**
                      * 获取AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
                      * @return Metric AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
-                     * @param Metric AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     * @param _metric AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 

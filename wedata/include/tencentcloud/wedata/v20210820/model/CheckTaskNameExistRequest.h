@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目id/工作空间id
                      * @return ProjectId 项目id/工作空间id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id/工作空间id
-                     * @param ProjectId 项目id/工作空间id
+                     * @param _projectId 项目id/工作空间id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型（跟调度传参保持一致27）
                      * @return TypeId 任务类型（跟调度传参保持一致27）
+                     * 
                      */
                     int64_t GetTypeId() const;
 
                     /**
                      * 设置任务类型（跟调度传参保持一致27）
-                     * @param TypeId 任务类型（跟调度传参保持一致27）
+                     * @param _typeId 任务类型（跟调度传参保持一致27）
+                     * 
                      */
                     void SetTypeId(const int64_t& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 
                     /**
                      * 获取任务名
                      * @return TaskName 任务名
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名
-                     * @param TaskName 任务名
+                     * @param _taskName 任务名
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 

@@ -55,6 +55,7 @@ namespace TencentCloud
 <li> smart_status_close：关闭；</li>
 <li> smart_status_open：拦截处置；</li>
 <li> smart_status_observe：观察处置。</li>
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li> smart_status_close：关闭；</li>
 <li> smart_status_open：拦截处置；</li>
 <li> smart_status_observe：观察处置。</li>
-                     * @param Mode AI规则引擎状态，取值有：
+                     * @param _mode AI规则引擎状态，取值有：
 <li> smart_status_close：关闭；</li>
 <li> smart_status_open：拦截处置；</li>
 <li> smart_status_observe：观察处置。</li>
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

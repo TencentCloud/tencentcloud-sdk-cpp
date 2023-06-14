@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 活动使用模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置活动使用模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 活动使用模板id
+                     * @param _templateId 活动使用模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityTitle 活动标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityTitle() const;
 
                     /**
                      * 设置活动标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityTitle 活动标题
+                     * @param _activityTitle 活动标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityTitle(const std::string& _activityTitle);
 
                     /**
                      * 判断参数 ActivityTitle 是否已赋值
                      * @return ActivityTitle 是否已赋值
+                     * 
                      */
                     bool ActivityTitleHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityDesc 活动描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityDesc() const;
 
                     /**
                      * 设置活动描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityDesc 活动描述
+                     * @param _activityDesc 活动描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityDesc(const std::string& _activityDesc);
 
                     /**
                      * 判断参数 ActivityDesc 是否已赋值
                      * @return ActivityDesc 是否已赋值
+                     * 
                      */
                     bool ActivityDescHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityCover 活动封面地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityCover() const;
 
                     /**
                      * 设置活动封面地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityCover 活动封面地址
+                     * @param _activityCover 活动封面地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityCover(const std::string& _activityCover);
 
                     /**
                      * 判断参数 ActivityCover 是否已赋值
                      * @return ActivityCover 是否已赋值
+                     * 
                      */
                     bool ActivityCoverHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityType 活动类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityType() const;
 
                     /**
                      * 设置活动类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityType 活动类型
+                     * @param _activityType 活动类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityType(const std::string& _activityType);
 
                     /**
                      * 判断参数 ActivityType 是否已赋值
                      * @return ActivityType 是否已赋值
+                     * 
                      */
                     bool ActivityTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityId 活动id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityId 活动id
+                     * @param _activityId 活动id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityId(const std::string& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonalConfig 活动模板自定义配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPersonalConfig() const;
 
                     /**
                      * 设置活动模板自定义配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PersonalConfig 活动模板自定义配置
+                     * @param _personalConfig 活动模板自定义配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPersonalConfig(const std::string& _personalConfig);
 
                     /**
                      * 判断参数 PersonalConfig 是否已赋值
                      * @return PersonalConfig 是否已赋值
+                     * 
                      */
                     bool PersonalConfigHasBeenSet() const;
 

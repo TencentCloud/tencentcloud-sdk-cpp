@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取许可证内容
                      * @return Content 许可证内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置许可证内容
-                     * @param Content 许可证内容
+                     * @param _content 许可证内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取许可证允许信息列表
                      * @return ConditionSet 许可证允许信息列表
+                     * 
                      */
                     std::vector<LicenseRestriction> GetConditionSet() const;
 
                     /**
                      * 设置许可证允许信息列表
-                     * @param ConditionSet 许可证允许信息列表
+                     * @param _conditionSet 许可证允许信息列表
+                     * 
                      */
                     void SetConditionSet(const std::vector<LicenseRestriction>& _conditionSet);
 
                     /**
                      * 判断参数 ConditionSet 是否已赋值
                      * @return ConditionSet 是否已赋值
+                     * 
                      */
                     bool ConditionSetHasBeenSet() const;
 
                     /**
                      * 获取许可证要求信息列表
                      * @return ForbiddenSet 许可证要求信息列表
+                     * 
                      */
                     std::vector<LicenseRestriction> GetForbiddenSet() const;
 
                     /**
                      * 设置许可证要求信息列表
-                     * @param ForbiddenSet 许可证要求信息列表
+                     * @param _forbiddenSet 许可证要求信息列表
+                     * 
                      */
                     void SetForbiddenSet(const std::vector<LicenseRestriction>& _forbiddenSet);
 
                     /**
                      * 判断参数 ForbiddenSet 是否已赋值
                      * @return ForbiddenSet 是否已赋值
+                     * 
                      */
                     bool ForbiddenSetHasBeenSet() const;
 
                     /**
                      * 获取许可证禁止信息列表
                      * @return PermissionSet 许可证禁止信息列表
+                     * 
                      */
                     std::vector<LicenseRestriction> GetPermissionSet() const;
 
                     /**
                      * 设置许可证禁止信息列表
-                     * @param PermissionSet 许可证禁止信息列表
+                     * @param _permissionSet 许可证禁止信息列表
+                     * 
                      */
                     void SetPermissionSet(const std::vector<LicenseRestriction>& _permissionSet);
 
                     /**
                      * 判断参数 PermissionSet 是否已赋值
                      * @return PermissionSet 是否已赋值
+                     * 
                      */
                     bool PermissionSetHasBeenSet() const;
 

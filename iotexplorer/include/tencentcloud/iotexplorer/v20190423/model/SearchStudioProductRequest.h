@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return ProductName 产品名称
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取列表Limit
                      * @return Limit 列表Limit
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置列表Limit
-                     * @param Limit 列表Limit
+                     * @param _limit 列表Limit
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取列表Offset
                      * @return Offset 列表Offset
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置列表Offset
-                     * @param Offset 列表Offset
+                     * @param _offset 列表Offset
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取产品Status
                      * @return DevStatus 产品Status
+                     * 
                      */
                     std::string GetDevStatus() const;
 
                     /**
                      * 设置产品Status
-                     * @param DevStatus 产品Status
+                     * @param _devStatus 产品Status
+                     * 
                      */
                     void SetDevStatus(const std::string& _devStatus);
 
                     /**
                      * 判断参数 DevStatus 是否已赋值
                      * @return DevStatus 是否已赋值
+                     * 
                      */
                     bool DevStatusHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

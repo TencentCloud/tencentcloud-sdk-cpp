@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取分页参数 最大100条
                      * @return Limit 分页参数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数 最大100条
-                     * @param Limit 分页参数 最大100条
+                     * @param _limit 分页参数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Offset 分页参数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数
-                     * @param Offset 分页参数
+                     * @param _offset 分页参数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -94,6 +100,7 @@ namespace TencentCloud
 <li>BaselineName  - String - 基线名称</li>
 <li>Quuid- String - 主机quuid</li>
 <li>Uuid- String - 主机uuid</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -105,19 +112,21 @@ namespace TencentCloud
 <li>BaselineName  - String - 基线名称</li>
 <li>Quuid- String - 主机quuid</li>
 <li>Uuid- String - 主机uuid</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>StrategyId- Uint64 - 基线策略id</li>
 <li>Status - Uint64 - 处理状态1已通过 0未通过</li>
 <li>Level - Uint64[] - 处理状态1已通过 0未通过</li>BaselineName 
 <li>BaselineName  - String - 基线名称</li>
 <li>Quuid- String - 主机quuid</li>
 <li>Uuid- String - 主机uuid</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

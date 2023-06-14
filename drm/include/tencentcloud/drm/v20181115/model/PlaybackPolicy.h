@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取播放许可证的有效期
                      * @return LicenseDurationSeconds 播放许可证的有效期
+                     * 
                      */
                     uint64_t GetLicenseDurationSeconds() const;
 
                     /**
                      * 设置播放许可证的有效期
-                     * @param LicenseDurationSeconds 播放许可证的有效期
+                     * @param _licenseDurationSeconds 播放许可证的有效期
+                     * 
                      */
                     void SetLicenseDurationSeconds(const uint64_t& _licenseDurationSeconds);
 
                     /**
                      * 判断参数 LicenseDurationSeconds 是否已赋值
                      * @return LicenseDurationSeconds 是否已赋值
+                     * 
                      */
                     bool LicenseDurationSecondsHasBeenSet() const;
 
                     /**
                      * 获取开始播放后，允许最长播放时间
                      * @return PlaybackDurationSeconds 开始播放后，允许最长播放时间
+                     * 
                      */
                     uint64_t GetPlaybackDurationSeconds() const;
 
                     /**
                      * 设置开始播放后，允许最长播放时间
-                     * @param PlaybackDurationSeconds 开始播放后，允许最长播放时间
+                     * @param _playbackDurationSeconds 开始播放后，允许最长播放时间
+                     * 
                      */
                     void SetPlaybackDurationSeconds(const uint64_t& _playbackDurationSeconds);
 
                     /**
                      * 判断参数 PlaybackDurationSeconds 是否已赋值
                      * @return PlaybackDurationSeconds 是否已赋值
+                     * 
                      */
                     bool PlaybackDurationSecondsHasBeenSet() const;
 

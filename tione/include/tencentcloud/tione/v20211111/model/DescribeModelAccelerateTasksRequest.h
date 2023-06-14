@@ -51,6 +51,7 @@ ModelSource 模型来源
                      * @return Filters 过滤器
 ModelAccTaskName 任务名称
 ModelSource 模型来源
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -58,105 +59,122 @@ ModelSource 模型来源
                      * 设置过滤器
 ModelAccTaskName 任务名称
 ModelSource 模型来源
-                     * @param Filters 过滤器
+                     * @param _filters 过滤器
 ModelAccTaskName 任务名称
 ModelSource 模型来源
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段，默认CreateTime
                      * @return OrderField 排序字段，默认CreateTime
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段，默认CreateTime
-                     * @param OrderField 排序字段，默认CreateTime
+                     * @param _orderField 排序字段，默认CreateTime
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方式：ASC/DESC，默认DESC
                      * @return Order 排序方式：ASC/DESC，默认DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式：ASC/DESC，默认DESC
-                     * @param Order 排序方式：ASC/DESC，默认DESC
+                     * @param _order 排序方式：ASC/DESC，默认DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认10
                      * @return Limit 返回记录条数，默认10
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认10
-                     * @param Limit 返回记录条数，默认10
+                     * @param _limit 返回记录条数，默认10
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取标签过滤
                      * @return TagFilters 标签过滤
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤
-                     * @param TagFilters 标签过滤
+                     * @param _tagFilters 标签过滤
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签约主播数据
                      * @return AnchorContractInfoList 签约主播数据
+                     * 
                      */
                     std::vector<AnchorContractInfo> GetAnchorContractInfoList() const;
 
                     /**
                      * 判断参数 AnchorContractInfoList 是否已赋值
                      * @return AnchorContractInfoList 是否已赋值
+                     * 
                      */
                     bool AnchorContractInfoListHasBeenSet() const;
 

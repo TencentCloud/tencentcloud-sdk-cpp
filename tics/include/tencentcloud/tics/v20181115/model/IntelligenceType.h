@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取来源
                      * @return Source 来源
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源
-                     * @param Source 来源
+                     * @param _source 来源
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取标记
                      * @return Stamp 标记
+                     * 
                      */
                     std::string GetStamp() const;
 
                     /**
                      * 设置标记
-                     * @param Stamp 标记
+                     * @param _stamp 标记
+                     * 
                      */
                     void SetStamp(const std::string& _stamp);
 
                     /**
                      * 判断参数 Stamp 是否已赋值
                      * @return Stamp 是否已赋值
+                     * 
                      */
                     bool StampHasBeenSet() const;
 
                     /**
                      * 获取时间
                      * @return Time 时间
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置时间
-                     * @param Time 时间
+                     * @param _time 时间
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

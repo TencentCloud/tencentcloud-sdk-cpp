@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
                      * @return LockDays 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * 
                      */
                     uint64_t GetLockDays() const;
 
                     /**
                      * 设置域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
-                     * @param LockDays 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * @param _lockDays 域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。
+                     * 
                      */
                     void SetLockDays(const uint64_t& _lockDays);
 
                     /**
                      * 判断参数 LockDays 是否已赋值
                      * @return LockDays 是否已赋值
+                     * 
                      */
                     bool LockDaysHasBeenSet() const;
 
                     /**
                      * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

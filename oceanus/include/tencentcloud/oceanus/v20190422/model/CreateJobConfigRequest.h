@@ -47,342 +47,399 @@ namespace TencentCloud
                     /**
                      * 获取作业Id
                      * @return JobId 作业Id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业Id
-                     * @param JobId 作业Id
+                     * @param _jobId 作业Id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取主类
                      * @return EntrypointClass 主类
+                     * 
                      */
                     std::string GetEntrypointClass() const;
 
                     /**
                      * 设置主类
-                     * @param EntrypointClass 主类
+                     * @param _entrypointClass 主类
+                     * 
                      */
                     void SetEntrypointClass(const std::string& _entrypointClass);
 
                     /**
                      * 判断参数 EntrypointClass 是否已赋值
                      * @return EntrypointClass 是否已赋值
+                     * 
                      */
                     bool EntrypointClassHasBeenSet() const;
 
                     /**
                      * 获取主类入参
                      * @return ProgramArgs 主类入参
+                     * 
                      */
                     std::string GetProgramArgs() const;
 
                     /**
                      * 设置主类入参
-                     * @param ProgramArgs 主类入参
+                     * @param _programArgs 主类入参
+                     * 
                      */
                     void SetProgramArgs(const std::string& _programArgs);
 
                     /**
                      * 判断参数 ProgramArgs 是否已赋值
                      * @return ProgramArgs 是否已赋值
+                     * 
                      */
                     bool ProgramArgsHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取资源引用数组
                      * @return ResourceRefs 资源引用数组
+                     * 
                      */
                     std::vector<ResourceRef> GetResourceRefs() const;
 
                     /**
                      * 设置资源引用数组
-                     * @param ResourceRefs 资源引用数组
+                     * @param _resourceRefs 资源引用数组
+                     * 
                      */
                     void SetResourceRefs(const std::vector<ResourceRef>& _resourceRefs);
 
                     /**
                      * 判断参数 ResourceRefs 是否已赋值
                      * @return ResourceRefs 是否已赋值
+                     * 
                      */
                     bool ResourceRefsHasBeenSet() const;
 
                     /**
                      * 获取作业默认并行度
                      * @return DefaultParallelism 作业默认并行度
+                     * 
                      */
                     uint64_t GetDefaultParallelism() const;
 
                     /**
                      * 设置作业默认并行度
-                     * @param DefaultParallelism 作业默认并行度
+                     * @param _defaultParallelism 作业默认并行度
+                     * 
                      */
                     void SetDefaultParallelism(const uint64_t& _defaultParallelism);
 
                     /**
                      * 判断参数 DefaultParallelism 是否已赋值
                      * @return DefaultParallelism 是否已赋值
+                     * 
                      */
                     bool DefaultParallelismHasBeenSet() const;
 
                     /**
                      * 获取系统参数
                      * @return Properties 系统参数
+                     * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
                      * 设置系统参数
-                     * @param Properties 系统参数
+                     * @param _properties 系统参数
+                     * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
                     /**
                      * 获取1: 作业配置达到上限之后，自动删除可删除的最早版本
                      * @return AutoDelete 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * 
                      */
                     int64_t GetAutoDelete() const;
 
                     /**
                      * 设置1: 作业配置达到上限之后，自动删除可删除的最早版本
-                     * @param AutoDelete 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * @param _autoDelete 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * 
                      */
                     void SetAutoDelete(const int64_t& _autoDelete);
 
                     /**
                      * 判断参数 AutoDelete 是否已赋值
                      * @return AutoDelete 是否已赋值
+                     * 
                      */
                     bool AutoDeleteHasBeenSet() const;
 
                     /**
                      * 获取作业使用的 COS 存储桶名
                      * @return COSBucket 作业使用的 COS 存储桶名
+                     * 
                      */
                     std::string GetCOSBucket() const;
 
                     /**
                      * 设置作业使用的 COS 存储桶名
-                     * @param COSBucket 作业使用的 COS 存储桶名
+                     * @param _cOSBucket 作业使用的 COS 存储桶名
+                     * 
                      */
                     void SetCOSBucket(const std::string& _cOSBucket);
 
                     /**
                      * 判断参数 COSBucket 是否已赋值
                      * @return COSBucket 是否已赋值
+                     * 
                      */
                     bool COSBucketHasBeenSet() const;
 
                     /**
                      * 获取是否采集作业日志
                      * @return LogCollect 是否采集作业日志
+                     * 
                      */
                     bool GetLogCollect() const;
 
                     /**
                      * 设置是否采集作业日志
-                     * @param LogCollect 是否采集作业日志
+                     * @param _logCollect 是否采集作业日志
+                     * 
                      */
                     void SetLogCollect(const bool& _logCollect);
 
                     /**
                      * 判断参数 LogCollect 是否已赋值
                      * @return LogCollect 是否已赋值
+                     * 
                      */
                     bool LogCollectHasBeenSet() const;
 
                     /**
                      * 获取JobManager规格
                      * @return JobManagerSpec JobManager规格
+                     * 
                      */
                     double GetJobManagerSpec() const;
 
                     /**
                      * 设置JobManager规格
-                     * @param JobManagerSpec JobManager规格
+                     * @param _jobManagerSpec JobManager规格
+                     * 
                      */
                     void SetJobManagerSpec(const double& _jobManagerSpec);
 
                     /**
                      * 判断参数 JobManagerSpec 是否已赋值
                      * @return JobManagerSpec 是否已赋值
+                     * 
                      */
                     bool JobManagerSpecHasBeenSet() const;
 
                     /**
                      * 获取TaskManager规格
                      * @return TaskManagerSpec TaskManager规格
+                     * 
                      */
                     double GetTaskManagerSpec() const;
 
                     /**
                      * 设置TaskManager规格
-                     * @param TaskManagerSpec TaskManager规格
+                     * @param _taskManagerSpec TaskManager规格
+                     * 
                      */
                     void SetTaskManagerSpec(const double& _taskManagerSpec);
 
                     /**
                      * 判断参数 TaskManagerSpec 是否已赋值
                      * @return TaskManagerSpec 是否已赋值
+                     * 
                      */
                     bool TaskManagerSpecHasBeenSet() const;
 
                     /**
                      * 获取CLS日志集ID
                      * @return ClsLogsetId CLS日志集ID
+                     * 
                      */
                     std::string GetClsLogsetId() const;
 
                     /**
                      * 设置CLS日志集ID
-                     * @param ClsLogsetId CLS日志集ID
+                     * @param _clsLogsetId CLS日志集ID
+                     * 
                      */
                     void SetClsLogsetId(const std::string& _clsLogsetId);
 
                     /**
                      * 判断参数 ClsLogsetId 是否已赋值
                      * @return ClsLogsetId 是否已赋值
+                     * 
                      */
                     bool ClsLogsetIdHasBeenSet() const;
 
                     /**
                      * 获取CLS日志主题ID
                      * @return ClsTopicId CLS日志主题ID
+                     * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
                      * 设置CLS日志主题ID
-                     * @param ClsTopicId CLS日志主题ID
+                     * @param _clsTopicId CLS日志主题ID
+                     * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
 
                     /**
                      * 判断参数 ClsTopicId 是否已赋值
                      * @return ClsTopicId 是否已赋值
+                     * 
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
                      * 获取日志采集类型 2：CLS；3：COS
                      * @return LogCollectType 日志采集类型 2：CLS；3：COS
+                     * 
                      */
                     int64_t GetLogCollectType() const;
 
                     /**
                      * 设置日志采集类型 2：CLS；3：COS
-                     * @param LogCollectType 日志采集类型 2：CLS；3：COS
+                     * @param _logCollectType 日志采集类型 2：CLS；3：COS
+                     * 
                      */
                     void SetLogCollectType(const int64_t& _logCollectType);
 
                     /**
                      * 判断参数 LogCollectType 是否已赋值
                      * @return LogCollectType 是否已赋值
+                     * 
                      */
                     bool LogCollectTypeHasBeenSet() const;
 
                     /**
                      * 获取pyflink作业运行时使用的python版本
                      * @return PythonVersion pyflink作业运行时使用的python版本
+                     * 
                      */
                     std::string GetPythonVersion() const;
 
                     /**
                      * 设置pyflink作业运行时使用的python版本
-                     * @param PythonVersion pyflink作业运行时使用的python版本
+                     * @param _pythonVersion pyflink作业运行时使用的python版本
+                     * 
                      */
                     void SetPythonVersion(const std::string& _pythonVersion);
 
                     /**
                      * 判断参数 PythonVersion 是否已赋值
                      * @return PythonVersion 是否已赋值
+                     * 
                      */
                     bool PythonVersionHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
                     /**
                      * 获取日志级别
                      * @return LogLevel 日志级别
+                     * 
                      */
                     std::string GetLogLevel() const;
 
                     /**
                      * 设置日志级别
-                     * @param LogLevel 日志级别
+                     * @param _logLevel 日志级别
+                     * 
                      */
                     void SetLogLevel(const std::string& _logLevel);
 
                     /**
                      * 判断参数 LogLevel 是否已赋值
                      * @return LogLevel 是否已赋值
+                     * 
                      */
                     bool LogLevelHasBeenSet() const;
 
                     /**
                      * 获取Oceanus 平台恢复作业开关 1:开启 -1: 关闭
                      * @return AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * 
                      */
                     int64_t GetAutoRecover() const;
 
                     /**
                      * 设置Oceanus 平台恢复作业开关 1:开启 -1: 关闭
-                     * @param AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * @param _autoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * 
                      */
                     void SetAutoRecover(const int64_t& _autoRecover);
 
                     /**
                      * 判断参数 AutoRecover 是否已赋值
                      * @return AutoRecover 是否已赋值
+                     * 
                      */
                     bool AutoRecoverHasBeenSet() const;
 

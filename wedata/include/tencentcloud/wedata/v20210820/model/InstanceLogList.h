@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurRunDate 数据时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurRunDate 数据时间
+                     * @param _curRunDate 数据时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tries 重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTries() const;
 
                     /**
                      * 设置重试次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tries 重试次数
+                     * @param _tries 重试次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTries(const std::string& _tries);
 
                     /**
                      * 判断参数 Tries 是否已赋值
                      * @return Tries 是否已赋值
+                     * 
                      */
                     bool TriesHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdate 最后更新事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastUpdate() const;
 
                     /**
                      * 设置最后更新事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastUpdate 最后更新事件
+                     * @param _lastUpdate 最后更新事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastUpdate(const std::string& _lastUpdate);
 
                     /**
                      * 判断参数 LastUpdate 是否已赋值
                      * @return LastUpdate 是否已赋值
+                     * 
                      */
                     bool LastUpdateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerIp 节点ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
                      * 设置节点ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrokerIp 节点ip
+                     * @param _brokerIp 节点ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
 
                     /**
                      * 判断参数 BrokerIp 是否已赋值
                      * @return BrokerIp 是否已赋值
+                     * 
                      */
                     bool BrokerIpHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileSize() const;
 
                     /**
                      * 设置文件大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 文件大小
+                     * @param _fileSize 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const std::string& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginFileName 原始文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
                      * 设置原始文件名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginFileName 原始文件名
+                     * @param _originFileName 原始文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
 
                     /**
                      * 判断参数 OriginFileName 是否已赋值
                      * @return OriginFileName 是否已赋值
+                     * 
                      */
                     bool OriginFileNameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceLogType 实例日志类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceLogType() const;
 
                     /**
                      * 设置实例日志类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceLogType 实例日志类型
+                     * @param _instanceLogType 实例日志类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceLogType(const std::string& _instanceLogType);
 
                     /**
                      * 判断参数 InstanceLogType 是否已赋值
                      * @return InstanceLogType 是否已赋值
+                     * 
                      */
                     bool InstanceLogTypeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCostTime() const;
 
                     /**
                      * 设置耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CostTime 耗费时间
+                     * @param _costTime 耗费时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCostTime(const std::string& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 

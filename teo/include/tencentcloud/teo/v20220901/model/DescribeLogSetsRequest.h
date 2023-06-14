@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取日志集所属的地域。
                      * @return LogSetRegion 日志集所属的地域。
+                     * 
                      */
                     std::string GetLogSetRegion() const;
 
                     /**
                      * 设置日志集所属的地域。
-                     * @param LogSetRegion 日志集所属的地域。
+                     * @param _logSetRegion 日志集所属的地域。
+                     * 
                      */
                     void SetLogSetRegion(const std::string& _logSetRegion);
 
                     /**
                      * 判断参数 LogSetRegion 是否已赋值
                      * @return LogSetRegion 是否已赋值
+                     * 
                      */
                     bool LogSetRegionHasBeenSet() const;
 
                     /**
                      * 获取日志集ID。
                      * @return LogSetId 日志集ID。
+                     * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置日志集ID。
-                     * @param LogSetId 日志集ID。
+                     * @param _logSetId 日志集ID。
+                     * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
                     /**
                      * 判断参数 LogSetId 是否已赋值
                      * @return LogSetId 是否已赋值
+                     * 
                      */
                     bool LogSetIdHasBeenSet() const;
 
                     /**
                      * 获取日志集名称。
                      * @return LogSetName 日志集名称。
+                     * 
                      */
                     std::string GetLogSetName() const;
 
                     /**
                      * 设置日志集名称。
-                     * @param LogSetName 日志集名称。
+                     * @param _logSetName 日志集名称。
+                     * 
                      */
                     void SetLogSetName(const std::string& _logSetName);
 
                     /**
                      * 判断参数 LogSetName 是否已赋值
                      * @return LogSetName 是否已赋值
+                     * 
                      */
                     bool LogSetNameHasBeenSet() const;
 

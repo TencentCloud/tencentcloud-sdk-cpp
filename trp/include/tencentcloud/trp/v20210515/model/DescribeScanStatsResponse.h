@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计记录
                      * @return ScanStats 统计记录
+                     * 
                      */
                     std::vector<ScanStat> GetScanStats() const;
 
                     /**
                      * 判断参数 ScanStats 是否已赋值
                      * @return ScanStats 是否已赋值
+                     * 
                      */
                     bool ScanStatsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例机型系列类型Id
                      * @return InstanceFamilyType 实例机型系列类型Id
+                     * 
                      */
                     std::string GetInstanceFamilyType() const;
 
                     /**
                      * 设置实例机型系列类型Id
-                     * @param InstanceFamilyType 实例机型系列类型Id
+                     * @param _instanceFamilyType 实例机型系列类型Id
+                     * 
                      */
                     void SetInstanceFamilyType(const std::string& _instanceFamilyType);
 
                     /**
                      * 判断参数 InstanceFamilyType 是否已赋值
                      * @return InstanceFamilyType 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyTypeHasBeenSet() const;
 
                     /**
                      * 获取实例机型系列类型名称
                      * @return InstanceFamilyTypeName 实例机型系列类型名称
+                     * 
                      */
                     std::string GetInstanceFamilyTypeName() const;
 
                     /**
                      * 设置实例机型系列类型名称
-                     * @param InstanceFamilyTypeName 实例机型系列类型名称
+                     * @param _instanceFamilyTypeName 实例机型系列类型名称
+                     * 
                      */
                     void SetInstanceFamilyTypeName(const std::string& _instanceFamilyTypeName);
 
                     /**
                      * 判断参数 InstanceFamilyTypeName 是否已赋值
                      * @return InstanceFamilyTypeName 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyTypeNameHasBeenSet() const;
 

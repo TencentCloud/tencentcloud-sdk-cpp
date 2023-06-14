@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取执行器ID。
                      * @return InvokerId 执行器ID。
+                     * 
                      */
                     std::string GetInvokerId() const;
 
                     /**
                      * 设置执行器ID。
-                     * @param InvokerId 执行器ID。
+                     * @param _invokerId 执行器ID。
+                     * 
                      */
                     void SetInvokerId(const std::string& _invokerId);
 
                     /**
                      * 判断参数 InvokerId 是否已赋值
                      * @return InvokerId 是否已赋值
+                     * 
                      */
                     bool InvokerIdHasBeenSet() const;
 
                     /**
                      * 获取执行时间。
                      * @return InvokeTime 执行时间。
+                     * 
                      */
                     std::string GetInvokeTime() const;
 
                     /**
                      * 设置执行时间。
-                     * @param InvokeTime 执行时间。
+                     * @param _invokeTime 执行时间。
+                     * 
                      */
                     void SetInvokeTime(const std::string& _invokeTime);
 
                     /**
                      * 判断参数 InvokeTime 是否已赋值
                      * @return InvokeTime 是否已赋值
+                     * 
                      */
                     bool InvokeTimeHasBeenSet() const;
 
                     /**
                      * 获取执行原因。
                      * @return Reason 执行原因。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置执行原因。
-                     * @param Reason 执行原因。
+                     * @param _reason 执行原因。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取命令执行ID。
                      * @return InvocationId 命令执行ID。
+                     * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 设置命令执行ID。
-                     * @param InvocationId 命令执行ID。
+                     * @param _invocationId 命令执行ID。
+                     * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
 
                     /**
                      * 判断参数 InvocationId 是否已赋值
                      * @return InvocationId 是否已赋值
+                     * 
                      */
                     bool InvocationIdHasBeenSet() const;
 
                     /**
                      * 获取触发结果。
                      * @return Result 触发结果。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置触发结果。
-                     * @param Result 触发结果。
+                     * @param _result 触发结果。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

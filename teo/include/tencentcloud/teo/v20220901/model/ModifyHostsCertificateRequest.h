@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取本次变更的域名列表。
                      * @return Hosts 本次变更的域名列表。
+                     * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
                      * 设置本次变更的域名列表。
-                     * @param Hosts 本次变更的域名列表。
+                     * @param _hosts 本次变更的域名列表。
+                     * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
 
                     /**
                      * 判断参数 Hosts 是否已赋值
                      * @return Hosts 是否已赋值
+                     * 
                      */
                     bool HostsHasBeenSet() const;
 
                     /**
                      * 获取证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
                      * @return ServerCertInfo 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * 
                      */
                     std::vector<ServerCertInfo> GetServerCertInfo() const;
 
                     /**
                      * 设置证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
-                     * @param ServerCertInfo 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * @param _serverCertInfo 证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。
+                     * 
                      */
                     void SetServerCertInfo(const std::vector<ServerCertInfo>& _serverCertInfo);
 
                     /**
                      * 判断参数 ServerCertInfo 是否已赋值
                      * @return ServerCertInfo 是否已赋值
+                     * 
                      */
                     bool ServerCertInfoHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return ApplyType 托管类型，取值有：
 <li>apply：托管EO；</li>
 <li>none：不托管EO；</li>不填，默认取值为apply。
+                     * 
                      */
                     std::string GetApplyType() const;
 
@@ -111,15 +121,17 @@ namespace TencentCloud
                      * 设置托管类型，取值有：
 <li>apply：托管EO；</li>
 <li>none：不托管EO；</li>不填，默认取值为apply。
-                     * @param ApplyType 托管类型，取值有：
+                     * @param _applyType 托管类型，取值有：
 <li>apply：托管EO；</li>
 <li>none：不托管EO；</li>不填，默认取值为apply。
+                     * 
                      */
                     void SetApplyType(const std::string& _applyType);
 
                     /**
                      * 判断参数 ApplyType 是否已赋值
                      * @return ApplyType 是否已赋值
+                     * 
                      */
                     bool ApplyTypeHasBeenSet() const;
 

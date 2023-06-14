@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义的插件名称。最长50个字符，最短2个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。
                      * @return PluginName 用户自定义的插件名称。最长50个字符，最短2个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。
+                     * 
                      */
                     std::string GetPluginName() const;
 
                     /**
                      * 设置用户自定义的插件名称。最长50个字符，最短2个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。
-                     * @param PluginName 用户自定义的插件名称。最长50个字符，最短2个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。
+                     * @param _pluginName 用户自定义的插件名称。最长50个字符，最短2个字符，支持 a-z,A-Z,0-9,_, 必须字母开头，字母或者数字结尾。
+                     * 
                      */
                     void SetPluginName(const std::string& _pluginName);
 
                     /**
                      * 判断参数 PluginName 是否已赋值
                      * @return PluginName 是否已赋值
+                     * 
                      */
                     bool PluginNameHasBeenSet() const;
 
                     /**
                      * 获取插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。
                      * @return PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。
+                     * 
                      */
                     std::string GetPluginType() const;
 
                     /**
                      * 设置插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。
-                     * @param PluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。
+                     * @param _pluginType 插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。
+                     * 
                      */
                     void SetPluginType(const std::string& _pluginType);
 
                     /**
                      * 判断参数 PluginType 是否已赋值
                      * @return PluginType 是否已赋值
+                     * 
                      */
                     bool PluginTypeHasBeenSet() const;
 
                     /**
                      * 获取插件定义语句，支持json。
                      * @return PluginData 插件定义语句，支持json。
+                     * 
                      */
                     std::string GetPluginData() const;
 
                     /**
                      * 设置插件定义语句，支持json。
-                     * @param PluginData 插件定义语句，支持json。
+                     * @param _pluginData 插件定义语句，支持json。
+                     * 
                      */
                     void SetPluginData(const std::string& _pluginData);
 
                     /**
                      * 判断参数 PluginData 是否已赋值
                      * @return PluginData 是否已赋值
+                     * 
                      */
                     bool PluginDataHasBeenSet() const;
 
                     /**
                      * 获取插件描述，限定200字以内。
                      * @return Description 插件描述，限定200字以内。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置插件描述，限定200字以内。
-                     * @param Description 插件描述，限定200字以内。
+                     * @param _description 插件描述，限定200字以内。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

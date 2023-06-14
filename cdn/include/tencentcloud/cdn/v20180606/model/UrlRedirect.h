@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 访问URL重写配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置访问URL重写配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 访问URL重写配置开关，取值有：
+                     * @param _switch 访问URL重写配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathRules 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UrlRedirectRule> GetPathRules() const;
 
                     /**
                      * 设置访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathRules 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
+                     * @param _pathRules 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPathRules(const std::vector<UrlRedirectRule>& _pathRules);
 
                     /**
                      * 判断参数 PathRules 是否已赋值
                      * @return PathRules 是否已赋值
+                     * 
                      */
                     bool PathRulesHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取数据的唯一ID
                      * @return DataId 数据的唯一ID
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 设置数据的唯一ID
-                     * @param DataId 数据的唯一ID
+                     * @param _dataId 数据的唯一ID
+                     * 
                      */
                     void SetDataId(const std::string& _dataId);
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
                     /**
                      * 获取数据文件的url，为 urlencode 编码，流式则为拉流地址
                      * @return Url 数据文件的url，为 urlencode 编码，流式则为拉流地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置数据文件的url，为 urlencode 编码，流式则为拉流地址
-                     * @param Url 数据文件的url，为 urlencode 编码，流式则为拉流地址
+                     * @param _url 数据文件的url，为 urlencode 编码，流式则为拉流地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取gme实时语音房间ID，通过gme实时语音进行语音分析时输入
                      * @return RoomId gme实时语音房间ID，通过gme实时语音进行语音分析时输入
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置gme实时语音房间ID，通过gme实时语音进行语音分析时输入
-                     * @param RoomId gme实时语音房间ID，通过gme实时语音进行语音分析时输入
+                     * @param _roomId gme实时语音房间ID，通过gme实时语音进行语音分析时输入
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取gme实时语音用户ID，通过gme实时语音进行语音分析时输入
                      * @return OpenId gme实时语音用户ID，通过gme实时语音进行语音分析时输入
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置gme实时语音用户ID，通过gme实时语音进行语音分析时输入
-                     * @param OpenId gme实时语音用户ID，通过gme实时语音进行语音分析时输入
+                     * @param _openId gme实时语音用户ID，通过gme实时语音进行语音分析时输入
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 

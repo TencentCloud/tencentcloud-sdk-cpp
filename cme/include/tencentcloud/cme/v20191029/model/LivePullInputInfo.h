@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取直播拉流地址。
                      * @return InputUrl 直播拉流地址。
+                     * 
                      */
                     std::string GetInputUrl() const;
 
                     /**
                      * 设置直播拉流地址。
-                     * @param InputUrl 直播拉流地址。
+                     * @param _inputUrl 直播拉流地址。
+                     * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
 
                     /**
                      * 判断参数 InputUrl 是否已赋值
                      * @return InputUrl 是否已赋值
+                     * 
                      */
                     bool InputUrlHasBeenSet() const;
 

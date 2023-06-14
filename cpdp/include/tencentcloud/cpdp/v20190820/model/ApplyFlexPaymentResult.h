@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取订单ID
                      * @return OrderId 订单ID
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单ID
-                     * @param OrderId 订单ID
+                     * @param _orderId 订单ID
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取税前金额
                      * @return AmountBeforeTax 税前金额
+                     * 
                      */
                     std::string GetAmountBeforeTax() const;
 
                     /**
                      * 设置税前金额
-                     * @param AmountBeforeTax 税前金额
+                     * @param _amountBeforeTax 税前金额
+                     * 
                      */
                     void SetAmountBeforeTax(const std::string& _amountBeforeTax);
 
                     /**
                      * 判断参数 AmountBeforeTax 是否已赋值
                      * @return AmountBeforeTax 是否已赋值
+                     * 
                      */
                     bool AmountBeforeTaxHasBeenSet() const;
 
                     /**
                      * 获取税后金额
                      * @return AmountAfterTax 税后金额
+                     * 
                      */
                     std::string GetAmountAfterTax() const;
 
                     /**
                      * 设置税后金额
-                     * @param AmountAfterTax 税后金额
+                     * @param _amountAfterTax 税后金额
+                     * 
                      */
                     void SetAmountAfterTax(const std::string& _amountAfterTax);
 
                     /**
                      * 判断参数 AmountAfterTax 是否已赋值
                      * @return AmountAfterTax 是否已赋值
+                     * 
                      */
                     bool AmountAfterTaxHasBeenSet() const;
 
                     /**
                      * 获取税金
                      * @return Tax 税金
+                     * 
                      */
                     std::string GetTax() const;
 
                     /**
                      * 设置税金
-                     * @param Tax 税金
+                     * @param _tax 税金
+                     * 
                      */
                     void SetTax(const std::string& _tax);
 
                     /**
                      * 判断参数 Tax 是否已赋值
                      * @return Tax 是否已赋值
+                     * 
                      */
                     bool TaxHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vat 增值税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVat() const;
 
                     /**
                      * 设置增值税
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vat 增值税
+                     * @param _vat 增值税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVat(const std::string& _vat);
 
                     /**
                      * 判断参数 Vat 是否已赋值
                      * @return Vat 是否已赋值
+                     * 
                      */
                     bool VatHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndividualIncomeTax 个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndividualIncomeTax() const;
 
                     /**
                      * 设置个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndividualIncomeTax 个人所得税
+                     * @param _individualIncomeTax 个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndividualIncomeTax(const std::string& _individualIncomeTax);
 
                     /**
                      * 判断参数 IndividualIncomeTax 是否已赋值
                      * @return IndividualIncomeTax 是否已赋值
+                     * 
                      */
                     bool IndividualIncomeTaxHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalTaxSum 附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdditionalTaxSum() const;
 
                     /**
                      * 设置附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdditionalTaxSum 附加税总税额
+                     * @param _additionalTaxSum 附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdditionalTaxSum(const std::string& _additionalTaxSum);
 
                     /**
                      * 判断参数 AdditionalTaxSum 是否已赋值
                      * @return AdditionalTaxSum 是否已赋值
+                     * 
                      */
                     bool AdditionalTaxSumHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalTaxItem 附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdditionalTaxItem() const;
 
                     /**
                      * 设置附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdditionalTaxItem 附加税税项。格式为JSON格式
+                     * @param _additionalTaxItem 附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdditionalTaxItem(const std::string& _additionalTaxItem);
 
                     /**
                      * 判断参数 AdditionalTaxItem 是否已赋值
                      * @return AdditionalTaxItem 是否已赋值
+                     * 
                      */
                     bool AdditionalTaxItemHasBeenSet() const;
 

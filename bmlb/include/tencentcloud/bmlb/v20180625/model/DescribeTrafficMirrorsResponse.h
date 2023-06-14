@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像总数。
                      * @return TotalCount 流量镜像总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取对象数组。数组元素为流量镜像信息，具体结构描述如list结构所示。
                      * @return TrafficMirrorSet 对象数组。数组元素为流量镜像信息，具体结构描述如list结构所示。
+                     * 
                      */
                     std::vector<TrafficMirror> GetTrafficMirrorSet() const;
 
                     /**
                      * 判断参数 TrafficMirrorSet 是否已赋值
                      * @return TrafficMirrorSet 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorSetHasBeenSet() const;
 

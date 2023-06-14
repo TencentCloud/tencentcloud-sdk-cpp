@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>H264：H.264 编码。</li>
                      * @return Codec 视频流的编码格式，可选值：
 <li>H264：H.264 编码。</li>
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置视频流的编码格式，可选值：
 <li>H264：H.264 编码。</li>
-                     * @param Codec 视频流的编码格式，可选值：
+                     * @param _codec 视频流的编码格式，可选值：
 <li>H264：H.264 编码。</li>
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 默认值：1080。
+                     * 
                      */
                     uint64_t GetShortEdge() const;
 
@@ -100,7 +104,7 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 默认值：1080。
-                     * @param ShortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
+                     * @param _shortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
 视频最后的分辨率，根据短边尺寸和宽高比进行计算。
 例：如果项目的宽高比是 16：9 ：
 <li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
@@ -109,12 +113,14 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 默认值：1080。
+                     * 
                      */
                     void SetShortEdge(const uint64_t& _shortEdge);
 
                     /**
                      * 判断参数 ShortEdge 是否已赋值
                      * @return ShortEdge 是否已赋值
+                     * 
                      */
                     bool ShortEdgeHasBeenSet() const;
 
@@ -123,20 +129,23 @@ namespace TencentCloud
 默认值：0。
                      * @return Bitrate 指定码率，单位 bps。当该参数为'0'时则不强制限定码率。
 默认值：0。
+                     * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
                      * 设置指定码率，单位 bps。当该参数为'0'时则不强制限定码率。
 默认值：0。
-                     * @param Bitrate 指定码率，单位 bps。当该参数为'0'时则不强制限定码率。
+                     * @param _bitrate 指定码率，单位 bps。当该参数为'0'时则不强制限定码率。
 默认值：0。
+                     * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 

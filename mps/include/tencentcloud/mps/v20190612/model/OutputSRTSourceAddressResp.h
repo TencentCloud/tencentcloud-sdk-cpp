@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取监听IP。
                      * @return Ip 监听IP。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置监听IP。
-                     * @param Ip 监听IP。
+                     * @param _ip 监听IP。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取监听端口。
                      * @return Port 监听端口。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听端口。
-                     * @param Port 监听端口。
+                     * @param _port 监听端口。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

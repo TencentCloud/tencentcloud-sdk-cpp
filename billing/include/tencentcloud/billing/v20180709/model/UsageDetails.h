@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 商品名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置商品名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 商品名
+                     * @param _productName 商品名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductName 商品细节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubProductName() const;
 
                     /**
                      * 设置商品细节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubProductName 商品细节
+                     * @param _subProductName 商品细节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubProductName(const std::string& _subProductName);
 
                     /**
                      * 判断参数 SubProductName 是否已赋值
                      * @return SubProductName 是否已赋值
+                     * 
                      */
                     bool SubProductNameHasBeenSet() const;
 

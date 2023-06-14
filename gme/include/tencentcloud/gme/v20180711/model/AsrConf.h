@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取语音转文本服务开关，取值：open/close
                      * @return Status 语音转文本服务开关，取值：open/close
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置语音转文本服务开关，取值：open/close
-                     * @param Status 语音转文本服务开关，取值：open/close
+                     * @param _status 语音转文本服务开关，取值：open/close
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

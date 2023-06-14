@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，具体内容请点击左侧链接。
                      * @return TextDetections 检测到的文本信息，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<TextArithmetic> GetTextDetections() const;
 
                     /**
                      * 判断参数 TextDetections 是否已赋值
                      * @return TextDetections 是否已赋值
+                     * 
                      */
                     bool TextDetectionsHasBeenSet() const;
 
                     /**
                      * 获取图片横屏的角度(90度或270度)
                      * @return Angle 图片横屏的角度(90度或270度)
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 

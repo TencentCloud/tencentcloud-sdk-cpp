@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如postgres-hez4fh0v
                      * @return DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-hez4fh0v
-                     * @param DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取是否开通Ipv6外网，1：是，0：否
                      * @return IsIpv6 是否开通Ipv6外网，1：是，0：否
+                     * 
                      */
                     int64_t GetIsIpv6() const;
 
                     /**
                      * 设置是否开通Ipv6外网，1：是，0：否
-                     * @param IsIpv6 是否开通Ipv6外网，1：是，0：否
+                     * @param _isIpv6 是否开通Ipv6外网，1：是，0：否
+                     * 
                      */
                     void SetIsIpv6(const int64_t& _isIpv6);
 
                     /**
                      * 判断参数 IsIpv6 是否已赋值
                      * @return IsIpv6 是否已赋值
+                     * 
                      */
                     bool IsIpv6HasBeenSet() const;
 

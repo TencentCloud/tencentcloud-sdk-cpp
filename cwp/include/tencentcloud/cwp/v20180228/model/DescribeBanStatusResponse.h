@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取阻断开关状态 0:关闭 1:开启
                      * @return Status 阻断开关状态 0:关闭 1:开启
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否弹窗提示信息 false: 关闭，true: 开启
                      * @return ShowTips 是否弹窗提示信息 false: 关闭，true: 开启
+                     * 
                      */
                     bool GetShowTips() const;
 
                     /**
                      * 判断参数 ShowTips 是否已赋值
                      * @return ShowTips 是否已赋值
+                     * 
                      */
                     bool ShowTipsHasBeenSet() const;
 

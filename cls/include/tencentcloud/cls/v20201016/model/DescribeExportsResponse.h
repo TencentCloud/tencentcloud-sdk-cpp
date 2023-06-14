@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志导出列表
                      * @return Exports 日志导出列表
+                     * 
                      */
                     std::vector<ExportInfo> GetExports() const;
 
                     /**
                      * 判断参数 Exports 是否已赋值
                      * @return Exports 是否已赋值
+                     * 
                      */
                     bool ExportsHasBeenSet() const;
 
                     /**
                      * 获取总数目
                      * @return TotalCount 总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

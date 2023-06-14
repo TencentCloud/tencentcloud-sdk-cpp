@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取评论的日期
                      * @return Date 评论的日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置评论的日期
-                     * @param Date 评论的日期
+                     * @param _date 评论的日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取差评的个数
                      * @return NegCommentCount 差评的个数
+                     * 
                      */
                     uint64_t GetNegCommentCount() const;
 
                     /**
                      * 设置差评的个数
-                     * @param NegCommentCount 差评的个数
+                     * @param _negCommentCount 差评的个数
+                     * 
                      */
                     void SetNegCommentCount(const uint64_t& _negCommentCount);
 
                     /**
                      * 判断参数 NegCommentCount 是否已赋值
                      * @return NegCommentCount 是否已赋值
+                     * 
                      */
                     bool NegCommentCountHasBeenSet() const;
 
                     /**
                      * 获取好评的个数
                      * @return PosCommentCount 好评的个数
+                     * 
                      */
                     uint64_t GetPosCommentCount() const;
 
                     /**
                      * 设置好评的个数
-                     * @param PosCommentCount 好评的个数
+                     * @param _posCommentCount 好评的个数
+                     * 
                      */
                     void SetPosCommentCount(const uint64_t& _posCommentCount);
 
                     /**
                      * 判断参数 PosCommentCount 是否已赋值
                      * @return PosCommentCount 是否已赋值
+                     * 
                      */
                     bool PosCommentCountHasBeenSet() const;
 

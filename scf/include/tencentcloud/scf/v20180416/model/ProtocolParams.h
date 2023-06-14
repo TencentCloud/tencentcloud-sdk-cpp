@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WSParams WebSockets协议支持的参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WSParams GetWSParams() const;
 
                     /**
                      * 设置WebSockets协议支持的参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WSParams WebSockets协议支持的参数
+                     * @param _wSParams WebSockets协议支持的参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWSParams(const WSParams& _wSParams);
 
                     /**
                      * 判断参数 WSParams 是否已赋值
                      * @return WSParams 是否已赋值
+                     * 
                      */
                     bool WSParamsHasBeenSet() const;
 

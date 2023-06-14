@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取视频拼接任务 ID。
                      * @return TaskId 视频拼接任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置视频拼接任务 ID。
-                     * @param TaskId 视频拼接任务 ID。
+                     * @param _taskId 视频拼接任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取视频拼接源文件信息。
                      * @return FileInfoSet 视频拼接源文件信息。
+                     * 
                      */
                     std::vector<ConcatFileInfo2017> GetFileInfoSet() const;
 
                     /**
                      * 设置视频拼接源文件信息。
-                     * @param FileInfoSet 视频拼接源文件信息。
+                     * @param _fileInfoSet 视频拼接源文件信息。
+                     * 
                      */
                     void SetFileInfoSet(const std::vector<ConcatFileInfo2017>& _fileInfoSet);
 
                     /**
                      * 判断参数 FileInfoSet 是否已赋值
                      * @return FileInfoSet 是否已赋值
+                     * 
                      */
                     bool FileInfoSetHasBeenSet() const;
 

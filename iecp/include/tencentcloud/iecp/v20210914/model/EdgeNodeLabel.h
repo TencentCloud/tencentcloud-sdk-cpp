@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 标签名称
+                     * @param _key 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -73,38 +76,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 标签值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 标签值
+                     * @param _value 标签值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取是否受保护
                      * @return Protected 是否受保护
+                     * 
                      */
                     bool GetProtected() const;
 
                     /**
                      * 设置是否受保护
-                     * @param Protected 是否受保护
+                     * @param _protected 是否受保护
+                     * 
                      */
                     void SetProtected(const bool& _protected);
 
                     /**
                      * 判断参数 Protected 是否已赋值
                      * @return Protected 是否已赋值
+                     * 
                      */
                     bool ProtectedHasBeenSet() const;
 

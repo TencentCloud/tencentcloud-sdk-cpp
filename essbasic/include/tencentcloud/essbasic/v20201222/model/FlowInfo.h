@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取合同名字
                      * @return FlowName 合同名字
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置合同名字
-                     * @param FlowName 合同名字
+                     * @param _flowName 合同名字
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
                     /**
                      * 获取签署截止时间戳，超过有效签署时间则该签署流程失败
                      * @return Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置签署截止时间戳，超过有效签署时间则该签署流程失败
-                     * @param Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * @param _deadline 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * 
                      */
                     void SetDeadline(const int64_t& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取合同描述
                      * @return FlowDescription 合同描述
+                     * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置合同描述
-                     * @param FlowDescription 合同描述
+                     * @param _flowDescription 合同描述
+                     * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
                     /**
                      * 判断参数 FlowDescription 是否已赋值
                      * @return FlowDescription 是否已赋值
+                     * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 2. “销售”
 3. “租赁”
 4. “其他”
+                     * 
                      */
                     std::string GetFlowType() const;
 
@@ -120,53 +130,61 @@ namespace TencentCloud
 2. “销售”
 3. “租赁”
 4. “其他”
-                     * @param FlowType 合同类型：
+                     * @param _flowType 合同类型：
 1. “劳务”
 2. “销售”
 3. “租赁”
 4. “其他”
+                     * 
                      */
                     void SetFlowType(const std::string& _flowType);
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取回调地址
                      * @return CallbackUrl 回调地址
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调地址
-                     * @param CallbackUrl 回调地址
+                     * @param _callbackUrl 回调地址
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取用户自定义数据
                      * @return UserData 用户自定义数据
+                     * 
                      */
                     std::string GetUserData() const;
 
                     /**
                      * 设置用户自定义数据
-                     * @param UserData 用户自定义数据
+                     * @param _userData 用户自定义数据
+                     * 
                      */
                     void SetUserData(const std::string& _userData);
 
                     /**
                      * 判断参数 UserData 是否已赋值
                      * @return UserData 是否已赋值
+                     * 
                      */
                     bool UserDataHasBeenSet() const;
 

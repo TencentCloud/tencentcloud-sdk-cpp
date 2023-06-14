@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDiseaseHistory 主病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainDiseaseHistory() const;
 
                     /**
                      * 设置主病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainDiseaseHistory 主病史
+                     * @param _mainDiseaseHistory 主病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainDiseaseHistory(const std::string& _mainDiseaseHistory);
 
                     /**
                      * 判断参数 MainDiseaseHistory 是否已赋值
                      * @return MainDiseaseHistory 是否已赋值
+                     * 
                      */
                     bool MainDiseaseHistoryHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllergyHistory 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAllergyHistory() const;
 
                     /**
                      * 设置过敏史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllergyHistory 过敏史
+                     * @param _allergyHistory 过敏史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllergyHistory(const std::string& _allergyHistory);
 
                     /**
                      * 判断参数 AllergyHistory 是否已赋值
                      * @return AllergyHistory 是否已赋值
+                     * 
                      */
                     bool AllergyHistoryHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfectHistory 传染疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInfectHistory() const;
 
                     /**
                      * 设置传染疾病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InfectHistory 传染疾病史
+                     * @param _infectHistory 传染疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfectHistory(const std::string& _infectHistory);
 
                     /**
                      * 判断参数 InfectHistory 是否已赋值
                      * @return InfectHistory 是否已赋值
+                     * 
                      */
                     bool InfectHistoryHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperationHistory() const;
 
                     /**
                      * 设置手术史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperationHistory 手术史
+                     * @param _operationHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperationHistory(const std::string& _operationHistory);
 
                     /**
                      * 判断参数 OperationHistory 是否已赋值
                      * @return OperationHistory 是否已赋值
+                     * 
                      */
                     bool OperationHistoryHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransfusionHistory 输血史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransfusionHistory() const;
 
                     /**
                      * 设置输血史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransfusionHistory 输血史
+                     * @param _transfusionHistory 输血史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransfusionHistory(const std::string& _transfusionHistory);
 
                     /**
                      * 判断参数 TransfusionHistory 是否已赋值
                      * @return TransfusionHistory 是否已赋值
+                     * 
                      */
                     bool TransfusionHistoryHasBeenSet() const;
 

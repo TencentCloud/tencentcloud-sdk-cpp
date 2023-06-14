@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取死信策略源队列名称，调用本接口会清空该队列的死信队列策略。
                      * @return QueueName 死信策略源队列名称，调用本接口会清空该队列的死信队列策略。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置死信策略源队列名称，调用本接口会清空该队列的死信队列策略。
-                     * @param QueueName 死信策略源队列名称，调用本接口会清空该队列的死信队列策略。
+                     * @param _queueName 死信策略源队列名称，调用本接口会清空该队列的死信队列策略。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

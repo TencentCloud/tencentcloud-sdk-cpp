@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。
                      * @return DocumentURL 生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。
+                     * 
                      */
                     std::string GetDocumentURL() const;
 
                     /**
                      * 设置生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。
-                     * @param DocumentURL 生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。
+                     * @param _documentURL 生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。
+                     * 
                      */
                     void SetDocumentURL(const std::string& _documentURL);
 
                     /**
                      * 判断参数 DocumentURL 是否已赋值
                      * @return DocumentURL 是否已赋值
+                     * 
                      */
                     bool DocumentURLHasBeenSet() const;
 
                     /**
                      * 获取生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。
                      * @return SdkURL 生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。
+                     * 
                      */
                     std::string GetSdkURL() const;
 
                     /**
                      * 设置生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。
-                     * @param SdkURL 生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。
+                     * @param _sdkURL 生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。
+                     * 
                      */
                     void SetSdkURL(const std::string& _sdkURL);
 
                     /**
                      * 判断参数 SdkURL 是否已赋值
                      * @return SdkURL 是否已赋值
+                     * 
                      */
                     bool SdkURLHasBeenSet() const;
 

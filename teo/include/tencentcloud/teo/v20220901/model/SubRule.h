@@ -53,38 +53,44 @@ namespace TencentCloud
 注意：满足该数组内任意一项条件，功能即可执行。
                      * @return Conditions 执行功能判断条件。
 注意：满足该数组内任意一项条件，功能即可执行。
+                     * 
                      */
                     std::vector<RuleAndConditions> GetConditions() const;
 
                     /**
                      * 设置执行功能判断条件。
 注意：满足该数组内任意一项条件，功能即可执行。
-                     * @param Conditions 执行功能判断条件。
+                     * @param _conditions 执行功能判断条件。
 注意：满足该数组内任意一项条件，功能即可执行。
+                     * 
                      */
                     void SetConditions(const std::vector<RuleAndConditions>& _conditions);
 
                     /**
                      * 判断参数 Conditions 是否已赋值
                      * @return Conditions 是否已赋值
+                     * 
                      */
                     bool ConditionsHasBeenSet() const;
 
                     /**
                      * 获取执行的功能。
                      * @return Actions 执行的功能。
+                     * 
                      */
                     std::vector<Action> GetActions() const;
 
                     /**
                      * 设置执行的功能。
-                     * @param Actions 执行的功能。
+                     * @param _actions 执行的功能。
+                     * 
                      */
                     void SetActions(const std::vector<Action>& _actions);
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -85,6 +88,7 @@ RevokeClusterUser:解绑cluster用户
 DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
 GetUserOptionMessages:获取用户配置备注信息
 GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
+                     * 
                      */
                     std::string GetApiType() const;
 
@@ -101,7 +105,7 @@ RevokeClusterUser:解绑cluster用户
 DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
 GetUserOptionMessages:获取用户配置备注信息
 GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
-                     * @param ApiType api接口名称,GetClusters:获取集群cluster列表
+                     * @param _apiType api接口名称,GetClusters:获取集群cluster列表
 GetSystemUsers:获取系统用户列表
 CheckNodeCluster: 检查节点是否隶属一个cluster
 GetClusterDatabases: 获取一个cluster下的数据库列表
@@ -113,48 +117,56 @@ RevokeClusterUser:解绑cluster用户
 DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
 GetUserOptionMessages:获取用户配置备注信息
 GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 
                     /**
                      * 获取集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
                      * @return Cluster 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
-                     * @param Cluster 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
+                     * @param _cluster 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取用户名称，api与user相关的必填
                      * @return UserName 用户名称，api与user相关的必填
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名称，api与user相关的必填
-                     * @param UserName 用户名称，api与user相关的必填
+                     * @param _userName 用户名称，api与user相关的必填
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 

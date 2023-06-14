@@ -52,108 +52,126 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Addresses 集群的接入地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IPAddress> GetAddresses() const;
 
                     /**
                      * 判断参数 Addresses 是否已赋值
                      * @return Addresses 是否已赋值
+                     * 
                      */
                     bool AddressesHasBeenSet() const;
 
                     /**
                      * 获取集群的认证信息
                      * @return Credential 集群的认证信息
+                     * 
                      */
                     ClusterCredential GetCredential() const;
 
                     /**
                      * 判断参数 Credential 是否已赋值
                      * @return Credential 是否已赋值
+                     * 
                      */
                     bool CredentialHasBeenSet() const;
 
                     /**
                      * 获取集群的公网访问信息
                      * @return PublicLB 集群的公网访问信息
+                     * 
                      */
                     EdgeClusterPublicLB GetPublicLB() const;
 
                     /**
                      * 判断参数 PublicLB 是否已赋值
                      * @return PublicLB 是否已赋值
+                     * 
                      */
                     bool PublicLBHasBeenSet() const;
 
                     /**
                      * 获取集群的内网访问信息
                      * @return InternalLB 集群的内网访问信息
+                     * 
                      */
                     EdgeClusterInternalLB GetInternalLB() const;
 
                     /**
                      * 判断参数 InternalLB 是否已赋值
                      * @return InternalLB 是否已赋值
+                     * 
                      */
                     bool InternalLBHasBeenSet() const;
 
                     /**
                      * 获取集群的CoreDns部署信息
                      * @return CoreDns 集群的CoreDns部署信息
+                     * 
                      */
                     std::string GetCoreDns() const;
 
                     /**
                      * 判断参数 CoreDns 是否已赋值
                      * @return CoreDns 是否已赋值
+                     * 
                      */
                     bool CoreDnsHasBeenSet() const;
 
                     /**
                      * 获取集群的健康检查多地域部署信息
                      * @return HealthRegion 集群的健康检查多地域部署信息
+                     * 
                      */
                     std::string GetHealthRegion() const;
 
                     /**
                      * 判断参数 HealthRegion 是否已赋值
                      * @return HealthRegion 是否已赋值
+                     * 
                      */
                     bool HealthRegionHasBeenSet() const;
 
                     /**
                      * 获取集群的健康检查部署信息
                      * @return Health 集群的健康检查部署信息
+                     * 
                      */
                     std::string GetHealth() const;
 
                     /**
                      * 判断参数 Health 是否已赋值
                      * @return Health 是否已赋值
+                     * 
                      */
                     bool HealthHasBeenSet() const;
 
                     /**
                      * 获取是否部署GridDaemon以支持headless service
                      * @return GridDaemon 是否部署GridDaemon以支持headless service
+                     * 
                      */
                     std::string GetGridDaemon() const;
 
                     /**
                      * 判断参数 GridDaemon 是否已赋值
                      * @return GridDaemon 是否已赋值
+                     * 
                      */
                     bool GridDaemonHasBeenSet() const;
 
                     /**
                      * 获取公网访问kins集群
                      * @return UnitCluster 公网访问kins集群
+                     * 
                      */
                     std::string GetUnitCluster() const;
 
                     /**
                      * 判断参数 UnitCluster 是否已赋值
                      * @return UnitCluster 是否已赋值
+                     * 
                      */
                     bool UnitClusterHasBeenSet() const;
 

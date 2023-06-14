@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 标签Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签Key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 标签Key
+                     * @param _key 标签Key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 标签Value
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签Value
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 标签Value
+                     * @param _value 标签Value
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceSum 实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceSum() const;
 
                     /**
                      * 设置实例个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceSum 实例个数
+                     * @param _instanceSum 实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceSum(const int64_t& _instanceSum);
 
                     /**
                      * 判断参数 InstanceSum 是否已赋值
                      * @return InstanceSum 是否已赋值
+                     * 
                      */
                     bool InstanceSumHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceType 产品类型，如：cvm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置产品类型，如：cvm
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceType 产品类型，如：cvm
+                     * @param _serviceType 产品类型，如：cvm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindingStatus 绑定状态，2：绑定成功，1：绑定中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBindingStatus() const;
 
                     /**
                      * 设置绑定状态，2：绑定成功，1：绑定中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindingStatus 绑定状态，2：绑定成功，1：绑定中
+                     * @param _bindingStatus 绑定状态，2：绑定成功，1：绑定中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindingStatus(const int64_t& _bindingStatus);
 
                     /**
                      * 判断参数 BindingStatus 是否已赋值
                      * @return BindingStatus 是否已赋值
+                     * 
                      */
                     bool BindingStatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagStatus 标签状态，2：标签存在，1：标签不存在
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTagStatus() const;
 
                     /**
                      * 设置标签状态，2：标签存在，1：标签不存在
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagStatus 标签状态，2：标签存在，1：标签不存在
+                     * @param _tagStatus 标签状态，2：标签存在，1：标签不存在
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagStatus(const int64_t& _tagStatus);
 
                     /**
                      * 判断参数 TagStatus 是否已赋值
                      * @return TagStatus 是否已赋值
+                     * 
                      */
                     bool TagStatusHasBeenSet() const;
 

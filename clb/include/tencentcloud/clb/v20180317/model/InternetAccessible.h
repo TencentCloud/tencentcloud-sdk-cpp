@@ -53,6 +53,7 @@ BANDWIDTH_PACKAGE 按带宽包计费;
                      * @return InternetChargeType TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费;
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
@@ -60,15 +61,17 @@ BANDWIDTH_PACKAGE 按带宽包计费;
                      * 设置TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费;
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetChargeType TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
+                     * @param _internetChargeType TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费;
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
@@ -85,6 +88,7 @@ BANDWIDTH_PACKAGE 按带宽包计费;
   - 默认为普通规格的性能容量型实例，SLA对应超强型1规格，最大出带宽的范围为1Mbps-10240Mbps。
   - 当您开通了超大型规格的性能容量型时，最大出带宽的范围为1Mbps-61440Mbps。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
@@ -95,18 +99,20 @@ BANDWIDTH_PACKAGE 按带宽包计费;
   - 默认为普通规格的性能容量型实例，SLA对应超强型1规格，最大出带宽的范围为1Mbps-10240Mbps。
   - 当您开通了超大型规格的性能容量型时，最大出带宽的范围为1Mbps-61440Mbps。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，仅对公网属性的共享型、性能容量型和独占型 CLB 实例、以及内网属性的性能容量型 CLB 实例生效。
+                     * @param _internetMaxBandwidthOut 最大出带宽，单位Mbps，仅对公网属性的共享型、性能容量型和独占型 CLB 实例、以及内网属性的性能容量型 CLB 实例生效。
 - 对于公网属性的共享型和独占型 CLB 实例，最大出带宽的范围为1Mbps-2048Mbps。
 - 对于公网属性和内网属性的性能容量型 CLB实例
   - 默认为普通规格的性能容量型实例，SLA对应超强型1规格，最大出带宽的范围为1Mbps-10240Mbps。
   - 当您开通了超大型规格的性能容量型时，最大出带宽的范围为1Mbps-61440Mbps。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
@@ -115,20 +121,23 @@ BANDWIDTH_PACKAGE 按带宽包计费;
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthpkgSubType 带宽包的类型，如SINGLEISP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBandwidthpkgSubType() const;
 
                     /**
                      * 设置带宽包的类型，如SINGLEISP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BandwidthpkgSubType 带宽包的类型，如SINGLEISP
+                     * @param _bandwidthpkgSubType 带宽包的类型，如SINGLEISP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBandwidthpkgSubType(const std::string& _bandwidthpkgSubType);
 
                     /**
                      * 判断参数 BandwidthpkgSubType 是否已赋值
                      * @return BandwidthpkgSubType 是否已赋值
+                     * 
                      */
                     bool BandwidthpkgSubTypeHasBeenSet() const;
 

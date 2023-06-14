@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取网络协议，可选值：`TCP`、`UDP`。
                      * @return IpProtocol 网络协议，可选值：`TCP`、`UDP`。
+                     * 
                      */
                     std::string GetIpProtocol() const;
 
                     /**
                      * 设置网络协议，可选值：`TCP`、`UDP`。
-                     * @param IpProtocol 网络协议，可选值：`TCP`、`UDP`。
+                     * @param _ipProtocol 网络协议，可选值：`TCP`、`UDP`。
+                     * 
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
 
                     /**
                      * 判断参数 IpProtocol 是否已赋值
                      * @return IpProtocol 是否已赋值
+                     * 
                      */
                     bool IpProtocolHasBeenSet() const;
 
                     /**
                      * 获取弹性IP。
                      * @return PublicIpAddress 弹性IP。
+                     * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
                      * 设置弹性IP。
-                     * @param PublicIpAddress 弹性IP。
+                     * @param _publicIpAddress 弹性IP。
+                     * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
 
                     /**
                      * 判断参数 PublicIpAddress 是否已赋值
                      * @return PublicIpAddress 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
                      * 获取公网端口。
                      * @return PublicPort 公网端口。
+                     * 
                      */
                     uint64_t GetPublicPort() const;
 
                     /**
                      * 设置公网端口。
-                     * @param PublicPort 公网端口。
+                     * @param _publicPort 公网端口。
+                     * 
                      */
                     void SetPublicPort(const uint64_t& _publicPort);
 
                     /**
                      * 判断参数 PublicPort 是否已赋值
                      * @return PublicPort 是否已赋值
+                     * 
                      */
                     bool PublicPortHasBeenSet() const;
 
                     /**
                      * 获取内网地址。
                      * @return PrivateIpAddress 内网地址。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置内网地址。
-                     * @param PrivateIpAddress 内网地址。
+                     * @param _privateIpAddress 内网地址。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 
                     /**
                      * 获取内网端口。
                      * @return PrivatePort 内网端口。
+                     * 
                      */
                     uint64_t GetPrivatePort() const;
 
                     /**
                      * 设置内网端口。
-                     * @param PrivatePort 内网端口。
+                     * @param _privatePort 内网端口。
+                     * 
                      */
                     void SetPrivatePort(const uint64_t& _privatePort);
 
                     /**
                      * 判断参数 PrivatePort 是否已赋值
                      * @return PrivatePort 是否已赋值
+                     * 
                      */
                     bool PrivatePortHasBeenSet() const;
 
                     /**
                      * 获取NAT网关转发规则描述。
                      * @return Description NAT网关转发规则描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置NAT网关转发规则描述。
-                     * @param Description NAT网关转发规则描述。
+                     * @param _description NAT网关转发规则描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

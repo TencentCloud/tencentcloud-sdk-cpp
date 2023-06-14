@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取可创建最大exchange数
                      * @return MaxExchange 可创建最大exchange数
+                     * 
                      */
                     int64_t GetMaxExchange() const;
 
                     /**
                      * 设置可创建最大exchange数
-                     * @param MaxExchange 可创建最大exchange数
+                     * @param _maxExchange 可创建最大exchange数
+                     * 
                      */
                     void SetMaxExchange(const int64_t& _maxExchange);
 
                     /**
                      * 判断参数 MaxExchange 是否已赋值
                      * @return MaxExchange 是否已赋值
+                     * 
                      */
                     bool MaxExchangeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedExchange 已创建exchange数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUsedExchange() const;
 
                     /**
                      * 设置已创建exchange数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsedExchange 已创建exchange数
+                     * @param _usedExchange 已创建exchange数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsedExchange(const int64_t& _usedExchange);
 
                     /**
                      * 判断参数 UsedExchange 是否已赋值
                      * @return UsedExchange 是否已赋值
+                     * 
                      */
                     bool UsedExchangeHasBeenSet() const;
 

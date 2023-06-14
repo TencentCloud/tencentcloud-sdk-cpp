@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取保底防护峰值，单位Mbps
                      * @return ProtectBandwidth 保底防护峰值，单位Mbps
+                     * 
                      */
                     uint64_t GetProtectBandwidth() const;
 
                     /**
                      * 设置保底防护峰值，单位Mbps
-                     * @param ProtectBandwidth 保底防护峰值，单位Mbps
+                     * @param _protectBandwidth 保底防护峰值，单位Mbps
+                     * 
                      */
                     void SetProtectBandwidth(const uint64_t& _protectBandwidth);
 
                     /**
                      * 判断参数 ProtectBandwidth 是否已赋值
                      * @return ProtectBandwidth 是否已赋值
+                     * 
                      */
                     bool ProtectBandwidthHasBeenSet() const;
 
                     /**
                      * 获取CC防护峰值，单位qps
                      * @return ProtectCCQPS CC防护峰值，单位qps
+                     * 
                      */
                     uint64_t GetProtectCCQPS() const;
 
                     /**
                      * 设置CC防护峰值，单位qps
-                     * @param ProtectCCQPS CC防护峰值，单位qps
+                     * @param _protectCCQPS CC防护峰值，单位qps
+                     * 
                      */
                     void SetProtectCCQPS(const uint64_t& _protectCCQPS);
 
                     /**
                      * 判断参数 ProtectCCQPS 是否已赋值
                      * @return ProtectCCQPS 是否已赋值
+                     * 
                      */
                     bool ProtectCCQPSHasBeenSet() const;
 
                     /**
                      * 获取正常业务带宽，单位Mbps
                      * @return NormalBandwidth 正常业务带宽，单位Mbps
+                     * 
                      */
                     uint64_t GetNormalBandwidth() const;
 
                     /**
                      * 设置正常业务带宽，单位Mbps
-                     * @param NormalBandwidth 正常业务带宽，单位Mbps
+                     * @param _normalBandwidth 正常业务带宽，单位Mbps
+                     * 
                      */
                     void SetNormalBandwidth(const uint64_t& _normalBandwidth);
 
                     /**
                      * 判断参数 NormalBandwidth 是否已赋值
                      * @return NormalBandwidth 是否已赋值
+                     * 
                      */
                     bool NormalBandwidthHasBeenSet() const;
 
                     /**
                      * 获取转发规则数，单位条
                      * @return ForwardRulesLimit 转发规则数，单位条
+                     * 
                      */
                     uint64_t GetForwardRulesLimit() const;
 
                     /**
                      * 设置转发规则数，单位条
-                     * @param ForwardRulesLimit 转发规则数，单位条
+                     * @param _forwardRulesLimit 转发规则数，单位条
+                     * 
                      */
                     void SetForwardRulesLimit(const uint64_t& _forwardRulesLimit);
 
                     /**
                      * 判断参数 ForwardRulesLimit 是否已赋值
                      * @return ForwardRulesLimit 是否已赋值
+                     * 
                      */
                     bool ForwardRulesLimitHasBeenSet() const;
 
@@ -127,6 +139,7 @@ namespace TencentCloud
 0：没有开启自动续费
 1：开启了自动续费
 ]
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
@@ -135,16 +148,18 @@ namespace TencentCloud
 0：没有开启自动续费
 1：开启了自动续费
 ]
-                     * @param AutoRenewFlag 自动续费状态，取值[
+                     * @param _autoRenewFlag 自动续费状态，取值[
 0：没有开启自动续费
 1：开启了自动续费
 ]
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
@@ -163,6 +178,7 @@ namespace TencentCloud
 4：移动
 99：第三方合作线路
 ]
+                     * 
                      */
                     uint64_t GetLine() const;
 
@@ -174,37 +190,42 @@ namespace TencentCloud
 4：移动
 99：第三方合作线路
 ]
-                     * @param Line 高防IP线路，取值为[
+                     * @param _line 高防IP线路，取值为[
 1：BGP线路
 2：电信
 3：联通
 4：移动
 99：第三方合作线路
 ]
+                     * 
                      */
                     void SetLine(const uint64_t& _line);
 
                     /**
                      * 判断参数 Line 是否已赋值
                      * @return Line 是否已赋值
+                     * 
                      */
                     bool LineHasBeenSet() const;
 
                     /**
                      * 获取弹性防护峰值，单位Mbps
                      * @return ElasticBandwidth 弹性防护峰值，单位Mbps
+                     * 
                      */
                     uint64_t GetElasticBandwidth() const;
 
                     /**
                      * 设置弹性防护峰值，单位Mbps
-                     * @param ElasticBandwidth 弹性防护峰值，单位Mbps
+                     * @param _elasticBandwidth 弹性防护峰值，单位Mbps
+                     * 
                      */
                     void SetElasticBandwidth(const uint64_t& _elasticBandwidth);
 
                     /**
                      * 判断参数 ElasticBandwidth 是否已赋值
                      * @return ElasticBandwidth 是否已赋值
+                     * 
                      */
                     bool ElasticBandwidthHasBeenSet() const;
 

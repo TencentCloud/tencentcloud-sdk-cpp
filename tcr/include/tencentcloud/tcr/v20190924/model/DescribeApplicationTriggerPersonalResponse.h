@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取触发器列表返回值
                      * @return Data 触发器列表返回值
+                     * 
                      */
                     DescribeApplicationTriggerPersonalResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取频道ID
                      * @return LiveChannelId 频道ID
+                     * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 设置频道ID
-                     * @param LiveChannelId 频道ID
+                     * @param _liveChannelId 频道ID
+                     * 
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
 
                     /**
                      * 判断参数 LiveChannelId 是否已赋值
                      * @return LiveChannelId 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdHasBeenSet() const;
 

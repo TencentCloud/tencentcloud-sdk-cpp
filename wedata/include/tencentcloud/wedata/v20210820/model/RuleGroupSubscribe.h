@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleGroupId 规则组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleGroupId 规则组Id
+                     * @param _ruleGroupId 规则组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Receivers 订阅接收人列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SubscribeReceiver> GetReceivers() const;
 
                     /**
                      * 设置订阅接收人列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Receivers 订阅接收人列表
+                     * @param _receivers 订阅接收人列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceivers(const std::vector<SubscribeReceiver>& _receivers);
 
                     /**
                      * 判断参数 Receivers 是否已赋值
                      * @return Receivers 是否已赋值
+                     * 
                      */
                     bool ReceiversHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeType 订阅方式 1.邮件email  2.短信sms
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetSubscribeType() const;
 
                     /**
                      * 设置订阅方式 1.邮件email  2.短信sms
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubscribeType 订阅方式 1.邮件email  2.短信sms
+                     * @param _subscribeType 订阅方式 1.邮件email  2.短信sms
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubscribeType(const std::vector<uint64_t>& _subscribeType);
 
                     /**
                      * 判断参数 SubscribeType 是否已赋值
                      * @return SubscribeType 是否已赋值
+                     * 
                      */
                     bool SubscribeTypeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebHooks 群机器人配置的webhook信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SubscribeWebHook> GetWebHooks() const;
 
                     /**
                      * 设置群机器人配置的webhook信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebHooks 群机器人配置的webhook信息
+                     * @param _webHooks 群机器人配置的webhook信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebHooks(const std::vector<SubscribeWebHook>& _webHooks);
 
                     /**
                      * 判断参数 WebHooks 是否已赋值
                      * @return WebHooks 是否已赋值
+                     * 
                      */
                     bool WebHooksHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取1: 以网络维度输出, 0: 以服务维度输出
                      * @return Type 1: 以网络维度输出, 0: 以服务维度输出
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置1: 以网络维度输出, 0: 以服务维度输出
-                     * @param Type 1: 以网络维度输出, 0: 以服务维度输出
+                     * @param _type 1: 以网络维度输出, 0: 以服务维度输出
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

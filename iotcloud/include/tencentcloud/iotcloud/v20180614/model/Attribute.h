@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取属性列表
                      * @return Tags 属性列表
+                     * 
                      */
                     std::vector<DeviceTag> GetTags() const;
 
                     /**
                      * 设置属性列表
-                     * @param Tags 属性列表
+                     * @param _tags 属性列表
+                     * 
                      */
                     void SetTags(const std::vector<DeviceTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

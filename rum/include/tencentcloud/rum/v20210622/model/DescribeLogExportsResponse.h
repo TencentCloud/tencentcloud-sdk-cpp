@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志导出记录列表
                      * @return LogExportSet 日志导出记录列表
+                     * 
                      */
                     std::vector<LogExport> GetLogExportSet() const;
 
                     /**
                      * 判断参数 LogExportSet 是否已赋值
                      * @return LogExportSet 是否已赋值
+                     * 
                      */
                     bool LogExportSetHasBeenSet() const;
 

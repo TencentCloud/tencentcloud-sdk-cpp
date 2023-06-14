@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取为集群容器网络增加的子网列表
                      * @return SubnetIds 为集群容器网络增加的子网列表
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置为集群容器网络增加的子网列表
-                     * @param SubnetIds 为集群容器网络增加的子网列表
+                     * @param _subnetIds 为集群容器网络增加的子网列表
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取集群所属的VPC的ID
                      * @return VpcId 集群所属的VPC的ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群所属的VPC的ID
-                     * @param VpcId 集群所属的VPC的ID
+                     * @param _vpcId 集群所属的VPC的ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
                      * @return SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * 
                      */
                     bool GetSkipAddingNonMasqueradeCIDRs() const;
 
                     /**
                      * 设置是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
-                     * @param SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * @param _skipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * 
                      */
                     void SetSkipAddingNonMasqueradeCIDRs(const bool& _skipAddingNonMasqueradeCIDRs);
 
                     /**
                      * 判断参数 SkipAddingNonMasqueradeCIDRs 是否已赋值
                      * @return SkipAddingNonMasqueradeCIDRs 是否已赋值
+                     * 
                      */
                     bool SkipAddingNonMasqueradeCIDRsHasBeenSet() const;
 

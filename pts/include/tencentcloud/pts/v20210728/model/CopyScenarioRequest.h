@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目 ID
                      * @return ProjectId 项目 ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * @param _projectId 项目 ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取场景 ID
                      * @return ScenarioId 场景 ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景 ID
-                     * @param ScenarioId 场景 ID
+                     * @param _scenarioId 场景 ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 

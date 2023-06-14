@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取Song Name
                      * @return Name Song Name
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Song Name
-                     * @param Name Song Name
+                     * @param _name Song Name
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取歌曲版本
                      * @return Version 歌曲版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置歌曲版本
-                     * @param Version 歌曲版本
+                     * @param _version 歌曲版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取歌曲总时长（非试听时长）
                      * @return Duration 歌曲总时长（非试听时长）
+                     * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置歌曲总时长（非试听时长）
-                     * @param Duration 歌曲总时长（非试听时长）
+                     * @param _duration 歌曲总时长（非试听时长）
+                     * 
                      */
                     void SetDuration(const std::string& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取试听开始时间
                      * @return AuditionBegin 试听开始时间
+                     * 
                      */
                     uint64_t GetAuditionBegin() const;
 
                     /**
                      * 设置试听开始时间
-                     * @param AuditionBegin 试听开始时间
+                     * @param _auditionBegin 试听开始时间
+                     * 
                      */
                     void SetAuditionBegin(const uint64_t& _auditionBegin);
 
                     /**
                      * 判断参数 AuditionBegin 是否已赋值
                      * @return AuditionBegin 是否已赋值
+                     * 
                      */
                     bool AuditionBeginHasBeenSet() const;
 
                     /**
                      * 获取试听结束时间
                      * @return AuditionEnd 试听结束时间
+                     * 
                      */
                     uint64_t GetAuditionEnd() const;
 
                     /**
                      * 设置试听结束时间
-                     * @param AuditionEnd 试听结束时间
+                     * @param _auditionEnd 试听结束时间
+                     * 
                      */
                     void SetAuditionEnd(const uint64_t& _auditionEnd);
 
                     /**
                      * 判断参数 AuditionEnd 是否已赋值
                      * @return AuditionEnd 是否已赋值
+                     * 
                      */
                     bool AuditionEndHasBeenSet() const;
 
                     /**
                      * 获取标签名称
                      * @return TagNames 标签名称
+                     * 
                      */
                     std::vector<std::string> GetTagNames() const;
 
                     /**
                      * 设置标签名称
-                     * @param TagNames 标签名称
+                     * @param _tagNames 标签名称
+                     * 
                      */
                     void SetTagNames(const std::vector<std::string>& _tagNames);
 
                     /**
                      * 判断参数 TagNames 是否已赋值
                      * @return TagNames 是否已赋值
+                     * 
                      */
                     bool TagNamesHasBeenSet() const;
 

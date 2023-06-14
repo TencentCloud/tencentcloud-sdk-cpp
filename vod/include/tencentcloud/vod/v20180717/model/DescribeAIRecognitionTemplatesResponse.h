@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取音视频内容识别模板详情列表。
                      * @return AIRecognitionTemplateSet 音视频内容识别模板详情列表。
+                     * 
                      */
                     std::vector<AIRecognitionTemplateItem> GetAIRecognitionTemplateSet() const;
 
                     /**
                      * 判断参数 AIRecognitionTemplateSet 是否已赋值
                      * @return AIRecognitionTemplateSet 是否已赋值
+                     * 
                      */
                     bool AIRecognitionTemplateSetHasBeenSet() const;
 

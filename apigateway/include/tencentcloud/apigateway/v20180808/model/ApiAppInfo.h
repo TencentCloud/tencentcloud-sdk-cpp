@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiAppName() const;
 
                     /**
                      * 设置应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiAppName 应用名称
+                     * @param _apiAppName 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiAppName(const std::string& _apiAppName);
 
                     /**
                      * 判断参数 ApiAppName 是否已赋值
                      * @return ApiAppName 是否已赋值
+                     * 
                      */
                     bool ApiAppNameHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApiAppId 应用ID
+                     * 
                      */
                     std::string GetApiAppId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApiAppId 应用ID
+                     * @param _apiAppId 应用ID
+                     * 
                      */
                     void SetApiAppId(const std::string& _apiAppId);
 
                     /**
                      * 判断参数 ApiAppId 是否已赋值
                      * @return ApiAppId 是否已赋值
+                     * 
                      */
                     bool ApiAppIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppSecret 应用SECRET
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiAppSecret() const;
 
                     /**
                      * 设置应用SECRET
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiAppSecret 应用SECRET
+                     * @param _apiAppSecret 应用SECRET
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiAppSecret(const std::string& _apiAppSecret);
 
                     /**
                      * 判断参数 ApiAppSecret 是否已赋值
                      * @return ApiAppSecret 是否已赋值
+                     * 
                      */
                     bool ApiAppSecretHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppDesc 应用描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiAppDesc() const;
 
                     /**
                      * 设置应用描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiAppDesc 应用描述
+                     * @param _apiAppDesc 应用描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiAppDesc(const std::string& _apiAppDesc);
 
                     /**
                      * 判断参数 ApiAppDesc 是否已赋值
                      * @return ApiAppDesc 是否已赋值
+                     * 
                      */
                     bool ApiAppDescHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiedTime 修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _modifiedTime 修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppKey 应用KEY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiAppKey() const;
 
                     /**
                      * 设置应用KEY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiAppKey 应用KEY
+                     * @param _apiAppKey 应用KEY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiAppKey(const std::string& _apiAppKey);
 
                     /**
                      * 判断参数 ApiAppKey 是否已赋值
                      * @return ApiAppKey 是否已赋值
+                     * 
                      */
                     bool ApiAppKeyHasBeenSet() const;
 

@@ -46,180 +46,210 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return Name 规则名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-                     * @param Name 规则名称
+                     * @param _name 规则名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取优先级
                      * @return SortId 优先级
+                     * 
                      */
                     std::string GetSortId() const;
 
                     /**
                      * 设置优先级
-                     * @param SortId 优先级
+                     * @param _sortId 优先级
+                     * 
                      */
                     void SetSortId(const std::string& _sortId);
 
                     /**
                      * 判断参数 SortId 是否已赋值
                      * @return SortId 是否已赋值
+                     * 
                      */
                     bool SortIdHasBeenSet() const;
 
                     /**
                      * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
                      * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * @param ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * @param _expireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取策略详情
                      * @return Strategies 策略详情
+                     * 
                      */
                     std::vector<Strategy> GetStrategies() const;
 
                     /**
                      * 设置策略详情
-                     * @param Strategies 策略详情
+                     * @param _strategies 策略详情
+                     * 
                      */
                     void SetStrategies(const std::vector<Strategy>& _strategies);
 
                     /**
                      * 判断参数 Strategies 是否已赋值
                      * @return Strategies 是否已赋值
+                     * 
                      */
                     bool StrategiesHasBeenSet() const;
 
                     /**
                      * 获取需要添加策略的域名
                      * @return Domain 需要添加策略的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要添加策略的域名
-                     * @param Domain 需要添加策略的域名
+                     * @param _domain 需要添加策略的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
                      * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
-                     * @param ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 
                      */
                     void SetActionType(const std::string& _actionType);
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 
                     /**
                      * 获取如果动作是重定向，则表示重定向的地址；其他情况可以为空
                      * @return Redirect 如果动作是重定向，则表示重定向的地址；其他情况可以为空
+                     * 
                      */
                     std::string GetRedirect() const;
 
                     /**
                      * 设置如果动作是重定向，则表示重定向的地址；其他情况可以为空
-                     * @param Redirect 如果动作是重定向，则表示重定向的地址；其他情况可以为空
+                     * @param _redirect 如果动作是重定向，则表示重定向的地址；其他情况可以为空
+                     * 
                      */
                     void SetRedirect(const std::string& _redirect);
 
                     /**
                      * 判断参数 Redirect 是否已赋值
                      * @return Redirect 是否已赋值
+                     * 
                      */
                     bool RedirectHasBeenSet() const;
 
                     /**
                      * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * 
                      */
                     std::string GetEdition() const;
 
                     /**
                      * 设置WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
-                     * @param Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @param _edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * 
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
+                     * 
                      */
                     bool EditionHasBeenSet() const;
 
                     /**
                      * 获取放行的详情
                      * @return Bypass 放行的详情
+                     * 
                      */
                     std::string GetBypass() const;
 
                     /**
                      * 设置放行的详情
-                     * @param Bypass 放行的详情
+                     * @param _bypass 放行的详情
+                     * 
                      */
                     void SetBypass(const std::string& _bypass);
 
                     /**
                      * 判断参数 Bypass 是否已赋值
                      * @return Bypass 是否已赋值
+                     * 
                      */
                     bool BypassHasBeenSet() const;
 
                     /**
                      * 获取添加规则的来源，默认为空
                      * @return EventId 添加规则的来源，默认为空
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置添加规则的来源，默认为空
-                     * @param EventId 添加规则的来源，默认为空
+                     * @param _eventId 添加规则的来源，默认为空
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

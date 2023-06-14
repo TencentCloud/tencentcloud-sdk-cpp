@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 项目所属的 uin（默认项目为0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOwnerUin() const;
 
                     /**
                      * 设置项目所属的 uin（默认项目为0）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerUin 项目所属的 uin（默认项目为0）
+                     * @param _ownerUin 项目所属的 uin（默认项目为0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerUin(const int64_t& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 项目名称
+                     * @param _name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorUin 创建项目的 uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreatorUin() const;
 
                     /**
                      * 设置创建项目的 uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatorUin 创建项目的 uin
+                     * @param _creatorUin 创建项目的 uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatorUin(const int64_t& _creatorUin);
 
                     /**
                      * 判断参数 CreatorUin 是否已赋值
                      * @return CreatorUin 是否已赋值
+                     * 
                      */
                     bool CreatorUinHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 项目创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置项目创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 项目创建时间
+                     * @param _createTime 项目创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 项目说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 设置项目说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Info 项目说明
+                     * @param _info 项目说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfo(const std::string& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

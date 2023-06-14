@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取消息队列类型 1：CMQ 2：kafka
                      * @return MsgQueueType 消息队列类型 1：CMQ 2：kafka
+                     * 
                      */
                     uint64_t GetMsgQueueType() const;
 
                     /**
                      * 设置消息队列类型 1：CMQ 2：kafka
-                     * @param MsgQueueType 消息队列类型 1：CMQ 2：kafka
+                     * @param _msgQueueType 消息队列类型 1：CMQ 2：kafka
+                     * 
                      */
                     void SetMsgQueueType(const uint64_t& _msgQueueType);
 
                     /**
                      * 判断参数 MsgQueueType 是否已赋值
                      * @return MsgQueueType 是否已赋值
+                     * 
                      */
                     bool MsgQueueTypeHasBeenSet() const;
 
                     /**
                      * 获取消息类型列表，整型值（0-31）之间以“,”分隔
                      * @return MsgType 消息类型列表，整型值（0-31）之间以“,”分隔
+                     * 
                      */
                     std::string GetMsgType() const;
 
                     /**
                      * 设置消息类型列表，整型值（0-31）之间以“,”分隔
-                     * @param MsgType 消息类型列表，整型值（0-31）之间以“,”分隔
+                     * @param _msgType 消息类型列表，整型值（0-31）之间以“,”分隔
+                     * 
                      */
                     void SetMsgType(const std::string& _msgType);
 
                     /**
                      * 判断参数 MsgType 是否已赋值
                      * @return MsgType 是否已赋值
+                     * 
                      */
                     bool MsgTypeHasBeenSet() const;
 
                     /**
                      * 获取主题名称
                      * @return Topic 主题名称
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置主题名称
-                     * @param Topic 主题名称
+                     * @param _topic 主题名称
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return Instance 实例名称
+                     * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置实例名称
-                     * @param Instance 实例名称
+                     * @param _instance 实例名称
+                     * 
                      */
                     void SetInstance(const std::string& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
                     /**
                      * 获取消息地域
                      * @return MsgRegion 消息地域
+                     * 
                      */
                     std::string GetMsgRegion() const;
 
                     /**
                      * 设置消息地域
-                     * @param MsgRegion 消息地域
+                     * @param _msgRegion 消息地域
+                     * 
                      */
                     void SetMsgRegion(const std::string& _msgRegion);
 
                     /**
                      * 判断参数 MsgRegion 是否已赋值
                      * @return MsgRegion 是否已赋值
+                     * 
                      */
                     bool MsgRegionHasBeenSet() const;
 

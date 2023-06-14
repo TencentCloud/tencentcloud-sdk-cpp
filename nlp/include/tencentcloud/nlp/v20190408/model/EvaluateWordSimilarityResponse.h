@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取词相似度分值。
                      * @return Similarity 词相似度分值。
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 

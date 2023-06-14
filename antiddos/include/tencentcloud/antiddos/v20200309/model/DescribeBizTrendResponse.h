@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取曲线图各个时间点的值
                      * @return DataList 曲线图各个时间点的值
+                     * 
                      */
                     std::vector<double> GetDataList() const;
 
                     /**
                      * 判断参数 DataList 是否已赋值
                      * @return DataList 是否已赋值
+                     * 
                      */
                     bool DataListHasBeenSet() const;
 
                     /**
                      * 获取统计纬度
                      * @return MetricName 统计纬度
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxData 返回DataList中的最大值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxData() const;
 
                     /**
                      * 判断参数 MaxData 是否已赋值
                      * @return MaxData 是否已赋值
+                     * 
                      */
                     bool MaxDataHasBeenSet() const;
 

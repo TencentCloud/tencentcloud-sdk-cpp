@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取String(22)，商户号（签约客户号）
                      * @return MrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     std::string GetMrchCode() const;
 
                     /**
                      * 设置String(22)，商户号（签约客户号）
-                     * @param MrchCode String(22)，商户号（签约客户号）
+                     * @param _mrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     void SetMrchCode(const std::string& _mrchCode);
 
                     /**
                      * 判断参数 MrchCode 是否已赋值
                      * @return MrchCode 是否已赋值
+                     * 
                      */
                     bool MrchCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）
                      * @return TranNetMemberCode STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）
+                     * 
                      */
                     std::string GetTranNetMemberCode() const;
 
                     /**
                      * 设置STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）
-                     * @param TranNetMemberCode STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）
+                     * @param _tranNetMemberCode STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）
+                     * 
                      */
                     void SetTranNetMemberCode(const std::string& _tranNetMemberCode);
 
                     /**
                      * 判断参数 TranNetMemberCode 是否已赋值
                      * @return TranNetMemberCode 是否已赋值
+                     * 
                      */
                     bool TranNetMemberCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）
                      * @return MemberAcctNo STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）
+                     * 
                      */
                     std::string GetMemberAcctNo() const;
 
                     /**
                      * 设置STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）
-                     * @param MemberAcctNo STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）
+                     * @param _memberAcctNo STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）
+                     * 
                      */
                     void SetMemberAcctNo(const std::string& _memberAcctNo);
 
                     /**
                      * 判断参数 MemberAcctNo 是否已赋值
                      * @return MemberAcctNo 是否已赋值
+                     * 
                      */
                     bool MemberAcctNoHasBeenSet() const;
 
                     /**
                      * 获取STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）
                      * @return MessageCheckCode STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）
+                     * 
                      */
                     std::string GetMessageCheckCode() const;
 
                     /**
                      * 设置STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）
-                     * @param MessageCheckCode STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）
+                     * @param _messageCheckCode STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）
+                     * 
                      */
                     void SetMessageCheckCode(const std::string& _messageCheckCode);
 
                     /**
                      * 判断参数 MessageCheckCode 是否已赋值
                      * @return MessageCheckCode 是否已赋值
+                     * 
                      */
                     bool MessageCheckCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(1027)，保留域
                      * @return ReservedMsg STRING(1027)，保留域
+                     * 
                      */
                     std::string GetReservedMsg() const;
 
                     /**
                      * 设置STRING(1027)，保留域
-                     * @param ReservedMsg STRING(1027)，保留域
+                     * @param _reservedMsg STRING(1027)，保留域
+                     * 
                      */
                     void SetReservedMsg(const std::string& _reservedMsg);
 
                     /**
                      * 判断参数 ReservedMsg 是否已赋值
                      * @return ReservedMsg 是否已赋值
+                     * 
                      */
                     bool ReservedMsgHasBeenSet() const;
 
                     /**
                      * 获取STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
                      * @return Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
-                     * @param Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @param _profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

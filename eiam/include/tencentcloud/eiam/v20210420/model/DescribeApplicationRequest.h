@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。
                      * @return ApplicationId 应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。
-                     * @param ApplicationId 应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。
+                     * @param _applicationId 应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取客户端id，与ApplicationId参数不能同时为空。
                      * @return ClientId 客户端id，与ApplicationId参数不能同时为空。
+                     * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置客户端id，与ApplicationId参数不能同时为空。
-                     * @param ClientId 客户端id，与ApplicationId参数不能同时为空。
+                     * @param _clientId 客户端id，与ApplicationId参数不能同时为空。
+                     * 
                      */
                     void SetClientId(const std::string& _clientId);
 
                     /**
                      * 判断参数 ClientId 是否已赋值
                      * @return ClientId 是否已赋值
+                     * 
                      */
                     bool ClientIdHasBeenSet() const;
 

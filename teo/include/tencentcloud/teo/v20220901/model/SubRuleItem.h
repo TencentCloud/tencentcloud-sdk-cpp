@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取嵌套规则信息。
                      * @return Rules 嵌套规则信息。
+                     * 
                      */
                     std::vector<SubRule> GetRules() const;
 
                     /**
                      * 设置嵌套规则信息。
-                     * @param Rules 嵌套规则信息。
+                     * @param _rules 嵌套规则信息。
+                     * 
                      */
                     void SetRules(const std::vector<SubRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取规则标签。
                      * @return Tags 规则标签。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置规则标签。
-                     * @param Tags 规则标签。
+                     * @param _tags 规则标签。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

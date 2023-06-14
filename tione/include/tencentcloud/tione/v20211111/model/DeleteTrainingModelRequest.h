@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取模型ID
                      * @return TrainingModelId 模型ID
+                     * 
                      */
                     std::string GetTrainingModelId() const;
 
                     /**
                      * 设置模型ID
-                     * @param TrainingModelId 模型ID
+                     * @param _trainingModelId 模型ID
+                     * 
                      */
                     void SetTrainingModelId(const std::string& _trainingModelId);
 
                     /**
                      * 判断参数 TrainingModelId 是否已赋值
                      * @return TrainingModelId 是否已赋值
+                     * 
                      */
                     bool TrainingModelIdHasBeenSet() const;
 
                     /**
                      * 获取是否同步清理cos
                      * @return EnableDeleteCos 是否同步清理cos
+                     * 
                      */
                     bool GetEnableDeleteCos() const;
 
                     /**
                      * 设置是否同步清理cos
-                     * @param EnableDeleteCos 是否同步清理cos
+                     * @param _enableDeleteCos 是否同步清理cos
+                     * 
                      */
                     void SetEnableDeleteCos(const bool& _enableDeleteCos);
 
                     /**
                      * 判断参数 EnableDeleteCos 是否已赋值
                      * @return EnableDeleteCos 是否已赋值
+                     * 
                      */
                     bool EnableDeleteCosHasBeenSet() const;
 
                     /**
                      * 获取删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
                      * @return ModelVersionType 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     * 
                      */
                     std::string GetModelVersionType() const;
 
                     /**
                      * 设置删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
-                     * @param ModelVersionType 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     * @param _modelVersionType 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     * 
                      */
                     void SetModelVersionType(const std::string& _modelVersionType);
 
                     /**
                      * 判断参数 ModelVersionType 是否已赋值
                      * @return ModelVersionType 是否已赋值
+                     * 
                      */
                     bool ModelVersionTypeHasBeenSet() const;
 

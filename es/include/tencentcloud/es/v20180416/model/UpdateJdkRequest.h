@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取ES实例ID
                      * @return InstanceId ES实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ES实例ID
-                     * @param InstanceId ES实例ID
+                     * @param _instanceId ES实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Jdk类型，支持kona和oracle
                      * @return Jdk Jdk类型，支持kona和oracle
+                     * 
                      */
                     std::string GetJdk() const;
 
                     /**
                      * 设置Jdk类型，支持kona和oracle
-                     * @param Jdk Jdk类型，支持kona和oracle
+                     * @param _jdk Jdk类型，支持kona和oracle
+                     * 
                      */
                     void SetJdk(const std::string& _jdk);
 
                     /**
                      * 判断参数 Jdk 是否已赋值
                      * @return Jdk 是否已赋值
+                     * 
                      */
                     bool JdkHasBeenSet() const;
 
                     /**
                      * 获取Gc类型，支持g1和cms
                      * @return Gc Gc类型，支持g1和cms
+                     * 
                      */
                     std::string GetGc() const;
 
                     /**
                      * 设置Gc类型，支持g1和cms
-                     * @param Gc Gc类型，支持g1和cms
+                     * @param _gc Gc类型，支持g1和cms
+                     * 
                      */
                     void SetGc(const std::string& _gc);
 
                     /**
                      * 判断参数 Gc 是否已赋值
                      * @return Gc 是否已赋值
+                     * 
                      */
                     bool GcHasBeenSet() const;
 
                     /**
                      * 获取是否强制重启
                      * @return ForceRestart 是否强制重启
+                     * 
                      */
                     bool GetForceRestart() const;
 
                     /**
                      * 设置是否强制重启
-                     * @param ForceRestart 是否强制重启
+                     * @param _forceRestart 是否强制重启
+                     * 
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
                     /**
                      * 判断参数 ForceRestart 是否已赋值
                      * @return ForceRestart 是否已赋值
+                     * 
                      */
                     bool ForceRestartHasBeenSet() const;
 

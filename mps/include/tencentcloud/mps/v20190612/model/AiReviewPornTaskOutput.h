@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频鉴黄评分，分值为0到100。
                      * @return Confidence 视频鉴黄评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置视频鉴黄评分，分值为0到100。
-                     * @param Confidence 视频鉴黄评分，分值为0到100。
+                     * @param _confidence 视频鉴黄评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -82,16 +86,18 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 鉴黄结果建议，取值范围：
+                     * @param _suggestion 鉴黄结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -106,6 +112,7 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -115,35 +122,40 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-                     * @param Label 视频鉴黄结果标签，取值范围：
+                     * @param _label 视频鉴黄结果标签，取值范围：
 <li>porn：色情。</li>
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取有涉黄嫌疑的视频片段列表。
                      * @return SegmentSet 有涉黄嫌疑的视频片段列表。
+                     * 
                      */
                     std::vector<MediaContentReviewSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置有涉黄嫌疑的视频片段列表。
-                     * @param SegmentSet 有涉黄嫌疑的视频片段列表。
+                     * @param _segmentSet 有涉黄嫌疑的视频片段列表。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

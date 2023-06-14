@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取通道总数量
                      * @return TotalCount 通道总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取通道列表
                      * @return ChannelList 通道列表
+                     * 
                      */
                     std::vector<ChannelDetailForUser> GetChannelList() const;
 
                     /**
                      * 判断参数 ChannelList 是否已赋值
                      * @return ChannelList 是否已赋值
+                     * 
                      */
                     bool ChannelListHasBeenSet() const;
 

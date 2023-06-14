@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取网关部署组ID
                      * @return GatewayGroupId 网关部署组ID
+                     * 
                      */
                     std::string GetGatewayGroupId() const;
 
                     /**
                      * 设置网关部署组ID
-                     * @param GatewayGroupId 网关部署组ID
+                     * @param _gatewayGroupId 网关部署组ID
+                     * 
                      */
                     void SetGatewayGroupId(const std::string& _gatewayGroupId);
 
                     /**
                      * 判断参数 GatewayGroupId 是否已赋值
                      * @return GatewayGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayGroupIdHasBeenSet() const;
 
                     /**
                      * 获取根据正则表达式或替换的内容模糊查询
                      * @return SearchWord 根据正则表达式或替换的内容模糊查询
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置根据正则表达式或替换的内容模糊查询
-                     * @param SearchWord 根据正则表达式或替换的内容模糊查询
+                     * @param _searchWord 根据正则表达式或替换的内容模糊查询
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return Limit 每页数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数量
-                     * @param Limit 每页数量
+                     * @param _limit 每页数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取起始偏移量
                      * @return Offset 起始偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置起始偏移量
-                     * @param Offset 起始偏移量
+                     * @param _offset 起始偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

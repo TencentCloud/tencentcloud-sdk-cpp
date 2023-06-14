@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。
+                     * @param _name API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPosition() const;
 
                     /**
                      * 设置API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Position API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。
+                     * @param _position API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPosition(const std::string& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelevantRequestParameterPosition API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRelevantRequestParameterPosition() const;
 
                     /**
                      * 设置API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelevantRequestParameterPosition API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _relevantRequestParameterPosition API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelevantRequestParameterPosition(const std::string& _relevantRequestParameterPosition);
 
                     /**
                      * 判断参数 RelevantRequestParameterPosition 是否已赋值
                      * @return RelevantRequestParameterPosition 是否已赋值
+                     * 
                      */
                     bool RelevantRequestParameterPositionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelevantRequestParameterName API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRelevantRequestParameterName() const;
 
                     /**
                      * 设置API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelevantRequestParameterName API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _relevantRequestParameterName API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelevantRequestParameterName(const std::string& _relevantRequestParameterName);
 
                     /**
                      * 判断参数 RelevantRequestParameterName 是否已赋值
                      * @return RelevantRequestParameterName 是否已赋值
+                     * 
                      */
                     bool RelevantRequestParameterNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultValue API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefaultValue API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _defaultValue API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelevantRequestParameterDesc API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRelevantRequestParameterDesc() const;
 
                     /**
                      * 设置API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelevantRequestParameterDesc API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。
+                     * @param _relevantRequestParameterDesc API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelevantRequestParameterDesc(const std::string& _relevantRequestParameterDesc);
 
                     /**
                      * 判断参数 RelevantRequestParameterDesc 是否已赋值
                      * @return RelevantRequestParameterDesc 是否已赋值
+                     * 
                      */
                     bool RelevantRequestParameterDescHasBeenSet() const;
 

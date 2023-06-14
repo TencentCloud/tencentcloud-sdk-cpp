@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取创建设备的数量，数量范围1-100
                      * @return Number 创建设备的数量，数量范围1-100
+                     * 
                      */
                     uint64_t GetNumber() const;
 
                     /**
                      * 设置创建设备的数量，数量范围1-100
-                     * @param Number 创建设备的数量，数量范围1-100
+                     * @param _number 创建设备的数量，数量范围1-100
+                     * 
                      */
                     void SetNumber(const uint64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取设备名称前缀，支持英文、数字，不超过10字符
                      * @return NamePrefix 设备名称前缀，支持英文、数字，不超过10字符
+                     * 
                      */
                     std::string GetNamePrefix() const;
 
                     /**
                      * 设置设备名称前缀，支持英文、数字，不超过10字符
-                     * @param NamePrefix 设备名称前缀，支持英文、数字，不超过10字符
+                     * @param _namePrefix 设备名称前缀，支持英文、数字，不超过10字符
+                     * 
                      */
                     void SetNamePrefix(const std::string& _namePrefix);
 
                     /**
                      * 判断参数 NamePrefix 是否已赋值
                      * @return NamePrefix 是否已赋值
+                     * 
                      */
                     bool NamePrefixHasBeenSet() const;
 
                     /**
                      * 获取操作人
                      * @return Operator 操作人
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人
-                     * @param Operator 操作人
+                     * @param _operator 操作人
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

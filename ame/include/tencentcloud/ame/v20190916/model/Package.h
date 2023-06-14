@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取订单id
                      * @return OrderId 订单id
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单id
-                     * @param OrderId 订单id
+                     * @param _orderId 订单id
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取曲库包名称
                      * @return Name 曲库包名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置曲库包名称
-                     * @param Name 曲库包名称
+                     * @param _name 曲库包名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取授权地区-global: 全球  CN: 中国
                      * @return AuthorizedArea 授权地区-global: 全球  CN: 中国
+                     * 
                      */
                     std::string GetAuthorizedArea() const;
 
                     /**
                      * 设置授权地区-global: 全球  CN: 中国
-                     * @param AuthorizedArea 授权地区-global: 全球  CN: 中国
+                     * @param _authorizedArea 授权地区-global: 全球  CN: 中国
+                     * 
                      */
                     void SetAuthorizedArea(const std::string& _authorizedArea);
 
                     /**
                      * 判断参数 AuthorizedArea 是否已赋值
                      * @return AuthorizedArea 是否已赋值
+                     * 
                      */
                     bool AuthorizedAreaHasBeenSet() const;
 
                     /**
                      * 获取授权次数
                      * @return AuthorizedLimit 授权次数
+                     * 
                      */
                     int64_t GetAuthorizedLimit() const;
 
                     /**
                      * 设置授权次数
-                     * @param AuthorizedLimit 授权次数
+                     * @param _authorizedLimit 授权次数
+                     * 
                      */
                     void SetAuthorizedLimit(const int64_t& _authorizedLimit);
 
                     /**
                      * 判断参数 AuthorizedLimit 是否已赋值
                      * @return AuthorizedLimit 是否已赋值
+                     * 
                      */
                     bool AuthorizedLimitHasBeenSet() const;
 
                     /**
                      * 获取套餐有效期，单位:天
                      * @return TermOfValidity 套餐有效期，单位:天
+                     * 
                      */
                     int64_t GetTermOfValidity() const;
 
                     /**
                      * 设置套餐有效期，单位:天
-                     * @param TermOfValidity 套餐有效期，单位:天
+                     * @param _termOfValidity 套餐有效期，单位:天
+                     * 
                      */
                     void SetTermOfValidity(const int64_t& _termOfValidity);
 
                     /**
                      * 判断参数 TermOfValidity 是否已赋值
                      * @return TermOfValidity 是否已赋值
+                     * 
                      */
                     bool TermOfValidityHasBeenSet() const;
 
                     /**
                      * 获取0:不可商业化；1:可商业化
                      * @return Commercial 0:不可商业化；1:可商业化
+                     * 
                      */
                     int64_t GetCommercial() const;
 
                     /**
                      * 设置0:不可商业化；1:可商业化
-                     * @param Commercial 0:不可商业化；1:可商业化
+                     * @param _commercial 0:不可商业化；1:可商业化
+                     * 
                      */
                     void SetCommercial(const int64_t& _commercial);
 
                     /**
                      * 判断参数 Commercial 是否已赋值
                      * @return Commercial 是否已赋值
+                     * 
                      */
                     bool CommercialHasBeenSet() const;
 
                     /**
                      * 获取套餐价格，单位：元
                      * @return PackagePrice 套餐价格，单位：元
+                     * 
                      */
                     double GetPackagePrice() const;
 
                     /**
                      * 设置套餐价格，单位：元
-                     * @param PackagePrice 套餐价格，单位：元
+                     * @param _packagePrice 套餐价格，单位：元
+                     * 
                      */
                     void SetPackagePrice(const double& _packagePrice);
 
                     /**
                      * 判断参数 PackagePrice 是否已赋值
                      * @return PackagePrice 是否已赋值
+                     * 
                      */
                     bool PackagePriceHasBeenSet() const;
 
                     /**
                      * 获取生效开始时间,格式yyyy-MM-dd HH:mm:ss
                      * @return EffectTime 生效开始时间,格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetEffectTime() const;
 
                     /**
                      * 设置生效开始时间,格式yyyy-MM-dd HH:mm:ss
-                     * @param EffectTime 生效开始时间,格式yyyy-MM-dd HH:mm:ss
+                     * @param _effectTime 生效开始时间,格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetEffectTime(const std::string& _effectTime);
 
                     /**
                      * 判断参数 EffectTime 是否已赋值
                      * @return EffectTime 是否已赋值
+                     * 
                      */
                     bool EffectTimeHasBeenSet() const;
 
                     /**
                      * 获取生效结束时间,格式yyyy-MM-dd HH:mm:ss
                      * @return ExpireTime 生效结束时间,格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置生效结束时间,格式yyyy-MM-dd HH:mm:ss
-                     * @param ExpireTime 生效结束时间,格式yyyy-MM-dd HH:mm:ss
+                     * @param _expireTime 生效结束时间,格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取剩余授权次数
                      * @return UsedCount 剩余授权次数
+                     * 
                      */
                     int64_t GetUsedCount() const;
 
                     /**
                      * 设置剩余授权次数
-                     * @param UsedCount 剩余授权次数
+                     * @param _usedCount 剩余授权次数
+                     * 
                      */
                     void SetUsedCount(const int64_t& _usedCount);
 
                     /**
                      * 判断参数 UsedCount 是否已赋值
                      * @return UsedCount 是否已赋值
+                     * 
                      */
                     bool UsedCountHasBeenSet() const;
 
                     /**
                      * 获取曲库包用途信息
                      * @return UseRanges 曲库包用途信息
+                     * 
                      */
                     std::vector<UseRange> GetUseRanges() const;
 
                     /**
                      * 设置曲库包用途信息
-                     * @param UseRanges 曲库包用途信息
+                     * @param _useRanges 曲库包用途信息
+                     * 
                      */
                     void SetUseRanges(const std::vector<UseRange>& _useRanges);
 
                     /**
                      * 判断参数 UseRanges 是否已赋值
                      * @return UseRanges 是否已赋值
+                     * 
                      */
                     bool UseRangesHasBeenSet() const;
 

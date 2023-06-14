@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取终端节点服务对象详细信息。
                      * @return EndPointService 终端节点服务对象详细信息。
+                     * 
                      */
                     EndPointService GetEndPointService() const;
 
                     /**
                      * 判断参数 EndPointService 是否已赋值
                      * @return EndPointService 是否已赋值
+                     * 
                      */
                     bool EndPointServiceHasBeenSet() const;
 

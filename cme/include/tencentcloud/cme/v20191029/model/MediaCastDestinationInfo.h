@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取输出源 Id。由系统进行分配。
                      * @return Id 输出源 Id。由系统进行分配。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置输出源 Id。由系统进行分配。
-                     * @param Id 输出源 Id。由系统进行分配。
+                     * @param _id 输出源 Id。由系统进行分配。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
                      * @return PushUrl 输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
+                     * 
                      */
                     std::string GetPushUrl() const;
 
                     /**
                      * 设置输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
-                     * @param PushUrl 输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
+                     * @param _pushUrl 输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
+                     * 
                      */
                     void SetPushUrl(const std::string& _pushUrl);
 
                     /**
                      * 判断参数 PushUrl 是否已赋值
                      * @return PushUrl 是否已赋值
+                     * 
                      */
                     bool PushUrlHasBeenSet() const;
 
                     /**
                      * 获取输出源的名称。
                      * @return Name 输出源的名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置输出源的名称。
-                     * @param Name 输出源的名称。
+                     * @param _name 输出源的名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList Topic列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DatahubTopicDTO> GetTopicList() const;
 
                     /**
                      * 设置Topic列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicList Topic列表
+                     * @param _topicList Topic列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicList(const std::vector<DatahubTopicDTO>& _topicList);
 
                     /**
                      * 判断参数 TopicList 是否已赋值
                      * @return TopicList 是否已赋值
+                     * 
                      */
                     bool TopicListHasBeenSet() const;
 

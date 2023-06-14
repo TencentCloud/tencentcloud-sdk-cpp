@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取维护时间窗起始时间，如：17:00
                      * @return StartTime 维护时间窗起始时间，如：17:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取维护时间窗结束时间，如：19:00
                      * @return EndTime 维护时间窗结束时间，如：19:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

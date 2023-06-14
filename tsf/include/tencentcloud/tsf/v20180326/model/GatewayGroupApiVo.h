@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取API ID
                      * @return ApiId API ID
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID
-                     * @param ApiId API ID
+                     * @param _apiId API ID
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取API 请求路径
                      * @return Path API 请求路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API 请求路径
-                     * @param Path API 请求路径
+                     * @param _path API 请求路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取API 微服务名称
                      * @return MicroserviceName API 微服务名称
+                     * 
                      */
                     std::string GetMicroserviceName() const;
 
                     /**
                      * 设置API 微服务名称
-                     * @param MicroserviceName API 微服务名称
+                     * @param _microserviceName API 微服务名称
+                     * 
                      */
                     void SetMicroserviceName(const std::string& _microserviceName);
 
                     /**
                      * 判断参数 MicroserviceName 是否已赋值
                      * @return MicroserviceName 是否已赋值
+                     * 
                      */
                     bool MicroserviceNameHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method API 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置API 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method API 请求方法
+                     * @param _method API 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 

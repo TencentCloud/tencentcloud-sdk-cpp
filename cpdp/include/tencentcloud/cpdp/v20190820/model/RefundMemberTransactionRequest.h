@@ -45,306 +45,357 @@ namespace TencentCloud
                     /**
                      * 获取转出见证子账户的户名
                      * @return OutSubAccountName 转出见证子账户的户名
+                     * 
                      */
                     std::string GetOutSubAccountName() const;
 
                     /**
                      * 设置转出见证子账户的户名
-                     * @param OutSubAccountName 转出见证子账户的户名
+                     * @param _outSubAccountName 转出见证子账户的户名
+                     * 
                      */
                     void SetOutSubAccountName(const std::string& _outSubAccountName);
 
                     /**
                      * 判断参数 OutSubAccountName 是否已赋值
                      * @return OutSubAccountName 是否已赋值
+                     * 
                      */
                     bool OutSubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取转入见证子账户的户名
                      * @return InSubAccountName 转入见证子账户的户名
+                     * 
                      */
                     std::string GetInSubAccountName() const;
 
                     /**
                      * 设置转入见证子账户的户名
-                     * @param InSubAccountName 转入见证子账户的户名
+                     * @param _inSubAccountName 转入见证子账户的户名
+                     * 
                      */
                     void SetInSubAccountName(const std::string& _inSubAccountName);
 
                     /**
                      * 判断参数 InSubAccountName 是否已赋值
                      * @return InSubAccountName 是否已赋值
+                     * 
                      */
                     bool InSubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取子渠道
                      * @return PayChannelSubId 子渠道
+                     * 
                      */
                     int64_t GetPayChannelSubId() const;
 
                     /**
                      * 设置子渠道
-                     * @param PayChannelSubId 子渠道
+                     * @param _payChannelSubId 子渠道
+                     * 
                      */
                     void SetPayChannelSubId(const int64_t& _payChannelSubId);
 
                     /**
                      * 判断参数 PayChannelSubId 是否已赋值
                      * @return PayChannelSubId 是否已赋值
+                     * 
                      */
                     bool PayChannelSubIdHasBeenSet() const;
 
                     /**
                      * 获取转出见证子账户账号
                      * @return OutSubAccountNumber 转出见证子账户账号
+                     * 
                      */
                     std::string GetOutSubAccountNumber() const;
 
                     /**
                      * 设置转出见证子账户账号
-                     * @param OutSubAccountNumber 转出见证子账户账号
+                     * @param _outSubAccountNumber 转出见证子账户账号
+                     * 
                      */
                     void SetOutSubAccountNumber(const std::string& _outSubAccountNumber);
 
                     /**
                      * 判断参数 OutSubAccountNumber 是否已赋值
                      * @return OutSubAccountNumber 是否已赋值
+                     * 
                      */
                     bool OutSubAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取计费签名
                      * @return MidasSignature 计费签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置计费签名
-                     * @param MidasSignature 计费签名
+                     * @param _midasSignature 计费签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
                     /**
                      * 获取转入见证子账户账号
                      * @return InSubAccountNumber 转入见证子账户账号
+                     * 
                      */
                     std::string GetInSubAccountNumber() const;
 
                     /**
                      * 设置转入见证子账户账号
-                     * @param InSubAccountNumber 转入见证子账户账号
+                     * @param _inSubAccountNumber 转入见证子账户账号
+                     * 
                      */
                     void SetInSubAccountNumber(const std::string& _inSubAccountNumber);
 
                     /**
                      * 判断参数 InSubAccountNumber 是否已赋值
                      * @return InSubAccountNumber 是否已赋值
+                     * 
                      */
                     bool InSubAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取父账户账号，资金汇总账号
                      * @return BankAccountNumber 父账户账号，资金汇总账号
+                     * 
                      */
                     std::string GetBankAccountNumber() const;
 
                     /**
                      * 设置父账户账号，资金汇总账号
-                     * @param BankAccountNumber 父账户账号，资金汇总账号
+                     * @param _bankAccountNumber 父账户账号，资金汇总账号
+                     * 
                      */
                     void SetBankAccountNumber(const std::string& _bankAccountNumber);
 
                     /**
                      * 判断参数 BankAccountNumber 是否已赋值
                      * @return BankAccountNumber 是否已赋值
+                     * 
                      */
                     bool BankAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取原老订单流水号
                      * @return OldTransSequenceNumber 原老订单流水号
+                     * 
                      */
                     std::string GetOldTransSequenceNumber() const;
 
                     /**
                      * 设置原老订单流水号
-                     * @param OldTransSequenceNumber 原老订单流水号
+                     * @param _oldTransSequenceNumber 原老订单流水号
+                     * 
                      */
                     void SetOldTransSequenceNumber(const std::string& _oldTransSequenceNumber);
 
                     /**
                      * 判断参数 OldTransSequenceNumber 是否已赋值
                      * @return OldTransSequenceNumber 是否已赋值
+                     * 
                      */
                     bool OldTransSequenceNumberHasBeenSet() const;
 
                     /**
                      * 获取银行注册商户号
                      * @return MerchantCode 银行注册商户号
+                     * 
                      */
                     std::string GetMerchantCode() const;
 
                     /**
                      * 设置银行注册商户号
-                     * @param MerchantCode 银行注册商户号
+                     * @param _merchantCode 银行注册商户号
+                     * 
                      */
                     void SetMerchantCode(const std::string& _merchantCode);
 
                     /**
                      * 判断参数 MerchantCode 是否已赋值
                      * @return MerchantCode 是否已赋值
+                     * 
                      */
                     bool MerchantCodeHasBeenSet() const;
 
                     /**
                      * 获取请求类型，固定为MemberTransactionRefundReq
                      * @return RequestType 请求类型，固定为MemberTransactionRefundReq
+                     * 
                      */
                     std::string GetRequestType() const;
 
                     /**
                      * 设置请求类型，固定为MemberTransactionRefundReq
-                     * @param RequestType 请求类型，固定为MemberTransactionRefundReq
+                     * @param _requestType 请求类型，固定为MemberTransactionRefundReq
+                     * 
                      */
                     void SetRequestType(const std::string& _requestType);
 
                     /**
                      * 判断参数 RequestType 是否已赋值
                      * @return RequestType 是否已赋值
+                     * 
                      */
                     bool RequestTypeHasBeenSet() const;
 
                     /**
                      * 获取交易金额
                      * @return CurrencyAmount 交易金额
+                     * 
                      */
                     std::string GetCurrencyAmount() const;
 
                     /**
                      * 设置交易金额
-                     * @param CurrencyAmount 交易金额
+                     * @param _currencyAmount 交易金额
+                     * 
                      */
                     void SetCurrencyAmount(const std::string& _currencyAmount);
 
                     /**
                      * 判断参数 CurrencyAmount 是否已赋值
                      * @return CurrencyAmount 是否已赋值
+                     * 
                      */
                     bool CurrencyAmountHasBeenSet() const;
 
                     /**
                      * 获取交易流水号
                      * @return TransSequenceNumber 交易流水号
+                     * 
                      */
                     std::string GetTransSequenceNumber() const;
 
                     /**
                      * 设置交易流水号
-                     * @param TransSequenceNumber 交易流水号
+                     * @param _transSequenceNumber 交易流水号
+                     * 
                      */
                     void SetTransSequenceNumber(const std::string& _transSequenceNumber);
 
                     /**
                      * 判断参数 TransSequenceNumber 是否已赋值
                      * @return TransSequenceNumber 是否已赋值
+                     * 
                      */
                     bool TransSequenceNumberHasBeenSet() const;
 
                     /**
                      * 获取渠道
                      * @return PayChannel 渠道
+                     * 
                      */
                     std::string GetPayChannel() const;
 
                     /**
                      * 设置渠道
-                     * @param PayChannel 渠道
+                     * @param _payChannel 渠道
+                     * 
                      */
                     void SetPayChannel(const std::string& _payChannel);
 
                     /**
                      * 判断参数 PayChannel 是否已赋值
                      * @return PayChannel 是否已赋值
+                     * 
                      */
                     bool PayChannelHasBeenSet() const;
 
                     /**
                      * 获取原订单号
                      * @return OldOrderId 原订单号
+                     * 
                      */
                     std::string GetOldOrderId() const;
 
                     /**
                      * 设置原订单号
-                     * @param OldOrderId 原订单号
+                     * @param _oldOrderId 原订单号
+                     * 
                      */
                     void SetOldOrderId(const std::string& _oldOrderId);
 
                     /**
                      * 判断参数 OldOrderId 是否已赋值
                      * @return OldOrderId 是否已赋值
+                     * 
                      */
                     bool OldOrderIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的支付主MidasAppId
                      * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的支付主MidasAppId
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
+                     * @param _midasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取订单号
                      * @return OrderId 订单号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -353,128 +404,149 @@ namespace TencentCloud
 development 开发环境
                      * @return MidasEnvironment Midas环境标识 release 现网环境 sandbox 沙箱环境
 development 开发环境
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
                     /**
                      * 设置Midas环境标识 release 现网环境 sandbox 沙箱环境
 development 开发环境
-                     * @param MidasEnvironment Midas环境标识 release 现网环境 sandbox 沙箱环境
+                     * @param _midasEnvironment Midas环境标识 release 现网环境 sandbox 沙箱环境
 development 开发环境
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取转出子账户交易网会员代码
                      * @return OutTransNetMemberCode 转出子账户交易网会员代码
+                     * 
                      */
                     std::string GetOutTransNetMemberCode() const;
 
                     /**
                      * 设置转出子账户交易网会员代码
-                     * @param OutTransNetMemberCode 转出子账户交易网会员代码
+                     * @param _outTransNetMemberCode 转出子账户交易网会员代码
+                     * 
                      */
                     void SetOutTransNetMemberCode(const std::string& _outTransNetMemberCode);
 
                     /**
                      * 判断参数 OutTransNetMemberCode 是否已赋值
                      * @return OutTransNetMemberCode 是否已赋值
+                     * 
                      */
                     bool OutTransNetMemberCodeHasBeenSet() const;
 
                     /**
                      * 获取转入子账户交易网会员代码
                      * @return InTransNetMemberCode 转入子账户交易网会员代码
+                     * 
                      */
                     std::string GetInTransNetMemberCode() const;
 
                     /**
                      * 设置转入子账户交易网会员代码
-                     * @param InTransNetMemberCode 转入子账户交易网会员代码
+                     * @param _inTransNetMemberCode 转入子账户交易网会员代码
+                     * 
                      */
                     void SetInTransNetMemberCode(const std::string& _inTransNetMemberCode);
 
                     /**
                      * 判断参数 InTransNetMemberCode 是否已赋值
                      * @return InTransNetMemberCode 是否已赋值
+                     * 
                      */
                     bool InTransNetMemberCodeHasBeenSet() const;
 
                     /**
                      * 获取保留域
                      * @return ReservedMessage 保留域
+                     * 
                      */
                     std::string GetReservedMessage() const;
 
                     /**
                      * 设置保留域
-                     * @param ReservedMessage 保留域
+                     * @param _reservedMessage 保留域
+                     * 
                      */
                     void SetReservedMessage(const std::string& _reservedMessage);
 
                     /**
                      * 判断参数 ReservedMessage 是否已赋值
                      * @return ReservedMessage 是否已赋值
+                     * 
                      */
                     bool ReservedMessageHasBeenSet() const;
 
                     /**
                      * 获取平台短号(银行分配)
                      * @return PlatformShortNumber 平台短号(银行分配)
+                     * 
                      */
                     std::string GetPlatformShortNumber() const;
 
                     /**
                      * 设置平台短号(银行分配)
-                     * @param PlatformShortNumber 平台短号(银行分配)
+                     * @param _platformShortNumber 平台短号(银行分配)
+                     * 
                      */
                     void SetPlatformShortNumber(const std::string& _platformShortNumber);
 
                     /**
                      * 判断参数 PlatformShortNumber 是否已赋值
                      * @return PlatformShortNumber 是否已赋值
+                     * 
                      */
                     bool PlatformShortNumberHasBeenSet() const;
 
                     /**
                      * 获取0-登记挂账，1-撤销挂账
                      * @return TransType 0-登记挂账，1-撤销挂账
+                     * 
                      */
                     std::string GetTransType() const;
 
                     /**
                      * 设置0-登记挂账，1-撤销挂账
-                     * @param TransType 0-登记挂账，1-撤销挂账
+                     * @param _transType 0-登记挂账，1-撤销挂账
+                     * 
                      */
                     void SetTransType(const std::string& _transType);
 
                     /**
                      * 判断参数 TransType 是否已赋值
                      * @return TransType 是否已赋值
+                     * 
                      */
                     bool TransTypeHasBeenSet() const;
 
                     /**
                      * 获取交易手续费
                      * @return TransFee 交易手续费
+                     * 
                      */
                     std::string GetTransFee() const;
 
                     /**
                      * 设置交易手续费
-                     * @param TransFee 交易手续费
+                     * @param _transFee 交易手续费
+                     * 
                      */
                     void SetTransFee(const std::string& _transFee);
 
                     /**
                      * 判断参数 TransFee 是否已赋值
                      * @return TransFee 是否已赋值
+                     * 
                      */
                     bool TransFeeHasBeenSet() const;
 

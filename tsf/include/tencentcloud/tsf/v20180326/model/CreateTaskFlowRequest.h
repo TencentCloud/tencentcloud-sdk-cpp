@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取工作流名称
                      * @return FlowName 工作流名称
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置工作流名称
-                     * @param FlowName 工作流名称
+                     * @param _flowName 工作流名称
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
                     /**
                      * 获取触发方式
                      * @return TriggerRule 触发方式
+                     * 
                      */
                     TaskRule GetTriggerRule() const;
 
                     /**
                      * 设置触发方式
-                     * @param TriggerRule 触发方式
+                     * @param _triggerRule 触发方式
+                     * 
                      */
                     void SetTriggerRule(const TaskRule& _triggerRule);
 
                     /**
                      * 判断参数 TriggerRule 是否已赋值
                      * @return TriggerRule 是否已赋值
+                     * 
                      */
                     bool TriggerRuleHasBeenSet() const;
 
                     /**
                      * 获取工作流任务节点列表
                      * @return FlowEdges 工作流任务节点列表
+                     * 
                      */
                     std::vector<TaskFlowEdge> GetFlowEdges() const;
 
                     /**
                      * 设置工作流任务节点列表
-                     * @param FlowEdges 工作流任务节点列表
+                     * @param _flowEdges 工作流任务节点列表
+                     * 
                      */
                     void SetFlowEdges(const std::vector<TaskFlowEdge>& _flowEdges);
 
                     /**
                      * 判断参数 FlowEdges 是否已赋值
                      * @return FlowEdges 是否已赋值
+                     * 
                      */
                     bool FlowEdgesHasBeenSet() const;
 
                     /**
                      * 获取工作流执行超时时间
                      * @return TimeOut 工作流执行超时时间
+                     * 
                      */
                     uint64_t GetTimeOut() const;
 
                     /**
                      * 设置工作流执行超时时间
-                     * @param TimeOut 工作流执行超时时间
+                     * @param _timeOut 工作流执行超时时间
+                     * 
                      */
                     void SetTimeOut(const uint64_t& _timeOut);
 
                     /**
                      * 判断参数 TimeOut 是否已赋值
                      * @return TimeOut 是否已赋值
+                     * 
                      */
                     bool TimeOutHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProgramIdList 无
+                     * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
                      * 设置无
-                     * @param ProgramIdList 无
+                     * @param _programIdList 无
+                     * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
 
                     /**
                      * 判断参数 ProgramIdList 是否已赋值
                      * @return ProgramIdList 是否已赋值
+                     * 
                      */
                     bool ProgramIdListHasBeenSet() const;
 

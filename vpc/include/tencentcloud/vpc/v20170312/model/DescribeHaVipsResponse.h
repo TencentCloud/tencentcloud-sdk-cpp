@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`对象数组。
                      * @return HaVipSet `HAVIP`对象数组。
+                     * 
                      */
                     std::vector<HaVip> GetHaVipSet() const;
 
                     /**
                      * 判断参数 HaVipSet 是否已赋值
                      * @return HaVipSet 是否已赋值
+                     * 
                      */
                     bool HaVipSetHasBeenSet() const;
 

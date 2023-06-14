@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return SourceId 水印源的ID，对应SourceInfoSet内的源。
 注意1：对应的 MediaSourceInfo.Type需要为Image。
 注意2：对于动图，只取第一帧图像作为水印源。
+                     * 
                      */
                     std::string GetSourceId() const;
 
@@ -60,69 +61,80 @@ namespace TencentCloud
                      * 设置水印源的ID，对应SourceInfoSet内的源。
 注意1：对应的 MediaSourceInfo.Type需要为Image。
 注意2：对于动图，只取第一帧图像作为水印源。
-                     * @param SourceId 水印源的ID，对应SourceInfoSet内的源。
+                     * @param _sourceId 水印源的ID，对应SourceInfoSet内的源。
 注意1：对应的 MediaSourceInfo.Type需要为Image。
 注意2：对于动图，只取第一帧图像作为水印源。
+                     * 
                      */
                     void SetSourceId(const std::string& _sourceId);
 
                     /**
                      * 判断参数 SourceId 是否已赋值
                      * @return SourceId 是否已赋值
+                     * 
                      */
                     bool SourceIdHasBeenSet() const;
 
                     /**
                      * 获取水印水平坐标，单位像素，默认：0。
                      * @return PosX 水印水平坐标，单位像素，默认：0。
+                     * 
                      */
                     uint64_t GetPosX() const;
 
                     /**
                      * 设置水印水平坐标，单位像素，默认：0。
-                     * @param PosX 水印水平坐标，单位像素，默认：0。
+                     * @param _posX 水印水平坐标，单位像素，默认：0。
+                     * 
                      */
                     void SetPosX(const uint64_t& _posX);
 
                     /**
                      * 判断参数 PosX 是否已赋值
                      * @return PosX 是否已赋值
+                     * 
                      */
                     bool PosXHasBeenSet() const;
 
                     /**
                      * 获取水印垂直坐标，单位像素，默认：0。
                      * @return PosY 水印垂直坐标，单位像素，默认：0。
+                     * 
                      */
                     uint64_t GetPosY() const;
 
                     /**
                      * 设置水印垂直坐标，单位像素，默认：0。
-                     * @param PosY 水印垂直坐标，单位像素，默认：0。
+                     * @param _posY 水印垂直坐标，单位像素，默认：0。
+                     * 
                      */
                     void SetPosY(const uint64_t& _posY);
 
                     /**
                      * 判断参数 PosY 是否已赋值
                      * @return PosY 是否已赋值
+                     * 
                      */
                     bool PosYHasBeenSet() const;
 
                     /**
                      * 获取水印宽度，单位像素，默认：0。
                      * @return Width 水印宽度，单位像素，默认：0。
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置水印宽度，单位像素，默认：0。
-                     * @param Width 水印宽度，单位像素，默认：0。
+                     * @param _width 水印宽度，单位像素，默认：0。
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -139,6 +151,7 @@ namespace TencentCloud
 2、Width=0 且 Height>0，以Height为基准等比缩放；
 3、Width>0 且 Height=0，以Width为基准等比缩放；
 4、Width=0 且 Height=0，采用源的宽高。
+                     * 
                      */
                     uint64_t GetHeight() const;
 
@@ -149,18 +162,20 @@ namespace TencentCloud
 2、Width=0 且 Height>0，以Height为基准等比缩放；
 3、Width>0 且 Height=0，以Width为基准等比缩放；
 4、Width=0 且 Height=0，采用源的宽高。
-                     * @param Height 水印高度，单位像素，默认：0。
+                     * @param _height 水印高度，单位像素，默认：0。
 注意：对于宽高符合以下规则：
 1、Width>0 且 Height>0，按指定宽高拉伸；
 2、Width=0 且 Height>0，以Height为基准等比缩放；
 3、Width>0 且 Height=0，以Width为基准等比缩放；
 4、Width=0 且 Height=0，采用源的宽高。
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -179,6 +194,7 @@ namespace TencentCloud
 <li>RightBottom：PosXY 表示水印右下点到图片右下点的相对位置</li>
 <li>Center：PosXY 表示水印中心点到图片中心点的相对位置</li>
 默认：LeftTop。
+                     * 
                      */
                     std::string GetPosOriginType() const;
 
@@ -190,19 +206,21 @@ namespace TencentCloud
 <li>RightBottom：PosXY 表示水印右下点到图片右下点的相对位置</li>
 <li>Center：PosXY 表示水印中心点到图片中心点的相对位置</li>
 默认：LeftTop。
-                     * @param PosOriginType 指定坐标原点，可选值：
+                     * @param _posOriginType 指定坐标原点，可选值：
 <li>LeftTop：PosXY 表示水印左上点到图片左上点的相对位置</li>
 <li>RightTop：PosXY 表示水印右上点到图片右上点的相对位置</li>
 <li>LeftBottom：PosXY 表示水印左下点到图片左下点的相对位置</li>
 <li>RightBottom：PosXY 表示水印右下点到图片右下点的相对位置</li>
 <li>Center：PosXY 表示水印中心点到图片中心点的相对位置</li>
 默认：LeftTop。
+                     * 
                      */
                     void SetPosOriginType(const std::string& _posOriginType);
 
                     /**
                      * 判断参数 PosOriginType 是否已赋值
                      * @return PosOriginType 是否已赋值
+                     * 
                      */
                     bool PosOriginTypeHasBeenSet() const;
 

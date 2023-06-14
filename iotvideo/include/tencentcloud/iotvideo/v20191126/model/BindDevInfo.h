@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceModel 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceModel() const;
 
                     /**
                      * 设置设备型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceModel 设备型号
+                     * @param _deviceModel 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceModel(const std::string& _deviceModel);
 
                     /**
                      * 判断参数 DeviceModel 是否已赋值
                      * @return DeviceModel 是否已赋值
+                     * 
                      */
                     bool DeviceModelHasBeenSet() const;
 
                     /**
                      * 获取用户角色，owner：主人，guest：访客
                      * @return Role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置用户角色，owner：主人，guest：访客
-                     * @param Role 用户角色，owner：主人，guest：访客
+                     * @param _role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

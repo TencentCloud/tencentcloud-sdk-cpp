@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取作业详情。
                      * @return Calls 作业详情。
+                     * 
                      */
                     std::vector<RunMetadata> GetCalls() const;
 
                     /**
                      * 判断参数 Calls 是否已赋值
                      * @return Calls 是否已赋值
+                     * 
                      */
                     bool CallsHasBeenSet() const;
 

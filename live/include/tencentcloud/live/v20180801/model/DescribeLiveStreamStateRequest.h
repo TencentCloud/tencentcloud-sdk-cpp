@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param _appName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取您的推流域名。
                      * @return DomainName 您的推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置您的推流域名。
-                     * @param DomainName 您的推流域名。
+                     * @param _domainName 您的推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 

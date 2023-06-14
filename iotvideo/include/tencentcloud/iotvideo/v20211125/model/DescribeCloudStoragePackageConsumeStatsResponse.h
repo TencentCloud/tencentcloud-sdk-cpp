@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计列表详情
                      * @return Stats 统计列表详情
+                     * 
                      */
                     std::vector<PackageConsumeStat> GetStats() const;
 
                     /**
                      * 判断参数 Stats 是否已赋值
                      * @return Stats 是否已赋值
+                     * 
                      */
                     bool StatsHasBeenSet() const;
 

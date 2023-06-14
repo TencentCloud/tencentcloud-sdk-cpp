@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取别名的唯一标识符
                      * @return AliasId 别名的唯一标识符
+                     * 
                      */
                     std::string GetAliasId() const;
 
                     /**
                      * 设置别名的唯一标识符
-                     * @param AliasId 别名的唯一标识符
+                     * @param _aliasId 别名的唯一标识符
+                     * 
                      */
                     void SetAliasId(const std::string& _aliasId);
 
                     /**
                      * 判断参数 AliasId 是否已赋值
                      * @return AliasId 是否已赋值
+                     * 
                      */
                     bool AliasIdHasBeenSet() const;
 
                     /**
                      * 获取别名的全局唯一资源标识符
                      * @return AliasArn 别名的全局唯一资源标识符
+                     * 
                      */
                     std::string GetAliasArn() const;
 
                     /**
                      * 设置别名的全局唯一资源标识符
-                     * @param AliasArn 别名的全局唯一资源标识符
+                     * @param _aliasArn 别名的全局唯一资源标识符
+                     * 
                      */
                     void SetAliasArn(const std::string& _aliasArn);
 
                     /**
                      * 判断参数 AliasArn 是否已赋值
                      * @return AliasArn 是否已赋值
+                     * 
                      */
                     bool AliasArnHasBeenSet() const;
 
                     /**
                      * 获取名字，长度不小于1字符不超过1024字符
                      * @return Name 名字，长度不小于1字符不超过1024字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字，长度不小于1字符不超过1024字符
-                     * @param Name 名字，长度不小于1字符不超过1024字符
+                     * @param _name 名字，长度不小于1字符不超过1024字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -107,74 +116,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 别名的可读说明，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置别名的可读说明，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 别名的可读说明，长度不小于1字符不超过1024字符
+                     * @param _description 别名的可读说明，长度不小于1字符不超过1024字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取别名的路由配置
                      * @return RoutingStrategy 别名的路由配置
+                     * 
                      */
                     RoutingStrategy GetRoutingStrategy() const;
 
                     /**
                      * 设置别名的路由配置
-                     * @param RoutingStrategy 别名的路由配置
+                     * @param _routingStrategy 别名的路由配置
+                     * 
                      */
                     void SetRoutingStrategy(const RoutingStrategy& _routingStrategy);
 
                     /**
                      * 判断参数 RoutingStrategy 是否已赋值
                      * @return RoutingStrategy 是否已赋值
+                     * 
                      */
                     bool RoutingStrategyHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取上次修改此数据对象的时间
                      * @return LastUpdatedTime 上次修改此数据对象的时间
+                     * 
                      */
                     std::string GetLastUpdatedTime() const;
 
                     /**
                      * 设置上次修改此数据对象的时间
-                     * @param LastUpdatedTime 上次修改此数据对象的时间
+                     * @param _lastUpdatedTime 上次修改此数据对象的时间
+                     * 
                      */
                     void SetLastUpdatedTime(const std::string& _lastUpdatedTime);
 
                     /**
                      * 判断参数 LastUpdatedTime 是否已赋值
                      * @return LastUpdatedTime 是否已赋值
+                     * 
                      */
                     bool LastUpdatedTimeHasBeenSet() const;
 
@@ -183,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签列表，最大长度50组
+                     * @param _tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

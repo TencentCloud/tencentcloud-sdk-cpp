@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -97,6 +100,7 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+                     * 
                      */
                     std::vector<std::string> GetIntegrationCodes() const;
 
@@ -119,7 +123,7 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
-                     * @param IntegrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
+                     * @param _integrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
 <li>spring_mvc</li>
 <li>mysql</li>
 <li>go</li>
@@ -137,12 +141,14 @@ namespace TencentCloud
 <li>tps</li>
 <li>istio</li>
 <li>etcd</li>
+                     * 
                      */
                     void SetIntegrationCodes(const std::vector<std::string>& _integrationCodes);
 
                     /**
                      * 判断参数 IntegrationCodes 是否已赋值
                      * @return IntegrationCodes 是否已赋值
+                     * 
                      */
                     bool IntegrationCodesHasBeenSet() const;
 

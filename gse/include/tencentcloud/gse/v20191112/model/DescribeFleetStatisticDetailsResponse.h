@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailList 服务部署统计详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FleetStatisticDetail> GetDetailList() const;
 
                     /**
                      * 判断参数 DetailList 是否已赋值
                      * @return DetailList 是否已赋值
+                     * 
                      */
                     bool DetailListHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 记录总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeType 统计时间类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeType() const;
 
                     /**
                      * 判断参数 TimeType 是否已赋值
                      * @return TimeType 是否已赋值
+                     * 
                      */
                     bool TimeTypeHasBeenSet() const;
 

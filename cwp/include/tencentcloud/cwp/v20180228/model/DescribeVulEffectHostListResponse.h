@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取列表总数量
                      * @return TotalCount 列表总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulEffectHostList 影响主机列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulEffectHostList> GetVulEffectHostList() const;
 
                     /**
                      * 判断参数 VulEffectHostList 是否已赋值
                      * @return VulEffectHostList 是否已赋值
+                     * 
                      */
                     bool VulEffectHostListHasBeenSet() const;
 

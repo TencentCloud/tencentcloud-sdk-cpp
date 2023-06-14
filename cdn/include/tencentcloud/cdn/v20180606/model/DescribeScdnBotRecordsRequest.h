@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取BOT类型，取值为"UB","UCB","TCB"，分别表示：未知类型，自定义类型，公开类型
                      * @return BotType BOT类型，取值为"UB","UCB","TCB"，分别表示：未知类型，自定义类型，公开类型
+                     * 
                      */
                     std::string GetBotType() const;
 
                     /**
                      * 设置BOT类型，取值为"UB","UCB","TCB"，分别表示：未知类型，自定义类型，公开类型
-                     * @param BotType BOT类型，取值为"UB","UCB","TCB"，分别表示：未知类型，自定义类型，公开类型
+                     * @param _botType BOT类型，取值为"UB","UCB","TCB"，分别表示：未知类型，自定义类型，公开类型
+                     * 
                      */
                     void SetBotType(const std::string& _botType);
 
                     /**
                      * 判断参数 BotType 是否已赋值
                      * @return BotType 是否已赋值
+                     * 
                      */
                     bool BotTypeHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Offset 分页参数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数
-                     * @param Offset 分页参数
+                     * @param _offset 分页参数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Limit 分页参数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数
-                     * @param Limit 分页参数
+                     * @param _limit 分页参数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取mainland 大陆地区 overseas境外地区
                      * @return Area mainland 大陆地区 overseas境外地区
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置mainland 大陆地区 overseas境外地区
-                     * @param Area mainland 大陆地区 overseas境外地区
+                     * @param _area mainland 大陆地区 overseas境外地区
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取排序参数
                      * @return SortBy 排序参数
+                     * 
                      */
                     std::vector<BotSortBy> GetSortBy() const;
 
                     /**
                      * 设置排序参数
-                     * @param SortBy 排序参数
+                     * @param _sortBy 排序参数
+                     * 
                      */
                     void SetSortBy(const std::vector<BotSortBy>& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 
@@ -302,6 +326,7 @@ IDC-IP Azure
 IDC-IP Google
 
 以上所有类型，FilterName为空时，表示不过滤，获取所有内容
+                     * 
                      */
                     std::string GetFilterName() const;
 
@@ -363,7 +388,7 @@ IDC-IP Azure
 IDC-IP Google
 
 以上所有类型，FilterName为空时，表示不过滤，获取所有内容
-                     * @param FilterName BotType=UB时，表示需要过滤的预测标签，取值如下：
+                     * @param _filterName BotType=UB时，表示需要过滤的预测标签，取值如下：
                 "crawler_unregular",
                 "crawler_regular",
                 "request_repeat",
@@ -420,12 +445,14 @@ IDC-IP Azure
 IDC-IP Google
 
 以上所有类型，FilterName为空时，表示不过滤，获取所有内容
+                     * 
                      */
                     void SetFilterName(const std::string& _filterName);
 
                     /**
                      * 判断参数 FilterName 是否已赋值
                      * @return FilterName 是否已赋值
+                     * 
                      */
                     bool FilterNameHasBeenSet() const;
 
@@ -446,6 +473,7 @@ IDC-IP Google
 
 尚未支持的Action
 "captcha" 验证码
+                     * 
                      */
                     std::string GetFilterAction() const;
 
@@ -458,7 +486,7 @@ IDC-IP Google
 
 尚未支持的Action
 "captcha" 验证码
-                     * @param FilterAction 目前支持的Action
+                     * @param _filterAction 目前支持的Action
 "intercept" 拦截
 "monitor"，监控
 "permit" 放行
@@ -466,48 +494,56 @@ IDC-IP Google
 
 尚未支持的Action
 "captcha" 验证码
+                     * 
                      */
                     void SetFilterAction(const std::string& _filterAction);
 
                     /**
                      * 判断参数 FilterAction 是否已赋值
                      * @return FilterAction 是否已赋值
+                     * 
                      */
                     bool FilterActionHasBeenSet() const;
 
                     /**
                      * 获取过滤的IP
                      * @return FilterIp 过滤的IP
+                     * 
                      */
                     std::string GetFilterIp() const;
 
                     /**
                      * 设置过滤的IP
-                     * @param FilterIp 过滤的IP
+                     * @param _filterIp 过滤的IP
+                     * 
                      */
                     void SetFilterIp(const std::string& _filterIp);
 
                     /**
                      * 判断参数 FilterIp 是否已赋值
                      * @return FilterIp 是否已赋值
+                     * 
                      */
                     bool FilterIpHasBeenSet() const;
 
                     /**
                      * 获取域名列表，为空表示查询AppID维度数据
                      * @return Domains 域名列表，为空表示查询AppID维度数据
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置域名列表，为空表示查询AppID维度数据
-                     * @param Domains 域名列表，为空表示查询AppID维度数据
+                     * @param _domains 域名列表，为空表示查询AppID维度数据
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

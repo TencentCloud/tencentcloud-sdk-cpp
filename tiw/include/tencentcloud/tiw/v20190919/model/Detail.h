@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用量指标
                      * @return TagName 用量指标
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置用量指标
-                     * @param TagName 用量指标
+                     * @param _tagName 用量指标
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 
                     /**
                      * 获取用量权重
                      * @return Weight 用量权重
+                     * 
                      */
                     double GetWeight() const;
 
                     /**
                      * 设置用量权重
-                     * @param Weight 用量权重
+                     * @param _weight 用量权重
+                     * 
                      */
                     void SetWeight(const double& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取用量的值
                      * @return Value 用量的值
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置用量的值
-                     * @param Value 用量的值
+                     * @param _value 用量的值
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

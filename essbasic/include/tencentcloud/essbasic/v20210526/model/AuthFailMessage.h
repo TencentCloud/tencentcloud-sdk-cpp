@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取第三方应用平台的子客企业OpenId
                      * @return ProxyOrganizationOpenId 第三方应用平台的子客企业OpenId
+                     * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
                      * 设置第三方应用平台的子客企业OpenId
-                     * @param ProxyOrganizationOpenId 第三方应用平台的子客企业OpenId
+                     * @param _proxyOrganizationOpenId 第三方应用平台的子客企业OpenId
+                     * 
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
 
                     /**
                      * 判断参数 ProxyOrganizationOpenId 是否已赋值
                      * @return ProxyOrganizationOpenId 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return Message 错误信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
-                     * @param Message 错误信息
+                     * @param _message 错误信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

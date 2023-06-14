@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取上一次同步完成的时间
                      * @return LastTime 上一次同步完成的时间
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置上一次同步完成的时间
-                     * @param LastTime 上一次同步完成的时间
+                     * @param _lastTime 上一次同步完成的时间
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
                     /**
                      * 获取上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败
                      * @return LastStatus 上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败
+                     * 
                      */
                     uint64_t GetLastStatus() const;
 
                     /**
                      * 设置上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败
-                     * @param LastStatus 上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败
+                     * @param _lastStatus 上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败
+                     * 
                      */
                     void SetLastStatus(const uint64_t& _lastStatus);
 
                     /**
                      * 判断参数 LastStatus 是否已赋值
                      * @return LastStatus 是否已赋值
+                     * 
                      */
                     bool LastStatusHasBeenSet() const;
 
                     /**
                      * 获取同步任务是否正在进行中
                      * @return InProcess 同步任务是否正在进行中
+                     * 
                      */
                     bool GetInProcess() const;
 
                     /**
                      * 设置同步任务是否正在进行中
-                     * @param InProcess 同步任务是否正在进行中
+                     * @param _inProcess 同步任务是否正在进行中
+                     * 
                      */
                     void SetInProcess(const bool& _inProcess);
 
                     /**
                      * 判断参数 InProcess 是否已赋值
                      * @return InProcess 是否已赋值
+                     * 
                      */
                     bool InProcessHasBeenSet() const;
 

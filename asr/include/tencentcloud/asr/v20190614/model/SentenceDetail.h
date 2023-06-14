@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinalSentence 单句最终识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinalSentence() const;
 
                     /**
                      * 设置单句最终识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalSentence 单句最终识别结果
+                     * @param _finalSentence 单句最终识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinalSentence(const std::string& _finalSentence);
 
                     /**
                      * 判断参数 FinalSentence 是否已赋值
                      * @return FinalSentence 是否已赋值
+                     * 
                      */
                     bool FinalSentenceHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SliceSentence 单句中间识别结果，使用空格拆分为多个词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSliceSentence() const;
 
                     /**
                      * 设置单句中间识别结果，使用空格拆分为多个词
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SliceSentence 单句中间识别结果，使用空格拆分为多个词
+                     * @param _sliceSentence 单句中间识别结果，使用空格拆分为多个词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSliceSentence(const std::string& _sliceSentence);
 
                     /**
                      * 判断参数 SliceSentence 是否已赋值
                      * @return SliceSentence 是否已赋值
+                     * 
                      */
                     bool SliceSentenceHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartMs 单句开始时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartMs() const;
 
                     /**
                      * 设置单句开始时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartMs 单句开始时间（毫秒）
+                     * @param _startMs 单句开始时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartMs(const int64_t& _startMs);
 
                     /**
                      * 判断参数 StartMs 是否已赋值
                      * @return StartMs 是否已赋值
+                     * 
                      */
                     bool StartMsHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndMs 单句结束时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndMs() const;
 
                     /**
                      * 设置单句结束时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndMs 单句结束时间（毫秒）
+                     * @param _endMs 单句结束时间（毫秒）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndMs(const int64_t& _endMs);
 
                     /**
                      * 判断参数 EndMs 是否已赋值
                      * @return EndMs 是否已赋值
+                     * 
                      */
                     bool EndMsHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordsNum 单句中词个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWordsNum() const;
 
                     /**
                      * 设置单句中词个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WordsNum 单句中词个数
+                     * @param _wordsNum 单句中词个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWordsNum(const int64_t& _wordsNum);
 
                     /**
                      * 判断参数 WordsNum 是否已赋值
                      * @return WordsNum 是否已赋值
+                     * 
                      */
                     bool WordsNumHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Words 单句中词详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SentenceWords> GetWords() const;
 
                     /**
                      * 设置单句中词详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Words 单句中词详情
+                     * @param _words 单句中词详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWords(const std::vector<SentenceWords>& _words);
 
                     /**
                      * 判断参数 Words 是否已赋值
                      * @return Words 是否已赋值
+                     * 
                      */
                     bool WordsHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeechSpeed 单句语速，单位：字数/秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetSpeechSpeed() const;
 
                     /**
                      * 设置单句语速，单位：字数/秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpeechSpeed 单句语速，单位：字数/秒
+                     * @param _speechSpeed 单句语速，单位：字数/秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpeechSpeed(const double& _speechSpeed);
 
                     /**
                      * 判断参数 SpeechSpeed 是否已赋值
                      * @return SpeechSpeed 是否已赋值
+                     * 
                      */
                     bool SpeechSpeedHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSpeakerId() const;
 
                     /**
                      * 设置声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpeakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+                     * @param _speakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpeakerId(const int64_t& _speakerId);
 
                     /**
                      * 判断参数 SpeakerId 是否已赋值
                      * @return SpeakerId 是否已赋值
+                     * 
                      */
                     bool SpeakerIdHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEmotionalEnergy() const;
 
                     /**
                      * 设置情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * @param _emotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmotionalEnergy(const double& _emotionalEnergy);
 
                     /**
                      * 判断参数 EmotionalEnergy 是否已赋值
                      * @return EmotionalEnergy 是否已赋值
+                     * 
                      */
                     bool EmotionalEnergyHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SilenceTime 本句与上一句之间的静音时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSilenceTime() const;
 
                     /**
                      * 设置本句与上一句之间的静音时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SilenceTime 本句与上一句之间的静音时长
+                     * @param _silenceTime 本句与上一句之间的静音时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSilenceTime(const int64_t& _silenceTime);
 
                     /**
                      * 判断参数 SilenceTime 是否已赋值
                      * @return SilenceTime 是否已赋值
+                     * 
                      */
                     bool SilenceTimeHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmotionType 情绪类型（可能为空）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEmotionType() const;
 
                     /**
                      * 设置情绪类型（可能为空）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmotionType 情绪类型（可能为空）
+                     * @param _emotionType 情绪类型（可能为空）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmotionType(const std::vector<std::string>& _emotionType);
 
                     /**
                      * 判断参数 EmotionType 是否已赋值
                      * @return EmotionType 是否已赋值
+                     * 
                      */
                     bool EmotionTypeHasBeenSet() const;
 

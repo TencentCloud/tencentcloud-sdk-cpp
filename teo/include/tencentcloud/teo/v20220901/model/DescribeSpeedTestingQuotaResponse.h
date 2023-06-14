@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取配额数据。
                      * @return SpeedTestingQuota 配额数据。
+                     * 
                      */
                     SpeedTestingQuota GetSpeedTestingQuota() const;
 
                     /**
                      * 判断参数 SpeedTestingQuota 是否已赋值
                      * @return SpeedTestingQuota 是否已赋值
+                     * 
                      */
                     bool SpeedTestingQuotaHasBeenSet() const;
 

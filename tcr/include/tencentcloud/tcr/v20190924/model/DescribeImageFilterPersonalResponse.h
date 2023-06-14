@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回tag镜像内容相同的tag列表
                      * @return Data 返回tag镜像内容相同的tag列表
+                     * 
                      */
                     SameImagesResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

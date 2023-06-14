@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取日志文件夹
                      * @return LogPath 日志文件夹
+                     * 
                      */
                     std::string GetLogPath() const;
 
                     /**
                      * 设置日志文件夹
-                     * @param LogPath 日志文件夹
+                     * @param _logPath 日志文件夹
+                     * 
                      */
                     void SetLogPath(const std::string& _logPath);
 
                     /**
                      * 判断参数 LogPath 是否已赋值
                      * @return LogPath 是否已赋值
+                     * 
                      */
                     bool LogPathHasBeenSet() const;
 
                     /**
                      * 获取日志文件名
                      * @return FilePattern 日志文件名
+                     * 
                      */
                     std::string GetFilePattern() const;
 
                     /**
                      * 设置日志文件名
-                     * @param FilePattern 日志文件名
+                     * @param _filePattern 日志文件名
+                     * 
                      */
                     void SetFilePattern(const std::string& _filePattern);
 
                     /**
                      * 判断参数 FilePattern 是否已赋值
                      * @return FilePattern 是否已赋值
+                     * 
                      */
                     bool FilePatternHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomLabels metadata信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCustomLabels() const;
 
                     /**
                      * 设置metadata信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomLabels metadata信息
+                     * @param _customLabels metadata信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomLabels(const std::vector<std::string>& _customLabels);
 
                     /**
                      * 判断参数 CustomLabels 是否已赋值
                      * @return CustomLabels 是否已赋值
+                     * 
                      */
                     bool CustomLabelsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取RS就近模式, 0-无策略, 1-可用区就近访问。
                      * @return RsAccessStrategy RS就近模式, 0-无策略, 1-可用区就近访问。
+                     * 
                      */
                     int64_t GetRsAccessStrategy() const;
 
                     /**
                      * 设置RS就近模式, 0-无策略, 1-可用区就近访问。
-                     * @param RsAccessStrategy RS就近模式, 0-无策略, 1-可用区就近访问。
+                     * @param _rsAccessStrategy RS就近模式, 0-无策略, 1-可用区就近访问。
+                     * 
                      */
                     void SetRsAccessStrategy(const int64_t& _rsAccessStrategy);
 
                     /**
                      * 判断参数 RsAccessStrategy 是否已赋值
                      * @return RsAccessStrategy 是否已赋值
+                     * 
                      */
                     bool RsAccessStrategyHasBeenSet() const;
 

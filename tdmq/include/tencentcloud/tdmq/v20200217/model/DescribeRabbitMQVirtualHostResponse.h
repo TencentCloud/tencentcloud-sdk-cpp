@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回vhost数量
                      * @return TotalCount 返回vhost数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取vhost详情列表
                      * @return VirtualHostList vhost详情列表
+                     * 
                      */
                     std::vector<RabbitMQVirtualHostInfo> GetVirtualHostList() const;
 
                     /**
                      * 判断参数 VirtualHostList 是否已赋值
                      * @return VirtualHostList 是否已赋值
+                     * 
                      */
                     bool VirtualHostListHasBeenSet() const;
 

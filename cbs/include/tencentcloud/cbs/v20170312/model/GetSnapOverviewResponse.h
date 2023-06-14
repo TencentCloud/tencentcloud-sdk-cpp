@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取用户快照总大小
                      * @return TotalSize 用户快照总大小
+                     * 
                      */
                     double GetTotalSize() const;
 
                     /**
                      * 判断参数 TotalSize 是否已赋值
                      * @return TotalSize 是否已赋值
+                     * 
                      */
                     bool TotalSizeHasBeenSet() const;
 
                     /**
                      * 获取用户快照总大小（用于计费）
                      * @return RealTradeSize 用户快照总大小（用于计费）
+                     * 
                      */
                     double GetRealTradeSize() const;
 
                     /**
                      * 判断参数 RealTradeSize 是否已赋值
                      * @return RealTradeSize 是否已赋值
+                     * 
                      */
                     bool RealTradeSizeHasBeenSet() const;
 
                     /**
                      * 获取快照免费额度
                      * @return FreeQuota 快照免费额度
+                     * 
                      */
                     double GetFreeQuota() const;
 
                     /**
                      * 判断参数 FreeQuota 是否已赋值
                      * @return FreeQuota 是否已赋值
+                     * 
                      */
                     bool FreeQuotaHasBeenSet() const;
 
                     /**
                      * 获取快照总个数
                      * @return TotalNums 快照总个数
+                     * 
                      */
                     int64_t GetTotalNums() const;
 
                     /**
                      * 判断参数 TotalNums 是否已赋值
                      * @return TotalNums 是否已赋值
+                     * 
                      */
                     bool TotalNumsHasBeenSet() const;
 

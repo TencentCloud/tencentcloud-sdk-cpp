@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取个数
                      * @return PageSize 个数
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置个数
-                     * @param PageSize 个数
+                     * @param _pageSize 个数
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取环境id, 非必填
                      * @return EnvId 环境id, 非必填
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id, 非必填
-                     * @param EnvId 环境id, 非必填
+                     * @param _envId 环境id, 非必填
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称, 非必填
                      * @return ProjectName 项目名称, 非必填
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称, 非必填
-                     * @param ProjectName 项目名称, 非必填
+                     * @param _projectName 项目名称, 非必填
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目类型: framework-oneclick,qci-extension-cicd
                      * @return ProjectType 项目类型: framework-oneclick,qci-extension-cicd
+                     * 
                      */
                     std::string GetProjectType() const;
 
                     /**
                      * 设置项目类型: framework-oneclick,qci-extension-cicd
-                     * @param ProjectType 项目类型: framework-oneclick,qci-extension-cicd
+                     * @param _projectType 项目类型: framework-oneclick,qci-extension-cicd
+                     * 
                      */
                     void SetProjectType(const std::string& _projectType);
 
                     /**
                      * 判断参数 ProjectType 是否已赋值
                      * @return ProjectType 是否已赋值
+                     * 
                      */
                     bool ProjectTypeHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取ci的id
                      * @return CiId ci的id
+                     * 
                      */
                     std::string GetCiId() const;
 
                     /**
                      * 设置ci的id
-                     * @param CiId ci的id
+                     * @param _ciId ci的id
+                     * 
                      */
                     void SetCiId(const std::string& _ciId);
 
                     /**
                      * 判断参数 CiId 是否已赋值
                      * @return CiId 是否已赋值
+                     * 
                      */
                     bool CiIdHasBeenSet() const;
 

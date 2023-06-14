@@ -73,6 +73,7 @@ EXCEPTION_CRONTAB_TASK: 异常定时任务
 STATICS_POD: 静态pod创建
 ABNORMAL_CREATE_POD: 异常pod创建
 USER_DEFINED: 用户自定义
+                     * 
                      */
                     std::string GetScope() const;
 
@@ -90,7 +91,7 @@ EXCEPTION_CRONTAB_TASK: 异常定时任务
 STATICS_POD: 静态pod创建
 ABNORMAL_CREATE_POD: 异常pod创建
 USER_DEFINED: 用户自定义
-                     * @param Scope 范围
+                     * @param _scope 范围
 系统事件:
 ANONYMOUS_ACCESS: 匿名访问
 ABNORMAL_UA_REQ: 异常UA请求
@@ -103,30 +104,35 @@ EXCEPTION_CRONTAB_TASK: 异常定时任务
 STATICS_POD: 静态pod创建
 ABNORMAL_CREATE_POD: 异常pod创建
 USER_DEFINED: 用户自定义
+                     * 
                      */
                     void SetScope(const std::string& _scope);
 
                     /**
                      * 判断参数 Scope 是否已赋值
                      * @return Scope 是否已赋值
+                     * 
                      */
                     bool ScopeHasBeenSet() const;
 
                     /**
                      * 获取动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)
                      * @return Action 动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)
-                     * @param Action 动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)
+                     * @param _action 动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -135,20 +141,23 @@ USER_DEFINED: 用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskLevel 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
+                     * @param _riskLevel 威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
@@ -157,20 +166,23 @@ USER_DEFINED: 用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 开关状态(true:开 false:关) 适用于系统规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置开关状态(true:开 false:关) 适用于系统规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 开关状态(true:开 false:关) 适用于系统规则
+                     * @param _status 开关状态(true:开 false:关) 适用于系统规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -179,20 +191,23 @@ USER_DEFINED: 用户自定义
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDelete 是否被删除 适用于自定义规则入参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsDelete() const;
 
                     /**
                      * 设置是否被删除 适用于自定义规则入参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDelete 是否被删除 适用于自定义规则入参
+                     * @param _isDelete 是否被删除 适用于自定义规则入参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDelete(const bool& _isDelete);
 
                     /**
                      * 判断参数 IsDelete 是否已赋值
                      * @return IsDelete 是否已赋值
+                     * 
                      */
                     bool IsDeleteHasBeenSet() const;
 

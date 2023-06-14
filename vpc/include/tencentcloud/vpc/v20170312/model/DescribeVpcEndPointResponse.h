@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取终端节点对象。
                      * @return EndPointSet 终端节点对象。
+                     * 
                      */
                     std::vector<EndPoint> GetEndPointSet() const;
 
                     /**
                      * 判断参数 EndPointSet 是否已赋值
                      * @return EndPointSet 是否已赋值
+                     * 
                      */
                     bool EndPointSetHasBeenSet() const;
 
                     /**
                      * 获取符合查询条件的终端节点个数。
                      * @return TotalCount 符合查询条件的终端节点个数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

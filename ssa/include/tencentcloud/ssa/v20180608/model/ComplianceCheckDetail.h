@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取检查项ID
                      * @return Id 检查项ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置检查项ID
-                     * @param Id 检查项ID
+                     * @param _id 检查项ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取检查项类别
                      * @return Category 检查项类别
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置检查项类别
-                     * @param Category 检查项类别
+                     * @param _category 检查项类别
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
                     /**
                      * 获取检查项类型
                      * @return Type 检查项类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置检查项类型
-                     * @param Type 检查项类型
+                     * @param _type 检查项类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取不通过总数
                      * @return ErrorCount 不通过总数
+                     * 
                      */
                     int64_t GetErrorCount() const;
 
                     /**
                      * 设置不通过总数
-                     * @param ErrorCount 不通过总数
+                     * @param _errorCount 不通过总数
+                     * 
                      */
                     void SetErrorCount(const int64_t& _errorCount);
 
                     /**
                      * 判断参数 ErrorCount 是否已赋值
                      * @return ErrorCount 是否已赋值
+                     * 
                      */
                     bool ErrorCountHasBeenSet() const;
 
                     /**
                      * 获取检查项英文名
                      * @return NameEn 检查项英文名
+                     * 
                      */
                     std::string GetNameEn() const;
 
                     /**
                      * 设置检查项英文名
-                     * @param NameEn 检查项英文名
+                     * @param _nameEn 检查项英文名
+                     * 
                      */
                     void SetNameEn(const std::string& _nameEn);
 
                     /**
                      * 判断参数 NameEn 是否已赋值
                      * @return NameEn 是否已赋值
+                     * 
                      */
                     bool NameEnHasBeenSet() const;
 
                     /**
                      * 获取检查项名称
                      * @return CheckName 检查项名称
+                     * 
                      */
                     std::string GetCheckName() const;
 
                     /**
                      * 设置检查项名称
-                     * @param CheckName 检查项名称
+                     * @param _checkName 检查项名称
+                     * 
                      */
                     void SetCheckName(const std::string& _checkName);
 
                     /**
                      * 判断参数 CheckName 是否已赋值
                      * @return CheckName 是否已赋值
+                     * 
                      */
                     bool CheckNameHasBeenSet() const;
 
                     /**
                      * 获取检查项处置方式
                      * @return Method 检查项处置方式
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置检查项处置方式
-                     * @param Method 检查项处置方式
+                     * @param _method 检查项处置方式
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取帮助文档
                      * @return Doc 帮助文档
+                     * 
                      */
                     std::string GetDoc() const;
 
                     /**
                      * 设置帮助文档
-                     * @param Doc 帮助文档
+                     * @param _doc 帮助文档
+                     * 
                      */
                     void SetDoc(const std::string& _doc);
 
                     /**
                      * 判断参数 Doc 是否已赋值
                      * @return Doc 是否已赋值
+                     * 
                      */
                     bool DocHasBeenSet() const;
 
                     /**
                      * 获取通过总数
                      * @return SafeCount 通过总数
+                     * 
                      */
                     int64_t GetSafeCount() const;
 
                     /**
                      * 设置通过总数
-                     * @param SafeCount 通过总数
+                     * @param _safeCount 通过总数
+                     * 
                      */
                     void SetSafeCount(const int64_t& _safeCount);
 
                     /**
                      * 判断参数 SafeCount 是否已赋值
                      * @return SafeCount 是否已赋值
+                     * 
                      */
                     bool SafeCountHasBeenSet() const;
 
                     /**
                      * 获取检查项检查内容
                      * @return Content 检查项检查内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置检查项检查内容
-                     * @param Content 检查项检查内容
+                     * @param _content 检查项检查内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取是否通过检测
                      * @return IsPass 是否通过检测
+                     * 
                      */
                     int64_t GetIsPass() const;
 
                     /**
                      * 设置是否通过检测
-                     * @param IsPass 是否通过检测
+                     * @param _isPass 是否通过检测
+                     * 
                      */
                     void SetIsPass(const int64_t& _isPass);
 
                     /**
                      * 判断参数 IsPass 是否已赋值
                      * @return IsPass 是否已赋值
+                     * 
                      */
                     bool IsPassHasBeenSet() const;
 
                     /**
                      * 获取忽略总数
                      * @return IgnoreCount 忽略总数
+                     * 
                      */
                     int64_t GetIgnoreCount() const;
 
                     /**
                      * 设置忽略总数
-                     * @param IgnoreCount 忽略总数
+                     * @param _ignoreCount 忽略总数
+                     * 
                      */
                     void SetIgnoreCount(const int64_t& _ignoreCount);
 
                     /**
                      * 判断参数 IgnoreCount 是否已赋值
                      * @return IgnoreCount 是否已赋值
+                     * 
                      */
                     bool IgnoreCountHasBeenSet() const;
 
                     /**
                      * 获取风险总数
                      * @return RiskCount 风险总数
+                     * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
                      * 设置风险总数
-                     * @param RiskCount 风险总数
+                     * @param _riskCount 风险总数
+                     * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
 
                     /**
                      * 判断参数 RiskCount 是否已赋值
                      * @return RiskCount 是否已赋值
+                     * 
                      */
                     bool RiskCountHasBeenSet() const;
 
@@ -285,74 +324,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 最近一次检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置最近一次检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastCheckTime 最近一次检测时间
+                     * @param _lastCheckTime 最近一次检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
 
                     /**
                      * 判断参数 LastCheckTime 是否已赋值
                      * @return LastCheckTime 是否已赋值
+                     * 
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
                     /**
                      * 获取资产组类型
                      * @return AssetType 资产组类型
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产组类型
-                     * @param AssetType 资产组类型
+                     * @param _assetType 资产组类型
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
                     /**
                      * 获取res_count
                      * @return ResCount res_count
+                     * 
                      */
                     int64_t GetResCount() const;
 
                     /**
                      * 设置res_count
-                     * @param ResCount res_count
+                     * @param _resCount res_count
+                     * 
                      */
                     void SetResCount(const int64_t& _resCount);
 
                     /**
                      * 判断参数 ResCount 是否已赋值
                      * @return ResCount 是否已赋值
+                     * 
                      */
                     bool ResCountHasBeenSet() const;
 
                     /**
                      * 获取检查项UUID
                      * @return UUID 检查项UUID
+                     * 
                      */
                     std::string GetUUID() const;
 
                     /**
                      * 设置检查项UUID
-                     * @param UUID 检查项UUID
+                     * @param _uUID 检查项UUID
+                     * 
                      */
                     void SetUUID(const std::string& _uUID);
 
                     /**
                      * 判断参数 UUID 是否已赋值
                      * @return UUID 是否已赋值
+                     * 
                      */
                     bool UUIDHasBeenSet() const;
 
@@ -361,20 +412,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardItem 标准项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStandardItem() const;
 
                     /**
                      * 设置标准项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StandardItem 标准项
+                     * @param _standardItem 标准项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStandardItem(const std::string& _standardItem);
 
                     /**
                      * 判断参数 StandardItem 是否已赋值
                      * @return StandardItem 是否已赋值
+                     * 
                      */
                     bool StandardItemHasBeenSet() const;
 
@@ -383,20 +437,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Chapter 章节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChapter() const;
 
                     /**
                      * 设置章节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Chapter 章节
+                     * @param _chapter 章节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChapter(const std::string& _chapter);
 
                     /**
                      * 判断参数 Chapter 是否已赋值
                      * @return Chapter 是否已赋值
+                     * 
                      */
                     bool ChapterHasBeenSet() const;
 
@@ -405,20 +462,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTypeDesc 资产类型描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetTypeDesc() const;
 
                     /**
                      * 设置资产类型描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetTypeDesc 资产类型描述
+                     * @param _assetTypeDesc 资产类型描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetTypeDesc(const std::string& _assetTypeDesc);
 
                     /**
                      * 判断参数 AssetTypeDesc 是否已赋值
                      * @return AssetTypeDesc 是否已赋值
+                     * 
                      */
                     bool AssetTypeDescHasBeenSet() const;
 
@@ -427,20 +487,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsIgnore 是否忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsIgnore() const;
 
                     /**
                      * 设置是否忽略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsIgnore 是否忽略
+                     * @param _isIgnore 是否忽略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsIgnore(const uint64_t& _isIgnore);
 
                     /**
                      * 判断参数 IsIgnore 是否已赋值
                      * @return IsIgnore 是否已赋值
+                     * 
                      */
                     bool IsIgnoreHasBeenSet() const;
 
@@ -449,20 +512,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskItem 风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskItem() const;
 
                     /**
                      * 设置风险项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskItem 风险项
+                     * @param _riskItem 风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskItem(const std::string& _riskItem);
 
                     /**
                      * 判断参数 RiskItem 是否已赋值
                      * @return RiskItem 是否已赋值
+                     * 
                      */
                     bool RiskItemHasBeenSet() const;
 
@@ -471,20 +537,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 合规检查项完整名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置合规检查项完整名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Title 合规检查项完整名称
+                     * @param _title 合规检查项完整名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 

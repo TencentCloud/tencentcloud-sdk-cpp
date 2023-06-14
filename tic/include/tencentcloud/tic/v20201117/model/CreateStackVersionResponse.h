@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的版本ID
                      * @return VersionId 新创建的版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

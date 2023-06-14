@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取固件版本
                      * @return FirmwareVersion 固件版本
+                     * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
                      * 设置固件版本
-                     * @param FirmwareVersion 固件版本
+                     * @param _firmwareVersion 固件版本
+                     * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
 
                     /**
                      * 判断参数 FirmwareVersion 是否已赋值
                      * @return FirmwareVersion 是否已赋值
+                     * 
                      */
                     bool FirmwareVersionHasBeenSet() const;
 
                     /**
                      * 获取固件版本大小
                      * @return FileSize 固件版本大小
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置固件版本大小
-                     * @param FileSize 固件版本大小
+                     * @param _fileSize 固件版本大小
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 

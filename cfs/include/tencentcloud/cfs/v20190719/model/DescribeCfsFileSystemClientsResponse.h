@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取客户端列表
                      * @return ClientList 客户端列表
+                     * 
                      */
                     std::vector<FileSystemClient> GetClientList() const;
 
                     /**
                      * 判断参数 ClientList 是否已赋值
                      * @return ClientList 是否已赋值
+                     * 
                      */
                     bool ClientListHasBeenSet() const;
 

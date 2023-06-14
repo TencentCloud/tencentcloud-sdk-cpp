@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义参数原始值
                      * @return RawOriginal 自定义参数原始值
+                     * 
                      */
                     std::string GetRawOriginal() const;
 
                     /**
                      * 设置自定义参数原始值
-                     * @param RawOriginal 自定义参数原始值
+                     * @param _rawOriginal 自定义参数原始值
+                     * 
                      */
                     void SetRawOriginal(const std::string& _rawOriginal);
 
                     /**
                      * 判断参数 RawOriginal 是否已赋值
                      * @return RawOriginal 是否已赋值
+                     * 
                      */
                     bool RawOriginalHasBeenSet() const;
 
                     /**
                      * 获取自定义参数值类型
                      * @return ValuesType 自定义参数值类型
+                     * 
                      */
                     std::string GetValuesType() const;
 
                     /**
                      * 设置自定义参数值类型
-                     * @param ValuesType 自定义参数值类型
+                     * @param _valuesType 自定义参数值类型
+                     * 
                      */
                     void SetValuesType(const std::string& _valuesType);
 
                     /**
                      * 判断参数 ValuesType 是否已赋值
                      * @return ValuesType 是否已赋值
+                     * 
                      */
                     bool ValuesTypeHasBeenSet() const;
 

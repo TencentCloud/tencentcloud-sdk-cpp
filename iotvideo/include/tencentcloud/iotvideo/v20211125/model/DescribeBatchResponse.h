@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取批次详情
                      * @return Data 批次详情
+                     * 
                      */
                     VideoBatch GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

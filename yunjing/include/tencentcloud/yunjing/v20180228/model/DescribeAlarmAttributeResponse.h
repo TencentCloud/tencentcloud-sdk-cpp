@@ -50,12 +50,14 @@ namespace TencentCloud
                      * @return Offline 防护软件离线告警状态：
 <li>OPEN：告警已开启</li>
 <li>CLOSE： 告警已关闭</li>
+                     * 
                      */
                     std::string GetOffline() const;
 
                     /**
                      * 判断参数 Offline 是否已赋值
                      * @return Offline 是否已赋值
+                     * 
                      */
                     bool OfflineHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
                      * @return Malware 发现木马告警状态：
 <li>OPEN：告警已开启</li>
 <li>CLOSE： 告警已关闭</li>
+                     * 
                      */
                     std::string GetMalware() const;
 
                     /**
                      * 判断参数 Malware 是否已赋值
                      * @return Malware 是否已赋值
+                     * 
                      */
                     bool MalwareHasBeenSet() const;
 
@@ -82,12 +86,14 @@ namespace TencentCloud
                      * @return NonlocalLogin 发现异地登录告警状态：
 <li>OPEN：告警已开启</li>
 <li>CLOSE： 告警已关闭</li>
+                     * 
                      */
                     std::string GetNonlocalLogin() const;
 
                     /**
                      * 判断参数 NonlocalLogin 是否已赋值
                      * @return NonlocalLogin 是否已赋值
+                     * 
                      */
                     bool NonlocalLoginHasBeenSet() const;
 
@@ -98,12 +104,14 @@ namespace TencentCloud
                      * @return CrackSuccess 被暴力破解成功告警状态：
 <li>OPEN：告警已开启</li>
 <li>CLOSE： 告警已关闭</li>
+                     * 
                      */
                     std::string GetCrackSuccess() const;
 
                     /**
                      * 判断参数 CrackSuccess 是否已赋值
                      * @return CrackSuccess 是否已赋值
+                     * 
                      */
                     bool CrackSuccessHasBeenSet() const;
 

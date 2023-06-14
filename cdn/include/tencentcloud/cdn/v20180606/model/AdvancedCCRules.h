@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectionTime 探测时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDetectionTime() const;
 
                     /**
                      * 设置探测时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectionTime 探测时长
+                     * @param _detectionTime 探测时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetectionTime(const uint64_t& _detectionTime);
 
                     /**
                      * 判断参数 DetectionTime 是否已赋值
                      * @return DetectionTime 是否已赋值
+                     * 
                      */
                     bool DetectionTimeHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrequencyLimit 限频阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFrequencyLimit() const;
 
                     /**
                      * 设置限频阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrequencyLimit 限频阈值
+                     * @param _frequencyLimit 限频阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrequencyLimit(const uint64_t& _frequencyLimit);
 
                     /**
                      * 判断参数 FrequencyLimit 是否已赋值
                      * @return FrequencyLimit 是否已赋值
+                     * 
                      */
                     bool FrequencyLimitHasBeenSet() const;
 
@@ -118,6 +127,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPunishmentSwitch() const;
 
@@ -126,16 +136,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishmentSwitch IP 惩罚配置开关，取值有：
+                     * @param _punishmentSwitch IP 惩罚配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPunishmentSwitch(const std::string& _punishmentSwitch);
 
                     /**
                      * 判断参数 PunishmentSwitch 是否已赋值
                      * @return PunishmentSwitch 是否已赋值
+                     * 
                      */
                     bool PunishmentSwitchHasBeenSet() const;
 
@@ -144,20 +156,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PunishmentTime IP 惩罚时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPunishmentTime() const;
 
                     /**
                      * 设置IP 惩罚时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishmentTime IP 惩罚时长
+                     * @param _punishmentTime IP 惩罚时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPunishmentTime(const uint64_t& _punishmentTime);
 
                     /**
                      * 判断参数 PunishmentTime 是否已赋值
                      * @return PunishmentTime 是否已赋值
+                     * 
                      */
                     bool PunishmentTimeHasBeenSet() const;
 
@@ -166,20 +181,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 执行动作，intercept|redirect
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置执行动作，intercept|redirect
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 执行动作，intercept|redirect
+                     * @param _action 执行动作，intercept|redirect
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -188,20 +206,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectUrl 动作为 redirect 时，重定向的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置动作为 redirect 时，重定向的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectUrl 动作为 redirect 时，重定向的url
+                     * @param _redirectUrl 动作为 redirect 时，重定向的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 
@@ -210,20 +231,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configure 七层限频具体配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnSevenLayerRules> GetConfigure() const;
 
                     /**
                      * 设置七层限频具体配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Configure 七层限频具体配置
+                     * @param _configure 七层限频具体配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigure(const std::vector<ScdnSevenLayerRules>& _configure);
 
                     /**
                      * 判断参数 Configure 是否已赋值
                      * @return Configure 是否已赋值
+                     * 
                      */
                     bool ConfigureHasBeenSet() const;
 
@@ -236,6 +260,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -244,16 +269,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 自定义cc规则配置开关，取值有：
+                     * @param _switch 自定义cc规则配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

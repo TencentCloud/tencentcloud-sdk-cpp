@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID,实例ID形如: emr-xxxxxxxx
                      * @return InstanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID,实例ID形如: emr-xxxxxxxx
-                     * @param InstanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * @param _instanceId 集群实例ID,实例ID形如: emr-xxxxxxxx
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -84,6 +87,7 @@ namespace TencentCloud
 <li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>
 <li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>
 注意：现在只支持以上取值，输入其他值会导致错误。
+                     * 
                      */
                     std::string GetNodeFlag() const;
 
@@ -99,7 +103,7 @@ namespace TencentCloud
 <li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>
 <li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>
 注意：现在只支持以上取值，输入其他值会导致错误。
-                     * @param NodeFlag 节点标识，取值为：
+                     * @param _nodeFlag 节点标识，取值为：
 <li>all：表示获取全部类型节点，cdb信息除外。</li>
 <li>master：表示获取master节点信息。</li>
 <li>core：表示获取core节点信息。</li>
@@ -110,120 +114,140 @@ namespace TencentCloud
 <li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>
 <li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>
 注意：现在只支持以上取值，输入其他值会导致错误。
+                     * 
                      */
                     void SetNodeFlag(const std::string& _nodeFlag);
 
                     /**
                      * 判断参数 NodeFlag 是否已赋值
                      * @return NodeFlag 是否已赋值
+                     * 
                      */
                     bool NodeFlagHasBeenSet() const;
 
                     /**
                      * 获取页编号，默认值为0，表示第一页。
                      * @return Offset 页编号，默认值为0，表示第一页。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页编号，默认值为0，表示第一页。
-                     * @param Offset 页编号，默认值为0，表示第一页。
+                     * @param _offset 页编号，默认值为0，表示第一页。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页返回数量，默认值为100，最大值为100。
                      * @return Limit 每页返回数量，默认值为100，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页返回数量，默认值为100，最大值为100。
-                     * @param Limit 每页返回数量，默认值为100，最大值为100。
+                     * @param _limit 每页返回数量，默认值为100，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源类型:支持all/host/pod，默认为all
                      * @return HardwareResourceType 资源类型:支持all/host/pod，默认为all
+                     * 
                      */
                     std::string GetHardwareResourceType() const;
 
                     /**
                      * 设置资源类型:支持all/host/pod，默认为all
-                     * @param HardwareResourceType 资源类型:支持all/host/pod，默认为all
+                     * @param _hardwareResourceType 资源类型:支持all/host/pod，默认为all
+                     * 
                      */
                     void SetHardwareResourceType(const std::string& _hardwareResourceType);
 
                     /**
                      * 判断参数 HardwareResourceType 是否已赋值
                      * @return HardwareResourceType 是否已赋值
+                     * 
                      */
                     bool HardwareResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取支持搜索的字段
                      * @return SearchFields 支持搜索的字段
+                     * 
                      */
                     std::vector<SearchItem> GetSearchFields() const;
 
                     /**
                      * 设置支持搜索的字段
-                     * @param SearchFields 支持搜索的字段
+                     * @param _searchFields 支持搜索的字段
+                     * 
                      */
                     void SetSearchFields(const std::vector<SearchItem>& _searchFields);
 
                     /**
                      * 判断参数 SearchFields 是否已赋值
                      * @return SearchFields 是否已赋值
+                     * 
                      */
                     bool SearchFieldsHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return OrderField 无
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置无
-                     * @param OrderField 无
+                     * @param _orderField 无
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Asc 无
+                     * 
                      */
                     int64_t GetAsc() const;
 
                     /**
                      * 设置无
-                     * @param Asc 无
+                     * @param _asc 无
+                     * 
                      */
                     void SetAsc(const int64_t& _asc);
 
                     /**
                      * 判断参数 Asc 是否已赋值
                      * @return Asc 是否已赋值
+                     * 
                      */
                     bool AscHasBeenSet() const;
 

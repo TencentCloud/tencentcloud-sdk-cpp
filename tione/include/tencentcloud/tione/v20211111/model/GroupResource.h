@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取CPU核数; 单位为1/1000核，比如100表示0.1核
                      * @return Cpu CPU核数; 单位为1/1000核，比如100表示0.1核
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数; 单位为1/1000核，比如100表示0.1核
-                     * @param Cpu CPU核数; 单位为1/1000核，比如100表示0.1核
+                     * @param _cpu CPU核数; 单位为1/1000核，比如100表示0.1核
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存；单位为MB
                      * @return Memory 内存；单位为MB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存；单位为MB
-                     * @param Memory 内存；单位为MB
+                     * @param _memory 内存；单位为MB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu 总卡数；GPUDetail 显卡数之和；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
                      * 设置总卡数；GPUDetail 显卡数之和；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gpu 总卡数；GPUDetail 显卡数之和；单位为1/100卡，比如100代表1卡
+                     * @param _gpu 总卡数；GPUDetail 显卡数之和；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpu(const uint64_t& _gpu);
 
                     /**
                      * 判断参数 Gpu 是否已赋值
                      * @return Gpu 是否已赋值
+                     * 
                      */
                     bool GpuHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GpuDetailSet Gpu详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GpuDetail> GetGpuDetailSet() const;
 
                     /**
                      * 设置Gpu详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GpuDetailSet Gpu详情
+                     * @param _gpuDetailSet Gpu详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpuDetailSet(const std::vector<GpuDetail>& _gpuDetailSet);
 
                     /**
                      * 判断参数 GpuDetailSet 是否已赋值
                      * @return GpuDetailSet 是否已赋值
+                     * 
                      */
                     bool GpuDetailSetHasBeenSet() const;
 

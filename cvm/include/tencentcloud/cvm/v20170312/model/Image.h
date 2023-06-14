@@ -51,144 +51,168 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageId 镜像ID
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageId 镜像ID
+                     * @param _imageId 镜像ID
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取镜像操作系统
                      * @return OsName 镜像操作系统
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置镜像操作系统
-                     * @param OsName 镜像操作系统
+                     * @param _osName 镜像操作系统
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取镜像类型
                      * @return ImageType 镜像类型
+                     * 
                      */
                     std::string GetImageType() const;
 
                     /**
                      * 设置镜像类型
-                     * @param ImageType 镜像类型
+                     * @param _imageType 镜像类型
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像创建时间
                      * @return CreatedTime 镜像创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置镜像创建时间
-                     * @param CreatedTime 镜像创建时间
+                     * @param _createdTime 镜像创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像描述
                      * @return ImageDescription 镜像描述
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像描述
-                     * @param ImageDescription 镜像描述
+                     * @param _imageDescription 镜像描述
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
                      * 获取镜像大小
                      * @return ImageSize 镜像大小
+                     * 
                      */
                     int64_t GetImageSize() const;
 
                     /**
                      * 设置镜像大小
-                     * @param ImageSize 镜像大小
+                     * @param _imageSize 镜像大小
+                     * 
                      */
                     void SetImageSize(const int64_t& _imageSize);
 
                     /**
                      * 判断参数 ImageSize 是否已赋值
                      * @return ImageSize 是否已赋值
+                     * 
                      */
                     bool ImageSizeHasBeenSet() const;
 
                     /**
                      * 获取镜像架构
                      * @return Architecture 镜像架构
+                     * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 设置镜像架构
-                     * @param Architecture 镜像架构
+                     * @param _architecture 镜像架构
+                     * 
                      */
                     void SetArchitecture(const std::string& _architecture);
 
                     /**
                      * 判断参数 Architecture 是否已赋值
                      * @return Architecture 是否已赋值
+                     * 
                      */
                     bool ArchitectureHasBeenSet() const;
 
@@ -209,6 +233,7 @@ USING-使用中
 SYNCING-同步中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
+                     * 
                      */
                     std::string GetImageState() const;
 
@@ -221,7 +246,7 @@ USING-使用中
 SYNCING-同步中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
-                     * @param ImageState 镜像状态:
+                     * @param _imageState 镜像状态:
 CREATING-创建中
 NORMAL-正常
 CREATEFAILED-创建失败
@@ -229,66 +254,77 @@ USING-使用中
 SYNCING-同步中
 IMPORTING-导入中
 IMPORTFAILED-导入失败
+                     * 
                      */
                     void SetImageState(const std::string& _imageState);
 
                     /**
                      * 判断参数 ImageState 是否已赋值
                      * @return ImageState 是否已赋值
+                     * 
                      */
                     bool ImageStateHasBeenSet() const;
 
                     /**
                      * 获取镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
                      * @return Platform 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
-                     * @param Platform 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
+                     * @param _platform 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取镜像创建者
                      * @return ImageCreator 镜像创建者
+                     * 
                      */
                     std::string GetImageCreator() const;
 
                     /**
                      * 设置镜像创建者
-                     * @param ImageCreator 镜像创建者
+                     * @param _imageCreator 镜像创建者
+                     * 
                      */
                     void SetImageCreator(const std::string& _imageCreator);
 
                     /**
                      * 判断参数 ImageCreator 是否已赋值
                      * @return ImageCreator 是否已赋值
+                     * 
                      */
                     bool ImageCreatorHasBeenSet() const;
 
                     /**
                      * 获取镜像来源
                      * @return ImageSource 镜像来源
+                     * 
                      */
                     std::string GetImageSource() const;
 
                     /**
                      * 设置镜像来源
-                     * @param ImageSource 镜像来源
+                     * @param _imageSource 镜像来源
+                     * 
                      */
                     void SetImageSource(const std::string& _imageSource);
 
                     /**
                      * 判断参数 ImageSource 是否已赋值
                      * @return ImageSource 是否已赋值
+                     * 
                      */
                     bool ImageSourceHasBeenSet() const;
 
@@ -297,20 +333,23 @@ IMPORTFAILED-导入失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncPercent 同步百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSyncPercent() const;
 
                     /**
                      * 设置同步百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SyncPercent 同步百分比
+                     * @param _syncPercent 同步百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSyncPercent(const int64_t& _syncPercent);
 
                     /**
                      * 判断参数 SyncPercent 是否已赋值
                      * @return SyncPercent 是否已赋值
+                     * 
                      */
                     bool SyncPercentHasBeenSet() const;
 
@@ -319,20 +358,23 @@ IMPORTFAILED-导入失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportCloudinit 镜像是否支持cloud-init
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsSupportCloudinit() const;
 
                     /**
                      * 设置镜像是否支持cloud-init
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsSupportCloudinit 镜像是否支持cloud-init
+                     * @param _isSupportCloudinit 镜像是否支持cloud-init
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsSupportCloudinit(const bool& _isSupportCloudinit);
 
                     /**
                      * 判断参数 IsSupportCloudinit 是否已赋值
                      * @return IsSupportCloudinit 是否已赋值
+                     * 
                      */
                     bool IsSupportCloudinitHasBeenSet() const;
 
@@ -341,20 +383,23 @@ IMPORTFAILED-导入失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotSet 镜像关联的快照信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Snapshot> GetSnapshotSet() const;
 
                     /**
                      * 设置镜像关联的快照信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotSet 镜像关联的快照信息
+                     * @param _snapshotSet 镜像关联的快照信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotSet(const std::vector<Snapshot>& _snapshotSet);
 
                     /**
                      * 判断参数 SnapshotSet 是否已赋值
                      * @return SnapshotSet 是否已赋值
+                     * 
                      */
                     bool SnapshotSetHasBeenSet() const;
 
@@ -363,38 +408,44 @@ IMPORTFAILED-导入失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 镜像关联的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置镜像关联的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 镜像关联的标签列表。
+                     * @param _tags 镜像关联的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取镜像许可类型
                      * @return LicenseType 镜像许可类型
+                     * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
                      * 设置镜像许可类型
-                     * @param LicenseType 镜像许可类型
+                     * @param _licenseType 镜像许可类型
+                     * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 

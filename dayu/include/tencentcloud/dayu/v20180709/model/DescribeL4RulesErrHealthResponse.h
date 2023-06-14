@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取异常规则的总数
                      * @return Total 异常规则的总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取异常规则列表，返回值说明: Key值为规则ID，Value值为异常IP，多个IP用","分割
                      * @return ErrHealths 异常规则列表，返回值说明: Key值为规则ID，Value值为异常IP，多个IP用","分割
+                     * 
                      */
                     std::vector<KeyValue> GetErrHealths() const;
 
                     /**
                      * 判断参数 ErrHealths 是否已赋值
                      * @return ErrHealths 是否已赋值
+                     * 
                      */
                     bool ErrHealthsHasBeenSet() const;
 
@@ -84,12 +88,14 @@ Key值为VirtualPort时，Value值为规则的转发端口；
 Key值为ErrMessage时，Value值为健康检查异常信息；
 健康检查异常信息的格式为"SourceIp:1.1.1.1|SourcePort:1234|AbnormalStatTime:1570689065|AbnormalReason:connection time out|Interval:20|CheckNum:6|FailNum:6" 多个源IP的错误信息用，分割,
 SourceIp表示源站IP，SourcePort表示源站端口，AbnormalStatTime表示异常时间，AbnormalReason表示异常原因，Interval表示检查周期，CheckNum表示检查次数，FailNum表示失败次数；
+                     * 
                      */
                     std::vector<KeyValueRecord> GetExtErrHealths() const;
 
                     /**
                      * 判断参数 ExtErrHealths 是否已赋值
                      * @return ExtErrHealths 是否已赋值
+                     * 
                      */
                     bool ExtErrHealthsHasBeenSet() const;
 

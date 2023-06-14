@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取IP字符串
                      * @return IP IP字符串
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置IP字符串
-                     * @param IP IP字符串
+                     * @param _iP IP字符串
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信
                      * @return Provider 供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信
+                     * 
                      */
                     std::string GetProvider() const;
 
                     /**
                      * 设置供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信
-                     * @param Provider 供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信
+                     * @param _provider 供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信
+                     * 
                      */
                     void SetProvider(const std::string& _provider);
 
                     /**
                      * 判断参数 Provider 是否已赋值
                      * @return Provider 是否已赋值
+                     * 
                      */
                     bool ProviderHasBeenSet() const;
 
                     /**
                      * 获取带宽
                      * @return Bandwidth 带宽
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽
-                     * @param Bandwidth 带宽
+                     * @param _bandwidth 带宽
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 

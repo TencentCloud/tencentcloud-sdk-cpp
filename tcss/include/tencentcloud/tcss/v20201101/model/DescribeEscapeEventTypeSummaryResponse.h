@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取容器逃逸事件数
                      * @return ContainerEscapeEventCount 容器逃逸事件数
+                     * 
                      */
                     int64_t GetContainerEscapeEventCount() const;
 
                     /**
                      * 判断参数 ContainerEscapeEventCount 是否已赋值
                      * @return ContainerEscapeEventCount 是否已赋值
+                     * 
                      */
                     bool ContainerEscapeEventCountHasBeenSet() const;
 
                     /**
                      * 获取程序提权事件数
                      * @return ProcessPrivilegeEventCount 程序提权事件数
+                     * 
                      */
                     int64_t GetProcessPrivilegeEventCount() const;
 
                     /**
                      * 判断参数 ProcessPrivilegeEventCount 是否已赋值
                      * @return ProcessPrivilegeEventCount 是否已赋值
+                     * 
                      */
                     bool ProcessPrivilegeEventCountHasBeenSet() const;
 
                     /**
                      * 获取风险容器事件数
                      * @return RiskContainerEventCount 风险容器事件数
+                     * 
                      */
                     int64_t GetRiskContainerEventCount() const;
 
                     /**
                      * 判断参数 RiskContainerEventCount 是否已赋值
                      * @return RiskContainerEventCount 是否已赋值
+                     * 
                      */
                     bool RiskContainerEventCountHasBeenSet() const;
 
                     /**
                      * 获取逃逸事件待处理数
                      * @return PendingEscapeEventCount 逃逸事件待处理数
+                     * 
                      */
                     int64_t GetPendingEscapeEventCount() const;
 
                     /**
                      * 判断参数 PendingEscapeEventCount 是否已赋值
                      * @return PendingEscapeEventCount 是否已赋值
+                     * 
                      */
                     bool PendingEscapeEventCountHasBeenSet() const;
 

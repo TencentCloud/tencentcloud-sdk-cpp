@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取直播录制计划ID
                      * @return PlanId 直播录制计划ID
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置直播录制计划ID
-                     * @param PlanId 直播录制计划ID
+                     * @param _planId 直播录制计划ID
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取1: 绑定 2: 解绑
                      * @return Type 1: 绑定 2: 解绑
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置1: 绑定 2: 解绑
-                     * @param Type 1: 绑定 2: 解绑
+                     * @param _type 1: 绑定 2: 解绑
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取直播频道ID列表
                      * @return LiveChannelIds 直播频道ID列表
+                     * 
                      */
                     std::vector<std::string> GetLiveChannelIds() const;
 
                     /**
                      * 设置直播频道ID列表
-                     * @param LiveChannelIds 直播频道ID列表
+                     * @param _liveChannelIds 直播频道ID列表
+                     * 
                      */
                     void SetLiveChannelIds(const std::vector<std::string>& _liveChannelIds);
 
                     /**
                      * 判断参数 LiveChannelIds 是否已赋值
                      * @return LiveChannelIds 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdsHasBeenSet() const;
 

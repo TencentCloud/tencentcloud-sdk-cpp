@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取日期
                      * @return Date 日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期
-                     * @param Date 日期
+                     * @param _date 日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取待处理事件总数
                      * @return PendingEventCount 待处理事件总数
+                     * 
                      */
                     uint64_t GetPendingEventCount() const;
 
                     /**
                      * 设置待处理事件总数
-                     * @param PendingEventCount 待处理事件总数
+                     * @param _pendingEventCount 待处理事件总数
+                     * 
                      */
                     void SetPendingEventCount(const uint64_t& _pendingEventCount);
 
                     /**
                      * 判断参数 PendingEventCount 是否已赋值
                      * @return PendingEventCount 是否已赋值
+                     * 
                      */
                     bool PendingEventCountHasBeenSet() const;
 
                     /**
                      * 获取风险容器总数
                      * @return RiskContainerCount 风险容器总数
+                     * 
                      */
                     uint64_t GetRiskContainerCount() const;
 
                     /**
                      * 设置风险容器总数
-                     * @param RiskContainerCount 风险容器总数
+                     * @param _riskContainerCount 风险容器总数
+                     * 
                      */
                     void SetRiskContainerCount(const uint64_t& _riskContainerCount);
 
                     /**
                      * 判断参数 RiskContainerCount 是否已赋值
                      * @return RiskContainerCount 是否已赋值
+                     * 
                      */
                     bool RiskContainerCountHasBeenSet() const;
 
                     /**
                      * 获取事件总数
                      * @return EventCount 事件总数
+                     * 
                      */
                     uint64_t GetEventCount() const;
 
                     /**
                      * 设置事件总数
-                     * @param EventCount 事件总数
+                     * @param _eventCount 事件总数
+                     * 
                      */
                     void SetEventCount(const uint64_t& _eventCount);
 
                     /**
                      * 判断参数 EventCount 是否已赋值
                      * @return EventCount 是否已赋值
+                     * 
                      */
                     bool EventCountHasBeenSet() const;
 
                     /**
                      * 获取隔离事件总数
                      * @return IsolateEventCount 隔离事件总数
+                     * 
                      */
                     uint64_t GetIsolateEventCount() const;
 
                     /**
                      * 设置隔离事件总数
-                     * @param IsolateEventCount 隔离事件总数
+                     * @param _isolateEventCount 隔离事件总数
+                     * 
                      */
                     void SetIsolateEventCount(const uint64_t& _isolateEventCount);
 
                     /**
                      * 判断参数 IsolateEventCount 是否已赋值
                      * @return IsolateEventCount 是否已赋值
+                     * 
                      */
                     bool IsolateEventCountHasBeenSet() const;
 

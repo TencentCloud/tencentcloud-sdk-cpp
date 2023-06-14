@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreRuleEffectHostList 忽略检测项影响主机列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IgnoreRuleEffectHostInfo> GetIgnoreRuleEffectHostList() const;
 
                     /**
                      * 判断参数 IgnoreRuleEffectHostList 是否已赋值
                      * @return IgnoreRuleEffectHostList 是否已赋值
+                     * 
                      */
                     bool IgnoreRuleEffectHostListHasBeenSet() const;
 
                     /**
                      * 获取分页查询记录总数
                      * @return TotalCount 分页查询记录总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

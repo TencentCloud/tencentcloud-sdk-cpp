@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取代理组ID
                      * @return ProxyGroupId 代理组ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置代理组ID
-                     * @param ProxyGroupId 代理组ID
+                     * @param _proxyGroupId 代理组ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
@@ -66,290 +69,338 @@ namespace TencentCloud
 系统自动分配："system"， 自定义："custom"
                      * @return WeightMode 权重分配模式，
 系统自动分配："system"， 自定义："custom"
+                     * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
                      * 设置权重分配模式，
 系统自动分配："system"， 自定义："custom"
-                     * @param WeightMode 权重分配模式，
+                     * @param _weightMode 权重分配模式，
 系统自动分配："system"， 自定义："custom"
+                     * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
 
                     /**
                      * 判断参数 WeightMode 是否已赋值
                      * @return WeightMode 是否已赋值
+                     * 
                      */
                     bool WeightModeHasBeenSet() const;
 
                     /**
                      * 获取是否开启延迟剔除，取值："true" | "false"
                      * @return IsKickOut 是否开启延迟剔除，取值："true" | "false"
+                     * 
                      */
                     bool GetIsKickOut() const;
 
                     /**
                      * 设置是否开启延迟剔除，取值："true" | "false"
-                     * @param IsKickOut 是否开启延迟剔除，取值："true" | "false"
+                     * @param _isKickOut 是否开启延迟剔除，取值："true" | "false"
+                     * 
                      */
                     void SetIsKickOut(const bool& _isKickOut);
 
                     /**
                      * 判断参数 IsKickOut 是否已赋值
                      * @return IsKickOut 是否已赋值
+                     * 
                      */
                     bool IsKickOutHasBeenSet() const;
 
                     /**
                      * 获取最小保留数量，最小取值：0
                      * @return MinCount 最小保留数量，最小取值：0
+                     * 
                      */
                     uint64_t GetMinCount() const;
 
                     /**
                      * 设置最小保留数量，最小取值：0
-                     * @param MinCount 最小保留数量，最小取值：0
+                     * @param _minCount 最小保留数量，最小取值：0
+                     * 
                      */
                     void SetMinCount(const uint64_t& _minCount);
 
                     /**
                      * 判断参数 MinCount 是否已赋值
                      * @return MinCount 是否已赋值
+                     * 
                      */
                     bool MinCountHasBeenSet() const;
 
                     /**
                      * 获取延迟剔除阈值，最小取值：0
                      * @return MaxDelay 延迟剔除阈值，最小取值：0
+                     * 
                      */
                     uint64_t GetMaxDelay() const;
 
                     /**
                      * 设置延迟剔除阈值，最小取值：0
-                     * @param MaxDelay 延迟剔除阈值，最小取值：0
+                     * @param _maxDelay 延迟剔除阈值，最小取值：0
+                     * 
                      */
                     void SetMaxDelay(const uint64_t& _maxDelay);
 
                     /**
                      * 判断参数 MaxDelay 是否已赋值
                      * @return MaxDelay 是否已赋值
+                     * 
                      */
                     bool MaxDelayHasBeenSet() const;
 
                     /**
                      * 获取是否开启故障转移，取值："true" | "false"
                      * @return FailOver 是否开启故障转移，取值："true" | "false"
+                     * 
                      */
                     bool GetFailOver() const;
 
                     /**
                      * 设置是否开启故障转移，取值："true" | "false"
-                     * @param FailOver 是否开启故障转移，取值："true" | "false"
+                     * @param _failOver 是否开启故障转移，取值："true" | "false"
+                     * 
                      */
                     void SetFailOver(const bool& _failOver);
 
                     /**
                      * 判断参数 FailOver 是否已赋值
                      * @return FailOver 是否已赋值
+                     * 
                      */
                     bool FailOverHasBeenSet() const;
 
                     /**
                      * 获取是否自动添加RO，取值："true" | "false"
                      * @return AutoAddRo 是否自动添加RO，取值："true" | "false"
+                     * 
                      */
                     bool GetAutoAddRo() const;
 
                     /**
                      * 设置是否自动添加RO，取值："true" | "false"
-                     * @param AutoAddRo 是否自动添加RO，取值："true" | "false"
+                     * @param _autoAddRo 是否自动添加RO，取值："true" | "false"
+                     * 
                      */
                     void SetAutoAddRo(const bool& _autoAddRo);
 
                     /**
                      * 判断参数 AutoAddRo 是否已赋值
                      * @return AutoAddRo 是否已赋值
+                     * 
                      */
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
                      * 获取是否是只读，取值："true" | "false"
                      * @return ReadOnly 是否是只读，取值："true" | "false"
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否是只读，取值："true" | "false"
-                     * @param ReadOnly 是否是只读，取值："true" | "false"
+                     * @param _readOnly 是否是只读，取值："true" | "false"
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
                      * 获取是否开启事务分离，取值："true" | "false"
                      * @return TransSplit 是否开启事务分离，取值："true" | "false"
+                     * 
                      */
                     bool GetTransSplit() const;
 
                     /**
                      * 设置是否开启事务分离，取值："true" | "false"
-                     * @param TransSplit 是否开启事务分离，取值："true" | "false"
+                     * @param _transSplit 是否开启事务分离，取值："true" | "false"
+                     * 
                      */
                     void SetTransSplit(const bool& _transSplit);
 
                     /**
                      * 判断参数 TransSplit 是否已赋值
                      * @return TransSplit 是否已赋值
+                     * 
                      */
                     bool TransSplitHasBeenSet() const;
 
                     /**
                      * 获取读写权重分配
                      * @return ProxyAllocation 读写权重分配
+                     * 
                      */
                     std::vector<ProxyAllocation> GetProxyAllocation() const;
 
                     /**
                      * 设置读写权重分配
-                     * @param ProxyAllocation 读写权重分配
+                     * @param _proxyAllocation 读写权重分配
+                     * 
                      */
                     void SetProxyAllocation(const std::vector<ProxyAllocation>& _proxyAllocation);
 
                     /**
                      * 判断参数 ProxyAllocation 是否已赋值
                      * @return ProxyAllocation 是否已赋值
+                     * 
                      */
                     bool ProxyAllocationHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return UniqVpcId 私有网络ID
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param UniqVpcId 私有网络ID
+                     * @param _uniqVpcId 私有网络ID
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
                      * 获取私有子网ID
                      * @return UniqSubnetId 私有子网ID
+                     * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置私有子网ID
-                     * @param UniqSubnetId 私有子网ID
+                     * @param _uniqSubnetId 私有子网ID
+                     * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
                      * 判断参数 UniqSubnetId 是否已赋值
                      * @return UniqSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启连接池
                      * @return ConnectionPool 是否开启连接池
+                     * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
                      * 设置是否开启连接池
-                     * @param ConnectionPool 是否开启连接池
+                     * @param _connectionPool 是否开启连接池
+                     * 
                      */
                     void SetConnectionPool(const bool& _connectionPool);
 
                     /**
                      * 判断参数 ConnectionPool 是否已赋值
                      * @return ConnectionPool 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取IP地址
                      * @return Vip IP地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IP地址
-                     * @param Vip IP地址
+                     * @param _vip IP地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return VPort 端口
+                     * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
                      * 设置端口
-                     * @param VPort 端口
+                     * @param _vPort 端口
+                     * 
                      */
                     void SetVPort(const uint64_t& _vPort);
 
                     /**
                      * 判断参数 VPort 是否已赋值
                      * @return VPort 是否已赋值
+                     * 
                      */
                     bool VPortHasBeenSet() const;
 
                     /**
                      * 获取安全组
                      * @return SecurityGroup 安全组
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroup() const;
 
                     /**
                      * 设置安全组
-                     * @param SecurityGroup 安全组
+                     * @param _securityGroup 安全组
+                     * 
                      */
                     void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

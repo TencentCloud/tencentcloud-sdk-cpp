@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abstract 一致性校验摘要信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareAbstractInfo GetAbstract() const;
 
                     /**
                      * 判断参数 Abstract 是否已赋值
                      * @return Abstract 是否已赋值
+                     * 
                      */
                     bool AbstractHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 一致性校验详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareDetailInfo GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

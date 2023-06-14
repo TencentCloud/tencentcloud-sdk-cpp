@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'
                      * @return OperationType 操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'
+                     * 
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'
-                     * @param OperationType 操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'
+                     * @param _operationType 操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'
+                     * 
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
+                     * 
                      */
                     bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取除了创建个性化配置外，必传此字段，如：pz-1234abcd
                      * @return UconfigId 除了创建个性化配置外，必传此字段，如：pz-1234abcd
+                     * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
                      * 设置除了创建个性化配置外，必传此字段，如：pz-1234abcd
-                     * @param UconfigId 除了创建个性化配置外，必传此字段，如：pz-1234abcd
+                     * @param _uconfigId 除了创建个性化配置外，必传此字段，如：pz-1234abcd
+                     * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
 
                     /**
                      * 判断参数 UconfigId 是否已赋值
                      * @return UconfigId 是否已赋值
+                     * 
                      */
                     bool UconfigIdHasBeenSet() const;
 
                     /**
                      * 获取创建个性化配置或修改个性化配置的内容时，必传此字段
                      * @return ConfigContent 创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * 
                      */
                     std::string GetConfigContent() const;
 
                     /**
                      * 设置创建个性化配置或修改个性化配置的内容时，必传此字段
-                     * @param ConfigContent 创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * @param _configContent 创建个性化配置或修改个性化配置的内容时，必传此字段
+                     * 
                      */
                     void SetConfigContent(const std::string& _configContent);
 
                     /**
                      * 判断参数 ConfigContent 是否已赋值
                      * @return ConfigContent 是否已赋值
+                     * 
                      */
                     bool ConfigContentHasBeenSet() const;
 
                     /**
                      * 获取创建个性化配置或修改个性化配置的名字时，必传此字段
                      * @return ConfigName 创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置创建个性化配置或修改个性化配置的名字时，必传此字段
-                     * @param ConfigName 创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * @param _configName 创建个性化配置或修改个性化配置的名字时，必传此字段
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
                     /**
                      * 获取绑定解绑时，必传此字段
                      * @return LoadBalancerIds 绑定解绑时，必传此字段
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置绑定解绑时，必传此字段
-                     * @param LoadBalancerIds 绑定解绑时，必传此字段
+                     * @param _loadBalancerIds 绑定解绑时，必传此字段
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 

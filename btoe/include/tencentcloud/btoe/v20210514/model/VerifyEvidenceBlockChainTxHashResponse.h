@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取核验结果，true为核验成功，fals为核验失败
                      * @return Result 核验结果，true为核验成功，fals为核验失败
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvidenceTime 存证时间，仅当核验结果为true时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEvidenceTime() const;
 
                     /**
                      * 判断参数 EvidenceTime 是否已赋值
                      * @return EvidenceTime 是否已赋值
+                     * 
                      */
                     bool EvidenceTimeHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvidenceId 存证编码，仅当核验结果为true时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 

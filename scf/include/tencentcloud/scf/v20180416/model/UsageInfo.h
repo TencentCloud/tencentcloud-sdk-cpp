@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取命名空间个数
                      * @return NamespacesCount 命名空间个数
+                     * 
                      */
                     int64_t GetNamespacesCount() const;
 
                     /**
                      * 设置命名空间个数
-                     * @param NamespacesCount 命名空间个数
+                     * @param _namespacesCount 命名空间个数
+                     * 
                      */
                     void SetNamespacesCount(const int64_t& _namespacesCount);
 
                     /**
                      * 判断参数 NamespacesCount 是否已赋值
                      * @return NamespacesCount 是否已赋值
+                     * 
                      */
                     bool NamespacesCountHasBeenSet() const;
 
                     /**
                      * 获取命名空间详情
                      * @return Namespace 命名空间详情
+                     * 
                      */
                     std::vector<NamespaceUsage> GetNamespace() const;
 
                     /**
                      * 设置命名空间详情
-                     * @param Namespace 命名空间详情
+                     * @param _namespace 命名空间详情
+                     * 
                      */
                     void SetNamespace(const std::vector<NamespaceUsage>& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取当前地域用户并发内存配额上限
                      * @return TotalConcurrencyMem 当前地域用户并发内存配额上限
+                     * 
                      */
                     int64_t GetTotalConcurrencyMem() const;
 
                     /**
                      * 设置当前地域用户并发内存配额上限
-                     * @param TotalConcurrencyMem 当前地域用户并发内存配额上限
+                     * @param _totalConcurrencyMem 当前地域用户并发内存配额上限
+                     * 
                      */
                     void SetTotalConcurrencyMem(const int64_t& _totalConcurrencyMem);
 
                     /**
                      * 判断参数 TotalConcurrencyMem 是否已赋值
                      * @return TotalConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool TotalConcurrencyMemHasBeenSet() const;
 
                     /**
                      * 获取当前地域用户已配置并发内存额度
                      * @return TotalAllocatedConcurrencyMem 当前地域用户已配置并发内存额度
+                     * 
                      */
                     int64_t GetTotalAllocatedConcurrencyMem() const;
 
                     /**
                      * 设置当前地域用户已配置并发内存额度
-                     * @param TotalAllocatedConcurrencyMem 当前地域用户已配置并发内存额度
+                     * @param _totalAllocatedConcurrencyMem 当前地域用户已配置并发内存额度
+                     * 
                      */
                     void SetTotalAllocatedConcurrencyMem(const int64_t& _totalAllocatedConcurrencyMem);
 
                     /**
                      * 判断参数 TotalAllocatedConcurrencyMem 是否已赋值
                      * @return TotalAllocatedConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool TotalAllocatedConcurrencyMemHasBeenSet() const;
 
                     /**
                      * 获取用户实际配置的账号并发配额
                      * @return UserConcurrencyMemLimit 用户实际配置的账号并发配额
+                     * 
                      */
                     int64_t GetUserConcurrencyMemLimit() const;
 
                     /**
                      * 设置用户实际配置的账号并发配额
-                     * @param UserConcurrencyMemLimit 用户实际配置的账号并发配额
+                     * @param _userConcurrencyMemLimit 用户实际配置的账号并发配额
+                     * 
                      */
                     void SetUserConcurrencyMemLimit(const int64_t& _userConcurrencyMemLimit);
 
                     /**
                      * 判断参数 UserConcurrencyMemLimit 是否已赋值
                      * @return UserConcurrencyMemLimit 是否已赋值
+                     * 
                      */
                     bool UserConcurrencyMemLimitHasBeenSet() const;
 

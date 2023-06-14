@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取第三方指令编号
                      * @return TransactionId 第三方指令编号
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置第三方指令编号
-                     * @param TransactionId 第三方指令编号
+                     * @param _transactionId 第三方指令编号
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
                     /**
                      * 获取受理状态
                      * @return Status 受理状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置受理状态
-                     * @param Status 受理状态
+                     * @param _status 受理状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取申报流水号
                      * @return DeclareId 申报流水号
+                     * 
                      */
                     std::string GetDeclareId() const;
 
                     /**
                      * 设置申报流水号
-                     * @param DeclareId 申报流水号
+                     * @param _declareId 申报流水号
+                     * 
                      */
                     void SetDeclareId(const std::string& _declareId);
 
                     /**
                      * 判断参数 DeclareId 是否已赋值
                      * @return DeclareId 是否已赋值
+                     * 
                      */
                     bool DeclareIdHasBeenSet() const;
 
@@ -123,38 +135,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalDeclareId 原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginalDeclareId() const;
 
                     /**
                      * 设置原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalDeclareId 原申报流水号
+                     * @param _originalDeclareId 原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalDeclareId(const std::string& _originalDeclareId);
 
                     /**
                      * 判断参数 OriginalDeclareId 是否已赋值
                      * @return OriginalDeclareId 是否已赋值
+                     * 
                      */
                     bool OriginalDeclareIdHasBeenSet() const;
 
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 

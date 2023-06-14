@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取操作名，即API名称，比如：CreateImage
                      * @return Operation 操作名，即API名称，比如：CreateImage
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名，即API名称，比如：CreateImage
-                     * @param Operation 操作名，即API名称，比如：CreateImage
+                     * @param _operation 操作名，即API名称，比如：CreateImage
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

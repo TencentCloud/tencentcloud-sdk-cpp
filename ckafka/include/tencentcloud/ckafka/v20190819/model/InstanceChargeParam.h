@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例付费类型: PREPAID(包年包月), POSTPAID_BY_HOUR(按量付费)
                      * @return InstanceChargeType 实例付费类型: PREPAID(包年包月), POSTPAID_BY_HOUR(按量付费)
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例付费类型: PREPAID(包年包月), POSTPAID_BY_HOUR(按量付费)
-                     * @param InstanceChargeType 实例付费类型: PREPAID(包年包月), POSTPAID_BY_HOUR(按量付费)
+                     * @param _instanceChargeType 实例付费类型: PREPAID(包年包月), POSTPAID_BY_HOUR(按量付费)
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取购买时长: 包年包月时需要填写, 按量计费无需填写
                      * @return InstanceChargePeriod 购买时长: 包年包月时需要填写, 按量计费无需填写
+                     * 
                      */
                     int64_t GetInstanceChargePeriod() const;
 
                     /**
                      * 设置购买时长: 包年包月时需要填写, 按量计费无需填写
-                     * @param InstanceChargePeriod 购买时长: 包年包月时需要填写, 按量计费无需填写
+                     * @param _instanceChargePeriod 购买时长: 包年包月时需要填写, 按量计费无需填写
+                     * 
                      */
                     void SetInstanceChargePeriod(const int64_t& _instanceChargePeriod);
 
                     /**
                      * 判断参数 InstanceChargePeriod 是否已赋值
                      * @return InstanceChargePeriod 是否已赋值
+                     * 
                      */
                     bool InstanceChargePeriodHasBeenSet() const;
 

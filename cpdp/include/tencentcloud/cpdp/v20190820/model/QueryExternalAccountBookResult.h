@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取渠道记账本ID
                      * @return ChannelAccountBookId 渠道记账本ID
+                     * 
                      */
                     std::string GetChannelAccountBookId() const;
 
                     /**
                      * 设置渠道记账本ID
-                     * @param ChannelAccountBookId 渠道记账本ID
+                     * @param _channelAccountBookId 渠道记账本ID
+                     * 
                      */
                     void SetChannelAccountBookId(const std::string& _channelAccountBookId);
 
                     /**
                      * 判断参数 ChannelAccountBookId 是否已赋值
                      * @return ChannelAccountBookId 是否已赋值
+                     * 
                      */
                     bool ChannelAccountBookIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableBalance 可用余额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvailableBalance() const;
 
                     /**
                      * 设置可用余额。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailableBalance 可用余额。
+                     * @param _availableBalance 可用余额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailableBalance(const std::string& _availableBalance);
 
                     /**
                      * 判断参数 AvailableBalance 是否已赋值
                      * @return AvailableBalance 是否已赋值
+                     * 
                      */
                     bool AvailableBalanceHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCollectMoneyAccountInfo() const;
 
                     /**
                      * 设置电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CollectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
+                     * @param _collectMoneyAccountInfo 电子记账本对外收款的账户信息。为JSON格式字符串（成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCollectMoneyAccountInfo(const std::string& _collectMoneyAccountInfo);
 
                     /**
                      * 判断参数 CollectMoneyAccountInfo 是否已赋值
                      * @return CollectMoneyAccountInfo 是否已赋值
+                     * 
                      */
                     bool CollectMoneyAccountInfoHasBeenSet() const;
 

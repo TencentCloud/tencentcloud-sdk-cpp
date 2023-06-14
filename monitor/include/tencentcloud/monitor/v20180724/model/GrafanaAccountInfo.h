@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取用户账号ID
                      * @return UserId 用户账号ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户账号ID
-                     * @param UserId 用户账号ID
+                     * @param _userId 用户账号ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户权限
                      * @return Role 用户权限
+                     * 
                      */
                     std::vector<GrafanaAccountRole> GetRole() const;
 
                     /**
                      * 设置用户权限
-                     * @param Role 用户权限
+                     * @param _role 用户权限
+                     * 
                      */
                     void SetRole(const std::vector<GrafanaAccountRole>& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Notes 备注
+                     * 
                      */
                     std::string GetNotes() const;
 
                     /**
                      * 设置备注
-                     * @param Notes 备注
+                     * @param _notes 备注
+                     * 
                      */
                     void SetNotes(const std::string& _notes);
 
                     /**
                      * 判断参数 Notes 是否已赋值
                      * @return Notes 是否已赋值
+                     * 
                      */
                     bool NotesHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateAt 创建时间
+                     * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateAt 创建时间
+                     * @param _createAt 创建时间
+                     * 
                      */
                     void SetCreateAt(const std::string& _createAt);
 
                     /**
                      * 判断参数 CreateAt 是否已赋值
                      * @return CreateAt 是否已赋值
+                     * 
                      */
                     bool CreateAtHasBeenSet() const;
 
@@ -124,38 +136,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户主账号 UIN
                      * @return Uin 用户主账号 UIN
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户主账号 UIN
-                     * @param Uin 用户主账号 UIN
+                     * @param _uin 用户主账号 UIN
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 

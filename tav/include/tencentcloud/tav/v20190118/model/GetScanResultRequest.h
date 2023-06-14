@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取购买服务后获得的授权信息，用于保证请求有效性
                      * @return Key 购买服务后获得的授权信息，用于保证请求有效性
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置购买服务后获得的授权信息，用于保证请求有效性
-                     * @param Key 购买服务后获得的授权信息，用于保证请求有效性
+                     * @param _key 购买服务后获得的授权信息，用于保证请求有效性
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取需要获取扫描接口的md5（只允许单个md5）
                      * @return Md5 需要获取扫描接口的md5（只允许单个md5）
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置需要获取扫描接口的md5（只允许单个md5）
-                     * @param Md5 需要获取扫描接口的md5（只允许单个md5）
+                     * @param _md5 需要获取扫描接口的md5（只允许单个md5）
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 

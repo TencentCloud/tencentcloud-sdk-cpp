@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取年龄区间
                      * @return AgeRange 年龄区间
+                     * 
                      */
                     std::string GetAgeRange() const;
 
                     /**
                      * 设置年龄区间
-                     * @param AgeRange 年龄区间
+                     * @param _ageRange 年龄区间
+                     * 
                      */
                     void SetAgeRange(const std::string& _ageRange);
 
                     /**
                      * 判断参数 AgeRange 是否已赋值
                      * @return AgeRange 是否已赋值
+                     * 
                      */
                     bool AgeRangeHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percent 百分比
+                     * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置百分比
-                     * @param Percent 百分比
+                     * @param _percent 百分比
+                     * 
                      */
                     void SetPercent(const double& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

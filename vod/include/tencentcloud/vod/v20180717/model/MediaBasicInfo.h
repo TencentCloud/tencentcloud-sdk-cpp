@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件名称。
                      * @return Name 媒体文件名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒体文件名称。
-                     * @param Name 媒体文件名称。
+                     * @param _name 媒体文件名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取媒体文件描述。
                      * @return Description 媒体文件描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置媒体文件描述。
-                     * @param Description 媒体文件描述。
+                     * @param _description 媒体文件描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _createTime 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _updateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
                      * @return ExpireTime 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-                     * @param ExpireTime 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
+                     * @param _expireTime 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的分类 ID。
                      * @return ClassId 媒体文件的分类 ID。
+                     * 
                      */
                     int64_t GetClassId() const;
 
                     /**
                      * 设置媒体文件的分类 ID。
-                     * @param ClassId 媒体文件的分类 ID。
+                     * @param _classId 媒体文件的分类 ID。
+                     * 
                      */
                     void SetClassId(const int64_t& _classId);
 
                     /**
                      * 判断参数 ClassId 是否已赋值
                      * @return ClassId 是否已赋值
+                     * 
                      */
                     bool ClassIdHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的分类名称。
                      * @return ClassName 媒体文件的分类名称。
+                     * 
                      */
                     std::string GetClassName() const;
 
                     /**
                      * 设置媒体文件的分类名称。
-                     * @param ClassName 媒体文件的分类名称。
+                     * @param _className 媒体文件的分类名称。
+                     * 
                      */
                     void SetClassName(const std::string& _className);
 
                     /**
                      * 判断参数 ClassName 是否已赋值
                      * @return ClassName 是否已赋值
+                     * 
                      */
                     bool ClassNameHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
                      * @return ClassPath 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-                     * @param ClassPath 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
+                     * @param _classPath 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的封面图片地址。
                      * @return CoverUrl 媒体文件的封面图片地址。
+                     * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置媒体文件的封面图片地址。
-                     * @param CoverUrl 媒体文件的封面图片地址。
+                     * @param _coverUrl 媒体文件的封面图片地址。
+                     * 
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
                     /**
                      * 判断参数 CoverUrl 是否已赋值
                      * @return CoverUrl 是否已赋值
+                     * 
                      */
                     bool CoverUrlHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的封装格式，例如 mp4、flv 等。
                      * @return Type 媒体文件的封装格式，例如 mp4、flv 等。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置媒体文件的封装格式，例如 mp4、flv 等。
-                     * @param Type 媒体文件的封装格式，例如 mp4、flv 等。
+                     * @param _type 媒体文件的封装格式，例如 mp4、flv 等。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取原始媒体文件的 URL 地址。
                      * @return MediaUrl 原始媒体文件的 URL 地址。
+                     * 
                      */
                     std::string GetMediaUrl() const;
 
                     /**
                      * 设置原始媒体文件的 URL 地址。
-                     * @param MediaUrl 原始媒体文件的 URL 地址。
+                     * @param _mediaUrl 原始媒体文件的 URL 地址。
+                     * 
                      */
                     void SetMediaUrl(const std::string& _mediaUrl);
 
                     /**
                      * 判断参数 MediaUrl 是否已赋值
                      * @return MediaUrl 是否已赋值
+                     * 
                      */
                     bool MediaUrlHasBeenSet() const;
 
@@ -250,74 +283,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceInfo 该媒体文件的来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaSourceData GetSourceInfo() const;
 
                     /**
                      * 设置该媒体文件的来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceInfo 该媒体文件的来源信息。
+                     * @param _sourceInfo 该媒体文件的来源信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceInfo(const MediaSourceData& _sourceInfo);
 
                     /**
                      * 判断参数 SourceInfo 是否已赋值
                      * @return SourceInfo 是否已赋值
+                     * 
                      */
                     bool SourceInfoHasBeenSet() const;
 
                     /**
                      * 获取媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
                      * @return StorageRegion 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-                     * @param StorageRegion 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+                     * @param _storageRegion 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+                     * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的标签信息。
                      * @return TagSet 媒体文件的标签信息。
+                     * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置媒体文件的标签信息。
-                     * @param TagSet 媒体文件的标签信息。
+                     * @param _tagSet 媒体文件的标签信息。
+                     * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取直播录制文件的唯一标识。
                      * @return Vid 直播录制文件的唯一标识。
+                     * 
                      */
                     std::string GetVid() const;
 
                     /**
                      * 设置直播录制文件的唯一标识。
-                     * @param Vid 直播录制文件的唯一标识。
+                     * @param _vid 直播录制文件的唯一标识。
+                     * 
                      */
                     void SetVid(const std::string& _vid);
 
                     /**
                      * 判断参数 Vid 是否已赋值
                      * @return Vid 是否已赋值
+                     * 
                      */
                     bool VidHasBeenSet() const;
 
@@ -330,6 +375,7 @@ namespace TencentCloud
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
+                     * 
                      */
                     std::string GetCategory() const;
 
@@ -338,16 +384,18 @@ namespace TencentCloud
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
-                     * @param Category 文件类型：
+                     * @param _category 文件类型：
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
@@ -358,6 +406,7 @@ namespace TencentCloud
                      * @return Status 文件状态：Normal：正常，Forbidden：封禁。
 
 *注意：此字段暂不支持。	
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -365,15 +414,17 @@ namespace TencentCloud
                      * 设置文件状态：Normal：正常，Forbidden：封禁。
 
 *注意：此字段暂不支持。	
-                     * @param Status 文件状态：Normal：正常，Forbidden：封禁。
+                     * @param _status 文件状态：Normal：正常，Forbidden：封禁。
 
 *注意：此字段暂不支持。	
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -388,6 +439,7 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     std::string GetStorageClass() const;
 
@@ -397,17 +449,19 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
-                     * @param StorageClass 媒体文件的存储类别：
+                     * @param _storageClass 媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     void SetStorageClass(const std::string& _storageClass);
 
                     /**
                      * 判断参数 StorageClass 是否已赋值
                      * @return StorageClass 是否已赋值
+                     * 
                      */
                     bool StorageClassHasBeenSet() const;
 

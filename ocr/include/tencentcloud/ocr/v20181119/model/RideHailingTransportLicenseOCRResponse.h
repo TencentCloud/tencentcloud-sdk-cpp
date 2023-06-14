@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取交运管许可字号。
                      * @return OperationLicenseNumber 交运管许可字号。
+                     * 
                      */
                     std::string GetOperationLicenseNumber() const;
 
                     /**
                      * 判断参数 OperationLicenseNumber 是否已赋值
                      * @return OperationLicenseNumber 是否已赋值
+                     * 
                      */
                     bool OperationLicenseNumberHasBeenSet() const;
 
                     /**
                      * 获取车辆所有人，对应网约车运输证字段：车辆所有人/车主名称/业户名称。
                      * @return VehicleOwner 车辆所有人，对应网约车运输证字段：车辆所有人/车主名称/业户名称。
+                     * 
                      */
                     std::string GetVehicleOwner() const;
 
                     /**
                      * 判断参数 VehicleOwner 是否已赋值
                      * @return VehicleOwner 是否已赋值
+                     * 
                      */
                     bool VehicleOwnerHasBeenSet() const;
 
                     /**
                      * 获取车牌号码，对应网约车运输证字段：车牌号码/车辆号牌。
                      * @return VehicleNumber 车牌号码，对应网约车运输证字段：车牌号码/车辆号牌。
+                     * 
                      */
                     std::string GetVehicleNumber() const;
 
                     /**
                      * 判断参数 VehicleNumber 是否已赋值
                      * @return VehicleNumber 是否已赋值
+                     * 
                      */
                     bool VehicleNumberHasBeenSet() const;
 
                     /**
                      * 获取有效起始日期。
                      * @return StartDate 有效起始日期。
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取有效期截止时间，对应网约车运输证字段：有效期至/营运期限止。
                      * @return EndDate 有效期截止时间，对应网约车运输证字段：有效期至/营运期限止。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取初始发证日期，对应网约车运输证字段：初始领证日期/发证日期。
                      * @return ReleaseDate 初始发证日期，对应网约车运输证字段：初始领证日期/发证日期。
+                     * 
                      */
                     std::string GetReleaseDate() const;
 
                     /**
                      * 判断参数 ReleaseDate 是否已赋值
                      * @return ReleaseDate 是否已赋值
+                     * 
                      */
                     bool ReleaseDateHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的独享集群的数量
                      * @return TotalCount 符合条件的独享集群的数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取独享集群的详细信息列表
                      * @return CdcSet 独享集群的详细信息列表
+                     * 
                      */
                     std::vector<Cdc> GetCdcSet() const;
 
                     /**
                      * 判断参数 CdcSet 是否已赋值
                      * @return CdcSet 是否已赋值
+                     * 
                      */
                     bool CdcSetHasBeenSet() const;
 
                     /**
                      * 获取独享集群的详细信息列表
                      * @return DiskStoragePoolSet 独享集群的详细信息列表
+                     * 
                      */
                     std::vector<Cdc> GetDiskStoragePoolSet() const;
 
                     /**
                      * 判断参数 DiskStoragePoolSet 是否已赋值
                      * @return DiskStoragePoolSet 是否已赋值
+                     * 
                      */
                     bool DiskStoragePoolSetHasBeenSet() const;
 

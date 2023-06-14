@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 图片中可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置图片中可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 图片中可视文本识别结果
+                     * @param _content 图片中可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearRect 可视文本在图片中的位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Rectf GetAppearRect() const;
 
                     /**
                      * 设置可视文本在图片中的位置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearRect 可视文本在图片中的位置信息
+                     * @param _appearRect 可视文本在图片中的位置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearRect(const Rectf& _appearRect);
 
                     /**
                      * 判断参数 AppearRect 是否已赋值
                      * @return AppearRect 是否已赋值
+                     * 
                      */
                     bool AppearRectHasBeenSet() const;
 

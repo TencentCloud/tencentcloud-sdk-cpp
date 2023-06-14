@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取应用ID列表
                      * @return ApplicationIdList 应用ID列表
+                     * 
                      */
                     std::vector<std::string> GetApplicationIdList() const;
 
                     /**
                      * 设置应用ID列表
-                     * @param ApplicationIdList 应用ID列表
+                     * @param _applicationIdList 应用ID列表
+                     * 
                      */
                     void SetApplicationIdList(const std::vector<std::string>& _applicationIdList);
 
                     /**
                      * 判断参数 ApplicationIdList 是否已赋值
                      * @return ApplicationIdList 是否已赋值
+                     * 
                      */
                     bool ApplicationIdListHasBeenSet() const;
 
                     /**
                      * 获取应用类型
                      * @return ApplicationType 应用类型
+                     * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
                      * 设置应用类型
-                     * @param ApplicationType 应用类型
+                     * @param _applicationType 应用类型
+                     * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
                      * 获取每页条数
                      * @return Limit 每页条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页条数
-                     * @param Limit 每页条数
+                     * @param _limit 每页条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取起始偏移量
                      * @return Offset 起始偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置起始偏移量
-                     * @param Offset 起始偏移量
+                     * @param _offset 起始偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取微服务类型
                      * @return MicroserviceType 微服务类型
+                     * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
                      * 设置微服务类型
-                     * @param MicroserviceType 微服务类型
+                     * @param _microserviceType 微服务类型
+                     * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
 
                     /**
                      * 判断参数 MicroserviceType 是否已赋值
                      * @return MicroserviceType 是否已赋值
+                     * 
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源类型数组
                      * @return ApplicationResourceTypeList 资源类型数组
+                     * 
                      */
                     std::vector<std::string> GetApplicationResourceTypeList() const;
 
                     /**
                      * 设置资源类型数组
-                     * @param ApplicationResourceTypeList 资源类型数组
+                     * @param _applicationResourceTypeList 资源类型数组
+                     * 
                      */
                     void SetApplicationResourceTypeList(const std::vector<std::string>& _applicationResourceTypeList);
 
                     /**
                      * 判断参数 ApplicationResourceTypeList 是否已赋值
                      * @return ApplicationResourceTypeList 是否已赋值
+                     * 
                      */
                     bool ApplicationResourceTypeListHasBeenSet() const;
 
                     /**
                      * 获取通过id和name进行关键词过滤
                      * @return SearchWord 通过id和name进行关键词过滤
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置通过id和name进行关键词过滤
-                     * @param SearchWord 通过id和name进行关键词过滤
+                     * @param _searchWord 通过id和name进行关键词过滤
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return DisableProgramAuthCheck 无
+                     * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
                      * 设置无
-                     * @param DisableProgramAuthCheck 无
+                     * @param _disableProgramAuthCheck 无
+                     * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
 
                     /**
                      * 判断参数 DisableProgramAuthCheck 是否已赋值
                      * @return DisableProgramAuthCheck 是否已赋值
+                     * 
                      */
                     bool DisableProgramAuthCheckHasBeenSet() const;
 

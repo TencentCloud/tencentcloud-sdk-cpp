@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取视频拆条任务ID，用来唯一标识视频拆条任务。
                      * @return JobId 视频拆条任务ID，用来唯一标识视频拆条任务。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

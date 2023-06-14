@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取源分类归属。
                      * @return SourceOwner 源分类归属。
+                     * 
                      */
                     Entity GetSourceOwner() const;
 
                     /**
                      * 设置源分类归属。
-                     * @param SourceOwner 源分类归属。
+                     * @param _sourceOwner 源分类归属。
+                     * 
                      */
                     void SetSourceOwner(const Entity& _sourceOwner);
 
                     /**
                      * 判断参数 SourceOwner 是否已赋值
                      * @return SourceOwner 是否已赋值
+                     * 
                      */
                     bool SourceOwnerHasBeenSet() const;
 
                     /**
                      * 获取源分类路径列表。
                      * @return SourceClassPathSet 源分类路径列表。
+                     * 
                      */
                     std::vector<std::string> GetSourceClassPathSet() const;
 
                     /**
                      * 设置源分类路径列表。
-                     * @param SourceClassPathSet 源分类路径列表。
+                     * @param _sourceClassPathSet 源分类路径列表。
+                     * 
                      */
                     void SetSourceClassPathSet(const std::vector<std::string>& _sourceClassPathSet);
 
                     /**
                      * 判断参数 SourceClassPathSet 是否已赋值
                      * @return SourceClassPathSet 是否已赋值
+                     * 
                      */
                     bool SourceClassPathSetHasBeenSet() const;
 
                     /**
                      * 获取目标分类归属。
                      * @return DestinationOwner 目标分类归属。
+                     * 
                      */
                     Entity GetDestinationOwner() const;
 
                     /**
                      * 设置目标分类归属。
-                     * @param DestinationOwner 目标分类归属。
+                     * @param _destinationOwner 目标分类归属。
+                     * 
                      */
                     void SetDestinationOwner(const Entity& _destinationOwner);
 
                     /**
                      * 判断参数 DestinationOwner 是否已赋值
                      * @return DestinationOwner 是否已赋值
+                     * 
                      */
                     bool DestinationOwnerHasBeenSet() const;
 
                     /**
                      * 获取目标分类归属。
                      * @return DestinationClassPath 目标分类归属。
+                     * 
                      */
                     std::string GetDestinationClassPath() const;
 
                     /**
                      * 设置目标分类归属。
-                     * @param DestinationClassPath 目标分类归属。
+                     * @param _destinationClassPath 目标分类归属。
+                     * 
                      */
                     void SetDestinationClassPath(const std::string& _destinationClassPath);
 
                     /**
                      * 判断参数 DestinationClassPath 是否已赋值
                      * @return DestinationClassPath 是否已赋值
+                     * 
                      */
                     bool DestinationClassPathHasBeenSet() const;
 

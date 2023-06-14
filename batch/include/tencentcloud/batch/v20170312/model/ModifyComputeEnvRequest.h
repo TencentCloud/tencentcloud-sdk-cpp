@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取计算环境ID
                      * @return EnvId 计算环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置计算环境ID
-                     * @param EnvId 计算环境ID
+                     * @param _envId 计算环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取计算节点期望个数
                      * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     int64_t GetDesiredComputeNodeCount() const;
 
                     /**
                      * 设置计算节点期望个数
-                     * @param DesiredComputeNodeCount 计算节点期望个数
+                     * @param _desiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     void SetDesiredComputeNodeCount(const int64_t& _desiredComputeNodeCount);
 
                     /**
                      * 判断参数 DesiredComputeNodeCount 是否已赋值
                      * @return DesiredComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
                     /**
                      * 获取计算环境名称
                      * @return EnvName 计算环境名称
+                     * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 设置计算环境名称
-                     * @param EnvName 计算环境名称
+                     * @param _envName 计算环境名称
+                     * 
                      */
                     void SetEnvName(const std::string& _envName);
 
                     /**
                      * 判断参数 EnvName 是否已赋值
                      * @return EnvName 是否已赋值
+                     * 
                      */
                     bool EnvNameHasBeenSet() const;
 
                     /**
                      * 获取计算环境描述
                      * @return EnvDescription 计算环境描述
+                     * 
                      */
                     std::string GetEnvDescription() const;
 
                     /**
                      * 设置计算环境描述
-                     * @param EnvDescription 计算环境描述
+                     * @param _envDescription 计算环境描述
+                     * 
                      */
                     void SetEnvDescription(const std::string& _envDescription);
 
                     /**
                      * 判断参数 EnvDescription 是否已赋值
                      * @return EnvDescription 是否已赋值
+                     * 
                      */
                     bool EnvDescriptionHasBeenSet() const;
 
                     /**
                      * 获取计算环境属性数据
                      * @return EnvData 计算环境属性数据
+                     * 
                      */
                     ComputeEnvData GetEnvData() const;
 
                     /**
                      * 设置计算环境属性数据
-                     * @param EnvData 计算环境属性数据
+                     * @param _envData 计算环境属性数据
+                     * 
                      */
                     void SetEnvData(const ComputeEnvData& _envData);
 
                     /**
                      * 判断参数 EnvData 是否已赋值
                      * @return EnvData 是否已赋值
+                     * 
                      */
                     bool EnvDataHasBeenSet() const;
 

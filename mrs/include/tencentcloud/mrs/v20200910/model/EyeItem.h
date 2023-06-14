@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Left 左眼
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EyeChildItem GetLeft() const;
 
                     /**
                      * 设置左眼
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Left 左眼
+                     * @param _left 左眼
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLeft(const EyeChildItem& _left);
 
                     /**
                      * 判断参数 Left 是否已赋值
                      * @return Left 是否已赋值
+                     * 
                      */
                     bool LeftHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Right 右眼
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EyeChildItem GetRight() const;
 
                     /**
                      * 设置右眼
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Right 右眼
+                     * @param _right 右眼
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRight(const EyeChildItem& _right);
 
                     /**
                      * 判断参数 Right 是否已赋值
                      * @return Right 是否已赋值
+                     * 
                      */
                     bool RightHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pd 瞳距
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem2 GetPd() const;
 
                     /**
                      * 设置瞳距
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pd 瞳距
+                     * @param _pd 瞳距
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPd(const BaseItem2& _pd);
 
                     /**
                      * 判断参数 Pd 是否已赋值
                      * @return Pd 是否已赋值
+                     * 
                      */
                     bool PdHasBeenSet() const;
 

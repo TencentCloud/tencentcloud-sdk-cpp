@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取部署机构为1，否则为0
                      * @return Relegation 部署机构为1，否则为0
+                     * 
                      */
                     uint64_t GetRelegation() const;
 
                     /**
                      * 设置部署机构为1，否则为0
-                     * @param Relegation 部署机构为1，否则为0
+                     * @param _relegation 部署机构为1，否则为0
+                     * 
                      */
                     void SetRelegation(const uint64_t& _relegation);
 
                     /**
                      * 判断参数 Relegation 是否已赋值
                      * @return Relegation 是否已赋值
+                     * 
                      */
                     bool RelegationHasBeenSet() const;
 

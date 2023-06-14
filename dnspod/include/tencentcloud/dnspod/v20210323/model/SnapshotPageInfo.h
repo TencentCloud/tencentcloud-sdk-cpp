@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取快照总数
                      * @return Total 快照总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置快照总数
-                     * @param Total 快照总数
+                     * @param _total 快照总数
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

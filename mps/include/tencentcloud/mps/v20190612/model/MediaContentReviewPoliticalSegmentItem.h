@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取嫌疑片段起始的偏移时间，单位：秒。
                      * @return StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段起始的偏移时间，单位：秒。
-                     * @param StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取嫌疑片段结束的偏移时间，单位：秒。
                      * @return EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段结束的偏移时间，单位：秒。
-                     * @param EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
+                     * @param _endTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取嫌疑片段涉敏分数。
                      * @return Confidence 嫌疑片段涉敏分数。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段涉敏分数。
-                     * @param Confidence 嫌疑片段涉敏分数。
+                     * @param _confidence 嫌疑片段涉敏分数。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -117,34 +127,39 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 嫌疑片段涉敏结果建议，取值范围：
+                     * @param _suggestion 嫌疑片段涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取涉敏人物、违规图标名字。
                      * @return Name 涉敏人物、违规图标名字。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置涉敏人物、违规图标名字。
-                     * @param Name 涉敏人物、违规图标名字。
+                     * @param _name 涉敏人物、违规图标名字。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -197,6 +212,7 @@ celebrity：
 <li>historical_celebrity：历史知名人物。</li>
 military：
 <li>sensitive_military：敏感军事人物。</li>
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -225,7 +241,7 @@ celebrity：
 <li>historical_celebrity：历史知名人物。</li>
 military：
 <li>sensitive_military：敏感军事人物。</li>
-                     * @param Label 嫌疑片段涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+                     * @param _label 嫌疑片段涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
 violation_photo：
 <li>violation_photo：违规图标。</li>
 politician：
@@ -249,12 +265,14 @@ celebrity：
 <li>historical_celebrity：历史知名人物。</li>
 military：
 <li>sensitive_military：敏感军事人物。</li>
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -263,56 +281,65 @@ military：
  PicUrlExpireTime 时间点后图片将被删除）。
                      * @return Url 嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-                     * @param Url 嫌疑图片 URL （图片不会永久存储，到达
+                     * @param _url 嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      * @return AreaCoordSet 涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param AreaCoordSet 涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @param _areaCoordSet 涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 
                     /**
                      * 获取嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      * @return PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     std::string GetPicUrlExpireTime() const;
 
                     /**
                      * 设置嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @param PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _picUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     void SetPicUrlExpireTime(const std::string& _picUrlExpireTime);
 
                     /**
                      * 判断参数 PicUrlExpireTime 是否已赋值
                      * @return PicUrlExpireTime 是否已赋值
+                     * 
                      */
                     bool PicUrlExpireTimeHasBeenSet() const;
 

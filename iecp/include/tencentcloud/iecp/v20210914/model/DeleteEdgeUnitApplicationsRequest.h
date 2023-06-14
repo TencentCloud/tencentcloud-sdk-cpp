@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取应用ID列表
                      * @return ApplicationIDs 应用ID列表
+                     * 
                      */
                     std::vector<uint64_t> GetApplicationIDs() const;
 
                     /**
                      * 设置应用ID列表
-                     * @param ApplicationIDs 应用ID列表
+                     * @param _applicationIDs 应用ID列表
+                     * 
                      */
                     void SetApplicationIDs(const std::vector<uint64_t>& _applicationIDs);
 
                     /**
                      * 判断参数 ApplicationIDs 是否已赋值
                      * @return ApplicationIDs 是否已赋值
+                     * 
                      */
                     bool ApplicationIDsHasBeenSet() const;
 

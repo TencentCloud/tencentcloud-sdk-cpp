@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessKey 访问密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessKeyDetail GetAccessKey() const;
 
                     /**
                      * 判断参数 AccessKey 是否已赋值
                      * @return AccessKey 是否已赋值
+                     * 
                      */
                     bool AccessKeyHasBeenSet() const;
 

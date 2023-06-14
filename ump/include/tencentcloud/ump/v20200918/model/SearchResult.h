@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取图片base64数据
                      * @return Image 图片base64数据
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置图片base64数据
-                     * @param Image 图片base64数据
+                     * @param _image 图片base64数据
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取身份ID
                      * @return PersonId 身份ID
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置身份ID
-                     * @param PersonId 身份ID
+                     * @param _personId 身份ID
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取相似度
                      * @return Similarity 相似度
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 设置相似度
-                     * @param Similarity 相似度
+                     * @param _similarity 相似度
+                     * 
                      */
                     void SetSimilarity(const double& _similarity);
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 

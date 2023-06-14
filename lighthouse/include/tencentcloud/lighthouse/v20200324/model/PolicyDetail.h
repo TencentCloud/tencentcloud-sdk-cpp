@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户折扣。
                      * @return UserDiscount 用户折扣。
+                     * 
                      */
                     double GetUserDiscount() const;
 
                     /**
                      * 设置用户折扣。
-                     * @param UserDiscount 用户折扣。
+                     * @param _userDiscount 用户折扣。
+                     * 
                      */
                     void SetUserDiscount(const double& _userDiscount);
 
                     /**
                      * 判断参数 UserDiscount 是否已赋值
                      * @return UserDiscount 是否已赋值
+                     * 
                      */
                     bool UserDiscountHasBeenSet() const;
 
                     /**
                      * 获取公共折扣。
                      * @return CommonDiscount 公共折扣。
+                     * 
                      */
                     double GetCommonDiscount() const;
 
                     /**
                      * 设置公共折扣。
-                     * @param CommonDiscount 公共折扣。
+                     * @param _commonDiscount 公共折扣。
+                     * 
                      */
                     void SetCommonDiscount(const double& _commonDiscount);
 
                     /**
                      * 判断参数 CommonDiscount 是否已赋值
                      * @return CommonDiscount 是否已赋值
+                     * 
                      */
                     bool CommonDiscountHasBeenSet() const;
 
                     /**
                      * 获取最终折扣。
                      * @return FinalDiscount 最终折扣。
+                     * 
                      */
                     double GetFinalDiscount() const;
 
                     /**
                      * 设置最终折扣。
-                     * @param FinalDiscount 最终折扣。
+                     * @param _finalDiscount 最终折扣。
+                     * 
                      */
                     void SetFinalDiscount(const double& _finalDiscount);
 
                     /**
                      * 判断参数 FinalDiscount 是否已赋值
                      * @return FinalDiscount 是否已赋值
+                     * 
                      */
                     bool FinalDiscountHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityDiscount 活动折扣。取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetActivityDiscount() const;
 
                     /**
                      * 设置活动折扣。取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityDiscount 活动折扣。取值为null，表示无有效值，即没有折扣。
+                     * @param _activityDiscount 活动折扣。取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityDiscount(const double& _activityDiscount);
 
                     /**
                      * 判断参数 ActivityDiscount 是否已赋值
                      * @return ActivityDiscount 是否已赋值
+                     * 
                      */
                     bool ActivityDiscountHasBeenSet() const;
 
@@ -129,6 +141,7 @@ user：用户折扣; common：官网折扣; activity：活动折扣。 取值为
                      * @return DiscountType 折扣类型。
 user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiscountType() const;
 
@@ -136,15 +149,17 @@ user：用户折扣; common：官网折扣; activity：活动折扣。 取值为
                      * 设置折扣类型。
 user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiscountType 折扣类型。
+                     * @param _discountType 折扣类型。
 user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscountType(const std::string& _discountType);
 
                     /**
                      * 判断参数 DiscountType 是否已赋值
                      * @return DiscountType 是否已赋值
+                     * 
                      */
                     bool DiscountTypeHasBeenSet() const;
 

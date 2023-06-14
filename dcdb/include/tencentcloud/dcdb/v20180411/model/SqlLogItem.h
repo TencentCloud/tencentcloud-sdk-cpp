@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取本条日志在消息队列中的偏移量。
                      * @return Offset 本条日志在消息队列中的偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置本条日志在消息队列中的偏移量。
-                     * @param Offset 本条日志在消息队列中的偏移量。
+                     * @param _offset 本条日志在消息队列中的偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取执行本条sql的用户。
                      * @return User 执行本条sql的用户。
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置执行本条sql的用户。
-                     * @param User 执行本条sql的用户。
+                     * @param _user 执行本条sql的用户。
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取执行本条sql的客户端IP+端口。
                      * @return Client 执行本条sql的客户端IP+端口。
+                     * 
                      */
                     std::string GetClient() const;
 
                     /**
                      * 设置执行本条sql的客户端IP+端口。
-                     * @param Client 执行本条sql的客户端IP+端口。
+                     * @param _client 执行本条sql的客户端IP+端口。
+                     * 
                      */
                     void SetClient(const std::string& _client);
 
                     /**
                      * 判断参数 Client 是否已赋值
                      * @return Client 是否已赋值
+                     * 
                      */
                     bool ClientHasBeenSet() const;
 
                     /**
                      * 获取数据库名称。
                      * @return DbName 数据库名称。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称。
-                     * @param DbName 数据库名称。
+                     * @param _dbName 数据库名称。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取执行的sql语句。
                      * @return Sql 执行的sql语句。
+                     * 
                      */
                     std::string GetSql() const;
 
                     /**
                      * 设置执行的sql语句。
-                     * @param Sql 执行的sql语句。
+                     * @param _sql 执行的sql语句。
+                     * 
                      */
                     void SetSql(const std::string& _sql);
 
                     /**
                      * 判断参数 Sql 是否已赋值
                      * @return Sql 是否已赋值
+                     * 
                      */
                     bool SqlHasBeenSet() const;
 
                     /**
                      * 获取返回的数据行数。
                      * @return SelectRowNum 返回的数据行数。
+                     * 
                      */
                     uint64_t GetSelectRowNum() const;
 
                     /**
                      * 设置返回的数据行数。
-                     * @param SelectRowNum 返回的数据行数。
+                     * @param _selectRowNum 返回的数据行数。
+                     * 
                      */
                     void SetSelectRowNum(const uint64_t& _selectRowNum);
 
                     /**
                      * 判断参数 SelectRowNum 是否已赋值
                      * @return SelectRowNum 是否已赋值
+                     * 
                      */
                     bool SelectRowNumHasBeenSet() const;
 
                     /**
                      * 获取影响行数。
                      * @return AffectRowNum 影响行数。
+                     * 
                      */
                     uint64_t GetAffectRowNum() const;
 
                     /**
                      * 设置影响行数。
-                     * @param AffectRowNum 影响行数。
+                     * @param _affectRowNum 影响行数。
+                     * 
                      */
                     void SetAffectRowNum(const uint64_t& _affectRowNum);
 
                     /**
                      * 判断参数 AffectRowNum 是否已赋值
                      * @return AffectRowNum 是否已赋值
+                     * 
                      */
                     bool AffectRowNumHasBeenSet() const;
 
                     /**
                      * 获取Sql执行时间戳。
                      * @return Timestamp Sql执行时间戳。
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置Sql执行时间戳。
-                     * @param Timestamp Sql执行时间戳。
+                     * @param _timestamp Sql执行时间戳。
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取Sql耗时，单位为毫秒。
                      * @return TimeCostMs Sql耗时，单位为毫秒。
+                     * 
                      */
                     uint64_t GetTimeCostMs() const;
 
                     /**
                      * 设置Sql耗时，单位为毫秒。
-                     * @param TimeCostMs Sql耗时，单位为毫秒。
+                     * @param _timeCostMs Sql耗时，单位为毫秒。
+                     * 
                      */
                     void SetTimeCostMs(const uint64_t& _timeCostMs);
 
                     /**
                      * 判断参数 TimeCostMs 是否已赋值
                      * @return TimeCostMs 是否已赋值
+                     * 
                      */
                     bool TimeCostMsHasBeenSet() const;
 
                     /**
                      * 获取Sql返回码，0为成功。
                      * @return ResultCode Sql返回码，0为成功。
+                     * 
                      */
                     uint64_t GetResultCode() const;
 
                     /**
                      * 设置Sql返回码，0为成功。
-                     * @param ResultCode Sql返回码，0为成功。
+                     * @param _resultCode Sql返回码，0为成功。
+                     * 
                      */
                     void SetResultCode(const uint64_t& _resultCode);
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 

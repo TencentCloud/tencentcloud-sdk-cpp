@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取网络ACL实例。
                      * @return NetworkAcl 网络ACL实例。
+                     * 
                      */
                     NetworkAcl GetNetworkAcl() const;
 
                     /**
                      * 判断参数 NetworkAcl 是否已赋值
                      * @return NetworkAcl 是否已赋值
+                     * 
                      */
                     bool NetworkAclHasBeenSet() const;
 

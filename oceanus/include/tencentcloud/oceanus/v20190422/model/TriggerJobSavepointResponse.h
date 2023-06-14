@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取是否成功
                      * @return SavepointTrigger 是否成功
+                     * 
                      */
                     bool GetSavepointTrigger() const;
 
                     /**
                      * 判断参数 SavepointTrigger 是否已赋值
                      * @return SavepointTrigger 是否已赋值
+                     * 
                      */
                     bool SavepointTriggerHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinalSavepointPath 快照路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinalSavepointPath() const;
 
                     /**
                      * 判断参数 FinalSavepointPath 是否已赋值
                      * @return FinalSavepointPath 是否已赋值
+                     * 
                      */
                     bool FinalSavepointPathHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SavepointId 快照 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSavepointId() const;
 
                     /**
                      * 判断参数 SavepointId 是否已赋值
                      * @return SavepointId 是否已赋值
+                     * 
                      */
                     bool SavepointIdHasBeenSet() const;
 

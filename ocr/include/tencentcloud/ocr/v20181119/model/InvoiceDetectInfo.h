@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取识别出的图片在混贴票据图片中的旋转角度。
                      * @return Angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 设置识别出的图片在混贴票据图片中的旋转角度。
-                     * @param Angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * @param _angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 
                      */
                     void SetAngle(const double& _angle);
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 
@@ -100,6 +103,7 @@ namespace TencentCloud
 12：购车发票
 13：过路过桥费发票
 14：购物小票
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -121,7 +125,7 @@ namespace TencentCloud
 12：购车发票
 13：过路过桥费发票
 14：购物小票
-                     * @param Type 识别出的图片所属的票据类型。
+                     * @param _type 识别出的图片所属的票据类型。
 -1：未知类型
 0：出租车发票
 1：定额发票
@@ -138,30 +142,35 @@ namespace TencentCloud
 12：购车发票
 13：过路过桥费发票
 14：购物小票
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\*Width,Y+0.5\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。
                      * @return Rect 识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\*Width,Y+0.5\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。
+                     * 
                      */
                     Rect GetRect() const;
 
                     /**
                      * 设置识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\*Width,Y+0.5\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。
-                     * @param Rect 识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\*Width,Y+0.5\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。
+                     * @param _rect 识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\*Width,Y+0.5\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。
+                     * 
                      */
                     void SetRect(const Rect& _rect);
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 
@@ -170,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Image 入参 ReturnImage 为 True 时返回 Base64 编码后的图片。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置入参 ReturnImage 为 True 时返回 Base64 编码后的图片。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Image 入参 ReturnImage 为 True 时返回 Base64 编码后的图片。
+                     * @param _image 入参 ReturnImage 为 True 时返回 Base64 编码后的图片。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 

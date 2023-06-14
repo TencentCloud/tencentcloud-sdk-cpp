@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取坐席用户总数
                      * @return TotalCount 坐席用户总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取坐席用户信息列表
                      * @return StaffList 坐席用户信息列表
+                     * 
                      */
                     std::vector<StaffInfo> GetStaffList() const;
 
                     /**
                      * 判断参数 StaffList 是否已赋值
                      * @return StaffList 是否已赋值
+                     * 
                      */
                     bool StaffListHasBeenSet() const;
 

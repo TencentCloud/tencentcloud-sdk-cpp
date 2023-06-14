@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡ID，支持批量修改。
                      * @return NetworkInterfaceIds 弹性网卡ID，支持批量修改。
+                     * 
                      */
                     std::vector<std::string> GetNetworkInterfaceIds() const;
 
                     /**
                      * 设置弹性网卡ID，支持批量修改。
-                     * @param NetworkInterfaceIds 弹性网卡ID，支持批量修改。
+                     * @param _networkInterfaceIds 弹性网卡ID，支持批量修改。
+                     * 
                      */
                     void SetNetworkInterfaceIds(const std::vector<std::string>& _networkInterfaceIds);
 
                     /**
                      * 判断参数 NetworkInterfaceIds 是否已赋值
                      * @return NetworkInterfaceIds 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdsHasBeenSet() const;
 
                     /**
                      * 获取服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
                      * @return QosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
                      * 设置服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param QosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * @param _qosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
 
                     /**
                      * 判断参数 QosLevel 是否已赋值
                      * @return QosLevel 是否已赋值
+                     * 
                      */
                     bool QosLevelHasBeenSet() const;
 
                     /**
                      * 获取DirectSend端口范围最大值。
                      * @return DirectSendMaxPort DirectSend端口范围最大值。
+                     * 
                      */
                     uint64_t GetDirectSendMaxPort() const;
 
                     /**
                      * 设置DirectSend端口范围最大值。
-                     * @param DirectSendMaxPort DirectSend端口范围最大值。
+                     * @param _directSendMaxPort DirectSend端口范围最大值。
+                     * 
                      */
                     void SetDirectSendMaxPort(const uint64_t& _directSendMaxPort);
 
                     /**
                      * 判断参数 DirectSendMaxPort 是否已赋值
                      * @return DirectSendMaxPort 是否已赋值
+                     * 
                      */
                     bool DirectSendMaxPortHasBeenSet() const;
 

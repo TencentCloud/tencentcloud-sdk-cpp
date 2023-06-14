@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 跨国回源优化配置开关，取值有：
+                     * @param _switch 跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,6 +84,7 @@ CNToOV：境内回源境外
 OVToCN：境外回源境内
 CNToOV：境内回源境外
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOptimizationType() const;
 
@@ -89,16 +93,18 @@ CNToOV：境内回源境外
 OVToCN：境外回源境内
 CNToOV：境内回源境外
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OptimizationType 跨国类型
+                     * @param _optimizationType 跨国类型
 OVToCN：境外回源境内
 CNToOV：境内回源境外
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOptimizationType(const std::string& _optimizationType);
 
                     /**
                      * 判断参数 OptimizationType 是否已赋值
                      * @return OptimizationType 是否已赋值
+                     * 
                      */
                     bool OptimizationTypeHasBeenSet() const;
 

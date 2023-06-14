@@ -51,56 +51,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 1:指定节点部署 2:单元部署
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置1:指定节点部署 2:单元部署
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 1:指定节点部署 2:单元部署
+                     * @param _type 1:指定节点部署 2:单元部署
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return ResourceID 资源ID
+                     * 
                      */
                     uint64_t GetResourceID() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceID 资源ID
+                     * @param _resourceID 资源ID
+                     * 
                      */
                     void SetResourceID(const uint64_t& _resourceID);
 
                     /**
                      * 判断参数 ResourceID 是否已赋值
                      * @return ResourceID 是否已赋值
+                     * 
                      */
                     bool ResourceIDHasBeenSet() const;
 
                     /**
                      * 获取资源名
                      * @return ResourceName 资源名
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名
-                     * @param ResourceName 资源名
+                     * @param _resourceName 资源名
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 

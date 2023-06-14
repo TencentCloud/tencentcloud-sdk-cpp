@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取配置内容
                      * @return Config 配置内容
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceMonitors ServiceMonitors列表以及对应targets信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetServiceMonitors() const;
 
                     /**
                      * 判断参数 ServiceMonitors 是否已赋值
                      * @return ServiceMonitors 是否已赋值
+                     * 
                      */
                     bool ServiceMonitorsHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodMonitors PodMonitors列表以及对应targets信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetPodMonitors() const;
 
                     /**
                      * 判断参数 PodMonitors 是否已赋值
                      * @return PodMonitors 是否已赋值
+                     * 
                      */
                     bool PodMonitorsHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawJobs RawJobs列表以及对应targets信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRawJobs() const;
 
                     /**
                      * 判断参数 RawJobs 是否已赋值
                      * @return RawJobs 是否已赋值
+                     * 
                      */
                     bool RawJobsHasBeenSet() const;
 
@@ -103,12 +111,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Probes Probes列表以及对应targets信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetProbes() const;
 
                     /**
                      * 判断参数 Probes 是否已赋值
                      * @return Probes 是否已赋值
+                     * 
                      */
                     bool ProbesHasBeenSet() const;
 

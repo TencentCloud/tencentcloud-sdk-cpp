@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取样本Md5值
                      * @return MD5 样本Md5值
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置样本Md5值
-                     * @param MD5 样本Md5值
+                     * @param _mD5 样本Md5值
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 

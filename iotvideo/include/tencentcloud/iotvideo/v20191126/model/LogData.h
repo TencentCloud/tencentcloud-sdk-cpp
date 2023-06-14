@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取发生时间 UNIX时间戳，单位秒
                      * @return Occurtime 发生时间 UNIX时间戳，单位秒
+                     * 
                      */
                     uint64_t GetOccurtime() const;
 
                     /**
                      * 设置发生时间 UNIX时间戳，单位秒
-                     * @param Occurtime 发生时间 UNIX时间戳，单位秒
+                     * @param _occurtime 发生时间 UNIX时间戳，单位秒
+                     * 
                      */
                     void SetOccurtime(const uint64_t& _occurtime);
 
                     /**
                      * 判断参数 Occurtime 是否已赋值
                      * @return Occurtime 是否已赋值
+                     * 
                      */
                     bool OccurtimeHasBeenSet() const;
 
                     /**
                      * 获取日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件
                      * @return LogType 日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件
+                     * 
                      */
                     uint64_t GetLogType() const;
 
                     /**
                      * 设置日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件
-                     * @param LogType 日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件
+                     * @param _logType 日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件
+                     * 
                      */
                     void SetLogType(const uint64_t& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataObject 物模型对象索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataObject() const;
 
                     /**
                      * 设置物模型对象索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataObject 物模型对象索引
+                     * @param _dataObject 物模型对象索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataObject(const std::string& _dataObject);
 
                     /**
                      * 判断参数 DataObject 是否已赋值
                      * @return DataObject 是否已赋值
+                     * 
                      */
                     bool DataObjectHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 物模型旧值  json串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置物模型旧值  json串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldValue 物模型旧值  json串
+                     * @param _oldValue 物模型旧值  json串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewValue 物模型新值  json串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置物模型新值  json串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewValue 物模型新值  json串
+                     * @param _newValue 物模型新值  json串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 

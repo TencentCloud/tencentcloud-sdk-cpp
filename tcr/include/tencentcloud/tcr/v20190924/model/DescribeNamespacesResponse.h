@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取命名空间列表信息
                      * @return NamespaceList 命名空间列表信息
+                     * 
                      */
                     std::vector<TcrNamespaceInfo> GetNamespaceList() const;
 
                     /**
                      * 判断参数 NamespaceList 是否已赋值
                      * @return NamespaceList 是否已赋值
+                     * 
                      */
                     bool NamespaceListHasBeenSet() const;
 
                     /**
                      * 获取总个数
                      * @return TotalCount 总个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

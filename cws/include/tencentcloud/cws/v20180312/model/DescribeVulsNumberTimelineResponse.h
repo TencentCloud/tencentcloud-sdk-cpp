@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取统计数据记录数量。
                      * @return TotalCount 统计数据记录数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取用户漏洞数随时间变化统计数据。
                      * @return VulsTimeline 用户漏洞数随时间变化统计数据。
+                     * 
                      */
                     std::vector<VulsTimeline> GetVulsTimeline() const;
 
                     /**
                      * 判断参数 VulsTimeline 是否已赋值
                      * @return VulsTimeline 是否已赋值
+                     * 
                      */
                     bool VulsTimelineHasBeenSet() const;
 

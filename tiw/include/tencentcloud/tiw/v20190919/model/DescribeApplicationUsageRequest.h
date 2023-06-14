@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用量开始时间（包括该时间点）
                      * @return BeginTime 用量开始时间（包括该时间点）
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置用量开始时间（包括该时间点）
-                     * @param BeginTime 用量开始时间（包括该时间点）
+                     * @param _beginTime 用量开始时间（包括该时间点）
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取用量结束时间（不包括该时间点）
                      * @return EndTime 用量结束时间（不包括该时间点）
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置用量结束时间（不包括该时间点）
-                     * @param EndTime 用量结束时间（不包括该时间点）
+                     * @param _endTime 用量结束时间（不包括该时间点）
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取白板子产品名
                      * @return SubProduct 白板子产品名
+                     * 
                      */
                     std::string GetSubProduct() const;
 
                     /**
                      * 设置白板子产品名
-                     * @param SubProduct 白板子产品名
+                     * @param _subProduct 白板子产品名
+                     * 
                      */
                     void SetSubProduct(const std::string& _subProduct);
 
                     /**
                      * 判断参数 SubProduct 是否已赋值
                      * @return SubProduct 是否已赋值
+                     * 
                      */
                     bool SubProductHasBeenSet() const;
 
@@ -105,6 +114,7 @@ namespace TencentCloud
 - MONTHLY：月
 - DAILY：天
 - MINUTELY：分钟
+                     * 
                      */
                     std::string GetTimeLevel() const;
 
@@ -113,34 +123,39 @@ namespace TencentCloud
 - MONTHLY：月
 - DAILY：天
 - MINUTELY：分钟
-                     * @param TimeLevel 时间跨度单位
+                     * @param _timeLevel 时间跨度单位
 - MONTHLY：月
 - DAILY：天
 - MINUTELY：分钟
+                     * 
                      */
                     void SetTimeLevel(const std::string& _timeLevel);
 
                     /**
                      * 判断参数 TimeLevel 是否已赋值
                      * @return TimeLevel 是否已赋值
+                     * 
                      */
                     bool TimeLevelHasBeenSet() const;
 
                     /**
                      * 获取白板应用的SdkAppId
                      * @return SdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置白板应用的SdkAppId
-                     * @param SdkAppId 白板应用的SdkAppId
+                     * @param _sdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 false: 返回原始用量数据
                      * @return IsWeighted true: 返回加权求和后的用量数据
 false: 返回原始用量数据
+                     * 
                      */
                     bool GetIsWeighted() const;
 
                     /**
                      * 设置true: 返回加权求和后的用量数据
 false: 返回原始用量数据
-                     * @param IsWeighted true: 返回加权求和后的用量数据
+                     * @param _isWeighted true: 返回加权求和后的用量数据
 false: 返回原始用量数据
+                     * 
                      */
                     void SetIsWeighted(const bool& _isWeighted);
 
                     /**
                      * 判断参数 IsWeighted 是否已赋值
                      * @return IsWeighted 是否已赋值
+                     * 
                      */
                     bool IsWeightedHasBeenSet() const;
 

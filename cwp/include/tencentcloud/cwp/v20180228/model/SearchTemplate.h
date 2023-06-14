@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取检索名称
                      * @return Name 检索名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检索名称
-                     * @param Name 检索名称
+                     * @param _name 检索名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取检索索引类型
                      * @return LogType 检索索引类型
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置检索索引类型
-                     * @param LogType 检索索引类型
+                     * @param _logType 检索索引类型
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取检索语句
                      * @return Condition 检索语句
+                     * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置检索语句
-                     * @param Condition 检索语句
+                     * @param _condition 检索语句
+                     * 
                      */
                     void SetCondition(const std::string& _condition);
 
                     /**
                      * 判断参数 Condition 是否已赋值
                      * @return Condition 是否已赋值
+                     * 
                      */
                     bool ConditionHasBeenSet() const;
 
                     /**
                      * 获取时间范围
                      * @return TimeRange 时间范围
+                     * 
                      */
                     std::string GetTimeRange() const;
 
                     /**
                      * 设置时间范围
-                     * @param TimeRange 时间范围
+                     * @param _timeRange 时间范围
+                     * 
                      */
                     void SetTimeRange(const std::string& _timeRange);
 
                     /**
                      * 判断参数 TimeRange 是否已赋值
                      * @return TimeRange 是否已赋值
+                     * 
                      */
                     bool TimeRangeHasBeenSet() const;
 
                     /**
                      * 获取转换的检索语句内容
                      * @return Query 转换的检索语句内容
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置转换的检索语句内容
-                     * @param Query 转换的检索语句内容
+                     * @param _query 转换的检索语句内容
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取检索方式。输入框检索：standard,过滤，检索：simple
                      * @return Flag 检索方式。输入框检索：standard,过滤，检索：simple
+                     * 
                      */
                     std::string GetFlag() const;
 
                     /**
                      * 设置检索方式。输入框检索：standard,过滤，检索：simple
-                     * @param Flag 检索方式。输入框检索：standard,过滤，检索：simple
+                     * @param _flag 检索方式。输入框检索：standard,过滤，检索：simple
+                     * 
                      */
                     void SetFlag(const std::string& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取展示数据
                      * @return DisplayData 展示数据
+                     * 
                      */
                     std::string GetDisplayData() const;
 
                     /**
                      * 设置展示数据
-                     * @param DisplayData 展示数据
+                     * @param _displayData 展示数据
+                     * 
                      */
                     void SetDisplayData(const std::string& _displayData);
 
                     /**
                      * 判断参数 DisplayData 是否已赋值
                      * @return DisplayData 是否已赋值
+                     * 
                      */
                     bool DisplayDataHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return Id 规则ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则ID
-                     * @param Id 规则ID
+                     * @param _id 规则ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

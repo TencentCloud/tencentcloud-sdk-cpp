@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取事件ID。
                      * @return EventId 事件ID。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件ID。
-                     * @param EventId 事件ID。
+                     * @param _eventId 事件ID。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取攻击类型(对应交互事件名称)。
                      * @return AttackType 攻击类型(对应交互事件名称)。
+                     * 
                      */
                     std::string GetAttackType() const;
 
                     /**
                      * 设置攻击类型(对应交互事件名称)。
-                     * @param AttackType 攻击类型(对应交互事件名称)。
+                     * @param _attackType 攻击类型(对应交互事件名称)。
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
                     /**
                      * 获取攻击状态。
                      * @return AttackStatus 攻击状态。
+                     * 
                      */
                     int64_t GetAttackStatus() const;
 
                     /**
                      * 设置攻击状态。
-                     * @param AttackStatus 攻击状态。
+                     * @param _attackStatus 攻击状态。
+                     * 
                      */
                     void SetAttackStatus(const int64_t& _attackStatus);
 
                     /**
                      * 判断参数 AttackStatus 是否已赋值
                      * @return AttackStatus 是否已赋值
+                     * 
                      */
                     bool AttackStatusHasBeenSet() const;
 
                     /**
                      * 获取攻击最大带宽。
                      * @return AttackMaxBandWidth 攻击最大带宽。
+                     * 
                      */
                     int64_t GetAttackMaxBandWidth() const;
 
                     /**
                      * 设置攻击最大带宽。
-                     * @param AttackMaxBandWidth 攻击最大带宽。
+                     * @param _attackMaxBandWidth 攻击最大带宽。
+                     * 
                      */
                     void SetAttackMaxBandWidth(const int64_t& _attackMaxBandWidth);
 
                     /**
                      * 判断参数 AttackMaxBandWidth 是否已赋值
                      * @return AttackMaxBandWidth 是否已赋值
+                     * 
                      */
                     bool AttackMaxBandWidthHasBeenSet() const;
 
                     /**
                      * 获取攻击包速率峰值。
                      * @return AttackPacketMaxRate 攻击包速率峰值。
+                     * 
                      */
                     int64_t GetAttackPacketMaxRate() const;
 
                     /**
                      * 设置攻击包速率峰值。
-                     * @param AttackPacketMaxRate 攻击包速率峰值。
+                     * @param _attackPacketMaxRate 攻击包速率峰值。
+                     * 
                      */
                     void SetAttackPacketMaxRate(const int64_t& _attackPacketMaxRate);
 
                     /**
                      * 判断参数 AttackPacketMaxRate 是否已赋值
                      * @return AttackPacketMaxRate 是否已赋值
+                     * 
                      */
                     bool AttackPacketMaxRateHasBeenSet() const;
 
                     /**
                      * 获取攻击开始时间，单位为s。
                      * @return AttackStartTime 攻击开始时间，单位为s。
+                     * 
                      */
                     int64_t GetAttackStartTime() const;
 
                     /**
                      * 设置攻击开始时间，单位为s。
-                     * @param AttackStartTime 攻击开始时间，单位为s。
+                     * @param _attackStartTime 攻击开始时间，单位为s。
+                     * 
                      */
                     void SetAttackStartTime(const int64_t& _attackStartTime);
 
                     /**
                      * 判断参数 AttackStartTime 是否已赋值
                      * @return AttackStartTime 是否已赋值
+                     * 
                      */
                     bool AttackStartTimeHasBeenSet() const;
 
                     /**
                      * 获取攻击结束时间，单位为s。
                      * @return AttackEndTime 攻击结束时间，单位为s。
+                     * 
                      */
                     int64_t GetAttackEndTime() const;
 
                     /**
                      * 设置攻击结束时间，单位为s。
-                     * @param AttackEndTime 攻击结束时间，单位为s。
+                     * @param _attackEndTime 攻击结束时间，单位为s。
+                     * 
                      */
                     void SetAttackEndTime(const int64_t& _attackEndTime);
 
                     /**
                      * 判断参数 AttackEndTime 是否已赋值
                      * @return AttackEndTime 是否已赋值
+                     * 
                      */
                     bool AttackEndTimeHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId DDoS策略组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
                      * 设置DDoS策略组ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyId DDoS策略组ID。
+                     * @param _policyId DDoS策略组ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
@@ -200,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 站点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -226,6 +253,7 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -234,16 +262,18 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Area 攻击事件所属地区，取值有：
+                     * @param _area 攻击事件所属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -252,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DDoSBlockData 封禁解封信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DDoSBlockData> GetDDoSBlockData() const;
 
                     /**
                      * 设置封禁解封信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DDoSBlockData 封禁解封信息。
+                     * @param _dDoSBlockData 封禁解封信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDDoSBlockData(const std::vector<DDoSBlockData>& _dDoSBlockData);
 
                     /**
                      * 判断参数 DDoSBlockData 是否已赋值
                      * @return DDoSBlockData 是否已赋值
+                     * 
                      */
                     bool DDoSBlockDataHasBeenSet() const;
 

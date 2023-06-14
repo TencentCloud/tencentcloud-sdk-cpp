@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取数组
                      * @return WhiteList 数组
+                     * 
                      */
                     std::vector<std::string> GetWhiteList() const;
 
                     /**
                      * 判断参数 WhiteList 是否已赋值
                      * @return WhiteList 是否已赋值
+                     * 
                      */
                     bool WhiteListHasBeenSet() const;
 

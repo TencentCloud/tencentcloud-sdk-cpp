@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Switch WafConfig开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -62,15 +63,17 @@ namespace TencentCloud
                      * 设置WafConfig开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
-                     * @param Switch WafConfig开关，取值有：
+                     * @param _switch WafConfig开关，取值有：
 <li> on：开启；</li>
 <li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
+                     * 
                      */
                     std::string GetLevel() const;
 
@@ -97,18 +101,20 @@ namespace TencentCloud
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
-                     * @param Level 上一次设置的防护级别，取值有：
+                     * @param _level 上一次设置的防护级别，取值有：
 <li> loose：宽松；</li>
 <li> normal：正常；</li>
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -119,6 +125,7 @@ namespace TencentCloud
                      * @return Mode 全局WAF模式，取值有：
 <li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
 <li> observe：观察（无论详细规则配置什么，都为观察）。</li>
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -126,51 +133,59 @@ namespace TencentCloud
                      * 设置全局WAF模式，取值有：
 <li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
 <li> observe：观察（无论详细规则配置什么，都为观察）。</li>
-                     * @param Mode 全局WAF模式，取值有：
+                     * @param _mode 全局WAF模式，取值有：
 <li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
 <li> observe：观察（无论详细规则配置什么，都为观察）。</li>
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取托管规则详细配置。如果为null，默认使用历史配置。
                      * @return WafRule 托管规则详细配置。如果为null，默认使用历史配置。
+                     * 
                      */
                     WafRule GetWafRule() const;
 
                     /**
                      * 设置托管规则详细配置。如果为null，默认使用历史配置。
-                     * @param WafRule 托管规则详细配置。如果为null，默认使用历史配置。
+                     * @param _wafRule 托管规则详细配置。如果为null，默认使用历史配置。
+                     * 
                      */
                     void SetWafRule(const WafRule& _wafRule);
 
                     /**
                      * 判断参数 WafRule 是否已赋值
                      * @return WafRule 是否已赋值
+                     * 
                      */
                     bool WafRuleHasBeenSet() const;
 
                     /**
                      * 获取AI规则引擎防护配置。如果为null，默认使用历史配置。
                      * @return AiRule AI规则引擎防护配置。如果为null，默认使用历史配置。
+                     * 
                      */
                     AiRule GetAiRule() const;
 
                     /**
                      * 设置AI规则引擎防护配置。如果为null，默认使用历史配置。
-                     * @param AiRule AI规则引擎防护配置。如果为null，默认使用历史配置。
+                     * @param _aiRule AI规则引擎防护配置。如果为null，默认使用历史配置。
+                     * 
                      */
                     void SetAiRule(const AiRule& _aiRule);
 
                     /**
                      * 判断参数 AiRule 是否已赋值
                      * @return AiRule 是否已赋值
+                     * 
                      */
                     bool AiRuleHasBeenSet() const;
 

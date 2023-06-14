@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取产品ID/设备名
                      * @return DeviceId 产品ID/设备名
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置产品ID/设备名
-                     * @param DeviceId 产品ID/设备名
+                     * @param _deviceId 产品ID/设备名
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备别名
                      * @return AliasName 设备别名
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置设备别名
-                     * @param AliasName 设备别名
+                     * @param _aliasName 设备别名
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
                     /**
                      * 获取icon地址
                      * @return IconUrl icon地址
+                     * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
                      * 设置icon地址
-                     * @param IconUrl icon地址
+                     * @param _iconUrl icon地址
+                     * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
 
                     /**
                      * 判断参数 IconUrl 是否已赋值
                      * @return IconUrl 是否已赋值
+                     * 
                      */
                     bool IconUrlHasBeenSet() const;
 
                     /**
                      * 获取家庭ID
                      * @return FamilyId 家庭ID
+                     * 
                      */
                     std::string GetFamilyId() const;
 
                     /**
                      * 设置家庭ID
-                     * @param FamilyId 家庭ID
+                     * @param _familyId 家庭ID
+                     * 
                      */
                     void SetFamilyId(const std::string& _familyId);
 
                     /**
                      * 判断参数 FamilyId 是否已赋值
                      * @return FamilyId 是否已赋值
+                     * 
                      */
                     bool FamilyIdHasBeenSet() const;
 
                     /**
                      * 获取房间ID
                      * @return RoomId 房间ID
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间ID
-                     * @param RoomId 房间ID
+                     * @param _roomId 房间ID
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取设备类型
                      * @return DeviceType 设备类型
+                     * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
                      * 设置设备类型
-                     * @param DeviceType 设备类型
+                     * @param _deviceType 设备类型
+                     * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

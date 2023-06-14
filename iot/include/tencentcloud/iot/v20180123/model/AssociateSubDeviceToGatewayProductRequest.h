@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取子设备产品Id
                      * @return SubDeviceProductId 子设备产品Id
+                     * 
                      */
                     std::string GetSubDeviceProductId() const;
 
                     /**
                      * 设置子设备产品Id
-                     * @param SubDeviceProductId 子设备产品Id
+                     * @param _subDeviceProductId 子设备产品Id
+                     * 
                      */
                     void SetSubDeviceProductId(const std::string& _subDeviceProductId);
 
                     /**
                      * 判断参数 SubDeviceProductId 是否已赋值
                      * @return SubDeviceProductId 是否已赋值
+                     * 
                      */
                     bool SubDeviceProductIdHasBeenSet() const;
 
                     /**
                      * 获取网关产品Id
                      * @return GatewayProductId 网关产品Id
+                     * 
                      */
                     std::string GetGatewayProductId() const;
 
                     /**
                      * 设置网关产品Id
-                     * @param GatewayProductId 网关产品Id
+                     * @param _gatewayProductId 网关产品Id
+                     * 
                      */
                     void SetGatewayProductId(const std::string& _gatewayProductId);
 
                     /**
                      * 判断参数 GatewayProductId 是否已赋值
                      * @return GatewayProductId 是否已赋值
+                     * 
                      */
                     bool GatewayProductIdHasBeenSet() const;
 

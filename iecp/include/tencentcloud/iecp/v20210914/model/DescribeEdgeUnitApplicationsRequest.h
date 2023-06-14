@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitId 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitId 单元ID
+                     * @param _edgeUnitId 单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移
                      * @return Offset 翻页偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移
-                     * @param Offset 翻页偏移
+                     * @param _offset 翻页偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取翻页大小
                      * @return Limit 翻页大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置翻页大小
-                     * @param Limit 翻页大小
+                     * @param _limit 翻页大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取名称模糊匹配
                      * @return NamePattern 名称模糊匹配
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置名称模糊匹配
-                     * @param NamePattern 名称模糊匹配
+                     * @param _namePattern 名称模糊匹配
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取字段排序 (Sort.Filed为:StartTime）
                      * @return Sort 字段排序 (Sort.Filed为:StartTime）
+                     * 
                      */
                     std::vector<FieldSort> GetSort() const;
 
                     /**
                      * 设置字段排序 (Sort.Filed为:StartTime）
-                     * @param Sort 字段排序 (Sort.Filed为:StartTime）
+                     * @param _sort 字段排序 (Sort.Filed为:StartTime）
+                     * 
                      */
                     void SetSort(const std::vector<FieldSort>& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取命名空间过滤
                      * @return Namespace 命名空间过滤
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间过滤
-                     * @param Namespace 命名空间过滤
+                     * @param _namespace 命名空间过滤
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

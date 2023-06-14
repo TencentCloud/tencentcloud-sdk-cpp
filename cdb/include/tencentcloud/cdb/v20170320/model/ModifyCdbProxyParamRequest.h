@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取代理组ID
                      * @return ProxyGroupId 代理组ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置代理组ID
-                     * @param ProxyGroupId 代理组ID
+                     * @param _proxyGroupId 代理组ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取连接池阈值
                      * @return ConnectionPoolLimit 连接池阈值
+                     * 
                      */
                     uint64_t GetConnectionPoolLimit() const;
 
                     /**
                      * 设置连接池阈值
-                     * @param ConnectionPoolLimit 连接池阈值
+                     * @param _connectionPoolLimit 连接池阈值
+                     * 
                      */
                     void SetConnectionPoolLimit(const uint64_t& _connectionPoolLimit);
 
                     /**
                      * 判断参数 ConnectionPoolLimit 是否已赋值
                      * @return ConnectionPoolLimit 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolLimitHasBeenSet() const;
 

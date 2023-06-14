@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取时间格式
                      * @return Format 时间格式
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置时间格式
-                     * @param Format 时间格式
+                     * @param _format 时间格式
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 输入类型，string，unix时间戳，默认string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置输入类型，string，unix时间戳，默认string
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetType 输入类型，string，unix时间戳，默认string
+                     * @param _targetType 输入类型，string，unix时间戳，默认string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetType(const std::string& _targetType);
 
                     /**
                      * 判断参数 TargetType 是否已赋值
                      * @return TargetType 是否已赋值
+                     * 
                      */
                     bool TargetTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeZone 时区，默认GMT+8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
                      * 设置时区，默认GMT+8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeZone 时区，默认GMT+8
+                     * @param _timeZone 时区，默认GMT+8
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
 
                     /**
                      * 判断参数 TimeZone 是否已赋值
                      * @return TimeZone 是否已赋值
+                     * 
                      */
                     bool TimeZoneHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取模型id
                      * @return TrainingModelId 模型id
+                     * 
                      */
                     std::string GetTrainingModelId() const;
 
                     /**
                      * 设置模型id
-                     * @param TrainingModelId 模型id
+                     * @param _trainingModelId 模型id
+                     * 
                      */
                     void SetTrainingModelId(const std::string& _trainingModelId);
 
                     /**
                      * 判断参数 TrainingModelId 是否已赋值
                      * @return TrainingModelId 是否已赋值
+                     * 
                      */
                     bool TrainingModelIdHasBeenSet() const;
 
                     /**
                      * 获取模型名称
                      * @return TrainingModelName 模型名称
+                     * 
                      */
                     std::string GetTrainingModelName() const;
 
                     /**
                      * 设置模型名称
-                     * @param TrainingModelName 模型名称
+                     * @param _trainingModelName 模型名称
+                     * 
                      */
                     void SetTrainingModelName(const std::string& _trainingModelName);
 
                     /**
                      * 判断参数 TrainingModelName 是否已赋值
                      * @return TrainingModelName 是否已赋值
+                     * 
                      */
                     bool TrainingModelNameHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签
+                     * @param _tags 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 模型创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置模型创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 模型创建时间
+                     * @param _createTime 模型创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingModelVersions 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingModelVersionDTO> GetTrainingModelVersions() const;
 
                     /**
                      * 设置模型版本列表。默认不返回，仅在指定请求参数开启时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingModelVersions 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+                     * @param _trainingModelVersions 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingModelVersions(const std::vector<TrainingModelVersionDTO>& _trainingModelVersions);
 
                     /**
                      * 判断参数 TrainingModelVersions 是否已赋值
                      * @return TrainingModelVersions 是否已赋值
+                     * 
                      */
                     bool TrainingModelVersionsHasBeenSet() const;
 

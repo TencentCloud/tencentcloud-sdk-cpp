@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取总配置数
                      * @return Total 总配置数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 资源包明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Package> GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

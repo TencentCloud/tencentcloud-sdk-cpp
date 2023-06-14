@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationNumNeedToStart 需要启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetApplicationNumNeedToStart() const;
 
                     /**
                      * 设置需要启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationNumNeedToStart 需要启动的应用数量
+                     * @param _applicationNumNeedToStart 需要启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationNumNeedToStart(const int64_t& _applicationNumNeedToStart);
 
                     /**
                      * 判断参数 ApplicationNumNeedToStart 是否已赋值
                      * @return ApplicationNumNeedToStart 是否已赋值
+                     * 
                      */
                     bool ApplicationNumNeedToStartHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartedApplicationNum 已经启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartedApplicationNum() const;
 
                     /**
                      * 设置已经启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartedApplicationNum 已经启动的应用数量
+                     * @param _startedApplicationNum 已经启动的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartedApplicationNum(const int64_t& _startedApplicationNum);
 
                     /**
                      * 判断参数 StartedApplicationNum 是否已赋值
                      * @return StartedApplicationNum 是否已赋值
+                     * 
                      */
                     bool StartedApplicationNumHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartFailedApplicationNum 启动失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartFailedApplicationNum() const;
 
                     /**
                      * 设置启动失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartFailedApplicationNum 启动失败的应用数量
+                     * @param _startFailedApplicationNum 启动失败的应用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartFailedApplicationNum(const int64_t& _startFailedApplicationNum);
 
                     /**
                      * 判断参数 StartFailedApplicationNum 是否已赋值
                      * @return StartFailedApplicationNum 是否已赋值
+                     * 
                      */
                     bool StartFailedApplicationNumHasBeenSet() const;
 

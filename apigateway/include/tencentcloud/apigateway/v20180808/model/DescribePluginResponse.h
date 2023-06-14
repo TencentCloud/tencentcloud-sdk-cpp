@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取插件详情。
                      * @return Result 插件详情。
+                     * 
                      */
                     Plugin GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

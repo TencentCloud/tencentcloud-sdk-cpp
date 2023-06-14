@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取视频审核任务ID
                      * @return VodTaskId 视频审核任务ID
+                     * 
                      */
                     std::string GetVodTaskId() const;
 
                     /**
                      * 判断参数 VodTaskId 是否已赋值
                      * @return VodTaskId 是否已赋值
+                     * 
                      */
                     bool VodTaskIdHasBeenSet() const;
 

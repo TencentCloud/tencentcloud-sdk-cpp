@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取红冲结果
                      * @return Result 红冲结果
+                     * 
                      */
                     CreateRedInvoiceResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

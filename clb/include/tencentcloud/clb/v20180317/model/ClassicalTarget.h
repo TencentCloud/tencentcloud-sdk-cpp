@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取后端服务的类型，可取值：CVM、ENI（即将支持）
                      * @return Type 后端服务的类型，可取值：CVM、ENI（即将支持）
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置后端服务的类型，可取值：CVM、ENI（即将支持）
-                     * @param Type 后端服务的类型，可取值：CVM、ENI（即将支持）
+                     * @param _type 后端服务的类型，可取值：CVM、ENI（即将支持）
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
                      * @return InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-                     * @param InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * @param _instanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      * @return Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置后端服务的转发权重，取值范围：[0, 100]，默认为 10。
-                     * @param Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * @param _weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddresses 后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIpAddresses 后端服务的外网 IP
+                     * @param _publicIpAddresses 后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
                     /**
                      * 判断参数 PublicIpAddresses 是否已赋值
                      * @return PublicIpAddresses 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddresses 后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIpAddresses 后端服务的内网 IP
+                     * @param _privateIpAddresses 后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 后端服务的实例名称
+                     * @param _instanceName 后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -173,6 +191,7 @@ namespace TencentCloud
                      * @return RunFlag 后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunFlag() const;
 
@@ -180,15 +199,17 @@ namespace TencentCloud
                      * 设置后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunFlag 后端服务的状态
+                     * @param _runFlag 后端服务的状态
 1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunFlag(const int64_t& _runFlag);
 
                     /**
                      * 判断参数 RunFlag 是否已赋值
                      * @return RunFlag 是否已赋值
+                     * 
                      */
                     bool RunFlagHasBeenSet() const;
 

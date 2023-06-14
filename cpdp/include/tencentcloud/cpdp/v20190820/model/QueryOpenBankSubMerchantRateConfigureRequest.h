@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取渠道进件序列号。
                      * @return ChannelRegistrationNo 渠道进件序列号。
+                     * 
                      */
                     std::string GetChannelRegistrationNo() const;
 
                     /**
                      * 设置渠道进件序列号。
-                     * @param ChannelRegistrationNo 渠道进件序列号。
+                     * @param _channelRegistrationNo 渠道进件序列号。
+                     * 
                      */
                     void SetChannelRegistrationNo(const std::string& _channelRegistrationNo);
 
                     /**
                      * 判断参数 ChannelRegistrationNo 是否已赋值
                      * @return ChannelRegistrationNo 是否已赋值
+                     * 
                      */
                     bool ChannelRegistrationNoHasBeenSet() const;
 
                     /**
                      * 获取渠道商户ID。
                      * @return ChannelMerchantId 渠道商户ID。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户ID。
-                     * @param ChannelMerchantId 渠道商户ID。
+                     * @param _channelMerchantId 渠道商户ID。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户ID。
                      * @return ChannelSubMerchantId 渠道子商户ID。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID。
-                     * @param ChannelSubMerchantId 渠道子商户ID。
+                     * @param _channelSubMerchantId 渠道子商户ID。
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -107,6 +116,7 @@ TENPAY: 商企付
 WECHAT: 微信支付
 ALIPAY: 支付宝
 HELIPAY:合利宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -116,53 +126,61 @@ TENPAY: 商企付
 WECHAT: 微信支付
 ALIPAY: 支付宝
 HELIPAY:合利宝
-                     * @param ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
+                     * @param _channelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 TENPAY: 商企付
 WECHAT: 微信支付
 ALIPAY: 支付宝
 HELIPAY:合利宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取渠道产品费率序列号。与外部产品费率序列号二者选填其一。
                      * @return ChannelProductFeeNo 渠道产品费率序列号。与外部产品费率序列号二者选填其一。
+                     * 
                      */
                     std::string GetChannelProductFeeNo() const;
 
                     /**
                      * 设置渠道产品费率序列号。与外部产品费率序列号二者选填其一。
-                     * @param ChannelProductFeeNo 渠道产品费率序列号。与外部产品费率序列号二者选填其一。
+                     * @param _channelProductFeeNo 渠道产品费率序列号。与外部产品费率序列号二者选填其一。
+                     * 
                      */
                     void SetChannelProductFeeNo(const std::string& _channelProductFeeNo);
 
                     /**
                      * 判断参数 ChannelProductFeeNo 是否已赋值
                      * @return ChannelProductFeeNo 是否已赋值
+                     * 
                      */
                     bool ChannelProductFeeNoHasBeenSet() const;
 
                     /**
                      * 获取外部产品费率序列号。与渠道产品费率序列号二者选填其一。
                      * @return OutProductFeeNo 外部产品费率序列号。与渠道产品费率序列号二者选填其一。
+                     * 
                      */
                     std::string GetOutProductFeeNo() const;
 
                     /**
                      * 设置外部产品费率序列号。与渠道产品费率序列号二者选填其一。
-                     * @param OutProductFeeNo 外部产品费率序列号。与渠道产品费率序列号二者选填其一。
+                     * @param _outProductFeeNo 外部产品费率序列号。与渠道产品费率序列号二者选填其一。
+                     * 
                      */
                     void SetOutProductFeeNo(const std::string& _outProductFeeNo);
 
                     /**
                      * 判断参数 OutProductFeeNo 是否已赋值
                      * @return OutProductFeeNo 是否已赋值
+                     * 
                      */
                     bool OutProductFeeNoHasBeenSet() const;
 
@@ -175,6 +193,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -183,16 +202,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

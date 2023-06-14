@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取实例的维度组合
                      * @return Dimensions 实例的维度组合
+                     * 
                      */
                     std::vector<Dimension> GetDimensions() const;
 
                     /**
                      * 设置实例的维度组合
-                     * @param Dimensions 实例的维度组合
+                     * @param _dimensions 实例的维度组合
+                     * 
                      */
                     void SetDimensions(const std::vector<Dimension>& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 

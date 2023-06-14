@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取验证命名空间是否存在返回信息
                      * @return Data 验证命名空间是否存在返回信息
+                     * 
                      */
                     NamespaceIsExistsResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取通道组ID
                      * @return GroupId 通道组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置通道组ID
-                     * @param GroupId 通道组ID
+                     * @param _groupId 通道组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取起始时间
                      * @return StartTime 起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间
-                     * @param StartTime 起始时间
+                     * @param _startTime 起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets
                      * @return MetricNames 统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets
+                     * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets
-                     * @param MetricNames 统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets
+                     * @param _metricNames 统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets
+                     * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
                     /**
                      * 判断参数 MetricNames 是否已赋值
                      * @return MetricNames 是否已赋值
+                     * 
                      */
                     bool MetricNamesHasBeenSet() const;
 
@@ -123,6 +135,7 @@ namespace TencentCloud
 当时间范围不超过1天，支持最小粒度60秒；
 当时间范围不超过7天，支持最小粒度3600秒；
 当时间范围不超过30天，支持最小粒度86400秒。
+                     * 
                      */
                     uint64_t GetGranularity() const;
 
@@ -131,16 +144,18 @@ namespace TencentCloud
 当时间范围不超过1天，支持最小粒度60秒；
 当时间范围不超过7天，支持最小粒度3600秒；
 当时间范围不超过30天，支持最小粒度86400秒。
-                     * @param Granularity 监控粒度，目前支持60，300，3600，86400，单位：秒。
+                     * @param _granularity 监控粒度，目前支持60，300，3600，86400，单位：秒。
 当时间范围不超过1天，支持最小粒度60秒；
 当时间范围不超过7天，支持最小粒度3600秒；
 当时间范围不超过30天，支持最小粒度86400秒。
+                     * 
                      */
                     void SetGranularity(const uint64_t& _granularity);
 
                     /**
                      * 判断参数 Granularity 是否已赋值
                      * @return Granularity 是否已赋值
+                     * 
                      */
                     bool GranularityHasBeenSet() const;
 

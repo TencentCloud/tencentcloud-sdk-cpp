@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
                      * @return SelectRowsPerTable 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     int64_t GetSelectRowsPerTable() const;
 
                     /**
                      * 设置数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
-                     * @param SelectRowsPerTable 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
+                     * @param _selectRowsPerTable 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     void SetSelectRowsPerTable(const int64_t& _selectRowsPerTable);
 
                     /**
                      * 判断参数 SelectRowsPerTable 是否已赋值
                      * @return SelectRowsPerTable 是否已赋值
+                     * 
                      */
                     bool SelectRowsPerTableHasBeenSet() const;
 
                     /**
                      * 获取数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
                      * @return TablesSelectAll 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     int64_t GetTablesSelectAll() const;
 
                     /**
                      * 设置数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
-                     * @param TablesSelectAll 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @param _tablesSelectAll 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     void SetTablesSelectAll(const int64_t& _tablesSelectAll);
 
                     /**
                      * 判断参数 TablesSelectAll 是否已赋值
                      * @return TablesSelectAll 是否已赋值
+                     * 
                      */
                     bool TablesSelectAllHasBeenSet() const;
 
                     /**
                      * 获取数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
                      * @return TablesSelectCount 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     int64_t GetTablesSelectCount() const;
 
                     /**
                      * 设置数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
-                     * @param TablesSelectCount 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @param _tablesSelectCount 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * 
                      */
                     void SetTablesSelectCount(const int64_t& _tablesSelectCount);
 
                     /**
                      * 判断参数 TablesSelectCount 是否已赋值
                      * @return TablesSelectCount 是否已赋值
+                     * 
                      */
                     bool TablesSelectCountHasBeenSet() const;
 

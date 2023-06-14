@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取计算相似度的源词（仅支持UTF-8格式，不超过20字）
                      * @return SrcWord 计算相似度的源词（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     std::string GetSrcWord() const;
 
                     /**
                      * 设置计算相似度的源词（仅支持UTF-8格式，不超过20字）
-                     * @param SrcWord 计算相似度的源词（仅支持UTF-8格式，不超过20字）
+                     * @param _srcWord 计算相似度的源词（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     void SetSrcWord(const std::string& _srcWord);
 
                     /**
                      * 判断参数 SrcWord 是否已赋值
                      * @return SrcWord 是否已赋值
+                     * 
                      */
                     bool SrcWordHasBeenSet() const;
 
                     /**
                      * 获取计算相似度的目标词（仅支持UTF-8格式，不超过20字）
                      * @return TargetWord 计算相似度的目标词（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     std::string GetTargetWord() const;
 
                     /**
                      * 设置计算相似度的目标词（仅支持UTF-8格式，不超过20字）
-                     * @param TargetWord 计算相似度的目标词（仅支持UTF-8格式，不超过20字）
+                     * @param _targetWord 计算相似度的目标词（仅支持UTF-8格式，不超过20字）
+                     * 
                      */
                     void SetTargetWord(const std::string& _targetWord);
 
                     /**
                      * 判断参数 TargetWord 是否已赋值
                      * @return TargetWord 是否已赋值
+                     * 
                      */
                     bool TargetWordHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取cls所属地域
                      * @return ClsRegion cls所属地域
+                     * 
                      */
                     std::string GetClsRegion() const;
 
                     /**
                      * 设置cls所属地域
-                     * @param ClsRegion cls所属地域
+                     * @param _clsRegion cls所属地域
+                     * 
                      */
                     void SetClsRegion(const std::string& _clsRegion);
 
                     /**
                      * 判断参数 ClsRegion 是否已赋值
                      * @return ClsRegion 是否已赋值
+                     * 
                      */
                     bool ClsRegionHasBeenSet() const;
 
                     /**
                      * 获取cls日志集ID
                      * @return ClsLogsetId cls日志集ID
+                     * 
                      */
                     std::string GetClsLogsetId() const;
 
                     /**
                      * 设置cls日志集ID
-                     * @param ClsLogsetId cls日志集ID
+                     * @param _clsLogsetId cls日志集ID
+                     * 
                      */
                     void SetClsLogsetId(const std::string& _clsLogsetId);
 
                     /**
                      * 判断参数 ClsLogsetId 是否已赋值
                      * @return ClsLogsetId 是否已赋值
+                     * 
                      */
                     bool ClsLogsetIdHasBeenSet() const;
 
                     /**
                      * 获取cls日志主题ID
                      * @return ClsTopicId cls日志主题ID
+                     * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
                      * 设置cls日志主题ID
-                     * @param ClsTopicId cls日志主题ID
+                     * @param _clsTopicId cls日志主题ID
+                     * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
 
                     /**
                      * 判断参数 ClsTopicId 是否已赋值
                      * @return ClsTopicId 是否已赋值
+                     * 
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

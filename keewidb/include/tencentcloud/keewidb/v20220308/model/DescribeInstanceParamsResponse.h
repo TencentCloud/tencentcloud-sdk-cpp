@@ -50,60 +50,70 @@ namespace TencentCloud
                     /**
                      * 获取实例参数总数量。
                      * @return TotalCount 实例参数总数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取实例枚举类型参数数组。
                      * @return InstanceEnumParam 实例枚举类型参数数组。
+                     * 
                      */
                     std::vector<InstanceEnumParam> GetInstanceEnumParam() const;
 
                     /**
                      * 判断参数 InstanceEnumParam 是否已赋值
                      * @return InstanceEnumParam 是否已赋值
+                     * 
                      */
                     bool InstanceEnumParamHasBeenSet() const;
 
                     /**
                      * 获取实例整型参数数组。
                      * @return InstanceIntegerParam 实例整型参数数组。
+                     * 
                      */
                     std::vector<InstanceIntegerParam> GetInstanceIntegerParam() const;
 
                     /**
                      * 判断参数 InstanceIntegerParam 是否已赋值
                      * @return InstanceIntegerParam 是否已赋值
+                     * 
                      */
                     bool InstanceIntegerParamHasBeenSet() const;
 
                     /**
                      * 获取实例字符型参数数组。
                      * @return InstanceTextParam 实例字符型参数数组。
+                     * 
                      */
                     std::vector<InstanceTextParam> GetInstanceTextParam() const;
 
                     /**
                      * 判断参数 InstanceTextParam 是否已赋值
                      * @return InstanceTextParam 是否已赋值
+                     * 
                      */
                     bool InstanceTextParamHasBeenSet() const;
 
                     /**
                      * 获取实例多选项型参数数组。
                      * @return InstanceMultiParam 实例多选项型参数数组。
+                     * 
                      */
                     std::vector<InstanceMultiParam> GetInstanceMultiParam() const;
 
                     /**
                      * 判断参数 InstanceMultiParam 是否已赋值
                      * @return InstanceMultiParam 是否已赋值
+                     * 
                      */
                     bool InstanceMultiParamHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取查询结果的总条数。
                      * @return TotalCount 查询结果的总条数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntityList 可添加的实体列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEntityList() const;
 
                     /**
                      * 判断参数 EntityList 是否已赋值
                      * @return EntityList 是否已赋值
+                     * 
                      */
                     bool EntityListHasBeenSet() const;
 

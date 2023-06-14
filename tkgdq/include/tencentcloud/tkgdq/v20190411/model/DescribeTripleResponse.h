@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回三元组信息
                      * @return Content 返回三元组信息
+                     * 
                      */
                     std::vector<TripleContent> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

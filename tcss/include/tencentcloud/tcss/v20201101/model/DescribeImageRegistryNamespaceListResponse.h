@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取可返回的项目空间的总量。
                      * @return TotalCount 可返回的项目空间的总量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回的项目空间列表
                      * @return NamespaceList 返回的项目空间列表
+                     * 
                      */
                     std::vector<std::string> GetNamespaceList() const;
 
                     /**
                      * 判断参数 NamespaceList 是否已赋值
                      * @return NamespaceList 是否已赋值
+                     * 
                      */
                     bool NamespaceListHasBeenSet() const;
 

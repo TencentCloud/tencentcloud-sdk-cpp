@@ -57,6 +57,7 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index: 指定主页生效
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -66,17 +67,19 @@ file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index: 指定主页生效
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index: 指定主页生效
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -91,6 +94,7 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -100,35 +104,40 @@ file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
-                     * @param RulePaths RuleType 对应类型下的匹配内容：
+                     * @param _rulePaths RuleType 对应类型下的匹配内容：
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test/
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 
                     /**
                      * 获取源站列表，支持域名或ipv4地址
                      * @return Origin 源站列表，支持域名或ipv4地址
+                     * 
                      */
                     std::vector<std::string> GetOrigin() const;
 
                     /**
                      * 设置源站列表，支持域名或ipv4地址
-                     * @param Origin 源站列表，支持域名或ipv4地址
+                     * @param _origin 源站列表，支持域名或ipv4地址
+                     * 
                      */
                     void SetOrigin(const std::vector<std::string>& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 

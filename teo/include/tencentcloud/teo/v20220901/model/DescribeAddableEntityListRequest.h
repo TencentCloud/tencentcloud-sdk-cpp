@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>web-attack：web攻击防护日志；</li>
 <li>web-rule：自定义规则日志；</li>
 <li>web-bot：Bot管理日志。</li>
+                     * 
                      */
                     std::string GetEntityType() const;
 
@@ -86,19 +90,21 @@ namespace TencentCloud
 <li>web-attack：web攻击防护日志；</li>
 <li>web-rule：自定义规则日志；</li>
 <li>web-bot：Bot管理日志。</li>
-                     * @param EntityType 推送数据类型，取值有:
+                     * @param _entityType 推送数据类型，取值有:
 <li>domain：七层加速日志；</li>
 <li>application：四层加速日志；</li>
 <li>web-rateLiming：速率限制日志；</li>
 <li>web-attack：web攻击防护日志；</li>
 <li>web-rule：自定义规则日志；</li>
 <li>web-bot：Bot管理日志。</li>
+                     * 
                      */
                     void SetEntityType(const std::string& _entityType);
 
                     /**
                      * 判断参数 EntityType 是否已赋值
                      * @return EntityType 是否已赋值
+                     * 
                      */
                     bool EntityTypeHasBeenSet() const;
 
@@ -109,6 +115,7 @@ namespace TencentCloud
                      * @return Area 服务区域，取值有：
 <li>mainland：中国大陆境内；</li>
 <li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -116,15 +123,17 @@ namespace TencentCloud
                      * 设置服务区域，取值有：
 <li>mainland：中国大陆境内；</li>
 <li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
-                     * @param Area 服务区域，取值有：
+                     * @param _area 服务区域，取值有：
 <li>mainland：中国大陆境内；</li>
 <li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

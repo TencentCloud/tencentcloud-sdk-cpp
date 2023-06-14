@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取环境信息列表
                      * @return EnvList 环境信息列表
+                     * 
                      */
                     std::vector<EnvInfo> GetEnvList() const;
 
                     /**
                      * 判断参数 EnvList 是否已赋值
                      * @return EnvList 是否已赋值
+                     * 
                      */
                     bool EnvListHasBeenSet() const;
 

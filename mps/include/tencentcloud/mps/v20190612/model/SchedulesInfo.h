@@ -53,18 +53,21 @@ namespace TencentCloud
                     /**
                      * 获取编排唯一标识。
                      * @return ScheduleId 编排唯一标识。
+                     * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
                      * 设置编排唯一标识。
-                     * @param ScheduleId 编排唯一标识。
+                     * @param _scheduleId 编排唯一标识。
+                     * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
 
                     /**
                      * 判断参数 ScheduleId 是否已赋值
                      * @return ScheduleId 是否已赋值
+                     * 
                      */
                     bool ScheduleIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleName 编排名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScheduleName() const;
 
                     /**
                      * 设置编排名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScheduleName 编排名称。
+                     * @param _scheduleName 编排名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheduleName(const std::string& _scheduleName);
 
                     /**
                      * 判断参数 ScheduleName 是否已赋值
                      * @return ScheduleName 是否已赋值
+                     * 
                      */
                     bool ScheduleNameHasBeenSet() const;
 
@@ -99,6 +105,7 @@ Disabled：已禁用。
 Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -107,16 +114,18 @@ Disabled：已禁用。
 Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 编排状态，取值范围：
+                     * @param _status 编排状态，取值范围：
 Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -125,20 +134,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trigger 编排绑定的触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WorkflowTrigger GetTrigger() const;
 
                     /**
                      * 设置编排绑定的触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Trigger 编排绑定的触发规则。
+                     * @param _trigger 编排绑定的触发规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrigger(const WorkflowTrigger& _trigger);
 
                     /**
                      * 判断参数 Trigger 是否已赋值
                      * @return Trigger 是否已赋值
+                     * 
                      */
                     bool TriggerHasBeenSet() const;
 
@@ -147,20 +159,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Activities 编排任务列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Activity> GetActivities() const;
 
                     /**
                      * 设置编排任务列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Activities 编排任务列表。
+                     * @param _activities 编排任务列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivities(const std::vector<Activity>& _activities);
 
                     /**
                      * 判断参数 Activities 是否已赋值
                      * @return Activities 是否已赋值
+                     * 
                      */
                     bool ActivitiesHasBeenSet() const;
 
@@ -169,20 +184,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStorage 媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputStorage 媒体处理的文件输出存储位置。
+                     * @param _outputStorage 媒体处理的文件输出存储位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
@@ -191,20 +209,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputDir 媒体处理生成的文件输出的目标目录。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
                      * 设置媒体处理生成的文件输出的目标目录。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputDir 媒体处理生成的文件输出的目标目录。
+                     * @param _outputDir 媒体处理生成的文件输出的目标目录。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
                     /**
                      * 判断参数 OutputDir 是否已赋值
                      * @return OutputDir 是否已赋值
+                     * 
                      */
                     bool OutputDirHasBeenSet() const;
 
@@ -213,20 +234,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNotifyConfig 任务的事件通知配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
                      * 设置任务的事件通知配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskNotifyConfig 任务的事件通知配置。
+                     * @param _taskNotifyConfig 任务的事件通知配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
 
                     /**
                      * 判断参数 TaskNotifyConfig 是否已赋值
                      * @return TaskNotifyConfig 是否已赋值
+                     * 
                      */
                     bool TaskNotifyConfigHasBeenSet() const;
 
@@ -235,20 +259,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _createTime 创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -257,20 +284,23 @@ Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _updateTime 最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

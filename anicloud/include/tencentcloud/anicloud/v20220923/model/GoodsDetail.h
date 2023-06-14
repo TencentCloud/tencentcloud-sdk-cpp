@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 按照四层接入的产品需要传入产品标签,例如:p_cvm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置按照四层接入的产品需要传入产品标签,例如:p_cvm
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCode 按照四层接入的产品需要传入产品标签,例如:p_cvm
+                     * @param _productCode 按照四层接入的产品需要传入产品标签,例如:p_cvm
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductCode(const std::string& _productCode);
 
                     /**
                      * 判断参数 ProductCode 是否已赋值
                      * @return ProductCode 是否已赋值
+                     * 
                      */
                     bool ProductCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductCode 四层定义的子产品标签,例如:sp_cvm_s1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
                      * 设置四层定义的子产品标签,例如:sp_cvm_s1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubProductCode 四层定义的子产品标签,例如:sp_cvm_s1
+                     * @param _subProductCode 四层定义的子产品标签,例如:sp_cvm_s1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
 
                     /**
                      * 判断参数 SubProductCode 是否已赋值
                      * @return SubProductCode 是否已赋值
+                     * 
                      */
                     bool SubProductCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
                      * 设置资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 资源类型
+                     * @param _type 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::vector<std::string>& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsNum 资源数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
                      * 设置资源数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GoodsNum 资源数量
+                     * @param _goodsNum 资源数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
 
                     /**
                      * 判断参数 GoodsNum 是否已赋值
                      * @return GoodsNum 是否已赋值
+                     * 
                      */
                     bool GoodsNumHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要检索的队列别名的唯一标识符
                      * @return AliasId 要检索的队列别名的唯一标识符
+                     * 
                      */
                     std::string GetAliasId() const;
 
                     /**
                      * 设置要检索的队列别名的唯一标识符
-                     * @param AliasId 要检索的队列别名的唯一标识符
+                     * @param _aliasId 要检索的队列别名的唯一标识符
+                     * 
                      */
                     void SetAliasId(const std::string& _aliasId);
 
                     /**
                      * 判断参数 AliasId 是否已赋值
                      * @return AliasId 是否已赋值
+                     * 
                      */
                     bool AliasIdHasBeenSet() const;
 

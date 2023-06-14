@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取删除信息返回
                      * @return Data 删除信息返回
+                     * 
                      */
                     DelMmsInstanceData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，透传入参。
                      * @return InstanceId 实例ID，透传入参。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户名，透传入参。
                      * @return UserName 用户名，透传入参。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取允许访问的 host，透传入参。
                      * @return Host 允许访问的 host，透传入参。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取透传入参。
                      * @return ReadOnly 透传入参。
+                     * 
                      */
                     int64_t GetReadOnly() const;
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 

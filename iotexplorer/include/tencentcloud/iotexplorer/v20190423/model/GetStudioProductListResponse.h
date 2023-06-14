@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取产品列表
                      * @return Products 产品列表
+                     * 
                      */
                     std::vector<ProductEntry> GetProducts() const;
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
+                     * 
                      */
                     bool ProductsHasBeenSet() const;
 
                     /**
                      * 获取产品数量
                      * @return Total 产品数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

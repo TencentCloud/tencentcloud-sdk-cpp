@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取请求任务的FlowId
                      * @return RequestFlowId 请求任务的FlowId
+                     * 
                      */
                     int64_t GetRequestFlowId() const;
 
                     /**
                      * 判断参数 RequestFlowId 是否已赋值
                      * @return RequestFlowId 是否已赋值
+                     * 
                      */
                     bool RequestFlowIdHasBeenSet() const;
 

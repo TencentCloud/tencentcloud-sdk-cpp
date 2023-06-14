@@ -61,6 +61,7 @@ span.kind:
 默认为服务端视角进行查询。
 runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
+                     * 
                      */
                     std::vector<GeneralFilter> GetFilters() const;
 
@@ -73,7 +74,7 @@ span.kind:
 默认为服务端视角进行查询。
 runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
-                     * @param Filters 要过滤的维度信息：
+                     * @param _filters 要过滤的维度信息：
 service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
@@ -81,12 +82,14 @@ span.kind:
 默认为服务端视角进行查询。
 runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
+                     * 
                      */
                     void SetFilters(const std::vector<GeneralFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -99,6 +102,7 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
 service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
 runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+                     * 
                      */
                     std::vector<std::string> GetMetrics() const;
 
@@ -107,52 +111,60 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
 service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
 runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
-                     * @param Metrics 需要查询的指标，不可自定义输入。
+                     * @param _metrics 需要查询的指标，不可自定义输入。
 service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
 runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+                     * 
                      */
                     void SetMetrics(const std::vector<std::string>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取业务系统ID
                      * @return InstanceId 业务系统ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置业务系统ID
-                     * @param InstanceId 业务系统ID
+                     * @param _instanceId 业务系统ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
                      * @return ViewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
-                     * @param ViewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * @param _viewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * 
                      */
                     void SetViewName(const std::string& _viewName);
 
                     /**
                      * 判断参数 ViewName 是否已赋值
                      * @return ViewName 是否已赋值
+                     * 
                      */
                     bool ViewNameHasBeenSet() const;
 
@@ -165,6 +177,7 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
 service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
 runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
@@ -173,70 +186,81 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
 service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
 runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
-                     * @param GroupBy 聚合维度：
+                     * @param _groupBy 聚合维度：
 service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
 runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
 sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 
                     /**
                      * 获取起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
                      * @return StartTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param StartTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * @param _startTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
                      * @return EndTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param EndTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * @param _endTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
                      * @return Period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
-                     * @param Period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * @param _period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -253,6 +277,7 @@ runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
 asc:对查询指标进行升序排序
 desc：对查询指标进行降序排序
+                     * 
                      */
                     OrderBy GetOrderBy() const;
 
@@ -263,36 +288,41 @@ runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
 asc:对查询指标进行升序排序
 desc：对查询指标进行降序排序
-                     * @param OrderBy 对查询指标进行排序：
+                     * @param _orderBy 对查询指标进行排序：
 service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
 runtime_metric视图支持：service_gc_full_count（Full GC）。
 sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
 asc:对查询指标进行升序排序
 desc：对查询指标进行降序排序
+                     * 
                      */
                     void SetOrderBy(const OrderBy& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
                      * @return PageSize 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
-                     * @param PageSize 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     * @param _pageSize 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

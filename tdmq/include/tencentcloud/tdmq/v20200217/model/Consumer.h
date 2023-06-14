@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectedSince 消费者开始连接的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectedSince() const;
 
                     /**
                      * 设置消费者开始连接的时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectedSince 消费者开始连接的时间。
+                     * @param _connectedSince 消费者开始连接的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectedSince(const std::string& _connectedSince);
 
                     /**
                      * 判断参数 ConnectedSince 是否已赋值
                      * @return ConnectedSince 是否已赋值
+                     * 
                      */
                     bool ConnectedSinceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerAddr 消费者地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConsumerAddr() const;
 
                     /**
                      * 设置消费者地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConsumerAddr 消费者地址。
+                     * @param _consumerAddr 消费者地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConsumerAddr(const std::string& _consumerAddr);
 
                     /**
                      * 判断参数 ConsumerAddr 是否已赋值
                      * @return ConsumerAddr 是否已赋值
+                     * 
                      */
                     bool ConsumerAddrHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerName 消费者名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConsumerName() const;
 
                     /**
                      * 设置消费者名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConsumerName 消费者名称。
+                     * @param _consumerName 消费者名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConsumerName(const std::string& _consumerName);
 
                     /**
                      * 判断参数 ConsumerName 是否已赋值
                      * @return ConsumerName 是否已赋值
+                     * 
                      */
                     bool ConsumerNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientVersion 消费者版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientVersion() const;
 
                     /**
                      * 设置消费者版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientVersion 消费者版本。
+                     * @param _clientVersion 消费者版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientVersion(const std::string& _clientVersion);
 
                     /**
                      * 判断参数 ClientVersion 是否已赋值
                      * @return ClientVersion 是否已赋值
+                     * 
                      */
                     bool ClientVersionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partition 消费者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPartition() const;
 
                     /**
                      * 设置消费者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partition 消费者连接的主题分区号
+                     * @param _partition 消费者连接的主题分区号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartition(const int64_t& _partition);
 
                     /**
                      * 判断参数 Partition 是否已赋值
                      * @return Partition 是否已赋值
+                     * 
                      */
                     bool PartitionHasBeenSet() const;
 

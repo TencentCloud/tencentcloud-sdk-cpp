@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取组织名称
                      * @return GroupName 组织名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置组织名称
-                     * @param GroupName 组织名称
+                     * @param _groupName 组织名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取组织MSP Identity
                      * @return GroupMSPId 组织MSP Identity
+                     * 
                      */
                     std::string GetGroupMSPId() const;
 
                     /**
                      * 设置组织MSP Identity
-                     * @param GroupMSPId 组织MSP Identity
+                     * @param _groupMSPId 组织MSP Identity
+                     * 
                      */
                     void SetGroupMSPId(const std::string& _groupMSPId);
 
                     /**
                      * 判断参数 GroupMSPId 是否已赋值
                      * @return GroupMSPId 是否已赋值
+                     * 
                      */
                     bool GroupMSPIdHasBeenSet() const;
 

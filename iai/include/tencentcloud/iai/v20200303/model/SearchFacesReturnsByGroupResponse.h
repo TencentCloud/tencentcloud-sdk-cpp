@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取搜索的人员库中包含的人脸数。
                      * @return FaceNum 搜索的人员库中包含的人脸数。
+                     * 
                      */
                     uint64_t GetFaceNum() const;
 
                     /**
                      * 判断参数 FaceNum 是否已赋值
                      * @return FaceNum 是否已赋值
+                     * 
                      */
                     bool FaceNumHasBeenSet() const;
 
                     /**
                      * 获取识别结果。
                      * @return ResultsReturnsByGroup 识别结果。
+                     * 
                      */
                     std::vector<ResultsReturnsByGroup> GetResultsReturnsByGroup() const;
 
                     /**
                      * 判断参数 ResultsReturnsByGroup 是否已赋值
                      * @return ResultsReturnsByGroup 是否已赋值
+                     * 
                      */
                     bool ResultsReturnsByGroupHasBeenSet() const;
 
                     /**
                      * 获取人脸识别所用的算法模型版本。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

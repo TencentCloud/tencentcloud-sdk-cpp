@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取媒体传输地区信息。
                      * @return Info 媒体传输地区信息。
+                     * 
                      */
                     StreamLinkRegionInfo GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取待删除表所在集群ID
                      * @return ClusterId 待删除表所在集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置待删除表所在集群ID
-                     * @param ClusterId 待删除表所在集群ID
+                     * @param _clusterId 待删除表所在集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待删除表信息列表
                      * @return SelectedTables 待删除表信息列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置待删除表信息列表
-                     * @param SelectedTables 待删除表信息列表
+                     * @param _selectedTables 待删除表信息列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 

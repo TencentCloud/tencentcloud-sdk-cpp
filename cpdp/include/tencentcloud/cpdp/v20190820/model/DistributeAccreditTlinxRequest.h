@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取使用门店OpenId
                      * @return OpenId 使用门店OpenId
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置使用门店OpenId
-                     * @param OpenId 使用门店OpenId
+                     * @param _openId 使用门店OpenId
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取使用门店OpenKey
                      * @return OpenKey 使用门店OpenKey
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置使用门店OpenKey
-                     * @param OpenKey 使用门店OpenKey
+                     * @param _openKey 使用门店OpenKey
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
                      * @return AuthType 验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
-                     * @param AuthType 验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
+                     * @param _authType 验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取分账比例（500=5%）不传默认百分之10
                      * @return Percent 分账比例（500=5%）不传默认百分之10
+                     * 
                      */
                     std::string GetPercent() const;
 
                     /**
                      * 设置分账比例（500=5%）不传默认百分之10
-                     * @param Percent 分账比例（500=5%）不传默认百分之10
+                     * @param _percent 分账比例（500=5%）不传默认百分之10
+                     * 
                      */
                     void SetPercent(const std::string& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 
                     /**
                      * 获取营业执照商户全称
                      * @return FullName 营业执照商户全称
+                     * 
                      */
                     std::string GetFullName() const;
 
                     /**
                      * 设置营业执照商户全称
-                     * @param FullName 营业执照商户全称
+                     * @param _fullName 营业执照商户全称
+                     * 
                      */
                     void SetFullName(const std::string& _fullName);
 
                     /**
                      * 判断参数 FullName 是否已赋值
                      * @return FullName 是否已赋值
+                     * 
                      */
                     bool FullNameHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

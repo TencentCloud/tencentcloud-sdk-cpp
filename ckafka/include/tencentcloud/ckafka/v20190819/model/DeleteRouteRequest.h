@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例唯一id
                      * @return InstanceId 实例唯一id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例唯一id
-                     * @param InstanceId 实例唯一id
+                     * @param _instanceId 实例唯一id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取路由id
                      * @return RouteId 路由id
+                     * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
                      * 设置路由id
-                     * @param RouteId 路由id
+                     * @param _routeId 路由id
+                     * 
                      */
                     void SetRouteId(const int64_t& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取调用方appId
                      * @return CallerAppid 调用方appId
+                     * 
                      */
                     int64_t GetCallerAppid() const;
 
                     /**
                      * 设置调用方appId
-                     * @param CallerAppid 调用方appId
+                     * @param _callerAppid 调用方appId
+                     * 
                      */
                     void SetCallerAppid(const int64_t& _callerAppid);
 
                     /**
                      * 判断参数 CallerAppid 是否已赋值
                      * @return CallerAppid 是否已赋值
+                     * 
                      */
                     bool CallerAppidHasBeenSet() const;
 
                     /**
                      * 获取删除路由时间
                      * @return DeleteRouteTime 删除路由时间
+                     * 
                      */
                     std::string GetDeleteRouteTime() const;
 
                     /**
                      * 设置删除路由时间
-                     * @param DeleteRouteTime 删除路由时间
+                     * @param _deleteRouteTime 删除路由时间
+                     * 
                      */
                     void SetDeleteRouteTime(const std::string& _deleteRouteTime);
 
                     /**
                      * 判断参数 DeleteRouteTime 是否已赋值
                      * @return DeleteRouteTime 是否已赋值
+                     * 
                      */
                     bool DeleteRouteTimeHasBeenSet() const;
 

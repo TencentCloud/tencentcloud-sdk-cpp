@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>waf：托管规则。</li>
                      * @return Module 模块名称，取值为：
 <li>waf：托管规则。</li>
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名称，取值为：
 <li>waf：托管规则。</li>
-                     * @param Module 模块名称，取值为：
+                     * @param _module 模块名称，取值为：
 <li>waf：托管规则。</li>
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Include 模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetInclude() const;
 
                     /**
                      * 设置模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Include 模块下的需要例外的具体规则ID列表。
+                     * @param _include 模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInclude(const std::vector<int64_t>& _include);
 
                     /**
                      * 判断参数 Include 是否已赋值
                      * @return Include 是否已赋值
+                     * 
                      */
                     bool IncludeHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例唯一ID
                      * @return InstanceId 实例唯一ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例唯一ID
-                     * @param InstanceId 实例唯一ID
+                     * @param _instanceId 实例唯一ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
                      * @return Type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
-                     * @param Type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * @param _type 节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取clickhouse节点规格。
                      * @return SpecName clickhouse节点规格。
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置clickhouse节点规格。
-                     * @param SpecName clickhouse节点规格。
+                     * @param _specName clickhouse节点规格。
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
                     /**
                      * 获取是否滚动重启，false为不滚动重启，true为滚动重启
                      * @return ScaleUpEnableRolling 是否滚动重启，false为不滚动重启，true为滚动重启
+                     * 
                      */
                     bool GetScaleUpEnableRolling() const;
 
                     /**
                      * 设置是否滚动重启，false为不滚动重启，true为滚动重启
-                     * @param ScaleUpEnableRolling 是否滚动重启，false为不滚动重启，true为滚动重启
+                     * @param _scaleUpEnableRolling 是否滚动重启，false为不滚动重启，true为滚动重启
+                     * 
                      */
                     void SetScaleUpEnableRolling(const bool& _scaleUpEnableRolling);
 
                     /**
                      * 判断参数 ScaleUpEnableRolling 是否已赋值
                      * @return ScaleUpEnableRolling 是否已赋值
+                     * 
                      */
                     bool ScaleUpEnableRollingHasBeenSet() const;
 

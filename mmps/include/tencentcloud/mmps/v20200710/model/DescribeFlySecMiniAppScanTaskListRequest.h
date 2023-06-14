@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取诊断方式 1:基础诊断，2:深度诊断
                      * @return Mode 诊断方式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置诊断方式 1:基础诊断，2:深度诊断
-                     * @param Mode 诊断方式 1:基础诊断，2:深度诊断
+                     * @param _mode 诊断方式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中
                      * @return Status 诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中
-                     * @param Status 诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * @param _status 诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取查询数量, 0:查询所有, 其他值:最近几次的诊断数量
                      * @return Size 查询数量, 0:查询所有, 其他值:最近几次的诊断数量
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置查询数量, 0:查询所有, 其他值:最近几次的诊断数量
-                     * @param Size 查询数量, 0:查询所有, 其他值:最近几次的诊断数量
+                     * @param _size 查询数量, 0:查询所有, 其他值:最近几次的诊断数量
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取小程序appid(为空的时候,则查询当前用户诊断的所有小程序)
                      * @return MiniAppID 小程序appid(为空的时候,则查询当前用户诊断的所有小程序)
+                     * 
                      */
                     std::string GetMiniAppID() const;
 
                     /**
                      * 设置小程序appid(为空的时候,则查询当前用户诊断的所有小程序)
-                     * @param MiniAppID 小程序appid(为空的时候,则查询当前用户诊断的所有小程序)
+                     * @param _miniAppID 小程序appid(为空的时候,则查询当前用户诊断的所有小程序)
+                     * 
                      */
                     void SetMiniAppID(const std::string& _miniAppID);
 
                     /**
                      * 判断参数 MiniAppID 是否已赋值
                      * @return MiniAppID 是否已赋值
+                     * 
                      */
                     bool MiniAppIDHasBeenSet() const;
 

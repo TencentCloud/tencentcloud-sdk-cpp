@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 兼容标志状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置兼容标志状态码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 兼容标志状态码。
+                     * @param _code 兼容标志状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 

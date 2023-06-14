@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取移动设备ID
                      * @return Imei 移动设备ID
+                     * 
                      */
                     std::string GetImei() const;
 
                     /**
                      * 设置移动设备ID
-                     * @param Imei 移动设备ID
+                     * @param _imei 移动设备ID
+                     * 
                      */
                     void SetImei(const std::string& _imei);
 
                     /**
                      * 判断参数 Imei 是否已赋值
                      * @return Imei 是否已赋值
+                     * 
                      */
                     bool ImeiHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lng 经度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLng() const;
 
                     /**
                      * 设置经度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Lng 经度
+                     * @param _lng 经度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLng(const std::string& _lng);
 
                     /**
                      * 判断参数 Lng 是否已赋值
                      * @return Lng 是否已赋值
+                     * 
                      */
                     bool LngHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lat 维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLat() const;
 
                     /**
                      * 设置维度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Lat 维度
+                     * @param _lat 维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLat(const std::string& _lat);
 
                     /**
                      * 判断参数 Lat 是否已赋值
                      * @return Lat 是否已赋值
+                     * 
                      */
                     bool LatHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lac 运营商基站ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLac() const;
 
                     /**
                      * 设置运营商基站ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Lac 运营商基站ID
+                     * @param _lac 运营商基站ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLac(const std::string& _lac);
 
                     /**
                      * 判断参数 Lac 是否已赋值
                      * @return Lac 是否已赋值
+                     * 
                      */
                     bool LacHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cell 小区CellID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCell() const;
 
                     /**
                      * 设置小区CellID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cell 小区CellID
+                     * @param _cell 小区CellID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCell(const std::string& _cell);
 
                     /**
                      * 判断参数 Cell 是否已赋值
                      * @return Cell 是否已赋值
+                     * 
                      */
                     bool CellHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Iccid 当前上报运营商ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置当前上报运营商ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Iccid 当前上报运营商ID
+                     * @param _iccid 当前上报运营商ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rss 信号强度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRss() const;
 
                     /**
                      * 设置信号强度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rss 信号强度
+                     * @param _rss 信号强度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRss(const int64_t& _rss);
 
                     /**
                      * 判断参数 Rss 是否已赋值
                      * @return Rss 是否已赋值
+                     * 
                      */
                     bool RssHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tele 运营商: 1 移动 2 联通 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTele() const;
 
                     /**
                      * 设置运营商: 1 移动 2 联通 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tele 运营商: 1 移动 2 联通 3 电信
+                     * @param _tele 运营商: 1 移动 2 联通 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTele(const int64_t& _tele);
 
                     /**
                      * 判断参数 Tele 是否已赋值
                      * @return Tele 是否已赋值
+                     * 
                      */
                     bool TeleHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tid 当前设备策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTid() const;
 
                     /**
                      * 设置当前设备策略ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tid 当前设备策略ID
+                     * @param _tid 当前设备策略ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTid(const int64_t& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
@@ -245,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ping 心跳间隔,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPing() const;
 
                     /**
                      * 设置心跳间隔,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ping 心跳间隔,单位秒
+                     * @param _ping 心跳间隔,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPing(const int64_t& _ping);
 
                     /**
                      * 判断参数 Ping 是否已赋值
                      * @return Ping 是否已赋值
+                     * 
                      */
                     bool PingHasBeenSet() const;
 
@@ -267,20 +297,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Delay 网络延迟,单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDelay() const;
 
                     /**
                      * 设置网络延迟,单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Delay 网络延迟,单位毫秒
+                     * @param _delay 网络延迟,单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDelay(const int64_t& _delay);
 
                     /**
                      * 判断参数 Delay 是否已赋值
                      * @return Delay 是否已赋值
+                     * 
                      */
                     bool DelayHasBeenSet() const;
 
@@ -289,20 +322,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 高级日志启停状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLog() const;
 
                     /**
                      * 设置高级日志启停状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Log 高级日志启停状态
+                     * @param _log 高级日志启停状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLog(const int64_t& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 
@@ -311,20 +347,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevType 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDevType() const;
 
                     /**
                      * 设置设备型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DevType 设备型号
+                     * @param _devType 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevType(const std::string& _devType);
 
                     /**
                      * 判断参数 DevType 是否已赋值
                      * @return DevType 是否已赋值
+                     * 
                      */
                     bool DevTypeHasBeenSet() const;
 
@@ -333,20 +372,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevModel 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDevModel() const;
 
                     /**
                      * 设置设备型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DevModel 设备型号
+                     * @param _devModel 设备型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevModel(const std::string& _devModel);
 
                     /**
                      * 判断参数 DevModel 是否已赋值
                      * @return DevModel 是否已赋值
+                     * 
                      */
                     bool DevModelHasBeenSet() const;
 
@@ -355,20 +397,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 设备版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置设备版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 设备版本
+                     * @param _version 设备版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -377,20 +422,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadTime 设备刷新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadTime() const;
 
                     /**
                      * 设置设备刷新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UploadTime 设备刷新时间戳
+                     * @param _uploadTime 设备刷新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUploadTime(const std::string& _uploadTime);
 
                     /**
                      * 判断参数 UploadTime 是否已赋值
                      * @return UploadTime 是否已赋值
+                     * 
                      */
                     bool UploadTimeHasBeenSet() const;
 
@@ -399,20 +447,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 网络环境: 0 正常 1 弱网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置网络环境: 0 正常 1 弱网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 网络环境: 0 正常 1 弱网
+                     * @param _status 网络环境: 0 正常 1 弱网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -421,20 +472,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthFirstTime 每月第一次上报心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMonthFirstTime() const;
 
                     /**
                      * 设置每月第一次上报心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonthFirstTime 每月第一次上报心跳时间
+                     * @param _monthFirstTime 每月第一次上报心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonthFirstTime(const std::string& _monthFirstTime);
 
                     /**
                      * 判断参数 MonthFirstTime 是否已赋值
                      * @return MonthFirstTime 是否已赋值
+                     * 
                      */
                     bool MonthFirstTimeHasBeenSet() const;
 

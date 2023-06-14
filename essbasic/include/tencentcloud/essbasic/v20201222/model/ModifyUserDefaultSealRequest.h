@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识，需要重新指定默认印章的用户ID
                      * @return UserId 用户唯一标识，需要重新指定默认印章的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户唯一标识，需要重新指定默认印章的用户ID
-                     * @param UserId 用户唯一标识，需要重新指定默认印章的用户ID
+                     * @param _userId 用户唯一标识，需要重新指定默认印章的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取重新指定的默认印章ID
                      * @return SealId 重新指定的默认印章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置重新指定的默认印章ID
-                     * @param SealId 重新指定的默认印章ID
+                     * @param _sealId 重新指定的默认印章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取请求重新指定个人默认印章的客户端IP
                      * @return SourceIp 请求重新指定个人默认印章的客户端IP
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求重新指定个人默认印章的客户端IP
-                     * @param SourceIp 请求重新指定个人默认印章的客户端IP
+                     * @param _sourceIp 请求重新指定个人默认印章的客户端IP
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 

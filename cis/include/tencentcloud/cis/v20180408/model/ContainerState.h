@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取容器运行开始时间
                      * @return StartTime 容器运行开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置容器运行开始时间
-                     * @param StartTime 容器运行开始时间
+                     * @param _startTime 容器运行开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取容器状态
                      * @return State 容器状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置容器状态
-                     * @param State 容器状态
+                     * @param _state 容器状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取状态详情
                      * @return Reason 状态详情
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置状态详情
-                     * @param Reason 状态详情
+                     * @param _reason 状态详情
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取容器运行结束时间
                      * @return FinishTime 容器运行结束时间
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置容器运行结束时间
-                     * @param FinishTime 容器运行结束时间
+                     * @param _finishTime 容器运行结束时间
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取容器运行退出码
                      * @return ExitCode 容器运行退出码
+                     * 
                      */
                     int64_t GetExitCode() const;
 
                     /**
                      * 设置容器运行退出码
-                     * @param ExitCode 容器运行退出码
+                     * @param _exitCode 容器运行退出码
+                     * 
                      */
                     void SetExitCode(const int64_t& _exitCode);
 
                     /**
                      * 判断参数 ExitCode 是否已赋值
                      * @return ExitCode 是否已赋值
+                     * 
                      */
                     bool ExitCodeHasBeenSet() const;
 

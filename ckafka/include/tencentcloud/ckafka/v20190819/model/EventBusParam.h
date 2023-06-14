@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取资源类型。EB_COS/EB_ES/EB_CLS
                      * @return Type 资源类型。EB_COS/EB_ES/EB_CLS
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置资源类型。EB_COS/EB_ES/EB_CLS
-                     * @param Type 资源类型。EB_COS/EB_ES/EB_CLS
+                     * @param _type 资源类型。EB_COS/EB_ES/EB_CLS
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取是否为自建集群
                      * @return SelfBuilt 是否为自建集群
+                     * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
-                     * @param SelfBuilt 是否为自建集群
+                     * @param _selfBuilt 是否为自建集群
+                     * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
 
                     /**
                      * 判断参数 SelfBuilt 是否已赋值
                      * @return SelfBuilt 是否已赋值
+                     * 
                      */
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
                      * 获取实例资源
                      * @return Resource 实例资源
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置实例资源
-                     * @param Resource 实例资源
+                     * @param _resource 实例资源
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取SCF云函数命名空间
                      * @return Namespace SCF云函数命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置SCF云函数命名空间
-                     * @param Namespace SCF云函数命名空间
+                     * @param _namespace SCF云函数命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取SCF云函数函数名
                      * @return FunctionName SCF云函数函数名
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置SCF云函数函数名
-                     * @param FunctionName SCF云函数函数名
+                     * @param _functionName SCF云函数函数名
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取SCF云函数版本及别名
                      * @return Qualifier SCF云函数版本及别名
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置SCF云函数版本及别名
-                     * @param Qualifier SCF云函数版本及别名
+                     * @param _qualifier SCF云函数版本及别名
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 

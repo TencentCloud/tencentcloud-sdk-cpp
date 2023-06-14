@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取分页数量
                      * @return PageSize 分页数量
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页数量
-                     * @param PageSize 分页数量
+                     * @param _pageSize 分页数量
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取当前分页
                      * @return PageNumber 当前分页
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置当前分页
-                     * @param PageNumber 当前分页
+                     * @param _pageNumber 当前分页
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取商户ID
                      * @return MerchantId 商户ID
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
-                     * @param MerchantId 商户ID
+                     * @param _merchantId 商户ID
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取安心码
                      * @return Code 安心码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置安心码
-                     * @param Code 安心码
+                     * @param _code 安心码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 

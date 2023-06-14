@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回被删除的规则的ID
                      * @return Result 返回被删除的规则的ID
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

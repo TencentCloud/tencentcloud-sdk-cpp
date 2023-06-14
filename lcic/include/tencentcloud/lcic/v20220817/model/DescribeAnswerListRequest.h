@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取问题ID
                      * @return QuestionId 问题ID
+                     * 
                      */
                     std::string GetQuestionId() const;
 
                     /**
                      * 设置问题ID
-                     * @param QuestionId 问题ID
+                     * @param _questionId 问题ID
+                     * 
                      */
                     void SetQuestionId(const std::string& _questionId);
 
                     /**
                      * 判断参数 QuestionId 是否已赋值
                      * @return QuestionId 是否已赋值
+                     * 
                      */
                     bool QuestionIdHasBeenSet() const;
 
                     /**
                      * 获取1
                      * @return Page 1
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置1
-                     * @param Page 1
+                     * @param _page 1
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取100
                      * @return Limit 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置100
-                     * @param Limit 100
+                     * @param _limit 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

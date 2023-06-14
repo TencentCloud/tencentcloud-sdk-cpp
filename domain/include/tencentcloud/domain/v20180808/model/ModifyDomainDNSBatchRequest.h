@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取批量操作的域名。
                      * @return Domains 批量操作的域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置批量操作的域名。
-                     * @param Domains 批量操作的域名。
+                     * @param _domains 批量操作的域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
                     /**
                      * 获取域名DNS 数组。
                      * @return Dns 域名DNS 数组。
+                     * 
                      */
                     std::vector<std::string> GetDns() const;
 
                     /**
                      * 设置域名DNS 数组。
-                     * @param Dns 域名DNS 数组。
+                     * @param _dns 域名DNS 数组。
+                     * 
                      */
                     void SetDns(const std::vector<std::string>& _dns);
 
                     /**
                      * 判断参数 Dns 是否已赋值
                      * @return Dns 是否已赋值
+                     * 
                      */
                     bool DnsHasBeenSet() const;
 

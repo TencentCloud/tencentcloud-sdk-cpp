@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取表情置信度
                      * @return Confidence 表情置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置表情置信度
-                     * @param Confidence 表情置信度
+                     * @param _confidence 表情置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
                      * @return Expression 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
+                     * 
                      */
                     std::string GetExpression() const;
 
                     /**
                      * 设置表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
-                     * @param Expression 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
+                     * @param _expression 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
+                     * 
                      */
                     void SetExpression(const std::string& _expression);
 
                     /**
                      * 判断参数 Expression 是否已赋值
                      * @return Expression 是否已赋值
+                     * 
                      */
                     bool ExpressionHasBeenSet() const;
 

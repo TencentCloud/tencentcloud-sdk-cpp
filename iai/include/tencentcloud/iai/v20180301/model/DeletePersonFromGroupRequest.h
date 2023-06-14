@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取人员ID
                      * @return PersonId 人员ID
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员ID
-                     * @param PersonId 人员ID
+                     * @param _personId 人员ID
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取人员库ID
                      * @return GroupId 人员库ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置人员库ID
-                     * @param GroupId 人员库ID
+                     * @param _groupId 人员库ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

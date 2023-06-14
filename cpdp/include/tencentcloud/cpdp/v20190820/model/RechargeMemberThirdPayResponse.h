@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取String(20)，返回码
                      * @return TxnReturnCode String(20)，返回码
+                     * 
                      */
                     std::string GetTxnReturnCode() const;
 
                     /**
                      * 判断参数 TxnReturnCode 是否已赋值
                      * @return TxnReturnCode 是否已赋值
+                     * 
                      */
                     bool TxnReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取String(100)，返回信息
                      * @return TxnReturnMsg String(100)，返回信息
+                     * 
                      */
                     std::string GetTxnReturnMsg() const;
 
                     /**
                      * 判断参数 TxnReturnMsg 是否已赋值
                      * @return TxnReturnMsg 是否已赋值
+                     * 
                      */
                     bool TxnReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取String(22)，交易流水号
                      * @return CnsmrSeqNo String(22)，交易流水号
+                     * 
                      */
                     std::string GetCnsmrSeqNo() const;
 
                     /**
                      * 判断参数 CnsmrSeqNo 是否已赋值
                      * @return CnsmrSeqNo 是否已赋值
+                     * 
                      */
                     bool CnsmrSeqNoHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontSeqNo STRING(52)，前置流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrontSeqNo() const;
 
                     /**
                      * 判断参数 FrontSeqNo 是否已赋值
                      * @return FrontSeqNo 是否已赋值
+                     * 
                      */
                     bool FrontSeqNoHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberSubAcctPreAvailBal STRING(20)，会员子账户交易前可用余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberSubAcctPreAvailBal() const;
 
                     /**
                      * 判断参数 MemberSubAcctPreAvailBal 是否已赋值
                      * @return MemberSubAcctPreAvailBal 是否已赋值
+                     * 
                      */
                     bool MemberSubAcctPreAvailBalHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMsgOne STRING(300)，保留域1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReservedMsgOne() const;
 
                     /**
                      * 判断参数 ReservedMsgOne 是否已赋值
                      * @return ReservedMsgOne 是否已赋值
+                     * 
                      */
                     bool ReservedMsgOneHasBeenSet() const;
 
@@ -126,12 +138,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMsgTwo STRING(300)，保留域2
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReservedMsgTwo() const;
 
                     /**
                      * 判断参数 ReservedMsgTwo 是否已赋值
                      * @return ReservedMsgTwo 是否已赋值
+                     * 
                      */
                     bool ReservedMsgTwoHasBeenSet() const;
 

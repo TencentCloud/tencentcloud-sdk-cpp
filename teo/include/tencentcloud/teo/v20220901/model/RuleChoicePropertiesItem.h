@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取参数名称。
                      * @return Name 参数名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名称。
-                     * @param Name 参数名称。
+                     * @param _name 参数名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -85,17 +89,19 @@ namespace TencentCloud
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
-                     * @param Type 参数值类型。
+                     * @param _type 参数值类型。
 <li> CHOICE：参数值只能在 ChoicesValue 中选择； </li>
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -104,92 +110,107 @@ namespace TencentCloud
 注意：若参数值为用户自定义则该数组为空数组。
                      * @return ChoicesValue 参数值的可选值。
 注意：若参数值为用户自定义则该数组为空数组。
+                     * 
                      */
                     std::vector<std::string> GetChoicesValue() const;
 
                     /**
                      * 设置参数值的可选值。
 注意：若参数值为用户自定义则该数组为空数组。
-                     * @param ChoicesValue 参数值的可选值。
+                     * @param _choicesValue 参数值的可选值。
 注意：若参数值为用户自定义则该数组为空数组。
+                     * 
                      */
                     void SetChoicesValue(const std::vector<std::string>& _choicesValue);
 
                     /**
                      * 判断参数 ChoicesValue 是否已赋值
                      * @return ChoicesValue 是否已赋值
+                     * 
                      */
                     bool ChoicesValueHasBeenSet() const;
 
                     /**
                      * 获取数值参数的最小值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
                      * @return Min 数值参数的最小值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * 
                      */
                     int64_t GetMin() const;
 
                     /**
                      * 设置数值参数的最小值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
-                     * @param Min 数值参数的最小值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * @param _min 数值参数的最小值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * 
                      */
                     void SetMin(const int64_t& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取数值参数的最大值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
                      * @return Max 数值参数的最大值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * 
                      */
                     int64_t GetMax() const;
 
                     /**
                      * 设置数值参数的最大值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
-                     * @param Max 数值参数的最大值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * @param _max 数值参数的最大值，非数值参数或 Min 和 Max 值都为 0 则此项无意义。
+                     * 
                      */
                     void SetMax(const int64_t& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取参数值是否支持多选或者填写多个。
                      * @return IsMultiple 参数值是否支持多选或者填写多个。
+                     * 
                      */
                     bool GetIsMultiple() const;
 
                     /**
                      * 设置参数值是否支持多选或者填写多个。
-                     * @param IsMultiple 参数值是否支持多选或者填写多个。
+                     * @param _isMultiple 参数值是否支持多选或者填写多个。
+                     * 
                      */
                     void SetIsMultiple(const bool& _isMultiple);
 
                     /**
                      * 判断参数 IsMultiple 是否已赋值
                      * @return IsMultiple 是否已赋值
+                     * 
                      */
                     bool IsMultipleHasBeenSet() const;
 
                     /**
                      * 获取是否允许为空。
                      * @return IsAllowEmpty 是否允许为空。
+                     * 
                      */
                     bool GetIsAllowEmpty() const;
 
                     /**
                      * 设置是否允许为空。
-                     * @param IsAllowEmpty 是否允许为空。
+                     * @param _isAllowEmpty 是否允许为空。
+                     * 
                      */
                     void SetIsAllowEmpty(const bool& _isAllowEmpty);
 
                     /**
                      * 判断参数 IsAllowEmpty 是否已赋值
                      * @return IsAllowEmpty 是否已赋值
+                     * 
                      */
                     bool IsAllowEmptyHasBeenSet() const;
 
@@ -202,6 +223,7 @@ namespace TencentCloud
 <li> 为 NULL：RuleAction 选择 NormalAction；</li>
 <li> 成员参数 Id 为 Action：RuleAction 选择 RewirteAction；</li>
 <li> 成员参数 Id 为 StatusCode：RuleAction 选择 CodeAction。</li>
+                     * 
                      */
                     RuleExtraParameter GetExtraParameter() const;
 
@@ -210,16 +232,18 @@ namespace TencentCloud
 <li> 为 NULL：RuleAction 选择 NormalAction；</li>
 <li> 成员参数 Id 为 Action：RuleAction 选择 RewirteAction；</li>
 <li> 成员参数 Id 为 StatusCode：RuleAction 选择 CodeAction。</li>
-                     * @param ExtraParameter 特殊参数。
+                     * @param _extraParameter 特殊参数。
 <li> 为 NULL：RuleAction 选择 NormalAction；</li>
 <li> 成员参数 Id 为 Action：RuleAction 选择 RewirteAction；</li>
 <li> 成员参数 Id 为 StatusCode：RuleAction 选择 CodeAction。</li>
+                     * 
                      */
                     void SetExtraParameter(const RuleExtraParameter& _extraParameter);
 
                     /**
                      * 判断参数 ExtraParameter 是否已赋值
                      * @return ExtraParameter 是否已赋值
+                     * 
                      */
                     bool ExtraParameterHasBeenSet() const;
 

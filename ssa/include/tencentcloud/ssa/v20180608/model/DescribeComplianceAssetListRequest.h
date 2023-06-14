@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取页码
                      * @return Offset 页码
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页码
-                     * @param Offset 页码
+                     * @param _offset 页码
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return Limit 每页数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数量
-                     * @param Limit 每页数量
+                     * @param _limit 每页数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取检查项uuid
                      * @return Id 检查项uuid
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置检查项uuid
-                     * @param Id 检查项uuid
+                     * @param _id 检查项uuid
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filter 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilter() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filter 过滤条件
+                     * @param _filter 过滤条件
+                     * 
                      */
                     void SetFilter(const std::vector<Filter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取查询条件
                      * @return Search 查询条件
+                     * 
                      */
                     std::vector<Filter> GetSearch() const;
 
                     /**
                      * 设置查询条件
-                     * @param Search 查询条件
+                     * @param _search 查询条件
+                     * 
                      */
                     void SetSearch(const std::vector<Filter>& _search);
 
                     /**
                      * 判断参数 Search 是否已赋值
                      * @return Search 是否已赋值
+                     * 
                      */
                     bool SearchHasBeenSet() const;
 

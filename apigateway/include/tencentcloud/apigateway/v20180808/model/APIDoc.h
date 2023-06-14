@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取API文档ID
                      * @return ApiDocId API文档ID
+                     * 
                      */
                     std::string GetApiDocId() const;
 
                     /**
                      * 设置API文档ID
-                     * @param ApiDocId API文档ID
+                     * @param _apiDocId API文档ID
+                     * 
                      */
                     void SetApiDocId(const std::string& _apiDocId);
 
                     /**
                      * 判断参数 ApiDocId 是否已赋值
                      * @return ApiDocId 是否已赋值
+                     * 
                      */
                     bool ApiDocIdHasBeenSet() const;
 
                     /**
                      * 获取API文档名称
                      * @return ApiDocName API文档名称
+                     * 
                      */
                     std::string GetApiDocName() const;
 
                     /**
                      * 设置API文档名称
-                     * @param ApiDocName API文档名称
+                     * @param _apiDocName API文档名称
+                     * 
                      */
                     void SetApiDocName(const std::string& _apiDocName);
 
                     /**
                      * 判断参数 ApiDocName 是否已赋值
                      * @return ApiDocName 是否已赋值
+                     * 
                      */
                     bool ApiDocNameHasBeenSet() const;
 
                     /**
                      * 获取API文档构建状态
                      * @return ApiDocStatus API文档构建状态
+                     * 
                      */
                     std::string GetApiDocStatus() const;
 
                     /**
                      * 设置API文档构建状态
-                     * @param ApiDocStatus API文档构建状态
+                     * @param _apiDocStatus API文档构建状态
+                     * 
                      */
                     void SetApiDocStatus(const std::string& _apiDocStatus);
 
                     /**
                      * 判断参数 ApiDocStatus 是否已赋值
                      * @return ApiDocStatus 是否已赋值
+                     * 
                      */
                     bool ApiDocStatusHasBeenSet() const;
 

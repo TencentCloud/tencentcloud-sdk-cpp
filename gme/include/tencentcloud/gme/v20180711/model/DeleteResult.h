@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取错误码，0-剔除成功 其他-剔除失败
                      * @return Code 错误码，0-剔除成功 其他-剔除失败
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置错误码，0-剔除成功 其他-剔除失败
-                     * @param Code 错误码，0-剔除成功 其他-剔除失败
+                     * @param _code 错误码，0-剔除成功 其他-剔除失败
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取错误描述
                      * @return ErrorMsg 错误描述
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置错误描述
-                     * @param ErrorMsg 错误描述
+                     * @param _errorMsg 错误描述
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

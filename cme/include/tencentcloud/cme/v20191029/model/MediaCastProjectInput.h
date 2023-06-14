@@ -53,72 +53,84 @@ namespace TencentCloud
                     /**
                      * 获取输入源列表。输入源列表最大个数为100.
                      * @return SourceInfos 输入源列表。输入源列表最大个数为100.
+                     * 
                      */
                     std::vector<MediaCastSourceInfo> GetSourceInfos() const;
 
                     /**
                      * 设置输入源列表。输入源列表最大个数为100.
-                     * @param SourceInfos 输入源列表。输入源列表最大个数为100.
+                     * @param _sourceInfos 输入源列表。输入源列表最大个数为100.
+                     * 
                      */
                     void SetSourceInfos(const std::vector<MediaCastSourceInfo>& _sourceInfos);
 
                     /**
                      * 判断参数 SourceInfos 是否已赋值
                      * @return SourceInfos 是否已赋值
+                     * 
                      */
                     bool SourceInfosHasBeenSet() const;
 
                     /**
                      * 获取输出源列表。输出源列表最大个数为10.
                      * @return DestinationInfos 输出源列表。输出源列表最大个数为10.
+                     * 
                      */
                     std::vector<MediaCastDestinationInfo> GetDestinationInfos() const;
 
                     /**
                      * 设置输出源列表。输出源列表最大个数为10.
-                     * @param DestinationInfos 输出源列表。输出源列表最大个数为10.
+                     * @param _destinationInfos 输出源列表。输出源列表最大个数为10.
+                     * 
                      */
                     void SetDestinationInfos(const std::vector<MediaCastDestinationInfo>& _destinationInfos);
 
                     /**
                      * 判断参数 DestinationInfos 是否已赋值
                      * @return DestinationInfos 是否已赋值
+                     * 
                      */
                     bool DestinationInfosHasBeenSet() const;
 
                     /**
                      * 获取输出媒体配置。
                      * @return OutputMediaSetting 输出媒体配置。
+                     * 
                      */
                     MediaCastOutputMediaSetting GetOutputMediaSetting() const;
 
                     /**
                      * 设置输出媒体配置。
-                     * @param OutputMediaSetting 输出媒体配置。
+                     * @param _outputMediaSetting 输出媒体配置。
+                     * 
                      */
                     void SetOutputMediaSetting(const MediaCastOutputMediaSetting& _outputMediaSetting);
 
                     /**
                      * 判断参数 OutputMediaSetting 是否已赋值
                      * @return OutputMediaSetting 是否已赋值
+                     * 
                      */
                     bool OutputMediaSettingHasBeenSet() const;
 
                     /**
                      * 获取播放控制参数。
                      * @return PlaySetting 播放控制参数。
+                     * 
                      */
                     MediaCastPlaySetting GetPlaySetting() const;
 
                     /**
                      * 设置播放控制参数。
-                     * @param PlaySetting 播放控制参数。
+                     * @param _playSetting 播放控制参数。
+                     * 
                      */
                     void SetPlaySetting(const MediaCastPlaySetting& _playSetting);
 
                     /**
                      * 判断参数 PlaySetting 是否已赋值
                      * @return PlaySetting 是否已赋值
+                     * 
                      */
                     bool PlaySettingHasBeenSet() const;
 

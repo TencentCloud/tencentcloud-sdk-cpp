@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取印章ID列表
                      * @return SealIds 印章ID列表
+                     * 
                      */
                     std::vector<std::string> GetSealIds() const;
 
                     /**
                      * 设置印章ID列表
-                     * @param SealIds 印章ID列表
+                     * @param _sealIds 印章ID列表
+                     * 
                      */
                     void SetSealIds(const std::vector<std::string>& _sealIds);
 
                     /**
                      * 判断参数 SealIds 是否已赋值
                      * @return SealIds 是否已赋值
+                     * 
                      */
                     bool SealIdsHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识
                      * @return UserId 用户唯一标识
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户唯一标识
-                     * @param UserId 用户唯一标识
+                     * @param _userId 用户唯一标识
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

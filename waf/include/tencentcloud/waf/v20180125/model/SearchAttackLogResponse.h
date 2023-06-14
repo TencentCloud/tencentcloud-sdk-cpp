@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取当前返回的攻击日志条数
                      * @return Count 当前返回的攻击日志条数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取翻页游标，如果没有下一页了，这个参数为空""
                      * @return Context 翻页游标，如果没有下一页了，这个参数为空""
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取攻击日志数组条目内容
                      * @return Data 攻击日志数组条目内容
+                     * 
                      */
                     std::vector<AttackLogInfo> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取CLS接口返回内容
                      * @return ListOver CLS接口返回内容
+                     * 
                      */
                     bool GetListOver() const;
 
                     /**
                      * 判断参数 ListOver 是否已赋值
                      * @return ListOver 是否已赋值
+                     * 
                      */
                     bool ListOverHasBeenSet() const;
 
                     /**
                      * 获取CLS接口返回内容，标志是否启动新版本索引
                      * @return SqlFlag CLS接口返回内容，标志是否启动新版本索引
+                     * 
                      */
                     bool GetSqlFlag() const;
 
                     /**
                      * 判断参数 SqlFlag 是否已赋值
                      * @return SqlFlag 是否已赋值
+                     * 
                      */
                     bool SqlFlagHasBeenSet() const;
 

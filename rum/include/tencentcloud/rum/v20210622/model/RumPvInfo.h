@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pv pv访问量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPv() const;
 
                     /**
                      * 设置pv访问量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pv pv访问量
+                     * @param _pv pv访问量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPv(const std::string& _pv);
 
                     /**
                      * 判断参数 Pv 是否已赋值
                      * @return Pv 是否已赋值
+                     * 
                      */
                     bool PvHasBeenSet() const;
 
                     /**
                      * 获取时间
                      * @return CreateTime 时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置时间
-                     * @param CreateTime 时间
+                     * @param _createTime 时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

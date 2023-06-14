@@ -53,90 +53,105 @@ namespace TencentCloud
                     /**
                      * 获取IngressGateway 实例名字
                      * @return Name IngressGateway 实例名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置IngressGateway 实例名字
-                     * @param Name IngressGateway 实例名字
+                     * @param _name IngressGateway 实例名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取集群 ID
                      * @return ClusterId 集群 ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群 ID
-                     * @param ClusterId 集群 ID
+                     * @param _clusterId 集群 ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Service 配置
                      * @return Service Service 配置
+                     * 
                      */
                     Service GetService() const;
 
                     /**
                      * 设置Service 配置
-                     * @param Service Service 配置
+                     * @param _service Service 配置
+                     * 
                      */
                     void SetService(const Service& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取Workload 配置
                      * @return Workload Workload 配置
+                     * 
                      */
                     WorkloadConfig GetWorkload() const;
 
                     /**
                      * 设置Workload 配置
-                     * @param Workload Workload 配置
+                     * @param _workload Workload 配置
+                     * 
                      */
                     void SetWorkload(const WorkloadConfig& _workload);
 
                     /**
                      * 判断参数 Workload 是否已赋值
                      * @return Workload 是否已赋值
+                     * 
                      */
                     bool WorkloadHasBeenSet() const;
 
@@ -145,56 +160,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancer 负载均衡配置，自动创建 CLB 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LoadBalancer GetLoadBalancer() const;
 
                     /**
                      * 设置负载均衡配置，自动创建 CLB 时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalancer 负载均衡配置，自动创建 CLB 时返回
+                     * @param _loadBalancer 负载均衡配置，自动创建 CLB 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalancer(const LoadBalancer& _loadBalancer);
 
                     /**
                      * 判断参数 LoadBalancer 是否已赋值
                      * @return LoadBalancer 是否已赋值
+                     * 
                      */
                     bool LoadBalancerHasBeenSet() const;
 
                     /**
                      * 获取IngressGateway 状态信息，只读
                      * @return Status IngressGateway 状态信息，只读
+                     * 
                      */
                     IngressGatewayStatus GetStatus() const;
 
                     /**
                      * 设置IngressGateway 状态信息，只读
-                     * @param Status IngressGateway 状态信息，只读
+                     * @param _status IngressGateway 状态信息，只读
+                     * 
                      */
                     void SetStatus(const IngressGatewayStatus& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例ID，使用已有 CLB 时返回
                      * @return LoadBalancerId 负载均衡实例ID，使用已有 CLB 时返回
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，使用已有 CLB 时返回
-                     * @param LoadBalancerId 负载均衡实例ID，使用已有 CLB 时返回
+                     * @param _loadBalancerId 负载均衡实例ID，使用已有 CLB 时返回
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 

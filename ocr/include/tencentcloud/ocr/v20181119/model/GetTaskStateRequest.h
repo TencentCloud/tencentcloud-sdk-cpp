@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取智慧表单任务唯一身份ID
                      * @return TaskId 智慧表单任务唯一身份ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置智慧表单任务唯一身份ID
-                     * @param TaskId 智慧表单任务唯一身份ID
+                     * @param _taskId 智慧表单任务唯一身份ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

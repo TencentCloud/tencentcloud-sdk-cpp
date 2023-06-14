@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取待解除的流程编号（即原流程的编号）
                      * @return NeedRelievedFlowId 待解除的流程编号（即原流程的编号）
+                     * 
                      */
                     std::string GetNeedRelievedFlowId() const;
 
                     /**
                      * 设置待解除的流程编号（即原流程的编号）
-                     * @param NeedRelievedFlowId 待解除的流程编号（即原流程的编号）
+                     * @param _needRelievedFlowId 待解除的流程编号（即原流程的编号）
+                     * 
                      */
                     void SetNeedRelievedFlowId(const std::string& _needRelievedFlowId);
 
                     /**
                      * 判断参数 NeedRelievedFlowId 是否已赋值
                      * @return NeedRelievedFlowId 是否已赋值
+                     * 
                      */
                     bool NeedRelievedFlowIdHasBeenSet() const;
 
                     /**
                      * 获取解除协议内容
                      * @return ReliveInfo 解除协议内容
+                     * 
                      */
                     RelieveInfo GetReliveInfo() const;
 
                     /**
                      * 设置解除协议内容
-                     * @param ReliveInfo 解除协议内容
+                     * @param _reliveInfo 解除协议内容
+                     * 
                      */
                     void SetReliveInfo(const RelieveInfo& _reliveInfo);
 
                     /**
                      * 判断参数 ReliveInfo 是否已赋值
                      * @return ReliveInfo 是否已赋值
+                     * 
                      */
                     bool ReliveInfoHasBeenSet() const;
 
                     /**
                      * 获取非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
                      * @return ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * 
                      */
                     std::vector<ReleasedApprover> GetReleasedApprovers() const;
 
                     /**
                      * 设置非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
-                     * @param ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * @param _releasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * 
                      */
                     void SetReleasedApprovers(const std::vector<ReleasedApprover>& _releasedApprovers);
 
                     /**
                      * 判断参数 ReleasedApprovers 是否已赋值
                      * @return ReleasedApprovers 是否已赋值
+                     * 
                      */
                     bool ReleasedApproversHasBeenSet() const;
 
                     /**
                      * 获取签署完回调url，最大长度1000个字符
                      * @return CallbackUrl 签署完回调url，最大长度1000个字符
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置签署完回调url，最大长度1000个字符
-                     * @param CallbackUrl 签署完回调url，最大长度1000个字符
+                     * @param _callbackUrl 签署完回调url，最大长度1000个字符
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Organization 暂未开放
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Organization 暂未开放
+                     * @param _organization 暂未开放
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

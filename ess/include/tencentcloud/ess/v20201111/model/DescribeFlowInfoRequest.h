@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的流程ID列表，限制最大100个
                      * @return FlowIds 需要查询的流程ID列表，限制最大100个
+                     * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置需要查询的流程ID列表，限制最大100个
-                     * @param FlowIds 需要查询的流程ID列表，限制最大100个
+                     * @param _flowIds 需要查询的流程ID列表，限制最大100个
+                     * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
                     /**
                      * 判断参数 FlowIds 是否已赋值
                      * @return FlowIds 是否已赋值
+                     * 
                      */
                     bool FlowIdsHasBeenSet() const;
 
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

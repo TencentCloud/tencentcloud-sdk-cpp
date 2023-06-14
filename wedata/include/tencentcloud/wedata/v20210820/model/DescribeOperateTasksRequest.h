@@ -45,360 +45,420 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取文件夹id，多个文件夹以逗号分隔
                      * @return FolderIdList 文件夹id，多个文件夹以逗号分隔
+                     * 
                      */
                     std::string GetFolderIdList() const;
 
                     /**
                      * 设置文件夹id，多个文件夹以逗号分隔
-                     * @param FolderIdList 文件夹id，多个文件夹以逗号分隔
+                     * @param _folderIdList 文件夹id，多个文件夹以逗号分隔
+                     * 
                      */
                     void SetFolderIdList(const std::string& _folderIdList);
 
                     /**
                      * 判断参数 FolderIdList 是否已赋值
                      * @return FolderIdList 是否已赋值
+                     * 
                      */
                     bool FolderIdListHasBeenSet() const;
 
                     /**
                      * 获取工作流id，多个工作流id之间以英文字符逗号分隔
                      * @return WorkFlowIdList 工作流id，多个工作流id之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetWorkFlowIdList() const;
 
                     /**
                      * 设置工作流id，多个工作流id之间以英文字符逗号分隔
-                     * @param WorkFlowIdList 工作流id，多个工作流id之间以英文字符逗号分隔
+                     * @param _workFlowIdList 工作流id，多个工作流id之间以英文字符逗号分隔
+                     * 
                      */
                     void SetWorkFlowIdList(const std::string& _workFlowIdList);
 
                     /**
                      * 判断参数 WorkFlowIdList 是否已赋值
                      * @return WorkFlowIdList 是否已赋值
+                     * 
                      */
                     bool WorkFlowIdListHasBeenSet() const;
 
                     /**
                      * 获取工作流名称，多个工作流名称之间以英文字符逗号分隔
                      * @return WorkFlowNameList 工作流名称，多个工作流名称之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetWorkFlowNameList() const;
 
                     /**
                      * 设置工作流名称，多个工作流名称之间以英文字符逗号分隔
-                     * @param WorkFlowNameList 工作流名称，多个工作流名称之间以英文字符逗号分隔
+                     * @param _workFlowNameList 工作流名称，多个工作流名称之间以英文字符逗号分隔
+                     * 
                      */
                     void SetWorkFlowNameList(const std::string& _workFlowNameList);
 
                     /**
                      * 判断参数 WorkFlowNameList 是否已赋值
                      * @return WorkFlowNameList 是否已赋值
+                     * 
                      */
                     bool WorkFlowNameListHasBeenSet() const;
 
                     /**
                      * 获取任务名称，多个任务名称之间以英文字符逗号分隔
                      * @return TaskNameList 任务名称，多个任务名称之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetTaskNameList() const;
 
                     /**
                      * 设置任务名称，多个任务名称之间以英文字符逗号分隔
-                     * @param TaskNameList 任务名称，多个任务名称之间以英文字符逗号分隔
+                     * @param _taskNameList 任务名称，多个任务名称之间以英文字符逗号分隔
+                     * 
                      */
                     void SetTaskNameList(const std::string& _taskNameList);
 
                     /**
                      * 判断参数 TaskNameList 是否已赋值
                      * @return TaskNameList 是否已赋值
+                     * 
                      */
                     bool TaskNameListHasBeenSet() const;
 
                     /**
                      * 获取任务id，多个任务id之间以英文字符逗号分隔
                      * @return TaskIdList 任务id，多个任务id之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetTaskIdList() const;
 
                     /**
                      * 设置任务id，多个任务id之间以英文字符逗号分隔
-                     * @param TaskIdList 任务id，多个任务id之间以英文字符逗号分隔
+                     * @param _taskIdList 任务id，多个任务id之间以英文字符逗号分隔
+                     * 
                      */
                     void SetTaskIdList(const std::string& _taskIdList);
 
                     /**
                      * 判断参数 TaskIdList 是否已赋值
                      * @return TaskIdList 是否已赋值
+                     * 
                      */
                     bool TaskIdListHasBeenSet() const;
 
                     /**
                      * 获取页号
                      * @return PageNumber 页号
+                     * 
                      */
                     std::string GetPageNumber() const;
 
                     /**
                      * 设置页号
-                     * @param PageNumber 页号
+                     * @param _pageNumber 页号
+                     * 
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取分页大小
                      * @return PageSize 分页大小
+                     * 
                      */
                     std::string GetPageSize() const;
 
                     /**
                      * 设置分页大小
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
+                     * 
                      */
                     void SetPageSize(const std::string& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件
                      * @return SortItem 排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件
+                     * 
                      */
                     std::string GetSortItem() const;
 
                     /**
                      * 设置排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件
-                     * @param SortItem 排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件
+                     * @param _sortItem 排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件
+                     * 
                      */
                     void SetSortItem(const std::string& _sortItem);
 
                     /**
                      * 判断参数 SortItem 是否已赋值
                      * @return SortItem 是否已赋值
+                     * 
                      */
                     bool SortItemHasBeenSet() const;
 
                     /**
                      * 获取排序类型。两种取值 DESC、ASC
                      * @return SortType 排序类型。两种取值 DESC、ASC
+                     * 
                      */
                     std::string GetSortType() const;
 
                     /**
                      * 设置排序类型。两种取值 DESC、ASC
-                     * @param SortType 排序类型。两种取值 DESC、ASC
+                     * @param _sortType 排序类型。两种取值 DESC、ASC
+                     * 
                      */
                     void SetSortType(const std::string& _sortType);
 
                     /**
                      * 判断参数 SortType 是否已赋值
                      * @return SortType 是否已赋值
+                     * 
                      */
                     bool SortTypeHasBeenSet() const;
 
                     /**
                      * 获取责任人，多个责任人之间以英文字符逗号分隔
                      * @return InChargeList 责任人，多个责任人之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetInChargeList() const;
 
                     /**
                      * 设置责任人，多个责任人之间以英文字符逗号分隔
-                     * @param InChargeList 责任人，多个责任人之间以英文字符逗号分隔
+                     * @param _inChargeList 责任人，多个责任人之间以英文字符逗号分隔
+                     * 
                      */
                     void SetInChargeList(const std::string& _inChargeList);
 
                     /**
                      * 判断参数 InChargeList 是否已赋值
                      * @return InChargeList 是否已赋值
+                     * 
                      */
                     bool InChargeListHasBeenSet() const;
 
                     /**
                      * 获取任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔
                      * @return TaskTypeIdList 任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetTaskTypeIdList() const;
 
                     /**
                      * 设置任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔
-                     * @param TaskTypeIdList 任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔
+                     * @param _taskTypeIdList 任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔
+                     * 
                      */
                     void SetTaskTypeIdList(const std::string& _taskTypeIdList);
 
                     /**
                      * 判断参数 TaskTypeIdList 是否已赋值
                      * @return TaskTypeIdList 是否已赋值
+                     * 
                      */
                     bool TaskTypeIdListHasBeenSet() const;
 
                     /**
                      * 获取任务状态字符串，多个任务状态之间以英文字符逗号分隔
                      * @return StatusList 任务状态字符串，多个任务状态之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetStatusList() const;
 
                     /**
                      * 设置任务状态字符串，多个任务状态之间以英文字符逗号分隔
-                     * @param StatusList 任务状态字符串，多个任务状态之间以英文字符逗号分隔
+                     * @param _statusList 任务状态字符串，多个任务状态之间以英文字符逗号分隔
+                     * 
                      */
                     void SetStatusList(const std::string& _statusList);
 
                     /**
                      * 判断参数 StatusList 是否已赋值
                      * @return StatusList 是否已赋值
+                     * 
                      */
                     bool StatusListHasBeenSet() const;
 
                     /**
                      * 获取任务周期类型字符串，多个任务周期之间以英文字符逗号分隔
                      * @return TaskCycleUnitList 任务周期类型字符串，多个任务周期之间以英文字符逗号分隔
+                     * 
                      */
                     std::string GetTaskCycleUnitList() const;
 
                     /**
                      * 设置任务周期类型字符串，多个任务周期之间以英文字符逗号分隔
-                     * @param TaskCycleUnitList 任务周期类型字符串，多个任务周期之间以英文字符逗号分隔
+                     * @param _taskCycleUnitList 任务周期类型字符串，多个任务周期之间以英文字符逗号分隔
+                     * 
                      */
                     void SetTaskCycleUnitList(const std::string& _taskCycleUnitList);
 
                     /**
                      * 判断参数 TaskCycleUnitList 是否已赋值
                      * @return TaskCycleUnitList 是否已赋值
+                     * 
                      */
                     bool TaskCycleUnitListHasBeenSet() const;
 
                     /**
                      * 获取任务所属产品类型
                      * @return ProductNameList 任务所属产品类型
+                     * 
                      */
                     std::string GetProductNameList() const;
 
                     /**
                      * 设置任务所属产品类型
-                     * @param ProductNameList 任务所属产品类型
+                     * @param _productNameList 任务所属产品类型
+                     * 
                      */
                     void SetProductNameList(const std::string& _productNameList);
 
                     /**
                      * 判断参数 ProductNameList 是否已赋值
                      * @return ProductNameList 是否已赋值
+                     * 
                      */
                     bool ProductNameListHasBeenSet() const;
 
                     /**
                      * 获取数据源id或（仅针对离线同步任务）来源数据源id
                      * @return SourceServiceId 数据源id或（仅针对离线同步任务）来源数据源id
+                     * 
                      */
                     std::string GetSourceServiceId() const;
 
                     /**
                      * 设置数据源id或（仅针对离线同步任务）来源数据源id
-                     * @param SourceServiceId 数据源id或（仅针对离线同步任务）来源数据源id
+                     * @param _sourceServiceId 数据源id或（仅针对离线同步任务）来源数据源id
+                     * 
                      */
                     void SetSourceServiceId(const std::string& _sourceServiceId);
 
                     /**
                      * 判断参数 SourceServiceId 是否已赋值
                      * @return SourceServiceId 是否已赋值
+                     * 
                      */
                     bool SourceServiceIdHasBeenSet() const;
 
                     /**
                      * 获取数据源类型或（仅针对离线同步任务）来源数据源类型
                      * @return SourceServiceType 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     * 
                      */
                     std::string GetSourceServiceType() const;
 
                     /**
                      * 设置数据源类型或（仅针对离线同步任务）来源数据源类型
-                     * @param SourceServiceType 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     * @param _sourceServiceType 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     * 
                      */
                     void SetSourceServiceType(const std::string& _sourceServiceType);
 
                     /**
                      * 判断参数 SourceServiceType 是否已赋值
                      * @return SourceServiceType 是否已赋值
+                     * 
                      */
                     bool SourceServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取（仅针对离线同步任务）目标数据源id
                      * @return TargetServiceId （仅针对离线同步任务）目标数据源id
+                     * 
                      */
                     std::string GetTargetServiceId() const;
 
                     /**
                      * 设置（仅针对离线同步任务）目标数据源id
-                     * @param TargetServiceId （仅针对离线同步任务）目标数据源id
+                     * @param _targetServiceId （仅针对离线同步任务）目标数据源id
+                     * 
                      */
                     void SetTargetServiceId(const std::string& _targetServiceId);
 
                     /**
                      * 判断参数 TargetServiceId 是否已赋值
                      * @return TargetServiceId 是否已赋值
+                     * 
                      */
                     bool TargetServiceIdHasBeenSet() const;
 
                     /**
                      * 获取（仅针对离线同步任务）目标数据源类型
                      * @return TargetServiceType （仅针对离线同步任务）目标数据源类型
+                     * 
                      */
                     std::string GetTargetServiceType() const;
 
                     /**
                      * 设置（仅针对离线同步任务）目标数据源类型
-                     * @param TargetServiceType （仅针对离线同步任务）目标数据源类型
+                     * @param _targetServiceType （仅针对离线同步任务）目标数据源类型
+                     * 
                      */
                     void SetTargetServiceType(const std::string& _targetServiceType);
 
                     /**
                      * 判断参数 TargetServiceType 是否已赋值
                      * @return TargetServiceType 是否已赋值
+                     * 
                      */
                     bool TargetServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取告警类型，多个类型以逗号分隔
                      * @return AlarmType 告警类型，多个类型以逗号分隔
+                     * 
                      */
                     std::string GetAlarmType() const;
 
                     /**
                      * 设置告警类型，多个类型以逗号分隔
-                     * @param AlarmType 告警类型，多个类型以逗号分隔
+                     * @param _alarmType 告警类型，多个类型以逗号分隔
+                     * 
                      */
                     void SetAlarmType(const std::string& _alarmType);
 
                     /**
                      * 判断参数 AlarmType 是否已赋值
                      * @return AlarmType 是否已赋值
+                     * 
                      */
                     bool AlarmTypeHasBeenSet() const;
 

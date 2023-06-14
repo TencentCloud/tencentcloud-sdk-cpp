@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取新增站点数。
                      * @return Number 新增站点数。
+                     * 
                      */
                     uint64_t GetNumber() const;
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取站点数组
                      * @return Sites 站点数组
+                     * 
                      */
                     std::vector<MiniSite> GetSites() const;
 
                     /**
                      * 判断参数 Sites 是否已赋值
                      * @return Sites 是否已赋值
+                     * 
                      */
                     bool SitesHasBeenSet() const;
 

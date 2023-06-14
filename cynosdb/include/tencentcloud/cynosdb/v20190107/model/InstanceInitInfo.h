@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实例cpu
                      * @return Cpu 实例cpu
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置实例cpu
-                     * @param Cpu 实例cpu
+                     * @param _cpu 实例cpu
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取实例内存
                      * @return Memory 实例内存
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置实例内存
-                     * @param Memory 实例内存
+                     * @param _memory 实例内存
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取实例类型 rw/ro
                      * @return InstanceType 实例类型 rw/ro
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型 rw/ro
-                     * @param InstanceType 实例类型 rw/ro
+                     * @param _instanceType 实例类型 rw/ro
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取实例个数,范围[1,15]
                      * @return InstanceCount 实例个数,范围[1,15]
+                     * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置实例个数,范围[1,15]
-                     * @param InstanceCount 实例个数,范围[1,15]
+                     * @param _instanceCount 实例个数,范围[1,15]
+                     * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 

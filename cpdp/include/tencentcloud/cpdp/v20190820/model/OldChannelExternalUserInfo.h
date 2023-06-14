@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelExternalUserType 渠道方用户类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelExternalUserType() const;
 
                     /**
                      * 设置渠道方用户类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelExternalUserType 渠道方用户类型
+                     * @param _channelExternalUserType 渠道方用户类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelExternalUserType(const std::string& _channelExternalUserType);
 
                     /**
                      * 判断参数 ChannelExternalUserType 是否已赋值
                      * @return ChannelExternalUserType 是否已赋值
+                     * 
                      */
                     bool ChannelExternalUserTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelExternalUserId 渠道方用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelExternalUserId() const;
 
                     /**
                      * 设置渠道方用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelExternalUserId 渠道方用户ID
+                     * @param _channelExternalUserId 渠道方用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelExternalUserId(const std::string& _channelExternalUserId);
 
                     /**
                      * 判断参数 ChannelExternalUserId 是否已赋值
                      * @return ChannelExternalUserId 是否已赋值
+                     * 
                      */
                     bool ChannelExternalUserIdHasBeenSet() const;
 

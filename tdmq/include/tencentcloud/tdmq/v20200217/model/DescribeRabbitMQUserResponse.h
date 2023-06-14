@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回的User数量
                      * @return TotalCount 返回的User数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取当前已创建的RabbitMQ用户列表
                      * @return RabbitMQUserList 当前已创建的RabbitMQ用户列表
+                     * 
                      */
                     std::vector<RabbitMQUser> GetRabbitMQUserList() const;
 
                     /**
                      * 判断参数 RabbitMQUserList 是否已赋值
                      * @return RabbitMQUserList 是否已赋值
+                     * 
                      */
                     bool RabbitMQUserListHasBeenSet() const;
 

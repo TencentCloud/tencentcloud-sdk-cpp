@@ -46,156 +46,182 @@ namespace TencentCloud
                     /**
                      * 获取合约CNS地址
                      * @return Hash 合约CNS地址
+                     * 
                      */
                     std::string GetHash() const;
 
                     /**
                      * 判断参数 Hash 是否已赋值
                      * @return Hash 是否已赋值
+                     * 
                      */
                     bool HashHasBeenSet() const;
 
                     /**
                      * 获取合约主群组ID
                      * @return GroupId 合约主群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取部署机构DID
                      * @return DeployDid 部署机构DID
+                     * 
                      */
                     std::string GetDeployDid() const;
 
                     /**
                      * 判断参数 DeployDid 是否已赋值
                      * @return DeployDid 是否已赋值
+                     * 
                      */
                     bool DeployDidHasBeenSet() const;
 
                     /**
                      * 获取TDID SDK版本
                      * @return SdkVersion TDID SDK版本
+                     * 
                      */
                     std::string GetSdkVersion() const;
 
                     /**
                      * 判断参数 SdkVersion 是否已赋值
                      * @return SdkVersion 是否已赋值
+                     * 
                      */
                     bool SdkVersionHasBeenSet() const;
 
                     /**
                      * 获取TDID 合约版本
                      * @return ContractVersion TDID 合约版本
+                     * 
                      */
                     std::string GetContractVersion() const;
 
                     /**
                      * 判断参数 ContractVersion 是否已赋值
                      * @return ContractVersion 是否已赋值
+                     * 
                      */
                     bool ContractVersionHasBeenSet() const;
 
                     /**
                      * 获取区块链节点版本
                      * @return BlockVersion 区块链节点版本
+                     * 
                      */
                     std::string GetBlockVersion() const;
 
                     /**
                      * 判断参数 BlockVersion 是否已赋值
                      * @return BlockVersion 是否已赋值
+                     * 
                      */
                     bool BlockVersionHasBeenSet() const;
 
                     /**
                      * 获取区块链节点IP
                      * @return BlockIp 区块链节点IP
+                     * 
                      */
                     std::string GetBlockIp() const;
 
                     /**
                      * 判断参数 BlockIp 是否已赋值
                      * @return BlockIp 是否已赋值
+                     * 
                      */
                     bool BlockIpHasBeenSet() const;
 
                     /**
                      * 获取DID合约地址
                      * @return DidAddress DID合约地址
+                     * 
                      */
                     std::string GetDidAddress() const;
 
                     /**
                      * 判断参数 DidAddress 是否已赋值
                      * @return DidAddress 是否已赋值
+                     * 
                      */
                     bool DidAddressHasBeenSet() const;
 
                     /**
                      * 获取CPT合约地址
                      * @return CptAddress CPT合约地址
+                     * 
                      */
                     std::string GetCptAddress() const;
 
                     /**
                      * 判断参数 CptAddress 是否已赋值
                      * @return CptAddress 是否已赋值
+                     * 
                      */
                     bool CptAddressHasBeenSet() const;
 
                     /**
                      * 获取Authority Issuer地址
                      * @return AuthorityAddress Authority Issuer地址
+                     * 
                      */
                     std::string GetAuthorityAddress() const;
 
                     /**
                      * 判断参数 AuthorityAddress 是否已赋值
                      * @return AuthorityAddress 是否已赋值
+                     * 
                      */
                     bool AuthorityAddressHasBeenSet() const;
 
                     /**
                      * 获取Evidence合约地址
                      * @return EvidenceAddress Evidence合约地址
+                     * 
                      */
                     std::string GetEvidenceAddress() const;
 
                     /**
                      * 判断参数 EvidenceAddress 是否已赋值
                      * @return EvidenceAddress 是否已赋值
+                     * 
                      */
                     bool EvidenceAddressHasBeenSet() const;
 
                     /**
                      * 获取Specific Issuer合约地址
                      * @return SpecificAddress Specific Issuer合约地址
+                     * 
                      */
                     std::string GetSpecificAddress() const;
 
                     /**
                      * 判断参数 SpecificAddress 是否已赋值
                      * @return SpecificAddress 是否已赋值
+                     * 
                      */
                     bool SpecificAddressHasBeenSet() const;
 
                     /**
                      * 获取链ID
                      * @return ChainId 链ID
+                     * 
                      */
                     std::string GetChainId() const;
 
                     /**
                      * 判断参数 ChainId 是否已赋值
                      * @return ChainId 是否已赋值
+                     * 
                      */
                     bool ChainIdHasBeenSet() const;
 

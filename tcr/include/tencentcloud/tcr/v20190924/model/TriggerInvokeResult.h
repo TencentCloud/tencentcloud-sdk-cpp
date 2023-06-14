@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode 请求TKE返回值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 设置请求TKE返回值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReturnCode 请求TKE返回值
+                     * @param _returnCode 请求TKE返回值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReturnCode(const int64_t& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnMsg 请求TKE返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 设置请求TKE返回信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReturnMsg 请求TKE返回信息
+                     * @param _returnMsg 请求TKE返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReturnMsg(const std::string& _returnMsg);
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 

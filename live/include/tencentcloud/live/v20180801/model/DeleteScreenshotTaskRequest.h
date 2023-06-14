@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。
                      * @return TaskId 任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。
-                     * @param TaskId 任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。
+                     * @param _taskId 任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

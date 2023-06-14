@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取验证码AppId
                      * @return CaptchaAppId 验证码AppId
+                     * 
                      */
                     std::string GetCaptchaAppId() const;
 
                     /**
                      * 设置验证码AppId
-                     * @param CaptchaAppId 验证码AppId
+                     * @param _captchaAppId 验证码AppId
+                     * 
                      */
                     void SetCaptchaAppId(const std::string& _captchaAppId);
 
                     /**
                      * 判断参数 CaptchaAppId 是否已赋值
                      * @return CaptchaAppId 是否已赋值
+                     * 
                      */
                     bool CaptchaAppIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间字符串
                      * @return StartTimeStr 开始时间字符串
+                     * 
                      */
                     std::string GetStartTimeStr() const;
 
                     /**
                      * 设置开始时间字符串
-                     * @param StartTimeStr 开始时间字符串
+                     * @param _startTimeStr 开始时间字符串
+                     * 
                      */
                     void SetStartTimeStr(const std::string& _startTimeStr);
 
                     /**
                      * 判断参数 StartTimeStr 是否已赋值
                      * @return StartTimeStr 是否已赋值
+                     * 
                      */
                     bool StartTimeStrHasBeenSet() const;
 
                     /**
                      * 获取结束时间字符串
                      * @return EndTimeStr 结束时间字符串
+                     * 
                      */
                     std::string GetEndTimeStr() const;
 
                     /**
                      * 设置结束时间字符串
-                     * @param EndTimeStr 结束时间字符串
+                     * @param _endTimeStr 结束时间字符串
+                     * 
                      */
                     void SetEndTimeStr(const std::string& _endTimeStr);
 
                     /**
                      * 判断参数 EndTimeStr 是否已赋值
                      * @return EndTimeStr 是否已赋值
+                     * 
                      */
                     bool EndTimeStrHasBeenSet() const;
 
                     /**
                      * 获取查询粒度
                      * @return Dimension 查询粒度
+                     * 
                      */
                     std::string GetDimension() const;
 
                     /**
                      * 设置查询粒度
-                     * @param Dimension 查询粒度
+                     * @param _dimension 查询粒度
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 

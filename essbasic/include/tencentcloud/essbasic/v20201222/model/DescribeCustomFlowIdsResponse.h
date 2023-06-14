@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义流程 id 映射列表
                      * @return CustomIdList 自定义流程 id 映射列表
+                     * 
                      */
                     std::vector<CustomFlowIdMap> GetCustomIdList() const;
 
                     /**
                      * 判断参数 CustomIdList 是否已赋值
                      * @return CustomIdList 是否已赋值
+                     * 
                      */
                     bool CustomIdListHasBeenSet() const;
 

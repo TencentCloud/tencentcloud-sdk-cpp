@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取RTMP拉流地址的tcUrl。
                      * @return TcUrl RTMP拉流地址的tcUrl。
+                     * 
                      */
                     std::string GetTcUrl() const;
 
                     /**
                      * 设置RTMP拉流地址的tcUrl。
-                     * @param TcUrl RTMP拉流地址的tcUrl。
+                     * @param _tcUrl RTMP拉流地址的tcUrl。
+                     * 
                      */
                     void SetTcUrl(const std::string& _tcUrl);
 
                     /**
                      * 判断参数 TcUrl 是否已赋值
                      * @return TcUrl 是否已赋值
+                     * 
                      */
                     bool TcUrlHasBeenSet() const;
 
                     /**
                      * 获取RTMP拉流地址的流key。
                      * @return StreamKey RTMP拉流地址的流key。
+                     * 
                      */
                     std::string GetStreamKey() const;
 
                     /**
                      * 设置RTMP拉流地址的流key。
-                     * @param StreamKey RTMP拉流地址的流key。
+                     * @param _streamKey RTMP拉流地址的流key。
+                     * 
                      */
                     void SetStreamKey(const std::string& _streamKey);
 
                     /**
                      * 判断参数 StreamKey 是否已赋值
                      * @return StreamKey 是否已赋值
+                     * 
                      */
                     bool StreamKeyHasBeenSet() const;
 

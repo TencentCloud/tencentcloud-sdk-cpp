@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取源用户账户名
                      * @return SrcUser 源用户账户名
+                     * 
                      */
                     std::string GetSrcUser() const;
 
                     /**
                      * 设置源用户账户名
-                     * @param SrcUser 源用户账户名
+                     * @param _srcUser 源用户账户名
+                     * 
                      */
                     void SetSrcUser(const std::string& _srcUser);
 
                     /**
                      * 判断参数 SrcUser 是否已赋值
                      * @return SrcUser 是否已赋值
+                     * 
                      */
                     bool SrcUserHasBeenSet() const;
 
                     /**
                      * 获取源用户HOST
                      * @return SrcHost 源用户HOST
+                     * 
                      */
                     std::string GetSrcHost() const;
 
                     /**
                      * 设置源用户HOST
-                     * @param SrcHost 源用户HOST
+                     * @param _srcHost 源用户HOST
+                     * 
                      */
                     void SetSrcHost(const std::string& _srcHost);
 
                     /**
                      * 判断参数 SrcHost 是否已赋值
                      * @return SrcHost 是否已赋值
+                     * 
                      */
                     bool SrcHostHasBeenSet() const;
 
                     /**
                      * 获取目的用户账户名
                      * @return DstUser 目的用户账户名
+                     * 
                      */
                     std::string GetDstUser() const;
 
                     /**
                      * 设置目的用户账户名
-                     * @param DstUser 目的用户账户名
+                     * @param _dstUser 目的用户账户名
+                     * 
                      */
                     void SetDstUser(const std::string& _dstUser);
 
                     /**
                      * 判断参数 DstUser 是否已赋值
                      * @return DstUser 是否已赋值
+                     * 
                      */
                     bool DstUserHasBeenSet() const;
 
                     /**
                      * 获取目的用户HOST
                      * @return DstHost 目的用户HOST
+                     * 
                      */
                     std::string GetDstHost() const;
 
                     /**
                      * 设置目的用户HOST
-                     * @param DstHost 目的用户HOST
+                     * @param _dstHost 目的用户HOST
+                     * 
                      */
                     void SetDstHost(const std::string& _dstHost);
 
                     /**
                      * 判断参数 DstHost 是否已赋值
                      * @return DstHost 是否已赋值
+                     * 
                      */
                     bool DstHostHasBeenSet() const;
 
                     /**
                      * 获取目的用户账户描述
                      * @return DstDesc 目的用户账户描述
+                     * 
                      */
                     std::string GetDstDesc() const;
 
                     /**
                      * 设置目的用户账户描述
-                     * @param DstDesc 目的用户账户描述
+                     * @param _dstDesc 目的用户账户描述
+                     * 
                      */
                     void SetDstDesc(const std::string& _dstDesc);
 
                     /**
                      * 判断参数 DstDesc 是否已赋值
                      * @return DstDesc 是否已赋值
+                     * 
                      */
                     bool DstDescHasBeenSet() const;
 

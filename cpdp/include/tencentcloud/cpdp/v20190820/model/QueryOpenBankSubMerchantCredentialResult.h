@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取上传状态
                      * @return UploadStatus 上传状态
+                     * 
                      */
                     std::string GetUploadStatus() const;
 
                     /**
                      * 设置上传状态
-                     * @param UploadStatus 上传状态
+                     * @param _uploadStatus 上传状态
+                     * 
                      */
                     void SetUploadStatus(const std::string& _uploadStatus);
 
                     /**
                      * 判断参数 UploadStatus 是否已赋值
                      * @return UploadStatus 是否已赋值
+                     * 
                      */
                     bool UploadStatusHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadMessage 上传描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadMessage() const;
 
                     /**
                      * 设置上传描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UploadMessage 上传描述
+                     * @param _uploadMessage 上传描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUploadMessage(const std::string& _uploadMessage);
 
                     /**
                      * 判断参数 UploadMessage 是否已赋值
                      * @return UploadMessage 是否已赋值
+                     * 
                      */
                     bool UploadMessageHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 参数名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 参数名称
+                     * @param _name 参数名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 参数信息所属规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemory() const;
 
                     /**
                      * 设置参数信息所属规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Memory 参数信息所属规格
+                     * @param _memory 参数信息所属规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemory(const std::string& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 参数在该规格下的默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置参数在该规格下的默认值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 参数在该规格下的默认值
+                     * @param _value 参数在该规格下的默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 参数值单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置参数值单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 参数值单位。参数没有单位时，该字段返回空
+                     * @param _unit 参数值单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 数值类型（integer、real）参数，取值上界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMax() const;
 
                     /**
                      * 设置数值类型（integer、real）参数，取值上界
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Max 数值类型（integer、real）参数，取值上界
+                     * @param _max 数值类型（integer、real）参数，取值上界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMax(const double& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Min 数值类型（integer、real）参数，取值下界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMin() const;
 
                     /**
                      * 设置数值类型（integer、real）参数，取值下界
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Min 数值类型（integer、real）参数，取值下界
+                     * @param _min 数值类型（integer、real）参数，取值下界
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMin(const double& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 枚举类型参数，取值范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置枚举类型参数，取值范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnumValue 枚举类型参数，取值范围
+                     * @param _enumValue 枚举类型参数，取值范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
 
                     /**
                      * 判断参数 EnumValue 是否已赋值
                      * @return EnumValue 是否已赋值
+                     * 
                      */
                     bool EnumValueHasBeenSet() const;
 

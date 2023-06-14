@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取vpc的ID
                      * @return VpcId vpc的ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的ID
-                     * @param VpcId vpc的ID
+                     * @param _vpcId vpc的ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID列表，当VpcId不为空，SubnetIds也不能为空
                      * @return SubnetIds 子网ID列表，当VpcId不为空，SubnetIds也不能为空
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网ID列表，当VpcId不为空，SubnetIds也不能为空
-                     * @param SubnetIds 子网ID列表，当VpcId不为空，SubnetIds也不能为空
+                     * @param _subnetIds 子网ID列表，当VpcId不为空，SubnetIds也不能为空
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 

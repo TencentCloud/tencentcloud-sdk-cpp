@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取渠道商ID，不要传
                      * @return AgentId 渠道商ID，不要传
+                     * 
                      */
                     uint64_t GetAgentId() const;
 
                     /**
                      * 设置渠道商ID，不要传
-                     * @param AgentId 渠道商ID，不要传
+                     * @param _agentId 渠道商ID，不要传
+                     * 
                      */
                     void SetAgentId(const uint64_t& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return PageNumber 页数
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页数
-                     * @param PageNumber 页数
+                     * @param _pageNumber 页数
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return PageSize 每页数量
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页数量
-                     * @param PageSize 每页数量
+                     * @param _pageSize 每页数量
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取搜索企业ID
                      * @return Keyword 搜索企业ID
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索企业ID
-                     * @param Keyword 搜索企业ID
+                     * @param _keyword 搜索企业ID
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

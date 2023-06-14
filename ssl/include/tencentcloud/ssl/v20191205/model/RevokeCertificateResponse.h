@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RevokeDomainValidateAuths 吊销证书域名验证信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RevokeDomainValidateAuths> GetRevokeDomainValidateAuths() const;
 
                     /**
                      * 判断参数 RevokeDomainValidateAuths 是否已赋值
                      * @return RevokeDomainValidateAuths 是否已赋值
+                     * 
                      */
                     bool RevokeDomainValidateAuthsHasBeenSet() const;
 

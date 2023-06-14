@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>RUNNING：实例操作中
 <li>SUCCESSFUL：活动成功
 <li>FAILED：活动失败
+                     * 
                      */
                     std::string GetInstanceStatus() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 <li>RUNNING：实例操作中
 <li>SUCCESSFUL：活动成功
 <li>FAILED：活动失败
-                     * @param InstanceStatus 实例在伸缩活动中的状态。取值如下：
+                     * @param _instanceStatus 实例在伸缩活动中的状态。取值如下：
 <li>INIT：初始化中
 <li>RUNNING：实例操作中
 <li>SUCCESSFUL：活动成功
 <li>FAILED：活动失败
+                     * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 

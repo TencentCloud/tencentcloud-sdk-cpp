@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取proxy的唯一id
                      * @return ProxyUid proxy的唯一id
+                     * 
                      */
                     std::string GetProxyUid() const;
 
                     /**
                      * 设置proxy的唯一id
-                     * @param ProxyUid proxy的唯一id
+                     * @param _proxyUid proxy的唯一id
+                     * 
                      */
                     void SetProxyUid(const std::string& _proxyUid);
 
                     /**
                      * 判断参数 ProxyUid 是否已赋值
                      * @return ProxyUid 是否已赋值
+                     * 
                      */
                     bool ProxyUidHasBeenSet() const;
 
                     /**
                      * 获取机器类型
                      * @return MachineType 机器类型
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置机器类型
-                     * @param MachineType 机器类型
+                     * @param _machineType 机器类型
+                     * 
                      */
                     void SetMachineType(const std::string& _machineType);
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
                     /**
                      * 获取请求包速度
                      * @return ProcessSpeed 请求包速度
+                     * 
                      */
                     int64_t GetProcessSpeed() const;
 
                     /**
                      * 设置请求包速度
-                     * @param ProcessSpeed 请求包速度
+                     * @param _processSpeed 请求包速度
+                     * 
                      */
                     void SetProcessSpeed(const int64_t& _processSpeed);
 
                     /**
                      * 判断参数 ProcessSpeed 是否已赋值
                      * @return ProcessSpeed 是否已赋值
+                     * 
                      */
                     bool ProcessSpeedHasBeenSet() const;
 
                     /**
                      * 获取请求包时延
                      * @return AverageProcessDelay 请求包时延
+                     * 
                      */
                     int64_t GetAverageProcessDelay() const;
 
                     /**
                      * 设置请求包时延
-                     * @param AverageProcessDelay 请求包时延
+                     * @param _averageProcessDelay 请求包时延
+                     * 
                      */
                     void SetAverageProcessDelay(const int64_t& _averageProcessDelay);
 
                     /**
                      * 判断参数 AverageProcessDelay 是否已赋值
                      * @return AverageProcessDelay 是否已赋值
+                     * 
                      */
                     bool AverageProcessDelayHasBeenSet() const;
 
                     /**
                      * 获取慢处理包速度
                      * @return SlowProcessSpeed 慢处理包速度
+                     * 
                      */
                     int64_t GetSlowProcessSpeed() const;
 
                     /**
                      * 设置慢处理包速度
-                     * @param SlowProcessSpeed 慢处理包速度
+                     * @param _slowProcessSpeed 慢处理包速度
+                     * 
                      */
                     void SetSlowProcessSpeed(const int64_t& _slowProcessSpeed);
 
                     /**
                      * 判断参数 SlowProcessSpeed 是否已赋值
                      * @return SlowProcessSpeed 是否已赋值
+                     * 
                      */
                     bool SlowProcessSpeedHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本
+                     * @param _version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

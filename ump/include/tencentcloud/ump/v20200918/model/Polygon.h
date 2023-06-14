@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取标注列表
                      * @return Points 标注列表
+                     * 
                      */
                     std::vector<Point> GetPoints() const;
 
                     /**
                      * 设置标注列表
-                     * @param Points 标注列表
+                     * @param _points 标注列表
+                     * 
                      */
                     void SetPoints(const std::vector<Point>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 

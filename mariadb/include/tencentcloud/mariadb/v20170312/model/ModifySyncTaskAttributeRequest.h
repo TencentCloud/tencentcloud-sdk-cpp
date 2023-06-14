@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的任务数量上限是100。
                      * @return TaskIds 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的任务数量上限是100。
+                     * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
                      * 设置一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的任务数量上限是100。
-                     * @param TaskIds 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的任务数量上限是100。
+                     * @param _taskIds 一个或多个待操作的任务ID。可通过DescribeSyncTasks API返回值中的TaskId获取。每次请求允许操作的任务数量上限是100。
+                     * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
                     /**
                      * 判断参数 TaskIds 是否已赋值
                      * @return TaskIds 是否已赋值
+                     * 
                      */
                     bool TaskIdsHasBeenSet() const;
 
                     /**
                      * 获取任务名称。可任意命名，但不得超过100个字符。
                      * @return TaskName 任务名称。可任意命名，但不得超过100个字符。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称。可任意命名，但不得超过100个字符。
-                     * @param TaskName 任务名称。可任意命名，但不得超过100个字符。
+                     * @param _taskName 任务名称。可任意命名，但不得超过100个字符。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 

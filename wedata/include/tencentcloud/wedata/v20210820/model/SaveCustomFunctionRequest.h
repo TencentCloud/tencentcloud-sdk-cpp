@@ -46,180 +46,210 @@ namespace TencentCloud
                     /**
                      * 获取函数唯一标识
                      * @return FunctionId 函数唯一标识
+                     * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
                      * 设置函数唯一标识
-                     * @param FunctionId 函数唯一标识
+                     * @param _functionId 函数唯一标识
+                     * 
                      */
                     void SetFunctionId(const std::string& _functionId);
 
                     /**
                      * 判断参数 FunctionId 是否已赋值
                      * @return FunctionId 是否已赋值
+                     * 
                      */
                     bool FunctionIdHasBeenSet() const;
 
                     /**
                      * 获取分类：窗口函数、聚合函数、日期函数......
                      * @return Kind 分类：窗口函数、聚合函数、日期函数......
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置分类：窗口函数、聚合函数、日期函数......
-                     * @param Kind 分类：窗口函数、聚合函数、日期函数......
+                     * @param _kind 分类：窗口函数、聚合函数、日期函数......
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取集群引擎实例
                      * @return ClusterIdentifier 集群引擎实例
+                     * 
                      */
                     std::string GetClusterIdentifier() const;
 
                     /**
                      * 设置集群引擎实例
-                     * @param ClusterIdentifier 集群引擎实例
+                     * @param _clusterIdentifier 集群引擎实例
+                     * 
                      */
                     void SetClusterIdentifier(const std::string& _clusterIdentifier);
 
                     /**
                      * 判断参数 ClusterIdentifier 是否已赋值
                      * @return ClusterIdentifier 是否已赋值
+                     * 
                      */
                     bool ClusterIdentifierHasBeenSet() const;
 
                     /**
                      * 获取类名
                      * @return ClassName 类名
+                     * 
                      */
                     std::string GetClassName() const;
 
                     /**
                      * 设置类名
-                     * @param ClassName 类名
+                     * @param _className 类名
+                     * 
                      */
                     void SetClassName(const std::string& _className);
 
                     /**
                      * 判断参数 ClassName 是否已赋值
                      * @return ClassName 是否已赋值
+                     * 
                      */
                     bool ClassNameHasBeenSet() const;
 
                     /**
                      * 获取资源列表
                      * @return ResourceList 资源列表
+                     * 
                      */
                     std::vector<FunctionResource> GetResourceList() const;
 
                     /**
                      * 设置资源列表
-                     * @param ResourceList 资源列表
+                     * @param _resourceList 资源列表
+                     * 
                      */
                     void SetResourceList(const std::vector<FunctionResource>& _resourceList);
 
                     /**
                      * 判断参数 ResourceList 是否已赋值
                      * @return ResourceList 是否已赋值
+                     * 
                      */
                     bool ResourceListHasBeenSet() const;
 
                     /**
                      * 获取函数说明
                      * @return Description 函数说明
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置函数说明
-                     * @param Description 函数说明
+                     * @param _description 函数说明
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取用法
                      * @return Usage 用法
+                     * 
                      */
                     std::string GetUsage() const;
 
                     /**
                      * 设置用法
-                     * @param Usage 用法
+                     * @param _usage 用法
+                     * 
                      */
                     void SetUsage(const std::string& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 
                     /**
                      * 获取参数说明
                      * @return ParamDesc 参数说明
+                     * 
                      */
                     std::string GetParamDesc() const;
 
                     /**
                      * 设置参数说明
-                     * @param ParamDesc 参数说明
+                     * @param _paramDesc 参数说明
+                     * 
                      */
                     void SetParamDesc(const std::string& _paramDesc);
 
                     /**
                      * 判断参数 ParamDesc 是否已赋值
                      * @return ParamDesc 是否已赋值
+                     * 
                      */
                     bool ParamDescHasBeenSet() const;
 
                     /**
                      * 获取返回值说明
                      * @return ReturnDesc 返回值说明
+                     * 
                      */
                     std::string GetReturnDesc() const;
 
                     /**
                      * 设置返回值说明
-                     * @param ReturnDesc 返回值说明
+                     * @param _returnDesc 返回值说明
+                     * 
                      */
                     void SetReturnDesc(const std::string& _returnDesc);
 
                     /**
                      * 判断参数 ReturnDesc 是否已赋值
                      * @return ReturnDesc 是否已赋值
+                     * 
                      */
                     bool ReturnDescHasBeenSet() const;
 
                     /**
                      * 获取示例
                      * @return Example 示例
+                     * 
                      */
                     std::string GetExample() const;
 
                     /**
                      * 设置示例
-                     * @param Example 示例
+                     * @param _example 示例
+                     * 
                      */
                     void SetExample(const std::string& _example);
 
                     /**
                      * 判断参数 Example 是否已赋值
                      * @return Example 是否已赋值
+                     * 
                      */
                     bool ExampleHasBeenSet() const;
 

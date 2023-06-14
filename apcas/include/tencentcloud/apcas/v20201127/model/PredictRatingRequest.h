@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密
                      * @return Type ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密
-                     * @param Type ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密
+                     * @param _type ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取请求唯一标志ID
                      * @return Id 请求唯一标志ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置请求唯一标志ID
-                     * @param Id 请求唯一标志ID
+                     * @param _id 请求唯一标志ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

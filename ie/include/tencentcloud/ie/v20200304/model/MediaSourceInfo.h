@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体源资源下载信息。
                      * @return DownInfo 媒体源资源下载信息。
+                     * 
                      */
                     DownInfo GetDownInfo() const;
 
                     /**
                      * 设置媒体源资源下载信息。
-                     * @param DownInfo 媒体源资源下载信息。
+                     * @param _downInfo 媒体源资源下载信息。
+                     * 
                      */
                     void SetDownInfo(const DownInfo& _downInfo);
 
                     /**
                      * 判断参数 DownInfo 是否已赋值
                      * @return DownInfo 是否已赋值
+                     * 
                      */
                     bool DownInfoHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
                      * @return Id 媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
-                     * @param Id 媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。
+                     * @param _id 媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。
 ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -96,6 +102,7 @@ Audio：音频
 Video：视频
 Image：图片
 Audio：音频
+                     * 
                      */
                     std::string GetType() const;
 
@@ -104,16 +111,18 @@ Audio：音频
 Video：视频
 Image：图片
 Audio：音频
-                     * @param Type 媒体源类型，具体类型如下：
+                     * @param _type 媒体源类型，具体类型如下：
 Video：视频
 Image：图片
 Audio：音频
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取发送的日期，必填。仅支持查询某个日期，不支持范围查询。
                      * @return RequestDate 发送的日期，必填。仅支持查询某个日期，不支持范围查询。
+                     * 
                      */
                     std::string GetRequestDate() const;
 
                     /**
                      * 设置发送的日期，必填。仅支持查询某个日期，不支持范围查询。
-                     * @param RequestDate 发送的日期，必填。仅支持查询某个日期，不支持范围查询。
+                     * @param _requestDate 发送的日期，必填。仅支持查询某个日期，不支持范围查询。
+                     * 
                      */
                     void SetRequestDate(const std::string& _requestDate);
 
                     /**
                      * 判断参数 RequestDate 是否已赋值
                      * @return RequestDate 是否已赋值
+                     * 
                      */
                     bool RequestDateHasBeenSet() const;
 
                     /**
                      * 获取偏移量。默认为0
                      * @return Offset 偏移量。默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。默认为0
-                     * @param Offset 偏移量。默认为0
+                     * @param _offset 偏移量。默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取拉取最大条数，最多 100。
                      * @return Limit 拉取最大条数，最多 100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置拉取最大条数，最多 100。
-                     * @param Limit 拉取最大条数，最多 100。
+                     * @param _limit 拉取最大条数，最多 100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取SendMail接口返回的MessageId字段。
                      * @return MessageId SendMail接口返回的MessageId字段。
+                     * 
                      */
                     std::string GetMessageId() const;
 
                     /**
                      * 设置SendMail接口返回的MessageId字段。
-                     * @param MessageId SendMail接口返回的MessageId字段。
+                     * @param _messageId SendMail接口返回的MessageId字段。
+                     * 
                      */
                     void SetMessageId(const std::string& _messageId);
 
                     /**
                      * 判断参数 MessageId 是否已赋值
                      * @return MessageId 是否已赋值
+                     * 
                      */
                     bool MessageIdHasBeenSet() const;
 
                     /**
                      * 获取收件人邮箱。
                      * @return ToEmailAddress 收件人邮箱。
+                     * 
                      */
                     std::string GetToEmailAddress() const;
 
                     /**
                      * 设置收件人邮箱。
-                     * @param ToEmailAddress 收件人邮箱。
+                     * @param _toEmailAddress 收件人邮箱。
+                     * 
                      */
                     void SetToEmailAddress(const std::string& _toEmailAddress);
 
                     /**
                      * 判断参数 ToEmailAddress 是否已赋值
                      * @return ToEmailAddress 是否已赋值
+                     * 
                      */
                     bool ToEmailAddressHasBeenSet() const;
 

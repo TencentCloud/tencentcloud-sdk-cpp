@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch Bot cookie策略配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,69 +61,80 @@ off：关闭
                      * 设置Bot cookie策略配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch Bot cookie策略配置开关，取值有：
+                     * @param _switch Bot cookie策略配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取规则类型，当前只有all
                      * @return RuleType 规则类型，当前只有all
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置规则类型，当前只有all
-                     * @param RuleType 规则类型，当前只有all
+                     * @param _ruleType 规则类型，当前只有all
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
                     /**
                      * 获取规则值，['*']
                      * @return RuleValue 规则值，['*']
+                     * 
                      */
                     std::vector<std::string> GetRuleValue() const;
 
                     /**
                      * 设置规则值，['*']
-                     * @param RuleValue 规则值，['*']
+                     * @param _ruleValue 规则值，['*']
+                     * 
                      */
                     void SetRuleValue(const std::vector<std::string>& _ruleValue);
 
                     /**
                      * 判断参数 RuleValue 是否已赋值
                      * @return RuleValue 是否已赋值
+                     * 
                      */
                     bool RuleValueHasBeenSet() const;
 
                     /**
                      * 获取执行动作，monitor|intercept|redirect|captcha
                      * @return Action 执行动作，monitor|intercept|redirect|captcha
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置执行动作，monitor|intercept|redirect|captcha
-                     * @param Action 执行动作，monitor|intercept|redirect|captcha
+                     * @param _action 执行动作，monitor|intercept|redirect|captcha
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -131,20 +143,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectUrl 重定向时设置的重定向页面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置重定向时设置的重定向页面
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectUrl 重定向时设置的重定向页面
+                     * @param _redirectUrl 重定向时设置的重定向页面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 
@@ -153,20 +168,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

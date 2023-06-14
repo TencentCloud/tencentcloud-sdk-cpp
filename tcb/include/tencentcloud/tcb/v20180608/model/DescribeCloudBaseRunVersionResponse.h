@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取版本名称
                      * @return VersionName 版本名称
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerfilePath Dockefile的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerfilePath() const;
 
                     /**
                      * 判断参数 DockerfilePath 是否已赋值
                      * @return DockerfilePath 是否已赋值
+                     * 
                      */
                     bool DockerfilePathHasBeenSet() const;
 
@@ -89,60 +95,70 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildDir DockerBuild的目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBuildDir() const;
 
                     /**
                      * 判断参数 BuildDir 是否已赋值
                      * @return BuildDir 是否已赋值
+                     * 
                      */
                     bool BuildDirHasBeenSet() const;
 
                     /**
                      * 获取副本最小值
                      * @return MinNum 副本最小值
+                     * 
                      */
                     int64_t GetMinNum() const;
 
                     /**
                      * 判断参数 MinNum 是否已赋值
                      * @return MinNum 是否已赋值
+                     * 
                      */
                     bool MinNumHasBeenSet() const;
 
                     /**
                      * 获取副本最大值
                      * @return MaxNum 副本最大值
+                     * 
                      */
                     int64_t GetMaxNum() const;
 
                     /**
                      * 判断参数 MaxNum 是否已赋值
                      * @return MaxNum 是否已赋值
+                     * 
                      */
                     bool MaxNumHasBeenSet() const;
 
                     /**
                      * 获取策略类型
                      * @return PolicyType 策略类型
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取策略阈值
                      * @return PolicyThreshold 策略阈值
+                     * 
                      */
                     double GetPolicyThreshold() const;
 
                     /**
                      * 判断参数 PolicyThreshold 是否已赋值
                      * @return PolicyThreshold 是否已赋值
+                     * 
                      */
                     bool PolicyThresholdHasBeenSet() const;
 
@@ -151,36 +167,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvParams 环境变量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvParams() const;
 
                     /**
                      * 判断参数 EnvParams 是否已赋值
                      * @return EnvParams 是否已赋值
+                     * 
                      */
                     bool EnvParamsHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedTime 创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedTime 更新时间
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
@@ -189,12 +211,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionIP 版本的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionIP() const;
 
                     /**
                      * 判断参数 VersionIP 是否已赋值
                      * @return VersionIP 是否已赋值
+                     * 
                      */
                     bool VersionIPHasBeenSet() const;
 
@@ -203,12 +227,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionPort 版本的端口号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVersionPort() const;
 
                     /**
                      * 判断参数 VersionPort 是否已赋值
                      * @return VersionPort 是否已赋值
+                     * 
                      */
                     bool VersionPortHasBeenSet() const;
 
@@ -217,12 +243,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 版本状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -231,12 +259,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 代码包的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 
@@ -245,12 +275,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageVersion 代码版本的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 
@@ -259,12 +291,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadType 枚举（package/repository/image)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadType() const;
 
                     /**
                      * 判断参数 UploadType 是否已赋值
                      * @return UploadType 是否已赋值
+                     * 
                      */
                     bool UploadTypeHasBeenSet() const;
 
@@ -273,12 +307,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoType Repo的类型(coding/gitlab/github/coding)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 判断参数 RepoType 是否已赋值
                      * @return RepoType 是否已赋值
+                     * 
                      */
                     bool RepoTypeHasBeenSet() const;
 
@@ -287,12 +323,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repo 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepo() const;
 
                     /**
                      * 判断参数 Repo 是否已赋值
                      * @return Repo 是否已赋值
+                     * 
                      */
                     bool RepoHasBeenSet() const;
 
@@ -301,12 +339,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 分支
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 判断参数 Branch 是否已赋值
                      * @return Branch 是否已赋值
+                     * 
                      */
                     bool BranchHasBeenSet() const;
 
@@ -315,12 +355,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerName 服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
@@ -329,12 +371,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPublic 是否对于外网开放
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsPublic() const;
 
                     /**
                      * 判断参数 IsPublic 是否已赋值
                      * @return IsPublic 是否已赋值
+                     * 
                      */
                     bool IsPublicHasBeenSet() const;
 
@@ -343,12 +387,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -357,12 +403,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
@@ -371,12 +419,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomLogs 日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomLogs() const;
 
                     /**
                      * 判断参数 CustomLogs 是否已赋值
                      * @return CustomLogs 是否已赋值
+                     * 
                      */
                     bool CustomLogsHasBeenSet() const;
 
@@ -385,12 +435,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerPort 监听端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetContainerPort() const;
 
                     /**
                      * 判断参数 ContainerPort 是否已赋值
                      * @return ContainerPort 是否已赋值
+                     * 
                      */
                     bool ContainerPortHasBeenSet() const;
 
@@ -399,12 +451,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialDelaySeconds 延迟多长时间开始健康检查（单位s）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInitialDelaySeconds() const;
 
                     /**
                      * 判断参数 InitialDelaySeconds 是否已赋值
                      * @return InitialDelaySeconds 是否已赋值
+                     * 
                      */
                     bool InitialDelaySecondsHasBeenSet() const;
 
@@ -413,12 +467,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 镜像地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -427,12 +483,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuSize CPU 大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCpuSize() const;
 
                     /**
                      * 判断参数 CpuSize 是否已赋值
                      * @return CpuSize 是否已赋值
+                     * 
                      */
                     bool CpuSizeHasBeenSet() const;
 
@@ -441,12 +499,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemSize MEM 大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMemSize() const;
 
                     /**
                      * 判断参数 MemSize 是否已赋值
                      * @return MemSize 是否已赋值
+                     * 
                      */
                     bool MemSizeHasBeenSet() const;
 
@@ -455,12 +515,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDetail 扩缩容策略详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HpaPolicy> GetPolicyDetail() const;
 
                     /**
                      * 判断参数 PolicyDetail 是否已赋值
                      * @return PolicyDetail 是否已赋值
+                     * 
                      */
                     bool PolicyDetailHasBeenSet() const;
 
@@ -469,12 +531,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu Cpu的Request值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCpu() const;
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
@@ -483,12 +547,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem Mem的Request值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMem() const;
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 

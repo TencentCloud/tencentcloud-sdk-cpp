@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取当前词的置信度
                      * @return Confidence 当前词的置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置当前词的置信度
-                     * @param Confidence 当前词的置信度
+                     * @param _confidence 当前词的置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取当前单词语音的起始时间点，单位为ms
                      * @return Mbtm 当前单词语音的起始时间点，单位为ms
+                     * 
                      */
                     int64_t GetMbtm() const;
 
                     /**
                      * 设置当前单词语音的起始时间点，单位为ms
-                     * @param Mbtm 当前单词语音的起始时间点，单位为ms
+                     * @param _mbtm 当前单词语音的起始时间点，单位为ms
+                     * 
                      */
                     void SetMbtm(const int64_t& _mbtm);
 
                     /**
                      * 判断参数 Mbtm 是否已赋值
                      * @return Mbtm 是否已赋值
+                     * 
                      */
                     bool MbtmHasBeenSet() const;
 
                     /**
                      * 获取当前单词语音的终止时间点，单位为ms
                      * @return Metm 当前单词语音的终止时间点，单位为ms
+                     * 
                      */
                     int64_t GetMetm() const;
 
                     /**
                      * 设置当前单词语音的终止时间点，单位为ms
-                     * @param Metm 当前单词语音的终止时间点，单位为ms
+                     * @param _metm 当前单词语音的终止时间点，单位为ms
+                     * 
                      */
                     void SetMetm(const int64_t& _metm);
 
                     /**
                      * 判断参数 Metm 是否已赋值
                      * @return Metm 是否已赋值
+                     * 
                      */
                     bool MetmHasBeenSet() const;
 
                     /**
                      * 获取当前词
                      * @return Text 当前词
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置当前词
-                     * @param Text 当前词
+                     * @param _text 当前词
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取当前词的字节数
                      * @return Wsize 当前词的字节数
+                     * 
                      */
                     int64_t GetWsize() const;
 
                     /**
                      * 设置当前词的字节数
-                     * @param Wsize 当前词的字节数
+                     * @param _wsize 当前词的字节数
+                     * 
                      */
                     void SetWsize(const int64_t& _wsize);
 
                     /**
                      * 判断参数 Wsize 是否已赋值
                      * @return Wsize 是否已赋值
+                     * 
                      */
                     bool WsizeHasBeenSet() const;
 

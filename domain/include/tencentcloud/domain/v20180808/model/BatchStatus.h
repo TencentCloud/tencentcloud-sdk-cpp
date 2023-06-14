@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取批量任务id
                      * @return LogId 批量任务id
+                     * 
                      */
                     uint64_t GetLogId() const;
 
                     /**
                      * 设置批量任务id
-                     * @param LogId 批量任务id
+                     * @param _logId 批量任务id
+                     * 
                      */
                     void SetLogId(const uint64_t& _logId);
 
                     /**
                      * 判断参数 LogId 是否已赋值
                      * @return LogId 是否已赋值
+                     * 
                      */
                     bool LogIdHasBeenSet() const;
 
                     /**
                      * 获取批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功
                      * @return Status 批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功
-                     * @param Status 批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功
+                     * @param _status 批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取批量任务类型
                      * @return BatchAction 批量任务类型
+                     * 
                      */
                     std::string GetBatchAction() const;
 
                     /**
                      * 设置批量任务类型
-                     * @param BatchAction 批量任务类型
+                     * @param _batchAction 批量任务类型
+                     * 
                      */
                     void SetBatchAction(const std::string& _batchAction);
 
                     /**
                      * 判断参数 BatchAction 是否已赋值
                      * @return BatchAction 是否已赋值
+                     * 
                      */
                     bool BatchActionHasBeenSet() const;
 

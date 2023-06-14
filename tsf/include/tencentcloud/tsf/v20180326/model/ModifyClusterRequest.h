@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群描述信息
                      * @return ClusterDesc 集群描述信息
+                     * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
                      * 设置集群描述信息
-                     * @param ClusterDesc 集群描述信息
+                     * @param _clusterDesc 集群描述信息
+                     * 
                      */
                     void SetClusterDesc(const std::string& _clusterDesc);
 
                     /**
                      * 判断参数 ClusterDesc 是否已赋值
                      * @return ClusterDesc 是否已赋值
+                     * 
                      */
                     bool ClusterDescHasBeenSet() const;
 
                     /**
                      * 获取备注名
                      * @return ClusterRemarkName 备注名
+                     * 
                      */
                     std::string GetClusterRemarkName() const;
 
                     /**
                      * 设置备注名
-                     * @param ClusterRemarkName 备注名
+                     * @param _clusterRemarkName 备注名
+                     * 
                      */
                     void SetClusterRemarkName(const std::string& _clusterRemarkName);
 
                     /**
                      * 判断参数 ClusterRemarkName 是否已赋值
                      * @return ClusterRemarkName 是否已赋值
+                     * 
                      */
                     bool ClusterRemarkNameHasBeenSet() const;
 

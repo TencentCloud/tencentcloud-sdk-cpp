@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取修要修改的域名
                      * @return Domain 修要修改的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置修要修改的域名
-                     * @param Domain 修要修改的域名
+                     * @param _domain 修要修改的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取状态值，0表示关闭，1表示开启
                      * @return Status 状态值，0表示关闭，1表示开启
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态值，0表示关闭，1表示开启
-                     * @param Status 状态值，0表示关闭，1表示开启
+                     * @param _status 状态值，0表示关闭，1表示开启
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

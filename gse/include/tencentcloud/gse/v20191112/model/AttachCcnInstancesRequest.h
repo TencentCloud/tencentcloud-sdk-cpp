@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队 Id
                      * @return FleetId 服务器舰队 Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队 Id
-                     * @param FleetId 服务器舰队 Id
+                     * @param _fleetId 服务器舰队 Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取云联网账号 Uin
                      * @return AccountId 云联网账号 Uin
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置云联网账号 Uin
-                     * @param AccountId 云联网账号 Uin
+                     * @param _accountId 云联网账号 Uin
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取云联网 Id
                      * @return CcnId 云联网 Id
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网 Id
-                     * @param CcnId 云联网 Id
+                     * @param _ccnId 云联网 Id
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 

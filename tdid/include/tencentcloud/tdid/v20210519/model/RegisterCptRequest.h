@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取CptJson的具体信息
                      * @return CptJson CptJson的具体信息
+                     * 
                      */
                     std::string GetCptJson() const;
 
                     /**
                      * 设置CptJson的具体信息
-                     * @param CptJson CptJson的具体信息
+                     * @param _cptJson CptJson的具体信息
+                     * 
                      */
                     void SetCptJson(const std::string& _cptJson);
 
                     /**
                      * 判断参数 CptJson 是否已赋值
                      * @return CptJson 是否已赋值
+                     * 
                      */
                     bool CptJsonHasBeenSet() const;
 
                     /**
                      * 获取cptId 不填默认自增
                      * @return CptId cptId 不填默认自增
+                     * 
                      */
                     uint64_t GetCptId() const;
 
                     /**
                      * 设置cptId 不填默认自增
-                     * @param CptId cptId 不填默认自增
+                     * @param _cptId cptId 不填默认自增
+                     * 
                      */
                     void SetCptId(const uint64_t& _cptId);
 
                     /**
                      * 判断参数 CptId 是否已赋值
                      * @return CptId 是否已赋值
+                     * 
                      */
                     bool CptIdHasBeenSet() const;
 

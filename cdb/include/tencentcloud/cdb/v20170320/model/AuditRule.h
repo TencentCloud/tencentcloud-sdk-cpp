@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取审计规则 Id。
                      * @return RuleId 审计规则 Id。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置审计规则 Id。
-                     * @param RuleId 审计规则 Id。
+                     * @param _ruleId 审计规则 Id。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取审计规则创建时间。格式为 : "2019-03-20 17:09:13"。
                      * @return CreateTime 审计规则创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置审计规则创建时间。格式为 : "2019-03-20 17:09:13"。
-                     * @param CreateTime 审计规则创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * @param _createTime 审计规则创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取审计规则最后修改时间。格式为 : "2019-03-20 17:09:13"。
                      * @return ModifyTime 审计规则最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置审计规则最后修改时间。格式为 : "2019-03-20 17:09:13"。
-                     * @param ModifyTime 审计规则最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * @param _modifyTime 审计规则最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 审计规则名称。
+                     * @param _ruleName 审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 审计规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置审计规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 审计规则描述。
+                     * @param _description 审计规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -150,38 +165,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleFilters 审计规则过滤条件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuditFilter> GetRuleFilters() const;
 
                     /**
                      * 设置审计规则过滤条件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleFilters 审计规则过滤条件。
+                     * @param _ruleFilters 审计规则过滤条件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleFilters(const std::vector<AuditFilter>& _ruleFilters);
 
                     /**
                      * 判断参数 RuleFilters 是否已赋值
                      * @return RuleFilters 是否已赋值
+                     * 
                      */
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
                      * 获取是否开启全审计。
                      * @return AuditAll 是否开启全审计。
+                     * 
                      */
                     bool GetAuditAll() const;
 
                     /**
                      * 设置是否开启全审计。
-                     * @param AuditAll 是否开启全审计。
+                     * @param _auditAll 是否开启全审计。
+                     * 
                      */
                     void SetAuditAll(const bool& _auditAll);
 
                     /**
                      * 判断参数 AuditAll 是否已赋值
                      * @return AuditAll 是否已赋值
+                     * 
                      */
                     bool AuditAllHasBeenSet() const;
 

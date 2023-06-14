@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取参数集合，详见示例
                      * @return FunctionArg 参数集合，详见示例
+                     * 
                      */
                     FunctionArg GetFunctionArg() const;
 
                     /**
                      * 设置参数集合，详见示例
-                     * @param FunctionArg 参数集合，详见示例
+                     * @param _functionArg 参数集合，详见示例
+                     * 
                      */
                     void SetFunctionArg(const FunctionArg& _functionArg);
 
                     /**
                      * 判断参数 FunctionArg 是否已赋值
                      * @return FunctionArg 是否已赋值
+                     * 
                      */
                     bool FunctionArgHasBeenSet() const;
 
                     /**
                      * 获取参数集合，详见示例
                      * @return TransactionArg 参数集合，详见示例
+                     * 
                      */
                     TransactionArg GetTransactionArg() const;
 
                     /**
                      * 设置参数集合，详见示例
-                     * @param TransactionArg 参数集合，详见示例
+                     * @param _transactionArg 参数集合，详见示例
+                     * 
                      */
                     void SetTransactionArg(const TransactionArg& _transactionArg);
 
                     /**
                      * 判断参数 TransactionArg 是否已赋值
                      * @return TransactionArg 是否已赋值
+                     * 
                      */
                     bool TransactionArgHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return VersionCredential 版本
+                     * 
                      */
                     std::string GetVersionCredential() const;
 
                     /**
                      * 设置版本
-                     * @param VersionCredential 版本
+                     * @param _versionCredential 版本
+                     * 
                      */
                     void SetVersionCredential(const std::string& _versionCredential);
 
                     /**
                      * 判断参数 VersionCredential 是否已赋值
                      * @return VersionCredential 是否已赋值
+                     * 
                      */
                     bool VersionCredentialHasBeenSet() const;
 
                     /**
                      * 获取是否未签名
                      * @return UnSigned 是否未签名
+                     * 
                      */
                     bool GetUnSigned() const;
 
                     /**
                      * 设置是否未签名
-                     * @param UnSigned 是否未签名
+                     * @param _unSigned 是否未签名
+                     * 
                      */
                     void SetUnSigned(const bool& _unSigned);
 
                     /**
                      * 判断参数 UnSigned 是否已赋值
                      * @return UnSigned 是否已赋值
+                     * 
                      */
                     bool UnSignedHasBeenSet() const;
 

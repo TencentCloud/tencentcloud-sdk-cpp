@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取需要匹配的人员的ID列表。
                      * @return PersonId 需要匹配的人员的ID列表。
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置需要匹配的人员的ID列表。
-                     * @param PersonId 需要匹配的人员的ID列表。
+                     * @param _personId 需要匹配的人员的ID列表。
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取视频集锦开始封面照片。
                      * @return CoverBeginUrl 视频集锦开始封面照片。
+                     * 
                      */
                     std::string GetCoverBeginUrl() const;
 
                     /**
                      * 设置视频集锦开始封面照片。
-                     * @param CoverBeginUrl 视频集锦开始封面照片。
+                     * @param _coverBeginUrl 视频集锦开始封面照片。
+                     * 
                      */
                     void SetCoverBeginUrl(const std::string& _coverBeginUrl);
 
                     /**
                      * 判断参数 CoverBeginUrl 是否已赋值
                      * @return CoverBeginUrl 是否已赋值
+                     * 
                      */
                     bool CoverBeginUrlHasBeenSet() const;
 
                     /**
                      * 获取视频集锦结束封面照片。
                      * @return CoverEndUrl 视频集锦结束封面照片。
+                     * 
                      */
                     std::string GetCoverEndUrl() const;
 
                     /**
                      * 设置视频集锦结束封面照片。
-                     * @param CoverEndUrl 视频集锦结束封面照片。
+                     * @param _coverEndUrl 视频集锦结束封面照片。
+                     * 
                      */
                     void SetCoverEndUrl(const std::string& _coverEndUrl);
 
                     /**
                      * 判断参数 CoverEndUrl 是否已赋值
                      * @return CoverEndUrl 是否已赋值
+                     * 
                      */
                     bool CoverEndUrlHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取组件统计列表记录总数。
                      * @return TotalCount 组件统计列表记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取组件统计列表数据数组。
                      * @return ComponentStatistics 组件统计列表数据数组。
+                     * 
                      */
                     std::vector<ComponentStatistics> GetComponentStatistics() const;
 
                     /**
                      * 判断参数 ComponentStatistics 是否已赋值
                      * @return ComponentStatistics 是否已赋值
+                     * 
                      */
                     bool ComponentStatisticsHasBeenSet() const;
 

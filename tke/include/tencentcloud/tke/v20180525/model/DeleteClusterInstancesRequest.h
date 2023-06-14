@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取主机InstanceId列表
                      * @return InstanceIds 主机InstanceId列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置主机InstanceId列表
-                     * @param InstanceIds 主机InstanceId列表
+                     * @param _instanceIds 主机InstanceId列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
                      * @return InstanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * 
                      */
                     std::string GetInstanceDeleteMode() const;
 
                     /**
                      * 设置集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
-                     * @param InstanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * @param _instanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * 
                      */
                     void SetInstanceDeleteMode(const std::string& _instanceDeleteMode);
 
                     /**
                      * 判断参数 InstanceDeleteMode 是否已赋值
                      * @return InstanceDeleteMode 是否已赋值
+                     * 
                      */
                     bool InstanceDeleteModeHasBeenSet() const;
 
                     /**
                      * 获取是否强制删除(当节点在初始化时，可以指定参数为TRUE)
                      * @return ForceDelete 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     * 
                      */
                     bool GetForceDelete() const;
 
                     /**
                      * 设置是否强制删除(当节点在初始化时，可以指定参数为TRUE)
-                     * @param ForceDelete 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     * @param _forceDelete 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     * 
                      */
                     void SetForceDelete(const bool& _forceDelete);
 
                     /**
                      * 判断参数 ForceDelete 是否已赋值
                      * @return ForceDelete 是否已赋值
+                     * 
                      */
                     bool ForceDeleteHasBeenSet() const;
 

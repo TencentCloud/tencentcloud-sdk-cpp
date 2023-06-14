@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取处理事件ids
                      * @return EventIdSet 处理事件ids
+                     * 
                      */
                     std::vector<std::string> GetEventIdSet() const;
 
                     /**
                      * 设置处理事件ids
-                     * @param EventIdSet 处理事件ids
+                     * @param _eventIdSet 处理事件ids
+                     * 
                      */
                     void SetEventIdSet(const std::vector<std::string>& _eventIdSet);
 
                     /**
                      * 判断参数 EventIdSet 是否已赋值
                      * @return EventIdSet 是否已赋值
+                     * 
                      */
                     bool EventIdSetHasBeenSet() const;
 
@@ -73,6 +76,7 @@ EVENT_DEALED:已处理，
 EVENT_IGNORE:忽略，
 EVENT_DELETE：已删除
 EVENT_ADD_WHITE：加白
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -83,54 +87,62 @@ EVENT_DEALED:已处理，
 EVENT_IGNORE:忽略，
 EVENT_DELETE：已删除
 EVENT_ADD_WHITE：加白
-                     * @param Status 标记事件的状态：
+                     * @param _status 标记事件的状态：
 EVENT_UNDEAL:未处理（取消忽略），
 EVENT_DEALED:已处理，
 EVENT_IGNORE:忽略，
 EVENT_DELETE：已删除
 EVENT_ADD_WHITE：加白
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取加白镜像ID数组
                      * @return ImageIDs 加白镜像ID数组
+                     * 
                      */
                     std::vector<std::string> GetImageIDs() const;
 
                     /**
                      * 设置加白镜像ID数组
-                     * @param ImageIDs 加白镜像ID数组
+                     * @param _imageIDs 加白镜像ID数组
+                     * 
                      */
                     void SetImageIDs(const std::vector<std::string>& _imageIDs);
 
                     /**
                      * 判断参数 ImageIDs 是否已赋值
                      * @return ImageIDs 是否已赋值
+                     * 
                      */
                     bool ImageIDsHasBeenSet() const;
 
@@ -151,6 +163,7 @@ EVENT_ADD_WHITE：加白
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     std::vector<std::string> GetEventType() const;
 
@@ -163,7 +176,7 @@ EVENT_ADD_WHITE：加白
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
-                     * @param EventType 加白事件类型
+                     * @param _eventType 加白事件类型
    ESCAPE_CGROUPS：利用cgroup机制逃逸
    ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
    ESCAPE_DOCKER_API：访问Docker API接口逃逸
@@ -171,12 +184,14 @@ EVENT_ADD_WHITE：加白
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     void SetEventType(const std::vector<std::string>& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 

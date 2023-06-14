@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>Auto：房间没人时自动销毁</li>
 <li>Expire：房间没人时过期自动销毁</li>
 <li>Never：不自动销毁，需手动销毁</li>默认为：Auto。
+                     * 
                      */
                     std::string GetDestroyMode() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 <li>Auto：房间没人时自动销毁</li>
 <li>Expire：房间没人时过期自动销毁</li>
 <li>Never：不自动销毁，需手动销毁</li>默认为：Auto。
-                     * @param DestroyMode 销毁模式，取值有：
+                     * @param _destroyMode 销毁模式，取值有：
 <li>Auto：房间没人时自动销毁</li>
 <li>Expire：房间没人时过期自动销毁</li>
 <li>Never：不自动销毁，需手动销毁</li>默认为：Auto。
+                     * 
                      */
                     void SetDestroyMode(const std::string& _destroyMode);
 
                     /**
                      * 判断参数 DestroyMode 是否已赋值
                      * @return DestroyMode 是否已赋值
+                     * 
                      */
                     bool DestroyModeHasBeenSet() const;
 
                     /**
                      * 获取过期销毁时间，单位：秒，当DestroyMode取Expire时必填。
                      * @return DestroyExpireTime 过期销毁时间，单位：秒，当DestroyMode取Expire时必填。
+                     * 
                      */
                     int64_t GetDestroyExpireTime() const;
 
                     /**
                      * 设置过期销毁时间，单位：秒，当DestroyMode取Expire时必填。
-                     * @param DestroyExpireTime 过期销毁时间，单位：秒，当DestroyMode取Expire时必填。
+                     * @param _destroyExpireTime 过期销毁时间，单位：秒，当DestroyMode取Expire时必填。
+                     * 
                      */
                     void SetDestroyExpireTime(const int64_t& _destroyExpireTime);
 
                     /**
                      * 判断参数 DestroyExpireTime 是否已赋值
                      * @return DestroyExpireTime 是否已赋值
+                     * 
                      */
                     bool DestroyExpireTimeHasBeenSet() const;
 

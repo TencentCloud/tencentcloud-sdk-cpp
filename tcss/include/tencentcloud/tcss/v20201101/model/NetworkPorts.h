@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 网络策略协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置网络策略协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 网络策略协议
+                     * @param _protocol 网络策略协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 网络策略策略端口
+                     * @param _port 网络策略策略端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

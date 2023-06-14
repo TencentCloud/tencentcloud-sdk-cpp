@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的预留实例计费数量。
                      * @return TotalCount 符合条件的预留实例计费数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取符合条件的预留实例计费列表。
                      * @return ReservedInstancesSet 符合条件的预留实例计费列表。
+                     * 
                      */
                     std::vector<ReservedInstances> GetReservedInstancesSet() const;
 
                     /**
                      * 判断参数 ReservedInstancesSet 是否已赋值
                      * @return ReservedInstancesSet 是否已赋值
+                     * 
                      */
                     bool ReservedInstancesSetHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取导出字段
                      * @return ExportField 导出字段
+                     * 
                      */
                     std::vector<std::string> GetExportField() const;
 
                     /**
                      * 设置导出字段
-                     * @param ExportField 导出字段
+                     * @param _exportField 导出字段
+                     * 
                      */
                     void SetExportField(const std::vector<std::string>& _exportField);
 
                     /**
                      * 判断参数 ExportField 是否已赋值
                      * @return ExportField 是否已赋值
+                     * 
                      */
                     bool ExportFieldHasBeenSet() const;
 
                     /**
                      * 获取镜像id
                      * @return ImageID 镜像id
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像id
-                     * @param ImageID 镜像id
+                     * @param _imageID 镜像id
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
@@ -88,6 +94,7 @@ namespace TencentCloud
 <li>Level- String - 是否必填：否 - 风险级别 1,2,3,4，</li>
 <li>Behavior - String - 是否必填：否 - 风险行为 1,2,3,4</li>
 <li>Type - String - 是否必填：否 - 风险类型  1,2,</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -96,16 +103,18 @@ namespace TencentCloud
 <li>Level- String - 是否必填：否 - 风险级别 1,2,3,4，</li>
 <li>Behavior - String - 是否必填：否 - 风险行为 1,2,3,4</li>
 <li>Type - String - 是否必填：否 - 风险类型  1,2,</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Level- String - 是否必填：否 - 风险级别 1,2,3,4，</li>
 <li>Behavior - String - 是否必填：否 - 风险行为 1,2,3,4</li>
 <li>Type - String - 是否必填：否 - 风险类型  1,2,</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取待修改的执行器ID。
                      * @return InvokerId 待修改的执行器ID。
+                     * 
                      */
                     std::string GetInvokerId() const;
 
                     /**
                      * 设置待修改的执行器ID。
-                     * @param InvokerId 待修改的执行器ID。
+                     * @param _invokerId 待修改的执行器ID。
+                     * 
                      */
                     void SetInvokerId(const std::string& _invokerId);
 
                     /**
                      * 判断参数 InvokerId 是否已赋值
                      * @return InvokerId 是否已赋值
+                     * 
                      */
                     bool InvokerIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的执行器名称。
                      * @return Name 待修改的执行器名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置待修改的执行器名称。
-                     * @param Name 待修改的执行器名称。
+                     * @param _name 待修改的执行器名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
                      * @return Type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
-                     * @param Type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * @param _type 执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取待修改的命令ID。
                      * @return CommandId 待修改的命令ID。
+                     * 
                      */
                     std::string GetCommandId() const;
 
                     /**
                      * 设置待修改的命令ID。
-                     * @param CommandId 待修改的命令ID。
+                     * @param _commandId 待修改的命令ID。
+                     * 
                      */
                     void SetCommandId(const std::string& _commandId);
 
                     /**
                      * 判断参数 CommandId 是否已赋值
                      * @return CommandId 是否已赋值
+                     * 
                      */
                     bool CommandIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的用户名。
                      * @return Username 待修改的用户名。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置待修改的用户名。
-                     * @param Username 待修改的用户名。
+                     * @param _username 待修改的用户名。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取待修改的自定义参数。
                      * @return Parameters 待修改的自定义参数。
+                     * 
                      */
                     std::string GetParameters() const;
 
                     /**
                      * 设置待修改的自定义参数。
-                     * @param Parameters 待修改的自定义参数。
+                     * @param _parameters 待修改的自定义参数。
+                     * 
                      */
                     void SetParameters(const std::string& _parameters);
 
                     /**
                      * 判断参数 Parameters 是否已赋值
                      * @return Parameters 是否已赋值
+                     * 
                      */
                     bool ParametersHasBeenSet() const;
 
                     /**
                      * 获取待修改的实例ID列表。列表长度上限100。
                      * @return InstanceIds 待修改的实例ID列表。列表长度上限100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置待修改的实例ID列表。列表长度上限100。
-                     * @param InstanceIds 待修改的实例ID列表。列表长度上限100。
+                     * @param _instanceIds 待修改的实例ID列表。列表长度上限100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取待修改的周期执行器设置。
                      * @return ScheduleSettings 待修改的周期执行器设置。
+                     * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
                      * 设置待修改的周期执行器设置。
-                     * @param ScheduleSettings 待修改的周期执行器设置。
+                     * @param _scheduleSettings 待修改的周期执行器设置。
+                     * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
 
                     /**
                      * 判断参数 ScheduleSettings 是否已赋值
                      * @return ScheduleSettings 是否已赋值
+                     * 
                      */
                     bool ScheduleSettingsHasBeenSet() const;
 

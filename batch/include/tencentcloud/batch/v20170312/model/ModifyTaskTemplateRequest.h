@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取任务模板ID
                      * @return TaskTemplateId 任务模板ID
+                     * 
                      */
                     std::string GetTaskTemplateId() const;
 
                     /**
                      * 设置任务模板ID
-                     * @param TaskTemplateId 任务模板ID
+                     * @param _taskTemplateId 任务模板ID
+                     * 
                      */
                     void SetTaskTemplateId(const std::string& _taskTemplateId);
 
                     /**
                      * 判断参数 TaskTemplateId 是否已赋值
                      * @return TaskTemplateId 是否已赋值
+                     * 
                      */
                     bool TaskTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取任务模板名称
                      * @return TaskTemplateName 任务模板名称
+                     * 
                      */
                     std::string GetTaskTemplateName() const;
 
                     /**
                      * 设置任务模板名称
-                     * @param TaskTemplateName 任务模板名称
+                     * @param _taskTemplateName 任务模板名称
+                     * 
                      */
                     void SetTaskTemplateName(const std::string& _taskTemplateName);
 
                     /**
                      * 判断参数 TaskTemplateName 是否已赋值
                      * @return TaskTemplateName 是否已赋值
+                     * 
                      */
                     bool TaskTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取任务模板描述
                      * @return TaskTemplateDescription 任务模板描述
+                     * 
                      */
                     std::string GetTaskTemplateDescription() const;
 
                     /**
                      * 设置任务模板描述
-                     * @param TaskTemplateDescription 任务模板描述
+                     * @param _taskTemplateDescription 任务模板描述
+                     * 
                      */
                     void SetTaskTemplateDescription(const std::string& _taskTemplateDescription);
 
                     /**
                      * 判断参数 TaskTemplateDescription 是否已赋值
                      * @return TaskTemplateDescription 是否已赋值
+                     * 
                      */
                     bool TaskTemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取任务模板信息
                      * @return TaskTemplateInfo 任务模板信息
+                     * 
                      */
                     Task GetTaskTemplateInfo() const;
 
                     /**
                      * 设置任务模板信息
-                     * @param TaskTemplateInfo 任务模板信息
+                     * @param _taskTemplateInfo 任务模板信息
+                     * 
                      */
                     void SetTaskTemplateInfo(const Task& _taskTemplateInfo);
 
                     /**
                      * 判断参数 TaskTemplateInfo 是否已赋值
                      * @return TaskTemplateInfo 是否已赋值
+                     * 
                      */
                     bool TaskTemplateInfoHasBeenSet() const;
 

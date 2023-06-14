@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器 ID。
                      * @return ListenerId 监听器 ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器 ID。
-                     * @param ListenerId 监听器 ID。
+                     * @param _listenerId 监听器 ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取新建转发规则的信息。
                      * @return Rules 新建转发规则的信息。
+                     * 
                      */
                     std::vector<RuleInput> GetRules() const;
 
                     /**
                      * 设置新建转发规则的信息。
-                     * @param Rules 新建转发规则的信息。
+                     * @param _rules 新建转发规则的信息。
+                     * 
                      */
                     void SetRules(const std::vector<RuleInput>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

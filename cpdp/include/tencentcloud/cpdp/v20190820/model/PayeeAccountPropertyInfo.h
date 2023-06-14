@@ -55,6 +55,7 @@ DISABLE:停用
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSettleRightStatus() const;
 
@@ -63,16 +64,18 @@ DISABLE:停用
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SettleRightStatus 结算权益状态
+                     * @param _settleRightStatus 结算权益状态
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSettleRightStatus(const std::string& _settleRightStatus);
 
                     /**
                      * 判断参数 SettleRightStatus 是否已赋值
                      * @return SettleRightStatus 是否已赋值
+                     * 
                      */
                     bool SettleRightStatusHasBeenSet() const;
 
@@ -85,6 +88,7 @@ DISABLE:停用
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPaymentRightStatus() const;
 
@@ -93,16 +97,18 @@ DISABLE:停用
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentRightStatus 付款权益状态
+                     * @param _paymentRightStatus 付款权益状态
 ENABLE:启用
 DISABLE:停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPaymentRightStatus(const std::string& _paymentRightStatus);
 
                     /**
                      * 判断参数 PaymentRightStatus 是否已赋值
                      * @return PaymentRightStatus 是否已赋值
+                     * 
                      */
                     bool PaymentRightStatusHasBeenSet() const;
 

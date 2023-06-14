@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取帧标签结果数组
                      * @return FrameTagItems 帧标签结果数组
+                     * 
                      */
                     std::vector<FrameTagItem> GetFrameTagItems() const;
 
                     /**
                      * 设置帧标签结果数组
-                     * @param FrameTagItems 帧标签结果数组
+                     * @param _frameTagItems 帧标签结果数组
+                     * 
                      */
                     void SetFrameTagItems(const std::vector<FrameTagItem>& _frameTagItems);
 
                     /**
                      * 判断参数 FrameTagItems 是否已赋值
                      * @return FrameTagItems 是否已赋值
+                     * 
                      */
                     bool FrameTagItemsHasBeenSet() const;
 

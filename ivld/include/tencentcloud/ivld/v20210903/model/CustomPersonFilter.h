@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取待查询的人物姓名
                      * @return Name 待查询的人物姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置待查询的人物姓名
-                     * @param Name 待查询的人物姓名
+                     * @param _name 待查询的人物姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取待过滤的自定义类型Id数组
                      * @return CategoryIdSet 待过滤的自定义类型Id数组
+                     * 
                      */
                     std::vector<std::string> GetCategoryIdSet() const;
 
                     /**
                      * 设置待过滤的自定义类型Id数组
-                     * @param CategoryIdSet 待过滤的自定义类型Id数组
+                     * @param _categoryIdSet 待过滤的自定义类型Id数组
+                     * 
                      */
                     void SetCategoryIdSet(const std::vector<std::string>& _categoryIdSet);
 
                     /**
                      * 判断参数 CategoryIdSet 是否已赋值
                      * @return CategoryIdSet 是否已赋值
+                     * 
                      */
                     bool CategoryIdSetHasBeenSet() const;
 
                     /**
                      * 获取待过滤的自定义人物Id数组
                      * @return PersonIdSet 待过滤的自定义人物Id数组
+                     * 
                      */
                     std::vector<std::string> GetPersonIdSet() const;
 
                     /**
                      * 设置待过滤的自定义人物Id数组
-                     * @param PersonIdSet 待过滤的自定义人物Id数组
+                     * @param _personIdSet 待过滤的自定义人物Id数组
+                     * 
                      */
                     void SetPersonIdSet(const std::vector<std::string>& _personIdSet);
 
                     /**
                      * 判断参数 PersonIdSet 是否已赋值
                      * @return PersonIdSet 是否已赋值
+                     * 
                      */
                     bool PersonIdSetHasBeenSet() const;
 
                     /**
                      * 获取一级自定义人物类型数组
                      * @return L1CategorySet 一级自定义人物类型数组
+                     * 
                      */
                     std::vector<std::string> GetL1CategorySet() const;
 
                     /**
                      * 设置一级自定义人物类型数组
-                     * @param L1CategorySet 一级自定义人物类型数组
+                     * @param _l1CategorySet 一级自定义人物类型数组
+                     * 
                      */
                     void SetL1CategorySet(const std::vector<std::string>& _l1CategorySet);
 
                     /**
                      * 判断参数 L1CategorySet 是否已赋值
                      * @return L1CategorySet 是否已赋值
+                     * 
                      */
                     bool L1CategorySetHasBeenSet() const;
 

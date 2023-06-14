@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取服务ID
                      * @return ServiceId 服务ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务ID
-                     * @param ServiceId 服务ID
+                     * @param _serviceId 服务ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取包名
                      * @return PkgName 包名
+                     * 
                      */
                     std::string GetPkgName() const;
 
                     /**
                      * 设置包名
-                     * @param PkgName 包名
+                     * @param _pkgName 包名
+                     * 
                      */
                     void SetPkgName(const std::string& _pkgName);
 
                     /**
                      * 判断参数 PkgName 是否已赋值
                      * @return PkgName 是否已赋值
+                     * 
                      */
                     bool PkgNameHasBeenSet() const;
 
                     /**
                      * 获取optType 1上传  2查询
                      * @return OptType optType 1上传  2查询
+                     * 
                      */
                     int64_t GetOptType() const;
 
                     /**
                      * 设置optType 1上传  2查询
-                     * @param OptType optType 1上传  2查询
+                     * @param _optType optType 1上传  2查询
+                     * 
                      */
                     void SetOptType(const int64_t& _optType);
 
                     /**
                      * 判断参数 OptType 是否已赋值
                      * @return OptType 是否已赋值
+                     * 
                      */
                     bool OptTypeHasBeenSet() const;
 
                     /**
                      * 获取来源 channel
                      * @return SourceChannel 来源 channel
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源 channel
-                     * @param SourceChannel 来源 channel
+                     * @param _sourceChannel 来源 channel
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取充当deployVersion入参
                      * @return TimeVersion 充当deployVersion入参
+                     * 
                      */
                     std::string GetTimeVersion() const;
 
                     /**
                      * 设置充当deployVersion入参
-                     * @param TimeVersion 充当deployVersion入参
+                     * @param _timeVersion 充当deployVersion入参
+                     * 
                      */
                     void SetTimeVersion(const std::string& _timeVersion);
 
                     /**
                      * 判断参数 TimeVersion 是否已赋值
                      * @return TimeVersion 是否已赋值
+                     * 
                      */
                     bool TimeVersionHasBeenSet() const;
 

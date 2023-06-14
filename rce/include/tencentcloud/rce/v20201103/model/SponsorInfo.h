@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取OpenID
                      * @return SponsorOpenId OpenID
+                     * 
                      */
                     std::string GetSponsorOpenId() const;
 
                     /**
                      * 设置OpenID
-                     * @param SponsorOpenId OpenID
+                     * @param _sponsorOpenId OpenID
+                     * 
                      */
                     void SetSponsorOpenId(const std::string& _sponsorOpenId);
 
                     /**
                      * 判断参数 SponsorOpenId 是否已赋值
                      * @return SponsorOpenId 是否已赋值
+                     * 
                      */
                     bool SponsorOpenIdHasBeenSet() const;
 
                     /**
                      * 获取设备号
                      * @return SponsorDeviceNumber 设备号
+                     * 
                      */
                     std::string GetSponsorDeviceNumber() const;
 
                     /**
                      * 设置设备号
-                     * @param SponsorDeviceNumber 设备号
+                     * @param _sponsorDeviceNumber 设备号
+                     * 
                      */
                     void SetSponsorDeviceNumber(const std::string& _sponsorDeviceNumber);
 
                     /**
                      * 判断参数 SponsorDeviceNumber 是否已赋值
                      * @return SponsorDeviceNumber 是否已赋值
+                     * 
                      */
                     bool SponsorDeviceNumberHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return SponsorPhone 手机号
+                     * 
                      */
                     std::string GetSponsorPhone() const;
 
                     /**
                      * 设置手机号
-                     * @param SponsorPhone 手机号
+                     * @param _sponsorPhone 手机号
+                     * 
                      */
                     void SetSponsorPhone(const std::string& _sponsorPhone);
 
                     /**
                      * 判断参数 SponsorPhone 是否已赋值
                      * @return SponsorPhone 是否已赋值
+                     * 
                      */
                     bool SponsorPhoneHasBeenSet() const;
 
                     /**
                      * 获取IP
                      * @return SponsorIp IP
+                     * 
                      */
                     std::string GetSponsorIp() const;
 
                     /**
                      * 设置IP
-                     * @param SponsorIp IP
+                     * @param _sponsorIp IP
+                     * 
                      */
                     void SetSponsorIp(const std::string& _sponsorIp);
 
                     /**
                      * 判断参数 SponsorIp 是否已赋值
                      * @return SponsorIp 是否已赋值
+                     * 
                      */
                     bool SponsorIpHasBeenSet() const;
 
                     /**
                      * 获取链接
                      * @return CampaignUrl 链接
+                     * 
                      */
                     std::string GetCampaignUrl() const;
 
                     /**
                      * 设置链接
-                     * @param CampaignUrl 链接
+                     * @param _campaignUrl 链接
+                     * 
                      */
                     void SetCampaignUrl(const std::string& _campaignUrl);
 
                     /**
                      * 判断参数 CampaignUrl 是否已赋值
                      * @return CampaignUrl 是否已赋值
+                     * 
                      */
                     bool CampaignUrlHasBeenSet() const;
 

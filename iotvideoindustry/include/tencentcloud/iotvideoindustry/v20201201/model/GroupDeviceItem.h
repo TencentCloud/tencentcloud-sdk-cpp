@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置设备名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NickName 设备名称
+                     * @param _nickName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNickName(const std::string& _nickName);
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 设备状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置设备状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 设备状态
+                     * @param _status 设备状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraInformation 扩展信息
+                     * @param _extraInformation 扩展信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
 
                     /**
                      * 判断参数 ExtraInformation 是否已赋值
                      * @return ExtraInformation 是否已赋值
+                     * 
                      */
                     bool ExtraInformationHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
                      * 设置设备类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceType 设备类型
+                     * @param _deviceType 设备类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTSPUrl rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRTSPUrl() const;
 
                     /**
                      * 设置rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTSPUrl rtsp地址
+                     * @param _rTSPUrl rtsp地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTSPUrl(const std::string& _rTSPUrl);
 
                     /**
                      * 判断参数 RTSPUrl 是否已赋值
                      * @return RTSPUrl 是否已赋值
+                     * 
                      */
                     bool RTSPUrlHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceCode 设备编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
                      * 设置设备编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceCode 设备编码
+                     * @param _deviceCode 设备编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceCode(const std::string& _deviceCode);
 
                     /**
                      * 判断参数 DeviceCode 是否已赋值
                      * @return DeviceCode 是否已赋值
+                     * 
                      */
                     bool DeviceCodeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRecord 是否存在录像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsRecord() const;
 
                     /**
                      * 设置是否存在录像
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsRecord 是否存在录像
+                     * @param _isRecord 是否存在录像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsRecord(const int64_t& _isRecord);
 
                     /**
                      * 判断参数 IsRecord 是否已赋值
                      * @return IsRecord 是否已赋值
+                     * 
                      */
                     bool IsRecordHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Recordable 该设备是否可录制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordable() const;
 
                     /**
                      * 设置该设备是否可录制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Recordable 该设备是否可录制
+                     * @param _recordable 该设备是否可录制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordable(const int64_t& _recordable);
 
                     /**
                      * 判断参数 Recordable 是否已赋值
                      * @return Recordable 是否已赋值
+                     * 
                      */
                     bool RecordableHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 设备接入协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置设备接入协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 设备接入协议
+                     * @param _protocol 设备接入协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 设备创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置设备创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 设备创建时间
+                     * @param _createTime 设备创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelNum 设备通道总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChannelNum() const;
 
                     /**
                      * 设置设备通道总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelNum 设备通道总数
+                     * @param _channelNum 设备通道总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelNum(const int64_t& _channelNum);
 
                     /**
                      * 判断参数 ChannelNum 是否已赋值
                      * @return ChannelNum 是否已赋值
+                     * 
                      */
                     bool ChannelNumHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoChannelNum 设备视频通道总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVideoChannelNum() const;
 
                     /**
                      * 设置设备视频通道总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoChannelNum 设备视频通道总数
+                     * @param _videoChannelNum 设备视频通道总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoChannelNum(const int64_t& _videoChannelNum);
 
                     /**
                      * 判断参数 VideoChannelNum 是否已赋值
                      * @return VideoChannelNum 是否已赋值
+                     * 
                      */
                     bool VideoChannelNumHasBeenSet() const;
 

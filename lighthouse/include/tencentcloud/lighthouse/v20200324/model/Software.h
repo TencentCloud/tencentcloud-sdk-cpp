@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取软件名称。
                      * @return Name 软件名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置软件名称。
-                     * @param Name 软件名称。
+                     * @param _name 软件名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取软件版本。
                      * @return Version 软件版本。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置软件版本。
-                     * @param Version 软件版本。
+                     * @param _version 软件版本。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取软件图片 URL。
                      * @return ImageUrl 软件图片 URL。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置软件图片 URL。
-                     * @param ImageUrl 软件图片 URL。
+                     * @param _imageUrl 软件图片 URL。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
                     /**
                      * 获取软件安装目录。
                      * @return InstallDir 软件安装目录。
+                     * 
                      */
                     std::string GetInstallDir() const;
 
                     /**
                      * 设置软件安装目录。
-                     * @param InstallDir 软件安装目录。
+                     * @param _installDir 软件安装目录。
+                     * 
                      */
                     void SetInstallDir(const std::string& _installDir);
 
                     /**
                      * 判断参数 InstallDir 是否已赋值
                      * @return InstallDir 是否已赋值
+                     * 
                      */
                     bool InstallDirHasBeenSet() const;
 
                     /**
                      * 获取软件详情列表。
                      * @return DetailSet 软件详情列表。
+                     * 
                      */
                     std::vector<SoftwareDetail> GetDetailSet() const;
 
                     /**
                      * 设置软件详情列表。
-                     * @param DetailSet 软件详情列表。
+                     * @param _detailSet 软件详情列表。
+                     * 
                      */
                     void SetDetailSet(const std::vector<SoftwareDetail>& _detailSet);
 
                     /**
                      * 判断参数 DetailSet 是否已赋值
                      * @return DetailSet 是否已赋值
+                     * 
                      */
                     bool DetailSetHasBeenSet() const;
 

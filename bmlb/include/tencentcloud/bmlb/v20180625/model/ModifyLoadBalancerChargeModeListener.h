@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID。
                      * @return ListenerId 监听器ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID。
-                     * @param ListenerId 监听器ID。
+                     * @param _listenerId 监听器ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取协议类型。
                      * @return Protocol 协议类型。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型。
-                     * @param Protocol 协议类型。
+                     * @param _protocol 协议类型。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取带宽。
                      * @return Bandwidth 带宽。
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽。
-                     * @param Bandwidth 带宽。
+                     * @param _bandwidth 带宽。
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 

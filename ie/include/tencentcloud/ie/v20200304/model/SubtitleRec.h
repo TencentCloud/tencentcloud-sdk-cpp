@@ -53,6 +53,7 @@ en：英文
                      * @return AsrDst 语音识别：
 zh：中文
 en：英文
+                     * 
                      */
                     std::string GetAsrDst() const;
 
@@ -60,15 +61,17 @@ en：英文
                      * 设置语音识别：
 zh：中文
 en：英文
-                     * @param AsrDst 语音识别：
+                     * @param _asrDst 语音识别：
 zh：中文
 en：英文
+                     * 
                      */
                     void SetAsrDst(const std::string& _asrDst);
 
                     /**
                      * 判断参数 AsrDst 是否已赋值
                      * @return AsrDst 是否已赋值
+                     * 
                      */
                     bool AsrDstHasBeenSet() const;
 
@@ -79,6 +82,7 @@ en：英文
                      * @return TransDst 翻译识别：
 zh：中文
 en：英文
+                     * 
                      */
                     std::string GetTransDst() const;
 
@@ -86,15 +90,17 @@ en：英文
                      * 设置翻译识别：
 zh：中文
 en：英文
-                     * @param TransDst 翻译识别：
+                     * @param _transDst 翻译识别：
 zh：中文
 en：英文
+                     * 
                      */
                     void SetTransDst(const std::string& _transDst);
 
                     /**
                      * 判断参数 TransDst 是否已赋值
                      * @return TransDst 是否已赋值
+                     * 
                      */
                     bool TransDstHasBeenSet() const;
 

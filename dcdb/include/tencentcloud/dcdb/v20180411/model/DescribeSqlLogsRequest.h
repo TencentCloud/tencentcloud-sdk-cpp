@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
                      * @return InstanceId 实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
-                     * @param InstanceId 实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * @param _instanceId 实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取SQL日志偏移。
                      * @return Offset SQL日志偏移。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置SQL日志偏移。
-                     * @param Offset SQL日志偏移。
+                     * @param _offset SQL日志偏移。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取拉取数量（0-10000，为0时拉取总数信息）。
                      * @return Limit 拉取数量（0-10000，为0时拉取总数信息）。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置拉取数量（0-10000，为0时拉取总数信息）。
-                     * @param Limit 拉取数量（0-10000，为0时拉取总数信息）。
+                     * @param _limit 拉取数量（0-10000，为0时拉取总数信息）。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

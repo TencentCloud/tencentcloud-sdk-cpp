@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 切换负载均衡计费方式时，可用此参数查询切换任务是否成功。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 

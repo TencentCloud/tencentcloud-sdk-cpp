@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 步骤的状态， 包括：notStarted(未开始)、running(运行中)、success(成功)、failed(失败)等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置步骤的状态， 包括：notStarted(未开始)、running(运行中)、success(成功)、failed(失败)等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 步骤的状态， 包括：notStarted(未开始)、running(运行中)、success(成功)、failed(失败)等
+                     * @param _status 步骤的状态， 包括：notStarted(未开始)、running(运行中)、success(成功)、failed(失败)等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 进度信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
                      * 设置进度信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Percent 进度信息
+                     * @param _percent 进度信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPercent(const uint64_t& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepAll 总的步骤数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepAll() const;
 
                     /**
                      * 设置总的步骤数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepAll 总的步骤数
+                     * @param _stepAll 总的步骤数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepAll(const uint64_t& _stepAll);
 
                     /**
                      * 判断参数 StepAll 是否已赋值
                      * @return StepAll 是否已赋值
+                     * 
                      */
                     bool StepAllHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNow 当前进行的步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepNow() const;
 
                     /**
                      * 设置当前进行的步骤
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepNow 当前进行的步骤
+                     * @param _stepNow 当前进行的步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepNow(const uint64_t& _stepNow);
 
                     /**
                      * 判断参数 StepNow 是否已赋值
                      * @return StepNow 是否已赋值
+                     * 
                      */
                     bool StepNowHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 当前步骤输出提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置当前步骤输出提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 当前步骤输出提示信息
+                     * @param _message 当前步骤输出提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Steps 步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StepDetailInfo> GetSteps() const;
 
                     /**
                      * 设置步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Steps 步骤信息
+                     * @param _steps 步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSteps(const std::vector<StepDetailInfo>& _steps);
 
                     /**
                      * 判断参数 Steps 是否已赋值
                      * @return Steps 是否已赋值
+                     * 
                      */
                     bool StepsHasBeenSet() const;
 

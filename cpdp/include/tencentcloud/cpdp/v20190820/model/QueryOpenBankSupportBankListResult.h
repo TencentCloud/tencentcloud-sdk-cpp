@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取支持的银行列表
                      * @return SupportBankList 支持的银行列表
+                     * 
                      */
                     std::vector<SupportBankInfo> GetSupportBankList() const;
 
                     /**
                      * 设置支持的银行列表
-                     * @param SupportBankList 支持的银行列表
+                     * @param _supportBankList 支持的银行列表
+                     * 
                      */
                     void SetSupportBankList(const std::vector<SupportBankInfo>& _supportBankList);
 
                     /**
                      * 判断参数 SupportBankList 是否已赋值
                      * @return SupportBankList 是否已赋值
+                     * 
                      */
                     bool SupportBankListHasBeenSet() const;
 

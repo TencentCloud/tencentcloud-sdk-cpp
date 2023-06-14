@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取订阅音频流白名单，指定订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表订阅UserId 1，2，3的音频流；["1.*$"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。
                      * @return SubscribeAudioUserIds 订阅音频流白名单，指定订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表订阅UserId 1，2，3的音频流；["1.*$"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。
+                     * 
                      */
                     std::vector<std::string> GetSubscribeAudioUserIds() const;
 
                     /**
                      * 设置订阅音频流白名单，指定订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表订阅UserId 1，2，3的音频流；["1.*$"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。
-                     * @param SubscribeAudioUserIds 订阅音频流白名单，指定订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表订阅UserId 1，2，3的音频流；["1.*$"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。
+                     * @param _subscribeAudioUserIds 订阅音频流白名单，指定订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表订阅UserId 1，2，3的音频流；["1.*$"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。
+                     * 
                      */
                     void SetSubscribeAudioUserIds(const std::vector<std::string>& _subscribeAudioUserIds);
 
                     /**
                      * 判断参数 SubscribeAudioUserIds 是否已赋值
                      * @return SubscribeAudioUserIds 是否已赋值
+                     * 
                      */
                     bool SubscribeAudioUserIdsHasBeenSet() const;
 
                     /**
                      * 获取订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表不订阅UserId 1，2，3的音频流；["1.*$"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。
                      * @return UnSubscribeAudioUserIds 订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表不订阅UserId 1，2，3的音频流；["1.*$"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。
+                     * 
                      */
                     std::vector<std::string> GetUnSubscribeAudioUserIds() const;
 
                     /**
                      * 设置订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表不订阅UserId 1，2，3的音频流；["1.*$"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。
-                     * @param UnSubscribeAudioUserIds 订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表不订阅UserId 1，2，3的音频流；["1.*$"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。
+                     * @param _unSubscribeAudioUserIds 订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如["1", "2", "3"], 代表不订阅UserId 1，2，3的音频流；["1.*$"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。
+                     * 
                      */
                     void SetUnSubscribeAudioUserIds(const std::vector<std::string>& _unSubscribeAudioUserIds);
 
                     /**
                      * 判断参数 UnSubscribeAudioUserIds 是否已赋值
                      * @return UnSubscribeAudioUserIds 是否已赋值
+                     * 
                      */
                     bool UnSubscribeAudioUserIdsHasBeenSet() const;
 
                     /**
                      * 获取订阅视频流白名单，指定订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表订阅UserId  1，2，3的视频流；["1.*$"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
                      * @return SubscribeVideoUserIds 订阅视频流白名单，指定订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表订阅UserId  1，2，3的视频流；["1.*$"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * 
                      */
                     std::vector<std::string> GetSubscribeVideoUserIds() const;
 
                     /**
                      * 设置订阅视频流白名单，指定订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表订阅UserId  1，2，3的视频流；["1.*$"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
-                     * @param SubscribeVideoUserIds 订阅视频流白名单，指定订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表订阅UserId  1，2，3的视频流；["1.*$"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * @param _subscribeVideoUserIds 订阅视频流白名单，指定订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表订阅UserId  1，2，3的视频流；["1.*$"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * 
                      */
                     void SetSubscribeVideoUserIds(const std::vector<std::string>& _subscribeVideoUserIds);
 
                     /**
                      * 判断参数 SubscribeVideoUserIds 是否已赋值
                      * @return SubscribeVideoUserIds 是否已赋值
+                     * 
                      */
                     bool SubscribeVideoUserIdsHasBeenSet() const;
 
                     /**
                      * 获取订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表不订阅UserId  1，2，3的视频流；["1.*$"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
                      * @return UnSubscribeVideoUserIds 订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表不订阅UserId  1，2，3的视频流；["1.*$"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * 
                      */
                     std::vector<std::string> GetUnSubscribeVideoUserIds() const;
 
                     /**
                      * 设置订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表不订阅UserId  1，2，3的视频流；["1.*$"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
-                     * @param UnSubscribeVideoUserIds 订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表不订阅UserId  1，2，3的视频流；["1.*$"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * @param _unSubscribeVideoUserIds 订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如["1", "2", "3"], 代表不订阅UserId  1，2，3的视频流；["1.*$"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。
+                     * 
                      */
                     void SetUnSubscribeVideoUserIds(const std::vector<std::string>& _unSubscribeVideoUserIds);
 
                     /**
                      * 判断参数 UnSubscribeVideoUserIds 是否已赋值
                      * @return UnSubscribeVideoUserIds 是否已赋值
+                     * 
                      */
                     bool UnSubscribeVideoUserIdsHasBeenSet() const;
 

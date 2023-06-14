@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取从经验库中查询到的经验模板ID
                      * @return TemplateId 从经验库中查询到的经验模板ID
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置从经验库中查询到的经验模板ID
-                     * @param TemplateId 从经验库中查询到的经验模板ID
+                     * @param _templateId 从经验库中查询到的经验模板ID
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取演练的配置参数
                      * @return TaskConfig 演练的配置参数
+                     * 
                      */
                     TaskConfig GetTaskConfig() const;
 
                     /**
                      * 设置演练的配置参数
-                     * @param TaskConfig 演练的配置参数
+                     * @param _taskConfig 演练的配置参数
+                     * 
                      */
                     void SetTaskConfig(const TaskConfig& _taskConfig);
 
                     /**
                      * 判断参数 TaskConfig 是否已赋值
                      * @return TaskConfig 是否已赋值
+                     * 
                      */
                     bool TaskConfigHasBeenSet() const;
 

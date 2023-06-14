@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID。
-                     * @param VpnGatewayId VPN网关实例ID。
+                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。
                      * @return Filters 过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。
-                     * @param Filters 过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。
+                     * @param _filters 过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量, 默认0。
                      * @return Offset 偏移量, 默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量, 默认0。
-                     * @param Offset 偏移量, 默认0。
+                     * @param _offset 偏移量, 默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单页个数, 默认20, 最大值100。
                      * @return Limit 单页个数, 默认20, 最大值100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单页个数, 默认20, 最大值100。
-                     * @param Limit 单页个数, 默认20, 最大值100。
+                     * @param _limit 单页个数, 默认20, 最大值100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

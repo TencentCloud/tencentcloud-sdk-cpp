@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取第三方组件的PURL
                      * @return PURL 第三方组件的PURL
+                     * 
                      */
                     PURL GetPURL() const;
 
                     /**
                      * 设置第三方组件的PURL
-                     * @param PURL 第三方组件的PURL
+                     * @param _pURL 第三方组件的PURL
+                     * 
                      */
                     void SetPURL(const PURL& _pURL);
 
                     /**
                      * 判断参数 PURL 是否已赋值
                      * @return PURL 是否已赋值
+                     * 
                      */
                     bool PURLHasBeenSet() const;
 
                     /**
                      * 获取第三方组件的主页
                      * @return Homepage 第三方组件的主页
+                     * 
                      */
                     std::string GetHomepage() const;
 
                     /**
                      * 设置第三方组件的主页
-                     * @param Homepage 第三方组件的主页
+                     * @param _homepage 第三方组件的主页
+                     * 
                      */
                     void SetHomepage(const std::string& _homepage);
 
                     /**
                      * 判断参数 Homepage 是否已赋值
                      * @return Homepage 是否已赋值
+                     * 
                      */
                     bool HomepageHasBeenSet() const;
 
                     /**
                      * 获取第三方组件的简介
                      * @return Summary 第三方组件的简介
+                     * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置第三方组件的简介
-                     * @param Summary 第三方组件的简介
+                     * @param _summary 第三方组件的简介
+                     * 
                      */
                     void SetSummary(const std::string& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NicknameList 第三方组件的别名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNicknameList() const;
 
                     /**
                      * 设置第三方组件的别名列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NicknameList 第三方组件的别名列表
+                     * @param _nicknameList 第三方组件的别名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNicknameList(const std::vector<std::string>& _nicknameList);
 
                     /**
                      * 判断参数 NicknameList 是否已赋值
                      * @return NicknameList 是否已赋值
+                     * 
                      */
                     bool NicknameListHasBeenSet() const;
 
@@ -128,38 +140,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeLocationList 第三方组件的代码位置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCodeLocationList() const;
 
                     /**
                      * 设置第三方组件的代码位置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeLocationList 第三方组件的代码位置列表
+                     * @param _codeLocationList 第三方组件的代码位置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeLocationList(const std::vector<std::string>& _codeLocationList);
 
                     /**
                      * 判断参数 CodeLocationList 是否已赋值
                      * @return CodeLocationList 是否已赋值
+                     * 
                      */
                     bool CodeLocationListHasBeenSet() const;
 
                     /**
                      * 获取第三方组件的许可证表达式
                      * @return LicenseExpression 第三方组件的许可证表达式
+                     * 
                      */
                     std::string GetLicenseExpression() const;
 
                     /**
                      * 设置第三方组件的许可证表达式
-                     * @param LicenseExpression 第三方组件的许可证表达式
+                     * @param _licenseExpression 第三方组件的许可证表达式
+                     * 
                      */
                     void SetLicenseExpression(const std::string& _licenseExpression);
 
                     /**
                      * 判断参数 LicenseExpression 是否已赋值
                      * @return LicenseExpression 是否已赋值
+                     * 
                      */
                     bool LicenseExpressionHasBeenSet() const;
 

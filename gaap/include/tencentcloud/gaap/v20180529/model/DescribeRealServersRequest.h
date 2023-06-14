@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取查询源站的所属项目ID，-1表示所有项目
                      * @return ProjectId 查询源站的所属项目ID，-1表示所有项目
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置查询源站的所属项目ID，-1表示所有项目
-                     * @param ProjectId 查询源站的所属项目ID，-1表示所有项目
+                     * @param _projectId 查询源站的所属项目ID，-1表示所有项目
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询的源站IP或域名，支持模糊匹配
                      * @return SearchValue 需要查询的源站IP或域名，支持模糊匹配
+                     * 
                      */
                     std::string GetSearchValue() const;
 
                     /**
                      * 设置需要查询的源站IP或域名，支持模糊匹配
-                     * @param SearchValue 需要查询的源站IP或域名，支持模糊匹配
+                     * @param _searchValue 需要查询的源站IP或域名，支持模糊匹配
+                     * 
                      */
                     void SetSearchValue(const std::string& _searchValue);
 
                     /**
                      * 判断参数 SearchValue 是否已赋值
                      * @return SearchValue 是否已赋值
+                     * 
                      */
                     bool SearchValueHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值是0
                      * @return Offset 偏移量，默认值是0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值是0
-                     * @param Offset 偏移量，默认值是0
+                     * @param _offset 偏移量，默认值是0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20个，最大值为50个
                      * @return Limit 返回数量，默认为20个，最大值为50个
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20个，最大值为50个
-                     * @param Limit 返回数量，默认为20个，最大值为50个
+                     * @param _limit 返回数量，默认为20个，最大值为50个
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -121,38 +133,44 @@ namespace TencentCloud
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，源站会被拉取出来。
                      * @return TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，源站会被拉取出来。
+                     * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，源站会被拉取出来。
-                     * @param TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
+                     * @param _tagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
 最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，源站会被拉取出来。
+                     * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件。filter的name取值(RealServerName,RealServerIP)
                      * @return Filters 过滤条件。filter的name取值(RealServerName,RealServerIP)
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。filter的name取值(RealServerName,RealServerIP)
-                     * @param Filters 过滤条件。filter的name取值(RealServerName,RealServerIP)
+                     * @param _filters 过滤条件。filter的name取值(RealServerName,RealServerIP)
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

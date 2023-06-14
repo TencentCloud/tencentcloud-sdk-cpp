@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库可用区。
                      * @return Zone 数据库可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置数据库可用区。
-                     * @param Zone 数据库可用区。
+                     * @param _zone 数据库可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

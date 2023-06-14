@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取站点详情
                      * @return SiteDetailSet 站点详情
+                     * 
                      */
                     std::vector<SiteDetail> GetSiteDetailSet() const;
 
                     /**
                      * 判断参数 SiteDetailSet 是否已赋值
                      * @return SiteDetailSet 是否已赋值
+                     * 
                      */
                     bool SiteDetailSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的站点总数
                      * @return TotalCount 符合条件的站点总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

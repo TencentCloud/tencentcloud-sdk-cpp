@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取命名空间名称
                      * @return Namespace 命名空间名称
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param Namespace 命名空间名称
+                     * @param _namespace 命名空间名称
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 注入状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置注入状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 注入状态
+                     * @param _state 注入状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

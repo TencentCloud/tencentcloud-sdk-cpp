@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList DDOS实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DdosInstanceDetail> GetInstanceList() const;
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
                      * @return InstanceList 是否已赋值
+                     * 
                      */
                     bool InstanceListHasBeenSet() const;
 

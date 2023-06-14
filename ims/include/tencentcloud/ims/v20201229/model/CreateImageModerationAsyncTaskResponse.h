@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取该字段用于返回检测对象对应请求参数中的DataId。
                      * @return DataId 该字段用于返回检测对象对应请求参数中的DataId。
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 

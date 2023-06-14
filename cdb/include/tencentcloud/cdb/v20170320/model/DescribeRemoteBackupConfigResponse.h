@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取异地备份保留时间，单位为天
                      * @return ExpireDays 异地备份保留时间，单位为天
+                     * 
                      */
                     int64_t GetExpireDays() const;
 
                     /**
                      * 判断参数 ExpireDays 是否已赋值
                      * @return ExpireDays 是否已赋值
+                     * 
                      */
                     bool ExpireDaysHasBeenSet() const;
 
                     /**
                      * 获取异地数据备份开关，off - 关闭异地备份，on-开启异地备份
                      * @return RemoteBackupSave 异地数据备份开关，off - 关闭异地备份，on-开启异地备份
+                     * 
                      */
                     std::string GetRemoteBackupSave() const;
 
                     /**
                      * 判断参数 RemoteBackupSave 是否已赋值
                      * @return RemoteBackupSave 是否已赋值
+                     * 
                      */
                     bool RemoteBackupSaveHasBeenSet() const;
 
                     /**
                      * 获取异地日志备份开关，off - 关闭异地备份，on-开启异地备份，只有在参数RemoteBackupSave为on时，RemoteBinlogSave参数才可设置为on
                      * @return RemoteBinlogSave 异地日志备份开关，off - 关闭异地备份，on-开启异地备份，只有在参数RemoteBackupSave为on时，RemoteBinlogSave参数才可设置为on
+                     * 
                      */
                     std::string GetRemoteBinlogSave() const;
 
                     /**
                      * 判断参数 RemoteBinlogSave 是否已赋值
                      * @return RemoteBinlogSave 是否已赋值
+                     * 
                      */
                     bool RemoteBinlogSaveHasBeenSet() const;
 
                     /**
                      * 获取用户已设置异地备份地域列表
                      * @return RemoteRegion 用户已设置异地备份地域列表
+                     * 
                      */
                     std::vector<std::string> GetRemoteRegion() const;
 
                     /**
                      * 判断参数 RemoteRegion 是否已赋值
                      * @return RemoteRegion 是否已赋值
+                     * 
                      */
                     bool RemoteRegionHasBeenSet() const;
 
                     /**
                      * 获取用户可设置异地备份地域列表
                      * @return RegionList 用户可设置异地备份地域列表
+                     * 
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 

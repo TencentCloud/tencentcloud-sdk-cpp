@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取IP
                      * @return Ip IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP
-                     * @param Ip IP
+                     * @param _ip IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）
                      * @return Status 状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）
-                     * @param Status 状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）
+                     * @param _status 状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取封堵时间
                      * @return BlockTime 封堵时间
+                     * 
                      */
                     std::string GetBlockTime() const;
 
                     /**
                      * 设置封堵时间
-                     * @param BlockTime 封堵时间
+                     * @param _blockTime 封堵时间
+                     * 
                      */
                     void SetBlockTime(const std::string& _blockTime);
 
                     /**
                      * 判断参数 BlockTime 是否已赋值
                      * @return BlockTime 是否已赋值
+                     * 
                      */
                     bool BlockTimeHasBeenSet() const;
 
                     /**
                      * 获取解封时间（预计解封时间）
                      * @return UnBlockTime 解封时间（预计解封时间）
+                     * 
                      */
                     std::string GetUnBlockTime() const;
 
                     /**
                      * 设置解封时间（预计解封时间）
-                     * @param UnBlockTime 解封时间（预计解封时间）
+                     * @param _unBlockTime 解封时间（预计解封时间）
+                     * 
                      */
                     void SetUnBlockTime(const std::string& _unBlockTime);
 
                     /**
                      * 判断参数 UnBlockTime 是否已赋值
                      * @return UnBlockTime 是否已赋值
+                     * 
                      */
                     bool UnBlockTimeHasBeenSet() const;
 
                     /**
                      * 获取解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）
                      * @return ActionType 解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）
+                     * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）
-                     * @param ActionType 解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）
+                     * @param _actionType 解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）
+                     * 
                      */
                     void SetActionType(const std::string& _actionType);
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 
                     /**
                      * 获取高防标记，0：非高防，1：高防
                      * @return ProtectFlag 高防标记，0：非高防，1：高防
+                     * 
                      */
                     uint64_t GetProtectFlag() const;
 
                     /**
                      * 设置高防标记，0：非高防，1：高防
-                     * @param ProtectFlag 高防标记，0：非高防，1：高防
+                     * @param _protectFlag 高防标记，0：非高防，1：高防
+                     * 
                      */
                     void SetProtectFlag(const uint64_t& _protectFlag);
 
                     /**
                      * 判断参数 ProtectFlag 是否已赋值
                      * @return ProtectFlag 是否已赋值
+                     * 
                      */
                     bool ProtectFlagHasBeenSet() const;
 

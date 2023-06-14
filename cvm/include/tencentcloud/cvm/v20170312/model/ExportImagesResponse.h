@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取导出镜像任务ID
                      * @return TaskId 导出镜像任务ID
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取导出镜像的COS文件名列表
                      * @return CosPaths 导出镜像的COS文件名列表
+                     * 
                      */
                     std::vector<std::string> GetCosPaths() const;
 
                     /**
                      * 判断参数 CosPaths 是否已赋值
                      * @return CosPaths 是否已赋值
+                     * 
                      */
                     bool CosPathsHasBeenSet() const;
 

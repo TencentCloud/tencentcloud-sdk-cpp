@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。
                      * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。
-                     * @param Alias 作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。
+                     * @param _alias 作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取创建密钥所有的算法类型，支持的取值：AES_256,SM4
                      * @return Algorithm 创建密钥所有的算法类型，支持的取值：AES_256,SM4
+                     * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
                      * 设置创建密钥所有的算法类型，支持的取值：AES_256,SM4
-                     * @param Algorithm 创建密钥所有的算法类型，支持的取值：AES_256,SM4
+                     * @param _algorithm 创建密钥所有的算法类型，支持的取值：AES_256,SM4
+                     * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
                     /**
                      * 判断参数 Algorithm 是否已赋值
                      * @return Algorithm 是否已赋值
+                     * 
                      */
                     bool AlgorithmHasBeenSet() const;
 
                     /**
                      * 获取密钥的描述，最大1024字节
                      * @return Description 密钥的描述，最大1024字节
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置密钥的描述，最大1024字节
-                     * @param Description 密钥的描述，最大1024字节
+                     * @param _description 密钥的描述，最大1024字节
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

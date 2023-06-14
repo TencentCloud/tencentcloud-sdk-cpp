@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterID 集群id
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterID 集群id
+                     * @param _clusterID 集群id
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
                     /**
                      * 获取CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
                      * @return RunInstancePara CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * 
                      */
                     std::string GetRunInstancePara() const;
 
                     /**
                      * 设置CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
-                     * @param RunInstancePara CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * @param _runInstancePara CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * 
                      */
                     void SetRunInstancePara(const std::string& _runInstancePara);
 
                     /**
                      * 判断参数 RunInstancePara 是否已赋值
                      * @return RunInstancePara 是否已赋值
+                     * 
                      */
                     bool RunInstanceParaHasBeenSet() const;
 
                     /**
                      * 获取CVM所属Region
                      * @return CvmRegion CVM所属Region
+                     * 
                      */
                     std::string GetCvmRegion() const;
 
                     /**
                      * 设置CVM所属Region
-                     * @param CvmRegion CVM所属Region
+                     * @param _cvmRegion CVM所属Region
+                     * 
                      */
                     void SetCvmRegion(const std::string& _cvmRegion);
 
                     /**
                      * 判断参数 CvmRegion 是否已赋值
                      * @return CvmRegion 是否已赋值
+                     * 
                      */
                     bool CvmRegionHasBeenSet() const;
 
                     /**
                      * 获取CVM数量
                      * @return CvmCount CVM数量
+                     * 
                      */
                     int64_t GetCvmCount() const;
 
                     /**
                      * 设置CVM数量
-                     * @param CvmCount CVM数量
+                     * @param _cvmCount CVM数量
+                     * 
                      */
                     void SetCvmCount(const int64_t& _cvmCount);
 
                     /**
                      * 判断参数 CvmCount 是否已赋值
                      * @return CvmCount 是否已赋值
+                     * 
                      */
                     bool CvmCountHasBeenSet() const;
 
                     /**
                      * 获取实例扩展信息
                      * @return External 实例扩展信息
+                     * 
                      */
                     std::string GetExternal() const;
 
                     /**
                      * 设置实例扩展信息
-                     * @param External 实例扩展信息
+                     * @param _external 实例扩展信息
+                     * 
                      */
                     void SetExternal(const std::string& _external);
 
                     /**
                      * 判断参数 External 是否已赋值
                      * @return External 是否已赋值
+                     * 
                      */
                     bool ExternalHasBeenSet() const;
 
                     /**
                      * 获取用户自定义脚本
                      * @return UserScript 用户自定义脚本
+                     * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置用户自定义脚本
-                     * @param UserScript 用户自定义脚本
+                     * @param _userScript 用户自定义脚本
+                     * 
                      */
                     void SetUserScript(const std::string& _userScript);
 
                     /**
                      * 判断参数 UserScript 是否已赋值
                      * @return UserScript 是否已赋值
+                     * 
                      */
                     bool UserScriptHasBeenSet() const;
 
                     /**
                      * 获取是否开启弹性网卡功能
                      * @return EnableEni 是否开启弹性网卡功能
+                     * 
                      */
                     bool GetEnableEni() const;
 
                     /**
                      * 设置是否开启弹性网卡功能
-                     * @param EnableEni 是否开启弹性网卡功能
+                     * @param _enableEni 是否开启弹性网卡功能
+                     * 
                      */
                     void SetEnableEni(const bool& _enableEni);
 
                     /**
                      * 判断参数 EnableEni 是否已赋值
                      * @return EnableEni 是否已赋值
+                     * 
                      */
                     bool EnableEniHasBeenSet() const;
 

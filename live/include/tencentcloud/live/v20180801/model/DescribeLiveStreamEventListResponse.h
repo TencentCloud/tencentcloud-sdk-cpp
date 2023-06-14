@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取推断流事件列表。
                      * @return EventList 推断流事件列表。
+                     * 
                      */
                     std::vector<StreamEventInfo> GetEventList() const;
 
                     /**
                      * 判断参数 EventList 是否已赋值
                      * @return EventList 是否已赋值
+                     * 
                      */
                     bool EventListHasBeenSet() const;
 
                     /**
                      * 获取分页的页码。
                      * @return PageNum 分页的页码。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取每页大小。
                      * @return PageSize 每页大小。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取符合条件的总个数。
                      * @return TotalNum 符合条件的总个数。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取总页数。
                      * @return TotalPage 总页数。
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 

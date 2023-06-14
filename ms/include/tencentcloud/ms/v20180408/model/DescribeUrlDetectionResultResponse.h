@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取[查询结果]查询结果；枚举值：0 查询成功，否则查询失败
                      * @return ResultCode [查询结果]查询结果；枚举值：0 查询成功，否则查询失败
+                     * 
                      */
                     int64_t GetResultCode() const;
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
                     /**
                      * 获取[固定信息]响应协议版本号
                      * @return RespVer [固定信息]响应协议版本号
+                     * 
                      */
                     int64_t GetRespVer() const;
 
                     /**
                      * 判断参数 RespVer 是否已赋值
                      * @return RespVer 是否已赋值
+                     * 
                      */
                     bool RespVerHasBeenSet() const;
 
@@ -82,12 +86,14 @@ namespace TencentCloud
 3-4：安全，访问无风险。
 
 注意：查询结果EvilClass字段在Urltype=2时，才有意义。
+                     * 
                      */
                     int64_t GetUrlType() const;
 
                     /**
                      * 判断参数 UrlType 是否已赋值
                      * @return UrlType 是否已赋值
+                     * 
                      */
                     bool UrlTypeHasBeenSet() const;
 
@@ -108,120 +114,140 @@ namespace TencentCloud
     "5": "博彩网站（博彩网站，在线赌博网站）",
     "6": "色情网站（涉嫌传播色情内容，提供色情服务的网站）"
   }
+                     * 
                      */
                     int64_t GetEvilClass() const;
 
                     /**
                      * 判断参数 EvilClass 是否已赋值
                      * @return EvilClass 是否已赋值
+                     * 
                      */
                     bool EvilClassHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return EvilType 该字段暂为空
+                     * 
                      */
                     int64_t GetEvilType() const;
 
                     /**
                      * 判断参数 EvilType 是否已赋值
                      * @return EvilType 是否已赋值
+                     * 
                      */
                     bool EvilTypeHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return Level 该字段暂为空
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取[查询详情]url检出时间；时间戳
                      * @return DetectTime [查询详情]url检出时间；时间戳
+                     * 
                      */
                     int64_t GetDetectTime() const;
 
                     /**
                      * 判断参数 DetectTime 是否已赋值
                      * @return DetectTime 是否已赋值
+                     * 
                      */
                     bool DetectTimeHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return Wording 该字段暂为空
+                     * 
                      */
                     std::string GetWording() const;
 
                     /**
                      * 判断参数 Wording 是否已赋值
                      * @return Wording 是否已赋值
+                     * 
                      */
                     bool WordingHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return WordingTitle 该字段暂为空
+                     * 
                      */
                     std::string GetWordingTitle() const;
 
                     /**
                      * 判断参数 WordingTitle 是否已赋值
                      * @return WordingTitle 是否已赋值
+                     * 
                      */
                     bool WordingTitleHasBeenSet() const;
 
                     /**
                      * 获取[查询结果]url恶意状态说明；为UrlType字段值对应的说明
                      * @return UrlTypeDesc [查询结果]url恶意状态说明；为UrlType字段值对应的说明
+                     * 
                      */
                     std::string GetUrlTypeDesc() const;
 
                     /**
                      * 判断参数 UrlTypeDesc 是否已赋值
                      * @return UrlTypeDesc 是否已赋值
+                     * 
                      */
                     bool UrlTypeDescHasBeenSet() const;
 
                     /**
                      * 获取[查询结果]url恶意大类说明；为EvilClass字段值对应的说明
                      * @return EvilClassDesc [查询结果]url恶意大类说明；为EvilClass字段值对应的说明
+                     * 
                      */
                     std::string GetEvilClassDesc() const;
 
                     /**
                      * 判断参数 EvilClassDesc 是否已赋值
                      * @return EvilClassDesc 是否已赋值
+                     * 
                      */
                     bool EvilClassDescHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return EvilTypeDesc 该字段暂为空
+                     * 
                      */
                     std::string GetEvilTypeDesc() const;
 
                     /**
                      * 判断参数 EvilTypeDesc 是否已赋值
                      * @return EvilTypeDesc 是否已赋值
+                     * 
                      */
                     bool EvilTypeDescHasBeenSet() const;
 
                     /**
                      * 获取该字段暂为空
                      * @return LevelDesc 该字段暂为空
+                     * 
                      */
                     std::string GetLevelDesc() const;
 
                     /**
                      * 判断参数 LevelDesc 是否已赋值
                      * @return LevelDesc 是否已赋值
+                     * 
                      */
                     bool LevelDescHasBeenSet() const;
 

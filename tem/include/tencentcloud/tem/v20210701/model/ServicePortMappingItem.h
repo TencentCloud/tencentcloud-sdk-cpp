@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 应用访问端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置应用访问端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 应用访问端口
+                     * @param _port 应用访问端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetPort 应用监听端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTargetPort() const;
 
                     /**
                      * 设置应用监听端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetPort 应用监听端口
+                     * @param _targetPort 应用监听端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetPort(const int64_t& _targetPort);
 
                     /**
                      * 判断参数 TargetPort 是否已赋值
                      * @return TargetPort 是否已赋值
+                     * 
                      */
                     bool TargetPortHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 协议类型
+                     * @param _protocol 协议类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取视频参数信息。
                      * @return Video 视频参数信息。
+                     * 
                      */
                     VideoTemplateInfo GetVideo() const;
 
                     /**
                      * 设置视频参数信息。
-                     * @param Video 视频参数信息。
+                     * @param _video 视频参数信息。
+                     * 
                      */
                     void SetVideo(const VideoTemplateInfo& _video);
 
                     /**
                      * 判断参数 Video 是否已赋值
                      * @return Video 是否已赋值
+                     * 
                      */
                     bool VideoHasBeenSet() const;
 
                     /**
                      * 获取音频参数信息。
                      * @return Audio 音频参数信息。
+                     * 
                      */
                     AudioTemplateInfo GetAudio() const;
 
                     /**
                      * 设置音频参数信息。
-                     * @param Audio 音频参数信息。
+                     * @param _audio 音频参数信息。
+                     * 
                      */
                     void SetAudio(const AudioTemplateInfo& _audio);
 
                     /**
                      * 判断参数 Audio 是否已赋值
                      * @return Audio 是否已赋值
+                     * 
                      */
                     bool AudioHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
                      * @return RemoveAudio 是否移除音频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
+                     * 
                      */
                     uint64_t GetRemoveAudio() const;
 
@@ -98,15 +105,17 @@ namespace TencentCloud
                      * 设置是否移除音频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
-                     * @param RemoveAudio 是否移除音频流，取值范围：
+                     * @param _removeAudio 是否移除音频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
+                     * 
                      */
                     void SetRemoveAudio(const uint64_t& _removeAudio);
 
                     /**
                      * 判断参数 RemoveAudio 是否已赋值
                      * @return RemoveAudio 是否已赋值
+                     * 
                      */
                     bool RemoveAudioHasBeenSet() const;
 
@@ -117,6 +126,7 @@ namespace TencentCloud
                      * @return RemoveVideo 是否移除视频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
+                     * 
                      */
                     uint64_t GetRemoveVideo() const;
 
@@ -124,15 +134,17 @@ namespace TencentCloud
                      * 设置是否移除视频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
-                     * @param RemoveVideo 是否移除视频流，取值范围：
+                     * @param _removeVideo 是否移除视频流，取值范围：
 <li>0：否，</li>
 <li>1：是。</li>
+                     * 
                      */
                     void SetRemoveVideo(const uint64_t& _removeVideo);
 
                     /**
                      * 判断参数 RemoveVideo 是否已赋值
                      * @return RemoveVideo 是否已赋值
+                     * 
                      */
                     bool RemoveVideoHasBeenSet() const;
 

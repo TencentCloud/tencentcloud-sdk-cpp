@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取TRTC进房参数
                      * @return TRTCJoinRoomInput TRTC进房参数
+                     * 
                      */
                     TRTCJoinRoomInput GetTRTCJoinRoomInput() const;
 
                     /**
                      * 设置TRTC进房参数
-                     * @param TRTCJoinRoomInput TRTC进房参数
+                     * @param _tRTCJoinRoomInput TRTC进房参数
+                     * 
                      */
                     void SetTRTCJoinRoomInput(const TRTCJoinRoomInput& _tRTCJoinRoomInput);
 
                     /**
                      * 判断参数 TRTCJoinRoomInput 是否已赋值
                      * @return TRTCJoinRoomInput 是否已赋值
+                     * 
                      */
                     bool TRTCJoinRoomInputHasBeenSet() const;
 

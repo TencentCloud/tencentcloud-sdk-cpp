@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取结果数组
                      * @return RiskItemTop5 结果数组
+                     * 
                      */
                     std::vector<BaselineRiskItem> GetRiskItemTop5() const;
 
                     /**
                      * 判断参数 RiskItemTop5 是否已赋值
                      * @return RiskItemTop5 是否已赋值
+                     * 
                      */
                     bool RiskItemTop5HasBeenSet() const;
 

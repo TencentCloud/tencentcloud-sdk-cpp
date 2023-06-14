@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取素材Id
                      * @return MaterialId 素材Id
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置素材Id
-                     * @param MaterialId 素材Id
+                     * @param _materialId 素材Id
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取素材状态
                      * @return MaterialStatus 素材状态
+                     * 
                      */
                     int64_t GetMaterialStatus() const;
 
                     /**
                      * 设置素材状态
-                     * @param MaterialStatus 素材状态
+                     * @param _materialStatus 素材状态
+                     * 
                      */
                     void SetMaterialStatus(const int64_t& _materialStatus);
 
                     /**
                      * 判断参数 MaterialStatus 是否已赋值
                      * @return MaterialStatus 是否已赋值
+                     * 
                      */
                     bool MaterialStatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdateTime 修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取人脸信息
                      * @return MaterialFaceList 人脸信息
+                     * 
                      */
                     std::vector<MaterialFaces> GetMaterialFaceList() const;
 
                     /**
                      * 设置人脸信息
-                     * @param MaterialFaceList 人脸信息
+                     * @param _materialFaceList 人脸信息
+                     * 
                      */
                     void SetMaterialFaceList(const std::vector<MaterialFaces>& _materialFaceList);
 
                     /**
                      * 判断参数 MaterialFaceList 是否已赋值
                      * @return MaterialFaceList 是否已赋值
+                     * 
                      */
                     bool MaterialFaceListHasBeenSet() const;
 
                     /**
                      * 获取素材名
                      * @return MaterialName 素材名
+                     * 
                      */
                     std::string GetMaterialName() const;
 
                     /**
                      * 设置素材名
-                     * @param MaterialName 素材名
+                     * @param _materialName 素材名
+                     * 
                      */
                     void SetMaterialName(const std::string& _materialName);
 
                     /**
                      * 判断参数 MaterialName 是否已赋值
                      * @return MaterialName 是否已赋值
+                     * 
                      */
                     bool MaterialNameHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditResult 审核原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuditResult() const;
 
                     /**
                      * 设置审核原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuditResult 审核原因
+                     * @param _auditResult 审核原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuditResult(const std::string& _auditResult);
 
                     /**
                      * 判断参数 AuditResult 是否已赋值
                      * @return AuditResult 是否已赋值
+                     * 
                      */
                     bool AuditResultHasBeenSet() const;
 

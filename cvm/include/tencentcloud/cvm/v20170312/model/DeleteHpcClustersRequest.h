@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取高性能计算集群ID列表。
                      * @return HpcClusterIds 高性能计算集群ID列表。
+                     * 
                      */
                     std::vector<std::string> GetHpcClusterIds() const;
 
                     /**
                      * 设置高性能计算集群ID列表。
-                     * @param HpcClusterIds 高性能计算集群ID列表。
+                     * @param _hpcClusterIds 高性能计算集群ID列表。
+                     * 
                      */
                     void SetHpcClusterIds(const std::vector<std::string>& _hpcClusterIds);
 
                     /**
                      * 判断参数 HpcClusterIds 是否已赋值
                      * @return HpcClusterIds 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdsHasBeenSet() const;
 

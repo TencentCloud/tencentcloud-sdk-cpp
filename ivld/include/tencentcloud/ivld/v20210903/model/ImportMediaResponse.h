@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取媒资文件在系统中的ID
                      * @return MediaId 媒资文件在系统中的ID
+                     * 
                      */
                     std::string GetMediaId() const;
 
                     /**
                      * 判断参数 MediaId 是否已赋值
                      * @return MediaId 是否已赋值
+                     * 
                      */
                     bool MediaIdHasBeenSet() const;
 

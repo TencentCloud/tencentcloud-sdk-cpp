@@ -54,6 +54,7 @@ namespace TencentCloud
                      * @return EvilType 恶意类型
 100：正常 
 20001：政治
+                     * 
                      */
                     int64_t GetEvilType() const;
 
@@ -61,51 +62,59 @@ namespace TencentCloud
                      * 设置恶意类型
 100：正常 
 20001：政治
-                     * @param EvilType 恶意类型
+                     * @param _evilType 恶意类型
 100：正常 
 20001：政治
+                     * 
                      */
                     void SetEvilType(const int64_t& _evilType);
 
                     /**
                      * 判断参数 EvilType 是否已赋值
                      * @return EvilType 是否已赋值
+                     * 
                      */
                     bool EvilTypeHasBeenSet() const;
 
                     /**
                      * 获取处置判定  0：正常 1：可疑
                      * @return HitFlag 处置判定  0：正常 1：可疑
+                     * 
                      */
                     int64_t GetHitFlag() const;
 
                     /**
                      * 设置处置判定  0：正常 1：可疑
-                     * @param HitFlag 处置判定  0：正常 1：可疑
+                     * @param _hitFlag 处置判定  0：正常 1：可疑
+                     * 
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
 
                     /**
                      * 判断参数 HitFlag 是否已赋值
                      * @return HitFlag 是否已赋值
+                     * 
                      */
                     bool HitFlagHasBeenSet() const;
 
                     /**
                      * 获取命中的人脸名称
                      * @return FaceNames 命中的人脸名称
+                     * 
                      */
                     std::vector<std::string> GetFaceNames() const;
 
                     /**
                      * 设置命中的人脸名称
-                     * @param FaceNames 命中的人脸名称
+                     * @param _faceNames 命中的人脸名称
+                     * 
                      */
                     void SetFaceNames(const std::vector<std::string>& _faceNames);
 
                     /**
                      * 判断参数 FaceNames 是否已赋值
                      * @return FaceNames 是否已赋值
+                     * 
                      */
                     bool FaceNamesHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolityLogoDetail 命中的logo标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Logo> GetPolityLogoDetail() const;
 
                     /**
                      * 设置命中的logo标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolityLogoDetail 命中的logo标签信息
+                     * @param _polityLogoDetail 命中的logo标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolityLogoDetail(const std::vector<Logo>& _polityLogoDetail);
 
                     /**
                      * 判断参数 PolityLogoDetail 是否已赋值
                      * @return PolityLogoDetail 是否已赋值
+                     * 
                      */
                     bool PolityLogoDetailHasBeenSet() const;
 
@@ -136,56 +148,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolityItems 命中的政治物品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPolityItems() const;
 
                     /**
                      * 设置命中的政治物品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolityItems 命中的政治物品名称
+                     * @param _polityItems 命中的政治物品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolityItems(const std::vector<std::string>& _polityItems);
 
                     /**
                      * 判断参数 PolityItems 是否已赋值
                      * @return PolityItems 是否已赋值
+                     * 
                      */
                     bool PolityItemsHasBeenSet() const;
 
                     /**
                      * 获取政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
                      * @return Score 政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
-                     * @param Score 政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
+                     * @param _score 政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取关键词明细
                      * @return Keywords 关键词明细
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置关键词明细
-                     * @param Keywords 关键词明细
+                     * @param _keywords 关键词明细
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 

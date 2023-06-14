@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取各规格的转码信息集合，每个元素代表一个规格的转码结果。
                      * @return TranscodeSet 各规格的转码信息集合，每个元素代表一个规格的转码结果。
+                     * 
                      */
                     std::vector<MediaTranscodeItem> GetTranscodeSet() const;
 
                     /**
                      * 设置各规格的转码信息集合，每个元素代表一个规格的转码结果。
-                     * @param TranscodeSet 各规格的转码信息集合，每个元素代表一个规格的转码结果。
+                     * @param _transcodeSet 各规格的转码信息集合，每个元素代表一个规格的转码结果。
+                     * 
                      */
                     void SetTranscodeSet(const std::vector<MediaTranscodeItem>& _transcodeSet);
 
                     /**
                      * 判断参数 TranscodeSet 是否已赋值
                      * @return TranscodeSet 是否已赋值
+                     * 
                      */
                     bool TranscodeSetHasBeenSet() const;
 

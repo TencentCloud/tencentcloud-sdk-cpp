@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取人员唯一标识符
                      * @return PersonId 人员唯一标识符
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员唯一标识符
-                     * @param PersonId 人员唯一标识符
+                     * @param _personId 人员唯一标识符
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取表情统计结果
                      * @return ExpressRatio 表情统计结果
+                     * 
                      */
                     std::vector<ExpressRatioStatistic> GetExpressRatio() const;
 
                     /**
                      * 设置表情统计结果
-                     * @param ExpressRatio 表情统计结果
+                     * @param _expressRatio 表情统计结果
+                     * 
                      */
                     void SetExpressRatio(const std::vector<ExpressRatioStatistic>& _expressRatio);
 
                     /**
                      * 判断参数 ExpressRatio 是否已赋值
                      * @return ExpressRatio 是否已赋值
+                     * 
                      */
                     bool ExpressRatioHasBeenSet() const;
 

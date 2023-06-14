@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组 ID
                      * @return Id 伸缩组 ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置伸缩组 ID
-                     * @param Id 伸缩组 ID
+                     * @param _id 伸缩组 ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

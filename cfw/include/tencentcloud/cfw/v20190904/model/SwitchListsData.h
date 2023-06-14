@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIp 公网IP
+                     * @param _publicIp 公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetIp 内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIntranetIp() const;
 
                     /**
                      * 设置内网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntranetIp 内网IP
+                     * @param _intranetIp 内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntranetIp(const std::string& _intranetIp);
 
                     /**
                      * 判断参数 IntranetIp 是否已赋值
                      * @return IntranetIp 是否已赋值
+                     * 
                      */
                     bool IntranetIpHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名
+                     * @param _instanceName 实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -117,38 +126,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取资产类型
                      * @return AssetType 资产类型
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
-                     * @param AssetType 资产类型
+                     * @param _assetType 资产类型
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -157,56 +172,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Area 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Area 地域
+                     * @param _area 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取防火墙开关
                      * @return Switch 防火墙开关
+                     * 
                      */
                     int64_t GetSwitch() const;
 
                     /**
                      * 设置防火墙开关
-                     * @param Switch 防火墙开关
+                     * @param _switch 防火墙开关
+                     * 
                      */
                     void SetSwitch(const int64_t& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取id值
                      * @return Id id值
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置id值
-                     * @param Id id值
+                     * @param _id id值
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpType 公网 IP 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPublicIpType() const;
 
                     /**
                      * 设置公网 IP 类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIpType 公网 IP 类型
+                     * @param _publicIpType 公网 IP 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIpType(const uint64_t& _publicIpType);
 
                     /**
                      * 判断参数 PublicIpType 是否已赋值
                      * @return PublicIpType 是否已赋值
+                     * 
                      */
                     bool PublicIpTypeHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortTimes 风险端口数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPortTimes() const;
 
                     /**
                      * 设置风险端口数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PortTimes 风险端口数
+                     * @param _portTimes 风险端口数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPortTimes(const uint64_t& _portTimes);
 
                     /**
                      * 判断参数 PortTimes 是否已赋值
                      * @return PortTimes 是否已赋值
+                     * 
                      */
                     bool PortTimesHasBeenSet() const;
 
@@ -259,20 +289,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTime 最近扫描时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置最近扫描时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTime 最近扫描时间
+                     * @param _lastTime 最近扫描时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
@@ -281,20 +314,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanMode 扫描深度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanMode() const;
 
                     /**
                      * 设置扫描深度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScanMode 扫描深度
+                     * @param _scanMode 扫描深度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScanMode(const std::string& _scanMode);
 
                     /**
                      * 判断参数 ScanMode 是否已赋值
                      * @return ScanMode 是否已赋值
+                     * 
                      */
                     bool ScanModeHasBeenSet() const;
 
@@ -303,20 +339,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 扫描状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScanStatus() const;
 
                     /**
                      * 设置扫描状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScanStatus 扫描状态
+                     * @param _scanStatus 扫描状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScanStatus(const uint64_t& _scanStatus);
 
                     /**
                      * 判断参数 ScanStatus 是否已赋值
                      * @return ScanStatus 是否已赋值
+                     * 
                      */
                     bool ScanStatusHasBeenSet() const;
 

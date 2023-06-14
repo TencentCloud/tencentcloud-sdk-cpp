@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取绑定关系列表
                      * @return BindList 绑定关系列表
+                     * 
                      */
                     std::vector<BindDetailItem> GetBindList() const;
 
                     /**
                      * 判断参数 BindList 是否已赋值
                      * @return BindList 是否已赋值
+                     * 
                      */
                     bool BindListHasBeenSet() const;
 
                     /**
                      * 获取绑定关系总数目
                      * @return TotalCount 绑定关系总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

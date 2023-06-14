@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
                      * @return Agent 应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
-                     * @param Agent 应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     * @param _agent 应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
                      * @return OperatorType 操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
+                     * 
                      */
                     std::string GetOperatorType() const;
 
                     /**
                      * 设置操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
-                     * @param OperatorType 操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
+                     * @param _operatorType 操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
+                     * 
                      */
                     void SetOperatorType(const std::string& _operatorType);
 
                     /**
                      * 判断参数 OperatorType 是否已赋值
                      * @return OperatorType 是否已赋值
+                     * 
                      */
                     bool OperatorTypeHasBeenSet() const;
 
                     /**
                      * 获取经办人信息列表，最大长度200
                      * @return ProxyOrganizationOperators 经办人信息列表，最大长度200
+                     * 
                      */
                     std::vector<ProxyOrganizationOperator> GetProxyOrganizationOperators() const;
 
                     /**
                      * 设置经办人信息列表，最大长度200
-                     * @param ProxyOrganizationOperators 经办人信息列表，最大长度200
+                     * @param _proxyOrganizationOperators 经办人信息列表，最大长度200
+                     * 
                      */
                     void SetProxyOrganizationOperators(const std::vector<ProxyOrganizationOperator>& _proxyOrganizationOperators);
 
                     /**
                      * 判断参数 ProxyOrganizationOperators 是否已赋值
                      * @return ProxyOrganizationOperators 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOperatorsHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

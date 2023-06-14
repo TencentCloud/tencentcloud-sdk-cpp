@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务类型，iss或者dam
                      * @return Service 服务类型，iss或者dam
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置服务类型，iss或者dam
-                     * @param Service 服务类型，iss或者dam
+                     * @param _service 服务类型，iss或者dam
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取服务接口，要调用的方法函数名
                      * @return Method 服务接口，要调用的方法函数名
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置服务接口，要调用的方法函数名
-                     * @param Method 服务接口，要调用的方法函数名
+                     * @param _method 服务接口，要调用的方法函数名
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取用户自定义json字符串
                      * @return Param 用户自定义json字符串
+                     * 
                      */
                     std::string GetParam() const;
 
                     /**
                      * 设置用户自定义json字符串
-                     * @param Param 用户自定义json字符串
+                     * @param _param 用户自定义json字符串
+                     * 
                      */
                     void SetParam(const std::string& _param);
 
                     /**
                      * 判断参数 Param 是否已赋值
                      * @return Param 是否已赋值
+                     * 
                      */
                     bool ParamHasBeenSet() const;
 

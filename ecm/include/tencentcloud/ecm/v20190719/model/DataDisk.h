@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据盘大小。单位GB。
                      * @return DiskSize 数据盘大小。单位GB。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置数据盘大小。单位GB。
-                     * @param DiskSize 数据盘大小。单位GB。
+                     * @param _diskSize 数据盘大小。单位GB。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 - CLOUD_PREMIUM：高性能云硬盘
 
 默认取值： LOCAL_BASIC。
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 - CLOUD_PREMIUM：高性能云硬盘
 
 默认取值： LOCAL_BASIC。
-                     * @param DiskType 数据盘类型，取值范围：
+                     * @param _diskType 数据盘类型，取值范围：
 - LOCAL_BASIC：本地硬盘
 - CLOUD_PREMIUM：高性能云硬盘
 
 默认取值： LOCAL_BASIC。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 

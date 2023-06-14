@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InBound 入站规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsgPolicy> GetInBound() const;
 
                     /**
                      * 设置入站规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InBound 入站规则
+                     * @param _inBound 入站规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInBound(const std::vector<UsgPolicy>& _inBound);
 
                     /**
                      * 判断参数 InBound 是否已赋值
                      * @return InBound 是否已赋值
+                     * 
                      */
                     bool InBoundHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutBound 出站规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsgPolicy> GetOutBound() const;
 
                     /**
                      * 设置出站规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutBound 出站规则
+                     * @param _outBound 出站规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutBound(const std::vector<UsgPolicy>& _outBound);
 
                     /**
                      * 判断参数 OutBound 是否已赋值
                      * @return OutBound 是否已赋值
+                     * 
                      */
                     bool OutBoundHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgId 安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgId() const;
 
                     /**
                      * 设置安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgId 安全组Id
+                     * @param _sgId 安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgId(const std::string& _sgId);
 
                     /**
                      * 判断参数 SgId 是否已赋值
                      * @return SgId 是否已赋值
+                     * 
                      */
                     bool SgIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgName 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgName() const;
 
                     /**
                      * 设置安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgName 安全组名称
+                     * @param _sgName 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgName(const std::string& _sgName);
 
                     /**
                      * 判断参数 SgName 是否已赋值
                      * @return SgName 是否已赋值
+                     * 
                      */
                     bool SgNameHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgRemark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgRemark 备注
+                     * @param _sgRemark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgRemark(const std::string& _sgRemark);
 
                     /**
                      * 判断参数 SgRemark 是否已赋值
                      * @return SgRemark 是否已赋值
+                     * 
                      */
                     bool SgRemarkHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本
+                     * @param _version 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

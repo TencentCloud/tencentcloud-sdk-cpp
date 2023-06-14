@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取计算任务，该参数中包含任务类型及其相关配置信息
                      * @return Task 计算任务，该参数中包含任务类型及其相关配置信息
+                     * 
                      */
                     Task GetTask() const;
 
                     /**
                      * 设置计算任务，该参数中包含任务类型及其相关配置信息
-                     * @param Task 计算任务，该参数中包含任务类型及其相关配置信息
+                     * @param _task 计算任务，该参数中包含任务类型及其相关配置信息
+                     * 
                      */
                     void SetTask(const Task& _task);
 
                     /**
                      * 判断参数 Task 是否已赋值
                      * @return Task 是否已赋值
+                     * 
                      */
                     bool TaskHasBeenSet() const;
 
                     /**
                      * 获取数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。
                      * @return DatabaseName 数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。
-                     * @param DatabaseName 数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。
+                     * @param _databaseName 数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取默认数据源名称。
                      * @return DatasourceConnectionName 默认数据源名称。
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置默认数据源名称。
-                     * @param DatasourceConnectionName 默认数据源名称。
+                     * @param _datasourceConnectionName 默认数据源名称。
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
                     /**
                      * 获取数据引擎名称，不填提交到默认集群
                      * @return DataEngineName 数据引擎名称，不填提交到默认集群
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置数据引擎名称，不填提交到默认集群
-                     * @param DataEngineName 数据引擎名称，不填提交到默认集群
+                     * @param _dataEngineName 数据引擎名称，不填提交到默认集群
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 

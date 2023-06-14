@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
                      * @return SecurityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @param SecurityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * @param _securityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
@@ -82,6 +85,7 @@ namespace TencentCloud
 <li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
 <li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
 <li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -96,7 +100,7 @@ namespace TencentCloud
 <li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
 <li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
 <li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>security-group-id - String - 规则中的安全组ID。</li>
 <li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>
 <li>address-module - String - IP地址模板或IP地址组模板ID。</li>
@@ -106,12 +110,14 @@ namespace TencentCloud
 <li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>
 <li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>
 <li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

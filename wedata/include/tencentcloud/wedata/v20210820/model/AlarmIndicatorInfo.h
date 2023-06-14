@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 指标id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置指标id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 指标id
+                     * @param _id 指标id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAlarmIndicator() const;
 
                     /**
                      * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * @param _alarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmIndicator(const uint64_t& _alarmIndicator);
 
                     /**
                      * 判断参数 AlarmIndicator 是否已赋值
                      * @return AlarmIndicator 是否已赋值
+                     * 
                      */
                     bool AlarmIndicatorHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmIndicatorDesc 告警指标描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmIndicatorDesc() const;
 
                     /**
                      * 设置告警指标描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmIndicatorDesc 告警指标描述
+                     * @param _alarmIndicatorDesc 告警指标描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmIndicatorDesc(const std::string& _alarmIndicatorDesc);
 
                     /**
                      * 判断参数 AlarmIndicatorDesc 是否已赋值
                      * @return AlarmIndicatorDesc 是否已赋值
+                     * 
                      */
                     bool AlarmIndicatorDescHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerType 指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTriggerType() const;
 
                     /**
                      * 设置指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerType 指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败
+                     * @param _triggerType 指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerType(const uint64_t& _triggerType);
 
                     /**
                      * 判断参数 TriggerType 是否已赋值
                      * @return TriggerType 是否已赋值
+                     * 
                      */
                     bool TriggerTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EstimatedTime 预计的超时时间，分钟级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEstimatedTime() const;
 
                     /**
                      * 设置预计的超时时间，分钟级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EstimatedTime 预计的超时时间，分钟级别
+                     * @param _estimatedTime 预计的超时时间，分钟级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEstimatedTime(const uint64_t& _estimatedTime);
 
                     /**
                      * 判断参数 EstimatedTime 是否已赋值
                      * @return EstimatedTime 是否已赋值
+                     * 
                      */
                     bool EstimatedTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 实时任务告警需要的参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOperator() const;
 
                     /**
                      * 设置实时任务告警需要的参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 实时任务告警需要的参数
+                     * @param _operator 实时任务告警需要的参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperator(const uint64_t& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmIndicatorUnit 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmIndicatorUnit() const;
 
                     /**
                      * 设置告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmIndicatorUnit 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+                     * @param _alarmIndicatorUnit 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmIndicatorUnit(const std::string& _alarmIndicatorUnit);
 
                     /**
                      * 判断参数 AlarmIndicatorUnit 是否已赋值
                      * @return AlarmIndicatorUnit 是否已赋值
+                     * 
                      */
                     bool AlarmIndicatorUnitHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Topic名称
-                     * @param TopicName Topic名称
+                     * @param _topicName Topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取Topic权限 , 1上报  2下发
                      * @return Privilege Topic权限 , 1上报  2下发
+                     * 
                      */
                     uint64_t GetPrivilege() const;
 
                     /**
                      * 设置Topic权限 , 1上报  2下发
-                     * @param Privilege Topic权限 , 1上报  2下发
+                     * @param _privilege Topic权限 , 1上报  2下发
+                     * 
                      */
                     void SetPrivilege(const uint64_t& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 

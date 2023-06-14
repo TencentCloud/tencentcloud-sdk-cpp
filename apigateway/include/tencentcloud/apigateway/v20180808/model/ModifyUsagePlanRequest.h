@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取使用计划唯一 ID。
                      * @return UsagePlanId 使用计划唯一 ID。
+                     * 
                      */
                     std::string GetUsagePlanId() const;
 
                     /**
                      * 设置使用计划唯一 ID。
-                     * @param UsagePlanId 使用计划唯一 ID。
+                     * @param _usagePlanId 使用计划唯一 ID。
+                     * 
                      */
                     void SetUsagePlanId(const std::string& _usagePlanId);
 
                     /**
                      * 判断参数 UsagePlanId 是否已赋值
                      * @return UsagePlanId 是否已赋值
+                     * 
                      */
                     bool UsagePlanIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的用户自定义的使用计划名称。
                      * @return UsagePlanName 修改后的用户自定义的使用计划名称。
+                     * 
                      */
                     std::string GetUsagePlanName() const;
 
                     /**
                      * 设置修改后的用户自定义的使用计划名称。
-                     * @param UsagePlanName 修改后的用户自定义的使用计划名称。
+                     * @param _usagePlanName 修改后的用户自定义的使用计划名称。
+                     * 
                      */
                     void SetUsagePlanName(const std::string& _usagePlanName);
 
                     /**
                      * 判断参数 UsagePlanName 是否已赋值
                      * @return UsagePlanName 是否已赋值
+                     * 
                      */
                     bool UsagePlanNameHasBeenSet() const;
 
                     /**
                      * 获取修改后的用户自定义的使用计划描述。
                      * @return UsagePlanDesc 修改后的用户自定义的使用计划描述。
+                     * 
                      */
                     std::string GetUsagePlanDesc() const;
 
                     /**
                      * 设置修改后的用户自定义的使用计划描述。
-                     * @param UsagePlanDesc 修改后的用户自定义的使用计划描述。
+                     * @param _usagePlanDesc 修改后的用户自定义的使用计划描述。
+                     * 
                      */
                     void SetUsagePlanDesc(const std::string& _usagePlanDesc);
 
                     /**
                      * 判断参数 UsagePlanDesc 是否已赋值
                      * @return UsagePlanDesc 是否已赋值
+                     * 
                      */
                     bool UsagePlanDescHasBeenSet() const;
 
                     /**
                      * 获取请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。
                      * @return MaxRequestNum 请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。
+                     * 
                      */
                     int64_t GetMaxRequestNum() const;
 
                     /**
                      * 设置请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。
-                     * @param MaxRequestNum 请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。
+                     * @param _maxRequestNum 请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。
+                     * 
                      */
                     void SetMaxRequestNum(const int64_t& _maxRequestNum);
 
                     /**
                      * 判断参数 MaxRequestNum 是否已赋值
                      * @return MaxRequestNum 是否已赋值
+                     * 
                      */
                     bool MaxRequestNumHasBeenSet() const;
 
                     /**
                      * 获取每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。
                      * @return MaxRequestNumPreSec 每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。
+                     * 
                      */
                     int64_t GetMaxRequestNumPreSec() const;
 
                     /**
                      * 设置每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。
-                     * @param MaxRequestNumPreSec 每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。
+                     * @param _maxRequestNumPreSec 每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。
+                     * 
                      */
                     void SetMaxRequestNumPreSec(const int64_t& _maxRequestNumPreSec);
 
                     /**
                      * 判断参数 MaxRequestNumPreSec 是否已赋值
                      * @return MaxRequestNumPreSec 是否已赋值
+                     * 
                      */
                     bool MaxRequestNumPreSecHasBeenSet() const;
 

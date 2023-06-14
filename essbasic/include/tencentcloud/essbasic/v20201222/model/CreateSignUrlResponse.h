@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取合同签署链接
                      * @return SignUrl 合同签署链接
+                     * 
                      */
                     std::string GetSignUrl() const;
 
                     /**
                      * 判断参数 SignUrl 是否已赋值
                      * @return SignUrl 是否已赋值
+                     * 
                      */
                     bool SignUrlHasBeenSet() const;
 

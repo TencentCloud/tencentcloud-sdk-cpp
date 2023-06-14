@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如mssql-j8kv137v
                      * @return InstanceId 实例ID，形如mssql-j8kv137v
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如mssql-j8kv137v
-                     * @param InstanceId 实例ID，形如mssql-j8kv137v
+                     * @param _instanceId 实例ID，形如mssql-j8kv137v
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定
                      * @return RenameRestore 按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定
+                     * 
                      */
                     std::vector<RenameRestoreDatabase> GetRenameRestore() const;
 
                     /**
                      * 设置按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定
-                     * @param RenameRestore 按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定
+                     * @param _renameRestore 按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定
+                     * 
                      */
                     void SetRenameRestore(const std::vector<RenameRestoreDatabase>& _renameRestore);
 
                     /**
                      * 判断参数 RenameRestore 是否已赋值
                      * @return RenameRestore 是否已赋值
+                     * 
                      */
                     bool RenameRestoreHasBeenSet() const;
 

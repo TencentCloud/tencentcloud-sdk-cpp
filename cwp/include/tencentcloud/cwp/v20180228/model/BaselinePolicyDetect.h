@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取策略Id
                      * @return PolicyId 策略Id
+                     * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
                      * 设置策略Id
-                     * @param PolicyId 策略Id
+                     * @param _policyId 策略Id
+                     * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取检测任务Id
                      * @return TaskId 检测任务Id
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置检测任务Id
-                     * @param TaskId 检测任务Id
+                     * @param _taskId 检测任务Id
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取关联主机数
                      * @return HostCount 关联主机数
+                     * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置关联主机数
-                     * @param HostCount 关联主机数
+                     * @param _hostCount 关联主机数
+                     * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return FinishTime 结束时间
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param FinishTime 结束时间
+                     * @param _finishTime 结束时间
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PolicyName 策略名称
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PolicyName 策略名称
+                     * @param _policyName 策略名称
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取成功主机数
                      * @return SuccessCount 成功主机数
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 设置成功主机数
-                     * @param SuccessCount 成功主机数
+                     * @param _successCount 成功主机数
+                     * 
                      */
                     void SetSuccessCount(const int64_t& _successCount);
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
                     /**
                      * 获取失败主技数
                      * @return FailedCount 失败主技数
+                     * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 设置失败主技数
-                     * @param FailedCount 失败主技数
+                     * @param _failedCount 失败主技数
+                     * 
                      */
                     void SetFailedCount(const int64_t& _failedCount);
 
                     /**
                      * 判断参数 FailedCount 是否已赋值
                      * @return FailedCount 是否已赋值
+                     * 
                      */
                     bool FailedCountHasBeenSet() const;
 
                     /**
                      * 获取失败主机数
                      * @return TimeoutCount 失败主机数
+                     * 
                      */
                     int64_t GetTimeoutCount() const;
 
                     /**
                      * 设置失败主机数
-                     * @param TimeoutCount 失败主机数
+                     * @param _timeoutCount 失败主机数
+                     * 
                      */
                     void SetTimeoutCount(const int64_t& _timeoutCount);
 
                     /**
                      * 判断参数 TimeoutCount 是否已赋值
                      * @return TimeoutCount 是否已赋值
+                     * 
                      */
                     bool TimeoutCountHasBeenSet() const;
 
@@ -213,20 +240,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDetectStatus 1:检测中 2:检测完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPolicyDetectStatus() const;
 
                     /**
                      * 设置1:检测中 2:检测完成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyDetectStatus 1:检测中 2:检测完成
+                     * @param _policyDetectStatus 1:检测中 2:检测完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyDetectStatus(const int64_t& _policyDetectStatus);
 
                     /**
                      * 判断参数 PolicyDetectStatus 是否已赋值
                      * @return PolicyDetectStatus 是否已赋值
+                     * 
                      */
                     bool PolicyDetectStatusHasBeenSet() const;
 

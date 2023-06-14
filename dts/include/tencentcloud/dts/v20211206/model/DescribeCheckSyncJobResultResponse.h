@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCount 步骤总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepCount() const;
 
                     /**
                      * 判断参数 StepCount 是否已赋值
                      * @return StepCount 是否已赋值
+                     * 
                      */
                     bool StepCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCur 当前所在步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepCur() const;
 
                     /**
                      * 判断参数 StepCur 是否已赋值
                      * @return StepCur 是否已赋值
+                     * 
                      */
                     bool StepCurHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 总体进度，范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfos 步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StepInfo> GetStepInfos() const;
 
                     /**
                      * 判断参数 StepInfos 是否已赋值
                      * @return StepInfos 是否已赋值
+                     * 
                      */
                     bool StepInfosHasBeenSet() const;
 

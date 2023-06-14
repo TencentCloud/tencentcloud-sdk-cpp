@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取用户信誉分，1-5从低到高
                      * @return ServiceRsp 用户信誉分，1-5从低到高
+                     * 
                      */
                     Score GetServiceRsp() const;
 
                     /**
                      * 判断参数 ServiceRsp 是否已赋值
                      * @return ServiceRsp 是否已赋值
+                     * 
                      */
                     bool ServiceRspHasBeenSet() const;
 

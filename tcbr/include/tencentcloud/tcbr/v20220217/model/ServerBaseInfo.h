@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取服务名
                      * @return ServerName 服务名
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置服务名
-                     * @param ServerName 服务名
+                     * @param _serverName 服务名
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取默认服务域名
                      * @return DefaultDomainName 默认服务域名
+                     * 
                      */
                     std::string GetDefaultDomainName() const;
 
                     /**
                      * 设置默认服务域名
-                     * @param DefaultDomainName 默认服务域名
+                     * @param _defaultDomainName 默认服务域名
+                     * 
                      */
                     void SetDefaultDomainName(const std::string& _defaultDomainName);
 
                     /**
                      * 判断参数 DefaultDomainName 是否已赋值
                      * @return DefaultDomainName 是否已赋值
+                     * 
                      */
                     bool DefaultDomainNameHasBeenSet() const;
 
                     /**
                      * 获取自定义域名
                      * @return CustomDomainName 自定义域名
+                     * 
                      */
                     std::string GetCustomDomainName() const;
 
                     /**
                      * 设置自定义域名
-                     * @param CustomDomainName 自定义域名
+                     * @param _customDomainName 自定义域名
+                     * 
                      */
                     void SetCustomDomainName(const std::string& _customDomainName);
 
                     /**
                      * 判断参数 CustomDomainName 是否已赋值
                      * @return CustomDomainName 是否已赋值
+                     * 
                      */
                     bool CustomDomainNameHasBeenSet() const;
 
                     /**
                      * 获取服务状态：running/deploying/deploy_failed
                      * @return Status 服务状态：running/deploying/deploy_failed
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置服务状态：running/deploying/deploy_failed
-                     * @param Status 服务状态：running/deploying/deploy_failed
+                     * @param _status 服务状态：running/deploying/deploy_failed
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取公网访问类型
                      * @return AccessTypes 公网访问类型
+                     * 
                      */
                     std::vector<std::string> GetAccessTypes() const;
 
                     /**
                      * 设置公网访问类型
-                     * @param AccessTypes 公网访问类型
+                     * @param _accessTypes 公网访问类型
+                     * 
                      */
                     void SetAccessTypes(const std::vector<std::string>& _accessTypes);
 
                     /**
                      * 判断参数 AccessTypes 是否已赋值
                      * @return AccessTypes 是否已赋值
+                     * 
                      */
                     bool AccessTypesHasBeenSet() const;
 
                     /**
                      * 获取展示自定义域名
                      * @return CustomDomainNames 展示自定义域名
+                     * 
                      */
                     std::vector<std::string> GetCustomDomainNames() const;
 
                     /**
                      * 设置展示自定义域名
-                     * @param CustomDomainNames 展示自定义域名
+                     * @param _customDomainNames 展示自定义域名
+                     * 
                      */
                     void SetCustomDomainNames(const std::vector<std::string>& _customDomainNames);
 
                     /**
                      * 判断参数 CustomDomainNames 是否已赋值
                      * @return CustomDomainNames 是否已赋值
+                     * 
                      */
                     bool CustomDomainNamesHasBeenSet() const;
 

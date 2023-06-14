@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID
                      * @return ListenerId 监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * @param _listenerId 监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器名称
                      * @return ListenerName 监听器名称
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名称
-                     * @param ListenerName 监听器名称
+                     * @param _listenerName 监听器名称
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 
                     /**
                      * 获取监听器监听端口
                      * @return Port 监听器监听端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置监听器监听端口
-                     * @param Port 监听器监听端口
+                     * @param _port 监听器监听端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取监听器协议类型
                      * @return Protocol 监听器协议类型
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器协议类型
-                     * @param Protocol 监听器协议类型
+                     * @param _protocol 监听器协议类型
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

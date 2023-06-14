@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取人群包id
                      * @return ID 人群包id
+                     * 
                      */
                     uint64_t GetID() const;
 
                     /**
                      * 设置人群包id
-                     * @param ID 人群包id
+                     * @param _iD 人群包id
+                     * 
                      */
                     void SetID(const uint64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

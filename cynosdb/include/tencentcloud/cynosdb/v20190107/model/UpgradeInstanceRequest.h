@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库CPU
                      * @return Cpu 数据库CPU
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置数据库CPU
-                     * @param Cpu 数据库CPU
+                     * @param _cpu 数据库CPU
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取数据库内存，单位GB
                      * @return Memory 数据库内存，单位GB
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置数据库内存，单位GB
-                     * @param Memory 数据库内存，单位GB
+                     * @param _memory 数据库内存，单位GB
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取升级类型：upgradeImmediate，upgradeInMaintain
                      * @return UpgradeType 升级类型：upgradeImmediate，upgradeInMaintain
+                     * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
                      * 设置升级类型：upgradeImmediate，upgradeInMaintain
-                     * @param UpgradeType 升级类型：upgradeImmediate，upgradeInMaintain
+                     * @param _upgradeType 升级类型：upgradeImmediate，upgradeInMaintain
+                     * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
 
                     /**
                      * 判断参数 UpgradeType 是否已赋值
                      * @return UpgradeType 是否已赋值
+                     * 
                      */
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃
                      * @return StorageLimit 该参数已废弃
+                     * 
                      */
                     uint64_t GetStorageLimit() const;
 
                     /**
                      * 设置该参数已废弃
-                     * @param StorageLimit 该参数已废弃
+                     * @param _storageLimit 该参数已废弃
+                     * 
                      */
                     void SetStorageLimit(const uint64_t& _storageLimit);
 
                     /**
                      * 判断参数 StorageLimit 是否已赋值
                      * @return StorageLimit 是否已赋值
+                     * 
                      */
                     bool StorageLimitHasBeenSet() const;
 
                     /**
                      * 获取是否自动选择代金券 1是 0否 默认为0
                      * @return AutoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动选择代金券 1是 0否 默认为0
-                     * @param AutoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * @param _autoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃
                      * @return DbType 该参数已废弃
+                     * 
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置该参数已废弃
-                     * @param DbType 该参数已废弃
+                     * @param _dbType 该参数已废弃
+                     * 
                      */
                     void SetDbType(const std::string& _dbType);
 
                     /**
                      * 判断参数 DbType 是否已赋值
                      * @return DbType 是否已赋值
+                     * 
                      */
                     bool DbTypeHasBeenSet() const;
 
                     /**
                      * 获取交易模式 0-下单并支付 1-下单
                      * @return DealMode 交易模式 0-下单并支付 1-下单
+                     * 
                      */
                     int64_t GetDealMode() const;
 
                     /**
                      * 设置交易模式 0-下单并支付 1-下单
-                     * @param DealMode 交易模式 0-下单并支付 1-下单
+                     * @param _dealMode 交易模式 0-下单并支付 1-下单
+                     * 
                      */
                     void SetDealMode(const int64_t& _dealMode);
 
                     /**
                      * 判断参数 DealMode 是否已赋值
                      * @return DealMode 是否已赋值
+                     * 
                      */
                     bool DealModeHasBeenSet() const;
 
                     /**
                      * 获取NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
                      * @return UpgradeMode NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     * 
                      */
                     std::string GetUpgradeMode() const;
 
                     /**
                      * 设置NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
-                     * @param UpgradeMode NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     * @param _upgradeMode NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     * 
                      */
                     void SetUpgradeMode(const std::string& _upgradeMode);
 
                     /**
                      * 判断参数 UpgradeMode 是否已赋值
                      * @return UpgradeMode 是否已赋值
+                     * 
                      */
                     bool UpgradeModeHasBeenSet() const;
 

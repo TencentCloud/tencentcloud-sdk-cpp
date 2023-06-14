@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取数据库
                      * @return Database 数据库
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库
-                     * @param Database 数据库
+                     * @param _database 数据库
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取表
                      * @return Table 表
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表
-                     * @param Table 表
+                     * @param _table 表
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
                     /**
                      * 获取表总字节数
                      * @return TotalBytes 表总字节数
+                     * 
                      */
                     int64_t GetTotalBytes() const;
 
                     /**
                      * 设置表总字节数
-                     * @param TotalBytes 表总字节数
+                     * @param _totalBytes 表总字节数
+                     * 
                      */
                     void SetTotalBytes(const int64_t& _totalBytes);
 
                     /**
                      * 判断参数 TotalBytes 是否已赋值
                      * @return TotalBytes 是否已赋值
+                     * 
                      */
                     bool TotalBytesHasBeenSet() const;
 
                     /**
                      * 获取虚拟cluster
                      * @return VCluster 虚拟cluster
+                     * 
                      */
                     std::string GetVCluster() const;
 
                     /**
                      * 设置虚拟cluster
-                     * @param VCluster 虚拟cluster
+                     * @param _vCluster 虚拟cluster
+                     * 
                      */
                     void SetVCluster(const std::string& _vCluster);
 
                     /**
                      * 判断参数 VCluster 是否已赋值
                      * @return VCluster 是否已赋值
+                     * 
                      */
                     bool VClusterHasBeenSet() const;
 
                     /**
                      * 获取表ip
                      * @return Ips 表ip
+                     * 
                      */
                     std::string GetIps() const;
 
                     /**
                      * 设置表ip
-                     * @param Ips 表ip
+                     * @param _ips 表ip
+                     * 
                      */
                     void SetIps(const std::string& _ips);
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 

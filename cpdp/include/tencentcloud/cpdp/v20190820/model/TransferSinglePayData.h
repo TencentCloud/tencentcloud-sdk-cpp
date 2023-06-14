@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取平台交易流水号，唯一
                      * @return TradeSerialNo 平台交易流水号，唯一
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置平台交易流水号，唯一
-                     * @param TradeSerialNo 平台交易流水号，唯一
+                     * @param _tradeSerialNo 平台交易流水号，唯一
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队ID
                      * @return FleetId 服务器舰队ID
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队ID
-                     * @param FleetId 服务器舰队ID
+                     * @param _fleetId 服务器舰队ID
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss
                      * @return BeginTime 查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss
-                     * @param BeginTime 查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * @param _beginTime 查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss
                      * @return EndTime 查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss
-                     * @param EndTime 查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * @param _endTime 查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

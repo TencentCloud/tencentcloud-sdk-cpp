@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取待挂载的实例ID。指定的实例必须处于“运行中”状态。
                      * @return InstanceId 待挂载的实例ID。指定的实例必须处于“运行中”状态。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待挂载的实例ID。指定的实例必须处于“运行中”状态。
-                     * @param InstanceId 待挂载的实例ID。指定的实例必须处于“运行中”状态。
+                     * @param _instanceId 待挂载的实例ID。指定的实例必须处于“运行中”状态。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。
                      * @return MountPoint 实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。
+                     * 
                      */
                     std::string GetMountPoint() const;
 
                     /**
                      * 设置实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。
-                     * @param MountPoint 实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。
+                     * @param _mountPoint 实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。
+                     * 
                      */
                     void SetMountPoint(const std::string& _mountPoint);
 
                     /**
                      * 判断参数 MountPoint 是否已赋值
                      * @return MountPoint 是否已赋值
+                     * 
                      */
                     bool MountPointHasBeenSet() const;
 
                     /**
                      * 获取文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。
                      * @return FileSystemType 文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。
+                     * 
                      */
                     std::string GetFileSystemType() const;
 
                     /**
                      * 设置文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。
-                     * @param FileSystemType 文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。
+                     * @param _fileSystemType 文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。
+                     * 
                      */
                     void SetFileSystemType(const std::string& _fileSystemType);
 
                     /**
                      * 判断参数 FileSystemType 是否已赋值
                      * @return FileSystemType 是否已赋值
+                     * 
                      */
                     bool FileSystemTypeHasBeenSet() const;
 

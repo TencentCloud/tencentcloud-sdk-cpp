@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 坐标点围起来的框
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PointInfo> GetPoints() const;
 
                     /**
                      * 设置坐标点围起来的框
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Points 坐标点围起来的框
+                     * @param _points 坐标点围起来的框
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoints(const std::vector<PointInfo>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 
@@ -78,6 +81,7 @@ FRAME_TYPE_POLYGON
 FRAME_TYPE_RECTANGLE
 FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrameType() const;
 
@@ -86,16 +90,18 @@ FRAME_TYPE_POLYGON
 FRAME_TYPE_RECTANGLE
 FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameType 框的形状：
+                     * @param _frameType 框的形状：
 FRAME_TYPE_RECTANGLE
 FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameType(const std::string& _frameType);
 
                     /**
                      * 判断参数 FrameType 是否已赋值
                      * @return FrameType 是否已赋值
+                     * 
                      */
                     bool FrameTypeHasBeenSet() const;
 
@@ -104,20 +110,23 @@ FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 智能结构化：key区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置智能结构化：key区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 智能结构化：key区域对应的内容
+                     * @param _key 智能结构化：key区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -126,20 +135,23 @@ FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyId 智能结构化：上述key的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置智能结构化：上述key的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyId 智能结构化：上述key的ID
+                     * @param _keyId 智能结构化：上述key的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
@@ -150,6 +162,7 @@ FRAME_TYPE_POLYGON
                      * @return Value 识别：框区域的内容
 智能结构化：value区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
@@ -157,15 +170,17 @@ FRAME_TYPE_POLYGON
                      * 设置识别：框区域的内容
 智能结构化：value区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 识别：框区域的内容
+                     * @param _value 识别：框区域的内容
 智能结构化：value区域对应的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -174,20 +189,23 @@ FRAME_TYPE_POLYGON
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyIdsForValue 智能结构化：value区域所关联的key 区域的keyID的集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeyIdsForValue() const;
 
                     /**
                      * 设置智能结构化：value区域所关联的key 区域的keyID的集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyIdsForValue 智能结构化：value区域所关联的key 区域的keyID的集合
+                     * @param _keyIdsForValue 智能结构化：value区域所关联的key 区域的keyID的集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyIdsForValue(const std::vector<std::string>& _keyIdsForValue);
 
                     /**
                      * 判断参数 KeyIdsForValue 是否已赋值
                      * @return KeyIdsForValue 是否已赋值
+                     * 
                      */
                     bool KeyIdsForValueHasBeenSet() const;
 
@@ -200,6 +218,7 @@ DIRECTION_HORIZONTAL
 DIRECTION_VERTICAL
 DIRECTION_HORIZONTAL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDirection() const;
 
@@ -208,16 +227,18 @@ DIRECTION_HORIZONTAL
 DIRECTION_VERTICAL
 DIRECTION_HORIZONTAL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Direction key或者value区域内容的方向：
+                     * @param _direction key或者value区域内容的方向：
 DIRECTION_VERTICAL
 DIRECTION_HORIZONTAL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

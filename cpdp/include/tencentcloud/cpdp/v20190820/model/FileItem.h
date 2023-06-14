@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName STRING(256)，文件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置STRING(256)，文件名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileName STRING(256)，文件名称
+                     * @param _fileName STRING(256)，文件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RandomPassword STRING(120)，随机密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRandomPassword() const;
 
                     /**
                      * 设置STRING(120)，随机密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RandomPassword STRING(120)，随机密码
+                     * @param _randomPassword STRING(120)，随机密码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRandomPassword(const std::string& _randomPassword);
 
                     /**
                      * 判断参数 RandomPassword 是否已赋值
                      * @return RandomPassword 是否已赋值
+                     * 
                      */
                     bool RandomPasswordHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath STRING(512)，文件路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置STRING(512)，文件路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePath STRING(512)，文件路径
+                     * @param _filePath STRING(512)，文件路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrawCode STRING(64)，提取码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDrawCode() const;
 
                     /**
                      * 设置STRING(64)，提取码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DrawCode STRING(64)，提取码
+                     * @param _drawCode STRING(64)，提取码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDrawCode(const std::string& _drawCode);
 
                     /**
                      * 判断参数 DrawCode 是否已赋值
                      * @return DrawCode 是否已赋值
+                     * 
                      */
                     bool DrawCodeHasBeenSet() const;
 

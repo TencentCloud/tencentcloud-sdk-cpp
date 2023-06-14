@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取表格ID。
                      * @return TableId 表格ID。
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 

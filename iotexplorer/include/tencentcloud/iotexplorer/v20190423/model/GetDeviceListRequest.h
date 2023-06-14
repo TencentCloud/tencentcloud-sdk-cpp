@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取需要查看设备列表的产品ID, -1代表ProjectId来筛选
                      * @return ProductId 需要查看设备列表的产品ID, -1代表ProjectId来筛选
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置需要查看设备列表的产品ID, -1代表ProjectId来筛选
-                     * @param ProductId 需要查看设备列表的产品ID, -1代表ProjectId来筛选
+                     * @param _productId 需要查看设备列表的产品ID, -1代表ProjectId来筛选
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取分页偏移
                      * @return Offset 分页偏移
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移
-                     * @param Offset 分页偏移
+                     * @param _offset 分页偏移
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小，数值范围 10-100
                      * @return Limit 分页的大小，数值范围 10-100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小，数值范围 10-100
-                     * @param Limit 分页的大小，数值范围 10-100
+                     * @param _limit 分页的大小，数值范围 10-100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
                      * @return FirmwareVersion 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
                      * 设置设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
-                     * @param FirmwareVersion 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     * @param _firmwareVersion 设备固件版本号，若不带此参数会返回所有固件版本的设备。传"None-FirmwareVersion"查询无版本号的设备
+                     * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
 
                     /**
                      * 判断参数 FirmwareVersion 是否已赋值
                      * @return FirmwareVersion 是否已赋值
+                     * 
                      */
                     bool FirmwareVersionHasBeenSet() const;
 
                     /**
                      * 获取需要过滤的设备名称
                      * @return DeviceName 需要过滤的设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置需要过滤的设备名称
-                     * @param DeviceName 需要过滤的设备名称
+                     * @param _deviceName 需要过滤的设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID。产品 ID 为 -1 时，该参数必填
                      * @return ProjectId 项目ID。产品 ID 为 -1 时，该参数必填
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID。产品 ID 为 -1 时，该参数必填
-                     * @param ProjectId 项目ID。产品 ID 为 -1 时，该参数必填
+                     * @param _projectId 项目ID。产品 ID 为 -1 时，该参数必填
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

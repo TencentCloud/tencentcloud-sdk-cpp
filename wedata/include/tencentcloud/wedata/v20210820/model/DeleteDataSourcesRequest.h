@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取id列表
                      * @return Ids id列表
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置id列表
-                     * @param Ids id列表
+                     * @param _ids id列表
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

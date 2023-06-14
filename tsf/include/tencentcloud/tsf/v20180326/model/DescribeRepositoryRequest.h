@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取仓库ID
                      * @return RepositoryId 仓库ID
+                     * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置仓库ID
-                     * @param RepositoryId 仓库ID
+                     * @param _repositoryId 仓库ID
+                     * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
 
                     /**
                      * 判断参数 RepositoryId 是否已赋值
                      * @return RepositoryId 是否已赋值
+                     * 
                      */
                     bool RepositoryIdHasBeenSet() const;
 

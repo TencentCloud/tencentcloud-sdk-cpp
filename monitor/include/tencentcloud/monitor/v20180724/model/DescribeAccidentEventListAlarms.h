@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessTypeDesc 事件分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBusinessTypeDesc() const;
 
                     /**
                      * 设置事件分类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessTypeDesc 事件分类
+                     * @param _businessTypeDesc 事件分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessTypeDesc(const std::string& _businessTypeDesc);
 
                     /**
                      * 判断参数 BusinessTypeDesc 是否已赋值
                      * @return BusinessTypeDesc 是否已赋值
+                     * 
                      */
                     bool BusinessTypeDescHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccidentTypeDesc 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccidentTypeDesc() const;
 
                     /**
                      * 设置事件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccidentTypeDesc 事件类型
+                     * @param _accidentTypeDesc 事件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccidentTypeDesc(const std::string& _accidentTypeDesc);
 
                     /**
                      * 判断参数 AccidentTypeDesc 是否已赋值
                      * @return AccidentTypeDesc 是否已赋值
+                     * 
                      */
                     bool AccidentTypeDescHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessID 事件分类的ID，1表示服务问题，2表示其他订阅
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBusinessID() const;
 
                     /**
                      * 设置事件分类的ID，1表示服务问题，2表示其他订阅
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessID 事件分类的ID，1表示服务问题，2表示其他订阅
+                     * @param _businessID 事件分类的ID，1表示服务问题，2表示其他订阅
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBusinessID(const int64_t& _businessID);
 
                     /**
                      * 判断参数 BusinessID 是否已赋值
                      * @return BusinessID 是否已赋值
+                     * 
                      */
                     bool BusinessIDHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventStatus 事件状态的ID，0表示已恢复，1表示未恢复
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventStatus() const;
 
                     /**
                      * 设置事件状态的ID，0表示已恢复，1表示未恢复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventStatus 事件状态的ID，0表示已恢复，1表示未恢复
+                     * @param _eventStatus 事件状态的ID，0表示已恢复，1表示未恢复
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventStatus(const int64_t& _eventStatus);
 
                     /**
                      * 判断参数 EventStatus 是否已赋值
                      * @return EventStatus 是否已赋值
+                     * 
                      */
                     bool EventStatusHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectResource 影响的对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAffectResource() const;
 
                     /**
                      * 设置影响的对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AffectResource 影响的对象
+                     * @param _affectResource 影响的对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAffectResource(const std::string& _affectResource);
 
                     /**
                      * 判断参数 AffectResource 是否已赋值
                      * @return AffectResource 是否已赋值
+                     * 
                      */
                     bool AffectResourceHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 事件的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置事件的地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 事件的地域
+                     * @param _region 事件的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OccurTime 事件发生的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOccurTime() const;
 
                     /**
                      * 设置事件发生的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OccurTime 事件发生的时间
+                     * @param _occurTime 事件发生的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOccurTime(const std::string& _occurTime);
 
                     /**
                      * 判断参数 OccurTime 是否已赋值
                      * @return OccurTime 是否已赋值
+                     * 
                      */
                     bool OccurTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

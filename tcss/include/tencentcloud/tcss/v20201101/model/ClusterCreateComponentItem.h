@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取要安装组件的集群ID。
                      * @return ClusterId 要安装组件的集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置要安装组件的集群ID。
-                     * @param ClusterId 要安装组件的集群ID。
+                     * @param _clusterId 要安装组件的集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取该集群对应的地域
                      * @return ClusterRegion 该集群对应的地域
+                     * 
                      */
                     std::string GetClusterRegion() const;
 
                     /**
                      * 设置该集群对应的地域
-                     * @param ClusterRegion 该集群对应的地域
+                     * @param _clusterRegion 该集群对应的地域
+                     * 
                      */
                     void SetClusterRegion(const std::string& _clusterRegion);
 
                     /**
                      * 判断参数 ClusterRegion 是否已赋值
                      * @return ClusterRegion 是否已赋值
+                     * 
                      */
                     bool ClusterRegionHasBeenSet() const;
 

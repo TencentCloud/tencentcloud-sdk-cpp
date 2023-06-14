@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要刷新的Url列表，必须包含协议头部。
                      * @return Urls 要刷新的Url列表，必须包含协议头部。
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置要刷新的Url列表，必须包含协议头部。
-                     * @param Urls 要刷新的Url列表，必须包含协议头部。
+                     * @param _urls 要刷新的Url列表，必须包含协议头部。
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 

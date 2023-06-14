@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedTime 最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 设置最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedTime 最近修改时间
+                     * @param _lastModifiedTime 最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedTime(const std::string& _lastModifiedTime);
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotebookInstanceName notebook实例名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 设置notebook实例名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotebookInstanceName notebook实例名字
+                     * @param _notebookInstanceName notebook实例名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotebookInstanceName(const std::string& _notebookInstanceName);
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 
@@ -129,6 +138,7 @@ Stopping: 停止中
 Stopped: 已停止
 Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNotebookInstanceStatus() const;
 
@@ -140,19 +150,21 @@ Stopping: 停止中
 Stopped: 已停止
 Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotebookInstanceStatus notebook实例状态，取值范围：
+                     * @param _notebookInstanceStatus notebook实例状态，取值范围：
 Pending: 创建中
 Inservice: 运行中
 Stopping: 停止中
 Stopped: 已停止
 Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotebookInstanceStatus(const std::string& _notebookInstanceStatus);
 
                     /**
                      * 判断参数 NotebookInstanceStatus 是否已赋值
                      * @return NotebookInstanceStatus 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceStatusHasBeenSet() const;
 
@@ -161,20 +173,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 算力类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置算力类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 算力类型
+                     * @param _instanceType 算力类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -183,20 +198,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -205,20 +223,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartupTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartupTime() const;
 
                     /**
                      * 设置启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartupTime 启动时间
+                     * @param _startupTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartupTime(const std::string& _startupTime);
 
                     /**
                      * 判断参数 StartupTime 是否已赋值
                      * @return StartupTime 是否已赋值
+                     * 
                      */
                     bool StartupTimeHasBeenSet() const;
 
@@ -227,20 +248,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 运行截止时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeadline() const;
 
                     /**
                      * 设置运行截止时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deadline 运行截止时间
+                     * @param _deadline 运行截止时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeadline(const std::string& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
@@ -249,20 +273,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppingCondition 自动停止配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StoppingCondition GetStoppingCondition() const;
 
                     /**
                      * 设置自动停止配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoppingCondition 自动停止配置
+                     * @param _stoppingCondition 自动停止配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStoppingCondition(const StoppingCondition& _stoppingCondition);
 
                     /**
                      * 判断参数 StoppingCondition 是否已赋值
                      * @return StoppingCondition 是否已赋值
+                     * 
                      */
                     bool StoppingConditionHasBeenSet() const;
 
@@ -271,20 +298,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prepay 是否是预付费实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPrepay() const;
 
                     /**
                      * 设置是否是预付费实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Prepay 是否是预付费实例
+                     * @param _prepay 是否是预付费实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrepay(const bool& _prepay);
 
                     /**
                      * 判断参数 Prepay 是否已赋值
                      * @return Prepay 是否已赋值
+                     * 
                      */
                     bool PrepayHasBeenSet() const;
 
@@ -293,20 +323,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingLabel 计费标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BillingLabel GetBillingLabel() const;
 
                     /**
                      * 设置计费标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BillingLabel 计费标识
+                     * @param _billingLabel 计费标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBillingLabel(const BillingLabel& _billingLabel);
 
                     /**
                      * 判断参数 BillingLabel 是否已赋值
                      * @return BillingLabel 是否已赋值
+                     * 
                      */
                     bool BillingLabelHasBeenSet() const;
 
@@ -315,20 +348,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeInSeconds 运行时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRuntimeInSeconds() const;
 
                     /**
                      * 设置运行时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuntimeInSeconds 运行时长，秒
+                     * @param _runtimeInSeconds 运行时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuntimeInSeconds(const int64_t& _runtimeInSeconds);
 
                     /**
                      * 判断参数 RuntimeInSeconds 是否已赋值
                      * @return RuntimeInSeconds 是否已赋值
+                     * 
                      */
                     bool RuntimeInSecondsHasBeenSet() const;
 
@@ -337,20 +373,23 @@ Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainTimeInSeconds 剩余时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainTimeInSeconds() const;
 
                     /**
                      * 设置剩余时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemainTimeInSeconds 剩余时长，秒
+                     * @param _remainTimeInSeconds 剩余时长，秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemainTimeInSeconds(const int64_t& _remainTimeInSeconds);
 
                     /**
                      * 判断参数 RemainTimeInSeconds 是否已赋值
                      * @return RemainTimeInSeconds 是否已赋值
+                     * 
                      */
                     bool RemainTimeInSecondsHasBeenSet() const;
 

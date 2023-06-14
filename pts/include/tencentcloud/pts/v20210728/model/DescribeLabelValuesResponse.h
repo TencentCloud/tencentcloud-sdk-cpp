@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelValueSet 标签值数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetLabelValueSet() const;
 
                     /**
                      * 判断参数 LabelValueSet 是否已赋值
                      * @return LabelValueSet 是否已赋值
+                     * 
                      */
                     bool LabelValueSetHasBeenSet() const;
 

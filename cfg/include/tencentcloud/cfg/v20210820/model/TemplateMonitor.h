@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取监控指标ID
                      * @return MonitorId 监控指标ID
+                     * 
                      */
                     int64_t GetMonitorId() const;
 
                     /**
                      * 设置监控指标ID
-                     * @param MonitorId 监控指标ID
+                     * @param _monitorId 监控指标ID
+                     * 
                      */
                     void SetMonitorId(const int64_t& _monitorId);
 
                     /**
                      * 判断参数 MonitorId 是否已赋值
                      * @return MonitorId 是否已赋值
+                     * 
                      */
                     bool MonitorIdHasBeenSet() const;
 
                     /**
                      * 获取监控指标对象类型ID
                      * @return ObjectTypeId 监控指标对象类型ID
+                     * 
                      */
                     int64_t GetObjectTypeId() const;
 
                     /**
                      * 设置监控指标对象类型ID
-                     * @param ObjectTypeId 监控指标对象类型ID
+                     * @param _objectTypeId 监控指标对象类型ID
+                     * 
                      */
                     void SetObjectTypeId(const int64_t& _objectTypeId);
 
                     /**
                      * 判断参数 ObjectTypeId 是否已赋值
                      * @return ObjectTypeId 是否已赋值
+                     * 
                      */
                     bool ObjectTypeIdHasBeenSet() const;
 
                     /**
                      * 获取指标名称
                      * @return MetricName 指标名称
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名称
-                     * @param MetricName 指标名称
+                     * @param _metricName 指标名称
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricChineseName 中文指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricChineseName() const;
 
                     /**
                      * 设置中文指标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricChineseName 中文指标
+                     * @param _metricChineseName 中文指标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricChineseName(const std::string& _metricChineseName);
 
                     /**
                      * 判断参数 MetricChineseName 是否已赋值
                      * @return MetricChineseName 是否已赋值
+                     * 
                      */
                     bool MetricChineseNameHasBeenSet() const;
 

@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取存储桶，用于上传接口 URL 的 bucket_name。
                      * @return StorageBucket 存储桶，用于上传接口 URL 的 bucket_name。
+                     * 
                      */
                     std::string GetStorageBucket() const;
 
                     /**
                      * 判断参数 StorageBucket 是否已赋值
                      * @return StorageBucket 是否已赋值
+                     * 
                      */
                     bool StorageBucketHasBeenSet() const;
 
                     /**
                      * 获取存储园区，用于上传接口 Host 的 Region。
                      * @return StorageRegion 存储园区，用于上传接口 Host 的 Region。
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取点播会话，用于确认上传接口的参数 VodSessionKey。
                      * @return VodSessionKey 点播会话，用于确认上传接口的参数 VodSessionKey。
+                     * 
                      */
                     std::string GetVodSessionKey() const;
 
                     /**
                      * 判断参数 VodSessionKey 是否已赋值
                      * @return VodSessionKey 是否已赋值
+                     * 
                      */
                     bool VodSessionKeyHasBeenSet() const;
 
                     /**
                      * 获取媒体存储路径，用于上传接口存储媒体的对象键（Key）。
                      * @return MediaStoragePath 媒体存储路径，用于上传接口存储媒体的对象键（Key）。
+                     * 
                      */
                     std::string GetMediaStoragePath() const;
 
                     /**
                      * 判断参数 MediaStoragePath 是否已赋值
                      * @return MediaStoragePath 是否已赋值
+                     * 
                      */
                     bool MediaStoragePathHasBeenSet() const;
 
                     /**
                      * 获取封面存储路径，用于上传接口存储封面的对象键（Key）。
                      * @return CoverStoragePath 封面存储路径，用于上传接口存储封面的对象键（Key）。
+                     * 
                      */
                     std::string GetCoverStoragePath() const;
 
                     /**
                      * 判断参数 CoverStoragePath 是否已赋值
                      * @return CoverStoragePath 是否已赋值
+                     * 
                      */
                     bool CoverStoragePathHasBeenSet() const;
 
                     /**
                      * 获取临时凭证，用于上传接口的权限验证。
                      * @return TempCertificate 临时凭证，用于上传接口的权限验证。
+                     * 
                      */
                     TempCertificate GetTempCertificate() const;
 
                     /**
                      * 判断参数 TempCertificate 是否已赋值
                      * @return TempCertificate 是否已赋值
+                     * 
                      */
                     bool TempCertificateHasBeenSet() const;
 

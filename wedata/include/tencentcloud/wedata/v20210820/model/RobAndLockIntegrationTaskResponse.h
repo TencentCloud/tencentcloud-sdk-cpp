@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取抢锁状态
                      * @return RobLockState 抢锁状态
+                     * 
                      */
                     RobLockState GetRobLockState() const;
 
                     /**
                      * 判断参数 RobLockState 是否已赋值
                      * @return RobLockState 是否已赋值
+                     * 
                      */
                     bool RobLockStateHasBeenSet() const;
 

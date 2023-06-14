@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取工作流批次 ID
                      * @return FlowBatchId 工作流批次 ID
+                     * 
                      */
                     std::string GetFlowBatchId() const;
 
                     /**
                      * 设置工作流批次 ID
-                     * @param FlowBatchId 工作流批次 ID
+                     * @param _flowBatchId 工作流批次 ID
+                     * 
                      */
                     void SetFlowBatchId(const std::string& _flowBatchId);
 
                     /**
                      * 判断参数 FlowBatchId 是否已赋值
                      * @return FlowBatchId 是否已赋值
+                     * 
                      */
                     bool FlowBatchIdHasBeenSet() const;
 

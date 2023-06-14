@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterID 集群ID
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterID 集群ID
+                     * @param _clusterID 集群ID
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
                     /**
                      * 获取Pod名称
                      * @return PodName Pod名称
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置Pod名称
-                     * @param PodName Pod名称
+                     * @param _podName Pod名称
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

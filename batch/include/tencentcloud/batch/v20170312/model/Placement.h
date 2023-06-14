@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。
                      * @return Zone 实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。
-                     * @param Zone 实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * @param _zone 实例所属的可用区ID。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
                      * @return ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
-                     * @param ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * @param _projectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
                      * @return HostIds 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * 
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
                      * 设置实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
-                     * @param HostIds 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * @param _hostIds 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * 
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
 
                     /**
                      * 判断参数 HostIds 是否已赋值
                      * @return HostIds 是否已赋值
+                     * 
                      */
                     bool HostIdsHasBeenSet() const;
 
                     /**
                      * 获取指定母机IP生产子机
                      * @return HostIps 指定母机IP生产子机
+                     * 
                      */
                     std::vector<std::string> GetHostIps() const;
 
                     /**
                      * 设置指定母机IP生产子机
-                     * @param HostIps 指定母机IP生产子机
+                     * @param _hostIps 指定母机IP生产子机
+                     * 
                      */
                     void SetHostIps(const std::vector<std::string>& _hostIps);
 
                     /**
                      * 判断参数 HostIps 是否已赋值
                      * @return HostIps 是否已赋值
+                     * 
                      */
                     bool HostIpsHasBeenSet() const;
 
                     /**
                      * 获取实例所属的专用宿主机ID，仅用于出参。
                      * @return HostId 实例所属的专用宿主机ID，仅用于出参。
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置实例所属的专用宿主机ID，仅用于出参。
-                     * @param HostId 实例所属的专用宿主机ID，仅用于出参。
+                     * @param _hostId 实例所属的专用宿主机ID，仅用于出参。
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 

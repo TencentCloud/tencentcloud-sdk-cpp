@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取置放群组 ID。
                      * @return DeployGroupId 置放群组 ID。
+                     * 
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
                      * 设置置放群组 ID。
-                     * @param DeployGroupId 置放群组 ID。
+                     * @param _deployGroupId 置放群组 ID。
+                     * 
                      */
                     void SetDeployGroupId(const std::string& _deployGroupId);
 
                     /**
                      * 判断参数 DeployGroupId 是否已赋值
                      * @return DeployGroupId 是否已赋值
+                     * 
                      */
                     bool DeployGroupIdHasBeenSet() const;
 
                     /**
                      * 获取置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。
                      * @return DeployGroupName 置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。
+                     * 
                      */
                     std::string GetDeployGroupName() const;
 
                     /**
                      * 设置置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。
-                     * @param DeployGroupName 置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。
+                     * @param _deployGroupName 置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。
+                     * 
                      */
                     void SetDeployGroupName(const std::string& _deployGroupName);
 
                     /**
                      * 判断参数 DeployGroupName 是否已赋值
                      * @return DeployGroupName 是否已赋值
+                     * 
                      */
                     bool DeployGroupNameHasBeenSet() const;
 
                     /**
                      * 获取置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。
                      * @return Description 置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。
-                     * @param Description 置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。
+                     * @param _description 置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

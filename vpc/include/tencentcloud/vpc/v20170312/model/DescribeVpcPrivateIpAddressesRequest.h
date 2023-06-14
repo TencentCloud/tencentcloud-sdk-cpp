@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
                      * @return VpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
-                     * @param VpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * @param _vpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取内网`IP`地址列表，批量查询单次请求最多支持`10`个。
                      * @return PrivateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置内网`IP`地址列表，批量查询单次请求最多支持`10`个。
-                     * @param PrivateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * @param _privateIpAddresses 内网`IP`地址列表，批量查询单次请求最多支持`10`个。
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 

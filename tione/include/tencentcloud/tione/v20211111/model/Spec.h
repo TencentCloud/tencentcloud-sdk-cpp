@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取计费项标签
                      * @return SpecId 计费项标签
+                     * 
                      */
                     std::string GetSpecId() const;
 
                     /**
                      * 设置计费项标签
-                     * @param SpecId 计费项标签
+                     * @param _specId 计费项标签
+                     * 
                      */
                     void SetSpecId(const std::string& _specId);
 
                     /**
                      * 判断参数 SpecId 是否已赋值
                      * @return SpecId 是否已赋值
+                     * 
                      */
                     bool SpecIdHasBeenSet() const;
 
                     /**
                      * 获取计费项名称
                      * @return SpecName 计费项名称
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置计费项名称
-                     * @param SpecName 计费项名称
+                     * @param _specName 计费项名称
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
                     /**
                      * 获取计费项显示名称
                      * @return SpecAlias 计费项显示名称
+                     * 
                      */
                     std::string GetSpecAlias() const;
 
                     /**
                      * 设置计费项显示名称
-                     * @param SpecAlias 计费项显示名称
+                     * @param _specAlias 计费项显示名称
+                     * 
                      */
                     void SetSpecAlias(const std::string& _specAlias);
 
                     /**
                      * 判断参数 SpecAlias 是否已赋值
                      * @return SpecAlias 是否已赋值
+                     * 
                      */
                     bool SpecAliasHasBeenSet() const;
 
                     /**
                      * 获取是否售罄
                      * @return Available 是否售罄
+                     * 
                      */
                     bool GetAvailable() const;
 
                     /**
                      * 设置是否售罄
-                     * @param Available 是否售罄
+                     * @param _available 是否售罄
+                     * 
                      */
                     void SetAvailable(const bool& _available);
 
                     /**
                      * 判断参数 Available 是否已赋值
                      * @return Available 是否已赋值
+                     * 
                      */
                     bool AvailableHasBeenSet() const;
 
                     /**
                      * 获取当前资源售罄时，可用的区域有哪些
                      * @return AvailableRegion 当前资源售罄时，可用的区域有哪些
+                     * 
                      */
                     std::vector<std::string> GetAvailableRegion() const;
 
                     /**
                      * 设置当前资源售罄时，可用的区域有哪些
-                     * @param AvailableRegion 当前资源售罄时，可用的区域有哪些
+                     * @param _availableRegion 当前资源售罄时，可用的区域有哪些
+                     * 
                      */
                     void SetAvailableRegion(const std::vector<std::string>& _availableRegion);
 
                     /**
                      * 判断参数 AvailableRegion 是否已赋值
                      * @return AvailableRegion 是否已赋值
+                     * 
                      */
                     bool AvailableRegionHasBeenSet() const;
 

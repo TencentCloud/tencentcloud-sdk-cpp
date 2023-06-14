@@ -73,6 +73,7 @@ namespace TencentCloud
 <li>30720: 30TB流量，有效期半年</li>
 <li>61440: 60TB流量，有效期半年</li>
 <li>307200: 300TB流量，有效期半年</li>
+                     * 
                      */
                     uint64_t GetTrafficAmount() const;
 
@@ -92,7 +93,7 @@ namespace TencentCloud
 <li>30720: 30TB流量，有效期半年</li>
 <li>61440: 60TB流量，有效期半年</li>
 <li>307200: 300TB流量，有效期半年</li>
-                     * @param TrafficAmount 流量包规格。可选值:
+                     * @param _trafficAmount 流量包规格。可选值:
 <li>10: 10GB流量，有效期一个月</li>
 <li>50: 50GB流量，有效期一个月</li>
 <li>512: 512GB流量，有效期一个月</li>
@@ -107,30 +108,35 @@ namespace TencentCloud
 <li>30720: 30TB流量，有效期半年</li>
 <li>61440: 60TB流量，有效期半年</li>
 <li>307200: 300TB流量，有效期半年</li>
+                     * 
                      */
                     void SetTrafficAmount(const uint64_t& _trafficAmount);
 
                     /**
                      * 判断参数 TrafficAmount 是否已赋值
                      * @return TrafficAmount 是否已赋值
+                     * 
                      */
                     bool TrafficAmountHasBeenSet() const;
 
                     /**
                      * 获取流量包数量，可选范围 1~20。
                      * @return TrafficPackageCount 流量包数量，可选范围 1~20。
+                     * 
                      */
                     uint64_t GetTrafficPackageCount() const;
 
                     /**
                      * 设置流量包数量，可选范围 1~20。
-                     * @param TrafficPackageCount 流量包数量，可选范围 1~20。
+                     * @param _trafficPackageCount 流量包数量，可选范围 1~20。
+                     * 
                      */
                     void SetTrafficPackageCount(const uint64_t& _trafficPackageCount);
 
                     /**
                      * 判断参数 TrafficPackageCount 是否已赋值
                      * @return TrafficPackageCount 是否已赋值
+                     * 
                      */
                     bool TrafficPackageCountHasBeenSet() const;
 

@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取任务对应的群组Id
                      * @return GroupId 任务对应的群组Id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取任务对应的房间号
                      * @return RoomId 任务对应的房间号
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取任务的Id
                      * @return TaskId 任务的Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取已废弃
                      * @return Progress 已废弃
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -101,48 +109,56 @@ namespace TencentCloud
 - QUEUED: 正在排队
 - PROCESSING: 正在生成视频
 - FINISHED: 生成视频结束（成功完成或失败结束，可以通过错误码和错误信息进一步判断）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取回放视频总时长,单位：毫秒
                      * @return TotalTime 回放视频总时长,单位：毫秒
+                     * 
                      */
                     int64_t GetTotalTime() const;
 
                     /**
                      * 判断参数 TotalTime 是否已赋值
                      * @return TotalTime 是否已赋值
+                     * 
                      */
                     bool TotalTimeHasBeenSet() const;
 
                     /**
                      * 获取已废弃，请使用`VideoInfoList`参数
                      * @return VideoInfos 已废弃，请使用`VideoInfoList`参数
+                     * 
                      */
                     VideoInfo GetVideoInfos() const;
 
                     /**
                      * 判断参数 VideoInfos 是否已赋值
                      * @return VideoInfos 是否已赋值
+                     * 
                      */
                     bool VideoInfosHasBeenSet() const;
 
                     /**
                      * 获取录制视频生成视频列表
                      * @return VideoInfoList 录制视频生成视频列表
+                     * 
                      */
                     std::vector<VideoInfo> GetVideoInfoList() const;
 
                     /**
                      * 判断参数 VideoInfoList 是否已赋值
                      * @return VideoInfoList 是否已赋值
+                     * 
                      */
                     bool VideoInfoListHasBeenSet() const;
 

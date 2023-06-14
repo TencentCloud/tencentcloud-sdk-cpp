@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取折后总价
                      * @return RealTotalCost 折后总价
+                     * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置折后总价
-                     * @param RealTotalCost 折后总价
+                     * @param _realTotalCost 折后总价
+                     * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 

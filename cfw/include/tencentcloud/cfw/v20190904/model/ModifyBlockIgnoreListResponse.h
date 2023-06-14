@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取接口返回信息
                      * @return ReturnMsg 接口返回信息
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取接口返回错误码，0请求成功  非0失败
                      * @return ReturnCode 接口返回错误码，0请求成功  非0失败
+                     * 
                      */
                     uint64_t GetReturnCode() const;
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 

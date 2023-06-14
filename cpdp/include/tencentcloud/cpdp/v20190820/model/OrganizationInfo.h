@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取公司名称，个体工商户必输
                      * @return OrganizationName 公司名称，个体工商户必输
+                     * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置公司名称，个体工商户必输
-                     * @param OrganizationName 公司名称，个体工商户必输
+                     * @param _organizationName 公司名称，个体工商户必输
+                     * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
                     /**
                      * 判断参数 OrganizationName 是否已赋值
                      * @return OrganizationName 是否已赋值
+                     * 
                      */
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
                      * 获取公司证件类型，个体工商户必输，证件类型仅支持73
                      * @return OrganizationType 公司证件类型，个体工商户必输，证件类型仅支持73
+                     * 
                      */
                     std::string GetOrganizationType() const;
 
                     /**
                      * 设置公司证件类型，个体工商户必输，证件类型仅支持73
-                     * @param OrganizationType 公司证件类型，个体工商户必输，证件类型仅支持73
+                     * @param _organizationType 公司证件类型，个体工商户必输，证件类型仅支持73
+                     * 
                      */
                     void SetOrganizationType(const std::string& _organizationType);
 
                     /**
                      * 判断参数 OrganizationType 是否已赋值
                      * @return OrganizationType 是否已赋值
+                     * 
                      */
                     bool OrganizationTypeHasBeenSet() const;
 
                     /**
                      * 获取公司证件号码，个体工商户必输
                      * @return OrganizationCode 公司证件号码，个体工商户必输
+                     * 
                      */
                     std::string GetOrganizationCode() const;
 
                     /**
                      * 设置公司证件号码，个体工商户必输
-                     * @param OrganizationCode 公司证件号码，个体工商户必输
+                     * @param _organizationCode 公司证件号码，个体工商户必输
+                     * 
                      */
                     void SetOrganizationCode(const std::string& _organizationCode);
 
                     /**
                      * 判断参数 OrganizationCode 是否已赋值
                      * @return OrganizationCode 是否已赋值
+                     * 
                      */
                     bool OrganizationCodeHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return LegalPersonName 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetLegalPersonName() const;
 
                     /**
                      * 设置法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param LegalPersonName 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+                     * @param _legalPersonName 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetLegalPersonName(const std::string& _legalPersonName);
 
                     /**
                      * 判断参数 LegalPersonName 是否已赋值
                      * @return LegalPersonName 是否已赋值
+                     * 
                      */
                     bool LegalPersonNameHasBeenSet() const;
 
                     /**
                      * 获取法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
                      * @return LegalPersonIdType 法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+                     * 
                      */
                     std::string GetLegalPersonIdType() const;
 
                     /**
                      * 设置法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
-                     * @param LegalPersonIdType 法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+                     * @param _legalPersonIdType 法人证件类型，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+                     * 
                      */
                     void SetLegalPersonIdType(const std::string& _legalPersonIdType);
 
                     /**
                      * 判断参数 LegalPersonIdType 是否已赋值
                      * @return LegalPersonIdType 是否已赋值
+                     * 
                      */
                     bool LegalPersonIdTypeHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return LegalPersonIdCode 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetLegalPersonIdCode() const;
 
                     /**
                      * 设置法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param LegalPersonIdCode 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+                     * @param _legalPersonIdCode 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetLegalPersonIdCode(const std::string& _legalPersonIdCode);
 
                     /**
                      * 判断参数 LegalPersonIdCode 是否已赋值
                      * @return LegalPersonIdCode 是否已赋值
+                     * 
                      */
                     bool LegalPersonIdCodeHasBeenSet() const;
 

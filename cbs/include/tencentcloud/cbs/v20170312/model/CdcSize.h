@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取独享集群的可用容量大小，单位GiB
                      * @return DiskAavilable 独享集群的可用容量大小，单位GiB
+                     * 
                      */
                     uint64_t GetDiskAavilable() const;
 
                     /**
                      * 设置独享集群的可用容量大小，单位GiB
-                     * @param DiskAavilable 独享集群的可用容量大小，单位GiB
+                     * @param _diskAavilable 独享集群的可用容量大小，单位GiB
+                     * 
                      */
                     void SetDiskAavilable(const uint64_t& _diskAavilable);
 
                     /**
                      * 判断参数 DiskAavilable 是否已赋值
                      * @return DiskAavilable 是否已赋值
+                     * 
                      */
                     bool DiskAavilableHasBeenSet() const;
 
                     /**
                      * 获取独享集群的总容量大小，单位GiB
                      * @return DiskTotal 独享集群的总容量大小，单位GiB
+                     * 
                      */
                     uint64_t GetDiskTotal() const;
 
                     /**
                      * 设置独享集群的总容量大小，单位GiB
-                     * @param DiskTotal 独享集群的总容量大小，单位GiB
+                     * @param _diskTotal 独享集群的总容量大小，单位GiB
+                     * 
                      */
                     void SetDiskTotal(const uint64_t& _diskTotal);
 
                     /**
                      * 判断参数 DiskTotal 是否已赋值
                      * @return DiskTotal 是否已赋值
+                     * 
                      */
                     bool DiskTotalHasBeenSet() const;
 

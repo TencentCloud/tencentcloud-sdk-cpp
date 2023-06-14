@@ -57,6 +57,7 @@ namespace TencentCloud
 1：key托管，把cos的账号id和key托管于本服务，本服务会提供一个托管id； 
 3：临时key授权。
 注意：目前智能编辑还不支持临时key授权；画质重生目前只支持bucket授权
+                     * 
                      */
                     int64_t GetType() const;
 
@@ -66,89 +67,103 @@ namespace TencentCloud
 1：key托管，把cos的账号id和key托管于本服务，本服务会提供一个托管id； 
 3：临时key授权。
 注意：目前智能编辑还不支持临时key授权；画质重生目前只支持bucket授权
-                     * @param Type 授权类型，可选值： 
+                     * @param _type 授权类型，可选值： 
 0：bucket授权，需要将对应bucket授权给本服务帐号（3020447271和100012301793），否则会读写cos失败； 
 1：key托管，把cos的账号id和key托管于本服务，本服务会提供一个托管id； 
 3：临时key授权。
 注意：目前智能编辑还不支持临时key授权；画质重生目前只支持bucket授权
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取cos账号托管id，Type等于1时必选。
                      * @return HostedId cos账号托管id，Type等于1时必选。
+                     * 
                      */
                     std::string GetHostedId() const;
 
                     /**
                      * 设置cos账号托管id，Type等于1时必选。
-                     * @param HostedId cos账号托管id，Type等于1时必选。
+                     * @param _hostedId cos账号托管id，Type等于1时必选。
+                     * 
                      */
                     void SetHostedId(const std::string& _hostedId);
 
                     /**
                      * 判断参数 HostedId 是否已赋值
                      * @return HostedId 是否已赋值
+                     * 
                      */
                     bool HostedIdHasBeenSet() const;
 
                     /**
                      * 获取cos身份识别id，Type等于3时必选。
                      * @return SecretId cos身份识别id，Type等于3时必选。
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置cos身份识别id，Type等于3时必选。
-                     * @param SecretId cos身份识别id，Type等于3时必选。
+                     * @param _secretId cos身份识别id，Type等于3时必选。
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取cos身份秘钥，Type等于3时必选。
                      * @return SecretKey cos身份秘钥，Type等于3时必选。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置cos身份秘钥，Type等于3时必选。
-                     * @param SecretKey cos身份秘钥，Type等于3时必选。
+                     * @param _secretKey cos身份秘钥，Type等于3时必选。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取临时授权 token，Type等于3时必选。
                      * @return Token 临时授权 token，Type等于3时必选。
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置临时授权 token，Type等于3时必选。
-                     * @param Token 临时授权 token，Type等于3时必选。
+                     * @param _token 临时授权 token，Type等于3时必选。
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 

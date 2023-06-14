@@ -56,36 +56,42 @@ ApproverNumber, OrganizationName, ApproverType必传。
                     /**
                      * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
                      * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @param OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @param _organizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
                     /**
                      * 判断参数 OrganizationName 是否已赋值
                      * @return OrganizationName 是否已赋值
+                     * 
                      */
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
                      * 获取签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
                      * @return ApproverNumber 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * 
                      */
                     uint64_t GetApproverNumber() const;
 
                     /**
                      * 设置签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
-                     * @param ApproverNumber 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * @param _approverNumber 签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看
+                     * 
                      */
                     void SetApproverNumber(const uint64_t& _approverNumber);
 
                     /**
                      * 判断参数 ApproverNumber 是否已赋值
                      * @return ApproverNumber 是否已赋值
+                     * 
                      */
                     bool ApproverNumberHasBeenSet() const;
 
@@ -96,6 +102,7 @@ ENTERPRISESERVER-企业静默签
                      * @return ApproverType 签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
+                     * 
                      */
                     std::string GetApproverType() const;
 
@@ -103,33 +110,38 @@ ENTERPRISESERVER-企业静默签
                      * 设置签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
-                     * @param ApproverType 签署人类型，目前仅支持
+                     * @param _approverType 签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
+                     * 
                      */
                     void SetApproverType(const std::string& _approverType);
 
                     /**
                      * 判断参数 ApproverType 是否已赋值
                      * @return ApproverType 是否已赋值
+                     * 
                      */
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
                      * 获取签署人姓名，最大长度50个字符
                      * @return Name 签署人姓名，最大长度50个字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置签署人姓名，最大长度50个字符
-                     * @param Name 签署人姓名，最大长度50个字符
+                     * @param _name 签署人姓名，最大长度50个字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -142,6 +154,7 @@ ENTERPRISESERVER-企业静默签
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 
                      */
                     std::string GetIdCardType() const;
 
@@ -150,70 +163,81 @@ ENTERPRISESERVER-企业静默签
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param IdCardType 签署人身份证件类型
+                     * @param _idCardType 签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取签署人证件号
                      * @return IdCardNumber 签署人证件号
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置签署人证件号
-                     * @param IdCardNumber 签署人证件号
+                     * @param _idCardNumber 签署人证件号
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
                      * @return Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
-                     * @param Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * @param _mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
                      * @return OrganizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @param OrganizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @param _organizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
                     /**
                      * 判断参数 OrganizationOpenId 是否已赋值
                      * @return OrganizationOpenId 是否已赋值
+                     * 
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
 
@@ -222,20 +246,23 @@ ENTERPRISESERVER-企业静默签
 当签署方为同一第三方应用下的员工时，该字必传
                      * @return OpenId 用户侧第三方id，最大长度64个字符
 当签署方为同一第三方应用下的员工时，该字必传
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置用户侧第三方id，最大长度64个字符
 当签署方为同一第三方应用下的员工时，该字必传
-                     * @param OpenId 用户侧第三方id，最大长度64个字符
+                     * @param _openId 用户侧第三方id，最大长度64个字符
 当签署方为同一第三方应用下的员工时，该字必传
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 

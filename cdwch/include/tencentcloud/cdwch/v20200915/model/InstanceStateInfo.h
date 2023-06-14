@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceState 集群状态，例如：Serving
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
                      * 设置集群状态，例如：Serving
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceState 集群状态，例如：Serving
+                     * @param _instanceState 集群状态，例如：Serving
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
 
                     /**
                      * 判断参数 InstanceState 是否已赋值
                      * @return InstanceState 是否已赋值
+                     * 
                      */
                     bool InstanceStateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowCreateTime 集群操作创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowCreateTime() const;
 
                     /**
                      * 设置集群操作创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowCreateTime 集群操作创建时间
+                     * @param _flowCreateTime 集群操作创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowCreateTime(const std::string& _flowCreateTime);
 
                     /**
                      * 判断参数 FlowCreateTime 是否已赋值
                      * @return FlowCreateTime 是否已赋值
+                     * 
                      */
                     bool FlowCreateTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 集群操作名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置集群操作名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowName 集群操作名称
+                     * @param _flowName 集群操作名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowProgress 集群操作进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowProgress() const;
 
                     /**
                      * 设置集群操作进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowProgress 集群操作进度
+                     * @param _flowProgress 集群操作进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowProgress(const int64_t& _flowProgress);
 
                     /**
                      * 判断参数 FlowProgress 是否已赋值
                      * @return FlowProgress 是否已赋值
+                     * 
                      */
                     bool FlowProgressHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStateDesc 集群状态描述，例如：运行中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceStateDesc() const;
 
                     /**
                      * 设置集群状态描述，例如：运行中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceStateDesc 集群状态描述，例如：运行中
+                     * @param _instanceStateDesc 集群状态描述，例如：运行中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceStateDesc(const std::string& _instanceStateDesc);
 
                     /**
                      * 判断参数 InstanceStateDesc 是否已赋值
                      * @return InstanceStateDesc 是否已赋值
+                     * 
                      */
                     bool InstanceStateDescHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowMsg() const;
 
                     /**
                      * 设置集群流程错误信息，例如：“创建失败，资源不足”
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
+                     * @param _flowMsg 集群流程错误信息，例如：“创建失败，资源不足”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowMsg(const std::string& _flowMsg);
 
                     /**
                      * 判断参数 FlowMsg 是否已赋值
                      * @return FlowMsg 是否已赋值
+                     * 
                      */
                     bool FlowMsgHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessName 当前步骤的名称，例如：”购买资源中“
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessName() const;
 
                     /**
                      * 设置当前步骤的名称，例如：”购买资源中“
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessName 当前步骤的名称，例如：”购买资源中“
+                     * @param _processName 当前步骤的名称，例如：”购买资源中“
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessName(const std::string& _processName);
 
                     /**
                      * 判断参数 ProcessName 是否已赋值
                      * @return ProcessName 是否已赋值
+                     * 
                      */
                     bool ProcessNameHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestId 请求id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRequestId() const;
 
                     /**
                      * 设置请求id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestId 请求id
+                     * @param _requestId 请求id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestId(const std::string& _requestId);
 
                     /**
                      * 判断参数 RequestId 是否已赋值
                      * @return RequestId 是否已赋值
+                     * 
                      */
                     bool RequestIdHasBeenSet() const;
 

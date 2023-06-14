@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取号码营销监控请求内容
                      * @return RequestData 号码营销监控请求内容
+                     * 
                      */
                     MHMRequest GetRequestData() const;
 
                     /**
                      * 设置号码营销监控请求内容
-                     * @param RequestData 号码营销监控请求内容
+                     * @param _requestData 号码营销监控请求内容
+                     * 
                      */
                     void SetRequestData(const MHMRequest& _requestData);
 
                     /**
                      * 判断参数 RequestData 是否已赋值
                      * @return RequestData 是否已赋值
+                     * 
                      */
                     bool RequestDataHasBeenSet() const;
 
                     /**
                      * 获取用于计费的资源ID
                      * @return ResourceId 用于计费的资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置用于计费的资源ID
-                     * @param ResourceId 用于计费的资源ID
+                     * @param _resourceId 用于计费的资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

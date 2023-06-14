@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取触发器名称
                      * @return Name 触发器名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置触发器名称
-                     * @param Name 触发器名称
+                     * @param _name 触发器名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取触发器目标
                      * @return Targets 触发器目标
+                     * 
                      */
                     std::vector<WebhookTarget> GetTargets() const;
 
                     /**
                      * 设置触发器目标
-                     * @param Targets 触发器目标
+                     * @param _targets 触发器目标
+                     * 
                      */
                     void SetTargets(const std::vector<WebhookTarget>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
                     /**
                      * 获取触发动作
                      * @return EventTypes 触发动作
+                     * 
                      */
                     std::vector<std::string> GetEventTypes() const;
 
                     /**
                      * 设置触发动作
-                     * @param EventTypes 触发动作
+                     * @param _eventTypes 触发动作
+                     * 
                      */
                     void SetEventTypes(const std::vector<std::string>& _eventTypes);
 
                     /**
                      * 判断参数 EventTypes 是否已赋值
                      * @return EventTypes 是否已赋值
+                     * 
                      */
                     bool EventTypesHasBeenSet() const;
 
                     /**
                      * 获取触发规则
                      * @return Condition 触发规则
+                     * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置触发规则
-                     * @param Condition 触发规则
+                     * @param _condition 触发规则
+                     * 
                      */
                     void SetCondition(const std::string& _condition);
 
                     /**
                      * 判断参数 Condition 是否已赋值
                      * @return Condition 是否已赋值
+                     * 
                      */
                     bool ConditionHasBeenSet() const;
 
                     /**
                      * 获取启用触发器
                      * @return Enabled 启用触发器
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置启用触发器
-                     * @param Enabled 启用触发器
+                     * @param _enabled 启用触发器
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取触发器Id
                      * @return Id 触发器Id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置触发器Id
-                     * @param Id 触发器Id
+                     * @param _id 触发器Id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取触发器描述
                      * @return Description 触发器描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置触发器描述
-                     * @param Description 触发器描述
+                     * @param _description 触发器描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取触发器所属命名空间 Id
                      * @return NamespaceId 触发器所属命名空间 Id
+                     * 
                      */
                     int64_t GetNamespaceId() const;
 
                     /**
                      * 设置触发器所属命名空间 Id
-                     * @param NamespaceId 触发器所属命名空间 Id
+                     * @param _namespaceId 触发器所属命名空间 Id
+                     * 
                      */
                     void SetNamespaceId(const int64_t& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 

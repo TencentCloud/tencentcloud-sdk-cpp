@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品名
                      * @return ProductName 产品名
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名
-                     * @param ProductName 产品名
+                     * @param _productName 产品名
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取产品元数据
                      * @return ProductMetadata 产品元数据
+                     * 
                      */
                     ProductMetadata GetProductMetadata() const;
 
                     /**
                      * 设置产品元数据
-                     * @param ProductMetadata 产品元数据
+                     * @param _productMetadata 产品元数据
+                     * 
                      */
                     void SetProductMetadata(const ProductMetadata& _productMetadata);
 
                     /**
                      * 判断参数 ProductMetadata 是否已赋值
                      * @return ProductMetadata 是否已赋值
+                     * 
                      */
                     bool ProductMetadataHasBeenSet() const;
 
                     /**
                      * 获取产品属性
                      * @return ProductProperties 产品属性
+                     * 
                      */
                     ProductProperties GetProductProperties() const;
 
                     /**
                      * 设置产品属性
-                     * @param ProductProperties 产品属性
+                     * @param _productProperties 产品属性
+                     * 
                      */
                     void SetProductProperties(const ProductProperties& _productProperties);
 
                     /**
                      * 判断参数 ProductProperties 是否已赋值
                      * @return ProductProperties 是否已赋值
+                     * 
                      */
                     bool ProductPropertiesHasBeenSet() const;
 

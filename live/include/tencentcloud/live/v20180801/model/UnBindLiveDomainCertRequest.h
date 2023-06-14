@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取播放域名。
                      * @return DomainName 播放域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置播放域名。
-                     * @param DomainName 播放域名。
+                     * @param _domainName 播放域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -71,6 +74,7 @@ gray: 解绑灰度规则
 formal(默认): 解绑正式规则
 
 不传则为formal
+                     * 
                      */
                     std::string GetType() const;
 
@@ -80,17 +84,19 @@ gray: 解绑灰度规则
 formal(默认): 解绑正式规则
 
 不传则为formal
-                     * @param Type 枚举值：
+                     * @param _type 枚举值：
 gray: 解绑灰度规则
 formal(默认): 解绑正式规则
 
 不传则为formal
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

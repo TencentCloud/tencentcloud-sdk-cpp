@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-abcdefgh
                      * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
                      * @return UserId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
-                     * @param UserId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * @param _userId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

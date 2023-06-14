@@ -47,20 +47,23 @@ namespace TencentCloud
 格式：yyyy-mm-dd HH:MM:SS。
                      * @return StartTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
-                     * @param StartTime 起始时间，北京时间，
+                     * @param _startTime 起始时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return EndTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：最大时间跨度支持1天，支持最近3个月的数据查询。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -78,33 +82,38 @@ namespace TencentCloud
                      * 设置结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：最大时间跨度支持1天，支持最近3个月的数据查询。
-                     * @param EndTime 结束时间，北京时间，
+                     * @param _endTime 结束时间，北京时间，
 格式：yyyy-mm-dd HH:MM:SS。
 注：最大时间跨度支持1天，支持最近3个月的数据查询。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取播放域名列表。
                      * @return PlayDomains 播放域名列表。
+                     * 
                      */
                     std::vector<std::string> GetPlayDomains() const;
 
                     /**
                      * 设置播放域名列表。
-                     * @param PlayDomains 播放域名列表。
+                     * @param _playDomains 播放域名列表。
+                     * 
                      */
                     void SetPlayDomains(const std::vector<std::string>& _playDomains);
 
                     /**
                      * 判断参数 PlayDomains 是否已赋值
                      * @return PlayDomains 是否已赋值
+                     * 
                      */
                     bool PlayDomainsHasBeenSet() const;
 

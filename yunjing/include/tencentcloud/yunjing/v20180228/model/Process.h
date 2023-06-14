@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取唯一ID。
                      * @return Id 唯一ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置唯一ID。
-                     * @param Id 唯一ID。
+                     * @param _id 唯一ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取云镜客户端唯一UUID。
                      * @return Uuid 云镜客户端唯一UUID。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜客户端唯一UUID。
-                     * @param Uuid 云镜客户端唯一UUID。
+                     * @param _uuid 云镜客户端唯一UUID。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取主机内网IP。
                      * @return MachineIp 主机内网IP。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机内网IP。
-                     * @param MachineIp 主机内网IP。
+                     * @param _machineIp 主机内网IP。
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取主机名。
                      * @return MachineName 主机名。
+                     * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置主机名。
-                     * @param MachineName 主机名。
+                     * @param _machineName 主机名。
+                     * 
                      */
                     void SetMachineName(const std::string& _machineName);
 
                     /**
                      * 判断参数 MachineName 是否已赋值
                      * @return MachineName 是否已赋值
+                     * 
                      */
                     bool MachineNameHasBeenSet() const;
 
                     /**
                      * 获取进程Pid。
                      * @return Pid 进程Pid。
+                     * 
                      */
                     uint64_t GetPid() const;
 
                     /**
                      * 设置进程Pid。
-                     * @param Pid 进程Pid。
+                     * @param _pid 进程Pid。
+                     * 
                      */
                     void SetPid(const uint64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
+                     * 
                      */
                     bool PidHasBeenSet() const;
 
                     /**
                      * 获取进程Ppid。
                      * @return Ppid 进程Ppid。
+                     * 
                      */
                     uint64_t GetPpid() const;
 
                     /**
                      * 设置进程Ppid。
-                     * @param Ppid 进程Ppid。
+                     * @param _ppid 进程Ppid。
+                     * 
                      */
                     void SetPpid(const uint64_t& _ppid);
 
                     /**
                      * 判断参数 Ppid 是否已赋值
                      * @return Ppid 是否已赋值
+                     * 
                      */
                     bool PpidHasBeenSet() const;
 
                     /**
                      * 获取进程名。
                      * @return ProcessName 进程名。
+                     * 
                      */
                     std::string GetProcessName() const;
 
                     /**
                      * 设置进程名。
-                     * @param ProcessName 进程名。
+                     * @param _processName 进程名。
+                     * 
                      */
                     void SetProcessName(const std::string& _processName);
 
                     /**
                      * 判断参数 ProcessName 是否已赋值
                      * @return ProcessName 是否已赋值
+                     * 
                      */
                     bool ProcessNameHasBeenSet() const;
 
                     /**
                      * 获取进程用户名。
                      * @return Username 进程用户名。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置进程用户名。
-                     * @param Username 进程用户名。
+                     * @param _username 进程用户名。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
@@ -201,6 +225,7 @@ namespace TencentCloud
 <li>WIN64：windows64位</li>
 <li>LINUX32：Linux32位</li>
 <li>LINUX64：Linux64位</li>
+                     * 
                      */
                     std::string GetPlatform() const;
 
@@ -210,53 +235,61 @@ namespace TencentCloud
 <li>WIN64：windows64位</li>
 <li>LINUX32：Linux32位</li>
 <li>LINUX64：Linux64位</li>
-                     * @param Platform 所属平台。
+                     * @param _platform 所属平台。
 <li>WIN32：windows32位</li>
 <li>WIN64：windows64位</li>
 <li>LINUX32：Linux32位</li>
 <li>LINUX64：Linux64位</li>
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取进程路径。
                      * @return FullPath 进程路径。
+                     * 
                      */
                     std::string GetFullPath() const;
 
                     /**
                      * 设置进程路径。
-                     * @param FullPath 进程路径。
+                     * @param _fullPath 进程路径。
+                     * 
                      */
                     void SetFullPath(const std::string& _fullPath);
 
                     /**
                      * 判断参数 FullPath 是否已赋值
                      * @return FullPath 是否已赋值
+                     * 
                      */
                     bool FullPathHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreateTime 创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

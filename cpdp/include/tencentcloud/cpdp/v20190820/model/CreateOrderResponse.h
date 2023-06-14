@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取进件成功后返给商户方的AppId。
                      * @return MerchantAppId 进件成功后返给商户方的AppId。
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取商户流水号，商户唯一订单号由字母或数字组成。
                      * @return TraceNo 商户流水号，商户唯一订单号由字母或数字组成。
+                     * 
                      */
                     std::string GetTraceNo() const;
 
                     /**
                      * 判断参数 TraceNo 是否已赋值
                      * @return TraceNo 是否已赋值
+                     * 
                      */
                     bool TraceNoHasBeenSet() const;
 
                     /**
                      * 获取平台流水号，若下单成功则返回。
                      * @return OrderNo 平台流水号，若下单成功则返回。
+                     * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 
                     /**
                      * 获取支付页面跳转地址，若下单成功则返回。
                      * @return PayUrl 支付页面跳转地址，若下单成功则返回。
+                     * 
                      */
                     std::string GetPayUrl() const;
 
                     /**
                      * 判断参数 PayUrl 是否已赋值
                      * @return PayUrl 是否已赋值
+                     * 
                      */
                     bool PayUrlHasBeenSet() const;
 

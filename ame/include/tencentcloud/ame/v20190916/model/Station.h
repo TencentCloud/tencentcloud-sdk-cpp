@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取StationID
                      * @return CategoryID StationID
+                     * 
                      */
                     std::string GetCategoryID() const;
 
                     /**
                      * 设置StationID
-                     * @param CategoryID StationID
+                     * @param _categoryID StationID
+                     * 
                      */
                     void SetCategoryID(const std::string& _categoryID);
 
                     /**
                      * 判断参数 CategoryID 是否已赋值
                      * @return CategoryID 是否已赋值
+                     * 
                      */
                     bool CategoryIDHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryCode Station MCCode
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCategoryCode() const;
 
                     /**
                      * 设置Station MCCode
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CategoryCode Station MCCode
+                     * @param _categoryCode Station MCCode
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategoryCode(const std::string& _categoryCode);
 
                     /**
                      * 判断参数 CategoryCode 是否已赋值
                      * @return CategoryCode 是否已赋值
+                     * 
                      */
                     bool CategoryCodeHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Category Name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Category Name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name Category Name
+                     * @param _name Category Name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rank Station的排序值，供参考（返回结果已按其升序）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRank() const;
 
                     /**
                      * 设置Station的排序值，供参考（返回结果已按其升序）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rank Station的排序值，供参考（返回结果已按其升序）
+                     * @param _rank Station的排序值，供参考（返回结果已按其升序）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRank(const int64_t& _rank);
 
                     /**
                      * 判断参数 Rank 是否已赋值
                      * @return Rank 是否已赋值
+                     * 
                      */
                     bool RankHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImagePathMap station图片集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImagePath> GetImagePathMap() const;
 
                     /**
                      * 设置station图片集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImagePathMap station图片集合
+                     * @param _imagePathMap station图片集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImagePathMap(const std::vector<ImagePath>& _imagePathMap);
 
                     /**
                      * 判断参数 ImagePathMap 是否已赋值
                      * @return ImagePathMap 是否已赋值
+                     * 
                      */
                     bool ImagePathMapHasBeenSet() const;
 

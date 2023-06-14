@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取识别出人脸对应的候选人数组。当前返回相似度最高的候选人。
                      * @return Name 识别出人脸对应的候选人数组。当前返回相似度最高的候选人。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出人脸对应的候选人数组。当前返回相似度最高的候选人。
-                     * @param Name 识别出人脸对应的候选人数组。当前返回相似度最高的候选人。
+                     * @param _name 识别出人脸对应的候选人数组。当前返回相似度最高的候选人。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取相似度，0-100之间。
                      * @return Confidence 相似度，0-100之间。
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置相似度，0-100之间。
-                     * @param Confidence 相似度，0-100之间。
+                     * @param _confidence 相似度，0-100之间。
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

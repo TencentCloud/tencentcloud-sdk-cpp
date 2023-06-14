@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取比例
                      * @return Ratio 比例
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置比例
-                     * @param Ratio 比例
+                     * @param _ratio 比例
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 

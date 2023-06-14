@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取指定设备已经绑定的可用license数量
                      * @return AvailableCount 指定设备已经绑定的可用license数量
+                     * 
                      */
                     int64_t GetAvailableCount() const;
 
                     /**
                      * 判断参数 AvailableCount 是否已赋值
                      * @return AvailableCount 是否已赋值
+                     * 
                      */
                     bool AvailableCountHasBeenSet() const;
 

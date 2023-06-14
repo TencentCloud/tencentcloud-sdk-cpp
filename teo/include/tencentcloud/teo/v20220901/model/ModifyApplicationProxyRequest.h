@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取代理 ID。
                      * @return ProxyId 代理 ID。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置代理 ID。
-                     * @param ProxyId 代理 ID。
+                     * @param _proxyId 代理 ID。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
@@ -85,20 +91,23 @@ namespace TencentCloud
 当 ProxyType=instance 时，表示代理名称。
                      * @return ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
+                     * 
                      */
                     std::string GetProxyName() const;
 
                     /**
                      * 设置当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
-                     * @param ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
+                     * @param _proxyName 当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
+                     * 
                      */
                     void SetProxyName(const std::string& _proxyName);
 
                     /**
                      * 判断参数 ProxyName 是否已赋值
                      * @return ProxyName 是否已赋值
+                     * 
                      */
                     bool ProxyNameHasBeenSet() const;
 
@@ -107,20 +116,23 @@ namespace TencentCloud
 不填写保持原有配置。
                      * @return SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
 不填写保持原有配置。
+                     * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
                      * 设置会话保持时间，取值范围：30-3600，单位：秒。
 不填写保持原有配置。
-                     * @param SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
+                     * @param _sessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
 不填写保持原有配置。
+                     * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
 
                     /**
                      * 判断参数 SessionPersistTime 是否已赋值
                      * @return SessionPersistTime 是否已赋值
+                     * 
                      */
                     bool SessionPersistTimeHasBeenSet() const;
 
@@ -131,6 +143,7 @@ namespace TencentCloud
                      * @return ProxyType 四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写保持原有配置。
+                     * 
                      */
                     std::string GetProxyType() const;
 
@@ -138,51 +151,59 @@ namespace TencentCloud
                      * 设置四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写保持原有配置。
-                     * @param ProxyType 四层代理模式，取值有：
+                     * @param _proxyType 四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写保持原有配置。
+                     * 
                      */
                     void SetProxyType(const std::string& _proxyType);
 
                     /**
                      * 判断参数 ProxyType 是否已赋值
                      * @return ProxyType 是否已赋值
+                     * 
                      */
                     bool ProxyTypeHasBeenSet() const;
 
                     /**
                      * 获取Ipv6 访问配置，不填写保持原有配置。
                      * @return Ipv6 Ipv6 访问配置，不填写保持原有配置。
+                     * 
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
                      * 设置Ipv6 访问配置，不填写保持原有配置。
-                     * @param Ipv6 Ipv6 访问配置，不填写保持原有配置。
+                     * @param _ipv6 Ipv6 访问配置，不填写保持原有配置。
+                     * 
                      */
                     void SetIpv6(const Ipv6& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 
                     /**
                      * 获取中国大陆加速优化配置。 不填写表示保持原有配置。
                      * @return AccelerateMainland 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     * 
                      */
                     AccelerateMainland GetAccelerateMainland() const;
 
                     /**
                      * 设置中国大陆加速优化配置。 不填写表示保持原有配置。
-                     * @param AccelerateMainland 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     * @param _accelerateMainland 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     * 
                      */
                     void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
 
                     /**
                      * 判断参数 AccelerateMainland 是否已赋值
                      * @return AccelerateMainland 是否已赋值
+                     * 
                      */
                     bool AccelerateMainlandHasBeenSet() const;
 

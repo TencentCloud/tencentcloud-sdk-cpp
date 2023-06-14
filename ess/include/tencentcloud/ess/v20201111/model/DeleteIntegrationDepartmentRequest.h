@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，UserId必填且需拥有组织架构管理权限
                      * @return Operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，UserId必填且需拥有组织架构管理权限
-                     * @param Operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * @param _operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取电子签中的部门id
                      * @return DeptId 电子签中的部门id
+                     * 
                      */
                     std::string GetDeptId() const;
 
                     /**
                      * 设置电子签中的部门id
-                     * @param DeptId 电子签中的部门id
+                     * @param _deptId 电子签中的部门id
+                     * 
                      */
                     void SetDeptId(const std::string& _deptId);
 
                     /**
                      * 判断参数 DeptId 是否已赋值
                      * @return DeptId 是否已赋值
+                     * 
                      */
                     bool DeptIdHasBeenSet() const;
 
                     /**
                      * 获取交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。
                      * @return ReceiveDeptId 交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * 
                      */
                     std::string GetReceiveDeptId() const;
 
                     /**
                      * 设置交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。
-                     * @param ReceiveDeptId 交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * @param _receiveDeptId 交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。
+                     * 
                      */
                     void SetReceiveDeptId(const std::string& _receiveDeptId);
 
                     /**
                      * 判断参数 ReceiveDeptId 是否已赋值
                      * @return ReceiveDeptId 是否已赋值
+                     * 
                      */
                     bool ReceiveDeptIdHasBeenSet() const;
 

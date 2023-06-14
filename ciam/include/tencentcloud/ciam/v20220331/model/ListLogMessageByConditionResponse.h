@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取分页对象
                      * @return Pageable 分页对象
+                     * 
                      */
                     Pageable GetPageable() const;
 
                     /**
                      * 判断参数 Pageable 是否已赋值
                      * @return Pageable 是否已赋值
+                     * 
                      */
                     bool PageableHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LogMessage> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

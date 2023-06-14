@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelValue 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabelValue() const;
 
                     /**
                      * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LabelValue 标签名称
+                     * @param _labelValue 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabelValue(const std::string& _labelValue);
 
                     /**
                      * 判断参数 LabelValue 是否已赋值
                      * @return LabelValue 是否已赋值
+                     * 
                      */
                     bool LabelValueHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelCount 标签个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLabelCount() const;
 
                     /**
                      * 设置标签个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LabelCount 标签个数
+                     * @param _labelCount 标签个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabelCount(const uint64_t& _labelCount);
 
                     /**
                      * 判断参数 LabelCount 是否已赋值
                      * @return LabelCount 是否已赋值
+                     * 
                      */
                     bool LabelCountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelPercentage 标签占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLabelPercentage() const;
 
                     /**
                      * 设置标签占比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LabelPercentage 标签占比
+                     * @param _labelPercentage 标签占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabelPercentage(const double& _labelPercentage);
 
                     /**
                      * 判断参数 LabelPercentage 是否已赋值
                      * @return LabelPercentage 是否已赋值
+                     * 
                      */
                     bool LabelPercentageHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChildLabelList 子标签分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextLabelDistributionDetailInfoThirdClass> GetChildLabelList() const;
 
                     /**
                      * 设置子标签分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChildLabelList 子标签分布
+                     * @param _childLabelList 子标签分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChildLabelList(const std::vector<TextLabelDistributionDetailInfoThirdClass>& _childLabelList);
 
                     /**
                      * 判断参数 ChildLabelList 是否已赋值
                      * @return ChildLabelList 是否已赋值
+                     * 
                      */
                     bool ChildLabelListHasBeenSet() const;
 

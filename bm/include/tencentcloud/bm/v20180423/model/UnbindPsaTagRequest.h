@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取预授权规则ID
                      * @return PsaId 预授权规则ID
+                     * 
                      */
                     std::string GetPsaId() const;
 
                     /**
                      * 设置预授权规则ID
-                     * @param PsaId 预授权规则ID
+                     * @param _psaId 预授权规则ID
+                     * 
                      */
                     void SetPsaId(const std::string& _psaId);
 
                     /**
                      * 判断参数 PsaId 是否已赋值
                      * @return PsaId 是否已赋值
+                     * 
                      */
                     bool PsaIdHasBeenSet() const;
 
                     /**
                      * 获取需要解绑的标签key
                      * @return TagKey 需要解绑的标签key
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置需要解绑的标签key
-                     * @param TagKey 需要解绑的标签key
+                     * @param _tagKey 需要解绑的标签key
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取需要解绑的标签value
                      * @return TagValue 需要解绑的标签value
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置需要解绑的标签value
-                     * @param TagValue 需要解绑的标签value
+                     * @param _tagValue 需要解绑的标签value
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 

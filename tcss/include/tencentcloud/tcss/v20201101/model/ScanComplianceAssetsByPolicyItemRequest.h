@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取指定的检测项的ID
                      * @return CustomerPolicyItemId 指定的检测项的ID
+                     * 
                      */
                     uint64_t GetCustomerPolicyItemId() const;
 
                     /**
                      * 设置指定的检测项的ID
-                     * @param CustomerPolicyItemId 指定的检测项的ID
+                     * @param _customerPolicyItemId 指定的检测项的ID
+                     * 
                      */
                     void SetCustomerPolicyItemId(const uint64_t& _customerPolicyItemId);
 
                     /**
                      * 判断参数 CustomerPolicyItemId 是否已赋值
                      * @return CustomerPolicyItemId 是否已赋值
+                     * 
                      */
                     bool CustomerPolicyItemIdHasBeenSet() const;
 
                     /**
                      * 获取要重新扫描的客户资产项ID的列表。
                      * @return CustomerAssetIdSet 要重新扫描的客户资产项ID的列表。
+                     * 
                      */
                     std::vector<uint64_t> GetCustomerAssetIdSet() const;
 
                     /**
                      * 设置要重新扫描的客户资产项ID的列表。
-                     * @param CustomerAssetIdSet 要重新扫描的客户资产项ID的列表。
+                     * @param _customerAssetIdSet 要重新扫描的客户资产项ID的列表。
+                     * 
                      */
                     void SetCustomerAssetIdSet(const std::vector<uint64_t>& _customerAssetIdSet);
 
                     /**
                      * 判断参数 CustomerAssetIdSet 是否已赋值
                      * @return CustomerAssetIdSet 是否已赋值
+                     * 
                      */
                     bool CustomerAssetIdSetHasBeenSet() const;
 

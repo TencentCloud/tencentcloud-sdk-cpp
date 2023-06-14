@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取订单编号
                      * @return OrderId 订单编号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单编号
-                     * @param OrderId 订单编号
+                     * @param _orderId 订单编号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取超时时间，不填默认是 5 分钟
                      * @return Timeout 超时时间，不填默认是 5 分钟
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置超时时间，不填默认是 5 分钟
-                     * @param Timeout 超时时间，不填默认是 5 分钟
+                     * @param _timeout 超时时间，不填默认是 5 分钟
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
                     /**
                      * 获取bucket类型，不填默认web，2:app
                      * @return FileType bucket类型，不填默认web，2:app
+                     * 
                      */
                     int64_t GetFileType() const;
 
                     /**
                      * 设置bucket类型，不填默认web，2:app
-                     * @param FileType bucket类型，不填默认web，2:app
+                     * @param _fileType bucket类型，不填默认web，2:app
+                     * 
                      */
                     void SetFileType(const int64_t& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 

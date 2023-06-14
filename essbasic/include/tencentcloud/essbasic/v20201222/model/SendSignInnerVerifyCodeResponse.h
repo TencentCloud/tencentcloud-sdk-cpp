@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取true: 验证码正确，false: 验证码错误
                      * @return Result true: 验证码正确，false: 验证码错误
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

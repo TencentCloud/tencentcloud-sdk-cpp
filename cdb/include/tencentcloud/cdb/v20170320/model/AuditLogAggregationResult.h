@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggregationField 聚合维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAggregationField() const;
 
                     /**
                      * 设置聚合维度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AggregationField 聚合维度
+                     * @param _aggregationField 聚合维度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAggregationField(const std::string& _aggregationField);
 
                     /**
                      * 判断参数 AggregationField 是否已赋值
                      * @return AggregationField 是否已赋值
+                     * 
                      */
                     bool AggregationFieldHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Buckets 聚合桶的结果集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Bucket> GetBuckets() const;
 
                     /**
                      * 设置聚合桶的结果集
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Buckets 聚合桶的结果集
+                     * @param _buckets 聚合桶的结果集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBuckets(const std::vector<Bucket>& _buckets);
 
                     /**
                      * 判断参数 Buckets 是否已赋值
                      * @return Buckets 是否已赋值
+                     * 
                      */
                     bool BucketsHasBeenSet() const;
 

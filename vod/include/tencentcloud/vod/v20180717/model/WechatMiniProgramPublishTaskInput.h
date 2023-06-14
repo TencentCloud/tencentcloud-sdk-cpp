@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取发布视频所对应的转码模板 ID，为 0 代表原始视频。
                      * @return SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
                      * 设置发布视频所对应的转码模板 ID，为 0 代表原始视频。
-                     * @param SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * @param _sourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
+                     * 
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
 
                     /**
                      * 判断参数 SourceDefinition 是否已赋值
                      * @return SourceDefinition 是否已赋值
+                     * 
                      */
                     bool SourceDefinitionHasBeenSet() const;
 

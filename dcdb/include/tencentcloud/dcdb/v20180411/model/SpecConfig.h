@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取规格机型
                      * @return Machine 规格机型
+                     * 
                      */
                     std::string GetMachine() const;
 
                     /**
                      * 设置规格机型
-                     * @param Machine 规格机型
+                     * @param _machine 规格机型
+                     * 
                      */
                     void SetMachine(const std::string& _machine);
 
                     /**
                      * 判断参数 Machine 是否已赋值
                      * @return Machine 是否已赋值
+                     * 
                      */
                     bool MachineHasBeenSet() const;
 
                     /**
                      * 获取规格列表
                      * @return SpecConfigInfos 规格列表
+                     * 
                      */
                     std::vector<SpecConfigInfo> GetSpecConfigInfos() const;
 
                     /**
                      * 设置规格列表
-                     * @param SpecConfigInfos 规格列表
+                     * @param _specConfigInfos 规格列表
+                     * 
                      */
                     void SetSpecConfigInfos(const std::vector<SpecConfigInfo>& _specConfigInfos);
 
                     /**
                      * 判断参数 SpecConfigInfos 是否已赋值
                      * @return SpecConfigInfos 是否已赋值
+                     * 
                      */
                     bool SpecConfigInfosHasBeenSet() const;
 

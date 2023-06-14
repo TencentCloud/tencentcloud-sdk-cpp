@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取face id
                      * @return FaceId face id
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取搜索结果列表
                      * @return Results 搜索结果列表
+                     * 
                      */
                     std::vector<SearchResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

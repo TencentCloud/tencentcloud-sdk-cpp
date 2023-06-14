@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取用户等级，默认0 未知 1 低 2 中 3 高
                      * @return Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置用户等级，默认0 未知 1 低 2 中 3 高
-                     * @param Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * @param _level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取性别 默认0 未知 1 男性 2 女性
                      * @return Gender 性别 默认0 未知 1 男性 2 女性
+                     * 
                      */
                     int64_t GetGender() const;
 
                     /**
                      * 设置性别 默认0 未知 1 男性 2 女性
-                     * @param Gender 性别 默认0 未知 1 男性 2 女性
+                     * @param _gender 性别 默认0 未知 1 男性 2 女性
+                     * 
                      */
                     void SetGender(const int64_t& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取年龄 默认0 未知
                      * @return Age 年龄 默认0 未知
+                     * 
                      */
                     int64_t GetAge() const;
 
                     /**
                      * 设置年龄 默认0 未知
-                     * @param Age 年龄 默认0 未知
+                     * @param _age 年龄 默认0 未知
+                     * 
                      */
                     void SetAge(const int64_t& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
                     /**
                      * 获取用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
                      * @return UserId 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
-                     * @param UserId 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * @param _userId 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Phone 手机号
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置手机号
-                     * @param Phone 手机号
+                     * @param _phone 手机号
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
                      * @return AccountType 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * 
                      */
                     int64_t GetAccountType() const;
 
                     /**
                      * 设置账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     * @param AccountType 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * @param _accountType 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * 
                      */
                     void SetAccountType(const int64_t& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
                     /**
                      * 获取用户昵称
                      * @return Nickname 用户昵称
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * @param _nickname 用户昵称
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 

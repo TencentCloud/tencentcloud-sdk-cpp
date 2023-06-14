@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息; 必选
                      * @return Caller 调用方信息; 必选
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息; 必选
-                     * @param Caller 调用方信息; 必选
+                     * @param _caller 调用方信息; 必选
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Mobile 手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置手机号
-                     * @param Mobile 手机号
+                     * @param _mobile 手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

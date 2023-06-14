@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取收件人列表id，后续根据收件人列表id上传收件人地址
                      * @return ReceiverId 收件人列表id，后续根据收件人列表id上传收件人地址
+                     * 
                      */
                     uint64_t GetReceiverId() const;
 
                     /**
                      * 判断参数 ReceiverId 是否已赋值
                      * @return ReceiverId 是否已赋值
+                     * 
                      */
                     bool ReceiverIdHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取规则的uuid，可通过查询规则列表获取
                      * @return RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 设置规则的uuid，可通过查询规则列表获取
-                     * @param RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * @param _ruleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 

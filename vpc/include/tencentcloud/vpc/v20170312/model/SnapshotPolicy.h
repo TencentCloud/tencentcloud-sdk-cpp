@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取快照策略名称。
                      * @return SnapshotPolicyName 快照策略名称。
+                     * 
                      */
                     std::string GetSnapshotPolicyName() const;
 
                     /**
                      * 设置快照策略名称。
-                     * @param SnapshotPolicyName 快照策略名称。
+                     * @param _snapshotPolicyName 快照策略名称。
+                     * 
                      */
                     void SetSnapshotPolicyName(const std::string& _snapshotPolicyName);
 
                     /**
                      * 判断参数 SnapshotPolicyName 是否已赋值
                      * @return SnapshotPolicyName 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyNameHasBeenSet() const;
 
                     /**
                      * 获取备份策略类型，operate-操作备份，time-定时备份。
                      * @return BackupType 备份策略类型，operate-操作备份，time-定时备份。
+                     * 
                      */
                     std::string GetBackupType() const;
 
                     /**
                      * 设置备份策略类型，operate-操作备份，time-定时备份。
-                     * @param BackupType 备份策略类型，operate-操作备份，time-定时备份。
+                     * @param _backupType 备份策略类型，operate-操作备份，time-定时备份。
+                     * 
                      */
                     void SetBackupType(const std::string& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
+                     * 
                      */
                     bool BackupTypeHasBeenSet() const;
 
                     /**
                      * 获取保留时间，支持1～365天。
                      * @return KeepTime 保留时间，支持1～365天。
+                     * 
                      */
                     uint64_t GetKeepTime() const;
 
                     /**
                      * 设置保留时间，支持1～365天。
-                     * @param KeepTime 保留时间，支持1～365天。
+                     * @param _keepTime 保留时间，支持1～365天。
+                     * 
                      */
                     void SetKeepTime(const uint64_t& _keepTime);
 
                     /**
                      * 判断参数 KeepTime 是否已赋值
                      * @return KeepTime 是否已赋值
+                     * 
                      */
                     bool KeepTimeHasBeenSet() const;
 
@@ -106,74 +115,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateNewCos 是否创建新的cos桶，默认为False。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetCreateNewCos() const;
 
                     /**
                      * 设置是否创建新的cos桶，默认为False。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateNewCos 是否创建新的cos桶，默认为False。
+                     * @param _createNewCos 是否创建新的cos桶，默认为False。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateNewCos(const bool& _createNewCos);
 
                     /**
                      * 判断参数 CreateNewCos 是否已赋值
                      * @return CreateNewCos 是否已赋值
+                     * 
                      */
                     bool CreateNewCosHasBeenSet() const;
 
                     /**
                      * 获取cos桶所在地域。
                      * @return CosRegion cos桶所在地域。
+                     * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
                      * 设置cos桶所在地域。
-                     * @param CosRegion cos桶所在地域。
+                     * @param _cosRegion cos桶所在地域。
+                     * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
 
                     /**
                      * 判断参数 CosRegion 是否已赋值
                      * @return CosRegion 是否已赋值
+                     * 
                      */
                     bool CosRegionHasBeenSet() const;
 
                     /**
                      * 获取cos桶。
                      * @return CosBucket cos桶。
+                     * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置cos桶。
-                     * @param CosBucket cos桶。
+                     * @param _cosBucket cos桶。
+                     * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
 
                     /**
                      * 判断参数 CosBucket 是否已赋值
                      * @return CosBucket 是否已赋值
+                     * 
                      */
                     bool CosBucketHasBeenSet() const;
 
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
@@ -182,38 +203,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupPolicies 时间备份策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BackupPolicy> GetBackupPolicies() const;
 
                     /**
                      * 设置时间备份策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupPolicies 时间备份策略。
+                     * @param _backupPolicies 时间备份策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupPolicies(const std::vector<BackupPolicy>& _backupPolicies);
 
                     /**
                      * 判断参数 BackupPolicies 是否已赋值
                      * @return BackupPolicies 是否已赋值
+                     * 
                      */
                     bool BackupPoliciesHasBeenSet() const;
 
                     /**
                      * 获取启用状态，True-启用，False-停用，默认为True。
                      * @return Enable 启用状态，True-启用，False-停用，默认为True。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置启用状态，True-启用，False-停用，默认为True。
-                     * @param Enable 启用状态，True-启用，False-停用，默认为True。
+                     * @param _enable 启用状态，True-启用，False-停用，默认为True。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
@@ -222,20 +249,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

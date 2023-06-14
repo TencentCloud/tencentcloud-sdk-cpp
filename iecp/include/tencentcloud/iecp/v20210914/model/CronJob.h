@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取调度配置
                      * @return Schedule 调度配置
+                     * 
                      */
                     std::string GetSchedule() const;
 
                     /**
                      * 设置调度配置
-                     * @param Schedule 调度配置
+                     * @param _schedule 调度配置
+                     * 
                      */
                     void SetSchedule(const std::string& _schedule);
 
                     /**
                      * 判断参数 Schedule 是否已赋值
                      * @return Schedule 是否已赋值
+                     * 
                      */
                     bool ScheduleHasBeenSet() const;
 
                     /**
                      * 获取运行时间
                      * @return StartingDeadlineSeconds 运行时间
+                     * 
                      */
                     int64_t GetStartingDeadlineSeconds() const;
 
                     /**
                      * 设置运行时间
-                     * @param StartingDeadlineSeconds 运行时间
+                     * @param _startingDeadlineSeconds 运行时间
+                     * 
                      */
                     void SetStartingDeadlineSeconds(const int64_t& _startingDeadlineSeconds);
 
                     /**
                      * 判断参数 StartingDeadlineSeconds 是否已赋值
                      * @return StartingDeadlineSeconds 是否已赋值
+                     * 
                      */
                     bool StartingDeadlineSecondsHasBeenSet() const;
 
                     /**
                      * 获取job并行策略(Allow|Forbid|Replace)
                      * @return ConcurrencyPolicy job并行策略(Allow|Forbid|Replace)
+                     * 
                      */
                     std::string GetConcurrencyPolicy() const;
 
                     /**
                      * 设置job并行策略(Allow|Forbid|Replace)
-                     * @param ConcurrencyPolicy job并行策略(Allow|Forbid|Replace)
+                     * @param _concurrencyPolicy job并行策略(Allow|Forbid|Replace)
+                     * 
                      */
                     void SetConcurrencyPolicy(const std::string& _concurrencyPolicy);
 
                     /**
                      * 判断参数 ConcurrencyPolicy 是否已赋值
                      * @return ConcurrencyPolicy 是否已赋值
+                     * 
                      */
                     bool ConcurrencyPolicyHasBeenSet() const;
 
                     /**
                      * 获取Job配置
                      * @return Job Job配置
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 设置Job配置
-                     * @param Job Job配置
+                     * @param _job Job配置
+                     * 
                      */
                     void SetJob(const Job& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 

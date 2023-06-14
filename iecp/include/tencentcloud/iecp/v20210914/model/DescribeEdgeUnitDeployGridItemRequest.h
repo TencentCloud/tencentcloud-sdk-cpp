@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取Grid名称
                      * @return GridName Grid名称
+                     * 
                      */
                     std::string GetGridName() const;
 
                     /**
                      * 设置Grid名称
-                     * @param GridName Grid名称
+                     * @param _gridName Grid名称
+                     * 
                      */
                     void SetGridName(const std::string& _gridName);
 
                     /**
                      * 判断参数 GridName 是否已赋值
                      * @return GridName 是否已赋值
+                     * 
                      */
                     bool GridNameHasBeenSet() const;
 
                     /**
                      * 获取负载类型（StatefulSetGrid｜DeploymentGrid）
                      * @return WorkloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置负载类型（StatefulSetGrid｜DeploymentGrid）
-                     * @param WorkloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * @param _workloadKind 负载类型（StatefulSetGrid｜DeploymentGrid）
+                     * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
 
                     /**
                      * 判断参数 WorkloadKind 是否已赋值
                      * @return WorkloadKind 是否已赋值
+                     * 
                      */
                     bool WorkloadKindHasBeenSet() const;
 
                     /**
                      * 获取命名空间，默认default
                      * @return Namespace 命名空间，默认default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，默认default
-                     * @param Namespace 命名空间，默认default
+                     * @param _namespace 命名空间，默认default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取排序，默认ASC
                      * @return Order 排序，默认ASC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序，默认ASC
-                     * @param Order 排序，默认ASC
+                     * @param _order 排序，默认ASC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -46,216 +46,252 @@ namespace TencentCloud
                     /**
                      * 获取付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
                      * @return PayMode 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
-                     * @param PayMode 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
+                     * @param _payMode 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
                      * @return SrcDatabaseType 源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * 
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
                      * 设置源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-                     * @param SrcDatabaseType 源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * @param _srcDatabaseType 源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * 
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
 
                     /**
                      * 判断参数 SrcDatabaseType 是否已赋值
                      * @return SrcDatabaseType 是否已赋值
+                     * 
                      */
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
                      * 获取源端数据库所在地域,如ap-guangzhou
                      * @return SrcRegion 源端数据库所在地域,如ap-guangzhou
+                     * 
                      */
                     std::string GetSrcRegion() const;
 
                     /**
                      * 设置源端数据库所在地域,如ap-guangzhou
-                     * @param SrcRegion 源端数据库所在地域,如ap-guangzhou
+                     * @param _srcRegion 源端数据库所在地域,如ap-guangzhou
+                     * 
                      */
                     void SetSrcRegion(const std::string& _srcRegion);
 
                     /**
                      * 判断参数 SrcRegion 是否已赋值
                      * @return SrcRegion 是否已赋值
+                     * 
                      */
                     bool SrcRegionHasBeenSet() const;
 
                     /**
                      * 获取目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
                      * @return DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
+                     * 
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
                      * 设置目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
-                     * @param DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
+                     * @param _dstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
+                     * 
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
 
                     /**
                      * 判断参数 DstDatabaseType 是否已赋值
                      * @return DstDatabaseType 是否已赋值
+                     * 
                      */
                     bool DstDatabaseTypeHasBeenSet() const;
 
                     /**
                      * 获取目标端数据库所在地域,如ap-guangzhou
                      * @return DstRegion 目标端数据库所在地域,如ap-guangzhou
+                     * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
                      * 设置目标端数据库所在地域,如ap-guangzhou
-                     * @param DstRegion 目标端数据库所在地域,如ap-guangzhou
+                     * @param _dstRegion 目标端数据库所在地域,如ap-guangzhou
+                     * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
 
                     /**
                      * 判断参数 DstRegion 是否已赋值
                      * @return DstRegion 是否已赋值
+                     * 
                      */
                     bool DstRegionHasBeenSet() const;
 
                     /**
                      * 获取同步任务规格，Standard:标准版
                      * @return Specification 同步任务规格，Standard:标准版
+                     * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置同步任务规格，Standard:标准版
-                     * @param Specification 同步任务规格，Standard:标准版
+                     * @param _specification 同步任务规格，Standard:标准版
+                     * 
                      */
                     void SetSpecification(const std::string& _specification);
 
                     /**
                      * 判断参数 Specification 是否已赋值
                      * @return Specification 是否已赋值
+                     * 
                      */
                     bool SpecificationHasBeenSet() const;
 
                     /**
                      * 获取标签信息
                      * @return Tags 标签信息
+                     * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
                      * 设置标签信息
-                     * @param Tags 标签信息
+                     * @param _tags 标签信息
+                     * 
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取一次购买的同步任务数量，取值范围为[1, 10]，默认为1
                      * @return Count 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置一次购买的同步任务数量，取值范围为[1, 10]，默认为1
-                     * @param Count 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
+                     * @param _count 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
                      * @return AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
+                     * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
                      * 设置自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
-                     * @param AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
+                     * @param _autoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
+                     * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
+                     * 
                      */
                     bool AutoRenewHasBeenSet() const;
 
                     /**
                      * 获取同步链路规格，如micro,small,medium,large，默认为medium
                      * @return InstanceClass 同步链路规格，如micro,small,medium,large，默认为medium
+                     * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
                      * 设置同步链路规格，如micro,small,medium,large，默认为medium
-                     * @param InstanceClass 同步链路规格，如micro,small,medium,large，默认为medium
+                     * @param _instanceClass 同步链路规格，如micro,small,medium,large，默认为medium
+                     * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
 
                     /**
                      * 判断参数 InstanceClass 是否已赋值
                      * @return InstanceClass 是否已赋值
+                     * 
                      */
                     bool InstanceClassHasBeenSet() const;
 
                     /**
                      * 获取同步任务名称
                      * @return JobName 同步任务名称
+                     * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置同步任务名称
-                     * @param JobName 同步任务名称
+                     * @param _jobName 同步任务名称
+                     * 
                      */
                     void SetJobName(const std::string& _jobName);
 
                     /**
                      * 判断参数 JobName 是否已赋值
                      * @return JobName 是否已赋值
+                     * 
                      */
                     bool JobNameHasBeenSet() const;
 
                     /**
                      * 获取创建类似任务的现有任务Id
                      * @return ExistedJobId 创建类似任务的现有任务Id
+                     * 
                      */
                     std::string GetExistedJobId() const;
 
                     /**
                      * 设置创建类似任务的现有任务Id
-                     * @param ExistedJobId 创建类似任务的现有任务Id
+                     * @param _existedJobId 创建类似任务的现有任务Id
+                     * 
                      */
                     void SetExistedJobId(const std::string& _existedJobId);
 
                     /**
                      * 判断参数 ExistedJobId 是否已赋值
                      * @return ExistedJobId 是否已赋值
+                     * 
                      */
                     bool ExistedJobIdHasBeenSet() const;
 

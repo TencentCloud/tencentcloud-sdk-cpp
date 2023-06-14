@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的总个数。
                      * @return TotalNum 符合条件的总个数。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取总页数。
                      * @return TotalPage 总页数。
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 
                     /**
                      * 获取分页的页码。
                      * @return PageNum 分页的页码。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取每页显示的条数。
                      * @return PageSize 每页显示的条数。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取正在推送流的信息列表。
                      * @return OnlineInfo 正在推送流的信息列表。
+                     * 
                      */
                     std::vector<StreamOnlineInfo> GetOnlineInfo() const;
 
                     /**
                      * 判断参数 OnlineInfo 是否已赋值
                      * @return OnlineInfo 是否已赋值
+                     * 
                      */
                     bool OnlineInfoHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取房间ID
                      * @return RoomId 房间ID
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID
-                     * @param RoomId 房间ID
+                     * @param _roomId 房间ID
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，从1开始递增，默认值为1
                      * @return Page 分页查询当前页数，从1开始递增，默认值为1
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置分页查询当前页数，从1开始递增，默认值为1
-                     * @param Page 分页查询当前页数，从1开始递增，默认值为1
+                     * @param _page 分页查询当前页数，从1开始递增，默认值为1
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，从1开始递增，默认值为1
                      * @return Limit 分页查询当前页数，从1开始递增，默认值为1
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询当前页数，从1开始递增，默认值为1
-                     * @param Limit 分页查询当前页数，从1开始递增，默认值为1
+                     * @param _limit 分页查询当前页数，从1开始递增，默认值为1
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

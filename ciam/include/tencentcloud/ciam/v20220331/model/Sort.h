@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取排序字段的key，参考自定义属性
                      * @return PropertyKey 排序字段的key，参考自定义属性
+                     * 
                      */
                     std::string GetPropertyKey() const;
 
                     /**
                      * 设置排序字段的key，参考自定义属性
-                     * @param PropertyKey 排序字段的key，参考自定义属性
+                     * @param _propertyKey 排序字段的key，参考自定义属性
+                     * 
                      */
                     void SetPropertyKey(const std::string& _propertyKey);
 
                     /**
                      * 判断参数 PropertyKey 是否已赋值
                      * @return PropertyKey 是否已赋值
+                     * 
                      */
                     bool PropertyKeyHasBeenSet() const;
 
                     /**
                      * 获取升序或者降序，ASC/DESC
                      * @return Order 升序或者降序，ASC/DESC
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置升序或者降序，ASC/DESC
-                     * @param Order 升序或者降序，ASC/DESC
+                     * @param _order 升序或者降序，ASC/DESC
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

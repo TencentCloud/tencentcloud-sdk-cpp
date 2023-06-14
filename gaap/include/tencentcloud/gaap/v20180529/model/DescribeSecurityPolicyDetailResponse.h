@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 通道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
@@ -69,48 +71,56 @@ BOUND，已开启安全策略
 UNBIND，已关闭安全策略
 BINDING，安全策略开启中
 UNBINDING，安全策略关闭中。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取默认策略：ACCEPT或DROP。
                      * @return DefaultAction 默认策略：ACCEPT或DROP。
+                     * 
                      */
                     std::string GetDefaultAction() const;
 
                     /**
                      * 判断参数 DefaultAction 是否已赋值
                      * @return DefaultAction 是否已赋值
+                     * 
                      */
                     bool DefaultActionHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取规则列表
                      * @return RuleList 规则列表
+                     * 
                      */
                     std::vector<SecurityPolicyRuleOut> GetRuleList() const;
 
                     /**
                      * 判断参数 RuleList 是否已赋值
                      * @return RuleList 是否已赋值
+                     * 
                      */
                     bool RuleListHasBeenSet() const;
 

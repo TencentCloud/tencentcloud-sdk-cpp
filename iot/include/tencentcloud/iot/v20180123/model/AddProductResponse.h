@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取产品信息
                      * @return Product 产品信息
+                     * 
                      */
                     Product GetProduct() const;
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

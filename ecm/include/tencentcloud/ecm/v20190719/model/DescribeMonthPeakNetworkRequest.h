@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份
                      * @return Month 月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份
+                     * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份
-                     * @param Month 月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份
+                     * @param _month 月份时间(xxxx-xx) 如2021-03,默认取当前时间的上一个月份
+                     * 
                      */
                     void SetMonth(const std::string& _month);
 
                     /**
                      * 判断参数 Month 是否已赋值
                      * @return Month 是否已赋值
+                     * 
                      */
                     bool MonthHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

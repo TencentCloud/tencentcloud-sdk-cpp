@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 润色后的文本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置润色后的文本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 润色后的文本。
+                     * @param _text 润色后的文本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -85,6 +88,7 @@ translation_a2m：从古文改写为现代文
 
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmbellishType() const;
 
@@ -97,7 +101,7 @@ translation_a2m：从古文改写为现代文
 
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmbellishType 润色类型。类型如下：
+                     * @param _embellishType 润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文
@@ -105,12 +109,14 @@ translation_a2m：从古文改写为现代文
 
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmbellishType(const std::string& _embellishType);
 
                     /**
                      * 判断参数 EmbellishType 是否已赋值
                      * @return EmbellishType 是否已赋值
+                     * 
                      */
                     bool EmbellishTypeHasBeenSet() const;
 

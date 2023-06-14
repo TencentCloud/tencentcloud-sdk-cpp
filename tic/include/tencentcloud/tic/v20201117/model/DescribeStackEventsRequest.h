@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取按照⼀个或者多个事件ID查询
                      * @return EventIds 按照⼀个或者多个事件ID查询
+                     * 
                      */
                     std::vector<std::string> GetEventIds() const;
 
                     /**
                      * 设置按照⼀个或者多个事件ID查询
-                     * @param EventIds 按照⼀个或者多个事件ID查询
+                     * @param _eventIds 按照⼀个或者多个事件ID查询
+                     * 
                      */
                     void SetEventIds(const std::vector<std::string>& _eventIds);
 
                     /**
                      * 判断参数 EventIds 是否已赋值
                      * @return EventIds 是否已赋值
+                     * 
                      */
                     bool EventIdsHasBeenSet() const;
 
@@ -92,6 +95,7 @@ namespace TencentCloud
 <li>**Status**</li>
 按照【**事件状态**】过滤，Status形如 queueing, running, success, failed
 类型：string
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,7 +115,7 @@ namespace TencentCloud
 <li>**Status**</li>
 按照【**事件状态**】过滤，Status形如 queueing, running, success, failed
 类型：string
-                     * @param Filters <li>**VersionId**</li>
+                     * @param _filters <li>**VersionId**</li>
 按照【**版本ID**】过滤，VersionId形如 `ver-kg8hn58h`
 类型：string
 
@@ -126,48 +130,56 @@ namespace TencentCloud
 <li>**Status**</li>
 按照【**事件状态**】过滤，Status形如 queueing, running, success, failed
 类型：string
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
                      * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
-                     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
                      * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
-                     * @param Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * @param _limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

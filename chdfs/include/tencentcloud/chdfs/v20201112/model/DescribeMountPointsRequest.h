@@ -47,56 +47,65 @@ namespace TencentCloud
 备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个
                      * @return FileSystemId 文件系统ID
 备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
 备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
 备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取权限组ID
                      * @return AccessGroupId 权限组ID
+                     * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组ID
-                     * @param AccessGroupId 权限组ID
+                     * @param _accessGroupId 权限组ID
+                     * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
 
                     /**
                      * 判断参数 AccessGroupId 是否已赋值
                      * @return AccessGroupId 是否已赋值
+                     * 
                      */
                     bool AccessGroupIdHasBeenSet() const;
 
                     /**
                      * 获取资源所属者Uin
                      * @return OwnerUin 资源所属者Uin
+                     * 
                      */
                     uint64_t GetOwnerUin() const;
 
                     /**
                      * 设置资源所属者Uin
-                     * @param OwnerUin 资源所属者Uin
+                     * @param _ownerUin 资源所属者Uin
+                     * 
                      */
                     void SetOwnerUin(const uint64_t& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据集ID
                      * @return Id 数据集ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置数据集ID
-                     * @param Id 数据集ID
+                     * @param _id 数据集ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

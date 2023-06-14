@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取emr集群的英文id
                      * @return InstanceId emr集群的英文id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置emr集群的英文id
-                     * @param InstanceId emr集群的英文id
+                     * @param _instanceId emr集群的英文id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取老的调度器:fair
                      * @return OldValue 老的调度器:fair
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置老的调度器:fair
-                     * @param OldValue 老的调度器:fair
+                     * @param _oldValue 老的调度器:fair
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 
                     /**
                      * 获取新的调度器:capacity
                      * @return NewValue 新的调度器:capacity
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置新的调度器:capacity
-                     * @param NewValue 新的调度器:capacity
+                     * @param _newValue 新的调度器:capacity
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 

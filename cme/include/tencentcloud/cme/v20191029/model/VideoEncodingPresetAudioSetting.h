@@ -55,6 +55,7 @@ AAC：AAC 编码。
 AAC：AAC 编码。
 
 默认值：AAC。
+                     * 
                      */
                     std::string GetCodec() const;
 
@@ -63,16 +64,18 @@ AAC：AAC 编码。
 AAC：AAC 编码。
 
 默认值：AAC。
-                     * @param Codec 音频流的编码格式，可选值：
+                     * @param _codec 音频流的编码格式，可选值：
 AAC：AAC 编码。
 
 默认值：AAC。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -81,20 +84,23 @@ AAC：AAC 编码。
 默认值：64K。
                      * @return Bitrate 音频码率，单位：bps。
 默认值：64K。
+                     * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
                      * 设置音频码率，单位：bps。
 默认值：64K。
-                     * @param Bitrate 音频码率，单位：bps。
+                     * @param _bitrate 音频码率，单位：bps。
 默认值：64K。
+                     * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -107,6 +113,7 @@ AAC：AAC 编码。
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 默认值：2。
+                     * 
                      */
                     uint64_t GetChannels() const;
 
@@ -115,16 +122,18 @@ AAC：AAC 编码。
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 默认值：2。
-                     * @param Channels 音频声道数，可选值： 
+                     * @param _channels 音频声道数，可选值： 
 <li>1：单声道；</li>
 <li>2：双声道。</li> 
 默认值：2。
+                     * 
                      */
                     void SetChannels(const uint64_t& _channels);
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 
@@ -133,20 +142,23 @@ AAC：AAC 编码。
 默认值：16000。
                      * @return SampleRate 音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 
 默认值：16000。
+                     * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
                      * 设置音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 
 默认值：16000。
-                     * @param SampleRate 音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 
+                     * @param _sampleRate 音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 
 默认值：16000。
+                     * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 

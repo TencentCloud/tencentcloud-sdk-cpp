@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如mssql-k8voqdlz
                      * @return InstanceId 实例ID，形如mssql-k8voqdlz
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如mssql-k8voqdlz
-                     * @param InstanceId 实例ID，形如mssql-k8voqdlz
+                     * @param _instanceId 实例ID，形如mssql-k8voqdlz
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。
                      * @return Weekly 以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。
+                     * 
                      */
                     std::vector<int64_t> GetWeekly() const;
 
                     /**
                      * 设置以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。
-                     * @param Weekly 以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。
+                     * @param _weekly 以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。
+                     * 
                      */
                     void SetWeekly(const std::vector<int64_t>& _weekly);
 
                     /**
                      * 判断参数 Weekly 是否已赋值
                      * @return Weekly 是否已赋值
+                     * 
                      */
                     bool WeeklyHasBeenSet() const;
 
                     /**
                      * 获取每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。
                      * @return StartTime 每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。
-                     * @param StartTime 每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。
+                     * @param _startTime 每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。
                      * @return Span 每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。
+                     * 
                      */
                     uint64_t GetSpan() const;
 
                     /**
                      * 设置每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。
-                     * @param Span 每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。
+                     * @param _span 每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。
+                     * 
                      */
                     void SetSpan(const uint64_t& _span);
 
                     /**
                      * 判断参数 Span 是否已赋值
                      * @return Span 是否已赋值
+                     * 
                      */
                     bool SpanHasBeenSet() const;
 

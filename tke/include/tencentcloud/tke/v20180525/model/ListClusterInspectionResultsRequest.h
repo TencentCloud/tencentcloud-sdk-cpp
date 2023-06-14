@@ -47,20 +47,23 @@ namespace TencentCloud
 
                      * @return ClusterIds 目标集群列表，为空查询用户所有集群
 
+                     * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
                      * 设置目标集群列表，为空查询用户所有集群
 
-                     * @param ClusterIds 目标集群列表，为空查询用户所有集群
+                     * @param _clusterIds 目标集群列表，为空查询用户所有集群
 
+                     * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
 
                     /**
                      * 判断参数 ClusterIds 是否已赋值
                      * @return ClusterIds 是否已赋值
+                     * 
                      */
                     bool ClusterIdsHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 
                      * @return Hide 隐藏的字段信息，为了减少无效的字段返回，隐藏字段不会在返回值中返回。可选值：results
 
+                     * 
                      */
                     std::vector<std::string> GetHide() const;
 
                     /**
                      * 设置隐藏的字段信息，为了减少无效的字段返回，隐藏字段不会在返回值中返回。可选值：results
 
-                     * @param Hide 隐藏的字段信息，为了减少无效的字段返回，隐藏字段不会在返回值中返回。可选值：results
+                     * @param _hide 隐藏的字段信息，为了减少无效的字段返回，隐藏字段不会在返回值中返回。可选值：results
 
+                     * 
                      */
                     void SetHide(const std::vector<std::string>& _hide);
 
                     /**
                      * 判断参数 Hide 是否已赋值
                      * @return Hide 是否已赋值
+                     * 
                      */
                     bool HideHasBeenSet() const;
 
                     /**
                      * 获取指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条
                      * @return Name 指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条
-                     * @param Name 指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条
+                     * @param _name 指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

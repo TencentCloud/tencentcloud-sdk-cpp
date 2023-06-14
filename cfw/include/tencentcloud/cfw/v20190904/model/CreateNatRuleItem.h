@@ -49,216 +49,252 @@ namespace TencentCloud
                     /**
                      * 获取访问源示例： net：IP/CIDR(192.168.0.2)
                      * @return SourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * 
                      */
                     std::string GetSourceContent() const;
 
                     /**
                      * 设置访问源示例： net：IP/CIDR(192.168.0.2)
-                     * @param SourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * @param _sourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
 
                     /**
                      * 判断参数 SourceContent 是否已赋值
                      * @return SourceContent 是否已赋值
+                     * 
                      */
                     bool SourceContentHasBeenSet() const;
 
                     /**
                      * 获取访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
                      * @return SourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-                     * @param SourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * @param _sourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
                      * @return TargetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * 
                      */
                     std::string GetTargetContent() const;
 
                     /**
                      * 设置访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-                     * @param TargetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * @param _targetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * 
                      */
                     void SetTargetContent(const std::string& _targetContent);
 
                     /**
                      * 判断参数 TargetContent 是否已赋值
                      * @return TargetContent 是否已赋值
+                     * 
                      */
                     bool TargetContentHasBeenSet() const;
 
                     /**
                      * 获取访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
                      * @return TargetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-                     * @param TargetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * @param _targetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * 
                      */
                     void SetTargetType(const std::string& _targetType);
 
                     /**
                      * 判断参数 TargetType 是否已赋值
                      * @return TargetType 是否已赋值
+                     * 
                      */
                     bool TargetTypeHasBeenSet() const;
 
                     /**
                      * 获取协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
                      * @return Protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-                     * @param Protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * @param _protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
                      * @return RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * 
                      */
                     std::string GetRuleAction() const;
 
                     /**
                      * 设置访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-                     * @param RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * @param _ruleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
 
                     /**
                      * 判断参数 RuleAction 是否已赋值
                      * @return RuleAction 是否已赋值
+                     * 
                      */
                     bool RuleActionHasBeenSet() const;
 
                     /**
                      * 获取访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
                      * @return Port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-                     * @param Port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * @param _port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取规则方向：1，入站；0，出站
                      * @return Direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置规则方向：1，入站；0，出站
-                     * @param Direction 规则方向：1，入站；0，出站
+                     * @param _direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取规则序号
                      * @return OrderIndex 规则序号
+                     * 
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
                      * 设置规则序号
-                     * @param OrderIndex 规则序号
+                     * @param _orderIndex 规则序号
+                     * 
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
                     /**
                      * 获取规则状态，true表示启用，false表示禁用
                      * @return Enable 规则状态，true表示启用，false表示禁用
+                     * 
                      */
                     std::string GetEnable() const;
 
                     /**
                      * 设置规则状态，true表示启用，false表示禁用
-                     * @param Enable 规则状态，true表示启用，false表示禁用
+                     * @param _enable 规则状态，true表示启用，false表示禁用
+                     * 
                      */
                     void SetEnable(const std::string& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取规则对应的唯一id，创建规则时无需填写
                      * @return Uuid 规则对应的唯一id，创建规则时无需填写
+                     * 
                      */
                     int64_t GetUuid() const;
 
                     /**
                      * 设置规则对应的唯一id，创建规则时无需填写
-                     * @param Uuid 规则对应的唯一id，创建规则时无需填写
+                     * @param _uuid 规则对应的唯一id，创建规则时无需填写
+                     * 
                      */
                     void SetUuid(const int64_t& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

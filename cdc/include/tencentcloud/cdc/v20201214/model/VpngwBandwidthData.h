@@ -53,38 +53,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutBandwidth 出带宽流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutBandwidth GetOutBandwidth() const;
 
                     /**
                      * 设置出带宽流量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutBandwidth 出带宽流量
+                     * @param _outBandwidth 出带宽流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutBandwidth(const OutBandwidth& _outBandwidth);
 
                     /**
                      * 判断参数 OutBandwidth 是否已赋值
                      * @return OutBandwidth 是否已赋值
+                     * 
                      */
                     bool OutBandwidthHasBeenSet() const;
 
                     /**
                      * 获取入带宽流量
                      * @return InBandwidth 入带宽流量
+                     * 
                      */
                     InBandwidth GetInBandwidth() const;
 
                     /**
                      * 设置入带宽流量
-                     * @param InBandwidth 入带宽流量
+                     * @param _inBandwidth 入带宽流量
+                     * 
                      */
                     void SetInBandwidth(const InBandwidth& _inBandwidth);
 
                     /**
                      * 判断参数 InBandwidth 是否已赋值
                      * @return InBandwidth 是否已赋值
+                     * 
                      */
                     bool InBandwidthHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取回源节点IP详情。
                      * @return Ips 回源节点IP详情。
+                     * 
                      */
                     std::vector<OriginIp> GetIps() const;
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 
                     /**
                      * 获取回源节点IP总个数。
                      * @return TotalCount 回源节点IP总个数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -48,48 +48,56 @@ namespace TencentCloud
                     /**
                      * 获取印章内容
                      * @return SealBody 印章内容
+                     * 
                      */
                     std::string GetSealBody() const;
 
                     /**
                      * 判断参数 SealBody 是否已赋值
                      * @return SealBody 是否已赋值
+                     * 
                      */
                     bool SealBodyHasBeenSet() const;
 
                     /**
                      * 获取印章坐标
                      * @return Location 印章坐标
+                     * 
                      */
                     Rect GetLocation() const;
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取其它文本内容
                      * @return OtherTexts 其它文本内容
+                     * 
                      */
                     std::vector<std::string> GetOtherTexts() const;
 
                     /**
                      * 判断参数 OtherTexts 是否已赋值
                      * @return OtherTexts 是否已赋值
+                     * 
                      */
                     bool OtherTextsHasBeenSet() const;
 
                     /**
                      * 获取全部印章信息
                      * @return SealInfos 全部印章信息
+                     * 
                      */
                     std::vector<SealInfo> GetSealInfos() const;
 
                     /**
                      * 判断参数 SealInfos 是否已赋值
                      * @return SealInfos 是否已赋值
+                     * 
                      */
                     bool SealInfosHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
 方形印章：2
 菱形印章：3
 三角形印章：4
+                     * 
                      */
                     std::string GetSealShape() const;
 
                     /**
                      * 判断参数 SealShape 是否已赋值
                      * @return SealShape 是否已赋值
+                     * 
                      */
                     bool SealShapeHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取快照策略名称。
                      * @return SnapshotPolicyName 快照策略名称。
+                     * 
                      */
                     std::string GetSnapshotPolicyName() const;
 
                     /**
                      * 设置快照策略名称。
-                     * @param SnapshotPolicyName 快照策略名称。
+                     * @param _snapshotPolicyName 快照策略名称。
+                     * 
                      */
                     void SetSnapshotPolicyName(const std::string& _snapshotPolicyName);
 
                     /**
                      * 判断参数 SnapshotPolicyName 是否已赋值
                      * @return SnapshotPolicyName 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyNameHasBeenSet() const;
 
                     /**
                      * 获取备份策略。
                      * @return BackupPolicies 备份策略。
+                     * 
                      */
                     std::vector<BackupPolicy> GetBackupPolicies() const;
 
                     /**
                      * 设置备份策略。
-                     * @param BackupPolicies 备份策略。
+                     * @param _backupPolicies 备份策略。
+                     * 
                      */
                     void SetBackupPolicies(const std::vector<BackupPolicy>& _backupPolicies);
 
                     /**
                      * 判断参数 BackupPolicies 是否已赋值
                      * @return BackupPolicies 是否已赋值
+                     * 
                      */
                     bool BackupPoliciesHasBeenSet() const;
 
                     /**
                      * 获取快照保留时间，支持1～365天。
                      * @return KeepTime 快照保留时间，支持1～365天。
+                     * 
                      */
                     uint64_t GetKeepTime() const;
 
                     /**
                      * 设置快照保留时间，支持1～365天。
-                     * @param KeepTime 快照保留时间，支持1～365天。
+                     * @param _keepTime 快照保留时间，支持1～365天。
+                     * 
                      */
                     void SetKeepTime(const uint64_t& _keepTime);
 
                     /**
                      * 判断参数 KeepTime 是否已赋值
                      * @return KeepTime 是否已赋值
+                     * 
                      */
                     bool KeepTimeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentDownloadURL Agent下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAgentDownloadURL() const;
 
                     /**
                      * 设置Agent下载地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AgentDownloadURL Agent下载地址
+                     * @param _agentDownloadURL Agent下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAgentDownloadURL(const std::string& _agentDownloadURL);
 
                     /**
                      * 判断参数 AgentDownloadURL 是否已赋值
                      * @return AgentDownloadURL 是否已赋值
+                     * 
                      */
                     bool AgentDownloadURLHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectorURL Collector上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCollectorURL() const;
 
                     /**
                      * 设置Collector上报地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CollectorURL Collector上报地址
+                     * @param _collectorURL Collector上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCollectorURL(const std::string& _collectorURL);
 
                     /**
                      * 判断参数 CollectorURL 是否已赋值
                      * @return CollectorURL 是否已赋值
+                     * 
                      */
                     bool CollectorURLHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Token Token信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置Token信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Token Token信息
+                     * @param _token Token信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicCollectorURL 外网上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicCollectorURL() const;
 
                     /**
                      * 设置外网上报地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicCollectorURL 外网上报地址
+                     * @param _publicCollectorURL 外网上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicCollectorURL(const std::string& _publicCollectorURL);
 
                     /**
                      * 判断参数 PublicCollectorURL 是否已赋值
                      * @return PublicCollectorURL 是否已赋值
+                     * 
                      */
                     bool PublicCollectorURLHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerCollectorURL 自研VPC上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInnerCollectorURL() const;
 
                     /**
                      * 设置自研VPC上报地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerCollectorURL 自研VPC上报地址
+                     * @param _innerCollectorURL 自研VPC上报地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerCollectorURL(const std::string& _innerCollectorURL);
 
                     /**
                      * 判断参数 InnerCollectorURL 是否已赋值
                      * @return InnerCollectorURL 是否已赋值
+                     * 
                      */
                     bool InnerCollectorURLHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateLinkCollectorURL 内网上报地址(Private Link上报地址)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateLinkCollectorURL() const;
 
                     /**
                      * 设置内网上报地址(Private Link上报地址)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateLinkCollectorURL 内网上报地址(Private Link上报地址)
+                     * @param _privateLinkCollectorURL 内网上报地址(Private Link上报地址)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateLinkCollectorURL(const std::string& _privateLinkCollectorURL);
 
                     /**
                      * 判断参数 PrivateLinkCollectorURL 是否已赋值
                      * @return PrivateLinkCollectorURL 是否已赋值
+                     * 
                      */
                     bool PrivateLinkCollectorURLHasBeenSet() const;
 

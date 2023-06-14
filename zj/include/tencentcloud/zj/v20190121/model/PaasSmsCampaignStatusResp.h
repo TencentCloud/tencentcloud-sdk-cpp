@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取0-未发送 1-发送中 2-发送结束 3-发送取消
                      * @return Status 0-未发送 1-发送中 2-发送结束 3-发送取消
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0-未发送 1-发送中 2-发送结束 3-发送取消
-                     * @param Status 0-未发送 1-发送中 2-发送结束 3-发送取消
+                     * @param _status 0-未发送 1-发送中 2-发送结束 3-发送取消
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

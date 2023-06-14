@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取主题信息列表
                      * @return Exchanges 主题信息列表
+                     * 
                      */
                     std::vector<AMQPExchange> GetExchanges() const;
 
                     /**
                      * 判断参数 Exchanges 是否已赋值
                      * @return Exchanges 是否已赋值
+                     * 
                      */
                     bool ExchangesHasBeenSet() const;
 

@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户AppId
                      * @return AppId 用户AppId
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置用户AppId
-                     * @param AppId 用户AppId
+                     * @param _appId 用户AppId
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取用户Uin
                      * @return Uin 用户Uin
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
-                     * @param Uin 用户Uin
+                     * @param _uin 用户Uin
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取续费标识
                      * @return RenewFlag 续费标识
+                     * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置续费标识
-                     * @param RenewFlag 续费标识
+                     * @param _renewFlag 续费标识
+                     * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取所属地域
                      * @return Region 所属地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域
-                     * @param Region 所属地域
+                     * @param _region 所属地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取付费模式（数据安全审计只支持预付费：1）
                      * @return PayMode 付费模式（数据安全审计只支持预付费：1）
+                     * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
                      * 设置付费模式（数据安全审计只支持预付费：1）
-                     * @param PayMode 付费模式（数据安全审计只支持预付费：1）
+                     * @param _payMode 付费模式（数据安全审计只支持预付费：1）
+                     * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期
                      * @return Status 实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期
-                     * @param Status 实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期
+                     * @param _status 实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss
                      * @return IsolatedTimestamp 实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     std::string GetIsolatedTimestamp() const;
 
                     /**
                      * 设置实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss
-                     * @param IsolatedTimestamp 实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss
+                     * @param _isolatedTimestamp 实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     void SetIsolatedTimestamp(const std::string& _isolatedTimestamp);
 
                     /**
                      * 判断参数 IsolatedTimestamp 是否已赋值
                      * @return IsolatedTimestamp 是否已赋值
+                     * 
                      */
                     bool IsolatedTimestampHasBeenSet() const;
 
                     /**
                      * 获取实例创建时间，格式： yyyy-mm-dd HH:ii:ss
                      * @return CreateTime 实例创建时间，格式： yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置实例创建时间，格式： yyyy-mm-dd HH:ii:ss
-                     * @param CreateTime 实例创建时间，格式： yyyy-mm-dd HH:ii:ss
+                     * @param _createTime 实例创建时间，格式： yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取实例过期时间，格式：yyyy-mm-dd HH:ii:ss
                      * @return ExpireTime 实例过期时间，格式：yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置实例过期时间，格式：yyyy-mm-dd HH:ii:ss
-                     * @param ExpireTime 实例过期时间，格式：yyyy-mm-dd HH:ii:ss
+                     * @param _expireTime 实例过期时间，格式：yyyy-mm-dd HH:ii:ss
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -271,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIp 实例公网IP
+                     * @param _publicIp 实例公网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
@@ -293,38 +332,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 实例私网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置实例私网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIp 实例私网IP
+                     * @param _privateIp 实例私网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 
                     /**
                      * 获取实例类型（版本）
                      * @return InstanceType 实例类型（版本）
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型（版本）
-                     * @param InstanceType 实例类型（版本）
+                     * @param _instanceType 实例类型（版本）
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -333,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pdomain 实例域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPdomain() const;
 
                     /**
                      * 设置实例域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pdomain 实例域名
+                     * @param _pdomain 实例域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPdomain(const std::string& _pdomain);
 
                     /**
                      * 判断参数 Pdomain 是否已赋值
                      * @return Pdomain 是否已赋值
+                     * 
                      */
                     bool PdomainHasBeenSet() const;
 

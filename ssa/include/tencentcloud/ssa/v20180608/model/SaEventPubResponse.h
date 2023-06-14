@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DataSaEventPub
                      * @return DataSaEventPub DataSaEventPub
+                     * 
                      */
                     ObjDataSaEventPub GetDataSaEventPub() const;
 
                     /**
                      * 判断参数 DataSaEventPub 是否已赋值
                      * @return DataSaEventPub 是否已赋值
+                     * 
                      */
                     bool DataSaEventPubHasBeenSet() const;
 

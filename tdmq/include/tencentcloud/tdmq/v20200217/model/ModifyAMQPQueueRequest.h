@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Vhost名称
                      * @return VHostId Vhost名称
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置Vhost名称
-                     * @param VHostId Vhost名称
+                     * @param _vHostId Vhost名称
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取队列名称
                      * @return Queue 队列名称
+                     * 
                      */
                     std::string GetQueue() const;
 
                     /**
                      * 设置队列名称
-                     * @param Queue 队列名称
+                     * @param _queue 队列名称
+                     * 
                      */
                     void SetQueue(const std::string& _queue);
 
                     /**
                      * 判断参数 Queue 是否已赋值
                      * @return Queue 是否已赋值
+                     * 
                      */
                     bool QueueHasBeenSet() const;
 
                     /**
                      * 获取是否自动清除
                      * @return AutoDelete 是否自动清除
+                     * 
                      */
                     bool GetAutoDelete() const;
 
                     /**
                      * 设置是否自动清除
-                     * @param AutoDelete 是否自动清除
+                     * @param _autoDelete 是否自动清除
+                     * 
                      */
                     void SetAutoDelete(const bool& _autoDelete);
 
                     /**
                      * 判断参数 AutoDelete 是否已赋值
                      * @return AutoDelete 是否已赋值
+                     * 
                      */
                     bool AutoDeleteHasBeenSet() const;
 
                     /**
                      * 获取说明信息，最大128个字符
                      * @return Remark 说明信息，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息，最大128个字符
-                     * @param Remark 说明信息，最大128个字符
+                     * @param _remark 说明信息，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取死信exchange
                      * @return DeadLetterExchange 死信exchange
+                     * 
                      */
                     std::string GetDeadLetterExchange() const;
 
                     /**
                      * 设置死信exchange
-                     * @param DeadLetterExchange 死信exchange
+                     * @param _deadLetterExchange 死信exchange
+                     * 
                      */
                     void SetDeadLetterExchange(const std::string& _deadLetterExchange);
 
                     /**
                      * 判断参数 DeadLetterExchange 是否已赋值
                      * @return DeadLetterExchange 是否已赋值
+                     * 
                      */
                     bool DeadLetterExchangeHasBeenSet() const;
 
                     /**
                      * 获取路由键
                      * @return DeadLetterRoutingKey 路由键
+                     * 
                      */
                     std::string GetDeadLetterRoutingKey() const;
 
                     /**
                      * 设置路由键
-                     * @param DeadLetterRoutingKey 路由键
+                     * @param _deadLetterRoutingKey 路由键
+                     * 
                      */
                     void SetDeadLetterRoutingKey(const std::string& _deadLetterRoutingKey);
 
                     /**
                      * 判断参数 DeadLetterRoutingKey 是否已赋值
                      * @return DeadLetterRoutingKey 是否已赋值
+                     * 
                      */
                     bool DeadLetterRoutingKeyHasBeenSet() const;
 

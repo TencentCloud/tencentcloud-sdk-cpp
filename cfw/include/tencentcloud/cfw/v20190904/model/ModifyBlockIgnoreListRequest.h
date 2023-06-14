@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取1封禁列表 2 放通列表
                      * @return RuleType 1封禁列表 2 放通列表
+                     * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
                      * 设置1封禁列表 2 放通列表
-                     * @param RuleType 1封禁列表 2 放通列表
+                     * @param _ruleType 1封禁列表 2 放通列表
+                     * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
                     /**
                      * 获取IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
                      * @return IOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * 
                      */
                     std::vector<IocListData> GetIOC() const;
 
                     /**
                      * 设置IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
-                     * @param IOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * @param _iOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * 
                      */
                     void SetIOC(const std::vector<IocListData>& _iOC);
 
                     /**
                      * 判断参数 IOC 是否已赋值
                      * @return IOC 是否已赋值
+                     * 
                      */
                     bool IOCHasBeenSet() const;
 
                     /**
                      * 获取可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
                      * @return IocAction 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * 
                      */
                     std::string GetIocAction() const;
 
                     /**
                      * 设置可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
-                     * @param IocAction 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * @param _iocAction 可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效
+                     * 
                      */
                     void SetIocAction(const std::string& _iocAction);
 
                     /**
                      * 判断参数 IocAction 是否已赋值
                      * @return IocAction 是否已赋值
+                     * 
                      */
                     bool IocActionHasBeenSet() const;
 
                     /**
                      * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      * @return StartTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
-                     * @param StartTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * @param _startTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
                      * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
-                     * @param EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * @param _endTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

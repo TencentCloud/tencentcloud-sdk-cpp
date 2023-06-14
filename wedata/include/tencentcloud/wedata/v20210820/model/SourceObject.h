@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceObjectDataTypeName 源字段详细类型，int、string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceObjectDataTypeName() const;
 
                     /**
                      * 设置源字段详细类型，int、string
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceObjectDataTypeName 源字段详细类型，int、string
+                     * @param _sourceObjectDataTypeName 源字段详细类型，int、string
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceObjectDataTypeName(const std::string& _sourceObjectDataTypeName);
 
                     /**
                      * 判断参数 SourceObjectDataTypeName 是否已赋值
                      * @return SourceObjectDataTypeName 是否已赋值
+                     * 
                      */
                     bool SourceObjectDataTypeNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceObjectValue 源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceObjectValue() const;
 
                     /**
                      * 设置源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceObjectValue 源字段名称
+                     * @param _sourceObjectValue 源字段名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceObjectValue(const std::string& _sourceObjectValue);
 
                     /**
                      * 判断参数 SourceObjectValue 是否已赋值
                      * @return SourceObjectValue 是否已赋值
+                     * 
                      */
                     bool SourceObjectValueHasBeenSet() const;
 

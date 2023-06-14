@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称。该产品固定为 keewidb。
                      * @return Product 数据库引擎名称。该产品固定为 keewidb。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称。该产品固定为 keewidb。
-                     * @param Product 数据库引擎名称。该产品固定为 keewidb。
+                     * @param _product 数据库引擎名称。该产品固定为 keewidb。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
@@ -65,74 +68,86 @@ namespace TencentCloud
 登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。
                      * @return ProjectId 项目 ID。
 登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
 登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。
-                     * @param ProjectId 项目 ID。
+                     * @param _projectId 项目 ID。
 登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页安全组的数量限制。默认为 20，最多输出100条。
                      * @return Limit 每页安全组的数量限制。默认为 20，最多输出100条。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页安全组的数量限制。默认为 20，最多输出100条。
-                     * @param Limit 每页安全组的数量限制。默认为 20，最多输出100条。
+                     * @param _limit 每页安全组的数量限制。默认为 20，最多输出100条。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键词，支持根据安全组 ID 或者安全组名称搜索。
                      * @return SearchKey 搜索关键词，支持根据安全组 ID 或者安全组名称搜索。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索关键词，支持根据安全组 ID 或者安全组名称搜索。
-                     * @param SearchKey 搜索关键词，支持根据安全组 ID 或者安全组名称搜索。
+                     * @param _searchKey 搜索关键词，支持根据安全组 ID 或者安全组名称搜索。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 

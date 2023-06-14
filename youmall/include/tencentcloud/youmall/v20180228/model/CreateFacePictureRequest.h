@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取集团ID
                      * @return CompanyId 集团ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置集团ID
-                     * @param CompanyId 集团ID
+                     * @param _companyId 集团ID
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
                      * @return PersonType 人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
+                     * 
                      */
                     int64_t GetPersonType() const;
 
                     /**
                      * 设置人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
-                     * @param PersonType 人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
+                     * @param _personType 人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）
+                     * 
                      */
                     void SetPersonType(const int64_t& _personType);
 
                     /**
                      * 判断参数 PersonType 是否已赋值
                      * @return PersonType 是否已赋值
+                     * 
                      */
                     bool PersonTypeHasBeenSet() const;
 
                     /**
                      * 获取图片BASE编码
                      * @return Picture 图片BASE编码
+                     * 
                      */
                     std::string GetPicture() const;
 
                     /**
                      * 设置图片BASE编码
-                     * @param Picture 图片BASE编码
+                     * @param _picture 图片BASE编码
+                     * 
                      */
                     void SetPicture(const std::string& _picture);
 
                     /**
                      * 判断参数 Picture 是否已赋值
                      * @return Picture 是否已赋值
+                     * 
                      */
                     bool PictureHasBeenSet() const;
 
                     /**
                      * 获取图片名称
                      * @return PictureName 图片名称
+                     * 
                      */
                     std::string GetPictureName() const;
 
                     /**
                      * 设置图片名称
-                     * @param PictureName 图片名称
+                     * @param _pictureName 图片名称
+                     * 
                      */
                     void SetPictureName(const std::string& _pictureName);
 
                     /**
                      * 判断参数 PictureName 是否已赋值
                      * @return PictureName 是否已赋值
+                     * 
                      */
                     bool PictureNameHasBeenSet() const;
 
                     /**
                      * 获取店铺ID，如果不填表示操作集团身份库
                      * @return ShopId 店铺ID，如果不填表示操作集团身份库
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 设置店铺ID，如果不填表示操作集团身份库
-                     * @param ShopId 店铺ID，如果不填表示操作集团身份库
+                     * @param _shopId 店铺ID，如果不填表示操作集团身份库
+                     * 
                      */
                     void SetShopId(const int64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传
                      * @return IsForceUpload 是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传
+                     * 
                      */
                     bool GetIsForceUpload() const;
 
                     /**
                      * 设置是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传
-                     * @param IsForceUpload 是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传
+                     * @param _isForceUpload 是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传
+                     * 
                      */
                     void SetIsForceUpload(const bool& _isForceUpload);
 
                     /**
                      * 判断参数 IsForceUpload 是否已赋值
                      * @return IsForceUpload 是否已赋值
+                     * 
                      */
                     bool IsForceUploadHasBeenSet() const;
 

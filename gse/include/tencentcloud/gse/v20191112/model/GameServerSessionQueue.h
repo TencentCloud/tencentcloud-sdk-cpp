@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取服务部署组名字
                      * @return Name 服务部署组名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务部署组名字
-                     * @param Name 服务部署组名字
+                     * @param _name 服务部署组名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取服务部署组资源
                      * @return GameServerSessionQueueArn 服务部署组资源
+                     * 
                      */
                     std::string GetGameServerSessionQueueArn() const;
 
                     /**
                      * 设置服务部署组资源
-                     * @param GameServerSessionQueueArn 服务部署组资源
+                     * @param _gameServerSessionQueueArn 服务部署组资源
+                     * 
                      */
                     void SetGameServerSessionQueueArn(const std::string& _gameServerSessionQueueArn);
 
                     /**
                      * 判断参数 GameServerSessionQueueArn 是否已赋值
                      * @return GameServerSessionQueueArn 是否已赋值
+                     * 
                      */
                     bool GameServerSessionQueueArnHasBeenSet() const;
 
@@ -90,20 +96,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destinations 目的fleet（可为别名）列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GameServerSessionQueueDestination> GetDestinations() const;
 
                     /**
                      * 设置目的fleet（可为别名）列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Destinations 目的fleet（可为别名）列表
+                     * @param _destinations 目的fleet（可为别名）列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestinations(const std::vector<GameServerSessionQueueDestination>& _destinations);
 
                     /**
                      * 判断参数 Destinations 是否已赋值
                      * @return Destinations 是否已赋值
+                     * 
                      */
                     bool DestinationsHasBeenSet() const;
 
@@ -112,38 +121,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayerLatencyPolicies 延迟策略集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PlayerLatencyPolicy> GetPlayerLatencyPolicies() const;
 
                     /**
                      * 设置延迟策略集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlayerLatencyPolicies 延迟策略集合
+                     * @param _playerLatencyPolicies 延迟策略集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlayerLatencyPolicies(const std::vector<PlayerLatencyPolicy>& _playerLatencyPolicies);
 
                     /**
                      * 判断参数 PlayerLatencyPolicies 是否已赋值
                      * @return PlayerLatencyPolicies 是否已赋值
+                     * 
                      */
                     bool PlayerLatencyPoliciesHasBeenSet() const;
 
                     /**
                      * 获取超时时间
                      * @return TimeoutInSeconds 超时时间
+                     * 
                      */
                     uint64_t GetTimeoutInSeconds() const;
 
                     /**
                      * 设置超时时间
-                     * @param TimeoutInSeconds 超时时间
+                     * @param _timeoutInSeconds 超时时间
+                     * 
                      */
                     void SetTimeoutInSeconds(const uint64_t& _timeoutInSeconds);
 
                     /**
                      * 判断参数 TimeoutInSeconds 是否已赋值
                      * @return TimeoutInSeconds 是否已赋值
+                     * 
                      */
                     bool TimeoutInSecondsHasBeenSet() const;
 
@@ -152,20 +167,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签列表，最大长度50组
+                     * @param _tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

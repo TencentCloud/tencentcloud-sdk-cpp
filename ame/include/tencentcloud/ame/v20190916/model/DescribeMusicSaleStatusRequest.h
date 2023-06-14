@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id集合，可传单个，也可传多个，上线查询单次50个
                      * @return MusicIds 歌曲Id集合，可传单个，也可传多个，上线查询单次50个
+                     * 
                      */
                     std::vector<std::string> GetMusicIds() const;
 
                     /**
                      * 设置歌曲Id集合，可传单个，也可传多个，上线查询单次50个
-                     * @param MusicIds 歌曲Id集合，可传单个，也可传多个，上线查询单次50个
+                     * @param _musicIds 歌曲Id集合，可传单个，也可传多个，上线查询单次50个
+                     * 
                      */
                     void SetMusicIds(const std::vector<std::string>& _musicIds);
 
                     /**
                      * 判断参数 MusicIds 是否已赋值
                      * @return MusicIds 是否已赋值
+                     * 
                      */
                     bool MusicIdsHasBeenSet() const;
 
                     /**
                      * 获取查询哪个渠道的数据，1为曲库包，2为单曲
                      * @return PurchaseType 查询哪个渠道的数据，1为曲库包，2为单曲
+                     * 
                      */
                     int64_t GetPurchaseType() const;
 
                     /**
                      * 设置查询哪个渠道的数据，1为曲库包，2为单曲
-                     * @param PurchaseType 查询哪个渠道的数据，1为曲库包，2为单曲
+                     * @param _purchaseType 查询哪个渠道的数据，1为曲库包，2为单曲
+                     * 
                      */
                     void SetPurchaseType(const int64_t& _purchaseType);
 
                     /**
                      * 判断参数 PurchaseType 是否已赋值
                      * @return PurchaseType 是否已赋值
+                     * 
                      */
                     bool PurchaseTypeHasBeenSet() const;
 

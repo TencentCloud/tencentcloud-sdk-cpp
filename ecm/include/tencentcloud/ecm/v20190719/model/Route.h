@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取目的IPv4网段
                      * @return DestinationCidrBlock 目的IPv4网段
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置目的IPv4网段
-                     * @param DestinationCidrBlock 目的IPv4网段
+                     * @param _destinationCidrBlock 目的IPv4网段
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 NORMAL_CVM：普通云服务器；
                      * @return GatewayType 下一跳类型
 NORMAL_CVM：普通云服务器；
+                     * 
                      */
                     std::string GetGatewayType() const;
 
                     /**
                      * 设置下一跳类型
 NORMAL_CVM：普通云服务器；
-                     * @param GatewayType 下一跳类型
+                     * @param _gatewayType 下一跳类型
 NORMAL_CVM：普通云服务器；
+                     * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
 
                     /**
                      * 判断参数 GatewayType 是否已赋值
                      * @return GatewayType 是否已赋值
+                     * 
                      */
                     bool GatewayTypeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ NORMAL_CVM：普通云服务器；
                      * @return GatewayId 下一跳地址
 这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址
 当 GatewayType 为 EIP 时，GatewayId 固定值 '0'
+                     * 
                      */
                     std::string GetGatewayId() const;
 
@@ -100,69 +107,80 @@ NORMAL_CVM：普通云服务器；
                      * 设置下一跳地址
 这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址
 当 GatewayType 为 EIP 时，GatewayId 固定值 '0'
-                     * @param GatewayId 下一跳地址
+                     * @param _gatewayId 下一跳地址
 这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址
 当 GatewayType 为 EIP 时，GatewayId 固定值 '0'
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取路由策略唯一ID
                      * @return RouteItemId 路由策略唯一ID
+                     * 
                      */
                     std::string GetRouteItemId() const;
 
                     /**
                      * 设置路由策略唯一ID
-                     * @param RouteItemId 路由策略唯一ID
+                     * @param _routeItemId 路由策略唯一ID
+                     * 
                      */
                     void SetRouteItemId(const std::string& _routeItemId);
 
                     /**
                      * 判断参数 RouteItemId 是否已赋值
                      * @return RouteItemId 是否已赋值
+                     * 
                      */
                     bool RouteItemIdHasBeenSet() const;
 
                     /**
                      * 获取路由策略描述
                      * @return RouteDescription 路由策略描述
+                     * 
                      */
                     std::string GetRouteDescription() const;
 
                     /**
                      * 设置路由策略描述
-                     * @param RouteDescription 路由策略描述
+                     * @param _routeDescription 路由策略描述
+                     * 
                      */
                     void SetRouteDescription(const std::string& _routeDescription);
 
                     /**
                      * 判断参数 RouteDescription 是否已赋值
                      * @return RouteDescription 是否已赋值
+                     * 
                      */
                     bool RouteDescriptionHasBeenSet() const;
 
                     /**
                      * 获取是否启用
                      * @return Enabled 是否启用
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enabled 是否启用
+                     * @param _enabled 是否启用
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
@@ -177,6 +195,7 @@ USER：用户路由；
 NETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；
 CCN：云联网路由，系统默认下发，不可编辑与删除。
 用户只能添加和操作 USER 类型的路由。
+                     * 
                      */
                     std::string GetRouteType() const;
 
@@ -186,53 +205,61 @@ USER：用户路由；
 NETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；
 CCN：云联网路由，系统默认下发，不可编辑与删除。
 用户只能添加和操作 USER 类型的路由。
-                     * @param RouteType 路由类型，目前我们支持的类型有：
+                     * @param _routeType 路由类型，目前我们支持的类型有：
 USER：用户路由；
 NETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；
 CCN：云联网路由，系统默认下发，不可编辑与删除。
 用户只能添加和操作 USER 类型的路由。
+                     * 
                      */
                     void SetRouteType(const std::string& _routeType);
 
                     /**
                      * 判断参数 RouteType 是否已赋值
                      * @return RouteType 是否已赋值
+                     * 
                      */
                     bool RouteTypeHasBeenSet() const;
 
                     /**
                      * 获取路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略
                      * @return RouteId 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略
+                     * 
                      */
                     uint64_t GetRouteId() const;
 
                     /**
                      * 设置路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略
-                     * @param RouteId 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略
+                     * @param _routeId 路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略
+                     * 
                      */
                     void SetRouteId(const uint64_t& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param _routeTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 

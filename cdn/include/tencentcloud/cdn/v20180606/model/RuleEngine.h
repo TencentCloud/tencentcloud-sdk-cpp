@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch 规则引擎配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置规则引擎配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 规则引擎配置开关，取值有：
+                     * @param _switch 规则引擎配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 规则
+                     * @param _content 规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

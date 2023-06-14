@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例组 Id
                      * @return Id 实例组 Id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置实例组 Id
-                     * @param Id 实例组 Id
+                     * @param _id 实例组 Id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取实例组名称
                      * @return Name 实例组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例组名称
-                     * @param Name 实例组名称
+                     * @param _name 实例组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

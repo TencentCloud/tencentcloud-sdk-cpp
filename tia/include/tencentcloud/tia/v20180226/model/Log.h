@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取容器名
                      * @return ContainerName 容器名
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名
-                     * @param ContainerName 容器名
+                     * @param _containerName 容器名
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return Log 日志内容
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置日志内容
-                     * @param Log 日志内容
+                     * @param _log 日志内容
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 
                     /**
                      * 获取空间名
                      * @return Namespace 空间名
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置空间名
-                     * @param Namespace 空间名
+                     * @param _namespace 空间名
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取Pod Id
                      * @return PodId Pod Id
+                     * 
                      */
                     std::string GetPodId() const;
 
                     /**
                      * 设置Pod Id
-                     * @param PodId Pod Id
+                     * @param _podId Pod Id
+                     * 
                      */
                     void SetPodId(const std::string& _podId);
 
                     /**
                      * 判断参数 PodId 是否已赋值
                      * @return PodId 是否已赋值
+                     * 
                      */
                     bool PodIdHasBeenSet() const;
 
                     /**
                      * 获取Pod名
                      * @return PodName Pod名
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置Pod名
-                     * @param PodName Pod名
+                     * @param _podName Pod名
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取日志日期，格式为“2018-07-02T09:10:04.916553368Z”
                      * @return Time 日志日期，格式为“2018-07-02T09:10:04.916553368Z”
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日志日期，格式为“2018-07-02T09:10:04.916553368Z”
-                     * @param Time 日志日期，格式为“2018-07-02T09:10:04.916553368Z”
+                     * @param _time 日志日期，格式为“2018-07-02T09:10:04.916553368Z”
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

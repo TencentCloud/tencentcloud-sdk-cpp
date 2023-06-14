@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取分组名称
                      * @return GroupName 分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-                     * @param GroupName 分组名称
+                     * @param _groupName 分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 

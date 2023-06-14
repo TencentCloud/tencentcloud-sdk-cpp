@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库ID。
                      * @return DictId 自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置自定义词库ID。
-                     * @param DictId 自定义词库ID。
+                     * @param _dictId 自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，从0开始，默认为0。
                      * @return Offset 分页偏移量，从0开始，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始，默认为0。
-                     * @param Offset 分页偏移量，从0开始，默认为0。
+                     * @param _offset 分页偏移量，从0开始，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，范围为1~100，默认为10。
                      * @return Limit 每页数据量，范围为1~100，默认为10。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，范围为1~100，默认为10。
-                     * @param Limit 每页数据量，范围为1~100，默认为10。
+                     * @param _limit 每页数据量，范围为1~100，默认为10。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取待检索的词条文本，支持模糊匹配。
                      * @return Text 待检索的词条文本，支持模糊匹配。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待检索的词条文本，支持模糊匹配。
-                     * @param Text 待检索的词条文本，支持模糊匹配。
+                     * @param _text 待检索的词条文本，支持模糊匹配。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

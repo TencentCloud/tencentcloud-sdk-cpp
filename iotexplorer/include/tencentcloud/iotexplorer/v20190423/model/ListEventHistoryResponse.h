@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 搜索上下文, 用作查询游标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 搜索结果数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listover 搜索结果是否已经结束
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetListover() const;
 
                     /**
                      * 判断参数 Listover 是否已赋值
                      * @return Listover 是否已赋值
+                     * 
                      */
                     bool ListoverHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventHistory 搜集结果集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EventHistoryItem> GetEventHistory() const;
 
                     /**
                      * 判断参数 EventHistory 是否已赋值
                      * @return EventHistory 是否已赋值
+                     * 
                      */
                     bool EventHistoryHasBeenSet() const;
 

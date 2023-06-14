@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取请求集群addon的访问
                      * @return Method 请求集群addon的访问
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求集群addon的访问
-                     * @param Method 请求集群addon的访问
+                     * @param _method 请求集群addon的访问
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取请求集群addon的路径
                      * @return Path 请求集群addon的路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置请求集群addon的路径
-                     * @param Path 请求集群addon的路径
+                     * @param _path 请求集群addon的路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取请求集群addon后允许接收的数据格式
                      * @return Accept 请求集群addon后允许接收的数据格式
+                     * 
                      */
                     std::string GetAccept() const;
 
                     /**
                      * 设置请求集群addon后允许接收的数据格式
-                     * @param Accept 请求集群addon后允许接收的数据格式
+                     * @param _accept 请求集群addon后允许接收的数据格式
+                     * 
                      */
                     void SetAccept(const std::string& _accept);
 
                     /**
                      * 判断参数 Accept 是否已赋值
                      * @return Accept 是否已赋值
+                     * 
                      */
                     bool AcceptHasBeenSet() const;
 
                     /**
                      * 获取请求集群addon的数据格式
                      * @return ContentType 请求集群addon的数据格式
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置请求集群addon的数据格式
-                     * @param ContentType 请求集群addon的数据格式
+                     * @param _contentType 请求集群addon的数据格式
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
                     /**
                      * 获取请求集群addon的数据
                      * @return RequestBody 请求集群addon的数据
+                     * 
                      */
                     std::string GetRequestBody() const;
 
                     /**
                      * 设置请求集群addon的数据
-                     * @param RequestBody 请求集群addon的数据
+                     * @param _requestBody 请求集群addon的数据
+                     * 
                      */
                     void SetRequestBody(const std::string& _requestBody);
 
                     /**
                      * 判断参数 RequestBody 是否已赋值
                      * @return RequestBody 是否已赋值
+                     * 
                      */
                     bool RequestBodyHasBeenSet() const;
 
                     /**
                      * 获取集群名称，例如cls-1234abcd
                      * @return ClusterName 集群名称，例如cls-1234abcd
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称，例如cls-1234abcd
-                     * @param ClusterName 集群名称，例如cls-1234abcd
+                     * @param _clusterName 集群名称，例如cls-1234abcd
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取是否编码请求内容
                      * @return EncodedBody 是否编码请求内容
+                     * 
                      */
                     std::string GetEncodedBody() const;
 
                     /**
                      * 设置是否编码请求内容
-                     * @param EncodedBody 是否编码请求内容
+                     * @param _encodedBody 是否编码请求内容
+                     * 
                      */
                     void SetEncodedBody(const std::string& _encodedBody);
 
                     /**
                      * 判断参数 EncodedBody 是否已赋值
                      * @return EncodedBody 是否已赋值
+                     * 
                      */
                     bool EncodedBodyHasBeenSet() const;
 

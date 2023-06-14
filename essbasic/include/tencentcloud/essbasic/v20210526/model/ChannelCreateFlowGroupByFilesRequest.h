@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取每个子合同的发起所需的信息，数量限制2-100
                      * @return FlowFileInfos 每个子合同的发起所需的信息，数量限制2-100
+                     * 
                      */
                     std::vector<FlowFileInfo> GetFlowFileInfos() const;
 
                     /**
                      * 设置每个子合同的发起所需的信息，数量限制2-100
-                     * @param FlowFileInfos 每个子合同的发起所需的信息，数量限制2-100
+                     * @param _flowFileInfos 每个子合同的发起所需的信息，数量限制2-100
+                     * 
                      */
                     void SetFlowFileInfos(const std::vector<FlowFileInfo>& _flowFileInfos);
 
                     /**
                      * 判断参数 FlowFileInfos 是否已赋值
                      * @return FlowFileInfos 是否已赋值
+                     * 
                      */
                     bool FlowFileInfosHasBeenSet() const;
 
                     /**
                      * 获取合同组名称，长度不超过200个字符
                      * @return FlowGroupName 合同组名称，长度不超过200个字符
+                     * 
                      */
                     std::string GetFlowGroupName() const;
 
                     /**
                      * 设置合同组名称，长度不超过200个字符
-                     * @param FlowGroupName 合同组名称，长度不超过200个字符
+                     * @param _flowGroupName 合同组名称，长度不超过200个字符
+                     * 
                      */
                     void SetFlowGroupName(const std::string& _flowGroupName);
 
                     /**
                      * 判断参数 FlowGroupName 是否已赋值
                      * @return FlowGroupName 是否已赋值
+                     * 
                      */
                     bool FlowGroupNameHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -108,6 +117,7 @@ MobileCheck：手机号验证
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
 参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
+                     * 
                      */
                     std::string GetApproverVerifyType() const;
 
@@ -116,34 +126,39 @@ MobileCheck：手机号验证
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
 参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
-                     * @param ApproverVerifyType 签署人校验方式
+                     * @param _approverVerifyType 签署人校验方式
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
 参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。
+                     * 
                      */
                     void SetApproverVerifyType(const std::string& _approverVerifyType);
 
                     /**
                      * 判断参数 ApproverVerifyType 是否已赋值
                      * @return ApproverVerifyType 是否已赋值
+                     * 
                      */
                     bool ApproverVerifyTypeHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息，此参数不用传
                      * @return Operator 操作者的信息，此参数不用传
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者的信息，此参数不用传
-                     * @param Operator 操作者的信息，此参数不用传
+                     * @param _operator 操作者的信息，此参数不用传
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

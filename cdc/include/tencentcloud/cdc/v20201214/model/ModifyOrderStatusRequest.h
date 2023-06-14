@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取要更新成的状态
                      * @return Status 要更新成的状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置要更新成的状态
-                     * @param Status 要更新成的状态
+                     * @param _status 要更新成的状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取大订单ID
                      * @return DedicatedClusterOrderId 大订单ID
+                     * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
 
                     /**
                      * 设置大订单ID
-                     * @param DedicatedClusterOrderId 大订单ID
+                     * @param _dedicatedClusterOrderId 大订单ID
+                     * 
                      */
                     void SetDedicatedClusterOrderId(const std::string& _dedicatedClusterOrderId);
 
                     /**
                      * 判断参数 DedicatedClusterOrderId 是否已赋值
                      * @return DedicatedClusterOrderId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterOrderIdHasBeenSet() const;
 
                     /**
                      * 获取小订单ID
                      * @return SubOrderIds 小订单ID
+                     * 
                      */
                     std::vector<std::string> GetSubOrderIds() const;
 
                     /**
                      * 设置小订单ID
-                     * @param SubOrderIds 小订单ID
+                     * @param _subOrderIds 小订单ID
+                     * 
                      */
                     void SetSubOrderIds(const std::vector<std::string>& _subOrderIds);
 
                     /**
                      * 判断参数 SubOrderIds 是否已赋值
                      * @return SubOrderIds 是否已赋值
+                     * 
                      */
                     bool SubOrderIdsHasBeenSet() const;
 

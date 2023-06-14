@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义人物音视频审核控制参数。
                      * @return FaceReviewInfo 用户自定义人物音视频审核控制参数。
+                     * 
                      */
                     UserDefineFaceReviewTemplateInfoForUpdate GetFaceReviewInfo() const;
 
                     /**
                      * 设置用户自定义人物音视频审核控制参数。
-                     * @param FaceReviewInfo 用户自定义人物音视频审核控制参数。
+                     * @param _faceReviewInfo 用户自定义人物音视频审核控制参数。
+                     * 
                      */
                     void SetFaceReviewInfo(const UserDefineFaceReviewTemplateInfoForUpdate& _faceReviewInfo);
 
                     /**
                      * 判断参数 FaceReviewInfo 是否已赋值
                      * @return FaceReviewInfo 是否已赋值
+                     * 
                      */
                     bool FaceReviewInfoHasBeenSet() const;
 
                     /**
                      * 获取用户自定义语音音视频审核控制参数。
                      * @return AsrReviewInfo 用户自定义语音音视频审核控制参数。
+                     * 
                      */
                     UserDefineAsrTextReviewTemplateInfoForUpdate GetAsrReviewInfo() const;
 
                     /**
                      * 设置用户自定义语音音视频审核控制参数。
-                     * @param AsrReviewInfo 用户自定义语音音视频审核控制参数。
+                     * @param _asrReviewInfo 用户自定义语音音视频审核控制参数。
+                     * 
                      */
                     void SetAsrReviewInfo(const UserDefineAsrTextReviewTemplateInfoForUpdate& _asrReviewInfo);
 
                     /**
                      * 判断参数 AsrReviewInfo 是否已赋值
                      * @return AsrReviewInfo 是否已赋值
+                     * 
                      */
                     bool AsrReviewInfoHasBeenSet() const;
 
                     /**
                      * 获取用户自定义文本音视频审核控制参数。
                      * @return OcrReviewInfo 用户自定义文本音视频审核控制参数。
+                     * 
                      */
                     UserDefineOcrTextReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
 
                     /**
                      * 设置用户自定义文本音视频审核控制参数。
-                     * @param OcrReviewInfo 用户自定义文本音视频审核控制参数。
+                     * @param _ocrReviewInfo 用户自定义文本音视频审核控制参数。
+                     * 
                      */
                     void SetOcrReviewInfo(const UserDefineOcrTextReviewTemplateInfoForUpdate& _ocrReviewInfo);
 
                     /**
                      * 判断参数 OcrReviewInfo 是否已赋值
                      * @return OcrReviewInfo 是否已赋值
+                     * 
                      */
                     bool OcrReviewInfoHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取人脸核身流程的标识，调用DetectAuth接口时生成。
                      * @return BizToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 
                      */
                     std::string GetBizToken() const;
 
                     /**
                      * 设置人脸核身流程的标识，调用DetectAuth接口时生成。
-                     * @param BizToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * @param _bizToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 
                      */
                     void SetBizToken(const std::string& _bizToken);
 
                     /**
                      * 判断参数 BizToken 是否已赋值
                      * @return BizToken 是否已赋值
+                     * 
                      */
                     bool BizTokenHasBeenSet() const;
 
                     /**
                      * 获取用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
                      * @return RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
-                     * @param RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
+                     * @param _ruleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return InfoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证正反面；3：视频最佳截图照片；4：视频）。
 如 134表示拉取文本类、视频最佳截图照片、视频。
 默认值：0
+                     * 
                      */
                     std::string GetInfoType() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证正反面；3：视频最佳截图照片；4：视频）。
 如 134表示拉取文本类、视频最佳截图照片、视频。
 默认值：0
-                     * @param InfoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证正反面；3：视频最佳截图照片；4：视频）。
+                     * @param _infoType 指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证正反面；3：视频最佳截图照片；4：视频）。
 如 134表示拉取文本类、视频最佳截图照片、视频。
 默认值：0
+                     * 
                      */
                     void SetInfoType(const std::string& _infoType);
 
                     /**
                      * 判断参数 InfoType 是否已赋值
                      * @return InfoType 是否已赋值
+                     * 
                      */
                     bool InfoTypeHasBeenSet() const;
 

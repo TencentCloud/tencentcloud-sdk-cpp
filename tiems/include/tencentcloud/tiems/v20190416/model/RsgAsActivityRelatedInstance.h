@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取节点 ID
                      * @return InstanceId 节点 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置节点 ID
-                     * @param InstanceId 节点 ID
+                     * @param _instanceId 节点 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取节点状态
                      * @return InstanceStatus 节点状态
+                     * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
                      * 设置节点状态
-                     * @param InstanceStatus 节点状态
+                     * @param _instanceStatus 节点状态
+                     * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 

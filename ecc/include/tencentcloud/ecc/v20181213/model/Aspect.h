@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取维度名字
                      * @return Name 维度名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置维度名字
-                     * @param Name 维度名字
+                     * @param _name 维度名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取维度得分
                      * @return Score 维度得分
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置维度得分
-                     * @param Score 维度得分
+                     * @param _score 维度得分
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取维度分数占比
                      * @return Percentage 维度分数占比
+                     * 
                      */
                     double GetPercentage() const;
 
                     /**
                      * 设置维度分数占比
-                     * @param Percentage 维度分数占比
+                     * @param _percentage 维度分数占比
+                     * 
                      */
                     void SetPercentage(const double& _percentage);
 
                     /**
                      * 判断参数 Percentage 是否已赋值
                      * @return Percentage 是否已赋值
+                     * 
                      */
                     bool PercentageHasBeenSet() const;
 

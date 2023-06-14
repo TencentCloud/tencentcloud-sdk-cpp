@@ -65,6 +65,7 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 不填则不修改。
+                     * 
                      */
                     uint64_t GetShortEdge() const;
 
@@ -78,7 +79,7 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 不填则不修改。
-                     * @param ShortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
+                     * @param _shortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
 视频最后的分辨率，根据短边尺寸和宽高比进行计算。
 例：如果项目的宽高比是 16：9 ：
 <li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
@@ -87,12 +88,14 @@ namespace TencentCloud
 <li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>
 <li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>
 不填则不修改。
+                     * 
                      */
                     void SetShortEdge(const uint64_t& _shortEdge);
 
                     /**
                      * 判断参数 ShortEdge 是否已赋值
                      * @return ShortEdge 是否已赋值
+                     * 
                      */
                     bool ShortEdgeHasBeenSet() const;
 
@@ -101,20 +104,23 @@ namespace TencentCloud
 不填则不修改。
                      * @return Bitrate 指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。
 不填则不修改。
+                     * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
                      * 设置指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。
 不填则不修改。
-                     * @param Bitrate 指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。
+                     * @param _bitrate 指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。
 不填则不修改。
+                     * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -123,20 +129,23 @@ namespace TencentCloud
 不填则不修改。
                      * @return FrameRate 指定帧率。单位 Hz。
 不填则不修改。
+                     * 
                      */
                     double GetFrameRate() const;
 
                     /**
                      * 设置指定帧率。单位 Hz。
 不填则不修改。
-                     * @param FrameRate 指定帧率。单位 Hz。
+                     * @param _frameRate 指定帧率。单位 Hz。
 不填则不修改。
+                     * 
                      */
                     void SetFrameRate(const double& _frameRate);
 
                     /**
                      * 判断参数 FrameRate 是否已赋值
                      * @return FrameRate 是否已赋值
+                     * 
                      */
                     bool FrameRateHasBeenSet() const;
 

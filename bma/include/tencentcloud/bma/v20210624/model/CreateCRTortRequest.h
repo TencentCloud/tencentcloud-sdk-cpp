@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取作品ID
                      * @return WorkId 作品ID
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 设置作品ID
-                     * @param WorkId 作品ID
+                     * @param _workId 作品ID
+                     * 
                      */
                     void SetWorkId(const int64_t& _workId);
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 
                     /**
                      * 获取侵权网址
                      * @return TortURL 侵权网址
+                     * 
                      */
                     std::string GetTortURL() const;
 
                     /**
                      * 设置侵权网址
-                     * @param TortURL 侵权网址
+                     * @param _tortURL 侵权网址
+                     * 
                      */
                     void SetTortURL(const std::string& _tortURL);
 
                     /**
                      * 判断参数 TortURL 是否已赋值
                      * @return TortURL 是否已赋值
+                     * 
                      */
                     bool TortURLHasBeenSet() const;
 
                     /**
                      * 获取侵权平台
                      * @return TortPlat 侵权平台
+                     * 
                      */
                     std::string GetTortPlat() const;
 
                     /**
                      * 设置侵权平台
-                     * @param TortPlat 侵权平台
+                     * @param _tortPlat 侵权平台
+                     * 
                      */
                     void SetTortPlat(const std::string& _tortPlat);
 
                     /**
                      * 判断参数 TortPlat 是否已赋值
                      * @return TortPlat 是否已赋值
+                     * 
                      */
                     bool TortPlatHasBeenSet() const;
 
                     /**
                      * 获取侵权标题
                      * @return TortTitle 侵权标题
+                     * 
                      */
                     std::string GetTortTitle() const;
 
                     /**
                      * 设置侵权标题
-                     * @param TortTitle 侵权标题
+                     * @param _tortTitle 侵权标题
+                     * 
                      */
                     void SetTortTitle(const std::string& _tortTitle);
 
                     /**
                      * 判断参数 TortTitle 是否已赋值
                      * @return TortTitle 是否已赋值
+                     * 
                      */
                     bool TortTitleHasBeenSet() const;
 

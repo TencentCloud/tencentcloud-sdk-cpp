@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
                      * @return InstanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
-                     * @param InstanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * @param _instanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -84,6 +87,7 @@ namespace TencentCloud
 <li>8：欠费停服中</li>
 <li>9：欠费已停服</li>
 </ul>
+                     * 
                      */
                     std::vector<int64_t> GetInstanceStatus() const;
 
@@ -99,7 +103,7 @@ namespace TencentCloud
 <li>8：欠费停服中</li>
 <li>9：欠费已停服</li>
 </ul>
-                     * @param InstanceStatus 按照【实例状态】进行过滤。
+                     * @param _instanceStatus 按照【实例状态】进行过滤。
 <ul>
 <li>1：正在创建</li>
 <li>2：运行中</li>
@@ -110,120 +114,140 @@ namespace TencentCloud
 <li>8：欠费停服中</li>
 <li>9：欠费已停服</li>
 </ul>
+                     * 
                      */
                     void SetInstanceStatus(const std::vector<int64_t>& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
                      * 获取按照【实例名称】进行过滤。
                      * @return InstanceName 按照【实例名称】进行过滤。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置按照【实例名称】进行过滤。
-                     * @param InstanceName 按照【实例名称】进行过滤。
+                     * @param _instanceName 按照【实例名称】进行过滤。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。
                      * @return Zones 按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。
+                     * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。
-                     * @param Zones 按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。
+                     * @param _zones 按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。
+                     * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 
                     /**
                      * 获取按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。
                      * @return TagFilters 按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。
+                     * 
                      */
                     std::vector<PrometheusTag> GetTagFilters() const;
 
                     /**
                      * 设置按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。
-                     * @param TagFilters 按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。
+                     * @param _tagFilters 按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。
+                     * 
                      */
                     void SetTagFilters(const std::vector<PrometheusTag>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 
                     /**
                      * 获取按照【实例的IPv4地址】进行过滤。
                      * @return IPv4Address 按照【实例的IPv4地址】进行过滤。
+                     * 
                      */
                     std::vector<std::string> GetIPv4Address() const;
 
                     /**
                      * 设置按照【实例的IPv4地址】进行过滤。
-                     * @param IPv4Address 按照【实例的IPv4地址】进行过滤。
+                     * @param _iPv4Address 按照【实例的IPv4地址】进行过滤。
+                     * 
                      */
                     void SetIPv4Address(const std::vector<std::string>& _iPv4Address);
 
                     /**
                      * 判断参数 IPv4Address 是否已赋值
                      * @return IPv4Address 是否已赋值
+                     * 
                      */
                     bool IPv4AddressHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -234,6 +258,7 @@ namespace TencentCloud
                      * @return InstanceChargeType 按照【计费类型】进行过滤。
 <li>2：包年包月</li>
 <li>3：按量</li>
+                     * 
                      */
                     int64_t GetInstanceChargeType() const;
 
@@ -241,15 +266,17 @@ namespace TencentCloud
                      * 设置按照【计费类型】进行过滤。
 <li>2：包年包月</li>
 <li>3：按量</li>
-                     * @param InstanceChargeType 按照【计费类型】进行过滤。
+                     * @param _instanceChargeType 按照【计费类型】进行过滤。
 <li>2：包年包月</li>
 <li>3：按量</li>
+                     * 
                      */
                     void SetInstanceChargeType(const int64_t& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 

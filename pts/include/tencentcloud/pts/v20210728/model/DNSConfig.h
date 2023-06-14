@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nameservers DNS IP 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNameservers() const;
 
                     /**
                      * 设置DNS IP 列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nameservers DNS IP 列表
+                     * @param _nameservers DNS IP 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNameservers(const std::vector<std::string>& _nameservers);
 
                     /**
                      * 判断参数 Nameservers 是否已赋值
                      * @return Nameservers 是否已赋值
+                     * 
                      */
                     bool NameserversHasBeenSet() const;
 

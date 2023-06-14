@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取smtp密码，长度限制64
                      * @return Password smtp密码，长度限制64
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置smtp密码，长度限制64
-                     * @param Password smtp密码，长度限制64
+                     * @param _password smtp密码，长度限制64
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取发信邮箱,长度限制128
                      * @return EmailAddress 发信邮箱,长度限制128
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置发信邮箱,长度限制128
-                     * @param EmailAddress 发信邮箱,长度限制128
+                     * @param _emailAddress 发信邮箱,长度限制128
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 

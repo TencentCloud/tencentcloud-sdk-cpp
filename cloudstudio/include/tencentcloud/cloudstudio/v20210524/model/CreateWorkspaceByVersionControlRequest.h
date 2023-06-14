@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取工作空间结构
                      * @return WorkspaceDTO 工作空间结构
+                     * 
                      */
                     WorkspaceDTO GetWorkspaceDTO() const;
 
                     /**
                      * 设置工作空间结构
-                     * @param WorkspaceDTO 工作空间结构
+                     * @param _workspaceDTO 工作空间结构
+                     * 
                      */
                     void SetWorkspaceDTO(const WorkspaceDTO& _workspaceDTO);
 
                     /**
                      * 判断参数 WorkspaceDTO 是否已赋值
                      * @return WorkspaceDTO 是否已赋值
+                     * 
                      */
                     bool WorkspaceDTOHasBeenSet() const;
 
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 

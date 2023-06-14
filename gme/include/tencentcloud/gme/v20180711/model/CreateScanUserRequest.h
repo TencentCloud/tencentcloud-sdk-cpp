@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取应用ID，登录控制台 - 服务管理创建应用得到的AppID
                      * @return BizId 应用ID，登录控制台 - 服务管理创建应用得到的AppID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID，登录控制台 - 服务管理创建应用得到的AppID
-                     * @param BizId 应用ID，登录控制台 - 服务管理创建应用得到的AppID
+                     * @param _bizId 应用ID，登录控制台 - 服务管理创建应用得到的AppID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取需要新增送检的用户号。示例：1234
                      * @return UserId 需要新增送检的用户号。示例：1234
+                     * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
                      * 设置需要新增送检的用户号。示例：1234
-                     * @param UserId 需要新增送检的用户号。示例：1234
+                     * @param _userId 需要新增送检的用户号。示例：1234
+                     * 
                      */
                     void SetUserId(const uint64_t& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

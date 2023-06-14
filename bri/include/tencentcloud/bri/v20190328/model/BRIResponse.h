@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取风险分值，取值[0,100], 分值越高风险越高
                      * @return Score 风险分值，取值[0,100], 分值越高风险越高
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置风险分值，取值[0,100], 分值越高风险越高
-                     * @param Score 风险分值，取值[0,100], 分值越高风险越高
+                     * @param _score 风险分值，取值[0,100], 分值越高风险越高
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -115,6 +118,7 @@ namespace TencentCloud
 2) 一般   说明: APK为未发现问题的正常应用
 3) 风险   说明: APK为外挂或色情等风险应用
 4) 病毒   说明: APK为包含恶意代码的恶意软件,可能破坏系统或者其他app正常使用
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
@@ -144,7 +148,7 @@ namespace TencentCloud
 2) 一般   说明: APK为未发现问题的正常应用
 3) 风险   说明: APK为外挂或色情等风险应用
 4) 病毒   说明: APK为包含恶意代码的恶意软件,可能破坏系统或者其他app正常使用
-                     * @param Tags 当Service为bri_num时,返回的风险标签有:
+                     * @param _tags 当Service为bri_num时,返回的风险标签有:
 1) 疑似垃圾流量     说明: 结合号码的历史数据表现，判断该号码历史用互联网业务作恶行为，其产生的互联网行为对于其他业务来说属于作弊或垃圾流量。 
 2) 疑似新客户       说明: 通过号码互联网行为（社交，浏览等）是否异常判断为小号或接码平台帐号。 
 
@@ -169,12 +173,14 @@ namespace TencentCloud
 2) 一般   说明: APK为未发现问题的正常应用
 3) 风险   说明: APK为外挂或色情等风险应用
 4) 病毒   说明: APK为包含恶意代码的恶意软件,可能破坏系统或者其他app正常使用
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

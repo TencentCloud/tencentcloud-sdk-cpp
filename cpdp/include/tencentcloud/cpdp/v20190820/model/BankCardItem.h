@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取超级网银行号
                      * @return EiconBankBranchId 超级网银行号
+                     * 
                      */
                     std::string GetEiconBankBranchId() const;
 
                     /**
                      * 设置超级网银行号
-                     * @param EiconBankBranchId 超级网银行号
+                     * @param _eiconBankBranchId 超级网银行号
+                     * 
                      */
                     void SetEiconBankBranchId(const std::string& _eiconBankBranchId);
 
                     /**
                      * 判断参数 EiconBankBranchId 是否已赋值
                      * @return EiconBankBranchId 是否已赋值
+                     * 
                      */
                     bool EiconBankBranchIdHasBeenSet() const;
 
                     /**
                      * 获取大小额行号
                      * @return CnapsBranchId 大小额行号
+                     * 
                      */
                     std::string GetCnapsBranchId() const;
 
                     /**
                      * 设置大小额行号
-                     * @param CnapsBranchId 大小额行号
+                     * @param _cnapsBranchId 大小额行号
+                     * 
                      */
                     void SetCnapsBranchId(const std::string& _cnapsBranchId);
 
                     /**
                      * 判断参数 CnapsBranchId 是否已赋值
                      * @return CnapsBranchId 是否已赋值
+                     * 
                      */
                     bool CnapsBranchIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return SettleAcctType 结算账户类型
 1 – 本行账户
 2 – 他行账户
+                     * 
                      */
                     int64_t GetSettleAcctType() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置结算账户类型
 1 – 本行账户
 2 – 他行账户
-                     * @param SettleAcctType 结算账户类型
+                     * @param _settleAcctType 结算账户类型
 1 – 本行账户
 2 – 他行账户
+                     * 
                      */
                     void SetSettleAcctType(const int64_t& _settleAcctType);
 
                     /**
                      * 判断参数 SettleAcctType 是否已赋值
                      * @return SettleAcctType 是否已赋值
+                     * 
                      */
                     bool SettleAcctTypeHasBeenSet() const;
 
@@ -113,38 +122,44 @@ namespace TencentCloud
 <敏感信息>
                      * @return SettleAcctName 结算账户户名
 <敏感信息>
+                     * 
                      */
                     std::string GetSettleAcctName() const;
 
                     /**
                      * 设置结算账户户名
 <敏感信息>
-                     * @param SettleAcctName 结算账户户名
+                     * @param _settleAcctName 结算账户户名
 <敏感信息>
+                     * 
                      */
                     void SetSettleAcctName(const std::string& _settleAcctName);
 
                     /**
                      * 判断参数 SettleAcctName 是否已赋值
                      * @return SettleAcctName 是否已赋值
+                     * 
                      */
                     bool SettleAcctNameHasBeenSet() const;
 
                     /**
                      * 获取开户行名称
                      * @return AcctBranchName 开户行名称
+                     * 
                      */
                     std::string GetAcctBranchName() const;
 
                     /**
                      * 设置开户行名称
-                     * @param AcctBranchName 开户行名称
+                     * @param _acctBranchName 开户行名称
+                     * 
                      */
                     void SetAcctBranchName(const std::string& _acctBranchName);
 
                     /**
                      * 判断参数 AcctBranchName 是否已赋值
                      * @return AcctBranchName 是否已赋值
+                     * 
                      */
                     bool AcctBranchNameHasBeenSet() const;
 
@@ -153,38 +168,44 @@ namespace TencentCloud
 <敏感信息>
                      * @return SettleAcctNo 用于提现
 <敏感信息>
+                     * 
                      */
                     std::string GetSettleAcctNo() const;
 
                     /**
                      * 设置用于提现
 <敏感信息>
-                     * @param SettleAcctNo 用于提现
+                     * @param _settleAcctNo 用于提现
 <敏感信息>
+                     * 
                      */
                     void SetSettleAcctNo(const std::string& _settleAcctNo);
 
                     /**
                      * 判断参数 SettleAcctNo 是否已赋值
                      * @return SettleAcctNo 是否已赋值
+                     * 
                      */
                     bool SettleAcctNoHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -195,6 +216,7 @@ namespace TencentCloud
                      * @return BindType 验证类型
 1 – 小额转账验证
 2 – 短信验证
+                     * 
                      */
                     int64_t GetBindType() const;
 
@@ -202,15 +224,17 @@ namespace TencentCloud
                      * 设置验证类型
 1 – 小额转账验证
 2 – 短信验证
-                     * @param BindType 验证类型
+                     * @param _bindType 验证类型
 1 – 小额转账验证
 2 – 短信验证
+                     * 
                      */
                     void SetBindType(const int64_t& _bindType);
 
                     /**
                      * 判断参数 BindType 是否已赋值
                      * @return BindType 是否已赋值
+                     * 
                      */
                     bool BindTypeHasBeenSet() const;
 
@@ -221,6 +245,7 @@ BindType==2时必填
                      * @return Mobile 用于短信验证
 BindType==2时必填
 <敏感信息>
+                     * 
                      */
                     std::string GetMobile() const;
 
@@ -228,33 +253,38 @@ BindType==2时必填
                      * 设置用于短信验证
 BindType==2时必填
 <敏感信息>
-                     * @param Mobile 用于短信验证
+                     * @param _mobile 用于短信验证
 BindType==2时必填
 <敏感信息>
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取证件类型
                      * @return IdType 证件类型
+                     * 
                      */
                     std::string GetIdType() const;
 
                     /**
                      * 设置证件类型
-                     * @param IdType 证件类型
+                     * @param _idType 证件类型
+                     * 
                      */
                     void SetIdType(const std::string& _idType);
 
                     /**
                      * 判断参数 IdType 是否已赋值
                      * @return IdType 是否已赋值
+                     * 
                      */
                     bool IdTypeHasBeenSet() const;
 
@@ -263,20 +293,23 @@ BindType==2时必填
 <敏感信息>
                      * @return IdCode 证件号码
 <敏感信息>
+                     * 
                      */
                     std::string GetIdCode() const;
 
                     /**
                      * 设置证件号码
 <敏感信息>
-                     * @param IdCode 证件号码
+                     * @param _idCode 证件号码
 <敏感信息>
+                     * 
                      */
                     void SetIdCode(const std::string& _idCode);
 
                     /**
                      * 判断参数 IdCode 是否已赋值
                      * @return IdCode 是否已赋值
+                     * 
                      */
                     bool IdCodeHasBeenSet() const;
 

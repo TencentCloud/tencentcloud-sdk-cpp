@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取coordinator 为消费分组中的消费者生成的唯一 ID
                      * @return MemberId coordinator 为消费分组中的消费者生成的唯一 ID
+                     * 
                      */
                     std::string GetMemberId() const;
 
                     /**
                      * 设置coordinator 为消费分组中的消费者生成的唯一 ID
-                     * @param MemberId coordinator 为消费分组中的消费者生成的唯一 ID
+                     * @param _memberId coordinator 为消费分组中的消费者生成的唯一 ID
+                     * 
                      */
                     void SetMemberId(const std::string& _memberId);
 
                     /**
                      * 判断参数 MemberId 是否已赋值
                      * @return MemberId 是否已赋值
+                     * 
                      */
                     bool MemberIdHasBeenSet() const;
 
                     /**
                      * 获取客户消费者 SDK 自己设置的 client.id 信息
                      * @return ClientId 客户消费者 SDK 自己设置的 client.id 信息
+                     * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置客户消费者 SDK 自己设置的 client.id 信息
-                     * @param ClientId 客户消费者 SDK 自己设置的 client.id 信息
+                     * @param _clientId 客户消费者 SDK 自己设置的 client.id 信息
+                     * 
                      */
                     void SetClientId(const std::string& _clientId);
 
                     /**
                      * 判断参数 ClientId 是否已赋值
                      * @return ClientId 是否已赋值
+                     * 
                      */
                     bool ClientIdHasBeenSet() const;
 
                     /**
                      * 获取一般存储客户的 IP 地址
                      * @return ClientHost 一般存储客户的 IP 地址
+                     * 
                      */
                     std::string GetClientHost() const;
 
                     /**
                      * 设置一般存储客户的 IP 地址
-                     * @param ClientHost 一般存储客户的 IP 地址
+                     * @param _clientHost 一般存储客户的 IP 地址
+                     * 
                      */
                     void SetClientHost(const std::string& _clientHost);
 
                     /**
                      * 判断参数 ClientHost 是否已赋值
                      * @return ClientHost 是否已赋值
+                     * 
                      */
                     bool ClientHostHasBeenSet() const;
 
                     /**
                      * 获取存储着分配给该消费者的 partition 信息
                      * @return Assignment 存储着分配给该消费者的 partition 信息
+                     * 
                      */
                     Assignment GetAssignment() const;
 
                     /**
                      * 设置存储着分配给该消费者的 partition 信息
-                     * @param Assignment 存储着分配给该消费者的 partition 信息
+                     * @param _assignment 存储着分配给该消费者的 partition 信息
+                     * 
                      */
                     void SetAssignment(const Assignment& _assignment);
 
                     /**
                      * 判断参数 Assignment 是否已赋值
                      * @return Assignment 是否已赋值
+                     * 
                      */
                     bool AssignmentHasBeenSet() const;
 

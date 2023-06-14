@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取ServiceMonitors配置
                      * @return ServiceMonitors ServiceMonitors配置
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetServiceMonitors() const;
 
                     /**
                      * 设置ServiceMonitors配置
-                     * @param ServiceMonitors ServiceMonitors配置
+                     * @param _serviceMonitors ServiceMonitors配置
+                     * 
                      */
                     void SetServiceMonitors(const std::vector<PrometheusConfigItem>& _serviceMonitors);
 
                     /**
                      * 判断参数 ServiceMonitors 是否已赋值
                      * @return ServiceMonitors 是否已赋值
+                     * 
                      */
                     bool ServiceMonitorsHasBeenSet() const;
 
                     /**
                      * 获取PodMonitors配置
                      * @return PodMonitors PodMonitors配置
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetPodMonitors() const;
 
                     /**
                      * 设置PodMonitors配置
-                     * @param PodMonitors PodMonitors配置
+                     * @param _podMonitors PodMonitors配置
+                     * 
                      */
                     void SetPodMonitors(const std::vector<PrometheusConfigItem>& _podMonitors);
 
                     /**
                      * 判断参数 PodMonitors 是否已赋值
                      * @return PodMonitors 是否已赋值
+                     * 
                      */
                     bool PodMonitorsHasBeenSet() const;
 
                     /**
                      * 获取prometheus原生Job配置
                      * @return RawJobs prometheus原生Job配置
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRawJobs() const;
 
                     /**
                      * 设置prometheus原生Job配置
-                     * @param RawJobs prometheus原生Job配置
+                     * @param _rawJobs prometheus原生Job配置
+                     * 
                      */
                     void SetRawJobs(const std::vector<PrometheusConfigItem>& _rawJobs);
 
                     /**
                      * 判断参数 RawJobs 是否已赋值
                      * @return RawJobs 是否已赋值
+                     * 
                      */
                     bool RawJobsHasBeenSet() const;
 

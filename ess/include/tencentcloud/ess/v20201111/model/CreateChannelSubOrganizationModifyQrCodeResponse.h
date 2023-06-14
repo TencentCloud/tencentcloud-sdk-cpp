@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取二维码下载链接
                      * @return QrCodeUrl 二维码下载链接
+                     * 
                      */
                     std::string GetQrCodeUrl() const;
 
                     /**
                      * 判断参数 QrCodeUrl 是否已赋值
                      * @return QrCodeUrl 是否已赋值
+                     * 
                      */
                     bool QrCodeUrlHasBeenSet() const;
 
                     /**
                      * 获取二维码失效时间 UNIX 时间戳 精确到秒
                      * @return ExpiredTime 二维码失效时间 UNIX 时间戳 精确到秒
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

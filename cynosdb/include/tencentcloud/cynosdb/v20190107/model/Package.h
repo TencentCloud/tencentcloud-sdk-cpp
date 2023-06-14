@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置AppID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId AppID
+                     * @param _appId AppID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 资源包唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageId 资源包唯一ID
+                     * @param _packageId 资源包唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 资源包名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置资源包名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageName 资源包名称
+                     * @param _packageName 资源包名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 
@@ -120,6 +129,7 @@ CCU-计算资源包，DISK-存储资源包
                      * @return PackageType 资源包类型
 CCU-计算资源包，DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageType() const;
 
@@ -127,15 +137,17 @@ CCU-计算资源包，DISK-存储资源包
                      * 设置资源包类型
 CCU-计算资源包，DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 资源包类型
+                     * @param _packageType 资源包类型
 CCU-计算资源包，DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
@@ -146,6 +158,7 @@ china-中国内地通用，overseas-港澳台及海外通用
                      * @return PackageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageRegion() const;
 
@@ -153,15 +166,17 @@ china-中国内地通用，overseas-港澳台及海外通用
                      * 设置资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageRegion 资源包使用地域
+                     * @param _packageRegion 资源包使用地域
 china-中国内地通用，overseas-港澳台及海外通用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
 
                     /**
                      * 判断参数 PackageRegion 是否已赋值
                      * @return PackageRegion 是否已赋值
+                     * 
                      */
                     bool PackageRegionHasBeenSet() const;
 
@@ -182,6 +197,7 @@ normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -194,7 +210,7 @@ normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源包状态
+                     * @param _status 资源包状态
 creating-创建中；
 using-使用中；
 expired-已过期；
@@ -202,12 +218,14 @@ normal_finish-使用完；
 apply_refund-申请退费中；
 refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -216,20 +234,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageTotalSpec 资源包总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPackageTotalSpec() const;
 
                     /**
                      * 设置资源包总量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageTotalSpec 资源包总量
+                     * @param _packageTotalSpec 资源包总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageTotalSpec(const double& _packageTotalSpec);
 
                     /**
                      * 判断参数 PackageTotalSpec 是否已赋值
                      * @return PackageTotalSpec 是否已赋值
+                     * 
                      */
                     bool PackageTotalSpecHasBeenSet() const;
 
@@ -238,20 +259,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageUsedSpec 资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPackageUsedSpec() const;
 
                     /**
                      * 设置资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageUsedSpec 资源包已使用量
+                     * @param _packageUsedSpec 资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageUsedSpec(const double& _packageUsedSpec);
 
                     /**
                      * 判断参数 PackageUsedSpec 是否已赋值
                      * @return PackageUsedSpec 是否已赋值
+                     * 
                      */
                     bool PackageUsedSpecHasBeenSet() const;
 
@@ -260,20 +284,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasQuota 资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHasQuota() const;
 
                     /**
                      * 设置资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HasQuota 资源包已使用量
+                     * @param _hasQuota 资源包已使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHasQuota(const bool& _hasQuota);
 
                     /**
                      * 判断参数 HasQuota 是否已赋值
                      * @return HasQuota 是否已赋值
+                     * 
                      */
                     bool HasQuotaHasBeenSet() const;
 
@@ -282,20 +309,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindInstanceInfos 绑定实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BindInstanceInfo> GetBindInstanceInfos() const;
 
                     /**
                      * 设置绑定实例信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindInstanceInfos 绑定实例信息
+                     * @param _bindInstanceInfos 绑定实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindInstanceInfos(const std::vector<BindInstanceInfo>& _bindInstanceInfos);
 
                     /**
                      * 判断参数 BindInstanceInfos 是否已赋值
                      * @return BindInstanceInfos 是否已赋值
+                     * 
                      */
                     bool BindInstanceInfosHasBeenSet() const;
 
@@ -304,20 +334,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 生效时间：2022-07-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置生效时间：2022-07-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 生效时间：2022-07-01 00:00:00
+                     * @param _startTime 生效时间：2022-07-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -326,20 +359,23 @@ refund-已退费。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 失效时间：2022-08-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置失效时间：2022-08-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 失效时间：2022-08-01 00:00:00
+                     * @param _expireTime 失效时间：2022-08-01 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

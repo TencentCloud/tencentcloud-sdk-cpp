@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取操作者name
                      * @return OperatorName 操作者name
+                     * 
                      */
                     std::string GetOperatorName() const;
 
                     /**
                      * 设置操作者name
-                     * @param OperatorName 操作者name
+                     * @param _operatorName 操作者name
+                     * 
                      */
                     void SetOperatorName(const std::string& _operatorName);
 
                     /**
                      * 判断参数 OperatorName 是否已赋值
                      * @return OperatorName 是否已赋值
+                     * 
                      */
                     bool OperatorNameHasBeenSet() const;
 
                     /**
                      * 获取项目/工作空间id
                      * @return ProjectId 项目/工作空间id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目/工作空间id
-                     * @param ProjectId 项目/工作空间id
+                     * @param _projectId 项目/工作空间id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟任务标记(跟之前调度接口保持一致默认false)
                      * @return VirtualFlag 虚拟任务标记(跟之前调度接口保持一致默认false)
+                     * 
                      */
                     bool GetVirtualFlag() const;
 
                     /**
                      * 设置虚拟任务标记(跟之前调度接口保持一致默认false)
-                     * @param VirtualFlag 虚拟任务标记(跟之前调度接口保持一致默认false)
+                     * @param _virtualFlag 虚拟任务标记(跟之前调度接口保持一致默认false)
+                     * 
                      */
                     void SetVirtualFlag(const bool& _virtualFlag);
 
                     /**
                      * 判断参数 VirtualFlag 是否已赋值
                      * @return VirtualFlag 是否已赋值
+                     * 
                      */
                     bool VirtualFlagHasBeenSet() const;
 

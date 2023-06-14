@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取注册引擎实例副本信息
                      * @return Replicas 注册引擎实例副本信息
+                     * 
                      */
                     std::vector<ZookeeperReplica> GetReplicas() const;
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 副本个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

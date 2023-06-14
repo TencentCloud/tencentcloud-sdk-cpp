@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务名
+                     * @param _taskName 任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNodeInfoList 实时任务实例节点信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNodeInfo> GetInstanceNodeInfoList() const;
 
                     /**
                      * 设置实时任务实例节点信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceNodeInfoList 实时任务实例节点信息列表
+                     * @param _instanceNodeInfoList 实时任务实例节点信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceNodeInfoList(const std::vector<InstanceNodeInfo>& _instanceNodeInfoList);
 
                     /**
                      * 判断参数 InstanceNodeInfoList 是否已赋值
                      * @return InstanceNodeInfoList 是否已赋值
+                     * 
                      */
                     bool InstanceNodeInfoListHasBeenSet() const;
 

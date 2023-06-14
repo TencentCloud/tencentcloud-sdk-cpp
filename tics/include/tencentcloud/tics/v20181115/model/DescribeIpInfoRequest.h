@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要查询的IP
                      * @return Key 要查询的IP
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置要查询的IP
-                     * @param Key 要查询的IP
+                     * @param _key 要查询的IP
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
                      * @return Option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * 
                      */
                     uint64_t GetOption() const;
 
                     /**
                      * 设置附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
-                     * @param Option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * @param _option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * 
                      */
                     void SetOption(const uint64_t& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
+                     * 
                      */
                     bool OptionHasBeenSet() const;
 

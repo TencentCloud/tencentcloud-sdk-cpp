@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。
                      * @return DiskBackupIds 要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * 
                      */
                     std::vector<std::string> GetDiskBackupIds() const;
 
                     /**
                      * 设置要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。
-                     * @param DiskBackupIds 要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * @param _diskBackupIds 要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。
+                     * 
                      */
                     void SetDiskBackupIds(const std::vector<std::string>& _diskBackupIds);
 
                     /**
                      * 判断参数 DiskBackupIds 是否已赋值
                      * @return DiskBackupIds 是否已赋值
+                     * 
                      */
                     bool DiskBackupIdsHasBeenSet() const;
 
@@ -94,6 +97,7 @@ namespace TencentCloud
 必选：否
 取值：SYSTEM_DISK或DATA_DISK
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -114,7 +118,7 @@ namespace TencentCloud
 必选：否
 取值：SYSTEM_DISK或DATA_DISK
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
-                     * @param Filters 过滤器列表。
+                     * @param _filters 过滤器列表。
 <li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。
 类型：String
 必选：否
@@ -130,48 +134,56 @@ namespace TencentCloud
 必选：否
 取值：SYSTEM_DISK或DATA_DISK
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

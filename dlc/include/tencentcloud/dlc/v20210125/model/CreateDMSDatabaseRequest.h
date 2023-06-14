@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取基础元数据对象
                      * @return Asset 基础元数据对象
+                     * 
                      */
                     Asset GetAsset() const;
 
                     /**
                      * 设置基础元数据对象
-                     * @param Asset 基础元数据对象
+                     * @param _asset 基础元数据对象
+                     * 
                      */
                     void SetAsset(const Asset& _asset);
 
                     /**
                      * 判断参数 Asset 是否已赋值
                      * @return Asset 是否已赋值
+                     * 
                      */
                     bool AssetHasBeenSet() const;
 
                     /**
                      * 获取Schema目录
                      * @return SchemaName Schema目录
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置Schema目录
-                     * @param SchemaName Schema目录
+                     * @param _schemaName Schema目录
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
                     /**
                      * 获取Db存储路径
                      * @return Location Db存储路径
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置Db存储路径
-                     * @param Location Db存储路径
+                     * @param _location Db存储路径
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return Name 数据库名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param Name 数据库名称
+                     * @param _name 数据库名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

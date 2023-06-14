@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取更新后的密码
                      * @return Password 更新后的密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置更新后的密码
-                     * @param Password 更新后的密码
+                     * @param _password 更新后的密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

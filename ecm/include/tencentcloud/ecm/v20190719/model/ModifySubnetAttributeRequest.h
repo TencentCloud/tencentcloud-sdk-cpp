@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取子网实例ID。形如：subnet-pxir56ns。
                      * @return SubnetId 子网实例ID。形如：subnet-pxir56ns。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。形如：subnet-pxir56ns。
-                     * @param SubnetId 子网实例ID。形如：subnet-pxir56ns。
+                     * @param _subnetId 子网实例ID。形如：subnet-pxir56ns。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取子网名称，最大长度不能超过60个字节。
                      * @return SubnetName 子网名称，最大长度不能超过60个字节。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名称，最大长度不能超过60个字节。
-                     * @param SubnetName 子网名称，最大长度不能超过60个字节。
+                     * @param _subnetName 子网名称，最大长度不能超过60个字节。
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取子网是否开启广播。
                      * @return EnableBroadcast 子网是否开启广播。
+                     * 
                      */
                     std::string GetEnableBroadcast() const;
 
                     /**
                      * 设置子网是否开启广播。
-                     * @param EnableBroadcast 子网是否开启广播。
+                     * @param _enableBroadcast 子网是否开启广播。
+                     * 
                      */
                     void SetEnableBroadcast(const std::string& _enableBroadcast);
 
                     /**
                      * 判断参数 EnableBroadcast 是否已赋值
                      * @return EnableBroadcast 是否已赋值
+                     * 
                      */
                     bool EnableBroadcastHasBeenSet() const;
 
                     /**
                      * 获取子网的标签键值
                      * @return Tags 子网的标签键值
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置子网的标签键值
-                     * @param Tags 子网的标签键值
+                     * @param _tags 子网的标签键值
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

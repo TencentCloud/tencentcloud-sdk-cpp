@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取验证成功的根域名数量。
                      * @return SuccessNumber 验证成功的根域名数量。
+                     * 
                      */
                     uint64_t GetSuccessNumber() const;
 
                     /**
                      * 判断参数 SuccessNumber 是否已赋值
                      * @return SuccessNumber 是否已赋值
+                     * 
                      */
                     bool SuccessNumberHasBeenSet() const;
 
                     /**
                      * 获取验证失败的根域名数量。
                      * @return FailNumber 验证失败的根域名数量。
+                     * 
                      */
                     uint64_t GetFailNumber() const;
 
                     /**
                      * 判断参数 FailNumber 是否已赋值
                      * @return FailNumber 是否已赋值
+                     * 
                      */
                     bool FailNumberHasBeenSet() const;
 

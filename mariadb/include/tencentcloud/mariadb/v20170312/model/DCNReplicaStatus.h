@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status DCN 的运行状态，START为正常运行，STOP为暂停，
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置DCN 的运行状态，START为正常运行，STOP为暂停，
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status DCN 的运行状态，START为正常运行，STOP为暂停，
+                     * @param _status DCN 的运行状态，START为正常运行，STOP为暂停，
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取当前延迟情况，取备实例的 master 节点的 delay 值
                      * @return Delay 当前延迟情况，取备实例的 master 节点的 delay 值
+                     * 
                      */
                     int64_t GetDelay() const;
 
                     /**
                      * 设置当前延迟情况，取备实例的 master 节点的 delay 值
-                     * @param Delay 当前延迟情况，取备实例的 master 节点的 delay 值
+                     * @param _delay 当前延迟情况，取备实例的 master 节点的 delay 值
+                     * 
                      */
                     void SetDelay(const int64_t& _delay);
 
                     /**
                      * 判断参数 Delay 是否已赋值
                      * @return Delay 是否已赋值
+                     * 
                      */
                     bool DelayHasBeenSet() const;
 

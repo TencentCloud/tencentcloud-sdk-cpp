@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的预授权规则ID
                      * @return PsaId 创建的预授权规则ID
+                     * 
                      */
                     std::string GetPsaId() const;
 
                     /**
                      * 判断参数 PsaId 是否已赋值
                      * @return PsaId 是否已赋值
+                     * 
                      */
                     bool PsaIdHasBeenSet() const;
 

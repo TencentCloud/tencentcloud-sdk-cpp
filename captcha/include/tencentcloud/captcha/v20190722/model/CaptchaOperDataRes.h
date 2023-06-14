@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperDataLoadTimeUnitArray 验证码加载耗时数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CaptchaOperDataLoadTimeUnit> GetOperDataLoadTimeUnitArray() const;
 
                     /**
                      * 设置验证码加载耗时数据返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperDataLoadTimeUnitArray 验证码加载耗时数据返回
+                     * @param _operDataLoadTimeUnitArray 验证码加载耗时数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperDataLoadTimeUnitArray(const std::vector<CaptchaOperDataLoadTimeUnit>& _operDataLoadTimeUnitArray);
 
                     /**
                      * 判断参数 OperDataLoadTimeUnitArray 是否已赋值
                      * @return OperDataLoadTimeUnitArray 是否已赋值
+                     * 
                      */
                     bool OperDataLoadTimeUnitArrayHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperDataInterceptUnitArray 验证码拦截情况数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CaptchaOperDataInterceptUnit> GetOperDataInterceptUnitArray() const;
 
                     /**
                      * 设置验证码拦截情况数据返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperDataInterceptUnitArray 验证码拦截情况数据返回
+                     * @param _operDataInterceptUnitArray 验证码拦截情况数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperDataInterceptUnitArray(const std::vector<CaptchaOperDataInterceptUnit>& _operDataInterceptUnitArray);
 
                     /**
                      * 判断参数 OperDataInterceptUnitArray 是否已赋值
                      * @return OperDataInterceptUnitArray 是否已赋值
+                     * 
                      */
                     bool OperDataInterceptUnitArrayHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperDataTryTimesUnitArray 验证码尝试次数数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CaptchaOperDataTryTimesUnit> GetOperDataTryTimesUnitArray() const;
 
                     /**
                      * 设置验证码尝试次数数据返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperDataTryTimesUnitArray 验证码尝试次数数据返回
+                     * @param _operDataTryTimesUnitArray 验证码尝试次数数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperDataTryTimesUnitArray(const std::vector<CaptchaOperDataTryTimesUnit>& _operDataTryTimesUnitArray);
 
                     /**
                      * 判断参数 OperDataTryTimesUnitArray 是否已赋值
                      * @return OperDataTryTimesUnitArray 是否已赋值
+                     * 
                      */
                     bool OperDataTryTimesUnitArrayHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperDataTryTimesDistributeUnitArray 验证码尝试次数分布数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CaptchaOperDataTryTimesDistributeUnit> GetOperDataTryTimesDistributeUnitArray() const;
 
                     /**
                      * 设置验证码尝试次数分布数据返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperDataTryTimesDistributeUnitArray 验证码尝试次数分布数据返回
+                     * @param _operDataTryTimesDistributeUnitArray 验证码尝试次数分布数据返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperDataTryTimesDistributeUnitArray(const std::vector<CaptchaOperDataTryTimesDistributeUnit>& _operDataTryTimesDistributeUnitArray);
 
                     /**
                      * 判断参数 OperDataTryTimesDistributeUnitArray 是否已赋值
                      * @return OperDataTryTimesDistributeUnitArray 是否已赋值
+                     * 
                      */
                     bool OperDataTryTimesDistributeUnitArrayHasBeenSet() const;
 

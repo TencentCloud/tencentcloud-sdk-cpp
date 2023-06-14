@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取曲目 Id
                      * @return MusicId 曲目 Id
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 设置曲目 Id
-                     * @param MusicId 曲目 Id
+                     * @param _musicId 曲目 Id
+                     * 
                      */
                     void SetMusicId(const std::string& _musicId);
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 

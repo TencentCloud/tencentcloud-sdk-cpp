@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。
                      * @return EncryptionStatus 设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。
+                     * 
                      */
                     std::string GetEncryptionStatus() const;
 
                     /**
                      * 设置设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。
-                     * @param EncryptionStatus 设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。
+                     * @param _encryptionStatus 设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。
+                     * 
                      */
                     void SetEncryptionStatus(const std::string& _encryptionStatus);
 
                     /**
                      * 判断参数 EncryptionStatus 是否已赋值
                      * @return EncryptionStatus 是否已赋值
+                     * 
                      */
                     bool EncryptionStatusHasBeenSet() const;
 

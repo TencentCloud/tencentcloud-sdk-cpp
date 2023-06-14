@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取ACL规则名
                      * @return RuleName ACL规则名
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置ACL规则名
-                     * @param RuleName ACL规则名
+                     * @param _ruleName ACL规则名
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取ACL规则匹配类型
                      * @return PatternType ACL规则匹配类型
+                     * 
                      */
                     std::string GetPatternType() const;
 
                     /**
                      * 设置ACL规则匹配类型
-                     * @param PatternType ACL规则匹配类型
+                     * @param _patternType ACL规则匹配类型
+                     * 
                      */
                     void SetPatternType(const std::string& _patternType);
 
                     /**
                      * 判断参数 PatternType 是否已赋值
                      * @return PatternType 是否已赋值
+                     * 
                      */
                     bool PatternTypeHasBeenSet() const;
 
                     /**
                      * 获取是否读取简略的ACL规则
                      * @return IsSimplified 是否读取简略的ACL规则
+                     * 
                      */
                     bool GetIsSimplified() const;
 
                     /**
                      * 设置是否读取简略的ACL规则
-                     * @param IsSimplified 是否读取简略的ACL规则
+                     * @param _isSimplified 是否读取简略的ACL规则
+                     * 
                      */
                     void SetIsSimplified(const bool& _isSimplified);
 
                     /**
                      * 判断参数 IsSimplified 是否已赋值
                      * @return IsSimplified 是否已赋值
+                     * 
                      */
                     bool IsSimplifiedHasBeenSet() const;
 

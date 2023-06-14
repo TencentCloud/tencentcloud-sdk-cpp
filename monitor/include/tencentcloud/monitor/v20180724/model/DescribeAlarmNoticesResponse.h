@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取告警通知模板总数
                      * @return TotalCount 告警通知模板总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取告警通知模板列表
                      * @return Notices 告警通知模板列表
+                     * 
                      */
                     std::vector<AlarmNotice> GetNotices() const;
 
                     /**
                      * 判断参数 Notices 是否已赋值
                      * @return Notices 是否已赋值
+                     * 
                      */
                     bool NoticesHasBeenSet() const;
 

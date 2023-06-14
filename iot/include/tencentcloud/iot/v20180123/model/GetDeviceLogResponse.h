@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取设备日志
                      * @return DeviceLog 设备日志
+                     * 
                      */
                     std::vector<DeviceLogEntry> GetDeviceLog() const;
 
                     /**
                      * 判断参数 DeviceLog 是否已赋值
                      * @return DeviceLog 是否已赋值
+                     * 
                      */
                     bool DeviceLogHasBeenSet() const;
 
                     /**
                      * 获取查询游标
                      * @return ScrollId 查询游标
+                     * 
                      */
                     std::string GetScrollId() const;
 
                     /**
                      * 判断参数 ScrollId 是否已赋值
                      * @return ScrollId 是否已赋值
+                     * 
                      */
                     bool ScrollIdHasBeenSet() const;
 
                     /**
                      * 获取游标超时
                      * @return ScrollTimeout 游标超时
+                     * 
                      */
                     uint64_t GetScrollTimeout() const;
 
                     /**
                      * 判断参数 ScrollTimeout 是否已赋值
                      * @return ScrollTimeout 是否已赋值
+                     * 
                      */
                     bool ScrollTimeoutHasBeenSet() const;
 

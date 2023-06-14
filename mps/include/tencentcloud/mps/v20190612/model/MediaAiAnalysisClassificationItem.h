@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取智能分类的类别名称。
                      * @return Classification 智能分类的类别名称。
+                     * 
                      */
                     std::string GetClassification() const;
 
                     /**
                      * 设置智能分类的类别名称。
-                     * @param Classification 智能分类的类别名称。
+                     * @param _classification 智能分类的类别名称。
+                     * 
                      */
                     void SetClassification(const std::string& _classification);
 
                     /**
                      * 判断参数 Classification 是否已赋值
                      * @return Classification 是否已赋值
+                     * 
                      */
                     bool ClassificationHasBeenSet() const;
 
                     /**
                      * 获取智能分类的可信度，取值范围是 0 到 100。
                      * @return Confidence 智能分类的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置智能分类的可信度，取值范围是 0 到 100。
-                     * @param Confidence 智能分类的可信度，取值范围是 0 到 100。
+                     * @param _confidence 智能分类的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

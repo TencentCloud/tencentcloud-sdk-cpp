@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取结束时间戳
                      * @return EndTime 结束时间戳
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间戳
-                     * @param EndTime 结束时间戳
+                     * @param _endTime 结束时间戳
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取起始时间戳
                      * @return StartTime 起始时间戳
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间戳
-                     * @param StartTime 起始时间戳
+                     * @param _startTime 起始时间戳
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 

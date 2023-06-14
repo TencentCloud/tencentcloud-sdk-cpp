@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取规则模版ID。
                      * @return RuleTemplateIds 规则模版ID。
+                     * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置规则模版ID。
-                     * @param RuleTemplateIds 规则模版ID。
+                     * @param _ruleTemplateIds 规则模版ID。
+                     * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
 
                     /**
                      * 判断参数 RuleTemplateIds 是否已赋值
                      * @return RuleTemplateIds 是否已赋值
+                     * 
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 
                     /**
                      * 获取规则模版名称
                      * @return RuleTemplateNames 规则模版名称
+                     * 
                      */
                     std::vector<std::string> GetRuleTemplateNames() const;
 
                     /**
                      * 设置规则模版名称
-                     * @param RuleTemplateNames 规则模版名称
+                     * @param _ruleTemplateNames 规则模版名称
+                     * 
                      */
                     void SetRuleTemplateNames(const std::vector<std::string>& _ruleTemplateNames);
 
                     /**
                      * 判断参数 RuleTemplateNames 是否已赋值
                      * @return RuleTemplateNames 是否已赋值
+                     * 
                      */
                     bool RuleTemplateNamesHasBeenSet() const;
 
                     /**
                      * 获取单次请求返回的数量。默认值20。
                      * @return Limit 单次请求返回的数量。默认值20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次请求返回的数量。默认值20。
-                     * @param Limit 单次请求返回的数量。默认值20。
+                     * @param _limit 单次请求返回的数量。默认值20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值为 0。
                      * @return Offset 偏移量，默认值为 0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值为 0。
-                     * @param Offset 偏移量，默认值为 0。
+                     * @param _offset 偏移量，默认值为 0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取高性能计算集群ID数组。
                      * @return HpcClusterIds 高性能计算集群ID数组。
+                     * 
                      */
                     std::vector<std::string> GetHpcClusterIds() const;
 
                     /**
                      * 设置高性能计算集群ID数组。
-                     * @param HpcClusterIds 高性能计算集群ID数组。
+                     * @param _hpcClusterIds 高性能计算集群ID数组。
+                     * 
                      */
                     void SetHpcClusterIds(const std::vector<std::string>& _hpcClusterIds);
 
                     /**
                      * 判断参数 HpcClusterIds 是否已赋值
                      * @return HpcClusterIds 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdsHasBeenSet() const;
 
                     /**
                      * 获取高性能计算集群名称。
                      * @return Name 高性能计算集群名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高性能计算集群名称。
-                     * @param Name 高性能计算集群名称。
+                     * @param _name 高性能计算集群名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取偏移量, 默认值0。
                      * @return Offset 偏移量, 默认值0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量, 默认值0。
-                     * @param Offset 偏移量, 默认值0。
+                     * @param _offset 偏移量, 默认值0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取本次请求量, 默认值20。
                      * @return Limit 本次请求量, 默认值20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置本次请求量, 默认值20。
-                     * @param Limit 本次请求量, 默认值20。
+                     * @param _limit 本次请求量, 默认值20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

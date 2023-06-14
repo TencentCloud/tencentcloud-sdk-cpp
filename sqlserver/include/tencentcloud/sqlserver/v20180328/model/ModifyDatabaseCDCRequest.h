@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库名数组
                      * @return DBNames 数据库名数组
+                     * 
                      */
                     std::vector<std::string> GetDBNames() const;
 
                     /**
                      * 设置数据库名数组
-                     * @param DBNames 数据库名数组
+                     * @param _dBNames 数据库名数组
+                     * 
                      */
                     void SetDBNames(const std::vector<std::string>& _dBNames);
 
                     /**
                      * 判断参数 DBNames 是否已赋值
                      * @return DBNames 是否已赋值
+                     * 
                      */
                     bool DBNamesHasBeenSet() const;
 
                     /**
                      * 获取开启、关闭数据库CDC功能 enable；开启，disable：关闭
                      * @return ModifyType 开启、关闭数据库CDC功能 enable；开启，disable：关闭
+                     * 
                      */
                     std::string GetModifyType() const;
 
                     /**
                      * 设置开启、关闭数据库CDC功能 enable；开启，disable：关闭
-                     * @param ModifyType 开启、关闭数据库CDC功能 enable；开启，disable：关闭
+                     * @param _modifyType 开启、关闭数据库CDC功能 enable；开启，disable：关闭
+                     * 
                      */
                     void SetModifyType(const std::string& _modifyType);
 
                     /**
                      * 判断参数 ModifyType 是否已赋值
                      * @return ModifyType 是否已赋值
+                     * 
                      */
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

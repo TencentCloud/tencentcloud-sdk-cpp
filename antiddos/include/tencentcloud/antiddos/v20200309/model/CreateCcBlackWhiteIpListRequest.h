@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取IP列表
                      * @return IpList IP列表
+                     * 
                      */
                     std::vector<IpSegment> GetIpList() const;
 
                     /**
                      * 设置IP列表
-                     * @param IpList IP列表
+                     * @param _ipList IP列表
+                     * 
                      */
                     void SetIpList(const std::vector<IpSegment>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 
                     /**
                      * 获取IP类型，取值[black(黑名单IP), white(白名单IP)]
                      * @return Type IP类型，取值[black(黑名单IP), white(白名单IP)]
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置IP类型，取值[black(黑名单IP), white(白名单IP)]
-                     * @param Type IP类型，取值[black(黑名单IP), white(白名单IP)]
+                     * @param _type IP类型，取值[black(黑名单IP), white(白名单IP)]
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Ip地址
                      * @return Ip Ip地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Ip地址
-                     * @param Ip Ip地址
+                     * @param _ip Ip地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取协议
                      * @return Protocol 协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
-                     * @param Protocol 协议
+                     * @param _protocol 协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

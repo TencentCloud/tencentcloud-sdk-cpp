@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldPath k8s 的 FieldPath
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFieldPath() const;
 
                     /**
                      * 设置k8s 的 FieldPath
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldPath k8s 的 FieldPath
+                     * @param _fieldPath k8s 的 FieldPath
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldPath(const std::string& _fieldPath);
 
                     /**
                      * 判断参数 FieldPath 是否已赋值
                      * @return FieldPath 是否已赋值
+                     * 
                      */
                     bool FieldPathHasBeenSet() const;
 

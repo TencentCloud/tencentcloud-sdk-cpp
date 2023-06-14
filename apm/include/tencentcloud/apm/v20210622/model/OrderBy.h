@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取需要排序的字段
                      * @return Key 需要排序的字段
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置需要排序的字段
-                     * @param Key 需要排序的字段
+                     * @param _key 需要排序的字段
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取顺序排序/倒序排序
                      * @return Value 顺序排序/倒序排序
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置顺序排序/倒序排序
-                     * @param Value 顺序排序/倒序排序
+                     * @param _value 顺序排序/倒序排序
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

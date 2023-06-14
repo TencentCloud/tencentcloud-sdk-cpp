@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopNo() const;
 
                     /**
                      * 设置门店编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopNo 门店编号
+                     * @param _shopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopNo(const std::string& _shopNo);
 
                     /**
                      * 判断参数 ShopNo 是否已赋值
                      * @return ShopNo 是否已赋值
+                     * 
                      */
                     bool ShopNoHasBeenSet() const;
 

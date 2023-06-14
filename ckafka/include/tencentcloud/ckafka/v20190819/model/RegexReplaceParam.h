@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取正则表达式
                      * @return Regex 正则表达式
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置正则表达式
-                     * @param Regex 正则表达式
+                     * @param _regex 正则表达式
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
                     /**
                      * 获取替换新值
                      * @return NewValue 替换新值
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置替换新值
-                     * @param NewValue 替换新值
+                     * @param _newValue 替换新值
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 

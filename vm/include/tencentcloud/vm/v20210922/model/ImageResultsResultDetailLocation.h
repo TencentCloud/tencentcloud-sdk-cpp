@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return X x坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置x坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param X x坐标
+                     * @param _x x坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetX(const double& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Y y坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置y坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Y y坐标
+                     * @param _y y坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetY(const double& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 宽度
+                     * @param _width 宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 高度
+                     * @param _height 高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rotate 旋转角度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRotate() const;
 
                     /**
                      * 设置旋转角度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rotate 旋转角度
+                     * @param _rotate 旋转角度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRotate(const double& _rotate);
 
                     /**
                      * 判断参数 Rotate 是否已赋值
                      * @return Rotate 是否已赋值
+                     * 
                      */
                     bool RotateHasBeenSet() const;
 

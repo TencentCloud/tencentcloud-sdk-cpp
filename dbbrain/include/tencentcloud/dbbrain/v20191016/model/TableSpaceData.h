@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取表名。
                      * @return TableName 表名。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名。
-                     * @param TableName 表名。
+                     * @param _tableName 表名。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取库名。
                      * @return TableSchema 库名。
+                     * 
                      */
                     std::string GetTableSchema() const;
 
                     /**
                      * 设置库名。
-                     * @param TableSchema 库名。
+                     * @param _tableSchema 库名。
+                     * 
                      */
                     void SetTableSchema(const std::string& _tableSchema);
 
                     /**
                      * 判断参数 TableSchema 是否已赋值
                      * @return TableSchema 是否已赋值
+                     * 
                      */
                     bool TableSchemaHasBeenSet() const;
 
                     /**
                      * 获取库表的存储引擎。
                      * @return Engine 库表的存储引擎。
+                     * 
                      */
                     std::string GetEngine() const;
 
                     /**
                      * 设置库表的存储引擎。
-                     * @param Engine 库表的存储引擎。
+                     * @param _engine 库表的存储引擎。
+                     * 
                      */
                     void SetEngine(const std::string& _engine);
 
                     /**
                      * 判断参数 Engine 是否已赋值
                      * @return Engine 是否已赋值
+                     * 
                      */
                     bool EngineHasBeenSet() const;
 
                     /**
                      * 获取数据空间（MB）。
                      * @return DataLength 数据空间（MB）。
+                     * 
                      */
                     double GetDataLength() const;
 
                     /**
                      * 设置数据空间（MB）。
-                     * @param DataLength 数据空间（MB）。
+                     * @param _dataLength 数据空间（MB）。
+                     * 
                      */
                     void SetDataLength(const double& _dataLength);
 
                     /**
                      * 判断参数 DataLength 是否已赋值
                      * @return DataLength 是否已赋值
+                     * 
                      */
                     bool DataLengthHasBeenSet() const;
 
                     /**
                      * 获取索引空间（MB）。
                      * @return IndexLength 索引空间（MB）。
+                     * 
                      */
                     double GetIndexLength() const;
 
                     /**
                      * 设置索引空间（MB）。
-                     * @param IndexLength 索引空间（MB）。
+                     * @param _indexLength 索引空间（MB）。
+                     * 
                      */
                     void SetIndexLength(const double& _indexLength);
 
                     /**
                      * 判断参数 IndexLength 是否已赋值
                      * @return IndexLength 是否已赋值
+                     * 
                      */
                     bool IndexLengthHasBeenSet() const;
 
                     /**
                      * 获取碎片空间（MB）。
                      * @return DataFree 碎片空间（MB）。
+                     * 
                      */
                     double GetDataFree() const;
 
                     /**
                      * 设置碎片空间（MB）。
-                     * @param DataFree 碎片空间（MB）。
+                     * @param _dataFree 碎片空间（MB）。
+                     * 
                      */
                     void SetDataFree(const double& _dataFree);
 
                     /**
                      * 判断参数 DataFree 是否已赋值
                      * @return DataFree 是否已赋值
+                     * 
                      */
                     bool DataFreeHasBeenSet() const;
 
                     /**
                      * 获取总使用空间（MB）。
                      * @return TotalLength 总使用空间（MB）。
+                     * 
                      */
                     double GetTotalLength() const;
 
                     /**
                      * 设置总使用空间（MB）。
-                     * @param TotalLength 总使用空间（MB）。
+                     * @param _totalLength 总使用空间（MB）。
+                     * 
                      */
                     void SetTotalLength(const double& _totalLength);
 
                     /**
                      * 判断参数 TotalLength 是否已赋值
                      * @return TotalLength 是否已赋值
+                     * 
                      */
                     bool TotalLengthHasBeenSet() const;
 
                     /**
                      * 获取碎片率（%）。
                      * @return FragRatio 碎片率（%）。
+                     * 
                      */
                     double GetFragRatio() const;
 
                     /**
                      * 设置碎片率（%）。
-                     * @param FragRatio 碎片率（%）。
+                     * @param _fragRatio 碎片率（%）。
+                     * 
                      */
                     void SetFragRatio(const double& _fragRatio);
 
                     /**
                      * 判断参数 FragRatio 是否已赋值
                      * @return FragRatio 是否已赋值
+                     * 
                      */
                     bool FragRatioHasBeenSet() const;
 
                     /**
                      * 获取行数。
                      * @return TableRows 行数。
+                     * 
                      */
                     int64_t GetTableRows() const;
 
                     /**
                      * 设置行数。
-                     * @param TableRows 行数。
+                     * @param _tableRows 行数。
+                     * 
                      */
                     void SetTableRows(const int64_t& _tableRows);
 
                     /**
                      * 判断参数 TableRows 是否已赋值
                      * @return TableRows 是否已赋值
+                     * 
                      */
                     bool TableRowsHasBeenSet() const;
 
                     /**
                      * 获取表对应的独立物理文件大小（MB）。
                      * @return PhysicalFileSize 表对应的独立物理文件大小（MB）。
+                     * 
                      */
                     double GetPhysicalFileSize() const;
 
                     /**
                      * 设置表对应的独立物理文件大小（MB）。
-                     * @param PhysicalFileSize 表对应的独立物理文件大小（MB）。
+                     * @param _physicalFileSize 表对应的独立物理文件大小（MB）。
+                     * 
                      */
                     void SetPhysicalFileSize(const double& _physicalFileSize);
 
                     /**
                      * 判断参数 PhysicalFileSize 是否已赋值
                      * @return PhysicalFileSize 是否已赋值
+                     * 
                      */
                     bool PhysicalFileSizeHasBeenSet() const;
 

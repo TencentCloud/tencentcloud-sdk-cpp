@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取新增模式下接入的vpc列表
                      * @return VpcList 新增模式下接入的vpc列表
+                     * 
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
                      * 设置新增模式下接入的vpc列表
-                     * @param VpcList 新增模式下接入的vpc列表
+                     * @param _vpcList 新增模式下接入的vpc列表
+                     * 
                      */
                     void SetVpcList(const std::vector<std::string>& _vpcList);
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 
                     /**
                      * 获取新增模式下绑定的出口弹性公网ip列表，其中Eips和AddCount至少传递一个。
                      * @return Eips 新增模式下绑定的出口弹性公网ip列表，其中Eips和AddCount至少传递一个。
+                     * 
                      */
                     std::vector<std::string> GetEips() const;
 
                     /**
                      * 设置新增模式下绑定的出口弹性公网ip列表，其中Eips和AddCount至少传递一个。
-                     * @param Eips 新增模式下绑定的出口弹性公网ip列表，其中Eips和AddCount至少传递一个。
+                     * @param _eips 新增模式下绑定的出口弹性公网ip列表，其中Eips和AddCount至少传递一个。
+                     * 
                      */
                     void SetEips(const std::vector<std::string>& _eips);
 
                     /**
                      * 判断参数 Eips 是否已赋值
                      * @return Eips 是否已赋值
+                     * 
                      */
                     bool EipsHasBeenSet() const;
 
                     /**
                      * 获取新增模式下新增绑定的出口弹性公网ip个数，其中Eips和AddCount至少传递一个。
                      * @return AddCount 新增模式下新增绑定的出口弹性公网ip个数，其中Eips和AddCount至少传递一个。
+                     * 
                      */
                     int64_t GetAddCount() const;
 
                     /**
                      * 设置新增模式下新增绑定的出口弹性公网ip个数，其中Eips和AddCount至少传递一个。
-                     * @param AddCount 新增模式下新增绑定的出口弹性公网ip个数，其中Eips和AddCount至少传递一个。
+                     * @param _addCount 新增模式下新增绑定的出口弹性公网ip个数，其中Eips和AddCount至少传递一个。
+                     * 
                      */
                     void SetAddCount(const int64_t& _addCount);
 
                     /**
                      * 判断参数 AddCount 是否已赋值
                      * @return AddCount 是否已赋值
+                     * 
                      */
                     bool AddCountHasBeenSet() const;
 

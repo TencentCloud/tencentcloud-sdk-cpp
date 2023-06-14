@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取场景图
                      * @return ScenePictureURL 场景图
+                     * 
                      */
                     std::string GetScenePictureURL() const;
 
                     /**
                      * 设置场景图
-                     * @param ScenePictureURL 场景图
+                     * @param _scenePictureURL 场景图
+                     * 
                      */
                     void SetScenePictureURL(const std::string& _scenePictureURL);
 
                     /**
                      * 判断参数 ScenePictureURL 是否已赋值
                      * @return ScenePictureURL 是否已赋值
+                     * 
                      */
                     bool ScenePictureURLHasBeenSet() const;
 
                     /**
                      * 获取抓拍头像左上角X坐标在场景图中的像素点位置
                      * @return HeadX 抓拍头像左上角X坐标在场景图中的像素点位置
+                     * 
                      */
                     int64_t GetHeadX() const;
 
                     /**
                      * 设置抓拍头像左上角X坐标在场景图中的像素点位置
-                     * @param HeadX 抓拍头像左上角X坐标在场景图中的像素点位置
+                     * @param _headX 抓拍头像左上角X坐标在场景图中的像素点位置
+                     * 
                      */
                     void SetHeadX(const int64_t& _headX);
 
                     /**
                      * 判断参数 HeadX 是否已赋值
                      * @return HeadX 是否已赋值
+                     * 
                      */
                     bool HeadXHasBeenSet() const;
 
                     /**
                      * 获取抓拍头像左上角Y坐标在场景图中的像素点位置
                      * @return HeadY 抓拍头像左上角Y坐标在场景图中的像素点位置
+                     * 
                      */
                     int64_t GetHeadY() const;
 
                     /**
                      * 设置抓拍头像左上角Y坐标在场景图中的像素点位置
-                     * @param HeadY 抓拍头像左上角Y坐标在场景图中的像素点位置
+                     * @param _headY 抓拍头像左上角Y坐标在场景图中的像素点位置
+                     * 
                      */
                     void SetHeadY(const int64_t& _headY);
 
                     /**
                      * 判断参数 HeadY 是否已赋值
                      * @return HeadY 是否已赋值
+                     * 
                      */
                     bool HeadYHasBeenSet() const;
 
                     /**
                      * 获取抓拍头像在场景图中占有的像素宽度
                      * @return HeadWidth 抓拍头像在场景图中占有的像素宽度
+                     * 
                      */
                     int64_t GetHeadWidth() const;
 
                     /**
                      * 设置抓拍头像在场景图中占有的像素宽度
-                     * @param HeadWidth 抓拍头像在场景图中占有的像素宽度
+                     * @param _headWidth 抓拍头像在场景图中占有的像素宽度
+                     * 
                      */
                     void SetHeadWidth(const int64_t& _headWidth);
 
                     /**
                      * 判断参数 HeadWidth 是否已赋值
                      * @return HeadWidth 是否已赋值
+                     * 
                      */
                     bool HeadWidthHasBeenSet() const;
 
                     /**
                      * 获取抓拍头像在场景图中占有的像素高度
                      * @return HeadHeight 抓拍头像在场景图中占有的像素高度
+                     * 
                      */
                     int64_t GetHeadHeight() const;
 
                     /**
                      * 设置抓拍头像在场景图中占有的像素高度
-                     * @param HeadHeight 抓拍头像在场景图中占有的像素高度
+                     * @param _headHeight 抓拍头像在场景图中占有的像素高度
+                     * 
                      */
                     void SetHeadHeight(const int64_t& _headHeight);
 
                     /**
                      * 判断参数 HeadHeight 是否已赋值
                      * @return HeadHeight 是否已赋值
+                     * 
                      */
                     bool HeadHeightHasBeenSet() const;
 

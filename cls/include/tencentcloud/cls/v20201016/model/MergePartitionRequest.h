@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取合并的PartitionId
                      * @return PartitionId 合并的PartitionId
+                     * 
                      */
                     int64_t GetPartitionId() const;
 
                     /**
                      * 设置合并的PartitionId
-                     * @param PartitionId 合并的PartitionId
+                     * @param _partitionId 合并的PartitionId
+                     * 
                      */
                     void SetPartitionId(const int64_t& _partitionId);
 
                     /**
                      * 判断参数 PartitionId 是否已赋值
                      * @return PartitionId 是否已赋值
+                     * 
                      */
                     bool PartitionIdHasBeenSet() const;
 

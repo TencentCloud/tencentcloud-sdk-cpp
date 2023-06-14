@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916
                      * @return AbnormalEventId 异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916
+                     * 
                      */
                     uint64_t GetAbnormalEventId() const;
 
                     /**
                      * 设置异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916
-                     * @param AbnormalEventId 异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916
+                     * @param _abnormalEventId 异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916
+                     * 
                      */
                     void SetAbnormalEventId(const uint64_t& _abnormalEventId);
 
                     /**
                      * 判断参数 AbnormalEventId 是否已赋值
                      * @return AbnormalEventId 是否已赋值
+                     * 
                      */
                     bool AbnormalEventIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerId 远端用户ID,""：表示异常事件不是由远端用户产生
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPeerId() const;
 
                     /**
                      * 设置远端用户ID,""：表示异常事件不是由远端用户产生
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeerId 远端用户ID,""：表示异常事件不是由远端用户产生
+                     * @param _peerId 远端用户ID,""：表示异常事件不是由远端用户产生
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeerId(const std::string& _peerId);
 
                     /**
                      * 判断参数 PeerId 是否已赋值
                      * @return PeerId 是否已赋值
+                     * 
                      */
                     bool PeerIdHasBeenSet() const;
 

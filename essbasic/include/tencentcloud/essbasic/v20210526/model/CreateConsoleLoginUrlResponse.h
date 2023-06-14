@@ -56,36 +56,42 @@ namespace TencentCloud
 3. 若企业认证完成且员工认证完成后，重新获取H5/APP的链接只要在有效期内（一年）都可以访问
 4. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）
 5. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
+                     * 
                      */
                     std::string GetConsoleUrl() const;
 
                     /**
                      * 判断参数 ConsoleUrl 是否已赋值
                      * @return ConsoleUrl 是否已赋值
+                     * 
                      */
                     bool ConsoleUrlHasBeenSet() const;
 
                     /**
                      * 获取子客企业是否已开通腾讯电子签，true-是，false-否
                      * @return IsActivated 子客企业是否已开通腾讯电子签，true-是，false-否
+                     * 
                      */
                     bool GetIsActivated() const;
 
                     /**
                      * 判断参数 IsActivated 是否已赋值
                      * @return IsActivated 是否已赋值
+                     * 
                      */
                     bool IsActivatedHasBeenSet() const;
 
                     /**
                      * 获取当前经办人是否已认证（false:未认证 true:已认证）
                      * @return ProxyOperatorIsVerified 当前经办人是否已认证（false:未认证 true:已认证）
+                     * 
                      */
                     bool GetProxyOperatorIsVerified() const;
 
                     /**
                      * 判断参数 ProxyOperatorIsVerified 是否已赋值
                      * @return ProxyOperatorIsVerified 是否已赋值
+                     * 
                      */
                     bool ProxyOperatorIsVerifiedHasBeenSet() const;
 

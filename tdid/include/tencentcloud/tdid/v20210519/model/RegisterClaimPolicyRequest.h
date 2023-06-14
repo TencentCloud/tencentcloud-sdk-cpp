@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Cpt索引
                      * @return CptIndex Cpt索引
+                     * 
                      */
                     uint64_t GetCptIndex() const;
 
                     /**
                      * 设置Cpt索引
-                     * @param CptIndex Cpt索引
+                     * @param _cptIndex Cpt索引
+                     * 
                      */
                     void SetCptIndex(const uint64_t& _cptIndex);
 
                     /**
                      * 判断参数 CptIndex 是否已赋值
                      * @return CptIndex 是否已赋值
+                     * 
                      */
                     bool CptIndexHasBeenSet() const;
 
                     /**
                      * 获取披露策略
                      * @return Policy 披露策略
+                     * 
                      */
                     std::string GetPolicy() const;
 
                     /**
                      * 设置披露策略
-                     * @param Policy 披露策略
+                     * @param _policy 披露策略
+                     * 
                      */
                     void SetPolicy(const std::string& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 

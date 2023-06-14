@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取ProjectId 值
                      * @return ProjectId ProjectId 值
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置ProjectId 值
-                     * @param ProjectId ProjectId 值
+                     * @param _projectId ProjectId 值
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间，时间戳到秒
                      * @return BeginDate 开始时间，时间戳到秒
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置开始时间，时间戳到秒
-                     * @param BeginDate 开始时间，时间戳到秒
+                     * @param _beginDate 开始时间，时间戳到秒
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取结束时间，时间戳到秒
                      * @return EndDate 结束时间，时间戳到秒
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束时间，时间戳到秒
-                     * @param EndDate 结束时间，时间戳到秒
+                     * @param _endDate 结束时间，时间戳到秒
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

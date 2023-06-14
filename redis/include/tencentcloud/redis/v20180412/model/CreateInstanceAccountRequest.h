@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取子账号名称
                      * @return AccountName 子账号名称
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置子账号名称
-                     * @param AccountName 子账号名称
+                     * @param _accountName 子账号名称
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
     b.大写字母A-Z
     c.数字0-9
     d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
+                     * 
                      */
                     std::string GetAccountPassword() const;
 
@@ -104,73 +111,84 @@ namespace TencentCloud
     b.大写字母A-Z
     c.数字0-9
     d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
-                     * @param AccountPassword 1.长度8-30位,推荐使用12位以上的密码
+                     * @param _accountPassword 1.长度8-30位,推荐使用12位以上的密码
 2.不能以"/"开头
 3.至少包含两项
     a.小写字母a-z
     b.大写字母A-Z
     c.数字0-9
     d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
+                     * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
                     /**
                      * 判断参数 AccountPassword 是否已赋值
                      * @return AccountPassword 是否已赋值
+                     * 
                      */
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
                      * 获取路由策略：填写master或者replication，表示主节点或者从节点
                      * @return ReadonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
                      * 设置路由策略：填写master或者replication，表示主节点或者从节点
-                     * @param ReadonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * @param _readonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
 
                     /**
                      * 判断参数 ReadonlyPolicy 是否已赋值
                      * @return ReadonlyPolicy 是否已赋值
+                     * 
                      */
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
                      * 获取读写策略：填写r、rw，表示只读、读写
                      * @return Privilege 读写策略：填写r、rw，表示只读、读写
+                     * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置读写策略：填写r、rw，表示只读、读写
-                     * @param Privilege 读写策略：填写r、rw，表示只读、读写
+                     * @param _privilege 读写策略：填写r、rw，表示只读、读写
+                     * 
                      */
                     void SetPrivilege(const std::string& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 
                     /**
                      * 获取子账号描述信息
                      * @return Remark 子账号描述信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置子账号描述信息
-                     * @param Remark 子账号描述信息
+                     * @param _remark 子账号描述信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

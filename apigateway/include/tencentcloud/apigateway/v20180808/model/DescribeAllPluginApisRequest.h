@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取要查询的服务ID。
                      * @return ServiceId 要查询的服务ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置要查询的服务ID。
-                     * @param ServiceId 要查询的服务ID。
+                     * @param _serviceId 要查询的服务ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取要查询的插件ID。
                      * @return PluginId 要查询的插件ID。
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置要查询的插件ID。
-                     * @param PluginId 要查询的插件ID。
+                     * @param _pluginId 要查询的插件ID。
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 
                     /**
                      * 获取环境信息。
                      * @return EnvironmentName 环境信息。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境信息。
-                     * @param EnvironmentName 环境信息。
+                     * @param _environmentName 环境信息。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例参数列表
                      * @return ParamsItems 实例参数列表
+                     * 
                      */
                     std::vector<ParamItemDetail> GetParamsItems() const;
 
                     /**
                      * 设置实例参数列表
-                     * @param ParamsItems 实例参数列表
+                     * @param _paramsItems 实例参数列表
+                     * 
                      */
                     void SetParamsItems(const std::vector<ParamItemDetail>& _paramsItems);
 
                     /**
                      * 判断参数 ParamsItems 是否已赋值
                      * @return ParamsItems 是否已赋值
+                     * 
                      */
                     bool ParamsItemsHasBeenSet() const;
 

@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 符合条件的用户列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<User> GetUsers() const;
 
                     /**
                      * 设置符合条件的用户列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Users 符合条件的用户列表
+                     * @param _users 符合条件的用户列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsers(const std::vector<User>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取符合条件的总用户数
                      * @return TotalCount 符合条件的总用户数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的总用户数
-                     * @param TotalCount 符合条件的总用户数
+                     * @param _totalCount 符合条件的总用户数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

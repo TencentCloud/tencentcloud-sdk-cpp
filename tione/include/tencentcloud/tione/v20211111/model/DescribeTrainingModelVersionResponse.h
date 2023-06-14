@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取模型版本
                      * @return TrainingModelVersion 模型版本
+                     * 
                      */
                     TrainingModelVersionDTO GetTrainingModelVersion() const;
 
                     /**
                      * 判断参数 TrainingModelVersion 是否已赋值
                      * @return TrainingModelVersion 是否已赋值
+                     * 
                      */
                     bool TrainingModelVersionHasBeenSet() const;
 

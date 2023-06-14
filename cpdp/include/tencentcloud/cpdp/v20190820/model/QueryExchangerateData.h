@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取汇率
                      * @return Rate 汇率
+                     * 
                      */
                     std::string GetRate() const;
 
                     /**
                      * 设置汇率
-                     * @param Rate 汇率
+                     * @param _rate 汇率
+                     * 
                      */
                     void SetRate(const std::string& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取源币种
                      * @return SourceCurrency 源币种
+                     * 
                      */
                     std::string GetSourceCurrency() const;
 
                     /**
                      * 设置源币种
-                     * @param SourceCurrency 源币种
+                     * @param _sourceCurrency 源币种
+                     * 
                      */
                     void SetSourceCurrency(const std::string& _sourceCurrency);
 
                     /**
                      * 判断参数 SourceCurrency 是否已赋值
                      * @return SourceCurrency 是否已赋值
+                     * 
                      */
                     bool SourceCurrencyHasBeenSet() const;
 
                     /**
                      * 获取目的币种
                      * @return TargetCurrency 目的币种
+                     * 
                      */
                     std::string GetTargetCurrency() const;
 
                     /**
                      * 设置目的币种
-                     * @param TargetCurrency 目的币种
+                     * @param _targetCurrency 目的币种
+                     * 
                      */
                     void SetTargetCurrency(const std::string& _targetCurrency);
 
                     /**
                      * 判断参数 TargetCurrency 是否已赋值
                      * @return TargetCurrency 是否已赋值
+                     * 
                      */
                     bool TargetCurrencyHasBeenSet() const;
 
                     /**
                      * 获取汇率时间
                      * @return RateTime 汇率时间
+                     * 
                      */
                     std::string GetRateTime() const;
 
                     /**
                      * 设置汇率时间
-                     * @param RateTime 汇率时间
+                     * @param _rateTime 汇率时间
+                     * 
                      */
                     void SetRateTime(const std::string& _rateTime);
 
                     /**
                      * 判断参数 RateTime 是否已赋值
                      * @return RateTime 是否已赋值
+                     * 
                      */
                     bool RateTimeHasBeenSet() const;
 
                     /**
                      * 获取基准币种
                      * @return BaseCurrency 基准币种
+                     * 
                      */
                     std::string GetBaseCurrency() const;
 
                     /**
                      * 设置基准币种
-                     * @param BaseCurrency 基准币种
+                     * @param _baseCurrency 基准币种
+                     * 
                      */
                     void SetBaseCurrency(const std::string& _baseCurrency);
 
                     /**
                      * 判断参数 BaseCurrency 是否已赋值
                      * @return BaseCurrency 是否已赋值
+                     * 
                      */
                     bool BaseCurrencyHasBeenSet() const;
 

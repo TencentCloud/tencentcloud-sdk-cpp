@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取客户端通过SDK获取的设备Token
                      * @return DeviceToken 客户端通过SDK获取的设备Token
+                     * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
                      * 设置客户端通过SDK获取的设备Token
-                     * @param DeviceToken 客户端通过SDK获取的设备Token
+                     * @param _deviceToken 客户端通过SDK获取的设备Token
+                     * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
 
                     /**
                      * 判断参数 DeviceToken 是否已赋值
                      * @return DeviceToken 是否已赋值
+                     * 
                      */
                     bool DeviceTokenHasBeenSet() const;
 

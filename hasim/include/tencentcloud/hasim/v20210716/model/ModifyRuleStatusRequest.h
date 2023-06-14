@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自动化规则ID
                      * @return RuleID 自动化规则ID
+                     * 
                      */
                     uint64_t GetRuleID() const;
 
                     /**
                      * 设置自动化规则ID
-                     * @param RuleID 自动化规则ID
+                     * @param _ruleID 自动化规则ID
+                     * 
                      */
                     void SetRuleID(const uint64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取是否激活
                      * @return IsActive 是否激活
+                     * 
                      */
                     bool GetIsActive() const;
 
                     /**
                      * 设置是否激活
-                     * @param IsActive 是否激活
+                     * @param _isActive 是否激活
+                     * 
                      */
                     void SetIsActive(const bool& _isActive);
 
                     /**
                      * 判断参数 IsActive 是否已赋值
                      * @return IsActive 是否已赋值
+                     * 
                      */
                     bool IsActiveHasBeenSet() const;
 

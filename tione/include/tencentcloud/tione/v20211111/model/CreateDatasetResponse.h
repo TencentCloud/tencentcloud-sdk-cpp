@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasetId 数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
                      * 判断参数 DatasetId 是否已赋值
                      * @return DatasetId 是否已赋值
+                     * 
                      */
                     bool DatasetIdHasBeenSet() const;
 

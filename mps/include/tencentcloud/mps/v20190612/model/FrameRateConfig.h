@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
-                     * @param Switch 能力配置开关，可选值：
+                     * @param _switch 能力配置开关，可选值：
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
 默认值：ON。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -85,6 +88,7 @@ namespace TencentCloud
 默认值 0。
 注意：对于转码，该参数会覆盖 VideoTemplate 内部的 Fps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFps() const;
 
@@ -93,16 +97,18 @@ namespace TencentCloud
 默认值 0。
 注意：对于转码，该参数会覆盖 VideoTemplate 内部的 Fps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fps 帧率，取值范围：[0, 100]，单位：Hz。
+                     * @param _fps 帧率，取值范围：[0, 100]，单位：Hz。
 默认值 0。
 注意：对于转码，该参数会覆盖 VideoTemplate 内部的 Fps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFps(const uint64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 

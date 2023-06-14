@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询CMK的ID列表，批量查询一次最多支持100个KeyId
                      * @return KeyIds 查询CMK的ID列表，批量查询一次最多支持100个KeyId
+                     * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
                      * 设置查询CMK的ID列表，批量查询一次最多支持100个KeyId
-                     * @param KeyIds 查询CMK的ID列表，批量查询一次最多支持100个KeyId
+                     * @param _keyIds 查询CMK的ID列表，批量查询一次最多支持100个KeyId
+                     * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
 
                     /**
                      * 判断参数 KeyIds 是否已赋值
                      * @return KeyIds 是否已赋值
+                     * 
                      */
                     bool KeyIdsHasBeenSet() const;
 

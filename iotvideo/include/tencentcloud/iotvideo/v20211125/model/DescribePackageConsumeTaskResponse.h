@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文件下载的url，文件详情是套餐包消耗详情
                      * @return URL 文件下载的url，文件详情是套餐包消耗详情
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 

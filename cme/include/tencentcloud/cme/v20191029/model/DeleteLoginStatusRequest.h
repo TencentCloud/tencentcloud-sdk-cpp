@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取用户 Id 列表，N 从 0 开始取值，最大 19。
                      * @return UserIds 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置用户 Id 列表，N 从 0 开始取值，最大 19。
-                     * @param UserIds 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * @param _userIds 用户 Id 列表，N 从 0 开始取值，最大 19。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

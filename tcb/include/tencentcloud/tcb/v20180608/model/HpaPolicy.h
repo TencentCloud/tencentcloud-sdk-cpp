@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyType 策略类型
+                     * @param _policyType 策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyThreshold 策略阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPolicyThreshold() const;
 
                     /**
                      * 设置策略阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyThreshold 策略阈值
+                     * @param _policyThreshold 策略阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyThreshold(const int64_t& _policyThreshold);
 
                     /**
                      * 判断参数 PolicyThreshold 是否已赋值
                      * @return PolicyThreshold 是否已赋值
+                     * 
                      */
                     bool PolicyThresholdHasBeenSet() const;
 

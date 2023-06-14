@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。
                      * @return Ipv6CidrBlock 分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。
+                     * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 判断参数 Ipv6CidrBlock 是否已赋值
                      * @return Ipv6CidrBlock 是否已赋值
+                     * 
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 

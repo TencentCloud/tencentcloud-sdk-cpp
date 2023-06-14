@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 回源跟随配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置回源跟随配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 回源跟随配置开关，取值有：
+                     * @param _switch 回源跟随配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectConfig 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RedirectConfig GetRedirectConfig() const;
 
                     /**
                      * 设置自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectConfig 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+                     * @param _redirectConfig 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectConfig(const RedirectConfig& _redirectConfig);
 
                     /**
                      * 判断参数 RedirectConfig 是否已赋值
                      * @return RedirectConfig 是否已赋值
+                     * 
                      */
                     bool RedirectConfigHasBeenSet() const;
 

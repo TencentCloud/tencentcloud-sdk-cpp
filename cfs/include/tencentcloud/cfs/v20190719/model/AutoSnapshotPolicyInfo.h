@@ -50,234 +50,273 @@ namespace TencentCloud
                     /**
                      * 获取快照策略ID
                      * @return AutoSnapshotPolicyId 快照策略ID
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略ID
-                     * @param AutoSnapshotPolicyId 快照策略ID
+                     * @param _autoSnapshotPolicyId 快照策略ID
+                     * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyId 是否已赋值
                      * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取快照策略ID
                      * @return PolicyName 快照策略ID
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置快照策略ID
-                     * @param PolicyName 快照策略ID
+                     * @param _policyName 快照策略ID
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取快照策略创建时间
                      * @return CreationTime 快照策略创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置快照策略创建时间
-                     * @param CreationTime 快照策略创建时间
+                     * @param _creationTime 快照策略创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取关联的文件系统个数
                      * @return FileSystemNums 关联的文件系统个数
+                     * 
                      */
                     uint64_t GetFileSystemNums() const;
 
                     /**
                      * 设置关联的文件系统个数
-                     * @param FileSystemNums 关联的文件系统个数
+                     * @param _fileSystemNums 关联的文件系统个数
+                     * 
                      */
                     void SetFileSystemNums(const uint64_t& _fileSystemNums);
 
                     /**
                      * 判断参数 FileSystemNums 是否已赋值
                      * @return FileSystemNums 是否已赋值
+                     * 
                      */
                     bool FileSystemNumsHasBeenSet() const;
 
                     /**
                      * 获取快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
                      * @return DayOfWeek 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
+                     * 
                      */
                     std::string GetDayOfWeek() const;
 
                     /**
                      * 设置快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
-                     * @param DayOfWeek 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
+                     * @param _dayOfWeek 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
+                     * 
                      */
                     void SetDayOfWeek(const std::string& _dayOfWeek);
 
                     /**
                      * 判断参数 DayOfWeek 是否已赋值
                      * @return DayOfWeek 是否已赋值
+                     * 
                      */
                     bool DayOfWeekHasBeenSet() const;
 
                     /**
                      * 获取快照定期备份在一天的哪一小时
                      * @return Hour 快照定期备份在一天的哪一小时
+                     * 
                      */
                     std::string GetHour() const;
 
                     /**
                      * 设置快照定期备份在一天的哪一小时
-                     * @param Hour 快照定期备份在一天的哪一小时
+                     * @param _hour 快照定期备份在一天的哪一小时
+                     * 
                      */
                     void SetHour(const std::string& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 
                     /**
                      * 获取是否激活定期快照功能
                      * @return IsActivated 是否激活定期快照功能
+                     * 
                      */
                     uint64_t GetIsActivated() const;
 
                     /**
                      * 设置是否激活定期快照功能
-                     * @param IsActivated 是否激活定期快照功能
+                     * @param _isActivated 是否激活定期快照功能
+                     * 
                      */
                     void SetIsActivated(const uint64_t& _isActivated);
 
                     /**
                      * 判断参数 IsActivated 是否已赋值
                      * @return IsActivated 是否已赋值
+                     * 
                      */
                     bool IsActivatedHasBeenSet() const;
 
                     /**
                      * 获取下一次触发快照时间
                      * @return NextActiveTime 下一次触发快照时间
+                     * 
                      */
                     std::string GetNextActiveTime() const;
 
                     /**
                      * 设置下一次触发快照时间
-                     * @param NextActiveTime 下一次触发快照时间
+                     * @param _nextActiveTime 下一次触发快照时间
+                     * 
                      */
                     void SetNextActiveTime(const std::string& _nextActiveTime);
 
                     /**
                      * 判断参数 NextActiveTime 是否已赋值
                      * @return NextActiveTime 是否已赋值
+                     * 
                      */
                     bool NextActiveTimeHasBeenSet() const;
 
                     /**
                      * 获取快照策略状态
                      * @return Status 快照策略状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置快照策略状态
-                     * @param Status 快照策略状态
+                     * @param _status 快照策略状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取帐号ID
                      * @return AppId 帐号ID
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置帐号ID
-                     * @param AppId 帐号ID
+                     * @param _appId 帐号ID
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取保留时间
                      * @return AliveDays 保留时间
+                     * 
                      */
                     uint64_t GetAliveDays() const;
 
                     /**
                      * 设置保留时间
-                     * @param AliveDays 保留时间
+                     * @param _aliveDays 保留时间
+                     * 
                      */
                     void SetAliveDays(const uint64_t& _aliveDays);
 
                     /**
                      * 判断参数 AliveDays 是否已赋值
                      * @return AliveDays 是否已赋值
+                     * 
                      */
                     bool AliveDaysHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return RegionName 地域
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域
-                     * @param RegionName 地域
+                     * @param _regionName 地域
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统信息
                      * @return FileSystems 文件系统信息
+                     * 
                      */
                     std::vector<FileSystemByPolicy> GetFileSystems() const;
 
                     /**
                      * 设置文件系统信息
-                     * @param FileSystems 文件系统信息
+                     * @param _fileSystems 文件系统信息
+                     * 
                      */
                     void SetFileSystems(const std::vector<FileSystemByPolicy>& _fileSystems);
 
                     /**
                      * 判断参数 FileSystems 是否已赋值
                      * @return FileSystems 是否已赋值
+                     * 
                      */
                     bool FileSystemsHasBeenSet() const;
 
@@ -286,20 +325,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DayOfMonth 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDayOfMonth() const;
 
                     /**
                      * 设置快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DayOfMonth 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+                     * @param _dayOfMonth 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDayOfMonth(const std::string& _dayOfMonth);
 
                     /**
                      * 判断参数 DayOfMonth 是否已赋值
                      * @return DayOfMonth 是否已赋值
+                     * 
                      */
                     bool DayOfMonthHasBeenSet() const;
 
@@ -308,20 +350,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntervalDays 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIntervalDays() const;
 
                     /**
                      * 设置快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntervalDays 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+                     * @param _intervalDays 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntervalDays(const uint64_t& _intervalDays);
 
                     /**
                      * 判断参数 IntervalDays 是否已赋值
                      * @return IntervalDays 是否已赋值
+                     * 
                      */
                     bool IntervalDaysHasBeenSet() const;
 

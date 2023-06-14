@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取域名。
                      * @return Domain 域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名。
-                     * @param Domain 域名。
+                     * @param _domain 域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取明细信息。
                      * @return DetailInfoList 明细信息。
+                     * 
                      */
                     std::vector<DomainDetailInfo> GetDetailInfoList() const;
 
                     /**
                      * 设置明细信息。
-                     * @param DetailInfoList 明细信息。
+                     * @param _detailInfoList 明细信息。
+                     * 
                      */
                     void SetDetailInfoList(const std::vector<DomainDetailInfo>& _detailInfoList);
 
                     /**
                      * 判断参数 DetailInfoList 是否已赋值
                      * @return DetailInfoList 是否已赋值
+                     * 
                      */
                     bool DetailInfoListHasBeenSet() const;
 

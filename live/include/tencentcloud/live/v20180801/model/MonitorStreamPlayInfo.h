@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取播放域名。
                      * @return PlayDomain 播放域名。
+                     * 
                      */
                     std::string GetPlayDomain() const;
 
                     /**
                      * 设置播放域名。
-                     * @param PlayDomain 播放域名。
+                     * @param _playDomain 播放域名。
+                     * 
                      */
                     void SetPlayDomain(const std::string& _playDomain);
 
                     /**
                      * 判断参数 PlayDomain 是否已赋值
                      * @return PlayDomain 是否已赋值
+                     * 
                      */
                     bool PlayDomainHasBeenSet() const;
 
                     /**
                      * 获取流id。
                      * @return StreamName 流id。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流id。
-                     * @param StreamName 流id。
+                     * @param _streamName 流id。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取播放码率，0表示原始码率。
                      * @return Rate 播放码率，0表示原始码率。
+                     * 
                      */
                     uint64_t GetRate() const;
 
                     /**
                      * 设置播放码率，0表示原始码率。
-                     * @param Rate 播放码率，0表示原始码率。
+                     * @param _rate 播放码率，0表示原始码率。
+                     * 
                      */
                     void SetRate(const uint64_t& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。
                      * @return Protocol 播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。
-                     * @param Protocol 播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。
+                     * @param _protocol 播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位是Mbps。
                      * @return Bandwidth 带宽，单位是Mbps。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽，单位是Mbps。
-                     * @param Bandwidth 带宽，单位是Mbps。
+                     * @param _bandwidth 带宽，单位是Mbps。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取在线人数，1分钟采样一个点，统计采样点的tcp链接数目。
                      * @return Online 在线人数，1分钟采样一个点，统计采样点的tcp链接数目。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置在线人数，1分钟采样一个点，统计采样点的tcp链接数目。
-                     * @param Online 在线人数，1分钟采样一个点，统计采样点的tcp链接数目。
+                     * @param _online 在线人数，1分钟采样一个点，统计采样点的tcp链接数目。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
                     /**
                      * 获取请求数。
                      * @return Request 请求数。
+                     * 
                      */
                     uint64_t GetRequest() const;
 
                     /**
                      * 设置请求数。
-                     * @param Request 请求数。
+                     * @param _request 请求数。
+                     * 
                      */
                     void SetRequest(const uint64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 

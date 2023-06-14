@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID 用于外部溯源
                      * @return TaskId 任务ID 用于外部溯源
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID 用于外部溯源
-                     * @param TaskId 任务ID 用于外部溯源
+                     * @param _taskId 任务ID 用于外部溯源
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return PageNumber 页数
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页数
-                     * @param PageNumber 页数
+                     * @param _pageNumber 页数
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取二维码
                      * @return Code 二维码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置二维码
-                     * @param Code 二维码
+                     * @param _code 二维码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
                      * @return Phase 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * 
                      */
                     uint64_t GetPhase() const;
 
                     /**
                      * 设置溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
-                     * @param Phase 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * @param _phase 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * 
                      */
                     void SetPhase(const uint64_t& _phase);
 
                     /**
                      * 判断参数 Phase 是否已赋值
                      * @return Phase 是否已赋值
+                     * 
                      */
                     bool PhaseHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return PageSize 数量
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置数量
-                     * @param PageSize 数量
+                     * @param _pageSize 数量
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

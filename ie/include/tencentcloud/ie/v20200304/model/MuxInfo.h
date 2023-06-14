@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取删除流，可选项：video,audio。
                      * @return DeleteStream 删除流，可选项：video,audio。
+                     * 
                      */
                     std::string GetDeleteStream() const;
 
                     /**
                      * 设置删除流，可选项：video,audio。
-                     * @param DeleteStream 删除流，可选项：video,audio。
+                     * @param _deleteStream 删除流，可选项：video,audio。
+                     * 
                      */
                     void SetDeleteStream(const std::string& _deleteStream);
 
                     /**
                      * 判断参数 DeleteStream 是否已赋值
                      * @return DeleteStream 是否已赋值
+                     * 
                      */
                     bool DeleteStreamHasBeenSet() const;
 
                     /**
                      * 获取Flv 参数，目前支持add_keyframe_index
                      * @return FlvFlags Flv 参数，目前支持add_keyframe_index
+                     * 
                      */
                     std::string GetFlvFlags() const;
 
                     /**
                      * 设置Flv 参数，目前支持add_keyframe_index
-                     * @param FlvFlags Flv 参数，目前支持add_keyframe_index
+                     * @param _flvFlags Flv 参数，目前支持add_keyframe_index
+                     * 
                      */
                     void SetFlvFlags(const std::string& _flvFlags);
 
                     /**
                      * 判断参数 FlvFlags 是否已赋值
                      * @return FlvFlags 是否已赋值
+                     * 
                      */
                     bool FlvFlagsHasBeenSet() const;
 

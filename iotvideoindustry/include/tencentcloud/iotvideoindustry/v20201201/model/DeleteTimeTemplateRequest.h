@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取时间模板ID
                      * @return TemplateId 时间模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置时间模板ID
-                     * @param TemplateId 时间模板ID
+                     * @param _templateId 时间模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

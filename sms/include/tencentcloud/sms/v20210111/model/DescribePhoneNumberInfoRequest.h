@@ -47,20 +47,23 @@ namespace TencentCloud
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      * @return PhoneNumberSet 查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 
                      */
                     std::vector<std::string> GetPhoneNumberSet() const;
 
                     /**
                      * 设置查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @param PhoneNumberSet 查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。
+                     * @param _phoneNumberSet 查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。
 例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 
                      */
                     void SetPhoneNumberSet(const std::vector<std::string>& _phoneNumberSet);
 
                     /**
                      * 判断参数 PhoneNumberSet 是否已赋值
                      * @return PhoneNumberSet 是否已赋值
+                     * 
                      */
                     bool PhoneNumberSetHasBeenSet() const;
 

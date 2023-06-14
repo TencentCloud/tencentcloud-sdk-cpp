@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例参数列表
                      * @return Items 实例参数列表
+                     * 
                      */
                     std::vector<InstanceParamItem> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

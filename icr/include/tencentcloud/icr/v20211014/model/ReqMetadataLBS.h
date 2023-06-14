@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取纬度
                      * @return Latitude 纬度
+                     * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置纬度
-                     * @param Latitude 纬度
+                     * @param _latitude 纬度
+                     * 
                      */
                     void SetLatitude(const double& _latitude);
 
                     /**
                      * 判断参数 Latitude 是否已赋值
                      * @return Latitude 是否已赋值
+                     * 
                      */
                     bool LatitudeHasBeenSet() const;
 
                     /**
                      * 获取经度
                      * @return Longitude 经度
+                     * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置经度
-                     * @param Longitude 经度
+                     * @param _longitude 经度
+                     * 
                      */
                     void SetLongitude(const double& _longitude);
 
                     /**
                      * 判断参数 Longitude 是否已赋值
                      * @return Longitude 是否已赋值
+                     * 
                      */
                     bool LongitudeHasBeenSet() const;
 

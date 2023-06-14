@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取非广告类型
                      * @return PluginType 非广告类型
+                     * 
                      */
                     std::string GetPluginType() const;
 
                     /**
                      * 设置非广告类型
-                     * @param PluginType 非广告类型
+                     * @param _pluginType 非广告类型
+                     * 
                      */
                     void SetPluginType(const std::string& _pluginType);
 
                     /**
                      * 判断参数 PluginType 是否已赋值
                      * @return PluginType 是否已赋值
+                     * 
                      */
                     bool PluginTypeHasBeenSet() const;
 
                     /**
                      * 获取非广告插件名称
                      * @return PluginName 非广告插件名称
+                     * 
                      */
                     std::string GetPluginName() const;
 
                     /**
                      * 设置非广告插件名称
-                     * @param PluginName 非广告插件名称
+                     * @param _pluginName 非广告插件名称
+                     * 
                      */
                     void SetPluginName(const std::string& _pluginName);
 
                     /**
                      * 判断参数 PluginName 是否已赋值
                      * @return PluginName 是否已赋值
+                     * 
                      */
                     bool PluginNameHasBeenSet() const;
 
                     /**
                      * 获取非广告插件描述
                      * @return PluginDesc 非广告插件描述
+                     * 
                      */
                     std::string GetPluginDesc() const;
 
                     /**
                      * 设置非广告插件描述
-                     * @param PluginDesc 非广告插件描述
+                     * @param _pluginDesc 非广告插件描述
+                     * 
                      */
                     void SetPluginDesc(const std::string& _pluginDesc);
 
                     /**
                      * 判断参数 PluginDesc 是否已赋值
                      * @return PluginDesc 是否已赋值
+                     * 
                      */
                     bool PluginDescHasBeenSet() const;
 

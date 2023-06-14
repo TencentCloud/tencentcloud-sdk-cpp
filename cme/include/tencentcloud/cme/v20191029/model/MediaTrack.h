@@ -58,6 +58,7 @@ namespace TencentCloud
 <li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>
 <li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>
 </ul>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -67,35 +68,40 @@ namespace TencentCloud
 <li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>
 <li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>
 </ul>
-                     * @param Type 轨道类型，取值有：
+                     * @param _type 轨道类型，取值有：
 <ul>
 <li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>
 <li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>
 </ul>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取轨道上的媒体片段列表。
                      * @return TrackItems 轨道上的媒体片段列表。
+                     * 
                      */
                     std::vector<MediaTrackItem> GetTrackItems() const;
 
                     /**
                      * 设置轨道上的媒体片段列表。
-                     * @param TrackItems 轨道上的媒体片段列表。
+                     * @param _trackItems 轨道上的媒体片段列表。
+                     * 
                      */
                     void SetTrackItems(const std::vector<MediaTrackItem>& _trackItems);
 
                     /**
                      * 判断参数 TrackItems 是否已赋值
                      * @return TrackItems 是否已赋值
+                     * 
                      */
                     bool TrackItemsHasBeenSet() const;
 

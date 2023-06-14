@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取主播ID
                      * @return AnchorId 主播ID
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播ID
-                     * @param AnchorId 主播ID
+                     * @param _anchorId 主播ID
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 
                     /**
                      * 获取主播名称
                      * @return AnchorName 主播名称
+                     * 
                      */
                     std::string GetAnchorName() const;
 
                     /**
                      * 设置主播名称
-                     * @param AnchorName 主播名称
+                     * @param _anchorName 主播名称
+                     * 
                      */
                     void SetAnchorName(const std::string& _anchorName);
 
                     /**
                      * 判断参数 AnchorName 是否已赋值
                      * @return AnchorName 是否已赋值
+                     * 
                      */
                     bool AnchorNameHasBeenSet() const;
 
                     /**
                      * 获取代理商ID
                      * @return AgentId 代理商ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置代理商ID
-                     * @param AgentId 代理商ID
+                     * @param _agentId 代理商ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取代理商名称
                      * @return AgentName 代理商名称
+                     * 
                      */
                     std::string GetAgentName() const;
 
                     /**
                      * 设置代理商名称
-                     * @param AgentName 代理商名称
+                     * @param _agentName 代理商名称
+                     * 
                      */
                     void SetAgentName(const std::string& _agentName);
 
                     /**
                      * 判断参数 AgentName 是否已赋值
                      * @return AgentName 是否已赋值
+                     * 
                      */
                     bool AgentNameHasBeenSet() const;
 
                     /**
                      * 获取主播身份证号
                      * @return IdNo 主播身份证号
+                     * 
                      */
                     std::string GetIdNo() const;
 
                     /**
                      * 设置主播身份证号
-                     * @param IdNo 主播身份证号
+                     * @param _idNo 主播身份证号
+                     * 
                      */
                     void SetIdNo(const std::string& _idNo);
 
                     /**
                      * 判断参数 IdNo 是否已赋值
                      * @return IdNo 是否已赋值
+                     * 
                      */
                     bool IdNoHasBeenSet() const;
 

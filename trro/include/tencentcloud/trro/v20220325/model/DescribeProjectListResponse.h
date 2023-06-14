@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取项目信息数组
                      * @return Projects 项目信息数组
+                     * 
                      */
                     std::vector<ProjectInfo> GetProjects() const;
 
                     /**
                      * 判断参数 Projects 是否已赋值
                      * @return Projects 是否已赋值
+                     * 
                      */
                     bool ProjectsHasBeenSet() const;
 
                     /**
                      * 获取项目总数
                      * @return Total 项目总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取本次返回的项目数
                      * @return Num 本次返回的项目数
+                     * 
                      */
                     int64_t GetNum() const;
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 

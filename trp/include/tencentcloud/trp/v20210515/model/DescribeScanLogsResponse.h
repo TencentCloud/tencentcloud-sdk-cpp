@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Products 【弃用】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScanLog> GetProducts() const;
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
+                     * 
                      */
                     bool ProductsHasBeenSet() const;
 
                     /**
                      * 获取条数
                      * @return TotalCount 条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取扫描记录
                      * @return ScanLogs 扫描记录
+                     * 
                      */
                     std::vector<ScanLog> GetScanLogs() const;
 
                     /**
                      * 判断参数 ScanLogs 是否已赋值
                      * @return ScanLogs 是否已赋值
+                     * 
                      */
                     bool ScanLogsHasBeenSet() const;
 

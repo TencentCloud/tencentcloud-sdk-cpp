@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Result 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取诊断报告/堆栈信息下载链接
                      * @return ReportUrl 诊断报告/堆栈信息下载链接
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTitle 诊断报告/堆栈名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportTitle() const;
 
                     /**
                      * 判断参数 ReportTitle 是否已赋值
                      * @return ReportTitle 是否已赋值
+                     * 
                      */
                     bool ReportTitleHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportResult 诊断json结果内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportResult() const;
 
                     /**
                      * 判断参数 ReportResult 是否已赋值
                      * @return ReportResult 是否已赋值
+                     * 
                      */
                     bool ReportResultHasBeenSet() const;
 

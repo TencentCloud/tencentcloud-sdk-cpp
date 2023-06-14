@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取Dts实例Id
                      * @return Resource Dts实例Id
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Dts实例Id
-                     * @param Resource Dts实例Id
+                     * @param _resource Dts实例Id
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取Dts的连接ip
                      * @return Ip Dts的连接ip
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Dts的连接ip
-                     * @param Ip Dts的连接ip
+                     * @param _ip Dts的连接ip
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取Dts的连接port
                      * @return Port Dts的连接port
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Dts的连接port
-                     * @param Port Dts的连接port
+                     * @param _port Dts的连接port
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取Dts订阅的topic
                      * @return Topic Dts订阅的topic
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Dts订阅的topic
-                     * @param Topic Dts订阅的topic
+                     * @param _topic Dts订阅的topic
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的Id
                      * @return GroupId Dts消费分组的Id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Dts消费分组的Id
-                     * @param GroupId Dts消费分组的Id
+                     * @param _groupId Dts消费分组的Id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的账号
                      * @return GroupUser Dts消费分组的账号
+                     * 
                      */
                     std::string GetGroupUser() const;
 
                     /**
                      * 设置Dts消费分组的账号
-                     * @param GroupUser Dts消费分组的账号
+                     * @param _groupUser Dts消费分组的账号
+                     * 
                      */
                     void SetGroupUser(const std::string& _groupUser);
 
                     /**
                      * 判断参数 GroupUser 是否已赋值
                      * @return GroupUser 是否已赋值
+                     * 
                      */
                     bool GroupUserHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的密码
                      * @return GroupPassword Dts消费分组的密码
+                     * 
                      */
                     std::string GetGroupPassword() const;
 
                     /**
                      * 设置Dts消费分组的密码
-                     * @param GroupPassword Dts消费分组的密码
+                     * @param _groupPassword Dts消费分组的密码
+                     * 
                      */
                     void SetGroupPassword(const std::string& _groupPassword);
 
                     /**
                      * 判断参数 GroupPassword 是否已赋值
                      * @return GroupPassword 是否已赋值
+                     * 
                      */
                     bool GroupPasswordHasBeenSet() const;
 
                     /**
                      * 获取false同步原始数据，true同步解析后的json格式数据,默认true
                      * @return TranSql false同步原始数据，true同步解析后的json格式数据,默认true
+                     * 
                      */
                     bool GetTranSql() const;
 
                     /**
                      * 设置false同步原始数据，true同步解析后的json格式数据,默认true
-                     * @param TranSql false同步原始数据，true同步解析后的json格式数据,默认true
+                     * @param _tranSql false同步原始数据，true同步解析后的json格式数据,默认true
+                     * 
                      */
                     void SetTranSql(const bool& _tranSql);
 
                     /**
                      * 判断参数 TranSql 是否已赋值
                      * @return TranSql 是否已赋值
+                     * 
                      */
                     bool TranSqlHasBeenSet() const;
 

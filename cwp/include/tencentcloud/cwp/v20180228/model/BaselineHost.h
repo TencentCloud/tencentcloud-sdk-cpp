@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取主机Id
                      * @return HostId 主机Id
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置主机Id
-                     * @param HostId 主机Id
+                     * @param _hostId 主机Id
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 主机名称
+                     * @param _hostName 主机名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostTag 主机标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostTag() const;
 
                     /**
                      * 设置主机标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostTag 主机标签
+                     * @param _hostTag 主机标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostTag(const std::string& _hostTag);
 
                     /**
                      * 判断参数 HostTag 是否已赋值
                      * @return HostTag 是否已赋值
+                     * 
                      */
                     bool HostTagHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 内网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置内网Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostIp 内网Ip
+                     * @param _hostIp 内网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanIp 外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWanIp() const;
 
                     /**
                      * 设置外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WanIp 外网Ip
+                     * @param _wanIp 外网Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWanIp(const std::string& _wanIp);
 
                     /**
                      * 判断参数 WanIp 是否已赋值
                      * @return WanIp 是否已赋值
+                     * 
                      */
                     bool WanIpHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 主机额外信息
+                     * @param _machineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

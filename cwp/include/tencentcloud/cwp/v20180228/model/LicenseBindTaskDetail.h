@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取云服务器UUID
                      * @return Quuid 云服务器UUID
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置云服务器UUID
-                     * @param Quuid 云服务器UUID
+                     * @param _quuid 云服务器UUID
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return ErrMsg 错误信息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置错误信息
-                     * @param ErrMsg 错误信息
+                     * @param _errMsg 错误信息
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
                     /**
                      * 获取0 执行中, 1 成功,2失败
                      * @return Status 0 执行中, 1 成功,2失败
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置0 执行中, 1 成功,2失败
-                     * @param Status 0 执行中, 1 成功,2失败
+                     * @param _status 0 执行中, 1 成功,2失败
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取修复建议
                      * @return FixMessage 修复建议
+                     * 
                      */
                     std::string GetFixMessage() const;
 
                     /**
                      * 设置修复建议
-                     * @param FixMessage 修复建议
+                     * @param _fixMessage 修复建议
+                     * 
                      */
                     void SetFixMessage(const std::string& _fixMessage);
 
                     /**
                      * 判断参数 FixMessage 是否已赋值
                      * @return FixMessage 是否已赋值
+                     * 
                      */
                     bool FixMessageHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 机器额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置机器额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 机器额外信息
+                     * @param _machineExtraInfo 机器额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

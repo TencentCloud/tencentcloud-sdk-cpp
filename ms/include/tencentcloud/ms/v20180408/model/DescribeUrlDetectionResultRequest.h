@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询的网址
                      * @return Url 查询的网址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置查询的网址
-                     * @param Url 查询的网址
+                     * @param _url 查询的网址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

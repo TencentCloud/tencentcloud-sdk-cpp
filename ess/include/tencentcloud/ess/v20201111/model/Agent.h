@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取代理机构的应用编号,32位字符串，一般不用传
                      * @return AppId 代理机构的应用编号,32位字符串，一般不用传
+                     * @deprecated
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置代理机构的应用编号,32位字符串，一般不用传
-                     * @param AppId 代理机构的应用编号,32位字符串，一般不用传
+                     * @param _appId 代理机构的应用编号,32位字符串，一般不用传
+                     * @deprecated
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * @deprecated
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取被代理机构的应用号，一般不用传
                      * @return ProxyAppId 被代理机构的应用号，一般不用传
+                     * @deprecated
                      */
                     std::string GetProxyAppId() const;
 
                     /**
                      * 设置被代理机构的应用号，一般不用传
-                     * @param ProxyAppId 被代理机构的应用号，一般不用传
+                     * @param _proxyAppId 被代理机构的应用号，一般不用传
+                     * @deprecated
                      */
                     void SetProxyAppId(const std::string& _proxyAppId);
 
                     /**
                      * 判断参数 ProxyAppId 是否已赋值
                      * @return ProxyAppId 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyAppIdHasBeenSet() const;
 
                     /**
                      * 获取被代理机构在电子签平台的机构编号，集团代理下场景必传
                      * @return ProxyOrganizationId 被代理机构在电子签平台的机构编号，集团代理下场景必传
+                     * 
                      */
                     std::string GetProxyOrganizationId() const;
 
                     /**
                      * 设置被代理机构在电子签平台的机构编号，集团代理下场景必传
-                     * @param ProxyOrganizationId 被代理机构在电子签平台的机构编号，集团代理下场景必传
+                     * @param _proxyOrganizationId 被代理机构在电子签平台的机构编号，集团代理下场景必传
+                     * 
                      */
                     void SetProxyOrganizationId(const std::string& _proxyOrganizationId);
 
                     /**
                      * 判断参数 ProxyOrganizationId 是否已赋值
                      * @return ProxyOrganizationId 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取被代理机构的经办人，一般不用传
                      * @return ProxyOperator 被代理机构的经办人，一般不用传
+                     * @deprecated
                      */
                     std::string GetProxyOperator() const;
 
                     /**
                      * 设置被代理机构的经办人，一般不用传
-                     * @param ProxyOperator 被代理机构的经办人，一般不用传
+                     * @param _proxyOperator 被代理机构的经办人，一般不用传
+                     * @deprecated
                      */
                     void SetProxyOperator(const std::string& _proxyOperator);
 
                     /**
                      * 判断参数 ProxyOperator 是否已赋值
                      * @return ProxyOperator 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyOperatorHasBeenSet() const;
 

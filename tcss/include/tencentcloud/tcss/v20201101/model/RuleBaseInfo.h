@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取true: 默认策略，false:自定义策略
                      * @return IsDefault true: 默认策略，false:自定义策略
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置true: 默认策略，false:自定义策略
-                     * @param IsDefault true: 默认策略，false:自定义策略
+                     * @param _isDefault true: 默认策略，false:自定义策略
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取策略生效镜像数量
                      * @return EffectImageCount 策略生效镜像数量
+                     * 
                      */
                     uint64_t GetEffectImageCount() const;
 
                     /**
                      * 设置策略生效镜像数量
-                     * @param EffectImageCount 策略生效镜像数量
+                     * @param _effectImageCount 策略生效镜像数量
+                     * 
                      */
                     void SetEffectImageCount(const uint64_t& _effectImageCount);
 
                     /**
                      * 判断参数 EffectImageCount 是否已赋值
                      * @return EffectImageCount 是否已赋值
+                     * 
                      */
                     bool EffectImageCountHasBeenSet() const;
 
                     /**
                      * 获取策略Id
                      * @return RuleId 策略Id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置策略Id
-                     * @param RuleId 策略Id
+                     * @param _ruleId 策略Id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -105,74 +114,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略更新时间, 存在为空的情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置策略更新时间, 存在为空的情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 策略更新时间, 存在为空的情况
+                     * @param _updateTime 策略更新时间, 存在为空的情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取策略名字
                      * @return RuleName 策略名字
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置策略名字
-                     * @param RuleName 策略名字
+                     * @param _ruleName 策略名字
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取编辑用户名称
                      * @return EditUserName 编辑用户名称
+                     * 
                      */
                     std::string GetEditUserName() const;
 
                     /**
                      * 设置编辑用户名称
-                     * @param EditUserName 编辑用户名称
+                     * @param _editUserName 编辑用户名称
+                     * 
                      */
                     void SetEditUserName(const std::string& _editUserName);
 
                     /**
                      * 判断参数 EditUserName 是否已赋值
                      * @return EditUserName 是否已赋值
+                     * 
                      */
                     bool EditUserNameHasBeenSet() const;
 
                     /**
                      * 获取true: 策略启用，false：策略禁用
                      * @return IsEnable true: 策略启用，false：策略禁用
+                     * 
                      */
                     bool GetIsEnable() const;
 
                     /**
                      * 设置true: 策略启用，false：策略禁用
-                     * @param IsEnable true: 策略启用，false：策略禁用
+                     * @param _isEnable true: 策略启用，false：策略禁用
+                     * 
                      */
                     void SetIsEnable(const bool& _isEnable);
 
                     /**
                      * 判断参数 IsEnable 是否已赋值
                      * @return IsEnable 是否已赋值
+                     * 
                      */
                     bool IsEnableHasBeenSet() const;
 

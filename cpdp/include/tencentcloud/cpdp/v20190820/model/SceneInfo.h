@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocaleCode 语言代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocaleCode() const;
 
                     /**
                      * 设置语言代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocaleCode 语言代码
+                     * @param _localeCode 语言代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocaleCode(const std::string& _localeCode);
 
                     /**
                      * 判断参数 LocaleCode 是否已赋值
                      * @return LocaleCode 是否已赋值
+                     * 
                      */
                     bool LocaleCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCode 地区代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置地区代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionCode 地区代码
+                     * @param _regionCode 地区代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
                     /**
                      * 判断参数 RegionCode 是否已赋值
                      * @return RegionCode 是否已赋值
+                     * 
                      */
                     bool RegionCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserClientIp 用户IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserClientIp() const;
 
                     /**
                      * 设置用户IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserClientIp 用户IP
+                     * @param _userClientIp 用户IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserClientIp(const std::string& _userClientIp);
 
                     /**
                      * 判断参数 UserClientIp 是否已赋值
                      * @return UserClientIp 是否已赋值
+                     * 
                      */
                     bool UserClientIpHasBeenSet() const;
 

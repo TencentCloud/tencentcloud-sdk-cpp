@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘ID。
                      * @return DiskId 云硬盘ID。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置云硬盘ID。
-                     * @param DiskId 云硬盘ID。
+                     * @param _diskId 云硬盘ID。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取调整之后的云硬盘备份点配额。
                      * @return DiskBackupQuota 调整之后的云硬盘备份点配额。
+                     * 
                      */
                     uint64_t GetDiskBackupQuota() const;
 
                     /**
                      * 设置调整之后的云硬盘备份点配额。
-                     * @param DiskBackupQuota 调整之后的云硬盘备份点配额。
+                     * @param _diskBackupQuota 调整之后的云硬盘备份点配额。
+                     * 
                      */
                     void SetDiskBackupQuota(const uint64_t& _diskBackupQuota);
 
                     /**
                      * 判断参数 DiskBackupQuota 是否已赋值
                      * @return DiskBackupQuota 是否已赋值
+                     * 
                      */
                     bool DiskBackupQuotaHasBeenSet() const;
 

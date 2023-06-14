@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取资源名称，根据查询条件不同分为以下几类：
                      * @return Resource 资源名称，根据查询条件不同分为以下几类：
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置资源名称，根据查询条件不同分为以下几类：
-                     * @param Resource 资源名称，根据查询条件不同分为以下几类：
+                     * @param _resource 资源名称，根据查询条件不同分为以下几类：
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取排序结果详情
                      * @return DetailData 排序结果详情
+                     * 
                      */
                     std::vector<TopDetailDataMore> GetDetailData() const;
 
                     /**
                      * 设置排序结果详情
-                     * @param DetailData 排序结果详情
+                     * @param _detailData 排序结果详情
+                     * 
                      */
                     void SetDetailData(const std::vector<TopDetailDataMore>& _detailData);
 
                     /**
                      * 判断参数 DetailData 是否已赋值
                      * @return DetailData 是否已赋值
+                     * 
                      */
                     bool DetailDataHasBeenSet() const;
 

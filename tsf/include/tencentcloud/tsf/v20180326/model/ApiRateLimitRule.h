@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId rule Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置rule Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId rule Id
+                     * @param _ruleId rule Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiId API ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiId API ID
+                     * @param _apiId API ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 限流名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置限流名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 限流名称
+                     * @param _ruleName 限流名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxQps 最大限流qps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxQps() const;
 
                     /**
                      * 设置最大限流qps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxQps 最大限流qps
+                     * @param _maxQps 最大限流qps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxQps(const uint64_t& _maxQps);
 
                     /**
                      * 判断参数 MaxQps 是否已赋值
                      * @return MaxQps 是否已赋值
+                     * 
                      */
                     bool MaxQpsHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsableStatus 生效/禁用, enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
                      * 设置生效/禁用, enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsableStatus 生效/禁用, enabled/disabled
+                     * @param _usableStatus 生效/禁用, enabled/disabled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsableStatus(const std::string& _usableStatus);
 
                     /**
                      * 判断参数 UsableStatus 是否已赋值
                      * @return UsableStatus 是否已赋值
+                     * 
                      */
                     bool UsableStatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleContent 规则内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleContent() const;
 
                     /**
                      * 设置规则内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleContent 规则内容
+                     * @param _ruleContent 规则内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleContent(const std::string& _ruleContent);
 
                     /**
                      * 判断参数 RuleContent 是否已赋值
                      * @return RuleContent 是否已赋值
+                     * 
                      */
                     bool RuleContentHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsfRuleId Tsf Rule ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTsfRuleId() const;
 
                     /**
                      * 设置Tsf Rule ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsfRuleId Tsf Rule ID
+                     * @param _tsfRuleId Tsf Rule ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsfRuleId(const std::string& _tsfRuleId);
 
                     /**
                      * 判断参数 TsfRuleId 是否已赋值
                      * @return TsfRuleId 是否已赋值
+                     * 
                      */
                     bool TsfRuleIdHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 更新时间
+                     * @param _updatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 

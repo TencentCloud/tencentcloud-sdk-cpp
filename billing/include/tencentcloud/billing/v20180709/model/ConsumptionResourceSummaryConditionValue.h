@@ -53,72 +53,84 @@ namespace TencentCloud
                     /**
                      * 获取产品列表
                      * @return Business 产品列表
+                     * 
                      */
                     std::vector<ConditionBusiness> GetBusiness() const;
 
                     /**
                      * 设置产品列表
-                     * @param Business 产品列表
+                     * @param _business 产品列表
+                     * 
                      */
                     void SetBusiness(const std::vector<ConditionBusiness>& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取项目列表
                      * @return Project 项目列表
+                     * 
                      */
                     std::vector<ConditionProject> GetProject() const;
 
                     /**
                      * 设置项目列表
-                     * @param Project 项目列表
+                     * @param _project 项目列表
+                     * 
                      */
                     void SetProject(const std::vector<ConditionProject>& _project);
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
+                     * 
                      */
                     bool ProjectHasBeenSet() const;
 
                     /**
                      * 获取地域列表
                      * @return Region 地域列表
+                     * 
                      */
                     std::vector<ConditionRegion> GetRegion() const;
 
                     /**
                      * 设置地域列表
-                     * @param Region 地域列表
+                     * @param _region 地域列表
+                     * 
                      */
                     void SetRegion(const std::vector<ConditionRegion>& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取付费模式列表
                      * @return PayMode 付费模式列表
+                     * 
                      */
                     std::vector<ConditionPayMode> GetPayMode() const;
 
                     /**
                      * 设置付费模式列表
-                     * @param PayMode 付费模式列表
+                     * @param _payMode 付费模式列表
+                     * 
                      */
                     void SetPayMode(const std::vector<ConditionPayMode>& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 

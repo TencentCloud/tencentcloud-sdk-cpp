@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取规则ID
                      * @return LocationId 规则ID
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置规则ID
-                     * @param LocationId 规则ID
+                     * @param _locationId 规则ID
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取规则绑定的域名
                      * @return Domain 规则绑定的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置规则绑定的域名
-                     * @param Domain 规则绑定的域名
+                     * @param _domain 规则绑定的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取规则是否匹配待绑定证书的域名
                      * @return IsMatch 规则是否匹配待绑定证书的域名
+                     * 
                      */
                     bool GetIsMatch() const;
 
                     /**
                      * 设置规则是否匹配待绑定证书的域名
-                     * @param IsMatch 规则是否匹配待绑定证书的域名
+                     * @param _isMatch 规则是否匹配待绑定证书的域名
+                     * 
                      */
                     void SetIsMatch(const bool& _isMatch);
 
                     /**
                      * 判断参数 IsMatch 是否已赋值
                      * @return IsMatch 是否已赋值
+                     * 
                      */
                     bool IsMatchHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Certificate 规则已绑定的证书数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Certificate GetCertificate() const;
 
                     /**
                      * 设置规则已绑定的证书数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Certificate 规则已绑定的证书数据
+                     * @param _certificate 规则已绑定的证书数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificate(const Certificate& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoMatchDomains 不匹配域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNoMatchDomains() const;
 
                     /**
                      * 设置不匹配域名列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoMatchDomains 不匹配域名列表
+                     * @param _noMatchDomains 不匹配域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoMatchDomains(const std::vector<std::string>& _noMatchDomains);
 
                     /**
                      * 判断参数 NoMatchDomains 是否已赋值
                      * @return NoMatchDomains 是否已赋值
+                     * 
                      */
                     bool NoMatchDomainsHasBeenSet() const;
 

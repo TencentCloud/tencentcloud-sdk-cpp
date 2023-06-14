@@ -48,90 +48,105 @@ namespace TencentCloud
                     /**
                      * 获取域名。
                      * @return Domain 域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名。
-                     * @param Domain 域名。
+                     * @param _domain 域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取[Referer 防盗链](/document/product/266/14046)规则。
                      * @return RefererAuthPolicy [Referer 防盗链](/document/product/266/14046)规则。
+                     * 
                      */
                     RefererAuthPolicy GetRefererAuthPolicy() const;
 
                     /**
                      * 设置[Referer 防盗链](/document/product/266/14046)规则。
-                     * @param RefererAuthPolicy [Referer 防盗链](/document/product/266/14046)规则。
+                     * @param _refererAuthPolicy [Referer 防盗链](/document/product/266/14046)规则。
+                     * 
                      */
                     void SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy);
 
                     /**
                      * 判断参数 RefererAuthPolicy 是否已赋值
                      * @return RefererAuthPolicy 是否已赋值
+                     * 
                      */
                     bool RefererAuthPolicyHasBeenSet() const;
 
                     /**
                      * 获取[Key 防盗链](/document/product/266/14047)规则。
                      * @return UrlSignatureAuthPolicy [Key 防盗链](/document/product/266/14047)规则。
+                     * 
                      */
                     UrlSignatureAuthPolicy GetUrlSignatureAuthPolicy() const;
 
                     /**
                      * 设置[Key 防盗链](/document/product/266/14047)规则。
-                     * @param UrlSignatureAuthPolicy [Key 防盗链](/document/product/266/14047)规则。
+                     * @param _urlSignatureAuthPolicy [Key 防盗链](/document/product/266/14047)规则。
+                     * 
                      */
                     void SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy);
 
                     /**
                      * 判断参数 UrlSignatureAuthPolicy 是否已赋值
                      * @return UrlSignatureAuthPolicy 是否已赋值
+                     * 
                      */
                     bool UrlSignatureAuthPolicyHasBeenSet() const;
 
                     /**
                      * 获取QUIC 配置。
                      * @return QUICConfig QUIC 配置。
+                     * 
                      */
                     DomainQUICConfig GetQUICConfig() const;
 
                     /**
                      * 设置QUIC 配置。
-                     * @param QUICConfig QUIC 配置。
+                     * @param _qUICConfig QUIC 配置。
+                     * 
                      */
                     void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
 
                     /**
                      * 判断参数 QUICConfig 是否已赋值
                      * @return QUICConfig 是否已赋值
+                     * 
                      */
                     bool QUICConfigHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取数据库名
                      * @return DBName 数据库名
+                     * 
                      */
                     std::string GetDBName() const;
 
                     /**
                      * 设置数据库名
-                     * @param DBName 数据库名
+                     * @param _dBName 数据库名
+                     * 
                      */
                     void SetDBName(const std::string& _dBName);
 
                     /**
                      * 判断参数 DBName 是否已赋值
                      * @return DBName 是否已赋值
+                     * 
                      */
                     bool DBNameHasBeenSet() const;
 
                     /**
                      * 获取字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。
                      * @return Charset 字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。
+                     * 
                      */
                     std::string GetCharset() const;
 
                     /**
                      * 设置字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。
-                     * @param Charset 字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。
+                     * @param _charset 字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。
+                     * 
                      */
                     void SetCharset(const std::string& _charset);
 
                     /**
                      * 判断参数 Charset 是否已赋值
                      * @return Charset 是否已赋值
+                     * 
                      */
                     bool CharsetHasBeenSet() const;
 
                     /**
                      * 获取数据库账号权限信息
                      * @return Accounts 数据库账号权限信息
+                     * 
                      */
                     std::vector<AccountPrivilege> GetAccounts() const;
 
                     /**
                      * 设置数据库账号权限信息
-                     * @param Accounts 数据库账号权限信息
+                     * @param _accounts 数据库账号权限信息
+                     * 
                      */
                     void SetAccounts(const std::vector<AccountPrivilege>& _accounts);
 
                     /**
                      * 判断参数 Accounts 是否已赋值
                      * @return Accounts 是否已赋值
+                     * 
                      */
                     bool AccountsHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

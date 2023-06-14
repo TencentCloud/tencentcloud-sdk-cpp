@@ -69,18 +69,21 @@ namespace TencentCloud
                     /**
                      * 获取媒资ID
                      * @return MediaId 媒资ID
+                     * 
                      */
                     std::string GetMediaId() const;
 
                     /**
                      * 设置媒资ID
-                     * @param MediaId 媒资ID
+                     * @param _mediaId 媒资ID
+                     * 
                      */
                     void SetMediaId(const std::string& _mediaId);
 
                     /**
                      * 判断参数 MediaId 是否已赋值
                      * @return MediaId 是否已赋值
+                     * 
                      */
                     bool MediaIdHasBeenSet() const;
 
@@ -89,20 +92,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 媒资名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒资名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 媒资名称
+                     * @param _name 媒资名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -111,20 +117,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownLoadURL 媒资下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownLoadURL() const;
 
                     /**
                      * 设置媒资下载地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownLoadURL 媒资下载地址
+                     * @param _downLoadURL 媒资下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownLoadURL(const std::string& _downLoadURL);
 
                     /**
                      * 判断参数 DownLoadURL 是否已赋值
                      * @return DownLoadURL 是否已赋值
+                     * 
                      */
                     bool DownLoadURLHasBeenSet() const;
 
@@ -133,20 +142,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 媒资状态，取值参看上方表格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置媒资状态，取值参看上方表格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 媒资状态，取值参看上方表格
+                     * @param _status 媒资状态，取值参看上方表格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -155,20 +167,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 若状态为失败，表示失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
                      * 设置若状态为失败，表示失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedReason 若状态为失败，表示失败原因
+                     * @param _failedReason 若状态为失败，表示失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
 
                     /**
                      * 判断参数 FailedReason 是否已赋值
                      * @return FailedReason 是否已赋值
+                     * 
                      */
                     bool FailedReasonHasBeenSet() const;
 
@@ -177,20 +192,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetadata GetMetadata() const;
 
                     /**
                      * 设置媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metadata 媒资视频元信息，仅在MediaType=VIDEO时有效
+                     * @param _metadata 媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetadata(const MediaMetadata& _metadata);
 
                     /**
                      * 判断参数 Metadata 是否已赋值
                      * @return Metadata 是否已赋值
+                     * 
                      */
                     bool MetadataHasBeenSet() const;
 
@@ -199,20 +217,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 导入视频进度，取值范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置导入视频进度，取值范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 导入视频进度，取值范围为[0,100]
+                     * @param _progress 导入视频进度，取值范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const double& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -221,20 +242,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 媒资自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置媒资自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 媒资自定义标签
+                     * @param _label 媒资自定义标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -243,20 +267,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackURL 媒资导入完成后的回调地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCallbackURL() const;
 
                     /**
                      * 设置媒资导入完成后的回调地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CallbackURL 媒资导入完成后的回调地址
+                     * @param _callbackURL 媒资导入完成后的回调地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCallbackURL(const std::string& _callbackURL);
 
                     /**
                      * 判断参数 CallbackURL 是否已赋值
                      * @return CallbackURL 是否已赋值
+                     * 
                      */
                     bool CallbackURLHasBeenSet() const;
 
@@ -265,20 +292,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaType 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMediaType() const;
 
                     /**
                      * 设置媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaType 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+                     * @param _mediaType 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaType(const int64_t& _mediaType);
 
                     /**
                      * 判断参数 MediaType 是否已赋值
                      * @return MediaType 是否已赋值
+                     * 
                      */
                     bool MediaTypeHasBeenSet() const;
 
@@ -287,20 +317,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioMetadata 媒资音频元信息，仅在MediaType=Audio时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioMetadata GetAudioMetadata() const;
 
                     /**
                      * 设置媒资音频元信息，仅在MediaType=Audio时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioMetadata 媒资音频元信息，仅在MediaType=Audio时有效
+                     * @param _audioMetadata 媒资音频元信息，仅在MediaType=Audio时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioMetadata(const AudioMetadata& _audioMetadata);
 
                     /**
                      * 判断参数 AudioMetadata 是否已赋值
                      * @return AudioMetadata 是否已赋值
+                     * 
                      */
                     bool AudioMetadataHasBeenSet() const;
 
@@ -309,20 +342,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageMetadata 媒资图片文件元信息，仅在MediaType=Image时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageMetadata GetImageMetadata() const;
 
                     /**
                      * 设置媒资图片文件元信息，仅在MediaType=Image时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageMetadata 媒资图片文件元信息，仅在MediaType=Image时有效
+                     * @param _imageMetadata 媒资图片文件元信息，仅在MediaType=Image时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageMetadata(const ImageMetadata& _imageMetadata);
 
                     /**
                      * 判断参数 ImageMetadata 是否已赋值
                      * @return ImageMetadata 是否已赋值
+                     * 
                      */
                     bool ImageMetadataHasBeenSet() const;
 
@@ -331,20 +367,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextMetadata 媒资文本文件元信息，仅在MediaType=Text时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextMetadata GetTextMetadata() const;
 
                     /**
                      * 设置媒资文本文件元信息，仅在MediaType=Text时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextMetadata 媒资文本文件元信息，仅在MediaType=Text时有效
+                     * @param _textMetadata 媒资文本文件元信息，仅在MediaType=Text时有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextMetadata(const TextMetadata& _textMetadata);
 
                     /**
                      * 判断参数 TextMetadata 是否已赋值
                      * @return TextMetadata 是否已赋值
+                     * 
                      */
                     bool TextMetadataHasBeenSet() const;
 

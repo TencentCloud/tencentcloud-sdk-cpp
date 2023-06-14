@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模块名VerifyCode
                      * @return Module 模块名VerifyCode
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名VerifyCode
-                     * @param Module 模块名VerifyCode
+                     * @param _module 模块名VerifyCode
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取操作名SendVcode
                      * @return Operation 操作名SendVcode
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名SendVcode
-                     * @param Operation 操作名SendVcode
+                     * @param _operation 操作名SendVcode
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取合同ID
                      * @return ContractResId 合同ID
+                     * 
                      */
                     std::string GetContractResId() const;
 
                     /**
                      * 设置合同ID
-                     * @param ContractResId 合同ID
+                     * @param _contractResId 合同ID
+                     * 
                      */
                     void SetContractResId(const std::string& _contractResId);
 
                     /**
                      * 判断参数 ContractResId 是否已赋值
                      * @return ContractResId 是否已赋值
+                     * 
                      */
                     bool ContractResIdHasBeenSet() const;
 
                     /**
                      * 获取帐号ID
                      * @return AccountResId 帐号ID
+                     * 
                      */
                     std::string GetAccountResId() const;
 
                     /**
                      * 设置帐号ID
-                     * @param AccountResId 帐号ID
+                     * @param _accountResId 帐号ID
+                     * 
                      */
                     void SetAccountResId(const std::string& _accountResId);
 
                     /**
                      * 判断参数 AccountResId 是否已赋值
                      * @return AccountResId 是否已赋值
+                     * 
                      */
                     bool AccountResIdHasBeenSet() const;
 

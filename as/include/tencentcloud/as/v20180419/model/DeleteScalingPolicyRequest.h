@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的告警策略ID。
                      * @return AutoScalingPolicyId 待删除的告警策略ID。
+                     * 
                      */
                     std::string GetAutoScalingPolicyId() const;
 
                     /**
                      * 设置待删除的告警策略ID。
-                     * @param AutoScalingPolicyId 待删除的告警策略ID。
+                     * @param _autoScalingPolicyId 待删除的告警策略ID。
+                     * 
                      */
                     void SetAutoScalingPolicyId(const std::string& _autoScalingPolicyId);
 
                     /**
                      * 判断参数 AutoScalingPolicyId 是否已赋值
                      * @return AutoScalingPolicyId 是否已赋值
+                     * 
                      */
                     bool AutoScalingPolicyIdHasBeenSet() const;
 

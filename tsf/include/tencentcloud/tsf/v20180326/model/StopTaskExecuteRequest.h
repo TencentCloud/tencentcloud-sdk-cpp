@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取任务执行ID
                      * @return ExecuteId 任务执行ID
+                     * 
                      */
                     std::string GetExecuteId() const;
 
                     /**
                      * 设置任务执行ID
-                     * @param ExecuteId 任务执行ID
+                     * @param _executeId 任务执行ID
+                     * 
                      */
                     void SetExecuteId(const std::string& _executeId);
 
                     /**
                      * 判断参数 ExecuteId 是否已赋值
                      * @return ExecuteId 是否已赋值
+                     * 
                      */
                     bool ExecuteIdHasBeenSet() const;
 
                     /**
                      * 获取任务批次ID
                      * @return BatchId 任务批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置任务批次ID
-                     * @param BatchId 任务批次ID
+                     * @param _batchId 任务批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

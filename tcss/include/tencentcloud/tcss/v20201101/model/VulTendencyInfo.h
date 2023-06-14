@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞趋势列表
                      * @return VulSet 漏洞趋势列表
+                     * 
                      */
                     std::vector<RunTimeTendencyInfo> GetVulSet() const;
 
                     /**
                      * 设置漏洞趋势列表
-                     * @param VulSet 漏洞趋势列表
+                     * @param _vulSet 漏洞趋势列表
+                     * 
                      */
                     void SetVulSet(const std::vector<RunTimeTendencyInfo>& _vulSet);
 
                     /**
                      * 判断参数 VulSet 是否已赋值
                      * @return VulSet 是否已赋值
+                     * 
                      */
                     bool VulSetHasBeenSet() const;
 
@@ -72,6 +75,7 @@ REGISTRY: 仓库镜像
                      * @return ImageType 漏洞影响的镜像类型：
 LOCAL：本地镜像
 REGISTRY: 仓库镜像
+                     * 
                      */
                     std::string GetImageType() const;
 
@@ -79,15 +83,17 @@ REGISTRY: 仓库镜像
                      * 设置漏洞影响的镜像类型：
 LOCAL：本地镜像
 REGISTRY: 仓库镜像
-                     * @param ImageType 漏洞影响的镜像类型：
+                     * @param _imageType 漏洞影响的镜像类型：
 LOCAL：本地镜像
 REGISTRY: 仓库镜像
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 

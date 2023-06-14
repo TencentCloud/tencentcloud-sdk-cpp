@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 项目名称
+                     * @param _name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 索引
+                     * @param _index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const Part& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 总数量
+                     * @param _total 总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferNum 转移数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransferNum() const;
 
                     /**
                      * 设置转移数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransferNum 转移数量
+                     * @param _transferNum 转移数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransferNum(const int64_t& _transferNum);
 
                     /**
                      * 判断参数 TransferNum 是否已赋值
                      * @return TransferNum 是否已赋值
+                     * 
                      */
                     bool TransferNumHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sizes 淋巴结大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetSizes() const;
 
                     /**
                      * 设置淋巴结大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sizes 淋巴结大小
+                     * @param _sizes 淋巴结大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSizes(const std::vector<int64_t>& _sizes);
 
                     /**
                      * 判断参数 Sizes 是否已赋值
                      * @return Sizes 是否已赋值
+                     * 
                      */
                     bool SizesHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 原文对应坐标
+                     * @param _coords 原文对应坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取API ID 列表
                      * @return ApiIds API ID 列表
+                     * 
                      */
                     std::vector<std::string> GetApiIds() const;
 
                     /**
                      * 设置API ID 列表
-                     * @param ApiIds API ID 列表
+                     * @param _apiIds API ID 列表
+                     * 
                      */
                     void SetApiIds(const std::vector<std::string>& _apiIds);
 
                     /**
                      * 判断参数 ApiIds 是否已赋值
                      * @return ApiIds 是否已赋值
+                     * 
                      */
                     bool ApiIdsHasBeenSet() const;
 
                     /**
                      * 获取开启/禁用，enabled/disabled
                      * @return UsableStatus 开启/禁用，enabled/disabled
+                     * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
                      * 设置开启/禁用，enabled/disabled
-                     * @param UsableStatus 开启/禁用，enabled/disabled
+                     * @param _usableStatus 开启/禁用，enabled/disabled
+                     * 
                      */
                     void SetUsableStatus(const std::string& _usableStatus);
 
                     /**
                      * 判断参数 UsableStatus 是否已赋值
                      * @return UsableStatus 是否已赋值
+                     * 
                      */
                     bool UsableStatusHasBeenSet() const;
 
                     /**
                      * 获取超时时间，单位毫秒，开启API超时时，必填
                      * @return Timeout 超时时间，单位毫秒，开启API超时时，必填
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置超时时间，单位毫秒，开启API超时时，必填
-                     * @param Timeout 超时时间，单位毫秒，开启API超时时，必填
+                     * @param _timeout 超时时间，单位毫秒，开启API超时时，必填
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 

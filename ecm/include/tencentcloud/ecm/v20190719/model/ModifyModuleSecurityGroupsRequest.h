@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取安全组列表。不超过5个。
                      * @return SecurityGroupIdSet 安全组列表。不超过5个。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIdSet() const;
 
                     /**
                      * 设置安全组列表。不超过5个。
-                     * @param SecurityGroupIdSet 安全组列表。不超过5个。
+                     * @param _securityGroupIdSet 安全组列表。不超过5个。
+                     * 
                      */
                     void SetSecurityGroupIdSet(const std::vector<std::string>& _securityGroupIdSet);
 
                     /**
                      * 判断参数 SecurityGroupIdSet 是否已赋值
                      * @return SecurityGroupIdSet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdSetHasBeenSet() const;
 
                     /**
                      * 获取模块id。
                      * @return ModuleId 模块id。
+                     * 
                      */
                     std::string GetModuleId() const;
 
                     /**
                      * 设置模块id。
-                     * @param ModuleId 模块id。
+                     * @param _moduleId 模块id。
+                     * 
                      */
                     void SetModuleId(const std::string& _moduleId);
 
                     /**
                      * 判断参数 ModuleId 是否已赋值
                      * @return ModuleId 是否已赋值
+                     * 
                      */
                     bool ModuleIdHasBeenSet() const;
 

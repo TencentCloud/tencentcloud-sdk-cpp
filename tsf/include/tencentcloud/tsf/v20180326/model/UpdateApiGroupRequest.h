@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取Api 分组ID
                      * @return GroupId Api 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Api 分组ID
-                     * @param GroupId Api 分组ID
+                     * @param _groupId Api 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取Api 分组名称
                      * @return GroupName Api 分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置Api 分组名称
-                     * @param GroupName Api 分组名称
+                     * @param _groupName Api 分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取Api 分组描述
                      * @return Description Api 分组描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置Api 分组描述
-                     * @param Description Api 分组描述
+                     * @param _description Api 分组描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取鉴权类型
                      * @return AuthType 鉴权类型
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置鉴权类型
-                     * @param AuthType 鉴权类型
+                     * @param _authType 鉴权类型
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取分组上下文
                      * @return GroupContext 分组上下文
+                     * 
                      */
                     std::string GetGroupContext() const;
 
                     /**
                      * 设置分组上下文
-                     * @param GroupContext 分组上下文
+                     * @param _groupContext 分组上下文
+                     * 
                      */
                     void SetGroupContext(const std::string& _groupContext);
 
                     /**
                      * 判断参数 GroupContext 是否已赋值
                      * @return GroupContext 是否已赋值
+                     * 
                      */
                     bool GroupContextHasBeenSet() const;
 
                     /**
                      * 获取命名空间参数key值
                      * @return NamespaceNameKey 命名空间参数key值
+                     * 
                      */
                     std::string GetNamespaceNameKey() const;
 
                     /**
                      * 设置命名空间参数key值
-                     * @param NamespaceNameKey 命名空间参数key值
+                     * @param _namespaceNameKey 命名空间参数key值
+                     * 
                      */
                     void SetNamespaceNameKey(const std::string& _namespaceNameKey);
 
                     /**
                      * 判断参数 NamespaceNameKey 是否已赋值
                      * @return NamespaceNameKey 是否已赋值
+                     * 
                      */
                     bool NamespaceNameKeyHasBeenSet() const;
 
                     /**
                      * 获取微服务名参数key值
                      * @return ServiceNameKey 微服务名参数key值
+                     * 
                      */
                     std::string GetServiceNameKey() const;
 
                     /**
                      * 设置微服务名参数key值
-                     * @param ServiceNameKey 微服务名参数key值
+                     * @param _serviceNameKey 微服务名参数key值
+                     * 
                      */
                     void SetServiceNameKey(const std::string& _serviceNameKey);
 
                     /**
                      * 判断参数 ServiceNameKey 是否已赋值
                      * @return ServiceNameKey 是否已赋值
+                     * 
                      */
                     bool ServiceNameKeyHasBeenSet() const;
 
                     /**
                      * 获取命名空间参数位置，path，header或query，默认是path
                      * @return NamespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
+                     * 
                      */
                     std::string GetNamespaceNameKeyPosition() const;
 
                     /**
                      * 设置命名空间参数位置，path，header或query，默认是path
-                     * @param NamespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
+                     * @param _namespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
+                     * 
                      */
                     void SetNamespaceNameKeyPosition(const std::string& _namespaceNameKeyPosition);
 
                     /**
                      * 判断参数 NamespaceNameKeyPosition 是否已赋值
                      * @return NamespaceNameKeyPosition 是否已赋值
+                     * 
                      */
                     bool NamespaceNameKeyPositionHasBeenSet() const;
 
                     /**
                      * 获取微服务名参数位置，path，header或query，默认是path
                      * @return ServiceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
+                     * 
                      */
                     std::string GetServiceNameKeyPosition() const;
 
                     /**
                      * 设置微服务名参数位置，path，header或query，默认是path
-                     * @param ServiceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
+                     * @param _serviceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
+                     * 
                      */
                     void SetServiceNameKeyPosition(const std::string& _serviceNameKeyPosition);
 
                     /**
                      * 判断参数 ServiceNameKeyPosition 是否已赋值
                      * @return ServiceNameKeyPosition 是否已赋值
+                     * 
                      */
                     bool ServiceNameKeyPositionHasBeenSet() const;
 

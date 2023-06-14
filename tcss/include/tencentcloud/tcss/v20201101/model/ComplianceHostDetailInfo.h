@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerVersion 主机上的Docker版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerVersion() const;
 
                     /**
                      * 设置主机上的Docker版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DockerVersion 主机上的Docker版本。
+                     * @param _dockerVersion 主机上的Docker版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDockerVersion(const std::string& _dockerVersion);
 
                     /**
                      * 判断参数 DockerVersion 是否已赋值
                      * @return DockerVersion 是否已赋值
+                     * 
                      */
                     bool DockerVersionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return K8SVersion 主机上的K8S的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetK8SVersion() const;
 
                     /**
                      * 设置主机上的K8S的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param K8SVersion 主机上的K8S的版本。
+                     * @param _k8SVersion 主机上的K8S的版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetK8SVersion(const std::string& _k8SVersion);
 
                     /**
                      * 判断参数 K8SVersion 是否已赋值
                      * @return K8SVersion 是否已赋值
+                     * 
                      */
                     bool K8SVersionHasBeenSet() const;
 

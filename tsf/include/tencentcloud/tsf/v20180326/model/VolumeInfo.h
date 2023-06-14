@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据卷类型
                      * @return VolumeType 数据卷类型
+                     * 
                      */
                     std::string GetVolumeType() const;
 
                     /**
                      * 设置数据卷类型
-                     * @param VolumeType 数据卷类型
+                     * @param _volumeType 数据卷类型
+                     * 
                      */
                     void SetVolumeType(const std::string& _volumeType);
 
                     /**
                      * 判断参数 VolumeType 是否已赋值
                      * @return VolumeType 是否已赋值
+                     * 
                      */
                     bool VolumeTypeHasBeenSet() const;
 
                     /**
                      * 获取数据卷名称
                      * @return VolumeName 数据卷名称
+                     * 
                      */
                     std::string GetVolumeName() const;
 
                     /**
                      * 设置数据卷名称
-                     * @param VolumeName 数据卷名称
+                     * @param _volumeName 数据卷名称
+                     * 
                      */
                     void SetVolumeName(const std::string& _volumeName);
 
                     /**
                      * 判断参数 VolumeName 是否已赋值
                      * @return VolumeName 是否已赋值
+                     * 
                      */
                     bool VolumeNameHasBeenSet() const;
 
                     /**
                      * 获取数据卷配置
                      * @return VolumeConfig 数据卷配置
+                     * 
                      */
                     std::string GetVolumeConfig() const;
 
                     /**
                      * 设置数据卷配置
-                     * @param VolumeConfig 数据卷配置
+                     * @param _volumeConfig 数据卷配置
+                     * 
                      */
                     void SetVolumeConfig(const std::string& _volumeConfig);
 
                     /**
                      * 判断参数 VolumeConfig 是否已赋值
                      * @return VolumeConfig 是否已赋值
+                     * 
                      */
                     bool VolumeConfigHasBeenSet() const;
 

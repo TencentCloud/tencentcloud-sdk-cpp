@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID。
                      * @return TrafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 设置流量镜像实例ID。
-                     * @param TrafficMirrorId 流量镜像实例ID。
+                     * @param _trafficMirrorId 流量镜像实例ID。
+                     * 
                      */
                     void SetTrafficMirrorId(const std::string& _trafficMirrorId);
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的主机实例ID和端口数组。
                      * @return ReceiverSet 待绑定的主机实例ID和端口数组。
+                     * 
                      */
                     std::vector<UnbindTrafficMirrorReceiver> GetReceiverSet() const;
 
                     /**
                      * 设置待绑定的主机实例ID和端口数组。
-                     * @param ReceiverSet 待绑定的主机实例ID和端口数组。
+                     * @param _receiverSet 待绑定的主机实例ID和端口数组。
+                     * 
                      */
                     void SetReceiverSet(const std::vector<UnbindTrafficMirrorReceiver>& _receiverSet);
 
                     /**
                      * 判断参数 ReceiverSet 是否已赋值
                      * @return ReceiverSet 是否已赋值
+                     * 
                      */
                     bool ReceiverSetHasBeenSet() const;
 

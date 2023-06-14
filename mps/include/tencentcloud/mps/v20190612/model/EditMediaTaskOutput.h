@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取编辑后文件的目标存储。
                      * @return OutputStorage 编辑后文件的目标存储。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置编辑后文件的目标存储。
-                     * @param OutputStorage 编辑后文件的目标存储。
+                     * @param _outputStorage 编辑后文件的目标存储。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
                     /**
                      * 获取编辑后的视频文件路径。
                      * @return Path 编辑后的视频文件路径。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置编辑后的视频文件路径。
-                     * @param Path 编辑后的视频文件路径。
+                     * @param _path 编辑后的视频文件路径。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 编辑后的视频文件元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置编辑后的视频文件元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 编辑后的视频文件元信息。
+                     * @param _metaData 编辑后的视频文件元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 

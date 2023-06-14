@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoReplicationMode DCN 运行状态，START为正常运行，STOP为暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoReplicationMode() const;
 
                     /**
                      * 设置DCN 运行状态，START为正常运行，STOP为暂停
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoReplicationMode DCN 运行状态，START为正常运行，STOP为暂停
+                     * @param _roReplicationMode DCN 运行状态，START为正常运行，STOP为暂停
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoReplicationMode(const std::string& _roReplicationMode);
 
                     /**
                      * 判断参数 RoReplicationMode 是否已赋值
                      * @return RoReplicationMode 是否已赋值
+                     * 
                      */
                     bool RoReplicationModeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayReplicationType 延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDelayReplicationType() const;
 
                     /**
                      * 设置延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DelayReplicationType 延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间
+                     * @param _delayReplicationType 延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDelayReplicationType(const std::string& _delayReplicationType);
 
                     /**
                      * 判断参数 DelayReplicationType 是否已赋值
                      * @return DelayReplicationType 是否已赋值
+                     * 
                      */
                     bool DelayReplicationTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DueTime 延迟复制的指定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDueTime() const;
 
                     /**
                      * 设置延迟复制的指定时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DueTime 延迟复制的指定时间
+                     * @param _dueTime 延迟复制的指定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDueTime(const std::string& _dueTime);
 
                     /**
                      * 判断参数 DueTime 是否已赋值
                      * @return DueTime 是否已赋值
+                     * 
                      */
                     bool DueTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicationDelay 延迟复制时的延迟秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReplicationDelay() const;
 
                     /**
                      * 设置延迟复制时的延迟秒数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplicationDelay 延迟复制时的延迟秒数
+                     * @param _replicationDelay 延迟复制时的延迟秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicationDelay(const int64_t& _replicationDelay);
 
                     /**
                      * 判断参数 ReplicationDelay 是否已赋值
                      * @return ReplicationDelay 是否已赋值
+                     * 
                      */
                     bool ReplicationDelayHasBeenSet() const;
 

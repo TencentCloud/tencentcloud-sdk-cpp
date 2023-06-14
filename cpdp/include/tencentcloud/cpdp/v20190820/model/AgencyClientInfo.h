@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取经办人姓名，存在经办人必输
                      * @return AgencyClientName 经办人姓名，存在经办人必输
+                     * 
                      */
                     std::string GetAgencyClientName() const;
 
                     /**
                      * 设置经办人姓名，存在经办人必输
-                     * @param AgencyClientName 经办人姓名，存在经办人必输
+                     * @param _agencyClientName 经办人姓名，存在经办人必输
+                     * 
                      */
                     void SetAgencyClientName(const std::string& _agencyClientName);
 
                     /**
                      * 判断参数 AgencyClientName 是否已赋值
                      * @return AgencyClientName 是否已赋值
+                     * 
                      */
                     bool AgencyClientNameHasBeenSet() const;
 
                     /**
                      * 获取经办人证件类型，存在经办人必输
                      * @return AgencyClientGlobalType 经办人证件类型，存在经办人必输
+                     * 
                      */
                     std::string GetAgencyClientGlobalType() const;
 
                     /**
                      * 设置经办人证件类型，存在经办人必输
-                     * @param AgencyClientGlobalType 经办人证件类型，存在经办人必输
+                     * @param _agencyClientGlobalType 经办人证件类型，存在经办人必输
+                     * 
                      */
                     void SetAgencyClientGlobalType(const std::string& _agencyClientGlobalType);
 
                     /**
                      * 判断参数 AgencyClientGlobalType 是否已赋值
                      * @return AgencyClientGlobalType 是否已赋值
+                     * 
                      */
                     bool AgencyClientGlobalTypeHasBeenSet() const;
 
                     /**
                      * 获取经办人证件号，存在经办人必输
                      * @return AgencyClientGlobalId 经办人证件号，存在经办人必输
+                     * 
                      */
                     std::string GetAgencyClientGlobalId() const;
 
                     /**
                      * 设置经办人证件号，存在经办人必输
-                     * @param AgencyClientGlobalId 经办人证件号，存在经办人必输
+                     * @param _agencyClientGlobalId 经办人证件号，存在经办人必输
+                     * 
                      */
                     void SetAgencyClientGlobalId(const std::string& _agencyClientGlobalId);
 
                     /**
                      * 判断参数 AgencyClientGlobalId 是否已赋值
                      * @return AgencyClientGlobalId 是否已赋值
+                     * 
                      */
                     bool AgencyClientGlobalIdHasBeenSet() const;
 
                     /**
                      * 获取经办人手机号，存在经办人必输
                      * @return AgencyClientMobile 经办人手机号，存在经办人必输
+                     * 
                      */
                     std::string GetAgencyClientMobile() const;
 
                     /**
                      * 设置经办人手机号，存在经办人必输
-                     * @param AgencyClientMobile 经办人手机号，存在经办人必输
+                     * @param _agencyClientMobile 经办人手机号，存在经办人必输
+                     * 
                      */
                     void SetAgencyClientMobile(const std::string& _agencyClientMobile);
 
                     /**
                      * 判断参数 AgencyClientMobile 是否已赋值
                      * @return AgencyClientMobile 是否已赋值
+                     * 
                      */
                     bool AgencyClientMobileHasBeenSet() const;
 

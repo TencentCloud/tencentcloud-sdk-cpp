@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取光照程度，参考提交任务时的LightStandard指定的Name参数
                      * @return LightLevel 光照程度，参考提交任务时的LightStandard指定的Name参数
+                     * 
                      */
                     std::string GetLightLevel() const;
 
                     /**
                      * 设置光照程度，参考提交任务时的LightStandard指定的Name参数
-                     * @param LightLevel 光照程度，参考提交任务时的LightStandard指定的Name参数
+                     * @param _lightLevel 光照程度，参考提交任务时的LightStandard指定的Name参数
+                     * 
                      */
                     void SetLightLevel(const std::string& _lightLevel);
 
                     /**
                      * 判断参数 LightLevel 是否已赋值
                      * @return LightLevel 是否已赋值
+                     * 
                      */
                     bool LightLevelHasBeenSet() const;
 
                     /**
                      * 获取光照亮度
                      * @return LightValue 光照亮度
+                     * 
                      */
                     double GetLightValue() const;
 
                     /**
                      * 设置光照亮度
-                     * @param LightValue 光照亮度
+                     * @param _lightValue 光照亮度
+                     * 
                      */
                     void SetLightValue(const double& _lightValue);
 
                     /**
                      * 判断参数 LightValue 是否已赋值
                      * @return LightValue 是否已赋值
+                     * 
                      */
                     bool LightValueHasBeenSet() const;
 

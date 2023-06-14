@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取性别: 0男1女
                      * @return Gender 性别: 0男1女
+                     * 
                      */
                     uint64_t GetGender() const;
 
                     /**
                      * 设置性别: 0男1女
-                     * @param Gender 性别: 0男1女
+                     * @param _gender 性别: 0男1女
+                     * 
                      */
                     void SetGender(const uint64_t& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60
                      * @return AgeGap 年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60
+                     * 
                      */
                     std::string GetAgeGap() const;
 
                     /**
                      * 设置年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60
-                     * @param AgeGap 年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60
+                     * @param _ageGap 年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60
+                     * 
                      */
                     void SetAgeGap(const std::string& _ageGap);
 
                     /**
                      * 判断参数 AgeGap 是否已赋值
                      * @return AgeGap 是否已赋值
+                     * 
                      */
                     bool AgeGapHasBeenSet() const;
 
                     /**
                      * 获取客流量
                      * @return TrafficCount 客流量
+                     * 
                      */
                     uint64_t GetTrafficCount() const;
 
                     /**
                      * 设置客流量
-                     * @param TrafficCount 客流量
+                     * @param _trafficCount 客流量
+                     * 
                      */
                     void SetTrafficCount(const uint64_t& _trafficCount);
 
                     /**
                      * 判断参数 TrafficCount 是否已赋值
                      * @return TrafficCount 是否已赋值
+                     * 
                      */
                     bool TrafficCountHasBeenSet() const;
 

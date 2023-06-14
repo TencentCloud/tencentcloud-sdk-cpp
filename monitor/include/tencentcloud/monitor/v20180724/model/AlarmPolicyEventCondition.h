@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 告警触发条件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlarmPolicyRule> GetRules() const;
 
                     /**
                      * 设置告警触发条件列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rules 告警触发条件列表
+                     * @param _rules 告警触发条件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRules(const std::vector<AlarmPolicyRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

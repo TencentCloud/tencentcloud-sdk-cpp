@@ -61,36 +61,42 @@ text:文本类型, longtext:长文本类型, banner:单图片类型, image:多�
                     /**
                      * 获取字段名称
                      * @return Name 字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名称
-                     * @param Name 字段名称
+                     * @param _name 字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字段值
                      * @return Value 字段值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段值
-                     * @param Value 字段值
+                     * @param _value 字段值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -105,6 +111,7 @@ text:文本类型,
 longtext:长文本类型, banner:单图片类型, image:多图片类型,
 video:视频类型,
 mp:小程序类型
+                     * 
                      */
                     std::string GetType() const;
 
@@ -114,143 +121,166 @@ text:文本类型,
 longtext:长文本类型, banner:单图片类型, image:多图片类型,
 video:视频类型,
 mp:小程序类型
-                     * @param Type 字段类型
+                     * @param _type 字段类型
 text:文本类型, 
 longtext:长文本类型, banner:单图片类型, image:多图片类型,
 video:视频类型,
 mp:小程序类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取只读
                      * @return ReadOnly 只读
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置只读
-                     * @param ReadOnly 只读
+                     * @param _readOnly 只读
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
                      * 获取扫码展示
                      * @return Hidden 扫码展示
+                     * 
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置扫码展示
-                     * @param Hidden 扫码展示
+                     * @param _hidden 扫码展示
+                     * 
                      */
                     void SetHidden(const bool& _hidden);
 
                     /**
                      * 判断参数 Hidden 是否已赋值
                      * @return Hidden 是否已赋值
+                     * 
                      */
                     bool HiddenHasBeenSet() const;
 
                     /**
                      * 获取多个值
                      * @return Values 多个值
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置多个值
-                     * @param Values 多个值
+                     * @param _values 多个值
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取类型标识
                      * @return Key 类型标识
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置类型标识
-                     * @param Key 类型标识
+                     * @param _key 类型标识
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取扩展字段
                      * @return Ext 扩展字段
+                     * 
                      */
                     std::string GetExt() const;
 
                     /**
                      * 设置扩展字段
-                     * @param Ext 扩展字段
+                     * @param _ext 扩展字段
+                     * 
                      */
                     void SetExt(const std::string& _ext);
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 
                     /**
                      * 获取额外属性
                      * @return Attrs 额外属性
+                     * 
                      */
                     std::vector<TraceItem> GetAttrs() const;
 
                     /**
                      * 设置额外属性
-                     * @param Attrs 额外属性
+                     * @param _attrs 额外属性
+                     * 
                      */
                     void SetAttrs(const std::vector<TraceItem>& _attrs);
 
                     /**
                      * 判断参数 Attrs 是否已赋值
                      * @return Attrs 是否已赋值
+                     * 
                      */
                     bool AttrsHasBeenSet() const;
 
                     /**
                      * 获取子页面，只读
                      * @return List 子页面，只读
+                     * 
                      */
                     std::vector<TraceData> GetList() const;
 
                     /**
                      * 设置子页面，只读
-                     * @param List 子页面，只读
+                     * @param _list 子页面，只读
+                     * 
                      */
                     void SetList(const std::vector<TraceData>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

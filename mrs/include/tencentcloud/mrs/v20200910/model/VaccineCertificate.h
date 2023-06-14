@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VaccineList 免疫接种列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Vaccination> GetVaccineList() const;
 
                     /**
                      * 设置免疫接种列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VaccineList 免疫接种列表
+                     * @param _vaccineList 免疫接种列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVaccineList(const std::vector<Vaccination>& _vaccineList);
 
                     /**
                      * 判断参数 VaccineList 是否已赋值
                      * @return VaccineList 是否已赋值
+                     * 
                      */
                     bool VaccineListHasBeenSet() const;
 

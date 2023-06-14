@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取返佣月份，如2018-02
                      * @return RebateMonth 返佣月份，如2018-02
+                     * 
                      */
                     std::string GetRebateMonth() const;
 
                     /**
                      * 设置返佣月份，如2018-02
-                     * @param RebateMonth 返佣月份，如2018-02
+                     * @param _rebateMonth 返佣月份，如2018-02
+                     * 
                      */
                     void SetRebateMonth(const std::string& _rebateMonth);
 
                     /**
                      * 判断参数 RebateMonth 是否已赋值
                      * @return RebateMonth 是否已赋值
+                     * 
                      */
                     bool RebateMonthHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UIN 资源拥有者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUIN() const;
 
                     /**
                      * 设置资源拥有者
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UIN 资源拥有者
+                     * @param _uIN 资源拥有者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUIN(const std::string& _uIN);
 
                     /**
                      * 判断参数 UIN 是否已赋值
                      * @return UIN 是否已赋值
+                     * 
                      */
                     bool UINHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 云平台应用ID，一般来说与uin存在一一对应的关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置云平台应用ID，一般来说与uin存在一一对应的关系
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId 云平台应用ID，一般来说与uin存在一一对应的关系
+                     * @param _appId 云平台应用ID，一般来说与uin存在一一对应的关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源id，会展示到通知内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id，会展示到通知内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源id，会展示到通知内容
+                     * @param _resourceId 资源id，会展示到通知内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 区域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置区域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 区域ID
+                     * @param _zoneId 区域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁
+                     * @param _status 资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolatedTimestamp 资源隔离时间，未隔离传"0000-00-00 00:00:00"，资源由隔离变回正常传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsolatedTimestamp() const;
 
                     /**
                      * 设置资源隔离时间，未隔离传"0000-00-00 00:00:00"，资源由隔离变回正常传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsolatedTimestamp 资源隔离时间，未隔离传"0000-00-00 00:00:00"，资源由隔离变回正常传"0000-00-00 00:00:00"
+                     * @param _isolatedTimestamp 资源隔离时间，未隔离传"0000-00-00 00:00:00"，资源由隔离变回正常传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsolatedTimestamp(const std::string& _isolatedTimestamp);
 
                     /**
                      * 判断参数 IsolatedTimestamp 是否已赋值
                      * @return IsolatedTimestamp 是否已赋值
+                     * 
                      */
                     bool IsolatedTimestampHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，
+                     * @param _createTime 资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 0后付费 1预付费 2预留实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置0后付费 1预付费 2预留实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayMode 0后付费 1预付费 2预留实例
+                     * @param _payMode 0后付费 1预付费 2预留实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空
+                     * @param _alias 资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsDetail 购买详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GoodsDetail GetGoodsDetail() const;
 
                     /**
                      * 设置购买详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GoodsDetail 购买详情
+                     * @param _goodsDetail 购买详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGoodsDetail(const GoodsDetail& _goodsDetail);
 
                     /**
                      * 判断参数 GoodsDetail 是否已赋值
                      * @return GoodsDetail 是否已赋值
+                     * 
                      */
                     bool GoodsDetailHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewFlag 预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
+                     * @param _renewFlag 预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime （仅预付费）资源到期时间，无到期概念传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置（仅预付费）资源到期时间，无到期概念传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime （仅预付费）资源到期时间，无到期概念传"0000-00-00 00:00:00"
+                     * @param _expireTime （仅预付费）资源到期时间，无到期概念传"0000-00-00 00:00:00"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRegion() const;
 
                     /**
                      * 设置地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域ID
+                     * @param _region 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const int64_t& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SdkAppId sdk appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置sdk appid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SdkAppId sdk appid
+                     * @param _sdkAppId sdk appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName app名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置app名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppName app名称
+                     * @param _appName app名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName app的package名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置app的package名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageName app的package名称
+                     * @param _packageName app的package名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageName(const std::string& _packageName);
 
                     /**
                      * 判断参数 PackageName 是否已赋值
                      * @return PackageName 是否已赋值
+                     * 
                      */
                     bool PackageNameHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 资源链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置资源链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param URL 资源链接
+                     * @param _uRL 资源链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Entry app的entry
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEntry() const;
 
                     /**
                      * 设置app的entry
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Entry app的entry
+                     * @param _entry app的entry
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEntry(const std::string& _entry);
 
                     /**
                      * 判断参数 Entry 是否已赋值
                      * @return Entry 是否已赋值
+                     * 
                      */
                     bool EntryHasBeenSet() const;
 
@@ -448,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstType 0：sdk 1：素材
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstType() const;
 
                     /**
                      * 设置0：sdk 1：素材
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstType 0：sdk 1：素材
+                     * @param _instType 0：sdk 1：素材
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstType(const int64_t& _instType);
 
                     /**
                      * 判断参数 InstType 是否已赋值
                      * @return InstType 是否已赋值
+                     * 
                      */
                     bool InstTypeHasBeenSet() const;
 
@@ -470,20 +527,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key license的秘钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置license的秘钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key license的秘钥
+                     * @param _key license的秘钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 

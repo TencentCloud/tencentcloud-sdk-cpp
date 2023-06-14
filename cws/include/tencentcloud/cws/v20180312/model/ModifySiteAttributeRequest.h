@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取站点ID
                      * @return SiteId 站点ID
+                     * 
                      */
                     uint64_t GetSiteId() const;
 
                     /**
                      * 设置站点ID
-                     * @param SiteId 站点ID
+                     * @param _siteId 站点ID
+                     * 
                      */
                     void SetSiteId(const uint64_t& _siteId);
 
                     /**
                      * 判断参数 SiteId 是否已赋值
                      * @return SiteId 是否已赋值
+                     * 
                      */
                     bool SiteIdHasBeenSet() const;
 
                     /**
                      * 获取站点名称
                      * @return Name 站点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置站点名称
-                     * @param Name 站点名称
+                     * @param _name 站点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取网站是否需要登录扫描：0-未知；-1-不需要；1-需要
                      * @return NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要
+                     * 
                      */
                     int64_t GetNeedLogin() const;
 
                     /**
                      * 设置网站是否需要登录扫描：0-未知；-1-不需要；1-需要
-                     * @param NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要
+                     * @param _needLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要
+                     * 
                      */
                     void SetNeedLogin(const int64_t& _needLogin);
 
                     /**
                      * 判断参数 NeedLogin 是否已赋值
                      * @return NeedLogin 是否已赋值
+                     * 
                      */
                     bool NeedLoginHasBeenSet() const;
 
                     /**
                      * 获取登录后的cookie
                      * @return LoginCookie 登录后的cookie
+                     * 
                      */
                     std::string GetLoginCookie() const;
 
                     /**
                      * 设置登录后的cookie
-                     * @param LoginCookie 登录后的cookie
+                     * @param _loginCookie 登录后的cookie
+                     * 
                      */
                     void SetLoginCookie(const std::string& _loginCookie);
 
                     /**
                      * 判断参数 LoginCookie 是否已赋值
                      * @return LoginCookie 是否已赋值
+                     * 
                      */
                     bool LoginCookieHasBeenSet() const;
 
                     /**
                      * 获取用于测试cookie是否有效的URL
                      * @return LoginCheckUrl 用于测试cookie是否有效的URL
+                     * 
                      */
                     std::string GetLoginCheckUrl() const;
 
                     /**
                      * 设置用于测试cookie是否有效的URL
-                     * @param LoginCheckUrl 用于测试cookie是否有效的URL
+                     * @param _loginCheckUrl 用于测试cookie是否有效的URL
+                     * 
                      */
                     void SetLoginCheckUrl(const std::string& _loginCheckUrl);
 
                     /**
                      * 判断参数 LoginCheckUrl 是否已赋值
                      * @return LoginCheckUrl 是否已赋值
+                     * 
                      */
                     bool LoginCheckUrlHasBeenSet() const;
 
                     /**
                      * 获取用于测试cookie是否有效的关键字
                      * @return LoginCheckKw 用于测试cookie是否有效的关键字
+                     * 
                      */
                     std::string GetLoginCheckKw() const;
 
                     /**
                      * 设置用于测试cookie是否有效的关键字
-                     * @param LoginCheckKw 用于测试cookie是否有效的关键字
+                     * @param _loginCheckKw 用于测试cookie是否有效的关键字
+                     * 
                      */
                     void SetLoginCheckKw(const std::string& _loginCheckKw);
 
                     /**
                      * 判断参数 LoginCheckKw 是否已赋值
                      * @return LoginCheckKw 是否已赋值
+                     * 
                      */
                     bool LoginCheckKwHasBeenSet() const;
 
                     /**
                      * 获取禁止扫描器扫描的目录关键字
                      * @return ScanDisallow 禁止扫描器扫描的目录关键字
+                     * 
                      */
                     std::string GetScanDisallow() const;
 
                     /**
                      * 设置禁止扫描器扫描的目录关键字
-                     * @param ScanDisallow 禁止扫描器扫描的目录关键字
+                     * @param _scanDisallow 禁止扫描器扫描的目录关键字
+                     * 
                      */
                     void SetScanDisallow(const std::string& _scanDisallow);
 
                     /**
                      * 判断参数 ScanDisallow 是否已赋值
                      * @return ScanDisallow 是否已赋值
+                     * 
                      */
                     bool ScanDisallowHasBeenSet() const;
 

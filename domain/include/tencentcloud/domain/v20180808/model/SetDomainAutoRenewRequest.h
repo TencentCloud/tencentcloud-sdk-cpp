@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名ID。
                      * @return DomainId 域名ID。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名ID。
-                     * @param DomainId 域名ID。
+                     * @param _domainId 域名ID。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
  0：不设置自动续费
 1：设置自动续费
 2：设置到期后不续费
+                     * 
                      */
                     uint64_t GetAutoRenew() const;
 
@@ -77,16 +81,18 @@ namespace TencentCloud
  0：不设置自动续费
 1：设置自动续费
 2：设置到期后不续费
-                     * @param AutoRenew AutoRenew 有三个可选值：
+                     * @param _autoRenew AutoRenew 有三个可选值：
  0：不设置自动续费
 1：设置自动续费
 2：设置到期后不续费
+                     * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
                     /**
                      * 判断参数 AutoRenew 是否已赋值
                      * @return AutoRenew 是否已赋值
+                     * 
                      */
                     bool AutoRenewHasBeenSet() const;
 

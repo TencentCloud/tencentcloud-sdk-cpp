@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取时间轴截止时间，GMT，精确到毫秒
                      * @return EndTime 时间轴截止时间，GMT，精确到毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置时间轴截止时间，GMT，精确到毫秒
-                     * @param EndTime 时间轴截止时间，GMT，精确到毫秒
+                     * @param _endTime 时间轴截止时间，GMT，精确到毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取时间粒度
                      * @return StartTime 时间粒度
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置时间粒度
-                     * @param StartTime 时间粒度
+                     * @param _startTime 时间粒度
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取时间轴开始时间，GMT，精确到毫秒
                      * @return Period 时间轴开始时间，GMT，精确到毫秒
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置时间轴开始时间，GMT，精确到毫秒
-                     * @param Period 时间轴开始时间，GMT，精确到毫秒
+                     * @param _period 时间轴开始时间，GMT，精确到毫秒
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataPoints 多值数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MultiValueDataPoints> GetDataPoints() const;
 
                     /**
                      * 设置多值数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataPoints 多值数据点集合
+                     * @param _dataPoints 多值数据点集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataPoints(const std::vector<MultiValueDataPoints>& _dataPoints);
 
                     /**
                      * 判断参数 DataPoints 是否已赋值
                      * @return DataPoints 是否已赋值
+                     * 
                      */
                     bool DataPointsHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。
                      * @return WordCoordinate 单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。
+                     * 
                      */
                     std::vector<Coord> GetWordCoordinate() const;
 
                     /**
                      * 设置单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。
-                     * @param WordCoordinate 单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。
+                     * @param _wordCoordinate 单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。
+                     * 
                      */
                     void SetWordCoordinate(const std::vector<Coord>& _wordCoordinate);
 
                     /**
                      * 判断参数 WordCoordinate 是否已赋值
                      * @return WordCoordinate 是否已赋值
+                     * 
                      */
                     bool WordCoordinateHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID列表
                      * @return InstanceIdList 资源实例ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
                      * 设置资源实例ID列表
-                     * @param InstanceIdList 资源实例ID列表
+                     * @param _instanceIdList 资源实例ID列表
+                     * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
 
                     /**
                      * 判断参数 InstanceIdList 是否已赋值
                      * @return InstanceIdList 是否已赋值
+                     * 
                      */
                     bool InstanceIdListHasBeenSet() const;
 
@@ -69,6 +72,7 @@ off(关闭)
 on(开启)
 off(关闭)
 ]
+                     * 
                      */
                     std::string GetDDoSAI() const;
 
@@ -77,16 +81,18 @@ off(关闭)
 on(开启)
 off(关闭)
 ]
-                     * @param DDoSAI AI防护开关，取值[
+                     * @param _dDoSAI AI防护开关，取值[
 on(开启)
 off(关闭)
 ]
+                     * 
                      */
                     void SetDDoSAI(const std::string& _dDoSAI);
 
                     /**
                      * 判断参数 DDoSAI 是否已赋值
                      * @return DDoSAI 是否已赋值
+                     * 
                      */
                     bool DDoSAIHasBeenSet() const;
 

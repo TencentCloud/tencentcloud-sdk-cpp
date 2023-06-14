@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回信息
                      * @return Data 返回信息
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -64,12 +66,14 @@ pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备�
 Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic.
 pushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备未在线或没有订阅相关的 MQTT Topic。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

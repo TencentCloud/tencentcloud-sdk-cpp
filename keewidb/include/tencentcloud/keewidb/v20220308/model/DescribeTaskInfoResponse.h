@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取任务状态。<ul><li>preparing：待执行。</li><li>running：执行中。</li><li>succeed：成功。</li><li>failed：失败。</li><li>error：执行出错。</li></ul>
                      * @return Status 任务状态。<ul><li>preparing：待执行。</li><li>running：执行中。</li><li>succeed：成功。</li><li>failed：失败。</li><li>error：执行出错。</li></ul>
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务开始时间。
                      * @return StartTime 任务开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取任务类型。
                      * @return TaskType 任务类型。
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取实例的ID。
                      * @return InstanceId 实例的ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取任务信息，错误时显示错误信息。执行中与成功则为空值。
                      * @return TaskMessage 任务信息，错误时显示错误信息。执行中与成功则为空值。
+                     * 
                      */
                     std::string GetTaskMessage() const;
 
                     /**
                      * 判断参数 TaskMessage 是否已赋值
                      * @return TaskMessage 是否已赋值
+                     * 
                      */
                     bool TaskMessageHasBeenSet() const;
 

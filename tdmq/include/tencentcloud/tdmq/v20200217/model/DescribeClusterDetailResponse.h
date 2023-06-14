@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取集群的详细信息
                      * @return ClusterSet 集群的详细信息
+                     * 
                      */
                     Cluster GetClusterSet() const;
 
                     /**
                      * 判断参数 ClusterSet 是否已赋值
                      * @return ClusterSet 是否已赋值
+                     * 
                      */
                     bool ClusterSetHasBeenSet() const;
 

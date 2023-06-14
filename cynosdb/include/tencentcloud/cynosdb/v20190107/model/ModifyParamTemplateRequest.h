@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取模版ID
                      * @return TemplateId 模版ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模版ID
-                     * @param TemplateId 模版ID
+                     * @param _templateId 模版ID
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模版名
                      * @return TemplateName 模版名
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模版名
-                     * @param TemplateName 模版名
+                     * @param _templateName 模版名
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取模版描述
                      * @return TemplateDescription 模版描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置模版描述
-                     * @param TemplateDescription 模版描述
+                     * @param _templateDescription 模版描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取参数列表
                      * @return ParamList 参数列表
+                     * 
                      */
                     std::vector<ModifyParamItem> GetParamList() const;
 
                     /**
                      * 设置参数列表
-                     * @param ParamList 参数列表
+                     * @param _paramList 参数列表
+                     * 
                      */
                     void SetParamList(const std::vector<ModifyParamItem>& _paramList);
 
                     /**
                      * 判断参数 ParamList 是否已赋值
                      * @return ParamList 是否已赋值
+                     * 
                      */
                     bool ParamListHasBeenSet() const;
 

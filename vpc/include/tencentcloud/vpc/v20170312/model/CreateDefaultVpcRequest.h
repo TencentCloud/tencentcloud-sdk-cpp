@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
                      * @return Zone 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
-                     * @param Zone 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
+                     * @param _zone 子网所在的可用区，该参数可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取，例如ap-guangzhou-1，不指定时将随机选择可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取是否强制返回默认VPC。
                      * @return Force 是否强制返回默认VPC。
+                     * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否强制返回默认VPC。
-                     * @param Force 是否强制返回默认VPC。
+                     * @param _force 是否强制返回默认VPC。
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

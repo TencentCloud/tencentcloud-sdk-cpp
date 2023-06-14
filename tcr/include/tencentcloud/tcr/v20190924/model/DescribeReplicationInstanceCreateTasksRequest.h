@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取同步实例Id，见实例返回列表中的同步实例ID
                      * @return ReplicationRegistryId 同步实例Id，见实例返回列表中的同步实例ID
+                     * 
                      */
                     std::string GetReplicationRegistryId() const;
 
                     /**
                      * 设置同步实例Id，见实例返回列表中的同步实例ID
-                     * @param ReplicationRegistryId 同步实例Id，见实例返回列表中的同步实例ID
+                     * @param _replicationRegistryId 同步实例Id，见实例返回列表中的同步实例ID
+                     * 
                      */
                     void SetReplicationRegistryId(const std::string& _replicationRegistryId);
 
                     /**
                      * 判断参数 ReplicationRegistryId 是否已赋值
                      * @return ReplicationRegistryId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegistryIdHasBeenSet() const;
 
                     /**
                      * 获取同步实例的地域ID，见实例返回列表中地域ID
                      * @return ReplicationRegionId 同步实例的地域ID，见实例返回列表中地域ID
+                     * 
                      */
                     uint64_t GetReplicationRegionId() const;
 
                     /**
                      * 设置同步实例的地域ID，见实例返回列表中地域ID
-                     * @param ReplicationRegionId 同步实例的地域ID，见实例返回列表中地域ID
+                     * @param _replicationRegionId 同步实例的地域ID，见实例返回列表中地域ID
+                     * 
                      */
                     void SetReplicationRegionId(const uint64_t& _replicationRegionId);
 
                     /**
                      * 判断参数 ReplicationRegionId 是否已赋值
                      * @return ReplicationRegionId 是否已赋值
+                     * 
                      */
                     bool ReplicationRegionIdHasBeenSet() const;
 

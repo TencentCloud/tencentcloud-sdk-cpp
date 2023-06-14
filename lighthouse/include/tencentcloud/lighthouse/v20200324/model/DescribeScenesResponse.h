@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取使用场景列表。
                      * @return SceneSet 使用场景列表。
+                     * 
                      */
                     std::vector<Scene> GetSceneSet() const;
 
                     /**
                      * 判断参数 SceneSet 是否已赋值
                      * @return SceneSet 是否已赋值
+                     * 
                      */
                     bool SceneSetHasBeenSet() const;
 
                     /**
                      * 获取使用场景总数量。
                      * @return TotalCount 使用场景总数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

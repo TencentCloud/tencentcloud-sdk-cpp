@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GameServerSessionDetails 游戏服务器会话详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GameServerSessionDetail> GetGameServerSessionDetails() const;
 
                     /**
                      * 判断参数 GameServerSessionDetails 是否已赋值
                      * @return GameServerSessionDetails 是否已赋值
+                     * 
                      */
                     bool GameServerSessionDetailsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextToken() const;
 
                     /**
                      * 判断参数 NextToken 是否已赋值
                      * @return NextToken 是否已赋值
+                     * 
                      */
                     bool NextTokenHasBeenSet() const;
 

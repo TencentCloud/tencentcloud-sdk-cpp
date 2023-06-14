@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeonatalInfo 新生儿信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NeonatalInfo GetNeonatalInfo() const;
 
                     /**
                      * 设置新生儿信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NeonatalInfo 新生儿信息
+                     * @param _neonatalInfo 新生儿信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNeonatalInfo(const NeonatalInfo& _neonatalInfo);
 
                     /**
                      * 判断参数 NeonatalInfo 是否已赋值
                      * @return NeonatalInfo 是否已赋值
+                     * 
                      */
                     bool NeonatalInfoHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MotherInfo 母亲信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParentInfo GetMotherInfo() const;
 
                     /**
                      * 设置母亲信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MotherInfo 母亲信息
+                     * @param _motherInfo 母亲信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMotherInfo(const ParentInfo& _motherInfo);
 
                     /**
                      * 判断参数 MotherInfo 是否已赋值
                      * @return MotherInfo 是否已赋值
+                     * 
                      */
                     bool MotherInfoHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FatherInfo 父亲信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParentInfo GetFatherInfo() const;
 
                     /**
                      * 设置父亲信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FatherInfo 父亲信息
+                     * @param _fatherInfo 父亲信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFatherInfo(const ParentInfo& _fatherInfo);
 
                     /**
                      * 判断参数 FatherInfo 是否已赋值
                      * @return FatherInfo 是否已赋值
+                     * 
                      */
                     bool FatherInfoHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssueInfo 签发信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IssueInfo GetIssueInfo() const;
 
                     /**
                      * 设置签发信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IssueInfo 签发信息
+                     * @param _issueInfo 签发信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssueInfo(const IssueInfo& _issueInfo);
 
                     /**
                      * 判断参数 IssueInfo 是否已赋值
                      * @return IssueInfo 是否已赋值
+                     * 
                      */
                     bool IssueInfoHasBeenSet() const;
 

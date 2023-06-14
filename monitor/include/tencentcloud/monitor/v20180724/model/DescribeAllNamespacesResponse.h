@@ -48,48 +48,56 @@ namespace TencentCloud
                     /**
                      * 获取云产品的告警策略类型，已废弃
                      * @return QceNamespaces 云产品的告警策略类型，已废弃
+                     * 
                      */
                     CommonNamespace GetQceNamespaces() const;
 
                     /**
                      * 判断参数 QceNamespaces 是否已赋值
                      * @return QceNamespaces 是否已赋值
+                     * 
                      */
                     bool QceNamespacesHasBeenSet() const;
 
                     /**
                      * 获取其他告警策略类型，已废弃
                      * @return CustomNamespaces 其他告警策略类型，已废弃
+                     * 
                      */
                     CommonNamespace GetCustomNamespaces() const;
 
                     /**
                      * 判断参数 CustomNamespaces 是否已赋值
                      * @return CustomNamespaces 是否已赋值
+                     * 
                      */
                     bool CustomNamespacesHasBeenSet() const;
 
                     /**
                      * 获取云产品的告警策略类型
                      * @return QceNamespacesNew 云产品的告警策略类型
+                     * 
                      */
                     std::vector<CommonNamespace> GetQceNamespacesNew() const;
 
                     /**
                      * 判断参数 QceNamespacesNew 是否已赋值
                      * @return QceNamespacesNew 是否已赋值
+                     * 
                      */
                     bool QceNamespacesNewHasBeenSet() const;
 
                     /**
                      * 获取其他告警策略类型，暂不支持
                      * @return CustomNamespacesNew 其他告警策略类型，暂不支持
+                     * 
                      */
                     std::vector<CommonNamespace> GetCustomNamespacesNew() const;
 
                     /**
                      * 判断参数 CustomNamespacesNew 是否已赋值
                      * @return CustomNamespacesNew 是否已赋值
+                     * 
                      */
                     bool CustomNamespacesNewHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommonNamespaces 通用告警策略类型(包括：应用性能监控，前端性能监控，云拨测)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CommonNamespaceNew> GetCommonNamespaces() const;
 
                     /**
                      * 判断参数 CommonNamespaces 是否已赋值
                      * @return CommonNamespaces 是否已赋值
+                     * 
                      */
                     bool CommonNamespacesHasBeenSet() const;
 

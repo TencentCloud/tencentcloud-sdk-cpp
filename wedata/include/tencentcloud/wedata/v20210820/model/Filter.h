@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取过滤字段名称
                      * @return Name 过滤字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤字段名称
-                     * @param Name 过滤字段名称
+                     * @param _name 过滤字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤值列表
                      * @return Values 过滤值列表
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤值列表
-                     * @param Values 过滤值列表
+                     * @param _values 过滤值列表
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

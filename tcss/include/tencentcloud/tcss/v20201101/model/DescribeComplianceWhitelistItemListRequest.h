@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取起始偏移量，默认为0。
                      * @return Offset 起始偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置起始偏移量，默认为0。
-                     * @param Offset 起始偏移量，默认为0。
+                     * @param _offset 起始偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取要获取的数量，默认为10，最大为100。
                      * @return Limit 要获取的数量，默认为10，最大为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置要获取的数量，默认为10，最大为100。
-                     * @param Limit 要获取的数量，默认为10，最大为100。
+                     * @param _limit 要获取的数量，默认为10，最大为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资产类型列表。
                      * @return AssetTypeSet 资产类型列表。
+                     * 
                      */
                     std::vector<std::string> GetAssetTypeSet() const;
 
                     /**
                      * 设置资产类型列表。
-                     * @param AssetTypeSet 资产类型列表。
+                     * @param _assetTypeSet 资产类型列表。
+                     * 
                      */
                     void SetAssetTypeSet(const std::vector<std::string>& _assetTypeSet);
 
                     /**
                      * 判断参数 AssetTypeSet 是否已赋值
                      * @return AssetTypeSet 是否已赋值
+                     * 
                      */
                     bool AssetTypeSetHasBeenSet() const;
 
                     /**
                      * 获取查询过滤器
                      * @return Filters 查询过滤器
+                     * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
                      * 设置查询过滤器
-                     * @param Filters 查询过滤器
+                     * @param _filters 查询过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return By 排序字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param By 排序字段
+                     * @param _by 排序字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取排序方式 desc asc
                      * @return Order 排序方式 desc asc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式 desc asc
-                     * @param Order 排序方式 desc asc
+                     * @param _order 排序方式 desc asc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，UseId必填	
                      * @return Operator 操作人信息，UseId必填	
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，UseId必填	
-                     * @param Operator 操作人信息，UseId必填	
+                     * @param _operator 操作人信息，UseId必填	
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
                      * @return SceneKey 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
                      * 设置自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
-                     * @param SceneKey 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * @param _sceneKey 自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
 
                     /**
                      * 判断参数 SceneKey 是否已赋值
                      * @return SceneKey 是否已赋值
+                     * 
                      */
                     bool SceneKeyHasBeenSet() const;
 
@@ -85,20 +91,23 @@ namespace TencentCloud
 
                      * @return UserInfo 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
 
+                     * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
                      * 设置指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
 
-                     * @param UserInfo 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
+                     * @param _userInfo 指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。
 
+                     * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取操作系统列表
                      * @return List 操作系统列表
+                     * 
                      */
                     std::vector<OsName> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

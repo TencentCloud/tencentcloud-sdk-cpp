@@ -50,12 +50,14 @@ namespace TencentCloud
                      * @return FlowId 签署流程编号。
 
 注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -68,12 +70,14 @@ namespace TencentCloud
 
 注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 判断参数 PreviewUrl 是否已赋值
                      * @return PreviewUrl 是否已赋值
+                     * 
                      */
                     bool PreviewUrlHasBeenSet() const;
 

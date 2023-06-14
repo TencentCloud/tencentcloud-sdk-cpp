@@ -54,6 +54,7 @@ namespace TencentCloud
                      * @return Status 点播转直播项目运行状态，取值有：
 <li> Working : 运行中；</li>
 <li> Idle: 空闲状态。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -61,105 +62,122 @@ namespace TencentCloud
                      * 设置点播转直播项目运行状态，取值有：
 <li> Working : 运行中；</li>
 <li> Idle: 空闲状态。</li>
-                     * @param Status 点播转直播项目运行状态，取值有：
+                     * @param _status 点播转直播项目运行状态，取值有：
 <li> Working : 运行中；</li>
 <li> Idle: 空闲状态。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取当前播放的输入源 Id。
                      * @return CurrentSourceId 当前播放的输入源 Id。
+                     * 
                      */
                     std::string GetCurrentSourceId() const;
 
                     /**
                      * 设置当前播放的输入源 Id。
-                     * @param CurrentSourceId 当前播放的输入源 Id。
+                     * @param _currentSourceId 当前播放的输入源 Id。
+                     * 
                      */
                     void SetCurrentSourceId(const std::string& _currentSourceId);
 
                     /**
                      * 判断参数 CurrentSourceId 是否已赋值
                      * @return CurrentSourceId 是否已赋值
+                     * 
                      */
                     bool CurrentSourceIdHasBeenSet() const;
 
                     /**
                      * 获取当前播放的输入源的播放位置，单位：秒。
                      * @return CurrentSourcePosition 当前播放的输入源的播放位置，单位：秒。
+                     * 
                      */
                     double GetCurrentSourcePosition() const;
 
                     /**
                      * 设置当前播放的输入源的播放位置，单位：秒。
-                     * @param CurrentSourcePosition 当前播放的输入源的播放位置，单位：秒。
+                     * @param _currentSourcePosition 当前播放的输入源的播放位置，单位：秒。
+                     * 
                      */
                     void SetCurrentSourcePosition(const double& _currentSourcePosition);
 
                     /**
                      * 判断参数 CurrentSourcePosition 是否已赋值
                      * @return CurrentSourcePosition 是否已赋值
+                     * 
                      */
                     bool CurrentSourcePositionHasBeenSet() const;
 
                     /**
                      * 获取当前播放的输入源时长，单位：秒。
                      * @return CurrentSourceDuration 当前播放的输入源时长，单位：秒。
+                     * 
                      */
                     double GetCurrentSourceDuration() const;
 
                     /**
                      * 设置当前播放的输入源时长，单位：秒。
-                     * @param CurrentSourceDuration 当前播放的输入源时长，单位：秒。
+                     * @param _currentSourceDuration 当前播放的输入源时长，单位：秒。
+                     * 
                      */
                     void SetCurrentSourceDuration(const double& _currentSourceDuration);
 
                     /**
                      * 判断参数 CurrentSourceDuration 是否已赋值
                      * @return CurrentSourceDuration 是否已赋值
+                     * 
                      */
                     bool CurrentSourceDurationHasBeenSet() const;
 
                     /**
                      * 获取输出源状态信息。
                      * @return DestinationStatusSet 输出源状态信息。
+                     * 
                      */
                     std::vector<MediaCastDestinationStatus> GetDestinationStatusSet() const;
 
                     /**
                      * 设置输出源状态信息。
-                     * @param DestinationStatusSet 输出源状态信息。
+                     * @param _destinationStatusSet 输出源状态信息。
+                     * 
                      */
                     void SetDestinationStatusSet(const std::vector<MediaCastDestinationStatus>& _destinationStatusSet);
 
                     /**
                      * 判断参数 DestinationStatusSet 是否已赋值
                      * @return DestinationStatusSet 是否已赋值
+                     * 
                      */
                     bool DestinationStatusSetHasBeenSet() const;
 
                     /**
                      * 获取已经循环播放的次数。
                      * @return LoopCount 已经循环播放的次数。
+                     * 
                      */
                     int64_t GetLoopCount() const;
 
                     /**
                      * 设置已经循环播放的次数。
-                     * @param LoopCount 已经循环播放的次数。
+                     * @param _loopCount 已经循环播放的次数。
+                     * 
                      */
                     void SetLoopCount(const int64_t& _loopCount);
 
                     /**
                      * 判断参数 LoopCount 是否已赋值
                      * @return LoopCount 是否已赋值
+                     * 
                      */
                     bool LoopCountHasBeenSet() const;
 

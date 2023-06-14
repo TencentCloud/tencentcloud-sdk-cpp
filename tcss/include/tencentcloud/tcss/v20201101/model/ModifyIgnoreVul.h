@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
                     /**
                      * 获取忽略的镜像ID，空表示全部
                      * @return ImageIDs 忽略的镜像ID，空表示全部
+                     * 
                      */
                     std::vector<std::string> GetImageIDs() const;
 
                     /**
                      * 设置忽略的镜像ID，空表示全部
-                     * @param ImageIDs 忽略的镜像ID，空表示全部
+                     * @param _imageIDs 忽略的镜像ID，空表示全部
+                     * 
                      */
                     void SetImageIDs(const std::vector<std::string>& _imageIDs);
 
                     /**
                      * 判断参数 ImageIDs 是否已赋值
                      * @return ImageIDs 是否已赋值
+                     * 
                      */
                     bool ImageIDsHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 镜像类型: LOCAL 本地镜像 REGISTRY 仓库镜像
                      * @return ImageType 当有镜像时
 镜像类型: LOCAL 本地镜像 REGISTRY 仓库镜像
+                     * 
                      */
                     std::string GetImageType() const;
 
                     /**
                      * 设置当有镜像时
 镜像类型: LOCAL 本地镜像 REGISTRY 仓库镜像
-                     * @param ImageType 当有镜像时
+                     * @param _imageType 当有镜像时
 镜像类型: LOCAL 本地镜像 REGISTRY 仓库镜像
+                     * 
                      */
                     void SetImageType(const std::string& _imageType);
 
                     /**
                      * 判断参数 ImageType 是否已赋值
                      * @return ImageType 是否已赋值
+                     * 
                      */
                     bool ImageTypeHasBeenSet() const;
 

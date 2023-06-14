@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取多个合同ID
                      * @return FlowIds 多个合同ID
+                     * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 判断参数 FlowIds 是否已赋值
                      * @return FlowIds 是否已赋值
+                     * 
                      */
                     bool FlowIdsHasBeenSet() const;
 
                     /**
                      * 获取业务信息，限制1024字符
                      * @return CustomerData 业务信息，限制1024字符
+                     * 
                      */
                     std::vector<std::string> GetCustomerData() const;
 
                     /**
                      * 判断参数 CustomerData 是否已赋值
                      * @return CustomerData 是否已赋值
+                     * 
                      */
                     bool CustomerDataHasBeenSet() const;
 
@@ -73,24 +77,28 @@ namespace TencentCloud
 成功为“”,创建失败则对应失败消息
                      * @return ErrorMessages 创建消息，对应多个合同ID，
 成功为“”,创建失败则对应失败消息
+                     * 
                      */
                     std::vector<std::string> GetErrorMessages() const;
 
                     /**
                      * 判断参数 ErrorMessages 是否已赋值
                      * @return ErrorMessages 是否已赋值
+                     * 
                      */
                     bool ErrorMessagesHasBeenSet() const;
 
                     /**
                      * 获取预览模式下返回的预览文件url数组
                      * @return PreviewUrls 预览模式下返回的预览文件url数组
+                     * 
                      */
                     std::vector<std::string> GetPreviewUrls() const;
 
                     /**
                      * 判断参数 PreviewUrls 是否已赋值
                      * @return PreviewUrls 是否已赋值
+                     * 
                      */
                     bool PreviewUrlsHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
                      * @return TaskInfos 复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
 如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
+                     * 
                      */
                     std::vector<TaskInfo> GetTaskInfos() const;
 
                     /**
                      * 判断参数 TaskInfos 是否已赋值
                      * @return TaskInfos 是否已赋值
+                     * 
                      */
                     bool TaskInfosHasBeenSet() const;
 

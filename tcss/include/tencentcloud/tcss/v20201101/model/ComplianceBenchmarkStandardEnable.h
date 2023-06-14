@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取合规标准的ID。
                      * @return StandardId 合规标准的ID。
+                     * 
                      */
                     uint64_t GetStandardId() const;
 
                     /**
                      * 设置合规标准的ID。
-                     * @param StandardId 合规标准的ID。
+                     * @param _standardId 合规标准的ID。
+                     * 
                      */
                     void SetStandardId(const uint64_t& _standardId);
 
                     /**
                      * 判断参数 StandardId 是否已赋值
                      * @return StandardId 是否已赋值
+                     * 
                      */
                     bool StandardIdHasBeenSet() const;
 
                     /**
                      * 获取是否启用合规标准
                      * @return Enable 是否启用合规标准
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否启用合规标准
-                     * @param Enable 是否启用合规标准
+                     * @param _enable 是否启用合规标准
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

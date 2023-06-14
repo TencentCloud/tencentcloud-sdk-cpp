@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取0成功 其他失败
                      * @return RetCode 0成功 其他失败
+                     * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
                      * 设置0成功 其他失败
-                     * @param RetCode 0成功 其他失败
+                     * @param _retCode 0成功 其他失败
+                     * 
                      */
                     void SetRetCode(const int64_t& _retCode);
 
                     /**
                      * 判断参数 RetCode 是否已赋值
                      * @return RetCode 是否已赋值
+                     * 
                      */
                     bool RetCodeHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnMsg 返回参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatFwInsCount 当前租户的nat实例个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNatFwInsCount() const;
 
                     /**
                      * 判断参数 NatFwInsCount 是否已赋值
                      * @return NatFwInsCount 是否已赋值
+                     * 
                      */
                     bool NatFwInsCountHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetCount 当前租户接入子网个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSubnetCount() const;
 
                     /**
                      * 判断参数 SubnetCount 是否已赋值
                      * @return SubnetCount 是否已赋值
+                     * 
                      */
                     bool SubnetCountHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenSwitchCount 打开开关个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOpenSwitchCount() const;
 
                     /**
                      * 判断参数 OpenSwitchCount 是否已赋值
                      * @return OpenSwitchCount 是否已赋值
+                     * 
                      */
                     bool OpenSwitchCountHasBeenSet() const;
 

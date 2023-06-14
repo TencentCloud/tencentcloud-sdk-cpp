@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取时移模板id。
                      * @return TemplateId 时移模板id。
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置时移模板id。
-                     * @param TemplateId 时移模板id。
+                     * @param _templateId 时移模板id。
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 仅支持中文、英文、数字、_、-。
                      * @return TemplateName 模板名称。
 仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称。
 仅支持中文、英文、数字、_、-。
-                     * @param TemplateName 模板名称。
+                     * @param _templateName 模板名称。
 仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Description 描述信息。
 长度上限：1024字节。
 仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     std::string GetDescription() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置描述信息。
 长度上限：1024字节。
 仅支持中文、英文、数字、_、-。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
 长度上限：1024字节。
 仅支持中文、英文、数字、_、-。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 单位：s。
                      * @return Duration 时移时长。
 单位：s。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置时移时长。
 单位：s。
-                     * @param Duration 时移时长。
+                     * @param _duration 时移时长。
 单位：s。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -139,6 +151,7 @@ namespace TencentCloud
 可取3-10。
 单位：s。
 默认值：5。
+                     * 
                      */
                     uint64_t GetItemDuration() const;
 
@@ -147,16 +160,18 @@ namespace TencentCloud
 可取3-10。
 单位：s。
 默认值：5。
-                     * @param ItemDuration 分片时长。
+                     * @param _itemDuration 分片时长。
 可取3-10。
 单位：s。
 默认值：5。
+                     * 
                      */
                     void SetItemDuration(const uint64_t& _itemDuration);
 
                     /**
                      * 判断参数 ItemDuration 是否已赋值
                      * @return ItemDuration 是否已赋值
+                     * 
                      */
                     bool ItemDurationHasBeenSet() const;
 
@@ -167,6 +182,7 @@ namespace TencentCloud
                      * @return RemoveWatermark 是否去除水印。
 传true则将录制原始流。
 默认值：false。
+                     * 
                      */
                     bool GetRemoveWatermark() const;
 
@@ -174,15 +190,17 @@ namespace TencentCloud
                      * 设置是否去除水印。
 传true则将录制原始流。
 默认值：false。
-                     * @param RemoveWatermark 是否去除水印。
+                     * @param _removeWatermark 是否去除水印。
 传true则将录制原始流。
 默认值：false。
+                     * 
                      */
                     void SetRemoveWatermark(const bool& _removeWatermark);
 
                     /**
                      * 判断参数 RemoveWatermark 是否已赋值
                      * @return RemoveWatermark 是否已赋值
+                     * 
                      */
                     bool RemoveWatermarkHasBeenSet() const;
 
@@ -191,20 +209,23 @@ namespace TencentCloud
 此参数仅在 RemoveWatermark为false时生效。
                      * @return TranscodeTemplateIds 转码流id列表。
 此参数仅在 RemoveWatermark为false时生效。
+                     * 
                      */
                     std::vector<int64_t> GetTranscodeTemplateIds() const;
 
                     /**
                      * 设置转码流id列表。
 此参数仅在 RemoveWatermark为false时生效。
-                     * @param TranscodeTemplateIds 转码流id列表。
+                     * @param _transcodeTemplateIds 转码流id列表。
 此参数仅在 RemoveWatermark为false时生效。
+                     * 
                      */
                     void SetTranscodeTemplateIds(const std::vector<int64_t>& _transcodeTemplateIds);
 
                     /**
                      * 判断参数 TranscodeTemplateIds 是否已赋值
                      * @return TranscodeTemplateIds 是否已赋值
+                     * 
                      */
                     bool TranscodeTemplateIdsHasBeenSet() const;
 
@@ -217,6 +238,7 @@ Overseas：海外及港澳台地区。
 Mainland：中国大陆。
 Overseas：海外及港澳台地区。
 默认值：Mainland。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -225,16 +247,18 @@ Overseas：海外及港澳台地区。
 Mainland：中国大陆。
 Overseas：海外及港澳台地区。
 默认值：Mainland。
-                     * @param Area 地域。
+                     * @param _area 地域。
 Mainland：中国大陆。
 Overseas：海外及港澳台地区。
 默认值：Mainland。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

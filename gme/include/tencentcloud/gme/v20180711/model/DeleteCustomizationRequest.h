@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取删除的模型ID
                      * @return ModelId 删除的模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置删除的模型ID
-                     * @param ModelId 删除的模型ID
+                     * @param _modelId 删除的模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取应用 ID，登录控制台创建应用得到的AppID
                      * @return BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     int64_t GetBizId() const;
 
                     /**
                      * 设置应用 ID，登录控制台创建应用得到的AppID
-                     * @param BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * @param _bizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     void SetBizId(const int64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 

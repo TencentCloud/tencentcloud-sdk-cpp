@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取模板名称。
                      * @return TemplateName 模板名称。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称。
-                     * @param TemplateName 模板名称。
+                     * @param _templateName 模板名称。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取模板内容。
                      * @return TemplateContent 模板内容。
+                     * 
                      */
                     std::string GetTemplateContent() const;
 
                     /**
                      * 设置模板内容。
-                     * @param TemplateContent 模板内容。
+                     * @param _templateContent 模板内容。
+                     * 
                      */
                     void SetTemplateContent(const std::string& _templateContent);
 
                     /**
                      * 判断参数 TemplateContent 是否已赋值
                      * @return TemplateContent 是否已赋值
+                     * 
                      */
                     bool TemplateContentHasBeenSet() const;
 
                     /**
                      * 获取短信类型，0表示普通短信, 1表示营销短信。
                      * @return SmsType 短信类型，0表示普通短信, 1表示营销短信。
+                     * 
                      */
                     uint64_t GetSmsType() const;
 
                     /**
                      * 设置短信类型，0表示普通短信, 1表示营销短信。
-                     * @param SmsType 短信类型，0表示普通短信, 1表示营销短信。
+                     * @param _smsType 短信类型，0表示普通短信, 1表示营销短信。
+                     * 
                      */
                     void SetSmsType(const uint64_t& _smsType);
 
                     /**
                      * 判断参数 SmsType 是否已赋值
                      * @return SmsType 是否已赋值
+                     * 
                      */
                     bool SmsTypeHasBeenSet() const;
 
@@ -103,6 +112,7 @@ namespace TencentCloud
                      * @return International 是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
+                     * 
                      */
                     uint64_t GetInternational() const;
 
@@ -110,33 +120,38 @@ namespace TencentCloud
                      * 设置是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
-                     * @param International 是否国际/港澳台短信：
+                     * @param _international 是否国际/港澳台短信：
 0：表示国内短信。
 1：表示国际/港澳台短信。
+                     * 
                      */
                     void SetInternational(const uint64_t& _international);
 
                     /**
                      * 判断参数 International 是否已赋值
                      * @return International 是否已赋值
+                     * 
                      */
                     bool InternationalHasBeenSet() const;
 
                     /**
                      * 获取模板备注，例如申请原因，使用场景等。
                      * @return Remark 模板备注，例如申请原因，使用场景等。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置模板备注，例如申请原因，使用场景等。
-                     * @param Remark 模板备注，例如申请原因，使用场景等。
+                     * @param _remark 模板备注，例如申请原因，使用场景等。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

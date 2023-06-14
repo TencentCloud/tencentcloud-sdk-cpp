@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取计算集群可用区。
                      * @return Zone 计算集群可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置计算集群可用区。
-                     * @param Zone 计算集群可用区。
+                     * @param _zone 计算集群可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 - KUBERNETES
                      * @return Type 计算集群类型，取值范围：
 - KUBERNETES
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置计算集群类型，取值范围：
 - KUBERNETES
-                     * @param Type 计算集群类型，取值范围：
+                     * @param _type 计算集群类型，取值范围：
 - KUBERNETES
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

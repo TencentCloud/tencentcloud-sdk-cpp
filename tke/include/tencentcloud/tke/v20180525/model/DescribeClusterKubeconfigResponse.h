@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取子账户kubeconfig文件，可用于直接访问集群kube-apiserver
                      * @return Kubeconfig 子账户kubeconfig文件，可用于直接访问集群kube-apiserver
+                     * 
                      */
                     std::string GetKubeconfig() const;
 
                     /**
                      * 判断参数 Kubeconfig 是否已赋值
                      * @return Kubeconfig 是否已赋值
+                     * 
                      */
                     bool KubeconfigHasBeenSet() const;
 

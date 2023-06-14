@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取DescribeLiveCallbackTemplates接口返回的模板 ID。
                      * @return TemplateId DescribeLiveCallbackTemplates接口返回的模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置DescribeLiveCallbackTemplates接口返回的模板 ID。
-                     * @param TemplateId DescribeLiveCallbackTemplates接口返回的模板 ID。
+                     * @param _templateId DescribeLiveCallbackTemplates接口返回的模板 ID。
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板名称。
                      * @return TemplateName 模板名称。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称。
-                     * @param TemplateName 模板名称。
+                     * @param _templateName 模板名称。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取描述信息。
                      * @return Description 描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取开播回调 URL。
                      * @return StreamBeginNotifyUrl 开播回调 URL。
+                     * 
                      */
                     std::string GetStreamBeginNotifyUrl() const;
 
                     /**
                      * 设置开播回调 URL。
-                     * @param StreamBeginNotifyUrl 开播回调 URL。
+                     * @param _streamBeginNotifyUrl 开播回调 URL。
+                     * 
                      */
                     void SetStreamBeginNotifyUrl(const std::string& _streamBeginNotifyUrl);
 
                     /**
                      * 判断参数 StreamBeginNotifyUrl 是否已赋值
                      * @return StreamBeginNotifyUrl 是否已赋值
+                     * 
                      */
                     bool StreamBeginNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取断流回调 URL。
                      * @return StreamEndNotifyUrl 断流回调 URL。
+                     * 
                      */
                     std::string GetStreamEndNotifyUrl() const;
 
                     /**
                      * 设置断流回调 URL。
-                     * @param StreamEndNotifyUrl 断流回调 URL。
+                     * @param _streamEndNotifyUrl 断流回调 URL。
+                     * 
                      */
                     void SetStreamEndNotifyUrl(const std::string& _streamEndNotifyUrl);
 
                     /**
                      * 判断参数 StreamEndNotifyUrl 是否已赋值
                      * @return StreamEndNotifyUrl 是否已赋值
+                     * 
                      */
                     bool StreamEndNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取录制回调 URL。
                      * @return RecordNotifyUrl 录制回调 URL。
+                     * 
                      */
                     std::string GetRecordNotifyUrl() const;
 
                     /**
                      * 设置录制回调 URL。
-                     * @param RecordNotifyUrl 录制回调 URL。
+                     * @param _recordNotifyUrl 录制回调 URL。
+                     * 
                      */
                     void SetRecordNotifyUrl(const std::string& _recordNotifyUrl);
 
                     /**
                      * 判断参数 RecordNotifyUrl 是否已赋值
                      * @return RecordNotifyUrl 是否已赋值
+                     * 
                      */
                     bool RecordNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取截图回调 URL。
                      * @return SnapshotNotifyUrl 截图回调 URL。
+                     * 
                      */
                     std::string GetSnapshotNotifyUrl() const;
 
                     /**
                      * 设置截图回调 URL。
-                     * @param SnapshotNotifyUrl 截图回调 URL。
+                     * @param _snapshotNotifyUrl 截图回调 URL。
+                     * 
                      */
                     void SetSnapshotNotifyUrl(const std::string& _snapshotNotifyUrl);
 
                     /**
                      * 判断参数 SnapshotNotifyUrl 是否已赋值
                      * @return SnapshotNotifyUrl 是否已赋值
+                     * 
                      */
                     bool SnapshotNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取鉴黄回调 URL。
                      * @return PornCensorshipNotifyUrl 鉴黄回调 URL。
+                     * 
                      */
                     std::string GetPornCensorshipNotifyUrl() const;
 
                     /**
                      * 设置鉴黄回调 URL。
-                     * @param PornCensorshipNotifyUrl 鉴黄回调 URL。
+                     * @param _pornCensorshipNotifyUrl 鉴黄回调 URL。
+                     * 
                      */
                     void SetPornCensorshipNotifyUrl(const std::string& _pornCensorshipNotifyUrl);
 
                     /**
                      * 判断参数 PornCensorshipNotifyUrl 是否已赋值
                      * @return PornCensorshipNotifyUrl 是否已赋值
+                     * 
                      */
                     bool PornCensorshipNotifyUrlHasBeenSet() const;
 
@@ -191,56 +215,65 @@ namespace TencentCloud
 [事件消息通知](/document/product/267/32744)。
                      * @return CallbackKey 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
 [事件消息通知](/document/product/267/32744)。
+                     * 
                      */
                     std::string GetCallbackKey() const;
 
                     /**
                      * 设置回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
 [事件消息通知](/document/product/267/32744)。
-                     * @param CallbackKey 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+                     * @param _callbackKey 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
 [事件消息通知](/document/product/267/32744)。
+                     * 
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
 
                     /**
                      * 判断参数 CallbackKey 是否已赋值
                      * @return CallbackKey 是否已赋值
+                     * 
                      */
                     bool CallbackKeyHasBeenSet() const;
 
                     /**
                      * 获取推流异常回调 URL。
                      * @return PushExceptionNotifyUrl 推流异常回调 URL。
+                     * 
                      */
                     std::string GetPushExceptionNotifyUrl() const;
 
                     /**
                      * 设置推流异常回调 URL。
-                     * @param PushExceptionNotifyUrl 推流异常回调 URL。
+                     * @param _pushExceptionNotifyUrl 推流异常回调 URL。
+                     * 
                      */
                     void SetPushExceptionNotifyUrl(const std::string& _pushExceptionNotifyUrl);
 
                     /**
                      * 判断参数 PushExceptionNotifyUrl 是否已赋值
                      * @return PushExceptionNotifyUrl 是否已赋值
+                     * 
                      */
                     bool PushExceptionNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取音频审核回调 URL。
                      * @return AudioAuditNotifyUrl 音频审核回调 URL。
+                     * 
                      */
                     std::string GetAudioAuditNotifyUrl() const;
 
                     /**
                      * 设置音频审核回调 URL。
-                     * @param AudioAuditNotifyUrl 音频审核回调 URL。
+                     * @param _audioAuditNotifyUrl 音频审核回调 URL。
+                     * 
                      */
                     void SetAudioAuditNotifyUrl(const std::string& _audioAuditNotifyUrl);
 
                     /**
                      * 判断参数 AudioAuditNotifyUrl 是否已赋值
                      * @return AudioAuditNotifyUrl 是否已赋值
+                     * 
                      */
                     bool AudioAuditNotifyUrlHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取通道ID
                      * @return ChannelId 通道ID
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道ID
-                     * @param ChannelId 通道ID
+                     * @param _channelId 通道ID
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
@@ -69,6 +72,7 @@ Call-调用指定的预置位
 Set-设置当前位置为预置位
 Del-删除指定的预置位
 Call-调用指定的预置位
+                     * 
                      */
                     std::string GetCommand() const;
 
@@ -77,52 +81,60 @@ Call-调用指定的预置位
 Set-设置当前位置为预置位
 Del-删除指定的预置位
 Call-调用指定的预置位
-                     * @param Command 控制命令：
+                     * @param _command 控制命令：
 Set-设置当前位置为预置位
 Del-删除指定的预置位
 Call-调用指定的预置位
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取预置位编码 范围1-8
                      * @return PresetId 预置位编码 范围1-8
+                     * 
                      */
                     int64_t GetPresetId() const;
 
                     /**
                      * 设置预置位编码 范围1-8
-                     * @param PresetId 预置位编码 范围1-8
+                     * @param _presetId 预置位编码 范围1-8
+                     * 
                      */
                     void SetPresetId(const int64_t& _presetId);
 
                     /**
                      * 判断参数 PresetId 是否已赋值
                      * @return PresetId 是否已赋值
+                     * 
                      */
                     bool PresetIdHasBeenSet() const;
 
                     /**
                      * 获取设备Id
                      * @return DeviceId 设备Id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备Id
-                     * @param DeviceId 设备Id
+                     * @param _deviceId 设备Id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

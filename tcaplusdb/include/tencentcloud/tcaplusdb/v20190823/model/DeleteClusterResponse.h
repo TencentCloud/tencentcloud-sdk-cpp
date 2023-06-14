@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取删除集群生成的任务ID
                      * @return TaskId 删除集群生成的任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

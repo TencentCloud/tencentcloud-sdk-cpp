@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取围栏告警信息的查询起始时间，Unix时间，单位为毫秒
                      * @return StartTime 围栏告警信息的查询起始时间，Unix时间，单位为毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置围栏告警信息的查询起始时间，Unix时间，单位为毫秒
-                     * @param StartTime 围栏告警信息的查询起始时间，Unix时间，单位为毫秒
+                     * @param _startTime 围栏告警信息的查询起始时间，Unix时间，单位为毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取围栏告警信息的查询结束时间，Unix时间，单位为毫秒
                      * @return EndTime 围栏告警信息的查询结束时间，Unix时间，单位为毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置围栏告警信息的查询结束时间，Unix时间，单位为毫秒
-                     * @param EndTime 围栏告警信息的查询结束时间，Unix时间，单位为毫秒
+                     * @param _endTime 围栏告警信息的查询结束时间，Unix时间，单位为毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取围栏Id
                      * @return FenceId 围栏Id
+                     * 
                      */
                     int64_t GetFenceId() const;
 
                     /**
                      * 设置围栏Id
-                     * @param FenceId 围栏Id
+                     * @param _fenceId 围栏Id
+                     * 
                      */
                     void SetFenceId(const int64_t& _fenceId);
 
                     /**
                      * 判断参数 FenceId 是否已赋值
                      * @return FenceId 是否已赋值
+                     * 
                      */
                     bool FenceIdHasBeenSet() const;
 
                     /**
                      * 获取翻页偏移量，0起始
                      * @return Offset 翻页偏移量，0起始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页偏移量，0起始
-                     * @param Offset 翻页偏移量，0起始
+                     * @param _offset 翻页偏移量，0起始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取最大返回结果数
                      * @return Limit 最大返回结果数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大返回结果数
-                     * @param Limit 最大返回结果数
+                     * @param _limit 最大返回结果数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取告警对应的产品Id
                      * @return ProductId 告警对应的产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置告警对应的产品Id
-                     * @param ProductId 告警对应的产品Id
+                     * @param _productId 告警对应的产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取告警对应的设备名称
                      * @return DeviceName 告警对应的设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置告警对应的设备名称
-                     * @param DeviceName 告警对应的设备名称
+                     * @param _deviceName 告警对应的设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 

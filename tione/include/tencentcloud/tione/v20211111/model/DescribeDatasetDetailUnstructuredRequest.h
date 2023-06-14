@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取数据集ID
                      * @return DatasetId 数据集ID
+                     * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
                      * 设置数据集ID
-                     * @param DatasetId 数据集ID
+                     * @param _datasetId 数据集ID
+                     * 
                      */
                     void SetDatasetId(const std::string& _datasetId);
 
                     /**
                      * 判断参数 DatasetId 是否已赋值
                      * @return DatasetId 是否已赋值
+                     * 
                      */
                     bool DatasetIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回个数，默认20，目前最大支持2000条数据
                      * @return Limit 返回个数，默认20，目前最大支持2000条数据
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回个数，默认20，目前最大支持2000条数据
-                     * @param Limit 返回个数，默认20，目前最大支持2000条数据
+                     * @param _limit 返回个数，默认20，目前最大支持2000条数据
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取标签过滤参数，对应标签值
                      * @return LabelList 标签过滤参数，对应标签值
+                     * 
                      */
                     std::vector<std::string> GetLabelList() const;
 
                     /**
                      * 设置标签过滤参数，对应标签值
-                     * @param LabelList 标签过滤参数，对应标签值
+                     * @param _labelList 标签过滤参数，对应标签值
+                     * 
                      */
                     void SetLabelList(const std::vector<std::string>& _labelList);
 
                     /**
                      * 判断参数 LabelList 是否已赋值
                      * @return LabelList 是否已赋值
+                     * 
                      */
                     bool LabelListHasBeenSet() const;
 
@@ -126,6 +138,7 @@ STATUS_ANNOTATED，已标注
 STATUS_NON_ANNOTATED，未标注
 STATUS_ALL，全部
 默认为STATUS_ALL
+                     * 
                      */
                     std::string GetAnnotationStatus() const;
 
@@ -135,53 +148,61 @@ STATUS_ANNOTATED，已标注
 STATUS_NON_ANNOTATED，未标注
 STATUS_ALL，全部
 默认为STATUS_ALL
-                     * @param AnnotationStatus 标注状态过滤参数:
+                     * @param _annotationStatus 标注状态过滤参数:
 STATUS_ANNOTATED，已标注
 STATUS_NON_ANNOTATED，未标注
 STATUS_ALL，全部
 默认为STATUS_ALL
+                     * 
                      */
                     void SetAnnotationStatus(const std::string& _annotationStatus);
 
                     /**
                      * 判断参数 AnnotationStatus 是否已赋值
                      * @return AnnotationStatus 是否已赋值
+                     * 
                      */
                     bool AnnotationStatusHasBeenSet() const;
 
                     /**
                      * 获取数据集ID列表
                      * @return DatasetIds 数据集ID列表
+                     * 
                      */
                     std::vector<std::string> GetDatasetIds() const;
 
                     /**
                      * 设置数据集ID列表
-                     * @param DatasetIds 数据集ID列表
+                     * @param _datasetIds 数据集ID列表
+                     * 
                      */
                     void SetDatasetIds(const std::vector<std::string>& _datasetIds);
 
                     /**
                      * 判断参数 DatasetIds 是否已赋值
                      * @return DatasetIds 是否已赋值
+                     * 
                      */
                     bool DatasetIdsHasBeenSet() const;
 
                     /**
                      * 获取要筛选的文本分类场景标签信息
                      * @return TextClassificationLabels 要筛选的文本分类场景标签信息
+                     * 
                      */
                     std::vector<TextLabelDistributionInfo> GetTextClassificationLabels() const;
 
                     /**
                      * 设置要筛选的文本分类场景标签信息
-                     * @param TextClassificationLabels 要筛选的文本分类场景标签信息
+                     * @param _textClassificationLabels 要筛选的文本分类场景标签信息
+                     * 
                      */
                     void SetTextClassificationLabels(const std::vector<TextLabelDistributionInfo>& _textClassificationLabels);
 
                     /**
                      * 判断参数 TextClassificationLabels 是否已赋值
                      * @return TextClassificationLabels 是否已赋值
+                     * 
                      */
                     bool TextClassificationLabelsHasBeenSet() const;
 

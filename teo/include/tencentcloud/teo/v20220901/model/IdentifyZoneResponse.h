@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取站点归属校验：Dns校验信息。
                      * @return Ascription 站点归属校验：Dns校验信息。
+                     * 
                      */
                     AscriptionInfo GetAscription() const;
 
                     /**
                      * 判断参数 Ascription 是否已赋值
                      * @return Ascription 是否已赋值
+                     * 
                      */
                     bool AscriptionHasBeenSet() const;
 
                     /**
                      * 获取站点归属权校验：文件校验信息。
                      * @return FileAscription 站点归属权校验：文件校验信息。
+                     * 
                      */
                     FileAscriptionInfo GetFileAscription() const;
 
                     /**
                      * 判断参数 FileAscription 是否已赋值
                      * @return FileAscription 是否已赋值
+                     * 
                      */
                     bool FileAscriptionHasBeenSet() const;
 

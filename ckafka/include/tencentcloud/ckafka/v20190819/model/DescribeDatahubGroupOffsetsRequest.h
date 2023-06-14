@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取（过滤条件）按照实例 ID 过滤
                      * @return Name （过滤条件）按照实例 ID 过滤
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置（过滤条件）按照实例 ID 过滤
-                     * @param Name （过滤条件）按照实例 ID 过滤
+                     * @param _name （过滤条件）按照实例 ID 过滤
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Kafka 消费分组
                      * @return Group Kafka 消费分组
+                     * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 设置Kafka 消费分组
-                     * @param Group Kafka 消费分组
+                     * @param _group Kafka 消费分组
+                     * 
                      */
                     void SetGroup(const std::string& _group);
 
                     /**
                      * 判断参数 Group 是否已赋值
                      * @return Group 是否已赋值
+                     * 
                      */
                     bool GroupHasBeenSet() const;
 
                     /**
                      * 获取模糊匹配 topicName
                      * @return SearchWord 模糊匹配 topicName
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置模糊匹配 topicName
-                     * @param SearchWord 模糊匹配 topicName
+                     * @param _searchWord 模糊匹配 topicName
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取本次查询的偏移位置，默认为0
                      * @return Offset 本次查询的偏移位置，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置本次查询的偏移位置，默认为0
-                     * @param Offset 本次查询的偏移位置，默认为0
+                     * @param _offset 本次查询的偏移位置，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取本次返回结果的最大个数，默认为50，最大值为50
                      * @return Limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置本次返回结果的最大个数，默认为50，最大值为50
-                     * @param Limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * @param _limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

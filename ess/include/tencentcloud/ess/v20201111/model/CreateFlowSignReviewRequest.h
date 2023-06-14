@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取签署流程编号
                      * @return FlowId 签署流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程编号
-                     * @param FlowId 签署流程编号
+                     * @param _flowId 签署流程编号
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -87,6 +93,7 @@ REJECT: 拒绝
                      * @return ReviewType 企业内部审核结果
 PASS: 通过 
 REJECT: 拒绝
+                     * 
                      */
                     std::string GetReviewType() const;
 
@@ -94,15 +101,17 @@ REJECT: 拒绝
                      * 设置企业内部审核结果
 PASS: 通过 
 REJECT: 拒绝
-                     * @param ReviewType 企业内部审核结果
+                     * @param _reviewType 企业内部审核结果
 PASS: 通过 
 REJECT: 拒绝
+                     * 
                      */
                     void SetReviewType(const std::string& _reviewType);
 
                     /**
                      * 判断参数 ReviewType 是否已赋值
                      * @return ReviewType 是否已赋值
+                     * 
                      */
                     bool ReviewTypeHasBeenSet() const;
 
@@ -111,38 +120,44 @@ REJECT: 拒绝
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
                      * @return ReviewMessage 审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 
                      */
                     std::string GetReviewMessage() const;
 
                     /**
                      * 设置审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
-                     * @param ReviewMessage 审核原因 
+                     * @param _reviewMessage 审核原因 
 当ReviewType 是REJECT 时此字段必填,字符串长度不超过200
+                     * 
                      */
                     void SetReviewMessage(const std::string& _reviewMessage);
 
                     /**
                      * 判断参数 ReviewMessage 是否已赋值
                      * @return ReviewMessage 是否已赋值
+                     * 
                      */
                     bool ReviewMessageHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

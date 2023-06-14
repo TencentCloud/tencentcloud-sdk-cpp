@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签名称
                      * @return Name 标签名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称
-                     * @param Name 标签名称
+                     * @param _name 标签名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取标签ID
                      * @return ID 标签ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置标签ID
-                     * @param ID 标签ID
+                     * @param _iD 标签ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 备注信息
+                     * @param _comment 备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedAt 更改时间
+                     * @param _updatedAt 更改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 

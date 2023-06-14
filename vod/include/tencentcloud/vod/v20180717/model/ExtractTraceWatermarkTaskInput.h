@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取需要提取水印的媒体 URL。
                      * @return Url 需要提取水印的媒体 URL。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置需要提取水印的媒体 URL。
-                     * @param Url 需要提取水印的媒体 URL。
+                     * @param _url 需要提取水印的媒体 URL。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取媒体文件 ID。Url 对应的原始媒体文件 ID。
                      * @return FileId 媒体文件 ID。Url 对应的原始媒体文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件 ID。Url 对应的原始媒体文件 ID。
-                     * @param FileId 媒体文件 ID。Url 对应的原始媒体文件 ID。
+                     * @param _fileId 媒体文件 ID。Url 对应的原始媒体文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 

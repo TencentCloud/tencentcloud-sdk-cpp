@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取售卖规格和地域信息集合
                      * @return DataResult 售卖规格和地域信息集合
+                     * 
                      */
                     CdbZoneDataResult GetDataResult() const;
 
                     /**
                      * 判断参数 DataResult 是否已赋值
                      * @return DataResult 是否已赋值
+                     * 
                      */
                     bool DataResultHasBeenSet() const;
 

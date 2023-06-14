@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取受影响的网站总数。
                      * @return ImpactSiteNumber 受影响的网站总数。
+                     * 
                      */
                     uint64_t GetImpactSiteNumber() const;
 
                     /**
                      * 判断参数 ImpactSiteNumber 是否已赋值
                      * @return ImpactSiteNumber 是否已赋值
+                     * 
                      */
                     bool ImpactSiteNumberHasBeenSet() const;
 
                     /**
                      * 获取已验证的网站总数。
                      * @return SiteNumber 已验证的网站总数。
+                     * 
                      */
                     uint64_t GetSiteNumber() const;
 
                     /**
                      * 判断参数 SiteNumber 是否已赋值
                      * @return SiteNumber 是否已赋值
+                     * 
                      */
                     bool SiteNumberHasBeenSet() const;
 
                     /**
                      * 获取高风险漏洞总数。
                      * @return VulsHighNumber 高风险漏洞总数。
+                     * 
                      */
                     uint64_t GetVulsHighNumber() const;
 
                     /**
                      * 判断参数 VulsHighNumber 是否已赋值
                      * @return VulsHighNumber 是否已赋值
+                     * 
                      */
                     bool VulsHighNumberHasBeenSet() const;
 
                     /**
                      * 获取中风险漏洞总数。
                      * @return VulsMiddleNumber 中风险漏洞总数。
+                     * 
                      */
                     uint64_t GetVulsMiddleNumber() const;
 
                     /**
                      * 判断参数 VulsMiddleNumber 是否已赋值
                      * @return VulsMiddleNumber 是否已赋值
+                     * 
                      */
                     bool VulsMiddleNumberHasBeenSet() const;
 
                     /**
                      * 获取低高风险漏洞总数。
                      * @return VulsLowNumber 低高风险漏洞总数。
+                     * 
                      */
                     uint64_t GetVulsLowNumber() const;
 
                     /**
                      * 判断参数 VulsLowNumber 是否已赋值
                      * @return VulsLowNumber 是否已赋值
+                     * 
                      */
                     bool VulsLowNumberHasBeenSet() const;
 
                     /**
                      * 获取风险提示总数。
                      * @return VulsNoticeNumber 风险提示总数。
+                     * 
                      */
                     uint64_t GetVulsNoticeNumber() const;
 
                     /**
                      * 判断参数 VulsNoticeNumber 是否已赋值
                      * @return VulsNoticeNumber 是否已赋值
+                     * 
                      */
                     bool VulsNoticeNumberHasBeenSet() const;
 
                     /**
                      * 获取扫描页面总数。
                      * @return PageCount 扫描页面总数。
+                     * 
                      */
                     uint64_t GetPageCount() const;
 
                     /**
                      * 判断参数 PageCount 是否已赋值
                      * @return PageCount 是否已赋值
+                     * 
                      */
                     bool PageCountHasBeenSet() const;
 
                     /**
                      * 获取已验证的网站列表。
                      * @return Sites 已验证的网站列表。
+                     * 
                      */
                     std::vector<MonitorMiniSite> GetSites() const;
 
                     /**
                      * 判断参数 Sites 是否已赋值
                      * @return Sites 是否已赋值
+                     * 
                      */
                     bool SitesHasBeenSet() const;
 
                     /**
                      * 获取受影响的网站列表。
                      * @return ImpactSites 受影响的网站列表。
+                     * 
                      */
                     std::vector<MonitorMiniSite> GetImpactSites() const;
 
                     /**
                      * 判断参数 ImpactSites 是否已赋值
                      * @return ImpactSites 是否已赋值
+                     * 
                      */
                     bool ImpactSitesHasBeenSet() const;
 

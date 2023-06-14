@@ -52,126 +52,147 @@ namespace TencentCloud
                     /**
                      * 获取需要修改的Output的Id。
                      * @return OutputId 需要修改的Output的Id。
+                     * 
                      */
                     std::string GetOutputId() const;
 
                     /**
                      * 设置需要修改的Output的Id。
-                     * @param OutputId 需要修改的Output的Id。
+                     * @param _outputId 需要修改的Output的Id。
+                     * 
                      */
                     void SetOutputId(const std::string& _outputId);
 
                     /**
                      * 判断参数 OutputId 是否已赋值
                      * @return OutputId 是否已赋值
+                     * 
                      */
                     bool OutputIdHasBeenSet() const;
 
                     /**
                      * 获取输出的名称。
                      * @return OutputName 输出的名称。
+                     * 
                      */
                     std::string GetOutputName() const;
 
                     /**
                      * 设置输出的名称。
-                     * @param OutputName 输出的名称。
+                     * @param _outputName 输出的名称。
+                     * 
                      */
                     void SetOutputName(const std::string& _outputName);
 
                     /**
                      * 判断参数 OutputName 是否已赋值
                      * @return OutputName 是否已赋值
+                     * 
                      */
                     bool OutputNameHasBeenSet() const;
 
                     /**
                      * 获取输出的描述。
                      * @return Description 输出的描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置输出的描述。
-                     * @param Description 输出的描述。
+                     * @param _description 输出的描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取输出的转推协议，支持SRT|RTP|RTMP。
                      * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置输出的转推协议，支持SRT|RTP|RTMP。
-                     * @param Protocol 输出的转推协议，支持SRT|RTP|RTMP。
+                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的配置。
                      * @return SRTSettings 转推SRT的配置。
+                     * 
                      */
                     CreateOutputSRTSettings GetSRTSettings() const;
 
                     /**
                      * 设置转推SRT的配置。
-                     * @param SRTSettings 转推SRT的配置。
+                     * @param _sRTSettings 转推SRT的配置。
+                     * 
                      */
                     void SetSRTSettings(const CreateOutputSRTSettings& _sRTSettings);
 
                     /**
                      * 判断参数 SRTSettings 是否已赋值
                      * @return SRTSettings 是否已赋值
+                     * 
                      */
                     bool SRTSettingsHasBeenSet() const;
 
                     /**
                      * 获取转推RTP的配置。
                      * @return RTPSettings 转推RTP的配置。
+                     * 
                      */
                     CreateOutputInfoRTPSettings GetRTPSettings() const;
 
                     /**
                      * 设置转推RTP的配置。
-                     * @param RTPSettings 转推RTP的配置。
+                     * @param _rTPSettings 转推RTP的配置。
+                     * 
                      */
                     void SetRTPSettings(const CreateOutputInfoRTPSettings& _rTPSettings);
 
                     /**
                      * 判断参数 RTPSettings 是否已赋值
                      * @return RTPSettings 是否已赋值
+                     * 
                      */
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
                      * 获取转推RTMP的配置。
                      * @return RTMPSettings 转推RTMP的配置。
+                     * 
                      */
                     CreateOutputRTMPSettings GetRTMPSettings() const;
 
                     /**
                      * 设置转推RTMP的配置。
-                     * @param RTMPSettings 转推RTMP的配置。
+                     * @param _rTMPSettings 转推RTMP的配置。
+                     * 
                      */
                     void SetRTMPSettings(const CreateOutputRTMPSettings& _rTMPSettings);
 
                     /**
                      * 判断参数 RTMPSettings 是否已赋值
                      * @return RTMPSettings 是否已赋值
+                     * 
                      */
                     bool RTMPSettingsHasBeenSet() const;
 
@@ -180,38 +201,44 @@ namespace TencentCloud
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
                      * @return AllowIpList IP白名单列表，格式为CIDR，如0.0.0.0/0。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * 
                      */
                     std::vector<std::string> GetAllowIpList() const;
 
                     /**
                      * 设置IP白名单列表，格式为CIDR，如0.0.0.0/0。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
-                     * @param AllowIpList IP白名单列表，格式为CIDR，如0.0.0.0/0。
+                     * @param _allowIpList IP白名单列表，格式为CIDR，如0.0.0.0/0。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
+                     * 
                      */
                     void SetAllowIpList(const std::vector<std::string>& _allowIpList);
 
                     /**
                      * 判断参数 AllowIpList 是否已赋值
                      * @return AllowIpList 是否已赋值
+                     * 
                      */
                     bool AllowIpListHasBeenSet() const;
 
                     /**
                      * 获取最大拉流并发数，最大4，默认4。
                      * @return MaxConcurrent 最大拉流并发数，最大4，默认4。
+                     * 
                      */
                     uint64_t GetMaxConcurrent() const;
 
                     /**
                      * 设置最大拉流并发数，最大4，默认4。
-                     * @param MaxConcurrent 最大拉流并发数，最大4，默认4。
+                     * @param _maxConcurrent 最大拉流并发数，最大4，默认4。
+                     * 
                      */
                     void SetMaxConcurrent(const uint64_t& _maxConcurrent);
 
                     /**
                      * 判断参数 MaxConcurrent 是否已赋值
                      * @return MaxConcurrent 是否已赋值
+                     * 
                      */
                     bool MaxConcurrentHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取年龄
                      * @return Age 年龄
+                     * 
                      */
                     int64_t GetAge() const;
 
                     /**
                      * 设置年龄
-                     * @param Age 年龄
+                     * @param _age 年龄
+                     * 
                      */
                     void SetAge(const int64_t& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 设置性别
-                     * @param Sex 性别
+                     * @param _sex 性别
+                     * 
                      */
                     void SetSex(const std::string& _sex);
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 

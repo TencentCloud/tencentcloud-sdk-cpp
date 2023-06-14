@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalCost() const;
 
                     /**
                      * 判断参数 OriginalCost 是否已赋值
                      * @return OriginalCost 是否已赋值
+                     * 
                      */
                     bool OriginalCostHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountCost 折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountCost() const;
 
                     /**
                      * 判断参数 DiscountCost 是否已赋值
                      * @return DiscountCost 是否已赋值
+                     * 
                      */
                     bool DiscountCostHasBeenSet() const;
 
@@ -81,12 +85,14 @@ namespace TencentCloud
 <li>s：表示秒。</li>
 <li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -95,12 +101,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 购买实例的时长。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
@@ -109,12 +117,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceList 价格清单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ZoneDetailPriceResult> GetPriceList() const;
 
                     /**
                      * 判断参数 PriceList 是否已赋值
                      * @return PriceList 是否已赋值
+                     * 
                      */
                     bool PriceListHasBeenSet() const;
 

@@ -52,56 +52,65 @@ namespace TencentCloud
 付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。
                      * @return Name 识别出的字段名称(关键字)，支持以下字段：
 付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的字段名称(关键字)，支持以下字段：
 付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。
-                     * @param Name 识别出的字段名称(关键字)，支持以下字段：
+                     * @param _name 识别出的字段名称(关键字)，支持以下字段：
 付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取文本行在旋转纠正之后的图像中的像素坐标。
                      * @return Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 
                      */
                     Rect GetRect() const;
 
                     /**
                      * 设置文本行在旋转纠正之后的图像中的像素坐标。
-                     * @param Rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * @param _rect 文本行在旋转纠正之后的图像中的像素坐标。
+                     * 
                      */
                     void SetRect(const Rect& _rect);
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 

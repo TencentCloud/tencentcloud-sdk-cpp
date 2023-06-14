@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
                      * @return URL 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
-                     * @param URL 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * @param _uRL 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 
                     /**
                      * 获取待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
                      * @return MD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
-                     * @param MD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * @param _mD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
                     /**
                      * 获取待分析视频的名称，指定后可支持筛选，最多64B
                      * @return Name 待分析视频的名称，指定后可支持筛选，最多64B
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置待分析视频的名称，指定后可支持筛选，最多64B
-                     * @param Name 待分析视频的名称，指定后可支持筛选，最多64B
+                     * @param _name 待分析视频的名称，指定后可支持筛选，最多64B
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -101,56 +110,65 @@ namespace TencentCloud
 推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
                      * @return WriteBackCosPath 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
 推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     * 
                      */
                     std::string GetWriteBackCosPath() const;
 
                     /**
                      * 设置当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
 推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
-                     * @param WriteBackCosPath 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+                     * @param _writeBackCosPath 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
 推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     * 
                      */
                     void SetWriteBackCosPath(const std::string& _writeBackCosPath);
 
                     /**
                      * 判断参数 WriteBackCosPath 是否已赋值
                      * @return WriteBackCosPath 是否已赋值
+                     * 
                      */
                     bool WriteBackCosPathHasBeenSet() const;
 
                     /**
                      * 获取自定义标签，可用于查询
                      * @return Label 自定义标签，可用于查询
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置自定义标签，可用于查询
-                     * @param Label 自定义标签，可用于查询
+                     * @param _label 自定义标签，可用于查询
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
                      * @return CallbackURL 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * 
                      */
                     std::string GetCallbackURL() const;
 
                     /**
                      * 设置媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
-                     * @param CallbackURL 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @param _callbackURL 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * 
                      */
                     void SetCallbackURL(const std::string& _callbackURL);
 
                     /**
                      * 判断参数 CallbackURL 是否已赋值
                      * @return CallbackURL 是否已赋值
+                     * 
                      */
                     bool CallbackURLHasBeenSet() const;
 
@@ -159,20 +177,23 @@ namespace TencentCloud
 默认为2(视频)
                      * @return MediaType 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 默认为2(视频)
+                     * 
                      */
                     int64_t GetMediaType() const;
 
                     /**
                      * 设置媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 默认为2(视频)
-                     * @param MediaType 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+                     * @param _mediaType 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
 默认为2(视频)
+                     * 
                      */
                     void SetMediaType(const int64_t& _mediaType);
 
                     /**
                      * 判断参数 MediaType 是否已赋值
                      * @return MediaType 是否已赋值
+                     * 
                      */
                     bool MediaTypeHasBeenSet() const;
 

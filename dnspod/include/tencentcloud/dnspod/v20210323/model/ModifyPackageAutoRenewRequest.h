@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资源ID。可以在控制台查看所有的资源
                      * @return ResourceId 资源ID。可以在控制台查看所有的资源
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID。可以在控制台查看所有的资源
-                     * @param ResourceId 资源ID。可以在控制台查看所有的资源
+                     * @param _resourceId 资源ID。可以在控制台查看所有的资源
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取enable 开启自动续费；disable 关闭自动续费
                      * @return Status enable 开启自动续费；disable 关闭自动续费
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置enable 开启自动续费；disable 关闭自动续费
-                     * @param Status enable 开启自动续费；disable 关闭自动续费
+                     * @param _status enable 开启自动续费；disable 关闭自动续费
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

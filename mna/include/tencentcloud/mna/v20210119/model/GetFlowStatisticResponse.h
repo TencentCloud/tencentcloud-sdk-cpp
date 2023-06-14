@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取流量详细信息
                      * @return NetDetails 流量详细信息
+                     * 
                      */
                     std::vector<NetDetails> GetNetDetails() const;
 
                     /**
                      * 判断参数 NetDetails 是否已赋值
                      * @return NetDetails 是否已赋值
+                     * 
                      */
                     bool NetDetailsHasBeenSet() const;
 
                     /**
                      * 获取查找时间段流量使用最大值（单位：byte）
                      * @return MaxValue 查找时间段流量使用最大值（单位：byte）
+                     * 
                      */
                     double GetMaxValue() const;
 
                     /**
                      * 判断参数 MaxValue 是否已赋值
                      * @return MaxValue 是否已赋值
+                     * 
                      */
                     bool MaxValueHasBeenSet() const;
 
                     /**
                      * 获取查找时间段流量使用平均值（单位：byte）
                      * @return AvgValue 查找时间段流量使用平均值（单位：byte）
+                     * 
                      */
                     double GetAvgValue() const;
 
                     /**
                      * 判断参数 AvgValue 是否已赋值
                      * @return AvgValue 是否已赋值
+                     * 
                      */
                     bool AvgValueHasBeenSet() const;
 
                     /**
                      * 获取查找时间段流量使用总量（单位：byte）
                      * @return TotalValue 查找时间段流量使用总量（单位：byte）
+                     * 
                      */
                     double GetTotalValue() const;
 
                     /**
                      * 判断参数 TotalValue 是否已赋值
                      * @return TotalValue 是否已赋值
+                     * 
                      */
                     bool TotalValueHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationTime 任务创建时间
+                     * @param _creationTime 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifiedTime 最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 设置最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifiedTime 最近修改时间
+                     * @param _lastModifiedTime 最近修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastModifiedTime(const std::string& _lastModifiedTime);
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingJobName 训练任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingJobName() const;
 
                     /**
                      * 设置训练任务名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingJobName 训练任务名
+                     * @param _trainingJobName 训练任务名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingJobName(const std::string& _trainingJobName);
 
                     /**
                      * 判断参数 TrainingJobName 是否已赋值
                      * @return TrainingJobName 是否已赋值
+                     * 
                      */
                     bool TrainingJobNameHasBeenSet() const;
 
@@ -128,6 +137,7 @@ Failed: 失败
 Stopping: 停止中
 Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingJobStatus() const;
 
@@ -139,19 +149,21 @@ Failed: 失败
 Stopping: 停止中
 Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingJobStatus 训练任务状态，取值范围
+                     * @param _trainingJobStatus 训练任务状态，取值范围
 InProgress：运行中
 Completed: 已完成
 Failed: 失败
 Stopping: 停止中
 Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingJobStatus(const std::string& _trainingJobStatus);
 
                     /**
                      * 判断参数 TrainingJobStatus 是否已赋值
                      * @return TrainingJobStatus 是否已赋值
+                     * 
                      */
                     bool TrainingJobStatusHasBeenSet() const;
 
@@ -160,20 +172,23 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingEndTime 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrainingEndTime() const;
 
                     /**
                      * 设置完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingEndTime 完成时间
+                     * @param _trainingEndTime 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrainingEndTime(const std::string& _trainingEndTime);
 
                     /**
                      * 判断参数 TrainingEndTime 是否已赋值
                      * @return TrainingEndTime 是否已赋值
+                     * 
                      */
                     bool TrainingEndTimeHasBeenSet() const;
 
@@ -182,20 +197,23 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 算了实例Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置算了实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 算了实例Id
+                     * @param _instanceId 算了实例Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -204,20 +222,23 @@ Stopped：已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceConfig 资源配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ResourceConfig GetResourceConfig() const;
 
                     /**
                      * 设置资源配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceConfig 资源配置
+                     * @param _resourceConfig 资源配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceConfig(const ResourceConfig& _resourceConfig);
 
                     /**
                      * 判断参数 ResourceConfig 是否已赋值
                      * @return ResourceConfig 是否已赋值
+                     * 
                      */
                     bool ResourceConfigHasBeenSet() const;
 

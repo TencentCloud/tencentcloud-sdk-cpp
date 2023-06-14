@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * @return InstanceId 指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @param InstanceId 指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取设置账号名称。
                      * @return UserName 设置账号名称。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置设置账号名称。
-                     * @param UserName 设置账号名称。
+                     * @param _userName 设置账号名称。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取设置权限信息。
                      * @return AuthRole 设置权限信息。
+                     * 
                      */
                     std::vector<Auth> GetAuthRole() const;
 
                     /**
                      * 设置设置权限信息。
-                     * @param AuthRole 设置权限信息。
+                     * @param _authRole 设置权限信息。
+                     * 
                      */
                     void SetAuthRole(const std::vector<Auth>& _authRole);
 
                     /**
                      * 判断参数 AuthRole 是否已赋值
                      * @return AuthRole 是否已赋值
+                     * 
                      */
                     bool AuthRoleHasBeenSet() const;
 

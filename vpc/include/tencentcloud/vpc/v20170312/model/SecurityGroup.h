@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID，例如：sg-ohuuioma。
                      * @return SecurityGroupId 安全组实例ID，例如：sg-ohuuioma。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如：sg-ohuuioma。
-                     * @param SecurityGroupId 安全组实例ID，例如：sg-ohuuioma。
+                     * @param _securityGroupId 安全组实例ID，例如：sg-ohuuioma。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取安全组名称，可任意命名，但不得超过60个字符。
                      * @return SecurityGroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetSecurityGroupName() const;
 
                     /**
                      * 设置安全组名称，可任意命名，但不得超过60个字符。
-                     * @param SecurityGroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * @param _securityGroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetSecurityGroupName(const std::string& _securityGroupName);
 
                     /**
                      * 判断参数 SecurityGroupName 是否已赋值
                      * @return SecurityGroupName 是否已赋值
+                     * 
                      */
                     bool SecurityGroupNameHasBeenSet() const;
 
                     /**
                      * 获取安全组备注，最多100个字符。
                      * @return SecurityGroupDesc 安全组备注，最多100个字符。
+                     * 
                      */
                     std::string GetSecurityGroupDesc() const;
 
                     /**
                      * 设置安全组备注，最多100个字符。
-                     * @param SecurityGroupDesc 安全组备注，最多100个字符。
+                     * @param _securityGroupDesc 安全组备注，最多100个字符。
+                     * 
                      */
                     void SetSecurityGroupDesc(const std::string& _securityGroupDesc);
 
                     /**
                      * 判断参数 SecurityGroupDesc 是否已赋值
                      * @return SecurityGroupDesc 是否已赋值
+                     * 
                      */
                     bool SecurityGroupDescHasBeenSet() const;
 
                     /**
                      * 获取项目id，默认0。可在qcloud控制台项目管理页面查询到。
                      * @return ProjectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id，默认0。可在qcloud控制台项目管理页面查询到。
-                     * @param ProjectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * @param _projectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否是默认安全组，默认安全组不支持删除。
                      * @return IsDefault 是否是默认安全组，默认安全组不支持删除。
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否是默认安全组，默认安全组不支持删除。
-                     * @param IsDefault 是否是默认安全组，默认安全组不支持删除。
+                     * @param _isDefault 是否是默认安全组，默认安全组不支持删除。
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取安全组创建时间。
                      * @return CreatedTime 安全组创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置安全组创建时间。
-                     * @param CreatedTime 安全组创建时间。
+                     * @param _createdTime 安全组创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取标签键值对。
                      * @return TagSet 标签键值对。
+                     * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。
-                     * @param TagSet 标签键值对。
+                     * @param _tagSet 标签键值对。
+                     * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 安全组更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置安全组更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 安全组更新时间。
+                     * @param _updateTime 安全组更新时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

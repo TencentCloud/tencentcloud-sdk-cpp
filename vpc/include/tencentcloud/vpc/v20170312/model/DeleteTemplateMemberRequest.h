@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。
                      * @return TemplateId 参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。
-                     * @param TemplateId 参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。
+                     * @param _templateId 参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。
                      * @return TemplateMember 需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。
+                     * 
                      */
                     std::vector<MemberInfo> GetTemplateMember() const;
 
                     /**
                      * 设置需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。
-                     * @param TemplateMember 需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。
+                     * @param _templateMember 需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。
+                     * 
                      */
                     void SetTemplateMember(const std::vector<MemberInfo>& _templateMember);
 
                     /**
                      * 判断参数 TemplateMember 是否已赋值
                      * @return TemplateMember 是否已赋值
+                     * 
                      */
                     bool TemplateMemberHasBeenSet() const;
 

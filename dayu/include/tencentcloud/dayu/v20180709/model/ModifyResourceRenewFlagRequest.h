@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源Id
                      * @return Id 资源Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源Id
-                     * @param Id 资源Id
+                     * @param _id 资源Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取自动续费标记（0手动续费；1自动续费；2到期不续费）
                      * @return RenewFlag 自动续费标记（0手动续费；1自动续费；2到期不续费）
+                     * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置自动续费标记（0手动续费；1自动续费；2到期不续费）
-                     * @param RenewFlag 自动续费标记（0手动续费；1自动续费；2到期不续费）
+                     * @param _renewFlag 自动续费标记（0手动续费；1自动续费；2到期不续费）
+                     * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 

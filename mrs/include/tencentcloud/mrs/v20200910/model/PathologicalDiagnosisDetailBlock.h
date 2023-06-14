@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const std::string& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologicalType 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHistologicalType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HistologicalType 类型
+                     * @param _histologicalType 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHistologicalType(const std::string& _histologicalType);
 
                     /**
                      * 判断参数 HistologicalType 是否已赋值
                      * @return HistologicalType 是否已赋值
+                     * 
                      */
                     bool HistologicalTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistologicalGrade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHistologicalGrade() const;
 
                     /**
                      * 设置等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HistologicalGrade 等级
+                     * @param _histologicalGrade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHistologicalGrade(const std::string& _histologicalGrade);
 
                     /**
                      * 判断参数 HistologicalGrade 是否已赋值
                      * @return HistologicalGrade 是否已赋值
+                     * 
                      */
                     bool HistologicalGradeHasBeenSet() const;
 

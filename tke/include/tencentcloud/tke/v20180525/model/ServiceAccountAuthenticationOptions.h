@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseTKEDefault 使用TKE默认issuer和jwksuri
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseTKEDefault() const;
 
                     /**
                      * 设置使用TKE默认issuer和jwksuri
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseTKEDefault 使用TKE默认issuer和jwksuri
+                     * @param _useTKEDefault 使用TKE默认issuer和jwksuri
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseTKEDefault(const bool& _useTKEDefault);
 
                     /**
                      * 判断参数 UseTKEDefault 是否已赋值
                      * @return UseTKEDefault 是否已赋值
+                     * 
                      */
                     bool UseTKEDefaultHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Issuer service-account-issuer
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIssuer() const;
 
                     /**
                      * 设置service-account-issuer
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Issuer service-account-issuer
+                     * @param _issuer service-account-issuer
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssuer(const std::string& _issuer);
 
                     /**
                      * 判断参数 Issuer 是否已赋值
                      * @return Issuer 是否已赋值
+                     * 
                      */
                     bool IssuerHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JWKSURI service-account-jwks-uri
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJWKSURI() const;
 
                     /**
                      * 设置service-account-jwks-uri
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JWKSURI service-account-jwks-uri
+                     * @param _jWKSURI service-account-jwks-uri
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJWKSURI(const std::string& _jWKSURI);
 
                     /**
                      * 判断参数 JWKSURI 是否已赋值
                      * @return JWKSURI 是否已赋值
+                     * 
                      */
                     bool JWKSURIHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoCreateDiscoveryAnonymousAuth 如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoCreateDiscoveryAnonymousAuth() const;
 
                     /**
                      * 设置如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoCreateDiscoveryAnonymousAuth 如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则
+                     * @param _autoCreateDiscoveryAnonymousAuth 如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoCreateDiscoveryAnonymousAuth(const bool& _autoCreateDiscoveryAnonymousAuth);
 
                     /**
                      * 判断参数 AutoCreateDiscoveryAnonymousAuth 是否已赋值
                      * @return AutoCreateDiscoveryAnonymousAuth 是否已赋值
+                     * 
                      */
                     bool AutoCreateDiscoveryAnonymousAuthHasBeenSet() const;
 

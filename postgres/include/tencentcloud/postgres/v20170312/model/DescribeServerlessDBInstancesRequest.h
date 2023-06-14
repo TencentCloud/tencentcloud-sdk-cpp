@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取查询条件
                      * @return Filter 查询条件
+                     * 
                      */
                     std::vector<Filter> GetFilter() const;
 
                     /**
                      * 设置查询条件
-                     * @param Filter 查询条件
+                     * @param _filter 查询条件
+                     * 
                      */
                     void SetFilter(const std::vector<Filter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取查询个数
                      * @return Limit 查询个数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询个数
-                     * @param Limit 查询个数
+                     * @param _limit 查询个数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序指标，目前支持实例创建时间CreateTime
                      * @return OrderBy 排序指标，目前支持实例创建时间CreateTime
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序指标，目前支持实例创建时间CreateTime
-                     * @param OrderBy 排序指标，目前支持实例创建时间CreateTime
+                     * @param _orderBy 排序指标，目前支持实例创建时间CreateTime
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取排序方式，包括升序、降序
                      * @return OrderByType 排序方式，包括升序、降序
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置排序方式，包括升序、降序
-                     * @param OrderByType 排序方式，包括升序、降序
+                     * @param _orderByType 排序方式，包括升序、降序
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

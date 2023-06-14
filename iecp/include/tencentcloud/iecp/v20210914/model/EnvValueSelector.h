@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取健名
                      * @return Key 健名
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置健名
-                     * @param Key 健名
+                     * @param _key 健名
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取对象名
                      * @return ObjectName 对象名
+                     * 
                      */
                     std::string GetObjectName() const;
 
                     /**
                      * 设置对象名
-                     * @param ObjectName 对象名
+                     * @param _objectName 对象名
+                     * 
                      */
                     void SetObjectName(const std::string& _objectName);
 
                     /**
                      * 判断参数 ObjectName 是否已赋值
                      * @return ObjectName 是否已赋值
+                     * 
                      */
                     bool ObjectNameHasBeenSet() const;
 
                     /**
                      * 获取对象值
                      * @return ObjectType 对象值
+                     * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置对象值
-                     * @param ObjectType 对象值
+                     * @param _objectType 对象值
+                     * 
                      */
                     void SetObjectType(const std::string& _objectType);
 
                     /**
                      * 判断参数 ObjectType 是否已赋值
                      * @return ObjectType 是否已赋值
+                     * 
                      */
                     bool ObjectTypeHasBeenSet() const;
 

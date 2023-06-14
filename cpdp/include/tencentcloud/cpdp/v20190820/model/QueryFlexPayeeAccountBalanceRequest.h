@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ OCCASION:偶然所得
                      * @return IncomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     std::string GetIncomeType() const;
 
@@ -74,15 +78,17 @@ OCCASION:偶然所得
                      * 设置收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
-                     * @param IncomeType 收入类型
+                     * @param _incomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     void SetIncomeType(const std::string& _incomeType);
 
                     /**
                      * 判断参数 IncomeType 是否已赋值
                      * @return IncomeType 是否已赋值
+                     * 
                      */
                     bool IncomeTypeHasBeenSet() const;
 
@@ -97,6 +103,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -106,35 +113,40 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
                     /**
                      * 获取快照日期。格式yyyy-MM-dd
                      * @return SnapshotDate 快照日期。格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetSnapshotDate() const;
 
                     /**
                      * 设置快照日期。格式yyyy-MM-dd
-                     * @param SnapshotDate 快照日期。格式yyyy-MM-dd
+                     * @param _snapshotDate 快照日期。格式yyyy-MM-dd
+                     * 
                      */
                     void SetSnapshotDate(const std::string& _snapshotDate);
 
                     /**
                      * 判断参数 SnapshotDate 是否已赋值
                      * @return SnapshotDate 是否已赋值
+                     * 
                      */
                     bool SnapshotDateHasBeenSet() const;
 

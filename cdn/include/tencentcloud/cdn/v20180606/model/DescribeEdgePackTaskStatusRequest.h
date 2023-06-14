@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目，默认为 100，最大可设置为 1000
                      * @return Limit 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目，默认为 100，最大可设置为 1000
-                     * @param Limit 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * @param _limit 分页查询限制数目，默认为 100，最大可设置为 1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页查询偏移量，默认为 0
                      * @return Offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量，默认为 0
-                     * @param Offset 分页查询偏移量，默认为 0
+                     * @param _offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询条件过滤器
                      * @return Filters 查询条件过滤器
+                     * 
                      */
                     std::vector<EdgePackTaskFilter> GetFilters() const;
 
                     /**
                      * 设置查询条件过滤器
-                     * @param Filters 查询条件过滤器
+                     * @param _filters 查询条件过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<EdgePackTaskFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

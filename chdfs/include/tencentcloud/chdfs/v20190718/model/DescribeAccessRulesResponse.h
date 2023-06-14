@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取权限规则列表
                      * @return AccessRules 权限规则列表
+                     * 
                      */
                     std::vector<AccessRule> GetAccessRules() const;
 
                     /**
                      * 判断参数 AccessRules 是否已赋值
                      * @return AccessRules 是否已赋值
+                     * 
                      */
                     bool AccessRulesHasBeenSet() const;
 

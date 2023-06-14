@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否是固定IP，["TRUE","FALSE"]
                      * @return EipFixed 是否是固定IP，["TRUE","FALSE"]
+                     * 
                      */
                     std::string GetEipFixed() const;
 
                     /**
                      * 设置是否是固定IP，["TRUE","FALSE"]
-                     * @param EipFixed 是否是固定IP，["TRUE","FALSE"]
+                     * @param _eipFixed 是否是固定IP，["TRUE","FALSE"]
+                     * 
                      */
                     void SetEipFixed(const std::string& _eipFixed);
 
                     /**
                      * 判断参数 EipFixed 是否已赋值
                      * @return EipFixed 是否已赋值
+                     * 
                      */
                     bool EipFixedHasBeenSet() const;
 
                     /**
                      * 获取IP列表
                      * @return Eips IP列表
+                     * 
                      */
                     std::vector<std::string> GetEips() const;
 
                     /**
                      * 设置IP列表
-                     * @param Eips IP列表
+                     * @param _eips IP列表
+                     * 
                      */
                     void SetEips(const std::vector<std::string>& _eips);
 
                     /**
                      * 判断参数 Eips 是否已赋值
                      * @return Eips 是否已赋值
+                     * 
                      */
                     bool EipsHasBeenSet() const;
 

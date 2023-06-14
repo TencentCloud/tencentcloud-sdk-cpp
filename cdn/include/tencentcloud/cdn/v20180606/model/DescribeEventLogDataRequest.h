@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return Mode 防护类型，映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -56,69 +57,80 @@ namespace TencentCloud
                      * 设置防护类型，映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
-                     * @param Mode 防护类型，映射如下：
+                     * @param _mode 防护类型，映射如下：
   waf = "Web攻击"
   cc = "CC攻击"
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，最长跨度为30分钟
                      * @return EndTime 结束时间，最长跨度为30分钟
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，最长跨度为30分钟
-                     * @param EndTime 结束时间，最长跨度为30分钟
+                     * @param _endTime 结束时间，最长跨度为30分钟
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -129,6 +141,7 @@ namespace TencentCloud
                      * @return ActionName 执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 参数放空，表示查询全部动作数据
+                     * 
                      */
                     std::string GetActionName() const;
 
@@ -136,15 +149,17 @@ namespace TencentCloud
                      * 设置执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 参数放空，表示查询全部动作数据
-                     * @param ActionName 执行动作，取值为：intercept/redirect/observe
+                     * @param _actionName 执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 参数放空，表示查询全部动作数据
+                     * 
                      */
                     void SetActionName(const std::string& _actionName);
 
                     /**
                      * 判断参数 ActionName 是否已赋值
                      * @return ActionName 是否已赋值
+                     * 
                      */
                     bool ActionNameHasBeenSet() const;
 
@@ -157,6 +172,7 @@ namespace TencentCloud
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -165,52 +181,60 @@ namespace TencentCloud
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
-                     * @param Url 请求URL，支持URL开头和结尾使用\*表示通配
+                     * @param _url 请求URL，支持URL开头和结尾使用\*表示通配
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取地域 mainland 或者 overseas，为空时默认 mainland
                      * @return Area 地域 mainland 或者 overseas，为空时默认 mainland
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域 mainland 或者 overseas，为空时默认 mainland
-                     * @param Area 地域 mainland 或者 overseas，为空时默认 mainland
+                     * @param _area 地域 mainland 或者 overseas，为空时默认 mainland
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取来源产品，cdn 或者 ecdn，为空时默认 cdn
                      * @return Source 来源产品，cdn 或者 ecdn，为空时默认 cdn
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源产品，cdn 或者 ecdn，为空时默认 cdn
-                     * @param Source 来源产品，cdn 或者 ecdn，为空时默认 cdn
+                     * @param _source 来源产品，cdn 或者 ecdn，为空时默认 cdn
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 

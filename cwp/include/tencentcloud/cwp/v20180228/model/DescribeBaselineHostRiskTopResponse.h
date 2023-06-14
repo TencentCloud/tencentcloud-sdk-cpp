@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取风险主机top5
                      * @return HostRiskTop5 风险主机top5
+                     * 
                      */
                     std::vector<HostRiskLevelCount> GetHostRiskTop5() const;
 
                     /**
                      * 判断参数 HostRiskTop5 是否已赋值
                      * @return HostRiskTop5 是否已赋值
+                     * 
                      */
                     bool HostRiskTop5HasBeenSet() const;
 

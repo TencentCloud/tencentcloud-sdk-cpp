@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取修改权限配置的项目ID
                      * @return ProjectId 修改权限配置的项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置修改权限配置的项目ID
-                     * @param ProjectId 修改权限配置的项目ID
+                     * @param _projectId 修改权限配置的项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取修改权限配置的远端设备ID
                      * @return RemoteDeviceId 修改权限配置的远端设备ID
+                     * 
                      */
                     std::string GetRemoteDeviceId() const;
 
                     /**
                      * 设置修改权限配置的远端设备ID
-                     * @param RemoteDeviceId 修改权限配置的远端设备ID
+                     * @param _remoteDeviceId 修改权限配置的远端设备ID
+                     * 
                      */
                     void SetRemoteDeviceId(const std::string& _remoteDeviceId);
 
                     /**
                      * 判断参数 RemoteDeviceId 是否已赋值
                      * @return RemoteDeviceId 是否已赋值
+                     * 
                      */
                     bool RemoteDeviceIdHasBeenSet() const;
 
                     /**
                      * 获取权限修改涉及的现场设备ID数组
                      * @return FieldDeviceIds 权限修改涉及的现场设备ID数组
+                     * 
                      */
                     std::vector<std::string> GetFieldDeviceIds() const;
 
                     /**
                      * 设置权限修改涉及的现场设备ID数组
-                     * @param FieldDeviceIds 权限修改涉及的现场设备ID数组
+                     * @param _fieldDeviceIds 权限修改涉及的现场设备ID数组
+                     * 
                      */
                     void SetFieldDeviceIds(const std::vector<std::string>& _fieldDeviceIds);
 
                     /**
                      * 判断参数 FieldDeviceIds 是否已赋值
                      * @return FieldDeviceIds 是否已赋值
+                     * 
                      */
                     bool FieldDeviceIdsHasBeenSet() const;
 
                     /**
                      * 获取修改的目标权限模式，black为黑名单，white为白名单
                      * @return PolicyMode 修改的目标权限模式，black为黑名单，white为白名单
+                     * 
                      */
                     std::string GetPolicyMode() const;
 
                     /**
                      * 设置修改的目标权限模式，black为黑名单，white为白名单
-                     * @param PolicyMode 修改的目标权限模式，black为黑名单，white为白名单
+                     * @param _policyMode 修改的目标权限模式，black为黑名单，white为白名单
+                     * 
                      */
                     void SetPolicyMode(const std::string& _policyMode);
 
                     /**
                      * 判断参数 PolicyMode 是否已赋值
                      * @return PolicyMode 是否已赋值
+                     * 
                      */
                     bool PolicyModeHasBeenSet() const;
 
                     /**
                      * 获取修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）
                      * @return ModifyMode 修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）
+                     * 
                      */
                     std::string GetModifyMode() const;
 
                     /**
                      * 设置修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）
-                     * @param ModifyMode 修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）
+                     * @param _modifyMode 修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）
+                     * 
                      */
                     void SetModifyMode(const std::string& _modifyMode);
 
                     /**
                      * 判断参数 ModifyMode 是否已赋值
                      * @return ModifyMode 是否已赋值
+                     * 
                      */
                     bool ModifyModeHasBeenSet() const;
 

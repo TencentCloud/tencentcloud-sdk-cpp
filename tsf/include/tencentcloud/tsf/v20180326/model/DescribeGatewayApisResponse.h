@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取翻页结构
                      * @return Result 翻页结构
+                     * 
                      */
                     TsfPageApiDetailInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

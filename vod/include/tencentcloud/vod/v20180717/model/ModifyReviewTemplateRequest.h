@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取审核模板唯一标识。
                      * @return Definition 审核模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置审核模板唯一标识。
-                     * @param Definition 审核模板唯一标识。
+                     * @param _definition 审核模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取审核模板名称，长度限制：64 个字符。
                      * @return Name 审核模板名称，长度限制：64 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置审核模板名称，长度限制：64 个字符。
-                     * @param Name 审核模板名称，长度限制：64 个字符。
+                     * @param _name 审核模板名称，长度限制：64 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取审核模板描述信息，长度限制：256 个字符。
                      * @return Comment 审核模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置审核模板描述信息，长度限制：256 个字符。
-                     * @param Comment 审核模板描述信息，长度限制：256 个字符。
+                     * @param _comment 审核模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -135,6 +147,7 @@ namespace TencentCloud
 <li>Moan：娇喘。</li>
 
 注意：不填表示不更新。
+                     * 
                      */
                     std::vector<std::string> GetLabels() const;
 
@@ -149,7 +162,7 @@ namespace TencentCloud
 <li>Moan：娇喘。</li>
 
 注意：不填表示不更新。
-                     * @param Labels 需要返回的违规标签列表，可选值为：
+                     * @param _labels 需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
 <li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
@@ -159,12 +172,14 @@ namespace TencentCloud
 <li>Moan：娇喘。</li>
 
 注意：不填表示不更新。
+                     * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 

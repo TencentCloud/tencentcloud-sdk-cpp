@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取申报流水号
                      * @return DeclareId 申报流水号
+                     * 
                      */
                     std::string GetDeclareId() const;
 
                     /**
                      * 设置申报流水号
-                     * @param DeclareId 申报流水号
+                     * @param _declareId 申报流水号
+                     * 
                      */
                     void SetDeclareId(const std::string& _declareId);
 
                     /**
                      * 判断参数 DeclareId 是否已赋值
                      * @return DeclareId 是否已赋值
+                     * 
                      */
                     bool DeclareIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

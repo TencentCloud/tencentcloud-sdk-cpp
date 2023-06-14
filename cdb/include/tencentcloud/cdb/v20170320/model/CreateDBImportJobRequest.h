@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取云数据库的用户名。
                      * @return User 云数据库的用户名。
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置云数据库的用户名。
-                     * @param User 云数据库的用户名。
+                     * @param _user 云数据库的用户名。
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
                      * @return FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
-                     * @param FileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * @param _fileName 文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取云数据库实例 User 账号的密码。
                      * @return Password 云数据库实例 User 账号的密码。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置云数据库实例 User 账号的密码。
-                     * @param Password 云数据库实例 User 账号的密码。
+                     * @param _password 云数据库实例 User 账号的密码。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取导入的目标数据库名，不传表示不指定数据库。
                      * @return DbName 导入的目标数据库名，不传表示不指定数据库。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置导入的目标数据库名，不传表示不指定数据库。
-                     * @param DbName 导入的目标数据库名，不传表示不指定数据库。
+                     * @param _dbName 导入的目标数据库名，不传表示不指定数据库。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
                      * @return CosUrl 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 设置腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
-                     * @param CosUrl 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     * @param _cosUrl 腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。
+                     * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
 
                     /**
                      * 判断参数 CosUrl 是否已赋值
                      * @return CosUrl 是否已赋值
+                     * 
                      */
                     bool CosUrlHasBeenSet() const;
 

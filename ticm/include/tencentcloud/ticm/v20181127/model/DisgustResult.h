@@ -55,6 +55,7 @@ namespace TencentCloud
 0表示成功，
 -1表示系统错误，
 -2表示引擎错误。
+                     * 
                      */
                     int64_t GetCode() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 0表示成功，
 -1表示系统错误，
 -2表示引擎错误。
-                     * @param Code 该识别场景的错误码：
+                     * @param _code 该识别场景的错误码：
 0表示成功，
 -1表示系统错误，
 -2表示引擎错误。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取错误码描述信息。
                      * @return Msg 错误码描述信息。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置错误码描述信息。
-                     * @param Msg 错误码描述信息。
+                     * @param _msg 错误码描述信息。
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
@@ -103,6 +109,7 @@ BLOCK：违规
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -111,34 +118,39 @@ BLOCK：违规
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
-                     * @param Suggestion 识别场景的审核结论：
+                     * @param _suggestion 识别场景的审核结论：
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取图像恶心的分数，0-100之间，分数越高恶心几率越大。
                      * @return Confidence 图像恶心的分数，0-100之间，分数越高恶心几率越大。
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置图像恶心的分数，0-100之间，分数越高恶心几率越大。
-                     * @param Confidence 图像恶心的分数，0-100之间，分数越高恶心几率越大。
+                     * @param _confidence 图像恶心的分数，0-100之间，分数越高恶心几率越大。
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

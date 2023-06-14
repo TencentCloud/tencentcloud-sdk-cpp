@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncidentId 事件id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIncidentId() const;
 
                     /**
                      * 设置事件id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncidentId 事件id
+                     * @param _incidentId 事件id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncidentId(const std::string& _incidentId);
 
                     /**
                      * 判断参数 IncidentId 是否已赋值
                      * @return IncidentId 是否已赋值
+                     * 
                      */
                     bool IncidentIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 事件所在表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置事件所在表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 事件所在表名
+                     * @param _tableName 事件所在表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vertex 节点信息列表，数组项中包含节点详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VertexInfo> GetVertex() const;
 
                     /**
                      * 设置节点信息列表，数组项中包含节点详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vertex 节点信息列表，数组项中包含节点详细信息
+                     * @param _vertex 节点信息列表，数组项中包含节点详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVertex(const std::vector<VertexInfo>& _vertex);
 
                     /**
                      * 判断参数 Vertex 是否已赋值
                      * @return Vertex 是否已赋值
+                     * 
                      */
                     bool VertexHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VertexCount 节点总个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVertexCount() const;
 
                     /**
                      * 设置节点总个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VertexCount 节点总个数
+                     * @param _vertexCount 节点总个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVertexCount(const int64_t& _vertexCount);
 
                     /**
                      * 判断参数 VertexCount 是否已赋值
                      * @return VertexCount 是否已赋值
+                     * 
                      */
                     bool VertexCountHasBeenSet() const;
 

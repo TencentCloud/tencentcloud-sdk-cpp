@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的解绑客户数量
                      * @return TotalCount 符合条件的解绑客户数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取符合条件的解绑客户列表
                      * @return UnbindClientList 符合条件的解绑客户列表
+                     * 
                      */
                     std::vector<UnbindClientElem> GetUnbindClientList() const;
 
                     /**
                      * 判断参数 UnbindClientList 是否已赋值
                      * @return UnbindClientList 是否已赋值
+                     * 
                      */
                     bool UnbindClientListHasBeenSet() const;
 

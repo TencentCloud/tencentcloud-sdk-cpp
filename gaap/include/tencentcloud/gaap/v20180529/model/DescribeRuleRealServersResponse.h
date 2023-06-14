@@ -48,48 +48,56 @@ namespace TencentCloud
                     /**
                      * 获取可绑定的源站个数
                      * @return TotalCount 可绑定的源站个数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取可绑定的源站信息列表
                      * @return RealServerSet 可绑定的源站信息列表
+                     * 
                      */
                     std::vector<RealServer> GetRealServerSet() const;
 
                     /**
                      * 判断参数 RealServerSet 是否已赋值
                      * @return RealServerSet 是否已赋值
+                     * 
                      */
                     bool RealServerSetHasBeenSet() const;
 
                     /**
                      * 获取已绑定的源站个数
                      * @return BindRealServerTotalCount 已绑定的源站个数
+                     * 
                      */
                     uint64_t GetBindRealServerTotalCount() const;
 
                     /**
                      * 判断参数 BindRealServerTotalCount 是否已赋值
                      * @return BindRealServerTotalCount 是否已赋值
+                     * 
                      */
                     bool BindRealServerTotalCountHasBeenSet() const;
 
                     /**
                      * 获取已绑定的源站信息列表
                      * @return BindRealServerSet 已绑定的源站信息列表
+                     * 
                      */
                     std::vector<BindRealServer> GetBindRealServerSet() const;
 
                     /**
                      * 判断参数 BindRealServerSet 是否已赋值
                      * @return BindRealServerSet 是否已赋值
+                     * 
                      */
                     bool BindRealServerSetHasBeenSet() const;
 

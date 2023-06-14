@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取nat实例id
                      * @return NatinsId nat实例id
+                     * 
                      */
                     std::string GetNatinsId() const;
 
                     /**
                      * 设置nat实例id
-                     * @param NatinsId nat实例id
+                     * @param _natinsId nat实例id
+                     * 
                      */
                     void SetNatinsId(const std::string& _natinsId);
 
                     /**
                      * 判断参数 NatinsId 是否已赋值
                      * @return NatinsId 是否已赋值
+                     * 
                      */
                     bool NatinsIdHasBeenSet() const;
 
                     /**
                      * 获取nat实例名称
                      * @return NatinsName nat实例名称
+                     * 
                      */
                     std::string GetNatinsName() const;
 
                     /**
                      * 设置nat实例名称
-                     * @param NatinsName nat实例名称
+                     * @param _natinsName nat实例名称
+                     * 
                      */
                     void SetNatinsName(const std::string& _natinsName);
 
                     /**
                      * 判断参数 NatinsName 是否已赋值
                      * @return NatinsName 是否已赋值
+                     * 
                      */
                     bool NatinsNameHasBeenSet() const;
 
                     /**
                      * 获取实例所在地域
                      * @return Region 实例所在地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所在地域
-                     * @param Region 实例所在地域
+                     * @param _region 实例所在地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取0: 新增模式，1:接入模式
                      * @return FwMode 0: 新增模式，1:接入模式
+                     * 
                      */
                     int64_t GetFwMode() const;
 
                     /**
                      * 设置0: 新增模式，1:接入模式
-                     * @param FwMode 0: 新增模式，1:接入模式
+                     * @param _fwMode 0: 新增模式，1:接入模式
+                     * 
                      */
                     void SetFwMode(const int64_t& _fwMode);
 
                     /**
                      * 判断参数 FwMode 是否已赋值
                      * @return FwMode 是否已赋值
+                     * 
                      */
                     bool FwModeHasBeenSet() const;
 
                     /**
                      * 获取实例带宽大小 Mbps
                      * @return BandWidth 实例带宽大小 Mbps
+                     * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
                      * 设置实例带宽大小 Mbps
-                     * @param BandWidth 实例带宽大小 Mbps
+                     * @param _bandWidth 实例带宽大小 Mbps
+                     * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
 
                     /**
                      * 判断参数 BandWidth 是否已赋值
                      * @return BandWidth 是否已赋值
+                     * 
                      */
                     bool BandWidthHasBeenSet() const;
 
                     /**
                      * 获取入向带宽峰值 bps
                      * @return InFlowMax 入向带宽峰值 bps
+                     * 
                      */
                     int64_t GetInFlowMax() const;
 
                     /**
                      * 设置入向带宽峰值 bps
-                     * @param InFlowMax 入向带宽峰值 bps
+                     * @param _inFlowMax 入向带宽峰值 bps
+                     * 
                      */
                     void SetInFlowMax(const int64_t& _inFlowMax);
 
                     /**
                      * 判断参数 InFlowMax 是否已赋值
                      * @return InFlowMax 是否已赋值
+                     * 
                      */
                     bool InFlowMaxHasBeenSet() const;
 
                     /**
                      * 获取出向带宽峰值 bps
                      * @return OutFlowMax 出向带宽峰值 bps
+                     * 
                      */
                     uint64_t GetOutFlowMax() const;
 
                     /**
                      * 设置出向带宽峰值 bps
-                     * @param OutFlowMax 出向带宽峰值 bps
+                     * @param _outFlowMax 出向带宽峰值 bps
+                     * 
                      */
                     void SetOutFlowMax(const uint64_t& _outFlowMax);
 
                     /**
                      * 判断参数 OutFlowMax 是否已赋值
                      * @return OutFlowMax 是否已赋值
+                     * 
                      */
                     bool OutFlowMaxHasBeenSet() const;
 
                     /**
                      * 获取地域中文信息
                      * @return RegionZh 地域中文信息
+                     * 
                      */
                     std::string GetRegionZh() const;
 
                     /**
                      * 设置地域中文信息
-                     * @param RegionZh 地域中文信息
+                     * @param _regionZh 地域中文信息
+                     * 
                      */
                     void SetRegionZh(const std::string& _regionZh);
 
                     /**
                      * 判断参数 RegionZh 是否已赋值
                      * @return RegionZh 是否已赋值
+                     * 
                      */
                     bool RegionZhHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipAddress 公网ip数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEipAddress() const;
 
                     /**
                      * 设置公网ip数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EipAddress 公网ip数组
+                     * @param _eipAddress 公网ip数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEipAddress(const std::vector<std::string>& _eipAddress);
 
                     /**
                      * 判断参数 EipAddress 是否已赋值
                      * @return EipAddress 是否已赋值
+                     * 
                      */
                     bool EipAddressHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcIp 内外使用ip数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetVpcIp() const;
 
                     /**
                      * 设置内外使用ip数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcIp 内外使用ip数组
+                     * @param _vpcIp 内外使用ip数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcIp(const std::vector<std::string>& _vpcIp);
 
                     /**
                      * 判断参数 VpcIp 是否已赋值
                      * @return VpcIp 是否已赋值
+                     * 
                      */
                     bool VpcIpHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Subnets 实例关联子网数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubnets() const;
 
                     /**
                      * 设置实例关联子网数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Subnets 实例关联子网数组
+                     * @param _subnets 实例关联子网数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnets(const std::vector<std::string>& _subnets);
 
                     /**
                      * 判断参数 Subnets 是否已赋值
                      * @return Subnets 是否已赋值
+                     * 
                      */
                     bool SubnetsHasBeenSet() const;
 
@@ -261,20 +294,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0 :正常 1：正在初始化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0 :正常 1：正在初始化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 0 :正常 1：正在初始化
+                     * @param _status 0 :正常 1：正在初始化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -283,20 +319,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionDetail 地域区域信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionDetail() const;
 
                     /**
                      * 设置地域区域信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionDetail 地域区域信息
+                     * @param _regionDetail 地域区域信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionDetail(const std::string& _regionDetail);
 
                     /**
                      * 判断参数 RegionDetail 是否已赋值
                      * @return RegionDetail 是否已赋值
+                     * 
                      */
                     bool RegionDetailHasBeenSet() const;
 
@@ -305,20 +344,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZh 实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneZh() const;
 
                     /**
                      * 设置实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneZh 实例所在可用区
+                     * @param _zoneZh 实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneZh(const std::string& _zoneZh);
 
                     /**
                      * 判断参数 ZoneZh 是否已赋值
                      * @return ZoneZh 是否已赋值
+                     * 
                      */
                     bool ZoneZhHasBeenSet() const;
 
@@ -327,20 +369,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZhBak 实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZoneZhBak() const;
 
                     /**
                      * 设置实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneZhBak 实例所在可用区
+                     * @param _zoneZhBak 实例所在可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneZhBak(const std::string& _zoneZhBak);
 
                     /**
                      * 判断参数 ZoneZhBak 是否已赋值
                      * @return ZoneZhBak 是否已赋值
+                     * 
                      */
                     bool ZoneZhBakHasBeenSet() const;
 
@@ -349,20 +394,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleUsed 已使用规则数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleUsed() const;
 
                     /**
                      * 设置已使用规则数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleUsed 已使用规则数
+                     * @param _ruleUsed 已使用规则数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleUsed(const uint64_t& _ruleUsed);
 
                     /**
                      * 判断参数 RuleUsed 是否已赋值
                      * @return RuleUsed 是否已赋值
+                     * 
                      */
                     bool RuleUsedHasBeenSet() const;
 
@@ -371,20 +419,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleMax 实例的规则限制最大规格数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleMax() const;
 
                     /**
                      * 设置实例的规则限制最大规格数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleMax 实例的规则限制最大规格数
+                     * @param _ruleMax 实例的规则限制最大规格数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleMax(const uint64_t& _ruleMax);
 
                     /**
                      * 判断参数 RuleMax 是否已赋值
                      * @return RuleMax 是否已赋值
+                     * 
                      */
                     bool RuleMaxHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取泳道ID
                      * @return LaneId 泳道ID
+                     * 
                      */
                     std::string GetLaneId() const;
 
                     /**
                      * 设置泳道ID
-                     * @param LaneId 泳道ID
+                     * @param _laneId 泳道ID
+                     * 
                      */
                     void SetLaneId(const std::string& _laneId);
 
                     /**
                      * 判断参数 LaneId 是否已赋值
                      * @return LaneId 是否已赋值
+                     * 
                      */
                     bool LaneIdHasBeenSet() const;
 
                     /**
                      * 获取泳道名称
                      * @return LaneName 泳道名称
+                     * 
                      */
                     std::string GetLaneName() const;
 
                     /**
                      * 设置泳道名称
-                     * @param LaneName 泳道名称
+                     * @param _laneName 泳道名称
+                     * 
                      */
                     void SetLaneName(const std::string& _laneName);
 
                     /**
                      * 判断参数 LaneName 是否已赋值
                      * @return LaneName 是否已赋值
+                     * 
                      */
                     bool LaneNameHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

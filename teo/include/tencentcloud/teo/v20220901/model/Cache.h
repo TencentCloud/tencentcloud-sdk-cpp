@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 缓存配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置缓存配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 缓存配置开关，取值有：
+                     * @param _switch 缓存配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return CacheTime 缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCacheTime() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheTime 缓存过期时间设置。
+                     * @param _cacheTime 缓存过期时间设置。
 单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheTime(const int64_t& _cacheTime);
 
                     /**
                      * 判断参数 CacheTime 是否已赋值
                      * @return CacheTime 是否已赋值
+                     * 
                      */
                     bool CacheTimeHasBeenSet() const;
 
@@ -107,6 +113,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIgnoreCacheControl() const;
 
@@ -115,16 +122,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCacheControl 是否开启强制缓存，取值有：
+                     * @param _ignoreCacheControl 是否开启强制缓存，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreCacheControl(const std::string& _ignoreCacheControl);
 
                     /**
                      * 判断参数 IgnoreCacheControl 是否已赋值
                      * @return IgnoreCacheControl 是否已赋值
+                     * 
                      */
                     bool IgnoreCacheControlHasBeenSet() const;
 

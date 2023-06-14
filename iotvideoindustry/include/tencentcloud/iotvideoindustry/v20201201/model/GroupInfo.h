@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取分组名称
                      * @return GroupName 分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-                     * @param GroupName 分组名称
+                     * @param _groupName 分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取分组类型
                      * @return GroupType 分组类型
+                     * 
                      */
                     std::string GetGroupType() const;
 
                     /**
                      * 设置分组类型
-                     * @param GroupType 分组类型
+                     * @param _groupType 分组类型
+                     * 
                      */
                     void SetGroupType(const std::string& _groupType);
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
                     /**
                      * 获取分组路径
                      * @return GroupPath 分组路径
+                     * 
                      */
                     std::string GetGroupPath() const;
 
                     /**
                      * 设置分组路径
-                     * @param GroupPath 分组路径
+                     * @param _groupPath 分组路径
+                     * 
                      */
                     void SetGroupPath(const std::string& _groupPath);
 
                     /**
                      * 判断参数 GroupPath 是否已赋值
                      * @return GroupPath 是否已赋值
+                     * 
                      */
                     bool GroupPathHasBeenSet() const;
 
                     /**
                      * 获取父分组ID
                      * @return ParentId 父分组ID
+                     * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置父分组ID
-                     * @param ParentId 父分组ID
+                     * @param _parentId 父分组ID
+                     * 
                      */
                     void SetParentId(const std::string& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
                     /**
                      * 获取分组描述
                      * @return GroupDescribe 分组描述
+                     * 
                      */
                     std::string GetGroupDescribe() const;
 
                     /**
                      * 设置分组描述
-                     * @param GroupDescribe 分组描述
+                     * @param _groupDescribe 分组描述
+                     * 
                      */
                     void SetGroupDescribe(const std::string& _groupDescribe);
 
                     /**
                      * 判断参数 GroupDescribe 是否已赋值
                      * @return GroupDescribe 是否已赋值
+                     * 
                      */
                     bool GroupDescribeHasBeenSet() const;
 
                     /**
                      * 获取扩展信息
                      * @return ExtraInformation 扩展信息
+                     * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置扩展信息
-                     * @param ExtraInformation 扩展信息
+                     * @param _extraInformation 扩展信息
+                     * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
 
                     /**
                      * 判断参数 ExtraInformation 是否已赋值
                      * @return ExtraInformation 是否已赋值
+                     * 
                      */
                     bool ExtraInformationHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupStatus 分组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
                      * 设置分组状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupStatus 分组状态
+                     * @param _groupStatus 分组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
 
                     /**
                      * 判断参数 GroupStatus 是否已赋值
                      * @return GroupStatus 是否已赋值
+                     * 
                      */
                     bool GroupStatusHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 设备不存在时产生的错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置设备不存在时产生的错误
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 设备不存在时产生的错误
+                     * @param _error 设备不存在时产生的错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const std::string& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

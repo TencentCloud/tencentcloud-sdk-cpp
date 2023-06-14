@@ -53,6 +53,7 @@ off：关闭
                      * @return Switch  华为云对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ off：关闭
                      * 设置 华为云对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch  华为云对象存储回源鉴权配置开关，取值有：
+                     * @param _switch  华为云对象存储回源鉴权配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessKey 访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
                      * 设置访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessKey 访问 ID
+                     * @param _accessKey 访问 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessKey(const std::string& _accessKey);
 
                     /**
                      * 判断参数 AccessKey 是否已赋值
                      * @return AccessKey 是否已赋值
+                     * 
                      */
                     bool AccessKeyHasBeenSet() const;
 
@@ -99,20 +105,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 密钥
+                     * @param _secretKey 密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -121,20 +130,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket bucketname
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置bucketname
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket bucketname
+                     * @param _bucket bucketname
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 

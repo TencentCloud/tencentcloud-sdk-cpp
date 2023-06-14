@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取区域ID
                      * @return ZoneId 区域ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置区域ID
-                     * @param ZoneId 区域ID
+                     * @param _zoneId 区域ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取区域名称
                      * @return ZoneName 区域名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置区域名称
-                     * @param ZoneName 区域名称
+                     * @param _zoneName 区域名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取客流量
                      * @return TrafficTotalCount 客流量
+                     * 
                      */
                     uint64_t GetTrafficTotalCount() const;
 
                     /**
                      * 设置客流量
-                     * @param TrafficTotalCount 客流量
+                     * @param _trafficTotalCount 客流量
+                     * 
                      */
                     void SetTrafficTotalCount(const uint64_t& _trafficTotalCount);
 
                     /**
                      * 判断参数 TrafficTotalCount 是否已赋值
                      * @return TrafficTotalCount 是否已赋值
+                     * 
                      */
                     bool TrafficTotalCountHasBeenSet() const;
 
                     /**
                      * 获取平均停留时间
                      * @return AvgStayTime 平均停留时间
+                     * 
                      */
                     uint64_t GetAvgStayTime() const;
 
                     /**
                      * 设置平均停留时间
-                     * @param AvgStayTime 平均停留时间
+                     * @param _avgStayTime 平均停留时间
+                     * 
                      */
                     void SetAvgStayTime(const uint64_t& _avgStayTime);
 
                     /**
                      * 判断参数 AvgStayTime 是否已赋值
                      * @return AvgStayTime 是否已赋值
+                     * 
                      */
                     bool AvgStayTimeHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id
                      * @return MusicId 歌曲Id
+                     * 
                      */
                     std::string GetMusicId() const;
 
                     /**
                      * 判断参数 MusicId 是否已赋值
                      * @return MusicId 是否已赋值
+                     * 
                      */
                     bool MusicIdHasBeenSet() const;
 
                     /**
                      * 获取歌曲名称
                      * @return MusicName 歌曲名称
+                     * 
                      */
                     std::string GetMusicName() const;
 
                     /**
                      * 判断参数 MusicName 是否已赋值
                      * @return MusicName 是否已赋值
+                     * 
                      */
                     bool MusicNameHasBeenSet() const;
 
@@ -72,24 +76,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 歌曲时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取歌曲链接
                      * @return MusicUrl 歌曲链接
+                     * 
                      */
                     std::string GetMusicUrl() const;
 
                     /**
                      * 判断参数 MusicUrl 是否已赋值
                      * @return MusicUrl 是否已赋值
+                     * 
                      */
                     bool MusicUrlHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MusicImageUrl 歌曲图片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMusicImageUrl() const;
 
                     /**
                      * 判断参数 MusicImageUrl 是否已赋值
                      * @return MusicImageUrl 是否已赋值
+                     * 
                      */
                     bool MusicImageUrlHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Singers 歌手列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSingers() const;
 
                     /**
                      * 判断参数 Singers 是否已赋值
                      * @return Singers 是否已赋值
+                     * 
                      */
                     bool SingersHasBeenSet() const;
 

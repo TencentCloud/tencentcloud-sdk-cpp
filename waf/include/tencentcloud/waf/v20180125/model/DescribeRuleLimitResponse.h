@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取waf模块的规格
                      * @return Res waf模块的规格
+                     * 
                      */
                     WafRuleLimit GetRes() const;
 
                     /**
                      * 判断参数 Res 是否已赋值
                      * @return Res 是否已赋值
+                     * 
                      */
                     bool ResHasBeenSet() const;
 

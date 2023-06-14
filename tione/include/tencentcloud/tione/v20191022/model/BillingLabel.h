@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 计费项标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置计费项标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 计费项标识
+                     * @param _label 计费项标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取存储大小
                      * @return VolumeSize 存储大小
+                     * 
                      */
                     int64_t GetVolumeSize() const;
 
                     /**
                      * 设置存储大小
-                     * @param VolumeSize 存储大小
+                     * @param _volumeSize 存储大小
+                     * 
                      */
                     void SetVolumeSize(const int64_t& _volumeSize);
 
                     /**
                      * 判断参数 VolumeSize 是否已赋值
                      * @return VolumeSize 是否已赋值
+                     * 
                      */
                     bool VolumeSizeHasBeenSet() const;
 
@@ -95,6 +101,7 @@ Computing: 计算和存储都计费
 None: 不计费
 StorageOnly: 仅存储计费
 Computing: 计算和存储都计费
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -103,16 +110,18 @@ Computing: 计算和存储都计费
 None: 不计费
 StorageOnly: 仅存储计费
 Computing: 计算和存储都计费
-                     * @param Status 计费状态
+                     * @param _status 计费状态
 None: 不计费
 StorageOnly: 仅存储计费
 Computing: 计算和存储都计费
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

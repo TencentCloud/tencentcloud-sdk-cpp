@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取开通时间
                      * @return CreateTime 开通时间
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置开通时间
-                     * @param CreateTime 开通时间
+                     * @param _createTime 开通时间
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取资源总量
                      * @return Total 资源总量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置资源总量
-                     * @param Total 资源总量
+                     * @param _total 资源总量
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已使用资源数量
                      * @return Used 已使用资源数量
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 设置已使用资源数量
-                     * @param Used 已使用资源数量
+                     * @param _used 已使用资源数量
+                     * 
                      */
                     void SetUsed(const uint64_t& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 

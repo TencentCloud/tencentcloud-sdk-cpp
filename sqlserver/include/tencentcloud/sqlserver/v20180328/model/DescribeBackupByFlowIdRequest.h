@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：mssql-3l3fgqn7
                      * @return InstanceId 实例ID，格式如：mssql-3l3fgqn7
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：mssql-3l3fgqn7
-                     * @param InstanceId 实例ID，格式如：mssql-3l3fgqn7
+                     * @param _instanceId 实例ID，格式如：mssql-3l3fgqn7
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
                      * @return FlowId 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
-                     * @param FlowId 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
+                     * @param _flowId 创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

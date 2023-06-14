@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Result 核身结果：
 0 - 通过；
 1 - 未通过
+                     * 
                      */
                     int64_t GetResult() const;
 
@@ -60,69 +61,80 @@ namespace TencentCloud
                      * 设置核身结果：
 0 - 通过；
 1 - 未通过
-                     * @param Result 核身结果：
+                     * @param _result 核身结果：
 0 - 通过；
 1 - 未通过
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取核身失败描述
                      * @return Description 核身失败描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置核身失败描述
-                     * @param Description 核身失败描述
+                     * @param _description 核身失败描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取照片数据 (base64编码, 一般为JPG或PNG)
                      * @return Photo 照片数据 (base64编码, 一般为JPG或PNG)
+                     * 
                      */
                     std::string GetPhoto() const;
 
                     /**
                      * 设置照片数据 (base64编码, 一般为JPG或PNG)
-                     * @param Photo 照片数据 (base64编码, 一般为JPG或PNG)
+                     * @param _photo 照片数据 (base64编码, 一般为JPG或PNG)
+                     * 
                      */
                     void SetPhoto(const std::string& _photo);
 
                     /**
                      * 判断参数 Photo 是否已赋值
                      * @return Photo 是否已赋值
+                     * 
                      */
                     bool PhotoHasBeenSet() const;
 
                     /**
                      * 获取订单号 (orderNo)
                      * @return OrderNumber 订单号 (orderNo)
+                     * 
                      */
                     std::string GetOrderNumber() const;
 
                     /**
                      * 设置订单号 (orderNo)
-                     * @param OrderNumber 订单号 (orderNo)
+                     * @param _orderNumber 订单号 (orderNo)
+                     * 
                      */
                     void SetOrderNumber(const std::string& _orderNumber);
 
                     /**
                      * 判断参数 OrderNumber 是否已赋值
                      * @return OrderNumber 是否已赋值
+                     * 
                      */
                     bool OrderNumberHasBeenSet() const;
 

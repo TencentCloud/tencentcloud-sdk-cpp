@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取执行的事件列表
                      * @return Events 执行的事件列表
+                     * 
                      */
                     std::vector<ExecutionEvent> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 

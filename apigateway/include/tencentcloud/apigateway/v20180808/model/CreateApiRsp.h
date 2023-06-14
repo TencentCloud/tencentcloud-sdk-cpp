@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiId api id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置api id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiId api id
+                     * @param _apiId api id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 路径
+                     * @param _path 路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 请求方法
+                     * @param _method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 导入状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置导入状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 导入状态
+                     * @param _status 导入状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrMsg 异常信息
+                     * @param _errMsg 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiName api name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置api name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiName api name
+                     * @param _apiName api name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 

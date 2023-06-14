@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取跟踪集名称
                      * @return AuditName 跟踪集名称
+                     * 
                      */
                     std::string GetAuditName() const;
 
                     /**
                      * 设置跟踪集名称
-                     * @param AuditName 跟踪集名称
+                     * @param _auditName 跟踪集名称
+                     * 
                      */
                     void SetAuditName(const std::string& _auditName);
 
                     /**
                      * 判断参数 AuditName 是否已赋值
                      * @return AuditName 是否已赋值
+                     * 
                      */
                     bool AuditNameHasBeenSet() const;
 

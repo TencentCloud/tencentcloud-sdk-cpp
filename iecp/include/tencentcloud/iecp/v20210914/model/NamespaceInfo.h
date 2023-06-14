@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Namespace 命名空间名
+                     * @param _namespace 命名空间名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态(Active|Terminating)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态(Active|Terminating)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态(Active|Terminating)
+                     * @param _status 状态(Active|Terminating)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述信息
+                     * @param _description 描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protected 是否保护(不允许删除)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetProtected() const;
 
                     /**
                      * 设置是否保护(不允许删除)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protected 是否保护(不允许删除)
+                     * @param _protected 是否保护(不允许删除)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtected(const bool& _protected);
 
                     /**
                      * 判断参数 Protected 是否已赋值
                      * @return Protected 是否已赋值
+                     * 
                      */
                     bool ProtectedHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml 对应的Yaml配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置对应的Yaml配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Yaml 对应的Yaml配置
+                     * @param _yaml 对应的Yaml配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 

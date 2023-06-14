@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取版本保留策略Id
                      * @return RetentionId 版本保留策略Id
+                     * 
                      */
                     int64_t GetRetentionId() const;
 
                     /**
                      * 设置版本保留策略Id
-                     * @param RetentionId 版本保留策略Id
+                     * @param _retentionId 版本保留策略Id
+                     * 
                      */
                     void SetRetentionId(const int64_t& _retentionId);
 
                     /**
                      * 判断参数 RetentionId 是否已赋值
                      * @return RetentionId 是否已赋值
+                     * 
                      */
                     bool RetentionIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间的名称
                      * @return NamespaceName 命名空间的名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间的名称
-                     * @param NamespaceName 命名空间的名称
+                     * @param _namespaceName 命名空间的名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取规则列表
                      * @return RetentionRuleList 规则列表
+                     * 
                      */
                     std::vector<RetentionRule> GetRetentionRuleList() const;
 
                     /**
                      * 设置规则列表
-                     * @param RetentionRuleList 规则列表
+                     * @param _retentionRuleList 规则列表
+                     * 
                      */
                     void SetRetentionRuleList(const std::vector<RetentionRule>& _retentionRuleList);
 
                     /**
                      * 判断参数 RetentionRuleList 是否已赋值
                      * @return RetentionRuleList 是否已赋值
+                     * 
                      */
                     bool RetentionRuleListHasBeenSet() const;
 
                     /**
                      * 获取定期执行方式
                      * @return CronSetting 定期执行方式
+                     * 
                      */
                     std::string GetCronSetting() const;
 
                     /**
                      * 设置定期执行方式
-                     * @param CronSetting 定期执行方式
+                     * @param _cronSetting 定期执行方式
+                     * 
                      */
                     void SetCronSetting(const std::string& _cronSetting);
 
                     /**
                      * 判断参数 CronSetting 是否已赋值
                      * @return CronSetting 是否已赋值
+                     * 
                      */
                     bool CronSettingHasBeenSet() const;
 
                     /**
                      * 获取是否启用规则
                      * @return Disabled 是否启用规则
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置是否启用规则
-                     * @param Disabled 是否启用规则
+                     * @param _disabled 是否启用规则
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 
                     /**
                      * 获取基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
                      * @return NextExecutionTime 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * 
                      */
                     std::string GetNextExecutionTime() const;
 
                     /**
                      * 设置基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
-                     * @param NextExecutionTime 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * @param _nextExecutionTime 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * 
                      */
                     void SetNextExecutionTime(const std::string& _nextExecutionTime);
 
                     /**
                      * 判断参数 NextExecutionTime 是否已赋值
                      * @return NextExecutionTime 是否已赋值
+                     * 
                      */
                     bool NextExecutionTimeHasBeenSet() const;
 

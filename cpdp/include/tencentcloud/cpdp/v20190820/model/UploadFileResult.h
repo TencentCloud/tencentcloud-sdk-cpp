@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStorage() const;
 
                     /**
                      * 设置存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * @param _storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorage(const std::string& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 文件路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePath 文件路径
+                     * @param _filePath 文件路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

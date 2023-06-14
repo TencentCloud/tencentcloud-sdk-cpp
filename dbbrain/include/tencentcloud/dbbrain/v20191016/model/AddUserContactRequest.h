@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以"_"开头，且联系人名保持唯一。
                      * @return Name 联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以"_"开头，且联系人名保持唯一。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以"_"开头，且联系人名保持唯一。
-                     * @param Name 联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以"_"开头，且联系人名保持唯一。
+                     * @param _name 联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以"_"开头，且联系人名保持唯一。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取邮箱地址，大小写字母、数字及下划线组成， 不能以"_"开头。
                      * @return ContactInfo 邮箱地址，大小写字母、数字及下划线组成， 不能以"_"开头。
+                     * 
                      */
                     std::string GetContactInfo() const;
 
                     /**
                      * 设置邮箱地址，大小写字母、数字及下划线组成， 不能以"_"开头。
-                     * @param ContactInfo 邮箱地址，大小写字母、数字及下划线组成， 不能以"_"开头。
+                     * @param _contactInfo 邮箱地址，大小写字母、数字及下划线组成， 不能以"_"开头。
+                     * 
                      */
                     void SetContactInfo(const std::string& _contactInfo);
 
                     /**
                      * 判断参数 ContactInfo 是否已赋值
                      * @return ContactInfo 是否已赋值
+                     * 
                      */
                     bool ContactInfoHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，固定值："mysql"。
                      * @return Product 服务产品类型，固定值："mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，固定值："mysql"。
-                     * @param Product 服务产品类型，固定值："mysql"。
+                     * @param _product 服务产品类型，固定值："mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

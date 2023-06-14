@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例Id，形如：tdsql-ow728lmc。
                      * @return InstanceId 实例Id，形如：tdsql-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id，形如：tdsql-ow728lmc。
-                     * @param InstanceId 实例Id，形如：tdsql-ow728lmc。
+                     * @param _instanceId 实例Id，形如：tdsql-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。
                      * @return EncryptEnabled 是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。
+                     * 
                      */
                     int64_t GetEncryptEnabled() const;
 
                     /**
                      * 设置是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。
-                     * @param EncryptEnabled 是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。
+                     * @param _encryptEnabled 是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。
+                     * 
                      */
                     void SetEncryptEnabled(const int64_t& _encryptEnabled);
 
                     /**
                      * 判断参数 EncryptEnabled 是否已赋值
                      * @return EncryptEnabled 是否已赋值
+                     * 
                      */
                     bool EncryptEnabledHasBeenSet() const;
 

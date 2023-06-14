@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return Date 时间
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置时间
-                     * @param Date 时间
+                     * @param _date 时间
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取操作人uin
                      * @return OperatorUin 操作人uin
+                     * 
                      */
                     std::string GetOperatorUin() const;
 
                     /**
                      * 设置操作人uin
-                     * @param OperatorUin 操作人uin
+                     * @param _operatorUin 操作人uin
+                     * 
                      */
                     void SetOperatorUin(const std::string& _operatorUin);
 
                     /**
                      * 判断参数 OperatorUin 是否已赋值
                      * @return OperatorUin 是否已赋值
+                     * 
                      */
                     bool OperatorUinHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return Content 日志内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-                     * @param Content 日志内容
+                     * @param _content 日志内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

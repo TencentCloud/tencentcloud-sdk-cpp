@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目预算
                      * @return ProjectBudget 项目预算
+                     * 
                      */
                     double GetProjectBudget() const;
 
                     /**
                      * 判断参数 ProjectBudget 是否已赋值
                      * @return ProjectBudget 是否已赋值
+                     * 
                      */
                     bool ProjectBudgetHasBeenSet() const;
 
                     /**
                      * 获取项目机构
                      * @return ProjectOrg 项目机构
+                     * 
                      */
                     std::string GetProjectOrg() const;
 
                     /**
                      * 判断参数 ProjectOrg 是否已赋值
                      * @return ProjectOrg 是否已赋值
+                     * 
                      */
                     bool ProjectOrgHasBeenSet() const;
 
                     /**
                      * 获取项目简介
                      * @return ProjectIntroduction 项目简介
+                     * 
                      */
                     std::string GetProjectIntroduction() const;
 
                     /**
                      * 判断参数 ProjectIntroduction 是否已赋值
                      * @return ProjectIntroduction 是否已赋值
+                     * 
                      */
                     bool ProjectIntroductionHasBeenSet() const;
 
                     /**
                      * 获取子项目列表
                      * @return SubProjectList 子项目列表
+                     * 
                      */
                     std::vector<SubProjectInfo> GetSubProjectList() const;
 
                     /**
                      * 判断参数 SubProjectList 是否已赋值
                      * @return SubProjectList 是否已赋值
+                     * 
                      */
                     bool SubProjectListHasBeenSet() const;
 
                     /**
                      * 获取项目状态
                      * @return ProjectStatus 项目状态
+                     * 
                      */
                     std::string GetProjectStatus() const;
 
                     /**
                      * 判断参数 ProjectStatus 是否已赋值
                      * @return ProjectStatus 是否已赋值
+                     * 
                      */
                     bool ProjectStatusHasBeenSet() const;
 
@@ -133,12 +147,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectOrgId 项目机构Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectOrgId() const;
 
                     /**
                      * 判断参数 ProjectOrgId 是否已赋值
                      * @return ProjectOrgId 是否已赋值
+                     * 
                      */
                     bool ProjectOrgIdHasBeenSet() const;
 

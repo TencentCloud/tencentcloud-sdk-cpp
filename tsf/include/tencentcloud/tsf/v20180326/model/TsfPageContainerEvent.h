@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取返回个数
                      * @return TotalCount 返回个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置返回个数
-                     * @param TotalCount 返回个数
+                     * @param _totalCount 返回个数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取events 数组
                      * @return Content events 数组
+                     * 
                      */
                     std::vector<ContainerEvent> GetContent() const;
 
                     /**
                      * 设置events 数组
-                     * @param Content events 数组
+                     * @param _content events 数组
+                     * 
                      */
                     void SetContent(const std::vector<ContainerEvent>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

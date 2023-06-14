@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取真实音量大小，取值范围为 0~100，默认值为 50。
                      * @return RealVolume 真实音量大小，取值范围为 0~100，默认值为 50。
+                     * 
                      */
                     int64_t GetRealVolume() const;
 
                     /**
                      * 设置真实音量大小，取值范围为 0~100，默认值为 50。
-                     * @param RealVolume 真实音量大小，取值范围为 0~100，默认值为 50。
+                     * @param _realVolume 真实音量大小，取值范围为 0~100，默认值为 50。
+                     * 
                      */
                     void SetRealVolume(const int64_t& _realVolume);
 
                     /**
                      * 判断参数 RealVolume 是否已赋值
                      * @return RealVolume 是否已赋值
+                     * 
                      */
                     bool RealVolumeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批量删除的任务TaskId
                      * @return TaskIdList 批量删除的任务TaskId
+                     * 
                      */
                     std::vector<std::string> GetTaskIdList() const;
 
                     /**
                      * 设置批量删除的任务TaskId
-                     * @param TaskIdList 批量删除的任务TaskId
+                     * @param _taskIdList 批量删除的任务TaskId
+                     * 
                      */
                     void SetTaskIdList(const std::vector<std::string>& _taskIdList);
 
                     /**
                      * 判断参数 TaskIdList 是否已赋值
                      * @return TaskIdList 是否已赋值
+                     * 
                      */
                     bool TaskIdListHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 false：删除后下游任务不可运行
                      * @return DeleteMode true : 删除后下游任务可正常运行
 false：删除后下游任务不可运行
+                     * 
                      */
                     bool GetDeleteMode() const;
 
                     /**
                      * 设置true : 删除后下游任务可正常运行
 false：删除后下游任务不可运行
-                     * @param DeleteMode true : 删除后下游任务可正常运行
+                     * @param _deleteMode true : 删除后下游任务可正常运行
 false：删除后下游任务不可运行
+                     * 
                      */
                     void SetDeleteMode(const bool& _deleteMode);
 
                     /**
                      * 判断参数 DeleteMode 是否已赋值
                      * @return DeleteMode 是否已赋值
+                     * 
                      */
                     bool DeleteModeHasBeenSet() const;
 
@@ -87,38 +93,44 @@ false：删除后下游任务不可运行
 false:  不通知下游任务责任人
                      * @return EnableNotify true：通知下游任务责任人
 false:  不通知下游任务责任人
+                     * 
                      */
                     bool GetEnableNotify() const;
 
                     /**
                      * 设置true：通知下游任务责任人
 false:  不通知下游任务责任人
-                     * @param EnableNotify true：通知下游任务责任人
+                     * @param _enableNotify true：通知下游任务责任人
 false:  不通知下游任务责任人
+                     * 
                      */
                     void SetEnableNotify(const bool& _enableNotify);
 
                     /**
                      * 判断参数 EnableNotify 是否已赋值
                      * @return EnableNotify 是否已赋值
+                     * 
                      */
                     bool EnableNotifyHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

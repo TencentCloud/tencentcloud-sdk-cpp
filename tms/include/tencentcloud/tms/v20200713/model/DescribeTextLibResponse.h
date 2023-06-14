@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取文本库id和name列表
                      * @return TextLib 文本库id和name列表
+                     * 
                      */
                     std::vector<TextLib> GetTextLib() const;
 
                     /**
                      * 判断参数 TextLib 是否已赋值
                      * @return TextLib 是否已赋值
+                     * 
                      */
                     bool TextLibHasBeenSet() const;
 

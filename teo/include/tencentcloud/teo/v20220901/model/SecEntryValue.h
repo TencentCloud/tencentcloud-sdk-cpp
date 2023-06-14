@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取指标名称。
                      * @return Metric 指标名称。
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名称。
-                     * @param Metric 指标名称。
+                     * @param _metric 指标名称。
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取时序数据详情。
                      * @return Detail 时序数据详情。
+                     * 
                      */
                     std::vector<TimingDataItem> GetDetail() const;
 
                     /**
                      * 设置时序数据详情。
-                     * @param Detail 时序数据详情。
+                     * @param _detail 时序数据详情。
+                     * 
                      */
                     void SetDetail(const std::vector<TimingDataItem>& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 
                     /**
                      * 获取最大值。
                      * @return Max 最大值。
+                     * 
                      */
                     int64_t GetMax() const;
 
                     /**
                      * 设置最大值。
-                     * @param Max 最大值。
+                     * @param _max 最大值。
+                     * 
                      */
                     void SetMax(const int64_t& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取平均值。
                      * @return Avg 平均值。
+                     * 
                      */
                     double GetAvg() const;
 
                     /**
                      * 设置平均值。
-                     * @param Avg 平均值。
+                     * @param _avg 平均值。
+                     * 
                      */
                     void SetAvg(const double& _avg);
 
                     /**
                      * 判断参数 Avg 是否已赋值
                      * @return Avg 是否已赋值
+                     * 
                      */
                     bool AvgHasBeenSet() const;
 
                     /**
                      * 获取数据总和。
                      * @return Sum 数据总和。
+                     * 
                      */
                     double GetSum() const;
 
                     /**
                      * 设置数据总和。
-                     * @param Sum 数据总和。
+                     * @param _sum 数据总和。
+                     * 
                      */
                     void SetSum(const double& _sum);
 
                     /**
                      * 判断参数 Sum 是否已赋值
                      * @return Sum 是否已赋值
+                     * 
                      */
                     bool SumHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取Notebook实例列表
                      * @return NotebookInstanceSet Notebook实例列表
+                     * 
                      */
                     std::vector<NotebookInstanceSummary> GetNotebookInstanceSet() const;
 
                     /**
                      * 判断参数 NotebookInstanceSet 是否已赋值
                      * @return NotebookInstanceSet 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceSetHasBeenSet() const;
 
                     /**
                      * 获取Notebook实例总数目
                      * @return TotalCount Notebook实例总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

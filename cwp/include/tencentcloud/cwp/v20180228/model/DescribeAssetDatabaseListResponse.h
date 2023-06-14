@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetDatabaseBaseInfo> GetDatabases() const;
 
                     /**
                      * 判断参数 Databases 是否已赋值
                      * @return Databases 是否已赋值
+                     * 
                      */
                     bool DatabasesHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return Total 总数量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancers 负载均衡实例列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoadBalancerHealth> GetLoadBalancers() const;
 
                     /**
                      * 判断参数 LoadBalancers 是否已赋值
                      * @return LoadBalancers 是否已赋值
+                     * 
                      */
                     bool LoadBalancersHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
 
 * WebSocket 为内测功能,如需使用,请联系腾讯云工程师开白.
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
 
 * WebSocket 为内测功能,如需使用,请联系腾讯云工程师开白.
-                     * @param Switch WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
+                     * @param _switch WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
 
 * WebSocket 为内测功能,如需使用,请联系腾讯云工程师开白.
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 设置超时时间，单位为秒，最大超时时间65秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置设置超时时间，单位为秒，最大超时时间65秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeout 设置超时时间，单位为秒，最大超时时间65秒。
+                     * @param _timeout 设置超时时间，单位为秒，最大超时时间65秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 

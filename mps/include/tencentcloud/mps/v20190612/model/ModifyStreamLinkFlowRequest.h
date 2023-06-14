@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取流Id。
                      * @return FlowId 流Id。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流Id。
-                     * @param FlowId 流Id。
+                     * @param _flowId 流Id。
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的流名称。
                      * @return FlowName 需要修改的流名称。
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置需要修改的流名称。
-                     * @param FlowName 需要修改的流名称。
+                     * @param _flowName 需要修改的流名称。
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 

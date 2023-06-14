@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取内存最大值
                      * @return Max 内存最大值
+                     * 
                      */
                     std::vector<CurvePoint> GetMax() const;
 
                     /**
                      * 设置内存最大值
-                     * @param Max 内存最大值
+                     * @param _max 内存最大值
+                     * 
                      */
                     void SetMax(const std::vector<CurvePoint>& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取已用内存大小
                      * @return Used 已用内存大小
+                     * 
                      */
                     std::vector<CurvePoint> GetUsed() const;
 
                     /**
                      * 设置已用内存大小
-                     * @param Used 已用内存大小
+                     * @param _used 已用内存大小
+                     * 
                      */
                     void SetUsed(const std::vector<CurvePoint>& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取系统分配内存大小
                      * @return Committed 系统分配内存大小
+                     * 
                      */
                     std::vector<CurvePoint> GetCommitted() const;
 
                     /**
                      * 设置系统分配内存大小
-                     * @param Committed 系统分配内存大小
+                     * @param _committed 系统分配内存大小
+                     * 
                      */
                     void SetCommitted(const std::vector<CurvePoint>& _committed);
 
                     /**
                      * 判断参数 Committed 是否已赋值
                      * @return Committed 是否已赋值
+                     * 
                      */
                     bool CommittedHasBeenSet() const;
 

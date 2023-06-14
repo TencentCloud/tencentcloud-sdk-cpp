@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取外部订单ID
                      * @return OutOrderId 外部订单ID
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部订单ID
-                     * @param OutOrderId 外部订单ID
+                     * @param _outOrderId 外部订单ID
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单ID
                      * @return OrderId 订单ID
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单ID
-                     * @param OrderId 订单ID
+                     * @param _orderId 订单ID
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -98,17 +105,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

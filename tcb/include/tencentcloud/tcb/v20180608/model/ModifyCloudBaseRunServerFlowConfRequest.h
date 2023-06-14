@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名称
                      * @return ServerName 服务名称
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置服务名称
-                     * @param ServerName 服务名称
+                     * @param _serverName 服务名称
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取流量占比
                      * @return VersionFlowItems 流量占比
+                     * 
                      */
                     std::vector<CloudBaseRunVersionFlowItem> GetVersionFlowItems() const;
 
                     /**
                      * 设置流量占比
-                     * @param VersionFlowItems 流量占比
+                     * @param _versionFlowItems 流量占比
+                     * 
                      */
                     void SetVersionFlowItems(const std::vector<CloudBaseRunVersionFlowItem>& _versionFlowItems);
 
                     /**
                      * 判断参数 VersionFlowItems 是否已赋值
                      * @return VersionFlowItems 是否已赋值
+                     * 
                      */
                     bool VersionFlowItemsHasBeenSet() const;
 
                     /**
                      * 获取流量类型（URL_PARAMS / FLOW / HEADERS)
                      * @return TrafficType 流量类型（URL_PARAMS / FLOW / HEADERS)
+                     * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
                      * 设置流量类型（URL_PARAMS / FLOW / HEADERS)
-                     * @param TrafficType 流量类型（URL_PARAMS / FLOW / HEADERS)
+                     * @param _trafficType 流量类型（URL_PARAMS / FLOW / HEADERS)
+                     * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
 
                     /**
                      * 判断参数 TrafficType 是否已赋值
                      * @return TrafficType 是否已赋值
+                     * 
                      */
                     bool TrafficTypeHasBeenSet() const;
 
                     /**
                      * 获取操作备注
                      * @return OperatorRemark 操作备注
+                     * 
                      */
                     std::string GetOperatorRemark() const;
 
                     /**
                      * 设置操作备注
-                     * @param OperatorRemark 操作备注
+                     * @param _operatorRemark 操作备注
+                     * 
                      */
                     void SetOperatorRemark(const std::string& _operatorRemark);
 
                     /**
                      * 判断参数 OperatorRemark 是否已赋值
                      * @return OperatorRemark 是否已赋值
+                     * 
                      */
                     bool OperatorRemarkHasBeenSet() const;
 

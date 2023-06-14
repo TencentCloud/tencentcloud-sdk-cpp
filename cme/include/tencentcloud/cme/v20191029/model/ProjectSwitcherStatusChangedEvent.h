@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取导播台项目 Id。
                      * @return ProjectId 导播台项目 Id。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置导播台项目 Id。
-                     * @param ProjectId 导播台项目 Id。
+                     * @param _projectId 导播台项目 Id。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
 <li>PgmStarted：导播台 PGM 开启，输出推流开始；</li>
 <li>PvwStopped：导播台 PVW 停止；</li>
 <li>PgmStopped：导播台 PGM 停止，输出推流结束。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -90,19 +94,21 @@ namespace TencentCloud
 <li>PgmStarted：导播台 PGM 开启，输出推流开始；</li>
 <li>PvwStopped：导播台 PVW 停止；</li>
 <li>PgmStopped：导播台 PGM 停止，输出推流结束。</li>
-                     * @param Status 导播台项目状态，可取值有：
+                     * @param _status 导播台项目状态，可取值有：
 <li>Started：导播台启动；</li>
 <li>Stopped：导播台停止；</li>
 <li>PvwStarted：导播台 PVW 开启；</li>
 <li>PgmStarted：导播台 PGM 开启，输出推流开始；</li>
 <li>PvwStopped：导播台 PVW 停止；</li>
 <li>PgmStopped：导播台 PGM 停止，输出推流结束。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

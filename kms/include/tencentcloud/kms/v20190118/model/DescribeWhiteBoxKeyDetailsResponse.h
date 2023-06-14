@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取白盒密钥信息列表。
                      * @return KeyInfos 白盒密钥信息列表。
+                     * 
                      */
                     std::vector<WhiteboxKeyInfo> GetKeyInfos() const;
 
                     /**
                      * 判断参数 KeyInfos 是否已赋值
                      * @return KeyInfos 是否已赋值
+                     * 
                      */
                     bool KeyInfosHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 白盒密钥总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

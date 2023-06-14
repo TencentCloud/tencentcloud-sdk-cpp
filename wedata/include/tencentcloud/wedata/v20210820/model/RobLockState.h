@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否可以抢锁
                      * @return IsRob 是否可以抢锁
+                     * 
                      */
                     bool GetIsRob() const;
 
                     /**
                      * 设置是否可以抢锁
-                     * @param IsRob 是否可以抢锁
+                     * @param _isRob 是否可以抢锁
+                     * 
                      */
                     void SetIsRob(const bool& _isRob);
 
                     /**
                      * 判断参数 IsRob 是否已赋值
                      * @return IsRob 是否已赋值
+                     * 
                      */
                     bool IsRobHasBeenSet() const;
 
                     /**
                      * 获取当前持锁人
                      * @return Locker 当前持锁人
+                     * 
                      */
                     std::string GetLocker() const;
 
                     /**
                      * 设置当前持锁人
-                     * @param Locker 当前持锁人
+                     * @param _locker 当前持锁人
+                     * 
                      */
                     void SetLocker(const std::string& _locker);
 
                     /**
                      * 判断参数 Locker 是否已赋值
                      * @return Locker 是否已赋值
+                     * 
                      */
                     bool LockerHasBeenSet() const;
 

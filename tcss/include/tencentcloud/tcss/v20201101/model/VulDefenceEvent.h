@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取漏洞CVEID
                      * @return CVEID 漏洞CVEID
+                     * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 设置漏洞CVEID
-                     * @param CVEID 漏洞CVEID
+                     * @param _cVEID 漏洞CVEID
+                     * 
                      */
                     void SetCVEID(const std::string& _cVEID);
 
                     /**
                      * 判断参数 CVEID 是否已赋值
                      * @return CVEID 是否已赋值
+                     * 
                      */
                     bool CVEIDHasBeenSet() const;
 
                     /**
                      * 获取漏洞名称
                      * @return VulName 漏洞名称
+                     * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 设置漏洞名称
-                     * @param VulName 漏洞名称
+                     * @param _vulName 漏洞名称
+                     * 
                      */
                     void SetVulName(const std::string& _vulName);
 
                     /**
                      * 判断参数 VulName 是否已赋值
                      * @return VulName 是否已赋值
+                     * 
                      */
                     bool VulNameHasBeenSet() const;
 
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
                     /**
                      * 获取入侵状态
                      * @return EventType 入侵状态
+                     * 
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置入侵状态
-                     * @param EventType 入侵状态
+                     * @param _eventType 入侵状态
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取攻击源IP
                      * @return SourceIP 攻击源IP
+                     * 
                      */
                     std::string GetSourceIP() const;
 
                     /**
                      * 设置攻击源IP
-                     * @param SourceIP 攻击源IP
+                     * @param _sourceIP 攻击源IP
+                     * 
                      */
                     void SetSourceIP(const std::string& _sourceIP);
 
                     /**
                      * 判断参数 SourceIP 是否已赋值
                      * @return SourceIP 是否已赋值
+                     * 
                      */
                     bool SourceIPHasBeenSet() const;
 
                     /**
                      * 获取攻击源ip地址所在城市
                      * @return City 攻击源ip地址所在城市
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置攻击源ip地址所在城市
-                     * @param City 攻击源ip地址所在城市
+                     * @param _city 攻击源ip地址所在城市
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取事件数量
                      * @return EventCount 事件数量
+                     * 
                      */
                     int64_t GetEventCount() const;
 
                     /**
                      * 设置事件数量
-                     * @param EventCount 事件数量
+                     * @param _eventCount 事件数量
+                     * 
                      */
                     void SetEventCount(const int64_t& _eventCount);
 
                     /**
                      * 判断参数 EventCount 是否已赋值
                      * @return EventCount 是否已赋值
+                     * 
                      */
                     bool EventCountHasBeenSet() const;
 
                     /**
                      * 获取容器ID
                      * @return ContainerID 容器ID
+                     * 
                      */
                     std::string GetContainerID() const;
 
                     /**
                      * 设置容器ID
-                     * @param ContainerID 容器ID
+                     * @param _containerID 容器ID
+                     * 
                      */
                     void SetContainerID(const std::string& _containerID);
 
                     /**
                      * 判断参数 ContainerID 是否已赋值
                      * @return ContainerID 是否已赋值
+                     * 
                      */
                     bool ContainerIDHasBeenSet() const;
 
                     /**
                      * 获取容器名称
                      * @return ContainerName 容器名称
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名称
-                     * @param ContainerName 容器名称
+                     * @param _containerName 容器名称
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取镜像ID
                      * @return ImageID 镜像ID
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageID 镜像ID
+                     * @param _imageID 镜像ID
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取处理状态
                      * @return Status 处理状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置处理状态
-                     * @param Status 处理状态
+                     * @param _status 处理状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取事件ID
                      * @return EventID 事件ID
+                     * 
                      */
                     int64_t GetEventID() const;
 
                     /**
                      * 设置事件ID
-                     * @param EventID 事件ID
+                     * @param _eventID 事件ID
+                     * 
                      */
                     void SetEventID(const int64_t& _eventID);
 
                     /**
                      * 判断参数 EventID 是否已赋值
                      * @return EventID 是否已赋值
+                     * 
                      */
                     bool EventIDHasBeenSet() const;
 
@@ -285,20 +324,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 首次发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置首次发现时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 首次发现时间
+                     * @param _createTime 首次发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -317,6 +359,7 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
+                     * 
                      */
                     std::string GetContainerNetStatus() const;
 
@@ -328,19 +371,21 @@ namespace TencentCloud
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
-                     * @param ContainerNetStatus 隔离状态
+                     * @param _containerNetStatus 隔离状态
 未隔离  	NORMAL
 已隔离		ISOLATED
 隔离中		ISOLATING
 隔离失败	ISOLATE_FAILED
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
+                     * 
                      */
                     void SetContainerNetStatus(const std::string& _containerNetStatus);
 
                     /**
                      * 判断参数 ContainerNetStatus 是否已赋值
                      * @return ContainerNetStatus 是否已赋值
+                     * 
                      */
                     bool ContainerNetStatusHasBeenSet() const;
 
@@ -349,20 +394,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MergeTime 最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMergeTime() const;
 
                     /**
                      * 设置最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MergeTime 最近发现时间
+                     * @param _mergeTime 最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMergeTime(const std::string& _mergeTime);
 
                     /**
                      * 判断参数 MergeTime 是否已赋值
                      * @return MergeTime 是否已赋值
+                     * 
                      */
                     bool MergeTimeHasBeenSet() const;
 
@@ -385,6 +433,7 @@ namespace TencentCloud
 正在重启中: RESTARTING
 迁移中: REMOVING
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerStatus() const;
 
@@ -398,7 +447,7 @@ namespace TencentCloud
 正在重启中: RESTARTING
 迁移中: REMOVING
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerStatus 容器状态
+                     * @param _containerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
 停止: STOPPED
@@ -407,12 +456,14 @@ namespace TencentCloud
 正在重启中: RESTARTING
 迁移中: REMOVING
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
 
                     /**
                      * 判断参数 ContainerStatus 是否已赋值
                      * @return ContainerStatus 是否已赋值
+                     * 
                      */
                     bool ContainerStatusHasBeenSet() const;
 
@@ -435,6 +486,7 @@ namespace TencentCloud
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerNetSubStatus() const;
 
@@ -448,7 +500,7 @@ namespace TencentCloud
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerNetSubStatus 容器子状态
+                     * @param _containerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 	"NODE_DESTROYED"      //节点已销毁
 	"CONTAINER_EXITED"    //容器已退出
@@ -457,12 +509,14 @@ namespace TencentCloud
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
 
                     /**
                      * 判断参数 ContainerNetSubStatus 是否已赋值
                      * @return ContainerNetSubStatus 是否已赋值
+                     * 
                      */
                     bool ContainerNetSubStatusHasBeenSet() const;
 
@@ -471,20 +525,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
                      * 设置容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerIsolateOperationSrc 容器隔离操作来源
+                     * @param _containerIsolateOperationSrc 容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
 
                     /**
                      * 判断参数 ContainerIsolateOperationSrc 是否已赋值
                      * @return ContainerIsolateOperationSrc 是否已赋值
+                     * 
                      */
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
@@ -493,20 +550,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QUUID 主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQUUID() const;
 
                     /**
                      * 设置主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QUUID 主机QUUID/超级节点ID
+                     * @param _qUUID 主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQUUID(const std::string& _qUUID);
 
                     /**
                      * 判断参数 QUUID 是否已赋值
                      * @return QUUID 是否已赋值
+                     * 
                      */
                     bool QUUIDHasBeenSet() const;
 
@@ -515,20 +575,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 主机内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置主机内网IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostIP 主机内网IP
+                     * @param _hostIP 主机内网IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostIP(const std::string& _hostIP);
 
                     /**
                      * 判断参数 HostIP 是否已赋值
                      * @return HostIP 是否已赋值
+                     * 
                      */
                     bool HostIPHasBeenSet() const;
 
@@ -537,128 +600,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 主机名称/超级节点名称
+                     * @param _hostName 主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取节点类型[NORMAL:普通节点|SUPER:超级节点]
                      * @return NodeType 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型[NORMAL:普通节点|SUPER:超级节点]
-                     * @param NodeType 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     * @param _nodeType 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取外网IP
                      * @return PublicIP 外网IP
+                     * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置外网IP
-                     * @param PublicIP 外网IP
+                     * @param _publicIP 外网IP
+                     * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
 
                     /**
                      * 判断参数 PublicIP 是否已赋值
                      * @return PublicIP 是否已赋值
+                     * 
                      */
                     bool PublicIPHasBeenSet() const;
 
                     /**
                      * 获取超级节点唯一ID
                      * @return NodeUniqueID 超级节点唯一ID
+                     * 
                      */
                     std::string GetNodeUniqueID() const;
 
                     /**
                      * 设置超级节点唯一ID
-                     * @param NodeUniqueID 超级节点唯一ID
+                     * @param _nodeUniqueID 超级节点唯一ID
+                     * 
                      */
                     void SetNodeUniqueID(const std::string& _nodeUniqueID);
 
                     /**
                      * 判断参数 NodeUniqueID 是否已赋值
                      * @return NodeUniqueID 是否已赋值
+                     * 
                      */
                     bool NodeUniqueIDHasBeenSet() const;
 
                     /**
                      * 获取超级节点ID
                      * @return NodeID 超级节点ID
+                     * 
                      */
                     std::string GetNodeID() const;
 
                     /**
                      * 设置超级节点ID
-                     * @param NodeID 超级节点ID
+                     * @param _nodeID 超级节点ID
+                     * 
                      */
                     void SetNodeID(const std::string& _nodeID);
 
                     /**
                      * 判断参数 NodeID 是否已赋值
                      * @return NodeID 是否已赋值
+                     * 
                      */
                     bool NodeIDHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterID 集群ID
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterID 集群ID
+                     * @param _clusterID 集群ID
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 

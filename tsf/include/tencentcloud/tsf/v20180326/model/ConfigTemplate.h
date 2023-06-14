@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTemplateId 配置模板Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTemplateId() const;
 
                     /**
                      * 设置配置模板Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTemplateId 配置模板Id
+                     * @param _configTemplateId 配置模板Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTemplateId(const std::string& _configTemplateId);
 
                     /**
                      * 判断参数 ConfigTemplateId 是否已赋值
                      * @return ConfigTemplateId 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTemplateName 配置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTemplateName() const;
 
                     /**
                      * 设置配置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTemplateName 配置模板名称
+                     * @param _configTemplateName 配置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTemplateName(const std::string& _configTemplateName);
 
                     /**
                      * 判断参数 ConfigTemplateName 是否已赋值
                      * @return ConfigTemplateName 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTemplateDesc 配置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTemplateDesc() const;
 
                     /**
                      * 设置配置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTemplateDesc 配置模板描述
+                     * @param _configTemplateDesc 配置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTemplateDesc(const std::string& _configTemplateDesc);
 
                     /**
                      * 判断参数 ConfigTemplateDesc 是否已赋值
                      * @return ConfigTemplateDesc 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateDescHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTemplateType 配置模板对应的微服务框架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTemplateType() const;
 
                     /**
                      * 设置配置模板对应的微服务框架
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTemplateType 配置模板对应的微服务框架
+                     * @param _configTemplateType 配置模板对应的微服务框架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTemplateType(const std::string& _configTemplateType);
 
                     /**
                      * 判断参数 ConfigTemplateType 是否已赋值
                      * @return ConfigTemplateType 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTemplateValue 配置模板数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigTemplateValue() const;
 
                     /**
                      * 设置配置模板数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigTemplateValue 配置模板数据
+                     * @param _configTemplateValue 配置模板数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigTemplateValue(const std::string& _configTemplateValue);
 
                     /**
                      * 判断参数 ConfigTemplateValue 是否已赋值
                      * @return ConfigTemplateValue 是否已赋值
+                     * 
                      */
                     bool ConfigTemplateValueHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

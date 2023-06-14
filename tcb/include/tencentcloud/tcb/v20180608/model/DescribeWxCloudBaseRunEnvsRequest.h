@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取wx应用Id
                      * @return WxAppId wx应用Id
+                     * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
                      * 设置wx应用Id
-                     * @param WxAppId wx应用Id
+                     * @param _wxAppId wx应用Id
+                     * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
 
                     /**
                      * 判断参数 WxAppId 是否已赋值
                      * @return WxAppId 是否已赋值
+                     * 
                      */
                     bool WxAppIdHasBeenSet() const;
 
                     /**
                      * 获取是否查询全地域
                      * @return AllRegions 是否查询全地域
+                     * 
                      */
                     bool GetAllRegions() const;
 
                     /**
                      * 设置是否查询全地域
-                     * @param AllRegions 是否查询全地域
+                     * @param _allRegions 是否查询全地域
+                     * 
                      */
                     void SetAllRegions(const bool& _allRegions);
 
                     /**
                      * 判断参数 AllRegions 是否已赋值
                      * @return AllRegions 是否已赋值
+                     * 
                      */
                     bool AllRegionsHasBeenSet() const;
 

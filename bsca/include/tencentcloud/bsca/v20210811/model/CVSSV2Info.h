@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取CVE评分。
                      * @return CVSS CVE评分。
+                     * 
                      */
                     double GetCVSS() const;
 
                     /**
                      * 设置CVE评分。
-                     * @param CVSS CVE评分。
+                     * @param _cVSS CVE评分。
+                     * 
                      */
                     void SetCVSS(const double& _cVSS);
 
                     /**
                      * 判断参数 CVSS 是否已赋值
                      * @return CVSS 是否已赋值
+                     * 
                      */
                     bool CVSSHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>NETWORK 远程</li>
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
+                     * 
                      */
                     std::string GetAccessVector() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 <li>NETWORK 远程</li>
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
-                     * @param AccessVector AccessVector 攻击途径。
+                     * @param _accessVector AccessVector 攻击途径。
 取值范围：
 <li>NETWORK 远程</li>
 <li>ADJACENT_NETWORK 近邻</li>
 <li>LOCAL 本地</li>
+                     * 
                      */
                     void SetAccessVector(const std::string& _accessVector);
 
                     /**
                      * 判断参数 AccessVector 是否已赋值
                      * @return AccessVector 是否已赋值
+                     * 
                      */
                     bool AccessVectorHasBeenSet() const;
 
@@ -109,6 +115,7 @@ namespace TencentCloud
 <li>HIGH 高</li>
 <li>MEDIUM 中</li>
 <li>LOW 低</li>
+                     * 
                      */
                     std::string GetAccessComplexity() const;
 
@@ -118,17 +125,19 @@ namespace TencentCloud
 <li>HIGH 高</li>
 <li>MEDIUM 中</li>
 <li>LOW 低</li>
-                     * @param AccessComplexity AccessComplexity 攻击复杂度。
+                     * @param _accessComplexity AccessComplexity 攻击复杂度。
 取值范围：
 <li>HIGH 高</li>
 <li>MEDIUM 中</li>
 <li>LOW 低</li>
+                     * 
                      */
                     void SetAccessComplexity(const std::string& _accessComplexity);
 
                     /**
                      * 判断参数 AccessComplexity 是否已赋值
                      * @return AccessComplexity 是否已赋值
+                     * 
                      */
                     bool AccessComplexityHasBeenSet() const;
 
@@ -143,6 +152,7 @@ namespace TencentCloud
 <li>MULTIPLE 多系统认证</li>
 <li>SINGLE 单系统认证</li>
 <li>NONE 无</li>
+                     * 
                      */
                     std::string GetAuthentication() const;
 
@@ -152,17 +162,19 @@ namespace TencentCloud
 <li>MULTIPLE 多系统认证</li>
 <li>SINGLE 单系统认证</li>
 <li>NONE 无</li>
-                     * @param Authentication Authentication 身份验证。
+                     * @param _authentication Authentication 身份验证。
 取值范围：
 <li>MULTIPLE 多系统认证</li>
 <li>SINGLE 单系统认证</li>
 <li>NONE 无</li>
+                     * 
                      */
                     void SetAuthentication(const std::string& _authentication);
 
                     /**
                      * 判断参数 Authentication 是否已赋值
                      * @return Authentication 是否已赋值
+                     * 
                      */
                     bool AuthenticationHasBeenSet() const;
 
@@ -177,6 +189,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     std::string GetConImpact() const;
 
@@ -186,17 +199,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
-                     * @param ConImpact ConfidentialityImpact 机密性影响。
+                     * @param _conImpact ConfidentialityImpact 机密性影响。
 取值范围：
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     void SetConImpact(const std::string& _conImpact);
 
                     /**
                      * 判断参数 ConImpact 是否已赋值
                      * @return ConImpact 是否已赋值
+                     * 
                      */
                     bool ConImpactHasBeenSet() const;
 
@@ -211,6 +226,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     std::string GetIntegrityImpact() const;
 
@@ -220,17 +236,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
-                     * @param IntegrityImpact IntegrityImpact 完整性影响。
+                     * @param _integrityImpact IntegrityImpact 完整性影响。
 取值范围：
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     void SetIntegrityImpact(const std::string& _integrityImpact);
 
                     /**
                      * 判断参数 IntegrityImpact 是否已赋值
                      * @return IntegrityImpact 是否已赋值
+                     * 
                      */
                     bool IntegrityImpactHasBeenSet() const;
 
@@ -245,6 +263,7 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     std::string GetAvailabilityImpact() const;
 
@@ -254,17 +273,19 @@ namespace TencentCloud
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
-                     * @param AvailabilityImpact AvailabilityImpact 可用性影响。
+                     * @param _availabilityImpact AvailabilityImpact 可用性影响。
 取值范围：
 <li>NONE 无</li>
 <li>PARTIAL 部分</li>
 <li>COMPLETE 完整</li>
+                     * 
                      */
                     void SetAvailabilityImpact(const std::string& _availabilityImpact);
 
                     /**
                      * 判断参数 AvailabilityImpact 是否已赋值
                      * @return AvailabilityImpact 是否已赋值
+                     * 
                      */
                     bool AvailabilityImpactHasBeenSet() const;
 

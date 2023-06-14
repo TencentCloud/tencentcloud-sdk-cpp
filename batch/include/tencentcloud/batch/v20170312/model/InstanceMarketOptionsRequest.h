@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpotOptions 竞价相关选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SpotMarketOptions GetSpotOptions() const;
 
                     /**
                      * 设置竞价相关选项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpotOptions 竞价相关选项
+                     * @param _spotOptions 竞价相关选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpotOptions(const SpotMarketOptions& _spotOptions);
 
                     /**
                      * 判断参数 SpotOptions 是否已赋值
                      * @return SpotOptions 是否已赋值
+                     * 
                      */
                     bool SpotOptionsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarketType 市场选项类型，当前只支持取值：spot
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMarketType() const;
 
                     /**
                      * 设置市场选项类型，当前只支持取值：spot
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MarketType 市场选项类型，当前只支持取值：spot
+                     * @param _marketType 市场选项类型，当前只支持取值：spot
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMarketType(const std::string& _marketType);
 
                     /**
                      * 判断参数 MarketType 是否已赋值
                      * @return MarketType 是否已赋值
+                     * 
                      */
                     bool MarketTypeHasBeenSet() const;
 

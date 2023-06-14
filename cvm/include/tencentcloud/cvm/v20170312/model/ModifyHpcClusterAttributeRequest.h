@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取高性能计算集群ID。
                      * @return HpcClusterId 高性能计算集群ID。
+                     * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
                      * 设置高性能计算集群ID。
-                     * @param HpcClusterId 高性能计算集群ID。
+                     * @param _hpcClusterId 高性能计算集群ID。
+                     * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
 
                     /**
                      * 判断参数 HpcClusterId 是否已赋值
                      * @return HpcClusterId 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
                     /**
                      * 获取高性能计算集群新名称。
                      * @return Name 高性能计算集群新名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高性能计算集群新名称。
-                     * @param Name 高性能计算集群新名称。
+                     * @param _name 高性能计算集群新名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取高性能计算集群新备注。
                      * @return Remark 高性能计算集群新备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置高性能计算集群新备注。
-                     * @param Remark 高性能计算集群新备注。
+                     * @param _remark 高性能计算集群新备注。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

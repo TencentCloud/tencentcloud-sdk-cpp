@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 记录总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置记录总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 记录总数
+                     * @param _totalCount 记录总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RuleGroupMonitor> GetItems() const;
 
                     /**
                      * 设置记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 记录
+                     * @param _items 记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<RuleGroupMonitor>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

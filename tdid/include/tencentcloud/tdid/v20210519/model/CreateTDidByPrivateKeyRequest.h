@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取私钥
                      * @return PrivateKey 私钥
+                     * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
                      * 设置私钥
-                     * @param PrivateKey 私钥
+                     * @param _privateKey 私钥
+                     * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
                     /**
                      * 判断参数 PrivateKey 是否已赋值
                      * @return PrivateKey 是否已赋值
+                     * 
                      */
                     bool PrivateKeyHasBeenSet() const;
 

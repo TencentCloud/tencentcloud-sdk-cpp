@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的 共享带宽包内资源 数量。
                      * @return TotalCount 符合条件的 共享带宽包内资源 数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取共享带宽包内资源 详细信息列表。
                      * @return ResourceSet 共享带宽包内资源 详细信息列表。
+                     * 
                      */
                     std::vector<Resource> GetResourceSet() const;
 
                     /**
                      * 判断参数 ResourceSet 是否已赋值
                      * @return ResourceSet 是否已赋值
+                     * 
                      */
                     bool ResourceSetHasBeenSet() const;
 

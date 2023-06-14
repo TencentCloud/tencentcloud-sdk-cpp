@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
                      * @return Offset 偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
-                     * @param Offset 偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * @param _offset 偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
                      * @return Limit 返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
-                     * @param Limit 返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * @param _limit 返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 

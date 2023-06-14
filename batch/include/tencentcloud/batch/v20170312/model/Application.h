@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取任务执行命令
                      * @return Command 任务执行命令
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置任务执行命令
-                     * @param Command 任务执行命令
+                     * @param _command 任务执行命令
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
                      * @return DeliveryForm 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
+                     * 
                      */
                     std::string GetDeliveryForm() const;
 
                     /**
                      * 设置应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
-                     * @param DeliveryForm 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
+                     * @param _deliveryForm 应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。
+                     * 
                      */
                     void SetDeliveryForm(const std::string& _deliveryForm);
 
                     /**
                      * 判断参数 DeliveryForm 是否已赋值
                      * @return DeliveryForm 是否已赋值
+                     * 
                      */
                     bool DeliveryFormHasBeenSet() const;
 
                     /**
                      * 获取应用程序软件包的远程存储路径
                      * @return PackagePath 应用程序软件包的远程存储路径
+                     * 
                      */
                     std::string GetPackagePath() const;
 
                     /**
                      * 设置应用程序软件包的远程存储路径
-                     * @param PackagePath 应用程序软件包的远程存储路径
+                     * @param _packagePath 应用程序软件包的远程存储路径
+                     * 
                      */
                     void SetPackagePath(const std::string& _packagePath);
 
                     /**
                      * 判断参数 PackagePath 是否已赋值
                      * @return PackagePath 是否已赋值
+                     * 
                      */
                     bool PackagePathHasBeenSet() const;
 
                     /**
                      * 获取应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
                      * @return Docker 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
+                     * 
                      */
                     Docker GetDocker() const;
 
                     /**
                      * 设置应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
-                     * @param Docker 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
+                     * @param _docker 应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。
+                     * 
                      */
                     void SetDocker(const Docker& _docker);
 
                     /**
                      * 判断参数 Docker 是否已赋值
                      * @return Docker 是否已赋值
+                     * 
                      */
                     bool DockerHasBeenSet() const;
 

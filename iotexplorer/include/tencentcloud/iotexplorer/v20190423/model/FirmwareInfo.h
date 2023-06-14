@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取固件版本
                      * @return Version 固件版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置固件版本
-                     * @param Version 固件版本
+                     * @param _version 固件版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取固件MD5值
                      * @return Md5sum 固件MD5值
+                     * 
                      */
                     std::string GetMd5sum() const;
 
                     /**
                      * 设置固件MD5值
-                     * @param Md5sum 固件MD5值
+                     * @param _md5sum 固件MD5值
+                     * 
                      */
                     void SetMd5sum(const std::string& _md5sum);
 
                     /**
                      * 判断参数 Md5sum 是否已赋值
                      * @return Md5sum 是否已赋值
+                     * 
                      */
                     bool Md5sumHasBeenSet() const;
 
                     /**
                      * 获取固件创建时间
                      * @return CreateTime 固件创建时间
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置固件创建时间
-                     * @param CreateTime 固件创建时间
+                     * @param _createTime 固件创建时间
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 固件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置固件名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 固件名称
+                     * @param _name 固件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 固件描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置固件描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 固件描述
+                     * @param _description 固件描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwType 固件升级模块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFwType() const;
 
                     /**
                      * 设置固件升级模块
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FwType 固件升级模块
+                     * @param _fwType 固件升级模块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFwType(const std::string& _fwType);
 
                     /**
                      * 判断参数 FwType 是否已赋值
                      * @return FwType 是否已赋值
+                     * 
                      */
                     bool FwTypeHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 创建者子 uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateUserId() const;
 
                     /**
                      * 设置创建者子 uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUserId 创建者子 uin
+                     * @param _createUserId 创建者子 uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateUserId(const int64_t& _createUserId);
 
                     /**
                      * 判断参数 CreateUserId 是否已赋值
                      * @return CreateUserId 是否已赋值
+                     * 
                      */
                     bool CreateUserIdHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorNickName 创建者昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatorNickName() const;
 
                     /**
                      * 设置创建者昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatorNickName 创建者昵称
+                     * @param _creatorNickName 创建者昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatorNickName(const std::string& _creatorNickName);
 
                     /**
                      * 判断参数 CreatorNickName 是否已赋值
                      * @return CreatorNickName 是否已赋值
+                     * 
                      */
                     bool CreatorNickNameHasBeenSet() const;
 

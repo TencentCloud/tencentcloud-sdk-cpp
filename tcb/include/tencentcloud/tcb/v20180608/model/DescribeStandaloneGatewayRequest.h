@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取网关名称
                      * @return GatewayName 网关名称
+                     * 
                      */
                     std::string GetGatewayName() const;
 
                     /**
                      * 设置网关名称
-                     * @param GatewayName 网关名称
+                     * @param _gatewayName 网关名称
+                     * 
                      */
                     void SetGatewayName(const std::string& _gatewayName);
 
                     /**
                      * 判断参数 GatewayName 是否已赋值
                      * @return GatewayName 是否已赋值
+                     * 
                      */
                     bool GatewayNameHasBeenSet() const;
 
                     /**
                      * 获取网关别名
                      * @return GatewayAlias 网关别名
+                     * 
                      */
                     std::string GetGatewayAlias() const;
 
                     /**
                      * 设置网关别名
-                     * @param GatewayAlias 网关别名
+                     * @param _gatewayAlias 网关别名
+                     * 
                      */
                     void SetGatewayAlias(const std::string& _gatewayAlias);
 
                     /**
                      * 判断参数 GatewayAlias 是否已赋值
                      * @return GatewayAlias 是否已赋值
+                     * 
                      */
                     bool GatewayAliasHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取参数列表
                      * @return ConfigItems 参数列表
+                     * 
                      */
                     std::vector<InstanceConfigInfo> GetConfigItems() const;
 
                     /**
                      * 判断参数 ConfigItems 是否已赋值
                      * @return ConfigItems 是否已赋值
+                     * 
                      */
                     bool ConfigItemsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnConfigItems 未配置的参数列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceConfigInfo> GetUnConfigItems() const;
 
                     /**
                      * 判断参数 UnConfigItems 是否已赋值
                      * @return UnConfigItems 是否已赋值
+                     * 
                      */
                     bool UnConfigItemsHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MapConfigItems 配置的多层级参数列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MapConfigItem> GetMapConfigItems() const;
 
                     /**
                      * 判断参数 MapConfigItems 是否已赋值
                      * @return MapConfigItems 是否已赋值
+                     * 
                      */
                     bool MapConfigItemsHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

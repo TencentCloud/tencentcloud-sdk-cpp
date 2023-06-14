@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 客户端Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置客户端Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ip 客户端Ip
+                     * @param _ip 客户端Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 访问URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置访问URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 访问URL
+                     * @param _url 访问URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAgent 客户端UserAgent
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAgent() const;
 
                     /**
                      * 设置客户端UserAgent
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAgent 客户端UserAgent
+                     * @param _userAgent 客户端UserAgent
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAgent(const std::string& _userAgent);
 
                     /**
                      * 判断参数 UserAgent 是否已赋值
                      * @return UserAgent 是否已赋值
+                     * 
                      */
                     bool UserAgentHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置请求数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 请求数
+                     * @param _value 请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名
+                     * @param _domain 域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

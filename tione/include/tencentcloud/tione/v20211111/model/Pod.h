@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name pod名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置pod名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name pod名
+                     * @param _name pod名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uid pod的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 设置pod的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uid pod的唯一id
+                     * @param _uid pod的唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 服务付费模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置服务付费模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeType 服务付费模式
+                     * @param _chargeType 服务付费模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phase pod的状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhase() const;
 
                     /**
                      * 设置pod的状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phase pod的状态
+                     * @param _phase pod的状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhase(const std::string& _phase);
 
                     /**
                      * 判断参数 Phase 是否已赋值
                      * @return Phase 是否已赋值
+                     * 
                      */
                     bool PhaseHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP pod的IP
+                     * @param _iP pod的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime pod的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置pod的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime pod的创建时间
+                     * @param _createTime pod的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Containers 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Container GetContainers() const;
 
                     /**
                      * 设置容器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Containers 容器列表
+                     * @param _containers 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainers(const Container& _containers);
 
                     /**
                      * 判断参数 Containers 是否已赋值
                      * @return Containers 是否已赋值
+                     * 
                      */
                     bool ContainersHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerInfos 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Container> GetContainerInfos() const;
 
                     /**
                      * 设置容器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerInfos 容器列表
+                     * @param _containerInfos 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerInfos(const std::vector<Container>& _containerInfos);
 
                     /**
                      * 判断参数 ContainerInfos 是否已赋值
                      * @return ContainerInfos 是否已赋值
+                     * 
                      */
                     bool ContainerInfosHasBeenSet() const;
 

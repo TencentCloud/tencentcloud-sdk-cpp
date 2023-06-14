@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
                      * @return Filters 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
-                     * @param Filters 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
+                     * @param _filters 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取数量限制，默认为20，最大值为100。
                      * @return Limit 数量限制，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置数量限制，默认为20，最大值为100。
-                     * @param Limit 数量限制，默认为20，最大值为100。
+                     * @param _limit 数量限制，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
                      * @return Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     * 
                      */
                     std::vector<uint64_t> GetPids() const;
 
                     /**
                      * 设置资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     * @param Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     * @param _pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     * 
                      */
                     void SetPids(const std::vector<uint64_t>& _pids);
 
                     /**
                      * 判断参数 Pids 是否已赋值
                      * @return Pids 是否已赋值
+                     * 
                      */
                     bool PidsHasBeenSet() const;
 
                     /**
                      * 获取按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
                      * @return OrderField 按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
-                     * @param OrderField 按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
+                     * @param _orderField 按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取升序（asc）还是降序（desc），默认：desc。
                      * @return OrderDirection 升序（asc）还是降序（desc），默认：desc。
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置升序（asc）还是降序（desc），默认：desc。
-                     * @param OrderDirection 升序（asc）还是降序（desc），默认：desc。
+                     * @param _orderDirection 升序（asc）还是降序（desc），默认：desc。
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

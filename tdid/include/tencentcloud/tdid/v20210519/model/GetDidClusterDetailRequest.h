@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取DID网络ID
                      * @return ClusterId DID网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置DID网络ID
-                     * @param ClusterId DID网络ID
+                     * @param _clusterId DID网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

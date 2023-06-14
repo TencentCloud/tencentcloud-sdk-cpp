@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indicators 项目列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IndicatorItemV2> GetIndicators() const;
 
                     /**
                      * 设置项目列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Indicators 项目列表
+                     * @param _indicators 项目列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndicators(const std::vector<IndicatorItemV2>& _indicators);
 
                     /**
                      * 判断参数 Indicators 是否已赋值
                      * @return Indicators 是否已赋值
+                     * 
                      */
                     bool IndicatorsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sample 采样标本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetSample() const;
 
                     /**
                      * 设置采样标本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sample 采样标本
+                     * @param _sample 采样标本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSample(const BaseItem& _sample);
 
                     /**
                      * 判断参数 Sample 是否已赋值
                      * @return Sample 是否已赋值
+                     * 
                      */
                     bool SampleHasBeenSet() const;
 

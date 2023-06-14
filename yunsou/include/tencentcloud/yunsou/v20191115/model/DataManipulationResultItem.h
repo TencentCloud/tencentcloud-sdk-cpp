@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果
-                     * @param Result 结果
+                     * @param _result 结果
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取文档ID
                      * @return DocId 文档ID
+                     * 
                      */
                     std::string GetDocId() const;
 
                     /**
                      * 设置文档ID
-                     * @param DocId 文档ID
+                     * @param _docId 文档ID
+                     * 
                      */
                     void SetDocId(const std::string& _docId);
 
                     /**
                      * 判断参数 DocId 是否已赋值
                      * @return DocId 是否已赋值
+                     * 
                      */
                     bool DocIdHasBeenSet() const;
 
                     /**
                      * 获取错误码
                      * @return Errno 错误码
+                     * 
                      */
                     int64_t GetErrno() const;
 
                     /**
                      * 设置错误码
-                     * @param Errno 错误码
+                     * @param _errno 错误码
+                     * 
                      */
                     void SetErrno(const int64_t& _errno);
 
                     /**
                      * 判断参数 Errno 是否已赋值
                      * @return Errno 是否已赋值
+                     * 
                      */
                     bool ErrnoHasBeenSet() const;
 

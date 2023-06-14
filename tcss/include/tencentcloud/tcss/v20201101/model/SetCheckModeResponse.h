@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取"Succ"表示设置成功，"Failed"表示设置失败
                      * @return SetCheckResult "Succ"表示设置成功，"Failed"表示设置失败
+                     * 
                      */
                     std::string GetSetCheckResult() const;
 
                     /**
                      * 判断参数 SetCheckResult 是否已赋值
                      * @return SetCheckResult 是否已赋值
+                     * 
                      */
                     bool SetCheckResultHasBeenSet() const;
 

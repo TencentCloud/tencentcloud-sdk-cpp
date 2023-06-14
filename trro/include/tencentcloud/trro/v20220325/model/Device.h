@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseCount 已经绑定license数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLicenseCount() const;
 
                     /**
                      * 设置已经绑定license数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LicenseCount 已经绑定license数量
+                     * @param _licenseCount 已经绑定license数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLicenseCount(const int64_t& _licenseCount);
 
                     /**
                      * 判断参数 LicenseCount 是否已赋值
                      * @return LicenseCount 是否已赋值
+                     * 
                      */
                     bool LicenseCountHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainDay 剩余天数：天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainDay() const;
 
                     /**
                      * 设置剩余天数：天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemainDay 剩余天数：天
+                     * @param _remainDay 剩余天数：天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemainDay(const int64_t& _remainDay);
 
                     /**
                      * 判断参数 RemainDay 是否已赋值
                      * @return RemainDay 是否已赋值
+                     * 
                      */
                     bool RemainDayHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间：s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间：s
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间：s
+                     * @param _expireTime 过期时间：s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 服务时长：s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置服务时长：s
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 服务时长：s
+                     * @param _duration 服务时长：s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const std::string& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseIds 已经绑定licenseId列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetLicenseIds() const;
 
                     /**
                      * 设置已经绑定licenseId列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LicenseIds 已经绑定licenseId列表
+                     * @param _licenseIds 已经绑定licenseId列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLicenseIds(const std::vector<std::string>& _licenseIds);
 
                     /**
                      * 判断参数 LicenseIds 是否已赋值
                      * @return LicenseIds 是否已赋值
+                     * 
                      */
                     bool LicenseIdsHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务Id
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取资源组Id
                      * @return ResourceGroup 资源组Id
+                     * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
                      * 设置资源组Id
-                     * @param ResourceGroup 资源组Id
+                     * @param _resourceGroup 资源组Id
+                     * 
                      */
                     void SetResourceGroup(const std::string& _resourceGroup);
 
                     /**
                      * 判断参数 ResourceGroup 是否已赋值
                      * @return ResourceGroup 是否已赋值
+                     * 
                      */
                     bool ResourceGroupHasBeenSet() const;
 
                     /**
                      * 获取默认 27
                      * @return TaskTypeId 默认 27
+                     * 
                      */
                     uint64_t GetTaskTypeId() const;
 
                     /**
                      * 设置默认 27
-                     * @param TaskTypeId 默认 27
+                     * @param _taskTypeId 默认 27
+                     * 
                      */
                     void SetTaskTypeId(const uint64_t& _taskTypeId);
 
                     /**
                      * 判断参数 TaskTypeId 是否已赋值
                      * @return TaskTypeId 是否已赋值
+                     * 
                      */
                     bool TaskTypeIdHasBeenSet() const;
 

@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取周期任务的ID
                      * @return PeriodTaskId 周期任务的ID
+                     * 
                      */
                     uint64_t GetPeriodTaskId() const;
 
                     /**
                      * 设置周期任务的ID
-                     * @param PeriodTaskId 周期任务的ID
+                     * @param _periodTaskId 周期任务的ID
+                     * 
                      */
                     void SetPeriodTaskId(const uint64_t& _periodTaskId);
 
                     /**
                      * 判断参数 PeriodTaskId 是否已赋值
                      * @return PeriodTaskId 是否已赋值
+                     * 
                      */
                     bool PeriodTaskIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
+                     * 
                      */
                     std::string GetAssetType() const;
 
@@ -86,17 +90,19 @@ ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
-                     * @param AssetType 资产类型。
+                     * @param _assetType 资产类型。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -105,74 +111,86 @@ ASSET_K8S, K8S资产
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTriggerTime 最近一次触发的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastTriggerTime() const;
 
                     /**
                      * 设置最近一次触发的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTriggerTime 最近一次触发的时间
+                     * @param _lastTriggerTime 最近一次触发的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTriggerTime(const std::string& _lastTriggerTime);
 
                     /**
                      * 判断参数 LastTriggerTime 是否已赋值
                      * @return LastTriggerTime 是否已赋值
+                     * 
                      */
                     bool LastTriggerTimeHasBeenSet() const;
 
                     /**
                      * 获取总的检查项数目
                      * @return TotalPolicyItemCount 总的检查项数目
+                     * 
                      */
                     uint64_t GetTotalPolicyItemCount() const;
 
                     /**
                      * 设置总的检查项数目
-                     * @param TotalPolicyItemCount 总的检查项数目
+                     * @param _totalPolicyItemCount 总的检查项数目
+                     * 
                      */
                     void SetTotalPolicyItemCount(const uint64_t& _totalPolicyItemCount);
 
                     /**
                      * 判断参数 TotalPolicyItemCount 是否已赋值
                      * @return TotalPolicyItemCount 是否已赋值
+                     * 
                      */
                     bool TotalPolicyItemCountHasBeenSet() const;
 
                     /**
                      * 获取周期设置
                      * @return PeriodRule 周期设置
+                     * 
                      */
                     CompliancePeriodTaskRule GetPeriodRule() const;
 
                     /**
                      * 设置周期设置
-                     * @param PeriodRule 周期设置
+                     * @param _periodRule 周期设置
+                     * 
                      */
                     void SetPeriodRule(const CompliancePeriodTaskRule& _periodRule);
 
                     /**
                      * 判断参数 PeriodRule 是否已赋值
                      * @return PeriodRule 是否已赋值
+                     * 
                      */
                     bool PeriodRuleHasBeenSet() const;
 
                     /**
                      * 获取合规标准列表
                      * @return BenchmarkStandardSet 合规标准列表
+                     * 
                      */
                     std::vector<ComplianceBenchmarkStandard> GetBenchmarkStandardSet() const;
 
                     /**
                      * 设置合规标准列表
-                     * @param BenchmarkStandardSet 合规标准列表
+                     * @param _benchmarkStandardSet 合规标准列表
+                     * 
                      */
                     void SetBenchmarkStandardSet(const std::vector<ComplianceBenchmarkStandard>& _benchmarkStandardSet);
 
                     /**
                      * 判断参数 BenchmarkStandardSet 是否已赋值
                      * @return BenchmarkStandardSet 是否已赋值
+                     * 
                      */
                     bool BenchmarkStandardSetHasBeenSet() const;
 

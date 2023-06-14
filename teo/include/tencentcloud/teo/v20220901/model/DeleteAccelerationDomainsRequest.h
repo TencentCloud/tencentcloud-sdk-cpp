@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取加速域名所属站点ID。
                      * @return ZoneId 加速域名所属站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置加速域名所属站点ID。
-                     * @param ZoneId 加速域名所属站点ID。
+                     * @param _zoneId 加速域名所属站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取需要删除的加速域名ID列表。
                      * @return DomainNames 需要删除的加速域名ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDomainNames() const;
 
                     /**
                      * 设置需要删除的加速域名ID列表。
-                     * @param DomainNames 需要删除的加速域名ID列表。
+                     * @param _domainNames 需要删除的加速域名ID列表。
+                     * 
                      */
                     void SetDomainNames(const std::vector<std::string>& _domainNames);
 
                     /**
                      * 判断参数 DomainNames 是否已赋值
                      * @return DomainNames 是否已赋值
+                     * 
                      */
                     bool DomainNamesHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Force 是否强制删除。当域名存在关联资源（如马甲域名、流量调度功能）时，是否强制删除该域名，取值有：
 <li> true：删除该域名及所有关联资源；</li>
 <li> false：当该加速域名存在关联资源时，不允许删除。</li>不填写，默认值为：false。
+                     * 
                      */
                     bool GetForce() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置是否强制删除。当域名存在关联资源（如马甲域名、流量调度功能）时，是否强制删除该域名，取值有：
 <li> true：删除该域名及所有关联资源；</li>
 <li> false：当该加速域名存在关联资源时，不允许删除。</li>不填写，默认值为：false。
-                     * @param Force 是否强制删除。当域名存在关联资源（如马甲域名、流量调度功能）时，是否强制删除该域名，取值有：
+                     * @param _force 是否强制删除。当域名存在关联资源（如马甲域名、流量调度功能）时，是否强制删除该域名，取值有：
 <li> true：删除该域名及所有关联资源；</li>
 <li> false：当该加速域名存在关联资源时，不允许删除。</li>不填写，默认值为：false。
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

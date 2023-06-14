@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeConfiguration 服务器舰队配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuntimeConfiguration GetRuntimeConfiguration() const;
 
                     /**
                      * 判断参数 RuntimeConfiguration 是否已赋值
                      * @return RuntimeConfiguration 是否已赋值
+                     * 
                      */
                     bool RuntimeConfigurationHasBeenSet() const;
 

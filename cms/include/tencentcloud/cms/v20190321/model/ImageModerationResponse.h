@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取业务返回码
                      * @return BusinessCode 业务返回码
+                     * 
                      */
                     int64_t GetBusinessCode() const;
 
                     /**
                      * 判断参数 BusinessCode 是否已赋值
                      * @return BusinessCode 是否已赋值
+                     * 
                      */
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
                      * 获取识别结果
                      * @return Data 识别结果
+                     * 
                      */
                     ImageData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

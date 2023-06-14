@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 节点所在的可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置节点所在的可用区。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 节点所在的可用区。
+                     * @param _zone 节点所在的可用区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 节点名称。
+                     * @param _nodeName 节点名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 节点访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置节点访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 节点访问地址。
+                     * @param _address 节点访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 角色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置角色。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Role 角色。
+                     * @param _role 角色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hidden 是否为Hidden节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置是否为Hidden节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Hidden 是否为Hidden节点
+                     * @param _hidden 是否为Hidden节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHidden(const bool& _hidden);
 
                     /**
                      * 判断参数 Hidden 是否已赋值
                      * @return Hidden 是否已赋值
+                     * 
                      */
                     bool HiddenHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。
+                     * @param _status 节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveDelay 主从延迟，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSlaveDelay() const;
 
                     /**
                      * 设置主从延迟，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlaveDelay 主从延迟，单位秒。
+                     * @param _slaveDelay 主从延迟，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSlaveDelay(const int64_t& _slaveDelay);
 
                     /**
                      * 判断参数 SlaveDelay 是否已赋值
                      * @return SlaveDelay 是否已赋值
+                     * 
                      */
                     bool SlaveDelayHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 节点优先级。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置节点优先级。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 节点优先级。
+                     * @param _priority 节点优先级。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Votes 节点投票权。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVotes() const;
 
                     /**
                      * 设置节点投票权。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Votes 节点投票权。
+                     * @param _votes 节点投票权。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVotes(const int64_t& _votes);
 
                     /**
                      * 判断参数 Votes 是否已赋值
                      * @return Votes 是否已赋值
+                     * 
                      */
                     bool VotesHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 节点标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeTag> GetTags() const;
 
                     /**
                      * 设置节点标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 节点标签。
+                     * @param _tags 节点标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<NodeTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicateSetId 副本集Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReplicateSetId() const;
 
                     /**
                      * 设置副本集Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplicateSetId 副本集Id。
+                     * @param _replicateSetId 副本集Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicateSetId(const std::string& _replicateSetId);
 
                     /**
                      * 判断参数 ReplicateSetId 是否已赋值
                      * @return ReplicateSetId 是否已赋值
+                     * 
                      */
                     bool ReplicateSetIdHasBeenSet() const;
 

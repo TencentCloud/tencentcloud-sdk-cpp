@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepAll 总步骤数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepAll() const;
 
                     /**
                      * 设置总步骤数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepAll 总步骤数
+                     * @param _stepAll 总步骤数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepAll(const uint64_t& _stepAll);
 
                     /**
                      * 判断参数 StepAll 是否已赋值
                      * @return StepAll 是否已赋值
+                     * 
                      */
                     bool StepAllHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNow 当前步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepNow() const;
 
                     /**
                      * 设置当前步骤
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepNow 当前步骤
+                     * @param _stepNow 当前步骤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepNow(const uint64_t& _stepNow);
 
                     /**
                      * 判断参数 StepNow 是否已赋值
                      * @return StepNow 是否已赋值
+                     * 
                      */
                     bool StepNowHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterSlaveDistance 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMasterSlaveDistance() const;
 
                     /**
                      * 设置主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MasterSlaveDistance 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * @param _masterSlaveDistance 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMasterSlaveDistance(const int64_t& _masterSlaveDistance);
 
                     /**
                      * 判断参数 MasterSlaveDistance 是否已赋值
                      * @return MasterSlaveDistance 是否已赋值
+                     * 
                      */
                     bool MasterSlaveDistanceHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondsBehindMaster 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSecondsBehindMaster() const;
 
                     /**
                      * 设置主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecondsBehindMaster 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * @param _secondsBehindMaster 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecondsBehindMaster(const int64_t& _secondsBehindMaster);
 
                     /**
                      * 判断参数 SecondsBehindMaster 是否已赋值
                      * @return SecondsBehindMaster 是否已赋值
+                     * 
                      */
                     bool SecondsBehindMasterHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfo 步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StepDetailInfo> GetStepInfo() const;
 
                     /**
                      * 设置步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepInfo 步骤信息
+                     * @param _stepInfo 步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepInfo(const std::vector<StepDetailInfo>& _stepInfo);
 
                     /**
                      * 判断参数 StepInfo 是否已赋值
                      * @return StepInfo 是否已赋值
+                     * 
                      */
                     bool StepInfoHasBeenSet() const;
 

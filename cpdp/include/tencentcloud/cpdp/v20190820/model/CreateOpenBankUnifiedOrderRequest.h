@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。
                      * @return ChannelMerchantId 渠道商户号。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。
-                     * @param ChannelMerchantId 渠道商户号。
+                     * @param _channelMerchantId 渠道商户号。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道名称。
                      * @return ChannelName 渠道名称。
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名称。
-                     * @param ChannelName 渠道名称。
+                     * @param _channelName 渠道名称。
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -93,6 +99,7 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 H5：WAP, 公众号：PUBLIC, 
 APP-SDK：SDK, 小程序：MINI_PROGRAM, 
 快捷支付：QUICK, 网银支付：ONLINE_BANK。
+                     * 
                      */
                     std::string GetPayType() const;
 
@@ -102,17 +109,19 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 H5：WAP, 公众号：PUBLIC, 
 APP-SDK：SDK, 小程序：MINI_PROGRAM, 
 快捷支付：QUICK, 网银支付：ONLINE_BANK。
-                     * @param PayType 支付产品类型。
+                     * @param _payType 支付产品类型。
 被扫（扫码）：SWIPE, 主扫（刷卡）：SCAN, 
 H5：WAP, 公众号：PUBLIC, 
 APP-SDK：SDK, 小程序：MINI_PROGRAM, 
 快捷支付：QUICK, 网银支付：ONLINE_BANK。
+                     * 
                      */
                     void SetPayType(const std::string& _payType);
 
                     /**
                      * 判断参数 PayType 是否已赋值
                      * @return PayType 是否已赋值
+                     * 
                      */
                     bool PayTypeHasBeenSet() const;
 
@@ -121,74 +130,86 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 只能是数字、大小写字母，且在同一个接入平台下唯一。
                      * @return OutOrderId 外部商户订单号。
 只能是数字、大小写字母，且在同一个接入平台下唯一。
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号。
 只能是数字、大小写字母，且在同一个接入平台下唯一。
-                     * @param OutOrderId 外部商户订单号。
+                     * @param _outOrderId 外部商户订单号。
 只能是数字、大小写字母，且在同一个接入平台下唯一。
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取交易金额，单位分。
                      * @return TotalAmount 交易金额，单位分。
+                     * 
                      */
                     int64_t GetTotalAmount() const;
 
                     /**
                      * 设置交易金额，单位分。
-                     * @param TotalAmount 交易金额，单位分。
+                     * @param _totalAmount 交易金额，单位分。
+                     * 
                      */
                     void SetTotalAmount(const int64_t& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 
                     /**
                      * 获取币种。固定：CNY。
                      * @return Currency 币种。固定：CNY。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置币种。固定：CNY。
-                     * @param Currency 币种。固定：CNY。
+                     * @param _currency 币种。固定：CNY。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户号。
                      * @return ChannelSubMerchantId 渠道子商户号。
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户号。
-                     * @param ChannelSubMerchantId 渠道子商户号。
+                     * @param _channelSubMerchantId 渠道子商户号。
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -203,6 +224,7 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 微信支付 WXPAY
 银联 UNIONPAY
 一般在间连模式下使用。
+                     * 
                      */
                     std::string GetPayChannel() const;
 
@@ -212,161 +234,187 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 微信支付 WXPAY
 银联 UNIONPAY
 一般在间连模式下使用。
-                     * @param PayChannel 实际支付渠道。没有则无需填写。如
+                     * @param _payChannel 实际支付渠道。没有则无需填写。如
 支付宝 ALIPAY
 微信支付 WXPAY
 银联 UNIONPAY
 一般在间连模式下使用。
+                     * 
                      */
                     void SetPayChannel(const std::string& _payChannel);
 
                     /**
                      * 判断参数 PayChannel 是否已赋值
                      * @return PayChannel 是否已赋值
+                     * 
                      */
                     bool PayChannelHasBeenSet() const;
 
                     /**
                      * 获取设备信息。
                      * @return SceneInfo 设备信息。
+                     * 
                      */
                     OpenBankSceneInfo GetSceneInfo() const;
 
                     /**
                      * 设置设备信息。
-                     * @param SceneInfo 设备信息。
+                     * @param _sceneInfo 设备信息。
+                     * 
                      */
                     void SetSceneInfo(const OpenBankSceneInfo& _sceneInfo);
 
                     /**
                      * 判断参数 SceneInfo 是否已赋值
                      * @return SceneInfo 是否已赋值
+                     * 
                      */
                     bool SceneInfoHasBeenSet() const;
 
                     /**
                      * 获取分账信息列表。
                      * @return ProfitShareInfoList 分账信息列表。
+                     * 
                      */
                     std::vector<OpenBankProfitShareInfo> GetProfitShareInfoList() const;
 
                     /**
                      * 设置分账信息列表。
-                     * @param ProfitShareInfoList 分账信息列表。
+                     * @param _profitShareInfoList 分账信息列表。
+                     * 
                      */
                     void SetProfitShareInfoList(const std::vector<OpenBankProfitShareInfo>& _profitShareInfoList);
 
                     /**
                      * 判断参数 ProfitShareInfoList 是否已赋值
                      * @return ProfitShareInfoList 是否已赋值
+                     * 
                      */
                     bool ProfitShareInfoListHasBeenSet() const;
 
                     /**
                      * 获取订单标题。
                      * @return OrderSubject 订单标题。
+                     * 
                      */
                     std::string GetOrderSubject() const;
 
                     /**
                      * 设置订单标题。
-                     * @param OrderSubject 订单标题。
+                     * @param _orderSubject 订单标题。
+                     * 
                      */
                     void SetOrderSubject(const std::string& _orderSubject);
 
                     /**
                      * 判断参数 OrderSubject 是否已赋值
                      * @return OrderSubject 是否已赋值
+                     * 
                      */
                     bool OrderSubjectHasBeenSet() const;
 
                     /**
                      * 获取商品信息。
                      * @return GoodsDetail 商品信息。
+                     * 
                      */
                     std::string GetGoodsDetail() const;
 
                     /**
                      * 设置商品信息。
-                     * @param GoodsDetail 商品信息。
+                     * @param _goodsDetail 商品信息。
+                     * 
                      */
                     void SetGoodsDetail(const std::string& _goodsDetail);
 
                     /**
                      * 判断参数 GoodsDetail 是否已赋值
                      * @return GoodsDetail 是否已赋值
+                     * 
                      */
                     bool GoodsDetailHasBeenSet() const;
 
                     /**
                      * 获取超时时间。
                      * @return ExpireTime 超时时间。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置超时时间。
-                     * @param ExpireTime 超时时间。
+                     * @param _expireTime 超时时间。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取支付成功回调地址。
                      * @return NotifyUrl 支付成功回调地址。
+                     * 
                      */
                     std::string GetNotifyUrl() const;
 
                     /**
                      * 设置支付成功回调地址。
-                     * @param NotifyUrl 支付成功回调地址。
+                     * @param _notifyUrl 支付成功回调地址。
+                     * 
                      */
                     void SetNotifyUrl(const std::string& _notifyUrl);
 
                     /**
                      * 判断参数 NotifyUrl 是否已赋值
                      * @return NotifyUrl 是否已赋值
+                     * 
                      */
                     bool NotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取支付成功前端跳转URL。
                      * @return FrontUrl 支付成功前端跳转URL。
+                     * 
                      */
                     std::string GetFrontUrl() const;
 
                     /**
                      * 设置支付成功前端跳转URL。
-                     * @param FrontUrl 支付成功前端跳转URL。
+                     * @param _frontUrl 支付成功前端跳转URL。
+                     * 
                      */
                     void SetFrontUrl(const std::string& _frontUrl);
 
                     /**
                      * 判断参数 FrontUrl 是否已赋值
                      * @return FrontUrl 是否已赋值
+                     * 
                      */
                     bool FrontUrlHasBeenSet() const;
 
                     /**
                      * 获取订单附加信息，查询或者回调的时候原样返回。
                      * @return Attachment 订单附加信息，查询或者回调的时候原样返回。
+                     * 
                      */
                     std::string GetAttachment() const;
 
                     /**
                      * 设置订单附加信息，查询或者回调的时候原样返回。
-                     * @param Attachment 订单附加信息，查询或者回调的时候原样返回。
+                     * @param _attachment 订单附加信息，查询或者回调的时候原样返回。
+                     * 
                      */
                     void SetAttachment(const std::string& _attachment);
 
                     /**
                      * 判断参数 Attachment 是否已赋值
                      * @return Attachment 是否已赋值
+                     * 
                      */
                     bool AttachmentHasBeenSet() const;
 
@@ -375,74 +423,86 @@ APP-SDK：SDK, 小程序：MINI_PROGRAM,
 未作特殊说明，则无需传入。
                      * @return ExternalPaymentData 第三方渠道扩展字段。见附录-复杂类型。
 未作特殊说明，则无需传入。
+                     * 
                      */
                     std::string GetExternalPaymentData() const;
 
                     /**
                      * 设置第三方渠道扩展字段。见附录-复杂类型。
 未作特殊说明，则无需传入。
-                     * @param ExternalPaymentData 第三方渠道扩展字段。见附录-复杂类型。
+                     * @param _externalPaymentData 第三方渠道扩展字段。见附录-复杂类型。
 未作特殊说明，则无需传入。
+                     * 
                      */
                     void SetExternalPaymentData(const std::string& _externalPaymentData);
 
                     /**
                      * 判断参数 ExternalPaymentData 是否已赋值
                      * @return ExternalPaymentData 是否已赋值
+                     * 
                      */
                     bool ExternalPaymentDataHasBeenSet() const;
 
                     /**
                      * 获取备注。
                      * @return Remark 备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注。
-                     * @param Remark 备注。
+                     * @param _remark 备注。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取门店信息。
                      * @return StoreInfo 门店信息。
+                     * 
                      */
                     OpenBankStoreInfo GetStoreInfo() const;
 
                     /**
                      * 设置门店信息。
-                     * @param StoreInfo 门店信息。
+                     * @param _storeInfo 门店信息。
+                     * 
                      */
                     void SetStoreInfo(const OpenBankStoreInfo& _storeInfo);
 
                     /**
                      * 判断参数 StoreInfo 是否已赋值
                      * @return StoreInfo 是否已赋值
+                     * 
                      */
                     bool StoreInfoHasBeenSet() const;
 
                     /**
                      * 获取支付限制。
                      * @return PayLimitInfo 支付限制。
+                     * 
                      */
                     OpenBankPayLimitInfo GetPayLimitInfo() const;
 
                     /**
                      * 设置支付限制。
-                     * @param PayLimitInfo 支付限制。
+                     * @param _payLimitInfo 支付限制。
+                     * 
                      */
                     void SetPayLimitInfo(const OpenBankPayLimitInfo& _payLimitInfo);
 
                     /**
                      * 判断参数 PayLimitInfo 是否已赋值
                      * @return PayLimitInfo 是否已赋值
+                     * 
                      */
                     bool PayLimitInfoHasBeenSet() const;
 
@@ -455,6 +515,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -463,16 +524,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

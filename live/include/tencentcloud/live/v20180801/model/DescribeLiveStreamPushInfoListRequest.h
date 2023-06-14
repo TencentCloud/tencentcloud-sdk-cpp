@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取推流域名。
                      * @return PushDomain 推流域名。
+                     * 
                      */
                     std::string GetPushDomain() const;
 
                     /**
                      * 设置推流域名。
-                     * @param PushDomain 推流域名。
+                     * @param _pushDomain 推流域名。
+                     * 
                      */
                     void SetPushDomain(const std::string& _pushDomain);
 
                     /**
                      * 判断参数 PushDomain 是否已赋值
                      * @return PushDomain 是否已赋值
+                     * 
                      */
                     bool PushDomainHasBeenSet() const;
 
                     /**
                      * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为live。
                      * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
+                     * @param _appName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return PageNum 页数，
 范围[1,10000]，
 默认值：1。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置页数，
 范围[1,10000]，
 默认值：1。
-                     * @param PageNum 页数，
+                     * @param _pageNum 页数，
 范围[1,10000]，
 默认值：1。
+                     * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
                      * @return PageSize 每页个数，
 范围：[1,1000]，
 默认值： 200。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
@@ -118,15 +128,17 @@ namespace TencentCloud
                      * 设置每页个数，
 范围：[1,1000]，
 默认值： 200。
-                     * @param PageSize 每页个数，
+                     * @param _pageSize 每页个数，
 范围：[1,1000]，
 默认值： 200。
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

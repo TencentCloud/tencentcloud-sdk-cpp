@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取BOT拦截结果数组
                      * @return Data BOT拦截结果数组
+                     * 
                      */
                     std::vector<BotRecord> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取记录数量
                      * @return TotalCount 记录数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取日期
                      * @return Date 日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期
-                     * @param Date 日期
+                     * @param _date 日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取客流量
                      * @return DayTrafficTotalCount 客流量
+                     * 
                      */
                     uint64_t GetDayTrafficTotalCount() const;
 
                     /**
                      * 设置客流量
-                     * @param DayTrafficTotalCount 客流量
+                     * @param _dayTrafficTotalCount 客流量
+                     * 
                      */
                     void SetDayTrafficTotalCount(const uint64_t& _dayTrafficTotalCount);
 
                     /**
                      * 判断参数 DayTrafficTotalCount 是否已赋值
                      * @return DayTrafficTotalCount 是否已赋值
+                     * 
                      */
                     bool DayTrafficTotalCountHasBeenSet() const;
 
                     /**
                      * 获取性别年龄分组下的客流信息
                      * @return GenderAgeTrafficDetailSet 性别年龄分组下的客流信息
+                     * 
                      */
                     std::vector<GenderAgeTrafficDetail> GetGenderAgeTrafficDetailSet() const;
 
                     /**
                      * 设置性别年龄分组下的客流信息
-                     * @param GenderAgeTrafficDetailSet 性别年龄分组下的客流信息
+                     * @param _genderAgeTrafficDetailSet 性别年龄分组下的客流信息
+                     * 
                      */
                     void SetGenderAgeTrafficDetailSet(const std::vector<GenderAgeTrafficDetail>& _genderAgeTrafficDetailSet);
 
                     /**
                      * 判断参数 GenderAgeTrafficDetailSet 是否已赋值
                      * @return GenderAgeTrafficDetailSet 是否已赋值
+                     * 
                      */
                     bool GenderAgeTrafficDetailSetHasBeenSet() const;
 

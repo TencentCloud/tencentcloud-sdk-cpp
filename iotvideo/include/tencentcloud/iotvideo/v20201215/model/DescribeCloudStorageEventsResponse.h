@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取云存事件列表
                      * @return Events 云存事件列表
+                     * 
                      */
                     std::vector<CloudStorageEvent> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
                     /**
                      * 获取请求上下文, 用作查询游标
                      * @return Context 请求上下文, 用作查询游标
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取拉取结果是否已经结束
                      * @return Listover 拉取结果是否已经结束
+                     * 
                      */
                     bool GetListover() const;
 
                     /**
                      * 判断参数 Listover 是否已赋值
                      * @return Listover 是否已赋值
+                     * 
                      */
                     bool ListoverHasBeenSet() const;
 
                     /**
                      * 获取内部结果数量，并不等同于事件总数。
                      * @return Total 内部结果数量，并不等同于事件总数。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取视频播放URL
                      * @return VideoURL 视频播放URL
+                     * 
                      */
                     std::string GetVideoURL() const;
 
                     /**
                      * 判断参数 VideoURL 是否已赋值
                      * @return VideoURL 是否已赋值
+                     * 
                      */
                     bool VideoURLHasBeenSet() const;
 

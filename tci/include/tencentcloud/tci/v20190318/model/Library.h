@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取人员库创建时间
                      * @return CreateTime 人员库创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置人员库创建时间
-                     * @param CreateTime 人员库创建时间
+                     * @param _createTime 人员库创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取人员库唯一标识符
                      * @return LibraryId 人员库唯一标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 设置人员库唯一标识符
-                     * @param LibraryId 人员库唯一标识符
+                     * @param _libraryId 人员库唯一标识符
+                     * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员库名称
                      * @return LibraryName 人员库名称
+                     * 
                      */
                     std::string GetLibraryName() const;
 
                     /**
                      * 设置人员库名称
-                     * @param LibraryName 人员库名称
+                     * @param _libraryName 人员库名称
+                     * 
                      */
                     void SetLibraryName(const std::string& _libraryName);
 
                     /**
                      * 判断参数 LibraryName 是否已赋值
                      * @return LibraryName 是否已赋值
+                     * 
                      */
                     bool LibraryNameHasBeenSet() const;
 
                     /**
                      * 获取人员库人员数量
                      * @return PersonCount 人员库人员数量
+                     * 
                      */
                     int64_t GetPersonCount() const;
 
                     /**
                      * 设置人员库人员数量
-                     * @param PersonCount 人员库人员数量
+                     * @param _personCount 人员库人员数量
+                     * 
                      */
                     void SetPersonCount(const int64_t& _personCount);
 
                     /**
                      * 判断参数 PersonCount 是否已赋值
                      * @return PersonCount 是否已赋值
+                     * 
                      */
                     bool PersonCountHasBeenSet() const;
 
                     /**
                      * 获取人员库修改时间
                      * @return UpdateTime 人员库修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置人员库修改时间
-                     * @param UpdateTime 人员库修改时间
+                     * @param _updateTime 人员库修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取黑石私有网络唯一ID。
                      * @return VpcId 黑石私有网络唯一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置黑石私有网络唯一ID。
-                     * @param VpcId 黑石私有网络唯一ID。
+                     * @param _vpcId 黑石私有网络唯一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。
                      * @return InstanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。
-                     * @param InstanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。
+                     * @param _instanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

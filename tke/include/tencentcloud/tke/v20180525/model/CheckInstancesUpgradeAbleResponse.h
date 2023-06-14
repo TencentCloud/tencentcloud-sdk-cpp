@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取集群master当前小版本
                      * @return ClusterVersion 集群master当前小版本
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 
                     /**
                      * 获取集群master对应的大版本目前最新小版本
                      * @return LatestVersion 集群master对应的大版本目前最新小版本
+                     * 
                      */
                     std::string GetLatestVersion() const;
 
                     /**
                      * 判断参数 LatestVersion 是否已赋值
                      * @return LatestVersion 是否已赋值
+                     * 
                      */
                     bool LatestVersionHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeAbleInstances 可升级节点列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UpgradeAbleInstancesItem> GetUpgradeAbleInstances() const;
 
                     /**
                      * 判断参数 UpgradeAbleInstances 是否已赋值
                      * @return UpgradeAbleInstances 是否已赋值
+                     * 
                      */
                     bool UpgradeAbleInstancesHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnavailableVersionReason 不可升级原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UnavailableReason> GetUnavailableVersionReason() const;
 
                     /**
                      * 判断参数 UnavailableVersionReason 是否已赋值
                      * @return UnavailableVersionReason 是否已赋值
+                     * 
                      */
                     bool UnavailableVersionReasonHasBeenSet() const;
 

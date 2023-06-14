@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待解绑的服务唯一ID。
                      * @return ServiceId 待解绑的服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待解绑的服务唯一ID。
-                     * @param ServiceId 待解绑的服务唯一ID。
+                     * @param _serviceId 待解绑的服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待解绑的IP策略唯一ID。
                      * @return StrategyId 待解绑的IP策略唯一ID。
+                     * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
                      * 设置待解绑的IP策略唯一ID。
-                     * @param StrategyId 待解绑的IP策略唯一ID。
+                     * @param _strategyId 待解绑的IP策略唯一ID。
+                     * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取待解绑的环境。
                      * @return EnvironmentName 待解绑的环境。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置待解绑的环境。
-                     * @param EnvironmentName 待解绑的环境。
+                     * @param _environmentName 待解绑的环境。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取待解绑的 API 列表。
                      * @return UnBindApiIds 待解绑的 API 列表。
+                     * 
                      */
                     std::vector<std::string> GetUnBindApiIds() const;
 
                     /**
                      * 设置待解绑的 API 列表。
-                     * @param UnBindApiIds 待解绑的 API 列表。
+                     * @param _unBindApiIds 待解绑的 API 列表。
+                     * 
                      */
                     void SetUnBindApiIds(const std::vector<std::string>& _unBindApiIds);
 
                     /**
                      * 判断参数 UnBindApiIds 是否已赋值
                      * @return UnBindApiIds 是否已赋值
+                     * 
                      */
                     bool UnBindApiIdsHasBeenSet() const;
 

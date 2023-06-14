@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取只读组ID
                      * @return ReadOnlyGroupId 只读组ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 流程ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

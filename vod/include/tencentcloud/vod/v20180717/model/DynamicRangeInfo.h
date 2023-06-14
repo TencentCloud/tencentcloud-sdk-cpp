@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 画面动态范围信息。可取值：
 <li>SDR：Standard Dynamic Range 标准动态范围；</li>
 <li>HDR：High Dynamic Range 高动态范围。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置画面动态范围信息。可取值：
 <li>SDR：Standard Dynamic Range 标准动态范围；</li>
 <li>HDR：High Dynamic Range 高动态范围。</li>
-                     * @param Type 画面动态范围信息。可取值：
+                     * @param _type 画面动态范围信息。可取值：
 <li>SDR：Standard Dynamic Range 标准动态范围；</li>
 <li>HDR：High Dynamic Range 高动态范围。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return HDRType 高动态范围类型，当 Type 为 HDR 时有效。目前支持的可取值：
 <li>hdr10：表示 hdr10 标准；</li>
 <li>hlg：表示 hlg 标准。</li>
+                     * 
                      */
                     std::string GetHDRType() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置高动态范围类型，当 Type 为 HDR 时有效。目前支持的可取值：
 <li>hdr10：表示 hdr10 标准；</li>
 <li>hlg：表示 hlg 标准。</li>
-                     * @param HDRType 高动态范围类型，当 Type 为 HDR 时有效。目前支持的可取值：
+                     * @param _hDRType 高动态范围类型，当 Type 为 HDR 时有效。目前支持的可取值：
 <li>hdr10：表示 hdr10 标准；</li>
 <li>hlg：表示 hlg 标准。</li>
+                     * 
                      */
                     void SetHDRType(const std::string& _hDRType);
 
                     /**
                      * 判断参数 HDRType 是否已赋值
                      * @return HDRType 是否已赋值
+                     * 
                      */
                     bool HDRTypeHasBeenSet() const;
 

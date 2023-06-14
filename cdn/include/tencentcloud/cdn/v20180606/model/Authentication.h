@@ -59,6 +59,7 @@ off：关闭
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -67,16 +68,18 @@ off：关闭
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
-                     * @param Switch 防盗链配置开关，取值有：
+                     * @param _switch 防盗链配置开关，取值有：
 on：开启
 off：关闭
 开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -91,6 +94,7 @@ md5：按MD5算法取hash值
 sha256：按SHA-256算法取hash值
 默认为 md5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthAlgorithm() const;
 
@@ -100,17 +104,19 @@ md5：按MD5算法取hash值
 sha256：按SHA-256算法取hash值
 默认为 md5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthAlgorithm 鉴权算法，取值有：
+                     * @param _authAlgorithm 鉴权算法，取值有：
 md5：按MD5算法取hash值
 sha256：按SHA-256算法取hash值
 默认为 md5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthAlgorithm(const std::string& _authAlgorithm);
 
                     /**
                      * 判断参数 AuthAlgorithm 是否已赋值
                      * @return AuthAlgorithm 是否已赋值
+                     * 
                      */
                     bool AuthAlgorithmHasBeenSet() const;
 
@@ -119,20 +125,23 @@ sha256：按SHA-256算法取hash值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeA 时间戳防盗链模式 A 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AuthenticationTypeA GetTypeA() const;
 
                     /**
                      * 设置时间戳防盗链模式 A 配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeA 时间戳防盗链模式 A 配置
+                     * @param _typeA 时间戳防盗链模式 A 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeA(const AuthenticationTypeA& _typeA);
 
                     /**
                      * 判断参数 TypeA 是否已赋值
                      * @return TypeA 是否已赋值
+                     * 
                      */
                     bool TypeAHasBeenSet() const;
 
@@ -141,20 +150,23 @@ sha256：按SHA-256算法取hash值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeB 时间戳防盗链模式 B 配置（模式 B 后台升级中，暂时不支持配置）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AuthenticationTypeB GetTypeB() const;
 
                     /**
                      * 设置时间戳防盗链模式 B 配置（模式 B 后台升级中，暂时不支持配置）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeB 时间戳防盗链模式 B 配置（模式 B 后台升级中，暂时不支持配置）
+                     * @param _typeB 时间戳防盗链模式 B 配置（模式 B 后台升级中，暂时不支持配置）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeB(const AuthenticationTypeB& _typeB);
 
                     /**
                      * 判断参数 TypeB 是否已赋值
                      * @return TypeB 是否已赋值
+                     * 
                      */
                     bool TypeBHasBeenSet() const;
 
@@ -163,20 +175,23 @@ sha256：按SHA-256算法取hash值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeC 时间戳防盗链模式 C 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AuthenticationTypeC GetTypeC() const;
 
                     /**
                      * 设置时间戳防盗链模式 C 配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeC 时间戳防盗链模式 C 配置
+                     * @param _typeC 时间戳防盗链模式 C 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeC(const AuthenticationTypeC& _typeC);
 
                     /**
                      * 判断参数 TypeC 是否已赋值
                      * @return TypeC 是否已赋值
+                     * 
                      */
                     bool TypeCHasBeenSet() const;
 
@@ -185,20 +200,23 @@ sha256：按SHA-256算法取hash值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeD 时间戳防盗链模式 D 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AuthenticationTypeD GetTypeD() const;
 
                     /**
                      * 设置时间戳防盗链模式 D 配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeD 时间戳防盗链模式 D 配置
+                     * @param _typeD 时间戳防盗链模式 D 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeD(const AuthenticationTypeD& _typeD);
 
                     /**
                      * 判断参数 TypeD 是否已赋值
                      * @return TypeD 是否已赋值
+                     * 
                      */
                     bool TypeDHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
                      * @return SaveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * 
                      */
                     int64_t GetSaveHours() const;
 
                     /**
                      * 设置本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
-                     * @param SaveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * @param _saveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * 
                      */
                     void SetSaveHours(const int64_t& _saveHours);
 
                     /**
                      * 判断参数 SaveHours 是否已赋值
                      * @return SaveHours 是否已赋值
+                     * 
                      */
                     bool SaveHoursHasBeenSet() const;
 
                     /**
                      * 获取本地binlog空间使用率，可取值范围：[30,50]。
                      * @return MaxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 
                      */
                     int64_t GetMaxUsage() const;
 
                     /**
                      * 设置本地binlog空间使用率，可取值范围：[30,50]。
-                     * @param MaxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * @param _maxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 
                      */
                     void SetMaxUsage(const int64_t& _maxUsage);
 
                     /**
                      * 判断参数 MaxUsage 是否已赋值
                      * @return MaxUsage 是否已赋值
+                     * 
                      */
                     bool MaxUsageHasBeenSet() const;
 

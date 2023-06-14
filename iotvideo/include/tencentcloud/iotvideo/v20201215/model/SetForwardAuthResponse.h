@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云账号
                      * @return Endpoint 腾讯云账号
+                     * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 判断参数 Endpoint 是否已赋值
                      * @return Endpoint 是否已赋值
+                     * 
                      */
                     bool EndpointHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     uint64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取角色名
                      * @return RoleName 角色名
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取角色ID
                      * @return RoleID 角色ID
+                     * 
                      */
                     uint64_t GetRoleID() const;
 
                     /**
                      * 判断参数 RoleID 是否已赋值
                      * @return RoleID 是否已赋值
+                     * 
                      */
                     bool RoleIDHasBeenSet() const;
 
                     /**
                      * 获取消息队列类型  0.CMQ 1.CKafka
                      * @return QueueType 消息队列类型  0.CMQ 1.CKafka
+                     * 
                      */
                     uint64_t GetQueueType() const;
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 
                     /**
                      * 获取错误消息
                      * @return ErrMsg 错误消息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

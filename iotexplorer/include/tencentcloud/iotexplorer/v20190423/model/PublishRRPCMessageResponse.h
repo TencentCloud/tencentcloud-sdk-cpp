@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageId RRPC消息ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMessageId() const;
 
                     /**
                      * 判断参数 MessageId 是否已赋值
                      * @return MessageId 是否已赋值
+                     * 
                      */
                     bool MessageIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayloadBase64 设备回复的消息内容，采用base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayloadBase64() const;
 
                     /**
                      * 判断参数 PayloadBase64 是否已赋值
                      * @return PayloadBase64 是否已赋值
+                     * 
                      */
                     bool PayloadBase64HasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取是否有库存
                      * @return HasStock 是否有库存
+                     * 
                      */
                     bool GetHasStock() const;
 
                     /**
                      * 设置是否有库存
-                     * @param HasStock 是否有库存
+                     * @param _hasStock 是否有库存
+                     * 
                      */
                     void SetHasStock(const bool& _hasStock);
 
                     /**
                      * 判断参数 HasStock 是否已赋值
                      * @return HasStock 是否已赋值
+                     * 
                      */
                     bool HasStockHasBeenSet() const;
 
                     /**
                      * 获取库存数量
                      * @return StockCount 库存数量
+                     * 
                      */
                     int64_t GetStockCount() const;
 
                     /**
                      * 设置库存数量
-                     * @param StockCount 库存数量
+                     * @param _stockCount 库存数量
+                     * 
                      */
                     void SetStockCount(const int64_t& _stockCount);
 
                     /**
                      * 判断参数 StockCount 是否已赋值
                      * @return StockCount 是否已赋值
+                     * 
                      */
                     bool StockCountHasBeenSet() const;
 

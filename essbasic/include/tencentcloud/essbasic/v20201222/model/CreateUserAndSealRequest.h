@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取第三方平台唯一标识，要求应用内OpenId唯一
                      * @return OpenId 第三方平台唯一标识，要求应用内OpenId唯一
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置第三方平台唯一标识，要求应用内OpenId唯一
-                     * @param OpenId 第三方平台唯一标识，要求应用内OpenId唯一
+                     * @param _openId 第三方平台唯一标识，要求应用内OpenId唯一
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取用户姓名
                      * @return Name 用户姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户姓名
-                     * @param Name 用户姓名
+                     * @param _name 用户姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -106,6 +115,7 @@ namespace TencentCloud
 1. ID_CARD - 居民身份证
 5. HOUSEHOLD_REGISTER - 户口本
 6. TEMP_ID_CARD - 临时居民身份证
+                     * 
                      */
                     std::string GetIdCardType() const;
 
@@ -114,124 +124,144 @@ namespace TencentCloud
 1. ID_CARD - 居民身份证
 5. HOUSEHOLD_REGISTER - 户口本
 6. TEMP_ID_CARD - 临时居民身份证
-                     * @param IdCardType 用户证件类型：
+                     * @param _idCardType 用户证件类型：
 1. ID_CARD - 居民身份证
 5. HOUSEHOLD_REGISTER - 户口本
 6. TEMP_ID_CARD - 临时居民身份证
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取用户证件号
                      * @return IdCardNumber 用户证件号
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置用户证件号
-                     * @param IdCardNumber 用户证件号
+                     * @param _idCardNumber 用户证件号
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取请求生成个人印章的客户端IP
                      * @return SourceIp 请求生成个人印章的客户端IP
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求生成个人印章的客户端IP
-                     * @param SourceIp 请求生成个人印章的客户端IP
+                     * @param _sourceIp 请求生成个人印章的客户端IP
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 
                     /**
                      * 获取用户手机号码，不要求唯一
                      * @return Mobile 用户手机号码，不要求唯一
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置用户手机号码，不要求唯一
-                     * @param Mobile 用户手机号码，不要求唯一
+                     * @param _mobile 用户手机号码，不要求唯一
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取用户邮箱，不要求唯一
                      * @return Email 用户邮箱，不要求唯一
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置用户邮箱，不要求唯一
-                     * @param Email 用户邮箱，不要求唯一
+                     * @param _email 用户邮箱，不要求唯一
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取默认印章名称
                      * @return SealName 默认印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置默认印章名称
-                     * @param SealName 默认印章名称
+                     * @param _sealName 默认印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)
                      * @return UseOpenId 是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)
+                     * 
                      */
                     bool GetUseOpenId() const;
 
                     /**
                      * 设置是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)
-                     * @param UseOpenId 是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)
+                     * @param _useOpenId 是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)
+                     * 
                      */
                     void SetUseOpenId(const bool& _useOpenId);
 
                     /**
                      * 判断参数 UseOpenId 是否已赋值
                      * @return UseOpenId 是否已赋值
+                     * 
                      */
                     bool UseOpenIdHasBeenSet() const;
 

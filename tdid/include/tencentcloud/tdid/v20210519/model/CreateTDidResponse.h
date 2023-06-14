@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取TDID
                      * @return Did TDID
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 

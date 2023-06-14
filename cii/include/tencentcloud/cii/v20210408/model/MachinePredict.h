@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取核保引擎名称
                      * @return Title 核保引擎名称
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置核保引擎名称
-                     * @param Title 核保引擎名称
+                     * @param _title 核保引擎名称
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取核保结论：加费、承保、拒保、延期、除外、加费+除外
                      * @return Conclusion 核保结论：加费、承保、拒保、延期、除外、加费+除外
+                     * 
                      */
                     std::string GetConclusion() const;
 
                     /**
                      * 设置核保结论：加费、承保、拒保、延期、除外、加费+除外
-                     * @param Conclusion 核保结论：加费、承保、拒保、延期、除外、加费+除外
+                     * @param _conclusion 核保结论：加费、承保、拒保、延期、除外、加费+除外
+                     * 
                      */
                     void SetConclusion(const std::string& _conclusion);
 
                     /**
                      * 判断参数 Conclusion 是否已赋值
                      * @return Conclusion 是否已赋值
+                     * 
                      */
                     bool ConclusionHasBeenSet() const;
 
                     /**
                      * 获取AI决策树解释
                      * @return Explanation AI决策树解释
+                     * 
                      */
                     std::vector<UnderwriteItem> GetExplanation() const;
 
                     /**
                      * 设置AI决策树解释
-                     * @param Explanation AI决策树解释
+                     * @param _explanation AI决策树解释
+                     * 
                      */
                     void SetExplanation(const std::vector<UnderwriteItem>& _explanation);
 
                     /**
                      * 判断参数 Explanation 是否已赋值
                      * @return Explanation 是否已赋值
+                     * 
                      */
                     bool ExplanationHasBeenSet() const;
 
                     /**
                      * 获取疾病指标
                      * @return Disease 疾病指标
+                     * 
                      */
                     std::vector<UnderwriteItem> GetDisease() const;
 
                     /**
                      * 设置疾病指标
-                     * @param Disease 疾病指标
+                     * @param _disease 疾病指标
+                     * 
                      */
                     void SetDisease(const std::vector<UnderwriteItem>& _disease);
 
                     /**
                      * 判断参数 Disease 是否已赋值
                      * @return Disease 是否已赋值
+                     * 
                      */
                     bool DiseaseHasBeenSet() const;
 
                     /**
                      * 获取检查异常
                      * @return Laboratory 检查异常
+                     * 
                      */
                     std::vector<UnderwriteItem> GetLaboratory() const;
 
                     /**
                      * 设置检查异常
-                     * @param Laboratory 检查异常
+                     * @param _laboratory 检查异常
+                     * 
                      */
                     void SetLaboratory(const std::vector<UnderwriteItem>& _laboratory);
 
                     /**
                      * 判断参数 Laboratory 是否已赋值
                      * @return Laboratory 是否已赋值
+                     * 
                      */
                     bool LaboratoryHasBeenSet() const;
 

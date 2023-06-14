@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取事件表名
                      * @return TableName 事件表名
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置事件表名
-                     * @param TableName 事件表名
+                     * @param _tableName 事件表名
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取事件表id号
                      * @return Ids 事件表id号
+                     * 
                      */
                     std::vector<int64_t> GetIds() const;
 
                     /**
                      * 设置事件表id号
-                     * @param Ids 事件表id号
+                     * @param _ids 事件表id号
+                     * 
                      */
                     void SetIds(const std::vector<int64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

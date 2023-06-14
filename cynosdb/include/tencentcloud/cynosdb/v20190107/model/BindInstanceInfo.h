@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 绑定的实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置绑定的实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 绑定的实例ID
+                     * @param _instanceId 绑定的实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceRegion 绑定的实例所在的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置绑定的实例所在的地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceRegion 绑定的实例所在的地域
+                     * @param _instanceRegion 绑定的实例所在的地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 绑定的实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置绑定的实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 绑定的实例类型
+                     * @param _instanceType 绑定的实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

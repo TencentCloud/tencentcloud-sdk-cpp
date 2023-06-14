@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取所查询域名名称
                      * @return DomainName 所查询域名名称
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置所查询域名名称
-                     * @param DomainName 所查询域名名称
+                     * @param _domainName 所查询域名名称
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取年限。该参数为空时无法查询溢价词域名
                      * @return Period 年限。该参数为空时无法查询溢价词域名
+                     * 
                      */
                     std::string GetPeriod() const;
 
                     /**
                      * 设置年限。该参数为空时无法查询溢价词域名
-                     * @param Period 年限。该参数为空时无法查询溢价词域名
+                     * @param _period 年限。该参数为空时无法查询溢价词域名
+                     * 
                      */
                     void SetPeriod(const std::string& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

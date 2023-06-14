@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的域名
                      * @return Domain 需要查询的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要查询的域名
-                     * @param Domain 需要查询的域名
+                     * @param _domain 需要查询的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取请求的白名单匹配路径
                      * @return Url 请求的白名单匹配路径
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置请求的白名单匹配路径
-                     * @param Url 请求的白名单匹配路径
+                     * @param _url 请求的白名单匹配路径
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取翻到多少页
                      * @return Page 翻到多少页
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置翻到多少页
-                     * @param Page 翻到多少页
+                     * @param _page 翻到多少页
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页展示的条数
                      * @return Count 每页展示的条数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置每页展示的条数
-                     * @param Count 每页展示的条数
+                     * @param _count 每页展示的条数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取排序方式,desc表示降序，asc表示升序
                      * @return Sort 排序方式,desc表示降序，asc表示升序
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置排序方式,desc表示降序，asc表示升序
-                     * @param Sort 排序方式,desc表示降序，asc表示升序
+                     * @param _sort 排序方式,desc表示降序，asc表示升序
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取规则ID
                      * @return RuleId 规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID
-                     * @param RuleId 规则ID
+                     * @param _ruleId 规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取总数量
                      * @return Total 总数量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取当前页station数量
                      * @return Size 当前页station数量
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取剩余数量（total-offset-size），通过这个值判断是否还有下一页
                      * @return HaveMore 剩余数量（total-offset-size），通过这个值判断是否还有下一页
+                     * 
                      */
                     uint64_t GetHaveMore() const;
 
                     /**
                      * 判断参数 HaveMore 是否已赋值
                      * @return HaveMore 是否已赋值
+                     * 
                      */
                     bool HaveMoreHasBeenSet() const;
 
@@ -97,12 +105,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stations Stations 素材库列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Station> GetStations() const;
 
                     /**
                      * 判断参数 Stations 是否已赋值
                      * @return Stations 是否已赋值
+                     * 
                      */
                     bool StationsHasBeenSet() const;
 

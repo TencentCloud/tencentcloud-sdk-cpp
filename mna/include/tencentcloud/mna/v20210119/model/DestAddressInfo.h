@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取加速业务目标 ip 地址数组
                      * @return DestIp 加速业务目标 ip 地址数组
+                     * 
                      */
                     std::vector<std::string> GetDestIp() const;
 
                     /**
                      * 设置加速业务目标 ip 地址数组
-                     * @param DestIp 加速业务目标 ip 地址数组
+                     * @param _destIp 加速业务目标 ip 地址数组
+                     * 
                      */
                     void SetDestIp(const std::vector<std::string>& _destIp);
 
                     /**
                      * 判断参数 DestIp 是否已赋值
                      * @return DestIp 是否已赋值
+                     * 
                      */
                     bool DestIpHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点池ID
                      * @return NodePoolId 节点池ID
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池ID
-                     * @param NodePoolId 节点池ID
+                     * @param _nodePoolId 节点池ID
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return NodeNames 节点名称
+                     * 
                      */
                     std::vector<std::string> GetNodeNames() const;
 
                     /**
                      * 设置节点名称
-                     * @param NodeNames 节点名称
+                     * @param _nodeNames 节点名称
+                     * 
                      */
                     void SetNodeNames(const std::vector<std::string>& _nodeNames);
 
                     /**
                      * 判断参数 NodeNames 是否已赋值
                      * @return NodeNames 是否已赋值
+                     * 
                      */
                     bool NodeNamesHasBeenSet() const;
 

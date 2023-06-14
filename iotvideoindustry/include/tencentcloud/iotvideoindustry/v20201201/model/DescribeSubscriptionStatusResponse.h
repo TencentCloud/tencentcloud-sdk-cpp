@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取设备GB28181报警订阅状态 1：未开启订阅；2：已开启订阅
                      * @return AlarmStatus 设备GB28181报警订阅状态 1：未开启订阅；2：已开启订阅
+                     * 
                      */
                     int64_t GetAlarmStatus() const;
 
                     /**
                      * 判断参数 AlarmStatus 是否已赋值
                      * @return AlarmStatus 是否已赋值
+                     * 
                      */
                     bool AlarmStatusHasBeenSet() const;
 

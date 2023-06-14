@@ -66,48 +66,56 @@ namespace TencentCloud
 -5: 证件库中无此身份证记录
 -6: 权威比对系统升级中，请稍后再试
 -7: 认证次数超过当日限制
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取用于验证的姓名
                      * @return Name 用于验证的姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用于验证的身份证号
                      * @return IdCard 用于验证的身份证号
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
@@ -116,12 +124,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sex OCR得到的性别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
@@ -130,12 +140,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nation OCR得到的民族
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNation() const;
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
+                     * 
                      */
                     bool NationHasBeenSet() const;
 
@@ -144,12 +156,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Birth OCR得到的生日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBirth() const;
 
                     /**
                      * 判断参数 Birth 是否已赋值
                      * @return Birth 是否已赋值
+                     * 
                      */
                     bool BirthHasBeenSet() const;
 
@@ -158,12 +172,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address OCR得到的地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 

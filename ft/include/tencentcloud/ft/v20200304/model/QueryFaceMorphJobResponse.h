@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取当前任务状态：排队中、处理中、处理失败或者处理完成
                      * @return JobStatus 当前任务状态：排队中、处理中、处理失败或者处理完成
+                     * 
                      */
                     std::string GetJobStatus() const;
 
                     /**
                      * 判断参数 JobStatus 是否已赋值
                      * @return JobStatus 是否已赋值
+                     * 
                      */
                     bool JobStatusHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceMorphOutput 人像渐变输出的结果信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FaceMorphOutput GetFaceMorphOutput() const;
 
                     /**
                      * 判断参数 FaceMorphOutput 是否已赋值
                      * @return FaceMorphOutput 是否已赋值
+                     * 
                      */
                     bool FaceMorphOutputHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobStatusCode 当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetJobStatusCode() const;
 
                     /**
                      * 判断参数 JobStatusCode 是否已赋值
                      * @return JobStatusCode 是否已赋值
+                     * 
                      */
                     bool JobStatusCodeHasBeenSet() const;
 

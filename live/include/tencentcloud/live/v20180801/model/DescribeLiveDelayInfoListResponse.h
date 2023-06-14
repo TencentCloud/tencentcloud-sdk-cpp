@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取延播信息列表。
                      * @return DelayInfoList 延播信息列表。
+                     * 
                      */
                     std::vector<DelayInfo> GetDelayInfoList() const;
 
                     /**
                      * 判断参数 DelayInfoList 是否已赋值
                      * @return DelayInfoList 是否已赋值
+                     * 
                      */
                     bool DelayInfoListHasBeenSet() const;
 

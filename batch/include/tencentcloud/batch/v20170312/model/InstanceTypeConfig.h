@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取内存容量，单位：`GB`。
                      * @return Mem 内存容量，单位：`GB`。
+                     * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置内存容量，单位：`GB`。
-                     * @param Mem 内存容量，单位：`GB`。
+                     * @param _mem 内存容量，单位：`GB`。
+                     * 
                      */
                     void SetMem(const int64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
                     /**
                      * 获取CPU核数，单位：核。
                      * @return Cpu CPU核数，单位：核。
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数，单位：核。
-                     * @param Cpu CPU核数，单位：核。
+                     * @param _cpu CPU核数，单位：核。
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取实例机型。
                      * @return InstanceType 实例机型。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例机型。
-                     * @param InstanceType 实例机型。
+                     * @param _instanceType 实例机型。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例机型系列。
                      * @return InstanceFamily 实例机型系列。
+                     * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
                      * 设置实例机型系列。
-                     * @param InstanceFamily 实例机型系列。
+                     * @param _instanceFamily 实例机型系列。
+                     * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
 
                     /**
                      * 判断参数 InstanceFamily 是否已赋值
                      * @return InstanceFamily 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域，形如ap-xian-ecm。
                      * @return EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域，形如ap-xian-ecm。
-                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
+                     * @param _ecmRegion ECM 地域，形如ap-xian-ecm。
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务ID，全局唯一标识截图任务。返回TaskId字段说明截图任务创建成功。
                      * @return TaskId 任务ID，全局唯一标识截图任务。返回TaskId字段说明截图任务创建成功。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

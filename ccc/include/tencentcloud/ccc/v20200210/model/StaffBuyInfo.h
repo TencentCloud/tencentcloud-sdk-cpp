@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取购买坐席数量
                      * @return Num 购买坐席数量
+                     * 
                      */
                     int64_t GetNum() const;
 
                     /**
                      * 设置购买坐席数量
-                     * @param Num 购买坐席数量
+                     * @param _num 购买坐席数量
+                     * 
                      */
                     void SetNum(const int64_t& _num);
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 
                     /**
                      * 获取购买时间戳
                      * @return BuyTime 购买时间戳
+                     * 
                      */
                     int64_t GetBuyTime() const;
 
                     /**
                      * 设置购买时间戳
-                     * @param BuyTime 购买时间戳
+                     * @param _buyTime 购买时间戳
+                     * 
                      */
                     void SetBuyTime(const int64_t& _buyTime);
 
                     /**
                      * 判断参数 BuyTime 是否已赋值
                      * @return BuyTime 是否已赋值
+                     * 
                      */
                     bool BuyTimeHasBeenSet() const;
 
                     /**
                      * 获取截止时间戳
                      * @return EndTime 截止时间戳
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置截止时间戳
-                     * @param EndTime 截止时间戳
+                     * @param _endTime 截止时间戳
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

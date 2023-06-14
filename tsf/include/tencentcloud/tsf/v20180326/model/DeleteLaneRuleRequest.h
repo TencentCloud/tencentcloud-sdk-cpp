@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取泳道规则Id
                      * @return RuleId 泳道规则Id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置泳道规则Id
-                     * @param RuleId 泳道规则Id
+                     * @param _ruleId 泳道规则Id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

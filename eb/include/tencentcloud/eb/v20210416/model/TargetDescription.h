@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
                      * @return ResourceDescription QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     std::string GetResourceDescription() const;
 
                     /**
                      * 设置QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
-                     * @param ResourceDescription QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * @param _resourceDescription QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     void SetResourceDescription(const std::string& _resourceDescription);
 
                     /**
                      * 判断参数 ResourceDescription 是否已赋值
                      * @return ResourceDescription 是否已赋值
+                     * 
                      */
                     bool ResourceDescriptionHasBeenSet() const;
 
                     /**
                      * 获取云函数参数
                      * @return SCFParams 云函数参数
+                     * 
                      */
                     SCFParams GetSCFParams() const;
 
                     /**
                      * 设置云函数参数
-                     * @param SCFParams 云函数参数
+                     * @param _sCFParams 云函数参数
+                     * 
                      */
                     void SetSCFParams(const SCFParams& _sCFParams);
 
                     /**
                      * 判断参数 SCFParams 是否已赋值
                      * @return SCFParams 是否已赋值
+                     * 
                      */
                     bool SCFParamsHasBeenSet() const;
 
                     /**
                      * 获取Ckafka参数
                      * @return CkafkaTargetParams Ckafka参数
+                     * 
                      */
                     CkafkaTargetParams GetCkafkaTargetParams() const;
 
                     /**
                      * 设置Ckafka参数
-                     * @param CkafkaTargetParams Ckafka参数
+                     * @param _ckafkaTargetParams Ckafka参数
+                     * 
                      */
                     void SetCkafkaTargetParams(const CkafkaTargetParams& _ckafkaTargetParams);
 
                     /**
                      * 判断参数 CkafkaTargetParams 是否已赋值
                      * @return CkafkaTargetParams 是否已赋值
+                     * 
                      */
                     bool CkafkaTargetParamsHasBeenSet() const;
 
                     /**
                      * 获取ElasticSearch参数
                      * @return ESTargetParams ElasticSearch参数
+                     * 
                      */
                     ESTargetParams GetESTargetParams() const;
 
                     /**
                      * 设置ElasticSearch参数
-                     * @param ESTargetParams ElasticSearch参数
+                     * @param _eSTargetParams ElasticSearch参数
+                     * 
                      */
                     void SetESTargetParams(const ESTargetParams& _eSTargetParams);
 
                     /**
                      * 判断参数 ESTargetParams 是否已赋值
                      * @return ESTargetParams 是否已赋值
+                     * 
                      */
                     bool ESTargetParamsHasBeenSet() const;
 

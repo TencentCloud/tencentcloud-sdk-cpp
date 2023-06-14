@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取按设备区分的会话详细数据
                      * @return Details 按设备区分的会话详细数据
+                     * 
                      */
                     std::vector<SessionDeviceDetail> GetDetails() const;
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

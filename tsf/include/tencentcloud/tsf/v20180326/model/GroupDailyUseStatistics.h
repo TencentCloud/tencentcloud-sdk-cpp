@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取总调用数
                      * @return TopReqAmount 总调用数
+                     * 
                      */
                     std::vector<GroupUseStatisticsEntity> GetTopReqAmount() const;
 
                     /**
                      * 设置总调用数
-                     * @param TopReqAmount 总调用数
+                     * @param _topReqAmount 总调用数
+                     * 
                      */
                     void SetTopReqAmount(const std::vector<GroupUseStatisticsEntity>& _topReqAmount);
 
                     /**
                      * 判断参数 TopReqAmount 是否已赋值
                      * @return TopReqAmount 是否已赋值
+                     * 
                      */
                     bool TopReqAmountHasBeenSet() const;
 
                     /**
                      * 获取平均错误率
                      * @return TopFailureRate 平均错误率
+                     * 
                      */
                     std::vector<GroupUseStatisticsEntity> GetTopFailureRate() const;
 
                     /**
                      * 设置平均错误率
-                     * @param TopFailureRate 平均错误率
+                     * @param _topFailureRate 平均错误率
+                     * 
                      */
                     void SetTopFailureRate(const std::vector<GroupUseStatisticsEntity>& _topFailureRate);
 
                     /**
                      * 判断参数 TopFailureRate 是否已赋值
                      * @return TopFailureRate 是否已赋值
+                     * 
                      */
                     bool TopFailureRateHasBeenSet() const;
 
                     /**
                      * 获取平均响应耗时
                      * @return TopAvgTimeCost 平均响应耗时
+                     * 
                      */
                     std::vector<GroupUseStatisticsEntity> GetTopAvgTimeCost() const;
 
                     /**
                      * 设置平均响应耗时
-                     * @param TopAvgTimeCost 平均响应耗时
+                     * @param _topAvgTimeCost 平均响应耗时
+                     * 
                      */
                     void SetTopAvgTimeCost(const std::vector<GroupUseStatisticsEntity>& _topAvgTimeCost);
 
                     /**
                      * 判断参数 TopAvgTimeCost 是否已赋值
                      * @return TopAvgTimeCost 是否已赋值
+                     * 
                      */
                     bool TopAvgTimeCostHasBeenSet() const;
 

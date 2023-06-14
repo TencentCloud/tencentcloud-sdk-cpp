@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取（旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。
                      * @return InstanceIds （旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置（旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。
-                     * @param InstanceIds （旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。
+                     * @param _instanceIds （旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取通道名称。可任意命名，但不得超过30个字符。
                      * @return ProxyName 通道名称。可任意命名，但不得超过30个字符。
+                     * 
                      */
                     std::string GetProxyName() const;
 
                     /**
                      * 设置通道名称。可任意命名，但不得超过30个字符。
-                     * @param ProxyName 通道名称。可任意命名，但不得超过30个字符。
+                     * @param _proxyName 通道名称。可任意命名，但不得超过30个字符。
+                     * 
                      */
                     void SetProxyName(const std::string& _proxyName);
 
                     /**
                      * 判断参数 ProxyName 是否已赋值
                      * @return ProxyName 是否已赋值
+                     * 
                      */
                     bool ProxyNameHasBeenSet() const;
 
@@ -83,38 +89,44 @@ namespace TencentCloud
 更多详细信息请参阅：如何保证幂等性。
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
 更多详细信息请参阅：如何保证幂等性。
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
 更多详细信息请参阅：如何保证幂等性。
-                     * @param ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
 更多详细信息请参阅：如何保证幂等性。
+                     * 
                      */
                     void SetClientToken(const std::string& _clientToken);
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 
                     /**
                      * 获取（新参数）一个或多个待操作的通道ID。
                      * @return ProxyIds （新参数）一个或多个待操作的通道ID。
+                     * 
                      */
                     std::vector<std::string> GetProxyIds() const;
 
                     /**
                      * 设置（新参数）一个或多个待操作的通道ID。
-                     * @param ProxyIds （新参数）一个或多个待操作的通道ID。
+                     * @param _proxyIds （新参数）一个或多个待操作的通道ID。
+                     * 
                      */
                     void SetProxyIds(const std::vector<std::string>& _proxyIds);
 
                     /**
                      * 判断参数 ProxyIds 是否已赋值
                      * @return ProxyIds 是否已赋值
+                     * 
                      */
                     bool ProxyIdsHasBeenSet() const;
 

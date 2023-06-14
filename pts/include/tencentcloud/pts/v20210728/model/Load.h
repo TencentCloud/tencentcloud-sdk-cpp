@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadSpec 施压配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LoadSpec GetLoadSpec() const;
 
                     /**
                      * 设置施压配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadSpec 施压配置
+                     * @param _loadSpec 施压配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadSpec(const LoadSpec& _loadSpec);
 
                     /**
                      * 判断参数 LoadSpec 是否已赋值
                      * @return LoadSpec 是否已赋值
+                     * 
                      */
                     bool LoadSpecHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcLoadDistribution 压力来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VpcLoadDistribution GetVpcLoadDistribution() const;
 
                     /**
                      * 设置压力来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcLoadDistribution 压力来源
+                     * @param _vpcLoadDistribution 压力来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcLoadDistribution(const VpcLoadDistribution& _vpcLoadDistribution);
 
                     /**
                      * 判断参数 VpcLoadDistribution 是否已赋值
                      * @return VpcLoadDistribution 是否已赋值
+                     * 
                      */
                     bool VpcLoadDistributionHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeoRegionsLoadDistribution 压力分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GeoRegionsLoadItem> GetGeoRegionsLoadDistribution() const;
 
                     /**
                      * 设置压力分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GeoRegionsLoadDistribution 压力分布
+                     * @param _geoRegionsLoadDistribution 压力分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGeoRegionsLoadDistribution(const std::vector<GeoRegionsLoadItem>& _geoRegionsLoadDistribution);
 
                     /**
                      * 判断参数 GeoRegionsLoadDistribution 是否已赋值
                      * @return GeoRegionsLoadDistribution 是否已赋值
+                     * 
                      */
                     bool GeoRegionsLoadDistributionHasBeenSet() const;
 

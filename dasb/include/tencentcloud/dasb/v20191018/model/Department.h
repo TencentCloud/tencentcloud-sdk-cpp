@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取部门ID
                      * @return Id 部门ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置部门ID
-                     * @param Id 部门ID
+                     * @param _id 部门ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取部门名称，1 - 256个字符
                      * @return Name 部门名称，1 - 256个字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置部门名称，1 - 256个字符
-                     * @param Name 部门名称，1 - 256个字符
+                     * @param _name 部门名称，1 - 256个字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Managers 部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetManagers() const;
 
                     /**
                      * 设置部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Managers 部门管理员账号ID
+                     * @param _managers 部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManagers(const std::vector<std::string>& _managers);
 
                     /**
                      * 判断参数 Managers 是否已赋值
                      * @return Managers 是否已赋值
+                     * 
                      */
                     bool ManagersHasBeenSet() const;
 

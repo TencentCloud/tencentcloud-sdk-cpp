@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用 EKS Service 列表
                      * @return Result 应用 EKS Service 列表
+                     * 
                      */
                     EksService GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

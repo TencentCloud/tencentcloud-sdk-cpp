@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取true表示已开通
                      * @return Initialized true表示已开通
+                     * 
                      */
                     bool GetInitialized() const;
 
                     /**
                      * 判断参数 Initialized 是否已赋值
                      * @return Initialized 是否已赋值
+                     * 
                      */
                     bool InitializedHasBeenSet() const;
 

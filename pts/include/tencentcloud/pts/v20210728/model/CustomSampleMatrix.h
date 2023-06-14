@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取指标名字
                      * @return Metric 指标名字
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名字
-                     * @param Metric 指标名字
+                     * @param _metric 指标名字
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合函数
                      * @return Aggregation 聚合函数
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置聚合函数
-                     * @param Aggregation 聚合函数
+                     * @param _aggregation 聚合函数
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 指标单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 指标单位
+                     * @param _unit 指标单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Streams 指标序列数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SampleStream> GetStreams() const;
 
                     /**
                      * 设置指标序列数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Streams 指标序列数组
+                     * @param _streams 指标序列数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreams(const std::vector<SampleStream>& _streams);
 
                     /**
                      * 判断参数 Streams 是否已赋值
                      * @return Streams 是否已赋值
+                     * 
                      */
                     bool StreamsHasBeenSet() const;
 

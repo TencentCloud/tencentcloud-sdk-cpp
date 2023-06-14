@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 通知事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEvents() const;
 
                     /**
                      * 设置通知事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Events 通知事件
+                     * @param _events 通知事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEvents(const std::vector<std::string>& _events);
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 回调 URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置回调 URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param URL 回调 URL
+                     * @param _uRL 回调 URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 

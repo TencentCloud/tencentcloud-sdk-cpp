@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取活动id列表
                      * @return ActivityIdList 活动id列表
+                     * 
                      */
                     std::vector<int64_t> GetActivityIdList() const;
 
                     /**
                      * 设置活动id列表
-                     * @param ActivityIdList 活动id列表
+                     * @param _activityIdList 活动id列表
+                     * 
                      */
                     void SetActivityIdList(const std::vector<int64_t>& _activityIdList);
 
                     /**
                      * 判断参数 ActivityIdList 是否已赋值
                      * @return ActivityIdList 是否已赋值
+                     * 
                      */
                     bool ActivityIdListHasBeenSet() const;
 

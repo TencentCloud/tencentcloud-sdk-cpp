@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetItem() const;
 
                     /**
                      * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Item 项目名称
+                     * @param _item 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItem(const BaseItem& _item);
 
                     /**
                      * 判断参数 Item 是否已赋值
                      * @return Item 是否已赋值
+                     * 
                      */
                     bool ItemHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 英文编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetCode() const;
 
                     /**
                      * 设置英文编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 英文编码
+                     * @param _code 英文编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const BaseItem& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetResult() const;
 
                     /**
                      * 设置结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 结果
+                     * @param _result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const BaseItem& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetUnit() const;
 
                     /**
                      * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 单位
+                     * @param _unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const BaseItem& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetRange() const;
 
                     /**
                      * 设置参考范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range 参考范围
+                     * @param _range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRange(const BaseItem& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetArrow() const;
 
                     /**
                      * 设置上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Arrow 上下箭头
+                     * @param _arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArrow(const BaseItem& _arrow);
 
                     /**
                      * 判断参数 Arrow 是否已赋值
                      * @return Arrow 是否已赋值
+                     * 
                      */
                     bool ArrowHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 检测方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetMethod() const;
 
                     /**
                      * 设置检测方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 检测方法
+                     * @param _method 检测方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const BaseItem& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Normal 结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetNormal() const;
 
                     /**
                      * 设置结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Normal 结果是否异常
+                     * @param _normal 结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNormal(const bool& _normal);
 
                     /**
                      * 判断参数 Normal 是否已赋值
                      * @return Normal 是否已赋值
+                     * 
                      */
                     bool NormalHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id ID
+                     * @param _id ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置序号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Order 序号
+                     * @param _order 序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InferNormal 推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInferNormal() const;
 
                     /**
                      * 设置推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InferNormal 推测结果是否异常
+                     * @param _inferNormal 推测结果是否异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInferNormal(const std::string& _inferNormal);
 
                     /**
                      * 判断参数 InferNormal 是否已赋值
                      * @return InferNormal 是否已赋值
+                     * 
                      */
                     bool InferNormalHasBeenSet() const;
 

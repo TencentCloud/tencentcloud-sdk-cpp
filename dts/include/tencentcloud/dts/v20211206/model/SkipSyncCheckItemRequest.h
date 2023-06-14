@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务id，如：sync-4ddgid2
                      * @return JobId 任务id，如：sync-4ddgid2
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务id，如：sync-4ddgid2
-                     * @param JobId 任务id，如：sync-4ddgid2
+                     * @param _jobId 任务id，如：sync-4ddgid2
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：["OptimizeCheck"]
                      * @return StepIds 需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：["OptimizeCheck"]
+                     * 
                      */
                     std::vector<std::string> GetStepIds() const;
 
                     /**
                      * 设置需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：["OptimizeCheck"]
-                     * @param StepIds 需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：["OptimizeCheck"]
+                     * @param _stepIds 需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：["OptimizeCheck"]
+                     * 
                      */
                     void SetStepIds(const std::vector<std::string>& _stepIds);
 
                     /**
                      * 判断参数 StepIds 是否已赋值
                      * @return StepIds 是否已赋值
+                     * 
                      */
                     bool StepIdsHasBeenSet() const;
 

@@ -57,6 +57,7 @@ namespace TencentCloud
 <li> notequal: 不等于；</li>
 <li> exist: 存在； </li>
 <li> notexist: 不存在。</li>
+                     * 
                      */
                     std::string GetOperator() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 <li> notequal: 不等于；</li>
 <li> exist: 存在； </li>
 <li> notexist: 不存在。</li>
-                     * @param Operator 运算符，取值有：
+                     * @param _operator 运算符，取值有：
 <li> equal: 等于； </li>
 <li> notequal: 不等于；</li>
 <li> exist: 存在； </li>
 <li> notexist: 不存在。</li>
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -97,6 +100,7 @@ namespace TencentCloud
 <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
 <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
 <li> request_header：HTTP请求头部。 </li>
+                     * 
                      */
                     std::string GetTarget() const;
 
@@ -109,7 +113,7 @@ namespace TencentCloud
 <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
 <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
 <li> request_header：HTTP请求头部。 </li>
-                     * @param Target 匹配类型，取值有：
+                     * @param _target 匹配类型，取值有：
 <li> filename：文件名； </li>
 <li> extension：文件后缀； </li>
 <li> host：HOST； </li>
@@ -117,12 +121,14 @@ namespace TencentCloud
 <li> url：URL Path，当前站点下 URL 路径的请求； </li><li>client_country：客户端国家/地区；</li>
 <li> query_string：查询字符串，当前站点下请求URL的查询字符串； </li>
 <li> request_header：HTTP请求头部。 </li>
+                     * 
                      */
                     void SetTarget(const std::string& _target);
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
@@ -147,6 +153,7 @@ namespace TencentCloud
 <li> 客户端国家/地区：符合ISO3166标准的国家/地区标识；</li>
 <li> 查询字符串: 当前站点下URL请求中查询字符串的参数值，例如lang=cn&version=1中的cn和1； </li>
 <li> HTTP 请求头: HTTP请求头部字段值，例如Accept-Language:zh-CN,zh;q=0.9中的zh-CN,zh;q=0.9。 </li>
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
@@ -161,7 +168,7 @@ namespace TencentCloud
 <li> 客户端国家/地区：符合ISO3166标准的国家/地区标识；</li>
 <li> 查询字符串: 当前站点下URL请求中查询字符串的参数值，例如lang=cn&version=1中的cn和1； </li>
 <li> HTTP 请求头: HTTP请求头部字段值，例如Accept-Language:zh-CN,zh;q=0.9中的zh-CN,zh;q=0.9。 </li>
-                     * @param Values 对应匹配类型的参数值，仅在匹配类型为查询字符串或HTTP请求头并且运算符取值为存在或不存在时允许传空数组，对应匹配类型有：
+                     * @param _values 对应匹配类型的参数值，仅在匹配类型为查询字符串或HTTP请求头并且运算符取值为存在或不存在时允许传空数组，对应匹配类型有：
 <li> 文件后缀：jpg、txt等文件后缀；</li>
 <li> 文件名称：例如 foo.jpg 中的 foo；</li>
 <li> 全部（站点任意请求）： all； </li>
@@ -171,30 +178,35 @@ namespace TencentCloud
 <li> 客户端国家/地区：符合ISO3166标准的国家/地区标识；</li>
 <li> 查询字符串: 当前站点下URL请求中查询字符串的参数值，例如lang=cn&version=1中的cn和1； </li>
 <li> HTTP 请求头: HTTP请求头部字段值，例如Accept-Language:zh-CN,zh;q=0.9中的zh-CN,zh;q=0.9。 </li>
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否忽略参数值的大小写，默认值为 false。
                      * @return IgnoreCase 是否忽略参数值的大小写，默认值为 false。
+                     * 
                      */
                     bool GetIgnoreCase() const;
 
                     /**
                      * 设置是否忽略参数值的大小写，默认值为 false。
-                     * @param IgnoreCase 是否忽略参数值的大小写，默认值为 false。
+                     * @param _ignoreCase 是否忽略参数值的大小写，默认值为 false。
+                     * 
                      */
                     void SetIgnoreCase(const bool& _ignoreCase);
 
                     /**
                      * 判断参数 IgnoreCase 是否已赋值
                      * @return IgnoreCase 是否已赋值
+                     * 
                      */
                     bool IgnoreCaseHasBeenSet() const;
 
@@ -205,6 +217,7 @@ namespace TencentCloud
                      * @return Name 对应匹配类型的参数名称，在 Target 值为以下取值时有效，有效时值不能为空：
 <li> query_string（查询字符串）: 当前站点下URL请求中查询字符串的参数名称，例如lang=cn&version=1中的lang和version； </li>
 <li> request_header（HTTP 请求头）: HTTP请求头部字段名，例如Accept-Language:zh-CN,zh;q=0.9中的Accept-Language。 </li>
+                     * 
                      */
                     std::string GetName() const;
 
@@ -212,15 +225,17 @@ namespace TencentCloud
                      * 设置对应匹配类型的参数名称，在 Target 值为以下取值时有效，有效时值不能为空：
 <li> query_string（查询字符串）: 当前站点下URL请求中查询字符串的参数名称，例如lang=cn&version=1中的lang和version； </li>
 <li> request_header（HTTP 请求头）: HTTP请求头部字段名，例如Accept-Language:zh-CN,zh;q=0.9中的Accept-Language。 </li>
-                     * @param Name 对应匹配类型的参数名称，在 Target 值为以下取值时有效，有效时值不能为空：
+                     * @param _name 对应匹配类型的参数名称，在 Target 值为以下取值时有效，有效时值不能为空：
 <li> query_string（查询字符串）: 当前站点下URL请求中查询字符串的参数名称，例如lang=cn&version=1中的lang和version； </li>
 <li> request_header（HTTP 请求头）: HTTP请求头部字段名，例如Accept-Language:zh-CN,zh;q=0.9中的Accept-Language。 </li>
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -229,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreNameCase 是否忽略参数名称的大小写，默认值为 false。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIgnoreNameCase() const;
 
                     /**
                      * 设置是否忽略参数名称的大小写，默认值为 false。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreNameCase 是否忽略参数名称的大小写，默认值为 false。
+                     * @param _ignoreNameCase 是否忽略参数名称的大小写，默认值为 false。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreNameCase(const bool& _ignoreNameCase);
 
                     /**
                      * 判断参数 IgnoreNameCase 是否已赋值
                      * @return IgnoreNameCase 是否已赋值
+                     * 
                      */
                     bool IgnoreNameCaseHasBeenSet() const;
 

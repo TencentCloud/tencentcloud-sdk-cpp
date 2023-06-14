@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取设备id
                      * @return DeviceId 设备id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备id
-                     * @param DeviceId 设备id
+                     * @param _deviceId 设备id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备备注
                      * @return Remark 设备备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置设备备注
-                     * @param Remark 设备备注
+                     * @param _remark 设备备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取更新设备网络信息
                      * @return UpdateNetInfo 更新设备网络信息
+                     * 
                      */
                     std::vector<UpdateNetInfo> GetUpdateNetInfo() const;
 
                     /**
                      * 设置更新设备网络信息
-                     * @param UpdateNetInfo 更新设备网络信息
+                     * @param _updateNetInfo 更新设备网络信息
+                     * 
                      */
                     void SetUpdateNetInfo(const std::vector<UpdateNetInfo>& _updateNetInfo);
 
                     /**
                      * 判断参数 UpdateNetInfo 是否已赋值
                      * @return UpdateNetInfo 是否已赋值
+                     * 
                      */
                     bool UpdateNetInfoHasBeenSet() const;
 

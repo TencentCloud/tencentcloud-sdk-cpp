@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取技能组总数
                      * @return TotalCount 技能组总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取技能组信息列表
                      * @return SkillGroupList 技能组信息列表
+                     * 
                      */
                     std::vector<SkillGroupInfoItem> GetSkillGroupList() const;
 
                     /**
                      * 判断参数 SkillGroupList 是否已赋值
                      * @return SkillGroupList 是否已赋值
+                     * 
                      */
                     bool SkillGroupListHasBeenSet() const;
 

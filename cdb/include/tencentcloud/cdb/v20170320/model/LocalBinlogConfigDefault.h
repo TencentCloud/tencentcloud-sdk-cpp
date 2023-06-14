@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取本地binlog保留时长，可取值范围：[72,168]。
                      * @return SaveHours 本地binlog保留时长，可取值范围：[72,168]。
+                     * 
                      */
                     int64_t GetSaveHours() const;
 
                     /**
                      * 设置本地binlog保留时长，可取值范围：[72,168]。
-                     * @param SaveHours 本地binlog保留时长，可取值范围：[72,168]。
+                     * @param _saveHours 本地binlog保留时长，可取值范围：[72,168]。
+                     * 
                      */
                     void SetSaveHours(const int64_t& _saveHours);
 
                     /**
                      * 判断参数 SaveHours 是否已赋值
                      * @return SaveHours 是否已赋值
+                     * 
                      */
                     bool SaveHoursHasBeenSet() const;
 
                     /**
                      * 获取本地binlog空间使用率，可取值范围：[30,50]。
                      * @return MaxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 
                      */
                     int64_t GetMaxUsage() const;
 
                     /**
                      * 设置本地binlog空间使用率，可取值范围：[30,50]。
-                     * @param MaxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * @param _maxUsage 本地binlog空间使用率，可取值范围：[30,50]。
+                     * 
                      */
                     void SetMaxUsage(const int64_t& _maxUsage);
 
                     /**
                      * 判断参数 MaxUsage 是否已赋值
                      * @return MaxUsage 是否已赋值
+                     * 
                      */
                     bool MaxUsageHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取脚本名称，最大不能超过255个字符。
                      * @return ScriptName 脚本名称，最大不能超过255个字符。
+                     * 
                      */
                     std::string GetScriptName() const;
 
                     /**
                      * 设置脚本名称，最大不能超过255个字符。
-                     * @param ScriptName 脚本名称，最大不能超过255个字符。
+                     * @param _scriptName 脚本名称，最大不能超过255个字符。
+                     * 
                      */
                     void SetScriptName(const std::string& _scriptName);
 
                     /**
                      * 判断参数 ScriptName 是否已赋值
                      * @return ScriptName 是否已赋值
+                     * 
                      */
                     bool ScriptNameHasBeenSet() const;
 
                     /**
                      * 获取base64编码后的sql语句
                      * @return SQLStatement base64编码后的sql语句
+                     * 
                      */
                     std::string GetSQLStatement() const;
 
                     /**
                      * 设置base64编码后的sql语句
-                     * @param SQLStatement base64编码后的sql语句
+                     * @param _sQLStatement base64编码后的sql语句
+                     * 
                      */
                     void SetSQLStatement(const std::string& _sQLStatement);
 
                     /**
                      * 判断参数 SQLStatement 是否已赋值
                      * @return SQLStatement 是否已赋值
+                     * 
                      */
                     bool SQLStatementHasBeenSet() const;
 
                     /**
                      * 获取脚本描述， 不能超过50个字符
                      * @return ScriptDesc 脚本描述， 不能超过50个字符
+                     * 
                      */
                     std::string GetScriptDesc() const;
 
                     /**
                      * 设置脚本描述， 不能超过50个字符
-                     * @param ScriptDesc 脚本描述， 不能超过50个字符
+                     * @param _scriptDesc 脚本描述， 不能超过50个字符
+                     * 
                      */
                     void SetScriptDesc(const std::string& _scriptDesc);
 
                     /**
                      * 判断参数 ScriptDesc 是否已赋值
                      * @return ScriptDesc 是否已赋值
+                     * 
                      */
                     bool ScriptDescHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return DatabaseName 数据库名称
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 

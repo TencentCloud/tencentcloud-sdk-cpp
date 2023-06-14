@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取是否使用HostNetWork
                      * @return HostNet 是否使用HostNetWork
+                     * 
                      */
                     bool GetHostNet() const;
 
                     /**
                      * 设置是否使用HostNetWork
-                     * @param HostNet 是否使用HostNetWork
+                     * @param _hostNet 是否使用HostNetWork
+                     * 
                      */
                     void SetHostNet(const bool& _hostNet);
 
                     /**
                      * 判断参数 HostNet 是否已赋值
                      * @return HostNet 是否已赋值
+                     * 
                      */
                     bool HostNetHasBeenSet() const;
 
                     /**
                      * 获取指定pod运行节点
                      * @return NodeSelector 指定pod运行节点
+                     * 
                      */
                     std::vector<Label> GetNodeSelector() const;
 
                     /**
                      * 设置指定pod运行节点
-                     * @param NodeSelector 指定pod运行节点
+                     * @param _nodeSelector 指定pod运行节点
+                     * 
                      */
                     void SetNodeSelector(const std::vector<Label>& _nodeSelector);
 
                     /**
                      * 判断参数 NodeSelector 是否已赋值
                      * @return NodeSelector 是否已赋值
+                     * 
                      */
                     bool NodeSelectorHasBeenSet() const;
 
                     /**
                      * 获取容忍污点
                      * @return Tolerations 容忍污点
+                     * 
                      */
                     std::vector<Toleration> GetTolerations() const;
 
                     /**
                      * 设置容忍污点
-                     * @param Tolerations 容忍污点
+                     * @param _tolerations 容忍污点
+                     * 
                      */
                     void SetTolerations(const std::vector<Toleration>& _tolerations);
 
                     /**
                      * 判断参数 Tolerations 是否已赋值
                      * @return Tolerations 是否已赋值
+                     * 
                      */
                     bool TolerationsHasBeenSet() const;
 

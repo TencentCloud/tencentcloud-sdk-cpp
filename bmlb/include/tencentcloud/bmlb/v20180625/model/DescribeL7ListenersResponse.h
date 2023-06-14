@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的七层监听器列表。
                      * @return ListenerSet 返回的七层监听器列表。
+                     * 
                      */
                     std::vector<L7Listener> GetListenerSet() const;
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 

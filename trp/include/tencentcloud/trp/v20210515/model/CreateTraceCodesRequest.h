@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取码
                      * @return Codes 码
+                     * 
                      */
                     std::vector<CodeItem> GetCodes() const;
 
                     /**
                      * 设置码
-                     * @param Codes 码
+                     * @param _codes 码
+                     * 
                      */
                     void SetCodes(const std::vector<CodeItem>& _codes);
 
                     /**
                      * 判断参数 Codes 是否已赋值
                      * @return Codes 是否已赋值
+                     * 
                      */
                     bool CodesHasBeenSet() const;
 
@@ -104,6 +113,7 @@ namespace TencentCloud
                      * @return CodeType 码绑定激活策略，默认  0
 0: 传什么码就激活什么码
 1: 层级码 + 层级子码
+                     * 
                      */
                     uint64_t GetCodeType() const;
 
@@ -111,15 +121,17 @@ namespace TencentCloud
                      * 设置码绑定激活策略，默认  0
 0: 传什么码就激活什么码
 1: 层级码 + 层级子码
-                     * @param CodeType 码绑定激活策略，默认  0
+                     * @param _codeType 码绑定激活策略，默认  0
 0: 传什么码就激活什么码
 1: 层级码 + 层级子码
+                     * 
                      */
                     void SetCodeType(const uint64_t& _codeType);
 
                     /**
                      * 判断参数 CodeType 是否已赋值
                      * @return CodeType 是否已赋值
+                     * 
                      */
                     bool CodeTypeHasBeenSet() const;
 
@@ -130,6 +142,7 @@ namespace TencentCloud
                      * @return CheckType 错误检查类型，默认 0
 0: 没有新导入码时正常返回
 1: 没有新导入码时报错，并返回没有导入成功的原因
+                     * 
                      */
                     uint64_t GetCheckType() const;
 
@@ -137,15 +150,17 @@ namespace TencentCloud
                      * 设置错误检查类型，默认 0
 0: 没有新导入码时正常返回
 1: 没有新导入码时报错，并返回没有导入成功的原因
-                     * @param CheckType 错误检查类型，默认 0
+                     * @param _checkType 错误检查类型，默认 0
 0: 没有新导入码时正常返回
 1: 没有新导入码时报错，并返回没有导入成功的原因
+                     * 
                      */
                     void SetCheckType(const uint64_t& _checkType);
 
                     /**
                      * 判断参数 CheckType 是否已赋值
                      * @return CheckType 是否已赋值
+                     * 
                      */
                     bool CheckTypeHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的专用集群id
                      * @return DedicatedClusterId 创建的专用集群id
+                     * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 判断参数 DedicatedClusterId 是否已赋值
                      * @return DedicatedClusterId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 

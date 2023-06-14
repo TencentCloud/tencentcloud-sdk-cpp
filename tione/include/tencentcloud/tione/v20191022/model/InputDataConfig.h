@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelName 通道名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置通道名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelName 通道名
+                     * @param _channelName 通道名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSource 数据源配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DataSource GetDataSource() const;
 
                     /**
                      * 设置数据源配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSource 数据源配置
+                     * @param _dataSource 数据源配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSource(const DataSource& _dataSource);
 
                     /**
                      * 判断参数 DataSource 是否已赋值
                      * @return DataSource 是否已赋值
+                     * 
                      */
                     bool DataSourceHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputMode 输入类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInputMode() const;
 
                     /**
                      * 设置输入类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputMode 输入类型
+                     * @param _inputMode 输入类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputMode(const std::string& _inputMode);
 
                     /**
                      * 判断参数 InputMode 是否已赋值
                      * @return InputMode 是否已赋值
+                     * 
                      */
                     bool InputModeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置文件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContentType 文件类型
+                     * @param _contentType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否开启自动变配集群等级
                      * @return IsAutoUpgrade 是否开启自动变配集群等级
+                     * 
                      */
                     bool GetIsAutoUpgrade() const;
 
                     /**
                      * 设置是否开启自动变配集群等级
-                     * @param IsAutoUpgrade 是否开启自动变配集群等级
+                     * @param _isAutoUpgrade 是否开启自动变配集群等级
+                     * 
                      */
                     void SetIsAutoUpgrade(const bool& _isAutoUpgrade);
 
                     /**
                      * 判断参数 IsAutoUpgrade 是否已赋值
                      * @return IsAutoUpgrade 是否已赋值
+                     * 
                      */
                     bool IsAutoUpgradeHasBeenSet() const;
 

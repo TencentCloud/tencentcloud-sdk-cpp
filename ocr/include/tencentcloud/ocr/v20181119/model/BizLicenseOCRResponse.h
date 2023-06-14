@@ -46,120 +46,140 @@ namespace TencentCloud
                     /**
                      * 获取统一社会信用代码（三合一之前为注册号）
                      * @return RegNum 统一社会信用代码（三合一之前为注册号）
+                     * 
                      */
                     std::string GetRegNum() const;
 
                     /**
                      * 判断参数 RegNum 是否已赋值
                      * @return RegNum 是否已赋值
+                     * 
                      */
                     bool RegNumHasBeenSet() const;
 
                     /**
                      * 获取公司名称
                      * @return Name 公司名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取注册资本
                      * @return Capital 注册资本
+                     * 
                      */
                     std::string GetCapital() const;
 
                     /**
                      * 判断参数 Capital 是否已赋值
                      * @return Capital 是否已赋值
+                     * 
                      */
                     bool CapitalHasBeenSet() const;
 
                     /**
                      * 获取法定代表人
                      * @return Person 法定代表人
+                     * 
                      */
                     std::string GetPerson() const;
 
                     /**
                      * 判断参数 Person 是否已赋值
                      * @return Person 是否已赋值
+                     * 
                      */
                     bool PersonHasBeenSet() const;
 
                     /**
                      * 获取地址
                      * @return Address 地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取经营范围
                      * @return Business 经营范围
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取主体类型
                      * @return Type 主体类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取营业期限
                      * @return Period 营业期限
+                     * 
                      */
                     std::string GetPeriod() const;
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取组成形式
                      * @return ComposingForm 组成形式
+                     * 
                      */
                     std::string GetComposingForm() const;
 
                     /**
                      * 判断参数 ComposingForm 是否已赋值
                      * @return ComposingForm 是否已赋值
+                     * 
                      */
                     bool ComposingFormHasBeenSet() const;
 
                     /**
                      * 获取成立日期
                      * @return SetDate 成立日期
+                     * 
                      */
                     std::string GetSetDate() const;
 
                     /**
                      * 判断参数 SetDate 是否已赋值
                      * @return SetDate 是否已赋值
+                     * 
                      */
                     bool SetDateHasBeenSet() const;
 
@@ -168,12 +188,14 @@ namespace TencentCloud
 -9102 黑白复印件告警
                      * @return RecognizeWarnCode Code 告警码列表和释义：
 -9102 黑白复印件告警
+                     * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
 
                     /**
                      * 判断参数 RecognizeWarnCode 是否已赋值
                      * @return RecognizeWarnCode 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnCodeHasBeenSet() const;
 
@@ -182,36 +204,42 @@ namespace TencentCloud
 WARN_COPY_CARD 黑白复印件告警
                      * @return RecognizeWarnMsg 告警码说明：
 WARN_COPY_CARD 黑白复印件告警
+                     * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
 
                     /**
                      * 判断参数 RecognizeWarnMsg 是否已赋值
                      * @return RecognizeWarnMsg 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 
                     /**
                      * 获取是否为副本。1为是，-1为不是。
                      * @return IsDuplication 是否为副本。1为是，-1为不是。
+                     * 
                      */
                     int64_t GetIsDuplication() const;
 
                     /**
                      * 判断参数 IsDuplication 是否已赋值
                      * @return IsDuplication 是否已赋值
+                     * 
                      */
                     bool IsDuplicationHasBeenSet() const;
 
                     /**
                      * 获取登记日期
                      * @return RegistrationDate 登记日期
+                     * 
                      */
                     std::string GetRegistrationDate() const;
 
                     /**
                      * 判断参数 RegistrationDate 是否已赋值
                      * @return RegistrationDate 是否已赋值
+                     * 
                      */
                     bool RegistrationDateHasBeenSet() const;
 

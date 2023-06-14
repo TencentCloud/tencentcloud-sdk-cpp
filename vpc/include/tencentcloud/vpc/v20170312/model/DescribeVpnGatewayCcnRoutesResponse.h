@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取云联网路由（IDC网段）列表。
                      * @return RouteSet 云联网路由（IDC网段）列表。
+                     * 
                      */
                     std::vector<VpngwCcnRoutes> GetRouteSet() const;
 
                     /**
                      * 判断参数 RouteSet 是否已赋值
                      * @return RouteSet 是否已赋值
+                     * 
                      */
                     bool RouteSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

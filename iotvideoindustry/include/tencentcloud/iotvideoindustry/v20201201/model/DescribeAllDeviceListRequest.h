@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，默认0
                      * @return Offset 偏移量，默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * @param _offset 偏移量，默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制，默认200
                      * @return Limit 限制，默认200
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制，默认200
-                     * @param Limit 限制，默认200
+                     * @param _limit 限制，默认200
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取设备名称，需要模糊匹配设备名称时为必填
                      * @return NickName 设备名称，需要模糊匹配设备名称时为必填
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置设备名称，需要模糊匹配设备名称时为必填
-                     * @param NickName 设备名称，需要模糊匹配设备名称时为必填
+                     * @param _nickName 设备名称，需要模糊匹配设备名称时为必填
+                     * 
                      */
                     void SetNickName(const std::string& _nickName);
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
                     /**
                      * 获取DeviceId列表，需要精确查找设备时为必填
                      * @return DeviceIds DeviceId列表，需要精确查找设备时为必填
+                     * 
                      */
                     std::vector<std::string> GetDeviceIds() const;
 
                     /**
                      * 设置DeviceId列表，需要精确查找设备时为必填
-                     * @param DeviceIds DeviceId列表，需要精确查找设备时为必填
+                     * @param _deviceIds DeviceId列表，需要精确查找设备时为必填
+                     * 
                      */
                     void SetDeviceIds(const std::vector<std::string>& _deviceIds);
 
                     /**
                      * 判断参数 DeviceIds 是否已赋值
                      * @return DeviceIds 是否已赋值
+                     * 
                      */
                     bool DeviceIdsHasBeenSet() const;
 
                     /**
                      * 获取设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      * @return DeviceTypes 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * 
                      */
                     std::vector<int64_t> GetDeviceTypes() const;
 
                     /**
                      * 设置设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
-                     * @param DeviceTypes 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * @param _deviceTypes 设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * 
                      */
                     void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
 
                     /**
                      * 判断参数 DeviceTypes 是否已赋值
                      * @return DeviceTypes 是否已赋值
+                     * 
                      */
                     bool DeviceTypesHasBeenSet() const;
 

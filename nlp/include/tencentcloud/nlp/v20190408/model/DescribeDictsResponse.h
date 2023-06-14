@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取记录总条数。
                      * @return TotalCount 记录总条数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dicts 自定义词库信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DictInfo> GetDicts() const;
 
                     /**
                      * 判断参数 Dicts 是否已赋值
                      * @return Dicts 是否已赋值
+                     * 
                      */
                     bool DictsHasBeenSet() const;
 

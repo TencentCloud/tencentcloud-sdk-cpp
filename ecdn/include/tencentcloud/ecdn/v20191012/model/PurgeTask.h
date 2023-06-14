@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取刷新任务ID。
                      * @return TaskId 刷新任务ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置刷新任务ID。
-                     * @param TaskId 刷新任务ID。
+                     * @param _taskId 刷新任务ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取刷新Url。
                      * @return Url 刷新Url。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置刷新Url。
-                     * @param Url 刷新Url。
+                     * @param _url 刷新Url。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
                      * @return Status 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
-                     * @param Status 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * @param _status 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取刷新类型，url表示url刷新，path表示目录刷新。
                      * @return PurgeType 刷新类型，url表示url刷新，path表示目录刷新。
+                     * 
                      */
                     std::string GetPurgeType() const;
 
                     /**
                      * 设置刷新类型，url表示url刷新，path表示目录刷新。
-                     * @param PurgeType 刷新类型，url表示url刷新，path表示目录刷新。
+                     * @param _purgeType 刷新类型，url表示url刷新，path表示目录刷新。
+                     * 
                      */
                     void SetPurgeType(const std::string& _purgeType);
 
                     /**
                      * 判断参数 PurgeType 是否已赋值
                      * @return PurgeType 是否已赋值
+                     * 
                      */
                     bool PurgeTypeHasBeenSet() const;
 
                     /**
                      * 获取刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
                      * @return FlushType 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * 
                      */
                     std::string GetFlushType() const;
 
                     /**
                      * 设置刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
-                     * @param FlushType 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * @param _flushType 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * 
                      */
                     void SetFlushType(const std::string& _flushType);
 
                     /**
                      * 判断参数 FlushType 是否已赋值
                      * @return FlushType 是否已赋值
+                     * 
                      */
                     bool FlushTypeHasBeenSet() const;
 
                     /**
                      * 获取刷新任务提交时间
                      * @return CreateTime 刷新任务提交时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置刷新任务提交时间
-                     * @param CreateTime 刷新任务提交时间
+                     * @param _createTime 刷新任务提交时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

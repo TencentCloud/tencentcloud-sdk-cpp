@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取基线id
                      * @return BaselineId 基线id
+                     * 
                      */
                     uint64_t GetBaselineId() const;
 
                     /**
                      * 设置基线id
-                     * @param BaselineId 基线id
+                     * @param _baselineId 基线id
+                     * 
                      */
                     void SetBaselineId(const uint64_t& _baselineId);
 
                     /**
                      * 判断参数 BaselineId 是否已赋值
                      * @return BaselineId 是否已赋值
+                     * 
                      */
                     bool BaselineIdHasBeenSet() const;
 
                     /**
                      * 获取分页参数 最大100条
                      * @return Limit 分页参数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数 最大100条
-                     * @param Limit 分页参数 最大100条
+                     * @param _limit 分页参数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数
                      * @return Offset 分页参数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数
-                     * @param Offset 分页参数
+                     * @param _offset 分页参数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取危害等级
                      * @return Level 危害等级
+                     * 
                      */
                     std::vector<uint64_t> GetLevel() const;
 
                     /**
                      * 设置危害等级
-                     * @param Level 危害等级
+                     * @param _level 危害等级
+                     * 
                      */
                     void SetLevel(const std::vector<uint64_t>& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取主机quuid
                      * @return Quuid 主机quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机quuid
-                     * @param Quuid 主机quuid
+                     * @param _quuid 主机quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取主机uuid
                      * @return Uuid 主机uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机uuid
-                     * @param Uuid 主机uuid
+                     * @param _uuid 主机uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 

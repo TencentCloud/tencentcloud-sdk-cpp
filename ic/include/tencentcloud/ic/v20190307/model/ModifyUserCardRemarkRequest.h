@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return Sdkappid 应用ID
+                     * 
                      */
                     int64_t GetSdkappid() const;
 
                     /**
                      * 设置应用ID
-                     * @param Sdkappid 应用ID
+                     * @param _sdkappid 应用ID
+                     * 
                      */
                     void SetSdkappid(const int64_t& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 
                     /**
                      * 获取物联卡ICCID
                      * @return Iccid 物联卡ICCID
+                     * 
                      */
                     std::string GetIccid() const;
 
                     /**
                      * 设置物联卡ICCID
-                     * @param Iccid 物联卡ICCID
+                     * @param _iccid 物联卡ICCID
+                     * 
                      */
                     void SetIccid(const std::string& _iccid);
 
                     /**
                      * 判断参数 Iccid 是否已赋值
                      * @return Iccid 是否已赋值
+                     * 
                      */
                     bool IccidHasBeenSet() const;
 
                     /**
                      * 获取备注信息，限50字
                      * @return Remark 备注信息，限50字
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息，限50字
-                     * @param Remark 备注信息，限50字
+                     * @param _remark 备注信息，限50字
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

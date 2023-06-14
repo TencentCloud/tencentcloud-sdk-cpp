@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
                      * @return SubnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
-                     * @param SubnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * @param _subnetIds 子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
@@ -82,6 +85,7 @@ region - String - ECM地域
 zone - String - 可用区。
 tag-key - String -是否必填：否- 按照标签键进行过滤。
 tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -96,7 +100,7 @@ region - String - ECM地域
 zone - String - 可用区。
 tag-key - String -是否必填：否- 按照标签键进行过滤。
 tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
-                     * @param Filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
 subnet-id - String - Subnet实例名称。
 subnet-name - String - 子网名称。只支持单值的模糊查询。
 cidr-block - String - 子网网段，形如: 192.168.1.0 。只支持单值的模糊查询。
@@ -106,84 +110,98 @@ region - String - ECM地域
 zone - String - 可用区。
 tag-key - String -是否必填：否- 按照标签键进行过滤。
 tag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取排序方式：time时间倒序, default按照网络规划排序
                      * @return Sort 排序方式：time时间倒序, default按照网络规划排序
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置排序方式：time时间倒序, default按照网络规划排序
-                     * @param Sort 排序方式：time时间倒序, default按照网络规划排序
+                     * @param _sort 排序方式：time时间倒序, default按照网络规划排序
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 

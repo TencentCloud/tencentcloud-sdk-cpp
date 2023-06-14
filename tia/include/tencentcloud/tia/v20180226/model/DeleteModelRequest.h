@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取要删除的模型名称
                      * @return Name 要删除的模型名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置要删除的模型名称
-                     * @param Name 要删除的模型名称
+                     * @param _name 要删除的模型名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取要删除的模型所在的集群名称，`集群模式` 必填
                      * @return Cluster 要删除的模型所在的集群名称，`集群模式` 必填
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置要删除的模型所在的集群名称，`集群模式` 必填
-                     * @param Cluster 要删除的模型所在的集群名称，`集群模式` 必填
+                     * @param _cluster 要删除的模型所在的集群名称，`集群模式` 必填
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`
                      * @return ServType 模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`
+                     * 
                      */
                     std::string GetServType() const;
 
                     /**
                      * 设置模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`
-                     * @param ServType 模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`
+                     * @param _servType 模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`
+                     * 
                      */
                     void SetServType(const std::string& _servType);
 
                     /**
                      * 判断参数 ServType 是否已赋值
                      * @return ServType 是否已赋值
+                     * 
                      */
                     bool ServTypeHasBeenSet() const;
 

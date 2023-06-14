@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取图片名称。
                      * @return EntityId 图片名称。
+                     * 
                      */
                     std::string GetEntityId() const;
 
                     /**
                      * 设置图片名称。
-                     * @param EntityId 图片名称。
+                     * @param _entityId 图片名称。
+                     * 
                      */
                     void SetEntityId(const std::string& _entityId);
 
                     /**
                      * 判断参数 EntityId 是否已赋值
                      * @return EntityId 是否已赋值
+                     * 
                      */
                     bool EntityIdHasBeenSet() const;
 
                     /**
                      * 获取用户自定义的内容。
                      * @return CustomContent 用户自定义的内容。
+                     * 
                      */
                     std::string GetCustomContent() const;
 
                     /**
                      * 设置用户自定义的内容。
-                     * @param CustomContent 用户自定义的内容。
+                     * @param _customContent 用户自定义的内容。
+                     * 
                      */
                     void SetCustomContent(const std::string& _customContent);
 
                     /**
                      * 判断参数 CustomContent 是否已赋值
                      * @return CustomContent 是否已赋值
+                     * 
                      */
                     bool CustomContentHasBeenSet() const;
 
                     /**
                      * 获取图片自定义标签，JSON格式。
                      * @return Tags 图片自定义标签，JSON格式。
+                     * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置图片自定义标签，JSON格式。
-                     * @param Tags 图片自定义标签，JSON格式。
+                     * @param _tags 图片自定义标签，JSON格式。
+                     * 
                      */
                     void SetTags(const std::string& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取图片名称。
                      * @return PicName 图片名称。
+                     * 
                      */
                     std::string GetPicName() const;
 
                     /**
                      * 设置图片名称。
-                     * @param PicName 图片名称。
+                     * @param _picName 图片名称。
+                     * 
                      */
                     void SetPicName(const std::string& _picName);
 
                     /**
                      * 判断参数 PicName 是否已赋值
                      * @return PicName 是否已赋值
+                     * 
                      */
                     bool PicNameHasBeenSet() const;
 
                     /**
                      * 获取相似度。
                      * @return Score 相似度。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置相似度。
-                     * @param Score 相似度。
+                     * @param _score 相似度。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

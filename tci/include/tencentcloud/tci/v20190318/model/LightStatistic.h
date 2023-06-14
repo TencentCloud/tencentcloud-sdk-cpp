@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取各个时间点的光线值
                      * @return LightDistribution 各个时间点的光线值
+                     * 
                      */
                     std::vector<LightDistributionStatistic> GetLightDistribution() const;
 
                     /**
                      * 设置各个时间点的光线值
-                     * @param LightDistribution 各个时间点的光线值
+                     * @param _lightDistribution 各个时间点的光线值
+                     * 
                      */
                     void SetLightDistribution(const std::vector<LightDistributionStatistic>& _lightDistribution);
 
                     /**
                      * 判断参数 LightDistribution 是否已赋值
                      * @return LightDistribution 是否已赋值
+                     * 
                      */
                     bool LightDistributionHasBeenSet() const;
 
                     /**
                      * 获取光照程度比例统计结果
                      * @return LightLevelRatio 光照程度比例统计结果
+                     * 
                      */
                     std::vector<LightLevelRatioStatistic> GetLightLevelRatio() const;
 
                     /**
                      * 设置光照程度比例统计结果
-                     * @param LightLevelRatio 光照程度比例统计结果
+                     * @param _lightLevelRatio 光照程度比例统计结果
+                     * 
                      */
                     void SetLightLevelRatio(const std::vector<LightLevelRatioStatistic>& _lightLevelRatio);
 
                     /**
                      * 判断参数 LightLevelRatio 是否已赋值
                      * @return LightLevelRatio 是否已赋值
+                     * 
                      */
                     bool LightLevelRatioHasBeenSet() const;
 

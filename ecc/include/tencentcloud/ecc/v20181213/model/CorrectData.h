@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取总得分
                      * @return Score 总得分
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置总得分
-                     * @param Score 总得分
+                     * @param _score 总得分
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取各项得分详情
                      * @return ScoreCat 各项得分详情
+                     * 
                      */
                     ScoreCategory GetScoreCat() const;
 
                     /**
                      * 设置各项得分详情
-                     * @param ScoreCat 各项得分详情
+                     * @param _scoreCat 各项得分详情
+                     * 
                      */
                     void SetScoreCat(const ScoreCategory& _scoreCat);
 
                     /**
                      * 判断参数 ScoreCat 是否已赋值
                      * @return ScoreCat 是否已赋值
+                     * 
                      */
                     bool ScoreCatHasBeenSet() const;
 
                     /**
                      * 获取综合评价
                      * @return Comment 综合评价
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置综合评价
-                     * @param Comment 综合评价
+                     * @param _comment 综合评价
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取句子点评
                      * @return SentenceComments 句子点评
+                     * 
                      */
                     std::vector<SentenceCom> GetSentenceComments() const;
 
                     /**
                      * 设置句子点评
-                     * @param SentenceComments 句子点评
+                     * @param _sentenceComments 句子点评
+                     * 
                      */
                     void SetSentenceComments(const std::vector<SentenceCom>& _sentenceComments);
 
                     /**
                      * 判断参数 SentenceComments 是否已赋值
                      * @return SentenceComments 是否已赋值
+                     * 
                      */
                     bool SentenceCommentsHasBeenSet() const;
 

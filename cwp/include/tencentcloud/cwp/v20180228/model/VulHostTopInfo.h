@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 主机名
+                     * @param _hostName 主机名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulLevelList 漏洞等级与数量统计列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulLevelCountInfo> GetVulLevelList() const;
 
                     /**
                      * 设置漏洞等级与数量统计列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VulLevelList 漏洞等级与数量统计列表
+                     * @param _vulLevelList 漏洞等级与数量统计列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVulLevelList(const std::vector<VulLevelCountInfo>& _vulLevelList);
 
                     /**
                      * 判断参数 VulLevelList 是否已赋值
                      * @return VulLevelList 是否已赋值
+                     * 
                      */
                     bool VulLevelListHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quuid 主机Quuid
+                     * @param _quuid 主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score top评分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置top评分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score top评分
+                     * @param _score top评分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取集群信息
                      * @return ClusterInfo 集群信息
+                     * 
                      */
                     RocketMQClusterInfo GetClusterInfo() const;
 
                     /**
                      * 判断参数 ClusterInfo 是否已赋值
                      * @return ClusterInfo 是否已赋值
+                     * 
                      */
                     bool ClusterInfoHasBeenSet() const;
 
                     /**
                      * 获取集群配置
                      * @return InstanceConfig 集群配置
+                     * 
                      */
                     RocketMQInstanceConfig GetInstanceConfig() const;
 
                     /**
                      * 判断参数 InstanceConfig 是否已赋值
                      * @return InstanceConfig 是否已赋值
+                     * 
                      */
                     bool InstanceConfigHasBeenSet() const;
 

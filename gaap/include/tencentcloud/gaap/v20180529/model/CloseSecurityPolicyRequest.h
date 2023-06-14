@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取通道ID
                      * @return ProxyId 通道ID
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置通道ID
-                     * @param ProxyId 通道ID
+                     * @param _proxyId 通道ID
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取安全组策略ID
                      * @return PolicyId 安全组策略ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置安全组策略ID
-                     * @param PolicyId 安全组策略ID
+                     * @param _policyId 安全组策略ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

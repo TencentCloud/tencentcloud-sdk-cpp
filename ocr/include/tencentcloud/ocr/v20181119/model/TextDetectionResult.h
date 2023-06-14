@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取识别出的文本行内容
                      * @return Value 识别出的文本行内容
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的文本行内容
-                     * @param Value 识别出的文本行内容
+                     * @param _value 识别出的文本行内容
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取坐标，以四个顶点坐标表示
                      * @return Polygon 坐标，以四个顶点坐标表示
+                     * 
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
                      * 设置坐标，以四个顶点坐标表示
-                     * @param Polygon 坐标，以四个顶点坐标表示
+                     * @param _polygon 坐标，以四个顶点坐标表示
+                     * 
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
 
                     /**
                      * 判断参数 Polygon 是否已赋值
                      * @return Polygon 是否已赋值
+                     * 
                      */
                     bool PolygonHasBeenSet() const;
 

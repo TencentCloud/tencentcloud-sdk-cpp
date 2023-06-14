@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取白板板书生成任务ID，只有任务创建成功的时候才会返回此字段
                      * @return TaskID 白板板书生成任务ID，只有任务创建成功的时候才会返回此字段
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 

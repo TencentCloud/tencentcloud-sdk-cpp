@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备签名
                      * @return DeviceSignature 设备签名
+                     * 
                      */
                     DeviceSignatureInfo GetDeviceSignature() const;
 
                     /**
                      * 判断参数 DeviceSignature 是否已赋值
                      * @return DeviceSignature 是否已赋值
+                     * 
                      */
                     bool DeviceSignatureHasBeenSet() const;
 

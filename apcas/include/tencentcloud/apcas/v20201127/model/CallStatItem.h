@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取当前统计量的时间段
                      * @return Date 当前统计量的时间段
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置当前统计量的时间段
-                     * @param Date 当前统计量的时间段
+                     * @param _date 当前统计量的时间段
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取当前时间段的调用量
                      * @return Amount 当前时间段的调用量
+                     * 
                      */
                     uint64_t GetAmount() const;
 
                     /**
                      * 设置当前时间段的调用量
-                     * @param Amount 当前时间段的调用量
+                     * @param _amount 当前时间段的调用量
+                     * 
                      */
                     void SetAmount(const uint64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 

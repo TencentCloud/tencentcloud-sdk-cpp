@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源类型
+                     * @param _resourceType 资源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 授权资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置授权资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource 授权资源
+                     * @param _resource 授权资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InheritedForm 继承关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InheritedForm GetInheritedForm() const;
 
                     /**
                      * 设置继承关系
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InheritedForm 继承关系
+                     * @param _inheritedForm 继承关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInheritedForm(const InheritedForm& _inheritedForm);
 
                     /**
                      * 判断参数 InheritedForm 是否已赋值
                      * @return InheritedForm 是否已赋值
+                     * 
                      */
                     bool InheritedFormHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationAccounts 应用账户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetApplicationAccounts() const;
 
                     /**
                      * 设置应用账户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationAccounts 应用账户
+                     * @param _applicationAccounts 应用账户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationAccounts(const std::vector<std::string>& _applicationAccounts);
 
                     /**
                      * 判断参数 ApplicationAccounts 是否已赋值
                      * @return ApplicationAccounts 是否已赋值
+                     * 
                      */
                     bool ApplicationAccountsHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceName 资源名称
+                     * @param _resourceName 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取回档实例的ID
                      * @return InstanceId 回档实例的ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置回档实例的ID
-                     * @param InstanceId 回档实例的ID
+                     * @param _instanceId 回档实例的ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取回档时间点
                      * @return RollbackTime 回档时间点
+                     * 
                      */
                     std::string GetRollbackTime() const;
 
                     /**
                      * 设置回档时间点
-                     * @param RollbackTime 回档时间点
+                     * @param _rollbackTime 回档时间点
+                     * 
                      */
                     void SetRollbackTime(const std::string& _rollbackTime);
 
                     /**
                      * 判断参数 RollbackTime 是否已赋值
                      * @return RollbackTime 是否已赋值
+                     * 
                      */
                     bool RollbackTimeHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 计数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置计数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 计数
+                     * @param _totalCount 计数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupList GroupList
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeGroup> GetGroupList() const;
 
                     /**
                      * 设置GroupList
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupList GroupList
+                     * @param _groupList GroupList
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupList(const std::vector<DescribeGroup>& _groupList);
 
                     /**
                      * 判断参数 GroupList 是否已赋值
                      * @return GroupList 是否已赋值
+                     * 
                      */
                     bool GroupListHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCountQuota 消费分组配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGroupCountQuota() const;
 
                     /**
                      * 设置消费分组配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupCountQuota 消费分组配额
+                     * @param _groupCountQuota 消费分组配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupCountQuota(const uint64_t& _groupCountQuota);
 
                     /**
                      * 判断参数 GroupCountQuota 是否已赋值
                      * @return GroupCountQuota 是否已赋值
+                     * 
                      */
                     bool GroupCountQuotaHasBeenSet() const;
 

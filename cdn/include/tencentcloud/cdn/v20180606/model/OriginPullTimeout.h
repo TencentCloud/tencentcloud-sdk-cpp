@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectTimeout 回源建连超时时间，单位为秒，要求5~60之间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetConnectTimeout() const;
 
                     /**
                      * 设置回源建连超时时间，单位为秒，要求5~60之间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectTimeout 回源建连超时时间，单位为秒，要求5~60之间
+                     * @param _connectTimeout 回源建连超时时间，单位为秒，要求5~60之间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectTimeout(const uint64_t& _connectTimeout);
 
                     /**
                      * 判断参数 ConnectTimeout 是否已赋值
                      * @return ConnectTimeout 是否已赋值
+                     * 
                      */
                     bool ConnectTimeoutHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReceiveTimeout() const;
 
                     /**
                      * 设置回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 300之间
+                     * @param _receiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiveTimeout(const uint64_t& _receiveTimeout);
 
                     /**
                      * 判断参数 ReceiveTimeout 是否已赋值
                      * @return ReceiveTimeout 是否已赋值
+                     * 
                      */
                     bool ReceiveTimeoutHasBeenSet() const;
 

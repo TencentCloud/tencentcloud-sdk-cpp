@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取对象唯一ID
                      * @return Id 对象唯一ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置对象唯一ID
-                     * @param Id 对象唯一ID
+                     * @param _id 对象唯一ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

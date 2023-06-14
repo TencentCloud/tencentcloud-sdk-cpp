@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionId 主事务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionId() const;
 
                     /**
                      * 设置主事务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionId 主事务ID
+                     * @param _transactionId 主事务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionId(const int64_t& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionBegin 主事务开始时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionBegin() const;
 
                     /**
                      * 设置主事务开始时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionBegin 主事务开始时间戳，UTC，精确到毫秒
+                     * @param _transactionBegin 主事务开始时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionBegin(const int64_t& _transactionBegin);
 
                     /**
                      * 判断参数 TransactionBegin 是否已赋值
                      * @return TransactionBegin 是否已赋值
+                     * 
                      */
                     bool TransactionBeginHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionEnd 主事务结束时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionEnd() const;
 
                     /**
                      * 设置主事务结束时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionEnd 主事务结束时间戳，UTC，精确到毫秒
+                     * @param _transactionEnd 主事务结束时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionEnd(const int64_t& _transactionEnd);
 
                     /**
                      * 判断参数 TransactionEnd 是否已赋值
                      * @return TransactionEnd 是否已赋值
+                     * 
                      */
                     bool TransactionEndHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionCommit 主事务提交时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionCommit() const;
 
                     /**
                      * 设置主事务提交时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionCommit 主事务提交时间戳，UTC，精确到毫秒
+                     * @param _transactionCommit 主事务提交时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionCommit(const int64_t& _transactionCommit);
 
                     /**
                      * 判断参数 TransactionCommit 是否已赋值
                      * @return TransactionCommit 是否已赋值
+                     * 
                      */
                     bool TransactionCommitHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionRollback 主事务回滚时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionRollback() const;
 
                     /**
                      * 设置主事务回滚时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionRollback 主事务回滚时间戳，UTC，精确到毫秒
+                     * @param _transactionRollback 主事务回滚时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionRollback(const int64_t& _transactionRollback);
 
                     /**
                      * 判断参数 TransactionRollback 是否已赋值
                      * @return TransactionRollback 是否已赋值
+                     * 
                      */
                     bool TransactionRollbackHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionError 主事务异常停止时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransactionError() const;
 
                     /**
                      * 设置主事务异常停止时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionError 主事务异常停止时间戳，UTC，精确到毫秒
+                     * @param _transactionError 主事务异常停止时间戳，UTC，精确到毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransactionError(const int64_t& _transactionError);
 
                     /**
                      * 判断参数 TransactionError 是否已赋值
                      * @return TransactionError 是否已赋值
+                     * 
                      */
                     bool TransactionErrorHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 主事务超时时长，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置主事务超时时长，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeout 主事务超时时长，单位毫秒
+                     * @param _timeout 主事务超时时长，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled
+                     * @param _status 主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndFlag 主事务结束标识：0:运行中, 1: 已结束
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndFlag() const;
 
                     /**
                      * 设置主事务结束标识：0:运行中, 1: 已结束
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndFlag 主事务结束标识：0:运行中, 1: 已结束
+                     * @param _endFlag 主事务结束标识：0:运行中, 1: 已结束
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndFlag(const int64_t& _endFlag);
 
                     /**
                      * 判断参数 EndFlag 是否已赋值
                      * @return EndFlag 是否已赋值
+                     * 
                      */
                     bool EndFlagHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutFlag 主事务超时标识：0:运行中, 1: 已超时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeoutFlag() const;
 
                     /**
                      * 设置主事务超时标识：0:运行中, 1: 已超时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeoutFlag 主事务超时标识：0:运行中, 1: 已超时
+                     * @param _timeoutFlag 主事务超时标识：0:运行中, 1: 已超时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeoutFlag(const int64_t& _timeoutFlag);
 
                     /**
                      * 判断参数 TimeoutFlag 是否已赋值
                      * @return TimeoutFlag 是否已赋值
+                     * 
                      */
                     bool TimeoutFlagHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 异常信息
+                     * @param _comment 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 事务分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置事务分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 事务分组ID
+                     * @param _groupId 事务分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 主事务来源服务标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置主事务来源服务标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Server 主事务来源服务标识
+                     * @param _server 主事务来源服务标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BranchQuantity 分支事务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBranchQuantity() const;
 
                     /**
                      * 设置分支事务数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BranchQuantity 分支事务数量
+                     * @param _branchQuantity 分支事务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBranchQuantity(const int64_t& _branchQuantity);
 
                     /**
                      * 判断参数 BranchQuantity 是否已赋值
                      * @return BranchQuantity 是否已赋值
+                     * 
                      */
                     bool BranchQuantityHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryFlag 重试标识：true：可以重试；false：不可重试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetRetryFlag() const;
 
                     /**
                      * 设置重试标识：true：可以重试；false：不可重试
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RetryFlag 重试标识：true：可以重试；false：不可重试
+                     * @param _retryFlag 重试标识：true：可以重试；false：不可重试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetryFlag(const bool& _retryFlag);
 
                     /**
                      * 判断参数 RetryFlag 是否已赋值
                      * @return RetryFlag 是否已赋值
+                     * 
                      */
                     bool RetryFlagHasBeenSet() const;
 

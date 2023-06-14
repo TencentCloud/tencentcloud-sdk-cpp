@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回各检测项影响的资产的汇总信息。
                      * @return PolicyItemSummary 返回各检测项影响的资产的汇总信息。
+                     * 
                      */
                     CompliancePolicyItemSummary GetPolicyItemSummary() const;
 
                     /**
                      * 判断参数 PolicyItemSummary 是否已赋值
                      * @return PolicyItemSummary 是否已赋值
+                     * 
                      */
                     bool PolicyItemSummaryHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取数量限制
                      * @return Limit 数量限制
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置数量限制
-                     * @param Limit 数量限制
+                     * @param _limit 数量限制
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序字段，仅支持CreateTime
                      * @return OrderField 排序字段，仅支持CreateTime
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段，仅支持CreateTime
-                     * @param OrderField 排序字段，仅支持CreateTime
+                     * @param _orderField 排序字段，仅支持CreateTime
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方式 0:递增(默认) 1:递减
                      * @return Order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
                      * 设置排序方式 0:递增(默认) 1:递减
-                     * @param Order 排序方式 0:递增(默认) 1:递减
+                     * @param _order 排序方式 0:递增(默认) 1:递减
+                     * 
                      */
                     void SetOrder(const uint64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效
                      * @return ImageId 按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效
-                     * @param ImageId 按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效
+                     * @param _imageId 按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取模糊查询过滤，可以查询镜像ID或镜像名
                      * @return SearchKey 模糊查询过滤，可以查询镜像ID或镜像名
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置模糊查询过滤，可以查询镜像ID或镜像名
-                     * @param SearchKey 模糊查询过滤，可以查询镜像ID或镜像名
+                     * @param _searchKey 模糊查询过滤，可以查询镜像ID或镜像名
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
@@ -165,6 +183,7 @@ namespace TencentCloud
 <li>3：正常</li>
 <li>4：删除中</li>
 </ul>
+                     * 
                      */
                     std::vector<uint64_t> GetImageStatus() const;
 
@@ -176,19 +195,21 @@ namespace TencentCloud
 <li>3：正常</li>
 <li>4：删除中</li>
 </ul>
-                     * @param ImageStatus <ul>
+                     * @param _imageStatus <ul>
 镜像状态过滤列表，有效取值为：
 <li>1：制作中</li>
 <li>2：制作失败</li>
 <li>3：正常</li>
 <li>4：删除中</li>
 </ul>
+                     * 
                      */
                     void SetImageStatus(const std::vector<uint64_t>& _imageStatus);
 
                     /**
                      * 判断参数 ImageStatus 是否已赋值
                      * @return ImageStatus 是否已赋值
+                     * 
                      */
                     bool ImageStatusHasBeenSet() const;
 

@@ -54,36 +54,42 @@ namespace TencentCloud
                     /**
                      * 获取原始数据
                      * @return Content 原始数据
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置原始数据
-                     * @param Content 原始数据
+                     * @param _content 原始数据
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取处理链
                      * @return FieldChain 处理链
+                     * 
                      */
                     std::vector<FieldParam> GetFieldChain() const;
 
                     /**
                      * 设置处理链
-                     * @param FieldChain 处理链
+                     * @param _fieldChain 处理链
+                     * 
                      */
                     void SetFieldChain(const std::vector<FieldParam>& _fieldChain);
 
                     /**
                      * 判断参数 FieldChain 是否已赋值
                      * @return FieldChain 是否已赋值
+                     * 
                      */
                     bool FieldChainHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterParam 过滤器
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterMapParam> GetFilterParam() const;
 
                     /**
                      * 设置过滤器
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterParam 过滤器
+                     * @param _filterParam 过滤器
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterParam(const std::vector<FilterMapParam>& _filterParam);
 
                     /**
                      * 判断参数 FilterParam 是否已赋值
                      * @return FilterParam 是否已赋值
+                     * 
                      */
                     bool FilterParamHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureParam 失败处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FailureParam GetFailureParam() const;
 
                     /**
                      * 设置失败处理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailureParam 失败处理
+                     * @param _failureParam 失败处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailureParam(const FailureParam& _failureParam);
 
                     /**
                      * 判断参数 FailureParam 是否已赋值
                      * @return FailureParam 是否已赋值
+                     * 
                      */
                     bool FailureParamHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置测试结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 测试结果
+                     * @param _result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 数据来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置数据来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceType 数据来源
+                     * @param _sourceType 数据来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -180,20 +198,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputFormat 输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
                      * 设置输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputFormat 输出格式，JSON，ROW，默认为JSON
+                     * @param _outputFormat 输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
 
                     /**
                      * 判断参数 OutputFormat 是否已赋值
                      * @return OutputFormat 是否已赋值
+                     * 
                      */
                     bool OutputFormatHasBeenSet() const;
 
@@ -202,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowParam 输出格式为ROW必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RowParam GetRowParam() const;
 
                     /**
                      * 设置输出格式为ROW必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RowParam 输出格式为ROW必填
+                     * @param _rowParam 输出格式为ROW必填
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRowParam(const RowParam& _rowParam);
 
                     /**
                      * 判断参数 RowParam 是否已赋值
                      * @return RowParam 是否已赋值
+                     * 
                      */
                     bool RowParamHasBeenSet() const;
 
@@ -224,20 +248,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetKeepMetadata() const;
 
                     /**
                      * 设置是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+                     * @param _keepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeepMetadata(const bool& _keepMetadata);
 
                     /**
                      * 判断参数 KeepMetadata 是否已赋值
                      * @return KeepMetadata 是否已赋值
+                     * 
                      */
                     bool KeepMetadataHasBeenSet() const;
 
@@ -246,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchAnalyse 数组解析
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BatchAnalyseParam GetBatchAnalyse() const;
 
                     /**
                      * 设置数组解析
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchAnalyse 数组解析
+                     * @param _batchAnalyse 数组解析
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchAnalyse(const BatchAnalyseParam& _batchAnalyse);
 
                     /**
                      * 判断参数 BatchAnalyse 是否已赋值
                      * @return BatchAnalyse 是否已赋值
+                     * 
                      */
                     bool BatchAnalyseHasBeenSet() const;
 

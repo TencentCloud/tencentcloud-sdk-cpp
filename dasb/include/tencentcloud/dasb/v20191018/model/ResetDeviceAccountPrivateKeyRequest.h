@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取ID集合
                      * @return IdSet ID集合
+                     * 
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
                      * 设置ID集合
-                     * @param IdSet ID集合
+                     * @param _idSet ID集合
+                     * 
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
 
                     /**
                      * 判断参数 IdSet 是否已赋值
                      * @return IdSet 是否已赋值
+                     * 
                      */
                     bool IdSetHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取后端实例ID列表。
                      * @return InstanceIds 后端实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置后端实例ID列表。
-                     * @param InstanceIds 后端实例ID列表。
+                     * @param _instanceIds 后端实例ID列表。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

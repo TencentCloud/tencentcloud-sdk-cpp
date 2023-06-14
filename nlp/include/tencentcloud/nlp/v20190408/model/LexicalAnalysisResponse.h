@@ -58,24 +58,28 @@ namespace TencentCloud
 <li>ORG：表示机构团体名，如腾讯、最高人民法院、人大附中</li>
 <li>PRODUCTION：表示产品名，如QQ、微信、iPhone</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NerToken> GetNerTokens() const;
 
                     /**
                      * 判断参数 NerTokens 是否已赋值
                      * @return NerTokens 是否已赋值
+                     * 
                      */
                     bool NerTokensHasBeenSet() const;
 
                     /**
                      * 获取分词&词性标注结果（词性表请参见附录）
                      * @return PosTokens 分词&词性标注结果（词性表请参见附录）
+                     * 
                      */
                     std::vector<PosToken> GetPosTokens() const;
 
                     /**
                      * 判断参数 PosTokens 是否已赋值
                      * @return PosTokens 是否已赋值
+                     * 
                      */
                     bool PosTokensHasBeenSet() const;
 

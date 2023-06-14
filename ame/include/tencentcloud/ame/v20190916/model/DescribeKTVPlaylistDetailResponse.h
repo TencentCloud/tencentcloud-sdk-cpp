@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取歌曲基础信息列表
                      * @return KTVMusicInfoSet 歌曲基础信息列表
+                     * 
                      */
                     std::vector<KTVMusicBaseInfo> GetKTVMusicInfoSet() const;
 
                     /**
                      * 判断参数 KTVMusicInfoSet 是否已赋值
                      * @return KTVMusicInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVMusicInfoSetHasBeenSet() const;
 
                     /**
                      * 获取歌单基础信息
                      * @return PlaylistBaseInfo 歌单基础信息
+                     * 
                      */
                     KTVPlaylistBaseInfo GetPlaylistBaseInfo() const;
 
                     /**
                      * 判断参数 PlaylistBaseInfo 是否已赋值
                      * @return PlaylistBaseInfo 是否已赋值
+                     * 
                      */
                     bool PlaylistBaseInfoHasBeenSet() const;
 

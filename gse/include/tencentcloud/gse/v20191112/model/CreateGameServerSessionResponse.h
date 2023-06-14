@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GameServerSession 游戏服务器会话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GameServerSession GetGameServerSession() const;
 
                     /**
                      * 判断参数 GameServerSession 是否已赋值
                      * @return GameServerSession 是否已赋值
+                     * 
                      */
                     bool GameServerSessionHasBeenSet() const;
 

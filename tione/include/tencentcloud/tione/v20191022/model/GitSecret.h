@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取无秘钥，默认选项
                      * @return NoSecret 无秘钥，默认选项
+                     * 
                      */
                     bool GetNoSecret() const;
 
                     /**
                      * 设置无秘钥，默认选项
-                     * @param NoSecret 无秘钥，默认选项
+                     * @param _noSecret 无秘钥，默认选项
+                     * 
                      */
                     void SetNoSecret(const bool& _noSecret);
 
                     /**
                      * 判断参数 NoSecret 是否已赋值
                      * @return NoSecret 是否已赋值
+                     * 
                      */
                     bool NoSecretHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return Secret Git用户名密码base64编码后的字符串
 编码前的内容应为Json字符串，如
 {"UserName": "用户名", "Password":"密码"}
+                     * 
                      */
                     std::string GetSecret() const;
 
@@ -78,15 +82,17 @@ namespace TencentCloud
                      * 设置Git用户名密码base64编码后的字符串
 编码前的内容应为Json字符串，如
 {"UserName": "用户名", "Password":"密码"}
-                     * @param Secret Git用户名密码base64编码后的字符串
+                     * @param _secret Git用户名密码base64编码后的字符串
 编码前的内容应为Json字符串，如
 {"UserName": "用户名", "Password":"密码"}
+                     * 
                      */
                     void SetSecret(const std::string& _secret);
 
                     /**
                      * 判断参数 Secret 是否已赋值
                      * @return Secret 是否已赋值
+                     * 
                      */
                     bool SecretHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取路由表实例ID，例如：rtb-afg8md3c。
                      * @return RouteTableId 路由表实例ID，例如：rtb-afg8md3c。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-afg8md3c。
-                     * @param RouteTableId 路由表实例ID，例如：rtb-afg8md3c。
+                     * @param _routeTableId 路由表实例ID，例如：rtb-afg8md3c。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
                      * 获取路由策略实例ID，例如：rti-azd4dt1c。
                      * @return RoutePolicyIds 路由策略实例ID，例如：rti-azd4dt1c。
+                     * 
                      */
                     std::vector<std::string> GetRoutePolicyIds() const;
 
                     /**
                      * 设置路由策略实例ID，例如：rti-azd4dt1c。
-                     * @param RoutePolicyIds 路由策略实例ID，例如：rti-azd4dt1c。
+                     * @param _routePolicyIds 路由策略实例ID，例如：rti-azd4dt1c。
+                     * 
                      */
                     void SetRoutePolicyIds(const std::vector<std::string>& _routePolicyIds);
 
                     /**
                      * 判断参数 RoutePolicyIds 是否已赋值
                      * @return RoutePolicyIds 是否已赋值
+                     * 
                      */
                     bool RoutePolicyIdsHasBeenSet() const;
 
@@ -100,6 +106,7 @@ destination-cidr-like - String - （过滤条件）路由项目的地址。
 gateway-id-like - String - （过滤条件）路由项下一跳网关。
 gateway-type - String - （过滤条件）路由项下一条网关类型。
 enable - Bool - （过滤条件）路由策略是否启用。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -114,7 +121,7 @@ destination-cidr-like - String - （过滤条件）路由项目的地址。
 gateway-id-like - String - （过滤条件）路由项下一跳网关。
 gateway-type - String - （过滤条件）路由项下一条网关类型。
 enable - Bool - （过滤条件）路由策略是否启用。
-                     * @param Filters 过滤条件，参数不支持同时指定RoutePolicyIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定RoutePolicyIds和Filters。
 route-table-id - String - （过滤条件）路由表实例ID。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 route-policy-id - String - （过滤条件）路由策略ID。
@@ -124,48 +131,56 @@ destination-cidr-like - String - （过滤条件）路由项目的地址。
 gateway-id-like - String - （过滤条件）路由项下一跳网关。
 gateway-type - String - （过滤条件）路由项下一条网关类型。
 enable - Bool - （过滤条件）路由策略是否启用。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取初始行的偏移量，默认为0。
                      * @return Offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置初始行的偏移量，默认为0。
-                     * @param Offset 初始行的偏移量，默认为0。
+                     * @param _offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页行数，默认为20。
                      * @return Limit 每页行数，默认为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页行数，默认为20。
-                     * @param Limit 每页行数，默认为20。
+                     * @param _limit 每页行数，默认为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

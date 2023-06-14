@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取失败的资源六段式
                      * @return Resource 失败的资源六段式
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置失败的资源六段式
-                     * @param Resource 失败的资源六段式
+                     * @param _resource 失败的资源六段式
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取错误码
                      * @return Code 错误码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
-                     * @param Code 错误码
+                     * @param _code 错误码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return Message 错误信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
-                     * @param Message 错误信息
+                     * @param _message 错误信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

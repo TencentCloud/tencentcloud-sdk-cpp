@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expect 期望值，即用户配置的Topic消息保留时间(单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExpect() const;
 
                     /**
                      * 设置期望值，即用户配置的Topic消息保留时间(单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Expect 期望值，即用户配置的Topic消息保留时间(单位分钟)
+                     * @param _expect 期望值，即用户配置的Topic消息保留时间(单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpect(const int64_t& _expect);
 
                     /**
                      * 判断参数 Expect 是否已赋值
                      * @return Expect 是否已赋值
+                     * 
                      */
                     bool ExpectHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Current 当前值，即当前生效值(可能存在动态调整，单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCurrent() const;
 
                     /**
                      * 设置当前值，即当前生效值(可能存在动态调整，单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Current 当前值，即当前生效值(可能存在动态调整，单位分钟)
+                     * @param _current 当前值，即当前生效值(可能存在动态调整，单位分钟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrent(const int64_t& _current);
 
                     /**
                      * 判断参数 Current 是否已赋值
                      * @return Current 是否已赋值
+                     * 
                      */
                     bool CurrentHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTimeStamp 最近变更时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetModTimeStamp() const;
 
                     /**
                      * 设置最近变更时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModTimeStamp 最近变更时间
+                     * @param _modTimeStamp 最近变更时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModTimeStamp(const int64_t& _modTimeStamp);
 
                     /**
                      * 判断参数 ModTimeStamp 是否已赋值
                      * @return ModTimeStamp 是否已赋值
+                     * 
                      */
                     bool ModTimeStampHasBeenSet() const;
 

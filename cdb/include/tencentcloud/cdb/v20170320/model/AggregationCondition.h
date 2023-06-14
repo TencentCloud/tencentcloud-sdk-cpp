@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。
                      * @return AggregationField 聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。
+                     * 
                      */
                     std::string GetAggregationField() const;
 
                     /**
                      * 设置聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。
-                     * @param AggregationField 聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。
+                     * @param _aggregationField 聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。
+                     * 
                      */
                     void SetAggregationField(const std::string& _aggregationField);
 
                     /**
                      * 判断参数 AggregationField 是否已赋值
                      * @return AggregationField 是否已赋值
+                     * 
                      */
                     bool AggregationFieldHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取该聚合字段下要返回聚合桶的数量，最大100。
                      * @return Limit 该聚合字段下要返回聚合桶的数量，最大100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置该聚合字段下要返回聚合桶的数量，最大100。
-                     * @param Limit 该聚合字段下要返回聚合桶的数量，最大100。
+                     * @param _limit 该聚合字段下要返回聚合桶的数量，最大100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

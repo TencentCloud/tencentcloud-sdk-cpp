@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedTimeSeconds 总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotalUsedTimeSeconds() const;
 
                     /**
                      * 判断参数 TotalUsedTimeSeconds 是否已赋值
                      * @return TotalUsedTimeSeconds 是否已赋值
+                     * 
                      */
                     bool TotalUsedTimeSecondsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedFlowMegaBytes 总流量，单位MB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotalUsedFlowMegaBytes() const;
 
                     /**
                      * 判断参数 TotalUsedFlowMegaBytes 是否已赋值
                      * @return TotalUsedFlowMegaBytes 是否已赋值
+                     * 
                      */
                     bool TotalUsedFlowMegaBytesHasBeenSet() const;
 

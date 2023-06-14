@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取投放模式（0=PDB，1=PD，2=RTB，10=其他）
                      * @return DeliveryMode 投放模式（0=PDB，1=PD，2=RTB，10=其他）
+                     * 
                      */
                     int64_t GetDeliveryMode() const;
 
                     /**
                      * 设置投放模式（0=PDB，1=PD，2=RTB，10=其他）
-                     * @param DeliveryMode 投放模式（0=PDB，1=PD，2=RTB，10=其他）
+                     * @param _deliveryMode 投放模式（0=PDB，1=PD，2=RTB，10=其他）
+                     * 
                      */
                     void SetDeliveryMode(const int64_t& _deliveryMode);
 
                     /**
                      * 判断参数 DeliveryMode 是否已赋值
                      * @return DeliveryMode 是否已赋值
+                     * 
                      */
                     bool DeliveryModeHasBeenSet() const;
 
                     /**
                      * 获取广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）
                      * @return AdvertisingType 广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）
+                     * 
                      */
                     int64_t GetAdvertisingType() const;
 
                     /**
                      * 设置广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）
-                     * @param AdvertisingType 广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）
+                     * @param _advertisingType 广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）
+                     * 
                      */
                     void SetAdvertisingType(const int64_t& _advertisingType);
 
                     /**
                      * 判断参数 AdvertisingType 是否已赋值
                      * @return AdvertisingType 是否已赋值
+                     * 
                      */
                     bool AdvertisingTypeHasBeenSet() const;
 
                     /**
                      * 获取是否全屏插广告（0-否，1-是）
                      * @return FullScreen 是否全屏插广告（0-否，1-是）
+                     * 
                      */
                     int64_t GetFullScreen() const;
 
                     /**
                      * 设置是否全屏插广告（0-否，1-是）
-                     * @param FullScreen 是否全屏插广告（0-否，1-是）
+                     * @param _fullScreen 是否全屏插广告（0-否，1-是）
+                     * 
                      */
                     void SetFullScreen(const int64_t& _fullScreen);
 
                     /**
                      * 判断参数 FullScreen 是否已赋值
                      * @return FullScreen 是否已赋值
+                     * 
                      */
                     bool FullScreenHasBeenSet() const;
 
                     /**
                      * 获取广告位宽度
                      * @return AdvertisingSpaceWidth 广告位宽度
+                     * 
                      */
                     int64_t GetAdvertisingSpaceWidth() const;
 
                     /**
                      * 设置广告位宽度
-                     * @param AdvertisingSpaceWidth 广告位宽度
+                     * @param _advertisingSpaceWidth 广告位宽度
+                     * 
                      */
                     void SetAdvertisingSpaceWidth(const int64_t& _advertisingSpaceWidth);
 
                     /**
                      * 判断参数 AdvertisingSpaceWidth 是否已赋值
                      * @return AdvertisingSpaceWidth 是否已赋值
+                     * 
                      */
                     bool AdvertisingSpaceWidthHasBeenSet() const;
 
                     /**
                      * 获取广告位高度
                      * @return AdvertisingSpaceHeight 广告位高度
+                     * 
                      */
                     int64_t GetAdvertisingSpaceHeight() const;
 
                     /**
                      * 设置广告位高度
-                     * @param AdvertisingSpaceHeight 广告位高度
+                     * @param _advertisingSpaceHeight 广告位高度
+                     * 
                      */
                     void SetAdvertisingSpaceHeight(const int64_t& _advertisingSpaceHeight);
 
                     /**
                      * 判断参数 AdvertisingSpaceHeight 是否已赋值
                      * @return AdvertisingSpaceHeight 是否已赋值
+                     * 
                      */
                     bool AdvertisingSpaceHeightHasBeenSet() const;
 
                     /**
                      * 获取网址
                      * @return Url 网址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置网址
-                     * @param Url 网址
+                     * @param _url 网址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

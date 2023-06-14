@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取计费项名称
                      * @return SpecName 计费项名称
+                     * 
                      */
                     std::string GetSpecName() const;
 
                     /**
                      * 设置计费项名称
-                     * @param SpecName 计费项名称
+                     * @param _specName 计费项名称
+                     * 
                      */
                     void SetSpecName(const std::string& _specName);
 
                     /**
                      * 判断参数 SpecName 是否已赋值
                      * @return SpecName 是否已赋值
+                     * 
                      */
                     bool SpecNameHasBeenSet() const;
 
                     /**
                      * 获取原价，单位：分。最大值42亿，超过则返回0
                      * @return TotalCost 原价，单位：分。最大值42亿，超过则返回0
+                     * 
                      */
                     uint64_t GetTotalCost() const;
 
                     /**
                      * 设置原价，单位：分。最大值42亿，超过则返回0
-                     * @param TotalCost 原价，单位：分。最大值42亿，超过则返回0
+                     * @param _totalCost 原价，单位：分。最大值42亿，超过则返回0
+                     * 
                      */
                     void SetTotalCost(const uint64_t& _totalCost);
 
                     /**
                      * 判断参数 TotalCost 是否已赋值
                      * @return TotalCost 是否已赋值
+                     * 
                      */
                     bool TotalCostHasBeenSet() const;
 
                     /**
                      * 获取优惠后的价格，单位：分
                      * @return RealTotalCost 优惠后的价格，单位：分
+                     * 
                      */
                     uint64_t GetRealTotalCost() const;
 
                     /**
                      * 设置优惠后的价格，单位：分
-                     * @param RealTotalCost 优惠后的价格，单位：分
+                     * @param _realTotalCost 优惠后的价格，单位：分
+                     * 
                      */
                     void SetRealTotalCost(const uint64_t& _realTotalCost);
 
                     /**
                      * 判断参数 RealTotalCost 是否已赋值
                      * @return RealTotalCost 是否已赋值
+                     * 
                      */
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
                      * 获取计费项数量
                      * @return SpecCount 计费项数量
+                     * 
                      */
                     uint64_t GetSpecCount() const;
 
                     /**
                      * 设置计费项数量
-                     * @param SpecCount 计费项数量
+                     * @param _specCount 计费项数量
+                     * 
                      */
                     void SetSpecCount(const uint64_t& _specCount);
 
                     /**
                      * 判断参数 SpecCount 是否已赋值
                      * @return SpecCount 是否已赋值
+                     * 
                      */
                     bool SpecCountHasBeenSet() const;
 

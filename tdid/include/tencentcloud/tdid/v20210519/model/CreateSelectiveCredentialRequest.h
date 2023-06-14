@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取参数集合
                      * @return FunctionArg 参数集合
+                     * 
                      */
                     VerifyFunctionArg GetFunctionArg() const;
 
                     /**
                      * 设置参数集合
-                     * @param FunctionArg 参数集合
+                     * @param _functionArg 参数集合
+                     * 
                      */
                     void SetFunctionArg(const VerifyFunctionArg& _functionArg);
 
                     /**
                      * 判断参数 FunctionArg 是否已赋值
                      * @return FunctionArg 是否已赋值
+                     * 
                      */
                     bool FunctionArgHasBeenSet() const;
 
                     /**
                      * 获取批露策略id
                      * @return PolicyId 批露策略id
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置批露策略id
-                     * @param PolicyId 批露策略id
+                     * @param _policyId 批露策略id
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

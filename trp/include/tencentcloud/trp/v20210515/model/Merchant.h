@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取商户标识码
                      * @return MerchantId 商户标识码
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户标识码
-                     * @param MerchantId 商户标识码
+                     * @param _merchantId 商户标识码
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取企业id
                      * @return CorpId 企业id
+                     * 
                      */
                     int64_t GetCorpId() const;
 
                     /**
                      * 设置企业id
-                     * @param CorpId 企业id
+                     * @param _corpId 企业id
+                     * 
                      */
                     void SetCorpId(const int64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取商户名称
                      * @return Name 商户名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商户名称
-                     * @param Name 商户名称
+                     * @param _name 商户名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -105,92 +114,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取商户码规则
                      * @return CodeRule 商户码规则
+                     * 
                      */
                     std::string GetCodeRule() const;
 
                     /**
                      * 设置商户码规则
-                     * @param CodeRule 商户码规则
+                     * @param _codeRule 商户码规则
+                     * 
                      */
                     void SetCodeRule(const std::string& _codeRule);
 
                     /**
                      * 判断参数 CodeRule 是否已赋值
                      * @return CodeRule 是否已赋值
+                     * 
                      */
                     bool CodeRuleHasBeenSet() const;
 
                     /**
                      * 获取码来源类型 0: 安心平台 1: 第三方码
                      * @return CodeType 码来源类型 0: 安心平台 1: 第三方码
+                     * 
                      */
                     int64_t GetCodeType() const;
 
                     /**
                      * 设置码来源类型 0: 安心平台 1: 第三方码
-                     * @param CodeType 码来源类型 0: 安心平台 1: 第三方码
+                     * @param _codeType 码来源类型 0: 安心平台 1: 第三方码
+                     * 
                      */
                     void SetCodeType(const int64_t& _codeType);
 
                     /**
                      * 判断参数 CodeType 是否已赋值
                      * @return CodeType 是否已赋值
+                     * 
                      */
                     bool CodeTypeHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeUrl 第三方码域名前缀
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeUrl() const;
 
                     /**
                      * 设置第三方码域名前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeUrl 第三方码域名前缀
+                     * @param _codeUrl 第三方码域名前缀
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeUrl(const std::string& _codeUrl);
 
                     /**
                      * 判断参数 CodeUrl 是否已赋值
                      * @return CodeUrl 是否已赋值
+                     * 
                      */
                     bool CodeUrlHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取总内存大小。free命令中Mem:一行total的值,单位：KB
                      * @return Total 总内存大小。free命令中Mem:一行total的值,单位：KB
+                     * 
                      */
                     std::vector<int64_t> GetTotal() const;
 
                     /**
                      * 设置总内存大小。free命令中Mem:一行total的值,单位：KB
-                     * @param Total 总内存大小。free命令中Mem:一行total的值,单位：KB
+                     * @param _total 总内存大小。free命令中Mem:一行total的值,单位：KB
+                     * 
                      */
                     void SetTotal(const std::vector<int64_t>& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已使用内存。free命令中Mem:一行used的值,单位：KB
                      * @return Used 已使用内存。free命令中Mem:一行used的值,单位：KB
+                     * 
                      */
                     std::vector<int64_t> GetUsed() const;
 
                     /**
                      * 设置已使用内存。free命令中Mem:一行used的值,单位：KB
-                     * @param Used 已使用内存。free命令中Mem:一行used的值,单位：KB
+                     * @param _used 已使用内存。free命令中Mem:一行used的值,单位：KB
+                     * 
                      */
                     void SetUsed(const std::vector<int64_t>& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 

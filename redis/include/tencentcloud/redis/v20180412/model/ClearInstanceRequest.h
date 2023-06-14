@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取redis的实例密码（免密实例不需要传密码，非免密实例必传）
                      * @return Password redis的实例密码（免密实例不需要传密码，非免密实例必传）
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置redis的实例密码（免密实例不需要传密码，非免密实例必传）
-                     * @param Password redis的实例密码（免密实例不需要传密码，非免密实例必传）
+                     * @param _password redis的实例密码（免密实例不需要传密码，非免密实例必传）
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

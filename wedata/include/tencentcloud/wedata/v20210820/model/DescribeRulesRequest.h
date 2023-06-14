@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取规则组id
                      * @return RuleGroupId 规则组id
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组id
-                     * @param RuleGroupId 规则组id
+                     * @param _ruleGroupId 规则组id
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
                      * 获取该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
                      * @return EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @param EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @param _engineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 

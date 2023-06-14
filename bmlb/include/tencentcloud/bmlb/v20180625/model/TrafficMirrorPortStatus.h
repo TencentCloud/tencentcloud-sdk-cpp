@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取接收机端口。
                      * @return Port 接收机端口。
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置接收机端口。
-                     * @param Port 接收机端口。
+                     * @param _port 接收机端口。
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取状态。
                      * @return Status 状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态。
-                     * @param Status 状态。
+                     * @param _status 状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。
                      * @return AsyncRequestIds kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。
+                     * 
                      */
                     std::vector<int64_t> GetAsyncRequestIds() const;
 
                     /**
                      * 设置kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。
-                     * @param AsyncRequestIds kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。
+                     * @param _asyncRequestIds kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。
+                     * 
                      */
                     void SetAsyncRequestIds(const std::vector<int64_t>& _asyncRequestIds);
 
                     /**
                      * 判断参数 AsyncRequestIds 是否已赋值
                      * @return AsyncRequestIds 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdsHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值包括： "redis" - 云数据库 Redis。
                      * @return Product 服务产品类型，支持值包括： "redis" - 云数据库 Redis。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值包括： "redis" - 云数据库 Redis。
-                     * @param Product 服务产品类型，支持值包括： "redis" - 云数据库 Redis。
+                     * @param _product 服务产品类型，支持值包括： "redis" - 云数据库 Redis。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

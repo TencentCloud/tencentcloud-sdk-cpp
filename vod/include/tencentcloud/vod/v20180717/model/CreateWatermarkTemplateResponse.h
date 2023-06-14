@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取水印模板唯一标识。
                      * @return Definition 水印模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取水印图片地址，仅当 Type 为 image，该字段有效。
                      * @return ImageUrl 水印图片地址，仅当 Type 为 image，该字段有效。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 

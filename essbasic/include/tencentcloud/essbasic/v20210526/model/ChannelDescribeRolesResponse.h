@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取页面偏移量，最大2000
                      * @return Offset 页面偏移量，最大2000
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询数量，最大200
                      * @return Limit 查询数量，最大200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询角色的总数量
                      * @return TotalCount 查询角色的总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelRoles 角色信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ChannelRole> GetChannelRoles() const;
 
                     /**
                      * 判断参数 ChannelRoles 是否已赋值
                      * @return ChannelRoles 是否已赋值
+                     * 
                      */
                     bool ChannelRolesHasBeenSet() const;
 

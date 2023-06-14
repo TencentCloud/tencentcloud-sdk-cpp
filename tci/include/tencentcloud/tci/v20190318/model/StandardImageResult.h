@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取详细结果
                      * @return ResultSet 详细结果
+                     * 
                      */
                     std::vector<ImageTaskResult> GetResultSet() const;
 
                     /**
                      * 设置详细结果
-                     * @param ResultSet 详细结果
+                     * @param _resultSet 详细结果
+                     * 
                      */
                     void SetResultSet(const std::vector<ImageTaskResult>& _resultSet);
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取分析完成后的统计结果
                      * @return Statistic 分析完成后的统计结果
+                     * 
                      */
                     ImageTaskStatistic GetStatistic() const;
 
                     /**
                      * 设置分析完成后的统计结果
-                     * @param Statistic 分析完成后的统计结果
+                     * @param _statistic 分析完成后的统计结果
+                     * 
                      */
                     void SetStatistic(const ImageTaskStatistic& _statistic);
 
                     /**
                      * 判断参数 Statistic 是否已赋值
                      * @return Statistic 是否已赋值
+                     * 
                      */
                     bool StatisticHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return Message 状态描述
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置状态描述
-                     * @param Message 状态描述
+                     * @param _message 状态描述
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态
-                     * @param Status 任务状态
+                     * @param _status 任务状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取结果总数
                      * @return TotalCount 结果总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置结果总数
-                     * @param TotalCount 结果总数
+                     * @param _totalCount 结果总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

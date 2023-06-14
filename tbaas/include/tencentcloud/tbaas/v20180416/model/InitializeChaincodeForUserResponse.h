@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取实例化任务ID，用于查询实例化结果
                      * @return TaskId 实例化任务ID，用于查询实例化结果
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

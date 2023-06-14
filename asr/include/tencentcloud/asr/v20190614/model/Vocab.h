@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取热词表名称
                      * @return Name 热词表名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置热词表名称
-                     * @param Name 热词表名称
+                     * @param _name 热词表名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取热词表描述
                      * @return Description 热词表描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置热词表描述
-                     * @param Description 热词表描述
+                     * @param _description 热词表描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取热词表ID
                      * @return VocabId 热词表ID
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 设置热词表ID
-                     * @param VocabId 热词表ID
+                     * @param _vocabId 热词表ID
+                     * 
                      */
                     void SetVocabId(const std::string& _vocabId);
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 
                     /**
                      * 获取词权重列表
                      * @return WordWeights 词权重列表
+                     * 
                      */
                     std::vector<HotWord> GetWordWeights() const;
 
                     /**
                      * 设置词权重列表
-                     * @param WordWeights 词权重列表
+                     * @param _wordWeights 词权重列表
+                     * 
                      */
                     void SetWordWeights(const std::vector<HotWord>& _wordWeights);
 
                     /**
                      * 判断参数 WordWeights 是否已赋值
                      * @return WordWeights 是否已赋值
+                     * 
                      */
                     bool WordWeightsHasBeenSet() const;
 
                     /**
                      * 获取词表创建时间
                      * @return CreateTime 词表创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置词表创建时间
-                     * @param CreateTime 词表创建时间
+                     * @param _createTime 词表创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取词表更新时间
                      * @return UpdateTime 词表更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置词表更新时间
-                     * @param UpdateTime 词表更新时间
+                     * @param _updateTime 词表更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
                      * @return State 热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
-                     * @param State 热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
+                     * @param _state 热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagInfos 标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagInfos 标签数组
+                     * @param _tagInfos 标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
+                     * 
                      */
                     bool TagInfosHasBeenSet() const;
 

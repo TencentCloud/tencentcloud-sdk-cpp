@@ -53,12 +53,14 @@ FINISHED 处理完成
 QUEUING 排队中
 PROCESSING 处理中
 FINISHED 处理完成
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -67,12 +69,14 @@ FINISHED 处理完成
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultVideoUrl 分割后视频URL, 存储于腾讯云COS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultVideoUrl() const;
 
                     /**
                      * 判断参数 ResultVideoUrl 是否已赋值
                      * @return ResultVideoUrl 是否已赋值
+                     * 
                      */
                     bool ResultVideoUrlHasBeenSet() const;
 
@@ -81,12 +85,14 @@ FINISHED 处理完成
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultVideoMD5 分割后视频MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultVideoMD5() const;
 
                     /**
                      * 判断参数 ResultVideoMD5 是否已赋值
                      * @return ResultVideoMD5 是否已赋值
+                     * 
                      */
                     bool ResultVideoMD5HasBeenSet() const;
 
@@ -95,12 +101,14 @@ FINISHED 处理完成
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoBasicInformation 视频基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoBasicInformation GetVideoBasicInformation() const;
 
                     /**
                      * 判断参数 VideoBasicInformation 是否已赋值
                      * @return VideoBasicInformation 是否已赋值
+                     * 
                      */
                     bool VideoBasicInformationHasBeenSet() const;
 
@@ -109,12 +117,14 @@ FINISHED 处理完成
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 分割任务错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

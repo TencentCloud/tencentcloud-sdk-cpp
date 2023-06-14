@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取<自定义Id,文件id>数组
                      * @return CustomIdList <自定义Id,文件id>数组
+                     * 
                      */
                     std::vector<CustomFileIdMap> GetCustomIdList() const;
 
                     /**
                      * 判断参数 CustomIdList 是否已赋值
                      * @return CustomIdList 是否已赋值
+                     * 
                      */
                     bool CustomIdListHasBeenSet() const;
 

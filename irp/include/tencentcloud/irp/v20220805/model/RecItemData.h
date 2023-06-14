@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取推荐的内容ID
                      * @return ItemId 推荐的内容ID
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置推荐的内容ID
-                     * @param ItemId 推荐的内容ID
+                     * @param _itemId 推荐的内容ID
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemType 内容类型，同内容上报类型一致
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetItemType() const;
 
                     /**
                      * 设置内容类型，同内容上报类型一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemType 内容类型，同内容上报类型一致
+                     * @param _itemType 内容类型，同内容上报类型一致
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemType(const std::string& _itemType);
 
                     /**
                      * 判断参数 ItemType 是否已赋值
                      * @return ItemType 是否已赋值
+                     * 
                      */
                     bool ItemTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该ItemTraceId上报。每次接口调用返回的ItemTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetItemTraceId() const;
 
                     /**
                      * 设置推荐追踪id，本次推荐内容产生的后续行为上报均要用该ItemTraceId上报。每次接口调用返回的ItemTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该ItemTraceId上报。每次接口调用返回的ItemTraceId不同
+                     * @param _itemTraceId 推荐追踪id，本次推荐内容产生的后续行为上报均要用该ItemTraceId上报。每次接口调用返回的ItemTraceId不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemTraceId(const std::string& _itemTraceId);
 
                     /**
                      * 判断参数 ItemTraceId 是否已赋值
                      * @return ItemTraceId 是否已赋值
+                     * 
                      */
                     bool ItemTraceIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 推荐预测分，分值越高被推荐的理由越充分，取值范围[0,1000000]，用于做二次排序的参考
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置推荐预测分，分值越高被推荐的理由越充分，取值范围[0,1000000]，用于做二次排序的参考
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 推荐预测分，分值越高被推荐的理由越充分，取值范围[0,1000000]，用于做二次排序的参考
+                     * @param _score 推荐预测分，分值越高被推荐的理由越充分，取值范围[0,1000000]，用于做二次排序的参考
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取专线网关ID，形如：dcg-prpqlmg1
                      * @return DirectConnectGatewayId 专线网关ID，形如：dcg-prpqlmg1
+                     * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
                      * 设置专线网关ID，形如：dcg-prpqlmg1
-                     * @param DirectConnectGatewayId 专线网关ID，形如：dcg-prpqlmg1
+                     * @param _directConnectGatewayId 专线网关ID，形如：dcg-prpqlmg1
+                     * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
 
                     /**
                      * 判断参数 DirectConnectGatewayId 是否已赋值
                      * @return DirectConnectGatewayId 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取需要连通的IDC网段列表
                      * @return Routes 需要连通的IDC网段列表
+                     * 
                      */
                     std::vector<DirectConnectGatewayCcnRoute> GetRoutes() const;
 
                     /**
                      * 设置需要连通的IDC网段列表
-                     * @param Routes 需要连通的IDC网段列表
+                     * @param _routes 需要连通的IDC网段列表
+                     * 
                      */
                     void SetRoutes(const std::vector<DirectConnectGatewayCcnRoute>& _routes);
 
                     /**
                      * 判断参数 Routes 是否已赋值
                      * @return Routes 是否已赋值
+                     * 
                      */
                     bool RoutesHasBeenSet() const;
 

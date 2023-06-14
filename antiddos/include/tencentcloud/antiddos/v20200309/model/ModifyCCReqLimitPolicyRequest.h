@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取策略Id
                      * @return PolicyId 策略Id
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置策略Id
-                     * @param PolicyId 策略Id
+                     * @param _policyId 策略Id
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略项
                      * @return Policy 策略项
+                     * 
                      */
                     CCReqLimitPolicyRecord GetPolicy() const;
 
                     /**
                      * 设置策略项
-                     * @param Policy 策略项
+                     * @param _policy 策略项
+                     * 
                      */
                     void SetPolicy(const CCReqLimitPolicyRecord& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 

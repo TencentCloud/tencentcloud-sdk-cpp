@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取CPU，单位：核
                      * @return Cpu CPU，单位：核
+                     * 
                      */
                     double GetCpu() const;
 
                     /**
                      * 设置CPU，单位：核
-                     * @param Cpu CPU，单位：核
+                     * @param _cpu CPU，单位：核
+                     * 
                      */
                     void SetCpu(const double& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存，单位：Gi
                      * @return Memory 内存，单位：Gi
+                     * 
                      */
                     double GetMemory() const;
 
                     /**
                      * 设置内存，单位：Gi
-                     * @param Memory 内存，单位：Gi
+                     * @param _memory 内存，单位：Gi
+                     * 
                      */
                     void SetMemory(const double& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 

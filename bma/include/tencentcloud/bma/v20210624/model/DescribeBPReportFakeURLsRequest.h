@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return PageSize 页数
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页数
-                     * @param PageSize 页数
+                     * @param _pageSize 页数
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return PageNumber 页码
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置页码
-                     * @param PageNumber 页码
+                     * @param _pageNumber 页码
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 

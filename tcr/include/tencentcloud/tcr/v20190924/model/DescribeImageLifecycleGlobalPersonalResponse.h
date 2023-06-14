@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取全局自动删除策略信息
                      * @return Data 全局自动删除策略信息
+                     * 
                      */
                     AutoDelStrategyInfoResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：dcdbt-ow728lmc。
                      * @return InstanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，形如：dcdbt-ow728lmc。
-                     * @param InstanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * @param _instanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取登录用户名。
                      * @return UserName 登录用户名。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置登录用户名。
-                     * @param UserName 登录用户名。
+                     * @param _userName 登录用户名。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取用户允许的访问 host，用户名+host唯一确定一个账号。
                      * @return Host 用户允许的访问 host，用户名+host唯一确定一个账号。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置用户允许的访问 host，用户名+host唯一确定一个账号。
-                     * @param Host 用户允许的访问 host，用户名+host唯一确定一个账号。
+                     * @param _host 用户允许的访问 host，用户名+host唯一确定一个账号。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取新的账号备注，长度 0~256。
                      * @return Description 新的账号备注，长度 0~256。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置新的账号备注，长度 0~256。
-                     * @param Description 新的账号备注，长度 0~256。
+                     * @param _description 新的账号备注，长度 0~256。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

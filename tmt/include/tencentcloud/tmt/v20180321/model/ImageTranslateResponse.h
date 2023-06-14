@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取请求的SessionUuid返回
                      * @return SessionUuid 请求的SessionUuid返回
+                     * 
                      */
                     std::string GetSessionUuid() const;
 
                     /**
                      * 判断参数 SessionUuid 是否已赋值
                      * @return SessionUuid 是否已赋值
+                     * 
                      */
                     bool SessionUuidHasBeenSet() const;
 
                     /**
                      * 获取源语言
                      * @return Source 源语言
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取目标语言
                      * @return Target 目标语言
+                     * 
                      */
                     std::string GetTarget() const;
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取图片翻译结果，翻译结果按识别的文本每一行独立翻译，后续会推出按段落划分并翻译的版本
                      * @return ImageRecord 图片翻译结果，翻译结果按识别的文本每一行独立翻译，后续会推出按段落划分并翻译的版本
+                     * 
                      */
                     ImageRecord GetImageRecord() const;
 
                     /**
                      * 判断参数 ImageRecord 是否已赋值
                      * @return ImageRecord 是否已赋值
+                     * 
                      */
                     bool ImageRecordHasBeenSet() const;
 

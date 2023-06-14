@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
                      * @return StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
-                     * @param StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * @param _startTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
                      * @return EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
-                     * @param EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * @param _endTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 waf：Web 攻击防护TOP数据
                      * @return Mode 查询的SCDN TOP攻击数据类型：
 waf：Web 攻击防护TOP数据
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置查询的SCDN TOP攻击数据类型：
 waf：Web 攻击防护TOP数据
-                     * @param Mode 查询的SCDN TOP攻击数据类型：
+                     * @param _mode 查询的SCDN TOP攻击数据类型：
 waf：Web 攻击防护TOP数据
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -109,6 +118,7 @@ attackType：攻击类型排序
 url：攻击目标 url 排序
 ip：攻击源 IP 排序
 attackType：攻击类型排序
+                     * 
                      */
                     std::string GetMetric() const;
 
@@ -117,16 +127,18 @@ attackType：攻击类型排序
 url：攻击目标 url 排序
 ip：攻击源 IP 排序
 attackType：攻击类型排序
-                     * @param Metric 排序对象，支持以下几种形式：
+                     * @param _metric 排序对象，支持以下几种形式：
 url：攻击目标 url 排序
 ip：攻击源 IP 排序
 attackType：攻击类型排序
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
@@ -135,38 +147,44 @@ attackType：攻击类型排序
 request：请求次数
                      * @return Filter 排序使用的指标名称：
 request：请求次数
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置排序使用的指标名称：
 request：请求次数
-                     * @param Filter 排序使用的指标名称：
+                     * @param _filter 排序使用的指标名称：
 request：请求次数
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取指定域名查询
                      * @return Domain 指定域名查询
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置指定域名查询
-                     * @param Domain 指定域名查询
+                     * @param _domain 指定域名查询
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -207,6 +225,7 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+                     * 
                      */
                     std::string GetAttackType() const;
 
@@ -229,7 +248,7 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
-                     * @param AttackType 指定攻击类型, 仅 Mode=waf 时有效
+                     * @param _attackType 指定攻击类型, 仅 Mode=waf 时有效
 不填则查询所有攻击类型的数据总和
 AttackType 映射如下:
   other = '未知类型'
@@ -247,12 +266,14 @@ AttackType 映射如下:
   trojan_horse = "木马后门攻击"
   csrf = "CSRF攻击"
   malicious_file_upload= '恶意文件上传'
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
@@ -267,6 +288,7 @@ DefenceMode 映射如下：
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+                     * 
                      */
                     std::string GetDefenceMode() const;
 
@@ -276,17 +298,19 @@ DefenceMode 映射如下：
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
-                     * @param DefenceMode 指定防御模式,仅 Mode=waf 时有效
+                     * @param _defenceMode 指定防御模式,仅 Mode=waf 时有效
 不填则查询所有防御模式的数据总和
 DefenceMode 映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+                     * 
                      */
                     void SetDefenceMode(const std::string& _defenceMode);
 
                     /**
                      * 判断参数 DefenceMode 是否已赋值
                      * @return DefenceMode 是否已赋值
+                     * 
                      */
                     bool DefenceModeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段
                      * @return ClusterId 集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段
-                     * @param ClusterId 集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段
+                     * @param _clusterId 集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

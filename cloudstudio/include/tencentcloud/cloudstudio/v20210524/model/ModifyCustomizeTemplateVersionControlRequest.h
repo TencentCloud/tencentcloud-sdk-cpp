@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取仓库地址
                      * @return Url 仓库地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置仓库地址
-                     * @param Url 仓库地址
+                     * @param _url 仓库地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取代码仓库分支/标签
                      * @return Ref 代码仓库分支/标签
+                     * 
                      */
                     std::string GetRef() const;
 
                     /**
                      * 设置代码仓库分支/标签
-                     * @param Ref 代码仓库分支/标签
+                     * @param _ref 代码仓库分支/标签
+                     * 
                      */
                     void SetRef(const std::string& _ref);
 
                     /**
                      * 判断参数 Ref 是否已赋值
                      * @return Ref 是否已赋值
+                     * 
                      */
                     bool RefHasBeenSet() const;
 
                     /**
                      * 获取代码仓库 ref 类型
                      * @return RefType 代码仓库 ref 类型
+                     * 
                      */
                     std::string GetRefType() const;
 
                     /**
                      * 设置代码仓库 ref 类型
-                     * @param RefType 代码仓库 ref 类型
+                     * @param _refType 代码仓库 ref 类型
+                     * 
                      */
                     void SetRefType(const std::string& _refType);
 
                     /**
                      * 判断参数 RefType 是否已赋值
                      * @return RefType 是否已赋值
+                     * 
                      */
                     bool RefTypeHasBeenSet() const;
 

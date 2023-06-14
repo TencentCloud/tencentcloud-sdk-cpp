@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取匹配 Code
                      * @return MatchCode 匹配 Code
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配 Code
-                     * @param MatchCode 匹配 Code
+                     * @param _matchCode 匹配 Code
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 
                     /**
                      * 获取要取消的匹配匹配票据 ID
                      * @return MatchTicketId 要取消的匹配匹配票据 ID
+                     * 
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
                      * 设置要取消的匹配匹配票据 ID
-                     * @param MatchTicketId 要取消的匹配匹配票据 ID
+                     * @param _matchTicketId 要取消的匹配匹配票据 ID
+                     * 
                      */
                     void SetMatchTicketId(const std::string& _matchTicketId);
 
                     /**
                      * 判断参数 MatchTicketId 是否已赋值
                      * @return MatchTicketId 是否已赋值
+                     * 
                      */
                     bool MatchTicketIdHasBeenSet() const;
 

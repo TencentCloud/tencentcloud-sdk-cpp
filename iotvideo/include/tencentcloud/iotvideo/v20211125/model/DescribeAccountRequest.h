@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取1设备，2云存，3ai
                      * @return AccountType 1设备，2云存，3ai
+                     * 
                      */
                     uint64_t GetAccountType() const;
 
                     /**
                      * 设置1设备，2云存，3ai
-                     * @param AccountType 1设备，2云存，3ai
+                     * @param _accountType 1设备，2云存，3ai
+                     * 
                      */
                     void SetAccountType(const uint64_t& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 

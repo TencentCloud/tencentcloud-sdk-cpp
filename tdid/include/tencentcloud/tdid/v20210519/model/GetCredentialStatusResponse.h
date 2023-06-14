@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取凭证状态信息
                      * @return CredentialStatus 凭证状态信息
+                     * 
                      */
                     CredentialStatus GetCredentialStatus() const;
 
                     /**
                      * 判断参数 CredentialStatus 是否已赋值
                      * @return CredentialStatus 是否已赋值
+                     * 
                      */
                     bool CredentialStatusHasBeenSet() const;
 

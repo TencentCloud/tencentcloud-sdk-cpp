@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取镜像列表
                      * @return ImageList 镜像列表
+                     * 
                      */
                     std::vector<ImageSimpleInfo> GetImageList() const;
 
                     /**
                      * 判断参数 ImageList 是否已赋值
                      * @return ImageList 是否已赋值
+                     * 
                      */
                     bool ImageListHasBeenSet() const;
 
                     /**
                      * 获取镜像数
                      * @return ImageCnt 镜像数
+                     * 
                      */
                     uint64_t GetImageCnt() const;
 
                     /**
                      * 判断参数 ImageCnt 是否已赋值
                      * @return ImageCnt 是否已赋值
+                     * 
                      */
                     bool ImageCntHasBeenSet() const;
 

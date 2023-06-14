@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取已删除的路由策略详情。
                      * @return RouteSet 已删除的路由策略详情。
+                     * 
                      */
                     std::vector<Route> GetRouteSet() const;
 
                     /**
                      * 判断参数 RouteSet 是否已赋值
                      * @return RouteSet 是否已赋值
+                     * 
                      */
                     bool RouteSetHasBeenSet() const;
 

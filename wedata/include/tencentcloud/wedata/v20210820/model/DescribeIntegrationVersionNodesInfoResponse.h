@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 任务节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntegrationNodeInfo> GetNodes() const;
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 
@@ -64,24 +66,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mappings 任务映射信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntegrationNodeMapping> GetMappings() const;
 
                     /**
                      * 判断参数 Mappings 是否已赋值
                      * @return Mappings 是否已赋值
+                     * 
                      */
                     bool MappingsHasBeenSet() const;
 
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

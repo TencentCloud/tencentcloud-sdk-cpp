@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取CFS存储选项概览信息列表。
                      * @return CFSOptions CFS存储选项概览信息列表。
+                     * 
                      */
                     std::vector<CFSOptionOverview> GetCFSOptions() const;
 
                     /**
                      * 设置CFS存储选项概览信息列表。
-                     * @param CFSOptions CFS存储选项概览信息列表。
+                     * @param _cFSOptions CFS存储选项概览信息列表。
+                     * 
                      */
                     void SetCFSOptions(const std::vector<CFSOptionOverview>& _cFSOptions);
 
                     /**
                      * 判断参数 CFSOptions 是否已赋值
                      * @return CFSOptions 是否已赋值
+                     * 
                      */
                     bool CFSOptionsHasBeenSet() const;
 
                     /**
                      * 获取GooseFS存储选项概览信息列表。
                      * @return GooseFSOptions GooseFS存储选项概览信息列表。
+                     * 
                      */
                     std::vector<GooseFSOptionOverview> GetGooseFSOptions() const;
 
                     /**
                      * 设置GooseFS存储选项概览信息列表。
-                     * @param GooseFSOptions GooseFS存储选项概览信息列表。
+                     * @param _gooseFSOptions GooseFS存储选项概览信息列表。
+                     * 
                      */
                     void SetGooseFSOptions(const std::vector<GooseFSOptionOverview>& _gooseFSOptions);
 
                     /**
                      * 判断参数 GooseFSOptions 是否已赋值
                      * @return GooseFSOptions 是否已赋值
+                     * 
                      */
                     bool GooseFSOptionsHasBeenSet() const;
 

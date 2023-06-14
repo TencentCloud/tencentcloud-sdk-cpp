@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取公司抬头关键字
                      * @return CompanyTitleKeyword 公司抬头关键字
+                     * 
                      */
                     std::string GetCompanyTitleKeyword() const;
 
                     /**
                      * 设置公司抬头关键字
-                     * @param CompanyTitleKeyword 公司抬头关键字
+                     * @param _companyTitleKeyword 公司抬头关键字
+                     * 
                      */
                     void SetCompanyTitleKeyword(const std::string& _companyTitleKeyword);
 
                     /**
                      * 判断参数 CompanyTitleKeyword 是否已赋值
                      * @return CompanyTitleKeyword 是否已赋值
+                     * 
                      */
                     bool CompanyTitleKeywordHasBeenSet() const;
 
                     /**
                      * 获取开票平台ID。0：高灯，1：票易通
                      * @return InvoicePlatformId 开票平台ID。0：高灯，1：票易通
+                     * 
                      */
                     int64_t GetInvoicePlatformId() const;
 
                     /**
                      * 设置开票平台ID。0：高灯，1：票易通
-                     * @param InvoicePlatformId 开票平台ID。0：高灯，1：票易通
+                     * @param _invoicePlatformId 开票平台ID。0：高灯，1：票易通
+                     * 
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
                     /**
                      * 判断参数 InvoicePlatformId 是否已赋值
                      * @return InvoicePlatformId 是否已赋值
+                     * 
                      */
                     bool InvoicePlatformIdHasBeenSet() const;
 
                     /**
                      * 获取销方纳税人识别号
                      * @return SellerTaxpayerNum 销方纳税人识别号
+                     * 
                      */
                     std::string GetSellerTaxpayerNum() const;
 
                     /**
                      * 设置销方纳税人识别号
-                     * @param SellerTaxpayerNum 销方纳税人识别号
+                     * @param _sellerTaxpayerNum 销方纳税人识别号
+                     * 
                      */
                     void SetSellerTaxpayerNum(const std::string& _sellerTaxpayerNum);
 
                     /**
                      * 判断参数 SellerTaxpayerNum 是否已赋值
                      * @return SellerTaxpayerNum 是否已赋值
+                     * 
                      */
                     bool SellerTaxpayerNumHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox。
                      * @return Profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox。
-                     * @param Profile 接入环境。沙箱环境填sandbox。
+                     * @param _profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取终端用户在IoT Video上的唯一标识ID
                      * @return AccessId 终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置终端用户在IoT Video上的唯一标识ID
-                     * @param AccessId 终端用户在IoT Video上的唯一标识ID
+                     * @param _accessId 终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取用户角色，owner：主人，guest：访客
                      * @return Role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置用户角色，owner：主人，guest：访客
-                     * @param Role 用户角色，owner：主人，guest：访客
+                     * @param _role 用户角色，owner：主人，guest：访客
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
                      * @return ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
+                     * 
                      */
                     bool GetForceBind() const;
 
                     /**
                      * 设置是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
-                     * @param ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
+                     * @param _forceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
+                     * 
                      */
                     void SetForceBind(const bool& _forceBind);
 
                     /**
                      * 判断参数 ForceBind 是否已赋值
                      * @return ForceBind 是否已赋值
+                     * 
                      */
                     bool ForceBindHasBeenSet() const;
 
                     /**
                      * 获取设备昵称，最多不超过64个字符
                      * @return Nick 设备昵称，最多不超过64个字符
+                     * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置设备昵称，最多不超过64个字符
-                     * @param Nick 设备昵称，最多不超过64个字符
+                     * @param _nick 设备昵称，最多不超过64个字符
+                     * 
                      */
                     void SetNick(const std::string& _nick);
 
                     /**
                      * 判断参数 Nick 是否已赋值
                      * @return Nick 是否已赋值
+                     * 
                      */
                     bool NickHasBeenSet() const;
 
                     /**
                      * 获取绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
                      * @return BindToken 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     * 
                      */
                     std::string GetBindToken() const;
 
                     /**
                      * 设置绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
-                     * @param BindToken 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     * @param _bindToken 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     * 
                      */
                     void SetBindToken(const std::string& _bindToken);
 
                     /**
                      * 判断参数 BindToken 是否已赋值
                      * @return BindToken 是否已赋值
+                     * 
                      */
                     bool BindTokenHasBeenSet() const;
 

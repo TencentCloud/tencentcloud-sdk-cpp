@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取Nginx的服务器id
                      * @return NginxServerId Nginx的服务器id
+                     * 
                      */
                     uint64_t GetNginxServerId() const;
 
                     /**
                      * 设置Nginx的服务器id
-                     * @param NginxServerId Nginx的服务器id
+                     * @param _nginxServerId Nginx的服务器id
+                     * 
                      */
                     void SetNginxServerId(const uint64_t& _nginxServerId);
 
                     /**
                      * 判断参数 NginxServerId 是否已赋值
                      * @return NginxServerId 是否已赋值
+                     * 
                      */
                     bool NginxServerIdHasBeenSet() const;
 
                     /**
                      * 获取监听端口配置
                      * @return Port 监听端口配置
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置监听端口配置
-                     * @param Port 监听端口配置
+                     * @param _port 监听端口配置
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取与端口对应的协议
                      * @return Protocol 与端口对应的协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置与端口对应的协议
-                     * @param Protocol 与端口对应的协议
+                     * @param _protocol 与端口对应的协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取回源端口
                      * @return UpstreamPort 回源端口
+                     * 
                      */
                     std::string GetUpstreamPort() const;
 
                     /**
                      * 设置回源端口
-                     * @param UpstreamPort 回源端口
+                     * @param _upstreamPort 回源端口
+                     * 
                      */
                     void SetUpstreamPort(const std::string& _upstreamPort);
 
                     /**
                      * 判断参数 UpstreamPort 是否已赋值
                      * @return UpstreamPort 是否已赋值
+                     * 
                      */
                     bool UpstreamPortHasBeenSet() const;
 
                     /**
                      * 获取回源协议
                      * @return UpstreamProtocol 回源协议
+                     * 
                      */
                     std::string GetUpstreamProtocol() const;
 
                     /**
                      * 设置回源协议
-                     * @param UpstreamProtocol 回源协议
+                     * @param _upstreamProtocol 回源协议
+                     * 
                      */
                     void SetUpstreamProtocol(const std::string& _upstreamProtocol);
 
                     /**
                      * 判断参数 UpstreamProtocol 是否已赋值
                      * @return UpstreamProtocol 是否已赋值
+                     * 
                      */
                     bool UpstreamProtocolHasBeenSet() const;
 

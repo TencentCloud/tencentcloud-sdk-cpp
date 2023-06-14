@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID
                      * @return LoadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * @param _loadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例名字
                      * @return LoadBalancerName 负载均衡实例名字
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例名字
-                     * @param LoadBalancerName 负载均衡实例名字
+                     * @param _loadBalancerName 负载均衡实例名字
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例 VIP
                      * @return LoadBalancerVip 负载均衡实例 VIP
+                     * 
                      */
                     std::string GetLoadBalancerVip() const;
 
                     /**
                      * 设置负载均衡实例 VIP
-                     * @param LoadBalancerVip 负载均衡实例 VIP
+                     * @param _loadBalancerVip 负载均衡实例 VIP
+                     * 
                      */
                     void SetLoadBalancerVip(const std::string& _loadBalancerVip);
 
                     /**
                      * 判断参数 LoadBalancerVip 是否已赋值
                      * @return LoadBalancerVip 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerHostname 负载均衡实例 Hostname
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLoadBalancerHostname() const;
 
                     /**
                      * 设置负载均衡实例 Hostname
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalancerHostname 负载均衡实例 Hostname
+                     * @param _loadBalancerHostname 负载均衡实例 Hostname
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalancerHostname(const std::string& _loadBalancerHostname);
 
                     /**
                      * 判断参数 LoadBalancerHostname 是否已赋值
                      * @return LoadBalancerHostname 是否已赋值
+                     * 
                      */
                     bool LoadBalancerHostnameHasBeenSet() const;
 

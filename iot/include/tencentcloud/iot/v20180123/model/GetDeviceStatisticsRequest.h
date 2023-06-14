@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品Id列表
                      * @return Products 产品Id列表
+                     * 
                      */
                     std::vector<std::string> GetProducts() const;
 
                     /**
                      * 设置产品Id列表
-                     * @param Products 产品Id列表
+                     * @param _products 产品Id列表
+                     * 
                      */
                     void SetProducts(const std::vector<std::string>& _products);
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
+                     * 
                      */
                     bool ProductsHasBeenSet() const;
 
                     /**
                      * 获取开始日期
                      * @return StartDate 开始日期
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期
-                     * @param StartDate 开始日期
+                     * @param _startDate 开始日期
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期
                      * @return EndDate 结束日期
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期
-                     * @param EndDate 结束日期
+                     * @param _endDate 结束日期
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

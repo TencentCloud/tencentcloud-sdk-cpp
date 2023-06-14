@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 单条日志的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置单条日志的ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 单条日志的ID
+                     * @param _id 单条日志的ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 单条日志的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置单条日志的内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 单条日志的内容
+                     * @param _message 单条日志的内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 这条日志对应的Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置这条日志对应的Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodName 这条日志对应的Pod名称
+                     * @param _podName 这条日志对应的Pod名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志的时间戳（RFC3339格式的时间字符串）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置日志的时间戳（RFC3339格式的时间字符串）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 日志的时间戳（RFC3339格式的时间字符串）
+                     * @param _timestamp 日志的时间戳（RFC3339格式的时间字符串）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 

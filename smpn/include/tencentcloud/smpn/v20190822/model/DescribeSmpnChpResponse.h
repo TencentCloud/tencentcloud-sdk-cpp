@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取终端骚扰保护回应
                      * @return ResponseData 终端骚扰保护回应
+                     * 
                      */
                     CHPResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取认证状态：0-认证成功 1-认证失败
                      * @return Status 认证状态：0-认证成功 1-认证失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取认证状态说明，包括认证失败的原因
                      * @return Note 认证状态说明，包括认证失败的原因
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 

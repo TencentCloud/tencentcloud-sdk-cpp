@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductID 产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取控制台Skey
                      * @return Skey 控制台Skey
+                     * 
                      */
                     std::string GetSkey() const;
 
                     /**
                      * 设置控制台Skey
-                     * @param Skey 控制台Skey
+                     * @param _skey 控制台Skey
+                     * 
                      */
                     void SetSkey(const std::string& _skey);
 
                     /**
                      * 判断参数 Skey 是否已赋值
                      * @return Skey 是否已赋值
+                     * 
                      */
                     bool SkeyHasBeenSet() const;
 
                     /**
                      * 获取队列类型，0：CMQ，1：Ckafka
                      * @return QueueType 队列类型，0：CMQ，1：Ckafka
+                     * 
                      */
                     uint64_t GetQueueType() const;
 
                     /**
                      * 设置队列类型，0：CMQ，1：Ckafka
-                     * @param QueueType 队列类型，0：CMQ，1：Ckafka
+                     * @param _queueType 队列类型，0：CMQ，1：Ckafka
+                     * 
                      */
                     void SetQueueType(const uint64_t& _queueType);
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 
                     /**
                      * 获取临时密钥
                      * @return Consecretid 临时密钥
+                     * 
                      */
                     std::string GetConsecretid() const;
 
                     /**
                      * 设置临时密钥
-                     * @param Consecretid 临时密钥
+                     * @param _consecretid 临时密钥
+                     * 
                      */
                     void SetConsecretid(const std::string& _consecretid);
 
                     /**
                      * 判断参数 Consecretid 是否已赋值
                      * @return Consecretid 是否已赋值
+                     * 
                      */
                     bool ConsecretidHasBeenSet() const;
 

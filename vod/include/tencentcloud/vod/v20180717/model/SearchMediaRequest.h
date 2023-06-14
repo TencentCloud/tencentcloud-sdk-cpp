@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
                      * @return FileIds 文件 ID 集合，匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
 <li>单个 ID 长度限制：40个字符。</li>
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
@@ -76,15 +80,17 @@ namespace TencentCloud
                      * 设置文件 ID 集合，匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
 <li>单个 ID 长度限制：40个字符。</li>
-                     * @param FileIds 文件 ID 集合，匹配集合中的任意元素。
+                     * @param _fileIds 文件 ID 集合，匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
 <li>单个 ID 长度限制：40个字符。</li>
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
@@ -95,6 +101,7 @@ namespace TencentCloud
                      * @return Names 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
 <li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
@@ -102,15 +109,17 @@ namespace TencentCloud
                      * 设置文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
 <li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
-                     * @param Names 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
+                     * @param _names 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
 <li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 
@@ -121,6 +130,7 @@ namespace TencentCloud
                      * @return NamePrefixes 文件名前缀，前缀匹配媒体文件的文件名。
 <li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetNamePrefixes() const;
 
@@ -128,15 +138,17 @@ namespace TencentCloud
                      * 设置文件名前缀，前缀匹配媒体文件的文件名。
 <li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
-                     * @param NamePrefixes 文件名前缀，前缀匹配媒体文件的文件名。
+                     * @param _namePrefixes 文件名前缀，前缀匹配媒体文件的文件名。
 <li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetNamePrefixes(const std::vector<std::string>& _namePrefixes);
 
                     /**
                      * 判断参数 NamePrefixes 是否已赋值
                      * @return NamePrefixes 是否已赋值
+                     * 
                      */
                     bool NamePrefixesHasBeenSet() const;
 
@@ -147,6 +159,7 @@ namespace TencentCloud
                      * @return Descriptions 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetDescriptions() const;
 
@@ -154,15 +167,17 @@ namespace TencentCloud
                      * 设置文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
-                     * @param Descriptions 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
+                     * @param _descriptions 文件描述集合，模糊匹配媒体文件的描述，匹配度越高，排序越优先。
 <li>单个描述长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetDescriptions(const std::vector<std::string>& _descriptions);
 
                     /**
                      * 判断参数 Descriptions 是否已赋值
                      * @return Descriptions 是否已赋值
+                     * 
                      */
                     bool DescriptionsHasBeenSet() const;
 
@@ -171,20 +186,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<int64_t> GetClassIds() const;
 
                     /**
                      * 设置分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
 <li>数组长度限制：10。</li>
-                     * @param ClassIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
+                     * @param _classIds 分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetClassIds(const std::vector<int64_t>& _classIds);
 
                     /**
                      * 判断参数 ClassIds 是否已赋值
                      * @return ClassIds 是否已赋值
+                     * 
                      */
                     bool ClassIdsHasBeenSet() const;
 
@@ -195,6 +213,7 @@ namespace TencentCloud
                      * @return Tags 标签集合，匹配集合中任意元素。
 <li>单个标签长度限制：32个字符。</li>
 <li>数组长度限制：16。</li>
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
@@ -202,15 +221,17 @@ namespace TencentCloud
                      * 设置标签集合，匹配集合中任意元素。
 <li>单个标签长度限制：32个字符。</li>
 <li>数组长度限制：16。</li>
-                     * @param Tags 标签集合，匹配集合中任意元素。
+                     * @param _tags 标签集合，匹配集合中任意元素。
 <li>单个标签长度限制：32个字符。</li>
 <li>数组长度限制：16。</li>
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -223,6 +244,7 @@ namespace TencentCloud
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
+                     * 
                      */
                     std::vector<std::string> GetCategories() const;
 
@@ -231,16 +253,18 @@ namespace TencentCloud
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
-                     * @param Categories 文件类型。匹配集合中的任意元素：
+                     * @param _categories 文件类型。匹配集合中的任意元素：
 <li>Video: 视频文件</li>
 <li>Audio: 音频文件</li>
 <li>Image: 图片文件</li>
+                     * 
                      */
                     void SetCategories(const std::vector<std::string>& _categories);
 
                     /**
                      * 判断参数 Categories 是否已赋值
                      * @return Categories 是否已赋值
+                     * 
                      */
                     bool CategoriesHasBeenSet() const;
 
@@ -249,20 +273,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetSourceTypes() const;
 
                     /**
                      * 设置媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
 <li>数组长度限制：10。</li>
-                     * @param SourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     * @param _sourceTypes 媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetSourceTypes(const std::vector<std::string>& _sourceTypes);
 
                     /**
                      * 判断参数 SourceTypes 是否已赋值
                      * @return SourceTypes 是否已赋值
+                     * 
                      */
                     bool SourceTypesHasBeenSet() const;
 
@@ -271,20 +298,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return StreamIds 推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetStreamIds() const;
 
                     /**
                      * 设置推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
-                     * @param StreamIds 推流直播码集合。匹配集合中的任意元素。
+                     * @param _streamIds 推流直播码集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetStreamIds(const std::vector<std::string>& _streamIds);
 
                     /**
                      * 判断参数 StreamIds 是否已赋值
                      * @return StreamIds 是否已赋值
+                     * 
                      */
                     bool StreamIdsHasBeenSet() const;
 
@@ -293,20 +323,23 @@ namespace TencentCloud
 <li>包含所指定的头尾时间点。</li>
                      * @return CreateTime 匹配创建时间在此时间段内的文件。
 <li>包含所指定的头尾时间点。</li>
+                     * 
                      */
                     TimeRange GetCreateTime() const;
 
                     /**
                      * 设置匹配创建时间在此时间段内的文件。
 <li>包含所指定的头尾时间点。</li>
-                     * @param CreateTime 匹配创建时间在此时间段内的文件。
+                     * @param _createTime 匹配创建时间在此时间段内的文件。
 <li>包含所指定的头尾时间点。</li>
+                     * 
                      */
                     void SetCreateTime(const TimeRange& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -315,20 +348,23 @@ namespace TencentCloud
 <li>包含所指定的头尾时间点。</li>
                      * @return ExpireTime 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
 <li>包含所指定的头尾时间点。</li>
+                     * 
                      */
                     TimeRange GetExpireTime() const;
 
                     /**
                      * 设置匹配过期时间在此时间段内的文件，无法检索到已过期文件。
 <li>包含所指定的头尾时间点。</li>
-                     * @param ExpireTime 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+                     * @param _expireTime 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
 <li>包含所指定的头尾时间点。</li>
+                     * 
                      */
                     void SetExpireTime(const TimeRange& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -339,6 +375,7 @@ namespace TencentCloud
                      * @return Sort 排序方式。
 <li>Sort.Field 可选 CreateTime 。</li>
 <li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
                      */
                     SortBy GetSort() const;
 
@@ -346,15 +383,17 @@ namespace TencentCloud
                      * 设置排序方式。
 <li>Sort.Field 可选 CreateTime 。</li>
 <li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * @param Sort 排序方式。
+                     * @param _sort 排序方式。
 <li>Sort.Field 可选 CreateTime 。</li>
 <li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
                      */
                     void SetSort(const SortBy& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
@@ -363,20 +402,23 @@ namespace TencentCloud
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      * @return Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @param Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -385,20 +427,23 @@ namespace TencentCloud
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      * @return Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @param Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
 <li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -425,6 +470,7 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * 
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -440,7 +486,7 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     * @param Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+                     * @param _filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
 <li>transcodeInfo（视频转码结果信息）。</li>
@@ -451,12 +497,14 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -467,6 +515,7 @@ namespace TencentCloud
                      * @return StorageRegions 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
 <li>单个存储地区长度限制：20个字符。</li>
 <li>数组长度限制：20。</li>
+                     * 
                      */
                     std::vector<std::string> GetStorageRegions() const;
 
@@ -474,15 +523,17 @@ namespace TencentCloud
                      * 设置媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
 <li>单个存储地区长度限制：20个字符。</li>
 <li>数组长度限制：20。</li>
-                     * @param StorageRegions 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+                     * @param _storageRegions 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
 <li>单个存储地区长度限制：20个字符。</li>
 <li>数组长度限制：20。</li>
+                     * 
                      */
                     void SetStorageRegions(const std::vector<std::string>& _storageRegions);
 
                     /**
                      * 判断参数 StorageRegions 是否已赋值
                      * @return StorageRegions 是否已赋值
+                     * 
                      */
                     bool StorageRegionsHasBeenSet() const;
 
@@ -497,6 +548,7 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     std::vector<std::string> GetStorageClasses() const;
 
@@ -506,17 +558,19 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
-                     * @param StorageClasses 存储类型数组。可选值有：
+                     * @param _storageClasses 存储类型数组。可选值有：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     void SetStorageClasses(const std::vector<std::string>& _storageClasses);
 
                     /**
                      * 判断参数 StorageClasses 是否已赋值
                      * @return StorageClasses 是否已赋值
+                     * 
                      */
                     bool StorageClassesHasBeenSet() const;
 
@@ -525,20 +579,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return MediaTypes 媒体文件封装格式集合，匹配集合中任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetMediaTypes() const;
 
                     /**
                      * 设置媒体文件封装格式集合，匹配集合中任意元素。
 <li>数组长度限制：10。</li>
-                     * @param MediaTypes 媒体文件封装格式集合，匹配集合中任意元素。
+                     * @param _mediaTypes 媒体文件封装格式集合，匹配集合中任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetMediaTypes(const std::vector<std::string>& _mediaTypes);
 
                     /**
                      * 判断参数 MediaTypes 是否已赋值
                      * @return MediaTypes 是否已赋值
+                     * 
                      */
                     bool MediaTypesHasBeenSet() const;
 
@@ -551,6 +608,7 @@ namespace TencentCloud
 <li> Normal：正常；</li>
 <li> SystemForbidden：平台封禁；</li>
 <li> Forbidden：主动封禁。</li>
+                     * 
                      */
                     std::vector<std::string> GetStatus() const;
 
@@ -559,16 +617,18 @@ namespace TencentCloud
 <li> Normal：正常；</li>
 <li> SystemForbidden：平台封禁；</li>
 <li> Forbidden：主动封禁。</li>
-                     * @param Status 媒体文件状态，匹配集合中任意元素。
+                     * @param _status 媒体文件状态，匹配集合中任意元素。
 <li> Normal：正常；</li>
 <li> SystemForbidden：平台封禁；</li>
 <li> Forbidden：主动封禁。</li>
+                     * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -583,6 +643,7 @@ namespace TencentCloud
 <li> review：疑似违规，建议复审；</li>
 <li> block：确认违规，建议封禁；</li>
 <li> notModerated：未审核。</li>
+                     * 
                      */
                     std::vector<std::string> GetReviewResults() const;
 
@@ -592,17 +653,19 @@ namespace TencentCloud
 <li> review：疑似违规，建议复审；</li>
 <li> block：确认违规，建议封禁；</li>
 <li> notModerated：未审核。</li>
-                     * @param ReviewResults 媒体文件审核结果，匹配集合中任意元素。
+                     * @param _reviewResults 媒体文件审核结果，匹配集合中任意元素。
 <li> pass：审核通过；</li>
 <li> review：疑似违规，建议复审；</li>
 <li> block：确认违规，建议封禁；</li>
 <li> notModerated：未审核。</li>
+                     * 
                      */
                     void SetReviewResults(const std::vector<std::string>& _reviewResults);
 
                     /**
                      * 判断参数 ReviewResults 是否已赋值
                      * @return ReviewResults 是否已赋值
+                     * 
                      */
                     bool ReviewResultsHasBeenSet() const;
 
@@ -611,20 +674,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<uint64_t> GetTrtcSdkAppIds() const;
 
                     /**
                      * 设置TRTC 应用 ID 集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
-                     * @param TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
+                     * @param _trtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetTrtcSdkAppIds(const std::vector<uint64_t>& _trtcSdkAppIds);
 
                     /**
                      * 判断参数 TrtcSdkAppIds 是否已赋值
                      * @return TrtcSdkAppIds 是否已赋值
+                     * 
                      */
                     bool TrtcSdkAppIdsHasBeenSet() const;
 
@@ -635,6 +701,7 @@ namespace TencentCloud
                      * @return TrtcRoomIds TRTC 房间 ID 集合。匹配集合中的任意元素。
 <li>单个房间 ID 长度限制：64个字符；</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetTrtcRoomIds() const;
 
@@ -642,15 +709,17 @@ namespace TencentCloud
                      * 设置TRTC 房间 ID 集合。匹配集合中的任意元素。
 <li>单个房间 ID 长度限制：64个字符；</li>
 <li>数组长度限制：10。</li>
-                     * @param TrtcRoomIds TRTC 房间 ID 集合。匹配集合中的任意元素。
+                     * @param _trtcRoomIds TRTC 房间 ID 集合。匹配集合中的任意元素。
 <li>单个房间 ID 长度限制：64个字符；</li>
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetTrtcRoomIds(const std::vector<std::string>& _trtcRoomIds);
 
                     /**
                      * 判断参数 TrtcRoomIds 是否已赋值
                      * @return TrtcRoomIds 是否已赋值
+                     * 
                      */
                     bool TrtcRoomIdsHasBeenSet() const;
 
@@ -659,20 +728,23 @@ namespace TencentCloud
 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
                      * @return Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
-                     * @param Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
+                     * @param _text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -681,20 +753,23 @@ namespace TencentCloud
 媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
                      * @return SourceType （不推荐：应使用 SourceTypes 替代）
 媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置（不推荐：应使用 SourceTypes 替代）
 媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
-                     * @param SourceType （不推荐：应使用 SourceTypes 替代）
+                     * @param _sourceType （不推荐：应使用 SourceTypes 替代）
 媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -703,20 +778,23 @@ namespace TencentCloud
 推流直播码。
                      * @return StreamId （不推荐：应使用 StreamIds 替代）
 推流直播码。
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置（不推荐：应使用 StreamIds 替代）
 推流直播码。
-                     * @param StreamId （不推荐：应使用 StreamIds 替代）
+                     * @param _streamId （不推荐：应使用 StreamIds 替代）
 推流直播码。
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
@@ -731,6 +809,7 @@ namespace TencentCloud
 <li>大于等于开始时间。</li>
 <li>当 CreateTime.After 也存在时，将优先使用 CreateTime.After。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -740,17 +819,19 @@ namespace TencentCloud
 <li>大于等于开始时间。</li>
 <li>当 CreateTime.After 也存在时，将优先使用 CreateTime.After。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @param StartTime （不推荐：应使用 CreateTime 替代）
+                     * @param _startTime （不推荐：应使用 CreateTime 替代）
 创建时间的开始时间。
 <li>大于等于开始时间。</li>
 <li>当 CreateTime.After 也存在时，将优先使用 CreateTime.After。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -765,6 +846,7 @@ namespace TencentCloud
 <li>小于结束时间。</li>
 <li>当 CreateTime.Before 也存在时，将优先使用 CreateTime.Before。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -774,53 +856,61 @@ namespace TencentCloud
 <li>小于结束时间。</li>
 <li>当 CreateTime.Before 也存在时，将优先使用 CreateTime.Before。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
-                     * @param EndTime （不推荐：应使用 CreateTime 替代）
+                     * @param _endTime （不推荐：应使用 CreateTime 替代）
 创建时间的结束时间。
 <li>小于结束时间。</li>
 <li>当 CreateTime.Before 也存在时，将优先使用 CreateTime.Before。</li>
 <li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取该字段已无效。
                      * @return Vids 该字段已无效。
+                     * 
                      */
                     std::vector<std::string> GetVids() const;
 
                     /**
                      * 设置该字段已无效。
-                     * @param Vids 该字段已无效。
+                     * @param _vids 该字段已无效。
+                     * 
                      */
                     void SetVids(const std::vector<std::string>& _vids);
 
                     /**
                      * 判断参数 Vids 是否已赋值
                      * @return Vids 是否已赋值
+                     * 
                      */
                     bool VidsHasBeenSet() const;
 
                     /**
                      * 获取该字段已无效。
                      * @return Vid 该字段已无效。
+                     * 
                      */
                     std::string GetVid() const;
 
                     /**
                      * 设置该字段已无效。
-                     * @param Vid 该字段已无效。
+                     * @param _vid 该字段已无效。
+                     * 
                      */
                     void SetVid(const std::string& _vid);
 
                     /**
                      * 判断参数 Vid 是否已赋值
                      * @return Vid 是否已赋值
+                     * 
                      */
                     bool VidHasBeenSet() const;
 

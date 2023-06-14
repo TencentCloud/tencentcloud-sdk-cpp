@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取订单id
                      * @return OrderId 订单id
+                     * 
                      */
                     uint64_t GetOrderId() const;
 
                     /**
                      * 设置订单id
-                     * @param OrderId 订单id
+                     * @param _orderId 订单id
+                     * 
                      */
                     void SetOrderId(const uint64_t& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单类型 1应急 2 旗舰重保 3 安全管家
                      * @return InquireType 订单类型 1应急 2 旗舰重保 3 安全管家
+                     * 
                      */
                     uint64_t GetInquireType() const;
 
                     /**
                      * 设置订单类型 1应急 2 旗舰重保 3 安全管家
-                     * @param InquireType 订单类型 1应急 2 旗舰重保 3 安全管家
+                     * @param _inquireType 订单类型 1应急 2 旗舰重保 3 安全管家
+                     * 
                      */
                     void SetInquireType(const uint64_t& _inquireType);
 
                     /**
                      * 判断参数 InquireType 是否已赋值
                      * @return InquireType 是否已赋值
+                     * 
                      */
                     bool InquireTypeHasBeenSet() const;
 
                     /**
                      * 获取服务数量
                      * @return InquireNum 服务数量
+                     * 
                      */
                     uint64_t GetInquireNum() const;
 
                     /**
                      * 设置服务数量
-                     * @param InquireNum 服务数量
+                     * @param _inquireNum 服务数量
+                     * 
                      */
                     void SetInquireNum(const uint64_t& _inquireNum);
 
                     /**
                      * 判断参数 InquireNum 是否已赋值
                      * @return InquireNum 是否已赋值
+                     * 
                      */
                     bool InquireNumHasBeenSet() const;
 
                     /**
                      * 获取服务开始时间
                      * @return BeginTime 服务开始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置服务开始时间
-                     * @param BeginTime 服务开始时间
+                     * @param _beginTime 服务开始时间
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取服务结束时间
                      * @return EndTime 服务结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置服务结束时间
-                     * @param EndTime 服务结束时间
+                     * @param _endTime 服务结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取服务时长几个月
                      * @return ServiceTime 服务时长几个月
+                     * 
                      */
                     uint64_t GetServiceTime() const;
 
                     /**
                      * 设置服务时长几个月
-                     * @param ServiceTime 服务时长几个月
+                     * @param _serviceTime 服务时长几个月
+                     * 
                      */
                     void SetServiceTime(const uint64_t& _serviceTime);
 
                     /**
                      * 判断参数 ServiceTime 是否已赋值
                      * @return ServiceTime 是否已赋值
+                     * 
                      */
                     bool ServiceTimeHasBeenSet() const;
 
                     /**
                      * 获取订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁
                      * @return Status 订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁
-                     * @param Status 订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁
+                     * @param _status 订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

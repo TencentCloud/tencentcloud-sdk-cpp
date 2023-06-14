@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 状态开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置状态开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 状态开始时间
+                     * @param _startTime 状态开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 状态结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置状态结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 状态结束时间
+                     * @param _endTime 状态结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态名
+                     * @param _status 状态名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusMessage 状态详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusMessage() const;
 
                     /**
                      * 设置状态详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusMessage 状态详情
+                     * @param _statusMessage 状态详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusMessage(const std::string& _statusMessage);
 
                     /**
                      * 判断参数 StatusMessage 是否已赋值
                      * @return StatusMessage 是否已赋值
+                     * 
                      */
                     bool StatusMessageHasBeenSet() const;
 

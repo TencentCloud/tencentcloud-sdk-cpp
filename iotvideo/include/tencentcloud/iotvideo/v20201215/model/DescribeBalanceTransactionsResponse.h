@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取账户流水总数。
                      * @return TotalCount 账户流水总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取账户流水详情数组。
                      * @return Transactions 账户流水详情数组。
+                     * 
                      */
                     std::vector<BalanceTransaction> GetTransactions() const;
 
                     /**
                      * 判断参数 Transactions 是否已赋值
                      * @return Transactions 是否已赋值
+                     * 
                      */
                     bool TransactionsHasBeenSet() const;
 

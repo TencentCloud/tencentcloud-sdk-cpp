@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取修改是否成功。<ul><li>true：修改成功。</li><li>false：修改失败。</li></ul>
                      * @return Changed 修改是否成功。<ul><li>true：修改成功。</li><li>false：修改失败。</li></ul>
+                     * 
                      */
                     bool GetChanged() const;
 
                     /**
                      * 判断参数 Changed 是否已赋值
                      * @return Changed 是否已赋值
+                     * 
                      */
                     bool ChangedHasBeenSet() const;
 
                     /**
                      * 获取任务 ID。
                      * @return TaskId 任务 ID。
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

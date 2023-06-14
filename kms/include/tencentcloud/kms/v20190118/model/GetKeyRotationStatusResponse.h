@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取密钥轮换是否开启
                      * @return KeyRotationEnabled 密钥轮换是否开启
+                     * 
                      */
                     bool GetKeyRotationEnabled() const;
 
                     /**
                      * 判断参数 KeyRotationEnabled 是否已赋值
                      * @return KeyRotationEnabled 是否已赋值
+                     * 
                      */
                     bool KeyRotationEnabledHasBeenSet() const;
 

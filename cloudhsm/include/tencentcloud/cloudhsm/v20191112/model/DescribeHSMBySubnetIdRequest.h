@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Subnet标识符
                      * @return SubnetId Subnet标识符
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置Subnet标识符
-                     * @param SubnetId Subnet标识符
+                     * @param _subnetId Subnet标识符
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

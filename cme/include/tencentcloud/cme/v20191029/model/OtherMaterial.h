@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取素材媒体文件的播放 URL 地址。
                      * @return MaterialUrl 素材媒体文件的播放 URL 地址。
+                     * 
                      */
                     std::string GetMaterialUrl() const;
 
                     /**
                      * 设置素材媒体文件的播放 URL 地址。
-                     * @param MaterialUrl 素材媒体文件的播放 URL 地址。
+                     * @param _materialUrl 素材媒体文件的播放 URL 地址。
+                     * 
                      */
                     void SetMaterialUrl(const std::string& _materialUrl);
 
                     /**
                      * 判断参数 MaterialUrl 是否已赋值
                      * @return MaterialUrl 是否已赋值
+                     * 
                      */
                     bool MaterialUrlHasBeenSet() const;
 
                     /**
                      * 获取云点播媒资 FileId。
                      * @return VodFileId 云点播媒资 FileId。
+                     * 
                      */
                     std::string GetVodFileId() const;
 
                     /**
                      * 设置云点播媒资 FileId。
-                     * @param VodFileId 云点播媒资 FileId。
+                     * @param _vodFileId 云点播媒资 FileId。
+                     * 
                      */
                     void SetVodFileId(const std::string& _vodFileId);
 
                     /**
                      * 判断参数 VodFileId 是否已赋值
                      * @return VodFileId 是否已赋值
+                     * 
                      */
                     bool VodFileIdHasBeenSet() const;
 

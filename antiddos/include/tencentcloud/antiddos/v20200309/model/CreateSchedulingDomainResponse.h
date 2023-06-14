@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的域名
                      * @return Domain 新创建的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

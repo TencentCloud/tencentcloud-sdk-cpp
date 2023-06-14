@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取专辑名称。
                      * @return Name 专辑名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置专辑名称。
-                     * @param Name 专辑名称。
+                     * @param _name 专辑名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取封面列表。
                      * @return CoverInfoSet 封面列表。
+                     * 
                      */
                     std::vector<MusicAlbumCoverInfo> GetCoverInfoSet() const;
 
                     /**
                      * 设置封面列表。
-                     * @param CoverInfoSet 封面列表。
+                     * @param _coverInfoSet 封面列表。
+                     * 
                      */
                     void SetCoverInfoSet(const std::vector<MusicAlbumCoverInfo>& _coverInfoSet);
 
                     /**
                      * 判断参数 CoverInfoSet 是否已赋值
                      * @return CoverInfoSet 是否已赋值
+                     * 
                      */
                     bool CoverInfoSetHasBeenSet() const;
 

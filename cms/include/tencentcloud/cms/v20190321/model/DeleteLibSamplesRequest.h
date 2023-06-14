@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取关键词ID
                      * @return SampleIDs 关键词ID
+                     * 
                      */
                     std::vector<std::string> GetSampleIDs() const;
 
                     /**
                      * 设置关键词ID
-                     * @param SampleIDs 关键词ID
+                     * @param _sampleIDs 关键词ID
+                     * 
                      */
                     void SetSampleIDs(const std::vector<std::string>& _sampleIDs);
 
                     /**
                      * 判断参数 SampleIDs 是否已赋值
                      * @return SampleIDs 是否已赋值
+                     * 
                      */
                     bool SampleIDsHasBeenSet() const;
 
                     /**
                      * 获取词库ID
                      * @return LibID 词库ID
+                     * 
                      */
                     std::string GetLibID() const;
 
                     /**
                      * 设置词库ID
-                     * @param LibID 词库ID
+                     * @param _libID 词库ID
+                     * 
                      */
                     void SetLibID(const std::string& _libID);
 
                     /**
                      * 判断参数 LibID 是否已赋值
                      * @return LibID 是否已赋值
+                     * 
                      */
                     bool LibIDHasBeenSet() const;
 

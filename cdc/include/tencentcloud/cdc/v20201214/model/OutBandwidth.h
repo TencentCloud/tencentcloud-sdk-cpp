@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamps 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetTimestamps() const;
 
                     /**
                      * 设置时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamps 时间戳
+                     * @param _timestamps 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamps(const std::vector<double>& _timestamps);
 
                     /**
                      * 判断参数 Timestamps 是否已赋值
                      * @return Timestamps 是否已赋值
+                     * 
                      */
                     bool TimestampsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 对应时间的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetValues() const;
 
                     /**
                      * 设置对应时间的值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 对应时间的值
+                     * @param _values 对应时间的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<double>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

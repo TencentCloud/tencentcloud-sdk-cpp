@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫分配的支付主MidasAppId
                      * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的支付主MidasAppId
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
+                     * @param _midasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID，长度不小于5位，仅支持字母和数字的组合
                      * @return UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID，长度不小于5位，仅支持字母和数字的组合
-                     * @param UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * @param _userId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
  bank：网银支付  只有一个渠道时需要指定
                      * @return Channel 指定渠道：  wechat：微信支付  qqwallet：QQ钱包 
  bank：网银支付  只有一个渠道时需要指定
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置指定渠道：  wechat：微信支付  qqwallet：QQ钱包 
  bank：网银支付  只有一个渠道时需要指定
-                     * @param Channel 指定渠道：  wechat：微信支付  qqwallet：QQ钱包 
+                     * @param _channel 指定渠道：  wechat：微信支付  qqwallet：QQ钱包 
  bank：网银支付  只有一个渠道时需要指定
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
@@ -107,6 +116,7 @@ CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询
                      * @return ContractQueryMode 枚举值：
 CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE：按 OutContractCode + ContractSceneId 查询
 CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询
+                     * 
                      */
                     std::string GetContractQueryMode() const;
 
@@ -114,141 +124,164 @@ CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询
                      * 设置枚举值：
 CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE：按 OutContractCode + ContractSceneId 查询
 CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询
-                     * @param ContractQueryMode 枚举值：
+                     * @param _contractQueryMode 枚举值：
 CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE：按 OutContractCode + ContractSceneId 查询
 CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE：按ChannelContractCode查询
+                     * 
                      */
                     void SetContractQueryMode(const std::string& _contractQueryMode);
 
                     /**
                      * 判断参数 ContractQueryMode 是否已赋值
                      * @return ContractQueryMode 是否已赋值
+                     * 
                      */
                     bool ContractQueryModeHasBeenSet() const;
 
                     /**
                      * 获取按照聚鑫安全密钥计算的签名
                      * @return MidasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置按照聚鑫安全密钥计算的签名
-                     * @param MidasSignature 按照聚鑫安全密钥计算的签名
+                     * @param _midasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填
                      * @return OutContractCode 业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填
+                     * 
                      */
                     std::string GetOutContractCode() const;
 
                     /**
                      * 设置业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填
-                     * @param OutContractCode 业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填
+                     * @param _outContractCode 业务签约合同协议号 当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 ，必填
+                     * 
                      */
                     void SetOutContractCode(const std::string& _outContractCode);
 
                     /**
                      * 判断参数 OutContractCode 是否已赋值
                      * @return OutContractCode 是否已赋值
+                     * 
                      */
                     bool OutContractCodeHasBeenSet() const;
 
                     /**
                      * 获取签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成
                      * @return ContractSceneId 签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成
+                     * 
                      */
                     std::string GetContractSceneId() const;
 
                     /**
                      * 设置签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成
-                     * @param ContractSceneId 签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成
+                     * @param _contractSceneId 签约场景ID，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE 时 必填，在米大师侧托管后生成
+                     * 
                      */
                     void SetContractSceneId(const std::string& _contractSceneId);
 
                     /**
                      * 判断参数 ContractSceneId 是否已赋值
                      * @return ContractSceneId 是否已赋值
+                     * 
                      */
                     bool ContractSceneIdHasBeenSet() const;
 
                     /**
                      * 获取米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填
                      * @return ChannelContractCode 米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填
+                     * 
                      */
                     std::string GetChannelContractCode() const;
 
                     /**
                      * 设置米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填
-                     * @param ChannelContractCode 米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填
+                     * @param _channelContractCode 米大师生成的协议号 ，当 ContractQueryMode=CONTRACT_QUERY_MODE_BY_CHANNEL_CONTRACT_CODE 时必填
+                     * 
                      */
                     void SetChannelContractCode(const std::string& _channelContractCode);
 
                     /**
                      * 判断参数 ChannelContractCode 是否已赋值
                      * @return ChannelContractCode 是否已赋值
+                     * 
                      */
                     bool ChannelContractCodeHasBeenSet() const;
 
                     /**
                      * 获取第三方渠道合约数据，为json字符串，与特定渠道有关
                      * @return ExternalContractData 第三方渠道合约数据，为json字符串，与特定渠道有关
+                     * 
                      */
                     std::string GetExternalContractData() const;
 
                     /**
                      * 设置第三方渠道合约数据，为json字符串，与特定渠道有关
-                     * @param ExternalContractData 第三方渠道合约数据，为json字符串，与特定渠道有关
+                     * @param _externalContractData 第三方渠道合约数据，为json字符串，与特定渠道有关
+                     * 
                      */
                     void SetExternalContractData(const std::string& _externalContractData);
 
                     /**
                      * 判断参数 ExternalContractData 是否已赋值
                      * @return ExternalContractData 是否已赋值
+                     * 
                      */
                     bool ExternalContractDataHasBeenSet() const;
 
@@ -263,6 +296,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -272,17 +306,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
@@ -293,6 +329,7 @@ ANONYMOUS: 匿名类型 USER_ID
                      * @return UserType USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
+                     * 
                      */
                     std::string GetUserType() const;
 
@@ -300,51 +337,59 @@ ANONYMOUS: 匿名类型 USER_ID
                      * 设置USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
-                     * @param UserType USER_ID: 用户ID
+                     * @param _userType USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
                     /**
                      * 获取签约代扣穿透查询存量数据迁移模式
                      * @return MigrateMode 签约代扣穿透查询存量数据迁移模式
+                     * 
                      */
                     std::string GetMigrateMode() const;
 
                     /**
                      * 设置签约代扣穿透查询存量数据迁移模式
-                     * @param MigrateMode 签约代扣穿透查询存量数据迁移模式
+                     * @param _migrateMode 签约代扣穿透查询存量数据迁移模式
+                     * 
                      */
                     void SetMigrateMode(const std::string& _migrateMode);
 
                     /**
                      * 判断参数 MigrateMode 是否已赋值
                      * @return MigrateMode 是否已赋值
+                     * 
                      */
                     bool MigrateModeHasBeenSet() const;
 
                     /**
                      * 获取签约方式
                      * @return ContractMethod 签约方式
+                     * 
                      */
                     std::string GetContractMethod() const;
 
                     /**
                      * 设置签约方式
-                     * @param ContractMethod 签约方式
+                     * @param _contractMethod 签约方式
+                     * 
                      */
                     void SetContractMethod(const std::string& _contractMethod);
 
                     /**
                      * 判断参数 ContractMethod 是否已赋值
                      * @return ContractMethod 是否已赋值
+                     * 
                      */
                     bool ContractMethodHasBeenSet() const;
 

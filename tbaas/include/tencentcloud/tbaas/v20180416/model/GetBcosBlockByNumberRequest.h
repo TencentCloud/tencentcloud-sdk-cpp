@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组编号，可在群组列表中获取
                      * @return GroupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组编号，可在群组列表中获取
-                     * @param GroupId 群组编号，可在群组列表中获取
+                     * @param _groupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取区块高度，可以从InvokeBcosTrans接口的返回值中解析获取
                      * @return BlockNumber 区块高度，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * 
                      */
                     int64_t GetBlockNumber() const;
 
                     /**
                      * 设置区块高度，可以从InvokeBcosTrans接口的返回值中解析获取
-                     * @param BlockNumber 区块高度，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * @param _blockNumber 区块高度，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * 
                      */
                     void SetBlockNumber(const int64_t& _blockNumber);
 
                     /**
                      * 判断参数 BlockNumber 是否已赋值
                      * @return BlockNumber 是否已赋值
+                     * 
                      */
                     bool BlockNumberHasBeenSet() const;
 

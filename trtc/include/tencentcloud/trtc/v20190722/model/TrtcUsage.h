@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。
                      * @return TimeKey 时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。
+                     * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
                      * 设置时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。
-                     * @param TimeKey 时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。
+                     * @param _timeKey 时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。
+                     * 
                      */
                     void SetTimeKey(const std::string& _timeKey);
 
                     /**
                      * 判断参数 TimeKey 是否已赋值
                      * @return TimeKey 是否已赋值
+                     * 
                      */
                     bool TimeKeyHasBeenSet() const;
 
                     /**
                      * 获取用量数组。每个数值含义与UsageKey对应。单位：分钟。
                      * @return UsageValue 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * 
                      */
                     std::vector<double> GetUsageValue() const;
 
                     /**
                      * 设置用量数组。每个数值含义与UsageKey对应。单位：分钟。
-                     * @param UsageValue 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * @param _usageValue 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * 
                      */
                     void SetUsageValue(const std::vector<double>& _usageValue);
 
                     /**
                      * 判断参数 UsageValue 是否已赋值
                      * @return UsageValue 是否已赋值
+                     * 
                      */
                     bool UsageValueHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
                      * @return AuthNumber 商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
+                     * 
                      */
                     std::string GetAuthNumber() const;
 
                     /**
                      * 设置商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
-                     * @param AuthNumber 商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
+                     * @param _authNumber 商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
+                     * 
                      */
                     void SetAuthNumber(const std::string& _authNumber);
 
                     /**
                      * 判断参数 AuthNumber 是否已赋值
                      * @return AuthNumber 是否已赋值
+                     * 
                      */
                     bool AuthNumberHasBeenSet() const;
 
                     /**
                      * 获取微信服务商下特约商户的商户号，由微信支付生成并下发
                      * @return SubMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     std::string GetSubMerchantId() const;
 
                     /**
                      * 设置微信服务商下特约商户的商户号，由微信支付生成并下发
-                     * @param SubMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * @param _subMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     void SetSubMerchantId(const std::string& _subMerchantId);
 
                     /**
                      * 判断参数 SubMerchantId 是否已赋值
                      * @return SubMerchantId 是否已赋值
+                     * 
                      */
                     bool SubMerchantIdHasBeenSet() const;
 

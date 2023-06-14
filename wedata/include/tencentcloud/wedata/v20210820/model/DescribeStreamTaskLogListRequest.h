@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取作业ID
                      * @return JobId 作业ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业ID
-                     * @param JobId 作业ID
+                     * @param _jobId 作业ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取container名字
                      * @return Container container名字
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置container名字
-                     * @param Container container名字
+                     * @param _container container名字
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
                     /**
                      * 获取条数
                      * @return Limit 条数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置条数
-                     * @param Limit 条数
+                     * @param _limit 条数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序类型 desc asc
                      * @return OrderType 排序类型 desc asc
+                     * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置排序类型 desc asc
-                     * @param OrderType 排序类型 desc asc
+                     * @param _orderType 排序类型 desc asc
+                     * 
                      */
                     void SetOrderType(const std::string& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取作业运行的实例ID
                      * @return RunningOrderId 作业运行的实例ID
+                     * 
                      */
                     uint64_t GetRunningOrderId() const;
 
                     /**
                      * 设置作业运行的实例ID
-                     * @param RunningOrderId 作业运行的实例ID
+                     * @param _runningOrderId 作业运行的实例ID
+                     * 
                      */
                     void SetRunningOrderId(const uint64_t& _runningOrderId);
 
                     /**
                      * 判断参数 RunningOrderId 是否已赋值
                      * @return RunningOrderId 是否已赋值
+                     * 
                      */
                     bool RunningOrderIdHasBeenSet() const;
 

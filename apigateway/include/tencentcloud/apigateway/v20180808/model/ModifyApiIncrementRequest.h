@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取服务ID
                      * @return ServiceId 服务ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务ID
-                     * @param ServiceId 服务ID
+                     * @param _serviceId 服务ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取接口ID
                      * @return ApiId 接口ID
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置接口ID
-                     * @param ApiId 接口ID
+                     * @param _apiId 接口ID
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的API auth类型(可选择OAUTH-授权API)
                      * @return BusinessType 需要修改的API auth类型(可选择OAUTH-授权API)
+                     * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置需要修改的API auth类型(可选择OAUTH-授权API)
-                     * @param BusinessType 需要修改的API auth类型(可选择OAUTH-授权API)
+                     * @param _businessType 需要修改的API auth类型(可选择OAUTH-授权API)
+                     * 
                      */
                     void SetBusinessType(const std::string& _businessType);
 
                     /**
                      * 判断参数 BusinessType 是否已赋值
                      * @return BusinessType 是否已赋值
+                     * 
                      */
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取oauth接口需要修改的公钥值
                      * @return PublicKey oauth接口需要修改的公钥值
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 设置oauth接口需要修改的公钥值
-                     * @param PublicKey oauth接口需要修改的公钥值
+                     * @param _publicKey oauth接口需要修改的公钥值
+                     * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 
                     /**
                      * 获取oauth接口重定向地址
                      * @return LoginRedirectUrl oauth接口重定向地址
+                     * 
                      */
                     std::string GetLoginRedirectUrl() const;
 
                     /**
                      * 设置oauth接口重定向地址
-                     * @param LoginRedirectUrl oauth接口重定向地址
+                     * @param _loginRedirectUrl oauth接口重定向地址
+                     * 
                      */
                     void SetLoginRedirectUrl(const std::string& _loginRedirectUrl);
 
                     /**
                      * 判断参数 LoginRedirectUrl 是否已赋值
                      * @return LoginRedirectUrl 是否已赋值
+                     * 
                      */
                     bool LoginRedirectUrlHasBeenSet() const;
 

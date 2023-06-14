@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecType 规格类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecType() const;
 
                     /**
                      * 设置规格类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecType 规格类型
+                     * @param _specType 规格类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecType(const std::string& _specType);
 
                     /**
                      * 判断参数 SpecType 是否已赋值
                      * @return SpecType 是否已赋值
+                     * 
                      */
                     bool SpecTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Availability 规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvailability() const;
 
                     /**
                      * 设置规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Availability 规格可用性
+                     * @param _availability 规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailability(const std::string& _availability);
 
                     /**
                      * 判断参数 Availability 是否已赋值
                      * @return Availability 是否已赋值
+                     * 
                      */
                     bool AvailabilityHasBeenSet() const;
 

@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return NetworkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+                     * 
                      */
                     std::string GetNetworkType() const;
 
@@ -57,15 +58,17 @@ namespace TencentCloud
                      * 设置带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
-                     * @param NetworkType 带宽包类型, 默认值: BGP, 可选值:
+                     * @param _networkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+                     * 
                      */
                     std::string GetChargeType() const;
 
@@ -86,124 +90,144 @@ namespace TencentCloud
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-                     * @param ChargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * @param _chargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽包名称。
                      * @return BandwidthPackageName 带宽包名称。
+                     * 
                      */
                     std::string GetBandwidthPackageName() const;
 
                     /**
                      * 设置带宽包名称。
-                     * @param BandwidthPackageName 带宽包名称。
+                     * @param _bandwidthPackageName 带宽包名称。
+                     * 
                      */
                     void SetBandwidthPackageName(const std::string& _bandwidthPackageName);
 
                     /**
                      * 判断参数 BandwidthPackageName 是否已赋值
                      * @return BandwidthPackageName 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
                      * 获取带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
                      * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * 
                      */
                     uint64_t GetBandwidthPackageCount() const;
 
                     /**
                      * 设置带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
-                     * @param BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * @param _bandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * 
                      */
                     void SetBandwidthPackageCount(const uint64_t& _bandwidthPackageCount);
 
                     /**
                      * 判断参数 BandwidthPackageCount 是否已赋值
                      * @return BandwidthPackageCount 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageCountHasBeenSet() const;
 
                     /**
                      * 获取带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
                      * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * 
                      */
                     int64_t GetInternetMaxBandwidth() const;
 
                     /**
                      * 设置带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
-                     * @param InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * 
                      */
                     void SetInternetMaxBandwidth(const int64_t& _internetMaxBandwidth);
 
                     /**
                      * 判断参数 InternetMaxBandwidth 是否已赋值
                      * @return InternetMaxBandwidth 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthHasBeenSet() const;
 
                     /**
                      * 获取需要关联的标签列表。
                      * @return Tags 需要关联的标签列表。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置需要关联的标签列表。
-                     * @param Tags 需要关联的标签列表。
+                     * @param _tags 需要关联的标签列表。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
                      * @return Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
-                     * @param Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     * @param _protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
                      * @return TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
                      * 设置预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
-                     * @param TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * @param _timeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 

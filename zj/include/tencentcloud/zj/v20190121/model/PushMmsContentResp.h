@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取返回码：0-成功 其它-失败
                      * @return ReturnCode 返回码：0-成功 其它-失败
+                     * 
                      */
                     int64_t GetReturnCode() const;
 
                     /**
                      * 设置返回码：0-成功 其它-失败
-                     * @param ReturnCode 返回码：0-成功 其它-失败
+                     * @param _returnCode 返回码：0-成功 其它-失败
+                     * 
                      */
                     void SetReturnCode(const int64_t& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取返回信息
                      * @return ReturnMsg 返回信息
+                     * 
                      */
                     std::string GetReturnMsg() const;
 
                     /**
                      * 设置返回信息
-                     * @param ReturnMsg 返回信息
+                     * @param _returnMsg 返回信息
+                     * 
                      */
                     void SetReturnMsg(const std::string& _returnMsg);
 
                     /**
                      * 判断参数 ReturnMsg 是否已赋值
                      * @return ReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取消息回执id
                      * @return MessageId 消息回执id
+                     * 
                      */
                     int64_t GetMessageId() const;
 
                     /**
                      * 设置消息回执id
-                     * @param MessageId 消息回执id
+                     * @param _messageId 消息回执id
+                     * 
                      */
                     void SetMessageId(const int64_t& _messageId);
 
                     /**
                      * 判断参数 MessageId 是否已赋值
                      * @return MessageId 是否已赋值
+                     * 
                      */
                     bool MessageIdHasBeenSet() const;
 

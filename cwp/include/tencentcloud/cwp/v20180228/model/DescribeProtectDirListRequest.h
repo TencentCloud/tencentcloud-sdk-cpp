@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取分页条数 最大100条
                      * @return Limit 分页条数 最大100条
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页条数 最大100条
-                     * @param Limit 分页条数 最大100条
+                     * @param _limit 分页条数 最大100条
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -84,56 +90,65 @@ namespace TencentCloud
 DirPath 网站防护目录地址
                      * @return Filters DirName 网站名称
 DirPath 网站防护目录地址
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
                      * 设置DirName 网站名称
 DirPath 网站防护目录地址
-                     * @param Filters DirName 网站名称
+                     * @param _filters DirName 网站名称
 DirPath 网站防护目录地址
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取asc：升序/desc：降序
                      * @return Order asc：升序/desc：降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置asc：升序/desc：降序
-                     * @param Order asc：升序/desc：降序
+                     * @param _order asc：升序/desc：降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return By 排序字段
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param By 排序字段
+                     * @param _by 排序字段
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

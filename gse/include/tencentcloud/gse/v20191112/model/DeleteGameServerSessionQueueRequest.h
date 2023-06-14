@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话队列名字，长度1~128
                      * @return Name 游戏服务器会话队列名字，长度1~128
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置游戏服务器会话队列名字，长度1~128
-                     * @param Name 游戏服务器会话队列名字，长度1~128
+                     * @param _name 游戏服务器会话队列名字，长度1~128
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取增值服务用量列表
                      * @return VASList 增值服务用量列表
+                     * 
                      */
                     std::vector<VASStatisticItem> GetVASList() const;
 
                     /**
                      * 判断参数 VASList 是否已赋值
                      * @return VASList 是否已赋值
+                     * 
                      */
                     bool VASListHasBeenSet() const;
 

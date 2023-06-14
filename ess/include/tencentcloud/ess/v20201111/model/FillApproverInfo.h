@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取对应模板中的参与方ID
                      * @return RecipientId 对应模板中的参与方ID
+                     * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置对应模板中的参与方ID
-                     * @param RecipientId 对应模板中的参与方ID
+                     * @param _recipientId 对应模板中的参与方ID
+                     * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
                     /**
                      * 判断参数 RecipientId 是否已赋值
                      * @return RecipientId 是否已赋值
+                     * 
                      */
                     bool RecipientIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 WEWORKAPP: 企业微信
                      * @return ApproverSource 签署人来源
 WEWORKAPP: 企业微信
+                     * 
                      */
                     std::string GetApproverSource() const;
 
                     /**
                      * 设置签署人来源
 WEWORKAPP: 企业微信
-                     * @param ApproverSource 签署人来源
+                     * @param _approverSource 签署人来源
 WEWORKAPP: 企业微信
+                     * 
                      */
                     void SetApproverSource(const std::string& _approverSource);
 
                     /**
                      * 判断参数 ApproverSource 是否已赋值
                      * @return ApproverSource 是否已赋值
+                     * 
                      */
                     bool ApproverSourceHasBeenSet() const;
 
@@ -91,20 +97,23 @@ WEWORKAPP: 企业微信
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      * @return CustomUserId 企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
+                     * 
                      */
                     std::string GetCustomUserId() const;
 
                     /**
                      * 设置企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
-                     * @param CustomUserId 企业自定义账号ID
+                     * @param _customUserId 企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
+                     * 
                      */
                     void SetCustomUserId(const std::string& _customUserId);
 
                     /**
                      * 判断参数 CustomUserId 是否已赋值
                      * @return CustomUserId 是否已赋值
+                     * 
                      */
                     bool CustomUserIdHasBeenSet() const;
 

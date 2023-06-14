@@ -47,20 +47,23 @@ namespace TencentCloud
 该值与CreateCommonMixStream中的MixStreamSessionId保持一致。
                      * @return MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。
 该值与CreateCommonMixStream中的MixStreamSessionId保持一致。
+                     * 
                      */
                     std::string GetMixStreamSessionId() const;
 
                     /**
                      * 设置混流会话（申请混流开始到取消混流结束）标识 ID。
 该值与CreateCommonMixStream中的MixStreamSessionId保持一致。
-                     * @param MixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。
+                     * @param _mixStreamSessionId 混流会话（申请混流开始到取消混流结束）标识 ID。
 该值与CreateCommonMixStream中的MixStreamSessionId保持一致。
+                     * 
                      */
                     void SetMixStreamSessionId(const std::string& _mixStreamSessionId);
 
                     /**
                      * 判断参数 MixStreamSessionId 是否已赋值
                      * @return MixStreamSessionId 是否已赋值
+                     * 
                      */
                     bool MixStreamSessionIdHasBeenSet() const;
 

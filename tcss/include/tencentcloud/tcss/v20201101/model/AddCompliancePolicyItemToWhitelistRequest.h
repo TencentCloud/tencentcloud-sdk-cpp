@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要忽略的检测项的ID的列表
                      * @return CustomerPolicyItemIdSet 要忽略的检测项的ID的列表
+                     * 
                      */
                     std::vector<uint64_t> GetCustomerPolicyItemIdSet() const;
 
                     /**
                      * 设置要忽略的检测项的ID的列表
-                     * @param CustomerPolicyItemIdSet 要忽略的检测项的ID的列表
+                     * @param _customerPolicyItemIdSet 要忽略的检测项的ID的列表
+                     * 
                      */
                     void SetCustomerPolicyItemIdSet(const std::vector<uint64_t>& _customerPolicyItemIdSet);
 
                     /**
                      * 判断参数 CustomerPolicyItemIdSet 是否已赋值
                      * @return CustomerPolicyItemIdSet 是否已赋值
+                     * 
                      */
                     bool CustomerPolicyItemIdSetHasBeenSet() const;
 

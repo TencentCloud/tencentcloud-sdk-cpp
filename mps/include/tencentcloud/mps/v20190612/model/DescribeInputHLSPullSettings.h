@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取HLS源站地址信息。
                      * @return SourceAddresses HLS源站地址信息。
+                     * 
                      */
                     std::vector<DescribeHLSPullSourceAddress> GetSourceAddresses() const;
 
                     /**
                      * 设置HLS源站地址信息。
-                     * @param SourceAddresses HLS源站地址信息。
+                     * @param _sourceAddresses HLS源站地址信息。
+                     * 
                      */
                     void SetSourceAddresses(const std::vector<DescribeHLSPullSourceAddress>& _sourceAddresses);
 
                     /**
                      * 判断参数 SourceAddresses 是否已赋值
                      * @return SourceAddresses 是否已赋值
+                     * 
                      */
                     bool SourceAddressesHasBeenSet() const;
 

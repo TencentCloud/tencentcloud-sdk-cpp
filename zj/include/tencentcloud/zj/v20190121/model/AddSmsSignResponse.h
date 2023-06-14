@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签名id数组
                      * @return Data 签名id数组
+                     * 
                      */
                     PaasCreateSignResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

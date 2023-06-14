@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Category ID。
                      * @return Id Category ID。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置Category ID。
-                     * @param Id Category ID。
+                     * @param _id Category ID。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

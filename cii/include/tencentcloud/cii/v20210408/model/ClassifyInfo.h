@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取一级分类
                      * @return FirstClass 一级分类
+                     * 
                      */
                     std::string GetFirstClass() const;
 
                     /**
                      * 设置一级分类
-                     * @param FirstClass 一级分类
+                     * @param _firstClass 一级分类
+                     * 
                      */
                     void SetFirstClass(const std::string& _firstClass);
 
                     /**
                      * 判断参数 FirstClass 是否已赋值
                      * @return FirstClass 是否已赋值
+                     * 
                      */
                     bool FirstClassHasBeenSet() const;
 
                     /**
                      * 获取二级分类
                      * @return SecondClass 二级分类
+                     * 
                      */
                     std::string GetSecondClass() const;
 
                     /**
                      * 设置二级分类
-                     * @param SecondClass 二级分类
+                     * @param _secondClass 二级分类
+                     * 
                      */
                     void SetSecondClass(const std::string& _secondClass);
 
                     /**
                      * 判断参数 SecondClass 是否已赋值
                      * @return SecondClass 是否已赋值
+                     * 
                      */
                     bool SecondClassHasBeenSet() const;
 
                     /**
                      * 获取三级分类
                      * @return ThirdClass 三级分类
+                     * 
                      */
                     std::string GetThirdClass() const;
 
                     /**
                      * 设置三级分类
-                     * @param ThirdClass 三级分类
+                     * @param _thirdClass 三级分类
+                     * 
                      */
                     void SetThirdClass(const std::string& _thirdClass);
 
                     /**
                      * 判断参数 ThirdClass 是否已赋值
                      * @return ThirdClass 是否已赋值
+                     * 
                      */
                     bool ThirdClassHasBeenSet() const;
 
                     /**
                      * 获取一级分类序号
                      * @return FirstClassId 一级分类序号
+                     * 
                      */
                     uint64_t GetFirstClassId() const;
 
                     /**
                      * 设置一级分类序号
-                     * @param FirstClassId 一级分类序号
+                     * @param _firstClassId 一级分类序号
+                     * 
                      */
                     void SetFirstClassId(const uint64_t& _firstClassId);
 
                     /**
                      * 判断参数 FirstClassId 是否已赋值
                      * @return FirstClassId 是否已赋值
+                     * 
                      */
                     bool FirstClassIdHasBeenSet() const;
 
                     /**
                      * 获取二级分类序号
                      * @return SecondClassId 二级分类序号
+                     * 
                      */
                     uint64_t GetSecondClassId() const;
 
                     /**
                      * 设置二级分类序号
-                     * @param SecondClassId 二级分类序号
+                     * @param _secondClassId 二级分类序号
+                     * 
                      */
                     void SetSecondClassId(const uint64_t& _secondClassId);
 
                     /**
                      * 判断参数 SecondClassId 是否已赋值
                      * @return SecondClassId 是否已赋值
+                     * 
                      */
                     bool SecondClassIdHasBeenSet() const;
 
                     /**
                      * 获取三级分类序号
                      * @return ThirdClassId 三级分类序号
+                     * 
                      */
                     uint64_t GetThirdClassId() const;
 
                     /**
                      * 设置三级分类序号
-                     * @param ThirdClassId 三级分类序号
+                     * @param _thirdClassId 三级分类序号
+                     * 
                      */
                     void SetThirdClassId(const uint64_t& _thirdClassId);
 
                     /**
                      * 判断参数 ThirdClassId 是否已赋值
                      * @return ThirdClassId 是否已赋值
+                     * 
                      */
                     bool ThirdClassIdHasBeenSet() const;
 

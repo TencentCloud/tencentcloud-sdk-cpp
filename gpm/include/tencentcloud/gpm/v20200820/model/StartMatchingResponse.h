@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取错误码。
                      * @return ErrCode 错误码。
+                     * 
                      */
                     uint64_t GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取匹配票据 ID长度 128。
                      * @return MatchTicketId 匹配票据 ID长度 128。
+                     * 
                      */
                     std::string GetMatchTicketId() const;
 
                     /**
                      * 判断参数 MatchTicketId 是否已赋值
                      * @return MatchTicketId 是否已赋值
+                     * 
                      */
                     bool MatchTicketIdHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 专业版开始时间，补充购买时才不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -62,36 +64,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 专业版结束时间，补充购买时才不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取需购买的机器核数
                      * @return CoresCnt 需购买的机器核数
+                     * 
                      */
                     uint64_t GetCoresCnt() const;
 
                     /**
                      * 判断参数 CoresCnt 是否已赋值
                      * @return CoresCnt 是否已赋值
+                     * 
                      */
                     bool CoresCntHasBeenSet() const;
 
                     /**
                      * 获取弹性计费上限
                      * @return MaxPostPayCoresCnt 弹性计费上限
+                     * 
                      */
                     uint64_t GetMaxPostPayCoresCnt() const;
 
                     /**
                      * 判断参数 MaxPostPayCoresCnt 是否已赋值
                      * @return MaxPostPayCoresCnt 是否已赋值
+                     * 
                      */
                     bool MaxPostPayCoresCntHasBeenSet() const;
 
@@ -100,12 +108,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -118,24 +128,28 @@ namespace TencentCloud
 待购: Pending
 已购: Normal
 隔离: Isolate
+                     * 
                      */
                     std::string GetBuyStatus() const;
 
                     /**
                      * 判断参数 BuyStatus 是否已赋值
                      * @return BuyStatus 是否已赋值
+                     * 
                      */
                     bool BuyStatusHasBeenSet() const;
 
                     /**
                      * 获取是否曾经购买过(false:未曾 true:曾经购买过)
                      * @return IsPurchased 是否曾经购买过(false:未曾 true:曾经购买过)
+                     * 
                      */
                     bool GetIsPurchased() const;
 
                     /**
                      * 判断参数 IsPurchased 是否已赋值
                      * @return IsPurchased 是否已赋值
+                     * 
                      */
                     bool IsPurchasedHasBeenSet() const;
 

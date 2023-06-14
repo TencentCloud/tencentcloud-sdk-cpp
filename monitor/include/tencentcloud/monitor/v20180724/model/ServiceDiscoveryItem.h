@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取服务发现名称
                      * @return Name 服务发现名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务发现名称
-                     * @param Name 服务发现名称
+                     * @param _name 服务发现名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取服务发现属于的 Namespace
                      * @return Namespace 服务发现属于的 Namespace
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置服务发现属于的 Namespace
-                     * @param Namespace 服务发现属于的 Namespace
+                     * @param _namespace 服务发现属于的 Namespace
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取服务发现类型: ServiceMonitor/PodMonitor
                      * @return Kind 服务发现类型: ServiceMonitor/PodMonitor
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置服务发现类型: ServiceMonitor/PodMonitor
-                     * @param Kind 服务发现类型: ServiceMonitor/PodMonitor
+                     * @param _kind 服务发现类型: ServiceMonitor/PodMonitor
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceSelector Namespace 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceSelector() const;
 
                     /**
                      * 设置Namespace 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceSelector Namespace 选取方式
+                     * @param _namespaceSelector Namespace 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceSelector(const std::string& _namespaceSelector);
 
                     /**
                      * 判断参数 NamespaceSelector 是否已赋值
                      * @return NamespaceSelector 是否已赋值
+                     * 
                      */
                     bool NamespaceSelectorHasBeenSet() const;
 
@@ -127,38 +139,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Selector Label 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSelector() const;
 
                     /**
                      * 设置Label 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Selector Label 选取方式
+                     * @param _selector Label 选取方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSelector(const std::string& _selector);
 
                     /**
                      * 判断参数 Selector 是否已赋值
                      * @return Selector 是否已赋值
+                     * 
                      */
                     bool SelectorHasBeenSet() const;
 
                     /**
                      * 获取Endpoints 信息（PodMonitor 不含该参数）
                      * @return Endpoints Endpoints 信息（PodMonitor 不含该参数）
+                     * 
                      */
                     std::string GetEndpoints() const;
 
                     /**
                      * 设置Endpoints 信息（PodMonitor 不含该参数）
-                     * @param Endpoints Endpoints 信息（PodMonitor 不含该参数）
+                     * @param _endpoints Endpoints 信息（PodMonitor 不含该参数）
+                     * 
                      */
                     void SetEndpoints(const std::string& _endpoints);
 
                     /**
                      * 判断参数 Endpoints 是否已赋值
                      * @return Endpoints 是否已赋值
+                     * 
                      */
                     bool EndpointsHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml 服务发现对应的配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置服务发现对应的配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Yaml 服务发现对应的配置信息
+                     * @param _yaml 服务发现对应的配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 

@@ -47,96 +47,112 @@ namespace TencentCloud
                     /**
                      * 获取诊断报告基础信息
                      * @return BaskInfo 诊断报告基础信息
+                     * 
                      */
                     DiagnoseData GetBaskInfo() const;
 
                     /**
                      * 判断参数 BaskInfo 是否已赋值
                      * @return BaskInfo 是否已赋值
+                     * 
                      */
                     bool BaskInfoHasBeenSet() const;
 
                     /**
                      * 获取CNAME检测信息
                      * @return CnameInfo CNAME检测信息
+                     * 
                      */
                     DiagnoseData GetCnameInfo() const;
 
                     /**
                      * 判断参数 CnameInfo 是否已赋值
                      * @return CnameInfo 是否已赋值
+                     * 
                      */
                     bool CnameInfoHasBeenSet() const;
 
                     /**
                      * 获取客户端检测信息
                      * @return ClientInfo 客户端检测信息
+                     * 
                      */
                     DiagnoseData GetClientInfo() const;
 
                     /**
                      * 判断参数 ClientInfo 是否已赋值
                      * @return ClientInfo 是否已赋值
+                     * 
                      */
                     bool ClientInfoHasBeenSet() const;
 
                     /**
                      * 获取DNS检测信息
                      * @return DnsInfo DNS检测信息
+                     * 
                      */
                     DiagnoseData GetDnsInfo() const;
 
                     /**
                      * 判断参数 DnsInfo 是否已赋值
                      * @return DnsInfo 是否已赋值
+                     * 
                      */
                     bool DnsInfoHasBeenSet() const;
 
                     /**
                      * 获取网络检测信息
                      * @return NetworkInfo 网络检测信息
+                     * 
                      */
                     DiagnoseData GetNetworkInfo() const;
 
                     /**
                      * 判断参数 NetworkInfo 是否已赋值
                      * @return NetworkInfo 是否已赋值
+                     * 
                      */
                     bool NetworkInfoHasBeenSet() const;
 
                     /**
                      * 获取边缘节点检测信息
                      * @return OcNodeInfo 边缘节点检测信息
+                     * 
                      */
                     DiagnoseData GetOcNodeInfo() const;
 
                     /**
                      * 判断参数 OcNodeInfo 是否已赋值
                      * @return OcNodeInfo 是否已赋值
+                     * 
                      */
                     bool OcNodeInfoHasBeenSet() const;
 
                     /**
                      * 获取中间源节点检测信息
                      * @return MidNodeInfo 中间源节点检测信息
+                     * 
                      */
                     DiagnoseData GetMidNodeInfo() const;
 
                     /**
                      * 判断参数 MidNodeInfo 是否已赋值
                      * @return MidNodeInfo 是否已赋值
+                     * 
                      */
                     bool MidNodeInfoHasBeenSet() const;
 
                     /**
                      * 获取源站检测信息
                      * @return OriginInfo 源站检测信息
+                     * 
                      */
                     DiagnoseData GetOriginInfo() const;
 
                     /**
                      * 判断参数 OriginInfo 是否已赋值
                      * @return OriginInfo 是否已赋值
+                     * 
                      */
                     bool OriginInfoHasBeenSet() const;
 
@@ -145,12 +161,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurgeInfo 刷新检测信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DiagnoseData GetPurgeInfo() const;
 
                     /**
                      * 判断参数 PurgeInfo 是否已赋值
                      * @return PurgeInfo 是否已赋值
+                     * 
                      */
                     bool PurgeInfoHasBeenSet() const;
 

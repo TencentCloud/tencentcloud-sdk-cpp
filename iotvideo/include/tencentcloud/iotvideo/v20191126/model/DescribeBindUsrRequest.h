@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取设备主人的AccessId
                      * @return AccessId 设备主人的AccessId
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置设备主人的AccessId
-                     * @param AccessId 设备主人的AccessId
+                     * @param _accessId 设备主人的AccessId
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 

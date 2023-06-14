@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取调用Id
                      * @return ClientToken 调用Id
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 
                     /**
                      * 获取异步调用状态
                      * @return Status 异步调用状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

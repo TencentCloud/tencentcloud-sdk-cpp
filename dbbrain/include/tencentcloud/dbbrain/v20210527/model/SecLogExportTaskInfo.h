@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取异步任务Id。
                      * @return AsyncRequestId 异步任务Id。
+                     * 
                      */
                     uint64_t GetAsyncRequestId() const;
 
                     /**
                      * 设置异步任务Id。
-                     * @param AsyncRequestId 异步任务Id。
+                     * @param _asyncRequestId 异步任务Id。
+                     * 
                      */
                     void SetAsyncRequestId(const uint64_t& _asyncRequestId);
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 任务开始时间。
+                     * @param _startTime 任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -91,74 +97,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 任务结束时间。
+                     * @param _endTime 任务结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间。
                      * @return CreateTime 任务创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间。
-                     * @param CreateTime 任务创建时间。
+                     * @param _createTime 任务创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务状态。
                      * @return Status 任务状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态。
-                     * @param Status 任务状态。
+                     * @param _status 任务状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务执行进度。
                      * @return Progress 任务执行进度。
+                     * 
                      */
                     uint64_t GetProgress() const;
 
                     /**
                      * 设置任务执行进度。
-                     * @param Progress 任务执行进度。
+                     * @param _progress 任务执行进度。
+                     * 
                      */
                     void SetProgress(const uint64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogStartTime 导出日志开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogStartTime() const;
 
                     /**
                      * 设置导出日志开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogStartTime 导出日志开始时间。
+                     * @param _logStartTime 导出日志开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogStartTime(const std::string& _logStartTime);
 
                     /**
                      * 判断参数 LogStartTime 是否已赋值
                      * @return LogStartTime 是否已赋值
+                     * 
                      */
                     bool LogStartTimeHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogEndTime 导出日志结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogEndTime() const;
 
                     /**
                      * 设置导出日志结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogEndTime 导出日志结束时间。
+                     * @param _logEndTime 导出日志结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogEndTime(const std::string& _logEndTime);
 
                     /**
                      * 判断参数 LogEndTime 是否已赋值
                      * @return LogEndTime 是否已赋值
+                     * 
                      */
                     bool LogEndTimeHasBeenSet() const;
 
@@ -211,20 +235,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalSize 日志文件总大小，单位KB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalSize() const;
 
                     /**
                      * 设置日志文件总大小，单位KB。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalSize 日志文件总大小，单位KB。
+                     * @param _totalSize 日志文件总大小，单位KB。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalSize(const uint64_t& _totalSize);
 
                     /**
                      * 判断参数 TotalSize 是否已赋值
                      * @return TotalSize 是否已赋值
+                     * 
                      */
                     bool TotalSizeHasBeenSet() const;
 
@@ -233,20 +260,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DangerLevels 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetDangerLevels() const;
 
                     /**
                      * 设置风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DangerLevels 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
+                     * @param _dangerLevels 风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDangerLevels(const std::vector<uint64_t>& _dangerLevels);
 
                     /**
                      * 判断参数 DangerLevels 是否已赋值
                      * @return DangerLevels 是否已赋值
+                     * 
                      */
                     bool DangerLevelsHasBeenSet() const;
 

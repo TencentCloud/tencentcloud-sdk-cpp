@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
                      * @return EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
-                     * @param EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * @param _engineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
                      * @return TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
                      * 设置默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
-                     * @param TemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * @param _templateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+                     * 
                      */
                     void SetTemplateType(const std::string& _templateType);
 
                     /**
                      * 判断参数 TemplateType 是否已赋值
                      * @return TemplateType 是否已赋值
+                     * 
                      */
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
                      * 获取参数模板引擎，默认值：InnoDB
                      * @return EngineType 参数模板引擎，默认值：InnoDB
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置参数模板引擎，默认值：InnoDB
-                     * @param EngineType 参数模板引擎，默认值：InnoDB
+                     * @param _engineType 参数模板引擎，默认值：InnoDB
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取优惠商品信息类型。
                      * @return ExternalPromptType 优惠商品信息类型。
+                     * 
                      */
                     std::string GetExternalPromptType() const;
 
                     /**
                      * 设置优惠商品信息类型。
-                     * @param ExternalPromptType 优惠商品信息类型。
+                     * @param _externalPromptType 优惠商品信息类型。
+                     * 
                      */
                     void SetExternalPromptType(const std::string& _externalPromptType);
 
                     /**
                      * 判断参数 ExternalPromptType 是否已赋值
                      * @return ExternalPromptType 是否已赋值
+                     * 
                      */
                     bool ExternalPromptTypeHasBeenSet() const;
 
                     /**
                      * 获取优惠商品信息数据。
                      * @return ExternalPromptValue 优惠商品信息数据。
+                     * 
                      */
                     std::string GetExternalPromptValue() const;
 
                     /**
                      * 设置优惠商品信息数据。
-                     * @param ExternalPromptValue 优惠商品信息数据。
+                     * @param _externalPromptValue 优惠商品信息数据。
+                     * 
                      */
                     void SetExternalPromptValue(const std::string& _externalPromptValue);
 
                     /**
                      * 判断参数 ExternalPromptValue 是否已赋值
                      * @return ExternalPromptValue 是否已赋值
+                     * 
                      */
                     bool ExternalPromptValueHasBeenSet() const;
 
                     /**
                      * 获取优惠商品名称。
                      * @return ExternalPromptName 优惠商品名称。
+                     * 
                      */
                     std::string GetExternalPromptName() const;
 
                     /**
                      * 设置优惠商品名称。
-                     * @param ExternalPromptName 优惠商品名称。
+                     * @param _externalPromptName 优惠商品名称。
+                     * 
                      */
                     void SetExternalPromptName(const std::string& _externalPromptName);
 
                     /**
                      * 判断参数 ExternalPromptName 是否已赋值
                      * @return ExternalPromptName 是否已赋值
+                     * 
                      */
                     bool ExternalPromptNameHasBeenSet() const;
 

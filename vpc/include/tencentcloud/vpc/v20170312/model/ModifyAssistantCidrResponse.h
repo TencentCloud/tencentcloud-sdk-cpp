@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssistantCidrSet 辅助CIDR数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssistantCidr> GetAssistantCidrSet() const;
 
                     /**
                      * 判断参数 AssistantCidrSet 是否已赋值
                      * @return AssistantCidrSet 是否已赋值
+                     * 
                      */
                     bool AssistantCidrSetHasBeenSet() const;
 

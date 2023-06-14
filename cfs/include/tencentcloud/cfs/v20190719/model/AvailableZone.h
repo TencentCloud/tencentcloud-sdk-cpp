@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取可用区名称
                      * @return Zone 可用区名称
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称
-                     * @param Zone 可用区名称
+                     * @param _zone 可用区名称
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区ID
                      * @return ZoneId 可用区ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-                     * @param ZoneId 可用区ID
+                     * @param _zoneId 可用区ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区中文名称
                      * @return ZoneCnName 可用区中文名称
+                     * 
                      */
                     std::string GetZoneCnName() const;
 
                     /**
                      * 设置可用区中文名称
-                     * @param ZoneCnName 可用区中文名称
+                     * @param _zoneCnName 可用区中文名称
+                     * 
                      */
                     void SetZoneCnName(const std::string& _zoneCnName);
 
                     /**
                      * 判断参数 ZoneCnName 是否已赋值
                      * @return ZoneCnName 是否已赋值
+                     * 
                      */
                     bool ZoneCnNameHasBeenSet() const;
 
                     /**
                      * 获取Type数组
                      * @return Types Type数组
+                     * 
                      */
                     std::vector<AvailableType> GetTypes() const;
 
                     /**
                      * 设置Type数组
-                     * @param Types Type数组
+                     * @param _types Type数组
+                     * 
                      */
                     void SetTypes(const std::vector<AvailableType>& _types);
 
                     /**
                      * 判断参数 Types 是否已赋值
                      * @return Types 是否已赋值
+                     * 
                      */
                     bool TypesHasBeenSet() const;
 
                     /**
                      * 获取可用区中英文名称
                      * @return ZoneName 可用区中英文名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区中英文名称
-                     * @param ZoneName 可用区中英文名称
+                     * @param _zoneName 可用区中英文名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 

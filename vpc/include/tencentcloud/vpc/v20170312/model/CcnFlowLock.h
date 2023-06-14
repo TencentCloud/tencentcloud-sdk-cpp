@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取带宽所属的云联网ID。
                      * @return CcnId 带宽所属的云联网ID。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置带宽所属的云联网ID。
-                     * @param CcnId 带宽所属的云联网ID。
+                     * @param _ccnId 带宽所属的云联网ID。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取实例所属用户主账号ID。
                      * @return UserAccountID 实例所属用户主账号ID。
+                     * 
                      */
                     std::string GetUserAccountID() const;
 
                     /**
                      * 设置实例所属用户主账号ID。
-                     * @param UserAccountID 实例所属用户主账号ID。
+                     * @param _userAccountID 实例所属用户主账号ID。
+                     * 
                      */
                     void SetUserAccountID(const std::string& _userAccountID);
 
                     /**
                      * 判断参数 UserAccountID 是否已赋值
                      * @return UserAccountID 是否已赋值
+                     * 
                      */
                     bool UserAccountIDHasBeenSet() const;
 
                     /**
                      * 获取带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
                      * @return RegionFlowControlId 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
+                     * 
                      */
                     std::string GetRegionFlowControlId() const;
 
                     /**
                      * 设置带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-                     * @param RegionFlowControlId 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
+                     * @param _regionFlowControlId 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
+                     * 
                      */
                     void SetRegionFlowControlId(const std::string& _regionFlowControlId);
 
                     /**
                      * 判断参数 RegionFlowControlId 是否已赋值
                      * @return RegionFlowControlId 是否已赋值
+                     * 
                      */
                     bool RegionFlowControlIdHasBeenSet() const;
 

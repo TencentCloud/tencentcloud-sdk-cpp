@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取打开互通组的实例ID集合
                      * @return InstanceIdSet 打开互通组的实例ID集合
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置打开互通组的实例ID集合
-                     * @param InstanceIdSet 打开互通组的实例ID集合
+                     * @param _instanceIdSet 打开互通组的实例ID集合
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 

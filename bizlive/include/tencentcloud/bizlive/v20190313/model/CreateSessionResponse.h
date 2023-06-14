@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取服务端session信息，返回给JSSDK
                      * @return ServerSession 服务端session信息，返回给JSSDK
+                     * 
                      */
                     std::string GetServerSession() const;
 
                     /**
                      * 判断参数 ServerSession 是否已赋值
                      * @return ServerSession 是否已赋值
+                     * 
                      */
                     bool ServerSessionHasBeenSet() const;
 

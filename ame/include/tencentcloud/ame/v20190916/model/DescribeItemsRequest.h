@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取offset (Default = 0)，(当前页-1) * Limit
                      * @return Offset offset (Default = 0)，(当前页-1) * Limit
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置offset (Default = 0)，(当前页-1) * Limit
-                     * @param Offset offset (Default = 0)，(当前页-1) * Limit
+                     * @param _offset offset (Default = 0)，(当前页-1) * Limit
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取条数，必须大于0，最大值为30
                      * @return Limit 条数，必须大于0，最大值为30
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置条数，必须大于0，最大值为30
-                     * @param Limit 条数，必须大于0，最大值为30
+                     * @param _limit 条数，必须大于0，最大值为30
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      * @return CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
-                     * @param CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @param _categoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * 
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      * @return CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * 
                      */
                     std::string GetCategoryCode() const;
 
                     /**
                      * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
-                     * @param CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @param _categoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * 
                      */
                     void SetCategoryCode(const std::string& _categoryCode);
 
                     /**
                      * 判断参数 CategoryCode 是否已赋值
                      * @return CategoryCode 是否已赋值
+                     * 
                      */
                     bool CategoryCodeHasBeenSet() const;
 

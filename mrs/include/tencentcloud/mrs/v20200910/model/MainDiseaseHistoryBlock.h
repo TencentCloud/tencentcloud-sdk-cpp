@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetState() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 状态
+                     * @param _state 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const bool& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 对外输出值
+                     * @param _value 对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Neglist 否定列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NeglistBlock GetNeglist() const;
 
                     /**
                      * 设置否定列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Neglist 否定列表
+                     * @param _neglist 否定列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNeglist(const NeglistBlock& _neglist);
 
                     /**
                      * 判断参数 Neglist 是否已赋值
                      * @return Neglist 是否已赋值
+                     * 
                      */
                     bool NeglistHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Poslist 肯定列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PoslistBlock GetPoslist() const;
 
                     /**
                      * 设置肯定列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Poslist 肯定列表
+                     * @param _poslist 肯定列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoslist(const PoslistBlock& _poslist);
 
                     /**
                      * 判断参数 Poslist 是否已赋值
                      * @return Poslist 是否已赋值
+                     * 
                      */
                     bool PoslistHasBeenSet() const;
 

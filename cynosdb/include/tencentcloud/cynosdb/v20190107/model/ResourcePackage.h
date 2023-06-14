@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 资源包的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageId 资源包的唯一ID
+                     * @param _packageId 资源包的唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageId(const std::string& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ DISK：存储资源包
                      * @return PackageType 资源包类型：CCU：计算资源包
 DISK：存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageType() const;
 
@@ -82,15 +86,17 @@ DISK：存储资源包
                      * 设置资源包类型：CCU：计算资源包
 DISK：存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 资源包类型：CCU：计算资源包
+                     * @param _packageType 资源包类型：CCU：计算资源包
 DISK：存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 

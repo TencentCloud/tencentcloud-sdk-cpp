@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取工作组Id
                      * @return WorkGroupId 工作组Id
+                     * 
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
                      * 设置工作组Id
-                     * @param WorkGroupId 工作组Id
+                     * @param _workGroupId 工作组Id
+                     * 
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
 
                     /**
                      * 判断参数 WorkGroupId 是否已赋值
                      * @return WorkGroupId 是否已赋值
+                     * 
                      */
                     bool WorkGroupIdHasBeenSet() const;
 
                     /**
                      * 获取工作组描述
                      * @return WorkGroupDescription 工作组描述
+                     * 
                      */
                     std::string GetWorkGroupDescription() const;
 
                     /**
                      * 设置工作组描述
-                     * @param WorkGroupDescription 工作组描述
+                     * @param _workGroupDescription 工作组描述
+                     * 
                      */
                     void SetWorkGroupDescription(const std::string& _workGroupDescription);
 
                     /**
                      * 判断参数 WorkGroupDescription 是否已赋值
                      * @return WorkGroupDescription 是否已赋值
+                     * 
                      */
                     bool WorkGroupDescriptionHasBeenSet() const;
 

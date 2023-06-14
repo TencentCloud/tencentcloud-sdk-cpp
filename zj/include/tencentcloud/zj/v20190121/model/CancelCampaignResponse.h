@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取处理结果
                      * @return Data 处理结果
+                     * 
                      */
                     CancelActivityData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

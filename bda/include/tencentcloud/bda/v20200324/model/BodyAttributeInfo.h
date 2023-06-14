@@ -59,6 +59,7 @@ AttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，
                      * @return Age 人体年龄信息。 
 AttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Age GetAge() const;
 
@@ -66,15 +67,17 @@ AttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，
                      * 设置人体年龄信息。 
 AttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Age 人体年龄信息。 
+                     * @param _age 人体年龄信息。 
 AttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAge(const Age& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
@@ -85,6 +88,7 @@ AttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，
                      * @return Bag 人体是否挎包。 
 AttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Bag GetBag() const;
 
@@ -92,15 +96,17 @@ AttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，
                      * 设置人体是否挎包。 
 AttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bag 人体是否挎包。 
+                     * @param _bag 人体是否挎包。 
 AttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBag(const Bag& _bag);
 
                     /**
                      * 判断参数 Bag 是否已赋值
                      * @return Bag 是否已赋值
+                     * 
                      */
                     bool BagHasBeenSet() const;
 
@@ -111,6 +117,7 @@ AttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回
                      * @return Gender 人体性别信息。 
 AttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Gender GetGender() const;
 
@@ -118,15 +125,17 @@ AttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回
                      * 设置人体性别信息。 
 AttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gender 人体性别信息。 
+                     * @param _gender 人体性别信息。 
 AttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGender(const Gender& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
@@ -137,6 +146,7 @@ AttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数�
                      * @return Orientation 人体朝向信息。   
 AttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Orientation GetOrientation() const;
 
@@ -144,15 +154,17 @@ AttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数�
                      * 设置人体朝向信息。   
 AttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Orientation 人体朝向信息。   
+                     * @param _orientation 人体朝向信息。   
 AttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrientation(const Orientation& _orientation);
 
                     /**
                      * 判断参数 Orientation 是否已赋值
                      * @return Orientation 是否已赋值
+                     * 
                      */
                     bool OrientationHasBeenSet() const;
 
@@ -163,6 +175,7 @@ AttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍�
                      * @return UpperBodyCloth 人体上衣属性信息。
 AttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     UpperBodyCloth GetUpperBodyCloth() const;
 
@@ -170,15 +183,17 @@ AttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍�
                      * 设置人体上衣属性信息。
 AttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpperBodyCloth 人体上衣属性信息。
+                     * @param _upperBodyCloth 人体上衣属性信息。
 AttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpperBodyCloth(const UpperBodyCloth& _upperBodyCloth);
 
                     /**
                      * 判断参数 UpperBodyCloth 是否已赋值
                      * @return UpperBodyCloth 是否已赋值
+                     * 
                      */
                     bool UpperBodyClothHasBeenSet() const;
 
@@ -189,6 +204,7 @@ AttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数�
                      * @return LowerBodyCloth 人体下衣属性信息。  
 AttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LowerBodyCloth GetLowerBodyCloth() const;
 
@@ -196,15 +212,17 @@ AttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数�
                      * 设置人体下衣属性信息。  
 AttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LowerBodyCloth 人体下衣属性信息。  
+                     * @param _lowerBodyCloth 人体下衣属性信息。  
 AttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLowerBodyCloth(const LowerBodyCloth& _lowerBodyCloth);
 
                     /**
                      * 判断参数 LowerBodyCloth 是否已赋值
                      * @return LowerBodyCloth 是否已赋值
+                     * 
                      */
                     bool LowerBodyClothHasBeenSet() const;
 

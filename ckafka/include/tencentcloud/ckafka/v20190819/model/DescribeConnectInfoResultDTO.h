@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpAddr ip地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpAddr() const;
 
                     /**
                      * 设置ip地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpAddr ip地址
+                     * @param _ipAddr ip地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpAddr(const std::string& _ipAddr);
 
                     /**
                      * 判断参数 IpAddr 是否已赋值
                      * @return IpAddr 是否已赋值
+                     * 
                      */
                     bool IpAddrHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 连结时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置连结时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 连结时间
+                     * @param _time 连结时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUnSupportVersion 是否支持的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsUnSupportVersion() const;
 
                     /**
                      * 设置是否支持的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsUnSupportVersion 是否支持的版本
+                     * @param _isUnSupportVersion 是否支持的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsUnSupportVersion(const bool& _isUnSupportVersion);
 
                     /**
                      * 判断参数 IsUnSupportVersion 是否已赋值
                      * @return IsUnSupportVersion 是否已赋值
+                     * 
                      */
                     bool IsUnSupportVersionHasBeenSet() const;
 

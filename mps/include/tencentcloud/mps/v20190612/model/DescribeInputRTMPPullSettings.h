@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取RTMP源站地址信息。
                      * @return SourceAddresses RTMP源站地址信息。
+                     * 
                      */
                     std::vector<DescribeRTMPPullSourceAddress> GetSourceAddresses() const;
 
                     /**
                      * 设置RTMP源站地址信息。
-                     * @param SourceAddresses RTMP源站地址信息。
+                     * @param _sourceAddresses RTMP源站地址信息。
+                     * 
                      */
                     void SetSourceAddresses(const std::vector<DescribeRTMPPullSourceAddress>& _sourceAddresses);
 
                     /**
                      * 判断参数 SourceAddresses 是否已赋值
                      * @return SourceAddresses 是否已赋值
+                     * 
                      */
                     bool SourceAddressesHasBeenSet() const;
 

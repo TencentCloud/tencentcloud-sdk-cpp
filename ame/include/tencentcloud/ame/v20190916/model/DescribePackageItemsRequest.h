@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取订单id，从获取已购曲库包列表中获取
                      * @return OrderId 订单id，从获取已购曲库包列表中获取
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单id，从获取已购曲库包列表中获取
-                     * @param OrderId 订单id，从获取已购曲库包列表中获取
+                     * @param _orderId 订单id，从获取已购曲库包列表中获取
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取默认0，Offset=Offset+Length
                      * @return Offset 默认0，Offset=Offset+Length
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置默认0，Offset=Offset+Length
-                     * @param Offset 默认0，Offset=Offset+Length
+                     * @param _offset 默认0，Offset=Offset+Length
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取默认20
                      * @return Length 默认20
+                     * 
                      */
                     uint64_t GetLength() const;
 
                     /**
                      * 设置默认20
-                     * @param Length 默认20
+                     * @param _length 默认20
+                     * 
                      */
                     void SetLength(const uint64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取触发清理的储量底线(50-99)
                      * @return ReservesLimit 触发清理的储量底线(50-99)
+                     * 
                      */
                     uint64_t GetReservesLimit() const;
 
                     /**
                      * 设置触发清理的储量底线(50-99)
-                     * @param ReservesLimit 触发清理的储量底线(50-99)
+                     * @param _reservesLimit 触发清理的储量底线(50-99)
+                     * 
                      */
                     void SetReservesLimit(const uint64_t& _reservesLimit);
 
                     /**
                      * 判断参数 ReservesLimit 是否已赋值
                      * @return ReservesLimit 是否已赋值
+                     * 
                      */
                     bool ReservesLimitHasBeenSet() const;
 
                     /**
                      * 获取清理停止时的储量截至线(>0,小于ReservesLimit)
                      * @return ReservesDeadline 清理停止时的储量截至线(>0,小于ReservesLimit)
+                     * 
                      */
                     uint64_t GetReservesDeadline() const;
 
                     /**
                      * 设置清理停止时的储量截至线(>0,小于ReservesLimit)
-                     * @param ReservesDeadline 清理停止时的储量截至线(>0,小于ReservesLimit)
+                     * @param _reservesDeadline 清理停止时的储量截至线(>0,小于ReservesLimit)
+                     * 
                      */
                     void SetReservesDeadline(const uint64_t& _reservesDeadline);
 
                     /**
                      * 判断参数 ReservesDeadline 是否已赋值
                      * @return ReservesDeadline 是否已赋值
+                     * 
                      */
                     bool ReservesDeadlineHasBeenSet() const;
 
                     /**
                      * 获取触发清理的存储天数(>=1)
                      * @return DayLimit 触发清理的存储天数(>=1)
+                     * 
                      */
                     uint64_t GetDayLimit() const;
 
                     /**
                      * 设置触发清理的存储天数(>=1)
-                     * @param DayLimit 触发清理的存储天数(>=1)
+                     * @param _dayLimit 触发清理的存储天数(>=1)
+                     * 
                      */
                     void SetDayLimit(const uint64_t& _dayLimit);
 
                     /**
                      * 判断参数 DayLimit 是否已赋值
                      * @return DayLimit 是否已赋值
+                     * 
                      */
                     bool DayLimitHasBeenSet() const;
 

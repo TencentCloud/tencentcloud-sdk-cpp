@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
                      * @return Name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @param Name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * @param _name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
                      * @return Values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
-                     * @param Values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * @param _values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

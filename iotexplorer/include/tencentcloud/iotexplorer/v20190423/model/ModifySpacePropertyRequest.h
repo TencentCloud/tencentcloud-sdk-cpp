@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取位置空间Id
                      * @return SpaceId 位置空间Id
+                     * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
                      * 设置位置空间Id
-                     * @param SpaceId 位置空间Id
+                     * @param _spaceId 位置空间Id
+                     * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
 
                     /**
                      * 判断参数 SpaceId 是否已赋值
                      * @return SpaceId 是否已赋值
+                     * 
                      */
                     bool SpaceIdHasBeenSet() const;
 
                     /**
                      * 获取产品Id
                      * @return ProductId 产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品Id
-                     * @param ProductId 产品Id
+                     * @param _productId 产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品属性
                      * @return Data 产品属性
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置产品属性
-                     * @param Data 产品属性
+                     * @param _data 产品属性
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

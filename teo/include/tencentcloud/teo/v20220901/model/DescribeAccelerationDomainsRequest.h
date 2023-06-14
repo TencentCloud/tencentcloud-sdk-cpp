@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取加速域名所属站点ID。
                      * @return ZoneId 加速域名所属站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置加速域名所属站点ID。
-                     * @param ZoneId 加速域名所属站点ID。
+                     * @param _zoneId 加速域名所属站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
 <li>backup-origin<br>   按照【<strong>备用源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>domain-cname<br>   按照【<strong>加速CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>share-cname<br>   按照【<strong>共享CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
+                     * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
@@ -87,19 +91,21 @@ namespace TencentCloud
 <li>backup-origin<br>   按照【<strong>备用源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>domain-cname<br>   按照【<strong>加速CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>share-cname<br>   按照【<strong>共享CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
-                     * @param Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
+                     * @param _filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
 <li>domain-name<br>   按照【<strong>加速域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>origin-type<br>   按照【<strong>源站类型</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>origin<br>   按照【<strong>主源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>backup-origin<br>   按照【<strong>备用源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>domain-cname<br>   按照【<strong>加速CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
 <li>share-cname<br>   按照【<strong>共享CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否
+                     * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -110,6 +116,7 @@ namespace TencentCloud
                      * @return Direction 列表排序方式，取值有：
 <li>asc：升序排列；</li>
 <li>desc：降序排列。</li>默认值为asc。
+                     * 
                      */
                     std::string GetDirection() const;
 
@@ -117,15 +124,17 @@ namespace TencentCloud
                      * 设置列表排序方式，取值有：
 <li>asc：升序排列；</li>
 <li>desc：降序排列。</li>默认值为asc。
-                     * @param Direction 列表排序方式，取值有：
+                     * @param _direction 列表排序方式，取值有：
 <li>asc：升序排列；</li>
 <li>desc：降序排列。</li>默认值为asc。
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
@@ -136,6 +145,7 @@ namespace TencentCloud
                      * @return Match 匹配方式，取值有：
 <li>all：返回匹配所有查询条件的加速域名；</li>
 <li>any：返回匹配任意一个查询条件的加速域名。</li>默认值为all。
+                     * 
                      */
                     std::string GetMatch() const;
 
@@ -143,51 +153,59 @@ namespace TencentCloud
                      * 设置匹配方式，取值有：
 <li>all：返回匹配所有查询条件的加速域名；</li>
 <li>any：返回匹配任意一个查询条件的加速域名。</li>默认值为all。
-                     * @param Match 匹配方式，取值有：
+                     * @param _match 匹配方式，取值有：
 <li>all：返回匹配所有查询条件的加速域名；</li>
 <li>any：返回匹配任意一个查询条件的加速域名。</li>默认值为all。
+                     * 
                      */
                     void SetMatch(const std::string& _match);
 
                     /**
                      * 判断参数 Match 是否已赋值
                      * @return Match 是否已赋值
+                     * 
                      */
                     bool MatchHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目，默认值：20，上限：200。
                      * @return Limit 分页查询限制数目，默认值：20，上限：200。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目，默认值：20，上限：200。
-                     * @param Limit 分页查询限制数目，默认值：20，上限：200。
+                     * @param _limit 分页查询限制数目，默认值：20，上限：200。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页查询偏移量，默认为 0。
                      * @return Offset 分页查询偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量，默认为 0。
-                     * @param Offset 分页查询偏移量，默认为 0。
+                     * @param _offset 分页查询偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -200,6 +218,7 @@ namespace TencentCloud
 <li>created_on：加速域名创建时间；</li>
 <li>domain-name：加速域名名称；</li>
 </li>默认根据domain-name属性排序。
+                     * 
                      */
                     std::string GetOrder() const;
 
@@ -208,16 +227,18 @@ namespace TencentCloud
 <li>created_on：加速域名创建时间；</li>
 <li>domain-name：加速域名名称；</li>
 </li>默认根据domain-name属性排序。
-                     * @param Order 排序依据，取值有：
+                     * @param _order 排序依据，取值有：
 <li>created_on：加速域名创建时间；</li>
 <li>domain-name：加速域名名称；</li>
 </li>默认根据domain-name属性排序。
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

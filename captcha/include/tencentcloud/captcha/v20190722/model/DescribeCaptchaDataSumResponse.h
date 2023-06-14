@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取请求总量
                      * @return GetSum 请求总量
+                     * 
                      */
                     int64_t GetGetSum() const;
 
                     /**
                      * 判断参数 GetSum 是否已赋值
                      * @return GetSum 是否已赋值
+                     * 
                      */
                     bool GetSumHasBeenSet() const;
 
                     /**
                      * 获取请求验证成功量
                      * @return VfySuccSum 请求验证成功量
+                     * 
                      */
                     int64_t GetVfySuccSum() const;
 
                     /**
                      * 判断参数 VfySuccSum 是否已赋值
                      * @return VfySuccSum 是否已赋值
+                     * 
                      */
                     bool VfySuccSumHasBeenSet() const;
 
                     /**
                      * 获取请求验证量
                      * @return VfySum 请求验证量
+                     * 
                      */
                     int64_t GetVfySum() const;
 
                     /**
                      * 判断参数 VfySum 是否已赋值
                      * @return VfySum 是否已赋值
+                     * 
                      */
                     bool VfySumHasBeenSet() const;
 
                     /**
                      * 获取拦截攻击量
                      * @return AttackSum 拦截攻击量
+                     * 
                      */
                     int64_t GetAttackSum() const;
 
                     /**
                      * 判断参数 AttackSum 是否已赋值
                      * @return AttackSum 是否已赋值
+                     * 
                      */
                     bool AttackSumHasBeenSet() const;
 
@@ -96,60 +104,70 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCaptchaMsg() const;
 
                     /**
                      * 判断参数 CaptchaMsg 是否已赋值
                      * @return CaptchaMsg 是否已赋值
+                     * 
                      */
                     bool CaptchaMsgHasBeenSet() const;
 
                     /**
                      * 获取成功返回0  其它失败
                      * @return CaptchaCode 成功返回0  其它失败
+                     * 
                      */
                     int64_t GetCaptchaCode() const;
 
                     /**
                      * 判断参数 CaptchaCode 是否已赋值
                      * @return CaptchaCode 是否已赋值
+                     * 
                      */
                     bool CaptchaCodeHasBeenSet() const;
 
                     /**
                      * 获取票据校验总量
                      * @return CheckTicketSum 票据校验总量
+                     * 
                      */
                     int64_t GetCheckTicketSum() const;
 
                     /**
                      * 判断参数 CheckTicketSum 是否已赋值
                      * @return CheckTicketSum 是否已赋值
+                     * 
                      */
                     bool CheckTicketSumHasBeenSet() const;
 
                     /**
                      * 获取票据验证通过量
                      * @return TicketThroughputSum 票据验证通过量
+                     * 
                      */
                     int64_t GetTicketThroughputSum() const;
 
                     /**
                      * 判断参数 TicketThroughputSum 是否已赋值
                      * @return TicketThroughputSum 是否已赋值
+                     * 
                      */
                     bool TicketThroughputSumHasBeenSet() const;
 
                     /**
                      * 获取票据验证拦截量
                      * @return TicketInterceptSum 票据验证拦截量
+                     * 
                      */
                     int64_t GetTicketInterceptSum() const;
 
                     /**
                      * 判断参数 TicketInterceptSum 是否已赋值
                      * @return TicketInterceptSum 是否已赋值
+                     * 
                      */
                     bool TicketInterceptSumHasBeenSet() const;
 

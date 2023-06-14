@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取产品自身ID
                      * @return ProductId 产品自身ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品自身ID
-                     * @param ProductId 产品自身ID
+                     * @param _productId 产品自身ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取Topic名称
                      * @return TopicName Topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Topic名称
-                     * @param TopicName Topic名称
+                     * @param _topicName Topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取Topic权限，1发布，2订阅，3订阅和发布
                      * @return Privilege Topic权限，1发布，2订阅，3订阅和发布
+                     * 
                      */
                     uint64_t GetPrivilege() const;
 
                     /**
                      * 设置Topic权限，1发布，2订阅，3订阅和发布
-                     * @param Privilege Topic权限，1发布，2订阅，3订阅和发布
+                     * @param _privilege Topic权限，1发布，2订阅，3订阅和发布
+                     * 
                      */
                     void SetPrivilege(const uint64_t& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 
                     /**
                      * 获取代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
                      * @return BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
+                     * 
                      */
                     BrokerSubscribe GetBrokerSubscribe() const;
 
                     /**
                      * 设置代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
-                     * @param BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
+                     * @param _brokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
+                     * 
                      */
                     void SetBrokerSubscribe(const BrokerSubscribe& _brokerSubscribe);
 
                     /**
                      * 判断参数 BrokerSubscribe 是否已赋值
                      * @return BrokerSubscribe 是否已赋值
+                     * 
                      */
                     bool BrokerSubscribeHasBeenSet() const;
 

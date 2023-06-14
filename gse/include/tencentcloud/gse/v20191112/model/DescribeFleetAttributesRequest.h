@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队 Ids
                      * @return FleetIds 服务器舰队 Ids
+                     * 
                      */
                     std::vector<std::string> GetFleetIds() const;
 
                     /**
                      * 设置服务器舰队 Ids
-                     * @param FleetIds 服务器舰队 Ids
+                     * @param _fleetIds 服务器舰队 Ids
+                     * 
                      */
                     void SetFleetIds(const std::vector<std::string>& _fleetIds);
 
                     /**
                      * 判断参数 FleetIds 是否已赋值
                      * @return FleetIds 是否已赋值
+                     * 
                      */
                     bool FleetIdsHasBeenSet() const;
 
                     /**
                      * 获取结果返回最大数量，默认值20，最大值100
                      * @return Limit 结果返回最大数量，默认值20，最大值100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置结果返回最大数量，默认值20，最大值100
-                     * @param Limit 结果返回最大数量，默认值20，最大值100
+                     * @param _limit 结果返回最大数量，默认值20，最大值100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取返回结果偏移，最小值0
                      * @return Offset 返回结果偏移，最小值0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置返回结果偏移，最小值0
-                     * @param Offset 返回结果偏移，最小值0
+                     * @param _offset 返回结果偏移，最小值0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

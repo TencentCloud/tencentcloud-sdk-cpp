@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取维度
                      * @return MetricDimensionValues 维度
+                     * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
                      * 设置维度
-                     * @param MetricDimensionValues 维度
+                     * @param _metricDimensionValues 维度
+                     * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
 
                     /**
                      * 判断参数 MetricDimensionValues 是否已赋值
                      * @return MetricDimensionValues 是否已赋值
+                     * 
                      */
                     bool MetricDimensionValuesHasBeenSet() const;
 
                     /**
                      * 获取指标
                      * @return Metrics 指标
+                     * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
                      * 设置指标
-                     * @param Metrics 指标
+                     * @param _metrics 指标
+                     * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取调用视角。可选值：SERVER, CLIENT。默认为SERVER
                      * @return Kind 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置调用视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @param Kind 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * @param _kind 调用视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 

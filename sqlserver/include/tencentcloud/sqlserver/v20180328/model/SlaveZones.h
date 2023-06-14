@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取备可用区地域码
                      * @return SlaveZone 备可用区地域码
+                     * 
                      */
                     std::string GetSlaveZone() const;
 
                     /**
                      * 设置备可用区地域码
-                     * @param SlaveZone 备可用区地域码
+                     * @param _slaveZone 备可用区地域码
+                     * 
                      */
                     void SetSlaveZone(const std::string& _slaveZone);
 
                     /**
                      * 判断参数 SlaveZone 是否已赋值
                      * @return SlaveZone 是否已赋值
+                     * 
                      */
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
                      * 获取备可用区
                      * @return SlaveZoneName 备可用区
+                     * 
                      */
                     std::string GetSlaveZoneName() const;
 
                     /**
                      * 设置备可用区
-                     * @param SlaveZoneName 备可用区
+                     * @param _slaveZoneName 备可用区
+                     * 
                      */
                     void SetSlaveZoneName(const std::string& _slaveZoneName);
 
                     /**
                      * 判断参数 SlaveZoneName 是否已赋值
                      * @return SlaveZoneName 是否已赋值
+                     * 
                      */
                     bool SlaveZoneNameHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hidden 是否隐藏
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置是否隐藏
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Hidden 是否隐藏
+                     * @param _hidden 是否隐藏
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHidden(const bool& _hidden);
 
                     /**
                      * 判断参数 Hidden 是否已赋值
                      * @return Hidden 是否已赋值
+                     * 
                      */
                     bool HiddenHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewViewNames 新视图名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNewViewNames() const;
 
                     /**
                      * 设置新视图名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewViewNames 新视图名称
+                     * @param _newViewNames 新视图名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewViewNames(const std::vector<std::string>& _newViewNames);
 
                     /**
                      * 判断参数 NewViewNames 是否已赋值
                      * @return NewViewNames 是否已赋值
+                     * 
                      */
                     bool NewViewNamesHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

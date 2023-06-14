@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取备份的下载地址。
                      * @return BackupDownloadURL 备份的下载地址。
+                     * 
                      */
                     std::string GetBackupDownloadURL() const;
 
                     /**
                      * 判断参数 BackupDownloadURL 是否已赋值
                      * @return BackupDownloadURL 是否已赋值
+                     * 
                      */
                     bool BackupDownloadURLHasBeenSet() const;
 

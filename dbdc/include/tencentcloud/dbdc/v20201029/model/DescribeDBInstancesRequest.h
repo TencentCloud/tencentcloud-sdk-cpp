@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取独享集群实例Id
                      * @return InstanceId 独享集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享集群实例Id
-                     * @param InstanceId 独享集群实例Id
+                     * @param _instanceId 独享集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取独享集群主机Id
                      * @return HostId 独享集群主机Id
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置独享集群主机Id
-                     * @param HostId 独享集群主机Id
+                     * @param _hostId 独享集群主机Id
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 
                     /**
                      * 获取分页返回数量
                      * @return Limit 分页返回数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回数量
-                     * @param Limit 分页返回数量
+                     * @param _limit 分页返回数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取实例类型,0:mariadb, 1:tdsql
                      * @return ShardType 实例类型,0:mariadb, 1:tdsql
+                     * 
                      */
                     std::vector<int64_t> GetShardType() const;
 
                     /**
                      * 设置实例类型,0:mariadb, 1:tdsql
-                     * @param ShardType 实例类型,0:mariadb, 1:tdsql
+                     * @param _shardType 实例类型,0:mariadb, 1:tdsql
+                     * 
                      */
                     void SetShardType(const std::vector<int64_t>& _shardType);
 
                     /**
                      * 判断参数 ShardType 是否已赋值
                      * @return ShardType 是否已赋值
+                     * 
                      */
                     bool ShardTypeHasBeenSet() const;
 

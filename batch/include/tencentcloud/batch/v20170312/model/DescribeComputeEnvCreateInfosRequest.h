@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取计算环境ID列表，与Filters参数不能同时指定。
                      * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。
+                     * 
                      */
                     std::vector<std::string> GetEnvIds() const;
 
                     /**
                      * 设置计算环境ID列表，与Filters参数不能同时指定。
-                     * @param EnvIds 计算环境ID列表，与Filters参数不能同时指定。
+                     * @param _envIds 计算环境ID列表，与Filters参数不能同时指定。
+                     * 
                      */
                     void SetEnvIds(const std::vector<std::string>& _envIds);
 
                     /**
                      * 判断参数 EnvIds 是否已赋值
                      * @return EnvIds 是否已赋值
+                     * 
                      */
                     bool EnvIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
 与EnvIds参数不能同时指定。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,53 +85,61 @@ namespace TencentCloud
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
 与EnvIds参数不能同时指定。
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
 与EnvIds参数不能同时指定。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

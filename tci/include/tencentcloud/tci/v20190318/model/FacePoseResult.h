@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取正脸或侧脸的消息
                      * @return Direction 正脸或侧脸的消息
+                     * 
                      */
                     std::string GetDirection() const;
 
                     /**
                      * 设置正脸或侧脸的消息
-                     * @param Direction 正脸或侧脸的消息
+                     * @param _direction 正脸或侧脸的消息
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 
                     /**
                      * 获取围绕Z轴旋转角度，俯仰角
                      * @return Pitch 围绕Z轴旋转角度，俯仰角
+                     * 
                      */
                     double GetPitch() const;
 
                     /**
                      * 设置围绕Z轴旋转角度，俯仰角
-                     * @param Pitch 围绕Z轴旋转角度，俯仰角
+                     * @param _pitch 围绕Z轴旋转角度，俯仰角
+                     * 
                      */
                     void SetPitch(const double& _pitch);
 
                     /**
                      * 判断参数 Pitch 是否已赋值
                      * @return Pitch 是否已赋值
+                     * 
                      */
                     bool PitchHasBeenSet() const;
 
                     /**
                      * 获取围绕X轴旋转角度，翻滚角
                      * @return Roll 围绕X轴旋转角度，翻滚角
+                     * 
                      */
                     double GetRoll() const;
 
                     /**
                      * 设置围绕X轴旋转角度，翻滚角
-                     * @param Roll 围绕X轴旋转角度，翻滚角
+                     * @param _roll 围绕X轴旋转角度，翻滚角
+                     * 
                      */
                     void SetRoll(const double& _roll);
 
                     /**
                      * 判断参数 Roll 是否已赋值
                      * @return Roll 是否已赋值
+                     * 
                      */
                     bool RollHasBeenSet() const;
 
                     /**
                      * 获取围绕Y轴旋转角度，偏航角
                      * @return Yaw 围绕Y轴旋转角度，偏航角
+                     * 
                      */
                     double GetYaw() const;
 
                     /**
                      * 设置围绕Y轴旋转角度，偏航角
-                     * @param Yaw 围绕Y轴旋转角度，偏航角
+                     * @param _yaw 围绕Y轴旋转角度，偏航角
+                     * 
                      */
                     void SetYaw(const double& _yaw);
 
                     /**
                      * 判断参数 Yaw 是否已赋值
                      * @return Yaw 是否已赋值
+                     * 
                      */
                     bool YawHasBeenSet() const;
 

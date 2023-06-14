@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。
                      * @return DBInstanceIdSet 实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 设置实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。
-                     * @param DBInstanceIdSet 实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。
+                     * @param _dBInstanceIdSet 实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 

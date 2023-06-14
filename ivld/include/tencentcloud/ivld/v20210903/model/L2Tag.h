@@ -54,18 +54,21 @@ namespace TencentCloud
                     /**
                      * 获取二级标签名
                      * @return Name 二级标签名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置二级标签名
-                     * @param Name 二级标签名
+                     * @param _name 二级标签名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return L3TagSet 从属于此二级标签的三级标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<L3Tag> GetL3TagSet() const;
 
                     /**
                      * 设置从属于此二级标签的三级标签数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param L3TagSet 从属于此二级标签的三级标签数组
+                     * @param _l3TagSet 从属于此二级标签的三级标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetL3TagSet(const std::vector<L3Tag>& _l3TagSet);
 
                     /**
                      * 判断参数 L3TagSet 是否已赋值
                      * @return L3TagSet 是否已赋值
+                     * 
                      */
                     bool L3TagSetHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearIndexPairSet 二级标签出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AppearIndexPair> GetAppearIndexPairSet() const;
 
                     /**
                      * 设置二级标签出现信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearIndexPairSet 二级标签出现信息
+                     * @param _appearIndexPairSet 二级标签出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearIndexPairSet(const std::vector<AppearIndexPair>& _appearIndexPairSet);
 
                     /**
                      * 判断参数 AppearIndexPairSet 是否已赋值
                      * @return AppearIndexPairSet 是否已赋值
+                     * 
                      */
                     bool AppearIndexPairSetHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstAppear 二级标签首次出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFirstAppear() const;
 
                     /**
                      * 设置二级标签首次出现信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstAppear 二级标签首次出现信息
+                     * @param _firstAppear 二级标签首次出现信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstAppear(const int64_t& _firstAppear);
 
                     /**
                      * 判断参数 FirstAppear 是否已赋值
                      * @return FirstAppear 是否已赋值
+                     * 
                      */
                     bool FirstAppearHasBeenSet() const;
 

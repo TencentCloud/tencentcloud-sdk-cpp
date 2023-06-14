@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取数量统计
                      * @return ActionCount 数量统计
+                     * 
                      */
                     std::vector<ActionCountStatistic> GetActionCount() const;
 
                     /**
                      * 设置数量统计
-                     * @param ActionCount 数量统计
+                     * @param _actionCount 数量统计
+                     * 
                      */
                     void SetActionCount(const std::vector<ActionCountStatistic>& _actionCount);
 
                     /**
                      * 判断参数 ActionCount 是否已赋值
                      * @return ActionCount 是否已赋值
+                     * 
                      */
                     bool ActionCountHasBeenSet() const;
 
                     /**
                      * 获取时长统计
                      * @return ActionDuration 时长统计
+                     * 
                      */
                     std::vector<ActionDurationStatistic> GetActionDuration() const;
 
                     /**
                      * 设置时长统计
-                     * @param ActionDuration 时长统计
+                     * @param _actionDuration 时长统计
+                     * 
                      */
                     void SetActionDuration(const std::vector<ActionDurationStatistic>& _actionDuration);
 
                     /**
                      * 判断参数 ActionDuration 是否已赋值
                      * @return ActionDuration 是否已赋值
+                     * 
                      */
                     bool ActionDurationHasBeenSet() const;
 
                     /**
                      * 获取时长比例统计
                      * @return ActionDurationRatio 时长比例统计
+                     * 
                      */
                     std::vector<ActionDurationRatioStatistic> GetActionDurationRatio() const;
 
                     /**
                      * 设置时长比例统计
-                     * @param ActionDurationRatio 时长比例统计
+                     * @param _actionDurationRatio 时长比例统计
+                     * 
                      */
                     void SetActionDurationRatio(const std::vector<ActionDurationRatioStatistic>& _actionDurationRatio);
 
                     /**
                      * 判断参数 ActionDurationRatio 是否已赋值
                      * @return ActionDurationRatio 是否已赋值
+                     * 
                      */
                     bool ActionDurationRatioHasBeenSet() const;
 

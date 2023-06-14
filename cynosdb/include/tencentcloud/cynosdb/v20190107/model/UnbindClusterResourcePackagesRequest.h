@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取资源包唯一ID,如果不传，解绑该实例绑定的所有资源包
                      * @return PackageIds 资源包唯一ID,如果不传，解绑该实例绑定的所有资源包
+                     * 
                      */
                     std::vector<std::string> GetPackageIds() const;
 
                     /**
                      * 设置资源包唯一ID,如果不传，解绑该实例绑定的所有资源包
-                     * @param PackageIds 资源包唯一ID,如果不传，解绑该实例绑定的所有资源包
+                     * @param _packageIds 资源包唯一ID,如果不传，解绑该实例绑定的所有资源包
+                     * 
                      */
                     void SetPackageIds(const std::vector<std::string>& _packageIds);
 
                     /**
                      * 判断参数 PackageIds 是否已赋值
                      * @return PackageIds 是否已赋值
+                     * 
                      */
                     bool PackageIdsHasBeenSet() const;
 

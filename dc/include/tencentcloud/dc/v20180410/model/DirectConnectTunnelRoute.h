@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取专用通道路由ID
                      * @return RouteId 专用通道路由ID
+                     * 
                      */
                     std::string GetRouteId() const;
 
                     /**
                      * 设置专用通道路由ID
-                     * @param RouteId 专用通道路由ID
+                     * @param _routeId 专用通道路由ID
+                     * 
                      */
                     void SetRouteId(const std::string& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取网段CIDR
                      * @return DestinationCidrBlock 网段CIDR
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置网段CIDR
-                     * @param DestinationCidrBlock 网段CIDR
+                     * @param _destinationCidrBlock 网段CIDR
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取路由类型：BGP/STATIC路由
                      * @return RouteType 路由类型：BGP/STATIC路由
+                     * 
                      */
                     std::string GetRouteType() const;
 
                     /**
                      * 设置路由类型：BGP/STATIC路由
-                     * @param RouteType 路由类型：BGP/STATIC路由
+                     * @param _routeType 路由类型：BGP/STATIC路由
+                     * 
                      */
                     void SetRouteType(const std::string& _routeType);
 
                     /**
                      * 判断参数 RouteType 是否已赋值
                      * @return RouteType 是否已赋值
+                     * 
                      */
                     bool RouteTypeHasBeenSet() const;
 
                     /**
                      * 获取ENABLE：路由启用，DISABLE：路由禁用
                      * @return Status ENABLE：路由启用，DISABLE：路由禁用
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ENABLE：路由启用，DISABLE：路由禁用
-                     * @param Status ENABLE：路由启用，DISABLE：路由禁用
+                     * @param _status ENABLE：路由启用，DISABLE：路由禁用
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取ASPath信息
                      * @return ASPath ASPath信息
+                     * 
                      */
                     std::vector<std::string> GetASPath() const;
 
                     /**
                      * 设置ASPath信息
-                     * @param ASPath ASPath信息
+                     * @param _aSPath ASPath信息
+                     * 
                      */
                     void SetASPath(const std::vector<std::string>& _aSPath);
 
                     /**
                      * 判断参数 ASPath 是否已赋值
                      * @return ASPath 是否已赋值
+                     * 
                      */
                     bool ASPathHasBeenSet() const;
 
                     /**
                      * 获取路由下一跳IP
                      * @return NextHop 路由下一跳IP
+                     * 
                      */
                     std::string GetNextHop() const;
 
                     /**
                      * 设置路由下一跳IP
-                     * @param NextHop 路由下一跳IP
+                     * @param _nextHop 路由下一跳IP
+                     * 
                      */
                     void SetNextHop(const std::string& _nextHop);
 
                     /**
                      * 判断参数 NextHop 是否已赋值
                      * @return NextHop 是否已赋值
+                     * 
                      */
                     bool NextHopHasBeenSet() const;
 

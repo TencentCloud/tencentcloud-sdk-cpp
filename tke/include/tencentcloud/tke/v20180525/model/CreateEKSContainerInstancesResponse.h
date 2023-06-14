@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取EKS Container Instance Id集合，格式为eksci-xxx，是容器实例的唯一标识。
                      * @return EksCiIds EKS Container Instance Id集合，格式为eksci-xxx，是容器实例的唯一标识。
+                     * 
                      */
                     std::vector<std::string> GetEksCiIds() const;
 
                     /**
                      * 判断参数 EksCiIds 是否已赋值
                      * @return EksCiIds 是否已赋值
+                     * 
                      */
                     bool EksCiIdsHasBeenSet() const;
 

@@ -58,6 +58,7 @@ image-id      String      是否必填：否      （过滤条件）按照镜像
 instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
 security-group-id - string 是否必填：否 - （过滤条件）按照模块绑定的安全组id过滤。
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -69,55 +70,63 @@ image-id      String      是否必填：否      （过滤条件）按照镜像
 instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
 security-group-id - string 是否必填：否 - （过滤条件）按照模块绑定的安全组id过滤。
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
 image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
 instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
 security-group-id - string 是否必填：否 - （过滤条件）按照模块绑定的安全组id过滤。
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
                      * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
                      * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
-                     * @param Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * @param _limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -132,6 +141,7 @@ instance-num 按实例数量排序。
 node-num 按节点数量排序。
 timestamp 按实例创建时间排序。
 如果不传，默认按实例创建时间排序
+                     * 
                      */
                     std::string GetOrderByField() const;
 
@@ -141,35 +151,40 @@ instance-num 按实例数量排序。
 node-num 按节点数量排序。
 timestamp 按实例创建时间排序。
 如果不传，默认按实例创建时间排序
-                     * @param OrderByField 指定排序字段。目前支持的可选值如下
+                     * @param _orderByField 指定排序字段。目前支持的可选值如下
 instance-num 按实例数量排序。
 node-num 按节点数量排序。
 timestamp 按实例创建时间排序。
 如果不传，默认按实例创建时间排序
+                     * 
                      */
                     void SetOrderByField(const std::string& _orderByField);
 
                     /**
                      * 判断参数 OrderByField 是否已赋值
                      * @return OrderByField 是否已赋值
+                     * 
                      */
                     bool OrderByFieldHasBeenSet() const;
 
                     /**
                      * 获取指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
                      * @return OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * 
                      */
                     int64_t GetOrderDirection() const;
 
                     /**
                      * 设置指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
-                     * @param OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @param _orderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * 
                      */
                     void SetOrderDirection(const int64_t& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

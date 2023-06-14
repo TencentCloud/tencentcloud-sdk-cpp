@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取专用通道ID
                      * @return DirectConnectTunnelId 专用通道ID
+                     * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
                      * 设置专用通道ID
-                     * @param DirectConnectTunnelId 专用通道ID
+                     * @param _directConnectTunnelId 专用通道ID
+                     * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
 
                     /**
                      * 判断参数 DirectConnectTunnelId 是否已赋值
                      * @return DirectConnectTunnelId 是否已赋值
+                     * 
                      */
                     bool DirectConnectTunnelIdHasBeenSet() const;
 
                     /**
                      * 获取专用通道的Vlan
                      * @return Vlan 专用通道的Vlan
+                     * 
                      */
                     int64_t GetVlan() const;
 
                     /**
                      * 设置专用通道的Vlan
-                     * @param Vlan 专用通道的Vlan
+                     * @param _vlan 专用通道的Vlan
+                     * 
                      */
                     void SetVlan(const int64_t& _vlan);
 
                     /**
                      * 判断参数 Vlan 是否已赋值
                      * @return Vlan 是否已赋值
+                     * 
                      */
                     bool VlanHasBeenSet() const;
 
                     /**
                      * 获取用户侧BGP，Asn，AuthKey
                      * @return BgpPeer 用户侧BGP，Asn，AuthKey
+                     * 
                      */
                     BgpPeer GetBgpPeer() const;
 
                     /**
                      * 设置用户侧BGP，Asn，AuthKey
-                     * @param BgpPeer 用户侧BGP，Asn，AuthKey
+                     * @param _bgpPeer 用户侧BGP，Asn，AuthKey
+                     * 
                      */
                     void SetBgpPeer(const BgpPeer& _bgpPeer);
 
                     /**
                      * 判断参数 BgpPeer 是否已赋值
                      * @return BgpPeer 是否已赋值
+                     * 
                      */
                     bool BgpPeerHasBeenSet() const;
 
                     /**
                      * 获取用户侧过滤网段地址
                      * @return RouteFilterPrefixes 用户侧过滤网段地址
+                     * 
                      */
                     RouteFilterPrefix GetRouteFilterPrefixes() const;
 
                     /**
                      * 设置用户侧过滤网段地址
-                     * @param RouteFilterPrefixes 用户侧过滤网段地址
+                     * @param _routeFilterPrefixes 用户侧过滤网段地址
+                     * 
                      */
                     void SetRouteFilterPrefixes(const RouteFilterPrefix& _routeFilterPrefixes);
 
                     /**
                      * 判断参数 RouteFilterPrefixes 是否已赋值
                      * @return RouteFilterPrefixes 是否已赋值
+                     * 
                      */
                     bool RouteFilterPrefixesHasBeenSet() const;
 
                     /**
                      * 获取腾讯侧互联IP
                      * @return TencentAddress 腾讯侧互联IP
+                     * 
                      */
                     std::string GetTencentAddress() const;
 
                     /**
                      * 设置腾讯侧互联IP
-                     * @param TencentAddress 腾讯侧互联IP
+                     * @param _tencentAddress 腾讯侧互联IP
+                     * 
                      */
                     void SetTencentAddress(const std::string& _tencentAddress);
 
                     /**
                      * 判断参数 TencentAddress 是否已赋值
                      * @return TencentAddress 是否已赋值
+                     * 
                      */
                     bool TencentAddressHasBeenSet() const;
 
                     /**
                      * 获取腾讯侧备用互联IP
                      * @return TencentBackupAddress 腾讯侧备用互联IP
+                     * 
                      */
                     std::string GetTencentBackupAddress() const;
 
                     /**
                      * 设置腾讯侧备用互联IP
-                     * @param TencentBackupAddress 腾讯侧备用互联IP
+                     * @param _tencentBackupAddress 腾讯侧备用互联IP
+                     * 
                      */
                     void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
 
                     /**
                      * 判断参数 TencentBackupAddress 是否已赋值
                      * @return TencentBackupAddress 是否已赋值
+                     * 
                      */
                     bool TencentBackupAddressHasBeenSet() const;
 
                     /**
                      * 获取用户侧互联IP
                      * @return CustomerAddress 用户侧互联IP
+                     * 
                      */
                     std::string GetCustomerAddress() const;
 
                     /**
                      * 设置用户侧互联IP
-                     * @param CustomerAddress 用户侧互联IP
+                     * @param _customerAddress 用户侧互联IP
+                     * 
                      */
                     void SetCustomerAddress(const std::string& _customerAddress);
 
                     /**
                      * 判断参数 CustomerAddress 是否已赋值
                      * @return CustomerAddress 是否已赋值
+                     * 
                      */
                     bool CustomerAddressHasBeenSet() const;
 
                     /**
                      * 获取专用通道带宽值
                      * @return Bandwidth 专用通道带宽值
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置专用通道带宽值
-                     * @param Bandwidth 专用通道带宽值
+                     * @param _bandwidth 专用通道带宽值
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取BGP community开关
                      * @return EnableBGPCommunity BGP community开关
+                     * 
                      */
                     bool GetEnableBGPCommunity() const;
 
                     /**
                      * 设置BGP community开关
-                     * @param EnableBGPCommunity BGP community开关
+                     * @param _enableBGPCommunity BGP community开关
+                     * 
                      */
                     void SetEnableBGPCommunity(const bool& _enableBGPCommunity);
 
                     /**
                      * 判断参数 EnableBGPCommunity 是否已赋值
                      * @return EnableBGPCommunity 是否已赋值
+                     * 
                      */
                     bool EnableBGPCommunityHasBeenSet() const;
 
                     /**
                      * 获取是否开启BFD
                      * @return BfdEnable 是否开启BFD
+                     * 
                      */
                     int64_t GetBfdEnable() const;
 
                     /**
                      * 设置是否开启BFD
-                     * @param BfdEnable 是否开启BFD
+                     * @param _bfdEnable 是否开启BFD
+                     * 
                      */
                     void SetBfdEnable(const int64_t& _bfdEnable);
 
                     /**
                      * 判断参数 BfdEnable 是否已赋值
                      * @return BfdEnable 是否已赋值
+                     * 
                      */
                     bool BfdEnableHasBeenSet() const;
 
                     /**
                      * 获取是否开启NQA
                      * @return NqaEnable 是否开启NQA
+                     * 
                      */
                     int64_t GetNqaEnable() const;
 
                     /**
                      * 设置是否开启NQA
-                     * @param NqaEnable 是否开启NQA
+                     * @param _nqaEnable 是否开启NQA
+                     * 
                      */
                     void SetNqaEnable(const int64_t& _nqaEnable);
 
                     /**
                      * 判断参数 NqaEnable 是否已赋值
                      * @return NqaEnable 是否已赋值
+                     * 
                      */
                     bool NqaEnableHasBeenSet() const;
 
                     /**
                      * 获取BFD配置信息
                      * @return BfdInfo BFD配置信息
+                     * 
                      */
                     BFDInfo GetBfdInfo() const;
 
                     /**
                      * 设置BFD配置信息
-                     * @param BfdInfo BFD配置信息
+                     * @param _bfdInfo BFD配置信息
+                     * 
                      */
                     void SetBfdInfo(const BFDInfo& _bfdInfo);
 
                     /**
                      * 判断参数 BfdInfo 是否已赋值
                      * @return BfdInfo 是否已赋值
+                     * 
                      */
                     bool BfdInfoHasBeenSet() const;
 
                     /**
                      * 获取NQA配置信息
                      * @return NqaInfo NQA配置信息
+                     * 
                      */
                     NQAInfo GetNqaInfo() const;
 
                     /**
                      * 设置NQA配置信息
-                     * @param NqaInfo NQA配置信息
+                     * @param _nqaInfo NQA配置信息
+                     * 
                      */
                     void SetNqaInfo(const NQAInfo& _nqaInfo);
 
                     /**
                      * 判断参数 NqaInfo 是否已赋值
                      * @return NqaInfo 是否已赋值
+                     * 
                      */
                     bool NqaInfoHasBeenSet() const;
 
@@ -285,38 +324,44 @@ namespace TencentCloud
 1: 启用IPv6
                      * @return IPv6Enable 0：停用IPv6
 1: 启用IPv6
+                     * 
                      */
                     int64_t GetIPv6Enable() const;
 
                     /**
                      * 设置0：停用IPv6
 1: 启用IPv6
-                     * @param IPv6Enable 0：停用IPv6
+                     * @param _iPv6Enable 0：停用IPv6
 1: 启用IPv6
+                     * 
                      */
                     void SetIPv6Enable(const int64_t& _iPv6Enable);
 
                     /**
                      * 判断参数 IPv6Enable 是否已赋值
                      * @return IPv6Enable 是否已赋值
+                     * 
                      */
                     bool IPv6EnableHasBeenSet() const;
 
                     /**
                      * 获取去往用户侧的路由信息
                      * @return CustomerIDCRoutes 去往用户侧的路由信息
+                     * 
                      */
                     std::vector<RouteFilterPrefix> GetCustomerIDCRoutes() const;
 
                     /**
                      * 设置去往用户侧的路由信息
-                     * @param CustomerIDCRoutes 去往用户侧的路由信息
+                     * @param _customerIDCRoutes 去往用户侧的路由信息
+                     * 
                      */
                     void SetCustomerIDCRoutes(const std::vector<RouteFilterPrefix>& _customerIDCRoutes);
 
                     /**
                      * 判断参数 CustomerIDCRoutes 是否已赋值
                      * @return CustomerIDCRoutes 是否已赋值
+                     * 
                      */
                     bool CustomerIDCRoutesHasBeenSet() const;
 
@@ -327,6 +372,7 @@ namespace TencentCloud
                      * @return JumboEnable 是否开启巨帧
 1：开启
 0：不开启
+                     * 
                      */
                     int64_t GetJumboEnable() const;
 
@@ -334,15 +380,17 @@ namespace TencentCloud
                      * 设置是否开启巨帧
 1：开启
 0：不开启
-                     * @param JumboEnable 是否开启巨帧
+                     * @param _jumboEnable 是否开启巨帧
 1：开启
 0：不开启
+                     * 
                      */
                     void SetJumboEnable(const int64_t& _jumboEnable);
 
                     /**
                      * 判断参数 JumboEnable 是否已赋值
                      * @return JumboEnable 是否已赋值
+                     * 
                      */
                     bool JumboEnableHasBeenSet() const;
 

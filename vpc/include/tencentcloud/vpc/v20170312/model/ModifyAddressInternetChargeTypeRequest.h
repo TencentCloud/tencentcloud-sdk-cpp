@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取弹性公网IP的唯一ID，形如eip-xxx
                      * @return AddressId 弹性公网IP的唯一ID，形如eip-xxx
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置弹性公网IP的唯一ID，形如eip-xxx
-                     * @param AddressId 弹性公网IP的唯一ID，形如eip-xxx
+                     * @param _addressId 弹性公网IP的唯一ID，形如eip-xxx
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
                      * @return InternetChargeType 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
-                     * @param InternetChargeType 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * @param _internetChargeType 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
                     /**
                      * 判断参数 InternetChargeType 是否已赋值
                      * @return InternetChargeType 是否已赋值
+                     * 
                      */
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取弹性公网IP调整目标带宽值
                      * @return InternetMaxBandwidthOut 弹性公网IP调整目标带宽值
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置弹性公网IP调整目标带宽值
-                     * @param InternetMaxBandwidthOut 弹性公网IP调整目标带宽值
+                     * @param _internetMaxBandwidthOut 弹性公网IP调整目标带宽值
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
                      * @return AddressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * 
                      */
                     AddressChargePrepaid GetAddressChargePrepaid() const;
 
                     /**
                      * 设置包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
-                     * @param AddressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * @param _addressChargePrepaid 包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是"BANDWIDTH_PREPAID_BY_MONTH"时，必传该参数。
+                     * 
                      */
                     void SetAddressChargePrepaid(const AddressChargePrepaid& _addressChargePrepaid);
 
                     /**
                      * 判断参数 AddressChargePrepaid 是否已赋值
                      * @return AddressChargePrepaid 是否已赋值
+                     * 
                      */
                     bool AddressChargePrepaidHasBeenSet() const;
 

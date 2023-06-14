@@ -51,6 +51,7 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     std::string GetGatewayId() const;
 
@@ -59,52 +60,60 @@ VPN网关实例ID，形如，`vpn-ltjahce6`。
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
-                     * @param GatewayId 网关实例ID，目前我们支持的网关实例类型有，
+                     * @param _gatewayId 网关实例ID，目前我们支持的网关实例类型有，
 专线网关实例ID，形如，`dcg-ltjahce6`；
 Nat网关实例ID，形如，`nat-ltjahce6`；
 VPN网关实例ID，形如，`vpn-ltjahce6`。
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
                      * @return Bandwidth 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
-                     * @param Bandwidth 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * @param _bandwidth 流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取限流的云服务器内网IP。
                      * @return IpAddresses 限流的云服务器内网IP。
+                     * 
                      */
                     std::vector<std::string> GetIpAddresses() const;
 
                     /**
                      * 设置限流的云服务器内网IP。
-                     * @param IpAddresses 限流的云服务器内网IP。
+                     * @param _ipAddresses 限流的云服务器内网IP。
+                     * 
                      */
                     void SetIpAddresses(const std::vector<std::string>& _ipAddresses);
 
                     /**
                      * 判断参数 IpAddresses 是否已赋值
                      * @return IpAddresses 是否已赋值
+                     * 
                      */
                     bool IpAddressesHasBeenSet() const;
 

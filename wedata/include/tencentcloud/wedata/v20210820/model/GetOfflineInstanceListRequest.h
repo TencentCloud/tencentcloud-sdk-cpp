@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取第几页
                      * @return PageIndex 第几页
+                     * 
                      */
                     std::string GetPageIndex() const;
 
                     /**
                      * 设置第几页
-                     * @param PageIndex 第几页
+                     * @param _pageIndex 第几页
+                     * 
                      */
                     void SetPageIndex(const std::string& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取每页几条
                      * @return PageSize 每页几条
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页几条
-                     * @param PageSize 每页几条
+                     * @param _pageSize 每页几条
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SearchCondition 无
+                     * 
                      */
                     SearchCondition GetSearchCondition() const;
 
                     /**
                      * 设置无
-                     * @param SearchCondition 无
+                     * @param _searchCondition 无
+                     * 
                      */
                     void SetSearchCondition(const SearchCondition& _searchCondition);
 
                     /**
                      * 判断参数 SearchCondition 是否已赋值
                      * @return SearchCondition 是否已赋值
+                     * 
                      */
                     bool SearchConditionHasBeenSet() const;
 

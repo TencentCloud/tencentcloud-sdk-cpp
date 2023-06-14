@@ -67,126 +67,147 @@ type InstanceInfo struct {
                     /**
                      * 获取appid信息
                      * @return AppId appid信息
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置appid信息
-                     * @param AppId appid信息
+                     * @param _appId appid信息
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取vpcid信息
                      * @return VpcId vpcid信息
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpcid信息
-                     * @param VpcId vpcid信息
+                     * @param _vpcId vpcid信息
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取vpc名称
                      * @return VPCName vpc名称
+                     * 
                      */
                     std::string GetVPCName() const;
 
                     /**
                      * 设置vpc名称
-                     * @param VPCName vpc名称
+                     * @param _vPCName vpc名称
+                     * 
                      */
                     void SetVPCName(const std::string& _vPCName);
 
                     /**
                      * 判断参数 VPCName 是否已赋值
                      * @return VPCName 是否已赋值
+                     * 
                      */
                     bool VPCNameHasBeenSet() const;
 
                     /**
                      * 获取子网id
                      * @return SubnetId 子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-                     * @param SubnetId 子网id
+                     * @param _subnetId 子网id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取资产id
                      * @return InstanceId 资产id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资产id
-                     * @param InstanceId 资产id
+                     * @param _instanceId 资产id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取资产名
                      * @return InstanceName 资产名
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置资产名
-                     * @param InstanceName 资产名
+                     * @param _instanceName 资产名
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -195,110 +216,128 @@ type InstanceInfo struct {
  3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
                      * @return InsType 资产类型
  3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * 
                      */
                     int64_t GetInsType() const;
 
                     /**
                      * 设置资产类型
  3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
-                     * @param InsType 资产类型
+                     * @param _insType 资产类型
  3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * 
                      */
                     void SetInsType(const int64_t& _insType);
 
                     /**
                      * 判断参数 InsType 是否已赋值
                      * @return InsType 是否已赋值
+                     * 
                      */
                     bool InsTypeHasBeenSet() const;
 
                     /**
                      * 获取公网ip
                      * @return PublicIp 公网ip
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网ip
-                     * @param PublicIp 公网ip
+                     * @param _publicIp 公网ip
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
                     /**
                      * 获取内网ip
                      * @return PrivateIp 内网ip
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置内网ip
-                     * @param PrivateIp 内网ip
+                     * @param _privateIp 内网ip
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 
                     /**
                      * 获取端口数
                      * @return PortNum 端口数
+                     * 
                      */
                     std::string GetPortNum() const;
 
                     /**
                      * 设置端口数
-                     * @param PortNum 端口数
+                     * @param _portNum 端口数
+                     * 
                      */
                     void SetPortNum(const std::string& _portNum);
 
                     /**
                      * 判断参数 PortNum 是否已赋值
                      * @return PortNum 是否已赋值
+                     * 
                      */
                     bool PortNumHasBeenSet() const;
 
                     /**
                      * 获取漏洞数
                      * @return LeakNum 漏洞数
+                     * 
                      */
                     std::string GetLeakNum() const;
 
                     /**
                      * 设置漏洞数
-                     * @param LeakNum 漏洞数
+                     * @param _leakNum 漏洞数
+                     * 
                      */
                     void SetLeakNum(const std::string& _leakNum);
 
                     /**
                      * 判断参数 LeakNum 是否已赋值
                      * @return LeakNum 是否已赋值
+                     * 
                      */
                     bool LeakNumHasBeenSet() const;
 
                     /**
                      * 获取1，公网 2内网
                      * @return InsSource 1，公网 2内网
+                     * 
                      */
                     std::string GetInsSource() const;
 
                     /**
                      * 设置1，公网 2内网
-                     * @param InsSource 1，公网 2内网
+                     * @param _insSource 1，公网 2内网
+                     * 
                      */
                     void SetInsSource(const std::string& _insSource);
 
                     /**
                      * 判断参数 InsSource 是否已赋值
                      * @return InsSource 是否已赋值
+                     * 
                      */
                     bool InsSourceHasBeenSet() const;
 
@@ -307,20 +346,23 @@ type InstanceInfo struct {
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourcePath [a,b]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetResourcePath() const;
 
                     /**
                      * 设置[a,b]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourcePath [a,b]
+                     * @param _resourcePath [a,b]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourcePath(const std::vector<std::string>& _resourcePath);
 
                     /**
                      * 判断参数 ResourcePath 是否已赋值
                      * @return ResourcePath 是否已赋值
+                     * 
                      */
                     bool ResourcePathHasBeenSet() const;
 
@@ -329,20 +371,23 @@ type InstanceInfo struct {
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 扫描结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetServer() const;
 
                     /**
                      * 设置扫描结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Server 扫描结果
+                     * @param _server 扫描结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServer(const std::vector<std::string>& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 

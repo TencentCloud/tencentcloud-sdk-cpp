@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取secret名称
                      * @return Name secret名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置secret名称
-                     * @param Name secret名称
+                     * @param _name secret名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取ingress列表
                      * @return IngressList ingress列表
+                     * 
                      */
                     std::vector<TkeIngressDetail> GetIngressList() const;
 
                     /**
                      * 设置ingress列表
-                     * @param IngressList ingress列表
+                     * @param _ingressList ingress列表
+                     * 
                      */
                     void SetIngressList(const std::vector<TkeIngressDetail>& _ingressList);
 
                     /**
                      * 判断参数 IngressList 是否已赋值
                      * @return IngressList 是否已赋值
+                     * 
                      */
                     bool IngressListHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoMatchDomains 和新证书不匹配的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNoMatchDomains() const;
 
                     /**
                      * 设置和新证书不匹配的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoMatchDomains 和新证书不匹配的域名列表
+                     * @param _noMatchDomains 和新证书不匹配的域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoMatchDomains(const std::vector<std::string>& _noMatchDomains);
 
                     /**
                      * 判断参数 NoMatchDomains 是否已赋值
                      * @return NoMatchDomains 是否已赋值
+                     * 
                      */
                     bool NoMatchDomainsHasBeenSet() const;
 

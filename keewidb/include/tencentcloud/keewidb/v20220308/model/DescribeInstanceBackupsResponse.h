@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取备份文件总数。
                      * @return TotalCount 备份文件总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -62,24 +64,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSet 废弃字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BinlogInfo> GetBackupSet() const;
 
                     /**
                      * 判断参数 BackupSet 是否已赋值
                      * @return BackupSet 是否已赋值
+                     * 
                      */
                     bool BackupSetHasBeenSet() const;
 
                     /**
                      * 获取实例备份信息列表。
                      * @return BackupRecord 实例备份信息列表。
+                     * 
                      */
                     std::vector<BackupInfo> GetBackupRecord() const;
 
                     /**
                      * 判断参数 BackupRecord 是否已赋值
                      * @return BackupRecord 是否已赋值
+                     * 
                      */
                     bool BackupRecordHasBeenSet() const;
 

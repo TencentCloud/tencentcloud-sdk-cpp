@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取媒资和分类资源。
                      * @return Resource 媒资和分类资源。
+                     * 
                      */
                     Resource GetResource() const;
 
                     /**
                      * 设置媒资和分类资源。
-                     * @param Resource 媒资和分类资源。
+                     * @param _resource 媒资和分类资源。
+                     * 
                      */
                     void SetResource(const Resource& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取资源归属，个人或团队。
                      * @return Owner 资源归属，个人或团队。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置资源归属，个人或团队。
-                     * @param Owner 资源归属，个人或团队。
+                     * @param _owner 资源归属，个人或团队。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 

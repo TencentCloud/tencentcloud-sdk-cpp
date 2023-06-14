@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取锁ID
                      * @return LockId 锁ID
+                     * 
                      */
                     int64_t GetLockId() const;
 
                     /**
                      * 设置锁ID
-                     * @param LockId 锁ID
+                     * @param _lockId 锁ID
+                     * 
                      */
                     void SetLockId(const int64_t& _lockId);
 
                     /**
                      * 判断参数 LockId 是否已赋值
                      * @return LockId 是否已赋值
+                     * 
                      */
                     bool LockIdHasBeenSet() const;
 
                     /**
                      * 获取数据源名称
                      * @return DatasourceConnectionName 数据源名称
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置数据源名称
-                     * @param DatasourceConnectionName 数据源名称
+                     * @param _datasourceConnectionName 数据源名称
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 

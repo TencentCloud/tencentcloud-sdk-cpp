@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取生命周期脚本名称
                      * @return NotebookLifecycleScriptsName 生命周期脚本名称
+                     * 
                      */
                     std::string GetNotebookLifecycleScriptsName() const;
 
                     /**
                      * 设置生命周期脚本名称
-                     * @param NotebookLifecycleScriptsName 生命周期脚本名称
+                     * @param _notebookLifecycleScriptsName 生命周期脚本名称
+                     * 
                      */
                     void SetNotebookLifecycleScriptsName(const std::string& _notebookLifecycleScriptsName);
 
                     /**
                      * 判断参数 NotebookLifecycleScriptsName 是否已赋值
                      * @return NotebookLifecycleScriptsName 是否已赋值
+                     * 
                      */
                     bool NotebookLifecycleScriptsNameHasBeenSet() const;
 
                     /**
                      * 获取是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false
                      * @return Forcible 是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false
+                     * 
                      */
                     bool GetForcible() const;
 
                     /**
                      * 设置是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false
-                     * @param Forcible 是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false
+                     * @param _forcible 是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false
+                     * 
                      */
                     void SetForcible(const bool& _forcible);
 
                     /**
                      * 判断参数 Forcible 是否已赋值
                      * @return Forcible 是否已赋值
+                     * 
                      */
                     bool ForcibleHasBeenSet() const;
 

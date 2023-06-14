@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取人脸框左上角横坐标。
                      * @return X 人脸框左上角横坐标。
+                     * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置人脸框左上角横坐标。
-                     * @param X 人脸框左上角横坐标。
+                     * @param _x 人脸框左上角横坐标。
+                     * 
                      */
                     void SetX(const int64_t& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取人脸框左上角纵坐标。
                      * @return Y 人脸框左上角纵坐标。
+                     * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置人脸框左上角纵坐标。
-                     * @param Y 人脸框左上角纵坐标。
+                     * @param _y 人脸框左上角纵坐标。
+                     * 
                      */
                     void SetY(const int64_t& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
                     /**
                      * 获取人脸框宽度。
                      * @return Width 人脸框宽度。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置人脸框宽度。
-                     * @param Width 人脸框宽度。
+                     * @param _width 人脸框宽度。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取人脸框高度。
                      * @return Height 人脸框高度。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置人脸框高度。
-                     * @param Height 人脸框高度。
+                     * @param _height 人脸框高度。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

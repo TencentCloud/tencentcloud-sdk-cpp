@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取session总数量
                      * @return TotalElements session总数量
+                     * 
                      */
                     int64_t GetTotalElements() const;
 
                     /**
                      * 判断参数 TotalElements 是否已赋值
                      * @return TotalElements 是否已赋值
+                     * 
                      */
                     bool TotalElementsHasBeenSet() const;
 
                     /**
                      * 获取总页数
                      * @return TotalPages 总页数
+                     * 
                      */
                     int64_t GetTotalPages() const;
 
                     /**
                      * 判断参数 TotalPages 是否已赋值
                      * @return TotalPages 是否已赋值
+                     * 
                      */
                     bool TotalPagesHasBeenSet() const;
 
                     /**
                      * 获取当前页码
                      * @return Page 当前页码
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取当前页数量
                      * @return Size 当前页数量
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取session列表信息
                      * @return Sessions session列表信息
+                     * 
                      */
                     std::vector<NotebookSessions> GetSessions() const;
 
                     /**
                      * 判断参数 Sessions 是否已赋值
                      * @return Sessions 是否已赋值
+                     * 
                      */
                     bool SessionsHasBeenSet() const;
 

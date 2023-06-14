@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 任务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置任务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartAt 任务开始时间
+                     * @param _startAt 任务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartAt(const std::string& _startAt);
 
                     /**
                      * 判断参数 StartAt 是否已赋值
                      * @return StartAt 是否已赋值
+                     * 
                      */
                     bool StartAtHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndAt 任务结束时间
+                     * @param _endAt 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndAt(const std::string& _endAt);
 
                     /**
                      * 判断参数 EndAt 是否已赋值
                      * @return EndAt 是否已赋值
+                     * 
                      */
                     bool EndAtHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 任务步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProcessProgress GetProgress() const;
 
                     /**
                      * 设置任务步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 任务步骤信息
+                     * @param _progress 任务步骤信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const ProcessProgress& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SameImages tag列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSameImages() const;
 
                     /**
                      * 设置tag列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SameImages tag列表
+                     * @param _sameImages tag列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSameImages(const std::vector<std::string>& _sameImages);
 
                     /**
                      * 判断参数 SameImages 是否已赋值
                      * @return SameImages 是否已赋值
+                     * 
                      */
                     bool SameImagesHasBeenSet() const;
 

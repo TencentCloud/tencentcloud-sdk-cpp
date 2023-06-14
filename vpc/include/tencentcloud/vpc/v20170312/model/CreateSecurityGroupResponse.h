@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取安全组对象。
                      * @return SecurityGroup 安全组对象。
+                     * 
                      */
                     SecurityGroup GetSecurityGroup() const;
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

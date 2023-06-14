@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取region信息
                      * @return Region region信息
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置region信息
-                     * @param Region region信息
+                     * @param _region region信息
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeakNetworkSet 网络峰值集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PeakNetwork> GetPeakNetworkSet() const;
 
                     /**
                      * 设置网络峰值集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeakNetworkSet 网络峰值集合
+                     * @param _peakNetworkSet 网络峰值集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeakNetworkSet(const std::vector<PeakNetwork>& _peakNetworkSet);
 
                     /**
                      * 判断参数 PeakNetworkSet 是否已赋值
                      * @return PeakNetworkSet 是否已赋值
+                     * 
                      */
                     bool PeakNetworkSetHasBeenSet() const;
 

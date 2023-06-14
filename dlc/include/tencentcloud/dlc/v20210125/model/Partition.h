@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取分区列名。
                      * @return Name 分区列名。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分区列名。
-                     * @param Name 分区列名。
+                     * @param _name 分区列名。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分区类型。
                      * @return Type 分区类型。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置分区类型。
-                     * @param Type 分区类型。
+                     * @param _type 分区类型。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取对分区的描述。
                      * @return Comment 对分区的描述。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置对分区的描述。
-                     * @param Comment 对分区的描述。
+                     * @param _comment 对分区的描述。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transform 隐式分区转换策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransform() const;
 
                     /**
                      * 设置隐式分区转换策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Transform 隐式分区转换策略
+                     * @param _transform 隐式分区转换策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransform(const std::string& _transform);
 
                     /**
                      * 判断参数 Transform 是否已赋值
                      * @return Transform 是否已赋值
+                     * 
                      */
                     bool TransformHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransformArgs 转换策略参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTransformArgs() const;
 
                     /**
                      * 设置转换策略参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransformArgs 转换策略参数
+                     * @param _transformArgs 转换策略参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransformArgs(const std::vector<std::string>& _transformArgs);
 
                     /**
                      * 判断参数 TransformArgs 是否已赋值
                      * @return TransformArgs 是否已赋值
+                     * 
                      */
                     bool TransformArgsHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

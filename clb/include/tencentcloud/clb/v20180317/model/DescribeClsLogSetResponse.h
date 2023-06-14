@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取日志集的 ID。
                      * @return LogsetId 日志集的 ID。
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取健康检查日志集的 ID。
                      * @return HealthLogsetId 健康检查日志集的 ID。
+                     * 
                      */
                     std::string GetHealthLogsetId() const;
 
                     /**
                      * 判断参数 HealthLogsetId 是否已赋值
                      * @return HealthLogsetId 是否已赋值
+                     * 
                      */
                     bool HealthLogsetIdHasBeenSet() const;
 

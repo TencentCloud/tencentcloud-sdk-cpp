@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取主机记录。
                      * @return Subdomain 主机记录。
+                     * 
                      */
                     std::string GetSubdomain() const;
 
                     /**
                      * 设置主机记录。
-                     * @param Subdomain 主机记录。
+                     * @param _subdomain 主机记录。
+                     * 
                      */
                     void SetSubdomain(const std::string& _subdomain);
 
                     /**
                      * 判断参数 Subdomain 是否已赋值
                      * @return Subdomain 是否已赋值
+                     * 
                      */
                     bool SubdomainHasBeenSet() const;
 
                     /**
                      * 获取记录类型。
                      * @return RecordType 记录类型。
+                     * 
                      */
                     std::string GetRecordType() const;
 
                     /**
                      * 设置记录类型。
-                     * @param RecordType 记录类型。
+                     * @param _recordType 记录类型。
+                     * 
                      */
                     void SetRecordType(const std::string& _recordType);
 
                     /**
                      * 判断参数 RecordType 是否已赋值
                      * @return RecordType 是否已赋值
+                     * 
                      */
                     bool RecordTypeHasBeenSet() const;
 
                     /**
                      * 获取记录值。
                      * @return RecordValue 记录值。
+                     * 
                      */
                     std::string GetRecordValue() const;
 
                     /**
                      * 设置记录值。
-                     * @param RecordValue 记录值。
+                     * @param _recordValue 记录值。
+                     * 
                      */
                     void SetRecordValue(const std::string& _recordValue);
 
                     /**
                      * 判断参数 RecordValue 是否已赋值
                      * @return RecordValue 是否已赋值
+                     * 
                      */
                     bool RecordValueHasBeenSet() const;
 

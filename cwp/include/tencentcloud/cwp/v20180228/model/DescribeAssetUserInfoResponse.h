@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取用户详细信息
                      * @return User 用户详细信息
+                     * 
                      */
                     AssetUserDetail GetUser() const;
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 

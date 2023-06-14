@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例详细信息列表。
                      * @return AutoScalingInstanceSet 实例详细信息列表。
+                     * 
                      */
                     std::vector<Instance> GetAutoScalingInstanceSet() const;
 
                     /**
                      * 判断参数 AutoScalingInstanceSet 是否已赋值
                      * @return AutoScalingInstanceSet 是否已赋值
+                     * 
                      */
                     bool AutoScalingInstanceSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

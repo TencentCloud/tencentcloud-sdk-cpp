@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
                      * @return Sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * 
                      */
                     std::string GetSql() const;
 
                     /**
                      * 设置规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
-                     * @param Sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * @param _sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * 
                      */
                     void SetSql(const std::string& _sql);
 
                     /**
                      * 判断参数 Sql 是否已赋值
                      * @return Sql 是否已赋值
+                     * 
                      */
                     bool SqlHasBeenSet() const;
 
@@ -163,6 +166,7 @@ namespace TencentCloud
 }
 }
 ]
+                     * 
                      */
                     std::string GetActions() const;
 
@@ -216,7 +220,7 @@ namespace TencentCloud
 }
 }
 ]
-                     * @param Actions 行为的JSON字符串，大部分种类举例如下：
+                     * @param _actions 行为的JSON字符串，大部分种类举例如下：
 [
 {
 "republish": {
@@ -265,48 +269,56 @@ namespace TencentCloud
 }
 }
 ]
+                     * 
                      */
                     void SetActions(const std::string& _actions);
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 
                     /**
                      * 获取规则描述
                      * @return Description 规则描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-                     * @param Description 规则描述
+                     * @param _description 规则描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取是否禁用规则
                      * @return RuleDisabled 是否禁用规则
+                     * 
                      */
                     bool GetRuleDisabled() const;
 
                     /**
                      * 设置是否禁用规则
-                     * @param RuleDisabled 是否禁用规则
+                     * @param _ruleDisabled 是否禁用规则
+                     * 
                      */
                     void SetRuleDisabled(const bool& _ruleDisabled);
 
                     /**
                      * 判断参数 RuleDisabled 是否已赋值
                      * @return RuleDisabled 是否已赋值
+                     * 
                      */
                     bool RuleDisabledHasBeenSet() const;
 

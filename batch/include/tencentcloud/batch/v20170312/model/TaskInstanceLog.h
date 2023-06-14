@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务实例
                      * @return TaskInstanceIndex 任务实例
+                     * 
                      */
                     uint64_t GetTaskInstanceIndex() const;
 
                     /**
                      * 设置任务实例
-                     * @param TaskInstanceIndex 任务实例
+                     * @param _taskInstanceIndex 任务实例
+                     * 
                      */
                     void SetTaskInstanceIndex(const uint64_t& _taskInstanceIndex);
 
                     /**
                      * 判断参数 TaskInstanceIndex 是否已赋值
                      * @return TaskInstanceIndex 是否已赋值
+                     * 
                      */
                     bool TaskInstanceIndexHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutLog 标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStdoutLog() const;
 
                     /**
                      * 设置标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StdoutLog 标准输出日志（Base64编码，解码后最大日志长度2048字节）
+                     * @param _stdoutLog 标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStdoutLog(const std::string& _stdoutLog);
 
                     /**
                      * 判断参数 StdoutLog 是否已赋值
                      * @return StdoutLog 是否已赋值
+                     * 
                      */
                     bool StdoutLogHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrLog 标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStderrLog() const;
 
                     /**
                      * 设置标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StderrLog 标准错误日志（Base64编码，解码后最大日志长度2048字节）
+                     * @param _stderrLog 标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStderrLog(const std::string& _stderrLog);
 
                     /**
                      * 判断参数 StderrLog 是否已赋值
                      * @return StderrLog 是否已赋值
+                     * 
                      */
                     bool StderrLogHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutRedirectPath 标准输出重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStdoutRedirectPath() const;
 
                     /**
                      * 设置标准输出重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StdoutRedirectPath 标准输出重定向路径
+                     * @param _stdoutRedirectPath 标准输出重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStdoutRedirectPath(const std::string& _stdoutRedirectPath);
 
                     /**
                      * 判断参数 StdoutRedirectPath 是否已赋值
                      * @return StdoutRedirectPath 是否已赋值
+                     * 
                      */
                     bool StdoutRedirectPathHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrRedirectPath 标准错误重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStderrRedirectPath() const;
 
                     /**
                      * 设置标准错误重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StderrRedirectPath 标准错误重定向路径
+                     * @param _stderrRedirectPath 标准错误重定向路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStderrRedirectPath(const std::string& _stderrRedirectPath);
 
                     /**
                      * 判断参数 StderrRedirectPath 是否已赋值
                      * @return StderrRedirectPath 是否已赋值
+                     * 
                      */
                     bool StderrRedirectPathHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutRedirectFileName 标准输出重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStdoutRedirectFileName() const;
 
                     /**
                      * 设置标准输出重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StdoutRedirectFileName 标准输出重定向文件名
+                     * @param _stdoutRedirectFileName 标准输出重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStdoutRedirectFileName(const std::string& _stdoutRedirectFileName);
 
                     /**
                      * 判断参数 StdoutRedirectFileName 是否已赋值
                      * @return StdoutRedirectFileName 是否已赋值
+                     * 
                      */
                     bool StdoutRedirectFileNameHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrRedirectFileName 标准错误重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStderrRedirectFileName() const;
 
                     /**
                      * 设置标准错误重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StderrRedirectFileName 标准错误重定向文件名
+                     * @param _stderrRedirectFileName 标准错误重定向文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStderrRedirectFileName(const std::string& _stderrRedirectFileName);
 
                     /**
                      * 判断参数 StderrRedirectFileName 是否已赋值
                      * @return StderrRedirectFileName 是否已赋值
+                     * 
                      */
                     bool StderrRedirectFileNameHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ PAYMENT:付款权益
                      * @return AccountRightType 账户权益类型
 SETTLEMENT:结算权益
 PAYMENT:付款权益
+                     * 
                      */
                     std::string GetAccountRightType() const;
 
@@ -74,15 +78,17 @@ PAYMENT:付款权益
                      * 设置账户权益类型
 SETTLEMENT:结算权益
 PAYMENT:付款权益
-                     * @param AccountRightType 账户权益类型
+                     * @param _accountRightType 账户权益类型
 SETTLEMENT:结算权益
 PAYMENT:付款权益
+                     * 
                      */
                     void SetAccountRightType(const std::string& _accountRightType);
 
                     /**
                      * 判断参数 AccountRightType 是否已赋值
                      * @return AccountRightType 是否已赋值
+                     * 
                      */
                     bool AccountRightTypeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ DISABLE:停用
                      * @return AccountRightStatus 账户权益状态
 ENABLE:启用
 DISABLE:停用
+                     * 
                      */
                     std::string GetAccountRightStatus() const;
 
@@ -100,15 +107,17 @@ DISABLE:停用
                      * 设置账户权益状态
 ENABLE:启用
 DISABLE:停用
-                     * @param AccountRightStatus 账户权益状态
+                     * @param _accountRightStatus 账户权益状态
 ENABLE:启用
 DISABLE:停用
+                     * 
                      */
                     void SetAccountRightStatus(const std::string& _accountRightStatus);
 
                     /**
                      * 判断参数 AccountRightStatus 是否已赋值
                      * @return AccountRightStatus 是否已赋值
+                     * 
                      */
                     bool AccountRightStatusHasBeenSet() const;
 
@@ -123,6 +132,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -132,17 +142,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alarms 告警列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeBasicAlarmListAlarms> GetAlarms() const;
 
                     /**
                      * 判断参数 Alarms 是否已赋值
                      * @return Alarms 是否已赋值
+                     * 
                      */
                     bool AlarmsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Warning 备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWarning() const;
 
                     /**
                      * 判断参数 Warning 是否已赋值
                      * @return Warning 是否已赋值
+                     * 
                      */
                     bool WarningHasBeenSet() const;
 

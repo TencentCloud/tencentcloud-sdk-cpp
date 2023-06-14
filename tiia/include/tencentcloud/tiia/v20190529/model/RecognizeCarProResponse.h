@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取汽车的四个矩形顶点坐标，如果图片中存在多辆车，则输出最大车辆的坐标。
                      * @return CarCoords 汽车的四个矩形顶点坐标，如果图片中存在多辆车，则输出最大车辆的坐标。
+                     * 
                      */
                     std::vector<Coord> GetCarCoords() const;
 
                     /**
                      * 判断参数 CarCoords 是否已赋值
                      * @return CarCoords 是否已赋值
+                     * 
                      */
                     bool CarCoordsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：置信度是指车牌信息置信度。
                      * @return CarTags 车辆属性识别的结果数组，如果识别到多辆车，则会输出每辆车的top1结果。
 注意：置信度是指车牌信息置信度。
+                     * 
                      */
                     std::vector<CarTagItem> GetCarTags() const;
 
                     /**
                      * 判断参数 CarTags 是否已赋值
                      * @return CarTags 是否已赋值
+                     * 
                      */
                     bool CarTagsHasBeenSet() const;
 

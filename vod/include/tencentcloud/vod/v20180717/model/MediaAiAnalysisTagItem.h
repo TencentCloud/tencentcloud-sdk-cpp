@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签名称。
                      * @return Tag 标签名称。
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置标签名称。
-                     * @param Tag 标签名称。
+                     * @param _tag 标签名称。
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取标签的可信度，取值范围是 0 到 100。
                      * @return Confidence 标签的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置标签的可信度，取值范围是 0 到 100。
-                     * @param Confidence 标签的可信度，取值范围是 0 到 100。
+                     * @param _confidence 标签的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

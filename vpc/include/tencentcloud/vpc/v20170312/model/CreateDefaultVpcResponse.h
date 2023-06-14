@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取默认VPC和子网ID。
                      * @return Vpc 默认VPC和子网ID。
+                     * 
                      */
                     DefaultVpcSubnet GetVpc() const;
 
                     /**
                      * 判断参数 Vpc 是否已赋值
                      * @return Vpc 是否已赋值
+                     * 
                      */
                     bool VpcHasBeenSet() const;
 

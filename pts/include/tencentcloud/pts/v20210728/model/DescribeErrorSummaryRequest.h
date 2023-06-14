@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return JobId 任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务ID
-                     * @param JobId 任务ID
+                     * @param _jobId 任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取场景ID
                      * @return ScenarioId 场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景ID
-                     * @param ScenarioId 场景ID
+                     * @param _scenarioId 场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取过滤参数
                      * @return Filters 过滤参数
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

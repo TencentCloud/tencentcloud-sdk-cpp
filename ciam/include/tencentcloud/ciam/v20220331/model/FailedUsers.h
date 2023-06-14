@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedUserIdentification 失败用户标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedUserIdentification() const;
 
                     /**
                      * 设置失败用户标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedUserIdentification 失败用户标识
+                     * @param _failedUserIdentification 失败用户标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedUserIdentification(const std::string& _failedUserIdentification);
 
                     /**
                      * 判断参数 FailedUserIdentification 是否已赋值
                      * @return FailedUserIdentification 是否已赋值
+                     * 
                      */
                     bool FailedUserIdentificationHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedReason 导入的用户失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
                      * 设置导入的用户失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedReason 导入的用户失败原因
+                     * @param _failedReason 导入的用户失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
 
                     /**
                      * 判断参数 FailedReason 是否已赋值
                      * @return FailedReason 是否已赋值
+                     * 
                      */
                     bool FailedReasonHasBeenSet() const;
 

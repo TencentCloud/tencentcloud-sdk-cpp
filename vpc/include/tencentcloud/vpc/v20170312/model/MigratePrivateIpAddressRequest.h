@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetSourceNetworkInterfaceId() const;
 
                     /**
                      * 设置当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _sourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetSourceNetworkInterfaceId(const std::string& _sourceNetworkInterfaceId);
 
                     /**
                      * 判断参数 SourceNetworkInterfaceId 是否已赋值
                      * @return SourceNetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool SourceNetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取待迁移的目的弹性网卡实例ID。
                      * @return DestinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。
+                     * 
                      */
                     std::string GetDestinationNetworkInterfaceId() const;
 
                     /**
                      * 设置待迁移的目的弹性网卡实例ID。
-                     * @param DestinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。
+                     * @param _destinationNetworkInterfaceId 待迁移的目的弹性网卡实例ID。
+                     * 
                      */
                     void SetDestinationNetworkInterfaceId(const std::string& _destinationNetworkInterfaceId);
 
                     /**
                      * 判断参数 DestinationNetworkInterfaceId 是否已赋值
                      * @return DestinationNetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool DestinationNetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取迁移的内网IP地址，例如：10.0.0.6。
                      * @return PrivateIpAddress 迁移的内网IP地址，例如：10.0.0.6。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置迁移的内网IP地址，例如：10.0.0.6。
-                     * @param PrivateIpAddress 迁移的内网IP地址，例如：10.0.0.6。
+                     * @param _privateIpAddress 迁移的内网IP地址，例如：10.0.0.6。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 

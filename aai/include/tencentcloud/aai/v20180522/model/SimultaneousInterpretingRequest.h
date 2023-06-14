@@ -45,216 +45,252 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
                      * @return ProjectId 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
-                     * @param ProjectId 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * @param _projectId 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。3：同传。
                      * @return SubServiceType 子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。3：同传。
+                     * 
                      */
                     uint64_t GetSubServiceType() const;
 
                     /**
                      * 设置子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。3：同传。
-                     * @param SubServiceType 子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。3：同传。
+                     * @param _subServiceType 子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。3：同传。
+                     * 
                      */
                     void SetSubServiceType(const uint64_t& _subServiceType);
 
                     /**
                      * 判断参数 SubServiceType 是否已赋值
                      * @return SubServiceType 是否已赋值
+                     * 
                      */
                     bool SubServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取识别引擎类型。8k_zh： 8k 中文会场模型；16k_zh：16k 中文会场模型，8k_en： 8k 英文会场模型；16k_en：16k 英文会场模型。当前仅支持16K。
                      * @return RecEngineModelType 识别引擎类型。8k_zh： 8k 中文会场模型；16k_zh：16k 中文会场模型，8k_en： 8k 英文会场模型；16k_en：16k 英文会场模型。当前仅支持16K。
+                     * 
                      */
                     std::string GetRecEngineModelType() const;
 
                     /**
                      * 设置识别引擎类型。8k_zh： 8k 中文会场模型；16k_zh：16k 中文会场模型，8k_en： 8k 英文会场模型；16k_en：16k 英文会场模型。当前仅支持16K。
-                     * @param RecEngineModelType 识别引擎类型。8k_zh： 8k 中文会场模型；16k_zh：16k 中文会场模型，8k_en： 8k 英文会场模型；16k_en：16k 英文会场模型。当前仅支持16K。
+                     * @param _recEngineModelType 识别引擎类型。8k_zh： 8k 中文会场模型；16k_zh：16k 中文会场模型，8k_en： 8k 英文会场模型；16k_en：16k 英文会场模型。当前仅支持16K。
+                     * 
                      */
                     void SetRecEngineModelType(const std::string& _recEngineModelType);
 
                     /**
                      * 判断参数 RecEngineModelType 是否已赋值
                      * @return RecEngineModelType 是否已赋值
+                     * 
                      */
                     bool RecEngineModelTypeHasBeenSet() const;
 
                     /**
                      * 获取语音数据，要base64编码。
                      * @return Data 语音数据，要base64编码。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置语音数据，要base64编码。
-                     * @param Data 语音数据，要base64编码。
+                     * @param _data 语音数据，要base64编码。
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取数据长度。
                      * @return DataLen 数据长度。
+                     * 
                      */
                     uint64_t GetDataLen() const;
 
                     /**
                      * 设置数据长度。
-                     * @param DataLen 数据长度。
+                     * @param _dataLen 数据长度。
+                     * 
                      */
                     void SetDataLen(const uint64_t& _dataLen);
 
                     /**
                      * 判断参数 DataLen 是否已赋值
                      * @return DataLen 是否已赋值
+                     * 
                      */
                     bool DataLenHasBeenSet() const;
 
                     /**
                      * 获取声音id，标识一句话。
                      * @return VoiceId 声音id，标识一句话。
+                     * 
                      */
                     std::string GetVoiceId() const;
 
                     /**
                      * 设置声音id，标识一句话。
-                     * @param VoiceId 声音id，标识一句话。
+                     * @param _voiceId 声音id，标识一句话。
+                     * 
                      */
                     void SetVoiceId(const std::string& _voiceId);
 
                     /**
                      * 判断参数 VoiceId 是否已赋值
                      * @return VoiceId 是否已赋值
+                     * 
                      */
                     bool VoiceIdHasBeenSet() const;
 
                     /**
                      * 获取是否是一句话的结束。
                      * @return IsEnd 是否是一句话的结束。
+                     * 
                      */
                     uint64_t GetIsEnd() const;
 
                     /**
                      * 设置是否是一句话的结束。
-                     * @param IsEnd 是否是一句话的结束。
+                     * @param _isEnd 是否是一句话的结束。
+                     * 
                      */
                     void SetIsEnd(const uint64_t& _isEnd);
 
                     /**
                      * 判断参数 IsEnd 是否已赋值
                      * @return IsEnd 是否已赋值
+                     * 
                      */
                     bool IsEndHasBeenSet() const;
 
                     /**
                      * 获取声音编码的格式1:pcm，4:speex，6:silk，默认为1。
                      * @return VoiceFormat 声音编码的格式1:pcm，4:speex，6:silk，默认为1。
+                     * 
                      */
                     uint64_t GetVoiceFormat() const;
 
                     /**
                      * 设置声音编码的格式1:pcm，4:speex，6:silk，默认为1。
-                     * @param VoiceFormat 声音编码的格式1:pcm，4:speex，6:silk，默认为1。
+                     * @param _voiceFormat 声音编码的格式1:pcm，4:speex，6:silk，默认为1。
+                     * 
                      */
                     void SetVoiceFormat(const uint64_t& _voiceFormat);
 
                     /**
                      * 判断参数 VoiceFormat 是否已赋值
                      * @return VoiceFormat 是否已赋值
+                     * 
                      */
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
                      * 获取是否需要翻译结果，1表示需要翻译，0是不需要。
                      * @return OpenTranslate 是否需要翻译结果，1表示需要翻译，0是不需要。
+                     * 
                      */
                     uint64_t GetOpenTranslate() const;
 
                     /**
                      * 设置是否需要翻译结果，1表示需要翻译，0是不需要。
-                     * @param OpenTranslate 是否需要翻译结果，1表示需要翻译，0是不需要。
+                     * @param _openTranslate 是否需要翻译结果，1表示需要翻译，0是不需要。
+                     * 
                      */
                     void SetOpenTranslate(const uint64_t& _openTranslate);
 
                     /**
                      * 判断参数 OpenTranslate 是否已赋值
                      * @return OpenTranslate 是否已赋值
+                     * 
                      */
                     bool OpenTranslateHasBeenSet() const;
 
                     /**
                      * 获取如果需要翻译，表示源语言类型，可取值：zh，en。
                      * @return SourceLanguage 如果需要翻译，表示源语言类型，可取值：zh，en。
+                     * 
                      */
                     std::string GetSourceLanguage() const;
 
                     /**
                      * 设置如果需要翻译，表示源语言类型，可取值：zh，en。
-                     * @param SourceLanguage 如果需要翻译，表示源语言类型，可取值：zh，en。
+                     * @param _sourceLanguage 如果需要翻译，表示源语言类型，可取值：zh，en。
+                     * 
                      */
                     void SetSourceLanguage(const std::string& _sourceLanguage);
 
                     /**
                      * 判断参数 SourceLanguage 是否已赋值
                      * @return SourceLanguage 是否已赋值
+                     * 
                      */
                     bool SourceLanguageHasBeenSet() const;
 
                     /**
                      * 获取如果需要翻译，表示目标语言类型，可取值：zh，en。
                      * @return TargetLanguage 如果需要翻译，表示目标语言类型，可取值：zh，en。
+                     * 
                      */
                     std::string GetTargetLanguage() const;
 
                     /**
                      * 设置如果需要翻译，表示目标语言类型，可取值：zh，en。
-                     * @param TargetLanguage 如果需要翻译，表示目标语言类型，可取值：zh，en。
+                     * @param _targetLanguage 如果需要翻译，表示目标语言类型，可取值：zh，en。
+                     * 
                      */
                     void SetTargetLanguage(const std::string& _targetLanguage);
 
                     /**
                      * 判断参数 TargetLanguage 是否已赋值
                      * @return TargetLanguage 是否已赋值
+                     * 
                      */
                     bool TargetLanguageHasBeenSet() const;
 
                     /**
                      * 获取表明当前语音分片的索引，从0开始
                      * @return Seq 表明当前语音分片的索引，从0开始
+                     * 
                      */
                     uint64_t GetSeq() const;
 
                     /**
                      * 设置表明当前语音分片的索引，从0开始
-                     * @param Seq 表明当前语音分片的索引，从0开始
+                     * @param _seq 表明当前语音分片的索引，从0开始
+                     * 
                      */
                     void SetSeq(const uint64_t& _seq);
 
                     /**
                      * 判断参数 Seq 是否已赋值
                      * @return Seq 是否已赋值
+                     * 
                      */
                     bool SeqHasBeenSet() const;
 

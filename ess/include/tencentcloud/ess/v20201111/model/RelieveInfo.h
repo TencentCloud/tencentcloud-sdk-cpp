@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取解除理由，最大支持200个字
                      * @return Reason 解除理由，最大支持200个字
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置解除理由，最大支持200个字
-                     * @param Reason 解除理由，最大支持200个字
+                     * @param _reason 解除理由，最大支持200个字
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 
                      * @return RemainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
 
+                     * 
                      */
                     std::string GetRemainInForceItem() const;
 
                     /**
                      * 设置解除后仍然有效的条款，保留条款，最大支持200个字
 
-                     * @param RemainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
+                     * @param _remainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
 
+                     * 
                      */
                     void SetRemainInForceItem(const std::string& _remainInForceItem);
 
                     /**
                      * 判断参数 RemainInForceItem 是否已赋值
                      * @return RemainInForceItem 是否已赋值
+                     * 
                      */
                     bool RemainInForceItemHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 
                      * @return OriginalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
 
+                     * 
                      */
                     std::string GetOriginalExpenseSettlement() const;
 
                     /**
                      * 设置原合同事项处理-费用结算，最大支持200个字
 
-                     * @param OriginalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
+                     * @param _originalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
 
+                     * 
                      */
                     void SetOriginalExpenseSettlement(const std::string& _originalExpenseSettlement);
 
                     /**
                      * 判断参数 OriginalExpenseSettlement 是否已赋值
                      * @return OriginalExpenseSettlement 是否已赋值
+                     * 
                      */
                     bool OriginalExpenseSettlementHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 
                      * @return OriginalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
 
+                     * 
                      */
                     std::string GetOriginalOtherSettlement() const;
 
                     /**
                      * 设置原合同事项处理-其他事项，最大支持200个字
 
-                     * @param OriginalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
+                     * @param _originalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
 
+                     * 
                      */
                     void SetOriginalOtherSettlement(const std::string& _originalOtherSettlement);
 
                     /**
                      * 判断参数 OriginalOtherSettlement 是否已赋值
                      * @return OriginalOtherSettlement 是否已赋值
+                     * 
                      */
                     bool OriginalOtherSettlementHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 
                      * @return OtherDeals 其他约定，最大支持200个字
 
+                     * 
                      */
                     std::string GetOtherDeals() const;
 
                     /**
                      * 设置其他约定，最大支持200个字
 
-                     * @param OtherDeals 其他约定，最大支持200个字
+                     * @param _otherDeals 其他约定，最大支持200个字
 
+                     * 
                      */
                     void SetOtherDeals(const std::string& _otherDeals);
 
                     /**
                      * 判断参数 OtherDeals 是否已赋值
                      * @return OtherDeals 是否已赋值
+                     * 
                      */
                     bool OtherDealsHasBeenSet() const;
 

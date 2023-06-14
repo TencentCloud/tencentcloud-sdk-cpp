@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取素材类型：1-文本 2-图片 3-视频 4-音频
                      * @return ContentType 素材类型：1-文本 2-图片 3-视频 4-音频
+                     * 
                      */
                     int64_t GetContentType() const;
 
                     /**
                      * 设置素材类型：1-文本 2-图片 3-视频 4-音频
-                     * @param ContentType 素材类型：1-文本 2-图片 3-视频 4-音频
+                     * @param _contentType 素材类型：1-文本 2-图片 3-视频 4-音频
+                     * 
                      */
                     void SetContentType(const int64_t& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
                     /**
                      * 获取素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址
                      * @return Content 素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址
-                     * @param Content 素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址
+                     * @param _content 素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

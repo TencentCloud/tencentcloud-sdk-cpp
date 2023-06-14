@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取步骤序列
                      * @return StepNo 步骤序列
+                     * 
                      */
                     int64_t GetStepNo() const;
 
                     /**
                      * 设置步骤序列
-                     * @param StepNo 步骤序列
+                     * @param _stepNo 步骤序列
+                     * 
                      */
                     void SetStepNo(const int64_t& _stepNo);
 
                     /**
                      * 判断参数 StepNo 是否已赋值
                      * @return StepNo 是否已赋值
+                     * 
                      */
                     bool StepNoHasBeenSet() const;
 
                     /**
                      * 获取步骤展现名称
                      * @return StepName 步骤展现名称
+                     * 
                      */
                     std::string GetStepName() const;
 
                     /**
                      * 设置步骤展现名称
-                     * @param StepName 步骤展现名称
+                     * @param _stepName 步骤展现名称
+                     * 
                      */
                     void SetStepName(const std::string& _stepName);
 
                     /**
                      * 判断参数 StepName 是否已赋值
                      * @return StepName 是否已赋值
+                     * 
                      */
                     bool StepNameHasBeenSet() const;
 
                     /**
                      * 获取英文ID标识
                      * @return StepId 英文ID标识
+                     * 
                      */
                     std::string GetStepId() const;
 
                     /**
                      * 设置英文ID标识
-                     * @param StepId 英文ID标识
+                     * @param _stepId 英文ID标识
+                     * 
                      */
                     void SetStepId(const std::string& _stepId);
 
                     /**
                      * 判断参数 StepId 是否已赋值
                      * @return StepId 是否已赋值
+                     * 
                      */
                     bool StepIdHasBeenSet() const;
 
                     /**
                      * 获取步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行
                      * @return Status 步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行
-                     * @param Status 步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行
+                     * @param _status 步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

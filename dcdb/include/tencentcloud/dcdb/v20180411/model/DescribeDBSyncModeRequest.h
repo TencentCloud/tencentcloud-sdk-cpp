@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待修改同步模式的实例ID。形如：dcdbt-ow728lmc。
                      * @return InstanceId 待修改同步模式的实例ID。形如：dcdbt-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待修改同步模式的实例ID。形如：dcdbt-ow728lmc。
-                     * @param InstanceId 待修改同步模式的实例ID。形如：dcdbt-ow728lmc。
+                     * @param _instanceId 待修改同步模式的实例ID。形如：dcdbt-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

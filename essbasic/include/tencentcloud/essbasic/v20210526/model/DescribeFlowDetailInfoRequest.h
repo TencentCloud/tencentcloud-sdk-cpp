@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
@@ -67,56 +70,65 @@ namespace TencentCloud
 （备注：该参数和合同组编号必须二选一）
                      * @return FlowIds 合同(流程)编号数组，最多支持100个。
 （备注：该参数和合同组编号必须二选一）
+                     * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置合同(流程)编号数组，最多支持100个。
 （备注：该参数和合同组编号必须二选一）
-                     * @param FlowIds 合同(流程)编号数组，最多支持100个。
+                     * @param _flowIds 合同(流程)编号数组，最多支持100个。
 （备注：该参数和合同组编号必须二选一）
+                     * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
                     /**
                      * 判断参数 FlowIds 是否已赋值
                      * @return FlowIds 是否已赋值
+                     * 
                      */
                     bool FlowIdsHasBeenSet() const;
 
                     /**
                      * 获取合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
                      * @return FlowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
                      * 设置合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
-                     * @param FlowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * @param _flowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
 
                     /**
                      * 判断参数 FlowGroupId 是否已赋值
                      * @return FlowGroupId 是否已赋值
+                     * 
                      */
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

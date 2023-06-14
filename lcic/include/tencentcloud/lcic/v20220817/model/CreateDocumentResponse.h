@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文档ID。
                      * @return DocumentId 文档ID。
+                     * 
                      */
                     std::string GetDocumentId() const;
 
                     /**
                      * 判断参数 DocumentId 是否已赋值
                      * @return DocumentId 是否已赋值
+                     * 
                      */
                     bool DocumentIdHasBeenSet() const;
 

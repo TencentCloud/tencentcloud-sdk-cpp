@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待重启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
                      * @return InstanceIdSet 待重启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待重启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
-                     * @param InstanceIdSet 待重启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * @param _instanceIdSet 待重启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
@@ -69,6 +72,7 @@ FALSE：表示在正常重启失败后不进行强制重启；
 TRUE：表示在正常重启失败后进行强制重启；
 FALSE：表示在正常重启失败后不进行强制重启；
 默认取值：FALSE。
+                     * 
                      */
                     bool GetForceReboot() const;
 
@@ -77,16 +81,18 @@ FALSE：表示在正常重启失败后不进行强制重启；
 TRUE：表示在正常重启失败后进行强制重启；
 FALSE：表示在正常重启失败后不进行强制重启；
 默认取值：FALSE。
-                     * @param ForceReboot 是否在正常重启失败后选择强制重启实例。取值范围：
+                     * @param _forceReboot 是否在正常重启失败后选择强制重启实例。取值范围：
 TRUE：表示在正常重启失败后进行强制重启；
 FALSE：表示在正常重启失败后不进行强制重启；
 默认取值：FALSE。
+                     * 
                      */
                     void SetForceReboot(const bool& _forceReboot);
 
                     /**
                      * 判断参数 ForceReboot 是否已赋值
                      * @return ForceReboot 是否已赋值
+                     * 
                      */
                     bool ForceRebootHasBeenSet() const;
 
@@ -103,6 +109,7 @@ HARD：表示硬关机
 SOFT_FIRST：表示优先软关机，失败再执行硬关机
 
 默认取值：SOFT。
+                     * 
                      */
                     std::string GetStopType() const;
 
@@ -113,18 +120,20 @@ HARD：表示硬关机
 SOFT_FIRST：表示优先软关机，失败再执行硬关机
 
 默认取值：SOFT。
-                     * @param StopType 关机类型。取值范围：
+                     * @param _stopType 关机类型。取值范围：
 SOFT：表示软关机
 HARD：表示硬关机
 SOFT_FIRST：表示优先软关机，失败再执行硬关机
 
 默认取值：SOFT。
+                     * 
                      */
                     void SetStopType(const std::string& _stopType);
 
                     /**
                      * 判断参数 StopType 是否已赋值
                      * @return StopType 是否已赋值
+                     * 
                      */
                     bool StopTypeHasBeenSet() const;
 

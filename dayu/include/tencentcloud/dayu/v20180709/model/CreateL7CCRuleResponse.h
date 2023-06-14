@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取7层CC自定义规则参数，当没有开启CC自定义规则时，返回空数组
                      * @return RuleConfig 7层CC自定义规则参数，当没有开启CC自定义规则时，返回空数组
+                     * 
                      */
                     std::vector<CCRuleConfig> GetRuleConfig() const;
 
                     /**
                      * 判断参数 RuleConfig 是否已赋值
                      * @return RuleConfig 是否已赋值
+                     * 
                      */
                     bool RuleConfigHasBeenSet() const;
 

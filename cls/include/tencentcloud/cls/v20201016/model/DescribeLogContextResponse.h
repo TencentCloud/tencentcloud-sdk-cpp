@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取日志上下文信息集合
                      * @return LogContextInfos 日志上下文信息集合
+                     * 
                      */
                     std::vector<LogContextInfo> GetLogContextInfos() const;
 
                     /**
                      * 判断参数 LogContextInfos 是否已赋值
                      * @return LogContextInfos 是否已赋值
+                     * 
                      */
                     bool LogContextInfosHasBeenSet() const;
 
                     /**
                      * 获取上文日志是否已经返回
                      * @return PrevOver 上文日志是否已经返回
+                     * 
                      */
                     bool GetPrevOver() const;
 
                     /**
                      * 判断参数 PrevOver 是否已赋值
                      * @return PrevOver 是否已赋值
+                     * 
                      */
                     bool PrevOverHasBeenSet() const;
 
                     /**
                      * 获取下文日志是否已经返回
                      * @return NextOver 下文日志是否已经返回
+                     * 
                      */
                     bool GetNextOver() const;
 
                     /**
                      * 判断参数 NextOver 是否已赋值
                      * @return NextOver 是否已赋值
+                     * 
                      */
                     bool NextOverHasBeenSet() const;
 

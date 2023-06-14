@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取发生断流的输入源信息。
                      * @return SourceInfo 发生断流的输入源信息。
+                     * 
                      */
                     MediaCastSourceInfo GetSourceInfo() const;
 
                     /**
                      * 设置发生断流的输入源信息。
-                     * @param SourceInfo 发生断流的输入源信息。
+                     * @param _sourceInfo 发生断流的输入源信息。
+                     * 
                      */
                     void SetSourceInfo(const MediaCastSourceInfo& _sourceInfo);
 
                     /**
                      * 判断参数 SourceInfo 是否已赋值
                      * @return SourceInfo 是否已赋值
+                     * 
                      */
                     bool SourceInfoHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Reason 输入源断开原因。取值有：
 <li>SystemError：系统错误；</li>
 <li>Unknown：未知错误。</li>
+                     * 
                      */
                     std::string GetReason() const;
 
@@ -79,15 +83,17 @@ namespace TencentCloud
                      * 设置输入源断开原因。取值有：
 <li>SystemError：系统错误；</li>
 <li>Unknown：未知错误。</li>
-                     * @param Reason 输入源断开原因。取值有：
+                     * @param _reason 输入源断开原因。取值有：
 <li>SystemError：系统错误；</li>
 <li>Unknown：未知错误。</li>
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

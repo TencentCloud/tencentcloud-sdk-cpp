@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取输入媒体文件存储信息。
                      * @return InputInfo 输入媒体文件存储信息。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置输入媒体文件存储信息。
-                     * @param InputInfo 输入媒体文件存储信息。
+                     * @param _inputInfo 输入媒体文件存储信息。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
                     /**
                      * 获取表情识别参数配置。默认开启。
                      * @return ExpressionConfig 表情识别参数配置。默认开启。
+                     * 
                      */
                     ExpressionConfigInfo GetExpressionConfig() const;
 
                     /**
                      * 设置表情识别参数配置。默认开启。
-                     * @param ExpressionConfig 表情识别参数配置。默认开启。
+                     * @param _expressionConfig 表情识别参数配置。默认开启。
+                     * 
                      */
                     void SetExpressionConfig(const ExpressionConfigInfo& _expressionConfig);
 
                     /**
                      * 判断参数 ExpressionConfig 是否已赋值
                      * @return ExpressionConfig 是否已赋值
+                     * 
                      */
                     bool ExpressionConfigHasBeenSet() const;
 
                     /**
                      * 获取动作识别参数配置。默认开启。
                      * @return ActionConfig 动作识别参数配置。默认开启。
+                     * 
                      */
                     ActionConfigInfo GetActionConfig() const;
 
                     /**
                      * 设置动作识别参数配置。默认开启。
-                     * @param ActionConfig 动作识别参数配置。默认开启。
+                     * @param _actionConfig 动作识别参数配置。默认开启。
+                     * 
                      */
                     void SetActionConfig(const ActionConfigInfo& _actionConfig);
 
                     /**
                      * 判断参数 ActionConfig 是否已赋值
                      * @return ActionConfig 是否已赋值
+                     * 
                      */
                     bool ActionConfigHasBeenSet() const;
 

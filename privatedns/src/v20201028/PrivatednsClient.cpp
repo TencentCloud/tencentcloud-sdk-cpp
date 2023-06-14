@@ -169,6 +169,49 @@ PrivatednsClient::CreatePrivateZoneRecordOutcomeCallable PrivatednsClient::Creat
     return task->get_future();
 }
 
+PrivatednsClient::DeleteEndPointOutcome PrivatednsClient::DeleteEndPoint(const DeleteEndPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEndPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEndPointResponse rsp = DeleteEndPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEndPointOutcome(rsp);
+        else
+            return DeleteEndPointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEndPointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DeleteEndPointAsync(const DeleteEndPointRequest& request, const DeleteEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEndPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DeleteEndPointOutcomeCallable PrivatednsClient::DeleteEndPointCallable(const DeleteEndPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEndPointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEndPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::DeletePrivateDNSAccountOutcome PrivatednsClient::DeletePrivateDNSAccount(const DeletePrivateDNSAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePrivateDNSAccount");

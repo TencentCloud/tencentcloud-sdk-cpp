@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）
                      * @return Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）
-                     * @param Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）
+                     * @param _business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取防护状态值，取值[0（关闭），1（开启）]
                      * @return Status 防护状态值，取值[0（关闭），1（开启）]
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置防护状态值，取值[0（关闭），1（开启）]
-                     * @param Status 防护状态值，取值[0（关闭），1（开启）]
+                     * @param _status 防护状态值，取值[0（关闭），1（开启）]
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；
                      * @return Hour 关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；
+                     * 
                      */
                     int64_t GetHour() const;
 
                     /**
                      * 设置关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；
-                     * @param Hour 关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；
+                     * @param _hour 关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；
+                     * 
                      */
                     void SetHour(const int64_t& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 
                     /**
                      * 获取资源ID；当Business不是基础防护时必须填写此字段；
                      * @return Id 资源ID；当Business不是基础防护时必须填写此字段；
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID；当Business不是基础防护时必须填写此字段；
-                     * @param Id 资源ID；当Business不是基础防护时必须填写此字段；
+                     * @param _id 资源ID；当Business不是基础防护时必须填写此字段；
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取基础防护的IP，只有当Business为基础防护时才需要填写此字段；
                      * @return Ip 基础防护的IP，只有当Business为基础防护时才需要填写此字段；
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置基础防护的IP，只有当Business为基础防护时才需要填写此字段；
-                     * @param Ip 基础防护的IP，只有当Business为基础防护时才需要填写此字段；
+                     * @param _ip 基础防护的IP，只有当Business为基础防护时才需要填写此字段；
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]
                      * @return BizType 只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]
-                     * @param BizType 只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]
+                     * @param _bizType 只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]
+                     * 
                      */
                     void SetBizType(const std::string& _bizType);
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
                     /**
                      * 获取只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
                      * @return DeviceType 只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
-                     * @param DeviceType 只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * @param _deviceType 只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
                      * 获取只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);
                      * @return InstanceId 只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);
-                     * @param InstanceId 只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);
+                     * @param _instanceId 只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -233,6 +257,7 @@ namespace TencentCloud
 "ru":     俄罗斯
 "tpe":    中国台湾
 "nj":     南京
+                     * 
                      */
                     std::string GetIPRegion() const;
 
@@ -260,7 +285,7 @@ namespace TencentCloud
 "ru":     俄罗斯
 "tpe":    中国台湾
 "nj":     南京
-                     * @param IPRegion 只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：
+                     * @param _iPRegion 只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：
 "bj":     华北地区(北京)
 "cd":     西南地区(成都)
 "cq":     西南地区(重庆)
@@ -283,12 +308,14 @@ namespace TencentCloud
 "ru":     俄罗斯
 "tpe":    中国台湾
 "nj":     南京
+                     * 
                      */
                     void SetIPRegion(const std::string& _iPRegion);
 
                     /**
                      * 判断参数 IPRegion 是否已赋值
                      * @return IPRegion 是否已赋值
+                     * 
                      */
                     bool IPRegionHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取分类Id
                      * @return CategoryId 分类Id
+                     * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置分类Id
-                     * @param CategoryId 分类Id
+                     * @param _categoryId 分类Id
+                     * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取分类名称
                      * @return CategoryName 分类名称
+                     * 
                      */
                     std::string GetCategoryName() const;
 
                     /**
                      * 设置分类名称
-                     * @param CategoryName 分类名称
+                     * @param _categoryName 分类名称
+                     * 
                      */
                     void SetCategoryName(const std::string& _categoryName);
 
                     /**
                      * 判断参数 CategoryName 是否已赋值
                      * @return CategoryName 是否已赋值
+                     * 
                      */
                     bool CategoryNameHasBeenSet() const;
 
                     /**
                      * 获取父分类ID,如果为0则没有父分类
                      * @return ParentCategoryId 父分类ID,如果为0则没有父分类
+                     * 
                      */
                     int64_t GetParentCategoryId() const;
 
                     /**
                      * 设置父分类ID,如果为0则没有父分类
-                     * @param ParentCategoryId 父分类ID,如果为0则没有父分类
+                     * @param _parentCategoryId 父分类ID,如果为0则没有父分类
+                     * 
                      */
                     void SetParentCategoryId(const int64_t& _parentCategoryId);
 
                     /**
                      * 判断参数 ParentCategoryId 是否已赋值
                      * @return ParentCategoryId 是否已赋值
+                     * 
                      */
                     bool ParentCategoryIdHasBeenSet() const;
 

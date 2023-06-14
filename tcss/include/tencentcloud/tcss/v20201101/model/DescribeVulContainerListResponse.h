@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取容器列表
                      * @return List 容器列表
+                     * 
                      */
                     std::vector<VulAffectedContainerInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取容器总数
                      * @return TotalCount 容器总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取商户注册结果
                      * @return Result 商户注册结果
+                     * 
                      */
                     CreateMerchantResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

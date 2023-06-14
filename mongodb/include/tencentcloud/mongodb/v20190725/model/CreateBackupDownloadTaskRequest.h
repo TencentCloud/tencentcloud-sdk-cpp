@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取要下载的备份文件名，可通过DescribeDBBackups接口获取。
                      * @return BackupName 要下载的备份文件名，可通过DescribeDBBackups接口获取。
+                     * 
                      */
                     std::string GetBackupName() const;
 
                     /**
                      * 设置要下载的备份文件名，可通过DescribeDBBackups接口获取。
-                     * @param BackupName 要下载的备份文件名，可通过DescribeDBBackups接口获取。
+                     * @param _backupName 要下载的备份文件名，可通过DescribeDBBackups接口获取。
+                     * 
                      */
                     void SetBackupName(const std::string& _backupName);
 
                     /**
                      * 判断参数 BackupName 是否已赋值
                      * @return BackupName 是否已赋值
+                     * 
                      */
                     bool BackupNameHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return BackupSets 指定要下载的副本集的节点名称 或 分片集群的分片名称列表。
 如副本集cmgo-p8vnipr5，示例(固定取值)：BackupSets.0=cmgo-p8vnipr5_0，可下载全量数据。
 如分片集群cmgo-p8vnipr5，示例：BackupSets.0=cmgo-p8vnipr5_0&BackupSets.1=cmgo-p8vnipr5_1，即下载分片0和分片1的数据，分片集群如需全量下载，请按示例方式传入全部分片名称。
+                     * 
                      */
                     std::vector<ReplicaSetInfo> GetBackupSets() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置指定要下载的副本集的节点名称 或 分片集群的分片名称列表。
 如副本集cmgo-p8vnipr5，示例(固定取值)：BackupSets.0=cmgo-p8vnipr5_0，可下载全量数据。
 如分片集群cmgo-p8vnipr5，示例：BackupSets.0=cmgo-p8vnipr5_0&BackupSets.1=cmgo-p8vnipr5_1，即下载分片0和分片1的数据，分片集群如需全量下载，请按示例方式传入全部分片名称。
-                     * @param BackupSets 指定要下载的副本集的节点名称 或 分片集群的分片名称列表。
+                     * @param _backupSets 指定要下载的副本集的节点名称 或 分片集群的分片名称列表。
 如副本集cmgo-p8vnipr5，示例(固定取值)：BackupSets.0=cmgo-p8vnipr5_0，可下载全量数据。
 如分片集群cmgo-p8vnipr5，示例：BackupSets.0=cmgo-p8vnipr5_0&BackupSets.1=cmgo-p8vnipr5_1，即下载分片0和分片1的数据，分片集群如需全量下载，请按示例方式传入全部分片名称。
+                     * 
                      */
                     void SetBackupSets(const std::vector<ReplicaSetInfo>& _backupSets);
 
                     /**
                      * 判断参数 BackupSets 是否已赋值
                      * @return BackupSets 是否已赋值
+                     * 
                      */
                     bool BackupSetsHasBeenSet() const;
 

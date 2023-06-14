@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
                      * @return PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * 
                      */
                     std::vector<PrivateIpAddressSpecification> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
-                     * @param PrivateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * @param _privateIpAddresses 指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<PrivateIpAddressSpecification>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
                      * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+                     * 
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
                      * 设置新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+                     * @param _secondaryPrivateIpAddressCount 新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+                     * 
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
                     /**
                      * 判断参数 SecondaryPrivateIpAddressCount 是否已赋值
                      * @return SecondaryPrivateIpAddressCount 是否已赋值
+                     * 
                      */
                     bool SecondaryPrivateIpAddressCountHasBeenSet() const;
 
                     /**
                      * 获取IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
                      * @return QosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
                      * 设置IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param QosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * @param _qosLevel IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
 
                     /**
                      * 判断参数 QosLevel 是否已赋值
                      * @return QosLevel 是否已赋值
+                     * 
                      */
                     bool QosLevelHasBeenSet() const;
 

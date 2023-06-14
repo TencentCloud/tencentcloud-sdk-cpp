@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取NodeUnit模板ID
                      * @return NodeUnitTemplateID NodeUnit模板ID
+                     * 
                      */
                     uint64_t GetNodeUnitTemplateID() const;
 
                     /**
                      * 设置NodeUnit模板ID
-                     * @param NodeUnitTemplateID NodeUnit模板ID
+                     * @param _nodeUnitTemplateID NodeUnit模板ID
+                     * 
                      */
                     void SetNodeUnitTemplateID(const uint64_t& _nodeUnitTemplateID);
 
                     /**
                      * 判断参数 NodeUnitTemplateID 是否已赋值
                      * @return NodeUnitTemplateID 是否已赋值
+                     * 
                      */
                     bool NodeUnitTemplateIDHasBeenSet() const;
 
                     /**
                      * 获取包含的节点列表
                      * @return Nodes 包含的节点列表
+                     * 
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
                      * 设置包含的节点列表
-                     * @param Nodes 包含的节点列表
+                     * @param _nodes 包含的节点列表
+                     * 
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 

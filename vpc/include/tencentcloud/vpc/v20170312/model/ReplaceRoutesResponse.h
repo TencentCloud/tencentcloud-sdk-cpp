@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取原路由策略信息。
                      * @return OldRouteSet 原路由策略信息。
+                     * 
                      */
                     std::vector<Route> GetOldRouteSet() const;
 
                     /**
                      * 判断参数 OldRouteSet 是否已赋值
                      * @return OldRouteSet 是否已赋值
+                     * 
                      */
                     bool OldRouteSetHasBeenSet() const;
 
                     /**
                      * 获取修改后的路由策略信息。
                      * @return NewRouteSet 修改后的路由策略信息。
+                     * 
                      */
                     std::vector<Route> GetNewRouteSet() const;
 
                     /**
                      * 判断参数 NewRouteSet 是否已赋值
                      * @return NewRouteSet 是否已赋值
+                     * 
                      */
                     bool NewRouteSetHasBeenSet() const;
 

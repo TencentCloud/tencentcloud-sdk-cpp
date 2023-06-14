@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取Song ID
                      * @return ItemID Song ID
+                     * 
                      */
                     std::string GetItemID() const;
 
                     /**
                      * 设置Song ID
-                     * @param ItemID Song ID
+                     * @param _itemID Song ID
+                     * 
                      */
                     void SetItemID(const std::string& _itemID);
 
                     /**
                      * 判断参数 ItemID 是否已赋值
                      * @return ItemID 是否已赋值
+                     * 
                      */
                     bool ItemIDHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataInfo Song info
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DataInfo GetDataInfo() const;
 
                     /**
                      * 设置Song info
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataInfo Song info
+                     * @param _dataInfo Song info
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataInfo(const DataInfo& _dataInfo);
 
                     /**
                      * 判断参数 DataInfo 是否已赋值
                      * @return DataInfo 是否已赋值
+                     * 
                      */
                     bool DataInfoHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Album 专辑信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Album GetAlbum() const;
 
                     /**
                      * 设置专辑信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Album 专辑信息
+                     * @param _album 专辑信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlbum(const Album& _album);
 
                     /**
                      * 判断参数 Album 是否已赋值
                      * @return Album 是否已赋值
+                     * 
                      */
                     bool AlbumHasBeenSet() const;
 
@@ -116,20 +125,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Artists 多个歌手集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Artist> GetArtists() const;
 
                     /**
                      * 设置多个歌手集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Artists 多个歌手集合
+                     * @param _artists 多个歌手集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArtists(const std::vector<Artist>& _artists);
 
                     /**
                      * 判断参数 Artists 是否已赋值
                      * @return Artists 是否已赋值
+                     * 
                      */
                     bool ArtistsHasBeenSet() const;
 
@@ -138,20 +150,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 歌曲状态，1:添加进购物车；2:核销进曲库包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置歌曲状态，1:添加进购物车；2:核销进曲库包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 歌曲状态，1:添加进购物车；2:核销进曲库包
+                     * @param _status 歌曲状态，1:添加进购物车；2:核销进曲库包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

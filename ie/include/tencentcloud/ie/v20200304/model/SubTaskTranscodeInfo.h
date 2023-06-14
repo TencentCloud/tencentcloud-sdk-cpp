@@ -54,108 +54,126 @@ namespace TencentCloud
                     /**
                      * 获取子任务名称。
                      * @return TaskName 子任务名称。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置子任务名称。
-                     * @param TaskName 子任务名称。
+                     * @param _taskName 子任务名称。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取目标文件信息。
                      * @return TargetInfo 目标文件信息。
+                     * 
                      */
                     TargetInfo GetTargetInfo() const;
 
                     /**
                      * 设置目标文件信息。
-                     * @param TargetInfo 目标文件信息。
+                     * @param _targetInfo 目标文件信息。
+                     * 
                      */
                     void SetTargetInfo(const TargetInfo& _targetInfo);
 
                     /**
                      * 判断参数 TargetInfo 是否已赋值
                      * @return TargetInfo 是否已赋值
+                     * 
                      */
                     bool TargetInfoHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填
                      * @return EditInfo 视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填
+                     * 
                      */
                     EditInfo GetEditInfo() const;
 
                     /**
                      * 设置视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填
-                     * @param EditInfo 视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填
+                     * @param _editInfo 视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填
+                     * 
                      */
                     void SetEditInfo(const EditInfo& _editInfo);
 
                     /**
                      * 判断参数 EditInfo 是否已赋值
                      * @return EditInfo 是否已赋值
+                     * 
                      */
                     bool EditInfoHasBeenSet() const;
 
                     /**
                      * 获取视频转码信息，不填保持和源文件一致。
                      * @return VideoInfo 视频转码信息，不填保持和源文件一致。
+                     * 
                      */
                     VideoInfo GetVideoInfo() const;
 
                     /**
                      * 设置视频转码信息，不填保持和源文件一致。
-                     * @param VideoInfo 视频转码信息，不填保持和源文件一致。
+                     * @param _videoInfo 视频转码信息，不填保持和源文件一致。
+                     * 
                      */
                     void SetVideoInfo(const VideoInfo& _videoInfo);
 
                     /**
                      * 判断参数 VideoInfo 是否已赋值
                      * @return VideoInfo 是否已赋值
+                     * 
                      */
                     bool VideoInfoHasBeenSet() const;
 
                     /**
                      * 获取音频转码信息，不填保持和源文件一致。
                      * @return AudioInfo 音频转码信息，不填保持和源文件一致。
+                     * 
                      */
                     AudioInfo GetAudioInfo() const;
 
                     /**
                      * 设置音频转码信息，不填保持和源文件一致。
-                     * @param AudioInfo 音频转码信息，不填保持和源文件一致。
+                     * @param _audioInfo 音频转码信息，不填保持和源文件一致。
+                     * 
                      */
                     void SetAudioInfo(const AudioInfo& _audioInfo);
 
                     /**
                      * 判断参数 AudioInfo 是否已赋值
                      * @return AudioInfo 是否已赋值
+                     * 
                      */
                     bool AudioInfoHasBeenSet() const;
 
                     /**
                      * 获取指定封装信息。
                      * @return MuxInfo 指定封装信息。
+                     * 
                      */
                     MuxInfo GetMuxInfo() const;
 
                     /**
                      * 设置指定封装信息。
-                     * @param MuxInfo 指定封装信息。
+                     * @param _muxInfo 指定封装信息。
+                     * 
                      */
                     void SetMuxInfo(const MuxInfo& _muxInfo);
 
                     /**
                      * 判断参数 MuxInfo 是否已赋值
                      * @return MuxInfo 是否已赋值
+                     * 
                      */
                     bool MuxInfoHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取插件ID。
                      * @return PluginId 插件ID。
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置插件ID。
-                     * @param PluginId 插件ID。
+                     * @param _pluginId 插件ID。
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 
                     /**
                      * 获取插件名称。
                      * @return PluginName 插件名称。
+                     * 
                      */
                     std::string GetPluginName() const;
 
                     /**
                      * 设置插件名称。
-                     * @param PluginName 插件名称。
+                     * @param _pluginName 插件名称。
+                     * 
                      */
                     void SetPluginName(const std::string& _pluginName);
 
                     /**
                      * 判断参数 PluginName 是否已赋值
                      * @return PluginName 是否已赋值
+                     * 
                      */
                     bool PluginNameHasBeenSet() const;
 
                     /**
                      * 获取插件类型。
                      * @return PluginType 插件类型。
+                     * 
                      */
                     std::string GetPluginType() const;
 
                     /**
                      * 设置插件类型。
-                     * @param PluginType 插件类型。
+                     * @param _pluginType 插件类型。
+                     * 
                      */
                     void SetPluginType(const std::string& _pluginType);
 
                     /**
                      * 判断参数 PluginType 是否已赋值
                      * @return PluginType 是否已赋值
+                     * 
                      */
                     bool PluginTypeHasBeenSet() const;
 
                     /**
                      * 获取插件定义语句。
                      * @return PluginData 插件定义语句。
+                     * 
                      */
                     std::string GetPluginData() const;
 
                     /**
                      * 设置插件定义语句。
-                     * @param PluginData 插件定义语句。
+                     * @param _pluginData 插件定义语句。
+                     * 
                      */
                     void SetPluginData(const std::string& _pluginData);
 
                     /**
                      * 判断参数 PluginData 是否已赋值
                      * @return PluginData 是否已赋值
+                     * 
                      */
                     bool PluginDataHasBeenSet() const;
 
@@ -124,56 +136,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 插件描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置插件描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 插件描述。
+                     * @param _description 插件描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * @return CreatedTime 插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
-                     * @param CreatedTime 插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
                      * @return ModifiedTime 插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
-                     * @param ModifiedTime 插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _modifiedTime 插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachedApiTotalCount 插件绑定的API总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAttachedApiTotalCount() const;
 
                     /**
                      * 设置插件绑定的API总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachedApiTotalCount 插件绑定的API总数。
+                     * @param _attachedApiTotalCount 插件绑定的API总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachedApiTotalCount(const int64_t& _attachedApiTotalCount);
 
                     /**
                      * 判断参数 AttachedApiTotalCount 是否已赋值
                      * @return AttachedApiTotalCount 是否已赋值
+                     * 
                      */
                     bool AttachedApiTotalCountHasBeenSet() const;
 
@@ -204,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachedApis 插件绑定的API信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AttachedApiInfo> GetAttachedApis() const;
 
                     /**
                      * 设置插件绑定的API信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachedApis 插件绑定的API信息。
+                     * @param _attachedApis 插件绑定的API信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachedApis(const std::vector<AttachedApiInfo>& _attachedApis);
 
                     /**
                      * 判断参数 AttachedApis 是否已赋值
                      * @return AttachedApis 是否已赋值
+                     * 
                      */
                     bool AttachedApisHasBeenSet() const;
 

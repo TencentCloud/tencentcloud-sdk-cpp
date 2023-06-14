@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取端口
                      * @return Port 端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-                     * @param Port 端口
+                     * @param _port 端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取映射端口
                      * @return TargetPort 映射端口
+                     * 
                      */
                     int64_t GetTargetPort() const;
 
                     /**
                      * 设置映射端口
-                     * @param TargetPort 映射端口
+                     * @param _targetPort 映射端口
+                     * 
                      */
                     void SetTargetPort(const int64_t& _targetPort);
 
                     /**
                      * 判断参数 TargetPort 是否已赋值
                      * @return TargetPort 是否已赋值
+                     * 
                      */
                     bool TargetPortHasBeenSet() const;
 
                     /**
                      * 获取协议栈 TCP/UDP
                      * @return Protocol 协议栈 TCP/UDP
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议栈 TCP/UDP
-                     * @param Protocol 协议栈 TCP/UDP
+                     * @param _protocol 协议栈 TCP/UDP
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

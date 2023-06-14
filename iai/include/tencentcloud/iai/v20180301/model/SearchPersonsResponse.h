@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取识别结果。
                      * @return Results 识别结果。
+                     * 
                      */
                     std::vector<Result> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
                     /**
                      * 获取搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。
                      * @return PersonNum 搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。
+                     * 
                      */
                     uint64_t GetPersonNum() const;
 
                     /**
                      * 判断参数 PersonNum 是否已赋值
                      * @return PersonNum 是否已赋值
+                     * 
                      */
                     bool PersonNumHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

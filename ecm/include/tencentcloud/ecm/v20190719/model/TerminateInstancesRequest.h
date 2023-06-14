@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待销毁的实例ID列表。
                      * @return InstanceIdSet 待销毁的实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待销毁的实例ID列表。
-                     * @param InstanceIdSet 待销毁的实例ID列表。
+                     * @param _instanceIdSet 待销毁的实例ID列表。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取是否定时销毁，默认为否。
                      * @return TerminateDelay 是否定时销毁，默认为否。
+                     * 
                      */
                     bool GetTerminateDelay() const;
 
                     /**
                      * 设置是否定时销毁，默认为否。
-                     * @param TerminateDelay 是否定时销毁，默认为否。
+                     * @param _terminateDelay 是否定时销毁，默认为否。
+                     * 
                      */
                     void SetTerminateDelay(const bool& _terminateDelay);
 
                     /**
                      * 判断参数 TerminateDelay 是否已赋值
                      * @return TerminateDelay 是否已赋值
+                     * 
                      */
                     bool TerminateDelayHasBeenSet() const;
 
                     /**
                      * 获取定时销毁的时间，格式形如："2019-08-05 12:01:30"，若非定时销毁，则此参数被忽略。
                      * @return TerminateTime 定时销毁的时间，格式形如："2019-08-05 12:01:30"，若非定时销毁，则此参数被忽略。
+                     * 
                      */
                     std::string GetTerminateTime() const;
 
                     /**
                      * 设置定时销毁的时间，格式形如："2019-08-05 12:01:30"，若非定时销毁，则此参数被忽略。
-                     * @param TerminateTime 定时销毁的时间，格式形如："2019-08-05 12:01:30"，若非定时销毁，则此参数被忽略。
+                     * @param _terminateTime 定时销毁的时间，格式形如："2019-08-05 12:01:30"，若非定时销毁，则此参数被忽略。
+                     * 
                      */
                     void SetTerminateTime(const std::string& _terminateTime);
 
                     /**
                      * 判断参数 TerminateTime 是否已赋值
                      * @return TerminateTime 是否已赋值
+                     * 
                      */
                     bool TerminateTimeHasBeenSet() const;
 
@@ -103,6 +112,7 @@ namespace TencentCloud
                      * @return AssociatedResourceDestroy 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
 当为true时，一并删除弹性网卡和弹性IP；
 当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     * 
                      */
                     bool GetAssociatedResourceDestroy() const;
 
@@ -110,15 +120,17 @@ namespace TencentCloud
                      * 设置是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
 当为true时，一并删除弹性网卡和弹性IP；
 当为false时，只销毁主机，保留弹性网卡和弹性IP。
-                     * @param AssociatedResourceDestroy 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
+                     * @param _associatedResourceDestroy 是否关联删除已绑定的弹性网卡和弹性IP，默认为true。
 当为true时，一并删除弹性网卡和弹性IP；
 当为false时，只销毁主机，保留弹性网卡和弹性IP。
+                     * 
                      */
                     void SetAssociatedResourceDestroy(const bool& _associatedResourceDestroy);
 
                     /**
                      * 判断参数 AssociatedResourceDestroy 是否已赋值
                      * @return AssociatedResourceDestroy 是否已赋值
+                     * 
                      */
                     bool AssociatedResourceDestroyHasBeenSet() const;
 

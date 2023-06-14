@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取该张截图对应视频文件中的时间偏移，单位为秒。
                      * @return TimeOffset 该张截图对应视频文件中的时间偏移，单位为秒。
+                     * 
                      */
                     double GetTimeOffset() const;
 
                     /**
                      * 设置该张截图对应视频文件中的时间偏移，单位为秒。
-                     * @param TimeOffset 该张截图对应视频文件中的时间偏移，单位为秒。
+                     * @param _timeOffset 该张截图对应视频文件中的时间偏移，单位为秒。
+                     * 
                      */
                     void SetTimeOffset(const double& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取该张截图的路径。
                      * @return Path 该张截图的路径。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置该张截图的路径。
-                     * @param Path 该张截图的路径。
+                     * @param _path 该张截图的路径。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取截图如果被打上了水印，被打水印的模板 ID 列表。
                      * @return WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * 
                      */
                     std::vector<int64_t> GetWaterMarkDefinition() const;
 
                     /**
                      * 设置截图如果被打上了水印，被打水印的模板 ID 列表。
-                     * @param WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * @param _waterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
+                     * 
                      */
                     void SetWaterMarkDefinition(const std::vector<int64_t>& _waterMarkDefinition);
 
                     /**
                      * 判断参数 WaterMarkDefinition 是否已赋值
                      * @return WaterMarkDefinition 是否已赋值
+                     * 
                      */
                     bool WaterMarkDefinitionHasBeenSet() const;
 

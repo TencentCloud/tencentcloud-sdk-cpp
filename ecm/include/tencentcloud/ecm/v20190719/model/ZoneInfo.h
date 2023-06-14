@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取ZoneId
                      * @return ZoneId ZoneId
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置ZoneId
-                     * @param ZoneId ZoneId
+                     * @param _zoneId ZoneId
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取ZoneName
                      * @return ZoneName ZoneName
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置ZoneName
-                     * @param ZoneName ZoneName
+                     * @param _zoneName ZoneName
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取Zone
                      * @return Zone Zone
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置Zone
-                     * @param Zone Zone
+                     * @param _zone Zone
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

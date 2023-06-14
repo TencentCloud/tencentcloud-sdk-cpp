@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取内网IP地址。
                      * @return PrivateIpAddress 内网IP地址。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置内网IP地址。
-                     * @param PrivateIpAddress 内网IP地址。
+                     * @param _privateIpAddress 内网IP地址。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 
                     /**
                      * 获取是否是主IP。
                      * @return Primary 是否是主IP。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否是主IP。
-                     * @param Primary 是否是主IP。
+                     * @param _primary 是否是主IP。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 
                     /**
                      * 获取公网IP地址。
                      * @return PublicIpAddress 公网IP地址。
+                     * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
                      * 设置公网IP地址。
-                     * @param PublicIpAddress 公网IP地址。
+                     * @param _publicIpAddress 公网IP地址。
+                     * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
 
                     /**
                      * 判断参数 PublicIpAddress 是否已赋值
                      * @return PublicIpAddress 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
                      * 获取EIP实例ID，例如：eip-11112222。
                      * @return AddressId EIP实例ID，例如：eip-11112222。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置EIP实例ID，例如：eip-11112222。
-                     * @param AddressId EIP实例ID，例如：eip-11112222。
+                     * @param _addressId EIP实例ID，例如：eip-11112222。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取内网IP描述信息。
                      * @return Description 内网IP描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置内网IP描述信息。
-                     * @param Description 内网IP描述信息。
+                     * @param _description 内网IP描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取公网IP是否被封堵。
                      * @return IsWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     bool GetIsWanIpBlocked() const;
 
                     /**
                      * 设置公网IP是否被封堵。
-                     * @param IsWanIpBlocked 公网IP是否被封堵。
+                     * @param _isWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     void SetIsWanIpBlocked(const bool& _isWanIpBlocked);
 
                     /**
                      * 判断参数 IsWanIpBlocked 是否已赋值
                      * @return IsWanIpBlocked 是否已赋值
+                     * 
                      */
                     bool IsWanIpBlockedHasBeenSet() const;
 
@@ -165,6 +183,7 @@ PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
+                     * 
                      */
                     std::string GetState() const;
 
@@ -174,35 +193,40 @@ PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
-                     * @param State IP状态：
+                     * @param _state IP状态：
 PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
                      * @return QosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
                      * 设置IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param QosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * @param _qosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
 
                     /**
                      * 判断参数 QosLevel 是否已赋值
                      * @return QosLevel 是否已赋值
+                     * 
                      */
                     bool QosLevelHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationArn 服务部署组目的的资源描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDestinationArn() const;
 
                     /**
                      * 设置服务部署组目的的资源描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DestinationArn 服务部署组目的的资源描述
+                     * @param _destinationArn 服务部署组目的的资源描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestinationArn(const std::string& _destinationArn);
 
                     /**
                      * 判断参数 DestinationArn 是否已赋值
                      * @return DestinationArn 是否已赋值
+                     * 
                      */
                     bool DestinationArnHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetStatus 服务部署组目的的状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetStatus() const;
 
                     /**
                      * 设置服务部署组目的的状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetStatus 服务部署组目的的状态
+                     * @param _fleetStatus 服务部署组目的的状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetStatus(const std::string& _fleetStatus);
 
                     /**
                      * 判断参数 FleetStatus 是否已赋值
                      * @return FleetStatus 是否已赋值
+                     * 
                      */
                     bool FleetStatusHasBeenSet() const;
 

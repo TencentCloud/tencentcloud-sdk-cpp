@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取审核业务类类型
                      * @return BizType 审核业务类类型
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置审核业务类类型
-                     * @param BizType 审核业务类类型
+                     * @param _bizType 审核业务类类型
+                     * 
                      */
                     void SetBizType(const std::string& _bizType);
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 

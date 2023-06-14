@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取原因
                      * @return Reason 原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置原因
-                     * @param Reason 原因
+                     * @param _reason 原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取具有相同原因的副本个数
                      * @return Count 具有相同原因的副本个数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置具有相同原因的副本个数
-                     * @param Count 具有相同原因的副本个数
+                     * @param _count 具有相同原因的副本个数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

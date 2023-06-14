@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取凭证字符串
                      * @return CredentialData 凭证字符串
+                     * 
                      */
                     std::string GetCredentialData() const;
 
                     /**
                      * 判断参数 CredentialData 是否已赋值
                      * @return CredentialData 是否已赋值
+                     * 
                      */
                     bool CredentialDataHasBeenSet() const;
 

@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取代理组ID
                      * @return ProxyGroupId 代理组ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置代理组ID
-                     * @param ProxyGroupId 代理组ID
+                     * @param _proxyGroupId 代理组ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyVersion 代理版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyVersion() const;
 
                     /**
                      * 设置代理版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyVersion 代理版本
+                     * @param _proxyVersion 代理版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyVersion(const std::string& _proxyVersion);
 
                     /**
                      * 判断参数 ProxyVersion 是否已赋值
                      * @return ProxyVersion 是否已赋值
+                     * 
                      */
                     bool ProxyVersionHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportUpgradeProxyVersion 代理支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSupportUpgradeProxyVersion() const;
 
                     /**
                      * 设置代理支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportUpgradeProxyVersion 代理支持升级版本
+                     * @param _supportUpgradeProxyVersion 代理支持升级版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportUpgradeProxyVersion(const std::string& _supportUpgradeProxyVersion);
 
                     /**
                      * 判断参数 SupportUpgradeProxyVersion 是否已赋值
                      * @return SupportUpgradeProxyVersion 是否已赋值
+                     * 
                      */
                     bool SupportUpgradeProxyVersionHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 代理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置代理状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 代理状态
+                     * @param _status 代理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -137,20 +149,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 代理任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置代理任务状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskStatus 代理任务状态
+                     * @param _taskStatus 代理任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
@@ -159,20 +174,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNode 代理组节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyNode> GetProxyNode() const;
 
                     /**
                      * 设置代理组节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNode 代理组节点信息
+                     * @param _proxyNode 代理组节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNode(const std::vector<ProxyNode>& _proxyNode);
 
                     /**
                      * 判断参数 ProxyNode 是否已赋值
                      * @return ProxyNode 是否已赋值
+                     * 
                      */
                     bool ProxyNodeHasBeenSet() const;
 
@@ -181,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAddress 代理组地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyAddress> GetProxyAddress() const;
 
                     /**
                      * 设置代理组地址信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyAddress 代理组地址信息
+                     * @param _proxyAddress 代理组地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyAddress(const std::vector<ProxyAddress>& _proxyAddress);
 
                     /**
                      * 判断参数 ProxyAddress 是否已赋值
                      * @return ProxyAddress 是否已赋值
+                     * 
                      */
                     bool ProxyAddressHasBeenSet() const;
 
@@ -203,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolLimit 连接池阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetConnectionPoolLimit() const;
 
                     /**
                      * 设置连接池阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPoolLimit 连接池阈值
+                     * @param _connectionPoolLimit 连接池阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPoolLimit(const uint64_t& _connectionPoolLimit);
 
                     /**
                      * 判断参数 ConnectionPoolLimit 是否已赋值
                      * @return ConnectionPoolLimit 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolLimitHasBeenSet() const;
 
@@ -225,20 +249,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportCreateProxyAddress 支持创建地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSupportCreateProxyAddress() const;
 
                     /**
                      * 设置支持创建地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportCreateProxyAddress 支持创建地址
+                     * @param _supportCreateProxyAddress 支持创建地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportCreateProxyAddress(const bool& _supportCreateProxyAddress);
 
                     /**
                      * 判断参数 SupportCreateProxyAddress 是否已赋值
                      * @return SupportCreateProxyAddress 是否已赋值
+                     * 
                      */
                     bool SupportCreateProxyAddressHasBeenSet() const;
 
@@ -247,20 +274,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportUpgradeProxyMysqlVersion 支持升级代理版本所需的cdb版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSupportUpgradeProxyMysqlVersion() const;
 
                     /**
                      * 设置支持升级代理版本所需的cdb版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportUpgradeProxyMysqlVersion 支持升级代理版本所需的cdb版本
+                     * @param _supportUpgradeProxyMysqlVersion 支持升级代理版本所需的cdb版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportUpgradeProxyMysqlVersion(const std::string& _supportUpgradeProxyMysqlVersion);
 
                     /**
                      * 判断参数 SupportUpgradeProxyMysqlVersion 是否已赋值
                      * @return SupportUpgradeProxyMysqlVersion 是否已赋值
+                     * 
                      */
                     bool SupportUpgradeProxyMysqlVersionHasBeenSet() const;
 

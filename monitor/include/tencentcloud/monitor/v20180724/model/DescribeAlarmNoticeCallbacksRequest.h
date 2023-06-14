@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取模块名，这里填“monitor”
                      * @return Module 模块名，这里填“monitor”
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名，这里填“monitor”
-                     * @param Module 模块名，这里填“monitor”
+                     * @param _module 模块名，这里填“monitor”
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 

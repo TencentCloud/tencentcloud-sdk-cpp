@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取更新成功之后，返回对应服务发现的信息
                      * @return ServiceDiscovery 更新成功之后，返回对应服务发现的信息
+                     * 
                      */
                     ServiceDiscoveryItem GetServiceDiscovery() const;
 
                     /**
                      * 判断参数 ServiceDiscovery 是否已赋值
                      * @return ServiceDiscovery 是否已赋值
+                     * 
                      */
                     bool ServiceDiscoveryHasBeenSet() const;
 

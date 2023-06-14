@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分片名
                      * @return ReplicaSetId 分片名
+                     * 
                      */
                     std::string GetReplicaSetId() const;
 
                     /**
                      * 设置分片名
-                     * @param ReplicaSetId 分片名
+                     * @param _replicaSetId 分片名
+                     * 
                      */
                     void SetReplicaSetId(const std::string& _replicaSetId);
 
                     /**
                      * 判断参数 ReplicaSetId 是否已赋值
                      * @return ReplicaSetId 是否已赋值
+                     * 
                      */
                     bool ReplicaSetIdHasBeenSet() const;
 
                     /**
                      * 获取任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
                      * @return Status 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
-                     * @param Status 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * @param _status 任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstQueryInterval 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFirstQueryInterval() const;
 
                     /**
                      * 设置第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstQueryInterval 第一次回查时间。
+                     * @param _firstQueryInterval 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstQueryInterval(const uint64_t& _firstQueryInterval);
 
                     /**
                      * 判断参数 FirstQueryInterval 是否已赋值
                      * @return FirstQueryInterval 是否已赋值
+                     * 
                      */
                     bool FirstQueryIntervalHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxQueryCount 最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxQueryCount() const;
 
                     /**
                      * 设置最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxQueryCount 最大查询次数。
+                     * @param _maxQueryCount 最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxQueryCount(const uint64_t& _maxQueryCount);
 
                     /**
                      * 判断参数 MaxQueryCount 是否已赋值
                      * @return MaxQueryCount 是否已赋值
+                     * 
                      */
                     bool MaxQueryCountHasBeenSet() const;
 

@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取是否为付费用户，true：付费用户， false：普通用户
                      * @return IsPaidUsr 是否为付费用户，true：付费用户， false：普通用户
+                     * 
                      */
                     bool GetIsPaidUsr() const;
 
                     /**
                      * 判断参数 IsPaidUsr 是否已赋值
                      * @return IsPaidUsr 是否已赋值
+                     * 
                      */
                     bool IsPaidUsrHasBeenSet() const;
 
                     /**
                      * 获取攻击中的资源数量
                      * @return AttackingCount 攻击中的资源数量
+                     * 
                      */
                     int64_t GetAttackingCount() const;
 
                     /**
                      * 判断参数 AttackingCount 是否已赋值
                      * @return AttackingCount 是否已赋值
+                     * 
                      */
                     bool AttackingCountHasBeenSet() const;
 
                     /**
                      * 获取封堵中的资源数量
                      * @return BlockingCount 封堵中的资源数量
+                     * 
                      */
                     int64_t GetBlockingCount() const;
 
                     /**
                      * 判断参数 BlockingCount 是否已赋值
                      * @return BlockingCount 是否已赋值
+                     * 
                      */
                     bool BlockingCountHasBeenSet() const;
 
                     /**
                      * 获取已过期的资源数量
                      * @return ExpiredCount 已过期的资源数量
+                     * 
                      */
                     int64_t GetExpiredCount() const;
 
                     /**
                      * 判断参数 ExpiredCount 是否已赋值
                      * @return ExpiredCount 是否已赋值
+                     * 
                      */
                     bool ExpiredCountHasBeenSet() const;
 
                     /**
                      * 获取所有待处理风险事件总数
                      * @return Total 所有待处理风险事件总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

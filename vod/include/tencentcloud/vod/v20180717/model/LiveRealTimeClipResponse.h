@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取剪辑后的视频播放 URL。
                      * @return Url 剪辑后的视频播放 URL。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取剪辑固化后的视频的媒体文件的唯一标识。
                      * @return FileId 剪辑固化后的视频的媒体文件的唯一标识。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取剪辑固化后的视频任务流 ID。
                      * @return VodTaskId 剪辑固化后的视频任务流 ID。
+                     * 
                      */
                     std::string GetVodTaskId() const;
 
                     /**
                      * 判断参数 VodTaskId 是否已赋值
                      * @return VodTaskId 是否已赋值
+                     * 
                      */
                     bool VodTaskIdHasBeenSet() const;
 
@@ -86,24 +92,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 剪辑后的视频元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取<span id="p_segmentset">剪辑后的视频片段信息。</span>
                      * @return SegmentSet <span id="p_segmentset">剪辑后的视频片段信息。</span>
+                     * 
                      */
                     std::vector<LiveRealTimeClipMediaSegmentInfo> GetSegmentSet() const;
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取经验库ID
                      * @return TemplateId 经验库ID
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置经验库ID
-                     * @param TemplateId 经验库ID
+                     * @param _templateId 经验库ID
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取经验库标题
                      * @return TemplateTitle 经验库标题
+                     * 
                      */
                     std::string GetTemplateTitle() const;
 
                     /**
                      * 设置经验库标题
-                     * @param TemplateTitle 经验库标题
+                     * @param _templateTitle 经验库标题
+                     * 
                      */
                     void SetTemplateTitle(const std::string& _templateTitle);
 
                     /**
                      * 判断参数 TemplateTitle 是否已赋值
                      * @return TemplateTitle 是否已赋值
+                     * 
                      */
                     bool TemplateTitleHasBeenSet() const;
 
                     /**
                      * 获取经验库描述
                      * @return TemplateDescription 经验库描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置经验库描述
-                     * @param TemplateDescription 经验库描述
+                     * @param _templateDescription 经验库描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
@@ -105,92 +114,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateTag 经验库标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateTag() const;
 
                     /**
                      * 设置经验库标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateTag 经验库标签
+                     * @param _templateTag 经验库标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateTag(const std::string& _templateTag);
 
                     /**
                      * 判断参数 TemplateTag 是否已赋值
                      * @return TemplateTag 是否已赋值
+                     * 
                      */
                     bool TemplateTagHasBeenSet() const;
 
                     /**
                      * 获取经验库状态。1 -- 使用中，2 -- 停用
                      * @return TemplateIsUsed 经验库状态。1 -- 使用中，2 -- 停用
+                     * 
                      */
                     int64_t GetTemplateIsUsed() const;
 
                     /**
                      * 设置经验库状态。1 -- 使用中，2 -- 停用
-                     * @param TemplateIsUsed 经验库状态。1 -- 使用中，2 -- 停用
+                     * @param _templateIsUsed 经验库状态。1 -- 使用中，2 -- 停用
+                     * 
                      */
                     void SetTemplateIsUsed(const int64_t& _templateIsUsed);
 
                     /**
                      * 判断参数 TemplateIsUsed 是否已赋值
                      * @return TemplateIsUsed 是否已赋值
+                     * 
                      */
                     bool TemplateIsUsedHasBeenSet() const;
 
                     /**
                      * 获取经验库创建时间
                      * @return TemplateCreateTime 经验库创建时间
+                     * 
                      */
                     std::string GetTemplateCreateTime() const;
 
                     /**
                      * 设置经验库创建时间
-                     * @param TemplateCreateTime 经验库创建时间
+                     * @param _templateCreateTime 经验库创建时间
+                     * 
                      */
                     void SetTemplateCreateTime(const std::string& _templateCreateTime);
 
                     /**
                      * 判断参数 TemplateCreateTime 是否已赋值
                      * @return TemplateCreateTime 是否已赋值
+                     * 
                      */
                     bool TemplateCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取经验库更新时间
                      * @return TemplateUpdateTime 经验库更新时间
+                     * 
                      */
                     std::string GetTemplateUpdateTime() const;
 
                     /**
                      * 设置经验库更新时间
-                     * @param TemplateUpdateTime 经验库更新时间
+                     * @param _templateUpdateTime 经验库更新时间
+                     * 
                      */
                     void SetTemplateUpdateTime(const std::string& _templateUpdateTime);
 
                     /**
                      * 判断参数 TemplateUpdateTime 是否已赋值
                      * @return TemplateUpdateTime 是否已赋值
+                     * 
                      */
                     bool TemplateUpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取经验库关联的任务数量
                      * @return TemplateUsedNum 经验库关联的任务数量
+                     * 
                      */
                     int64_t GetTemplateUsedNum() const;
 
                     /**
                      * 设置经验库关联的任务数量
-                     * @param TemplateUsedNum 经验库关联的任务数量
+                     * @param _templateUsedNum 经验库关联的任务数量
+                     * 
                      */
                     void SetTemplateUsedNum(const int64_t& _templateUsedNum);
 
                     /**
                      * 判断参数 TemplateUsedNum 是否已赋值
                      * @return TemplateUsedNum 是否已赋值
+                     * 
                      */
                     bool TemplateUsedNumHasBeenSet() const;
 

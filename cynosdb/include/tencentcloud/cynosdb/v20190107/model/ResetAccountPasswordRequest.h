@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取数据库账号名
                      * @return AccountName 数据库账号名
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置数据库账号名
-                     * @param AccountName 数据库账号名
+                     * @param _accountName 数据库账号名
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取数据库账号新密码
                      * @return AccountPassword 数据库账号新密码
+                     * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
                      * 设置数据库账号新密码
-                     * @param AccountPassword 数据库账号新密码
+                     * @param _accountPassword 数据库账号新密码
+                     * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
                     /**
                      * 判断参数 AccountPassword 是否已赋值
                      * @return AccountPassword 是否已赋值
+                     * 
                      */
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取主机，不填默认为"%"
                      * @return Host 主机，不填默认为"%"
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置主机，不填默认为"%"
-                     * @param Host 主机，不填默认为"%"
+                     * @param _host 主机，不填默认为"%"
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 

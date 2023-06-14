@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取函数名称
                      * @return FunctionName 函数名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置函数名称
-                     * @param FunctionName 函数名称
+                     * @param _functionName 函数名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取别名的名称
                      * @return Name 别名的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置别名的名称
-                     * @param Name 别名的名称
+                     * @param _name 别名的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取别名指向的主版本
                      * @return FunctionVersion 别名指向的主版本
+                     * 
                      */
                     std::string GetFunctionVersion() const;
 
                     /**
                      * 设置别名指向的主版本
-                     * @param FunctionVersion 别名指向的主版本
+                     * @param _functionVersion 别名指向的主版本
+                     * 
                      */
                     void SetFunctionVersion(const std::string& _functionVersion);
 
                     /**
                      * 判断参数 FunctionVersion 是否已赋值
                      * @return FunctionVersion 是否已赋值
+                     * 
                      */
                     bool FunctionVersionHasBeenSet() const;
 
                     /**
                      * 获取函数所在的命名空间
                      * @return Namespace 函数所在的命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数所在的命名空间
-                     * @param Namespace 函数所在的命名空间
+                     * @param _namespace 函数所在的命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取别名的路由信息，需要为别名指定附加版本时，必须提供此参数
                      * @return RoutingConfig 别名的路由信息，需要为别名指定附加版本时，必须提供此参数
+                     * 
                      */
                     RoutingConfig GetRoutingConfig() const;
 
                     /**
                      * 设置别名的路由信息，需要为别名指定附加版本时，必须提供此参数
-                     * @param RoutingConfig 别名的路由信息，需要为别名指定附加版本时，必须提供此参数
+                     * @param _routingConfig 别名的路由信息，需要为别名指定附加版本时，必须提供此参数
+                     * 
                      */
                     void SetRoutingConfig(const RoutingConfig& _routingConfig);
 
                     /**
                      * 判断参数 RoutingConfig 是否已赋值
                      * @return RoutingConfig 是否已赋值
+                     * 
                      */
                     bool RoutingConfigHasBeenSet() const;
 
                     /**
                      * 获取别名的描述
                      * @return Description 别名的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置别名的描述
-                     * @param Description 别名的描述
+                     * @param _description 别名的描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

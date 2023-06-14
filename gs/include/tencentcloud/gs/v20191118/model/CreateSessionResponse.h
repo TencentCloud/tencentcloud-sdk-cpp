@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取服务端session信息，返回给JSSDK
                      * @return ServerSession 服务端session信息，返回给JSSDK
+                     * 
                      */
                     std::string GetServerSession() const;
 
                     /**
                      * 判断参数 ServerSession 是否已赋值
                      * @return ServerSession 是否已赋值
+                     * 
                      */
                     bool ServerSessionHasBeenSet() const;
 
                     /**
                      * 获取【已废弃】
                      * @return RoleNumber 【已废弃】
+                     * 
                      */
                     std::string GetRoleNumber() const;
 
                     /**
                      * 判断参数 RoleNumber 是否已赋值
                      * @return RoleNumber 是否已赋值
+                     * 
                      */
                     bool RoleNumberHasBeenSet() const;
 
                     /**
                      * 获取【互动云游】角色；Player表示玩家；Viewer表示观察者
                      * @return Role 【互动云游】角色；Player表示玩家；Viewer表示观察者
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

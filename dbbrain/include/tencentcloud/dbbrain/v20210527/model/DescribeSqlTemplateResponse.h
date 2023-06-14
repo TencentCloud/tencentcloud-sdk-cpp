@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取数据库名。
                      * @return Schema 数据库名。
+                     * 
                      */
                     std::string GetSchema() const;
 
                     /**
                      * 判断参数 Schema 是否已赋值
                      * @return Schema 是否已赋值
+                     * 
                      */
                     bool SchemaHasBeenSet() const;
 
                     /**
                      * 获取SQL语句。
                      * @return SqlText SQL语句。
+                     * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 判断参数 SqlText 是否已赋值
                      * @return SqlText 是否已赋值
+                     * 
                      */
                     bool SqlTextHasBeenSet() const;
 
                     /**
                      * 获取SQL类型。
                      * @return SqlType SQL类型。
+                     * 
                      */
                     std::string GetSqlType() const;
 
                     /**
                      * 判断参数 SqlType 是否已赋值
                      * @return SqlType 是否已赋值
+                     * 
                      */
                     bool SqlTypeHasBeenSet() const;
 
                     /**
                      * 获取SQL模版内容。
                      * @return SqlTemplate SQL模版内容。
+                     * 
                      */
                     std::string GetSqlTemplate() const;
 
                     /**
                      * 判断参数 SqlTemplate 是否已赋值
                      * @return SqlTemplate 是否已赋值
+                     * 
                      */
                     bool SqlTemplateHasBeenSet() const;
 
                     /**
                      * 获取SQL模版ID。
                      * @return SqlId SQL模版ID。
+                     * 
                      */
                     int64_t GetSqlId() const;
 
                     /**
                      * 判断参数 SqlId 是否已赋值
                      * @return SqlId 是否已赋值
+                     * 
                      */
                     bool SqlIdHasBeenSet() const;
 

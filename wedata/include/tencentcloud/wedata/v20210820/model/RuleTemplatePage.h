@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取记录数
                      * @return TotalCount 记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置记录数
-                     * @param TotalCount 记录数
+                     * @param _totalCount 记录数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取模版列表
                      * @return Items 模版列表
+                     * 
                      */
                     std::vector<RuleTemplate> GetItems() const;
 
                     /**
                      * 设置模版列表
-                     * @param Items 模版列表
+                     * @param _items 模版列表
+                     * 
                      */
                     void SetItems(const std::vector<RuleTemplate>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

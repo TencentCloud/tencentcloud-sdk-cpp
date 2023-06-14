@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteListId 白名单id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWhiteListId() const;
 
                     /**
                      * 设置白名单id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhiteListId 白名单id
+                     * @param _whiteListId 白名单id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhiteListId(const int64_t& _whiteListId);
 
                     /**
                      * 判断参数 WhiteListId 是否已赋值
                      * @return WhiteListId 是否已赋值
+                     * 
                      */
                     bool WhiteListIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyId 企业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
                      * 设置企业id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompanyId 企业id
+                     * @param _companyId 企业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBrandName() const;
 
                     /**
                      * 设置品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrandName 品牌名称
+                     * @param _brandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrandName(const std::string& _brandName);
 
                     /**
                      * 判断参数 BrandName 是否已赋值
                      * @return BrandName 是否已赋值
+                     * 
                      */
                     bool BrandNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetsType 资产类型：0-网站 1-app 2-公众号 3-小程序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAssetsType() const;
 
                     /**
                      * 设置资产类型：0-网站 1-app 2-公众号 3-小程序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetsType 资产类型：0-网站 1-app 2-公众号 3-小程序
+                     * @param _assetsType 资产类型：0-网站 1-app 2-公众号 3-小程序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetsType(const int64_t& _assetsType);
 
                     /**
                      * 判断参数 AssetsType 是否已赋值
                      * @return AssetsType 是否已赋值
+                     * 
                      */
                     bool AssetsTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteList 白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWhiteList() const;
 
                     /**
                      * 设置白名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhiteList 白名单
+                     * @param _whiteList 白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhiteList(const std::string& _whiteList);
 
                     /**
                      * 判断参数 WhiteList 是否已赋值
                      * @return WhiteList 是否已赋值
+                     * 
                      */
                     bool WhiteListHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 新增时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInsertTime() const;
 
                     /**
                      * 设置新增时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InsertTime 新增时间
+                     * @param _insertTime 新增时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInsertTime(const std::string& _insertTime);
 
                     /**
                      * 判断参数 InsertTime 是否已赋值
                      * @return InsertTime 是否已赋值
+                     * 
                      */
                     bool InsertTimeHasBeenSet() const;
 

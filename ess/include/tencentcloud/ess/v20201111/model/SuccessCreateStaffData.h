@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取员工名
                      * @return DisplayName 员工名
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置员工名
-                     * @param DisplayName 员工名
+                     * @param _displayName 员工名
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取员工手机号
                      * @return Mobile 员工手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置员工手机号
-                     * @param Mobile 员工手机号
+                     * @param _mobile 员工手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取员工在电子签平台的id
                      * @return UserId 员工在电子签平台的id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置员工在电子签平台的id
-                     * @param UserId 员工在电子签平台的id
+                     * @param _userId 员工在电子签平台的id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 提示，当创建已存在未实名用户时，改字段有值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置提示，当创建已存在未实名用户时，改字段有值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Note 提示，当创建已存在未实名用户时，改字段有值
+                     * @param _note 提示，当创建已存在未实名用户时，改字段有值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 

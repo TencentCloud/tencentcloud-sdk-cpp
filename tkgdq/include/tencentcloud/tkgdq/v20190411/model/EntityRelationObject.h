@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取object对应id
                      * @return Id object对应id
+                     * 
                      */
                     std::vector<std::string> GetId() const;
 
                     /**
                      * 设置object对应id
-                     * @param Id object对应id
+                     * @param _id object对应id
+                     * 
                      */
                     void SetId(const std::vector<std::string>& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取object对应name
                      * @return Name object对应name
+                     * 
                      */
                     std::vector<std::string> GetName() const;
 
                     /**
                      * 设置object对应name
-                     * @param Name object对应name
+                     * @param _name object对应name
+                     * 
                      */
                     void SetName(const std::vector<std::string>& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取object对应popular值
                      * @return Popular object对应popular值
+                     * 
                      */
                     std::vector<int64_t> GetPopular() const;
 
                     /**
                      * 设置object对应popular值
-                     * @param Popular object对应popular值
+                     * @param _popular object对应popular值
+                     * 
                      */
                     void SetPopular(const std::vector<int64_t>& _popular);
 
                     /**
                      * 判断参数 Popular 是否已赋值
                      * @return Popular 是否已赋值
+                     * 
                      */
                     bool PopularHasBeenSet() const;
 

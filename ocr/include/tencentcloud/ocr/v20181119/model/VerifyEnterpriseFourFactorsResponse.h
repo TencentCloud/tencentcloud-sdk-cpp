@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取核验一致性（1:一致，2:不一致，3:查询无记录）
                      * @return State 核验一致性（1:一致，2:不一致，3:查询无记录）
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
                      * @return Detail 核验结果明细，7：企业法人/负责人，6：企业股东，5：企
 业管理人员，-21：企业名称与企业标识不符，-22：姓名不一致，-23：证件号码不一致，-24：企业名称不一致，-25：企业标识不一致
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Detail GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

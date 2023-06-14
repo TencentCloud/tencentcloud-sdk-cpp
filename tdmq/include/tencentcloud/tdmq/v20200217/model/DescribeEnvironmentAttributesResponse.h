@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取未消费消息过期时间，单位：秒，最大1296000（15天）。
                      * @return MsgTTL 未消费消息过期时间，单位：秒，最大1296000（15天）。
+                     * 
                      */
                     uint64_t GetMsgTTL() const;
 
                     /**
                      * 判断参数 MsgTTL 是否已赋值
                      * @return MsgTTL 是否已赋值
+                     * 
                      */
                     bool MsgTTLHasBeenSet() const;
 
                     /**
                      * 获取消费速率限制，单位：byte/秒，0：不限速。
                      * @return RateInByte 消费速率限制，单位：byte/秒，0：不限速。
+                     * 
                      */
                     uint64_t GetRateInByte() const;
 
                     /**
                      * 判断参数 RateInByte 是否已赋值
                      * @return RateInByte 是否已赋值
+                     * 
                      */
                     bool RateInByteHasBeenSet() const;
 
                     /**
                      * 获取消费速率限制，单位：个数/秒，0：不限速。
                      * @return RateInSize 消费速率限制，单位：个数/秒，0：不限速。
+                     * 
                      */
                     uint64_t GetRateInSize() const;
 
                     /**
                      * 判断参数 RateInSize 是否已赋值
                      * @return RateInSize 是否已赋值
+                     * 
                      */
                     bool RateInSizeHasBeenSet() const;
 
                     /**
                      * 获取已消费消息保存策略，单位：小时，0：消费完马上删除。
                      * @return RetentionHours 已消费消息保存策略，单位：小时，0：消费完马上删除。
+                     * 
                      */
                     uint64_t GetRetentionHours() const;
 
                     /**
                      * 判断参数 RetentionHours 是否已赋值
                      * @return RetentionHours 是否已赋值
+                     * 
                      */
                     bool RetentionHoursHasBeenSet() const;
 
                     /**
                      * 获取已消费消息保存策略，单位：G，0：消费完马上删除。
                      * @return RetentionSize 已消费消息保存策略，单位：G，0：消费完马上删除。
+                     * 
                      */
                     uint64_t GetRetentionSize() const;
 
                     /**
                      * 判断参数 RetentionSize 是否已赋值
                      * @return RetentionSize 是否已赋值
+                     * 
                      */
                     bool RetentionSizeHasBeenSet() const;
 
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取副本数。
                      * @return Replicas 副本数。
+                     * 
                      */
                     uint64_t GetReplicas() const;
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
                     /**
                      * 获取备注。
                      * @return Remark 备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

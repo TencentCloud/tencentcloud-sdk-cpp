@@ -48,120 +48,140 @@ namespace TencentCloud
                     /**
                      * 获取扫描任务信息列表
                      * @return ScanTaskDetailList 扫描任务信息列表
+                     * 
                      */
                     std::vector<ScanTaskDetails> GetScanTaskDetailList() const;
 
                     /**
                      * 判断参数 ScanTaskDetailList 是否已赋值
                      * @return ScanTaskDetailList 是否已赋值
+                     * 
                      */
                     bool ScanTaskDetailListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取扫描机器总数
                      * @return ScanMachineCount 扫描机器总数
+                     * 
                      */
                     uint64_t GetScanMachineCount() const;
 
                     /**
                      * 判断参数 ScanMachineCount 是否已赋值
                      * @return ScanMachineCount 是否已赋值
+                     * 
                      */
                     bool ScanMachineCountHasBeenSet() const;
 
                     /**
                      * 获取发现风险机器数
                      * @return RiskMachineCount 发现风险机器数
+                     * 
                      */
                     uint64_t GetRiskMachineCount() const;
 
                     /**
                      * 判断参数 RiskMachineCount 是否已赋值
                      * @return RiskMachineCount 是否已赋值
+                     * 
                      */
                     bool RiskMachineCountHasBeenSet() const;
 
                     /**
                      * 获取扫描开始时间
                      * @return ScanBeginTime 扫描开始时间
+                     * 
                      */
                     std::string GetScanBeginTime() const;
 
                     /**
                      * 判断参数 ScanBeginTime 是否已赋值
                      * @return ScanBeginTime 是否已赋值
+                     * 
                      */
                     bool ScanBeginTimeHasBeenSet() const;
 
                     /**
                      * 获取扫描结束时间
                      * @return ScanEndTime 扫描结束时间
+                     * 
                      */
                     std::string GetScanEndTime() const;
 
                     /**
                      * 判断参数 ScanEndTime 是否已赋值
                      * @return ScanEndTime 是否已赋值
+                     * 
                      */
                     bool ScanEndTimeHasBeenSet() const;
 
                     /**
                      * 获取检测时间
                      * @return ScanTime 检测时间
+                     * 
                      */
                     uint64_t GetScanTime() const;
 
                     /**
                      * 判断参数 ScanTime 是否已赋值
                      * @return ScanTime 是否已赋值
+                     * 
                      */
                     bool ScanTimeHasBeenSet() const;
 
                     /**
                      * 获取扫描进度
                      * @return ScanProgress 扫描进度
+                     * 
                      */
                     uint64_t GetScanProgress() const;
 
                     /**
                      * 判断参数 ScanProgress 是否已赋值
                      * @return ScanProgress 是否已赋值
+                     * 
                      */
                     bool ScanProgressHasBeenSet() const;
 
                     /**
                      * 获取扫描剩余时间
                      * @return ScanLeftTime 扫描剩余时间
+                     * 
                      */
                     uint64_t GetScanLeftTime() const;
 
                     /**
                      * 判断参数 ScanLeftTime 是否已赋值
                      * @return ScanLeftTime 是否已赋值
+                     * 
                      */
                     bool ScanLeftTimeHasBeenSet() const;
 
                     /**
                      * 获取扫描内容
                      * @return ScanContent 扫描内容
+                     * 
                      */
                     std::vector<std::string> GetScanContent() const;
 
                     /**
                      * 判断参数 ScanContent 是否已赋值
                      * @return ScanContent 是否已赋值
+                     * 
                      */
                     bool ScanContentHasBeenSet() const;
 
@@ -170,12 +190,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulInfo 漏洞信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulDetailInfo> GetVulInfo() const;
 
                     /**
                      * 判断参数 VulInfo 是否已赋值
                      * @return VulInfo 是否已赋值
+                     * 
                      */
                     bool VulInfoHasBeenSet() const;
 
@@ -184,12 +206,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskEventCount 风险事件个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRiskEventCount() const;
 
                     /**
                      * 判断参数 RiskEventCount 是否已赋值
                      * @return RiskEventCount 是否已赋值
+                     * 
                      */
                     bool RiskEventCountHasBeenSet() const;
 
@@ -198,12 +222,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 0一键检测 1定时检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -212,12 +238,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppingAll 任务是否全部正在被停止 ture是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetStoppingAll() const;
 
                     /**
                      * 判断参数 StoppingAll 是否已赋值
                      * @return StoppingAll 是否已赋值
+                     * 
                      */
                     bool StoppingAllHasBeenSet() const;
 
@@ -226,12 +254,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 扫描出漏洞个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulCount() const;
 
                     /**
                      * 判断参数 VulCount 是否已赋值
                      * @return VulCount 是否已赋值
+                     * 
                      */
                     bool VulCountHasBeenSet() const;
 

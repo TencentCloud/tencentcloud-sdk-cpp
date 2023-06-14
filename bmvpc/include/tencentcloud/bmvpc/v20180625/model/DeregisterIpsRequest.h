@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取注销指定IP的列表
                      * @return IpSet 注销指定IP的列表
+                     * 
                      */
                     std::vector<std::string> GetIpSet() const;
 
                     /**
                      * 设置注销指定IP的列表
-                     * @param IpSet 注销指定IP的列表
+                     * @param _ipSet 注销指定IP的列表
+                     * 
                      */
                     void SetIpSet(const std::vector<std::string>& _ipSet);
 
                     /**
                      * 判断参数 IpSet 是否已赋值
                      * @return IpSet 是否已赋值
+                     * 
                      */
                     bool IpSetHasBeenSet() const;
 
                     /**
                      * 获取私有网络子网ID
                      * @return SubnetId 私有网络子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置私有网络子网ID
-                     * @param SubnetId 私有网络子网ID
+                     * @param _subnetId 私有网络子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

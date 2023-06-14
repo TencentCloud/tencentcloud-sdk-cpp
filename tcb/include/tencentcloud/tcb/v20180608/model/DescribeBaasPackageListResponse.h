@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取套餐列表
                      * @return PackageList 套餐列表
+                     * 
                      */
                     std::vector<BaasPackageInfo> GetPackageList() const;
 
                     /**
                      * 判断参数 PackageList 是否已赋值
                      * @return PackageList 是否已赋值
+                     * 
                      */
                     bool PackageListHasBeenSet() const;
 

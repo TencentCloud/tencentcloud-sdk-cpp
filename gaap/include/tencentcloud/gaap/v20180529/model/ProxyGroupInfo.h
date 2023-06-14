@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取通道组id
                      * @return GroupId 通道组id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置通道组id
-                     * @param GroupId 通道组id
+                     * @param _groupId 通道组id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 通道组域名
+                     * @param _domain 通道组域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -93,56 +99,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 通道组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置通道组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 通道组名称
+                     * @param _groupName 通道组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取目标地域
                      * @return RealServerRegionInfo 目标地域
+                     * 
                      */
                     RegionDetail GetRealServerRegionInfo() const;
 
                     /**
                      * 设置目标地域
-                     * @param RealServerRegionInfo 目标地域
+                     * @param _realServerRegionInfo 目标地域
+                     * 
                      */
                     void SetRealServerRegionInfo(const RegionDetail& _realServerRegionInfo);
 
                     /**
                      * 判断参数 RealServerRegionInfo 是否已赋值
                      * @return RealServerRegionInfo 是否已赋值
+                     * 
                      */
                     bool RealServerRegionInfoHasBeenSet() const;
 
@@ -161,6 +176,7 @@ CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
 CHANGING表示部分部署中。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -172,37 +188,42 @@ CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
 CHANGING表示部分部署中。
-                     * @param Status 通道组状态。
+                     * @param _status 通道组状态。
 其中，
 RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
 CHANGING表示部分部署中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取标签列表。
                      * @return TagSet 标签列表。
+                     * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
                      * 设置标签列表。
-                     * @param TagSet 标签列表。
+                     * @param _tagSet 标签列表。
+                     * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -211,20 +232,23 @@ CHANGING表示部分部署中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 通道组版本
+                     * @param _version 通道组版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -233,20 +257,23 @@ CHANGING表示部分部署中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -255,20 +282,23 @@ CHANGING表示部分部署中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyType 通道组是否包含微软通道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProxyType() const;
 
                     /**
                      * 设置通道组是否包含微软通道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyType 通道组是否包含微软通道
+                     * @param _proxyType 通道组是否包含微软通道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyType(const uint64_t& _proxyType);
 
                     /**
                      * 判断参数 ProxyType 是否已赋值
                      * @return ProxyType 是否已赋值
+                     * 
                      */
                     bool ProxyTypeHasBeenSet() const;
 
@@ -281,6 +311,7 @@ CHANGING表示部分部署中。
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHttp3Supported() const;
 
@@ -289,16 +320,18 @@ CHANGING表示部分部署中。
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http3Supported 支持Http3特性的标识，其中：
+                     * @param _http3Supported 支持Http3特性的标识，其中：
 0表示关闭；
 1表示启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
 
                     /**
                      * 判断参数 Http3Supported 是否已赋值
                      * @return Http3Supported 是否已赋值
+                     * 
                      */
                     bool Http3SupportedHasBeenSet() const;
 
@@ -329,6 +362,7 @@ CHANGING表示部分部署中。
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFeatureBitmap() const;
 
@@ -346,7 +380,7 @@ CHANGING表示部分部署中。
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
+                     * @param _featureBitmap 特性位图，每个bit位代表一种特性，其中：
 0，表示不支持该特性；
 1，表示支持该特性。
 特性位图含义如下（从右往左）：
@@ -359,12 +393,14 @@ CHANGING表示部分部署中。
 第7个bit，支持接入段Qos加速。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatureBitmap(const int64_t& _featureBitmap);
 
                     /**
                      * 判断参数 FeatureBitmap 是否已赋值
                      * @return FeatureBitmap 是否已赋值
+                     * 
                      */
                     bool FeatureBitmapHasBeenSet() const;
 

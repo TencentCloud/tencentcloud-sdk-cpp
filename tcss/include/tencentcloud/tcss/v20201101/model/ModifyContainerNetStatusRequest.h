@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取容器ID
                      * @return ContainerID 容器ID
+                     * 
                      */
                     std::string GetContainerID() const;
 
                     /**
                      * 设置容器ID
-                     * @param ContainerID 容器ID
+                     * @param _containerID 容器ID
+                     * 
                      */
                     void SetContainerID(const std::string& _containerID);
 
                     /**
                      * 判断参数 ContainerID 是否已赋值
                      * @return ContainerID 是否已赋值
+                     * 
                      */
                     bool ContainerIDHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
 隔离容器: EVENT_ISOLATE_CONTAINER
 恢复容器: EVENT_RESOTRE_CONTAINER
 )
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -77,16 +81,18 @@ namespace TencentCloud
 隔离容器: EVENT_ISOLATE_CONTAINER
 恢复容器: EVENT_RESOTRE_CONTAINER
 )
-                     * @param Status 状态(
+                     * @param _status 状态(
 隔离容器: EVENT_ISOLATE_CONTAINER
 恢复容器: EVENT_RESOTRE_CONTAINER
 )
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

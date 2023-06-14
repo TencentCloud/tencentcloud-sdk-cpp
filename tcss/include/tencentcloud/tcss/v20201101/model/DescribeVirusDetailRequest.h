@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取木马文件id
                      * @return Id 木马文件id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置木马文件id
-                     * @param Id 木马文件id
+                     * @param _id 木马文件id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

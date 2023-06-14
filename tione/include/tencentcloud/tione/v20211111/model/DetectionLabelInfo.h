@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 点坐标列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PointInfo> GetPoints() const;
 
                     /**
                      * 设置点坐标列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Points 点坐标列表
+                     * @param _points 点坐标列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoints(const std::vector<PointInfo>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels 标签
+                     * @param _labels 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameType 类别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrameType() const;
 
                     /**
                      * 设置类别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameType 类别
+                     * @param _frameType 类别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameType(const std::string& _frameType);
 
                     /**
                      * 判断参数 FrameType 是否已赋值
                      * @return FrameType 是否已赋值
+                     * 
                      */
                     bool FrameTypeHasBeenSet() const;
 

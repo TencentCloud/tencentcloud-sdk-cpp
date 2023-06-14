@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。
                      * @return EventId 媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。
-                     * @param EventId 媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。
+                     * @param _eventId 媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

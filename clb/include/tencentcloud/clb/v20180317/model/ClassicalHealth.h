@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取后端服务的内网 IP
                      * @return IP 后端服务的内网 IP
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置后端服务的内网 IP
-                     * @param IP 后端服务的内网 IP
+                     * @param _iP 后端服务的内网 IP
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取后端服务的端口
                      * @return Port 后端服务的端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置后端服务的端口
-                     * @param Port 后端服务的端口
+                     * @param _port 后端服务的端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的监听端口
                      * @return ListenerPort 负载均衡的监听端口
+                     * 
                      */
                     int64_t GetListenerPort() const;
 
                     /**
                      * 设置负载均衡的监听端口
-                     * @param ListenerPort 负载均衡的监听端口
+                     * @param _listenerPort 负载均衡的监听端口
+                     * 
                      */
                     void SetListenerPort(const int64_t& _listenerPort);
 
                     /**
                      * 判断参数 ListenerPort 是否已赋值
                      * @return ListenerPort 是否已赋值
+                     * 
                      */
                     bool ListenerPortHasBeenSet() const;
 
                     /**
                      * 获取转发协议
                      * @return Protocol 转发协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置转发协议
-                     * @param Protocol 转发协议
+                     * @param _protocol 转发协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取健康检查结果，1 表示健康，0 表示不健康
                      * @return HealthStatus 健康检查结果，1 表示健康，0 表示不健康
+                     * 
                      */
                     int64_t GetHealthStatus() const;
 
                     /**
                      * 设置健康检查结果，1 表示健康，0 表示不健康
-                     * @param HealthStatus 健康检查结果，1 表示健康，0 表示不健康
+                     * @param _healthStatus 健康检查结果，1 表示健康，0 表示不健康
+                     * 
                      */
                     void SetHealthStatus(const int64_t& _healthStatus);
 
                     /**
                      * 判断参数 HealthStatus 是否已赋值
                      * @return HealthStatus 是否已赋值
+                     * 
                      */
                     bool HealthStatusHasBeenSet() const;
 

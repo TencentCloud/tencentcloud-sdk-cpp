@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取合约CNS地址
                      * @return Hash 合约CNS地址
+                     * 
                      */
                     std::string GetHash() const;
 
                     /**
                      * 设置合约CNS地址
-                     * @param Hash 合约CNS地址
+                     * @param _hash 合约CNS地址
+                     * 
                      */
                     void SetHash(const std::string& _hash);
 
                     /**
                      * 判断参数 Hash 是否已赋值
                      * @return Hash 是否已赋值
+                     * 
                      */
                     bool HashHasBeenSet() const;
 

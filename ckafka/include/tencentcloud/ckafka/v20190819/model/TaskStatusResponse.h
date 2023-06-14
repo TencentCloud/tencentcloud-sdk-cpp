@@ -55,6 +55,7 @@ namespace TencentCloud
 0 成功
 1 失败
 2 进行中
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 0 成功
 1 失败
 2 进行中
-                     * @param Status 任务状态:
+                     * @param _status 任务状态:
 0 成功
 1 失败
 2 进行中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 输出信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置输出信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 输出信息
+                     * @param _output 输出信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutput(const std::string& _output);
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 

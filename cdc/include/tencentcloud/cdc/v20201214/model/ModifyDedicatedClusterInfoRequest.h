@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取本地专用集群ID
                      * @return DedicatedClusterId 本地专用集群ID
+                     * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置本地专用集群ID
-                     * @param DedicatedClusterId 本地专用集群ID
+                     * @param _dedicatedClusterId 本地专用集群ID
+                     * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
 
                     /**
                      * 判断参数 DedicatedClusterId 是否已赋值
                      * @return DedicatedClusterId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群的新名称
                      * @return Name 集群的新名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置集群的新名称
-                     * @param Name 集群的新名称
+                     * @param _name 集群的新名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取集群的新可用区
                      * @return Zone 集群的新可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置集群的新可用区
-                     * @param Zone 集群的新可用区
+                     * @param _zone 集群的新可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取集群的新描述信息
                      * @return Description 集群的新描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置集群的新描述信息
-                     * @param Description 集群的新描述信息
+                     * @param _description 集群的新描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取集群所在站点
                      * @return SiteId 集群所在站点
+                     * 
                      */
                     std::string GetSiteId() const;
 
                     /**
                      * 设置集群所在站点
-                     * @param SiteId 集群所在站点
+                     * @param _siteId 集群所在站点
+                     * 
                      */
                     void SetSiteId(const std::string& _siteId);
 
                     /**
                      * 判断参数 SiteId 是否已赋值
                      * @return SiteId 是否已赋值
+                     * 
                      */
                     bool SiteIdHasBeenSet() const;
 

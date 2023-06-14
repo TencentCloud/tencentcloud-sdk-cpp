@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取直播推流地址有效期，单位：秒 。
                      * @return ExpiredSecond 直播推流地址有效期，单位：秒 。
+                     * 
                      */
                     uint64_t GetExpiredSecond() const;
 
                     /**
                      * 设置直播推流地址有效期，单位：秒 。
-                     * @param ExpiredSecond 直播推流地址有效期，单位：秒 。
+                     * @param _expiredSecond 直播推流地址有效期，单位：秒 。
+                     * 
                      */
                     void SetExpiredSecond(const uint64_t& _expiredSecond);
 
                     /**
                      * 判断参数 ExpiredSecond 是否已赋值
                      * @return ExpiredSecond 是否已赋值
+                     * 
                      */
                     bool ExpiredSecondHasBeenSet() const;
 
                     /**
                      * 获取直播推流地址，入参不填默认由多媒体创作引擎生成。
                      * @return PushUrl 直播推流地址，入参不填默认由多媒体创作引擎生成。
+                     * 
                      */
                     std::string GetPushUrl() const;
 
                     /**
                      * 设置直播推流地址，入参不填默认由多媒体创作引擎生成。
-                     * @param PushUrl 直播推流地址，入参不填默认由多媒体创作引擎生成。
+                     * @param _pushUrl 直播推流地址，入参不填默认由多媒体创作引擎生成。
+                     * 
                      */
                     void SetPushUrl(const std::string& _pushUrl);
 
                     /**
                      * 判断参数 PushUrl 是否已赋值
                      * @return PushUrl 是否已赋值
+                     * 
                      */
                     bool PushUrlHasBeenSet() const;
 

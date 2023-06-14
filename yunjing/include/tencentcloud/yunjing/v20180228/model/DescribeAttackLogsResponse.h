@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLogs 日志列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DefendAttackLog> GetAttackLogs() const;
 
                     /**
                      * 判断参数 AttackLogs 是否已赋值
                      * @return AttackLogs 是否已赋值
+                     * 
                      */
                     bool AttackLogsHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

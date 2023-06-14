@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取七层监听器实例ID，可通过接口DescribeL7Listeners查询。
                      * @return ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置七层监听器实例ID，可通过接口DescribeL7Listeners查询。
-                     * @param ListenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * @param _listenerId 七层监听器实例ID，可通过接口DescribeL7Listeners查询。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。
                      * @return RuleSet 七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。
+                     * 
                      */
                     std::vector<CreateL7Rule> GetRuleSet() const;
 
                     /**
                      * 设置七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。
-                     * @param RuleSet 七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。
+                     * @param _ruleSet 七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。
+                     * 
                      */
                     void SetRuleSet(const std::vector<CreateL7Rule>& _ruleSet);
 
                     /**
                      * 判断参数 RuleSet 是否已赋值
                      * @return RuleSet 是否已赋值
+                     * 
                      */
                     bool RuleSetHasBeenSet() const;
 

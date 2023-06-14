@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteList 废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWhiteList() const;
 
                     /**
                      * 设置废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhiteList 废弃
+                     * @param _whiteList 废弃
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhiteList(const std::string& _whiteList);
 
                     /**
                      * 判断参数 WhiteList 是否已赋值
                      * @return WhiteList 是否已赋值
+                     * 
                      */
                     bool WhiteListHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicControlConsoleWhiteList 公网管控台白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicControlConsoleWhiteList() const;
 
                     /**
                      * 设置公网管控台白名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicControlConsoleWhiteList 公网管控台白名单
+                     * @param _publicControlConsoleWhiteList 公网管控台白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicControlConsoleWhiteList(const std::string& _publicControlConsoleWhiteList);
 
                     /**
                      * 判断参数 PublicControlConsoleWhiteList 是否已赋值
                      * @return PublicControlConsoleWhiteList 是否已赋值
+                     * 
                      */
                     bool PublicControlConsoleWhiteListHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamWhiteList 公网数据流白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicDataStreamWhiteList() const;
 
                     /**
                      * 设置公网数据流白名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicDataStreamWhiteList 公网数据流白名单
+                     * @param _publicDataStreamWhiteList 公网数据流白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicDataStreamWhiteList(const std::string& _publicDataStreamWhiteList);
 
                     /**
                      * 判断参数 PublicDataStreamWhiteList 是否已赋值
                      * @return PublicDataStreamWhiteList 是否已赋值
+                     * 
                      */
                     bool PublicDataStreamWhiteListHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicControlConsoleWhiteListStatus 公网管控台白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicControlConsoleWhiteListStatus() const;
 
                     /**
                      * 设置公网管控台白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicControlConsoleWhiteListStatus 公网管控台白名单状态
+                     * @param _publicControlConsoleWhiteListStatus 公网管控台白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicControlConsoleWhiteListStatus(const std::string& _publicControlConsoleWhiteListStatus);
 
                     /**
                      * 判断参数 PublicControlConsoleWhiteListStatus 是否已赋值
                      * @return PublicControlConsoleWhiteListStatus 是否已赋值
+                     * 
                      */
                     bool PublicControlConsoleWhiteListStatusHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamWhiteListStatus 公网数据流白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicDataStreamWhiteListStatus() const;
 
                     /**
                      * 设置公网数据流白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicDataStreamWhiteListStatus 公网数据流白名单状态
+                     * @param _publicDataStreamWhiteListStatus 公网数据流白名单状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicDataStreamWhiteListStatus(const std::string& _publicDataStreamWhiteListStatus);
 
                     /**
                      * 判断参数 PublicDataStreamWhiteListStatus 是否已赋值
                      * @return PublicDataStreamWhiteListStatus 是否已赋值
+                     * 
                      */
                     bool PublicDataStreamWhiteListStatusHasBeenSet() const;
 

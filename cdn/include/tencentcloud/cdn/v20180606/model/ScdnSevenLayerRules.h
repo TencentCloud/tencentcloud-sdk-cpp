@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取区分大小写
                      * @return CaseSensitive 区分大小写
+                     * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置区分大小写
-                     * @param CaseSensitive 区分大小写
+                     * @param _caseSensitive 区分大小写
+                     * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
 
                     /**
                      * 判断参数 CaseSensitive 是否已赋值
                      * @return CaseSensitive 是否已赋值
+                     * 
                      */
                     bool CaseSensitiveHasBeenSet() const;
 
@@ -93,6 +96,7 @@ referer：Referer，填写具体 value 值，512字符以内
 cookie：Cookie，填写具体 value 值，512字符以内
 user-agent：User-Agent，填写具体 value 值，512字符以内
 head：自定义请求头，填写具体value值，512字符以内；内容为空或者不存在时，无匹配内容输入框，填写匹配参数即可
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -111,7 +115,7 @@ referer：Referer，填写具体 value 值，512字符以内
 cookie：Cookie，填写具体 value 值，512字符以内
 user-agent：User-Agent，填写具体 value 值，512字符以内
 head：自定义请求头，填写具体value值，512字符以内；内容为空或者不存在时，无匹配内容输入框，填写匹配参数即可
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 protocol：协议，填写 HTTP/HTTPS
 method：请求方法，支持 HEAD、GET、POST、PUT、OPTIONS、TRACE、DELETE、PATCH、CONNECT
 all：域名 匹配内容固定为"*",不可编辑修改
@@ -125,12 +129,14 @@ referer：Referer，填写具体 value 值，512字符以内
 cookie：Cookie，填写具体 value 值，512字符以内
 user-agent：User-Agent，填写具体 value 值，512字符以内
 head：自定义请求头，填写具体value值，512字符以内；内容为空或者不存在时，无匹配内容输入框，填写匹配参数即可
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -149,6 +155,7 @@ head：自定义请求头，填写具体value值，512字符以内；内容为�
 等于：equal, 
 前缀匹配：matching
 内容为空或不存在：null
+                     * 
                      */
                     std::string GetLogicOperator() const;
 
@@ -160,19 +167,21 @@ head：自定义请求头，填写具体value值，512字符以内；内容为�
 等于：equal, 
 前缀匹配：matching
 内容为空或不存在：null
-                     * @param LogicOperator 逻辑操作符，取值 ：
+                     * @param _logicOperator 逻辑操作符，取值 ：
 不包含：exclude, 
 包含：include, 
 不等于：notequal, 
 等于：equal, 
 前缀匹配：matching
 内容为空或不存在：null
+                     * 
                      */
                     void SetLogicOperator(const std::string& _logicOperator);
 
                     /**
                      * 判断参数 LogicOperator 是否已赋值
                      * @return LogicOperator 是否已赋值
+                     * 
                      */
                     bool LogicOperatorHasBeenSet() const;
 
@@ -181,20 +190,23 @@ head：自定义请求头，填写具体value值，512字符以内；内容为�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleValue 规则值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRuleValue() const;
 
                     /**
                      * 设置规则值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleValue 规则值
+                     * @param _ruleValue 规则值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleValue(const std::vector<std::string>& _ruleValue);
 
                     /**
                      * 判断参数 RuleValue 是否已赋值
                      * @return RuleValue 是否已赋值
+                     * 
                      */
                     bool RuleValueHasBeenSet() const;
 
@@ -203,20 +215,23 @@ head：自定义请求头，填写具体value值，512字符以内；内容为�
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleParam 匹配参数，只有请求参数、Cookie、自定义请求头 有值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleParam() const;
 
                     /**
                      * 设置匹配参数，只有请求参数、Cookie、自定义请求头 有值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleParam 匹配参数，只有请求参数、Cookie、自定义请求头 有值
+                     * @param _ruleParam 匹配参数，只有请求参数、Cookie、自定义请求头 有值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleParam(const std::string& _ruleParam);
 
                     /**
                      * 判断参数 RuleParam 是否已赋值
                      * @return RuleParam 是否已赋值
+                     * 
                      */
                     bool RuleParamHasBeenSet() const;
 

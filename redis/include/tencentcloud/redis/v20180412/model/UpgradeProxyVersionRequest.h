@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取当前proxy版本
                      * @return CurrentProxyVersion 当前proxy版本
+                     * 
                      */
                     std::string GetCurrentProxyVersion() const;
 
                     /**
                      * 设置当前proxy版本
-                     * @param CurrentProxyVersion 当前proxy版本
+                     * @param _currentProxyVersion 当前proxy版本
+                     * 
                      */
                     void SetCurrentProxyVersion(const std::string& _currentProxyVersion);
 
                     /**
                      * 判断参数 CurrentProxyVersion 是否已赋值
                      * @return CurrentProxyVersion 是否已赋值
+                     * 
                      */
                     bool CurrentProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取可升级的redis版本
                      * @return UpgradeProxyVersion 可升级的redis版本
+                     * 
                      */
                     std::string GetUpgradeProxyVersion() const;
 
                     /**
                      * 设置可升级的redis版本
-                     * @param UpgradeProxyVersion 可升级的redis版本
+                     * @param _upgradeProxyVersion 可升级的redis版本
+                     * 
                      */
                     void SetUpgradeProxyVersion(const std::string& _upgradeProxyVersion);
 
                     /**
                      * 判断参数 UpgradeProxyVersion 是否已赋值
                      * @return UpgradeProxyVersion 是否已赋值
+                     * 
                      */
                     bool UpgradeProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取1-立即升级   0-维护时间窗口升级
                      * @return InstanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 
                      */
                     int64_t GetInstanceTypeUpgradeNow() const;
 
                     /**
                      * 设置1-立即升级   0-维护时间窗口升级
-                     * @param InstanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * @param _instanceTypeUpgradeNow 1-立即升级   0-维护时间窗口升级
+                     * 
                      */
                     void SetInstanceTypeUpgradeNow(const int64_t& _instanceTypeUpgradeNow);
 
                     /**
                      * 判断参数 InstanceTypeUpgradeNow 是否已赋值
                      * @return InstanceTypeUpgradeNow 是否已赋值
+                     * 
                      */
                     bool InstanceTypeUpgradeNowHasBeenSet() const;
 

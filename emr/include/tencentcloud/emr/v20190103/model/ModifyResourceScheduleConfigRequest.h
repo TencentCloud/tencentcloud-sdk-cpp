@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取emr集群的英文id
                      * @return InstanceId emr集群的英文id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置emr集群的英文id
-                     * @param InstanceId emr集群的英文id
+                     * @param _instanceId emr集群的英文id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项
                      * @return Key 业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项
-                     * @param Key 业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项
+                     * @param _key 业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取修改后的模块消息
                      * @return Value 修改后的模块消息
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置修改后的模块消息
-                     * @param Value 修改后的模块消息
+                     * @param _value 修改后的模块消息
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

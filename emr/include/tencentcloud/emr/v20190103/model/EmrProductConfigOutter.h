@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoftInfo 软件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSoftInfo() const;
 
                     /**
                      * 设置软件信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoftInfo 软件信息
+                     * @param _softInfo 软件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoftInfo(const std::vector<std::string>& _softInfo);
 
                     /**
                      * 判断参数 SoftInfo 是否已赋值
                      * @return SoftInfo 是否已赋值
+                     * 
                      */
                     bool SoftInfoHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterNodeSize Master节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMasterNodeSize() const;
 
                     /**
                      * 设置Master节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MasterNodeSize Master节点个数
+                     * @param _masterNodeSize Master节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMasterNodeSize(const int64_t& _masterNodeSize);
 
                     /**
                      * 判断参数 MasterNodeSize 是否已赋值
                      * @return MasterNodeSize 是否已赋值
+                     * 
                      */
                     bool MasterNodeSizeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreNodeSize Core节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCoreNodeSize() const;
 
                     /**
                      * 设置Core节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoreNodeSize Core节点个数
+                     * @param _coreNodeSize Core节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoreNodeSize(const int64_t& _coreNodeSize);
 
                     /**
                      * 判断参数 CoreNodeSize 是否已赋值
                      * @return CoreNodeSize 是否已赋值
+                     * 
                      */
                     bool CoreNodeSizeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNodeSize Task节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskNodeSize() const;
 
                     /**
                      * 设置Task节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskNodeSize Task节点个数
+                     * @param _taskNodeSize Task节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskNodeSize(const int64_t& _taskNodeSize);
 
                     /**
                      * 判断参数 TaskNodeSize 是否已赋值
                      * @return TaskNodeSize 是否已赋值
+                     * 
                      */
                     bool TaskNodeSizeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComNodeSize Common节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetComNodeSize() const;
 
                     /**
                      * 设置Common节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComNodeSize Common节点个数
+                     * @param _comNodeSize Common节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComNodeSize(const int64_t& _comNodeSize);
 
                     /**
                      * 判断参数 ComNodeSize 是否已赋值
                      * @return ComNodeSize 是否已赋值
+                     * 
                      */
                     bool ComNodeSizeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterResource Master节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutterResource GetMasterResource() const;
 
                     /**
                      * 设置Master节点资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MasterResource Master节点资源
+                     * @param _masterResource Master节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMasterResource(const OutterResource& _masterResource);
 
                     /**
                      * 判断参数 MasterResource 是否已赋值
                      * @return MasterResource 是否已赋值
+                     * 
                      */
                     bool MasterResourceHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreResource Core节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutterResource GetCoreResource() const;
 
                     /**
                      * 设置Core节点资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoreResource Core节点资源
+                     * @param _coreResource Core节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoreResource(const OutterResource& _coreResource);
 
                     /**
                      * 判断参数 CoreResource 是否已赋值
                      * @return CoreResource 是否已赋值
+                     * 
                      */
                     bool CoreResourceHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskResource Task节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutterResource GetTaskResource() const;
 
                     /**
                      * 设置Task节点资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskResource Task节点资源
+                     * @param _taskResource Task节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskResource(const OutterResource& _taskResource);
 
                     /**
                      * 判断参数 TaskResource 是否已赋值
                      * @return TaskResource 是否已赋值
+                     * 
                      */
                     bool TaskResourceHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComResource Common节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutterResource GetComResource() const;
 
                     /**
                      * 设置Common节点资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComResource Common节点资源
+                     * @param _comResource Common节点资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComResource(const OutterResource& _comResource);
 
                     /**
                      * 判断参数 ComResource 是否已赋值
                      * @return ComResource 是否已赋值
+                     * 
                      */
                     bool ComResourceHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnCos 是否使用COS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetOnCos() const;
 
                     /**
                      * 设置是否使用COS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OnCos 是否使用COS
+                     * @param _onCos 是否使用COS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnCos(const bool& _onCos);
 
                     /**
                      * 判断参数 OnCos 是否已赋值
                      * @return OnCos 是否已赋值
+                     * 
                      */
                     bool OnCosHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 收费类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
                      * 设置收费类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeType 收费类型
+                     * @param _chargeType 收费类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouterNodeSize Router节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRouterNodeSize() const;
 
                     /**
                      * 设置Router节点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouterNodeSize Router节点个数
+                     * @param _routerNodeSize Router节点个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouterNodeSize(const int64_t& _routerNodeSize);
 
                     /**
                      * 判断参数 RouterNodeSize 是否已赋值
                      * @return RouterNodeSize 是否已赋值
+                     * 
                      */
                     bool RouterNodeSizeHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportHA 是否支持HA
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSupportHA() const;
 
                     /**
                      * 设置是否支持HA
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportHA 是否支持HA
+                     * @param _supportHA 是否支持HA
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportHA(const bool& _supportHA);
 
                     /**
                      * 判断参数 SupportHA 是否已赋值
                      * @return SupportHA 是否已赋值
+                     * 
                      */
                     bool SupportHAHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityOn 是否支持安全模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSecurityOn() const;
 
                     /**
                      * 设置是否支持安全模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityOn 是否支持安全模式
+                     * @param _securityOn 是否支持安全模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityOn(const bool& _securityOn);
 
                     /**
                      * 判断参数 SecurityOn 是否已赋值
                      * @return SecurityOn 是否已赋值
+                     * 
                      */
                     bool SecurityOnHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityGroup 安全组名称
+                     * @param _securityGroup 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CbsEncrypt 是否开启Cbs加密
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCbsEncrypt() const;
 
                     /**
                      * 设置是否开启Cbs加密
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CbsEncrypt 是否开启Cbs加密
+                     * @param _cbsEncrypt 是否开启Cbs加密
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCbsEncrypt(const int64_t& _cbsEncrypt);
 
                     /**
                      * 判断参数 CbsEncrypt 是否已赋值
                      * @return CbsEncrypt 是否已赋值
+                     * 
                      */
                     bool CbsEncryptHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationRole 自定义应用角色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationRole() const;
 
                     /**
                      * 设置自定义应用角色。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationRole 自定义应用角色。
+                     * @param _applicationRole 自定义应用角色。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationRole(const std::string& _applicationRole);
 
                     /**
                      * 判断参数 ApplicationRole 是否已赋值
                      * @return ApplicationRole 是否已赋值
+                     * 
                      */
                     bool ApplicationRoleHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroups 安全组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
                      * 设置安全组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecurityGroups 安全组
+                     * @param _securityGroups 安全组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
 
                     /**
                      * 判断参数 SecurityGroups 是否已赋值
                      * @return SecurityGroups 是否已赋值
+                     * 
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
@@ -448,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicKeyId SSH密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicKeyId() const;
 
                     /**
                      * 设置SSH密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicKeyId SSH密钥Id
+                     * @param _publicKeyId SSH密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicKeyId(const std::string& _publicKeyId);
 
                     /**
                      * 判断参数 PublicKeyId 是否已赋值
                      * @return PublicKeyId 是否已赋值
+                     * 
                      */
                     bool PublicKeyIdHasBeenSet() const;
 

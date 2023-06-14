@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取带宽包唯一ID列表
                      * @return BandwidthPackageIds 带宽包唯一ID列表
+                     * 
                      */
                     std::vector<std::string> GetBandwidthPackageIds() const;
 
                     /**
                      * 设置带宽包唯一ID列表
-                     * @param BandwidthPackageIds 带宽包唯一ID列表
+                     * @param _bandwidthPackageIds 带宽包唯一ID列表
+                     * 
                      */
                     void SetBandwidthPackageIds(const std::vector<std::string>& _bandwidthPackageIds);
 
                     /**
                      * 判断参数 BandwidthPackageIds 是否已赋值
                      * @return BandwidthPackageIds 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdsHasBeenSet() const;
 
@@ -84,6 +87,7 @@ namespace TencentCloud
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -99,7 +103,7 @@ namespace TencentCloud
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>
-                     * @param Filters 每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：
+                     * @param _filters 每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：
 <li> bandwidth-package_id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>
 <li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>
 <li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'HIGH_QUALITY_BGP','BGP','SINGLEISP'和'ANYCAST'。</li>
@@ -110,48 +114,56 @@ namespace TencentCloud
 <li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
 <li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      * @return Offset 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
-                     * @param Offset 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @param _offset 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      * @return Limit 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
-                     * @param Limit 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @param _limit 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

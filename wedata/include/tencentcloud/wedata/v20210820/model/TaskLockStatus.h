@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取持锁者
                      * @return Locker 持锁者
+                     * 
                      */
                     std::string GetLocker() const;
 
                     /**
                      * 设置持锁者
-                     * @param Locker 持锁者
+                     * @param _locker 持锁者
+                     * 
                      */
                     void SetLocker(const std::string& _locker);
 
                     /**
                      * 判断参数 Locker 是否已赋值
                      * @return Locker 是否已赋值
+                     * 
                      */
                     bool LockerHasBeenSet() const;
 
                     /**
                      * 获取当前操作用户是否为持锁者，1表示为持锁者，0表示为不为持锁者
                      * @return IsLocker 当前操作用户是否为持锁者，1表示为持锁者，0表示为不为持锁者
+                     * 
                      */
                     int64_t GetIsLocker() const;
 
                     /**
                      * 设置当前操作用户是否为持锁者，1表示为持锁者，0表示为不为持锁者
-                     * @param IsLocker 当前操作用户是否为持锁者，1表示为持锁者，0表示为不为持锁者
+                     * @param _isLocker 当前操作用户是否为持锁者，1表示为持锁者，0表示为不为持锁者
+                     * 
                      */
                     void SetIsLocker(const int64_t& _isLocker);
 
                     /**
                      * 判断参数 IsLocker 是否已赋值
                      * @return IsLocker 是否已赋值
+                     * 
                      */
                     bool IsLockerHasBeenSet() const;
 
                     /**
                      * 获取是否可以抢锁，1表示可以抢锁，0表示不可以抢锁
                      * @return IsRob 是否可以抢锁，1表示可以抢锁，0表示不可以抢锁
+                     * 
                      */
                     int64_t GetIsRob() const;
 
                     /**
                      * 设置是否可以抢锁，1表示可以抢锁，0表示不可以抢锁
-                     * @param IsRob 是否可以抢锁，1表示可以抢锁，0表示不可以抢锁
+                     * @param _isRob 是否可以抢锁，1表示可以抢锁，0表示不可以抢锁
+                     * 
                      */
                     void SetIsRob(const int64_t& _isRob);
 
                     /**
                      * 判断参数 IsRob 是否已赋值
                      * @return IsRob 是否已赋值
+                     * 
                      */
                     bool IsRobHasBeenSet() const;
 

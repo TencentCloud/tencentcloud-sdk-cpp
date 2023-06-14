@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取固件URL
                      * @return Url 固件URL
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

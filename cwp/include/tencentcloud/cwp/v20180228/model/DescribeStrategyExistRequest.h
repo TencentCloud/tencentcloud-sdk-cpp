@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取策略名
                      * @return StrategyName 策略名
+                     * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名
-                     * @param StrategyName 策略名
+                     * @param _strategyName 策略名
+                     * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
 
                     /**
                      * 判断参数 StrategyName 是否已赋值
                      * @return StrategyName 是否已赋值
+                     * 
                      */
                     bool StrategyNameHasBeenSet() const;
 

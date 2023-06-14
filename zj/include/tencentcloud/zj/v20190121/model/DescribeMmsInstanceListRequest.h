@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取业务代码
                      * @return AppSubId 业务代码
+                     * 
                      */
                     std::string GetAppSubId() const;
 
                     /**
                      * 设置业务代码
-                     * @param AppSubId 业务代码
+                     * @param _appSubId 业务代码
+                     * 
                      */
                     void SetAppSubId(const std::string& _appSubId);
 
                     /**
                      * 判断参数 AppSubId 是否已赋值
                      * @return AppSubId 是否已赋值
+                     * 
                      */
                     bool AppSubIdHasBeenSet() const;
 
                     /**
                      * 获取实例标题
                      * @return Title 实例标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置实例标题
-                     * @param Title 实例标题
+                     * @param _title 实例标题
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 

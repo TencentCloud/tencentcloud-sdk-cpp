@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取生成包信息
                      * @return Asset 生成包信息
+                     * 
                      */
                     Asset GetAsset() const;
 
                     /**
                      * 判断参数 Asset 是否已赋值
                      * @return Asset 是否已赋值
+                     * 
                      */
                     bool AssetHasBeenSet() const;
 

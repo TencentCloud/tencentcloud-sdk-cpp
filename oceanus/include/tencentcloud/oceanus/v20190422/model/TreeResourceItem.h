@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -70,38 +73,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 资源名称
+                     * @param _name 资源名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取资源类型
                      * @return ResourceType 资源类型
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型
-                     * @param ResourceType 资源类型
+                     * @param _resourceType 资源类型
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileName 文件名
+                     * @param _fileName 文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FolderId 目录ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置目录ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FolderId 目录ID
+                     * @param _folderId 目录ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefJobStatusCountSet 分状态统计关联作业数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RefJobStatusCountItem> GetRefJobStatusCountSet() const;
 
                     /**
                      * 设置分状态统计关联作业数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefJobStatusCountSet 分状态统计关联作业数
+                     * @param _refJobStatusCountSet 分状态统计关联作业数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefJobStatusCountSet(const std::vector<RefJobStatusCountItem>& _refJobStatusCountSet);
 
                     /**
                      * 判断参数 RefJobStatusCountSet 是否已赋值
                      * @return RefJobStatusCountSet 是否已赋值
+                     * 
                      */
                     bool RefJobStatusCountSetHasBeenSet() const;
 

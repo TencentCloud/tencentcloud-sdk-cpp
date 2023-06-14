@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceGroup 服务组信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServiceGroup GetServiceGroup() const;
 
                     /**
                      * 判断参数 ServiceGroup 是否已赋值
                      * @return ServiceGroup 是否已赋值
+                     * 
                      */
                     bool ServiceGroupHasBeenSet() const;
 

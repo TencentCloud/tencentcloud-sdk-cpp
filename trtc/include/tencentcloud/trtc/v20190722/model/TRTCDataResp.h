@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatementID StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatementID() const;
 
                     /**
                      * 设置StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatementID StatementID值，监控仪表盘下固定为0。
+                     * @param _statementID StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatementID(const int64_t& _statementID);
 
                     /**
                      * 判断参数 StatementID 是否已赋值
                      * @return StatementID 是否已赋值
+                     * 
                      */
                     bool StatementIDHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Series 查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SeriesInfo> GetSeries() const;
 
                     /**
                      * 设置查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Series 查询结果数据，以Columns-Values形式返回。
+                     * @param _series 查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSeries(const std::vector<SeriesInfo>& _series);
 
                     /**
                      * 判断参数 Series 是否已赋值
                      * @return Series 是否已赋值
+                     * 
                      */
                     bool SeriesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total Total值，监控仪表盘功能下固定为1。
+                     * @param _total Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

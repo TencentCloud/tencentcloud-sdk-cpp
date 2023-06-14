@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取订单ID
                      * @return OrderId 订单ID
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单ID
-                     * @param OrderId 订单ID
+                     * @param _orderId 订单ID
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取税前金额
                      * @return AmountBeforeTax 税前金额
+                     * 
                      */
                     std::string GetAmountBeforeTax() const;
 
                     /**
                      * 设置税前金额
-                     * @param AmountBeforeTax 税前金额
+                     * @param _amountBeforeTax 税前金额
+                     * 
                      */
                     void SetAmountBeforeTax(const std::string& _amountBeforeTax);
 
                     /**
                      * 判断参数 AmountBeforeTax 是否已赋值
                      * @return AmountBeforeTax 是否已赋值
+                     * 
                      */
                     bool AmountBeforeTaxHasBeenSet() const;
 
                     /**
                      * 获取税后金额
                      * @return AmountAfterTax 税后金额
+                     * 
                      */
                     std::string GetAmountAfterTax() const;
 
                     /**
                      * 设置税后金额
-                     * @param AmountAfterTax 税后金额
+                     * @param _amountAfterTax 税后金额
+                     * 
                      */
                     void SetAmountAfterTax(const std::string& _amountAfterTax);
 
                     /**
                      * 判断参数 AmountAfterTax 是否已赋值
                      * @return AmountAfterTax 是否已赋值
+                     * 
                      */
                     bool AmountAfterTaxHasBeenSet() const;
 
                     /**
                      * 获取税金
                      * @return Tax 税金
+                     * 
                      */
                     std::string GetTax() const;
 
                     /**
                      * 设置税金
-                     * @param Tax 税金
+                     * @param _tax 税金
+                     * 
                      */
                     void SetTax(const std::string& _tax);
 
                     /**
                      * 判断参数 Tax 是否已赋值
                      * @return Tax 是否已赋值
+                     * 
                      */
                     bool TaxHasBeenSet() const;
 

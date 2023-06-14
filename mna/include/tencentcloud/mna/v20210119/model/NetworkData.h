@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取时延数组，最大长度30
                      * @return RTT 时延数组，最大长度30
+                     * 
                      */
                     std::vector<double> GetRTT() const;
 
                     /**
                      * 设置时延数组，最大长度30
-                     * @param RTT 时延数组，最大长度30
+                     * @param _rTT 时延数组，最大长度30
+                     * 
                      */
                     void SetRTT(const std::vector<double>& _rTT);
 
                     /**
                      * 判断参数 RTT 是否已赋值
                      * @return RTT 是否已赋值
+                     * 
                      */
                     bool RTTHasBeenSet() const;
 
                     /**
                      * 获取丢包率
                      * @return Loss 丢包率
+                     * 
                      */
                     double GetLoss() const;
 
                     /**
                      * 设置丢包率
-                     * @param Loss 丢包率
+                     * @param _loss 丢包率
+                     * 
                      */
                     void SetLoss(const double& _loss);
 
                     /**
                      * 判断参数 Loss 是否已赋值
                      * @return Loss 是否已赋值
+                     * 
                      */
                     bool LossHasBeenSet() const;
 
                     /**
                      * 获取抖动
                      * @return Jitter 抖动
+                     * 
                      */
                     double GetJitter() const;
 
                     /**
                      * 设置抖动
-                     * @param Jitter 抖动
+                     * @param _jitter 抖动
+                     * 
                      */
                     void SetJitter(const double& _jitter);
 
                     /**
                      * 判断参数 Jitter 是否已赋值
                      * @return Jitter 是否已赋值
+                     * 
                      */
                     bool JitterHasBeenSet() const;
 
                     /**
                      * 获取10位秒级时间戳
                      * @return Timestamp 10位秒级时间戳
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置10位秒级时间戳
-                     * @param Timestamp 10位秒级时间戳
+                     * @param _timestamp 10位秒级时间戳
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 

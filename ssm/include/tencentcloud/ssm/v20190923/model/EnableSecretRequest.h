@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定启用凭据的名称。
                      * @return SecretName 指定启用凭据的名称。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置指定启用凭据的名称。
-                     * @param SecretName 指定启用凭据的名称。
+                     * @param _secretName 指定启用凭据的名称。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 

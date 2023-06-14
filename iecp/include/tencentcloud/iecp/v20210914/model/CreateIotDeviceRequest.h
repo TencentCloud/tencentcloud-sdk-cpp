@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备所属的产品id
                      * @return ProductId 设备所属的产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置设备所属的产品id
-                     * @param ProductId 设备所属的产品id
+                     * @param _productId 设备所属的产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return UnitID 无
+                     * 
                      */
                     int64_t GetUnitID() const;
 
                     /**
                      * 设置无
-                     * @param UnitID 无
+                     * @param _unitID 无
+                     * 
                      */
                     void SetUnitID(const int64_t& _unitID);
 
                     /**
                      * 判断参数 UnitID 是否已赋值
                      * @return UnitID 是否已赋值
+                     * 
                      */
                     bool UnitIDHasBeenSet() const;
 

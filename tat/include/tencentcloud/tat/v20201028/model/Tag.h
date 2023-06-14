@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签键。
                      * @return Key 标签键。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签键。
-                     * @param Key 标签键。
+                     * @param _key 标签键。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取标签值。
                      * @return Value 标签值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值。
-                     * @param Value 标签值。
+                     * @param _value 标签值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

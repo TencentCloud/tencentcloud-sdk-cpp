@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteID 路由ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRouteID() const;
 
                     /**
                      * 设置路由ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteID 路由ID
+                     * @param _routeID 路由ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteID(const int64_t& _routeID);
 
                     /**
                      * 判断参数 RouteID 是否已赋值
                      * @return RouteID 是否已赋值
+                     * 
                      */
                     bool RouteIDHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名名称
+                     * @param _domain 域名名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainPort 域名端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDomainPort() const;
 
                     /**
                      * 设置域名端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainPort 域名端口
+                     * @param _domainPort 域名端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainPort(const uint64_t& _domainPort);
 
                     /**
                      * 判断参数 DomainPort 是否已赋值
                      * @return DomainPort 是否已赋值
+                     * 
                      */
                     bool DomainPortHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 虚拟ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置虚拟ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip 虚拟ip
+                     * @param _vip 虚拟ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VipType 虚拟ip类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVipType() const;
 
                     /**
                      * 设置虚拟ip类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VipType 虚拟ip类型
+                     * @param _vipType 虚拟ip类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVipType(const int64_t& _vipType);
 
                     /**
                      * 判断参数 VipType 是否已赋值
                      * @return VipType 是否已赋值
+                     * 
                      */
                     bool VipTypeHasBeenSet() const;
 
@@ -169,6 +184,7 @@ namespace TencentCloud
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAccessType() const;
 
@@ -179,18 +195,20 @@ namespace TencentCloud
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessType 接入类型
+                     * @param _accessType 接入类型
 // 0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)
 	// 1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 	// 2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）
 	// 3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessType(const int64_t& _accessType);
 
                     /**
                      * 判断参数 AccessType 是否已赋值
                      * @return AccessType 是否已赋值
+                     * 
                      */
                     bool AccessTypeHasBeenSet() const;
 

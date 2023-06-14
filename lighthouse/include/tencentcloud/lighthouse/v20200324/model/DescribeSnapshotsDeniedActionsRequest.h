@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取快照 ID 列表, 可通过 DescribeSnapshots 查询。
                      * @return SnapshotIds 快照 ID 列表, 可通过 DescribeSnapshots 查询。
+                     * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
                      * 设置快照 ID 列表, 可通过 DescribeSnapshots 查询。
-                     * @param SnapshotIds 快照 ID 列表, 可通过 DescribeSnapshots 查询。
+                     * @param _snapshotIds 快照 ID 列表, 可通过 DescribeSnapshots 查询。
+                     * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
 
                     /**
                      * 判断参数 SnapshotIds 是否已赋值
                      * @return SnapshotIds 是否已赋值
+                     * 
                      */
                     bool SnapshotIdsHasBeenSet() const;
 

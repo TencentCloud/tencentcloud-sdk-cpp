@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取采样截图模板 ID。
                      * @return Definition 采样截图模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置采样截图模板 ID。
-                     * @param Definition 采样截图模板 ID。
+                     * @param _definition 采样截图模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
                     /**
                      * 判断参数 WatermarkSet 是否已赋值
                      * @return WatermarkSet 是否已赋值
+                     * 
                      */
                     bool WatermarkSetHasBeenSet() const;
 

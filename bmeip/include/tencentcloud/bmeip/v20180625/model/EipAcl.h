@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取ACL 实例 ID。
                      * @return AclId ACL 实例 ID。
+                     * 
                      */
                     std::string GetAclId() const;
 
                     /**
                      * 设置ACL 实例 ID。
-                     * @param AclId ACL 实例 ID。
+                     * @param _aclId ACL 实例 ID。
+                     * 
                      */
                     void SetAclId(const std::string& _aclId);
 
                     /**
                      * 判断参数 AclId 是否已赋值
                      * @return AclId 是否已赋值
+                     * 
                      */
                     bool AclIdHasBeenSet() const;
 
                     /**
                      * 获取ACL 实例名称
                      * @return AclName ACL 实例名称
+                     * 
                      */
                     std::string GetAclName() const;
 
                     /**
                      * 设置ACL 实例名称
-                     * @param AclName ACL 实例名称
+                     * @param _aclName ACL 实例名称
+                     * 
                      */
                     void SetAclName(const std::string& _aclName);
 
                     /**
                      * 判断参数 AclName 是否已赋值
                      * @return AclName 是否已赋值
+                     * 
                      */
                     bool AclNameHasBeenSet() const;
 
                     /**
                      * 获取ACL 状态。0：无状态，1：有状态
                      * @return Status ACL 状态。0：无状态，1：有状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ACL 状态。0：无状态，1：有状态
-                     * @param Status ACL 状态。0：无状态，1：有状态
+                     * @param _status ACL 状态。0：无状态，1：有状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取EIPACL 创建时间
                      * @return CreatedAt EIPACL 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置EIPACL 创建时间
-                     * @param CreatedAt EIPACL 创建时间
+                     * @param _createdAt EIPACL 创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取EIPACL 已关联的 eip 数目
                      * @return EipNum EIPACL 已关联的 eip 数目
+                     * 
                      */
                     int64_t GetEipNum() const;
 
                     /**
                      * 设置EIPACL 已关联的 eip 数目
-                     * @param EipNum EIPACL 已关联的 eip 数目
+                     * @param _eipNum EIPACL 已关联的 eip 数目
+                     * 
                      */
                     void SetEipNum(const int64_t& _eipNum);
 
                     /**
                      * 判断参数 EipNum 是否已赋值
                      * @return EipNum 是否已赋值
+                     * 
                      */
                     bool EipNumHasBeenSet() const;
 
                     /**
                      * 获取出站规则
                      * @return OutRules 出站规则
+                     * 
                      */
                     std::vector<EipAclRule> GetOutRules() const;
 
                     /**
                      * 设置出站规则
-                     * @param OutRules 出站规则
+                     * @param _outRules 出站规则
+                     * 
                      */
                     void SetOutRules(const std::vector<EipAclRule>& _outRules);
 
                     /**
                      * 判断参数 OutRules 是否已赋值
                      * @return OutRules 是否已赋值
+                     * 
                      */
                     bool OutRulesHasBeenSet() const;
 
                     /**
                      * 获取入站规则
                      * @return InRules 入站规则
+                     * 
                      */
                     std::vector<EipAclRule> GetInRules() const;
 
                     /**
                      * 设置入站规则
-                     * @param InRules 入站规则
+                     * @param _inRules 入站规则
+                     * 
                      */
                     void SetInRules(const std::vector<EipAclRule>& _inRules);
 
                     /**
                      * 判断参数 InRules 是否已赋值
                      * @return InRules 是否已赋值
+                     * 
                      */
                     bool InRulesHasBeenSet() const;
 

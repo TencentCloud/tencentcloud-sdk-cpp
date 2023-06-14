@@ -59,20 +59,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Advice GetAdvice() const;
 
                     /**
                      * 设置建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Advice 建议
+                     * @param _advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvice(const Advice& _advice);
 
                     /**
                      * 判断参数 Advice 是否已赋值
                      * @return Advice 是否已赋值
+                     * 
                      */
                     bool AdviceHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Diagnosis 诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiagCertItem> GetDiagnosis() const;
 
                     /**
                      * 设置诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Diagnosis 诊断结果
+                     * @param _diagnosis 诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiagnosis(const std::vector<DiagCertItem>& _diagnosis);
 
                     /**
                      * 判断参数 Diagnosis 是否已赋值
                      * @return Diagnosis 是否已赋值
+                     * 
                      */
                     bool DiagnosisHasBeenSet() const;
 
@@ -103,110 +109,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseMedicalHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DiseaseMedicalHistory GetDiseaseMedicalHistory() const;
 
                     /**
                      * 设置疾病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseaseMedicalHistory 疾病史
+                     * @param _diseaseMedicalHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiseaseMedicalHistory(const DiseaseMedicalHistory& _diseaseMedicalHistory);
 
                     /**
                      * 判断参数 DiseaseMedicalHistory 是否已赋值
                      * @return DiseaseMedicalHistory 是否已赋值
+                     * 
                      */
                     bool DiseaseMedicalHistoryHasBeenSet() const;
 
                     /**
                      * 获取个人史
                      * @return PersonalMedicalHistory 个人史
+                     * 
                      */
                     PersonalMedicalHistory GetPersonalMedicalHistory() const;
 
                     /**
                      * 设置个人史
-                     * @param PersonalMedicalHistory 个人史
+                     * @param _personalMedicalHistory 个人史
+                     * 
                      */
                     void SetPersonalMedicalHistory(const PersonalMedicalHistory& _personalMedicalHistory);
 
                     /**
                      * 判断参数 PersonalMedicalHistory 是否已赋值
                      * @return PersonalMedicalHistory 是否已赋值
+                     * 
                      */
                     bool PersonalMedicalHistoryHasBeenSet() const;
 
                     /**
                      * 获取婚孕史
                      * @return ObstericalMedicalHistory 婚孕史
+                     * 
                      */
                     ObstericalMedicalHistory GetObstericalMedicalHistory() const;
 
                     /**
                      * 设置婚孕史
-                     * @param ObstericalMedicalHistory 婚孕史
+                     * @param _obstericalMedicalHistory 婚孕史
+                     * 
                      */
                     void SetObstericalMedicalHistory(const ObstericalMedicalHistory& _obstericalMedicalHistory);
 
                     /**
                      * 判断参数 ObstericalMedicalHistory 是否已赋值
                      * @return ObstericalMedicalHistory 是否已赋值
+                     * 
                      */
                     bool ObstericalMedicalHistoryHasBeenSet() const;
 
                     /**
                      * 获取家族史
                      * @return FamilyMedicalHistory 家族史
+                     * 
                      */
                     FamilyMedicalHistory GetFamilyMedicalHistory() const;
 
                     /**
                      * 设置家族史
-                     * @param FamilyMedicalHistory 家族史
+                     * @param _familyMedicalHistory 家族史
+                     * 
                      */
                     void SetFamilyMedicalHistory(const FamilyMedicalHistory& _familyMedicalHistory);
 
                     /**
                      * 判断参数 FamilyMedicalHistory 是否已赋值
                      * @return FamilyMedicalHistory 是否已赋值
+                     * 
                      */
                     bool FamilyMedicalHistoryHasBeenSet() const;
 
                     /**
                      * 获取月经史
                      * @return MenstrualMedicalHistory 月经史
+                     * 
                      */
                     MenstrualMedicalHistory GetMenstrualMedicalHistory() const;
 
                     /**
                      * 设置月经史
-                     * @param MenstrualMedicalHistory 月经史
+                     * @param _menstrualMedicalHistory 月经史
+                     * 
                      */
                     void SetMenstrualMedicalHistory(const MenstrualMedicalHistory& _menstrualMedicalHistory);
 
                     /**
                      * 判断参数 MenstrualMedicalHistory 是否已赋值
                      * @return MenstrualMedicalHistory 是否已赋值
+                     * 
                      */
                     bool MenstrualMedicalHistoryHasBeenSet() const;
 
                     /**
                      * 获取诊疗记录
                      * @return TreatmentRecord 诊疗记录
+                     * 
                      */
                     TreatmentRecord GetTreatmentRecord() const;
 
                     /**
                      * 设置诊疗记录
-                     * @param TreatmentRecord 诊疗记录
+                     * @param _treatmentRecord 诊疗记录
+                     * 
                      */
                     void SetTreatmentRecord(const TreatmentRecord& _treatmentRecord);
 
                     /**
                      * 判断参数 TreatmentRecord 是否已赋值
                      * @return TreatmentRecord 是否已赋值
+                     * 
                      */
                     bool TreatmentRecordHasBeenSet() const;
 

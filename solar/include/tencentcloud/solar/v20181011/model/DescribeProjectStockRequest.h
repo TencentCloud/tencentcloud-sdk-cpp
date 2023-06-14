@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取子项目id
                      * @return SubProjectId 子项目id
+                     * 
                      */
                     std::string GetSubProjectId() const;
 
                     /**
                      * 设置子项目id
-                     * @param SubProjectId 子项目id
+                     * @param _subProjectId 子项目id
+                     * 
                      */
                     void SetSubProjectId(const std::string& _subProjectId);
 
                     /**
                      * 判断参数 SubProjectId 是否已赋值
                      * @return SubProjectId 是否已赋值
+                     * 
                      */
                     bool SubProjectIdHasBeenSet() const;
 

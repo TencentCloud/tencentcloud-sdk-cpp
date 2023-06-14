@@ -86,6 +86,7 @@ EIP：云服务器的公网IP；
 CCN：云联网；
 LOCAL_GATEWAY：本地网关。
 </li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,7 +112,7 @@ EIP：云服务器的公网IP；
 CCN：云联网；
 LOCAL_GATEWAY：本地网关。
 </li>
-                     * @param Filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
 <li>route-table-id - String - （过滤条件）路由表实例ID。</li>
 <li>route-table-name - String - （过滤条件）路由表名称。</li>
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
@@ -132,66 +133,77 @@ EIP：云服务器的公网IP；
 CCN：云联网；
 LOCAL_GATEWAY：本地网关。
 </li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     std::vector<std::string> GetRouteTableIds() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param _routeTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     void SetRouteTableIds(const std::vector<std::string>& _routeTableIds);
 
                     /**
                      * 判断参数 RouteTableIds 是否已赋值
                      * @return RouteTableIds 是否已赋值
+                     * 
                      */
                     bool RouteTableIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取请求对象个数。
                      * @return Limit 请求对象个数。
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置请求对象个数。
-                     * @param Limit 请求对象个数。
+                     * @param _limit 请求对象个数。
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

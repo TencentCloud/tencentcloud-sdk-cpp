@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevGroups 设备所在分组信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DevGroupInfo> GetDevGroups() const;
 
                     /**
                      * 判断参数 DevGroups 是否已赋值
                      * @return DevGroups 是否已赋值
+                     * 
                      */
                     bool DevGroupsHasBeenSet() const;
 

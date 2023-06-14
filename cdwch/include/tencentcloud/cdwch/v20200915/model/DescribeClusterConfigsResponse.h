@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回实例的配置文件相关的信息
                      * @return ClusterConfList 返回实例的配置文件相关的信息
+                     * 
                      */
                     std::vector<ClusterConfigsInfoFromEMR> GetClusterConfList() const;
 
                     /**
                      * 判断参数 ClusterConfList 是否已赋值
                      * @return ClusterConfList 是否已赋值
+                     * 
                      */
                     bool ClusterConfListHasBeenSet() const;
 

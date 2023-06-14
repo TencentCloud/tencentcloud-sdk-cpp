@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取指定执行动作的请求数数据，如果指定类型为空，表示所有类型的请求总数
                      * @return Data 指定执行动作的请求数数据，如果指定类型为空，表示所有类型的请求总数
+                     * 
                      */
                     std::vector<TimestampData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取粒度
                      * @return Interval 粒度
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InterceptQpsData 执行动作为拦截类型QPS统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimestampData> GetInterceptQpsData() const;
 
                     /**
                      * 判断参数 InterceptQpsData 是否已赋值
                      * @return InterceptQpsData 是否已赋值
+                     * 
                      */
                     bool InterceptQpsDataHasBeenSet() const;
 
@@ -87,12 +93,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectQpsData 执行动作为重定向类型QPS统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimestampData> GetRedirectQpsData() const;
 
                     /**
                      * 判断参数 RedirectQpsData 是否已赋值
                      * @return RedirectQpsData 是否已赋值
+                     * 
                      */
                     bool RedirectQpsDataHasBeenSet() const;
 
@@ -101,12 +109,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObserveQpsData 执行动作为观察类型QPS统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimestampData> GetObserveQpsData() const;
 
                     /**
                      * 判断参数 ObserveQpsData 是否已赋值
                      * @return ObserveQpsData 是否已赋值
+                     * 
                      */
                     bool ObserveQpsDataHasBeenSet() const;
 

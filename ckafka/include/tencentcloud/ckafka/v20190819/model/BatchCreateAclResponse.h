@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取状态码
                      * @return Result 状态码
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

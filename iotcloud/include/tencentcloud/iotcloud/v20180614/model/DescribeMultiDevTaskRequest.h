@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID，由批量创建设备接口返回
                      * @return TaskId 任务 ID，由批量创建设备接口返回
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID，由批量创建设备接口返回
-                     * @param TaskId 任务 ID，由批量创建设备接口返回
+                     * @param _taskId 任务 ID，由批量创建设备接口返回
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID
                      * @return ProductId 产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID
-                     * @param ProductId 产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * @param _productId 产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

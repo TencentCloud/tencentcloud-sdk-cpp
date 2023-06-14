@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取商标名称
                      * @return BrandName 商标名称
+                     * 
                      */
                     std::string GetBrandName() const;
 
                     /**
                      * 设置商标名称
-                     * @param BrandName 商标名称
+                     * @param _brandName 商标名称
+                     * 
                      */
                     void SetBrandName(const std::string& _brandName);
 
                     /**
                      * 判断参数 BrandName 是否已赋值
                      * @return BrandName 是否已赋值
+                     * 
                      */
                     bool BrandNameHasBeenSet() const;
 
                     /**
                      * 获取商标证明
                      * @return BrandCertificateName 商标证明
+                     * 
                      */
                     std::string GetBrandCertificateName() const;
 
                     /**
                      * 设置商标证明
-                     * @param BrandCertificateName 商标证明
+                     * @param _brandCertificateName 商标证明
+                     * 
                      */
                     void SetBrandCertificateName(const std::string& _brandCertificateName);
 
                     /**
                      * 判断参数 BrandCertificateName 是否已赋值
                      * @return BrandCertificateName 是否已赋值
+                     * 
                      */
                     bool BrandCertificateNameHasBeenSet() const;
 
                     /**
                      * 获取商标审核状态 1-审核中 2-审核未通过 3-审核通过
                      * @return BrandStatus 商标审核状态 1-审核中 2-审核未通过 3-审核通过
+                     * 
                      */
                     int64_t GetBrandStatus() const;
 
                     /**
                      * 设置商标审核状态 1-审核中 2-审核未通过 3-审核通过
-                     * @param BrandStatus 商标审核状态 1-审核中 2-审核未通过 3-审核通过
+                     * @param _brandStatus 商标审核状态 1-审核中 2-审核未通过 3-审核通过
+                     * 
                      */
                     void SetBrandStatus(const int64_t& _brandStatus);
 
                     /**
                      * 判断参数 BrandStatus 是否已赋值
                      * @return BrandStatus 是否已赋值
+                     * 
                      */
                     bool BrandStatusHasBeenSet() const;
 
                     /**
                      * 获取审核说明
                      * @return BrandNote 审核说明
+                     * 
                      */
                     std::string GetBrandNote() const;
 
                     /**
                      * 设置审核说明
-                     * @param BrandNote 审核说明
+                     * @param _brandNote 审核说明
+                     * 
                      */
                     void SetBrandNote(const std::string& _brandNote);
 
                     /**
                      * 判断参数 BrandNote 是否已赋值
                      * @return BrandNote 是否已赋值
+                     * 
                      */
                     bool BrandNoteHasBeenSet() const;
 
                     /**
                      * 获取商标转让证明
                      * @return TransferName 商标转让证明
+                     * 
                      */
                     std::string GetTransferName() const;
 
                     /**
                      * 设置商标转让证明
-                     * @param TransferName 商标转让证明
+                     * @param _transferName 商标转让证明
+                     * 
                      */
                     void SetTransferName(const std::string& _transferName);
 
                     /**
                      * 判断参数 TransferName 是否已赋值
                      * @return TransferName 是否已赋值
+                     * 
                      */
                     bool TransferNameHasBeenSet() const;
 
                     /**
                      * 获取商标转让证明审核状态
                      * @return TransferStatus 商标转让证明审核状态
+                     * 
                      */
                     int64_t GetTransferStatus() const;
 
                     /**
                      * 设置商标转让证明审核状态
-                     * @param TransferStatus 商标转让证明审核状态
+                     * @param _transferStatus 商标转让证明审核状态
+                     * 
                      */
                     void SetTransferStatus(const int64_t& _transferStatus);
 
                     /**
                      * 判断参数 TransferStatus 是否已赋值
                      * @return TransferStatus 是否已赋值
+                     * 
                      */
                     bool TransferStatusHasBeenSet() const;
 
                     /**
                      * 获取审核说明 1-审核中 2-审核未通过 3-审核通过
                      * @return TransferNote 审核说明 1-审核中 2-审核未通过 3-审核通过
+                     * 
                      */
                     std::string GetTransferNote() const;
 
                     /**
                      * 设置审核说明 1-审核中 2-审核未通过 3-审核通过
-                     * @param TransferNote 审核说明 1-审核中 2-审核未通过 3-审核通过
+                     * @param _transferNote 审核说明 1-审核中 2-审核未通过 3-审核通过
+                     * 
                      */
                     void SetTransferNote(const std::string& _transferNote);
 
                     /**
                      * 判断参数 TransferNote 是否已赋值
                      * @return TransferNote 是否已赋值
+                     * 
                      */
                     bool TransferNoteHasBeenSet() const;
 

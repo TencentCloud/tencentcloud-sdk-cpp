@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contacts 联系信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     WhoisContact GetContacts() const;
 
                     /**
                      * 设置联系信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Contacts 联系信息
+                     * @param _contacts 联系信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContacts(const WhoisContact& _contacts);
 
                     /**
                      * 判断参数 Contacts 是否已赋值
                      * @return Contacts 是否已赋值
+                     * 
                      */
                     bool ContactsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationDate 域名注册时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreationDate() const;
 
                     /**
                      * 设置域名注册时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationDate 域名注册时间
+                     * @param _creationDate 域名注册时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationDate(const std::string& _creationDate);
 
                     /**
                      * 判断参数 CreationDate 是否已赋值
                      * @return CreationDate 是否已赋值
+                     * 
                      */
                     bool CreationDateHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpirationDate 域名到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置域名到期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpirationDate 域名到期时间
+                     * @param _expirationDate 域名到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
 
                     /**
                      * 判断参数 ExpirationDate 是否已赋值
                      * @return ExpirationDate 是否已赋值
+                     * 
                      */
                     bool ExpirationDateHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsQcloud 是否是在腾讯云注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsQcloud() const;
 
                     /**
                      * 设置是否是在腾讯云注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsQcloud 是否是在腾讯云注册的域名
+                     * @param _isQcloud 是否是在腾讯云注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsQcloud(const bool& _isQcloud);
 
                     /**
                      * 判断参数 IsQcloud 是否已赋值
                      * @return IsQcloud 是否已赋值
+                     * 
                      */
                     bool IsQcloudHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsQcloudOwner 是否当前操作帐号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsQcloudOwner() const;
 
                     /**
                      * 设置是否当前操作帐号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsQcloudOwner 是否当前操作帐号注册的域名
+                     * @param _isQcloudOwner 是否当前操作帐号注册的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsQcloudOwner(const bool& _isQcloudOwner);
 
                     /**
                      * 判断参数 IsQcloudOwner 是否已赋值
                      * @return IsQcloudOwner 是否已赋值
+                     * 
                      */
                     bool IsQcloudOwnerHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameServers 域名配置的NS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNameServers() const;
 
                     /**
                      * 设置域名配置的NS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NameServers 域名配置的NS
+                     * @param _nameServers 域名配置的NS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNameServers(const std::vector<std::string>& _nameServers);
 
                     /**
                      * 判断参数 NameServers 是否已赋值
                      * @return NameServers 是否已赋值
+                     * 
                      */
                     bool NameServersHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Raw Whois原始信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRaw() const;
 
                     /**
                      * 设置Whois原始信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Raw Whois原始信息
+                     * @param _raw Whois原始信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRaw(const std::vector<std::string>& _raw);
 
                     /**
                      * 判断参数 Raw 是否已赋值
                      * @return Raw 是否已赋值
+                     * 
                      */
                     bool RawHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Registrar 域名注册商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRegistrar() const;
 
                     /**
                      * 设置域名注册商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Registrar 域名注册商
+                     * @param _registrar 域名注册商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrar(const std::vector<std::string>& _registrar);
 
                     /**
                      * 判断参数 Registrar 是否已赋值
                      * @return Registrar 是否已赋值
+                     * 
                      */
                     bool RegistrarHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedDate 更新日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedDate() const;
 
                     /**
                      * 设置更新日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedDate 更新日期
+                     * @param _updatedDate 更新日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedDate(const std::string& _updatedDate);
 
                     /**
                      * 判断参数 UpdatedDate 是否已赋值
                      * @return UpdatedDate 是否已赋值
+                     * 
                      */
                     bool UpdatedDateHasBeenSet() const;
 

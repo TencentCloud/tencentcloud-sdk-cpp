@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]
                      * @return KeyPointType 代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]
+                     * 
                      */
                     std::string GetKeyPointType() const;
 
                     /**
                      * 设置代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]
-                     * @param KeyPointType 代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]
+                     * @param _keyPointType 代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]
+                     * 
                      */
                     void SetKeyPointType(const std::string& _keyPointType);
 
                     /**
                      * 判断参数 KeyPointType 是否已赋值
                      * @return KeyPointType 是否已赋值
+                     * 
                      */
                     bool KeyPointTypeHasBeenSet() const;
 
                     /**
                      * 获取人体关键点横坐标
                      * @return X 人体关键点横坐标
+                     * 
                      */
                     double GetX() const;
 
                     /**
                      * 设置人体关键点横坐标
-                     * @param X 人体关键点横坐标
+                     * @param _x 人体关键点横坐标
+                     * 
                      */
                     void SetX(const double& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取人体关键点纵坐标
                      * @return Y 人体关键点纵坐标
+                     * 
                      */
                     double GetY() const;
 
                     /**
                      * 设置人体关键点纵坐标
-                     * @param Y 人体关键点纵坐标
+                     * @param _y 人体关键点纵坐标
+                     * 
                      */
                     void SetY(const double& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
                     /**
                      * 获取关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
                      * @return BodyScore 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     * 
                      */
                     double GetBodyScore() const;
 
                     /**
                      * 设置关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
-                     * @param BodyScore 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     * @param _bodyScore 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     * 
                      */
                     void SetBodyScore(const double& _bodyScore);
 
                     /**
                      * 判断参数 BodyScore 是否已赋值
                      * @return BodyScore 是否已赋值
+                     * 
                      */
                     bool BodyScoreHasBeenSet() const;
 

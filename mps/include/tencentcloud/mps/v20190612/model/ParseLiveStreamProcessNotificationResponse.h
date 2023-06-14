@@ -57,24 +57,28 @@ namespace TencentCloud
 <li>AiReviewResult：内容审核结果；</li>
 <li>AiRecognitionResult：内容识别结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
+                     * 
                      */
                     std::string GetNotificationType() const;
 
                     /**
                      * 判断参数 NotificationType 是否已赋值
                      * @return NotificationType 是否已赋值
+                     * 
                      */
                     bool NotificationTypeHasBeenSet() const;
 
                     /**
                      * 获取视频处理任务 ID。
                      * @return TaskId 视频处理任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -83,12 +87,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessEofInfo 直播流处理错误信息，当 NotificationType 为 ProcessEof 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveStreamProcessErrorInfo GetProcessEofInfo() const;
 
                     /**
                      * 判断参数 ProcessEofInfo 是否已赋值
                      * @return ProcessEofInfo 是否已赋值
+                     * 
                      */
                     bool ProcessEofInfoHasBeenSet() const;
 
@@ -97,12 +103,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiReviewResultInfo 内容审核结果，当 NotificationType 为 AiReviewResult 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveStreamAiReviewResultInfo GetAiReviewResultInfo() const;
 
                     /**
                      * 判断参数 AiReviewResultInfo 是否已赋值
                      * @return AiReviewResultInfo 是否已赋值
+                     * 
                      */
                     bool AiReviewResultInfoHasBeenSet() const;
 
@@ -111,12 +119,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiRecognitionResultInfo 内容识别结果，当 NotificationType 为 AiRecognitionResult 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveStreamAiRecognitionResultInfo GetAiRecognitionResultInfo() const;
 
                     /**
                      * 判断参数 AiRecognitionResultInfo 是否已赋值
                      * @return AiRecognitionResultInfo 是否已赋值
+                     * 
                      */
                     bool AiRecognitionResultInfoHasBeenSet() const;
 
@@ -125,12 +135,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiAnalysisResultInfo 内容分析结果，当 NotificationType 为 AiAnalysisResult 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveStreamAiAnalysisResultInfo GetAiAnalysisResultInfo() const;
 
                     /**
                      * 判断参数 AiAnalysisResultInfo 是否已赋值
                      * @return AiAnalysisResultInfo 是否已赋值
+                     * 
                      */
                     bool AiAnalysisResultInfoHasBeenSet() const;
 
@@ -139,36 +151,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiQualityControlResultInfo 媒体质检结果，当 NotificationType 为 AiQualityControlResult 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveStreamAiQualityControlResultInfo GetAiQualityControlResultInfo() const;
 
                     /**
                      * 判断参数 AiQualityControlResultInfo 是否已赋值
                      * @return AiQualityControlResultInfo 是否已赋值
+                     * 
                      */
                     bool AiQualityControlResultInfoHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长1000个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长1000个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 

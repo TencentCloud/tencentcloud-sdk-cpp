@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取词典键值
                      * @return Key 词典键值
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置词典键值
-                     * @param Key 词典键值
+                     * @param _key 词典键值
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取词典名称
                      * @return Name 词典名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置词典名称
-                     * @param Name 词典名称
+                     * @param _name 词典名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取词典大小，单位B
                      * @return Size 词典大小，单位B
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置词典大小，单位B
-                     * @param Size 词典大小，单位B
+                     * @param _size 词典大小，单位B
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

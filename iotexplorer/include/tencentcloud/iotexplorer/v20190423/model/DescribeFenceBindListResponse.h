@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取围栏绑定的产品设备列表
                      * @return List 围栏绑定的产品设备列表
+                     * 
                      */
                     std::vector<FenceBindProductItem> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取围栏绑定的设备总数
                      * @return Total 围栏绑定的设备总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

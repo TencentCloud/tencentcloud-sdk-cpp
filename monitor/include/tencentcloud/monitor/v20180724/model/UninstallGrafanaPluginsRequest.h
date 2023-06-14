@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
                      * @return PluginIds 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
+                     * 
                      */
                     std::vector<std::string> GetPluginIds() const;
 
                     /**
                      * 设置插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
-                     * @param PluginIds 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
+                     * @param _pluginIds 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
+                     * 
                      */
                     void SetPluginIds(const std::vector<std::string>& _pluginIds);
 
                     /**
                      * 判断参数 PluginIds 是否已赋值
                      * @return PluginIds 是否已赋值
+                     * 
                      */
                     bool PluginIdsHasBeenSet() const;
 
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-abcdefg
                      * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefg
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-abcdefg
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefg
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefg
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

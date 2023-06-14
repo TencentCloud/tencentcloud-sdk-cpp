@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据迁移任务ID
                      * @return JobId 数据迁移任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置数据迁移任务ID
-                     * @param JobId 数据迁移任务ID
+                     * @param _jobId 数据迁移任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync
                      * @return CompleteMode 完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync
+                     * 
                      */
                     std::string GetCompleteMode() const;
 
                     /**
                      * 设置完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync
-                     * @param CompleteMode 完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync
+                     * @param _completeMode 完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync
+                     * 
                      */
                     void SetCompleteMode(const std::string& _completeMode);
 
                     /**
                      * 判断参数 CompleteMode 是否已赋值
                      * @return CompleteMode 是否已赋值
+                     * 
                      */
                     bool CompleteModeHasBeenSet() const;
 

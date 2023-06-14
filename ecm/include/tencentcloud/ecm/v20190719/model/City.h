@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取城市ID
                      * @return CityId 城市ID
+                     * 
                      */
                     std::string GetCityId() const;
 
                     /**
                      * 设置城市ID
-                     * @param CityId 城市ID
+                     * @param _cityId 城市ID
+                     * 
                      */
                     void SetCityId(const std::string& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 
                     /**
                      * 获取城市名称
                      * @return CityName 城市名称
+                     * 
                      */
                     std::string GetCityName() const;
 
                     /**
                      * 设置城市名称
-                     * @param CityName 城市名称
+                     * @param _cityName 城市名称
+                     * 
                      */
                     void SetCityName(const std::string& _cityName);
 
                     /**
                      * 判断参数 CityName 是否已赋值
                      * @return CityName 是否已赋值
+                     * 
                      */
                     bool CityNameHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseInfo license响应信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LicenseInfo GetLicenseInfo() const;
 
                     /**
                      * 判断参数 LicenseInfo 是否已赋值
                      * @return LicenseInfo 是否已赋值
+                     * 
                      */
                     bool LicenseInfoHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取修改模板参数响应
                      * @return ModifyTemplateStatus 修改模板参数响应
+                     * 
                      */
                     ModifyTemplateStatus GetModifyTemplateStatus() const;
 
                     /**
                      * 判断参数 ModifyTemplateStatus 是否已赋值
                      * @return ModifyTemplateStatus 是否已赋值
+                     * 
                      */
                     bool ModifyTemplateStatusHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     std::vector<std::string> GetRouteTableIds() const;
 
                     /**
                      * 设置路由表实例ID，例如：rtb-azd4dt1c。
-                     * @param RouteTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param _routeTableIds 路由表实例ID，例如：rtb-azd4dt1c。
+                     * 
                      */
                     void SetRouteTableIds(const std::vector<std::string>& _routeTableIds);
 
                     /**
                      * 判断参数 RouteTableIds 是否已赋值
                      * @return RouteTableIds 是否已赋值
+                     * 
                      */
                     bool RouteTableIdsHasBeenSet() const;
 
@@ -76,6 +79,7 @@ route-table-id-like - String - （模糊过滤条件）路由表实例ID。
 route-table-name-like - String - （模糊过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 zone - String - （过滤条件）可用区。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -87,91 +91,105 @@ route-table-id-like - String - （模糊过滤条件）路由表实例ID。
 route-table-name-like - String - （模糊过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 zone - String - （过滤条件）可用区。
-                     * @param Filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定RouteTableIds和Filters。
 route-table-id - String - （过滤条件）路由表实例ID。
 route-table-name - String - （过滤条件）路由表名称。
 route-table-id-like - String - （模糊过滤条件）路由表实例ID。
 route-table-name-like - String - （模糊过滤条件）路由表名称。
 vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。
 zone - String - （过滤条件）可用区。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取初始行的偏移量，默认为0。
                      * @return Offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置初始行的偏移量，默认为0。
-                     * @param Offset 初始行的偏移量，默认为0。
+                     * @param _offset 初始行的偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页行数，默认为20。
                      * @return Limit 每页行数，默认为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页行数，默认为20。
-                     * @param Limit 每页行数，默认为20。
+                     * @param _limit 每页行数，默认为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序字段, 支持按“RouteTableId”，“VpcId”, "RouteTableName", "CreateTime"
                      * @return OrderField 排序字段, 支持按“RouteTableId”，“VpcId”, "RouteTableName", "CreateTime"
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段, 支持按“RouteTableId”，“VpcId”, "RouteTableName", "CreateTime"
-                     * @param OrderField 排序字段, 支持按“RouteTableId”，“VpcId”, "RouteTableName", "CreateTime"
+                     * @param _orderField 排序字段, 支持按“RouteTableId”，“VpcId”, "RouteTableName", "CreateTime"
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方向, “asc”、“desc”
                      * @return OrderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置排序方向, “asc”、“desc”
-                     * @param OrderDirection 排序方向, “asc”、“desc”
+                     * @param _orderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

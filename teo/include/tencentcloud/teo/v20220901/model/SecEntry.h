@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取查询维度值。
                      * @return Key 查询维度值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置查询维度值。
-                     * @param Key 查询维度值。
+                     * @param _key 查询维度值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取查询维度下详细数据。
                      * @return Value 查询维度下详细数据。
+                     * 
                      */
                     std::vector<SecEntryValue> GetValue() const;
 
                     /**
                      * 设置查询维度下详细数据。
-                     * @param Value 查询维度下详细数据。
+                     * @param _value 查询维度下详细数据。
+                     * 
                      */
                     void SetValue(const std::vector<SecEntryValue>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

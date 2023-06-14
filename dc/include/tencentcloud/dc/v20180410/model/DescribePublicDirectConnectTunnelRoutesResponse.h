@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取互联网通道路由列表
                      * @return Routes 互联网通道路由列表
+                     * 
                      */
                     std::vector<DirectConnectTunnelRoute> GetRoutes() const;
 
                     /**
                      * 判断参数 Routes 是否已赋值
                      * @return Routes 是否已赋值
+                     * 
                      */
                     bool RoutesHasBeenSet() const;
 
                     /**
                      * 获取记录总数
                      * @return TotalCount 记录总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

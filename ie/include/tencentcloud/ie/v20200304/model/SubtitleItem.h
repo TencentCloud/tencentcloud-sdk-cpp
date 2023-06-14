@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取语音识别结果
                      * @return Id 语音识别结果
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置语音识别结果
-                     * @param Id 语音识别结果
+                     * @param _id 语音识别结果
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zh 中文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZh() const;
 
                     /**
                      * 设置中文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zh 中文翻译结果
+                     * @param _zh 中文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZh(const std::string& _zh);
 
                     /**
                      * 判断参数 Zh 是否已赋值
                      * @return Zh 是否已赋值
+                     * 
                      */
                     bool ZhHasBeenSet() const;
 
@@ -91,110 +97,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return En 英文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEn() const;
 
                     /**
                      * 设置英文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param En 英文翻译结果
+                     * @param _en 英文翻译结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEn(const std::string& _en);
 
                     /**
                      * 判断参数 En 是否已赋值
                      * @return En 是否已赋值
+                     * 
                      */
                     bool EnHasBeenSet() const;
 
                     /**
                      * 获取语句起始时间戳PTS(ms)
                      * @return StartPts 语句起始时间戳PTS(ms)
+                     * 
                      */
                     uint64_t GetStartPts() const;
 
                     /**
                      * 设置语句起始时间戳PTS(ms)
-                     * @param StartPts 语句起始时间戳PTS(ms)
+                     * @param _startPts 语句起始时间戳PTS(ms)
+                     * 
                      */
                     void SetStartPts(const uint64_t& _startPts);
 
                     /**
                      * 判断参数 StartPts 是否已赋值
                      * @return StartPts 是否已赋值
+                     * 
                      */
                     bool StartPtsHasBeenSet() const;
 
                     /**
                      * 获取语句结束时间戳PTS(ms)
                      * @return EndPts 语句结束时间戳PTS(ms)
+                     * 
                      */
                     uint64_t GetEndPts() const;
 
                     /**
                      * 设置语句结束时间戳PTS(ms)
-                     * @param EndPts 语句结束时间戳PTS(ms)
+                     * @param _endPts 语句结束时间戳PTS(ms)
+                     * 
                      */
                     void SetEndPts(const uint64_t& _endPts);
 
                     /**
                      * 判断参数 EndPts 是否已赋值
                      * @return EndPts 是否已赋值
+                     * 
                      */
                     bool EndPtsHasBeenSet() const;
 
                     /**
                      * 获取字符串形式的起始结束时间
                      * @return Period 字符串形式的起始结束时间
+                     * 
                      */
                     std::string GetPeriod() const;
 
                     /**
                      * 设置字符串形式的起始结束时间
-                     * @param Period 字符串形式的起始结束时间
+                     * @param _period 字符串形式的起始结束时间
+                     * 
                      */
                     void SetPeriod(const std::string& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取结果的置信度（百分制）
                      * @return Confidence 结果的置信度（百分制）
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置结果的置信度（百分制）
-                     * @param Confidence 结果的置信度（百分制）
+                     * @param _confidence 结果的置信度（百分制）
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取当前语句是否结束
                      * @return EndFlag 当前语句是否结束
+                     * 
                      */
                     bool GetEndFlag() const;
 
                     /**
                      * 设置当前语句是否结束
-                     * @param EndFlag 当前语句是否结束
+                     * @param _endFlag 当前语句是否结束
+                     * 
                      */
                     void SetEndFlag(const bool& _endFlag);
 
                     /**
                      * 判断参数 EndFlag 是否已赋值
                      * @return EndFlag 是否已赋值
+                     * 
                      */
                     bool EndFlagHasBeenSet() const;
 
@@ -203,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PuncEndTs 语句分割时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPuncEndTs() const;
 
                     /**
                      * 设置语句分割时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PuncEndTs 语句分割时间戳
+                     * @param _puncEndTs 语句分割时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPuncEndTs(const std::string& _puncEndTs);
 
                     /**
                      * 判断参数 PuncEndTs 是否已赋值
                      * @return PuncEndTs 是否已赋值
+                     * 
                      */
                     bool PuncEndTsHasBeenSet() const;
 

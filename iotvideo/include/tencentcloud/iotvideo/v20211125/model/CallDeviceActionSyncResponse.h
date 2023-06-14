@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientToken 调用Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputParams 输出参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutputParams() const;
 
                     /**
                      * 判断参数 OutputParams 是否已赋值
                      * @return OutputParams 是否已赋值
+                     * 
                      */
                     bool OutputParamsHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 返回状态，当设备不在线等部分情况，会通过该 Status 返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

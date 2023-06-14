@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainLogs 日志链接列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DomainLogs> GetDomainLogs() const;
 
                     /**
                      * 判断参数 DomainLogs 是否已赋值
                      * @return DomainLogs 是否已赋值
+                     * 
                      */
                     bool DomainLogsHasBeenSet() const;
 
                     /**
                      * 获取日志链接总条数。
                      * @return TotalCount 日志链接总条数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

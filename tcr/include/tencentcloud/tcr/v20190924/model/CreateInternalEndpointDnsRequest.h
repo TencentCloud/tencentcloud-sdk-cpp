@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取tcr实例id
                      * @return InstanceId tcr实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置tcr实例id
-                     * @param InstanceId tcr实例id
+                     * @param _instanceId tcr实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络id
                      * @return VpcId 私有网络id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络id
-                     * @param VpcId 私有网络id
+                     * @param _vpcId 私有网络id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取tcr内网访问链路ip
                      * @return EniLBIp tcr内网访问链路ip
+                     * 
                      */
                     std::string GetEniLBIp() const;
 
                     /**
                      * 设置tcr内网访问链路ip
-                     * @param EniLBIp tcr内网访问链路ip
+                     * @param _eniLBIp tcr内网访问链路ip
+                     * 
                      */
                     void SetEniLBIp(const std::string& _eniLBIp);
 
                     /**
                      * 判断参数 EniLBIp 是否已赋值
                      * @return EniLBIp 是否已赋值
+                     * 
                      */
                     bool EniLBIpHasBeenSet() const;
 
@@ -103,6 +112,7 @@ false: 使用vpc域名
                      * @return UsePublicDomain true：为默认域名，公网域名一致
 false: 使用vpc域名
 默认为vpc域名
+                     * 
                      */
                     bool GetUsePublicDomain() const;
 
@@ -110,51 +120,59 @@ false: 使用vpc域名
                      * 设置true：为默认域名，公网域名一致
 false: 使用vpc域名
 默认为vpc域名
-                     * @param UsePublicDomain true：为默认域名，公网域名一致
+                     * @param _usePublicDomain true：为默认域名，公网域名一致
 false: 使用vpc域名
 默认为vpc域名
+                     * 
                      */
                     void SetUsePublicDomain(const bool& _usePublicDomain);
 
                     /**
                      * 判断参数 UsePublicDomain 是否已赋值
                      * @return UsePublicDomain 是否已赋值
+                     * 
                      */
                     bool UsePublicDomainHasBeenSet() const;
 
                     /**
                      * 获取解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
                      * @return RegionName 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
-                     * @param RegionName 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     * @param _regionName 解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取请求的地域ID，用于实例复制地域
                      * @return RegionId 请求的地域ID，用于实例复制地域
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置请求的地域ID，用于实例复制地域
-                     * @param RegionId 请求的地域ID，用于实例复制地域
+                     * @param _regionId 请求的地域ID，用于实例复制地域
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 

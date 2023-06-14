@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
                      * @return DBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 设置实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
-                     * @param DBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * @param _dBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取所属新项目的ID
                      * @return ProjectId 所属新项目的ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置所属新项目的ID
-                     * @param ProjectId 所属新项目的ID
+                     * @param _projectId 所属新项目的ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

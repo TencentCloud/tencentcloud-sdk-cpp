@@ -48,18 +48,21 @@ namespace TencentCloud
                     /**
                      * 获取待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
                      * @return InstanceId 待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
-                     * @param InstanceId 待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * @param _instanceId 待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
 <li> ADD: 新增分片 </li> 
  <li> EXPAND: 升级实例中的已有分片 </li> 
  <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>
+                     * 
                      */
                     std::string GetUpgradeType() const;
 
@@ -80,124 +84,144 @@ namespace TencentCloud
 <li> ADD: 新增分片 </li> 
  <li> EXPAND: 升级实例中的已有分片 </li> 
  <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>
-                     * @param UpgradeType 升级类型，取值范围: 
+                     * @param _upgradeType 升级类型，取值范围: 
 <li> ADD: 新增分片 </li> 
  <li> EXPAND: 升级实例中的已有分片 </li> 
  <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>
+                     * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
 
                     /**
                      * 判断参数 UpgradeType 是否已赋值
                      * @return UpgradeType 是否已赋值
+                     * 
                      */
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
                      * 获取新增分片配置，当UpgradeType为ADD时生效。
                      * @return AddShardConfig 新增分片配置，当UpgradeType为ADD时生效。
+                     * 
                      */
                     AddShardConfig GetAddShardConfig() const;
 
                     /**
                      * 设置新增分片配置，当UpgradeType为ADD时生效。
-                     * @param AddShardConfig 新增分片配置，当UpgradeType为ADD时生效。
+                     * @param _addShardConfig 新增分片配置，当UpgradeType为ADD时生效。
+                     * 
                      */
                     void SetAddShardConfig(const AddShardConfig& _addShardConfig);
 
                     /**
                      * 判断参数 AddShardConfig 是否已赋值
                      * @return AddShardConfig 是否已赋值
+                     * 
                      */
                     bool AddShardConfigHasBeenSet() const;
 
                     /**
                      * 获取扩容分片配置，当UpgradeType为EXPAND时生效。
                      * @return ExpandShardConfig 扩容分片配置，当UpgradeType为EXPAND时生效。
+                     * 
                      */
                     ExpandShardConfig GetExpandShardConfig() const;
 
                     /**
                      * 设置扩容分片配置，当UpgradeType为EXPAND时生效。
-                     * @param ExpandShardConfig 扩容分片配置，当UpgradeType为EXPAND时生效。
+                     * @param _expandShardConfig 扩容分片配置，当UpgradeType为EXPAND时生效。
+                     * 
                      */
                     void SetExpandShardConfig(const ExpandShardConfig& _expandShardConfig);
 
                     /**
                      * 判断参数 ExpandShardConfig 是否已赋值
                      * @return ExpandShardConfig 是否已赋值
+                     * 
                      */
                     bool ExpandShardConfigHasBeenSet() const;
 
                     /**
                      * 获取切分分片配置，当UpgradeType为SPLIT时生效。
                      * @return SplitShardConfig 切分分片配置，当UpgradeType为SPLIT时生效。
+                     * 
                      */
                     SplitShardConfig GetSplitShardConfig() const;
 
                     /**
                      * 设置切分分片配置，当UpgradeType为SPLIT时生效。
-                     * @param SplitShardConfig 切分分片配置，当UpgradeType为SPLIT时生效。
+                     * @param _splitShardConfig 切分分片配置，当UpgradeType为SPLIT时生效。
+                     * 
                      */
                     void SetSplitShardConfig(const SplitShardConfig& _splitShardConfig);
 
                     /**
                      * 判断参数 SplitShardConfig 是否已赋值
                      * @return SplitShardConfig 是否已赋值
+                     * 
                      */
                     bool SplitShardConfigHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券进行支付，默认不使用。
                      * @return AutoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券进行支付，默认不使用。
-                     * @param AutoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * @param _autoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券ID列表，目前仅支持指定一张代金券。
                      * @return VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券ID列表，目前仅支持指定一张代金券。
-                     * @param VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * @param _voucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
                      * 获取变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
                      * @return Zones 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
-                     * @param Zones 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     * @param _zones 变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区
+                     * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 

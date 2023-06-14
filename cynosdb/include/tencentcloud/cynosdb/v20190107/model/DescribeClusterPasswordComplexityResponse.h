@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordDictionary 数据字典参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordDictionary() const;
 
                     /**
                      * 判断参数 ValidatePasswordDictionary 是否已赋值
                      * @return ValidatePasswordDictionary 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordDictionaryHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordLength 密码长度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordLength() const;
 
                     /**
                      * 判断参数 ValidatePasswordLength 是否已赋值
                      * @return ValidatePasswordLength 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordLengthHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordMixedCaseCount 大小写敏感字符个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordMixedCaseCount() const;
 
                     /**
                      * 判断参数 ValidatePasswordMixedCaseCount 是否已赋值
                      * @return ValidatePasswordMixedCaseCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordMixedCaseCountHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordNumberCount 数字个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordNumberCount() const;
 
                     /**
                      * 判断参数 ValidatePasswordNumberCount 是否已赋值
                      * @return ValidatePasswordNumberCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordNumberCountHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordPolicy 密码等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordPolicy() const;
 
                     /**
                      * 判断参数 ValidatePasswordPolicy 是否已赋值
                      * @return ValidatePasswordPolicy 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordPolicyHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordSpecialCharCount 特殊字符个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ParamInfo GetValidatePasswordSpecialCharCount() const;
 
                     /**
                      * 判断参数 ValidatePasswordSpecialCharCount 是否已赋值
                      * @return ValidatePasswordSpecialCharCount 是否已赋值
+                     * 
                      */
                     bool ValidatePasswordSpecialCharCountHasBeenSet() const;
 

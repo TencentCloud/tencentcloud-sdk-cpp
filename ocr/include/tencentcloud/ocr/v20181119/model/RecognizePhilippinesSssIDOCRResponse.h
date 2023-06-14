@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取人像照片Base64后的结果
                      * @return HeadPortrait 人像照片Base64后的结果
+                     * 
                      */
                     TextDetectionResult GetHeadPortrait() const;
 
                     /**
                      * 判断参数 HeadPortrait 是否已赋值
                      * @return HeadPortrait 是否已赋值
+                     * 
                      */
                     bool HeadPortraitHasBeenSet() const;
 
                     /**
                      * 获取编号
                      * @return LicenseNumber 编号
+                     * 
                      */
                     TextDetectionResult GetLicenseNumber() const;
 
                     /**
                      * 判断参数 LicenseNumber 是否已赋值
                      * @return LicenseNumber 是否已赋值
+                     * 
                      */
                     bool LicenseNumberHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return FullName 姓名
+                     * 
                      */
                     TextDetectionResult GetFullName() const;
 
                     /**
                      * 判断参数 FullName 是否已赋值
                      * @return FullName 是否已赋值
+                     * 
                      */
                     bool FullNameHasBeenSet() const;
 
                     /**
                      * 获取生日
                      * @return Birthday 生日
+                     * 
                      */
                     TextDetectionResult GetBirthday() const;
 
                     /**
                      * 判断参数 Birthday 是否已赋值
                      * @return Birthday 是否已赋值
+                     * 
                      */
                     bool BirthdayHasBeenSet() const;
 

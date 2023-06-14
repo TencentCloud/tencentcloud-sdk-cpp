@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageRegion 资源包使用地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageRegion() const;
 
                     /**
                      * 设置资源包使用地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageRegion 资源包使用地域
+                     * @param _packageRegion 资源包使用地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
 
                     /**
                      * 判断参数 PackageRegion 是否已赋值
                      * @return PackageRegion 是否已赋值
+                     * 
                      */
                     bool PackageRegionHasBeenSet() const;
 
@@ -77,6 +80,7 @@ DISK-存储资源包
 CCU-计算资源包
 DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageType() const;
 
@@ -85,16 +89,18 @@ DISK-存储资源包
 CCU-计算资源包
 DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 资源包类型
+                     * @param _packageType 资源包类型
 CCU-计算资源包
 DISK-存储资源包
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
@@ -105,6 +111,7 @@ base-基础版本，common-通用版本，enterprise-企业版本
                      * @return PackageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
@@ -112,15 +119,17 @@ base-基础版本，common-通用版本，enterprise-企业版本
                      * 设置资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageVersion 资源包版本
+                     * @param _packageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 
@@ -129,20 +138,23 @@ base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinPackageSpec 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMinPackageSpec() const;
 
                     /**
                      * 设置当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinPackageSpec 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
+                     * @param _minPackageSpec 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinPackageSpec(const double& _minPackageSpec);
 
                     /**
                      * 判断参数 MinPackageSpec 是否已赋值
                      * @return MinPackageSpec 是否已赋值
+                     * 
                      */
                     bool MinPackageSpecHasBeenSet() const;
 
@@ -151,20 +163,23 @@ base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPackageSpec 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetMaxPackageSpec() const;
 
                     /**
                      * 设置当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxPackageSpec 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
+                     * @param _maxPackageSpec 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxPackageSpec(const double& _maxPackageSpec);
 
                     /**
                      * 判断参数 MaxPackageSpec 是否已赋值
                      * @return MaxPackageSpec 是否已赋值
+                     * 
                      */
                     bool MaxPackageSpecHasBeenSet() const;
 
@@ -173,20 +188,23 @@ base-基础版本，common-通用版本，enterprise-企业版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireDay 资源包有效期，单位:天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExpireDay() const;
 
                     /**
                      * 设置资源包有效期，单位:天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireDay 资源包有效期，单位:天
+                     * @param _expireDay 资源包有效期，单位:天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireDay(const int64_t& _expireDay);
 
                     /**
                      * 判断参数 ExpireDay 是否已赋值
                      * @return ExpireDay 是否已赋值
+                     * 
                      */
                     bool ExpireDayHasBeenSet() const;
 

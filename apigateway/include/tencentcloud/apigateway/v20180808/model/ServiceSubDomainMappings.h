@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取是否使用默认路径映射，为 True 表示使用默认路径映射；为 False 的话，表示使用自定义路径映射，此时 PathMappingSet 不为空。
                      * @return IsDefaultMapping 是否使用默认路径映射，为 True 表示使用默认路径映射；为 False 的话，表示使用自定义路径映射，此时 PathMappingSet 不为空。
+                     * 
                      */
                     bool GetIsDefaultMapping() const;
 
                     /**
                      * 设置是否使用默认路径映射，为 True 表示使用默认路径映射；为 False 的话，表示使用自定义路径映射，此时 PathMappingSet 不为空。
-                     * @param IsDefaultMapping 是否使用默认路径映射，为 True 表示使用默认路径映射；为 False 的话，表示使用自定义路径映射，此时 PathMappingSet 不为空。
+                     * @param _isDefaultMapping 是否使用默认路径映射，为 True 表示使用默认路径映射；为 False 的话，表示使用自定义路径映射，此时 PathMappingSet 不为空。
+                     * 
                      */
                     void SetIsDefaultMapping(const bool& _isDefaultMapping);
 
                     /**
                      * 判断参数 IsDefaultMapping 是否已赋值
                      * @return IsDefaultMapping 是否已赋值
+                     * 
                      */
                     bool IsDefaultMappingHasBeenSet() const;
 
                     /**
                      * 获取自定义路径映射列表。
                      * @return PathMappingSet 自定义路径映射列表。
+                     * 
                      */
                     std::vector<PathMapping> GetPathMappingSet() const;
 
                     /**
                      * 设置自定义路径映射列表。
-                     * @param PathMappingSet 自定义路径映射列表。
+                     * @param _pathMappingSet 自定义路径映射列表。
+                     * 
                      */
                     void SetPathMappingSet(const std::vector<PathMapping>& _pathMappingSet);
 
                     /**
                      * 判断参数 PathMappingSet 是否已赋值
                      * @return PathMappingSet 是否已赋值
+                     * 
                      */
                     bool PathMappingSetHasBeenSet() const;
 

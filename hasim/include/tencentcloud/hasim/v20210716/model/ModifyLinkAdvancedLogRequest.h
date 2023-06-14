@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云兔ID
                      * @return LinkID 云兔ID
+                     * 
                      */
                     int64_t GetLinkID() const;
 
                     /**
                      * 设置云兔ID
-                     * @param LinkID 云兔ID
+                     * @param _linkID 云兔ID
+                     * 
                      */
                     void SetLinkID(const int64_t& _linkID);
 
                     /**
                      * 判断参数 LinkID 是否已赋值
                      * @return LinkID 是否已赋值
+                     * 
                      */
                     bool LinkIDHasBeenSet() const;
 
                     /**
                      * 获取是否激活高级日志 0 关闭 1激活
                      * @return IsAdLog 是否激活高级日志 0 关闭 1激活
+                     * 
                      */
                     int64_t GetIsAdLog() const;
 
                     /**
                      * 设置是否激活高级日志 0 关闭 1激活
-                     * @param IsAdLog 是否激活高级日志 0 关闭 1激活
+                     * @param _isAdLog 是否激活高级日志 0 关闭 1激活
+                     * 
                      */
                     void SetIsAdLog(const int64_t& _isAdLog);
 
                     /**
                      * 判断参数 IsAdLog 是否已赋值
                      * @return IsAdLog 是否已赋值
+                     * 
                      */
                     bool IsAdLogHasBeenSet() const;
 

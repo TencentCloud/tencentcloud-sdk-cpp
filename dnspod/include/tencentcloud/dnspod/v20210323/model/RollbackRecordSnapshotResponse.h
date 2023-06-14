@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取回滚任务 ID
                      * @return JobId 回滚任务 ID
+                     * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

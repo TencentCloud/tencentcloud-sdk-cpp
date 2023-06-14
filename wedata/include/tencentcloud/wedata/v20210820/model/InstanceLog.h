@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取数据时间
                      * @return CurRunDate 数据时间
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间
-                     * @param CurRunDate 数据时间
+                     * @param _curRunDate 数据时间
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tries 尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTries() const;
 
                     /**
                      * 设置尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tries 尝试运行次数
+                     * @param _tries 尝试运行次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTries(const std::string& _tries);
 
                     /**
                      * 判断参数 Tries 是否已赋值
                      * @return Tries 是否已赋值
+                     * 
                      */
                     bool TriesHasBeenSet() const;
 
@@ -109,110 +118,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdate 日志更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastUpdate() const;
 
                     /**
                      * 设置日志更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastUpdate 日志更新时间
+                     * @param _lastUpdate 日志更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastUpdate(const std::string& _lastUpdate);
 
                     /**
                      * 判断参数 LastUpdate 是否已赋值
                      * @return LastUpdate 是否已赋值
+                     * 
                      */
                     bool LastUpdateHasBeenSet() const;
 
                     /**
                      * 获取日志所在节点
                      * @return BrokerIp 日志所在节点
+                     * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
                      * 设置日志所在节点
-                     * @param BrokerIp 日志所在节点
+                     * @param _brokerIp 日志所在节点
+                     * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
 
                     /**
                      * 判断参数 BrokerIp 是否已赋值
                      * @return BrokerIp 是否已赋值
+                     * 
                      */
                     bool BrokerIpHasBeenSet() const;
 
                     /**
                      * 获取文件名  含全路径
                      * @return OriginFileName 文件名  含全路径
+                     * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
                      * 设置文件名  含全路径
-                     * @param OriginFileName 文件名  含全路径
+                     * @param _originFileName 文件名  含全路径
+                     * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
 
                     /**
                      * 判断参数 OriginFileName 是否已赋值
                      * @return OriginFileName 是否已赋值
+                     * 
                      */
                     bool OriginFileNameHasBeenSet() const;
 
                     /**
                      * 获取日志创建时间
                      * @return CreateTime 日志创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置日志创建时间
-                     * @param CreateTime 日志创建时间
+                     * @param _createTime 日志创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取实例日志类型, run: 运行; kill: 终止
                      * @return InstanceLogType 实例日志类型, run: 运行; kill: 终止
+                     * 
                      */
                     std::string GetInstanceLogType() const;
 
                     /**
                      * 设置实例日志类型, run: 运行; kill: 终止
-                     * @param InstanceLogType 实例日志类型, run: 运行; kill: 终止
+                     * @param _instanceLogType 实例日志类型, run: 运行; kill: 终止
+                     * 
                      */
                     void SetInstanceLogType(const std::string& _instanceLogType);
 
                     /**
                      * 判断参数 InstanceLogType 是否已赋值
                      * @return InstanceLogType 是否已赋值
+                     * 
                      */
                     bool InstanceLogTypeHasBeenSet() const;
 
                     /**
                      * 获取运行耗时
                      * @return CostTime 运行耗时
+                     * 
                      */
                     double GetCostTime() const;
 
                     /**
                      * 设置运行耗时
-                     * @param CostTime 运行耗时
+                     * @param _costTime 运行耗时
+                     * 
                      */
                     void SetCostTime(const double& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 

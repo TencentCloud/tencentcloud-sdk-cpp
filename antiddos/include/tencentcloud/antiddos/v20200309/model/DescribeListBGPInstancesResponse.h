@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取高防包资产实例列表
                      * @return InstanceList 高防包资产实例列表
+                     * 
                      */
                     std::vector<BGPInstance> GetInstanceList() const;
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
                      * @return InstanceList 是否已赋值
+                     * 
                      */
                     bool InstanceListHasBeenSet() const;
 

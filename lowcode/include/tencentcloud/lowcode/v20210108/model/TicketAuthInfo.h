@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取授权用户
                      * @return AuthUser 授权用户
+                     * 
                      */
                     std::string GetAuthUser() const;
 
                     /**
                      * 设置授权用户
-                     * @param AuthUser 授权用户
+                     * @param _authUser 授权用户
+                     * 
                      */
                     void SetAuthUser(const std::string& _authUser);
 
                     /**
                      * 判断参数 AuthUser 是否已赋值
                      * @return AuthUser 是否已赋值
+                     * 
                      */
                     bool AuthUserHasBeenSet() const;
 

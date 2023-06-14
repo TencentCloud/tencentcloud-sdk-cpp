@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取查询指定Quuid主机的信息
                      * @return Quuid 查询指定Quuid主机的信息
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置查询指定Quuid主机的信息
-                     * @param Quuid 查询指定Quuid主机的信息
+                     * @param _quuid 查询指定Quuid主机的信息
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -100,6 +103,7 @@ namespace TencentCloud
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
 <li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -123,7 +127,7 @@ namespace TencentCloud
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
 <li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Name - String - 是否必填：否 - 进程名</li>
 <li>User - String - 是否必填：否 - 进程用户</li>
@@ -142,84 +146,98 @@ namespace TencentCloud
 <li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>
 <li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc升序 或 desc降序
                      * @return Order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式，asc升序 或 desc降序
-                     * @param Order 排序方式，asc升序 或 desc降序
+                     * @param _order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式：[FirstTime|StartTime]
                      * @return By 排序方式：[FirstTime|StartTime]
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序方式：[FirstTime|StartTime]
-                     * @param By 排序方式：[FirstTime|StartTime]
+                     * @param _by 排序方式：[FirstTime|StartTime]
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

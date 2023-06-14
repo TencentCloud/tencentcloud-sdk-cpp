@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取保险单据识别结果，具体内容请点击左侧链接。
                      * @return InsuranceBillInfos 保险单据识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<InsuranceBillInfo> GetInsuranceBillInfos() const;
 
                     /**
                      * 判断参数 InsuranceBillInfos 是否已赋值
                      * @return InsuranceBillInfos 是否已赋值
+                     * 
                      */
                     bool InsuranceBillInfosHasBeenSet() const;
 

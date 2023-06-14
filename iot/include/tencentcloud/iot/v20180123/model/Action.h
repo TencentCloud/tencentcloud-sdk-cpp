@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic 转发至topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TopicAction GetTopic() const;
 
                     /**
                      * 设置转发至topic
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Topic 转发至topic
+                     * @param _topic 转发至topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopic(const TopicAction& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 转发至第三发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServiceAction GetService() const;
 
                     /**
                      * 设置转发至第三发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Service 转发至第三发
+                     * @param _service 转发至第三发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetService(const ServiceAction& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ckafka 转发至第三发Ckafka
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CkafkaAction GetCkafka() const;
 
                     /**
                      * 设置转发至第三发Ckafka
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ckafka 转发至第三发Ckafka
+                     * @param _ckafka 转发至第三发Ckafka
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCkafka(const CkafkaAction& _ckafka);
 
                     /**
                      * 判断参数 Ckafka 是否已赋值
                      * @return Ckafka 是否已赋值
+                     * 
                      */
                     bool CkafkaHasBeenSet() const;
 

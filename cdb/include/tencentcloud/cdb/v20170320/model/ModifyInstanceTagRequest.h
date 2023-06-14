@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取要增加或修改的标签。
                      * @return ReplaceTags 要增加或修改的标签。
+                     * 
                      */
                     std::vector<TagInfo> GetReplaceTags() const;
 
                     /**
                      * 设置要增加或修改的标签。
-                     * @param ReplaceTags 要增加或修改的标签。
+                     * @param _replaceTags 要增加或修改的标签。
+                     * 
                      */
                     void SetReplaceTags(const std::vector<TagInfo>& _replaceTags);
 
                     /**
                      * 判断参数 ReplaceTags 是否已赋值
                      * @return ReplaceTags 是否已赋值
+                     * 
                      */
                     bool ReplaceTagsHasBeenSet() const;
 
                     /**
                      * 获取要删除的标签。
                      * @return DeleteTags 要删除的标签。
+                     * 
                      */
                     std::vector<TagInfo> GetDeleteTags() const;
 
                     /**
                      * 设置要删除的标签。
-                     * @param DeleteTags 要删除的标签。
+                     * @param _deleteTags 要删除的标签。
+                     * 
                      */
                     void SetDeleteTags(const std::vector<TagInfo>& _deleteTags);
 
                     /**
                      * 判断参数 DeleteTags 是否已赋值
                      * @return DeleteTags 是否已赋值
+                     * 
                      */
                     bool DeleteTagsHasBeenSet() const;
 

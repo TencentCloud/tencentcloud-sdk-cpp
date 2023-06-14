@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取IP地址模板集合对象。
                      * @return AddressTemplateGroup IP地址模板集合对象。
+                     * 
                      */
                     AddressTemplateGroup GetAddressTemplateGroup() const;
 
                     /**
                      * 判断参数 AddressTemplateGroup 是否已赋值
                      * @return AddressTemplateGroup 是否已赋值
+                     * 
                      */
                     bool AddressTemplateGroupHasBeenSet() const;
 

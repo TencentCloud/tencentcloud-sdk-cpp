@@ -65,6 +65,7 @@ namespace TencentCloud
 名称、单价、数量、金额、医保内、医保外等。
 【医疗发票】
 姓名、性别、住院时间、收费项目、金额、合计等。
+                     * 
                      */
                     std::string GetName() const;
 
@@ -78,7 +79,7 @@ namespace TencentCloud
 名称、单价、数量、金额、医保内、医保外等。
 【医疗发票】
 姓名、性别、住院时间、收费项目、金额、合计等。
-                     * @param Name 识别出的字段名称(关键字)，支持以下字段：
+                     * @param _name 识别出的字段名称(关键字)，支持以下字段：
 【病案首页】
 姓名、性别、出生日期、出院诊断、疾病编码、入院病情等。
 【费用清单】
@@ -87,30 +88,35 @@ namespace TencentCloud
 名称、单价、数量、金额、医保内、医保外等。
 【医疗发票】
 姓名、性别、住院时间、收费项目、金额、合计等。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -470,6 +470,135 @@ OrganizationClient::DescribeOrganizationAuthNodeOutcomeCallable OrganizationClie
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationFinancialByMemberOutcome OrganizationClient::DescribeOrganizationFinancialByMember(const DescribeOrganizationFinancialByMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationFinancialByMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationFinancialByMemberResponse rsp = DescribeOrganizationFinancialByMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationFinancialByMemberOutcome(rsp);
+        else
+            return DescribeOrganizationFinancialByMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationFinancialByMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationFinancialByMemberAsync(const DescribeOrganizationFinancialByMemberRequest& request, const DescribeOrganizationFinancialByMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationFinancialByMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationFinancialByMemberOutcomeCallable OrganizationClient::DescribeOrganizationFinancialByMemberCallable(const DescribeOrganizationFinancialByMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationFinancialByMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationFinancialByMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribeOrganizationFinancialByMonthOutcome OrganizationClient::DescribeOrganizationFinancialByMonth(const DescribeOrganizationFinancialByMonthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationFinancialByMonth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationFinancialByMonthResponse rsp = DescribeOrganizationFinancialByMonthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationFinancialByMonthOutcome(rsp);
+        else
+            return DescribeOrganizationFinancialByMonthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationFinancialByMonthOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationFinancialByMonthAsync(const DescribeOrganizationFinancialByMonthRequest& request, const DescribeOrganizationFinancialByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationFinancialByMonth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationFinancialByMonthOutcomeCallable OrganizationClient::DescribeOrganizationFinancialByMonthCallable(const DescribeOrganizationFinancialByMonthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationFinancialByMonthOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationFinancialByMonth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribeOrganizationFinancialByProductOutcome OrganizationClient::DescribeOrganizationFinancialByProduct(const DescribeOrganizationFinancialByProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationFinancialByProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationFinancialByProductResponse rsp = DescribeOrganizationFinancialByProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationFinancialByProductOutcome(rsp);
+        else
+            return DescribeOrganizationFinancialByProductOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationFinancialByProductOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationFinancialByProductAsync(const DescribeOrganizationFinancialByProductRequest& request, const DescribeOrganizationFinancialByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationFinancialByProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationFinancialByProductOutcomeCallable OrganizationClient::DescribeOrganizationFinancialByProductCallable(const DescribeOrganizationFinancialByProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationFinancialByProductOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationFinancialByProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationMemberAuthAccountsOutcome OrganizationClient::DescribeOrganizationMemberAuthAccounts(const DescribeOrganizationMemberAuthAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationMemberAuthAccounts");

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取成功更新的自定义人物Id
                      * @return PersonId 成功更新的自定义人物Id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

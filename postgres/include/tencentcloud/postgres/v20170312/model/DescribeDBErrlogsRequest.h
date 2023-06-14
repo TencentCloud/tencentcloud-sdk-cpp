@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。	
                      * @return DBInstanceId 实例ID。	
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID。	
-                     * @param DBInstanceId 实例ID。	
+                     * @param _dBInstanceId 实例ID。	
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
                      * @return StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
-                     * @param StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * @param _startTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，形如2018-01-01 00:00:00。	
                      * @return EndTime 查询结束时间，形如2018-01-01 00:00:00。	
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，形如2018-01-01 00:00:00。	
-                     * @param EndTime 查询结束时间，形如2018-01-01 00:00:00。	
+                     * @param _endTime 查询结束时间，形如2018-01-01 00:00:00。	
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取数据库名字。
                      * @return DatabaseName 数据库名字。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名字。
-                     * @param DatabaseName 数据库名字。
+                     * @param _databaseName 数据库名字。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字。
                      * @return SearchKeys 搜索关键字。
+                     * 
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
                      * 设置搜索关键字。
-                     * @param SearchKeys 搜索关键字。
+                     * @param _searchKeys 搜索关键字。
+                     * 
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
 
                     /**
                      * 判断参数 SearchKeys 是否已赋值
                      * @return SearchKeys 是否已赋值
+                     * 
                      */
                     bool SearchKeysHasBeenSet() const;
 
                     /**
                      * 获取每页显示数量，取值范围为1-100。默认值为50。	
                      * @return Limit 每页显示数量，取值范围为1-100。默认值为50。	
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页显示数量，取值范围为1-100。默认值为50。	
-                     * @param Limit 每页显示数量，取值范围为1-100。默认值为50。	
+                     * @param _limit 每页显示数量，取值范围为1-100。默认值为50。	
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，从0开始。默认值为0。	
                      * @return Offset 数据偏移量，从0开始。默认值为0。	
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，从0开始。默认值为0。	
-                     * @param Offset 数据偏移量，从0开始。默认值为0。	
+                     * @param _offset 数据偏移量，从0开始。默认值为0。	
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

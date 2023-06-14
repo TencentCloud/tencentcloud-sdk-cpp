@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取对接方汇出指令编号
                      * @return TransactionId 对接方汇出指令编号
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置对接方汇出指令编号
-                     * @param TransactionId 对接方汇出指令编号
+                     * @param _transactionId 对接方汇出指令编号
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
                     /**
                      * 获取受理状态
                      * @return Status 受理状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置受理状态
-                     * @param Status 受理状态
+                     * @param _status 受理状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务
                      * @return TaskType 任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务
-                     * @param TaskType 任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务
+                     * @param _taskType 任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。
                      * @return FailureTolerance 容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。
+                     * 
                      */
                     std::string GetFailureTolerance() const;
 
                     /**
                      * 设置容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。
-                     * @param FailureTolerance 容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。
+                     * @param _failureTolerance 容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。
+                     * 
                      */
                     void SetFailureTolerance(const std::string& _failureTolerance);
 
                     /**
                      * 判断参数 FailureTolerance 是否已赋值
                      * @return FailureTolerance 是否已赋值
+                     * 
                      */
                     bool FailureToleranceHasBeenSet() const;
 
                     /**
                      * 获取base64加密后的SQL语句，用";"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行
                      * @return SQL base64加密后的SQL语句，用";"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行
+                     * 
                      */
                     std::string GetSQL() const;
 
                     /**
                      * 设置base64加密后的SQL语句，用";"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行
-                     * @param SQL base64加密后的SQL语句，用";"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行
+                     * @param _sQL base64加密后的SQL语句，用";"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行
+                     * 
                      */
                     void SetSQL(const std::string& _sQL);
 
                     /**
                      * 判断参数 SQL 是否已赋值
                      * @return SQL 是否已赋值
+                     * 
                      */
                     bool SQLHasBeenSet() const;
 
                     /**
                      * 获取任务的配置信息，当前仅支持SparkSQLTask任务。
                      * @return Config 任务的配置信息，当前仅支持SparkSQLTask任务。
+                     * 
                      */
                     std::vector<KVPair> GetConfig() const;
 
                     /**
                      * 设置任务的配置信息，当前仅支持SparkSQLTask任务。
-                     * @param Config 任务的配置信息，当前仅支持SparkSQLTask任务。
+                     * @param _config 任务的配置信息，当前仅支持SparkSQLTask任务。
+                     * 
                      */
                     void SetConfig(const std::vector<KVPair>& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
                     /**
                      * 获取任务的用户自定义参数信息
                      * @return Params 任务的用户自定义参数信息
+                     * 
                      */
                     std::vector<KVPair> GetParams() const;
 
                     /**
                      * 设置任务的用户自定义参数信息
-                     * @param Params 任务的用户自定义参数信息
+                     * @param _params 任务的用户自定义参数信息
+                     * 
                      */
                     void SetParams(const std::vector<KVPair>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 

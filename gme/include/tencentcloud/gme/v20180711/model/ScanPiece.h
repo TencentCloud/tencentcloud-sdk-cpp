@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DumpUrl 流检测时返回，音频转存地址，保留30min
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDumpUrl() const;
 
                     /**
                      * 设置流检测时返回，音频转存地址，保留30min
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DumpUrl 流检测时返回，音频转存地址，保留30min
+                     * @param _dumpUrl 流检测时返回，音频转存地址，保留30min
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDumpUrl(const std::string& _dumpUrl);
 
                     /**
                      * 判断参数 DumpUrl 是否已赋值
                      * @return DumpUrl 是否已赋值
+                     * 
                      */
                     bool DumpUrlHasBeenSet() const;
 
                     /**
                      * 获取是否违规
                      * @return HitFlag 是否违规
+                     * 
                      */
                     bool GetHitFlag() const;
 
                     /**
                      * 设置是否违规
-                     * @param HitFlag 是否违规
+                     * @param _hitFlag 是否违规
+                     * 
                      */
                     void SetHitFlag(const bool& _hitFlag);
 
                     /**
                      * 判断参数 HitFlag 是否已赋值
                      * @return HitFlag 是否已赋值
+                     * 
                      */
                     bool HitFlagHasBeenSet() const;
 
@@ -92,38 +98,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainType 违规主要类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainType() const;
 
                     /**
                      * 设置违规主要类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainType 违规主要类型
+                     * @param _mainType 违规主要类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainType(const std::string& _mainType);
 
                     /**
                      * 判断参数 MainType 是否已赋值
                      * @return MainType 是否已赋值
+                     * 
                      */
                     bool MainTypeHasBeenSet() const;
 
                     /**
                      * 获取语音检测详情
                      * @return ScanDetail 语音检测详情
+                     * 
                      */
                     std::vector<ScanDetail> GetScanDetail() const;
 
                     /**
                      * 设置语音检测详情
-                     * @param ScanDetail 语音检测详情
+                     * @param _scanDetail 语音检测详情
+                     * 
                      */
                     void SetScanDetail(const std::vector<ScanDetail>& _scanDetail);
 
                     /**
                      * 判断参数 ScanDetail 是否已赋值
                      * @return ScanDetail 是否已赋值
+                     * 
                      */
                     bool ScanDetailHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomId gme实时语音房间ID，透传任务传入时的RoomId
+                     * @param _roomId gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId gme实时语音用户ID，透传任务传入时的OpenId
+                     * @param _openId gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Info 备注
+                     * @param _info 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInfo(const std::string& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
@@ -198,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 流检测时分片在流中的偏移时间，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置流检测时分片在流中的偏移时间，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Offset 流检测时分片在流中的偏移时间，单位毫秒
+                     * @param _offset 流检测时分片在流中的偏移时间，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -220,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 流检测时分片时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置流检测时分片时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 流检测时分片时长
+                     * @param _duration 流检测时分片时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -242,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PieceStartTime 分片开始检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPieceStartTime() const;
 
                     /**
                      * 设置分片开始检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PieceStartTime 分片开始检测时间
+                     * @param _pieceStartTime 分片开始检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPieceStartTime(const uint64_t& _pieceStartTime);
 
                     /**
                      * 判断参数 PieceStartTime 是否已赋值
                      * @return PieceStartTime 是否已赋值
+                     * 
                      */
                     bool PieceStartTimeHasBeenSet() const;
 

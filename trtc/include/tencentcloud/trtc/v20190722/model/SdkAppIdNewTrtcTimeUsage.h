@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取SdkAppId的值。
                      * @return SdkAppId SdkAppId的值。
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置SdkAppId的值。
-                     * @param SdkAppId SdkAppId的值。
+                     * @param _sdkAppId SdkAppId的值。
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取统计的时间点数据。
                      * @return TrtcTimeUsages 统计的时间点数据。
+                     * 
                      */
                     std::vector<TrtcTimeNewUsage> GetTrtcTimeUsages() const;
 
                     /**
                      * 设置统计的时间点数据。
-                     * @param TrtcTimeUsages 统计的时间点数据。
+                     * @param _trtcTimeUsages 统计的时间点数据。
+                     * 
                      */
                     void SetTrtcTimeUsages(const std::vector<TrtcTimeNewUsage>& _trtcTimeUsages);
 
                     /**
                      * 判断参数 TrtcTimeUsages 是否已赋值
                      * @return TrtcTimeUsages 是否已赋值
+                     * 
                      */
                     bool TrtcTimeUsagesHasBeenSet() const;
 
                     /**
                      * 获取统计的麦下用量的时间点数据。
                      * @return AudienceTrtcTimeUsages 统计的麦下用量的时间点数据。
+                     * 
                      */
                     std::vector<TrtcTimeNewUsage> GetAudienceTrtcTimeUsages() const;
 
                     /**
                      * 设置统计的麦下用量的时间点数据。
-                     * @param AudienceTrtcTimeUsages 统计的麦下用量的时间点数据。
+                     * @param _audienceTrtcTimeUsages 统计的麦下用量的时间点数据。
+                     * 
                      */
                     void SetAudienceTrtcTimeUsages(const std::vector<TrtcTimeNewUsage>& _audienceTrtcTimeUsages);
 
                     /**
                      * 判断参数 AudienceTrtcTimeUsages 是否已赋值
                      * @return AudienceTrtcTimeUsages 是否已赋值
+                     * 
                      */
                     bool AudienceTrtcTimeUsagesHasBeenSet() const;
 

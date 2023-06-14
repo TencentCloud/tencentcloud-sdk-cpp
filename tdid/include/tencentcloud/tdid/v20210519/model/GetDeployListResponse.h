@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取合约总数
                      * @return AllCount 合约总数
+                     * 
                      */
                     uint64_t GetAllCount() const;
 
                     /**
                      * 判断参数 AllCount 是否已赋值
                      * @return AllCount 是否已赋值
+                     * 
                      */
                     bool AllCountHasBeenSet() const;
 
                     /**
                      * 获取合约部署列表
                      * @return Result 合约部署列表
+                     * 
                      */
                     std::vector<Contract> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

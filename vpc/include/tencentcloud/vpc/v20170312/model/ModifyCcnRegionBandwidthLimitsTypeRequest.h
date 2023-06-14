@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云联网实例ID。
                      * @return CcnId 云联网实例ID。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网实例ID。
-                     * @param CcnId 云联网实例ID。
+                     * @param _ccnId 云联网实例ID。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
                     /**
                      * 获取云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。
                      * @return BandwidthLimitType 云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。
+                     * 
                      */
                     std::string GetBandwidthLimitType() const;
 
                     /**
                      * 设置云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。
-                     * @param BandwidthLimitType 云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。
+                     * @param _bandwidthLimitType 云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。
+                     * 
                      */
                     void SetBandwidthLimitType(const std::string& _bandwidthLimitType);
 
                     /**
                      * 判断参数 BandwidthLimitType 是否已赋值
                      * @return BandwidthLimitType 是否已赋值
+                     * 
                      */
                     bool BandwidthLimitTypeHasBeenSet() const;
 

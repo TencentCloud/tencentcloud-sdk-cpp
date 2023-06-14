@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
                      * @return ExposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * 
                      */
                     std::string GetExposeType() const;
 
                     /**
                      * 设置暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
-                     * @param ExposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * @param _exposeType 暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）
+                     * 
                      */
                     void SetExposeType(const std::string& _exposeType);
 
                     /**
                      * 判断参数 ExposeType 是否已赋值
                      * @return ExposeType 是否已赋值
+                     * 
                      */
                     bool ExposeTypeHasBeenSet() const;
 
                     /**
                      * 获取暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip
                      * @return Ip 暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip
-                     * @param Ip 暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip
+                     * @param _ip 暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 暴露方式为 VPC 时，打通的私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置暴露方式为 VPC 时，打通的私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 暴露方式为 VPC 时，打通的私有网络Id
+                     * @param _vpcId 暴露方式为 VPC 时，打通的私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 暴露方式为 VPC 时，打通的子网Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置暴露方式为 VPC 时，打通的子网Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 暴露方式为 VPC 时，打通的子网Id
+                     * @param _subnetId 暴露方式为 VPC 时，打通的子网Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GateWayServiceId GATEWAY 服务id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGateWayServiceId() const;
 
                     /**
                      * 设置GATEWAY 服务id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GateWayServiceId GATEWAY 服务id，ExposeType = GATEWAY 时返回
+                     * @param _gateWayServiceId GATEWAY 服务id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGateWayServiceId(const std::string& _gateWayServiceId);
 
                     /**
                      * 判断参数 GateWayServiceId 是否已赋值
                      * @return GateWayServiceId 是否已赋值
+                     * 
                      */
                     bool GateWayServiceIdHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GateWayAPIId GATEWAY api id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGateWayAPIId() const;
 
                     /**
                      * 设置GATEWAY api id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GateWayAPIId GATEWAY api id，ExposeType = GATEWAY 时返回
+                     * @param _gateWayAPIId GATEWAY api id，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGateWayAPIId(const std::string& _gateWayAPIId);
 
                     /**
                      * 判断参数 GateWayAPIId 是否已赋值
                      * @return GateWayAPIId 是否已赋值
+                     * 
                      */
                     bool GateWayAPIIdHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GateWayDomain GATEWAY domain，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGateWayDomain() const;
 
                     /**
                      * 设置GATEWAY domain，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GateWayDomain GATEWAY domain，ExposeType = GATEWAY 时返回
+                     * @param _gateWayDomain GATEWAY domain，ExposeType = GATEWAY 时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGateWayDomain(const std::string& _gateWayDomain);
 
                     /**
                      * 判断参数 GateWayDomain 是否已赋值
                      * @return GateWayDomain 是否已赋值
+                     * 
                      */
                     bool GateWayDomainHasBeenSet() const;
 

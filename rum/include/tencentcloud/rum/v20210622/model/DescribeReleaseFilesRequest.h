@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目 id
                      * @return ProjectID 项目 id
+                     * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 设置项目 id
-                     * @param ProjectID 项目 id
+                     * @param _projectID 项目 id
+                     * 
                      */
                     void SetProjectID(const int64_t& _projectID);
 
                     /**
                      * 判断参数 ProjectID 是否已赋值
                      * @return ProjectID 是否已赋值
+                     * 
                      */
                     bool ProjectIDHasBeenSet() const;
 
                     /**
                      * 获取文件版本
                      * @return FileVersion 文件版本
+                     * 
                      */
                     std::string GetFileVersion() const;
 
                     /**
                      * 设置文件版本
-                     * @param FileVersion 文件版本
+                     * @param _fileVersion 文件版本
+                     * 
                      */
                     void SetFileVersion(const std::string& _fileVersion);
 
                     /**
                      * 判断参数 FileVersion 是否已赋值
                      * @return FileVersion 是否已赋值
+                     * 
                      */
                     bool FileVersionHasBeenSet() const;
 

@@ -48,60 +48,70 @@ namespace TencentCloud
                     /**
                      * 获取总计文章数量
                      * @return NewsCount 总计文章数量
+                     * 
                      */
                     uint64_t GetNewsCount() const;
 
                     /**
                      * 判断参数 NewsCount 是否已赋值
                      * @return NewsCount 是否已赋值
+                     * 
                      */
                     bool NewsCountHasBeenSet() const;
 
                     /**
                      * 获取总计来源数量
                      * @return FromCount 总计来源数量
+                     * 
                      */
                     uint64_t GetFromCount() const;
 
                     /**
                      * 判断参数 FromCount 是否已赋值
                      * @return FromCount 是否已赋值
+                     * 
                      */
                     bool FromCountHasBeenSet() const;
 
                     /**
                      * 获取总计疑似负面数量
                      * @return AdverseCount 总计疑似负面数量
+                     * 
                      */
                     uint64_t GetAdverseCount() const;
 
                     /**
                      * 判断参数 AdverseCount 是否已赋值
                      * @return AdverseCount 是否已赋值
+                     * 
                      */
                     bool AdverseCountHasBeenSet() const;
 
                     /**
                      * 获取文章列表
                      * @return NewsSet 文章列表
+                     * 
                      */
                     std::vector<IndustryNews> GetNewsSet() const;
 
                     /**
                      * 判断参数 NewsSet 是否已赋值
                      * @return NewsSet 是否已赋值
+                     * 
                      */
                     bool NewsSetHasBeenSet() const;
 
                     /**
                      * 获取按天统计的数量列表
                      * @return DateCountSet 按天统计的数量列表
+                     * 
                      */
                     std::vector<DateCount> GetDateCountSet() const;
 
                     /**
                      * 判断参数 DateCountSet 是否已赋值
                      * @return DateCountSet 是否已赋值
+                     * 
                      */
                     bool DateCountSetHasBeenSet() const;
 

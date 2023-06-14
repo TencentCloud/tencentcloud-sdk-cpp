@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 等级 1、2、3、4、5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置等级 1、2、3、4、5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 等级 1、2、3、4、5
+                     * @param _level 等级 1、2、3、4、5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scale 占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScale() const;
 
                     /**
                      * 设置占比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scale 占比
+                     * @param _scale 占比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScale(const int64_t& _scale);
 
                     /**
                      * 判断参数 Scale 是否已赋值
                      * @return Scale 是否已赋值
+                     * 
                      */
                     bool ScaleHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNumber 表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTableNumber() const;
 
                     /**
                      * 设置表数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableNumber 表数量
+                     * @param _tableNumber 表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableNumber(const int64_t& _tableNumber);
 
                     /**
                      * 判断参数 TableNumber 是否已赋值
                      * @return TableNumber 是否已赋值
+                     * 
                      */
                     bool TableNumberHasBeenSet() const;
 

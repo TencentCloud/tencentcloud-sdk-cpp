@@ -67,6 +67,7 @@ namespace TencentCloud
 <li>timeout：检测超时时长；</li>
 <li>not_browser：不合法浏览器；</li>
 <li>is_bot：Bot客户端。</li>
+                     * 
                      */
                     std::string GetResult() const;
 
@@ -81,7 +82,7 @@ namespace TencentCloud
 <li>timeout：检测超时时长；</li>
 <li>not_browser：不合法浏览器；</li>
 <li>is_bot：Bot客户端。</li>
-                     * @param Result 校验结果，取值有：
+                     * @param _result 校验结果，取值有：
 <li>invalid：不合法Cookie；</li>
 <li>cookie_empty：末携带Cookie或Cookie己过期；</li>
 <li>js_empty：客户端末启用JS（末完成检测）；</li>
@@ -91,12 +92,14 @@ namespace TencentCloud
 <li>timeout：检测超时时长；</li>
 <li>not_browser：不合法浏览器；</li>
 <li>is_bot：Bot客户端。</li>
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -113,6 +116,7 @@ namespace TencentCloud
 <li>silence：静默；</li>
 <li>shortdelay：（短时间）等待后响应；</li>
 <li>longdelay：（长时间）等待后响应。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -123,18 +127,20 @@ namespace TencentCloud
 <li>silence：静默；</li>
 <li>shortdelay：（短时间）等待后响应；</li>
 <li>longdelay：（长时间）等待后响应。</li>
-                     * @param Action 处罚动作，取值有：
+                     * @param _action 处罚动作，取值有：
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
 <li>silence：静默；</li>
 <li>shortdelay：（短时间）等待后响应；</li>
 <li>longdelay：（长时间）等待后响应。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 

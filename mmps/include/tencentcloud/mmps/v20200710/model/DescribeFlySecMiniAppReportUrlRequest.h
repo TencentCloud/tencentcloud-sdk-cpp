@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskID 任务id
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskID 任务id
+                     * @param _taskID 任务id
+                     * 
                      */
                     void SetTaskID(const std::string& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
                     /**
                      * 获取小程序appid
                      * @return MiniAppID 小程序appid
+                     * 
                      */
                     std::string GetMiniAppID() const;
 
                     /**
                      * 设置小程序appid
-                     * @param MiniAppID 小程序appid
+                     * @param _miniAppID 小程序appid
+                     * 
                      */
                     void SetMiniAppID(const std::string& _miniAppID);
 
                     /**
                      * 判断参数 MiniAppID 是否已赋值
                      * @return MiniAppID 是否已赋值
+                     * 
                      */
                     bool MiniAppIDHasBeenSet() const;
 
                     /**
                      * 获取诊断方式 1:基础诊断，2:深度诊断
                      * @return Mode 诊断方式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置诊断方式 1:基础诊断，2:深度诊断
-                     * @param Mode 诊断方式 1:基础诊断，2:深度诊断
+                     * @param _mode 诊断方式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
                      * @return ReportType 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
+                     * 
                      */
                     int64_t GetReportType() const;
 
                     /**
                      * 设置诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
-                     * @param ReportType 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
+                     * @param _reportType 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
+                     * 
                      */
                     void SetReportType(const int64_t& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取密钥ID
                      * @return SecretId 密钥ID
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置密钥ID
-                     * @param SecretId 密钥ID
+                     * @param _secretId 密钥ID
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间(时间戳)
                      * @return CreateTime 创建时间(时间戳)
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间(时间戳)
-                     * @param CreateTime 创建时间(时间戳)
+                     * @param _createTime 创建时间(时间戳)
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取状态(2:有效, 3:禁用, 4:已删除)
                      * @return Status 状态(2:有效, 3:禁用, 4:已删除)
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态(2:有效, 3:禁用, 4:已删除)
-                     * @param Status 状态(2:有效, 3:禁用, 4:已删除)
+                     * @param _status 状态(2:有效, 3:禁用, 4:已删除)
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

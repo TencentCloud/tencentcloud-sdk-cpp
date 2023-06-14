@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取规则Id值
                      * @return Id 规则Id值
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则Id值
-                     * @param Id 规则Id值
+                     * @param _id 规则Id值
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取修改前执行顺序
                      * @return OrderIndex 修改前执行顺序
+                     * 
                      */
                     uint64_t GetOrderIndex() const;
 
                     /**
                      * 设置修改前执行顺序
-                     * @param OrderIndex 修改前执行顺序
+                     * @param _orderIndex 修改前执行顺序
+                     * 
                      */
                     void SetOrderIndex(const uint64_t& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
                     /**
                      * 获取修改后执行顺序
                      * @return NewOrderIndex 修改后执行顺序
+                     * 
                      */
                     uint64_t GetNewOrderIndex() const;
 
                     /**
                      * 设置修改后执行顺序
-                     * @param NewOrderIndex 修改后执行顺序
+                     * @param _newOrderIndex 修改后执行顺序
+                     * 
                      */
                     void SetNewOrderIndex(const uint64_t& _newOrderIndex);
 
                     /**
                      * 判断参数 NewOrderIndex 是否已赋值
                      * @return NewOrderIndex 是否已赋值
+                     * 
                      */
                     bool NewOrderIndexHasBeenSet() const;
 

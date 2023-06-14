@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID。
                      * @return TaskId 任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID。
-                     * @param TaskId 任务 ID。
+                     * @param _taskId 任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
                      * @return Status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -81,15 +85,17 @@ namespace TencentCloud
                      * 设置任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-                     * @param Status 任务流状态，取值：
+                     * @param _status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -100,6 +106,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -107,51 +114,59 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码
+                     * @param _errCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取制作媒体文件任务进度，取值范围 [0-100] 。
                      * @return Progress 制作媒体文件任务进度，取值范围 [0-100] 。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置制作媒体文件任务进度，取值范围 [0-100] 。
-                     * @param Progress 制作媒体文件任务进度，取值范围 [0-100] 。
+                     * @param _progress 制作媒体文件任务进度，取值范围 [0-100] 。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
@@ -160,20 +175,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 制作媒体文件任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComposeMediaTaskInput GetInput() const;
 
                     /**
                      * 设置制作媒体文件任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Input 制作媒体文件任务的输入。
+                     * @param _input 制作媒体文件任务的输入。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInput(const ComposeMediaTaskInput& _input);
 
                     /**
                      * 判断参数 Input 是否已赋值
                      * @return Input 是否已赋值
+                     * 
                      */
                     bool InputHasBeenSet() const;
 
@@ -182,20 +200,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 制作媒体文件任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComposeMediaTaskOutput GetOutput() const;
 
                     /**
                      * 设置制作媒体文件任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 制作媒体文件任务的输出。
+                     * @param _output 制作媒体文件任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutput(const ComposeMediaTaskOutput& _output);
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 
@@ -204,56 +225,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 输出视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置输出视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 输出视频的元信息。
+                     * @param _metaData 输出视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 

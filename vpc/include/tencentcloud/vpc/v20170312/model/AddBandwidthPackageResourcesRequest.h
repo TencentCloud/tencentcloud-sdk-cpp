@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
                      * @return ResourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
-                     * @param ResourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
+                     * @param _resourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取带宽包唯一标识ID，形如'bwp-xxxx'
                      * @return BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置带宽包唯一标识ID，形如'bwp-xxxx'
-                     * @param BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * @param _bandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
                      * 获取带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
                      * @return NetworkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
                      * 设置带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
-                     * @param NetworkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * @param _networkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
                      * 获取资源类型，包括'Address', 'LoadBalance'
                      * @return ResourceType 资源类型，包括'Address', 'LoadBalance'
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型，包括'Address', 'LoadBalance'
-                     * @param ResourceType 资源类型，包括'Address', 'LoadBalance'
+                     * @param _resourceType 资源类型，包括'Address', 'LoadBalance'
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
                      * @return Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
-                     * @param Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     * @param _protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

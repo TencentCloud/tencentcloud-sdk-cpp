@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取名字，供搜索
                      * @return Name 名字，供搜索
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字，供搜索
-                     * @param Name 名字，供搜索
+                     * @param _name 名字，供搜索
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取文件类型
                      * @return FileType 文件类型
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型
-                     * @param FileType 文件类型
+                     * @param _fileType 文件类型
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取文件路径
                      * @return FilePath 文件路径
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件路径
-                     * @param FilePath 文件路径
+                     * @param _filePath 文件路径
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
                     /**
                      * 获取文件夹类型
                      * @return DirType 文件夹类型
+                     * 
                      */
                     std::string GetDirType() const;
 
                     /**
                      * 设置文件夹类型
-                     * @param DirType 文件夹类型
+                     * @param _dirType 文件夹类型
+                     * 
                      */
                     void SetDirType(const std::string& _dirType);
 
                     /**
                      * 判断参数 DirType 是否已赋值
                      * @return DirType 是否已赋值
+                     * 
                      */
                     bool DirTypeHasBeenSet() const;
 

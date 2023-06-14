@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取TCCC 实例应用 ID
                      * @return SdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TCCC 实例应用 ID
-                     * @param SdkAppId TCCC 实例应用 ID
+                     * @param _sdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取会话ID
                      * @return SessionId 会话ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话ID
-                     * @param SessionId 会话ID
+                     * @param _sessionId 会话ID
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

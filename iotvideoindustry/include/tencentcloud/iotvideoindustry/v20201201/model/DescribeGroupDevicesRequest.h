@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0
                      * @return Offset 偏移量，默认0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * @param _offset 偏移量，默认0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制值，默认200
                      * @return Limit 限制值，默认200
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制值，默认200
-                     * @param Limit 限制值，默认200
+                     * @param _limit 限制值，默认200
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取设备名称，根据设备名称模糊匹配时必填
                      * @return NickName 设备名称，根据设备名称模糊匹配时必填
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置设备名称，根据设备名称模糊匹配时必填
-                     * @param NickName 设备名称，根据设备名称模糊匹配时必填
+                     * @param _nickName 设备名称，根据设备名称模糊匹配时必填
+                     * 
                      */
                     void SetNickName(const std::string& _nickName);
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
                     /**
                      * 获取过滤不可录制设备
                      * @return Recordable 过滤不可录制设备
+                     * 
                      */
                     int64_t GetRecordable() const;
 
                     /**
                      * 设置过滤不可录制设备
-                     * @param Recordable 过滤不可录制设备
+                     * @param _recordable 过滤不可录制设备
+                     * 
                      */
                     void SetRecordable(const int64_t& _recordable);
 
                     /**
                      * 判断参数 Recordable 是否已赋值
                      * @return Recordable 是否已赋值
+                     * 
                      */
                     bool RecordableHasBeenSet() const;
 
@@ -137,20 +152,23 @@ namespace TencentCloud
  设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
                      * @return DeviceTypes 当Group是普通组的时候，支持根据DeviceTypes筛选类型，
  设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * 
                      */
                     std::vector<int64_t> GetDeviceTypes() const;
 
                     /**
                      * 设置当Group是普通组的时候，支持根据DeviceTypes筛选类型，
  设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
-                     * @param DeviceTypes 当Group是普通组的时候，支持根据DeviceTypes筛选类型，
+                     * @param _deviceTypes 当Group是普通组的时候，支持根据DeviceTypes筛选类型，
  设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)
+                     * 
                      */
                     void SetDeviceTypes(const std::vector<int64_t>& _deviceTypes);
 
                     /**
                      * 判断参数 DeviceTypes 是否已赋值
                      * @return DeviceTypes 是否已赋值
+                     * 
                      */
                     bool DeviceTypesHasBeenSet() const;
 

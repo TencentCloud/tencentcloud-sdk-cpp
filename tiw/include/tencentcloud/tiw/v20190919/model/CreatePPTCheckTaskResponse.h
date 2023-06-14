@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取检测任务的唯一标识Id，用于查询该任务的进度以及检测结果
                      * @return TaskId 检测任务的唯一标识Id，用于查询该任务的进度以及检测结果
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

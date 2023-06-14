@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportId 出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportId() const;
 
                     /**
                      * 判断参数 ReportId 是否已赋值
                      * @return ReportId 是否已赋值
+                     * 
                      */
                     bool ReportIdHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
                      * @return Status 执行中：EvidenceStatusExecuting
 成功：EvidenceStatusSuccess
 失败：EvidenceStatusFailed
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 废除，字段无效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 

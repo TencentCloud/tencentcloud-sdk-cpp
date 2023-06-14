@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批量操作的域名。
                      * @return Domains 批量操作的域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置批量操作的域名。
-                     * @param Domains 批量操作的域名。
+                     * @param _domains 批量操作的域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -67,6 +70,7 @@ False：关闭禁止域名更新状态。
                      * @return Status 是否开启禁止域名更新。
 True:开启禁止域名更新状态。
 False：关闭禁止域名更新状态。
+                     * 
                      */
                     bool GetStatus() const;
 
@@ -74,15 +78,17 @@ False：关闭禁止域名更新状态。
                      * 设置是否开启禁止域名更新。
 True:开启禁止域名更新状态。
 False：关闭禁止域名更新状态。
-                     * @param Status 是否开启禁止域名更新。
+                     * @param _status 是否开启禁止域名更新。
 True:开启禁止域名更新状态。
 False：关闭禁止域名更新状态。
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

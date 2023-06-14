@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库代理ID
                      * @return ProxyGroupId 数据库代理ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置数据库代理ID
-                     * @param ProxyGroupId 数据库代理ID
+                     * @param _proxyGroupId 数据库代理ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取数据库代理当前版本
                      * @return SrcProxyVersion 数据库代理当前版本
+                     * 
                      */
                     std::string GetSrcProxyVersion() const;
 
                     /**
                      * 设置数据库代理当前版本
-                     * @param SrcProxyVersion 数据库代理当前版本
+                     * @param _srcProxyVersion 数据库代理当前版本
+                     * 
                      */
                     void SetSrcProxyVersion(const std::string& _srcProxyVersion);
 
                     /**
                      * 判断参数 SrcProxyVersion 是否已赋值
                      * @return SrcProxyVersion 是否已赋值
+                     * 
                      */
                     bool SrcProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取数据库代理升级版本
                      * @return DstProxyVersion 数据库代理升级版本
+                     * 
                      */
                     std::string GetDstProxyVersion() const;
 
                     /**
                      * 设置数据库代理升级版本
-                     * @param DstProxyVersion 数据库代理升级版本
+                     * @param _dstProxyVersion 数据库代理升级版本
+                     * 
                      */
                     void SetDstProxyVersion(const std::string& _dstProxyVersion);
 
                     /**
                      * 判断参数 DstProxyVersion 是否已赋值
                      * @return DstProxyVersion 是否已赋值
+                     * 
                      */
                     bool DstProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
                      * @return UpgradeTime 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * 
                      */
                     std::string GetUpgradeTime() const;
 
                     /**
                      * 设置升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
-                     * @param UpgradeTime 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * @param _upgradeTime 升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）
+                     * 
                      */
                     void SetUpgradeTime(const std::string& _upgradeTime);
 
                     /**
                      * 判断参数 UpgradeTime 是否已赋值
                      * @return UpgradeTime 是否已赋值
+                     * 
                      */
                     bool UpgradeTimeHasBeenSet() const;
 

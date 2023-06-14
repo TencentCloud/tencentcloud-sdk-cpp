@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetItem() const;
 
                     /**
                      * 设置唯一id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Item 唯一id
+                     * @param _item 唯一id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItem(const std::string& _item);
 
                     /**
                      * 判断参数 Item 是否已赋值
                      * @return Item 是否已赋值
+                     * 
                      */
                     bool ItemHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardItem 分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStandardItem() const;
 
                     /**
                      * 设置分类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StandardItem 分类
+                     * @param _standardItem 分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStandardItem(const std::string& _standardItem);
 
                     /**
                      * 判断参数 StandardItem 是否已赋值
                      * @return StandardItem 是否已赋值
+                     * 
                      */
                     bool StandardItemHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 设置结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 结果
+                     * @param _result 结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const int64_t& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 建议
+                     * @param _suggestion 建议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProStr 产品字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProStr() const;
 
                     /**
                      * 设置产品字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProStr 产品字符
+                     * @param _proStr 产品字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProStr(const std::string& _proStr);
 
                     /**
                      * 判断参数 ProStr 是否已赋值
                      * @return ProStr 是否已赋值
+                     * 
                      */
                     bool ProStrHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Production 产品数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SocProductionItem> GetProduction() const;
 
                     /**
                      * 设置产品数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Production 产品数组
+                     * @param _production 产品数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProduction(const std::vector<SocProductionItem>& _production);
 
                     /**
                      * 判断参数 Production 是否已赋值
                      * @return Production 是否已赋值
+                     * 
                      */
                     bool ProductionHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckItems 配置项数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SocCheckItem> GetCheckItems() const;
 
                     /**
                      * 设置配置项数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckItems 配置项数组
+                     * @param _checkItems 配置项数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckItems(const std::vector<SocCheckItem>& _checkItems);
 
                     /**
                      * 判断参数 CheckItems 是否已赋值
                      * @return CheckItems 是否已赋值
+                     * 
                      */
                     bool CheckItemsHasBeenSet() const;
 

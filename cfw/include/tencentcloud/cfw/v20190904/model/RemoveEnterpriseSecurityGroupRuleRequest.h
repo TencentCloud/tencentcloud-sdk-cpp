@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则的uuid，可通过查询规则列表获取
                      * @return RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 设置规则的uuid，可通过查询规则列表获取
-                     * @param RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * @param _ruleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
                     /**
                      * 获取删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
                      * @return RemoveType 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * 
                      */
                     int64_t GetRemoveType() const;
 
                     /**
                      * 设置删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
-                     * @param RemoveType 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * @param _removeType 删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可
+                     * 
                      */
                     void SetRemoveType(const int64_t& _removeType);
 
                     /**
                      * 判断参数 RemoveType 是否已赋值
                      * @return RemoveType 是否已赋值
+                     * 
                      */
                     bool RemoveTypeHasBeenSet() const;
 

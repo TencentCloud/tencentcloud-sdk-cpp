@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的镜像数量。
                      * @return TotalCount 符合条件的镜像数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取镜像详细信息列表。
                      * @return BlueprintSet 镜像详细信息列表。
+                     * 
                      */
                     std::vector<Blueprint> GetBlueprintSet() const;
 
                     /**
                      * 判断参数 BlueprintSet 是否已赋值
                      * @return BlueprintSet 是否已赋值
+                     * 
                      */
                     bool BlueprintSetHasBeenSet() const;
 

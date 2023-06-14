@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
 <li>l7Flow_request: 访问请求数；</li>
 <li>l7Flow_flux: 访问请求上行+下行流量；</li>
 <li>l7Flow_bandwidth：访问请求上行+下行带宽。</li>
+                     * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
@@ -111,7 +118,7 @@ namespace TencentCloud
 <li>l7Flow_request: 访问请求数；</li>
 <li>l7Flow_flux: 访问请求上行+下行流量；</li>
 <li>l7Flow_bandwidth：访问请求上行+下行带宽。</li>
-                     * @param MetricNames 查询的指标，取值有：
+                     * @param _metricNames 查询的指标，取值有：
 <li>l7Flow_outFlux: Edegone响应流量；</li>
 <li>l7Flow_inFlux: Edgeone请求流量；</li>
 <li>l7Flow_outBandwidth: Edegone响应带宽；</li>
@@ -120,12 +127,14 @@ namespace TencentCloud
 <li>l7Flow_request: 访问请求数；</li>
 <li>l7Flow_flux: 访问请求上行+下行流量；</li>
 <li>l7Flow_bandwidth：访问请求上行+下行带宽。</li>
+                     * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
                     /**
                      * 判断参数 MetricNames 是否已赋值
                      * @return MetricNames 是否已赋值
+                     * 
                      */
                     bool MetricNamesHasBeenSet() const;
 
@@ -134,38 +143,44 @@ namespace TencentCloud
 若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
                      * @return ZoneIds 站点集合。
 若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点集合。
 若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
-                     * @param ZoneIds 站点集合。
+                     * @param _zoneIds 站点集合。
 若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取查询的域名集合，不填默认查询所有子域名。
                      * @return Domains 查询的域名集合，不填默认查询所有子域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置查询的域名集合，不填默认查询所有子域名。
-                     * @param Domains 查询的域名集合，不填默认查询所有子域名。
+                     * @param _domains 查询的域名集合，不填默认查询所有子域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -180,6 +195,7 @@ namespace TencentCloud
 <li>https: https协议；</li>
 <li>http2: http2协议；</li>
 <li>all:  所有协议。</li>不填默认为all，此参数暂未生效。
+                     * 
                      */
                     std::string GetProtocol() const;
 
@@ -189,17 +205,19 @@ namespace TencentCloud
 <li>https: https协议；</li>
 <li>http2: http2协议；</li>
 <li>all:  所有协议。</li>不填默认为all，此参数暂未生效。
-                     * @param Protocol 查询的协议类型，取值有：
+                     * @param _protocol 查询的协议类型，取值有：
 <li>http: http协议；</li>
 <li>https: https协议；</li>
 <li>http2: http2协议；</li>
 <li>all:  所有协议。</li>不填默认为all，此参数暂未生效。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -214,6 +232,7 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -223,17 +242,19 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
-                     * @param Interval 查询时间粒度，取值有：
+                     * @param _interval 查询时间粒度，取值有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
@@ -246,6 +267,7 @@ namespace TencentCloud
 <li>socket<br>   按照【<strong>HTTP协议类型</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP：HTTP 协议；<br>   HTTPS：HTTPS协议；<br>   QUIC：QUIC协议。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * 
                      */
                     std::vector<QueryCondition> GetFilters() const;
 
@@ -254,16 +276,18 @@ namespace TencentCloud
 <li>socket<br>   按照【<strong>HTTP协议类型</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP：HTTP 协议；<br>   HTTPS：HTTPS协议；<br>   QUIC：QUIC协议。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
-                     * @param Filters 过滤条件，详细的过滤条件Key值如下：
+                     * @param _filters 过滤条件，详细的过滤条件Key值如下：
 <li>socket<br>   按照【<strong>HTTP协议类型</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP：HTTP 协议；<br>   HTTPS：HTTPS协议；<br>   QUIC：QUIC协议。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<QueryCondition>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -276,6 +300,7 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -284,16 +309,18 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

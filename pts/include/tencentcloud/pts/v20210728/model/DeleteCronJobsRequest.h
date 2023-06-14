@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取定时任务ID数组
                      * @return CronJobIds 定时任务ID数组
+                     * 
                      */
                     std::vector<std::string> GetCronJobIds() const;
 
                     /**
                      * 设置定时任务ID数组
-                     * @param CronJobIds 定时任务ID数组
+                     * @param _cronJobIds 定时任务ID数组
+                     * 
                      */
                     void SetCronJobIds(const std::vector<std::string>& _cronJobIds);
 
                     /**
                      * 判断参数 CronJobIds 是否已赋值
                      * @return CronJobIds 是否已赋值
+                     * 
                      */
                     bool CronJobIdsHasBeenSet() const;
 

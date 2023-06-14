@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 服务部署 Id
+                     * @param _fleetId 服务部署 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
+                     * @param _instanceType 服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCounts 服务器实例统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceCounts GetInstanceCounts() const;
 
                     /**
                      * 设置服务器实例统计数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCounts 服务器实例统计数据
+                     * @param _instanceCounts 服务器实例统计数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCounts(const InstanceCounts& _instanceCounts);
 
                     /**
                      * 判断参数 InstanceCounts 是否已赋值
                      * @return InstanceCounts 是否已赋值
+                     * 
                      */
                     bool InstanceCountsHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScalingInterval() const;
 
                     /**
                      * 设置服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
+                     * @param _scalingInterval 服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScalingInterval(const uint64_t& _scalingInterval);
 
                     /**
                      * 判断参数 ScalingInterval 是否已赋值
                      * @return ScalingInterval 是否已赋值
+                     * 
                      */
                     bool ScalingIntervalHasBeenSet() const;
 

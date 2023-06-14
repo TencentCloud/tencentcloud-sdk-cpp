@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取凭据名称。
                      * @return SecretName 凭据名称。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取凭据描述信息。
                      * @return Description 凭据描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取用于加密的KMS CMK ID。
                      * @return KmsKeyId 用于加密的KMS CMK ID。
+                     * 
                      */
                     std::string GetKmsKeyId() const;
 
                     /**
                      * 判断参数 KmsKeyId 是否已赋值
                      * @return KmsKeyId 是否已赋值
+                     * 
                      */
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
                      * 获取创建者UIN。
                      * @return CreateUin 创建者UIN。
+                     * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
                      * 判断参数 CreateUin 是否已赋值
                      * @return CreateUin 是否已赋值
+                     * 
                      */
                     bool CreateUinHasBeenSet() const;
 
                     /**
                      * 获取凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
                      * @return Status 凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取删除日期，uinx 时间戳，非计划删除状态的凭据为0。
                      * @return DeleteTime 删除日期，uinx 时间戳，非计划删除状态的凭据为0。
+                     * 
                      */
                     uint64_t GetDeleteTime() const;
 
                     /**
                      * 判断参数 DeleteTime 是否已赋值
                      * @return DeleteTime 是否已赋值
+                     * 
                      */
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
                      * 获取创建日期。
                      * @return CreateTime 创建日期。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -132,12 +146,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretType 0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSecretType() const;
 
                     /**
                      * 判断参数 SecretType 是否已赋值
                      * @return SecretType 是否已赋值
+                     * 
                      */
                     bool SecretTypeHasBeenSet() const;
 
@@ -146,12 +162,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 云产品名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -160,12 +178,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceID 云产品实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceID() const;
 
                     /**
                      * 判断参数 ResourceID 是否已赋值
                      * @return ResourceID 是否已赋值
+                     * 
                      */
                     bool ResourceIDHasBeenSet() const;
 
@@ -174,12 +194,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationStatus 是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetRotationStatus() const;
 
                     /**
                      * 判断参数 RotationStatus 是否已赋值
                      * @return RotationStatus 是否已赋值
+                     * 
                      */
                     bool RotationStatusHasBeenSet() const;
 
@@ -188,12 +210,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationFrequency 轮转周期，默认以天为单位。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRotationFrequency() const;
 
                     /**
                      * 判断参数 RotationFrequency 是否已赋值
                      * @return RotationFrequency 是否已赋值
+                     * 
                      */
                     bool RotationFrequencyHasBeenSet() const;
 
@@ -202,12 +226,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
@@ -216,12 +242,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 判断参数 ProjectID 是否已赋值
                      * @return ProjectID 是否已赋值
+                     * 
                      */
                     bool ProjectIDHasBeenSet() const;
 
@@ -230,12 +258,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIDs() const;
 
                     /**
                      * 判断参数 AssociatedInstanceIDs 是否已赋值
                      * @return AssociatedInstanceIDs 是否已赋值
+                     * 
                      */
                     bool AssociatedInstanceIDsHasBeenSet() const;
 
@@ -244,12 +274,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 
@@ -258,12 +290,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalConfig 凭据额外配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdditionalConfig() const;
 
                     /**
                      * 判断参数 AdditionalConfig 是否已赋值
                      * @return AdditionalConfig 是否已赋值
+                     * 
                      */
                     bool AdditionalConfigHasBeenSet() const;
 

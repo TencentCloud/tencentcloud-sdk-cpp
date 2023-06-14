@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
                      * @return Time UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
-                     * @param Time UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
+                     * @param _time UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取数值。
                      * @return Num 数值。
+                     * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置数值。
-                     * @param Num 数值。
+                     * @param _num 数值。
+                     * 
                      */
                     void SetNum(const uint64_t& _num);
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 

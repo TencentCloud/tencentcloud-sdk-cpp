@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的伸缩活动信息集合。说明：伸缩组伸缩活动不存在的则不返回，如传50个伸缩组ID，返回45条数据，说明其中有5个伸缩组伸缩活动不存在。
                      * @return ActivitySet 符合条件的伸缩活动信息集合。说明：伸缩组伸缩活动不存在的则不返回，如传50个伸缩组ID，返回45条数据，说明其中有5个伸缩组伸缩活动不存在。
+                     * 
                      */
                     std::vector<Activity> GetActivitySet() const;
 
                     /**
                      * 判断参数 ActivitySet 是否已赋值
                      * @return ActivitySet 是否已赋值
+                     * 
                      */
                     bool ActivitySetHasBeenSet() const;
 

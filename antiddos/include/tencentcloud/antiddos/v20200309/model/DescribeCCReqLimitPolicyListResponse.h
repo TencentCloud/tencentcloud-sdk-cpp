@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取频率限制列表总数
                      * @return Total 频率限制列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取频率限制列表详情
                      * @return RequestLimitPolicyList 频率限制列表详情
+                     * 
                      */
                     std::vector<CCReqLimitPolicy> GetRequestLimitPolicyList() const;
 
                     /**
                      * 判断参数 RequestLimitPolicyList 是否已赋值
                      * @return RequestLimitPolicyList 是否已赋值
+                     * 
                      */
                     bool RequestLimitPolicyListHasBeenSet() const;
 

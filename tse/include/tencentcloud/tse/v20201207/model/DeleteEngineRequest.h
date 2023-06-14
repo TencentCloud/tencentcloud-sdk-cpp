@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取引擎实例 ID
                      * @return InstanceId 引擎实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置引擎实例 ID
-                     * @param InstanceId 引擎实例 ID
+                     * @param _instanceId 引擎实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

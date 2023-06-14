@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
                      * @return InstanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
-                     * @param InstanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * @param _instanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取续费时长，单位：月。不传则默认为1个月。
                      * @return Period 续费时长，单位：月。不传则默认为1个月。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置续费时长，单位：月。不传则默认为1个月。
-                     * @param Period 续费时长，单位：月。不传则默认为1个月。
+                     * @param _period 续费时长，单位：月。不传则默认为1个月。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return AmountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     std::string GetAmountUnit() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
-                     * @param AmountUnit 价格金额单位，不传默认单位为分，取值：  
+                     * @param _amountUnit 价格金额单位，不传默认单位为分，取值：  
 * pent：分
 * microPent：微分
+                     * 
                      */
                     void SetAmountUnit(const std::string& _amountUnit);
 
                     /**
                      * 判断参数 AmountUnit 是否已赋值
                      * @return AmountUnit 是否已赋值
+                     * 
                      */
                     bool AmountUnitHasBeenSet() const;
 

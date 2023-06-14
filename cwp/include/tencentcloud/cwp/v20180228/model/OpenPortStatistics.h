@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取端口号
                      * @return Port 端口号
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口号
-                     * @param Port 端口号
+                     * @param _port 端口号
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取主机数量
                      * @return MachineNum 主机数量
+                     * 
                      */
                     uint64_t GetMachineNum() const;
 
                     /**
                      * 设置主机数量
-                     * @param MachineNum 主机数量
+                     * @param _machineNum 主机数量
+                     * 
                      */
                     void SetMachineNum(const uint64_t& _machineNum);
 
                     /**
                      * 判断参数 MachineNum 是否已赋值
                      * @return MachineNum 是否已赋值
+                     * 
                      */
                     bool MachineNumHasBeenSet() const;
 

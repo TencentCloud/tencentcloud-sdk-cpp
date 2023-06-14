@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取截取起始位置
                      * @return Start 截取起始位置
+                     * 
                      */
                     int64_t GetStart() const;
 
                     /**
                      * 设置截取起始位置
-                     * @param Start 截取起始位置
+                     * @param _start 截取起始位置
+                     * 
                      */
                     void SetStart(const int64_t& _start);
 
                     /**
                      * 判断参数 Start 是否已赋值
                      * @return Start 是否已赋值
+                     * 
                      */
                     bool StartHasBeenSet() const;
 
                     /**
                      * 获取截取截止位置
                      * @return End 截取截止位置
+                     * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置截取截止位置
-                     * @param End 截取截止位置
+                     * @param _end 截取截止位置
+                     * 
                      */
                     void SetEnd(const int64_t& _end);
 
                     /**
                      * 判断参数 End 是否已赋值
                      * @return End 是否已赋值
+                     * 
                      */
                     bool EndHasBeenSet() const;
 

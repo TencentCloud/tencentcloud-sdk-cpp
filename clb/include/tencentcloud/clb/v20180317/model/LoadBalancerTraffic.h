@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡ID
                      * @return LoadBalancerId 负载均衡ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡ID
-                     * @param LoadBalancerId 负载均衡ID
+                     * @param _loadBalancerId 负载均衡ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡名字
                      * @return LoadBalancerName 负载均衡名字
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡名字
-                     * @param LoadBalancerName 负载均衡名字
+                     * @param _loadBalancerName 负载均衡名字
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡所在地域
                      * @return Region 负载均衡所在地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置负载均衡所在地域
-                     * @param Region 负载均衡所在地域
+                     * @param _region 负载均衡所在地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的vip
                      * @return Vip 负载均衡的vip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置负载均衡的vip
-                     * @param Vip 负载均衡的vip
+                     * @param _vip 负载均衡的vip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取最大出带宽，单位：Mbps
                      * @return OutBandwidth 最大出带宽，单位：Mbps
+                     * 
                      */
                     double GetOutBandwidth() const;
 
                     /**
                      * 设置最大出带宽，单位：Mbps
-                     * @param OutBandwidth 最大出带宽，单位：Mbps
+                     * @param _outBandwidth 最大出带宽，单位：Mbps
+                     * 
                      */
                     void SetOutBandwidth(const double& _outBandwidth);
 
                     /**
                      * 判断参数 OutBandwidth 是否已赋值
                      * @return OutBandwidth 是否已赋值
+                     * 
                      */
                     bool OutBandwidthHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain CLB域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置CLB域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain CLB域名
+                     * @param _domain CLB域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

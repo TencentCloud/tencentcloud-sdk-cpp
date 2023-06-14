@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取返回偏移量。Offset最小为0。
                      * @return Offset 返回偏移量。Offset最小为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置返回偏移量。Offset最小为0。
-                     * @param Offset 返回偏移量。Offset最小为0。
+                     * @param _offset 返回偏移量。Offset最小为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量。Limit需要在[1, 100]之间。
                      * @return Limit 返回数量。Limit需要在[1, 100]之间。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量。Limit需要在[1, 100]之间。
-                     * @param Limit 返回数量。Limit需要在[1, 100]之间。
+                     * @param _limit 返回数量。Limit需要在[1, 100]之间。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return SearchWord 搜索关键字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param SearchWord 搜索关键字
+                     * @param _searchWord 搜索关键字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 

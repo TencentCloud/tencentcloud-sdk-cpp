@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取人员库升级任务信息列表。
                      * @return JobInfos 人员库升级任务信息列表。
+                     * 
                      */
                     std::vector<UpgradeJobInfo> GetJobInfos() const;
 
                     /**
                      * 判断参数 JobInfos 是否已赋值
                      * @return JobInfos 是否已赋值
+                     * 
                      */
                     bool JobInfosHasBeenSet() const;
 
                     /**
                      * 获取升级任务总数量。
                      * @return JobNum 升级任务总数量。
+                     * 
                      */
                     uint64_t GetJobNum() const;
 
                     /**
                      * 判断参数 JobNum 是否已赋值
                      * @return JobNum 是否已赋值
+                     * 
                      */
                     bool JobNumHasBeenSet() const;
 

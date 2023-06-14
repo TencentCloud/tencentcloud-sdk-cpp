@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamName 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParamName 参数名
+                     * @param _paramName 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCount 修改事件数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventCount() const;
 
                     /**
                      * 设置修改事件数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventCount 修改事件数
+                     * @param _eventCount 修改事件数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventCount(const int64_t& _eventCount);
 
                     /**
                      * 判断参数 EventCount 是否已赋值
                      * @return EventCount 是否已赋值
+                     * 
                      */
                     bool EventCountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventDetail 修改时间详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EventInfo> GetEventDetail() const;
 
                     /**
                      * 设置修改时间详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventDetail 修改时间详情
+                     * @param _eventDetail 修改时间详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventDetail(const std::vector<EventInfo>& _eventDetail);
 
                     /**
                      * 判断参数 EventDetail 是否已赋值
                      * @return EventDetail 是否已赋值
+                     * 
                      */
                     bool EventDetailHasBeenSet() const;
 

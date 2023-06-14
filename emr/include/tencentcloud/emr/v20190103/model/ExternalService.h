@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取共用组件类型，EMR/CUSTOM
                      * @return ShareType 共用组件类型，EMR/CUSTOM
+                     * 
                      */
                     std::string GetShareType() const;
 
                     /**
                      * 设置共用组件类型，EMR/CUSTOM
-                     * @param ShareType 共用组件类型，EMR/CUSTOM
+                     * @param _shareType 共用组件类型，EMR/CUSTOM
+                     * 
                      */
                     void SetShareType(const std::string& _shareType);
 
                     /**
                      * 判断参数 ShareType 是否已赋值
                      * @return ShareType 是否已赋值
+                     * 
                      */
                     bool ShareTypeHasBeenSet() const;
 
                     /**
                      * 获取自定义参数集合
                      * @return CustomServiceDefineList 自定义参数集合
+                     * 
                      */
                     std::vector<CustomServiceDefine> GetCustomServiceDefineList() const;
 
                     /**
                      * 设置自定义参数集合
-                     * @param CustomServiceDefineList 自定义参数集合
+                     * @param _customServiceDefineList 自定义参数集合
+                     * 
                      */
                     void SetCustomServiceDefineList(const std::vector<CustomServiceDefine>& _customServiceDefineList);
 
                     /**
                      * 判断参数 CustomServiceDefineList 是否已赋值
                      * @return CustomServiceDefineList 是否已赋值
+                     * 
                      */
                     bool CustomServiceDefineListHasBeenSet() const;
 
                     /**
                      * 获取共用组件名
                      * @return Service 共用组件名
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置共用组件名
-                     * @param Service 共用组件名
+                     * @param _service 共用组件名
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取共用组件集群
                      * @return InstanceId 共用组件集群
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置共用组件集群
-                     * @param InstanceId 共用组件集群
+                     * @param _instanceId 共用组件集群
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

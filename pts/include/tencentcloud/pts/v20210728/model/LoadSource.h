@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 发压host的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置发压host的IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP 发压host的IP
+                     * @param _iP 发压host的IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 发压host所在的pod
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置发压host所在的pod
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodName 发压host所在的pod
+                     * @param _podName 发压host所在的pod
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 所属地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 所属地域
+                     * @param _region 所属地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

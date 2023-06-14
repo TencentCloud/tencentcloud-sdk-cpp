@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取保护网址列表
                      * @return ProtectURLInfos 保护网址列表
+                     * 
                      */
                     std::vector<ProtectURLInfo> GetProtectURLInfos() const;
 
                     /**
                      * 判断参数 ProtectURLInfos 是否已赋值
                      * @return ProtectURLInfos 是否已赋值
+                     * 
                      */
                     bool ProtectURLInfosHasBeenSet() const;
 
                     /**
                      * 获取总量
                      * @return TotalCount 总量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

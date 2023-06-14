@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取玩家OpenId。
                      * @return OpenId 玩家OpenId。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置玩家OpenId。
-                     * @param OpenId 玩家OpenId。
+                     * @param _openId 玩家OpenId。
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
                      * @return PlayerId 玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
-                     * @param PlayerId 玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
+                     * @param _playerId 玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 

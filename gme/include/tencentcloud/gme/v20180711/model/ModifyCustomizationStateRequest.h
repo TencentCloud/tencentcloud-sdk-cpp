@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取模型ID
                      * @return ModelId 模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型ID
-                     * @param ModelId 模型ID
+                     * @param _modelId 模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取想要变换的模型状态，-1代表下线，1代表上线
                      * @return ToState 想要变换的模型状态，-1代表下线，1代表上线
+                     * 
                      */
                     int64_t GetToState() const;
 
                     /**
                      * 设置想要变换的模型状态，-1代表下线，1代表上线
-                     * @param ToState 想要变换的模型状态，-1代表下线，1代表上线
+                     * @param _toState 想要变换的模型状态，-1代表下线，1代表上线
+                     * 
                      */
                     void SetToState(const int64_t& _toState);
 
                     /**
                      * 判断参数 ToState 是否已赋值
                      * @return ToState 是否已赋值
+                     * 
                      */
                     bool ToStateHasBeenSet() const;
 
                     /**
                      * 获取应用 ID，登录控制台创建应用得到的AppID
                      * @return BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     int64_t GetBizId() const;
 
                     /**
                      * 设置应用 ID，登录控制台创建应用得到的AppID
-                     * @param BizId 应用 ID，登录控制台创建应用得到的AppID
+                     * @param _bizId 应用 ID，登录控制台创建应用得到的AppID
+                     * 
                      */
                     void SetBizId(const int64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 

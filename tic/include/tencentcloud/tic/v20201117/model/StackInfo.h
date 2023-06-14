@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取资源栈ID
                      * @return StackId 资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置资源栈ID
-                     * @param StackId 资源栈ID
+                     * @param _stackId 资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取资源栈名称
                      * @return StackName 资源栈名称
+                     * 
                      */
                     std::string GetStackName() const;
 
                     /**
                      * 设置资源栈名称
-                     * @param StackName 资源栈名称
+                     * @param _stackName 资源栈名称
+                     * 
                      */
                     void SetStackName(const std::string& _stackName);
 
                     /**
                      * 判断参数 StackName 是否已赋值
                      * @return StackName 是否已赋值
+                     * 
                      */
                     bool StackNameHasBeenSet() const;
 
                     /**
                      * 获取资源栈描述
                      * @return Description 资源栈描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置资源栈描述
-                     * @param Description 资源栈描述
+                     * @param _description 资源栈描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取所处地域
                      * @return Region 所处地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所处地域
-                     * @param Region 所处地域
+                     * @param _region 所处地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取资源栈状态
                      * @return Status 资源栈状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置资源栈状态
-                     * @param Status 资源栈状态
+                     * @param _status 资源栈状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

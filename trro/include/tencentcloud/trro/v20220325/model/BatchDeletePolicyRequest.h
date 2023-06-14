@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取删除权限配置的项目ID
                      * @return ProjectId 删除权限配置的项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置删除权限配置的项目ID
-                     * @param ProjectId 删除权限配置的项目ID
+                     * @param _projectId 删除权限配置的项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取删除权限配置的远端设备ID列表
                      * @return RemoteDeviceIds 删除权限配置的远端设备ID列表
+                     * 
                      */
                     std::vector<std::string> GetRemoteDeviceIds() const;
 
                     /**
                      * 设置删除权限配置的远端设备ID列表
-                     * @param RemoteDeviceIds 删除权限配置的远端设备ID列表
+                     * @param _remoteDeviceIds 删除权限配置的远端设备ID列表
+                     * 
                      */
                     void SetRemoteDeviceIds(const std::vector<std::string>& _remoteDeviceIds);
 
                     /**
                      * 判断参数 RemoteDeviceIds 是否已赋值
                      * @return RemoteDeviceIds 是否已赋值
+                     * 
                      */
                     bool RemoteDeviceIdsHasBeenSet() const;
 
                     /**
                      * 获取删除权限配置的权限模式, black为黑名单，white为白名单
                      * @return PolicyMode 删除权限配置的权限模式, black为黑名单，white为白名单
+                     * 
                      */
                     std::string GetPolicyMode() const;
 
                     /**
                      * 设置删除权限配置的权限模式, black为黑名单，white为白名单
-                     * @param PolicyMode 删除权限配置的权限模式, black为黑名单，white为白名单
+                     * @param _policyMode 删除权限配置的权限模式, black为黑名单，white为白名单
+                     * 
                      */
                     void SetPolicyMode(const std::string& _policyMode);
 
                     /**
                      * 判断参数 PolicyMode 是否已赋值
                      * @return PolicyMode 是否已赋值
+                     * 
                      */
                     bool PolicyModeHasBeenSet() const;
 

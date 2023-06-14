@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取实例族。
                      * @return InstanceFamily 实例族。
+                     * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
                      * 设置实例族。
-                     * @param InstanceFamily 实例族。
+                     * @param _instanceFamily 实例族。
+                     * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
 
                     /**
                      * 判断参数 InstanceFamily 是否已赋值
                      * @return InstanceFamily 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取优先级。
                      * @return Order 优先级。
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置优先级。
-                     * @param Order 优先级。
+                     * @param _order 优先级。
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取实例类型信息列表。
                      * @return InstanceTypes 实例类型信息列表。
+                     * 
                      */
                     std::vector<ReservedInstanceTypeItem> GetInstanceTypes() const;
 
                     /**
                      * 设置实例类型信息列表。
-                     * @param InstanceTypes 实例类型信息列表。
+                     * @param _instanceTypes 实例类型信息列表。
+                     * 
                      */
                     void SetInstanceTypes(const std::vector<ReservedInstanceTypeItem>& _instanceTypes);
 
                     /**
                      * 判断参数 InstanceTypes 是否已赋值
                      * @return InstanceTypes 是否已赋值
+                     * 
                      */
                     bool InstanceTypesHasBeenSet() const;
 

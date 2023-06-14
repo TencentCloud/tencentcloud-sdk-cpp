@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询字符串
                      * @return Query 查询字符串
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询字符串
-                     * @param Query 查询字符串
+                     * @param _query 查询字符串
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ID 项目ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID
-                     * @param ID 项目ID
+                     * @param _iD 项目ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

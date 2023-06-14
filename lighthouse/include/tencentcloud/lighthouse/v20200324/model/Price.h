@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取实例价格。
                      * @return InstancePrice 实例价格。
+                     * 
                      */
                     InstancePrice GetInstancePrice() const;
 
                     /**
                      * 设置实例价格。
-                     * @param InstancePrice 实例价格。
+                     * @param _instancePrice 实例价格。
+                     * 
                      */
                     void SetInstancePrice(const InstancePrice& _instancePrice);
 
                     /**
                      * 判断参数 InstancePrice 是否已赋值
                      * @return InstancePrice 是否已赋值
+                     * 
                      */
                     bool InstancePriceHasBeenSet() const;
 

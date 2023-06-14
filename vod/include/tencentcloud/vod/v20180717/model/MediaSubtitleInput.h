@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取字幕名字，长度限制：64 个字符。
                      * @return Name 字幕名字，长度限制：64 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字幕名字，长度限制：64 个字符。
-                     * @param Name 字幕名字，长度限制：64 个字符。
+                     * @param _name 字幕名字，长度限制：64 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
+                     * 
                      */
                     std::string GetLanguage() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
-                     * @param Language 字幕语言。常见的取值如下：
+                     * @param _language 字幕语言。常见的取值如下：
 <li>cn：中文</li>
 <li>ja：日文</li>
 <li>en-US：英文</li>
 其他取值参考 [RFC5646](https://tools.ietf.org/html/rfc5646)
+                     * 
                      */
                     void SetLanguage(const std::string& _language);
 
                     /**
                      * 判断参数 Language 是否已赋值
                      * @return Language 是否已赋值
+                     * 
                      */
                     bool LanguageHasBeenSet() const;
 
@@ -103,56 +109,65 @@ namespace TencentCloud
 <li>vtt</li>
                      * @return Format 字幕格式。取值范围如下：
 <li>vtt</li>
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置字幕格式。取值范围如下：
 <li>vtt</li>
-                     * @param Format 字幕格式。取值范围如下：
+                     * @param _format 字幕格式。取值范围如下：
 <li>vtt</li>
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。
                      * @return Content 字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。
-                     * @param Content 字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。
+                     * @param _content 字幕内容，进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒体文件中现有字幕的唯一标识重复。
                      * @return Id 字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒体文件中现有字幕的唯一标识重复。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒体文件中现有字幕的唯一标识重复。
-                     * @param Id 字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒体文件中现有字幕的唯一标识重复。
+                     * @param _id 字幕的唯一标识。长度不能超过16个字符，可以使用大小写字母、数字、下划线（_）或横杠（-）。不能与媒体文件中现有字幕的唯一标识重复。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

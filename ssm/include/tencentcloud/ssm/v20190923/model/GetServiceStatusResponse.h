@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取true表示服务已开通，false 表示服务尚未开通。
                      * @return ServiceEnabled true表示服务已开通，false 表示服务尚未开通。
+                     * 
                      */
                     bool GetServiceEnabled() const;
 
                     /**
                      * 判断参数 ServiceEnabled 是否已赋值
                      * @return ServiceEnabled 是否已赋值
+                     * 
                      */
                     bool ServiceEnabledHasBeenSet() const;
 
                     /**
                      * 获取服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。
                      * @return InvalidType 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。
+                     * 
                      */
                     int64_t GetInvalidType() const;
 
                     /**
                      * 判断参数 InvalidType 是否已赋值
                      * @return InvalidType 是否已赋值
+                     * 
                      */
                     bool InvalidTypeHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 false表示用户暂时不能使用密钥安全托管功能。
                      * @return AccessKeyEscrowEnabled true表示用户已经可以使用密钥安全托管功能，
 false表示用户暂时不能使用密钥安全托管功能。
+                     * 
                      */
                     bool GetAccessKeyEscrowEnabled() const;
 
                     /**
                      * 判断参数 AccessKeyEscrowEnabled 是否已赋值
                      * @return AccessKeyEscrowEnabled 是否已赋值
+                     * 
                      */
                     bool AccessKeyEscrowEnabledHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取审计日志
                      * @return AuditLogSet 审计日志
+                     * 
                      */
                     std::vector<AuditLogResult> GetAuditLogSet() const;
 
                     /**
                      * 判断参数 AuditLogSet 是否已赋值
                      * @return AuditLogSet 是否已赋值
+                     * 
                      */
                     bool AuditLogSetHasBeenSet() const;
 
                     /**
                      * 获取日志总数量
                      * @return TotalCount 日志总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

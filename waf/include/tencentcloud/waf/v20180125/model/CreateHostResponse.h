@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新增防护域名ID
                      * @return DomainId 新增防护域名ID
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

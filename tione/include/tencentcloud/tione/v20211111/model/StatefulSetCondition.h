@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 信息
+                     * @param _message 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 原因
+                     * @param _reason 原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status Status of the condition, one of True, False, Unknown.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Status of the condition, one of True, False, Unknown.
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status Status of the condition, one of True, False, Unknown.
+                     * @param _status Status of the condition, one of True, False, Unknown.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTransitionTime 上次更新的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastTransitionTime() const;
 
                     /**
                      * 设置上次更新的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTransitionTime 上次更新的时间
+                     * @param _lastTransitionTime 上次更新的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTransitionTime(const std::string& _lastTransitionTime);
 
                     /**
                      * 判断参数 LastTransitionTime 是否已赋值
                      * @return LastTransitionTime 是否已赋值
+                     * 
                      */
                     bool LastTransitionTimeHasBeenSet() const;
 

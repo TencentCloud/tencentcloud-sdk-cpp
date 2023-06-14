@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取码规则ID
                      * @return CustomId 码规则ID
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID
-                     * @param CustomId 码规则ID
+                     * @param _customId 码规则ID
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 
                     /**
                      * 获取规则名称
                      * @return Name 规则名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-                     * @param Name 规则名称
+                     * @param _name 规则名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取码长度
                      * @return CodeLength 码长度
+                     * 
                      */
                     uint64_t GetCodeLength() const;
 
                     /**
                      * 设置码长度
-                     * @param CodeLength 码长度
+                     * @param _codeLength 码长度
+                     * 
                      */
                     void SetCodeLength(const uint64_t& _codeLength);
 
                     /**
                      * 判断参数 CodeLength 是否已赋值
                      * @return CodeLength 是否已赋值
+                     * 
                      */
                     bool CodeLengthHasBeenSet() const;
 
                     /**
                      * 获取码段配置
                      * @return CodeParts 码段配置
+                     * 
                      */
                     std::vector<CodePart> GetCodeParts() const;
 
                     /**
                      * 设置码段配置
-                     * @param CodeParts 码段配置
+                     * @param _codeParts 码段配置
+                     * 
                      */
                     void SetCodeParts(const std::vector<CodePart>& _codeParts);
 
                     /**
                      * 判断参数 CodeParts 是否已赋值
                      * @return CodeParts 是否已赋值
+                     * 
                      */
                     bool CodePartsHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 

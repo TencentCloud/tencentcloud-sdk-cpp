@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取主机账号ID
                      * @return Id 主机账号ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置主机账号ID
-                     * @param Id 主机账号ID
+                     * @param _id 主机账号ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取主机账号密码
                      * @return Password 主机账号密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置主机账号密码
-                     * @param Password 主机账号密码
+                     * @param _password 主机账号密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

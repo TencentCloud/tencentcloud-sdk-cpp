@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取用户安全组配额限制。
                      * @return SecurityGroupLimitSet 用户安全组配额限制。
+                     * 
                      */
                     SecurityGroupLimitSet GetSecurityGroupLimitSet() const;
 
                     /**
                      * 判断参数 SecurityGroupLimitSet 是否已赋值
                      * @return SecurityGroupLimitSet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupLimitSetHasBeenSet() const;
 

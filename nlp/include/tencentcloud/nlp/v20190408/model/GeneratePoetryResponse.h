@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取诗题，即输入的生成诗词的关键词。
                      * @return Title 诗题，即输入的生成诗词的关键词。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取诗的内容。
                      * @return Content 诗的内容。
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

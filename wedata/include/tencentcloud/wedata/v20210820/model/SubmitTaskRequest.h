@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取版本备注
                      * @return VersionRemark 版本备注
+                     * 
                      */
                     std::string GetVersionRemark() const;
 
                     /**
                      * 设置版本备注
-                     * @param VersionRemark 版本备注
+                     * @param _versionRemark 版本备注
+                     * 
                      */
                     void SetVersionRemark(const std::string& _versionRemark);
 
                     /**
                      * 判断参数 VersionRemark 是否已赋值
                      * @return VersionRemark 是否已赋值
+                     * 
                      */
                     bool VersionRemarkHasBeenSet() const;
 
                     /**
                      * 获取是否启动调度
                      * @return StartScheduling 是否启动调度
+                     * 
                      */
                     bool GetStartScheduling() const;
 
                     /**
                      * 设置是否启动调度
-                     * @param StartScheduling 是否启动调度
+                     * @param _startScheduling 是否启动调度
+                     * 
                      */
                     void SetStartScheduling(const bool& _startScheduling);
 
                     /**
                      * 判断参数 StartScheduling 是否已赋值
                      * @return StartScheduling 是否已赋值
+                     * 
                      */
                     bool StartSchedulingHasBeenSet() const;
 

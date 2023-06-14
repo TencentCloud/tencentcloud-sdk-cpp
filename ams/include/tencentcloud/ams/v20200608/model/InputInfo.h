@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 传入的类型可选：URL，COS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置传入的类型可选：URL，COS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 传入的类型可选：URL，COS
+                     * @param _type 传入的类型可选：URL，COS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url Url地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Url地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url Url地址
+                     * @param _url Url地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketInfo 桶信息。当输入当时COS时，该字段不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BucketInfo GetBucketInfo() const;
 
                     /**
                      * 设置桶信息。当输入当时COS时，该字段不为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BucketInfo 桶信息。当输入当时COS时，该字段不为空
+                     * @param _bucketInfo 桶信息。当输入当时COS时，该字段不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucketInfo(const BucketInfo& _bucketInfo);
 
                     /**
                      * 判断参数 BucketInfo 是否已赋值
                      * @return BucketInfo 是否已赋值
+                     * 
                      */
                     bool BucketInfoHasBeenSet() const;
 

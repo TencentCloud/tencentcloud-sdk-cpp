@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。
                      * @return DisasterRecoverGroupIds 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。
+                     * 
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
                      * 设置分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。
-                     * @param DisasterRecoverGroupIds 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。
+                     * @param _disasterRecoverGroupIds 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。
+                     * 
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
 
                     /**
                      * 判断参数 DisasterRecoverGroupIds 是否已赋值
                      * @return DisasterRecoverGroupIds 是否已赋值
+                     * 
                      */
                     bool DisasterRecoverGroupIdsHasBeenSet() const;
 

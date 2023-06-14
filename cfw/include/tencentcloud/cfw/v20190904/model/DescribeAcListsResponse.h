@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取访问控制列表数据
                      * @return Data 访问控制列表数据
+                     * 
                      */
                     std::vector<AcListsData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取不算筛选条数的总条数
                      * @return AllTotal 不算筛选条数的总条数
+                     * 
                      */
                     uint64_t GetAllTotal() const;
 
                     /**
                      * 判断参数 AllTotal 是否已赋值
                      * @return AllTotal 是否已赋值
+                     * 
                      */
                     bool AllTotalHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 访问控制规则全部启用/全部停用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取点位ID
                      * @return ZoneId 点位ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置点位ID
-                     * @param ZoneId 点位ID
+                     * @param _zoneId 点位ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取店门标注
                      * @return ShopArea 店门标注
+                     * 
                      */
                     std::vector<Point> GetShopArea() const;
 
                     /**
                      * 设置店门标注
-                     * @param ShopArea 店门标注
+                     * @param _shopArea 店门标注
+                     * 
                      */
                     void SetShopArea(const std::vector<Point>& _shopArea);
 
                     /**
                      * 判断参数 ShopArea 是否已赋值
                      * @return ShopArea 是否已赋值
+                     * 
                      */
                     bool ShopAreaHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取公钥，用于验证用户token。
                      * @return PublicKey 公钥，用于验证用户token。
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 设置公钥，用于验证用户token。
-                     * @param PublicKey 公钥，用于验证用户token。
+                     * @param _publicKey 公钥，用于验证用户token。
+                     * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 
                     /**
                      * 获取token传递位置。
                      * @return TokenLocation token传递位置。
+                     * 
                      */
                     std::string GetTokenLocation() const;
 
                     /**
                      * 设置token传递位置。
-                     * @param TokenLocation token传递位置。
+                     * @param _tokenLocation token传递位置。
+                     * 
                      */
                     void SetTokenLocation(const std::string& _tokenLocation);
 
                     /**
                      * 判断参数 TokenLocation 是否已赋值
                      * @return TokenLocation 是否已赋值
+                     * 
                      */
                     bool TokenLocationHasBeenSet() const;
 
                     /**
                      * 获取重定向地址，用于引导用户登录操作。
                      * @return LoginRedirectUrl 重定向地址，用于引导用户登录操作。
+                     * 
                      */
                     std::string GetLoginRedirectUrl() const;
 
                     /**
                      * 设置重定向地址，用于引导用户登录操作。
-                     * @param LoginRedirectUrl 重定向地址，用于引导用户登录操作。
+                     * @param _loginRedirectUrl 重定向地址，用于引导用户登录操作。
+                     * 
                      */
                     void SetLoginRedirectUrl(const std::string& _loginRedirectUrl);
 
                     /**
                      * 判断参数 LoginRedirectUrl 是否已赋值
                      * @return LoginRedirectUrl 是否已赋值
+                     * 
                      */
                     bool LoginRedirectUrlHasBeenSet() const;
 

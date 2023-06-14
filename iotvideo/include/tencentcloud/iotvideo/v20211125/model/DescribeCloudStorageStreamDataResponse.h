@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取图片流视频地址
                      * @return VideoStream 图片流视频地址
+                     * 
                      */
                     std::string GetVideoStream() const;
 
                     /**
                      * 判断参数 VideoStream 是否已赋值
                      * @return VideoStream 是否已赋值
+                     * 
                      */
                     bool VideoStreamHasBeenSet() const;
 
                     /**
                      * 获取图片流音频地址
                      * @return AudioStream 图片流音频地址
+                     * 
                      */
                     std::string GetAudioStream() const;
 
                     /**
                      * 判断参数 AudioStream 是否已赋值
                      * @return AudioStream 是否已赋值
+                     * 
                      */
                     bool AudioStreamHasBeenSet() const;
 

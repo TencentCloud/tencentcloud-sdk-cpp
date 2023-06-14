@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取服务列表
                      * @return Services 服务列表
+                     * 
                      */
                     std::vector<ModelService> GetServices() const;
 
                     /**
                      * 判断参数 Services 是否已赋值
                      * @return Services 是否已赋值
+                     * 
                      */
                     bool ServicesHasBeenSet() const;
 
                     /**
                      * 获取服务总数
                      * @return TotalCount 服务总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

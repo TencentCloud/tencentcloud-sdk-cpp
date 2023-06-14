@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取7层监听器Id。
                      * @return ListenerId 7层监听器Id。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置7层监听器Id。
-                     * @param ListenerId 7层监听器Id。
+                     * @param _listenerId 7层监听器Id。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 

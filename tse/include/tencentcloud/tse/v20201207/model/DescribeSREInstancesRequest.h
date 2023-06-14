@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取请求过滤参数
                      * @return Filters 请求过滤参数
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置请求过滤参数
-                     * @param Filters 请求过滤参数
+                     * @param _filters 请求过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取翻页单页查询限制数量[0,1000], 默认值0
                      * @return Limit 翻页单页查询限制数量[0,1000], 默认值0
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置翻页单页查询限制数量[0,1000], 默认值0
-                     * @param Limit 翻页单页查询限制数量[0,1000], 默认值0
+                     * @param _limit 翻页单页查询限制数量[0,1000], 默认值0
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取翻页单页偏移量，默认值0
                      * @return Offset 翻页单页偏移量，默认值0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页单页偏移量，默认值0
-                     * @param Offset 翻页单页偏移量，默认值0
+                     * @param _offset 翻页单页偏移量，默认值0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询类型
                      * @return QueryType 查询类型
+                     * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置查询类型
-                     * @param QueryType 查询类型
+                     * @param _queryType 查询类型
+                     * 
                      */
                     void SetQueryType(const std::string& _queryType);
 
                     /**
                      * 判断参数 QueryType 是否已赋值
                      * @return QueryType 是否已赋值
+                     * 
                      */
                     bool QueryTypeHasBeenSet() const;
 
                     /**
                      * 获取调用方来源
                      * @return QuerySource 调用方来源
+                     * 
                      */
                     std::string GetQuerySource() const;
 
                     /**
                      * 设置调用方来源
-                     * @param QuerySource 调用方来源
+                     * @param _querySource 调用方来源
+                     * 
                      */
                     void SetQuerySource(const std::string& _querySource);
 
                     /**
                      * 判断参数 QuerySource 是否已赋值
                      * @return QuerySource 是否已赋值
+                     * 
                      */
                     bool QuerySourceHasBeenSet() const;
 

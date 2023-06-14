@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名字
                      * @return ClusterName 集群名字
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名字
-                     * @param ClusterName 集群名字
+                     * @param _clusterName 集群名字
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群区域
                      * @return Region 集群区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置集群区域
-                     * @param Region 集群区域
+                     * @param _region 集群区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取动作
                      * @return Action 动作
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置动作
-                     * @param Action 动作
+                     * @param _action 动作
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取操作人
                      * @return Operation 操作人
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作人
-                     * @param Operation 操作人
+                     * @param _operation 操作人
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取策略名
                      * @return NetworkPolicyName 策略名
+                     * 
                      */
                     std::string GetNetworkPolicyName() const;
 
                     /**
                      * 设置策略名
-                     * @param NetworkPolicyName 策略名
+                     * @param _networkPolicyName 策略名
+                     * 
                      */
                     void SetNetworkPolicyName(const std::string& _networkPolicyName);
 
                     /**
                      * 判断参数 NetworkPolicyName 是否已赋值
                      * @return NetworkPolicyName 是否已赋值
+                     * 
                      */
                     bool NetworkPolicyNameHasBeenSet() const;
 
                     /**
                      * 获取操作时间
                      * @return OperationTime 操作时间
+                     * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置操作时间
-                     * @param OperationTime 操作时间
+                     * @param _operationTime 操作时间
+                     * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
 
                     /**
                      * 判断参数 OperationTime 是否已赋值
                      * @return OperationTime 是否已赋值
+                     * 
                      */
                     bool OperationTimeHasBeenSet() const;
 
@@ -177,38 +198,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 操作人appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置操作人appid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId 操作人appid
+                     * @param _appId 操作人appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取操作人uin
                      * @return Uin 操作人uin
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置操作人uin
-                     * @param Uin 操作人uin
+                     * @param _uin 操作人uin
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyId 策略id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyId 策略id
+                     * @param _policyId 策略id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取需要添加的域名
                      * @return Domain 需要添加的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要添加的域名
-                     * @param Domain 需要添加的域名
+                     * @param _domain 需要添加的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取需要添加的规则
                      * @return Rules 需要添加的规则
+                     * 
                      */
                     std::vector<uint64_t> GetRules() const;
 
                     /**
                      * 设置需要添加的规则
-                     * @param Rules 需要添加的规则
+                     * @param _rules 需要添加的规则
+                     * 
                      */
                     void SetRules(const std::vector<uint64_t>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取需要添加的规则url
                      * @return Url 需要添加的规则url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置需要添加的规则url
-                     * @param Url 需要添加的规则url
+                     * @param _url 需要添加的规则url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取规则的方法
                      * @return Function 规则的方法
+                     * 
                      */
                     std::string GetFunction() const;
 
                     /**
                      * 设置规则的方法
-                     * @param Function 规则的方法
+                     * @param _function 规则的方法
+                     * 
                      */
                     void SetFunction(const std::string& _function);
 
                     /**
                      * 判断参数 Function 是否已赋值
                      * @return Function 是否已赋值
+                     * 
                      */
                     bool FunctionHasBeenSet() const;
 
                     /**
                      * 获取规则的开关
                      * @return Status 规则的开关
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规则的开关
-                     * @param Status 规则的开关
+                     * @param _status 规则的开关
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

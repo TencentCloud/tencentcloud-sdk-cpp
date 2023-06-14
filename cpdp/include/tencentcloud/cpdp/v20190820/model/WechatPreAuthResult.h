@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取商户核身单号
                      * @return AuthNo 商户核身单号
+                     * 
                      */
                     std::string GetAuthNo() const;
 
                     /**
                      * 设置商户核身单号
-                     * @param AuthNo 商户核身单号
+                     * @param _authNo 商户核身单号
+                     * 
                      */
                     void SetAuthNo(const std::string& _authNo);
 
                     /**
                      * 判断参数 AuthNo 是否已赋值
                      * @return AuthNo 是否已赋值
+                     * 
                      */
                     bool AuthNoHasBeenSet() const;
 
                     /**
                      * 获取微信用户标识
                      * @return OpenId 微信用户标识
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置微信用户标识
-                     * @param OpenId 微信用户标识
+                     * @param _openId 微信用户标识
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取商户号
                      * @return MchId 商户号
+                     * 
                      */
                     std::string GetMchId() const;
 
                     /**
                      * 设置商户号
-                     * @param MchId 商户号
+                     * @param _mchId 商户号
+                     * 
                      */
                     void SetMchId(const std::string& _mchId);
 
                     /**
                      * 判断参数 MchId 是否已赋值
                      * @return MchId 是否已赋值
+                     * 
                      */
                     bool MchIdHasBeenSet() const;
 
                     /**
                      * 获取子商户号
                      * @return SubMchId 子商户号
+                     * 
                      */
                     std::string GetSubMchId() const;
 
                     /**
                      * 设置子商户号
-                     * @param SubMchId 子商户号
+                     * @param _subMchId 子商户号
+                     * 
                      */
                     void SetSubMchId(const std::string& _subMchId);
 
                     /**
                      * 判断参数 SubMchId 是否已赋值
                      * @return SubMchId 是否已赋值
+                     * 
                      */
                     bool SubMchIdHasBeenSet() const;
 
                     /**
                      * 获取预核身token值
                      * @return Token 预核身token值
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置预核身token值
-                     * @param Token 预核身token值
+                     * @param _token 预核身token值
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取token有效期时间，单位：秒
                      * @return Expire token有效期时间，单位：秒
+                     * 
                      */
                     int64_t GetExpire() const;
 
                     /**
                      * 设置token有效期时间，单位：秒
-                     * @param Expire token有效期时间，单位：秒
+                     * @param _expire token有效期时间，单位：秒
+                     * 
                      */
                     void SetExpire(const int64_t& _expire);
 
                     /**
                      * 判断参数 Expire 是否已赋值
                      * @return Expire 是否已赋值
+                     * 
                      */
                     bool ExpireHasBeenSet() const;
 

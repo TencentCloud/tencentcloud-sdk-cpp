@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取任务实例运行指标概览
                      * @return Summary 任务实例运行指标概览
+                     * 
                      */
                     InstanceReportSummary GetSummary() const;
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
                     /**
                      * 获取任务实例读取节点运行指标
                      * @return ReadNode 任务实例读取节点运行指标
+                     * 
                      */
                     InstanceReportReadNode GetReadNode() const;
 
                     /**
                      * 判断参数 ReadNode 是否已赋值
                      * @return ReadNode 是否已赋值
+                     * 
                      */
                     bool ReadNodeHasBeenSet() const;
 
                     /**
                      * 获取任务实例写入节点运行指标
                      * @return WriteNode 任务实例写入节点运行指标
+                     * 
                      */
                     InstanceReportWriteNode GetWriteNode() const;
 
                     /**
                      * 判断参数 WriteNode 是否已赋值
                      * @return WriteNode 是否已赋值
+                     * 
                      */
                     bool WriteNodeHasBeenSet() const;
 

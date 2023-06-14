@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterID 集群id
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置集群id
-                     * @param ClusterID 集群id
+                     * @param _clusterID 集群id
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
                     /**
                      * 获取查询总数
                      * @return Limit 查询总数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询总数
-                     * @param Limit 查询总数
+                     * @param _limit 查询总数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件，仅支持NodeName过滤
                      * @return Filters 过滤条件，仅支持NodeName过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，仅支持NodeName过滤
-                     * @param Filters 过滤条件，仅支持NodeName过滤
+                     * @param _filters 过滤条件，仅支持NodeName过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

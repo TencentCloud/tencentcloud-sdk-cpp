@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件：密钥的状态，0：disabled，1：enabled
                      * @return KeyStatus 过滤条件：密钥的状态，0：disabled，1：enabled
+                     * 
                      */
                     int64_t GetKeyStatus() const;
 
                     /**
                      * 设置过滤条件：密钥的状态，0：disabled，1：enabled
-                     * @param KeyStatus 过滤条件：密钥的状态，0：disabled，1：enabled
+                     * @param _keyStatus 过滤条件：密钥的状态，0：disabled，1：enabled
+                     * 
                      */
                     void SetKeyStatus(const int64_t& _keyStatus);
 
                     /**
                      * 判断参数 KeyStatus 是否已赋值
                      * @return KeyStatus 是否已赋值
+                     * 
                      */
                     bool KeyStatusHasBeenSet() const;
 
                     /**
                      * 获取含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
                      * @return Offset 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
-                     * @param Offset 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * @param _offset 含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页
                      * @return Limit 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页
-                     * @param Limit 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页
+                     * @param _limit 含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取标签过滤条件
                      * @return TagFilters 标签过滤条件
+                     * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤条件
-                     * @param TagFilters 标签过滤条件
+                     * @param _tagFilters 标签过滤条件
+                     * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
                      * @return TagFilters 是否已赋值
+                     * 
                      */
                     bool TagFiltersHasBeenSet() const;
 

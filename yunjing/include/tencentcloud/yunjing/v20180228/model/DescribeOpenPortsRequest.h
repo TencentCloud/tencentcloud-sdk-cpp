@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。
                      * @return Uuid 云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。
-                     * @param Uuid 云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。
+                     * @param _uuid 云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。
                      * @return Port 开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。
-                     * @param Port 开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。
+                     * @param _port 开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为10，最大值为100。
                      * @return Limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为10，最大值为100。
-                     * @param Limit 返回数量，默认为10，最大值为100。
+                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -124,6 +136,7 @@ namespace TencentCloud
 <li>Port - Uint64 - 是否必填：否 - 端口号</li>
 <li>ProcessName - String - 是否必填：否 - 进程名</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -132,16 +145,18 @@ namespace TencentCloud
 <li>Port - Uint64 - 是否必填：否 - 端口号</li>
 <li>ProcessName - String - 是否必填：否 - 进程名</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Port - Uint64 - 是否必填：否 - 端口号</li>
 <li>ProcessName - String - 是否必填：否 - 进程名</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

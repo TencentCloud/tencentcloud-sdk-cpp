@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取修改参数名字
                      * @return Param 修改参数名字
+                     * 
                      */
                     std::string GetParam() const;
 
                     /**
                      * 设置修改参数名字
-                     * @param Param 修改参数名字
+                     * @param _param 修改参数名字
+                     * 
                      */
                     void SetParam(const std::string& _param);
 
                     /**
                      * 判断参数 Param 是否已赋值
                      * @return Param 是否已赋值
+                     * 
                      */
                     bool ParamHasBeenSet() const;
 
                     /**
                      * 获取参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
                      * @return Code 参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
-                     * @param Code 参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
+                     * @param _code 参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 

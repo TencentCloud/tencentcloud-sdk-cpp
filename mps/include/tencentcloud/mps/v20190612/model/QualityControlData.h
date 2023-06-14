@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoAudio 为true时表示视频无音频轨。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetNoAudio() const;
 
                     /**
                      * 设置为true时表示视频无音频轨。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoAudio 为true时表示视频无音频轨。
+                     * @param _noAudio 为true时表示视频无音频轨。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoAudio(const bool& _noAudio);
 
                     /**
                      * 判断参数 NoAudio 是否已赋值
                      * @return NoAudio 是否已赋值
+                     * 
                      */
                     bool NoAudioHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoVideo 为true时表示视频无视频轨。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetNoVideo() const;
 
                     /**
                      * 设置为true时表示视频无视频轨。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoVideo 为true时表示视频无视频轨。
+                     * @param _noVideo 为true时表示视频无视频轨。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoVideo(const bool& _noVideo);
 
                     /**
                      * 判断参数 NoVideo 是否已赋值
                      * @return NoVideo 是否已赋值
+                     * 
                      */
                     bool NoVideoHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityEvaluationScore 视频无参考质量打分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetQualityEvaluationScore() const;
 
                     /**
                      * 设置视频无参考质量打分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QualityEvaluationScore 视频无参考质量打分，百分制。
+                     * @param _qualityEvaluationScore 视频无参考质量打分，百分制。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQualityEvaluationScore(const int64_t& _qualityEvaluationScore);
 
                     /**
                      * 判断参数 QualityEvaluationScore 是否已赋值
                      * @return QualityEvaluationScore 是否已赋值
+                     * 
                      */
                     bool QualityEvaluationScoreHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QualityControlResultSet 质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QualityControlResult> GetQualityControlResultSet() const;
 
                     /**
                      * 设置质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QualityControlResultSet 质检检出异常项。
+                     * @param _qualityControlResultSet 质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQualityControlResultSet(const std::vector<QualityControlResult>& _qualityControlResultSet);
 
                     /**
                      * 判断参数 QualityControlResultSet 是否已赋值
                      * @return QualityControlResultSet 是否已赋值
+                     * 
                      */
                     bool QualityControlResultSetHasBeenSet() const;
 

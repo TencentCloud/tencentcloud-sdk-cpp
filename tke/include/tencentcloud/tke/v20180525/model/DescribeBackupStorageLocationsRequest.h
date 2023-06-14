@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称
                      * @return Names 多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称
-                     * @param Names 多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称
+                     * @param _names 多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 

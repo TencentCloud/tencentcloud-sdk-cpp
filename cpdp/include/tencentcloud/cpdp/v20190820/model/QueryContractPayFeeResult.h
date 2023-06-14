@@ -53,38 +53,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pay pay支付方式json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PayDataResult GetPay() const;
 
                     /**
                      * 设置pay支付方式json数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pay pay支付方式json数据
+                     * @param _pay pay支付方式json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPay(const PayDataResult& _pay);
 
                     /**
                      * 判断参数 Pay 是否已赋值
                      * @return Pay 是否已赋值
+                     * 
                      */
                     bool PayHasBeenSet() const;
 
                     /**
                      * 获取合同扩展自定义字段
                      * @return ExtraInput 合同扩展自定义字段
+                     * 
                      */
                     std::vector<std::string> GetExtraInput() const;
 
                     /**
                      * 设置合同扩展自定义字段
-                     * @param ExtraInput 合同扩展自定义字段
+                     * @param _extraInput 合同扩展自定义字段
+                     * 
                      */
                     void SetExtraInput(const std::vector<std::string>& _extraInput);
 
                     /**
                      * 判断参数 ExtraInput 是否已赋值
                      * @return ExtraInput 是否已赋值
+                     * 
                      */
                     bool ExtraInputHasBeenSet() const;
 
@@ -93,20 +99,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayFee pay_fee支付方式行业分类费率json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PayFeeDataResult> GetPayFee() const;
 
                     /**
                      * 设置pay_fee支付方式行业分类费率json数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayFee pay_fee支付方式行业分类费率json数据
+                     * @param _payFee pay_fee支付方式行业分类费率json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayFee(const std::vector<PayFeeDataResult>& _payFee);
 
                     /**
                      * 判断参数 PayFee 是否已赋值
                      * @return PayFee 是否已赋值
+                     * 
                      */
                     bool PayFeeHasBeenSet() const;
 

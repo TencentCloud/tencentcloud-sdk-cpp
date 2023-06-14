@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取0：同步成功，1：资产更新中，2：后台同步调用失败
                      * @return Status 0：同步成功，1：资产更新中，2：后台同步调用失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

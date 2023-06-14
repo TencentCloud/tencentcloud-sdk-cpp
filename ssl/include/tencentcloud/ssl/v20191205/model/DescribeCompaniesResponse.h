@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取公司列表
                      * @return Companies 公司列表
+                     * 
                      */
                     std::vector<CompanyInfo> GetCompanies() const;
 
                     /**
                      * 判断参数 Companies 是否已赋值
                      * @return Companies 是否已赋值
+                     * 
                      */
                     bool CompaniesHasBeenSet() const;
 
                     /**
                      * 获取公司总数
                      * @return TotalCount 公司总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

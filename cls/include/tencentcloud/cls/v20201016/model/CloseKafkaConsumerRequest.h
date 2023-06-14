@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取CLS对应的topic标识
                      * @return FromTopicId CLS对应的topic标识
+                     * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
                      * 设置CLS对应的topic标识
-                     * @param FromTopicId CLS对应的topic标识
+                     * @param _fromTopicId CLS对应的topic标识
+                     * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
 
                     /**
                      * 判断参数 FromTopicId 是否已赋值
                      * @return FromTopicId 是否已赋值
+                     * 
                      */
                     bool FromTopicIdHasBeenSet() const;
 

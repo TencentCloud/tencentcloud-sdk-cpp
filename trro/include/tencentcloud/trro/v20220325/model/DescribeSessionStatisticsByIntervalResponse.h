@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取各时间段的会话统计数据
                      * @return SessionStatistics 各时间段的会话统计数据
+                     * 
                      */
                     std::vector<SessionIntervalStatistic> GetSessionStatistics() const;
 
                     /**
                      * 判断参数 SessionStatistics 是否已赋值
                      * @return SessionStatistics 是否已赋值
+                     * 
                      */
                     bool SessionStatisticsHasBeenSet() const;
 

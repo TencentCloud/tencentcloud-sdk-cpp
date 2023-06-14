@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取子网Id列表
                      * @return SubNetIds 子网Id列表
+                     * 
                      */
                     std::vector<std::string> GetSubNetIds() const;
 
                     /**
                      * 判断参数 SubNetIds 是否已赋值
                      * @return SubNetIds 是否已赋值
+                     * 
                      */
                     bool SubNetIdsHasBeenSet() const;
 

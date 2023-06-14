@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckSummarySet 检查点汇总信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CheckSummary> GetCheckSummarySet() const;
 
                     /**
                      * 判断参数 CheckSummarySet 是否已赋值
                      * @return CheckSummarySet 是否已赋值
+                     * 
                      */
                     bool CheckSummarySetHasBeenSet() const;
 

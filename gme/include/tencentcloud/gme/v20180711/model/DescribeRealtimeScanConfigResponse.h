@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取返回结果码，0正常，非0失败
                      * @return ErrorCode 返回结果码，0正常，非0失败
+                     * 
                      */
                     int64_t GetErrorCode() const;
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取送检类型，0: 全量送审，1: 自定义送审
                      * @return AuditType 送检类型，0: 全量送审，1: 自定义送审
+                     * 
                      */
                     int64_t GetAuditType() const;
 
                     /**
                      * 判断参数 AuditType 是否已赋值
                      * @return AuditType 是否已赋值
+                     * 
                      */
                     bool AuditTypeHasBeenSet() const;
 
                     /**
                      * 获取用户号正则表达式
                      * @return UserIdRegex 用户号正则表达式
+                     * 
                      */
                     std::vector<std::string> GetUserIdRegex() const;
 
                     /**
                      * 判断参数 UserIdRegex 是否已赋值
                      * @return UserIdRegex 是否已赋值
+                     * 
                      */
                     bool UserIdRegexHasBeenSet() const;
 
                     /**
                      * 获取房间号正则表达式
                      * @return RoomIdRegex 房间号正则表达式
+                     * 
                      */
                     std::vector<std::string> GetRoomIdRegex() const;
 
                     /**
                      * 判断参数 RoomIdRegex 是否已赋值
                      * @return RoomIdRegex 是否已赋值
+                     * 
                      */
                     bool RoomIdRegexHasBeenSet() const;
 
                     /**
                      * 获取用户号字符串，逗号分隔，示例："0001,0002,0003"
                      * @return UserIdString 用户号字符串，逗号分隔，示例："0001,0002,0003"
+                     * 
                      */
                     std::string GetUserIdString() const;
 
                     /**
                      * 判断参数 UserIdString 是否已赋值
                      * @return UserIdString 是否已赋值
+                     * 
                      */
                     bool UserIdStringHasBeenSet() const;
 
                     /**
                      * 获取房间号字符串，逗号分隔，示例："0001,0002,0003"
                      * @return RoomIdString 房间号字符串，逗号分隔，示例："0001,0002,0003"
+                     * 
                      */
                     std::string GetRoomIdString() const;
 
                     /**
                      * 判断参数 RoomIdString 是否已赋值
                      * @return RoomIdString 是否已赋值
+                     * 
                      */
                     bool RoomIdStringHasBeenSet() const;
 

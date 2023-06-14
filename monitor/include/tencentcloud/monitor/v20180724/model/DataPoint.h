@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取实例对象维度组合
                      * @return Dimensions 实例对象维度组合
+                     * 
                      */
                     std::vector<Dimension> GetDimensions() const;
 
                     /**
                      * 设置实例对象维度组合
-                     * @param Dimensions 实例对象维度组合
+                     * @param _dimensions 实例对象维度组合
+                     * 
                      */
                     void SetDimensions(const std::vector<Dimension>& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 
                     /**
                      * 获取时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了
                      * @return Timestamps 时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了
+                     * 
                      */
                     std::vector<double> GetTimestamps() const;
 
                     /**
                      * 设置时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了
-                     * @param Timestamps 时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了
+                     * @param _timestamps 时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了
+                     * 
                      */
                     void SetTimestamps(const std::vector<double>& _timestamps);
 
                     /**
                      * 判断参数 Timestamps 是否已赋值
                      * @return Timestamps 是否已赋值
+                     * 
                      */
                     bool TimestampsHasBeenSet() const;
 
                     /**
                      * 获取监控值数组，该数组和Timestamps一一对应
                      * @return Values 监控值数组，该数组和Timestamps一一对应
+                     * 
                      */
                     std::vector<double> GetValues() const;
 
                     /**
                      * 设置监控值数组，该数组和Timestamps一一对应
-                     * @param Values 监控值数组，该数组和Timestamps一一对应
+                     * @param _values 监控值数组，该数组和Timestamps一一对应
+                     * 
                      */
                     void SetValues(const std::vector<double>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

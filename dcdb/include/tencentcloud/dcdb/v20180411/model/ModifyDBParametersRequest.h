@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，形如：dcdbt-ow728lmc。
                      * @return InstanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，形如：dcdbt-ow728lmc。
-                     * @param InstanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * @param _instanceId 实例 ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取参数列表，每一个元素是Param和Value的组合
                      * @return Params 参数列表，每一个元素是Param和Value的组合
+                     * 
                      */
                     std::vector<DBParamValue> GetParams() const;
 
                     /**
                      * 设置参数列表，每一个元素是Param和Value的组合
-                     * @param Params 参数列表，每一个元素是Param和Value的组合
+                     * @param _params 参数列表，每一个元素是Param和Value的组合
+                     * 
                      */
                     void SetParams(const std::vector<DBParamValue>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 

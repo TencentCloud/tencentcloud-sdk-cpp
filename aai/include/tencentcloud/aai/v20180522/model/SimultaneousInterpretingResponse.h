@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取语音识别的结果
                      * @return AsrText 语音识别的结果
+                     * 
                      */
                     std::string GetAsrText() const;
 
                     /**
                      * 判断参数 AsrText 是否已赋值
                      * @return AsrText 是否已赋值
+                     * 
                      */
                     bool AsrTextHasBeenSet() const;
 
                     /**
                      * 获取机器翻译的结果
                      * @return NmtText 机器翻译的结果
+                     * 
                      */
                     std::string GetNmtText() const;
 
                     /**
                      * 判断参数 NmtText 是否已赋值
                      * @return NmtText 是否已赋值
+                     * 
                      */
                     bool NmtTextHasBeenSet() const;
 

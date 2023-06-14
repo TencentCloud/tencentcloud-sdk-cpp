@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6PrefixLen IPv6互联网公网允许的最小前缀长度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv6PrefixLen() const;
 
                     /**
                      * 判断参数 Ipv6PrefixLen 是否已赋值
                      * @return Ipv6PrefixLen 是否已赋值
+                     * 
                      */
                     bool Ipv6PrefixLenHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4BgpQuota BGP类型IPv4互联网地址配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv4BgpQuota() const;
 
                     /**
                      * 判断参数 Ipv4BgpQuota 是否已赋值
                      * @return Ipv4BgpQuota 是否已赋值
+                     * 
                      */
                     bool Ipv4BgpQuotaHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4OtherQuota 非BGP类型IPv4互联网地址配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv4OtherQuota() const;
 
                     /**
                      * 判断参数 Ipv4OtherQuota 是否已赋值
                      * @return Ipv4OtherQuota 是否已赋值
+                     * 
                      */
                     bool Ipv4OtherQuotaHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4BgpNum BGP类型IPv4互联网地址已使用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv4BgpNum() const;
 
                     /**
                      * 判断参数 Ipv4BgpNum 是否已赋值
                      * @return Ipv4BgpNum 是否已赋值
+                     * 
                      */
                     bool Ipv4BgpNumHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4OtherNum 非BGP类型互联网地址已使用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIpv4OtherNum() const;
 
                     /**
                      * 判断参数 Ipv4OtherNum 是否已赋值
                      * @return Ipv4OtherNum 是否已赋值
+                     * 
                      */
                     bool Ipv4OtherNumHasBeenSet() const;
 

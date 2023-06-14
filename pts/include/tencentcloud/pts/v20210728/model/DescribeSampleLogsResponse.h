@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志总数
                      * @return Total 日志总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleLogs 采样日志数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SampleLog> GetSampleLogs() const;
 
                     /**
                      * 判断参数 SampleLogs 是否已赋值
                      * @return SampleLogs 是否已赋值
+                     * 
                      */
                     bool SampleLogsHasBeenSet() const;
 

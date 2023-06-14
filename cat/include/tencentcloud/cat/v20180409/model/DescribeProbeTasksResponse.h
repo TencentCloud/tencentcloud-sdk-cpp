@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskSet 任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProbeTask> GetTaskSet() const;
 
                     /**
                      * 判断参数 TaskSet 是否已赋值
                      * @return TaskSet 是否已赋值
+                     * 
                      */
                     bool TaskSetHasBeenSet() const;
 
                     /**
                      * 获取任务总数
                      * @return Total 任务总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

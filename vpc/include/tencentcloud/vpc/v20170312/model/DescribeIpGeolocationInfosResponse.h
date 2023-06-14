@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取IP地址信息列表。
                      * @return AddressInfo IP地址信息列表。
+                     * 
                      */
                     std::vector<IpGeolocationInfo> GetAddressInfo() const;
 
                     /**
                      * 判断参数 AddressInfo 是否已赋值
                      * @return AddressInfo 是否已赋值
+                     * 
                      */
                     bool AddressInfoHasBeenSet() const;
 
                     /**
                      * 获取IP地址信息个数。
                      * @return Total IP地址信息个数。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

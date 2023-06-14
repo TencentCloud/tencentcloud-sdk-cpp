@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DNS解析记录详细信息列表
                      * @return GlobalDnsList DNS解析记录详细信息列表
+                     * 
                      */
                     std::vector<GlobalDns> GetGlobalDnsList() const;
 
                     /**
                      * 判断参数 GlobalDnsList 是否已赋值
                      * @return GlobalDnsList 是否已赋值
+                     * 
                      */
                     bool GlobalDnsListHasBeenSet() const;
 

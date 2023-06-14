@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取模型名称
                      * @return ModelName 模型名称
+                     * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置模型名称
-                     * @param ModelName 模型名称
+                     * @param _modelName 模型名称
+                     * 
                      */
                     void SetModelName(const std::string& _modelName);
 
                     /**
                      * 判断参数 ModelName 是否已赋值
                      * @return ModelName 是否已赋值
+                     * 
                      */
                     bool ModelNameHasBeenSet() const;
 
                     /**
                      * 获取模型文件名称
                      * @return DictName 模型文件名称
+                     * 
                      */
                     std::string GetDictName() const;
 
                     /**
                      * 设置模型文件名称
-                     * @param DictName 模型文件名称
+                     * @param _dictName 模型文件名称
+                     * 
                      */
                     void SetDictName(const std::string& _dictName);
 
                     /**
                      * 判断参数 DictName 是否已赋值
                      * @return DictName 是否已赋值
+                     * 
                      */
                     bool DictNameHasBeenSet() const;
 
                     /**
                      * 获取模型Id
                      * @return ModelId 模型Id
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型Id
-                     * @param ModelId 模型Id
+                     * @param _modelId 模型Id
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取模型类型，“8k”或者”16k“
                      * @return ModelType 模型类型，“8k”或者”16k“
+                     * 
                      */
                     std::string GetModelType() const;
 
                     /**
                      * 设置模型类型，“8k”或者”16k“
-                     * @param ModelType 模型类型，“8k”或者”16k“
+                     * @param _modelType 模型类型，“8k”或者”16k“
+                     * 
                      */
                     void SetModelType(const std::string& _modelType);
 
                     /**
                      * 判断参数 ModelType 是否已赋值
                      * @return ModelType 是否已赋值
+                     * 
                      */
                     bool ModelTypeHasBeenSet() const;
 
                     /**
                      * 获取服务类型
                      * @return ServiceType 服务类型
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置服务类型
-                     * @param ServiceType 服务类型
+                     * @param _serviceType 服务类型
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
@@ -151,6 +166,7 @@ namespace TencentCloud
 1：已上线；
 3：上线中；
 4：下线中；
+                     * 
                      */
                     int64_t GetModelState() const;
 
@@ -162,37 +178,42 @@ namespace TencentCloud
 1：已上线；
 3：上线中；
 4：下线中；
-                     * @param ModelState 模型状态：
+                     * @param _modelState 模型状态：
 -2：模型训练失败；
 -1：已下线；
 0：训练中；
 1：已上线；
 3：上线中；
 4：下线中；
+                     * 
                      */
                     void SetModelState(const int64_t& _modelState);
 
                     /**
                      * 判断参数 ModelState 是否已赋值
                      * @return ModelState 是否已赋值
+                     * 
                      */
                     bool ModelStateHasBeenSet() const;
 
                     /**
                      * 获取最后更新时间
                      * @return AtUpdated 最后更新时间
+                     * 
                      */
                     std::string GetAtUpdated() const;
 
                     /**
                      * 设置最后更新时间
-                     * @param AtUpdated 最后更新时间
+                     * @param _atUpdated 最后更新时间
+                     * 
                      */
                     void SetAtUpdated(const std::string& _atUpdated);
 
                     /**
                      * 判断参数 AtUpdated 是否已赋值
                      * @return AtUpdated 是否已赋值
+                     * 
                      */
                     bool AtUpdatedHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagInfos 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagInfos 标签信息
+                     * @param _tagInfos 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
+                     * 
                      */
                     bool TagInfosHasBeenSet() const;
 

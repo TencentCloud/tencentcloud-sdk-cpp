@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverType 接收者类型 USER=用户 GROUP=用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReceiverType() const;
 
                     /**
                      * 设置接收者类型 USER=用户 GROUP=用户组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverType 接收者类型 USER=用户 GROUP=用户组
+                     * @param _receiverType 接收者类型 USER=用户 GROUP=用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverType(const std::string& _receiverType);
 
                     /**
                      * 判断参数 ReceiverType 是否已赋值
                      * @return ReceiverType 是否已赋值
+                     * 
                      */
                     bool ReceiverTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 通知开始时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置通知开始时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 通知开始时间 00:00:00 开始的秒数（取值范围0-86399）
+                     * @param _startTime 通知开始时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 通知结束时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置通知结束时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 通知结束时间 00:00:00 开始的秒数（取值范围0-86399）
+                     * @param _endTime 通知结束时间 00:00:00 开始的秒数（取值范围0-86399）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNoticeWay() const;
 
                     /**
                      * 设置通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
+                     * @param _noticeWay 通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNoticeWay(const std::vector<std::string>& _noticeWay);
 
                     /**
                      * 判断参数 NoticeWay 是否已赋值
                      * @return NoticeWay 是否已赋值
+                     * 
                      */
                     bool NoticeWayHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 用户 uid 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetUserIds() const;
 
                     /**
                      * 设置用户 uid 列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserIds 用户 uid 列表
+                     * @param _userIds 用户 uid 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserIds(const std::vector<int64_t>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupIds 用户组 group id 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetGroupIds() const;
 
                     /**
                      * 设置用户组 group id 列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupIds 用户组 group id 列表
+                     * @param _groupIds 用户组 group id 列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupIds(const std::vector<int64_t>& _groupIds);
 
                     /**
                      * 判断参数 GroupIds 是否已赋值
                      * @return GroupIds 是否已赋值
+                     * 
                      */
                     bool GroupIdsHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneOrder 电话轮询列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetPhoneOrder() const;
 
                     /**
                      * 设置电话轮询列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneOrder 电话轮询列表
+                     * @param _phoneOrder 电话轮询列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneOrder(const std::vector<int64_t>& _phoneOrder);
 
                     /**
                      * 判断参数 PhoneOrder 是否已赋值
                      * @return PhoneOrder 是否已赋值
+                     * 
                      */
                     bool PhoneOrderHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneCircleTimes 电话轮询次数 （取值范围1-5）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneCircleTimes() const;
 
                     /**
                      * 设置电话轮询次数 （取值范围1-5）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneCircleTimes 电话轮询次数 （取值范围1-5）
+                     * @param _phoneCircleTimes 电话轮询次数 （取值范围1-5）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneCircleTimes(const int64_t& _phoneCircleTimes);
 
                     /**
                      * 判断参数 PhoneCircleTimes 是否已赋值
                      * @return PhoneCircleTimes 是否已赋值
+                     * 
                      */
                     bool PhoneCircleTimesHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneInnerInterval 单次轮询内拨打间隔 秒数 （取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneInnerInterval() const;
 
                     /**
                      * 设置单次轮询内拨打间隔 秒数 （取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneInnerInterval 单次轮询内拨打间隔 秒数 （取值范围60-900）
+                     * @param _phoneInnerInterval 单次轮询内拨打间隔 秒数 （取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneInnerInterval(const int64_t& _phoneInnerInterval);
 
                     /**
                      * 判断参数 PhoneInnerInterval 是否已赋值
                      * @return PhoneInnerInterval 是否已赋值
+                     * 
                      */
                     bool PhoneInnerIntervalHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneCircleInterval 两次轮询间隔 秒数（取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneCircleInterval() const;
 
                     /**
                      * 设置两次轮询间隔 秒数（取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneCircleInterval 两次轮询间隔 秒数（取值范围60-900）
+                     * @param _phoneCircleInterval 两次轮询间隔 秒数（取值范围60-900）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneCircleInterval(const int64_t& _phoneCircleInterval);
 
                     /**
                      * 判断参数 PhoneCircleInterval 是否已赋值
                      * @return PhoneCircleInterval 是否已赋值
+                     * 
                      */
                     bool PhoneCircleIntervalHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeedPhoneArriveNotice 是否需要触达通知 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNeedPhoneArriveNotice() const;
 
                     /**
                      * 设置是否需要触达通知 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NeedPhoneArriveNotice 是否需要触达通知 0=否 1=是
+                     * @param _needPhoneArriveNotice 是否需要触达通知 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNeedPhoneArriveNotice(const int64_t& _needPhoneArriveNotice);
 
                     /**
                      * 判断参数 NeedPhoneArriveNotice 是否已赋值
                      * @return NeedPhoneArriveNotice 是否已赋值
+                     * 
                      */
                     bool NeedPhoneArriveNoticeHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneCallType 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhoneCallType() const;
 
                     /**
                      * 设置电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneCallType 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
+                     * @param _phoneCallType 电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneCallType(const std::string& _phoneCallType);
 
                     /**
                      * 判断参数 PhoneCallType 是否已赋值
                      * @return PhoneCallType 是否已赋值
+                     * 
                      */
                     bool PhoneCallTypeHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weekday 通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetWeekday() const;
 
                     /**
                      * 设置通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weekday 通知周期 1-7表示周一到周日
+                     * @param _weekday 通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeekday(const std::vector<int64_t>& _weekday);
 
                     /**
                      * 判断参数 Weekday 是否已赋值
                      * @return Weekday 是否已赋值
+                     * 
                      */
                     bool WeekdayHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnCallFormIDs 值班表id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetOnCallFormIDs() const;
 
                     /**
                      * 设置值班表id列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OnCallFormIDs 值班表id列表
+                     * @param _onCallFormIDs 值班表id列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnCallFormIDs(const std::vector<std::string>& _onCallFormIDs);
 
                     /**
                      * 判断参数 OnCallFormIDs 是否已赋值
                      * @return OnCallFormIDs 是否已赋值
+                     * 
                      */
                     bool OnCallFormIDsHasBeenSet() const;
 

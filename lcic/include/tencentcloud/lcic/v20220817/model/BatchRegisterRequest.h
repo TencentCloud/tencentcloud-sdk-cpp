@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取批量注册用户信息列表
                      * @return Users 批量注册用户信息列表
+                     * 
                      */
                     std::vector<BatchUserRequest> GetUsers() const;
 
                     /**
                      * 设置批量注册用户信息列表
-                     * @param Users 批量注册用户信息列表
+                     * @param _users 批量注册用户信息列表
+                     * 
                      */
                     void SetUsers(const std::vector<BatchUserRequest>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 

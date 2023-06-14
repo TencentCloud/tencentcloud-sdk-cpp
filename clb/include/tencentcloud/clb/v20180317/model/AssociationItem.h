@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取关联到的负载均衡ID
                      * @return LoadBalancerId 关联到的负载均衡ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置关联到的负载均衡ID
-                     * @param LoadBalancerId 关联到的负载均衡ID
+                     * @param _loadBalancerId 关联到的负载均衡ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取关联到的监听器ID
                      * @return ListenerId 关联到的监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置关联到的监听器ID
-                     * @param ListenerId 关联到的监听器ID
+                     * @param _listenerId 关联到的监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
@@ -87,56 +93,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationId 关联到的转发规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置关联到的转发规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationId 关联到的转发规则ID
+                     * @param _locationId 关联到的转发规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取关联到的监听器协议类型，如HTTP,TCP,
                      * @return Protocol 关联到的监听器协议类型，如HTTP,TCP,
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置关联到的监听器协议类型，如HTTP,TCP,
-                     * @param Protocol 关联到的监听器协议类型，如HTTP,TCP,
+                     * @param _protocol 关联到的监听器协议类型，如HTTP,TCP,
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取关联到的监听器端口
                      * @return Port 关联到的监听器端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置关联到的监听器端口
-                     * @param Port 关联到的监听器端口
+                     * @param _port 关联到的监听器端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 关联到的转发规则域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置关联到的转发规则域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 关联到的转发规则域名
+                     * @param _domain 关联到的转发规则域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -167,56 +185,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 关联到的转发规则URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置关联到的转发规则URL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 关联到的转发规则URL
+                     * @param _url 关联到的转发规则URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取负载均衡名称
                      * @return LoadBalancerName 负载均衡名称
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡名称
-                     * @param LoadBalancerName 负载均衡名称
+                     * @param _loadBalancerName 负载均衡名称
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取监听器名称
                      * @return ListenerName 监听器名称
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名称
-                     * @param ListenerName 监听器名称
+                     * @param _listenerName 监听器名称
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 

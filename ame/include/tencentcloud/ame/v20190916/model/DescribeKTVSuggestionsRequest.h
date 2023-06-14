@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取联想关键词
                      * @return KeyWord 联想关键词
+                     * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
                      * 设置联想关键词
-                     * @param KeyWord 联想关键词
+                     * @param _keyWord 联想关键词
+                     * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
 
                     /**
                      * 判断参数 KeyWord 是否已赋值
                      * @return KeyWord 是否已赋值
+                     * 
                      */
                     bool KeyWordHasBeenSet() const;
 

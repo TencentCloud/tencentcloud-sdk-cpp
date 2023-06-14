@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取策略场景列表
                      * @return CaseList 策略场景列表
+                     * 
                      */
                     std::vector<KeyValueRecord> GetCaseList() const;
 
                     /**
                      * 判断参数 CaseList 是否已赋值
                      * @return CaseList 是否已赋值
+                     * 
                      */
                     bool CaseListHasBeenSet() const;
 

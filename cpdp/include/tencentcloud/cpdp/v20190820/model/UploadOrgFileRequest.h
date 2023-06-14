@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取收单系统分配的开放ID
                      * @return OpenId 收单系统分配的开放ID
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * @param _openId 收单系统分配的开放ID
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取收单系统分配的密钥
                      * @return OpenKey 收单系统分配的密钥
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * @param _openKey 收单系统分配的密钥
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
                      * @return Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * 
                      */
                     std::string GetStorage() const;
 
                     /**
                      * 设置存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
-                     * @param Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * @param _storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * 
                      */
                     void SetStorage(const std::string& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）
                      * @return FileMd5 文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）
+                     * 
                      */
                     std::string GetFileMd5() const;
 
                     /**
                      * 设置文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）
-                     * @param FileMd5 文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）
+                     * @param _fileMd5 文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）
+                     * 
                      */
                     void SetFileMd5(const std::string& _fileMd5);
 
                     /**
                      * 判断参数 FileMd5 是否已赋值
                      * @return FileMd5 是否已赋值
+                     * 
                      */
                     bool FileMd5HasBeenSet() const;
 
                     /**
                      * 获取文件内容（先将图片转换成二进制，再进行base64加密）
                      * @return FileContent 文件内容（先将图片转换成二进制，再进行base64加密）
+                     * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置文件内容（先将图片转换成二进制，再进行base64加密）
-                     * @param FileContent 文件内容（先将图片转换成二进制，再进行base64加密）
+                     * @param _fileContent 文件内容（先将图片转换成二进制，再进行base64加密）
+                     * 
                      */
                     void SetFileContent(const std::string& _fileContent);
 
                     /**
                      * 判断参数 FileContent 是否已赋值
                      * @return FileContent 是否已赋值
+                     * 
                      */
                     bool FileContentHasBeenSet() const;
 
                     /**
                      * 获取文件扩展名（png,jpg,gif）
                      * @return FileExtension 文件扩展名（png,jpg,gif）
+                     * 
                      */
                     std::string GetFileExtension() const;
 
                     /**
                      * 设置文件扩展名（png,jpg,gif）
-                     * @param FileExtension 文件扩展名（png,jpg,gif）
+                     * @param _fileExtension 文件扩展名（png,jpg,gif）
+                     * 
                      */
                     void SetFileExtension(const std::string& _fileExtension);
 
                     /**
                      * 判断参数 FileExtension 是否已赋值
                      * @return FileExtension 是否已赋值
+                     * 
                      */
                     bool FileExtensionHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

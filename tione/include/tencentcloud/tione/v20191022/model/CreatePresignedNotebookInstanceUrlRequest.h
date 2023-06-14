@@ -47,38 +47,44 @@ namespace TencentCloud
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
                      * @return NotebookInstanceName Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 设置Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
-                     * @param NotebookInstanceName Notebook实例名称
+                     * @param _notebookInstanceName Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
+                     * 
                      */
                     void SetNotebookInstanceName(const std::string& _notebookInstanceName);
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 
                     /**
                      * 获取session有效时间，秒，取值范围[1800, 43200]
                      * @return SessionExpirationDurationInSeconds session有效时间，秒，取值范围[1800, 43200]
+                     * 
                      */
                     int64_t GetSessionExpirationDurationInSeconds() const;
 
                     /**
                      * 设置session有效时间，秒，取值范围[1800, 43200]
-                     * @param SessionExpirationDurationInSeconds session有效时间，秒，取值范围[1800, 43200]
+                     * @param _sessionExpirationDurationInSeconds session有效时间，秒，取值范围[1800, 43200]
+                     * 
                      */
                     void SetSessionExpirationDurationInSeconds(const int64_t& _sessionExpirationDurationInSeconds);
 
                     /**
                      * 判断参数 SessionExpirationDurationInSeconds 是否已赋值
                      * @return SessionExpirationDurationInSeconds 是否已赋值
+                     * 
                      */
                     bool SessionExpirationDurationInSecondsHasBeenSet() const;
 

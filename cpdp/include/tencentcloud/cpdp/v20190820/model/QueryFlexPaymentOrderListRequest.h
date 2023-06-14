@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取开始时间，格式"yyyy-MM-dd hh:mm:ss"
                      * @return StartTime 开始时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式"yyyy-MM-dd hh:mm:ss"
-                     * @param StartTime 开始时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * @param _startTime 开始时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式"yyyy-MM-dd hh:mm:ss"
                      * @return EndTime 结束时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式"yyyy-MM-dd hh:mm:ss"
-                     * @param EndTime 结束时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * @param _endTime 结束时间，格式"yyyy-MM-dd hh:mm:ss"
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return PageNumber 分页
+                     * 
                      */
                     Paging GetPageNumber() const;
 
                     /**
                      * 设置分页
-                     * @param PageNumber 分页
+                     * @param _pageNumber 分页
+                     * 
                      */
                     void SetPageNumber(const Paging& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -126,6 +138,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -135,17 +148,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

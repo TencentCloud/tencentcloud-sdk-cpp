@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
                      * @return CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
-                     * @param CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * @param _companyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
                      * @return ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 设置优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
-                     * @param ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * @param _shopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     void SetShopId(const int64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取人脸图片BASE编码
                      * @return Picture 人脸图片BASE编码
+                     * 
                      */
                     std::string GetPicture() const;
 
                     /**
                      * 设置人脸图片BASE编码
-                     * @param Picture 人脸图片BASE编码
+                     * @param _picture 人脸图片BASE编码
+                     * 
                      */
                     void SetPicture(const std::string& _picture);
 
                     /**
                      * 判断参数 Picture 是否已赋值
                      * @return Picture 是否已赋值
+                     * 
                      */
                     bool PictureHasBeenSet() const;
 

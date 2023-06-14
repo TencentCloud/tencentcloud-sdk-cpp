@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志导出ID。
                      * @return TotalCount 日志导出ID。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exports 日志导出列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExportAccessInfo> GetExports() const;
 
                     /**
                      * 判断参数 Exports 是否已赋值
                      * @return Exports 是否已赋值
+                     * 
                      */
                     bool ExportsHasBeenSet() const;
 

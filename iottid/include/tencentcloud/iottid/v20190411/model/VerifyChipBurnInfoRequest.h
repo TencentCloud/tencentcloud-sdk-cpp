@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取验证数据
                      * @return Data 验证数据
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置验证数据
-                     * @param Data 验证数据
+                     * @param _data 验证数据
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

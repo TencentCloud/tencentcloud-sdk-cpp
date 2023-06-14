@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取黑石负载均衡实例ID。
                      * @return LoadBalancerId 黑石负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置黑石负载均衡实例ID。
-                     * @param LoadBalancerId 黑石负载均衡实例ID。
+                     * @param _loadBalancerId 黑石负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取黑石负载均衡实例名称。
                      * @return LoadBalancerName 黑石负载均衡实例名称。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置黑石负载均衡实例名称。
-                     * @param LoadBalancerName 黑石负载均衡实例名称。
+                     * @param _loadBalancerName 黑石负载均衡实例名称。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取该黑石负载均衡所在的VpcId。
                      * @return VpcId 该黑石负载均衡所在的VpcId。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置该黑石负载均衡所在的VpcId。
-                     * @param VpcId 该黑石负载均衡所在的VpcId。
+                     * @param _vpcId 该黑石负载均衡所在的VpcId。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取该黑石负载均衡所在的regionId。
                      * @return RegionId 该黑石负载均衡所在的regionId。
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置该黑石负载均衡所在的regionId。
-                     * @param RegionId 该黑石负载均衡所在的regionId。
+                     * @param _regionId 该黑石负载均衡所在的regionId。
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 

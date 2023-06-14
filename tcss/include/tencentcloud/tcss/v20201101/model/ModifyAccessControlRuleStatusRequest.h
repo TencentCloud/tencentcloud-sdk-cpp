@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取策略的ids
                      * @return RuleIdSet 策略的ids
+                     * 
                      */
                     std::vector<std::string> GetRuleIdSet() const;
 
                     /**
                      * 设置策略的ids
-                     * @param RuleIdSet 策略的ids
+                     * @param _ruleIdSet 策略的ids
+                     * 
                      */
                     void SetRuleIdSet(const std::vector<std::string>& _ruleIdSet);
 
                     /**
                      * 判断参数 RuleIdSet 是否已赋值
                      * @return RuleIdSet 是否已赋值
+                     * 
                      */
                     bool RuleIdSetHasBeenSet() const;
 
                     /**
                      * 获取策略开关，true:代表开启， false代表关闭
                      * @return IsEnable 策略开关，true:代表开启， false代表关闭
+                     * 
                      */
                     bool GetIsEnable() const;
 
                     /**
                      * 设置策略开关，true:代表开启， false代表关闭
-                     * @param IsEnable 策略开关，true:代表开启， false代表关闭
+                     * @param _isEnable 策略开关，true:代表开启， false代表关闭
+                     * 
                      */
                     void SetIsEnable(const bool& _isEnable);
 
                     /**
                      * 判断参数 IsEnable 是否已赋值
                      * @return IsEnable 是否已赋值
+                     * 
                      */
                     bool IsEnableHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取视觉信息起始时间戳，从0开始
                      * @return StartTimeStamp 视觉信息起始时间戳，从0开始
+                     * 
                      */
                     double GetStartTimeStamp() const;
 
                     /**
                      * 设置视觉信息起始时间戳，从0开始
-                     * @param StartTimeStamp 视觉信息起始时间戳，从0开始
+                     * @param _startTimeStamp 视觉信息起始时间戳，从0开始
+                     * 
                      */
                     void SetStartTimeStamp(const double& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)
                      * @return EndTimeStamp 视觉信息终止时间戳，从0开始
 关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)
+                     * 
                      */
                     double GetEndTimeStamp() const;
 
                     /**
                      * 设置视觉信息终止时间戳，从0开始
 关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)
-                     * @param EndTimeStamp 视觉信息终止时间戳，从0开始
+                     * @param _endTimeStamp 视觉信息终止时间戳，从0开始
 关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)
+                     * 
                      */
                     void SetEndTimeStamp(const double& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
                      * 获取关键词在视觉信息中的封面图片
                      * @return ImageURL 关键词在视觉信息中的封面图片
+                     * 
                      */
                     std::string GetImageURL() const;
 
                     /**
                      * 设置关键词在视觉信息中的封面图片
-                     * @param ImageURL 关键词在视觉信息中的封面图片
+                     * @param _imageURL 关键词在视觉信息中的封面图片
+                     * 
                      */
                     void SetImageURL(const std::string& _imageURL);
 
                     /**
                      * 判断参数 ImageURL 是否已赋值
                      * @return ImageURL 是否已赋值
+                     * 
                      */
                     bool ImageURLHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 数据列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetColumns() const;
 
                     /**
                      * 设置数据列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Columns 数据列
+                     * @param _columns 数据列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColumns(const std::vector<std::string>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetValues() const;
 
                     /**
                      * 设置数据值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 数据值
+                     * @param _values 数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<int64_t>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

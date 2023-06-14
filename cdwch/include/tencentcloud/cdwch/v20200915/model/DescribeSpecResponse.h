@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取zookeeper节点规格描述
                      * @return CommonSpec zookeeper节点规格描述
+                     * 
                      */
                     std::vector<ResourceSpec> GetCommonSpec() const;
 
                     /**
                      * 判断参数 CommonSpec 是否已赋值
                      * @return CommonSpec 是否已赋值
+                     * 
                      */
                     bool CommonSpecHasBeenSet() const;
 
                     /**
                      * 获取数据节点规格描述
                      * @return DataSpec 数据节点规格描述
+                     * 
                      */
                     std::vector<ResourceSpec> GetDataSpec() const;
 
                     /**
                      * 判断参数 DataSpec 是否已赋值
                      * @return DataSpec 是否已赋值
+                     * 
                      */
                     bool DataSpecHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachCBSSpec 云盘列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DiskSpec> GetAttachCBSSpec() const;
 
                     /**
                      * 判断参数 AttachCBSSpec 是否已赋值
                      * @return AttachCBSSpec 是否已赋值
+                     * 
                      */
                     bool AttachCBSSpecHasBeenSet() const;
 

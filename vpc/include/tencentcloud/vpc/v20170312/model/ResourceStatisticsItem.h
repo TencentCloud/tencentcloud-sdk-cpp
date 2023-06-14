@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取资源类型。比如，CVM，ENI等。
                      * @return ResourceType 资源类型。比如，CVM，ENI等。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型。比如，CVM，ENI等。
-                     * @param ResourceType 资源类型。比如，CVM，ENI等。
+                     * @param _resourceType 资源类型。比如，CVM，ENI等。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源名称。
                      * @return ResourceName 资源名称。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称。
-                     * @param ResourceName 资源名称。
+                     * @param _resourceName 资源名称。
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取资源个数。
                      * @return ResourceCount 资源个数。
+                     * 
                      */
                     uint64_t GetResourceCount() const;
 
                     /**
                      * 设置资源个数。
-                     * @param ResourceCount 资源个数。
+                     * @param _resourceCount 资源个数。
+                     * 
                      */
                     void SetResourceCount(const uint64_t& _resourceCount);
 
                     /**
                      * 判断参数 ResourceCount 是否已赋值
                      * @return ResourceCount 是否已赋值
+                     * 
                      */
                     bool ResourceCountHasBeenSet() const;
 

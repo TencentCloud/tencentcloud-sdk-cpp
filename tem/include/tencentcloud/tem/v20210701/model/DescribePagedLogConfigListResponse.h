@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日志收集配置列表
                      * @return Result 日志收集配置列表
+                     * 
                      */
                     LogConfigListPage GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

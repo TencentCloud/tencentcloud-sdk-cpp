@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取java进程pid
                      * @return PID java进程pid
+                     * 
                      */
                     int64_t GetPID() const;
 
                     /**
                      * 设置java进程pid
-                     * @param PID java进程pid
+                     * @param _pID java进程pid
+                     * 
                      */
                     void SetPID(const int64_t& _pID);
 
                     /**
                      * 判断参数 PID 是否已赋值
                      * @return PID 是否已赋值
+                     * 
                      */
                     bool PIDHasBeenSet() const;
 
                     /**
                      * 获取进程主类名
                      * @return MainClass 进程主类名
+                     * 
                      */
                     std::string GetMainClass() const;
 
                     /**
                      * 设置进程主类名
-                     * @param MainClass 进程主类名
+                     * @param _mainClass 进程主类名
+                     * 
                      */
                     void SetMainClass(const std::string& _mainClass);
 
                     /**
                      * 判断参数 MainClass 是否已赋值
                      * @return MainClass 是否已赋值
+                     * 
                      */
                     bool MainClassHasBeenSet() const;
 
                     /**
                      * 获取插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
                      * @return Status 插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
-                     * @param Status 插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+                     * @param _status 插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取错误日志
                      * @return ErrorLog 错误日志
+                     * 
                      */
                     std::string GetErrorLog() const;
 
                     /**
                      * 设置错误日志
-                     * @param ErrorLog 错误日志
+                     * @param _errorLog 错误日志
+                     * 
                      */
                     void SetErrorLog(const std::string& _errorLog);
 
                     /**
                      * 判断参数 ErrorLog 是否已赋值
                      * @return ErrorLog 是否已赋值
+                     * 
                      */
                     bool ErrorLogHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      * @return TaskId 任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
                      * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
 
                     /**
                      * 判断参数 ReviewAudioVideoTaskId 是否已赋值
                      * @return ReviewAudioVideoTaskId 是否已赋值
+                     * 
                      */
                     bool ReviewAudioVideoTaskIdHasBeenSet() const;
 

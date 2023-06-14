@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取xxx
                      * @return CloudStudioSessionTeam xxx
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置xxx
-                     * @param CloudStudioSessionTeam xxx
+                     * @param _cloudStudioSessionTeam xxx
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 

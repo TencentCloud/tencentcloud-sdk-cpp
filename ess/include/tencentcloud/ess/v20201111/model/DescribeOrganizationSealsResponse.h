@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取在设置了SealId时返回0或1，没有设置时返回公司的总印章数量，可能比返回的印章数组数量多
                      * @return TotalCount 在设置了SealId时返回0或1，没有设置时返回公司的总印章数量，可能比返回的印章数组数量多
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取查询到的印章结果数组
                      * @return Seals 查询到的印章结果数组
+                     * 
                      */
                     std::vector<OccupiedSeal> GetSeals() const;
 
                     /**
                      * 判断参数 Seals 是否已赋值
                      * @return Seals 是否已赋值
+                     * 
                      */
                     bool SealsHasBeenSet() const;
 

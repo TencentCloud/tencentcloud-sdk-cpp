@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取检测结果
                      * @return Data 检测结果
+                     * 
                      */
                     DetectionEnvAndSoundQualityRespData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

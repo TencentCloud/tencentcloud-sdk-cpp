@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return File 拼接结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskResultFile GetFile() const;
 
                     /**
                      * 设置拼接结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param File 拼接结果文件。
+                     * @param _file 拼接结果文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFile(const TaskResultFile& _file);
 
                     /**
                      * 判断参数 File 是否已赋值
                      * @return File 是否已赋值
+                     * 
                      */
                     bool FileHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnInstanceSets 云联网实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CcnInstanceSets> GetCcnInstanceSets() const;
 
                     /**
                      * 判断参数 CcnInstanceSets 是否已赋值
                      * @return CcnInstanceSets 是否已赋值
+                     * 
                      */
                     bool CcnInstanceSetsHasBeenSet() const;
 
                     /**
                      * 获取云联网实例个数，最小值为0
                      * @return TotalCount 云联网实例个数，最小值为0
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

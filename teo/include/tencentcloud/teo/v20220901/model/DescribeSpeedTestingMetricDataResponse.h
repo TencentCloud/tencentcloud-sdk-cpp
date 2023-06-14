@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取站点拨测维度数据。
                      * @return SpeedTestingMetricData 站点拨测维度数据。
+                     * 
                      */
                     SpeedTestingMetricData GetSpeedTestingMetricData() const;
 
                     /**
                      * 判断参数 SpeedTestingMetricData 是否已赋值
                      * @return SpeedTestingMetricData 是否已赋值
+                     * 
                      */
                     bool SpeedTestingMetricDataHasBeenSet() const;
 

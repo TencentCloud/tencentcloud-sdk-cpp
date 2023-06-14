@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取不为0，表示查询支持ipv6的机器
                      * @return Ipv6Enable 不为0，表示查询支持ipv6的机器
+                     * 
                      */
                     int64_t GetIpv6Enable() const;
 
                     /**
                      * 设置不为0，表示查询支持ipv6的机器
-                     * @param Ipv6Enable 不为0，表示查询支持ipv6的机器
+                     * @param _ipv6Enable 不为0，表示查询支持ipv6的机器
+                     * 
                      */
                     void SetIpv6Enable(const int64_t& _ipv6Enable);
 
                     /**
                      * 判断参数 Ipv6Enable 是否已赋值
                      * @return Ipv6Enable 是否已赋值
+                     * 
                      */
                     bool Ipv6EnableHasBeenSet() const;
 

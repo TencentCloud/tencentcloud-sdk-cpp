@@ -47,20 +47,23 @@ namespace TencentCloud
 注意：若根据AccessGroupId查看挂载点列表，则无需设置FileSystemId
                      * @return FileSystemId 文件系统ID
 注意：若根据AccessGroupId查看挂载点列表，则无需设置FileSystemId
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
 注意：若根据AccessGroupId查看挂载点列表，则无需设置FileSystemId
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
 注意：若根据AccessGroupId查看挂载点列表，则无需设置FileSystemId
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
@@ -69,56 +72,65 @@ namespace TencentCloud
 注意：若根据FileSystemId查看挂载点列表，则无需设置AccessGroupId
                      * @return AccessGroupId 权限组ID
 注意：若根据FileSystemId查看挂载点列表，则无需设置AccessGroupId
+                     * 
                      */
                     std::string GetAccessGroupId() const;
 
                     /**
                      * 设置权限组ID
 注意：若根据FileSystemId查看挂载点列表，则无需设置AccessGroupId
-                     * @param AccessGroupId 权限组ID
+                     * @param _accessGroupId 权限组ID
 注意：若根据FileSystemId查看挂载点列表，则无需设置AccessGroupId
+                     * 
                      */
                     void SetAccessGroupId(const std::string& _accessGroupId);
 
                     /**
                      * 判断参数 AccessGroupId 是否已赋值
                      * @return AccessGroupId 是否已赋值
+                     * 
                      */
                     bool AccessGroupIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为所有
                      * @return Limit 返回数量，默认为所有
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为所有
-                     * @param Limit 返回数量，默认为所有
+                     * @param _limit 返回数量，默认为所有
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

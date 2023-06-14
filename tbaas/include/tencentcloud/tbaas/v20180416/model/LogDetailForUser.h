@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取日志行号
                      * @return LineNumber 日志行号
+                     * 
                      */
                     uint64_t GetLineNumber() const;
 
                     /**
                      * 设置日志行号
-                     * @param LineNumber 日志行号
+                     * @param _lineNumber 日志行号
+                     * 
                      */
                     void SetLineNumber(const uint64_t& _lineNumber);
 
                     /**
                      * 判断参数 LineNumber 是否已赋值
                      * @return LineNumber 是否已赋值
+                     * 
                      */
                     bool LineNumberHasBeenSet() const;
 
                     /**
                      * 获取日志详情
                      * @return LogMessage 日志详情
+                     * 
                      */
                     std::string GetLogMessage() const;
 
                     /**
                      * 设置日志详情
-                     * @param LogMessage 日志详情
+                     * @param _logMessage 日志详情
+                     * 
                      */
                     void SetLogMessage(const std::string& _logMessage);
 
                     /**
                      * 判断参数 LogMessage 是否已赋值
                      * @return LogMessage 是否已赋值
+                     * 
                      */
                     bool LogMessageHasBeenSet() const;
 

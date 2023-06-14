@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取公网服务域名
                      * @return PublicDomain 公网服务域名
+                     * 
                      */
                     std::string GetPublicDomain() const;
 
                     /**
                      * 判断参数 PublicDomain 是否已赋值
                      * @return PublicDomain 是否已赋值
+                     * 
                      */
                     bool PublicDomainHasBeenSet() const;
 
                     /**
                      * 获取内部服务域名
                      * @return InternalDomain 内部服务域名
+                     * 
                      */
                     std::string GetInternalDomain() const;
 
                     /**
                      * 判断参数 InternalDomain 是否已赋值
                      * @return InternalDomain 是否已赋值
+                     * 
                      */
                     bool InternalDomainHasBeenSet() const;
 
                     /**
                      * 获取弃用
                      * @return DomainName 弃用
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用来传递给插件的关键字段
                      * @return UserKey 用来传递给插件的关键字段
+                     * 
                      */
                     std::string GetUserKey() const;
 
                     /**
                      * 判断参数 UserKey 是否已赋值
                      * @return UserKey 是否已赋值
+                     * 
                      */
                     bool UserKeyHasBeenSet() const;
 

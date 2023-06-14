@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取团队 ID。
                      * @return TeamId 团队 ID。
+                     * 
                      */
                     std::string GetTeamId() const;
 
                     /**
                      * 设置团队 ID。
-                     * @param TeamId 团队 ID。
+                     * @param _teamId 团队 ID。
+                     * 
                      */
                     void SetTeamId(const std::string& _teamId);
 
                     /**
                      * 判断参数 TeamId 是否已赋值
                      * @return TeamId 是否已赋值
+                     * 
                      */
                     bool TeamIdHasBeenSet() const;
 
                     /**
                      * 获取团队名称。
                      * @return Name 团队名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置团队名称。
-                     * @param Name 团队名称。
+                     * @param _name 团队名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取团队成员个数。
                      * @return MemberCount 团队成员个数。
+                     * 
                      */
                     uint64_t GetMemberCount() const;
 
                     /**
                      * 设置团队成员个数。
-                     * @param MemberCount 团队成员个数。
+                     * @param _memberCount 团队成员个数。
+                     * 
                      */
                     void SetMemberCount(const uint64_t& _memberCount);
 
                     /**
                      * 判断参数 MemberCount 是否已赋值
                      * @return MemberCount 是否已赋值
+                     * 
                      */
                     bool MemberCountHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 <li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>
 <li>Admin：团队管理员；</li>
 <li>Member：普通成员。</li>
+                     * 
                      */
                     std::string GetRole() const;
 
@@ -117,16 +127,18 @@ namespace TencentCloud
 <li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>
 <li>Admin：团队管理员；</li>
 <li>Member：普通成员。</li>
-                     * @param Role 成员在团队中的角色，取值有：
+                     * @param _role 成员在团队中的角色，取值有：
 <li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>
 <li>Admin：团队管理员；</li>
 <li>Member：普通成员。</li>
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

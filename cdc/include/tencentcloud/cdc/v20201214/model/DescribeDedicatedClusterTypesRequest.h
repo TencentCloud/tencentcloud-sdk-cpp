@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取模糊匹配专用集群配置名称
                      * @return Name 模糊匹配专用集群配置名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模糊匹配专用集群配置名称
-                     * @param Name 模糊匹配专用集群配置名称
+                     * @param _name 模糊匹配专用集群配置名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取待查询的专用集群配置id列表
                      * @return DedicatedClusterTypeIds 待查询的专用集群配置id列表
+                     * 
                      */
                     std::vector<std::string> GetDedicatedClusterTypeIds() const;
 
                     /**
                      * 设置待查询的专用集群配置id列表
-                     * @param DedicatedClusterTypeIds 待查询的专用集群配置id列表
+                     * @param _dedicatedClusterTypeIds 待查询的专用集群配置id列表
+                     * 
                      */
                     void SetDedicatedClusterTypeIds(const std::vector<std::string>& _dedicatedClusterTypeIds);
 
                     /**
                      * 判断参数 DedicatedClusterTypeIds 是否已赋值
                      * @return DedicatedClusterTypeIds 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterTypeIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-                     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取是否只查询计算规格类型
                      * @return IsCompute 是否只查询计算规格类型
+                     * 
                      */
                     bool GetIsCompute() const;
 
                     /**
                      * 设置是否只查询计算规格类型
-                     * @param IsCompute 是否只查询计算规格类型
+                     * @param _isCompute 是否只查询计算规格类型
+                     * 
                      */
                     void SetIsCompute(const bool& _isCompute);
 
                     /**
                      * 判断参数 IsCompute 是否已赋值
                      * @return IsCompute 是否已赋值
+                     * 
                      */
                     bool IsComputeHasBeenSet() const;
 

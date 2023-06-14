@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取作品ID，一个作品对应唯一的workid
                      * @return WorkId 作品ID，一个作品对应唯一的workid
+                     * 
                      */
                     int64_t GetWorkId() const;
 
                     /**
                      * 判断参数 WorkId 是否已赋值
                      * @return WorkId 是否已赋值
+                     * 
                      */
                     bool WorkIdHasBeenSet() const;
 
                     /**
                      * 获取存证ID，忽略该字段
                      * @return EvidenceId 存证ID，忽略该字段
+                     * 
                      */
                     int64_t GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 

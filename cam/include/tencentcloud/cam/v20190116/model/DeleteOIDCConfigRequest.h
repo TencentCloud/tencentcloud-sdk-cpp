@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取OIDC身份提供商名称
                      * @return Name OIDC身份提供商名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置OIDC身份提供商名称
-                     * @param Name OIDC身份提供商名称
+                     * @param _name OIDC身份提供商名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

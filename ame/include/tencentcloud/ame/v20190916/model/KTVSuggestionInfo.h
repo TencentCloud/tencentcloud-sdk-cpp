@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取联想词
                      * @return Suggestion 联想词
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置联想词
-                     * @param Suggestion 联想词
+                     * @param _suggestion 联想词
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 

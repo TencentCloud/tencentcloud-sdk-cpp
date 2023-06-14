@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取分页序号，从1开始
                      * @return PageNumber 分页序号，从1开始
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页序号，从1开始
-                     * @param PageNumber 分页序号，从1开始
+                     * @param _pageNumber 分页序号，从1开始
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每个分页所包含的元素数量，最大为50
                      * @return PageSize 每个分页所包含的元素数量，最大为50
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每个分页所包含的元素数量，最大为50
-                     * @param PageSize 每个分页所包含的元素数量，最大为50
+                     * @param _pageSize 每个分页所包含的元素数量，最大为50
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取任务过滤条件，相关限制参见TaskFilter
                      * @return TaskFilter 任务过滤条件，相关限制参见TaskFilter
+                     * 
                      */
                     TaskFilter GetTaskFilter() const;
 
                     /**
                      * 设置任务过滤条件，相关限制参见TaskFilter
-                     * @param TaskFilter 任务过滤条件，相关限制参见TaskFilter
+                     * @param _taskFilter 任务过滤条件，相关限制参见TaskFilter
+                     * 
                      */
                     void SetTaskFilter(const TaskFilter& _taskFilter);
 
                     /**
                      * 判断参数 TaskFilter 是否已赋值
                      * @return TaskFilter 是否已赋值
+                     * 
                      */
                     bool TaskFilterHasBeenSet() const;
 
                     /**
                      * 获取返回结果排序信息，By字段只支持CreateTimeStamp
                      * @return SortBy 返回结果排序信息，By字段只支持CreateTimeStamp
+                     * 
                      */
                     SortBy GetSortBy() const;
 
                     /**
                      * 设置返回结果排序信息，By字段只支持CreateTimeStamp
-                     * @param SortBy 返回结果排序信息，By字段只支持CreateTimeStamp
+                     * @param _sortBy 返回结果排序信息，By字段只支持CreateTimeStamp
+                     * 
                      */
                     void SetSortBy(const SortBy& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 

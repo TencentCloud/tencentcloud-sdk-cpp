@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作
                      * @return TaskGroupActionOrder 该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作
+                     * 
                      */
                     uint64_t GetTaskGroupActionOrder() const;
 
                     /**
                      * 设置该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作
-                     * @param TaskGroupActionOrder 该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作
+                     * @param _taskGroupActionOrder 该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作
+                     * 
                      */
                     void SetTaskGroupActionOrder(const uint64_t& _taskGroupActionOrder);
 
                     /**
                      * 判断参数 TaskGroupActionOrder 是否已赋值
                      * @return TaskGroupActionOrder 是否已赋值
+                     * 
                      */
                     bool TaskGroupActionOrderHasBeenSet() const;
 
                     /**
                      * 获取动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
                      * @return TaskGroupActionGeneralConfiguration 动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * 
                      */
                     std::string GetTaskGroupActionGeneralConfiguration() const;
 
                     /**
                      * 设置动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
-                     * @param TaskGroupActionGeneralConfiguration 动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * @param _taskGroupActionGeneralConfiguration 动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * 
                      */
                     void SetTaskGroupActionGeneralConfiguration(const std::string& _taskGroupActionGeneralConfiguration);
 
                     /**
                      * 判断参数 TaskGroupActionGeneralConfiguration 是否已赋值
                      * @return TaskGroupActionGeneralConfiguration 是否已赋值
+                     * 
                      */
                     bool TaskGroupActionGeneralConfigurationHasBeenSet() const;
 
                     /**
                      * 获取动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
                      * @return TaskGroupActionCustomConfiguration 动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * 
                      */
                     std::string GetTaskGroupActionCustomConfiguration() const;
 
                     /**
                      * 设置动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
-                     * @param TaskGroupActionCustomConfiguration 动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * @param _taskGroupActionCustomConfiguration 动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数
+                     * 
                      */
                     void SetTaskGroupActionCustomConfiguration(const std::string& _taskGroupActionCustomConfiguration);
 
                     /**
                      * 判断参数 TaskGroupActionCustomConfiguration 是否已赋值
                      * @return TaskGroupActionCustomConfiguration 是否已赋值
+                     * 
                      */
                     bool TaskGroupActionCustomConfigurationHasBeenSet() const;
 

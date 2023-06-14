@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取子任务名
                      * @return Name 子任务名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置子任务名
-                     * @param Name 子任务名
+                     * @param _name 子任务名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取子任务结果
                      * @return Result 子任务结果
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 设置子任务结果
-                     * @param Result 子任务结果
+                     * @param _result 子任务结果
+                     * 
                      */
                     void SetResult(const bool& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取子任务错误信息
                      * @return ErrMsg 子任务错误信息
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置子任务错误信息
-                     * @param ErrMsg 子任务错误信息
+                     * @param _errMsg 子任务错误信息
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
                     /**
                      * 获取子任务类型
                      * @return Type 子任务类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置子任务类型
-                     * @param Type 子任务类型
+                     * @param _type 子任务类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取子任务状态，0处理中 1成功 -1失败
                      * @return Status 子任务状态，0处理中 1成功 -1失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置子任务状态，0处理中 1成功 -1失败
-                     * @param Status 子任务状态，0处理中 1成功 -1失败
+                     * @param _status 子任务状态，0处理中 1成功 -1失败
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取升级检查失败的索引名
                      * @return FailedIndices 升级检查失败的索引名
+                     * 
                      */
                     std::vector<std::string> GetFailedIndices() const;
 
                     /**
                      * 设置升级检查失败的索引名
-                     * @param FailedIndices 升级检查失败的索引名
+                     * @param _failedIndices 升级检查失败的索引名
+                     * 
                      */
                     void SetFailedIndices(const std::vector<std::string>& _failedIndices);
 
                     /**
                      * 判断参数 FailedIndices 是否已赋值
                      * @return FailedIndices 是否已赋值
+                     * 
                      */
                     bool FailedIndicesHasBeenSet() const;
 
                     /**
                      * 获取子任务结束时间
                      * @return FinishTime 子任务结束时间
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置子任务结束时间
-                     * @param FinishTime 子任务结束时间
+                     * @param _finishTime 子任务结束时间
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取子任务等级，1警告 2失败
                      * @return Level 子任务等级，1警告 2失败
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置子任务等级，1警告 2失败
-                     * @param Level 子任务等级，1警告 2失败
+                     * @param _level 子任务等级，1警告 2失败
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

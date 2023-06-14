@@ -56,6 +56,7 @@ md5hash：MD5（自定义密钥 + 文件路径 + timestamp）
                      * @return SecretKey 计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
@@ -63,15 +64,17 @@ md5hash：MD5（自定义密钥 + 文件路径 + timestamp）
                      * 设置计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 计算签名的密钥
+                     * @param _secretKey 计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -80,20 +83,23 @@ md5hash：MD5（自定义密钥 + 文件路径 + timestamp）
 单位为秒，最大可设置为 630720000
                      * @return ExpireTime 签名过期时间设置
 单位为秒，最大可设置为 630720000
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置签名过期时间设置
 单位为秒，最大可设置为 630720000
-                     * @param ExpireTime 签名过期时间设置
+                     * @param _expireTime 签名过期时间设置
 单位为秒，最大可设置为 630720000
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -102,20 +108,23 @@ md5hash：MD5（自定义密钥 + 文件路径 + timestamp）
 如果包含字符 *  则表示所有文件
                      * @return FileExtensions 鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
+                     * 
                      */
                     std::vector<std::string> GetFileExtensions() const;
 
                     /**
                      * 设置鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
-                     * @param FileExtensions 鉴权/不做鉴权的文件扩展名列表设置
+                     * @param _fileExtensions 鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
+                     * 
                      */
                     void SetFileExtensions(const std::vector<std::string>& _fileExtensions);
 
                     /**
                      * 判断参数 FileExtensions 是否已赋值
                      * @return FileExtensions 是否已赋值
+                     * 
                      */
                     bool FileExtensionsHasBeenSet() const;
 
@@ -124,20 +133,23 @@ md5hash：MD5（自定义密钥 + 文件路径 + timestamp）
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      * @return FilterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
+                     * 
                      */
                     std::string GetFilterType() const;
 
                     /**
                      * 设置whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
-                     * @param FilterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
+                     * @param _filterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 
@@ -146,20 +158,23 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
                      * @return SignParam 签名参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
+                     * 
                      */
                     std::string GetSignParam() const;
 
                     /**
                      * 设置签名参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
-                     * @param SignParam 签名参数名设置
+                     * @param _signParam 签名参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
+                     * 
                      */
                     void SetSignParam(const std::string& _signParam);
 
                     /**
                      * 判断参数 SignParam 是否已赋值
                      * @return SignParam 是否已赋值
+                     * 
                      */
                     bool SignParamHasBeenSet() const;
 
@@ -168,20 +183,23 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
                      * @return TimeParam 时间戳参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
+                     * 
                      */
                     std::string GetTimeParam() const;
 
                     /**
                      * 设置时间戳参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
-                     * @param TimeParam 时间戳参数名设置
+                     * @param _timeParam 时间戳参数名设置
 仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头
+                     * 
                      */
                     void SetTimeParam(const std::string& _timeParam);
 
                     /**
                      * 判断参数 TimeParam 是否已赋值
                      * @return TimeParam 是否已赋值
+                     * 
                      */
                     bool TimeParamHasBeenSet() const;
 
@@ -192,6 +210,7 @@ hex：十六进制
                      * @return TimeFormat 时间戳进制设置
 dec：十进制
 hex：十六进制
+                     * 
                      */
                     std::string GetTimeFormat() const;
 
@@ -199,15 +218,17 @@ hex：十六进制
                      * 设置时间戳进制设置
 dec：十进制
 hex：十六进制
-                     * @param TimeFormat 时间戳进制设置
+                     * @param _timeFormat 时间戳进制设置
 dec：十进制
 hex：十六进制
+                     * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
 
                     /**
                      * 判断参数 TimeFormat 是否已赋值
                      * @return TimeFormat 是否已赋值
+                     * 
                      */
                     bool TimeFormatHasBeenSet() const;
 
@@ -218,6 +239,7 @@ hex：十六进制
                      * @return BackupSecretKey 计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupSecretKey() const;
 
@@ -225,15 +247,17 @@ hex：十六进制
                      * 设置计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSecretKey 计算签名的备用密钥
+                     * @param _backupSecretKey 计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSecretKey(const std::string& _backupSecretKey);
 
                     /**
                      * 判断参数 BackupSecretKey 是否已赋值
                      * @return BackupSecretKey 是否已赋值
+                     * 
                      */
                     bool BackupSecretKeyHasBeenSet() const;
 

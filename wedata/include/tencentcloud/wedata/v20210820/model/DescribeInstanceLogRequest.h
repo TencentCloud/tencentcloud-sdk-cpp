@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取数据时间
                      * @return CurRunDate 数据时间
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间
-                     * @param CurRunDate 数据时间
+                     * @param _curRunDate 数据时间
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
                     /**
                      * 获取服务器Ip
                      * @return BrokerIp 服务器Ip
+                     * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
                      * 设置服务器Ip
-                     * @param BrokerIp 服务器Ip
+                     * @param _brokerIp 服务器Ip
+                     * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
 
                     /**
                      * 判断参数 BrokerIp 是否已赋值
                      * @return BrokerIp 是否已赋值
+                     * 
                      */
                     bool BrokerIpHasBeenSet() const;
 
                     /**
                      * 获取文件Name
                      * @return OriginFileName 文件Name
+                     * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
                      * 设置文件Name
-                     * @param OriginFileName 文件Name
+                     * @param _originFileName 文件Name
+                     * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
 
                     /**
                      * 判断参数 OriginFileName 是否已赋值
                      * @return OriginFileName 是否已赋值
+                     * 
                      */
                     bool OriginFileNameHasBeenSet() const;
 

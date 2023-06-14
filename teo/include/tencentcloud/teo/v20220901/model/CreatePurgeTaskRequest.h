@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>purge_host：Hostname；</li>
 <li>purge_all：全部缓存；</li>
 <li>purge_cache_tag：cache-tag刷新。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -83,18 +87,20 @@ namespace TencentCloud
 <li>purge_host：Hostname；</li>
 <li>purge_all：全部缓存；</li>
 <li>purge_cache_tag：cache-tag刷新。</li>
-                     * @param Type 清除缓存类型，取值有：
+                     * @param _type 清除缓存类型，取值有：
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
 <li>purge_all：全部缓存；</li>
 <li>purge_cache_tag：cache-tag刷新。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -121,6 +127,7 @@ Targets可为空，不需要填写。
 Targets可为空，不需要填写。
 5）Type = purge_cache_tag 时：
 形如：tag1。
+                     * 
                      */
                     std::vector<std::string> GetTargets() const;
 
@@ -136,7 +143,7 @@ Targets可为空，不需要填写。
 Targets可为空，不需要填写。
 5）Type = purge_cache_tag 时：
 形如：tag1。
-                     * @param Targets 要清除缓存的资源列表，每个元素格式依据Type而定：
+                     * @param _targets 要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -147,12 +154,14 @@ Targets可为空，不需要填写。
 Targets可为空，不需要填写。
 5）Type = purge_cache_tag 时：
 形如：tag1。
+                     * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
@@ -161,20 +170,23 @@ Targets可为空，不需要填写。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
                      * @return EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
+                     * 
                      */
                     bool GetEncodeUrl() const;
 
                     /**
                      * 设置若有编码转换，仅清除编码转换后匹配的资源。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
-                     * @param EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源。
+                     * @param _encodeUrl 若有编码转换，仅清除编码转换后匹配的资源。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
+                     * 
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
                     /**
                      * 判断参数 EncodeUrl 是否已赋值
                      * @return EncodeUrl 是否已赋值
+                     * 
                      */
                     bool EncodeUrlHasBeenSet() const;
 

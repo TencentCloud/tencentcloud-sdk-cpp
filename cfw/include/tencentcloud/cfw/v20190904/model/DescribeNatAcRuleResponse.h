@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,24 +63,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data nat访问控制列表数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescAcItem> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取未过滤的总条数
                      * @return AllTotal 未过滤的总条数
+                     * 
                      */
                     uint64_t GetAllTotal() const;
 
                     /**
                      * 判断参数 AllTotal 是否已赋值
                      * @return AllTotal 是否已赋值
+                     * 
                      */
                     bool AllTotalHasBeenSet() const;
 

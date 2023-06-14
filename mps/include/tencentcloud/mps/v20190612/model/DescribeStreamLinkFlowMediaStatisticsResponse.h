@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取传输流的媒体数据列表。
                      * @return Infos 传输流的媒体数据列表。
+                     * 
                      */
                     std::vector<FlowMediaInfo> GetInfos() const;
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 

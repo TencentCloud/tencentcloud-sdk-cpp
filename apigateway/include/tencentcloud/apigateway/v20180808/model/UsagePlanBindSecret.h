@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessKeyId 密钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccessKeyId() const;
 
                     /**
                      * 设置密钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessKeyId 密钥ID。
+                     * @param _accessKeyId 密钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessKeyId(const std::string& _accessKeyId);
 
                     /**
                      * 判断参数 AccessKeyId 是否已赋值
                      * @return AccessKeyId 是否已赋值
+                     * 
                      */
                     bool AccessKeyIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName 密钥名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置密钥名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretName 密钥名称。
+                     * @param _secretName 密钥名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 密钥状态，0表示已禁用，1表示启用中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置密钥状态，0表示已禁用，1表示启用中。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 密钥状态，0表示已禁用，1表示启用中。
+                     * @param _status 密钥状态，0表示已禁用，1表示启用中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

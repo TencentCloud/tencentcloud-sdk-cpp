@@ -53,6 +53,7 @@ Oversea: 表示国外数据。
                      * @return MainlandOrOversea 国内还是国外:
 Mainland: 表示国内数据。
 Oversea: 表示国外数据。
+                     * 
                      */
                     std::string GetMainlandOrOversea() const;
 
@@ -60,87 +61,101 @@ Oversea: 表示国外数据。
                      * 设置国内还是国外:
 Mainland: 表示国内数据。
 Oversea: 表示国外数据。
-                     * @param MainlandOrOversea 国内还是国外:
+                     * @param _mainlandOrOversea 国内还是国外:
 Mainland: 表示国内数据。
 Oversea: 表示国外数据。
+                     * 
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
 
                     /**
                      * 判断参数 MainlandOrOversea 是否已赋值
                      * @return MainlandOrOversea 是否已赋值
+                     * 
                      */
                     bool MainlandOrOverseaHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位: Mbps。
                      * @return Bandwidth 带宽，单位: Mbps。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽，单位: Mbps。
-                     * @param Bandwidth 带宽，单位: Mbps。
+                     * @param _bandwidth 带宽，单位: Mbps。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取流量，单位: MB。
                      * @return Flux 流量，单位: MB。
+                     * 
                      */
                     double GetFlux() const;
 
                     /**
                      * 设置流量，单位: MB。
-                     * @param Flux 流量，单位: MB。
+                     * @param _flux 流量，单位: MB。
+                     * 
                      */
                     void SetFlux(const double& _flux);
 
                     /**
                      * 判断参数 Flux 是否已赋值
                      * @return Flux 是否已赋值
+                     * 
                      */
                     bool FluxHasBeenSet() const;
 
                     /**
                      * 获取人数。
                      * @return Online 人数。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置人数。
-                     * @param Online 人数。
+                     * @param _online 人数。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
                     /**
                      * 获取请求数。
                      * @return Request 请求数。
+                     * 
                      */
                     uint64_t GetRequest() const;
 
                     /**
                      * 设置请求数。
-                     * @param Request 请求数。
+                     * @param _request 请求数。
+                     * 
                      */
                     void SetRequest(const uint64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 

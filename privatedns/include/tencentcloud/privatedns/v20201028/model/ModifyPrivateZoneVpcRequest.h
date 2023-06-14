@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取私有域ID
                      * @return ZoneId 私有域ID
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置私有域ID
-                     * @param ZoneId 私有域ID
+                     * @param _zoneId 私有域ID
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取私有域关联的全部VPC列表
                      * @return VpcSet 私有域关联的全部VPC列表
+                     * 
                      */
                     std::vector<VpcInfo> GetVpcSet() const;
 
                     /**
                      * 设置私有域关联的全部VPC列表
-                     * @param VpcSet 私有域关联的全部VPC列表
+                     * @param _vpcSet 私有域关联的全部VPC列表
+                     * 
                      */
                     void SetVpcSet(const std::vector<VpcInfo>& _vpcSet);
 
                     /**
                      * 判断参数 VpcSet 是否已赋值
                      * @return VpcSet 是否已赋值
+                     * 
                      */
                     bool VpcSetHasBeenSet() const;
 
                     /**
                      * 获取私有域账号关联的全部VPC列表
                      * @return AccountVpcSet 私有域账号关联的全部VPC列表
+                     * 
                      */
                     std::vector<AccountVpcInfo> GetAccountVpcSet() const;
 
                     /**
                      * 设置私有域账号关联的全部VPC列表
-                     * @param AccountVpcSet 私有域账号关联的全部VPC列表
+                     * @param _accountVpcSet 私有域账号关联的全部VPC列表
+                     * 
                      */
                     void SetAccountVpcSet(const std::vector<AccountVpcInfo>& _accountVpcSet);
 
                     /**
                      * 判断参数 AccountVpcSet 是否已赋值
                      * @return AccountVpcSet 是否已赋值
+                     * 
                      */
                     bool AccountVpcSetHasBeenSet() const;
 

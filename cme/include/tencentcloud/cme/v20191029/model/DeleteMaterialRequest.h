@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取媒体 Id。
                      * @return MaterialId 媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置媒体 Id。
-                     * @param MaterialId 媒体 Id。
+                     * @param _materialId 媒体 Id。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
                      * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
+                     * @param _operator 操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

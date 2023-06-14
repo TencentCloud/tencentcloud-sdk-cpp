@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取cbs volume 数据卷名称
                      * @return Name cbs volume 数据卷名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置cbs volume 数据卷名称
-                     * @param Name cbs volume 数据卷名称
+                     * @param _name cbs volume 数据卷名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取腾讯云cbs盘Id
                      * @return CbsDiskId 腾讯云cbs盘Id
+                     * 
                      */
                     std::string GetCbsDiskId() const;
 
                     /**
                      * 设置腾讯云cbs盘Id
-                     * @param CbsDiskId 腾讯云cbs盘Id
+                     * @param _cbsDiskId 腾讯云cbs盘Id
+                     * 
                      */
                     void SetCbsDiskId(const std::string& _cbsDiskId);
 
                     /**
                      * 判断参数 CbsDiskId 是否已赋值
                      * @return CbsDiskId 是否已赋值
+                     * 
                      */
                     bool CbsDiskIdHasBeenSet() const;
 

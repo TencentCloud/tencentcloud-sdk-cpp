@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例Id。
+                     * @param _instanceId 实例Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Refunds 退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRefunds() const;
 
                     /**
                      * 设置退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Refunds 退款数额。
+                     * @param _refunds 退款数额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefunds(const double& _refunds);
 
                     /**
                      * 判断参数 Refunds 是否已赋值
                      * @return Refunds 是否已赋值
+                     * 
                      */
                     bool RefundsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceDetail 退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPriceDetail() const;
 
                     /**
                      * 设置退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PriceDetail 退款详情。
+                     * @param _priceDetail 退款详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriceDetail(const std::string& _priceDetail);
 
                     /**
                      * 判断参数 PriceDetail 是否已赋值
                      * @return PriceDetail 是否已赋值
+                     * 
                      */
                     bool PriceDetailHasBeenSet() const;
 

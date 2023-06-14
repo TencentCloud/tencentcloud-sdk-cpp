@@ -45,396 +45,462 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等
                      * @return Type allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等
-                     * @param Type allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等
+                     * @param _type allcount：性能视图，day：14天数据，condition：条件列表，ckuv：获取uv趋势，ckpv：获取pv趋势，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ID 项目ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID
-                     * @param ID 项目ID
+                     * @param _iD 项目ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取自定义2
                      * @return ExtSecond 自定义2
+                     * 
                      */
                     std::string GetExtSecond() const;
 
                     /**
                      * 设置自定义2
-                     * @param ExtSecond 自定义2
+                     * @param _extSecond 自定义2
+                     * 
                      */
                     void SetExtSecond(const std::string& _extSecond);
 
                     /**
                      * 判断参数 ExtSecond 是否已赋值
                      * @return ExtSecond 是否已赋值
+                     * 
                      */
                     bool ExtSecondHasBeenSet() const;
 
                     /**
                      * 获取浏览器引擎
                      * @return Engine 浏览器引擎
+                     * 
                      */
                     std::string GetEngine() const;
 
                     /**
                      * 设置浏览器引擎
-                     * @param Engine 浏览器引擎
+                     * @param _engine 浏览器引擎
+                     * 
                      */
                     void SetEngine(const std::string& _engine);
 
                     /**
                      * 判断参数 Engine 是否已赋值
                      * @return Engine 是否已赋值
+                     * 
                      */
                     bool EngineHasBeenSet() const;
 
                     /**
                      * 获取运营商
                      * @return Isp 运营商
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置运营商
-                     * @param Isp 运营商
+                     * @param _isp 运营商
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
                     /**
                      * 获取来源页面
                      * @return From 来源页面
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置来源页面
-                     * @param From 来源页面
+                     * @param _from 来源页面
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取日志等级
                      * @return Level 日志等级
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
-                     * @param Level 日志等级
+                     * @param _level 日志等级
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取品牌
                      * @return Brand 品牌
+                     * 
                      */
                     std::string GetBrand() const;
 
                     /**
                      * 设置品牌
-                     * @param Brand 品牌
+                     * @param _brand 品牌
+                     * 
                      */
                     void SetBrand(const std::string& _brand);
 
                     /**
                      * 判断参数 Brand 是否已赋值
                      * @return Brand 是否已赋值
+                     * 
                      */
                     bool BrandHasBeenSet() const;
 
                     /**
                      * 获取地区
                      * @return Area 地区
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地区
-                     * @param Area 地区
+                     * @param _area 地区
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return VersionNum 版本
+                     * 
                      */
                     std::string GetVersionNum() const;
 
                     /**
                      * 设置版本
-                     * @param VersionNum 版本
+                     * @param _versionNum 版本
+                     * 
                      */
                     void SetVersionNum(const std::string& _versionNum);
 
                     /**
                      * 判断参数 VersionNum 是否已赋值
                      * @return VersionNum 是否已赋值
+                     * 
                      */
                     bool VersionNumHasBeenSet() const;
 
                     /**
                      * 获取平台
                      * @return Platform 平台
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台
-                     * @param Platform 平台
+                     * @param _platform 平台
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取自定义3
                      * @return ExtThird 自定义3
+                     * 
                      */
                     std::string GetExtThird() const;
 
                     /**
                      * 设置自定义3
-                     * @param ExtThird 自定义3
+                     * @param _extThird 自定义3
+                     * 
                      */
                     void SetExtThird(const std::string& _extThird);
 
                     /**
                      * 判断参数 ExtThird 是否已赋值
                      * @return ExtThird 是否已赋值
+                     * 
                      */
                     bool ExtThirdHasBeenSet() const;
 
                     /**
                      * 获取自定义1
                      * @return ExtFirst 自定义1
+                     * 
                      */
                     std::string GetExtFirst() const;
 
                     /**
                      * 设置自定义1
-                     * @param ExtFirst 自定义1
+                     * @param _extFirst 自定义1
+                     * 
                      */
                     void SetExtFirst(const std::string& _extFirst);
 
                     /**
                      * 判断参数 ExtFirst 是否已赋值
                      * @return ExtFirst 是否已赋值
+                     * 
                      */
                     bool ExtFirstHasBeenSet() const;
 
                     /**
                      * 获取网络类型
                      * @return NetType 网络类型
+                     * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 设置网络类型
-                     * @param NetType 网络类型
+                     * @param _netType 网络类型
+                     * 
                      */
                     void SetNetType(const std::string& _netType);
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
                     /**
                      * 获取机型
                      * @return Device 机型
+                     * 
                      */
                     std::string GetDevice() const;
 
                     /**
                      * 设置机型
-                     * @param Device 机型
+                     * @param _device 机型
+                     * 
                      */
                     void SetDevice(const std::string& _device);
 
                     /**
                      * 判断参数 Device 是否已赋值
                      * @return Device 是否已赋值
+                     * 
                      */
                     bool DeviceHasBeenSet() const;
 
                     /**
                      * 获取是否海外
                      * @return IsAbroad 是否海外
+                     * 
                      */
                     std::string GetIsAbroad() const;
 
                     /**
                      * 设置是否海外
-                     * @param IsAbroad 是否海外
+                     * @param _isAbroad 是否海外
+                     * 
                      */
                     void SetIsAbroad(const std::string& _isAbroad);
 
                     /**
                      * 判断参数 IsAbroad 是否已赋值
                      * @return IsAbroad 是否已赋值
+                     * 
                      */
                     bool IsAbroadHasBeenSet() const;
 
                     /**
                      * 获取操作系统
                      * @return Os 操作系统
+                     * 
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置操作系统
-                     * @param Os 操作系统
+                     * @param _os 操作系统
+                     * 
                      */
                     void SetOs(const std::string& _os);
 
                     /**
                      * 判断参数 Os 是否已赋值
                      * @return Os 是否已赋值
+                     * 
                      */
                     bool OsHasBeenSet() const;
 
                     /**
                      * 获取浏览器
                      * @return Browser 浏览器
+                     * 
                      */
                     std::string GetBrowser() const;
 
                     /**
                      * 设置浏览器
-                     * @param Browser 浏览器
+                     * @param _browser 浏览器
+                     * 
                      */
                     void SetBrowser(const std::string& _browser);
 
                     /**
                      * 判断参数 Browser 是否已赋值
                      * @return Browser 是否已赋值
+                     * 
                      */
                     bool BrowserHasBeenSet() const;
 
                     /**
                      * 获取筛选条件
                      * @return Name 筛选条件
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置筛选条件
-                     * @param Name 筛选条件
+                     * @param _name 筛选条件
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取环境
                      * @return Env 环境
+                     * 
                      */
                     std::string GetEnv() const;
 
                     /**
                      * 设置环境
-                     * @param Env 环境
+                     * @param _env 环境
+                     * 
                      */
                     void SetEnv(const std::string& _env);
 
                     /**
                      * 判断参数 Env 是否已赋值
                      * @return Env 是否已赋值
+                     * 
                      */
                     bool EnvHasBeenSet() const;
 

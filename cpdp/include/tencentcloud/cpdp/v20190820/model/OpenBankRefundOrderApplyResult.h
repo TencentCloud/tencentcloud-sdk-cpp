@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelOrderId 云企付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云企付订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelOrderId 云企付订单号
+                     * @param _channelOrderId 云企付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelRefundId 云企付退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelRefundId() const;
 
                     /**
                      * 设置云企付退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelRefundId 云企付退款流水号
+                     * @param _channelRefundId 云企付退款流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelRefundId(const std::string& _channelRefundId);
 
                     /**
                      * 判断参数 ChannelRefundId 是否已赋值
                      * @return ChannelRefundId 是否已赋值
+                     * 
                      */
                     bool ChannelRefundIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutRefundId 外部商户退款单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutRefundId() const;
 
                     /**
                      * 设置外部商户退款单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutRefundId 外部商户退款单号
+                     * @param _outRefundId 外部商户退款单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutRefundId(const std::string& _outRefundId);
 
                     /**
                      * 判断参数 OutRefundId 是否已赋值
                      * @return OutRefundId 是否已赋值
+                     * 
                      */
                     bool OutRefundIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutOrderId 外部商户订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutOrderId 外部商户订单号
+                     * @param _outOrderId 外部商户订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundMessage 退款返回描述，比如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefundMessage() const;
 
                     /**
                      * 设置退款返回描述，比如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundMessage 退款返回描述，比如失败原因等。
+                     * @param _refundMessage 退款返回描述，比如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundMessage(const std::string& _refundMessage);
 
                     /**
                      * 判断参数 RefundMessage 是否已赋值
                      * @return RefundMessage 是否已赋值
+                     * 
                      */
                     bool RefundMessageHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundAmount 退款金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRefundAmount() const;
 
                     /**
                      * 设置退款金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundAmount 退款金额
+                     * @param _refundAmount 退款金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundAmount(const int64_t& _refundAmount);
 
                     /**
                      * 判断参数 RefundAmount 是否已赋值
                      * @return RefundAmount 是否已赋值
+                     * 
                      */
                     bool RefundAmountHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeAmount 退款手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFeeAmount() const;
 
                     /**
                      * 设置退款手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeeAmount 退款手续费金额
+                     * @param _feeAmount 退款手续费金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeeAmount(const int64_t& _feeAmount);
 
                     /**
                      * 判断参数 FeeAmount 是否已赋值
                      * @return FeeAmount 是否已赋值
+                     * 
                      */
                     bool FeeAmountHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundStatus 退款状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefundStatus() const;
 
                     /**
                      * 设置退款状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefundStatus 退款状态
+                     * @param _refundStatus 退款状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefundStatus(const std::string& _refundStatus);
 
                     /**
                      * 判断参数 RefundStatus 是否已赋值
                      * @return RefundStatus 是否已赋值
+                     * 
                      */
                     bool RefundStatusHasBeenSet() const;
 

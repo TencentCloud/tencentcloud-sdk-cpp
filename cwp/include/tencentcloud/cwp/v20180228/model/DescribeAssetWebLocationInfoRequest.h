@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器Quuid
                      * @return Quuid 服务器Quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置服务器Quuid
-                     * @param Quuid 服务器Quuid
+                     * @param _quuid 服务器Quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取服务器Uuid
                      * @return Uuid 服务器Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置服务器Uuid
-                     * @param Uuid 服务器Uuid
+                     * @param _uuid 服务器Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取站点Id
                      * @return Id 站点Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置站点Id
-                     * @param Id 站点Id
+                     * @param _id 站点Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群实例Id
                      * @return InstanceId 集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例Id
-                     * @param InstanceId 集群实例Id
+                     * @param _instanceId 集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取vhost名
                      * @return VirtualHost vhost名
+                     * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
                      * 设置vhost名
-                     * @param VirtualHost vhost名
+                     * @param _virtualHost vhost名
+                     * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
 
                     /**
                      * 判断参数 VirtualHost 是否已赋值
                      * @return VirtualHost 是否已赋值
+                     * 
                      */
                     bool VirtualHostHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取消息轨迹开关,true打开,false关闭
                      * @return TraceFlag 消息轨迹开关,true打开,false关闭
+                     * 
                      */
                     bool GetTraceFlag() const;
 
                     /**
                      * 设置消息轨迹开关,true打开,false关闭
-                     * @param TraceFlag 消息轨迹开关,true打开,false关闭
+                     * @param _traceFlag 消息轨迹开关,true打开,false关闭
+                     * 
                      */
                     void SetTraceFlag(const bool& _traceFlag);
 
                     /**
                      * 判断参数 TraceFlag 是否已赋值
                      * @return TraceFlag 是否已赋值
+                     * 
                      */
                     bool TraceFlagHasBeenSet() const;
 

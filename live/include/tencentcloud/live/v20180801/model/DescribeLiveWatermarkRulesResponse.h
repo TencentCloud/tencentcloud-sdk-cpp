@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取水印规则列表。
                      * @return Rules 水印规则列表。
+                     * 
                      */
                     std::vector<RuleInfo> GetRules() const;
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

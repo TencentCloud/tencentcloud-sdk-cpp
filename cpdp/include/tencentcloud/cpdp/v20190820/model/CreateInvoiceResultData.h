@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取开票状态
                      * @return State 开票状态
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置开票状态
-                     * @param State 开票状态
+                     * @param _state 开票状态
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取发票ID
                      * @return InvoiceId 发票ID
+                     * 
                      */
                     std::string GetInvoiceId() const;
 
                     /**
                      * 设置发票ID
-                     * @param InvoiceId 发票ID
+                     * @param _invoiceId 发票ID
+                     * 
                      */
                     void SetInvoiceId(const std::string& _invoiceId);
 
                     /**
                      * 判断参数 InvoiceId 是否已赋值
                      * @return InvoiceId 是否已赋值
+                     * 
                      */
                     bool InvoiceIdHasBeenSet() const;
 
                     /**
                      * 获取业务开票号
                      * @return OrderSn 业务开票号
+                     * 
                      */
                     std::string GetOrderSn() const;
 
                     /**
                      * 设置业务开票号
-                     * @param OrderSn 业务开票号
+                     * @param _orderSn 业务开票号
+                     * 
                      */
                     void SetOrderSn(const std::string& _orderSn);
 
                     /**
                      * 判断参数 OrderSn 是否已赋值
                      * @return OrderSn 是否已赋值
+                     * 
                      */
                     bool OrderSnHasBeenSet() const;
 

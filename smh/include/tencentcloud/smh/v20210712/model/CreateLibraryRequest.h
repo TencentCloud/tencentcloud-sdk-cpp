@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取媒体库名称，最多 50 个字符
                      * @return Name 媒体库名称，最多 50 个字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒体库名称，最多 50 个字符
-                     * @param Name 媒体库名称，最多 50 个字符
+                     * @param _name 媒体库名称，最多 50 个字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取存储桶全名，新建后不可更改
                      * @return BucketName 存储桶全名，新建后不可更改
+                     * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置存储桶全名，新建后不可更改
-                     * @param BucketName 存储桶全名，新建后不可更改
+                     * @param _bucketName 存储桶全名，新建后不可更改
+                     * 
                      */
                     void SetBucketName(const std::string& _bucketName);
 
                     /**
                      * 判断参数 BucketName 是否已赋值
                      * @return BucketName 是否已赋值
+                     * 
                      */
                     bool BucketNameHasBeenSet() const;
 
                     /**
                      * 获取存储桶所在地域，新建后不可更改
                      * @return BucketRegion 存储桶所在地域，新建后不可更改
+                     * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
                      * 设置存储桶所在地域，新建后不可更改
-                     * @param BucketRegion 存储桶所在地域，新建后不可更改
+                     * @param _bucketRegion 存储桶所在地域，新建后不可更改
+                     * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
 
                     /**
                      * 判断参数 BucketRegion 是否已赋值
                      * @return BucketRegion 是否已赋值
+                     * 
                      */
                     bool BucketRegionHasBeenSet() const;
 
                     /**
                      * 获取媒体库配置项，部分参数新建后不可更改
                      * @return LibraryExtension 媒体库配置项，部分参数新建后不可更改
+                     * 
                      */
                     LibraryExtension GetLibraryExtension() const;
 
                     /**
                      * 设置媒体库配置项，部分参数新建后不可更改
-                     * @param LibraryExtension 媒体库配置项，部分参数新建后不可更改
+                     * @param _libraryExtension 媒体库配置项，部分参数新建后不可更改
+                     * 
                      */
                     void SetLibraryExtension(const LibraryExtension& _libraryExtension);
 
                     /**
                      * 判断参数 LibraryExtension 是否已赋值
                      * @return LibraryExtension 是否已赋值
+                     * 
                      */
                     bool LibraryExtensionHasBeenSet() const;
 
                     /**
                      * 获取备注，最多 250 个字符
                      * @return Remark 备注，最多 250 个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注，最多 250 个字符
-                     * @param Remark 备注，最多 250 个字符
+                     * @param _remark 备注，最多 250 个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取登录日志列表
                      * @return LoginEventSet 登录日志列表
+                     * 
                      */
                     std::vector<LoginEvent> GetLoginEventSet() const;
 
                     /**
                      * 判断参数 LoginEventSet 是否已赋值
                      * @return LoginEventSet 是否已赋值
+                     * 
                      */
                     bool LoginEventSetHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

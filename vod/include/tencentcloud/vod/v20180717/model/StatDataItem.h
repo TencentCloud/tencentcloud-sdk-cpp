@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
-                     * @param Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
+                     * @param _time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+                     * 
                      */
                     int64_t GetValue() const;
 
@@ -98,19 +102,21 @@ namespace TencentCloud
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
-                     * @param Value 数据大小。
+                     * @param _value 数据大小。
 <li>存储空间的数据，单位是字节。</li>
 <li>转码时长的数据，单位是秒。</li>
 <li>流量数据，单位是字节。</li>
 <li>带宽数据，单位是比特每秒。</li>
 <li>直播剪辑数据，单位是秒。</li>
 <li>轮播数据，单位是秒。</li>
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

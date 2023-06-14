@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取启动模板ID。
                      * @return LaunchTemplateId 启动模板ID。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置启动模板ID。
-                     * @param LaunchTemplateId 启动模板ID。
+                     * @param _launchTemplateId 启动模板ID。
+                     * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取待设置的默认版本号。
                      * @return DefaultVersion 待设置的默认版本号。
+                     * 
                      */
                     int64_t GetDefaultVersion() const;
 
                     /**
                      * 设置待设置的默认版本号。
-                     * @param DefaultVersion 待设置的默认版本号。
+                     * @param _defaultVersion 待设置的默认版本号。
+                     * 
                      */
                     void SetDefaultVersion(const int64_t& _defaultVersion);
 
                     /**
                      * 判断参数 DefaultVersion 是否已赋值
                      * @return DefaultVersion 是否已赋值
+                     * 
                      */
                     bool DefaultVersionHasBeenSet() const;
 

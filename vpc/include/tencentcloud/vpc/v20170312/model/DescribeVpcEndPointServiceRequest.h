@@ -54,6 +54,7 @@ namespace TencentCloud
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
 <li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -63,71 +64,82 @@ namespace TencentCloud
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
 <li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
-                     * @param Filters 过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * @param _filters 过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
 <li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取单页返回数量，默认为20，最大值为100。
                      * @return Limit 单页返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单页返回数量，默认为20，最大值为100。
-                     * @param Limit 单页返回数量，默认为20，最大值为100。
+                     * @param _limit 单页返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
                      * @return EndPointServiceIds 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * 
                      */
                     std::vector<std::string> GetEndPointServiceIds() const;
 
                     /**
                      * 设置终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
-                     * @param EndPointServiceIds 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * @param _endPointServiceIds 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * 
                      */
                     void SetEndPointServiceIds(const std::vector<std::string>& _endPointServiceIds);
 
                     /**
                      * 判断参数 EndPointServiceIds 是否已赋值
                      * @return EndPointServiceIds 是否已赋值
+                     * 
                      */
                     bool EndPointServiceIdsHasBeenSet() const;
 

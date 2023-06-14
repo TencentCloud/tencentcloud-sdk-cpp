@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取照片信息列表
                      * @return Photos 照片信息列表
+                     * 
                      */
                     std::vector<FaceIdPhoto> GetPhotos() const;
 
                     /**
                      * 判断参数 Photos 是否已赋值
                      * @return Photos 是否已赋值
+                     * 
                      */
                     bool PhotosHasBeenSet() const;
 

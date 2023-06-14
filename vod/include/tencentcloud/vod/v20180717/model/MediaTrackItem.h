@@ -64,6 +64,7 @@ namespace TencentCloud
 <li>Sticker：贴图片段。</li>
 <li>Transition：转场。</li>
 <li>Empty：空白片段。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -74,18 +75,20 @@ namespace TencentCloud
 <li>Sticker：贴图片段。</li>
 <li>Transition：转场。</li>
 <li>Empty：空白片段。</li>
-                     * @param Type 片段类型。取值有：
+                     * @param _type 片段类型。取值有：
 <li>Video：视频片段。</li>
 <li>Audio：音频片段。</li>
 <li>Sticker：贴图片段。</li>
 <li>Transition：转场。</li>
 <li>Empty：空白片段。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -94,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoItem 视频片段，当 Type = Video 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoTrackItem GetVideoItem() const;
 
                     /**
                      * 设置视频片段，当 Type = Video 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoItem 视频片段，当 Type = Video 时有效。
+                     * @param _videoItem 视频片段，当 Type = Video 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoItem(const VideoTrackItem& _videoItem);
 
                     /**
                      * 判断参数 VideoItem 是否已赋值
                      * @return VideoItem 是否已赋值
+                     * 
                      */
                     bool VideoItemHasBeenSet() const;
 
@@ -116,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioItem 音频片段，当 Type = Audio 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioTrackItem GetAudioItem() const;
 
                     /**
                      * 设置音频片段，当 Type = Audio 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioItem 音频片段，当 Type = Audio 时有效。
+                     * @param _audioItem 音频片段，当 Type = Audio 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioItem(const AudioTrackItem& _audioItem);
 
                     /**
                      * 判断参数 AudioItem 是否已赋值
                      * @return AudioItem 是否已赋值
+                     * 
                      */
                     bool AudioItemHasBeenSet() const;
 
@@ -138,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StickerItem 贴图片段，当 Type = Sticker 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StickerTrackItem GetStickerItem() const;
 
                     /**
                      * 设置贴图片段，当 Type = Sticker 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StickerItem 贴图片段，当 Type = Sticker 时有效。
+                     * @param _stickerItem 贴图片段，当 Type = Sticker 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStickerItem(const StickerTrackItem& _stickerItem);
 
                     /**
                      * 判断参数 StickerItem 是否已赋值
                      * @return StickerItem 是否已赋值
+                     * 
                      */
                     bool StickerItemHasBeenSet() const;
 
@@ -160,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransitionItem 转场，当 Type = Transition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaTransitionItem GetTransitionItem() const;
 
                     /**
                      * 设置转场，当 Type = Transition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransitionItem 转场，当 Type = Transition 时有效。
+                     * @param _transitionItem 转场，当 Type = Transition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransitionItem(const MediaTransitionItem& _transitionItem);
 
                     /**
                      * 判断参数 TransitionItem 是否已赋值
                      * @return TransitionItem 是否已赋值
+                     * 
                      */
                     bool TransitionItemHasBeenSet() const;
 
@@ -184,6 +199,7 @@ namespace TencentCloud
                      * @return EmptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EmptyTrackItem GetEmptyItem() const;
 
@@ -191,15 +207,17 @@ namespace TencentCloud
                      * 设置空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
+                     * @param _emptyItem 空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>
 <li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmptyItem(const EmptyTrackItem& _emptyItem);
 
                     /**
                      * 判断参数 EmptyItem 是否已赋值
                      * @return EmptyItem 是否已赋值
+                     * 
                      */
                     bool EmptyItemHasBeenSet() const;
 

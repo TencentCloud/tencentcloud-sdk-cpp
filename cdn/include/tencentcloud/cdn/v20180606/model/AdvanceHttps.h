@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomTlsStatus 自定义Tls数据开关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomTlsStatus() const;
 
                     /**
                      * 设置自定义Tls数据开关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomTlsStatus 自定义Tls数据开关
+                     * @param _customTlsStatus 自定义Tls数据开关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomTlsStatus(const std::string& _customTlsStatus);
 
                     /**
                      * 判断参数 CustomTlsStatus 是否已赋值
                      * @return CustomTlsStatus 是否已赋值
+                     * 
                      */
                     bool CustomTlsStatusHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TlsVersion Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTlsVersion() const;
 
                     /**
                      * 设置Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TlsVersion Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @param _tlsVersion Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
 
                     /**
                      * 判断参数 TlsVersion 是否已赋值
                      * @return TlsVersion 是否已赋值
+                     * 
                      */
                     bool TlsVersionHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cipher 自定义加密套件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCipher() const;
 
                     /**
                      * 设置自定义加密套件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cipher 自定义加密套件
+                     * @param _cipher 自定义加密套件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCipher(const std::string& _cipher);
 
                     /**
                      * 判断参数 Cipher 是否已赋值
                      * @return Cipher 是否已赋值
+                     * 
                      */
                     bool CipherHasBeenSet() const;
 
@@ -125,6 +134,7 @@ off - 关闭校验
 oneWay - 校验源站
 twoWay - 双向校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyOriginType() const;
 
@@ -134,17 +144,19 @@ off - 关闭校验
 oneWay - 校验源站
 twoWay - 双向校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifyOriginType 回源双向校验开启状态
+                     * @param _verifyOriginType 回源双向校验开启状态
 off - 关闭校验
 oneWay - 校验源站
 twoWay - 双向校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVerifyOriginType(const std::string& _verifyOriginType);
 
                     /**
                      * 判断参数 VerifyOriginType 是否已赋值
                      * @return VerifyOriginType 是否已赋值
+                     * 
                      */
                     bool VerifyOriginTypeHasBeenSet() const;
 
@@ -153,20 +165,23 @@ twoWay - 双向校验
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertInfo 回源层证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServerCert GetCertInfo() const;
 
                     /**
                      * 设置回源层证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertInfo 回源层证书配置信息
+                     * @param _certInfo 回源层证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertInfo(const ServerCert& _certInfo);
 
                     /**
                      * 判断参数 CertInfo 是否已赋值
                      * @return CertInfo 是否已赋值
+                     * 
                      */
                     bool CertInfoHasBeenSet() const;
 
@@ -175,20 +190,23 @@ twoWay - 双向校验
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginCertInfo 源站证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClientCert GetOriginCertInfo() const;
 
                     /**
                      * 设置源站证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginCertInfo 源站证书配置信息
+                     * @param _originCertInfo 源站证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginCertInfo(const ClientCert& _originCertInfo);
 
                     /**
                      * 判断参数 OriginCertInfo 是否已赋值
                      * @return OriginCertInfo 是否已赋值
+                     * 
                      */
                     bool OriginCertInfoHasBeenSet() const;
 

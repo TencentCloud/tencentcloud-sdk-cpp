@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取接收回执成功的TID
                      * @return Tid 接收回执成功的TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 

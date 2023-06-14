@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取限流规则ID
                      * @return RuleId 限流规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置限流规则ID
-                     * @param RuleId 限流规则ID
+                     * @param _ruleId 限流规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取开启/禁用，enabled/disabled
                      * @return UsableStatus 开启/禁用，enabled/disabled
+                     * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
                      * 设置开启/禁用，enabled/disabled
-                     * @param UsableStatus 开启/禁用，enabled/disabled
+                     * @param _usableStatus 开启/禁用，enabled/disabled
+                     * 
                      */
                     void SetUsableStatus(const std::string& _usableStatus);
 
                     /**
                      * 判断参数 UsableStatus 是否已赋值
                      * @return UsableStatus 是否已赋值
+                     * 
                      */
                     bool UsableStatusHasBeenSet() const;
 
                     /**
                      * 获取qps值，开启限流规则时，必填
                      * @return MaxQps qps值，开启限流规则时，必填
+                     * 
                      */
                     int64_t GetMaxQps() const;
 
                     /**
                      * 设置qps值，开启限流规则时，必填
-                     * @param MaxQps qps值，开启限流规则时，必填
+                     * @param _maxQps qps值，开启限流规则时，必填
+                     * 
                      */
                     void SetMaxQps(const int64_t& _maxQps);
 
                     /**
                      * 判断参数 MaxQps 是否已赋值
                      * @return MaxQps 是否已赋值
+                     * 
                      */
                     bool MaxQpsHasBeenSet() const;
 

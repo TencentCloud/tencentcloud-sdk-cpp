@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取技能组ID
                      * @return SkillGroupId 技能组ID
+                     * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
                      * 设置技能组ID
-                     * @param SkillGroupId 技能组ID
+                     * @param _skillGroupId 技能组ID
+                     * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
 
                     /**
                      * 判断参数 SkillGroupId 是否已赋值
                      * @return SkillGroupId 是否已赋值
+                     * 
                      */
                     bool SkillGroupIdHasBeenSet() const;
 
                     /**
                      * 获取数据指标
                      * @return Metrics 数据指标
+                     * 
                      */
                     CallInMetrics GetMetrics() const;
 
                     /**
                      * 设置数据指标
-                     * @param Metrics 数据指标
+                     * @param _metrics 数据指标
+                     * 
                      */
                     void SetMetrics(const CallInMetrics& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取技能组名称
                      * @return Name 技能组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置技能组名称
-                     * @param Name 技能组名称
+                     * @param _name 技能组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

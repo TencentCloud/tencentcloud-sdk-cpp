@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取步骤名
                      * @return Name 步骤名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置步骤名
-                     * @param Name 步骤名
+                     * @param _name 步骤名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 运行中："running"
 失败："failed"
 成功结束："finished"
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -81,88 +85,102 @@ namespace TencentCloud
 运行中："running"
 失败："failed"
 成功结束："finished"
-                     * @param Status 未启动："todo"
+                     * @param _status 未启动："todo"
 运行中："running"
 失败："failed"
 成功结束："finished"
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取消耗时间：秒
                      * @return CostTime 消耗时间：秒
+                     * 
                      */
                     int64_t GetCostTime() const;
 
                     /**
                      * 设置消耗时间：秒
-                     * @param CostTime 消耗时间：秒
+                     * @param _costTime 消耗时间：秒
+                     * 
                      */
                     void SetCostTime(const int64_t& _costTime);
 
                     /**
                      * 判断参数 CostTime 是否已赋值
                      * @return CostTime 是否已赋值
+                     * 
                      */
                     bool CostTimeHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return FailReason 失败原因
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因
-                     * @param FailReason 失败原因
+                     * @param _failReason 失败原因
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 

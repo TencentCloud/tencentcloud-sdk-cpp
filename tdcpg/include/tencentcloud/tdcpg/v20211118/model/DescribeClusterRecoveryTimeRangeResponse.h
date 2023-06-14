@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取可回档时间范围列表
                      * @return AvailableRecoveryTimeRangeSet 可回档时间范围列表
+                     * 
                      */
                     std::vector<AvailableRecoveryTimeRange> GetAvailableRecoveryTimeRangeSet() const;
 
                     /**
                      * 判断参数 AvailableRecoveryTimeRangeSet 是否已赋值
                      * @return AvailableRecoveryTimeRangeSet 是否已赋值
+                     * 
                      */
                     bool AvailableRecoveryTimeRangeSetHasBeenSet() const;
 

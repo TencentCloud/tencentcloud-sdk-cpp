@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取起始端口号，最小值1025
                      * @return FromPort 起始端口号，最小值1025
+                     * 
                      */
                     uint64_t GetFromPort() const;
 
                     /**
                      * 设置起始端口号，最小值1025
-                     * @param FromPort 起始端口号，最小值1025
+                     * @param _fromPort 起始端口号，最小值1025
+                     * 
                      */
                     void SetFromPort(const uint64_t& _fromPort);
 
                     /**
                      * 判断参数 FromPort 是否已赋值
                      * @return FromPort 是否已赋值
+                     * 
                      */
                     bool FromPortHasBeenSet() const;
 
                     /**
                      * 获取IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
                      * @return IpRange IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
+                     * 
                      */
                     std::string GetIpRange() const;
 
                     /**
                      * 设置IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
-                     * @param IpRange IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
+                     * @param _ipRange IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0
+                     * 
                      */
                     void SetIpRange(const std::string& _ipRange);
 
                     /**
                      * 判断参数 IpRange 是否已赋值
                      * @return IpRange 是否已赋值
+                     * 
                      */
                     bool IpRangeHasBeenSet() const;
 
                     /**
                      * 获取协议类型：TCP或者UDP
                      * @return Protocol 协议类型：TCP或者UDP
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型：TCP或者UDP
-                     * @param Protocol 协议类型：TCP或者UDP
+                     * @param _protocol 协议类型：TCP或者UDP
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取终止端口号，最大值60000
                      * @return ToPort 终止端口号，最大值60000
+                     * 
                      */
                     uint64_t GetToPort() const;
 
                     /**
                      * 设置终止端口号，最大值60000
-                     * @param ToPort 终止端口号，最大值60000
+                     * @param _toPort 终止端口号，最大值60000
+                     * 
                      */
                     void SetToPort(const uint64_t& _toPort);
 
                     /**
                      * 判断参数 ToPort 是否已赋值
                      * @return ToPort 是否已赋值
+                     * 
                      */
                     bool ToPortHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取精彩集锦详细信息。
                      * @return HighlightsInfo 精彩集锦详细信息。
+                     * 
                      */
                     std::vector<HighlightsInfomation> GetHighlightsInfo() const;
 
                     /**
                      * 判断参数 HighlightsInfo 是否已赋值
                      * @return HighlightsInfo 是否已赋值
+                     * 
                      */
                     bool HighlightsInfoHasBeenSet() const;
 
                     /**
                      * 获取精彩集锦任务唯一id。在URL方式时提交请求后会返回一个JobId，后续查询该url的结果时使用这个JobId进行查询。
                      * @return JobId 精彩集锦任务唯一id。在URL方式时提交请求后会返回一个JobId，后续查询该url的结果时使用这个JobId进行查询。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取任务的进度百分比，100表示任务已完成。
                      * @return Progress 任务的进度百分比，100表示任务已完成。
+                     * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

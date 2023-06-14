@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取分词
                      * @return SegStr 分词
+                     * 
                      */
                     std::string GetSegStr() const;
 
                     /**
                      * 设置分词
-                     * @param SegStr 分词
+                     * @param _segStr 分词
+                     * 
                      */
                     void SetSegStr(const std::string& _segStr);
 
                     /**
                      * 判断参数 SegStr 是否已赋值
                      * @return SegStr 是否已赋值
+                     * 
                      */
                     bool SegStrHasBeenSet() const;
 

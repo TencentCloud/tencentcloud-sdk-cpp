@@ -51,342 +51,399 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取访问实例的vip 信息
                      * @return Vip 访问实例的vip 信息
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置访问实例的vip 信息
-                     * @param Vip 访问实例的vip 信息
+                     * @param _vip 访问实例的vip 信息
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取访问实例的端口信息
                      * @return Vport 访问实例的端口信息
+                     * 
                      */
                     std::string GetVport() const;
 
                     /**
                      * 设置访问实例的端口信息
-                     * @param Vport 访问实例的端口信息
+                     * @param _vport 访问实例的端口信息
+                     * 
                      */
                     void SetVport(const std::string& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
                     /**
                      * 获取虚拟IP列表
                      * @return VipList 虚拟IP列表
+                     * 
                      */
                     std::vector<VipEntity> GetVipList() const;
 
                     /**
                      * 设置虚拟IP列表
-                     * @param VipList 虚拟IP列表
+                     * @param _vipList 虚拟IP列表
+                     * 
                      */
                     void SetVipList(const std::vector<VipEntity>& _vipList);
 
                     /**
                      * 判断参数 VipList 是否已赋值
                      * @return VipList 是否已赋值
+                     * 
                      */
                     bool VipListHasBeenSet() const;
 
                     /**
                      * 获取实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
                      * @return Status 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
-                     * @param Status 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * @param _status 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取实例带宽，单位Mbps
                      * @return Bandwidth 实例带宽，单位Mbps
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置实例带宽，单位Mbps
-                     * @param Bandwidth 实例带宽，单位Mbps
+                     * @param _bandwidth 实例带宽，单位Mbps
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取实例的存储大小，单位GB
                      * @return DiskSize 实例的存储大小，单位GB
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置实例的存储大小，单位GB
-                     * @param DiskSize 实例的存储大小，单位GB
+                     * @param _diskSize 实例的存储大小，单位GB
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取可用区域ID
                      * @return ZoneId 可用区域ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区域ID
-                     * @param ZoneId 可用区域ID
+                     * @param _zoneId 可用区域ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取vpcId，如果为空，说明是基础网络
                      * @return VpcId vpcId，如果为空，说明是基础网络
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpcId，如果为空，说明是基础网络
-                     * @param VpcId vpcId，如果为空，说明是基础网络
+                     * @param _vpcId vpcId，如果为空，说明是基础网络
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网id
                      * @return SubnetId 子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-                     * @param SubnetId 子网id
+                     * @param _subnetId 子网id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费
                      * @return RenewFlag 实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费
+                     * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费
-                     * @param RenewFlag 实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费
+                     * @param _renewFlag 实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费
+                     * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      * @return Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * 
                      */
                     int64_t GetHealthy() const;
 
                     /**
                      * 设置实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
-                     * @param Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * @param _healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * 
                      */
                     void SetHealthy(const int64_t& _healthy);
 
                     /**
                      * 判断参数 Healthy 是否已赋值
                      * @return Healthy 是否已赋值
+                     * 
                      */
                     bool HealthyHasBeenSet() const;
 
                     /**
                      * 获取实例状态信息
                      * @return HealthyMessage 实例状态信息
+                     * 
                      */
                     std::string GetHealthyMessage() const;
 
                     /**
                      * 设置实例状态信息
-                     * @param HealthyMessage 实例状态信息
+                     * @param _healthyMessage 实例状态信息
+                     * 
                      */
                     void SetHealthyMessage(const std::string& _healthyMessage);
 
                     /**
                      * 判断参数 HealthyMessage 是否已赋值
                      * @return HealthyMessage 是否已赋值
+                     * 
                      */
                     bool HealthyMessageHasBeenSet() const;
 
                     /**
                      * 获取实例创建时间时间
                      * @return CreateTime 实例创建时间时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置实例创建时间时间
-                     * @param CreateTime 实例创建时间时间
+                     * @param _createTime 实例创建时间时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取实例过期时间
                      * @return ExpireTime 实例过期时间
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置实例过期时间
-                     * @param ExpireTime 实例过期时间
+                     * @param _expireTime 实例过期时间
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取是否为内部客户。值为1 表示内部客户
                      * @return IsInternal 是否为内部客户。值为1 表示内部客户
+                     * 
                      */
                     int64_t GetIsInternal() const;
 
                     /**
                      * 设置是否为内部客户。值为1 表示内部客户
-                     * @param IsInternal 是否为内部客户。值为1 表示内部客户
+                     * @param _isInternal 是否为内部客户。值为1 表示内部客户
+                     * 
                      */
                     void SetIsInternal(const int64_t& _isInternal);
 
                     /**
                      * 判断参数 IsInternal 是否已赋值
                      * @return IsInternal 是否已赋值
+                     * 
                      */
                     bool IsInternalHasBeenSet() const;
 
                     /**
                      * 获取Topic个数
                      * @return TopicNum Topic个数
+                     * 
                      */
                     int64_t GetTopicNum() const;
 
                     /**
                      * 设置Topic个数
-                     * @param TopicNum Topic个数
+                     * @param _topicNum Topic个数
+                     * 
                      */
                     void SetTopicNum(const int64_t& _topicNum);
 
                     /**
                      * 判断参数 TopicNum 是否已赋值
                      * @return TopicNum 是否已赋值
+                     * 
                      */
                     bool TopicNumHasBeenSet() const;
 
                     /**
                      * 获取标识tag
                      * @return Tags 标识tag
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标识tag
-                     * @param Tags 标识tag
+                     * @param _tags 标识tag
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -395,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version kafka版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置kafka版本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version kafka版本信息
+                     * @param _version kafka版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -417,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 跨可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置跨可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneIds 跨可用区
+                     * @param _zoneIds 跨可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
@@ -439,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cvm ckafka售卖类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCvm() const;
 
                     /**
                      * 设置ckafka售卖类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cvm ckafka售卖类型
+                     * @param _cvm ckafka售卖类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCvm(const int64_t& _cvm);
 
                     /**
                      * 判断参数 Cvm 是否已赋值
                      * @return Cvm 是否已赋值
+                     * 
                      */
                     bool CvmHasBeenSet() const;
 
@@ -461,20 +527,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType ckafka实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置ckafka实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType ckafka实例类型
+                     * @param _instanceType ckafka实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -483,20 +552,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 磁盘类型
+                     * @param _diskType 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -505,20 +577,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxTopicNumber 当前规格最大Topic数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxTopicNumber() const;
 
                     /**
                      * 设置当前规格最大Topic数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxTopicNumber 当前规格最大Topic数
+                     * @param _maxTopicNumber 当前规格最大Topic数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxTopicNumber(const int64_t& _maxTopicNumber);
 
                     /**
                      * 判断参数 MaxTopicNumber 是否已赋值
                      * @return MaxTopicNumber 是否已赋值
+                     * 
                      */
                     bool MaxTopicNumberHasBeenSet() const;
 
@@ -527,20 +602,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPartitionNumber 当前规格最大Partition数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxPartitionNumber() const;
 
                     /**
                      * 设置当前规格最大Partition数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxPartitionNumber 当前规格最大Partition数
+                     * @param _maxPartitionNumber 当前规格最大Partition数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxPartitionNumber(const int64_t& _maxPartitionNumber);
 
                     /**
                      * 判断参数 MaxPartitionNumber 是否已赋值
                      * @return MaxPartitionNumber 是否已赋值
+                     * 
                      */
                     bool MaxPartitionNumberHasBeenSet() const;
 
@@ -549,20 +627,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebalanceTime 计划升级配置时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRebalanceTime() const;
 
                     /**
                      * 设置计划升级配置时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RebalanceTime 计划升级配置时间
+                     * @param _rebalanceTime 计划升级配置时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRebalanceTime(const std::string& _rebalanceTime);
 
                     /**
                      * 判断参数 RebalanceTime 是否已赋值
                      * @return RebalanceTime 是否已赋值
+                     * 
                      */
                     bool RebalanceTimeHasBeenSet() const;
 
@@ -571,20 +652,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNumber 实例当前partition数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPartitionNumber() const;
 
                     /**
                      * 设置实例当前partition数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PartitionNumber 实例当前partition数量
+                     * @param _partitionNumber 实例当前partition数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitionNumber(const uint64_t& _partitionNumber);
 
                     /**
                      * 判断参数 PartitionNumber 是否已赋值
                      * @return PartitionNumber 是否已赋值
+                     * 
                      */
                     bool PartitionNumberHasBeenSet() const;
 
@@ -593,20 +677,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetworkChargeType 公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
                      * 设置公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicNetworkChargeType 公网带宽类型
+                     * @param _publicNetworkChargeType 公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
 
                     /**
                      * 判断参数 PublicNetworkChargeType 是否已赋值
                      * @return PublicNetworkChargeType 是否已赋值
+                     * 
                      */
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
@@ -615,20 +702,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetwork 公网带宽值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
                      * 设置公网带宽值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicNetwork 公网带宽值
+                     * @param _publicNetwork 公网带宽值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
 
                     /**
                      * 判断参数 PublicNetwork 是否已赋值
                      * @return PublicNetwork 是否已赋值
+                     * 
                      */
                     bool PublicNetworkHasBeenSet() const;
 
@@ -637,20 +727,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterType 实例类型
+                     * @param _clusterType 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
@@ -659,20 +752,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Features 实例功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置实例功能列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Features 实例功能列表
+                     * @param _features 实例功能列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
 
                     /**
                      * 判断参数 Features 是否已赋值
                      * @return Features 是否已赋值
+                     * 
                      */
                     bool FeaturesHasBeenSet() const;
 

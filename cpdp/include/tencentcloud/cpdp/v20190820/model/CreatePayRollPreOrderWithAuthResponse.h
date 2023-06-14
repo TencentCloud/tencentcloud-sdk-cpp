@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
                      * @return AuthNumber 商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一
+                     * 
                      */
                     std::string GetAuthNumber() const;
 
                     /**
                      * 判断参数 AuthNumber 是否已赋值
                      * @return AuthNumber 是否已赋值
+                     * 
                      */
                     bool AuthNumberHasBeenSet() const;
 
                     /**
                      * 获取Token有效时间，单位秒
                      * @return ExpireTime Token有效时间，单位秒
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取微信服务商商户的商户号，由微信支付生成并下发
                      * @return MerchantId 微信服务商商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取用户在商户对应appid下的唯一标识
                      * @return OpenId 用户在商户对应appid下的唯一标识
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取微信服务商下特约商户的商户号，由微信支付生成并下发
                      * @return SubMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     std::string GetSubMerchantId() const;
 
                     /**
                      * 判断参数 SubMerchantId 是否已赋值
                      * @return SubMerchantId 是否已赋值
+                     * 
                      */
                     bool SubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取Token值
                      * @return Token Token值
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 

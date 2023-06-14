@@ -51,6 +51,7 @@ k8sApi: k8s_api
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
+                     * 
                      */
                     std::string GetLogType() const;
 
@@ -59,52 +60,60 @@ k8sApi: k8s_api
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
-                     * @param LogType 日志类型
+                     * @param _logType 日志类型
 bash日志: container_bash
 容器启动: container_launch
 k8sApi: k8s_api
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取绑定主机quuid列表
                      * @return BindList 绑定主机quuid列表
+                     * 
                      */
                     std::vector<std::string> GetBindList() const;
 
                     /**
                      * 设置绑定主机quuid列表
-                     * @param BindList 绑定主机quuid列表
+                     * @param _bindList 绑定主机quuid列表
+                     * 
                      */
                     void SetBindList(const std::vector<std::string>& _bindList);
 
                     /**
                      * 判断参数 BindList 是否已赋值
                      * @return BindList 是否已赋值
+                     * 
                      */
                     bool BindListHasBeenSet() const;
 
                     /**
                      * 获取待解绑主机quuid列表
                      * @return UnBindList 待解绑主机quuid列表
+                     * 
                      */
                     std::vector<std::string> GetUnBindList() const;
 
                     /**
                      * 设置待解绑主机quuid列表
-                     * @param UnBindList 待解绑主机quuid列表
+                     * @param _unBindList 待解绑主机quuid列表
+                     * 
                      */
                     void SetUnBindList(const std::vector<std::string>& _unBindList);
 
                     /**
                      * 判断参数 UnBindList 是否已赋值
                      * @return UnBindList 是否已赋值
+                     * 
                      */
                     bool UnBindListHasBeenSet() const;
 
@@ -117,6 +126,7 @@ SUPER: 超级节点
 NORMAL: 普通节点(默认值)
 SUPER: 超级节点
 
+                     * 
                      */
                     std::string GetNodeType() const;
 
@@ -125,16 +135,18 @@ SUPER: 超级节点
 NORMAL: 普通节点(默认值)
 SUPER: 超级节点
 
-                     * @param NodeType 节点类型:
+                     * @param _nodeType 节点类型:
 NORMAL: 普通节点(默认值)
 SUPER: 超级节点
 
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 

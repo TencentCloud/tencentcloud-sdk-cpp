@@ -53,18 +53,21 @@ namespace TencentCloud
                     /**
                      * 获取素材基本信息。
                      * @return BasicInfo 素材基本信息。
+                     * 
                      */
                     MaterialBasicInfo GetBasicInfo() const;
 
                     /**
                      * 设置素材基本信息。
-                     * @param BasicInfo 素材基本信息。
+                     * @param _basicInfo 素材基本信息。
+                     * 
                      */
                     void SetBasicInfo(const MaterialBasicInfo& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoMaterial 视频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoMaterial GetVideoMaterial() const;
 
                     /**
                      * 设置视频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoMaterial 视频素材信息。
+                     * @param _videoMaterial 视频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoMaterial(const VideoMaterial& _videoMaterial);
 
                     /**
                      * 判断参数 VideoMaterial 是否已赋值
                      * @return VideoMaterial 是否已赋值
+                     * 
                      */
                     bool VideoMaterialHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioMaterial 音频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioMaterial GetAudioMaterial() const;
 
                     /**
                      * 设置音频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioMaterial 音频素材信息。
+                     * @param _audioMaterial 音频素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioMaterial(const AudioMaterial& _audioMaterial);
 
                     /**
                      * 判断参数 AudioMaterial 是否已赋值
                      * @return AudioMaterial 是否已赋值
+                     * 
                      */
                     bool AudioMaterialHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageMaterial 图片素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageMaterial GetImageMaterial() const;
 
                     /**
                      * 设置图片素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageMaterial 图片素材信息。
+                     * @param _imageMaterial 图片素材信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageMaterial(const ImageMaterial& _imageMaterial);
 
                     /**
                      * 判断参数 ImageMaterial 是否已赋值
                      * @return ImageMaterial 是否已赋值
+                     * 
                      */
                     bool ImageMaterialHasBeenSet() const;
 

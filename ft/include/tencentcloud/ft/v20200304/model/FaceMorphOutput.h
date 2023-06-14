@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MorphUrl 人像渐变输出的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMorphUrl() const;
 
                     /**
                      * 设置人像渐变输出的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MorphUrl 人像渐变输出的url
+                     * @param _morphUrl 人像渐变输出的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMorphUrl(const std::string& _morphUrl);
 
                     /**
                      * 判断参数 MorphUrl 是否已赋值
                      * @return MorphUrl 是否已赋值
+                     * 
                      */
                     bool MorphUrlHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MorphMd5 人像渐变输出的结果MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMorphMd5() const;
 
                     /**
                      * 设置人像渐变输出的结果MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MorphMd5 人像渐变输出的结果MD5，用于校验
+                     * @param _morphMd5 人像渐变输出的结果MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMorphMd5(const std::string& _morphMd5);
 
                     /**
                      * 判断参数 MorphMd5 是否已赋值
                      * @return MorphMd5 是否已赋值
+                     * 
                      */
                     bool MorphMd5HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverImage 人像渐变输出的结果封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoverImage() const;
 
                     /**
                      * 设置人像渐变输出的结果封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverImage 人像渐变输出的结果封面图base64字符串
+                     * @param _coverImage 人像渐变输出的结果封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverImage(const std::string& _coverImage);
 
                     /**
                      * 判断参数 CoverImage 是否已赋值
                      * @return CoverImage 是否已赋值
+                     * 
                      */
                     bool CoverImageHasBeenSet() const;
 

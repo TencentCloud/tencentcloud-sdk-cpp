@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取方式 1:输入文字反馈  2:预设选项
                      * @return Type 方式 1:输入文字反馈  2:预设选项
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置方式 1:输入文字反馈  2:预设选项
-                     * @param Type 方式 1:输入文字反馈  2:预设选项
+                     * @param _type 方式 1:输入文字反馈  2:预设选项
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 审批意见
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置审批意见
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 审批意见
+                     * @param _content 审批意见
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

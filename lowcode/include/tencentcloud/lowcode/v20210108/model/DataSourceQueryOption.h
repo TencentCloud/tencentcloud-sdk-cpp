@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据源标识模糊匹配
                      * @return LikeName 数据源标识模糊匹配
+                     * 
                      */
                     std::string GetLikeName() const;
 
                     /**
                      * 设置数据源标识模糊匹配
-                     * @param LikeName 数据源标识模糊匹配
+                     * @param _likeName 数据源标识模糊匹配
+                     * 
                      */
                     void SetLikeName(const std::string& _likeName);
 
                     /**
                      * 判断参数 LikeName 是否已赋值
                      * @return LikeName 是否已赋值
+                     * 
                      */
                     bool LikeNameHasBeenSet() const;
 
                     /**
                      * 获取数据源名称模糊匹配
                      * @return LikeTitle 数据源名称模糊匹配
+                     * 
                      */
                     std::string GetLikeTitle() const;
 
                     /**
                      * 设置数据源名称模糊匹配
-                     * @param LikeTitle 数据源名称模糊匹配
+                     * @param _likeTitle 数据源名称模糊匹配
+                     * 
                      */
                     void SetLikeTitle(const std::string& _likeTitle);
 
                     /**
                      * 判断参数 LikeTitle 是否已赋值
                      * @return LikeTitle 是否已赋值
+                     * 
                      */
                     bool LikeTitleHasBeenSet() const;
 

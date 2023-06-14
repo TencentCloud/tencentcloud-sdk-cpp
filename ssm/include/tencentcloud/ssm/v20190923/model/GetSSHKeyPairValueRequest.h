@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取凭据名称，此凭据只能为SSH密钥对凭据类型。
                      * @return SecretName 凭据名称，此凭据只能为SSH密钥对凭据类型。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置凭据名称，此凭据只能为SSH密钥对凭据类型。
-                     * @param SecretName 凭据名称，此凭据只能为SSH密钥对凭据类型。
+                     * @param _secretName 凭据名称，此凭据只能为SSH密钥对凭据类型。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取密钥对ID，是云服务器中密钥对的唯一标识。
                      * @return SSHKeyId 密钥对ID，是云服务器中密钥对的唯一标识。
+                     * 
                      */
                     std::string GetSSHKeyId() const;
 
                     /**
                      * 设置密钥对ID，是云服务器中密钥对的唯一标识。
-                     * @param SSHKeyId 密钥对ID，是云服务器中密钥对的唯一标识。
+                     * @param _sSHKeyId 密钥对ID，是云服务器中密钥对的唯一标识。
+                     * 
                      */
                     void SetSSHKeyId(const std::string& _sSHKeyId);
 
                     /**
                      * 判断参数 SSHKeyId 是否已赋值
                      * @return SSHKeyId 是否已赋值
+                     * 
                      */
                     bool SSHKeyIdHasBeenSet() const;
 

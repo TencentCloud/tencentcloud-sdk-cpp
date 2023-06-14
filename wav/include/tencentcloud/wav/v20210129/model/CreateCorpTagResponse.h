@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取标签组信息
                      * @return TagGroup 标签组信息
+                     * 
                      */
                     TagGroup GetTagGroup() const;
 
                     /**
                      * 判断参数 TagGroup 是否已赋值
                      * @return TagGroup 是否已赋值
+                     * 
                      */
                     bool TagGroupHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据源id
                      * @return DatasourceId 数据源id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据源id
-                     * @param DatasourceId 数据源id
+                     * @param _datasourceId 数据源id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
                      * 获取数据源类型
                      * @return DsTypes 数据源类型
+                     * 
                      */
                     std::vector<uint64_t> GetDsTypes() const;
 
                     /**
                      * 设置数据源类型
-                     * @param DsTypes 数据源类型
+                     * @param _dsTypes 数据源类型
+                     * 
                      */
                     void SetDsTypes(const std::vector<uint64_t>& _dsTypes);
 
                     /**
                      * 判断参数 DsTypes 是否已赋值
                      * @return DsTypes 是否已赋值
+                     * 
                      */
                     bool DsTypesHasBeenSet() const;
 

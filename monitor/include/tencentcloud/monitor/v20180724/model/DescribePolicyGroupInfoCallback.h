@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户回调接口地址
                      * @return CallbackUrl 用户回调接口地址
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置用户回调接口地址
-                     * @param CallbackUrl 用户回调接口地址
+                     * @param _callbackUrl 用户回调接口地址
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
                      * @return ValidFlag 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * 
                      */
                     int64_t GetValidFlag() const;
 
                     /**
                      * 设置用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
-                     * @param ValidFlag 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * @param _validFlag 用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证
+                     * 
                      */
                     void SetValidFlag(const int64_t& _validFlag);
 
                     /**
                      * 判断参数 ValidFlag 是否已赋值
                      * @return ValidFlag 是否已赋值
+                     * 
                      */
                     bool ValidFlagHasBeenSet() const;
 
                     /**
                      * 获取用户回调接口验证码
                      * @return VerifyCode 用户回调接口验证码
+                     * 
                      */
                     std::string GetVerifyCode() const;
 
                     /**
                      * 设置用户回调接口验证码
-                     * @param VerifyCode 用户回调接口验证码
+                     * @param _verifyCode 用户回调接口验证码
+                     * 
                      */
                     void SetVerifyCode(const std::string& _verifyCode);
 
                     /**
                      * 判断参数 VerifyCode 是否已赋值
                      * @return VerifyCode 是否已赋值
+                     * 
                      */
                     bool VerifyCodeHasBeenSet() const;
 

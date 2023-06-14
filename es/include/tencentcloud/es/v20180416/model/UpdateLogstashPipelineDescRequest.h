@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例管道ID
                      * @return PipelineId 实例管道ID
+                     * 
                      */
                     std::string GetPipelineId() const;
 
                     /**
                      * 设置实例管道ID
-                     * @param PipelineId 实例管道ID
+                     * @param _pipelineId 实例管道ID
+                     * 
                      */
                     void SetPipelineId(const std::string& _pipelineId);
 
                     /**
                      * 判断参数 PipelineId 是否已赋值
                      * @return PipelineId 是否已赋值
+                     * 
                      */
                     bool PipelineIdHasBeenSet() const;
 
                     /**
                      * 获取管道描述信息
                      * @return PipelineDesc 管道描述信息
+                     * 
                      */
                     std::string GetPipelineDesc() const;
 
                     /**
                      * 设置管道描述信息
-                     * @param PipelineDesc 管道描述信息
+                     * @param _pipelineDesc 管道描述信息
+                     * 
                      */
                     void SetPipelineDesc(const std::string& _pipelineDesc);
 
                     /**
                      * 判断参数 PipelineDesc 是否已赋值
                      * @return PipelineDesc 是否已赋值
+                     * 
                      */
                     bool PipelineDescHasBeenSet() const;
 

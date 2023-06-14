@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取操作限制列表。
                      * @return DeniedActions 操作限制列表。
+                     * 
                      */
                     std::vector<DeniedAction> GetDeniedActions() const;
 
                     /**
                      * 设置操作限制列表。
-                     * @param DeniedActions 操作限制列表。
+                     * @param _deniedActions 操作限制列表。
+                     * 
                      */
                     void SetDeniedActions(const std::vector<DeniedAction>& _deniedActions);
 
                     /**
                      * 判断参数 DeniedActions 是否已赋值
                      * @return DeniedActions 是否已赋值
+                     * 
                      */
                     bool DeniedActionsHasBeenSet() const;
 

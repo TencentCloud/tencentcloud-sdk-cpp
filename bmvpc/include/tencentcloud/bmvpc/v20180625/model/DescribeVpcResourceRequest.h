@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取私有网络实例ID
                      * @return VpcIds 私有网络实例ID
+                     * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
                      * 设置私有网络实例ID
-                     * @param VpcIds 私有网络实例ID
+                     * @param _vpcIds 私有网络实例ID
+                     * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
 
                     /**
                      * 判断参数 VpcIds 是否已赋值
                      * @return VpcIds 是否已赋值
+                     * 
                      */
                     bool VpcIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
 state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,89 +85,103 @@ vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
 state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
-                     * @param Filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
 state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return OrderField 排序字段
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置排序字段
-                     * @param OrderField 排序字段
+                     * @param _orderField 排序字段
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取排序方向, “asc”、“desc”
                      * @return OrderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置排序方向, “asc”、“desc”
-                     * @param OrderDirection 排序方向, “asc”、“desc”
+                     * @param _orderDirection 排序方向, “asc”、“desc”
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取需要被替换的证书的ID，可以是服务端证书或客户端证书
                      * @return OldCertificateId 需要被替换的证书的ID，可以是服务端证书或客户端证书
+                     * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
                      * 设置需要被替换的证书的ID，可以是服务端证书或客户端证书
-                     * @param OldCertificateId 需要被替换的证书的ID，可以是服务端证书或客户端证书
+                     * @param _oldCertificateId 需要被替换的证书的ID，可以是服务端证书或客户端证书
+                     * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
 
                     /**
                      * 判断参数 OldCertificateId 是否已赋值
                      * @return OldCertificateId 是否已赋值
+                     * 
                      */
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
                      * 获取新证书的内容等相关信息
                      * @return Certificate 新证书的内容等相关信息
+                     * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
                      * 设置新证书的内容等相关信息
-                     * @param Certificate 新证书的内容等相关信息
+                     * @param _certificate 新证书的内容等相关信息
+                     * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取词表ID。
                      * @return VocabId 词表ID。
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 
                     /**
                      * 获取词表权重文件形式的base64值。
                      * @return WordWeightStr 词表权重文件形式的base64值。
+                     * 
                      */
                     std::string GetWordWeightStr() const;
 
                     /**
                      * 判断参数 WordWeightStr 是否已赋值
                      * @return WordWeightStr 是否已赋值
+                     * 
                      */
                     bool WordWeightStrHasBeenSet() const;
 

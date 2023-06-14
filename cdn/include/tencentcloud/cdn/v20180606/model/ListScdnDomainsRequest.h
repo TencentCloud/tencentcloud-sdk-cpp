@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分页起始地址
                      * @return Offset 分页起始地址
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页起始地址
-                     * @param Offset 分页起始地址
+                     * @param _offset 分页起始地址
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取列表分页记录条数，最大1000
                      * @return Limit 列表分页记录条数，最大1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置列表分页记录条数，最大1000
-                     * @param Limit 列表分页记录条数，最大1000
+                     * @param _limit 列表分页记录条数，最大1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取域名信息
                      * @return Domain 域名信息
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名信息
-                     * @param Domain 域名信息
+                     * @param _domain 域名信息
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

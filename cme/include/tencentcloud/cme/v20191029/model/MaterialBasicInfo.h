@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体 Id。
                      * @return MaterialId 媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置媒体 Id。
-                     * @param MaterialId 媒体 Id。
+                     * @param _materialId 媒体 Id。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
@@ -80,6 +83,7 @@ namespace TencentCloud
 <li> IMAGE :图片;</li>
 <li> LINK  :链接.</li>
 <li> OTHER : 其他.</li>
+                     * 
                      */
                     std::string GetMaterialType() const;
 
@@ -90,162 +94,188 @@ namespace TencentCloud
 <li> IMAGE :图片;</li>
 <li> LINK  :链接.</li>
 <li> OTHER : 其他.</li>
-                     * @param MaterialType 媒体类型，取值为：
+                     * @param _materialType 媒体类型，取值为：
 <li> AUDIO :音频;</li>
 <li> VIDEO :视频;</li>
 <li> IMAGE :图片;</li>
 <li> LINK  :链接.</li>
 <li> OTHER : 其他.</li>
+                     * 
                      */
                     void SetMaterialType(const std::string& _materialType);
 
                     /**
                      * 判断参数 MaterialType 是否已赋值
                      * @return MaterialType 是否已赋值
+                     * 
                      */
                     bool MaterialTypeHasBeenSet() const;
 
                     /**
                      * 获取媒体归属实体。
                      * @return Owner 媒体归属实体。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置媒体归属实体。
-                     * @param Owner 媒体归属实体。
+                     * @param _owner 媒体归属实体。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取媒体名称。
                      * @return Name 媒体名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒体名称。
-                     * @param Name 媒体名称。
+                     * @param _name 媒体名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的创建时间，使用 ISO 日期格式。
                      * @return CreateTime 媒体文件的创建时间，使用 ISO 日期格式。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置媒体文件的创建时间，使用 ISO 日期格式。
-                     * @param CreateTime 媒体文件的创建时间，使用 ISO 日期格式。
+                     * @param _createTime 媒体文件的创建时间，使用 ISO 日期格式。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
                      * @return UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
-                     * @param UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * @param _updateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取媒体的分类路径。
                      * @return ClassPath 媒体的分类路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置媒体的分类路径。
-                     * @param ClassPath 媒体的分类路径。
+                     * @param _classPath 媒体的分类路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 
                     /**
                      * 获取预置标签列表。
                      * @return PresetTagSet 预置标签列表。
+                     * 
                      */
                     std::vector<PresetTagInfo> GetPresetTagSet() const;
 
                     /**
                      * 设置预置标签列表。
-                     * @param PresetTagSet 预置标签列表。
+                     * @param _presetTagSet 预置标签列表。
+                     * 
                      */
                     void SetPresetTagSet(const std::vector<PresetTagInfo>& _presetTagSet);
 
                     /**
                      * 判断参数 PresetTagSet 是否已赋值
                      * @return PresetTagSet 是否已赋值
+                     * 
                      */
                     bool PresetTagSetHasBeenSet() const;
 
                     /**
                      * 获取人工标签列表。
                      * @return TagSet 人工标签列表。
+                     * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置人工标签列表。
-                     * @param TagSet 人工标签列表。
+                     * @param _tagSet 人工标签列表。
+                     * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
                     /**
                      * 获取媒体文件的预览图。
                      * @return PreviewUrl 媒体文件的预览图。
+                     * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
                      * 设置媒体文件的预览图。
-                     * @param PreviewUrl 媒体文件的预览图。
+                     * @param _previewUrl 媒体文件的预览图。
+                     * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
 
                     /**
                      * 判断参数 PreviewUrl 是否已赋值
                      * @return PreviewUrl 是否已赋值
+                     * 
                      */
                     bool PreviewUrlHasBeenSet() const;
 
@@ -256,6 +286,7 @@ namespace TencentCloud
                      * @return TagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MaterialTagInfo> GetTagInfoSet() const;
 
@@ -263,15 +294,17 @@ namespace TencentCloud
                      * 设置媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagInfoSet 媒体绑定的标签信息列表 。
+                     * @param _tagInfoSet 媒体绑定的标签信息列表 。
 该字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
 
                     /**
                      * 判断参数 TagInfoSet 是否已赋值
                      * @return TagInfoSet 是否已赋值
+                     * 
                      */
                     bool TagInfoSetHasBeenSet() const;
 

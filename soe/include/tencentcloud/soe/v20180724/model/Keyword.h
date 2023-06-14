@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取被评估语音对应的文本，句子模式下不超过 20个单词或者中文文字，段落模式不超过 120个单词或者中文文字，中文文字需使用 utf-8 编码，自由说模式RefText可以不填。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。
                      * @return RefText 被评估语音对应的文本，句子模式下不超过 20个单词或者中文文字，段落模式不超过 120个单词或者中文文字，中文文字需使用 utf-8 编码，自由说模式RefText可以不填。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。
+                     * 
                      */
                     std::string GetRefText() const;
 
                     /**
                      * 设置被评估语音对应的文本，句子模式下不超过 20个单词或者中文文字，段落模式不超过 120个单词或者中文文字，中文文字需使用 utf-8 编码，自由说模式RefText可以不填。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。
-                     * @param RefText 被评估语音对应的文本，句子模式下不超过 20个单词或者中文文字，段落模式不超过 120个单词或者中文文字，中文文字需使用 utf-8 编码，自由说模式RefText可以不填。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。
+                     * @param _refText 被评估语音对应的文本，句子模式下不超过 20个单词或者中文文字，段落模式不超过 120个单词或者中文文字，中文文字需使用 utf-8 编码，自由说模式RefText可以不填。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。
+                     * 
                      */
                     void SetRefText(const std::string& _refText);
 
                     /**
                      * 判断参数 RefText 是否已赋值
                      * @return RefText 是否已赋值
+                     * 
                      */
                     bool RefTextHasBeenSet() const;
 
                     /**
                      * 获取评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。
                      * @return EvalMode 评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。
+                     * 
                      */
                     uint64_t GetEvalMode() const;
 
                     /**
                      * 设置评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。
-                     * @param EvalMode 评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。
+                     * @param _evalMode 评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。
+                     * 
                      */
                     void SetEvalMode(const uint64_t& _evalMode);
 
                     /**
                      * 判断参数 EvalMode 是否已赋值
                      * @return EvalMode 是否已赋值
+                     * 
                      */
                     bool EvalModeHasBeenSet() const;
 
                     /**
                      * 获取评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段
                      * @return ScoreCoeff 评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段
+                     * 
                      */
                     double GetScoreCoeff() const;
 
                     /**
                      * 设置评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段
-                     * @param ScoreCoeff 评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段
+                     * @param _scoreCoeff 评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段
+                     * 
                      */
                     void SetScoreCoeff(const double& _scoreCoeff);
 
                     /**
                      * 判断参数 ScoreCoeff 是否已赋值
                      * @return ScoreCoeff 是否已赋值
+                     * 
                      */
                     bool ScoreCoeffHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 ServerType不填默认为0
                      * @return ServerType 评估语言，0：英文，1：中文。
 ServerType不填默认为0
+                     * 
                      */
                     uint64_t GetServerType() const;
 
                     /**
                      * 设置评估语言，0：英文，1：中文。
 ServerType不填默认为0
-                     * @param ServerType 评估语言，0：英文，1：中文。
+                     * @param _serverType 评估语言，0：英文，1：中文。
 ServerType不填默认为0
+                     * 
                      */
                     void SetServerType(const uint64_t& _serverType);
 
                     /**
                      * 判断参数 ServerType 是否已赋值
                      * @return ServerType 是否已赋值
+                     * 
                      */
                     bool ServerTypeHasBeenSet() const;
 
                     /**
                      * 获取输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。
                      * @return TextMode 输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。
+                     * 
                      */
                     uint64_t GetTextMode() const;
 
                     /**
                      * 设置输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。
-                     * @param TextMode 输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。
+                     * @param _textMode 输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。
+                     * 
                      */
                     void SetTextMode(const uint64_t& _textMode);
 
                     /**
                      * 判断参数 TextMode 是否已赋值
                      * @return TextMode 是否已赋值
+                     * 
                      */
                     bool TextModeHasBeenSet() const;
 

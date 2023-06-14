@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取文件序号
                      * @return FileIndex 文件序号
+                     * 
                      */
                     int64_t GetFileIndex() const;
 
                     /**
                      * 设置文件序号
-                     * @param FileIndex 文件序号
+                     * @param _fileIndex 文件序号
+                     * 
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
                     /**
                      * 判断参数 FileIndex 是否已赋值
                      * @return FileIndex 是否已赋值
+                     * 
                      */
                     bool FileIndexHasBeenSet() const;
 
                     /**
                      * 获取文件类型
                      * @return FileType 文件类型
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型
-                     * @param FileType 文件类型
+                     * @param _fileType 文件类型
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取文件的MD5码
                      * @return FileMd5 文件的MD5码
+                     * 
                      */
                     std::string GetFileMd5() const;
 
                     /**
                      * 设置文件的MD5码
-                     * @param FileMd5 文件的MD5码
+                     * @param _fileMd5 文件的MD5码
+                     * 
                      */
                     void SetFileMd5(const std::string& _fileMd5);
 
                     /**
                      * 判断参数 FileMd5 是否已赋值
                      * @return FileMd5 是否已赋值
+                     * 
                      */
                     bool FileMd5HasBeenSet() const;
 
                     /**
                      * 获取文件名
                      * @return FileName 文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名
-                     * @param FileName 文件名
+                     * @param _fileName 文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取文件大小，单位为Byte
                      * @return FileSize 文件大小，单位为Byte
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小，单位为Byte
-                     * @param FileSize 文件大小，单位为Byte
+                     * @param _fileSize 文件大小，单位为Byte
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取文件创建时间戳
                      * @return CreatedOn 文件创建时间戳
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置文件创建时间戳
-                     * @param CreatedOn 文件创建时间戳
+                     * @param _createdOn 文件创建时间戳
+                     * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取文件的下载地址
                      * @return Url 文件的下载地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置文件的下载地址
-                     * @param Url 文件的下载地址
+                     * @param _url 文件的下载地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

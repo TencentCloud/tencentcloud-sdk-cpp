@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取网关实体ID
                      * @return GatewayInstanceId 网关实体ID
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实体ID
-                     * @param GatewayInstanceId 网关实体ID
+                     * @param _gatewayInstanceId 网关实体ID
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 

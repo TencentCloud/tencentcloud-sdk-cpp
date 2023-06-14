@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelId 频道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 设置频道ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveChannelId 频道ID
+                     * @param _liveChannelId 频道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
 
                     /**
                      * 判断参数 LiveChannelId 是否已赋值
                      * @return LiveChannelId 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelName 频道名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLiveChannelName() const;
 
                     /**
                      * 设置频道名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveChannelName 频道名称
+                     * @param _liveChannelName 频道名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveChannelName(const std::string& _liveChannelName);
 
                     /**
                      * 判断参数 LiveChannelName 是否已赋值
                      * @return LiveChannelName 是否已赋值
+                     * 
                      */
                     bool LiveChannelNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelType 频道类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLiveChannelType() const;
 
                     /**
                      * 设置频道类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveChannelType 频道类型
+                     * @param _liveChannelType 频道类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveChannelType(const int64_t& _liveChannelType);
 
                     /**
                      * 判断参数 LiveChannelType 是否已赋值
                      * @return LiveChannelType 是否已赋值
+                     * 
                      */
                     bool LiveChannelTypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveStatus 通道直播状态：1: 未推流，2: 推流中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLiveStatus() const;
 
                     /**
                      * 设置通道直播状态：1: 未推流，2: 推流中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveStatus 通道直播状态：1: 未推流，2: 推流中
+                     * @param _liveStatus 通道直播状态：1: 未推流，2: 推流中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveStatus(const int64_t& _liveStatus);
 
                     /**
                      * 判断参数 LiveStatus 是否已赋值
                      * @return LiveStatus 是否已赋值
+                     * 
                      */
                     bool LiveStatusHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PushStreamAddress 推流地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPushStreamAddress() const;
 
                     /**
                      * 设置推流地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PushStreamAddress 推流地址
+                     * @param _pushStreamAddress 推流地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPushStreamAddress(const std::string& _pushStreamAddress);
 
                     /**
                      * 判断参数 PushStreamAddress 是否已赋值
                      * @return PushStreamAddress 是否已赋值
+                     * 
                      */
                     bool PushStreamAddressHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

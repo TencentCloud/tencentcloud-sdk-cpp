@@ -47,198 +47,231 @@ namespace TencentCloud
                     /**
                      * 获取防火墙实例名称
                      * @return Name 防火墙实例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置防火墙实例名称
-                     * @param Name 防火墙实例名称
+                     * @param _name 防火墙实例名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取带宽
                      * @return Width 带宽
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置带宽
-                     * @param Width 带宽
+                     * @param _width 带宽
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取模式 1：接入模式；0：新增模式
                      * @return Mode 模式 1：接入模式；0：新增模式
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置模式 1：接入模式；0：新增模式
-                     * @param Mode 模式 1：接入模式；0：新增模式
+                     * @param _mode 模式 1：接入模式；0：新增模式
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
                      * @return NewModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * 
                      */
                     NewModeItems GetNewModeItems() const;
 
                     /**
                      * 设置新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
-                     * @param NewModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * @param _newModeItems 新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。
+                     * 
                      */
                     void SetNewModeItems(const NewModeItems& _newModeItems);
 
                     /**
                      * 判断参数 NewModeItems 是否已赋值
                      * @return NewModeItems 是否已赋值
+                     * 
                      */
                     bool NewModeItemsHasBeenSet() const;
 
                     /**
                      * 获取接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
                      * @return NatGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * 
                      */
                     std::vector<std::string> GetNatGwList() const;
 
                     /**
                      * 设置接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
-                     * @param NatGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * @param _natGwList 接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。
+                     * 
                      */
                     void SetNatGwList(const std::vector<std::string>& _natGwList);
 
                     /**
                      * 判断参数 NatGwList 是否已赋值
                      * @return NatGwList 是否已赋值
+                     * 
                      */
                     bool NatGwListHasBeenSet() const;
 
                     /**
                      * 获取主可用区，为空则选择默认可用区
                      * @return Zone 主可用区，为空则选择默认可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置主可用区，为空则选择默认可用区
-                     * @param Zone 主可用区，为空则选择默认可用区
+                     * @param _zone 主可用区，为空则选择默认可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取备可用区，为空则选择默认可用区
                      * @return ZoneBak 备可用区，为空则选择默认可用区
+                     * 
                      */
                     std::string GetZoneBak() const;
 
                     /**
                      * 设置备可用区，为空则选择默认可用区
-                     * @param ZoneBak 备可用区，为空则选择默认可用区
+                     * @param _zoneBak 备可用区，为空则选择默认可用区
+                     * 
                      */
                     void SetZoneBak(const std::string& _zoneBak);
 
                     /**
                      * 判断参数 ZoneBak 是否已赋值
                      * @return ZoneBak 是否已赋值
+                     * 
                      */
                     bool ZoneBakHasBeenSet() const;
 
                     /**
                      * 获取异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
                      * @return CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * 
                      */
                     int64_t GetCrossAZone() const;
 
                     /**
                      * 设置异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
-                     * @param CrossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * @param _crossAZone 异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备
+                     * 
                      */
                     void SetCrossAZone(const int64_t& _crossAZone);
 
                     /**
                      * 判断参数 CrossAZone 是否已赋值
                      * @return CrossAZone 是否已赋值
+                     * 
                      */
                     bool CrossAZoneHasBeenSet() const;
 
                     /**
                      * 获取0不创建域名,1创建域名
                      * @return IsCreateDomain 0不创建域名,1创建域名
+                     * 
                      */
                     int64_t GetIsCreateDomain() const;
 
                     /**
                      * 设置0不创建域名,1创建域名
-                     * @param IsCreateDomain 0不创建域名,1创建域名
+                     * @param _isCreateDomain 0不创建域名,1创建域名
+                     * 
                      */
                     void SetIsCreateDomain(const int64_t& _isCreateDomain);
 
                     /**
                      * 判断参数 IsCreateDomain 是否已赋值
                      * @return IsCreateDomain 是否已赋值
+                     * 
                      */
                     bool IsCreateDomainHasBeenSet() const;
 
                     /**
                      * 获取如果要创建域名则必填
                      * @return Domain 如果要创建域名则必填
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置如果要创建域名则必填
-                     * @param Domain 如果要创建域名则必填
+                     * @param _domain 如果要创建域名则必填
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取指定防火墙使用网段信息
                      * @return FwCidrInfo 指定防火墙使用网段信息
+                     * 
                      */
                     FwCidrInfo GetFwCidrInfo() const;
 
                     /**
                      * 设置指定防火墙使用网段信息
-                     * @param FwCidrInfo 指定防火墙使用网段信息
+                     * @param _fwCidrInfo 指定防火墙使用网段信息
+                     * 
                      */
                     void SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo);
 
                     /**
                      * 判断参数 FwCidrInfo 是否已赋值
                      * @return FwCidrInfo 是否已赋值
+                     * 
                      */
                     bool FwCidrInfoHasBeenSet() const;
 

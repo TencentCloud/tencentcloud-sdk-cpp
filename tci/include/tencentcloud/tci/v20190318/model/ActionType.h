@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取置信度
                      * @return Confidence 置信度
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度
-                     * @param Confidence 置信度
+                     * @param _confidence 置信度
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取动作类别
                      * @return Type 动作类别
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置动作类别
-                     * @param Type 动作类别
+                     * @param _type 动作类别
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取消费者组
                      * @return Group 消费者组
+                     * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 设置消费者组
-                     * @param Group 消费者组
+                     * @param _group 消费者组
+                     * 
                      */
                     void SetGroup(const std::string& _group);
 
                     /**
                      * 判断参数 Group 是否已赋值
                      * @return Group 是否已赋值
+                     * 
                      */
                     bool GroupHasBeenSet() const;
 
                     /**
                      * 获取消费状态
                      * @return ConsumeStatus 消费状态
+                     * 
                      */
                     std::string GetConsumeStatus() const;
 
                     /**
                      * 设置消费状态
-                     * @param ConsumeStatus 消费状态
+                     * @param _consumeStatus 消费状态
+                     * 
                      */
                     void SetConsumeStatus(const std::string& _consumeStatus);
 
                     /**
                      * 判断参数 ConsumeStatus 是否已赋值
                      * @return ConsumeStatus 是否已赋值
+                     * 
                      */
                     bool ConsumeStatusHasBeenSet() const;
 
                     /**
                      * 获取消息track类型
                      * @return TrackType 消息track类型
+                     * 
                      */
                     std::string GetTrackType() const;
 
                     /**
                      * 设置消息track类型
-                     * @param TrackType 消息track类型
+                     * @param _trackType 消息track类型
+                     * 
                      */
                     void SetTrackType(const std::string& _trackType);
 
                     /**
                      * 判断参数 TrackType 是否已赋值
                      * @return TrackType 是否已赋值
+                     * 
                      */
                     bool TrackTypeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptionDesc 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExceptionDesc() const;
 
                     /**
                      * 设置异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExceptionDesc 异常信息
+                     * @param _exceptionDesc 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExceptionDesc(const std::string& _exceptionDesc);
 
                     /**
                      * 判断参数 ExceptionDesc 是否已赋值
                      * @return ExceptionDesc 是否已赋值
+                     * 
                      */
                     bool ExceptionDescHasBeenSet() const;
 

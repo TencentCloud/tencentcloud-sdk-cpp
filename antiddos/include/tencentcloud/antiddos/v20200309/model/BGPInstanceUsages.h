@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取已使用的防护次数，单位次
                      * @return ProtectCountUsage 已使用的防护次数，单位次
+                     * 
                      */
                     uint64_t GetProtectCountUsage() const;
 
                     /**
                      * 设置已使用的防护次数，单位次
-                     * @param ProtectCountUsage 已使用的防护次数，单位次
+                     * @param _protectCountUsage 已使用的防护次数，单位次
+                     * 
                      */
                     void SetProtectCountUsage(const uint64_t& _protectCountUsage);
 
                     /**
                      * 判断参数 ProtectCountUsage 是否已赋值
                      * @return ProtectCountUsage 是否已赋值
+                     * 
                      */
                     bool ProtectCountUsageHasBeenSet() const;
 
                     /**
                      * 获取已防护的IP数，单位个
                      * @return ProtectIPNumberUsage 已防护的IP数，单位个
+                     * 
                      */
                     uint64_t GetProtectIPNumberUsage() const;
 
                     /**
                      * 设置已防护的IP数，单位个
-                     * @param ProtectIPNumberUsage 已防护的IP数，单位个
+                     * @param _protectIPNumberUsage 已防护的IP数，单位个
+                     * 
                      */
                     void SetProtectIPNumberUsage(const uint64_t& _protectIPNumberUsage);
 
                     /**
                      * 判断参数 ProtectIPNumberUsage 是否已赋值
                      * @return ProtectIPNumberUsage 是否已赋值
+                     * 
                      */
                     bool ProtectIPNumberUsageHasBeenSet() const;
 
                     /**
                      * 获取最近7天的攻击次数，单位次
                      * @return Last7DayAttackCount 最近7天的攻击次数，单位次
+                     * 
                      */
                     uint64_t GetLast7DayAttackCount() const;
 
                     /**
                      * 设置最近7天的攻击次数，单位次
-                     * @param Last7DayAttackCount 最近7天的攻击次数，单位次
+                     * @param _last7DayAttackCount 最近7天的攻击次数，单位次
+                     * 
                      */
                     void SetLast7DayAttackCount(const uint64_t& _last7DayAttackCount);
 
                     /**
                      * 判断参数 Last7DayAttackCount 是否已赋值
                      * @return Last7DayAttackCount 是否已赋值
+                     * 
                      */
                     bool Last7DayAttackCountHasBeenSet() const;
 

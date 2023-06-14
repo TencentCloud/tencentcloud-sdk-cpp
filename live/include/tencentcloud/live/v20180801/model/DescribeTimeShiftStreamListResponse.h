@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取时间段内所有的数据量。
                      * @return TotalSize 时间段内所有的数据量。
+                     * 
                      */
                     int64_t GetTotalSize() const;
 
                     /**
                      * 判断参数 TotalSize 是否已赋值
                      * @return TotalSize 是否已赋值
+                     * 
                      */
                     bool TotalSizeHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamList 流列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimeShiftStreamInfo> GetStreamList() const;
 
                     /**
                      * 判断参数 StreamList 是否已赋值
                      * @return StreamList 是否已赋值
+                     * 
                      */
                     bool StreamListHasBeenSet() const;
 

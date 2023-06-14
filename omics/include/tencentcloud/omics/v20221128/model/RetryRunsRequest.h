@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取关联项目ID。
                      * @return ProjectId 关联项目ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置关联项目ID。
-                     * @param ProjectId 关联项目ID。
+                     * @param _projectId 关联项目ID。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务UUID。
                      * @return RunUuids 任务UUID。
+                     * 
                      */
                     std::vector<std::string> GetRunUuids() const;
 
                     /**
                      * 设置任务UUID。
-                     * @param RunUuids 任务UUID。
+                     * @param _runUuids 任务UUID。
+                     * 
                      */
                     void SetRunUuids(const std::vector<std::string>& _runUuids);
 
                     /**
                      * 判断参数 RunUuids 是否已赋值
                      * @return RunUuids 是否已赋值
+                     * 
                      */
                     bool RunUuidsHasBeenSet() const;
 

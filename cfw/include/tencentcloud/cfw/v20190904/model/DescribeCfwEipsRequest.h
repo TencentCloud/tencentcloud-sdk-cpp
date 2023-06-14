@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取1：cfw接入模式，目前仅支持接入模式实例
                      * @return Mode 1：cfw接入模式，目前仅支持接入模式实例
+                     * 
                      */
                     uint64_t GetMode() const;
 
                     /**
                      * 设置1：cfw接入模式，目前仅支持接入模式实例
-                     * @param Mode 1：cfw接入模式，目前仅支持接入模式实例
+                     * @param _mode 1：cfw接入模式，目前仅支持接入模式实例
+                     * 
                      */
                     void SetMode(const uint64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip
                      * @return NatGatewayId ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip
-                     * @param NatGatewayId ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip
+                     * @param _natGatewayId ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取防火墙实例id，当前仅支持接入模式的实例
                      * @return CfwInstance 防火墙实例id，当前仅支持接入模式的实例
+                     * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
                      * 设置防火墙实例id，当前仅支持接入模式的实例
-                     * @param CfwInstance 防火墙实例id，当前仅支持接入模式的实例
+                     * @param _cfwInstance 防火墙实例id，当前仅支持接入模式的实例
+                     * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
 
                     /**
                      * 判断参数 CfwInstance 是否已赋值
                      * @return CfwInstance 是否已赋值
+                     * 
                      */
                     bool CfwInstanceHasBeenSet() const;
 

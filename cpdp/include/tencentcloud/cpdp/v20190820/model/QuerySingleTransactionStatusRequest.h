@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取String(22)，商户号（签约客户号）
                      * @return MrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     std::string GetMrchCode() const;
 
                     /**
                      * 设置String(22)，商户号（签约客户号）
-                     * @param MrchCode String(22)，商户号（签约客户号）
+                     * @param _mrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     void SetMrchCode(const std::string& _mrchCode);
 
                     /**
                      * 判断参数 MrchCode 是否已赋值
                      * @return MrchCode 是否已赋值
+                     * 
                      */
                     bool MrchCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(2)，功能标志（2: 会员间交易; 3: 提现; 4: 充值）
                      * @return FunctionFlag STRING(2)，功能标志（2: 会员间交易; 3: 提现; 4: 充值）
+                     * 
                      */
                     std::string GetFunctionFlag() const;
 
                     /**
                      * 设置STRING(2)，功能标志（2: 会员间交易; 3: 提现; 4: 充值）
-                     * @param FunctionFlag STRING(2)，功能标志（2: 会员间交易; 3: 提现; 4: 充值）
+                     * @param _functionFlag STRING(2)，功能标志（2: 会员间交易; 3: 提现; 4: 充值）
+                     * 
                      */
                     void SetFunctionFlag(const std::string& _functionFlag);
 
                     /**
                      * 判断参数 FunctionFlag 是否已赋值
                      * @return FunctionFlag 是否已赋值
+                     * 
                      */
                     bool FunctionFlagHasBeenSet() const;
 
                     /**
                      * 获取STRING(52)，交易网流水号（提现，充值或会员交易请求时的CnsmrSeqNo值）
                      * @return TranNetSeqNo STRING(52)，交易网流水号（提现，充值或会员交易请求时的CnsmrSeqNo值）
+                     * 
                      */
                     std::string GetTranNetSeqNo() const;
 
                     /**
                      * 设置STRING(52)，交易网流水号（提现，充值或会员交易请求时的CnsmrSeqNo值）
-                     * @param TranNetSeqNo STRING(52)，交易网流水号（提现，充值或会员交易请求时的CnsmrSeqNo值）
+                     * @param _tranNetSeqNo STRING(52)，交易网流水号（提现，充值或会员交易请求时的CnsmrSeqNo值）
+                     * 
                      */
                     void SetTranNetSeqNo(const std::string& _tranNetSeqNo);
 
                     /**
                      * 判断参数 TranNetSeqNo 是否已赋值
                      * @return TranNetSeqNo 是否已赋值
+                     * 
                      */
                     bool TranNetSeqNoHasBeenSet() const;
 
                     /**
                      * 获取STRING(50)，见证子帐户的帐号（未启用）
                      * @return SubAcctNo STRING(50)，见证子帐户的帐号（未启用）
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置STRING(50)，见证子帐户的帐号（未启用）
-                     * @param SubAcctNo STRING(50)，见证子帐户的帐号（未启用）
+                     * @param _subAcctNo STRING(50)，见证子帐户的帐号（未启用）
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
                     /**
                      * 获取STRING(8)，交易日期（未启用）
                      * @return TranDate STRING(8)，交易日期（未启用）
+                     * 
                      */
                     std::string GetTranDate() const;
 
                     /**
                      * 设置STRING(8)，交易日期（未启用）
-                     * @param TranDate STRING(8)，交易日期（未启用）
+                     * @param _tranDate STRING(8)，交易日期（未启用）
+                     * 
                      */
                     void SetTranDate(const std::string& _tranDate);
 
                     /**
                      * 判断参数 TranDate 是否已赋值
                      * @return TranDate 是否已赋值
+                     * 
                      */
                     bool TranDateHasBeenSet() const;
 
                     /**
                      * 获取STRING(1027)，保留域
                      * @return ReservedMsg STRING(1027)，保留域
+                     * 
                      */
                     std::string GetReservedMsg() const;
 
                     /**
                      * 设置STRING(1027)，保留域
-                     * @param ReservedMsg STRING(1027)，保留域
+                     * @param _reservedMsg STRING(1027)，保留域
+                     * 
                      */
                     void SetReservedMsg(const std::string& _reservedMsg);
 
                     /**
                      * 判断参数 ReservedMsg 是否已赋值
                      * @return ReservedMsg 是否已赋值
+                     * 
                      */
                     bool ReservedMsgHasBeenSet() const;
 
                     /**
                      * 获取STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
                      * @return Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
-                     * @param Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @param _profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

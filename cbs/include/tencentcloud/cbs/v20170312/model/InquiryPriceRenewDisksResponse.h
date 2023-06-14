@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取描述了续费云盘的价格。
                      * @return DiskPrice 描述了续费云盘的价格。
+                     * 
                      */
                     PrepayPrice GetDiskPrice() const;
 
                     /**
                      * 判断参数 DiskPrice 是否已赋值
                      * @return DiskPrice 是否已赋值
+                     * 
                      */
                     bool DiskPriceHasBeenSet() const;
 

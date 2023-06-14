@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 实例价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryPrice GetInstancePrice() const;
 
                     /**
                      * 设置实例价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstancePrice 实例价格
+                     * @param _instancePrice 实例价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstancePrice(const InquiryPrice& _instancePrice);
 
                     /**
                      * 判断参数 InstancePrice 是否已赋值
                      * @return InstancePrice 是否已赋值
+                     * 
                      */
                     bool InstancePriceHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetworkBandwidthPrice 公网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InquiryPrice GetPublicNetworkBandwidthPrice() const;
 
                     /**
                      * 设置公网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicNetworkBandwidthPrice 公网带宽价格
+                     * @param _publicNetworkBandwidthPrice 公网带宽价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicNetworkBandwidthPrice(const InquiryPrice& _publicNetworkBandwidthPrice);
 
                     /**
                      * 判断参数 PublicNetworkBandwidthPrice 是否已赋值
                      * @return PublicNetworkBandwidthPrice 是否已赋值
+                     * 
                      */
                     bool PublicNetworkBandwidthPriceHasBeenSet() const;
 

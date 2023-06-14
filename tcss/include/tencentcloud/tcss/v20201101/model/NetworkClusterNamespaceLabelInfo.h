@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取网络空间标签
                      * @return Labels 网络空间标签
+                     * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置网络空间标签
-                     * @param Labels 网络空间标签
+                     * @param _labels 网络空间标签
+                     * 
                      */
                     void SetLabels(const std::string& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取网络空间名字
                      * @return Name 网络空间名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置网络空间名字
-                     * @param Name 网络空间名字
+                     * @param _name 网络空间名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

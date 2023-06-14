@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取使用场景ID列表。
                      * @return SceneIds 使用场景ID列表。
+                     * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
                      * 设置使用场景ID列表。
-                     * @param SceneIds 使用场景ID列表。
+                     * @param _sceneIds 使用场景ID列表。
+                     * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
 
                     /**
                      * 判断参数 SceneIds 是否已赋值
                      * @return SceneIds 是否已赋值
+                     * 
                      */
                     bool SceneIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

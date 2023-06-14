@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableInfo 表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleGroupTableInnerInfo GetTableInfo() const;
 
                     /**
                      * 设置表信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableInfo 表信息
+                     * @param _tableInfo 表信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableInfo(const RuleGroupTableInnerInfo& _tableInfo);
 
                     /**
                      * 判断参数 TableInfo 是否已赋值
                      * @return TableInfo 是否已赋值
+                     * 
                      */
                     bool TableInfoHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleGroups 规则组调度信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RuleGroupSchedulerInfo> GetRuleGroups() const;
 
                     /**
                      * 设置规则组调度信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleGroups 规则组调度信息
+                     * @param _ruleGroups 规则组调度信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleGroups(const std::vector<RuleGroupSchedulerInfo>& _ruleGroups);
 
                     /**
                      * 判断参数 RuleGroups 是否已赋值
                      * @return RuleGroups 是否已赋值
+                     * 
                      */
                     bool RuleGroupsHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Subscriptions 订阅者信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RuleGroupSubscribe> GetSubscriptions() const;
 
                     /**
                      * 设置订阅者信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Subscriptions 订阅者信息
+                     * @param _subscriptions 订阅者信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubscriptions(const std::vector<RuleGroupSubscribe>& _subscriptions);
 
                     /**
                      * 判断参数 Subscriptions 是否已赋值
                      * @return Subscriptions 是否已赋值
+                     * 
                      */
                     bool SubscriptionsHasBeenSet() const;
 

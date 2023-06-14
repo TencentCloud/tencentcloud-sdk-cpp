@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取WeData项目ID
                      * @return ProjectId WeData项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置WeData项目ID
-                     * @param ProjectId WeData项目ID
+                     * @param _projectId WeData项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务实例数据时间
                      * @return CurRunDate 任务实例数据时间
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置任务实例数据时间
-                     * @param CurRunDate 任务实例数据时间
+                     * @param _curRunDate 任务实例数据时间
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
                     /**
                      * 获取任务实例运行时间
                      * @return IssueDate 任务实例运行时间
+                     * 
                      */
                     std::string GetIssueDate() const;
 
                     /**
                      * 设置任务实例运行时间
-                     * @param IssueDate 任务实例运行时间
+                     * @param _issueDate 任务实例运行时间
+                     * 
                      */
                     void SetIssueDate(const std::string& _issueDate);
 
                     /**
                      * 判断参数 IssueDate 是否已赋值
                      * @return IssueDate 是否已赋值
+                     * 
                      */
                     bool IssueDateHasBeenSet() const;
 

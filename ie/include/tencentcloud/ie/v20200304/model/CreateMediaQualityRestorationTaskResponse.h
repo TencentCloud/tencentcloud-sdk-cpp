@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取画质重生任务ID，可以通过该ID查询任务状态。
                      * @return TaskId 画质重生任务ID，可以通过该ID查询任务状态。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

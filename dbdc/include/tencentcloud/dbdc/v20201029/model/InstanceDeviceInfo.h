@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 集群ID
+                     * @param _instanceId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadWriteDevice 读写设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceInfo> GetReadWriteDevice() const;
 
                     /**
                      * 设置读写设备组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadWriteDevice 读写设备组
+                     * @param _readWriteDevice 读写设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadWriteDevice(const std::vector<DeviceInfo>& _readWriteDevice);
 
                     /**
                      * 判断参数 ReadWriteDevice 是否已赋值
                      * @return ReadWriteDevice 是否已赋值
+                     * 
                      */
                     bool ReadWriteDeviceHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnlyDevice 只读设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceInfo> GetReadOnlyDevice() const;
 
                     /**
                      * 设置只读设备组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadOnlyDevice 只读设备组
+                     * @param _readOnlyDevice 只读设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadOnlyDevice(const std::vector<DeviceInfo>& _readOnlyDevice);
 
                     /**
                      * 判断参数 ReadOnlyDevice 是否已赋值
                      * @return ReadOnlyDevice 是否已赋值
+                     * 
                      */
                     bool ReadOnlyDeviceHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeDevice 空闲设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DeviceInfo> GetFreeDevice() const;
 
                     /**
                      * 设置空闲设备组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FreeDevice 空闲设备组
+                     * @param _freeDevice 空闲设备组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFreeDevice(const std::vector<DeviceInfo>& _freeDevice);
 
                     /**
                      * 判断参数 FreeDevice 是否已赋值
                      * @return FreeDevice 是否已赋值
+                     * 
                      */
                     bool FreeDeviceHasBeenSet() const;
 

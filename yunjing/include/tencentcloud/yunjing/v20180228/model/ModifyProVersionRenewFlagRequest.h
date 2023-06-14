@@ -51,6 +51,7 @@ namespace TencentCloud
 <li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
 <li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>
 <li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
@@ -59,34 +60,39 @@ namespace TencentCloud
 <li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
 <li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>
 <li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>
-                     * @param RenewFlag 自动续费标识。取值范围：
+                     * @param _renewFlag 自动续费标识。取值范围：
 <li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>
 <li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>
 <li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取主机唯一ID，对应CVM的uuid、BM的instanceId。
                      * @return Quuid 主机唯一ID，对应CVM的uuid、BM的instanceId。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机唯一ID，对应CVM的uuid、BM的instanceId。
-                     * @param Quuid 主机唯一ID，对应CVM的uuid、BM的instanceId。
+                     * @param _quuid 主机唯一ID，对应CVM的uuid、BM的instanceId。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 

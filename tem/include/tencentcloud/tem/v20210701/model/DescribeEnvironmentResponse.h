@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取环境信息
                      * @return Result 环境信息
+                     * 
                      */
                     NamespaceInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

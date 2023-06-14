@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取查询日期，如2021-05-27，最早为30天前的日期。
                      * @return Date 查询日期，如2021-05-27，最早为30天前的日期。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置查询日期，如2021-05-27，最早为30天前的日期。
-                     * @param Date 查询日期，如2021-05-27，最早为30天前的日期。
+                     * @param _date 查询日期，如2021-05-27，最早为30天前的日期。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取查询数目，默认为20，最大为100。
                      * @return Limit 查询数目，默认为20，最大为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询数目，默认为20，最大为100。
-                     * @param Limit 查询数目，默认为20，最大为100。
+                     * @param _limit 查询数目，默认为20，最大为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL，默认为"mysql"。
                      * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL，默认为"mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL，默认为"mysql"。
-                     * @param Product 服务产品类型，支持值："mysql" - 云数据库 MySQL，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL，默认为"mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

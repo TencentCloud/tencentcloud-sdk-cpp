@@ -52,56 +52,65 @@ namespace TencentCloud
 
                      * @return Name 签署人姓名，最大长度50个字符
 
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置签署人姓名，最大长度50个字符
 
-                     * @param Name 签署人姓名，最大长度50个字符
+                     * @param _name 签署人姓名，最大长度50个字符
 
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取签署人手机号
                      * @return Mobile 签署人手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置签署人手机号
-                     * @param Mobile 签署人手机号
+                     * @param _mobile 签署人手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
                      * @return RelievedApproverReceiptId 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
+                     * 
                      */
                     std::string GetRelievedApproverReceiptId() const;
 
                     /**
                      * 设置要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-                     * @param RelievedApproverReceiptId 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
+                     * @param _relievedApproverReceiptId 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
+                     * 
                      */
                     void SetRelievedApproverReceiptId(const std::string& _relievedApproverReceiptId);
 
                     /**
                      * 判断参数 RelievedApproverReceiptId 是否已赋值
                      * @return RelievedApproverReceiptId 是否已赋值
+                     * 
                      */
                     bool RelievedApproverReceiptIdHasBeenSet() const;
 
@@ -112,6 +121,7 @@ ENTERPRISESERVER-企业静默签
                      * @return ApproverType 指定签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
+                     * 
                      */
                     std::string GetApproverType() const;
 
@@ -119,15 +129,17 @@ ENTERPRISESERVER-企业静默签
                      * 设置指定签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
-                     * @param ApproverType 指定签署人类型，目前仅支持
+                     * @param _approverType 指定签署人类型，目前仅支持
 ORGANIZATION-企业
 ENTERPRISESERVER-企业静默签
+                     * 
                      */
                     void SetApproverType(const std::string& _approverType);
 
                     /**
                      * 判断参数 ApproverType 是否已赋值
                      * @return ApproverType 是否已赋值
+                     * 
                      */
                     bool ApproverTypeHasBeenSet() const;
 

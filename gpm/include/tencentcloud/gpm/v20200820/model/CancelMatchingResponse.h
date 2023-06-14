@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取错误码
                      * @return ErrCode 错误码
+                     * 
                      */
                     uint64_t GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 

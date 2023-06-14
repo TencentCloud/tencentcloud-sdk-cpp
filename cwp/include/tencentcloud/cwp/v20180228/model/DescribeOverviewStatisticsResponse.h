@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取服务器在线数。
                      * @return OnlineMachineNum 服务器在线数。
+                     * 
                      */
                     uint64_t GetOnlineMachineNum() const;
 
                     /**
                      * 判断参数 OnlineMachineNum 是否已赋值
                      * @return OnlineMachineNum 是否已赋值
+                     * 
                      */
                     bool OnlineMachineNumHasBeenSet() const;
 
                     /**
                      * 获取专业服务器数。
                      * @return ProVersionMachineNum 专业服务器数。
+                     * 
                      */
                     uint64_t GetProVersionMachineNum() const;
 
                     /**
                      * 判断参数 ProVersionMachineNum 是否已赋值
                      * @return ProVersionMachineNum 是否已赋值
+                     * 
                      */
                     bool ProVersionMachineNumHasBeenSet() const;
 
                     /**
                      * 获取木马文件数。
                      * @return MalwareNum 木马文件数。
+                     * 
                      */
                     uint64_t GetMalwareNum() const;
 
                     /**
                      * 判断参数 MalwareNum 是否已赋值
                      * @return MalwareNum 是否已赋值
+                     * 
                      */
                     bool MalwareNumHasBeenSet() const;
 
                     /**
                      * 获取异地登录数。
                      * @return NonlocalLoginNum 异地登录数。
+                     * 
                      */
                     uint64_t GetNonlocalLoginNum() const;
 
                     /**
                      * 判断参数 NonlocalLoginNum 是否已赋值
                      * @return NonlocalLoginNum 是否已赋值
+                     * 
                      */
                     bool NonlocalLoginNumHasBeenSet() const;
 
                     /**
                      * 获取暴力破解成功数。
                      * @return BruteAttackSuccessNum 暴力破解成功数。
+                     * 
                      */
                     uint64_t GetBruteAttackSuccessNum() const;
 
                     /**
                      * 判断参数 BruteAttackSuccessNum 是否已赋值
                      * @return BruteAttackSuccessNum 是否已赋值
+                     * 
                      */
                     bool BruteAttackSuccessNumHasBeenSet() const;
 
                     /**
                      * 获取漏洞数。
                      * @return VulNum 漏洞数。
+                     * 
                      */
                     uint64_t GetVulNum() const;
 
                     /**
                      * 判断参数 VulNum 是否已赋值
                      * @return VulNum 是否已赋值
+                     * 
                      */
                     bool VulNumHasBeenSet() const;
 
                     /**
                      * 获取安全基线数。
                      * @return BaseLineNum 安全基线数。
+                     * 
                      */
                     uint64_t GetBaseLineNum() const;
 
                     /**
                      * 判断参数 BaseLineNum 是否已赋值
                      * @return BaseLineNum 是否已赋值
+                     * 
                      */
                     bool BaseLineNumHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取输出源 Id，由系统分配。
                      * @return Id 输出源 Id，由系统分配。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置输出源 Id，由系统分配。
-                     * @param Id 输出源 Id，由系统分配。
+                     * @param _id 输出源 Id，由系统分配。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取输出源直播地址。
                      * @return PushUrl 输出源直播地址。
+                     * 
                      */
                     std::string GetPushUrl() const;
 
                     /**
                      * 设置输出源直播地址。
-                     * @param PushUrl 输出源直播地址。
+                     * @param _pushUrl 输出源直播地址。
+                     * 
                      */
                     void SetPushUrl(const std::string& _pushUrl);
 
                     /**
                      * 判断参数 PushUrl 是否已赋值
                      * @return PushUrl 是否已赋值
+                     * 
                      */
                     bool PushUrlHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 <li> Working ：运行中；</li>
 <li> Stopped：停止输出；</li>
 <li> Failed：输出失败。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -99,16 +106,18 @@ namespace TencentCloud
 <li> Working ：运行中；</li>
 <li> Stopped：停止输出；</li>
 <li> Failed：输出失败。</li>
-                     * @param Status 输出源的状态。取值有：
+                     * @param _status 输出源的状态。取值有：
 <li> Working ：运行中；</li>
 <li> Stopped：停止输出；</li>
 <li> Failed：输出失败。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

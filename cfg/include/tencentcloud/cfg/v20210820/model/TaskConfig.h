@@ -51,108 +51,126 @@ namespace TencentCloud
                     /**
                      * 获取动作组配置，需要保证配置个数和经验中的动作组个数一致
                      * @return TaskGroupsConfig 动作组配置，需要保证配置个数和经验中的动作组个数一致
+                     * 
                      */
                     std::vector<TaskGroupConfig> GetTaskGroupsConfig() const;
 
                     /**
                      * 设置动作组配置，需要保证配置个数和经验中的动作组个数一致
-                     * @param TaskGroupsConfig 动作组配置，需要保证配置个数和经验中的动作组个数一致
+                     * @param _taskGroupsConfig 动作组配置，需要保证配置个数和经验中的动作组个数一致
+                     * 
                      */
                     void SetTaskGroupsConfig(const std::vector<TaskGroupConfig>& _taskGroupsConfig);
 
                     /**
                      * 判断参数 TaskGroupsConfig 是否已赋值
                      * @return TaskGroupsConfig 是否已赋值
+                     * 
                      */
                     bool TaskGroupsConfigHasBeenSet() const;
 
                     /**
                      * 获取更改后的演练名称，不填则默认取经验名称
                      * @return TaskTitle 更改后的演练名称，不填则默认取经验名称
+                     * 
                      */
                     std::string GetTaskTitle() const;
 
                     /**
                      * 设置更改后的演练名称，不填则默认取经验名称
-                     * @param TaskTitle 更改后的演练名称，不填则默认取经验名称
+                     * @param _taskTitle 更改后的演练名称，不填则默认取经验名称
+                     * 
                      */
                     void SetTaskTitle(const std::string& _taskTitle);
 
                     /**
                      * 判断参数 TaskTitle 是否已赋值
                      * @return TaskTitle 是否已赋值
+                     * 
                      */
                     bool TaskTitleHasBeenSet() const;
 
                     /**
                      * 获取更改后的演练描述，不填则默认取经验描述
                      * @return TaskDescription 更改后的演练描述，不填则默认取经验描述
+                     * 
                      */
                     std::string GetTaskDescription() const;
 
                     /**
                      * 设置更改后的演练描述，不填则默认取经验描述
-                     * @param TaskDescription 更改后的演练描述，不填则默认取经验描述
+                     * @param _taskDescription 更改后的演练描述，不填则默认取经验描述
+                     * 
                      */
                     void SetTaskDescription(const std::string& _taskDescription);
 
                     /**
                      * 判断参数 TaskDescription 是否已赋值
                      * @return TaskDescription 是否已赋值
+                     * 
                      */
                     bool TaskDescriptionHasBeenSet() const;
 
                     /**
                      * 获取演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式
                      * @return TaskMode 演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式
+                     * 
                      */
                     uint64_t GetTaskMode() const;
 
                     /**
                      * 设置演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式
-                     * @param TaskMode 演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式
+                     * @param _taskMode 演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式
+                     * 
                      */
                     void SetTaskMode(const uint64_t& _taskMode);
 
                     /**
                      * 判断参数 TaskMode 是否已赋值
                      * @return TaskMode 是否已赋值
+                     * 
                      */
                     bool TaskModeHasBeenSet() const;
 
                     /**
                      * 获取演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间
                      * @return TaskPauseDuration 演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间
+                     * 
                      */
                     uint64_t GetTaskPauseDuration() const;
 
                     /**
                      * 设置演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间
-                     * @param TaskPauseDuration 演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间
+                     * @param _taskPauseDuration 演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间
+                     * 
                      */
                     void SetTaskPauseDuration(const uint64_t& _taskPauseDuration);
 
                     /**
                      * 判断参数 TaskPauseDuration 是否已赋值
                      * @return TaskPauseDuration 是否已赋值
+                     * 
                      */
                     bool TaskPauseDurationHasBeenSet() const;
 
                     /**
                      * 获取演练标签信息，不填则默认取经验标签
                      * @return Tags 演练标签信息，不填则默认取经验标签
+                     * 
                      */
                     std::vector<TagWithCreate> GetTags() const;
 
                     /**
                      * 设置演练标签信息，不填则默认取经验标签
-                     * @param Tags 演练标签信息，不填则默认取经验标签
+                     * @param _tags 演练标签信息，不填则默认取经验标签
+                     * 
                      */
                     void SetTags(const std::vector<TagWithCreate>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取模板内容数据
                      * @return TemplateContent 模板内容数据
+                     * 
                      */
                     TemplateContent GetTemplateContent() const;
 
                     /**
                      * 判断参数 TemplateContent 是否已赋值
                      * @return TemplateContent 是否已赋值
+                     * 
                      */
                     bool TemplateContentHasBeenSet() const;
 
                     /**
                      * 获取模板状态 0-审核通过 1-待审核 2-审核拒绝
                      * @return TemplateStatus 模板状态 0-审核通过 1-待审核 2-审核拒绝
+                     * 
                      */
                     uint64_t GetTemplateStatus() const;
 
                     /**
                      * 判断参数 TemplateStatus 是否已赋值
                      * @return TemplateStatus 是否已赋值
+                     * 
                      */
                     bool TemplateStatusHasBeenSet() const;
 
                     /**
                      * 获取模板名称
                      * @return TemplateName 模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 

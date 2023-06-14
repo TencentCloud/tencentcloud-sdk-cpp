@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return L1ClassifyName 一级分类名称(分类信息参见自定义人物类型)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetL1ClassifyName() const;
 
                     /**
                      * 设置一级分类名称(分类信息参见自定义人物类型)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param L1ClassifyName 一级分类名称(分类信息参见自定义人物类型)
+                     * @param _l1ClassifyName 一级分类名称(分类信息参见自定义人物类型)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetL1ClassifyName(const std::string& _l1ClassifyName);
 
                     /**
                      * 判断参数 L1ClassifyName 是否已赋值
                      * @return L1ClassifyName 是否已赋值
+                     * 
                      */
                     bool L1ClassifyNameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return L2ClassifiedPersonInfoSet 已分类人物信息数组(所有分类类型为二级分类)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClassifiedPersonInfo> GetL2ClassifiedPersonInfoSet() const;
 
                     /**
                      * 设置已分类人物信息数组(所有分类类型为二级分类)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param L2ClassifiedPersonInfoSet 已分类人物信息数组(所有分类类型为二级分类)
+                     * @param _l2ClassifiedPersonInfoSet 已分类人物信息数组(所有分类类型为二级分类)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetL2ClassifiedPersonInfoSet(const std::vector<ClassifiedPersonInfo>& _l2ClassifiedPersonInfoSet);
 
                     /**
                      * 判断参数 L2ClassifiedPersonInfoSet 是否已赋值
                      * @return L2ClassifiedPersonInfoSet 是否已赋值
+                     * 
                      */
                     bool L2ClassifiedPersonInfoSetHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 检测结果来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSource() const;
 
                     /**
                      * 设置检测结果来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source 检测结果来源
+                     * @param _source 检测结果来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSource(const uint64_t& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 

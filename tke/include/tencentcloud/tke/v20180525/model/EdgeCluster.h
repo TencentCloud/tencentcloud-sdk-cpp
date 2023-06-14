@@ -51,180 +51,210 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取Vpc Id
                      * @return VpcId Vpc Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc Id
-                     * @param VpcId Vpc Id
+                     * @param _vpcId Vpc Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取集群pod cidr
                      * @return PodCIDR 集群pod cidr
+                     * 
                      */
                     std::string GetPodCIDR() const;
 
                     /**
                      * 设置集群pod cidr
-                     * @param PodCIDR 集群pod cidr
+                     * @param _podCIDR 集群pod cidr
+                     * 
                      */
                     void SetPodCIDR(const std::string& _podCIDR);
 
                     /**
                      * 判断参数 PodCIDR 是否已赋值
                      * @return PodCIDR 是否已赋值
+                     * 
                      */
                     bool PodCIDRHasBeenSet() const;
 
                     /**
                      * 获取集群 service cidr
                      * @return ServiceCIDR 集群 service cidr
+                     * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 设置集群 service cidr
-                     * @param ServiceCIDR 集群 service cidr
+                     * @param _serviceCIDR 集群 service cidr
+                     * 
                      */
                     void SetServiceCIDR(const std::string& _serviceCIDR);
 
                     /**
                      * 判断参数 ServiceCIDR 是否已赋值
                      * @return ServiceCIDR 是否已赋值
+                     * 
                      */
                     bool ServiceCIDRHasBeenSet() const;
 
                     /**
                      * 获取k8s 版本号
                      * @return K8SVersion k8s 版本号
+                     * 
                      */
                     std::string GetK8SVersion() const;
 
                     /**
                      * 设置k8s 版本号
-                     * @param K8SVersion k8s 版本号
+                     * @param _k8SVersion k8s 版本号
+                     * 
                      */
                     void SetK8SVersion(const std::string& _k8SVersion);
 
                     /**
                      * 判断参数 K8SVersion 是否已赋值
                      * @return K8SVersion 是否已赋值
+                     * 
                      */
                     bool K8SVersionHasBeenSet() const;
 
                     /**
                      * 获取集群状态
                      * @return Status 集群状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置集群状态
-                     * @param Status 集群状态
+                     * @param _status 集群状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取集群描述信息
                      * @return ClusterDesc 集群描述信息
+                     * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
                      * 设置集群描述信息
-                     * @param ClusterDesc 集群描述信息
+                     * @param _clusterDesc 集群描述信息
+                     * 
                      */
                     void SetClusterDesc(const std::string& _clusterDesc);
 
                     /**
                      * 判断参数 ClusterDesc 是否已赋值
                      * @return ClusterDesc 是否已赋值
+                     * 
                      */
                     bool ClusterDescHasBeenSet() const;
 
                     /**
                      * 获取集群创建时间
                      * @return CreatedTime 集群创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置集群创建时间
-                     * @param CreatedTime 集群创建时间
+                     * @param _createdTime 集群创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取边缘集群版本
                      * @return EdgeClusterVersion 边缘集群版本
+                     * 
                      */
                     std::string GetEdgeClusterVersion() const;
 
                     /**
                      * 设置边缘集群版本
-                     * @param EdgeClusterVersion 边缘集群版本
+                     * @param _edgeClusterVersion 边缘集群版本
+                     * 
                      */
                     void SetEdgeClusterVersion(const std::string& _edgeClusterVersion);
 
                     /**
                      * 判断参数 EdgeClusterVersion 是否已赋值
                      * @return EdgeClusterVersion 是否已赋值
+                     * 
                      */
                     bool EdgeClusterVersionHasBeenSet() const;
 
@@ -233,20 +263,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodePodNum 节点最大Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxNodePodNum() const;
 
                     /**
                      * 设置节点最大Pod数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxNodePodNum 节点最大Pod数
+                     * @param _maxNodePodNum 节点最大Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxNodePodNum(const int64_t& _maxNodePodNum);
 
                     /**
                      * 判断参数 MaxNodePodNum 是否已赋值
                      * @return MaxNodePodNum 是否已赋值
+                     * 
                      */
                     bool MaxNodePodNumHasBeenSet() const;
 
@@ -255,20 +288,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterAdvancedSettings 集群高级设置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeClusterAdvancedSettings GetClusterAdvancedSettings() const;
 
                     /**
                      * 设置集群高级设置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterAdvancedSettings 集群高级设置
+                     * @param _clusterAdvancedSettings 集群高级设置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterAdvancedSettings(const EdgeClusterAdvancedSettings& _clusterAdvancedSettings);
 
                     /**
                      * 判断参数 ClusterAdvancedSettings 是否已赋值
                      * @return ClusterAdvancedSettings 是否已赋值
+                     * 
                      */
                     bool ClusterAdvancedSettingsHasBeenSet() const;
 
@@ -277,20 +313,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 边缘容器集群级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置边缘容器集群级别
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 边缘容器集群级别
+                     * @param _level 边缘容器集群级别
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -299,20 +338,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgradeClusterLevel 是否支持自动提升集群配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
                      * 设置是否支持自动提升集群配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoUpgradeClusterLevel 是否支持自动提升集群配置
+                     * @param _autoUpgradeClusterLevel 是否支持自动提升集群配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
 
                     /**
                      * 判断参数 AutoUpgradeClusterLevel 是否已赋值
                      * @return AutoUpgradeClusterLevel 是否已赋值
+                     * 
                      */
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
@@ -321,20 +363,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+                     * @param _chargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChargeType(const std::string& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
@@ -343,20 +388,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeVersion 边缘集群组件的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEdgeVersion() const;
 
                     /**
                      * 设置边缘集群组件的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EdgeVersion 边缘集群组件的版本
+                     * @param _edgeVersion 边缘集群组件的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdgeVersion(const std::string& _edgeVersion);
 
                     /**
                      * 判断参数 EdgeVersion 是否已赋值
                      * @return EdgeVersion 是否已赋值
+                     * 
                      */
                     bool EdgeVersionHasBeenSet() const;
 
@@ -365,20 +413,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 集群绑定的云标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TagSpecification GetTagSpecification() const;
 
                     /**
                      * 设置集群绑定的云标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSpecification 集群绑定的云标签
+                     * @param _tagSpecification 集群绑定的云标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSpecification(const TagSpecification& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取接口名
                      * @return Name 接口名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置接口名
-                     * @param Name 接口名
+                     * @param _name 接口名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取接口描述
                      * @return Description 接口描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置接口描述
-                     * @param Description 接口描述
+                     * @param _description 接口描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

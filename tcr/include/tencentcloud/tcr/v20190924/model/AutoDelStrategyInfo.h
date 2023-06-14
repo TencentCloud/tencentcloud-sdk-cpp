@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return Username 用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
-                     * @param Username 用户名
+                     * @param _username 用户名
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取仓库名
                      * @return RepoName 仓库名
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名
-                     * @param RepoName 仓库名
+                     * @param _repoName 仓库名
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return Type 类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-                     * @param Type 类型
+                     * @param _type 类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取策略值
                      * @return Value 策略值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置策略值
-                     * @param Value 策略值
+                     * @param _value 策略值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取Valid
                      * @return Valid Valid
+                     * 
                      */
                     int64_t GetValid() const;
 
                     /**
                      * 设置Valid
-                     * @param Valid Valid
+                     * @param _valid Valid
+                     * 
                      */
                     void SetValid(const int64_t& _valid);
 
                     /**
                      * 判断参数 Valid 是否已赋值
                      * @return Valid 是否已赋值
+                     * 
                      */
                     bool ValidHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取采样截图模板唯一标识。
                      * @return Definition 采样截图模板唯一标识。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置采样截图模板唯一标识。
-                     * @param Definition 采样截图模板唯一标识。
+                     * @param _definition 采样截图模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

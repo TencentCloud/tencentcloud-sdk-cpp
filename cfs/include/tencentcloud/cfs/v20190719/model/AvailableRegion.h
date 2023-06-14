@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取区域名称，如“ap-beijing”
                      * @return Region 区域名称，如“ap-beijing”
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置区域名称，如“ap-beijing”
-                     * @param Region 区域名称，如“ap-beijing”
+                     * @param _region 区域名称，如“ap-beijing”
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取区域名称，如“bj”
                      * @return RegionName 区域名称，如“bj”
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置区域名称，如“bj”
-                     * @param RegionName 区域名称，如“bj”
+                     * @param _regionName 区域名称，如“bj”
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE
                      * @return RegionStatus 区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE
+                     * 
                      */
                     std::string GetRegionStatus() const;
 
                     /**
                      * 设置区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE
-                     * @param RegionStatus 区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE
+                     * @param _regionStatus 区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE
+                     * 
                      */
                     void SetRegionStatus(const std::string& _regionStatus);
 
                     /**
                      * 判断参数 RegionStatus 是否已赋值
                      * @return RegionStatus 是否已赋值
+                     * 
                      */
                     bool RegionStatusHasBeenSet() const;
 
                     /**
                      * 获取可用区数组
                      * @return Zones 可用区数组
+                     * 
                      */
                     std::vector<AvailableZone> GetZones() const;
 
                     /**
                      * 设置可用区数组
-                     * @param Zones 可用区数组
+                     * @param _zones 可用区数组
+                     * 
                      */
                     void SetZones(const std::vector<AvailableZone>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 
                     /**
                      * 获取区域中文名称，如“广州”
                      * @return RegionCnName 区域中文名称，如“广州”
+                     * 
                      */
                     std::string GetRegionCnName() const;
 
                     /**
                      * 设置区域中文名称，如“广州”
-                     * @param RegionCnName 区域中文名称，如“广州”
+                     * @param _regionCnName 区域中文名称，如“广州”
+                     * 
                      */
                     void SetRegionCnName(const std::string& _regionCnName);
 
                     /**
                      * 判断参数 RegionCnName 是否已赋值
                      * @return RegionCnName 是否已赋值
+                     * 
                      */
                     bool RegionCnNameHasBeenSet() const;
 

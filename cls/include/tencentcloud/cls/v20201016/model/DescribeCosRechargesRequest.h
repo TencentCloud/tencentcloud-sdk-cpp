@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取日志主题 ID
                      * @return TopicId 日志主题 ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题 ID
-                     * @param TopicId 日志主题 ID
+                     * @param _topicId 日志主题 ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
                      * @return Status 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
-                     * @param Status 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
+                     * @param _status 状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否启用:   0： 未启用  ， 1：启用
                      * @return Enable 是否启用:   0： 未启用  ， 1：启用
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置是否启用:   0： 未启用  ， 1：启用
-                     * @param Enable 是否启用:   0： 未启用  ， 1：启用
+                     * @param _enable 是否启用:   0： 未启用  ， 1：启用
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

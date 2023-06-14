@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrendsData 统计结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntegrationStatisticsTrendResult> GetTrendsData() const;
 
                     /**
                      * 判断参数 TrendsData 是否已赋值
                      * @return TrendsData 是否已赋值
+                     * 
                      */
                     bool TrendsDataHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡唯一性ID，例如：lb-12345678。
                      * @return LoadBalancerId 负载均衡唯一性ID，例如：lb-12345678。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡唯一性ID，例如：lb-12345678。
-                     * @param LoadBalancerId 负载均衡唯一性ID，例如：lb-12345678。
+                     * @param _loadBalancerId 负载均衡唯一性ID，例如：lb-12345678。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
                      * @return SnatIps 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
+                     * 
                      */
                     std::vector<SnatIp> GetSnatIps() const;
 
                     /**
                      * 设置添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
-                     * @param SnatIps 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
+                     * @param _snatIps 添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。
+                     * 
                      */
                     void SetSnatIps(const std::vector<SnatIp>& _snatIps);
 
                     /**
                      * 判断参数 SnatIps 是否已赋值
                      * @return SnatIps 是否已赋值
+                     * 
                      */
                     bool SnatIpsHasBeenSet() const;
 
                     /**
                      * 获取添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
                      * @return Number 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
+                     * 
                      */
                     uint64_t GetNumber() const;
 
                     /**
                      * 设置添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
-                     * @param Number 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
+                     * @param _number 添加的SnatIp的个数，可与SnatIps一起使用，但若指定IP时，则不能指定创建的SnatIp个数。默认值为1，数量上限与用户配置有关，默认上限为10。
+                     * 
                      */
                     void SetNumber(const uint64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 

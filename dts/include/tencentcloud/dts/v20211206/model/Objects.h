@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 同步对象类型 Partial(部分对象)
+                     * @param _mode 同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 同步对象，当 Mode 为 Partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Database> GetDatabases() const;
 
                     /**
                      * 设置同步对象，当 Mode 为 Partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Databases 同步对象，当 Mode 为 Partial 时，不为空
+                     * @param _databases 同步对象，当 Mode 为 Partial 时，不为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabases(const std::vector<Database>& _databases);
 
                     /**
                      * 判断参数 Databases 是否已赋值
                      * @return Databases 是否已赋值
+                     * 
                      */
                     bool DatabasesHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
                      * 设置高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
+                     * @param _advancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
 
                     /**
                      * 判断参数 AdvancedObjects 是否已赋值
                      * @return AdvancedObjects 是否已赋值
+                     * 
                      */
                     bool AdvancedObjectsHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineDDL OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OnlineDDL GetOnlineDDL() const;
 
                     /**
                      * 设置OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OnlineDDL OnlineDDL类型，冗余字段不做配置用途
+                     * @param _onlineDDL OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnlineDDL(const OnlineDDL& _onlineDDL);
 
                     /**
                      * 判断参数 OnlineDDL 是否已赋值
                      * @return OnlineDDL 是否已赋值
+                     * 
                      */
                     bool OnlineDDLHasBeenSet() const;
 

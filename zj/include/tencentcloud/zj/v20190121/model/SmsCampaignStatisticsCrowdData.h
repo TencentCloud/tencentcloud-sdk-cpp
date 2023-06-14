@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取人群包id
                      * @return CrowdId 人群包id
+                     * 
                      */
                     uint64_t GetCrowdId() const;
 
                     /**
                      * 设置人群包id
-                     * @param CrowdId 人群包id
+                     * @param _crowdId 人群包id
+                     * 
                      */
                     void SetCrowdId(const uint64_t& _crowdId);
 
                     /**
                      * 判断参数 CrowdId 是否已赋值
                      * @return CrowdId 是否已赋值
+                     * 
                      */
                     bool CrowdIdHasBeenSet() const;
 
                     /**
                      * 获取人群包名称
                      * @return CrowdName 人群包名称
+                     * 
                      */
                     std::string GetCrowdName() const;
 
                     /**
                      * 设置人群包名称
-                     * @param CrowdName 人群包名称
+                     * @param _crowdName 人群包名称
+                     * 
                      */
                     void SetCrowdName(const std::string& _crowdName);
 
                     /**
                      * 判断参数 CrowdName 是否已赋值
                      * @return CrowdName 是否已赋值
+                     * 
                      */
                     bool CrowdNameHasBeenSet() const;
 
                     /**
                      * 获取人群包目标触达总数
                      * @return CrowdCount 人群包目标触达总数
+                     * 
                      */
                     uint64_t GetCrowdCount() const;
 
                     /**
                      * 设置人群包目标触达总数
-                     * @param CrowdCount 人群包目标触达总数
+                     * @param _crowdCount 人群包目标触达总数
+                     * 
                      */
                     void SetCrowdCount(const uint64_t& _crowdCount);
 
                     /**
                      * 判断参数 CrowdCount 是否已赋值
                      * @return CrowdCount 是否已赋值
+                     * 
                      */
                     bool CrowdCountHasBeenSet() const;
 
                     /**
                      * 获取模板列表
                      * @return TemplateList 模板列表
+                     * 
                      */
                     std::vector<SmsCampaignStatisticsTemplateData> GetTemplateList() const;
 
                     /**
                      * 设置模板列表
-                     * @param TemplateList 模板列表
+                     * @param _templateList 模板列表
+                     * 
                      */
                     void SetTemplateList(const std::vector<SmsCampaignStatisticsTemplateData>& _templateList);
 
                     /**
                      * 判断参数 TemplateList 是否已赋值
                      * @return TemplateList 是否已赋值
+                     * 
                      */
                     bool TemplateListHasBeenSet() const;
 

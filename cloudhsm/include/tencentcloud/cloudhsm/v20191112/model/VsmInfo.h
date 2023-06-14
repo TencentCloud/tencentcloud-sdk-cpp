@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取VSM类型名称
                      * @return TypeName VSM类型名称
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置VSM类型名称
-                     * @param TypeName VSM类型名称
+                     * @param _typeName VSM类型名称
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取VSM类型值
                      * @return TypeID VSM类型值
+                     * 
                      */
                     int64_t GetTypeID() const;
 
                     /**
                      * 设置VSM类型值
-                     * @param TypeID VSM类型值
+                     * @param _typeID VSM类型值
+                     * 
                      */
                     void SetTypeID(const int64_t& _typeID);
 
                     /**
                      * 判断参数 TypeID 是否已赋值
                      * @return TypeID 是否已赋值
+                     * 
                      */
                     bool TypeIDHasBeenSet() const;
 

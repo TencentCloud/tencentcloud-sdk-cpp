@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SucceedUins 处理成功的代客uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSucceedUins() const;
 
                     /**
                      * 判断参数 SucceedUins 是否已赋值
                      * @return SucceedUins 是否已赋值
+                     * 
                      */
                     bool SucceedUinsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedUins 处理失败的代客uin列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedUins() const;
 
                     /**
                      * 判断参数 FailedUins 是否已赋值
                      * @return FailedUins 是否已赋值
+                     * 
                      */
                     bool FailedUinsHasBeenSet() const;
 

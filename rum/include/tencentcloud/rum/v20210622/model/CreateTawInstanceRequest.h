@@ -46,216 +46,252 @@ namespace TencentCloud
                     /**
                      * 获取片区Id，(至少大于0)
                      * @return AreaId 片区Id，(至少大于0)
+                     * 
                      */
                     int64_t GetAreaId() const;
 
                     /**
                      * 设置片区Id，(至少大于0)
-                     * @param AreaId 片区Id，(至少大于0)
+                     * @param _areaId 片区Id，(至少大于0)
+                     * 
                      */
                     void SetAreaId(const int64_t& _areaId);
 
                     /**
                      * 判断参数 AreaId 是否已赋值
                      * @return AreaId 是否已赋值
+                     * 
                      */
                     bool AreaIdHasBeenSet() const;
 
                     /**
                      * 获取计费类型, (1=后付费)
                      * @return ChargeType 计费类型, (1=后付费)
+                     * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
                      * 设置计费类型, (1=后付费)
-                     * @param ChargeType 计费类型, (1=后付费)
+                     * @param _chargeType 计费类型, (1=后付费)
+                     * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取数据保存时间，(至少大于0)
                      * @return DataRetentionDays 数据保存时间，(至少大于0)
+                     * 
                      */
                     int64_t GetDataRetentionDays() const;
 
                     /**
                      * 设置数据保存时间，(至少大于0)
-                     * @param DataRetentionDays 数据保存时间，(至少大于0)
+                     * @param _dataRetentionDays 数据保存时间，(至少大于0)
+                     * 
                      */
                     void SetDataRetentionDays(const int64_t& _dataRetentionDays);
 
                     /**
                      * 判断参数 DataRetentionDays 是否已赋值
                      * @return DataRetentionDays 是否已赋值
+                     * 
                      */
                     bool DataRetentionDaysHasBeenSet() const;
 
                     /**
                      * 获取实例名称，(最大长度不超过255字节)
                      * @return InstanceName 实例名称，(最大长度不超过255字节)
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称，(最大长度不超过255字节)
-                     * @param InstanceName 实例名称，(最大长度不超过255字节)
+                     * @param _instanceName 实例名称，(最大长度不超过255字节)
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取实例描述，(最大长度不超过1024字节)
                      * @return InstanceDesc 实例描述，(最大长度不超过1024字节)
+                     * 
                      */
                     std::string GetInstanceDesc() const;
 
                     /**
                      * 设置实例描述，(最大长度不超过1024字节)
-                     * @param InstanceDesc 实例描述，(最大长度不超过1024字节)
+                     * @param _instanceDesc 实例描述，(最大长度不超过1024字节)
+                     * 
                      */
                     void SetInstanceDesc(const std::string& _instanceDesc);
 
                     /**
                      * 判断参数 InstanceDesc 是否已赋值
                      * @return InstanceDesc 是否已赋值
+                     * 
                      */
                     bool InstanceDescHasBeenSet() const;
 
                     /**
                      * 获取每天数据上报量
                      * @return CountNum 每天数据上报量
+                     * 
                      */
                     std::string GetCountNum() const;
 
                     /**
                      * 设置每天数据上报量
-                     * @param CountNum 每天数据上报量
+                     * @param _countNum 每天数据上报量
+                     * 
                      */
                     void SetCountNum(const std::string& _countNum);
 
                     /**
                      * 判断参数 CountNum 是否已赋值
                      * @return CountNum 是否已赋值
+                     * 
                      */
                     bool CountNumHasBeenSet() const;
 
                     /**
                      * 获取数据存储时长计费
                      * @return PeriodRetain 数据存储时长计费
+                     * 
                      */
                     std::string GetPeriodRetain() const;
 
                     /**
                      * 设置数据存储时长计费
-                     * @param PeriodRetain 数据存储时长计费
+                     * @param _periodRetain 数据存储时长计费
+                     * 
                      */
                     void SetPeriodRetain(const std::string& _periodRetain);
 
                     /**
                      * 判断参数 PeriodRetain 是否已赋值
                      * @return PeriodRetain 是否已赋值
+                     * 
                      */
                     bool PeriodRetainHasBeenSet() const;
 
                     /**
                      * 获取实例购买渠道("cdn" 等)
                      * @return BuyingChannel 实例购买渠道("cdn" 等)
+                     * 
                      */
                     std::string GetBuyingChannel() const;
 
                     /**
                      * 设置实例购买渠道("cdn" 等)
-                     * @param BuyingChannel 实例购买渠道("cdn" 等)
+                     * @param _buyingChannel 实例购买渠道("cdn" 等)
+                     * 
                      */
                     void SetBuyingChannel(const std::string& _buyingChannel);
 
                     /**
                      * 判断参数 BuyingChannel 是否已赋值
                      * @return BuyingChannel 是否已赋值
+                     * 
                      */
                     bool BuyingChannelHasBeenSet() const;
 
                     /**
                      * 获取预付费资源包类型(仅预付费需要)
                      * @return ResourcePackageType 预付费资源包类型(仅预付费需要)
+                     * 
                      */
                     uint64_t GetResourcePackageType() const;
 
                     /**
                      * 设置预付费资源包类型(仅预付费需要)
-                     * @param ResourcePackageType 预付费资源包类型(仅预付费需要)
+                     * @param _resourcePackageType 预付费资源包类型(仅预付费需要)
+                     * 
                      */
                     void SetResourcePackageType(const uint64_t& _resourcePackageType);
 
                     /**
                      * 判断参数 ResourcePackageType 是否已赋值
                      * @return ResourcePackageType 是否已赋值
+                     * 
                      */
                     bool ResourcePackageTypeHasBeenSet() const;
 
                     /**
                      * 获取预付费资源包数量(仅预付费需要)
                      * @return ResourcePackageNum 预付费资源包数量(仅预付费需要)
+                     * 
                      */
                     uint64_t GetResourcePackageNum() const;
 
                     /**
                      * 设置预付费资源包数量(仅预付费需要)
-                     * @param ResourcePackageNum 预付费资源包数量(仅预付费需要)
+                     * @param _resourcePackageNum 预付费资源包数量(仅预付费需要)
+                     * 
                      */
                     void SetResourcePackageNum(const uint64_t& _resourcePackageNum);
 
                     /**
                      * 判断参数 ResourcePackageNum 是否已赋值
                      * @return ResourcePackageNum 是否已赋值
+                     * 
                      */
                     bool ResourcePackageNumHasBeenSet() const;
 
                     /**
                      * 获取实例类型 1:原web相关类型 2:app端类型
                      * @return InstanceType 实例类型 1:原web相关类型 2:app端类型
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型 1:原web相关类型 2:app端类型
-                     * @param InstanceType 实例类型 1:原web相关类型 2:app端类型
+                     * @param _instanceType 实例类型 1:原web相关类型 2:app端类型
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

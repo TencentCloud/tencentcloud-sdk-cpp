@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Backup 备份任务相关参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackup() const;
 
                     /**
                      * 判断参数 Backup 是否已赋值
                      * @return Backup 是否已赋值
+                     * 
                      */
                     bool BackupHasBeenSet() const;
 

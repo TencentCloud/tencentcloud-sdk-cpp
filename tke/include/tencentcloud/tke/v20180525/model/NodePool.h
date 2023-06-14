@@ -53,162 +53,189 @@ namespace TencentCloud
                     /**
                      * 获取NodePoolId 资源池id
                      * @return NodePoolId NodePoolId 资源池id
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置NodePoolId 资源池id
-                     * @param NodePoolId NodePoolId 资源池id
+                     * @param _nodePoolId NodePoolId 资源池id
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取Name 资源池名称
                      * @return Name Name 资源池名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Name 资源池名称
-                     * @param Name Name 资源池名称
+                     * @param _name Name 资源池名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取ClusterInstanceId 集群实例id
                      * @return ClusterInstanceId ClusterInstanceId 集群实例id
+                     * 
                      */
                     std::string GetClusterInstanceId() const;
 
                     /**
                      * 设置ClusterInstanceId 集群实例id
-                     * @param ClusterInstanceId ClusterInstanceId 集群实例id
+                     * @param _clusterInstanceId ClusterInstanceId 集群实例id
+                     * 
                      */
                     void SetClusterInstanceId(const std::string& _clusterInstanceId);
 
                     /**
                      * 判断参数 ClusterInstanceId 是否已赋值
                      * @return ClusterInstanceId 是否已赋值
+                     * 
                      */
                     bool ClusterInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
                      * @return LifeState LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
+                     * 
                      */
                     std::string GetLifeState() const;
 
                     /**
                      * 设置LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
-                     * @param LifeState LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
+                     * @param _lifeState LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted
+                     * 
                      */
                     void SetLifeState(const std::string& _lifeState);
 
                     /**
                      * 判断参数 LifeState 是否已赋值
                      * @return LifeState 是否已赋值
+                     * 
                      */
                     bool LifeStateHasBeenSet() const;
 
                     /**
                      * 获取LaunchConfigurationId 配置
                      * @return LaunchConfigurationId LaunchConfigurationId 配置
+                     * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
                      * 设置LaunchConfigurationId 配置
-                     * @param LaunchConfigurationId LaunchConfigurationId 配置
+                     * @param _launchConfigurationId LaunchConfigurationId 配置
+                     * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
 
                     /**
                      * 判断参数 LaunchConfigurationId 是否已赋值
                      * @return LaunchConfigurationId 是否已赋值
+                     * 
                      */
                     bool LaunchConfigurationIdHasBeenSet() const;
 
                     /**
                      * 获取AutoscalingGroupId 分组id
                      * @return AutoscalingGroupId AutoscalingGroupId 分组id
+                     * 
                      */
                     std::string GetAutoscalingGroupId() const;
 
                     /**
                      * 设置AutoscalingGroupId 分组id
-                     * @param AutoscalingGroupId AutoscalingGroupId 分组id
+                     * @param _autoscalingGroupId AutoscalingGroupId 分组id
+                     * 
                      */
                     void SetAutoscalingGroupId(const std::string& _autoscalingGroupId);
 
                     /**
                      * 判断参数 AutoscalingGroupId 是否已赋值
                      * @return AutoscalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoscalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取Labels 标签
                      * @return Labels Labels 标签
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置Labels 标签
-                     * @param Labels Labels 标签
+                     * @param _labels Labels 标签
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取Taints 污点标记
                      * @return Taints Taints 污点标记
+                     * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
                      * 设置Taints 污点标记
-                     * @param Taints Taints 污点标记
+                     * @param _taints Taints 污点标记
+                     * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
 
                     /**
                      * 判断参数 Taints 是否已赋值
                      * @return Taints 是否已赋值
+                     * 
                      */
                     bool TaintsHasBeenSet() const;
 
                     /**
                      * 获取NodeCountSummary 节点列表
                      * @return NodeCountSummary NodeCountSummary 节点列表
+                     * 
                      */
                     NodeCountSummary GetNodeCountSummary() const;
 
                     /**
                      * 设置NodeCountSummary 节点列表
-                     * @param NodeCountSummary NodeCountSummary 节点列表
+                     * @param _nodeCountSummary NodeCountSummary 节点列表
+                     * 
                      */
                     void SetNodeCountSummary(const NodeCountSummary& _nodeCountSummary);
 
                     /**
                      * 判断参数 NodeCountSummary 是否已赋值
                      * @return NodeCountSummary 是否已赋值
+                     * 
                      */
                     bool NodeCountSummaryHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalingGroupStatus 状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAutoscalingGroupStatus() const;
 
                     /**
                      * 设置状态信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoscalingGroupStatus 状态信息
+                     * @param _autoscalingGroupStatus 状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoscalingGroupStatus(const std::string& _autoscalingGroupStatus);
 
                     /**
                      * 判断参数 AutoscalingGroupStatus 是否已赋值
                      * @return AutoscalingGroupStatus 是否已赋值
+                     * 
                      */
                     bool AutoscalingGroupStatusHasBeenSet() const;
 
@@ -239,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodesNum 最大节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxNodesNum() const;
 
                     /**
                      * 设置最大节点数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxNodesNum 最大节点数量
+                     * @param _maxNodesNum 最大节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxNodesNum(const int64_t& _maxNodesNum);
 
                     /**
                      * 判断参数 MaxNodesNum 是否已赋值
                      * @return MaxNodesNum 是否已赋值
+                     * 
                      */
                     bool MaxNodesNumHasBeenSet() const;
 
@@ -261,20 +294,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinNodesNum 最小节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinNodesNum() const;
 
                     /**
                      * 设置最小节点数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinNodesNum 最小节点数量
+                     * @param _minNodesNum 最小节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinNodesNum(const int64_t& _minNodesNum);
 
                     /**
                      * 判断参数 MinNodesNum 是否已赋值
                      * @return MinNodesNum 是否已赋值
+                     * 
                      */
                     bool MinNodesNumHasBeenSet() const;
 
@@ -283,20 +319,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredNodesNum 期望的节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDesiredNodesNum() const;
 
                     /**
                      * 设置期望的节点数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredNodesNum 期望的节点数量
+                     * @param _desiredNodesNum 期望的节点数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesiredNodesNum(const int64_t& _desiredNodesNum);
 
                     /**
                      * 判断参数 DesiredNodesNum 是否已赋值
                      * @return DesiredNodesNum 是否已赋值
+                     * 
                      */
                     bool DesiredNodesNumHasBeenSet() const;
 
@@ -305,20 +344,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolOs 节点池osName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodePoolOs() const;
 
                     /**
                      * 设置节点池osName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodePoolOs 节点池osName
+                     * @param _nodePoolOs 节点池osName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodePoolOs(const std::string& _nodePoolOs);
 
                     /**
                      * 判断参数 NodePoolOs 是否已赋值
                      * @return NodePoolOs 是否已赋值
+                     * 
                      */
                     bool NodePoolOsHasBeenSet() const;
 
@@ -327,20 +369,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param _osCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
 
                     /**
                      * 判断参数 OsCustomizeType 是否已赋值
                      * @return OsCustomizeType 是否已赋值
+                     * 
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 
@@ -349,20 +394,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId 镜像id
+                     * @param _imageId 镜像id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -371,20 +419,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDesiredPodNum() const;
 
                     /**
                      * 设置集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
+                     * @param _desiredPodNum 集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesiredPodNum(const int64_t& _desiredPodNum);
 
                     /**
                      * 判断参数 DesiredPodNum 是否已赋值
                      * @return DesiredPodNum 是否已赋值
+                     * 
                      */
                     bool DesiredPodNumHasBeenSet() const;
 
@@ -393,20 +444,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserScript 用户自定义脚本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置用户自定义脚本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserScript 用户自定义脚本
+                     * @param _userScript 用户自定义脚本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserScript(const std::string& _userScript);
 
                     /**
                      * 判断参数 UserScript 是否已赋值
                      * @return UserScript 是否已赋值
+                     * 
                      */
                     bool UserScriptHasBeenSet() const;
 
@@ -415,20 +469,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 资源标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置资源标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 资源标签
+                     * @param _tags 资源标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -437,20 +494,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletionProtection 删除保护开关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
                      * 设置删除保护开关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeletionProtection 删除保护开关
+                     * @param _deletionProtection 删除保护开关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
 
                     /**
                      * 判断参数 DeletionProtection 是否已赋值
                      * @return DeletionProtection 是否已赋值
+                     * 
                      */
                     bool DeletionProtectionHasBeenSet() const;
 

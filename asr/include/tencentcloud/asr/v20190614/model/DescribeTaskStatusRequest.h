@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
                      * @return TaskId 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-                     * @param TaskId 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
+                     * @param _taskId 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

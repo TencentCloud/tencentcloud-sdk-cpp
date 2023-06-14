@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回信息
                      * @return RetMsg 返回信息
+                     * 
                      */
                     std::string GetRetMsg() const;
 
                     /**
                      * 判断参数 RetMsg 是否已赋值
                      * @return RetMsg 是否已赋值
+                     * 
                      */
                     bool RetMsgHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取消息时间戳
                      * @return Timestamp 消息时间戳
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置消息时间戳
-                     * @param Timestamp 消息时间戳
+                     * @param _timestamp 消息时间戳
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取发消息的用户ID
                      * @return From 发消息的用户ID
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置发消息的用户ID
-                     * @param From 发消息的用户ID
+                     * @param _from 发消息的用户ID
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取消息列表
                      * @return Messages 消息列表
+                     * 
                      */
                     std::vector<Message> GetMessages() const;
 
                     /**
                      * 设置消息列表
-                     * @param Messages 消息列表
+                     * @param _messages 消息列表
+                     * 
                      */
                     void SetMessages(const std::vector<Message>& _messages);
 
                     /**
                      * 判断参数 Messages 是否已赋值
                      * @return Messages 是否已赋值
+                     * 
                      */
                     bool MessagesHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取工作流批次ID
                      * @return Result 工作流批次ID
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

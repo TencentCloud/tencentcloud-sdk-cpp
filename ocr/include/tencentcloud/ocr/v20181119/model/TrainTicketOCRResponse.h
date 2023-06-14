@@ -46,240 +46,280 @@ namespace TencentCloud
                     /**
                      * 获取编号
                      * @return TicketNum 编号
+                     * 
                      */
                     std::string GetTicketNum() const;
 
                     /**
                      * 判断参数 TicketNum 是否已赋值
                      * @return TicketNum 是否已赋值
+                     * 
                      */
                     bool TicketNumHasBeenSet() const;
 
                     /**
                      * 获取出发站
                      * @return StartStation 出发站
+                     * 
                      */
                     std::string GetStartStation() const;
 
                     /**
                      * 判断参数 StartStation 是否已赋值
                      * @return StartStation 是否已赋值
+                     * 
                      */
                     bool StartStationHasBeenSet() const;
 
                     /**
                      * 获取到达站
                      * @return DestinationStation 到达站
+                     * 
                      */
                     std::string GetDestinationStation() const;
 
                     /**
                      * 判断参数 DestinationStation 是否已赋值
                      * @return DestinationStation 是否已赋值
+                     * 
                      */
                     bool DestinationStationHasBeenSet() const;
 
                     /**
                      * 获取出发时间
                      * @return Date 出发时间
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取车次
                      * @return TrainNum 车次
+                     * 
                      */
                     std::string GetTrainNum() const;
 
                     /**
                      * 判断参数 TrainNum 是否已赋值
                      * @return TrainNum 是否已赋值
+                     * 
                      */
                     bool TrainNumHasBeenSet() const;
 
                     /**
                      * 获取座位号
                      * @return Seat 座位号
+                     * 
                      */
                     std::string GetSeat() const;
 
                     /**
                      * 判断参数 Seat 是否已赋值
                      * @return Seat 是否已赋值
+                     * 
                      */
                     bool SeatHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取票价
                      * @return Price 票价
+                     * 
                      */
                     std::string GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
                     /**
                      * 获取席别
                      * @return SeatCategory 席别
+                     * 
                      */
                     std::string GetSeatCategory() const;
 
                     /**
                      * 判断参数 SeatCategory 是否已赋值
                      * @return SeatCategory 是否已赋值
+                     * 
                      */
                     bool SeatCategoryHasBeenSet() const;
 
                     /**
                      * 获取身份证号
                      * @return ID 身份证号
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取发票消费类型：交通
                      * @return InvoiceType 发票消费类型：交通
+                     * 
                      */
                     std::string GetInvoiceType() const;
 
                     /**
                      * 判断参数 InvoiceType 是否已赋值
                      * @return InvoiceType 是否已赋值
+                     * 
                      */
                     bool InvoiceTypeHasBeenSet() const;
 
                     /**
                      * 获取序列号
                      * @return SerialNumber 序列号
+                     * 
                      */
                     std::string GetSerialNumber() const;
 
                     /**
                      * 判断参数 SerialNumber 是否已赋值
                      * @return SerialNumber 是否已赋值
+                     * 
                      */
                     bool SerialNumberHasBeenSet() const;
 
                     /**
                      * 获取加收票价
                      * @return AdditionalCost 加收票价
+                     * 
                      */
                     std::string GetAdditionalCost() const;
 
                     /**
                      * 判断参数 AdditionalCost 是否已赋值
                      * @return AdditionalCost 是否已赋值
+                     * 
                      */
                     bool AdditionalCostHasBeenSet() const;
 
                     /**
                      * 获取手续费
                      * @return HandlingFee 手续费
+                     * 
                      */
                     std::string GetHandlingFee() const;
 
                     /**
                      * 判断参数 HandlingFee 是否已赋值
                      * @return HandlingFee 是否已赋值
+                     * 
                      */
                     bool HandlingFeeHasBeenSet() const;
 
                     /**
                      * 获取大写金额（票面有大写金额该字段才有值）
                      * @return LegalAmount 大写金额（票面有大写金额该字段才有值）
+                     * 
                      */
                     std::string GetLegalAmount() const;
 
                     /**
                      * 判断参数 LegalAmount 是否已赋值
                      * @return LegalAmount 是否已赋值
+                     * 
                      */
                     bool LegalAmountHasBeenSet() const;
 
                     /**
                      * 获取售票站
                      * @return TicketStation 售票站
+                     * 
                      */
                     std::string GetTicketStation() const;
 
                     /**
                      * 判断参数 TicketStation 是否已赋值
                      * @return TicketStation 是否已赋值
+                     * 
                      */
                     bool TicketStationHasBeenSet() const;
 
                     /**
                      * 获取原票价（一般有手续费的才有原始票价字段）
                      * @return OriginalPrice 原票价（一般有手续费的才有原始票价字段）
+                     * 
                      */
                     std::string GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取发票类型：火车票、火车票补票、火车票退票凭证
                      * @return InvoiceStyle 发票类型：火车票、火车票补票、火车票退票凭证
+                     * 
                      */
                     std::string GetInvoiceStyle() const;
 
                     /**
                      * 判断参数 InvoiceStyle 是否已赋值
                      * @return InvoiceStyle 是否已赋值
+                     * 
                      */
                     bool InvoiceStyleHasBeenSet() const;
 
                     /**
                      * 获取收据号码
                      * @return ReceiptNumber 收据号码
+                     * 
                      */
                     std::string GetReceiptNumber() const;
 
                     /**
                      * 判断参数 ReceiptNumber 是否已赋值
                      * @return ReceiptNumber 是否已赋值
+                     * 
                      */
                     bool ReceiptNumberHasBeenSet() const;
 
                     /**
                      * 获取仅供报销使用：1为是，0为否
                      * @return IsReceipt 仅供报销使用：1为是，0为否
+                     * 
                      */
                     std::string GetIsReceipt() const;
 
                     /**
                      * 判断参数 IsReceipt 是否已赋值
                      * @return IsReceipt 是否已赋值
+                     * 
                      */
                     bool IsReceiptHasBeenSet() const;
 

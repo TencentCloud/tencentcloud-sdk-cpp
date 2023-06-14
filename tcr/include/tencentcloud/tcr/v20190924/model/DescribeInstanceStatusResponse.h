@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryStatusSet 实例的状态列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RegistryStatus> GetRegistryStatusSet() const;
 
                     /**
                      * 判断参数 RegistryStatusSet 是否已赋值
                      * @return RegistryStatusSet 是否已赋值
+                     * 
                      */
                     bool RegistryStatusSetHasBeenSet() const;
 

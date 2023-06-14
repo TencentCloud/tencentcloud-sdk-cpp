@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取水印模板唯一标识。
                      * @return Definition 水印模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置水印模板唯一标识。
-                     * @param Definition 水印模板唯一标识。
+                     * @param _definition 水印模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

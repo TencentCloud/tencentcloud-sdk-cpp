@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否为新项目
                      * @return IsNew 是否为新项目
+                     * 
                      */
                     int64_t GetIsNew() const;
 
                     /**
                      * 判断参数 IsNew 是否已赋值
                      * @return IsNew 是否已赋值
+                     * 
                      */
                     bool IsNewHasBeenSet() const;
 

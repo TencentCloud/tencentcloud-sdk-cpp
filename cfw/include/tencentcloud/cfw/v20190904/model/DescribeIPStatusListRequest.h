@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资产Id
                      * @return IPList 资产Id
+                     * 
                      */
                     std::vector<std::string> GetIPList() const;
 
                     /**
                      * 设置资产Id
-                     * @param IPList 资产Id
+                     * @param _iPList 资产Id
+                     * 
                      */
                     void SetIPList(const std::vector<std::string>& _iPList);
 
                     /**
                      * 判断参数 IPList 是否已赋值
                      * @return IPList 是否已赋值
+                     * 
                      */
                     bool IPListHasBeenSet() const;
 

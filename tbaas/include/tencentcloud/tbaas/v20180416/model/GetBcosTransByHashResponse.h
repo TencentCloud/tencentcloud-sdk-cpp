@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取交易信息json字符串
                      * @return TransactionJson 交易信息json字符串
+                     * 
                      */
                     std::string GetTransactionJson() const;
 
                     /**
                      * 判断参数 TransactionJson 是否已赋值
                      * @return TransactionJson 是否已赋值
+                     * 
                      */
                     bool TransactionJsonHasBeenSet() const;
 

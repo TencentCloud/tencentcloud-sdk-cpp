@@ -51,38 +51,44 @@ namespace TencentCloud
 HELIPAY渠道必传
                      * @return RegionCode 地区代码，国标码
 HELIPAY渠道必传
+                     * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置地区代码，国标码
 HELIPAY渠道必传
-                     * @param RegionCode 地区代码，国标码
+                     * @param _regionCode 地区代码，国标码
 HELIPAY渠道必传
+                     * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
                     /**
                      * 判断参数 RegionCode 是否已赋值
                      * @return RegionCode 是否已赋值
+                     * 
                      */
                     bool RegionCodeHasBeenSet() const;
 
                     /**
                      * 获取注册地址
                      * @return RegisterAddress 注册地址
+                     * 
                      */
                     std::string GetRegisterAddress() const;
 
                     /**
                      * 设置注册地址
-                     * @param RegisterAddress 注册地址
+                     * @param _registerAddress 注册地址
+                     * 
                      */
                     void SetRegisterAddress(const std::string& _registerAddress);
 
                     /**
                      * 判断参数 RegisterAddress 是否已赋值
                      * @return RegisterAddress 是否已赋值
+                     * 
                      */
                     bool RegisterAddressHasBeenSet() const;
 
@@ -91,92 +97,107 @@ HELIPAY渠道必传
 HELIPAY渠道必传
                      * @return MailingAddress 通讯地址
 HELIPAY渠道必传
+                     * 
                      */
                     std::string GetMailingAddress() const;
 
                     /**
                      * 设置通讯地址
 HELIPAY渠道必传
-                     * @param MailingAddress 通讯地址
+                     * @param _mailingAddress 通讯地址
 HELIPAY渠道必传
+                     * 
                      */
                     void SetMailingAddress(const std::string& _mailingAddress);
 
                     /**
                      * 判断参数 MailingAddress 是否已赋值
                      * @return MailingAddress 是否已赋值
+                     * 
                      */
                     bool MailingAddressHasBeenSet() const;
 
                     /**
                      * 获取营业地址/经营地址
                      * @return BusinessAddress 营业地址/经营地址
+                     * 
                      */
                     std::string GetBusinessAddress() const;
 
                     /**
                      * 设置营业地址/经营地址
-                     * @param BusinessAddress 营业地址/经营地址
+                     * @param _businessAddress 营业地址/经营地址
+                     * 
                      */
                     void SetBusinessAddress(const std::string& _businessAddress);
 
                     /**
                      * 判断参数 BusinessAddress 是否已赋值
                      * @return BusinessAddress 是否已赋值
+                     * 
                      */
                     bool BusinessAddressHasBeenSet() const;
 
                     /**
                      * 获取客服电话
                      * @return ServicePhone 客服电话
+                     * 
                      */
                     std::string GetServicePhone() const;
 
                     /**
                      * 设置客服电话
-                     * @param ServicePhone 客服电话
+                     * @param _servicePhone 客服电话
+                     * 
                      */
                     void SetServicePhone(const std::string& _servicePhone);
 
                     /**
                      * 判断参数 ServicePhone 是否已赋值
                      * @return ServicePhone 是否已赋值
+                     * 
                      */
                     bool ServicePhoneHasBeenSet() const;
 
                     /**
                      * 获取网站url
                      * @return WebSiteUrl 网站url
+                     * 
                      */
                     std::string GetWebSiteUrl() const;
 
                     /**
                      * 设置网站url
-                     * @param WebSiteUrl 网站url
+                     * @param _webSiteUrl 网站url
+                     * 
                      */
                     void SetWebSiteUrl(const std::string& _webSiteUrl);
 
                     /**
                      * 判断参数 WebSiteUrl 是否已赋值
                      * @return WebSiteUrl 是否已赋值
+                     * 
                      */
                     bool WebSiteUrlHasBeenSet() const;
 
                     /**
                      * 获取邮箱地址
                      * @return EmailAddress 邮箱地址
+                     * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
                      * 设置邮箱地址
-                     * @param EmailAddress 邮箱地址
+                     * @param _emailAddress 邮箱地址
+                     * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
 
                     /**
                      * 判断参数 EmailAddress 是否已赋值
                      * @return EmailAddress 是否已赋值
+                     * 
                      */
                     bool EmailAddressHasBeenSet() const;
 

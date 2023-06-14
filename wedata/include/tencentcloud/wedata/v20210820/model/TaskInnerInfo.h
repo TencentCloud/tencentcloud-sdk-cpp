@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务名
                      * @return TaskName 任务名
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名
-                     * @param TaskName 任务名
+                     * @param _taskName 任务名
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取工作流id
                      * @return WorkflowId 工作流id
+                     * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
                      * 设置工作流id
-                     * @param WorkflowId 工作流id
+                     * @param _workflowId 工作流id
+                     * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
                      * 获取周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
                      * @return CycleType 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * 
                      */
                     int64_t GetCycleType() const;
 
                     /**
                      * 设置周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
-                     * @param CycleType 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * @param _cycleType 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * 
                      */
                     void SetCycleType(const int64_t& _cycleType);
 
                     /**
                      * 判断参数 CycleType 是否已赋值
                      * @return CycleType 是否已赋值
+                     * 
                      */
                     bool CycleTypeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualTaskId 虚拟任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirtualTaskId() const;
 
                     /**
                      * 设置虚拟任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualTaskId 虚拟任务id
+                     * @param _virtualTaskId 虚拟任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualTaskId(const std::string& _virtualTaskId);
 
                     /**
                      * 判断参数 VirtualTaskId 是否已赋值
                      * @return VirtualTaskId 是否已赋值
+                     * 
                      */
                     bool VirtualTaskIdHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualFlag 虚拟任务标记
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetVirtualFlag() const;
 
                     /**
                      * 设置虚拟任务标记
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualFlag 虚拟任务标记
+                     * @param _virtualFlag 虚拟任务标记
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualFlag(const bool& _virtualFlag);
 
                     /**
                      * 判断参数 VirtualFlag 是否已赋值
                      * @return VirtualFlag 是否已赋值
+                     * 
                      */
                     bool VirtualFlagHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealWorkflowId 真实任务工作流id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealWorkflowId() const;
 
                     /**
                      * 设置真实任务工作流id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealWorkflowId 真实任务工作流id
+                     * @param _realWorkflowId 真实任务工作流id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealWorkflowId(const std::string& _realWorkflowId);
 
                     /**
                      * 判断参数 RealWorkflowId 是否已赋值
                      * @return RealWorkflowId 是否已赋值
+                     * 
                      */
                     bool RealWorkflowIdHasBeenSet() const;
 

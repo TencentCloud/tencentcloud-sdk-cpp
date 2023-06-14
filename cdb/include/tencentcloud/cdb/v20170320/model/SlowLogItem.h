@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp Sql的执行时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置Sql的执行时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp Sql的执行时间。
+                     * @param _timestamp Sql的执行时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryTime Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetQueryTime() const;
 
                     /**
                      * 设置Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryTime Sql的执行时长（秒）。
+                     * @param _queryTime Sql的执行时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQueryTime(const double& _queryTime);
 
                     /**
                      * 判断参数 QueryTime 是否已赋值
                      * @return QueryTime 是否已赋值
+                     * 
                      */
                     bool QueryTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlText Sql语句。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 设置Sql语句。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SqlText Sql语句。
+                     * @param _sqlText Sql语句。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSqlText(const std::string& _sqlText);
 
                     /**
                      * 判断参数 SqlText 是否已赋值
                      * @return SqlText 是否已赋值
+                     * 
                      */
                     bool SqlTextHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserHost 客户端地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserHost() const;
 
                     /**
                      * 设置客户端地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserHost 客户端地址。
+                     * @param _userHost 客户端地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserHost(const std::string& _userHost);
 
                     /**
                      * 判断参数 UserHost 是否已赋值
                      * @return UserHost 是否已赋值
+                     * 
                      */
                     bool UserHostHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 用户名。
+                     * @param _userName 用户名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Database 数据库名。
+                     * @param _database 数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockTime 锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLockTime() const;
 
                     /**
                      * 设置锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LockTime 锁时长（秒）。
+                     * @param _lockTime 锁时长（秒）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLockTime(const double& _lockTime);
 
                     /**
                      * 判断参数 LockTime 是否已赋值
                      * @return LockTime 是否已赋值
+                     * 
                      */
                     bool LockTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsExamined 扫描行数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRowsExamined() const;
 
                     /**
                      * 设置扫描行数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RowsExamined 扫描行数。
+                     * @param _rowsExamined 扫描行数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRowsExamined(const int64_t& _rowsExamined);
 
                     /**
                      * 判断参数 RowsExamined 是否已赋值
                      * @return RowsExamined 是否已赋值
+                     * 
                      */
                     bool RowsExaminedHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsSent 结果集行数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRowsSent() const;
 
                     /**
                      * 设置结果集行数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RowsSent 结果集行数。
+                     * @param _rowsSent 结果集行数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRowsSent(const int64_t& _rowsSent);
 
                     /**
                      * 判断参数 RowsSent 是否已赋值
                      * @return RowsSent 是否已赋值
+                     * 
                      */
                     bool RowsSentHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlTemplate Sql模板。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSqlTemplate() const;
 
                     /**
                      * 设置Sql模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SqlTemplate Sql模板。
+                     * @param _sqlTemplate Sql模板。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSqlTemplate(const std::string& _sqlTemplate);
 
                     /**
                      * 判断参数 SqlTemplate 是否已赋值
                      * @return SqlTemplate 是否已赋值
+                     * 
                      */
                     bool SqlTemplateHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 Sql语句的md5。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置Sql语句的md5。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5 Sql语句的md5。
+                     * @param _md5 Sql语句的md5。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 

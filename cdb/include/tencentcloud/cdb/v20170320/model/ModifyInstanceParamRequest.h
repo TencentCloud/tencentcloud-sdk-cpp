@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取实例短 ID 列表。
                      * @return InstanceIds 实例短 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例短 ID 列表。
-                     * @param InstanceIds 实例短 ID 列表。
+                     * @param _instanceIds 实例短 ID 列表。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
                      * @return ParamList 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
+                     * 
                      */
                     std::vector<Parameter> GetParamList() const;
 
                     /**
                      * 设置要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
-                     * @param ParamList 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
+                     * @param _paramList 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
+                     * 
                      */
                     void SetParamList(const std::vector<Parameter>& _paramList);
 
                     /**
                      * 判断参数 ParamList 是否已赋值
                      * @return ParamList 是否已赋值
+                     * 
                      */
                     bool ParamListHasBeenSet() const;
 
                     /**
                      * 获取模板id，ParamList和TemplateId必须至少传其中之一
                      * @return TemplateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 设置模板id，ParamList和TemplateId必须至少传其中之一
-                     * @param TemplateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     * @param _templateId 模板id，ParamList和TemplateId必须至少传其中之一
+                     * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
                      * @return WaitSwitch 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     * 
                      */
                     int64_t GetWaitSwitch() const;
 
                     /**
                      * 设置执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
-                     * @param WaitSwitch 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     * @param _waitSwitch 执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行；当该值为 1 时，每次只能传一个实例（InstanceIds数量为1）
+                     * 
                      */
                     void SetWaitSwitch(const int64_t& _waitSwitch);
 
                     /**
                      * 判断参数 WaitSwitch 是否已赋值
                      * @return WaitSwitch 是否已赋值
+                     * 
                      */
                     bool WaitSwitchHasBeenSet() const;
 
                     /**
                      * 获取参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
                      * @return NotSyncRo 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     * 
                      */
                     bool GetNotSyncRo() const;
 
                     /**
                      * 设置参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
-                     * @param NotSyncRo 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     * @param _notSyncRo 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     * 
                      */
                     void SetNotSyncRo(const bool& _notSyncRo);
 
                     /**
                      * 判断参数 NotSyncRo 是否已赋值
                      * @return NotSyncRo 是否已赋值
+                     * 
                      */
                     bool NotSyncRoHasBeenSet() const;
 
                     /**
                      * 获取参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
                      * @return NotSyncDr 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     * 
                      */
                     bool GetNotSyncDr() const;
 
                     /**
                      * 设置参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
-                     * @param NotSyncDr 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     * @param _notSyncDr 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     * 
                      */
                     void SetNotSyncDr(const bool& _notSyncDr);
 
                     /**
                      * 判断参数 NotSyncDr 是否已赋值
                      * @return NotSyncDr 是否已赋值
+                     * 
                      */
                     bool NotSyncDrHasBeenSet() const;
 

@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取路由关系ID
                      * @return RouteRelationId 路由关系ID
+                     * 
                      */
                     std::string GetRouteRelationId() const;
 
                     /**
                      * 设置路由关系ID
-                     * @param RouteRelationId 路由关系ID
+                     * @param _routeRelationId 路由关系ID
+                     * 
                      */
                     void SetRouteRelationId(const std::string& _routeRelationId);
 
                     /**
                      * 判断参数 RouteRelationId 是否已赋值
                      * @return RouteRelationId 是否已赋值
+                     * 
                      */
                     bool RouteRelationIdHasBeenSet() const;
 
                     /**
                      * 获取源Exchange
                      * @return SourceExchange 源Exchange
+                     * 
                      */
                     std::string GetSourceExchange() const;
 
                     /**
                      * 设置源Exchange
-                     * @param SourceExchange 源Exchange
+                     * @param _sourceExchange 源Exchange
+                     * 
                      */
                     void SetSourceExchange(const std::string& _sourceExchange);
 
                     /**
                      * 判断参数 SourceExchange 是否已赋值
                      * @return SourceExchange 是否已赋值
+                     * 
                      */
                     bool SourceExchangeHasBeenSet() const;
 
                     /**
                      * 获取目标类型:Queue|Exchange
                      * @return DestType 目标类型:Queue|Exchange
+                     * 
                      */
                     std::string GetDestType() const;
 
                     /**
                      * 设置目标类型:Queue|Exchange
-                     * @param DestType 目标类型:Queue|Exchange
+                     * @param _destType 目标类型:Queue|Exchange
+                     * 
                      */
                     void SetDestType(const std::string& _destType);
 
                     /**
                      * 判断参数 DestType 是否已赋值
                      * @return DestType 是否已赋值
+                     * 
                      */
                     bool DestTypeHasBeenSet() const;
 
                     /**
                      * 获取目标值
                      * @return DestValue 目标值
+                     * 
                      */
                     std::string GetDestValue() const;
 
                     /**
                      * 设置目标值
-                     * @param DestValue 目标值
+                     * @param _destValue 目标值
+                     * 
                      */
                     void SetDestValue(const std::string& _destValue);
 
                     /**
                      * 判断参数 DestValue 是否已赋值
                      * @return DestValue 是否已赋值
+                     * 
                      */
                     bool DestValueHasBeenSet() const;
 
                     /**
                      * 获取绑定key
                      * @return RoutingKey 绑定key
+                     * 
                      */
                     std::string GetRoutingKey() const;
 
                     /**
                      * 设置绑定key
-                     * @param RoutingKey 绑定key
+                     * @param _routingKey 绑定key
+                     * 
                      */
                     void SetRoutingKey(const std::string& _routingKey);
 
                     /**
                      * 判断参数 RoutingKey 是否已赋值
                      * @return RoutingKey 是否已赋值
+                     * 
                      */
                     bool RoutingKeyHasBeenSet() const;
 
                     /**
                      * 获取源路由类型:Direct|Topic|Fanout
                      * @return SourceExchangeType 源路由类型:Direct|Topic|Fanout
+                     * 
                      */
                     std::string GetSourceExchangeType() const;
 
                     /**
                      * 设置源路由类型:Direct|Topic|Fanout
-                     * @param SourceExchangeType 源路由类型:Direct|Topic|Fanout
+                     * @param _sourceExchangeType 源路由类型:Direct|Topic|Fanout
+                     * 
                      */
                     void SetSourceExchangeType(const std::string& _sourceExchangeType);
 
                     /**
                      * 判断参数 SourceExchangeType 是否已赋值
                      * @return SourceExchangeType 是否已赋值
+                     * 
                      */
                     bool SourceExchangeTypeHasBeenSet() const;
 
                     /**
                      * 获取创建时间，以毫秒为单位
                      * @return CreateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
-                     * @param CreateTime 创建时间，以毫秒为单位
+                     * @param _createTime 创建时间，以毫秒为单位
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间，以毫秒为单位
                      * @return UpdateTime 修改时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置修改时间，以毫秒为单位
-                     * @param UpdateTime 修改时间，以毫秒为单位
+                     * @param _updateTime 修改时间，以毫秒为单位
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 说明信息
+                     * @param _remark 说明信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

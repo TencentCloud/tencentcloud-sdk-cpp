@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取<li>WeakPassword - string - 是否必填：否 - 弱口令</li>
                      * @return Filters <li>WeakPassword - string - 是否必填：否 - 弱口令</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置<li>WeakPassword - string - 是否必填：否 - 弱口令</li>
-                     * @param Filters <li>WeakPassword - string - 是否必填：否 - 弱口令</li>
+                     * @param _filters <li>WeakPassword - string - 是否必填：否 - 弱口令</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取0:过滤的结果导出；1:全部导出
                      * @return ExportAll 0:过滤的结果导出；1:全部导出
+                     * 
                      */
                     int64_t GetExportAll() const;
 
                     /**
                      * 设置0:过滤的结果导出；1:全部导出
-                     * @param ExportAll 0:过滤的结果导出；1:全部导出
+                     * @param _exportAll 0:过滤的结果导出；1:全部导出
+                     * 
                      */
                     void SetExportAll(const int64_t& _exportAll);
 
                     /**
                      * 判断参数 ExportAll 是否已赋值
                      * @return ExportAll 是否已赋值
+                     * 
                      */
                     bool ExportAllHasBeenSet() const;
 

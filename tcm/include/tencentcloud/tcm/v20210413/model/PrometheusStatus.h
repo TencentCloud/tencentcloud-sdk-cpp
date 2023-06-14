@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus Id
                      * @return PrometheusId Prometheus Id
+                     * 
                      */
                     std::string GetPrometheusId() const;
 
                     /**
                      * 设置Prometheus Id
-                     * @param PrometheusId Prometheus Id
+                     * @param _prometheusId Prometheus Id
+                     * 
                      */
                     void SetPrometheusId(const std::string& _prometheusId);
 
                     /**
                      * 判断参数 PrometheusId 是否已赋值
                      * @return PrometheusId 是否已赋值
+                     * 
                      */
                     bool PrometheusIdHasBeenSet() const;
 
                     /**
                      * 获取展示名称
                      * @return DisplayName 展示名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置展示名称
-                     * @param DisplayName 展示名称
+                     * @param _displayName 展示名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟网络Id
                      * @return VpcId 虚拟网络Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置虚拟网络Id
-                     * @param VpcId 虚拟网络Id
+                     * @param _vpcId 虚拟网络Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return State 状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置状态
-                     * @param State 状态
+                     * @param _state 状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取地区
                      * @return Region 地区
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地区
-                     * @param Region 地区
+                     * @param _region 地区
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grafana Grafana信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GrafanaInfo GetGrafana() const;
 
                     /**
                      * 设置Grafana信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Grafana Grafana信息
+                     * @param _grafana Grafana信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrafana(const GrafanaInfo& _grafana);
 
                     /**
                      * 判断参数 Grafana 是否已赋值
                      * @return Grafana 是否已赋值
+                     * 
                      */
                     bool GrafanaHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type Prometheus 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Prometheus 类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type Prometheus 类型
+                     * @param _type Prometheus 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

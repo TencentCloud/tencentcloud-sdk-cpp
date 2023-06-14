@@ -52,108 +52,126 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return InstanceIds 集群ID
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置集群ID
-                     * @param InstanceIds 集群ID
+                     * @param _instanceIds 集群ID
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取实例额外需要设置参数信息
                      * @return InstanceAdvancedSettings 实例额外需要设置参数信息
+                     * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
                      * 设置实例额外需要设置参数信息
-                     * @param InstanceAdvancedSettings 实例额外需要设置参数信息
+                     * @param _instanceAdvancedSettings 实例额外需要设置参数信息
+                     * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
 
                     /**
                      * 判断参数 InstanceAdvancedSettings 是否已赋值
                      * @return InstanceAdvancedSettings 是否已赋值
+                     * 
                      */
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
                      * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
                      * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
                      * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-                     * @param EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * @param _enhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+                     * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
 
                     /**
                      * 判断参数 EnhancedService 是否已赋值
                      * @return EnhancedService 是否已赋值
+                     * 
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
                      * 获取节点登录信息（目前仅支持使用Password或者单个KeyIds）
                      * @return LoginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
                      * 设置节点登录信息（目前仅支持使用Password或者单个KeyIds）
-                     * @param LoginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * @param _loginSettings 节点登录信息（目前仅支持使用Password或者单个KeyIds）
+                     * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
 
                     /**
                      * 判断参数 LoginSettings 是否已赋值
                      * @return LoginSettings 是否已赋值
+                     * 
                      */
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
                      * 获取实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
                      * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
-                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @param _securityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
                      * @return HostName 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
-                     * @param HostName 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
+                     * @param _hostName 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 

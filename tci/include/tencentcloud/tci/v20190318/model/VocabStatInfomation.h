@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取单词出现在该音频中总次数
                      * @return VocabDetailInfo 单词出现在该音频中总次数
+                     * 
                      */
                     std::vector<StatInfo> GetVocabDetailInfo() const;
 
                     /**
                      * 设置单词出现在该音频中总次数
-                     * @param VocabDetailInfo 单词出现在该音频中总次数
+                     * @param _vocabDetailInfo 单词出现在该音频中总次数
+                     * 
                      */
                     void SetVocabDetailInfo(const std::vector<StatInfo>& _vocabDetailInfo);
 
                     /**
                      * 判断参数 VocabDetailInfo 是否已赋值
                      * @return VocabDetailInfo 是否已赋值
+                     * 
                      */
                     bool VocabDetailInfoHasBeenSet() const;
 
                     /**
                      * 获取词汇库名称
                      * @return VocabLibName 词汇库名称
+                     * 
                      */
                     std::string GetVocabLibName() const;
 
                     /**
                      * 设置词汇库名称
-                     * @param VocabLibName 词汇库名称
+                     * @param _vocabLibName 词汇库名称
+                     * 
                      */
                     void SetVocabLibName(const std::string& _vocabLibName);
 
                     /**
                      * 判断参数 VocabLibName 是否已赋值
                      * @return VocabLibName 是否已赋值
+                     * 
                      */
                     bool VocabLibNameHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestSummarySet 请求汇总信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RequestSummary> GetRequestSummarySet() const;
 
                     /**
                      * 判断参数 RequestSummarySet 是否已赋值
                      * @return RequestSummarySet 是否已赋值
+                     * 
                      */
                     bool RequestSummarySetHasBeenSet() const;
 

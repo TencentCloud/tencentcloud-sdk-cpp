@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待修改的脚本ID
                      * @return CmdId 待修改的脚本ID
+                     * 
                      */
                     std::string GetCmdId() const;
 
                     /**
                      * 设置待修改的脚本ID
-                     * @param CmdId 待修改的脚本ID
+                     * @param _cmdId 待修改的脚本ID
+                     * 
                      */
                     void SetCmdId(const std::string& _cmdId);
 
                     /**
                      * 判断参数 CmdId 是否已赋值
                      * @return CmdId 是否已赋值
+                     * 
                      */
                     bool CmdIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的脚本名称
                      * @return Alias 待修改的脚本名称
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置待修改的脚本名称
-                     * @param Alias 待修改的脚本名称
+                     * @param _alias 待修改的脚本名称
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取脚本适用的操作系统类型
                      * @return OsType 脚本适用的操作系统类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置脚本适用的操作系统类型
-                     * @param OsType 脚本适用的操作系统类型
+                     * @param _osType 脚本适用的操作系统类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取待修改的脚本内容，必须经过base64编码
                      * @return Content 待修改的脚本内容，必须经过base64编码
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置待修改的脚本内容，必须经过base64编码
-                     * @param Content 待修改的脚本内容，必须经过base64编码
+                     * @param _content 待修改的脚本内容，必须经过base64编码
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

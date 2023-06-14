@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取跟踪集状态，1：开启，0：关闭
                      * @return AuditStatus 跟踪集状态，1：开启，0：关闭
+                     * 
                      */
                     int64_t GetAuditStatus() const;
 
                     /**
                      * 设置跟踪集状态，1：开启，0：关闭
-                     * @param AuditStatus 跟踪集状态，1：开启，0：关闭
+                     * @param _auditStatus 跟踪集状态，1：开启，0：关闭
+                     * 
                      */
                     void SetAuditStatus(const int64_t& _auditStatus);
 
                     /**
                      * 判断参数 AuditStatus 是否已赋值
                      * @return AuditStatus 是否已赋值
+                     * 
                      */
                     bool AuditStatusHasBeenSet() const;
 
                     /**
                      * 获取COS存储桶名称
                      * @return CosBucketName COS存储桶名称
+                     * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置COS存储桶名称
-                     * @param CosBucketName COS存储桶名称
+                     * @param _cosBucketName COS存储桶名称
+                     * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
 
                     /**
                      * 判断参数 CosBucketName 是否已赋值
                      * @return CosBucketName 是否已赋值
+                     * 
                      */
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
                      * 获取跟踪集名称
                      * @return AuditName 跟踪集名称
+                     * 
                      */
                     std::string GetAuditName() const;
 
                     /**
                      * 设置跟踪集名称
-                     * @param AuditName 跟踪集名称
+                     * @param _auditName 跟踪集名称
+                     * 
                      */
                     void SetAuditName(const std::string& _auditName);
 
                     /**
                      * 判断参数 AuditName 是否已赋值
                      * @return AuditName 是否已赋值
+                     * 
                      */
                     bool AuditNameHasBeenSet() const;
 
                     /**
                      * 获取日志前缀
                      * @return LogFilePrefix 日志前缀
+                     * 
                      */
                     std::string GetLogFilePrefix() const;
 
                     /**
                      * 设置日志前缀
-                     * @param LogFilePrefix 日志前缀
+                     * @param _logFilePrefix 日志前缀
+                     * 
                      */
                     void SetLogFilePrefix(const std::string& _logFilePrefix);
 
                     /**
                      * 判断参数 LogFilePrefix 是否已赋值
                      * @return LogFilePrefix 是否已赋值
+                     * 
                      */
                     bool LogFilePrefixHasBeenSet() const;
 

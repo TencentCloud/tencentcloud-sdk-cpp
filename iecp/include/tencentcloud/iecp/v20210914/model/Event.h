@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTime 第一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置第一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstTime 第一次出现时间
+                     * @param _firstTime 第一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
 
                     /**
                      * 判断参数 FirstTime 是否已赋值
                      * @return FirstTime 是否已赋值
+                     * 
                      */
                     bool FirstTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTime 最后一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置最后一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastTime 最后一次出现时间
+                     * @param _lastTime 最后一次出现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastTime(const std::string& _lastTime);
 
                     /**
                      * 判断参数 LastTime 是否已赋值
                      * @return LastTime 是否已赋值
+                     * 
                      */
                     bool LastTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvolvedObjectKind 事件关联对象类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvolvedObjectKind() const;
 
                     /**
                      * 设置事件关联对象类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvolvedObjectKind 事件关联对象类型
+                     * @param _involvedObjectKind 事件关联对象类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvolvedObjectKind(const std::string& _involvedObjectKind);
 
                     /**
                      * 判断参数 InvolvedObjectKind 是否已赋值
                      * @return InvolvedObjectKind 是否已赋值
+                     * 
                      */
                     bool InvolvedObjectKindHasBeenSet() const;
 
@@ -117,38 +126,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvolvedObjectName 事件关联对象名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvolvedObjectName() const;
 
                     /**
                      * 设置事件关联对象名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvolvedObjectName 事件关联对象名
+                     * @param _involvedObjectName 事件关联对象名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvolvedObjectName(const std::string& _involvedObjectName);
 
                     /**
                      * 判断参数 InvolvedObjectName 是否已赋值
                      * @return InvolvedObjectName 是否已赋值
+                     * 
                      */
                     bool InvolvedObjectNameHasBeenSet() const;
 
                     /**
                      * 获取事件类型(Normal|Warning)
                      * @return Type 事件类型(Normal|Warning)
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型(Normal|Warning)
-                     * @param Type 事件类型(Normal|Warning)
+                     * @param _type 事件类型(Normal|Warning)
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 原因
+                     * @param _reason 原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 内容
+                     * @param _message 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置出现次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Count 出现次数
+                     * @param _count 出现次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

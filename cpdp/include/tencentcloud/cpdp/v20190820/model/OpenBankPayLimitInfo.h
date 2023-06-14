@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取限制类型
                      * @return PayLimitType 限制类型
+                     * 
                      */
                     std::string GetPayLimitType() const;
 
                     /**
                      * 设置限制类型
-                     * @param PayLimitType 限制类型
+                     * @param _payLimitType 限制类型
+                     * 
                      */
                     void SetPayLimitType(const std::string& _payLimitType);
 
                     /**
                      * 判断参数 PayLimitType 是否已赋值
                      * @return PayLimitType 是否已赋值
+                     * 
                      */
                     bool PayLimitTypeHasBeenSet() const;
 
                     /**
                      * 获取限制类型值
                      * @return PayLimitValue 限制类型值
+                     * 
                      */
                     std::string GetPayLimitValue() const;
 
                     /**
                      * 设置限制类型值
-                     * @param PayLimitValue 限制类型值
+                     * @param _payLimitValue 限制类型值
+                     * 
                      */
                     void SetPayLimitValue(const std::string& _payLimitValue);
 
                     /**
                      * 判断参数 PayLimitValue 是否已赋值
                      * @return PayLimitValue 是否已赋值
+                     * 
                      */
                     bool PayLimitValueHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomId 码规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 

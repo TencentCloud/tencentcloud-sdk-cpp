@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建云子机的实例ID列表。
                      * @return HostIdSet 新创建云子机的实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetHostIdSet() const;
 
                     /**
                      * 判断参数 HostIdSet 是否已赋值
                      * @return HostIdSet 是否已赋值
+                     * 
                      */
                     bool HostIdSetHasBeenSet() const;
 

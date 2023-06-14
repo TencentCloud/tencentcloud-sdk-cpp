@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取已购cos的总容量大小，单位GB
                      * @return TotalCapacity 已购cos的总容量大小，单位GB
+                     * 
                      */
                     double GetTotalCapacity() const;
 
                     /**
                      * 设置已购cos的总容量大小，单位GB
-                     * @param TotalCapacity 已购cos的总容量大小，单位GB
+                     * @param _totalCapacity 已购cos的总容量大小，单位GB
+                     * 
                      */
                     void SetTotalCapacity(const double& _totalCapacity);
 
                     /**
                      * 判断参数 TotalCapacity 是否已赋值
                      * @return TotalCapacity 是否已赋值
+                     * 
                      */
                     bool TotalCapacityHasBeenSet() const;
 
                     /**
                      * 获取剩余可用cos的容量大小，单位GB
                      * @return TotalFreeCapacity 剩余可用cos的容量大小，单位GB
+                     * 
                      */
                     double GetTotalFreeCapacity() const;
 
                     /**
                      * 设置剩余可用cos的容量大小，单位GB
-                     * @param TotalFreeCapacity 剩余可用cos的容量大小，单位GB
+                     * @param _totalFreeCapacity 剩余可用cos的容量大小，单位GB
+                     * 
                      */
                     void SetTotalFreeCapacity(const double& _totalFreeCapacity);
 
                     /**
                      * 判断参数 TotalFreeCapacity 是否已赋值
                      * @return TotalFreeCapacity 是否已赋值
+                     * 
                      */
                     bool TotalFreeCapacityHasBeenSet() const;
 
                     /**
                      * 获取已用cos的容量大小，单位GB
                      * @return TotalUsedCapacity 已用cos的容量大小，单位GB
+                     * 
                      */
                     double GetTotalUsedCapacity() const;
 
                     /**
                      * 设置已用cos的容量大小，单位GB
-                     * @param TotalUsedCapacity 已用cos的容量大小，单位GB
+                     * @param _totalUsedCapacity 已用cos的容量大小，单位GB
+                     * 
                      */
                     void SetTotalUsedCapacity(const double& _totalUsedCapacity);
 
                     /**
                      * 判断参数 TotalUsedCapacity 是否已赋值
                      * @return TotalUsedCapacity 是否已赋值
+                     * 
                      */
                     bool TotalUsedCapacityHasBeenSet() const;
 

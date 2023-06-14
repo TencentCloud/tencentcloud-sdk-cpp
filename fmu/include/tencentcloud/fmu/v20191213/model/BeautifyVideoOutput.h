@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoUrl 视频美颜输出的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVideoUrl() const;
 
                     /**
                      * 设置视频美颜输出的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoUrl 视频美颜输出的url
+                     * @param _videoUrl 视频美颜输出的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoUrl(const std::string& _videoUrl);
 
                     /**
                      * 判断参数 VideoUrl 是否已赋值
                      * @return VideoUrl 是否已赋值
+                     * 
                      */
                     bool VideoUrlHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoMD5 视频美颜输出的视频MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVideoMD5() const;
 
                     /**
                      * 设置视频美颜输出的视频MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoMD5 视频美颜输出的视频MD5，用于校验
+                     * @param _videoMD5 视频美颜输出的视频MD5，用于校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoMD5(const std::string& _videoMD5);
 
                     /**
                      * 判断参数 VideoMD5 是否已赋值
                      * @return VideoMD5 是否已赋值
+                     * 
                      */
                     bool VideoMD5HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverImage 美颜输出的视频封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoverImage() const;
 
                     /**
                      * 设置美颜输出的视频封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoverImage 美颜输出的视频封面图base64字符串
+                     * @param _coverImage 美颜输出的视频封面图base64字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoverImage(const std::string& _coverImage);
 
                     /**
                      * 判断参数 CoverImage 是否已赋值
                      * @return CoverImage 是否已赋值
+                     * 
                      */
                     bool CoverImageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 视频宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频宽度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Width 视频宽度
+                     * @param _width 视频宽度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 视频高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频高度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Height 视频高度
+                     * @param _height 视频高度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fps 每秒传输帧数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFps() const;
 
                     /**
                      * 设置每秒传输帧数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fps 每秒传输帧数
+                     * @param _fps 每秒传输帧数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFps(const double& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationInSec 视频播放时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDurationInSec() const;
 
                     /**
                      * 设置视频播放时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DurationInSec 视频播放时长，单位为秒
+                     * @param _durationInSec 视频播放时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDurationInSec(const double& _durationInSec);
 
                     /**
                      * 判断参数 DurationInSec 是否已赋值
                      * @return DurationInSec 是否已赋值
+                     * 
                      */
                     bool DurationInSecHasBeenSet() const;
 

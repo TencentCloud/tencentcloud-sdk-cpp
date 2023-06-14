@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取开始时间，采用unix时间戳。
                      * @return StartTime 开始时间，采用unix时间戳。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间，采用unix时间戳。
-                     * @param StartTime 开始时间，采用unix时间戳。
+                     * @param _startTime 开始时间，采用unix时间戳。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，采用unix时间戳, 为0表示还处于封禁中。
                      * @return EndTime 结束时间，采用unix时间戳, 为0表示还处于封禁中。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间，采用unix时间戳, 为0表示还处于封禁中。
-                     * @param EndTime 结束时间，采用unix时间戳, 为0表示还处于封禁中。
+                     * @param _endTime 结束时间，采用unix时间戳, 为0表示还处于封禁中。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取封禁受影响区域。
                      * @return BlockArea 封禁受影响区域。
+                     * 
                      */
                     std::string GetBlockArea() const;
 
                     /**
                      * 设置封禁受影响区域。
-                     * @param BlockArea 封禁受影响区域。
+                     * @param _blockArea 封禁受影响区域。
+                     * 
                      */
                     void SetBlockArea(const std::string& _blockArea);
 
                     /**
                      * 判断参数 BlockArea 是否已赋值
                      * @return BlockArea 是否已赋值
+                     * 
                      */
                     bool BlockAreaHasBeenSet() const;
 

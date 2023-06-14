@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 镜像别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置镜像别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 镜像别名
+                     * @param _alias 镜像别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsName 操作系统名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OsName 操作系统名称
+                     * @param _osName 操作系统名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageId 镜像ID
+                     * @param _imageId 镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param _osCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
 
                     /**
                      * 判断参数 OsCustomizeType 是否已赋值
                      * @return OsCustomizeType 是否已赋值
+                     * 
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 

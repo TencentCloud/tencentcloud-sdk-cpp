@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取评论列表
                      * @return BrandCommentSet 评论列表
+                     * 
                      */
                     std::vector<CommentInfo> GetBrandCommentSet() const;
 
                     /**
                      * 判断参数 BrandCommentSet 是否已赋值
                      * @return BrandCommentSet 是否已赋值
+                     * 
                      */
                     bool BrandCommentSetHasBeenSet() const;
 
                     /**
                      * 获取总的差评个数
                      * @return TotalComments 总的差评个数
+                     * 
                      */
                     uint64_t GetTotalComments() const;
 
                     /**
                      * 判断参数 TotalComments 是否已赋值
                      * @return TotalComments 是否已赋值
+                     * 
                      */
                     bool TotalCommentsHasBeenSet() const;
 

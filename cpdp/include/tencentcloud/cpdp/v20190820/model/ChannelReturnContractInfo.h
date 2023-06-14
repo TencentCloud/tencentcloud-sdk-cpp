@@ -58,6 +58,7 @@ CONTRACT_STATUS_PENDING：签约进行中
 CONTRACT_STATUS_SIGNED：已签约
 CONTRACT_STATUS_TERMINATED：未签约
 CONTRACT_STATUS_PENDING：签约进行中
+                     * 
                      */
                     std::string GetContractStatus() const;
 
@@ -67,35 +68,40 @@ CONTRACT_STATUS_PENDING：签约进行中
 CONTRACT_STATUS_SIGNED：已签约
 CONTRACT_STATUS_TERMINATED：未签约
 CONTRACT_STATUS_PENDING：签约进行中
-                     * @param ContractStatus 平台合约状态
+                     * @param _contractStatus 平台合约状态
 协议状态，枚举值：
 CONTRACT_STATUS_SIGNED：已签约
 CONTRACT_STATUS_TERMINATED：未签约
 CONTRACT_STATUS_PENDING：签约进行中
+                     * 
                      */
                     void SetContractStatus(const std::string& _contractStatus);
 
                     /**
                      * 判断参数 ContractStatus 是否已赋值
                      * @return ContractStatus 是否已赋值
+                     * 
                      */
                     bool ContractStatusHasBeenSet() const;
 
                     /**
                      * 获取米大师内部存放的合约信息
                      * @return ChannelContractInfo 米大师内部存放的合约信息
+                     * 
                      */
                     ChannelContractInfo GetChannelContractInfo() const;
 
                     /**
                      * 设置米大师内部存放的合约信息
-                     * @param ChannelContractInfo 米大师内部存放的合约信息
+                     * @param _channelContractInfo 米大师内部存放的合约信息
+                     * 
                      */
                     void SetChannelContractInfo(const ChannelContractInfo& _channelContractInfo);
 
                     /**
                      * 判断参数 ChannelContractInfo 是否已赋值
                      * @return ChannelContractInfo 是否已赋值
+                     * 
                      */
                     bool ChannelContractInfoHasBeenSet() const;
 

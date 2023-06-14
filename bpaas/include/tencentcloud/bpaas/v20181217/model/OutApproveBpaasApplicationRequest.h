@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取状态  1:通过  2:拒绝
                      * @return Status 状态  1:通过  2:拒绝
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态  1:通过  2:拒绝
-                     * @param Status 状态  1:通过  2:拒绝
+                     * @param _status 状态  1:通过  2:拒绝
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取审批单id
                      * @return ApproveId 审批单id
+                     * 
                      */
                     uint64_t GetApproveId() const;
 
                     /**
                      * 设置审批单id
-                     * @param ApproveId 审批单id
+                     * @param _approveId 审批单id
+                     * 
                      */
                     void SetApproveId(const uint64_t& _approveId);
 
                     /**
                      * 判断参数 ApproveId 是否已赋值
                      * @return ApproveId 是否已赋值
+                     * 
                      */
                     bool ApproveIdHasBeenSet() const;
 
                     /**
                      * 获取审批意见
                      * @return Msg 审批意见
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置审批意见
-                     * @param Msg 审批意见
+                     * @param _msg 审批意见
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

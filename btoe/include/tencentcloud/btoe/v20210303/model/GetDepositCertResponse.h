@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取存证编码
                      * @return EvidenceId 存证编码
+                     * 
                      */
                     std::string GetEvidenceId() const;
 
                     /**
                      * 判断参数 EvidenceId 是否已赋值
                      * @return EvidenceId 是否已赋值
+                     * 
                      */
                     bool EvidenceIdHasBeenSet() const;
 
                     /**
                      * 获取存证证书文件临时链接
                      * @return EvidenceCert 存证证书文件临时链接
+                     * 
                      */
                     std::string GetEvidenceCert() const;
 
                     /**
                      * 判断参数 EvidenceCert 是否已赋值
                      * @return EvidenceCert 是否已赋值
+                     * 
                      */
                     bool EvidenceCertHasBeenSet() const;
 

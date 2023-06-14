@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取歌手性别分类列表
                      * @return GenderSet 歌手性别分类列表
+                     * 
                      */
                     std::vector<KTVSingerCategoryInfo> GetGenderSet() const;
 
                     /**
                      * 判断参数 GenderSet 是否已赋值
                      * @return GenderSet 是否已赋值
+                     * 
                      */
                     bool GenderSetHasBeenSet() const;
 
                     /**
                      * 获取歌手区域分类列表
                      * @return AreaSet 歌手区域分类列表
+                     * 
                      */
                     std::vector<KTVSingerCategoryInfo> GetAreaSet() const;
 
                     /**
                      * 判断参数 AreaSet 是否已赋值
                      * @return AreaSet 是否已赋值
+                     * 
                      */
                     bool AreaSetHasBeenSet() const;
 

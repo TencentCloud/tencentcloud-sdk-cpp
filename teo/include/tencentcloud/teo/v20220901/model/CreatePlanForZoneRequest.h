@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
 <li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
+                     * 
                      */
                     std::string GetPlanType() const;
 
@@ -104,7 +108,7 @@ namespace TencentCloud
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
 <li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
-                     * @param PlanType 所要购买套餐的类型，取值有：
+                     * @param _planType 所要购买套餐的类型，取值有：
 <li> sta: 全球内容分发网络（不包括中国大陆）标准版套餐； </li>
 <li> sta_with_bot: 全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm: 中国大陆内容分发网络标准版套餐； </li>
@@ -117,12 +121,14 @@ namespace TencentCloud
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
 <li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
+                     * 
                      */
                     void SetPlanType(const std::string& _planType);
 
                     /**
                      * 判断参数 PlanType 是否已赋值
                      * @return PlanType 是否已赋值
+                     * 
                      */
                     bool PlanTypeHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取GPU驱动或者CUDA的版本
                      * @return Version GPU驱动或者CUDA的版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置GPU驱动或者CUDA的版本
-                     * @param Version GPU驱动或者CUDA的版本
+                     * @param _version GPU驱动或者CUDA的版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取GPU驱动或者CUDA的名字
                      * @return Name GPU驱动或者CUDA的名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置GPU驱动或者CUDA的名字
-                     * @param Name GPU驱动或者CUDA的名字
+                     * @param _name GPU驱动或者CUDA的名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

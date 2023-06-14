@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取人体库总数量。
                      * @return GroupCount 人体库总数量。
+                     * 
                      */
                     uint64_t GetGroupCount() const;
 
                     /**
                      * 判断参数 GroupCount 是否已赋值
                      * @return GroupCount 是否已赋值
+                     * 
                      */
                     bool GroupCountHasBeenSet() const;
 
                     /**
                      * 获取人员总数量
                      * @return PersonCount 人员总数量
+                     * 
                      */
                     uint64_t GetPersonCount() const;
 
                     /**
                      * 判断参数 PersonCount 是否已赋值
                      * @return PersonCount 是否已赋值
+                     * 
                      */
                     bool PersonCountHasBeenSet() const;
 
                     /**
                      * 获取人员轨迹总数量
                      * @return TraceCount 人员轨迹总数量
+                     * 
                      */
                     uint64_t GetTraceCount() const;
 
                     /**
                      * 判断参数 TraceCount 是否已赋值
                      * @return TraceCount 是否已赋值
+                     * 
                      */
                     bool TraceCountHasBeenSet() const;
 

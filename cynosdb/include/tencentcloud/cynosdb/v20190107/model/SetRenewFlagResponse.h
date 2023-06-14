@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取操作成功实例数
                      * @return Count 操作成功实例数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

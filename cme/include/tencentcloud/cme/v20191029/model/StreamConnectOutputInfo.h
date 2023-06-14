@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamConnectOutput 输出源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     StreamConnectOutput GetStreamConnectOutput() const;
 
                     /**
                      * 设置输出源。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamConnectOutput 输出源。
+                     * @param _streamConnectOutput 输出源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamConnectOutput(const StreamConnectOutput& _streamConnectOutput);
 
                     /**
                      * 判断参数 StreamConnectOutput 是否已赋值
                      * @return StreamConnectOutput 是否已赋值
+                     * 
                      */
                     bool StreamConnectOutputHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
                      * @return PushSwitch 输出流状态：
 <li>On ：开；</li>
 <li>Off ：关 。</li>
+                     * 
                      */
                     std::string GetPushSwitch() const;
 
@@ -83,15 +87,17 @@ namespace TencentCloud
                      * 设置输出流状态：
 <li>On ：开；</li>
 <li>Off ：关 。</li>
-                     * @param PushSwitch 输出流状态：
+                     * @param _pushSwitch 输出流状态：
 <li>On ：开；</li>
 <li>Off ：关 。</li>
+                     * 
                      */
                     void SetPushSwitch(const std::string& _pushSwitch);
 
                     /**
                      * 判断参数 PushSwitch 是否已赋值
                      * @return PushSwitch 是否已赋值
+                     * 
                      */
                     bool PushSwitchHasBeenSet() const;
 

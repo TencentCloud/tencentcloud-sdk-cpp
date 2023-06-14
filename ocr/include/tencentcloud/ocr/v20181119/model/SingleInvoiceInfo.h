@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取识别出的字段名称
                      * @return Name 识别出的字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的字段名称
-                     * @param Name 识别出的字段名称
+                     * @param _name 识别出的字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
                      * @return Row 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     * 
                      */
                     int64_t GetRow() const;
 
                     /**
                      * 设置字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
-                     * @param Row 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     * @param _row 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     * 
                      */
                     void SetRow(const int64_t& _row);
 
                     /**
                      * 判断参数 Row 是否已赋值
                      * @return Row 是否已赋值
+                     * 
                      */
                     bool RowHasBeenSet() const;
 

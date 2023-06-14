@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取动作
                      * @return ActionType 动作
+                     * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
                      * 设置动作
-                     * @param ActionType 动作
+                     * @param _actionType 动作
+                     * 
                      */
                     void SetActionType(const uint64_t& _actionType);
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 
                     /**
                      * 获取ip
                      * @return Ip ip
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置ip
-                     * @param Ip ip
+                     * @param _ip ip
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Note 备注
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-                     * @param Note 备注
+                     * @param _note 备注
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
                     /**
                      * 获取来源
                      * @return Source 来源
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源
-                     * @param Source 来源
+                     * @param _source 来源
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -123,38 +135,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsVersion 更新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTsVersion() const;
 
                     /**
                      * 设置更新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsVersion 更新时间戳
+                     * @param _tsVersion 更新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsVersion(const uint64_t& _tsVersion);
 
                     /**
                      * 判断参数 TsVersion 是否已赋值
                      * @return TsVersion 是否已赋值
+                     * 
                      */
                     bool TsVersionHasBeenSet() const;
 
                     /**
                      * 获取有效截止时间戳
                      * @return ValidTs 有效截止时间戳
+                     * 
                      */
                     uint64_t GetValidTs() const;
 
                     /**
                      * 设置有效截止时间戳
-                     * @param ValidTs 有效截止时间戳
+                     * @param _validTs 有效截止时间戳
+                     * 
                      */
                     void SetValidTs(const uint64_t& _validTs);
 
                     /**
                      * 判断参数 ValidTs 是否已赋值
                      * @return ValidTs 是否已赋值
+                     * 
                      */
                     bool ValidTsHasBeenSet() const;
 

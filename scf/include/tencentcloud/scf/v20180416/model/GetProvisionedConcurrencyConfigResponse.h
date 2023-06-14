@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取该函数剩余可配置的预置并发数。
                      * @return UnallocatedConcurrencyNum 该函数剩余可配置的预置并发数。
+                     * 
                      */
                     uint64_t GetUnallocatedConcurrencyNum() const;
 
                     /**
                      * 判断参数 UnallocatedConcurrencyNum 是否已赋值
                      * @return UnallocatedConcurrencyNum 是否已赋值
+                     * 
                      */
                     bool UnallocatedConcurrencyNumHasBeenSet() const;
 
                     /**
                      * 获取函数已预置的并发配置详情。
                      * @return Allocated 函数已预置的并发配置详情。
+                     * 
                      */
                     std::vector<VersionProvisionedConcurrencyInfo> GetAllocated() const;
 
                     /**
                      * 判断参数 Allocated 是否已赋值
                      * @return Allocated 是否已赋值
+                     * 
                      */
                     bool AllocatedHasBeenSet() const;
 

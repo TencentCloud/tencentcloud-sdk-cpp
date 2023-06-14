@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取图库名称。
                      * @return GroupId 图库名称。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取物品ID。
                      * @return EntityId 物品ID。
+                     * 
                      */
                     std::string GetEntityId() const;
 
                     /**
                      * 判断参数 EntityId 是否已赋值
                      * @return EntityId 是否已赋值
+                     * 
                      */
                     bool EntityIdHasBeenSet() const;
 
                     /**
                      * 获取图片信息。
                      * @return ImageInfos 图片信息。
+                     * 
                      */
                     std::vector<ImageInfo> GetImageInfos() const;
 
                     /**
                      * 判断参数 ImageInfos 是否已赋值
                      * @return ImageInfos 是否已赋值
+                     * 
                      */
                     bool ImageInfosHasBeenSet() const;
 

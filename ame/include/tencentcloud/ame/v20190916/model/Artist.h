@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取歌手名
                      * @return ArtistName 歌手名
+                     * 
                      */
                     std::string GetArtistName() const;
 
                     /**
                      * 设置歌手名
-                     * @param ArtistName 歌手名
+                     * @param _artistName 歌手名
+                     * 
                      */
                     void SetArtistName(const std::string& _artistName);
 
                     /**
                      * 判断参数 ArtistName 是否已赋值
                      * @return ArtistName 是否已赋值
+                     * 
                      */
                     bool ArtistNameHasBeenSet() const;
 

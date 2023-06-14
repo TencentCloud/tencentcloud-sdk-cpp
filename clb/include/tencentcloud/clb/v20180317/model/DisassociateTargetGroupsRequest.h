@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取待解绑的规则关系数组。
                      * @return Associations 待解绑的规则关系数组。
+                     * 
                      */
                     std::vector<TargetGroupAssociation> GetAssociations() const;
 
                     /**
                      * 设置待解绑的规则关系数组。
-                     * @param Associations 待解绑的规则关系数组。
+                     * @param _associations 待解绑的规则关系数组。
+                     * 
                      */
                     void SetAssociations(const std::vector<TargetGroupAssociation>& _associations);
 
                     /**
                      * 判断参数 Associations 是否已赋值
                      * @return Associations 是否已赋值
+                     * 
                      */
                     bool AssociationsHasBeenSet() const;
 

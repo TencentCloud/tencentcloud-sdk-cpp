@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return DBInstanceId 实例ID
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param DBInstanceId 实例ID
+                     * @param _dBInstanceId 实例ID
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取当前实例所在只读组ID
                      * @return ReadOnlyGroupId 当前实例所在只读组ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置当前实例所在只读组ID
-                     * @param ReadOnlyGroupId 当前实例所在只读组ID
+                     * @param _readOnlyGroupId 当前实例所在只读组ID
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例修改的目标只读组ID
                      * @return NewReadOnlyGroupId 实例修改的目标只读组ID
+                     * 
                      */
                     std::string GetNewReadOnlyGroupId() const;
 
                     /**
                      * 设置实例修改的目标只读组ID
-                     * @param NewReadOnlyGroupId 实例修改的目标只读组ID
+                     * @param _newReadOnlyGroupId 实例修改的目标只读组ID
+                     * 
                      */
                     void SetNewReadOnlyGroupId(const std::string& _newReadOnlyGroupId);
 
                     /**
                      * 判断参数 NewReadOnlyGroupId 是否已赋值
                      * @return NewReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool NewReadOnlyGroupIdHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取摄像头列表
                      * @return Cameras 摄像头列表
+                     * 
                      */
                     std::vector<CameraZones> GetCameras() const;
 
                     /**
                      * 判断参数 Cameras 是否已赋值
                      * @return Cameras 是否已赋值
+                     * 
                      */
                     bool CamerasHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域名称，例如，ap-guangzhou
                      * @return Region 地域名称，例如，ap-guangzhou
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域名称，例如，ap-guangzhou
-                     * @param Region 地域名称，例如，ap-guangzhou
+                     * @param _region 地域名称，例如，ap-guangzhou
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域描述，例如，华南地区(广州)
                      * @return RegionName 地域描述，例如，华南地区(广州)
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域描述，例如，华南地区(广州)
-                     * @param RegionName 地域描述，例如，华南地区(广州)
+                     * @param _regionName 地域描述，例如，华南地区(广州)
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域是否可用状态
                      * @return RegionState 地域是否可用状态
+                     * 
                      */
                     std::string GetRegionState() const;
 
                     /**
                      * 设置地域是否可用状态
-                     * @param RegionState 地域是否可用状态
+                     * @param _regionState 地域是否可用状态
+                     * 
                      */
                     void SetRegionState(const std::string& _regionState);
 
                     /**
                      * 判断参数 RegionState 是否已赋值
                      * @return RegionState 是否已赋值
+                     * 
                      */
                     bool RegionStateHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionTypeMC 控制台类型，api调用时默认null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRegionTypeMC() const;
 
                     /**
                      * 设置控制台类型，api调用时默认null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionTypeMC 控制台类型，api调用时默认null
+                     * @param _regionTypeMC 控制台类型，api调用时默认null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionTypeMC(const int64_t& _regionTypeMC);
 
                     /**
                      * 判断参数 RegionTypeMC 是否已赋值
                      * @return RegionTypeMC 是否已赋值
+                     * 
                      */
                     bool RegionTypeMCHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationMC 不同语言的地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocationMC() const;
 
                     /**
                      * 设置不同语言的地区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationMC 不同语言的地区
+                     * @param _locationMC 不同语言的地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationMC(const std::string& _locationMC);
 
                     /**
                      * 判断参数 LocationMC 是否已赋值
                      * @return LocationMC 是否已赋值
+                     * 
                      */
                     bool LocationMCHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionNameMC 控制台展示的地域描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionNameMC() const;
 
                     /**
                      * 设置控制台展示的地域描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionNameMC 控制台展示的地域描述
+                     * @param _regionNameMC 控制台展示的地域描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionNameMC(const std::string& _regionNameMC);
 
                     /**
                      * 判断参数 RegionNameMC 是否已赋值
                      * @return RegionNameMC 是否已赋值
+                     * 
                      */
                     bool RegionNameMCHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionIdMC 1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionIdMC() const;
 
                     /**
                      * 设置1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionIdMC 1
+                     * @param _regionIdMC 1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionIdMC(const std::string& _regionIdMC);
 
                     /**
                      * 判断参数 RegionIdMC 是否已赋值
                      * @return RegionIdMC 是否已赋值
+                     * 
                      */
                     bool RegionIdMCHasBeenSet() const;
 

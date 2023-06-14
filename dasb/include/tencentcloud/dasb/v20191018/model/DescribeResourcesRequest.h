@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取地域码, 如: ap-guangzhou
                      * @return ApCode 地域码, 如: ap-guangzhou
+                     * 
                      */
                     std::string GetApCode() const;
 
                     /**
                      * 设置地域码, 如: ap-guangzhou
-                     * @param ApCode 地域码, 如: ap-guangzhou
+                     * @param _apCode 地域码, 如: ap-guangzhou
+                     * 
                      */
                     void SetApCode(const std::string& _apCode);
 
                     /**
                      * 判断参数 ApCode 是否已赋值
                      * @return ApCode 是否已赋值
+                     * 
                      */
                     bool ApCodeHasBeenSet() const;
 
                     /**
                      * 获取按照堡垒机开通的 VPC 实例ID查询
                      * @return VpcId 按照堡垒机开通的 VPC 实例ID查询
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置按照堡垒机开通的 VPC 实例ID查询
-                     * @param VpcId 按照堡垒机开通的 VPC 实例ID查询
+                     * @param _vpcId 按照堡垒机开通的 VPC 实例ID查询
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
                      * @return ResourceIds 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
-                     * @param ResourceIds 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * @param _resourceIds 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 

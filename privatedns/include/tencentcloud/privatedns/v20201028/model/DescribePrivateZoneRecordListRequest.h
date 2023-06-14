@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取私有域ID: zone-xxxxxx
                      * @return ZoneId 私有域ID: zone-xxxxxx
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置私有域ID: zone-xxxxxx
-                     * @param ZoneId 私有域ID: zone-xxxxxx
+                     * @param _zoneId 私有域ID: zone-xxxxxx
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取过滤参数（支持使用Value、RecordType过滤）
                      * @return Filters 过滤参数（支持使用Value、RecordType过滤）
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数（支持使用Value、RecordType过滤）
-                     * @param Filters 过滤参数（支持使用Value、RecordType过滤）
+                     * @param _filters 过滤参数（支持使用Value、RecordType过滤）
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，从0开始
                      * @return Offset 分页偏移量，从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始
-                     * @param Offset 分页偏移量，从0开始
+                     * @param _offset 分页偏移量，从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页限制数目， 最大200，默认20
                      * @return Limit 分页限制数目， 最大200，默认20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页限制数目， 最大200，默认20
-                     * @param Limit 分页限制数目， 最大200，默认20
+                     * @param _limit 分页限制数目， 最大200，默认20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

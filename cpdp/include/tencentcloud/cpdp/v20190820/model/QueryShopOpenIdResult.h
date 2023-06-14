@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Province 省份
+                     * @param _province 省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param City 城市
+                     * @param _city 城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopName 门店简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopName() const;
 
                     /**
                      * 设置门店简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopName 门店简称
+                     * @param _shopName 门店简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopName(const std::string& _shopName);
 
                     /**
                      * 判断参数 ShopName 是否已赋值
                      * @return ShopName 是否已赋值
+                     * 
                      */
                     bool ShopNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantNo 商户编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantNo() const;
 
                     /**
                      * 设置商户编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantNo 商户编号
+                     * @param _merchantNo 商户编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantNo(const std::string& _merchantNo);
 
                     /**
                      * 判断参数 MerchantNo 是否已赋值
                      * @return MerchantNo 是否已赋值
+                     * 
                      */
                     bool MerchantNoHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CityId 城市编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCityId() const;
 
                     /**
                      * 设置城市编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CityId 城市编码
+                     * @param _cityId 城市编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCityId(const std::string& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId open_id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置open_id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId open_id
+                     * @param _openId open_id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Telephone 门店电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTelephone() const;
 
                     /**
                      * 设置门店电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Telephone 门店电话
+                     * @param _telephone 门店电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTelephone(const std::string& _telephone);
 
                     /**
                      * 判断参数 Telephone 是否已赋值
                      * @return Telephone 是否已赋值
+                     * 
                      */
                     bool TelephoneHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopNo() const;
 
                     /**
                      * 设置门店编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopNo 门店编号
+                     * @param _shopNo 门店编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopNo(const std::string& _shopNo);
 
                     /**
                      * 判断参数 ShopNo 是否已赋值
                      * @return ShopNo 是否已赋值
+                     * 
                      */
                     bool ShopNoHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return County 县/区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCounty() const;
 
                     /**
                      * 设置县/区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param County 县/区
+                     * @param _county 县/区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCounty(const std::string& _county);
 
                     /**
                      * 判断参数 County 是否已赋值
                      * @return County 是否已赋值
+                     * 
                      */
                     bool CountyHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopFullName 门店全称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShopFullName() const;
 
                     /**
                      * 设置门店全称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopFullName 门店全称
+                     * @param _shopFullName 门店全称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopFullName(const std::string& _shopFullName);
 
                     /**
                      * 判断参数 ShopFullName 是否已赋值
                      * @return ShopFullName 是否已赋值
+                     * 
                      */
                     bool ShopFullNameHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBrandName() const;
 
                     /**
                      * 设置品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrandName 品牌名称
+                     * @param _brandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrandName(const std::string& _brandName);
 
                     /**
                      * 判断参数 BrandName 是否已赋值
                      * @return BrandName 是否已赋值
+                     * 
                      */
                     bool BrandNameHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 详细地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置详细地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 详细地址
+                     * @param _address 详细地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenKey open_key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置open_key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenKey open_key
+                     * @param _openKey open_key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantName 商户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置商户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantName 商户名称
+                     * @param _merchantName 商户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 

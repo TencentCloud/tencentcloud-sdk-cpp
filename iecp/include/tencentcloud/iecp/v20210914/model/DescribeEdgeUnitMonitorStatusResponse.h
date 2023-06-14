@@ -56,24 +56,28 @@ namespace TencentCloud
 "norsc" 单元需要可用节点以部署监控
 "abnormal" 单元监控异常
 "none" 单元监控不可用
+                     * 
                      */
                     std::string GetMonitorStatus() const;
 
                     /**
                      * 判断参数 MonitorStatus 是否已赋值
                      * @return MonitorStatus 是否已赋值
+                     * 
                      */
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
                      * 获取监控是否就绪
                      * @return IsAvailable 监控是否就绪
+                     * 
                      */
                     bool GetIsAvailable() const;
 
                     /**
                      * 判断参数 IsAvailable 是否已赋值
                      * @return IsAvailable 是否已赋值
+                     * 
                      */
                     bool IsAvailableHasBeenSet() const;
 

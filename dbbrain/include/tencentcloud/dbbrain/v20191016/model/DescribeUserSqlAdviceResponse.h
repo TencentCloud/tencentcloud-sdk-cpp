@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取SQL优化建议，可解析为JSON数组。
                      * @return Advices SQL优化建议，可解析为JSON数组。
+                     * 
                      */
                     std::string GetAdvices() const;
 
                     /**
                      * 判断参数 Advices 是否已赋值
                      * @return Advices 是否已赋值
+                     * 
                      */
                     bool AdvicesHasBeenSet() const;
 
                     /**
                      * 获取SQL优化建议备注，可解析为String数组。
                      * @return Comments SQL优化建议备注，可解析为String数组。
+                     * 
                      */
                     std::string GetComments() const;
 
                     /**
                      * 判断参数 Comments 是否已赋值
                      * @return Comments 是否已赋值
+                     * 
                      */
                     bool CommentsHasBeenSet() const;
 
                     /**
                      * 获取SQL语句。
                      * @return SqlText SQL语句。
+                     * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 判断参数 SqlText 是否已赋值
                      * @return SqlText 是否已赋值
+                     * 
                      */
                     bool SqlTextHasBeenSet() const;
 
                     /**
                      * 获取库名。
                      * @return Schema 库名。
+                     * 
                      */
                     std::string GetSchema() const;
 
                     /**
                      * 判断参数 Schema 是否已赋值
                      * @return Schema 是否已赋值
+                     * 
                      */
                     bool SchemaHasBeenSet() const;
 
                     /**
                      * 获取相关表的DDL信息，可解析为JSON数组。
                      * @return Tables 相关表的DDL信息，可解析为JSON数组。
+                     * 
                      */
                     std::string GetTables() const;
 
                     /**
                      * 判断参数 Tables 是否已赋值
                      * @return Tables 是否已赋值
+                     * 
                      */
                     bool TablesHasBeenSet() const;
 
                     /**
                      * 获取SQL执行计划，可解析为JSON。
                      * @return SqlPlan SQL执行计划，可解析为JSON。
+                     * 
                      */
                     std::string GetSqlPlan() const;
 
                     /**
                      * 判断参数 SqlPlan 是否已赋值
                      * @return SqlPlan 是否已赋值
+                     * 
                      */
                     bool SqlPlanHasBeenSet() const;
 
                     /**
                      * 获取SQL优化后的成本节约详情，可解析为JSON。
                      * @return Cost SQL优化后的成本节约详情，可解析为JSON。
+                     * 
                      */
                     std::string GetCost() const;
 
                     /**
                      * 判断参数 Cost 是否已赋值
                      * @return Cost 是否已赋值
+                     * 
                      */
                     bool CostHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取只读vip状态
                      * @return RoVipStatus 只读vip状态
+                     * 
                      */
                     int64_t GetRoVipStatus() const;
 
                     /**
                      * 设置只读vip状态
-                     * @param RoVipStatus 只读vip状态
+                     * @param _roVipStatus 只读vip状态
+                     * 
                      */
                     void SetRoVipStatus(const int64_t& _roVipStatus);
 
                     /**
                      * 判断参数 RoVipStatus 是否已赋值
                      * @return RoVipStatus 是否已赋值
+                     * 
                      */
                     bool RoVipStatusHasBeenSet() const;
 
                     /**
                      * 获取只读vip的子网
                      * @return RoSubnetId 只读vip的子网
+                     * 
                      */
                     int64_t GetRoSubnetId() const;
 
                     /**
                      * 设置只读vip的子网
-                     * @param RoSubnetId 只读vip的子网
+                     * @param _roSubnetId 只读vip的子网
+                     * 
                      */
                     void SetRoSubnetId(const int64_t& _roSubnetId);
 
                     /**
                      * 判断参数 RoSubnetId 是否已赋值
                      * @return RoSubnetId 是否已赋值
+                     * 
                      */
                     bool RoSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取只读vip的私有网络
                      * @return RoVpcId 只读vip的私有网络
+                     * 
                      */
                     int64_t GetRoVpcId() const;
 
                     /**
                      * 设置只读vip的私有网络
-                     * @param RoVpcId 只读vip的私有网络
+                     * @param _roVpcId 只读vip的私有网络
+                     * 
                      */
                     void SetRoVpcId(const int64_t& _roVpcId);
 
                     /**
                      * 判断参数 RoVpcId 是否已赋值
                      * @return RoVpcId 是否已赋值
+                     * 
                      */
                     bool RoVpcIdHasBeenSet() const;
 
                     /**
                      * 获取只读vip的端口号
                      * @return RoVport 只读vip的端口号
+                     * 
                      */
                     int64_t GetRoVport() const;
 
                     /**
                      * 设置只读vip的端口号
-                     * @param RoVport 只读vip的端口号
+                     * @param _roVport 只读vip的端口号
+                     * 
                      */
                     void SetRoVport(const int64_t& _roVport);
 
                     /**
                      * 判断参数 RoVport 是否已赋值
                      * @return RoVport 是否已赋值
+                     * 
                      */
                     bool RoVportHasBeenSet() const;
 
                     /**
                      * 获取只读vip
                      * @return RoVip 只读vip
+                     * 
                      */
                     std::string GetRoVip() const;
 
                     /**
                      * 设置只读vip
-                     * @param RoVip 只读vip
+                     * @param _roVip 只读vip
+                     * 
                      */
                     void SetRoVip(const std::string& _roVip);
 
                     /**
                      * 判断参数 RoVip 是否已赋值
                      * @return RoVip 是否已赋值
+                     * 
                      */
                     bool RoVipHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取CMK唯一标识符
                      * @return KeyId CMK唯一标识符
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK唯一标识符
-                     * @param KeyId CMK唯一标识符
+                     * @param _keyId CMK唯一标识符
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
                      * @return RotateDays 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     * 
                      */
                     uint64_t GetRotateDays() const;
 
                     /**
                      * 设置密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
-                     * @param RotateDays 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     * @param _rotateDays 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     * 
                      */
                     void SetRotateDays(const uint64_t& _rotateDays);
 
                     /**
                      * 判断参数 RotateDays 是否已赋值
                      * @return RotateDays 是否已赋值
+                     * 
                      */
                     bool RotateDaysHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取源参数模板 ID。
                      * @return TemplateId 源参数模板 ID。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置源参数模板 ID。
-                     * @param TemplateId 源参数模板 ID。
+                     * @param _templateId 源参数模板 ID。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取参数模板修改后的新名称。
                      * @return Name 参数模板修改后的新名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数模板修改后的新名称。
-                     * @param Name 参数模板修改后的新名称。
+                     * @param _name 参数模板修改后的新名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取参数模板修改后的新描述。
                      * @return Description 参数模板修改后的新描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置参数模板修改后的新描述。
-                     * @param Description 参数模板修改后的新描述。
+                     * @param _description 参数模板修改后的新描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取修改后的新参数列表。
                      * @return ParamList 修改后的新参数列表。
+                     * 
                      */
                     std::vector<InstanceParam> GetParamList() const;
 
                     /**
                      * 设置修改后的新参数列表。
-                     * @param ParamList 修改后的新参数列表。
+                     * @param _paramList 修改后的新参数列表。
+                     * 
                      */
                     void SetParamList(const std::vector<InstanceParam>& _paramList);
 
                     /**
                      * 判断参数 ParamList 是否已赋值
                      * @return ParamList 是否已赋值
+                     * 
                      */
                     bool ParamListHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取触发方式
                      * @return InvokeMethod 触发方式
+                     * 
                      */
                     std::string GetInvokeMethod() const;
 
                     /**
                      * 设置触发方式
-                     * @param InvokeMethod 触发方式
+                     * @param _invokeMethod 触发方式
+                     * 
                      */
                     void SetInvokeMethod(const std::string& _invokeMethod);
 
                     /**
                      * 判断参数 InvokeMethod 是否已赋值
                      * @return InvokeMethod 是否已赋值
+                     * 
                      */
                     bool InvokeMethodHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeExpr 触发表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvokeExpr() const;
 
                     /**
                      * 设置触发表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvokeExpr 触发表达式
+                     * @param _invokeExpr 触发表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvokeExpr(const std::string& _invokeExpr);
 
                     /**
                      * 判断参数 InvokeExpr 是否已赋值
                      * @return InvokeExpr 是否已赋值
+                     * 
                      */
                     bool InvokeExprHasBeenSet() const;
 

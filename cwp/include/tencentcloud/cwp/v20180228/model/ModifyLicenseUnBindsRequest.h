@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取授权类型
                      * @return LicenseType 授权类型
+                     * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
                      * 设置授权类型
-                     * @param LicenseType 授权类型
+                     * @param _licenseType 授权类型
+                     * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
                      * @return IsAll 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * 
                      */
                     bool GetIsAll() const;
 
                     /**
                      * 设置是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
-                     * @param IsAll 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * @param _isAll 是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)
+                     * 
                      */
                     void SetIsAll(const bool& _isAll);
 
                     /**
                      * 判断参数 IsAll 是否已赋值
                      * @return IsAll 是否已赋值
+                     * 
                      */
                     bool IsAllHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 最大长度=100
                      * @return QuuidList 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
 最大长度=100
+                     * 
                      */
                     std::vector<std::string> GetQuuidList() const;
 
                     /**
                      * 设置需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
 最大长度=100
-                     * @param QuuidList 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
+                     * @param _quuidList 需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.
 最大长度=100
+                     * 
                      */
                     void SetQuuidList(const std::vector<std::string>& _quuidList);
 
                     /**
                      * 判断参数 QuuidList 是否已赋值
                      * @return QuuidList 是否已赋值
+                     * 
                      */
                     bool QuuidListHasBeenSet() const;
 

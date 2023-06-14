@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseId 数据库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库id
+                     * @param _databaseId 数据库id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableId 表id
+                     * @param _tableId 表id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUserId 表责任人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOwnerUserId() const;
 
                     /**
                      * 设置表责任人ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerUserId 表责任人ID
+                     * @param _ownerUserId 表责任人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerUserId(const int64_t& _ownerUserId);
 
                     /**
                      * 判断参数 OwnerUserId 是否已赋值
                      * @return OwnerUserId 是否已赋值
+                     * 
                      */
                     bool OwnerUserIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUserName 表责任人名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerUserName() const;
 
                     /**
                      * 设置表责任人名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerUserName 表责任人名
+                     * @param _ownerUserName 表责任人名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerUserName(const std::string& _ownerUserName);
 
                     /**
                      * 判断参数 OwnerUserName 是否已赋值
                      * @return OwnerUserName 是否已赋值
+                     * 
                      */
                     bool OwnerUserNameHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseScore 库得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDatabaseScore() const;
 
                     /**
                      * 设置库得分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseScore 库得分
+                     * @param _databaseScore 库得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseScore(const double& _databaseScore);
 
                     /**
                      * 判断参数 DatabaseScore 是否已赋值
                      * @return DatabaseScore 是否已赋值
+                     * 
                      */
                     bool DatabaseScoreHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableScore 表得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTableScore() const;
 
                     /**
                      * 设置表得分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableScore 表得分
+                     * @param _tableScore 表得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableScore(const double& _tableScore);
 
                     /**
                      * 判断参数 TableScore 是否已赋值
                      * @return TableScore 是否已赋值
+                     * 
                      */
                     bool TableScoreHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastPeriodRatio 表环比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLastPeriodRatio() const;
 
                     /**
                      * 设置表环比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastPeriodRatio 表环比
+                     * @param _lastPeriodRatio 表环比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastPeriodRatio(const double& _lastPeriodRatio);
 
                     /**
                      * 判断参数 LastPeriodRatio 是否已赋值
                      * @return LastPeriodRatio 是否已赋值
+                     * 
                      */
                     bool LastPeriodRatioHasBeenSet() const;
 

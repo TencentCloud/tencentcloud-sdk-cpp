@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取标签信息
                      * @return Tags 标签信息
+                     * 
                      */
                     std::vector<TagInfoUnit> GetTags() const;
 
                     /**
                      * 设置标签信息
-                     * @param Tags 标签信息
+                     * @param _tags 标签信息
+                     * 
                      */
                     void SetTags(const std::vector<TagInfoUnit>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

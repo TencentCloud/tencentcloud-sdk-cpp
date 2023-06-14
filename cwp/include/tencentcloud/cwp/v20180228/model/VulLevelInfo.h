@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取// 危害等级：1-低危；2-中危；3-高危；4-严重
                      * @return VulLevel // 危害等级：1-低危；2-中危；3-高危；4-严重
+                     * 
                      */
                     uint64_t GetVulLevel() const;
 
                     /**
                      * 设置// 危害等级：1-低危；2-中危；3-高危；4-严重
-                     * @param VulLevel // 危害等级：1-低危；2-中危；3-高危；4-严重
+                     * @param _vulLevel // 危害等级：1-低危；2-中危；3-高危；4-严重
+                     * 
                      */
                     void SetVulLevel(const uint64_t& _vulLevel);
 
                     /**
                      * 判断参数 VulLevel 是否已赋值
                      * @return VulLevel 是否已赋值
+                     * 
                      */
                     bool VulLevelHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Count 数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置数量
-                     * @param Count 数量
+                     * @param _count 数量
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

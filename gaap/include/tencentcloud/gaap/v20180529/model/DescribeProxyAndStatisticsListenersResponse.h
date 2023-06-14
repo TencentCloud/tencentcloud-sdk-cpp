@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取可以统计的通道信息
                      * @return ProxySet 可以统计的通道信息
+                     * 
                      */
                     std::vector<ProxySimpleInfo> GetProxySet() const;
 
                     /**
                      * 判断参数 ProxySet 是否已赋值
                      * @return ProxySet 是否已赋值
+                     * 
                      */
                     bool ProxySetHasBeenSet() const;
 
                     /**
                      * 获取通道数量
                      * @return TotalCount 通道数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

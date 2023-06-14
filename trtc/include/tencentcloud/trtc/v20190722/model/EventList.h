@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数据内容
                      * @return Content 数据内容
+                     * 
                      */
                     std::vector<EventMessage> GetContent() const;
 
                     /**
                      * 设置数据内容
-                     * @param Content 数据内容
+                     * @param _content 数据内容
+                     * 
                      */
                     void SetContent(const std::vector<EventMessage>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取发送端的userId
                      * @return PeerId 发送端的userId
+                     * 
                      */
                     std::string GetPeerId() const;
 
                     /**
                      * 设置发送端的userId
-                     * @param PeerId 发送端的userId
+                     * @param _peerId 发送端的userId
+                     * 
                      */
                     void SetPeerId(const std::string& _peerId);
 
                     /**
                      * 判断参数 PeerId 是否已赋值
                      * @return PeerId 是否已赋值
+                     * 
                      */
                     bool PeerIdHasBeenSet() const;
 

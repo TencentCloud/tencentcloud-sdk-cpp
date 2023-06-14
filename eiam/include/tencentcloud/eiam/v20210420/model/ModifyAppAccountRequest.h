@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取账号ID。
                      * @return AccountId 账号ID。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账号ID。
-                     * @param AccountId 账号ID。
+                     * @param _accountId 账号ID。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取账号名称。未传入该参数时，表示不进行修改。
                      * @return AccountName 账号名称。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名称。未传入该参数时，表示不进行修改。
-                     * @param AccountName 账号名称。未传入该参数时，表示不进行修改。
+                     * @param _accountName 账号名称。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取账号密码。未传入该参数时，表示不进行修改。
                      * @return Password 账号密码。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置账号密码。未传入该参数时，表示不进行修改。
-                     * @param Password 账号密码。未传入该参数时，表示不进行修改。
+                     * @param _password 账号密码。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取描述，未传入该参数时，表示不进行修改。
                      * @return Description 描述，未传入该参数时，表示不进行修改。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述，未传入该参数时，表示不进行修改。
-                     * @param Description 描述，未传入该参数时，表示不进行修改。
+                     * @param _description 描述，未传入该参数时，表示不进行修改。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

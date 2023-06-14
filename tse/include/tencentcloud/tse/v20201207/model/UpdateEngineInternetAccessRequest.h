@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取引擎ID
                      * @return InstanceId 引擎ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置引擎ID
-                     * @param InstanceId 引擎ID
+                     * @param _instanceId 引擎ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取引擎类型
                      * @return EngineType 引擎类型
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置引擎类型
-                     * @param EngineType 引擎类型
+                     * @param _engineType 引擎类型
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 
                     /**
                      * 获取是否开启客户端公网访问，true开 false关
                      * @return EnableClientInternetAccess 是否开启客户端公网访问，true开 false关
+                     * 
                      */
                     bool GetEnableClientInternetAccess() const;
 
                     /**
                      * 设置是否开启客户端公网访问，true开 false关
-                     * @param EnableClientInternetAccess 是否开启客户端公网访问，true开 false关
+                     * @param _enableClientInternetAccess 是否开启客户端公网访问，true开 false关
+                     * 
                      */
                     void SetEnableClientInternetAccess(const bool& _enableClientInternetAccess);
 
                     /**
                      * 判断参数 EnableClientInternetAccess 是否已赋值
                      * @return EnableClientInternetAccess 是否已赋值
+                     * 
                      */
                     bool EnableClientInternetAccessHasBeenSet() const;
 

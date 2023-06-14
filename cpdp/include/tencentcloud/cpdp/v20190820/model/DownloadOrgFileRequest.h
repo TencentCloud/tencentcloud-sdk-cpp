@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取收单系统分配的开放ID
                      * @return OpenId 收单系统分配的开放ID
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * @param _openId 收单系统分配的开放ID
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取收单系统分配的密钥
                      * @return OpenKey 收单系统分配的密钥
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * @param _openKey 收单系统分配的密钥
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
                      * @return Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * 
                      */
                     std::string GetStorage() const;
 
                     /**
                      * 设置存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
-                     * @param Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * @param _storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * 
                      */
                     void SetStorage(const std::string& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取文件路径
                      * @return FilePath 文件路径
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件路径
-                     * @param FilePath 文件路径
+                     * @param _filePath 文件路径
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

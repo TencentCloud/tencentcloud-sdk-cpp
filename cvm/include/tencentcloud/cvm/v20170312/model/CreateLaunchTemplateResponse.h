@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取当通过本接口来创建实例启动模板时会返回该参数，表示创建成功的实例启动模板`ID`。
                      * @return LaunchTemplateId 当通过本接口来创建实例启动模板时会返回该参数，表示创建成功的实例启动模板`ID`。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 

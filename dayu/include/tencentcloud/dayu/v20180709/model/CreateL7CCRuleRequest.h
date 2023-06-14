@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]
                      * @return Method 操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]
-                     * @param Method 操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]
+                     * @param _method 操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取7层转发规则ID，例如：rule-0000001
                      * @return RuleId 7层转发规则ID，例如：rule-0000001
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置7层转发规则ID，例如：rule-0000001
-                     * @param RuleId 7层转发规则ID，例如：rule-0000001
+                     * @param _ruleId 7层转发规则ID，例如：rule-0000001
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
                      * @return RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
+                     * 
                      */
                     std::vector<CCRuleConfig> GetRuleConfig() const;
 
                     /**
                      * 设置7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
-                     * @param RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
+                     * @param _ruleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
+                     * 
                      */
                     void SetRuleConfig(const std::vector<CCRuleConfig>& _ruleConfig);
 
                     /**
                      * 判断参数 RuleConfig 是否已赋值
                      * @return RuleConfig 是否已赋值
+                     * 
                      */
                     bool RuleConfigHasBeenSet() const;
 

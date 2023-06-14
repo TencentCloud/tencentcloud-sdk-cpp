@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取命名空间是否存在
                      * @return IsExist 命名空间是否存在
+                     * 
                      */
                     bool GetIsExist() const;
 
                     /**
                      * 设置命名空间是否存在
-                     * @param IsExist 命名空间是否存在
+                     * @param _isExist 命名空间是否存在
+                     * 
                      */
                     void SetIsExist(const bool& _isExist);
 
                     /**
                      * 判断参数 IsExist 是否已赋值
                      * @return IsExist 是否已赋值
+                     * 
                      */
                     bool IsExistHasBeenSet() const;
 
                     /**
                      * 获取是否为保留命名空间
                      * @return IsPreserved 是否为保留命名空间
+                     * 
                      */
                     bool GetIsPreserved() const;
 
                     /**
                      * 设置是否为保留命名空间
-                     * @param IsPreserved 是否为保留命名空间
+                     * @param _isPreserved 是否为保留命名空间
+                     * 
                      */
                     void SetIsPreserved(const bool& _isPreserved);
 
                     /**
                      * 判断参数 IsPreserved 是否已赋值
                      * @return IsPreserved 是否已赋值
+                     * 
                      */
                     bool IsPreservedHasBeenSet() const;
 

@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ID 项目ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID
-                     * @param ID 项目ID
+                     * @param _iD 项目ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取日志导出起始时间
                      * @return StartTime 日志导出起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志导出起始时间
-                     * @param StartTime 日志导出起始时间
+                     * @param _startTime 日志导出起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志导出结束时间
                      * @return EndTime 日志导出结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志导出结束时间
-                     * @param EndTime 日志导出结束时间
+                     * @param _endTime 日志导出结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取日志导出检索语句
                      * @return Query 日志导出检索语句
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置日志导出检索语句
-                     * @param Query 日志导出检索语句
+                     * @param _query 日志导出检索语句
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取日志导出数量, 最大值1000万
                      * @return Count 日志导出数量, 最大值1000万
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置日志导出数量, 最大值1000万
-                     * @param Count 日志导出数量, 最大值1000万
+                     * @param _count 日志导出数量, 最大值1000万
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取日志导出时间排序。desc，asc，默认为desc
                      * @return Order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置日志导出时间排序。desc，asc，默认为desc
-                     * @param Order 日志导出时间排序。desc，asc，默认为desc
+                     * @param _order 日志导出时间排序。desc，asc，默认为desc
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取日志导出数据格式。json，csv，默认为json
                      * @return Format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志导出数据格式。json，csv，默认为json
-                     * @param Format 日志导出数据格式。json，csv，默认为json
+                     * @param _format 日志导出数据格式。json，csv，默认为json
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

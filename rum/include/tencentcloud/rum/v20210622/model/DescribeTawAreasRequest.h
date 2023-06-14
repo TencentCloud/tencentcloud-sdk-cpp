@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取片区Id
                      * @return AreaIds 片区Id
+                     * 
                      */
                     std::vector<int64_t> GetAreaIds() const;
 
                     /**
                      * 设置片区Id
-                     * @param AreaIds 片区Id
+                     * @param _areaIds 片区Id
+                     * 
                      */
                     void SetAreaIds(const std::vector<int64_t>& _areaIds);
 
                     /**
                      * 判断参数 AreaIds 是否已赋值
                      * @return AreaIds 是否已赋值
+                     * 
                      */
                     bool AreaIdsHasBeenSet() const;
 
                     /**
                      * 获取片区Key
                      * @return AreaKeys 片区Key
+                     * 
                      */
                     std::vector<std::string> GetAreaKeys() const;
 
                     /**
                      * 设置片区Key
-                     * @param AreaKeys 片区Key
+                     * @param _areaKeys 片区Key
+                     * 
                      */
                     void SetAreaKeys(const std::vector<std::string>& _areaKeys);
 
                     /**
                      * 判断参数 AreaKeys 是否已赋值
                      * @return AreaKeys 是否已赋值
+                     * 
                      */
                     bool AreaKeysHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取片区状态(1=有效，2=无效)
                      * @return AreaStatuses 片区状态(1=有效，2=无效)
+                     * 
                      */
                     std::vector<int64_t> GetAreaStatuses() const;
 
                     /**
                      * 设置片区状态(1=有效，2=无效)
-                     * @param AreaStatuses 片区状态(1=有效，2=无效)
+                     * @param _areaStatuses 片区状态(1=有效，2=无效)
+                     * 
                      */
                     void SetAreaStatuses(const std::vector<int64_t>& _areaStatuses);
 
                     /**
                      * 判断参数 AreaStatuses 是否已赋值
                      * @return AreaStatuses 是否已赋值
+                     * 
                      */
                     bool AreaStatusesHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

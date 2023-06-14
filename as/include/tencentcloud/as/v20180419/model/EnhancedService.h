@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取开启云安全服务。若不指定该参数，则默认开启云安全服务。
                      * @return SecurityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+                     * 
                      */
                     RunSecurityServiceEnabled GetSecurityService() const;
 
                     /**
                      * 设置开启云安全服务。若不指定该参数，则默认开启云安全服务。
-                     * @param SecurityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+                     * @param _securityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+                     * 
                      */
                     void SetSecurityService(const RunSecurityServiceEnabled& _securityService);
 
                     /**
                      * 判断参数 SecurityService 是否已赋值
                      * @return SecurityService 是否已赋值
+                     * 
                      */
                     bool SecurityServiceHasBeenSet() const;
 
                     /**
                      * 获取开启云监控服务。若不指定该参数，则默认开启云监控服务。
                      * @return MonitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * 
                      */
                     RunMonitorServiceEnabled GetMonitorService() const;
 
                     /**
                      * 设置开启云监控服务。若不指定该参数，则默认开启云监控服务。
-                     * @param MonitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * @param _monitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+                     * 
                      */
                     void SetMonitorService(const RunMonitorServiceEnabled& _monitorService);
 
                     /**
                      * 判断参数 MonitorService 是否已赋值
                      * @return MonitorService 是否已赋值
+                     * 
                      */
                     bool MonitorServiceHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃，查询时会返回空值，请勿使用。
                      * @return AutomationService 该参数已废弃，查询时会返回空值，请勿使用。
+                     * 
                      */
                     std::vector<RunAutomationServiceEnabled> GetAutomationService() const;
 
                     /**
                      * 设置该参数已废弃，查询时会返回空值，请勿使用。
-                     * @param AutomationService 该参数已废弃，查询时会返回空值，请勿使用。
+                     * @param _automationService 该参数已废弃，查询时会返回空值，请勿使用。
+                     * 
                      */
                     void SetAutomationService(const std::vector<RunAutomationServiceEnabled>& _automationService);
 
                     /**
                      * 判断参数 AutomationService 是否已赋值
                      * @return AutomationService 是否已赋值
+                     * 
                      */
                     bool AutomationServiceHasBeenSet() const;
 
                     /**
                      * 获取开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutomationToolsService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RunAutomationServiceEnabled GetAutomationToolsService() const;
 
                     /**
                      * 设置开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutomationToolsService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _automationToolsService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutomationToolsService(const RunAutomationServiceEnabled& _automationToolsService);
 
                     /**
                      * 判断参数 AutomationToolsService 是否已赋值
                      * @return AutomationToolsService 是否已赋值
+                     * 
                      */
                     bool AutomationToolsServiceHasBeenSet() const;
 

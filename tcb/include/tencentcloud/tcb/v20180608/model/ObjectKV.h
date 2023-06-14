@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取object 的 key
                      * @return Key object 的 key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置object 的 key
-                     * @param Key object 的 key
+                     * @param _key object 的 key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取object key 对应的 value
                      * @return Value object key 对应的 value
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置object key 对应的 value
-                     * @param Value object key 对应的 value
+                     * @param _value object key 对应的 value
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

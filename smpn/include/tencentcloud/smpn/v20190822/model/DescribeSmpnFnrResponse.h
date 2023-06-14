@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取虚假号码识别回应内容
                      * @return ResponseData 虚假号码识别回应内容
+                     * 
                      */
                     FNRResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

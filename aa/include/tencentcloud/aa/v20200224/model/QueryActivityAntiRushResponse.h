@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostTime 操作时间戳，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPostTime() const;
 
                     /**
                      * 判断参数 PostTime 是否已赋值
                      * @return PostTime 是否已赋值
+                     * 
                      */
                     bool PostTimeHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIp 用户操作的真实外网 IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserIp() const;
 
                     /**
                      * 判断参数 UserIp 是否已赋值
                      * @return UserIp 是否已赋值
+                     * 
                      */
                     bool UserIpHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 1 - 4：恶意等级由低到高。
                      * @return Level 0：表示无恶意。
 1 - 4：恶意等级由低到高。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -124,12 +130,14 @@ namespace TencentCloud
 201，环境异常，操作ip/设备/环境存在异常。当前ip为非常用ip或恶意ip段；
 205，非公网有效ip，传进来的IP地址为内网ip地址或者ip保留地址；
 206，设备异常，该设备存在异常的使用行为
+                     * 
                      */
                     std::vector<int64_t> GetRiskType() const;
 
                     /**
                      * 判断参数 RiskType 是否已赋值
                      * @return RiskType 是否已赋值
+                     * 
                      */
                     bool RiskTypeHasBeenSet() const;
 
@@ -138,12 +146,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateAccount accountType是QQ或微信开放账号时，用于标识QQ或微信用户登录后关联业务自身的账号ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssociateAccount() const;
 
                     /**
                      * 判断参数 AssociateAccount 是否已赋值
                      * @return AssociateAccount 是否已赋值
+                     * 
                      */
                     bool AssociateAccountHasBeenSet() const;
 
@@ -152,12 +162,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uid uid值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
@@ -168,12 +180,14 @@ namespace TencentCloud
                      * @return RootId 用户操作的目的ID 
 比如：点赞，该字段就是被点 赞的消息 id，如果是投票，就是被投号码的 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRootId() const;
 
                     /**
                      * 判断参数 RootId 是否已赋值
                      * @return RootId 是否已赋值
+                     * 
                      */
                     bool RootIdHasBeenSet() const;
 
@@ -182,12 +196,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeDesc 业务侧错误码。成功时返回Success，错误时返回具体业务错误原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeDesc() const;
 
                     /**
                      * 判断参数 CodeDesc 是否已赋值
                      * @return CodeDesc 是否已赋值
+                     * 
                      */
                     bool CodeDescHasBeenSet() const;
 

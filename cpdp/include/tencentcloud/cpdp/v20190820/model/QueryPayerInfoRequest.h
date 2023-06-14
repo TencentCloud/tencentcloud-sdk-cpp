@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox
                      * @return Profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox
-                     * @param Profile 接入环境。沙箱环境填sandbox
+                     * @param _profile 接入环境。沙箱环境填sandbox
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

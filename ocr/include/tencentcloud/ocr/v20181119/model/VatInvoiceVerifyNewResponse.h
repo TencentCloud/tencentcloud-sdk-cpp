@@ -50,48 +50,56 @@ namespace TencentCloud
                     /**
                      * 获取增值税发票信息，详情请点击左侧链接。
                      * @return Invoice 增值税发票信息，详情请点击左侧链接。
+                     * 
                      */
                     VatInvoice GetInvoice() const;
 
                     /**
                      * 判断参数 Invoice 是否已赋值
                      * @return Invoice 是否已赋值
+                     * 
                      */
                     bool InvoiceHasBeenSet() const;
 
                     /**
                      * 获取机动车销售统一发票信息
                      * @return VehicleInvoiceInfo 机动车销售统一发票信息
+                     * 
                      */
                     VehicleInvoiceInfo GetVehicleInvoiceInfo() const;
 
                     /**
                      * 判断参数 VehicleInvoiceInfo 是否已赋值
                      * @return VehicleInvoiceInfo 是否已赋值
+                     * 
                      */
                     bool VehicleInvoiceInfoHasBeenSet() const;
 
                     /**
                      * 获取二手车销售统一发票信息
                      * @return UsedVehicleInvoiceInfo 二手车销售统一发票信息
+                     * 
                      */
                     UsedVehicleInvoiceInfo GetUsedVehicleInvoiceInfo() const;
 
                     /**
                      * 判断参数 UsedVehicleInvoiceInfo 是否已赋值
                      * @return UsedVehicleInvoiceInfo 是否已赋值
+                     * 
                      */
                     bool UsedVehicleInvoiceInfoHasBeenSet() const;
 
                     /**
                      * 获取通行费发票信息
                      * @return PassInvoiceInfoList 通行费发票信息
+                     * 
                      */
                     std::vector<PassInvoiceInfo> GetPassInvoiceInfoList() const;
 
                     /**
                      * 判断参数 PassInvoiceInfoList 是否已赋值
                      * @return PassInvoiceInfoList 是否已赋值
+                     * 
                      */
                     bool PassInvoiceInfoListHasBeenSet() const;
 

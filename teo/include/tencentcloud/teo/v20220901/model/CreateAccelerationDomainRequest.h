@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取加速域名所属站点ID。
                      * @return ZoneId 加速域名所属站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置加速域名所属站点ID。
-                     * @param ZoneId 加速域名所属站点ID。
+                     * @param _zoneId 加速域名所属站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取加速域名名称。
                      * @return DomainName 加速域名名称。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置加速域名名称。
-                     * @param DomainName 加速域名名称。
+                     * @param _domainName 加速域名名称。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取源站信息。
                      * @return OriginInfo 源站信息。
+                     * 
                      */
                     OriginInfo GetOriginInfo() const;
 
                     /**
                      * 设置源站信息。
-                     * @param OriginInfo 源站信息。
+                     * @param _originInfo 源站信息。
+                     * 
                      */
                     void SetOriginInfo(const OriginInfo& _originInfo);
 
                     /**
                      * 判断参数 OriginInfo 是否已赋值
                      * @return OriginInfo 是否已赋值
+                     * 
                      */
                     bool OriginInfoHasBeenSet() const;
 

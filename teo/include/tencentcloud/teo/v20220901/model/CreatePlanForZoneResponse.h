@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取购买的资源名字列表。
                      * @return ResourceNames 购买的资源名字列表。
+                     * 
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
                      * 判断参数 ResourceNames 是否已赋值
                      * @return ResourceNames 是否已赋值
+                     * 
                      */
                     bool ResourceNamesHasBeenSet() const;
 
                     /**
                      * 获取购买的订单号列表。
                      * @return DealNames 购买的订单号列表。
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 

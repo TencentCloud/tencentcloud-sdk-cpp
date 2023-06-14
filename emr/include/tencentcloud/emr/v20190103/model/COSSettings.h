@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取COS SecretId
                      * @return CosSecretId COS SecretId
+                     * 
                      */
                     std::string GetCosSecretId() const;
 
                     /**
                      * 设置COS SecretId
-                     * @param CosSecretId COS SecretId
+                     * @param _cosSecretId COS SecretId
+                     * 
                      */
                     void SetCosSecretId(const std::string& _cosSecretId);
 
                     /**
                      * 判断参数 CosSecretId 是否已赋值
                      * @return CosSecretId 是否已赋值
+                     * 
                      */
                     bool CosSecretIdHasBeenSet() const;
 
                     /**
                      * 获取COS SecrectKey
                      * @return CosSecretKey COS SecrectKey
+                     * 
                      */
                     std::string GetCosSecretKey() const;
 
                     /**
                      * 设置COS SecrectKey
-                     * @param CosSecretKey COS SecrectKey
+                     * @param _cosSecretKey COS SecrectKey
+                     * 
                      */
                     void SetCosSecretKey(const std::string& _cosSecretKey);
 
                     /**
                      * 判断参数 CosSecretKey 是否已赋值
                      * @return CosSecretKey 是否已赋值
+                     * 
                      */
                     bool CosSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取日志存储在COS上的路径
                      * @return LogOnCosPath 日志存储在COS上的路径
+                     * 
                      */
                     std::string GetLogOnCosPath() const;
 
                     /**
                      * 设置日志存储在COS上的路径
-                     * @param LogOnCosPath 日志存储在COS上的路径
+                     * @param _logOnCosPath 日志存储在COS上的路径
+                     * 
                      */
                     void SetLogOnCosPath(const std::string& _logOnCosPath);
 
                     /**
                      * 判断参数 LogOnCosPath 是否已赋值
                      * @return LogOnCosPath 是否已赋值
+                     * 
                      */
                     bool LogOnCosPathHasBeenSet() const;
 

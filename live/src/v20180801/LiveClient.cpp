@@ -5372,6 +5372,49 @@ LiveClient::ModifyPullStreamStatusOutcomeCallable LiveClient::ModifyPullStreamSt
     return task->get_future();
 }
 
+LiveClient::RestartLivePullStreamTaskOutcome LiveClient::RestartLivePullStreamTask(const RestartLivePullStreamTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartLivePullStreamTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartLivePullStreamTaskResponse rsp = RestartLivePullStreamTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartLivePullStreamTaskOutcome(rsp);
+        else
+            return RestartLivePullStreamTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartLivePullStreamTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::RestartLivePullStreamTaskAsync(const RestartLivePullStreamTaskRequest& request, const RestartLivePullStreamTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartLivePullStreamTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::RestartLivePullStreamTaskOutcomeCallable LiveClient::RestartLivePullStreamTaskCallable(const RestartLivePullStreamTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartLivePullStreamTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartLivePullStreamTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::ResumeDelayLiveStreamOutcome LiveClient::ResumeDelayLiveStream(const ResumeDelayLiveStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeDelayLiveStream");

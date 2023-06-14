@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取可用区部署方式，可能的值为：0-单可用区；1-多可用区
                      * @return DeployMode 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+                     * 
                      */
                     std::vector<int64_t> GetDeployMode() const;
 
                     /**
                      * 设置可用区部署方式，可能的值为：0-单可用区；1-多可用区
-                     * @param DeployMode 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+                     * @param _deployMode 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+                     * 
                      */
                     void SetDeployMode(const std::vector<int64_t>& _deployMode);
 
                     /**
                      * 判断参数 DeployMode 是否已赋值
                      * @return DeployMode 是否已赋值
+                     * 
                      */
                     bool DeployModeHasBeenSet() const;
 
                     /**
                      * 获取主实例所在的可用区
                      * @return MasterZone 主实例所在的可用区
+                     * 
                      */
                     std::vector<std::string> GetMasterZone() const;
 
                     /**
                      * 设置主实例所在的可用区
-                     * @param MasterZone 主实例所在的可用区
+                     * @param _masterZone 主实例所在的可用区
+                     * 
                      */
                     void SetMasterZone(const std::vector<std::string>& _masterZone);
 
                     /**
                      * 判断参数 MasterZone 是否已赋值
                      * @return MasterZone 是否已赋值
+                     * 
                      */
                     bool MasterZoneHasBeenSet() const;
 
                     /**
                      * 获取实例为多可用区部署时，备库1所在的可用区
                      * @return SlaveZone 实例为多可用区部署时，备库1所在的可用区
+                     * 
                      */
                     std::vector<std::string> GetSlaveZone() const;
 
                     /**
                      * 设置实例为多可用区部署时，备库1所在的可用区
-                     * @param SlaveZone 实例为多可用区部署时，备库1所在的可用区
+                     * @param _slaveZone 实例为多可用区部署时，备库1所在的可用区
+                     * 
                      */
                     void SetSlaveZone(const std::vector<std::string>& _slaveZone);
 
                     /**
                      * 判断参数 SlaveZone 是否已赋值
                      * @return SlaveZone 是否已赋值
+                     * 
                      */
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
                      * 获取实例为多可用区部署时，备库2所在的可用区
                      * @return BackupZone 实例为多可用区部署时，备库2所在的可用区
+                     * 
                      */
                     std::vector<std::string> GetBackupZone() const;
 
                     /**
                      * 设置实例为多可用区部署时，备库2所在的可用区
-                     * @param BackupZone 实例为多可用区部署时，备库2所在的可用区
+                     * @param _backupZone 实例为多可用区部署时，备库2所在的可用区
+                     * 
                      */
                     void SetBackupZone(const std::vector<std::string>& _backupZone);
 
                     /**
                      * 判断参数 BackupZone 是否已赋值
                      * @return BackupZone 是否已赋值
+                     * 
                      */
                     bool BackupZoneHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Employees 员工数据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
                      * 判断参数 Employees 是否已赋值
                      * @return Employees 是否已赋值
+                     * 
                      */
                     bool EmployeesHasBeenSet() const;
 
@@ -63,36 +65,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 偏移量，默认为0，最大为20000
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回最大数量，最大为20
                      * @return Limit 返回最大数量，最大为20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取符合条件的员工数量
                      * @return TotalCount 符合条件的员工数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

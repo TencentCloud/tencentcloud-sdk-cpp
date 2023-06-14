@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取DDoS区域封禁配置列表
                      * @return ConfigList DDoS区域封禁配置列表
+                     * 
                      */
                     std::vector<DDoSGeoIPBlockConfigRelation> GetConfigList() const;
 
                     /**
                      * 判断参数 ConfigList 是否已赋值
                      * @return ConfigList 是否已赋值
+                     * 
                      */
                     bool ConfigListHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取城市 ID。
                      * @return CityId 城市 ID。
+                     * 
                      */
                     uint64_t GetCityId() const;
 
                     /**
                      * 设置城市 ID。
-                     * @param CityId 城市 ID。
+                     * @param _cityId 城市 ID。
+                     * 
                      */
                     void SetCityId(const uint64_t& _cityId);
 
                     /**
                      * 判断参数 CityId 是否已赋值
                      * @return CityId 是否已赋值
+                     * 
                      */
                     bool CityIdHasBeenSet() const;
 
                     /**
                      * 获取省份 ID。
                      * @return ProvinceId 省份 ID。
+                     * 
                      */
                     uint64_t GetProvinceId() const;
 
                     /**
                      * 设置省份 ID。
-                     * @param ProvinceId 省份 ID。
+                     * @param _provinceId 省份 ID。
+                     * 
                      */
                     void SetProvinceId(const uint64_t& _provinceId);
 
                     /**
                      * 判断参数 ProvinceId 是否已赋值
                      * @return ProvinceId 是否已赋值
+                     * 
                      */
                     bool ProvinceIdHasBeenSet() const;
 
                     /**
                      * 获取国家ID，暂只支持国内：1。
                      * @return CountryId 国家ID，暂只支持国内：1。
+                     * 
                      */
                     uint64_t GetCountryId() const;
 
                     /**
                      * 设置国家ID，暂只支持国内：1。
-                     * @param CountryId 国家ID，暂只支持国内：1。
+                     * @param _countryId 国家ID，暂只支持国内：1。
+                     * 
                      */
                     void SetCountryId(const uint64_t& _countryId);
 
                     /**
                      * 判断参数 CountryId 是否已赋值
                      * @return CountryId 是否已赋值
+                     * 
                      */
                     bool CountryIdHasBeenSet() const;
 
                     /**
                      * 获取位置名称
                      * @return Location 位置名称
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置位置名称
-                     * @param Location 位置名称
+                     * @param _location 位置名称
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

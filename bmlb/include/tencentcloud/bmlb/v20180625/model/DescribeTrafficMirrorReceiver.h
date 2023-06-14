@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取物理机实例ID。
                      * @return InstanceId 物理机实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置物理机实例ID。
-                     * @param InstanceId 物理机实例ID。
+                     * @param _instanceId 物理机实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取物理机绑定的端口。
                      * @return Port 物理机绑定的端口。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置物理机绑定的端口。
-                     * @param Port 物理机绑定的端口。
+                     * @param _port 物理机绑定的端口。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取印章主体内容
                      * @return SealBody 印章主体内容
+                     * 
                      */
                     std::string GetSealBody() const;
 
                     /**
                      * 设置印章主体内容
-                     * @param SealBody 印章主体内容
+                     * @param _sealBody 印章主体内容
+                     * 
                      */
                     void SetSealBody(const std::string& _sealBody);
 
                     /**
                      * 判断参数 SealBody 是否已赋值
                      * @return SealBody 是否已赋值
+                     * 
                      */
                     bool SealBodyHasBeenSet() const;
 
                     /**
                      * 获取印章坐标
                      * @return Location 印章坐标
+                     * 
                      */
                     Rect GetLocation() const;
 
                     /**
                      * 设置印章坐标
-                     * @param Location 印章坐标
+                     * @param _location 印章坐标
+                     * 
                      */
                     void SetLocation(const Rect& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取印章其它文本内容
                      * @return OtherTexts 印章其它文本内容
+                     * 
                      */
                     std::vector<std::string> GetOtherTexts() const;
 
                     /**
                      * 设置印章其它文本内容
-                     * @param OtherTexts 印章其它文本内容
+                     * @param _otherTexts 印章其它文本内容
+                     * 
                      */
                     void SetOtherTexts(const std::vector<std::string>& _otherTexts);
 
                     /**
                      * 判断参数 OtherTexts 是否已赋值
                      * @return OtherTexts 是否已赋值
+                     * 
                      */
                     bool OtherTextsHasBeenSet() const;
 
@@ -114,6 +123,7 @@ namespace TencentCloud
 方形印章：2
 菱形印章：3
 三角形印章：4
+                     * 
                      */
                     std::string GetSealShape() const;
 
@@ -124,18 +134,20 @@ namespace TencentCloud
 方形印章：2
 菱形印章：3
 三角形印章：4
-                     * @param SealShape 印章类型，表示为:
+                     * @param _sealShape 印章类型，表示为:
 圆形印章：0
 椭圆形印章：1
 方形印章：2
 菱形印章：3
 三角形印章：4
+                     * 
                      */
                     void SetSealShape(const std::string& _sealShape);
 
                     /**
                      * 判断参数 SealShape 是否已赋值
                      * @return SealShape 是否已赋值
+                     * 
                      */
                     bool SealShapeHasBeenSet() const;
 

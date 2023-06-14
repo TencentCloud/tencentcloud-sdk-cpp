@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取识别出的文本行内容
                      * @return DetectedText 识别出的文本行内容
+                     * 
                      */
                     std::string GetDetectedText() const;
 
                     /**
                      * 设置识别出的文本行内容
-                     * @param DetectedText 识别出的文本行内容
+                     * @param _detectedText 识别出的文本行内容
+                     * 
                      */
                     void SetDetectedText(const std::string& _detectedText);
 
                     /**
                      * 判断参数 DetectedText 是否已赋值
                      * @return DetectedText 是否已赋值
+                     * 
                      */
                     bool DetectedTextHasBeenSet() const;
 
                     /**
                      * 获取置信度 0 ~100
                      * @return Confidence 置信度 0 ~100
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置置信度 0 ~100
-                     * @param Confidence 置信度 0 ~100
+                     * @param _confidence 置信度 0 ~100
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取文本行坐标，以四个顶点坐标表示
                      * @return Polygon 文本行坐标，以四个顶点坐标表示
+                     * 
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
                      * 设置文本行坐标，以四个顶点坐标表示
-                     * @param Polygon 文本行坐标，以四个顶点坐标表示
+                     * @param _polygon 文本行坐标，以四个顶点坐标表示
+                     * 
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
 
                     /**
                      * 判断参数 Polygon 是否已赋值
                      * @return Polygon 是否已赋值
+                     * 
                      */
                     bool PolygonHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
                      * @return AdvancedInfo 此字段为扩展字段。
 GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 设置此字段为扩展字段。
 GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
-                     * @param AdvancedInfo 此字段为扩展字段。
+                     * @param _advancedInfo 此字段为扩展字段。
 GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
+                     * 
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 

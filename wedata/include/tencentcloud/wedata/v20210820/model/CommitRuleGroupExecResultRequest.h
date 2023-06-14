@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取preject id
                      * @return ProjectId preject id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置preject id
-                     * @param ProjectId preject id
+                     * @param _projectId preject id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取rule group exec id
                      * @return RuleGroupExecId rule group exec id
+                     * 
                      */
                     uint64_t GetRuleGroupExecId() const;
 
                     /**
                      * 设置rule group exec id
-                     * @param RuleGroupExecId rule group exec id
+                     * @param _ruleGroupExecId rule group exec id
+                     * 
                      */
                     void SetRuleGroupExecId(const uint64_t& _ruleGroupExecId);
 
                     /**
                      * 判断参数 RuleGroupExecId 是否已赋值
                      * @return RuleGroupExecId 是否已赋值
+                     * 
                      */
                     bool RuleGroupExecIdHasBeenSet() const;
 
                     /**
                      * 获取group exec state
                      * @return RuleGroupState group exec state
+                     * 
                      */
                     std::string GetRuleGroupState() const;
 
                     /**
                      * 设置group exec state
-                     * @param RuleGroupState group exec state
+                     * @param _ruleGroupState group exec state
+                     * 
                      */
                     void SetRuleGroupState(const std::string& _ruleGroupState);
 
                     /**
                      * 判断参数 RuleGroupState 是否已赋值
                      * @return RuleGroupState 是否已赋值
+                     * 
                      */
                     bool RuleGroupStateHasBeenSet() const;
 
                     /**
                      * 获取runner rule exec result list
                      * @return RuleExecResults runner rule exec result list
+                     * 
                      */
                     std::vector<RunnerRuleExecResult> GetRuleExecResults() const;
 
                     /**
                      * 设置runner rule exec result list
-                     * @param RuleExecResults runner rule exec result list
+                     * @param _ruleExecResults runner rule exec result list
+                     * 
                      */
                     void SetRuleExecResults(const std::vector<RunnerRuleExecResult>& _ruleExecResults);
 
                     /**
                      * 判断参数 RuleExecResults 是否已赋值
                      * @return RuleExecResults 是否已赋值
+                     * 
                      */
                     bool RuleExecResultsHasBeenSet() const;
 

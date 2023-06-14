@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取组织名称
                      * @return ConsortiumName 组织名称
+                     * 
                      */
                     std::string GetConsortiumName() const;
 
                     /**
                      * 判断参数 ConsortiumName 是否已赋值
                      * @return ConsortiumName 是否已赋值
+                     * 
                      */
                     bool ConsortiumNameHasBeenSet() const;
 
                     /**
                      * 获取区块链组织名称
                      * @return ChainAgency 区块链组织名称
+                     * 
                      */
                     std::string GetChainAgency() const;
 
                     /**
                      * 判断参数 ChainAgency 是否已赋值
                      * @return ChainAgency 是否已赋值
+                     * 
                      */
                     bool ChainAgencyHasBeenSet() const;
 

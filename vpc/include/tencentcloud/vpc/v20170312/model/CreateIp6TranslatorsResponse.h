@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取转换实例的唯一ID数组，形如"ip6-xxxxxxxx"
                      * @return Ip6TranslatorSet 转换实例的唯一ID数组，形如"ip6-xxxxxxxx"
+                     * 
                      */
                     std::vector<std::string> GetIp6TranslatorSet() const;
 
                     /**
                      * 判断参数 Ip6TranslatorSet 是否已赋值
                      * @return Ip6TranslatorSet 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorSetHasBeenSet() const;
 

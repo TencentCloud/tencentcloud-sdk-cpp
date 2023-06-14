@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShowInfo 节目粒度结构化结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ShowInfo GetShowInfo() const;
 
                     /**
                      * 设置节目粒度结构化结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShowInfo 节目粒度结构化结果
+                     * @param _showInfo 节目粒度结构化结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShowInfo(const ShowInfo& _showInfo);
 
                     /**
                      * 判断参数 ShowInfo 是否已赋值
                      * @return ShowInfo 是否已赋值
+                     * 
                      */
                     bool ShowInfoHasBeenSet() const;
 

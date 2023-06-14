@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleExecId 规则执行id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRuleExecId() const;
 
                     /**
                      * 设置规则执行id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleExecId 规则执行id
+                     * @param _ruleExecId 规则执行id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleExecId(const uint64_t& _ruleExecId);
 
                     /**
                      * 判断参数 RuleExecId 是否已赋值
                      * @return RuleExecId 是否已赋值
+                     * 
                      */
                     bool RuleExecIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportTasks 导出任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExportTaskInfo> GetExportTasks() const;
 
                     /**
                      * 设置导出任务列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExportTasks 导出任务列表
+                     * @param _exportTasks 导出任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExportTasks(const std::vector<ExportTaskInfo>& _exportTasks);
 
                     /**
                      * 判断参数 ExportTasks 是否已赋值
                      * @return ExportTasks 是否已赋值
+                     * 
                      */
                     bool ExportTasksHasBeenSet() const;
 

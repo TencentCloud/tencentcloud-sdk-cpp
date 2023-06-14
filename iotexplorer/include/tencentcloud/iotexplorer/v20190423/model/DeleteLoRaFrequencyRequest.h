@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取频点唯一ID
                      * @return FreqId 频点唯一ID
+                     * 
                      */
                     std::string GetFreqId() const;
 
                     /**
                      * 设置频点唯一ID
-                     * @param FreqId 频点唯一ID
+                     * @param _freqId 频点唯一ID
+                     * 
                      */
                     void SetFreqId(const std::string& _freqId);
 
                     /**
                      * 判断参数 FreqId 是否已赋值
                      * @return FreqId 是否已赋值
+                     * 
                      */
                     bool FreqIdHasBeenSet() const;
 

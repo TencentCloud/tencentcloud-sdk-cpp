@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取需要获取进度的镜像列表
                      * @return Images 需要获取进度的镜像列表
+                     * 
                      */
                     std::vector<ImageInfo> GetImages() const;
 
                     /**
                      * 设置需要获取进度的镜像列表
-                     * @param Images 需要获取进度的镜像列表
+                     * @param _images 需要获取进度的镜像列表
+                     * 
                      */
                     void SetImages(const std::vector<ImageInfo>& _images);
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 
                     /**
                      * 获取是否获取全部镜像
                      * @return All 是否获取全部镜像
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置是否获取全部镜像
-                     * @param All 是否获取全部镜像
+                     * @param _all 是否获取全部镜像
+                     * 
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
                     /**
                      * 获取需要获取进度的镜像列表Id
                      * @return Id 需要获取进度的镜像列表Id
+                     * 
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
                      * 设置需要获取进度的镜像列表Id
-                     * @param Id 需要获取进度的镜像列表Id
+                     * @param _id 需要获取进度的镜像列表Id
+                     * 
                      */
                     void SetId(const std::vector<uint64_t>& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

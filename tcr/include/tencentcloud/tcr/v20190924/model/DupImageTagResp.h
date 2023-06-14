@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取镜像Digest值
                      * @return Digest 镜像Digest值
+                     * 
                      */
                     std::string GetDigest() const;
 
                     /**
                      * 设置镜像Digest值
-                     * @param Digest 镜像Digest值
+                     * @param _digest 镜像Digest值
+                     * 
                      */
                     void SetDigest(const std::string& _digest);
 
                     /**
                      * 判断参数 Digest 是否已赋值
                      * @return Digest 是否已赋值
+                     * 
                      */
                     bool DigestHasBeenSet() const;
 

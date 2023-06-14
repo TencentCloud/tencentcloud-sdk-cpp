@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取产品名称代码
                      * @return BusinessCode 产品名称代码
+                     * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品名称代码
-                     * @param BusinessCode 产品名称代码
+                     * @param _businessCode 产品名称代码
+                     * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
 
                     /**
                      * 判断参数 BusinessCode 是否已赋值
                      * @return BusinessCode 是否已赋值
+                     * 
                      */
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
                      * 获取产品名称
                      * @return BusinessCodeName 产品名称
+                     * 
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
                      * 设置产品名称
-                     * @param BusinessCodeName 产品名称
+                     * @param _businessCodeName 产品名称
+                     * 
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
                     /**
                      * 判断参数 BusinessCodeName 是否已赋值
                      * @return BusinessCodeName 是否已赋值
+                     * 
                      */
                     bool BusinessCodeNameHasBeenSet() const;
 

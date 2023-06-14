@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取Docker Hub 用户名或 Tencent Registry 用户名
                      * @return User Docker Hub 用户名或 Tencent Registry 用户名
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置Docker Hub 用户名或 Tencent Registry 用户名
-                     * @param User Docker Hub 用户名或 Tencent Registry 用户名
+                     * @param _user Docker Hub 用户名或 Tencent Registry 用户名
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取Docker Hub 密码或 Tencent Registry 密码
                      * @return Password Docker Hub 密码或 Tencent Registry 密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Docker Hub 密码或 Tencent Registry 密码
-                     * @param Password Docker Hub 密码或 Tencent Registry 密码
+                     * @param _password Docker Hub 密码或 Tencent Registry 密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
                      * @return Image Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
-                     * @param Image Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
+                     * @param _image Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
                      * @return Server Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
-                     * @param Server Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
+                     * @param _server Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取拉取Docker镜像重试次数。默认值：0。
                      * @return MaxRetryCount 拉取Docker镜像重试次数。默认值：0。
+                     * 
                      */
                     uint64_t GetMaxRetryCount() const;
 
                     /**
                      * 设置拉取Docker镜像重试次数。默认值：0。
-                     * @param MaxRetryCount 拉取Docker镜像重试次数。默认值：0。
+                     * @param _maxRetryCount 拉取Docker镜像重试次数。默认值：0。
+                     * 
                      */
                     void SetMaxRetryCount(const uint64_t& _maxRetryCount);
 
                     /**
                      * 判断参数 MaxRetryCount 是否已赋值
                      * @return MaxRetryCount 是否已赋值
+                     * 
                      */
                     bool MaxRetryCountHasBeenSet() const;
 
                     /**
                      * 获取拉取Docker镜像失败时延迟时间。单位：秒。
                      * @return DelayOnRetry 拉取Docker镜像失败时延迟时间。单位：秒。
+                     * 
                      */
                     uint64_t GetDelayOnRetry() const;
 
                     /**
                      * 设置拉取Docker镜像失败时延迟时间。单位：秒。
-                     * @param DelayOnRetry 拉取Docker镜像失败时延迟时间。单位：秒。
+                     * @param _delayOnRetry 拉取Docker镜像失败时延迟时间。单位：秒。
+                     * 
                      */
                     void SetDelayOnRetry(const uint64_t& _delayOnRetry);
 
                     /**
                      * 判断参数 DelayOnRetry 是否已赋值
                      * @return DelayOnRetry 是否已赋值
+                     * 
                      */
                     bool DelayOnRetryHasBeenSet() const;
 
@@ -159,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerRunOption Docker命令运行参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDockerRunOption() const;
 
                     /**
                      * 设置Docker命令运行参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DockerRunOption Docker命令运行参数。
+                     * @param _dockerRunOption Docker命令运行参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDockerRunOption(const std::string& _dockerRunOption);
 
                     /**
                      * 判断参数 DockerRunOption 是否已赋值
                      * @return DockerRunOption 是否已赋值
+                     * 
                      */
                     bool DockerRunOptionHasBeenSet() const;
 

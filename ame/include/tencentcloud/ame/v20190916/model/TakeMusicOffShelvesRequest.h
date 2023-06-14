@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取资源方下架必传结构
                      * @return TakeMusicOffShelves 资源方下架必传结构
+                     * 
                      */
                     std::vector<TakeMusicOffShelves> GetTakeMusicOffShelves() const;
 
                     /**
                      * 设置资源方下架必传结构
-                     * @param TakeMusicOffShelves 资源方下架必传结构
+                     * @param _takeMusicOffShelves 资源方下架必传结构
+                     * 
                      */
                     void SetTakeMusicOffShelves(const std::vector<TakeMusicOffShelves>& _takeMusicOffShelves);
 
                     /**
                      * 判断参数 TakeMusicOffShelves 是否已赋值
                      * @return TakeMusicOffShelves 是否已赋值
+                     * 
                      */
                     bool TakeMusicOffShelvesHasBeenSet() const;
 

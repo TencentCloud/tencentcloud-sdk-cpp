@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxValue 最大值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMaxValue() const;
 
                     /**
                      * 设置最大值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxValue 最大值
+                     * @param _maxValue 最大值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxValue(const std::string& _maxValue);
 
                     /**
                      * 判断参数 MaxValue 是否已赋值
                      * @return MaxValue 是否已赋值
+                     * 
                      */
                     bool MaxValueHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinValue 最小值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMinValue() const;
 
                     /**
                      * 设置最小值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinValue 最小值
+                     * @param _minValue 最小值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinValue(const std::string& _minValue);
 
                     /**
                      * 判断参数 MinValue 是否已赋值
                      * @return MinValue 是否已赋值
+                     * 
                      */
                     bool MinValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FifthPositionValue 五分位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFifthPositionValue() const;
 
                     /**
                      * 设置五分位值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FifthPositionValue 五分位值
+                     * @param _fifthPositionValue 五分位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFifthPositionValue(const std::string& _fifthPositionValue);
 
                     /**
                      * 判断参数 FifthPositionValue 是否已赋值
                      * @return FifthPositionValue 是否已赋值
+                     * 
                      */
                     bool FifthPositionValueHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NinthPositionValue 九分位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNinthPositionValue() const;
 
                     /**
                      * 设置九分位值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NinthPositionValue 九分位值
+                     * @param _ninthPositionValue 九分位值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNinthPositionValue(const std::string& _ninthPositionValue);
 
                     /**
                      * 判断参数 NinthPositionValue 是否已赋值
                      * @return NinthPositionValue 是否已赋值
+                     * 
                      */
                     bool NinthPositionValueHasBeenSet() const;
 

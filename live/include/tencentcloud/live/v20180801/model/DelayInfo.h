@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取推流域名。
                      * @return DomainName 推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -69,56 +72,65 @@ namespace TencentCloud
  AppName 保持一致，默认为 live。
                      * @return AppName 推流路径，与推流和播放地址中的 
  AppName 保持一致，默认为 live。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径，与推流和播放地址中的 
  AppName 保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的 
+                     * @param _appName 推流路径，与推流和播放地址中的 
  AppName 保持一致，默认为 live。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取延播时间，单位：秒。
                      * @return DelayInterval 延播时间，单位：秒。
+                     * 
                      */
                     uint64_t GetDelayInterval() const;
 
                     /**
                      * 设置延播时间，单位：秒。
-                     * @param DelayInterval 延播时间，单位：秒。
+                     * @param _delayInterval 延播时间，单位：秒。
+                     * 
                      */
                     void SetDelayInterval(const uint64_t& _delayInterval);
 
                     /**
                      * 判断参数 DelayInterval 是否已赋值
                      * @return DelayInterval 是否已赋值
+                     * 
                      */
                     bool DelayIntervalHasBeenSet() const;
 
@@ -129,6 +141,7 @@ namespace TencentCloud
                      * @return CreateTime 创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
@@ -136,15 +149,17 @@ namespace TencentCloud
                      * 设置创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @param CreateTime 创建时间，UTC 时间。
+                     * @param _createTime 创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -155,6 +170,7 @@ namespace TencentCloud
                      * @return ExpireTime 过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
@@ -162,15 +178,17 @@ namespace TencentCloud
                      * 设置过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @param ExpireTime 过期时间，UTC 时间。
+                     * @param _expireTime 过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -181,6 +199,7 @@ namespace TencentCloud
                      * @return Status 当前状态:
 -1：已过期。
 1： 生效中。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -188,15 +207,17 @@ namespace TencentCloud
                      * 设置当前状态:
 -1：已过期。
 1： 生效中。
-                     * @param Status 当前状态:
+                     * @param _status 当前状态:
 -1：已过期。
 1： 生效中。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

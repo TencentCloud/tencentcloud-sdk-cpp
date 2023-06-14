@@ -52,216 +52,252 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取应用配置
                      * @return BasicConfig 应用配置
+                     * 
                      */
                     ApplicationBasicConfig GetBasicConfig() const;
 
                     /**
                      * 设置应用配置
-                     * @param BasicConfig 应用配置
+                     * @param _basicConfig 应用配置
+                     * 
                      */
                     void SetBasicConfig(const ApplicationBasicConfig& _basicConfig);
 
                     /**
                      * 判断参数 BasicConfig 是否已赋值
                      * @return BasicConfig 是否已赋值
+                     * 
                      */
                     bool BasicConfigHasBeenSet() const;
 
                     /**
                      * 获取卷配置
                      * @return Volumes 卷配置
+                     * 
                      */
                     std::vector<Volume> GetVolumes() const;
 
                     /**
                      * 设置卷配置
-                     * @param Volumes 卷配置
+                     * @param _volumes 卷配置
+                     * 
                      */
                     void SetVolumes(const std::vector<Volume>& _volumes);
 
                     /**
                      * 判断参数 Volumes 是否已赋值
                      * @return Volumes 是否已赋值
+                     * 
                      */
                     bool VolumesHasBeenSet() const;
 
                     /**
                      * 获取初始容器
                      * @return InitContainers 初始容器
+                     * 
                      */
                     std::vector<Container> GetInitContainers() const;
 
                     /**
                      * 设置初始容器
-                     * @param InitContainers 初始容器
+                     * @param _initContainers 初始容器
+                     * 
                      */
                     void SetInitContainers(const std::vector<Container>& _initContainers);
 
                     /**
                      * 判断参数 InitContainers 是否已赋值
                      * @return InitContainers 是否已赋值
+                     * 
                      */
                     bool InitContainersHasBeenSet() const;
 
                     /**
                      * 获取容器配置
                      * @return Containers 容器配置
+                     * 
                      */
                     std::vector<Container> GetContainers() const;
 
                     /**
                      * 设置容器配置
-                     * @param Containers 容器配置
+                     * @param _containers 容器配置
+                     * 
                      */
                     void SetContainers(const std::vector<Container>& _containers);
 
                     /**
                      * 判断参数 Containers 是否已赋值
                      * @return Containers 是否已赋值
+                     * 
                      */
                     bool ContainersHasBeenSet() const;
 
                     /**
                      * 获取服务配置
                      * @return Service 服务配置
+                     * 
                      */
                     Service GetService() const;
 
                     /**
                      * 设置服务配置
-                     * @param Service 服务配置
+                     * @param _service 服务配置
+                     * 
                      */
                     void SetService(const Service& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取Job配置
                      * @return Job Job配置
+                     * 
                      */
                     Job GetJob() const;
 
                     /**
                      * 设置Job配置
-                     * @param Job Job配置
+                     * @param _job Job配置
+                     * 
                      */
                     void SetJob(const Job& _job);
 
                     /**
                      * 判断参数 Job 是否已赋值
                      * @return Job 是否已赋值
+                     * 
                      */
                     bool JobHasBeenSet() const;
 
                     /**
                      * 获取CronJob配置
                      * @return CronJob CronJob配置
+                     * 
                      */
                     CronJob GetCronJob() const;
 
                     /**
                      * 设置CronJob配置
-                     * @param CronJob CronJob配置
+                     * @param _cronJob CronJob配置
+                     * 
                      */
                     void SetCronJob(const CronJob& _cronJob);
 
                     /**
                      * 判断参数 CronJob 是否已赋值
                      * @return CronJob 是否已赋值
+                     * 
                      */
                     bool CronJobHasBeenSet() const;
 
                     /**
                      * 获取重启策略
                      * @return RestartPolicy 重启策略
+                     * 
                      */
                     std::string GetRestartPolicy() const;
 
                     /**
                      * 设置重启策略
-                     * @param RestartPolicy 重启策略
+                     * @param _restartPolicy 重启策略
+                     * 
                      */
                     void SetRestartPolicy(const std::string& _restartPolicy);
 
                     /**
                      * 判断参数 RestartPolicy 是否已赋值
                      * @return RestartPolicy 是否已赋值
+                     * 
                      */
                     bool RestartPolicyHasBeenSet() const;
 
                     /**
                      * 获取镜像拉取密钥
                      * @return ImagePullSecrets 镜像拉取密钥
+                     * 
                      */
                     std::vector<std::string> GetImagePullSecrets() const;
 
                     /**
                      * 设置镜像拉取密钥
-                     * @param ImagePullSecrets 镜像拉取密钥
+                     * @param _imagePullSecrets 镜像拉取密钥
+                     * 
                      */
                     void SetImagePullSecrets(const std::vector<std::string>& _imagePullSecrets);
 
                     /**
                      * 判断参数 ImagePullSecrets 是否已赋值
                      * @return ImagePullSecrets 是否已赋值
+                     * 
                      */
                     bool ImagePullSecretsHasBeenSet() const;
 
                     /**
                      * 获取HPA配置
                      * @return HorizontalPodAutoscaler HPA配置
+                     * 
                      */
                     HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
 
                     /**
                      * 设置HPA配置
-                     * @param HorizontalPodAutoscaler HPA配置
+                     * @param _horizontalPodAutoscaler HPA配置
+                     * 
                      */
                     void SetHorizontalPodAutoscaler(const HorizontalPodAutoscaler& _horizontalPodAutoscaler);
 
                     /**
                      * 判断参数 HorizontalPodAutoscaler 是否已赋值
                      * @return HorizontalPodAutoscaler 是否已赋值
+                     * 
                      */
                     bool HorizontalPodAutoscalerHasBeenSet() const;
 
                     /**
                      * 获取单个初始化容器
                      * @return InitContainer 单个初始化容器
+                     * 
                      */
                     Container GetInitContainer() const;
 
                     /**
                      * 设置单个初始化容器
-                     * @param InitContainer 单个初始化容器
+                     * @param _initContainer 单个初始化容器
+                     * 
                      */
                     void SetInitContainer(const Container& _initContainer);
 
                     /**
                      * 判断参数 InitContainer 是否已赋值
                      * @return InitContainer 是否已赋值
+                     * 
                      */
                     bool InitContainerHasBeenSet() const;
 

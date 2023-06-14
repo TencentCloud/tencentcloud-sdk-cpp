@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户ID。
                      * @return UserId 用户ID。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID。
-                     * @param UserId 用户ID。
+                     * @param _userId 用户ID。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。
                      * @return RoomId 动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。
-                     * @param RoomId 动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。
+                     * @param _roomId 动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取房间号类型，0为整形房间号，1为字符串房间号。
                      * @return RoomIdType 房间号类型，0为整形房间号，1为字符串房间号。
+                     * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
                      * 设置房间号类型，0为整形房间号，1为字符串房间号。
-                     * @param RoomIdType 房间号类型，0为整形房间号，1为字符串房间号。
+                     * @param _roomIdType 房间号类型，0为整形房间号，1为字符串房间号。
+                     * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
 
                     /**
                      * 判断参数 RoomIdType 是否已赋值
                      * @return RoomIdType 是否已赋值
+                     * 
                      */
                     bool RoomIdTypeHasBeenSet() const;
 

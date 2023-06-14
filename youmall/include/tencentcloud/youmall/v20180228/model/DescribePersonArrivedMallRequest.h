@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取卖场编码
                      * @return MallId 卖场编码
+                     * 
                      */
                     std::string GetMallId() const;
 
                     /**
                      * 设置卖场编码
-                     * @param MallId 卖场编码
+                     * @param _mallId 卖场编码
+                     * 
                      */
                     void SetMallId(const std::string& _mallId);
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取客户编码
                      * @return PersonId 客户编码
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置客户编码
-                     * @param PersonId 客户编码
+                     * @param _personId 客户编码
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间
                      * @return StartTime 查询开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间
-                     * @param StartTime 查询开始时间
+                     * @param _startTime 查询开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return EndTime 查询结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param EndTime 查询结束时间
+                     * @param _endTime 查询结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取签名。
                      * @return Sign 签名。
+                     * 
                      */
                     std::string GetSign() const;
 
                     /**
                      * 设置签名。
-                     * @param Sign 签名。
+                     * @param _sign 签名。
+                     * 
                      */
                     void SetSign(const std::string& _sign);
 
                     /**
                      * 判断参数 Sign 是否已赋值
                      * @return Sign 是否已赋值
+                     * 
                      */
                     bool SignHasBeenSet() const;
 
                     /**
                      * 获取房间号。
                      * @return RoomId 房间号。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间号。
-                     * @param RoomId 房间号。
+                     * @param _roomId 房间号。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取推流应用ID。
                      * @return SdkAppId 推流应用ID。
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置推流应用ID。
-                     * @param SdkAppId 推流应用ID。
+                     * @param _sdkAppId 推流应用ID。
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户唯一标识。
                      * @return UserId 用户唯一标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户唯一标识。
-                     * @param UserId 用户唯一标识。
+                     * @param _userId 用户唯一标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

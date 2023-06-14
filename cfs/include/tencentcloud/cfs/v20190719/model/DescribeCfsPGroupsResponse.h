@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取权限组信息列表
                      * @return PGroupList 权限组信息列表
+                     * 
                      */
                     std::vector<PGroupInfo> GetPGroupList() const;
 
                     /**
                      * 判断参数 PGroupList 是否已赋值
                      * @return PGroupList 是否已赋值
+                     * 
                      */
                     bool PGroupListHasBeenSet() const;
 

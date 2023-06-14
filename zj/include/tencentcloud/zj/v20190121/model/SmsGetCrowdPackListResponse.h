@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取人群包总数
                      * @return Total 人群包总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置人群包总数
-                     * @param Total 人群包总数
+                     * @param _total 人群包总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 人群包返回数据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SmsGetCrowdPackList> GetList() const;
 
                     /**
                      * 设置人群包返回数据列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param List 人群包返回数据列表
+                     * @param _list 人群包返回数据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetList(const std::vector<SmsGetCrowdPackList>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

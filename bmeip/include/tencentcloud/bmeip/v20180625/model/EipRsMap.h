@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取EIP实例 ID
                      * @return EipId EIP实例 ID
+                     * 
                      */
                     std::string GetEipId() const;
 
                     /**
                      * 设置EIP实例 ID
-                     * @param EipId EIP实例 ID
+                     * @param _eipId EIP实例 ID
+                     * 
                      */
                     void SetEipId(const std::string& _eipId);
 
                     /**
                      * 判断参数 EipId 是否已赋值
                      * @return EipId 是否已赋值
+                     * 
                      */
                     bool EipIdHasBeenSet() const;
 
                     /**
                      * 获取黑石物理机实例ID
                      * @return InstanceId 黑石物理机实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置黑石物理机实例ID
-                     * @param InstanceId 黑石物理机实例ID
+                     * @param _instanceId 黑石物理机实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

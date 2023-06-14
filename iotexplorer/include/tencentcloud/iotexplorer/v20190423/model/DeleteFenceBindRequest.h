@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取围栏Id
                      * @return FenceId 围栏Id
+                     * 
                      */
                     int64_t GetFenceId() const;
 
                     /**
                      * 设置围栏Id
-                     * @param FenceId 围栏Id
+                     * @param _fenceId 围栏Id
+                     * 
                      */
                     void SetFenceId(const int64_t& _fenceId);
 
                     /**
                      * 判断参数 FenceId 是否已赋值
                      * @return FenceId 是否已赋值
+                     * 
                      */
                     bool FenceIdHasBeenSet() const;
 
                     /**
                      * 获取围栏绑定的产品信息
                      * @return Items 围栏绑定的产品信息
+                     * 
                      */
                     std::vector<FenceBindProductItem> GetItems() const;
 
                     /**
                      * 设置围栏绑定的产品信息
-                     * @param Items 围栏绑定的产品信息
+                     * @param _items 围栏绑定的产品信息
+                     * 
                      */
                     void SetItems(const std::vector<FenceBindProductItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

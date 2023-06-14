@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
                      * @return ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
-                     * @param ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * @param _clusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
                      * @return BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * 
                      */
                     uint64_t GetBindClusterId() const;
 
                     /**
                      * 设置用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
-                     * @param BindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * @param _bindClusterId 用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。
+                     * 
                      */
                     void SetBindClusterId(const uint64_t& _bindClusterId);
 
                     /**
                      * 判断参数 BindClusterId 是否已赋值
                      * @return BindClusterId 是否已赋值
+                     * 
                      */
                     bool BindClusterIdHasBeenSet() const;
 
                     /**
                      * 获取说明，128个字符以内。
                      * @return Remark 说明，128个字符以内。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明，128个字符以内。
-                     * @param Remark 说明，128个字符以内。
+                     * @param _remark 说明，128个字符以内。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取集群的标签列表(已废弃)
                      * @return Tags 集群的标签列表(已废弃)
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置集群的标签列表(已废弃)
-                     * @param Tags 集群的标签列表(已废弃)
+                     * @param _tags 集群的标签列表(已废弃)
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取是否开启公网访问，不填时默认开启
                      * @return PublicAccessEnabled 是否开启公网访问，不填时默认开启
+                     * 
                      */
                     bool GetPublicAccessEnabled() const;
 
                     /**
                      * 设置是否开启公网访问，不填时默认开启
-                     * @param PublicAccessEnabled 是否开启公网访问，不填时默认开启
+                     * @param _publicAccessEnabled 是否开启公网访问，不填时默认开启
+                     * 
                      */
                     void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
 
                     /**
                      * 判断参数 PublicAccessEnabled 是否已赋值
                      * @return PublicAccessEnabled 是否已赋值
+                     * 
                      */
                     bool PublicAccessEnabledHasBeenSet() const;
 

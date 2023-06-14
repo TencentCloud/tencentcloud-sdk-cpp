@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书 ID。
                      * @return CertificateId 证书 ID。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书 ID。
-                     * @param CertificateId 证书 ID。
+                     * @param _certificateId 证书 ID。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。
                      * @return RevokeLetter base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。
+                     * 
                      */
                     std::string GetRevokeLetter() const;
 
                     /**
                      * 设置base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。
-                     * @param RevokeLetter base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。
+                     * @param _revokeLetter base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。
+                     * 
                      */
                     void SetRevokeLetter(const std::string& _revokeLetter);
 
                     /**
                      * 判断参数 RevokeLetter 是否已赋值
                      * @return RevokeLetter 是否已赋值
+                     * 
                      */
                     bool RevokeLetterHasBeenSet() const;
 

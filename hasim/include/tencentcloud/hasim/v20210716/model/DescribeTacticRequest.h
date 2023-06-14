@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return TacticID 策略ID
+                     * 
                      */
                     int64_t GetTacticID() const;
 
                     /**
                      * 设置策略ID
-                     * @param TacticID 策略ID
+                     * @param _tacticID 策略ID
+                     * 
                      */
                     void SetTacticID(const int64_t& _tacticID);
 
                     /**
                      * 判断参数 TacticID 是否已赋值
                      * @return TacticID 是否已赋值
+                     * 
                      */
                     bool TacticIDHasBeenSet() const;
 

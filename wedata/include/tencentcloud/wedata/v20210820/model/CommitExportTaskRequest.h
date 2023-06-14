@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取规则执行Id
                      * @return RuleExecId 规则执行Id
+                     * 
                      */
                     uint64_t GetRuleExecId() const;
 
                     /**
                      * 设置规则执行Id
-                     * @param RuleExecId 规则执行Id
+                     * @param _ruleExecId 规则执行Id
+                     * 
                      */
                     void SetRuleExecId(const uint64_t& _ruleExecId);
 
                     /**
                      * 判断参数 RuleExecId 是否已赋值
                      * @return RuleExecId 是否已赋值
+                     * 
                      */
                     bool RuleExecIdHasBeenSet() const;
 
                     /**
                      * 获取导出类型(1.全部,2.触发行,3.通过行)
                      * @return ExportType 导出类型(1.全部,2.触发行,3.通过行)
+                     * 
                      */
                     uint64_t GetExportType() const;
 
                     /**
                      * 设置导出类型(1.全部,2.触发行,3.通过行)
-                     * @param ExportType 导出类型(1.全部,2.触发行,3.通过行)
+                     * @param _exportType 导出类型(1.全部,2.触发行,3.通过行)
+                     * 
                      */
                     void SetExportType(const uint64_t& _exportType);
 
                     /**
                      * 判断参数 ExportType 是否已赋值
                      * @return ExportType 是否已赋值
+                     * 
                      */
                     bool ExportTypeHasBeenSet() const;
 
                     /**
                      * 获取执行资源组id
                      * @return ExecutorGroupId 执行资源组id
+                     * 
                      */
                     std::string GetExecutorGroupId() const;
 
                     /**
                      * 设置执行资源组id
-                     * @param ExecutorGroupId 执行资源组id
+                     * @param _executorGroupId 执行资源组id
+                     * 
                      */
                     void SetExecutorGroupId(const std::string& _executorGroupId);
 
                     /**
                      * 判断参数 ExecutorGroupId 是否已赋值
                      * @return ExecutorGroupId 是否已赋值
+                     * 
                      */
                     bool ExecutorGroupIdHasBeenSet() const;
 
                     /**
                      * 获取计算资源队列
                      * @return QueueName 计算资源队列
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置计算资源队列
-                     * @param QueueName 计算资源队列
+                     * @param _queueName 计算资源队列
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

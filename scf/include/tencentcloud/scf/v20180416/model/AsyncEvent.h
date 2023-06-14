@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取调用请求id
                      * @return InvokeRequestId 调用请求id
+                     * 
                      */
                     std::string GetInvokeRequestId() const;
 
                     /**
                      * 设置调用请求id
-                     * @param InvokeRequestId 调用请求id
+                     * @param _invokeRequestId 调用请求id
+                     * 
                      */
                     void SetInvokeRequestId(const std::string& _invokeRequestId);
 
                     /**
                      * 判断参数 InvokeRequestId 是否已赋值
                      * @return InvokeRequestId 是否已赋值
+                     * 
                      */
                     bool InvokeRequestIdHasBeenSet() const;
 
                     /**
                      * 获取调用类型
                      * @return InvokeType 调用类型
+                     * 
                      */
                     std::string GetInvokeType() const;
 
                     /**
                      * 设置调用类型
-                     * @param InvokeType 调用类型
+                     * @param _invokeType 调用类型
+                     * 
                      */
                     void SetInvokeType(const std::string& _invokeType);
 
                     /**
                      * 判断参数 InvokeType 是否已赋值
                      * @return InvokeType 是否已赋值
+                     * 
                      */
                     bool InvokeTypeHasBeenSet() const;
 
                     /**
                      * 获取函数版本
                      * @return Qualifier 函数版本
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数版本
-                     * @param Qualifier 函数版本
+                     * @param _qualifier 函数版本
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 
                     /**
                      * 获取事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
                      * @return Status 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
-                     * @param Status 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
+                     * @param _status 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取调用开始时间，格式: "%Y-%m-%d %H:%M:%S.%f"
                      * @return StartTime 调用开始时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置调用开始时间，格式: "%Y-%m-%d %H:%M:%S.%f"
-                     * @param StartTime 调用开始时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * @param _startTime 调用开始时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取调用结束时间，格式: "%Y-%m-%d %H:%M:%S.%f"
                      * @return EndTime 调用结束时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置调用结束时间，格式: "%Y-%m-%d %H:%M:%S.%f"
-                     * @param EndTime 调用结束时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * @param _endTime 调用结束时间，格式: "%Y-%m-%d %H:%M:%S.%f"
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

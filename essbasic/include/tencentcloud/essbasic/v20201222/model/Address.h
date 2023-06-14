@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取省份
                      * @return Province 省份
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
-                     * @param Province 省份
+                     * @param _province 省份
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取城市
                      * @return City 城市
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
-                     * @param City 城市
+                     * @param _city 城市
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取区县
                      * @return County 区县
+                     * 
                      */
                     std::string GetCounty() const;
 
                     /**
                      * 设置区县
-                     * @param County 区县
+                     * @param _county 区县
+                     * 
                      */
                     void SetCounty(const std::string& _county);
 
                     /**
                      * 判断参数 County 是否已赋值
                      * @return County 是否已赋值
+                     * 
                      */
                     bool CountyHasBeenSet() const;
 
                     /**
                      * 获取详细地址
                      * @return Details 详细地址
+                     * 
                      */
                     std::string GetDetails() const;
 
                     /**
                      * 设置详细地址
-                     * @param Details 详细地址
+                     * @param _details 详细地址
+                     * 
                      */
                     void SetDetails(const std::string& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 
                     /**
                      * 获取国家，默认中国
                      * @return Country 国家，默认中国
+                     * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置国家，默认中国
-                     * @param Country 国家，默认中国
+                     * @param _country 国家，默认中国
+                     * 
                      */
                     void SetCountry(const std::string& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 

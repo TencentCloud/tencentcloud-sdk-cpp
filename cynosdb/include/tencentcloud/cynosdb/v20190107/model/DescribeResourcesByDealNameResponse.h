@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取计费资源id信息数组
                      * @return BillingResourceInfos 计费资源id信息数组
+                     * 
                      */
                     std::vector<BillingResourceInfo> GetBillingResourceInfos() const;
 
                     /**
                      * 判断参数 BillingResourceInfos 是否已赋值
                      * @return BillingResourceInfos 是否已赋值
+                     * 
                      */
                     bool BillingResourceInfosHasBeenSet() const;
 

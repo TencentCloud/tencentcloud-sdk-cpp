@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取备份方式，0-自动备份，1-手动备份
                      * @return BackupType 备份方式，0-自动备份，1-手动备份
+                     * 
                      */
                     uint64_t GetBackupType() const;
 
                     /**
                      * 设置备份方式，0-自动备份，1-手动备份
-                     * @param BackupType 备份方式，0-自动备份，1-手动备份
+                     * @param _backupType 备份方式，0-自动备份，1-手动备份
+                     * 
                      */
                     void SetBackupType(const uint64_t& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
+                     * 
                      */
                     bool BackupTypeHasBeenSet() const;
 
                     /**
                      * 获取备份名称
                      * @return BackupName 备份名称
+                     * 
                      */
                     std::string GetBackupName() const;
 
                     /**
                      * 设置备份名称
-                     * @param BackupName 备份名称
+                     * @param _backupName 备份名称
+                     * 
                      */
                     void SetBackupName(const std::string& _backupName);
 
                     /**
                      * 判断参数 BackupName 是否已赋值
                      * @return BackupName 是否已赋值
+                     * 
                      */
                     bool BackupNameHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupDesc 备份备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupDesc() const;
 
                     /**
                      * 设置备份备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupDesc 备份备注
+                     * @param _backupDesc 备份备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupDesc(const std::string& _backupDesc);
 
                     /**
                      * 判断参数 BackupDesc 是否已赋值
                      * @return BackupDesc 是否已赋值
+                     * 
                      */
                     bool BackupDescHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSize 备份文件大小，单位KB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBackupSize() const;
 
                     /**
                      * 设置备份文件大小，单位KB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSize 备份文件大小，单位KB
+                     * @param _backupSize 备份文件大小，单位KB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSize(const uint64_t& _backupSize);
 
                     /**
                      * 判断参数 BackupSize 是否已赋值
                      * @return BackupSize 是否已赋值
+                     * 
                      */
                     bool BackupSizeHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 备份开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置备份开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 备份开始时间
+                     * @param _startTime 备份开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -171,56 +189,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 备份结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置备份结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 备份结束时间
+                     * @param _endTime 备份结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取备份状态，1-备份中，2-备份成功
                      * @return Status 备份状态，1-备份中，2-备份成功
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置备份状态，1-备份中，2-备份成功
-                     * @param Status 备份状态，1-备份中，2-备份成功
+                     * @param _status 备份状态，1-备份中，2-备份成功
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取备份方法，0-逻辑备份，1-物理备份
                      * @return BackupMethod 备份方法，0-逻辑备份，1-物理备份
+                     * 
                      */
                     uint64_t GetBackupMethod() const;
 
                     /**
                      * 设置备份方法，0-逻辑备份，1-物理备份
-                     * @param BackupMethod 备份方法，0-逻辑备份，1-物理备份
+                     * @param _backupMethod 备份方法，0-逻辑备份，1-物理备份
+                     * 
                      */
                     void SetBackupMethod(const uint64_t& _backupMethod);
 
                     /**
                      * 判断参数 BackupMethod 是否已赋值
                      * @return BackupMethod 是否已赋值
+                     * 
                      */
                     bool BackupMethodHasBeenSet() const;
 

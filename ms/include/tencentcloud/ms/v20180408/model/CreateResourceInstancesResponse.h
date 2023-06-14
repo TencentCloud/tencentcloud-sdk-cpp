@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的资源列表。
                      * @return ResourceSet 新创建的资源列表。
+                     * 
                      */
                     std::vector<std::string> GetResourceSet() const;
 
                     /**
                      * 判断参数 ResourceSet 是否已赋值
                      * @return ResourceSet 是否已赋值
+                     * 
                      */
                     bool ResourceSetHasBeenSet() const;
 

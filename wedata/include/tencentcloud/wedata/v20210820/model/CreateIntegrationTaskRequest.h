@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取任务信息
                      * @return TaskInfo 任务信息
+                     * 
                      */
                     IntegrationTaskInfo GetTaskInfo() const;
 
                     /**
                      * 设置任务信息
-                     * @param TaskInfo 任务信息
+                     * @param _taskInfo 任务信息
+                     * 
                      */
                     void SetTaskInfo(const IntegrationTaskInfo& _taskInfo);
 
                     /**
                      * 判断参数 TaskInfo 是否已赋值
                      * @return TaskInfo 是否已赋值
+                     * 
                      */
                     bool TaskInfoHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

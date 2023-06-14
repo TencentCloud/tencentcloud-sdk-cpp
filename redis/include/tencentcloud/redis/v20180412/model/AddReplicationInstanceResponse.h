@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步流程ID。
                      * @return TaskId 异步流程ID。
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

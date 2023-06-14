@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取漏洞告警通知等级，4位分别代表：高危、中危、低危、提示。
                      * @return NoticeLevel 漏洞告警通知等级，4位分别代表：高危、中危、低危、提示。
+                     * 
                      */
                     std::string GetNoticeLevel() const;
 
                     /**
                      * 判断参数 NoticeLevel 是否已赋值
                      * @return NoticeLevel 是否已赋值
+                     * 
                      */
                     bool NoticeLevelHasBeenSet() const;
 
                     /**
                      * 获取配置ID。
                      * @return Id 配置ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取记录创建时间。
                      * @return CreatedAt 记录创建时间。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取记录更新新建。
                      * @return UpdatedAt 记录更新新建。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
                      * 获取云用户appid。
                      * @return Appid 云用户appid。
+                     * 
                      */
                     uint64_t GetAppid() const;
 
                     /**
                      * 判断参数 Appid 是否已赋值
                      * @return Appid 是否已赋值
+                     * 
                      */
                     bool AppidHasBeenSet() const;
 
                     /**
                      * 获取内容检测通知等级-1:通知,0-不通知
                      * @return ContentLevel 内容检测通知等级-1:通知,0-不通知
+                     * 
                      */
                     uint64_t GetContentLevel() const;
 
                     /**
                      * 判断参数 ContentLevel 是否已赋值
                      * @return ContentLevel 是否已赋值
+                     * 
                      */
                     bool ContentLevelHasBeenSet() const;
 

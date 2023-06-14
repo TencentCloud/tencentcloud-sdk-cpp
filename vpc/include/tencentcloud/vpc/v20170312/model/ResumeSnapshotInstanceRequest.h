@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取快照文件Id。
                      * @return SnapshotFileId 快照文件Id。
+                     * 
                      */
                     std::string GetSnapshotFileId() const;
 
                     /**
                      * 设置快照文件Id。
-                     * @param SnapshotFileId 快照文件Id。
+                     * @param _snapshotFileId 快照文件Id。
+                     * 
                      */
                     void SetSnapshotFileId(const std::string& _snapshotFileId);
 
                     /**
                      * 判断参数 SnapshotFileId 是否已赋值
                      * @return SnapshotFileId 是否已赋值
+                     * 
                      */
                     bool SnapshotFileIdHasBeenSet() const;
 
                     /**
                      * 获取实例Id。
                      * @return InstanceId 实例Id。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id。
-                     * @param InstanceId 实例Id。
+                     * @param _instanceId 实例Id。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

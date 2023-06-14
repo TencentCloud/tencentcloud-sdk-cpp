@@ -47,198 +47,231 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取工作流id
                      * @return WorkflowId 工作流id
+                     * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
                      * 设置工作流id
-                     * @param WorkflowId 工作流id
+                     * @param _workflowId 工作流id
+                     * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
                      * 获取责任人
                      * @return Owner 责任人
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置责任人
-                     * @param Owner 责任人
+                     * @param _owner 责任人
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取责任人id
                      * @return OwnerId 责任人id
+                     * 
                      */
                     std::string GetOwnerId() const;
 
                     /**
                      * 设置责任人id
-                     * @param OwnerId 责任人id
+                     * @param _ownerId 责任人id
+                     * 
                      */
                     void SetOwnerId(const std::string& _ownerId);
 
                     /**
                      * 判断参数 OwnerId 是否已赋值
                      * @return OwnerId 是否已赋值
+                     * 
                      */
                     bool OwnerIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return WorkflowDesc 备注
+                     * 
                      */
                     std::string GetWorkflowDesc() const;
 
                     /**
                      * 设置备注
-                     * @param WorkflowDesc 备注
+                     * @param _workflowDesc 备注
+                     * 
                      */
                     void SetWorkflowDesc(const std::string& _workflowDesc);
 
                     /**
                      * 判断参数 WorkflowDesc 是否已赋值
                      * @return WorkflowDesc 是否已赋值
+                     * 
                      */
                     bool WorkflowDescHasBeenSet() const;
 
                     /**
                      * 获取工作流名称
                      * @return WorkflowName 工作流名称
+                     * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
                      * 设置工作流名称
-                     * @param WorkflowName 工作流名称
+                     * @param _workflowName 工作流名称
+                     * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
 
                     /**
                      * 判断参数 WorkflowName 是否已赋值
                      * @return WorkflowName 是否已赋值
+                     * 
                      */
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
                      * 获取所属文件夹id
                      * @return FolderId 所属文件夹id
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置所属文件夹id
-                     * @param FolderId 所属文件夹id
+                     * @param _folderId 所属文件夹id
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 
                     /**
                      * 获取工作流所属用户分组id  若有多个,分号隔开: a;b;c
                      * @return UserGroupId 工作流所属用户分组id  若有多个,分号隔开: a;b;c
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置工作流所属用户分组id  若有多个,分号隔开: a;b;c
-                     * @param UserGroupId 工作流所属用户分组id  若有多个,分号隔开: a;b;c
+                     * @param _userGroupId 工作流所属用户分组id  若有多个,分号隔开: a;b;c
+                     * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 
                     /**
                      * 获取工作流所属用户分组名称  若有多个,分号隔开: a;b;c
                      * @return UserGroupName 工作流所属用户分组名称  若有多个,分号隔开: a;b;c
+                     * 
                      */
                     std::string GetUserGroupName() const;
 
                     /**
                      * 设置工作流所属用户分组名称  若有多个,分号隔开: a;b;c
-                     * @param UserGroupName 工作流所属用户分组名称  若有多个,分号隔开: a;b;c
+                     * @param _userGroupName 工作流所属用户分组名称  若有多个,分号隔开: a;b;c
+                     * 
                      */
                     void SetUserGroupName(const std::string& _userGroupName);
 
                     /**
                      * 判断参数 UserGroupName 是否已赋值
                      * @return UserGroupName 是否已赋值
+                     * 
                      */
                     bool UserGroupNameHasBeenSet() const;
 
                     /**
                      * 获取工作流参数列表
                      * @return WorkflowParams 工作流参数列表
+                     * 
                      */
                     std::vector<ParamInfo> GetWorkflowParams() const;
 
                     /**
                      * 设置工作流参数列表
-                     * @param WorkflowParams 工作流参数列表
+                     * @param _workflowParams 工作流参数列表
+                     * 
                      */
                     void SetWorkflowParams(const std::vector<ParamInfo>& _workflowParams);
 
                     /**
                      * 判断参数 WorkflowParams 是否已赋值
                      * @return WorkflowParams 是否已赋值
+                     * 
                      */
                     bool WorkflowParamsHasBeenSet() const;
 
                     /**
                      * 获取用于配置优化参数（线程、内存、CPU核数等），仅作用于Spark SQL节点。多个参数用英文分号分隔。
                      * @return GeneralTaskParams 用于配置优化参数（线程、内存、CPU核数等），仅作用于Spark SQL节点。多个参数用英文分号分隔。
+                     * 
                      */
                     std::vector<GeneralTaskParam> GetGeneralTaskParams() const;
 
                     /**
                      * 设置用于配置优化参数（线程、内存、CPU核数等），仅作用于Spark SQL节点。多个参数用英文分号分隔。
-                     * @param GeneralTaskParams 用于配置优化参数（线程、内存、CPU核数等），仅作用于Spark SQL节点。多个参数用英文分号分隔。
+                     * @param _generalTaskParams 用于配置优化参数（线程、内存、CPU核数等），仅作用于Spark SQL节点。多个参数用英文分号分隔。
+                     * 
                      */
                     void SetGeneralTaskParams(const std::vector<GeneralTaskParam>& _generalTaskParams);
 
                     /**
                      * 判断参数 GeneralTaskParams 是否已赋值
                      * @return GeneralTaskParams 是否已赋值
+                     * 
                      */
                     bool GeneralTaskParamsHasBeenSet() const;
 

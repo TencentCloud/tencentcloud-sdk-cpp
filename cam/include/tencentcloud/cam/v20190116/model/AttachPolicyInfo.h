@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取策略id
                      * @return PolicyId 策略id
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略id
-                     * @param PolicyId 策略id
+                     * @param _policyId 策略id
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyName 策略名称
+                     * @param _policyName 策略名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddTime 创建时间
+                     * @param _addTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateMode() const;
 
                     /**
                      * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * @param _createMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateMode(const uint64_t& _createMode);
 
                     /**
                      * 判断参数 CreateMode 是否已赋值
                      * @return CreateMode 是否已赋值
+                     * 
                      */
                     bool CreateModeHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 取值为user和QCS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置取值为user和QCS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyType 取值为user和QCS
+                     * @param _policyType 取值为user和QCS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 策略备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置策略备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 策略备注
+                     * @param _remark 策略备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateOwnerUin 策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperateOwnerUin() const;
 
                     /**
                      * 设置策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateOwnerUin 策略关联操作者主帐号
+                     * @param _operateOwnerUin 策略关联操作者主帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperateOwnerUin(const std::string& _operateOwnerUin);
 
                     /**
                      * 判断参数 OperateOwnerUin 是否已赋值
                      * @return OperateOwnerUin 是否已赋值
+                     * 
                      */
                     bool OperateOwnerUinHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperateUin() const;
 
                     /**
                      * 设置策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * @param _operateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperateUin(const std::string& _operateUin);
 
                     /**
                      * 判断参数 OperateUin 是否已赋值
                      * @return OperateUin 是否已赋值
+                     * 
                      */
                     bool OperateUinHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOperateUinType() const;
 
                     /**
                      * 设置UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * @param _operateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperateUinType(const uint64_t& _operateUinType);
 
                     /**
                      * 判断参数 OperateUinType 是否已赋值
                      * @return OperateUinType 是否已赋值
+                     * 
                      */
                     bool OperateUinTypeHasBeenSet() const;
 
@@ -245,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deactived 是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
                      * 设置是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deactived 是否已下线
+                     * @param _deactived 是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeactived(const uint64_t& _deactived);
 
                     /**
                      * 判断参数 Deactived 是否已赋值
                      * @return Deactived 是否已赋值
+                     * 
                      */
                     bool DeactivedHasBeenSet() const;
 
@@ -267,20 +297,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeactivedDetail 已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
                      * 设置已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeactivedDetail 已下线的产品列表
+                     * @param _deactivedDetail 已下线的产品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
 
                     /**
                      * 判断参数 DeactivedDetail 是否已赋值
                      * @return DeactivedDetail 是否已赋值
+                     * 
                      */
                     bool DeactivedDetailHasBeenSet() const;
 

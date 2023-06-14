@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件唯一标识列表。
                      * @return FileIds 媒体文件唯一标识列表。
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置媒体文件唯一标识列表。
-                     * @param FileIds 媒体文件唯一标识列表。
+                     * @param _fileIds 媒体文件唯一标识列表。
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     std::string GetStorageClass() const;
 
@@ -80,35 +84,40 @@ namespace TencentCloud
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
-                     * @param StorageClass 目标存储类型。可选值有：
+                     * @param _storageClass 目标存储类型。可选值有：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
 <li> ARCHIVE：归档存储。</li>
 <li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * 
                      */
                     void SetStorageClass(const std::string& _storageClass);
 
                     /**
                      * 判断参数 StorageClass 是否已赋值
                      * @return StorageClass 是否已赋值
+                     * 
                      */
                     bool StorageClassHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -129,6 +138,7 @@ namespace TencentCloud
 当媒体文件目前的存储类型为深度归档存储时，有以下取值：
 <li>Standard：标准模式。</li>
 <li>Bulk：批量模式。</li>
+                     * 
                      */
                     std::string GetRestoreTier() const;
 
@@ -141,7 +151,7 @@ namespace TencentCloud
 当媒体文件目前的存储类型为深度归档存储时，有以下取值：
 <li>Standard：标准模式。</li>
 <li>Bulk：批量模式。</li>
-                     * @param RestoreTier 取回模式。当文件的存储类型从归档或深度归档转换为标准存储时，需要指定取回（也称为解冻）操作的模式，具体说明请参考[数据取回及取回模式](https://cloud.tencent.com/document/product/266/56196#retake)。
+                     * @param _restoreTier 取回模式。当文件的存储类型从归档或深度归档转换为标准存储时，需要指定取回（也称为解冻）操作的模式，具体说明请参考[数据取回及取回模式](https://cloud.tencent.com/document/product/266/56196#retake)。
 当媒体文件目前的存储类型为归档存储时，有以下取值：
 <li>Expedited：极速模式。</li>
 <li>Standard：标准模式。</li>
@@ -149,12 +159,14 @@ namespace TencentCloud
 当媒体文件目前的存储类型为深度归档存储时，有以下取值：
 <li>Standard：标准模式。</li>
 <li>Bulk：批量模式。</li>
+                     * 
                      */
                     void SetRestoreTier(const std::string& _restoreTier);
 
                     /**
                      * 判断参数 RestoreTier 是否已赋值
                      * @return RestoreTier 是否已赋值
+                     * 
                      */
                     bool RestoreTierHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。
                      * @return Text 待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。
-                     * @param Text 待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。
+                     * @param _text 待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -67,6 +70,7 @@ en：英文
                      * @return SourceLang 待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
+                     * 
                      */
                     std::string GetSourceLang() const;
 
@@ -74,15 +78,17 @@ en：英文
                      * 设置待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @param SourceLang 待润色文本的语言类型，支持语言如下：
+                     * @param _sourceLang 待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
+                     * 
                      */
                     void SetSourceLang(const std::string& _sourceLang);
 
                     /**
                      * 判断参数 SourceLang 是否已赋值
                      * @return SourceLang 是否已赋值
+                     * 
                      */
                     bool SourceLangHasBeenSet() const;
 
@@ -91,20 +97,23 @@ en：英文
 （注意实际结果可能小于指定个数）
                      * @return Number 返回润色结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
+                     * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置返回润色结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
-                     * @param Number 返回润色结果的个数。数量需>=1且<=5。
+                     * @param _number 返回润色结果的个数。数量需>=1且<=5。
 （注意实际结果可能小于指定个数）
+                     * 
                      */
                     void SetNumber(const int64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
@@ -123,6 +132,7 @@ rewriting：改写
 m2a：从现代文改写为古文
 a2m：从古文改写为现代文
 默认为both。
+                     * 
                      */
                     std::string GetStyle() const;
 
@@ -134,19 +144,21 @@ rewriting：改写
 m2a：从现代文改写为古文
 a2m：从古文改写为现代文
 默认为both。
-                     * @param Style 控制润色类型，类型如下：
+                     * @param _style 控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写
 m2a：从现代文改写为古文
 a2m：从古文改写为现代文
 默认为both。
+                     * 
                      */
                     void SetStyle(const std::string& _style);
 
                     /**
                      * 判断参数 Style 是否已赋值
                      * @return Style 是否已赋值
+                     * 
                      */
                     bool StyleHasBeenSet() const;
 

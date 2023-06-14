@@ -56,6 +56,7 @@ namespace TencentCloud
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOffsetTime() const;
 
@@ -64,16 +65,18 @@ namespace TencentCloud
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OffsetTime 截帧时间。
+                     * @param _offsetTime 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffsetTime(const std::string& _offsetTime);
 
                     /**
                      * 判断参数 OffsetTime 是否已赋值
                      * @return OffsetTime 是否已赋值
+                     * 
                      */
                     bool OffsetTimeHasBeenSet() const;
 
@@ -82,20 +85,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioResult GetResult() const;
 
                     /**
                      * 设置结果集
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 结果集
+                     * @param _result 结果集
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const AudioResult& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

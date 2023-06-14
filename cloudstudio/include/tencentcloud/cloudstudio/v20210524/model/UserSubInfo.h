@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取团队名称
                      * @return Team 团队名称
+                     * 
                      */
                     std::string GetTeam() const;
 
                     /**
                      * 设置团队名称
-                     * @param Team 团队名称
+                     * @param _team 团队名称
+                     * 
                      */
                     void SetTeam(const std::string& _team);
 
                     /**
                      * 判断参数 Team 是否已赋值
                      * @return Team 是否已赋值
+                     * 
                      */
                     bool TeamHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取昵称
                      * @return NickName 昵称
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置昵称
-                     * @param NickName 昵称
+                     * @param _nickName 昵称
+                     * 
                      */
                     void SetNickName(const std::string& _nickName);
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
                     /**
                      * 获取是否为管理员
                      * @return IsAdmin 是否为管理员
+                     * 
                      */
                     bool GetIsAdmin() const;
 
                     /**
                      * 设置是否为管理员
-                     * @param IsAdmin 是否为管理员
+                     * @param _isAdmin 是否为管理员
+                     * 
                      */
                     void SetIsAdmin(const bool& _isAdmin);
 
                     /**
                      * 判断参数 IsAdmin 是否已赋值
                      * @return IsAdmin 是否已赋值
+                     * 
                      */
                     bool IsAdminHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsTrial xxx
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsTrial() const;
 
                     /**
                      * 设置xxx
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsTrial xxx
+                     * @param _isTrial xxx
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsTrial(const bool& _isTrial);
 
                     /**
                      * 判断参数 IsTrial 是否已赋值
                      * @return IsTrial 是否已赋值
+                     * 
                      */
                     bool IsTrialHasBeenSet() const;
 

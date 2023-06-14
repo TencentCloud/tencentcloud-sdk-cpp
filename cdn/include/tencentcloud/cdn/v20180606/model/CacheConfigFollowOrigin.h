@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 路径缓存遵循源站配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,15 +62,17 @@ off：关闭
                      * 设置路径缓存遵循源站配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 路径缓存遵循源站配置开关，取值有：
+                     * @param _switch 路径缓存遵循源站配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -78,20 +81,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeuristicCache 启发式缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HeuristicCache GetHeuristicCache() const;
 
                     /**
                      * 设置启发式缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeuristicCache 启发式缓存配置
+                     * @param _heuristicCache 启发式缓存配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeuristicCache(const HeuristicCache& _heuristicCache);
 
                     /**
                      * 判断参数 HeuristicCache 是否已赋值
                      * @return HeuristicCache 是否已赋值
+                     * 
                      */
                     bool HeuristicCacheHasBeenSet() const;
 

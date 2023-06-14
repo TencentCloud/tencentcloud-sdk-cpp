@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取投递kafka配置
                      * @return Result 投递kafka配置
+                     * 
                      */
                     KafkaDeliveryConfig GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

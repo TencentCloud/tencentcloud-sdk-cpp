@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取机器类型
                      * @return MachineType 机器类型
+                     * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置机器类型
-                     * @param MachineType 机器类型
+                     * @param _machineType 机器类型
+                     * 
                      */
                     void SetMachineType(const std::string& _machineType);
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
                     /**
                      * 获取机器数量
                      * @return MachineNum 机器数量
+                     * 
                      */
                     int64_t GetMachineNum() const;
 
                     /**
                      * 设置机器数量
-                     * @param MachineNum 机器数量
+                     * @param _machineNum 机器数量
+                     * 
                      */
                     void SetMachineNum(const int64_t& _machineNum);
 
                     /**
                      * 判断参数 MachineNum 是否已赋值
                      * @return MachineNum 是否已赋值
+                     * 
                      */
                     bool MachineNumHasBeenSet() const;
 

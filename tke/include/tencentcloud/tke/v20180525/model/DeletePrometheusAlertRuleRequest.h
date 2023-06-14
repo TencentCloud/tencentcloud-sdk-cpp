@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取告警规则id列表
                      * @return AlertIds 告警规则id列表
+                     * 
                      */
                     std::vector<std::string> GetAlertIds() const;
 
                     /**
                      * 设置告警规则id列表
-                     * @param AlertIds 告警规则id列表
+                     * @param _alertIds 告警规则id列表
+                     * 
                      */
                     void SetAlertIds(const std::vector<std::string>& _alertIds);
 
                     /**
                      * 判断参数 AlertIds 是否已赋值
                      * @return AlertIds 是否已赋值
+                     * 
                      */
                     bool AlertIdsHasBeenSet() const;
 

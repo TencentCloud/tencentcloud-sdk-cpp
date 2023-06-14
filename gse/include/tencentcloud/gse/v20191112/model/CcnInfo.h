@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取云联网所属账号
                      * @return AccountId 云联网所属账号
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置云联网所属账号
-                     * @param AccountId 云联网所属账号
+                     * @param _accountId 云联网所属账号
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取云联网id
                      * @return CcnId 云联网id
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网id
-                     * @param CcnId 云联网id
+                     * @param _ccnId 云联网id
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 收款方类型为电子记账本时，上送渠道电子记账本ID
                      * @return PayeeId 收款方标识
 收款方类型为电子记账本时，上送渠道电子记账本ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款方标识
 收款方类型为电子记账本时，上送渠道电子记账本ID
-                     * @param PayeeId 收款方标识
+                     * @param _payeeId 收款方标识
 收款方类型为电子记账本时，上送渠道电子记账本ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -73,38 +76,44 @@ namespace TencentCloud
 ACCOUNT_BOOK_ID：电子记账本ID
                      * @return PayeeIdType 收款方标识类型
 ACCOUNT_BOOK_ID：电子记账本ID
+                     * 
                      */
                     std::string GetPayeeIdType() const;
 
                     /**
                      * 设置收款方标识类型
 ACCOUNT_BOOK_ID：电子记账本ID
-                     * @param PayeeIdType 收款方标识类型
+                     * @param _payeeIdType 收款方标识类型
 ACCOUNT_BOOK_ID：电子记账本ID
+                     * 
                      */
                     void SetPayeeIdType(const std::string& _payeeIdType);
 
                     /**
                      * 判断参数 PayeeIdType 是否已赋值
                      * @return PayeeIdType 是否已赋值
+                     * 
                      */
                     bool PayeeIdTypeHasBeenSet() const;
 
                     /**
                      * 获取收款方名称
                      * @return PayeeName 收款方名称
+                     * 
                      */
                     std::string GetPayeeName() const;
 
                     /**
                      * 设置收款方名称
-                     * @param PayeeName 收款方名称
+                     * @param _payeeName 收款方名称
+                     * 
                      */
                     void SetPayeeName(const std::string& _payeeName);
 
                     /**
                      * 判断参数 PayeeName 是否已赋值
                      * @return PayeeName 是否已赋值
+                     * 
                      */
                     bool PayeeNameHasBeenSet() const;
 

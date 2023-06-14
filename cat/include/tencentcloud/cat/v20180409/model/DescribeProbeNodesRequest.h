@@ -51,6 +51,7 @@ namespace TencentCloud
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
+                     * 
                      */
                     int64_t GetNodeType() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
-                     * @param NodeType 节点类型
+                     * @param _nodeType 节点类型
 <li> 1 = IDC </li>
 <li> 2 = LastMile </li>
 <li> 3 = Mobile </li>
+                     * 
                      */
                     void SetNodeType(const int64_t& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
 <li> 3 = 海外 </li>
+                     * 
                      */
                     int64_t GetLocation() const;
 
@@ -89,52 +93,60 @@ namespace TencentCloud
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
 <li> 3 = 海外 </li>
-                     * @param Location 节点区域
+                     * @param _location 节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
 <li> 3 = 海外 </li>
+                     * 
                      */
                     void SetLocation(const int64_t& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取是否IPv6
                      * @return IsIPv6 是否IPv6
+                     * 
                      */
                     bool GetIsIPv6() const;
 
                     /**
                      * 设置是否IPv6
-                     * @param IsIPv6 是否IPv6
+                     * @param _isIPv6 是否IPv6
+                     * 
                      */
                     void SetIsIPv6(const bool& _isIPv6);
 
                     /**
                      * 判断参数 IsIPv6 是否已赋值
                      * @return IsIPv6 是否已赋值
+                     * 
                      */
                     bool IsIPv6HasBeenSet() const;
 
                     /**
                      * 获取名字模糊搜索
                      * @return NodeName 名字模糊搜索
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置名字模糊搜索
-                     * @param NodeName 名字模糊搜索
+                     * @param _nodeName 名字模糊搜索
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -145,6 +157,7 @@ namespace TencentCloud
                      * @return PayMode 付费模式
 <li>1 = 试用版本</li>
 <li> 2 = 付费版本 </li>
+                     * 
                      */
                     int64_t GetPayMode() const;
 
@@ -152,15 +165,17 @@ namespace TencentCloud
                      * 设置付费模式
 <li>1 = 试用版本</li>
 <li> 2 = 付费版本 </li>
-                     * @param PayMode 付费模式
+                     * @param _payMode 付费模式
 <li>1 = 试用版本</li>
 <li> 2 = 付费版本 </li>
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 

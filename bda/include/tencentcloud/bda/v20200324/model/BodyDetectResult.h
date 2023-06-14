@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Confidence 检测出的人体置信度。 
 误识率百分之十对应的阈值是0.14；误识率百分之五对应的阈值是0.32；误识率百分之二对应的阈值是0.62；误识率百分之一对应的阈值是0.81。 
 通常情况建议使用阈值0.32，可适用大多数情况。
+                     * 
                      */
                     double GetConfidence() const;
 
@@ -62,51 +63,59 @@ namespace TencentCloud
                      * 设置检测出的人体置信度。 
 误识率百分之十对应的阈值是0.14；误识率百分之五对应的阈值是0.32；误识率百分之二对应的阈值是0.62；误识率百分之一对应的阈值是0.81。 
 通常情况建议使用阈值0.32，可适用大多数情况。
-                     * @param Confidence 检测出的人体置信度。 
+                     * @param _confidence 检测出的人体置信度。 
 误识率百分之十对应的阈值是0.14；误识率百分之五对应的阈值是0.32；误识率百分之二对应的阈值是0.62；误识率百分之一对应的阈值是0.81。 
 通常情况建议使用阈值0.32，可适用大多数情况。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取图中检测出来的人体框
                      * @return BodyRect 图中检测出来的人体框
+                     * 
                      */
                     BodyRect GetBodyRect() const;
 
                     /**
                      * 设置图中检测出来的人体框
-                     * @param BodyRect 图中检测出来的人体框
+                     * @param _bodyRect 图中检测出来的人体框
+                     * 
                      */
                     void SetBodyRect(const BodyRect& _bodyRect);
 
                     /**
                      * 判断参数 BodyRect 是否已赋值
                      * @return BodyRect 是否已赋值
+                     * 
                      */
                     bool BodyRectHasBeenSet() const;
 
                     /**
                      * 获取图中检测出的人体属性信息。
                      * @return BodyAttributeInfo 图中检测出的人体属性信息。
+                     * 
                      */
                     BodyAttributeInfo GetBodyAttributeInfo() const;
 
                     /**
                      * 设置图中检测出的人体属性信息。
-                     * @param BodyAttributeInfo 图中检测出的人体属性信息。
+                     * @param _bodyAttributeInfo 图中检测出的人体属性信息。
+                     * 
                      */
                     void SetBodyAttributeInfo(const BodyAttributeInfo& _bodyAttributeInfo);
 
                     /**
                      * 判断参数 BodyAttributeInfo 是否已赋值
                      * @return BodyAttributeInfo 是否已赋值
+                     * 
                      */
                     bool BodyAttributeInfoHasBeenSet() const;
 

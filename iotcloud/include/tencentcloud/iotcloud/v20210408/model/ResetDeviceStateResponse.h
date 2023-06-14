@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取批量重置设备成功数
                      * @return SuccessCount 批量重置设备成功数
+                     * 
                      */
                     uint64_t GetSuccessCount() const;
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
                     /**
                      * 获取批量重置设备结果
                      * @return ResetDeviceResults 批量重置设备结果
+                     * 
                      */
                     std::vector<ResetDeviceResult> GetResetDeviceResults() const;
 
                     /**
                      * 判断参数 ResetDeviceResults 是否已赋值
                      * @return ResetDeviceResults 是否已赋值
+                     * 
                      */
                     bool ResetDeviceResultsHasBeenSet() const;
 

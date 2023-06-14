@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取操作类型，add或del
                      * @return OpType 操作类型，add或del
+                     * 
                      */
                     std::string GetOpType() const;
 
                     /**
                      * 设置操作类型，add或del
-                     * @param OpType 操作类型，add或del
+                     * @param _opType 操作类型，add或del
+                     * 
                      */
                     void SetOpType(const std::string& _opType);
 
                     /**
                      * 判断参数 OpType 是否已赋值
                      * @return OpType 是否已赋值
+                     * 
                      */
                     bool OpTypeHasBeenSet() const;
 
                     /**
                      * 获取数据编码类型
                      * @return Encoding 数据编码类型
+                     * 
                      */
                     std::string GetEncoding() const;
 
                     /**
                      * 设置数据编码类型
-                     * @param Encoding 数据编码类型
+                     * @param _encoding 数据编码类型
+                     * 
                      */
                     void SetEncoding(const std::string& _encoding);
 
                     /**
                      * 判断参数 Encoding 是否已赋值
                      * @return Encoding 是否已赋值
+                     * 
                      */
                     bool EncodingHasBeenSet() const;
 
                     /**
                      * 获取数据
                      * @return Contents 数据
+                     * 
                      */
                     std::string GetContents() const;
 
                     /**
                      * 设置数据
-                     * @param Contents 数据
+                     * @param _contents 数据
+                     * 
                      */
                     void SetContents(const std::string& _contents);
 
                     /**
                      * 判断参数 Contents 是否已赋值
                      * @return Contents 是否已赋值
+                     * 
                      */
                     bool ContentsHasBeenSet() const;
 
                     /**
                      * 获取应用Id
                      * @return ResourceId 应用Id
+                     * 
                      */
                     uint64_t GetResourceId() const;
 
                     /**
                      * 设置应用Id
-                     * @param ResourceId 应用Id
+                     * @param _resourceId 应用Id
+                     * 
                      */
                     void SetResourceId(const uint64_t& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

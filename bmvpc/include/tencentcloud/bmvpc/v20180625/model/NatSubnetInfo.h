@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取子网名称
                      * @return Name 子网名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置子网名称
-                     * @param Name 子网名称
+                     * @param _name 子网名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网
                      * @return SubnetNatType NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网
+                     * 
                      */
                     uint64_t GetSubnetNatType() const;
 
                     /**
                      * 设置NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网
-                     * @param SubnetNatType NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网
+                     * @param _subnetNatType NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网
+                     * 
                      */
                     void SetSubnetNatType(const uint64_t& _subnetNatType);
 
                     /**
                      * 判断参数 SubnetNatType 是否已赋值
                      * @return SubnetNatType 是否已赋值
+                     * 
                      */
                     bool SubnetNatTypeHasBeenSet() const;
 
                     /**
                      * 获取子网网段
                      * @return CidrBlock 子网网段
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置子网网段
-                     * @param CidrBlock 子网网段
+                     * @param _cidrBlock 子网网段
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 

@@ -55,6 +55,7 @@ namespace TencentCloud
 - LOCAL_BASIC：本地硬盘；
 - CLOUD_PREMIUM：高性能云硬盘；
 默认取值：CLOUD_BASIC。
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -63,52 +64,60 @@ namespace TencentCloud
 - LOCAL_BASIC：本地硬盘；
 - CLOUD_PREMIUM：高性能云硬盘；
 默认取值：CLOUD_BASIC。
-                     * @param DiskType 硬盘类型。取值范围：
+                     * @param _diskType 硬盘类型。取值范围：
 - LOCAL_BASIC：本地硬盘；
 - CLOUD_PREMIUM：高性能云硬盘；
 默认取值：CLOUD_BASIC。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取硬盘ID。此参数暂不可用。
                      * @return DiskId 硬盘ID。此参数暂不可用。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置硬盘ID。此参数暂不可用。
-                     * @param DiskId 硬盘ID。此参数暂不可用。
+                     * @param _diskId 硬盘ID。此参数暂不可用。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 
                     /**
                      * 获取硬盘容量大小。单位GB。
                      * @return DiskSize 硬盘容量大小。单位GB。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置硬盘容量大小。单位GB。
-                     * @param DiskSize 硬盘容量大小。单位GB。
+                     * @param _diskSize 硬盘容量大小。单位GB。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 

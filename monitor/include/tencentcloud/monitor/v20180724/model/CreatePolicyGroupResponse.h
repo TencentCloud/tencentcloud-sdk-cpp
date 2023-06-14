@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建成功的策略组Id
                      * @return GroupId 创建成功的策略组Id
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

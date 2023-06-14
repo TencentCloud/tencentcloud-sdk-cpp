@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取修改时间。
                      * @return ModifyTime 修改时间。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间。
-                     * @param ModifyTime 修改时间。
+                     * @param _modifyTime 修改时间。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取协议, 取值: TCP,UDP, ICMP, ALL。
                      * @return Protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议, 取值: TCP,UDP, ICMP, ALL。
-                     * @param Protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * @param _protocol 协议, 取值: TCP,UDP, ICMP, ALL。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
                      * @return Port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
-                     * @param Port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * @param _port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取网段或IP(互斥)。
                      * @return CidrBlock 网段或IP(互斥)。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置网段或IP(互斥)。
-                     * @param CidrBlock 网段或IP(互斥)。
+                     * @param _cidrBlock 网段或IP(互斥)。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取网段或IPv6(互斥)。
                      * @return Ipv6CidrBlock 网段或IPv6(互斥)。
+                     * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置网段或IPv6(互斥)。
-                     * @param Ipv6CidrBlock 网段或IPv6(互斥)。
+                     * @param _ipv6CidrBlock 网段或IPv6(互斥)。
+                     * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
 
                     /**
                      * 判断参数 Ipv6CidrBlock 是否已赋值
                      * @return Ipv6CidrBlock 是否已赋值
+                     * 
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取ACCEPT 或 DROP。
                      * @return Action ACCEPT 或 DROP。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置ACCEPT 或 DROP。
-                     * @param Action ACCEPT 或 DROP。
+                     * @param _action ACCEPT 或 DROP。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取规则描述，最大长度100。
                      * @return Description 规则描述，最大长度100。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述，最大长度100。
-                     * @param Description 规则描述，最大长度100。
+                     * @param _description 规则描述，最大长度100。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

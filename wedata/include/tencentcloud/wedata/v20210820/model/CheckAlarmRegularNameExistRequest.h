@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取项目名称
                      * @return ProjectId 项目名称
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectId 项目名称
+                     * @param _projectId 项目名称
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取规则名称
                      * @return AlarmRegularName 规则名称
+                     * 
                      */
                     std::string GetAlarmRegularName() const;
 
                     /**
                      * 设置规则名称
-                     * @param AlarmRegularName 规则名称
+                     * @param _alarmRegularName 规则名称
+                     * 
                      */
                     void SetAlarmRegularName(const std::string& _alarmRegularName);
 
                     /**
                      * 判断参数 AlarmRegularName 是否已赋值
                      * @return AlarmRegularName 是否已赋值
+                     * 
                      */
                     bool AlarmRegularNameHasBeenSet() const;
 
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * @deprecated
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * @deprecated
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * @deprecated
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取主键ID
                      * @return Id 主键ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置主键ID
-                     * @param Id 主键ID
+                     * @param _id 主键ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取任务类型:201.实时,202.离线
                      * @return TaskType 任务类型:201.实时,202.离线
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型:201.实时,202.离线
-                     * @param TaskType 任务类型:201.实时,202.离线
+                     * @param _taskType 任务类型:201.实时,202.离线
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

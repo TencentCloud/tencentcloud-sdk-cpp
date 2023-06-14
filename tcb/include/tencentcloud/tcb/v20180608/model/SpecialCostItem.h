@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportDate 上报日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportDate() const;
 
                     /**
                      * 设置上报日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportDate 上报日期
+                     * @param _reportDate 上报日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportDate(const std::string& _reportDate);
 
                     /**
                      * 判断参数 ReportDate 是否已赋值
                      * @return ReportDate 是否已赋值
+                     * 
                      */
                     bool ReportDateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 腾讯云uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置腾讯云uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 腾讯云uin
+                     * @param _uin 腾讯云uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 资源id:环境id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置资源id:环境id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvId 资源id:环境id
+                     * @param _envId 资源id:环境id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 上报任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置上报任务状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 上报任务状态
+                     * @param _status 上报任务状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

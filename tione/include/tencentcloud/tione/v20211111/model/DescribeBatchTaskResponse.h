@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchTaskDetail 跑批任务详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BatchTaskDetail GetBatchTaskDetail() const;
 
                     /**
                      * 判断参数 BatchTaskDetail 是否已赋值
                      * @return BatchTaskDetail 是否已赋值
+                     * 
                      */
                     bool BatchTaskDetailHasBeenSet() const;
 

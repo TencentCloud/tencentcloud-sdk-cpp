@@ -51,12 +51,14 @@ namespace TencentCloud
                     /**
                      * 获取某资产的详情。
                      * @return AssetDetailInfo 某资产的详情。
+                     * 
                      */
                     ComplianceAssetDetailInfo GetAssetDetailInfo() const;
 
                     /**
                      * 判断参数 AssetDetailInfo 是否已赋值
                      * @return AssetDetailInfo 是否已赋值
+                     * 
                      */
                     bool AssetDetailInfoHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerDetailInfo 当资产为容器时，返回此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComplianceContainerDetailInfo GetContainerDetailInfo() const;
 
                     /**
                      * 判断参数 ContainerDetailInfo 是否已赋值
                      * @return ContainerDetailInfo 是否已赋值
+                     * 
                      */
                     bool ContainerDetailInfoHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageDetailInfo 当资产为镜像时，返回此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComplianceImageDetailInfo GetImageDetailInfo() const;
 
                     /**
                      * 判断参数 ImageDetailInfo 是否已赋值
                      * @return ImageDetailInfo 是否已赋值
+                     * 
                      */
                     bool ImageDetailInfoHasBeenSet() const;
 
@@ -93,12 +99,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostDetailInfo 当资产为主机时，返回此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComplianceHostDetailInfo GetHostDetailInfo() const;
 
                     /**
                      * 判断参数 HostDetailInfo 是否已赋值
                      * @return HostDetailInfo 是否已赋值
+                     * 
                      */
                     bool HostDetailInfoHasBeenSet() const;
 
@@ -107,12 +115,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return K8SDetailInfo 当资产为K8S时，返回此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ComplianceK8SDetailInfo GetK8SDetailInfo() const;
 
                     /**
                      * 判断参数 K8SDetailInfo 是否已赋值
                      * @return K8SDetailInfo 是否已赋值
+                     * 
                      */
                     bool K8SDetailInfoHasBeenSet() const;
 

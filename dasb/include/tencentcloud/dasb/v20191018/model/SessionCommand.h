@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取账号
                      * @return RealName 账号
+                     * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置账号
-                     * @param RealName 账号
+                     * @param _realName 账号
+                     * 
                      */
                     void SetRealName(const std::string& _realName);
 
                     /**
                      * 判断参数 RealName 是否已赋值
                      * @return RealName 是否已赋值
+                     * 
                      */
                     bool RealNameHasBeenSet() const;
 
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取内部Ip
                      * @return PrivateIp 内部Ip
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置内部Ip
-                     * @param PrivateIp 内部Ip
+                     * @param _privateIp 内部Ip
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 
                     /**
                      * 获取外部Ip
                      * @return PublicIp 外部Ip
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置外部Ip
-                     * @param PublicIp 外部Ip
+                     * @param _publicIp 外部Ip
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
                     /**
                      * 获取命令列表
                      * @return Commands 命令列表
+                     * 
                      */
                     std::vector<Command> GetCommands() const;
 
                     /**
                      * 设置命令列表
-                     * @param Commands 命令列表
+                     * @param _commands 命令列表
+                     * 
                      */
                     void SetCommands(const std::vector<Command>& _commands);
 
                     /**
                      * 判断参数 Commands 是否已赋值
                      * @return Commands 是否已赋值
+                     * 
                      */
                     bool CommandsHasBeenSet() const;
 
                     /**
                      * 获取记录数
                      * @return Count 记录数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置记录数
-                     * @param Count 记录数
+                     * @param _count 记录数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取会话Id
                      * @return Id 会话Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置会话Id
-                     * @param Id 会话Id
+                     * @param _id 会话Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取设备id
                      * @return InstanceId 设备id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置设备id
-                     * @param InstanceId 设备id
+                     * @param _instanceId 设备id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取设备所属的地域
                      * @return ApCode 设备所属的地域
+                     * 
                      */
                     std::string GetApCode() const;
 
                     /**
                      * 设置设备所属的地域
-                     * @param ApCode 设备所属的地域
+                     * @param _apCode 设备所属的地域
+                     * 
                      */
                     void SetApCode(const std::string& _apCode);
 
                     /**
                      * 判断参数 ApCode 是否已赋值
                      * @return ApCode 是否已赋值
+                     * 
                      */
                     bool ApCodeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取函数数组
                      * @return Functions 函数数组
+                     * 
                      */
                     std::vector<std::string> GetFunctions() const;
 
                     /**
                      * 设置函数数组
-                     * @param Functions 函数数组
+                     * @param _functions 函数数组
+                     * 
                      */
                     void SetFunctions(const std::vector<std::string>& _functions);
 
                     /**
                      * 判断参数 Functions 是否已赋值
                      * @return Functions 是否已赋值
+                     * 
                      */
                     bool FunctionsHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return Namespace 命名空间名称
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param Namespace 命名空间名称
+                     * @param _namespace 命名空间名称
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取命名空间函数个数
                      * @return FunctionsCount 命名空间函数个数
+                     * 
                      */
                     int64_t GetFunctionsCount() const;
 
                     /**
                      * 设置命名空间函数个数
-                     * @param FunctionsCount 命名空间函数个数
+                     * @param _functionsCount 命名空间函数个数
+                     * 
                      */
                     void SetFunctionsCount(const int64_t& _functionsCount);
 
                     /**
                      * 判断参数 FunctionsCount 是否已赋值
                      * @return FunctionsCount 是否已赋值
+                     * 
                      */
                     bool FunctionsCountHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalConcurrencyMem 命名空间配额总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalConcurrencyMem() const;
 
                     /**
                      * 设置命名空间配额总量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalConcurrencyMem 命名空间配额总量
+                     * @param _totalConcurrencyMem 命名空间配额总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalConcurrencyMem(const int64_t& _totalConcurrencyMem);
 
                     /**
                      * 判断参数 TotalConcurrencyMem 是否已赋值
                      * @return TotalConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool TotalConcurrencyMemHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAllocatedConcurrencyMem 命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalAllocatedConcurrencyMem() const;
 
                     /**
                      * 设置命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalAllocatedConcurrencyMem 命名空间并发使用量
+                     * @param _totalAllocatedConcurrencyMem 命名空间并发使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalAllocatedConcurrencyMem(const int64_t& _totalAllocatedConcurrencyMem);
 
                     /**
                      * 判断参数 TotalAllocatedConcurrencyMem 是否已赋值
                      * @return TotalAllocatedConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool TotalAllocatedConcurrencyMemHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAllocatedProvisionedMem 命名空间预置使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalAllocatedProvisionedMem() const;
 
                     /**
                      * 设置命名空间预置使用量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalAllocatedProvisionedMem 命名空间预置使用量
+                     * @param _totalAllocatedProvisionedMem 命名空间预置使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalAllocatedProvisionedMem(const int64_t& _totalAllocatedProvisionedMem);
 
                     /**
                      * 判断参数 TotalAllocatedProvisionedMem 是否已赋值
                      * @return TotalAllocatedProvisionedMem 是否已赋值
+                     * 
                      */
                     bool TotalAllocatedProvisionedMemHasBeenSet() const;
 

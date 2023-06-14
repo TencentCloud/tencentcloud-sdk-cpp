@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取层级
                      * @return Level 层级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置层级
-                     * @param Level 层级
+                     * @param _level 层级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取比例
                      * @return Rate 比例
+                     * 
                      */
                     uint64_t GetRate() const;
 
                     /**
                      * 设置比例
-                     * @param Rate 比例
+                     * @param _rate 比例
+                     * 
                      */
                     void SetRate(const uint64_t& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Amount 数量
+                     * 
                      */
                     uint64_t GetAmount() const;
 
                     /**
                      * 设置数量
-                     * @param Amount 数量
+                     * @param _amount 数量
+                     * 
                      */
                     void SetAmount(const uint64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomId 码规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomId 码规则ID
+                     * @param _customId 码规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeParts 码段配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CodePart> GetCodeParts() const;
 
                     /**
                      * 设置码段配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeParts 码段配置
+                     * @param _codeParts 码段配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeParts(const std::vector<CodePart>& _codeParts);
 
                     /**
                      * 判断参数 CodeParts 是否已赋值
                      * @return CodeParts 是否已赋值
+                     * 
                      */
                     bool CodePartsHasBeenSet() const;
 

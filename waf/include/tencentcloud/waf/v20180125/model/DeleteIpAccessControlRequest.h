@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取删除的ip数组
                      * @return Items 删除的ip数组
+                     * 
                      */
                     std::vector<std::string> GetItems() const;
 
                     /**
                      * 设置删除的ip数组
-                     * @param Items 删除的ip数组
+                     * @param _items 删除的ip数组
+                     * 
                      */
                     void SetItems(const std::vector<std::string>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      * @return DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * 
                      */
                     bool GetDeleteAll() const;
 
                     /**
                      * 设置是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
-                     * @param DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * @param _deleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * 
                      */
                     void SetDeleteAll(const bool& _deleteAll);
 
                     /**
                      * 判断参数 DeleteAll 是否已赋值
                      * @return DeleteAll 是否已赋值
+                     * 
                      */
                     bool DeleteAllHasBeenSet() const;
 
                     /**
                      * 获取是否为多域名黑白名单
                      * @return SourceType 是否为多域名黑白名单
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置是否为多域名黑白名单
-                     * @param SourceType 是否为多域名黑白名单
+                     * @param _sourceType 是否为多域名黑白名单
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 

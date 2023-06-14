@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队Id
                      * @return FleetId 服务器舰队Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队Id
-                     * @param FleetId 服务器舰队Id
+                     * @param _fleetId 服务器舰队Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取服务器舰队配置
                      * @return RuntimeConfiguration 服务器舰队配置
+                     * 
                      */
                     RuntimeConfiguration GetRuntimeConfiguration() const;
 
                     /**
                      * 设置服务器舰队配置
-                     * @param RuntimeConfiguration 服务器舰队配置
+                     * @param _runtimeConfiguration 服务器舰队配置
+                     * 
                      */
                     void SetRuntimeConfiguration(const RuntimeConfiguration& _runtimeConfiguration);
 
                     /**
                      * 判断参数 RuntimeConfiguration 是否已赋值
                      * @return RuntimeConfiguration 是否已赋值
+                     * 
                      */
                     bool RuntimeConfigurationHasBeenSet() const;
 

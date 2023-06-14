@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取VPC视图信息
                      * @return VpcView VPC视图信息
+                     * 
                      */
                     VpcViewInfo GetVpcView() const;
 
                     /**
                      * 判断参数 VpcView 是否已赋值
                      * @return VpcView 是否已赋值
+                     * 
                      */
                     bool VpcViewHasBeenSet() const;
 

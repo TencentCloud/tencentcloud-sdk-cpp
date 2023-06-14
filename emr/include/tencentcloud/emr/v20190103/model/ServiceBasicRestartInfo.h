@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取服务名，必填，如HDFS
                      * @return ServiceName 服务名，必填，如HDFS
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名，必填，如HDFS
-                     * @param ServiceName 服务名，必填，如HDFS
+                     * @param _serviceName 服务名，必填，如HDFS
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取如果没传，则表示所有进程
                      * @return ComponentInfoList 如果没传，则表示所有进程
+                     * 
                      */
                     std::vector<ComponentBasicRestartInfo> GetComponentInfoList() const;
 
                     /**
                      * 设置如果没传，则表示所有进程
-                     * @param ComponentInfoList 如果没传，则表示所有进程
+                     * @param _componentInfoList 如果没传，则表示所有进程
+                     * 
                      */
                     void SetComponentInfoList(const std::vector<ComponentBasicRestartInfo>& _componentInfoList);
 
                     /**
                      * 判断参数 ComponentInfoList 是否已赋值
                      * @return ComponentInfoList 是否已赋值
+                     * 
                      */
                     bool ComponentInfoListHasBeenSet() const;
 

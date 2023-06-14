@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回的订单数量。
                      * @return TotalCount 返回的订单数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取订单信息列表。
                      * @return Deals 订单信息列表。
+                     * 
                      */
                     std::vector<Deal> GetDeals() const;
 
                     /**
                      * 判断参数 Deals 是否已赋值
                      * @return Deals 是否已赋值
+                     * 
                      */
                     bool DealsHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 动作识别任务开关，可选值：
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置动作识别任务开关，可选值：
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
-                     * @param Switch 动作识别任务开关，可选值：
+                     * @param _switch 动作识别任务开关，可选值：
 <li>ON：开启；</li>
 <li>OFF：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

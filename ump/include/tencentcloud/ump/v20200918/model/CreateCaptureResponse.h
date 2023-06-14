@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RspData 原始应答报文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRspData() const;
 
                     /**
                      * 判断参数 RspData 是否已赋值
                      * @return RspData 是否已赋值
+                     * 
                      */
                     bool RspDataHasBeenSet() const;
 

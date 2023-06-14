@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务唯一ID
                      * @return TaskId 任务唯一ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务唯一ID
-                     * @param TaskId 任务唯一ID
+                     * @param _taskId 任务唯一ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 数据源名称，当前任务执行时候选中的默认数据源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置数据源名称，当前任务执行时候选中的默认数据源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionName 数据源名称，当前任务执行时候选中的默认数据源
+                     * @param _datasourceConnectionName 数据源名称，当前任务执行时候选中的默认数据源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
@@ -92,182 +98,212 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名称，当前任务执行时候选中的默认数据库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称，当前任务执行时候选中的默认数据库
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 数据库名称，当前任务执行时候选中的默认数据库
+                     * @param _databaseName 数据库名称，当前任务执行时候选中的默认数据库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取当前执行的SQL，一个任务包含一个SQL
                      * @return SQL 当前执行的SQL，一个任务包含一个SQL
+                     * 
                      */
                     std::string GetSQL() const;
 
                     /**
                      * 设置当前执行的SQL，一个任务包含一个SQL
-                     * @param SQL 当前执行的SQL，一个任务包含一个SQL
+                     * @param _sQL 当前执行的SQL，一个任务包含一个SQL
+                     * 
                      */
                     void SetSQL(const std::string& _sQL);
 
                     /**
                      * 判断参数 SQL 是否已赋值
                      * @return SQL 是否已赋值
+                     * 
                      */
                     bool SQLHasBeenSet() const;
 
                     /**
                      * 获取执行任务的类型，现在分为DDL、DML、DQL
                      * @return SQLType 执行任务的类型，现在分为DDL、DML、DQL
+                     * 
                      */
                     std::string GetSQLType() const;
 
                     /**
                      * 设置执行任务的类型，现在分为DDL、DML、DQL
-                     * @param SQLType 执行任务的类型，现在分为DDL、DML、DQL
+                     * @param _sQLType 执行任务的类型，现在分为DDL、DML、DQL
+                     * 
                      */
                     void SetSQLType(const std::string& _sQLType);
 
                     /**
                      * 判断参数 SQLType 是否已赋值
                      * @return SQLType 是否已赋值
+                     * 
                      */
                     bool SQLTypeHasBeenSet() const;
 
                     /**
                      * 获取任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果
                      * @return State 任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果
-                     * @param State 任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果
+                     * @param _state 任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取扫描的数据量，单位byte
                      * @return DataAmount 扫描的数据量，单位byte
+                     * 
                      */
                     int64_t GetDataAmount() const;
 
                     /**
                      * 设置扫描的数据量，单位byte
-                     * @param DataAmount 扫描的数据量，单位byte
+                     * @param _dataAmount 扫描的数据量，单位byte
+                     * 
                      */
                     void SetDataAmount(const int64_t& _dataAmount);
 
                     /**
                      * 判断参数 DataAmount 是否已赋值
                      * @return DataAmount 是否已赋值
+                     * 
                      */
                     bool DataAmountHasBeenSet() const;
 
                     /**
                      * 获取计算耗时，单位： ms
                      * @return UsedTime 计算耗时，单位： ms
+                     * 
                      */
                     int64_t GetUsedTime() const;
 
                     /**
                      * 设置计算耗时，单位： ms
-                     * @param UsedTime 计算耗时，单位： ms
+                     * @param _usedTime 计算耗时，单位： ms
+                     * 
                      */
                     void SetUsedTime(const int64_t& _usedTime);
 
                     /**
                      * 判断参数 UsedTime 是否已赋值
                      * @return UsedTime 是否已赋值
+                     * 
                      */
                     bool UsedTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结果输出的COS桶地址
                      * @return OutputPath 任务结果输出的COS桶地址
+                     * 
                      */
                     std::string GetOutputPath() const;
 
                     /**
                      * 设置任务结果输出的COS桶地址
-                     * @param OutputPath 任务结果输出的COS桶地址
+                     * @param _outputPath 任务结果输出的COS桶地址
+                     * 
                      */
                     void SetOutputPath(const std::string& _outputPath);
 
                     /**
                      * 判断参数 OutputPath 是否已赋值
                      * @return OutputPath 是否已赋值
+                     * 
                      */
                     bool OutputPathHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间，时间戳
                      * @return CreateTime 任务创建时间，时间戳
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间，时间戳
-                     * @param CreateTime 任务创建时间，时间戳
+                     * @param _createTime 任务创建时间，时间戳
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务执行信息，成功时返回success，失败时返回失败原因
                      * @return OutputMessage 任务执行信息，成功时返回success，失败时返回失败原因
+                     * 
                      */
                     std::string GetOutputMessage() const;
 
                     /**
                      * 设置任务执行信息，成功时返回success，失败时返回失败原因
-                     * @param OutputMessage 任务执行信息，成功时返回success，失败时返回失败原因
+                     * @param _outputMessage 任务执行信息，成功时返回success，失败时返回失败原因
+                     * 
                      */
                     void SetOutputMessage(const std::string& _outputMessage);
 
                     /**
                      * 判断参数 OutputMessage 是否已赋值
                      * @return OutputMessage 是否已赋值
+                     * 
                      */
                     bool OutputMessageHasBeenSet() const;
 
                     /**
                      * 获取被影响的行数
                      * @return RowAffectInfo 被影响的行数
+                     * 
                      */
                     std::string GetRowAffectInfo() const;
 
                     /**
                      * 设置被影响的行数
-                     * @param RowAffectInfo 被影响的行数
+                     * @param _rowAffectInfo 被影响的行数
+                     * 
                      */
                     void SetRowAffectInfo(const std::string& _rowAffectInfo);
 
                     /**
                      * 判断参数 RowAffectInfo 是否已赋值
                      * @return RowAffectInfo 是否已赋值
+                     * 
                      */
                     bool RowAffectInfoHasBeenSet() const;
 
@@ -276,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultSchema 结果的schema信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Column> GetResultSchema() const;
 
                     /**
                      * 设置结果的schema信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultSchema 结果的schema信息
+                     * @param _resultSchema 结果的schema信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultSchema(const std::vector<Column>& _resultSchema);
 
                     /**
                      * 判断参数 ResultSchema 是否已赋值
                      * @return ResultSchema 是否已赋值
+                     * 
                      */
                     bool ResultSchemaHasBeenSet() const;
 
@@ -298,110 +337,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultSet 结果信息，反转义后，外层数组的每个元素为一行数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultSet() const;
 
                     /**
                      * 设置结果信息，反转义后，外层数组的每个元素为一行数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultSet 结果信息，反转义后，外层数组的每个元素为一行数据
+                     * @param _resultSet 结果信息，反转义后，外层数组的每个元素为一行数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultSet(const std::string& _resultSet);
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取分页信息，如果没有更多结果数据，nextToken为空
                      * @return NextToken 分页信息，如果没有更多结果数据，nextToken为空
+                     * 
                      */
                     std::string GetNextToken() const;
 
                     /**
                      * 设置分页信息，如果没有更多结果数据，nextToken为空
-                     * @param NextToken 分页信息，如果没有更多结果数据，nextToken为空
+                     * @param _nextToken 分页信息，如果没有更多结果数据，nextToken为空
+                     * 
                      */
                     void SetNextToken(const std::string& _nextToken);
 
                     /**
                      * 判断参数 NextToken 是否已赋值
                      * @return NextToken 是否已赋值
+                     * 
                      */
                     bool NextTokenHasBeenSet() const;
 
                     /**
                      * 获取任务执行进度num/100(%)
                      * @return Percentage 任务执行进度num/100(%)
+                     * 
                      */
                     int64_t GetPercentage() const;
 
                     /**
                      * 设置任务执行进度num/100(%)
-                     * @param Percentage 任务执行进度num/100(%)
+                     * @param _percentage 任务执行进度num/100(%)
+                     * 
                      */
                     void SetPercentage(const int64_t& _percentage);
 
                     /**
                      * 判断参数 Percentage 是否已赋值
                      * @return Percentage 是否已赋值
+                     * 
                      */
                     bool PercentageHasBeenSet() const;
 
                     /**
                      * 获取任务进度明细
                      * @return ProgressDetail 任务进度明细
+                     * 
                      */
                     std::string GetProgressDetail() const;
 
                     /**
                      * 设置任务进度明细
-                     * @param ProgressDetail 任务进度明细
+                     * @param _progressDetail 任务进度明细
+                     * 
                      */
                     void SetProgressDetail(const std::string& _progressDetail);
 
                     /**
                      * 判断参数 ProgressDetail 是否已赋值
                      * @return ProgressDetail 是否已赋值
+                     * 
                      */
                     bool ProgressDetailHasBeenSet() const;
 
                     /**
                      * 获取控制台展示格式。table：表格展示 text：文本展示
                      * @return DisplayFormat 控制台展示格式。table：表格展示 text：文本展示
+                     * 
                      */
                     std::string GetDisplayFormat() const;
 
                     /**
                      * 设置控制台展示格式。table：表格展示 text：文本展示
-                     * @param DisplayFormat 控制台展示格式。table：表格展示 text：文本展示
+                     * @param _displayFormat 控制台展示格式。table：表格展示 text：文本展示
+                     * 
                      */
                     void SetDisplayFormat(const std::string& _displayFormat);
 
                     /**
                      * 判断参数 DisplayFormat 是否已赋值
                      * @return DisplayFormat 是否已赋值
+                     * 
                      */
                     bool DisplayFormatHasBeenSet() const;
 
                     /**
                      * 获取任务耗时，单位： ms
                      * @return TotalTime 任务耗时，单位： ms
+                     * 
                      */
                     int64_t GetTotalTime() const;
 
                     /**
                      * 设置任务耗时，单位： ms
-                     * @param TotalTime 任务耗时，单位： ms
+                     * @param _totalTime 任务耗时，单位： ms
+                     * 
                      */
                     void SetTotalTime(const int64_t& _totalTime);
 
                     /**
                      * 判断参数 TotalTime 是否已赋值
                      * @return TotalTime 是否已赋值
+                     * 
                      */
                     bool TotalTimeHasBeenSet() const;
 

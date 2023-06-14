@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取站点ID。
                      * @return ZoneId 站点ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * @param _zoneId 站点ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取站点名称。
                      * @return ZoneName 站点名称。
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置站点名称。
-                     * @param ZoneName 站点名称。
+                     * @param _zoneName 站点名称。
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取地域性能数据。
                      * @return DistrictStatistics 地域性能数据。
+                     * 
                      */
                     std::vector<DistrictStatistics> GetDistrictStatistics() const;
 
                     /**
                      * 设置地域性能数据。
-                     * @param DistrictStatistics 地域性能数据。
+                     * @param _districtStatistics 地域性能数据。
+                     * 
                      */
                     void SetDistrictStatistics(const std::vector<DistrictStatistics>& _districtStatistics);
 
                     /**
                      * 判断参数 DistrictStatistics 是否已赋值
                      * @return DistrictStatistics 是否已赋值
+                     * 
                      */
                     bool DistrictStatisticsHasBeenSet() const;
 

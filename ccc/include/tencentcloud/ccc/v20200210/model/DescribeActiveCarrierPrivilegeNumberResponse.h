@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取生效列表
                      * @return ActiveCarrierPrivilegeNumbers 生效列表
+                     * 
                      */
                     std::vector<ActiveCarrierPrivilegeNumber> GetActiveCarrierPrivilegeNumbers() const;
 
                     /**
                      * 判断参数 ActiveCarrierPrivilegeNumbers 是否已赋值
                      * @return ActiveCarrierPrivilegeNumbers 是否已赋值
+                     * 
                      */
                     bool ActiveCarrierPrivilegeNumbersHasBeenSet() const;
 
                     /**
                      * 获取待审核单号
                      * @return PendingApplicantIds 待审核单号
+                     * 
                      */
                     std::vector<uint64_t> GetPendingApplicantIds() const;
 
                     /**
                      * 判断参数 PendingApplicantIds 是否已赋值
                      * @return PendingApplicantIds 是否已赋值
+                     * 
                      */
                     bool PendingApplicantIdsHasBeenSet() const;
 

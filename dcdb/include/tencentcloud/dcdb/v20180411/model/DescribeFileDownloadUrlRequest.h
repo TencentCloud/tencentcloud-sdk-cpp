@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例分片ID
                      * @return ShardId 实例分片ID
+                     * 
                      */
                     std::string GetShardId() const;
 
                     /**
                      * 设置实例分片ID
-                     * @param ShardId 实例分片ID
+                     * @param _shardId 实例分片ID
+                     * 
                      */
                     void SetShardId(const std::string& _shardId);
 
                     /**
                      * 判断参数 ShardId 是否已赋值
                      * @return ShardId 是否已赋值
+                     * 
                      */
                     bool ShardIdHasBeenSet() const;
 
                     /**
                      * 获取不带签名的文件路径
                      * @return FilePath 不带签名的文件路径
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置不带签名的文件路径
-                     * @param FilePath 不带签名的文件路径
+                     * @param _filePath 不带签名的文件路径
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

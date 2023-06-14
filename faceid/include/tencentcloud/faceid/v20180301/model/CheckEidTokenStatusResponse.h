@@ -54,12 +54,14 @@ init：token未验证
 doing: 验证中
 finished: 验证完成
 timeout: token已超时
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

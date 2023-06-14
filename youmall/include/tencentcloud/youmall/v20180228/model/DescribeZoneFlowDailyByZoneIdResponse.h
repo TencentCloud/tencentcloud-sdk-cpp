@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取集团id
                      * @return CompanyId 集团id
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺id
                      * @return ShopId 店铺id
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取区域ID
                      * @return ZoneId 区域ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取区域名称
                      * @return ZoneName 区域名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取每日人流量
                      * @return Data 每日人流量
+                     * 
                      */
                     std::vector<ZoneDayFlow> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

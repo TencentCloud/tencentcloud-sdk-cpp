@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>0表示不静音。</li>
 <li>1表示静音。</li>
 默认是0。
+                     * 
                      */
                     int64_t GetMute() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>0表示不静音。</li>
 <li>1表示静音。</li>
 默认是0。
-                     * @param Mute 是否静音，取值范围0或1。
+                     * @param _mute 是否静音，取值范围0或1。
 <li>0表示不静音。</li>
 <li>1表示静音。</li>
 默认是0。
+                     * 
                      */
                     void SetMute(const int64_t& _mute);
 
                     /**
                      * 判断参数 Mute 是否已赋值
                      * @return Mute 是否已赋值
+                     * 
                      */
                     bool MuteHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li>小于1表示降低音量。</li>
 <li>0和1：表示不改变。</li>
 默认是0。
+                     * 
                      */
                     double GetGain() const;
 
@@ -96,17 +100,19 @@ namespace TencentCloud
 <li>小于1表示降低音量。</li>
 <li>0和1：表示不改变。</li>
 默认是0。
-                     * @param Gain 音频增益，取值范围0~10。
+                     * @param _gain 音频增益，取值范围0~10。
 <li>大于1表示增加音量。</li>
 <li>小于1表示降低音量。</li>
 <li>0和1：表示不改变。</li>
 默认是0。
+                     * 
                      */
                     void SetGain(const double& _gain);
 
                     /**
                      * 判断参数 Gain 是否已赋值
                      * @return Gain 是否已赋值
+                     * 
                      */
                     bool GainHasBeenSet() const;
 

@@ -56,6 +56,7 @@ namespace TencentCloud
 0: 无变化
 1: 侵占
 2: 消失
+                     * 
                      */
                     int64_t GetWarningType() const;
 
@@ -64,70 +65,81 @@ namespace TencentCloud
 0: 无变化
 1: 侵占
 2: 消失
-                     * @param WarningType 告警类型：
+                     * @param _warningType 告警类型：
 0: 无变化
 1: 侵占
 2: 消失
+                     * 
                      */
                     void SetWarningType(const int64_t& _warningType);
 
                     /**
                      * 判断参数 WarningType 是否已赋值
                      * @return WarningType 是否已赋值
+                     * 
                      */
                     bool WarningTypeHasBeenSet() const;
 
                     /**
                      * 获取告警侵占或消失面积
                      * @return WarningAreaSize 告警侵占或消失面积
+                     * 
                      */
                     double GetWarningAreaSize() const;
 
                     /**
                      * 设置告警侵占或消失面积
-                     * @param WarningAreaSize 告警侵占或消失面积
+                     * @param _warningAreaSize 告警侵占或消失面积
+                     * 
                      */
                     void SetWarningAreaSize(const double& _warningAreaSize);
 
                     /**
                      * 判断参数 WarningAreaSize 是否已赋值
                      * @return WarningAreaSize 是否已赋值
+                     * 
                      */
                     bool WarningAreaSizeHasBeenSet() const;
 
                     /**
                      * 获取告警侵占或消失坐标
                      * @return WarningLocation 告警侵占或消失坐标
+                     * 
                      */
                     Point GetWarningLocation() const;
 
                     /**
                      * 设置告警侵占或消失坐标
-                     * @param WarningLocation 告警侵占或消失坐标
+                     * @param _warningLocation 告警侵占或消失坐标
+                     * 
                      */
                     void SetWarningLocation(const Point& _warningLocation);
 
                     /**
                      * 判断参数 WarningLocation 是否已赋值
                      * @return WarningLocation 是否已赋值
+                     * 
                      */
                     bool WarningLocationHasBeenSet() const;
 
                     /**
                      * 获取告警侵占或消失轮廓
                      * @return WarningAreaContour 告警侵占或消失轮廓
+                     * 
                      */
                     std::vector<Point> GetWarningAreaContour() const;
 
                     /**
                      * 设置告警侵占或消失轮廓
-                     * @param WarningAreaContour 告警侵占或消失轮廓
+                     * @param _warningAreaContour 告警侵占或消失轮廓
+                     * 
                      */
                     void SetWarningAreaContour(const std::vector<Point>& _warningAreaContour);
 
                     /**
                      * 判断参数 WarningAreaContour 是否已赋值
                      * @return WarningAreaContour 是否已赋值
+                     * 
                      */
                     bool WarningAreaContourHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取机器人Id。
                      * @return RobotId 机器人Id。
+                     * 
                      */
                     std::string GetRobotId() const;
 
                     /**
                      * 设置机器人Id。
-                     * @param RobotId 机器人Id。
+                     * @param _robotId 机器人Id。
+                     * 
                      */
                     void SetRobotId(const std::string& _robotId);
 
                     /**
                      * 判断参数 RobotId 是否已赋值
                      * @return RobotId 是否已赋值
+                     * 
                      */
                     bool RobotIdHasBeenSet() const;
 
                     /**
                      * 获取指令及指令参数数组。
                      * @return SyncRobotCommands 指令及指令参数数组。
+                     * 
                      */
                     std::vector<SyncRobotCommand> GetSyncRobotCommands() const;
 
                     /**
                      * 设置指令及指令参数数组。
-                     * @param SyncRobotCommands 指令及指令参数数组。
+                     * @param _syncRobotCommands 指令及指令参数数组。
+                     * 
                      */
                     void SetSyncRobotCommands(const std::vector<SyncRobotCommand>& _syncRobotCommands);
 
                     /**
                      * 判断参数 SyncRobotCommands 是否已赋值
                      * @return SyncRobotCommands 是否已赋值
+                     * 
                      */
                     bool SyncRobotCommandsHasBeenSet() const;
 

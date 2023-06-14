@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取子账号名称，如果要修改主账号，填root
                      * @return AccountName 子账号名称，如果要修改主账号，填root
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置子账号名称，如果要修改主账号，填root
-                     * @param AccountName 子账号名称，如果要修改主账号，填root
+                     * @param _accountName 子账号名称，如果要修改主账号，填root
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取子账号密码
                      * @return AccountPassword 子账号密码
+                     * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
                      * 设置子账号密码
-                     * @param AccountPassword 子账号密码
+                     * @param _accountPassword 子账号密码
+                     * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
                     /**
                      * 判断参数 AccountPassword 是否已赋值
                      * @return AccountPassword 是否已赋值
+                     * 
                      */
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
                      * 获取子账号描述信息
                      * @return Remark 子账号描述信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置子账号描述信息
-                     * @param Remark 子账号描述信息
+                     * @param _remark 子账号描述信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取路由策略：填写master或者replication，表示主节点或者从节点
                      * @return ReadonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
                      * 设置路由策略：填写master或者replication，表示主节点或者从节点
-                     * @param ReadonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * @param _readonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
 
                     /**
                      * 判断参数 ReadonlyPolicy 是否已赋值
                      * @return ReadonlyPolicy 是否已赋值
+                     * 
                      */
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
                      * 获取子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
                      * @return Privilege 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
                      * 设置子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
-                     * @param Privilege 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * @param _privilege 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * 
                      */
                     void SetPrivilege(const std::string& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 
                     /**
                      * 获取true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
                      * @return NoAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * 
                      */
                     bool GetNoAuth() const;
 
                     /**
                      * 设置true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
-                     * @param NoAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * @param _noAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * 
                      */
                     void SetNoAuth(const bool& _noAuth);
 
                     /**
                      * 判断参数 NoAuth 是否已赋值
                      * @return NoAuth 是否已赋值
+                     * 
                      */
                     bool NoAuthHasBeenSet() const;
 

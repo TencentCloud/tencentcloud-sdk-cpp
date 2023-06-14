@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取产品设备位置信息列表
                      * @return Positions 产品设备位置信息列表
+                     * 
                      */
                     std::vector<ProductDevicesPositionItem> GetPositions() const;
 
                     /**
                      * 判断参数 Positions 是否已赋值
                      * @return Positions 是否已赋值
+                     * 
                      */
                     bool PositionsHasBeenSet() const;
 
                     /**
                      * 获取产品设备位置信息的数目
                      * @return Total 产品设备位置信息的数目
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

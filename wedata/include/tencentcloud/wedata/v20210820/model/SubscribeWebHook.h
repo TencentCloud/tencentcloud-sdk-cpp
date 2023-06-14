@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HookType 群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHookType() const;
 
                     /**
                      * 设置群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HookType 群机器人类型，当前支持飞书
+                     * @param _hookType 群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHookType(const std::string& _hookType);
 
                     /**
                      * 判断参数 HookType 是否已赋值
                      * @return HookType 是否已赋值
+                     * 
                      */
                     bool HookTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HookAddress 群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHookAddress() const;
 
                     /**
                      * 设置群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HookAddress 群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
+                     * @param _hookAddress 群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHookAddress(const std::string& _hookAddress);
 
                     /**
                      * 判断参数 HookAddress 是否已赋值
                      * @return HookAddress 是否已赋值
+                     * 
                      */
                     bool HookAddressHasBeenSet() const;
 

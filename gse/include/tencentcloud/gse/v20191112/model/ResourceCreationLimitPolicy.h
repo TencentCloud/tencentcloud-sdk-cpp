@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取创建数量，最小值1，默认2
                      * @return NewGameServerSessionsPerCreator 创建数量，最小值1，默认2
+                     * 
                      */
                     uint64_t GetNewGameServerSessionsPerCreator() const;
 
                     /**
                      * 设置创建数量，最小值1，默认2
-                     * @param NewGameServerSessionsPerCreator 创建数量，最小值1，默认2
+                     * @param _newGameServerSessionsPerCreator 创建数量，最小值1，默认2
+                     * 
                      */
                     void SetNewGameServerSessionsPerCreator(const uint64_t& _newGameServerSessionsPerCreator);
 
                     /**
                      * 判断参数 NewGameServerSessionsPerCreator 是否已赋值
                      * @return NewGameServerSessionsPerCreator 是否已赋值
+                     * 
                      */
                     bool NewGameServerSessionsPerCreatorHasBeenSet() const;
 
                     /**
                      * 获取单位时间，最小值1，默认3，单位分钟
                      * @return PolicyPeriodInMinutes 单位时间，最小值1，默认3，单位分钟
+                     * 
                      */
                     uint64_t GetPolicyPeriodInMinutes() const;
 
                     /**
                      * 设置单位时间，最小值1，默认3，单位分钟
-                     * @param PolicyPeriodInMinutes 单位时间，最小值1，默认3，单位分钟
+                     * @param _policyPeriodInMinutes 单位时间，最小值1，默认3，单位分钟
+                     * 
                      */
                     void SetPolicyPeriodInMinutes(const uint64_t& _policyPeriodInMinutes);
 
                     /**
                      * 判断参数 PolicyPeriodInMinutes 是否已赋值
                      * @return PolicyPeriodInMinutes 是否已赋值
+                     * 
                      */
                     bool PolicyPeriodInMinutesHasBeenSet() const;
 

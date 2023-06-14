@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
                      * @return StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
-                     * @param StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * @param _startTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
                      * @return EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
-                     * @param EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * @param _endTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -93,6 +99,7 @@ hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
 
 仅支持30天内数据查询，且查询时间范围在 7 到 30 天最小粒度是 hour。
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -104,37 +111,42 @@ hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
 
 仅支持30天内数据查询，且查询时间范围在 7 到 30 天最小粒度是 hour。
-                     * @param Interval 时间粒度，支持以下几种模式：
+                     * @param _interval 时间粒度，支持以下几种模式：
 min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
 
 仅支持30天内数据查询，且查询时间范围在 7 到 30 天最小粒度是 hour。
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
                     /**
                      * 获取指定域名查询
                      * @return Domain 指定域名查询
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置指定域名查询
-                     * @param Domain 指定域名查询
+                     * @param _domain 指定域名查询
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -171,6 +183,7 @@ AttackType 映射如下:
 "file_read" : 任意文件读取
 "ldap" : LDAP注入攻击防护
 "other" : 其它漏洞防护
+                     * 
                      */
                     std::string GetAttackType() const;
 
@@ -191,7 +204,7 @@ AttackType 映射如下:
 "file_read" : 任意文件读取
 "ldap" : LDAP注入攻击防护
 "other" : 其它漏洞防护
-                     * @param AttackType 指定攻击类型
+                     * @param _attackType 指定攻击类型
 不填则查询所有攻击类型的数据分布
 AttackType 映射如下:
 "webshell" : Webshell检测防护
@@ -207,12 +220,14 @@ AttackType 映射如下:
 "file_read" : 任意文件读取
 "ldap" : LDAP注入攻击防护
 "other" : 其它漏洞防护
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
@@ -227,6 +242,7 @@ DefenceMode映射如下：
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+                     * 
                      */
                     std::string GetDefenceMode() const;
 
@@ -236,71 +252,82 @@ DefenceMode映射如下：
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
-                     * @param DefenceMode 指定防御模式
+                     * @param _defenceMode 指定防御模式
 不填则查询所有防御模式的数据总和
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '拦截模式'
+                     * 
                      */
                     void SetDefenceMode(const std::string& _defenceMode);
 
                     /**
                      * 判断参数 DefenceMode 是否已赋值
                      * @return DefenceMode 是否已赋值
+                     * 
                      */
                     bool DefenceModeHasBeenSet() const;
 
                     /**
                      * 获取地域：mainland 或 overseas
                      * @return Area 地域：mainland 或 overseas
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域：mainland 或 overseas
-                     * @param Area 地域：mainland 或 overseas
+                     * @param _area 地域：mainland 或 overseas
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取指定多个攻击类型，取值参考AttackType
                      * @return AttackTypes 指定多个攻击类型，取值参考AttackType
+                     * 
                      */
                     std::vector<std::string> GetAttackTypes() const;
 
                     /**
                      * 设置指定多个攻击类型，取值参考AttackType
-                     * @param AttackTypes 指定多个攻击类型，取值参考AttackType
+                     * @param _attackTypes 指定多个攻击类型，取值参考AttackType
+                     * 
                      */
                     void SetAttackTypes(const std::vector<std::string>& _attackTypes);
 
                     /**
                      * 判断参数 AttackTypes 是否已赋值
                      * @return AttackTypes 是否已赋值
+                     * 
                      */
                     bool AttackTypesHasBeenSet() const;
 
                     /**
                      * 获取指定域名列表查询
                      * @return Domains 指定域名列表查询
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置指定域名列表查询
-                     * @param Domains 指定域名列表查询
+                     * @param _domains 指定域名列表查询
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取检索字段
                      * @return Name 检索字段
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检索字段
-                     * @param Name 检索字段
+                     * @param _name 检索字段
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取操作符
                      * @return Operator 操作符
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符
-                     * @param Operator 操作符
+                     * @param _operator 操作符
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取检索值
                      * @return Value 检索值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置检索值
-                     * @param Value 检索值
+                     * @param _value 检索值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

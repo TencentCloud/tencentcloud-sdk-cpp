@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 语种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置语种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 语种
+                     * @param _label 语种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分
+                     * @param _score 得分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const double& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const double& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabelCode 子标签码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
                      * 设置子标签码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabelCode 子标签码
+                     * @param _subLabelCode 子标签码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
 
                     /**
                      * 判断参数 SubLabelCode 是否已赋值
                      * @return SubLabelCode 是否已赋值
+                     * 
                      */
                     bool SubLabelCodeHasBeenSet() const;
 

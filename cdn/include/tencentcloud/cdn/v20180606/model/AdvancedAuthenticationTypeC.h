@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取访问密钥。
                      * @return AccessKey 访问密钥。
+                     * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
                      * 设置访问密钥。
-                     * @param AccessKey 访问密钥。
+                     * @param _accessKey 访问密钥。
+                     * 
                      */
                     void SetAccessKey(const std::string& _accessKey);
 
                     /**
                      * 判断参数 AccessKey 是否已赋值
                      * @return AccessKey 是否已赋值
+                     * 
                      */
                     bool AccessKeyHasBeenSet() const;
 
                     /**
                      * 获取鉴权密钥。
                      * @return SecretKey 鉴权密钥。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置鉴权密钥。
-                     * @param SecretKey 鉴权密钥。
+                     * @param _secretKey 鉴权密钥。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 

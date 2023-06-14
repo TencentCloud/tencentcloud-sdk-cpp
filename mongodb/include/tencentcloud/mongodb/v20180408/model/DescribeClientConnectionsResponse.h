@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clients 客户端连接信息，包括客户端IP和对应IP的连接数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ClientConnection> GetClients() const;
 
                     /**
                      * 判断参数 Clients 是否已赋值
                      * @return Clients 是否已赋值
+                     * 
                      */
                     bool ClientsHasBeenSet() const;
 

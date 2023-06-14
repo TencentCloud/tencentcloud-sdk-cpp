@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回查询实体相关信息
                      * @return Content 返回查询实体相关信息
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

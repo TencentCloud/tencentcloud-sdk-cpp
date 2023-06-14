@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取需要查看设备列表的产品 ID
                      * @return ProductId 需要查看设备列表的产品 ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置需要查看设备列表的产品 ID
-                     * @param ProductId 需要查看设备列表的产品 ID
+                     * @param _productId 需要查看设备列表的产品 ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，Offset从0开始
                      * @return Offset 偏移量，Offset从0开始
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，Offset从0开始
-                     * @param Offset 偏移量，Offset从0开始
+                     * @param _offset 偏移量，Offset从0开始
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小，最大100
                      * @return Limit 分页的大小，最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小，最大100
-                     * @param Limit 分页的大小，最大100
+                     * @param _limit 分页的大小，最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取需要过滤的设备名称
                      * @return DeviceName 需要过滤的设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置需要过滤的设备名称
-                     * @param DeviceName 需要过滤的设备名称
+                     * @param _deviceName 需要过滤的设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 

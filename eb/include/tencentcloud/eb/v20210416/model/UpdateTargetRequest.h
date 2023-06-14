@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取事件规则ID
                      * @return RuleId 事件规则ID
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置事件规则ID
-                     * @param RuleId 事件规则ID
+                     * @param _ruleId 事件规则ID
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取事件目标ID
                      * @return TargetId 事件目标ID
+                     * 
                      */
                     std::string GetTargetId() const;
 
                     /**
                      * 设置事件目标ID
-                     * @param TargetId 事件目标ID
+                     * @param _targetId 事件目标ID
+                     * 
                      */
                     void SetTargetId(const std::string& _targetId);
 
                     /**
                      * 判断参数 TargetId 是否已赋值
                      * @return TargetId 是否已赋值
+                     * 
                      */
                     bool TargetIdHasBeenSet() const;
 
                     /**
                      * 获取开启批量投递使能
                      * @return EnableBatchDelivery 开启批量投递使能
+                     * 
                      */
                     bool GetEnableBatchDelivery() const;
 
                     /**
                      * 设置开启批量投递使能
-                     * @param EnableBatchDelivery 开启批量投递使能
+                     * @param _enableBatchDelivery 开启批量投递使能
+                     * 
                      */
                     void SetEnableBatchDelivery(const bool& _enableBatchDelivery);
 
                     /**
                      * 判断参数 EnableBatchDelivery 是否已赋值
                      * @return EnableBatchDelivery 是否已赋值
+                     * 
                      */
                     bool EnableBatchDeliveryHasBeenSet() const;
 
                     /**
                      * 获取批量投递最长等待时间
                      * @return BatchTimeout 批量投递最长等待时间
+                     * 
                      */
                     int64_t GetBatchTimeout() const;
 
                     /**
                      * 设置批量投递最长等待时间
-                     * @param BatchTimeout 批量投递最长等待时间
+                     * @param _batchTimeout 批量投递最长等待时间
+                     * 
                      */
                     void SetBatchTimeout(const int64_t& _batchTimeout);
 
                     /**
                      * 判断参数 BatchTimeout 是否已赋值
                      * @return BatchTimeout 是否已赋值
+                     * 
                      */
                     bool BatchTimeoutHasBeenSet() const;
 
                     /**
                      * 获取批量投递最大事件条数
                      * @return BatchEventCount 批量投递最大事件条数
+                     * 
                      */
                     int64_t GetBatchEventCount() const;
 
                     /**
                      * 设置批量投递最大事件条数
-                     * @param BatchEventCount 批量投递最大事件条数
+                     * @param _batchEventCount 批量投递最大事件条数
+                     * 
                      */
                     void SetBatchEventCount(const int64_t& _batchEventCount);
 
                     /**
                      * 判断参数 BatchEventCount 是否已赋值
                      * @return BatchEventCount 是否已赋值
+                     * 
                      */
                     bool BatchEventCountHasBeenSet() const;
 

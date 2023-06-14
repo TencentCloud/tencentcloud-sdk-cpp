@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdleTimeOut 空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIdleTimeOut() const;
 
                     /**
                      * 设置空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdleTimeOut 空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。
+                     * @param _idleTimeOut 空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdleTimeOut(const uint64_t& _idleTimeOut);
 
                     /**
                      * 判断参数 IdleTimeOut 是否已赋值
                      * @return IdleTimeOut 是否已赋值
+                     * 
                      */
                     bool IdleTimeOutHasBeenSet() const;
 

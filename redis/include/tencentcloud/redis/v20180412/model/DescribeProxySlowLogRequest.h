@@ -47,110 +47,128 @@ namespace TencentCloud
 
                      * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
 
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
 
-                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
 
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取慢查询的开始时间。
                      * @return BeginTime 慢查询的开始时间。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置慢查询的开始时间。
-                     * @param BeginTime 慢查询的开始时间。
+                     * @param _beginTime 慢查询的开始时间。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取慢查询的结束时间。
                      * @return EndTime 慢查询的结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置慢查询的结束时间。
-                     * @param EndTime 慢查询的结束时间。
+                     * @param _endTime 慢查询的结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取慢查询阈值，单位：毫秒。
                      * @return MinQueryTime 慢查询阈值，单位：毫秒。
+                     * 
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
                      * 设置慢查询阈值，单位：毫秒。
-                     * @param MinQueryTime 慢查询阈值，单位：毫秒。
+                     * @param _minQueryTime 慢查询阈值，单位：毫秒。
+                     * 
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
                     /**
                      * 判断参数 MinQueryTime 是否已赋值
                      * @return MinQueryTime 是否已赋值
+                     * 
                      */
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
                      * 获取分页大小。默认为 20，取值范围[20,1000]。
                      * @return Limit 分页大小。默认为 20，取值范围[20,1000]。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页大小。默认为 20，取值范围[20,1000]。
-                     * @param Limit 分页大小。默认为 20，取值范围[20,1000]。
+                     * @param _limit 分页大小。默认为 20，取值范围[20,1000]。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取Limit整数倍。
                      * @return Offset 偏移量，取Limit整数倍。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取Limit整数倍。
-                     * @param Offset 偏移量，取Limit整数倍。
+                     * @param _offset 偏移量，取Limit整数倍。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

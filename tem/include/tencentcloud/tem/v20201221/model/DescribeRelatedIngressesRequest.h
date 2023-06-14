@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取环境 id
                      * @return NamespaceId 环境 id
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置环境 id
-                     * @param NamespaceId 环境 id
+                     * @param _namespaceId 环境 id
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取EKS namespace
                      * @return EksNamespace EKS namespace
+                     * 
                      */
                     std::string GetEksNamespace() const;
 
                     /**
                      * 设置EKS namespace
-                     * @param EksNamespace EKS namespace
+                     * @param _eksNamespace EKS namespace
+                     * 
                      */
                     void SetEksNamespace(const std::string& _eksNamespace);
 
                     /**
                      * 判断参数 EksNamespace 是否已赋值
                      * @return EksNamespace 是否已赋值
+                     * 
                      */
                     bool EksNamespaceHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取服务 ID
                      * @return ServiceId 服务 ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务 ID
-                     * @param ServiceId 服务 ID
+                     * @param _serviceId 服务 ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要查看资源列表的产品 ID
                      * @return ProductID 需要查看资源列表的产品 ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置需要查看资源列表的产品 ID
-                     * @param ProductID 需要查看资源列表的产品 ID
+                     * @param _productID 需要查看资源列表的产品 ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取需要过滤的资源名称
                      * @return Name 需要过滤的资源名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置需要过滤的资源名称
-                     * @param Name 需要过滤的资源名称
+                     * @param _name 需要过滤的资源名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

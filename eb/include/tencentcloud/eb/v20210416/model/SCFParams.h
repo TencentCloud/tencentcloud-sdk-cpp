@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取批量投递最长等待时间
                      * @return BatchTimeout 批量投递最长等待时间
+                     * 
                      */
                     int64_t GetBatchTimeout() const;
 
                     /**
                      * 设置批量投递最长等待时间
-                     * @param BatchTimeout 批量投递最长等待时间
+                     * @param _batchTimeout 批量投递最长等待时间
+                     * 
                      */
                     void SetBatchTimeout(const int64_t& _batchTimeout);
 
                     /**
                      * 判断参数 BatchTimeout 是否已赋值
                      * @return BatchTimeout 是否已赋值
+                     * 
                      */
                     bool BatchTimeoutHasBeenSet() const;
 
                     /**
                      * 获取批量投递最大事件条数
                      * @return BatchEventCount 批量投递最大事件条数
+                     * 
                      */
                     int64_t GetBatchEventCount() const;
 
                     /**
                      * 设置批量投递最大事件条数
-                     * @param BatchEventCount 批量投递最大事件条数
+                     * @param _batchEventCount 批量投递最大事件条数
+                     * 
                      */
                     void SetBatchEventCount(const int64_t& _batchEventCount);
 
                     /**
                      * 判断参数 BatchEventCount 是否已赋值
                      * @return BatchEventCount 是否已赋值
+                     * 
                      */
                     bool BatchEventCountHasBeenSet() const;
 
                     /**
                      * 获取开启批量投递使能
                      * @return EnableBatchDelivery 开启批量投递使能
+                     * 
                      */
                     bool GetEnableBatchDelivery() const;
 
                     /**
                      * 设置开启批量投递使能
-                     * @param EnableBatchDelivery 开启批量投递使能
+                     * @param _enableBatchDelivery 开启批量投递使能
+                     * 
                      */
                     void SetEnableBatchDelivery(const bool& _enableBatchDelivery);
 
                     /**
                      * 判断参数 EnableBatchDelivery 是否已赋值
                      * @return EnableBatchDelivery 是否已赋值
+                     * 
                      */
                     bool EnableBatchDeliveryHasBeenSet() const;
 

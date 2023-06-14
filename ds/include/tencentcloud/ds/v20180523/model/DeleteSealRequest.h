@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模块名SealMng
                      * @return Module 模块名SealMng
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名SealMng
-                     * @param Module 模块名SealMng
+                     * @param _module 模块名SealMng
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取操作名DeleteSeal
                      * @return Operation 操作名DeleteSeal
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名DeleteSeal
-                     * @param Operation 操作名DeleteSeal
+                     * @param _operation 操作名DeleteSeal
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取帐号ID
                      * @return AccountResId 帐号ID
+                     * 
                      */
                     std::string GetAccountResId() const;
 
                     /**
                      * 设置帐号ID
-                     * @param AccountResId 帐号ID
+                     * @param _accountResId 帐号ID
+                     * 
                      */
                     void SetAccountResId(const std::string& _accountResId);
 
                     /**
                      * 判断参数 AccountResId 是否已赋值
                      * @return AccountResId 是否已赋值
+                     * 
                      */
                     bool AccountResIdHasBeenSet() const;
 
                     /**
                      * 获取签章ID
                      * @return SealResId 签章ID
+                     * 
                      */
                     std::string GetSealResId() const;
 
                     /**
                      * 设置签章ID
-                     * @param SealResId 签章ID
+                     * @param _sealResId 签章ID
+                     * 
                      */
                     void SetSealResId(const std::string& _sealResId);
 
                     /**
                      * 判断参数 SealResId 是否已赋值
                      * @return SealResId 是否已赋值
+                     * 
                      */
                     bool SealResIdHasBeenSet() const;
 

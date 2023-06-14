@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取启动模板ID。
                      * @return LaunchTemplateId 启动模板ID。
+                     * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
                      * 设置启动模板ID。
-                     * @param LaunchTemplateId 启动模板ID。
+                     * @param _launchTemplateId 启动模板ID。
+                     * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
 
                     /**
                      * 判断参数 LaunchTemplateId 是否已赋值
                      * @return LaunchTemplateId 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取实例启动模板列表。
                      * @return LaunchTemplateVersions 实例启动模板列表。
+                     * 
                      */
                     std::vector<uint64_t> GetLaunchTemplateVersions() const;
 
                     /**
                      * 设置实例启动模板列表。
-                     * @param LaunchTemplateVersions 实例启动模板列表。
+                     * @param _launchTemplateVersions 实例启动模板列表。
+                     * 
                      */
                     void SetLaunchTemplateVersions(const std::vector<uint64_t>& _launchTemplateVersions);
 
                     /**
                      * 判断参数 LaunchTemplateVersions 是否已赋值
                      * @return LaunchTemplateVersions 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateVersionsHasBeenSet() const;
 
                     /**
                      * 获取通过范围指定版本时的最小版本号，默认为0。
                      * @return MinVersion 通过范围指定版本时的最小版本号，默认为0。
+                     * 
                      */
                     uint64_t GetMinVersion() const;
 
                     /**
                      * 设置通过范围指定版本时的最小版本号，默认为0。
-                     * @param MinVersion 通过范围指定版本时的最小版本号，默认为0。
+                     * @param _minVersion 通过范围指定版本时的最小版本号，默认为0。
+                     * 
                      */
                     void SetMinVersion(const uint64_t& _minVersion);
 
                     /**
                      * 判断参数 MinVersion 是否已赋值
                      * @return MinVersion 是否已赋值
+                     * 
                      */
                     bool MinVersionHasBeenSet() const;
 
                     /**
                      * 获取过范围指定版本时的最大版本号，默认为30。
                      * @return MaxVersion 过范围指定版本时的最大版本号，默认为30。
+                     * 
                      */
                     uint64_t GetMaxVersion() const;
 
                     /**
                      * 设置过范围指定版本时的最大版本号，默认为30。
-                     * @param MaxVersion 过范围指定版本时的最大版本号，默认为30。
+                     * @param _maxVersion 过范围指定版本时的最大版本号，默认为30。
+                     * 
                      */
                     void SetMaxVersion(const uint64_t& _maxVersion);
 
                     /**
                      * 判断参数 MaxVersion 是否已赋值
                      * @return MaxVersion 是否已赋值
+                     * 
                      */
                     bool MaxVersionHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-                     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-                     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
                      * @return DefaultVersion 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * 
                      */
                     bool GetDefaultVersion() const;
 
                     /**
                      * 设置是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
-                     * @param DefaultVersion 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * @param _defaultVersion 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * 
                      */
                     void SetDefaultVersion(const bool& _defaultVersion);
 
                     /**
                      * 判断参数 DefaultVersion 是否已赋值
                      * @return DefaultVersion 是否已赋值
+                     * 
                      */
                     bool DefaultVersionHasBeenSet() const;
 

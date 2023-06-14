@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineGroups 采集规则配置绑定的机器组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MachineGroupInfo> GetMachineGroups() const;
 
                     /**
                      * 判断参数 MachineGroups 是否已赋值
                      * @return MachineGroups 是否已赋值
+                     * 
                      */
                     bool MachineGroupsHasBeenSet() const;
 

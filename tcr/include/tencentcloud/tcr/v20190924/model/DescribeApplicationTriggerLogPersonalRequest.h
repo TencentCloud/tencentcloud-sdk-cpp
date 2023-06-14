@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取仓库名称
                      * @return RepoName 仓库名称
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param RepoName 仓库名称
+                     * @param _repoName 仓库名称
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0
                      * @return Offset 偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0
-                     * @param Offset 偏移量，默认为0
+                     * @param _offset 偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回最大数量，默认 20, 最大值 100
                      * @return Limit 返回最大数量，默认 20, 最大值 100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回最大数量，默认 20, 最大值 100
-                     * @param Limit 返回最大数量，默认 20, 最大值 100
+                     * @param _limit 返回最大数量，默认 20, 最大值 100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取升序或降序
                      * @return Order 升序或降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置升序或降序
-                     * @param Order 升序或降序
+                     * @param _order 升序或降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取按某列排序
                      * @return OrderBy 按某列排序
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置按某列排序
-                     * @param OrderBy 按某列排序
+                     * @param _orderBy 按某列排序
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 

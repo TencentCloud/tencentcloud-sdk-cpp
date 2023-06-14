@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取策略名称
                      * @return StrategyName 策略名称
+                     * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名称
-                     * @param StrategyName 策略名称
+                     * @param _strategyName 策略名称
+                     * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
 
                     /**
                      * 判断参数 StrategyName 是否已赋值
                      * @return StrategyName 是否已赋值
+                     * 
                      */
                     bool StrategyNameHasBeenSet() const;
 
                     /**
                      * 获取检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
                      * @return ScanCycle 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
+                     * 
                      */
                     uint64_t GetScanCycle() const;
 
                     /**
                      * 设置检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
-                     * @param ScanCycle 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
+                     * @param _scanCycle 检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.
+                     * 
                      */
                     void SetScanCycle(const uint64_t& _scanCycle);
 
                     /**
                      * 判断参数 ScanCycle 是否已赋值
                      * @return ScanCycle 是否已赋值
+                     * 
                      */
                     bool ScanCycleHasBeenSet() const;
 
                     /**
                      * 获取定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
                      * @return ScanAt 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
+                     * 
                      */
                     std::string GetScanAt() const;
 
                     /**
                      * 设置定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
-                     * @param ScanAt 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
+                     * @param _scanAt 定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测
+                     * 
                      */
                     void SetScanAt(const std::string& _scanAt);
 
                     /**
                      * 判断参数 ScanAt 是否已赋值
                      * @return ScanAt 是否已赋值
+                     * 
                      */
                     bool ScanAtHasBeenSet() const;
 
                     /**
                      * 获取该策略下选择的基线id数组. 示例: [1,3,5,7]
                      * @return CategoryIds 该策略下选择的基线id数组. 示例: [1,3,5,7]
+                     * 
                      */
                     std::vector<uint64_t> GetCategoryIds() const;
 
                     /**
                      * 设置该策略下选择的基线id数组. 示例: [1,3,5,7]
-                     * @param CategoryIds 该策略下选择的基线id数组. 示例: [1,3,5,7]
+                     * @param _categoryIds 该策略下选择的基线id数组. 示例: [1,3,5,7]
+                     * 
                      */
                     void SetCategoryIds(const std::vector<uint64_t>& _categoryIds);
 
                     /**
                      * 判断参数 CategoryIds 是否已赋值
                      * @return CategoryIds 是否已赋值
+                     * 
                      */
                     bool CategoryIdsHasBeenSet() const;
 
                     /**
                      * 获取扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
                      * @return IsGlobal 扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
+                     * 
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
                      * 设置扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
-                     * @param IsGlobal 扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
+                     * @param _isGlobal 扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机
+                     * 
                      */
                     void SetIsGlobal(const uint64_t& _isGlobal);
 
                     /**
                      * 判断参数 IsGlobal 是否已赋值
                      * @return IsGlobal 是否已赋值
+                     * 
                      */
                     bool IsGlobalHasBeenSet() const;
 
@@ -145,6 +160,7 @@ BM：裸金属
 ECM：边缘计算主机
 LH：轻量应用服务器
 Other：混合云机器
+                     * 
                      */
                     std::string GetMachineType() const;
 
@@ -155,54 +171,62 @@ BM：裸金属
 ECM：边缘计算主机
 LH：轻量应用服务器
 Other：混合云机器
-                     * @param MachineType 云主机类型：
+                     * @param _machineType 云主机类型：
 CVM：虚拟主机
 BM：裸金属
 ECM：边缘计算主机
 LH：轻量应用服务器
 Other：混合云机器
+                     * 
                      */
                     void SetMachineType(const std::string& _machineType);
 
                     /**
                      * 判断参数 MachineType 是否已赋值
                      * @return MachineType 是否已赋值
+                     * 
                      */
                     bool MachineTypeHasBeenSet() const;
 
                     /**
                      * 获取主机地域. 示例: "ap-guangzhou"
                      * @return RegionCode 主机地域. 示例: "ap-guangzhou"
+                     * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置主机地域. 示例: "ap-guangzhou"
-                     * @param RegionCode 主机地域. 示例: "ap-guangzhou"
+                     * @param _regionCode 主机地域. 示例: "ap-guangzhou"
+                     * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
                     /**
                      * 判断参数 RegionCode 是否已赋值
                      * @return RegionCode 是否已赋值
+                     * 
                      */
                     bool RegionCodeHasBeenSet() const;
 
                     /**
                      * 获取主机id数组. 示例: ["quuid1","quuid2"]
                      * @return Quuids 主机id数组. 示例: ["quuid1","quuid2"]
+                     * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置主机id数组. 示例: ["quuid1","quuid2"]
-                     * @param Quuids 主机id数组. 示例: ["quuid1","quuid2"]
+                     * @param _quuids 主机id数组. 示例: ["quuid1","quuid2"]
+                     * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
 
                     /**
                      * 判断参数 Quuids 是否已赋值
                      * @return Quuids 是否已赋值
+                     * 
                      */
                     bool QuuidsHasBeenSet() const;
 

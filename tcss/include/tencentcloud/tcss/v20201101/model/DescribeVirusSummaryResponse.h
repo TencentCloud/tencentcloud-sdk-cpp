@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取最近的一次扫描任务id
                      * @return TaskId 最近的一次扫描任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskContainerCnt 木马影响容器个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRiskContainerCnt() const;
 
                     /**
                      * 判断参数 RiskContainerCnt 是否已赋值
                      * @return RiskContainerCnt 是否已赋值
+                     * 
                      */
                     bool RiskContainerCntHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCnt 待处理风险个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRiskCnt() const;
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
+                     * 
                      */
                     bool RiskCntHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusDataBaseModifyTime 病毒库更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirusDataBaseModifyTime() const;
 
                     /**
                      * 判断参数 VirusDataBaseModifyTime 是否已赋值
                      * @return VirusDataBaseModifyTime 是否已赋值
+                     * 
                      */
                     bool VirusDataBaseModifyTimeHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskContainerIncrease 木马影响容器个数较昨日增长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRiskContainerIncrease() const;
 
                     /**
                      * 判断参数 RiskContainerIncrease 是否已赋值
                      * @return RiskContainerIncrease 是否已赋值
+                     * 
                      */
                     bool RiskContainerIncreaseHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskIncrease 待处理风险个数较昨日增长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRiskIncrease() const;
 
                     /**
                      * 判断参数 RiskIncrease 是否已赋值
                      * @return RiskIncrease 是否已赋值
+                     * 
                      */
                     bool RiskIncreaseHasBeenSet() const;
 
@@ -130,12 +142,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateIncrease 隔离事件个数较昨日新增
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsolateIncrease() const;
 
                     /**
                      * 判断参数 IsolateIncrease 是否已赋值
                      * @return IsolateIncrease 是否已赋值
+                     * 
                      */
                     bool IsolateIncreaseHasBeenSet() const;
 
@@ -144,12 +158,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateCnt 隔离事件总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsolateCnt() const;
 
                     /**
                      * 判断参数 IsolateCnt 是否已赋值
                      * @return IsolateCnt 是否已赋值
+                     * 
                      */
                     bool IsolateCntHasBeenSet() const;
 

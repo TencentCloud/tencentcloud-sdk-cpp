@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的EksCi的Id。 最大数量不超过20
                      * @return EksCiIds 需要删除的EksCi的Id。 最大数量不超过20
+                     * 
                      */
                     std::vector<std::string> GetEksCiIds() const;
 
                     /**
                      * 设置需要删除的EksCi的Id。 最大数量不超过20
-                     * @param EksCiIds 需要删除的EksCi的Id。 最大数量不超过20
+                     * @param _eksCiIds 需要删除的EksCi的Id。 最大数量不超过20
+                     * 
                      */
                     void SetEksCiIds(const std::vector<std::string>& _eksCiIds);
 
                     /**
                      * 判断参数 EksCiIds 是否已赋值
                      * @return EksCiIds 是否已赋值
+                     * 
                      */
                     bool EksCiIdsHasBeenSet() const;
 
                     /**
                      * 获取是否释放为EksCi自动创建的Eip
                      * @return ReleaseAutoCreatedEip 是否释放为EksCi自动创建的Eip
+                     * 
                      */
                     bool GetReleaseAutoCreatedEip() const;
 
                     /**
                      * 设置是否释放为EksCi自动创建的Eip
-                     * @param ReleaseAutoCreatedEip 是否释放为EksCi自动创建的Eip
+                     * @param _releaseAutoCreatedEip 是否释放为EksCi自动创建的Eip
+                     * 
                      */
                     void SetReleaseAutoCreatedEip(const bool& _releaseAutoCreatedEip);
 
                     /**
                      * 判断参数 ReleaseAutoCreatedEip 是否已赋值
                      * @return ReleaseAutoCreatedEip 是否已赋值
+                     * 
                      */
                     bool ReleaseAutoCreatedEipHasBeenSet() const;
 

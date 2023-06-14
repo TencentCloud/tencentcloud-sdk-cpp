@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取组件列表。
                      * @return PURLList 组件列表。
+                     * 
                      */
                     std::vector<PURL> GetPURLList() const;
 
                     /**
                      * 判断参数 PURLList 是否已赋值
                      * @return PURLList 是否已赋值
+                     * 
                      */
                     bool PURLListHasBeenSet() const;
 
                     /**
                      * 获取是否命中数据库。
                      * @return Hit 是否命中数据库。
+                     * 
                      */
                     bool GetHit() const;
 
                     /**
                      * 判断参数 Hit 是否已赋值
                      * @return Hit 是否已赋值
+                     * 
                      */
                     bool HitHasBeenSet() const;
 

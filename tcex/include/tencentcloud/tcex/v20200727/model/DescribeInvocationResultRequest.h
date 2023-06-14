@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取调用id，为调用InvokeService接口返回的RequestId
                      * @return InvokeId 调用id，为调用InvokeService接口返回的RequestId
+                     * 
                      */
                     std::string GetInvokeId() const;
 
                     /**
                      * 设置调用id，为调用InvokeService接口返回的RequestId
-                     * @param InvokeId 调用id，为调用InvokeService接口返回的RequestId
+                     * @param _invokeId 调用id，为调用InvokeService接口返回的RequestId
+                     * 
                      */
                     void SetInvokeId(const std::string& _invokeId);
 
                     /**
                      * 判断参数 InvokeId 是否已赋值
                      * @return InvokeId 是否已赋值
+                     * 
                      */
                     bool InvokeIdHasBeenSet() const;
 

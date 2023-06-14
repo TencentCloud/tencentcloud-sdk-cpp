@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID
                      * @return LoadBalancerId 负载均衡实例ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID
-                     * @param LoadBalancerId 负载均衡实例ID
+                     * @param _loadBalancerId 负载均衡实例ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerName 负载均衡实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalancerName 负载均衡实例名称
+                     * @param _loadBalancerName 负载均衡实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listeners 监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ListenerHealth> GetListeners() const;
 
                     /**
                      * 设置监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Listeners 监听器列表
+                     * @param _listeners 监听器列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListeners(const std::vector<ListenerHealth>& _listeners);
 
                     /**
                      * 判断参数 Listeners 是否已赋值
                      * @return Listeners 是否已赋值
+                     * 
                      */
                     bool ListenersHasBeenSet() const;
 

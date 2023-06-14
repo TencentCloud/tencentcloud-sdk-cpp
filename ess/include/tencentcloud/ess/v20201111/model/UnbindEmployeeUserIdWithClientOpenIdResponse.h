@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取解绑是否成功，1表示成功，0表示失败
                      * @return Status 解绑是否成功，1表示成功，0表示失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

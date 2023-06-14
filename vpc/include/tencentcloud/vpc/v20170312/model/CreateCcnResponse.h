@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取云联网（CCN）对象。
                      * @return Ccn 云联网（CCN）对象。
+                     * 
                      */
                     CCN GetCcn() const;
 
                     /**
                      * 判断参数 Ccn 是否已赋值
                      * @return Ccn 是否已赋值
+                     * 
                      */
                     bool CcnHasBeenSet() const;
 

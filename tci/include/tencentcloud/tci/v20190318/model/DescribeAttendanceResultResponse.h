@@ -49,60 +49,70 @@ namespace TencentCloud
                     /**
                      * 获取缺失人员的ID列表(只针对请求中的libids字段)
                      * @return AbsenceSetInLibs 缺失人员的ID列表(只针对请求中的libids字段)
+                     * 
                      */
                     std::vector<AbsenceInfo> GetAbsenceSetInLibs() const;
 
                     /**
                      * 判断参数 AbsenceSetInLibs 是否已赋值
                      * @return AbsenceSetInLibs 是否已赋值
+                     * 
                      */
                     bool AbsenceSetInLibsHasBeenSet() const;
 
                     /**
                      * 获取确定出勤人员列表
                      * @return AttendanceSet 确定出勤人员列表
+                     * 
                      */
                     std::vector<AttendanceInfo> GetAttendanceSet() const;
 
                     /**
                      * 判断参数 AttendanceSet 是否已赋值
                      * @return AttendanceSet 是否已赋值
+                     * 
                      */
                     bool AttendanceSetHasBeenSet() const;
 
                     /**
                      * 获取疑似出勤人员列表
                      * @return SuspectedSet 疑似出勤人员列表
+                     * 
                      */
                     std::vector<SuspectedInfo> GetSuspectedSet() const;
 
                     /**
                      * 判断参数 SuspectedSet 是否已赋值
                      * @return SuspectedSet 是否已赋值
+                     * 
                      */
                     bool SuspectedSetHasBeenSet() const;
 
                     /**
                      * 获取缺失人员的ID列表(只针对请求中的personids字段)
                      * @return AbsenceSet 缺失人员的ID列表(只针对请求中的personids字段)
+                     * 
                      */
                     std::vector<std::string> GetAbsenceSet() const;
 
                     /**
                      * 判断参数 AbsenceSet 是否已赋值
                      * @return AbsenceSet 是否已赋值
+                     * 
                      */
                     bool AbsenceSetHasBeenSet() const;
 
                     /**
                      * 获取请求处理进度
                      * @return Progress 请求处理进度
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

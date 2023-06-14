@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取日志起始时间。
                      * @return StartTime 日志起始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志起始时间。
-                     * @param StartTime 日志起始时间。
+                     * @param _startTime 日志起始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间。
                      * @return EndTime 日志结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志结束时间。
-                     * @param EndTime 日志结束时间。
+                     * @param _endTime 日志结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取日志下载路径。
                      * @return LogPath 日志下载路径。
+                     * 
                      */
                     std::string GetLogPath() const;
 
                     /**
                      * 设置日志下载路径。
-                     * @param LogPath 日志下载路径。
+                     * @param _logPath 日志下载路径。
+                     * 
                      */
                     void SetLogPath(const std::string& _logPath);
 
                     /**
                      * 判断参数 LogPath 是否已赋值
                      * @return LogPath 是否已赋值
+                     * 
                      */
                     bool LogPathHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取本端VPC唯一ID
                      * @return VpcId 本端VPC唯一ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置本端VPC唯一ID
-                     * @param VpcId 本端VPC唯一ID
+                     * @param _vpcId 本端VPC唯一ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取对端VPC唯一ID
                      * @return PeerVpcId 对端VPC唯一ID
+                     * 
                      */
                     std::string GetPeerVpcId() const;
 
                     /**
                      * 设置对端VPC唯一ID
-                     * @param PeerVpcId 对端VPC唯一ID
+                     * @param _peerVpcId 对端VPC唯一ID
+                     * 
                      */
                     void SetPeerVpcId(const std::string& _peerVpcId);
 
                     /**
                      * 判断参数 PeerVpcId 是否已赋值
                      * @return PeerVpcId 是否已赋值
+                     * 
                      */
                     bool PeerVpcIdHasBeenSet() const;
 
                     /**
                      * 获取对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等
                      * @return PeerRegion 对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等
+                     * 
                      */
                     std::string GetPeerRegion() const;
 
                     /**
                      * 设置对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等
-                     * @param PeerRegion 对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等
+                     * @param _peerRegion 对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等
+                     * 
                      */
                     void SetPeerRegion(const std::string& _peerRegion);
 
                     /**
                      * 判断参数 PeerRegion 是否已赋值
                      * @return PeerRegion 是否已赋值
+                     * 
                      */
                     bool PeerRegionHasBeenSet() const;
 
                     /**
                      * 获取对等连接名称
                      * @return VpcPeerConnectionName 对等连接名称
+                     * 
                      */
                     std::string GetVpcPeerConnectionName() const;
 
                     /**
                      * 设置对等连接名称
-                     * @param VpcPeerConnectionName 对等连接名称
+                     * @param _vpcPeerConnectionName 对等连接名称
+                     * 
                      */
                     void SetVpcPeerConnectionName(const std::string& _vpcPeerConnectionName);
 
                     /**
                      * 判断参数 VpcPeerConnectionName 是否已赋值
                      * @return VpcPeerConnectionName 是否已赋值
+                     * 
                      */
                     bool VpcPeerConnectionNameHasBeenSet() const;
 
                     /**
                      * 获取对端账户OwnerUin（默认值为本端账户）
                      * @return PeerUin 对端账户OwnerUin（默认值为本端账户）
+                     * 
                      */
                     std::string GetPeerUin() const;
 
                     /**
                      * 设置对端账户OwnerUin（默认值为本端账户）
-                     * @param PeerUin 对端账户OwnerUin（默认值为本端账户）
+                     * @param _peerUin 对端账户OwnerUin（默认值为本端账户）
+                     * 
                      */
                     void SetPeerUin(const std::string& _peerUin);
 
                     /**
                      * 判断参数 PeerUin 是否已赋值
                      * @return PeerUin 是否已赋值
+                     * 
                      */
                     bool PeerUinHasBeenSet() const;
 
                     /**
                      * 获取跨地域必传，带宽上限值
                      * @return Bandwidth 跨地域必传，带宽上限值
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置跨地域必传，带宽上限值
-                     * @param Bandwidth 跨地域必传，带宽上限值
+                     * @param _bandwidth 跨地域必传，带宽上限值
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 

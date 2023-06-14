@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取密钥的唯一标识
                      * @return KeyId 密钥的唯一标识
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置密钥的唯一标识
-                     * @param KeyId 密钥的唯一标识
+                     * @param _keyId 密钥的唯一标识
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取签名值，通过调用KMS PostQuantumCryptoSign签名接口生成
                      * @return SignatureValue 签名值，通过调用KMS PostQuantumCryptoSign签名接口生成
+                     * 
                      */
                     std::string GetSignatureValue() const;
 
                     /**
                      * 设置签名值，通过调用KMS PostQuantumCryptoSign签名接口生成
-                     * @param SignatureValue 签名值，通过调用KMS PostQuantumCryptoSign签名接口生成
+                     * @param _signatureValue 签名值，通过调用KMS PostQuantumCryptoSign签名接口生成
+                     * 
                      */
                     void SetSignatureValue(const std::string& _signatureValue);
 
                     /**
                      * 判断参数 SignatureValue 是否已赋值
                      * @return SignatureValue 是否已赋值
+                     * 
                      */
                     bool SignatureValueHasBeenSet() const;
 
                     /**
                      * 获取Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。
                      * @return Message Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。
-                     * @param Message Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。
+                     * @param _message Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

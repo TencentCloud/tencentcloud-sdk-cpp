@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取字段名
                      * @return Name 字段名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名
-                     * @param Name 字段名
+                     * @param _name 字段名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果
-                     * @param Result 结果
+                     * @param _result 结果
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取风险值或者说明
                      * @return Value 风险值或者说明
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置风险值或者说明
-                     * @param Value 风险值或者说明
+                     * @param _value 风险值或者说明
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRange() const;
 
                     /**
                      * 设置参考范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range 参考范围
+                     * @param _range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRange(const std::string& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportDate 报告时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetReportDate() const;
 
                     /**
                      * 设置报告时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportDate 报告时间
+                     * @param _reportDate 报告时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportDate(const std::vector<std::string>& _reportDate);
 
                     /**
                      * 判断参数 ReportDate 是否已赋值
                      * @return ReportDate 是否已赋值
+                     * 
                      */
                     bool ReportDateHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileType 文件类型
+                     * @param _fileType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InspectProject 检查项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInspectProject() const;
 
                     /**
                      * 设置检查项目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InspectProject 检查项目
+                     * @param _inspectProject 检查项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInspectProject(const std::string& _inspectProject);
 
                     /**
                      * 判断参数 InspectProject 是否已赋值
                      * @return InspectProject 是否已赋值
+                     * 
                      */
                     bool InspectProjectHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 单位
+                     * @param _unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginName 原名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginName() const;
 
                     /**
                      * 设置原名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginName 原名
+                     * @param _originName 原名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginName(const std::string& _originName);
 
                     /**
                      * 判断参数 OriginName 是否已赋值
                      * @return OriginName 是否已赋值
+                     * 
                      */
                     bool OriginNameHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return YinYang 阴阳性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetYinYang() const;
 
                     /**
                      * 设置阴阳性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param YinYang 阴阳性
+                     * @param _yinYang 阴阳性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYinYang(const std::string& _yinYang);
 
                     /**
                      * 判断参数 YinYang 是否已赋值
                      * @return YinYang 是否已赋值
+                     * 
                      */
                     bool YinYangHasBeenSet() const;
 

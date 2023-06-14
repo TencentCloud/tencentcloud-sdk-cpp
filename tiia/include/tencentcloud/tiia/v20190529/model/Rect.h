@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取x轴坐标
                      * @return X x轴坐标
+                     * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置x轴坐标
-                     * @param X x轴坐标
+                     * @param _x x轴坐标
+                     * 
                      */
                     void SetX(const int64_t& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取y轴坐标
                      * @return Y y轴坐标
+                     * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置y轴坐标
-                     * @param Y y轴坐标
+                     * @param _y y轴坐标
+                     * 
                      */
                     void SetY(const int64_t& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
                     /**
                      * 获取(x,y)坐标距离长度
                      * @return Width (x,y)坐标距离长度
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置(x,y)坐标距离长度
-                     * @param Width (x,y)坐标距离长度
+                     * @param _width (x,y)坐标距离长度
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取(x,y)坐标距离高度
                      * @return Height (x,y)坐标距离高度
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置(x,y)坐标距离高度
-                     * @param Height (x,y)坐标距离高度
+                     * @param _height (x,y)坐标距离高度
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

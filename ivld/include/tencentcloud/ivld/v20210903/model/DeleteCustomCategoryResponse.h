@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取123
                      * @return CategoryId 123
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 

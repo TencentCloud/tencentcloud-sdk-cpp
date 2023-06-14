@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取账户ID
                      * @return AccountResId 账户ID
+                     * 
                      */
                     std::string GetAccountResId() const;
 
                     /**
                      * 设置账户ID
-                     * @param AccountResId 账户ID
+                     * @param _accountResId 账户ID
+                     * 
                      */
                     void SetAccountResId(const std::string& _accountResId);
 
                     /**
                      * 判断参数 AccountResId 是否已赋值
                      * @return AccountResId 是否已赋值
+                     * 
                      */
                     bool AccountResIdHasBeenSet() const;
 
                     /**
                      * 获取授权时间（上传合同可不传该参数）
                      * @return AuthorizationTime 授权时间（上传合同可不传该参数）
+                     * 
                      */
                     std::string GetAuthorizationTime() const;
 
                     /**
                      * 设置授权时间（上传合同可不传该参数）
-                     * @param AuthorizationTime 授权时间（上传合同可不传该参数）
+                     * @param _authorizationTime 授权时间（上传合同可不传该参数）
+                     * 
                      */
                     void SetAuthorizationTime(const std::string& _authorizationTime);
 
                     /**
                      * 判断参数 AuthorizationTime 是否已赋值
                      * @return AuthorizationTime 是否已赋值
+                     * 
                      */
                     bool AuthorizationTimeHasBeenSet() const;
 
                     /**
                      * 获取授权IP地址（上传合同可不传该参数）
                      * @return Location 授权IP地址（上传合同可不传该参数）
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置授权IP地址（上传合同可不传该参数）
-                     * @param Location 授权IP地址（上传合同可不传该参数）
+                     * @param _location 授权IP地址（上传合同可不传该参数）
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取签章ID
                      * @return SealId 签章ID
+                     * 
                      */
                     std::string GetSealId() const;
 
                     /**
                      * 设置签章ID
-                     * @param SealId 签章ID
+                     * @param _sealId 签章ID
+                     * 
                      */
                     void SetSealId(const std::string& _sealId);
 
                     /**
                      * 判断参数 SealId 是否已赋值
                      * @return SealId 是否已赋值
+                     * 
                      */
                     bool SealIdHasBeenSet() const;
 
                     /**
                      * 获取签名图片，优先级比SealId高
                      * @return ImageData 签名图片，优先级比SealId高
+                     * 
                      */
                     std::string GetImageData() const;
 
                     /**
                      * 设置签名图片，优先级比SealId高
-                     * @param ImageData 签名图片，优先级比SealId高
+                     * @param _imageData 签名图片，优先级比SealId高
+                     * 
                      */
                     void SetImageData(const std::string& _imageData);
 
                     /**
                      * 判断参数 ImageData 是否已赋值
                      * @return ImageData 是否已赋值
+                     * 
                      */
                     bool ImageDataHasBeenSet() const;
 
                     /**
                      * 获取默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1
                      * @return CertType 默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1
+                     * 
                      */
                     int64_t GetCertType() const;
 
                     /**
                      * 设置默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1
-                     * @param CertType 默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1
+                     * @param _certType 默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1
+                     * 
                      */
                     void SetCertType(const int64_t& _certType);
 
                     /**
                      * 判断参数 CertType 是否已赋值
                      * @return CertType 是否已赋值
+                     * 
                      */
                     bool CertTypeHasBeenSet() const;
 
                     /**
                      * 获取签名域的标签值
                      * @return SignLocation 签名域的标签值
+                     * 
                      */
                     std::string GetSignLocation() const;
 
                     /**
                      * 设置签名域的标签值
-                     * @param SignLocation 签名域的标签值
+                     * @param _signLocation 签名域的标签值
+                     * 
                      */
                     void SetSignLocation(const std::string& _signLocation);
 
                     /**
                      * 判断参数 SignLocation 是否已赋值
                      * @return SignLocation 是否已赋值
+                     * 
                      */
                     bool SignLocationHasBeenSet() const;
 

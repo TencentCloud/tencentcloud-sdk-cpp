@@ -57,6 +57,7 @@ on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -66,17 +67,19 @@ on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 总是回源校验配置开关，取值有：
+                     * @param _switch 总是回源校验配置开关，取值有：
 on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -85,20 +88,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 只在特定请求路径回源站校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置只在特定请求路径回源站校验
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 只在特定请求路径回源站校验
+                     * @param _path 只在特定请求路径回源站校验
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

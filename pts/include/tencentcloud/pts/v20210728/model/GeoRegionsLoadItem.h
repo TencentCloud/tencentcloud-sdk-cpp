@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percentage 百分比
+                     * 
                      */
                     int64_t GetPercentage() const;
 
                     /**
                      * 设置百分比
-                     * @param Percentage 百分比
+                     * @param _percentage 百分比
+                     * 
                      */
                     void SetPercentage(const int64_t& _percentage);
 
                     /**
                      * 判断参数 Percentage 是否已赋值
                      * @return Percentage 是否已赋值
+                     * 
                      */
                     bool PercentageHasBeenSet() const;
 

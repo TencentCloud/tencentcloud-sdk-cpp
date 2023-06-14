@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取日志导出任务ID
                      * @return ExportId 日志导出任务ID
+                     * 
                      */
                     std::string GetExportId() const;
 
                     /**
                      * 设置日志导出任务ID
-                     * @param ExportId 日志导出任务ID
+                     * @param _exportId 日志导出任务ID
+                     * 
                      */
                     void SetExportId(const std::string& _exportId);
 
                     /**
                      * 判断参数 ExportId 是否已赋值
                      * @return ExportId 是否已赋值
+                     * 
                      */
                     bool ExportIdHasBeenSet() const;
 
                     /**
                      * 获取日志导出查询语句
                      * @return Query 日志导出查询语句
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置日志导出查询语句
-                     * @param Query 日志导出查询语句
+                     * @param _query 日志导出查询语句
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取日志导出文件名
                      * @return FileName 日志导出文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置日志导出文件名
-                     * @param FileName 日志导出文件名
+                     * @param _fileName 日志导出文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取日志文件大小
                      * @return FileSize 日志文件大小
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置日志文件大小
-                     * @param FileSize 日志文件大小
+                     * @param _fileSize 日志文件大小
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取日志导出时间排序
                      * @return Order 日志导出时间排序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置日志导出时间排序
-                     * @param Order 日志导出时间排序
+                     * @param _order 日志导出时间排序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取日志导出格式
                      * @return Format 日志导出格式
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志导出格式
-                     * @param Format 日志导出格式
+                     * @param _format 日志导出格式
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取日志导出数量
                      * @return Count 日志导出数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置日志导出数量
-                     * @param Count 日志导出数量
+                     * @param _count 日志导出数量
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
                      * @return Status 日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
-                     * @param Status 日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
+                     * @param _status 日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取日志导出起始时间
                      * @return From 日志导出起始时间
+                     * 
                      */
                     int64_t GetFrom() const;
 
                     /**
                      * 设置日志导出起始时间
-                     * @param From 日志导出起始时间
+                     * @param _from 日志导出起始时间
+                     * 
                      */
                     void SetFrom(const int64_t& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取日志导出结束时间
                      * @return To 日志导出结束时间
+                     * 
                      */
                     int64_t GetTo() const;
 
                     /**
                      * 设置日志导出结束时间
-                     * @param To 日志导出结束时间
+                     * @param _to 日志导出结束时间
+                     * 
                      */
                     void SetTo(const int64_t& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取日志导出路径
                      * @return CosPath 日志导出路径
+                     * 
                      */
                     std::string GetCosPath() const;
 
                     /**
                      * 设置日志导出路径
-                     * @param CosPath 日志导出路径
+                     * @param _cosPath 日志导出路径
+                     * 
                      */
                     void SetCosPath(const std::string& _cosPath);
 
                     /**
                      * 判断参数 CosPath 是否已赋值
                      * @return CosPath 是否已赋值
+                     * 
                      */
                     bool CosPathHasBeenSet() const;
 
                     /**
                      * 获取日志导出创建时间
                      * @return CreateTime 日志导出创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置日志导出创建时间
-                     * @param CreateTime 日志导出创建时间
+                     * @param _createTime 日志导出创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

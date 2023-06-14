@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取进行中的任务taskid（StartRecord接口返回）。
                      * @return TaskId 进行中的任务taskid（StartRecord接口返回）。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置进行中的任务taskid（StartRecord接口返回）。
-                     * @param TaskId 进行中的任务taskid（StartRecord接口返回）。
+                     * @param _taskId 进行中的任务taskid（StartRecord接口返回）。
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取录制类型：1代表单流 2代表混流 3代表单流和混流。
                      * @return RecordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
+                     * 
                      */
                     uint64_t GetRecordMode() const;
 
                     /**
                      * 设置录制类型：1代表单流 2代表混流 3代表单流和混流。
-                     * @param RecordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
+                     * @param _recordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
+                     * 
                      */
                     void SetRecordMode(const uint64_t& _recordMode);
 
                     /**
                      * 判断参数 RecordMode 是否已赋值
                      * @return RecordMode 是否已赋值
+                     * 
                      */
                     bool RecordModeHasBeenSet() const;
 
                     /**
                      * 获取应用ID。
                      * @return BizId 应用ID。
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID。
-                     * @param BizId 应用ID。
+                     * @param _bizId 应用ID。
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取指定订阅流白名单或者黑名单。
                      * @return SubscribeRecordUserIds 指定订阅流白名单或者黑名单。
+                     * 
                      */
                     SubscribeRecordUserIds GetSubscribeRecordUserIds() const;
 
                     /**
                      * 设置指定订阅流白名单或者黑名单。
-                     * @param SubscribeRecordUserIds 指定订阅流白名单或者黑名单。
+                     * @param _subscribeRecordUserIds 指定订阅流白名单或者黑名单。
+                     * 
                      */
                     void SetSubscribeRecordUserIds(const SubscribeRecordUserIds& _subscribeRecordUserIds);
 
                     /**
                      * 判断参数 SubscribeRecordUserIds 是否已赋值
                      * @return SubscribeRecordUserIds 是否已赋值
+                     * 
                      */
                     bool SubscribeRecordUserIdsHasBeenSet() const;
 

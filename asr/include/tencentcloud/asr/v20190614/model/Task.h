@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
                      * @return TaskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
-                     * @param TaskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * @param _taskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

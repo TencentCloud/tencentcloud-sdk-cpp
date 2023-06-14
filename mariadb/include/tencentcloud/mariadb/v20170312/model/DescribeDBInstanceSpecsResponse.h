@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取按机型分类的可售卖规格列表
                      * @return Specs 按机型分类的可售卖规格列表
+                     * 
                      */
                     std::vector<InstanceSpec> GetSpecs() const;
 
                     /**
                      * 判断参数 Specs 是否已赋值
                      * @return Specs 是否已赋值
+                     * 
                      */
                     bool SpecsHasBeenSet() const;
 

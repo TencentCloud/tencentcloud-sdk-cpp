@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取导出的状态。取值为, SUCCESS:成功、FAILURE:失败，RUNNING: 进行中。
                      * @return ExportStatus 导出的状态。取值为, SUCCESS:成功、FAILURE:失败，RUNNING: 进行中。
+                     * 
                      */
                     std::string GetExportStatus() const;
 
                     /**
                      * 判断参数 ExportStatus 是否已赋值
                      * @return ExportStatus 是否已赋值
+                     * 
                      */
                     bool ExportStatusHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadURL 返回下载URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadURL() const;
 
                     /**
                      * 判断参数 DownloadURL 是否已赋值
                      * @return DownloadURL 是否已赋值
+                     * 
                      */
                     bool DownloadURLHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportProgress 当ExportStatus为RUNNING时，返回导出进度。0~100范围的浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetExportProgress() const;
 
                     /**
                      * 判断参数 ExportProgress 是否已赋值
                      * @return ExportProgress 是否已赋值
+                     * 
                      */
                     bool ExportProgressHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureMsg 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailureMsg() const;
 
                     /**
                      * 判断参数 FailureMsg 是否已赋值
                      * @return FailureMsg 是否已赋值
+                     * 
                      */
                     bool FailureMsgHasBeenSet() const;
 

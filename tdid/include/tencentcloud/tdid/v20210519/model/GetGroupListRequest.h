@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取0为未部署DID服务的群组，1为已部署DID服务的群组
                      * @return Status 0为未部署DID服务的群组，1为已部署DID服务的群组
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0为未部署DID服务的群组，1为已部署DID服务的群组
-                     * @param Status 0为未部署DID服务的群组，1为已部署DID服务的群组
+                     * @param _status 0为未部署DID服务的群组，1为已部署DID服务的群组
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

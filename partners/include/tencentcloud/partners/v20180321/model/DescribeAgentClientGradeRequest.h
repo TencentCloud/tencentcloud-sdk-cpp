@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取代客uin
                      * @return ClientUin 代客uin
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 设置代客uin
-                     * @param ClientUin 代客uin
+                     * @param _clientUin 代客uin
+                     * 
                      */
                     void SetClientUin(const std::string& _clientUin);
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 

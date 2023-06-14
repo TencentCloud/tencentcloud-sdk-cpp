@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例账号名
                      * @return UserName 实例账号名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置实例账号名
-                     * @param UserName 实例账号名
+                     * @param _userName 实例账号名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取新密码，新密码长度不能少于8位
                      * @return Password 新密码，新密码长度不能少于8位
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置新密码，新密码长度不能少于8位
-                     * @param Password 新密码，新密码长度不能少于8位
+                     * @param _password 新密码，新密码长度不能少于8位
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

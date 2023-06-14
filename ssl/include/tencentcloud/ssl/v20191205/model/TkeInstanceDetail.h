@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群命名空间列表
                      * @return NamespaceList 集群命名空间列表
+                     * 
                      */
                     std::vector<TkeNameSpaceDetail> GetNamespaceList() const;
 
                     /**
                      * 设置集群命名空间列表
-                     * @param NamespaceList 集群命名空间列表
+                     * @param _namespaceList 集群命名空间列表
+                     * 
                      */
                     void SetNamespaceList(const std::vector<TkeNameSpaceDetail>& _namespaceList);
 
                     /**
                      * 判断参数 NamespaceList 是否已赋值
                      * @return NamespaceList 是否已赋值
+                     * 
                      */
                     bool NamespaceListHasBeenSet() const;
 

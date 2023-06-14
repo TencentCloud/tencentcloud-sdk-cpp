@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例机型。
                      * @return InstanceType 实例机型。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例机型。
-                     * @param InstanceType 实例机型。
+                     * @param _instanceType 实例机型。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取实例机型系列。
                      * @return InstanceFamily 实例机型系列。
+                     * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
                      * 设置实例机型系列。
-                     * @param InstanceFamily 实例机型系列。
+                     * @param _instanceFamily 实例机型系列。
+                     * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
 
                     /**
                      * 判断参数 InstanceFamily 是否已赋值
                      * @return InstanceFamily 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取GPU核数，单位：核。
                      * @return GPU GPU核数，单位：核。
+                     * 
                      */
                     int64_t GetGPU() const;
 
                     /**
                      * 设置GPU核数，单位：核。
-                     * @param GPU GPU核数，单位：核。
+                     * @param _gPU GPU核数，单位：核。
+                     * 
                      */
                     void SetGPU(const int64_t& _gPU);
 
                     /**
                      * 判断参数 GPU 是否已赋值
                      * @return GPU 是否已赋值
+                     * 
                      */
                     bool GPUHasBeenSet() const;
 
                     /**
                      * 获取CPU核数，单位：核。
                      * @return CPU CPU核数，单位：核。
+                     * 
                      */
                     int64_t GetCPU() const;
 
                     /**
                      * 设置CPU核数，单位：核。
-                     * @param CPU CPU核数，单位：核。
+                     * @param _cPU CPU核数，单位：核。
+                     * 
                      */
                     void SetCPU(const int64_t& _cPU);
 
                     /**
                      * 判断参数 CPU 是否已赋值
                      * @return CPU 是否已赋值
+                     * 
                      */
                     bool CPUHasBeenSet() const;
 
                     /**
                      * 获取内存容量，单位：`GB`。
                      * @return Memory 内存容量，单位：`GB`。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存容量，单位：`GB`。
-                     * @param Memory 内存容量，单位：`GB`。
+                     * @param _memory 内存容量，单位：`GB`。
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取FPGA核数，单位：核。
                      * @return FPGA FPGA核数，单位：核。
+                     * 
                      */
                     int64_t GetFPGA() const;
 
                     /**
                      * 设置FPGA核数，单位：核。
-                     * @param FPGA FPGA核数，单位：核。
+                     * @param _fPGA FPGA核数，单位：核。
+                     * 
                      */
                     void SetFPGA(const int64_t& _fPGA);
 
                     /**
                      * 判断参数 FPGA 是否已赋值
                      * @return FPGA 是否已赋值
+                     * 
                      */
                     bool FPGAHasBeenSet() const;
 
                     /**
                      * 获取实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
                      * @return GpuCount 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     * 
                      */
                     double GetGpuCount() const;
 
                     /**
                      * 设置实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
-                     * @param GpuCount 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     * @param _gpuCount 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     * 
                      */
                     void SetGpuCount(const double& _gpuCount);
 
                     /**
                      * 判断参数 GpuCount 是否已赋值
                      * @return GpuCount 是否已赋值
+                     * 
                      */
                     bool GpuCountHasBeenSet() const;
 

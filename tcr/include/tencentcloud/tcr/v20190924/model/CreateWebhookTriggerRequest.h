@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 Id
                      * @return RegistryId 实例 Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例 Id
-                     * @param RegistryId 实例 Id
+                     * @param _registryId 实例 Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取触发器参数
                      * @return Trigger 触发器参数
+                     * 
                      */
                     WebhookTrigger GetTrigger() const;
 
                     /**
                      * 设置触发器参数
-                     * @param Trigger 触发器参数
+                     * @param _trigger 触发器参数
+                     * 
                      */
                     void SetTrigger(const WebhookTrigger& _trigger);
 
                     /**
                      * 判断参数 Trigger 是否已赋值
                      * @return Trigger 是否已赋值
+                     * 
                      */
                     bool TriggerHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

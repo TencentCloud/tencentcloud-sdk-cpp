@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取子商户账户
                      * @return SubAcctNo 子商户账户
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置子商户账户
-                     * @param SubAcctNo 子商户账户
+                     * @param _subAcctNo 子商户账户
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 3：手续费子账号 
 4：利息子账号
 5：平台担保子账号
+                     * 
                      */
                     std::string GetSubAcctProperty() const;
 
@@ -87,108 +91,125 @@ namespace TencentCloud
 3：手续费子账号 
 4：利息子账号
 5：平台担保子账号
-                     * @param SubAcctProperty 子账户属性 
+                     * @param _subAcctProperty 子账户属性 
 1：普通会员子账号 
 2：挂账子账号 
 3：手续费子账号 
 4：利息子账号
 5：平台担保子账号
+                     * 
                      */
                     void SetSubAcctProperty(const std::string& _subAcctProperty);
 
                     /**
                      * 判断参数 SubAcctProperty 是否已赋值
                      * @return SubAcctProperty 是否已赋值
+                     * 
                      */
                     bool SubAcctPropertyHasBeenSet() const;
 
                     /**
                      * 获取业务平台的子商户Id，唯一
                      * @return SubMchId 业务平台的子商户Id，唯一
+                     * 
                      */
                     std::string GetSubMchId() const;
 
                     /**
                      * 设置业务平台的子商户Id，唯一
-                     * @param SubMchId 业务平台的子商户Id，唯一
+                     * @param _subMchId 业务平台的子商户Id，唯一
+                     * 
                      */
                     void SetSubMchId(const std::string& _subMchId);
 
                     /**
                      * 判断参数 SubMchId 是否已赋值
                      * @return SubMchId 是否已赋值
+                     * 
                      */
                     bool SubMchIdHasBeenSet() const;
 
                     /**
                      * 获取子账户名称
                      * @return SubAcctName 子账户名称
+                     * 
                      */
                     std::string GetSubAcctName() const;
 
                     /**
                      * 设置子账户名称
-                     * @param SubAcctName 子账户名称
+                     * @param _subAcctName 子账户名称
+                     * 
                      */
                     void SetSubAcctName(const std::string& _subAcctName);
 
                     /**
                      * 判断参数 SubAcctName 是否已赋值
                      * @return SubAcctName 是否已赋值
+                     * 
                      */
                     bool SubAcctNameHasBeenSet() const;
 
                     /**
                      * 获取账户可用余额
                      * @return AcctAvailBal 账户可用余额
+                     * 
                      */
                     std::string GetAcctAvailBal() const;
 
                     /**
                      * 设置账户可用余额
-                     * @param AcctAvailBal 账户可用余额
+                     * @param _acctAvailBal 账户可用余额
+                     * 
                      */
                     void SetAcctAvailBal(const std::string& _acctAvailBal);
 
                     /**
                      * 判断参数 AcctAvailBal 是否已赋值
                      * @return AcctAvailBal 是否已赋值
+                     * 
                      */
                     bool AcctAvailBalHasBeenSet() const;
 
                     /**
                      * 获取可提现金额
                      * @return CashAmt 可提现金额
+                     * 
                      */
                     std::string GetCashAmt() const;
 
                     /**
                      * 设置可提现金额
-                     * @param CashAmt 可提现金额
+                     * @param _cashAmt 可提现金额
+                     * 
                      */
                     void SetCashAmt(const std::string& _cashAmt);
 
                     /**
                      * 判断参数 CashAmt 是否已赋值
                      * @return CashAmt 是否已赋值
+                     * 
                      */
                     bool CashAmtHasBeenSet() const;
 
                     /**
                      * 获取维护日期 开户日期或修改日期
                      * @return MaintenanceDate 维护日期 开户日期或修改日期
+                     * 
                      */
                     std::string GetMaintenanceDate() const;
 
                     /**
                      * 设置维护日期 开户日期或修改日期
-                     * @param MaintenanceDate 维护日期 开户日期或修改日期
+                     * @param _maintenanceDate 维护日期 开户日期或修改日期
+                     * 
                      */
                     void SetMaintenanceDate(const std::string& _maintenanceDate);
 
                     /**
                      * 判断参数 MaintenanceDate 是否已赋值
                      * @return MaintenanceDate 是否已赋值
+                     * 
                      */
                     bool MaintenanceDateHasBeenSet() const;
 

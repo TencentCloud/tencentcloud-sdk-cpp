@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取任务Uuid。
                      * @return RunUuid 任务Uuid。
+                     * 
                      */
                     std::string GetRunUuid() const;
 
                     /**
                      * 设置任务Uuid。
-                     * @param RunUuid 任务Uuid。
+                     * @param _runUuid 任务Uuid。
+                     * 
                      */
                     void SetRunUuid(const std::string& _runUuid);
 
                     /**
                      * 判断参数 RunUuid 是否已赋值
                      * @return RunUuid 是否已赋值
+                     * 
                      */
                     bool RunUuidHasBeenSet() const;
 
                     /**
                      * 获取项目ID。
                      * @return ProjectId 项目ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * @param _projectId 项目ID。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取作业路径
                      * @return Path 作业路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置作业路径
-                     * @param Path 作业路径
+                     * @param _path 作业路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

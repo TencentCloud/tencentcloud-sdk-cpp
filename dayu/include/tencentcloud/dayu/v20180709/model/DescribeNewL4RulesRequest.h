@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP）
                      * @return Business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取指定IP查询
                      * @return Ip 指定IP查询
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置指定IP查询
-                     * @param Ip 指定IP查询
+                     * @param _ip 指定IP查询
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取指定高防IP端口查询
                      * @return VirtualPort 指定高防IP端口查询
+                     * 
                      */
                     uint64_t GetVirtualPort() const;
 
                     /**
                      * 设置指定高防IP端口查询
-                     * @param VirtualPort 指定高防IP端口查询
+                     * @param _virtualPort 指定高防IP端口查询
+                     * 
                      */
                     void SetVirtualPort(const uint64_t& _virtualPort);
 
                     /**
                      * 判断参数 VirtualPort 是否已赋值
                      * @return VirtualPort 是否已赋值
+                     * 
                      */
                     bool VirtualPortHasBeenSet() const;
 
                     /**
                      * 获取一页条数，填0表示不分页
                      * @return Limit 一页条数，填0表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * @param _limit 一页条数，填0表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

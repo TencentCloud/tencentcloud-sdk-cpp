@@ -49,24 +49,28 @@ namespace TencentCloud
                     /**
                      * 获取集群信息
                      * @return ClusterInfo 集群信息
+                     * 
                      */
                     AMQPClusterInfo GetClusterInfo() const;
 
                     /**
                      * 判断参数 ClusterInfo 是否已赋值
                      * @return ClusterInfo 是否已赋值
+                     * 
                      */
                     bool ClusterInfoHasBeenSet() const;
 
                     /**
                      * 获取集群配置
                      * @return ClusterConfig 集群配置
+                     * 
                      */
                     AMQPClusterConfig GetClusterConfig() const;
 
                     /**
                      * 判断参数 ClusterConfig 是否已赋值
                      * @return ClusterConfig 是否已赋值
+                     * 
                      */
                     bool ClusterConfigHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStats 集群最近使用量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AMQPClusterRecentStats GetClusterStats() const;
 
                     /**
                      * 判断参数 ClusterStats 是否已赋值
                      * @return ClusterStats 是否已赋值
+                     * 
                      */
                     bool ClusterStatsHasBeenSet() const;
 

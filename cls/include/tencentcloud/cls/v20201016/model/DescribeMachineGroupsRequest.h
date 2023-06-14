@@ -86,6 +86,7 @@ tag:tagKey
 - 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,7 +112,7 @@ tag:tagKey
 - 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters machineGroupName
+                     * @param _filters machineGroupName
 - 按照【机器组名称】进行过滤。
 - 类型：String
 - 必选：否
@@ -132,48 +133,56 @@ tag:tagKey
 - 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，默认值为0
                      * @return Offset 分页的偏移量，默认值为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，默认值为0
-                     * @param Offset 分页的偏移量，默认值为0
+                     * @param _offset 分页的偏移量，默认值为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页单页的限制数目，默认值为20，最大值100
                      * @return Limit 分页单页的限制数目，默认值为20，最大值100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页单页的限制数目，默认值为20，最大值100
-                     * @param Limit 分页单页的限制数目，默认值为20，最大值100
+                     * @param _limit 分页单页的限制数目，默认值为20，最大值100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

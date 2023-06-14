@@ -56,6 +56,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch UserAgent黑白名单配置开关，取值有：
+                     * @param _switch UserAgent黑白名单配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterRules UA黑白名单生效规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UserAgentFilterRule> GetFilterRules() const;
 
                     /**
                      * 设置UA黑白名单生效规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterRules UA黑白名单生效规则列表
+                     * @param _filterRules UA黑白名单生效规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterRules(const std::vector<UserAgentFilterRule>& _filterRules);
 
                     /**
                      * 判断参数 FilterRules 是否已赋值
                      * @return FilterRules 是否已赋值
+                     * 
                      */
                     bool FilterRulesHasBeenSet() const;
 

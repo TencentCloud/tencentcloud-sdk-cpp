@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取平台应用ID
                      * @return MainAppId 平台应用ID
+                     * 
                      */
                     std::string GetMainAppId() const;
 
                     /**
                      * 设置平台应用ID
-                     * @param MainAppId 平台应用ID
+                     * @param _mainAppId 平台应用ID
+                     * 
                      */
                     void SetMainAppId(const std::string& _mainAppId);
 
                     /**
                      * 判断参数 MainAppId 是否已赋值
                      * @return MainAppId 是否已赋值
+                     * 
                      */
                     bool MainAppIdHasBeenSet() const;
 
                     /**
                      * 获取平台代码
                      * @return AppCode 平台代码
+                     * 
                      */
                     std::string GetAppCode() const;
 
                     /**
                      * 设置平台代码
-                     * @param AppCode 平台代码
+                     * @param _appCode 平台代码
+                     * 
                      */
                     void SetAppCode(const std::string& _appCode);
 
                     /**
                      * 判断参数 AppCode 是否已赋值
                      * @return AppCode 是否已赋值
+                     * 
                      */
                     bool AppCodeHasBeenSet() const;
 
                     /**
                      * 获取账单日期，yyyy-MM-dd
                      * @return BillDate 账单日期，yyyy-MM-dd
+                     * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置账单日期，yyyy-MM-dd
-                     * @param BillDate 账单日期，yyyy-MM-dd
+                     * @param _billDate 账单日期，yyyy-MM-dd
+                     * 
                      */
                     void SetBillDate(const std::string& _billDate);
 
                     /**
                      * 判断参数 BillDate 是否已赋值
                      * @return BillDate 是否已赋值
+                     * 
                      */
                     bool BillDateHasBeenSet() const;
 
                     /**
                      * 获取商户或者代理商ID
                      * @return SubAppId 商户或者代理商ID
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置商户或者代理商ID
-                     * @param SubAppId 商户或者代理商ID
+                     * @param _subAppId 商户或者代理商ID
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取集群实例Id
                      * @return InstanceId 集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例Id
-                     * @param InstanceId 集群实例Id
+                     * @param _instanceId 集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取vhost名
                      * @return VirtualHost vhost名
+                     * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
                      * 设置vhost名
-                     * @param VirtualHost vhost名
+                     * @param _virtualHost vhost名
+                     * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
 
                     /**
                      * 判断参数 VirtualHost 是否已赋值
                      * @return VirtualHost 是否已赋值
+                     * 
                      */
                     bool VirtualHostHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description vhost描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置vhost描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description vhost描述信息
+                     * @param _description vhost描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags vhost标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置vhost标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags vhost标签
+                     * @param _tags vhost标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHostStatistics vhost概览统计信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RabbitMQVirtualHostStatistics GetVirtualHostStatistics() const;
 
                     /**
                      * 设置vhost概览统计信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualHostStatistics vhost概览统计信息
+                     * @param _virtualHostStatistics vhost概览统计信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualHostStatistics(const RabbitMQVirtualHostStatistics& _virtualHostStatistics);
 
                     /**
                      * 判断参数 VirtualHostStatistics 是否已赋值
                      * @return VirtualHostStatistics 是否已赋值
+                     * 
                      */
                     bool VirtualHostStatisticsHasBeenSet() const;
 

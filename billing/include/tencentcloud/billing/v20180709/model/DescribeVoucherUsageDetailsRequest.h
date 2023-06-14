@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取一页多少条数据，默认是20条，最大不超过1000
                      * @return Limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置一页多少条数据，默认是20条，最大不超过1000
-                     * @param Limit 一页多少条数据，默认是20条，最大不超过1000
+                     * @param _limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取第多少页，默认是1
                      * @return Offset 第多少页，默认是1
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置第多少页，默认是1
-                     * @param Offset 第多少页，默认是1
+                     * @param _offset 第多少页，默认是1
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取代金券id
                      * @return VoucherId 代金券id
+                     * 
                      */
                     std::string GetVoucherId() const;
 
                     /**
                      * 设置代金券id
-                     * @param VoucherId 代金券id
+                     * @param _voucherId 代金券id
+                     * 
                      */
                     void SetVoucherId(const std::string& _voucherId);
 
                     /**
                      * 判断参数 VoucherId 是否已赋值
                      * @return VoucherId 是否已赋值
+                     * 
                      */
                     bool VoucherIdHasBeenSet() const;
 
                     /**
                      * 获取操作人，默认就是用户uin
                      * @return Operator 操作人，默认就是用户uin
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人，默认就是用户uin
-                     * @param Operator 操作人，默认就是用户uin
+                     * @param _operator 操作人，默认就是用户uin
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

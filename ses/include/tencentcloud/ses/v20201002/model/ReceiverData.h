@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取收件人列表ID
                      * @return ReceiverId 收件人列表ID
+                     * 
                      */
                     uint64_t GetReceiverId() const;
 
                     /**
                      * 设置收件人列表ID
-                     * @param ReceiverId 收件人列表ID
+                     * @param _receiverId 收件人列表ID
+                     * 
                      */
                     void SetReceiverId(const uint64_t& _receiverId);
 
                     /**
                      * 判断参数 ReceiverId 是否已赋值
                      * @return ReceiverId 是否已赋值
+                     * 
                      */
                     bool ReceiverIdHasBeenSet() const;
 
                     /**
                      * 获取收件人列表名称
                      * @return ReceiversName 收件人列表名称
+                     * 
                      */
                     std::string GetReceiversName() const;
 
                     /**
                      * 设置收件人列表名称
-                     * @param ReceiversName 收件人列表名称
+                     * @param _receiversName 收件人列表名称
+                     * 
                      */
                     void SetReceiversName(const std::string& _receiversName);
 
                     /**
                      * 判断参数 ReceiversName 是否已赋值
                      * @return ReceiversName 是否已赋值
+                     * 
                      */
                     bool ReceiversNameHasBeenSet() const;
 
                     /**
                      * 获取收件人地址总数
                      * @return Count 收件人地址总数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置收件人地址总数
-                     * @param Count 收件人地址总数
+                     * @param _count 收件人地址总数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 收件人列表描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置收件人列表描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 收件人列表描述
+                     * @param _desc 收件人列表描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -127,38 +139,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiversStatus 列表状态(1 待上传 2 上传中 3 上传完成)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReceiversStatus() const;
 
                     /**
                      * 设置列表状态(1 待上传 2 上传中 3 上传完成)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiversStatus 列表状态(1 待上传 2 上传中 3 上传完成)
+                     * @param _receiversStatus 列表状态(1 待上传 2 上传中 3 上传完成)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiversStatus(const uint64_t& _receiversStatus);
 
                     /**
                      * 判断参数 ReceiversStatus 是否已赋值
                      * @return ReceiversStatus 是否已赋值
+                     * 
                      */
                     bool ReceiversStatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间,如:2021-09-28 16:40:35
                      * @return CreateTime 创建时间,如:2021-09-28 16:40:35
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间,如:2021-09-28 16:40:35
-                     * @param CreateTime 创建时间,如:2021-09-28 16:40:35
+                     * @param _createTime 创建时间,如:2021-09-28 16:40:35
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      * @return BizId 应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
-                     * @param BizId 应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * @param _bizId 应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取查询的任务 ID 列表，任务 ID 列表最多支持 100 个。
                      * @return TaskIdList 查询的任务 ID 列表，任务 ID 列表最多支持 100 个。
+                     * 
                      */
                     std::vector<std::string> GetTaskIdList() const;
 
                     /**
                      * 设置查询的任务 ID 列表，任务 ID 列表最多支持 100 个。
-                     * @param TaskIdList 查询的任务 ID 列表，任务 ID 列表最多支持 100 个。
+                     * @param _taskIdList 查询的任务 ID 列表，任务 ID 列表最多支持 100 个。
+                     * 
                      */
                     void SetTaskIdList(const std::vector<std::string>& _taskIdList);
 
                     /**
                      * 判断参数 TaskIdList 是否已赋值
                      * @return TaskIdList 是否已赋值
+                     * 
                      */
                     bool TaskIdListHasBeenSet() const;
 
                     /**
                      * 获取任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
                      * @return Limit 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
-                     * @param Limit 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     * @param _limit 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取操作系统名称，只能是Linux、Windows或MySQL
                      * @return OsName 操作系统名称，只能是Linux、Windows或MySQL
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称，只能是Linux、Windows或MySQL
-                     * @param OsName 操作系统名称，只能是Linux、Windows或MySQL
+                     * @param _osName 操作系统名称，只能是Linux、Windows或MySQL
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取IP地址
                      * @return Ip IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-                     * @param Ip IP地址
+                     * @param _ip IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取管理端口
                      * @return Port 管理端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置管理端口
-                     * @param Port 管理端口
+                     * @param _port 管理端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取主机名，可为空
                      * @return Name 主机名，可为空
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置主机名，可为空
-                     * @param Name 主机名，可为空
+                     * @param _name 主机名，可为空
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取资产所属的部门ID
                      * @return DepartmentId 资产所属的部门ID
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置资产所属的部门ID
-                     * @param DepartmentId 资产所属的部门ID
+                     * @param _departmentId 资产所属的部门ID
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

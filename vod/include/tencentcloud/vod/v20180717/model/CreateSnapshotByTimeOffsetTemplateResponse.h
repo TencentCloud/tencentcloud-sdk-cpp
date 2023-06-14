@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取时间点截图模板唯一标识。
                      * @return Definition 时间点截图模板唯一标识。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

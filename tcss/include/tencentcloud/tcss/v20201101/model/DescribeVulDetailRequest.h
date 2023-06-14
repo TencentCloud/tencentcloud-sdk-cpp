@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 

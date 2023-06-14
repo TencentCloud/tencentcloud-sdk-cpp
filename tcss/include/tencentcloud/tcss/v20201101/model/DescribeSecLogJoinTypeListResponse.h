@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取接入日志列表
                      * @return List 接入日志列表
+                     * 
                      */
                     std::vector<SecLogJoinInfo> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

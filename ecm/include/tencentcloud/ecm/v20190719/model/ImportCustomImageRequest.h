@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取导入镜像的操作系统架构，x86_64 或 i386
                      * @return Architecture 导入镜像的操作系统架构，x86_64 或 i386
+                     * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 设置导入镜像的操作系统架构，x86_64 或 i386
-                     * @param Architecture 导入镜像的操作系统架构，x86_64 或 i386
+                     * @param _architecture 导入镜像的操作系统架构，x86_64 或 i386
+                     * 
                      */
                     void SetArchitecture(const std::string& _architecture);
 
                     /**
                      * 判断参数 Architecture 是否已赋值
                      * @return Architecture 是否已赋值
+                     * 
                      */
                     bool ArchitectureHasBeenSet() const;
 
                     /**
                      * 获取导入镜像的操作系统类型，通过DescribeImportImageOs获取
                      * @return OsType 导入镜像的操作系统类型，通过DescribeImportImageOs获取
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置导入镜像的操作系统类型，通过DescribeImportImageOs获取
-                     * @param OsType 导入镜像的操作系统类型，通过DescribeImportImageOs获取
+                     * @param _osType 导入镜像的操作系统类型，通过DescribeImportImageOs获取
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取导入镜像的操作系统版本，通过DescribeImportImageOs获取
                      * @return OsVersion 导入镜像的操作系统版本，通过DescribeImportImageOs获取
+                     * 
                      */
                     std::string GetOsVersion() const;
 
                     /**
                      * 设置导入镜像的操作系统版本，通过DescribeImportImageOs获取
-                     * @param OsVersion 导入镜像的操作系统版本，通过DescribeImportImageOs获取
+                     * @param _osVersion 导入镜像的操作系统版本，通过DescribeImportImageOs获取
+                     * 
                      */
                     void SetOsVersion(const std::string& _osVersion);
 
                     /**
                      * 判断参数 OsVersion 是否已赋值
                      * @return OsVersion 是否已赋值
+                     * 
                      */
                     bool OsVersionHasBeenSet() const;
 
                     /**
                      * 获取镜像描述
                      * @return ImageDescription 镜像描述
+                     * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
                      * 设置镜像描述
-                     * @param ImageDescription 镜像描述
+                     * @param _imageDescription 镜像描述
+                     * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
 
                     /**
                      * 判断参数 ImageDescription 是否已赋值
                      * @return ImageDescription 是否已赋值
+                     * 
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
                      * 获取镜像启动方式，cloudinit或nbd， 默认cloudinit
                      * @return InitFlag 镜像启动方式，cloudinit或nbd， 默认cloudinit
+                     * 
                      */
                     std::string GetInitFlag() const;
 
                     /**
                      * 设置镜像启动方式，cloudinit或nbd， 默认cloudinit
-                     * @param InitFlag 镜像启动方式，cloudinit或nbd， 默认cloudinit
+                     * @param _initFlag 镜像启动方式，cloudinit或nbd， 默认cloudinit
+                     * 
                      */
                     void SetInitFlag(const std::string& _initFlag);
 
                     /**
                      * 判断参数 InitFlag 是否已赋值
                      * @return InitFlag 是否已赋值
+                     * 
                      */
                     bool InitFlagHasBeenSet() const;
 
                     /**
                      * 获取镜像文件描述，多层镜像按顺序传入
                      * @return ImageUrls 镜像文件描述，多层镜像按顺序传入
+                     * 
                      */
                     std::vector<ImageUrl> GetImageUrls() const;
 
                     /**
                      * 设置镜像文件描述，多层镜像按顺序传入
-                     * @param ImageUrls 镜像文件描述，多层镜像按顺序传入
+                     * @param _imageUrls 镜像文件描述，多层镜像按顺序传入
+                     * 
                      */
                     void SetImageUrls(const std::vector<ImageUrl>& _imageUrls);
 
                     /**
                      * 判断参数 ImageUrls 是否已赋值
                      * @return ImageUrls 是否已赋值
+                     * 
                      */
                     bool ImageUrlsHasBeenSet() const;
 

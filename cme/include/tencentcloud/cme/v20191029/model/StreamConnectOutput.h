@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取云转推输出源标识，转推项目级别唯一。若不填则由后端生成。
                      * @return Id 云转推输出源标识，转推项目级别唯一。若不填则由后端生成。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置云转推输出源标识，转推项目级别唯一。若不填则由后端生成。
-                     * @param Id 云转推输出源标识，转推项目级别唯一。若不填则由后端生成。
+                     * @param _id 云转推输出源标识，转推项目级别唯一。若不填则由后端生成。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取云转推输出源名称。
                      * @return Name 云转推输出源名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置云转推输出源名称。
-                     * @param Name 云转推输出源名称。
+                     * @param _name 云转推输出源名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Type 云转推输出源类型，取值：
 <li>URL ：URL类型</li>
 不填默认为URL类型。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -96,33 +103,38 @@ namespace TencentCloud
                      * 设置云转推输出源类型，取值：
 <li>URL ：URL类型</li>
 不填默认为URL类型。
-                     * @param Type 云转推输出源类型，取值：
+                     * @param _type 云转推输出源类型，取值：
 <li>URL ：URL类型</li>
 不填默认为URL类型。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取云转推推流地址。
                      * @return PushUrl 云转推推流地址。
+                     * 
                      */
                     std::string GetPushUrl() const;
 
                     /**
                      * 设置云转推推流地址。
-                     * @param PushUrl 云转推推流地址。
+                     * @param _pushUrl 云转推推流地址。
+                     * 
                      */
                     void SetPushUrl(const std::string& _pushUrl);
 
                     /**
                      * 判断参数 PushUrl 是否已赋值
                      * @return PushUrl 是否已赋值
+                     * 
                      */
                     bool PushUrlHasBeenSet() const;
 

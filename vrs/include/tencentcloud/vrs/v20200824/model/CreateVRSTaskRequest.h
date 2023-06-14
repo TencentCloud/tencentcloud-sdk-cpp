@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取唯一请求 ID
                      * @return SessionId 唯一请求 ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置唯一请求 ID
-                     * @param SessionId 唯一请求 ID
+                     * @param _sessionId 唯一请求 ID
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取音色名称
                      * @return VoiceName 音色名称
+                     * 
                      */
                     std::string GetVoiceName() const;
 
                     /**
                      * 设置音色名称
-                     * @param VoiceName 音色名称
+                     * @param _voiceName 音色名称
+                     * 
                      */
                     void SetVoiceName(const std::string& _voiceName);
 
                     /**
                      * 判断参数 VoiceName 是否已赋值
                      * @return VoiceName 是否已赋值
+                     * 
                      */
                     bool VoiceNameHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return SampleRate 音频采样率：
 
 16000：16k
+                     * 
                      */
                     int64_t GetSampleRate() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置音频采样率：
 
 16000：16k
-                     * @param SampleRate 音频采样率：
+                     * @param _sampleRate 音频采样率：
 
 16000：16k
+                     * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
 1-male
 
 2-female
+                     * 
                      */
                     int64_t GetVoiceGender() const;
 
@@ -124,17 +134,19 @@ namespace TencentCloud
 1-male
 
 2-female
-                     * @param VoiceGender 音色性别:
+                     * @param _voiceGender 音色性别:
 
 1-male
 
 2-female
+                     * 
                      */
                     void SetVoiceGender(const int64_t& _voiceGender);
 
                     /**
                      * 判断参数 VoiceGender 是否已赋值
                      * @return VoiceGender 是否已赋值
+                     * 
                      */
                     bool VoiceGenderHasBeenSet() const;
 
@@ -145,6 +157,7 @@ namespace TencentCloud
                      * @return VoiceLanguage 语言类型：
 
 1-中文
+                     * 
                      */
                     int64_t GetVoiceLanguage() const;
 
@@ -152,51 +165,59 @@ namespace TencentCloud
                      * 设置语言类型：
 
 1-中文
-                     * @param VoiceLanguage 语言类型：
+                     * @param _voiceLanguage 语言类型：
 
 1-中文
+                     * 
                      */
                     void SetVoiceLanguage(const int64_t& _voiceLanguage);
 
                     /**
                      * 判断参数 VoiceLanguage 是否已赋值
                      * @return VoiceLanguage 是否已赋值
+                     * 
                      */
                     bool VoiceLanguageHasBeenSet() const;
 
                     /**
                      * 获取音频格式，音频类型(wav,mp3,aac,m4a)
                      * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @param Codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
                     /**
                      * 获取音频ID集合
                      * @return AudioIdList 音频ID集合
+                     * 
                      */
                     std::vector<std::string> GetAudioIdList() const;
 
                     /**
                      * 设置音频ID集合
-                     * @param AudioIdList 音频ID集合
+                     * @param _audioIdList 音频ID集合
+                     * 
                      */
                     void SetAudioIdList(const std::vector<std::string>& _audioIdList);
 
                     /**
                      * 判断参数 AudioIdList 是否已赋值
                      * @return AudioIdList 是否已赋值
+                     * 
                      */
                     bool AudioIdListHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
                      * @return CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
-                     * @param CallbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
+                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
 回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{"TaskId":"xxxxxxxxxxxxxx","Status":2,"StatusStr":"success","VoiceType":xxxxx,"ErrorMsg":""}
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 

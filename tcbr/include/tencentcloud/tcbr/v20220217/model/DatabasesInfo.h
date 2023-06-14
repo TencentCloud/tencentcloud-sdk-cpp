@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库唯一标识
                      * @return InstanceId 数据库唯一标识
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置数据库唯一标识
-                     * @param InstanceId 数据库唯一标识
+                     * @param _instanceId 数据库唯一标识
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>RUNNING：运行中，可正常使用的状态</li>
 <li>UNUSABLE：禁用，不可用</li>
 <li>OVERDUE：资源过期</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -84,17 +88,19 @@ namespace TencentCloud
 <li>RUNNING：运行中，可正常使用的状态</li>
 <li>UNUSABLE：禁用，不可用</li>
 <li>OVERDUE：资源过期</li>
-                     * @param Status 状态。包含以下取值：
+                     * @param _status 状态。包含以下取值：
 <li>INITIALIZING：资源初始化中</li>
 <li>RUNNING：运行中，可正常使用的状态</li>
 <li>UNUSABLE：禁用，不可用</li>
 <li>OVERDUE：资源过期</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 当前支持ap-shanghai
                      * @return Region 所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置所属地域。
 当前支持ap-shanghai
-                     * @param Region 所属地域。
+                     * @param _region 所属地域。
 当前支持ap-shanghai
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

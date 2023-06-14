@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取产品ID。
                      * @return ProductId 产品ID。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID。
-                     * @param ProductId 产品ID。
+                     * @param _productId 产品ID。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取转发地址。
                      * @return ForwardAddr 转发地址。
+                     * 
                      */
                     std::string GetForwardAddr() const;
 
                     /**
                      * 设置转发地址。
-                     * @param ForwardAddr 转发地址。
+                     * @param _forwardAddr 转发地址。
+                     * 
                      */
                     void SetForwardAddr(const std::string& _forwardAddr);
 
                     /**
                      * 判断参数 ForwardAddr 是否已赋值
                      * @return ForwardAddr 是否已赋值
+                     * 
                      */
                     bool ForwardAddrHasBeenSet() const;
 
                     /**
                      * 获取转发状态。
                      * @return Status 转发状态。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置转发状态。
-                     * @param Status 转发状态。
+                     * @param _status 转发状态。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreateTime 创建时间。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间。
                      * @return UpdateTime 更新时间。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。
-                     * @param UpdateTime 更新时间。
+                     * @param _updateTime 更新时间。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDataChose() const;
 
                     /**
                      * 设置1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
+                     * @param _dataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataChose(const int64_t& _dataChose);
 
                     /**
                      * 判断参数 DataChose 是否已赋值
                      * @return DataChose 是否已赋值
+                     * 
                      */
                     bool DataChoseHasBeenSet() const;
 

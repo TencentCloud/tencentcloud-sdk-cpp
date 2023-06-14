@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取文档的总页数
                      * @return Pages 文档的总页数
+                     * 
                      */
                     int64_t GetPages() const;
 
                     /**
                      * 判断参数 Pages 是否已赋值
                      * @return Pages 是否已赋值
+                     * 
                      */
                     bool PagesHasBeenSet() const;
 
                     /**
                      * 获取转码的当前进度,取值范围为0~100
                      * @return Progress 转码的当前进度,取值范围为0~100
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取文档的分辨率
                      * @return Resolution 文档的分辨率
+                     * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 动态转码：PPT转动态H5的链接
 静态转码：文档每一页的图片URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/`，那么文档第1页的图片URL为
 `http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推
+                     * 
                      */
                     std::string GetResultUrl() const;
 
                     /**
                      * 判断参数 ResultUrl 是否已赋值
                      * @return ResultUrl 是否已赋值
+                     * 
                      */
                     bool ResultUrlHasBeenSet() const;
 
@@ -106,36 +114,42 @@ namespace TencentCloud
 - QUEUED: 正在排队等待转换
 - PROCESSING: 转换中
 - FINISHED: 转换完成
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取转码任务的唯一标识Id
                      * @return TaskId 转码任务的唯一标识Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取文档的文件名
                      * @return Title 文档的文件名
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
@@ -148,36 +162,42 @@ namespace TencentCloud
 `http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推
 
 如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串
+                     * 
                      */
                     std::string GetThumbnailUrl() const;
 
                     /**
                      * 判断参数 ThumbnailUrl 是否已赋值
                      * @return ThumbnailUrl 是否已赋值
+                     * 
                      */
                     bool ThumbnailUrlHasBeenSet() const;
 
                     /**
                      * 获取动态转码缩略图生成分辨率
                      * @return ThumbnailResolution 动态转码缩略图生成分辨率
+                     * 
                      */
                     std::string GetThumbnailResolution() const;
 
                     /**
                      * 判断参数 ThumbnailResolution 是否已赋值
                      * @return ThumbnailResolution 是否已赋值
+                     * 
                      */
                     bool ThumbnailResolutionHasBeenSet() const;
 
                     /**
                      * 获取转码压缩文件下载的URL，如果发起文档转码请求参数中`CompressFileType`为空或者不是支持的压缩格式，该参数为空字符串
                      * @return CompressFileUrl 转码压缩文件下载的URL，如果发起文档转码请求参数中`CompressFileType`为空或者不是支持的压缩格式，该参数为空字符串
+                     * 
                      */
                     std::string GetCompressFileUrl() const;
 
                     /**
                      * 判断参数 CompressFileUrl 是否已赋值
                      * @return CompressFileUrl 是否已赋值
+                     * 
                      */
                     bool CompressFileUrlHasBeenSet() const;
 
@@ -186,12 +206,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceListUrl 资源清单文件下载URL(内测体验)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceListUrl() const;
 
                     /**
                      * 判断参数 ResourceListUrl 是否已赋值
                      * @return ResourceListUrl 是否已赋值
+                     * 
                      */
                     bool ResourceListUrlHasBeenSet() const;
 
@@ -200,12 +222,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 文档制作方式(内测体验)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExt() const;
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 

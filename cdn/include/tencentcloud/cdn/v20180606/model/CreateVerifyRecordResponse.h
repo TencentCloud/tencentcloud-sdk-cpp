@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取子解析
                      * @return SubDomain 子解析
+                     * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 判断参数 SubDomain 是否已赋值
                      * @return SubDomain 是否已赋值
+                     * 
                      */
                     bool SubDomainHasBeenSet() const;
 
                     /**
                      * 获取解析值
                      * @return Record 解析值
+                     * 
                      */
                     std::string GetRecord() const;
 
                     /**
                      * 判断参数 Record 是否已赋值
                      * @return Record 是否已赋值
+                     * 
                      */
                     bool RecordHasBeenSet() const;
 
                     /**
                      * 获取解析类型
                      * @return RecordType 解析类型
+                     * 
                      */
                     std::string GetRecordType() const;
 
                     /**
                      * 判断参数 RecordType 是否已赋值
                      * @return RecordType 是否已赋值
+                     * 
                      */
                     bool RecordTypeHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileVerifyUrl 文件验证 URL 指引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileVerifyUrl() const;
 
                     /**
                      * 判断参数 FileVerifyUrl 是否已赋值
                      * @return FileVerifyUrl 是否已赋值
+                     * 
                      */
                     bool FileVerifyUrlHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileVerifyDomains 文件校验域名列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFileVerifyDomains() const;
 
                     /**
                      * 判断参数 FileVerifyDomains 是否已赋值
                      * @return FileVerifyDomains 是否已赋值
+                     * 
                      */
                     bool FileVerifyDomainsHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileVerifyName 文件校验文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileVerifyName() const;
 
                     /**
                      * 判断参数 FileVerifyName 是否已赋值
                      * @return FileVerifyName 是否已赋值
+                     * 
                      */
                     bool FileVerifyNameHasBeenSet() const;
 

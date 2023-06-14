@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络名称
                      * @return VpcName 私有网络名称
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置私有网络名称
-                     * @param VpcName 私有网络名称
+                     * @param _vpcName 私有网络名称
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取是否开启内网监控，0为关闭，1为开启
                      * @return EnableMonitor 是否开启内网监控，0为关闭，1为开启
+                     * 
                      */
                     bool GetEnableMonitor() const;
 
                     /**
                      * 设置是否开启内网监控，0为关闭，1为开启
-                     * @param EnableMonitor 是否开启内网监控，0为关闭，1为开启
+                     * @param _enableMonitor 是否开启内网监控，0为关闭，1为开启
+                     * 
                      */
                     void SetEnableMonitor(const bool& _enableMonitor);
 
                     /**
                      * 判断参数 EnableMonitor 是否已赋值
                      * @return EnableMonitor 是否已赋值
+                     * 
                      */
                     bool EnableMonitorHasBeenSet() const;
 

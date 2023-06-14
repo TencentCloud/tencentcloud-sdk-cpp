@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取慢日志开始时间
                      * @return Timestamp 慢日志开始时间
+                     * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置慢日志开始时间
-                     * @param Timestamp 慢日志开始时间
+                     * @param _timestamp 慢日志开始时间
+                     * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取sql语句
                      * @return SqlText sql语句
+                     * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 设置sql语句
-                     * @param SqlText sql语句
+                     * @param _sqlText sql语句
+                     * 
                      */
                     void SetSqlText(const std::string& _sqlText);
 
                     /**
                      * 判断参数 SqlText 是否已赋值
                      * @return SqlText 是否已赋值
+                     * 
                      */
                     bool SqlTextHasBeenSet() const;
 
                     /**
                      * 获取数据库
                      * @return Database 数据库
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库
-                     * @param Database 数据库
+                     * @param _database 数据库
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName User来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置User来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName User来源
+                     * @param _userName User来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -127,38 +139,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserHost IP来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserHost() const;
 
                     /**
                      * 设置IP来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserHost IP来源
+                     * @param _userHost IP来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserHost(const std::string& _userHost);
 
                     /**
                      * 判断参数 UserHost 是否已赋值
                      * @return UserHost 是否已赋值
+                     * 
                      */
                     bool UserHostHasBeenSet() const;
 
                     /**
                      * 获取执行时间,单位秒
                      * @return QueryTime 执行时间,单位秒
+                     * 
                      */
                     int64_t GetQueryTime() const;
 
                     /**
                      * 设置执行时间,单位秒
-                     * @param QueryTime 执行时间,单位秒
+                     * @param _queryTime 执行时间,单位秒
+                     * 
                      */
                     void SetQueryTime(const int64_t& _queryTime);
 
                     /**
                      * 判断参数 QueryTime 是否已赋值
                      * @return QueryTime 是否已赋值
+                     * 
                      */
                     bool QueryTimeHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockTime 锁时间,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLockTime() const;
 
                     /**
                      * 设置锁时间,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LockTime 锁时间,单位秒
+                     * @param _lockTime 锁时间,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLockTime(const int64_t& _lockTime);
 
                     /**
                      * 判断参数 LockTime 是否已赋值
                      * @return LockTime 是否已赋值
+                     * 
                      */
                     bool LockTimeHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsExamined 扫描行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRowsExamined() const;
 
                     /**
                      * 设置扫描行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RowsExamined 扫描行数
+                     * @param _rowsExamined 扫描行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRowsExamined(const int64_t& _rowsExamined);
 
                     /**
                      * 判断参数 RowsExamined 是否已赋值
                      * @return RowsExamined 是否已赋值
+                     * 
                      */
                     bool RowsExaminedHasBeenSet() const;
 
@@ -211,20 +235,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsSent 返回行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRowsSent() const;
 
                     /**
                      * 设置返回行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RowsSent 返回行数
+                     * @param _rowsSent 返回行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRowsSent(const int64_t& _rowsSent);
 
                     /**
                      * 判断参数 RowsSent 是否已赋值
                      * @return RowsSent 是否已赋值
+                     * 
                      */
                     bool RowsSentHasBeenSet() const;
 

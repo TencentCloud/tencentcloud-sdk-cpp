@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取一级分类名称
                      * @return FirstClassName 一级分类名称
+                     * 
                      */
                     std::string GetFirstClassName() const;
 
                     /**
                      * 设置一级分类名称
-                     * @param FirstClassName 一级分类名称
+                     * @param _firstClassName 一级分类名称
+                     * 
                      */
                     void SetFirstClassName(const std::string& _firstClassName);
 
                     /**
                      * 判断参数 FirstClassName 是否已赋值
                      * @return FirstClassName 是否已赋值
+                     * 
                      */
                     bool FirstClassNameHasBeenSet() const;
 
                     /**
                      * 获取二级分类名称
                      * @return SecondClassName 二级分类名称
+                     * 
                      */
                     std::string GetSecondClassName() const;
 
                     /**
                      * 设置二级分类名称
-                     * @param SecondClassName 二级分类名称
+                     * @param _secondClassName 二级分类名称
+                     * 
                      */
                     void SetSecondClassName(const std::string& _secondClassName);
 
                     /**
                      * 判断参数 SecondClassName 是否已赋值
                      * @return SecondClassName 是否已赋值
+                     * 
                      */
                     bool SecondClassNameHasBeenSet() const;
 
                     /**
                      * 获取一级分类概率
                      * @return FirstClassProbability 一级分类概率
+                     * 
                      */
                     double GetFirstClassProbability() const;
 
                     /**
                      * 设置一级分类概率
-                     * @param FirstClassProbability 一级分类概率
+                     * @param _firstClassProbability 一级分类概率
+                     * 
                      */
                     void SetFirstClassProbability(const double& _firstClassProbability);
 
                     /**
                      * 判断参数 FirstClassProbability 是否已赋值
                      * @return FirstClassProbability 是否已赋值
+                     * 
                      */
                     bool FirstClassProbabilityHasBeenSet() const;
 
                     /**
                      * 获取二级分类概率
                      * @return SecondClassProbability 二级分类概率
+                     * 
                      */
                     double GetSecondClassProbability() const;
 
                     /**
                      * 设置二级分类概率
-                     * @param SecondClassProbability 二级分类概率
+                     * @param _secondClassProbability 二级分类概率
+                     * 
                      */
                     void SetSecondClassProbability(const double& _secondClassProbability);
 
                     /**
                      * 判断参数 SecondClassProbability 是否已赋值
                      * @return SecondClassProbability 是否已赋值
+                     * 
                      */
                     bool SecondClassProbabilityHasBeenSet() const;
 
                     /**
                      * 获取三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return ThirdClassName 三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     std::string GetThirdClassName() const;
 
                     /**
                      * 设置三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param ThirdClassName 三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _thirdClassName 三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetThirdClassName(const std::string& _thirdClassName);
 
                     /**
                      * 判断参数 ThirdClassName 是否已赋值
                      * @return ThirdClassName 是否已赋值
+                     * 
                      */
                     bool ThirdClassNameHasBeenSet() const;
 
                     /**
                      * 获取三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return ThirdClassProbability 三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     double GetThirdClassProbability() const;
 
                     /**
                      * 设置三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param ThirdClassProbability 三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _thirdClassProbability 三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetThirdClassProbability(const double& _thirdClassProbability);
 
                     /**
                      * 判断参数 ThirdClassProbability 是否已赋值
                      * @return ThirdClassProbability 是否已赋值
+                     * 
                      */
                     bool ThirdClassProbabilityHasBeenSet() const;
 
                     /**
                      * 获取四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return FourthClassName 四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     std::string GetFourthClassName() const;
 
                     /**
                      * 设置四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param FourthClassName 四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _fourthClassName 四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetFourthClassName(const std::string& _fourthClassName);
 
                     /**
                      * 判断参数 FourthClassName 是否已赋值
                      * @return FourthClassName 是否已赋值
+                     * 
                      */
                     bool FourthClassNameHasBeenSet() const;
 
                     /**
                      * 获取四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return FourthClassProbability 四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     double GetFourthClassProbability() const;
 
                     /**
                      * 设置四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param FourthClassProbability 四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _fourthClassProbability 四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetFourthClassProbability(const double& _fourthClassProbability);
 
                     /**
                      * 判断参数 FourthClassProbability 是否已赋值
                      * @return FourthClassProbability 是否已赋值
+                     * 
                      */
                     bool FourthClassProbabilityHasBeenSet() const;
 
                     /**
                      * 获取五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return FifthClassName 五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     std::string GetFifthClassName() const;
 
                     /**
                      * 设置五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param FifthClassName 五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _fifthClassName 五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetFifthClassName(const std::string& _fifthClassName);
 
                     /**
                      * 判断参数 FifthClassName 是否已赋值
                      * @return FifthClassName 是否已赋值
+                     * 
                      */
                     bool FifthClassNameHasBeenSet() const;
 
                     /**
                      * 获取五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
                      * @return FifthClassProbability 五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     double GetFifthClassProbability() const;
 
                     /**
                      * 设置五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
-                     * @param FifthClassProbability 五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * @param _fifthClassProbability 五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档
+                     * 
                      */
                     void SetFifthClassProbability(const double& _fifthClassProbability);
 
                     /**
                      * 判断参数 FifthClassProbability 是否已赋值
                      * @return FifthClassProbability 是否已赋值
+                     * 
                      */
                     bool FifthClassProbabilityHasBeenSet() const;
 

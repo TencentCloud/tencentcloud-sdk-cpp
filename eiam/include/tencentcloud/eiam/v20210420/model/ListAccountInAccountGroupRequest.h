@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取账号组ID。
                      * @return AccountGroupId 账号组ID。
+                     * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 设置账号组ID。
-                     * @param AccountGroupId 账号组ID。
+                     * @param _accountGroupId 账号组ID。
+                     * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
 
                     /**
                      * 判断参数 AccountGroupId 是否已赋值
                      * @return AccountGroupId 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
                      * 获取查询条件，支持多搜索条件组合、多数据范围匹配的搜索。
                      * @return SearchCondition 查询条件，支持多搜索条件组合、多数据范围匹配的搜索。
+                     * 
                      */
                     AccountGroupSearchCriteria GetSearchCondition() const;
 
                     /**
                      * 设置查询条件，支持多搜索条件组合、多数据范围匹配的搜索。
-                     * @param SearchCondition 查询条件，支持多搜索条件组合、多数据范围匹配的搜索。
+                     * @param _searchCondition 查询条件，支持多搜索条件组合、多数据范围匹配的搜索。
+                     * 
                      */
                     void SetSearchCondition(const AccountGroupSearchCriteria& _searchCondition);
 
                     /**
                      * 判断参数 SearchCondition 是否已赋值
                      * @return SearchCondition 是否已赋值
+                     * 
                      */
                     bool SearchConditionHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为 0。
                      * @return Offset 偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为 0。
-                     * @param Offset 偏移量，默认为 0。
+                     * @param _offset 偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为 20，最大值为 100。
                      * @return Limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为 20，最大值为 100。
-                     * @param Limit 返回数量，默认为 20，最大值为 100。
+                     * @param _limit 返回数量，默认为 20，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

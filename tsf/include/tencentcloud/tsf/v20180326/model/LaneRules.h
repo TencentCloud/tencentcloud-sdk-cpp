@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取泳道规则列表
                      * @return Content 泳道规则列表
+                     * 
                      */
                     std::vector<LaneRule> GetContent() const;
 
                     /**
                      * 设置泳道规则列表
-                     * @param Content 泳道规则列表
+                     * @param _content 泳道规则列表
+                     * 
                      */
                     void SetContent(const std::vector<LaneRule>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

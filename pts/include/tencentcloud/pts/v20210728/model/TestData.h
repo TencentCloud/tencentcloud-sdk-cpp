@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 测试数据集所在的文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置测试数据集所在的文件名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 测试数据集所在的文件名
+                     * @param _name 测试数据集所在的文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Split 测试数据集是否分片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSplit() const;
 
                     /**
                      * 设置测试数据集是否分片
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Split 测试数据集是否分片
+                     * @param _split 测试数据集是否分片
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSplit(const bool& _split);
 
                     /**
                      * 判断参数 Split 是否已赋值
                      * @return Split 是否已赋值
+                     * 
                      */
                     bool SplitHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderInFile 首行是否为参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHeaderInFile() const;
 
                     /**
                      * 设置首行是否为参数名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderInFile 首行是否为参数名
+                     * @param _headerInFile 首行是否为参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderInFile(const bool& _headerInFile);
 
                     /**
                      * 判断参数 HeaderInFile 是否已赋值
                      * @return HeaderInFile 是否已赋值
+                     * 
                      */
                     bool HeaderInFileHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderColumns 参数名数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHeaderColumns() const;
 
                     /**
                      * 设置参数名数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderColumns 参数名数组
+                     * @param _headerColumns 参数名数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderColumns(const std::vector<std::string>& _headerColumns);
 
                     /**
                      * 判断参数 HeaderColumns 是否已赋值
                      * @return HeaderColumns 是否已赋值
+                     * 
                      */
                     bool HeaderColumnsHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineCount 文件行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLineCount() const;
 
                     /**
                      * 设置文件行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LineCount 文件行数
+                     * @param _lineCount 文件行数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLineCount(const int64_t& _lineCount);
 
                     /**
                      * 判断参数 LineCount 是否已赋值
                      * @return LineCount 是否已赋值
+                     * 
                      */
                     bool LineCountHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedAt 更新时间
+                     * @param _updatedAt 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置文件字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Size 文件字节数
+                     * @param _size 文件字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadLines 头部数据行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetHeadLines() const;
 
                     /**
                      * 设置头部数据行
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeadLines 头部数据行
+                     * @param _headLines 头部数据行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeadLines(const std::vector<std::string>& _headLines);
 
                     /**
                      * 判断参数 HeadLines 是否已赋值
                      * @return HeadLines 是否已赋值
+                     * 
                      */
                     bool HeadLinesHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TailLines 尾部数据行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTailLines() const;
 
                     /**
                      * 设置尾部数据行
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TailLines 尾部数据行
+                     * @param _tailLines 尾部数据行
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTailLines(const std::vector<std::string>& _tailLines);
 
                     /**
                      * 判断参数 TailLines 是否已赋值
                      * @return TailLines 是否已赋值
+                     * 
                      */
                     bool TailLinesHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置文件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 文件类型
+                     * @param _type 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileId 文件 ID
+                     * @param _fileId 文件 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 

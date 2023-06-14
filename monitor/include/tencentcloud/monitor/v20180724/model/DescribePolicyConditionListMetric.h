@@ -52,74 +52,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigManual 指标配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManual GetConfigManual() const;
 
                     /**
                      * 设置指标配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigManual 指标配置
+                     * @param _configManual 指标配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigManual(const DescribePolicyConditionListConfigManual& _configManual);
 
                     /**
                      * 判断参数 ConfigManual 是否已赋值
                      * @return ConfigManual 是否已赋值
+                     * 
                      */
                     bool ConfigManualHasBeenSet() const;
 
                     /**
                      * 获取指标id
                      * @return MetricId 指标id
+                     * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
                      * 设置指标id
-                     * @param MetricId 指标id
+                     * @param _metricId 指标id
+                     * 
                      */
                     void SetMetricId(const int64_t& _metricId);
 
                     /**
                      * 判断参数 MetricId 是否已赋值
                      * @return MetricId 是否已赋值
+                     * 
                      */
                     bool MetricIdHasBeenSet() const;
 
                     /**
                      * 获取指标名称
                      * @return MetricShowName 指标名称
+                     * 
                      */
                     std::string GetMetricShowName() const;
 
                     /**
                      * 设置指标名称
-                     * @param MetricShowName 指标名称
+                     * @param _metricShowName 指标名称
+                     * 
                      */
                     void SetMetricShowName(const std::string& _metricShowName);
 
                     /**
                      * 判断参数 MetricShowName 是否已赋值
                      * @return MetricShowName 是否已赋值
+                     * 
                      */
                     bool MetricShowNameHasBeenSet() const;
 
                     /**
                      * 获取指标单位
                      * @return MetricUnit 指标单位
+                     * 
                      */
                     std::string GetMetricUnit() const;
 
                     /**
                      * 设置指标单位
-                     * @param MetricUnit 指标单位
+                     * @param _metricUnit 指标单位
+                     * 
                      */
                     void SetMetricUnit(const std::string& _metricUnit);
 
                     /**
                      * 判断参数 MetricUnit 是否已赋值
                      * @return MetricUnit 是否已赋值
+                     * 
                      */
                     bool MetricUnitHasBeenSet() const;
 

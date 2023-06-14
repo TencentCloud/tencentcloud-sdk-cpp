@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmAgent Agent信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApmAgentInfo GetApmAgent() const;
 
                     /**
                      * 判断参数 ApmAgent 是否已赋值
                      * @return ApmAgent 是否已赋值
+                     * 
                      */
                     bool ApmAgentHasBeenSet() const;
 

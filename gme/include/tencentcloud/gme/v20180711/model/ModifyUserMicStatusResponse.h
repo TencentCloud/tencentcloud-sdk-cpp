@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回结果：0为成功，非0为失败。
                      * @return Result 返回结果：0为成功，非0为失败。
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return ErrMsg 错误信息。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

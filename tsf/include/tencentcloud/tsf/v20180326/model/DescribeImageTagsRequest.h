@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取应用Id
                      * @return ApplicationId 应用Id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用Id
-                     * @param ApplicationId 应用Id
+                     * @param _applicationId 应用Id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取偏移量，取值从0开始
                      * @return Offset 偏移量，取值从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，取值从0开始
-                     * @param Offset 偏移量，取值从0开始
+                     * @param _offset 偏移量，取值从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数，默认为20， 取值应为1~100
                      * @return Limit 分页个数，默认为20， 取值应为1~100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页个数，默认为20， 取值应为1~100
-                     * @param Limit 分页个数，默认为20， 取值应为1~100
+                     * @param _limit 分页个数，默认为20， 取值应为1~100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取不填和0:查询 1:不查询
                      * @return QueryImageIdFlag 不填和0:查询 1:不查询
+                     * 
                      */
                     int64_t GetQueryImageIdFlag() const;
 
                     /**
                      * 设置不填和0:查询 1:不查询
-                     * @param QueryImageIdFlag 不填和0:查询 1:不查询
+                     * @param _queryImageIdFlag 不填和0:查询 1:不查询
+                     * 
                      */
                     void SetQueryImageIdFlag(const int64_t& _queryImageIdFlag);
 
                     /**
                      * 判断参数 QueryImageIdFlag 是否已赋值
                      * @return QueryImageIdFlag 是否已赋值
+                     * 
                      */
                     bool QueryImageIdFlagHasBeenSet() const;
 
                     /**
                      * 获取可用于搜索的 tag 名字
                      * @return SearchWord 可用于搜索的 tag 名字
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置可用于搜索的 tag 名字
-                     * @param SearchWord 可用于搜索的 tag 名字
+                     * @param _searchWord 可用于搜索的 tag 名字
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取企业: tcr ；个人: personal或者不填
                      * @return RepoType 企业: tcr ；个人: personal或者不填
+                     * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置企业: tcr ；个人: personal或者不填
-                     * @param RepoType 企业: tcr ；个人: personal或者不填
+                     * @param _repoType 企业: tcr ；个人: personal或者不填
+                     * 
                      */
                     void SetRepoType(const std::string& _repoType);
 
                     /**
                      * 判断参数 RepoType 是否已赋值
                      * @return RepoType 是否已赋值
+                     * 
                      */
                     bool RepoTypeHasBeenSet() const;
 
                     /**
                      * 获取TcrRepoInfo值
                      * @return TcrRepoInfo TcrRepoInfo值
+                     * 
                      */
                     TcrRepoInfo GetTcrRepoInfo() const;
 
                     /**
                      * 设置TcrRepoInfo值
-                     * @param TcrRepoInfo TcrRepoInfo值
+                     * @param _tcrRepoInfo TcrRepoInfo值
+                     * 
                      */
                     void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
 
                     /**
                      * 判断参数 TcrRepoInfo 是否已赋值
                      * @return TcrRepoInfo 是否已赋值
+                     * 
                      */
                     bool TcrRepoInfoHasBeenSet() const;
 

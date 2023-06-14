@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取Unsafe：存在风险，Safe：暂无风险,UnKnown:未知风险
                      * @return IsSafe Unsafe：存在风险，Safe：暂无风险,UnKnown:未知风险
+                     * 
                      */
                     std::string GetIsSafe() const;
 
                     /**
                      * 判断参数 IsSafe 是否已赋值
                      * @return IsSafe 是否已赋值
+                     * 
                      */
                     bool IsSafeHasBeenSet() const;
 

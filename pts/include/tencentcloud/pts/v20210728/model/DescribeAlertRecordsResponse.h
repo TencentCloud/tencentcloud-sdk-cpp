@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlertRecordSet 告警历史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlertRecord> GetAlertRecordSet() const;
 
                     /**
                      * 判断参数 AlertRecordSet 是否已赋值
                      * @return AlertRecordSet 是否已赋值
+                     * 
                      */
                     bool AlertRecordSetHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 告警历史记录的总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

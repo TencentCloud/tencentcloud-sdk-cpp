@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 引擎版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置引擎版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 引擎版本
+                     * @param _version 引擎版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Image 运行镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置运行镜像
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Image 运行镜像
+                     * @param _image 运行镜像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportIntEightQuantization 是否支持int8量化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsSupportIntEightQuantization() const;
 
                     /**
                      * 设置是否支持int8量化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsSupportIntEightQuantization 是否支持int8量化
+                     * @param _isSupportIntEightQuantization 是否支持int8量化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsSupportIntEightQuantization(const bool& _isSupportIntEightQuantization);
 
                     /**
                      * 判断参数 IsSupportIntEightQuantization 是否已赋值
                      * @return IsSupportIntEightQuantization 是否已赋值
+                     * 
                      */
                     bool IsSupportIntEightQuantizationHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameworkVersion 框架版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrameworkVersion() const;
 
                     /**
                      * 设置框架版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameworkVersion 框架版本
+                     * @param _frameworkVersion 框架版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameworkVersion(const std::string& _frameworkVersion);
 
                     /**
                      * 判断参数 FrameworkVersion 是否已赋值
                      * @return FrameworkVersion 是否已赋值
+                     * 
                      */
                     bool FrameworkVersionHasBeenSet() const;
 

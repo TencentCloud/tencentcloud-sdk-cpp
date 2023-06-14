@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取后付费共享带宽包的唯一ID
                      * @return BandwidthPackageId 后付费共享带宽包的唯一ID
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置后付费共享带宽包的唯一ID
-                     * @param BandwidthPackageId 后付费共享带宽包的唯一ID
+                     * @param _bandwidthPackageId 后付费共享带宽包的唯一ID
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 

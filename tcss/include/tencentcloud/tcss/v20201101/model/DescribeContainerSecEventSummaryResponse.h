@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取未处理逃逸事件
                      * @return UnhandledEscapeCnt 未处理逃逸事件
+                     * 
                      */
                     uint64_t GetUnhandledEscapeCnt() const;
 
                     /**
                      * 判断参数 UnhandledEscapeCnt 是否已赋值
                      * @return UnhandledEscapeCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledEscapeCntHasBeenSet() const;
 
                     /**
                      * 获取未处理反弹shell事件
                      * @return UnhandledReverseShellCnt 未处理反弹shell事件
+                     * 
                      */
                     uint64_t GetUnhandledReverseShellCnt() const;
 
                     /**
                      * 判断参数 UnhandledReverseShellCnt 是否已赋值
                      * @return UnhandledReverseShellCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledReverseShellCntHasBeenSet() const;
 
                     /**
                      * 获取未处理高危系统调用
                      * @return UnhandledRiskSyscallCnt 未处理高危系统调用
+                     * 
                      */
                     uint64_t GetUnhandledRiskSyscallCnt() const;
 
                     /**
                      * 判断参数 UnhandledRiskSyscallCnt 是否已赋值
                      * @return UnhandledRiskSyscallCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledRiskSyscallCntHasBeenSet() const;
 
                     /**
                      * 获取未处理异常进程
                      * @return UnhandledAbnormalProcessCnt 未处理异常进程
+                     * 
                      */
                     uint64_t GetUnhandledAbnormalProcessCnt() const;
 
                     /**
                      * 判断参数 UnhandledAbnormalProcessCnt 是否已赋值
                      * @return UnhandledAbnormalProcessCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledAbnormalProcessCntHasBeenSet() const;
 
                     /**
                      * 获取未处理文件篡改
                      * @return UnhandledFileCnt 未处理文件篡改
+                     * 
                      */
                     uint64_t GetUnhandledFileCnt() const;
 
                     /**
                      * 判断参数 UnhandledFileCnt 是否已赋值
                      * @return UnhandledFileCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledFileCntHasBeenSet() const;
 
                     /**
                      * 获取未处理木马事件
                      * @return UnhandledVirusEventCnt 未处理木马事件
+                     * 
                      */
                     uint64_t GetUnhandledVirusEventCnt() const;
 
                     /**
                      * 判断参数 UnhandledVirusEventCnt 是否已赋值
                      * @return UnhandledVirusEventCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledVirusEventCntHasBeenSet() const;
 
                     /**
                      * 获取未处理恶意外连事件
                      * @return UnhandledMaliciousConnectionEventCnt 未处理恶意外连事件
+                     * 
                      */
                     uint64_t GetUnhandledMaliciousConnectionEventCnt() const;
 
                     /**
                      * 判断参数 UnhandledMaliciousConnectionEventCnt 是否已赋值
                      * @return UnhandledMaliciousConnectionEventCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledMaliciousConnectionEventCntHasBeenSet() const;
 
@@ -132,12 +146,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhandledK8sApiEventCnt 未处理k8sApi事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUnhandledK8sApiEventCnt() const;
 
                     /**
                      * 判断参数 UnhandledK8sApiEventCnt 是否已赋值
                      * @return UnhandledK8sApiEventCnt 是否已赋值
+                     * 
                      */
                     bool UnhandledK8sApiEventCntHasBeenSet() const;
 

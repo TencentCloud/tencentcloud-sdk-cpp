@@ -49,252 +49,294 @@ namespace TencentCloud
                     /**
                      * 获取ID信息
                      * @return Id ID信息
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置ID信息
-                     * @param Id ID信息
+                     * @param _id ID信息
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取模版名称
                      * @return Name 模版名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模版名称
-                     * @param Name 模版名称
+                     * @param _name 模版名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取网络ID
                      * @return ClusterId 网络ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID
-                     * @param ClusterId 网络ID
+                     * @param _clusterId 网络ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取服务ID
                      * @return ServiceId 服务ID
+                     * 
                      */
                     uint64_t GetServiceId() const;
 
                     /**
                      * 设置服务ID
-                     * @param ServiceId 服务ID
+                     * @param _serviceId 服务ID
+                     * 
                      */
                     void SetServiceId(const uint64_t& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取合约应用ID
                      * @return ContractAppId 合约应用ID
+                     * 
                      */
                     uint64_t GetContractAppId() const;
 
                     /**
                      * 设置合约应用ID
-                     * @param ContractAppId 合约应用ID
+                     * @param _contractAppId 合约应用ID
+                     * 
                      */
                     void SetContractAppId(const uint64_t& _contractAppId);
 
                     /**
                      * 判断参数 ContractAppId 是否已赋值
                      * @return ContractAppId 是否已赋值
+                     * 
                      */
                     bool ContractAppIdHasBeenSet() const;
 
                     /**
                      * 获取凭证模板ID
                      * @return CptId 凭证模板ID
+                     * 
                      */
                     uint64_t GetCptId() const;
 
                     /**
                      * 设置凭证模板ID
-                     * @param CptId 凭证模板ID
+                     * @param _cptId 凭证模板ID
+                     * 
                      */
                     void SetCptId(const uint64_t& _cptId);
 
                     /**
                      * 判断参数 CptId 是否已赋值
                      * @return CptId 是否已赋值
+                     * 
                      */
                     bool CptIdHasBeenSet() const;
 
                     /**
                      * 获取模板类型，1: 系统模板，2: 用户模板，3:普通模板
                      * @return CptType 模板类型，1: 系统模板，2: 用户模板，3:普通模板
+                     * 
                      */
                     uint64_t GetCptType() const;
 
                     /**
                      * 设置模板类型，1: 系统模板，2: 用户模板，3:普通模板
-                     * @param CptType 模板类型，1: 系统模板，2: 用户模板，3:普通模板
+                     * @param _cptType 模板类型，1: 系统模板，2: 用户模板，3:普通模板
+                     * 
                      */
                     void SetCptType(const uint64_t& _cptType);
 
                     /**
                      * 判断参数 CptType 是否已赋值
                      * @return CptType 是否已赋值
+                     * 
                      */
                     bool CptTypeHasBeenSet() const;
 
                     /**
                      * 获取凭证模版描述
                      * @return Description 凭证模版描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置凭证模版描述
-                     * @param Description 凭证模版描述
+                     * @param _description 凭证模版描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取凭证模板Json
                      * @return CptJson 凭证模板Json
+                     * 
                      */
                     std::string GetCptJson() const;
 
                     /**
                      * 设置凭证模板Json
-                     * @param CptJson 凭证模板Json
+                     * @param _cptJson 凭证模板Json
+                     * 
                      */
                     void SetCptJson(const std::string& _cptJson);
 
                     /**
                      * 判断参数 CptJson 是否已赋值
                      * @return CptJson 是否已赋值
+                     * 
                      */
                     bool CptJsonHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取创建者DID
                      * @return CreatorDid 创建者DID
+                     * 
                      */
                     std::string GetCreatorDid() const;
 
                     /**
                      * 设置创建者DID
-                     * @param CreatorDid 创建者DID
+                     * @param _creatorDid 创建者DID
+                     * 
                      */
                     void SetCreatorDid(const std::string& _creatorDid);
 
                     /**
                      * 判断参数 CreatorDid 是否已赋值
                      * @return CreatorDid 是否已赋值
+                     * 
                      */
                     bool CreatorDidHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return AppName 应用名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-                     * @param AppName 应用名称
+                     * @param _appName 应用名称
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

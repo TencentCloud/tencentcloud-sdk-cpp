@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取记录
                      * @return Records 记录
+                     * 
                      */
                     std::vector<ConfigData> GetRecords() const;
 
                     /**
                      * 设置记录
-                     * @param Records 记录
+                     * @param _records 记录
+                     * 
                      */
                     void SetRecords(const std::vector<ConfigData>& _records);
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueToken 分页游标，用以查询下一页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContinueToken() const;
 
                     /**
                      * 设置分页游标，用以查询下一页
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinueToken 分页游标，用以查询下一页
+                     * @param _continueToken 分页游标，用以查询下一页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContinueToken(const std::string& _continueToken);
 
                     /**
                      * 判断参数 ContinueToken 是否已赋值
                      * @return ContinueToken 是否已赋值
+                     * 
                      */
                     bool ContinueTokenHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingCount 剩余数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainingCount() const;
 
                     /**
                      * 设置剩余数目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemainingCount 剩余数目
+                     * @param _remainingCount 剩余数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemainingCount(const int64_t& _remainingCount);
 
                     /**
                      * 判断参数 RemainingCount 是否已赋值
                      * @return RemainingCount 是否已赋值
+                     * 
                      */
                     bool RemainingCountHasBeenSet() const;
 

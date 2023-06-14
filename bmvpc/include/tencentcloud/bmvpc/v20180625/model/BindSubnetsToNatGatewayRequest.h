@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关ID，例如：nat-kdm476mp
                      * @return NatId NAT网关ID，例如：nat-kdm476mp
+                     * 
                      */
                     std::string GetNatId() const;
 
                     /**
                      * 设置NAT网关ID，例如：nat-kdm476mp
-                     * @param NatId NAT网关ID，例如：nat-kdm476mp
+                     * @param _natId NAT网关ID，例如：nat-kdm476mp
+                     * 
                      */
                     void SetNatId(const std::string& _natId);
 
                     /**
                      * 判断参数 NatId 是否已赋值
                      * @return NatId 是否已赋值
+                     * 
                      */
                     bool NatIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID，例如：vpc-kd7d06of
                      * @return VpcId 私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID，例如：vpc-kd7d06of
-                     * @param VpcId 私有网络ID，例如：vpc-kd7d06of
+                     * @param _vpcId 私有网络ID，例如：vpc-kd7d06of
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式
                      * @return SubnetIds 子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式
-                     * @param SubnetIds 子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式
+                     * @param _subnetIds 子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 

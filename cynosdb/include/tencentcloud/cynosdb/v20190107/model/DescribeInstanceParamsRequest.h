@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID，支持批量查询
                      * @return InstanceIds 实例ID，支持批量查询
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID，支持批量查询
-                     * @param InstanceIds 实例ID，支持批量查询
+                     * @param _instanceIds 实例ID，支持批量查询
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取参数名搜索条件，支持模糊匹配
                      * @return ParamKeyword 参数名搜索条件，支持模糊匹配
+                     * 
                      */
                     std::string GetParamKeyword() const;
 
                     /**
                      * 设置参数名搜索条件，支持模糊匹配
-                     * @param ParamKeyword 参数名搜索条件，支持模糊匹配
+                     * @param _paramKeyword 参数名搜索条件，支持模糊匹配
+                     * 
                      */
                     void SetParamKeyword(const std::string& _paramKeyword);
 
                     /**
                      * 判断参数 ParamKeyword 是否已赋值
                      * @return ParamKeyword 是否已赋值
+                     * 
                      */
                     bool ParamKeywordHasBeenSet() const;
 

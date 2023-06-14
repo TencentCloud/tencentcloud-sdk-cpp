@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextToken 查看更多日志的凭证
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextToken() const;
 
                     /**
                      * 判断参数 NextToken 是否已赋值
                      * @return NextToken 是否已赋值
+                     * 
                      */
                     bool NextTokenHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 日志集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Event> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOver 日志集合是否结束
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetListOver() const;
 
                     /**
                      * 判断参数 ListOver 是否已赋值
                      * @return ListOver 是否已赋值
+                     * 
                      */
                     bool ListOverHasBeenSet() const;
 

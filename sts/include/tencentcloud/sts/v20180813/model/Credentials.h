@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取token。token长度和绑定的策略有关，最长不超过4096字节。
                      * @return Token token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置token。token长度和绑定的策略有关，最长不超过4096字节。
-                     * @param Token token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * @param _token token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * 
                      */
                     void SetToken(const std::string& _token);
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取临时证书密钥ID。最长不超过1024字节。
                      * @return TmpSecretId 临时证书密钥ID。最长不超过1024字节。
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时证书密钥ID。最长不超过1024字节。
-                     * @param TmpSecretId 临时证书密钥ID。最长不超过1024字节。
+                     * @param _tmpSecretId 临时证书密钥ID。最长不超过1024字节。
+                     * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时证书密钥Key。最长不超过1024字节。
                      * @return TmpSecretKey 临时证书密钥Key。最长不超过1024字节。
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时证书密钥Key。最长不超过1024字节。
-                     * @param TmpSecretKey 临时证书密钥Key。最长不超过1024字节。
+                     * @param _tmpSecretKey 临时证书密钥Key。最长不超过1024字节。
+                     * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 

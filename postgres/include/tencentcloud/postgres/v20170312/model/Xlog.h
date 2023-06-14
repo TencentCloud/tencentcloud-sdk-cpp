@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取备份文件唯一标识
                      * @return Id 备份文件唯一标识
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置备份文件唯一标识
-                     * @param Id 备份文件唯一标识
+                     * @param _id 备份文件唯一标识
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取文件生成的开始时间
                      * @return StartTime 文件生成的开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置文件生成的开始时间
-                     * @param StartTime 文件生成的开始时间
+                     * @param _startTime 文件生成的开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取文件生成的结束时间
                      * @return EndTime 文件生成的结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置文件生成的结束时间
-                     * @param EndTime 文件生成的结束时间
+                     * @param _endTime 文件生成的结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取内网下载地址
                      * @return InternalAddr 内网下载地址
+                     * 
                      */
                     std::string GetInternalAddr() const;
 
                     /**
                      * 设置内网下载地址
-                     * @param InternalAddr 内网下载地址
+                     * @param _internalAddr 内网下载地址
+                     * 
                      */
                     void SetInternalAddr(const std::string& _internalAddr);
 
                     /**
                      * 判断参数 InternalAddr 是否已赋值
                      * @return InternalAddr 是否已赋值
+                     * 
                      */
                     bool InternalAddrHasBeenSet() const;
 
                     /**
                      * 获取外网下载地址
                      * @return ExternalAddr 外网下载地址
+                     * 
                      */
                     std::string GetExternalAddr() const;
 
                     /**
                      * 设置外网下载地址
-                     * @param ExternalAddr 外网下载地址
+                     * @param _externalAddr 外网下载地址
+                     * 
                      */
                     void SetExternalAddr(const std::string& _externalAddr);
 
                     /**
                      * 判断参数 ExternalAddr 是否已赋值
                      * @return ExternalAddr 是否已赋值
+                     * 
                      */
                     bool ExternalAddrHasBeenSet() const;
 
                     /**
                      * 获取备份文件大小
                      * @return Size 备份文件大小
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置备份文件大小
-                     * @param Size 备份文件大小
+                     * @param _size 备份文件大小
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Header 列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeader() const;
 
                     /**
                      * 设置列名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Header 列名称
+                     * @param _header 列名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeader(const std::string& _header);
 
                     /**
                      * 判断参数 Header 是否已赋值
                      * @return Header 是否已赋值
+                     * 
                      */
                     bool HeaderHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 列数据类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置列数据类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataType 列数据类型
+                     * @param _dataType 列数据类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）
                      * @return IsExtranet 是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）
+                     * 
                      */
                     bool GetIsExtranet() const;
 
                     /**
                      * 设置是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）
-                     * @param IsExtranet 是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）
+                     * @param _isExtranet 是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）
+                     * 
                      */
                     void SetIsExtranet(const bool& _isExtranet);
 
                     /**
                      * 判断参数 IsExtranet 是否已赋值
                      * @return IsExtranet 是否已赋值
+                     * 
                      */
                     bool IsExtranetHasBeenSet() const;
 

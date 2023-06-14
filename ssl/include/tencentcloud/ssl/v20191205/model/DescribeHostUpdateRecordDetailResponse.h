@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordDetailList 证书部署记录列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UpdateRecordDetails> GetRecordDetailList() const;
 
                     /**
                      * 判断参数 RecordDetailList 是否已赋值
                      * @return RecordDetailList 是否已赋值
+                     * 
                      */
                     bool RecordDetailListHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessTotalCount 成功总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessTotalCount() const;
 
                     /**
                      * 判断参数 SuccessTotalCount 是否已赋值
                      * @return SuccessTotalCount 是否已赋值
+                     * 
                      */
                     bool SuccessTotalCountHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedTotalCount 失败总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailedTotalCount() const;
 
                     /**
                      * 判断参数 FailedTotalCount 是否已赋值
                      * @return FailedTotalCount 是否已赋值
+                     * 
                      */
                     bool FailedTotalCountHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningTotalCount 部署中总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunningTotalCount() const;
 
                     /**
                      * 判断参数 RunningTotalCount 是否已赋值
                      * @return RunningTotalCount 是否已赋值
+                     * 
                      */
                     bool RunningTotalCountHasBeenSet() const;
 

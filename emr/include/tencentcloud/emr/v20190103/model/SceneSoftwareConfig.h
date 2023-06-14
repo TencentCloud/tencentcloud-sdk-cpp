@@ -51,20 +51,23 @@ namespace TencentCloud
 填写实例值：hive、flink。
                      * @return Software 部署的组件列表。不同的EMR产品版本ProductVersion 对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
 填写实例值：hive、flink。
+                     * 
                      */
                     std::vector<std::string> GetSoftware() const;
 
                     /**
                      * 设置部署的组件列表。不同的EMR产品版本ProductVersion 对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
 填写实例值：hive、flink。
-                     * @param Software 部署的组件列表。不同的EMR产品版本ProductVersion 对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
+                     * @param _software 部署的组件列表。不同的EMR产品版本ProductVersion 对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；
 填写实例值：hive、flink。
+                     * 
                      */
                     void SetSoftware(const std::vector<std::string>& _software);
 
                     /**
                      * 判断参数 Software 是否已赋值
                      * @return Software 是否已赋值
+                     * 
                      */
                     bool SoftwareHasBeenSet() const;
 
@@ -81,6 +84,7 @@ Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
 Hadoop-Default
+                     * 
                      */
                     std::string GetSceneName() const;
 
@@ -91,18 +95,20 @@ Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
 Hadoop-Default
-                     * @param SceneName 默认Hadoop-Default,[场景查询](https://cloud.tencent.com/document/product/589/14624)场景化取值范围：
+                     * @param _sceneName 默认Hadoop-Default,[场景查询](https://cloud.tencent.com/document/product/589/14624)场景化取值范围：
 Hadoop-Kudu
 Hadoop-Zookeeper
 Hadoop-Presto
 Hadoop-Hbase
 Hadoop-Default
+                     * 
                      */
                     void SetSceneName(const std::string& _sceneName);
 
                     /**
                      * 判断参数 SceneName 是否已赋值
                      * @return SceneName 是否已赋值
+                     * 
                      */
                     bool SceneNameHasBeenSet() const;
 

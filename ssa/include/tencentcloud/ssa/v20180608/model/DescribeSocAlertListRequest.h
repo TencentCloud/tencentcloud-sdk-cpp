@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取页大小
                      * @return PageSize 页大小
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页大小
-                     * @param PageSize 页大小
+                     * @param _pageSize 页大小
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return PageIndex 页码
+                     * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
                      * 设置页码
-                     * @param PageIndex 页码
+                     * @param _pageIndex 页码
+                     * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取1:急需关注 2.重保监控 3.全量告警
                      * @return Scenes 1:急需关注 2.重保监控 3.全量告警
+                     * 
                      */
                     int64_t GetScenes() const;
 
                     /**
                      * 设置1:急需关注 2.重保监控 3.全量告警
-                     * @param Scenes 1:急需关注 2.重保监控 3.全量告警
+                     * @param _scenes 1:急需关注 2.重保监控 3.全量告警
+                     * 
                      */
                     void SetScenes(const int64_t& _scenes);
 
                     /**
                      * 判断参数 Scenes 是否已赋值
                      * @return Scenes 是否已赋值
+                     * 
                      */
                     bool ScenesHasBeenSet() const;
 
                     /**
                      * 获取查询参数
                      * @return Filter 查询参数
+                     * 
                      */
                     std::vector<QueryFilter> GetFilter() const;
 
                     /**
                      * 设置查询参数
-                     * @param Filter 查询参数
+                     * @param _filter 查询参数
+                     * 
                      */
                     void SetFilter(const std::vector<QueryFilter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取排序参数
                      * @return Sorter 排序参数
+                     * 
                      */
                     std::vector<QuerySort> GetSorter() const;
 
                     /**
                      * 设置排序参数
-                     * @param Sorter 排序参数
+                     * @param _sorter 排序参数
+                     * 
                      */
                     void SetSorter(const std::vector<QuerySort>& _sorter);
 
                     /**
                      * 判断参数 Sorter 是否已赋值
                      * @return Sorter 是否已赋值
+                     * 
                      */
                     bool SorterHasBeenSet() const;
 
                     /**
                      * 获取是否导出
                      * @return ExportFlag 是否导出
+                     * 
                      */
                     bool GetExportFlag() const;
 
                     /**
                      * 设置是否导出
-                     * @param ExportFlag 是否导出
+                     * @param _exportFlag 是否导出
+                     * 
                      */
                     void SetExportFlag(const bool& _exportFlag);
 
                     /**
                      * 判断参数 ExportFlag 是否已赋值
                      * @return ExportFlag 是否已赋值
+                     * 
                      */
                     bool ExportFlagHasBeenSet() const;
 

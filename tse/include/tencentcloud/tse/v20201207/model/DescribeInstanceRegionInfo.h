@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion 引擎部署地域信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎部署地域信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EngineRegion 引擎部署地域信息
+                     * @param _engineRegion 引擎部署地域信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
 
                     /**
                      * 判断参数 EngineRegion 是否已赋值
                      * @return EngineRegion 是否已赋值
+                     * 
                      */
                     bool EngineRegionHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replica 引擎在该地域的副本数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReplica() const;
 
                     /**
                      * 设置引擎在该地域的副本数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Replica 引擎在该地域的副本数
+                     * @param _replica 引擎在该地域的副本数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplica(const int64_t& _replica);
 
                     /**
                      * 判断参数 Replica 是否已赋值
                      * @return Replica 是否已赋值
+                     * 
                      */
                     bool ReplicaHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecId 引擎在该地域的规格id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpecId() const;
 
                     /**
                      * 设置引擎在该地域的规格id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecId 引擎在该地域的规格id
+                     * @param _specId 引擎在该地域的规格id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecId(const std::string& _specId);
 
                     /**
                      * 判断参数 SpecId 是否已赋值
                      * @return SpecId 是否已赋值
+                     * 
                      */
                     bool SpecIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetVpcInfos 内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VpcInfo> GetIntranetVpcInfos() const;
 
                     /**
                      * 设置内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntranetVpcInfos 内网的网络信息
+                     * @param _intranetVpcInfos 内网的网络信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntranetVpcInfos(const std::vector<VpcInfo>& _intranetVpcInfos);
 
                     /**
                      * 判断参数 IntranetVpcInfos 是否已赋值
                      * @return IntranetVpcInfos 是否已赋值
+                     * 
                      */
                     bool IntranetVpcInfosHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableClientInternet 是否开公网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableClientInternet() const;
 
                     /**
                      * 设置是否开公网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableClientInternet 是否开公网
+                     * @param _enableClientInternet 是否开公网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableClientInternet(const bool& _enableClientInternet);
 
                     /**
                      * 判断参数 EnableClientInternet 是否已赋值
                      * @return EnableClientInternet 是否已赋值
+                     * 
                      */
                     bool EnableClientInternetHasBeenSet() const;
 

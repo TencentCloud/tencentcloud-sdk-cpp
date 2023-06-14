@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取合唱 Token。
                      * @return ChorusToken 合唱 Token。
+                     * 
                      */
                     std::string GetChorusToken() const;
 
                     /**
                      * 判断参数 ChorusToken 是否已赋值
                      * @return ChorusToken 是否已赋值
+                     * 
                      */
                     bool ChorusTokenHasBeenSet() const;
 

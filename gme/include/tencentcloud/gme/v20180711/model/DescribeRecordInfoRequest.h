@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取进行中的任务taskid（StartRecord接口返回）。
                      * @return TaskId 进行中的任务taskid（StartRecord接口返回）。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置进行中的任务taskid（StartRecord接口返回）。
-                     * @param TaskId 进行中的任务taskid（StartRecord接口返回）。
+                     * @param _taskId 进行中的任务taskid（StartRecord接口返回）。
+                     * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取应用ID。
                      * @return BizId 应用ID。
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID。
-                     * @param BizId 应用ID。
+                     * @param _bizId 应用ID。
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 

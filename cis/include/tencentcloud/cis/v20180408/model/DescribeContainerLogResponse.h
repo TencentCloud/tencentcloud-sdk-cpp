@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取容器日志数组
                      * @return ContainerLogList 容器日志数组
+                     * 
                      */
                     std::vector<ContainerLog> GetContainerLogList() const;
 
                     /**
                      * 判断参数 ContainerLogList 是否已赋值
                      * @return ContainerLogList 是否已赋值
+                     * 
                      */
                     bool ContainerLogListHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取泳道Idl
                      * @return LaneId 泳道Idl
+                     * 
                      */
                     std::string GetLaneId() const;
 
                     /**
                      * 设置泳道Idl
-                     * @param LaneId 泳道Idl
+                     * @param _laneId 泳道Idl
+                     * 
                      */
                     void SetLaneId(const std::string& _laneId);
 
                     /**
                      * 判断参数 LaneId 是否已赋值
                      * @return LaneId 是否已赋值
+                     * 
                      */
                     bool LaneIdHasBeenSet() const;
 

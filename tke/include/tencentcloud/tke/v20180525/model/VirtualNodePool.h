@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取节点池ID
                      * @return NodePoolId 节点池ID
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池ID
-                     * @param NodePoolId 节点池ID
+                     * @param _nodePoolId 节点池ID
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
@@ -71,56 +74,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetIds 子网列表
+                     * @param _subnetIds 子网列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取节点池名称
                      * @return Name 节点池名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点池名称
-                     * @param Name 节点池名称
+                     * @param _name 节点池名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取节点池生命周期
                      * @return LifeState 节点池生命周期
+                     * 
                      */
                     std::string GetLifeState() const;
 
                     /**
                      * 设置节点池生命周期
-                     * @param LifeState 节点池生命周期
+                     * @param _lifeState 节点池生命周期
+                     * 
                      */
                     void SetLifeState(const std::string& _lifeState);
 
                     /**
                      * 判断参数 LifeState 是否已赋值
                      * @return LifeState 是否已赋值
+                     * 
                      */
                     bool LifeStateHasBeenSet() const;
 
@@ -129,20 +141,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 虚拟节点label
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置虚拟节点label
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels 虚拟节点label
+                     * @param _labels 虚拟节点label
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -151,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Taints 虚拟节点taint
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
                      * 设置虚拟节点taint
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Taints 虚拟节点taint
+                     * @param _taints 虚拟节点taint
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
 
                     /**
                      * 判断参数 Taints 是否已赋值
                      * @return Taints 是否已赋值
+                     * 
                      */
                     bool TaintsHasBeenSet() const;
 

@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpns-1j2w6xpx。</li>
 <li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpnc-3rlxp4nd。</li>
 <li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -66,54 +67,62 @@ namespace TencentCloud
 <li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpns-1j2w6xpx。</li>
 <li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpnc-3rlxp4nd。</li>
 <li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定SslVpnClientIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定SslVpnClientIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpns-1j2w6xpx。</li>
 <li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpnc-3rlxp4nd。</li>
 <li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值0。
                      * @return Offset 偏移量，默认值0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值0。
-                     * @param Offset 偏移量，默认值0。
+                     * @param _offset 偏移量，默认值0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取请求对象个数，默认值20。
                      * @return Limit 请求对象个数，默认值20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置请求对象个数，默认值20。
-                     * @param Limit 请求对象个数，默认值20。
+                     * @param _limit 请求对象个数，默认值20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -122,38 +131,44 @@ namespace TencentCloud
 vpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。
                      * @return SslVpnClientIds SSL-VPN-CLIENT实例ID。形如：	
 vpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。
+                     * 
                      */
                     std::vector<std::string> GetSslVpnClientIds() const;
 
                     /**
                      * 设置SSL-VPN-CLIENT实例ID。形如：	
 vpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。
-                     * @param SslVpnClientIds SSL-VPN-CLIENT实例ID。形如：	
+                     * @param _sslVpnClientIds SSL-VPN-CLIENT实例ID。形如：	
 vpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。
+                     * 
                      */
                     void SetSslVpnClientIds(const std::vector<std::string>& _sslVpnClientIds);
 
                     /**
                      * 判断参数 SslVpnClientIds 是否已赋值
                      * @return SslVpnClientIds 是否已赋值
+                     * 
                      */
                     bool SslVpnClientIdsHasBeenSet() const;
 
                     /**
                      * 获取VPN门户网站使用。默认是False。
                      * @return IsVpnPortal VPN门户网站使用。默认是False。
+                     * 
                      */
                     bool GetIsVpnPortal() const;
 
                     /**
                      * 设置VPN门户网站使用。默认是False。
-                     * @param IsVpnPortal VPN门户网站使用。默认是False。
+                     * @param _isVpnPortal VPN门户网站使用。默认是False。
+                     * 
                      */
                     void SetIsVpnPortal(const bool& _isVpnPortal);
 
                     /**
                      * 判断参数 IsVpnPortal 是否已赋值
                      * @return IsVpnPortal 是否已赋值
+                     * 
                      */
                     bool IsVpnPortalHasBeenSet() const;
 

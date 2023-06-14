@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取图片ID
                      * @return ImageId 图片ID
+                     * 
                      */
                     uint64_t GetImageId() const;
 
                     /**
                      * 设置图片ID
-                     * @param ImageId 图片ID
+                     * @param _imageId 图片ID
+                     * 
                      */
                     void SetImageId(const uint64_t& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取授权人ID
                      * @return AuthUserId 授权人ID
+                     * 
                      */
                     std::string GetAuthUserId() const;
 
                     /**
                      * 设置授权人ID
-                     * @param AuthUserId 授权人ID
+                     * @param _authUserId 授权人ID
+                     * 
                      */
                     void SetAuthUserId(const std::string& _authUserId);
 
                     /**
                      * 判断参数 AuthUserId 是否已赋值
                      * @return AuthUserId 是否已赋值
+                     * 
                      */
                     bool AuthUserIdHasBeenSet() const;
 
                     /**
                      * 获取售卖组合id
                      * @return MarshalId 售卖组合id
+                     * 
                      */
                     uint64_t GetMarshalId() const;
 
                     /**
                      * 设置售卖组合id
-                     * @param MarshalId 售卖组合id
+                     * @param _marshalId 售卖组合id
+                     * 
                      */
                     void SetMarshalId(const uint64_t& _marshalId);
 
                     /**
                      * 判断参数 MarshalId 是否已赋值
                      * @return MarshalId 是否已赋值
+                     * 
                      */
                     bool MarshalIdHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取业务类型
                      * @return BizType 业务类型
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
@@ -61,24 +63,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizName 业务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizName() const;
 
                     /**
                      * 判断参数 BizName 是否已赋值
                      * @return BizName 是否已赋值
+                     * 
                      */
                     bool BizNameHasBeenSet() const;
 
                     /**
                      * 获取审核范围
                      * @return ModerationCategories 审核范围
+                     * 
                      */
                     std::vector<std::string> GetModerationCategories() const;
 
                     /**
                      * 判断参数 ModerationCategories 是否已赋值
                      * @return ModerationCategories 是否已赋值
+                     * 
                      */
                     bool ModerationCategoriesHasBeenSet() const;
 
@@ -87,36 +93,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaModeration 多媒体审核配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaModerationConfig GetMediaModeration() const;
 
                     /**
                      * 判断参数 MediaModeration 是否已赋值
                      * @return MediaModeration 是否已赋值
+                     * 
                      */
                     bool MediaModerationHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedAt 更新时间
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 

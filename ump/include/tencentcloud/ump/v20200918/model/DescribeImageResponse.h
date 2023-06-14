@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取cos 临时 url，异步上传图片，client需要轮询
                      * @return ImageUrl cos 临时 url，异步上传图片，client需要轮询
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 

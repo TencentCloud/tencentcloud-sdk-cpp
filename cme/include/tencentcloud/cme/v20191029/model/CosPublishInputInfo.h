@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      * @return Bucket 发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
-                     * @param Bucket 发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * @param _bucket 发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。
                      * @return Region 发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。
-                     * @param Region 发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * @param _region 发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。
                      * @return VideoKey 发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。
+                     * 
                      */
                     std::string GetVideoKey() const;
 
                     /**
                      * 设置发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。
-                     * @param VideoKey 发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。
+                     * @param _videoKey 发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。
+                     * 
                      */
                     void SetVideoKey(const std::string& _videoKey);
 
                     /**
                      * 判断参数 VideoKey 是否已赋值
                      * @return VideoKey 是否已赋值
+                     * 
                      */
                     bool VideoKeyHasBeenSet() const;
 
                     /**
                      * 获取发布生成的封面在 COS 存储的对象键。
                      * @return CoverKey 发布生成的封面在 COS 存储的对象键。
+                     * 
                      */
                     std::string GetCoverKey() const;
 
                     /**
                      * 设置发布生成的封面在 COS 存储的对象键。
-                     * @param CoverKey 发布生成的封面在 COS 存储的对象键。
+                     * @param _coverKey 发布生成的封面在 COS 存储的对象键。
+                     * 
                      */
                     void SetCoverKey(const std::string& _coverKey);
 
                     /**
                      * 判断参数 CoverKey 是否已赋值
                      * @return CoverKey 是否已赋值
+                     * 
                      */
                     bool CoverKeyHasBeenSet() const;
 

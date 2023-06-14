@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name repo的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置repo的名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name repo的名字
+                     * @param _name repo的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullName repo的完整全名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFullName() const;
 
                     /**
                      * 设置repo的完整全名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullName repo的完整全名
+                     * @param _fullName repo的完整全名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullName(const std::string& _fullName);
 
                     /**
                      * 判断参数 FullName 是否已赋值
                      * @return FullName 是否已赋值
+                     * 
                      */
                     bool FullNameHasBeenSet() const;
 

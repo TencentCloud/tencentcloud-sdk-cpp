@@ -34,7 +34,19 @@ DomainInfo::DomainInfo() :
     m_scanTaskCountHasBeenSet(false),
     m_portRiskHasBeenSet(false),
     m_weekPwdCountHasBeenSet(false),
-    m_assetLocationHasBeenSet(false)
+    m_assetLocationHasBeenSet(false),
+    m_networkRiskHasBeenSet(false),
+    m_networkAttackHasBeenSet(false),
+    m_botVisitHasBeenSet(false),
+    m_networkAccessHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_wafStatusHasBeenSet(false),
+    m_lastScanTimeHasBeenSet(false),
+    m_assetIdHasBeenSet(false),
+    m_assetNameHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_isNotCoreHasBeenSet(false),
+    m_isCloudHasBeenSet(false)
 {
 }
 
@@ -192,6 +204,132 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_assetLocationHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkRisk") && !value["NetworkRisk"].IsNull())
+    {
+        if (!value["NetworkRisk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.NetworkRisk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkRisk = value["NetworkRisk"].GetUint64();
+        m_networkRiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAttack") && !value["NetworkAttack"].IsNull())
+    {
+        if (!value["NetworkAttack"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.NetworkAttack` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkAttack = value["NetworkAttack"].GetUint64();
+        m_networkAttackHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotVisit") && !value["BotVisit"].IsNull())
+    {
+        if (!value["BotVisit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.BotVisit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botVisit = value["BotVisit"].GetUint64();
+        m_botVisitHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAccess") && !value["NetworkAccess"].IsNull())
+    {
+        if (!value["NetworkAccess"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.NetworkAccess` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkAccess = value["NetworkAccess"].GetUint64();
+        m_networkAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WafStatus") && !value["WafStatus"].IsNull())
+    {
+        if (!value["WafStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.WafStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wafStatus = value["WafStatus"].GetUint64();
+        m_wafStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastScanTime") && !value["LastScanTime"].IsNull())
+    {
+        if (!value["LastScanTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastScanTime = string(value["LastScanTime"].GetString());
+        m_lastScanTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetId") && !value["AssetId"].IsNull())
+    {
+        if (!value["AssetId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.AssetId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssetId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_assetId.push_back((*itr).GetString());
+        }
+        m_assetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetName") && !value["AssetName"].IsNull())
+    {
+        if (!value["AssetName"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.AssetName` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssetName"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_assetName.push_back((*itr).GetString());
+        }
+        m_assetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNotCore") && !value["IsNotCore"].IsNull())
+    {
+        if (!value["IsNotCore"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsNotCore` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNotCore = value["IsNotCore"].GetUint64();
+        m_isNotCoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCloud") && !value["IsCloud"].IsNull())
+    {
+        if (!value["IsCloud"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsCloud` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloud = value["IsCloud"].GetUint64();
+        m_isCloudHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +462,112 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AssetLocation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_assetLocation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkRisk, allocator);
+    }
+
+    if (m_networkAttackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAttack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkAttack, allocator);
+    }
+
+    if (m_botVisitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotVisit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botVisit, allocator);
+    }
+
+    if (m_networkAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkAccess, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wafStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WafStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wafStatus, allocator);
+    }
+
+    if (m_lastScanTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastScanTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetId.begin(); itr != m_assetId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_assetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetName.begin(); itr != m_assetName.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNotCoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNotCore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNotCore, allocator);
+    }
+
+    if (m_isCloudHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloud";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloud, allocator);
     }
 
 }
@@ -551,5 +795,197 @@ void DomainInfo::SetAssetLocation(const string& _assetLocation)
 bool DomainInfo::AssetLocationHasBeenSet() const
 {
     return m_assetLocationHasBeenSet;
+}
+
+uint64_t DomainInfo::GetNetworkRisk() const
+{
+    return m_networkRisk;
+}
+
+void DomainInfo::SetNetworkRisk(const uint64_t& _networkRisk)
+{
+    m_networkRisk = _networkRisk;
+    m_networkRiskHasBeenSet = true;
+}
+
+bool DomainInfo::NetworkRiskHasBeenSet() const
+{
+    return m_networkRiskHasBeenSet;
+}
+
+uint64_t DomainInfo::GetNetworkAttack() const
+{
+    return m_networkAttack;
+}
+
+void DomainInfo::SetNetworkAttack(const uint64_t& _networkAttack)
+{
+    m_networkAttack = _networkAttack;
+    m_networkAttackHasBeenSet = true;
+}
+
+bool DomainInfo::NetworkAttackHasBeenSet() const
+{
+    return m_networkAttackHasBeenSet;
+}
+
+uint64_t DomainInfo::GetBotVisit() const
+{
+    return m_botVisit;
+}
+
+void DomainInfo::SetBotVisit(const uint64_t& _botVisit)
+{
+    m_botVisit = _botVisit;
+    m_botVisitHasBeenSet = true;
+}
+
+bool DomainInfo::BotVisitHasBeenSet() const
+{
+    return m_botVisitHasBeenSet;
+}
+
+uint64_t DomainInfo::GetNetworkAccess() const
+{
+    return m_networkAccess;
+}
+
+void DomainInfo::SetNetworkAccess(const uint64_t& _networkAccess)
+{
+    m_networkAccess = _networkAccess;
+    m_networkAccessHasBeenSet = true;
+}
+
+bool DomainInfo::NetworkAccessHasBeenSet() const
+{
+    return m_networkAccessHasBeenSet;
+}
+
+string DomainInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DomainInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DomainInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t DomainInfo::GetWafStatus() const
+{
+    return m_wafStatus;
+}
+
+void DomainInfo::SetWafStatus(const uint64_t& _wafStatus)
+{
+    m_wafStatus = _wafStatus;
+    m_wafStatusHasBeenSet = true;
+}
+
+bool DomainInfo::WafStatusHasBeenSet() const
+{
+    return m_wafStatusHasBeenSet;
+}
+
+string DomainInfo::GetLastScanTime() const
+{
+    return m_lastScanTime;
+}
+
+void DomainInfo::SetLastScanTime(const string& _lastScanTime)
+{
+    m_lastScanTime = _lastScanTime;
+    m_lastScanTimeHasBeenSet = true;
+}
+
+bool DomainInfo::LastScanTimeHasBeenSet() const
+{
+    return m_lastScanTimeHasBeenSet;
+}
+
+vector<string> DomainInfo::GetAssetId() const
+{
+    return m_assetId;
+}
+
+void DomainInfo::SetAssetId(const vector<string>& _assetId)
+{
+    m_assetId = _assetId;
+    m_assetIdHasBeenSet = true;
+}
+
+bool DomainInfo::AssetIdHasBeenSet() const
+{
+    return m_assetIdHasBeenSet;
+}
+
+vector<string> DomainInfo::GetAssetName() const
+{
+    return m_assetName;
+}
+
+void DomainInfo::SetAssetName(const vector<string>& _assetName)
+{
+    m_assetName = _assetName;
+    m_assetNameHasBeenSet = true;
+}
+
+bool DomainInfo::AssetNameHasBeenSet() const
+{
+    return m_assetNameHasBeenSet;
+}
+
+string DomainInfo::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void DomainInfo::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool DomainInfo::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+uint64_t DomainInfo::GetIsNotCore() const
+{
+    return m_isNotCore;
+}
+
+void DomainInfo::SetIsNotCore(const uint64_t& _isNotCore)
+{
+    m_isNotCore = _isNotCore;
+    m_isNotCoreHasBeenSet = true;
+}
+
+bool DomainInfo::IsNotCoreHasBeenSet() const
+{
+    return m_isNotCoreHasBeenSet;
+}
+
+uint64_t DomainInfo::GetIsCloud() const
+{
+    return m_isCloud;
+}
+
+void DomainInfo::SetIsCloud(const uint64_t& _isCloud)
+{
+    m_isCloud = _isCloud;
+    m_isCloudHasBeenSet = true;
+}
+
+bool DomainInfo::IsCloudHasBeenSet() const
+{
+    return m_isCloudHasBeenSet;
 }
 

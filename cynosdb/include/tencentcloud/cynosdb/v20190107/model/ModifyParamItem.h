@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取参数名
                      * @return ParamName 参数名
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
-                     * @param ParamName 参数名
+                     * @param _paramName 参数名
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取参数当前值
                      * @return CurrentValue 参数当前值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置参数当前值
-                     * @param CurrentValue 参数当前值
+                     * @param _currentValue 参数当前值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 参数旧值（只在出参时有用）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置参数旧值（只在出参时有用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldValue 参数旧值（只在出参时有用）
+                     * @param _oldValue 参数旧值（只在出参时有用）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取数据处理KEY
                      * @return Key 数据处理KEY
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置数据处理KEY
-                     * @param Key 数据处理KEY
+                     * @param _key 数据处理KEY
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH
                      * @return Operate 操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH
-                     * @param Operate 操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH
+                     * @param _operate 操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 
                     /**
                      * 获取数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY
                      * @return SchemeType 数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY
+                     * 
                      */
                     std::string GetSchemeType() const;
 
                     /**
                      * 设置数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY
-                     * @param SchemeType 数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY
+                     * @param _schemeType 数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY
+                     * 
                      */
                     void SetSchemeType(const std::string& _schemeType);
 
                     /**
                      * 判断参数 SchemeType 是否已赋值
                      * @return SchemeType 是否已赋值
+                     * 
                      */
                     bool SchemeTypeHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 数据处理VALUE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置数据处理VALUE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 数据处理VALUE
+                     * @param _value 数据处理VALUE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueOperate VALUE处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ValueParam GetValueOperate() const;
 
                     /**
                      * 设置VALUE处理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueOperate VALUE处理
+                     * @param _valueOperate VALUE处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueOperate(const ValueParam& _valueOperate);
 
                     /**
                      * 判断参数 ValueOperate 是否已赋值
                      * @return ValueOperate 是否已赋值
+                     * 
                      */
                     bool ValueOperateHasBeenSet() const;
 
@@ -150,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalValue 原始VALUE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginalValue() const;
 
                     /**
                      * 设置原始VALUE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalValue 原始VALUE
+                     * @param _originalValue 原始VALUE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalValue(const std::string& _originalValue);
 
                     /**
                      * 判断参数 OriginalValue 是否已赋值
                      * @return OriginalValue 是否已赋值
+                     * 
                      */
                     bool OriginalValueHasBeenSet() const;
 
@@ -172,20 +190,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueOperates VALUE处理链
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ValueParam> GetValueOperates() const;
 
                     /**
                      * 设置VALUE处理链
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueOperates VALUE处理链
+                     * @param _valueOperates VALUE处理链
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueOperates(const std::vector<ValueParam>& _valueOperates);
 
                     /**
                      * 判断参数 ValueOperates 是否已赋值
                      * @return ValueOperates 是否已赋值
+                     * 
                      */
                     bool ValueOperatesHasBeenSet() const;
 

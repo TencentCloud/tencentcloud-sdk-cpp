@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取业号码认证回应内容
                      * @return ResponseData 业号码认证回应内容
+                     * 
                      */
                     EPAResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

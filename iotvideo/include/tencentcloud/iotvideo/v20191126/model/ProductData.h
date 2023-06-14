@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 产品名称
+                     * @param _productName 产品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductDescription 产品描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductDescription() const;
 
                     /**
                      * 设置产品描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductDescription 产品描述信息
+                     * @param _productDescription 产品描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
                     /**
                      * 判断参数 ProductDescription 是否已赋值
                      * @return ProductDescription 是否已赋值
+                     * 
                      */
                     bool ProductDescriptionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，UNIX 时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，UNIX 时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间，UNIX 时间戳，单位秒
+                     * @param _createTime 创建时间，UNIX 时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IotModelRevision 物模型发布版本号,0代表物模型尚未发布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIotModelRevision() const;
 
                     /**
                      * 设置物模型发布版本号,0代表物模型尚未发布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IotModelRevision 物模型发布版本号,0代表物模型尚未发布
+                     * @param _iotModelRevision 物模型发布版本号,0代表物模型尚未发布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIotModelRevision(const int64_t& _iotModelRevision);
 
                     /**
                      * 判断参数 IotModelRevision 是否已赋值
                      * @return IotModelRevision 是否已赋值
+                     * 
                      */
                     bool IotModelRevisionHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey 产品密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置产品密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 产品密钥
+                     * @param _secretKey 产品密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Features 设备功能码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置设备功能码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Features 设备功能码
+                     * @param _features 设备功能码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
 
                     /**
                      * 判断参数 Features 是否已赋值
                      * @return Features 是否已赋值
+                     * 
                      */
                     bool FeaturesHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductModel 产器型号(APP产品,为APP包名)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductModel() const;
 
                     /**
                      * 设置产器型号(APP产品,为APP包名)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductModel 产器型号(APP产品,为APP包名)
+                     * @param _productModel 产器型号(APP产品,为APP包名)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductModel(const std::string& _productModel);
 
                     /**
                      * 判断参数 ProductModel 是否已赋值
                      * @return ProductModel 是否已赋值
+                     * 
                      */
                     bool ProductModelHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChipManufactureId 主芯片厂商id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChipManufactureId() const;
 
                     /**
                      * 设置主芯片厂商id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChipManufactureId 主芯片厂商id
+                     * @param _chipManufactureId 主芯片厂商id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChipManufactureId(const std::string& _chipManufactureId);
 
                     /**
                      * 判断参数 ChipManufactureId 是否已赋值
                      * @return ChipManufactureId 是否已赋值
+                     * 
                      */
                     bool ChipManufactureIdHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChipId 主芯片型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChipId() const;
 
                     /**
                      * 设置主芯片型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChipId 主芯片型号
+                     * @param _chipId 主芯片型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChipId(const std::string& _chipId);
 
                     /**
                      * 判断参数 ChipId 是否已赋值
                      * @return ChipId 是否已赋值
+                     * 
                      */
                     bool ChipIdHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCate 产品类别，0：普通视频设备；1：NVR设备
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProductCate() const;
 
                     /**
                      * 设置产品类别，0：普通视频设备；1：NVR设备
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCate 产品类别，0：普通视频设备；1：NVR设备
+                     * @param _productCate 产品类别，0：普通视频设备；1：NVR设备
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductCate(const int64_t& _productCate);
 
                     /**
                      * 判断参数 ProductCate 是否已赋值
                      * @return ProductCate 是否已赋值
+                     * 
                      */
                     bool ProductCateHasBeenSet() const;
 
@@ -305,6 +338,7 @@ Europe（欧洲）
 India（印度）
 Other-Overseas（其他境外地区）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductRegion() const;
 
@@ -317,7 +351,7 @@ Europe（欧洲）
 India（印度）
 Other-Overseas（其他境外地区）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductRegion 产品地区
+                     * @param _productRegion 产品地区
 China-Mainland（中国大陆）
 China-Hong Kong, Macao and Taiwan（港澳台地区）
 America（美国）
@@ -325,12 +359,14 @@ Europe（欧洲）
 India（印度）
 Other-Overseas（其他境外地区）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductRegion(const std::string& _productRegion);
 
                     /**
                      * 判断参数 ProductRegion 是否已赋值
                      * @return ProductRegion 是否已赋值
+                     * 
                      */
                     bool ProductRegionHasBeenSet() const;
 
@@ -339,20 +375,23 @@ Other-Overseas（其他境外地区）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAccessMode() const;
 
                     /**
                      * 设置接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
+                     * @param _accessMode 接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessMode(const int64_t& _accessMode);
 
                     /**
                      * 判断参数 AccessMode 是否已赋值
                      * @return AccessMode 是否已赋值
+                     * 
                      */
                     bool AccessModeHasBeenSet() const;
 
@@ -361,20 +400,23 @@ Other-Overseas（其他境外地区）
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Os linux,android,liteos
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置linux,android,liteos
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Os linux,android,liteos
+                     * @param _os linux,android,liteos
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOs(const std::string& _os);
 
                     /**
                      * 判断参数 Os 是否已赋值
                      * @return Os 是否已赋值
+                     * 
                      */
                     bool OsHasBeenSet() const;
 

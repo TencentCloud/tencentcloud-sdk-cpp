@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。
                      * @return TemplateId 模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。
-                     * @param TemplateId 模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。
+                     * @param _templateId 模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。
                      * @return Sign 短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。
+                     * 
                      */
                     std::string GetSign() const;
 
                     /**
                      * 设置短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。
-                     * @param Sign 短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。
+                     * @param _sign 短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。
+                     * 
                      */
                     void SetSign(const std::string& _sign);
 
                     /**
                      * 判断参数 Sign 是否已赋值
                      * @return Sign 是否已赋值
+                     * 
                      */
                     bool SignHasBeenSet() const;
 

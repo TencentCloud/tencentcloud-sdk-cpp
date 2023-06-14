@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取NAT子网信息
                      * @return NatSubnetInfoSet NAT子网信息
+                     * 
                      */
                     std::vector<NatSubnetInfo> GetNatSubnetInfoSet() const;
 
                     /**
                      * 判断参数 NatSubnetInfoSet 是否已赋值
                      * @return NatSubnetInfoSet 是否已赋值
+                     * 
                      */
                     bool NatSubnetInfoSetHasBeenSet() const;
 

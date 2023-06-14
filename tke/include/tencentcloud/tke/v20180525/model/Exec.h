@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Commands 容器内检测的命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCommands() const;
 
                     /**
                      * 设置容器内检测的命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Commands 容器内检测的命令
+                     * @param _commands 容器内检测的命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCommands(const std::vector<std::string>& _commands);
 
                     /**
                      * 判断参数 Commands 是否已赋值
                      * @return Commands 是否已赋值
+                     * 
                      */
                     bool CommandsHasBeenSet() const;
 

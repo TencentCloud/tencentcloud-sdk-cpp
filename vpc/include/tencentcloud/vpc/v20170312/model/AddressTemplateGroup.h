@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取IP地址模板集合名称。
                      * @return AddressTemplateGroupName IP地址模板集合名称。
+                     * 
                      */
                     std::string GetAddressTemplateGroupName() const;
 
                     /**
                      * 设置IP地址模板集合名称。
-                     * @param AddressTemplateGroupName IP地址模板集合名称。
+                     * @param _addressTemplateGroupName IP地址模板集合名称。
+                     * 
                      */
                     void SetAddressTemplateGroupName(const std::string& _addressTemplateGroupName);
 
                     /**
                      * 判断参数 AddressTemplateGroupName 是否已赋值
                      * @return AddressTemplateGroupName 是否已赋值
+                     * 
                      */
                     bool AddressTemplateGroupNameHasBeenSet() const;
 
                     /**
                      * 获取IP地址模板集合实例ID，例如：ipmg-dih8xdbq。
                      * @return AddressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-dih8xdbq。
+                     * 
                      */
                     std::string GetAddressTemplateGroupId() const;
 
                     /**
                      * 设置IP地址模板集合实例ID，例如：ipmg-dih8xdbq。
-                     * @param AddressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-dih8xdbq。
+                     * @param _addressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-dih8xdbq。
+                     * 
                      */
                     void SetAddressTemplateGroupId(const std::string& _addressTemplateGroupId);
 
                     /**
                      * 判断参数 AddressTemplateGroupId 是否已赋值
                      * @return AddressTemplateGroupId 是否已赋值
+                     * 
                      */
                     bool AddressTemplateGroupIdHasBeenSet() const;
 
                     /**
                      * 获取IP地址模板ID。
                      * @return AddressTemplateIdSet IP地址模板ID。
+                     * 
                      */
                     std::vector<std::string> GetAddressTemplateIdSet() const;
 
                     /**
                      * 设置IP地址模板ID。
-                     * @param AddressTemplateIdSet IP地址模板ID。
+                     * @param _addressTemplateIdSet IP地址模板ID。
+                     * 
                      */
                     void SetAddressTemplateIdSet(const std::vector<std::string>& _addressTemplateIdSet);
 
                     /**
                      * 判断参数 AddressTemplateIdSet 是否已赋值
                      * @return AddressTemplateIdSet 是否已赋值
+                     * 
                      */
                     bool AddressTemplateIdSetHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取IP地址模板实例。
                      * @return AddressTemplateSet IP地址模板实例。
+                     * 
                      */
                     std::vector<AddressTemplateItem> GetAddressTemplateSet() const;
 
                     /**
                      * 设置IP地址模板实例。
-                     * @param AddressTemplateSet IP地址模板实例。
+                     * @param _addressTemplateSet IP地址模板实例。
+                     * 
                      */
                     void SetAddressTemplateSet(const std::vector<AddressTemplateItem>& _addressTemplateSet);
 
                     /**
                      * 判断参数 AddressTemplateSet 是否已赋值
                      * @return AddressTemplateSet 是否已赋值
+                     * 
                      */
                     bool AddressTemplateSetHasBeenSet() const;
 

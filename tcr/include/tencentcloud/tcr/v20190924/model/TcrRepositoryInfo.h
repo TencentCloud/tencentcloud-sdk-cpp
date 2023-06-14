@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取仓库名称
                      * @return Name 仓库名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param Name 仓库名称
+                     * @param _name 仓库名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return Namespace 命名空间名称
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param Namespace 命名空间名称
+                     * @param _namespace 命名空间名称
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      * @return CreationTime 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
-                     * @param CreationTime 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @param _creationTime 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取是否公开
                      * @return Public 是否公开
+                     * 
                      */
                     bool GetPublic() const;
 
                     /**
                      * 设置是否公开
-                     * @param Public 是否公开
+                     * @param _public 是否公开
+                     * 
                      */
                     void SetPublic(const bool& _public);
 
                     /**
                      * 判断参数 Public 是否已赋值
                      * @return Public 是否已赋值
+                     * 
                      */
                     bool PublicHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 仓库详细描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置仓库详细描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 仓库详细描述
+                     * @param _description 仓库详细描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -145,38 +160,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefDescription 简单描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBriefDescription() const;
 
                     /**
                      * 设置简单描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BriefDescription 简单描述
+                     * @param _briefDescription 简单描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBriefDescription(const std::string& _briefDescription);
 
                     /**
                      * 判断参数 BriefDescription 是否已赋值
                      * @return BriefDescription 是否已赋值
+                     * 
                      */
                     bool BriefDescriptionHasBeenSet() const;
 
                     /**
                      * 获取更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      * @return UpdateTime 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
-                     * @param UpdateTime 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @param _updateTime 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

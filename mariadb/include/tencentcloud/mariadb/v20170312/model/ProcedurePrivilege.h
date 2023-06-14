@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库名
                      * @return Database 数据库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-                     * @param Database 数据库名
+                     * @param _database 数据库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取数据库存储过程名
                      * @return Procedure 数据库存储过程名
+                     * 
                      */
                     std::string GetProcedure() const;
 
                     /**
                      * 设置数据库存储过程名
-                     * @param Procedure 数据库存储过程名
+                     * @param _procedure 数据库存储过程名
+                     * 
                      */
                     void SetProcedure(const std::string& _procedure);
 
                     /**
                      * 判断参数 Procedure 是否已赋值
                      * @return Procedure 是否已赋值
+                     * 
                      */
                     bool ProcedureHasBeenSet() const;
 
                     /**
                      * 获取权限信息
                      * @return Privileges 权限信息
+                     * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限信息
-                     * @param Privileges 权限信息
+                     * @param _privileges 权限信息
+                     * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
 
                     /**
                      * 判断参数 Privileges 是否已赋值
                      * @return Privileges 是否已赋值
+                     * 
                      */
                     bool PrivilegesHasBeenSet() const;
 

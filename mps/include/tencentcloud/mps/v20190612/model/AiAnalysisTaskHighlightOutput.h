@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取视频智能精彩片段列表。
                      * @return HighlightSet 视频智能精彩片段列表。
+                     * 
                      */
                     std::vector<MediaAiAnalysisHighlightItem> GetHighlightSet() const;
 
                     /**
                      * 设置视频智能精彩片段列表。
-                     * @param HighlightSet 视频智能精彩片段列表。
+                     * @param _highlightSet 视频智能精彩片段列表。
+                     * 
                      */
                     void SetHighlightSet(const std::vector<MediaAiAnalysisHighlightItem>& _highlightSet);
 
                     /**
                      * 判断参数 HighlightSet 是否已赋值
                      * @return HighlightSet 是否已赋值
+                     * 
                      */
                     bool HighlightSetHasBeenSet() const;
 
                     /**
                      * 获取精彩片段的存储位置。
                      * @return OutputStorage 精彩片段的存储位置。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置精彩片段的存储位置。
-                     * @param OutputStorage 精彩片段的存储位置。
+                     * @param _outputStorage 精彩片段的存储位置。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 

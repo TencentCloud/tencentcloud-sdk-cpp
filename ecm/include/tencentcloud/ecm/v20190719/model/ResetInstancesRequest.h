@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取待重装的实例ID列表。
                      * @return InstanceIdSet 待重装的实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待重装的实例ID列表。
-                     * @param InstanceIdSet 待重装的实例ID列表。
+                     * @param _instanceIdSet 待重装的实例ID列表。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。
                      * @return ImageId 重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。
-                     * @param ImageId 重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。
+                     * @param _imageId 重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取密码设置，若未指定，则后续将以站内信的形式通知密码。
                      * @return Password 密码设置，若未指定，则后续将以站内信的形式通知密码。
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码设置，若未指定，则后续将以站内信的形式通知密码。
-                     * @param Password 密码设置，若未指定，则后续将以站内信的形式通知密码。
+                     * @param _password 密码设置，若未指定，则后续将以站内信的形式通知密码。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取是否开启云监控和云镜服务，未指定时默认开启。
                      * @return EnhancedService 是否开启云监控和云镜服务，未指定时默认开启。
+                     * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
                      * 设置是否开启云监控和云镜服务，未指定时默认开启。
-                     * @param EnhancedService 是否开启云监控和云镜服务，未指定时默认开启。
+                     * @param _enhancedService 是否开启云监控和云镜服务，未指定时默认开启。
+                     * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
 
                     /**
                      * 判断参数 EnhancedService 是否已赋值
                      * @return EnhancedService 是否已赋值
+                     * 
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
                      * 获取是否保留数据盘数据，取值"true"/"false"。默认为"true"
                      * @return KeepData 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     * 
                      */
                     std::string GetKeepData() const;
 
                     /**
                      * 设置是否保留数据盘数据，取值"true"/"false"。默认为"true"
-                     * @param KeepData 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     * @param _keepData 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     * 
                      */
                     void SetKeepData(const std::string& _keepData);
 
                     /**
                      * 判断参数 KeepData 是否已赋值
                      * @return KeepData 是否已赋值
+                     * 
                      */
                     bool KeepDataHasBeenSet() const;
 
@@ -146,6 +161,7 @@ FALSE：表示不保持镜像的登录设置
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeepImageLogin() const;
 
@@ -156,18 +172,20 @@ FALSE：表示不保持镜像的登录设置
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeepImageLogin 保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
+                     * @param _keepImageLogin 保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：
 TRUE：表示保持镜像的登录设置
 FALSE：表示不保持镜像的登录设置
 
 默认取值：FALSE。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeepImageLogin(const std::string& _keepImageLogin);
 
                     /**
                      * 判断参数 KeepImageLogin 是否已赋值
                      * @return KeepImageLogin 是否已赋值
+                     * 
                      */
                     bool KeepImageLoginHasBeenSet() const;
 

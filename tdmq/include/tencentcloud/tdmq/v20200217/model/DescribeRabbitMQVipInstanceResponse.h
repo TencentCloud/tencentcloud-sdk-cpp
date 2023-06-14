@@ -53,24 +53,28 @@ namespace TencentCloud
                     /**
                      * 获取集群信息
                      * @return ClusterInfo 集群信息
+                     * 
                      */
                     RabbitMQClusterInfo GetClusterInfo() const;
 
                     /**
                      * 判断参数 ClusterInfo 是否已赋值
                      * @return ClusterInfo 是否已赋值
+                     * 
                      */
                     bool ClusterInfoHasBeenSet() const;
 
                     /**
                      * 获取集群规格信息
                      * @return ClusterSpecInfo 集群规格信息
+                     * 
                      */
                     RabbitMQClusterSpecInfo GetClusterSpecInfo() const;
 
                     /**
                      * 判断参数 ClusterSpecInfo 是否已赋值
                      * @return ClusterSpecInfo 是否已赋值
+                     * 
                      */
                     bool ClusterSpecInfoHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterNetInfo 集群访问
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RabbitMQClusterAccessInfo GetClusterNetInfo() const;
 
                     /**
                      * 判断参数 ClusterNetInfo 是否已赋值
                      * @return ClusterNetInfo 是否已赋值
+                     * 
                      */
                     bool ClusterNetInfoHasBeenSet() const;
 
@@ -93,48 +99,56 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterWhiteListInfo 集群白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RabbitMQClusterWhiteListInfo GetClusterWhiteListInfo() const;
 
                     /**
                      * 判断参数 ClusterWhiteListInfo 是否已赋值
                      * @return ClusterWhiteListInfo 是否已赋值
+                     * 
                      */
                     bool ClusterWhiteListInfoHasBeenSet() const;
 
                     /**
                      * 获取vhost配额信息
                      * @return VirtualHostQuota vhost配额信息
+                     * 
                      */
                     VirtualHostQuota GetVirtualHostQuota() const;
 
                     /**
                      * 判断参数 VirtualHostQuota 是否已赋值
                      * @return VirtualHostQuota 是否已赋值
+                     * 
                      */
                     bool VirtualHostQuotaHasBeenSet() const;
 
                     /**
                      * 获取exchange配额信息
                      * @return ExchangeQuota exchange配额信息
+                     * 
                      */
                     ExchangeQuota GetExchangeQuota() const;
 
                     /**
                      * 判断参数 ExchangeQuota 是否已赋值
                      * @return ExchangeQuota 是否已赋值
+                     * 
                      */
                     bool ExchangeQuotaHasBeenSet() const;
 
                     /**
                      * 获取queue配额信息
                      * @return QueueQuota queue配额信息
+                     * 
                      */
                     QueueQuota GetQueueQuota() const;
 
                     /**
                      * 判断参数 QueueQuota 是否已赋值
                      * @return QueueQuota 是否已赋值
+                     * 
                      */
                     bool QueueQuotaHasBeenSet() const;
 

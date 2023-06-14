@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取实例 Id
                      * @return RegistryId 实例 Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例 Id
-                     * @param RegistryId 实例 Id
+                     * @param _registryId 实例 Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return Name 策略名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略名称
-                     * @param Name 策略名称
+                     * @param _name 策略名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取KMS 密钥
                      * @return KmsId KMS 密钥
+                     * 
                      */
                     std::string GetKmsId() const;
 
                     /**
                      * 设置KMS 密钥
-                     * @param KmsId KMS 密钥
+                     * @param _kmsId KMS 密钥
+                     * 
                      */
                     void SetKmsId(const std::string& _kmsId);
 
                     /**
                      * 判断参数 KmsId 是否已赋值
                      * @return KmsId 是否已赋值
+                     * 
                      */
                     bool KmsIdHasBeenSet() const;
 
                     /**
                      * 获取KMS 密钥所属地域
                      * @return KmsRegion KMS 密钥所属地域
+                     * 
                      */
                     std::string GetKmsRegion() const;
 
                     /**
                      * 设置KMS 密钥所属地域
-                     * @param KmsRegion KMS 密钥所属地域
+                     * @param _kmsRegion KMS 密钥所属地域
+                     * 
                      */
                     void SetKmsRegion(const std::string& _kmsRegion);
 
                     /**
                      * 判断参数 KmsRegion 是否已赋值
                      * @return KmsRegion 是否已赋值
+                     * 
                      */
                     bool KmsRegionHasBeenSet() const;
 
                     /**
                      * 获取用户自定义域名，为空时使用 TCR 实例默认域名生成签名
                      * @return Domain 用户自定义域名，为空时使用 TCR 实例默认域名生成签名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置用户自定义域名，为空时使用 TCR 实例默认域名生成签名
-                     * @param Domain 用户自定义域名，为空时使用 TCR 实例默认域名生成签名
+                     * @param _domain 用户自定义域名，为空时使用 TCR 实例默认域名生成签名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取禁用加签策略，默认为 false
                      * @return Disabled 禁用加签策略，默认为 false
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置禁用加签策略，默认为 false
-                     * @param Disabled 禁用加签策略，默认为 false
+                     * @param _disabled 禁用加签策略，默认为 false
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 

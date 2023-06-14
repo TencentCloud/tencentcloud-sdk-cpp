@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取项目编码
                      * @return ItemID 项目编码
+                     * 
                      */
                     std::string GetItemID() const;
 
                     /**
                      * 设置项目编码
-                     * @param ItemID 项目编码
+                     * @param _itemID 项目编码
+                     * 
                      */
                     void SetItemID(const std::string& _itemID);
 
                     /**
                      * 判断参数 ItemID 是否已赋值
                      * @return ItemID 是否已赋值
+                     * 
                      */
                     bool ItemIDHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return Name 项目名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
-                     * @param Name 项目名称
+                     * @param _name 项目名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取单位
                      * @return Unit 单位
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-                     * @param Unit 单位
+                     * @param _unit 单位
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Quantity 数量
+                     * 
                      */
                     std::string GetQuantity() const;
 
                     /**
                      * 设置数量
-                     * @param Quantity 数量
+                     * @param _quantity 数量
+                     * 
                      */
                     void SetQuantity(const std::string& _quantity);
 
                     /**
                      * 判断参数 Quantity 是否已赋值
                      * @return Quantity 是否已赋值
+                     * 
                      */
                     bool QuantityHasBeenSet() const;
 
                     /**
                      * 获取标准
                      * @return Standard 标准
+                     * 
                      */
                     std::string GetStandard() const;
 
                     /**
                      * 设置标准
-                     * @param Standard 标准
+                     * @param _standard 标准
+                     * 
                      */
                     void SetStandard(const std::string& _standard);
 
                     /**
                      * 判断参数 Standard 是否已赋值
                      * @return Standard 是否已赋值
+                     * 
                      */
                     bool StandardHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Total 金额
+                     * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 设置金额
-                     * @param Total 金额
+                     * @param _total 金额
+                     * 
                      */
                     void SetTotal(const std::string& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

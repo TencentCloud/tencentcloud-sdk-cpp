@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取使用门店OpenId
                      * @return OpenId 使用门店OpenId
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置使用门店OpenId
-                     * @param OpenId 使用门店OpenId
+                     * @param _openId 使用门店OpenId
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取使用门店OpenKey
                      * @return OpenKey 使用门店OpenKey
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置使用门店OpenKey
-                     * @param OpenKey 使用门店OpenKey
+                     * @param _openKey 使用门店OpenKey
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取商户分账单号
                      * @return OutDistributeNo 商户分账单号
+                     * 
                      */
                     std::string GetOutDistributeNo() const;
 
                     /**
                      * 设置商户分账单号
-                     * @param OutDistributeNo 商户分账单号
+                     * @param _outDistributeNo 商户分账单号
+                     * 
                      */
                     void SetOutDistributeNo(const std::string& _outDistributeNo);
 
                     /**
                      * 判断参数 OutDistributeNo 是否已赋值
                      * @return OutDistributeNo 是否已赋值
+                     * 
                      */
                     bool OutDistributeNoHasBeenSet() const;
 
                     /**
                      * 获取分账明细
                      * @return Details 分账明细
+                     * 
                      */
                     std::vector<MultiApplyDetail> GetDetails() const;
 
                     /**
                      * 设置分账明细
-                     * @param Details 分账明细
+                     * @param _details 分账明细
+                     * 
                      */
                     void SetDetails(const std::vector<MultiApplyDetail>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 
                     /**
                      * 获取商户交易订单号，和OrderNo二者传其一
                      * @return DeveloperNo 商户交易订单号，和OrderNo二者传其一
+                     * 
                      */
                     std::string GetDeveloperNo() const;
 
                     /**
                      * 设置商户交易订单号，和OrderNo二者传其一
-                     * @param DeveloperNo 商户交易订单号，和OrderNo二者传其一
+                     * @param _developerNo 商户交易订单号，和OrderNo二者传其一
+                     * 
                      */
                     void SetDeveloperNo(const std::string& _developerNo);
 
                     /**
                      * 判断参数 DeveloperNo 是否已赋值
                      * @return DeveloperNo 是否已赋值
+                     * 
                      */
                     bool DeveloperNoHasBeenSet() const;
 
                     /**
                      * 获取平台交易订单号，和DeveloperNo二者传其一
                      * @return OrderNo 平台交易订单号，和DeveloperNo二者传其一
+                     * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
                      * 设置平台交易订单号，和DeveloperNo二者传其一
-                     * @param OrderNo 平台交易订单号，和DeveloperNo二者传其一
+                     * @param _orderNo 平台交易订单号，和DeveloperNo二者传其一
+                     * 
                      */
                     void SetOrderNo(const std::string& _orderNo);
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 
                     /**
                      * 获取说明
                      * @return Remark 说明
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明
-                     * @param Remark 说明
+                     * @param _remark 说明
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     * @param _profile 沙箱环境填sandbox，正式环境不填
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

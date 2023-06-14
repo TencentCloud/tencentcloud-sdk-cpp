@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取IP 资源列表
                      * @return IpList IP 资源列表
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置IP 资源列表
-                     * @param IpList IP 资源列表
+                     * @param _ipList IP 资源列表
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 
                     /**
                      * 获取域名化资源传id
                      * @return IdList 域名化资源传id
+                     * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
                      * 设置域名化资源传id
-                     * @param IdList 域名化资源传id
+                     * @param _idList 域名化资源传id
+                     * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
 
                     /**
                      * 判断参数 IdList 是否已赋值
                      * @return IdList 是否已赋值
+                     * 
                      */
                     bool IdListHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return FilterRegion 地域名称
+                     * 
                      */
                     uint64_t GetFilterRegion() const;
 
                     /**
                      * 设置地域名称
-                     * @param FilterRegion 地域名称
+                     * @param _filterRegion 地域名称
+                     * 
                      */
                     void SetFilterRegion(const uint64_t& _filterRegion);
 
                     /**
                      * 判断参数 FilterRegion 是否已赋值
                      * @return FilterRegion 是否已赋值
+                     * 
                      */
                     bool FilterRegionHasBeenSet() const;
 

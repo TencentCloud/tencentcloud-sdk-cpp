@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取VPC列表
                      * @return VpcList VPC列表
+                     * 
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 

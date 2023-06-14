@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountTime 开户时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountTime() const;
 
                     /**
                      * 设置开户时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountTime 开户时间
+                     * @param _accountTime 开户时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountTime(const std::string& _accountTime);
 
                     /**
                      * 判断参数 AccountTime 是否已赋值
                      * @return AccountTime 是否已赋值
+                     * 
                      */
                     bool AccountTimeHasBeenSet() const;
 
@@ -73,56 +76,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveTime 激活时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActiveTime() const;
 
                     /**
                      * 设置激活时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveTime 激活时间
+                     * @param _activeTime 激活时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveTime(const std::string& _activeTime);
 
                     /**
                      * 判断参数 ActiveTime 是否已赋值
                      * @return ActiveTime 是否已赋值
+                     * 
                      */
                     bool ActiveTimeHasBeenSet() const;
 
                     /**
                      * 获取运营商ICCID
                      * @return ICCID 运营商ICCID
+                     * 
                      */
                     std::string GetICCID() const;
 
                     /**
                      * 设置运营商ICCID
-                     * @param ICCID 运营商ICCID
+                     * @param _iCCID 运营商ICCID
+                     * 
                      */
                     void SetICCID(const std::string& _iCCID);
 
                     /**
                      * 判断参数 ICCID 是否已赋值
                      * @return ICCID 是否已赋值
+                     * 
                      */
                     bool ICCIDHasBeenSet() const;
 
                     /**
                      * 获取云兔卡ID
                      * @return LinkID 云兔卡ID
+                     * 
                      */
                     int64_t GetLinkID() const;
 
                     /**
                      * 设置云兔卡ID
-                     * @param LinkID 云兔卡ID
+                     * @param _linkID 云兔卡ID
+                     * 
                      */
                     void SetLinkID(const int64_t& _linkID);
 
                     /**
                      * 判断参数 LinkID 是否已赋值
                      * @return LinkID 是否已赋值
+                     * 
                      */
                     bool LinkIDHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msisdn 电话号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsisdn() const;
 
                     /**
                      * 设置电话号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Msisdn 电话号码
+                     * @param _msisdn 电话号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsisdn(const std::string& _msisdn);
 
                     /**
                      * 判断参数 Msisdn 是否已赋值
                      * @return Msisdn 是否已赋值
+                     * 
                      */
                     bool MsisdnHasBeenSet() const;
 
@@ -153,38 +168,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IMSI 移动用户识别码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIMSI() const;
 
                     /**
                      * 设置移动用户识别码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IMSI 移动用户识别码
+                     * @param _iMSI 移动用户识别码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIMSI(const std::string& _iMSI);
 
                     /**
                      * 判断参数 IMSI 是否已赋值
                      * @return IMSI 是否已赋值
+                     * 
                      */
                     bool IMSIHasBeenSet() const;
 
                     /**
                      * 获取运营商: 1 移动 2 联通 3 电信
                      * @return TeleOperator 运营商: 1 移动 2 联通 3 电信
+                     * 
                      */
                     int64_t GetTeleOperator() const;
 
                     /**
                      * 设置运营商: 1 移动 2 联通 3 电信
-                     * @param TeleOperator 运营商: 1 移动 2 联通 3 电信
+                     * @param _teleOperator 运营商: 1 移动 2 联通 3 电信
+                     * 
                      */
                     void SetTeleOperator(const int64_t& _teleOperator);
 
                     /**
                      * 判断参数 TeleOperator 是否已赋值
                      * @return TeleOperator 是否已赋值
+                     * 
                      */
                     bool TeleOperatorHasBeenSet() const;
 

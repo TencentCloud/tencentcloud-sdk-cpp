@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取匹配的组件信息
                      * @return Component 匹配的组件信息
+                     * 
                      */
                     Component GetComponent() const;
 
                     /**
                      * 判断参数 Component 是否已赋值
                      * @return Component 是否已赋值
+                     * 
                      */
                     bool ComponentHasBeenSet() const;
 

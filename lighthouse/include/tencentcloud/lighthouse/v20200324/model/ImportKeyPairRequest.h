@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。
                      * @return KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。
+                     * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。
-                     * @param KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。
+                     * @param _keyName 密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。
+                     * 
                      */
                     void SetKeyName(const std::string& _keyName);
 
                     /**
                      * 判断参数 KeyName 是否已赋值
                      * @return KeyName 是否已赋值
+                     * 
                      */
                     bool KeyNameHasBeenSet() const;
 
                     /**
                      * 获取密钥对的公钥内容， OpenSSH RSA 格式。
                      * @return PublicKey 密钥对的公钥内容， OpenSSH RSA 格式。
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 设置密钥对的公钥内容， OpenSSH RSA 格式。
-                     * @param PublicKey 密钥对的公钥内容， OpenSSH RSA 格式。
+                     * @param _publicKey 密钥对的公钥内容， OpenSSH RSA 格式。
+                     * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 

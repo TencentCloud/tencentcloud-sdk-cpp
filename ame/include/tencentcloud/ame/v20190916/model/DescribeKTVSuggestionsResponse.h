@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取联想词信息列表。返回总数最大为10。
                      * @return KTVSuggestionInfoSet 联想词信息列表。返回总数最大为10。
+                     * 
                      */
                     std::vector<KTVSuggestionInfo> GetKTVSuggestionInfoSet() const;
 
                     /**
                      * 判断参数 KTVSuggestionInfoSet 是否已赋值
                      * @return KTVSuggestionInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVSuggestionInfoSetHasBeenSet() const;
 

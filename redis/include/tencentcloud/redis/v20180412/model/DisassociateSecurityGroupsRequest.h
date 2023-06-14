@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称，本接口取值：redis。
                      * @return Product 数据库引擎名称，本接口取值：redis。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称，本接口取值：redis。
-                     * @param Product 数据库引擎名称，本接口取值：redis。
+                     * @param _product 数据库引擎名称，本接口取值：redis。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取安全组 ID。
                      * @return SecurityGroupId 安全组 ID。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组 ID。
-                     * @param SecurityGroupId 安全组 ID。
+                     * @param _securityGroupId 安全组 ID。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表，一个或者多个实例 ID 组成的数组。
                      * @return InstanceIds 实例ID列表，一个或者多个实例 ID 组成的数组。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表，一个或者多个实例 ID 组成的数组。
-                     * @param InstanceIds 实例ID列表，一个或者多个实例 ID 组成的数组。
+                     * @param _instanceIds 实例ID列表，一个或者多个实例 ID 组成的数组。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

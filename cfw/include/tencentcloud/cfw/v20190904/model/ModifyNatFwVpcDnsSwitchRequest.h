@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取nat 防火墙 id
                      * @return NatFwInsId nat 防火墙 id
+                     * 
                      */
                     std::string GetNatFwInsId() const;
 
                     /**
                      * 设置nat 防火墙 id
-                     * @param NatFwInsId nat 防火墙 id
+                     * @param _natFwInsId nat 防火墙 id
+                     * 
                      */
                     void SetNatFwInsId(const std::string& _natFwInsId);
 
                     /**
                      * 判断参数 NatFwInsId 是否已赋值
                      * @return NatFwInsId 是否已赋值
+                     * 
                      */
                     bool NatFwInsIdHasBeenSet() const;
 
                     /**
                      * 获取DNS 开关切换列表
                      * @return DnsVpcSwitchLst DNS 开关切换列表
+                     * 
                      */
                     std::vector<DnsVpcSwitch> GetDnsVpcSwitchLst() const;
 
                     /**
                      * 设置DNS 开关切换列表
-                     * @param DnsVpcSwitchLst DNS 开关切换列表
+                     * @param _dnsVpcSwitchLst DNS 开关切换列表
+                     * 
                      */
                     void SetDnsVpcSwitchLst(const std::vector<DnsVpcSwitch>& _dnsVpcSwitchLst);
 
                     /**
                      * 判断参数 DnsVpcSwitchLst 是否已赋值
                      * @return DnsVpcSwitchLst 是否已赋值
+                     * 
                      */
                     bool DnsVpcSwitchLstHasBeenSet() const;
 

@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。
                      * @return Container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。
-                     * @param Container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。
+                     * @param _container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     int64_t GetRemoveVideo() const;
 
@@ -84,16 +88,18 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
-                     * @param RemoveVideo 是否去除视频数据，取值：
+                     * @param _removeVideo 是否去除视频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
 
                     /**
                      * 判断参数 RemoveVideo 是否已赋值
                      * @return RemoveVideo 是否已赋值
+                     * 
                      */
                     bool RemoveVideoHasBeenSet() const;
 
@@ -106,6 +112,7 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     int64_t GetRemoveAudio() const;
 
@@ -114,70 +121,81 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
-                     * @param RemoveAudio 是否去除音频数据，取值：
+                     * @param _removeAudio 是否去除音频数据，取值：
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
 
                     /**
                      * 判断参数 RemoveAudio 是否已赋值
                      * @return RemoveAudio 是否已赋值
+                     * 
                      */
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
                      * 获取视频流配置参数，当 RemoveVideo 为 0，该字段必填。
                      * @return VideoTemplate 视频流配置参数，当 RemoveVideo 为 0，该字段必填。
+                     * 
                      */
                     VideoTemplateInfo GetVideoTemplate() const;
 
                     /**
                      * 设置视频流配置参数，当 RemoveVideo 为 0，该字段必填。
-                     * @param VideoTemplate 视频流配置参数，当 RemoveVideo 为 0，该字段必填。
+                     * @param _videoTemplate 视频流配置参数，当 RemoveVideo 为 0，该字段必填。
+                     * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfo& _videoTemplate);
 
                     /**
                      * 判断参数 VideoTemplate 是否已赋值
                      * @return VideoTemplate 是否已赋值
+                     * 
                      */
                     bool VideoTemplateHasBeenSet() const;
 
                     /**
                      * 获取音频流配置参数，当 RemoveAudio 为 0，该字段必填。
                      * @return AudioTemplate 音频流配置参数，当 RemoveAudio 为 0，该字段必填。
+                     * 
                      */
                     AudioTemplateInfo GetAudioTemplate() const;
 
                     /**
                      * 设置音频流配置参数，当 RemoveAudio 为 0，该字段必填。
-                     * @param AudioTemplate 音频流配置参数，当 RemoveAudio 为 0，该字段必填。
+                     * @param _audioTemplate 音频流配置参数，当 RemoveAudio 为 0，该字段必填。
+                     * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfo& _audioTemplate);
 
                     /**
                      * 判断参数 AudioTemplate 是否已赋值
                      * @return AudioTemplate 是否已赋值
+                     * 
                      */
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
                      * 获取极速高清转码参数。
                      * @return TEHDConfig 极速高清转码参数。
+                     * 
                      */
                     TEHDConfig GetTEHDConfig() const;
 
                     /**
                      * 设置极速高清转码参数。
-                     * @param TEHDConfig 极速高清转码参数。
+                     * @param _tEHDConfig 极速高清转码参数。
+                     * 
                      */
                     void SetTEHDConfig(const TEHDConfig& _tEHDConfig);
 
                     /**
                      * 判断参数 TEHDConfig 是否已赋值
                      * @return TEHDConfig 是否已赋值
+                     * 
                      */
                     bool TEHDConfigHasBeenSet() const;
 

@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取请求生成个人印章的客户端IP
                      * @return SourceIp 请求生成个人印章的客户端IP
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求生成个人印章的客户端IP
-                     * @param SourceIp 请求生成个人印章的客户端IP
+                     * @param _sourceIp 请求生成个人印章的客户端IP
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 
                     /**
                      * 获取电子印章名称
                      * @return SealName 电子印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置电子印章名称
-                     * @param SealName 电子印章名称
+                     * @param _sealName 电子印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取是否是默认印章 true：是，false：否
                      * @return IsDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否是默认印章 true：是，false：否
-                     * @param IsDefault 是否是默认印章 true：是，false：否
+                     * @param _isDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 

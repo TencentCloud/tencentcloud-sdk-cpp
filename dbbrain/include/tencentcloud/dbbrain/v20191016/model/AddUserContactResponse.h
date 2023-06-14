@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取添加成功的联系人id。
                      * @return Id 添加成功的联系人id。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

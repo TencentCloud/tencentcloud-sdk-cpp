@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取表名。
                      * @return TableName 表名。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名。
-                     * @param TableName 表名。
+                     * @param _tableName 表名。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取库名。
                      * @return TableSchema 库名。
+                     * 
                      */
                     std::string GetTableSchema() const;
 
                     /**
                      * 设置库名。
-                     * @param TableSchema 库名。
+                     * @param _tableSchema 库名。
+                     * 
                      */
                     void SetTableSchema(const std::string& _tableSchema);
 
                     /**
                      * 判断参数 TableSchema 是否已赋值
                      * @return TableSchema 是否已赋值
+                     * 
                      */
                     bool TableSchemaHasBeenSet() const;
 
                     /**
                      * 获取库表的存储引擎。
                      * @return Engine 库表的存储引擎。
+                     * 
                      */
                     std::string GetEngine() const;
 
                     /**
                      * 设置库表的存储引擎。
-                     * @param Engine 库表的存储引擎。
+                     * @param _engine 库表的存储引擎。
+                     * 
                      */
                     void SetEngine(const std::string& _engine);
 
                     /**
                      * 判断参数 Engine 是否已赋值
                      * @return Engine 是否已赋值
+                     * 
                      */
                     bool EngineHasBeenSet() const;
 
                     /**
                      * 获取单位时间间隔内的空间指标数据。
                      * @return SeriesData 单位时间间隔内的空间指标数据。
+                     * 
                      */
                     MonitorFloatMetricSeriesData GetSeriesData() const;
 
                     /**
                      * 设置单位时间间隔内的空间指标数据。
-                     * @param SeriesData 单位时间间隔内的空间指标数据。
+                     * @param _seriesData 单位时间间隔内的空间指标数据。
+                     * 
                      */
                     void SetSeriesData(const MonitorFloatMetricSeriesData& _seriesData);
 
                     /**
                      * 判断参数 SeriesData 是否已赋值
                      * @return SeriesData 是否已赋值
+                     * 
                      */
                     bool SeriesDataHasBeenSet() const;
 

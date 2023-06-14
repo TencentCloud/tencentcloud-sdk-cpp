@@ -59,6 +59,7 @@ namespace TencentCloud
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权平台企业下载合同 
+                     * 
                      */
                     std::string GetType() const;
 
@@ -69,36 +70,41 @@ namespace TencentCloud
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权平台企业下载合同 
-                     * @param Type 扩展服务类型
+                     * @param _type 扩展服务类型
   AUTO_SIGN             企业静默签（自动签署）
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
   DOWNLOAD_FLOW         授权平台企业下载合同 
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取扩展服务名称 
                      * @return Name 扩展服务名称 
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置扩展服务名称 
-                     * @param Name 扩展服务名称 
+                     * @param _name 扩展服务名称 
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -109,6 +115,7 @@ DISABLE 关闭
                      * @return Status 服务状态 
 ENABLE 开启 
 DISABLE 关闭
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -116,15 +123,17 @@ DISABLE 关闭
                      * 设置服务状态 
 ENABLE 开启 
 DISABLE 关闭
-                     * @param Status 服务状态 
+                     * @param _status 服务状态 
 ENABLE 开启 
 DISABLE 关闭
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -133,20 +142,23 @@ DISABLE 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorOpenId 最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperatorOpenId() const;
 
                     /**
                      * 设置最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorOpenId 最近操作人第三方应用平台的用户openid
+                     * @param _operatorOpenId 最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatorOpenId(const std::string& _operatorOpenId);
 
                     /**
                      * 判断参数 OperatorOpenId 是否已赋值
                      * @return OperatorOpenId 是否已赋值
+                     * 
                      */
                     bool OperatorOpenIdHasBeenSet() const;
 
@@ -155,20 +167,23 @@ DISABLE 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateOn 最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
                      * 设置最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateOn 最近操作时间戳，单位秒
+                     * @param _operateOn 最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperateOn(const int64_t& _operateOn);
 
                     /**
                      * 判断参数 OperateOn 是否已赋值
                      * @return OperateOn 是否已赋值
+                     * 
                      */
                     bool OperateOnHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取离线语音服务开关，取值：open/close
                      * @return Status 离线语音服务开关，取值：open/close
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置离线语音服务开关，取值：open/close
-                     * @param Status 离线语音服务开关，取值：open/close
+                     * @param _status 离线语音服务开关，取值：open/close
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文
                      * @return Language 离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文
+                     * 
                      */
                     std::string GetLanguage() const;
 
                     /**
                      * 设置离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文
-                     * @param Language 离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文
+                     * @param _language 离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文
+                     * 
                      */
                     void SetLanguage(const std::string& _language);
 
                     /**
                      * 判断参数 Language 是否已赋值
                      * @return Language 是否已赋值
+                     * 
                      */
                     bool LanguageHasBeenSet() const;
 

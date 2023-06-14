@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取鉴别涉及令人不适宜信息的评分，分值为0到100。
                      * @return Confidence 鉴别涉及令人不适宜信息的评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置鉴别涉及令人不适宜信息的评分，分值为0到100。
-                     * @param Confidence 鉴别涉及令人不适宜信息的评分，分值为0到100。
+                     * @param _confidence 鉴别涉及令人不适宜信息的评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -81,52 +85,60 @@ namespace TencentCloud
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
-                     * @param Suggestion 鉴别涉及令人不适宜信息的结果建议，取值范围：
+                     * @param _suggestion 鉴别涉及令人不适宜信息的结果建议，取值范围：
 <li>pass；</li>
 <li>review；</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取涉及令人不适宜的信息、违规图标名字。
                      * @return Name 涉及令人不适宜的信息、违规图标名字。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置涉及令人不适宜的信息、违规图标名字。
-                     * @param Name 涉及令人不适宜的信息、违规图标名字。
+                     * @param _name 涉及令人不适宜的信息、违规图标名字。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
                      * @return AreaCoordSet 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-                     * @param AreaCoordSet 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * @param _areaCoordSet 涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 

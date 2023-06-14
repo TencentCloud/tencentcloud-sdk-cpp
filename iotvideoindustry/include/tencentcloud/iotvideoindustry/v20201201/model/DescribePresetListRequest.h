@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取视频通道唯一标识
                      * @return ChannelId 视频通道唯一标识
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置视频通道唯一标识
-                     * @param ChannelId 视频通道唯一标识
+                     * @param _channelId 视频通道唯一标识
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
                     /**
                      * 获取设备唯一标识
                      * @return DeviceId 设备唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

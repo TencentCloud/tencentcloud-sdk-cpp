@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取设置用户的uin
                      * @return OpUin 设置用户的uin
+                     * 
                      */
                     uint64_t GetOpUin() const;
 
                     /**
                      * 设置设置用户的uin
-                     * @param OpUin 设置用户的uin
+                     * @param _opUin 设置用户的uin
+                     * 
                      */
                     void SetOpUin(const uint64_t& _opUin);
 
                     /**
                      * 判断参数 OpUin 是否已赋值
                      * @return OpUin 是否已赋值
+                     * 
                      */
                     bool OpUinHasBeenSet() const;
 
                     /**
                      * 获取登录保护设置
                      * @return LoginFlag 登录保护设置
+                     * 
                      */
                     LoginActionMfaFlag GetLoginFlag() const;
 
                     /**
                      * 设置登录保护设置
-                     * @param LoginFlag 登录保护设置
+                     * @param _loginFlag 登录保护设置
+                     * 
                      */
                     void SetLoginFlag(const LoginActionMfaFlag& _loginFlag);
 
                     /**
                      * 判断参数 LoginFlag 是否已赋值
                      * @return LoginFlag 是否已赋值
+                     * 
                      */
                     bool LoginFlagHasBeenSet() const;
 
                     /**
                      * 获取操作保护设置
                      * @return ActionFlag 操作保护设置
+                     * 
                      */
                     LoginActionMfaFlag GetActionFlag() const;
 
                     /**
                      * 设置操作保护设置
-                     * @param ActionFlag 操作保护设置
+                     * @param _actionFlag 操作保护设置
+                     * 
                      */
                     void SetActionFlag(const LoginActionMfaFlag& _actionFlag);
 
                     /**
                      * 判断参数 ActionFlag 是否已赋值
                      * @return ActionFlag 是否已赋值
+                     * 
                      */
                     bool ActionFlagHasBeenSet() const;
 

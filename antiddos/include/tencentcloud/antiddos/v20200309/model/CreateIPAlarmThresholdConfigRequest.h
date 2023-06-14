@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取IP告警阈值配置列表
                      * @return IpAlarmThresholdConfigList IP告警阈值配置列表
+                     * 
                      */
                     std::vector<IPAlarmThresholdRelation> GetIpAlarmThresholdConfigList() const;
 
                     /**
                      * 设置IP告警阈值配置列表
-                     * @param IpAlarmThresholdConfigList IP告警阈值配置列表
+                     * @param _ipAlarmThresholdConfigList IP告警阈值配置列表
+                     * 
                      */
                     void SetIpAlarmThresholdConfigList(const std::vector<IPAlarmThresholdRelation>& _ipAlarmThresholdConfigList);
 
                     /**
                      * 判断参数 IpAlarmThresholdConfigList 是否已赋值
                      * @return IpAlarmThresholdConfigList 是否已赋值
+                     * 
                      */
                     bool IpAlarmThresholdConfigListHasBeenSet() const;
 

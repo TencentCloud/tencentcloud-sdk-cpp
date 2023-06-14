@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalPersonIdCode 法人证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLegalPersonIdCode() const;
 
                     /**
                      * 设置法人证件号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LegalPersonIdCode 法人证件号码
+                     * @param _legalPersonIdCode 法人证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLegalPersonIdCode(const std::string& _legalPersonIdCode);
 
                     /**
                      * 判断参数 LegalPersonIdCode 是否已赋值
                      * @return LegalPersonIdCode 是否已赋值
+                     * 
                      */
                     bool LegalPersonIdCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalPersonIdType 法人证件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLegalPersonIdType() const;
 
                     /**
                      * 设置法人证件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LegalPersonIdType 法人证件类型
+                     * @param _legalPersonIdType 法人证件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLegalPersonIdType(const std::string& _legalPersonIdType);
 
                     /**
                      * 判断参数 LegalPersonIdType 是否已赋值
                      * @return LegalPersonIdType 是否已赋值
+                     * 
                      */
                     bool LegalPersonIdTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalPersonName 法人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLegalPersonName() const;
 
                     /**
                      * 设置法人名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LegalPersonName 法人名称
+                     * @param _legalPersonName 法人名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLegalPersonName(const std::string& _legalPersonName);
 
                     /**
                      * 判断参数 LegalPersonName 是否已赋值
                      * @return LegalPersonName 是否已赋值
+                     * 
                      */
                     bool LegalPersonNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationCode 公司证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrganizationCode() const;
 
                     /**
                      * 设置公司证件号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrganizationCode 公司证件号码
+                     * @param _organizationCode 公司证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrganizationCode(const std::string& _organizationCode);
 
                     /**
                      * 判断参数 OrganizationCode 是否已赋值
                      * @return OrganizationCode 是否已赋值
+                     * 
                      */
                     bool OrganizationCodeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 公司名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置公司名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrganizationName 公司名称
+                     * @param _organizationName 公司名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
                     /**
                      * 判断参数 OrganizationName 是否已赋值
                      * @return OrganizationName 是否已赋值
+                     * 
                      */
                     bool OrganizationNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationType 公司证件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrganizationType() const;
 
                     /**
                      * 设置公司证件类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrganizationType 公司证件类型
+                     * @param _organizationType 公司证件类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrganizationType(const std::string& _organizationType);
 
                     /**
                      * 判断参数 OrganizationType 是否已赋值
                      * @return OrganizationType 是否已赋值
+                     * 
                      */
                     bool OrganizationTypeHasBeenSet() const;
 

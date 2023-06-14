@@ -62,24 +62,28 @@ namespace TencentCloud
   102: 非法姓名(长度,格式等不正确),
   103: 验证平台异常,
   104: 证件库中无此身份证记录
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取结果描述; 未通过时必选
                      * @return Description 结果描述; 未通过时必选
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

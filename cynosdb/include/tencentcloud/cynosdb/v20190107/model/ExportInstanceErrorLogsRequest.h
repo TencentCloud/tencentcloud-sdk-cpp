@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取日志最早时间
                      * @return StartTime 日志最早时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志最早时间
-                     * @param StartTime 日志最早时间
+                     * @param _startTime 日志最早时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志最晚时间
                      * @return EndTime 日志最晚时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志最晚时间
-                     * @param EndTime 日志最晚时间
+                     * @param _endTime 日志最晚时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取限制条数
                      * @return Limit 限制条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制条数
-                     * @param Limit 限制条数
+                     * @param _limit 限制条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取日志等级
                      * @return LogLevels 日志等级
+                     * 
                      */
                     std::vector<std::string> GetLogLevels() const;
 
                     /**
                      * 设置日志等级
-                     * @param LogLevels 日志等级
+                     * @param _logLevels 日志等级
+                     * 
                      */
                     void SetLogLevels(const std::vector<std::string>& _logLevels);
 
                     /**
                      * 判断参数 LogLevels 是否已赋值
                      * @return LogLevels 是否已赋值
+                     * 
                      */
                     bool LogLevelsHasBeenSet() const;
 
                     /**
                      * 获取关键字
                      * @return KeyWords 关键字
+                     * 
                      */
                     std::vector<std::string> GetKeyWords() const;
 
                     /**
                      * 设置关键字
-                     * @param KeyWords 关键字
+                     * @param _keyWords 关键字
+                     * 
                      */
                     void SetKeyWords(const std::vector<std::string>& _keyWords);
 
                     /**
                      * 判断参数 KeyWords 是否已赋值
                      * @return KeyWords 是否已赋值
+                     * 
                      */
                     bool KeyWordsHasBeenSet() const;
 
                     /**
                      * 获取文件类型，可选值：csv, original
                      * @return FileType 文件类型，可选值：csv, original
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型，可选值：csv, original
-                     * @param FileType 文件类型，可选值：csv, original
+                     * @param _fileType 文件类型，可选值：csv, original
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取可选值Timestamp
                      * @return OrderBy 可选值Timestamp
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置可选值Timestamp
-                     * @param OrderBy 可选值Timestamp
+                     * @param _orderBy 可选值Timestamp
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取ASC或DESC
                      * @return OrderByType ASC或DESC
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置ASC或DESC
-                     * @param OrderByType ASC或DESC
+                     * @param _orderByType ASC或DESC
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

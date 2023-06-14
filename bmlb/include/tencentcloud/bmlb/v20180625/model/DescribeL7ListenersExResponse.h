@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取此指定VPC中负载均衡的总数。
                      * @return TotalCount 此指定VPC中负载均衡的总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取符合条件的监听器。
                      * @return ListenerSet 符合条件的监听器。
+                     * 
                      */
                     std::vector<L7ExListener> GetListenerSet() const;
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 

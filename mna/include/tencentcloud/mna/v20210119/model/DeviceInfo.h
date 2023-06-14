@@ -59,6 +59,7 @@ namespace TencentCloud
 3：联通
 4：广电
 99：其他
+                     * 
                      */
                     uint64_t GetVendor() const;
 
@@ -69,18 +70,20 @@ namespace TencentCloud
 3：联通
 4：广电
 99：其他
-                     * @param Vendor 运营商
+                     * @param _vendor 运营商
 1：移动 
 2：电信
 3：联通
 4：广电
 99：其他
+                     * 
                      */
                     void SetVendor(const uint64_t& _vendor);
 
                     /**
                      * 判断参数 Vendor 是否已赋值
                      * @return Vendor 是否已赋值
+                     * 
                      */
                     bool VendorHasBeenSet() const;
 
@@ -93,6 +96,7 @@ namespace TencentCloud
 1：Android
 2： IOS
 99：其他
+                     * 
                      */
                     uint64_t GetOS() const;
 
@@ -101,16 +105,18 @@ namespace TencentCloud
 1：Android
 2： IOS
 99：其他
-                     * @param OS 设备操作系统：
+                     * @param _oS 设备操作系统：
 1：Android
 2： IOS
 99：其他
+                     * 
                      */
                     void SetOS(const uint64_t& _oS);
 
                     /**
                      * 判断参数 OS 是否已赋值
                      * @return OS 是否已赋值
+                     * 
                      */
                     bool OSHasBeenSet() const;
 
@@ -121,6 +127,7 @@ Android 填写 IMEI
                      * @return DeviceId 设备唯一标识
 IOS 填写 IDFV
 Android 填写 IMEI
+                     * 
                      */
                     std::string GetDeviceId() const;
 
@@ -128,33 +135,38 @@ Android 填写 IMEI
                      * 设置设备唯一标识
 IOS 填写 IDFV
 Android 填写 IMEI
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
 IOS 填写 IDFV
 Android 填写 IMEI
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取用户手机号码
                      * @return PhoneNum 用户手机号码
+                     * 
                      */
                     std::string GetPhoneNum() const;
 
                     /**
                      * 设置用户手机号码
-                     * @param PhoneNum 用户手机号码
+                     * @param _phoneNum 用户手机号码
+                     * 
                      */
                     void SetPhoneNum(const std::string& _phoneNum);
 
                     /**
                      * 判断参数 PhoneNum 是否已赋值
                      * @return PhoneNum 是否已赋值
+                     * 
                      */
                     bool PhoneNumHasBeenSet() const;
 
@@ -169,6 +181,7 @@ Android 填写 IMEI
 2：5G
 3：WIFI
 99：其他
+                     * 
                      */
                     uint64_t GetWireless() const;
 
@@ -178,17 +191,19 @@ Android 填写 IMEI
 2：5G
 3：WIFI
 99：其他
-                     * @param Wireless 无线信息
+                     * @param _wireless 无线信息
 1：4G
 2：5G
 3：WIFI
 99：其他
+                     * 
                      */
                     void SetWireless(const uint64_t& _wireless);
 
                     /**
                      * 判断参数 Wireless 是否已赋值
                      * @return Wireless 是否已赋值
+                     * 
                      */
                     bool WirelessHasBeenSet() const;
 

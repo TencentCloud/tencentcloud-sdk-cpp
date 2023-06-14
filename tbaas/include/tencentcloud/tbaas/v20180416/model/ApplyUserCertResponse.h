@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertId 证书ID
+                     * 
                      */
                     uint64_t GetCertId() const;
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取证书DN
                      * @return CertDn 证书DN
+                     * 
                      */
                     std::string GetCertDn() const;
 
                     /**
                      * 判断参数 CertDn 是否已赋值
                      * @return CertDn 是否已赋值
+                     * 
                      */
                     bool CertDnHasBeenSet() const;
 

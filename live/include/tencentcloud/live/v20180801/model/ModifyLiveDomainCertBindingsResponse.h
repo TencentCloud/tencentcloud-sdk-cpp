@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。
                      * @return MismatchedDomainNames DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。
+                     * 
                      */
                     std::vector<std::string> GetMismatchedDomainNames() const;
 
                     /**
                      * 判断参数 MismatchedDomainNames 是否已赋值
                      * @return MismatchedDomainNames 是否已赋值
+                     * 
                      */
                     bool MismatchedDomainNamesHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BatchDomainOperateErrors> GetErrors() const;
 
                     /**
                      * 判断参数 Errors 是否已赋值
                      * @return Errors 是否已赋值
+                     * 
                      */
                     bool ErrorsHasBeenSet() const;
 

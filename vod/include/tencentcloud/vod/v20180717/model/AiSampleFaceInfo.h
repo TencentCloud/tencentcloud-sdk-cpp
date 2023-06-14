@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取人脸图片 ID。
                      * @return FaceId 人脸图片 ID。
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 设置人脸图片 ID。
-                     * @param FaceId 人脸图片 ID。
+                     * @param _faceId 人脸图片 ID。
+                     * 
                      */
                     void SetFaceId(const std::string& _faceId);
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取人脸图片地址。
                      * @return Url 人脸图片地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置人脸图片地址。
-                     * @param Url 人脸图片地址。
+                     * @param _url 人脸图片地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

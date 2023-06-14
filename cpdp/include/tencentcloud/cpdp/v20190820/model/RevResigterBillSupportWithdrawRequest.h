@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取String(22)，商户号（签约客户号）
                      * @return MrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     std::string GetMrchCode() const;
 
                     /**
                      * 设置String(22)，商户号（签约客户号）
-                     * @param MrchCode String(22)，商户号（签约客户号）
+                     * @param _mrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     void SetMrchCode(const std::string& _mrchCode);
 
                     /**
                      * 判断参数 MrchCode 是否已赋值
                      * @return MrchCode 是否已赋值
+                     * 
                      */
                     bool MrchCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(32)，交易网会员代码
                      * @return TranNetMemberCode STRING(32)，交易网会员代码
+                     * 
                      */
                     std::string GetTranNetMemberCode() const;
 
                     /**
                      * 设置STRING(32)，交易网会员代码
-                     * @param TranNetMemberCode STRING(32)，交易网会员代码
+                     * @param _tranNetMemberCode STRING(32)，交易网会员代码
+                     * 
                      */
                     void SetTranNetMemberCode(const std::string& _tranNetMemberCode);
 
                     /**
                      * 判断参数 TranNetMemberCode 是否已赋值
                      * @return TranNetMemberCode 是否已赋值
+                     * 
                      */
                     bool TranNetMemberCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）
                      * @return OldOrderNo STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）
+                     * 
                      */
                     std::string GetOldOrderNo() const;
 
                     /**
                      * 设置STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）
-                     * @param OldOrderNo STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）
+                     * @param _oldOrderNo STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）
+                     * 
                      */
                     void SetOldOrderNo(const std::string& _oldOrderNo);
 
                     /**
                      * 判断参数 OldOrderNo 是否已赋值
                      * @return OldOrderNo 是否已赋值
+                     * 
                      */
                     bool OldOrderNoHasBeenSet() const;
 
                     /**
                      * 获取STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）
                      * @return CancelAmt STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）
+                     * 
                      */
                     std::string GetCancelAmt() const;
 
                     /**
                      * 设置STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）
-                     * @param CancelAmt STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）
+                     * @param _cancelAmt STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）
+                     * 
                      */
                     void SetCancelAmt(const std::string& _cancelAmt);
 
                     /**
                      * 判断参数 CancelAmt 是否已赋值
                      * @return CancelAmt 是否已赋值
+                     * 
                      */
                     bool CancelAmtHasBeenSet() const;
 
                     /**
                      * 获取STRING(20)，交易费用（暂未使用，默认传0.0）
                      * @return TranFee STRING(20)，交易费用（暂未使用，默认传0.0）
+                     * 
                      */
                     std::string GetTranFee() const;
 
                     /**
                      * 设置STRING(20)，交易费用（暂未使用，默认传0.0）
-                     * @param TranFee STRING(20)，交易费用（暂未使用，默认传0.0）
+                     * @param _tranFee STRING(20)，交易费用（暂未使用，默认传0.0）
+                     * 
                      */
                     void SetTranFee(const std::string& _tranFee);
 
                     /**
                      * 判断参数 TranFee 是否已赋值
                      * @return TranFee 是否已赋值
+                     * 
                      */
                     bool TranFeeHasBeenSet() const;
 
                     /**
                      * 获取STRING(300)，备注
                      * @return Remark STRING(300)，备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置STRING(300)，备注
-                     * @param Remark STRING(300)，备注
+                     * @param _remark STRING(300)，备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取STRING(300)，保留域1
                      * @return ReservedMsgOne STRING(300)，保留域1
+                     * 
                      */
                     std::string GetReservedMsgOne() const;
 
                     /**
                      * 设置STRING(300)，保留域1
-                     * @param ReservedMsgOne STRING(300)，保留域1
+                     * @param _reservedMsgOne STRING(300)，保留域1
+                     * 
                      */
                     void SetReservedMsgOne(const std::string& _reservedMsgOne);
 
                     /**
                      * 判断参数 ReservedMsgOne 是否已赋值
                      * @return ReservedMsgOne 是否已赋值
+                     * 
                      */
                     bool ReservedMsgOneHasBeenSet() const;
 
                     /**
                      * 获取STRING(300)，保留域2
                      * @return ReservedMsgTwo STRING(300)，保留域2
+                     * 
                      */
                     std::string GetReservedMsgTwo() const;
 
                     /**
                      * 设置STRING(300)，保留域2
-                     * @param ReservedMsgTwo STRING(300)，保留域2
+                     * @param _reservedMsgTwo STRING(300)，保留域2
+                     * 
                      */
                     void SetReservedMsgTwo(const std::string& _reservedMsgTwo);
 
                     /**
                      * 判断参数 ReservedMsgTwo 是否已赋值
                      * @return ReservedMsgTwo 是否已赋值
+                     * 
                      */
                     bool ReservedMsgTwoHasBeenSet() const;
 
                     /**
                      * 获取STRING(300)，保留域3
                      * @return ReservedMsgThree STRING(300)，保留域3
+                     * 
                      */
                     std::string GetReservedMsgThree() const;
 
                     /**
                      * 设置STRING(300)，保留域3
-                     * @param ReservedMsgThree STRING(300)，保留域3
+                     * @param _reservedMsgThree STRING(300)，保留域3
+                     * 
                      */
                     void SetReservedMsgThree(const std::string& _reservedMsgThree);
 
                     /**
                      * 判断参数 ReservedMsgThree 是否已赋值
                      * @return ReservedMsgThree 是否已赋值
+                     * 
                      */
                     bool ReservedMsgThreeHasBeenSet() const;
 
                     /**
                      * 获取STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
                      * @return Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
-                     * @param Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @param _profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

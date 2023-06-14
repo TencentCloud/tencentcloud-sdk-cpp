@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取人员库列表
                      * @return LibrarySet 人员库列表
+                     * 
                      */
                     std::vector<Library> GetLibrarySet() const;
 
                     /**
                      * 判断参数 LibrarySet 是否已赋值
                      * @return LibrarySet 是否已赋值
+                     * 
                      */
                     bool LibrarySetHasBeenSet() const;
 
                     /**
                      * 获取人员库总数量
                      * @return TotalCount 人员库总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签内容。
                      * @return Name 标签内容。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签内容。
-                     * @param Name 标签内容。
+                     * @param _name 标签内容。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
                      * @return Confidence 置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
-                     * @param Confidence 置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * @param _confidence 置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

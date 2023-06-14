@@ -52,12 +52,14 @@ namespace TencentCloud
 1： 加速中；
 0： 非加速中。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 剩余加速时间，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -88,12 +92,14 @@ T100K：上/下行保障100kbps；
 BD4M：下行带宽保障4Mbps；
 BU4M：上行带宽保障4Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuiteType() const;
 
                     /**
                      * 判断参数 SuiteType 是否已赋值
                      * @return SuiteType 是否已赋值
+                     * 
                      */
                     bool SuiteTypeHasBeenSet() const;
 
@@ -102,12 +108,14 @@ BU4M：上行带宽保障4Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcPublicIpv4 加速终端的公网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrcPublicIpv4() const;
 
                     /**
                      * 判断参数 SrcPublicIpv4 是否已赋值
                      * @return SrcPublicIpv4 是否已赋值
+                     * 
                      */
                     bool SrcPublicIpv4HasBeenSet() const;
 
@@ -116,12 +124,14 @@ BU4M：上行带宽保障4Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestIpv4 加速目标ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDestIpv4() const;
 
                     /**
                      * 判断参数 DestIpv4 是否已赋值
                      * @return DestIpv4 是否已赋值
+                     * 
                      */
                     bool DestIpv4HasBeenSet() const;
 

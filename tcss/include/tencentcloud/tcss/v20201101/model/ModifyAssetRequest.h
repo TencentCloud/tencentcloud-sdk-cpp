@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取全部同步
                      * @return All 全部同步
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置全部同步
-                     * @param All 全部同步
+                     * @param _all 全部同步
+                     * 
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
                     /**
                      * 获取要同步的主机列表 两个参数必选一个 All优先
                      * @return Hosts 要同步的主机列表 两个参数必选一个 All优先
+                     * 
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
                      * 设置要同步的主机列表 两个参数必选一个 All优先
-                     * @param Hosts 要同步的主机列表 两个参数必选一个 All优先
+                     * @param _hosts 要同步的主机列表 两个参数必选一个 All优先
+                     * 
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
 
                     /**
                      * 判断参数 Hosts 是否已赋值
                      * @return Hosts 是否已赋值
+                     * 
                      */
                     bool HostsHasBeenSet() const;
 

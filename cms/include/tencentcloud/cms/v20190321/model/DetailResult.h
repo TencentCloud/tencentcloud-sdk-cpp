@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取该标签下命中的关键词
                      * @return Keywords 该标签下命中的关键词
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置该标签下命中的关键词
-                     * @param Keywords 该标签下命中的关键词
+                     * @param _keywords 该标签下命中的关键词
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
+                     * 
                      */
                     uint64_t GetEvilType() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-                     * @param EvilType 恶意类型
+                     * @param _evilType 恶意类型
 100：正常
 20001：政治
 20002：色情 
@@ -101,48 +105,56 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
+                     * 
                      */
                     void SetEvilType(const uint64_t& _evilType);
 
                     /**
                      * 判断参数 EvilType 是否已赋值
                      * @return EvilType 是否已赋值
+                     * 
                      */
                     bool EvilTypeHasBeenSet() const;
 
                     /**
                      * 获取该标签模型命中的分值
                      * @return Score 该标签模型命中的分值
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置该标签模型命中的分值
-                     * @param Score 该标签模型命中的分值
+                     * @param _score 该标签模型命中的分值
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
                      * @return EvilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 
                      */
                     std::string GetEvilLabel() const;
 
                     /**
                      * 设置恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
-                     * @param EvilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * @param _evilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * 
                      */
                     void SetEvilLabel(const std::string& _evilLabel);
 
                     /**
                      * 判断参数 EvilLabel 是否已赋值
                      * @return EvilLabel 是否已赋值
+                     * 
                      */
                     bool EvilLabelHasBeenSet() const;
 

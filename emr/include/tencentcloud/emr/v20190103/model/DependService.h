@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取共用组件名
                      * @return ServiceName 共用组件名
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置共用组件名
-                     * @param ServiceName 共用组件名
+                     * @param _serviceName 共用组件名
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取共用组件集群
                      * @return InstanceId 共用组件集群
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置共用组件集群
-                     * @param InstanceId 共用组件集群
+                     * @param _instanceId 共用组件集群
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

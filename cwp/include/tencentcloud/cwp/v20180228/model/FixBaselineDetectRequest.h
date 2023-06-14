@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主机Id
                      * @return HostId 主机Id
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置主机Id
-                     * @param HostId 主机Id
+                     * @param _hostId 主机Id
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 
                     /**
                      * 获取项Id
                      * @return ItemId 项Id
+                     * 
                      */
                     int64_t GetItemId() const;
 
                     /**
                      * 设置项Id
-                     * @param ItemId 项Id
+                     * @param _itemId 项Id
+                     * 
                      */
                     void SetItemId(const int64_t& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
                     /**
                      * 获取修复内容
                      * @return Data 修复内容
+                     * 
                      */
                     std::vector<std::string> GetData() const;
 
                     /**
                      * 设置修复内容
-                     * @param Data 修复内容
+                     * @param _data 修复内容
+                     * 
                      */
                     void SetData(const std::vector<std::string>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

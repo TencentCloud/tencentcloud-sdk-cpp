@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取本地私有网络ID，即负载均衡的VpcId。
                      * @return LocalVpcId 本地私有网络ID，即负载均衡的VpcId。
+                     * 
                      */
                     std::string GetLocalVpcId() const;
 
                     /**
                      * 设置本地私有网络ID，即负载均衡的VpcId。
-                     * @param LocalVpcId 本地私有网络ID，即负载均衡的VpcId。
+                     * @param _localVpcId 本地私有网络ID，即负载均衡的VpcId。
+                     * 
                      */
                     void SetLocalVpcId(const std::string& _localVpcId);
 
                     /**
                      * 判断参数 LocalVpcId 是否已赋值
                      * @return LocalVpcId 是否已赋值
+                     * 
                      */
                     bool LocalVpcIdHasBeenSet() const;
 
                     /**
                      * 获取子机或网卡所属的私有网络ID。
                      * @return VpcId 子机或网卡所属的私有网络ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置子机或网卡所属的私有网络ID。
-                     * @param VpcId 子机或网卡所属的私有网络ID。
+                     * @param _vpcId 子机或网卡所属的私有网络ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子机或网卡的IP地址
                      * @return IP 子机或网卡的IP地址
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置子机或网卡的IP地址
-                     * @param IP 子机或网卡的IP地址
+                     * @param _iP 子机或网卡的IP地址
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取子机或网卡所属的私有网络名称。
                      * @return VpcName 子机或网卡所属的私有网络名称。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置子机或网卡所属的私有网络名称。
-                     * @param VpcName 子机或网卡所属的私有网络名称。
+                     * @param _vpcName 子机或网卡所属的私有网络名称。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取子机的网卡ID。
                      * @return EniId 子机的网卡ID。
+                     * 
                      */
                     std::string GetEniId() const;
 
                     /**
                      * 设置子机的网卡ID。
-                     * @param EniId 子机的网卡ID。
+                     * @param _eniId 子机的网卡ID。
+                     * 
                      */
                     void SetEniId(const std::string& _eniId);
 
                     /**
                      * 判断参数 EniId 是否已赋值
                      * @return EniId 是否已赋值
+                     * 
                      */
                     bool EniIdHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 子机实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置子机实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 子机实例ID。
+                     * @param _instanceId 子机实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -163,38 +181,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 子机实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置子机实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 子机实例名称。
+                     * @param _instanceName 子机实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取子机或者网卡所属的地域。
                      * @return Region 子机或者网卡所属的地域。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置子机或者网卡所属的地域。
-                     * @param Region 子机或者网卡所属的地域。
+                     * @param _region 子机或者网卡所属的地域。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取页码，取值范围为[1,INF)，默认值为1
                      * @return PageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置页码，取值范围为[1,INF)，默认值为1
-                     * @param PageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * @param _pageNumber 页码，取值范围为[1,INF)，默认值为1
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每页个数，取值范围为默认为[1,100]，默认值为20
                      * @return PageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页个数，取值范围为默认为[1,100]，默认值为20
-                     * @param PageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * @param _pageSize 每页个数，取值范围为默认为[1,100]，默认值为20
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
@@ -110,6 +119,7 @@ namespace TencentCloud
  - EndpointId : 接入点ID
  - Status : 实例状态
  - InstanceType : 实例类型
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -120,18 +130,20 @@ namespace TencentCloud
  - EndpointId : 接入点ID
  - Status : 实例状态
  - InstanceType : 实例类型
-                     * @param Filters 目前支持查询条件包括：
+                     * @param _filters 目前支持查询条件包括：
  - InstanceId : 实例ID
  - InstanceName : 实例名
  - EndpointId : 接入点ID
  - Status : 实例状态
  - InstanceType : 实例类型
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -142,6 +154,7 @@ namespace TencentCloud
                      * @return OrderBy 排序字段，可选字段：
 - CreateTime : 实例创建时间(默认值)
 - PayPeriodEndTime : 实例过期时间
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -149,15 +162,17 @@ namespace TencentCloud
                      * 设置排序字段，可选字段：
 - CreateTime : 实例创建时间(默认值)
 - PayPeriodEndTime : 实例过期时间
-                     * @param OrderBy 排序字段，可选字段：
+                     * @param _orderBy 排序字段，可选字段：
 - CreateTime : 实例创建时间(默认值)
 - PayPeriodEndTime : 实例过期时间
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
@@ -168,6 +183,7 @@ namespace TencentCloud
                      * @return OrderByType 排序方式，可选字段：
 - DESC : 降序(默认值)
 - ASC : 升序
+                     * 
                      */
                     std::string GetOrderByType() const;
 
@@ -175,15 +191,17 @@ namespace TencentCloud
                      * 设置排序方式，可选字段：
 - DESC : 降序(默认值)
 - ASC : 升序
-                     * @param OrderByType 排序方式，可选字段：
+                     * @param _orderByType 排序方式，可选字段：
 - DESC : 降序(默认值)
 - ASC : 升序
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

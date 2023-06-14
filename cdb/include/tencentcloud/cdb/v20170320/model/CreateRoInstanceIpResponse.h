@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取只读实例的私有网络的ID。
                      * @return RoVpcId 只读实例的私有网络的ID。
+                     * 
                      */
                     int64_t GetRoVpcId() const;
 
                     /**
                      * 判断参数 RoVpcId 是否已赋值
                      * @return RoVpcId 是否已赋值
+                     * 
                      */
                     bool RoVpcIdHasBeenSet() const;
 
                     /**
                      * 获取只读实例的子网ID。
                      * @return RoSubnetId 只读实例的子网ID。
+                     * 
                      */
                     int64_t GetRoSubnetId() const;
 
                     /**
                      * 判断参数 RoSubnetId 是否已赋值
                      * @return RoSubnetId 是否已赋值
+                     * 
                      */
                     bool RoSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取只读实例的内网IP地址。
                      * @return RoVip 只读实例的内网IP地址。
+                     * 
                      */
                     std::string GetRoVip() const;
 
                     /**
                      * 判断参数 RoVip 是否已赋值
                      * @return RoVip 是否已赋值
+                     * 
                      */
                     bool RoVipHasBeenSet() const;
 
                     /**
                      * 获取只读实例的内网端口号。
                      * @return RoVport 只读实例的内网端口号。
+                     * 
                      */
                     int64_t GetRoVport() const;
 
                     /**
                      * 判断参数 RoVport 是否已赋值
                      * @return RoVport 是否已赋值
+                     * 
                      */
                     bool RoVportHasBeenSet() const;
 

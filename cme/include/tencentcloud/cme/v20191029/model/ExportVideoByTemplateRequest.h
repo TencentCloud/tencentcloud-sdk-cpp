@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取视频编辑模板  Id。
                      * @return TemplateId 视频编辑模板  Id。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置视频编辑模板  Id。
-                     * @param TemplateId 视频编辑模板  Id。
+                     * @param _templateId 视频编辑模板  Id。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
+                     * 
                      */
                     int64_t GetDefinition() const;
 
@@ -98,16 +105,18 @@ namespace TencentCloud
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
-                     * @param Definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
+                     * @param _definition 导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。
 <li>10：分辨率为 480P，输出视频格式为 MP4；</li>
 <li>11：分辨率为 720P，输出视频格式为 MP4；</li>
 <li>12：分辨率为 1080P，输出视频格式为 MP4。</li>
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -118,6 +127,7 @@ namespace TencentCloud
                      * @return ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
 <li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
 <li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
+                     * 
                      */
                     std::string GetExportDestination() const;
 
@@ -125,87 +135,101 @@ namespace TencentCloud
                      * 设置导出目标，指定导出视频的目标媒资库，可取值有：
 <li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
 <li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
-                     * @param ExportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
+                     * @param _exportDestination 导出目标，指定导出视频的目标媒资库，可取值有：
 <li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>
 <li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>
+                     * 
                      */
                     void SetExportDestination(const std::string& _exportDestination);
 
                     /**
                      * 判断参数 ExportDestination 是否已赋值
                      * @return ExportDestination 是否已赋值
+                     * 
                      */
                     bool ExportDestinationHasBeenSet() const;
 
                     /**
                      * 获取需要替换的素材信息。
                      * @return SlotReplacements 需要替换的素材信息。
+                     * 
                      */
                     std::vector<SlotReplacementInfo> GetSlotReplacements() const;
 
                     /**
                      * 设置需要替换的素材信息。
-                     * @param SlotReplacements 需要替换的素材信息。
+                     * @param _slotReplacements 需要替换的素材信息。
+                     * 
                      */
                     void SetSlotReplacements(const std::vector<SlotReplacementInfo>& _slotReplacements);
 
                     /**
                      * 判断参数 SlotReplacements 是否已赋值
                      * @return SlotReplacements 是否已赋值
+                     * 
                      */
                     bool SlotReplacementsHasBeenSet() const;
 
                     /**
                      * 获取导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。
                      * @return CMEExportInfo 导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。
+                     * 
                      */
                     CMEExportInfo GetCMEExportInfo() const;
 
                     /**
                      * 设置导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。
-                     * @param CMEExportInfo 导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。
+                     * @param _cMEExportInfo 导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。
+                     * 
                      */
                     void SetCMEExportInfo(const CMEExportInfo& _cMEExportInfo);
 
                     /**
                      * 判断参数 CMEExportInfo 是否已赋值
                      * @return CMEExportInfo 是否已赋值
+                     * 
                      */
                     bool CMEExportInfoHasBeenSet() const;
 
                     /**
                      * 获取导出的云点播媒资信息。当导出目标为 VOD 时必填。
                      * @return VODExportInfo 导出的云点播媒资信息。当导出目标为 VOD 时必填。
+                     * 
                      */
                     VODExportInfo GetVODExportInfo() const;
 
                     /**
                      * 设置导出的云点播媒资信息。当导出目标为 VOD 时必填。
-                     * @param VODExportInfo 导出的云点播媒资信息。当导出目标为 VOD 时必填。
+                     * @param _vODExportInfo 导出的云点播媒资信息。当导出目标为 VOD 时必填。
+                     * 
                      */
                     void SetVODExportInfo(const VODExportInfo& _vODExportInfo);
 
                     /**
                      * 判断参数 VODExportInfo 是否已赋值
                      * @return VODExportInfo 是否已赋值
+                     * 
                      */
                     bool VODExportInfoHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

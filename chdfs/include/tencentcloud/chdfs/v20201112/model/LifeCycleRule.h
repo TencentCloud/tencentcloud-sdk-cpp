@@ -51,144 +51,168 @@ namespace TencentCloud
                     /**
                      * 获取生命周期规则ID
                      * @return LifeCycleRuleId 生命周期规则ID
+                     * 
                      */
                     uint64_t GetLifeCycleRuleId() const;
 
                     /**
                      * 设置生命周期规则ID
-                     * @param LifeCycleRuleId 生命周期规则ID
+                     * @param _lifeCycleRuleId 生命周期规则ID
+                     * 
                      */
                     void SetLifeCycleRuleId(const uint64_t& _lifeCycleRuleId);
 
                     /**
                      * 判断参数 LifeCycleRuleId 是否已赋值
                      * @return LifeCycleRuleId 是否已赋值
+                     * 
                      */
                     bool LifeCycleRuleIdHasBeenSet() const;
 
                     /**
                      * 获取生命周期规则名称
                      * @return LifeCycleRuleName 生命周期规则名称
+                     * 
                      */
                     std::string GetLifeCycleRuleName() const;
 
                     /**
                      * 设置生命周期规则名称
-                     * @param LifeCycleRuleName 生命周期规则名称
+                     * @param _lifeCycleRuleName 生命周期规则名称
+                     * 
                      */
                     void SetLifeCycleRuleName(const std::string& _lifeCycleRuleName);
 
                     /**
                      * 判断参数 LifeCycleRuleName 是否已赋值
                      * @return LifeCycleRuleName 是否已赋值
+                     * 
                      */
                     bool LifeCycleRuleNameHasBeenSet() const;
 
                     /**
                      * 获取生命周期规则路径（目录或文件）
                      * @return Path 生命周期规则路径（目录或文件）
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置生命周期规则路径（目录或文件）
-                     * @param Path 生命周期规则路径（目录或文件）
+                     * @param _path 生命周期规则路径（目录或文件）
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取生命周期规则转换列表
                      * @return Transitions 生命周期规则转换列表
+                     * 
                      */
                     std::vector<Transition> GetTransitions() const;
 
                     /**
                      * 设置生命周期规则转换列表
-                     * @param Transitions 生命周期规则转换列表
+                     * @param _transitions 生命周期规则转换列表
+                     * 
                      */
                     void SetTransitions(const std::vector<Transition>& _transitions);
 
                     /**
                      * 判断参数 Transitions 是否已赋值
                      * @return Transitions 是否已赋值
+                     * 
                      */
                     bool TransitionsHasBeenSet() const;
 
                     /**
                      * 获取生命周期规则状态（1：打开；2：关闭）
                      * @return Status 生命周期规则状态（1：打开；2：关闭）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置生命周期规则状态（1：打开；2：关闭）
-                     * @param Status 生命周期规则状态（1：打开；2：关闭）
+                     * @param _status 生命周期规则状态（1：打开；2：关闭）
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取生命周期规则当前路径具体存储量
                      * @return Summary 生命周期规则当前路径具体存储量
+                     * 
                      */
                     Summary GetSummary() const;
 
                     /**
                      * 设置生命周期规则当前路径具体存储量
-                     * @param Summary 生命周期规则当前路径具体存储量
+                     * @param _summary 生命周期规则当前路径具体存储量
+                     * 
                      */
                     void SetSummary(const Summary& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
                     /**
                      * 获取Summary更新时间
                      * @return LastSummaryTime Summary更新时间
+                     * 
                      */
                     std::string GetLastSummaryTime() const;
 
                     /**
                      * 设置Summary更新时间
-                     * @param LastSummaryTime Summary更新时间
+                     * @param _lastSummaryTime Summary更新时间
+                     * 
                      */
                     void SetLastSummaryTime(const std::string& _lastSummaryTime);
 
                     /**
                      * 判断参数 LastSummaryTime 是否已赋值
                      * @return LastSummaryTime 是否已赋值
+                     * 
                      */
                     bool LastSummaryTimeHasBeenSet() const;
 

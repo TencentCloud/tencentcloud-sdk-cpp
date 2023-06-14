@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待部署的证书ID
                      * @return CertificateId 待部署的证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置待部署的证书ID
-                     * @param CertificateId 待部署的证书ID
+                     * @param _certificateId 待部署的证书ID
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取需要部署实例列表
                      * @return InstanceIdList 需要部署实例列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
                      * 设置需要部署实例列表
-                     * @param InstanceIdList 需要部署实例列表
+                     * @param _instanceIdList 需要部署实例列表
+                     * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
 
                     /**
                      * 判断参数 InstanceIdList 是否已赋值
                      * @return InstanceIdList 是否已赋值
+                     * 
                      */
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
                      * 获取部署的云资源类型
                      * @return ResourceType 部署的云资源类型
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署的云资源类型
-                     * @param ResourceType 部署的云资源类型
+                     * @param _resourceType 部署的云资源类型
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
 -1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -116,17 +126,19 @@ namespace TencentCloud
 -1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
-                     * @param Status 部署云资源状态：
+                     * @param _status 部署云资源状态：
 云直播：
 -1：域名未关联证书。
 1： 域名https已开启。
 0： 域名https已关闭。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

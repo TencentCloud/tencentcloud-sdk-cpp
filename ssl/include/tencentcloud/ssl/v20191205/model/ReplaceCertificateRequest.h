@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取证书 ID。
                      * @return CertificateId 证书 ID。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书 ID。
-                     * @param CertificateId 证书 ID。
+                     * @param _certificateId 证书 ID。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
                      * @return ValidType 验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * 
                      */
                     std::string GetValidType() const;
 
                     /**
                      * 设置验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
-                     * @param ValidType 验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * @param _validType 验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * 
                      */
                     void SetValidType(const std::string& _validType);
 
                     /**
                      * 判断参数 ValidType 是否已赋值
                      * @return ValidType 是否已赋值
+                     * 
                      */
                     bool ValidTypeHasBeenSet() const;
 
                     /**
                      * 获取类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
                      * @return CsrType 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * 
                      */
                     std::string GetCsrType() const;
 
                     /**
                      * 设置类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
-                     * @param CsrType 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * @param _csrType 类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。
+                     * 
                      */
                     void SetCsrType(const std::string& _csrType);
 
                     /**
                      * 判断参数 CsrType 是否已赋值
                      * @return CsrType 是否已赋值
+                     * 
                      */
                     bool CsrTypeHasBeenSet() const;
 
                     /**
                      * 获取CSR 内容。
                      * @return CsrContent CSR 内容。
+                     * 
                      */
                     std::string GetCsrContent() const;
 
                     /**
                      * 设置CSR 内容。
-                     * @param CsrContent CSR 内容。
+                     * @param _csrContent CSR 内容。
+                     * 
                      */
                     void SetCsrContent(const std::string& _csrContent);
 
                     /**
                      * 判断参数 CsrContent 是否已赋值
                      * @return CsrContent 是否已赋值
+                     * 
                      */
                     bool CsrContentHasBeenSet() const;
 
                     /**
                      * 获取KEY 密码。
                      * @return CsrkeyPassword KEY 密码。
+                     * 
                      */
                     std::string GetCsrkeyPassword() const;
 
                     /**
                      * 设置KEY 密码。
-                     * @param CsrkeyPassword KEY 密码。
+                     * @param _csrkeyPassword KEY 密码。
+                     * 
                      */
                     void SetCsrkeyPassword(const std::string& _csrkeyPassword);
 
                     /**
                      * 判断参数 CsrkeyPassword 是否已赋值
                      * @return CsrkeyPassword 是否已赋值
+                     * 
                      */
                     bool CsrkeyPasswordHasBeenSet() const;
 
                     /**
                      * 获取重颁发原因。
                      * @return Reason 重颁发原因。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置重颁发原因。
-                     * @param Reason 重颁发原因。
+                     * @param _reason 重颁发原因。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

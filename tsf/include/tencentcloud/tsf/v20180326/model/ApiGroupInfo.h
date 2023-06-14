@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId Api Group Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Api Group Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId Api Group Id
+                     * @param _groupId Api Group Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName Api Group 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置Api Group 名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName Api Group 名称
+                     * @param _groupName Api Group 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupContext 分组上下文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupContext() const;
 
                     /**
                      * 设置分组上下文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupContext 分组上下文
+                     * @param _groupContext 分组上下文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupContext(const std::string& _groupContext);
 
                     /**
                      * 判断参数 GroupContext 是否已赋值
                      * @return GroupContext 是否已赋值
+                     * 
                      */
                     bool GroupContextHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
+                     * @param _authType 鉴权类型。 secret： 密钥鉴权； none:无鉴权
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 发布状态, drafted: 未发布。 released: 发布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置发布状态, drafted: 未发布。 released: 发布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 发布状态, drafted: 未发布。 released: 发布
+                     * @param _status 发布状态, drafted: 未发布。 released: 发布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 分组创建时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置分组创建时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 分组创建时间 如:2019-06-20 15:51:28
+                     * @param _createdTime 分组创建时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 分组更新时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置分组更新时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 分组更新时间 如:2019-06-20 15:51:28
+                     * @param _updatedTime 分组更新时间 如:2019-06-20 15:51:28
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindedGatewayDeployGroups api分组已绑定的网关部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GatewayDeployGroup> GetBindedGatewayDeployGroups() const;
 
                     /**
                      * 设置api分组已绑定的网关部署组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindedGatewayDeployGroups api分组已绑定的网关部署组
+                     * @param _bindedGatewayDeployGroups api分组已绑定的网关部署组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindedGatewayDeployGroups(const std::vector<GatewayDeployGroup>& _bindedGatewayDeployGroups);
 
                     /**
                      * 判断参数 BindedGatewayDeployGroups 是否已赋值
                      * @return BindedGatewayDeployGroups 是否已赋值
+                     * 
                      */
                     bool BindedGatewayDeployGroupsHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiCount api 个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetApiCount() const;
 
                     /**
                      * 设置api 个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiCount api 个数
+                     * @param _apiCount api 个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiCount(const int64_t& _apiCount);
 
                     /**
                      * 判断参数 ApiCount 是否已赋值
                      * @return ApiCount 是否已赋值
+                     * 
                      */
                     bool ApiCountHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclMode 访问group的ACL类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAclMode() const;
 
                     /**
                      * 设置访问group的ACL类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AclMode 访问group的ACL类型
+                     * @param _aclMode 访问group的ACL类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAclMode(const std::string& _aclMode);
 
                     /**
                      * 判断参数 AclMode 是否已赋值
                      * @return AclMode 是否已赋值
+                     * 
                      */
                     bool AclModeHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupType 分组类型。 ms： 微服务分组； external:外部Api分组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupType() const;
 
                     /**
                      * 设置分组类型。 ms： 微服务分组； external:外部Api分组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupType 分组类型。 ms： 微服务分组； external:外部Api分组
+                     * @param _groupType 分组类型。 ms： 微服务分组； external:外部Api分组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupType(const std::string& _groupType);
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstanceType 网关实例的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGatewayInstanceType() const;
 
                     /**
                      * 设置网关实例的类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GatewayInstanceType 网关实例的类型
+                     * @param _gatewayInstanceType 网关实例的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGatewayInstanceType(const std::string& _gatewayInstanceType);
 
                     /**
                      * 判断参数 GatewayInstanceType 是否已赋值
                      * @return GatewayInstanceType 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceTypeHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstanceId 网关实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GatewayInstanceId 网关实例ID
+                     * @param _gatewayInstanceId 网关实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceNameKey 命名空间参数key值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceNameKey() const;
 
                     /**
                      * 设置命名空间参数key值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceNameKey 命名空间参数key值
+                     * @param _namespaceNameKey 命名空间参数key值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceNameKey(const std::string& _namespaceNameKey);
 
                     /**
                      * 判断参数 NamespaceNameKey 是否已赋值
                      * @return NamespaceNameKey 是否已赋值
+                     * 
                      */
                     bool NamespaceNameKeyHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceNameKey 微服务名参数key值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceNameKey() const;
 
                     /**
                      * 设置微服务名参数key值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceNameKey 微服务名参数key值
+                     * @param _serviceNameKey 微服务名参数key值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceNameKey(const std::string& _serviceNameKey);
 
                     /**
                      * 判断参数 ServiceNameKey 是否已赋值
                      * @return ServiceNameKey 是否已赋值
+                     * 
                      */
                     bool ServiceNameKeyHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceNameKeyPosition() const;
 
                     /**
                      * 设置命名空间参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
+                     * @param _namespaceNameKeyPosition 命名空间参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceNameKeyPosition(const std::string& _namespaceNameKeyPosition);
 
                     /**
                      * 判断参数 NamespaceNameKeyPosition 是否已赋值
                      * @return NamespaceNameKeyPosition 是否已赋值
+                     * 
                      */
                     bool NamespaceNameKeyPositionHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceNameKeyPosition() const;
 
                     /**
                      * 设置微服务名参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
+                     * @param _serviceNameKeyPosition 微服务名参数位置，path，header或query，默认是path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceNameKeyPosition(const std::string& _serviceNameKeyPosition);
 
                     /**
                      * 判断参数 ServiceNameKeyPosition 是否已赋值
                      * @return ServiceNameKeyPosition 是否已赋值
+                     * 
                      */
                     bool ServiceNameKeyPositionHasBeenSet() const;
 

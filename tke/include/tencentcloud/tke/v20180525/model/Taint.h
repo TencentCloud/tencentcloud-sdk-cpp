@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取Key
                      * @return Key Key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置Key
-                     * @param Key Key
+                     * @param _key Key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取Value
                      * @return Value Value
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置Value
-                     * @param Value Value
+                     * @param _value Value
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取Effect
                      * @return Effect Effect
+                     * 
                      */
                     std::string GetEffect() const;
 
                     /**
                      * 设置Effect
-                     * @param Effect Effect
+                     * @param _effect Effect
+                     * 
                      */
                     void SetEffect(const std::string& _effect);
 
                     /**
                      * 判断参数 Effect 是否已赋值
                      * @return Effect 是否已赋值
+                     * 
                      */
                     bool EffectHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
                      * @return KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-                     * @param KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * @param _keyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+                     * 
                      */
                     void SetKeyName(const std::string& _keyName);
 
                     /**
                      * 判断参数 KeyName 是否已赋值
                      * @return KeyName 是否已赋值
+                     * 
                      */
                     bool KeyNameHasBeenSet() const;
 

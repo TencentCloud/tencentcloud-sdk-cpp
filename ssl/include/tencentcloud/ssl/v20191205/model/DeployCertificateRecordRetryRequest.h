@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待重试部署记录ID
                      * @return DeployRecordId 待重试部署记录ID
+                     * 
                      */
                     int64_t GetDeployRecordId() const;
 
                     /**
                      * 设置待重试部署记录ID
-                     * @param DeployRecordId 待重试部署记录ID
+                     * @param _deployRecordId 待重试部署记录ID
+                     * 
                      */
                     void SetDeployRecordId(const int64_t& _deployRecordId);
 
                     /**
                      * 判断参数 DeployRecordId 是否已赋值
                      * @return DeployRecordId 是否已赋值
+                     * 
                      */
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
                      * 获取待重试部署记录详情ID
                      * @return DeployRecordDetailId 待重试部署记录详情ID
+                     * 
                      */
                     int64_t GetDeployRecordDetailId() const;
 
                     /**
                      * 设置待重试部署记录详情ID
-                     * @param DeployRecordDetailId 待重试部署记录详情ID
+                     * @param _deployRecordDetailId 待重试部署记录详情ID
+                     * 
                      */
                     void SetDeployRecordDetailId(const int64_t& _deployRecordDetailId);
 
                     /**
                      * 判断参数 DeployRecordDetailId 是否已赋值
                      * @return DeployRecordDetailId 是否已赋值
+                     * 
                      */
                     bool DeployRecordDetailIdHasBeenSet() const;
 

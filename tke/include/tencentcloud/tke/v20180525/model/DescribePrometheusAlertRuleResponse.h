@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取告警详情
                      * @return AlertRules 告警详情
+                     * 
                      */
                     std::vector<PrometheusAlertRuleDetail> GetAlertRules() const;
 
                     /**
                      * 判断参数 AlertRules 是否已赋值
                      * @return AlertRules 是否已赋值
+                     * 
                      */
                     bool AlertRulesHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

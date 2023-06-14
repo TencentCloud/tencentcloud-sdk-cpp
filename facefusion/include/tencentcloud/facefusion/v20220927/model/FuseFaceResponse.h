@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。
                      * @return FusedImage RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。
+                     * 
                      */
                     std::string GetFusedImage() const;
 
                     /**
                      * 判断参数 FusedImage 是否已赋值
                      * @return FusedImage 是否已赋值
+                     * 
                      */
                     bool FusedImageHasBeenSet() const;
 

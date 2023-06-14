@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取子网的 `IPv4` `CIDR`
                      * @return DestinationCidrBlock 子网的 `IPv4` `CIDR`
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置子网的 `IPv4` `CIDR`
-                     * @param DestinationCidrBlock 子网的 `IPv4` `CIDR`
+                     * @param _destinationCidrBlock 子网的 `IPv4` `CIDR`
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
@@ -69,74 +72,86 @@ namespace TencentCloud
 DIRECTCONNECT：专线网关
                      * @return GatewayType 下一跳网关的类型，目前此接口支持的类型有：
 DIRECTCONNECT：专线网关
+                     * 
                      */
                     std::string GetGatewayType() const;
 
                     /**
                      * 设置下一跳网关的类型，目前此接口支持的类型有：
 DIRECTCONNECT：专线网关
-                     * @param GatewayType 下一跳网关的类型，目前此接口支持的类型有：
+                     * @param _gatewayType 下一跳网关的类型，目前此接口支持的类型有：
 DIRECTCONNECT：专线网关
+                     * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
 
                     /**
                      * 判断参数 GatewayType 是否已赋值
                      * @return GatewayType 是否已赋值
+                     * 
                      */
                     bool GatewayTypeHasBeenSet() const;
 
                     /**
                      * 获取下一跳网关ID
                      * @return GatewayId 下一跳网关ID
+                     * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置下一跳网关ID
-                     * @param GatewayId 下一跳网关ID
+                     * @param _gatewayId 下一跳网关ID
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取路由的创建时间
                      * @return CreateTime 路由的创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置路由的创建时间
-                     * @param CreateTime 路由的创建时间
+                     * @param _createTime 路由的创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取路由的更新时间
                      * @return UpdateTime 路由的更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置路由的更新时间
-                     * @param UpdateTime 路由的更新时间
+                     * @param _updateTime 路由的更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

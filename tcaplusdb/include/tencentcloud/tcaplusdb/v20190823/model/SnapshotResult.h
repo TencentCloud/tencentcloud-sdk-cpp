@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupId 表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableGroupId 表格所属表格组ID
+                     * @param _tableGroupId 表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表格名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表格名称
+                     * @param _tableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID，对于创建单任务的接口有效
+                     * @param _taskId 任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotName 快照名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotName 快照名称
+                     * @param _snapshotName 快照名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotTime 快照的时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotTime() const;
 
                     /**
                      * 设置快照的时间点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotTime 快照的时间点
+                     * @param _snapshotTime 快照的时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotTime(const std::string& _snapshotTime);
 
                     /**
                      * 判断参数 SnapshotTime 是否已赋值
                      * @return SnapshotTime 是否已赋值
+                     * 
                      */
                     bool SnapshotTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotDeadTime 快照的过期时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotDeadTime() const;
 
                     /**
                      * 设置快照的过期时间点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotDeadTime 快照的过期时间点
+                     * @param _snapshotDeadTime 快照的过期时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotDeadTime(const std::string& _snapshotDeadTime);
 
                     /**
                      * 判断参数 SnapshotDeadTime 是否已赋值
                      * @return SnapshotDeadTime 是否已赋值
+                     * 
                      */
                     bool SnapshotDeadTimeHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotCreateTime 快照创建时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshotCreateTime() const;
 
                     /**
                      * 设置快照创建时间点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotCreateTime 快照创建时间点
+                     * @param _snapshotCreateTime 快照创建时间点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotCreateTime(const std::string& _snapshotCreateTime);
 
                     /**
                      * 判断参数 SnapshotCreateTime 是否已赋值
                      * @return SnapshotCreateTime 是否已赋值
+                     * 
                      */
                     bool SnapshotCreateTimeHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotSize 快照大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSnapshotSize() const;
 
                     /**
                      * 设置快照大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotSize 快照大小
+                     * @param _snapshotSize 快照大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotSize(const uint64_t& _snapshotSize);
 
                     /**
                      * 判断参数 SnapshotSize 是否已赋值
                      * @return SnapshotSize 是否已赋值
+                     * 
                      */
                     bool SnapshotSizeHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotStatus 快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSnapshotStatus() const;
 
                     /**
                      * 设置快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SnapshotStatus 快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中
+                     * @param _snapshotStatus 快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshotStatus(const uint64_t& _snapshotStatus);
 
                     /**
                      * 判断参数 SnapshotStatus 是否已赋值
                      * @return SnapshotStatus 是否已赋值
+                     * 
                      */
                     bool SnapshotStatusHasBeenSet() const;
 

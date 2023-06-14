@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取false表示不是草稿，提交刷新请求成功
                      * @return IsDraft false表示不是草稿，提交刷新请求成功
+                     * 
                      */
                     bool GetIsDraft() const;
 
                     /**
                      * 判断参数 IsDraft 是否已赋值
                      * @return IsDraft 是否已赋值
+                     * 
                      */
                     bool IsDraftHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 扩展字段，暂时没用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

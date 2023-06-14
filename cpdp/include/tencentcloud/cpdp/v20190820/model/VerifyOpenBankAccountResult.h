@@ -60,6 +60,7 @@ PENDING("打款成功待验证"),
 VERIFIED("验证成功"),
 FAILED("打款失败"),
 VERIFY_FAILED("验证失败")
+                     * 
                      */
                     std::string GetVerifyState() const;
 
@@ -70,36 +71,41 @@ PENDING("打款成功待验证"),
 VERIFIED("验证成功"),
 FAILED("打款失败"),
 VERIFY_FAILED("验证失败")
-                     * @param VerifyState 打款验证状态。
+                     * @param _verifyState 打款验证状态。
  INIT("打款中"),
 PENDING("打款成功待验证"),
 VERIFIED("验证成功"),
 FAILED("打款失败"),
 VERIFY_FAILED("验证失败")
+                     * 
                      */
                     void SetVerifyState(const std::string& _verifyState);
 
                     /**
                      * 判断参数 VerifyState 是否已赋值
                      * @return VerifyState 是否已赋值
+                     * 
                      */
                     bool VerifyStateHasBeenSet() const;
 
                     /**
                      * 获取重定向参数，用于客户端跳转，收款商户未完成打款验证时返回该参数
                      * @return RedirectInfo 重定向参数，用于客户端跳转，收款商户未完成打款验证时返回该参数
+                     * 
                      */
                     OpenBankRedirectInfo GetRedirectInfo() const;
 
                     /**
                      * 设置重定向参数，用于客户端跳转，收款商户未完成打款验证时返回该参数
-                     * @param RedirectInfo 重定向参数，用于客户端跳转，收款商户未完成打款验证时返回该参数
+                     * @param _redirectInfo 重定向参数，用于客户端跳转，收款商户未完成打款验证时返回该参数
+                     * 
                      */
                     void SetRedirectInfo(const OpenBankRedirectInfo& _redirectInfo);
 
                     /**
                      * 判断参数 RedirectInfo 是否已赋值
                      * @return RedirectInfo 是否已赋值
+                     * 
                      */
                     bool RedirectInfoHasBeenSet() const;
 

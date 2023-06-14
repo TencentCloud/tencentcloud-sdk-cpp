@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取账户 EIP 配额信息。
                      * @return QuotaSet 账户 EIP 配额信息。
+                     * 
                      */
                     std::vector<Quota> GetQuotaSet() const;
 
                     /**
                      * 判断参数 QuotaSet 是否已赋值
                      * @return QuotaSet 是否已赋值
+                     * 
                      */
                     bool QuotaSetHasBeenSet() const;
 

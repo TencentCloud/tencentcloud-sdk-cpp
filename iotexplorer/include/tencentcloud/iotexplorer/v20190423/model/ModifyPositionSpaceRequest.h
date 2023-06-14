@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取位置空间Id
                      * @return SpaceId 位置空间Id
+                     * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
                      * 设置位置空间Id
-                     * @param SpaceId 位置空间Id
+                     * @param _spaceId 位置空间Id
+                     * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
 
                     /**
                      * 判断参数 SpaceId 是否已赋值
                      * @return SpaceId 是否已赋值
+                     * 
                      */
                     bool SpaceIdHasBeenSet() const;
 
                     /**
                      * 获取位置空间名称
                      * @return SpaceName 位置空间名称
+                     * 
                      */
                     std::string GetSpaceName() const;
 
                     /**
                      * 设置位置空间名称
-                     * @param SpaceName 位置空间名称
+                     * @param _spaceName 位置空间名称
+                     * 
                      */
                     void SetSpaceName(const std::string& _spaceName);
 
                     /**
                      * 判断参数 SpaceName 是否已赋值
                      * @return SpaceName 是否已赋值
+                     * 
                      */
                     bool SpaceNameHasBeenSet() const;
 
                     /**
                      * 获取授权类型
                      * @return AuthorizeType 授权类型
+                     * 
                      */
                     int64_t GetAuthorizeType() const;
 
                     /**
                      * 设置授权类型
-                     * @param AuthorizeType 授权类型
+                     * @param _authorizeType 授权类型
+                     * 
                      */
                     void SetAuthorizeType(const int64_t& _authorizeType);
 
                     /**
                      * 判断参数 AuthorizeType 是否已赋值
                      * @return AuthorizeType 是否已赋值
+                     * 
                      */
                     bool AuthorizeTypeHasBeenSet() const;
 
                     /**
                      * 获取产品列表
                      * @return ProductIdList 产品列表
+                     * 
                      */
                     std::vector<std::string> GetProductIdList() const;
 
                     /**
                      * 设置产品列表
-                     * @param ProductIdList 产品列表
+                     * @param _productIdList 产品列表
+                     * 
                      */
                     void SetProductIdList(const std::vector<std::string>& _productIdList);
 
                     /**
                      * 判断参数 ProductIdList 是否已赋值
                      * @return ProductIdList 是否已赋值
+                     * 
                      */
                     bool ProductIdListHasBeenSet() const;
 
                     /**
                      * 获取位置空间描述
                      * @return Description 位置空间描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置位置空间描述
-                     * @param Description 位置空间描述
+                     * @param _description 位置空间描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取缩略图
                      * @return Icon 缩略图
+                     * 
                      */
                     std::string GetIcon() const;
 
                     /**
                      * 设置缩略图
-                     * @param Icon 缩略图
+                     * @param _icon 缩略图
+                     * 
                      */
                     void SetIcon(const std::string& _icon);
 
                     /**
                      * 判断参数 Icon 是否已赋值
                      * @return Icon 是否已赋值
+                     * 
                      */
                     bool IconHasBeenSet() const;
 

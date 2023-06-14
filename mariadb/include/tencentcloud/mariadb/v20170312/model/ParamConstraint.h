@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取约束类型,如枚举enum，区间section
                      * @return Type 约束类型,如枚举enum，区间section
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置约束类型,如枚举enum，区间section
-                     * @param Type 约束类型,如枚举enum，区间section
+                     * @param _type 约束类型,如枚举enum，区间section
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取约束类型为enum时的可选值列表
                      * @return Enum 约束类型为enum时的可选值列表
+                     * 
                      */
                     std::string GetEnum() const;
 
                     /**
                      * 设置约束类型为enum时的可选值列表
-                     * @param Enum 约束类型为enum时的可选值列表
+                     * @param _enum 约束类型为enum时的可选值列表
+                     * 
                      */
                     void SetEnum(const std::string& _enum);
 
                     /**
                      * 判断参数 Enum 是否已赋值
                      * @return Enum 是否已赋值
+                     * 
                      */
                     bool EnumHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Range 约束类型为section时的范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ConstraintRange GetRange() const;
 
                     /**
                      * 设置约束类型为section时的范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range 约束类型为section时的范围
+                     * @param _range 约束类型为section时的范围
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRange(const ConstraintRange& _range);
 
                     /**
                      * 判断参数 Range 是否已赋值
                      * @return Range 是否已赋值
+                     * 
                      */
                     bool RangeHasBeenSet() const;
 
                     /**
                      * 获取约束类型为string时的可选值列表
                      * @return String 约束类型为string时的可选值列表
+                     * 
                      */
                     std::string GetString() const;
 
                     /**
                      * 设置约束类型为string时的可选值列表
-                     * @param String 约束类型为string时的可选值列表
+                     * @param _string 约束类型为string时的可选值列表
+                     * 
                      */
                     void SetString(const std::string& _string);
 
                     /**
                      * 判断参数 String 是否已赋值
                      * @return String 是否已赋值
+                     * 
                      */
                     bool StringHasBeenSet() const;
 

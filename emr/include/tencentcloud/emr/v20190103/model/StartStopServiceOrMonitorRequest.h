@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return InstanceId 集群ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群ID
-                     * @param InstanceId 集群ID
+                     * @param _instanceId 集群ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
 <li>RestartService：重启服务</li>
+                     * 
                      */
                     std::string GetOpType() const;
 
@@ -85,54 +89,62 @@ namespace TencentCloud
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
 <li>RestartService：重启服务</li>
-                     * @param OpType 操作类型，当前支持
+                     * @param _opType 操作类型，当前支持
 <li>StartService：启动服务</li>
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
 <li>RestartService：重启服务</li>
+                     * 
                      */
                     void SetOpType(const std::string& _opType);
 
                     /**
                      * 判断参数 OpType 是否已赋值
                      * @return OpType 是否已赋值
+                     * 
                      */
                     bool OpTypeHasBeenSet() const;
 
                     /**
                      * 获取操作范围
                      * @return OpScope 操作范围
+                     * 
                      */
                     OpScope GetOpScope() const;
 
                     /**
                      * 设置操作范围
-                     * @param OpScope 操作范围
+                     * @param _opScope 操作范围
+                     * 
                      */
                     void SetOpScope(const OpScope& _opScope);
 
                     /**
                      * 判断参数 OpScope 是否已赋值
                      * @return OpScope 是否已赋值
+                     * 
                      */
                     bool OpScopeHasBeenSet() const;
 
                     /**
                      * 获取操作策略
                      * @return StrategyConfig 操作策略
+                     * 
                      */
                     StrategyConfig GetStrategyConfig() const;
 
                     /**
                      * 设置操作策略
-                     * @param StrategyConfig 操作策略
+                     * @param _strategyConfig 操作策略
+                     * 
                      */
                     void SetStrategyConfig(const StrategyConfig& _strategyConfig);
 
                     /**
                      * 判断参数 StrategyConfig 是否已赋值
                      * @return StrategyConfig 是否已赋值
+                     * 
                      */
                     bool StrategyConfigHasBeenSet() const;
 

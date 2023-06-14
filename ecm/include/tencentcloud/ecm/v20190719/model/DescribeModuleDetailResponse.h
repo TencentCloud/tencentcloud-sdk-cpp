@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Module 模块的详细信息，详细见数据结构中的ModuleInfo。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Module GetModule() const;
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModuleCounter 模块的统计信息，详细见数据结构中的ModuleCounterInfo。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ModuleCounter GetModuleCounter() const;
 
                     /**
                      * 判断参数 ModuleCounter 是否已赋值
                      * @return ModuleCounter 是否已赋值
+                     * 
                      */
                     bool ModuleCounterHasBeenSet() const;
 

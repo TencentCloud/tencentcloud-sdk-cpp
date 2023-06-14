@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取组件ID
                      * @return ID 组件ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取组件名称
                      * @return AppName 组件名称
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取发行组织
                      * @return Author 发行组织
+                     * 
                      */
                     std::string GetAuthor() const;
 
                     /**
                      * 判断参数 Author 是否已赋值
                      * @return Author 是否已赋值
+                     * 
                      */
                     bool AuthorHasBeenSet() const;
 
                     /**
                      * 获取发布时间
                      * @return ReleaseTime 发布时间
+                     * 
                      */
                     std::string GetReleaseTime() const;
 
                     /**
                      * 判断参数 ReleaseTime 是否已赋值
                      * @return ReleaseTime 是否已赋值
+                     * 
                      */
                     bool ReleaseTimeHasBeenSet() const;
 
                     /**
                      * 获取组件简介
                      * @return Outline 组件简介
+                     * 
                      */
                     std::string GetOutline() const;
 
                     /**
                      * 判断参数 Outline 是否已赋值
                      * @return Outline 是否已赋值
+                     * 
                      */
                     bool OutlineHasBeenSet() const;
 
                     /**
                      * 获取详细介绍链接
                      * @return Detail 详细介绍链接
+                     * 
                      */
                     std::string GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 
                     /**
                      * 获取图标连接
                      * @return Icon 图标连接
+                     * 
                      */
                     std::string GetIcon() const;
 
                     /**
                      * 判断参数 Icon 是否已赋值
                      * @return Icon 是否已赋值
+                     * 
                      */
                     bool IconHasBeenSet() const;
 
                     /**
                      * 获取组件版本
                      * @return Version 组件版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取组件可视化配置
                      * @return WorkloadVisualConfig 组件可视化配置
+                     * 
                      */
                     std::string GetWorkloadVisualConfig() const;
 
                     /**
                      * 判断参数 WorkloadVisualConfig 是否已赋值
                      * @return WorkloadVisualConfig 是否已赋值
+                     * 
                      */
                     bool WorkloadVisualConfigHasBeenSet() const;
 

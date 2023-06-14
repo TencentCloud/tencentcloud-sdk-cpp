@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总记录数
-                     * @param TotalCount 总记录数
+                     * @param _totalCount 总记录数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取仓库名,含命名空间,如tsf/ngin
                      * @return RepoName 仓库名,含命名空间,如tsf/ngin
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名,含命名空间,如tsf/ngin
-                     * @param RepoName 仓库名,含命名空间,如tsf/ngin
+                     * @param _repoName 仓库名,含命名空间,如tsf/ngin
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取镜像服务器地址
                      * @return Server 镜像服务器地址
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像服务器地址
-                     * @param Server 镜像服务器地址
+                     * @param _server 镜像服务器地址
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取列表信息
                      * @return Content 列表信息
+                     * 
                      */
                     std::vector<ImageTag> GetContent() const;
 
                     /**
                      * 设置列表信息
-                     * @param Content 列表信息
+                     * @param _content 列表信息
+                     * 
                      */
                     void SetContent(const std::vector<ImageTag>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取lb的字符串id
                      * @return LoadBalancerId lb的字符串id
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置lb的字符串id
-                     * @param LoadBalancerId lb的字符串id
+                     * @param _loadBalancerId lb的字符串id
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取lb的vip
                      * @return Vip lb的vip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置lb的vip
-                     * @param Vip lb的vip
+                     * @param _vip lb的vip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取监听器规则
                      * @return Listeners 监听器规则
+                     * 
                      */
                     std::vector<ListenerItem> GetListeners() const;
 
                     /**
                      * 设置监听器规则
-                     * @param Listeners 监听器规则
+                     * @param _listeners 监听器规则
+                     * 
                      */
                     void SetListeners(const std::vector<ListenerItem>& _listeners);
 
                     /**
                      * 判断参数 Listeners 是否已赋值
                      * @return Listeners 是否已赋值
+                     * 
                      */
                     bool ListenersHasBeenSet() const;
 
                     /**
                      * 获取LB所在地域
                      * @return Region LB所在地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置LB所在地域
-                     * @param Region LB所在地域
+                     * @param _region LB所在地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

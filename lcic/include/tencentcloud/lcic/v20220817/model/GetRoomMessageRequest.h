@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取房间Id。	
                      * @return RoomId 房间Id。	
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间Id。	
-                     * @param RoomId 房间Id。	
+                     * @param _roomId 房间Id。	
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取消息序列。获取该序列以前的消息(不包含该seq消息)
                      * @return Seq 消息序列。获取该序列以前的消息(不包含该seq消息)
+                     * 
                      */
                     int64_t GetSeq() const;
 
                     /**
                      * 设置消息序列。获取该序列以前的消息(不包含该seq消息)
-                     * @param Seq 消息序列。获取该序列以前的消息(不包含该seq消息)
+                     * @param _seq 消息序列。获取该序列以前的消息(不包含该seq消息)
+                     * 
                      */
                     void SetSeq(const int64_t& _seq);
 
                     /**
                      * 判断参数 Seq 是否已赋值
                      * @return Seq 是否已赋值
+                     * 
                      */
                     bool SeqHasBeenSet() const;
 
                     /**
                      * 获取消息拉取的条数。最大数量不能超过套餐包限制。
                      * @return Limit 消息拉取的条数。最大数量不能超过套餐包限制。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置消息拉取的条数。最大数量不能超过套餐包限制。
-                     * @param Limit 消息拉取的条数。最大数量不能超过套餐包限制。
+                     * @param _limit 消息拉取的条数。最大数量不能超过套餐包限制。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -51,270 +51,315 @@ namespace TencentCloud
                     /**
                      * 获取服务器Quuid
                      * @return Quuid 服务器Quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置服务器Quuid
-                     * @param Quuid 服务器Quuid
+                     * @param _quuid 服务器Quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取服务器uuid
                      * @return Uuid 服务器uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置服务器uuid
-                     * @param Uuid 服务器uuid
+                     * @param _uuid 服务器uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取服务器内网IP
                      * @return MachineIp 服务器内网IP
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置服务器内网IP
-                     * @param MachineIp 服务器内网IP
+                     * @param _machineIp 服务器内网IP
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取服务器名称
                      * @return MachineName 服务器名称
+                     * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置服务器名称
-                     * @param MachineName 服务器名称
+                     * @param _machineName 服务器名称
+                     * 
                      */
                     void SetMachineName(const std::string& _machineName);
 
                     /**
                      * 判断参数 MachineName 是否已赋值
                      * @return MachineName 是否已赋值
+                     * 
                      */
                     bool MachineNameHasBeenSet() const;
 
                     /**
                      * 获取操作系统名称
                      * @return OsInfo 操作系统名称
+                     * 
                      */
                     std::string GetOsInfo() const;
 
                     /**
                      * 设置操作系统名称
-                     * @param OsInfo 操作系统名称
+                     * @param _osInfo 操作系统名称
+                     * 
                      */
                     void SetOsInfo(const std::string& _osInfo);
 
                     /**
                      * 判断参数 OsInfo 是否已赋值
                      * @return OsInfo 是否已赋值
+                     * 
                      */
                     bool OsInfoHasBeenSet() const;
 
                     /**
                      * 获取CPU信息
                      * @return Cpu CPU信息
+                     * 
                      */
                     std::string GetCpu() const;
 
                     /**
                      * 设置CPU信息
-                     * @param Cpu CPU信息
+                     * @param _cpu CPU信息
+                     * 
                      */
                     void SetCpu(const std::string& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存容量：单位G
                      * @return MemSize 内存容量：单位G
+                     * 
                      */
                     uint64_t GetMemSize() const;
 
                     /**
                      * 设置内存容量：单位G
-                     * @param MemSize 内存容量：单位G
+                     * @param _memSize 内存容量：单位G
+                     * 
                      */
                     void SetMemSize(const uint64_t& _memSize);
 
                     /**
                      * 判断参数 MemSize 是否已赋值
                      * @return MemSize 是否已赋值
+                     * 
                      */
                     bool MemSizeHasBeenSet() const;
 
                     /**
                      * 获取内存使用率百分比
                      * @return MemLoad 内存使用率百分比
+                     * 
                      */
                     std::string GetMemLoad() const;
 
                     /**
                      * 设置内存使用率百分比
-                     * @param MemLoad 内存使用率百分比
+                     * @param _memLoad 内存使用率百分比
+                     * 
                      */
                     void SetMemLoad(const std::string& _memLoad);
 
                     /**
                      * 判断参数 MemLoad 是否已赋值
                      * @return MemLoad 是否已赋值
+                     * 
                      */
                     bool MemLoadHasBeenSet() const;
 
                     /**
                      * 获取硬盘容量：单位G
                      * @return DiskSize 硬盘容量：单位G
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置硬盘容量：单位G
-                     * @param DiskSize 硬盘容量：单位G
+                     * @param _diskSize 硬盘容量：单位G
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取硬盘使用率百分比
                      * @return DiskLoad 硬盘使用率百分比
+                     * 
                      */
                     std::string GetDiskLoad() const;
 
                     /**
                      * 设置硬盘使用率百分比
-                     * @param DiskLoad 硬盘使用率百分比
+                     * @param _diskLoad 硬盘使用率百分比
+                     * 
                      */
                     void SetDiskLoad(const std::string& _diskLoad);
 
                     /**
                      * 判断参数 DiskLoad 是否已赋值
                      * @return DiskLoad 是否已赋值
+                     * 
                      */
                     bool DiskLoadHasBeenSet() const;
 
                     /**
                      * 获取分区数
                      * @return PartitionCount 分区数
+                     * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
                      * 设置分区数
-                     * @param PartitionCount 分区数
+                     * @param _partitionCount 分区数
+                     * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
 
                     /**
                      * 判断参数 PartitionCount 是否已赋值
                      * @return PartitionCount 是否已赋值
+                     * 
                      */
                     bool PartitionCountHasBeenSet() const;
 
                     /**
                      * 获取主机外网IP
                      * @return MachineWanIp 主机外网IP
+                     * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
                      * 设置主机外网IP
-                     * @param MachineWanIp 主机外网IP
+                     * @param _machineWanIp 主机外网IP
+                     * 
                      */
                     void SetMachineWanIp(const std::string& _machineWanIp);
 
                     /**
                      * 判断参数 MachineWanIp 是否已赋值
                      * @return MachineWanIp 是否已赋值
+                     * 
                      */
                     bool MachineWanIpHasBeenSet() const;
 
                     /**
                      * 获取业务组ID
                      * @return ProjectId 业务组ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置业务组ID
-                     * @param ProjectId 业务组ID
+                     * @param _projectId 业务组ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取Cpu数量
                      * @return CpuSize Cpu数量
+                     * 
                      */
                     uint64_t GetCpuSize() const;
 
                     /**
                      * 设置Cpu数量
-                     * @param CpuSize Cpu数量
+                     * @param _cpuSize Cpu数量
+                     * 
                      */
                     void SetCpuSize(const uint64_t& _cpuSize);
 
                     /**
                      * 判断参数 CpuSize 是否已赋值
                      * @return CpuSize 是否已赋值
+                     * 
                      */
                     bool CpuSizeHasBeenSet() const;
 
                     /**
                      * 获取Cpu使用率百分比
                      * @return CpuLoad Cpu使用率百分比
+                     * 
                      */
                     std::string GetCpuLoad() const;
 
                     /**
                      * 设置Cpu使用率百分比
-                     * @param CpuLoad Cpu使用率百分比
+                     * @param _cpuLoad Cpu使用率百分比
+                     * 
                      */
                     void SetCpuLoad(const std::string& _cpuLoad);
 
                     /**
                      * 判断参数 CpuLoad 是否已赋值
                      * @return CpuLoad 是否已赋值
+                     * 
                      */
                     bool CpuLoadHasBeenSet() const;
 
@@ -323,20 +368,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MachineTag> GetTag() const;
 
                     /**
                      * 设置标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 标签
+                     * @param _tag 标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const std::vector<MachineTag>& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
@@ -345,56 +393,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 数据更新时间
+                     * @param _updateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取是否新增[0:否|1:是]
                      * @return IsNew 是否新增[0:否|1:是]
+                     * 
                      */
                     int64_t GetIsNew() const;
 
                     /**
                      * 设置是否新增[0:否|1:是]
-                     * @param IsNew 是否新增[0:否|1:是]
+                     * @param _isNew 是否新增[0:否|1:是]
+                     * 
                      */
                     void SetIsNew(const int64_t& _isNew);
 
                     /**
                      * 判断参数 IsNew 是否已赋值
                      * @return IsNew 是否已赋值
+                     * 
                      */
                     bool IsNewHasBeenSet() const;
 
                     /**
                      * 获取首次采集时间
                      * @return FirstTime 首次采集时间
+                     * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置首次采集时间
-                     * @param FirstTime 首次采集时间
+                     * @param _firstTime 首次采集时间
+                     * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
 
                     /**
                      * 判断参数 FirstTime 是否已赋值
                      * @return FirstTime 是否已赋值
+                     * 
                      */
                     bool FirstTimeHasBeenSet() const;
 
@@ -403,20 +460,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置附加信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 附加信息
+                     * @param _machineExtraInfo 附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 

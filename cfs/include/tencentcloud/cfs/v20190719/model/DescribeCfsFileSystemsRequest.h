@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统 ID
                      * @return FileSystemId 文件系统 ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统 ID
-                     * @param FileSystemId 文件系统 ID
+                     * @param _fileSystemId 文件系统 ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络（VPC） ID
                      * @return VpcId 私有网络（VPC） ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络（VPC） ID
-                     * @param VpcId 私有网络（VPC） ID
+                     * @param _vpcId 私有网络（VPC） ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网 ID
                      * @return SubnetId 子网 ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网 ID
-                     * @param SubnetId 子网 ID
+                     * @param _subnetId 子网 ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

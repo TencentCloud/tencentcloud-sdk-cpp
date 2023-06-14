@@ -55,108 +55,126 @@ namespace TencentCloud
                     /**
                      * 获取视频标签识别任务参数，不填则不开启。
                      * @return TagEditingInfo 视频标签识别任务参数，不填则不开启。
+                     * 
                      */
                     TagEditingInfo GetTagEditingInfo() const;
 
                     /**
                      * 设置视频标签识别任务参数，不填则不开启。
-                     * @param TagEditingInfo 视频标签识别任务参数，不填则不开启。
+                     * @param _tagEditingInfo 视频标签识别任务参数，不填则不开启。
+                     * 
                      */
                     void SetTagEditingInfo(const TagEditingInfo& _tagEditingInfo);
 
                     /**
                      * 判断参数 TagEditingInfo 是否已赋值
                      * @return TagEditingInfo 是否已赋值
+                     * 
                      */
                     bool TagEditingInfoHasBeenSet() const;
 
                     /**
                      * 获取视频分类识别任务参数，不填则不开启。
                      * @return ClassificationEditingInfo 视频分类识别任务参数，不填则不开启。
+                     * 
                      */
                     ClassificationEditingInfo GetClassificationEditingInfo() const;
 
                     /**
                      * 设置视频分类识别任务参数，不填则不开启。
-                     * @param ClassificationEditingInfo 视频分类识别任务参数，不填则不开启。
+                     * @param _classificationEditingInfo 视频分类识别任务参数，不填则不开启。
+                     * 
                      */
                     void SetClassificationEditingInfo(const ClassificationEditingInfo& _classificationEditingInfo);
 
                     /**
                      * 判断参数 ClassificationEditingInfo 是否已赋值
                      * @return ClassificationEditingInfo 是否已赋值
+                     * 
                      */
                     bool ClassificationEditingInfoHasBeenSet() const;
 
                     /**
                      * 获取智能拆条任务参数，不填则不开启。
                      * @return StripEditingInfo 智能拆条任务参数，不填则不开启。
+                     * 
                      */
                     StripEditingInfo GetStripEditingInfo() const;
 
                     /**
                      * 设置智能拆条任务参数，不填则不开启。
-                     * @param StripEditingInfo 智能拆条任务参数，不填则不开启。
+                     * @param _stripEditingInfo 智能拆条任务参数，不填则不开启。
+                     * 
                      */
                     void SetStripEditingInfo(const StripEditingInfo& _stripEditingInfo);
 
                     /**
                      * 判断参数 StripEditingInfo 是否已赋值
                      * @return StripEditingInfo 是否已赋值
+                     * 
                      */
                     bool StripEditingInfoHasBeenSet() const;
 
                     /**
                      * 获取智能集锦任务参数，不填则不开启。
                      * @return HighlightsEditingInfo 智能集锦任务参数，不填则不开启。
+                     * 
                      */
                     HighlightsEditingInfo GetHighlightsEditingInfo() const;
 
                     /**
                      * 设置智能集锦任务参数，不填则不开启。
-                     * @param HighlightsEditingInfo 智能集锦任务参数，不填则不开启。
+                     * @param _highlightsEditingInfo 智能集锦任务参数，不填则不开启。
+                     * 
                      */
                     void SetHighlightsEditingInfo(const HighlightsEditingInfo& _highlightsEditingInfo);
 
                     /**
                      * 判断参数 HighlightsEditingInfo 是否已赋值
                      * @return HighlightsEditingInfo 是否已赋值
+                     * 
                      */
                     bool HighlightsEditingInfoHasBeenSet() const;
 
                     /**
                      * 获取智能封面任务参数，不填则不开启。
                      * @return CoverEditingInfo 智能封面任务参数，不填则不开启。
+                     * 
                      */
                     CoverEditingInfo GetCoverEditingInfo() const;
 
                     /**
                      * 设置智能封面任务参数，不填则不开启。
-                     * @param CoverEditingInfo 智能封面任务参数，不填则不开启。
+                     * @param _coverEditingInfo 智能封面任务参数，不填则不开启。
+                     * 
                      */
                     void SetCoverEditingInfo(const CoverEditingInfo& _coverEditingInfo);
 
                     /**
                      * 判断参数 CoverEditingInfo 是否已赋值
                      * @return CoverEditingInfo 是否已赋值
+                     * 
                      */
                     bool CoverEditingInfoHasBeenSet() const;
 
                     /**
                      * 获取片头片尾识别任务参数，不填则不开启。
                      * @return OpeningEndingEditingInfo 片头片尾识别任务参数，不填则不开启。
+                     * 
                      */
                     OpeningEndingEditingInfo GetOpeningEndingEditingInfo() const;
 
                     /**
                      * 设置片头片尾识别任务参数，不填则不开启。
-                     * @param OpeningEndingEditingInfo 片头片尾识别任务参数，不填则不开启。
+                     * @param _openingEndingEditingInfo 片头片尾识别任务参数，不填则不开启。
+                     * 
                      */
                     void SetOpeningEndingEditingInfo(const OpeningEndingEditingInfo& _openingEndingEditingInfo);
 
                     /**
                      * 判断参数 OpeningEndingEditingInfo 是否已赋值
                      * @return OpeningEndingEditingInfo 是否已赋值
+                     * 
                      */
                     bool OpeningEndingEditingInfoHasBeenSet() const;
 

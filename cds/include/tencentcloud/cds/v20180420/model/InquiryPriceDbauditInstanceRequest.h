@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版
                      * @return InstanceVersion 实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版
+                     * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版
-                     * @param InstanceVersion 实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版
+                     * @param _instanceVersion 实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版
+                     * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
 
                     /**
                      * 判断参数 InstanceVersion 是否已赋值
                      * @return InstanceVersion 是否已赋值
+                     * 
                      */
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
                      * 获取询价类型： renew，续费；newbuy，新购
                      * @return InquiryType 询价类型： renew，续费；newbuy，新购
+                     * 
                      */
                     std::string GetInquiryType() const;
 
                     /**
                      * 设置询价类型： renew，续费；newbuy，新购
-                     * @param InquiryType 询价类型： renew，续费；newbuy，新购
+                     * @param _inquiryType 询价类型： renew，续费；newbuy，新购
+                     * 
                      */
                     void SetInquiryType(const std::string& _inquiryType);
 
                     /**
                      * 判断参数 InquiryType 是否已赋值
                      * @return InquiryType 是否已赋值
+                     * 
                      */
                     bool InquiryTypeHasBeenSet() const;
 
                     /**
                      * 获取购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）
                      * @return TimeSpan 购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）
+                     * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）
-                     * @param TimeSpan 购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）
+                     * @param _timeSpan 购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）
+                     * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
                     /**
                      * 获取购买时长单位，y：年；m：月
                      * @return TimeUnit 购买时长单位，y：年；m：月
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长单位，y：年；m：月
-                     * @param TimeUnit 购买时长单位，y：年；m：月
+                     * @param _timeUnit 购买时长单位，y：年；m：月
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
                     /**
                      * 获取实例所在地域
                      * @return ServiceRegion 实例所在地域
+                     * 
                      */
                     std::string GetServiceRegion() const;
 
                     /**
                      * 设置实例所在地域
-                     * @param ServiceRegion 实例所在地域
+                     * @param _serviceRegion 实例所在地域
+                     * 
                      */
                     void SetServiceRegion(const std::string& _serviceRegion);
 
                     /**
                      * 判断参数 ServiceRegion 是否已赋值
                      * @return ServiceRegion 是否已赋值
+                     * 
                      */
                     bool ServiceRegionHasBeenSet() const;
 

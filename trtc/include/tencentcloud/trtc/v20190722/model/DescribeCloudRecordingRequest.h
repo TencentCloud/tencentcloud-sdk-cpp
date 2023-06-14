@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。
                      * @return SdkAppId TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。
-                     * @param SdkAppId TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。
+                     * @param _sdkAppId TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取录制任务的唯一Id，在启动录制成功后会返回。
                      * @return TaskId 录制任务的唯一Id，在启动录制成功后会返回。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置录制任务的唯一Id，在启动录制成功后会返回。
-                     * @param TaskId 录制任务的唯一Id，在启动录制成功后会返回。
+                     * @param _taskId 录制任务的唯一Id，在启动录制成功后会返回。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
                      * @return Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
+                     * 
                      */
                     double GetTempo() const;
 
                     /**
                      * 设置图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
-                     * @param Tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
+                     * @param _tempo 图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。
+                     * 
                      */
                     void SetTempo(const double& _tempo);
 
                     /**
                      * 判断参数 Tempo 是否已赋值
                      * @return Tempo 是否已赋值
+                     * 
                      */
                     bool TempoHasBeenSet() const;
 
                     /**
                      * 获取人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
                      * @return MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
+                     * 
                      */
                     double GetMorphTime() const;
 
                     /**
                      * 设置人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
-                     * @param MorphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
+                     * @param _morphTime 人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。
+                     * 
                      */
                     void SetMorphTime(const double& _morphTime);
 
                     /**
                      * 判断参数 MorphTime 是否已赋值
                      * @return MorphTime 是否已赋值
+                     * 
                      */
                     bool MorphTimeHasBeenSet() const;
 

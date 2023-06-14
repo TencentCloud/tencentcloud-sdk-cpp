@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取IP地址ID，例如：eipm-2uw6ujo6。
                      * @return AddressId IP地址ID，例如：eipm-2uw6ujo6。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置IP地址ID，例如：eipm-2uw6ujo6。
-                     * @param AddressId IP地址ID，例如：eipm-2uw6ujo6。
+                     * @param _addressId IP地址ID，例如：eipm-2uw6ujo6。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取IP地址组ID，例如：eipmg-2uw6ujo6。
                      * @return AddressGroupId IP地址组ID，例如：eipmg-2uw6ujo6。
+                     * 
                      */
                     std::string GetAddressGroupId() const;
 
                     /**
                      * 设置IP地址组ID，例如：eipmg-2uw6ujo6。
-                     * @param AddressGroupId IP地址组ID，例如：eipmg-2uw6ujo6。
+                     * @param _addressGroupId IP地址组ID，例如：eipmg-2uw6ujo6。
+                     * 
                      */
                     void SetAddressGroupId(const std::string& _addressGroupId);
 
                     /**
                      * 判断参数 AddressGroupId 是否已赋值
                      * @return AddressGroupId 是否已赋值
+                     * 
                      */
                     bool AddressGroupIdHasBeenSet() const;
 

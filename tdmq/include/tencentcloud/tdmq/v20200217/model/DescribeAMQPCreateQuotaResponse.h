@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取租户总共可使用集群数量
                      * @return MaxClusterNum 租户总共可使用集群数量
+                     * 
                      */
                     uint64_t GetMaxClusterNum() const;
 
                     /**
                      * 判断参数 MaxClusterNum 是否已赋值
                      * @return MaxClusterNum 是否已赋值
+                     * 
                      */
                     bool MaxClusterNumHasBeenSet() const;
 
                     /**
                      * 获取租户已创建集群数量
                      * @return UsedClusterNum 租户已创建集群数量
+                     * 
                      */
                     uint64_t GetUsedClusterNum() const;
 
                     /**
                      * 判断参数 UsedClusterNum 是否已赋值
                      * @return UsedClusterNum 是否已赋值
+                     * 
                      */
                     bool UsedClusterNumHasBeenSet() const;
 
                     /**
                      * 获取Exchange容量
                      * @return ExchangeCapacity Exchange容量
+                     * 
                      */
                     uint64_t GetExchangeCapacity() const;
 
                     /**
                      * 判断参数 ExchangeCapacity 是否已赋值
                      * @return ExchangeCapacity 是否已赋值
+                     * 
                      */
                     bool ExchangeCapacityHasBeenSet() const;
 
                     /**
                      * 获取Queue容量
                      * @return QueueCapacity Queue容量
+                     * 
                      */
                     uint64_t GetQueueCapacity() const;
 
                     /**
                      * 判断参数 QueueCapacity 是否已赋值
                      * @return QueueCapacity 是否已赋值
+                     * 
                      */
                     bool QueueCapacityHasBeenSet() const;
 
                     /**
                      * 获取单Vhost TPS
                      * @return MaxTpsPerVHost 单Vhost TPS
+                     * 
                      */
                     uint64_t GetMaxTpsPerVHost() const;
 
                     /**
                      * 判断参数 MaxTpsPerVHost 是否已赋值
                      * @return MaxTpsPerVHost 是否已赋值
+                     * 
                      */
                     bool MaxTpsPerVHostHasBeenSet() const;
 

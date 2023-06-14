@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取当前正在播放文件 Url 。
                      * @return Url 当前正在播放文件 Url 。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置当前正在播放文件 Url 。
-                     * @param Url 当前正在播放文件 Url 。
+                     * @param _url 当前正在播放文件 Url 。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取点播文件已播放时长，单位：秒。
                      * @return TimeOffset 点播文件已播放时长，单位：秒。
+                     * 
                      */
                     double GetTimeOffset() const;
 
                     /**
                      * 设置点播文件已播放时长，单位：秒。
-                     * @param TimeOffset 点播文件已播放时长，单位：秒。
+                     * @param _timeOffset 点播文件已播放时长，单位：秒。
+                     * 
                      */
                     void SetTimeOffset(const double& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 

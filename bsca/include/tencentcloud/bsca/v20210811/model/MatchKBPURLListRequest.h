@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取SHA1。
                      * @return SHA1 SHA1。
+                     * 
                      */
                     std::string GetSHA1() const;
 
                     /**
                      * 设置SHA1。
-                     * @param SHA1 SHA1。
+                     * @param _sHA1 SHA1。
+                     * 
                      */
                     void SetSHA1(const std::string& _sHA1);
 
                     /**
                      * 判断参数 SHA1 是否已赋值
                      * @return SHA1 是否已赋值
+                     * 
                      */
                     bool SHA1HasBeenSet() const;
 

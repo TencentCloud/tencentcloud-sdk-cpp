@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取用于加密的密钥，base64编码
                      * @return EncryptKey 用于加密的密钥，base64编码
+                     * 
                      */
                     std::string GetEncryptKey() const;
 
                     /**
                      * 判断参数 EncryptKey 是否已赋值
                      * @return EncryptKey 是否已赋值
+                     * 
                      */
                     bool EncryptKeyHasBeenSet() const;
 
                     /**
                      * 获取用于解密的密钥，base64编码
                      * @return DecryptKey 用于解密的密钥，base64编码
+                     * 
                      */
                     std::string GetDecryptKey() const;
 
                     /**
                      * 判断参数 DecryptKey 是否已赋值
                      * @return DecryptKey 是否已赋值
+                     * 
                      */
                     bool DecryptKeyHasBeenSet() const;
 
                     /**
                      * 获取白盒密钥的全局唯一标识符
                      * @return KeyId 白盒密钥的全局唯一标识符
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTagCode() const;
 
                     /**
                      * 判断参数 TagCode 是否已赋值
                      * @return TagCode 是否已赋值
+                     * 
                      */
                     bool TagCodeHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagMsg 标签操作的返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTagMsg() const;
 
                     /**
                      * 判断参数 TagMsg 是否已赋值
                      * @return TagMsg 是否已赋值
+                     * 
                      */
                     bool TagMsgHasBeenSet() const;
 

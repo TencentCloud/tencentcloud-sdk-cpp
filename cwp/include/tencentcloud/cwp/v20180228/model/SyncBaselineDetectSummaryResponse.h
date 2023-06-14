@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取处理进度
                      * @return ProgressRate 处理进度
+                     * 
                      */
                     int64_t GetProgressRate() const;
 
                     /**
                      * 判断参数 ProgressRate 是否已赋值
                      * @return ProgressRate 是否已赋值
+                     * 
                      */
                     bool ProgressRateHasBeenSet() const;
 
                     /**
                      * 获取未通过策略总数
                      * @return NotPassPolicyCount 未通过策略总数
+                     * 
                      */
                     int64_t GetNotPassPolicyCount() const;
 
                     /**
                      * 判断参数 NotPassPolicyCount 是否已赋值
                      * @return NotPassPolicyCount 是否已赋值
+                     * 
                      */
                     bool NotPassPolicyCountHasBeenSet() const;
 
                     /**
                      * 获取主机总数
                      * @return HostCount 主机总数
+                     * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取1:即将进行首次扫描   0:已经扫描过了
                      * @return WillFirstScan 1:即将进行首次扫描   0:已经扫描过了
+                     * 
                      */
                     int64_t GetWillFirstScan() const;
 
                     /**
                      * 判断参数 WillFirstScan 是否已赋值
                      * @return WillFirstScan 是否已赋值
+                     * 
                      */
                     bool WillFirstScanHasBeenSet() const;
 
                     /**
                      * 获取正在检测的任务ID
                      * @return DetectingTaskIds 正在检测的任务ID
+                     * 
                      */
                     std::vector<int64_t> GetDetectingTaskIds() const;
 
                     /**
                      * 判断参数 DetectingTaskIds 是否已赋值
                      * @return DetectingTaskIds 是否已赋值
+                     * 
                      */
                     bool DetectingTaskIdsHasBeenSet() const;
 
                     /**
                      * 获取扫描中剩余时间(分钟)
                      * @return LeftMins 扫描中剩余时间(分钟)
+                     * 
                      */
                     int64_t GetLeftMins() const;
 
                     /**
                      * 判断参数 LeftMins 是否已赋值
                      * @return LeftMins 是否已赋值
+                     * 
                      */
                     bool LeftMinsHasBeenSet() const;
 

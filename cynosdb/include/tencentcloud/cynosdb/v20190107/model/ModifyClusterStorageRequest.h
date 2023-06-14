@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群新存储大小（单位G）
                      * @return NewStorageLimit 集群新存储大小（单位G）
+                     * 
                      */
                     int64_t GetNewStorageLimit() const;
 
                     /**
                      * 设置集群新存储大小（单位G）
-                     * @param NewStorageLimit 集群新存储大小（单位G）
+                     * @param _newStorageLimit 集群新存储大小（单位G）
+                     * 
                      */
                     void SetNewStorageLimit(const int64_t& _newStorageLimit);
 
                     /**
                      * 判断参数 NewStorageLimit 是否已赋值
                      * @return NewStorageLimit 是否已赋值
+                     * 
                      */
                     bool NewStorageLimitHasBeenSet() const;
 
                     /**
                      * 获取集群原存储大小（单位G）
                      * @return OldStorageLimit 集群原存储大小（单位G）
+                     * 
                      */
                     int64_t GetOldStorageLimit() const;
 
                     /**
                      * 设置集群原存储大小（单位G）
-                     * @param OldStorageLimit 集群原存储大小（单位G）
+                     * @param _oldStorageLimit 集群原存储大小（单位G）
+                     * 
                      */
                     void SetOldStorageLimit(const int64_t& _oldStorageLimit);
 
                     /**
                      * 判断参数 OldStorageLimit 是否已赋值
                      * @return OldStorageLimit 是否已赋值
+                     * 
                      */
                     bool OldStorageLimitHasBeenSet() const;
 
                     /**
                      * 获取交易模式 0-下单并支付 1-下单
                      * @return DealMode 交易模式 0-下单并支付 1-下单
+                     * 
                      */
                     int64_t GetDealMode() const;
 
                     /**
                      * 设置交易模式 0-下单并支付 1-下单
-                     * @param DealMode 交易模式 0-下单并支付 1-下单
+                     * @param _dealMode 交易模式 0-下单并支付 1-下单
+                     * 
                      */
                     void SetDealMode(const int64_t& _dealMode);
 
                     /**
                      * 判断参数 DealMode 是否已赋值
                      * @return DealMode 是否已赋值
+                     * 
                      */
                     bool DealModeHasBeenSet() const;
 

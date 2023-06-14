@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取裁剪的宽度。取值范围[0，2000]。
                      * @return CropWidth 裁剪的宽度。取值范围[0，2000]。
+                     * 
                      */
                     double GetCropWidth() const;
 
                     /**
                      * 设置裁剪的宽度。取值范围[0，2000]。
-                     * @param CropWidth 裁剪的宽度。取值范围[0，2000]。
+                     * @param _cropWidth 裁剪的宽度。取值范围[0，2000]。
+                     * 
                      */
                     void SetCropWidth(const double& _cropWidth);
 
                     /**
                      * 判断参数 CropWidth 是否已赋值
                      * @return CropWidth 是否已赋值
+                     * 
                      */
                     bool CropWidthHasBeenSet() const;
 
                     /**
                      * 获取裁剪的高度。取值范围[0，2000]。
                      * @return CropHeight 裁剪的高度。取值范围[0，2000]。
+                     * 
                      */
                     double GetCropHeight() const;
 
                     /**
                      * 设置裁剪的高度。取值范围[0，2000]。
-                     * @param CropHeight 裁剪的高度。取值范围[0，2000]。
+                     * @param _cropHeight 裁剪的高度。取值范围[0，2000]。
+                     * 
                      */
                     void SetCropHeight(const double& _cropHeight);
 
                     /**
                      * 判断参数 CropHeight 是否已赋值
                      * @return CropHeight 是否已赋值
+                     * 
                      */
                     bool CropHeightHasBeenSet() const;
 
                     /**
                      * 获取裁剪的起始X坐标。取值范围[0，2000]。
                      * @return CropStartLocationX 裁剪的起始X坐标。取值范围[0，2000]。
+                     * 
                      */
                     double GetCropStartLocationX() const;
 
                     /**
                      * 设置裁剪的起始X坐标。取值范围[0，2000]。
-                     * @param CropStartLocationX 裁剪的起始X坐标。取值范围[0，2000]。
+                     * @param _cropStartLocationX 裁剪的起始X坐标。取值范围[0，2000]。
+                     * 
                      */
                     void SetCropStartLocationX(const double& _cropStartLocationX);
 
                     /**
                      * 判断参数 CropStartLocationX 是否已赋值
                      * @return CropStartLocationX 是否已赋值
+                     * 
                      */
                     bool CropStartLocationXHasBeenSet() const;
 
                     /**
                      * 获取裁剪的起始Y坐标。取值范围[0，2000]。
                      * @return CropStartLocationY 裁剪的起始Y坐标。取值范围[0，2000]。
+                     * 
                      */
                     double GetCropStartLocationY() const;
 
                     /**
                      * 设置裁剪的起始Y坐标。取值范围[0，2000]。
-                     * @param CropStartLocationY 裁剪的起始Y坐标。取值范围[0，2000]。
+                     * @param _cropStartLocationY 裁剪的起始Y坐标。取值范围[0，2000]。
+                     * 
                      */
                     void SetCropStartLocationY(const double& _cropStartLocationY);
 
                     /**
                      * 判断参数 CropStartLocationY 是否已赋值
                      * @return CropStartLocationY 是否已赋值
+                     * 
                      */
                     bool CropStartLocationYHasBeenSet() const;
 

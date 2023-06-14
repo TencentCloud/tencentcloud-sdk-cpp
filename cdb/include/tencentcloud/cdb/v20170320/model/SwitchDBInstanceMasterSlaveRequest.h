@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取目标从实例。可选值："first" - 第一备机；"second" - 第二备机。默认值为 "first"，仅多可用区实例支持设置为 "second"。
                      * @return DstSlave 目标从实例。可选值："first" - 第一备机；"second" - 第二备机。默认值为 "first"，仅多可用区实例支持设置为 "second"。
+                     * 
                      */
                     std::string GetDstSlave() const;
 
                     /**
                      * 设置目标从实例。可选值："first" - 第一备机；"second" - 第二备机。默认值为 "first"，仅多可用区实例支持设置为 "second"。
-                     * @param DstSlave 目标从实例。可选值："first" - 第一备机；"second" - 第二备机。默认值为 "first"，仅多可用区实例支持设置为 "second"。
+                     * @param _dstSlave 目标从实例。可选值："first" - 第一备机；"second" - 第二备机。默认值为 "first"，仅多可用区实例支持设置为 "second"。
+                     * 
                      */
                     void SetDstSlave(const std::string& _dstSlave);
 
                     /**
                      * 判断参数 DstSlave 是否已赋值
                      * @return DstSlave 是否已赋值
+                     * 
                      */
                     bool DstSlaveHasBeenSet() const;
 
                     /**
                      * 获取是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。
                      * @return ForceSwitch 是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。
+                     * 
                      */
                     bool GetForceSwitch() const;
 
                     /**
                      * 设置是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。
-                     * @param ForceSwitch 是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。
+                     * @param _forceSwitch 是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。
+                     * 
                      */
                     void SetForceSwitch(const bool& _forceSwitch);
 
                     /**
                      * 判断参数 ForceSwitch 是否已赋值
                      * @return ForceSwitch 是否已赋值
+                     * 
                      */
                     bool ForceSwitchHasBeenSet() const;
 
                     /**
                      * 获取是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。
                      * @return WaitSwitch 是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。
+                     * 
                      */
                     bool GetWaitSwitch() const;
 
                     /**
                      * 设置是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。
-                     * @param WaitSwitch 是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。
+                     * @param _waitSwitch 是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。
+                     * 
                      */
                     void SetWaitSwitch(const bool& _waitSwitch);
 
                     /**
                      * 判断参数 WaitSwitch 是否已赋值
                      * @return WaitSwitch 是否已赋值
+                     * 
                      */
                     bool WaitSwitchHasBeenSet() const;
 

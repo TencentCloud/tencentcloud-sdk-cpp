@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取cls可选日志集合列表(仅当入参ClsRegion不为空时返回)
                      * @return LogSetList cls可选日志集合列表(仅当入参ClsRegion不为空时返回)
+                     * 
                      */
                     std::vector<ClsLogsetInfo> GetLogSetList() const;
 
                     /**
                      * 判断参数 LogSetList 是否已赋值
                      * @return LogSetList 是否已赋值
+                     * 
                      */
                     bool LogSetListHasBeenSet() const;
 
                     /**
                      * 获取可选地域列表(仅当入参ClsRegion为空时返回)
                      * @return RegionList 可选地域列表(仅当入参ClsRegion为空时返回)
+                     * 
                      */
                     std::vector<RegionInfo> GetRegionList() const;
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取未授权核数趋势
                      * @return List 未授权核数趋势
+                     * 
                      */
                     std::vector<UnauthorizedCoresTendency> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

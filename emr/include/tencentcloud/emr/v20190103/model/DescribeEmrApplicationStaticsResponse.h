@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取作业统计信息
                      * @return Statics 作业统计信息
+                     * 
                      */
                     std::vector<ApplicationStatics> GetStatics() const;
 
                     /**
                      * 判断参数 Statics 是否已赋值
                      * @return Statics 是否已赋值
+                     * 
                      */
                     bool StaticsHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取可选择的队列名
                      * @return Queues 可选择的队列名
+                     * 
                      */
                     std::vector<std::string> GetQueues() const;
 
                     /**
                      * 判断参数 Queues 是否已赋值
                      * @return Queues 是否已赋值
+                     * 
                      */
                     bool QueuesHasBeenSet() const;
 
                     /**
                      * 获取可选择的用户名
                      * @return Users 可选择的用户名
+                     * 
                      */
                     std::vector<std::string> GetUsers() const;
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取可选择的作业类型
                      * @return ApplicationTypes 可选择的作业类型
+                     * 
                      */
                     std::vector<std::string> GetApplicationTypes() const;
 
                     /**
                      * 判断参数 ApplicationTypes 是否已赋值
                      * @return ApplicationTypes 是否已赋值
+                     * 
                      */
                     bool ApplicationTypesHasBeenSet() const;
 

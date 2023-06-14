@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取用于计算签名的密钥，只允许字母和数字，长度6-32字节。
                      * @return SecretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置用于计算签名的密钥，只允许字母和数字，长度6-32字节。
-                     * @param SecretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
+                     * @param _secretKey 用于计算签名的密钥，只允许字母和数字，长度6-32字节。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。
                      * @return BackupSecretKey 备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。
+                     * 
                      */
                     std::string GetBackupSecretKey() const;
 
                     /**
                      * 设置备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。
-                     * @param BackupSecretKey 备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。
+                     * @param _backupSecretKey 备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。
+                     * 
                      */
                     void SetBackupSecretKey(const std::string& _backupSecretKey);
 
                     /**
                      * 判断参数 BackupSecretKey 是否已赋值
                      * @return BackupSecretKey 是否已赋值
+                     * 
                      */
                     bool BackupSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
                      * @return SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * 
                      */
                     std::string GetSignParam() const;
 
                     /**
                      * 设置uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
-                     * @param SignParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _signParam uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * 
                      */
                     void SetSignParam(const std::string& _signParam);
 
                     /**
                      * 判断参数 SignParam 是否已赋值
                      * @return SignParam 是否已赋值
+                     * 
                      */
                     bool SignParamHasBeenSet() const;
 
                     /**
                      * 获取uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
                      * @return TimeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * 
                      */
                     std::string GetTimeParam() const;
 
                     /**
                      * 设置uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
-                     * @param TimeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * @param _timeParam uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。
+                     * 
                      */
                     void SetTimeParam(const std::string& _timeParam);
 
                     /**
                      * 判断参数 TimeParam 是否已赋值
                      * @return TimeParam 是否已赋值
+                     * 
                      */
                     bool TimeParamHasBeenSet() const;
 
                     /**
                      * 获取过期时间，单位秒。
                      * @return ExpireTime 过期时间，单位秒。
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间，单位秒。
-                     * @param ExpireTime 过期时间，单位秒。
+                     * @param _expireTime 过期时间，单位秒。
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取时间格式，dec，hex分别表示十进制，十六进制。
                      * @return TimeFormat 时间格式，dec，hex分别表示十进制，十六进制。
+                     * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
                      * 设置时间格式，dec，hex分别表示十进制，十六进制。
-                     * @param TimeFormat 时间格式，dec，hex分别表示十进制，十六进制。
+                     * @param _timeFormat 时间格式，dec，hex分别表示十进制，十六进制。
+                     * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
 
                     /**
                      * 判断参数 TimeFormat 是否已赋值
                      * @return TimeFormat 是否已赋值
+                     * 
                      */
                     bool TimeFormatHasBeenSet() const;
 

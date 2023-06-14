@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取问题描述。
                      * @return Problem 问题描述。
+                     * 
                      */
                     std::string GetProblem() const;
 
                     /**
                      * 设置问题描述。
-                     * @param Problem 问题描述。
+                     * @param _problem 问题描述。
+                     * 
                      */
                     void SetProblem(const std::string& _problem);
 
                     /**
                      * 判断参数 Problem 是否已赋值
                      * @return Problem 是否已赋值
+                     * 
                      */
                     bool ProblemHasBeenSet() const;
 
                     /**
                      * 获取问题详情。
                      * @return Detail 问题详情。
+                     * 
                      */
                     std::string GetDetail() const;
 
                     /**
                      * 设置问题详情。
-                     * @param Detail 问题详情。
+                     * @param _detail 问题详情。
+                     * 
                      */
                     void SetDetail(const std::string& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 
                     /**
                      * 获取建议解决方案。
                      * @return Solution 建议解决方案。
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置建议解决方案。
-                     * @param Solution 建议解决方案。
+                     * @param _solution 建议解决方案。
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
                      * @return Level 伸缩建议警告级别。取值范围：<br>
 <li>WARNING：警告级别<br>
 <li>CRITICAL：严重级别<br>
+                     * 
                      */
                     std::string GetLevel() const;
 
@@ -114,15 +124,17 @@ namespace TencentCloud
                      * 设置伸缩建议警告级别。取值范围：<br>
 <li>WARNING：警告级别<br>
 <li>CRITICAL：严重级别<br>
-                     * @param Level 伸缩建议警告级别。取值范围：<br>
+                     * @param _level 伸缩建议警告级别。取值范围：<br>
 <li>WARNING：警告级别<br>
 <li>CRITICAL：严重级别<br>
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

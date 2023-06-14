@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取云服务器可用区。
                      * @return Zone 云服务器可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置云服务器可用区。
-                     * @param Zone 云服务器可用区。
+                     * @param _zone 云服务器可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取云服务器实例规格。
                      * @return InstanceType 云服务器实例规格。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置云服务器实例规格。
-                     * @param InstanceType 云服务器实例规格。
+                     * @param _instanceType 云服务器实例规格。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

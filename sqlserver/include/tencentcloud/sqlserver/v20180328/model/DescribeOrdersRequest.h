@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况
                      * @return DealNames 订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 设置订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况
-                     * @param DealNames 订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况
+                     * @param _dealNames 订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况
+                     * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 

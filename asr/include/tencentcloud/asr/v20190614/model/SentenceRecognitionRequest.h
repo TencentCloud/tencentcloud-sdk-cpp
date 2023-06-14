@@ -85,6 +85,7 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
+                     * 
                      */
                     std::string GetEngSerViceType() const;
 
@@ -110,7 +111,7 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
-                     * @param EngSerViceType 引擎模型类型。
+                     * @param _engSerViceType 引擎模型类型。
 电话场景：
 • 8k_zh：中文电话通用；
 • 8k_en：英文电话通用；
@@ -131,300 +132,350 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
+                     * 
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
 
                     /**
                      * 判断参数 EngSerViceType 是否已赋值
                      * @return EngSerViceType 是否已赋值
+                     * 
                      */
                     bool EngSerViceTypeHasBeenSet() const;
 
                     /**
                      * 获取语音数据来源。0：语音 URL；1：语音数据（post body）。
                      * @return SourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
                      * 设置语音数据来源。0：语音 URL；1：语音数据（post body）。
-                     * @param SourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * @param _sourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
                      * @return VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
+                     * 
                      */
                     std::string GetVoiceFormat() const;
 
                     /**
                      * 设置识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
-                     * @param VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
+                     * @param _voiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
+                     * 
                      */
                     void SetVoiceFormat(const std::string& _voiceFormat);
 
                     /**
                      * 判断参数 VoiceFormat 是否已赋值
                      * @return VoiceFormat 是否已赋值
+                     * 
                      */
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
                      * 获取腾讯云项目 ID，废弃参数，填写0即可。
                      * @return ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
+                     * @deprecated
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置腾讯云项目 ID，废弃参数，填写0即可。
-                     * @param ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
+                     * @param _projectId 腾讯云项目 ID，废弃参数，填写0即可。
+                     * @deprecated
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * @deprecated
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取子服务类型。2： 一句话识别。
                      * @return SubServiceType 子服务类型。2： 一句话识别。
+                     * @deprecated
                      */
                     uint64_t GetSubServiceType() const;
 
                     /**
                      * 设置子服务类型。2： 一句话识别。
-                     * @param SubServiceType 子服务类型。2： 一句话识别。
+                     * @param _subServiceType 子服务类型。2： 一句话识别。
+                     * @deprecated
                      */
                     void SetSubServiceType(const uint64_t& _subServiceType);
 
                     /**
                      * 判断参数 SubServiceType 是否已赋值
                      * @return SubServiceType 是否已赋值
+                     * @deprecated
                      */
                     bool SubServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
                      * @return Url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
-                     * @param Url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
+                     * @param _url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取废弃参数，填写任意字符串即可。
                      * @return UsrAudioKey 废弃参数，填写任意字符串即可。
+                     * @deprecated
                      */
                     std::string GetUsrAudioKey() const;
 
                     /**
                      * 设置废弃参数，填写任意字符串即可。
-                     * @param UsrAudioKey 废弃参数，填写任意字符串即可。
+                     * @param _usrAudioKey 废弃参数，填写任意字符串即可。
+                     * @deprecated
                      */
                     void SetUsrAudioKey(const std::string& _usrAudioKey);
 
                     /**
                      * 判断参数 UsrAudioKey 是否已赋值
                      * @return UsrAudioKey 是否已赋值
+                     * @deprecated
                      */
                     bool UsrAudioKeyHasBeenSet() const;
 
                     /**
                      * 获取语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
                      * @return Data 语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
-                     * @param Data 语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
+                     * @param _data 语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。
                      * @return DataLen 数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 
                      */
                     int64_t GetDataLen() const;
 
                     /**
                      * 设置数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。
-                     * @param DataLen 数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * @param _dataLen 数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 
                      */
                     void SetDataLen(const int64_t& _dataLen);
 
                     /**
                      * 判断参数 DataLen 是否已赋值
                      * @return DataLen 是否已赋值
+                     * 
                      */
                     bool DataLenHasBeenSet() const;
 
                     /**
                      * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * 
                      */
                     int64_t GetWordInfo() const;
 
                     /**
                      * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
-                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * @param _wordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * 
                      */
                     void SetWordInfo(const int64_t& _wordInfo);
 
                     /**
                      * 判断参数 WordInfo 是否已赋值
                      * @return WordInfo 是否已赋值
+                     * 
                      */
                     bool WordInfoHasBeenSet() const;
 
                     /**
                      * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
                      * @return FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterDirty() const;
 
                     /**
                      * 设置是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
-                     * @param FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * @param _filterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * 
                      */
                     void SetFilterDirty(const int64_t& _filterDirty);
 
                     /**
                      * 判断参数 FilterDirty 是否已赋值
                      * @return FilterDirty 是否已赋值
+                     * 
                      */
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
                      * 获取是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
                      * @return FilterModal 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterModal() const;
 
                     /**
                      * 设置是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @param FilterModal 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @param _filterModal 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 
                      */
                     void SetFilterModal(const int64_t& _filterModal);
 
                     /**
                      * 判断参数 FilterModal 是否已赋值
                      * @return FilterModal 是否已赋值
+                     * 
                      */
                     bool FilterModalHasBeenSet() const;
 
                     /**
                      * 获取是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
                      * @return FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterPunc() const;
 
                     /**
                      * 设置是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
-                     * @param FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * @param _filterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * 
                      */
                     void SetFilterPunc(const int64_t& _filterPunc);
 
                     /**
                      * 判断参数 FilterPunc 是否已赋值
                      * @return FilterPunc 是否已赋值
+                     * 
                      */
                     bool FilterPuncHasBeenSet() const;
 
                     /**
                      * 获取是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。
                      * @return ConvertNumMode 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。
+                     * 
                      */
                     int64_t GetConvertNumMode() const;
 
                     /**
                      * 设置是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。
-                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。
+                     * @param _convertNumMode 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。
+                     * 
                      */
                     void SetConvertNumMode(const int64_t& _convertNumMode);
 
                     /**
                      * 判断参数 ConvertNumMode 是否已赋值
                      * @return ConvertNumMode 是否已赋值
+                     * 
                      */
                     bool ConvertNumModeHasBeenSet() const;
 
                     /**
                      * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
                      * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 
                      */
                     std::string GetHotwordId() const;
 
                     /**
                      * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * @param _hotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 
                      */
                     void SetHotwordId(const std::string& _hotwordId);
 
                     /**
                      * 判断参数 HotwordId 是否已赋值
                      * @return HotwordId 是否已赋值
+                     * 
                      */
                     bool HotwordIdHasBeenSet() const;
 
                     /**
                      * 获取自学习模型 id。如设置了该参数，将生效对应的自学习模型。
                      * @return CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * 
                      */
                     std::string GetCustomizationId() const;
 
                     /**
                      * 设置自学习模型 id。如设置了该参数，将生效对应的自学习模型。
-                     * @param CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @param _customizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * 
                      */
                     void SetCustomizationId(const std::string& _customizationId);
 
                     /**
                      * 判断参数 CustomizationId 是否已赋值
                      * @return CustomizationId 是否已赋值
+                     * 
                      */
                     bool CustomizationIdHasBeenSet() const;
 
                     /**
                      * 获取热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
                      * @return ReinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * 
                      */
                     int64_t GetReinforceHotword() const;
 
                     /**
                      * 设置热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
-                     * @param ReinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * @param _reinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * 
                      */
                     void SetReinforceHotword(const int64_t& _reinforceHotword);
 
                     /**
                      * 判断参数 ReinforceHotword 是否已赋值
                      * @return ReinforceHotword 是否已赋值
+                     * 
                      */
                     bool ReinforceHotwordHasBeenSet() const;
 
@@ -433,20 +484,23 @@ namespace TencentCloud
 “临时热词”和“热词id”的区别：热词id需要先在控制台或通过接口创建热词表，得到热词表id后才可以使用热词功能，本字段可以在每次请求时直接传入热词使用，但每次请求后云端不会保留相关的热词数据，需要客户自行维护相关数据
                      * @return HotwordList 临时热词：用于提升识别准确率，临时热词规则：“热词|权重”，热词不超过30个字符（最多10个汉字），权重1-10，最多传入128个热词。举例："腾讯云|10,语音识别|5,ASR|10"。
 “临时热词”和“热词id”的区别：热词id需要先在控制台或通过接口创建热词表，得到热词表id后才可以使用热词功能，本字段可以在每次请求时直接传入热词使用，但每次请求后云端不会保留相关的热词数据，需要客户自行维护相关数据
+                     * 
                      */
                     std::string GetHotwordList() const;
 
                     /**
                      * 设置临时热词：用于提升识别准确率，临时热词规则：“热词|权重”，热词不超过30个字符（最多10个汉字），权重1-10，最多传入128个热词。举例："腾讯云|10,语音识别|5,ASR|10"。
 “临时热词”和“热词id”的区别：热词id需要先在控制台或通过接口创建热词表，得到热词表id后才可以使用热词功能，本字段可以在每次请求时直接传入热词使用，但每次请求后云端不会保留相关的热词数据，需要客户自行维护相关数据
-                     * @param HotwordList 临时热词：用于提升识别准确率，临时热词规则：“热词|权重”，热词不超过30个字符（最多10个汉字），权重1-10，最多传入128个热词。举例："腾讯云|10,语音识别|5,ASR|10"。
+                     * @param _hotwordList 临时热词：用于提升识别准确率，临时热词规则：“热词|权重”，热词不超过30个字符（最多10个汉字），权重1-10，最多传入128个热词。举例："腾讯云|10,语音识别|5,ASR|10"。
 “临时热词”和“热词id”的区别：热词id需要先在控制台或通过接口创建热词表，得到热词表id后才可以使用热词功能，本字段可以在每次请求时直接传入热词使用，但每次请求后云端不会保留相关的热词数据，需要客户自行维护相关数据
+                     * 
                      */
                     void SetHotwordList(const std::string& _hotwordList);
 
                     /**
                      * 判断参数 HotwordList 是否已赋值
                      * @return HotwordList 是否已赋值
+                     * 
                      */
                     bool HotwordListHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取计算环境列表
                      * @return ComputeEnvSet 计算环境列表
+                     * 
                      */
                     std::vector<ComputeEnvView> GetComputeEnvSet() const;
 
                     /**
                      * 判断参数 ComputeEnvSet 是否已赋值
                      * @return ComputeEnvSet 是否已赋值
+                     * 
                      */
                     bool ComputeEnvSetHasBeenSet() const;
 
                     /**
                      * 获取计算环境数量
                      * @return TotalCount 计算环境数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

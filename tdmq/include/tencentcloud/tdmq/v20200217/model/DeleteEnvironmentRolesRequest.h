@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取角色名称数组。
                      * @return RoleNames 角色名称数组。
+                     * 
                      */
                     std::vector<std::string> GetRoleNames() const;
 
                     /**
                      * 设置角色名称数组。
-                     * @param RoleNames 角色名称数组。
+                     * @param _roleNames 角色名称数组。
+                     * 
                      */
                     void SetRoleNames(const std::vector<std::string>& _roleNames);
 
                     /**
                      * 判断参数 RoleNames 是否已赋值
                      * @return RoleNames 是否已赋值
+                     * 
                      */
                     bool RoleNamesHasBeenSet() const;
 
                     /**
                      * 获取必填字段，集群的ID
                      * @return ClusterId 必填字段，集群的ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置必填字段，集群的ID
-                     * @param ClusterId 必填字段，集群的ID
+                     * @param _clusterId 必填字段，集群的ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

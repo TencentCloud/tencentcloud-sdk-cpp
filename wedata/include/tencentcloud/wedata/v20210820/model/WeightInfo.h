@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取权重
                      * @return Weight 权重
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重
-                     * @param Weight 权重
+                     * @param _weight 权重
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取维度类型 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
                      * @return QualityDim 维度类型 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 
                      */
                     int64_t GetQualityDim() const;
 
                     /**
                      * 设置维度类型 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
-                     * @param QualityDim 维度类型 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * @param _qualityDim 维度类型 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+                     * 
                      */
                     void SetQualityDim(const int64_t& _qualityDim);
 
                     /**
                      * 判断参数 QualityDim 是否已赋值
                      * @return QualityDim 是否已赋值
+                     * 
                      */
                     bool QualityDimHasBeenSet() const;
 

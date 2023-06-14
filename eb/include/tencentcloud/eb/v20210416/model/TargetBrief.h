@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取目标ID
                      * @return TargetId 目标ID
+                     * 
                      */
                     std::string GetTargetId() const;
 
                     /**
                      * 设置目标ID
-                     * @param TargetId 目标ID
+                     * @param _targetId 目标ID
+                     * 
                      */
                     void SetTargetId(const std::string& _targetId);
 
                     /**
                      * 判断参数 TargetId 是否已赋值
                      * @return TargetId 是否已赋值
+                     * 
                      */
                     bool TargetIdHasBeenSet() const;
 
                     /**
                      * 获取目标类型
                      * @return Type 目标类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置目标类型
-                     * @param Type 目标类型
+                     * @param _type 目标类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取修改内容
                      * @return Template 修改内容
+                     * 
                      */
                     PrometheusTempModify GetTemplate() const;
 
                     /**
                      * 设置修改内容
-                     * @param Template 修改内容
+                     * @param _template 修改内容
+                     * 
                      */
                     void SetTemplate(const PrometheusTempModify& _template);
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 

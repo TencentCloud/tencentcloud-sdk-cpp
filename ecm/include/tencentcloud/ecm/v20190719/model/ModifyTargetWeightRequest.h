@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID
                      * @return LoadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID
-                     * @param LoadBalancerId 负载均衡实例 ID
+                     * @param _loadBalancerId 负载均衡实例 ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器 ID
                      * @return ListenerId 负载均衡监听器 ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * @param _listenerId 负载均衡监听器 ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取要修改权重的后端服务列表
                      * @return Targets 要修改权重的后端服务列表
+                     * 
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
                      * 设置要修改权重的后端服务列表
-                     * @param Targets 要修改权重的后端服务列表
+                     * @param _targets 要修改权重的后端服务列表
+                     * 
                      */
                     void SetTargets(const std::vector<Target>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
                     /**
                      * 获取后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
                      * @return Weight 后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
-                     * @param Weight 后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
+                     * @param _weight 后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

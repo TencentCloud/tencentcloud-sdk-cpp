@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取检索的键值
                      * @return Name 检索的键值
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置检索的键值
-                     * @param Name 检索的键值
+                     * @param _name 检索的键值
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取检索的值，各检索值间为OR关系
                      * @return Values 检索的值，各检索值间为OR关系
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置检索的值，各检索值间为OR关系
-                     * @param Values 检索的值，各检索值间为OR关系
+                     * @param _values 检索的值，各检索值间为OR关系
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
@@ -121,6 +127,7 @@ enum FilterOperatorType {
     //模糊匹配
     FILTER_OPERATOR_TYPE_FUZZINESS = 9;
 }
+                     * 
                      */
                     int64_t GetOperatorType() const;
 
@@ -144,7 +151,7 @@ enum FilterOperatorType {
     //模糊匹配
     FILTER_OPERATOR_TYPE_FUZZINESS = 9;
 }
-                     * @param OperatorType 枚举类型，代表Name与Values之间的匹配关系
+                     * @param _operatorType 枚举类型，代表Name与Values之间的匹配关系
 enum FilterOperatorType {
     //等于
     FILTER_OPERATOR_TYPE_EQUAL = 1;
@@ -163,12 +170,14 @@ enum FilterOperatorType {
     //模糊匹配
     FILTER_OPERATOR_TYPE_FUZZINESS = 9;
 }
+                     * 
                      */
                     void SetOperatorType(const int64_t& _operatorType);
 
                     /**
                      * 判断参数 OperatorType 是否已赋值
                      * @return OperatorType 是否已赋值
+                     * 
                      */
                     bool OperatorTypeHasBeenSet() const;
 

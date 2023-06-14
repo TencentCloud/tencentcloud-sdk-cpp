@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取被复制的项目 ID。
                      * @return ProjectId 被复制的项目 ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置被复制的项目 ID。
-                     * @param ProjectId 被复制的项目 ID。
+                     * @param _projectId 被复制的项目 ID。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取复制后的项目名称，不填为原项目名称+"(副本)"。
                      * @return Name 复制后的项目名称，不填为原项目名称+"(副本)"。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置复制后的项目名称，不填为原项目名称+"(副本)"。
-                     * @param Name 复制后的项目名称，不填为原项目名称+"(副本)"。
+                     * @param _name 复制后的项目名称，不填为原项目名称+"(副本)"。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取复制后的项目归属者，不填为原项目归属者。
                      * @return Owner 复制后的项目归属者，不填为原项目归属者。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置复制后的项目归属者，不填为原项目归属者。
-                     * @param Owner 复制后的项目归属者，不填为原项目归属者。
+                     * @param _owner 复制后的项目归属者，不填为原项目归属者。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
                      * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。填写用户的 Id，用于标识调用者及校验操作权限。
-                     * @param Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * @param _operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

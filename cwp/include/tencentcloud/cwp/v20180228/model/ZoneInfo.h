@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取可用区名称
                      * @return ZoneName 可用区名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区名称
-                     * @param ZoneName 可用区名称
+                     * @param _zoneName 可用区名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 

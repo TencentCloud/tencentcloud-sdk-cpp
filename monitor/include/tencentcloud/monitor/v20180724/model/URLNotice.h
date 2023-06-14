@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 回调 url（限长256字符）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置回调 url（限长256字符）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param URL 回调 url（限长256字符）
+                     * @param _uRL 回调 url（限长256字符）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetURL(const std::string& _uRL);
 
                     /**
                      * 判断参数 URL 是否已赋值
                      * @return URL 是否已赋值
+                     * 
                      */
                     bool URLHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsValid 是否通过验证 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsValid() const;
 
                     /**
                      * 设置是否通过验证 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsValid 是否通过验证 0=否 1=是
+                     * @param _isValid 是否通过验证 0=否 1=是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsValid(const int64_t& _isValid);
 
                     /**
                      * 判断参数 IsValid 是否已赋值
                      * @return IsValid 是否已赋值
+                     * 
                      */
                     bool IsValidHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidationCode 验证码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValidationCode() const;
 
                     /**
                      * 设置验证码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValidationCode 验证码
+                     * @param _validationCode 验证码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValidationCode(const std::string& _validationCode);
 
                     /**
                      * 判断参数 ValidationCode 是否已赋值
                      * @return ValidationCode 是否已赋值
+                     * 
                      */
                     bool ValidationCodeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 通知开始时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置通知开始时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 通知开始时间 一天开始的秒数
+                     * @param _startTime 通知开始时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 通知结束时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置通知结束时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 通知结束时间 一天开始的秒数
+                     * @param _endTime 通知结束时间 一天开始的秒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weekday 通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetWeekday() const;
 
                     /**
                      * 设置通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weekday 通知周期 1-7表示周一到周日
+                     * @param _weekday 通知周期 1-7表示周一到周日
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeekday(const std::vector<int64_t>& _weekday);
 
                     /**
                      * 判断参数 Weekday 是否已赋值
                      * @return Weekday 是否已赋值
+                     * 
                      */
                     bool WeekdayHasBeenSet() const;
 

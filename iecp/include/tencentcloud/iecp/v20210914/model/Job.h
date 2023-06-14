@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取并发数
                      * @return Parallelism 并发数
+                     * 
                      */
                     int64_t GetParallelism() const;
 
                     /**
                      * 设置并发数
-                     * @param Parallelism 并发数
+                     * @param _parallelism 并发数
+                     * 
                      */
                     void SetParallelism(const int64_t& _parallelism);
 
                     /**
                      * 判断参数 Parallelism 是否已赋值
                      * @return Parallelism 是否已赋值
+                     * 
                      */
                     bool ParallelismHasBeenSet() const;
 
                     /**
                      * 获取完成数
                      * @return Completion 完成数
+                     * 
                      */
                     int64_t GetCompletion() const;
 
                     /**
                      * 设置完成数
-                     * @param Completion 完成数
+                     * @param _completion 完成数
+                     * 
                      */
                     void SetCompletion(const int64_t& _completion);
 
                     /**
                      * 判断参数 Completion 是否已赋值
                      * @return Completion 是否已赋值
+                     * 
                      */
                     bool CompletionHasBeenSet() const;
 
                     /**
                      * 获取最大运行时间
                      * @return ActiveDeadlineSeconds 最大运行时间
+                     * 
                      */
                     int64_t GetActiveDeadlineSeconds() const;
 
                     /**
                      * 设置最大运行时间
-                     * @param ActiveDeadlineSeconds 最大运行时间
+                     * @param _activeDeadlineSeconds 最大运行时间
+                     * 
                      */
                     void SetActiveDeadlineSeconds(const int64_t& _activeDeadlineSeconds);
 
                     /**
                      * 判断参数 ActiveDeadlineSeconds 是否已赋值
                      * @return ActiveDeadlineSeconds 是否已赋值
+                     * 
                      */
                     bool ActiveDeadlineSecondsHasBeenSet() const;
 
                     /**
                      * 获取失败前重试次数
                      * @return BackOffLimit 失败前重试次数
+                     * 
                      */
                     int64_t GetBackOffLimit() const;
 
                     /**
                      * 设置失败前重试次数
-                     * @param BackOffLimit 失败前重试次数
+                     * @param _backOffLimit 失败前重试次数
+                     * 
                      */
                     void SetBackOffLimit(const int64_t& _backOffLimit);
 
                     /**
                      * 判断参数 BackOffLimit 是否已赋值
                      * @return BackOffLimit 是否已赋值
+                     * 
                      */
                     bool BackOffLimitHasBeenSet() const;
 

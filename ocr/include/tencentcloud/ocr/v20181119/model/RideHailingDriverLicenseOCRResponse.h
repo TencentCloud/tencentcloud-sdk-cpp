@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号
                      * @return LicenseNumber 证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号
+                     * 
                      */
                     std::string GetLicenseNumber() const;
 
                     /**
                      * 判断参数 LicenseNumber 是否已赋值
                      * @return LicenseNumber 是否已赋值
+                     * 
                      */
                     bool LicenseNumberHasBeenSet() const;
 
                     /**
                      * 获取有效起始日期
                      * @return StartDate 有效起始日期
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止
                      * @return EndDate 有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期
                      * @return ReleaseDate 初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期
+                     * 
                      */
                     std::string GetReleaseDate() const;
 
                     /**
                      * 判断参数 ReleaseDate 是否已赋值
                      * @return ReleaseDate 是否已赋值
+                     * 
                      */
                     bool ReleaseDateHasBeenSet() const;
 

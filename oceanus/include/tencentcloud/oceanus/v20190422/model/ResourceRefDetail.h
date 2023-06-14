@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取资源id
                      * @return ResourceId 资源id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
-                     * @param ResourceId 资源id
+                     * @param _resourceId 资源id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源版本，-1表示使用最新版本
                      * @return Version 资源版本，-1表示使用最新版本
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置资源版本，-1表示使用最新版本
-                     * @param Version 资源版本，-1表示使用最新版本
+                     * @param _version 资源版本，-1表示使用最新版本
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取资源名称
                      * @return Name 资源名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称
-                     * @param Name 资源名称
+                     * @param _name 资源名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取1: 主资源
                      * @return Type 1: 主资源
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置1: 主资源
-                     * @param Type 1: 主资源
+                     * @param _type 1: 主资源
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取1: 系统内置资源
                      * @return SystemProvide 1: 系统内置资源
+                     * 
                      */
                     int64_t GetSystemProvide() const;
 
                     /**
                      * 设置1: 系统内置资源
-                     * @param SystemProvide 1: 系统内置资源
+                     * @param _systemProvide 1: 系统内置资源
+                     * 
                      */
                     void SetSystemProvide(const int64_t& _systemProvide);
 
                     /**
                      * 判断参数 SystemProvide 是否已赋值
                      * @return SystemProvide 是否已赋值
+                     * 
                      */
                     bool SystemProvideHasBeenSet() const;
 

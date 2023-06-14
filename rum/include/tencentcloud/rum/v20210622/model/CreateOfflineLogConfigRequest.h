@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目唯一上报 key
                      * @return ProjectKey 项目唯一上报 key
+                     * 
                      */
                     std::string GetProjectKey() const;
 
                     /**
                      * 设置项目唯一上报 key
-                     * @param ProjectKey 项目唯一上报 key
+                     * @param _projectKey 项目唯一上报 key
+                     * 
                      */
                     void SetProjectKey(const std::string& _projectKey);
 
                     /**
                      * 判断参数 ProjectKey 是否已赋值
                      * @return ProjectKey 是否已赋值
+                     * 
                      */
                     bool ProjectKeyHasBeenSet() const;
 
                     /**
                      * 获取需要监听的用户唯一标示(aid 或 uin)
                      * @return UniqueID 需要监听的用户唯一标示(aid 或 uin)
+                     * 
                      */
                     std::string GetUniqueID() const;
 
                     /**
                      * 设置需要监听的用户唯一标示(aid 或 uin)
-                     * @param UniqueID 需要监听的用户唯一标示(aid 或 uin)
+                     * @param _uniqueID 需要监听的用户唯一标示(aid 或 uin)
+                     * 
                      */
                     void SetUniqueID(const std::string& _uniqueID);
 
                     /**
                      * 判断参数 UniqueID 是否已赋值
                      * @return UniqueID 是否已赋值
+                     * 
                      */
                     bool UniqueIDHasBeenSet() const;
 

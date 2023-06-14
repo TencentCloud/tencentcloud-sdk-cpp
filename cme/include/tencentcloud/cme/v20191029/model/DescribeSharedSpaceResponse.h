@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取查询到的共享空间总数。
                      * @return TotalCount 查询到的共享空间总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取各个共享空间对应的授权者信息。
                      * @return AuthorizerSet 各个共享空间对应的授权者信息。
+                     * 
                      */
                     std::vector<Authorizer> GetAuthorizerSet() const;
 
                     /**
                      * 判断参数 AuthorizerSet 是否已赋值
                      * @return AuthorizerSet 是否已赋值
+                     * 
                      */
                     bool AuthorizerSetHasBeenSet() const;
 

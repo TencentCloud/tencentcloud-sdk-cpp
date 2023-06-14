@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountCode 第三方账号代码。"2"代表企业微信。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountCode() const;
 
                     /**
                      * 设置第三方账号代码。"2"代表企业微信。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountCode 第三方账号代码。"2"代表企业微信。
+                     * @param _accountCode 第三方账号代码。"2"代表企业微信。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountCode(const std::string& _accountCode);
 
                     /**
                      * 判断参数 AccountCode 是否已赋值
                      * @return AccountCode 是否已赋值
+                     * 
                      */
                     bool AccountCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 账号对应的用户名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号对应的用户名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountName 账号对应的用户名。
+                     * @param _accountName 账号对应的用户名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 

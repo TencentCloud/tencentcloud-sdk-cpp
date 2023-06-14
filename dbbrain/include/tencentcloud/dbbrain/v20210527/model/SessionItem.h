@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取访问来源。
                      * @return Ip 访问来源。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置访问来源。
-                     * @param Ip 访问来源。
+                     * @param _ip 访问来源。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取当前访问来源活跃连接数
                      * @return ActiveConn 当前访问来源活跃连接数
+                     * 
                      */
                     std::string GetActiveConn() const;
 
                     /**
                      * 设置当前访问来源活跃连接数
-                     * @param ActiveConn 当前访问来源活跃连接数
+                     * @param _activeConn 当前访问来源活跃连接数
+                     * 
                      */
                     void SetActiveConn(const std::string& _activeConn);
 
                     /**
                      * 判断参数 ActiveConn 是否已赋值
                      * @return ActiveConn 是否已赋值
+                     * 
                      */
                     bool ActiveConnHasBeenSet() const;
 
                     /**
                      * 获取当前访问来源总连接数
                      * @return AllConn 当前访问来源总连接数
+                     * 
                      */
                     int64_t GetAllConn() const;
 
                     /**
                      * 设置当前访问来源总连接数
-                     * @param AllConn 当前访问来源总连接数
+                     * @param _allConn 当前访问来源总连接数
+                     * 
                      */
                     void SetAllConn(const int64_t& _allConn);
 
                     /**
                      * 判断参数 AllConn 是否已赋值
                      * @return AllConn 是否已赋值
+                     * 
                      */
                     bool AllConnHasBeenSet() const;
 

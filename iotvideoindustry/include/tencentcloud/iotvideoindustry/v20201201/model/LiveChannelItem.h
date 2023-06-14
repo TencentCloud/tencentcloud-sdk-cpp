@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取频道ID
                      * @return ChannelId 频道ID
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置频道ID
-                     * @param ChannelId 频道ID
+                     * @param _channelId 频道ID
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 
                     /**
                      * 获取频道名称
                      * @return ChannelName 频道名称
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置频道名称
-                     * @param ChannelName 频道名称
+                     * @param _channelName 频道名称
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 

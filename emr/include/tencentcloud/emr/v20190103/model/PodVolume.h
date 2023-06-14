@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeType 存储类型，可为"pvc"，"hostpath"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVolumeType() const;
 
                     /**
                      * 设置存储类型，可为"pvc"，"hostpath"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VolumeType 存储类型，可为"pvc"，"hostpath"。
+                     * @param _volumeType 存储类型，可为"pvc"，"hostpath"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVolumeType(const std::string& _volumeType);
 
                     /**
                      * 判断参数 VolumeType 是否已赋值
                      * @return VolumeType 是否已赋值
+                     * 
                      */
                     bool VolumeTypeHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PVCVolume 当VolumeType为"pvc"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PersistentVolumeContext GetPVCVolume() const;
 
                     /**
                      * 设置当VolumeType为"pvc"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PVCVolume 当VolumeType为"pvc"时，该字段生效。
+                     * @param _pVCVolume 当VolumeType为"pvc"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPVCVolume(const PersistentVolumeContext& _pVCVolume);
 
                     /**
                      * 判断参数 PVCVolume 是否已赋值
                      * @return PVCVolume 是否已赋值
+                     * 
                      */
                     bool PVCVolumeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostVolume 当VolumeType为"hostpath"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HostVolumeContext GetHostVolume() const;
 
                     /**
                      * 设置当VolumeType为"hostpath"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostVolume 当VolumeType为"hostpath"时，该字段生效。
+                     * @param _hostVolume 当VolumeType为"hostpath"时，该字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostVolume(const HostVolumeContext& _hostVolume);
 
                     /**
                      * 判断参数 HostVolume 是否已赋值
                      * @return HostVolume 是否已赋值
+                     * 
                      */
                     bool HostVolumeHasBeenSet() const;
 

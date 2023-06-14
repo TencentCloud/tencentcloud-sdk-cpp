@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取更新成功的用户列表
                      * @return SuccessEmployeeData 更新成功的用户列表
+                     * 
                      */
                     std::vector<SuccessUpdateStaffData> GetSuccessEmployeeData() const;
 
                     /**
                      * 判断参数 SuccessEmployeeData 是否已赋值
                      * @return SuccessEmployeeData 是否已赋值
+                     * 
                      */
                     bool SuccessEmployeeDataHasBeenSet() const;
 
                     /**
                      * 获取更新失败的用户列表
                      * @return FailedEmployeeData 更新失败的用户列表
+                     * 
                      */
                     std::vector<FailedUpdateStaffData> GetFailedEmployeeData() const;
 
                     /**
                      * 判断参数 FailedEmployeeData 是否已赋值
                      * @return FailedEmployeeData 是否已赋值
+                     * 
                      */
                     bool FailedEmployeeDataHasBeenSet() const;
 

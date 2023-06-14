@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取规则ID(新增时请留空)
                      * @return Id 规则ID(新增时请留空)
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则ID(新增时请留空)
-                     * @param Id 规则ID(新增时请留空)
+                     * @param _id 规则ID(新增时请留空)
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
                      * @return Uuid 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @param Uuid 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * @param _uuid 客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
                      * @return Hostip 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 
                      */
                     std::string GetHostip() const;
 
                     /**
                      * 设置主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
-                     * @param Hostip 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * @param _hostip 主机IP(IsGlobal为1时，Uuid或Hostip必填一个)
+                     * 
                      */
                     void SetHostip(const std::string& _hostip);
 
                     /**
                      * 判断参数 Hostip 是否已赋值
                      * @return Hostip 是否已赋值
+                     * 
                      */
                     bool HostipHasBeenSet() const;
 
                     /**
                      * 获取目标IP
                      * @return DestIp 目标IP
+                     * 
                      */
                     std::string GetDestIp() const;
 
                     /**
                      * 设置目标IP
-                     * @param DestIp 目标IP
+                     * @param _destIp 目标IP
+                     * 
                      */
                     void SetDestIp(const std::string& _destIp);
 
                     /**
                      * 判断参数 DestIp 是否已赋值
                      * @return DestIp 是否已赋值
+                     * 
                      */
                     bool DestIpHasBeenSet() const;
 
                     /**
                      * 获取目标端口
                      * @return DestPort 目标端口
+                     * 
                      */
                     std::string GetDestPort() const;
 
                     /**
                      * 设置目标端口
-                     * @param DestPort 目标端口
+                     * @param _destPort 目标端口
+                     * 
                      */
                     void SetDestPort(const std::string& _destPort);
 
                     /**
                      * 判断参数 DestPort 是否已赋值
                      * @return DestPort 是否已赋值
+                     * 
                      */
                     bool DestPortHasBeenSet() const;
 
                     /**
                      * 获取进程名
                      * @return ProcessName 进程名
+                     * 
                      */
                     std::string GetProcessName() const;
 
                     /**
                      * 设置进程名
-                     * @param ProcessName 进程名
+                     * @param _processName 进程名
+                     * 
                      */
                     void SetProcessName(const std::string& _processName);
 
                     /**
                      * 判断参数 ProcessName 是否已赋值
                      * @return ProcessName 是否已赋值
+                     * 
                      */
                     bool ProcessNameHasBeenSet() const;
 
                     /**
                      * 获取是否全局规则(默认否)
                      * @return IsGlobal 是否全局规则(默认否)
+                     * 
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
                      * 设置是否全局规则(默认否)
-                     * @param IsGlobal 是否全局规则(默认否)
+                     * @param _isGlobal 是否全局规则(默认否)
+                     * 
                      */
                     void SetIsGlobal(const uint64_t& _isGlobal);
 
                     /**
                      * 判断参数 IsGlobal 是否已赋值
                      * @return IsGlobal 是否已赋值
+                     * 
                      */
                     bool IsGlobalHasBeenSet() const;
 

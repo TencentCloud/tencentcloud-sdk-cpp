@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取集群id-申请单id
                      * @return ApplicationId 集群id-申请单id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置集群id-申请单id
-                     * @param ApplicationId 集群id-申请单id
+                     * @param _applicationId 集群id-申请单id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。
                      * @return ApplicationStatus 处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。
+                     * 
                      */
                     int64_t GetApplicationStatus() const;
 
                     /**
                      * 设置处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。
-                     * @param ApplicationStatus 处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。
+                     * @param _applicationStatus 处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。
+                     * 
                      */
                     void SetApplicationStatus(const int64_t& _applicationStatus);
 
                     /**
                      * 判断参数 ApplicationStatus 是否已赋值
                      * @return ApplicationStatus 是否已赋值
+                     * 
                      */
                     bool ApplicationStatusHasBeenSet() const;
 
                     /**
                      * 获取申请单类型
                      * @return ApplicationType 申请单类型
+                     * 
                      */
                     int64_t GetApplicationType() const;
 
                     /**
                      * 设置申请单类型
-                     * @param ApplicationType 申请单类型
+                     * @param _applicationType 申请单类型
+                     * 
                      */
                     void SetApplicationType(const int64_t& _applicationType);
 
                     /**
                      * 判断参数 ApplicationType 是否已赋值
                      * @return ApplicationType 是否已赋值
+                     * 
                      */
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取域名别名ID
                      * @return DomainAliasId 域名别名ID
+                     * 
                      */
                     int64_t GetDomainAliasId() const;
 
                     /**
                      * 判断参数 DomainAliasId 是否已赋值
                      * @return DomainAliasId 是否已赋值
+                     * 
                      */
                     bool DomainAliasIdHasBeenSet() const;
 

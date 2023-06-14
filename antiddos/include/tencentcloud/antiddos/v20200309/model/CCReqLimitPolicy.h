@@ -50,144 +50,168 @@ namespace TencentCloud
                     /**
                      * 获取策略Id
                      * @return PolicyId 策略Id
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置策略Id
-                     * @param PolicyId 策略Id
+                     * @param _policyId 策略Id
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Ip地址
                      * @return Ip Ip地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Ip地址
-                     * @param Ip Ip地址
+                     * @param _ip Ip地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取协议，可取值HTTP，HTTPS
                      * @return Protocol 协议，可取值HTTP，HTTPS
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，可取值HTTP，HTTPS
-                     * @param Protocol 协议，可取值HTTP，HTTPS
+                     * @param _protocol 协议，可取值HTTP，HTTPS
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取策略项
                      * @return PolicyRecord 策略项
+                     * 
                      */
                     CCReqLimitPolicyRecord GetPolicyRecord() const;
 
                     /**
                      * 设置策略项
-                     * @param PolicyRecord 策略项
+                     * @param _policyRecord 策略项
+                     * 
                      */
                     void SetPolicyRecord(const CCReqLimitPolicyRecord& _policyRecord);
 
                     /**
                      * 判断参数 PolicyRecord 是否已赋值
                      * @return PolicyRecord 是否已赋值
+                     * 
                      */
                     bool PolicyRecordHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

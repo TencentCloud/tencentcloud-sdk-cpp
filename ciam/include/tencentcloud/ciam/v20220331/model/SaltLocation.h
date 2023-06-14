@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取密码加盐的类型（HEAD，TAIL，OTHER）
                      * @return SaltLocationTypeEnum 密码加盐的类型（HEAD，TAIL，OTHER）
+                     * 
                      */
                     std::string GetSaltLocationTypeEnum() const;
 
                     /**
                      * 设置密码加盐的类型（HEAD，TAIL，OTHER）
-                     * @param SaltLocationTypeEnum 密码加盐的类型（HEAD，TAIL，OTHER）
+                     * @param _saltLocationTypeEnum 密码加盐的类型（HEAD，TAIL，OTHER）
+                     * 
                      */
                     void SetSaltLocationTypeEnum(const std::string& _saltLocationTypeEnum);
 
                     /**
                      * 判断参数 SaltLocationTypeEnum 是否已赋值
                      * @return SaltLocationTypeEnum 是否已赋值
+                     * 
                      */
                     bool SaltLocationTypeEnumHasBeenSet() const;
 
                     /**
                      * 获取加盐规则
                      * @return SaltLocationRule 加盐规则
+                     * 
                      */
                     SaltLocationRule GetSaltLocationRule() const;
 
                     /**
                      * 设置加盐规则
-                     * @param SaltLocationRule 加盐规则
+                     * @param _saltLocationRule 加盐规则
+                     * 
                      */
                     void SetSaltLocationRule(const SaltLocationRule& _saltLocationRule);
 
                     /**
                      * 判断参数 SaltLocationRule 是否已赋值
                      * @return SaltLocationRule 是否已赋值
+                     * 
                      */
                     bool SaltLocationRuleHasBeenSet() const;
 

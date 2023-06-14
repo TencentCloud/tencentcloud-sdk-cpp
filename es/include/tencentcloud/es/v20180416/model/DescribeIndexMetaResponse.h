@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexMetaField 索引元数据字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     IndexMetaField GetIndexMetaField() const;
 
                     /**
                      * 判断参数 IndexMetaField 是否已赋值
                      * @return IndexMetaField 是否已赋值
+                     * 
                      */
                     bool IndexMetaFieldHasBeenSet() const;
 

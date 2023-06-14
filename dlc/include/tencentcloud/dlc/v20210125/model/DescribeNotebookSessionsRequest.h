@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取DLC Spark作业引擎名称
                      * @return DataEngineName DLC Spark作业引擎名称
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置DLC Spark作业引擎名称
-                     * @param DataEngineName DLC Spark作业引擎名称
+                     * @param _dataEngineName DLC Spark作业引擎名称
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
                      * 获取Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
                      * @return State Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * 
                      */
                     std::vector<std::string> GetState() const;
 
                     /**
                      * 设置Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
-                     * @param State Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * @param _state Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * 
                      */
                     void SetState(const std::vector<std::string>& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取排序字段（默认按创建时间）
                      * @return SortFields 排序字段（默认按创建时间）
+                     * 
                      */
                     std::vector<std::string> GetSortFields() const;
 
                     /**
                      * 设置排序字段（默认按创建时间）
-                     * @param SortFields 排序字段（默认按创建时间）
+                     * @param _sortFields 排序字段（默认按创建时间）
+                     * 
                      */
                     void SetSortFields(const std::vector<std::string>& _sortFields);
 
                     /**
                      * 判断参数 SortFields 是否已赋值
                      * @return SortFields 是否已赋值
+                     * 
                      */
                     bool SortFieldsHasBeenSet() const;
 
                     /**
                      * 获取排序字段：true：升序、false：降序（默认）
                      * @return Asc 排序字段：true：升序、false：降序（默认）
+                     * 
                      */
                     bool GetAsc() const;
 
                     /**
                      * 设置排序字段：true：升序、false：降序（默认）
-                     * @param Asc 排序字段：true：升序、false：降序（默认）
+                     * @param _asc 排序字段：true：升序、false：降序（默认）
+                     * 
                      */
                     void SetAsc(const bool& _asc);
 
                     /**
                      * 判断参数 Asc 是否已赋值
                      * @return Asc 是否已赋值
+                     * 
                      */
                     bool AscHasBeenSet() const;
 
                     /**
                      * 获取分页字段
                      * @return Limit 分页字段
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页字段
-                     * @param Limit 分页字段
+                     * @param _limit 分页字段
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页字段
                      * @return Offset 分页字段
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页字段
-                     * @param Offset 分页字段
+                     * @param _offset 分页字段
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

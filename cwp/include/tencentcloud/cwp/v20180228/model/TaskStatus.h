@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取扫描中（包含初始化）
                      * @return Scanning 扫描中（包含初始化）
+                     * 
                      */
                     std::string GetScanning() const;
 
                     /**
                      * 设置扫描中（包含初始化）
-                     * @param Scanning 扫描中（包含初始化）
+                     * @param _scanning 扫描中（包含初始化）
+                     * 
                      */
                     void SetScanning(const std::string& _scanning);
 
                     /**
                      * 判断参数 Scanning 是否已赋值
                      * @return Scanning 是否已赋值
+                     * 
                      */
                     bool ScanningHasBeenSet() const;
 
                     /**
                      * 获取扫描终止（包含终止中）
                      * @return Ok 扫描终止（包含终止中）
+                     * 
                      */
                     std::string GetOk() const;
 
                     /**
                      * 设置扫描终止（包含终止中）
-                     * @param Ok 扫描终止（包含终止中）
+                     * @param _ok 扫描终止（包含终止中）
+                     * 
                      */
                     void SetOk(const std::string& _ok);
 
                     /**
                      * 判断参数 Ok 是否已赋值
                      * @return Ok 是否已赋值
+                     * 
                      */
                     bool OkHasBeenSet() const;
 
                     /**
                      * 获取扫描失败
                      * @return Fail 扫描失败
+                     * 
                      */
                     std::string GetFail() const;
 
                     /**
                      * 设置扫描失败
-                     * @param Fail 扫描失败
+                     * @param _fail 扫描失败
+                     * 
                      */
                     void SetFail(const std::string& _fail);
 
                     /**
                      * 判断参数 Fail 是否已赋值
                      * @return Fail 是否已赋值
+                     * 
                      */
                     bool FailHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stop 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStop() const;
 
                     /**
                      * 设置扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Stop 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
+                     * @param _stop 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStop(const std::string& _stop);
 
                     /**
                      * 判断参数 Stop 是否已赋值
                      * @return Stop 是否已赋值
+                     * 
                      */
                     bool StopHasBeenSet() const;
 

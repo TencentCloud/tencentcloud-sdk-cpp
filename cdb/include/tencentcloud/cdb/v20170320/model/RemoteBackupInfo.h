@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取异地备份子任务的ID
                      * @return SubBackupId 异地备份子任务的ID
+                     * 
                      */
                     std::vector<int64_t> GetSubBackupId() const;
 
                     /**
                      * 设置异地备份子任务的ID
-                     * @param SubBackupId 异地备份子任务的ID
+                     * @param _subBackupId 异地备份子任务的ID
+                     * 
                      */
                     void SetSubBackupId(const std::vector<int64_t>& _subBackupId);
 
                     /**
                      * 判断参数 SubBackupId 是否已赋值
                      * @return SubBackupId 是否已赋值
+                     * 
                      */
                     bool SubBackupIdHasBeenSet() const;
 
                     /**
                      * 获取异地备份所在地域
                      * @return Region 异地备份所在地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置异地备份所在地域
-                     * @param Region 异地备份所在地域
+                     * @param _region 异地备份所在地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
                      * @return Status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
-                     * @param Status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * @param _status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取异地备份任务的开始时间
                      * @return StartTime 异地备份任务的开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置异地备份任务的开始时间
-                     * @param StartTime 异地备份任务的开始时间
+                     * @param _startTime 异地备份任务的开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取异地备份任务的结束时间
                      * @return FinishTime 异地备份任务的结束时间
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置异地备份任务的结束时间
-                     * @param FinishTime 异地备份任务的结束时间
+                     * @param _finishTime 异地备份任务的结束时间
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取下载地址
                      * @return Url 下载地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载地址
-                     * @param Url 下载地址
+                     * @param _url 下载地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 该字段用于返回检测结果需要检测的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置该字段用于返回检测结果需要检测的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 该字段用于返回检测结果需要检测的内容类型。
+                     * @param _label 该字段用于返回检测结果需要检测的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。
+                     * @param _score 该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
+                     * @param _startTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const double& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEndTime() const;
 
                     /**
                      * 设置该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
+                     * @param _endTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const double& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

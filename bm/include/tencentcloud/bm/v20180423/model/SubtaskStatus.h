@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 5：部分成功，部分未完成<br>
 6：部分未完成，部分失败<br>
 7：部分未完成，部分失败，部分成功
+                     * 
                      */
                     uint64_t GetTaskStatus() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 5：部分成功，部分未完成<br>
 6：部分未完成，部分失败<br>
 7：部分未完成，部分失败，部分成功
-                     * @param TaskStatus 实例ID对应任务的状态，取值如下：<br>
+                     * @param _taskStatus 实例ID对应任务的状态，取值如下：<br>
 1：成功<br>
 2：失败<br>
 3：部分成功，部分失败<br>
@@ -101,12 +105,14 @@ namespace TencentCloud
 5：部分成功，部分未完成<br>
 6：部分未完成，部分失败<br>
 7：部分未完成，部分失败，部分成功
+                     * 
                      */
                     void SetTaskStatus(const uint64_t& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 

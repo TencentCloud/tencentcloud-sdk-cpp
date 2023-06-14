@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取检测出的人脸框位置。
                      * @return FaceRect 检测出的人脸框位置。
+                     * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
                      * 设置检测出的人脸框位置。
-                     * @param FaceRect 检测出的人脸框位置。
+                     * @param _faceRect 检测出的人脸框位置。
+                     * 
                      */
                     void SetFaceRect(const FaceRect& _faceRect);
 
                     /**
                      * 判断参数 FaceRect 是否已赋值
                      * @return FaceRect 是否已赋值
+                     * 
                      */
                     bool FaceRectHasBeenSet() const;
 
                     /**
                      * 获取候选人列表。当前返回相似度最高的候选人。
                      * @return Candidates 候选人列表。当前返回相似度最高的候选人。
+                     * 
                      */
                     std::vector<Candidate> GetCandidates() const;
 
                     /**
                      * 设置候选人列表。当前返回相似度最高的候选人。
-                     * @param Candidates 候选人列表。当前返回相似度最高的候选人。
+                     * @param _candidates 候选人列表。当前返回相似度最高的候选人。
+                     * 
                      */
                     void SetCandidates(const std::vector<Candidate>& _candidates);
 
                     /**
                      * 判断参数 Candidates 是否已赋值
                      * @return Candidates 是否已赋值
+                     * 
                      */
                     bool CandidatesHasBeenSet() const;
 

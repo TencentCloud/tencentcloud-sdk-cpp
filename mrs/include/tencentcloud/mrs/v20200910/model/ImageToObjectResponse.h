@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 报告结构化结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeList 多级分类结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
 
                     /**
                      * 判断参数 TextTypeList 是否已赋值
                      * @return TextTypeList 是否已赋值
+                     * 
                      */
                     bool TextTypeListHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取进程列表记录总数。
                      * @return TotalCount 进程列表记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取进程列表数据数组。
                      * @return Processes 进程列表数据数组。
+                     * 
                      */
                     std::vector<Process> GetProcesses() const;
 
                     /**
                      * 判断参数 Processes 是否已赋值
                      * @return Processes 是否已赋值
+                     * 
                      */
                     bool ProcessesHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取资源名称, 具体名称请查看产品配置
                      * @return ResourceName 资源名称, 具体名称请查看产品配置
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称, 具体名称请查看产品配置
-                     * @param ResourceName 资源名称, 具体名称请查看产品配置
+                     * @param _resourceName 资源名称, 具体名称请查看产品配置
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取资源总数
                      * @return Total 资源总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置资源总数
-                     * @param Total 资源总数
+                     * @param _total 资源总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取资源未使用次数
                      * @return UnusedCount 资源未使用次数
+                     * 
                      */
                     int64_t GetUnusedCount() const;
 
                     /**
                      * 设置资源未使用次数
-                     * @param UnusedCount 资源未使用次数
+                     * @param _unusedCount 资源未使用次数
+                     * 
                      */
                     void SetUnusedCount(const int64_t& _unusedCount);
 
                     /**
                      * 判断参数 UnusedCount 是否已赋值
                      * @return UnusedCount 是否已赋值
+                     * 
                      */
                     bool UnusedCountHasBeenSet() const;
 

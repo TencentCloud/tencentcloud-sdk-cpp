@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取会话信息
                      * @return Session 会话信息
+                     * 
                      */
                     PSTNSession GetSession() const;
 
                     /**
                      * 判断参数 Session 是否已赋值
                      * @return Session 是否已赋值
+                     * 
                      */
                     bool SessionHasBeenSet() const;
 

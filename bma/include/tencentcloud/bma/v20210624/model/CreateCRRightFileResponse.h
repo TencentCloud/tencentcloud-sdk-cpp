@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取权属文件Id，按提交顺序排序
                      * @return FileIds 权属文件Id，按提交顺序排序
+                     * 
                      */
                     std::vector<int64_t> GetFileIds() const;
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 

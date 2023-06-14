@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取Volume 名称
                      * @return Name Volume 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Volume 名称
-                     * @param Name Volume 名称
+                     * @param _name Volume 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取挂载路径
                      * @return MountPath 挂载路径
+                     * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
-                     * @param MountPath 挂载路径
+                     * @param _mountPath 挂载路径
+                     * 
                      */
                     void SetMountPath(const std::string& _mountPath);
 
                     /**
                      * 判断参数 MountPath 是否已赋值
                      * @return MountPath 是否已赋值
+                     * 
                      */
                     bool MountPathHasBeenSet() const;
 
                     /**
                      * 获取是否只读
                      * @return ReadOnly 是否只读
+                     * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
-                     * @param ReadOnly 是否只读
+                     * @param _readOnly 是否只读
+                     * 
                      */
                     void SetReadOnly(const bool& _readOnly);
 
                     /**
                      * 判断参数 ReadOnly 是否已赋值
                      * @return ReadOnly 是否已赋值
+                     * 
                      */
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
                      * 获取子路径
                      * @return SubPath 子路径
+                     * 
                      */
                     std::string GetSubPath() const;
 
                     /**
                      * 设置子路径
-                     * @param SubPath 子路径
+                     * @param _subPath 子路径
+                     * 
                      */
                     void SetSubPath(const std::string& _subPath);
 
                     /**
                      * 判断参数 SubPath 是否已赋值
                      * @return SubPath 是否已赋值
+                     * 
                      */
                     bool SubPathHasBeenSet() const;
 
                     /**
                      * 获取传播挂载方式
                      * @return MountPropagation 传播挂载方式
+                     * 
                      */
                     std::string GetMountPropagation() const;
 
                     /**
                      * 设置传播挂载方式
-                     * @param MountPropagation 传播挂载方式
+                     * @param _mountPropagation 传播挂载方式
+                     * 
                      */
                     void SetMountPropagation(const std::string& _mountPropagation);
 
                     /**
                      * 判断参数 MountPropagation 是否已赋值
                      * @return MountPropagation 是否已赋值
+                     * 
                      */
                     bool MountPropagationHasBeenSet() const;
 

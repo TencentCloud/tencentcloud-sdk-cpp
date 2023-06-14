@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取删除成功后返回被删除策略的uuid
                      * @return RuleUuid 删除成功后返回被删除策略的uuid
+                     * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0代表成功，-1代表失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

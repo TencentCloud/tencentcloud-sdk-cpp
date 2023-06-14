@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取行为
                      * @return Behavior 行为
+                     * 
                      */
                     uint64_t GetBehavior() const;
 
                     /**
                      * 设置行为
-                     * @param Behavior 行为
+                     * @param _behavior 行为
+                     * 
                      */
                     void SetBehavior(const uint64_t& _behavior);
 
                     /**
                      * 判断参数 Behavior 是否已赋值
                      * @return Behavior 是否已赋值
+                     * 
                      */
                     bool BehaviorHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return Type 类型
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置类型
-                     * @param Type 类型
+                     * @param _type 类型
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取级别
                      * @return Level 级别
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置级别
-                     * @param Level 级别
+                     * @param _level 级别
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取详情
                      * @return Desc 详情
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置详情
-                     * @param Desc 详情
+                     * @param _desc 详情
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取解决方案
                      * @return InstructionContent 解决方案
+                     * 
                      */
                     std::string GetInstructionContent() const;
 
                     /**
                      * 设置解决方案
-                     * @param InstructionContent 解决方案
+                     * @param _instructionContent 解决方案
+                     * 
                      */
                     void SetInstructionContent(const std::string& _instructionContent);
 
                     /**
                      * 判断参数 InstructionContent 是否已赋值
                      * @return InstructionContent 是否已赋值
+                     * 
                      */
                     bool InstructionContentHasBeenSet() const;
 

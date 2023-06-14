@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取DataHub接入ID
                      * @return DataHubId DataHub接入ID
+                     * 
                      */
                     std::string GetDataHubId() const;
 
                     /**
                      * 设置DataHub接入ID
-                     * @param DataHubId DataHub接入ID
+                     * @param _dataHubId DataHub接入ID
+                     * 
                      */
                     void SetDataHubId(const std::string& _dataHubId);
 
                     /**
                      * 判断参数 DataHubId 是否已赋值
                      * @return DataHubId 是否已赋值
+                     * 
                      */
                     bool DataHubIdHasBeenSet() const;
 
                     /**
                      * 获取发送消息内容(单次请求最多500条)
                      * @return Message 发送消息内容(单次请求最多500条)
+                     * 
                      */
                     std::vector<BatchContent> GetMessage() const;
 
                     /**
                      * 设置发送消息内容(单次请求最多500条)
-                     * @param Message 发送消息内容(单次请求最多500条)
+                     * @param _message 发送消息内容(单次请求最多500条)
+                     * 
                      */
                     void SetMessage(const std::vector<BatchContent>& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

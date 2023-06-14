@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
                      * @return RuleUuid 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 
                      */
                     std::vector<int64_t> GetRuleUuid() const;
 
                     /**
                      * 设置规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
-                     * @param RuleUuid 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * @param _ruleUuid 规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则
+                     * 
                      */
                     void SetRuleUuid(const std::vector<int64_t>& _ruleUuid);
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
                     /**
                      * 获取规则方向：1，入站；0，出站
                      * @return Direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置规则方向：1，入站；0，出站
-                     * @param Direction 规则方向：1，入站；0，出站
+                     * @param _direction 规则方向：1，入站；0，出站
+                     * 
                      */
                     void SetDirection(const uint64_t& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

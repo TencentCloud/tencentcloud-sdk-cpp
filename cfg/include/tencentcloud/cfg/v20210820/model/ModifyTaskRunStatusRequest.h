@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return TaskId 任务ID
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束
                      * @return Status 任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-                     * @param Status 任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束
+                     * @param _status 任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）
                      * @return IsExpect 执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）
+                     * 
                      */
                     bool GetIsExpect() const;
 
                     /**
                      * 设置执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）
-                     * @param IsExpect 执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）
+                     * @param _isExpect 执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）
+                     * 
                      */
                     void SetIsExpect(const bool& _isExpect);
 
                     /**
                      * 判断参数 IsExpect 是否已赋值
                      * @return IsExpect 是否已赋值
+                     * 
                      */
                     bool IsExpectHasBeenSet() const;
 
                     /**
                      * 获取演习结论（当演习状态转变为执行结束时，需要填写此字段）
                      * @return Summary 演习结论（当演习状态转变为执行结束时，需要填写此字段）
+                     * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 设置演习结论（当演习状态转变为执行结束时，需要填写此字段）
-                     * @param Summary 演习结论（当演习状态转变为执行结束时，需要填写此字段）
+                     * @param _summary 演习结论（当演习状态转变为执行结束时，需要填写此字段）
+                     * 
                      */
                     void SetSummary(const std::string& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 

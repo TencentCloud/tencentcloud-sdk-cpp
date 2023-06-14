@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取账户的镜像配额
                      * @return ImageNumQuota 账户的镜像配额
+                     * 
                      */
                     int64_t GetImageNumQuota() const;
 
                     /**
                      * 判断参数 ImageNumQuota 是否已赋值
                      * @return ImageNumQuota 是否已赋值
+                     * 
                      */
                     bool ImageNumQuotaHasBeenSet() const;
 

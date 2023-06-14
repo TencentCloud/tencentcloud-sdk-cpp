@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要刷新的目录列表，必须包含协议头部。
                      * @return Paths 要刷新的目录列表，必须包含协议头部。
+                     * 
                      */
                     std::vector<std::string> GetPaths() const;
 
                     /**
                      * 设置要刷新的目录列表，必须包含协议头部。
-                     * @param Paths 要刷新的目录列表，必须包含协议头部。
+                     * @param _paths 要刷新的目录列表，必须包含协议头部。
+                     * 
                      */
                     void SetPaths(const std::vector<std::string>& _paths);
 
                     /**
                      * 判断参数 Paths 是否已赋值
                      * @return Paths 是否已赋值
+                     * 
                      */
                     bool PathsHasBeenSet() const;
 
                     /**
                      * 获取刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。
                      * @return FlushType 刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。
+                     * 
                      */
                     std::string GetFlushType() const;
 
                     /**
                      * 设置刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。
-                     * @param FlushType 刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。
+                     * @param _flushType 刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。
+                     * 
                      */
                     void SetFlushType(const std::string& _flushType);
 
                     /**
                      * 判断参数 FlushType 是否已赋值
                      * @return FlushType 是否已赋值
+                     * 
                      */
                     bool FlushTypeHasBeenSet() const;
 

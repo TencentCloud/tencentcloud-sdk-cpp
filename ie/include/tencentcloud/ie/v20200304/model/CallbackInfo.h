@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取回调URL。
                      * @return Url 回调URL。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置回调URL。
-                     * @param Url 回调URL。
+                     * @param _url 回调URL。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

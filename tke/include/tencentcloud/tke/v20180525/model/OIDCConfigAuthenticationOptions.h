@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoCreateOIDCConfig 创建身份提供商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoCreateOIDCConfig() const;
 
                     /**
                      * 设置创建身份提供商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoCreateOIDCConfig 创建身份提供商
+                     * @param _autoCreateOIDCConfig 创建身份提供商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoCreateOIDCConfig(const bool& _autoCreateOIDCConfig);
 
                     /**
                      * 判断参数 AutoCreateOIDCConfig 是否已赋值
                      * @return AutoCreateOIDCConfig 是否已赋值
+                     * 
                      */
                     bool AutoCreateOIDCConfigHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoCreateClientId 创建身份提供商的ClientId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAutoCreateClientId() const;
 
                     /**
                      * 设置创建身份提供商的ClientId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoCreateClientId 创建身份提供商的ClientId
+                     * @param _autoCreateClientId 创建身份提供商的ClientId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoCreateClientId(const std::vector<std::string>& _autoCreateClientId);
 
                     /**
                      * 判断参数 AutoCreateClientId 是否已赋值
                      * @return AutoCreateClientId 是否已赋值
+                     * 
                      */
                     bool AutoCreateClientIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoInstallPodIdentityWebhookAddon 创建PodIdentityWebhook组件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoInstallPodIdentityWebhookAddon() const;
 
                     /**
                      * 设置创建PodIdentityWebhook组件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoInstallPodIdentityWebhookAddon 创建PodIdentityWebhook组件
+                     * @param _autoInstallPodIdentityWebhookAddon 创建PodIdentityWebhook组件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoInstallPodIdentityWebhookAddon(const bool& _autoInstallPodIdentityWebhookAddon);
 
                     /**
                      * 判断参数 AutoInstallPodIdentityWebhookAddon 是否已赋值
                      * @return AutoInstallPodIdentityWebhookAddon 是否已赋值
+                     * 
                      */
                     bool AutoInstallPodIdentityWebhookAddonHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取汇总列表
                      * @return List 汇总列表
+                     * 
                      */
                     std::vector<OrderSummaryResult> GetList() const;
 
                     /**
                      * 设置汇总列表
-                     * @param List 汇总列表
+                     * @param _list 汇总列表
+                     * 
                      */
                     void SetList(const std::vector<OrderSummaryResult>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Count 总数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置总数
-                     * @param Count 总数
+                     * @param _count 总数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

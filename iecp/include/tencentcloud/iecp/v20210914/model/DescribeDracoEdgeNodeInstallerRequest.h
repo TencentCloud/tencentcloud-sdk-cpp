@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备SN
                      * @return SN 设备SN
+                     * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置设备SN
-                     * @param SN 设备SN
+                     * @param _sN 设备SN
+                     * 
                      */
                     void SetSN(const std::string& _sN);
 
                     /**
                      * 判断参数 SN 是否已赋值
                      * @return SN 是否已赋值
+                     * 
                      */
                     bool SNHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取变量的名称，不可为空字符
                      * @return Key 变量的名称，不可为空字符
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置变量的名称，不可为空字符
-                     * @param Key 变量的名称，不可为空字符
+                     * @param _key 变量的名称，不可为空字符
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取变量的值，不可为空字符
                      * @return Value 变量的值，不可为空字符
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置变量的值，不可为空字符
-                     * @param Value 变量的值，不可为空字符
+                     * @param _value 变量的值，不可为空字符
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

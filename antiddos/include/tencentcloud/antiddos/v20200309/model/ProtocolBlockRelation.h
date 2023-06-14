@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取协议封禁配置
                      * @return ProtocolBlockConfig 协议封禁配置
+                     * 
                      */
                     ProtocolBlockConfig GetProtocolBlockConfig() const;
 
                     /**
                      * 设置协议封禁配置
-                     * @param ProtocolBlockConfig 协议封禁配置
+                     * @param _protocolBlockConfig 协议封禁配置
+                     * 
                      */
                     void SetProtocolBlockConfig(const ProtocolBlockConfig& _protocolBlockConfig);
 
                     /**
                      * 判断参数 ProtocolBlockConfig 是否已赋值
                      * @return ProtocolBlockConfig 是否已赋值
+                     * 
                      */
                     bool ProtocolBlockConfigHasBeenSet() const;
 
                     /**
                      * 获取协议封禁配置所属的实例
                      * @return InstanceDetailList 协议封禁配置所属的实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetailList() const;
 
                     /**
                      * 设置协议封禁配置所属的实例
-                     * @param InstanceDetailList 协议封禁配置所属的实例
+                     * @param _instanceDetailList 协议封禁配置所属的实例
+                     * 
                      */
                     void SetInstanceDetailList(const std::vector<InstanceRelation>& _instanceDetailList);
 
                     /**
                      * 判断参数 InstanceDetailList 是否已赋值
                      * @return InstanceDetailList 是否已赋值
+                     * 
                      */
                     bool InstanceDetailListHasBeenSet() const;
 

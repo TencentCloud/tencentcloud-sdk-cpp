@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultSet 直播分析子任务结果，暂时只支持直播拆条。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LiveStreamAiAnalysisResultItem> GetResultSet() const;
 
                     /**
                      * 设置直播分析子任务结果，暂时只支持直播拆条。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultSet 直播分析子任务结果，暂时只支持直播拆条。
+                     * @param _resultSet 直播分析子任务结果，暂时只支持直播拆条。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultSet(const std::vector<LiveStreamAiAnalysisResultItem>& _resultSet);
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 

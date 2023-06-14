@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期
                      * @return State 0：可申请试用可购买；1：只可购买(含试用审核不通过和试用过期)；2：试用生效中；3：专业版生效中；4：专业版过期
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoresCnt 总核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCoresCnt() const;
 
                     /**
                      * 判断参数 CoresCnt 是否已赋值
                      * @return CoresCnt 是否已赋值
+                     * 
                      */
                     bool CoresCntHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedCoresCnt 已购买核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAuthorizedCoresCnt() const;
 
                     /**
                      * 判断参数 AuthorizedCoresCnt 是否已赋值
                      * @return AuthorizedCoresCnt 是否已赋值
+                     * 
                      */
                     bool AuthorizedCoresCntHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageCnt 镜像数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetImageCnt() const;
 
                     /**
                      * 判断参数 ImageCnt 是否已赋值
                      * @return ImageCnt 是否已赋值
+                     * 
                      */
                     bool ImageCntHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedImageCnt 已授权镜像数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAuthorizedImageCnt() const;
 
                     /**
                      * 判断参数 AuthorizedImageCnt 是否已赋值
                      * @return AuthorizedImageCnt 是否已赋值
+                     * 
                      */
                     bool AuthorizedImageCntHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurchasedAuthorizedCnt 已购买镜像授权数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPurchasedAuthorizedCnt() const;
 
                     /**
                      * 判断参数 PurchasedAuthorizedCnt 是否已赋值
                      * @return PurchasedAuthorizedCnt 是否已赋值
+                     * 
                      */
                     bool PurchasedAuthorizedCntHasBeenSet() const;
 
@@ -130,12 +142,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpirationTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpirationTime() const;
 
                     /**
                      * 判断参数 ExpirationTime 是否已赋值
                      * @return ExpirationTime 是否已赋值
+                     * 
                      */
                     bool ExpirationTimeHasBeenSet() const;
 
@@ -144,12 +158,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutomaticRenewal 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAutomaticRenewal() const;
 
                     /**
                      * 判断参数 AutomaticRenewal 是否已赋值
                      * @return AutomaticRenewal 是否已赋值
+                     * 
                      */
                     bool AutomaticRenewalHasBeenSet() const;
 
@@ -158,12 +174,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GivenAuthorizedCnt 试用期间赠送镜像授权数，可能会过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGivenAuthorizedCnt() const;
 
                     /**
                      * 判断参数 GivenAuthorizedCnt 是否已赋值
                      * @return GivenAuthorizedCnt 是否已赋值
+                     * 
                      */
                     bool GivenAuthorizedCntHasBeenSet() const;
 
@@ -172,12 +190,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 起始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -188,12 +208,14 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      * @return SubState 子状态(具体意义依据State字段而定)
 State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubState() const;
 
                     /**
                      * 判断参数 SubState 是否已赋值
                      * @return SubState 是否已赋值
+                     * 
                      */
                     bool SubStateHasBeenSet() const;
 

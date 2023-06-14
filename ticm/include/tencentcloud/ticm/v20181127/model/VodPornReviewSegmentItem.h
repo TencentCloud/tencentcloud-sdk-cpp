@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
+                     * @param _endTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 嫌疑片段涉黄分数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段涉黄分数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Confidence 嫌疑片段涉黄分数。
+                     * @param _confidence 嫌疑片段涉黄分数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 嫌疑片段鉴黄结果标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置嫌疑片段鉴黄结果标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 嫌疑片段鉴黄结果标签。
+                     * @param _label 嫌疑片段鉴黄结果标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -147,6 +159,7 @@ review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -157,18 +170,20 @@ review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 嫌疑片段鉴黄结果建议，取值范围：
+                     * @param _suggestion 嫌疑片段鉴黄结果建议，取值范围：
 pass。
 review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -179,6 +194,7 @@ PicUrlExpireTime 时间点后图片将被删除）。
                      * @return Url 嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -186,15 +202,17 @@ PicUrlExpireTime 时间点后图片将被删除）。
                      * 设置嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 嫌疑图片 URL （图片不会永久存储，到达
+                     * @param _url 嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -203,20 +221,23 @@ PicUrlExpireTime 时间点后图片将被删除）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PicUrlExpireTimeStamp 嫌疑图片 URL 失效时间，使用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPicUrlExpireTimeStamp() const;
 
                     /**
                      * 设置嫌疑图片 URL 失效时间，使用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PicUrlExpireTimeStamp 嫌疑图片 URL 失效时间，使用 ISO 日期格式。
+                     * @param _picUrlExpireTimeStamp 嫌疑图片 URL 失效时间，使用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPicUrlExpireTimeStamp(const int64_t& _picUrlExpireTimeStamp);
 
                     /**
                      * 判断参数 PicUrlExpireTimeStamp 是否已赋值
                      * @return PicUrlExpireTimeStamp 是否已赋值
+                     * 
                      */
                     bool PicUrlExpireTimeStampHasBeenSet() const;
 

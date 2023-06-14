@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassCount 通过项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPassCount() const;
 
                     /**
                      * 设置通过项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PassCount 通过项
+                     * @param _passCount 通过项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPassCount(const uint64_t& _passCount);
 
                     /**
                      * 判断参数 PassCount 是否已赋值
                      * @return PassCount 是否已赋值
+                     * 
                      */
                     bool PassCountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCount 风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFailCount() const;
 
                     /**
                      * 设置风险项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailCount 风险项
+                     * @param _failCount 风险项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailCount(const uint64_t& _failCount);
 
                     /**
                      * 判断参数 FailCount 是否已赋值
                      * @return FailCount 是否已赋值
+                     * 
                      */
                     bool FailCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstScanTime 首次检测事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFirstScanTime() const;
 
                     /**
                      * 设置首次检测事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstScanTime 首次检测事件
+                     * @param _firstScanTime 首次检测事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstScanTime(const std::string& _firstScanTime);
 
                     /**
                      * 判断参数 FirstScanTime 是否已赋值
                      * @return FirstScanTime 是否已赋值
+                     * 
                      */
                     bool FirstScanTimeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastScanTime 最后检测时间
+                     * @param _lastScanTime 最后检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
 
                     /**
                      * 判断参数 LastScanTime 是否已赋值
                      * @return LastScanTime 是否已赋值
+                     * 
                      */
                     bool LastScanTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 风险项处理状态状态：0-未通过，1-通过
+                     * @param _status 风险项处理状态状态：0-未通过，1-通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quuid 主机Quuid
+                     * @param _quuid 主机Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置主机IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostIp 主机IP
+                     * @param _hostIp 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasName 主机别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置主机别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AliasName 主机别名
+                     * @param _aliasName 主机别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 主机Uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机Uuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uuid 主机Uuid
+                     * @param _uuid 主机Uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStatus 检测中状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxStatus() const;
 
                     /**
                      * 设置检测中状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxStatus 检测中状态
+                     * @param _maxStatus 检测中状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxStatus(const uint64_t& _maxStatus);
 
                     /**
                      * 判断参数 MaxStatus 是否已赋值
                      * @return MaxStatus 是否已赋值
+                     * 
                      */
                     bool MaxStatusHasBeenSet() const;
 

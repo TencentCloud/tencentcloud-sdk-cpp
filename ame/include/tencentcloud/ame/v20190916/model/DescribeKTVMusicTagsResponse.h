@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取标签分组列表
                      * @return TagGroupSet 标签分组列表
+                     * 
                      */
                     std::vector<KTVMusicTagGroup> GetTagGroupSet() const;
 
                     /**
                      * 判断参数 TagGroupSet 是否已赋值
                      * @return TagGroupSet 是否已赋值
+                     * 
                      */
                     bool TagGroupSetHasBeenSet() const;
 

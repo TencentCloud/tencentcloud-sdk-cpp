@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户SdkAppId（如：1400xxxxxx）
                      * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置用户SdkAppId（如：1400xxxxxx）
-                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * @param _sdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 注意：支持查询14天内的数据
                      * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据
-                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+                     * @param _startTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：与StartTime间隔时间不超过24小时。
                      * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：与StartTime间隔时间不超过24小时。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：与StartTime间隔时间不超过24小时。
-                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+                     * @param _endTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：与StartTime间隔时间不超过24小时。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取房间号（如：223)
                      * @return RoomId 房间号（如：223)
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间号（如：223)
-                     * @param RoomId 房间号（如：223)
+                     * @param _roomId 房间号（如：223)
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
                      * @return PageNumber 当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
-                     * @param PageNumber 当前页数，默认为0，
+                     * @param _pageNumber 当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 范围：[1，100]
                      * @return PageSize 每页个数，默认为10，
 范围：[1，100]
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页个数，默认为10，
 范围：[1，100]
-                     * @param PageSize 每页个数，默认为10，
+                     * @param _pageSize 每页个数，默认为10，
 范围：[1，100]
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CCITokens 纠错详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CCIToken> GetCCITokens() const;
 
                     /**
                      * 判断参数 CCITokens 是否已赋值
                      * @return CCITokens 是否已赋值
+                     * 
                      */
                     bool CCITokensHasBeenSet() const;
 
                     /**
                      * 获取纠错后的文本
                      * @return ResultText 纠错后的文本
+                     * 
                      */
                     std::string GetResultText() const;
 
                     /**
                      * 判断参数 ResultText 是否已赋值
                      * @return ResultText 是否已赋值
+                     * 
                      */
                     bool ResultTextHasBeenSet() const;
 

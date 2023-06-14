@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取X轴数据类型: TIMESTAMP; EPOCH; STEP
                      * @return XType X轴数据类型: TIMESTAMP; EPOCH; STEP
+                     * 
                      */
                     std::string GetXType() const;
 
                     /**
                      * 设置X轴数据类型: TIMESTAMP; EPOCH; STEP
-                     * @param XType X轴数据类型: TIMESTAMP; EPOCH; STEP
+                     * @param _xType X轴数据类型: TIMESTAMP; EPOCH; STEP
+                     * 
                      */
                     void SetXType(const std::string& _xType);
 
                     /**
                      * 判断参数 XType 是否已赋值
                      * @return XType 是否已赋值
+                     * 
                      */
                     bool XTypeHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CustomTrainingPoint> GetPoints() const;
 
                     /**
                      * 设置数据点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Points 数据点
+                     * @param _points 数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPoints(const std::vector<CustomTrainingPoint>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 

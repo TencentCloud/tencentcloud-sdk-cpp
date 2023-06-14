@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取安全漏洞
                      * @return VulnerabilityCnt 安全漏洞
+                     * 
                      */
                     std::vector<RunTimeRiskInfo> GetVulnerabilityCnt() const;
 
                     /**
                      * 判断参数 VulnerabilityCnt 是否已赋值
                      * @return VulnerabilityCnt 是否已赋值
+                     * 
                      */
                     bool VulnerabilityCntHasBeenSet() const;
 
                     /**
                      * 获取木马病毒
                      * @return MalwareVirusCnt 木马病毒
+                     * 
                      */
                     std::vector<RunTimeRiskInfo> GetMalwareVirusCnt() const;
 
                     /**
                      * 判断参数 MalwareVirusCnt 是否已赋值
                      * @return MalwareVirusCnt 是否已赋值
+                     * 
                      */
                     bool MalwareVirusCntHasBeenSet() const;
 
                     /**
                      * 获取敏感信息
                      * @return RiskCnt 敏感信息
+                     * 
                      */
                     std::vector<RunTimeRiskInfo> GetRiskCnt() const;
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
+                     * 
                      */
                     bool RiskCntHasBeenSet() const;
 

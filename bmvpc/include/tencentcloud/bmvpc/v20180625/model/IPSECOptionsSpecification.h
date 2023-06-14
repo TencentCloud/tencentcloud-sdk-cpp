@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
                      * @return PfsDhGroup PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
+                     * 
                      */
                     std::string GetPfsDhGroup() const;
 
                     /**
                      * 设置PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-                     * @param PfsDhGroup PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
+                     * @param _pfsDhGroup PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
+                     * 
                      */
                     void SetPfsDhGroup(const std::string& _pfsDhGroup);
 
                     /**
                      * 判断参数 PfsDhGroup 是否已赋值
                      * @return PfsDhGroup 是否已赋值
+                     * 
                      */
                     bool PfsDhGroupHasBeenSet() const;
 
                     /**
                      * 获取IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
                      * @return IPSECSaLifetimeTraffic IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
+                     * 
                      */
                     uint64_t GetIPSECSaLifetimeTraffic() const;
 
                     /**
                      * 设置IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-                     * @param IPSECSaLifetimeTraffic IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
+                     * @param _iPSECSaLifetimeTraffic IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
+                     * 
                      */
                     void SetIPSECSaLifetimeTraffic(const uint64_t& _iPSECSaLifetimeTraffic);
 
                     /**
                      * 判断参数 IPSECSaLifetimeTraffic 是否已赋值
                      * @return IPSECSaLifetimeTraffic 是否已赋值
+                     * 
                      */
                     bool IPSECSaLifetimeTrafficHasBeenSet() const;
 
                     /**
                      * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
                      * @return EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * 
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
                      * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
-                     * @param EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * @param _encryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * 
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
 
                     /**
                      * 判断参数 EncryptAlgorithm 是否已赋值
                      * @return EncryptAlgorithm 是否已赋值
+                     * 
                      */
                     bool EncryptAlgorithmHasBeenSet() const;
 
                     /**
                      * 获取认证算法：可选值：'MD5', 'SHA1'，默认为
                      * @return IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * 
                      */
                     std::string GetIntegrityAlgorith() const;
 
                     /**
                      * 设置认证算法：可选值：'MD5', 'SHA1'，默认为
-                     * @param IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * @param _integrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * 
                      */
                     void SetIntegrityAlgorith(const std::string& _integrityAlgorith);
 
                     /**
                      * 判断参数 IntegrityAlgorith 是否已赋值
                      * @return IntegrityAlgorith 是否已赋值
+                     * 
                      */
                     bool IntegrityAlgorithHasBeenSet() const;
 
                     /**
                      * 获取IPsec SA lifetime(s)：单位秒，取值范围：180-604800
                      * @return IPSECSaLifetimeSeconds IPsec SA lifetime(s)：单位秒，取值范围：180-604800
+                     * 
                      */
                     uint64_t GetIPSECSaLifetimeSeconds() const;
 
                     /**
                      * 设置IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-                     * @param IPSECSaLifetimeSeconds IPsec SA lifetime(s)：单位秒，取值范围：180-604800
+                     * @param _iPSECSaLifetimeSeconds IPsec SA lifetime(s)：单位秒，取值范围：180-604800
+                     * 
                      */
                     void SetIPSECSaLifetimeSeconds(const uint64_t& _iPSECSaLifetimeSeconds);
 
                     /**
                      * 判断参数 IPSECSaLifetimeSeconds 是否已赋值
                      * @return IPSECSaLifetimeSeconds 是否已赋值
+                     * 
                      */
                     bool IPSECSaLifetimeSecondsHasBeenSet() const;
 
                     /**
                      * 获取安全协议，默认为ESP
                      * @return SecurityProto 安全协议，默认为ESP
+                     * 
                      */
                     std::string GetSecurityProto() const;
 
                     /**
                      * 设置安全协议，默认为ESP
-                     * @param SecurityProto 安全协议，默认为ESP
+                     * @param _securityProto 安全协议，默认为ESP
+                     * 
                      */
                     void SetSecurityProto(const std::string& _securityProto);
 
                     /**
                      * 判断参数 SecurityProto 是否已赋值
                      * @return SecurityProto 是否已赋值
+                     * 
                      */
                     bool SecurityProtoHasBeenSet() const;
 
                     /**
                      * 获取报文封装模式:默认为Tunnel
                      * @return EncapMode 报文封装模式:默认为Tunnel
+                     * 
                      */
                     std::string GetEncapMode() const;
 
                     /**
                      * 设置报文封装模式:默认为Tunnel
-                     * @param EncapMode 报文封装模式:默认为Tunnel
+                     * @param _encapMode 报文封装模式:默认为Tunnel
+                     * 
                      */
                     void SetEncapMode(const std::string& _encapMode);
 
                     /**
                      * 判断参数 EncapMode 是否已赋值
                      * @return EncapMode 是否已赋值
+                     * 
                      */
                     bool EncapModeHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取私有网络唯一ID。
                      * @return VpcId 私有网络唯一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络唯一ID。
-                     * @param VpcId 私有网络唯一ID。
+                     * @param _vpcId 私有网络唯一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取退还的IP列表。
                      * @return Ips 退还的IP列表。
+                     * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
                      * 设置退还的IP列表。
-                     * @param Ips 退还的IP列表。
+                     * @param _ips 退还的IP列表。
+                     * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 

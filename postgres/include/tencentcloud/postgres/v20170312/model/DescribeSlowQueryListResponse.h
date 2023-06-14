@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取选定时间范围内慢SQL总条数。
                      * @return TotalCount 选定时间范围内慢SQL总条数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationAnalysis 指定时间范围内，慢SQL耗时分段分析。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DurationAnalysis> GetDurationAnalysis() const;
 
                     /**
                      * 判断参数 DurationAnalysis 是否已赋值
                      * @return DurationAnalysis 是否已赋值
+                     * 
                      */
                     bool DurationAnalysisHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawSlowQueryList 指定时间范围内 慢SQL流水。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RawSlowQuery> GetRawSlowQueryList() const;
 
                     /**
                      * 判断参数 RawSlowQueryList 是否已赋值
                      * @return RawSlowQueryList 是否已赋值
+                     * 
                      */
                     bool RawSlowQueryListHasBeenSet() const;
 

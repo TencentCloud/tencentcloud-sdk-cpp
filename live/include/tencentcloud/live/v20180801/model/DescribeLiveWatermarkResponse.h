@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取水印信息。
                      * @return Watermark 水印信息。
+                     * 
                      */
                     WatermarkInfo GetWatermark() const;
 
                     /**
                      * 判断参数 Watermark 是否已赋值
                      * @return Watermark 是否已赋值
+                     * 
                      */
                     bool WatermarkHasBeenSet() const;
 

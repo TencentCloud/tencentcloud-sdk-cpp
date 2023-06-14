@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取路由表对象
                      * @return RouteTable 路由表对象
+                     * 
                      */
                     RouteTable GetRouteTable() const;
 
                     /**
                      * 判断参数 RouteTable 是否已赋值
                      * @return RouteTable 是否已赋值
+                     * 
                      */
                     bool RouteTableHasBeenSet() const;
 

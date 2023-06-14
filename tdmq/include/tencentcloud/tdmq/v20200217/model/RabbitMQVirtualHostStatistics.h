@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取当前vhost的queue数量
                      * @return CurrentQueues 当前vhost的queue数量
+                     * 
                      */
                     int64_t GetCurrentQueues() const;
 
                     /**
                      * 设置当前vhost的queue数量
-                     * @param CurrentQueues 当前vhost的queue数量
+                     * @param _currentQueues 当前vhost的queue数量
+                     * 
                      */
                     void SetCurrentQueues(const int64_t& _currentQueues);
 
                     /**
                      * 判断参数 CurrentQueues 是否已赋值
                      * @return CurrentQueues 是否已赋值
+                     * 
                      */
                     bool CurrentQueuesHasBeenSet() const;
 
                     /**
                      * 获取当前vhost的exchange数量
                      * @return CurrentExchanges 当前vhost的exchange数量
+                     * 
                      */
                     int64_t GetCurrentExchanges() const;
 
                     /**
                      * 设置当前vhost的exchange数量
-                     * @param CurrentExchanges 当前vhost的exchange数量
+                     * @param _currentExchanges 当前vhost的exchange数量
+                     * 
                      */
                     void SetCurrentExchanges(const int64_t& _currentExchanges);
 
                     /**
                      * 判断参数 CurrentExchanges 是否已赋值
                      * @return CurrentExchanges 是否已赋值
+                     * 
                      */
                     bool CurrentExchangesHasBeenSet() const;
 
                     /**
                      * 获取当前vhost的连接数量
                      * @return CurrentConnections 当前vhost的连接数量
+                     * 
                      */
                     int64_t GetCurrentConnections() const;
 
                     /**
                      * 设置当前vhost的连接数量
-                     * @param CurrentConnections 当前vhost的连接数量
+                     * @param _currentConnections 当前vhost的连接数量
+                     * 
                      */
                     void SetCurrentConnections(const int64_t& _currentConnections);
 
                     /**
                      * 判断参数 CurrentConnections 是否已赋值
                      * @return CurrentConnections 是否已赋值
+                     * 
                      */
                     bool CurrentConnectionsHasBeenSet() const;
 
                     /**
                      * 获取当前vhost的channel数量
                      * @return CurrentChannels 当前vhost的channel数量
+                     * 
                      */
                     int64_t GetCurrentChannels() const;
 
                     /**
                      * 设置当前vhost的channel数量
-                     * @param CurrentChannels 当前vhost的channel数量
+                     * @param _currentChannels 当前vhost的channel数量
+                     * 
                      */
                     void SetCurrentChannels(const int64_t& _currentChannels);
 
                     /**
                      * 判断参数 CurrentChannels 是否已赋值
                      * @return CurrentChannels 是否已赋值
+                     * 
                      */
                     bool CurrentChannelsHasBeenSet() const;
 
                     /**
                      * 获取当前vhost的用户数量
                      * @return CurrentUsers 当前vhost的用户数量
+                     * 
                      */
                     int64_t GetCurrentUsers() const;
 
                     /**
                      * 设置当前vhost的用户数量
-                     * @param CurrentUsers 当前vhost的用户数量
+                     * @param _currentUsers 当前vhost的用户数量
+                     * 
                      */
                     void SetCurrentUsers(const int64_t& _currentUsers);
 
                     /**
                      * 判断参数 CurrentUsers 是否已赋值
                      * @return CurrentUsers 是否已赋值
+                     * 
                      */
                     bool CurrentUsersHasBeenSet() const;
 

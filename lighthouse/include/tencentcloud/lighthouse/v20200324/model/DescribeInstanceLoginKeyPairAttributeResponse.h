@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取是否允许使用默认密钥对登录，YES：允许登录 NO：禁止登录。
                      * @return PermitLogin 是否允许使用默认密钥对登录，YES：允许登录 NO：禁止登录。
+                     * 
                      */
                     std::string GetPermitLogin() const;
 
                     /**
                      * 判断参数 PermitLogin 是否已赋值
                      * @return PermitLogin 是否已赋值
+                     * 
                      */
                     bool PermitLoginHasBeenSet() const;
 

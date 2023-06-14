@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取配置项发布历史ID
                      * @return ConfigReleaseLogId 配置项发布历史ID
+                     * 
                      */
                     std::string GetConfigReleaseLogId() const;
 
                     /**
                      * 设置配置项发布历史ID
-                     * @param ConfigReleaseLogId 配置项发布历史ID
+                     * @param _configReleaseLogId 配置项发布历史ID
+                     * 
                      */
                     void SetConfigReleaseLogId(const std::string& _configReleaseLogId);
 
                     /**
                      * 判断参数 ConfigReleaseLogId 是否已赋值
                      * @return ConfigReleaseLogId 是否已赋值
+                     * 
                      */
                     bool ConfigReleaseLogIdHasBeenSet() const;
 
                     /**
                      * 获取回滚描述
                      * @return ReleaseDesc 回滚描述
+                     * 
                      */
                     std::string GetReleaseDesc() const;
 
                     /**
                      * 设置回滚描述
-                     * @param ReleaseDesc 回滚描述
+                     * @param _releaseDesc 回滚描述
+                     * 
                      */
                     void SetReleaseDesc(const std::string& _releaseDesc);
 
                     /**
                      * 判断参数 ReleaseDesc 是否已赋值
                      * @return ReleaseDesc 是否已赋值
+                     * 
                      */
                     bool ReleaseDescHasBeenSet() const;
 

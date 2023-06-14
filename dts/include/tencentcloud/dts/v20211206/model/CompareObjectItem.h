@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbName 数据库名
+                     * @param _dbName 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
+                     * @param _dbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbMode(const std::string& _dbMode);
 
                     /**
                      * 判断参数 DbMode 是否已赋值
                      * @return DbMode 是否已赋值
+                     * 
                      */
                     bool DbModeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置schema名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaName schema名称
+                     * @param _schemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableMode() const;
 
                     /**
                      * 设置表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
+                     * @param _tableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableMode(const std::string& _tableMode);
 
                     /**
                      * 判断参数 TableMode 是否已赋值
                      * @return TableMode 是否已赋值
+                     * 
                      */
                     bool TableModeHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CompareTableItem> GetTables() const;
 
                     /**
                      * 设置用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
+                     * @param _tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTables(const std::vector<CompareTableItem>& _tables);
 
                     /**
                      * 判断参数 Tables 是否已赋值
                      * @return Tables 是否已赋值
+                     * 
                      */
                     bool TablesHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetViewMode() const;
 
                     /**
                      * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
+                     * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViewMode(const std::string& _viewMode);
 
                     /**
                      * 判断参数 ViewMode 是否已赋值
                      * @return ViewMode 是否已赋值
+                     * 
                      */
                     bool ViewModeHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CompareViewItem> GetViews() const;
 
                     /**
                      * 设置用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
+                     * @param _views 用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetViews(const std::vector<CompareViewItem>& _views);
 
                     /**
                      * 判断参数 Views 是否已赋值
                      * @return Views 是否已赋值
+                     * 
                      */
                     bool ViewsHasBeenSet() const;
 

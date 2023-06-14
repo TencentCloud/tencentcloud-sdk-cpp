@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否开启RDMA
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否开启RDMA
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enable 是否开启RDMA
+                     * @param _enable 是否开启RDMA
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

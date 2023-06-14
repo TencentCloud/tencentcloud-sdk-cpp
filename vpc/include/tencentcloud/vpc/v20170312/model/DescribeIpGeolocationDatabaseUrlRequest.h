@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取IP地理位置库协议类型，目前仅支持"ipv4"。
                      * @return Type IP地理位置库协议类型，目前仅支持"ipv4"。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置IP地理位置库协议类型，目前仅支持"ipv4"。
-                     * @param Type IP地理位置库协议类型，目前仅支持"ipv4"。
+                     * @param _type IP地理位置库协议类型，目前仅支持"ipv4"。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

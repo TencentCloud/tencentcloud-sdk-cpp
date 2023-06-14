@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回 EIPACL 列表总数
                      * @return TotalCount 返回 EIPACL 列表总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取EIPACL列表
                      * @return EipAclList EIPACL列表
+                     * 
                      */
                     std::vector<EipAcl> GetEipAclList() const;
 
                     /**
                      * 判断参数 EipAclList 是否已赋值
                      * @return EipAclList 是否已赋值
+                     * 
                      */
                     bool EipAclListHasBeenSet() const;
 

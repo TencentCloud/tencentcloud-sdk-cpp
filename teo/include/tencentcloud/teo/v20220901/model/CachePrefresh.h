@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 缓存预刷新配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置缓存预刷新配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 缓存预刷新配置开关，取值有：
+                     * @param _switch 缓存预刷新配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPercent() const;
 
                     /**
                      * 设置缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Percent 缓存预刷新百分比，取值范围：1-99。
+                     * @param _percent 缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPercent(const int64_t& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

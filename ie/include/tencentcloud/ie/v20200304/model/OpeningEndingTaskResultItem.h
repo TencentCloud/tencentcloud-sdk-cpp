@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取视频片头的结束时间点，单位：秒。
                      * @return OpeningTimeOffset 视频片头的结束时间点，单位：秒。
+                     * 
                      */
                     double GetOpeningTimeOffset() const;
 
                     /**
                      * 设置视频片头的结束时间点，单位：秒。
-                     * @param OpeningTimeOffset 视频片头的结束时间点，单位：秒。
+                     * @param _openingTimeOffset 视频片头的结束时间点，单位：秒。
+                     * 
                      */
                     void SetOpeningTimeOffset(const double& _openingTimeOffset);
 
                     /**
                      * 判断参数 OpeningTimeOffset 是否已赋值
                      * @return OpeningTimeOffset 是否已赋值
+                     * 
                      */
                     bool OpeningTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取片头识别置信度，取值范围是 0 到 100。
                      * @return OpeningConfidence 片头识别置信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetOpeningConfidence() const;
 
                     /**
                      * 设置片头识别置信度，取值范围是 0 到 100。
-                     * @param OpeningConfidence 片头识别置信度，取值范围是 0 到 100。
+                     * @param _openingConfidence 片头识别置信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetOpeningConfidence(const double& _openingConfidence);
 
                     /**
                      * 判断参数 OpeningConfidence 是否已赋值
                      * @return OpeningConfidence 是否已赋值
+                     * 
                      */
                     bool OpeningConfidenceHasBeenSet() const;
 
                     /**
                      * 获取视频片尾的开始时间点，单位：秒。
                      * @return EndingTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * 
                      */
                     double GetEndingTimeOffset() const;
 
                     /**
                      * 设置视频片尾的开始时间点，单位：秒。
-                     * @param EndingTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * @param _endingTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * 
                      */
                     void SetEndingTimeOffset(const double& _endingTimeOffset);
 
                     /**
                      * 判断参数 EndingTimeOffset 是否已赋值
                      * @return EndingTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndingTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取片尾识别置信度，取值范围是 0 到 100。
                      * @return EndingConfidence 片尾识别置信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetEndingConfidence() const;
 
                     /**
                      * 设置片尾识别置信度，取值范围是 0 到 100。
-                     * @param EndingConfidence 片尾识别置信度，取值范围是 0 到 100。
+                     * @param _endingConfidence 片尾识别置信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetEndingConfidence(const double& _endingConfidence);
 
                     /**
                      * 判断参数 EndingConfidence 是否已赋值
                      * @return EndingConfidence 是否已赋值
+                     * 
                      */
                     bool EndingConfidenceHasBeenSet() const;
 

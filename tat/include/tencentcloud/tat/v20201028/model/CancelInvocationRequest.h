@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取执行活动ID
                      * @return InvocationId 执行活动ID
+                     * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
                      * 设置执行活动ID
-                     * @param InvocationId 执行活动ID
+                     * @param _invocationId 执行活动ID
+                     * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
 
                     /**
                      * 判断参数 InvocationId 是否已赋值
                      * @return InvocationId 是否已赋值
+                     * 
                      */
                     bool InvocationIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return InstanceIds 实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
-                     * @param InstanceIds 实例ID列表，上限100。支持实例类型：
+                     * @param _instanceIds 实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

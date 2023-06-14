@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要解绑的API网关插件ID。
                      * @return PluginId 要解绑的API网关插件ID。
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置要解绑的API网关插件ID。
-                     * @param PluginId 要解绑的API网关插件ID。
+                     * @param _pluginId 要解绑的API网关插件ID。
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 
                     /**
                      * 获取要操作的服务ID。
                      * @return ServiceId 要操作的服务ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置要操作的服务ID。
-                     * @param ServiceId 要操作的服务ID。
+                     * @param _serviceId 要操作的服务ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取要操作API的环境。
                      * @return EnvironmentName 要操作API的环境。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置要操作API的环境。
-                     * @param EnvironmentName 要操作API的环境。
+                     * @param _environmentName 要操作API的环境。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取要解绑的API ID。
                      * @return ApiId 要解绑的API ID。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置要解绑的API ID。
-                     * @param ApiId 要解绑的API ID。
+                     * @param _apiId 要解绑的API ID。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Jars 应用列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetJarBaseInfo> GetJars() const;
 
                     /**
                      * 判断参数 Jars 是否已赋值
                      * @return Jars 是否已赋值
+                     * 
                      */
                     bool JarsHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return Total 总数量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

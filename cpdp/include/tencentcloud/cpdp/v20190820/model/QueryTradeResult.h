@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取贸易材料明细查询数据
                      * @return Data 贸易材料明细查询数据
+                     * 
                      */
                     QueryTradeData GetData() const;
 
                     /**
                      * 设置贸易材料明细查询数据
-                     * @param Data 贸易材料明细查询数据
+                     * @param _data 贸易材料明细查询数据
+                     * 
                      */
                     void SetData(const QueryTradeData& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取错误码
                      * @return Code 错误码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
-                     * @param Code 错误码
+                     * @param _code 错误码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 

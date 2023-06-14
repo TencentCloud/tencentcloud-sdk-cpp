@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取实例名
                      * @return Name 实例名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例名
-                     * @param Name 实例名
+                     * @param _name 实例名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取实例描述信息
                      * @return Description 实例描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置实例描述信息
-                     * @param Description 实例描述信息
+                     * @param _description 实例描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取Trace数据保存时长
                      * @return TraceDuration Trace数据保存时长
+                     * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
                      * 设置Trace数据保存时长
-                     * @param TraceDuration Trace数据保存时长
+                     * @param _traceDuration Trace数据保存时长
+                     * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
 
                     /**
                      * 判断参数 TraceDuration 是否已赋值
                      * @return TraceDuration 是否已赋值
+                     * 
                      */
                     bool TraceDurationHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取实例上报额度值
                      * @return SpanDailyCounters 实例上报额度值
+                     * 
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
                      * 设置实例上报额度值
-                     * @param SpanDailyCounters 实例上报额度值
+                     * @param _spanDailyCounters 实例上报额度值
+                     * 
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
 
                     /**
                      * 判断参数 SpanDailyCounters 是否已赋值
                      * @return SpanDailyCounters 是否已赋值
+                     * 
                      */
                     bool SpanDailyCountersHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取仅五种周期运行依赖配置： HOUR,DAY,WEEK,MONTH,YEAR,CRONTAB,MINUTE
                      * @return DependConfType 仅五种周期运行依赖配置： HOUR,DAY,WEEK,MONTH,YEAR,CRONTAB,MINUTE
+                     * 
                      */
                     std::string GetDependConfType() const;
 
                     /**
                      * 设置仅五种周期运行依赖配置： HOUR,DAY,WEEK,MONTH,YEAR,CRONTAB,MINUTE
-                     * @param DependConfType 仅五种周期运行依赖配置： HOUR,DAY,WEEK,MONTH,YEAR,CRONTAB,MINUTE
+                     * @param _dependConfType 仅五种周期运行依赖配置： HOUR,DAY,WEEK,MONTH,YEAR,CRONTAB,MINUTE
+                     * 
                      */
                     void SetDependConfType(const std::string& _dependConfType);
 
                     /**
                      * 判断参数 DependConfType 是否已赋值
                      * @return DependConfType 是否已赋值
+                     * 
                      */
                     bool DependConfTypeHasBeenSet() const;
 
@@ -70,38 +73,44 @@ namespace TencentCloud
      * PREVIOUS_BEGIN_OF_MONTH，ALL_MONTH_OF_YEAR，ALL_DAY_OF_YEAR，CURRENT_YEAR，CURRENT，CURRENT_MINUTE，PREVIOUS_MINUTE_CYCLE，PREVIOUS_HOUR_CYCLE
                      * @return SubordinateCyclicType 依赖配置从属周期类型，CURRENT_HOUR，PREVIOUS_HOUR，CURRENT_DAY，PREVIOUS_DAY，PREVIOUS_WEEK，PREVIOUS_FRIDAY，PREVIOUS_WEEKEND，CURRENT_MONTH，PREVIOUS_MONTH，PREVIOUS_END_OF_MONTH
      * PREVIOUS_BEGIN_OF_MONTH，ALL_MONTH_OF_YEAR，ALL_DAY_OF_YEAR，CURRENT_YEAR，CURRENT，CURRENT_MINUTE，PREVIOUS_MINUTE_CYCLE，PREVIOUS_HOUR_CYCLE
+                     * 
                      */
                     std::string GetSubordinateCyclicType() const;
 
                     /**
                      * 设置依赖配置从属周期类型，CURRENT_HOUR，PREVIOUS_HOUR，CURRENT_DAY，PREVIOUS_DAY，PREVIOUS_WEEK，PREVIOUS_FRIDAY，PREVIOUS_WEEKEND，CURRENT_MONTH，PREVIOUS_MONTH，PREVIOUS_END_OF_MONTH
      * PREVIOUS_BEGIN_OF_MONTH，ALL_MONTH_OF_YEAR，ALL_DAY_OF_YEAR，CURRENT_YEAR，CURRENT，CURRENT_MINUTE，PREVIOUS_MINUTE_CYCLE，PREVIOUS_HOUR_CYCLE
-                     * @param SubordinateCyclicType 依赖配置从属周期类型，CURRENT_HOUR，PREVIOUS_HOUR，CURRENT_DAY，PREVIOUS_DAY，PREVIOUS_WEEK，PREVIOUS_FRIDAY，PREVIOUS_WEEKEND，CURRENT_MONTH，PREVIOUS_MONTH，PREVIOUS_END_OF_MONTH
+                     * @param _subordinateCyclicType 依赖配置从属周期类型，CURRENT_HOUR，PREVIOUS_HOUR，CURRENT_DAY，PREVIOUS_DAY，PREVIOUS_WEEK，PREVIOUS_FRIDAY，PREVIOUS_WEEKEND，CURRENT_MONTH，PREVIOUS_MONTH，PREVIOUS_END_OF_MONTH
      * PREVIOUS_BEGIN_OF_MONTH，ALL_MONTH_OF_YEAR，ALL_DAY_OF_YEAR，CURRENT_YEAR，CURRENT，CURRENT_MINUTE，PREVIOUS_MINUTE_CYCLE，PREVIOUS_HOUR_CYCLE
+                     * 
                      */
                     void SetSubordinateCyclicType(const std::string& _subordinateCyclicType);
 
                     /**
                      * 判断参数 SubordinateCyclicType 是否已赋值
                      * @return SubordinateCyclicType 是否已赋值
+                     * 
                      */
                     bool SubordinateCyclicTypeHasBeenSet() const;
 
                     /**
                      * 获取WAITING，等待（默认策略）EXECUTING:执行
                      * @return DependencyStrategy WAITING，等待（默认策略）EXECUTING:执行
+                     * 
                      */
                     std::string GetDependencyStrategy() const;
 
                     /**
                      * 设置WAITING，等待（默认策略）EXECUTING:执行
-                     * @param DependencyStrategy WAITING，等待（默认策略）EXECUTING:执行
+                     * @param _dependencyStrategy WAITING，等待（默认策略）EXECUTING:执行
+                     * 
                      */
                     void SetDependencyStrategy(const std::string& _dependencyStrategy);
 
                     /**
                      * 判断参数 DependencyStrategy 是否已赋值
                      * @return DependencyStrategy 是否已赋值
+                     * 
                      */
                     bool DependencyStrategyHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentTask 父任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskInnerInfo GetParentTask() const;
 
                     /**
                      * 设置父任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentTask 父任务信息
+                     * @param _parentTask 父任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentTask(const TaskInnerInfo& _parentTask);
 
                     /**
                      * 判断参数 ParentTask 是否已赋值
                      * @return ParentTask 是否已赋值
+                     * 
                      */
                     bool ParentTaskHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SonTask 子任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskInnerInfo GetSonTask() const;
 
                     /**
                      * 设置子任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SonTask 子任务信息
+                     * @param _sonTask 子任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSonTask(const TaskInnerInfo& _sonTask);
 
                     /**
                      * 判断参数 SonTask 是否已赋值
                      * @return SonTask 是否已赋值
+                     * 
                      */
                     bool SonTaskHasBeenSet() const;
 

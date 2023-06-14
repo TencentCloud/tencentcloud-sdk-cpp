@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取分组列表
                      * @return GroupList 分组列表
+                     * 
                      */
                     std::vector<GroupInfo> GetGroupList() const;
 
                     /**
                      * 判断参数 GroupList 是否已赋值
                      * @return GroupList 是否已赋值
+                     * 
                      */
                     bool GroupListHasBeenSet() const;
 

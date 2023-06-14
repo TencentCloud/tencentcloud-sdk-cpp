@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 应用ID
+                     * @param _id 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 应用名称
+                     * @param _name 应用名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 应用版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置应用版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 应用版本
+                     * @param _version 应用版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 应用状态(1:待部署 2:部署中 3:运行中 4:待更新 5:更新中 6:待删除 7:删除中 8:已删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应用状态(1:待部署 2:部署中 3:运行中 4:待更新 5:更新中 6:待删除 7:删除中 8:已删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 应用状态(1:待部署 2:部署中 3:运行中 4:待更新 5:更新中 6:待删除 7:删除中 8:已删除
+                     * @param _status 应用状态(1:待部署 2:部署中 3:运行中 4:待更新 5:更新中 6:待删除 7:删除中 8:已删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManageUrl 管理地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManageUrl() const;
 
                     /**
                      * 设置管理地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ManageUrl 管理地址
+                     * @param _manageUrl 管理地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManageUrl(const std::string& _manageUrl);
 
                     /**
                      * 判断参数 ManageUrl 是否已赋值
                      * @return ManageUrl 是否已赋值
+                     * 
                      */
                     bool ManageUrlHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadKind 负载类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置负载类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkloadKind 负载类型
+                     * @param _workloadKind 负载类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
 
                     /**
                      * 判断参数 WorkloadKind 是否已赋值
                      * @return WorkloadKind 是否已赋值
+                     * 
                      */
                     bool WorkloadKindHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMode 应用部署模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApplicationDeployMode GetDeployMode() const;
 
                     /**
                      * 设置应用部署模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployMode 应用部署模式
+                     * @param _deployMode 应用部署模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeployMode(const ApplicationDeployMode& _deployMode);
 
                     /**
                      * 判断参数 DeployMode 是否已赋值
                      * @return DeployMode 是否已赋值
+                     * 
                      */
                     bool DeployModeHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 期望Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
                      * 设置期望Pod数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Replicas 期望Pod数
+                     * @param _replicas 期望Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicas(const int64_t& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableReplicas 运行Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAvailableReplicas() const;
 
                     /**
                      * 设置运行Pod数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailableReplicas 运行Pod数
+                     * @param _availableReplicas 运行Pod数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailableReplicas(const int64_t& _availableReplicas);
 
                     /**
                      * 判断参数 AvailableReplicas 是否已赋值
                      * @return AvailableReplicas 是否已赋值
+                     * 
                      */
                     bool AvailableReplicasHasBeenSet() const;
 

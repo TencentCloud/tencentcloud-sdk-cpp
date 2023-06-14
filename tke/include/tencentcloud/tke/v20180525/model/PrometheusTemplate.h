@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取模板名称
                      * @return Name 模板名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模板名称
-                     * @param Name 模板名称
+                     * @param _name 模板名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,6 +77,7 @@ cluster 集群级别
                      * @return Level 模板维度，支持以下类型
 instance 实例级别
 cluster 集群级别
+                     * 
                      */
                     std::string GetLevel() const;
 
@@ -81,15 +85,17 @@ cluster 集群级别
                      * 设置模板维度，支持以下类型
 instance 实例级别
 cluster 集群级别
-                     * @param Level 模板维度，支持以下类型
+                     * @param _level 模板维度，支持以下类型
 instance 实例级别
 cluster 集群级别
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -98,20 +104,23 @@ cluster 集群级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describe 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Describe 模板描述
+                     * @param _describe 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescribe(const std::string& _describe);
 
                     /**
                      * 判断参数 Describe 是否已赋值
                      * @return Describe 是否已赋值
+                     * 
                      */
                     bool DescribeHasBeenSet() const;
 
@@ -122,6 +131,7 @@ cluster 集群级别
                      * @return AlertRules 当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusAlertRule> GetAlertRules() const;
 
@@ -129,15 +139,17 @@ cluster 集群级别
                      * 设置当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertRules 当Level为instance时有效，
+                     * @param _alertRules 当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlertRules(const std::vector<PrometheusAlertRule>& _alertRules);
 
                     /**
                      * 判断参数 AlertRules 是否已赋值
                      * @return AlertRules 是否已赋值
+                     * 
                      */
                     bool AlertRulesHasBeenSet() const;
 
@@ -148,6 +160,7 @@ cluster 集群级别
                      * @return RecordRules 当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRecordRules() const;
 
@@ -155,15 +168,17 @@ cluster 集群级别
                      * 设置当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordRules 当Level为instance时有效，
+                     * @param _recordRules 当Level为instance时有效，
 模板中的聚合规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordRules(const std::vector<PrometheusConfigItem>& _recordRules);
 
                     /**
                      * 判断参数 RecordRules 是否已赋值
                      * @return RecordRules 是否已赋值
+                     * 
                      */
                     bool RecordRulesHasBeenSet() const;
 
@@ -174,6 +189,7 @@ cluster 集群级别
                      * @return ServiceMonitors 当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetServiceMonitors() const;
 
@@ -181,15 +197,17 @@ cluster 集群级别
                      * 设置当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceMonitors 当Level为cluster时有效，
+                     * @param _serviceMonitors 当Level为cluster时有效，
 模板中的ServiceMonitor规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceMonitors(const std::vector<PrometheusConfigItem>& _serviceMonitors);
 
                     /**
                      * 判断参数 ServiceMonitors 是否已赋值
                      * @return ServiceMonitors 是否已赋值
+                     * 
                      */
                     bool ServiceMonitorsHasBeenSet() const;
 
@@ -200,6 +218,7 @@ cluster 集群级别
                      * @return PodMonitors 当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetPodMonitors() const;
 
@@ -207,15 +226,17 @@ cluster 集群级别
                      * 设置当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodMonitors 当Level为cluster时有效，
+                     * @param _podMonitors 当Level为cluster时有效，
 模板中的PodMonitors规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodMonitors(const std::vector<PrometheusConfigItem>& _podMonitors);
 
                     /**
                      * 判断参数 PodMonitors 是否已赋值
                      * @return PodMonitors 是否已赋值
+                     * 
                      */
                     bool PodMonitorsHasBeenSet() const;
 
@@ -226,6 +247,7 @@ cluster 集群级别
                      * @return RawJobs 当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusConfigItem> GetRawJobs() const;
 
@@ -233,15 +255,17 @@ cluster 集群级别
                      * 设置当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RawJobs 当Level为cluster时有效，
+                     * @param _rawJobs 当Level为cluster时有效，
 模板中的RawJobs规则列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRawJobs(const std::vector<PrometheusConfigItem>& _rawJobs);
 
                     /**
                      * 判断参数 RawJobs 是否已赋值
                      * @return RawJobs 是否已赋值
+                     * 
                      */
                     bool RawJobsHasBeenSet() const;
 
@@ -250,20 +274,23 @@ cluster 集群级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板的ID, 用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板的ID, 用于出参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 模板的ID, 用于出参
+                     * @param _templateId 模板的ID, 用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -272,20 +299,23 @@ cluster 集群级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最近更新时间，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近更新时间，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 最近更新时间，用于出参
+                     * @param _updateTime 最近更新时间，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -294,20 +324,23 @@ cluster 集群级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 当前版本，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置当前版本，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 当前版本，用于出参
+                     * @param _version 当前版本，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -316,20 +349,23 @@ cluster 集群级别
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否系统提供的默认模板，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否系统提供的默认模板，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDefault 是否系统提供的默认模板，用于出参
+                     * @param _isDefault 是否系统提供的默认模板，用于出参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
@@ -340,6 +376,7 @@ cluster 集群级别
                      * @return AlertDetailRules 当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusAlertRuleDetail> GetAlertDetailRules() const;
 
@@ -347,15 +384,17 @@ cluster 集群级别
                      * 设置当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertDetailRules 当Level为instance时有效，
+                     * @param _alertDetailRules 当Level为instance时有效，
 模板中的告警配置列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlertDetailRules(const std::vector<PrometheusAlertRuleDetail>& _alertDetailRules);
 
                     /**
                      * 判断参数 AlertDetailRules 是否已赋值
                      * @return AlertDetailRules 是否已赋值
+                     * 
                      */
                     bool AlertDetailRulesHasBeenSet() const;
 

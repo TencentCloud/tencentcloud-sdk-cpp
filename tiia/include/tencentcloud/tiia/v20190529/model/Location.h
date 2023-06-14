@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取位置矩形框的左上角横坐标
                      * @return XMin 位置矩形框的左上角横坐标
+                     * 
                      */
                     int64_t GetXMin() const;
 
                     /**
                      * 设置位置矩形框的左上角横坐标
-                     * @param XMin 位置矩形框的左上角横坐标
+                     * @param _xMin 位置矩形框的左上角横坐标
+                     * 
                      */
                     void SetXMin(const int64_t& _xMin);
 
                     /**
                      * 判断参数 XMin 是否已赋值
                      * @return XMin 是否已赋值
+                     * 
                      */
                     bool XMinHasBeenSet() const;
 
                     /**
                      * 获取位置矩形框的左上角纵坐标
                      * @return YMin 位置矩形框的左上角纵坐标
+                     * 
                      */
                     int64_t GetYMin() const;
 
                     /**
                      * 设置位置矩形框的左上角纵坐标
-                     * @param YMin 位置矩形框的左上角纵坐标
+                     * @param _yMin 位置矩形框的左上角纵坐标
+                     * 
                      */
                     void SetYMin(const int64_t& _yMin);
 
                     /**
                      * 判断参数 YMin 是否已赋值
                      * @return YMin 是否已赋值
+                     * 
                      */
                     bool YMinHasBeenSet() const;
 
                     /**
                      * 获取位置矩形框的右下角横坐标
                      * @return XMax 位置矩形框的右下角横坐标
+                     * 
                      */
                     int64_t GetXMax() const;
 
                     /**
                      * 设置位置矩形框的右下角横坐标
-                     * @param XMax 位置矩形框的右下角横坐标
+                     * @param _xMax 位置矩形框的右下角横坐标
+                     * 
                      */
                     void SetXMax(const int64_t& _xMax);
 
                     /**
                      * 判断参数 XMax 是否已赋值
                      * @return XMax 是否已赋值
+                     * 
                      */
                     bool XMaxHasBeenSet() const;
 
                     /**
                      * 获取位置矩形框的右下角纵坐标
                      * @return YMax 位置矩形框的右下角纵坐标
+                     * 
                      */
                     int64_t GetYMax() const;
 
                     /**
                      * 设置位置矩形框的右下角纵坐标
-                     * @param YMax 位置矩形框的右下角纵坐标
+                     * @param _yMax 位置矩形框的右下角纵坐标
+                     * 
                      */
                     void SetYMax(const int64_t& _yMax);
 
                     /**
                      * 判断参数 YMax 是否已赋值
                      * @return YMax 是否已赋值
+                     * 
                      */
                     bool YMaxHasBeenSet() const;
 

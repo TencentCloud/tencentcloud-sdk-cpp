@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return SecretKey 计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretKey 计算签名的密钥
+                     * @param _secretKey 计算签名的密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 单位为秒，最大可设置为 630720000
                      * @return ExpireTime 签名过期时间设置
 单位为秒，最大可设置为 630720000
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置签名过期时间设置
 单位为秒，最大可设置为 630720000
-                     * @param ExpireTime 签名过期时间设置
+                     * @param _expireTime 签名过期时间设置
 单位为秒，最大可设置为 630720000
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 如果包含字符 *  则表示所有文件
                      * @return FileExtensions 鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
+                     * 
                      */
                     std::vector<std::string> GetFileExtensions() const;
 
                     /**
                      * 设置鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
-                     * @param FileExtensions 鉴权/不做鉴权的文件扩展名列表设置
+                     * @param _fileExtensions 鉴权/不做鉴权的文件扩展名列表设置
 如果包含字符 *  则表示所有文件
+                     * 
                      */
                     void SetFileExtensions(const std::vector<std::string>& _fileExtensions);
 
                     /**
                      * 判断参数 FileExtensions 是否已赋值
                      * @return FileExtensions 是否已赋值
+                     * 
                      */
                     bool FileExtensionsHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      * @return FilterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
+                     * 
                      */
                     std::string GetFilterType() const;
 
                     /**
                      * 设置whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
-                     * @param FilterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
+                     * @param _filterType whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权
 blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 
@@ -145,6 +157,7 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      * @return BackupSecretKey 计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackupSecretKey() const;
 
@@ -152,15 +165,17 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
                      * 设置计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupSecretKey 计算签名的备用密钥
+                     * @param _backupSecretKey 计算签名的备用密钥
 仅允许大小写字母与数字，长度 6~32 位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBackupSecretKey(const std::string& _backupSecretKey);
 
                     /**
                      * 判断参数 BackupSecretKey 是否已赋值
                      * @return BackupSecretKey 是否已赋值
+                     * 
                      */
                     bool BackupSecretKeyHasBeenSet() const;
 

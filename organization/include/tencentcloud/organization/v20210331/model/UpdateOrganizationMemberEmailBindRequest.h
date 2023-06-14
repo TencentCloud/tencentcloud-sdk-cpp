@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取成员Uin
                      * @return MemberUin 成员Uin
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员Uin
-                     * @param MemberUin 成员Uin
+                     * @param _memberUin 成员Uin
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 
                     /**
                      * 获取绑定ID
                      * @return BindId 绑定ID
+                     * 
                      */
                     int64_t GetBindId() const;
 
                     /**
                      * 设置绑定ID
-                     * @param BindId 绑定ID
+                     * @param _bindId 绑定ID
+                     * 
                      */
                     void SetBindId(const int64_t& _bindId);
 
                     /**
                      * 判断参数 BindId 是否已赋值
                      * @return BindId 是否已赋值
+                     * 
                      */
                     bool BindIdHasBeenSet() const;
 
                     /**
                      * 获取邮箱
                      * @return Email 邮箱
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱
-                     * @param Email 邮箱
+                     * @param _email 邮箱
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取国际区号
                      * @return CountryCode 国际区号
+                     * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
                      * 设置国际区号
-                     * @param CountryCode 国际区号
+                     * @param _countryCode 国际区号
+                     * 
                      */
                     void SetCountryCode(const std::string& _countryCode);
 
                     /**
                      * 判断参数 CountryCode 是否已赋值
                      * @return CountryCode 是否已赋值
+                     * 
                      */
                     bool CountryCodeHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return Phone 手机号
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置手机号
-                     * @param Phone 手机号
+                     * @param _phone 手机号
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 

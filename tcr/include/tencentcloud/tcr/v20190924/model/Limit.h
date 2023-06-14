@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户名
                      * @return Username 用户名
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
-                     * @param Username 用户名
+                     * @param _username 用户名
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取配额的类型
                      * @return Type 配额的类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置配额的类型
-                     * @param Type 配额的类型
+                     * @param _type 配额的类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取配置的值
                      * @return Value 配置的值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置配置的值
-                     * @param Value 配置的值
+                     * @param _value 配置的值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

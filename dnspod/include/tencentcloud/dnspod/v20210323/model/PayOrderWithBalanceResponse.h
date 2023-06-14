@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取此次操作支付成功的订单id数组
                      * @return DealIdList 此次操作支付成功的订单id数组
+                     * 
                      */
                     std::vector<std::string> GetDealIdList() const;
 
                     /**
                      * 判断参数 DealIdList 是否已赋值
                      * @return DealIdList 是否已赋值
+                     * 
                      */
                     bool DealIdListHasBeenSet() const;
 
                     /**
                      * 获取此次操作支付成功的大订单号数组
                      * @return BigDealIdList 此次操作支付成功的大订单号数组
+                     * 
                      */
                     std::vector<std::string> GetBigDealIdList() const;
 
                     /**
                      * 判断参数 BigDealIdList 是否已赋值
                      * @return BigDealIdList 是否已赋值
+                     * 
                      */
                     bool BigDealIdListHasBeenSet() const;
 
                     /**
                      * 获取此次操作支付成功的订单号数组
                      * @return DealNameList 此次操作支付成功的订单号数组
+                     * 
                      */
                     std::vector<std::string> GetDealNameList() const;
 
                     /**
                      * 判断参数 DealNameList 是否已赋值
                      * @return DealNameList 是否已赋值
+                     * 
                      */
                     bool DealNameListHasBeenSet() const;
 

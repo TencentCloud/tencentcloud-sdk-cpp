@@ -46,192 +46,224 @@ namespace TencentCloud
                     /**
                      * 获取作品名称
                      * @return WorkName 作品名称
+                     * 
                      */
                     std::string GetWorkName() const;
 
                     /**
                      * 判断参数 WorkName 是否已赋值
                      * @return WorkName 是否已赋值
+                     * 
                      */
                     bool WorkNameHasBeenSet() const;
 
                     /**
                      * 获取侵权链接
                      * @return TortURL 侵权链接
+                     * 
                      */
                     std::string GetTortURL() const;
 
                     /**
                      * 判断参数 TortURL 是否已赋值
                      * @return TortURL 是否已赋值
+                     * 
                      */
                     bool TortURLHasBeenSet() const;
 
                     /**
                      * 获取取证时间
                      * @return ObtainTime 取证时间
+                     * 
                      */
                     std::string GetObtainTime() const;
 
                     /**
                      * 判断参数 ObtainTime 是否已赋值
                      * @return ObtainTime 是否已赋值
+                     * 
                      */
                     bool ObtainTimeHasBeenSet() const;
 
                     /**
                      * 获取取证类型
                      * @return ObtainType 取证类型
+                     * 
                      */
                     std::string GetObtainType() const;
 
                     /**
                      * 判断参数 ObtainType 是否已赋值
                      * @return ObtainType 是否已赋值
+                     * 
                      */
                     bool ObtainTypeHasBeenSet() const;
 
                     /**
                      * 获取取证号
                      * @return ObtainNum 取证号
+                     * 
                      */
                     std::string GetObtainNum() const;
 
                     /**
                      * 判断参数 ObtainNum 是否已赋值
                      * @return ObtainNum 是否已赋值
+                     * 
                      */
                     bool ObtainNumHasBeenSet() const;
 
                     /**
                      * 获取证据地址
                      * @return DepositFile 证据地址
+                     * 
                      */
                     std::string GetDepositFile() const;
 
                     /**
                      * 判断参数 DepositFile 是否已赋值
                      * @return DepositFile 是否已赋值
+                     * 
                      */
                     bool DepositFileHasBeenSet() const;
 
                     /**
                      * 获取公证信息地址
                      * @return DepositCert 公证信息地址
+                     * 
                      */
                     std::string GetDepositCert() const;
 
                     /**
                      * 判断参数 DepositCert 是否已赋值
                      * @return DepositCert 是否已赋值
+                     * 
                      */
                     bool DepositCertHasBeenSet() const;
 
                     /**
                      * 获取内容类型
                      * @return WorkType 内容类型
+                     * 
                      */
                     std::string GetWorkType() const;
 
                     /**
                      * 判断参数 WorkType 是否已赋值
                      * @return WorkType 是否已赋值
+                     * 
                      */
                     bool WorkTypeHasBeenSet() const;
 
                     /**
                      * 获取作品类型
                      * @return WorkCategory 作品类型
+                     * 
                      */
                     std::string GetWorkCategory() const;
 
                     /**
                      * 判断参数 WorkCategory 是否已赋值
                      * @return WorkCategory 是否已赋值
+                     * 
                      */
                     bool WorkCategoryHasBeenSet() const;
 
                     /**
                      * 获取侵权ID
                      * @return TortId 侵权ID
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取侵权编号
                      * @return TortNum 侵权编号
+                     * 
                      */
                     std::string GetTortNum() const;
 
                     /**
                      * 判断参数 TortNum 是否已赋值
                      * @return TortNum 是否已赋值
+                     * 
                      */
                     bool TortNumHasBeenSet() const;
 
                     /**
                      * 获取取证状态
                      * @return ObtainStatus 取证状态
+                     * 
                      */
                     int64_t GetObtainStatus() const;
 
                     /**
                      * 判断参数 ObtainStatus 是否已赋值
                      * @return ObtainStatus 是否已赋值
+                     * 
                      */
                     bool ObtainStatusHasBeenSet() const;
 
                     /**
                      * 获取取证状态说明
                      * @return ObtainNote 取证状态说明
+                     * 
                      */
                     std::string GetObtainNote() const;
 
                     /**
                      * 判断参数 ObtainNote 是否已赋值
                      * @return ObtainNote 是否已赋值
+                     * 
                      */
                     bool ObtainNoteHasBeenSet() const;
 
                     /**
                      * 获取取证时长
                      * @return ObtainDuration 取证时长
+                     * 
                      */
                     std::string GetObtainDuration() const;
 
                     /**
                      * 判断参数 ObtainDuration 是否已赋值
                      * @return ObtainDuration 是否已赋值
+                     * 
                      */
                     bool ObtainDurationHasBeenSet() const;
 
                     /**
                      * 获取取证名称
                      * @return ObtainName 取证名称
+                     * 
                      */
                     std::string GetObtainName() const;
 
                     /**
                      * 判断参数 ObtainName 是否已赋值
                      * @return ObtainName 是否已赋值
+                     * 
                      */
                     bool ObtainNameHasBeenSet() const;
 
                     /**
                      * 获取取证公证信息
                      * @return DepositPdfCert 取证公证信息
+                     * 
                      */
                     std::string GetDepositPdfCert() const;
 
                     /**
                      * 判断参数 DepositPdfCert 是否已赋值
                      * @return DepositPdfCert 是否已赋值
+                     * 
                      */
                     bool DepositPdfCertHasBeenSet() const;
 

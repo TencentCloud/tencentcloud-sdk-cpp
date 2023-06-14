@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 机型数据数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodLimitsInstanceSet 机型信息及其可支持的最大VPC-CNI模式Pod数量信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PodLimitsInstance> GetPodLimitsInstanceSet() const;
 
                     /**
                      * 判断参数 PodLimitsInstanceSet 是否已赋值
                      * @return PodLimitsInstanceSet 是否已赋值
+                     * 
                      */
                     bool PodLimitsInstanceSetHasBeenSet() const;
 

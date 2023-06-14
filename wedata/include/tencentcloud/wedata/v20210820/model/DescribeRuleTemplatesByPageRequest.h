@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取当前页
                      * @return PageNumber 当前页
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置当前页
-                     * @param PageNumber 当前页
+                     * @param _pageNumber 当前页
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每页记录数
                      * @return PageSize 每页记录数
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页记录数
-                     * @param PageSize 每页记录数
+                     * @param _pageSize 每页记录数
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取工作空间ID
                      * @return ProjectId 工作空间ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置工作空间ID
-                     * @param ProjectId 工作空间ID
+                     * @param _projectId 工作空间ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取通用排序字段
                      * @return OrderFields 通用排序字段
+                     * 
                      */
                     std::vector<OrderField> GetOrderFields() const;
 
                     /**
                      * 设置通用排序字段
-                     * @param OrderFields 通用排序字段
+                     * @param _orderFields 通用排序字段
+                     * 
                      */
                     void SetOrderFields(const std::vector<OrderField>& _orderFields);
 
                     /**
                      * 判断参数 OrderFields 是否已赋值
                      * @return OrderFields 是否已赋值
+                     * 
                      */
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
                      * 获取通用过滤条件
                      * @return Filters 通用过滤条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置通用过滤条件
-                     * @param Filters 通用过滤条件
+                     * @param _filters 通用过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

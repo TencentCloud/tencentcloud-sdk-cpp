@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取云盘绑定的定期快照数量。
                      * @return TotalCount 云盘绑定的定期快照数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取云盘绑定的定期快照列表。
                      * @return AutoSnapshotPolicySet 云盘绑定的定期快照列表。
+                     * 
                      */
                     std::vector<AutoSnapshotPolicy> GetAutoSnapshotPolicySet() const;
 
                     /**
                      * 判断参数 AutoSnapshotPolicySet 是否已赋值
                      * @return AutoSnapshotPolicySet 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicySetHasBeenSet() const;
 

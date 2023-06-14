@@ -55,12 +55,14 @@ F：失败
 S：成功
 F：失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReplenishSuccessFlag() const;
 
                     /**
                      * 判断参数 ReplenishSuccessFlag 是否已赋值
                      * @return ReplenishSuccessFlag 是否已赋值
+                     * 
                      */
                     bool ReplenishSuccessFlagHasBeenSet() const;
 
@@ -69,12 +71,14 @@ F：失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisterInfo 签约信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RegisterInfo GetRegisterInfo() const;
 
                     /**
                      * 判断参数 RegisterInfo 是否已赋值
                      * @return RegisterInfo 是否已赋值
+                     * 
                      */
                     bool RegisterInfoHasBeenSet() const;
 

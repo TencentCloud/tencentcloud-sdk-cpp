@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取Queue名称
                      * @return Name Queue名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Queue名称
-                     * @param Name Queue名称
+                     * @param _name Queue名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 说明
+                     * @param _remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestBindedNum 被绑定数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDestBindedNum() const;
 
                     /**
                      * 设置被绑定数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DestBindedNum 被绑定数
+                     * @param _destBindedNum 被绑定数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestBindedNum(const uint64_t& _destBindedNum);
 
                     /**
                      * 判断参数 DestBindedNum 是否已赋值
                      * @return DestBindedNum 是否已赋值
+                     * 
                      */
                     bool DestBindedNumHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间，以毫秒为单位
+                     * @param _createTime 创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 创建时间，以毫秒为单位
+                     * @param _updateTime 创建时间，以毫秒为单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineConsumerNum 在线消费者数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOnlineConsumerNum() const;
 
                     /**
                      * 设置在线消费者数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OnlineConsumerNum 在线消费者数
+                     * @param _onlineConsumerNum 在线消费者数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnlineConsumerNum(const uint64_t& _onlineConsumerNum);
 
                     /**
                      * 判断参数 OnlineConsumerNum 是否已赋值
                      * @return OnlineConsumerNum 是否已赋值
+                     * 
                      */
                     bool OnlineConsumerNumHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tps 每秒钟的事务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTps() const;
 
                     /**
                      * 设置每秒钟的事务数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tps 每秒钟的事务数
+                     * @param _tps 每秒钟的事务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTps(const uint64_t& _tps);
 
                     /**
                      * 判断参数 Tps 是否已赋值
                      * @return Tps 是否已赋值
+                     * 
                      */
                     bool TpsHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccumulativeMsgNum 消息堆积数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAccumulativeMsgNum() const;
 
                     /**
                      * 设置消息堆积数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccumulativeMsgNum 消息堆积数
+                     * @param _accumulativeMsgNum 消息堆积数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccumulativeMsgNum(const uint64_t& _accumulativeMsgNum);
 
                     /**
                      * 判断参数 AccumulativeMsgNum 是否已赋值
                      * @return AccumulativeMsgNum 是否已赋值
+                     * 
                      */
                     bool AccumulativeMsgNumHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoDelete 是否自动删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoDelete() const;
 
                     /**
                      * 设置是否自动删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoDelete 是否自动删除
+                     * @param _autoDelete 是否自动删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoDelete(const bool& _autoDelete);
 
                     /**
                      * 判断参数 AutoDelete 是否已赋值
                      * @return AutoDelete 是否已赋值
+                     * 
                      */
                     bool AutoDeleteHasBeenSet() const;
 
@@ -245,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterExchange 死信交换机
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeadLetterExchange() const;
 
                     /**
                      * 设置死信交换机
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeadLetterExchange 死信交换机
+                     * @param _deadLetterExchange 死信交换机
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeadLetterExchange(const std::string& _deadLetterExchange);
 
                     /**
                      * 判断参数 DeadLetterExchange 是否已赋值
                      * @return DeadLetterExchange 是否已赋值
+                     * 
                      */
                     bool DeadLetterExchangeHasBeenSet() const;
 
@@ -267,20 +297,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterRoutingKey 死信交换机路由键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeadLetterRoutingKey() const;
 
                     /**
                      * 设置死信交换机路由键
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeadLetterRoutingKey 死信交换机路由键
+                     * @param _deadLetterRoutingKey 死信交换机路由键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeadLetterRoutingKey(const std::string& _deadLetterRoutingKey);
 
                     /**
                      * 判断参数 DeadLetterRoutingKey 是否已赋值
                      * @return DeadLetterRoutingKey 是否已赋值
+                     * 
                      */
                     bool DeadLetterRoutingKeyHasBeenSet() const;
 
@@ -289,20 +322,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName Queue对应的Topic名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置Queue对应的Topic名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicName Queue对应的Topic名称
+                     * @param _topicName Queue对应的Topic名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

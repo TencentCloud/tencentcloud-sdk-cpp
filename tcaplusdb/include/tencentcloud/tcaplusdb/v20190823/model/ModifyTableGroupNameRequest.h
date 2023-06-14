@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取表格组所属的集群ID
                      * @return ClusterId 表格组所属的集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格组所属的集群ID
-                     * @param ClusterId 表格组所属的集群ID
+                     * @param _clusterId 表格组所属的集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待修改名称的表格组ID
                      * @return TableGroupId 待修改名称的表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置待修改名称的表格组ID
-                     * @param TableGroupId 待修改名称的表格组ID
+                     * @param _tableGroupId 待修改名称的表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取新的表格组名称，可以使用中英文字符和符号
                      * @return TableGroupName 新的表格组名称，可以使用中英文字符和符号
+                     * 
                      */
                     std::string GetTableGroupName() const;
 
                     /**
                      * 设置新的表格组名称，可以使用中英文字符和符号
-                     * @param TableGroupName 新的表格组名称，可以使用中英文字符和符号
+                     * @param _tableGroupName 新的表格组名称，可以使用中英文字符和符号
+                     * 
                      */
                     void SetTableGroupName(const std::string& _tableGroupName);
 
                     /**
                      * 判断参数 TableGroupName 是否已赋值
                      * @return TableGroupName 是否已赋值
+                     * 
                      */
                     bool TableGroupNameHasBeenSet() const;
 

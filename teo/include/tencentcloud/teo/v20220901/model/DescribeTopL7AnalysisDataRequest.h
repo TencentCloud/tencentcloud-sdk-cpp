@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -124,6 +130,7 @@ namespace TencentCloud
 <li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
 <li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
 
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -150,7 +157,7 @@ namespace TencentCloud
 <li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
 <li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
 
-                     * @param MetricName 查询的指标，取值有：
+                     * @param _metricName 查询的指标，取值有：
 <li> l7Flow_outFlux_country：按国家/地区维度统计流量指标；</li>
 <li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
 <li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
@@ -172,48 +179,56 @@ namespace TencentCloud
 <li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
 <li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
 
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取站点集合，此参数必填，不填默认查询为空。
                      * @return ZoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点集合，此参数必填，不填默认查询为空。
-                     * @param ZoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * @param _zoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
                      * @return Limit 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
-                     * @param Limit 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * @param _limit 查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -254,6 +269,7 @@ namespace TencentCloud
 <li>ipVersion<br>   按照【<strong>IP版本</strong>】进行过滤。<br>   对应Value的可选项如下：<br>   4：Ipv4；<br>   6：Ipv6。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * 
                      */
                     std::vector<QueryCondition> GetFilters() const;
 
@@ -276,7 +292,7 @@ namespace TencentCloud
 <li>ipVersion<br>   按照【<strong>IP版本</strong>】进行过滤。<br>   对应Value的可选项如下：<br>   4：Ipv4；<br>   6：Ipv6。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
-                     * @param Filters 过滤条件，详细的过滤条件Key值如下：
+                     * @param _filters 过滤条件，详细的过滤条件Key值如下：
 <li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
 <li>province<br>   按照【<strong>省份</strong>】进行过滤，此参数只支持服务区域为中国大陆。</li>
 <li>isp<br>   按照【<strong>运营商</strong>】进行过滤，此参数只支持服务区域为中国大陆。<br>   对应的Value可选项如下：<br>   2：中国电信；<br>   26：中国联通；<br>   1046：中国移动；<br>   3947：中国铁通；<br>   38：教育网；<br>   43：长城宽带；<br>   0：其他运营商。</li>
@@ -294,12 +310,14 @@ namespace TencentCloud
 <li>ipVersion<br>   按照【<strong>IP版本</strong>】进行过滤。<br>   对应Value的可选项如下：<br>   4：Ipv4；<br>   6：Ipv6。</li>
 <li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
 <li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<QueryCondition>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
@@ -314,6 +332,7 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -323,17 +342,19 @@ namespace TencentCloud
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
-                     * @param Interval 查询时间粒度，取值有：
+                     * @param _interval 查询时间粒度，取值有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
 <li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 
@@ -346,6 +367,7 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -354,16 +376,18 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据。</li>不填默认取值为global。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

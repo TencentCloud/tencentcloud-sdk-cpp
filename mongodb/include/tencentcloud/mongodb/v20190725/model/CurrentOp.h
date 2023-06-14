@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpId 操作序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOpId() const;
 
                     /**
                      * 设置操作序号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpId 操作序号
+                     * @param _opId 操作序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpId(const int64_t& _opId);
 
                     /**
                      * 判断参数 OpId 是否已赋值
                      * @return OpId 是否已赋值
+                     * 
                      */
                     bool OpIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ns 操作所在的命名空间，形式如db.collection
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNs() const;
 
                     /**
                      * 设置操作所在的命名空间，形式如db.collection
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ns 操作所在的命名空间，形式如db.collection
+                     * @param _ns 操作所在的命名空间，形式如db.collection
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNs(const std::string& _ns);
 
                     /**
                      * 判断参数 Ns 是否已赋值
                      * @return Ns 是否已赋值
+                     * 
                      */
                     bool NsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Query 操作执行语句
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置操作执行语句
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Query 操作执行语句
+                     * @param _query 操作执行语句
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
@@ -117,38 +126,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOp() const;
 
                     /**
                      * 设置操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
+                     * @param _op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOp(const std::string& _op);
 
                     /**
                      * 判断参数 Op 是否已赋值
                      * @return Op 是否已赋值
+                     * 
                      */
                     bool OpHasBeenSet() const;
 
                     /**
                      * 获取操作所在的分片名称
                      * @return ReplicaSetName 操作所在的分片名称
+                     * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
                      * 设置操作所在的分片名称
-                     * @param ReplicaSetName 操作所在的分片名称
+                     * @param _replicaSetName 操作所在的分片名称
+                     * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
 
                     /**
                      * 判断参数 ReplicaSetName 是否已赋值
                      * @return ReplicaSetName 是否已赋值
+                     * 
                      */
                     bool ReplicaSetNameHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 筛选条件，节点状态，可能的取值为：Primary、Secondary
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置筛选条件，节点状态，可能的取值为：Primary、Secondary
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 筛选条件，节点状态，可能的取值为：Primary、Secondary
+                     * @param _state 筛选条件，节点状态，可能的取值为：Primary、Secondary
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -179,38 +197,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 操作详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operation 操作详细信息
+                     * @param _operation 操作详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取操作所在的节点名称
                      * @return NodeName 操作所在的节点名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置操作所在的节点名称
-                     * @param NodeName 操作所在的节点名称
+                     * @param _nodeName 操作所在的节点名称
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicrosecsRunning 操作已执行时间（ms）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMicrosecsRunning() const;
 
                     /**
                      * 设置操作已执行时间（ms）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MicrosecsRunning 操作已执行时间（ms）
+                     * @param _microsecsRunning 操作已执行时间（ms）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMicrosecsRunning(const uint64_t& _microsecsRunning);
 
                     /**
                      * 判断参数 MicrosecsRunning 是否已赋值
                      * @return MicrosecsRunning 是否已赋值
+                     * 
                      */
                     bool MicrosecsRunningHasBeenSet() const;
 

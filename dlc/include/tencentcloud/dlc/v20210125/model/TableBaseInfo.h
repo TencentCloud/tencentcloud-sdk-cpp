@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取该数据表所属数据库名字
                      * @return DatabaseName 该数据表所属数据库名字
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置该数据表所属数据库名字
-                     * @param DatabaseName 该数据表所属数据库名字
+                     * @param _databaseName 该数据表所属数据库名字
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取数据表名字
                      * @return TableName 数据表名字
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置数据表名字
-                     * @param TableName 数据表名字
+                     * @param _tableName 数据表名字
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 该数据表所属数据源名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置该数据表所属数据源名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionName 该数据表所属数据源名字
+                     * @param _datasourceConnectionName 该数据表所属数据源名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableComment 该数据表备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableComment() const;
 
                     /**
                      * 设置该数据表备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableComment 该数据表备注
+                     * @param _tableComment 该数据表备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableComment(const std::string& _tableComment);
 
                     /**
                      * 判断参数 TableComment 是否已赋值
                      * @return TableComment 是否已赋值
+                     * 
                      */
                     bool TableCommentHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 具体类型，表or视图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置具体类型，表or视图
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 具体类型，表or视图
+                     * @param _type 具体类型，表or视图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableFormat 数据格式类型，hive，iceberg等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableFormat() const;
 
                     /**
                      * 设置数据格式类型，hive，iceberg等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableFormat 数据格式类型，hive，iceberg等
+                     * @param _tableFormat 数据格式类型，hive，iceberg等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableFormat(const std::string& _tableFormat);
 
                     /**
                      * 判断参数 TableFormat 是否已赋值
                      * @return TableFormat 是否已赋值
+                     * 
                      */
                     bool TableFormatHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 建表用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置建表用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAlias 建表用户昵称
+                     * @param _userAlias 建表用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
 
                     /**
                      * 判断参数 UserAlias 是否已赋值
                      * @return UserAlias 是否已赋值
+                     * 
                      */
                     bool UserAliasHasBeenSet() const;
 
@@ -198,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSubUin 建表用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserSubUin() const;
 
                     /**
                      * 设置建表用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserSubUin 建表用户ID
+                     * @param _userSubUin 建表用户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserSubUin(const std::string& _userSubUin);
 
                     /**
                      * 判断参数 UserSubUin 是否已赋值
                      * @return UserSubUin 是否已赋值
+                     * 
                      */
                     bool UserSubUinHasBeenSet() const;
 
@@ -220,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GovernPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DataGovernPolicy GetGovernPolicy() const;
 
                     /**
                      * 设置数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GovernPolicy 数据治理配置项
+                     * @param _governPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGovernPolicy(const DataGovernPolicy& _governPolicy);
 
                     /**
                      * 判断参数 GovernPolicy 是否已赋值
                      * @return GovernPolicy 是否已赋值
+                     * 
                      */
                     bool GovernPolicyHasBeenSet() const;
 
@@ -242,20 +269,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDbGovernPolicyIsDisable() const;
 
                     /**
                      * 设置库数据治理是否关闭，关闭：true，开启：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
+                     * @param _dbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDbGovernPolicyIsDisable(const std::string& _dbGovernPolicyIsDisable);
 
                     /**
                      * 判断参数 DbGovernPolicyIsDisable 是否已赋值
                      * @return DbGovernPolicyIsDisable 是否已赋值
+                     * 
                      */
                     bool DbGovernPolicyIsDisableHasBeenSet() const;
 

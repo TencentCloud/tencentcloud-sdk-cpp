@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取部署资源类型
                      * @return ResourceType 部署资源类型
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署资源类型
-                     * @param ResourceType 部署资源类型
+                     * @param _resourceType 部署资源类型
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取部署资源详情列表
                      * @return List 部署资源详情列表
+                     * 
                      */
                     std::vector<UpdateRecordDetail> GetList() const;
 
                     /**
                      * 设置部署资源详情列表
-                     * @param List 部署资源详情列表
+                     * @param _list 部署资源详情列表
+                     * 
                      */
                     void SetList(const std::vector<UpdateRecordDetail>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取该部署资源总数
                      * @return TotalCount 该部署资源总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置该部署资源总数
-                     * @param TotalCount 该部署资源总数
+                     * @param _totalCount 该部署资源总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

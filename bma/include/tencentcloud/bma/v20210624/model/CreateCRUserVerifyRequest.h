@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取用户真实姓名
                      * @return UserName 用户真实姓名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户真实姓名
-                     * @param UserName 用户真实姓名
+                     * @param _userName 用户真实姓名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取用户身份证号
                      * @return UserID 用户身份证号
+                     * 
                      */
                     std::string GetUserID() const;
 
                     /**
                      * 设置用户身份证号
-                     * @param UserID 用户身份证号
+                     * @param _userID 用户身份证号
+                     * 
                      */
                     void SetUserID(const std::string& _userID);
 
                     /**
                      * 判断参数 UserID 是否已赋值
                      * @return UserID 是否已赋值
+                     * 
                      */
                     bool UserIDHasBeenSet() const;
 
                     /**
                      * 获取用户手机号码
                      * @return UserPhone 用户手机号码
+                     * 
                      */
                     std::string GetUserPhone() const;
 
                     /**
                      * 设置用户手机号码
-                     * @param UserPhone 用户手机号码
+                     * @param _userPhone 用户手机号码
+                     * 
                      */
                     void SetUserPhone(const std::string& _userPhone);
 
                     /**
                      * 判断参数 UserPhone 是否已赋值
                      * @return UserPhone 是否已赋值
+                     * 
                      */
                     bool UserPhoneHasBeenSet() const;
 
                     /**
                      * 获取短信验证码，接口接入可以置空
                      * @return VerificationCode 短信验证码，接口接入可以置空
+                     * 
                      */
                     std::string GetVerificationCode() const;
 
                     /**
                      * 设置短信验证码，接口接入可以置空
-                     * @param VerificationCode 短信验证码，接口接入可以置空
+                     * @param _verificationCode 短信验证码，接口接入可以置空
+                     * 
                      */
                     void SetVerificationCode(const std::string& _verificationCode);
 
                     /**
                      * 判断参数 VerificationCode 是否已赋值
                      * @return VerificationCode 是否已赋值
+                     * 
                      */
                     bool VerificationCodeHasBeenSet() const;
 
                     /**
                      * 获取字段已废弃，认证类型
                      * @return Type 字段已废弃，认证类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置字段已废弃，认证类型
-                     * @param Type 字段已废弃，认证类型
+                     * @param _type 字段已废弃，认证类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取人物ID
                      * @return PersonId 人物ID
+                     * 
                      */
                     int64_t GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取0.正常建档 1.重复身份 2.未检测到人脸 3.检测到多个人脸 4.人脸大小过小 5.人脸质量不达标 6.其他错误
                      * @return Status 0.正常建档 1.重复身份 2.未检测到人脸 3.检测到多个人脸 4.人脸大小过小 5.人脸质量不达标 6.其他错误
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取图片url
                      * @return PictureUrl 图片url
+                     * 
                      */
                     std::string GetPictureUrl() const;
 
                     /**
                      * 判断参数 PictureUrl 是否已赋值
                      * @return PictureUrl 是否已赋值
+                     * 
                      */
                     bool PictureUrlHasBeenSet() const;
 

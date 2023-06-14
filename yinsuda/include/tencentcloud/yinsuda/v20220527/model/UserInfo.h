@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取应用名称。
                      * @return AppName 应用名称。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * @param _appName 应用名称。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取用户标识。
                      * @return UserId 用户标识。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户标识。
-                     * @param UserId 用户标识。
+                     * @param _userId 用户标识。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveVipUserInfo 直播会员详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LiveVipUserInfo GetLiveVipUserInfo() const;
 
                     /**
                      * 设置直播会员详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiveVipUserInfo 直播会员详细信息。
+                     * @param _liveVipUserInfo 直播会员详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiveVipUserInfo(const LiveVipUserInfo& _liveVipUserInfo);
 
                     /**
                      * 判断参数 LiveVipUserInfo 是否已赋值
                      * @return LiveVipUserInfo 是否已赋值
+                     * 
                      */
                     bool LiveVipUserInfoHasBeenSet() const;
 
@@ -112,6 +121,7 @@ namespace TencentCloud
                      * @return UserType 用户类型
 <li>Normal：普通用户</li>
 <li>LiveVip：直播会员用户</li>
+                     * 
                      */
                     std::string GetUserType() const;
 
@@ -119,15 +129,17 @@ namespace TencentCloud
                      * 设置用户类型
 <li>Normal：普通用户</li>
 <li>LiveVip：直播会员用户</li>
-                     * @param UserType 用户类型
+                     * @param _userType 用户类型
 <li>Normal：普通用户</li>
 <li>LiveVip：直播会员用户</li>
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 

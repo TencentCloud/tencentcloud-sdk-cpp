@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取项目ID。
                      * @return ProjectId 项目ID。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * @param _projectId 项目ID。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

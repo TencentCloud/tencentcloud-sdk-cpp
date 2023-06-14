@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取前端SDK返回
                      * @return ReqId 前端SDK返回
+                     * 
                      */
                     std::string GetReqId() const;
 
                     /**
                      * 设置前端SDK返回
-                     * @param ReqId 前端SDK返回
+                     * @param _reqId 前端SDK返回
+                     * 
                      */
                     void SetReqId(const std::string& _reqId);
 
                     /**
                      * 判断参数 ReqId 是否已赋值
                      * @return ReqId 是否已赋值
+                     * 
                      */
                     bool ReqIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取协议（tcp；udp）
                      * @return Protocol 协议（tcp；udp）
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议（tcp；udp）
-                     * @param Protocol 协议（tcp；udp）
+                     * @param _protocol 协议（tcp；udp）
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取端口
                      * @return Port 端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口
-                     * @param Port 端口
+                     * @param _port 端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

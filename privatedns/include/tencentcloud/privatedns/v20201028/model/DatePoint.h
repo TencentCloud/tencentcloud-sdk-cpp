@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return Date 时间
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置时间
-                     * @param Date 时间
+                     * @param _date 时间
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取值
                      * @return Value 值
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置值
-                     * @param Value 值
+                     * @param _value 值
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

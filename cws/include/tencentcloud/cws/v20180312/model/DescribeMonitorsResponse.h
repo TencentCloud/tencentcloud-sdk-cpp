@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取监控任务列表。
                      * @return Monitors 监控任务列表。
+                     * 
                      */
                     std::vector<MonitorsDetail> GetMonitors() const;
 
                     /**
                      * 判断参数 Monitors 是否已赋值
                      * @return Monitors 是否已赋值
+                     * 
                      */
                     bool MonitorsHasBeenSet() const;
 
                     /**
                      * 获取监控任务数量。
                      * @return TotalCount 监控任务数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

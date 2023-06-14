@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取查询时间，单位s。
                      * @return Timestamp 查询时间，单位s。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取实时数据信息列表。
                      * @return Datas 实时数据信息列表。
+                     * 
                      */
                     std::vector<FlowRealtimeStatusItem> GetDatas() const;
 
                     /**
                      * 判断参数 Datas 是否已赋值
                      * @return Datas 是否已赋值
+                     * 
                      */
                     bool DatasHasBeenSet() const;
 

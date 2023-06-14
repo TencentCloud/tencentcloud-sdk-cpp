@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取源文件地址。
                      * @return DownInfo 源文件地址。
+                     * 
                      */
                     DownInfo GetDownInfo() const;
 
                     /**
                      * 设置源文件地址。
-                     * @param DownInfo 源文件地址。
+                     * @param _downInfo 源文件地址。
+                     * 
                      */
                     void SetDownInfo(const DownInfo& _downInfo);
 
                     /**
                      * 判断参数 DownInfo 是否已赋值
                      * @return DownInfo 是否已赋值
+                     * 
                      */
                     bool DownInfoHasBeenSet() const;
 
                     /**
                      * 获取画质重生任务参数信息。
                      * @return TransInfo 画质重生任务参数信息。
+                     * 
                      */
                     std::vector<SubTaskTranscodeInfo> GetTransInfo() const;
 
                     /**
                      * 设置画质重生任务参数信息。
-                     * @param TransInfo 画质重生任务参数信息。
+                     * @param _transInfo 画质重生任务参数信息。
+                     * 
                      */
                     void SetTransInfo(const std::vector<SubTaskTranscodeInfo>& _transInfo);
 
                     /**
                      * 判断参数 TransInfo 是否已赋值
                      * @return TransInfo 是否已赋值
+                     * 
                      */
                     bool TransInfoHasBeenSet() const;
 
                     /**
                      * 获取任务结束后文件存储信息。
                      * @return SaveInfo 任务结束后文件存储信息。
+                     * 
                      */
                     SaveInfo GetSaveInfo() const;
 
                     /**
                      * 设置任务结束后文件存储信息。
-                     * @param SaveInfo 任务结束后文件存储信息。
+                     * @param _saveInfo 任务结束后文件存储信息。
+                     * 
                      */
                     void SetSaveInfo(const SaveInfo& _saveInfo);
 
                     /**
                      * 判断参数 SaveInfo 是否已赋值
                      * @return SaveInfo 是否已赋值
+                     * 
                      */
                     bool SaveInfoHasBeenSet() const;
 
                     /**
                      * 获取任务结果回调地址信息。
                      * @return CallbackInfo 任务结果回调地址信息。
+                     * 
                      */
                     CallbackInfo GetCallbackInfo() const;
 
                     /**
                      * 设置任务结果回调地址信息。
-                     * @param CallbackInfo 任务结果回调地址信息。
+                     * @param _callbackInfo 任务结果回调地址信息。
+                     * 
                      */
                     void SetCallbackInfo(const CallbackInfo& _callbackInfo);
 
                     /**
                      * 判断参数 CallbackInfo 是否已赋值
                      * @return CallbackInfo 是否已赋值
+                     * 
                      */
                     bool CallbackInfoHasBeenSet() const;
 
                     /**
                      * 获取极速高清体验馆渠道标志。
                      * @return TopSpeedCodecChannel 极速高清体验馆渠道标志。
+                     * 
                      */
                     uint64_t GetTopSpeedCodecChannel() const;
 
                     /**
                      * 设置极速高清体验馆渠道标志。
-                     * @param TopSpeedCodecChannel 极速高清体验馆渠道标志。
+                     * @param _topSpeedCodecChannel 极速高清体验馆渠道标志。
+                     * 
                      */
                     void SetTopSpeedCodecChannel(const uint64_t& _topSpeedCodecChannel);
 
                     /**
                      * 判断参数 TopSpeedCodecChannel 是否已赋值
                      * @return TopSpeedCodecChannel 是否已赋值
+                     * 
                      */
                     bool TopSpeedCodecChannelHasBeenSet() const;
 

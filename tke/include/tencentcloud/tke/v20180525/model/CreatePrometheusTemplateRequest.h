@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取模板设置
                      * @return Template 模板设置
+                     * 
                      */
                     PrometheusTemplate GetTemplate() const;
 
                     /**
                      * 设置模板设置
-                     * @param Template 模板设置
+                     * @param _template 模板设置
+                     * 
                      */
                     void SetTemplate(const PrometheusTemplate& _template);
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取顾客原类型
                      * @return OldType 顾客原类型
+                     * 
                      */
                     int64_t GetOldType() const;
 
                     /**
                      * 设置顾客原类型
-                     * @param OldType 顾客原类型
+                     * @param _oldType 顾客原类型
+                     * 
                      */
                     void SetOldType(const int64_t& _oldType);
 
                     /**
                      * 判断参数 OldType 是否已赋值
                      * @return OldType 是否已赋值
+                     * 
                      */
                     bool OldTypeHasBeenSet() const;
 
                     /**
                      * 获取顾客新类型
                      * @return NewType 顾客新类型
+                     * 
                      */
                     int64_t GetNewType() const;
 
                     /**
                      * 设置顾客新类型
-                     * @param NewType 顾客新类型
+                     * @param _newType 顾客新类型
+                     * 
                      */
                     void SetNewType(const int64_t& _newType);
 
                     /**
                      * 判断参数 NewType 是否已赋值
                      * @return NewType 是否已赋值
+                     * 
                      */
                     bool NewTypeHasBeenSet() const;
 
                     /**
                      * 获取顾客face id
                      * @return PersonId 顾客face id
+                     * 
                      */
                     int64_t GetPersonId() const;
 
                     /**
                      * 设置顾客face id
-                     * @param PersonId 顾客face id
+                     * @param _personId 顾客face id
+                     * 
                      */
                     void SetPersonId(const int64_t& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

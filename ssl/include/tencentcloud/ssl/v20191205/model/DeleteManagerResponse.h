@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取管理人ID
                      * @return ManagerId 管理人ID
+                     * 
                      */
                     int64_t GetManagerId() const;
 
                     /**
                      * 判断参数 ManagerId 是否已赋值
                      * @return ManagerId 是否已赋值
+                     * 
                      */
                     bool ManagerIdHasBeenSet() const;
 

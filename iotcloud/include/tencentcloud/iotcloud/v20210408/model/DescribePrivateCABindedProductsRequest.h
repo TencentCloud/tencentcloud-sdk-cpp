@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取证书名称
                      * @return CertName 证书名称
+                     * 
                      */
                     std::string GetCertName() const;
 
                     /**
                      * 设置证书名称
-                     * @param CertName 证书名称
+                     * @param _certName 证书名称
+                     * 
                      */
                     void SetCertName(const std::string& _certName);
 
                     /**
                      * 判断参数 CertName 是否已赋值
                      * @return CertName 是否已赋值
+                     * 
                      */
                     bool CertNameHasBeenSet() const;
 
                     /**
                      * 获取查询偏移量
                      * @return Offset 查询偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移量
-                     * @param Offset 查询偏移量
+                     * @param _offset 查询偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询的数据量，默认为20， 最大为200
                      * @return Limit 查询的数据量，默认为20， 最大为200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询的数据量，默认为20， 最大为200
-                     * @param Limit 查询的数据量，默认为20， 最大为200
+                     * @param _limit 查询的数据量，默认为20， 最大为200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

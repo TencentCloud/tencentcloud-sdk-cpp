@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待绑定的IP策略所属的服务唯一ID。
                      * @return ServiceId 待绑定的IP策略所属的服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待绑定的IP策略所属的服务唯一ID。
-                     * @param ServiceId 待绑定的IP策略所属的服务唯一ID。
+                     * @param _serviceId 待绑定的IP策略所属的服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的IP策略唯一ID。
                      * @return StrategyId 待绑定的IP策略唯一ID。
+                     * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
                      * 设置待绑定的IP策略唯一ID。
-                     * @param StrategyId 待绑定的IP策略唯一ID。
+                     * @param _strategyId 待绑定的IP策略唯一ID。
+                     * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取IP策略待绑定的环境。
                      * @return EnvironmentName IP策略待绑定的环境。
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置IP策略待绑定的环境。
-                     * @param EnvironmentName IP策略待绑定的环境。
+                     * @param _environmentName IP策略待绑定的环境。
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取IP策略待绑定的API列表。
                      * @return BindApiIds IP策略待绑定的API列表。
+                     * 
                      */
                     std::vector<std::string> GetBindApiIds() const;
 
                     /**
                      * 设置IP策略待绑定的API列表。
-                     * @param BindApiIds IP策略待绑定的API列表。
+                     * @param _bindApiIds IP策略待绑定的API列表。
+                     * 
                      */
                     void SetBindApiIds(const std::vector<std::string>& _bindApiIds);
 
                     /**
                      * 判断参数 BindApiIds 是否已赋值
                      * @return BindApiIds 是否已赋值
+                     * 
                      */
                     bool BindApiIdsHasBeenSet() const;
 

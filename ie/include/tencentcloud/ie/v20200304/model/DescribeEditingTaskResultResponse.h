@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取编辑任务结果信息。
                      * @return TaskResult 编辑任务结果信息。
+                     * 
                      */
                     EditingTaskResult GetTaskResult() const;
 
                     /**
                      * 判断参数 TaskResult 是否已赋值
                      * @return TaskResult 是否已赋值
+                     * 
                      */
                     bool TaskResultHasBeenSet() const;
 

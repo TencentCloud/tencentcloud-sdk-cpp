@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Function 云函数相关信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FunctionInfo GetFunction() const;
 
                     /**
                      * 设置云函数相关信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Function 云函数相关信息
+                     * @param _function 云函数相关信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFunction(const FunctionInfo& _function);
 
                     /**
                      * 判断参数 Function 是否已赋值
                      * @return Function 是否已赋值
+                     * 
                      */
                     bool FunctionHasBeenSet() const;
 
                     /**
                      * 获取权重
                      * @return Weight 权重
+                     * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置权重
-                     * @param Weight 权重
+                     * @param _weight 权重
+                     * 
                      */
                     void SetWeight(const uint64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

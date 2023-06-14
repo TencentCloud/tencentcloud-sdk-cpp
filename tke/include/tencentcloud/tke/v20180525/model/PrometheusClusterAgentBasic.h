@@ -51,144 +51,168 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return Region 集群ID
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置集群ID
-                     * @param Region 集群ID
+                     * @param _region 集群ID
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启公网CLB
                      * @return EnableExternal 是否开启公网CLB
+                     * 
                      */
                     bool GetEnableExternal() const;
 
                     /**
                      * 设置是否开启公网CLB
-                     * @param EnableExternal 是否开启公网CLB
+                     * @param _enableExternal 是否开启公网CLB
+                     * 
                      */
                     void SetEnableExternal(const bool& _enableExternal);
 
                     /**
                      * 判断参数 EnableExternal 是否已赋值
                      * @return EnableExternal 是否已赋值
+                     * 
                      */
                     bool EnableExternalHasBeenSet() const;
 
                     /**
                      * 获取集群内部署组件的pod配置
                      * @return InClusterPodConfig 集群内部署组件的pod配置
+                     * 
                      */
                     PrometheusClusterAgentPodConfig GetInClusterPodConfig() const;
 
                     /**
                      * 设置集群内部署组件的pod配置
-                     * @param InClusterPodConfig 集群内部署组件的pod配置
+                     * @param _inClusterPodConfig 集群内部署组件的pod配置
+                     * 
                      */
                     void SetInClusterPodConfig(const PrometheusClusterAgentPodConfig& _inClusterPodConfig);
 
                     /**
                      * 判断参数 InClusterPodConfig 是否已赋值
                      * @return InClusterPodConfig 是否已赋值
+                     * 
                      */
                     bool InClusterPodConfigHasBeenSet() const;
 
                     /**
                      * 获取该集群采集的所有指标都会带上这些labels
                      * @return ExternalLabels 该集群采集的所有指标都会带上这些labels
+                     * 
                      */
                     std::vector<Label> GetExternalLabels() const;
 
                     /**
                      * 设置该集群采集的所有指标都会带上这些labels
-                     * @param ExternalLabels 该集群采集的所有指标都会带上这些labels
+                     * @param _externalLabels 该集群采集的所有指标都会带上这些labels
+                     * 
                      */
                     void SetExternalLabels(const std::vector<Label>& _externalLabels);
 
                     /**
                      * 判断参数 ExternalLabels 是否已赋值
                      * @return ExternalLabels 是否已赋值
+                     * 
                      */
                     bool ExternalLabelsHasBeenSet() const;
 
                     /**
                      * 获取是否安装默认采集配置
                      * @return NotInstallBasicScrape 是否安装默认采集配置
+                     * 
                      */
                     bool GetNotInstallBasicScrape() const;
 
                     /**
                      * 设置是否安装默认采集配置
-                     * @param NotInstallBasicScrape 是否安装默认采集配置
+                     * @param _notInstallBasicScrape 是否安装默认采集配置
+                     * 
                      */
                     void SetNotInstallBasicScrape(const bool& _notInstallBasicScrape);
 
                     /**
                      * 判断参数 NotInstallBasicScrape 是否已赋值
                      * @return NotInstallBasicScrape 是否已赋值
+                     * 
                      */
                     bool NotInstallBasicScrapeHasBeenSet() const;
 
                     /**
                      * 获取是否采集指标，true代表drop所有指标，false代表采集默认指标
                      * @return NotScrape 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * 
                      */
                     bool GetNotScrape() const;
 
                     /**
                      * 设置是否采集指标，true代表drop所有指标，false代表采集默认指标
-                     * @param NotScrape 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * @param _notScrape 是否采集指标，true代表drop所有指标，false代表采集默认指标
+                     * 
                      */
                     void SetNotScrape(const bool& _notScrape);
 
                     /**
                      * 判断参数 NotScrape 是否已赋值
                      * @return NotScrape 是否已赋值
+                     * 
                      */
                     bool NotScrapeHasBeenSet() const;
 

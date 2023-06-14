@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取容器实例名称
                      * @return InstanceName 容器实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置容器实例名称
-                     * @param InstanceName 容器实例名称
+                     * @param _instanceName 容器实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取容器名称
                      * @return ContainerName 容器名称
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名称
-                     * @param ContainerName 容器名称
+                     * @param _containerName 容器名称
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取日志显示尾部行数
                      * @return Tail 日志显示尾部行数
+                     * 
                      */
                     uint64_t GetTail() const;
 
                     /**
                      * 设置日志显示尾部行数
-                     * @param Tail 日志显示尾部行数
+                     * @param _tail 日志显示尾部行数
+                     * 
                      */
                     void SetTail(const uint64_t& _tail);
 
                     /**
                      * 判断参数 Tail 是否已赋值
                      * @return Tail 是否已赋值
+                     * 
                      */
                     bool TailHasBeenSet() const;
 
                     /**
                      * 获取日志起始时间
                      * @return SinceTime 日志起始时间
+                     * 
                      */
                     std::string GetSinceTime() const;
 
                     /**
                      * 设置日志起始时间
-                     * @param SinceTime 日志起始时间
+                     * @param _sinceTime 日志起始时间
+                     * 
                      */
                     void SetSinceTime(const std::string& _sinceTime);
 
                     /**
                      * 判断参数 SinceTime 是否已赋值
                      * @return SinceTime 是否已赋值
+                     * 
                      */
                     bool SinceTimeHasBeenSet() const;
 

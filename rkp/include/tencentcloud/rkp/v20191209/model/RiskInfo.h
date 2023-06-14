@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取风险码
                      * @return Key 风险码
+                     * 
                      */
                     int64_t GetKey() const;
 
                     /**
                      * 设置风险码
-                     * @param Key 风险码
+                     * @param _key 风险码
+                     * 
                      */
                     void SetKey(const int64_t& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 风险详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置风险详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 风险详情
+                     * @param _value 风险详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

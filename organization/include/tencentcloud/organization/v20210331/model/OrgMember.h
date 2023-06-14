@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberUin 成员Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberUin 成员Uin
+                     * @param _memberUin 成员Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 成员名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置成员名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 成员名
+                     * @param _name 成员名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberType 成员类型，邀请：Invite， 创建：Create
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberType() const;
 
                     /**
                      * 设置成员类型，邀请：Invite， 创建：Create
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberType 成员类型，邀请：Invite， 创建：Create
+                     * @param _memberType 成员类型，邀请：Invite， 创建：Create
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberType(const std::string& _memberType);
 
                     /**
                      * 判断参数 MemberType 是否已赋值
                      * @return MemberType 是否已赋值
+                     * 
                      */
                     bool MemberTypeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyType 关系策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgPolicyType() const;
 
                     /**
                      * 设置关系策略类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgPolicyType 关系策略类型
+                     * @param _orgPolicyType 关系策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgPolicyType(const std::string& _orgPolicyType);
 
                     /**
                      * 判断参数 OrgPolicyType 是否已赋值
                      * @return OrgPolicyType 是否已赋值
+                     * 
                      */
                     bool OrgPolicyTypeHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyName 关系策略名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgPolicyName() const;
 
                     /**
                      * 设置关系策略名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgPolicyName 关系策略名
+                     * @param _orgPolicyName 关系策略名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgPolicyName(const std::string& _orgPolicyName);
 
                     /**
                      * 判断参数 OrgPolicyName 是否已赋值
                      * @return OrgPolicyName 是否已赋值
+                     * 
                      */
                     bool OrgPolicyNameHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPermission 关系策略权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OrgPermission> GetOrgPermission() const;
 
                     /**
                      * 设置关系策略权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgPermission 关系策略权限
+                     * @param _orgPermission 关系策略权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgPermission(const std::vector<OrgPermission>& _orgPermission);
 
                     /**
                      * 判断参数 OrgPermission 是否已赋值
                      * @return OrgPermission 是否已赋值
+                     * 
                      */
                     bool OrgPermissionHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 所属节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置所属节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeId 所属节点ID
+                     * @param _nodeId 所属节点ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 所属节点名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置所属节点名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeName 所属节点名
+                     * @param _nodeName 所属节点名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -273,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -295,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAllowQuit 是否允许成员退出。允许：Allow，不允许：Denied。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsAllowQuit() const;
 
                     /**
                      * 设置是否允许成员退出。允许：Allow，不允许：Denied。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAllowQuit 是否允许成员退出。允许：Allow，不允许：Denied。
+                     * @param _isAllowQuit 是否允许成员退出。允许：Allow，不允许：Denied。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsAllowQuit(const std::string& _isAllowQuit);
 
                     /**
                      * 判断参数 IsAllowQuit 是否已赋值
                      * @return IsAllowQuit 是否已赋值
+                     * 
                      */
                     bool IsAllowQuitHasBeenSet() const;
 
@@ -317,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayUin 代付者Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayUin() const;
 
                     /**
                      * 设置代付者Uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayUin 代付者Uin
+                     * @param _payUin 代付者Uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayUin(const std::string& _payUin);
 
                     /**
                      * 判断参数 PayUin 是否已赋值
                      * @return PayUin 是否已赋值
+                     * 
                      */
                     bool PayUinHasBeenSet() const;
 
@@ -339,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayName 代付者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayName() const;
 
                     /**
                      * 设置代付者名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayName 代付者名称
+                     * @param _payName 代付者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayName(const std::string& _payName);
 
                     /**
                      * 判断参数 PayName 是否已赋值
                      * @return PayName 是否已赋值
+                     * 
                      */
                     bool PayNameHasBeenSet() const;
 
@@ -361,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgIdentity 管理身份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MemberIdentity> GetOrgIdentity() const;
 
                     /**
                      * 设置管理身份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgIdentity 管理身份
+                     * @param _orgIdentity 管理身份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgIdentity(const std::vector<MemberIdentity>& _orgIdentity);
 
                     /**
                      * 判断参数 OrgIdentity 是否已赋值
                      * @return OrgIdentity 是否已赋值
+                     * 
                      */
                     bool OrgIdentityHasBeenSet() const;
 
@@ -383,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindStatus 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindStatus() const;
 
                     /**
                      * 设置安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindStatus 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
+                     * @param _bindStatus 安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindStatus(const std::string& _bindStatus);
 
                     /**
                      * 判断参数 BindStatus 是否已赋值
                      * @return BindStatus 是否已赋值
+                     * 
                      */
                     bool BindStatusHasBeenSet() const;
 
@@ -405,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PermissionStatus 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPermissionStatus() const;
 
                     /**
                      * 设置成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PermissionStatus 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+                     * @param _permissionStatus 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPermissionStatus(const std::string& _permissionStatus);
 
                     /**
                      * 判断参数 PermissionStatus 是否已赋值
                      * @return PermissionStatus 是否已赋值
+                     * 
                      */
                     bool PermissionStatusHasBeenSet() const;
 

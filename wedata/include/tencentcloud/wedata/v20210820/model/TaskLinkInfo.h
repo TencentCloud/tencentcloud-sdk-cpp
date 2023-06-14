@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取下游任务id
                      * @return TaskTo 下游任务id
+                     * 
                      */
                     std::string GetTaskTo() const;
 
                     /**
                      * 设置下游任务id
-                     * @param TaskTo 下游任务id
+                     * @param _taskTo 下游任务id
+                     * 
                      */
                     void SetTaskTo(const std::string& _taskTo);
 
                     /**
                      * 判断参数 TaskTo 是否已赋值
                      * @return TaskTo 是否已赋值
+                     * 
                      */
                     bool TaskToHasBeenSet() const;
 
                     /**
                      * 获取上游任务id
                      * @return TaskFrom 上游任务id
+                     * 
                      */
                     std::string GetTaskFrom() const;
 
                     /**
                      * 设置上游任务id
-                     * @param TaskFrom 上游任务id
+                     * @param _taskFrom 上游任务id
+                     * 
                      */
                     void SetTaskFrom(const std::string& _taskFrom);
 
                     /**
                      * 判断参数 TaskFrom 是否已赋值
                      * @return TaskFrom 是否已赋值
+                     * 
                      */
                     bool TaskFromHasBeenSet() const;
 
                     /**
                      * 获取依赖边类型 1、“real_real”表示任务->任务；2、"virtual_real" 跨工作流任务->任务
                      * @return LinkType 依赖边类型 1、“real_real”表示任务->任务；2、"virtual_real" 跨工作流任务->任务
+                     * 
                      */
                     std::string GetLinkType() const;
 
                     /**
                      * 设置依赖边类型 1、“real_real”表示任务->任务；2、"virtual_real" 跨工作流任务->任务
-                     * @param LinkType 依赖边类型 1、“real_real”表示任务->任务；2、"virtual_real" 跨工作流任务->任务
+                     * @param _linkType 依赖边类型 1、“real_real”表示任务->任务；2、"virtual_real" 跨工作流任务->任务
+                     * 
                      */
                     void SetLinkType(const std::string& _linkType);
 
                     /**
                      * 判断参数 LinkType 是否已赋值
                      * @return LinkType 是否已赋值
+                     * 
                      */
                     bool LinkTypeHasBeenSet() const;
 
                     /**
                      * 获取依赖边id
                      * @return LinkId 依赖边id
+                     * 
                      */
                     std::string GetLinkId() const;
 
                     /**
                      * 设置依赖边id
-                     * @param LinkId 依赖边id
+                     * @param _linkId 依赖边id
+                     * 
                      */
                     void SetLinkId(const std::string& _linkId);
 
                     /**
                      * 判断参数 LinkId 是否已赋值
                      * @return LinkId 是否已赋值
+                     * 
                      */
                     bool LinkIdHasBeenSet() const;
 

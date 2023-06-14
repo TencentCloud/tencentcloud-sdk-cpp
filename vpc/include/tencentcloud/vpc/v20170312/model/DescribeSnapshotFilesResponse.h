@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取快照文件集合。
                      * @return SnapshotFileSet 快照文件集合。
+                     * 
                      */
                     std::vector<SnapshotFileInfo> GetSnapshotFileSet() const;
 
                     /**
                      * 判断参数 SnapshotFileSet 是否已赋值
                      * @return SnapshotFileSet 是否已赋值
+                     * 
                      */
                     bool SnapshotFileSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取地域 ID（RegionId 和 RegionName 只需要填一个）
                      * @return RegionId 地域 ID（RegionId 和 RegionName 只需要填一个）
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域 ID（RegionId 和 RegionName 只需要填一个）
-                     * @param RegionId 地域 ID（RegionId 和 RegionName 只需要填一个）
+                     * @param _regionId 地域 ID（RegionId 和 RegionName 只需要填一个）
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名（RegionId 和 RegionName 只需要填一个）
                      * @return RegionName 地域名（RegionId 和 RegionName 只需要填一个）
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名（RegionId 和 RegionName 只需要填一个）
-                     * @param RegionName 地域名（RegionId 和 RegionName 只需要填一个）
+                     * @param _regionName 地域名（RegionId 和 RegionName 只需要填一个）
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 

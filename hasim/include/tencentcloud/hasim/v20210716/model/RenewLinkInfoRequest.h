@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云兔ID
                      * @return LinkID 云兔ID
+                     * 
                      */
                     int64_t GetLinkID() const;
 
                     /**
                      * 设置云兔ID
-                     * @param LinkID 云兔ID
+                     * @param _linkID 云兔ID
+                     * 
                      */
                     void SetLinkID(const int64_t& _linkID);
 
                     /**
                      * 判断参数 LinkID 是否已赋值
                      * @return LinkID 是否已赋值
+                     * 
                      */
                     bool LinkIDHasBeenSet() const;
 
                     /**
                      * 获取具体的账号
                      * @return UinAccount 具体的账号
+                     * 
                      */
                     std::string GetUinAccount() const;
 
                     /**
                      * 设置具体的账号
-                     * @param UinAccount 具体的账号
+                     * @param _uinAccount 具体的账号
+                     * 
                      */
                     void SetUinAccount(const std::string& _uinAccount);
 
                     /**
                      * 判断参数 UinAccount 是否已赋值
                      * @return UinAccount 是否已赋值
+                     * 
                      */
                     bool UinAccountHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。
                      * @return ImageIds 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。
+                     * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。
-                     * @param ImageIds 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。
+                     * @param _imageIds 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。
+                     * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
                     /**
                      * 判断参数 ImageIds 是否已赋值
                      * @return ImageIds 是否已赋值
+                     * 
                      */
                     bool ImageIdsHasBeenSet() const;
 
                     /**
                      * 获取目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
                      * @return DestinationRegions 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+                     * 
                      */
                     std::vector<std::string> GetDestinationRegions() const;
 
                     /**
                      * 设置目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-                     * @param DestinationRegions 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+                     * @param _destinationRegions 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+                     * 
                      */
                     void SetDestinationRegions(const std::vector<std::string>& _destinationRegions);
 
                     /**
                      * 判断参数 DestinationRegions 是否已赋值
                      * @return DestinationRegions 是否已赋值
+                     * 
                      */
                     bool DestinationRegionsHasBeenSet() const;
 
                     /**
                      * 获取检测是否支持发起同步镜像。
                      * @return DryRun 检测是否支持发起同步镜像。
+                     * 
                      */
                     bool GetDryRun() const;
 
                     /**
                      * 设置检测是否支持发起同步镜像。
-                     * @param DryRun 检测是否支持发起同步镜像。
+                     * @param _dryRun 检测是否支持发起同步镜像。
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 
                     /**
                      * 获取目标镜像名称。
                      * @return ImageName 目标镜像名称。
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置目标镜像名称。
-                     * @param ImageName 目标镜像名称。
+                     * @param _imageName 目标镜像名称。
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取是否需要返回目的地域的镜像ID。
                      * @return ImageSetRequired 是否需要返回目的地域的镜像ID。
+                     * 
                      */
                     bool GetImageSetRequired() const;
 
                     /**
                      * 设置是否需要返回目的地域的镜像ID。
-                     * @param ImageSetRequired 是否需要返回目的地域的镜像ID。
+                     * @param _imageSetRequired 是否需要返回目的地域的镜像ID。
+                     * 
                      */
                     void SetImageSetRequired(const bool& _imageSetRequired);
 
                     /**
                      * 判断参数 ImageSetRequired 是否已赋值
                      * @return ImageSetRequired 是否已赋值
+                     * 
                      */
                     bool ImageSetRequiredHasBeenSet() const;
 

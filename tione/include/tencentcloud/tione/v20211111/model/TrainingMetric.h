@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return MetricName 指标名
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingDataPoint> GetValues() const;
 
                     /**
                      * 设置数据值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 数据值
+                     * @param _values 数据值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<TrainingDataPoint>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Epochs 上报的Epoch. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingDataPoint> GetEpochs() const;
 
                     /**
                      * 设置上报的Epoch. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Epochs 上报的Epoch. 可能为空
+                     * @param _epochs 上报的Epoch. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEpochs(const std::vector<TrainingDataPoint>& _epochs);
 
                     /**
                      * 判断参数 Epochs 是否已赋值
                      * @return Epochs 是否已赋值
+                     * 
                      */
                     bool EpochsHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Steps 上报的Step. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingDataPoint> GetSteps() const;
 
                     /**
                      * 设置上报的Step. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Steps 上报的Step. 可能为空
+                     * @param _steps 上报的Step. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSteps(const std::vector<TrainingDataPoint>& _steps);
 
                     /**
                      * 判断参数 Steps 是否已赋值
                      * @return Steps 是否已赋值
+                     * 
                      */
                     bool StepsHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalSteps 上报的TotalSteps. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TrainingDataPoint> GetTotalSteps() const;
 
                     /**
                      * 设置上报的TotalSteps. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalSteps 上报的TotalSteps. 可能为空
+                     * @param _totalSteps 上报的TotalSteps. 可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalSteps(const std::vector<TrainingDataPoint>& _totalSteps);
 
                     /**
                      * 判断参数 TotalSteps 是否已赋值
                      * @return TotalSteps 是否已赋值
+                     * 
                      */
                     bool TotalStepsHasBeenSet() const;
 

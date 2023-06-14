@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
                      * @return Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
-                     * @param Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
+                     * @param _time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取任务数。
                      * @return Count 任务数。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置任务数。
-                     * @param Count 任务数。
+                     * @param _count 任务数。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取任务用量。
                      * @return Usage 任务用量。
+                     * 
                      */
                     int64_t GetUsage() const;
 
                     /**
                      * 设置任务用量。
-                     * @param Usage 任务用量。
+                     * @param _usage 任务用量。
+                     * 
                      */
                     void SetUsage(const int64_t& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 

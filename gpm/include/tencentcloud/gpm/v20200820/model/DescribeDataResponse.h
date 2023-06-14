@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverviewData 匹配概况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReportOverviewData GetOverviewData() const;
 
                     /**
                      * 判断参数 OverviewData 是否已赋值
                      * @return OverviewData 是否已赋值
+                     * 
                      */
                     bool OverviewDataHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrendData 匹配请求次数趋势数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ReportTrendData GetTrendData() const;
 
                     /**
                      * 判断参数 TrendData 是否已赋值
                      * @return TrendData 是否已赋值
+                     * 
                      */
                     bool TrendDataHasBeenSet() const;
 

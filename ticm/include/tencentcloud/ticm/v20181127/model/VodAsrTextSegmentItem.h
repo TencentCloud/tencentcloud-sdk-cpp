@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
+                     * @param _endTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 嫌疑片段置信度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段置信度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Confidence 嫌疑片段置信度。
+                     * @param _confidence 嫌疑片段置信度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -125,6 +134,7 @@ review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -135,18 +145,20 @@ review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 嫌疑片段审核结果建议，取值范围：
+                     * @param _suggestion 嫌疑片段审核结果建议，取值范围：
 pass。
 review。
 block。
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -155,20 +167,23 @@ block。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeywordSet 嫌疑关键词列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetKeywordSet() const;
 
                     /**
                      * 设置嫌疑关键词列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeywordSet 嫌疑关键词列表。
+                     * @param _keywordSet 嫌疑关键词列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeywordSet(const std::vector<std::string>& _keywordSet);
 
                     /**
                      * 判断参数 KeywordSet 是否已赋值
                      * @return KeywordSet 是否已赋值
+                     * 
                      */
                     bool KeywordSetHasBeenSet() const;
 

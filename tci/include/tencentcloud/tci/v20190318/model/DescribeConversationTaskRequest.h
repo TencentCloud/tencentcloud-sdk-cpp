@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
                      * @return JobId 音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 设置音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
-                     * @param JobId 音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
+                     * @param _jobId 音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
+                     * 
                      */
                     void SetJobId(const int64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取要查询明细的流的身份，1 老师 2 学生
                      * @return Identity 要查询明细的流的身份，1 老师 2 学生
+                     * 
                      */
                     int64_t GetIdentity() const;
 
                     /**
                      * 设置要查询明细的流的身份，1 老师 2 学生
-                     * @param Identity 要查询明细的流的身份，1 老师 2 学生
+                     * @param _identity 要查询明细的流的身份，1 老师 2 学生
+                     * 
                      */
                     void SetIdentity(const int64_t& _identity);
 
                     /**
                      * 判断参数 Identity 是否已赋值
                      * @return Identity 是否已赋值
+                     * 
                      */
                     bool IdentityHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

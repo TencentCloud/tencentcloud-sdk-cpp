@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取子机构ID
                      * @return SubOrganizationId 子机构ID
+                     * 
                      */
                     std::string GetSubOrganizationId() const;
 
                     /**
                      * 判断参数 SubOrganizationId 是否已赋值
                      * @return SubOrganizationId 是否已赋值
+                     * 
                      */
                     bool SubOrganizationIdHasBeenSet() const;
 

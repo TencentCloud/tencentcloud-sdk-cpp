@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取目录ID
                      * @return CatalogId 目录ID
+                     * 
                      */
                     std::string GetCatalogId() const;
 
                     /**
                      * 设置目录ID
-                     * @param CatalogId 目录ID
+                     * @param _catalogId 目录ID
+                     * 
                      */
                     void SetCatalogId(const std::string& _catalogId);
 
                     /**
                      * 判断参数 CatalogId 是否已赋值
                      * @return CatalogId 是否已赋值
+                     * 
                      */
                     bool CatalogIdHasBeenSet() const;
 

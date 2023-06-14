@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分配给商户的AppId。进件成功后返给商户方的AppId。
                      * @return MerchantAppId 分配给商户的AppId。进件成功后返给商户方的AppId。
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 设置分配给商户的AppId。进件成功后返给商户方的AppId。
-                     * @param MerchantAppId 分配给商户的AppId。进件成功后返给商户方的AppId。
+                     * @param _merchantAppId 分配给商户的AppId。进件成功后返给商户方的AppId。
+                     * 
                      */
                     void SetMerchantAppId(const std::string& _merchantAppId);
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取渠道编号。固定值：ZSB2B
                      * @return ChannelCode 渠道编号。固定值：ZSB2B
+                     * 
                      */
                     std::string GetChannelCode() const;
 
                     /**
                      * 设置渠道编号。固定值：ZSB2B
-                     * @param ChannelCode 渠道编号。固定值：ZSB2B
+                     * @param _channelCode 渠道编号。固定值：ZSB2B
+                     * 
                      */
                     void SetChannelCode(const std::string& _channelCode);
 
                     /**
                      * 判断参数 ChannelCode 是否已赋值
                      * @return ChannelCode 是否已赋值
+                     * 
                      */
                     bool ChannelCodeHasBeenSet() const;
 
                     /**
                      * 获取对账单日期，格式yyyyMMdd
                      * @return BillDate 对账单日期，格式yyyyMMdd
+                     * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置对账单日期，格式yyyyMMdd
-                     * @param BillDate 对账单日期，格式yyyyMMdd
+                     * @param _billDate 对账单日期，格式yyyyMMdd
+                     * 
                      */
                     void SetBillDate(const std::string& _billDate);
 
                     /**
                      * 判断参数 BillDate 是否已赋值
                      * @return BillDate 是否已赋值
+                     * 
                      */
                     bool BillDateHasBeenSet() const;
 

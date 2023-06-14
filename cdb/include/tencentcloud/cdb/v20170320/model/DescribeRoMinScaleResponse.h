@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取内存规格大小, 单位为：MB。
                      * @return Memory 内存规格大小, 单位为：MB。
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取磁盘规格大小, 单位为：GB。
                      * @return Volume 磁盘规格大小, 单位为：GB。
+                     * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 判断参数 Volume 是否已赋值
                      * @return Volume 是否已赋值
+                     * 
                      */
                     bool VolumeHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）
                      * @return Rank 线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）
+                     * 
                      */
                     int64_t GetRank() const;
 
                     /**
                      * 设置线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）
-                     * @param Rank 线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）
+                     * @param _rank 线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）
+                     * 
                      */
                     void SetRank(const int64_t& _rank);
 
                     /**
                      * 判断参数 Rank 是否已赋值
                      * @return Rank 是否已赋值
+                     * 
                      */
                     bool RankHasBeenSet() const;
 

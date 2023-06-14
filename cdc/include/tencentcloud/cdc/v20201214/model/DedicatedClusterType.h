@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取配置id
                      * @return DedicatedClusterTypeId 配置id
+                     * 
                      */
                     std::string GetDedicatedClusterTypeId() const;
 
                     /**
                      * 设置配置id
-                     * @param DedicatedClusterTypeId 配置id
+                     * @param _dedicatedClusterTypeId 配置id
+                     * 
                      */
                     void SetDedicatedClusterTypeId(const std::string& _dedicatedClusterTypeId);
 
                     /**
                      * 判断参数 DedicatedClusterTypeId 是否已赋值
                      * @return DedicatedClusterTypeId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterTypeIdHasBeenSet() const;
 
@@ -69,164 +72,191 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 配置描述，对应描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置配置描述，对应描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 配置描述，对应描述
+                     * @param _description 配置描述，对应描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取配置名称，对应计算资源类型
                      * @return Name 配置名称，对应计算资源类型
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置名称，对应计算资源类型
-                     * @param Name 配置名称，对应计算资源类型
+                     * @param _name 配置名称，对应计算资源类型
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取创建配置的时间
                      * @return CreateTime 创建配置的时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建配置的时间
-                     * @param CreateTime 创建配置的时间
+                     * @param _createTime 创建配置的时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取支持的存储类型列表
                      * @return SupportedStorageType 支持的存储类型列表
+                     * 
                      */
                     std::vector<std::string> GetSupportedStorageType() const;
 
                     /**
                      * 设置支持的存储类型列表
-                     * @param SupportedStorageType 支持的存储类型列表
+                     * @param _supportedStorageType 支持的存储类型列表
+                     * 
                      */
                     void SetSupportedStorageType(const std::vector<std::string>& _supportedStorageType);
 
                     /**
                      * 判断参数 SupportedStorageType 是否已赋值
                      * @return SupportedStorageType 是否已赋值
+                     * 
                      */
                     bool SupportedStorageTypeHasBeenSet() const;
 
                     /**
                      * 获取支持的上连交换机的链路传输速率
                      * @return SupportedUplinkGiB 支持的上连交换机的链路传输速率
+                     * 
                      */
                     std::vector<int64_t> GetSupportedUplinkGiB() const;
 
                     /**
                      * 设置支持的上连交换机的链路传输速率
-                     * @param SupportedUplinkGiB 支持的上连交换机的链路传输速率
+                     * @param _supportedUplinkGiB 支持的上连交换机的链路传输速率
+                     * 
                      */
                     void SetSupportedUplinkGiB(const std::vector<int64_t>& _supportedUplinkGiB);
 
                     /**
                      * 判断参数 SupportedUplinkGiB 是否已赋值
                      * @return SupportedUplinkGiB 是否已赋值
+                     * 
                      */
                     bool SupportedUplinkGiBHasBeenSet() const;
 
                     /**
                      * 获取支持的实例族列表
                      * @return SupportedInstanceFamily 支持的实例族列表
+                     * 
                      */
                     std::vector<std::string> GetSupportedInstanceFamily() const;
 
                     /**
                      * 设置支持的实例族列表
-                     * @param SupportedInstanceFamily 支持的实例族列表
+                     * @param _supportedInstanceFamily 支持的实例族列表
+                     * 
                      */
                     void SetSupportedInstanceFamily(const std::vector<std::string>& _supportedInstanceFamily);
 
                     /**
                      * 判断参数 SupportedInstanceFamily 是否已赋值
                      * @return SupportedInstanceFamily 是否已赋值
+                     * 
                      */
                     bool SupportedInstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取地板承重要求(KG)
                      * @return Weight 地板承重要求(KG)
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置地板承重要求(KG)
-                     * @param Weight 地板承重要求(KG)
+                     * @param _weight 地板承重要求(KG)
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取功率要求(KW)
                      * @return PowerDrawKva 功率要求(KW)
+                     * 
                      */
                     double GetPowerDrawKva() const;
 
                     /**
                      * 设置功率要求(KW)
-                     * @param PowerDrawKva 功率要求(KW)
+                     * @param _powerDrawKva 功率要求(KW)
+                     * 
                      */
                     void SetPowerDrawKva(const double& _powerDrawKva);
 
                     /**
                      * 判断参数 PowerDrawKva 是否已赋值
                      * @return PowerDrawKva 是否已赋值
+                     * 
                      */
                     bool PowerDrawKvaHasBeenSet() const;
 
                     /**
                      * 获取显示计算资源规格详情，存储等资源不显示；对应规格
                      * @return ComputeFormatDesc 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * 
                      */
                     std::string GetComputeFormatDesc() const;
 
                     /**
                      * 设置显示计算资源规格详情，存储等资源不显示；对应规格
-                     * @param ComputeFormatDesc 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * @param _computeFormatDesc 显示计算资源规格详情，存储等资源不显示；对应规格
+                     * 
                      */
                     void SetComputeFormatDesc(const std::string& _computeFormatDesc);
 
                     /**
                      * 判断参数 ComputeFormatDesc 是否已赋值
                      * @return ComputeFormatDesc 是否已赋值
+                     * 
                      */
                     bool ComputeFormatDescHasBeenSet() const;
 

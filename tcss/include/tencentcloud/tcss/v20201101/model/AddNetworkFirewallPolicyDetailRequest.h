@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取策略名
                      * @return PolicyName 策略名
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名
-                     * @param PolicyName 策略名
+                     * @param _policyName 策略名
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
@@ -94,6 +100,7 @@ namespace TencentCloud
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     int64_t GetFromPolicyRule() const;
 
@@ -105,19 +112,21 @@ namespace TencentCloud
 全部拒绝 ：2
 
 自定义：3
-                     * @param FromPolicyRule 入站规则
+                     * @param _fromPolicyRule 入站规则
 
 全部允许：1
 
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     void SetFromPolicyRule(const int64_t& _fromPolicyRule);
 
                     /**
                      * 判断参数 FromPolicyRule 是否已赋值
                      * @return FromPolicyRule 是否已赋值
+                     * 
                      */
                     bool FromPolicyRuleHasBeenSet() const;
 
@@ -136,6 +145,7 @@ namespace TencentCloud
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     int64_t GetToPolicyRule() const;
 
@@ -147,91 +157,105 @@ namespace TencentCloud
 全部拒绝 ：2
 
 自定义：3
-                     * @param ToPolicyRule 出站规则
+                     * @param _toPolicyRule 出站规则
 
 全部允许：1
 
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     void SetToPolicyRule(const int64_t& _toPolicyRule);
 
                     /**
                      * 判断参数 ToPolicyRule 是否已赋值
                      * @return ToPolicyRule 是否已赋值
+                     * 
                      */
                     bool ToPolicyRuleHasBeenSet() const;
 
                     /**
                      * 获取pod选择器
                      * @return PodSelector pod选择器
+                     * 
                      */
                     std::string GetPodSelector() const;
 
                     /**
                      * 设置pod选择器
-                     * @param PodSelector pod选择器
+                     * @param _podSelector pod选择器
+                     * 
                      */
                     void SetPodSelector(const std::string& _podSelector);
 
                     /**
                      * 判断参数 PodSelector 是否已赋值
                      * @return PodSelector 是否已赋值
+                     * 
                      */
                     bool PodSelectorHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取策略描述
                      * @return Description 策略描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述
-                     * @param Description 策略描述
+                     * @param _description 策略描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取自定义规则
                      * @return CustomPolicy 自定义规则
+                     * 
                      */
                     std::vector<NetworkCustomPolicy> GetCustomPolicy() const;
 
                     /**
                      * 设置自定义规则
-                     * @param CustomPolicy 自定义规则
+                     * @param _customPolicy 自定义规则
+                     * 
                      */
                     void SetCustomPolicy(const std::vector<NetworkCustomPolicy>& _customPolicy);
 
                     /**
                      * 判断参数 CustomPolicy 是否已赋值
                      * @return CustomPolicy 是否已赋值
+                     * 
                      */
                     bool CustomPolicyHasBeenSet() const;
 

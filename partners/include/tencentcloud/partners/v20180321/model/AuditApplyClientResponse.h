@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取代理商账号ID
                      * @return Uin 代理商账号ID
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取客户账号ID
                      * @return ClientUin 客户账号ID
+                     * 
                      */
                     std::string GetClientUin() const;
 
                     /**
                      * 判断参数 ClientUin 是否已赋值
                      * @return ClientUin 是否已赋值
+                     * 
                      */
                     bool ClientUinHasBeenSet() const;
 
                     /**
                      * 获取审核结果，包括accept/reject/qcloudaudit（腾讯云审核）
                      * @return AuditResult 审核结果，包括accept/reject/qcloudaudit（腾讯云审核）
+                     * 
                      */
                     std::string GetAuditResult() const;
 
                     /**
                      * 判断参数 AuditResult 是否已赋值
                      * @return AuditResult 是否已赋值
+                     * 
                      */
                     bool AuditResultHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentTime 关联时间对应的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAgentTime() const;
 
                     /**
                      * 判断参数 AgentTime 是否已赋值
                      * @return AgentTime 是否已赋值
+                     * 
                      */
                     bool AgentTimeHasBeenSet() const;
 

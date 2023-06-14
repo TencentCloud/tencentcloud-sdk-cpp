@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需操作的实例ID
                      * @return ResourceIds 需操作的实例ID
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置需操作的实例ID
-                     * @param ResourceIds 需操作的实例ID
+                     * @param _resourceIds 需操作的实例ID
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
                      * @return AutoRenewFlag 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
-                     * @param AutoRenewFlag 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
+                     * @param _autoRenewFlag 自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续
+                     * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 

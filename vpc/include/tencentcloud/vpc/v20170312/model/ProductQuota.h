@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取产品配额ID
                      * @return QuotaId 产品配额ID
+                     * 
                      */
                     std::string GetQuotaId() const;
 
                     /**
                      * 设置产品配额ID
-                     * @param QuotaId 产品配额ID
+                     * @param _quotaId 产品配额ID
+                     * 
                      */
                     void SetQuotaId(const std::string& _quotaId);
 
                     /**
                      * 判断参数 QuotaId 是否已赋值
                      * @return QuotaId 是否已赋值
+                     * 
                      */
                     bool QuotaIdHasBeenSet() const;
 
                     /**
                      * 获取产品配额名称
                      * @return QuotaName 产品配额名称
+                     * 
                      */
                     std::string GetQuotaName() const;
 
                     /**
                      * 设置产品配额名称
-                     * @param QuotaName 产品配额名称
+                     * @param _quotaName 产品配额名称
+                     * 
                      */
                     void SetQuotaName(const std::string& _quotaName);
 
                     /**
                      * 判断参数 QuotaName 是否已赋值
                      * @return QuotaName 是否已赋值
+                     * 
                      */
                     bool QuotaNameHasBeenSet() const;
 
                     /**
                      * 获取产品当前配额
                      * @return QuotaCurrent 产品当前配额
+                     * 
                      */
                     int64_t GetQuotaCurrent() const;
 
                     /**
                      * 设置产品当前配额
-                     * @param QuotaCurrent 产品当前配额
+                     * @param _quotaCurrent 产品当前配额
+                     * 
                      */
                     void SetQuotaCurrent(const int64_t& _quotaCurrent);
 
                     /**
                      * 判断参数 QuotaCurrent 是否已赋值
                      * @return QuotaCurrent 是否已赋值
+                     * 
                      */
                     bool QuotaCurrentHasBeenSet() const;
 
                     /**
                      * 获取产品配额上限
                      * @return QuotaLimit 产品配额上限
+                     * 
                      */
                     int64_t GetQuotaLimit() const;
 
                     /**
                      * 设置产品配额上限
-                     * @param QuotaLimit 产品配额上限
+                     * @param _quotaLimit 产品配额上限
+                     * 
                      */
                     void SetQuotaLimit(const int64_t& _quotaLimit);
 
                     /**
                      * 判断参数 QuotaLimit 是否已赋值
                      * @return QuotaLimit 是否已赋值
+                     * 
                      */
                     bool QuotaLimitHasBeenSet() const;
 
                     /**
                      * 获取产品配额是否有地域属性
                      * @return QuotaRegion 产品配额是否有地域属性
+                     * 
                      */
                     bool GetQuotaRegion() const;
 
                     /**
                      * 设置产品配额是否有地域属性
-                     * @param QuotaRegion 产品配额是否有地域属性
+                     * @param _quotaRegion 产品配额是否有地域属性
+                     * 
                      */
                     void SetQuotaRegion(const bool& _quotaRegion);
 
                     /**
                      * 判断参数 QuotaRegion 是否已赋值
                      * @return QuotaRegion 是否已赋值
+                     * 
                      */
                     bool QuotaRegionHasBeenSet() const;
 

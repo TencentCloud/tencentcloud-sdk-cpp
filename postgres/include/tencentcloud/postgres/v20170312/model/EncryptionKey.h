@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyId KMS实例加密的KeyId。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置KMS实例加密的KeyId。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyId KMS实例加密的KeyId。
+                     * @param _keyId KMS实例加密的KeyId。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyAlias KMS实例加密Key的别名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyAlias() const;
 
                     /**
                      * 设置KMS实例加密Key的别名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyAlias KMS实例加密Key的别名。
+                     * @param _keyAlias KMS实例加密Key的别名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyAlias(const std::string& _keyAlias);
 
                     /**
                      * 判断参数 KeyAlias 是否已赋值
                      * @return KeyAlias 是否已赋值
+                     * 
                      */
                     bool KeyAliasHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DEKCipherTextBlob 实例加密密钥DEK的密文。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDEKCipherTextBlob() const;
 
                     /**
                      * 设置实例加密密钥DEK的密文。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DEKCipherTextBlob 实例加密密钥DEK的密文。
+                     * @param _dEKCipherTextBlob 实例加密密钥DEK的密文。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDEKCipherTextBlob(const std::string& _dEKCipherTextBlob);
 
                     /**
                      * 判断参数 DEKCipherTextBlob 是否已赋值
                      * @return DEKCipherTextBlob 是否已赋值
+                     * 
                      */
                     bool DEKCipherTextBlobHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsEnabled 密钥是否启用，1-启用， 0-未启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsEnabled() const;
 
                     /**
                      * 设置密钥是否启用，1-启用， 0-未启用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsEnabled 密钥是否启用，1-启用， 0-未启用。
+                     * @param _isEnabled 密钥是否启用，1-启用， 0-未启用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsEnabled(const int64_t& _isEnabled);
 
                     /**
                      * 判断参数 IsEnabled 是否已赋值
                      * @return IsEnabled 是否已赋值
+                     * 
                      */
                     bool IsEnabledHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyRegion KMS密钥所在地域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyRegion() const;
 
                     /**
                      * 设置KMS密钥所在地域。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyRegion KMS密钥所在地域。
+                     * @param _keyRegion KMS密钥所在地域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyRegion(const std::string& _keyRegion);
 
                     /**
                      * 判断参数 KeyRegion 是否已赋值
                      * @return KeyRegion 是否已赋值
+                     * 
                      */
                     bool KeyRegionHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime DEK密钥创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置DEK密钥创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime DEK密钥创建时间。
+                     * @param _createTime DEK密钥创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

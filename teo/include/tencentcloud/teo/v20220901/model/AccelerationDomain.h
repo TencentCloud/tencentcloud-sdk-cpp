@@ -52,92 +52,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginDetail 源站信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OriginDetail GetOriginDetail() const;
 
                     /**
                      * 设置源站信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginDetail 源站信息。
+                     * @param _originDetail 源站信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginDetail(const OriginDetail& _originDetail);
 
                     /**
                      * 判断参数 OriginDetail 是否已赋值
                      * @return OriginDetail 是否已赋值
+                     * 
                      */
                     bool OriginDetailHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedOn 创建时间。
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedOn 创建时间。
+                     * @param _createdOn 创建时间。
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取加速域名名称。
                      * @return DomainName 加速域名名称。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置加速域名名称。
-                     * @param DomainName 加速域名名称。
+                     * @param _domainName 加速域名名称。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取修改时间。
                      * @return ModifiedOn 修改时间。
+                     * 
                      */
                     std::string GetModifiedOn() const;
 
                     /**
                      * 设置修改时间。
-                     * @param ModifiedOn 修改时间。
+                     * @param _modifiedOn 修改时间。
+                     * 
                      */
                     void SetModifiedOn(const std::string& _modifiedOn);
 
                     /**
                      * 判断参数 ModifiedOn 是否已赋值
                      * @return ModifiedOn 是否已赋值
+                     * 
                      */
                     bool ModifiedOnHasBeenSet() const;
 
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -154,6 +169,7 @@ namespace TencentCloud
 <li>offline：已停用；</li>
 <li>forbidden：已封禁；</li>
 <li>init：未生效，待激活站点；</li>
+                     * 
                      */
                     std::string GetDomainStatus() const;
 
@@ -164,36 +180,41 @@ namespace TencentCloud
 <li>offline：已停用；</li>
 <li>forbidden：已封禁；</li>
 <li>init：未生效，待激活站点；</li>
-                     * @param DomainStatus 加速域名状态，取值有：
+                     * @param _domainStatus 加速域名状态，取值有：
 <li>online：已生效；</li>
 <li>process：部署中；</li>
 <li>offline：已停用；</li>
 <li>forbidden：已封禁；</li>
 <li>init：未生效，待激活站点；</li>
+                     * 
                      */
                     void SetDomainStatus(const std::string& _domainStatus);
 
                     /**
                      * 判断参数 DomainStatus 是否已赋值
                      * @return DomainStatus 是否已赋值
+                     * 
                      */
                     bool DomainStatusHasBeenSet() const;
 
                     /**
                      * 获取CNAME 地址。
                      * @return Cname CNAME 地址。
+                     * 
                      */
                     std::string GetCname() const;
 
                     /**
                      * 设置CNAME 地址。
-                     * @param Cname CNAME 地址。
+                     * @param _cname CNAME 地址。
+                     * 
                      */
                     void SetCname(const std::string& _cname);
 
                     /**
                      * 判断参数 Cname 是否已赋值
                      * @return Cname 是否已赋值
+                     * 
                      */
                     bool CnameHasBeenSet() const;
 
@@ -202,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentificationStatus 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIdentificationStatus() const;
 
                     /**
                      * 设置加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentificationStatus 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+                     * @param _identificationStatus 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdentificationStatus(const std::string& _identificationStatus);
 
                     /**
                      * 判断参数 IdentificationStatus 是否已赋值
                      * @return IdentificationStatus 是否已赋值
+                     * 
                      */
                     bool IdentificationStatusHasBeenSet() const;
 

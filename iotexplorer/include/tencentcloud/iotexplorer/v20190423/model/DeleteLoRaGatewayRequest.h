@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取LoRa 网关 Id
                      * @return GatewayId LoRa 网关 Id
+                     * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置LoRa 网关 Id
-                     * @param GatewayId LoRa 网关 Id
+                     * @param _gatewayId LoRa 网关 Id
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 

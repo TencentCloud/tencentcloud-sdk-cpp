@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取数据时间，格式为yyyy-mm-dd HH:MM:SS。
                      * @return Time 数据时间，格式为yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取实时总带宽。
                      * @return TotalBandwidth 实时总带宽。
+                     * 
                      */
                     double GetTotalBandwidth() const;
 
                     /**
                      * 判断参数 TotalBandwidth 是否已赋值
                      * @return TotalBandwidth 是否已赋值
+                     * 
                      */
                     bool TotalBandwidthHasBeenSet() const;
 
                     /**
                      * 获取实时总流量。
                      * @return TotalFlux 实时总流量。
+                     * 
                      */
                     double GetTotalFlux() const;
 
                     /**
                      * 判断参数 TotalFlux 是否已赋值
                      * @return TotalFlux 是否已赋值
+                     * 
                      */
                     bool TotalFluxHasBeenSet() const;
 
                     /**
                      * 获取总请求数。
                      * @return TotalRequest 总请求数。
+                     * 
                      */
                     uint64_t GetTotalRequest() const;
 
                     /**
                      * 判断参数 TotalRequest 是否已赋值
                      * @return TotalRequest 是否已赋值
+                     * 
                      */
                     bool TotalRequestHasBeenSet() const;
 
                     /**
                      * 获取实时总连接数。
                      * @return TotalOnline 实时总连接数。
+                     * 
                      */
                     uint64_t GetTotalOnline() const;
 
                     /**
                      * 判断参数 TotalOnline 是否已赋值
                      * @return TotalOnline 是否已赋值
+                     * 
                      */
                     bool TotalOnlineHasBeenSet() const;
 
                     /**
                      * 获取分域名的数据情况。
                      * @return DomainInfoList 分域名的数据情况。
+                     * 
                      */
                     std::vector<DomainInfoList> GetDomainInfoList() const;
 
                     /**
                      * 判断参数 DomainInfoList 是否已赋值
                      * @return DomainInfoList 是否已赋值
+                     * 
                      */
                     bool DomainInfoListHasBeenSet() const;
 

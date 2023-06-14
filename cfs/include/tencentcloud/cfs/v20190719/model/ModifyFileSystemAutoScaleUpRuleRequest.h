@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统id
                      * @return FileSystemId 文件系统id
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统id
-                     * @param FileSystemId 文件系统id
+                     * @param _fileSystemId 文件系统id
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取扩容阈值，范围[10-90]
                      * @return ScaleUpThreshold 扩容阈值，范围[10-90]
+                     * 
                      */
                     uint64_t GetScaleUpThreshold() const;
 
                     /**
                      * 设置扩容阈值，范围[10-90]
-                     * @param ScaleUpThreshold 扩容阈值，范围[10-90]
+                     * @param _scaleUpThreshold 扩容阈值，范围[10-90]
+                     * 
                      */
                     void SetScaleUpThreshold(const uint64_t& _scaleUpThreshold);
 
                     /**
                      * 判断参数 ScaleUpThreshold 是否已赋值
                      * @return ScaleUpThreshold 是否已赋值
+                     * 
                      */
                     bool ScaleUpThresholdHasBeenSet() const;
 
                     /**
                      * 获取扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold
                      * @return TargetThreshold 扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold
+                     * 
                      */
                     uint64_t GetTargetThreshold() const;
 
                     /**
                      * 设置扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold
-                     * @param TargetThreshold 扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold
+                     * @param _targetThreshold 扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold
+                     * 
                      */
                     void SetTargetThreshold(const uint64_t& _targetThreshold);
 
                     /**
                      * 判断参数 TargetThreshold 是否已赋值
                      * @return TargetThreshold 是否已赋值
+                     * 
                      */
                     bool TargetThresholdHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 
                      * @return Status 规则状态0:关闭，1 开启
 
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规则状态0:关闭，1 开启
 
-                     * @param Status 规则状态0:关闭，1 开启
+                     * @param _status 规则状态0:关闭，1 开启
 
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 所属账户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置所属账户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerUin 所属账户
+                     * @param _ownerUin 所属账户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return From 证书来源：trustasia = 亚洲诚信， upload = 用户上传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置证书来源：trustasia = 亚洲诚信， upload = 用户上传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param From 证书来源：trustasia = 亚洲诚信， upload = 用户上传
+                     * @param _from 证书来源：trustasia = 亚洲诚信， upload = 用户上传
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 证书类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置证书类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 证书类型
+                     * @param _type 证书类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertType 证书类型（目前支持：CA = 客户端证书，SVR = 服务器证书）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertType() const;
 
                     /**
                      * 设置证书类型（目前支持：CA = 客户端证书，SVR = 服务器证书）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertType 证书类型（目前支持：CA = 客户端证书，SVR = 服务器证书）
+                     * @param _certType 证书类型（目前支持：CA = 客户端证书，SVR = 服务器证书）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertType(const std::string& _certType);
 
                     /**
                      * 判断参数 CertType 是否已赋值
                      * @return CertType 是否已赋值
+                     * 
                      */
                     bool CertTypeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductZhName 证书办法者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductZhName() const;
 
                     /**
                      * 设置证书办法者名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductZhName 证书办法者名称
+                     * @param _productZhName 证书办法者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductZhName(const std::string& _productZhName);
 
                     /**
                      * 判断参数 ProductZhName 是否已赋值
                      * @return ProductZhName 是否已赋值
+                     * 
                      */
                     bool ProductZhNameHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 主域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置主域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 主域名
+                     * @param _domain 主域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 别名
+                     * @param _alias 别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加云解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加云解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加云解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函
+                     * @param _status 状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加云解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityStatus 漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVulnerabilityStatus() const;
 
                     /**
                      * 设置漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VulnerabilityStatus 漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启
+                     * @param _vulnerabilityStatus 漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVulnerabilityStatus(const std::string& _vulnerabilityStatus);
 
                     /**
                      * 判断参数 VulnerabilityStatus 是否已赋值
                      * @return VulnerabilityStatus 是否已赋值
+                     * 
                      */
                     bool VulnerabilityStatusHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusMsg 状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusMsg() const;
 
                     /**
                      * 设置状态信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusMsg 状态信息
+                     * @param _statusMsg 状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusMsg(const std::string& _statusMsg);
 
                     /**
                      * 判断参数 StatusMsg 是否已赋值
                      * @return StatusMsg 是否已赋值
+                     * 
                      */
                     bool StatusMsgHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyType 验证类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
                      * 设置验证类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifyType 验证类型
+                     * @param _verifyType 验证类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
 
                     /**
                      * 判断参数 VerifyType 是否已赋值
                      * @return VerifyType 是否已赋值
+                     * 
                      */
                     bool VerifyTypeHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertBeginTime 证书生效时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertBeginTime() const;
 
                     /**
                      * 设置证书生效时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertBeginTime 证书生效时间
+                     * @param _certBeginTime 证书生效时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertBeginTime(const std::string& _certBeginTime);
 
                     /**
                      * 判断参数 CertBeginTime 是否已赋值
                      * @return CertBeginTime 是否已赋值
+                     * 
                      */
                     bool CertBeginTimeHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertEndTime 证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertEndTime() const;
 
                     /**
                      * 设置证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertEndTime 证书过期时间
+                     * @param _certEndTime 证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertEndTime(const std::string& _certEndTime);
 
                     /**
                      * 判断参数 CertEndTime 是否已赋值
                      * @return CertEndTime 是否已赋值
+                     * 
                      */
                     bool CertEndTimeHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidityPeriod 证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValidityPeriod() const;
 
                     /**
                      * 设置证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValidityPeriod 证书过期时间
+                     * @param _validityPeriod 证书过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValidityPeriod(const std::string& _validityPeriod);
 
                     /**
                      * 判断参数 ValidityPeriod 是否已赋值
                      * @return ValidityPeriod 是否已赋值
+                     * 
                      */
                     bool ValidityPeriodHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInsertTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InsertTime 创建时间
+                     * @param _insertTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInsertTime(const std::string& _insertTime);
 
                     /**
                      * 判断参数 InsertTime 是否已赋值
                      * @return InsertTime 是否已赋值
+                     * 
                      */
                     bool InsertTimeHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectInfo 项目信息，ProjectId：项目ID，OwnerUin：项目所属的 uin（默认项目为0），Name：项目名称，CreatorUin：创建项目的 uin，CreateTime：项目创建时间，Info：项目说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SSLProjectInfo GetProjectInfo() const;
 
                     /**
                      * 设置项目信息，ProjectId：项目ID，OwnerUin：项目所属的 uin（默认项目为0），Name：项目名称，CreatorUin：创建项目的 uin，CreateTime：项目创建时间，Info：项目说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectInfo 项目信息，ProjectId：项目ID，OwnerUin：项目所属的 uin（默认项目为0），Name：项目名称，CreatorUin：创建项目的 uin，CreateTime：项目创建时间，Info：项目说明
+                     * @param _projectInfo 项目信息，ProjectId：项目ID，OwnerUin：项目所属的 uin（默认项目为0），Name：项目名称，CreatorUin：创建项目的 uin，CreateTime：项目创建时间，Info：项目说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectInfo(const SSLProjectInfo& _projectInfo);
 
                     /**
                      * 判断参数 ProjectInfo 是否已赋值
                      * @return ProjectInfo 是否已赋值
+                     * 
                      */
                     bool ProjectInfoHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 证书ID
+                     * @param _id 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -448,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectAltName 证书包含的多个域名（包含主域名）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubjectAltName() const;
 
                     /**
                      * 设置证书包含的多个域名（包含主域名）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubjectAltName 证书包含的多个域名（包含主域名）
+                     * @param _subjectAltName 证书包含的多个域名（包含主域名）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubjectAltName(const std::vector<std::string>& _subjectAltName);
 
                     /**
                      * 判断参数 SubjectAltName 是否已赋值
                      * @return SubjectAltName 是否已赋值
+                     * 
                      */
                     bool SubjectAltNameHasBeenSet() const;
 
@@ -470,20 +527,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeName 证书类型名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置证书类型名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeName 证书类型名称
+                     * @param _typeName 证书类型名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
@@ -492,20 +552,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusName 状态名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusName() const;
 
                     /**
                      * 设置状态名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusName 状态名称
+                     * @param _statusName 状态名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusName(const std::string& _statusName);
 
                     /**
                      * 判断参数 StatusName 是否已赋值
                      * @return StatusName 是否已赋值
+                     * 
                      */
                     bool StatusNameHasBeenSet() const;
 
@@ -514,20 +577,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVip 是否为 VIP 客户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsVip() const;
 
                     /**
                      * 设置是否为 VIP 客户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsVip 是否为 VIP 客户
+                     * @param _isVip 是否为 VIP 客户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsVip(const bool& _isVip);
 
                     /**
                      * 判断参数 IsVip 是否已赋值
                      * @return IsVip 是否已赋值
+                     * 
                      */
                     bool IsVipHasBeenSet() const;
 
@@ -536,20 +602,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDv 是否我 DV 版证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsDv() const;
 
                     /**
                      * 设置是否我 DV 版证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDv 是否我 DV 版证书
+                     * @param _isDv 是否我 DV 版证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDv(const bool& _isDv);
 
                     /**
                      * 判断参数 IsDv 是否已赋值
                      * @return IsDv 是否已赋值
+                     * 
                      */
                     bool IsDvHasBeenSet() const;
 
@@ -558,20 +627,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWildcard 是否为泛域名证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsWildcard() const;
 
                     /**
                      * 设置是否为泛域名证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsWildcard 是否为泛域名证书
+                     * @param _isWildcard 是否为泛域名证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsWildcard(const bool& _isWildcard);
 
                     /**
                      * 判断参数 IsWildcard 是否已赋值
                      * @return IsWildcard 是否已赋值
+                     * 
                      */
                     bool IsWildcardHasBeenSet() const;
 
@@ -580,20 +652,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVulnerability 是否启用了漏洞扫描功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsVulnerability() const;
 
                     /**
                      * 设置是否启用了漏洞扫描功能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsVulnerability 是否启用了漏洞扫描功能
+                     * @param _isVulnerability 是否启用了漏洞扫描功能
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsVulnerability(const bool& _isVulnerability);
 
                     /**
                      * 判断参数 IsVulnerability 是否已赋值
                      * @return IsVulnerability 是否已赋值
+                     * 
                      */
                     bool IsVulnerabilityHasBeenSet() const;
 
@@ -602,20 +677,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cert 证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCert() const;
 
                     /**
                      * 设置证书
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cert 证书
+                     * @param _cert 证书
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCert(const std::string& _cert);
 
                     /**
                      * 判断参数 Cert 是否已赋值
                      * @return Cert 是否已赋值
+                     * 
                      */
                     bool CertHasBeenSet() const;
 

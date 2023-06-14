@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamId 成功删除的后端通道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpstreamId() const;
 
                     /**
                      * 判断参数 UpstreamId 是否已赋值
                      * @return UpstreamId 是否已赋值
+                     * 
                      */
                     bool UpstreamIdHasBeenSet() const;
 

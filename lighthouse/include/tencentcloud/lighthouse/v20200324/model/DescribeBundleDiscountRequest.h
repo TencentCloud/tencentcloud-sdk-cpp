@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取套餐 ID。
                      * @return BundleId 套餐 ID。
+                     * 
                      */
                     std::string GetBundleId() const;
 
                     /**
                      * 设置套餐 ID。
-                     * @param BundleId 套餐 ID。
+                     * @param _bundleId 套餐 ID。
+                     * 
                      */
                     void SetBundleId(const std::string& _bundleId);
 
                     /**
                      * 判断参数 BundleId 是否已赋值
                      * @return BundleId 是否已赋值
+                     * 
                      */
                     bool BundleIdHasBeenSet() const;
 

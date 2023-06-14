@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取组织单元ID
                      * @return NodeId 组织单元ID
+                     * 
                      */
                     uint64_t GetNodeId() const;
 
                     /**
                      * 设置组织单元ID
-                     * @param NodeId 组织单元ID
+                     * @param _nodeId 组织单元ID
+                     * 
                      */
                     void SetNodeId(const uint64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取父单元ID
                      * @return ParentNodeId 父单元ID
+                     * 
                      */
                     uint64_t GetParentNodeId() const;
 
                     /**
                      * 设置父单元ID
-                     * @param ParentNodeId 父单元ID
+                     * @param _parentNodeId 父单元ID
+                     * 
                      */
                     void SetParentNodeId(const uint64_t& _parentNodeId);
 
                     /**
                      * 判断参数 ParentNodeId 是否已赋值
                      * @return ParentNodeId 是否已赋值
+                     * 
                      */
                     bool ParentNodeIdHasBeenSet() const;
 
                     /**
                      * 获取成员数量
                      * @return MemberCount 成员数量
+                     * 
                      */
                     uint64_t GetMemberCount() const;
 
                     /**
                      * 设置成员数量
-                     * @param MemberCount 成员数量
+                     * @param _memberCount 成员数量
+                     * 
                      */
                     void SetMemberCount(const uint64_t& _memberCount);
 
                     /**
                      * 判断参数 MemberCount 是否已赋值
                      * @return MemberCount 是否已赋值
+                     * 
                      */
                     bool MemberCountHasBeenSet() const;
 

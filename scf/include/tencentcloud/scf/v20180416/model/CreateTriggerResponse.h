@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取触发器信息
                      * @return TriggerInfo 触发器信息
+                     * 
                      */
                     Trigger GetTriggerInfo() const;
 
                     /**
                      * 判断参数 TriggerInfo 是否已赋值
                      * @return TriggerInfo 是否已赋值
+                     * 
                      */
                     bool TriggerInfoHasBeenSet() const;
 

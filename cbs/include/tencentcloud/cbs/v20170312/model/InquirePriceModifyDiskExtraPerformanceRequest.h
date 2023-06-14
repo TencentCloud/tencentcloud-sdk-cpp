@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取额外购买的云硬盘性能值，单位MB/s。
                      * @return ThroughputPerformance 额外购买的云硬盘性能值，单位MB/s。
+                     * 
                      */
                     uint64_t GetThroughputPerformance() const;
 
                     /**
                      * 设置额外购买的云硬盘性能值，单位MB/s。
-                     * @param ThroughputPerformance 额外购买的云硬盘性能值，单位MB/s。
+                     * @param _throughputPerformance 额外购买的云硬盘性能值，单位MB/s。
+                     * 
                      */
                     void SetThroughputPerformance(const uint64_t& _throughputPerformance);
 
                     /**
                      * 判断参数 ThroughputPerformance 是否已赋值
                      * @return ThroughputPerformance 是否已赋值
+                     * 
                      */
                     bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
                      * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @param DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 
                      */
                     void SetDiskId(const std::string& _diskId);
 
                     /**
                      * 判断参数 DiskId 是否已赋值
                      * @return DiskId 是否已赋值
+                     * 
                      */
                     bool DiskIdHasBeenSet() const;
 

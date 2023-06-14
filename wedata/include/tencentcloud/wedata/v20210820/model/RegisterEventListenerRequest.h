@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取关键字，如果是任务，则传任务Id
                      * @return Key 关键字，如果是任务，则传任务Id
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置关键字，如果是任务，则传任务Id
-                     * @param Key 关键字，如果是任务，则传任务Id
+                     * @param _key 关键字，如果是任务，则传任务Id
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取事件名称
                      * @return EventName 事件名称
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置事件名称
-                     * @param EventName 事件名称
+                     * @param _eventName 事件名称
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取事件类型，默认 REST_API
                      * @return Type 事件类型，默认 REST_API
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型，默认 REST_API
-                     * @param Type 事件类型，默认 REST_API
+                     * @param _type 事件类型，默认 REST_API
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取配置信息，比如最长等待时间1天配置json：{"maxWaitEventTime":1,"maxWaitEventTimeUnit":"DAYS"}
                      * @return Properties 配置信息，比如最长等待时间1天配置json：{"maxWaitEventTime":1,"maxWaitEventTimeUnit":"DAYS"}
+                     * 
                      */
                     std::string GetProperties() const;
 
                     /**
                      * 设置配置信息，比如最长等待时间1天配置json：{"maxWaitEventTime":1,"maxWaitEventTimeUnit":"DAYS"}
-                     * @param Properties 配置信息，比如最长等待时间1天配置json：{"maxWaitEventTime":1,"maxWaitEventTimeUnit":"DAYS"}
+                     * @param _properties 配置信息，比如最长等待时间1天配置json：{"maxWaitEventTime":1,"maxWaitEventTimeUnit":"DAYS"}
+                     * 
                      */
                     void SetProperties(const std::string& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 

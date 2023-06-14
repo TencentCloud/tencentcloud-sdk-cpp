@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取连接抑制配置总数
                      * @return Total 连接抑制配置总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取连接抑制配置详情信息
                      * @return ConfigList 连接抑制配置详情信息
+                     * 
                      */
                     std::vector<ConnectLimitRelation> GetConfigList() const;
 
                     /**
                      * 判断参数 ConfigList 是否已赋值
                      * @return ConfigList 是否已赋值
+                     * 
                      */
                     bool ConfigListHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
+                     * @param _label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
 以及令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return Suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 建议您拿到判断结果后的执行操作。
+                     * @param _suggestion 建议您拿到判断结果后的执行操作。
 建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分，分数是 0 ～ 100
+                     * @param _score 得分，分数是 0 ～ 100
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

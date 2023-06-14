@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Session唯一标识
                      * @return SessionId Session唯一标识
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置Session唯一标识
-                     * @param SessionId Session唯一标识
+                     * @param _sessionId Session唯一标识
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取分页参数，默认200
                      * @return Limit 分页参数，默认200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数，默认200
-                     * @param Limit 分页参数，默认200
+                     * @param _limit 分页参数，默认200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数，默认0
                      * @return Offset 分页参数，默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数，默认0
-                     * @param Offset 分页参数，默认0
+                     * @param _offset 分页参数，默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

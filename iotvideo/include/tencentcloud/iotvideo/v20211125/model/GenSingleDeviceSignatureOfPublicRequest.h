@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备所属的产品ID
                      * @return ProductId 设备所属的产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置设备所属的产品ID
-                     * @param ProductId 设备所属的产品ID
+                     * @param _productId 设备所属的产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取需要绑定的设备
                      * @return DeviceName 需要绑定的设备
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置需要绑定的设备
-                     * @param DeviceName 需要绑定的设备
+                     * @param _deviceName 需要绑定的设备
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）
                      * @return Expire 设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）
+                     * 
                      */
                     int64_t GetExpire() const;
 
                     /**
                      * 设置设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）
-                     * @param Expire 设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）
+                     * @param _expire 设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）
+                     * 
                      */
                     void SetExpire(const int64_t& _expire);
 
                     /**
                      * 判断参数 Expire 是否已赋值
                      * @return Expire 是否已赋值
+                     * 
                      */
                     bool ExpireHasBeenSet() const;
 

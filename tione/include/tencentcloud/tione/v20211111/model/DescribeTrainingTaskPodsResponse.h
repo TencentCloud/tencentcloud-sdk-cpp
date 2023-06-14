@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取pod名称列表
                      * @return PodNames pod名称列表
+                     * 
                      */
                     std::vector<std::string> GetPodNames() const;
 
                     /**
                      * 判断参数 PodNames 是否已赋值
                      * @return PodNames 是否已赋值
+                     * 
                      */
                     bool PodNamesHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return TotalCount 数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取pod详细信息
                      * @return PodInfoList pod详细信息
+                     * 
                      */
                     PodInfo GetPodInfoList() const;
 
                     /**
                      * 判断参数 PodInfoList 是否已赋值
                      * @return PodInfoList 是否已赋值
+                     * 
                      */
                     bool PodInfoListHasBeenSet() const;
 

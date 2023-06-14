@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例和异步流程ID
                      * @return InterInstanceFlowSet 实例和异步流程ID
+                     * 
                      */
                     std::vector<InterInstanceFlow> GetInterInstanceFlowSet() const;
 
                     /**
                      * 判断参数 InterInstanceFlowSet 是否已赋值
                      * @return InterInstanceFlowSet 是否已赋值
+                     * 
                      */
                     bool InterInstanceFlowSetHasBeenSet() const;
 

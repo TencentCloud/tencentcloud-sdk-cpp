@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取TCP UDP
                      * @return Protocol TCP UDP
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置TCP UDP
-                     * @param Protocol TCP UDP
+                     * @param _protocol TCP UDP
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取服务端口
                      * @return Port 服务端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置服务端口
-                     * @param Port 服务端口
+                     * @param _port 服务端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取容器端口
                      * @return TargetPort 容器端口
+                     * 
                      */
                     int64_t GetTargetPort() const;
 
                     /**
                      * 设置容器端口
-                     * @param TargetPort 容器端口
+                     * @param _targetPort 容器端口
+                     * 
                      */
                     void SetTargetPort(const int64_t& _targetPort);
 
                     /**
                      * 判断参数 TargetPort 是否已赋值
                      * @return TargetPort 是否已赋值
+                     * 
                      */
                     bool TargetPortHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePort 主机端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNodePort() const;
 
                     /**
                      * 设置主机端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodePort 主机端口
+                     * @param _nodePort 主机端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodePort(const int64_t& _nodePort);
 
                     /**
                      * 判断参数 NodePort 是否已赋值
                      * @return NodePort 是否已赋值
+                     * 
                      */
                     bool NodePortHasBeenSet() const;
 

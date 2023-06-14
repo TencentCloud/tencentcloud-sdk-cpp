@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取下载文件的URL
                      * @return Url 下载文件的URL
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载文件的URL
-                     * @param Url 下载文件的URL
+                     * @param _url 下载文件的URL
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取下载文件的附加信息
                      * @return Option 下载文件的附加信息
+                     * 
                      */
                     std::string GetOption() const;
 
                     /**
                      * 设置下载文件的附加信息
-                     * @param Option 下载文件的附加信息
+                     * @param _option 下载文件的附加信息
+                     * 
                      */
                     void SetOption(const std::string& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
+                     * 
                      */
                     bool OptionHasBeenSet() const;
 
                     /**
                      * 获取下载文件所属的资源序号
                      * @return Index 下载文件所属的资源序号
+                     * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置下载文件所属的资源序号
-                     * @param Index 下载文件所属的资源序号
+                     * @param _index 下载文件所属的资源序号
+                     * 
                      */
                     void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
                     /**
                      * 获取目录业务下，文件对应的流程
                      * @return FlowId 目录业务下，文件对应的流程
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置目录业务下，文件对应的流程
-                     * @param FlowId 目录业务下，文件对应的流程
+                     * @param _flowId 目录业务下，文件对应的流程
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

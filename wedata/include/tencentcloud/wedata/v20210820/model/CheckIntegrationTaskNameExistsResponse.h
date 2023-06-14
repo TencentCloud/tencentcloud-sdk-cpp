@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取true表示存在，false表示不存在
                      * @return Data true表示存在，false表示不存在
+                     * 
                      */
                     bool GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取任务名重复类型（0:未重复, 1:开发态重复, 2:生产态重复）
                      * @return ExistsType 任务名重复类型（0:未重复, 1:开发态重复, 2:生产态重复）
+                     * 
                      */
                     int64_t GetExistsType() const;
 
                     /**
                      * 判断参数 ExistsType 是否已赋值
                      * @return ExistsType 是否已赋值
+                     * 
                      */
                     bool ExistsTypeHasBeenSet() const;
 

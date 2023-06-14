@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取应用号
                      * @return ApplicationId 应用号
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用号
-                     * @param ApplicationId 应用号
+                     * @param _applicationId 应用号
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取下属机构ID
                      * @return SubOrganizationId 下属机构ID
+                     * 
                      */
                     std::string GetSubOrganizationId() const;
 
                     /**
                      * 设置下属机构ID
-                     * @param SubOrganizationId 下属机构ID
+                     * @param _subOrganizationId 下属机构ID
+                     * 
                      */
                     void SetSubOrganizationId(const std::string& _subOrganizationId);
 
                     /**
                      * 判断参数 SubOrganizationId 是否已赋值
                      * @return SubOrganizationId 是否已赋值
+                     * 
                      */
                     bool SubOrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取经办人的用户ID
                      * @return OperatorId 经办人的用户ID
+                     * 
                      */
                     std::string GetOperatorId() const;
 
                     /**
                      * 设置经办人的用户ID
-                     * @param OperatorId 经办人的用户ID
+                     * @param _operatorId 经办人的用户ID
+                     * 
                      */
                     void SetOperatorId(const std::string& _operatorId);
 
                     /**
                      * 判断参数 OperatorId 是否已赋值
                      * @return OperatorId 是否已赋值
+                     * 
                      */
                     bool OperatorIdHasBeenSet() const;
 

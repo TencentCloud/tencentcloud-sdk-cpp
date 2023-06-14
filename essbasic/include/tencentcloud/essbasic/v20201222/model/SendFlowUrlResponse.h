@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取签署任务ID，标识每一次的流程发送
                      * @return SignId 签署任务ID，标识每一次的流程发送
+                     * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 
                     /**
                      * 获取签署链接
                      * @return SignUrl 签署链接
+                     * 
                      */
                     std::string GetSignUrl() const;
 
                     /**
                      * 判断参数 SignUrl 是否已赋值
                      * @return SignUrl 是否已赋值
+                     * 
                      */
                     bool SignUrlHasBeenSet() const;
 

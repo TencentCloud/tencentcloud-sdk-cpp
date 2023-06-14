@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取活动状态
                      * @return Data 活动状态
+                     * 
                      */
                     PaasSmsCampaignStatusResp GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

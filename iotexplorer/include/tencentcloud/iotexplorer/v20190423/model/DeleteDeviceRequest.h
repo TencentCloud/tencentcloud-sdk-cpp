@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID。
                      * @return ProductId 产品ID。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID。
-                     * @param ProductId 产品ID。
+                     * @param _productId 产品ID。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称。
                      * @return DeviceName 设备名称。
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称。
-                     * @param DeviceName 设备名称。
+                     * @param _deviceName 设备名称。
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取是否删除绑定设备
                      * @return ForceDelete 是否删除绑定设备
+                     * 
                      */
                     bool GetForceDelete() const;
 
                     /**
                      * 设置是否删除绑定设备
-                     * @param ForceDelete 是否删除绑定设备
+                     * @param _forceDelete 是否删除绑定设备
+                     * 
                      */
                     void SetForceDelete(const bool& _forceDelete);
 
                     /**
                      * 判断参数 ForceDelete 是否已赋值
                      * @return ForceDelete 是否已赋值
+                     * 
                      */
                     bool ForceDeleteHasBeenSet() const;
 

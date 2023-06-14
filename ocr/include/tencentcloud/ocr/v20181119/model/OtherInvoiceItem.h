@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取票面key值
                      * @return Name 票面key值
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置票面key值
-                     * @param Name 票面key值
+                     * @param _name 票面key值
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取票面value值
                      * @return Value 票面value值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置票面value值
-                     * @param Value 票面value值
+                     * @param _value 票面value值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

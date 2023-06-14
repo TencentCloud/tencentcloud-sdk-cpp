@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取触发器名称
                      * @return TriggerName 触发器名称
+                     * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
                      * 设置触发器名称
-                     * @param TriggerName 触发器名称
+                     * @param _triggerName 触发器名称
+                     * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
 
                     /**
                      * 判断参数 TriggerName 是否已赋值
                      * @return TriggerName 是否已赋值
+                     * 
                      */
                     bool TriggerNameHasBeenSet() const;
 

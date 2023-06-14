@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取用户昵称
                      * @return Nickname 用户昵称
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * @param _nickname 用户昵称
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 
                     /**
                      * 获取用户唯一ID，建议采用用户小程序OpenID加盐形式
                      * @return UserId 用户唯一ID，建议采用用户小程序OpenID加盐形式
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户唯一ID，建议采用用户小程序OpenID加盐形式
-                     * @param UserId 用户唯一ID，建议采用用户小程序OpenID加盐形式
+                     * @param _userId 用户唯一ID，建议采用用户小程序OpenID加盐形式
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户头像URL
                      * @return HeadImgUrl 用户头像URL
+                     * 
                      */
                     std::string GetHeadImgUrl() const;
 
                     /**
                      * 设置用户头像URL
-                     * @param HeadImgUrl 用户头像URL
+                     * @param _headImgUrl 用户头像URL
+                     * 
                      */
                     void SetHeadImgUrl(const std::string& _headImgUrl);
 
                     /**
                      * 判断参数 HeadImgUrl 是否已赋值
                      * @return HeadImgUrl 是否已赋值
+                     * 
                      */
                     bool HeadImgUrlHasBeenSet() const;
 
                     /**
                      * 获取用户身份，默认值：0，表示无特殊身份
                      * @return Level 用户身份，默认值：0，表示无特殊身份
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置用户身份，默认值：0，表示无特殊身份
-                     * @param Level 用户身份，默认值：0，表示无特殊身份
+                     * @param _level 用户身份，默认值：0，表示无特殊身份
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 返回的主题详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TopicDetail> GetTopicList() const;
 
                     /**
                      * 设置返回的主题详情列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicList 返回的主题详情列表
+                     * @param _topicList 返回的主题详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicList(const std::vector<TopicDetail>& _topicList);
 
                     /**
                      * 判断参数 TopicList 是否已赋值
                      * @return TopicList 是否已赋值
+                     * 
                      */
                     bool TopicListHasBeenSet() const;
 
                     /**
                      * 获取符合条件的所有主题详情数量
                      * @return TotalCount 符合条件的所有主题详情数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的所有主题详情数量
-                     * @param TotalCount 符合条件的所有主题详情数量
+                     * @param _totalCount 符合条件的所有主题详情数量
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

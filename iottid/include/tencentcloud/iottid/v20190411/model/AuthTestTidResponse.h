@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取认证结果
                      * @return Pass 认证结果
+                     * 
                      */
                     bool GetPass() const;
 
                     /**
                      * 判断参数 Pass 是否已赋值
                      * @return Pass 是否已赋值
+                     * 
                      */
                     bool PassHasBeenSet() const;
 

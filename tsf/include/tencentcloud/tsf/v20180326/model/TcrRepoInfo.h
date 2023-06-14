@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域（填数字）
+                     * @param _region 地域（填数字）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryId 实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistryId 实例id
+                     * @param _registryId 实例id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryName 实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistryName() const;
 
                     /**
                      * 设置实例名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistryName 实例名
+                     * @param _registryName 实例名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistryName(const std::string& _registryName);
 
                     /**
                      * 判断参数 RegistryName 是否已赋值
                      * @return RegistryName 是否已赋值
+                     * 
                      */
                     bool RegistryNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoName 仓库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RepoName 仓库名
+                     * @param _repoName 仓库名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 

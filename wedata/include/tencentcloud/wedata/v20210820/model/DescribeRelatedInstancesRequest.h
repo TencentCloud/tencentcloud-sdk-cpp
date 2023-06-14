@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据时间，格式yyyy-MM-dd HH:mm:ss
                      * @return CurRunDate 数据时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
                      * 设置数据时间，格式yyyy-MM-dd HH:mm:ss
-                     * @param CurRunDate 数据时间，格式yyyy-MM-dd HH:mm:ss
+                     * @param _curRunDate 数据时间，格式yyyy-MM-dd HH:mm:ss
+                     * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
 
                     /**
                      * 判断参数 CurRunDate 是否已赋值
                      * @return CurRunDate 是否已赋值
+                     * 
                      */
                     bool CurRunDateHasBeenSet() const;
 
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取距离当前任务的层级距离，-1表示取父节点，1表示子节点
                      * @return Depth 距离当前任务的层级距离，-1表示取父节点，1表示子节点
+                     * 
                      */
                     int64_t GetDepth() const;
 
                     /**
                      * 设置距离当前任务的层级距离，-1表示取父节点，1表示子节点
-                     * @param Depth 距离当前任务的层级距离，-1表示取父节点，1表示子节点
+                     * @param _depth 距离当前任务的层级距离，-1表示取父节点，1表示子节点
+                     * 
                      */
                     void SetDepth(const int64_t& _depth);
 
                     /**
                      * 判断参数 Depth 是否已赋值
                      * @return Depth 是否已赋值
+                     * 
                      */
                     bool DepthHasBeenSet() const;
 
                     /**
                      * 获取页号，默认为1
                      * @return PageNumber 页号，默认为1
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置页号，默认为1
-                     * @param PageNumber 页号，默认为1
+                     * @param _pageNumber 页号，默认为1
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取页大小，默认为10，最大不超过200
                      * @return PageSize 页大小，默认为10，最大不超过200
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页大小，默认为10，最大不超过200
-                     * @param PageSize 页大小，默认为10，最大不超过200
+                     * @param _pageSize 页大小，默认为10，最大不超过200
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

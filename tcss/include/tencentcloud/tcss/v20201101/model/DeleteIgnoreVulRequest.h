@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID 信息列表
                      * @return List 漏洞PocID 信息列表
+                     * 
                      */
                     std::vector<ModifyIgnoreVul> GetList() const;
 
                     /**
                      * 设置漏洞PocID 信息列表
-                     * @param List 漏洞PocID 信息列表
+                     * @param _list 漏洞PocID 信息列表
+                     * 
                      */
                     void SetList(const std::vector<ModifyIgnoreVul>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

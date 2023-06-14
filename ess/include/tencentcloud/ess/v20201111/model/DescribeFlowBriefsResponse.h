@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取流程列表
                      * @return FlowBriefs 流程列表
+                     * 
                      */
                     std::vector<FlowBrief> GetFlowBriefs() const;
 
                     /**
                      * 判断参数 FlowBriefs 是否已赋值
                      * @return FlowBriefs 是否已赋值
+                     * 
                      */
                     bool FlowBriefsHasBeenSet() const;
 

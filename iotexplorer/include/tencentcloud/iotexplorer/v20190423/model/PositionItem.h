@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取位置点的时间
                      * @return CreateTime 位置点的时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置位置点的时间
-                     * @param CreateTime 位置点的时间
+                     * @param _createTime 位置点的时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取位置点的经度
                      * @return Longitude 位置点的经度
+                     * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置位置点的经度
-                     * @param Longitude 位置点的经度
+                     * @param _longitude 位置点的经度
+                     * 
                      */
                     void SetLongitude(const double& _longitude);
 
                     /**
                      * 判断参数 Longitude 是否已赋值
                      * @return Longitude 是否已赋值
+                     * 
                      */
                     bool LongitudeHasBeenSet() const;
 
                     /**
                      * 获取位置点的纬度
                      * @return Latitude 位置点的纬度
+                     * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置位置点的纬度
-                     * @param Latitude 位置点的纬度
+                     * @param _latitude 位置点的纬度
+                     * 
                      */
                     void SetLatitude(const double& _latitude);
 
                     /**
                      * 判断参数 Latitude 是否已赋值
                      * @return Latitude 是否已赋值
+                     * 
                      */
                     bool LatitudeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationType 位置点的定位类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocationType() const;
 
                     /**
                      * 设置位置点的定位类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationType 位置点的定位类型
+                     * @param _locationType 位置点的定位类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationType(const std::string& _locationType);
 
                     /**
                      * 判断参数 LocationType 是否已赋值
                      * @return LocationType 是否已赋值
+                     * 
                      */
                     bool LocationTypeHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Accuracy 位置点的精度预估，单位为米
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAccuracy() const;
 
                     /**
                      * 设置位置点的精度预估，单位为米
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Accuracy 位置点的精度预估，单位为米
+                     * @param _accuracy 位置点的精度预估，单位为米
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccuracy(const double& _accuracy);
 
                     /**
                      * 判断参数 Accuracy 是否已赋值
                      * @return Accuracy 是否已赋值
+                     * 
                      */
                     bool AccuracyHasBeenSet() const;
 

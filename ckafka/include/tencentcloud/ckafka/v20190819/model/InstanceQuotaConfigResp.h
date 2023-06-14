@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaProducerByteRate 生产限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetQuotaProducerByteRate() const;
 
                     /**
                      * 设置生产限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QuotaProducerByteRate 生产限流大小，单位 MB/s
+                     * @param _quotaProducerByteRate 生产限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuotaProducerByteRate(const int64_t& _quotaProducerByteRate);
 
                     /**
                      * 判断参数 QuotaProducerByteRate 是否已赋值
                      * @return QuotaProducerByteRate 是否已赋值
+                     * 
                      */
                     bool QuotaProducerByteRateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaConsumerByteRate 消费限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetQuotaConsumerByteRate() const;
 
                     /**
                      * 设置消费限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QuotaConsumerByteRate 消费限流大小，单位 MB/s
+                     * @param _quotaConsumerByteRate 消费限流大小，单位 MB/s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuotaConsumerByteRate(const int64_t& _quotaConsumerByteRate);
 
                     /**
                      * 判断参数 QuotaConsumerByteRate 是否已赋值
                      * @return QuotaConsumerByteRate 是否已赋值
+                     * 
                      */
                     bool QuotaConsumerByteRateHasBeenSet() const;
 

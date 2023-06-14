@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息，UserId必填且需拥有组织架构管理权限
                      * @return Operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息，UserId必填且需拥有组织架构管理权限
-                     * @param Operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * @param _operator 操作人信息，UserId必填且需拥有组织架构管理权限
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
                      * @return QueryType 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * 
                      */
                     uint64_t GetQueryType() const;
 
                     /**
                      * 设置查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
-                     * @param QueryType 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * @param _queryType 查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表
+                     * 
                      */
                     void SetQueryType(const uint64_t& _queryType);
 
                     /**
                      * 判断参数 QueryType 是否已赋值
                      * @return QueryType 是否已赋值
+                     * 
                      */
                     bool QueryTypeHasBeenSet() const;
 
                     /**
                      * 获取部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
                      * @return DeptId 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * 
                      */
                     std::string GetDeptId() const;
 
                     /**
                      * 设置部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
-                     * @param DeptId 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * @param _deptId 部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据
+                     * 
                      */
                     void SetDeptId(const std::string& _deptId);
 
                     /**
                      * 判断参数 DeptId 是否已赋值
                      * @return DeptId 是否已赋值
+                     * 
                      */
                     bool DeptIdHasBeenSet() const;
 
                     /**
                      * 获取客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
                      * @return DeptOpenId 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * 
                      */
                     std::string GetDeptOpenId() const;
 
                     /**
                      * 设置客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
-                     * @param DeptOpenId 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * @param _deptOpenId 客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据
+                     * 
                      */
                     void SetDeptOpenId(const std::string& _deptOpenId);
 
                     /**
                      * 判断参数 DeptOpenId 是否已赋值
                      * @return DeptOpenId 是否已赋值
+                     * 
                      */
                     bool DeptOpenIdHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件 ID。
                      * @return FileId 媒体文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件 ID。
-                     * @param FileId 媒体文件 ID。
+                     * @param _fileId 媒体文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取文件类型，例如 mp4、mp3 等。
                      * @return FileType 文件类型，例如 mp4、mp3 等。
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型，例如 mp4、mp3 等。
-                     * @param FileType 文件类型，例如 mp4、mp3 等。
+                     * @param _fileType 文件类型，例如 mp4、mp3 等。
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件播放地址。
                      * @return FileUrl 媒体文件播放地址。
+                     * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置媒体文件播放地址。
-                     * @param FileUrl 媒体文件播放地址。
+                     * @param _fileUrl 媒体文件播放地址。
+                     * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 
                     /**
                      * 获取文件名称，最长 64 个字符。
                      * @return MediaName 文件名称，最长 64 个字符。
+                     * 
                      */
                     std::string GetMediaName() const;
 
                     /**
                      * 设置文件名称，最长 64 个字符。
-                     * @param MediaName 文件名称，最长 64 个字符。
+                     * @param _mediaName 文件名称，最长 64 个字符。
+                     * 
                      */
                     void SetMediaName(const std::string& _mediaName);
 
                     /**
                      * 判断参数 MediaName 是否已赋值
                      * @return MediaName 是否已赋值
+                     * 
                      */
                     bool MediaNameHasBeenSet() const;
 
                     /**
                      * 获取元信息。包括大小、时长、视频流信息、音频流信息等。
                      * @return MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置元信息。包括大小、时长、视频流信息、音频流信息等。
-                     * @param MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * @param _metaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 

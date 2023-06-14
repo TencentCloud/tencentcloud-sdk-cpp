@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccelerateTask 模型加速任务详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ModelAccelerateTask GetModelAccelerateTask() const;
 
                     /**
                      * 判断参数 ModelAccelerateTask 是否已赋值
                      * @return ModelAccelerateTask 是否已赋值
+                     * 
                      */
                     bool ModelAccelerateTaskHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccRuntimeInSecond 模型加速时长，单位s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetModelAccRuntimeInSecond() const;
 
                     /**
                      * 判断参数 ModelAccRuntimeInSecond 是否已赋值
                      * @return ModelAccRuntimeInSecond 是否已赋值
+                     * 
                      */
                     bool ModelAccRuntimeInSecondHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccStartTime 模型加速任务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelAccStartTime() const;
 
                     /**
                      * 判断参数 ModelAccStartTime 是否已赋值
                      * @return ModelAccStartTime 是否已赋值
+                     * 
                      */
                     bool ModelAccStartTimeHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccEndTime 模型加速任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelAccEndTime() const;
 
                     /**
                      * 判断参数 ModelAccEndTime 是否已赋值
                      * @return ModelAccEndTime 是否已赋值
+                     * 
                      */
                     bool ModelAccEndTimeHasBeenSet() const;
 

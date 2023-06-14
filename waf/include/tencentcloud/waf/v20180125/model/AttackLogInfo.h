@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取攻击日志的详情内容
                      * @return Content 攻击日志的详情内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置攻击日志的详情内容
-                     * @param Content 攻击日志的详情内容
+                     * @param _content 攻击日志的详情内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取CLS返回内容
                      * @return FileName CLS返回内容
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置CLS返回内容
-                     * @param FileName CLS返回内容
+                     * @param _fileName CLS返回内容
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取CLS返回内容
                      * @return Source CLS返回内容
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置CLS返回内容
-                     * @param Source CLS返回内容
+                     * @param _source CLS返回内容
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取CLS返回内容
                      * @return TimeStamp CLS返回内容
+                     * 
                      */
                     std::string GetTimeStamp() const;
 
                     /**
                      * 设置CLS返回内容
-                     * @param TimeStamp CLS返回内容
+                     * @param _timeStamp CLS返回内容
+                     * 
                      */
                     void SetTimeStamp(const std::string& _timeStamp);
 
                     /**
                      * 判断参数 TimeStamp 是否已赋值
                      * @return TimeStamp 是否已赋值
+                     * 
                      */
                     bool TimeStampHasBeenSet() const;
 

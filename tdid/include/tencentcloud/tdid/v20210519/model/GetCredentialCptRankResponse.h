@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Rank集合
                      * @return RankIssueResult Rank集合
+                     * 
                      */
                     std::vector<CptIssueRank> GetRankIssueResult() const;
 
                     /**
                      * 判断参数 RankIssueResult 是否已赋值
                      * @return RankIssueResult 是否已赋值
+                     * 
                      */
                     bool RankIssueResultHasBeenSet() const;
 

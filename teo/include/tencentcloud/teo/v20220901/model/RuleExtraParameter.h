@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Id 参数名，取值有：
 <li> Action：修改 HTTP 头部所需参数，RuleAction 选择 RewirteAction；</li>
 <li> StatusCode：状态码相关功能所需参数，RuleAction 选择 CodeAction。</li>
+                     * 
                      */
                     std::string GetId() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置参数名，取值有：
 <li> Action：修改 HTTP 头部所需参数，RuleAction 选择 RewirteAction；</li>
 <li> StatusCode：状态码相关功能所需参数，RuleAction 选择 CodeAction。</li>
-                     * @param Id 参数名，取值有：
+                     * @param _id 参数名，取值有：
 <li> Action：修改 HTTP 头部所需参数，RuleAction 选择 RewirteAction；</li>
 <li> StatusCode：状态码相关功能所需参数，RuleAction 选择 CodeAction。</li>
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li> CHOICE：参数值只能在 Values 中选择； </li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li> CHOICE：参数值只能在 Values 中选择； </li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
-                     * @param Type 参数值类型。
+                     * @param _type 参数值类型。
 <li> CHOICE：参数值只能在 Values 中选择； </li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
 <li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -107,20 +113,23 @@ namespace TencentCloud
 注意：当 Id 的值为 StatusCode 时数组中的值为整型，填写参数值时请填写字符串的整型数值。
                      * @return Choices 可选参数值。
 注意：当 Id 的值为 StatusCode 时数组中的值为整型，填写参数值时请填写字符串的整型数值。
+                     * 
                      */
                     std::vector<std::string> GetChoices() const;
 
                     /**
                      * 设置可选参数值。
 注意：当 Id 的值为 StatusCode 时数组中的值为整型，填写参数值时请填写字符串的整型数值。
-                     * @param Choices 可选参数值。
+                     * @param _choices 可选参数值。
 注意：当 Id 的值为 StatusCode 时数组中的值为整型，填写参数值时请填写字符串的整型数值。
+                     * 
                      */
                     void SetChoices(const std::vector<std::string>& _choices);
 
                     /**
                      * 判断参数 Choices 是否已赋值
                      * @return Choices 是否已赋值
+                     * 
                      */
                     bool ChoicesHasBeenSet() const;
 

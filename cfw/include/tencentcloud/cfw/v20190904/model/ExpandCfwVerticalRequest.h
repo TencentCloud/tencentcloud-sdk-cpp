@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取nat：nat防火墙，ew：东西向防火墙
                      * @return FwType nat：nat防火墙，ew：东西向防火墙
+                     * 
                      */
                     std::string GetFwType() const;
 
                     /**
                      * 设置nat：nat防火墙，ew：东西向防火墙
-                     * @param FwType nat：nat防火墙，ew：东西向防火墙
+                     * @param _fwType nat：nat防火墙，ew：东西向防火墙
+                     * 
                      */
                     void SetFwType(const std::string& _fwType);
 
                     /**
                      * 判断参数 FwType 是否已赋值
                      * @return FwType 是否已赋值
+                     * 
                      */
                     bool FwTypeHasBeenSet() const;
 
                     /**
                      * 获取带宽值
                      * @return Width 带宽值
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置带宽值
-                     * @param Width 带宽值
+                     * @param _width 带宽值
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取防火墙实例id
                      * @return CfwInstance 防火墙实例id
+                     * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
                      * 设置防火墙实例id
-                     * @param CfwInstance 防火墙实例id
+                     * @param _cfwInstance 防火墙实例id
+                     * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
 
                     /**
                      * 判断参数 CfwInstance 是否已赋值
                      * @return CfwInstance 是否已赋值
+                     * 
                      */
                     bool CfwInstanceHasBeenSet() const;
 

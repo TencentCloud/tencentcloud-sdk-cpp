@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return JobId 任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务ID
-                     * @param JobId 任务ID
+                     * @param _jobId 任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取场景ID
                      * @return ScenarioId 场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置场景ID
-                     * @param ScenarioId 场景ID
+                     * @param _scenarioId 场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取指标名字
                      * @return Metric 指标名字
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名字
-                     * @param Metric 指标名字
+                     * @param _metric 指标名字
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合函数
                      * @return Aggregation 聚合函数
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置聚合函数
-                     * @param Aggregation 聚合函数
+                     * @param _aggregation 聚合函数
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
                     /**
                      * 获取指标过滤
                      * @return Filters 指标过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置指标过滤
-                     * @param Filters 指标过滤
+                     * @param _filters 指标过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取分组
                      * @return GroupBy 分组
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
                      * 设置分组
-                     * @param GroupBy 分组
+                     * @param _groupBy 分组
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取批量更新影子任务的描述细节，当 taskType 取值为 “UpdateShadow” 时，此字段必填。描述见下 BatchUpdateShadow
                      * @return UpdateShadowTask 批量更新影子任务的描述细节，当 taskType 取值为 “UpdateShadow” 时，此字段必填。描述见下 BatchUpdateShadow
+                     * 
                      */
                     BatchUpdateShadow GetUpdateShadowTask() const;
 
                     /**
                      * 设置批量更新影子任务的描述细节，当 taskType 取值为 “UpdateShadow” 时，此字段必填。描述见下 BatchUpdateShadow
-                     * @param UpdateShadowTask 批量更新影子任务的描述细节，当 taskType 取值为 “UpdateShadow” 时，此字段必填。描述见下 BatchUpdateShadow
+                     * @param _updateShadowTask 批量更新影子任务的描述细节，当 taskType 取值为 “UpdateShadow” 时，此字段必填。描述见下 BatchUpdateShadow
+                     * 
                      */
                     void SetUpdateShadowTask(const BatchUpdateShadow& _updateShadowTask);
 
                     /**
                      * 判断参数 UpdateShadowTask 是否已赋值
                      * @return UpdateShadowTask 是否已赋值
+                     * 
                      */
                     bool UpdateShadowTaskHasBeenSet() const;
 
                     /**
                      * 获取批量下发消息任务的描述细节，当 taskType 取值为 “PublishMessage” 时，此字段必填。描述见下 BatchPublishMessage
                      * @return PublishMessageTask 批量下发消息任务的描述细节，当 taskType 取值为 “PublishMessage” 时，此字段必填。描述见下 BatchPublishMessage
+                     * 
                      */
                     BatchPublishMessage GetPublishMessageTask() const;
 
                     /**
                      * 设置批量下发消息任务的描述细节，当 taskType 取值为 “PublishMessage” 时，此字段必填。描述见下 BatchPublishMessage
-                     * @param PublishMessageTask 批量下发消息任务的描述细节，当 taskType 取值为 “PublishMessage” 时，此字段必填。描述见下 BatchPublishMessage
+                     * @param _publishMessageTask 批量下发消息任务的描述细节，当 taskType 取值为 “PublishMessage” 时，此字段必填。描述见下 BatchPublishMessage
+                     * 
                      */
                     void SetPublishMessageTask(const BatchPublishMessage& _publishMessageTask);
 
                     /**
                      * 判断参数 PublishMessageTask 是否已赋值
                      * @return PublishMessageTask 是否已赋值
+                     * 
                      */
                     bool PublishMessageTaskHasBeenSet() const;
 

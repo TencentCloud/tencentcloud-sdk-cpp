@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取请求（事件）ID。
                      * @return EventId 请求（事件）ID。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置请求（事件）ID。
-                     * @param EventId 请求（事件）ID。
+                     * @param _eventId 请求（事件）ID。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取http 日志内容。
                      * @return HttpLog http 日志内容。
+                     * 
                      */
                     std::string GetHttpLog() const;
 
                     /**
                      * 设置http 日志内容。
-                     * @param HttpLog http 日志内容。
+                     * @param _httpLog http 日志内容。
+                     * 
                      */
                     void SetHttpLog(const std::string& _httpLog);
 
                     /**
                      * 判断参数 HttpLog 是否已赋值
                      * @return HttpLog 是否已赋值
+                     * 
                      */
                     bool HttpLogHasBeenSet() const;
 
                     /**
                      * 获取受攻击子域名。
                      * @return Domain 受攻击子域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置受攻击子域名。
-                     * @param Domain 受攻击子域名。
+                     * @param _domain 受攻击子域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取攻击源（客户端）Ip。
                      * @return AttackIp 攻击源（客户端）Ip。
+                     * 
                      */
                     std::string GetAttackIp() const;
 
                     /**
                      * 设置攻击源（客户端）Ip。
-                     * @param AttackIp 攻击源（客户端）Ip。
+                     * @param _attackIp 攻击源（客户端）Ip。
+                     * 
                      */
                     void SetAttackIp(const std::string& _attackIp);
 
                     /**
                      * 判断参数 AttackIp 是否已赋值
                      * @return AttackIp 是否已赋值
+                     * 
                      */
                     bool AttackIpHasBeenSet() const;
 
                     /**
                      * 获取IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
                      * @return SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
+                     * 
                      */
                     std::string GetSipCountryCode() const;
 
                     /**
                      * 设置IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
-                     * @param SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
+                     * @param _sipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
+                     * 
                      */
                     void SetSipCountryCode(const std::string& _sipCountryCode);
 
                     /**
                      * 判断参数 SipCountryCode 是否已赋值
                      * @return SipCountryCode 是否已赋值
+                     * 
                      */
                     bool SipCountryCodeHasBeenSet() const;
 
                     /**
                      * 获取真实客户端Ip。
                      * @return RealClientIp 真实客户端Ip。
+                     * 
                      */
                     std::string GetRealClientIp() const;
 
                     /**
                      * 设置真实客户端Ip。
-                     * @param RealClientIp 真实客户端Ip。
+                     * @param _realClientIp 真实客户端Ip。
+                     * 
                      */
                     void SetRealClientIp(const std::string& _realClientIp);
 
                     /**
                      * 判断参数 RealClientIp 是否已赋值
                      * @return RealClientIp 是否已赋值
+                     * 
                      */
                     bool RealClientIpHasBeenSet() const;
 
                     /**
                      * 获取真实客户端Ip所在国家iso-3166中alpha-2编码。
                      * @return RealClientIpCountryCode 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     * 
                      */
                     std::string GetRealClientIpCountryCode() const;
 
                     /**
                      * 设置真实客户端Ip所在国家iso-3166中alpha-2编码。
-                     * @param RealClientIpCountryCode 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     * @param _realClientIpCountryCode 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     * 
                      */
                     void SetRealClientIpCountryCode(const std::string& _realClientIpCountryCode);
 
                     /**
                      * 判断参数 RealClientIpCountryCode 是否已赋值
                      * @return RealClientIpCountryCode 是否已赋值
+                     * 
                      */
                     bool RealClientIpCountryCodeHasBeenSet() const;
 
                     /**
                      * 获取攻击时间，采用unix秒级时间戳。
                      * @return AttackTime 攻击时间，采用unix秒级时间戳。
+                     * 
                      */
                     uint64_t GetAttackTime() const;
 
                     /**
                      * 设置攻击时间，采用unix秒级时间戳。
-                     * @param AttackTime 攻击时间，采用unix秒级时间戳。
+                     * @param _attackTime 攻击时间，采用unix秒级时间戳。
+                     * 
                      */
                     void SetAttackTime(const uint64_t& _attackTime);
 
                     /**
                      * 判断参数 AttackTime 是否已赋值
                      * @return AttackTime 是否已赋值
+                     * 
                      */
                     bool AttackTimeHasBeenSet() const;
 
                     /**
                      * 获取请求地址。
                      * @return RequestUri 请求地址。
+                     * 
                      */
                     std::string GetRequestUri() const;
 
                     /**
                      * 设置请求地址。
-                     * @param RequestUri 请求地址。
+                     * @param _requestUri 请求地址。
+                     * 
                      */
                     void SetRequestUri(const std::string& _requestUri);
 
                     /**
                      * 判断参数 RequestUri 是否已赋值
                      * @return RequestUri 是否已赋值
+                     * 
                      */
                     bool RequestUriHasBeenSet() const;
 
@@ -214,20 +241,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReqMethod 请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReqMethod() const;
 
                     /**
                      * 设置请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReqMethod 请求类型。
+                     * @param _reqMethod 请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReqMethod(const std::string& _reqMethod);
 
                     /**
                      * 判断参数 ReqMethod 是否已赋值
                      * @return ReqMethod 是否已赋值
+                     * 
                      */
                     bool ReqMethodHasBeenSet() const;
 
@@ -236,20 +266,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDetailList 规则相关信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecRuleRelatedInfo> GetRuleDetailList() const;
 
                     /**
                      * 设置规则相关信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleDetailList 规则相关信息列表。
+                     * @param _ruleDetailList 规则相关信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleDetailList(const std::vector<SecRuleRelatedInfo>& _ruleDetailList);
 
                     /**
                      * 判断参数 RuleDetailList 是否已赋值
                      * @return RuleDetailList 是否已赋值
+                     * 
                      */
                     bool RuleDetailListHasBeenSet() const;
 
@@ -258,20 +291,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttackContent() const;
 
                     /**
                      * 设置攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackContent 攻击内容。
+                     * @param _attackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttackContent(const std::string& _attackContent);
 
                     /**
                      * 判断参数 AttackContent 是否已赋值
                      * @return AttackContent 是否已赋值
+                     * 
                      */
                     bool AttackContentHasBeenSet() const;
 
@@ -280,20 +316,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Area 日志所属区域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置日志所属区域。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Area 日志所属区域。
+                     * @param _area 日志所属区域。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

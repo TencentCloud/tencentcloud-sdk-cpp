@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取测速数据
                      * @return NetworkData 测速数据
+                     * 
                      */
                     NetworkData GetNetworkData() const;
 
                     /**
                      * 设置测速数据
-                     * @param NetworkData 测速数据
+                     * @param _networkData 测速数据
+                     * 
                      */
                     void SetNetworkData(const NetworkData& _networkData);
 
                     /**
                      * 判断参数 NetworkData 是否已赋值
                      * @return NetworkData 是否已赋值
+                     * 
                      */
                     bool NetworkDataHasBeenSet() const;
 
                     /**
                      * 获取用户期望最低门限
                      * @return ExpectedLowThreshold 用户期望最低门限
+                     * 
                      */
                     ExpectedThreshold GetExpectedLowThreshold() const;
 
                     /**
                      * 设置用户期望最低门限
-                     * @param ExpectedLowThreshold 用户期望最低门限
+                     * @param _expectedLowThreshold 用户期望最低门限
+                     * 
                      */
                     void SetExpectedLowThreshold(const ExpectedThreshold& _expectedLowThreshold);
 
                     /**
                      * 判断参数 ExpectedLowThreshold 是否已赋值
                      * @return ExpectedLowThreshold 是否已赋值
+                     * 
                      */
                     bool ExpectedLowThresholdHasBeenSet() const;
 
                     /**
                      * 获取用户期望最高门限
                      * @return ExpectedHighThreshold 用户期望最高门限
+                     * 
                      */
                     ExpectedThreshold GetExpectedHighThreshold() const;
 
                     /**
                      * 设置用户期望最高门限
-                     * @param ExpectedHighThreshold 用户期望最高门限
+                     * @param _expectedHighThreshold 用户期望最高门限
+                     * 
                      */
                     void SetExpectedHighThreshold(const ExpectedThreshold& _expectedHighThreshold);
 
                     /**
                      * 判断参数 ExpectedHighThreshold 是否已赋值
                      * @return ExpectedHighThreshold 是否已赋值
+                     * 
                      */
                     bool ExpectedHighThresholdHasBeenSet() const;
 

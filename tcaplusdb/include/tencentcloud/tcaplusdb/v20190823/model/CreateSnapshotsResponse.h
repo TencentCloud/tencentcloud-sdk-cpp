@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取批量创建的快照数量
                      * @return TotalCount 批量创建的快照数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取批量创建的快照结果列表
                      * @return TableResults 批量创建的快照结果列表
+                     * 
                      */
                     std::vector<SnapshotResult> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
                      * @return TableResults 是否已赋值
+                     * 
                      */
                     bool TableResultsHasBeenSet() const;
 

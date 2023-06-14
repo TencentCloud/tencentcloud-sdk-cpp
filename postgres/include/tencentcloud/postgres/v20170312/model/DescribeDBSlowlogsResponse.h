@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取本次返回多少条数据
                      * @return TotalCount 本次返回多少条数据
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取慢查询日志详情
                      * @return Detail 慢查询日志详情
+                     * 
                      */
                     SlowlogDetail GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

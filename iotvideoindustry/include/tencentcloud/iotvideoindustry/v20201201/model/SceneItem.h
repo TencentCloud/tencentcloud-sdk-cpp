@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 场景ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIntId() const;
 
                     /**
                      * 设置场景ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntId 场景ID
+                     * @param _intId 场景ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntId(const int64_t& _intId);
 
                     /**
                      * 判断参数 IntId 是否已赋值
                      * @return IntId 是否已赋值
+                     * 
                      */
                     bool IntIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户UIN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户UIN
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 用户UIN
+                     * @param _uin 用户UIN
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSceneName() const;
 
                     /**
                      * 设置场景名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SceneName 场景名称
+                     * @param _sceneName 场景名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSceneName(const std::string& _sceneName);
 
                     /**
                      * 判断参数 SceneName 是否已赋值
                      * @return SceneName 是否已赋值
+                     * 
                      */
                     bool SceneNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneTrigger 触发规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSceneTrigger() const;
 
                     /**
                      * 设置触发规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SceneTrigger 触发规则
+                     * @param _sceneTrigger 触发规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSceneTrigger(const std::string& _sceneTrigger);
 
                     /**
                      * 判断参数 SceneTrigger 是否已赋值
                      * @return SceneTrigger 是否已赋值
+                     * 
                      */
                     bool SceneTriggerHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordDuration 录制时长 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRecordDuration() const;
 
                     /**
                      * 设置录制时长 秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RecordDuration 录制时长 秒
+                     * @param _recordDuration 录制时长 秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecordDuration(const int64_t& _recordDuration);
 
                     /**
                      * 判断参数 RecordDuration 是否已赋值
                      * @return RecordDuration 是否已赋值
+                     * 
                      */
                     bool RecordDurationHasBeenSet() const;
 
@@ -161,56 +176,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoreDuration 存储时长 天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStoreDuration() const;
 
                     /**
                      * 设置存储时长 天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoreDuration 存储时长 天
+                     * @param _storeDuration 存储时长 天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStoreDuration(const int64_t& _storeDuration);
 
                     /**
                      * 判断参数 StoreDuration 是否已赋值
                      * @return StoreDuration 是否已赋值
+                     * 
                      */
                     bool StoreDurationHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdateTime 修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

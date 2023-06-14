@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取词表ID。
                      * @return VocabId 词表ID。
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 设置词表ID。
-                     * @param VocabId 词表ID。
+                     * @param _vocabId 词表ID。
+                     * 
                      */
                     void SetVocabId(const std::string& _vocabId);
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 

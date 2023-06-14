@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取规则组ID
                      * @return RuleGroupId 规则组ID
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组ID
-                     * @param RuleGroupId 规则组ID
+                     * @param _ruleGroupId 规则组ID
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
                      * 获取触发类型 1.手动触发 2.调度事中触发 3.周期调度触发
                      * @return TriggerType 触发类型 1.手动触发 2.调度事中触发 3.周期调度触发
+                     * 
                      */
                     uint64_t GetTriggerType() const;
 
                     /**
                      * 设置触发类型 1.手动触发 2.调度事中触发 3.周期调度触发
-                     * @param TriggerType 触发类型 1.手动触发 2.调度事中触发 3.周期调度触发
+                     * @param _triggerType 触发类型 1.手动触发 2.调度事中触发 3.周期调度触发
+                     * 
                      */
                     void SetTriggerType(const uint64_t& _triggerType);
 
                     /**
                      * 判断参数 TriggerType 是否已赋值
                      * @return TriggerType 是否已赋值
+                     * 
                      */
                     bool TriggerTypeHasBeenSet() const;
 
                     /**
                      * 获取规则配置列表
                      * @return ExecRuleConfig 规则配置列表
+                     * 
                      */
                     std::vector<RuleConfig> GetExecRuleConfig() const;
 
                     /**
                      * 设置规则配置列表
-                     * @param ExecRuleConfig 规则配置列表
+                     * @param _execRuleConfig 规则配置列表
+                     * 
                      */
                     void SetExecRuleConfig(const std::vector<RuleConfig>& _execRuleConfig);
 
                     /**
                      * 判断参数 ExecRuleConfig 是否已赋值
                      * @return ExecRuleConfig 是否已赋值
+                     * 
                      */
                     bool ExecRuleConfigHasBeenSet() const;
 
                     /**
                      * 获取执行配置
                      * @return ExecConfig 执行配置
+                     * 
                      */
                     RuleExecConfig GetExecConfig() const;
 
                     /**
                      * 设置执行配置
-                     * @param ExecConfig 执行配置
+                     * @param _execConfig 执行配置
+                     * 
                      */
                     void SetExecConfig(const RuleExecConfig& _execConfig);
 
                     /**
                      * 判断参数 ExecConfig 是否已赋值
                      * @return ExecConfig 是否已赋值
+                     * 
                      */
                     bool ExecConfigHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
                      * @return EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
-                     * @param EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @param _engineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * 
                      */
                     void SetEngineType(const std::string& _engineType);
 
                     /**
                      * 判断参数 EngineType 是否已赋值
                      * @return EngineType 是否已赋值
+                     * 
                      */
                     bool EngineTypeHasBeenSet() const;
 

@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取用户目录ID
                      * @return UserStoreId 用户目录ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户目录ID
-                     * @param UserStoreId 用户目录ID
+                     * @param _userStoreId 用户目录ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
+                     * 
                      */
                     std::string GetFormat() const;
 
@@ -79,16 +83,18 @@ namespace TencentCloud
 
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
-                     * @param Format 导出的数据类型
+                     * @param _format 导出的数据类型
 
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -109,34 +116,39 @@ namespace TencentCloud
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
-                     * @param Filters Key可选值为condition、userGroupId
+                     * @param _filters Key可选值为condition、userGroupId
 
 <li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
 <li> **userGroupId** </li>	Values = 用户组ID
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取导出用户包含的属性和映射名称，为空时包含所有的属性
                      * @return ExportPropertyMaps 导出用户包含的属性和映射名称，为空时包含所有的属性
+                     * 
                      */
                     std::vector<ExportPropertyMap> GetExportPropertyMaps() const;
 
                     /**
                      * 设置导出用户包含的属性和映射名称，为空时包含所有的属性
-                     * @param ExportPropertyMaps 导出用户包含的属性和映射名称，为空时包含所有的属性
+                     * @param _exportPropertyMaps 导出用户包含的属性和映射名称，为空时包含所有的属性
+                     * 
                      */
                     void SetExportPropertyMaps(const std::vector<ExportPropertyMap>& _exportPropertyMaps);
 
                     /**
                      * 判断参数 ExportPropertyMaps 是否已赋值
                      * @return ExportPropertyMaps 是否已赋值
+                     * 
                      */
                     bool ExportPropertyMapsHasBeenSet() const;
 

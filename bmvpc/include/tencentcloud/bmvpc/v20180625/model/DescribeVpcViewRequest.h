@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取私有网络唯一ID
                      * @return VpcId 私有网络唯一ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络唯一ID
-                     * @param VpcId 私有网络唯一ID
+                     * @param _vpcId 私有网络唯一ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 

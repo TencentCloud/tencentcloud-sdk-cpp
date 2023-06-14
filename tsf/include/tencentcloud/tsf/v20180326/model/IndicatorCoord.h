@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordX 指标横坐标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoordX() const;
 
                     /**
                      * 设置指标横坐标值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoordX 指标横坐标值
+                     * @param _coordX 指标横坐标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoordX(const std::string& _coordX);
 
                     /**
                      * 判断参数 CoordX 是否已赋值
                      * @return CoordX 是否已赋值
+                     * 
                      */
                     bool CoordXHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordY 指标纵坐标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoordY() const;
 
                     /**
                      * 设置指标纵坐标值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoordY 指标纵坐标值
+                     * @param _coordY 指标纵坐标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoordY(const std::string& _coordY);
 
                     /**
                      * 判断参数 CoordY 是否已赋值
                      * @return CoordY 是否已赋值
+                     * 
                      */
                     bool CoordYHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordTag 指标标签，用于标识附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCoordTag() const;
 
                     /**
                      * 设置指标标签，用于标识附加信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CoordTag 指标标签，用于标识附加信息
+                     * @param _coordTag 指标标签，用于标识附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoordTag(const std::string& _coordTag);
 
                     /**
                      * 判断参数 CoordTag 是否已赋值
                      * @return CoordTag 是否已赋值
+                     * 
                      */
                     bool CoordTagHasBeenSet() const;
 

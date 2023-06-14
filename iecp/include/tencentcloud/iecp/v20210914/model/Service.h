@@ -51,108 +51,126 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取类型 (ClusterIP|NodePort)
                      * @return Type 类型 (ClusterIP|NodePort)
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型 (ClusterIP|NodePort)
-                     * @param Type 类型 (ClusterIP|NodePort)
+                     * @param _type 类型 (ClusterIP|NodePort)
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取端口配置
                      * @return Ports 端口配置
+                     * 
                      */
                     std::vector<PortConfig> GetPorts() const;
 
                     /**
                      * 设置端口配置
-                     * @param Ports 端口配置
+                     * @param _ports 端口配置
+                     * 
                      */
                     void SetPorts(const std::vector<PortConfig>& _ports);
 
                     /**
                      * 判断参数 Ports 是否已赋值
                      * @return Ports 是否已赋值
+                     * 
                      */
                     bool PortsHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Labels 标签
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置标签
-                     * @param Labels 标签
+                     * @param _labels 标签
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取命名空间默认default
                      * @return Namespace 命名空间默认default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间默认default
-                     * @param Namespace 命名空间默认default
+                     * @param _namespace 命名空间默认default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取服务IP
                      * @return ClusterIP 服务IP
+                     * 
                      */
                     std::string GetClusterIP() const;
 
                     /**
                      * 设置服务IP
-                     * @param ClusterIP 服务IP
+                     * @param _clusterIP 服务IP
+                     * 
                      */
                     void SetClusterIP(const std::string& _clusterIP);
 
                     /**
                      * 判断参数 ClusterIP 是否已赋值
                      * @return ClusterIP 是否已赋值
+                     * 
                      */
                     bool ClusterIPHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取匹配Code。
                      * @return MatchCode 匹配Code。
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置匹配Code。
-                     * @param MatchCode 匹配Code。
+                     * @param _matchCode 匹配Code。
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 
                     /**
                      * 获取单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。
                      * @return CompatibleSpan 单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。
+                     * 
                      */
                     uint64_t GetCompatibleSpan() const;
 
                     /**
                      * 设置单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。
-                     * @param CompatibleSpan 单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。
+                     * @param _compatibleSpan 单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。
+                     * 
                      */
                     void SetCompatibleSpan(const uint64_t& _compatibleSpan);
 
                     /**
                      * 判断参数 CompatibleSpan 是否已赋值
                      * @return CompatibleSpan 是否已赋值
+                     * 
                      */
                     bool CompatibleSpanHasBeenSet() const;
 
                     /**
                      * 获取Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。
                      * @return MatchToken Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。
+                     * 
                      */
                     std::string GetMatchToken() const;
 
                     /**
                      * 设置Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。
-                     * @param MatchToken Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。
+                     * @param _matchToken Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。
+                     * 
                      */
                     void SetMatchToken(const std::string& _matchToken);
 
                     /**
                      * 判断参数 MatchToken 是否已赋值
                      * @return MatchToken 是否已赋值
+                     * 
                      */
                     bool MatchTokenHasBeenSet() const;
 

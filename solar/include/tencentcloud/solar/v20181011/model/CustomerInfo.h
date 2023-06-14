@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Activity 总活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetActivity() const;
 
                     /**
                      * 设置总活跃度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Activity 总活跃度
+                     * @param _activity 总活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivity(const int64_t& _activity);
 
                     /**
                      * 判断参数 Activity 是否已赋值
                      * @return Activity 是否已赋值
+                     * 
                      */
                     bool ActivityHasBeenSet() const;
 
                     /**
                      * 获取客户ID
                      * @return AudienceUserId 客户ID
+                     * 
                      */
                     std::string GetAudienceUserId() const;
 
                     /**
                      * 设置客户ID
-                     * @param AudienceUserId 客户ID
+                     * @param _audienceUserId 客户ID
+                     * 
                      */
                     void SetAudienceUserId(const std::string& _audienceUserId);
 
                     /**
                      * 判断参数 AudienceUserId 是否已赋值
                      * @return AudienceUserId 是否已赋值
+                     * 
                      */
                     bool AudienceUserIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Avatar 头像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置头像
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Avatar 头像
+                     * @param _avatar 头像
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvatar(const std::string& _avatar);
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 最近记录城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置最近记录城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param City 最近记录城市
+                     * @param _city 最近记录城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCity(const std::string& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastActiveTime 最活跃时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastActiveTime() const;
 
                     /**
                      * 设置最活跃时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastActiveTime 最活跃时间
+                     * @param _lastActiveTime 最活跃时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastActiveTime(const std::string& _lastActiveTime);
 
                     /**
                      * 判断参数 LastActiveTime 是否已赋值
                      * @return LastActiveTime 是否已赋值
+                     * 
                      */
                     bool LastActiveTimeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkFlag 是否星标客户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMarkFlag() const;
 
                     /**
                      * 设置是否星标客户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MarkFlag 是否星标客户
+                     * @param _markFlag 是否星标客户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMarkFlag(const std::string& _markFlag);
 
                     /**
                      * 判断参数 MarkFlag 是否已赋值
                      * @return MarkFlag 是否已赋值
+                     * 
                      */
                     bool MarkFlagHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthActive 30天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMonthActive() const;
 
                     /**
                      * 设置30天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonthActive 30天活跃度
+                     * @param _monthActive 30天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonthActive(const int64_t& _monthActive);
 
                     /**
                      * 判断参数 MonthActive 是否已赋值
                      * @return MonthActive 是否已赋值
+                     * 
                      */
                     bool MonthActiveHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthRecommend 30天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMonthRecommend() const;
 
                     /**
                      * 设置30天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonthRecommend 30天推荐度
+                     * @param _monthRecommend 30天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonthRecommend(const int64_t& _monthRecommend);
 
                     /**
                      * 判断参数 MonthRecommend 是否已赋值
                      * @return MonthRecommend 是否已赋值
+                     * 
                      */
                     bool MonthRecommendHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phone 手机号
+                     * @param _phone 手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
@@ -245,20 +272,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 最近记录省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置最近记录省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Province 最近记录省份
+                     * @param _province 最近记录省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -267,20 +297,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealName 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealName 姓名
+                     * @param _realName 姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRealName(const std::string& _realName);
 
                     /**
                      * 判断参数 RealName 是否已赋值
                      * @return RealName 是否已赋值
+                     * 
                      */
                     bool RealNameHasBeenSet() const;
 
@@ -289,20 +322,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelChannelFlag 员工标识 0 未关联 1 已关联
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRelChannelFlag() const;
 
                     /**
                      * 设置员工标识 0 未关联 1 已关联
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelChannelFlag 员工标识 0 未关联 1 已关联
+                     * @param _relChannelFlag 员工标识 0 未关联 1 已关联
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelChannelFlag(const int64_t& _relChannelFlag);
 
                     /**
                      * 判断参数 RelChannelFlag 是否已赋值
                      * @return RelChannelFlag 是否已赋值
+                     * 
                      */
                     bool RelChannelFlagHasBeenSet() const;
 
@@ -311,20 +347,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sex 性别 1男 2女
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSex() const;
 
                     /**
                      * 设置性别 1男 2女
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sex 性别 1男 2女
+                     * @param _sex 性别 1男 2女
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSex(const int64_t& _sex);
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
@@ -333,20 +372,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Spread 传播力（好友数）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSpread() const;
 
                     /**
                      * 设置传播力（好友数）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Spread 传播力（好友数）
+                     * @param _spread 传播力（好友数）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpread(const int64_t& _spread);
 
                     /**
                      * 判断参数 Spread 是否已赋值
                      * @return Spread 是否已赋值
+                     * 
                      */
                     bool SpreadHasBeenSet() const;
 
@@ -355,20 +397,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeekActive 7天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeekActive() const;
 
                     /**
                      * 设置7天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeekActive 7天活跃度
+                     * @param _weekActive 7天活跃度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeekActive(const int64_t& _weekActive);
 
                     /**
                      * 判断参数 WeekActive 是否已赋值
                      * @return WeekActive 是否已赋值
+                     * 
                      */
                     bool WeekActiveHasBeenSet() const;
 
@@ -377,20 +422,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeekRecommend 7天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeekRecommend() const;
 
                     /**
                      * 设置7天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeekRecommend 7天推荐度
+                     * @param _weekRecommend 7天推荐度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeekRecommend(const int64_t& _weekRecommend);
 
                     /**
                      * 判断参数 WeekRecommend 是否已赋值
                      * @return WeekRecommend 是否已赋值
+                     * 
                      */
                     bool WeekRecommendHasBeenSet() const;
 
@@ -399,20 +447,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxCity 微信城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWxCity() const;
 
                     /**
                      * 设置微信城市
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WxCity 微信城市
+                     * @param _wxCity 微信城市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWxCity(const std::string& _wxCity);
 
                     /**
                      * 判断参数 WxCity 是否已赋值
                      * @return WxCity 是否已赋值
+                     * 
                      */
                     bool WxCityHasBeenSet() const;
 
@@ -421,20 +472,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxCountry 微信国家或地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWxCountry() const;
 
                     /**
                      * 设置微信国家或地区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WxCountry 微信国家或地区
+                     * @param _wxCountry 微信国家或地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWxCountry(const std::string& _wxCountry);
 
                     /**
                      * 判断参数 WxCountry 是否已赋值
                      * @return WxCountry 是否已赋值
+                     * 
                      */
                     bool WxCountryHasBeenSet() const;
 
@@ -443,20 +497,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxNickname 微信呢称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWxNickname() const;
 
                     /**
                      * 设置微信呢称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WxNickname 微信呢称
+                     * @param _wxNickname 微信呢称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWxNickname(const std::string& _wxNickname);
 
                     /**
                      * 判断参数 WxNickname 是否已赋值
                      * @return WxNickname 是否已赋值
+                     * 
                      */
                     bool WxNicknameHasBeenSet() const;
 
@@ -465,20 +522,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxProvince 微信省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWxProvince() const;
 
                     /**
                      * 设置微信省份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WxProvince 微信省份
+                     * @param _wxProvince 微信省份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWxProvince(const std::string& _wxProvince);
 
                     /**
                      * 判断参数 WxProvince 是否已赋值
                      * @return WxProvince 是否已赋值
+                     * 
                      */
                     bool WxProvinceHasBeenSet() const;
 

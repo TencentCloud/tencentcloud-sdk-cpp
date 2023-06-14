@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取事件ID
                      * @return EventId 事件ID
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取版本ID
                      * @return VersionId 版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
                     /**
                      * 获取资源栈ID
                      * @return StackId 资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取事件类型
                      * @return Type 事件类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取事件状态
                      * @return Status 事件状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取状态信息
                      * @return EventMessage 状态信息
+                     * 
                      */
                     std::string GetEventMessage() const;
 
                     /**
                      * 判断参数 EventMessage 是否已赋值
                      * @return EventMessage 是否已赋值
+                     * 
                      */
                     bool EventMessageHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取控制台输出文本
                      * @return ConsoleLog 控制台输出文本
+                     * 
                      */
                     std::string GetConsoleLog() const;
 
                     /**
                      * 判断参数 ConsoleLog 是否已赋值
                      * @return ConsoleLog 是否已赋值
+                     * 
                      */
                     bool ConsoleLogHasBeenSet() const;
 

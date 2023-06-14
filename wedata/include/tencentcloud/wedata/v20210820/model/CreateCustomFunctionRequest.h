@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取类型：HIVE、SPARK
                      * @return Type 类型：HIVE、SPARK
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型：HIVE、SPARK
-                     * @param Type 类型：HIVE、SPARK
+                     * @param _type 类型：HIVE、SPARK
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取分类：窗口函数、聚合函数、日期函数......
                      * @return Kind 分类：窗口函数、聚合函数、日期函数......
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置分类：窗口函数、聚合函数、日期函数......
-                     * @param Kind 分类：窗口函数、聚合函数、日期函数......
+                     * @param _kind 分类：窗口函数、聚合函数、日期函数......
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取函数名称
                      * @return Name 函数名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置函数名称
-                     * @param Name 函数名称
+                     * @param _name 函数名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取集群实例引擎 ID
                      * @return ClusterIdentifier 集群实例引擎 ID
+                     * 
                      */
                     std::string GetClusterIdentifier() const;
 
                     /**
                      * 设置集群实例引擎 ID
-                     * @param ClusterIdentifier 集群实例引擎 ID
+                     * @param _clusterIdentifier 集群实例引擎 ID
+                     * 
                      */
                     void SetClusterIdentifier(const std::string& _clusterIdentifier);
 
                     /**
                      * 判断参数 ClusterIdentifier 是否已赋值
                      * @return ClusterIdentifier 是否已赋值
+                     * 
                      */
                     bool ClusterIdentifierHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return DbName 数据库名称
+                     * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DbName 数据库名称
+                     * @param _dbName 数据库名称
+                     * 
                      */
                     void SetDbName(const std::string& _dbName);
 
                     /**
                      * 判断参数 DbName 是否已赋值
                      * @return DbName 是否已赋值
+                     * 
                      */
                     bool DbNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

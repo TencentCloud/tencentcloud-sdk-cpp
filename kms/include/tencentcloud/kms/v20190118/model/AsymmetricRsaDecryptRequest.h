@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取CMK的唯一标识
                      * @return KeyId CMK的唯一标识
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的唯一标识
-                     * @param KeyId CMK的唯一标识
+                     * @param _keyId CMK的唯一标识
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取使用PublicKey加密的密文，Base64编码
                      * @return Ciphertext 使用PublicKey加密的密文，Base64编码
+                     * 
                      */
                     std::string GetCiphertext() const;
 
                     /**
                      * 设置使用PublicKey加密的密文，Base64编码
-                     * @param Ciphertext 使用PublicKey加密的密文，Base64编码
+                     * @param _ciphertext 使用PublicKey加密的密文，Base64编码
+                     * 
                      */
                     void SetCiphertext(const std::string& _ciphertext);
 
                     /**
                      * 判断参数 Ciphertext 是否已赋值
                      * @return Ciphertext 是否已赋值
+                     * 
                      */
                     bool CiphertextHasBeenSet() const;
 
                     /**
                      * 获取在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
                      * @return Algorithm 在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
                      * 设置在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
-                     * @param Algorithm 在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * @param _algorithm 在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
                     /**
                      * 判断参数 Algorithm 是否已赋值
                      * @return Algorithm 是否已赋值
+                     * 
                      */
                     bool AlgorithmHasBeenSet() const;
 

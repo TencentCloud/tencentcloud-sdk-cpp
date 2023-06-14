@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取机型类别信息。
                      * @return InstanceFamily 机型类别信息。
+                     * 
                      */
                     InstanceFamilyTypeConfig GetInstanceFamily() const;
 
                     /**
                      * 设置机型类别信息。
-                     * @param InstanceFamily 机型类别信息。
+                     * @param _instanceFamily 机型类别信息。
+                     * 
                      */
                     void SetInstanceFamily(const InstanceFamilyTypeConfig& _instanceFamily);
 
                     /**
                      * 判断参数 InstanceFamily 是否已赋值
                      * @return InstanceFamily 是否已赋值
+                     * 
                      */
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取基础数据峰值信息。
                      * @return PeakBaseSet 基础数据峰值信息。
+                     * 
                      */
                     std::vector<PeakBase> GetPeakBaseSet() const;
 
                     /**
                      * 设置基础数据峰值信息。
-                     * @param PeakBaseSet 基础数据峰值信息。
+                     * @param _peakBaseSet 基础数据峰值信息。
+                     * 
                      */
                     void SetPeakBaseSet(const std::vector<PeakBase>& _peakBaseSet);
 
                     /**
                      * 判断参数 PeakBaseSet 是否已赋值
                      * @return PeakBaseSet 是否已赋值
+                     * 
                      */
                     bool PeakBaseSetHasBeenSet() const;
 

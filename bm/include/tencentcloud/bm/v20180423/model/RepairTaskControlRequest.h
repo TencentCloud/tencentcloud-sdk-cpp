@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取维修任务ID
                      * @return TaskId 维修任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置维修任务ID
-                     * @param TaskId 维修任务ID
+                     * @param _taskId 维修任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取操作
                      * @return Operate 操作
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作
-                     * @param Operate 操作
+                     * @param _operate 操作
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 
                     /**
                      * 获取需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
                      * @return OperateRemark 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
+                     * 
                      */
                     std::string GetOperateRemark() const;
 
                     /**
                      * 设置需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
-                     * @param OperateRemark 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
+                     * @param _operateRemark 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
+                     * 
                      */
                     void SetOperateRemark(const std::string& _operateRemark);
 
                     /**
                      * 判断参数 OperateRemark 是否已赋值
                      * @return OperateRemark 是否已赋值
+                     * 
                      */
                     bool OperateRemarkHasBeenSet() const;
 

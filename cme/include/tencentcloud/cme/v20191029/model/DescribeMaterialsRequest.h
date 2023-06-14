@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取媒体 ID 列表，一次最多可拉取20个媒体的信息。
                      * @return MaterialIds 媒体 ID 列表，一次最多可拉取20个媒体的信息。
+                     * 
                      */
                     std::vector<std::string> GetMaterialIds() const;
 
                     /**
                      * 设置媒体 ID 列表，一次最多可拉取20个媒体的信息。
-                     * @param MaterialIds 媒体 ID 列表，一次最多可拉取20个媒体的信息。
+                     * @param _materialIds 媒体 ID 列表，一次最多可拉取20个媒体的信息。
+                     * 
                      */
                     void SetMaterialIds(const std::vector<std::string>& _materialIds);
 
                     /**
                      * 判断参数 MaterialIds 是否已赋值
                      * @return MaterialIds 是否已赋值
+                     * 
                      */
                     bool MaterialIdsHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return Sort 列表排序，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
+                     * 
                      */
                     SortBy GetSort() const;
 
@@ -93,33 +100,38 @@ namespace TencentCloud
                      * 设置列表排序，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
-                     * @param Sort 列表排序，支持下列排序字段：
+                     * @param _sort 列表排序，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
+                     * 
                      */
                     void SetSort(const SortBy& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

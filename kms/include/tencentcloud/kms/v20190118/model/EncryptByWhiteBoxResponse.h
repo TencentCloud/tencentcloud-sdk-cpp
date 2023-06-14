@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取初始化向量，加密算法会使用到, base64编码。如果由调用方在入参中传入，则原样返回。如果调用方没有传入，则后端服务随机生成，并返回
                      * @return InitializationVector 初始化向量，加密算法会使用到, base64编码。如果由调用方在入参中传入，则原样返回。如果调用方没有传入，则后端服务随机生成，并返回
+                     * 
                      */
                     std::string GetInitializationVector() const;
 
                     /**
                      * 判断参数 InitializationVector 是否已赋值
                      * @return InitializationVector 是否已赋值
+                     * 
                      */
                     bool InitializationVectorHasBeenSet() const;
 
                     /**
                      * 获取加密后的密文，base64编码
                      * @return CipherText 加密后的密文，base64编码
+                     * 
                      */
                     std::string GetCipherText() const;
 
                     /**
                      * 判断参数 CipherText 是否已赋值
                      * @return CipherText 是否已赋值
+                     * 
                      */
                     bool CipherTextHasBeenSet() const;
 

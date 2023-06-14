@@ -51,60 +51,70 @@ namespace TencentCloud
                     /**
                      * 获取年龄画像
                      * @return Age 年龄画像
+                     * 
                      */
                     AgePortraitInfo GetAge() const;
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
                     /**
                      * 获取性别画像
                      * @return Gender 性别画像
+                     * 
                      */
                     GenderPortraitInfo GetGender() const;
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取省份画像
                      * @return Province 省份画像
+                     * 
                      */
                     ProvincePortraitInfo GetProvince() const;
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取电影喜好画像
                      * @return Movie 电影喜好画像
+                     * 
                      */
                     MoviePortraitInfo GetMovie() const;
 
                     /**
                      * 判断参数 Movie 是否已赋值
                      * @return Movie 是否已赋值
+                     * 
                      */
                     bool MovieHasBeenSet() const;
 
                     /**
                      * 获取明星喜好画像
                      * @return Star 明星喜好画像
+                     * 
                      */
                     StarPortraitInfo GetStar() const;
 
                     /**
                      * 判断参数 Star 是否已赋值
                      * @return Star 是否已赋值
+                     * 
                      */
                     bool StarHasBeenSet() const;
 

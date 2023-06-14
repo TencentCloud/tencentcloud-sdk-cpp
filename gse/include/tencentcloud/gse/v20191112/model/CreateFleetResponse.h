@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetAttributes 服务器舰队属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FleetAttributes GetFleetAttributes() const;
 
                     /**
                      * 判断参数 FleetAttributes 是否已赋值
                      * @return FleetAttributes 是否已赋值
+                     * 
                      */
                     bool FleetAttributesHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取查询分页页码
                      * @return PageNumber 查询分页页码
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置查询分页页码
-                     * @param PageNumber 查询分页页码
+                     * @param _pageNumber 查询分页页码
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取查询分页大小
                      * @return PageSize 查询分页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置查询分页大小
-                     * @param PageSize 查询分页大小
+                     * @param _pageSize 查询分页大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取任务列表总记录数
                      * @return TotalCount 任务列表总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置任务列表总记录数
-                     * @param TotalCount 任务列表总记录数
+                     * @param _totalCount 任务列表总记录数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取任务列表
                      * @return TaskList 任务列表
+                     * 
                      */
                     std::vector<ListModel> GetTaskList() const;
 
                     /**
                      * 设置任务列表
-                     * @param TaskList 任务列表
+                     * @param _taskList 任务列表
+                     * 
                      */
                     void SetTaskList(const std::vector<ListModel>& _taskList);
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 

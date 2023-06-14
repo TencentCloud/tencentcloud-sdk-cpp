@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取源站的地址（IP或者域名）
                      * @return RealServer 源站的地址（IP或者域名）
+                     * 
                      */
                     std::string GetRealServer() const;
 
                     /**
                      * 设置源站的地址（IP或者域名）
-                     * @param RealServer 源站的地址（IP或者域名）
+                     * @param _realServer 源站的地址（IP或者域名）
+                     * 
                      */
                     void SetRealServer(const std::string& _realServer);
 
                     /**
                      * 判断参数 RealServer 是否已赋值
                      * @return RealServer 是否已赋值
+                     * 
                      */
                     bool RealServerHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 1(域名地址)
 2(IP地址)
 ]
+                     * 
                      */
                     int64_t GetRsType() const;
 
@@ -81,52 +85,60 @@ namespace TencentCloud
 1(域名地址)
 2(IP地址)
 ]
-                     * @param RsType 源站的地址类型，取值[
+                     * @param _rsType 源站的地址类型，取值[
 1(域名地址)
 2(IP地址)
 ]
+                     * 
                      */
                     void SetRsType(const int64_t& _rsType);
 
                     /**
                      * 判断参数 RsType 是否已赋值
                      * @return RsType 是否已赋值
+                     * 
                      */
                     bool RsTypeHasBeenSet() const;
 
                     /**
                      * 获取源站的回源权重，取值1~100
                      * @return Weight 源站的回源权重，取值1~100
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置源站的回源权重，取值1~100
-                     * @param Weight 源站的回源权重，取值1~100
+                     * @param _weight 源站的回源权重，取值1~100
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取端口号：0~65535
                      * @return Port 端口号：0~65535
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口号：0~65535
-                     * @param Port 端口号：0~65535
+                     * @param _port 端口号：0~65535
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

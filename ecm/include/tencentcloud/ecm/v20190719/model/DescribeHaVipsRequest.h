@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。
                      * @return HaVipIds HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。
+                     * 
                      */
                     std::vector<std::string> GetHaVipIds() const;
 
                     /**
                      * 设置HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。
-                     * @param HaVipIds HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。
+                     * @param _haVipIds HAVIP数组，HAVIP唯一ID，形如：havip-9o233uri。
+                     * 
                      */
                     void SetHaVipIds(const std::vector<std::string>& _haVipIds);
 
                     /**
                      * 判断参数 HaVipIds 是否已赋值
                      * @return HaVipIds 是否已赋值
+                     * 
                      */
                     bool HaVipIdsHasBeenSet() const;
 
@@ -72,6 +75,7 @@ havip-id - String - HAVIP唯一ID，形如：havip-9o233uri。
 havip-name - String - HAVIP名称。
 vpc-id - String - HAVIP所在私有网络ID。
 subnet-id - String - HAVIP所在子网ID。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,71 +85,82 @@ havip-id - String - HAVIP唯一ID，形如：havip-9o233uri。
 havip-name - String - HAVIP名称。
 vpc-id - String - HAVIP所在私有网络ID。
 subnet-id - String - HAVIP所在子网ID。
-                     * @param Filters 过滤条件，参数不支持同时指定HaVipIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定HaVipIds和Filters。
 havip-id - String - HAVIP唯一ID，形如：havip-9o233uri。
 havip-name - String - HAVIP名称。
 vpc-id - String - HAVIP所在私有网络ID。
 subnet-id - String - HAVIP所在子网ID。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值是0。
                      * @return Offset 偏移量，默认值是0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值是0。
-                     * @param Offset 偏移量，默认值是0。
+                     * @param _offset 偏移量，默认值是0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认值是20，最大是100。
                      * @return Limit 返回数量，默认值是20，最大是100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认值是20，最大是100。
-                     * @param Limit 返回数量，默认值是20，最大是100。
+                     * @param _limit 返回数量，默认值是20，最大是100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取Ecm 区域，不填代表全部区域。
                      * @return EcmRegion Ecm 区域，不填代表全部区域。
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置Ecm 区域，不填代表全部区域。
-                     * @param EcmRegion Ecm 区域，不填代表全部区域。
+                     * @param _ecmRegion Ecm 区域，不填代表全部区域。
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

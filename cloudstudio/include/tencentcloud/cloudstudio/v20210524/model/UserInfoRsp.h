@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取用户ID
                      * @return Id 用户ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置用户ID
-                     * @param Id 用户ID
+                     * @param _id 用户ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取用户验证信息
                      * @return AuthenticationUserInfo 用户验证信息
+                     * 
                      */
                     UserSubInfo GetAuthenticationUserInfo() const;
 
                     /**
                      * 设置用户验证信息
-                     * @param AuthenticationUserInfo 用户验证信息
+                     * @param _authenticationUserInfo 用户验证信息
+                     * 
                      */
                     void SetAuthenticationUserInfo(const UserSubInfo& _authenticationUserInfo);
 
                     /**
                      * 判断参数 AuthenticationUserInfo 是否已赋值
                      * @return AuthenticationUserInfo 是否已赋值
+                     * 
                      */
                     bool AuthenticationUserInfoHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Avatar 头像地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置头像地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Avatar 头像地址
+                     * @param _avatar 头像地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvatar(const std::string& _avatar);
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 
@@ -110,38 +119,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Features 介绍
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFeatures() const;
 
                     /**
                      * 设置介绍
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Features 介绍
+                     * @param _features 介绍
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatures(const std::string& _features);
 
                     /**
                      * 判断参数 Features 是否已赋值
                      * @return Features 是否已赋值
+                     * 
                      */
                     bool FeaturesHasBeenSet() const;
 
                     /**
                      * 获取状况
                      * @return PreviewStatus 状况
+                     * 
                      */
                     int64_t GetPreviewStatus() const;
 
                     /**
                      * 设置状况
-                     * @param PreviewStatus 状况
+                     * @param _previewStatus 状况
+                     * 
                      */
                     void SetPreviewStatus(const int64_t& _previewStatus);
 
                     /**
                      * 判断参数 PreviewStatus 是否已赋值
                      * @return PreviewStatus 是否已赋值
+                     * 
                      */
                     bool PreviewStatusHasBeenSet() const;
 

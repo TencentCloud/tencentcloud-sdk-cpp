@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取标识出入数据库的IP与端口是否被允许。
                      * @return Action 标识出入数据库的IP与端口是否被允许。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置标识出入数据库的IP与端口是否被允许。
-                     * @param Action 标识出入数据库的IP与端口是否被允许。
+                     * @param _action 标识出入数据库的IP与端口是否被允许。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取出入数据库的IP地址
                      * @return Ip 出入数据库的IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置出入数据库的IP地址
-                     * @param Ip 出入数据库的IP地址
+                     * @param _ip 出入数据库的IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取端口号。
                      * @return Port 端口号。
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置端口号。
-                     * @param Port 端口号。
+                     * @param _port 端口号。
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取协议类型。
                      * @return Proto 协议类型。
+                     * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置协议类型。
-                     * @param Proto 协议类型。
+                     * @param _proto 协议类型。
+                     * 
                      */
                     void SetProto(const std::string& _proto);
 
                     /**
                      * 判断参数 Proto 是否已赋值
                      * @return Proto 是否已赋值
+                     * 
                      */
                     bool ProtoHasBeenSet() const;
 

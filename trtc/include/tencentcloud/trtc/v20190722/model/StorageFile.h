@@ -51,38 +51,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 录制文件对应的UserId，如果是混流的话的这里返回的是空串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置录制文件对应的UserId，如果是混流的话的这里返回的是空串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 录制文件对应的UserId，如果是混流的话的这里返回的是空串。
+                     * @param _userId 录制文件对应的UserId，如果是混流的话的这里返回的是空串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取录制索引文件名。
                      * @return FileName 录制索引文件名。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置录制索引文件名。
-                     * @param FileName 录制索引文件名。
+                     * @param _fileName 录制索引文件名。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
@@ -97,6 +103,7 @@ video：视频录制文件
 audio：音频录制文件
 audio_video：音视频录制文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTrackType() const;
 
@@ -106,35 +113,40 @@ video：视频录制文件
 audio：音频录制文件
 audio_video：音视频录制文件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrackType 录制文件流信息。
+                     * @param _trackType 录制文件流信息。
 video：视频录制文件
 audio：音频录制文件
 audio_video：音视频录制文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrackType(const std::string& _trackType);
 
                     /**
                      * 判断参数 TrackType 是否已赋值
                      * @return TrackType 是否已赋值
+                     * 
                      */
                     bool TrackTypeHasBeenSet() const;
 
                     /**
                      * 获取录制文件开始Unix时间戳。
                      * @return BeginTimeStamp 录制文件开始Unix时间戳。
+                     * 
                      */
                     uint64_t GetBeginTimeStamp() const;
 
                     /**
                      * 设置录制文件开始Unix时间戳。
-                     * @param BeginTimeStamp 录制文件开始Unix时间戳。
+                     * @param _beginTimeStamp 录制文件开始Unix时间戳。
+                     * 
                      */
                     void SetBeginTimeStamp(const uint64_t& _beginTimeStamp);
 
                     /**
                      * 判断参数 BeginTimeStamp 是否已赋值
                      * @return BeginTimeStamp 是否已赋值
+                     * 
                      */
                     bool BeginTimeStampHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 治理规则类型，Customize: 自定义；Intelligence: 智能治理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置治理规则类型，Customize: 自定义；Intelligence: 智能治理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 治理规则类型，Customize: 自定义；Intelligence: 智能治理
+                     * @param _ruleType 治理规则类型，Customize: 自定义；Intelligence: 智能治理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GovernEngine 治理引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGovernEngine() const;
 
                     /**
                      * 设置治理引擎
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GovernEngine 治理引擎
+                     * @param _governEngine 治理引擎
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGovernEngine(const std::string& _governEngine);
 
                     /**
                      * 判断参数 GovernEngine 是否已赋值
                      * @return GovernEngine 是否已赋值
+                     * 
                      */
                     bool GovernEngineHasBeenSet() const;
 

@@ -34,7 +34,8 @@ GetBpaasApproveDetailResponse::GetBpaasApproveDetailResponse() :
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_nodesHasBeenSet(false),
-    m_approvingNodeIdHasBeenSet(false)
+    m_approvingNodeIdHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,16 @@ CoreInternalOutcome GetBpaasApproveDetailResponse::Deserialize(const string &pay
         m_approvingNodeIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ModifyTime") && !rsp["ModifyTime"].IsNull())
+    {
+        if (!rsp["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(rsp["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +323,14 @@ string GetBpaasApproveDetailResponse::ToJsonString() const
         string key = "ApprovingNodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approvingNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -434,6 +453,16 @@ string GetBpaasApproveDetailResponse::GetApprovingNodeId() const
 bool GetBpaasApproveDetailResponse::ApprovingNodeIdHasBeenSet() const
 {
     return m_approvingNodeIdHasBeenSet;
+}
+
+string GetBpaasApproveDetailResponse::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+bool GetBpaasApproveDetailResponse::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 
 

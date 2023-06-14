@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取专线网关ID。
                      * @return VpcId 专线网关ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置专线网关ID。
-                     * @param VpcId 专线网关ID。
+                     * @param _vpcId 专线网关ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关ID。
                      * @return NatGatewayId NAT网关ID。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关ID。
-                     * @param NatGatewayId NAT网关ID。
+                     * @param _natGatewayId NAT网关ID。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
                      * @return DirectConnectGatewayId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
                      * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param DirectConnectGatewayId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * @param _directConnectGatewayId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
 
                     /**
                      * 判断参数 DirectConnectGatewayId 是否已赋值
                      * @return DirectConnectGatewayId 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdHasBeenSet() const;
 

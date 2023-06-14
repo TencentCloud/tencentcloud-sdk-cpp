@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计曲线结果
                      * @return Results 统计曲线结果
+                     * 
                      */
                     std::vector<EventLogStatsData> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取具体配置
                      * @return Configure 具体配置
+                     * 
                      */
                     std::vector<AdvancedScdnAclRule> GetConfigure() const;
 
                     /**
                      * 设置具体配置
-                     * @param Configure 具体配置
+                     * @param _configure 具体配置
+                     * 
                      */
                     void SetConfigure(const std::vector<AdvancedScdnAclRule>& _configure);
 
                     /**
                      * 判断参数 Configure 是否已赋值
                      * @return Configure 是否已赋值
+                     * 
                      */
                     bool ConfigureHasBeenSet() const;
 
                     /**
                      * 获取执行动作，intercept|redirect
                      * @return Result 执行动作，intercept|redirect
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置执行动作，intercept|redirect
-                     * @param Result 执行动作，intercept|redirect
+                     * @param _result 执行动作，intercept|redirect
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取规则是否生效，active|inactive
                      * @return Status 规则是否生效，active|inactive
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置规则是否生效，active|inactive
-                     * @param Status 规则是否生效，active|inactive
+                     * @param _status 规则是否生效，active|inactive
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取错误页面配置
                      * @return ErrorPage 错误页面配置
+                     * 
                      */
                     ScdnErrorPage GetErrorPage() const;
 
                     /**
                      * 设置错误页面配置
-                     * @param ErrorPage 错误页面配置
+                     * @param _errorPage 错误页面配置
+                     * 
                      */
                     void SetErrorPage(const ScdnErrorPage& _errorPage);
 
                     /**
                      * 判断参数 ErrorPage 是否已赋值
                      * @return ErrorPage 是否已赋值
+                     * 
                      */
                     bool ErrorPageHasBeenSet() const;
 

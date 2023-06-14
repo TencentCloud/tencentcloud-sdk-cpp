@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取筛选条件，操作所属的命名空间namespace，格式为db.collection
                      * @return Ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 
                      */
                     std::string GetNs() const;
 
                     /**
                      * 设置筛选条件，操作所属的命名空间namespace，格式为db.collection
-                     * @param Ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * @param _ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 
                      */
                     void SetNs(const std::string& _ns);
 
                     /**
                      * 判断参数 Ns 是否已赋值
                      * @return Ns 是否已赋值
+                     * 
                      */
                     bool NsHasBeenSet() const;
 
                     /**
                      * 获取筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
                      * @return MillisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 
                      */
                     uint64_t GetMillisecondRunning() const;
 
                     /**
                      * 设置筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
-                     * @param MillisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * @param _millisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 
                      */
                     void SetMillisecondRunning(const uint64_t& _millisecondRunning);
 
                     /**
                      * 判断参数 MillisecondRunning 是否已赋值
                      * @return MillisecondRunning 是否已赋值
+                     * 
                      */
                     bool MillisecondRunningHasBeenSet() const;
 
                     /**
                      * 获取筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
                      * @return Op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 
                      */
                     std::string GetOp() const;
 
                     /**
                      * 设置筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
-                     * @param Op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * @param _op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 
                      */
                     void SetOp(const std::string& _op);
 
                     /**
                      * 判断参数 Op 是否已赋值
                      * @return Op 是否已赋值
+                     * 
                      */
                     bool OpHasBeenSet() const;
 
                     /**
                      * 获取筛选条件，分片名称
                      * @return ReplicaSetName 筛选条件，分片名称
+                     * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
                      * 设置筛选条件，分片名称
-                     * @param ReplicaSetName 筛选条件，分片名称
+                     * @param _replicaSetName 筛选条件，分片名称
+                     * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
 
                     /**
                      * 判断参数 ReplicaSetName 是否已赋值
                      * @return ReplicaSetName 是否已赋值
+                     * 
                      */
                     bool ReplicaSetNameHasBeenSet() const;
 
@@ -137,92 +152,107 @@ namespace TencentCloud
 secondary
                      * @return State 筛选条件，节点状态，可能的取值为：primary
 secondary
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置筛选条件，节点状态，可能的取值为：primary
 secondary
-                     * @param State 筛选条件，节点状态，可能的取值为：primary
+                     * @param _state 筛选条件，节点状态，可能的取值为：primary
 secondary
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取单次请求返回的数量，默认值为100，取值范围为[0,100]
                      * @return Limit 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次请求返回的数量，默认值为100，取值范围为[0,100]
-                     * @param Limit 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * @param _limit 单次请求返回的数量，默认值为100，取值范围为[0,100]
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值为0，取值范围为[0,10000]
                      * @return Offset 偏移量，默认值为0，取值范围为[0,10000]
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值为0，取值范围为[0,10000]
-                     * @param Offset 偏移量，默认值为0，取值范围为[0,10000]
+                     * @param _offset 偏移量，默认值为0，取值范围为[0,10000]
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
                      * @return OrderBy 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
-                     * @param OrderBy 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * @param _orderBy 返回结果集排序的字段，目前支持："MicrosecsRunning"/"microsecsrunning"，默认为升序排序
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
                      * @return OrderByType 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
-                     * @param OrderByType 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * @param _orderByType 返回结果集排序方式，可能的取值："ASC"/"asc"或"DESC"/"desc"
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

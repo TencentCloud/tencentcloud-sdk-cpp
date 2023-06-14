@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取播放鉴权key信息。
                      * @return PlayAuthKeyInfo 播放鉴权key信息。
+                     * 
                      */
                     PlayAuthKeyInfo GetPlayAuthKeyInfo() const;
 
                     /**
                      * 判断参数 PlayAuthKeyInfo 是否已赋值
                      * @return PlayAuthKeyInfo 是否已赋值
+                     * 
                      */
                     bool PlayAuthKeyInfoHasBeenSet() const;
 

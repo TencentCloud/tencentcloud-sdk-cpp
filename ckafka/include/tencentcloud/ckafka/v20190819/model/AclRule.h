@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName Acl规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置Acl规则名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName Acl规则名称
+                     * @param _ruleName Acl规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PatternType 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPatternType() const;
 
                     /**
                      * 设置匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PatternType 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * @param _patternType 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPatternType(const std::string& _patternType);
 
                     /**
                      * 判断参数 PatternType 是否已赋值
                      * @return PatternType 是否已赋值
+                     * 
                      */
                     bool PatternTypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pattern 表示前缀匹配的前缀的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPattern() const;
 
                     /**
                      * 设置表示前缀匹配的前缀的值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pattern 表示前缀匹配的前缀的值
+                     * @param _pattern 表示前缀匹配的前缀的值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPattern(const std::string& _pattern);
 
                     /**
                      * 判断参数 Pattern 是否已赋值
                      * @return Pattern 是否已赋值
+                     * 
                      */
                     bool PatternHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType Acl资源类型,目前只支持Topic,枚举值列表：Topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置Acl资源类型,目前只支持Topic,枚举值列表：Topic
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType Acl资源类型,目前只支持Topic,枚举值列表：Topic
+                     * @param _resourceType Acl资源类型,目前只支持Topic,枚举值列表：Topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclList 该规则所包含的ACL信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAclList() const;
 
                     /**
                      * 设置该规则所包含的ACL信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AclList 该规则所包含的ACL信息
+                     * @param _aclList 该规则所包含的ACL信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAclList(const std::string& _aclList);
 
                     /**
                      * 判断参数 AclList 是否已赋值
                      * @return AclList 是否已赋值
+                     * 
                      */
                     bool AclListHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTimeStamp 规则所创建的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTimeStamp() const;
 
                     /**
                      * 设置规则所创建的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTimeStamp 规则所创建的时间
+                     * @param _createTimeStamp 规则所创建的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTimeStamp(const std::string& _createTimeStamp);
 
                     /**
                      * 判断参数 CreateTimeStamp 是否已赋值
                      * @return CreateTimeStamp 是否已赋值
+                     * 
                      */
                     bool CreateTimeStampHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsApplied 预设ACL规则是否应用到新增的topic中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
                      * 设置预设ACL规则是否应用到新增的topic中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsApplied 预设ACL规则是否应用到新增的topic中
+                     * @param _isApplied 预设ACL规则是否应用到新增的topic中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
 
                     /**
                      * 判断参数 IsApplied 是否已赋值
                      * @return IsApplied 是否已赋值
+                     * 
                      */
                     bool IsAppliedHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTimeStamp 规则更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTimeStamp() const;
 
                     /**
                      * 设置规则更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTimeStamp 规则更新时间
+                     * @param _updateTimeStamp 规则更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTimeStamp(const std::string& _updateTimeStamp);
 
                     /**
                      * 判断参数 UpdateTimeStamp 是否已赋值
                      * @return UpdateTimeStamp 是否已赋值
+                     * 
                      */
                     bool UpdateTimeStampHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 规则的备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置规则的备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 规则的备注
+                     * @param _comment 规则的备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 其中一个显示的对应的TopicName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置其中一个显示的对应的TopicName
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicName 其中一个显示的对应的TopicName
+                     * @param _topicName 其中一个显示的对应的TopicName
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicCount 应用该ACL规则的Topic数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTopicCount() const;
 
                     /**
                      * 设置应用该ACL规则的Topic数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicCount 应用该ACL规则的Topic数
+                     * @param _topicCount 应用该ACL规则的Topic数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicCount(const int64_t& _topicCount);
 
                     /**
                      * 判断参数 TopicCount 是否已赋值
                      * @return TopicCount 是否已赋值
+                     * 
                      */
                     bool TopicCountHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PatternTypeTitle patternType的中文显示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPatternTypeTitle() const;
 
                     /**
                      * 设置patternType的中文显示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PatternTypeTitle patternType的中文显示
+                     * @param _patternTypeTitle patternType的中文显示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPatternTypeTitle(const std::string& _patternTypeTitle);
 
                     /**
                      * 判断参数 PatternTypeTitle 是否已赋值
                      * @return PatternTypeTitle 是否已赋值
+                     * 
                      */
                     bool PatternTypeTitleHasBeenSet() const;
 

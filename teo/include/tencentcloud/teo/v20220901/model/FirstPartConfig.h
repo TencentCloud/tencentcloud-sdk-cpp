@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatTime 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatTime() const;
 
                     /**
                      * 设置首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatTime 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
+                     * @param _statTime 首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatTime(const uint64_t& _statTime);
 
                     /**
                      * 判断参数 StatTime 是否已赋值
                      * @return StatTime 是否已赋值
+                     * 
                      */
                     bool StatTimeHasBeenSet() const;
 

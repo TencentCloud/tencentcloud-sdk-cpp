@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取运行脚本的设备ID
                      * @return InstanceId 运行脚本的设备ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置运行脚本的设备ID
-                     * @param InstanceId 运行脚本的设备ID
+                     * @param _instanceId 运行脚本的设备ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return ErrorMsg 失败原因
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置失败原因
-                     * @param ErrorMsg 失败原因
+                     * @param _errorMsg 失败原因
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

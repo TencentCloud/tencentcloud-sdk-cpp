@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return NamespaceId 命名空间
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间
-                     * @param NamespaceId 命名空间
+                     * @param _namespaceId 命名空间
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取消费组名称
                      * @return GroupId 消费组名称
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置消费组名称
-                     * @param GroupId 消费组名称
+                     * @param _groupId 消费组名称
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取说明信息，最长128个字符
                      * @return Remark 说明信息，最长128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息，最长128个字符
-                     * @param Remark 说明信息，最长128个字符
+                     * @param _remark 说明信息，最长128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取是否开启消费
                      * @return ReadEnable 是否开启消费
+                     * 
                      */
                     bool GetReadEnable() const;
 
                     /**
                      * 设置是否开启消费
-                     * @param ReadEnable 是否开启消费
+                     * @param _readEnable 是否开启消费
+                     * 
                      */
                     void SetReadEnable(const bool& _readEnable);
 
                     /**
                      * 判断参数 ReadEnable 是否已赋值
                      * @return ReadEnable 是否已赋值
+                     * 
                      */
                     bool ReadEnableHasBeenSet() const;
 
                     /**
                      * 获取是否开启广播消费
                      * @return BroadcastEnable 是否开启广播消费
+                     * 
                      */
                     bool GetBroadcastEnable() const;
 
                     /**
                      * 设置是否开启广播消费
-                     * @param BroadcastEnable 是否开启广播消费
+                     * @param _broadcastEnable 是否开启广播消费
+                     * 
                      */
                     void SetBroadcastEnable(const bool& _broadcastEnable);
 
                     /**
                      * 判断参数 BroadcastEnable 是否已赋值
                      * @return BroadcastEnable 是否已赋值
+                     * 
                      */
                     bool BroadcastEnableHasBeenSet() const;
 
                     /**
                      * 获取最大重试次数
                      * @return RetryMaxTimes 最大重试次数
+                     * 
                      */
                     uint64_t GetRetryMaxTimes() const;
 
                     /**
                      * 设置最大重试次数
-                     * @param RetryMaxTimes 最大重试次数
+                     * @param _retryMaxTimes 最大重试次数
+                     * 
                      */
                     void SetRetryMaxTimes(const uint64_t& _retryMaxTimes);
 
                     /**
                      * 判断参数 RetryMaxTimes 是否已赋值
                      * @return RetryMaxTimes 是否已赋值
+                     * 
                      */
                     bool RetryMaxTimesHasBeenSet() const;
 

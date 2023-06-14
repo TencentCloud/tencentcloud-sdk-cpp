@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarriageHistory 婚史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMarriageHistory() const;
 
                     /**
                      * 设置婚史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MarriageHistory 婚史
+                     * @param _marriageHistory 婚史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMarriageHistory(const std::string& _marriageHistory);
 
                     /**
                      * 判断参数 MarriageHistory 是否已赋值
                      * @return MarriageHistory 是否已赋值
+                     * 
                      */
                     bool MarriageHistoryHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FertilityHistory 孕史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFertilityHistory() const;
 
                     /**
                      * 设置孕史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FertilityHistory 孕史
+                     * @param _fertilityHistory 孕史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFertilityHistory(const std::string& _fertilityHistory);
 
                     /**
                      * 判断参数 FertilityHistory 是否已赋值
                      * @return FertilityHistory 是否已赋值
+                     * 
                      */
                     bool FertilityHistoryHasBeenSet() const;
 

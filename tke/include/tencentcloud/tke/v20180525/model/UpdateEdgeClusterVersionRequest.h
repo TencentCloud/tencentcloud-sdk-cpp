@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群 Id
                      * @return ClusterId 集群 Id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群 Id
-                     * @param ClusterId 集群 Id
+                     * @param _clusterId 集群 Id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取需要升级到的版本
                      * @return EdgeVersion 需要升级到的版本
+                     * 
                      */
                     std::string GetEdgeVersion() const;
 
                     /**
                      * 设置需要升级到的版本
-                     * @param EdgeVersion 需要升级到的版本
+                     * @param _edgeVersion 需要升级到的版本
+                     * 
                      */
                     void SetEdgeVersion(const std::string& _edgeVersion);
 
                     /**
                      * 判断参数 EdgeVersion 是否已赋值
                      * @return EdgeVersion 是否已赋值
+                     * 
                      */
                     bool EdgeVersionHasBeenSet() const;
 
                     /**
                      * 获取自定义边缘组件镜像仓库前缀
                      * @return RegistryPrefix 自定义边缘组件镜像仓库前缀
+                     * 
                      */
                     std::string GetRegistryPrefix() const;
 
                     /**
                      * 设置自定义边缘组件镜像仓库前缀
-                     * @param RegistryPrefix 自定义边缘组件镜像仓库前缀
+                     * @param _registryPrefix 自定义边缘组件镜像仓库前缀
+                     * 
                      */
                     void SetRegistryPrefix(const std::string& _registryPrefix);
 
                     /**
                      * 判断参数 RegistryPrefix 是否已赋值
                      * @return RegistryPrefix 是否已赋值
+                     * 
                      */
                     bool RegistryPrefixHasBeenSet() const;
 
                     /**
                      * 获取是否跳过预检查阶段
                      * @return SkipPreCheck 是否跳过预检查阶段
+                     * 
                      */
                     bool GetSkipPreCheck() const;
 
                     /**
                      * 设置是否跳过预检查阶段
-                     * @param SkipPreCheck 是否跳过预检查阶段
+                     * @param _skipPreCheck 是否跳过预检查阶段
+                     * 
                      */
                     void SetSkipPreCheck(const bool& _skipPreCheck);
 
                     /**
                      * 判断参数 SkipPreCheck 是否已赋值
                      * @return SkipPreCheck 是否已赋值
+                     * 
                      */
                     bool SkipPreCheckHasBeenSet() const;
 

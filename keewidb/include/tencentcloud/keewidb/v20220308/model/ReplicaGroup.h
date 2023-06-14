@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取节点 ID。
                      * @return GroupId 节点 ID。
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置节点 ID。
-                     * @param GroupId 节点 ID。
+                     * @param _groupId 节点 ID。
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取节点组的名称，主节点为空。
                      * @return GroupName 节点组的名称，主节点为空。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置节点组的名称，主节点为空。
-                     * @param GroupName 节点组的名称，主节点为空。
+                     * @param _groupName 节点组的名称，主节点为空。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取节点的可用区ID，比如ap-guangzhou-1。
                      * @return ZoneId 节点的可用区ID，比如ap-guangzhou-1。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置节点的可用区ID，比如ap-guangzhou-1。
-                     * @param ZoneId 节点的可用区ID，比如ap-guangzhou-1。
+                     * @param _zoneId 节点的可用区ID，比如ap-guangzhou-1。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>
                      * @return Role 节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>
-                     * @param Role 节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>
+                     * @param _role 节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取节点组节点列表。
                      * @return KeeWiDBNodes 节点组节点列表。
+                     * 
                      */
                     std::vector<KeeWiDBNode> GetKeeWiDBNodes() const;
 
                     /**
                      * 设置节点组节点列表。
-                     * @param KeeWiDBNodes 节点组节点列表。
+                     * @param _keeWiDBNodes 节点组节点列表。
+                     * 
                      */
                     void SetKeeWiDBNodes(const std::vector<KeeWiDBNode>& _keeWiDBNodes);
 
                     /**
                      * 判断参数 KeeWiDBNodes 是否已赋值
                      * @return KeeWiDBNodes 是否已赋值
+                     * 
                      */
                     bool KeeWiDBNodesHasBeenSet() const;
 

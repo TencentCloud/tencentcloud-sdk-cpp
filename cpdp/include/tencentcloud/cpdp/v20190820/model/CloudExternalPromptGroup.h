@@ -54,6 +54,7 @@ wechat 微信渠道
                      * @return ChannelName 渠道名。
 为米大师定义的枚举值：
 wechat 微信渠道
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -61,15 +62,17 @@ wechat 微信渠道
                      * 设置渠道名。
 为米大师定义的枚举值：
 wechat 微信渠道
-                     * @param ChannelName 渠道名。
+                     * @param _channelName 渠道名。
 为米大师定义的枚举值：
 wechat 微信渠道
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -78,20 +81,23 @@ wechat 微信渠道
 ChannelName为wechat时，组成为 <Wechat-ExternalPromptInfo>
                      * @return ExternalPromptInfoList 渠道扩展促销信息列表，由各个渠道自行定义。
 ChannelName为wechat时，组成为 <Wechat-ExternalPromptInfo>
+                     * 
                      */
                     std::vector<CloudExternalPromptInfo> GetExternalPromptInfoList() const;
 
                     /**
                      * 设置渠道扩展促销信息列表，由各个渠道自行定义。
 ChannelName为wechat时，组成为 <Wechat-ExternalPromptInfo>
-                     * @param ExternalPromptInfoList 渠道扩展促销信息列表，由各个渠道自行定义。
+                     * @param _externalPromptInfoList 渠道扩展促销信息列表，由各个渠道自行定义。
 ChannelName为wechat时，组成为 <Wechat-ExternalPromptInfo>
+                     * 
                      */
                     void SetExternalPromptInfoList(const std::vector<CloudExternalPromptInfo>& _externalPromptInfoList);
 
                     /**
                      * 判断参数 ExternalPromptInfoList 是否已赋值
                      * @return ExternalPromptInfoList 是否已赋值
+                     * 
                      */
                     bool ExternalPromptInfoListHasBeenSet() const;
 

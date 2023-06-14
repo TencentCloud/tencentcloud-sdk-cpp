@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取部门id
                      * @return DepartmentId 部门id
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置部门id
-                     * @param DepartmentId 部门id
+                     * @param _departmentId 部门id
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
                      * 获取部门名称
                      * @return DepartmentName 部门名称
+                     * 
                      */
                     std::string GetDepartmentName() const;
 
                     /**
                      * 设置部门名称
-                     * @param DepartmentName 部门名称
+                     * @param _departmentName 部门名称
+                     * 
                      */
                     void SetDepartmentName(const std::string& _departmentName);
 
                     /**
                      * 判断参数 DepartmentName 是否已赋值
                      * @return DepartmentName 是否已赋值
+                     * 
                      */
                     bool DepartmentNameHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取任务Id
                      * @return TaskId 任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务Id
-                     * @param TaskId 任务Id
+                     * @param _taskId 任务Id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取统计周期的开始日期，格式为 yyyy-MM-dd
                      * @return BeginDate 统计周期的开始日期，格式为 yyyy-MM-dd
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置统计周期的开始日期，格式为 yyyy-MM-dd
-                     * @param BeginDate 统计周期的开始日期，格式为 yyyy-MM-dd
+                     * @param _beginDate 统计周期的开始日期，格式为 yyyy-MM-dd
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取统计周期的结束日期，格式为 yyyy-MM-dd
                      * @return EndDate 统计周期的结束日期，格式为 yyyy-MM-dd
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置统计周期的结束日期，格式为 yyyy-MM-dd
-                     * @param EndDate 统计周期的结束日期，格式为 yyyy-MM-dd
+                     * @param _endDate 统计周期的结束日期，格式为 yyyy-MM-dd
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取WeData项目id
                      * @return ProjectId WeData项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置WeData项目id
-                     * @param ProjectId WeData项目id
+                     * @param _projectId WeData项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

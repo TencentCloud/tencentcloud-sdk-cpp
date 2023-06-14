@@ -51,74 +51,86 @@ namespace TencentCloud
 SD、HD、UHD1、UHD2、AUDIO
                      * @return Track 加密track类型。取值范围：
 SD、HD、UHD1、UHD2、AUDIO
+                     * 
                      */
                     std::string GetTrack() const;
 
                     /**
                      * 设置加密track类型。取值范围：
 SD、HD、UHD1、UHD2、AUDIO
-                     * @param Track 加密track类型。取值范围：
+                     * @param _track 加密track类型。取值范围：
 SD、HD、UHD1、UHD2、AUDIO
+                     * 
                      */
                     void SetTrack(const std::string& _track);
 
                     /**
                      * 判断参数 Track 是否已赋值
                      * @return Track 是否已赋值
+                     * 
                      */
                     bool TrackHasBeenSet() const;
 
                     /**
                      * 获取请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
                      * @return Key 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
-                     * @param Key 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * @param _key 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取密钥ID。
                      * @return KeyId 密钥ID。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置密钥ID。
-                     * @param KeyId 密钥ID。
+                     * @param _keyId 密钥ID。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
                      * @return Iv 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * 
                      */
                     std::string GetIv() const;
 
                     /**
                      * 设置请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
-                     * @param Iv 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * @param _iv 请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。
+                     * 
                      */
                     void SetIv(const std::string& _iv);
 
                     /**
                      * 判断参数 Iv 是否已赋值
                      * @return Iv 是否已赋值
+                     * 
                      */
                     bool IvHasBeenSet() const;
 

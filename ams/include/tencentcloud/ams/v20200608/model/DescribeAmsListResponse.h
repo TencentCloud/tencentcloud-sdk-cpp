@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取返回列表数据----非必选，该参数暂未对外开放
                      * @return AmsDetailSet 返回列表数据----非必选，该参数暂未对外开放
+                     * 
                      */
                     std::vector<AmsDetailInfo> GetAmsDetailSet() const;
 
                     /**
                      * 判断参数 AmsDetailSet 是否已赋值
                      * @return AmsDetailSet 是否已赋值
+                     * 
                      */
                     bool AmsDetailSetHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取分页 token
                      * @return PageToken 分页 token
+                     * 
                      */
                     std::string GetPageToken() const;
 
                     /**
                      * 判断参数 PageToken 是否已赋值
                      * @return PageToken 是否已赋值
+                     * 
                      */
                     bool PageTokenHasBeenSet() const;
 

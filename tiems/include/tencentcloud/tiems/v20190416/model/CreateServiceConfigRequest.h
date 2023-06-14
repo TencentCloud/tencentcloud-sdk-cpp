@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取配置名称
                      * @return Name 配置名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配置名称
-                     * @param Name 配置名称
+                     * @param _name 配置名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取运行环境
                      * @return Runtime 运行环境
+                     * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行环境
-                     * @param Runtime 运行环境
+                     * @param _runtime 运行环境
+                     * 
                      */
                     void SetRuntime(const std::string& _runtime);
 
                     /**
                      * 判断参数 Runtime 是否已赋值
                      * @return Runtime 是否已赋值
+                     * 
                      */
                     bool RuntimeHasBeenSet() const;
 
                     /**
                      * 获取模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。
                      * @return ModelUri 模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。
+                     * 
                      */
                     std::string GetModelUri() const;
 
                     /**
                      * 设置模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。
-                     * @param ModelUri 模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。
+                     * @param _modelUri 模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。
+                     * 
                      */
                     void SetModelUri(const std::string& _modelUri);
 
                     /**
                      * 判断参数 ModelUri 是否已赋值
                      * @return ModelUri 是否已赋值
+                     * 
                      */
                     bool ModelUriHasBeenSet() const;
 
                     /**
                      * 获取配置描述
                      * @return Description 配置描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置配置描述
-                     * @param Description 配置描述
+                     * @param _description 配置描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

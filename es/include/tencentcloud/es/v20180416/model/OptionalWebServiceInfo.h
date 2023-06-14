@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicUrl 公网url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicUrl() const;
 
                     /**
                      * 设置公网url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicUrl 公网url
+                     * @param _publicUrl 公网url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicUrl(const std::string& _publicUrl);
 
                     /**
                      * 判断参数 PublicUrl 是否已赋值
                      * @return PublicUrl 是否已赋值
+                     * 
                      */
                     bool PublicUrlHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateUrl 内网url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateUrl() const;
 
                     /**
                      * 设置内网url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateUrl 内网url
+                     * @param _privateUrl 内网url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateUrl(const std::string& _privateUrl);
 
                     /**
                      * 判断参数 PrivateUrl 是否已赋值
                      * @return PrivateUrl 是否已赋值
+                     * 
                      */
                     bool PrivateUrlHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicAccess 公网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublicAccess() const;
 
                     /**
                      * 设置公网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicAccess 公网访问权限
+                     * @param _publicAccess 公网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicAccess(const std::string& _publicAccess);
 
                     /**
                      * 判断参数 PublicAccess 是否已赋值
                      * @return PublicAccess 是否已赋值
+                     * 
                      */
                     bool PublicAccessHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateAccess 内网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateAccess() const;
 
                     /**
                      * 设置内网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateAccess 内网访问权限
+                     * @param _privateAccess 内网访问权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
 
                     /**
                      * 判断参数 PrivateAccess 是否已赋值
                      * @return PrivateAccess 是否已赋值
+                     * 
                      */
                     bool PrivateAccessHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本号
+                     * @param _version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

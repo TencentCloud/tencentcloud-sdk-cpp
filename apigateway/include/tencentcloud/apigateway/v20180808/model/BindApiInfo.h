@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取api唯一id
                      * @return ApiId api唯一id
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置api唯一id
-                     * @param ApiId api唯一id
+                     * @param _apiId api唯一id
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取Service唯一id
                      * @return ServiceId Service唯一id
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置Service唯一id
-                     * @param ServiceId Service唯一id
+                     * @param _serviceId Service唯一id
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiName api名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置api名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiName api名字
+                     * @param _apiName api名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
@@ -109,38 +118,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName 服务名字
+                     * @param _serviceName 服务名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取绑定时间
                      * @return BindTime 绑定时间
+                     * 
                      */
                     std::string GetBindTime() const;
 
                     /**
                      * 设置绑定时间
-                     * @param BindTime 绑定时间
+                     * @param _bindTime 绑定时间
+                     * 
                      */
                     void SetBindTime(const std::string& _bindTime);
 
                     /**
                      * 判断参数 BindTime 是否已赋值
                      * @return BindTime 是否已赋值
+                     * 
                      */
                     bool BindTimeHasBeenSet() const;
 

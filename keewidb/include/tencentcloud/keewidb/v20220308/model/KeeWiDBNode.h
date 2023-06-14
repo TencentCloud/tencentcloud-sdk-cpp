@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取节点的序列ID。
                      * @return NodeId 节点的序列ID。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点的序列ID。
-                     * @param NodeId 节点的序列ID。
+                     * @param _nodeId 节点的序列ID。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点的状态。
                      * @return Status 节点的状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点的状态。
-                     * @param Status 节点的状态。
+                     * @param _status 节点的状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取节点角色。
                      * @return Role 节点角色。
+                     * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置节点角色。
-                     * @param Role 节点角色。
+                     * @param _role 节点角色。
+                     * 
                      */
                     void SetRole(const std::string& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取事件名
                      * @return EventName 事件名
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置事件名
-                     * @param EventName 事件名
+                     * @param _eventName 事件名
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
                     /**
                      * 获取展示的事件名
                      * @return Description 展示的事件名
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置展示的事件名
-                     * @param Description 展示的事件名
+                     * @param _description 展示的事件名
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取告警策略类型
                      * @return Namespace 告警策略类型
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置告警策略类型
-                     * @param Namespace 告警策略类型
+                     * @param _namespace 告警策略类型
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

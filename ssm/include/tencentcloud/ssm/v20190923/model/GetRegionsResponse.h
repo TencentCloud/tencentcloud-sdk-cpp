@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取region列表。
                      * @return Regions region列表。
+                     * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
+                     * 
                      */
                     bool RegionsHasBeenSet() const;
 

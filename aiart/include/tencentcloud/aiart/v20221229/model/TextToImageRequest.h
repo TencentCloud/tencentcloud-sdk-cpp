@@ -51,6 +51,7 @@ namespace TencentCloud
                      * @return Prompt 文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
 不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     std::string GetPrompt() const;
 
@@ -58,15 +59,17 @@ namespace TencentCloud
                      * 设置文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
 不能为空，推荐使用中文。最多可传512个 utf-8 字符。
-                     * @param Prompt 文本描述。
+                     * @param _prompt 文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
 不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     void SetPrompt(const std::string& _prompt);
 
                     /**
                      * 判断参数 Prompt 是否已赋值
                      * @return Prompt 是否已赋值
+                     * 
                      */
                     bool PromptHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
                      * @return NegativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     std::string GetNegativePrompt() const;
 
@@ -84,15 +88,17 @@ namespace TencentCloud
                      * 设置反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
-                     * @param NegativePrompt 反向文本描述。
+                     * @param _negativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
 推荐使用中文。最多可传512个 utf-8 字符。
+                     * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
 
                     /**
                      * 判断参数 NegativePrompt 是否已赋值
                      * @return NegativePrompt 是否已赋值
+                     * 
                      */
                     bool NegativePromptHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
+                     * 
                      */
                     std::vector<std::string> GetStyles() const;
 
@@ -113,34 +120,39 @@ namespace TencentCloud
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
-                     * @param Styles 绘画风格。
+                     * @param _styles 绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
 如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
+                     * 
                      */
                     void SetStyles(const std::vector<std::string>& _styles);
 
                     /**
                      * 判断参数 Styles 是否已赋值
                      * @return Styles 是否已赋值
+                     * 
                      */
                     bool StylesHasBeenSet() const;
 
                     /**
                      * 获取生成图结果的配置，包括输出图片分辨率和尺寸等。
                      * @return ResultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * 
                      */
                     ResultConfig GetResultConfig() const;
 
                     /**
                      * 设置生成图结果的配置，包括输出图片分辨率和尺寸等。
-                     * @param ResultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * @param _resultConfig 生成图结果的配置，包括输出图片分辨率和尺寸等。
+                     * 
                      */
                     void SetResultConfig(const ResultConfig& _resultConfig);
 
                     /**
                      * 判断参数 ResultConfig 是否已赋值
                      * @return ResultConfig 是否已赋值
+                     * 
                      */
                     bool ResultConfigHasBeenSet() const;
 
@@ -155,6 +167,7 @@ namespace TencentCloud
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 
                      */
                     int64_t GetLogoAdd() const;
 
@@ -164,17 +177,19 @@ namespace TencentCloud
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @param LogoAdd 为生成结果图添加标识的开关，默认为1。
+                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。
 1：添加标识。
 0：不添加标识。
 其他数值：默认按1处理。
 建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
 
                     /**
                      * 判断参数 LogoAdd 是否已赋值
                      * @return LogoAdd 是否已赋值
+                     * 
                      */
                     bool LogoAddHasBeenSet() const;
 
@@ -183,20 +198,23 @@ namespace TencentCloud
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
                      * @return LogoParam 标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
                      * 设置标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param LogoParam 标识内容设置。
+                     * @param _logoParam 标识内容设置。
 默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
 
                     /**
                      * 判断参数 LogoParam 是否已赋值
                      * @return LogoParam 是否已赋值
+                     * 
                      */
                     bool LogoParamHasBeenSet() const;
 

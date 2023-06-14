@@ -53,90 +53,105 @@ namespace TencentCloud
                     /**
                      * 获取发布通道  ID。
                      * @return ChannelMaterialId 发布通道  ID。
+                     * 
                      */
                     std::string GetChannelMaterialId() const;
 
                     /**
                      * 设置发布通道  ID。
-                     * @param ChannelMaterialId 发布通道  ID。
+                     * @param _channelMaterialId 发布通道  ID。
+                     * 
                      */
                     void SetChannelMaterialId(const std::string& _channelMaterialId);
 
                     /**
                      * 判断参数 ChannelMaterialId 是否已赋值
                      * @return ChannelMaterialId 是否已赋值
+                     * 
                      */
                     bool ChannelMaterialIdHasBeenSet() const;
 
                     /**
                      * 获取企鹅号发布信息，如果使用的发布通道为企鹅号时必填。
                      * @return PenguinMediaPlatformPublishInfo 企鹅号发布信息，如果使用的发布通道为企鹅号时必填。
+                     * 
                      */
                     PenguinMediaPlatformPublishInfo GetPenguinMediaPlatformPublishInfo() const;
 
                     /**
                      * 设置企鹅号发布信息，如果使用的发布通道为企鹅号时必填。
-                     * @param PenguinMediaPlatformPublishInfo 企鹅号发布信息，如果使用的发布通道为企鹅号时必填。
+                     * @param _penguinMediaPlatformPublishInfo 企鹅号发布信息，如果使用的发布通道为企鹅号时必填。
+                     * 
                      */
                     void SetPenguinMediaPlatformPublishInfo(const PenguinMediaPlatformPublishInfo& _penguinMediaPlatformPublishInfo);
 
                     /**
                      * 判断参数 PenguinMediaPlatformPublishInfo 是否已赋值
                      * @return PenguinMediaPlatformPublishInfo 是否已赋值
+                     * 
                      */
                     bool PenguinMediaPlatformPublishInfoHasBeenSet() const;
 
                     /**
                      * 获取新浪微博发布信息，如果使用的发布通道为新浪微博时必填。
                      * @return WeiboPublishInfo 新浪微博发布信息，如果使用的发布通道为新浪微博时必填。
+                     * 
                      */
                     WeiboPublishInfo GetWeiboPublishInfo() const;
 
                     /**
                      * 设置新浪微博发布信息，如果使用的发布通道为新浪微博时必填。
-                     * @param WeiboPublishInfo 新浪微博发布信息，如果使用的发布通道为新浪微博时必填。
+                     * @param _weiboPublishInfo 新浪微博发布信息，如果使用的发布通道为新浪微博时必填。
+                     * 
                      */
                     void SetWeiboPublishInfo(const WeiboPublishInfo& _weiboPublishInfo);
 
                     /**
                      * 判断参数 WeiboPublishInfo 是否已赋值
                      * @return WeiboPublishInfo 是否已赋值
+                     * 
                      */
                     bool WeiboPublishInfoHasBeenSet() const;
 
                     /**
                      * 获取快手发布信息，如果使用的发布通道为快手时必填。
                      * @return KuaishouPublishInfo 快手发布信息，如果使用的发布通道为快手时必填。
+                     * 
                      */
                     KuaishouPublishInfo GetKuaishouPublishInfo() const;
 
                     /**
                      * 设置快手发布信息，如果使用的发布通道为快手时必填。
-                     * @param KuaishouPublishInfo 快手发布信息，如果使用的发布通道为快手时必填。
+                     * @param _kuaishouPublishInfo 快手发布信息，如果使用的发布通道为快手时必填。
+                     * 
                      */
                     void SetKuaishouPublishInfo(const KuaishouPublishInfo& _kuaishouPublishInfo);
 
                     /**
                      * 判断参数 KuaishouPublishInfo 是否已赋值
                      * @return KuaishouPublishInfo 是否已赋值
+                     * 
                      */
                     bool KuaishouPublishInfoHasBeenSet() const;
 
                     /**
                      * 获取腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
                      * @return CosPublishInfo 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     * 
                      */
                     CosPublishInputInfo GetCosPublishInfo() const;
 
                     /**
                      * 设置腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
-                     * @param CosPublishInfo 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     * @param _cosPublishInfo 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     * 
                      */
                     void SetCosPublishInfo(const CosPublishInputInfo& _cosPublishInfo);
 
                     /**
                      * 判断参数 CosPublishInfo 是否已赋值
                      * @return CosPublishInfo 是否已赋值
+                     * 
                      */
                     bool CosPublishInfoHasBeenSet() const;
 

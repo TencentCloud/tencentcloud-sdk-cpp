@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取资质照片地址。
                      * @return AccessUrl 资质照片地址。
+                     * 
                      */
                     std::string GetAccessUrl() const;
 
                     /**
                      * 判断参数 AccessUrl 是否已赋值
                      * @return AccessUrl 是否已赋值
+                     * 
                      */
                     bool AccessUrlHasBeenSet() const;
 

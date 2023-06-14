@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取日志检索上下文
                      * @return Context 日志检索上下文
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context
                      * @return Listover 是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context
+                     * 
                      */
                     bool GetListover() const;
 
                     /**
                      * 判断参数 Listover 是否已赋值
                      * @return Listover 是否已赋值
+                     * 
                      */
                     bool ListoverHasBeenSet() const;
 
                     /**
                      * 获取日志列表
                      * @return Results 日志列表
+                     * 
                      */
                     std::vector<SDKLogItem> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取待关闭的CVM实例ID列表
                      * @return InstanceIds 待关闭的CVM实例ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置待关闭的CVM实例ID列表
-                     * @param InstanceIds 待关闭的CVM实例ID列表
+                     * @param _instanceIds 待关闭的CVM实例ID列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -87,6 +93,7 @@ STOP_CHARGING：关机停止收费
 KEEP_CHARGING：关机继续收费  
 STOP_CHARGING：关机停止收费
 默认为 KEEP_CHARGING
+                     * 
                      */
                     std::string GetStoppedMode() const;
 
@@ -95,16 +102,18 @@ STOP_CHARGING：关机停止收费
 KEEP_CHARGING：关机继续收费  
 STOP_CHARGING：关机停止收费
 默认为 KEEP_CHARGING
-                     * @param StoppedMode 关闭的实例是否收费，取值为：  
+                     * @param _stoppedMode 关闭的实例是否收费，取值为：  
 KEEP_CHARGING：关机继续收费  
 STOP_CHARGING：关机停止收费
 默认为 KEEP_CHARGING
+                     * 
                      */
                     void SetStoppedMode(const std::string& _stoppedMode);
 
                     /**
                      * 判断参数 StoppedMode 是否已赋值
                      * @return StoppedMode 是否已赋值
+                     * 
                      */
                     bool StoppedModeHasBeenSet() const;
 

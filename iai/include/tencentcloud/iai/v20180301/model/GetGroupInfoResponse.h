@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取人员库名称
                      * @return GroupName 人员库名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取人员库ID
                      * @return GroupId 人员库ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取人员库自定义描述字段
                      * @return GroupExDescriptions 人员库自定义描述字段
+                     * 
                      */
                     std::vector<std::string> GetGroupExDescriptions() const;
 
                     /**
                      * 判断参数 GroupExDescriptions 是否已赋值
                      * @return GroupExDescriptions 是否已赋值
+                     * 
                      */
                     bool GroupExDescriptionsHasBeenSet() const;
 
                     /**
                      * 获取人员库信息备注
                      * @return Tag 人员库信息备注
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取人脸识别所用的算法模型版本。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 
                     /**
                      * 获取Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
                      * @return CreationTimestamp Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。
+                     * 
                      */
                     uint64_t GetCreationTimestamp() const;
 
                     /**
                      * 判断参数 CreationTimestamp 是否已赋值
                      * @return CreationTimestamp 是否已赋值
+                     * 
                      */
                     bool CreationTimestampHasBeenSet() const;
 

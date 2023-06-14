@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取区块链网络id
                      * @return ClusterId 区块链网络id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取区块链群组id
                      * @return GroupId 区块链群组id
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取权威机构did
                      * @return Did 权威机构did
+                     * 
                      */
                     std::string GetDid() const;
 
                     /**
                      * 判断参数 Did 是否已赋值
                      * @return Did 是否已赋值
+                     * 
                      */
                     bool DidHasBeenSet() const;
 
                     /**
                      * 获取机构备注信息
                      * @return Remark 机构备注信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取注册时间
                      * @return RegisterTime 注册时间
+                     * 
                      */
                     std::string GetRegisterTime() const;
 
                     /**
                      * 判断参数 RegisterTime 是否已赋值
                      * @return RegisterTime 是否已赋值
+                     * 
                      */
                     bool RegisterTimeHasBeenSet() const;
 
                     /**
                      * 获取认证时间
                      * @return RecognizeTime 认证时间
+                     * 
                      */
                     std::string GetRecognizeTime() const;
 
                     /**
                      * 判断参数 RecognizeTime 是否已赋值
                      * @return RecognizeTime 是否已赋值
+                     * 
                      */
                     bool RecognizeTimeHasBeenSet() const;
 

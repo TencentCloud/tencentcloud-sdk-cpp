@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取版本ID
                      * @return VersionId 版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本ID
-                     * @param VersionId 版本ID
+                     * @param _versionId 版本ID
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
                     /**
                      * 获取版本名称
                      * @return VersionName 版本名称
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
-                     * @param VersionName 版本名称
+                     * @param _versionName 版本名称
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
                     /**
                      * 获取版本描述
                      * @return Description 版本描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置版本描述
-                     * @param Description 版本描述
+                     * @param _description 版本描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取资源栈ID
                      * @return StackId 资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置资源栈ID
-                     * @param StackId 资源栈ID
+                     * @param _stackId 资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取版本状态
                      * @return Status 版本状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置版本状态
-                     * @param Status 版本状态
+                     * @param _status 版本状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取录制任务ID。
                      * @return TaskId 录制任务ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置录制任务ID。
-                     * @param TaskId 录制任务ID。
+                     * @param _taskId 录制任务ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return DomainName 推流域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
-                     * @param DomainName 推流域名。
+                     * @param _domainName 推流域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取推流路径。
                      * @return AppName 推流路径。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取任务开始时间，Unix时间戳。
                      * @return StartTime 任务开始时间，Unix时间戳。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置任务开始时间，Unix时间戳。
-                     * @param StartTime 任务开始时间，Unix时间戳。
+                     * @param _startTime 任务开始时间，Unix时间戳。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结束时间，Unix时间戳。
                      * @return EndTime 任务结束时间，Unix时间戳。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置任务结束时间，Unix时间戳。
-                     * @param EndTime 任务结束时间，Unix时间戳。
+                     * @param _endTime 任务结束时间，Unix时间戳。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取录制模板ID。
                      * @return TemplateId 录制模板ID。
+                     * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
                      * 设置录制模板ID。
-                     * @param TemplateId 录制模板ID。
+                     * @param _templateId 录制模板ID。
+                     * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。
                      * @return Stopped 调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。
+                     * 
                      */
                     uint64_t GetStopped() const;
 
                     /**
                      * 设置调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。
-                     * @param Stopped 调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。
+                     * @param _stopped 调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。
+                     * 
                      */
                     void SetStopped(const uint64_t& _stopped);
 
                     /**
                      * 判断参数 Stopped 是否已赋值
                      * @return Stopped 是否已赋值
+                     * 
                      */
                     bool StoppedHasBeenSet() const;
 

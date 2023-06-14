@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取模型定义
                      * @return ModelDefine 模型定义
+                     * 
                      */
                     std::string GetModelDefine() const;
 
                     /**
                      * 设置模型定义
-                     * @param ModelDefine 模型定义
+                     * @param _modelDefine 模型定义
+                     * 
                      */
                     void SetModelDefine(const std::string& _modelDefine);
 
                     /**
                      * 判断参数 ModelDefine 是否已赋值
                      * @return ModelDefine 是否已赋值
+                     * 
                      */
                     bool ModelDefineHasBeenSet() const;
 
                     /**
                      * 获取更新时间，秒级时间戳
                      * @return UpdateTime 更新时间，秒级时间戳
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，秒级时间戳
-                     * @param UpdateTime 更新时间，秒级时间戳
+                     * @param _updateTime 更新时间，秒级时间戳
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取创建时间，秒级时间戳
                      * @return CreateTime 创建时间，秒级时间戳
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，秒级时间戳
-                     * @param CreateTime 创建时间，秒级时间戳
+                     * @param _createTime 创建时间，秒级时间戳
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryModel 产品所属分类的模型快照（产品创建时刻的）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCategoryModel() const;
 
                     /**
                      * 设置产品所属分类的模型快照（产品创建时刻的）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CategoryModel 产品所属分类的模型快照（产品创建时刻的）
+                     * @param _categoryModel 产品所属分类的模型快照（产品创建时刻的）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategoryModel(const std::string& _categoryModel);
 
                     /**
                      * 判断参数 CategoryModel 是否已赋值
                      * @return CategoryModel 是否已赋值
+                     * 
                      */
                     bool CategoryModelHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetTypeModel 产品的连接类型的模型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNetTypeModel() const;
 
                     /**
                      * 设置产品的连接类型的模型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetTypeModel 产品的连接类型的模型
+                     * @param _netTypeModel 产品的连接类型的模型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetTypeModel(const std::string& _netTypeModel);
 
                     /**
                      * 判断参数 NetTypeModel 是否已赋值
                      * @return NetTypeModel 是否已赋值
+                     * 
                      */
                     bool NetTypeModelHasBeenSet() const;
 

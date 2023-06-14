@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取录制计划ID
                      * @return PlanId 录制计划ID
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 

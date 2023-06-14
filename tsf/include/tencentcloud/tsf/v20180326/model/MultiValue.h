@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetValues() const;
 
                     /**
                      * 设置数据点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 数据点
+                     * @param _values 数据点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<double>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitID 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitID 边缘单元ID
+                     * @param _edgeUnitID 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取页号
                      * @return Offset 页号
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页号
-                     * @param Offset 页号
+                     * @param _offset 页号
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数目
                      * @return Limit 每页数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数目
-                     * @param Limit 每页数目
+                     * @param _limit 每页数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return SecretNamespace 命名空间
+                     * 
                      */
                     std::string GetSecretNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param SecretNamespace 命名空间
+                     * @param _secretNamespace 命名空间
+                     * 
                      */
                     void SetSecretNamespace(const std::string& _secretNamespace);
 
                     /**
                      * 判断参数 SecretNamespace 是否已赋值
                      * @return SecretNamespace 是否已赋值
+                     * 
                      */
                     bool SecretNamespaceHasBeenSet() const;
 
                     /**
                      * 获取Secret名(模糊匹配)
                      * @return NamePattern Secret名(模糊匹配)
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置Secret名(模糊匹配)
-                     * @param NamePattern Secret名(模糊匹配)
+                     * @param _namePattern Secret名(模糊匹配)
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取Sort.Field:CreateTime Sort.Order:ASC|DESC
                      * @return Sort Sort.Field:CreateTime Sort.Order:ASC|DESC
+                     * 
                      */
                     FieldSort GetSort() const;
 
                     /**
                      * 设置Sort.Field:CreateTime Sort.Order:ASC|DESC
-                     * @param Sort Sort.Field:CreateTime Sort.Order:ASC|DESC
+                     * @param _sort Sort.Field:CreateTime Sort.Order:ASC|DESC
+                     * 
                      */
                     void SetSort(const FieldSort& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取Secret类型(DockerConfigJson或Opaque)
                      * @return SecretType Secret类型(DockerConfigJson或Opaque)
+                     * 
                      */
                     std::string GetSecretType() const;
 
                     /**
                      * 设置Secret类型(DockerConfigJson或Opaque)
-                     * @param SecretType Secret类型(DockerConfigJson或Opaque)
+                     * @param _secretType Secret类型(DockerConfigJson或Opaque)
+                     * 
                      */
                     void SetSecretType(const std::string& _secretType);
 
                     /**
                      * 判断参数 SecretType 是否已赋值
                      * @return SecretType 是否已赋值
+                     * 
                      */
                     bool SecretTypeHasBeenSet() const;
 

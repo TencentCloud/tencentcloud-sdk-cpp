@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path HttpGet检测的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置HttpGet检测的路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path HttpGet检测的路径
+                     * @param _path HttpGet检测的路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port HttpGet检测的端口号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置HttpGet检测的端口号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port HttpGet检测的端口号
+                     * @param _port HttpGet检测的端口号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheme HTTP or HTTPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScheme() const;
 
                     /**
                      * 设置HTTP or HTTPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheme HTTP or HTTPS
+                     * @param _scheme HTTP or HTTPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheme(const std::string& _scheme);
 
                     /**
                      * 判断参数 Scheme 是否已赋值
                      * @return Scheme 是否已赋值
+                     * 
                      */
                     bool SchemeHasBeenSet() const;
 

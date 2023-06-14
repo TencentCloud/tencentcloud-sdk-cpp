@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
+                     * @param _type 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url 下载链接
+                     * @param _url 下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkDir 工作目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
                      * 设置工作目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkDir 工作目录
+                     * @param _workDir 工作目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkDir(const std::string& _workDir);
 
                     /**
                      * 判断参数 WorkDir 是否已赋值
                      * @return WorkDir 是否已赋值
+                     * 
                      */
                     bool WorkDirHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodingPackageName code包名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodingPackageName() const;
 
                     /**
                      * 设置code包名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodingPackageName code包名, type为coding的时候需要填写
+                     * @param _codingPackageName code包名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodingPackageName(const std::string& _codingPackageName);
 
                     /**
                      * 判断参数 CodingPackageName 是否已赋值
                      * @return CodingPackageName 是否已赋值
+                     * 
                      */
                     bool CodingPackageNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodingPackageVersion coding版本名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodingPackageVersion() const;
 
                     /**
                      * 设置coding版本名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodingPackageVersion coding版本名, type为coding的时候需要填写
+                     * @param _codingPackageVersion coding版本名, type为coding的时候需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodingPackageVersion(const std::string& _codingPackageVersion);
 
                     /**
                      * 判断参数 CodingPackageVersion 是否已赋值
                      * @return CodingPackageVersion 是否已赋值
+                     * 
                      */
                     bool CodingPackageVersionHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawCode 源码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRawCode() const;
 
                     /**
                      * 设置源码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RawCode 源码
+                     * @param _rawCode 源码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRawCode(const std::string& _rawCode);
 
                     /**
                      * 判断参数 RawCode 是否已赋值
                      * @return RawCode 是否已赋值
+                     * 
                      */
                     bool RawCodeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 代码分支
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置代码分支
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Branch 代码分支
+                     * @param _branch 代码分支
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBranch(const std::string& _branch);
 
                     /**
                      * 判断参数 Branch 是否已赋值
                      * @return Branch 是否已赋值
+                     * 
                      */
                     bool BranchHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId coding项目ID，type为coding时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置coding项目ID，type为coding时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId coding项目ID，type为coding时需要填写
+                     * @param _projectId coding项目ID，type为coding时需要填写
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName coding项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置coding项目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectName coding项目
+                     * @param _projectName coding项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 

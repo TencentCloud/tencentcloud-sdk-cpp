@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。
                      * @return VpcId 私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param VpcId 私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * @param _vpcId 私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
                      * @return SubnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
-                     * @param SubnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * @param _subnetId 子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 

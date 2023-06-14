@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 泳道规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置泳道规则ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 泳道规则ID
+                     * @param _ruleId 泳道规则ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 泳道规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置泳道规则名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 泳道规则名称
+                     * @param _ruleName 泳道规则名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Priority 优先级
+                     * @param _priority 优先级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriority(const int64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTagList 泳道规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LaneRuleTag> GetRuleTagList() const;
 
                     /**
                      * 设置泳道规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleTagList 泳道规则标签列表
+                     * @param _ruleTagList 泳道规则标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleTagList(const std::vector<LaneRuleTag>& _ruleTagList);
 
                     /**
                      * 判断参数 RuleTagList 是否已赋值
                      * @return RuleTagList 是否已赋值
+                     * 
                      */
                     bool RuleTagListHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTagRelationship 泳道规则标签关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleTagRelationship() const;
 
                     /**
                      * 设置泳道规则标签关系
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleTagRelationship 泳道规则标签关系
+                     * @param _ruleTagRelationship 泳道规则标签关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleTagRelationship(const std::string& _ruleTagRelationship);
 
                     /**
                      * 判断参数 RuleTagRelationship 是否已赋值
                      * @return RuleTagRelationship 是否已赋值
+                     * 
                      */
                     bool RuleTagRelationshipHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneId 泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLaneId() const;
 
                     /**
                      * 设置泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaneId 泳道ID
+                     * @param _laneId 泳道ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLaneId(const std::string& _laneId);
 
                     /**
                      * 判断参数 LaneId 是否已赋值
                      * @return LaneId 是否已赋值
+                     * 
                      */
                     bool LaneIdHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 开启状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置开启状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enable 开启状态
+                     * @param _enable 开启状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

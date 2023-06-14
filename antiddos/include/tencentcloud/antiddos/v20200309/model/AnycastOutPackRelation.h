@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormalBandwidth 业务带宽(单位M)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNormalBandwidth() const;
 
                     /**
                      * 设置业务带宽(单位M)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NormalBandwidth 业务带宽(单位M)
+                     * @param _normalBandwidth 业务带宽(单位M)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNormalBandwidth(const uint64_t& _normalBandwidth);
 
                     /**
                      * 判断参数 NormalBandwidth 是否已赋值
                      * @return NormalBandwidth 是否已赋值
+                     * 
                      */
                     bool NormalBandwidthHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardRulesLimit 转发规则数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetForwardRulesLimit() const;
 
                     /**
                      * 设置转发规则数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ForwardRulesLimit 转发规则数
+                     * @param _forwardRulesLimit 转发规则数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetForwardRulesLimit(const uint64_t& _forwardRulesLimit);
 
                     /**
                      * 判断参数 ForwardRulesLimit 是否已赋值
                      * @return ForwardRulesLimit 是否已赋值
+                     * 
                      */
                     bool ForwardRulesLimitHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoRenewFlag 自动续费标记
+                     * @param _autoRenewFlag 自动续费标记
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置到期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurDeadline 到期时间
+                     * @param _curDeadline 到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
 
                     /**
                      * 判断参数 CurDeadline 是否已赋值
                      * @return CurDeadline 是否已赋值
+                     * 
                      */
                     bool CurDeadlineHasBeenSet() const;
 

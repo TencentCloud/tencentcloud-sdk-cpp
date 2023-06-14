@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取日志信息，默认获取最新的200条
                      * @return Logs 日志信息，默认获取最新的200条
+                     * 
                      */
                     std::vector<std::string> GetLogs() const;
 
                     /**
                      * 判断参数 Logs 是否已赋值
                      * @return Logs 是否已赋值
+                     * 
                      */
                     bool LogsHasBeenSet() const;
 
                     /**
                      * 获取分页参数，默认200
                      * @return Limit 分页参数，默认200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数，默认0
                      * @return Offset 分页参数，默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

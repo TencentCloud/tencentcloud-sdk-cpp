@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取第三方渠道合约信息
                      * @return ExternalReturnContractInfo 第三方渠道合约信息
+                     * 
                      */
                     ExternalReturnContractInfo GetExternalReturnContractInfo() const;
 
                     /**
                      * 设置第三方渠道合约信息
-                     * @param ExternalReturnContractInfo 第三方渠道合约信息
+                     * @param _externalReturnContractInfo 第三方渠道合约信息
+                     * 
                      */
                     void SetExternalReturnContractInfo(const ExternalReturnContractInfo& _externalReturnContractInfo);
 
                     /**
                      * 判断参数 ExternalReturnContractInfo 是否已赋值
                      * @return ExternalReturnContractInfo 是否已赋值
+                     * 
                      */
                     bool ExternalReturnContractInfoHasBeenSet() const;
 
                     /**
                      * 获取第三方渠道用户信息
                      * @return ExternalContractUserInfo 第三方渠道用户信息
+                     * 
                      */
                     std::vector<ExternalContractUserInfo> GetExternalContractUserInfo() const;
 
                     /**
                      * 设置第三方渠道用户信息
-                     * @param ExternalContractUserInfo 第三方渠道用户信息
+                     * @param _externalContractUserInfo 第三方渠道用户信息
+                     * 
                      */
                     void SetExternalContractUserInfo(const std::vector<ExternalContractUserInfo>& _externalContractUserInfo);
 
                     /**
                      * 判断参数 ExternalContractUserInfo 是否已赋值
                      * @return ExternalContractUserInfo 是否已赋值
+                     * 
                      */
                     bool ExternalContractUserInfoHasBeenSet() const;
 
@@ -97,6 +103,7 @@ CONTRACT_METHOD_WECHAT_APP: 微信APP
 CONTRACT_METHOD_WECHAT_PUBLIC: 微信公众号
 CONTRACT_METHOD_WECHAT_MINIPROGRAM: 微信小程序
 CONTRACT_METHOD_WECHAT_H5: 微信H5
+                     * 
                      */
                     std::string GetContractMethod() const;
 
@@ -107,54 +114,62 @@ CONTRACT_METHOD_WECHAT_APP: 微信APP
 CONTRACT_METHOD_WECHAT_PUBLIC: 微信公众号
 CONTRACT_METHOD_WECHAT_MINIPROGRAM: 微信小程序
 CONTRACT_METHOD_WECHAT_H5: 微信H5
-                     * @param ContractMethod 签约方式，枚举值，
+                     * @param _contractMethod 签约方式，枚举值，
 <br/>CONTRACT_METHOD_WECHAT_INVALID: 无效
 CONTRACT_METHOD_WECHAT_APP: 微信APP
 CONTRACT_METHOD_WECHAT_PUBLIC: 微信公众号
 CONTRACT_METHOD_WECHAT_MINIPROGRAM: 微信小程序
 CONTRACT_METHOD_WECHAT_H5: 微信H5
+                     * 
                      */
                     void SetContractMethod(const std::string& _contractMethod);
 
                     /**
                      * 判断参数 ContractMethod 是否已赋值
                      * @return ContractMethod 是否已赋值
+                     * 
                      */
                     bool ContractMethodHasBeenSet() const;
 
                     /**
                      * 获取在米大师侧分配的场景id
                      * @return ContractSceneId 在米大师侧分配的场景id
+                     * 
                      */
                     std::string GetContractSceneId() const;
 
                     /**
                      * 设置在米大师侧分配的场景id
-                     * @param ContractSceneId 在米大师侧分配的场景id
+                     * @param _contractSceneId 在米大师侧分配的场景id
+                     * 
                      */
                     void SetContractSceneId(const std::string& _contractSceneId);
 
                     /**
                      * 判断参数 ContractSceneId 是否已赋值
                      * @return ContractSceneId 是否已赋值
+                     * 
                      */
                     bool ContractSceneIdHasBeenSet() const;
 
                     /**
                      * 获取调用方从第三方渠道查询到的签约数据，由各个渠道定义
                      * @return ExternalReturnContractData 调用方从第三方渠道查询到的签约数据，由各个渠道定义
+                     * 
                      */
                     std::string GetExternalReturnContractData() const;
 
                     /**
                      * 设置调用方从第三方渠道查询到的签约数据，由各个渠道定义
-                     * @param ExternalReturnContractData 调用方从第三方渠道查询到的签约数据，由各个渠道定义
+                     * @param _externalReturnContractData 调用方从第三方渠道查询到的签约数据，由各个渠道定义
+                     * 
                      */
                     void SetExternalReturnContractData(const std::string& _externalReturnContractData);
 
                     /**
                      * 判断参数 ExternalReturnContractData 是否已赋值
                      * @return ExternalReturnContractData 是否已赋值
+                     * 
                      */
                     bool ExternalReturnContractDataHasBeenSet() const;
 

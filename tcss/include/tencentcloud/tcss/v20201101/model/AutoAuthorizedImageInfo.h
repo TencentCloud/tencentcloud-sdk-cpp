@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取镜像id
                      * @return ImageId 镜像id
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像id
-                     * @param ImageId 镜像id
+                     * @param _imageId 镜像id
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取授权时间
                      * @return AuthorizedTime 授权时间
+                     * 
                      */
                     std::string GetAuthorizedTime() const;
 
                     /**
                      * 设置授权时间
-                     * @param AuthorizedTime 授权时间
+                     * @param _authorizedTime 授权时间
+                     * 
                      */
                     void SetAuthorizedTime(const std::string& _authorizedTime);
 
                     /**
                      * 判断参数 AuthorizedTime 是否已赋值
                      * @return AuthorizedTime 是否已赋值
+                     * 
                      */
                     bool AuthorizedTimeHasBeenSet() const;
 
                     /**
                      * 获取授权结果，SUCCESS:成功，REACH_LIMIT:达到授权上限，LICENSE_INSUFFICIENT:授权数不足'
                      * @return Status 授权结果，SUCCESS:成功，REACH_LIMIT:达到授权上限，LICENSE_INSUFFICIENT:授权数不足'
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置授权结果，SUCCESS:成功，REACH_LIMIT:达到授权上限，LICENSE_INSUFFICIENT:授权数不足'
-                     * @param Status 授权结果，SUCCESS:成功，REACH_LIMIT:达到授权上限，LICENSE_INSUFFICIENT:授权数不足'
+                     * @param _status 授权结果，SUCCESS:成功，REACH_LIMIT:达到授权上限，LICENSE_INSUFFICIENT:授权数不足'
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取是否授权，1：是，0：否
                      * @return IsAuthorized 是否授权，1：是，0：否
+                     * 
                      */
                     uint64_t GetIsAuthorized() const;
 
                     /**
                      * 设置是否授权，1：是，0：否
-                     * @param IsAuthorized 是否授权，1：是，0：否
+                     * @param _isAuthorized 是否授权，1：是，0：否
+                     * 
                      */
                     void SetIsAuthorized(const uint64_t& _isAuthorized);
 
                     /**
                      * 判断参数 IsAuthorized 是否已赋值
                      * @return IsAuthorized 是否已赋值
+                     * 
                      */
                     bool IsAuthorizedHasBeenSet() const;
 

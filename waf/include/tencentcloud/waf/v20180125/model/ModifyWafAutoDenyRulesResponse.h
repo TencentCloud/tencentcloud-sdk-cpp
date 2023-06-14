@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取成功的状态码，需要JSON解码后再使用，返回的格式是{"域名":"状态"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）
                      * @return Success 成功的状态码，需要JSON解码后再使用，返回的格式是{"域名":"状态"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）
+                     * 
                      */
                     ResponseCode GetSuccess() const;
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 

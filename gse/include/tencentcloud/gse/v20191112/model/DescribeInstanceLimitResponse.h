@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取限额
                      * @return Limit 限额
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取详细信息
                      * @return ExtraInfos 详细信息
+                     * 
                      */
                     std::vector<ExtraInfos> GetExtraInfos() const;
 
                     /**
                      * 判断参数 ExtraInfos 是否已赋值
                      * @return ExtraInfos 是否已赋值
+                     * 
                      */
                     bool ExtraInfosHasBeenSet() const;
 

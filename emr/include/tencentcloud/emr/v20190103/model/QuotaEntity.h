@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedQuota 已使用配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUsedQuota() const;
 
                     /**
                      * 设置已使用配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsedQuota 已使用配额
+                     * @param _usedQuota 已使用配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsedQuota(const int64_t& _usedQuota);
 
                     /**
                      * 判断参数 UsedQuota 是否已赋值
                      * @return UsedQuota 是否已赋值
+                     * 
                      */
                     bool UsedQuotaHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingQuota 剩余配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRemainingQuota() const;
 
                     /**
                      * 设置剩余配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RemainingQuota 剩余配额
+                     * @param _remainingQuota 剩余配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemainingQuota(const int64_t& _remainingQuota);
 
                     /**
                      * 判断参数 RemainingQuota 是否已赋值
                      * @return RemainingQuota 是否已赋值
+                     * 
                      */
                     bool RemainingQuotaHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalQuota 总配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalQuota() const;
 
                     /**
                      * 设置总配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalQuota 总配额
+                     * @param _totalQuota 总配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalQuota(const int64_t& _totalQuota);
 
                     /**
                      * 判断参数 TotalQuota 是否已赋值
                      * @return TotalQuota 是否已赋值
+                     * 
                      */
                     bool TotalQuotaHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

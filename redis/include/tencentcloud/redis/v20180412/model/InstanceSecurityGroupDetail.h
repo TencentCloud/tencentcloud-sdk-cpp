@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
                      * @return SecurityGroupDetails 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
+                     * 
                      */
                     std::vector<SecurityGroupDetail> GetSecurityGroupDetails() const;
 
                     /**
                      * 设置安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
-                     * @param SecurityGroupDetails 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
+                     * @param _securityGroupDetails 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
+                     * 
                      */
                     void SetSecurityGroupDetails(const std::vector<SecurityGroupDetail>& _securityGroupDetails);
 
                     /**
                      * 判断参数 SecurityGroupDetails 是否已赋值
                      * @return SecurityGroupDetails 是否已赋值
+                     * 
                      */
                     bool SecurityGroupDetailsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取国家码，统一以 00 开头
                      * @return Nation 国家码，统一以 00 开头
+                     * 
                      */
                     std::string GetNation() const;
 
                     /**
                      * 设置国家码，统一以 00 开头
-                     * @param Nation 国家码，统一以 00 开头
+                     * @param _nation 国家码，统一以 00 开头
+                     * 
                      */
                     void SetNation(const std::string& _nation);
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
+                     * 
                      */
                     bool NationHasBeenSet() const;
 
                     /**
                      * 获取号码（固话区号前加 0，如075586013388）
                      * @return Phone 号码（固话区号前加 0，如075586013388）
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置号码（固话区号前加 0，如075586013388）
-                     * @param Phone 号码（固话区号前加 0，如075586013388）
+                     * @param _phone 号码（固话区号前加 0，如075586013388）
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 

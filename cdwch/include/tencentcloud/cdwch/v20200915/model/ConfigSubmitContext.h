@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取配置文件名称
                      * @return FileName 配置文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置配置文件名称
-                     * @param FileName 配置文件名称
+                     * @param _fileName 配置文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取配置文件旧内容，base64编码
                      * @return OldConfValue 配置文件旧内容，base64编码
+                     * 
                      */
                     std::string GetOldConfValue() const;
 
                     /**
                      * 设置配置文件旧内容，base64编码
-                     * @param OldConfValue 配置文件旧内容，base64编码
+                     * @param _oldConfValue 配置文件旧内容，base64编码
+                     * 
                      */
                     void SetOldConfValue(const std::string& _oldConfValue);
 
                     /**
                      * 判断参数 OldConfValue 是否已赋值
                      * @return OldConfValue 是否已赋值
+                     * 
                      */
                     bool OldConfValueHasBeenSet() const;
 
                     /**
                      * 获取配置文件新内容，base64编码
                      * @return NewConfValue 配置文件新内容，base64编码
+                     * 
                      */
                     std::string GetNewConfValue() const;
 
                     /**
                      * 设置配置文件新内容，base64编码
-                     * @param NewConfValue 配置文件新内容，base64编码
+                     * @param _newConfValue 配置文件新内容，base64编码
+                     * 
                      */
                     void SetNewConfValue(const std::string& _newConfValue);
 
                     /**
                      * 判断参数 NewConfValue 是否已赋值
                      * @return NewConfValue 是否已赋值
+                     * 
                      */
                     bool NewConfValueHasBeenSet() const;
 
                     /**
                      * 获取保存配置文件的路径
                      * @return FilePath 保存配置文件的路径
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置保存配置文件的路径
-                     * @param FilePath 保存配置文件的路径
+                     * @param _filePath 保存配置文件的路径
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

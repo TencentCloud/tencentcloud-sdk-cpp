@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionTime 入院时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionTime() const;
 
                     /**
                      * 设置入院时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionTime 入院时间
+                     * @param _admissionTime 入院时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionTime(const std::string& _admissionTime);
 
                     /**
                      * 判断参数 AdmissionTime 是否已赋值
                      * @return AdmissionTime 是否已赋值
+                     * 
                      */
                     bool AdmissionTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeTime 出院时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeTime() const;
 
                     /**
                      * 设置出院时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeTime 出院时间
+                     * @param _dischargeTime 出院时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeTime(const std::string& _dischargeTime);
 
                     /**
                      * 判断参数 DischargeTime 是否已赋值
                      * @return DischargeTime 是否已赋值
+                     * 
                      */
                     bool DischargeTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDays 住院天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionDays() const;
 
                     /**
                      * 设置住院天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionDays 住院天数
+                     * @param _admissionDays 住院天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionDays(const std::string& _admissionDays);
 
                     /**
                      * 判断参数 AdmissionDays 是否已赋值
                      * @return AdmissionDays 是否已赋值
+                     * 
                      */
                     bool AdmissionDaysHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDignosis 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionDignosis() const;
 
                     /**
                      * 设置入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionDignosis 入院诊断
+                     * @param _admissionDignosis 入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionDignosis(const std::string& _admissionDignosis);
 
                     /**
                      * 判断参数 AdmissionDignosis 是否已赋值
                      * @return AdmissionDignosis 是否已赋值
+                     * 
                      */
                     bool AdmissionDignosisHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionCondition 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdmissionCondition() const;
 
                     /**
                      * 设置入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdmissionCondition 入院情况
+                     * @param _admissionCondition 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdmissionCondition(const std::string& _admissionCondition);
 
                     /**
                      * 判断参数 AdmissionCondition 是否已赋值
                      * @return AdmissionCondition 是否已赋值
+                     * 
                      */
                     bool AdmissionConditionHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnosisTreatment 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiagnosisTreatment() const;
 
                     /**
                      * 设置诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiagnosisTreatment 诊疗经过
+                     * @param _diagnosisTreatment 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiagnosisTreatment(const std::string& _diagnosisTreatment);
 
                     /**
                      * 判断参数 DiagnosisTreatment 是否已赋值
                      * @return DiagnosisTreatment 是否已赋值
+                     * 
                      */
                     bool DiagnosisTreatmentHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeDiagnosis 出院诊断
+                     * @param _dischargeDiagnosis 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeDiagnosis(const std::string& _dischargeDiagnosis);
 
                     /**
                      * 判断参数 DischargeDiagnosis 是否已赋值
                      * @return DischargeDiagnosis 是否已赋值
+                     * 
                      */
                     bool DischargeDiagnosisHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeInstruction 出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDischargeInstruction() const;
 
                     /**
                      * 设置出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeInstruction 出院医嘱
+                     * @param _dischargeInstruction 出院医嘱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeInstruction(const std::string& _dischargeInstruction);
 
                     /**
                      * 判断参数 DischargeInstruction 是否已赋值
                      * @return DischargeInstruction 是否已赋值
+                     * 
                      */
                     bool DischargeInstructionHasBeenSet() const;
 

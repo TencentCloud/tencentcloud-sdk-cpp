@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取错误码。SUCCESS为成功，其他为失败
                      * @return ErrCode 错误码。SUCCESS为成功，其他为失败
+                     * 
                      */
                     std::string GetErrCode() const;
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误消息
                      * @return ErrMessage 错误消息
+                     * 
                      */
                     std::string GetErrMessage() const;
 
                     /**
                      * 判断参数 ErrMessage 是否已赋值
                      * @return ErrMessage 是否已赋值
+                     * 
                      */
                     bool ErrMessageHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApplyFlexSettlementResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

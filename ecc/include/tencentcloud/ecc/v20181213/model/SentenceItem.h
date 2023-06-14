@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取英语句子
                      * @return Sentence 英语句子
+                     * 
                      */
                     std::string GetSentence() const;
 
                     /**
                      * 设置英语句子
-                     * @param Sentence 英语句子
+                     * @param _sentence 英语句子
+                     * 
                      */
                     void SetSentence(const std::string& _sentence);
 
                     /**
                      * 判断参数 Sentence 是否已赋值
                      * @return Sentence 是否已赋值
+                     * 
                      */
                     bool SentenceHasBeenSet() const;
 
                     /**
                      * 获取段落id
                      * @return ParaID 段落id
+                     * 
                      */
                     int64_t GetParaID() const;
 
                     /**
                      * 设置段落id
-                     * @param ParaID 段落id
+                     * @param _paraID 段落id
+                     * 
                      */
                     void SetParaID(const int64_t& _paraID);
 
                     /**
                      * 判断参数 ParaID 是否已赋值
                      * @return ParaID 是否已赋值
+                     * 
                      */
                     bool ParaIDHasBeenSet() const;
 
                     /**
                      * 获取句子id
                      * @return SentenceID 句子id
+                     * 
                      */
                     int64_t GetSentenceID() const;
 
                     /**
                      * 设置句子id
-                     * @param SentenceID 句子id
+                     * @param _sentenceID 句子id
+                     * 
                      */
                     void SetSentenceID(const int64_t& _sentenceID);
 
                     /**
                      * 判断参数 SentenceID 是否已赋值
                      * @return SentenceID 是否已赋值
+                     * 
                      */
                     bool SentenceIDHasBeenSet() const;
 

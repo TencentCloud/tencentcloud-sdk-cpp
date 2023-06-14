@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取原关联日志配置ID
                      * @return ConfigId 原关联日志配置ID
+                     * 
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置原关联日志配置ID
-                     * @param ConfigId 原关联日志配置ID
+                     * @param _configId 原关联日志配置ID
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取新关联日志配置ID
                      * @return NewConfigId 新关联日志配置ID
+                     * 
                      */
                     std::string GetNewConfigId() const;
 
                     /**
                      * 设置新关联日志配置ID
-                     * @param NewConfigId 新关联日志配置ID
+                     * @param _newConfigId 新关联日志配置ID
+                     * 
                      */
                     void SetNewConfigId(const std::string& _newConfigId);
 
                     /**
                      * 判断参数 NewConfigId 是否已赋值
                      * @return NewConfigId 是否已赋值
+                     * 
                      */
                     bool NewConfigIdHasBeenSet() const;
 
                     /**
                      * 获取TSF应用ID
                      * @return ApplicationId TSF应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置TSF应用ID
-                     * @param ApplicationId TSF应用ID
+                     * @param _applicationId TSF应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取TSF部署组ID
                      * @return GroupId TSF部署组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置TSF部署组ID
-                     * @param GroupId TSF部署组ID
+                     * @param _groupId TSF部署组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

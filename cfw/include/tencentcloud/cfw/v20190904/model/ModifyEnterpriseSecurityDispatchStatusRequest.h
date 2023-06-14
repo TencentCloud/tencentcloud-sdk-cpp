@@ -53,6 +53,7 @@ namespace TencentCloud
 1：关闭立即下发开关；
 
 2：关闭立即下发开关下，触发开始下发
+                     * 
                      */
                     uint64_t GetStatus() const;
 
@@ -62,17 +63,19 @@ namespace TencentCloud
 1：关闭立即下发开关；
 
 2：关闭立即下发开关下，触发开始下发
-                     * @param Status 0：打开立即下发开关；
+                     * @param _status 0：打开立即下发开关；
 
 1：关闭立即下发开关；
 
 2：关闭立即下发开关下，触发开始下发
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

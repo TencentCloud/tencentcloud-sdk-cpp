@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicEnabled 是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDynamicEnabled() const;
 
                     /**
                      * 设置是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DynamicEnabled 是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。
+                     * @param _dynamicEnabled 是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDynamicEnabled(const std::string& _dynamicEnabled);
 
                     /**
                      * 判断参数 DynamicEnabled 是否已赋值
                      * @return DynamicEnabled 是否已赋值
+                     * 
                      */
                     bool DynamicEnabledHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConcurrency 单实例并发数最大值。取值范围 [1,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxConcurrency() const;
 
                     /**
                      * 设置单实例并发数最大值。取值范围 [1,100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxConcurrency 单实例并发数最大值。取值范围 [1,100]
+                     * @param _maxConcurrency 单实例并发数最大值。取值范围 [1,100]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxConcurrency(const uint64_t& _maxConcurrency);
 
                     /**
                      * 判断参数 MaxConcurrency 是否已赋值
                      * @return MaxConcurrency 是否已赋值
+                     * 
                      */
                     bool MaxConcurrencyHasBeenSet() const;
 

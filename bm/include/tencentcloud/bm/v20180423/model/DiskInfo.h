@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取磁盘ID
                      * @return DiskTypeId 磁盘ID
+                     * 
                      */
                     uint64_t GetDiskTypeId() const;
 
                     /**
                      * 设置磁盘ID
-                     * @param DiskTypeId 磁盘ID
+                     * @param _diskTypeId 磁盘ID
+                     * 
                      */
                     void SetDiskTypeId(const uint64_t& _diskTypeId);
 
                     /**
                      * 判断参数 DiskTypeId 是否已赋值
                      * @return DiskTypeId 是否已赋值
+                     * 
                      */
                     bool DiskTypeIdHasBeenSet() const;
 
                     /**
                      * 获取磁盘的容量，单位为G
                      * @return Size 磁盘的容量，单位为G
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置磁盘的容量，单位为G
-                     * @param Size 磁盘的容量，单位为G
+                     * @param _size 磁盘的容量，单位为G
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取磁盘信息描述
                      * @return DiskDescription 磁盘信息描述
+                     * 
                      */
                     std::string GetDiskDescription() const;
 
                     /**
                      * 设置磁盘信息描述
-                     * @param DiskDescription 磁盘信息描述
+                     * @param _diskDescription 磁盘信息描述
+                     * 
                      */
                     void SetDiskDescription(const std::string& _diskDescription);
 
                     /**
                      * 判断参数 DiskDescription 是否已赋值
                      * @return DiskDescription 是否已赋值
+                     * 
                      */
                     bool DiskDescriptionHasBeenSet() const;
 

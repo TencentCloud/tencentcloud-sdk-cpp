@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务
                      * @return Status 返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

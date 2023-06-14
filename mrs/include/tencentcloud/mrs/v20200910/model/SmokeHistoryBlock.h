@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 时间单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置时间单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeUnit 时间单位
+                     * @param _timeUnit 时间单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeNorm 时间归一化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeNorm() const;
 
                     /**
                      * 设置时间归一化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeNorm 时间归一化
+                     * @param _timeNorm 时间归一化
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeNorm(const std::string& _timeNorm);
 
                     /**
                      * 判断参数 TimeNorm 是否已赋值
                      * @return TimeNorm 是否已赋值
+                     * 
                      */
                     bool TimeNormHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 吸烟量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAmount() const;
 
                     /**
                      * 设置吸烟量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Amount 吸烟量
+                     * @param _amount 吸烟量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAmount(const std::string& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuitState 戒烟状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetQuitState() const;
 
                     /**
                      * 设置戒烟状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QuitState 戒烟状态
+                     * @param _quitState 戒烟状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuitState(const bool& _quitState);
 
                     /**
                      * 判断参数 QuitState 是否已赋值
                      * @return QuitState 是否已赋值
+                     * 
                      */
                     bool QuitStateHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 是否吸烟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetState() const;
 
                     /**
                      * 设置是否吸烟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 是否吸烟
+                     * @param _state 是否吸烟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const bool& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 对外输出值
+                     * @param _value 对外输出值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

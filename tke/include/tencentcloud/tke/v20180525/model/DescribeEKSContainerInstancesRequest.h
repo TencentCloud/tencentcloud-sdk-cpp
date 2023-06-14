@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100
                      * @return Limit 限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100
-                     * @param Limit 限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100
+                     * @param _limit 限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0
                      * @return Offset 偏移量,默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * @param _offset 偏移量,默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -122,6 +128,7 @@ KeyName: eip-address
 (5)VpcId
 KeyName: vpc-id
 类型：String
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -147,7 +154,7 @@ KeyName: eip-address
 (5)VpcId
 KeyName: vpc-id
 类型：String
-                     * @param Filters 过滤条件，可条件：
+                     * @param _filters 过滤条件，可条件：
 (1)实例名称
 KeyName: eks-ci-name
 类型：String
@@ -168,30 +175,35 @@ KeyName: eip-address
 (5)VpcId
 KeyName: vpc-id
 类型：String
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取容器实例 ID 数组
                      * @return EksCiIds 容器实例 ID 数组
+                     * 
                      */
                     std::vector<std::string> GetEksCiIds() const;
 
                     /**
                      * 设置容器实例 ID 数组
-                     * @param EksCiIds 容器实例 ID 数组
+                     * @param _eksCiIds 容器实例 ID 数组
+                     * 
                      */
                     void SetEksCiIds(const std::vector<std::string>& _eksCiIds);
 
                     /**
                      * 判断参数 EksCiIds 是否已赋值
                      * @return EksCiIds 是否已赋值
+                     * 
                      */
                     bool EksCiIdsHasBeenSet() const;
 

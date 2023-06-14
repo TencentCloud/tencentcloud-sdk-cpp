@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取纬度
                      * @return Latitude 纬度
+                     * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置纬度
-                     * @param Latitude 纬度
+                     * @param _latitude 纬度
+                     * 
                      */
                     void SetLatitude(const double& _latitude);
 
                     /**
                      * 判断参数 Latitude 是否已赋值
                      * @return Latitude 是否已赋值
+                     * 
                      */
                     bool LatitudeHasBeenSet() const;
 
                     /**
                      * 获取精度
                      * @return Longitude 精度
+                     * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置精度
-                     * @param Longitude 精度
+                     * @param _longitude 精度
+                     * 
                      */
                     void SetLongitude(const double& _longitude);
 
                     /**
                      * 判断参数 Longitude 是否已赋值
                      * @return Longitude 是否已赋值
+                     * 
                      */
                     bool LongitudeHasBeenSet() const;
 
                     /**
                      * 获取准确度
                      * @return Accuracy 准确度
+                     * 
                      */
                     double GetAccuracy() const;
 
                     /**
                      * 设置准确度
-                     * @param Accuracy 准确度
+                     * @param _accuracy 准确度
+                     * 
                      */
                     void SetAccuracy(const double& _accuracy);
 
                     /**
                      * 判断参数 Accuracy 是否已赋值
                      * @return Accuracy 是否已赋值
+                     * 
                      */
                     bool AccuracyHasBeenSet() const;
 
                     /**
                      * 获取海拔
                      * @return Altitude 海拔
+                     * 
                      */
                     double GetAltitude() const;
 
                     /**
                      * 设置海拔
-                     * @param Altitude 海拔
+                     * @param _altitude 海拔
+                     * 
                      */
                     void SetAltitude(const double& _altitude);
 
                     /**
                      * 判断参数 Altitude 是否已赋值
                      * @return Altitude 是否已赋值
+                     * 
                      */
                     bool AltitudeHasBeenSet() const;
 

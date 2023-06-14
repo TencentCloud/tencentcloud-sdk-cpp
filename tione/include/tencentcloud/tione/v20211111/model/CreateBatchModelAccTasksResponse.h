@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelAccTaskIds 模型优化任务ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetModelAccTaskIds() const;
 
                     /**
                      * 判断参数 ModelAccTaskIds 是否已赋值
                      * @return ModelAccTaskIds 是否已赋值
+                     * 
                      */
                     bool ModelAccTaskIdsHasBeenSet() const;
 

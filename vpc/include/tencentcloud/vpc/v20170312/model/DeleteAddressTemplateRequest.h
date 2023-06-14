@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取IP地址模板实例ID，例如：ipm-09o5m8kc。
                      * @return AddressTemplateId IP地址模板实例ID，例如：ipm-09o5m8kc。
+                     * 
                      */
                     std::string GetAddressTemplateId() const;
 
                     /**
                      * 设置IP地址模板实例ID，例如：ipm-09o5m8kc。
-                     * @param AddressTemplateId IP地址模板实例ID，例如：ipm-09o5m8kc。
+                     * @param _addressTemplateId IP地址模板实例ID，例如：ipm-09o5m8kc。
+                     * 
                      */
                     void SetAddressTemplateId(const std::string& _addressTemplateId);
 
                     /**
                      * 判断参数 AddressTemplateId 是否已赋值
                      * @return AddressTemplateId 是否已赋值
+                     * 
                      */
                     bool AddressTemplateIdHasBeenSet() const;
 

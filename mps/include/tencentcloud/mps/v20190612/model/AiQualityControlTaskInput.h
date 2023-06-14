@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Definition 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
+                     * @param _definition 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelExtPara 渠道扩展参数json序列化字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelExtPara() const;
 
                     /**
                      * 设置渠道扩展参数json序列化字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelExtPara 渠道扩展参数json序列化字符串。
+                     * @param _channelExtPara 渠道扩展参数json序列化字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelExtPara(const std::string& _channelExtPara);
 
                     /**
                      * 判断参数 ChannelExtPara 是否已赋值
                      * @return ChannelExtPara 是否已赋值
+                     * 
                      */
                     bool ChannelExtParaHasBeenSet() const;
 

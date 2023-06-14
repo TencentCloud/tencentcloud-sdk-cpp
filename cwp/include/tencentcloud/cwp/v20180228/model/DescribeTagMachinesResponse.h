@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取列表数据
                      * @return List 列表数据
+                     * 
                      */
                     std::vector<TagMachine> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

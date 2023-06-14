@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 诊断开始时间
+                     * @param _startTime 诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 诊断结束时间
+                     * @param _endTime 诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Statistics 诊断结果统计
+                     * @param _statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Diagnostics 诊断结果详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateDiagnostic> GetDiagnostics() const;
 
                     /**
                      * 设置诊断结果详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Diagnostics 诊断结果详情
+                     * @param _diagnostics 诊断结果详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiagnostics(const std::vector<KubeJarvisStateDiagnostic>& _diagnostics);
 
                     /**
                      * 判断参数 Diagnostics 是否已赋值
                      * @return Diagnostics 是否已赋值
+                     * 
                      */
                     bool DiagnosticsHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 查询巡检报告相关报错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置查询巡检报告相关报错
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 查询巡检报告相关报错
+                     * @param _error 查询巡检报告相关报错
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const std::string& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

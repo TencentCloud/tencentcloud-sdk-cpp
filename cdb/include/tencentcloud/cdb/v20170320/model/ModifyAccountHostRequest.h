@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取账户的名称
                      * @return User 账户的名称
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置账户的名称
-                     * @param User 账户的名称
+                     * @param _user 账户的名称
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取账户的旧主机
                      * @return Host 账户的旧主机
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置账户的旧主机
-                     * @param Host 账户的旧主机
+                     * @param _host 账户的旧主机
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取账户的新主机
                      * @return NewHost 账户的新主机
+                     * 
                      */
                     std::string GetNewHost() const;
 
                     /**
                      * 设置账户的新主机
-                     * @param NewHost 账户的新主机
+                     * @param _newHost 账户的新主机
+                     * 
                      */
                     void SetNewHost(const std::string& _newHost);
 
                     /**
                      * 判断参数 NewHost 是否已赋值
                      * @return NewHost 是否已赋值
+                     * 
                      */
                     bool NewHostHasBeenSet() const;
 

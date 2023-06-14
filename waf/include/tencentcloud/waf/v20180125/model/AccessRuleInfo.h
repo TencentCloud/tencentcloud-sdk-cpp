@@ -56,6 +56,7 @@ namespace TencentCloud
                      * @return FullText 全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessFullTextInfo GetFullText() const;
 
@@ -63,15 +64,17 @@ namespace TencentCloud
                      * 设置全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullText 全文索引配置
+                     * @param _fullText 全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFullText(const AccessFullTextInfo& _fullText);
 
                     /**
                      * 判断参数 FullText 是否已赋值
                      * @return FullText 是否已赋值
+                     * 
                      */
                     bool FullTextHasBeenSet() const;
 
@@ -82,6 +85,7 @@ namespace TencentCloud
                      * @return KeyValue 键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessRuleKeyValueInfo GetKeyValue() const;
 
@@ -89,15 +93,17 @@ namespace TencentCloud
                      * 设置键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyValue 键值索引配置
+                     * @param _keyValue 键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyValue(const AccessRuleKeyValueInfo& _keyValue);
 
                     /**
                      * 判断参数 KeyValue 是否已赋值
                      * @return KeyValue 是否已赋值
+                     * 
                      */
                     bool KeyValueHasBeenSet() const;
 
@@ -108,6 +114,7 @@ namespace TencentCloud
                      * @return Tag 元字段索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessRuleTagInfo GetTag() const;
 
@@ -115,15 +122,17 @@ namespace TencentCloud
                      * 设置元字段索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 元字段索引配置
+                     * @param _tag 元字段索引配置
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTag(const AccessRuleTagInfo& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

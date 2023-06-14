@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取执行状态。<ul><li>true：执行成功。</li><li>false：执行失败。</li></ul>
                      * @return Status 执行状态。<ul><li>true：执行成功。</li><li>false：执行失败。</li></ul>
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取修改后的子网 ID。
                      * @return SubnetId 修改后的子网 ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的私有网络 ID。
                      * @return VpcId 修改后的私有网络 ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的 VIP 地址。
                      * @return Vip 修改后的 VIP 地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 

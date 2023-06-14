@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取主键
                      * @return Id 主键
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置主键
-                     * @param Id 主键
+                     * @param _id 主键
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取授权人名称
                      * @return Name 授权人名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置授权人名称
-                     * @param Name 授权人名称
+                     * @param _name 授权人名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取身份证号/社会信用代码
                      * @return Code 身份证号/社会信用代码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置身份证号/社会信用代码
-                     * @param Code 身份证号/社会信用代码
+                     * @param _code 身份证号/社会信用代码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取授权人类型
                      * @return Type 授权人类型
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置授权人类型
-                     * @param Type 授权人类型
+                     * @param _type 授权人类型
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

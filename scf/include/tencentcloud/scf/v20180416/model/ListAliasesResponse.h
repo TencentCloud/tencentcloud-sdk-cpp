@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取别名列表
                      * @return Aliases 别名列表
+                     * 
                      */
                     std::vector<Alias> GetAliases() const;
 
                     /**
                      * 判断参数 Aliases 是否已赋值
                      * @return Aliases 是否已赋值
+                     * 
                      */
                     bool AliasesHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 别名总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取协议端口模板集合实例ID，例如：ppmg-n17uxvve。
                      * @return ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-n17uxvve。
+                     * 
                      */
                     std::string GetServiceTemplateGroupId() const;
 
                     /**
                      * 设置协议端口模板集合实例ID，例如：ppmg-n17uxvve。
-                     * @param ServiceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-n17uxvve。
+                     * @param _serviceTemplateGroupId 协议端口模板集合实例ID，例如：ppmg-n17uxvve。
+                     * 
                      */
                     void SetServiceTemplateGroupId(const std::string& _serviceTemplateGroupId);
 
                     /**
                      * 判断参数 ServiceTemplateGroupId 是否已赋值
                      * @return ServiceTemplateGroupId 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupIdHasBeenSet() const;
 

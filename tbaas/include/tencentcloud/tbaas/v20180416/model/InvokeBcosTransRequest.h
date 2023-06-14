@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组编号，可在群组列表中获取
                      * @return GroupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组编号，可在群组列表中获取
-                     * @param GroupId 群组编号，可在群组列表中获取
+                     * @param _groupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取合约地址，可在合约详情获取
                      * @return ContractAddress 合约地址，可在合约详情获取
+                     * 
                      */
                     std::string GetContractAddress() const;
 
                     /**
                      * 设置合约地址，可在合约详情获取
-                     * @param ContractAddress 合约地址，可在合约详情获取
+                     * @param _contractAddress 合约地址，可在合约详情获取
+                     * 
                      */
                     void SetContractAddress(const std::string& _contractAddress);
 
                     /**
                      * 判断参数 ContractAddress 是否已赋值
                      * @return ContractAddress 是否已赋值
+                     * 
                      */
                     bool ContractAddressHasBeenSet() const;
 
                     /**
                      * 获取合约Abi的json数组格式的字符串，可在合约详情获取
                      * @return AbiInfo 合约Abi的json数组格式的字符串，可在合约详情获取
+                     * 
                      */
                     std::string GetAbiInfo() const;
 
                     /**
                      * 设置合约Abi的json数组格式的字符串，可在合约详情获取
-                     * @param AbiInfo 合约Abi的json数组格式的字符串，可在合约详情获取
+                     * @param _abiInfo 合约Abi的json数组格式的字符串，可在合约详情获取
+                     * 
                      */
                     void SetAbiInfo(const std::string& _abiInfo);
 
                     /**
                      * 判断参数 AbiInfo 是否已赋值
                      * @return AbiInfo 是否已赋值
+                     * 
                      */
                     bool AbiInfoHasBeenSet() const;
 
                     /**
                      * 获取合约方法名
                      * @return FuncName 合约方法名
+                     * 
                      */
                     std::string GetFuncName() const;
 
                     /**
                      * 设置合约方法名
-                     * @param FuncName 合约方法名
+                     * @param _funcName 合约方法名
+                     * 
                      */
                     void SetFuncName(const std::string& _funcName);
 
                     /**
                      * 判断参数 FuncName 是否已赋值
                      * @return FuncName 是否已赋值
+                     * 
                      */
                     bool FuncNameHasBeenSet() const;
 
                     /**
                      * 获取签名用户编号，可在私钥管理页面获取
                      * @return SignUserId 签名用户编号，可在私钥管理页面获取
+                     * 
                      */
                     std::string GetSignUserId() const;
 
                     /**
                      * 设置签名用户编号，可在私钥管理页面获取
-                     * @param SignUserId 签名用户编号，可在私钥管理页面获取
+                     * @param _signUserId 签名用户编号，可在私钥管理页面获取
+                     * 
                      */
                     void SetSignUserId(const std::string& _signUserId);
 
                     /**
                      * 判断参数 SignUserId 是否已赋值
                      * @return SignUserId 是否已赋值
+                     * 
                      */
                     bool SignUserIdHasBeenSet() const;
 
                     /**
                      * 获取合约方法入参，json格式字符串
                      * @return FuncParam 合约方法入参，json格式字符串
+                     * 
                      */
                     std::string GetFuncParam() const;
 
                     /**
                      * 设置合约方法入参，json格式字符串
-                     * @param FuncParam 合约方法入参，json格式字符串
+                     * @param _funcParam 合约方法入参，json格式字符串
+                     * 
                      */
                     void SetFuncParam(const std::string& _funcParam);
 
                     /**
                      * 判断参数 FuncParam 是否已赋值
                      * @return FuncParam 是否已赋值
+                     * 
                      */
                     bool FuncParamHasBeenSet() const;
 

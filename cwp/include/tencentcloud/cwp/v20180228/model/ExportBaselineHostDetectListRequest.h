@@ -54,6 +54,7 @@ namespace TencentCloud
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>IsPassed - int - 是否必填：否 - 是否通过</li>
 <li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -63,35 +64,40 @@ namespace TencentCloud
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>IsPassed - int - 是否必填：否 - 是否通过</li>
 <li>RiskTier - int - 是否必填：否 - 风险等级</li>
-                     * @param Filters <li>HostTag - string - 是否必填：否 - 主机标签</i>
+                     * @param _filters <li>HostTag - string - 是否必填：否 - 主机标签</i>
 <li>ItemId - int64 - 是否必填：否 - 项Id</i>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>IsPassed - int - 是否必填：否 - 是否通过</li>
 <li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取0:过滤的结果导出；1:全部导出
                      * @return ExportAll 0:过滤的结果导出；1:全部导出
+                     * 
                      */
                     int64_t GetExportAll() const;
 
                     /**
                      * 设置0:过滤的结果导出；1:全部导出
-                     * @param ExportAll 0:过滤的结果导出；1:全部导出
+                     * @param _exportAll 0:过滤的结果导出；1:全部导出
+                     * 
                      */
                     void SetExportAll(const int64_t& _exportAll);
 
                     /**
                      * 判断参数 ExportAll 是否已赋值
                      * @return ExportAll 是否已赋值
+                     * 
                      */
                     bool ExportAllHasBeenSet() const;
 

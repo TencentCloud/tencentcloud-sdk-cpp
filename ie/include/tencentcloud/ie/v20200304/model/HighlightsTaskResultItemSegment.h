@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取置信度，取值范围是 0 到 100。
                      * @return Confidence 置信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度，取值范围是 0 到 100。
-                     * @param Confidence 置信度，取值范围是 0 到 100。
+                     * @param _confidence 置信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取集锦片段起始的偏移时间，单位：秒。
                      * @return StartTimeOffset 集锦片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置集锦片段起始的偏移时间，单位：秒。
-                     * @param StartTimeOffset 集锦片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 集锦片段起始的偏移时间，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取集锦片段终止的偏移时间，单位：秒。
                      * @return EndTimeOffset 集锦片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置集锦片段终止的偏移时间，单位：秒。
-                     * @param EndTimeOffset 集锦片段终止的偏移时间，单位：秒。
+                     * @param _endTimeOffset 集锦片段终止的偏移时间，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

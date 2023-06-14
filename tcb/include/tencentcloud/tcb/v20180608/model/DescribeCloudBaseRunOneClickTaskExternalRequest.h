@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取外部任务Id 最长64字节
                      * @return ExternalId 外部任务Id 最长64字节
+                     * 
                      */
                     std::string GetExternalId() const;
 
                     /**
                      * 设置外部任务Id 最长64字节
-                     * @param ExternalId 外部任务Id 最长64字节
+                     * @param _externalId 外部任务Id 最长64字节
+                     * 
                      */
                     void SetExternalId(const std::string& _externalId);
 
                     /**
                      * 判断参数 ExternalId 是否已赋值
                      * @return ExternalId 是否已赋值
+                     * 
                      */
                     bool ExternalIdHasBeenSet() const;
 

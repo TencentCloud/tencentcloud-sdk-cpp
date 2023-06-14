@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取事件内容。
                      * @return EventContent 事件内容。
+                     * 
                      */
                     EventContent GetEventContent() const;
 
                     /**
                      * 判断参数 EventContent 是否已赋值
                      * @return EventContent 是否已赋值
+                     * 
                      */
                     bool EventContentHasBeenSet() const;
 

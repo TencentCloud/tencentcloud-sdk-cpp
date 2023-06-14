@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取总量
                      * @return Total 总量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总量
-                     * @param Total 总量
+                     * @param _total 总量
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 云兔连接列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LinkInfo> GetList() const;
 
                     /**
                      * 设置云兔连接列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param List 云兔连接列表
+                     * @param _list 云兔连接列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetList(const std::vector<LinkInfo>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

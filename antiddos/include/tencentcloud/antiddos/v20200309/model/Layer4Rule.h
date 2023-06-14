@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取源站端口，取值1~65535
                      * @return BackendPort 源站端口，取值1~65535
+                     * 
                      */
                     uint64_t GetBackendPort() const;
 
                     /**
                      * 设置源站端口，取值1~65535
-                     * @param BackendPort 源站端口，取值1~65535
+                     * @param _backendPort 源站端口，取值1~65535
+                     * 
                      */
                     void SetBackendPort(const uint64_t& _backendPort);
 
                     /**
                      * 判断参数 BackendPort 是否已赋值
                      * @return BackendPort 是否已赋值
+                     * 
                      */
                     bool BackendPortHasBeenSet() const;
 
                     /**
                      * 获取转发端口，取值1~65535
                      * @return FrontendPort 转发端口，取值1~65535
+                     * 
                      */
                     uint64_t GetFrontendPort() const;
 
                     /**
                      * 设置转发端口，取值1~65535
-                     * @param FrontendPort 转发端口，取值1~65535
+                     * @param _frontendPort 转发端口，取值1~65535
+                     * 
                      */
                     void SetFrontendPort(const uint64_t& _frontendPort);
 
                     /**
                      * 判断参数 FrontendPort 是否已赋值
                      * @return FrontendPort 是否已赋值
+                     * 
                      */
                     bool FrontendPortHasBeenSet() const;
 
@@ -94,6 +100,7 @@ UDP(UDP协议)
 TCP(TCP协议)
 UDP(UDP协议)
 ]
+                     * 
                      */
                     std::string GetProtocol() const;
 
@@ -102,70 +109,81 @@ UDP(UDP协议)
 TCP(TCP协议)
 UDP(UDP协议)
 ]
-                     * @param Protocol 转发协议，取值[
+                     * @param _protocol 转发协议，取值[
 TCP(TCP协议)
 UDP(UDP协议)
 ]
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取源站列表
                      * @return RealServers 源站列表
+                     * 
                      */
                     std::vector<SourceServer> GetRealServers() const;
 
                     /**
                      * 设置源站列表
-                     * @param RealServers 源站列表
+                     * @param _realServers 源站列表
+                     * 
                      */
                     void SetRealServers(const std::vector<SourceServer>& _realServers);
 
                     /**
                      * 判断参数 RealServers 是否已赋值
                      * @return RealServers 是否已赋值
+                     * 
                      */
                     bool RealServersHasBeenSet() const;
 
                     /**
                      * 获取资源实例
                      * @return InstanceDetails 资源实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetails() const;
 
                     /**
                      * 设置资源实例
-                     * @param InstanceDetails 资源实例
+                     * @param _instanceDetails 资源实例
+                     * 
                      */
                     void SetInstanceDetails(const std::vector<InstanceRelation>& _instanceDetails);
 
                     /**
                      * 判断参数 InstanceDetails 是否已赋值
                      * @return InstanceDetails 是否已赋值
+                     * 
                      */
                     bool InstanceDetailsHasBeenSet() const;
 
                     /**
                      * 获取规则所属的资源实例
                      * @return InstanceDetailRule 规则所属的资源实例
+                     * 
                      */
                     std::vector<RuleInstanceRelation> GetInstanceDetailRule() const;
 
                     /**
                      * 设置规则所属的资源实例
-                     * @param InstanceDetailRule 规则所属的资源实例
+                     * @param _instanceDetailRule 规则所属的资源实例
+                     * 
                      */
                     void SetInstanceDetailRule(const std::vector<RuleInstanceRelation>& _instanceDetailRule);
 
                     /**
                      * 判断参数 InstanceDetailRule 是否已赋值
                      * @return InstanceDetailRule 是否已赋值
+                     * 
                      */
                     bool InstanceDetailRuleHasBeenSet() const;
 

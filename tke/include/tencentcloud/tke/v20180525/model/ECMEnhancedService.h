@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启云监控服务
                      * @return SecurityService 是否开启云监控服务
+                     * 
                      */
                     ECMRunMonitorServiceEnabled GetSecurityService() const;
 
                     /**
                      * 设置是否开启云监控服务
-                     * @param SecurityService 是否开启云监控服务
+                     * @param _securityService 是否开启云监控服务
+                     * 
                      */
                     void SetSecurityService(const ECMRunMonitorServiceEnabled& _securityService);
 
                     /**
                      * 判断参数 SecurityService 是否已赋值
                      * @return SecurityService 是否已赋值
+                     * 
                      */
                     bool SecurityServiceHasBeenSet() const;
 
                     /**
                      * 获取是否开启云镜服务
                      * @return MonitorService 是否开启云镜服务
+                     * 
                      */
                     ECMRunSecurityServiceEnabled GetMonitorService() const;
 
                     /**
                      * 设置是否开启云镜服务
-                     * @param MonitorService 是否开启云镜服务
+                     * @param _monitorService 是否开启云镜服务
+                     * 
                      */
                     void SetMonitorService(const ECMRunSecurityServiceEnabled& _monitorService);
 
                     /**
                      * 判断参数 MonitorService 是否已赋值
                      * @return MonitorService 是否已赋值
+                     * 
                      */
                     bool MonitorServiceHasBeenSet() const;
 

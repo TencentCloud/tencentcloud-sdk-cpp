@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID
-                     * @param BizId 应用ID
+                     * @param _bizId 应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取需要送检的所有用户号。多个用户号之间用","分隔。示例："0001,0002,0003"
                      * @return UserIdString 需要送检的所有用户号。多个用户号之间用","分隔。示例："0001,0002,0003"
+                     * 
                      */
                     std::string GetUserIdString() const;
 
                     /**
                      * 设置需要送检的所有用户号。多个用户号之间用","分隔。示例："0001,0002,0003"
-                     * @param UserIdString 需要送检的所有用户号。多个用户号之间用","分隔。示例："0001,0002,0003"
+                     * @param _userIdString 需要送检的所有用户号。多个用户号之间用","分隔。示例："0001,0002,0003"
+                     * 
                      */
                     void SetUserIdString(const std::string& _userIdString);
 
                     /**
                      * 判断参数 UserIdString 是否已赋值
                      * @return UserIdString 是否已赋值
+                     * 
                      */
                     bool UserIdStringHasBeenSet() const;
 
                     /**
                      * 获取符合此正则表达式规则的用户号将被送检。示例：["^6.*"] 表示所有以6开头的用户号将被送检
                      * @return UserIdRegex 符合此正则表达式规则的用户号将被送检。示例：["^6.*"] 表示所有以6开头的用户号将被送检
+                     * 
                      */
                     std::vector<std::string> GetUserIdRegex() const;
 
                     /**
                      * 设置符合此正则表达式规则的用户号将被送检。示例：["^6.*"] 表示所有以6开头的用户号将被送检
-                     * @param UserIdRegex 符合此正则表达式规则的用户号将被送检。示例：["^6.*"] 表示所有以6开头的用户号将被送检
+                     * @param _userIdRegex 符合此正则表达式规则的用户号将被送检。示例：["^6.*"] 表示所有以6开头的用户号将被送检
+                     * 
                      */
                     void SetUserIdRegex(const std::vector<std::string>& _userIdRegex);
 
                     /**
                      * 判断参数 UserIdRegex 是否已赋值
                      * @return UserIdRegex 是否已赋值
+                     * 
                      */
                     bool UserIdRegexHasBeenSet() const;
 

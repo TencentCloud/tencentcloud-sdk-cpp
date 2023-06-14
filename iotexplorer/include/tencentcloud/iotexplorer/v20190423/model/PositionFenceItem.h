@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取围栏Id
                      * @return FenceId 围栏Id
+                     * 
                      */
                     int64_t GetFenceId() const;
 
                     /**
                      * 设置围栏Id
-                     * @param FenceId 围栏Id
+                     * @param _fenceId 围栏Id
+                     * 
                      */
                     void SetFenceId(const int64_t& _fenceId);
 
                     /**
                      * 判断参数 FenceId 是否已赋值
                      * @return FenceId 是否已赋值
+                     * 
                      */
                     bool FenceIdHasBeenSet() const;
 
                     /**
                      * 获取位置空间Id
                      * @return SpaceId 位置空间Id
+                     * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
                      * 设置位置空间Id
-                     * @param SpaceId 位置空间Id
+                     * @param _spaceId 位置空间Id
+                     * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
 
                     /**
                      * 判断参数 SpaceId 是否已赋值
                      * @return SpaceId 是否已赋值
+                     * 
                      */
                     bool SpaceIdHasBeenSet() const;
 
                     /**
                      * 获取围栏名称
                      * @return FenceName 围栏名称
+                     * 
                      */
                     std::string GetFenceName() const;
 
                     /**
                      * 设置围栏名称
-                     * @param FenceName 围栏名称
+                     * @param _fenceName 围栏名称
+                     * 
                      */
                     void SetFenceName(const std::string& _fenceName);
 
                     /**
                      * 判断参数 FenceName 是否已赋值
                      * @return FenceName 是否已赋值
+                     * 
                      */
                     bool FenceNameHasBeenSet() const;
 
                     /**
                      * 获取围栏描述
                      * @return FenceDesc 围栏描述
+                     * 
                      */
                     std::string GetFenceDesc() const;
 
                     /**
                      * 设置围栏描述
-                     * @param FenceDesc 围栏描述
+                     * @param _fenceDesc 围栏描述
+                     * 
                      */
                     void SetFenceDesc(const std::string& _fenceDesc);
 
                     /**
                      * 判断参数 FenceDesc 是否已赋值
                      * @return FenceDesc 是否已赋值
+                     * 
                      */
                     bool FenceDescHasBeenSet() const;
 
                     /**
                      * 获取围栏区域信息，采用 GeoJSON 格式
                      * @return FenceArea 围栏区域信息，采用 GeoJSON 格式
+                     * 
                      */
                     std::string GetFenceArea() const;
 
                     /**
                      * 设置围栏区域信息，采用 GeoJSON 格式
-                     * @param FenceArea 围栏区域信息，采用 GeoJSON 格式
+                     * @param _fenceArea 围栏区域信息，采用 GeoJSON 格式
+                     * 
                      */
                     void SetFenceArea(const std::string& _fenceArea);
 
                     /**
                      * 判断参数 FenceArea 是否已赋值
                      * @return FenceArea 是否已赋值
+                     * 
                      */
                     bool FenceAreaHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionName 版本名
+                     * @param _versionName 版本名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 镜像url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置镜像url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageUrl 镜像url
+                     * @param _imageUrl 镜像url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowRatio 流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowRatio() const;
 
                     /**
                      * 设置流量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowRatio 流量
+                     * @param _flowRatio 流量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowRatio(const std::string& _flowRatio);
 
                     /**
                      * 判断参数 FlowRatio 是否已赋值
                      * @return FlowRatio 是否已赋值
+                     * 
                      */
                     bool FlowRatioHasBeenSet() const;
 

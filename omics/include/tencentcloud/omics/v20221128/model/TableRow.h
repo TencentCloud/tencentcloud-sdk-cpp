@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableRowUuid 表格行UUID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableRowUuid() const;
 
                     /**
                      * 设置表格行UUID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableRowUuid 表格行UUID。
+                     * @param _tableRowUuid 表格行UUID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableRowUuid(const std::string& _tableRowUuid);
 
                     /**
                      * 判断参数 TableRowUuid 是否已赋值
                      * @return TableRowUuid 是否已赋值
+                     * 
                      */
                     bool TableRowUuidHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 表格行内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
                      * 设置表格行内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 表格行内容。
+                     * @param _content 表格行内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

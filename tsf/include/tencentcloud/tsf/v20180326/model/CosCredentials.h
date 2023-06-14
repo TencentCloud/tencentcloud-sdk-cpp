@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionToken 会话Token
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 设置会话Token
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionToken 会话Token
+                     * @param _sessionToken 会话Token
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
 
                     /**
                      * 判断参数 SessionToken 是否已赋值
                      * @return SessionToken 是否已赋值
+                     * 
                      */
                     bool SessionTokenHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpAppId 临时应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTmpAppId() const;
 
                     /**
                      * 设置临时应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpAppId 临时应用ID
+                     * @param _tmpAppId 临时应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTmpAppId(const std::string& _tmpAppId);
 
                     /**
                      * 判断参数 TmpAppId 是否已赋值
                      * @return TmpAppId 是否已赋值
+                     * 
                      */
                     bool TmpAppIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretId 临时调用者身份ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时调用者身份ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretId 临时调用者身份ID
+                     * @param _tmpSecretId 临时调用者身份ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretKey 临时密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时密钥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretKey 临时密钥
+                     * @param _tmpSecretKey 临时密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 设置过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredTime 过期时间
+                     * @param _expiredTime 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 所在域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置所在域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 所在域
+                     * @param _domain 所在域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx
                      * @return CosBucket apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx
+                     * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx
-                     * @param CosBucket apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx
+                     * @param _cosBucket apk 所在的 cos 存储桶, 如 edgepack-xxxxxxxx
+                     * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
 
                     /**
                      * 判断参数 CosBucket 是否已赋值
                      * @return CosBucket 是否已赋值
+                     * 
                      */
                     bool CosBucketHasBeenSet() const;
 
                     /**
                      * 获取apk 源文件的存储路径, 如 /apk/xxxx.apk
                      * @return CosUriFrom apk 源文件的存储路径, 如 /apk/xxxx.apk
+                     * 
                      */
                     std::string GetCosUriFrom() const;
 
                     /**
                      * 设置apk 源文件的存储路径, 如 /apk/xxxx.apk
-                     * @param CosUriFrom apk 源文件的存储路径, 如 /apk/xxxx.apk
+                     * @param _cosUriFrom apk 源文件的存储路径, 如 /apk/xxxx.apk
+                     * 
                      */
                     void SetCosUriFrom(const std::string& _cosUriFrom);
 
                     /**
                      * 判断参数 CosUriFrom 是否已赋值
                      * @return CosUriFrom 是否已赋值
+                     * 
                      */
                     bool CosUriFromHasBeenSet() const;
 
                     /**
                      * 获取BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
                      * @return BlockID BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
+                     * 
                      */
                     uint64_t GetBlockID() const;
 
                     /**
                      * 设置BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
-                     * @param BlockID BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
+                     * @param _blockID BlockID 的值, WALLE为1903654775(0x71777777)，VasDolly为2282837503(0x881155ff),传0或不传时默认为 WALLE 方案
+                     * 
                      */
                     void SetBlockID(const uint64_t& _blockID);
 
                     /**
                      * 判断参数 BlockID 是否已赋值
                      * @return BlockID 是否已赋值
+                     * 
                      */
                     bool BlockIDHasBeenSet() const;
 
                     /**
                      * 获取拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
                      * @return CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     * 
                      */
                     std::string GetCosUriTo() const;
 
                     /**
                      * 设置拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
-                     * @param CosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     * @param _cosUriTo 拓展之后的 apk 目标存储路径,如 /out/xxxx.apk
+                     * 
                      */
                     void SetCosUriTo(const std::string& _cosUriTo);
 
                     /**
                      * 判断参数 CosUriTo 是否已赋值
                      * @return CosUriTo 是否已赋值
+                     * 
                      */
                     bool CosUriToHasBeenSet() const;
 

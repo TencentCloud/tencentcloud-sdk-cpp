@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取视频ID列表长度限制100内
                      * @return InitIDs 视频ID列表长度限制100内
+                     * 
                      */
                     std::vector<int64_t> GetInitIDs() const;
 
                     /**
                      * 设置视频ID列表长度限制100内
-                     * @param InitIDs 视频ID列表长度限制100内
+                     * @param _initIDs 视频ID列表长度限制100内
+                     * 
                      */
                     void SetInitIDs(const std::vector<int64_t>& _initIDs);
 
                     /**
                      * 判断参数 InitIDs 是否已赋值
                      * @return InitIDs 是否已赋值
+                     * 
                      */
                     bool InitIDsHasBeenSet() const;
 

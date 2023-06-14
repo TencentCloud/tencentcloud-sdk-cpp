@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取业务提现订单号
                      * @return WithdrawOrderId 业务提现订单号
+                     * 
                      */
                     std::string GetWithdrawOrderId() const;
 
                     /**
                      * 设置业务提现订单号
-                     * @param WithdrawOrderId 业务提现订单号
+                     * @param _withdrawOrderId 业务提现订单号
+                     * 
                      */
                     void SetWithdrawOrderId(const std::string& _withdrawOrderId);
 
                     /**
                      * 判断参数 WithdrawOrderId 是否已赋值
                      * @return WithdrawOrderId 是否已赋值
+                     * 
                      */
                     bool WithdrawOrderIdHasBeenSet() const;
 
                     /**
                      * 获取提现日期
                      * @return Date 提现日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置提现日期
-                     * @param Date 提现日期
+                     * @param _date 提现日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取提现金额，单位： 分
                      * @return PayAmt 提现金额，单位： 分
+                     * 
                      */
                     std::string GetPayAmt() const;
 
                     /**
                      * 设置提现金额，单位： 分
-                     * @param PayAmt 提现金额，单位： 分
+                     * @param _payAmt 提现金额，单位： 分
+                     * 
                      */
                     void SetPayAmt(const std::string& _payAmt);
 
                     /**
                      * 判断参数 PayAmt 是否已赋值
                      * @return PayAmt 是否已赋值
+                     * 
                      */
                     bool PayAmtHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配转入账户appid
                      * @return InSubAppId 聚鑫分配转入账户appid
+                     * 
                      */
                     std::string GetInSubAppId() const;
 
                     /**
                      * 设置聚鑫分配转入账户appid
-                     * @param InSubAppId 聚鑫分配转入账户appid
+                     * @param _inSubAppId 聚鑫分配转入账户appid
+                     * 
                      */
                     void SetInSubAppId(const std::string& _inSubAppId);
 
                     /**
                      * 判断参数 InSubAppId 是否已赋值
                      * @return InSubAppId 是否已赋值
+                     * 
                      */
                     bool InSubAppIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配转出账户appid
                      * @return OutSubAppId 聚鑫分配转出账户appid
+                     * 
                      */
                     std::string GetOutSubAppId() const;
 
                     /**
                      * 设置聚鑫分配转出账户appid
-                     * @param OutSubAppId 聚鑫分配转出账户appid
+                     * @param _outSubAppId 聚鑫分配转出账户appid
+                     * 
                      */
                     void SetOutSubAppId(const std::string& _outSubAppId);
 
                     /**
                      * 判断参数 OutSubAppId 是否已赋值
                      * @return OutSubAppId 是否已赋值
+                     * 
                      */
                     bool OutSubAppIdHasBeenSet() const;
 
                     /**
                      * 获取ISO货币代码
                      * @return CurrencyType ISO货币代码
+                     * 
                      */
                     std::string GetCurrencyType() const;
 
                     /**
                      * 设置ISO货币代码
-                     * @param CurrencyType ISO货币代码
+                     * @param _currencyType ISO货币代码
+                     * 
                      */
                     void SetCurrencyType(const std::string& _currencyType);
 
                     /**
                      * 判断参数 CurrencyType 是否已赋值
                      * @return CurrencyType 是否已赋值
+                     * 
                      */
                     bool CurrencyTypeHasBeenSet() const;
 
                     /**
                      * 获取透传字段
                      * @return MetaData 透传字段
+                     * 
                      */
                     std::string GetMetaData() const;
 
                     /**
                      * 设置透传字段
-                     * @param MetaData 透传字段
+                     * @param _metaData 透传字段
+                     * 
                      */
                     void SetMetaData(const std::string& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取扩展字段
                      * @return ExtendFieldData 扩展字段
+                     * 
                      */
                     std::string GetExtendFieldData() const;
 
                     /**
                      * 设置扩展字段
-                     * @param ExtendFieldData 扩展字段
+                     * @param _extendFieldData 扩展字段
+                     * 
                      */
                     void SetExtendFieldData(const std::string& _extendFieldData);
 
                     /**
                      * 判断参数 ExtendFieldData 是否已赋值
                      * @return ExtendFieldData 是否已赋值
+                     * 
                      */
                     bool ExtendFieldDataHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取独享实例详情信息
                      * @return Result 独享实例详情信息
+                     * 
                      */
                     InstanceDetail GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

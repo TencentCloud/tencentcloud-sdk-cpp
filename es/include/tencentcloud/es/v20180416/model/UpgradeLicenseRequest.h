@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
                      * @return LicenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
                      * 设置License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
-                     * @param LicenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * @param _licenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
 
                     /**
                      * 判断参数 LicenseType 是否已赋值
                      * @return LicenseType 是否已赋值
+                     * 
                      */
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
                      * @return AutoVoucher 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
-                     * @param AutoVoucher 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * @param _autoVoucher 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券ID列表（目前仅支持指定一张代金券）
                      * @return VoucherIds 代金券ID列表（目前仅支持指定一张代金券）
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券ID列表（目前仅支持指定一张代金券）
-                     * @param VoucherIds 代金券ID列表（目前仅支持指定一张代金券）
+                     * @param _voucherIds 代金券ID列表（目前仅支持指定一张代金券）
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
                      * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
                      * @return BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 
                      */
                     uint64_t GetBasicSecurityType() const;
 
                     /**
                      * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
-                     * @param BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @param _basicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 
                      */
                     void SetBasicSecurityType(const uint64_t& _basicSecurityType);
 
                     /**
                      * 判断参数 BasicSecurityType 是否已赋值
                      * @return BasicSecurityType 是否已赋值
+                     * 
                      */
                     bool BasicSecurityTypeHasBeenSet() const;
 
                     /**
                      * 获取是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false
                      * @return ForceRestart 是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false
+                     * 
                      */
                     bool GetForceRestart() const;
 
                     /**
                      * 设置是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false
-                     * @param ForceRestart 是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false
+                     * @param _forceRestart 是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false
+                     * 
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
                     /**
                      * 判断参数 ForceRestart 是否已赋值
                      * @return ForceRestart 是否已赋值
+                     * 
                      */
                     bool ForceRestartHasBeenSet() const;
 

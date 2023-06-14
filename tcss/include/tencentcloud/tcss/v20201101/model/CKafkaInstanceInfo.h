@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceID 实例ID
+                     * @param _instanceID 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CKafkaTopicInfo> GetTopicList() const;
 
                     /**
                      * 设置主题列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicList 主题列表
+                     * @param _topicList 主题列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicList(const std::vector<CKafkaTopicInfo>& _topicList);
 
                     /**
                      * 判断参数 TopicList 是否已赋值
                      * @return TopicList 是否已赋值
+                     * 
                      */
                     bool TopicListHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteList 路由列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CkafkaRouteInfo> GetRouteList() const;
 
                     /**
                      * 设置路由列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteList 路由列表
+                     * @param _routeList 路由列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteList(const std::vector<CkafkaRouteInfo>& _routeList);
 
                     /**
                      * 判断参数 RouteList 是否已赋值
                      * @return RouteList 是否已赋值
+                     * 
                      */
                     bool RouteListHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaVersion kafka版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
                      * 设置kafka版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaVersion kafka版本号
+                     * @param _kafkaVersion kafka版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
 
                     /**
                      * 判断参数 KafkaVersion 是否已赋值
                      * @return KafkaVersion 是否已赋值
+                     * 
                      */
                     bool KafkaVersionHasBeenSet() const;
 

@@ -54,18 +54,21 @@ namespace TencentCloud
                     /**
                      * 获取机器人Id。
                      * @return RobotId 机器人Id。
+                     * 
                      */
                     std::string GetRobotId() const;
 
                     /**
                      * 设置机器人Id。
-                     * @param RobotId 机器人Id。
+                     * @param _robotId 机器人Id。
+                     * 
                      */
                     void SetRobotId(const std::string& _robotId);
 
                     /**
                      * 判断参数 RobotId 是否已赋值
                      * @return RobotId 是否已赋值
+                     * 
                      */
                     bool RobotIdHasBeenSet() const;
 
@@ -96,6 +99,7 @@ namespace TencentCloud
 <li>SetDestroyMode：设置销毁模式</li>
 <li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
 <li>SetRealVolume：设置真实音量</li>
+                     * 
                      */
                     std::string GetCommand() const;
 
@@ -113,7 +117,7 @@ namespace TencentCloud
 <li>SetDestroyMode：设置销毁模式</li>
 <li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
 <li>SetRealVolume：设置真实音量</li>
-                     * @param Command 指令，取值有：
+                     * @param _command 指令，取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
 <li>SwitchPrevious：上一首</li>
@@ -126,138 +130,161 @@ namespace TencentCloud
 <li>SetDestroyMode：设置销毁模式</li>
 <li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
 <li>SetRealVolume：设置真实音量</li>
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取播放参数。
                      * @return PlayCommandInput 播放参数。
+                     * 
                      */
                     PlayCommandInput GetPlayCommandInput() const;
 
                     /**
                      * 设置播放参数。
-                     * @param PlayCommandInput 播放参数。
+                     * @param _playCommandInput 播放参数。
+                     * 
                      */
                     void SetPlayCommandInput(const PlayCommandInput& _playCommandInput);
 
                     /**
                      * 判断参数 PlayCommandInput 是否已赋值
                      * @return PlayCommandInput 是否已赋值
+                     * 
                      */
                     bool PlayCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放列表变更信息，当Command取SetPlaylist时，必填。
                      * @return SetPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * 
                      */
                     SetPlaylistCommandInput GetSetPlaylistCommandInput() const;
 
                     /**
                      * 设置播放列表变更信息，当Command取SetPlaylist时，必填。
-                     * @param SetPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * @param _setPlaylistCommandInput 播放列表变更信息，当Command取SetPlaylist时，必填。
+                     * 
                      */
                     void SetSetPlaylistCommandInput(const SetPlaylistCommandInput& _setPlaylistCommandInput);
 
                     /**
                      * 判断参数 SetPlaylistCommandInput 是否已赋值
                      * @return SetPlaylistCommandInput 是否已赋值
+                     * 
                      */
                     bool SetPlaylistCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放进度，当Command取Seek时，必填。
                      * @return SeekCommandInput 播放进度，当Command取Seek时，必填。
+                     * 
                      */
                     SeekCommandInput GetSeekCommandInput() const;
 
                     /**
                      * 设置播放进度，当Command取Seek时，必填。
-                     * @param SeekCommandInput 播放进度，当Command取Seek时，必填。
+                     * @param _seekCommandInput 播放进度，当Command取Seek时，必填。
+                     * 
                      */
                     void SetSeekCommandInput(const SeekCommandInput& _seekCommandInput);
 
                     /**
                      * 判断参数 SeekCommandInput 是否已赋值
                      * @return SeekCommandInput 是否已赋值
+                     * 
                      */
                     bool SeekCommandInputHasBeenSet() const;
 
                     /**
                      * 获取音频参数，当Command取SetAudioParam时，必填。
                      * @return SetAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * 
                      */
                     SetAudioParamCommandInput GetSetAudioParamCommandInput() const;
 
                     /**
                      * 设置音频参数，当Command取SetAudioParam时，必填。
-                     * @param SetAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * @param _setAudioParamCommandInput 音频参数，当Command取SetAudioParam时，必填。
+                     * 
                      */
                     void SetSetAudioParamCommandInput(const SetAudioParamCommandInput& _setAudioParamCommandInput);
 
                     /**
                      * 判断参数 SetAudioParamCommandInput 是否已赋值
                      * @return SetAudioParamCommandInput 是否已赋值
+                     * 
                      */
                     bool SetAudioParamCommandInputHasBeenSet() const;
 
                     /**
                      * 获取自定义消息，当Command取SendMessage时，必填。
                      * @return SendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * 
                      */
                     SendMessageCommandInput GetSendMessageCommandInput() const;
 
                     /**
                      * 设置自定义消息，当Command取SendMessage时，必填。
-                     * @param SendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * @param _sendMessageCommandInput 自定义消息，当Command取SendMessage时，必填。
+                     * 
                      */
                     void SetSendMessageCommandInput(const SendMessageCommandInput& _sendMessageCommandInput);
 
                     /**
                      * 判断参数 SendMessageCommandInput 是否已赋值
                      * @return SendMessageCommandInput 是否已赋值
+                     * 
                      */
                     bool SendMessageCommandInputHasBeenSet() const;
 
                     /**
                      * 获取播放模式，当Command取SetPlayMode时，必填。
                      * @return SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * 
                      */
                     SetPlayModeCommandInput GetSetPlayModeCommandInput() const;
 
                     /**
                      * 设置播放模式，当Command取SetPlayMode时，必填。
-                     * @param SetPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * @param _setPlayModeCommandInput 播放模式，当Command取SetPlayMode时，必填。
+                     * 
                      */
                     void SetSetPlayModeCommandInput(const SetPlayModeCommandInput& _setPlayModeCommandInput);
 
                     /**
                      * 判断参数 SetPlayModeCommandInput 是否已赋值
                      * @return SetPlayModeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetPlayModeCommandInputHasBeenSet() const;
 
                     /**
                      * 获取销毁模式，当Command取SetDestroyMode时，必填。
                      * @return SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * 
                      */
                     SetDestroyModeCommandInput GetSetDestroyModeCommandInput() const;
 
                     /**
                      * 设置销毁模式，当Command取SetDestroyMode时，必填。
-                     * @param SetDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * @param _setDestroyModeCommandInput 销毁模式，当Command取SetDestroyMode时，必填。
+                     * 
                      */
                     void SetSetDestroyModeCommandInput(const SetDestroyModeCommandInput& _setDestroyModeCommandInput);
 
                     /**
                      * 判断参数 SetDestroyModeCommandInput 是否已赋值
                      * @return SetDestroyModeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetDestroyModeCommandInputHasBeenSet() const;
 
@@ -266,38 +293,44 @@ namespace TencentCloud
 （已废弃，请采用 SetRealVolumeCommandInput ）
                      * @return SetVolumeCommandInput <del>音量，当Command取SetVolume时，必填。</del>
 （已废弃，请采用 SetRealVolumeCommandInput ）
+                     * 
                      */
                     SetVolumeCommandInput GetSetVolumeCommandInput() const;
 
                     /**
                      * 设置<del>音量，当Command取SetVolume时，必填。</del>
 （已废弃，请采用 SetRealVolumeCommandInput ）
-                     * @param SetVolumeCommandInput <del>音量，当Command取SetVolume时，必填。</del>
+                     * @param _setVolumeCommandInput <del>音量，当Command取SetVolume时，必填。</del>
 （已废弃，请采用 SetRealVolumeCommandInput ）
+                     * 
                      */
                     void SetSetVolumeCommandInput(const SetVolumeCommandInput& _setVolumeCommandInput);
 
                     /**
                      * 判断参数 SetVolumeCommandInput 是否已赋值
                      * @return SetVolumeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetVolumeCommandInputHasBeenSet() const;
 
                     /**
                      * 获取真实音量，当Command取SetRealVolume时，必填。
                      * @return SetRealVolumeCommandInput 真实音量，当Command取SetRealVolume时，必填。
+                     * 
                      */
                     SetRealVolumeCommandInput GetSetRealVolumeCommandInput() const;
 
                     /**
                      * 设置真实音量，当Command取SetRealVolume时，必填。
-                     * @param SetRealVolumeCommandInput 真实音量，当Command取SetRealVolume时，必填。
+                     * @param _setRealVolumeCommandInput 真实音量，当Command取SetRealVolume时，必填。
+                     * 
                      */
                     void SetSetRealVolumeCommandInput(const SetRealVolumeCommandInput& _setRealVolumeCommandInput);
 
                     /**
                      * 判断参数 SetRealVolumeCommandInput 是否已赋值
                      * @return SetRealVolumeCommandInput 是否已赋值
+                     * 
                      */
                     bool SetRealVolumeCommandInputHasBeenSet() const;
 

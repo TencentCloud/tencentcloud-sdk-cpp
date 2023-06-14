@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取任务列表
                      * @return Tasks 任务列表
+                     * 
                      */
                     std::vector<SimpleTaskInfo> GetTasks() const;
 
                     /**
                      * 设置任务列表
-                     * @param Tasks 任务列表
+                     * @param _tasks 任务列表
+                     * 
                      */
                     void SetTasks(const std::vector<SimpleTaskInfo>& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 
                     /**
                      * 获取任务操作是否消息通知下游任务责任人
                      * @return OperateIsInform 任务操作是否消息通知下游任务责任人
+                     * 
                      */
                     bool GetOperateIsInform() const;
 
                     /**
                      * 设置任务操作是否消息通知下游任务责任人
-                     * @param OperateIsInform 任务操作是否消息通知下游任务责任人
+                     * @param _operateIsInform 任务操作是否消息通知下游任务责任人
+                     * 
                      */
                     void SetOperateIsInform(const bool& _operateIsInform);
 
                     /**
                      * 判断参数 OperateIsInform 是否已赋值
                      * @return OperateIsInform 是否已赋值
+                     * 
                      */
                     bool OperateIsInformHasBeenSet() const;
 

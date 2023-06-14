@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageID 镜像ID
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageID 镜像ID
+                     * @param _imageID 镜像ID
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取关联的主机数
                      * @return HostCount 关联的主机数
+                     * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置关联的主机数
-                     * @param HostCount 关联的主机数
+                     * @param _hostCount 关联的主机数
+                     * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
 
                     /**
                      * 判断参数 HostCount 是否已赋值
                      * @return HostCount 是否已赋值
+                     * 
                      */
                     bool HostCountHasBeenSet() const;
 
                     /**
                      * 获取关联的容器数
                      * @return ContainerCount 关联的容器数
+                     * 
                      */
                     int64_t GetContainerCount() const;
 
                     /**
                      * 设置关联的容器数
-                     * @param ContainerCount 关联的容器数
+                     * @param _containerCount 关联的容器数
+                     * 
                      */
                     void SetContainerCount(const int64_t& _containerCount);
 
                     /**
                      * 判断参数 ContainerCount 是否已赋值
                      * @return ContainerCount 是否已赋值
+                     * 
                      */
                     bool ContainerCountHasBeenSet() const;
 
                     /**
                      * 获取组件列表
                      * @return ComponentList 组件列表
+                     * 
                      */
                     std::vector<VulAffectedImageComponentInfo> GetComponentList() const;
 
                     /**
                      * 设置组件列表
-                     * @param ComponentList 组件列表
+                     * @param _componentList 组件列表
+                     * 
                      */
                     void SetComponentList(const std::vector<VulAffectedImageComponentInfo>& _componentList);
 
                     /**
                      * 判断参数 ComponentList 是否已赋值
                      * @return ComponentList 是否已赋值
+                     * 
                      */
                     bool ComponentListHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取新的别名，1-60个字符或数字的组合
                      * @return Alias 新的别名，1-60个字符或数字的组合
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置新的别名，1-60个字符或数字的组合
-                     * @param Alias 新的别名，1-60个字符或数字的组合
+                     * @param _alias 新的别名，1-60个字符或数字的组合
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取CMK的全局唯一标识符
                      * @return KeyId CMK的全局唯一标识符
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的全局唯一标识符
-                     * @param KeyId CMK的全局唯一标识符
+                     * @param _keyId CMK的全局唯一标识符
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

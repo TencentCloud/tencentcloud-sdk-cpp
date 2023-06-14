@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return AccountId 账号值：
 当账户类型为1时，填入手机号，如135****3695；
 当账户类型为2、3或100时，填入对应的值。
+                     * 
                      */
                     std::string GetAccountId() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置账号值：
 当账户类型为1时，填入手机号，如135****3695；
 当账户类型为2、3或100时，填入对应的值。
-                     * @param AccountId 账号值：
+                     * @param _accountId 账号值：
 当账户类型为1时，填入手机号，如135****3695；
 当账户类型为2、3或100时，填入对应的值。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 

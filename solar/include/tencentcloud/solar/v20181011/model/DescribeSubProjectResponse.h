@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductInfo 作品信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProductInfo GetProductInfo() const;
 
                     /**
                      * 判断参数 ProductInfo 是否已赋值
                      * @return ProductInfo 是否已赋值
+                     * 
                      */
                     bool ProductInfoHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityInfo 活动信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ActivityInfo GetActivityInfo() const;
 
                     /**
                      * 判断参数 ActivityInfo 是否已赋值
                      * @return ActivityInfo 是否已赋值
+                     * 
                      */
                     bool ActivityInfoHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareTitle 分享标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShareTitle() const;
 
                     /**
                      * 判断参数 ShareTitle 是否已赋值
                      * @return ShareTitle 是否已赋值
+                     * 
                      */
                     bool ShareTitleHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareDesc 分享描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShareDesc() const;
 
                     /**
                      * 判断参数 ShareDesc 是否已赋值
                      * @return ShareDesc 是否已赋值
+                     * 
                      */
                     bool ShareDescHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareImg 分享图标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShareImg() const;
 
                     /**
                      * 判断参数 ShareImg 是否已赋值
                      * @return ShareImg 是否已赋值
+                     * 
                      */
                     bool ShareImgHasBeenSet() const;
 
@@ -120,12 +130,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasStrategy 是否已创建策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHasStrategy() const;
 
                     /**
                      * 判断参数 HasStrategy 是否已赋值
                      * @return HasStrategy 是否已赋值
+                     * 
                      */
                     bool HasStrategyHasBeenSet() const;
 
@@ -134,12 +146,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProjectStatus 子项目状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubProjectStatus() const;
 
                     /**
                      * 判断参数 SubProjectStatus 是否已赋值
                      * @return SubProjectStatus 是否已赋值
+                     * 
                      */
                     bool SubProjectStatusHasBeenSet() const;
 
@@ -148,12 +162,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareAppId 分享公众号的appId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShareAppId() const;
 
                     /**
                      * 判断参数 ShareAppId 是否已赋值
                      * @return ShareAppId 是否已赋值
+                     * 
                      */
                     bool ShareAppIdHasBeenSet() const;
 
@@ -162,12 +178,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareWsId 分享公众号的wsId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShareWsId() const;
 
                     /**
                      * 判断参数 ShareWsId 是否已赋值
                      * @return ShareWsId 是否已赋值
+                     * 
                      */
                     bool ShareWsIdHasBeenSet() const;
 

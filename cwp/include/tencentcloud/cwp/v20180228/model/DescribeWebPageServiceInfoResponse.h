@@ -48,108 +48,126 @@ namespace TencentCloud
                     /**
                      * 获取是否已购服务：true-是，false-否
                      * @return Status 是否已购服务：true-是，false-否
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取已使用授权数
                      * @return UsedNum 已使用授权数
+                     * 
                      */
                     uint64_t GetUsedNum() const;
 
                     /**
                      * 判断参数 UsedNum 是否已赋值
                      * @return UsedNum 是否已赋值
+                     * 
                      */
                     bool UsedNumHasBeenSet() const;
 
                     /**
                      * 获取剩余授权数
                      * @return ResidueNum 剩余授权数
+                     * 
                      */
                     uint64_t GetResidueNum() const;
 
                     /**
                      * 判断参数 ResidueNum 是否已赋值
                      * @return ResidueNum 是否已赋值
+                     * 
                      */
                     bool ResidueNumHasBeenSet() const;
 
                     /**
                      * 获取已购授权数
                      * @return BuyNum 已购授权数
+                     * 
                      */
                     uint64_t GetBuyNum() const;
 
                     /**
                      * 判断参数 BuyNum 是否已赋值
                      * @return BuyNum 是否已赋值
+                     * 
                      */
                     bool BuyNumHasBeenSet() const;
 
                     /**
                      * 获取临近到期数量
                      * @return ExpireNum 临近到期数量
+                     * 
                      */
                     uint64_t GetExpireNum() const;
 
                     /**
                      * 判断参数 ExpireNum 是否已赋值
                      * @return ExpireNum 是否已赋值
+                     * 
                      */
                     bool ExpireNumHasBeenSet() const;
 
                     /**
                      * 获取所有授权机器信息
                      * @return AllAuthorizedMachines 所有授权机器信息
+                     * 
                      */
                     std::vector<ProtectMachineInfo> GetAllAuthorizedMachines() const;
 
                     /**
                      * 判断参数 AllAuthorizedMachines 是否已赋值
                      * @return AllAuthorizedMachines 是否已赋值
+                     * 
                      */
                     bool AllAuthorizedMachinesHasBeenSet() const;
 
                     /**
                      * 获取临近到期授权机器信息
                      * @return ExpireAuthorizedMachines 临近到期授权机器信息
+                     * 
                      */
                     std::vector<ProtectMachine> GetExpireAuthorizedMachines() const;
 
                     /**
                      * 判断参数 ExpireAuthorizedMachines 是否已赋值
                      * @return ExpireAuthorizedMachines 是否已赋值
+                     * 
                      */
                     bool ExpireAuthorizedMachinesHasBeenSet() const;
 
                     /**
                      * 获取已过期授权数
                      * @return ExpiredNum 已过期授权数
+                     * 
                      */
                     uint64_t GetExpiredNum() const;
 
                     /**
                      * 判断参数 ExpiredNum 是否已赋值
                      * @return ExpiredNum 是否已赋值
+                     * 
                      */
                     bool ExpiredNumHasBeenSet() const;
 
                     /**
                      * 获取防护目录数
                      * @return ProtectDirNum 防护目录数
+                     * 
                      */
                     uint64_t GetProtectDirNum() const;
 
                     /**
                      * 判断参数 ProtectDirNum 是否已赋值
                      * @return ProtectDirNum 是否已赋值
+                     * 
                      */
                     bool ProtectDirNumHasBeenSet() const;
 

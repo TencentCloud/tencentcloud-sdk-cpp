@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取CHC物理服务器的实例Id。
                      * @return ChcIds CHC物理服务器的实例Id。
+                     * 
                      */
                     std::vector<std::string> GetChcIds() const;
 
                     /**
                      * 设置CHC物理服务器的实例Id。
-                     * @param ChcIds CHC物理服务器的实例Id。
+                     * @param _chcIds CHC物理服务器的实例Id。
+                     * 
                      */
                     void SetChcIds(const std::vector<std::string>& _chcIds);
 
                     /**
                      * 判断参数 ChcIds 是否已赋值
                      * @return ChcIds 是否已赋值
+                     * 
                      */
                     bool ChcIdsHasBeenSet() const;
 
                     /**
                      * 获取部署网络信息。
                      * @return DeployVirtualPrivateCloud 部署网络信息。
+                     * 
                      */
                     VirtualPrivateCloud GetDeployVirtualPrivateCloud() const;
 
                     /**
                      * 设置部署网络信息。
-                     * @param DeployVirtualPrivateCloud 部署网络信息。
+                     * @param _deployVirtualPrivateCloud 部署网络信息。
+                     * 
                      */
                     void SetDeployVirtualPrivateCloud(const VirtualPrivateCloud& _deployVirtualPrivateCloud);
 
                     /**
                      * 判断参数 DeployVirtualPrivateCloud 是否已赋值
                      * @return DeployVirtualPrivateCloud 是否已赋值
+                     * 
                      */
                     bool DeployVirtualPrivateCloudHasBeenSet() const;
 
                     /**
                      * 获取部署网络的安全组列表。
                      * @return DeploySecurityGroupIds 部署网络的安全组列表。
+                     * 
                      */
                     std::vector<std::string> GetDeploySecurityGroupIds() const;
 
                     /**
                      * 设置部署网络的安全组列表。
-                     * @param DeploySecurityGroupIds 部署网络的安全组列表。
+                     * @param _deploySecurityGroupIds 部署网络的安全组列表。
+                     * 
                      */
                     void SetDeploySecurityGroupIds(const std::vector<std::string>& _deploySecurityGroupIds);
 
                     /**
                      * 判断参数 DeploySecurityGroupIds 是否已赋值
                      * @return DeploySecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool DeploySecurityGroupIdsHasBeenSet() const;
 

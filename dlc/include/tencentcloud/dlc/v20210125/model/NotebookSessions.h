@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取类型，当前支持：spark、pyspark、sparkr、sql
                      * @return Kind 类型，当前支持：spark、pyspark、sparkr、sql
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置类型，当前支持：spark、pyspark、sparkr、sql
-                     * @param Kind 类型，当前支持：spark、pyspark、sparkr、sql
+                     * @param _kind 类型，当前支持：spark、pyspark、sparkr、sql
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取Session唯一标识
                      * @return SessionId Session唯一标识
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置Session唯一标识
-                     * @param SessionId Session唯一标识
+                     * @param _sessionId Session唯一标识
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyUser 代理用户，默认为root
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyUser() const;
 
                     /**
                      * 设置代理用户，默认为root
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyUser 代理用户，默认为root
+                     * @param _proxyUser 代理用户，默认为root
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyUser(const std::string& _proxyUser);
 
                     /**
                      * 判断参数 ProxyUser 是否已赋值
                      * @return ProxyUser 是否已赋值
+                     * 
                      */
                     bool ProxyUserHasBeenSet() const;
 
                     /**
                      * 获取Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
                      * @return State Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
-                     * @param State Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * @param _state Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -127,74 +139,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkAppId Spark任务返回的AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSparkAppId() const;
 
                     /**
                      * 设置Spark任务返回的AppId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SparkAppId Spark任务返回的AppId
+                     * @param _sparkAppId Spark任务返回的AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSparkAppId(const std::string& _sparkAppId);
 
                     /**
                      * 判断参数 SparkAppId 是否已赋值
                      * @return SparkAppId 是否已赋值
+                     * 
                      */
                     bool SparkAppIdHasBeenSet() const;
 
                     /**
                      * 获取Session名称
                      * @return Name Session名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Session名称
-                     * @param Name Session名称
+                     * @param _name Session名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Session创建时间
                      * @return CreateTime Session创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置Session创建时间
-                     * @param CreateTime Session创建时间
+                     * @param _createTime Session创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取引擎名称
                      * @return DataEngineName 引擎名称
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置引擎名称
-                     * @param DataEngineName 引擎名称
+                     * @param _dataEngineName 引擎名称
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 
@@ -203,38 +227,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastRunningTime 最新的运行时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastRunningTime() const;
 
                     /**
                      * 设置最新的运行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastRunningTime 最新的运行时间
+                     * @param _lastRunningTime 最新的运行时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastRunningTime(const std::string& _lastRunningTime);
 
                     /**
                      * 判断参数 LastRunningTime 是否已赋值
                      * @return LastRunningTime 是否已赋值
+                     * 
                      */
                     bool LastRunningTimeHasBeenSet() const;
 
                     /**
                      * 获取创建者
                      * @return Creator 创建者
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建者
-                     * @param Creator 创建者
+                     * @param _creator 创建者
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SparkUiUrl spark ui地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSparkUiUrl() const;
 
                     /**
                      * 设置spark ui地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SparkUiUrl spark ui地址
+                     * @param _sparkUiUrl spark ui地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSparkUiUrl(const std::string& _sparkUiUrl);
 
                     /**
                      * 判断参数 SparkUiUrl 是否已赋值
                      * @return SparkUiUrl 是否已赋值
+                     * 
                      */
                     bool SparkUiUrlHasBeenSet() const;
 

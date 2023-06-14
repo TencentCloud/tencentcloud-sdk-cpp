@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取预留字段，暂时不使用
                      * @return Keywords 预留字段，暂时不使用
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置预留字段，暂时不使用
-                     * @param Keywords 预留字段，暂时不使用
+                     * @param _keywords 预留字段，暂时不使用
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
                     /**
                      * 获取预留字段，暂时不用
                      * @return Lable 预留字段，暂时不用
+                     * 
                      */
                     std::string GetLable() const;
 
                     /**
                      * 设置预留字段，暂时不用
-                     * @param Lable 预留字段，暂时不用
+                     * @param _lable 预留字段，暂时不用
+                     * 
                      */
                     void SetLable(const std::string& _lable);
 
                     /**
                      * 判断参数 Lable 是否已赋值
                      * @return Lable 是否已赋值
+                     * 
                      */
                     bool LableHasBeenSet() const;
 
                     /**
                      * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
                      * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @param _label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
                     /**
                      * 获取风险等级，1:疑似，2：恶意
                      * @return Level 风险等级，1:疑似，2：恶意
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置风险等级，1:疑似，2：恶意
-                     * @param Level 风险等级，1:疑似，2：恶意
+                     * @param _level 风险等级，1:疑似，2：恶意
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码：
 <li>0表示没有错误；</li>
 <li>非0表示错误，请参考 Message 错误信息。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置错误码：
 <li>0表示没有错误；</li>
 <li>非0表示错误，请参考 Message 错误信息。</li>
-                     * @param ErrCode 错误码：
+                     * @param _errCode 错误码：
 <li>0表示没有错误；</li>
 <li>非0表示错误，请参考 Message 错误信息。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

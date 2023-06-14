@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取房间Id。
                      * @return RoomId 房间Id。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间Id。
-                     * @param RoomId 房间Id。
+                     * @param _roomId 房间Id。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，从1开始递增。
                      * @return Page 分页查询当前页数，从1开始递增。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置分页查询当前页数，从1开始递增。
-                     * @param Page 分页查询当前页数，从1开始递增。
+                     * @param _page 分页查询当前页数，从1开始递增。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，最大1000。
                      * @return Limit 每页数据量，最大1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，最大1000。
-                     * @param Limit 每页数据量，最大1000。
+                     * @param _limit 每页数据量，最大1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

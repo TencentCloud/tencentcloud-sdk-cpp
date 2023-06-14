@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
                      * @return InstanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * 
                      */
                     std::string GetInstanceDeleteMode() const;
 
                     /**
                      * 设置集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
-                     * @param InstanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * @param _instanceDeleteMode 集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * 
                      */
                     void SetInstanceDeleteMode(const std::string& _instanceDeleteMode);
 
                     /**
                      * 判断参数 InstanceDeleteMode 是否已赋值
                      * @return InstanceDeleteMode 是否已赋值
+                     * 
                      */
                     bool InstanceDeleteModeHasBeenSet() const;
 
                     /**
                      * 获取集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
                      * @return ResourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * 
                      */
                     std::vector<ResourceDeleteOption> GetResourceDeleteOptions() const;
 
                     /**
                      * 设置集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
-                     * @param ResourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * @param _resourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * 
                      */
                     void SetResourceDeleteOptions(const std::vector<ResourceDeleteOption>& _resourceDeleteOptions);
 
                     /**
                      * 判断参数 ResourceDeleteOptions 是否已赋值
                      * @return ResourceDeleteOptions 是否已赋值
+                     * 
                      */
                     bool ResourceDeleteOptionsHasBeenSet() const;
 

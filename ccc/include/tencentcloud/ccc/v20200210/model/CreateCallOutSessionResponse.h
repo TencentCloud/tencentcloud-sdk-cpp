@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的会话 ID
                      * @return SessionId 新创建的会话 ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

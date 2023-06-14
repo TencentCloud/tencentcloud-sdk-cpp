@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host host
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置host
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host host
+                     * @param _host host
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 

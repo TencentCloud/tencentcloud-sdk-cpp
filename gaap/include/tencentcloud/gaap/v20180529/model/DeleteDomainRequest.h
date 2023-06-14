@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取监听器ID
                      * @return ListenerId 监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * @param _listenerId 监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取需要删除的域名
                      * @return Domain 需要删除的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要删除的域名
-                     * @param Domain 需要删除的域名
+                     * @param _domain 需要删除的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 当采用非强制删除时，如果域名下已有规则绑定了源站，则无法删除。
                      * @return Force 是否强制删除已绑定源站的转发规则，0非强制，1强制。
 当采用非强制删除时，如果域名下已有规则绑定了源站，则无法删除。
+                     * 
                      */
                     uint64_t GetForce() const;
 
                     /**
                      * 设置是否强制删除已绑定源站的转发规则，0非强制，1强制。
 当采用非强制删除时，如果域名下已有规则绑定了源站，则无法删除。
-                     * @param Force 是否强制删除已绑定源站的转发规则，0非强制，1强制。
+                     * @param _force 是否强制删除已绑定源站的转发规则，0非强制，1强制。
 当采用非强制删除时，如果域名下已有规则绑定了源站，则无法删除。
+                     * 
                      */
                     void SetForce(const uint64_t& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

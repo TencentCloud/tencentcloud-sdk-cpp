@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeId 授权机构ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeId() const;
 
                     /**
                      * 判断参数 OrgNodeId 是否已赋值
                      * @return OrgNodeId 是否已赋值
+                     * 
                      */
                     bool OrgNodeIdHasBeenSet() const;
 
@@ -75,12 +79,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodeName 机构名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodeName() const;
 
                     /**
                      * 判断参数 OrgNodeName 是否已赋值
                      * @return OrgNodeName 是否已赋值
+                     * 
                      */
                     bool OrgNodeNameHasBeenSet() const;
 
@@ -89,12 +95,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgNodePath 机构目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgNodePath() const;
 
                     /**
                      * 判断参数 OrgNodePath 是否已赋值
                      * @return OrgNodePath 是否已赋值
+                     * 
                      */
                     bool OrgNodePathHasBeenSet() const;
 
@@ -103,12 +111,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationOrgResourceList 资源列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthorizationResourceEntityInfo> GetAuthorizationOrgResourceList() const;
 
                     /**
                      * 判断参数 AuthorizationOrgResourceList 是否已赋值
                      * @return AuthorizationOrgResourceList 是否已赋值
+                     * 
                      */
                     bool AuthorizationOrgResourceListHasBeenSet() const;
 
@@ -117,12 +127,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 资源数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

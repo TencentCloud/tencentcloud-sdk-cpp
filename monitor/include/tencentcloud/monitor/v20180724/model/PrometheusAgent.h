@@ -51,56 +51,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Agent 名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Agent 名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name Agent 名
+                     * @param _name Agent 名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Agent ID
                      * @return AgentId Agent ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置Agent ID
-                     * @param AgentId Agent ID
+                     * @param _agentId Agent ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv4 Agent IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpv4() const;
 
                     /**
                      * 设置Agent IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ipv4 Agent IP
+                     * @param _ipv4 Agent IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpv4(const std::string& _ipv4);
 
                     /**
                      * 判断参数 Ipv4 是否已赋值
                      * @return Ipv4 是否已赋值
+                     * 
                      */
                     bool Ipv4HasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeartbeatTime 心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeartbeatTime() const;
 
                     /**
                      * 设置心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeartbeatTime 心跳时间
+                     * @param _heartbeatTime 心跳时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeartbeatTime(const std::string& _heartbeatTime);
 
                     /**
                      * 判断参数 HeartbeatTime 是否已赋值
                      * @return HeartbeatTime 是否已赋值
+                     * 
                      */
                     bool HeartbeatTimeHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastError 最近一次错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastError() const;
 
                     /**
                      * 设置最近一次错误
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastError 最近一次错误
+                     * @param _lastError 最近一次错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastError(const std::string& _lastError);
 
                     /**
                      * 判断参数 LastError 是否已赋值
                      * @return LastError 是否已赋值
+                     * 
                      */
                     bool LastErrorHasBeenSet() const;
 
@@ -175,38 +193,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentVersion Agent 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
                      * 设置Agent 版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AgentVersion Agent 版本
+                     * @param _agentVersion Agent 版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
 
                     /**
                      * 判断参数 AgentVersion 是否已赋值
                      * @return AgentVersion 是否已赋值
+                     * 
                      */
                     bool AgentVersionHasBeenSet() const;
 
                     /**
                      * 获取Agent 状态
                      * @return Status Agent 状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置Agent 状态
-                     * @param Status Agent 状态
+                     * @param _status Agent 状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

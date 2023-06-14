@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取根据安全组Id获取安全组详情
                      * @return SgIds 根据安全组Id获取安全组详情
+                     * 
                      */
                     std::vector<std::string> GetSgIds() const;
 
                     /**
                      * 设置根据安全组Id获取安全组详情
-                     * @param SgIds 根据安全组Id获取安全组详情
+                     * @param _sgIds 根据安全组Id获取安全组详情
+                     * 
                      */
                     void SetSgIds(const std::vector<std::string>& _sgIds);
 
                     /**
                      * 判断参数 SgIds 是否已赋值
                      * @return SgIds 是否已赋值
+                     * 
                      */
                     bool SgIdsHasBeenSet() const;
 

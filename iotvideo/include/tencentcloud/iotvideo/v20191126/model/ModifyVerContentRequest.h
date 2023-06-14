@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取产品id
                      * @return ProductId 产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品id
-                     * @param ProductId 产品id
+                     * @param _productId 产品id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的版本号
                      * @return OtaVersion 需要修改的版本号
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置需要修改的版本号
-                     * @param OtaVersion 需要修改的版本号
+                     * @param _otaVersion 需要修改的版本号
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
                     /**
                      * 获取操作人,字符长度<=64
                      * @return Operator 操作人,字符长度<=64
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作人,字符长度<=64
-                     * @param Operator 操作人,字符长度<=64
+                     * @param _operator 操作人,字符长度<=64
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取备注信息
                      * @return Remark 备注信息
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-                     * @param Remark 备注信息
+                     * @param _remark 备注信息
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取版本发布的描述信息，需要国际化，可以为空
                      * @return Contents 版本发布的描述信息，需要国际化，可以为空
+                     * 
                      */
                     Contents GetContents() const;
 
                     /**
                      * 设置版本发布的描述信息，需要国际化，可以为空
-                     * @param Contents 版本发布的描述信息，需要国际化，可以为空
+                     * @param _contents 版本发布的描述信息，需要国际化，可以为空
+                     * 
                      */
                     void SetContents(const Contents& _contents);
 
                     /**
                      * 判断参数 Contents 是否已赋值
                      * @return Contents 是否已赋值
+                     * 
                      */
                     bool ContentsHasBeenSet() const;
 

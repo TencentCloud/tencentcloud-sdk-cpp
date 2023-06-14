@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取规则列表
                      * @return Ids 规则列表
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置规则列表
-                     * @param Ids 规则列表
+                     * @param _ids 规则列表
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取开关状态
                      * @return Status 开关状态
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置开关状态
-                     * @param Status 开关状态
+                     * @param _status 开关状态
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取设置为观察模式原因
                      * @return Reason 设置为观察模式原因
+                     * 
                      */
                     uint64_t GetReason() const;
 
                     /**
                      * 设置设置为观察模式原因
-                     * @param Reason 设置为观察模式原因
+                     * @param _reason 设置为观察模式原因
+                     * 
                      */
                     void SetReason(const uint64_t& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

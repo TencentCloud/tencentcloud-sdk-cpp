@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的云数据库产品类型，目前仅支持 "mysql"。
                      * @return Product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置需要查询的云数据库产品类型，目前仅支持 "mysql"。
-                     * @param Product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * @param _product 需要查询的云数据库产品类型，目前仅支持 "mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

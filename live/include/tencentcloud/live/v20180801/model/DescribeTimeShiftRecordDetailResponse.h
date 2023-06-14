@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordList 时移录制会话数组。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TimeShiftRecord> GetRecordList() const;
 
                     /**
                      * 判断参数 RecordList 是否已赋值
                      * @return RecordList 是否已赋值
+                     * 
                      */
                     bool RecordListHasBeenSet() const;
 

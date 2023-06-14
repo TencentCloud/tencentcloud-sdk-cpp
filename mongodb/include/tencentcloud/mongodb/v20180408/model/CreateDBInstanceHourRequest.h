@@ -45,270 +45,315 @@ namespace TencentCloud
                     /**
                      * 获取实例内存大小，单位：GB
                      * @return Memory 实例内存大小，单位：GB
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置实例内存大小，单位：GB
-                     * @param Memory 实例内存大小，单位：GB
+                     * @param _memory 实例内存大小，单位：GB
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取实例硬盘大小，单位：GB
                      * @return Volume 实例硬盘大小，单位：GB
+                     * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
                      * 设置实例硬盘大小，单位：GB
-                     * @param Volume 实例硬盘大小，单位：GB
+                     * @param _volume 实例硬盘大小，单位：GB
+                     * 
                      */
                     void SetVolume(const uint64_t& _volume);
 
                     /**
                      * 判断参数 Volume 是否已赋值
                      * @return Volume 是否已赋值
+                     * 
                      */
                     bool VolumeHasBeenSet() const;
 
                     /**
                      * 获取副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10
                      * @return ReplicateSetNum 副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10
+                     * 
                      */
                     uint64_t GetReplicateSetNum() const;
 
                     /**
                      * 设置副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10
-                     * @param ReplicateSetNum 副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10
+                     * @param _replicateSetNum 副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10
+                     * 
                      */
                     void SetReplicateSetNum(const uint64_t& _replicateSetNum);
 
                     /**
                      * 判断参数 ReplicateSetNum 是否已赋值
                      * @return ReplicateSetNum 是否已赋值
+                     * 
                      */
                     bool ReplicateSetNumHasBeenSet() const;
 
                     /**
                      * 获取每个副本集内从节点个数，目前只支持从节点数为2
                      * @return SecondaryNum 每个副本集内从节点个数，目前只支持从节点数为2
+                     * 
                      */
                     uint64_t GetSecondaryNum() const;
 
                     /**
                      * 设置每个副本集内从节点个数，目前只支持从节点数为2
-                     * @param SecondaryNum 每个副本集内从节点个数，目前只支持从节点数为2
+                     * @param _secondaryNum 每个副本集内从节点个数，目前只支持从节点数为2
+                     * 
                      */
                     void SetSecondaryNum(const uint64_t& _secondaryNum);
 
                     /**
                      * 判断参数 SecondaryNum 是否已赋值
                      * @return SecondaryNum 是否已赋值
+                     * 
                      */
                     bool SecondaryNumHasBeenSet() const;
 
                     /**
                      * 获取MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
                      * @return EngineVersion MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
-                     * @param EngineVersion MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * @param _engineVersion MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
                     /**
                      * 判断参数 EngineVersion 是否已赋值
                      * @return EngineVersion 是否已赋值
+                     * 
                      */
                     bool EngineVersionHasBeenSet() const;
 
                     /**
                      * 获取实例类型，GIO：高IO版；TGIO：高IO万兆
                      * @return Machine 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * 
                      */
                     std::string GetMachine() const;
 
                     /**
                      * 设置实例类型，GIO：高IO版；TGIO：高IO万兆
-                     * @param Machine 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * @param _machine 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * 
                      */
                     void SetMachine(const std::string& _machine);
 
                     /**
                      * 判断参数 Machine 是否已赋值
                      * @return Machine 是否已赋值
+                     * 
                      */
                     bool MachineHasBeenSet() const;
 
                     /**
                      * 获取实例数量，默认值为1, 最小值1，最大值为10
                      * @return GoodsNum 实例数量，默认值为1, 最小值1，最大值为10
+                     * 
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
                      * 设置实例数量，默认值为1, 最小值1，最大值为10
-                     * @param GoodsNum 实例数量，默认值为1, 最小值1，最大值为10
+                     * @param _goodsNum 实例数量，默认值为1, 最小值1，最大值为10
+                     * 
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
 
                     /**
                      * 判断参数 GoodsNum 是否已赋值
                      * @return GoodsNum 是否已赋值
+                     * 
                      */
                     bool GoodsNumHasBeenSet() const;
 
                     /**
                      * 获取可用区信息，格式如：ap-guangzhou-2
                      * @return Zone 可用区信息，格式如：ap-guangzhou-2
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区信息，格式如：ap-guangzhou-2
-                     * @param Zone 可用区信息，格式如：ap-guangzhou-2
+                     * @param _zone 可用区信息，格式如：ap-guangzhou-2
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
                      * @return InstanceRole 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
                      * 设置实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
-                     * @param InstanceRole 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * @param _instanceRole 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
                     /**
                      * 判断参数 InstanceRole 是否已赋值
                      * @return InstanceRole 是否已赋值
+                     * 
                      */
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
                      * 获取实例类型，REPLSET-副本集，SHARD-分片集群
                      * @return InstanceType 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型，REPLSET-副本集，SHARD-分片集群
-                     * @param InstanceType 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * @param _instanceType 实例类型，REPLSET-副本集，SHARD-分片集群
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密
                      * @return Encrypt 数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密
+                     * 
                      */
                     uint64_t GetEncrypt() const;
 
                     /**
                      * 设置数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密
-                     * @param Encrypt 数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密
+                     * @param _encrypt 数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密
+                     * 
                      */
                     void SetEncrypt(const uint64_t& _encrypt);
 
                     /**
                      * 判断参数 Encrypt 是否已赋值
                      * @return Encrypt 是否已赋值
+                     * 
                      */
                     bool EncryptHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID，如果不传则默认选择基础网络
                      * @return VpcId 私有网络ID，如果不传则默认选择基础网络
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID，如果不传则默认选择基础网络
-                     * @param VpcId 私有网络ID，如果不传则默认选择基础网络
+                     * @param _vpcId 私有网络ID，如果不传则默认选择基础网络
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
                      * @return SubnetId 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
-                     * @param SubnetId 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * @param _subnetId 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取项目ID，不填为默认项目
                      * @return ProjectId 项目ID，不填为默认项目
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID，不填为默认项目
-                     * @param ProjectId 项目ID，不填为默认项目
+                     * @param _projectId 项目ID，不填为默认项目
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取安全组参数
                      * @return SecurityGroup 安全组参数
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroup() const;
 
                     /**
                      * 设置安全组参数
-                     * @param SecurityGroup 安全组参数
+                     * @param _securityGroup 安全组参数
+                     * 
                      */
                     void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总记录数
-                     * @param TotalCount 总记录数
+                     * @param _totalCount 总记录数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取API分组信息
                      * @return Content API分组信息
+                     * 
                      */
                     std::vector<ApiGroupInfo> GetContent() const;
 
                     /**
                      * 设置API分组信息
-                     * @param Content API分组信息
+                     * @param _content API分组信息
+                     * 
                      */
                     void SetContent(const std::vector<ApiGroupInfo>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

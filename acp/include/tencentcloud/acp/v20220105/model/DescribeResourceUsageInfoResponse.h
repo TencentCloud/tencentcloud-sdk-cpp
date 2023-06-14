@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义，暂时未定
                      * @return Result 返回值, 0:成功, 其他值请查看“返回值”定义，暂时未定
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取资源使用信息
                      * @return Data 资源使用信息
+                     * 
                      */
                     ResourceUsageInfoData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

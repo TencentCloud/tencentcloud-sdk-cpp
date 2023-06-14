@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取歌曲Id
                      * @return ItemId 歌曲Id
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置歌曲Id
-                     * @param ItemId 歌曲Id
+                     * @param _itemId 歌曲Id
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
                     /**
                      * 获取歌曲名称
                      * @return MusicName 歌曲名称
+                     * 
                      */
                     std::string GetMusicName() const;
 
                     /**
                      * 设置歌曲名称
-                     * @param MusicName 歌曲名称
+                     * @param _musicName 歌曲名称
+                     * 
                      */
                     void SetMusicName(const std::string& _musicName);
 
                     /**
                      * 判断参数 MusicName 是否已赋值
                      * @return MusicName 是否已赋值
+                     * 
                      */
                     bool MusicNameHasBeenSet() const;
 
                     /**
                      * 获取不可用原因
                      * @return OffRemark 不可用原因
+                     * 
                      */
                     std::string GetOffRemark() const;
 
                     /**
                      * 设置不可用原因
-                     * @param OffRemark 不可用原因
+                     * @param _offRemark 不可用原因
+                     * 
                      */
                     void SetOffRemark(const std::string& _offRemark);
 
                     /**
                      * 判断参数 OffRemark 是否已赋值
                      * @return OffRemark 是否已赋值
+                     * 
                      */
                     bool OffRemarkHasBeenSet() const;
 
                     /**
                      * 获取不可用时间
                      * @return OffTime 不可用时间
+                     * 
                      */
                     std::string GetOffTime() const;
 
                     /**
                      * 设置不可用时间
-                     * @param OffTime 不可用时间
+                     * @param _offTime 不可用时间
+                     * 
                      */
                     void SetOffTime(const std::string& _offTime);
 
                     /**
                      * 判断参数 OffTime 是否已赋值
                      * @return OffTime 是否已赋值
+                     * 
                      */
                     bool OffTimeHasBeenSet() const;
 

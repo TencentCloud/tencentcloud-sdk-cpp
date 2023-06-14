@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取旧数据库名
                      * @return OldDBName 旧数据库名
+                     * 
                      */
                     std::string GetOldDBName() const;
 
                     /**
                      * 设置旧数据库名
-                     * @param OldDBName 旧数据库名
+                     * @param _oldDBName 旧数据库名
+                     * 
                      */
                     void SetOldDBName(const std::string& _oldDBName);
 
                     /**
                      * 判断参数 OldDBName 是否已赋值
                      * @return OldDBName 是否已赋值
+                     * 
                      */
                     bool OldDBNameHasBeenSet() const;
 
                     /**
                      * 获取新数据库名
                      * @return NewDBName 新数据库名
+                     * 
                      */
                     std::string GetNewDBName() const;
 
                     /**
                      * 设置新数据库名
-                     * @param NewDBName 新数据库名
+                     * @param _newDBName 新数据库名
+                     * 
                      */
                     void SetNewDBName(const std::string& _newDBName);
 
                     /**
                      * 判断参数 NewDBName 是否已赋值
                      * @return NewDBName 是否已赋值
+                     * 
                      */
                     bool NewDBNameHasBeenSet() const;
 

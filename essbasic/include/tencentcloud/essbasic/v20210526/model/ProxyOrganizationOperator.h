@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
                      * @return Id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
-                     * @param Id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * @param _id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取经办人姓名，最大长度50个字符
                      * @return Name 经办人姓名，最大长度50个字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置经办人姓名，最大长度50个字符
-                     * @param Name 经办人姓名，最大长度50个字符
+                     * @param _name 经办人姓名，最大长度50个字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 
                      */
                     std::string GetIdCardType() const;
 
@@ -99,52 +106,60 @@ namespace TencentCloud
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param IdCardType 经办人身份证件类型
+                     * @param _idCardType 经办人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
                      * 获取经办人证件号
                      * @return IdCardNumber 经办人证件号
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置经办人证件号
-                     * @param IdCardNumber 经办人证件号
+                     * @param _idCardNumber 经办人证件号
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
                      * @return Mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
-                     * @param Mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * @param _mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
@@ -157,6 +172,7 @@ namespace TencentCloud
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
+                     * 
                      */
                     std::string GetDefaultRole() const;
 
@@ -165,16 +181,18 @@ namespace TencentCloud
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-                     * @param DefaultRole 默认角色，值为以下三个对应的英文：
+                     * @param _defaultRole 默认角色，值为以下三个对应的英文：
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
+                     * 
                      */
                     void SetDefaultRole(const std::string& _defaultRole);
 
                     /**
                      * 判断参数 DefaultRole 是否已赋值
                      * @return DefaultRole 是否已赋值
+                     * 
                      */
                     bool DefaultRoleHasBeenSet() const;
 

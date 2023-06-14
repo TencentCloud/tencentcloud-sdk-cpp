@@ -46,288 +46,336 @@ namespace TencentCloud
                     /**
                      * 获取测试项目ID
                      * @return ProjectId 测试项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置测试项目ID
-                     * @param ProjectId 测试项目ID
+                     * @param _projectId 测试项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取测试场景ID
                      * @return ScenarioId 测试场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置测试场景ID
-                     * @param ScenarioId 测试场景ID
+                     * @param _scenarioId 测试场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取测试任务ID
                      * @return JobId 测试任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置测试任务ID
-                     * @param JobId 测试任务ID
+                     * @param _jobId 测试任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
                      * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * @param _context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取日志开始时间
                      * @return From 日志开始时间
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置日志开始时间
-                     * @param From 日志开始时间
+                     * @param _from 日志开始时间
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间
                      * @return To 日志结束时间
+                     * 
                      */
                     std::string GetTo() const;
 
                     /**
                      * 设置日志结束时间
-                     * @param To 日志结束时间
+                     * @param _to 日志结束时间
+                     * 
                      */
                     void SetTo(const std::string& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取日志级别debug,info,error
                      * @return SeverityText 日志级别debug,info,error
+                     * 
                      */
                     std::string GetSeverityText() const;
 
                     /**
                      * 设置日志级别debug,info,error
-                     * @param SeverityText 日志级别debug,info,error
+                     * @param _severityText 日志级别debug,info,error
+                     * 
                      */
                     void SetSeverityText(const std::string& _severityText);
 
                     /**
                      * 判断参数 SeverityText 是否已赋值
                      * @return SeverityText 是否已赋值
+                     * 
                      */
                     bool SeverityTextHasBeenSet() const;
 
                     /**
                      * 获取ap-shanghai, ap-guangzhou
                      * @return InstanceRegion ap-shanghai, ap-guangzhou
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置ap-shanghai, ap-guangzhou
-                     * @param InstanceRegion ap-shanghai, ap-guangzhou
+                     * @param _instanceRegion ap-shanghai, ap-guangzhou
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
                      * 获取施压引擎节点IP
                      * @return Instance 施压引擎节点IP
+                     * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置施压引擎节点IP
-                     * @param Instance 施压引擎节点IP
+                     * @param _instance 施压引擎节点IP
+                     * 
                      */
                     void SetInstance(const std::string& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
                     /**
                      * 获取request 代表采样日志,可为不填
                      * @return LogType request 代表采样日志,可为不填
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置request 代表采样日志,可为不填
-                     * @param LogType request 代表采样日志,可为不填
+                     * @param _logType request 代表采样日志,可为不填
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取返回日志条数，最大100
                      * @return Limit 返回日志条数，最大100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回日志条数，最大100
-                     * @param Limit 返回日志条数，最大100
+                     * @param _limit 返回日志条数，最大100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取采样日志响应时间范围
                      * @return ReactionTimeRange 采样日志响应时间范围
+                     * 
                      */
                     ReactionTimeRange GetReactionTimeRange() const;
 
                     /**
                      * 设置采样日志响应时间范围
-                     * @param ReactionTimeRange 采样日志响应时间范围
+                     * @param _reactionTimeRange 采样日志响应时间范围
+                     * 
                      */
                     void SetReactionTimeRange(const ReactionTimeRange& _reactionTimeRange);
 
                     /**
                      * 判断参数 ReactionTimeRange 是否已赋值
                      * @return ReactionTimeRange 是否已赋值
+                     * 
                      */
                     bool ReactionTimeRangeHasBeenSet() const;
 
                     /**
                      * 获取采样请求状态码
                      * @return Status 采样请求状态码
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置采样请求状态码
-                     * @param Status 采样请求状态码
+                     * @param _status 采样请求状态码
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取采样请求结果码
                      * @return Result 采样请求结果码
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置采样请求结果码
-                     * @param Result 采样请求结果码
+                     * @param _result 采样请求结果码
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取采样请求方法
                      * @return Method 采样请求方法
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置采样请求方法
-                     * @param Method 采样请求方法
+                     * @param _method 采样请求方法
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取采样服务API
                      * @return Service 采样服务API
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置采样服务API
-                     * @param Service 采样服务API
+                     * @param _service 采样服务API
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 

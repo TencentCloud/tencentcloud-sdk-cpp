@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 媒体时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置媒体时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 媒体时长，单位：毫秒
+                     * @param _duration 媒体时长，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultVideoInfoSet 视频流信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResultVideoInfo> GetResultVideoInfoSet() const;
 
                     /**
                      * 设置视频流信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultVideoInfoSet 视频流信息
+                     * @param _resultVideoInfoSet 视频流信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultVideoInfoSet(const std::vector<ResultVideoInfo>& _resultVideoInfoSet);
 
                     /**
                      * 判断参数 ResultVideoInfoSet 是否已赋值
                      * @return ResultVideoInfoSet 是否已赋值
+                     * 
                      */
                     bool ResultVideoInfoSetHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultAudioInfoSet 音频流信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResultAudioInfo> GetResultAudioInfoSet() const;
 
                     /**
                      * 设置音频流信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultAudioInfoSet 音频流信息
+                     * @param _resultAudioInfoSet 音频流信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultAudioInfoSet(const std::vector<ResultAudioInfo>& _resultAudioInfoSet);
 
                     /**
                      * 判断参数 ResultAudioInfoSet 是否已赋值
                      * @return ResultAudioInfoSet 是否已赋值
+                     * 
                      */
                     bool ResultAudioInfoSetHasBeenSet() const;
 

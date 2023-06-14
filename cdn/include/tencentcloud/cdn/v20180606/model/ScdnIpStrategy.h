@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取域名|global表示全部域名
                      * @return Domain 域名|global表示全部域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名|global表示全部域名
-                     * @param Domain 域名|global表示全部域名
+                     * @param _domain 域名|global表示全部域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return StrategyId 策略ID
+                     * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param StrategyId 策略ID
+                     * @param _strategyId 策略ID
+                     * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取IP白名单列表
                      * @return IpList IP白名单列表
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置IP白名单列表
-                     * @param IpList IP白名单列表
+                     * @param _ipList IP白名单列表
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 规则类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置规则类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型
+                     * @param _ruleType 规则类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleValue 规则值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRuleValue() const;
 
                     /**
                      * 设置规则值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleValue 规则值
+                     * @param _ruleValue 规则值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleValue(const std::vector<std::string>& _ruleValue);
 
                     /**
                      * 判断参数 RuleValue 是否已赋值
                      * @return RuleValue 是否已赋值
+                     * 
                      */
                     bool RuleValueHasBeenSet() const;
 

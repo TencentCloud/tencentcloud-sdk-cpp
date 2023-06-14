@@ -52,36 +52,42 @@ namespace TencentCloud
                     /**
                      * 获取采样截图模板 ID。
                      * @return Definition 采样截图模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置采样截图模板 ID。
-                     * @param Definition 采样截图模板 ID。
+                     * @param _definition 采样截图模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
                     /**
                      * 判断参数 WatermarkSet 是否已赋值
                      * @return WatermarkSet 是否已赋值
+                     * 
                      */
                     bool WatermarkSetHasBeenSet() const;
 
@@ -90,38 +96,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStorage 采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputStorage 采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。
+                     * @param _outputStorage 采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
                     /**
                      * 获取采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。
                      * @return OutputObjectPath 采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。
+                     * 
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
                      * 设置采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。
-                     * @param OutputObjectPath 采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。
+                     * @param _outputObjectPath 采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。
+                     * 
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
 
                     /**
                      * 判断参数 OutputObjectPath 是否已赋值
                      * @return OutputObjectPath 是否已赋值
+                     * 
                      */
                     bool OutputObjectPathHasBeenSet() const;
 
@@ -130,20 +142,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectNumberFormat 采样截图后输出路径中的`{number}`变量的规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     NumberFormat GetObjectNumberFormat() const;
 
                     /**
                      * 设置采样截图后输出路径中的`{number}`变量的规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectNumberFormat 采样截图后输出路径中的`{number}`变量的规则。
+                     * @param _objectNumberFormat 采样截图后输出路径中的`{number}`变量的规则。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjectNumberFormat(const NumberFormat& _objectNumberFormat);
 
                     /**
                      * 判断参数 ObjectNumberFormat 是否已赋值
                      * @return ObjectNumberFormat 是否已赋值
+                     * 
                      */
                     bool ObjectNumberFormatHasBeenSet() const;
 

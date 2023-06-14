@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用户的白盒密钥服务是否可用
                      * @return ServiceEnabled 用户的白盒密钥服务是否可用
+                     * 
                      */
                     bool GetServiceEnabled() const;
 
                     /**
                      * 判断参数 ServiceEnabled 是否已赋值
                      * @return ServiceEnabled 是否已赋值
+                     * 
                      */
                     bool ServiceEnabledHasBeenSet() const;
 

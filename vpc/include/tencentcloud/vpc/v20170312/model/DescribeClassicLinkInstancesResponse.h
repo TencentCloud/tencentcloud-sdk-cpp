@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的实例数量。
                      * @return TotalCount 符合条件的实例数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取私有网络和基础网络互通设备。
                      * @return ClassicLinkInstanceSet 私有网络和基础网络互通设备。
+                     * 
                      */
                     std::vector<ClassicLinkInstance> GetClassicLinkInstanceSet() const;
 
                     /**
                      * 判断参数 ClassicLinkInstanceSet 是否已赋值
                      * @return ClassicLinkInstanceSet 是否已赋值
+                     * 
                      */
                     bool ClassicLinkInstanceSetHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取耗时详细信息
                      * @return Data 耗时详细信息
+                     * 
                      */
                     std::vector<CommandTake> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

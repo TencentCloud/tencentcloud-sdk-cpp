@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取披露策略索引
                      * @return Id 披露策略索引
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取披露策略ID
                      * @return PolicyId 披露策略ID
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

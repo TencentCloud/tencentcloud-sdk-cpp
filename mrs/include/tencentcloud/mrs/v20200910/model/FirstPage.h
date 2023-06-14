@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DischargeDiagnosis> GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeDiagnosis 出入院诊断
+                     * @param _dischargeDiagnosis 出入院诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDischargeDiagnosis(const std::vector<DischargeDiagnosis>& _dischargeDiagnosis);
 
                     /**
                      * 判断参数 DischargeDiagnosis 是否已赋值
                      * @return DischargeDiagnosis 是否已赋值
+                     * 
                      */
                     bool DischargeDiagnosisHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalDiagnosis 病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetPathologicalDiagnosis() const;
 
                     /**
                      * 设置病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathologicalDiagnosis 病理诊断
+                     * @param _pathologicalDiagnosis 病理诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPathologicalDiagnosis(const BlockInfo& _pathologicalDiagnosis);
 
                     /**
                      * 判断参数 PathologicalDiagnosis 是否已赋值
                      * @return PathologicalDiagnosis 是否已赋值
+                     * 
                      */
                     bool PathologicalDiagnosisHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClinicalDiagnosis 临床诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetClinicalDiagnosis() const;
 
                     /**
                      * 设置临床诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClinicalDiagnosis 临床诊断
+                     * @param _clinicalDiagnosis 临床诊断
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClinicalDiagnosis(const BlockInfo& _clinicalDiagnosis);
 
                     /**
                      * 判断参数 ClinicalDiagnosis 是否已赋值
                      * @return ClinicalDiagnosis 是否已赋值
+                     * 
                      */
                     bool ClinicalDiagnosisHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DamagePoi 受伤中毒的外部原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfoV2 GetDamagePoi() const;
 
                     /**
                      * 设置受伤中毒的外部原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DamagePoi 受伤中毒的外部原因
+                     * @param _damagePoi 受伤中毒的外部原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDamagePoi(const BlockInfoV2& _damagePoi);
 
                     /**
                      * 判断参数 DamagePoi 是否已赋值
                      * @return DamagePoi 是否已赋值
+                     * 
                      */
                     bool DamagePoiHasBeenSet() const;
 
@@ -143,20 +155,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fp2NdItems 病案首页第二页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Fp2NdItem> GetFp2NdItems() const;
 
                     /**
                      * 设置病案首页第二页
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fp2NdItems 病案首页第二页
+                     * @param _fp2NdItems 病案首页第二页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFp2NdItems(const std::vector<Fp2NdItem>& _fp2NdItems);
 
                     /**
                      * 判断参数 Fp2NdItems 是否已赋值
                      * @return Fp2NdItems 是否已赋值
+                     * 
                      */
                     bool Fp2NdItemsHasBeenSet() const;
 

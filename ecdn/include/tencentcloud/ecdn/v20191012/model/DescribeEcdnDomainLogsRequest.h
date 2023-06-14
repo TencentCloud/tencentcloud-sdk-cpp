@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取待查询域名。
                      * @return Domain 待查询域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置待查询域名。
-                     * @param Domain 待查询域名。
+                     * @param _domain 待查询域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取日志起始时间。如：2019-10-01 00:00:00
                      * @return StartTime 日志起始时间。如：2019-10-01 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志起始时间。如：2019-10-01 00:00:00
-                     * @param StartTime 日志起始时间。如：2019-10-01 00:00:00
+                     * @param _startTime 日志起始时间。如：2019-10-01 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00
                      * @return EndTime 日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00
-                     * @param EndTime 日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00
+                     * @param _endTime 日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取日志链接列表分页起始地址，默认0。
                      * @return Offset 日志链接列表分页起始地址，默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置日志链接列表分页起始地址，默认0。
-                     * @param Offset 日志链接列表分页起始地址，默认0。
+                     * @param _offset 日志链接列表分页起始地址，默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取日志链接列表分页记录条数，默认100，最大1000。
                      * @return Limit 日志链接列表分页记录条数，默认100，最大1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置日志链接列表分页记录条数，默认100，最大1000。
-                     * @param Limit 日志链接列表分页记录条数，默认100，最大1000。
+                     * @param _limit 日志链接列表分页记录条数，默认100，最大1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

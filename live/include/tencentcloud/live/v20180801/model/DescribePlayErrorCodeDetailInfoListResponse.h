@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取统计信息列表。
                      * @return HttpCodeList 统计信息列表。
+                     * 
                      */
                     std::vector<HttpCodeInfo> GetHttpCodeList() const;
 
                     /**
                      * 判断参数 HttpCodeList 是否已赋值
                      * @return HttpCodeList 是否已赋值
+                     * 
                      */
                     bool HttpCodeListHasBeenSet() const;
 
                     /**
                      * 获取统计类型。
                      * @return StatType 统计类型。
+                     * 
                      */
                     std::string GetStatType() const;
 
                     /**
                      * 判断参数 StatType 是否已赋值
                      * @return StatType 是否已赋值
+                     * 
                      */
                     bool StatTypeHasBeenSet() const;
 

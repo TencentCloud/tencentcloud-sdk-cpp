@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取工作负载的类型
                      * @return Kind 工作负载的类型
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置工作负载的类型
-                     * @param Kind 工作负载的类型
+                     * @param _kind 工作负载的类型
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取工作负载的名称
                      * @return Name 工作负载的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置工作负载的名称
-                     * @param Name 工作负载的名称
+                     * @param _name 工作负载的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container 容器名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置容器名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Container 容器名
+                     * @param _container 容器名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainer(const std::string& _container);
 
                     /**
                      * 判断参数 Container 是否已赋值
                      * @return Container 是否已赋值
+                     * 
                      */
                     bool ContainerHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 

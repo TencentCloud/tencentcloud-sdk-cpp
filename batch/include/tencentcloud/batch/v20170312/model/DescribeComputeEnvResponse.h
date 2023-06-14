@@ -50,132 +50,154 @@ namespace TencentCloud
                     /**
                      * 获取计算环境ID
                      * @return EnvId 计算环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取计算环境名称
                      * @return EnvName 计算环境名称
+                     * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 判断参数 EnvName 是否已赋值
                      * @return EnvName 是否已赋值
+                     * 
                      */
                     bool EnvNameHasBeenSet() const;
 
                     /**
                      * 获取位置信息
                      * @return Placement 位置信息
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取计算环境创建时间
                      * @return CreateTime 计算环境创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取计算节点列表信息
                      * @return ComputeNodeSet 计算节点列表信息
+                     * 
                      */
                     std::vector<ComputeNode> GetComputeNodeSet() const;
 
                     /**
                      * 判断参数 ComputeNodeSet 是否已赋值
                      * @return ComputeNodeSet 是否已赋值
+                     * 
                      */
                     bool ComputeNodeSetHasBeenSet() const;
 
                     /**
                      * 获取计算节点统计指标
                      * @return ComputeNodeMetrics 计算节点统计指标
+                     * 
                      */
                     ComputeNodeMetrics GetComputeNodeMetrics() const;
 
                     /**
                      * 判断参数 ComputeNodeMetrics 是否已赋值
                      * @return ComputeNodeMetrics 是否已赋值
+                     * 
                      */
                     bool ComputeNodeMetricsHasBeenSet() const;
 
                     /**
                      * 获取计算节点期望个数
                      * @return DesiredComputeNodeCount 计算节点期望个数
+                     * 
                      */
                     uint64_t GetDesiredComputeNodeCount() const;
 
                     /**
                      * 判断参数 DesiredComputeNodeCount 是否已赋值
                      * @return DesiredComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
                     /**
                      * 获取计算环境类型
                      * @return EnvType 计算环境类型
+                     * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 判断参数 EnvType 是否已赋值
                      * @return EnvType 是否已赋值
+                     * 
                      */
                     bool EnvTypeHasBeenSet() const;
 
                     /**
                      * 获取计算环境资源类型，当前为CVM和CPM（黑石）
                      * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取下一步动作
                      * @return NextAction 下一步动作
+                     * 
                      */
                     std::string GetNextAction() const;
 
                     /**
                      * 判断参数 NextAction 是否已赋值
                      * @return NextAction 是否已赋值
+                     * 
                      */
                     bool NextActionHasBeenSet() const;
 
                     /**
                      * 获取用户添加到计算环境中的计算节点个数
                      * @return AttachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     * 
                      */
                     uint64_t GetAttachedComputeNodeCount() const;
 
                     /**
                      * 判断参数 AttachedComputeNodeCount 是否已赋值
                      * @return AttachedComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool AttachedComputeNodeCountHasBeenSet() const;
 
@@ -184,12 +206,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 计算环境绑定的标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

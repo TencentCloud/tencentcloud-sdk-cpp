@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return SdkAppId 实例Id
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置实例Id
-                     * @param SdkAppId 实例Id
+                     * @param _sdkAppId 实例Id
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取主叫号码
                      * @return Caller 主叫号码
+                     * 
                      */
                     std::string GetCaller() const;
 
                     /**
                      * 设置主叫号码
-                     * @param Caller 主叫号码
+                     * @param _caller 主叫号码
+                     * 
                      */
                     void SetCaller(const std::string& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取被叫号码
                      * @return Callee 被叫号码
+                     * 
                      */
                     std::string GetCallee() const;
 
                     /**
                      * 设置被叫号码
-                     * @param Callee 被叫号码
+                     * @param _callee 被叫号码
+                     * 
                      */
                     void SetCallee(const std::string& _callee);
 
                     /**
                      * 判断参数 Callee 是否已赋值
                      * @return Callee 是否已赋值
+                     * 
                      */
                     bool CalleeHasBeenSet() const;
 
                     /**
                      * 获取生效unix时间戳(秒)
                      * @return CreateTime 生效unix时间戳(秒)
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置生效unix时间戳(秒)
-                     * @param CreateTime 生效unix时间戳(秒)
+                     * @param _createTime 生效unix时间戳(秒)
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取解隔离操作的结果集。
                      * @return Items 解隔离操作的结果集。
+                     * 
                      */
                     std::vector<ReleaseResult> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

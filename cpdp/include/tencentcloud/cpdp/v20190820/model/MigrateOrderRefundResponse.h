@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取请求成功状态
                      * @return IsSuccess 请求成功状态
+                     * 
                      */
                     bool GetIsSuccess() const;
 
                     /**
                      * 判断参数 IsSuccess 是否已赋值
                      * @return IsSuccess 是否已赋值
+                     * 
                      */
                     bool IsSuccessHasBeenSet() const;
 
                     /**
                      * 获取退款流水号
                      * @return TradeSerialNo 退款流水号
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取交易备注
                      * @return TradeMsg 交易备注
+                     * 
                      */
                     std::string GetTradeMsg() const;
 
                     /**
                      * 判断参数 TradeMsg 是否已赋值
                      * @return TradeMsg 是否已赋值
+                     * 
                      */
                     bool TradeMsgHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取FlowId，唯一标识一个flow。
                      * @return FlowId FlowId，唯一标识一个flow。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置FlowId，唯一标识一个flow。
-                     * @param FlowId FlowId，唯一标识一个flow。
+                     * @param _flowId FlowId，唯一标识一个flow。
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取flow所在的区域名称。
                      * @return Region flow所在的区域名称。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置flow所在的区域名称。
-                     * @param Region flow所在的区域名称。
+                     * @param _region flow所在的区域名称。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取服务名称列表
                      * @return ServerNameList 服务名称列表
+                     * 
                      */
                     std::vector<std::string> GetServerNameList() const;
 
                     /**
                      * 设置服务名称列表
-                     * @param ServerNameList 服务名称列表
+                     * @param _serverNameList 服务名称列表
+                     * 
                      */
                     void SetServerNameList(const std::vector<std::string>& _serverNameList);
 
                     /**
                      * 判断参数 ServerNameList 是否已赋值
                      * @return ServerNameList 是否已赋值
+                     * 
                      */
                     bool ServerNameListHasBeenSet() const;
 

@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取查询开始时间
                      * @return StartTime 查询开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始时间
-                     * @param StartTime 查询开始时间
+                     * @param _startTime 查询开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return EndTime 查询结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param EndTime 查询结束时间
+                     * @param _endTime 查询结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取查询时间粒度，单位秒。可选值：60、3600、86400。
                      * @return Period 查询时间粒度，单位秒。可选值：60、3600、86400。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置查询时间粒度，单位秒。可选值：60、3600、86400。
-                     * @param Period 查询时间粒度，单位秒。可选值：60、3600、86400。
+                     * @param _period 查询时间粒度，单位秒。可选值：60、3600、86400。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取查询指标维度
                      * @return MetricDimensions 查询指标维度
+                     * 
                      */
                     std::vector<MetricDimension> GetMetricDimensions() const;
 
                     /**
                      * 设置查询指标维度
-                     * @param MetricDimensions 查询指标维度
+                     * @param _metricDimensions 查询指标维度
+                     * 
                      */
                     void SetMetricDimensions(const std::vector<MetricDimension>& _metricDimensions);
 
                     /**
                      * 判断参数 MetricDimensions 是否已赋值
                      * @return MetricDimensions 是否已赋值
+                     * 
                      */
                     bool MetricDimensionsHasBeenSet() const;
 
                     /**
                      * 获取查询指标名
                      * @return Metrics 查询指标名
+                     * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
                      * 设置查询指标名
-                     * @param Metrics 查询指标名
+                     * @param _metrics 查询指标名
+                     * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取视图视角。可选值：SERVER, CLIENT。默认为SERVER
                      * @return Kind 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置视图视角。可选值：SERVER, CLIENT。默认为SERVER
-                     * @param Kind 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * @param _kind 视图视角。可选值：SERVER, CLIENT。默认为SERVER
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 

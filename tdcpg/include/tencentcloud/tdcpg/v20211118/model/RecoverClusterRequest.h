@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 只有当PayMode为PREPAID时生效。
                      * @return Period 购买时长，单位：月。取值范围为[1,60]，默认值为1。
 只有当PayMode为PREPAID时生效。
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。取值范围为[1,60]，默认值为1。
 只有当PayMode为PREPAID时生效。
-                     * @param Period 购买时长，单位：月。取值范围为[1,60]，默认值为1。
+                     * @param _period 购买时长，单位：月。取值范围为[1,60]，默认值为1。
 只有当PayMode为PREPAID时生效。
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

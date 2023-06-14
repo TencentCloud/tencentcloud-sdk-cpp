@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要设置禁用状态的产品列表
                      * @return ProductId 要设置禁用状态的产品列表
+                     * 
                      */
                     std::vector<std::string> GetProductId() const;
 
                     /**
                      * 设置要设置禁用状态的产品列表
-                     * @param ProductId 要设置禁用状态的产品列表
+                     * @param _productId 要设置禁用状态的产品列表
+                     * 
                      */
                     void SetProductId(const std::vector<std::string>& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取0启用，1禁用
                      * @return Status 0启用，1禁用
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置0启用，1禁用
-                     * @param Status 0启用，1禁用
+                     * @param _status 0启用，1禁用
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

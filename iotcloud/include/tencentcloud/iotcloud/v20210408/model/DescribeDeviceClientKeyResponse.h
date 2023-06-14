@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取设备的私钥
                      * @return ClientKey 设备的私钥
+                     * 
                      */
                     std::string GetClientKey() const;
 
                     /**
                      * 判断参数 ClientKey 是否已赋值
                      * @return ClientKey 是否已赋值
+                     * 
                      */
                     bool ClientKeyHasBeenSet() const;
 

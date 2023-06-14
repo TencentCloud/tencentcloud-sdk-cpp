@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取可创建置放群组数量的上限。
                      * @return GroupQuota 可创建置放群组数量的上限。
+                     * 
                      */
                     int64_t GetGroupQuota() const;
 
                     /**
                      * 判断参数 GroupQuota 是否已赋值
                      * @return GroupQuota 是否已赋值
+                     * 
                      */
                     bool GroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取当前用户已经创建的置放群组数量。
                      * @return CurrentNum 当前用户已经创建的置放群组数量。
+                     * 
                      */
                     int64_t GetCurrentNum() const;
 
                     /**
                      * 判断参数 CurrentNum 是否已赋值
                      * @return CurrentNum 是否已赋值
+                     * 
                      */
                     bool CurrentNumHasBeenSet() const;
 
                     /**
                      * 获取物理机类型容灾组内实例的配额数。
                      * @return CvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInHostGroupQuota() const;
 
                     /**
                      * 判断参数 CvmInHostGroupQuota 是否已赋值
                      * @return CvmInHostGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInHostGroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取交换机类型容灾组内实例的配额数。
                      * @return CvmInSwGroupQuota 交换机类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInSwGroupQuota() const;
 
                     /**
                      * 判断参数 CvmInSwGroupQuota 是否已赋值
                      * @return CvmInSwGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInSwGroupQuotaHasBeenSet() const;
 
                     /**
                      * 获取机架类型容灾组内实例的配额数。
                      * @return CvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+                     * 
                      */
                     int64_t GetCvmInRackGroupQuota() const;
 
                     /**
                      * 判断参数 CvmInRackGroupQuota 是否已赋值
                      * @return CvmInRackGroupQuota 是否已赋值
+                     * 
                      */
                     bool CvmInRackGroupQuotaHasBeenSet() const;
 

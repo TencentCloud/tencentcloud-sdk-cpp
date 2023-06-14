@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取文字内容。
                      * @return Text 文字内容。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文字内容。
-                     * @param Text 文字内容。
+                     * @param _text 文字内容。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取文字水印X坐标。
                      * @return PosX 文字水印X坐标。
+                     * 
                      */
                     int64_t GetPosX() const;
 
                     /**
                      * 设置文字水印X坐标。
-                     * @param PosX 文字水印X坐标。
+                     * @param _posX 文字水印X坐标。
+                     * 
                      */
                     void SetPosX(const int64_t& _posX);
 
                     /**
                      * 判断参数 PosX 是否已赋值
                      * @return PosX 是否已赋值
+                     * 
                      */
                     bool PosXHasBeenSet() const;
 
                     /**
                      * 获取文字水印Y坐标。
                      * @return PosY 文字水印Y坐标。
+                     * 
                      */
                     int64_t GetPosY() const;
 
                     /**
                      * 设置文字水印Y坐标。
-                     * @param PosY 文字水印Y坐标。
+                     * @param _posY 文字水印Y坐标。
+                     * 
                      */
                     void SetPosY(const int64_t& _posY);
 
                     /**
                      * 判断参数 PosY 是否已赋值
                      * @return PosY 是否已赋值
+                     * 
                      */
                     bool PosYHasBeenSet() const;
 
                     /**
                      * 获取文字大小
                      * @return FontSize 文字大小
+                     * 
                      */
                     int64_t GetFontSize() const;
 
                     /**
                      * 设置文字大小
-                     * @param FontSize 文字大小
+                     * @param _fontSize 文字大小
+                     * 
                      */
                     void SetFontSize(const int64_t& _fontSize);
 
                     /**
                      * 判断参数 FontSize 是否已赋值
                      * @return FontSize 是否已赋值
+                     * 
                      */
                     bool FontSizeHasBeenSet() const;
 
                     /**
                      * 获取字体，可选项：hei,song，simkai,arial；默认hei(黑体）。
                      * @return FontFile 字体，可选项：hei,song，simkai,arial；默认hei(黑体）。
+                     * 
                      */
                     std::string GetFontFile() const;
 
                     /**
                      * 设置字体，可选项：hei,song，simkai,arial；默认hei(黑体）。
-                     * @param FontFile 字体，可选项：hei,song，simkai,arial；默认hei(黑体）。
+                     * @param _fontFile 字体，可选项：hei,song，simkai,arial；默认hei(黑体）。
+                     * 
                      */
                     void SetFontFile(const std::string& _fontFile);
 
                     /**
                      * 判断参数 FontFile 是否已赋值
                      * @return FontFile 是否已赋值
+                     * 
                      */
                     bool FontFileHasBeenSet() const;
 
                     /**
                      * 获取字体颜色，颜色见附录，不填默认black。
                      * @return FontColor 字体颜色，颜色见附录，不填默认black。
+                     * 
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置字体颜色，颜色见附录，不填默认black。
-                     * @param FontColor 字体颜色，颜色见附录，不填默认black。
+                     * @param _fontColor 字体颜色，颜色见附录，不填默认black。
+                     * 
                      */
                     void SetFontColor(const std::string& _fontColor);
 
                     /**
                      * 判断参数 FontColor 是否已赋值
                      * @return FontColor 是否已赋值
+                     * 
                      */
                     bool FontColorHasBeenSet() const;
 
                     /**
                      * 获取文字透明度，可选值0-1。0：不透明，1：全透明。默认为0
                      * @return FontAlpha 文字透明度，可选值0-1。0：不透明，1：全透明。默认为0
+                     * 
                      */
                     double GetFontAlpha() const;
 
                     /**
                      * 设置文字透明度，可选值0-1。0：不透明，1：全透明。默认为0
-                     * @param FontAlpha 文字透明度，可选值0-1。0：不透明，1：全透明。默认为0
+                     * @param _fontAlpha 文字透明度，可选值0-1。0：不透明，1：全透明。默认为0
+                     * 
                      */
                     void SetFontAlpha(const double& _fontAlpha);
 
                     /**
                      * 判断参数 FontAlpha 是否已赋值
                      * @return FontAlpha 是否已赋值
+                     * 
                      */
                     bool FontAlphaHasBeenSet() const;
 

@@ -49,396 +49,462 @@ namespace TencentCloud
                     /**
                      * 获取数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      * @return Time 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @param Time 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @param _time 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return PushDomain 推流域名。
+                     * 
                      */
                     std::string GetPushDomain() const;
 
                     /**
                      * 设置推流域名。
-                     * @param PushDomain 推流域名。
+                     * @param _pushDomain 推流域名。
+                     * 
                      */
                     void SetPushDomain(const std::string& _pushDomain);
 
                     /**
                      * 判断参数 PushDomain 是否已赋值
                      * @return PushDomain 是否已赋值
+                     * 
                      */
                     bool PushDomainHasBeenSet() const;
 
                     /**
                      * 获取推流路径。
                      * @return AppName 推流路径。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径。
-                     * @param AppName 推流路径。
+                     * @param _appName 推流路径。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取推流客户端 IP。
                      * @return ClientIp 推流客户端 IP。
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置推流客户端 IP。
-                     * @param ClientIp 推流客户端 IP。
+                     * @param _clientIp 推流客户端 IP。
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      * @return BeginPushTime 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 
                      */
                     std::string GetBeginPushTime() const;
 
                     /**
                      * 设置开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @param BeginPushTime 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @param _beginPushTime 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 
                      */
                     void SetBeginPushTime(const std::string& _beginPushTime);
 
                     /**
                      * 判断参数 BeginPushTime 是否已赋值
                      * @return BeginPushTime 是否已赋值
+                     * 
                      */
                     bool BeginPushTimeHasBeenSet() const;
 
                     /**
                      * 获取分辨率信息。
                      * @return Resolution 分辨率信息。
+                     * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 设置分辨率信息。
-                     * @param Resolution 分辨率信息。
+                     * @param _resolution 分辨率信息。
+                     * 
                      */
                     void SetResolution(const std::string& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
                     /**
                      * 获取视频编码格式。
                      * @return VCodec 视频编码格式。
+                     * 
                      */
                     std::string GetVCodec() const;
 
                     /**
                      * 设置视频编码格式。
-                     * @param VCodec 视频编码格式。
+                     * @param _vCodec 视频编码格式。
+                     * 
                      */
                     void SetVCodec(const std::string& _vCodec);
 
                     /**
                      * 判断参数 VCodec 是否已赋值
                      * @return VCodec 是否已赋值
+                     * 
                      */
                     bool VCodecHasBeenSet() const;
 
                     /**
                      * 获取音频编码格式。
                      * @return ACodec 音频编码格式。
+                     * 
                      */
                     std::string GetACodec() const;
 
                     /**
                      * 设置音频编码格式。
-                     * @param ACodec 音频编码格式。
+                     * @param _aCodec 音频编码格式。
+                     * 
                      */
                     void SetACodec(const std::string& _aCodec);
 
                     /**
                      * 判断参数 ACodec 是否已赋值
                      * @return ACodec 是否已赋值
+                     * 
                      */
                     bool ACodecHasBeenSet() const;
 
                     /**
                      * 获取推流序列号，用来唯一的标志一次推流。
                      * @return Sequence 推流序列号，用来唯一的标志一次推流。
+                     * 
                      */
                     std::string GetSequence() const;
 
                     /**
                      * 设置推流序列号，用来唯一的标志一次推流。
-                     * @param Sequence 推流序列号，用来唯一的标志一次推流。
+                     * @param _sequence 推流序列号，用来唯一的标志一次推流。
+                     * 
                      */
                     void SetSequence(const std::string& _sequence);
 
                     /**
                      * 判断参数 Sequence 是否已赋值
                      * @return Sequence 是否已赋值
+                     * 
                      */
                     bool SequenceHasBeenSet() const;
 
                     /**
                      * 获取视频帧率。
                      * @return VideoFps 视频帧率。
+                     * 
                      */
                     uint64_t GetVideoFps() const;
 
                     /**
                      * 设置视频帧率。
-                     * @param VideoFps 视频帧率。
+                     * @param _videoFps 视频帧率。
+                     * 
                      */
                     void SetVideoFps(const uint64_t& _videoFps);
 
                     /**
                      * 判断参数 VideoFps 是否已赋值
                      * @return VideoFps 是否已赋值
+                     * 
                      */
                     bool VideoFpsHasBeenSet() const;
 
                     /**
                      * 获取视频码率，单位: bps。
                      * @return VideoRate 视频码率，单位: bps。
+                     * 
                      */
                     uint64_t GetVideoRate() const;
 
                     /**
                      * 设置视频码率，单位: bps。
-                     * @param VideoRate 视频码率，单位: bps。
+                     * @param _videoRate 视频码率，单位: bps。
+                     * 
                      */
                     void SetVideoRate(const uint64_t& _videoRate);
 
                     /**
                      * 判断参数 VideoRate 是否已赋值
                      * @return VideoRate 是否已赋值
+                     * 
                      */
                     bool VideoRateHasBeenSet() const;
 
                     /**
                      * 获取音频帧率。
                      * @return AudioFps 音频帧率。
+                     * 
                      */
                     uint64_t GetAudioFps() const;
 
                     /**
                      * 设置音频帧率。
-                     * @param AudioFps 音频帧率。
+                     * @param _audioFps 音频帧率。
+                     * 
                      */
                     void SetAudioFps(const uint64_t& _audioFps);
 
                     /**
                      * 判断参数 AudioFps 是否已赋值
                      * @return AudioFps 是否已赋值
+                     * 
                      */
                     bool AudioFpsHasBeenSet() const;
 
                     /**
                      * 获取音频码率，单位: bps。
                      * @return AudioRate 音频码率，单位: bps。
+                     * 
                      */
                     uint64_t GetAudioRate() const;
 
                     /**
                      * 设置音频码率，单位: bps。
-                     * @param AudioRate 音频码率，单位: bps。
+                     * @param _audioRate 音频码率，单位: bps。
+                     * 
                      */
                     void SetAudioRate(const uint64_t& _audioRate);
 
                     /**
                      * 判断参数 AudioRate 是否已赋值
                      * @return AudioRate 是否已赋值
+                     * 
                      */
                     bool AudioRateHasBeenSet() const;
 
                     /**
                      * 获取本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
                      * @return LocalTs 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * 
                      */
                     uint64_t GetLocalTs() const;
 
                     /**
                      * 设置本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
-                     * @param LocalTs 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * @param _localTs 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * 
                      */
                     void SetLocalTs(const uint64_t& _localTs);
 
                     /**
                      * 判断参数 LocalTs 是否已赋值
                      * @return LocalTs 是否已赋值
+                     * 
                      */
                     bool LocalTsHasBeenSet() const;
 
                     /**
                      * 获取视频流逝时间，单位: ms。
                      * @return VideoTs 视频流逝时间，单位: ms。
+                     * 
                      */
                     uint64_t GetVideoTs() const;
 
                     /**
                      * 设置视频流逝时间，单位: ms。
-                     * @param VideoTs 视频流逝时间，单位: ms。
+                     * @param _videoTs 视频流逝时间，单位: ms。
+                     * 
                      */
                     void SetVideoTs(const uint64_t& _videoTs);
 
                     /**
                      * 判断参数 VideoTs 是否已赋值
                      * @return VideoTs 是否已赋值
+                     * 
                      */
                     bool VideoTsHasBeenSet() const;
 
                     /**
                      * 获取音频流逝时间，单位: ms。
                      * @return AudioTs 音频流逝时间，单位: ms。
+                     * 
                      */
                     uint64_t GetAudioTs() const;
 
                     /**
                      * 设置音频流逝时间，单位: ms。
-                     * @param AudioTs 音频流逝时间，单位: ms。
+                     * @param _audioTs 音频流逝时间，单位: ms。
+                     * 
                      */
                     void SetAudioTs(const uint64_t& _audioTs);
 
                     /**
                      * 判断参数 AudioTs 是否已赋值
                      * @return AudioTs 是否已赋值
+                     * 
                      */
                     bool AudioTsHasBeenSet() const;
 
                     /**
                      * 获取metadata 中的视频码率，单位: kbps。
                      * @return MetaVideoRate metadata 中的视频码率，单位: kbps。
+                     * 
                      */
                     uint64_t GetMetaVideoRate() const;
 
                     /**
                      * 设置metadata 中的视频码率，单位: kbps。
-                     * @param MetaVideoRate metadata 中的视频码率，单位: kbps。
+                     * @param _metaVideoRate metadata 中的视频码率，单位: kbps。
+                     * 
                      */
                     void SetMetaVideoRate(const uint64_t& _metaVideoRate);
 
                     /**
                      * 判断参数 MetaVideoRate 是否已赋值
                      * @return MetaVideoRate 是否已赋值
+                     * 
                      */
                     bool MetaVideoRateHasBeenSet() const;
 
                     /**
                      * 获取metadata 中的音频码率，单位: kbps。
                      * @return MetaAudioRate metadata 中的音频码率，单位: kbps。
+                     * 
                      */
                     uint64_t GetMetaAudioRate() const;
 
                     /**
                      * 设置metadata 中的音频码率，单位: kbps。
-                     * @param MetaAudioRate metadata 中的音频码率，单位: kbps。
+                     * @param _metaAudioRate metadata 中的音频码率，单位: kbps。
+                     * 
                      */
                     void SetMetaAudioRate(const uint64_t& _metaAudioRate);
 
                     /**
                      * 判断参数 MetaAudioRate 是否已赋值
                      * @return MetaAudioRate 是否已赋值
+                     * 
                      */
                     bool MetaAudioRateHasBeenSet() const;
 
                     /**
                      * 获取metadata 中的帧率。
                      * @return MateFps metadata 中的帧率。
+                     * 
                      */
                     uint64_t GetMateFps() const;
 
                     /**
                      * 设置metadata 中的帧率。
-                     * @param MateFps metadata 中的帧率。
+                     * @param _mateFps metadata 中的帧率。
+                     * 
                      */
                     void SetMateFps(const uint64_t& _mateFps);
 
                     /**
                      * 判断参数 MateFps 是否已赋值
                      * @return MateFps 是否已赋值
+                     * 
                      */
                     bool MateFpsHasBeenSet() const;
 
                     /**
                      * 获取推流参数
                      * @return StreamParam 推流参数
+                     * 
                      */
                     std::string GetStreamParam() const;
 
                     /**
                      * 设置推流参数
-                     * @param StreamParam 推流参数
+                     * @param _streamParam 推流参数
+                     * 
                      */
                     void SetStreamParam(const std::string& _streamParam);
 
                     /**
                      * 判断参数 StreamParam 是否已赋值
                      * @return StreamParam 是否已赋值
+                     * 
                      */
                     bool StreamParamHasBeenSet() const;
 
                     /**
                      * 获取带宽，单位Mbps。
                      * @return Bandwidth 带宽，单位Mbps。
+                     * 
                      */
                     double GetBandwidth() const;
 
                     /**
                      * 设置带宽，单位Mbps。
-                     * @param Bandwidth 带宽，单位Mbps。
+                     * @param _bandwidth 带宽，单位Mbps。
+                     * 
                      */
                     void SetBandwidth(const double& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取流量，单位MB。
                      * @return Flux 流量，单位MB。
+                     * 
                      */
                     double GetFlux() const;
 
                     /**
                      * 设置流量，单位MB。
-                     * @param Flux 流量，单位MB。
+                     * @param _flux 流量，单位MB。
+                     * 
                      */
                     void SetFlux(const double& _flux);
 
                     /**
                      * 判断参数 Flux 是否已赋值
                      * @return Flux 是否已赋值
+                     * 
                      */
                     bool FluxHasBeenSet() const;
 
@@ -447,20 +513,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerIp 推流服务端 IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServerIp() const;
 
                     /**
                      * 设置推流服务端 IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerIp 推流服务端 IP。
+                     * @param _serverIp 推流服务端 IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServerIp(const std::string& _serverIp);
 
                     /**
                      * 判断参数 ServerIp 是否已赋值
                      * @return ServerIp 是否已赋值
+                     * 
                      */
                     bool ServerIpHasBeenSet() const;
 

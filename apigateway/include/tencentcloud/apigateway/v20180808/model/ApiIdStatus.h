@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取服务唯一ID。
                      * @return ServiceId 服务唯一ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一ID。
-                     * @param ServiceId 服务唯一ID。
+                     * @param _serviceId 服务唯一ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取API唯一ID。
                      * @return ApiId API唯一ID。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API唯一ID。
-                     * @param ApiId API唯一ID。
+                     * @param _apiId API唯一ID。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
@@ -88,92 +94,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiDesc API描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiDesc() const;
 
                     /**
                      * 设置API描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiDesc API描述
+                     * @param _apiDesc API描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiDesc(const std::string& _apiDesc);
 
                     /**
                      * 判断参数 ApiDesc 是否已赋值
                      * @return ApiDesc 是否已赋值
+                     * 
                      */
                     bool ApiDescHasBeenSet() const;
 
                     /**
                      * 获取API PATH。
                      * @return Path API PATH。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API PATH。
-                     * @param Path API PATH。
+                     * @param _path API PATH。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取API METHOD。
                      * @return Method API METHOD。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置API METHOD。
-                     * @param Method API METHOD。
+                     * @param _method API METHOD。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取服务创建时间。
                      * @return CreatedTime 服务创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置服务创建时间。
-                     * @param CreatedTime 服务创建时间。
+                     * @param _createdTime 服务创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取服务修改时间。
                      * @return ModifiedTime 服务修改时间。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置服务修改时间。
-                     * @param ModifiedTime 服务修改时间。
+                     * @param _modifiedTime 服务修改时间。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiName API名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置API名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiName API名称。
+                     * @param _apiName API名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
@@ -204,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId VPC唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置VPC唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqVpcId VPC唯一ID。
+                     * @param _uniqVpcId VPC唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
@@ -226,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiType API类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiType() const;
 
                     /**
                      * 设置API类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiType API类型。
+                     * @param _apiType API类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 
@@ -248,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol API协议。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置API协议。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol API协议。
+                     * @param _protocol API协议。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -270,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDebugAfterCharge 是否买后调试。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsDebugAfterCharge() const;
 
                     /**
                      * 设置是否买后调试。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDebugAfterCharge 是否买后调试。
+                     * @param _isDebugAfterCharge 是否买后调试。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDebugAfterCharge(const bool& _isDebugAfterCharge);
 
                     /**
                      * 判断参数 IsDebugAfterCharge 是否已赋值
                      * @return IsDebugAfterCharge 是否已赋值
+                     * 
                      */
                     bool IsDebugAfterChargeHasBeenSet() const;
 
@@ -292,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 授权类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置授权类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthType 授权类型。
+                     * @param _authType 授权类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
@@ -314,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiBusinessType API业务类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiBusinessType() const;
 
                     /**
                      * 设置API业务类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiBusinessType API业务类型。
+                     * @param _apiBusinessType API业务类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiBusinessType(const std::string& _apiBusinessType);
 
                     /**
                      * 判断参数 ApiBusinessType 是否已赋值
                      * @return ApiBusinessType 是否已赋值
+                     * 
                      */
                     bool ApiBusinessTypeHasBeenSet() const;
 
@@ -336,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthRelationApiId 关联授权API唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthRelationApiId() const;
 
                     /**
                      * 设置关联授权API唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthRelationApiId 关联授权API唯一ID。
+                     * @param _authRelationApiId 关联授权API唯一ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthRelationApiId(const std::string& _authRelationApiId);
 
                     /**
                      * 判断参数 AuthRelationApiId 是否已赋值
                      * @return AuthRelationApiId 是否已赋值
+                     * 
                      */
                     bool AuthRelationApiIdHasBeenSet() const;
 
@@ -358,20 +403,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelationBuniessApiIds 授权API关联的业务API列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRelationBuniessApiIds() const;
 
                     /**
                      * 设置授权API关联的业务API列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelationBuniessApiIds 授权API关联的业务API列表。
+                     * @param _relationBuniessApiIds 授权API关联的业务API列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelationBuniessApiIds(const std::vector<std::string>& _relationBuniessApiIds);
 
                     /**
                      * 判断参数 RelationBuniessApiIds 是否已赋值
                      * @return RelationBuniessApiIds 是否已赋值
+                     * 
                      */
                     bool RelationBuniessApiIdsHasBeenSet() const;
 
@@ -380,20 +428,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OauthConfig oauth配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OauthConfig GetOauthConfig() const;
 
                     /**
                      * 设置oauth配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OauthConfig oauth配置信息。
+                     * @param _oauthConfig oauth配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOauthConfig(const OauthConfig& _oauthConfig);
 
                     /**
                      * 判断参数 OauthConfig 是否已赋值
                      * @return OauthConfig 是否已赋值
+                     * 
                      */
                     bool OauthConfigHasBeenSet() const;
 
@@ -402,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TokenLocation oauth2.0API请求，token存放位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTokenLocation() const;
 
                     /**
                      * 设置oauth2.0API请求，token存放位置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TokenLocation oauth2.0API请求，token存放位置。
+                     * @param _tokenLocation oauth2.0API请求，token存放位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTokenLocation(const std::string& _tokenLocation);
 
                     /**
                      * 判断参数 TokenLocation 是否已赋值
                      * @return TokenLocation 是否已赋值
+                     * 
                      */
                     bool TokenLocationHasBeenSet() const;
 

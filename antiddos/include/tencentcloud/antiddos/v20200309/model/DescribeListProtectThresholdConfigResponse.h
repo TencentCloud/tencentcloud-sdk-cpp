@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return Total 总记录数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取防护阈值配置列表
                      * @return ConfigList 防护阈值配置列表
+                     * 
                      */
                     std::vector<ProtectThresholdRelation> GetConfigList() const;
 
                     /**
                      * 判断参数 ConfigList 是否已赋值
                      * @return ConfigList 是否已赋值
+                     * 
                      */
                     bool ConfigListHasBeenSet() const;
 

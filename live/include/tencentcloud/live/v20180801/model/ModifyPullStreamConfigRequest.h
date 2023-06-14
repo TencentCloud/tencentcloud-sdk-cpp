@@ -51,6 +51,7 @@ namespace TencentCloud
 获取来源：
 1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
 2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
+                     * 
                      */
                     std::string GetConfigId() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 获取来源：
 1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
 2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
-                     * @param ConfigId 配置 ID。
+                     * @param _configId 配置 ID。
 获取来源：
 1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。
 2. 通过查询接口DescribePullStreamConfigs获取配置 ID。
+                     * 
                      */
                     void SetConfigId(const std::string& _configId);
 
                     /**
                      * 判断参数 ConfigId 是否已赋值
                      * @return ConfigId 是否已赋值
+                     * 
                      */
                     bool ConfigIdHasBeenSet() const;
 
@@ -85,6 +88,7 @@ namespace TencentCloud
 2. 目前上限支持10个 URL。
 3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
 4. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * 
                      */
                     std::string GetFromUrl() const;
 
@@ -95,18 +99,20 @@ namespace TencentCloud
 2. 目前上限支持10个 URL。
 3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
 4. 使用标准三层样式，如：http://test.com/live/stream.flv。
-                     * @param FromUrl 源 URL，用于拉流的地址。目前可支持直播流及点播文件。
+                     * @param _fromUrl 源 URL，用于拉流的地址。目前可支持直播流及点播文件。
 注意：
 1. 多个点播 URL 之间使用空格拼接。
 2. 目前上限支持10个 URL。
 3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。
 4. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * 
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
                     /**
                      * 判断参数 FromUrl 是否已赋值
                      * @return FromUrl 是否已赋值
+                     * 
                      */
                     bool FromUrlHasBeenSet() const;
 
@@ -117,6 +123,7 @@ namespace TencentCloud
                      * @return ToUrl 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
 1. 仅支持 RTMP 协议。
 2. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * 
                      */
                     std::string GetToUrl() const;
 
@@ -124,15 +131,17 @@ namespace TencentCloud
                      * 设置目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
 1. 仅支持 RTMP 协议。
 2. 使用标准三层样式，如：http://test.com/live/stream.flv。
-                     * @param ToUrl 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
+                     * @param _toUrl 目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。
 1. 仅支持 RTMP 协议。
 2. 使用标准三层样式，如：http://test.com/live/stream.flv。
+                     * 
                      */
                     void SetToUrl(const std::string& _toUrl);
 
                     /**
                      * 判断参数 ToUrl 是否已赋值
                      * @return ToUrl 是否已赋值
+                     * 
                      */
                     bool ToUrlHasBeenSet() const;
 
@@ -149,6 +158,7 @@ namespace TencentCloud
 3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
+                     * 
                      */
                     int64_t GetAreaId() const;
 
@@ -159,18 +169,20 @@ namespace TencentCloud
 3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
-                     * @param AreaId 区域 ID：
+                     * @param _areaId 区域 ID：
 1-深圳。
 2-上海。
 3-天津。
 4-中国香港。
 如有改动，需同时传入IspId。
+                     * 
                      */
                     void SetAreaId(const int64_t& _areaId);
 
                     /**
                      * 判断参数 AreaId 是否已赋值
                      * @return AreaId 是否已赋值
+                     * 
                      */
                     bool AreaIdHasBeenSet() const;
 
@@ -187,6 +199,7 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 3：联通。
 4：其他。
 AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
+                     * 
                      */
                     int64_t GetIspId() const;
 
@@ -197,18 +210,20 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 3：联通。
 4：其他。
 AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
-                     * @param IspId 运营商 ID，
+                     * @param _ispId 运营商 ID，
 1：电信。
 2：移动。
 3：联通。
 4：其他。
 AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。
+                     * 
                      */
                     void SetIspId(const int64_t& _ispId);
 
                     /**
                      * 判断参数 IspId 是否已赋值
                      * @return IspId 是否已赋值
+                     * 
                      */
                     bool IspIdHasBeenSet() const;
 
@@ -221,6 +236,7 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -229,16 +245,18 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -259,6 +277,7 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -271,7 +290,7 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime 结束时间，注意：
+                     * @param _endTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
@@ -279,12 +298,14 @@ AreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaI
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

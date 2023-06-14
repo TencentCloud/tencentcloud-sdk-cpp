@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取根据节点名称模糊匹配
                      * @return NamePattern 根据节点名称模糊匹配
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置根据节点名称模糊匹配
-                     * @param NamePattern 根据节点名称模糊匹配
+                     * @param _namePattern 根据节点名称模糊匹配
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取根据设备SN模糊匹配
                      * @return SNPattern 根据设备SN模糊匹配
+                     * 
                      */
                     std::string GetSNPattern() const;
 
                     /**
                      * 设置根据设备SN模糊匹配
-                     * @param SNPattern 根据设备SN模糊匹配
+                     * @param _sNPattern 根据设备SN模糊匹配
+                     * 
                      */
                     void SetSNPattern(const std::string& _sNPattern);
 
                     /**
                      * 判断参数 SNPattern 是否已赋值
                      * @return SNPattern 是否已赋值
+                     * 
                      */
                     bool SNPatternHasBeenSet() const;
 
                     /**
                      * 获取根据备注批次信息模糊匹配
                      * @return RemarkPattern 根据备注批次信息模糊匹配
+                     * 
                      */
                     std::string GetRemarkPattern() const;
 
                     /**
                      * 设置根据备注批次信息模糊匹配
-                     * @param RemarkPattern 根据备注批次信息模糊匹配
+                     * @param _remarkPattern 根据备注批次信息模糊匹配
+                     * 
                      */
                     void SetRemarkPattern(const std::string& _remarkPattern);
 
                     /**
                      * 判断参数 RemarkPattern 是否已赋值
                      * @return RemarkPattern 是否已赋值
+                     * 
                      */
                     bool RemarkPatternHasBeenSet() const;
 
                     /**
                      * 获取默认0
                      * @return Offset 默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置默认0
-                     * @param Offset 默认0
+                     * @param _offset 默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取默认20
                      * @return Limit 默认20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置默认20
-                     * @param Limit 默认20
+                     * @param _limit 默认20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

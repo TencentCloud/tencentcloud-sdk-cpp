@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @param _vpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
                      * @return CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
+                     * 
                      */
                     std::vector<std::string> GetCidrBlocks() const;
 
                     /**
                      * 设置CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
-                     * @param CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
+                     * @param _cidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
+                     * 
                      */
                     void SetCidrBlocks(const std::vector<std::string>& _cidrBlocks);
 
                     /**
                      * 判断参数 CidrBlocks 是否已赋值
                      * @return CidrBlocks 是否已赋值
+                     * 
                      */
                     bool CidrBlocksHasBeenSet() const;
 

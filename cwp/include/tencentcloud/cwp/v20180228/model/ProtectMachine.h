@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取机器名称
                      * @return HostName 机器名称
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置机器名称
-                     * @param HostName 机器名称
+                     * @param _hostName 机器名称
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取机器IP
                      * @return HostIp 机器IP
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置机器IP
-                     * @param HostIp 机器IP
+                     * @param _hostIp 机器IP
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取防护目录数
                      * @return SafeguardDirNum 防护目录数
+                     * 
                      */
                     uint64_t GetSafeguardDirNum() const;
 
                     /**
                      * 设置防护目录数
-                     * @param SafeguardDirNum 防护目录数
+                     * @param _safeguardDirNum 防护目录数
+                     * 
                      */
                     void SetSafeguardDirNum(const uint64_t& _safeguardDirNum);
 
                     /**
                      * 判断参数 SafeguardDirNum 是否已赋值
                      * @return SafeguardDirNum 是否已赋值
+                     * 
                      */
                     bool SafeguardDirNumHasBeenSet() const;
 

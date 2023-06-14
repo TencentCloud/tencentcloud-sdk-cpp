@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取资产列表
                      * @return AssetList 资产列表
+                     * 
                      */
                     AssetList GetAssetList() const;
 
                     /**
                      * 判断参数 AssetList 是否已赋值
                      * @return AssetList 是否已赋值
+                     * 
                      */
                     bool AssetListHasBeenSet() const;
 
                     /**
                      * 获取聚合数据
                      * @return AggregationData 聚合数据
+                     * 
                      */
                     std::vector<AggregationObj> GetAggregationData() const;
 
                     /**
                      * 判断参数 AggregationData 是否已赋值
                      * @return AggregationData 是否已赋值
+                     * 
                      */
                     bool AggregationDataHasBeenSet() const;
 
                     /**
                      * 获取命名空间数据
                      * @return NamespaceData 命名空间数据
+                     * 
                      */
                     std::vector<std::string> GetNamespaceData() const;
 
                     /**
                      * 判断参数 NamespaceData 是否已赋值
                      * @return NamespaceData 是否已赋值
+                     * 
                      */
                     bool NamespaceDataHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要导出信息的资产类型
                      * @return AssetType 要导出信息的资产类型
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置要导出信息的资产类型
-                     * @param AssetType 要导出信息的资产类型
+                     * @param _assetType 要导出信息的资产类型
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
                     /**
                      * 获取按照检测项导出，还是按照资产导出。true: 按照资产导出；false: 按照检测项导出。
                      * @return ExportByAsset 按照检测项导出，还是按照资产导出。true: 按照资产导出；false: 按照检测项导出。
+                     * 
                      */
                     bool GetExportByAsset() const;
 
                     /**
                      * 设置按照检测项导出，还是按照资产导出。true: 按照资产导出；false: 按照检测项导出。
-                     * @param ExportByAsset 按照检测项导出，还是按照资产导出。true: 按照资产导出；false: 按照检测项导出。
+                     * @param _exportByAsset 按照检测项导出，还是按照资产导出。true: 按照资产导出；false: 按照检测项导出。
+                     * 
                      */
                     void SetExportByAsset(const bool& _exportByAsset);
 
                     /**
                      * 判断参数 ExportByAsset 是否已赋值
                      * @return ExportByAsset 是否已赋值
+                     * 
                      */
                     bool ExportByAssetHasBeenSet() const;
 
                     /**
                      * 获取true, 全部导出；false, 根据IdList来导出数据。
                      * @return ExportAll true, 全部导出；false, 根据IdList来导出数据。
+                     * 
                      */
                     bool GetExportAll() const;
 
                     /**
                      * 设置true, 全部导出；false, 根据IdList来导出数据。
-                     * @param ExportAll true, 全部导出；false, 根据IdList来导出数据。
+                     * @param _exportAll true, 全部导出；false, 根据IdList来导出数据。
+                     * 
                      */
                     void SetExportAll(const bool& _exportAll);
 
                     /**
                      * 判断参数 ExportAll 是否已赋值
                      * @return ExportAll 是否已赋值
+                     * 
                      */
                     bool ExportAllHasBeenSet() const;
 
                     /**
                      * 获取要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。
                      * @return IdList 要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。
+                     * 
                      */
                     std::vector<uint64_t> GetIdList() const;
 
                     /**
                      * 设置要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。
-                     * @param IdList 要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。
+                     * @param _idList 要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。
+                     * 
                      */
                     void SetIdList(const std::vector<uint64_t>& _idList);
 
                     /**
                      * 判断参数 IdList 是否已赋值
                      * @return IdList 是否已赋值
+                     * 
                      */
                     bool IdListHasBeenSet() const;
 

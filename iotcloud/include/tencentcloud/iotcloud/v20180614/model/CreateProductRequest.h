@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
                      * @return ProductName 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
-                     * @param ProductName 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
+                     * @param _productName 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
                     /**
                      * 获取产品属性
                      * @return ProductProperties 产品属性
+                     * 
                      */
                     ProductProperties GetProductProperties() const;
 
                     /**
                      * 设置产品属性
-                     * @param ProductProperties 产品属性
+                     * @param _productProperties 产品属性
+                     * 
                      */
                     void SetProductProperties(const ProductProperties& _productProperties);
 
                     /**
                      * 判断参数 ProductProperties 是否已赋值
                      * @return ProductProperties 是否已赋值
+                     * 
                      */
                     bool ProductPropertiesHasBeenSet() const;
 
                     /**
                      * 获取创建CLAA产品时，需要Skey
                      * @return Skey 创建CLAA产品时，需要Skey
+                     * 
                      */
                     std::string GetSkey() const;
 
                     /**
                      * 设置创建CLAA产品时，需要Skey
-                     * @param Skey 创建CLAA产品时，需要Skey
+                     * @param _skey 创建CLAA产品时，需要Skey
+                     * 
                      */
                     void SetSkey(const std::string& _skey);
 
                     /**
                      * 判断参数 Skey 是否已赋值
                      * @return Skey 是否已赋值
+                     * 
                      */
                     bool SkeyHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取门店总数
                      * @return TotalCount 门店总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取门店列表信息
                      * @return ShopInfoSet 门店列表信息
+                     * 
                      */
                     std::vector<ShopInfo> GetShopInfoSet() const;
 
                     /**
                      * 判断参数 ShopInfoSet 是否已赋值
                      * @return ShopInfoSet 是否已赋值
+                     * 
                      */
                     bool ShopInfoSetHasBeenSet() const;
 

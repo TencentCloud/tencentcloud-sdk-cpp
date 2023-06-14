@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取库存设备数量
                      * @return DeviceCount 库存设备数量
+                     * 
                      */
                     uint64_t GetDeviceCount() const;
 
                     /**
                      * 判断参数 DeviceCount 是否已赋值
                      * @return DeviceCount 是否已赋值
+                     * 
                      */
                     bool DeviceCountHasBeenSet() const;
 

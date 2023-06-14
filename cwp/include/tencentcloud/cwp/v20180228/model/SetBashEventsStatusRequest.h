@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取ID数组，最大100条。
                      * @return Ids ID数组，最大100条。
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置ID数组，最大100条。
-                     * @param Ids ID数组，最大100条。
+                     * @param _ids ID数组，最大100条。
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取新状态(0-待处理 1-高危 2-正常)
                      * @return Status 新状态(0-待处理 1-高危 2-正常)
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置新状态(0-待处理 1-高危 2-正常)
-                     * @param Status 新状态(0-待处理 1-高危 2-正常)
+                     * @param _status 新状态(0-待处理 1-高危 2-正常)
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

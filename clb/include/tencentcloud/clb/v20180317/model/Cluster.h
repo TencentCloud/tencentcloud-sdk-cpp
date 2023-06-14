@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取集群唯一ID
                      * @return ClusterId 集群唯一ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群唯一ID
-                     * @param ClusterId 集群唯一ID
+                     * @param _clusterId 集群唯一ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群类型，如TGW，STGW，VPCGW
                      * @return ClusterType 集群类型，如TGW，STGW，VPCGW
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型，如TGW，STGW，VPCGW
-                     * @param ClusterType 集群类型，如TGW，STGW，VPCGW
+                     * @param _clusterType 集群类型，如TGW，STGW，VPCGW
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
@@ -106,56 +115,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterTag 集群标签，只有STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterTag() const;
 
                     /**
                      * 设置集群标签，只有STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterTag 集群标签，只有STGW集群有标签
+                     * @param _clusterTag 集群标签，只有STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterTag(const std::string& _clusterTag);
 
                     /**
                      * 判断参数 ClusterTag 是否已赋值
                      * @return ClusterTag 是否已赋值
+                     * 
                      */
                     bool ClusterTagHasBeenSet() const;
 
                     /**
                      * 获取集群所在可用区，如ap-guangzhou-1
                      * @return Zone 集群所在可用区，如ap-guangzhou-1
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置集群所在可用区，如ap-guangzhou-1
-                     * @param Zone 集群所在可用区，如ap-guangzhou-1
+                     * @param _zone 集群所在可用区，如ap-guangzhou-1
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取集群网络类型，如Public，Private
                      * @return Network 集群网络类型，如Public，Private
+                     * 
                      */
                     std::string GetNetwork() const;
 
                     /**
                      * 设置集群网络类型，如Public，Private
-                     * @param Network 集群网络类型，如Public，Private
+                     * @param _network 集群网络类型，如Public，Private
+                     * 
                      */
                     void SetNetwork(const std::string& _network);
 
                     /**
                      * 判断参数 Network 是否已赋值
                      * @return Network 是否已赋值
+                     * 
                      */
                     bool NetworkHasBeenSet() const;
 
@@ -164,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConn 最大连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxConn() const;
 
                     /**
                      * 设置最大连接数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxConn 最大连接数
+                     * @param _maxConn 最大连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxConn(const int64_t& _maxConn);
 
                     /**
                      * 判断参数 MaxConn 是否已赋值
                      * @return MaxConn 是否已赋值
+                     * 
                      */
                     bool MaxConnHasBeenSet() const;
 
@@ -186,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxInFlow 最大入带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxInFlow() const;
 
                     /**
                      * 设置最大入带宽
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxInFlow 最大入带宽
+                     * @param _maxInFlow 最大入带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxInFlow(const int64_t& _maxInFlow);
 
                     /**
                      * 判断参数 MaxInFlow 是否已赋值
                      * @return MaxInFlow 是否已赋值
+                     * 
                      */
                     bool MaxInFlowHasBeenSet() const;
 
@@ -208,20 +232,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxInPkg 最大入包量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxInPkg() const;
 
                     /**
                      * 设置最大入包量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxInPkg 最大入包量
+                     * @param _maxInPkg 最大入包量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxInPkg(const int64_t& _maxInPkg);
 
                     /**
                      * 判断参数 MaxInPkg 是否已赋值
                      * @return MaxInPkg 是否已赋值
+                     * 
                      */
                     bool MaxInPkgHasBeenSet() const;
 
@@ -230,20 +257,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxOutFlow 最大出带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxOutFlow() const;
 
                     /**
                      * 设置最大出带宽
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxOutFlow 最大出带宽
+                     * @param _maxOutFlow 最大出带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxOutFlow(const int64_t& _maxOutFlow);
 
                     /**
                      * 判断参数 MaxOutFlow 是否已赋值
                      * @return MaxOutFlow 是否已赋值
+                     * 
                      */
                     bool MaxOutFlowHasBeenSet() const;
 
@@ -252,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxOutPkg 最大出包量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxOutPkg() const;
 
                     /**
                      * 设置最大出包量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxOutPkg 最大出包量
+                     * @param _maxOutPkg 最大出包量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxOutPkg(const int64_t& _maxOutPkg);
 
                     /**
                      * 判断参数 MaxOutPkg 是否已赋值
                      * @return MaxOutPkg 是否已赋值
+                     * 
                      */
                     bool MaxOutPkgHasBeenSet() const;
 
@@ -274,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNewConn 最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxNewConn() const;
 
                     /**
                      * 设置最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxNewConn 最大新建连接数
+                     * @param _maxNewConn 最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxNewConn(const int64_t& _maxNewConn);
 
                     /**
                      * 判断参数 MaxNewConn 是否已赋值
                      * @return MaxNewConn 是否已赋值
+                     * 
                      */
                     bool MaxNewConnHasBeenSet() const;
 
@@ -296,20 +332,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPMaxNewConn http最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHTTPMaxNewConn() const;
 
                     /**
                      * 设置http最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HTTPMaxNewConn http最大新建连接数
+                     * @param _hTTPMaxNewConn http最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHTTPMaxNewConn(const int64_t& _hTTPMaxNewConn);
 
                     /**
                      * 判断参数 HTTPMaxNewConn 是否已赋值
                      * @return HTTPMaxNewConn 是否已赋值
+                     * 
                      */
                     bool HTTPMaxNewConnHasBeenSet() const;
 
@@ -318,20 +357,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPSMaxNewConn https最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHTTPSMaxNewConn() const;
 
                     /**
                      * 设置https最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HTTPSMaxNewConn https最大新建连接数
+                     * @param _hTTPSMaxNewConn https最大新建连接数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHTTPSMaxNewConn(const int64_t& _hTTPSMaxNewConn);
 
                     /**
                      * 判断参数 HTTPSMaxNewConn 是否已赋值
                      * @return HTTPSMaxNewConn 是否已赋值
+                     * 
                      */
                     bool HTTPSMaxNewConnHasBeenSet() const;
 
@@ -340,20 +382,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPQps http QPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHTTPQps() const;
 
                     /**
                      * 设置http QPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HTTPQps http QPS
+                     * @param _hTTPQps http QPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHTTPQps(const int64_t& _hTTPQps);
 
                     /**
                      * 判断参数 HTTPQps 是否已赋值
                      * @return HTTPQps 是否已赋值
+                     * 
                      */
                     bool HTTPQpsHasBeenSet() const;
 
@@ -362,38 +407,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPSQps https QPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHTTPSQps() const;
 
                     /**
                      * 设置https QPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HTTPSQps https QPS
+                     * @param _hTTPSQps https QPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHTTPSQps(const int64_t& _hTTPSQps);
 
                     /**
                      * 判断参数 HTTPSQps 是否已赋值
                      * @return HTTPSQps 是否已赋值
+                     * 
                      */
                     bool HTTPSQpsHasBeenSet() const;
 
                     /**
                      * 获取集群内资源总数目
                      * @return ResourceCount 集群内资源总数目
+                     * 
                      */
                     int64_t GetResourceCount() const;
 
                     /**
                      * 设置集群内资源总数目
-                     * @param ResourceCount 集群内资源总数目
+                     * @param _resourceCount 集群内资源总数目
+                     * 
                      */
                     void SetResourceCount(const int64_t& _resourceCount);
 
                     /**
                      * 判断参数 ResourceCount 是否已赋值
                      * @return ResourceCount 是否已赋值
+                     * 
                      */
                     bool ResourceCountHasBeenSet() const;
 
@@ -402,20 +453,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdleResourceCount 集群内空闲资源数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIdleResourceCount() const;
 
                     /**
                      * 设置集群内空闲资源数目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdleResourceCount 集群内空闲资源数目
+                     * @param _idleResourceCount 集群内空闲资源数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdleResourceCount(const int64_t& _idleResourceCount);
 
                     /**
                      * 判断参数 IdleResourceCount 是否已赋值
                      * @return IdleResourceCount 是否已赋值
+                     * 
                      */
                     bool IdleResourceCountHasBeenSet() const;
 
@@ -424,20 +478,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalanceDirectorCount 集群内转发机的数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLoadBalanceDirectorCount() const;
 
                     /**
                      * 设置集群内转发机的数目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalanceDirectorCount 集群内转发机的数目
+                     * @param _loadBalanceDirectorCount 集群内转发机的数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalanceDirectorCount(const int64_t& _loadBalanceDirectorCount);
 
                     /**
                      * 判断参数 LoadBalanceDirectorCount 是否已赋值
                      * @return LoadBalanceDirectorCount 是否已赋值
+                     * 
                      */
                     bool LoadBalanceDirectorCountHasBeenSet() const;
 
@@ -446,20 +503,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsp() const;
 
                     /**
                      * 设置集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
+                     * @param _isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsp(const std::string& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
@@ -468,20 +528,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClustersZone 集群所在的可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClustersZone GetClustersZone() const;
 
                     /**
                      * 设置集群所在的可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClustersZone 集群所在的可用区
+                     * @param _clustersZone 集群所在的可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClustersZone(const ClustersZone& _clustersZone);
 
                     /**
                      * 判断参数 ClustersZone 是否已赋值
                      * @return ClustersZone 是否已赋值
+                     * 
                      */
                     bool ClustersZoneHasBeenSet() const;
 
@@ -490,20 +553,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClustersVersion 集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClustersVersion() const;
 
                     /**
                      * 设置集群版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClustersVersion 集群版本
+                     * @param _clustersVersion 集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClustersVersion(const std::string& _clustersVersion);
 
                     /**
                      * 判断参数 ClustersVersion 是否已赋值
                      * @return ClustersVersion 是否已赋值
+                     * 
                      */
                     bool ClustersVersionHasBeenSet() const;
 
@@ -512,20 +578,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisasterRecoveryType() const;
 
                     /**
                      * 设置集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+                     * @param _disasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisasterRecoveryType(const std::string& _disasterRecoveryType);
 
                     /**
                      * 判断参数 DisasterRecoveryType 是否已赋值
                      * @return DisasterRecoveryType 是否已赋值
+                     * 
                      */
                     bool DisasterRecoveryTypeHasBeenSet() const;
 

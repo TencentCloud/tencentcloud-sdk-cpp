@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取客户用于计费的资源Id
                      * @return ResourceId 客户用于计费的资源Id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置客户用于计费的资源Id
-                     * @param ResourceId 客户用于计费的资源Id
+                     * @param _resourceId 客户用于计费的资源Id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取终端骚扰保护请求
                      * @return RequestData 终端骚扰保护请求
+                     * 
                      */
                     CHPRequest GetRequestData() const;
 
                     /**
                      * 设置终端骚扰保护请求
-                     * @param RequestData 终端骚扰保护请求
+                     * @param _requestData 终端骚扰保护请求
+                     * 
                      */
                     void SetRequestData(const CHPRequest& _requestData);
 
                     /**
                      * 判断参数 RequestData 是否已赋值
                      * @return RequestData 是否已赋值
+                     * 
                      */
                     bool RequestDataHasBeenSet() const;
 

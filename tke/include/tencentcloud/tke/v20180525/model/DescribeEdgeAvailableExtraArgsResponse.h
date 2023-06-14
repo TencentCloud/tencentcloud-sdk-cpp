@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableExtraArgs 可用的自定义参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EdgeAvailableExtraArgs GetAvailableExtraArgs() const;
 
                     /**
                      * 判断参数 AvailableExtraArgs 是否已赋值
                      * @return AvailableExtraArgs 是否已赋值
+                     * 
                      */
                     bool AvailableExtraArgsHasBeenSet() const;
 

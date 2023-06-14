@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取该集群内宿主机的统计信息列表
                      * @return HostStatisticSet 该集群内宿主机的统计信息列表
+                     * 
                      */
                     std::vector<HostStatistic> GetHostStatisticSet() const;
 
                     /**
                      * 判断参数 HostStatisticSet 是否已赋值
                      * @return HostStatisticSet 是否已赋值
+                     * 
                      */
                     bool HostStatisticSetHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取处理事件id
                      * @return EventIdSet 处理事件id
+                     * 
                      */
                     std::vector<std::string> GetEventIdSet() const;
 
                     /**
                      * 设置处理事件id
-                     * @param EventIdSet 处理事件id
+                     * @param _eventIdSet 处理事件id
+                     * 
                      */
                     void SetEventIdSet(const std::vector<std::string>& _eventIdSet);
 
                     /**
                      * 判断参数 EventIdSet 是否已赋值
                      * @return EventIdSet 是否已赋值
+                     * 
                      */
                     bool EventIdSetHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
     EVENT_PENDING: 事件待处理
 	EVENT_ISOLATE_CONTAINER: 隔离容器
 	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -89,7 +93,7 @@ namespace TencentCloud
     EVENT_PENDING: 事件待处理
 	EVENT_ISOLATE_CONTAINER: 隔离容器
 	EVENT_RESOTRE_CONTAINER: 恢复容器
-                     * @param Status 标记事件的状态，   
+                     * @param _status 标记事件的状态，   
     EVENT_DEALED:事件处理
     EVENT_INGNORE"：事件忽略
     EVENT_DEL:事件删除
@@ -97,48 +101,56 @@ namespace TencentCloud
     EVENT_PENDING: 事件待处理
 	EVENT_ISOLATE_CONTAINER: 隔离容器
 	EVENT_RESOTRE_CONTAINER: 恢复容器
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取事件备注
                      * @return Remark 事件备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置事件备注
-                     * @param Remark 事件备注
+                     * @param _remark 事件备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取是否后续自动隔离相同MD5文件
                      * @return AutoIsolate 是否后续自动隔离相同MD5文件
+                     * 
                      */
                     bool GetAutoIsolate() const;
 
                     /**
                      * 设置是否后续自动隔离相同MD5文件
-                     * @param AutoIsolate 是否后续自动隔离相同MD5文件
+                     * @param _autoIsolate 是否后续自动隔离相同MD5文件
+                     * 
                      */
                     void SetAutoIsolate(const bool& _autoIsolate);
 
                     /**
                      * 判断参数 AutoIsolate 是否已赋值
                      * @return AutoIsolate 是否已赋值
+                     * 
                      */
                     bool AutoIsolateHasBeenSet() const;
 

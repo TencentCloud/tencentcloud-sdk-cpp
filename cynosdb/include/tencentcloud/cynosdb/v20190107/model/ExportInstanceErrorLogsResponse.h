@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLogItems 错误日志导出内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ErrorLogItemExport> GetErrorLogItems() const;
 
                     /**
                      * 判断参数 ErrorLogItems 是否已赋值
                      * @return ErrorLogItems 是否已赋值
+                     * 
                      */
                     bool ErrorLogItemsHasBeenSet() const;
 

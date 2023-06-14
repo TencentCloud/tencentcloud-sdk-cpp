@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
                      * @return AttributeKey AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
+                     * 
                      */
                     std::string GetAttributeKey() const;
 
                     /**
                      * 设置AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-                     * @param AttributeKey AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
+                     * @param _attributeKey AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
+                     * 
                      */
                     void SetAttributeKey(const std::string& _attributeKey);
 
                     /**
                      * 判断参数 AttributeKey 是否已赋值
                      * @return AttributeKey 是否已赋值
+                     * 
                      */
                     bool AttributeKeyHasBeenSet() const;
 
                     /**
                      * 获取AttributeValue的值
                      * @return AttributeValue AttributeValue的值
+                     * 
                      */
                     std::string GetAttributeValue() const;
 
                     /**
                      * 设置AttributeValue的值
-                     * @param AttributeValue AttributeValue的值
+                     * @param _attributeValue AttributeValue的值
+                     * 
                      */
                     void SetAttributeValue(const std::string& _attributeValue);
 
                     /**
                      * 判断参数 AttributeValue 是否已赋值
                      * @return AttributeValue 是否已赋值
+                     * 
                      */
                     bool AttributeValueHasBeenSet() const;
 

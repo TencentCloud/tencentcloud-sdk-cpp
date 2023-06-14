@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如postgres-6fego161
                      * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-6fego161
-                     * @param DBInstanceId 实例ID，形如postgres-6fego161
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
                      * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
-                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * @param _instanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
                      * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @param Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * @param _period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取续费标记：0-正常续费（默认）；1-自动续费。
                      * @return AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费。
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置续费标记：0-正常续费（默认）；1-自动续费。
-                     * @param AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费。
+                     * @param _autoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费。
+                     * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券,1是,0否，默认不使用
                      * @return AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券,1是,0否，默认不使用
-                     * @param AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * @param _autoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 

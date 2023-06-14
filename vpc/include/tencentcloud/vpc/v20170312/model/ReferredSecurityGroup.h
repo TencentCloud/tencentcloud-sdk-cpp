@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID。
                      * @return SecurityGroupId 安全组实例ID。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID。
-                     * @param SecurityGroupId 安全组实例ID。
+                     * @param _securityGroupId 安全组实例ID。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。
                      * @return ReferredSecurityGroupIds 引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。
+                     * 
                      */
                     std::vector<std::string> GetReferredSecurityGroupIds() const;
 
                     /**
                      * 设置引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。
-                     * @param ReferredSecurityGroupIds 引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。
+                     * @param _referredSecurityGroupIds 引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。
+                     * 
                      */
                     void SetReferredSecurityGroupIds(const std::vector<std::string>& _referredSecurityGroupIds);
 
                     /**
                      * 判断参数 ReferredSecurityGroupIds 是否已赋值
                      * @return ReferredSecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool ReferredSecurityGroupIdsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通道基础费用价格，单位：元/天。
                      * @return ProxyDailyPrice 通道基础费用价格，单位：元/天。
+                     * 
                      */
                     double GetProxyDailyPrice() const;
 
                     /**
                      * 判断参数 ProxyDailyPrice 是否已赋值
                      * @return ProxyDailyPrice 是否已赋值
+                     * 
                      */
                     bool ProxyDailyPriceHasBeenSet() const;
 
@@ -61,36 +63,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthUnitPrice 通道带宽费用梯度价格。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BandwidthPriceGradient> GetBandwidthUnitPrice() const;
 
                     /**
                      * 判断参数 BandwidthUnitPrice 是否已赋值
                      * @return BandwidthUnitPrice 是否已赋值
+                     * 
                      */
                     bool BandwidthUnitPriceHasBeenSet() const;
 
                     /**
                      * 获取通道基础费用折扣价格，单位：元/天。
                      * @return DiscountProxyDailyPrice 通道基础费用折扣价格，单位：元/天。
+                     * 
                      */
                     double GetDiscountProxyDailyPrice() const;
 
                     /**
                      * 判断参数 DiscountProxyDailyPrice 是否已赋值
                      * @return DiscountProxyDailyPrice 是否已赋值
+                     * 
                      */
                     bool DiscountProxyDailyPriceHasBeenSet() const;
 
                     /**
                      * 获取价格使用的货币，支持人民币，美元等。
                      * @return Currency 价格使用的货币，支持人民币，美元等。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowUnitPrice 通道的流量费用价格，单位: 元/GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFlowUnitPrice() const;
 
                     /**
                      * 判断参数 FlowUnitPrice 是否已赋值
                      * @return FlowUnitPrice 是否已赋值
+                     * 
                      */
                     bool FlowUnitPriceHasBeenSet() const;
 
@@ -113,12 +123,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountFlowUnitPrice 通道的流量费用折扣价格，单位:元/GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscountFlowUnitPrice() const;
 
                     /**
                      * 判断参数 DiscountFlowUnitPrice 是否已赋值
                      * @return DiscountFlowUnitPrice 是否已赋值
+                     * 
                      */
                     bool DiscountFlowUnitPriceHasBeenSet() const;
 
@@ -127,12 +139,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cn2BandwidthPrice 精品BGP的带宽费用价格，单位: 元/Mbps/天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCn2BandwidthPrice() const;
 
                     /**
                      * 判断参数 Cn2BandwidthPrice 是否已赋值
                      * @return Cn2BandwidthPrice 是否已赋值
+                     * 
                      */
                     bool Cn2BandwidthPriceHasBeenSet() const;
 
@@ -141,12 +155,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cn2BandwidthPriceWithDiscount 精品BGP的折后带宽费用价格，单位: 元/Mbps/天
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCn2BandwidthPriceWithDiscount() const;
 
                     /**
                      * 判断参数 Cn2BandwidthPriceWithDiscount 是否已赋值
                      * @return Cn2BandwidthPriceWithDiscount 是否已赋值
+                     * 
                      */
                     bool Cn2BandwidthPriceWithDiscountHasBeenSet() const;
 

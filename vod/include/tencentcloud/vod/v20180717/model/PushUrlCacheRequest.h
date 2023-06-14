@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取预热的 URL 列表，单次最多指定20个 URL。
                      * @return Urls 预热的 URL 列表，单次最多指定20个 URL。
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置预热的 URL 列表，单次最多指定20个 URL。
-                     * @param Urls 预热的 URL 列表，单次最多指定20个 URL。
+                     * @param _urls 预热的 URL 列表，单次最多指定20个 URL。
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

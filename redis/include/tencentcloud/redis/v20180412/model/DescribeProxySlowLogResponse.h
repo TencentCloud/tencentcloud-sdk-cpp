@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取慢查询总数。
                      * @return TotalCount 慢查询总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取慢查询详情。
                      * @return InstanceProxySlowLogDetail 慢查询详情。
+                     * 
                      */
                     std::vector<InstanceProxySlowlogDetail> GetInstanceProxySlowLogDetail() const;
 
                     /**
                      * 判断参数 InstanceProxySlowLogDetail 是否已赋值
                      * @return InstanceProxySlowLogDetail 是否已赋值
+                     * 
                      */
                     bool InstanceProxySlowLogDetailHasBeenSet() const;
 

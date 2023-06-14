@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取API版本列表
                      * @return Result API版本列表
+                     * 
                      */
                     std::vector<ApiVersionArray> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

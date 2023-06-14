@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取机构在平台的编号，内部字段，暂未开放
                      * @return OrganizationId 机构在平台的编号，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetOrganizationId() const;
 
                     /**
                      * 设置机构在平台的编号，内部字段，暂未开放
-                     * @param OrganizationId 机构在平台的编号，内部字段，暂未开放
+                     * @param _organizationId 机构在平台的编号，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetOrganizationId(const std::string& _organizationId);
 
                     /**
                      * 判断参数 OrganizationId 是否已赋值
                      * @return OrganizationId 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取用户渠道，内部字段，暂未开放
                      * @return Channel 用户渠道，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置用户渠道，内部字段，暂未开放
-                     * @param Channel 用户渠道，内部字段，暂未开放
+                     * @param _channel 用户渠道，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * @deprecated
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取用户在渠道的机构编号，内部字段，暂未开放
                      * @return OrganizationOpenId 用户在渠道的机构编号，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置用户在渠道的机构编号，内部字段，暂未开放
-                     * @param OrganizationOpenId 用户在渠道的机构编号，内部字段，暂未开放
+                     * @param _organizationOpenId 用户在渠道的机构编号，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
                     /**
                      * 判断参数 OrganizationOpenId 是否已赋值
                      * @return OrganizationOpenId 是否已赋值
+                     * @deprecated
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
                      * 获取用户真实的IP，内部字段，暂未开放
                      * @return ClientIp 用户真实的IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置用户真实的IP，内部字段，暂未开放
-                     * @param ClientIp 用户真实的IP，内部字段，暂未开放
+                     * @param _clientIp 用户真实的IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * @deprecated
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取机构的代理IP，内部字段，暂未开放
                      * @return ProxyIp 机构的代理IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     std::string GetProxyIp() const;
 
                     /**
                      * 设置机构的代理IP，内部字段，暂未开放
-                     * @param ProxyIp 机构的代理IP，内部字段，暂未开放
+                     * @param _proxyIp 机构的代理IP，内部字段，暂未开放
+                     * @deprecated
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
                     /**
                      * 判断参数 ProxyIp 是否已赋值
                      * @return ProxyIp 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyIpHasBeenSet() const;
 

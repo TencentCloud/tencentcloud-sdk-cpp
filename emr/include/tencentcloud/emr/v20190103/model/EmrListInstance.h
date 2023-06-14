@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -71,182 +74,212 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置状态描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusDesc 状态描述
+                     * @param _statusDesc 状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
                     /**
                      * 获取集群名字
                      * @return ClusterName 集群名字
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名字
-                     * @param ClusterName 集群名字
+                     * @param _clusterName 集群名字
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群地域
                      * @return ZoneId 集群地域
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置集群地域
-                     * @param ZoneId 集群地域
+                     * @param _zoneId 集群地域
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取用户APPID
                      * @return AppId 用户APPID
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置用户APPID
-                     * @param AppId 用户APPID
+                     * @param _appId 用户APPID
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return AddTime 创建时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param AddTime 创建时间
+                     * @param _addTime 创建时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
                     /**
                      * 获取运行时间
                      * @return RunTime 运行时间
+                     * 
                      */
                     std::string GetRunTime() const;
 
                     /**
                      * 设置运行时间
-                     * @param RunTime 运行时间
+                     * @param _runTime 运行时间
+                     * 
                      */
                     void SetRunTime(const std::string& _runTime);
 
                     /**
                      * 判断参数 RunTime 是否已赋值
                      * @return RunTime 是否已赋值
+                     * 
                      */
                     bool RunTimeHasBeenSet() const;
 
                     /**
                      * 获取集群IP
                      * @return MasterIp 集群IP
+                     * 
                      */
                     std::string GetMasterIp() const;
 
                     /**
                      * 设置集群IP
-                     * @param MasterIp 集群IP
+                     * @param _masterIp 集群IP
+                     * 
                      */
                     void SetMasterIp(const std::string& _masterIp);
 
                     /**
                      * 判断参数 MasterIp 是否已赋值
                      * @return MasterIp 是否已赋值
+                     * 
                      */
                     bool MasterIpHasBeenSet() const;
 
                     /**
                      * 获取集群版本
                      * @return EmrVersion 集群版本
+                     * 
                      */
                     std::string GetEmrVersion() const;
 
                     /**
                      * 设置集群版本
-                     * @param EmrVersion 集群版本
+                     * @param _emrVersion 集群版本
+                     * 
                      */
                     void SetEmrVersion(const std::string& _emrVersion);
 
                     /**
                      * 判断参数 EmrVersion 是否已赋值
                      * @return EmrVersion 是否已赋值
+                     * 
                      */
                     bool EmrVersionHasBeenSet() const;
 
                     /**
                      * 获取集群计费类型
                      * @return ChargeType 集群计费类型
+                     * 
                      */
                     uint64_t GetChargeType() const;
 
                     /**
                      * 设置集群计费类型
-                     * @param ChargeType 集群计费类型
+                     * @param _chargeType 集群计费类型
+                     * 
                      */
                     void SetChargeType(const uint64_t& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取emr ID
                      * @return Id emr ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置emr ID
-                     * @param Id emr ID
+                     * @param _id emr ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -255,20 +288,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const uint64_t& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -277,20 +313,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -299,20 +338,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 区域
+                     * @param _regionId 区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
@@ -321,20 +363,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSubnetId() const;
 
                     /**
                      * 设置子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const uint64_t& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -343,20 +388,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVpcId() const;
 
                     /**
                      * 设置网络ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 网络ID
+                     * @param _vpcId 网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const uint64_t& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -365,20 +413,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 地区
+                     * @param _zone 地区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -387,20 +438,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态码
+                     * @param _status 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -409,20 +463,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 实例标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置实例标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 实例标签
+                     * @param _tags 实例标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -431,20 +488,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmInfo 告警信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmInfo() const;
 
                     /**
                      * 设置告警信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmInfo 告警信息
+                     * @param _alarmInfo 告警信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlarmInfo(const std::string& _alarmInfo);
 
                     /**
                      * 判断参数 AlarmInfo 是否已赋值
                      * @return AlarmInfo 是否已赋值
+                     * 
                      */
                     bool AlarmInfoHasBeenSet() const;
 
@@ -453,20 +513,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWoodpeckerCluster 是否是woodpecker集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsWoodpeckerCluster() const;
 
                     /**
                      * 设置是否是woodpecker集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsWoodpeckerCluster 是否是woodpecker集群
+                     * @param _isWoodpeckerCluster 是否是woodpecker集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsWoodpeckerCluster(const uint64_t& _isWoodpeckerCluster);
 
                     /**
                      * 判断参数 IsWoodpeckerCluster 是否已赋值
                      * @return IsWoodpeckerCluster 是否已赋值
+                     * 
                      */
                     bool IsWoodpeckerClusterHasBeenSet() const;
 
@@ -475,20 +538,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName Vpc中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置Vpc中文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcName Vpc中文
+                     * @param _vpcName Vpc中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
@@ -497,20 +563,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网中文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetName 子网中文
+                     * @param _subnetName 子网中文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
@@ -519,20 +588,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 字符串VpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置字符串VpcId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqVpcId 字符串VpcId
+                     * @param _uniqVpcId 字符串VpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
@@ -541,20 +613,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 字符串子网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置字符串子网
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqSubnetId 字符串子网
+                     * @param _uniqSubnetId 字符串子网
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
                      * 判断参数 UniqSubnetId 是否已赋值
                      * @return UniqSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
@@ -563,20 +638,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClass 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterClass() const;
 
                     /**
                      * 设置集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterClass 集群类型
+                     * @param _clusterClass 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterClass(const std::string& _clusterClass);
 
                     /**
                      * 判断参数 ClusterClass 是否已赋值
                      * @return ClusterClass 是否已赋值
+                     * 
                      */
                     bool ClusterClassHasBeenSet() const;
 
@@ -585,20 +663,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsMultiZoneCluster 是否为跨AZ集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsMultiZoneCluster() const;
 
                     /**
                      * 设置是否为跨AZ集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsMultiZoneCluster 是否为跨AZ集群
+                     * @param _isMultiZoneCluster 是否为跨AZ集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsMultiZoneCluster(const bool& _isMultiZoneCluster);
 
                     /**
                      * 判断参数 IsMultiZoneCluster 是否已赋值
                      * @return IsMultiZoneCluster 是否已赋值
+                     * 
                      */
                     bool IsMultiZoneClusterHasBeenSet() const;
 
@@ -607,20 +688,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsHandsCluster 是否手戳集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsHandsCluster() const;
 
                     /**
                      * 设置是否手戳集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsHandsCluster 是否手戳集群
+                     * @param _isHandsCluster 是否手戳集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsHandsCluster(const bool& _isHandsCluster);
 
                     /**
                      * 判断参数 IsHandsCluster 是否已赋值
                      * @return IsHandsCluster 是否已赋值
+                     * 
                      */
                     bool IsHandsClusterHasBeenSet() const;
 
@@ -629,20 +713,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutSideSoftInfo 体外客户端组件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SoftDependInfo> GetOutSideSoftInfo() const;
 
                     /**
                      * 设置体外客户端组件信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutSideSoftInfo 体外客户端组件信息
+                     * @param _outSideSoftInfo 体外客户端组件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutSideSoftInfo(const std::vector<SoftDependInfo>& _outSideSoftInfo);
 
                     /**
                      * 判断参数 OutSideSoftInfo 是否已赋值
                      * @return OutSideSoftInfo 是否已赋值
+                     * 
                      */
                     bool OutSideSoftInfoHasBeenSet() const;
 
@@ -651,20 +738,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsSupportOutsideCluster() const;
 
                     /**
                      * 设置当前集群的应用场景是否支持体外客户端
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
+                     * @param _isSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsSupportOutsideCluster(const bool& _isSupportOutsideCluster);
 
                     /**
                      * 判断参数 IsSupportOutsideCluster 是否已赋值
                      * @return IsSupportOutsideCluster 是否已赋值
+                     * 
                      */
                     bool IsSupportOutsideClusterHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取部署组id
                      * @return GroupId 部署组id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组id
-                     * @param GroupId 部署组id
+                     * @param _groupId 部署组id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取部署组名称
                      * @return GroupName 部署组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置部署组名称
-                     * @param GroupName 部署组名称
+                     * @param _groupName 部署组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取集群类型
                      * @return ClusterType 集群类型
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 集群id
+                     * @param _clusterId 集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateTime 绑定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssociateTime() const;
 
                     /**
                      * 设置绑定时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssociateTime 绑定时间
+                     * @param _associateTime 绑定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssociateTime(const std::string& _associateTime);
 
                     /**
                      * 判断参数 AssociateTime 是否已赋值
                      * @return AssociateTime 是否已赋值
+                     * 
                      */
                     bool AssociateTimeHasBeenSet() const;
 

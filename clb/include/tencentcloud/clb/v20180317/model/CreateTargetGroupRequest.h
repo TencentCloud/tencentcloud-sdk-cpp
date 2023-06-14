@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取目标组名称，限定50个字符
                      * @return TargetGroupName 目标组名称，限定50个字符
+                     * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
                      * 设置目标组名称，限定50个字符
-                     * @param TargetGroupName 目标组名称，限定50个字符
+                     * @param _targetGroupName 目标组名称，限定50个字符
+                     * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
 
                     /**
                      * 判断参数 TargetGroupName 是否已赋值
                      * @return TargetGroupName 是否已赋值
+                     * 
                      */
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
                      * 获取目标组的vpcid属性，不填则使用默认vpc
                      * @return VpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置目标组的vpcid属性，不填则使用默认vpc
-                     * @param VpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * @param _vpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口
                      * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口
-                     * @param Port 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取目标组绑定的后端服务器
                      * @return TargetGroupInstances 目标组绑定的后端服务器
+                     * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
                      * 设置目标组绑定的后端服务器
-                     * @param TargetGroupInstances 目标组绑定的后端服务器
+                     * @param _targetGroupInstances 目标组绑定的后端服务器
+                     * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
 
                     /**
                      * 判断参数 TargetGroupInstances 是否已赋值
                      * @return TargetGroupInstances 是否已赋值
+                     * 
                      */
                     bool TargetGroupInstancesHasBeenSet() const;
 

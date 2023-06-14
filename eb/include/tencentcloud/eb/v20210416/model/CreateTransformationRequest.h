@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取事件总线 id
                      * @return EventBusId 事件总线 id
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件总线 id
-                     * @param EventBusId 事件总线 id
+                     * @param _eventBusId 事件总线 id
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取规则id
                      * @return RuleId 规则id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则id
-                     * @param RuleId 规则id
+                     * @param _ruleId 规则id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取一个转换规则列表，当前仅限定一个
                      * @return Transformations 一个转换规则列表，当前仅限定一个
+                     * 
                      */
                     std::vector<Transformation> GetTransformations() const;
 
                     /**
                      * 设置一个转换规则列表，当前仅限定一个
-                     * @param Transformations 一个转换规则列表，当前仅限定一个
+                     * @param _transformations 一个转换规则列表，当前仅限定一个
+                     * 
                      */
                     void SetTransformations(const std::vector<Transformation>& _transformations);
 
                     /**
                      * 判断参数 Transformations 是否已赋值
                      * @return Transformations 是否已赋值
+                     * 
                      */
                     bool TransformationsHasBeenSet() const;
 

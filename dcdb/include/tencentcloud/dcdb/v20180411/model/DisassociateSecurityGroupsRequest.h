@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称，本接口取值：dcdb。
                      * @return Product 数据库引擎名称，本接口取值：dcdb。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称，本接口取值：dcdb。
-                     * @param Product 数据库引擎名称，本接口取值：dcdb。
+                     * @param _product 数据库引擎名称，本接口取值：dcdb。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取安全组Id。
                      * @return SecurityGroupId 安全组Id。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组Id。
-                     * @param SecurityGroupId 安全组Id。
+                     * @param _securityGroupId 安全组Id。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID列表，一个或者多个实例Id组成的数组。
                      * @return InstanceIds 实例ID列表，一个或者多个实例Id组成的数组。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID列表，一个或者多个实例Id组成的数组。
-                     * @param InstanceIds 实例ID列表，一个或者多个实例Id组成的数组。
+                     * @param _instanceIds 实例ID列表，一个或者多个实例Id组成的数组。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

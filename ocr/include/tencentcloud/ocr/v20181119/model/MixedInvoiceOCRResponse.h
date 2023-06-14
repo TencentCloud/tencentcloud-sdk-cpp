@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取混贴票据识别结果，具体内容请点击左侧链接。
                      * @return MixedInvoiceItems 混贴票据识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<MixedInvoiceItem> GetMixedInvoiceItems() const;
 
                     /**
                      * 判断参数 MixedInvoiceItems 是否已赋值
                      * @return MixedInvoiceItems 是否已赋值
+                     * 
                      */
                     bool MixedInvoiceItemsHasBeenSet() const;
 

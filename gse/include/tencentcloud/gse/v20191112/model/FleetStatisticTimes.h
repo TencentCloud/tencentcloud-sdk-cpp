@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 统计开始时间
+                     * @param _beginTime 统计开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedTimeSeconds 统计总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotalUsedTimeSeconds() const;
 
                     /**
                      * 设置统计总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUsedTimeSeconds 统计总时长，单位秒
+                     * @param _totalUsedTimeSeconds 统计总时长，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUsedTimeSeconds(const std::string& _totalUsedTimeSeconds);
 
                     /**
                      * 判断参数 TotalUsedTimeSeconds 是否已赋值
                      * @return TotalUsedTimeSeconds 是否已赋值
+                     * 
                      */
                     bool TotalUsedTimeSecondsHasBeenSet() const;
 

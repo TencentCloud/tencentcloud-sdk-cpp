@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取回滚部署记录ID
                      * @return DeployRecordId 回滚部署记录ID
+                     * 
                      */
                     int64_t GetDeployRecordId() const;
 
                     /**
                      * 判断参数 DeployRecordId 是否已赋值
                      * @return DeployRecordId 是否已赋值
+                     * 
                      */
                     bool DeployRecordIdHasBeenSet() const;
 

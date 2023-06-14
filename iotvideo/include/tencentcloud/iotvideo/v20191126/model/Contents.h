@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return En 英文，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEn() const;
 
                     /**
                      * 设置英文，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param En 英文，长度不超过300个字符
+                     * @param _en 英文，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEn(const std::string& _en);
 
                     /**
                      * 判断参数 En 是否已赋值
                      * @return En 是否已赋值
+                     * 
                      */
                     bool EnHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cn 中文简体，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCn() const;
 
                     /**
                      * 设置中文简体，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cn 中文简体，长度不超过300个字符
+                     * @param _cn 中文简体，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCn(const std::string& _cn);
 
                     /**
                      * 判断参数 Cn 是否已赋值
                      * @return Cn 是否已赋值
+                     * 
                      */
                     bool CnHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tc 中文繁体(Traditional Chinese)，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTc() const;
 
                     /**
                      * 设置中文繁体(Traditional Chinese)，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tc 中文繁体(Traditional Chinese)，长度不超过300个字符
+                     * @param _tc 中文繁体(Traditional Chinese)，长度不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTc(const std::string& _tc);
 
                     /**
                      * 判断参数 Tc 是否已赋值
                      * @return Tc 是否已赋值
+                     * 
                      */
                     bool TcHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 默认语言，最多不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置默认语言，最多不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Default 默认语言，最多不超过300个字符
+                     * @param _default 默认语言，最多不超过300个字符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefault(const std::string& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 

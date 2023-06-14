@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据唯一ID
                      * @return DataId 数据唯一ID
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 设置数据唯一ID
-                     * @param DataId 数据唯一ID
+                     * @param _dataId 数据唯一ID
+                     * 
                      */
                     void SetDataId(const std::string& _dataId);
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
                     /**
                      * 获取数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg
                      * @return Url 数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg
-                     * @param Url 数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg
+                     * @param _url 数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

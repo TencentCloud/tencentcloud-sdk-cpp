@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取状态，0：关闭，1：开启
                      * @return Status 状态，0：关闭，1：开启
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态，0：关闭，1：开启
-                     * @param Status 状态，0：关闭，1：开启
+                     * @param _status 状态，0：关闭，1：开启
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取选中的防火墙开关Id
                      * @return FireWallVpcIds 选中的防火墙开关Id
+                     * 
                      */
                     std::vector<std::string> GetFireWallVpcIds() const;
 
                     /**
                      * 设置选中的防火墙开关Id
-                     * @param FireWallVpcIds 选中的防火墙开关Id
+                     * @param _fireWallVpcIds 选中的防火墙开关Id
+                     * 
                      */
                     void SetFireWallVpcIds(const std::vector<std::string>& _fireWallVpcIds);
 
                     /**
                      * 判断参数 FireWallVpcIds 是否已赋值
                      * @return FireWallVpcIds 是否已赋值
+                     * 
                      */
                     bool FireWallVpcIdsHasBeenSet() const;
 

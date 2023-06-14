@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取设备位置列表
                      * @return Items 设备位置列表
+                     * 
                      */
                     std::vector<DevicePositionItem> GetItems() const;
 
                     /**
                      * 设置设备位置列表
-                     * @param Items 设备位置列表
+                     * @param _items 设备位置列表
+                     * 
                      */
                     void SetItems(const std::vector<DevicePositionItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取产品标识
                      * @return ProductId 产品标识
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品标识
-                     * @param ProductId 产品标识
+                     * @param _productId 产品标识
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备位置数量
                      * @return Total 设备位置数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置设备位置数量
-                     * @param Total 设备位置数量
+                     * @param _total 设备位置数量
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

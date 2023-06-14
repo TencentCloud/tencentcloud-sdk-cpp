@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取通道的实例ID。
                      * @return InstanceId 通道的实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

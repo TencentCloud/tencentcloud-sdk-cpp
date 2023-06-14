@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取活动ID
                      * @return ActiveID 活动ID
+                     * 
                      */
                     uint64_t GetActiveID() const;
 
                     /**
                      * 设置活动ID
-                     * @param ActiveID 活动ID
+                     * @param _activeID 活动ID
+                     * 
                      */
                     void SetActiveID(const uint64_t& _activeID);
 
                     /**
                      * 判断参数 ActiveID 是否已赋值
                      * @return ActiveID 是否已赋值
+                     * 
                      */
                     bool ActiveIDHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称。
                      * @return TopicName 主题名称。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称。
-                     * @param TopicName 主题名称。
+                     * @param _topicName 主题名称。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

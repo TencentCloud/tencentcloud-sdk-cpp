@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlObject ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDdlObject() const;
 
                     /**
                      * 设置ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdlObject ddl类型，如Database,Table,View,Index等
+                     * @param _ddlObject ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDdlObject(const std::string& _ddlObject);
 
                     /**
                      * 判断参数 DdlObject 是否已赋值
                      * @return DdlObject 是否已赋值
+                     * 
                      */
                     bool DdlObjectHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlValue ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetDdlValue() const;
 
                     /**
                      * 设置ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdlValue ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
+                     * @param _ddlValue ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDdlValue(const std::vector<std::string>& _ddlValue);
 
                     /**
                      * 判断参数 DdlValue 是否已赋值
                      * @return DdlValue 是否已赋值
+                     * 
                      */
                     bool DdlValueHasBeenSet() const;
 

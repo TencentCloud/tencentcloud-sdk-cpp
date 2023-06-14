@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取网卡名称
                      * @return Name 网卡名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置网卡名称
-                     * @param Name 网卡名称
+                     * @param _name 网卡名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Ipv4对应IP
                      * @return Ip Ipv4对应IP
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Ipv4对应IP
-                     * @param Ip Ipv4对应IP
+                     * @param _ip Ipv4对应IP
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取网关
                      * @return GateWay 网关
+                     * 
                      */
                     std::string GetGateWay() const;
 
                     /**
                      * 设置网关
-                     * @param GateWay 网关
+                     * @param _gateWay 网关
+                     * 
                      */
                     void SetGateWay(const std::string& _gateWay);
 
                     /**
                      * 判断参数 GateWay 是否已赋值
                      * @return GateWay 是否已赋值
+                     * 
                      */
                     bool GateWayHasBeenSet() const;
 
                     /**
                      * 获取MAC地址
                      * @return Mac MAC地址
+                     * 
                      */
                     std::string GetMac() const;
 
                     /**
                      * 设置MAC地址
-                     * @param Mac MAC地址
+                     * @param _mac MAC地址
+                     * 
                      */
                     void SetMac(const std::string& _mac);
 
                     /**
                      * 判断参数 Mac 是否已赋值
                      * @return Mac 是否已赋值
+                     * 
                      */
                     bool MacHasBeenSet() const;
 
                     /**
                      * 获取Ipv6对应IP
                      * @return Ipv6 Ipv6对应IP
+                     * 
                      */
                     std::string GetIpv6() const;
 
                     /**
                      * 设置Ipv6对应IP
-                     * @param Ipv6 Ipv6对应IP
+                     * @param _ipv6 Ipv6对应IP
+                     * 
                      */
                     void SetIpv6(const std::string& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 
                     /**
                      * 获取DNS服务器
                      * @return DnsServer DNS服务器
+                     * 
                      */
                     std::string GetDnsServer() const;
 
                     /**
                      * 设置DNS服务器
-                     * @param DnsServer DNS服务器
+                     * @param _dnsServer DNS服务器
+                     * 
                      */
                     void SetDnsServer(const std::string& _dnsServer);
 
                     /**
                      * 判断参数 DnsServer 是否已赋值
                      * @return DnsServer 是否已赋值
+                     * 
                      */
                     bool DnsServerHasBeenSet() const;
 

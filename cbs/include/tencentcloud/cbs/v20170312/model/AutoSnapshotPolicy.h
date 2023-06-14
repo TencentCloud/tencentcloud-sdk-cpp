@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取已绑定当前定期快照策略的云盘ID列表。
                      * @return DiskIdSet 已绑定当前定期快照策略的云盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIdSet() const;
 
                     /**
                      * 设置已绑定当前定期快照策略的云盘ID列表。
-                     * @param DiskIdSet 已绑定当前定期快照策略的云盘ID列表。
+                     * @param _diskIdSet 已绑定当前定期快照策略的云盘ID列表。
+                     * 
                      */
                     void SetDiskIdSet(const std::vector<std::string>& _diskIdSet);
 
                     /**
                      * 判断参数 DiskIdSet 是否已赋值
                      * @return DiskIdSet 是否已赋值
+                     * 
                      */
                     bool DiskIdSetHasBeenSet() const;
 
                     /**
                      * 获取定期快照策略是否激活。
                      * @return IsActivated 定期快照策略是否激活。
+                     * 
                      */
                     bool GetIsActivated() const;
 
                     /**
                      * 设置定期快照策略是否激活。
-                     * @param IsActivated 定期快照策略是否激活。
+                     * @param _isActivated 定期快照策略是否激活。
+                     * 
                      */
                     void SetIsActivated(const bool& _isActivated);
 
                     /**
                      * 判断参数 IsActivated 是否已赋值
                      * @return IsActivated 是否已赋值
+                     * 
                      */
                     bool IsActivatedHasBeenSet() const;
 
                     /**
                      * 获取定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
                      * @return AutoSnapshotPolicyState 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyState() const;
 
                     /**
                      * 设置定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
-                     * @param AutoSnapshotPolicyState 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * @param _autoSnapshotPolicyState 定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。
+                     * 
                      */
                     void SetAutoSnapshotPolicyState(const std::string& _autoSnapshotPolicyState);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyState 是否已赋值
                      * @return AutoSnapshotPolicyState 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyStateHasBeenSet() const;
 
@@ -108,146 +117,170 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIsCopyToRemote() const;
 
                     /**
                      * 设置是否是跨账号复制快照快照, 1：是, 0: 不是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
+                     * @param _isCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsCopyToRemote(const uint64_t& _isCopyToRemote);
 
                     /**
                      * 判断参数 IsCopyToRemote 是否已赋值
                      * @return IsCopyToRemote 是否已赋值
+                     * 
                      */
                     bool IsCopyToRemoteHasBeenSet() const;
 
                     /**
                      * 获取使用该定期快照策略创建出来的快照是否永久保留。
                      * @return IsPermanent 使用该定期快照策略创建出来的快照是否永久保留。
+                     * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
                      * 设置使用该定期快照策略创建出来的快照是否永久保留。
-                     * @param IsPermanent 使用该定期快照策略创建出来的快照是否永久保留。
+                     * @param _isPermanent 使用该定期快照策略创建出来的快照是否永久保留。
+                     * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
 
                     /**
                      * 判断参数 IsPermanent 是否已赋值
                      * @return IsPermanent 是否已赋值
+                     * 
                      */
                     bool IsPermanentHasBeenSet() const;
 
                     /**
                      * 获取定期快照下次触发的时间。
                      * @return NextTriggerTime 定期快照下次触发的时间。
+                     * 
                      */
                     std::string GetNextTriggerTime() const;
 
                     /**
                      * 设置定期快照下次触发的时间。
-                     * @param NextTriggerTime 定期快照下次触发的时间。
+                     * @param _nextTriggerTime 定期快照下次触发的时间。
+                     * 
                      */
                     void SetNextTriggerTime(const std::string& _nextTriggerTime);
 
                     /**
                      * 判断参数 NextTriggerTime 是否已赋值
                      * @return NextTriggerTime 是否已赋值
+                     * 
                      */
                     bool NextTriggerTimeHasBeenSet() const;
 
                     /**
                      * 获取定期快照策略名称。
                      * @return AutoSnapshotPolicyName 定期快照策略名称。
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyName() const;
 
                     /**
                      * 设置定期快照策略名称。
-                     * @param AutoSnapshotPolicyName 定期快照策略名称。
+                     * @param _autoSnapshotPolicyName 定期快照策略名称。
+                     * 
                      */
                     void SetAutoSnapshotPolicyName(const std::string& _autoSnapshotPolicyName);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyName 是否已赋值
                      * @return AutoSnapshotPolicyName 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyNameHasBeenSet() const;
 
                     /**
                      * 获取定期快照策略ID。
                      * @return AutoSnapshotPolicyId 定期快照策略ID。
+                     * 
                      */
                     std::string GetAutoSnapshotPolicyId() const;
 
                     /**
                      * 设置定期快照策略ID。
-                     * @param AutoSnapshotPolicyId 定期快照策略ID。
+                     * @param _autoSnapshotPolicyId 定期快照策略ID。
+                     * 
                      */
                     void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
 
                     /**
                      * 判断参数 AutoSnapshotPolicyId 是否已赋值
                      * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
                      * 获取定期快照的执行策略。
                      * @return Policy 定期快照的执行策略。
+                     * 
                      */
                     std::vector<Policy> GetPolicy() const;
 
                     /**
                      * 设置定期快照的执行策略。
-                     * @param Policy 定期快照的执行策略。
+                     * @param _policy 定期快照的执行策略。
+                     * 
                      */
                     void SetPolicy(const std::vector<Policy>& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 
                     /**
                      * 获取定期快照策略的创建时间。
                      * @return CreateTime 定期快照策略的创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置定期快照策略的创建时间。
-                     * @param CreateTime 定期快照策略的创建时间。
+                     * @param _createTime 定期快照策略的创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取使用该定期快照策略创建出来的快照保留天数。
                      * @return RetentionDays 使用该定期快照策略创建出来的快照保留天数。
+                     * 
                      */
                     uint64_t GetRetentionDays() const;
 
                     /**
                      * 设置使用该定期快照策略创建出来的快照保留天数。
-                     * @param RetentionDays 使用该定期快照策略创建出来的快照保留天数。
+                     * @param _retentionDays 使用该定期快照策略创建出来的快照保留天数。
+                     * 
                      */
                     void SetRetentionDays(const uint64_t& _retentionDays);
 
                     /**
                      * 判断参数 RetentionDays 是否已赋值
                      * @return RetentionDays 是否已赋值
+                     * 
                      */
                     bool RetentionDaysHasBeenSet() const;
 
@@ -256,20 +289,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CopyToAccountUin 复制的目标账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCopyToAccountUin() const;
 
                     /**
                      * 设置复制的目标账户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CopyToAccountUin 复制的目标账户ID
+                     * @param _copyToAccountUin 复制的目标账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCopyToAccountUin(const std::string& _copyToAccountUin);
 
                     /**
                      * 判断参数 CopyToAccountUin 是否已赋值
                      * @return CopyToAccountUin 是否已赋值
+                     * 
                      */
                     bool CopyToAccountUinHasBeenSet() const;
 
@@ -278,20 +314,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIdSet 已绑定当前定期快照策略的实例ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置已绑定当前定期快照策略的实例ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIdSet 已绑定当前定期快照策略的实例ID列表。
+                     * @param _instanceIdSet 已绑定当前定期快照策略的实例ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
@@ -300,20 +339,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionMonths 该定期快照创建的快照可以保留的月数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRetentionMonths() const;
 
                     /**
                      * 设置该定期快照创建的快照可以保留的月数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RetentionMonths 该定期快照创建的快照可以保留的月数。
+                     * @param _retentionMonths 该定期快照创建的快照可以保留的月数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetentionMonths(const uint64_t& _retentionMonths);
 
                     /**
                      * 判断参数 RetentionMonths 是否已赋值
                      * @return RetentionMonths 是否已赋值
+                     * 
                      */
                     bool RetentionMonthsHasBeenSet() const;
 
@@ -322,20 +364,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionAmount 该定期快照创建的快照最大保留数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRetentionAmount() const;
 
                     /**
                      * 设置该定期快照创建的快照最大保留数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RetentionAmount 该定期快照创建的快照最大保留数量。
+                     * @param _retentionAmount 该定期快照创建的快照最大保留数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetentionAmount(const uint64_t& _retentionAmount);
 
                     /**
                      * 判断参数 RetentionAmount 是否已赋值
                      * @return RetentionAmount 是否已赋值
+                     * 
                      */
                     bool RetentionAmountHasBeenSet() const;
 
@@ -344,20 +389,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedRetentionPolicy 定期快照高级保留策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AdvancedRetentionPolicy GetAdvancedRetentionPolicy() const;
 
                     /**
                      * 设置定期快照高级保留策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedRetentionPolicy 定期快照高级保留策略。
+                     * @param _advancedRetentionPolicy 定期快照高级保留策略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdvancedRetentionPolicy(const AdvancedRetentionPolicy& _advancedRetentionPolicy);
 
                     /**
                      * 判断参数 AdvancedRetentionPolicy 是否已赋值
                      * @return AdvancedRetentionPolicy 是否已赋值
+                     * 
                      */
                     bool AdvancedRetentionPolicyHasBeenSet() const;
 
@@ -366,20 +414,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CopyFromAccountUin 该复制快照策略的源端账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCopyFromAccountUin() const;
 
                     /**
                      * 设置该复制快照策略的源端账户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CopyFromAccountUin 该复制快照策略的源端账户ID
+                     * @param _copyFromAccountUin 该复制快照策略的源端账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCopyFromAccountUin(const std::string& _copyFromAccountUin);
 
                     /**
                      * 判断参数 CopyFromAccountUin 是否已赋值
                      * @return CopyFromAccountUin 是否已赋值
+                     * 
                      */
                     bool CopyFromAccountUinHasBeenSet() const;
 
@@ -388,20 +439,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签。
+                     * @param _tags 标签。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

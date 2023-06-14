@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频转动图结果信息
                      * @return AnimatedGraphicsSet 视频转动图结果信息
+                     * 
                      */
                     std::vector<MediaAnimatedGraphicsItem> GetAnimatedGraphicsSet() const;
 
                     /**
                      * 设置视频转动图结果信息
-                     * @param AnimatedGraphicsSet 视频转动图结果信息
+                     * @param _animatedGraphicsSet 视频转动图结果信息
+                     * 
                      */
                     void SetAnimatedGraphicsSet(const std::vector<MediaAnimatedGraphicsItem>& _animatedGraphicsSet);
 
                     /**
                      * 判断参数 AnimatedGraphicsSet 是否已赋值
                      * @return AnimatedGraphicsSet 是否已赋值
+                     * 
                      */
                     bool AnimatedGraphicsSetHasBeenSet() const;
 

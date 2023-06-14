@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库名称，不超过20字。
                      * @return Name 自定义词库名称，不超过20字。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义词库名称，不超过20字。
-                     * @param Name 自定义词库名称，不超过20字。
+                     * @param _name 自定义词库名称，不超过20字。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取自定义词库描述，不超过100字。
                      * @return Description 自定义词库描述，不超过100字。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置自定义词库描述，不超过100字。
-                     * @param Description 自定义词库描述，不超过100字。
+                     * @param _description 自定义词库描述，不超过100字。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

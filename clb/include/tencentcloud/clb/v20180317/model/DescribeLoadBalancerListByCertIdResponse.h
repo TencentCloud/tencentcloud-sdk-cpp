@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取证书ID，以及与该证书ID关联的负载均衡实例列表
                      * @return CertSet 证书ID，以及与该证书ID关联的负载均衡实例列表
+                     * 
                      */
                     std::vector<CertIdRelatedWithLoadBalancers> GetCertSet() const;
 
                     /**
                      * 判断参数 CertSet 是否已赋值
                      * @return CertSet 是否已赋值
+                     * 
                      */
                     bool CertSetHasBeenSet() const;
 

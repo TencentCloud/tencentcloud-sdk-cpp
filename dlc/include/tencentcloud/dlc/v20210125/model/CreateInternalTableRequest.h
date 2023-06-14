@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取表基本信息
                      * @return TableBaseInfo 表基本信息
+                     * 
                      */
                     TableBaseInfo GetTableBaseInfo() const;
 
                     /**
                      * 设置表基本信息
-                     * @param TableBaseInfo 表基本信息
+                     * @param _tableBaseInfo 表基本信息
+                     * 
                      */
                     void SetTableBaseInfo(const TableBaseInfo& _tableBaseInfo);
 
                     /**
                      * 判断参数 TableBaseInfo 是否已赋值
                      * @return TableBaseInfo 是否已赋值
+                     * 
                      */
                     bool TableBaseInfoHasBeenSet() const;
 
                     /**
                      * 获取表字段信息
                      * @return Columns 表字段信息
+                     * 
                      */
                     std::vector<TColumn> GetColumns() const;
 
                     /**
                      * 设置表字段信息
-                     * @param Columns 表字段信息
+                     * @param _columns 表字段信息
+                     * 
                      */
                     void SetColumns(const std::vector<TColumn>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
                     /**
                      * 获取表分区信息
                      * @return Partitions 表分区信息
+                     * 
                      */
                     std::vector<TPartition> GetPartitions() const;
 
                     /**
                      * 设置表分区信息
-                     * @param Partitions 表分区信息
+                     * @param _partitions 表分区信息
+                     * 
                      */
                     void SetPartitions(const std::vector<TPartition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 
                     /**
                      * 获取表属性信息
                      * @return Properties 表属性信息
+                     * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
                      * 设置表属性信息
-                     * @param Properties 表属性信息
+                     * @param _properties 表属性信息
+                     * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 

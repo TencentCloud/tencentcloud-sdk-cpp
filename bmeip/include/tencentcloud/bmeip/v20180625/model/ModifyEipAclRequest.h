@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取ACL 实例 ID
                      * @return AclId ACL 实例 ID
+                     * 
                      */
                     std::string GetAclId() const;
 
                     /**
                      * 设置ACL 实例 ID
-                     * @param AclId ACL 实例 ID
+                     * @param _aclId ACL 实例 ID
+                     * 
                      */
                     void SetAclId(const std::string& _aclId);
 
                     /**
                      * 判断参数 AclId 是否已赋值
                      * @return AclId 是否已赋值
+                     * 
                      */
                     bool AclIdHasBeenSet() const;
 
                     /**
                      * 获取ACL 名称
                      * @return AclName ACL 名称
+                     * 
                      */
                     std::string GetAclName() const;
 
                     /**
                      * 设置ACL 名称
-                     * @param AclName ACL 名称
+                     * @param _aclName ACL 名称
+                     * 
                      */
                     void SetAclName(const std::string& _aclName);
 
                     /**
                      * 判断参数 AclName 是否已赋值
                      * @return AclName 是否已赋值
+                     * 
                      */
                     bool AclNameHasBeenSet() const;
 
                     /**
                      * 获取ACL 状态。0：无状态 1：有状态
                      * @return Status ACL 状态。0：无状态 1：有状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置ACL 状态。0：无状态 1：有状态
-                     * @param Status ACL 状态。0：无状态 1：有状态
+                     * @param _status ACL 状态。0：无状态 1：有状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取规则类型（in/out）。in：入站规则 out：出站规则
                      * @return Type 规则类型（in/out）。in：入站规则 out：出站规则
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置规则类型（in/out）。in：入站规则 out：出站规则
-                     * @param Type 规则类型（in/out）。in：入站规则 out：出站规则
+                     * @param _type 规则类型（in/out）。in：入站规则 out：出站规则
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取ACL规则列表
                      * @return Rules ACL规则列表
+                     * 
                      */
                     std::vector<EipAclRule> GetRules() const;
 
                     /**
                      * 设置ACL规则列表
-                     * @param Rules ACL规则列表
+                     * @param _rules ACL规则列表
+                     * 
                      */
                     void SetRules(const std::vector<EipAclRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 

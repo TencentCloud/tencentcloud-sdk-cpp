@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取预期副本数
                      * @return DesiredReplicas 预期副本数
+                     * 
                      */
                     uint64_t GetDesiredReplicas() const;
 
                     /**
                      * 设置预期副本数
-                     * @param DesiredReplicas 预期副本数
+                     * @param _desiredReplicas 预期副本数
+                     * 
                      */
                     void SetDesiredReplicas(const uint64_t& _desiredReplicas);
 
                     /**
                      * 判断参数 DesiredReplicas 是否已赋值
                      * @return DesiredReplicas 是否已赋值
+                     * 
                      */
                     bool DesiredReplicasHasBeenSet() const;
 
                     /**
                      * 获取当前副本数
                      * @return CurrentReplicas 当前副本数
+                     * 
                      */
                     uint64_t GetCurrentReplicas() const;
 
                     /**
                      * 设置当前副本数
-                     * @param CurrentReplicas 当前副本数
+                     * @param _currentReplicas 当前副本数
+                     * 
                      */
                     void SetCurrentReplicas(const uint64_t& _currentReplicas);
 
                     /**
                      * 判断参数 CurrentReplicas 是否已赋值
                      * @return CurrentReplicas 是否已赋值
+                     * 
                      */
                     bool CurrentReplicasHasBeenSet() const;
 
                     /**
                      * 获取Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中
                      * @return Status Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中
-                     * @param Status Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中
+                     * @param _status Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -107,20 +116,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conditions 服务处于当前状态的原因集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Conditions> GetConditions() const;
 
                     /**
                      * 设置服务处于当前状态的原因集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Conditions 服务处于当前状态的原因集合
+                     * @param _conditions 服务处于当前状态的原因集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConditions(const std::vector<Conditions>& _conditions);
 
                     /**
                      * 判断参数 Conditions 是否已赋值
                      * @return Conditions 是否已赋值
+                     * 
                      */
                     bool ConditionsHasBeenSet() const;
 
@@ -129,20 +141,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 副本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetReplicas() const;
 
                     /**
                      * 设置副本名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Replicas 副本名称
+                     * @param _replicas 副本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicas(const std::vector<std::string>& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
@@ -151,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 运行状态对额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置运行状态对额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 运行状态对额外信息
+                     * @param _message 运行状态对额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -173,20 +191,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaInfos 副本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ReplicaInfo> GetReplicaInfos() const;
 
                     /**
                      * 设置副本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplicaInfos 副本信息
+                     * @param _replicaInfos 副本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicaInfos(const std::vector<ReplicaInfo>& _replicaInfos);
 
                     /**
                      * 判断参数 ReplicaInfos 是否已赋值
                      * @return ReplicaInfos 是否已赋值
+                     * 
                      */
                     bool ReplicaInfosHasBeenSet() const;
 

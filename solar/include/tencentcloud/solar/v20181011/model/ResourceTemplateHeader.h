@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 模板预览区内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置模板预览区内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 模板预览区内容
+                     * @param _content 模板预览区内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Example 模板预览示例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExample() const;
 
                     /**
                      * 设置模板预览示例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Example 模板预览示例
+                     * @param _example 模板预览示例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExample(const std::string& _example);
 
                     /**
                      * 判断参数 Example 是否已赋值
                      * @return Example 是否已赋值
+                     * 
                      */
                     bool ExampleHasBeenSet() const;
 
@@ -95,38 +101,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyArray 模板预览区域键数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyArray() const;
 
                     /**
                      * 设置模板预览区域键数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyArray 模板预览区域键数组
+                     * @param _keyArray 模板预览区域键数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyArray(const std::string& _keyArray);
 
                     /**
                      * 判断参数 KeyArray 是否已赋值
                      * @return KeyArray 是否已赋值
+                     * 
                      */
                     bool KeyArrayHasBeenSet() const;
 
                     /**
                      * 获取模板id
                      * @return TemplateId 模板id
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板id
-                     * @param TemplateId 模板id
+                     * @param _templateId 模板id
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 模板标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置模板标题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Title 模板标题
+                     * @param _title 模板标题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 

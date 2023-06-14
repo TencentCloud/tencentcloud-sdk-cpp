@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取设备Id
                      * @return DeviceId 设备Id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备Id
-                     * @param DeviceId 设备Id
+                     * @param _deviceId 设备Id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取限制，默认0
                      * @return Limit 限制，默认0
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制，默认0
-                     * @param Limit 限制，默认0
+                     * @param _limit 限制，默认0
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0
                      * @return Offset 偏移量，默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * @param _offset 偏移量，默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
                      * @return ChannelTypes 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
+                     * 
                      */
                     std::vector<uint64_t> GetChannelTypes() const;
 
                     /**
                      * 设置通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
-                     * @param ChannelTypes 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
+                     * @param _channelTypes 通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道
+                     * 
                      */
                     void SetChannelTypes(const std::vector<uint64_t>& _channelTypes);
 
                     /**
                      * 判断参数 ChannelTypes 是否已赋值
                      * @return ChannelTypes 是否已赋值
+                     * 
                      */
                     bool ChannelTypesHasBeenSet() const;
 
                     /**
                      * 获取录制计划ID， 当为"null"值时未绑定录制计划
                      * @return PlanId 录制计划ID， 当为"null"值时未绑定录制计划
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置录制计划ID， 当为"null"值时未绑定录制计划
-                     * @param PlanId 录制计划ID， 当为"null"值时未绑定录制计划
+                     * @param _planId 录制计划ID， 当为"null"值时未绑定录制计划
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取告警联动场景ID， 当为 -1 值时未绑定场景
                      * @return SceneId 告警联动场景ID， 当为 -1 值时未绑定场景
+                     * 
                      */
                     int64_t GetSceneId() const;
 
                     /**
                      * 设置告警联动场景ID， 当为 -1 值时未绑定场景
-                     * @param SceneId 告警联动场景ID， 当为 -1 值时未绑定场景
+                     * @param _sceneId 告警联动场景ID， 当为 -1 值时未绑定场景
+                     * 
                      */
                     void SetSceneId(const int64_t& _sceneId);
 
                     /**
                      * 判断参数 SceneId 是否已赋值
                      * @return SceneId 是否已赋值
+                     * 
                      */
                     bool SceneIdHasBeenSet() const;
 

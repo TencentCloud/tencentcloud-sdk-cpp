@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目 最大100
                      * @return Limit 限制数目 最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目 最大100
-                     * @param Limit 限制数目 最大100
+                     * @param _limit 限制数目 最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
                      * @return CreatTimeRangeStart 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * 
                      */
                     std::string GetCreatTimeRangeStart() const;
 
                     /**
                      * 设置下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
-                     * @param CreatTimeRangeStart 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * @param _creatTimeRangeStart 下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)
+                     * 
                      */
                     void SetCreatTimeRangeStart(const std::string& _creatTimeRangeStart);
 
                     /**
                      * 判断参数 CreatTimeRangeStart 是否已赋值
                      * @return CreatTimeRangeStart 是否已赋值
+                     * 
                      */
                     bool CreatTimeRangeStartHasBeenSet() const;
 
                     /**
                      * 获取下单时间范围终止点
                      * @return CreatTimeRangeEnd 下单时间范围终止点
+                     * 
                      */
                     std::string GetCreatTimeRangeEnd() const;
 
                     /**
                      * 设置下单时间范围终止点
-                     * @param CreatTimeRangeEnd 下单时间范围终止点
+                     * @param _creatTimeRangeEnd 下单时间范围终止点
+                     * 
                      */
                     void SetCreatTimeRangeEnd(const std::string& _creatTimeRangeEnd);
 
                     /**
                      * 判断参数 CreatTimeRangeEnd 是否已赋值
                      * @return CreatTimeRangeEnd 是否已赋值
+                     * 
                      */
                     bool CreatTimeRangeEndHasBeenSet() const;
 
                     /**
                      * 获取0:下单时间降序；其他：下单时间升序
                      * @return Order 0:下单时间降序；其他：下单时间升序
+                     * 
                      */
                     uint64_t GetOrder() const;
 
                     /**
                      * 设置0:下单时间降序；其他：下单时间升序
-                     * @param Order 0:下单时间降序；其他：下单时间升序
+                     * @param _order 0:下单时间降序；其他：下单时间升序
+                     * 
                      */
                     void SetOrder(const uint64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
                      * @return Status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-                     * @param Status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * @param _status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取下单人账号ID列表
                      * @return OwnerUins 下单人账号ID列表
+                     * 
                      */
                     std::vector<std::string> GetOwnerUins() const;
 
                     /**
                      * 设置下单人账号ID列表
-                     * @param OwnerUins 下单人账号ID列表
+                     * @param _ownerUins 下单人账号ID列表
+                     * 
                      */
                     void SetOwnerUins(const std::vector<std::string>& _ownerUins);
 
                     /**
                      * 判断参数 OwnerUins 是否已赋值
                      * @return OwnerUins 是否已赋值
+                     * 
                      */
                     bool OwnerUinsHasBeenSet() const;
 
                     /**
                      * 获取子订单号列表
                      * @return DealNames 子订单号列表
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 设置子订单号列表
-                     * @param DealNames 子订单号列表
+                     * @param _dealNames 子订单号列表
+                     * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 
                     /**
                      * 获取大订单号列表
                      * @return BigDealIds 大订单号列表
+                     * 
                      */
                     std::vector<std::string> GetBigDealIds() const;
 
                     /**
                      * 设置大订单号列表
-                     * @param BigDealIds 大订单号列表
+                     * @param _bigDealIds 大订单号列表
+                     * 
                      */
                     void SetBigDealIds(const std::vector<std::string>& _bigDealIds);
 
                     /**
                      * 判断参数 BigDealIds 是否已赋值
                      * @return BigDealIds 是否已赋值
+                     * 
                      */
                     bool BigDealIdsHasBeenSet() const;
 

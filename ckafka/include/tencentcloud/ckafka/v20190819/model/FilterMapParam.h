@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取Key值
                      * @return Key Key值
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置Key值
-                     * @param Key Key值
+                     * @param _key Key值
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP
                      * @return MatchMode 匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP
+                     * 
                      */
                     std::string GetMatchMode() const;
 
                     /**
                      * 设置匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP
-                     * @param MatchMode 匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP
+                     * @param _matchMode 匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP
+                     * 
                      */
                     void SetMatchMode(const std::string& _matchMode);
 
                     /**
                      * 判断参数 MatchMode 是否已赋值
                      * @return MatchMode 是否已赋值
+                     * 
                      */
                     bool MatchModeHasBeenSet() const;
 
                     /**
                      * 获取Value值
                      * @return Value Value值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置Value值
-                     * @param Value Value值
+                     * @param _value Value值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取固定REGULAR
                      * @return Type 固定REGULAR
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置固定REGULAR
-                     * @param Type 固定REGULAR
+                     * @param _type 固定REGULAR
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

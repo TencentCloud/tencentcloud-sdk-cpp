@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取绑定角色失败列表信息
                      * @return FailedCreateRoleData 绑定角色失败列表信息
+                     * 
                      */
                     std::vector<FailedCreateRoleData> GetFailedCreateRoleData() const;
 
                     /**
                      * 判断参数 FailedCreateRoleData 是否已赋值
                      * @return FailedCreateRoleData 是否已赋值
+                     * 
                      */
                     bool FailedCreateRoleDataHasBeenSet() const;
 

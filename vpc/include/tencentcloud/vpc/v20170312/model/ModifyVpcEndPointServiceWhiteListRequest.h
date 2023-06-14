@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户UIN。
                      * @return UserUin 用户UIN。
+                     * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 设置用户UIN。
-                     * @param UserUin 用户UIN。
+                     * @param _userUin 用户UIN。
+                     * 
                      */
                     void SetUserUin(const std::string& _userUin);
 
                     /**
                      * 判断参数 UserUin 是否已赋值
                      * @return UserUin 是否已赋值
+                     * 
                      */
                     bool UserUinHasBeenSet() const;
 
                     /**
                      * 获取终端节点服务ID。
                      * @return EndPointServiceId 终端节点服务ID。
+                     * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
                      * 设置终端节点服务ID。
-                     * @param EndPointServiceId 终端节点服务ID。
+                     * @param _endPointServiceId 终端节点服务ID。
+                     * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
 
                     /**
                      * 判断参数 EndPointServiceId 是否已赋值
                      * @return EndPointServiceId 是否已赋值
+                     * 
                      */
                     bool EndPointServiceIdHasBeenSet() const;
 
                     /**
                      * 获取白名单描述信息。
                      * @return Description 白名单描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置白名单描述信息。
-                     * @param Description 白名单描述信息。
+                     * @param _description 白名单描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取描述了调整云盘额外性能时对应的价格。
                      * @return DiskPrice 描述了调整云盘额外性能时对应的价格。
+                     * 
                      */
                     Price GetDiskPrice() const;
 
                     /**
                      * 判断参数 DiskPrice 是否已赋值
                      * @return DiskPrice 是否已赋值
+                     * 
                      */
                     bool DiskPriceHasBeenSet() const;
 

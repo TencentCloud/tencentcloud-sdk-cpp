@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取漏洞防御事件趋势
                      * @return DefendedList 漏洞防御事件趋势
+                     * 
                      */
                     std::vector<VulDefenceEventTendency> GetDefendedList() const;
 
                     /**
                      * 判断参数 DefendedList 是否已赋值
                      * @return DefendedList 是否已赋值
+                     * 
                      */
                     bool DefendedListHasBeenSet() const;
 
                     /**
                      * 获取漏洞攻击事件趋势
                      * @return AttackList 漏洞攻击事件趋势
+                     * 
                      */
                     std::vector<VulDefenceEventTendency> GetAttackList() const;
 
                     /**
                      * 判断参数 AttackList 是否已赋值
                      * @return AttackList 是否已赋值
+                     * 
                      */
                     bool AttackListHasBeenSet() const;
 

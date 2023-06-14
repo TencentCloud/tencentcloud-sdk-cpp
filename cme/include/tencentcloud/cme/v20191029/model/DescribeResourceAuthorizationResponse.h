@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的资源授权记录总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取授权信息列表。
                      * @return AuthorizationInfoSet 授权信息列表。
+                     * 
                      */
                     std::vector<AuthorizationInfo> GetAuthorizationInfoSet() const;
 
                     /**
                      * 判断参数 AuthorizationInfoSet 是否已赋值
                      * @return AuthorizationInfoSet 是否已赋值
+                     * 
                      */
                     bool AuthorizationInfoSetHasBeenSet() const;
 

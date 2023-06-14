@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例节点组的个数。
                      * @return TotalCount 实例节点组的个数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取实例节点组列表。
                      * @return ReplicaGroups 实例节点组列表。
+                     * 
                      */
                     std::vector<ReplicaGroup> GetReplicaGroups() const;
 
                     /**
                      * 判断参数 ReplicaGroups 是否已赋值
                      * @return ReplicaGroups 是否已赋值
+                     * 
                      */
                     bool ReplicaGroupsHasBeenSet() const;
 

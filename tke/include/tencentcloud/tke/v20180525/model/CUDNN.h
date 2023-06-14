@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取cuDNN的版本
                      * @return Version cuDNN的版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置cuDNN的版本
-                     * @param Version cuDNN的版本
+                     * @param _version cuDNN的版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取cuDNN的名字
                      * @return Name cuDNN的名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置cuDNN的名字
-                     * @param Name cuDNN的名字
+                     * @param _name cuDNN的名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取cuDNN的Doc名字
                      * @return DocName cuDNN的Doc名字
+                     * 
                      */
                     std::string GetDocName() const;
 
                     /**
                      * 设置cuDNN的Doc名字
-                     * @param DocName cuDNN的Doc名字
+                     * @param _docName cuDNN的Doc名字
+                     * 
                      */
                     void SetDocName(const std::string& _docName);
 
                     /**
                      * 判断参数 DocName 是否已赋值
                      * @return DocName 是否已赋值
+                     * 
                      */
                     bool DocNameHasBeenSet() const;
 
                     /**
                      * 获取cuDNN的Dev名字
                      * @return DevName cuDNN的Dev名字
+                     * 
                      */
                     std::string GetDevName() const;
 
                     /**
                      * 设置cuDNN的Dev名字
-                     * @param DevName cuDNN的Dev名字
+                     * @param _devName cuDNN的Dev名字
+                     * 
                      */
                     void SetDevName(const std::string& _devName);
 
                     /**
                      * 判断参数 DevName 是否已赋值
                      * @return DevName 是否已赋值
+                     * 
                      */
                     bool DevNameHasBeenSet() const;
 

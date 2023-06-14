@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取计费模式。
                      * @return ChargeMode 计费模式。
+                     * 
                      */
                     std::string GetChargeMode() const;
 
                     /**
                      * 设置计费模式。
-                     * @param ChargeMode 计费模式。
+                     * @param _chargeMode 计费模式。
+                     * 
                      */
                     void SetChargeMode(const std::string& _chargeMode);
 
                     /**
                      * 判断参数 ChargeMode 是否已赋值
                      * @return ChargeMode 是否已赋值
+                     * 
                      */
                     bool ChargeModeHasBeenSet() const;
 
                     /**
                      * 获取实例的公网ip。
                      * @return PublicIPAddress 实例的公网ip。
+                     * 
                      */
                     std::string GetPublicIPAddress() const;
 
                     /**
                      * 设置实例的公网ip。
-                     * @param PublicIPAddress 实例的公网ip。
+                     * @param _publicIPAddress 实例的公网ip。
+                     * 
                      */
                     void SetPublicIPAddress(const std::string& _publicIPAddress);
 
                     /**
                      * 判断参数 PublicIPAddress 是否已赋值
                      * @return PublicIPAddress 是否已赋值
+                     * 
                      */
                     bool PublicIPAddressHasBeenSet() const;
 
                     /**
                      * 获取实例的公网ip所属的运营商。
                      * @return ISP 实例的公网ip所属的运营商。
+                     * 
                      */
                     ISP GetISP() const;
 
                     /**
                      * 设置实例的公网ip所属的运营商。
-                     * @param ISP 实例的公网ip所属的运营商。
+                     * @param _iSP 实例的公网ip所属的运营商。
+                     * 
                      */
                     void SetISP(const ISP& _iSP);
 
                     /**
                      * 判断参数 ISP 是否已赋值
                      * @return ISP 是否已赋值
+                     * 
                      */
                     bool ISPHasBeenSet() const;
 
                     /**
                      * 获取实例的最大出带宽上限，单位为Mbps。
                      * @return MaxBandwidthOut 实例的最大出带宽上限，单位为Mbps。
+                     * 
                      */
                     int64_t GetMaxBandwidthOut() const;
 
                     /**
                      * 设置实例的最大出带宽上限，单位为Mbps。
-                     * @param MaxBandwidthOut 实例的最大出带宽上限，单位为Mbps。
+                     * @param _maxBandwidthOut 实例的最大出带宽上限，单位为Mbps。
+                     * 
                      */
                     void SetMaxBandwidthOut(const int64_t& _maxBandwidthOut);
 
                     /**
                      * 判断参数 MaxBandwidthOut 是否已赋值
                      * @return MaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取实例的最大入带宽上限，单位为Mbps。
                      * @return MaxBandwidthIn 实例的最大入带宽上限，单位为Mbps。
+                     * 
                      */
                     int64_t GetMaxBandwidthIn() const;
 
                     /**
                      * 设置实例的最大入带宽上限，单位为Mbps。
-                     * @param MaxBandwidthIn 实例的最大入带宽上限，单位为Mbps。
+                     * @param _maxBandwidthIn 实例的最大入带宽上限，单位为Mbps。
+                     * 
                      */
                     void SetMaxBandwidthIn(const int64_t& _maxBandwidthIn);
 
                     /**
                      * 判断参数 MaxBandwidthIn 是否已赋值
                      * @return MaxBandwidthIn 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthInHasBeenSet() const;
 

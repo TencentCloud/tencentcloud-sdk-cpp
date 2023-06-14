@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取工作空间 Serialid
                      * @return WorkSpaceId 工作空间 Serialid
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 Serialid
-                     * @param WorkSpaceId 工作空间 Serialid
+                     * @param _workSpaceId 工作空间 Serialid
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

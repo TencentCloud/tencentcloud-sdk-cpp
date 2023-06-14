@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像信息，配置服务运行所需的镜像地址等信息
                      * @return ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
                      * 设置镜像信息，配置服务运行所需的镜像地址等信息
-                     * @param ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     * @param _imageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     * 
                      */
                     void SetImageInfo(const ImageInfo& _imageInfo);
 
                     /**
                      * 判断参数 ImageInfo 是否已赋值
                      * @return ImageInfo 是否已赋值
+                     * 
                      */
                     bool ImageInfoHasBeenSet() const;
 
                     /**
                      * 获取模型信息，需要挂载模型时填写
                      * @return ModelInfo 模型信息，需要挂载模型时填写
+                     * 
                      */
                     ModelInfo GetModelInfo() const;
 
                     /**
                      * 设置模型信息，需要挂载模型时填写
-                     * @param ModelInfo 模型信息，需要挂载模型时填写
+                     * @param _modelInfo 模型信息，需要挂载模型时填写
+                     * 
                      */
                     void SetModelInfo(const ModelInfo& _modelInfo);
 
                     /**
                      * 判断参数 ModelInfo 是否已赋值
                      * @return ModelInfo 是否已赋值
+                     * 
                      */
                     bool ModelInfoHasBeenSet() const;
 
                     /**
                      * 获取挂载信息
                      * @return VolumeMount 挂载信息
+                     * 
                      */
                     VolumeMount GetVolumeMount() const;
 
                     /**
                      * 设置挂载信息
-                     * @param VolumeMount 挂载信息
+                     * @param _volumeMount 挂载信息
+                     * 
                      */
                     void SetVolumeMount(const VolumeMount& _volumeMount);
 
                     /**
                      * 判断参数 VolumeMount 是否已赋值
                      * @return VolumeMount 是否已赋值
+                     * 
                      */
                     bool VolumeMountHasBeenSet() const;
 

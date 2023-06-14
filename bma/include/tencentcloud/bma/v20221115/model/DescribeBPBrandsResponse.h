@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取品牌信息
                      * @return Brands 品牌信息
+                     * 
                      */
                     std::vector<BrandData> GetBrands() const;
 
                     /**
                      * 判断参数 Brands 是否已赋值
                      * @return Brands 是否已赋值
+                     * 
                      */
                     bool BrandsHasBeenSet() const;
 
                     /**
                      * 获取品牌审核通知栏状态：0 不显示 1 显示
                      * @return NoticeStatus 品牌审核通知栏状态：0 不显示 1 显示
+                     * 
                      */
                     int64_t GetNoticeStatus() const;
 
                     /**
                      * 判断参数 NoticeStatus 是否已赋值
                      * @return NoticeStatus 是否已赋值
+                     * 
                      */
                     bool NoticeStatusHasBeenSet() const;
 

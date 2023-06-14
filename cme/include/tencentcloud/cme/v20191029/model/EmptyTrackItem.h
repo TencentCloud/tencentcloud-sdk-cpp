@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取持续时间，单位为秒。
                      * @return Duration 持续时间，单位为秒。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置持续时间，单位为秒。
-                     * @param Duration 持续时间，单位为秒。
+                     * @param _duration 持续时间，单位为秒。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 

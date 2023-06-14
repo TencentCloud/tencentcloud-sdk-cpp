@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取时间模板名称
                      * @return Name 时间模板名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置时间模板名称
-                     * @param Name 时间模板名称
+                     * @param _name 时间模板名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0
                      * @return IsAllWeek 是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0
+                     * 
                      */
                     int64_t GetIsAllWeek() const;
 
                     /**
                      * 设置是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0
-                     * @param IsAllWeek 是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0
+                     * @param _isAllWeek 是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0
+                     * 
                      */
                     void SetIsAllWeek(const int64_t& _isAllWeek);
 
                     /**
                      * 判断参数 IsAllWeek 是否已赋值
                      * @return IsAllWeek 是否已赋值
+                     * 
                      */
                     bool IsAllWeekHasBeenSet() const;
 
                     /**
                      * 获取当IsAllWeek为0时必选，用于描述模板的各个时间片段
                      * @return TimeTemplateSpecs 当IsAllWeek为0时必选，用于描述模板的各个时间片段
+                     * 
                      */
                     std::vector<TimeTemplateSpec> GetTimeTemplateSpecs() const;
 
                     /**
                      * 设置当IsAllWeek为0时必选，用于描述模板的各个时间片段
-                     * @param TimeTemplateSpecs 当IsAllWeek为0时必选，用于描述模板的各个时间片段
+                     * @param _timeTemplateSpecs 当IsAllWeek为0时必选，用于描述模板的各个时间片段
+                     * 
                      */
                     void SetTimeTemplateSpecs(const std::vector<TimeTemplateSpec>& _timeTemplateSpecs);
 
                     /**
                      * 判断参数 TimeTemplateSpecs 是否已赋值
                      * @return TimeTemplateSpecs 是否已赋值
+                     * 
                      */
                     bool TimeTemplateSpecsHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取错别字内容
                      * @return Word 错别字内容
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置错别字内容
-                     * @param Word 错别字内容
+                     * @param _word 错别字内容
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取错别字的起始位置，从0开始
                      * @return BeginOffset 错别字的起始位置，从0开始
+                     * 
                      */
                     uint64_t GetBeginOffset() const;
 
                     /**
                      * 设置错别字的起始位置，从0开始
-                     * @param BeginOffset 错别字的起始位置，从0开始
+                     * @param _beginOffset 错别字的起始位置，从0开始
+                     * 
                      */
                     void SetBeginOffset(const uint64_t& _beginOffset);
 
                     /**
                      * 判断参数 BeginOffset 是否已赋值
                      * @return BeginOffset 是否已赋值
+                     * 
                      */
                     bool BeginOffsetHasBeenSet() const;
 
                     /**
                      * 获取错别字纠错结果
                      * @return CorrectWord 错别字纠错结果
+                     * 
                      */
                     std::string GetCorrectWord() const;
 
                     /**
                      * 设置错别字纠错结果
-                     * @param CorrectWord 错别字纠错结果
+                     * @param _correctWord 错别字纠错结果
+                     * 
                      */
                     void SetCorrectWord(const std::string& _correctWord);
 
                     /**
                      * 判断参数 CorrectWord 是否已赋值
                      * @return CorrectWord 是否已赋值
+                     * 
                      */
                     bool CorrectWordHasBeenSet() const;
 

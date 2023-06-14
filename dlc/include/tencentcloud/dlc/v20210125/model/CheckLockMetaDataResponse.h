@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取锁ID
                      * @return LockId 锁ID
+                     * 
                      */
                     int64_t GetLockId() const;
 
                     /**
                      * 判断参数 LockId 是否已赋值
                      * @return LockId 是否已赋值
+                     * 
                      */
                     bool LockIdHasBeenSet() const;
 
                     /**
                      * 获取锁状态：ACQUIRED、WAITING、ABORT、NOT_ACQUIRED
                      * @return LockState 锁状态：ACQUIRED、WAITING、ABORT、NOT_ACQUIRED
+                     * 
                      */
                     std::string GetLockState() const;
 
                     /**
                      * 判断参数 LockState 是否已赋值
                      * @return LockState 是否已赋值
+                     * 
                      */
                     bool LockStateHasBeenSet() const;
 

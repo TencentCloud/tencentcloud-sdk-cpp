@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
                      * @return LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
-                     * @param LoadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * @param _loadBalancerId 负载均衡实例ID，可通过接口DescribeLoadBalancers查询。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取查找的键值，可用于模糊查找该名称的监听器。
                      * @return SearchKey 查找的键值，可用于模糊查找该名称的监听器。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置查找的键值，可用于模糊查找该名称的监听器。
-                     * @param SearchKey 查找的键值，可用于模糊查找该名称的监听器。
+                     * @param _searchKey 查找的键值，可用于模糊查找该名称的监听器。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。
                      * @return InstanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。
-                     * @param InstanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。
+                     * @param _instanceIds 主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务Id
                      * @return TaskId 迁移任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取迁移状态。0: 已完成；1: 进行中；2: 已终止
                      * @return Status 迁移状态。0: 已完成；1: 进行中；2: 已终止
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

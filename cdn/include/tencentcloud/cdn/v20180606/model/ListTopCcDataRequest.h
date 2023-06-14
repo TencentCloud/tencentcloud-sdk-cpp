@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询Top数据的开始时间，格式为：2020-01-01 00:00:00
                      * @return StartTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询Top数据的开始时间，格式为：2020-01-01 00:00:00
-                     * @param StartTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * @param _startTime 查询Top数据的开始时间，格式为：2020-01-01 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return EndTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，不传此参数，表示查当天数据
 时间跨度要小于等于7天
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -74,33 +78,38 @@ namespace TencentCloud
                      * 设置查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，不传此参数，表示查当天数据
 时间跨度要小于等于7天
-                     * @param EndTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
+                     * @param _endTime 查询Top数据的结束时间，格式为：2020-01-01 23:59:59
 支持 90 天内数据查询，不传此参数，表示查当天数据
 时间跨度要小于等于7天
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取域名，不传此参数，表示查询账号级别数据
                      * @return Domain 域名，不传此参数，表示查询账号级别数据
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名，不传此参数，表示查询账号级别数据
-                     * @param Domain 域名，不传此参数，表示查询账号级别数据
+                     * @param _domain 域名，不传此参数，表示查询账号级别数据
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -111,6 +120,7 @@ ua :  Top UA
                      * @return Metric 统计指标：
 ip_url : Top IP+URL 默认值
 ua :  Top UA
+                     * 
                      */
                     std::string GetMetric() const;
 
@@ -118,15 +128,17 @@ ua :  Top UA
                      * 设置统计指标：
 ip_url : Top IP+URL 默认值
 ua :  Top UA
-                     * @param Metric 统计指标：
+                     * @param _metric 统计指标：
 ip_url : Top IP+URL 默认值
 ua :  Top UA
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
@@ -135,38 +147,44 @@ ua :  Top UA
 ecdn表示ECDN数据
                      * @return Source cdn表示CDN数据，默认值
 ecdn表示ECDN数据
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置cdn表示CDN数据，默认值
 ecdn表示ECDN数据
-                     * @param Source cdn表示CDN数据，默认值
+                     * @param _source cdn表示CDN数据，默认值
 ecdn表示ECDN数据
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取域名列表，不传此参数，表示查询账号级别数据
                      * @return Domains 域名列表，不传此参数，表示查询账号级别数据
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置域名列表，不传此参数，表示查询账号级别数据
-                     * @param Domains 域名列表，不传此参数，表示查询账号级别数据
+                     * @param _domains 域名列表，不传此参数，表示查询账号级别数据
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -177,6 +195,7 @@ ecdn表示ECDN数据
                      * @return ActionName 执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 为空表示查询所有执行动作数据
+                     * 
                      */
                     std::string GetActionName() const;
 
@@ -184,33 +203,38 @@ ecdn表示ECDN数据
                      * 设置执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 为空表示查询所有执行动作数据
-                     * @param ActionName 执行动作，取值为：intercept/redirect/observe
+                     * @param _actionName 执行动作，取值为：intercept/redirect/observe
 分别表示：拦截/重定向/观察
 为空表示查询所有执行动作数据
+                     * 
                      */
                     void SetActionName(const std::string& _actionName);
 
                     /**
                      * 判断参数 ActionName 是否已赋值
                      * @return ActionName 是否已赋值
+                     * 
                      */
                     bool ActionNameHasBeenSet() const;
 
                     /**
                      * 获取地域：mainland或overseas，表示国内或海外，不填写默认表示国内
                      * @return Area 地域：mainland或overseas，表示国内或海外，不填写默认表示国内
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域：mainland或overseas，表示国内或海外，不填写默认表示国内
-                     * @param Area 地域：mainland或overseas，表示国内或海外，不填写默认表示国内
+                     * @param _area 地域：mainland或overseas，表示国内或海外，不填写默认表示国内
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

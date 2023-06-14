@@ -61,6 +61,7 @@ namespace TencentCloud
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
 <li>VoicePorn：声音违规</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -70,89 +71,103 @@ namespace TencentCloud
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
 <li>VoicePorn：声音违规</li>
-                     * @param Type 审核结果的类型，可以取的值有：
+                     * @param _type 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
 <li>VoicePorn：声音违规</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取图片鉴黄的结果，当 Type 为 ImagePorn 时有效。
                      * @return ImagePornResultSet 图片鉴黄的结果，当 Type 为 ImagePorn 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAiReviewImagePornResult> GetImagePornResultSet() const;
 
                     /**
                      * 设置图片鉴黄的结果，当 Type 为 ImagePorn 时有效。
-                     * @param ImagePornResultSet 图片鉴黄的结果，当 Type 为 ImagePorn 时有效。
+                     * @param _imagePornResultSet 图片鉴黄的结果，当 Type 为 ImagePorn 时有效。
+                     * 
                      */
                     void SetImagePornResultSet(const std::vector<LiveStreamAiReviewImagePornResult>& _imagePornResultSet);
 
                     /**
                      * 判断参数 ImagePornResultSet 是否已赋值
                      * @return ImagePornResultSet 是否已赋值
+                     * 
                      */
                     bool ImagePornResultSetHasBeenSet() const;
 
                     /**
                      * 获取图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
                      * @return ImageTerrorismResultSet 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAiReviewImageTerrorismResult> GetImageTerrorismResultSet() const;
 
                     /**
                      * 设置图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
-                     * @param ImageTerrorismResultSet 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
+                     * @param _imageTerrorismResultSet 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
+                     * 
                      */
                     void SetImageTerrorismResultSet(const std::vector<LiveStreamAiReviewImageTerrorismResult>& _imageTerrorismResultSet);
 
                     /**
                      * 判断参数 ImageTerrorismResultSet 是否已赋值
                      * @return ImageTerrorismResultSet 是否已赋值
+                     * 
                      */
                     bool ImageTerrorismResultSetHasBeenSet() const;
 
                     /**
                      * 获取图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
                      * @return ImagePoliticalResultSet 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAiReviewImagePoliticalResult> GetImagePoliticalResultSet() const;
 
                     /**
                      * 设置图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
-                     * @param ImagePoliticalResultSet 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
+                     * @param _imagePoliticalResultSet 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
+                     * 
                      */
                     void SetImagePoliticalResultSet(const std::vector<LiveStreamAiReviewImagePoliticalResult>& _imagePoliticalResultSet);
 
                     /**
                      * 判断参数 ImagePoliticalResultSet 是否已赋值
                      * @return ImagePoliticalResultSet 是否已赋值
+                     * 
                      */
                     bool ImagePoliticalResultSetHasBeenSet() const;
 
                     /**
                      * 获取声音违规的结果，当 Type 为 VoicePorn 时有效。
                      * @return VoicePornResultSet 声音违规的结果，当 Type 为 VoicePorn 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAiReviewVoicePornResult> GetVoicePornResultSet() const;
 
                     /**
                      * 设置声音违规的结果，当 Type 为 VoicePorn 时有效。
-                     * @param VoicePornResultSet 声音违规的结果，当 Type 为 VoicePorn 时有效。
+                     * @param _voicePornResultSet 声音违规的结果，当 Type 为 VoicePorn 时有效。
+                     * 
                      */
                     void SetVoicePornResultSet(const std::vector<LiveStreamAiReviewVoicePornResult>& _voicePornResultSet);
 
                     /**
                      * 判断参数 VoicePornResultSet 是否已赋值
                      * @return VoicePornResultSet 是否已赋值
+                     * 
                      */
                     bool VoicePornResultSetHasBeenSet() const;
 

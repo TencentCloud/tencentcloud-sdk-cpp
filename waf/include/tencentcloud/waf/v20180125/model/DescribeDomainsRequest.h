@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取数据偏移量，从1开始。
                      * @return Offset 数据偏移量，从1开始。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，从1开始。
-                     * @param Offset 数据偏移量，从1开始。
+                     * @param _offset 数据偏移量，从1开始。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回域名的数量
                      * @return Limit 返回域名的数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回域名的数量
-                     * @param Limit 返回域名的数量
+                     * @param _limit 返回域名的数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取过滤数组
                      * @return Filters 过滤数组
+                     * 
                      */
                     std::vector<FiltersItemNew> GetFilters() const;
 
                     /**
                      * 设置过滤数组
-                     * @param Filters 过滤数组
+                     * @param _filters 过滤数组
+                     * 
                      */
                     void SetFilters(const std::vector<FiltersItemNew>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

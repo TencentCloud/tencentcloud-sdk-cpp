@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 属性值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置属性值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 属性值。
+                     * @param _label 属性值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 置信度，取值0-1之间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度，取值0-1之间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Confidence 置信度，取值0-1之间。
+                     * @param _confidence 置信度，取值0-1之间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 属性名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置属性名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 属性名称。
+                     * @param _name 属性名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

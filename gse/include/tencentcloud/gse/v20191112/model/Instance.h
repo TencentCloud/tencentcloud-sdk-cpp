@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 服务部署ID
+                     * @param _fleetId 服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpAddress IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpAddress IP地址
+                     * @param _ipAddress IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
                     /**
                      * 判断参数 IpAddress 是否已赋值
                      * @return IpAddress 是否已赋值
+                     * 
                      */
                     bool IpAddressHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DnsName dns
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDnsName() const;
 
                     /**
                      * 设置dns
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DnsName dns
+                     * @param _dnsName dns
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDnsName(const std::string& _dnsName);
 
                     /**
                      * 判断参数 DnsName 是否已赋值
                      * @return DnsName 是否已赋值
+                     * 
                      */
                     bool DnsNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatingSystem 操作系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperatingSystem() const;
 
                     /**
                      * 设置操作系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatingSystem 操作系统
+                     * @param _operatingSystem 操作系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatingSystem(const std::string& _operatingSystem);
 
                     /**
                      * 判断参数 OperatingSystem 是否已赋值
                      * @return OperatingSystem 是否已赋值
+                     * 
                      */
                     bool OperatingSystemHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 实例权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置实例权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 实例权重
+                     * @param _weight 实例权重
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveValue 实例是否保留, 1-保留，0-不保留,默认
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReserveValue() const;
 
                     /**
                      * 设置实例是否保留, 1-保留，0-不保留,默认
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReserveValue 实例是否保留, 1-保留，0-不保留,默认
+                     * @param _reserveValue 实例是否保留, 1-保留，0-不保留,默认
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReserveValue(const int64_t& _reserveValue);
 
                     /**
                      * 判断参数 ReserveValue 是否已赋值
                      * @return ReserveValue 是否已赋值
+                     * 
                      */
                     bool ReserveValueHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddress 实例的私有IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置实例的私有IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIpAddress 实例的私有IP地址
+                     * @param _privateIpAddress 实例的私有IP地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 

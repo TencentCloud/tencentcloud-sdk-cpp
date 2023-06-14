@@ -52,198 +52,231 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
                      * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
-                     * @param SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取主房间信息RoomId，转推的TRTC房间所对应的RoomId。
                      * @return RoomId 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置主房间信息RoomId，转推的TRTC房间所对应的RoomId。
-                     * @param RoomId 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * @param _roomId 主房间信息RoomId，转推的TRTC房间所对应的RoomId。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
                      * @return RoomIdType 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
                      * 设置主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
-                     * @param RoomIdType 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * @param _roomIdType 主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。
+                     * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
 
                     /**
                      * 判断参数 RoomIdType 是否已赋值
                      * @return RoomIdType 是否已赋值
+                     * 
                      */
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
                      * 获取转推服务加入TRTC房间的机器人参数。
                      * @return AgentParams 转推服务加入TRTC房间的机器人参数。
+                     * 
                      */
                     AgentParams GetAgentParams() const;
 
                     /**
                      * 设置转推服务加入TRTC房间的机器人参数。
-                     * @param AgentParams 转推服务加入TRTC房间的机器人参数。
+                     * @param _agentParams 转推服务加入TRTC房间的机器人参数。
+                     * 
                      */
                     void SetAgentParams(const AgentParams& _agentParams);
 
                     /**
                      * 判断参数 AgentParams 是否已赋值
                      * @return AgentParams 是否已赋值
+                     * 
                      */
                     bool AgentParamsHasBeenSet() const;
 
                     /**
                      * 获取是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
                      * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
+                     * 
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
                      * 设置是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-                     * @param WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
+                     * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
+                     * 
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
 
                     /**
                      * 判断参数 WithTranscoding 是否已赋值
                      * @return WithTranscoding 是否已赋值
+                     * 
                      */
                     bool WithTranscodingHasBeenSet() const;
 
                     /**
                      * 获取转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
                      * @return AudioParams 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * 
                      */
                     McuAudioParams GetAudioParams() const;
 
                     /**
                      * 设置转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
-                     * @param AudioParams 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * @param _audioParams 转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。
+                     * 
                      */
                     void SetAudioParams(const McuAudioParams& _audioParams);
 
                     /**
                      * 判断参数 AudioParams 是否已赋值
                      * @return AudioParams 是否已赋值
+                     * 
                      */
                     bool AudioParamsHasBeenSet() const;
 
                     /**
                      * 获取转推流的视频编码参数，不填表示纯音频转推。
                      * @return VideoParams 转推流的视频编码参数，不填表示纯音频转推。
+                     * 
                      */
                     McuVideoParams GetVideoParams() const;
 
                     /**
                      * 设置转推流的视频编码参数，不填表示纯音频转推。
-                     * @param VideoParams 转推流的视频编码参数，不填表示纯音频转推。
+                     * @param _videoParams 转推流的视频编码参数，不填表示纯音频转推。
+                     * 
                      */
                     void SetVideoParams(const McuVideoParams& _videoParams);
 
                     /**
                      * 判断参数 VideoParams 是否已赋值
                      * @return VideoParams 是否已赋值
+                     * 
                      */
                     bool VideoParamsHasBeenSet() const;
 
                     /**
                      * 获取需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
                      * @return SingleSubscribeParams 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * 
                      */
                     SingleSubscribeParams GetSingleSubscribeParams() const;
 
                     /**
                      * 设置需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
-                     * @param SingleSubscribeParams 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * @param _singleSubscribeParams 需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。
+                     * 
                      */
                     void SetSingleSubscribeParams(const SingleSubscribeParams& _singleSubscribeParams);
 
                     /**
                      * 判断参数 SingleSubscribeParams 是否已赋值
                      * @return SingleSubscribeParams 是否已赋值
+                     * 
                      */
                     bool SingleSubscribeParamsHasBeenSet() const;
 
                     /**
                      * 获取转推的CDN参数。和回推房间参数必须要有一个。
                      * @return PublishCdnParams 转推的CDN参数。和回推房间参数必须要有一个。
+                     * 
                      */
                     std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
 
                     /**
                      * 设置转推的CDN参数。和回推房间参数必须要有一个。
-                     * @param PublishCdnParams 转推的CDN参数。和回推房间参数必须要有一个。
+                     * @param _publishCdnParams 转推的CDN参数。和回推房间参数必须要有一个。
+                     * 
                      */
                     void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
 
                     /**
                      * 判断参数 PublishCdnParams 是否已赋值
                      * @return PublishCdnParams 是否已赋值
+                     * 
                      */
                     bool PublishCdnParamsHasBeenSet() const;
 
                     /**
                      * 获取混流SEI参数
                      * @return SeiParams 混流SEI参数
+                     * 
                      */
                     McuSeiParams GetSeiParams() const;
 
                     /**
                      * 设置混流SEI参数
-                     * @param SeiParams 混流SEI参数
+                     * @param _seiParams 混流SEI参数
+                     * 
                      */
                     void SetSeiParams(const McuSeiParams& _seiParams);
 
                     /**
                      * 判断参数 SeiParams 是否已赋值
                      * @return SeiParams 是否已赋值
+                     * 
                      */
                     bool SeiParamsHasBeenSet() const;
 
                     /**
                      * 获取回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
                      * @return FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 
                      */
                     std::vector<McuFeedBackRoomParams> GetFeedBackRoomParams() const;
 
                     /**
                      * 设置回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
-                     * @param FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * @param _feedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 
                      */
                     void SetFeedBackRoomParams(const std::vector<McuFeedBackRoomParams>& _feedBackRoomParams);
 
                     /**
                      * 判断参数 FeedBackRoomParams 是否已赋值
                      * @return FeedBackRoomParams 是否已赋值
+                     * 
                      */
                     bool FeedBackRoomParamsHasBeenSet() const;
 

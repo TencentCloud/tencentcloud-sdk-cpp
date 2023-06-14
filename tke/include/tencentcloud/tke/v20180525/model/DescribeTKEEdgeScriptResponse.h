@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取下载链接
                      * @return Link 下载链接
+                     * 
                      */
                     std::string GetLink() const;
 
                     /**
                      * 判断参数 Link 是否已赋值
                      * @return Link 是否已赋值
+                     * 
                      */
                     bool LinkHasBeenSet() const;
 
                     /**
                      * 获取下载需要的token
                      * @return Token 下载需要的token
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取下载命令
                      * @return Command 下载命令
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptVersion edgectl脚本版本，默认拉取最新版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScriptVersion() const;
 
                     /**
                      * 判断参数 ScriptVersion 是否已赋值
                      * @return ScriptVersion 是否已赋值
+                     * 
                      */
                     bool ScriptVersionHasBeenSet() const;
 

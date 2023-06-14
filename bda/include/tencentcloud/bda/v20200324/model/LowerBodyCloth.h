@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取下衣颜色信息。
                      * @return Color 下衣颜色信息。
+                     * 
                      */
                     LowerBodyClothColor GetColor() const;
 
                     /**
                      * 设置下衣颜色信息。
-                     * @param Color 下衣颜色信息。
+                     * @param _color 下衣颜色信息。
+                     * 
                      */
                     void SetColor(const LowerBodyClothColor& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
                     /**
                      * 获取下衣长度信息 。
                      * @return Length 下衣长度信息 。
+                     * 
                      */
                     LowerBodyClothLength GetLength() const;
 
                     /**
                      * 设置下衣长度信息 。
-                     * @param Length 下衣长度信息 。
+                     * @param _length 下衣长度信息 。
+                     * 
                      */
                     void SetLength(const LowerBodyClothLength& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
                     /**
                      * 获取下衣类型信息。
                      * @return Type 下衣类型信息。
+                     * 
                      */
                     LowerBodyClothType GetType() const;
 
                     /**
                      * 设置下衣类型信息。
-                     * @param Type 下衣类型信息。
+                     * @param _type 下衣类型信息。
+                     * 
                      */
                     void SetType(const LowerBodyClothType& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

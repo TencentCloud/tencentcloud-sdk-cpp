@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取位置空间名字
                      * @return SpaceName 位置空间名字
+                     * 
                      */
                     std::string GetSpaceName() const;
 
                     /**
                      * 设置位置空间名字
-                     * @param SpaceName 位置空间名字
+                     * @param _spaceName 位置空间名字
+                     * 
                      */
                     void SetSpaceName(const std::string& _spaceName);
 
                     /**
                      * 判断参数 SpaceName 是否已赋值
                      * @return SpaceName 是否已赋值
+                     * 
                      */
                     bool SpaceNameHasBeenSet() const;
 
                     /**
                      * 获取偏移量，从0开始
                      * @return Offset 偏移量，从0开始
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，从0开始
-                     * @param Offset 偏移量，从0开始
+                     * @param _offset 偏移量，从0开始
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取最大获取数量
                      * @return Limit 最大获取数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大获取数量
-                     * @param Limit 最大获取数量
+                     * @param _limit 最大获取数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

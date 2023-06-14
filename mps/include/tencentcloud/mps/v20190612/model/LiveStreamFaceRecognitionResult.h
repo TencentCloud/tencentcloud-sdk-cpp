@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取人物唯一标识 ID。
                      * @return Id 人物唯一标识 ID。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置人物唯一标识 ID。
-                     * @param Id 人物唯一标识 ID。
+                     * @param _id 人物唯一标识 ID。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取人物名称。
                      * @return Name 人物名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置人物名称。
-                     * @param Name 人物名称。
+                     * @param _name 人物名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -87,92 +93,107 @@ namespace TencentCloud
 <li>Default：默认人物库；</li><li>UserDefine：用户自定义人物库。</li>
                      * @return Type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li><li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li><li>UserDefine：用户自定义人物库。</li>
-                     * @param Type 人物库类型，表示识别出的人物来自哪个人物库：
+                     * @param _type 人物库类型，表示识别出的人物来自哪个人物库：
 <li>Default：默认人物库；</li><li>UserDefine：用户自定义人物库。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取识别片段起始的 PTS 时间，单位：秒。
                      * @return StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetStartPtsTime() const;
 
                     /**
                      * 设置识别片段起始的 PTS 时间，单位：秒。
-                     * @param StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * @param _startPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetStartPtsTime(const double& _startPtsTime);
 
                     /**
                      * 判断参数 StartPtsTime 是否已赋值
                      * @return StartPtsTime 是否已赋值
+                     * 
                      */
                     bool StartPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段终止的 PTS 时间，单位：秒。
                      * @return EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetEndPtsTime() const;
 
                     /**
                      * 设置识别片段终止的 PTS 时间，单位：秒。
-                     * @param EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * @param _endPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetEndPtsTime(const double& _endPtsTime);
 
                     /**
                      * 判断参数 EndPtsTime 是否已赋值
                      * @return EndPtsTime 是否已赋值
+                     * 
                      */
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段置信度。取值：0~100。
                      * @return Confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置识别片段置信度。取值：0~100。
-                     * @param Confidence 识别片段置信度。取值：0~100。
+                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
                      * @return AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @param AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * @param _areaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用id
                      * @return ProjectId 应用id
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置应用id
-                     * @param ProjectId 应用id
+                     * @param _projectId 应用id
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     int64_t GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const int64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取版本类型 0-pro 1-lite
                      * @return PlanType 版本类型 0-pro 1-lite
+                     * 
                      */
                     int64_t GetPlanType() const;
 
                     /**
                      * 设置版本类型 0-pro 1-lite
-                     * @param PlanType 版本类型 0-pro 1-lite
+                     * @param _planType 版本类型 0-pro 1-lite
+                     * 
                      */
                     void SetPlanType(const int64_t& _planType);
 
                     /**
                      * 判断参数 PlanType 是否已赋值
                      * @return PlanType 是否已赋值
+                     * 
                      */
                     bool PlanTypeHasBeenSet() const;
 

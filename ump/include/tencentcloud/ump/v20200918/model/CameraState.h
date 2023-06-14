@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取相机ID
                      * @return CameraId 相机ID
+                     * 
                      */
                     uint64_t GetCameraId() const;
 
                     /**
                      * 设置相机ID
-                     * @param CameraId 相机ID
+                     * @param _cameraId 相机ID
+                     * 
                      */
                     void SetCameraId(const uint64_t& _cameraId);
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 状态正常
+                     * 
                      */
                     uint64_t GetState() const;
 
@@ -93,7 +97,7 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 状态正常
-                     * @param State 相机状态:
+                     * @param _state 相机状态:
 10: 初始化
 11: 未知状态
 12: 网络异常
@@ -101,12 +105,14 @@ namespace TencentCloud
 14: 相机App异常
 15: 相机取流异常
 16: 状态正常
+                     * 
                      */
                     void SetState(const uint64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

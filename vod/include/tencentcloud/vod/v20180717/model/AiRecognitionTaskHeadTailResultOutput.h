@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取片头识别置信度。取值：0~100。
                      * @return HeadConfidence 片头识别置信度。取值：0~100。
+                     * 
                      */
                     double GetHeadConfidence() const;
 
                     /**
                      * 设置片头识别置信度。取值：0~100。
-                     * @param HeadConfidence 片头识别置信度。取值：0~100。
+                     * @param _headConfidence 片头识别置信度。取值：0~100。
+                     * 
                      */
                     void SetHeadConfidence(const double& _headConfidence);
 
                     /**
                      * 判断参数 HeadConfidence 是否已赋值
                      * @return HeadConfidence 是否已赋值
+                     * 
                      */
                     bool HeadConfidenceHasBeenSet() const;
 
                     /**
                      * 获取视频片头的结束时间点，单位：秒。
                      * @return HeadTimeOffset 视频片头的结束时间点，单位：秒。
+                     * 
                      */
                     double GetHeadTimeOffset() const;
 
                     /**
                      * 设置视频片头的结束时间点，单位：秒。
-                     * @param HeadTimeOffset 视频片头的结束时间点，单位：秒。
+                     * @param _headTimeOffset 视频片头的结束时间点，单位：秒。
+                     * 
                      */
                     void SetHeadTimeOffset(const double& _headTimeOffset);
 
                     /**
                      * 判断参数 HeadTimeOffset 是否已赋值
                      * @return HeadTimeOffset 是否已赋值
+                     * 
                      */
                     bool HeadTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取片尾识别置信度。取值：0~100。
                      * @return TailConfidence 片尾识别置信度。取值：0~100。
+                     * 
                      */
                     double GetTailConfidence() const;
 
                     /**
                      * 设置片尾识别置信度。取值：0~100。
-                     * @param TailConfidence 片尾识别置信度。取值：0~100。
+                     * @param _tailConfidence 片尾识别置信度。取值：0~100。
+                     * 
                      */
                     void SetTailConfidence(const double& _tailConfidence);
 
                     /**
                      * 判断参数 TailConfidence 是否已赋值
                      * @return TailConfidence 是否已赋值
+                     * 
                      */
                     bool TailConfidenceHasBeenSet() const;
 
                     /**
                      * 获取视频片尾的开始时间点，单位：秒。
                      * @return TailTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * 
                      */
                     double GetTailTimeOffset() const;
 
                     /**
                      * 设置视频片尾的开始时间点，单位：秒。
-                     * @param TailTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * @param _tailTimeOffset 视频片尾的开始时间点，单位：秒。
+                     * 
                      */
                     void SetTailTimeOffset(const double& _tailTimeOffset);
 
                     /**
                      * 判断参数 TailTimeOffset 是否已赋值
                      * @return TailTimeOffset 是否已赋值
+                     * 
                      */
                     bool TailTimeOffsetHasBeenSet() const;
 

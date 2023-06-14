@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedItems 添加或修改失败的条目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedItems() const;
 
                     /**
                      * 判断参数 FailedItems 是否已赋值
                      * @return FailedItems 是否已赋值
+                     * 
                      */
                     bool FailedItemsHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCount 添加或修改失败的数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 判断参数 FailedCount 是否已赋值
                      * @return FailedCount 是否已赋值
+                     * 
                      */
                     bool FailedCountHasBeenSet() const;
 

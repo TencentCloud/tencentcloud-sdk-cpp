@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 文本
+                     * @param _text 文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

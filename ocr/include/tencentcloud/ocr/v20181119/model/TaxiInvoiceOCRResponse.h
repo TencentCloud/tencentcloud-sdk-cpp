@@ -46,120 +46,140 @@ namespace TencentCloud
                     /**
                      * 获取发票代码
                      * @return InvoiceNum 发票代码
+                     * 
                      */
                     std::string GetInvoiceNum() const;
 
                     /**
                      * 判断参数 InvoiceNum 是否已赋值
                      * @return InvoiceNum 是否已赋值
+                     * 
                      */
                     bool InvoiceNumHasBeenSet() const;
 
                     /**
                      * 获取发票号码
                      * @return InvoiceCode 发票号码
+                     * 
                      */
                     std::string GetInvoiceCode() const;
 
                     /**
                      * 判断参数 InvoiceCode 是否已赋值
                      * @return InvoiceCode 是否已赋值
+                     * 
                      */
                     bool InvoiceCodeHasBeenSet() const;
 
                     /**
                      * 获取日期
                      * @return Date 日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Fare 金额
+                     * 
                      */
                     std::string GetFare() const;
 
                     /**
                      * 判断参数 Fare 是否已赋值
                      * @return Fare 是否已赋值
+                     * 
                      */
                     bool FareHasBeenSet() const;
 
                     /**
                      * 获取上车时间
                      * @return GetOnTime 上车时间
+                     * 
                      */
                     std::string GetGetOnTime() const;
 
                     /**
                      * 判断参数 GetOnTime 是否已赋值
                      * @return GetOnTime 是否已赋值
+                     * 
                      */
                     bool GetOnTimeHasBeenSet() const;
 
                     /**
                      * 获取下车时间
                      * @return GetOffTime 下车时间
+                     * 
                      */
                     std::string GetGetOffTime() const;
 
                     /**
                      * 判断参数 GetOffTime 是否已赋值
                      * @return GetOffTime 是否已赋值
+                     * 
                      */
                     bool GetOffTimeHasBeenSet() const;
 
                     /**
                      * 获取里程
                      * @return Distance 里程
+                     * 
                      */
                     std::string GetDistance() const;
 
                     /**
                      * 判断参数 Distance 是否已赋值
                      * @return Distance 是否已赋值
+                     * 
                      */
                     bool DistanceHasBeenSet() const;
 
                     /**
                      * 获取发票所在地
                      * @return Location 发票所在地
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取车牌号
                      * @return PlateNumber 车牌号
+                     * 
                      */
                     std::string GetPlateNumber() const;
 
                     /**
                      * 判断参数 PlateNumber 是否已赋值
                      * @return PlateNumber 是否已赋值
+                     * 
                      */
                     bool PlateNumberHasBeenSet() const;
 
                     /**
                      * 获取发票消费类型
                      * @return InvoiceType 发票消费类型
+                     * 
                      */
                     std::string GetInvoiceType() const;
 
                     /**
                      * 判断参数 InvoiceType 是否已赋值
                      * @return InvoiceType 是否已赋值
+                     * 
                      */
                     bool InvoiceTypeHasBeenSet() const;
 
@@ -168,12 +188,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
@@ -182,12 +204,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 市
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 

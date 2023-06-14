@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取起始时间戳，Unix 秒级时间戳
                      * @return StartTimeStamp 起始时间戳，Unix 秒级时间戳
+                     * 
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
                      * 设置起始时间戳，Unix 秒级时间戳
-                     * @param StartTimeStamp 起始时间戳，Unix 秒级时间戳
+                     * @param _startTimeStamp 起始时间戳，Unix 秒级时间戳
+                     * 
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳，Unix 秒级时间戳
                      * @return EndTimeStamp 结束时间戳，Unix 秒级时间戳
+                     * 
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
                      * 设置结束时间戳，Unix 秒级时间戳
-                     * @param EndTimeStamp 结束时间戳，Unix 秒级时间戳
+                     * @param _endTimeStamp 结束时间戳，Unix 秒级时间戳
+                     * 
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
                      * 获取应用 ID，可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID，可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用 ID，可以查看 https://console.cloud.tencent.com/ccc
-                     * @param SdkAppId 应用 ID，可以查看 https://console.cloud.tencent.com/ccc
+                     * @param _sdkAppId 应用 ID，可以查看 https://console.cloud.tencent.com/ccc
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页尺寸，上限 100
                      * @return PageSize 分页尺寸，上限 100
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页尺寸，上限 100
-                     * @param PageSize 分页尺寸，上限 100
+                     * @param _pageSize 分页尺寸，上限 100
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取分页页码，从 0 开始
                      * @return PageNumber 分页页码，从 0 开始
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置分页页码，从 0 开始
-                     * @param PageNumber 分页页码，从 0 开始
+                     * @param _pageNumber 分页页码，从 0 开始
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 

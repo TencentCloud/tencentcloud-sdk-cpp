@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取配置绑定的CLB ID
                      * @return LoadBalancerId 配置绑定的CLB ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置配置绑定的CLB ID
-                     * @param LoadBalancerId 配置绑定的CLB ID
+                     * @param _loadBalancerId 配置绑定的CLB ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 配置绑定的监听器ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置配置绑定的监听器ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerId 配置绑定的监听器ID
+                     * @param _listenerId 配置绑定的监听器ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 配置绑定的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置配置绑定的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 配置绑定的域名
+                     * @param _domain 配置绑定的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationId 配置绑定的规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置配置绑定的规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocationId 配置绑定的规则
+                     * @param _locationId 配置绑定的规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerName 监听器名字
+                     * @param _listenerName 监听器名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 监听器协议
+                     * @param _protocol 监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vport 监听器端口
+                     * @param _vport 监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url location的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置location的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url location的url
+                     * @param _url location的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -223,20 +247,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UconfigId 配置ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
                      * 设置配置ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UconfigId 配置ID
+                     * @param _uconfigId 配置ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
 
                     /**
                      * 判断参数 UconfigId 是否已赋值
                      * @return UconfigId 是否已赋值
+                     * 
                      */
                     bool UconfigIdHasBeenSet() const;
 

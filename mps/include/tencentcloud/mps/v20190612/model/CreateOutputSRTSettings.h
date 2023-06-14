@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取转推的目标地址，当Mode为CALLER时必填，且只能填1组。
                      * @return Destinations 转推的目标地址，当Mode为CALLER时必填，且只能填1组。
+                     * 
                      */
                     std::vector<CreateOutputSRTSettingsDestinations> GetDestinations() const;
 
                     /**
                      * 设置转推的目标地址，当Mode为CALLER时必填，且只能填1组。
-                     * @param Destinations 转推的目标地址，当Mode为CALLER时必填，且只能填1组。
+                     * @param _destinations 转推的目标地址，当Mode为CALLER时必填，且只能填1组。
+                     * 
                      */
                     void SetDestinations(const std::vector<CreateOutputSRTSettingsDestinations>& _destinations);
 
                     /**
                      * 判断参数 Destinations 是否已赋值
                      * @return Destinations 是否已赋值
+                     * 
                      */
                     bool DestinationsHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
                      * @return StreamId 转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
-                     * @param StreamId 转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * @param _streamId 转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * 
                      */
                     void SetStreamId(const std::string& _streamId);
 
                     /**
                      * 判断参数 StreamId 是否已赋值
                      * @return StreamId 是否已赋值
+                     * 
                      */
                     bool StreamIdHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
                      * @return Latency 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     int64_t GetLatency() const;
 
                     /**
                      * 设置转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param Latency 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * @param _latency 转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     void SetLatency(const int64_t& _latency);
 
                     /**
                      * 判断参数 Latency 是否已赋值
                      * @return Latency 是否已赋值
+                     * 
                      */
                     bool LatencyHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
                      * @return RecvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     int64_t GetRecvLatency() const;
 
                     /**
                      * 设置转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
-                     * @param RecvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * @param _recvLatency 转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     void SetRecvLatency(const int64_t& _recvLatency);
 
                     /**
                      * 判断参数 RecvLatency 是否已赋值
                      * @return RecvLatency 是否已赋值
+                     * 
                      */
                     bool RecvLatencyHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
                      * @return PeerLatency 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     int64_t GetPeerLatency() const;
 
                     /**
                      * 设置转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
-                     * @param PeerLatency 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * @param _peerLatency 转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。
+                     * 
                      */
                     void SetPeerLatency(const int64_t& _peerLatency);
 
                     /**
                      * 判断参数 PeerLatency 是否已赋值
                      * @return PeerLatency 是否已赋值
+                     * 
                      */
                     bool PeerLatencyHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
                      * @return PeerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 
                      */
                     int64_t GetPeerIdleTimeout() const;
 
                     /**
                      * 设置转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
-                     * @param PeerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * @param _peerIdleTimeout 转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。
+                     * 
                      */
                     void SetPeerIdleTimeout(const int64_t& _peerIdleTimeout);
 
                     /**
                      * 判断参数 PeerIdleTimeout 是否已赋值
                      * @return PeerIdleTimeout 是否已赋值
+                     * 
                      */
                     bool PeerIdleTimeoutHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。
                      * @return Passphrase 转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。
+                     * 
                      */
                     std::string GetPassphrase() const;
 
                     /**
                      * 设置转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。
-                     * @param Passphrase 转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。
+                     * @param _passphrase 转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。
+                     * 
                      */
                     void SetPassphrase(const std::string& _passphrase);
 
                     /**
                      * 判断参数 Passphrase 是否已赋值
                      * @return Passphrase 是否已赋值
+                     * 
                      */
                     bool PassphraseHasBeenSet() const;
 
                     /**
                      * 获取转推SRT的密钥长度，默认为0，可选[0|16|24|32]。
                      * @return PbKeyLen 转推SRT的密钥长度，默认为0，可选[0|16|24|32]。
+                     * 
                      */
                     int64_t GetPbKeyLen() const;
 
                     /**
                      * 设置转推SRT的密钥长度，默认为0，可选[0|16|24|32]。
-                     * @param PbKeyLen 转推SRT的密钥长度，默认为0，可选[0|16|24|32]。
+                     * @param _pbKeyLen 转推SRT的密钥长度，默认为0，可选[0|16|24|32]。
+                     * 
                      */
                     void SetPbKeyLen(const int64_t& _pbKeyLen);
 
                     /**
                      * 判断参数 PbKeyLen 是否已赋值
                      * @return PbKeyLen 是否已赋值
+                     * 
                      */
                     bool PbKeyLenHasBeenSet() const;
 
                     /**
                      * 获取SRT模式，可选[LISTENER|CALLER]，默认为CALLER。
                      * @return Mode SRT模式，可选[LISTENER|CALLER]，默认为CALLER。
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置SRT模式，可选[LISTENER|CALLER]，默认为CALLER。
-                     * @param Mode SRT模式，可选[LISTENER|CALLER]，默认为CALLER。
+                     * @param _mode SRT模式，可选[LISTENER|CALLER]，默认为CALLER。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 

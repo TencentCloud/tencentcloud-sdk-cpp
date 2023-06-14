@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAcctNo STRING(50)，见证子账户的账号（平台需要记录下来，后续所有接口交互都会用到）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
@@ -62,48 +64,56 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedMsg STRING(1027)，保留域（需要开通智能收款，此处返回智能收款账号，正常情况下返回空）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReservedMsg() const;
 
                     /**
                      * 判断参数 ReservedMsg 是否已赋值
                      * @return ReservedMsg 是否已赋值
+                     * 
                      */
                     bool ReservedMsgHasBeenSet() const;
 
                     /**
                      * 获取String(20)，返回码
                      * @return TxnReturnCode String(20)，返回码
+                     * 
                      */
                     std::string GetTxnReturnCode() const;
 
                     /**
                      * 判断参数 TxnReturnCode 是否已赋值
                      * @return TxnReturnCode 是否已赋值
+                     * 
                      */
                     bool TxnReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取String(100)，返回信息
                      * @return TxnReturnMsg String(100)，返回信息
+                     * 
                      */
                     std::string GetTxnReturnMsg() const;
 
                     /**
                      * 判断参数 TxnReturnMsg 是否已赋值
                      * @return TxnReturnMsg 是否已赋值
+                     * 
                      */
                     bool TxnReturnMsgHasBeenSet() const;
 
                     /**
                      * 获取String(22)，交易流水号
                      * @return CnsmrSeqNo String(22)，交易流水号
+                     * 
                      */
                     std::string GetCnsmrSeqNo() const;
 
                     /**
                      * 判断参数 CnsmrSeqNo 是否已赋值
                      * @return CnsmrSeqNo 是否已赋值
+                     * 
                      */
                     bool CnsmrSeqNoHasBeenSet() const;
 

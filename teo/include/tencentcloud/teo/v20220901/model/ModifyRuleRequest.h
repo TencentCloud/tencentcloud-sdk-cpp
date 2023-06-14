@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取规则名称，字符串名称长度 1~255。
                      * @return RuleName 规则名称，字符串名称长度 1~255。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称，字符串名称长度 1~255。
-                     * @param RuleName 规则名称，字符串名称长度 1~255。
+                     * @param _ruleName 规则名称，字符串名称长度 1~255。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则内容。
                      * @return Rules 规则内容。
+                     * 
                      */
                     std::vector<Rule> GetRules() const;
 
                     /**
                      * 设置规则内容。
-                     * @param Rules 规则内容。
+                     * @param _rules 规则内容。
+                     * 
                      */
                     void SetRules(const std::vector<Rule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取规则 ID。
                      * @return RuleId 规则 ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则 ID。
-                     * @param RuleId 规则 ID。
+                     * @param _ruleId 规则 ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -122,6 +134,7 @@ namespace TencentCloud
                      * @return Status 规则状态，取值有：
 <li> enable: 启用； </li>
 <li> disable: 未启用。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -129,33 +142,38 @@ namespace TencentCloud
                      * 设置规则状态，取值有：
 <li> enable: 启用； </li>
 <li> disable: 未启用。</li>
-                     * @param Status 规则状态，取值有：
+                     * @param _status 规则状态，取值有：
 <li> enable: 启用； </li>
 <li> disable: 未启用。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取规则标签。
                      * @return Tags 规则标签。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置规则标签。
-                     * @param Tags 规则标签。
+                     * @param _tags 规则标签。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

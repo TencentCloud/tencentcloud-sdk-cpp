@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseInfo 服务基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServerBaseInfo GetBaseInfo() const;
 
                     /**
                      * 判断参数 BaseInfo 是否已赋值
                      * @return BaseInfo 是否已赋值
+                     * 
                      */
                     bool BaseInfoHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerConfig 服务配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServerBaseConfig GetServerConfig() const;
 
                     /**
                      * 判断参数 ServerConfig 是否已赋值
                      * @return ServerConfig 是否已赋值
+                     * 
                      */
                     bool ServerConfigHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineVersionInfos 在线版本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OnlineVersionInfo> GetOnlineVersionInfos() const;
 
                     /**
                      * 判断参数 OnlineVersionInfos 是否已赋值
                      * @return OnlineVersionInfos 是否已赋值
+                     * 
                      */
                     bool OnlineVersionInfosHasBeenSet() const;
 

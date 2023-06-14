@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取计划名称
                      * @return PlanName 计划名称
+                     * 
                      */
                     std::string GetPlanName() const;
 
                     /**
                      * 判断参数 PlanName 是否已赋值
                      * @return PlanName 是否已赋值
+                     * 
                      */
                     bool PlanNameHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取模板名称
                      * @return TemplateName 模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取存储时间
                      * @return RecordStorageTime 存储时间
+                     * 
                      */
                     int64_t GetRecordStorageTime() const;
 
                     /**
                      * 判断参数 RecordStorageTime 是否已赋值
                      * @return RecordStorageTime 是否已赋值
+                     * 
                      */
                     bool RecordStorageTimeHasBeenSet() const;
 
                     /**
                      * 获取计划类型
                      * @return PlanType 计划类型
+                     * 
                      */
                     int64_t GetPlanType() const;
 
                     /**
                      * 判断参数 PlanType 是否已赋值
                      * @return PlanType 是否已赋值
+                     * 
                      */
                     bool PlanTypeHasBeenSet() const;
 

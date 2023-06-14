@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务删除状态, 0-删除成功
                      * @return Status 任务删除状态, 0-删除成功
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

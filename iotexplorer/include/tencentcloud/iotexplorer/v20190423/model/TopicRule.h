@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取规则名称。
                      * @return RuleName 规则名称。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称。
-                     * @param RuleName 规则名称。
+                     * @param _ruleName 规则名称。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
                      * @return Sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * 
                      */
                     std::string GetSql() const;
 
                     /**
                      * 设置规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
-                     * @param Sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * @param _sql 规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==
+                     * 
                      */
                     void SetSql(const std::string& _sql);
 
                     /**
                      * 判断参数 Sql 是否已赋值
                      * @return Sql 是否已赋值
+                     * 
                      */
                     bool SqlHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 规则描述。
+                     * @param _description 规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions 行为的JSON字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActions() const;
 
                     /**
                      * 设置行为的JSON字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Actions 行为的JSON字符串。
+                     * @param _actions 行为的JSON字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActions(const std::string& _actions);
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDisabled 是否禁用规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetRuleDisabled() const;
 
                     /**
                      * 设置是否禁用规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleDisabled 是否禁用规则
+                     * @param _ruleDisabled 是否禁用规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleDisabled(const bool& _ruleDisabled);
 
                     /**
                      * 判断参数 RuleDisabled 是否已赋值
                      * @return RuleDisabled 是否已赋值
+                     * 
                      */
                     bool RuleDisabledHasBeenSet() const;
 

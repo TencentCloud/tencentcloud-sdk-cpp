@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InboundPermissions 安全组信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InboundPermission> GetInboundPermissions() const;
 
                     /**
                      * 判断参数 InboundPermissions 是否已赋值
                      * @return InboundPermissions 是否已赋值
+                     * 
                      */
                     bool InboundPermissionsHasBeenSet() const;
 

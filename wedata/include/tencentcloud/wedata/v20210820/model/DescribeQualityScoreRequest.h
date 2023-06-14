@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return StatisticsDate 统计日期
+                     * 
                      */
                     int64_t GetStatisticsDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param StatisticsDate 统计日期
+                     * @param _statisticsDate 统计日期
+                     * 
                      */
                     void SetStatisticsDate(const int64_t& _statisticsDate);
 
                     /**
                      * 判断参数 StatisticsDate 是否已赋值
                      * @return StatisticsDate 是否已赋值
+                     * 
                      */
                     bool StatisticsDateHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据来源id
                      * @return DatasourceId 数据来源id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据来源id
-                     * @param DatasourceId 数据来源id
+                     * @param _datasourceId 数据来源id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 

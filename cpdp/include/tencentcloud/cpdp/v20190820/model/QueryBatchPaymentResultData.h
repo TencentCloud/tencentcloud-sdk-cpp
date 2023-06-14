@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchId 批次号
+                     * @param _batchId 批次号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAmount 批次总额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalAmount() const;
 
                     /**
                      * 设置批次总额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalAmount 批次总额
+                     * @param _totalAmount 批次总额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalAmount(const int64_t& _totalAmount);
 
                     /**
                      * 判断参数 TotalAmount 是否已赋值
                      * @return TotalAmount 是否已赋值
+                     * 
                      */
                     bool TotalAmountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 批次总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置批次总量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 批次总量
+                     * @param _totalCount 批次总量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReqReserved 批次预留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReqReserved() const;
 
                     /**
                      * 设置批次预留字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReqReserved 批次预留字段
+                     * @param _reqReserved 批次预留字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReqReserved(const std::string& _reqReserved);
 
                     /**
                      * 判断参数 ReqReserved 是否已赋值
                      * @return ReqReserved 是否已赋值
+                     * 
                      */
                     bool ReqReservedHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 批次备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置批次备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 批次备注
+                     * @param _remark 批次备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferType 渠道类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTransferType() const;
 
                     /**
                      * 设置渠道类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransferType 渠道类型
+                     * @param _transferType 渠道类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferInfoList 转账明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QueryBatchPaymentResultDataInfo> GetTransferInfoList() const;
 
                     /**
                      * 设置转账明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransferInfoList 转账明细
+                     * @param _transferInfoList 转账明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransferInfoList(const std::vector<QueryBatchPaymentResultDataInfo>& _transferInfoList);
 
                     /**
                      * 判断参数 TransferInfoList 是否已赋值
                      * @return TransferInfoList 是否已赋值
+                     * 
                      */
                     bool TransferInfoListHasBeenSet() const;
 

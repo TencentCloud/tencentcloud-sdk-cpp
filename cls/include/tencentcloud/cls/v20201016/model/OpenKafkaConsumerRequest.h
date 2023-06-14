@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取CLS控制台创建的TopicId
                      * @return FromTopicId CLS控制台创建的TopicId
+                     * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
                      * 设置CLS控制台创建的TopicId
-                     * @param FromTopicId CLS控制台创建的TopicId
+                     * @param _fromTopicId CLS控制台创建的TopicId
+                     * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
 
                     /**
                      * 判断参数 FromTopicId 是否已赋值
                      * @return FromTopicId 是否已赋值
+                     * 
                      */
                     bool FromTopicIdHasBeenSet() const;
 
                     /**
                      * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
                      * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 
                      */
                     int64_t GetCompression() const;
 
                     /**
                      * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @param Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 
                      */
                     void SetCompression(const int64_t& _compression);
 
                     /**
                      * 判断参数 Compression 是否已赋值
                      * @return Compression 是否已赋值
+                     * 
                      */
                     bool CompressionHasBeenSet() const;
 

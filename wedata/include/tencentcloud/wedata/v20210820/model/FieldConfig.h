@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldKey 字段key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFieldKey() const;
 
                     /**
                      * 设置字段key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldKey 字段key
+                     * @param _fieldKey 字段key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldKey(const std::string& _fieldKey);
 
                     /**
                      * 判断参数 FieldKey 是否已赋值
                      * @return FieldKey 是否已赋值
+                     * 
                      */
                     bool FieldKeyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldValue 字段值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFieldValue() const;
 
                     /**
                      * 设置字段值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldValue 字段值
+                     * @param _fieldValue 字段值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldValue(const std::string& _fieldValue);
 
                     /**
                      * 判断参数 FieldValue 是否已赋值
                      * @return FieldValue 是否已赋值
+                     * 
                      */
                     bool FieldValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldDataType 字段值类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFieldDataType() const;
 
                     /**
                      * 设置字段值类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldDataType 字段值类型
+                     * @param _fieldDataType 字段值类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldDataType(const std::string& _fieldDataType);
 
                     /**
                      * 判断参数 FieldDataType 是否已赋值
                      * @return FieldDataType 是否已赋值
+                     * 
                      */
                     bool FieldDataTypeHasBeenSet() const;
 

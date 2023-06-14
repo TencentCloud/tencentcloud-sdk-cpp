@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
                      * @return GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * 
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
                      * 设置游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
-                     * @param GameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * @param _gameServerSessionId 游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符
+                     * 
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
                     /**
                      * 判断参数 GameServerSessionId 是否已赋值
                      * @return GameServerSessionId 是否已赋值
+                     * 
                      */
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
                      * 获取玩家ID，最大长度1024个ASCII字符
                      * @return PlayerId 玩家ID，最大长度1024个ASCII字符
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置玩家ID，最大长度1024个ASCII字符
-                     * @param PlayerId 玩家ID，最大长度1024个ASCII字符
+                     * @param _playerId 玩家ID，最大长度1024个ASCII字符
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
                     /**
                      * 获取玩家自定义数据，最大长度2048个ASCII字符
                      * @return PlayerData 玩家自定义数据，最大长度2048个ASCII字符
+                     * 
                      */
                     std::string GetPlayerData() const;
 
                     /**
                      * 设置玩家自定义数据，最大长度2048个ASCII字符
-                     * @param PlayerData 玩家自定义数据，最大长度2048个ASCII字符
+                     * @param _playerData 玩家自定义数据，最大长度2048个ASCII字符
+                     * 
                      */
                     void SetPlayerData(const std::string& _playerData);
 
                     /**
                      * 判断参数 PlayerData 是否已赋值
                      * @return PlayerData 是否已赋值
+                     * 
                      */
                     bool PlayerDataHasBeenSet() const;
 

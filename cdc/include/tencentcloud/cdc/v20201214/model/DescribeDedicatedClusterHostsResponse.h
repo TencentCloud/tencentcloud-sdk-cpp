@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostInfoSet 宿主机信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HostInfo> GetHostInfoSet() const;
 
                     /**
                      * 判断参数 HostInfoSet 是否已赋值
                      * @return HostInfoSet 是否已赋值
+                     * 
                      */
                     bool HostInfoSetHasBeenSet() const;
 
                     /**
                      * 获取宿主机总数
                      * @return TotalCount 宿主机总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取重新加密后的密文
                      * @return CiphertextBlob 重新加密后的密文
+                     * 
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
                      * 判断参数 CiphertextBlob 是否已赋值
                      * @return CiphertextBlob 是否已赋值
+                     * 
                      */
                     bool CiphertextBlobHasBeenSet() const;
 
                     /**
                      * 获取重新加密使用的CMK
                      * @return KeyId 重新加密使用的CMK
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取重新加密前密文使用的CMK
                      * @return SourceKeyId 重新加密前密文使用的CMK
+                     * 
                      */
                     std::string GetSourceKeyId() const;
 
                     /**
                      * 判断参数 SourceKeyId 是否已赋值
                      * @return SourceKeyId 是否已赋值
+                     * 
                      */
                     bool SourceKeyIdHasBeenSet() const;
 
                     /**
                      * 获取true表示密文已经重新加密。同一个CMK进行重加密，在密钥没有发生轮换的情况下不会进行实际重新加密操作，返回原密文
                      * @return ReEncrypted true表示密文已经重新加密。同一个CMK进行重加密，在密钥没有发生轮换的情况下不会进行实际重新加密操作，返回原密文
+                     * 
                      */
                     bool GetReEncrypted() const;
 
                     /**
                      * 判断参数 ReEncrypted 是否已赋值
                      * @return ReEncrypted 是否已赋值
+                     * 
                      */
                     bool ReEncryptedHasBeenSet() const;
 

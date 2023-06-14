@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
                      * @return PackageCreateTime 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     std::string GetPackageCreateTime() const;
 
                     /**
                      * 设置套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
-                     * @param PackageCreateTime 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param _packageCreateTime 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     void SetPackageCreateTime(const std::string& _packageCreateTime);
 
                     /**
                      * 判断参数 PackageCreateTime 是否已赋值
                      * @return PackageCreateTime 是否已赋值
+                     * 
                      */
                     bool PackageCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包创建时间，UNIX 时间戳（单位：秒）。
                      * @return PackageCreateUnixTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetPackageCreateUnixTime() const;
 
                     /**
                      * 设置套餐包创建时间，UNIX 时间戳（单位：秒）。
-                     * @param PackageCreateUnixTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * @param _packageCreateUnixTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetPackageCreateUnixTime(const uint64_t& _packageCreateUnixTime);
 
                     /**
                      * 判断参数 PackageCreateUnixTime 是否已赋值
                      * @return PackageCreateUnixTime 是否已赋值
+                     * 
                      */
                     bool PackageCreateUnixTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
                      * @return PackageEffectiveTime 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     std::string GetPackageEffectiveTime() const;
 
                     /**
                      * 设置套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
-                     * @param PackageEffectiveTime 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param _packageEffectiveTime 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     void SetPackageEffectiveTime(const std::string& _packageEffectiveTime);
 
                     /**
                      * 判断参数 PackageEffectiveTime 是否已赋值
                      * @return PackageEffectiveTime 是否已赋值
+                     * 
                      */
                     bool PackageEffectiveTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包生效时间，UNIX 时间戳（单位：秒）。
                      * @return PackageEffectiveUnixTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetPackageEffectiveUnixTime() const;
 
                     /**
                      * 设置套餐包生效时间，UNIX 时间戳（单位：秒）。
-                     * @param PackageEffectiveUnixTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * @param _packageEffectiveUnixTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetPackageEffectiveUnixTime(const uint64_t& _packageEffectiveUnixTime);
 
                     /**
                      * 判断参数 PackageEffectiveUnixTime 是否已赋值
                      * @return PackageEffectiveUnixTime 是否已赋值
+                     * 
                      */
                     bool PackageEffectiveUnixTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
                      * @return PackageExpiredTime 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     std::string GetPackageExpiredTime() const;
 
                     /**
                      * 设置套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
-                     * @param PackageExpiredTime 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param _packageExpiredTime 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
+                     * 
                      */
                     void SetPackageExpiredTime(const std::string& _packageExpiredTime);
 
                     /**
                      * 判断参数 PackageExpiredTime 是否已赋值
                      * @return PackageExpiredTime 是否已赋值
+                     * 
                      */
                     bool PackageExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包过期时间，UNIX 时间戳（单位：秒）。
                      * @return PackageExpiredUnixTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     uint64_t GetPackageExpiredUnixTime() const;
 
                     /**
                      * 设置套餐包过期时间，UNIX 时间戳（单位：秒）。
-                     * @param PackageExpiredUnixTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * @param _packageExpiredUnixTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * 
                      */
                     void SetPackageExpiredUnixTime(const uint64_t& _packageExpiredUnixTime);
 
                     /**
                      * 判断参数 PackageExpiredUnixTime 是否已赋值
                      * @return PackageExpiredUnixTime 是否已赋值
+                     * 
                      */
                     bool PackageExpiredUnixTimeHasBeenSet() const;
 
                     /**
                      * 获取套餐包条数。
                      * @return AmountOfPackage 套餐包条数。
+                     * 
                      */
                     uint64_t GetAmountOfPackage() const;
 
                     /**
                      * 设置套餐包条数。
-                     * @param AmountOfPackage 套餐包条数。
+                     * @param _amountOfPackage 套餐包条数。
+                     * 
                      */
                     void SetAmountOfPackage(const uint64_t& _amountOfPackage);
 
                     /**
                      * 判断参数 AmountOfPackage 是否已赋值
                      * @return AmountOfPackage 是否已赋值
+                     * 
                      */
                     bool AmountOfPackageHasBeenSet() const;
 
                     /**
                      * 获取0表示赠送套餐包，1表示购买套餐包。
                      * @return TypeOfPackage 0表示赠送套餐包，1表示购买套餐包。
+                     * 
                      */
                     uint64_t GetTypeOfPackage() const;
 
                     /**
                      * 设置0表示赠送套餐包，1表示购买套餐包。
-                     * @param TypeOfPackage 0表示赠送套餐包，1表示购买套餐包。
+                     * @param _typeOfPackage 0表示赠送套餐包，1表示购买套餐包。
+                     * 
                      */
                     void SetTypeOfPackage(const uint64_t& _typeOfPackage);
 
                     /**
                      * 判断参数 TypeOfPackage 是否已赋值
                      * @return TypeOfPackage 是否已赋值
+                     * 
                      */
                     bool TypeOfPackageHasBeenSet() const;
 
                     /**
                      * 获取套餐包 ID。
                      * @return PackageId 套餐包 ID。
+                     * 
                      */
                     uint64_t GetPackageId() const;
 
                     /**
                      * 设置套餐包 ID。
-                     * @param PackageId 套餐包 ID。
+                     * @param _packageId 套餐包 ID。
+                     * 
                      */
                     void SetPackageId(const uint64_t& _packageId);
 
                     /**
                      * 判断参数 PackageId 是否已赋值
                      * @return PackageId 是否已赋值
+                     * 
                      */
                     bool PackageIdHasBeenSet() const;
 
                     /**
                      * 获取当前使用量。
                      * @return CurrentUsage 当前使用量。
+                     * 
                      */
                     uint64_t GetCurrentUsage() const;
 
                     /**
                      * 设置当前使用量。
-                     * @param CurrentUsage 当前使用量。
+                     * @param _currentUsage 当前使用量。
+                     * 
                      */
                     void SetCurrentUsage(const uint64_t& _currentUsage);
 
                     /**
                      * 判断参数 CurrentUsage 是否已赋值
                      * @return CurrentUsage 是否已赋值
+                     * 
                      */
                     bool CurrentUsageHasBeenSet() const;
 

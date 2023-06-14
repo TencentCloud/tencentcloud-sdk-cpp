@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态
-                     * @param Status 任务状态
+                     * @param _status 任务状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误时为错误描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误时为错误描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误时为错误描述
+                     * @param _message 错误时为错误描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredWorkers 预期Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDesiredWorkers() const;
 
                     /**
                      * 设置预期Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredWorkers 预期Worker数量
+                     * @param _desiredWorkers 预期Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesiredWorkers(const uint64_t& _desiredWorkers);
 
                     /**
                      * 判断参数 DesiredWorkers 是否已赋值
                      * @return DesiredWorkers 是否已赋值
+                     * 
                      */
                     bool DesiredWorkersHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentWorkers 当前Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCurrentWorkers() const;
 
                     /**
                      * 设置当前Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentWorkers 当前Worker数量
+                     * @param _currentWorkers 当前Worker数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentWorkers(const uint64_t& _currentWorkers);
 
                     /**
                      * 判断参数 CurrentWorkers 是否已赋值
                      * @return CurrentWorkers 是否已赋值
+                     * 
                      */
                     bool CurrentWorkersHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 副本名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetReplicas() const;
 
                     /**
                      * 设置副本名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Replicas 副本名
+                     * @param _replicas 副本名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicas(const std::vector<std::string>& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
@@ -158,20 +173,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaInfos 副本实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ReplicaInfo> GetReplicaInfos() const;
 
                     /**
                      * 设置副本实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReplicaInfos 副本实例
+                     * @param _replicaInfos 副本实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicaInfos(const std::vector<ReplicaInfo>& _replicaInfos);
 
                     /**
                      * 判断参数 ReplicaInfos 是否已赋值
                      * @return ReplicaInfos 是否已赋值
+                     * 
                      */
                     bool ReplicaInfosHasBeenSet() const;
 

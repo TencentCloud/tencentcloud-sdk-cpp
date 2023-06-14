@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取机动车登记证书识别结果，具体内容请点击左侧链接。
                      * @return VehicleRegCertInfos 机动车登记证书识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<VehicleRegCertInfo> GetVehicleRegCertInfos() const;
 
                     /**
                      * 判断参数 VehicleRegCertInfos 是否已赋值
                      * @return VehicleRegCertInfos 是否已赋值
+                     * 
                      */
                     bool VehicleRegCertInfosHasBeenSet() const;
 

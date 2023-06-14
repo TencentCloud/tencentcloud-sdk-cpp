@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kinds 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FunctionTypeOrKind> GetKinds() const;
 
                     /**
                      * 判断参数 Kinds 是否已赋值
                      * @return Kinds 是否已赋值
+                     * 
                      */
                     bool KindsHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 判断参数 ErrorMessage 是否已赋值
                      * @return ErrorMessage 是否已赋值
+                     * 
                      */
                     bool ErrorMessageHasBeenSet() const;
 

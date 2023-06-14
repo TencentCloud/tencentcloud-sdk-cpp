@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取任务描述
                      * @return TaskSet 任务描述
+                     * 
                      */
                     std::vector<TaskInput> GetTaskSet() const;
 
                     /**
                      * 设置任务描述
-                     * @param TaskSet 任务描述
+                     * @param _taskSet 任务描述
+                     * 
                      */
                     void SetTaskSet(const std::vector<TaskInput>& _taskSet);
 
                     /**
                      * 判断参数 TaskSet 是否已赋值
                      * @return TaskSet 是否已赋值
+                     * 
                      */
                     bool TaskSetHasBeenSet() const;
 

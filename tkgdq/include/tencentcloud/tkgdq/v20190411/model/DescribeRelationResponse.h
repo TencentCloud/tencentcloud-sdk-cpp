@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回查询实体间的关系
                      * @return Content 返回查询实体间的关系
+                     * 
                      */
                     std::vector<EntityRelationContent> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

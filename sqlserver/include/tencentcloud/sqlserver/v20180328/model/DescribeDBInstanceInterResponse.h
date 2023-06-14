@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取互通组内总条数
                      * @return TotalCount 互通组内总条数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取互通组内实例信息详情
                      * @return InterInstanceSet 互通组内实例信息详情
+                     * 
                      */
                     std::vector<InterInstance> GetInterInstanceSet() const;
 
                     /**
                      * 判断参数 InterInstanceSet 是否已赋值
                      * @return InterInstanceSet 是否已赋值
+                     * 
                      */
                     bool InterInstanceSetHasBeenSet() const;
 

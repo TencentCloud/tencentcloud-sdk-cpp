@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取搜索字段
                      * @return SearchWord 搜索字段
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索字段
-                     * @param SearchWord 搜索字段
+                     * @param _searchWord 搜索字段
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取排序字段
                      * @return OrderBy 排序字段
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序字段
-                     * @param OrderBy 排序字段
+                     * @param _orderBy 排序字段
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取排序类型
                      * @return OrderType 排序类型
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置排序类型
-                     * @param OrderType 排序类型
+                     * @param _orderType 排序类型
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页个数
                      * @return Limit 分页个数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页个数
-                     * @param Limit 分页个数
+                     * @param _limit 分页个数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取状态过滤，online、offline、single_online
                      * @return Status 状态过滤，online、offline、single_online
+                     * 
                      */
                     std::vector<std::string> GetStatus() const;
 
                     /**
                      * 设置状态过滤，online、offline、single_online
-                     * @param Status 状态过滤，online、offline、single_online
+                     * @param _status 状态过滤，online、offline、single_online
+                     * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取IdList
                      * @return MicroserviceIdList IdList
+                     * 
                      */
                     std::vector<std::string> GetMicroserviceIdList() const;
 
                     /**
                      * 设置IdList
-                     * @param MicroserviceIdList IdList
+                     * @param _microserviceIdList IdList
+                     * 
                      */
                     void SetMicroserviceIdList(const std::vector<std::string>& _microserviceIdList);
 
                     /**
                      * 判断参数 MicroserviceIdList 是否已赋值
                      * @return MicroserviceIdList 是否已赋值
+                     * 
                      */
                     bool MicroserviceIdListHasBeenSet() const;
 
                     /**
                      * 获取搜索的服务名列表
                      * @return MicroserviceNameList 搜索的服务名列表
+                     * 
                      */
                     std::vector<std::string> GetMicroserviceNameList() const;
 
                     /**
                      * 设置搜索的服务名列表
-                     * @param MicroserviceNameList 搜索的服务名列表
+                     * @param _microserviceNameList 搜索的服务名列表
+                     * 
                      */
                     void SetMicroserviceNameList(const std::vector<std::string>& _microserviceNameList);
 
                     /**
                      * 判断参数 MicroserviceNameList 是否已赋值
                      * @return MicroserviceNameList 是否已赋值
+                     * 
                      */
                     bool MicroserviceNameListHasBeenSet() const;
 

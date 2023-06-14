@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例价格信息
                      * @return InstancePrice 实例价格信息
+                     * 
                      */
                     InstancesPrice GetInstancePrice() const;
 
                     /**
                      * 判断参数 InstancePrice 是否已赋值
                      * @return InstancePrice 是否已赋值
+                     * 
                      */
                     bool InstancePriceHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取核保任务ID数据
                      * @return UnderwriteTaskIds 核保任务ID数据
+                     * 
                      */
                     std::vector<std::string> GetUnderwriteTaskIds() const;
 
                     /**
                      * 判断参数 UnderwriteTaskIds 是否已赋值
                      * @return UnderwriteTaskIds 是否已赋值
+                     * 
                      */
                     bool UnderwriteTaskIdsHasBeenSet() const;
 

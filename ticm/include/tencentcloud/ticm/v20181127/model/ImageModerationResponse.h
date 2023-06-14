@@ -56,12 +56,14 @@ BLOCK：违规
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -70,12 +72,14 @@ BLOCK：违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PornResult 色情识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PornResult GetPornResult() const;
 
                     /**
                      * 判断参数 PornResult 是否已赋值
                      * @return PornResult 是否已赋值
+                     * 
                      */
                     bool PornResultHasBeenSet() const;
 
@@ -84,12 +88,14 @@ BLOCK：违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerrorismResult 暴恐识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TerrorismResult GetTerrorismResult() const;
 
                     /**
                      * 判断参数 TerrorismResult 是否已赋值
                      * @return TerrorismResult 是否已赋值
+                     * 
                      */
                     bool TerrorismResultHasBeenSet() const;
 
@@ -98,24 +104,28 @@ BLOCK：违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoliticsResult 政治敏感识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PoliticsResult GetPoliticsResult() const;
 
                     /**
                      * 判断参数 PoliticsResult 是否已赋值
                      * @return PoliticsResult 是否已赋值
+                     * 
                      */
                     bool PoliticsResultHasBeenSet() const;
 
                     /**
                      * 获取透传字段，透传简单信息。
                      * @return Extra 透传字段，透传简单信息。
+                     * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 判断参数 Extra 是否已赋值
                      * @return Extra 是否已赋值
+                     * 
                      */
                     bool ExtraHasBeenSet() const;
 
@@ -124,12 +134,14 @@ BLOCK：违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisgustResult 恶心内容识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DisgustResult GetDisgustResult() const;
 
                     /**
                      * 判断参数 DisgustResult 是否已赋值
                      * @return DisgustResult 是否已赋值
+                     * 
                      */
                     bool DisgustResultHasBeenSet() const;
 

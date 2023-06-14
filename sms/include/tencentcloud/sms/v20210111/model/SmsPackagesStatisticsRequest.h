@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
                      * @return SmsSdkAppId 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 
                      */
                     std::string GetSmsSdkAppId() const;
 
                     /**
                      * 设置短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
-                     * @param SmsSdkAppId 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * @param _smsSdkAppId 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 
                      */
                     void SetSmsSdkAppId(const std::string& _smsSdkAppId);
 
                     /**
                      * 判断参数 SmsSdkAppId 是否已赋值
                      * @return SmsSdkAppId 是否已赋值
+                     * 
                      */
                     bool SmsSdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取最大上限(需要拉取的套餐包个数)。
                      * @return Limit 最大上限(需要拉取的套餐包个数)。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置最大上限(需要拉取的套餐包个数)。
-                     * @param Limit 最大上限(需要拉取的套餐包个数)。
+                     * @param _limit 最大上限(需要拉取的套餐包个数)。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -101,20 +110,23 @@ namespace TencentCloud
 注：拉取套餐包的创建时间不小于起始时间。
                      * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
 注：拉取套餐包的创建时间不小于起始时间。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
 注：拉取套餐包的创建时间不小于起始时间。
-                     * @param BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
 注：拉取套餐包的创建时间不小于起始时间。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
 注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
 注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
-                     * @param EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
 注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

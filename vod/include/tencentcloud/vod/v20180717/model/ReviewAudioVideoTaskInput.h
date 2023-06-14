@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取媒体文件 ID。
                      * @return FileId 媒体文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件 ID。
-                     * @param FileId 媒体文件 ID。
+                     * @param _fileId 媒体文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取音视频审核模板 ID。
                      * @return Definition 音视频审核模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置音视频审核模板 ID。
-                     * @param Definition 音视频审核模板 ID。
+                     * @param _definition 音视频审核模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return ReviewContents 审核的内容，可选值：
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
+                     * 
                      */
                     std::vector<std::string> GetReviewContents() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置审核的内容，可选值：
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
-                     * @param ReviewContents 审核的内容，可选值：
+                     * @param _reviewContents 审核的内容，可选值：
 <li>Media：原始音视频；</li>
 <li>Cover：封面。</li>
+                     * 
                      */
                     void SetReviewContents(const std::vector<std::string>& _reviewContents);
 
                     /**
                      * 判断参数 ReviewContents 是否已赋值
                      * @return ReviewContents 是否已赋值
+                     * 
                      */
                     bool ReviewContentsHasBeenSet() const;
 

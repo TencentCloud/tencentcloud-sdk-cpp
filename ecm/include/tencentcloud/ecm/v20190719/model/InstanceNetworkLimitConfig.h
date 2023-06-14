@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取cpu核数
                      * @return CpuNum cpu核数
+                     * 
                      */
                     int64_t GetCpuNum() const;
 
                     /**
                      * 设置cpu核数
-                     * @param CpuNum cpu核数
+                     * @param _cpuNum cpu核数
+                     * 
                      */
                     void SetCpuNum(const int64_t& _cpuNum);
 
                     /**
                      * 判断参数 CpuNum 是否已赋值
                      * @return CpuNum 是否已赋值
+                     * 
                      */
                     bool CpuNumHasBeenSet() const;
 
                     /**
                      * 获取网卡数量限制
                      * @return NetworkInterfaceLimit 网卡数量限制
+                     * 
                      */
                     int64_t GetNetworkInterfaceLimit() const;
 
                     /**
                      * 设置网卡数量限制
-                     * @param NetworkInterfaceLimit 网卡数量限制
+                     * @param _networkInterfaceLimit 网卡数量限制
+                     * 
                      */
                     void SetNetworkInterfaceLimit(const int64_t& _networkInterfaceLimit);
 
                     /**
                      * 判断参数 NetworkInterfaceLimit 是否已赋值
                      * @return NetworkInterfaceLimit 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceLimitHasBeenSet() const;
 
                     /**
                      * 获取每张网卡内网ip数量限制
                      * @return InnerIpPerNetworkInterface 每张网卡内网ip数量限制
+                     * 
                      */
                     int64_t GetInnerIpPerNetworkInterface() const;
 
                     /**
                      * 设置每张网卡内网ip数量限制
-                     * @param InnerIpPerNetworkInterface 每张网卡内网ip数量限制
+                     * @param _innerIpPerNetworkInterface 每张网卡内网ip数量限制
+                     * 
                      */
                     void SetInnerIpPerNetworkInterface(const int64_t& _innerIpPerNetworkInterface);
 
                     /**
                      * 判断参数 InnerIpPerNetworkInterface 是否已赋值
                      * @return InnerIpPerNetworkInterface 是否已赋值
+                     * 
                      */
                     bool InnerIpPerNetworkInterfaceHasBeenSet() const;
 
                     /**
                      * 获取每个实例的外网ip限制
                      * @return PublicIpPerInstance 每个实例的外网ip限制
+                     * 
                      */
                     int64_t GetPublicIpPerInstance() const;
 
                     /**
                      * 设置每个实例的外网ip限制
-                     * @param PublicIpPerInstance 每个实例的外网ip限制
+                     * @param _publicIpPerInstance 每个实例的外网ip限制
+                     * 
                      */
                     void SetPublicIpPerInstance(const int64_t& _publicIpPerInstance);
 
                     /**
                      * 判断参数 PublicIpPerInstance 是否已赋值
                      * @return PublicIpPerInstance 是否已赋值
+                     * 
                      */
                     bool PublicIpPerInstanceHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取媒体 Id。
                      * @return MaterialId 媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置媒体 Id。
-                     * @param MaterialId 媒体 Id。
+                     * @param _materialId 媒体 Id。
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取更新后的媒体名称。如未更新则为空。
                      * @return Name 更新后的媒体名称。如未更新则为空。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置更新后的媒体名称。如未更新则为空。
-                     * @param Name 更新后的媒体名称。如未更新则为空。
+                     * @param _name 更新后的媒体名称。如未更新则为空。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。
                      * @return PresetTagIdSet 更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。
+                     * 
                      */
                     std::vector<std::string> GetPresetTagIdSet() const;
 
                     /**
                      * 设置更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。
-                     * @param PresetTagIdSet 更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。
+                     * @param _presetTagIdSet 更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。
+                     * 
                      */
                     void SetPresetTagIdSet(const std::vector<std::string>& _presetTagIdSet);
 
                     /**
                      * 判断参数 PresetTagIdSet 是否已赋值
                      * @return PresetTagIdSet 是否已赋值
+                     * 
                      */
                     bool PresetTagIdSetHasBeenSet() const;
 
                     /**
                      * 获取更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。
                      * @return TagSet 更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。
+                     * 
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。
-                     * @param TagSet 更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。
+                     * @param _tagSet 更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。
+                     * 
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

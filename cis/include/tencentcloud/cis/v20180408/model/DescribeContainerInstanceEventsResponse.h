@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取容器实例事件列表
                      * @return EventList 容器实例事件列表
+                     * 
                      */
                     std::vector<Event> GetEventList() const;
 
                     /**
                      * 判断参数 EventList 是否已赋值
                      * @return EventList 是否已赋值
+                     * 
                      */
                     bool EventListHasBeenSet() const;
 

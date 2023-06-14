@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取日志类型
                      * @return Resource 日志类型
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置日志类型
-                     * @param Resource 日志类型
+                     * @param _resource 日志类型
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取日志表名
                      * @return Metric 日志表名
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置日志表名
-                     * @param Metric 日志表名
+                     * @param _metric 日志表名
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取日志总数
                      * @return TotalCount 日志总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置日志总数
-                     * @param TotalCount 日志总数
+                     * @param _totalCount 日志总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取日志列表
                      * @return DataSet 日志列表
+                     * 
                      */
                     std::vector<AuditLogInfo> GetDataSet() const;
 
                     /**
                      * 设置日志列表
-                     * @param DataSet 日志列表
+                     * @param _dataSet 日志列表
+                     * 
                      */
                     void SetDataSet(const std::vector<AuditLogInfo>& _dataSet);
 
                     /**
                      * 判断参数 DataSet 是否已赋值
                      * @return DataSet 是否已赋值
+                     * 
                      */
                     bool DataSetHasBeenSet() const;
 

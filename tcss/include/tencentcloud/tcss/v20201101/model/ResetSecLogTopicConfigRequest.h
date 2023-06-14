@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取配置类型(ckafka/cls)
                      * @return ConfigType 配置类型(ckafka/cls)
+                     * 
                      */
                     std::string GetConfigType() const;
 
                     /**
                      * 设置配置类型(ckafka/cls)
-                     * @param ConfigType 配置类型(ckafka/cls)
+                     * @param _configType 配置类型(ckafka/cls)
+                     * 
                      */
                     void SetConfigType(const std::string& _configType);
 
                     /**
                      * 判断参数 ConfigType 是否已赋值
                      * @return ConfigType 是否已赋值
+                     * 
                      */
                     bool ConfigTypeHasBeenSet() const;
 
                     /**
                      * 获取日志类型
                      * @return LogType 日志类型
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型
-                     * @param LogType 日志类型
+                     * @param _logType 日志类型
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 

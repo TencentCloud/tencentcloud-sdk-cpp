@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取输出文件 Bucket 所属地域，如 ap-guangzhou  。
                      * @return Region 输出文件 Bucket 所属地域，如 ap-guangzhou  。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置输出文件 Bucket 所属地域，如 ap-guangzhou  。
-                     * @param Region 输出文件 Bucket 所属地域，如 ap-guangzhou  。
+                     * @param _region 输出文件 Bucket 所属地域，如 ap-guangzhou  。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取输出文件 Bucket 。
                      * @return Bucket 输出文件 Bucket 。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置输出文件 Bucket 。
-                     * @param Bucket 输出文件 Bucket 。
+                     * @param _bucket 输出文件 Bucket 。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取输出文件目录，目录名必须以 "/" 结尾。
                      * @return Dir 输出文件目录，目录名必须以 "/" 结尾。
+                     * 
                      */
                     std::string GetDir() const;
 
                     /**
                      * 设置输出文件目录，目录名必须以 "/" 结尾。
-                     * @param Dir 输出文件目录，目录名必须以 "/" 结尾。
+                     * @param _dir 输出文件目录，目录名必须以 "/" 结尾。
+                     * 
                      */
                     void SetDir(const std::string& _dir);
 
                     /**
                      * 判断参数 Dir 是否已赋值
                      * @return Dir 是否已赋值
+                     * 
                      */
                     bool DirHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取云联网实例ID。
                      * @return CcnId 云联网实例ID。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网实例ID。
-                     * @param CcnId 云联网实例ID。
+                     * @param _ccnId 云联网实例ID。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 

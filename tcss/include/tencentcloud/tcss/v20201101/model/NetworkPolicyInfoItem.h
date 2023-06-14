@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取网络策略名
                      * @return Name 网络策略名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置网络策略名
-                     * @param Name 网络策略名
+                     * @param _name 网络策略名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 网络策略描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置网络策略描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 网络策略描述
+                     * @param _description 网络策略描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -109,6 +115,7 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
+                     * 
                      */
                     std::string GetPublishStatus() const;
 
@@ -124,7 +131,7 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-                     * @param PublishStatus 发布状态：
+                     * @param _publishStatus 发布状态：
 
 开启待确认：PublishedNoConfirm
 
@@ -135,12 +142,14 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
+                     * 
                      */
                     void SetPublishStatus(const std::string& _publishStatus);
 
                     /**
                      * 判断参数 PublishStatus 是否已赋值
                      * @return PublishStatus 是否已赋值
+                     * 
                      */
                     bool PublishStatusHasBeenSet() const;
 
@@ -155,6 +164,7 @@ namespace TencentCloud
 自动发现：System
 
 手动添加：Manual
+                     * 
                      */
                     std::string GetPolicySourceType() const;
 
@@ -164,53 +174,61 @@ namespace TencentCloud
 自动发现：System
 
 手动添加：Manual
-                     * @param PolicySourceType 策略类型：
+                     * @param _policySourceType 策略类型：
 
 自动发现：System
 
 手动添加：Manual
+                     * 
                      */
                     void SetPolicySourceType(const std::string& _policySourceType);
 
                     /**
                      * 判断参数 PolicySourceType 是否已赋值
                      * @return PolicySourceType 是否已赋值
+                     * 
                      */
                     bool PolicySourceTypeHasBeenSet() const;
 
                     /**
                      * 获取策略空间
                      * @return Namespace 策略空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置策略空间
-                     * @param Namespace 策略空间
+                     * @param _namespace 策略空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取策略创建日期
                      * @return PolicyCreateTime 策略创建日期
+                     * 
                      */
                     std::string GetPolicyCreateTime() const;
 
                     /**
                      * 设置策略创建日期
-                     * @param PolicyCreateTime 策略创建日期
+                     * @param _policyCreateTime 策略创建日期
+                     * 
                      */
                     void SetPolicyCreateTime(const std::string& _policyCreateTime);
 
                     /**
                      * 判断参数 PolicyCreateTime 是否已赋值
                      * @return PolicyCreateTime 是否已赋值
+                     * 
                      */
                     bool PolicyCreateTimeHasBeenSet() const;
 
@@ -225,6 +243,7 @@ cilium：Cilium
 kube-router：KubeRouter
 
 cilium：Cilium
+                     * 
                      */
                     std::string GetNetworkPolicyPlugin() const;
 
@@ -234,17 +253,19 @@ cilium：Cilium
 kube-router：KubeRouter
 
 cilium：Cilium
-                     * @param NetworkPolicyPlugin 策略类型
+                     * @param _networkPolicyPlugin 策略类型
 
 kube-router：KubeRouter
 
 cilium：Cilium
+                     * 
                      */
                     void SetNetworkPolicyPlugin(const std::string& _networkPolicyPlugin);
 
                     /**
                      * 判断参数 NetworkPolicyPlugin 是否已赋值
                      * @return NetworkPolicyPlugin 是否已赋值
+                     * 
                      */
                     bool NetworkPolicyPluginHasBeenSet() const;
 
@@ -253,20 +274,23 @@ cilium：Cilium
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishResult 策略发布结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPublishResult() const;
 
                     /**
                      * 设置策略发布结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublishResult 策略发布结果
+                     * @param _publishResult 策略发布结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublishResult(const std::string& _publishResult);
 
                     /**
                      * 判断参数 PublishResult 是否已赋值
                      * @return PublishResult 是否已赋值
+                     * 
                      */
                     bool PublishResultHasBeenSet() const;
 
@@ -285,6 +309,7 @@ cilium：Cilium
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     int64_t GetFromPolicyRule() const;
 
@@ -296,19 +321,21 @@ cilium：Cilium
 全部拒绝 ：2
 
 自定义：3
-                     * @param FromPolicyRule 入站规则
+                     * @param _fromPolicyRule 入站规则
 
 全部允许：1
 
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     void SetFromPolicyRule(const int64_t& _fromPolicyRule);
 
                     /**
                      * 判断参数 FromPolicyRule 是否已赋值
                      * @return FromPolicyRule 是否已赋值
+                     * 
                      */
                     bool FromPolicyRuleHasBeenSet() const;
 
@@ -327,6 +354,7 @@ cilium：Cilium
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     int64_t GetToPolicyRule() const;
 
@@ -338,19 +366,21 @@ cilium：Cilium
 全部拒绝 ：2
 
 自定义：3
-                     * @param ToPolicyRule 入站规则
+                     * @param _toPolicyRule 入站规则
 
 全部允许：1
 
 全部拒绝 ：2
 
 自定义：3
+                     * 
                      */
                     void SetToPolicyRule(const int64_t& _toPolicyRule);
 
                     /**
                      * 判断参数 ToPolicyRule 是否已赋值
                      * @return ToPolicyRule 是否已赋值
+                     * 
                      */
                     bool ToPolicyRuleHasBeenSet() const;
 
@@ -359,38 +389,44 @@ cilium：Cilium
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodSelector 作用对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPodSelector() const;
 
                     /**
                      * 设置作用对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PodSelector 作用对象
+                     * @param _podSelector 作用对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPodSelector(const std::string& _podSelector);
 
                     /**
                      * 判断参数 PodSelector 是否已赋值
                      * @return PodSelector 是否已赋值
+                     * 
                      */
                     bool PodSelectorHasBeenSet() const;
 
                     /**
                      * 获取网络策略Id
                      * @return Id 网络策略Id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置网络策略Id
-                     * @param Id 网络策略Id
+                     * @param _id 网络策略Id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

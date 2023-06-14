@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 诊断出的异常类别。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置诊断出的异常类别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Category 诊断出的异常类别。
+                     * @param _category 诊断出的异常类别。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 诊断出的具体异常类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置诊断出的具体异常类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 诊断出的具体异常类型。
+                     * @param _type 诊断出的具体异常类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 诊断出异常开始的PTS时间戳。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTimestamp() const;
 
                     /**
                      * 设置诊断出异常开始的PTS时间戳。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 诊断出异常开始的PTS时间戳。
+                     * @param _timestamp 诊断出异常开始的PTS时间戳。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestamp(const double& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 诊断出的异常描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置诊断出的异常描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 诊断出的异常描述。
+                     * @param _description 诊断出的异常描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DateTime 诊断到异常的北京时间，采用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDateTime() const;
 
                     /**
                      * 设置诊断到异常的北京时间，采用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DateTime 诊断到异常的北京时间，采用 ISO 日期格式。
+                     * @param _dateTime 诊断到异常的北京时间，采用 ISO 日期格式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDateTime(const std::string& _dateTime);
 
                     /**
                      * 判断参数 DateTime 是否已赋值
                      * @return DateTime 是否已赋值
+                     * 
                      */
                     bool DateTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeverityLevel 诊断出的异常级别。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSeverityLevel() const;
 
                     /**
                      * 设置诊断出的异常级别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SeverityLevel 诊断出的异常级别。
+                     * @param _severityLevel 诊断出的异常级别。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSeverityLevel(const std::string& _severityLevel);
 
                     /**
                      * 判断参数 SeverityLevel 是否已赋值
                      * @return SeverityLevel 是否已赋值
+                     * 
                      */
                     bool SeverityLevelHasBeenSet() const;
 

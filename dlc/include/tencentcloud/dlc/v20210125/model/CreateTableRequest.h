@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取数据表配置信息
                      * @return TableInfo 数据表配置信息
+                     * 
                      */
                     TableInfo GetTableInfo() const;
 
                     /**
                      * 设置数据表配置信息
-                     * @param TableInfo 数据表配置信息
+                     * @param _tableInfo 数据表配置信息
+                     * 
                      */
                     void SetTableInfo(const TableInfo& _tableInfo);
 
                     /**
                      * 判断参数 TableInfo 是否已赋值
                      * @return TableInfo 是否已赋值
+                     * 
                      */
                     bool TableInfoHasBeenSet() const;
 

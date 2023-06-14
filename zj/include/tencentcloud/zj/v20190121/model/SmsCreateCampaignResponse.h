@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取活动id
                      * @return CampaignId 活动id
+                     * 
                      */
                     int64_t GetCampaignId() const;
 
                     /**
                      * 设置活动id
-                     * @param CampaignId 活动id
+                     * @param _campaignId 活动id
+                     * 
                      */
                     void SetCampaignId(const int64_t& _campaignId);
 
                     /**
                      * 判断参数 CampaignId 是否已赋值
                      * @return CampaignId 是否已赋值
+                     * 
                      */
                     bool CampaignIdHasBeenSet() const;
 

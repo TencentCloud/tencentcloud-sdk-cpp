@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
                      * @return ReplicationMode 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
+                     * 
                      */
                     std::string GetReplicationMode() const;
 
                     /**
                      * 设置从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-                     * @param ReplicationMode 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
+                     * @param _replicationMode 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
+                     * 
                      */
                     void SetReplicationMode(const std::string& _replicationMode);
 
                     /**
                      * 判断参数 ReplicationMode 是否已赋值
                      * @return ReplicationMode 是否已赋值
+                     * 
                      */
                     bool ReplicationModeHasBeenSet() const;
 
                     /**
                      * 获取从库可用区的正式名称，如ap-shanghai-1
                      * @return Zone 从库可用区的正式名称，如ap-shanghai-1
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置从库可用区的正式名称，如ap-shanghai-1
-                     * @param Zone 从库可用区的正式名称，如ap-shanghai-1
+                     * @param _zone 从库可用区的正式名称，如ap-shanghai-1
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

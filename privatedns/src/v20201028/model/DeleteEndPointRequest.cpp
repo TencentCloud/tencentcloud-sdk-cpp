@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DeleteEndPointRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Partners::V20180321::Model;
+using namespace TencentCloud::Privatedns::V20201028::Model;
 using namespace std;
 
-DescribeClientBalanceRequest::DescribeClientBalanceRequest() :
-    m_clientUinHasBeenSet(false)
+DeleteEndPointRequest::DeleteEndPointRequest() :
+    m_endPointIdHasBeenSet(false)
 {
 }
 
-string DescribeClientBalanceRequest::ToJsonString() const
+string DeleteEndPointRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clientUinHasBeenSet)
+    if (m_endPointIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientUin";
+        string key = "EndPointId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientUin.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPointId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DescribeClientBalanceRequest::ToJsonString() const
 }
 
 
-string DescribeClientBalanceRequest::GetClientUin() const
+string DeleteEndPointRequest::GetEndPointId() const
 {
-    return m_clientUin;
+    return m_endPointId;
 }
 
-void DescribeClientBalanceRequest::SetClientUin(const string& _clientUin)
+void DeleteEndPointRequest::SetEndPointId(const string& _endPointId)
 {
-    m_clientUin = _clientUin;
-    m_clientUinHasBeenSet = true;
+    m_endPointId = _endPointId;
+    m_endPointIdHasBeenSet = true;
 }
 
-bool DescribeClientBalanceRequest::ClientUinHasBeenSet() const
+bool DeleteEndPointRequest::EndPointIdHasBeenSet() const
 {
-    return m_clientUinHasBeenSet;
+    return m_endPointIdHasBeenSet;
 }
 
 

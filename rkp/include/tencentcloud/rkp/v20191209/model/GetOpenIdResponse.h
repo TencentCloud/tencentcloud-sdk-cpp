@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskInfo 设备风险
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RiskInfo> GetRiskInfo() const;
 
                     /**
                      * 判断参数 RiskInfo 是否已赋值
                      * @return RiskInfo 是否已赋值
+                     * 
                      */
                     bool RiskInfoHasBeenSet() const;
 

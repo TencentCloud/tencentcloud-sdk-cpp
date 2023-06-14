@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要轮转的凭据名。
                      * @return SecretName 需要轮转的凭据名。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置需要轮转的凭据名。
-                     * @param SecretName 需要轮转的凭据名。
+                     * @param _secretName 需要轮转的凭据名。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 

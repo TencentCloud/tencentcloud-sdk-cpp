@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取添加的媒体 Id 列表。
                      * @return MaterialIdSet 添加的媒体 Id 列表。
+                     * 
                      */
                     std::vector<std::string> GetMaterialIdSet() const;
 
                     /**
                      * 设置添加的媒体 Id 列表。
-                     * @param MaterialIdSet 添加的媒体 Id 列表。
+                     * @param _materialIdSet 添加的媒体 Id 列表。
+                     * 
                      */
                     void SetMaterialIdSet(const std::vector<std::string>& _materialIdSet);
 
                     /**
                      * 判断参数 MaterialIdSet 是否已赋值
                      * @return MaterialIdSet 是否已赋值
+                     * 
                      */
                     bool MaterialIdSetHasBeenSet() const;
 
                     /**
                      * 获取添加的媒体归属。
                      * @return Owner 添加的媒体归属。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置添加的媒体归属。
-                     * @param Owner 添加的媒体归属。
+                     * @param _owner 添加的媒体归属。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取添加的媒体分类路径。
                      * @return ClassPath 添加的媒体分类路径。
+                     * 
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置添加的媒体分类路径。
-                     * @param ClassPath 添加的媒体分类路径。
+                     * @param _classPath 添加的媒体分类路径。
+                     * 
                      */
                     void SetClassPath(const std::string& _classPath);
 
                     /**
                      * 判断参数 ClassPath 是否已赋值
                      * @return ClassPath 是否已赋值
+                     * 
                      */
                     bool ClassPathHasBeenSet() const;
 

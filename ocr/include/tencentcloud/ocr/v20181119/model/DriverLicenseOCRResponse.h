@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取性别
                      * @return Sex 性别
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取国籍
                      * @return Nationality 国籍
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
                     /**
                      * 获取住址
                      * @return Address 住址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取出生日期（YYYY-MM-DD）
                      * @return DateOfBirth 出生日期（YYYY-MM-DD）
+                     * 
                      */
                     std::string GetDateOfBirth() const;
 
                     /**
                      * 判断参数 DateOfBirth 是否已赋值
                      * @return DateOfBirth 是否已赋值
+                     * 
                      */
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
                      * 获取初次领证日期（YYYY-MM-DD）
                      * @return DateOfFirstIssue 初次领证日期（YYYY-MM-DD）
+                     * 
                      */
                     std::string GetDateOfFirstIssue() const;
 
                     /**
                      * 判断参数 DateOfFirstIssue 是否已赋值
                      * @return DateOfFirstIssue 是否已赋值
+                     * 
                      */
                     bool DateOfFirstIssueHasBeenSet() const;
 
                     /**
                      * 获取准驾车型
                      * @return Class 准驾车型
+                     * 
                      */
                     std::string GetClass() const;
 
                     /**
                      * 判断参数 Class 是否已赋值
                      * @return Class 是否已赋值
+                     * 
                      */
                     bool ClassHasBeenSet() const;
 
                     /**
                      * 获取有效期开始时间（YYYY-MM-DD）
                      * @return StartDate 有效期开始时间（YYYY-MM-DD）
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
@@ -144,48 +160,56 @@ namespace TencentCloud
 老版驾驶证返回有效期限 X年）
                      * @return EndDate 有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
 老版驾驶证返回有效期限 X年）
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取证号
                      * @return CardCode 证号
+                     * 
                      */
                     std::string GetCardCode() const;
 
                     /**
                      * 判断参数 CardCode 是否已赋值
                      * @return CardCode 是否已赋值
+                     * 
                      */
                     bool CardCodeHasBeenSet() const;
 
                     /**
                      * 获取档案编号
                      * @return ArchivesCode 档案编号
+                     * 
                      */
                     std::string GetArchivesCode() const;
 
                     /**
                      * 判断参数 ArchivesCode 是否已赋值
                      * @return ArchivesCode 是否已赋值
+                     * 
                      */
                     bool ArchivesCodeHasBeenSet() const;
 
                     /**
                      * 获取记录
                      * @return Record 记录
+                     * 
                      */
                     std::string GetRecord() const;
 
                     /**
                      * 判断参数 Record 是否已赋值
                      * @return Record 是否已赋值
+                     * 
                      */
                     bool RecordHasBeenSet() const;
 
@@ -200,12 +224,14 @@ namespace TencentCloud
 -9103  翻拍件告警
 -9106  ps告警
 注：告警码可以同时存在多个
+                     * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
 
                     /**
                      * 判断参数 RecognizeWarnCode 是否已赋值
                      * @return RecognizeWarnCode 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnCodeHasBeenSet() const;
 
@@ -220,48 +246,56 @@ WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
 WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
 WARN_DRIVER_LICENSE_PS_CARD ps告警
 注：告警信息可以同时存在多个
+                     * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
 
                     /**
                      * 判断参数 RecognizeWarnMsg 是否已赋值
                      * @return RecognizeWarnMsg 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 
                     /**
                      * 获取发证单位
                      * @return IssuingAuthority 发证单位
+                     * 
                      */
                     std::string GetIssuingAuthority() const;
 
                     /**
                      * 判断参数 IssuingAuthority 是否已赋值
                      * @return IssuingAuthority 是否已赋值
+                     * 
                      */
                     bool IssuingAuthorityHasBeenSet() const;
 
                     /**
                      * 获取状态（仅电子驾驶证支持返回该字段）
                      * @return State 状态（仅电子驾驶证支持返回该字段）
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取累积记分（仅电子驾驶证支持返回该字段）
                      * @return CumulativeScore 累积记分（仅电子驾驶证支持返回该字段）
+                     * 
                      */
                     std::string GetCumulativeScore() const;
 
                     /**
                      * 判断参数 CumulativeScore 是否已赋值
                      * @return CumulativeScore 是否已赋值
+                     * 
                      */
                     bool CumulativeScoreHasBeenSet() const;
 

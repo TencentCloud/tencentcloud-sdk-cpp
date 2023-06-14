@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取直播会员充值流水信息列表
                      * @return LiveVipTradeInfoSet 直播会员充值流水信息列表
+                     * 
                      */
                     std::vector<LiveVipTradeInfo> GetLiveVipTradeInfoSet() const;
 
                     /**
                      * 判断参数 LiveVipTradeInfoSet 是否已赋值
                      * @return LiveVipTradeInfoSet 是否已赋值
+                     * 
                      */
                     bool LiveVipTradeInfoSetHasBeenSet() const;
 
                     /**
                      * 获取直播会员充值流水总数。
                      * @return TotalCount 直播会员充值流水总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取迁移目的地域
                      * @return Region 迁移目的地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置迁移目的地域
-                     * @param Region 迁移目的地域
+                     * @param _region 迁移目的地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取迁移目的Ip
                      * @return Ip 迁移目的Ip
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置迁移目的Ip
-                     * @param Ip 迁移目的Ip
+                     * @param _ip 迁移目的Ip
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取迁移目的端口
                      * @return Port 迁移目的端口
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置迁移目的端口
-                     * @param Port 迁移目的端口
+                     * @param _port 迁移目的端口
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取迁移目的实例Id
                      * @return InstanceId 迁移目的实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置迁移目的实例Id
-                     * @param InstanceId 迁移目的实例Id
+                     * @param _instanceId 迁移目的实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

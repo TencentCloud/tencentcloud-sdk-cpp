@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，具体内容请点击左侧链接。
                      * @return TableDetections 检测到的文本信息，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<TableDetectInfo> GetTableDetections() const;
 
                     /**
                      * 判断参数 TableDetections 是否已赋值
                      * @return TableDetections 是否已赋值
+                     * 
                      */
                     bool TableDetectionsHasBeenSet() const;
 
                     /**
                      * 获取Base64 编码后的 Excel 数据。
                      * @return Data Base64 编码后的 Excel 数据。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取图片为PDF时，返回PDF的总页数，默认为0
                      * @return PdfPageSize 图片为PDF时，返回PDF的总页数，默认为0
+                     * 
                      */
                     int64_t GetPdfPageSize() const;
 
                     /**
                      * 判断参数 PdfPageSize 是否已赋值
                      * @return PdfPageSize 是否已赋值
+                     * 
                      */
                     bool PdfPageSizeHasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。
                      * @return Angle 图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 

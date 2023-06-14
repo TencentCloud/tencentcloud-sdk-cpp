@@ -49,24 +49,28 @@ namespace TencentCloud
 <li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
                      * @return TotalCount 符合搜索条件的记录总数。
 <li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取媒体文件信息列表。
                      * @return MediaInfoSet 媒体文件信息列表。
+                     * 
                      */
                     std::vector<MediaInfo> GetMediaInfoSet() const;
 
                     /**
                      * 判断参数 MediaInfoSet 是否已赋值
                      * @return MediaInfoSet 是否已赋值
+                     * 
                      */
                     bool MediaInfoSetHasBeenSet() const;
 

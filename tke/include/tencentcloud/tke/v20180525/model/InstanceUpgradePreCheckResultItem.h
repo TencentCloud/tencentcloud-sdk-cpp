@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取工作负载的命名空间
                      * @return Namespace 工作负载的命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置工作负载的命名空间
-                     * @param Namespace 工作负载的命名空间
+                     * @param _namespace 工作负载的命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取工作负载类型
                      * @return WorkLoadKind 工作负载类型
+                     * 
                      */
                     std::string GetWorkLoadKind() const;
 
                     /**
                      * 设置工作负载类型
-                     * @param WorkLoadKind 工作负载类型
+                     * @param _workLoadKind 工作负载类型
+                     * 
                      */
                     void SetWorkLoadKind(const std::string& _workLoadKind);
 
                     /**
                      * 判断参数 WorkLoadKind 是否已赋值
                      * @return WorkLoadKind 是否已赋值
+                     * 
                      */
                     bool WorkLoadKindHasBeenSet() const;
 
                     /**
                      * 获取工作负载名称
                      * @return WorkLoadName 工作负载名称
+                     * 
                      */
                     std::string GetWorkLoadName() const;
 
                     /**
                      * 设置工作负载名称
-                     * @param WorkLoadName 工作负载名称
+                     * @param _workLoadName 工作负载名称
+                     * 
                      */
                     void SetWorkLoadName(const std::string& _workLoadName);
 
                     /**
                      * 判断参数 WorkLoadName 是否已赋值
                      * @return WorkLoadName 是否已赋值
+                     * 
                      */
                     bool WorkLoadNameHasBeenSet() const;
 
                     /**
                      * 获取驱逐节点前工作负载running的pod数目
                      * @return Before 驱逐节点前工作负载running的pod数目
+                     * 
                      */
                     uint64_t GetBefore() const;
 
                     /**
                      * 设置驱逐节点前工作负载running的pod数目
-                     * @param Before 驱逐节点前工作负载running的pod数目
+                     * @param _before 驱逐节点前工作负载running的pod数目
+                     * 
                      */
                     void SetBefore(const uint64_t& _before);
 
                     /**
                      * 判断参数 Before 是否已赋值
                      * @return Before 是否已赋值
+                     * 
                      */
                     bool BeforeHasBeenSet() const;
 
                     /**
                      * 获取驱逐节点后工作负载running的pod数目
                      * @return After 驱逐节点后工作负载running的pod数目
+                     * 
                      */
                     uint64_t GetAfter() const;
 
                     /**
                      * 设置驱逐节点后工作负载running的pod数目
-                     * @param After 驱逐节点后工作负载running的pod数目
+                     * @param _after 驱逐节点后工作负载running的pod数目
+                     * 
                      */
                     void SetAfter(const uint64_t& _after);
 
                     /**
                      * 判断参数 After 是否已赋值
                      * @return After 是否已赋值
+                     * 
                      */
                     bool AfterHasBeenSet() const;
 
                     /**
                      * 获取工作负载在本节点上的pod列表
                      * @return Pods 工作负载在本节点上的pod列表
+                     * 
                      */
                     std::vector<std::string> GetPods() const;
 
                     /**
                      * 设置工作负载在本节点上的pod列表
-                     * @param Pods 工作负载在本节点上的pod列表
+                     * @param _pods 工作负载在本节点上的pod列表
+                     * 
                      */
                     void SetPods(const std::vector<std::string>& _pods);
 
                     /**
                      * 判断参数 Pods 是否已赋值
                      * @return Pods 是否已赋值
+                     * 
                      */
                     bool PodsHasBeenSet() const;
 

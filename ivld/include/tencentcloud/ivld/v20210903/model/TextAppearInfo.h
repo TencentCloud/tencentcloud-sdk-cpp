@@ -51,54 +51,63 @@ Position为关键词在文本中的偏移量，从0开始。例如，给定文�
                     /**
                      * 获取文本结果数组中的下标
                      * @return Index 文本结果数组中的下标
+                     * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置文本结果数组中的下标
-                     * @param Index 文本结果数组中的下标
+                     * @param _index 文本结果数组中的下标
+                     * 
                      */
                     void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
                     /**
                      * 获取关键词在文本中出现的起始偏移量(包含)
                      * @return StartPosition 关键词在文本中出现的起始偏移量(包含)
+                     * 
                      */
                     int64_t GetStartPosition() const;
 
                     /**
                      * 设置关键词在文本中出现的起始偏移量(包含)
-                     * @param StartPosition 关键词在文本中出现的起始偏移量(包含)
+                     * @param _startPosition 关键词在文本中出现的起始偏移量(包含)
+                     * 
                      */
                     void SetStartPosition(const int64_t& _startPosition);
 
                     /**
                      * 判断参数 StartPosition 是否已赋值
                      * @return StartPosition 是否已赋值
+                     * 
                      */
                     bool StartPositionHasBeenSet() const;
 
                     /**
                      * 获取关键词在文本中出现的结束偏移量(不包含)
                      * @return EndPosition 关键词在文本中出现的结束偏移量(不包含)
+                     * 
                      */
                     int64_t GetEndPosition() const;
 
                     /**
                      * 设置关键词在文本中出现的结束偏移量(不包含)
-                     * @param EndPosition 关键词在文本中出现的结束偏移量(不包含)
+                     * @param _endPosition 关键词在文本中出现的结束偏移量(不包含)
+                     * 
                      */
                     void SetEndPosition(const int64_t& _endPosition);
 
                     /**
                      * 判断参数 EndPosition 是否已赋值
                      * @return EndPosition 是否已赋值
+                     * 
                      */
                     bool EndPositionHasBeenSet() const;
 

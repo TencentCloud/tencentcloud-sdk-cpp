@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
 <li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -99,17 +106,19 @@ namespace TencentCloud
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
 <li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
 <li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

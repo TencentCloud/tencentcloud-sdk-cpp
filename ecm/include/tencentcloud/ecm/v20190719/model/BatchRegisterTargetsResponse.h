@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailListenerIdSet 绑定失败的监听器ID，如为空表示全部绑定成功。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailListenerIdSet() const;
 
                     /**
                      * 判断参数 FailListenerIdSet 是否已赋值
                      * @return FailListenerIdSet 是否已赋值
+                     * 
                      */
                     bool FailListenerIdSetHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取节点ID。
                      * @return NodeId 节点ID。
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 

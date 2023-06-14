@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取证书ID。
                      * @return CertificateId 证书ID。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书ID。
-                     * @param CertificateId 证书ID。
+                     * @param _certificateId 证书ID。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取证书类型。
                      * @return CertificateType 证书类型。
+                     * 
                      */
                     int64_t GetCertificateType() const;
 
                     /**
                      * 设置证书类型。
-                     * @param CertificateType 证书类型。
+                     * @param _certificateType 证书类型。
+                     * 
                      */
                     void SetCertificateType(const int64_t& _certificateType);
 
                     /**
                      * 判断参数 CertificateType 是否已赋值
                      * @return CertificateType 是否已赋值
+                     * 
                      */
                     bool CertificateTypeHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateAlias 证书名字。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
                      * 设置证书名字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificateAlias 证书名字。
+                     * @param _certificateAlias 证书名字。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
 
                     /**
                      * 判断参数 CertificateAlias 是否已赋值
                      * @return CertificateAlias 是否已赋值
+                     * 
                      */
                     bool CertificateAliasHasBeenSet() const;
 
                     /**
                      * 获取证书内容。
                      * @return CertificateContent 证书内容。
+                     * 
                      */
                     std::string GetCertificateContent() const;
 
                     /**
                      * 设置证书内容。
-                     * @param CertificateContent 证书内容。
+                     * @param _certificateContent 证书内容。
+                     * 
                      */
                     void SetCertificateContent(const std::string& _certificateContent);
 
                     /**
                      * 判断参数 CertificateContent 是否已赋值
                      * @return CertificateContent 是否已赋值
+                     * 
                      */
                     bool CertificateContentHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateKey 密钥内容。仅当证书类型为SSL证书时，返回该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificateKey() const;
 
                     /**
                      * 设置密钥内容。仅当证书类型为SSL证书时，返回该字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificateKey 密钥内容。仅当证书类型为SSL证书时，返回该字段。
+                     * @param _certificateKey 密钥内容。仅当证书类型为SSL证书时，返回该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificateKey(const std::string& _certificateKey);
 
                     /**
                      * 判断参数 CertificateKey 是否已赋值
                      * @return CertificateKey 是否已赋值
+                     * 
                      */
                     bool CertificateKeyHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param _createTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -171,20 +189,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBeginTime() const;
 
                     /**
                      * 设置证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param _beginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBeginTime(const uint64_t& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param _endTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IssuerCN 证书签发者通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIssuerCN() const;
 
                     /**
                      * 设置证书签发者通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IssuerCN 证书签发者通用名称。
+                     * @param _issuerCN 证书签发者通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIssuerCN(const std::string& _issuerCN);
 
                     /**
                      * 判断参数 IssuerCN 是否已赋值
                      * @return IssuerCN 是否已赋值
+                     * 
                      */
                     bool IssuerCNHasBeenSet() const;
 
@@ -237,20 +264,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectCN 证书主题通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubjectCN() const;
 
                     /**
                      * 设置证书主题通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubjectCN 证书主题通用名称。
+                     * @param _subjectCN 证书主题通用名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubjectCN(const std::string& _subjectCN);
 
                     /**
                      * 判断参数 SubjectCN 是否已赋值
                      * @return SubjectCN 是否已赋值
+                     * 
                      */
                     bool SubjectCNHasBeenSet() const;
 

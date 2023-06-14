@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取主播银行账号
                      * @return AnchorId 主播银行账号
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播银行账号
-                     * @param AnchorId 主播银行账号
+                     * @param _anchorId 主播银行账号
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 
                     /**
                      * 获取主播姓名
                      * @return AnchorName 主播姓名
+                     * 
                      */
                     std::string GetAnchorName() const;
 
                     /**
                      * 设置主播姓名
-                     * @param AnchorName 主播姓名
+                     * @param _anchorName 主播姓名
+                     * 
                      */
                     void SetAnchorName(const std::string& _anchorName);
 
                     /**
                      * 判断参数 AnchorName 是否已赋值
                      * @return AnchorName 是否已赋值
+                     * 
                      */
                     bool AnchorNameHasBeenSet() const;
 
                     /**
                      * 获取主播身份证
                      * @return AnchorIDCard 主播身份证
+                     * 
                      */
                     std::string GetAnchorIDCard() const;
 
                     /**
                      * 设置主播身份证
-                     * @param AnchorIDCard 主播身份证
+                     * @param _anchorIDCard 主播身份证
+                     * 
                      */
                     void SetAnchorIDCard(const std::string& _anchorIDCard);
 
                     /**
                      * 判断参数 AnchorIDCard 是否已赋值
                      * @return AnchorIDCard 是否已赋值
+                     * 
                      */
                     bool AnchorIDCardHasBeenSet() const;
 
                     /**
                      * 获取纳税的开始时间，格式yyyy-MM-dd
                      * @return StartTime 纳税的开始时间，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置纳税的开始时间，格式yyyy-MM-dd
-                     * @param StartTime 纳税的开始时间，格式yyyy-MM-dd
+                     * @param _startTime 纳税的开始时间，格式yyyy-MM-dd
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取纳税的结束时间，格式yyyy-MM-dd
                      * @return EndTime 纳税的结束时间，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置纳税的结束时间，格式yyyy-MM-dd
-                     * @param EndTime 纳税的结束时间，格式yyyy-MM-dd
+                     * @param _endTime 纳税的结束时间，格式yyyy-MM-dd
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取流水金额。以“分”为单位
                      * @return Amount 流水金额。以“分”为单位
+                     * 
                      */
                     int64_t GetAmount() const;
 
                     /**
                      * 设置流水金额。以“分”为单位
-                     * @param Amount 流水金额。以“分”为单位
+                     * @param _amount 流水金额。以“分”为单位
+                     * 
                      */
                     void SetAmount(const int64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
                     /**
                      * 获取应缴税款。以“分”为单位
                      * @return Tax 应缴税款。以“分”为单位
+                     * 
                      */
                     int64_t GetTax() const;
 
                     /**
                      * 设置应缴税款。以“分”为单位
-                     * @param Tax 应缴税款。以“分”为单位
+                     * @param _tax 应缴税款。以“分”为单位
+                     * 
                      */
                     void SetTax(const int64_t& _tax);
 
                     /**
                      * 判断参数 Tax 是否已赋值
                      * @return Tax 是否已赋值
+                     * 
                      */
                     bool TaxHasBeenSet() const;
 

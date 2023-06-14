@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -67,6 +70,7 @@ file: 文件验证
                      * @return VerifyType 验证方式
 dns: DNS 解析验证（默认值）
 file: 文件验证
+                     * 
                      */
                     std::string GetVerifyType() const;
 
@@ -74,15 +78,17 @@ file: 文件验证
                      * 设置验证方式
 dns: DNS 解析验证（默认值）
 file: 文件验证
-                     * @param VerifyType 验证方式
+                     * @param _verifyType 验证方式
 dns: DNS 解析验证（默认值）
 file: 文件验证
+                     * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
 
                     /**
                      * 判断参数 VerifyType 是否已赋值
                      * @return VerifyType 是否已赋值
+                     * 
                      */
                     bool VerifyTypeHasBeenSet() const;
 

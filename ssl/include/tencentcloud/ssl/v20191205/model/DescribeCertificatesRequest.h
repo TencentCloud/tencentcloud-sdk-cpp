@@ -45,234 +45,273 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量，从0开始。
                      * @return Offset 分页偏移量，从0开始。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，从0开始。
-                     * @param Offset 分页偏移量，从0开始。
+                     * @param _offset 分页偏移量，从0开始。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量，默认20。最大1000
                      * @return Limit 每页数量，默认20。最大1000
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数量，默认20。最大1000
-                     * @param Limit 每页数量，默认20。最大1000
+                     * @param _limit 每页数量，默认20。最大1000
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
                      * @return SearchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
-                     * @param SearchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * @param _searchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取证书类型：CA = 客户端证书，SVR = 服务器证书。
                      * @return CertificateType 证书类型：CA = 客户端证书，SVR = 服务器证书。
+                     * 
                      */
                     std::string GetCertificateType() const;
 
                     /**
                      * 设置证书类型：CA = 客户端证书，SVR = 服务器证书。
-                     * @param CertificateType 证书类型：CA = 客户端证书，SVR = 服务器证书。
+                     * @param _certificateType 证书类型：CA = 客户端证书，SVR = 服务器证书。
+                     * 
                      */
                     void SetCertificateType(const std::string& _certificateType);
 
                     /**
                      * 判断参数 CertificateType 是否已赋值
                      * @return CertificateType 是否已赋值
+                     * 
                      */
                     bool CertificateTypeHasBeenSet() const;
 
                     /**
                      * 获取项目 ID。
                      * @return ProjectId 项目 ID。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-                     * @param ProjectId 项目 ID。
+                     * @param _projectId 项目 ID。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取按到期时间排序：DESC = 降序， ASC = 升序。
                      * @return ExpirationSort 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * 
                      */
                     std::string GetExpirationSort() const;
 
                     /**
                      * 设置按到期时间排序：DESC = 降序， ASC = 升序。
-                     * @param ExpirationSort 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * @param _expirationSort 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * 
                      */
                     void SetExpirationSort(const std::string& _expirationSort);
 
                     /**
                      * 判断参数 ExpirationSort 是否已赋值
                      * @return ExpirationSort 是否已赋值
+                     * 
                      */
                     bool ExpirationSortHasBeenSet() const;
 
                     /**
                      * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
                      * @return CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 
                      */
                     std::vector<uint64_t> GetCertificateStatus() const;
 
                     /**
                      * 设置证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
-                     * @param CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * @param _certificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 
                      */
                     void SetCertificateStatus(const std::vector<uint64_t>& _certificateStatus);
 
                     /**
                      * 判断参数 CertificateStatus 是否已赋值
                      * @return CertificateStatus 是否已赋值
+                     * 
                      */
                     bool CertificateStatusHasBeenSet() const;
 
                     /**
                      * 获取是否可部署，可选值：1 = 可部署，0 =  不可部署。
                      * @return Deployable 是否可部署，可选值：1 = 可部署，0 =  不可部署。
+                     * 
                      */
                     uint64_t GetDeployable() const;
 
                     /**
                      * 设置是否可部署，可选值：1 = 可部署，0 =  不可部署。
-                     * @param Deployable 是否可部署，可选值：1 = 可部署，0 =  不可部署。
+                     * @param _deployable 是否可部署，可选值：1 = 可部署，0 =  不可部署。
+                     * 
                      */
                     void SetDeployable(const uint64_t& _deployable);
 
                     /**
                      * 判断参数 Deployable 是否已赋值
                      * @return Deployable 是否已赋值
+                     * 
                      */
                     bool DeployableHasBeenSet() const;
 
                     /**
                      * 获取是否筛选上传托管的 1筛选，0不筛选
                      * @return Upload 是否筛选上传托管的 1筛选，0不筛选
+                     * 
                      */
                     int64_t GetUpload() const;
 
                     /**
                      * 设置是否筛选上传托管的 1筛选，0不筛选
-                     * @param Upload 是否筛选上传托管的 1筛选，0不筛选
+                     * @param _upload 是否筛选上传托管的 1筛选，0不筛选
+                     * 
                      */
                     void SetUpload(const int64_t& _upload);
 
                     /**
                      * 判断参数 Upload 是否已赋值
                      * @return Upload 是否已赋值
+                     * 
                      */
                     bool UploadHasBeenSet() const;
 
                     /**
                      * 获取是否筛选可续期证书 1筛选 0不筛选
                      * @return Renew 是否筛选可续期证书 1筛选 0不筛选
+                     * 
                      */
                     int64_t GetRenew() const;
 
                     /**
                      * 设置是否筛选可续期证书 1筛选 0不筛选
-                     * @param Renew 是否筛选可续期证书 1筛选 0不筛选
+                     * @param _renew 是否筛选可续期证书 1筛选 0不筛选
+                     * 
                      */
                     void SetRenew(const int64_t& _renew);
 
                     /**
                      * 判断参数 Renew 是否已赋值
                      * @return Renew 是否已赋值
+                     * 
                      */
                     bool RenewHasBeenSet() const;
 
                     /**
                      * 获取筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
                      * @return FilterSource 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     * 
                      */
                     std::string GetFilterSource() const;
 
                     /**
                      * 设置筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
-                     * @param FilterSource 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     * @param _filterSource 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     * 
                      */
                     void SetFilterSource(const std::string& _filterSource);
 
                     /**
                      * 判断参数 FilterSource 是否已赋值
                      * @return FilterSource 是否已赋值
+                     * 
                      */
                     bool FilterSourceHasBeenSet() const;
 
                     /**
                      * 获取是否筛选国密证书。1:筛选  0:不筛选
                      * @return IsSM 是否筛选国密证书。1:筛选  0:不筛选
+                     * 
                      */
                     int64_t GetIsSM() const;
 
                     /**
                      * 设置是否筛选国密证书。1:筛选  0:不筛选
-                     * @param IsSM 是否筛选国密证书。1:筛选  0:不筛选
+                     * @param _isSM 是否筛选国密证书。1:筛选  0:不筛选
+                     * 
                      */
                     void SetIsSM(const int64_t& _isSM);
 
                     /**
                      * 判断参数 IsSM 是否已赋值
                      * @return IsSM 是否已赋值
+                     * 
                      */
                     bool IsSMHasBeenSet() const;
 
                     /**
                      * 获取筛选证书是否即将过期，传1是筛选，0不筛选
                      * @return FilterExpiring 筛选证书是否即将过期，传1是筛选，0不筛选
+                     * 
                      */
                     uint64_t GetFilterExpiring() const;
 
                     /**
                      * 设置筛选证书是否即将过期，传1是筛选，0不筛选
-                     * @param FilterExpiring 筛选证书是否即将过期，传1是筛选，0不筛选
+                     * @param _filterExpiring 筛选证书是否即将过期，传1是筛选，0不筛选
+                     * 
                      */
                     void SetFilterExpiring(const uint64_t& _filterExpiring);
 
                     /**
                      * 判断参数 FilterExpiring 是否已赋值
                      * @return FilterExpiring 是否已赋值
+                     * 
                      */
                     bool FilterExpiringHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取播放统计文件列表。
                      * @return PlayStatFileSet 播放统计文件列表。
+                     * 
                      */
                     std::vector<PlayStatFileInfo> GetPlayStatFileSet() const;
 
                     /**
                      * 判断参数 PlayStatFileSet 是否已赋值
                      * @return PlayStatFileSet 是否已赋值
+                     * 
                      */
                     bool PlayStatFileSetHasBeenSet() const;
 

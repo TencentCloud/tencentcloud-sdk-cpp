@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取区域id
                      * @return ZoneId 区域id
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置区域id
-                     * @param ZoneId 区域id
+                     * @param _zoneId 区域id
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取区域名称
                      * @return ZoneName 区域名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置区域名称
-                     * @param ZoneName 区域名称
+                     * @param _zoneName 区域名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取人流量
                      * @return FlowCount 人流量
+                     * 
                      */
                     uint64_t GetFlowCount() const;
 
                     /**
                      * 设置人流量
-                     * @param FlowCount 人流量
+                     * @param _flowCount 人流量
+                     * 
                      */
                     void SetFlowCount(const uint64_t& _flowCount);
 
                     /**
                      * 判断参数 FlowCount 是否已赋值
                      * @return FlowCount 是否已赋值
+                     * 
                      */
                     bool FlowCountHasBeenSet() const;
 
                     /**
                      * 获取平均停留时长
                      * @return AvrStayTime 平均停留时长
+                     * 
                      */
                     uint64_t GetAvrStayTime() const;
 
                     /**
                      * 设置平均停留时长
-                     * @param AvrStayTime 平均停留时长
+                     * @param _avrStayTime 平均停留时长
+                     * 
                      */
                     void SetAvrStayTime(const uint64_t& _avrStayTime);
 
                     /**
                      * 判断参数 AvrStayTime 是否已赋值
                      * @return AvrStayTime 是否已赋值
+                     * 
                      */
                     bool AvrStayTimeHasBeenSet() const;
 

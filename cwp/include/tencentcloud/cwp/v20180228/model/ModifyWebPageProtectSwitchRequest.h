@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取开关类型 1 防护开关  2 自动恢复开关 3 移除防护目录
                      * @return SwitchType 开关类型 1 防护开关  2 自动恢复开关 3 移除防护目录
+                     * 
                      */
                     uint64_t GetSwitchType() const;
 
                     /**
                      * 设置开关类型 1 防护开关  2 自动恢复开关 3 移除防护目录
-                     * @param SwitchType 开关类型 1 防护开关  2 自动恢复开关 3 移除防护目录
+                     * @param _switchType 开关类型 1 防护开关  2 自动恢复开关 3 移除防护目录
+                     * 
                      */
                     void SetSwitchType(const uint64_t& _switchType);
 
                     /**
                      * 判断参数 SwitchType 是否已赋值
                      * @return SwitchType 是否已赋值
+                     * 
                      */
                     bool SwitchTypeHasBeenSet() const;
 
                     /**
                      * 获取需要操作开关的网站 最大100条
                      * @return Ids 需要操作开关的网站 最大100条
+                     * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
                      * 设置需要操作开关的网站 最大100条
-                     * @param Ids 需要操作开关的网站 最大100条
+                     * @param _ids 需要操作开关的网站 最大100条
+                     * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 
                     /**
                      * 获取1 开启 0 关闭 SwitchType 为 1 | 2 必填;
                      * @return Status 1 开启 0 关闭 SwitchType 为 1 | 2 必填;
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置1 开启 0 关闭 SwitchType 为 1 | 2 必填;
-                     * @param Status 1 开启 0 关闭 SwitchType 为 1 | 2 必填;
+                     * @param _status 1 开启 0 关闭 SwitchType 为 1 | 2 必填;
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

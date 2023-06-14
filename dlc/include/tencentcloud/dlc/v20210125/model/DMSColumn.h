@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param _description 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPosition() const;
 
                     /**
                      * 设置排序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Position 排序
+                     * @param _position 排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPosition(const int64_t& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Params 附加参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KVPair> GetParams() const;
 
                     /**
                      * 设置附加参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Params 附加参数
+                     * @param _params 附加参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParams(const std::vector<KVPair>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizParams 业务参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KVPair> GetBizParams() const;
 
                     /**
                      * 设置业务参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizParams 业务参数
+                     * @param _bizParams 业务参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizParams(const std::vector<KVPair>& _bizParams);
 
                     /**
                      * 判断参数 BizParams 是否已赋值
                      * @return BizParams 是否已赋值
+                     * 
                      */
                     bool BizParamsHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPartition 是否分区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsPartition() const;
 
                     /**
                      * 设置是否分区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsPartition 是否分区
+                     * @param _isPartition 是否分区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsPartition(const bool& _isPartition);
 
                     /**
                      * 判断参数 IsPartition 是否已赋值
                      * @return IsPartition 是否已赋值
+                     * 
                      */
                     bool IsPartitionHasBeenSet() const;
 

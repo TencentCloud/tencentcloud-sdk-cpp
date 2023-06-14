@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取专线网关唯一`ID`，形如：`dcg-9o233uri`。
                      * @return DirectConnectGatewayId 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
                      * 设置专线网关唯一`ID`，形如：`dcg-9o233uri`。
-                     * @param DirectConnectGatewayId 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * @param _directConnectGatewayId 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
 
                     /**
                      * 判断参数 DirectConnectGatewayId 是否已赋值
                      * @return DirectConnectGatewayId 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取专线网关名称，可任意命名，但不得超过60个字符。
                      * @return DirectConnectGatewayName 专线网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetDirectConnectGatewayName() const;
 
                     /**
                      * 设置专线网关名称，可任意命名，但不得超过60个字符。
-                     * @param DirectConnectGatewayName 专线网关名称，可任意命名，但不得超过60个字符。
+                     * @param _directConnectGatewayName 专线网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetDirectConnectGatewayName(const std::string& _directConnectGatewayName);
 
                     /**
                      * 判断参数 DirectConnectGatewayName 是否已赋值
                      * @return DirectConnectGatewayName 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。
                      * @return CcnRouteType 云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。
+                     * 
                      */
                     std::string GetCcnRouteType() const;
 
                     /**
                      * 设置云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。
-                     * @param CcnRouteType 云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。
+                     * @param _ccnRouteType 云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。
+                     * 
                      */
                     void SetCcnRouteType(const std::string& _ccnRouteType);
 
                     /**
                      * 判断参数 CcnRouteType 是否已赋值
                      * @return CcnRouteType 是否已赋值
+                     * 
                      */
                     bool CcnRouteTypeHasBeenSet() const;
 
                     /**
                      * 获取云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
                      * @return ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     * 
                      */
                     std::string GetModeType() const;
 
                     /**
                      * 设置云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
-                     * @param ModeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     * @param _modeType 云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。
+                     * 
                      */
                     void SetModeType(const std::string& _modeType);
 
                     /**
                      * 判断参数 ModeType 是否已赋值
                      * @return ModeType 是否已赋值
+                     * 
                      */
                     bool ModeTypeHasBeenSet() const;
 

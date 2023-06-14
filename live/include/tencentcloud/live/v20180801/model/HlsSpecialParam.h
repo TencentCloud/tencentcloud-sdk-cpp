@@ -51,20 +51,23 @@ namespace TencentCloud
 取值范围[0，1800]。
                      * @return FlowContinueDuration HLS续流超时时间。
 取值范围[0，1800]。
+                     * 
                      */
                     uint64_t GetFlowContinueDuration() const;
 
                     /**
                      * 设置HLS续流超时时间。
 取值范围[0，1800]。
-                     * @param FlowContinueDuration HLS续流超时时间。
+                     * @param _flowContinueDuration HLS续流超时时间。
 取值范围[0，1800]。
+                     * 
                      */
                     void SetFlowContinueDuration(const uint64_t& _flowContinueDuration);
 
                     /**
                      * 判断参数 FlowContinueDuration 是否已赋值
                      * @return FlowContinueDuration 是否已赋值
+                     * 
                      */
                     bool FlowContinueDurationHasBeenSet() const;
 

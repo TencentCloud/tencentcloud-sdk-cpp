@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取电子签部门ID
                      * @return DeptId 电子签部门ID
+                     * 
                      */
                     std::string GetDeptId() const;
 
                     /**
                      * 判断参数 DeptId 是否已赋值
                      * @return DeptId 是否已赋值
+                     * 
                      */
                     bool DeptIdHasBeenSet() const;
 

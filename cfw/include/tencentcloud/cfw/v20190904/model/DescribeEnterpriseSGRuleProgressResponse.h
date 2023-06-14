@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取0-100，代表下发进度百分比
                      * @return Progress 0-100，代表下发进度百分比
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

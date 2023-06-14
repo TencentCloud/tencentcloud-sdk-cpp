@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总曲目数
                      * @return TotalCount 总曲目数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取KTV 曲目列表
                      * @return KTVMusicInfoSet KTV 曲目列表
+                     * 
                      */
                     std::vector<KTVMusicBaseInfo> GetKTVMusicInfoSet() const;
 
                     /**
                      * 判断参数 KTVMusicInfoSet 是否已赋值
                      * @return KTVMusicInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVMusicInfoSetHasBeenSet() const;
 

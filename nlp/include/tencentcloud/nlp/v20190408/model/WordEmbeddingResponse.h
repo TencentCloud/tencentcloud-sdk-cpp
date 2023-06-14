@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取词向量数组
                      * @return Vector 词向量数组
+                     * 
                      */
                     std::vector<double> GetVector() const;
 
                     /**
                      * 判断参数 Vector 是否已赋值
                      * @return Vector 是否已赋值
+                     * 
                      */
                     bool VectorHasBeenSet() const;
 
                     /**
                      * 获取词向量的维度
                      * @return Dimension 词向量的维度
+                     * 
                      */
                     uint64_t GetDimension() const;
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 

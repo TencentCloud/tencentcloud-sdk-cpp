@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取多个回热任务，上限为10
                      * @return RestoreTasks 多个回热任务，上限为10
+                     * 
                      */
                     std::vector<RestoreTask> GetRestoreTasks() const;
 
                     /**
                      * 设置多个回热任务，上限为10
-                     * @param RestoreTasks 多个回热任务，上限为10
+                     * @param _restoreTasks 多个回热任务，上限为10
+                     * 
                      */
                     void SetRestoreTasks(const std::vector<RestoreTask>& _restoreTasks);
 
                     /**
                      * 判断参数 RestoreTasks 是否已赋值
                      * @return RestoreTasks 是否已赋值
+                     * 
                      */
                     bool RestoreTasksHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例组ID
                      * @return InstanceId 实例组ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例组ID
-                     * @param InstanceId 实例组ID
+                     * @param _instanceId 实例组ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取要修改的安全组ID列表，一个或者多个安全组ID组成的数组。
                      * @return SecurityGroupIds 要修改的安全组ID列表，一个或者多个安全组ID组成的数组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置要修改的安全组ID列表，一个或者多个安全组ID组成的数组。
-                     * @param SecurityGroupIds 要修改的安全组ID列表，一个或者多个安全组ID组成的数组。
+                     * @param _securityGroupIds 要修改的安全组ID列表，一个或者多个安全组ID组成的数组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取可用区
                      * @return Zone 可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-                     * @param Zone 可用区
+                     * @param _zone 可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

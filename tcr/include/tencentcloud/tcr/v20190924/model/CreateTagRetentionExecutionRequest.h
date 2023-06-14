@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主实例iD
                      * @return RegistryId 主实例iD
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例iD
-                     * @param RegistryId 主实例iD
+                     * @param _registryId 主实例iD
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取版本保留规则Id
                      * @return RetentionId 版本保留规则Id
+                     * 
                      */
                     int64_t GetRetentionId() const;
 
                     /**
                      * 设置版本保留规则Id
-                     * @param RetentionId 版本保留规则Id
+                     * @param _retentionId 版本保留规则Id
+                     * 
                      */
                     void SetRetentionId(const int64_t& _retentionId);
 
                     /**
                      * 判断参数 RetentionId 是否已赋值
                      * @return RetentionId 是否已赋值
+                     * 
                      */
                     bool RetentionIdHasBeenSet() const;
 
                     /**
                      * 获取是否模拟执行，默认值为false，即非模拟执行
                      * @return DryRun 是否模拟执行，默认值为false，即非模拟执行
+                     * 
                      */
                     bool GetDryRun() const;
 
                     /**
                      * 设置是否模拟执行，默认值为false，即非模拟执行
-                     * @param DryRun 是否模拟执行，默认值为false，即非模拟执行
+                     * @param _dryRun 是否模拟执行，默认值为false，即非模拟执行
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 

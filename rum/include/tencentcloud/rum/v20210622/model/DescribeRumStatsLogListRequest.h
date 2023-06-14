@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取开始时间（必填）
                      * @return StartTime 开始时间（必填）
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间（必填）
-                     * @param StartTime 开始时间（必填）
+                     * @param _startTime 开始时间（必填）
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取单次查询返回的原始日志条数，最大值为100（必填）
                      * @return Limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置单次查询返回的原始日志条数，最大值为100（必填）
-                     * @param Limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * @param _limit 单次查询返回的原始日志条数，最大值为100（必填）
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询语句，参考控制台请求参数，语句长度最大为4096（必填）
                      * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询语句，参考控制台请求参数，语句长度最大为4096（必填）
-                     * @param Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * @param _query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取结束时间（必填）
                      * @return EndTime 结束时间（必填）
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间（必填）
-                     * @param EndTime 结束时间（必填）
+                     * @param _endTime 结束时间（必填）
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取项目ID（必填）
                      * @return ID 项目ID（必填）
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置项目ID（必填）
-                     * @param ID 项目ID（必填）
+                     * @param _iD 项目ID（必填）
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

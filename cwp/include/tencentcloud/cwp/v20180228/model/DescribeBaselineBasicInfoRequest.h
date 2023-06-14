@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取基线名称
                      * @return BaselineName 基线名称
+                     * 
                      */
                     std::string GetBaselineName() const;
 
                     /**
                      * 设置基线名称
-                     * @param BaselineName 基线名称
+                     * @param _baselineName 基线名称
+                     * 
                      */
                     void SetBaselineName(const std::string& _baselineName);
 
                     /**
                      * 判断参数 BaselineName 是否已赋值
                      * @return BaselineName 是否已赋值
+                     * 
                      */
                     bool BaselineNameHasBeenSet() const;
 

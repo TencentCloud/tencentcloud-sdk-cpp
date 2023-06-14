@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取数据列表
                      * @return Data 数据列表
+                     * 
                      */
                     std::vector<ClsLogIpData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取获取到Top总记录数
                      * @return TotalCount 获取到Top总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取获取到的不重复IP条数
                      * @return IpCount 获取到的不重复IP条数
+                     * 
                      */
                     uint64_t GetIpCount() const;
 
                     /**
                      * 判断参数 IpCount 是否已赋值
                      * @return IpCount 是否已赋值
+                     * 
                      */
                     bool IpCountHasBeenSet() const;
 

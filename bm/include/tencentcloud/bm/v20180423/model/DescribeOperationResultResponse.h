@@ -61,24 +61,28 @@ namespace TencentCloud
 5：部分成功，部分未完成<br>
 6：部分未完成，部分失败<br>
 7：部分未完成，部分失败，部分成功
+                     * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 
                     /**
                      * 获取各实例对应任务的状态ID
                      * @return SubtaskStatusSet 各实例对应任务的状态ID
+                     * 
                      */
                     std::vector<SubtaskStatus> GetSubtaskStatusSet() const;
 
                     /**
                      * 判断参数 SubtaskStatusSet 是否已赋值
                      * @return SubtaskStatusSet 是否已赋值
+                     * 
                      */
                     bool SubtaskStatusSetHasBeenSet() const;
 

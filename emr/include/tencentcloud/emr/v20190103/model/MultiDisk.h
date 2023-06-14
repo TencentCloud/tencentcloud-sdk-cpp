@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -63,52 +64,60 @@ namespace TencentCloud
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
-                     * @param DiskType 云盘类型
+                     * @param _diskType 云盘类型
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取云盘大小
                      * @return Volume 云盘大小
+                     * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置云盘大小
-                     * @param Volume 云盘大小
+                     * @param _volume 云盘大小
+                     * 
                      */
                     void SetVolume(const int64_t& _volume);
 
                     /**
                      * 判断参数 Volume 是否已赋值
                      * @return Volume 是否已赋值
+                     * 
                      */
                     bool VolumeHasBeenSet() const;
 
                     /**
                      * 获取该类型云盘个数
                      * @return Count 该类型云盘个数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该类型云盘个数
-                     * @param Count 该类型云盘个数
+                     * @param _count 该类型云盘个数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

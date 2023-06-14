@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取集团ID
                      * @return CompanyId 集团ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺ID，如果不填表示操作集团身份库
                      * @return ShopId 店铺ID，如果不填表示操作集团身份库
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取请求的顾客id
                      * @return PersonId 请求的顾客id
+                     * 
                      */
                     int64_t GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取图片实际绑定person_id，可能与请求的person_id不同，以此id为准
                      * @return PersonIdBind 图片实际绑定person_id，可能与请求的person_id不同，以此id为准
+                     * 
                      */
                     int64_t GetPersonIdBind() const;
 
                     /**
                      * 判断参数 PersonIdBind 是否已赋值
                      * @return PersonIdBind 是否已赋值
+                     * 
                      */
                     bool PersonIdBindHasBeenSet() const;
 
                     /**
                      * 获取请求的顾客类型
                      * @return PersonType 请求的顾客类型
+                     * 
                      */
                     int64_t GetPersonType() const;
 
                     /**
                      * 判断参数 PersonType 是否已赋值
                      * @return PersonType 是否已赋值
+                     * 
                      */
                     bool PersonTypeHasBeenSet() const;
 
                     /**
                      * 获取与请求的person_id类型相同、与请求图片特征相似的一个或多个person_id，需要额外确认这些id是否是同一个人
                      * @return SimilarPersonIds 与请求的person_id类型相同、与请求图片特征相似的一个或多个person_id，需要额外确认这些id是否是同一个人
+                     * 
                      */
                     std::vector<int64_t> GetSimilarPersonIds() const;
 
                     /**
                      * 判断参数 SimilarPersonIds 是否已赋值
                      * @return SimilarPersonIds 是否已赋值
+                     * 
                      */
                     bool SimilarPersonIdsHasBeenSet() const;
 
